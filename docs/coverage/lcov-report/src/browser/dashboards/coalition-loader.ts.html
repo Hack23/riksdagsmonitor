@@ -2103,14 +2103,14 @@ function <span class="fstat-no" title="function not covered" >parseCSV(c</span>s
   const lines = <span class="cstat-no" title="statement not covered" >csvText.trim().split('\n');</span>
 <span class="cstat-no" title="statement not covered" >  if (lines.length &lt; 2) <span class="cstat-no" title="statement not covered" >return [];</span></span>
 &nbsp;
-  const headers = <span class="cstat-no" title="statement not covered" >lines[0].split(',').map(<span class="fstat-no" title="function not covered" >(h</span>) =&gt; <span class="cstat-no" title="statement not covered" >h.trim())</span>;</span>
+  const headers = <span class="cstat-no" title="statement not covered" >lines[0].split(',').<span class="fstat-no" title="function not covered" >map((h</span>) =&gt; <span class="cstat-no" title="statement not covered" >h.trim())</span>;</span>
   const data: CSVRow[] = <span class="cstat-no" title="statement not covered" >[];</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  for (let i = <span class="cstat-no" title="statement not covered" >1; i</span> &lt; lines.length; i++) {</span>
     const values = <span class="cstat-no" title="statement not covered" >lines[i].split(',');</span>
 <span class="cstat-no" title="statement not covered" >    if (values.length !== headers.length) <span class="cstat-no" title="statement not covered" >continue;</span></span>
     const row: CSVRow = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >    headers.forEach(<span class="fstat-no" title="function not covered" >(h</span>eader, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    headers.<span class="fstat-no" title="function not covered" >forEach((h</span>eader, idx) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      row[header] = values[idx].trim();</span>
     });
 <span class="cstat-no" title="statement not covered" >    data.push(row);</span>
@@ -2166,7 +2166,7 @@ async function <span class="fstat-no" title="function not covered" >fetchCSVRetr
 <span class="cstat-no" title="statement not covered" >    return await response.text();</span>
   } catch (error) {
 <span class="cstat-no" title="statement not covered" >    if (retryCount &lt; CONFIG.maxRetries) {</span>
-<span class="cstat-no" title="statement not covered" >      await new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve) =&gt; <span class="cstat-no" title="statement not covered" >setTimeout(resolve, CONFIG.retryDelay))</span>;</span>
+<span class="cstat-no" title="statement not covered" >      await new <span class="fstat-no" title="function not covered" >Promise((r</span>esolve) =&gt; <span class="cstat-no" title="statement not covered" >setTimeout(resolve, CONFIG.retryDelay))</span>;</span>
 <span class="cstat-no" title="statement not covered" >      return fetchCSVRetry(filename, retryCount + 1);</span>
     }
 <span class="cstat-no" title="statement not covered" >    throw error;</span>
@@ -2179,7 +2179,7 @@ async function <span class="fstat-no" title="function not covered" >loadPartySum
 &nbsp;
   const csvText = <span class="cstat-no" title="statement not covered" >await fetchCSVRetry(CONFIG.dataSources.partySummary);</span>
   const data = <span class="cstat-no" title="statement not covered" >parseCSV(csvText);</span>
-  const active = <span class="cstat-no" title="statement not covered" >data.filter(<span class="fstat-no" title="function not covered" >(r</span>ow) =&gt; <span class="cstat-no" title="statement not covered" >row.active === 't')</span>;</span>
+  const active = <span class="cstat-no" title="statement not covered" >data.<span class="fstat-no" title="function not covered" >filter((r</span>ow) =&gt; <span class="cstat-no" title="statement not covered" >row.active === 't');</span></span>
 <span class="cstat-no" title="statement not covered" >  setCachedData('party_summary', active);</span>
 <span class="cstat-no" title="statement not covered" >  return active;</span>
 }
@@ -2190,8 +2190,8 @@ async function <span class="fstat-no" title="function not covered" >loadPartyRol
 &nbsp;
   const csvText = <span class="cstat-no" title="statement not covered" >await fetchCSVRetry(CONFIG.dataSources.partyRoles);</span>
   const data = <span class="cstat-no" title="statement not covered" >parseCSV(csvText);</span>
-  const leaders = <span class="cstat-no" title="statement not covered" >data.filter(</span>
-<span class="fstat-no" title="function not covered" >    (r</span>ow) =&gt;
+  const leaders = <span class="cstat-no" title="statement not covered" >data.<span class="fstat-no" title="function not covered" >filter(</span></span>
+    (row) =&gt;
 <span class="cstat-no" title="statement not covered" >      row.active === 't' &amp;&amp;</span>
       (row.role_code === 'Partiledare' || row.role_code === 'Gruppledare'),
   );
@@ -2224,8 +2224,8 @@ async function <span class="fstat-no" title="function not covered" >loadExperien
 // ============================================================================
 &nbsp;
 function <span class="fstat-no" title="function not covered" >getPartyLeader(r</span>oleData: CSVRow[], partyCode: string): LeaderInfo {
-  const partyLeader = <span class="cstat-no" title="statement not covered" >roleData.find(</span>
-<span class="fstat-no" title="function not covered" >    (r</span>ow) =&gt; <span class="cstat-no" title="statement not covered" >row.party === partyCode &amp;&amp; row.role_code === 'Partiledare',</span>
+  const partyLeader = <span class="cstat-no" title="statement not covered" >roleData.<span class="fstat-no" title="function not covered" >find(</span></span>
+    (row) =&gt; <span class="cstat-no" title="statement not covered" >row.party === partyCode &amp;&amp; row.role_code === 'Partiledare',</span>
   );
 <span class="cstat-no" title="statement not covered" >  if (partyLeader) {</span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
@@ -2235,8 +2235,8 @@ function <span class="fstat-no" title="function not covered" >getPartyLeader(r</
     };
   }
 &nbsp;
-  const groupLeader = <span class="cstat-no" title="statement not covered" >roleData.find(</span>
-<span class="fstat-no" title="function not covered" >    (r</span>ow) =&gt; <span class="cstat-no" title="statement not covered" >row.party === partyCode &amp;&amp; row.role_code === 'Gruppledare',</span>
+  const groupLeader = <span class="cstat-no" title="statement not covered" >roleData.<span class="fstat-no" title="function not covered" >find(</span></span>
+    (row) =&gt; <span class="cstat-no" title="statement not covered" >row.party === partyCode &amp;&amp; row.role_code === 'Gruppledare',</span>
   );
 <span class="cstat-no" title="statement not covered" >  if (groupLeader) {</span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
@@ -2256,7 +2256,7 @@ function <span class="fstat-no" title="function not covered" >getEnhancedLeaderI
 ): EnhancedLeaderInfo {
 <span class="cstat-no" title="statement not covered" >  if (!leader.personId) <span class="cstat-no" title="statement not covered" >return leader;</span></span>
 &nbsp;
-  const politician = <span class="cstat-no" title="statement not covered" >politicianData.find(<span class="fstat-no" title="function not covered" >(p</span>) =&gt; <span class="cstat-no" title="statement not covered" >p.person_id === leader.personId)</span>;</span>
+  const politician = <span class="cstat-no" title="statement not covered" >politicianData.<span class="fstat-no" title="function not covered" >find((p</span>) =&gt; <span class="cstat-no" title="statement not covered" >p.person_id === leader.personId);</span></span>
 <span class="cstat-no" title="statement not covered" >  if (!politician) <span class="cstat-no" title="statement not covered" >return leader;</span></span>
 &nbsp;
   const firstDate = <span class="cstat-no" title="statement not covered" >new Date(politician.first_assignment_date as string);</span>
@@ -2270,8 +2270,8 @@ function <span class="fstat-no" title="function not covered" >getEnhancedLeaderI
   const partyDocs = <span class="cstat-no" title="statement not covered" >parseInt(politician.party_motions as string, 10) || 0;</span>
   const committeeDocs = <span class="cstat-no" title="statement not covered" >parseInt(politician.committee_motions as string, 10) || 0;</span>
   let specialization = <span class="cstat-no" title="statement not covered" >'Balanced';</span>
-<span class="cstat-no" title="statement not covered" >  if (partyDocs &gt; committeeDocs * 2) <span class="cstat-no" title="statement not covered" >specialization = <span class="cstat-no" title="statement not covered" >'Party-focused';</span></span></span>
-  else if (committeeDocs &gt; partyDocs * 2) <span class="cstat-no" title="statement not covered" >specialization = 'Committee-focused';</span>
+<span class="cstat-no" title="statement not covered" >  if (partyDocs &gt; committeeDocs * 2) <span class="cstat-no" title="statement not covered" >specialization = 'Party-focused';</span></span>
+  else if (<span class="cstat-no" title="statement not covered" >committeeDocs &gt; partyDocs * 2) <span class="cstat-no" title="statement not covered" >specialization = 'Committee-focused';</span></span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return {</span>
     ...leader,
@@ -2299,7 +2299,7 @@ function <span class="fstat-no" title="function not covered" >renderCoalition(</
   }
 &nbsp;
   const t = <span class="cstat-no" title="statement not covered" >getTranslations();</span>
-  const cardsContainer = <span class="cstat-no" title="statement not covered" >container.querySelector('.cards') as HTMLElement | null;</span>
+  const cardsContainer = <span class="cstat-no" title="statement not covered" >container.querySelector('.cards') </span>as HTMLElement | null;
 <span class="cstat-no" title="statement not covered" >  if (!cardsContainer) {</span>
 <span class="cstat-no" title="statement not covered" >    logger.error('Cards container not found');</span>
 <span class="cstat-no" title="statement not covered" >    return;</span>
@@ -2307,19 +2307,19 @@ function <span class="fstat-no" title="function not covered" >renderCoalition(</
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  cardsContainer.innerHTML = '';</span>
 &nbsp;
-  const knownParties = <span class="cstat-no" title="statement not covered" >partySummary.filter(<span class="fstat-no" title="function not covered" >(p</span>arty) =&gt; <span class="cstat-no" title="statement not covered" >PARTY_INFO[party.party as string])</span>;</span>
-  const sortedParties = <span class="cstat-no" title="statement not covered" >[...knownParties].sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; {</span>
+  const knownParties = <span class="cstat-no" title="statement not covered" >partySummary.<span class="fstat-no" title="function not covered" >filter((p</span>arty) =&gt; <span class="cstat-no" title="statement not covered" >PARTY_INFO[party.party as string]);</span></span>
+  const sortedParties = <span class="cstat-no" title="statement not covered" >[...knownParties].<span class="fstat-no" title="function not covered" >sort((a</span>, b) =&gt; {</span>
     const seatsA = <span class="cstat-no" title="statement not covered" >parseInt(a.total_active_parliament as string, 10) || 0;</span>
     const seatsB = <span class="cstat-no" title="statement not covered" >parseInt(b.total_active_parliament as string, 10) || 0;</span>
 <span class="cstat-no" title="statement not covered" >    return seatsB - seatsA;</span>
   });
 &nbsp;
-  const totalSeats = <span class="cstat-no" title="statement not covered" >sortedParties.reduce(</span>
-<span class="fstat-no" title="function not covered" >    (s</span>um, party) =&gt; <span class="cstat-no" title="statement not covered" >sum + (parseInt(party.total_active_parliament as string, 10) || 0),</span>
+  const totalSeats = <span class="cstat-no" title="statement not covered" >sortedParties.<span class="fstat-no" title="function not covered" >reduce(</span></span>
+    (sum, party) =&gt; <span class="cstat-no" title="statement not covered" >sum + (parseInt(party.total_active_parliament as string, 10) || 0),</span>
     0,
   );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  sortedParties.forEach(<span class="fstat-no" title="function not covered" >(p</span>arty) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  sortedParties.<span class="fstat-no" title="function not covered" >forEach((p</span>arty) =&gt; {</span>
     const partyCode = <span class="cstat-no" title="statement not covered" >party.party as string;</span>
     const partyInfo = <span class="cstat-no" title="statement not covered" >PARTY_INFO[partyCode];</span>
 <span class="cstat-no" title="statement not covered" >    if (!partyInfo) <span class="cstat-no" title="statement not covered" >return;</span></span>
@@ -2430,7 +2430,7 @@ function <span class="fstat-no" title="function not covered" >renderCoalition(</
  * Clear all coalition-related caches from localStorage.
  */
 export function <span class="fstat-no" title="function not covered" >clearCache(): void {</span>
-<span class="cstat-no" title="statement not covered" >  Object.keys(localStorage).forEach(<span class="fstat-no" title="function not covered" >(k</span>ey) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  Object.keys(localStorage).<span class="fstat-no" title="function not covered" >forEach((k</span>ey) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    if (key.startsWith(CONFIG.cachePrefix)) {</span>
 <span class="cstat-no" title="statement not covered" >      localStorage.removeItem(key);</span>
     }
@@ -2461,11 +2461,11 @@ export async function <span class="fstat-no" title="function not covered" >init(
     const [partySummary, partyRoles, politicianData, experienceData] = <span class="cstat-no" title="statement not covered" >await Promise.all([</span>
       loadPartySummary(),
       loadPartyRoles(),
-      loadPoliticianData().catch(<span class="fstat-no" title="function not covered" >(e</span>rr) =&gt; {
+      loadPoliticianData().<span class="fstat-no" title="function not covered" >catch((e</span>rr) =&gt; {
 <span class="cstat-no" title="statement not covered" >        logger.warn('Could not load politician data:', err);</span>
 <span class="cstat-no" title="statement not covered" >        return [] as CSVRow[];</span>
       }),
-      loadExperienceData().catch(<span class="fstat-no" title="function not covered" >(e</span>rr) =&gt; {
+      loadExperienceData().<span class="fstat-no" title="function not covered" >catch((e</span>rr) =&gt; {
 <span class="cstat-no" title="statement not covered" >        logger.warn('Could not load experience data:', err);</span>
 <span class="cstat-no" title="statement not covered" >        return [] as CSVRow[];</span>
       }),
@@ -2503,7 +2503,7 @@ export async function <span class="fstat-no" title="function not covered" >init(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:17.052Z
+                at 2026-03-12T22:50:12.565Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

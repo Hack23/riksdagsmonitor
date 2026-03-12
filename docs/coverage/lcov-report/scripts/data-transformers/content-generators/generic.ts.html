@@ -764,7 +764,7 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
 &nbsp;
   // Lead with the most significant type rather than a raw count
   const leadType = sortedTypes[0];
-  const leadDocs = leadType ? (byType[leadType] ?? <span class="branch-1 cbranch-no" title="branch not covered" >[]) : <span class="branch-1 cbranch-no" title="branch not covered" >[</span>];</span>
+  const leadDocs = leadType ? (byType[leadType] ?? <span class="branch-1 cbranch-no" title="branch not covered" >[])</span> : <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
   const leadTitle = leadDocs[0] ? (leadDocs[0].titel || leadDocs[0].title || <span class="branch-2 cbranch-no" title="branch not covered" >'') : <span class="branch-1 cbranch-no" title="branch not covered" >'</span>';</span>
 &nbsp;
   // Per-language title suffix (e.g. " — including "Prop. 2025/26:42"")
@@ -797,7 +797,7 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
       : lang === 'da' ? <span class="branch-0 cbranch-no" title="branch not covered" >`Udvalgene har afleveret ${n} betænkning${n !== 1 ? 'er' : ''}${titleSuffix} til parlamentarisk beslutning.`</span>
       : lang === 'no' ? <span class="branch-0 cbranch-no" title="branch not covered" >`Komiteene har levert ${n} innstilling${n !== 1 ? 'er' : ''}${titleSuffix} til parlamentarisk beslutning.`</span>
       : lang === 'fi' ? <span class="branch-0 cbranch-no" title="branch not covered" >`Valiokunnat ovat toimittaneet ${n} mietinnön${titleSuffix} parlamentin päätettäväksi.`</span>
-      : lang === 'de' ? `Die Ausschüsse haben ${n} Bericht${n !== 1 ? 'e' : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>${titleSuffix} zur parlamentarischen Entscheidung vorgelegt.`
+      : lang === 'de' ? `Die Ausschüsse haben ${n} Bericht${n !== 1 ? 'e' : <span class="branch-1 cbranch-no" title="branch not covered" >''}${t</span>itleSuffix} zur parlamentarischen Entscheidung vorgelegt.`
       : lang === 'fr' ? <span class="branch-0 cbranch-no" title="branch not covered" >`Les commissions ont livré ${n} rapport${n !== 1 ? 's' : ''}${titleSuffix} pour décision parlementaire.`</span>
       : lang === 'es' ? <span class="branch-0 cbranch-no" title="branch not covered" >`Los comités han presentado ${n} informe${n !== 1 ? 's' : ''}${titleSuffix} para decisión parlamentaria.`</span>
       : lang === 'nl' ? <span class="branch-0 cbranch-no" title="branch not covered" >`De commissies hebben ${n} rapport${n !== 1 ? 'en' : ''}${titleSuffix} ingediend voor parlementaire beslissing.`</span>
@@ -914,24 +914,24 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
     });
     const sortedPropCommittees = Object.entries(byPropCommittee)
       .filter(([c]) =&gt; c !== 'unknown')
-      .sort(<span class="fstat-no" title="function not covered" >([</span>, a], [, b]) =&gt; <span class="cstat-no" title="statement not covered" >b - a)</span>;
+      .<span class="fstat-no" title="function not covered" >sort(([</span>, a], [, b]) =&gt; <span class="cstat-no" title="statement not covered" >b - a);</span>
     <span class="missing-if-branch" title="else path not taken" >E</span>if (sortedPropCommittees.length &gt; 0 &amp;&amp; sortedPropCommittees[0][1] &gt;= 2) {
       const [topC, topN] = sortedPropCommittees[0];
       const topCName = escapeHtml(getCommitteeName(topC, lang));
       const govPriorityTemplates: Record&lt;string, (n: string, c: number) =&gt; string&gt; = {
-        sv: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} tar emot ${c} propositioner – detta signalerar ett prioriterat politikområde.`,</span>
-        da: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} modtager ${c} lovforslag — et klart signal om prioritet.`,</span>
-        no: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} mottar ${c} proposisjoner — et signal om regjeringsprioritet.`,</span>
-        fi: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} vastaanottaa ${c} esitystä — merkki hallituksen painopistealueesta.`,</span>
-        de: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} erhält ${c} Vorlagen — ein Signal für Regierungspriorität.`,</span>
-        fr: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} reçoit ${c} propositions — un signal de priorité gouvernementale.`,</span>
-        es: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} recibe ${c} proposiciones — señal de prioridad gubernamental.`,</span>
-        nl: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} ontvangt ${c} voorstellen — signaal van overheidsprioriteit.`,</span>
-        ar: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} يستقبل ${c} مقترحات — إشارة لأولوية حكومية.`,</span>
-        he: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} מקבל ${c} הצעות — אות לעדיפות ממשלתית.`,</span>
-        ja: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n}は${c}件の提案を受け取り、政府の重点分野を示しています。`,</span>
-        ko: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n}이(가) ${c}건의 법안을 받아 정부 우선순위를 나타냅니다.`,</span>
-        zh: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n}收到${c}项提案——表明这是政府的优先领域。`,</span>
+<span class="fstat-no" title="function not covered" >        sv: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} tar emot ${c} propositioner – detta signalerar ett prioriterat politikområde.`,</span>
+<span class="fstat-no" title="function not covered" >        da: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} modtager ${c} lovforslag — et klart signal om prioritet.`,</span>
+<span class="fstat-no" title="function not covered" >        no: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} mottar ${c} proposisjoner — et signal om regjeringsprioritet.`,</span>
+<span class="fstat-no" title="function not covered" >        fi: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} vastaanottaa ${c} esitystä — merkki hallituksen painopistealueesta.`,</span>
+<span class="fstat-no" title="function not covered" >        de: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} erhält ${c} Vorlagen — ein Signal für Regierungspriorität.`,</span>
+<span class="fstat-no" title="function not covered" >        fr: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} reçoit ${c} propositions — un signal de priorité gouvernementale.`,</span>
+<span class="fstat-no" title="function not covered" >        es: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} recibe ${c} proposiciones — señal de prioridad gubernamental.`,</span>
+<span class="fstat-no" title="function not covered" >        nl: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} ontvangt ${c} voorstellen — signaal van overheidsprioriteit.`,</span>
+<span class="fstat-no" title="function not covered" >        ar: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} يستقبل ${c} مقترحات — إشارة لأولوية حكومية.`,</span>
+<span class="fstat-no" title="function not covered" >        he: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} מקבל ${c} הצעות — אות לעדיפות ממשלתית.`,</span>
+<span class="fstat-no" title="function not covered" >        ja: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n}は${c}件の提案を受け取り、政府の重点分野を示しています。`,</span>
+<span class="fstat-no" title="function not covered" >        ko: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n}이(가) ${c}건의 법안을 받아 정부 우선순위를 나타냅니다.`,</span>
+<span class="fstat-no" title="function not covered" >        zh: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n}收到${c}项提案——表明这是政府的优先领域。`,</span>
       };
       const govTpl = govPriorityTemplates[lang as string];
       const govNote = govTpl
@@ -1007,18 +1007,18 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
     const margin = cia.coalitionStability.majorityMargin;
     const ciaContextTemplates: Record&lt;string, (m: number) =&gt; string&gt; = {
       sv: m =&gt; `Historisk kontext: nuvarande ${m}-mandatsövertag innebär att en enda avhoppare kan ändra utfallet.`,
-      da: <span class="fstat-no" title="function not covered" >m =&gt; <span class="cstat-no" title="statement not covered" >`</span>Historisk kontekst: det nuværende flertal på ${m} mandater betyder, at en enkelt afhopper kan vende resultatet.`,</span>
-      no: <span class="fstat-no" title="function not covered" >m =&gt; <span class="cstat-no" title="statement not covered" >`</span>Historisk kontekst: nåværende ${m}-mandats flertall betyr at en enkelt avhopper kan snu utfallet.`,</span>
-      fi: <span class="fstat-no" title="function not covered" >m =&gt; <span class="cstat-no" title="statement not covered" >`</span>Historiallinen konteksti: nykyinen ${m} paikan enemmistö tarkoittaa, että yksittäinen loikkari voi kääntää tuloksen.`,</span>
+<span class="fstat-no" title="function not covered" >      da: m</span> =&gt; <span class="cstat-no" title="statement not covered" >`Historisk kontekst: det nuværende flertal på ${m} mandater betyder, at en enkelt afhopper kan vende resultatet.`,</span>
+<span class="fstat-no" title="function not covered" >      no: m</span> =&gt; <span class="cstat-no" title="statement not covered" >`Historisk kontekst: nåværende ${m}-mandats flertall betyr at en enkelt avhopper kan snu utfallet.`,</span>
+<span class="fstat-no" title="function not covered" >      fi: m</span> =&gt; <span class="cstat-no" title="statement not covered" >`Historiallinen konteksti: nykyinen ${m} paikan enemmistö tarkoittaa, että yksittäinen loikkari voi kääntää tuloksen.`,</span>
       de: m =&gt; `Historischer Kontext: Die aktuelle ${m}-Sitze-Mehrheit bedeutet, dass ein einzelner Abweichler das Ergebnis kippen könnte.`,
-      fr: <span class="fstat-no" title="function not covered" >m =&gt; <span class="cstat-no" title="statement not covered" >`</span>Contexte historique : la majorité actuelle de ${m} sièges signifie qu'une seule défection pourrait inverser le résultat.`,</span>
-      es: <span class="fstat-no" title="function not covered" >m =&gt; <span class="cstat-no" title="statement not covered" >`</span>Contexto histórico: la mayoría actual de ${m} escaños significa que una sola defección podría revertir el resultado.`,</span>
-      nl: <span class="fstat-no" title="function not covered" >m =&gt; <span class="cstat-no" title="statement not covered" >`</span>Historische context: de huidige meerderheid van ${m} zetels betekent dat één enkele overloper de uitkomst kan omkeren.`,</span>
-      ar: <span class="fstat-no" title="function not covered" >m =&gt; <span class="cstat-no" title="statement not covered" >`</span>السياق التاريخي: الأغلبية الحالية البالغة ${m} مقاعد تعني أن انشقاقاً واحداً يمكن أن يعكس النتائج.`,</span>
-      he: <span class="fstat-no" title="function not covered" >m =&gt; <span class="cstat-no" title="statement not covered" >`</span>הקשר היסטורי: הרוב הנוכחי של ${m} מושבים משמעו שעריקות אחת יכולה להפוך את התוצאה.`,</span>
-      ja: <span class="fstat-no" title="function not covered" >m =&gt; <span class="cstat-no" title="statement not covered" >`</span>歴史的背景：現在の${m}議席差は、1人の離反で結果が覆る可能性を意味します。`,</span>
-      ko: <span class="fstat-no" title="function not covered" >m =&gt; <span class="cstat-no" title="statement not covered" >`</span>역사적 맥락: 현재 ${m}석 차이는 단 한 명의 이탈로도 결과가 뒤집힐 수 있음을 의미합니다.`,</span>
-      zh: <span class="fstat-no" title="function not covered" >m =&gt; <span class="cstat-no" title="statement not covered" >`</span>历史背景：目前${m}席的多数意味着任何一位议员的倒戈都可能逆转结果。`,</span>
+<span class="fstat-no" title="function not covered" >      fr: m</span> =&gt; <span class="cstat-no" title="statement not covered" >`Contexte historique : la majorité actuelle de ${m} sièges signifie qu'une seule défection pourrait inverser le résultat.`,</span>
+<span class="fstat-no" title="function not covered" >      es: m</span> =&gt; <span class="cstat-no" title="statement not covered" >`Contexto histórico: la mayoría actual de ${m} escaños significa que una sola defección podría revertir el resultado.`,</span>
+<span class="fstat-no" title="function not covered" >      nl: m</span> =&gt; <span class="cstat-no" title="statement not covered" >`Historische context: de huidige meerderheid van ${m} zetels betekent dat één enkele overloper de uitkomst kan omkeren.`,</span>
+<span class="fstat-no" title="function not covered" >      ar: m</span> =&gt; <span class="cstat-no" title="statement not covered" >`السياق التاريخي: الأغلبية الحالية البالغة ${m} مقاعد تعني أن انشقاقاً واحداً يمكن أن يعكس النتائج.`,</span>
+<span class="fstat-no" title="function not covered" >      he: m</span> =&gt; <span class="cstat-no" title="statement not covered" >`הקשר היסטורי: הרוב הנוכחי של ${m} מושבים משמעו שעריקות אחת יכולה להפוך את התוצאה.`,</span>
+<span class="fstat-no" title="function not covered" >      ja: m</span> =&gt; <span class="cstat-no" title="statement not covered" >`歴史的背景：現在の${m}議席差は、1人の離反で結果が覆る可能性を意味します。`,</span>
+<span class="fstat-no" title="function not covered" >      ko: m</span> =&gt; <span class="cstat-no" title="statement not covered" >`역사적 맥락: 현재 ${m}석 차이는 단 한 명의 이탈로도 결과가 뒤집힐 수 있음을 의미합니다.`,</span>
+<span class="fstat-no" title="function not covered" >      zh: m</span> =&gt; <span class="cstat-no" title="statement not covered" >`历史背景：目前${m}席的多数意味着任何一位议员的倒戈都可能逆转结果。`,</span>
     };
     const ciaTpl = ciaContextTemplates[lang as string];
     const ciaText = ciaTpl
@@ -1039,7 +1039,7 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:17.052Z
+                at 2026-03-12T22:50:12.565Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

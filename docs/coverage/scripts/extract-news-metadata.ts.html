@@ -446,7 +446,7 @@ function <span class="fstat-no" title="function not covered" >collectNewsFiles(d
 <span class="cstat-no" title="statement not covered" >  for (const entry of readdirSync(dir, { withFileTypes: true })) {</span>
 <span class="cstat-no" title="statement not covered" >    if (entry.isDirectory()) {</span>
 <span class="cstat-no" title="statement not covered" >      result.push(...collectNewsFiles(join(dir, entry.name)));</span>
-<span class="cstat-no" title="statement not covered" >    } else if (entry.name.endsWith('.html') &amp;&amp; !entry.name.startsWith('index')) {</span>
+    } else if (<span class="cstat-no" title="statement not covered" >entry.name.endsWith('.html') &amp;&amp; !entry.name.startsWith('index')) {</span>
 <span class="cstat-no" title="statement not covered" >      result.push(join(dir, entry.name));</span>
     }
   }
@@ -456,7 +456,7 @@ function <span class="fstat-no" title="function not covered" >collectNewsFiles(d
 function <span class="fstat-no" title="function not covered" >extractMetadata(): void {</span>
   const newsDir = <span class="cstat-no" title="statement not covered" >join(ROOT, 'news');</span>
   const allFilePaths = <span class="cstat-no" title="statement not covered" >collectNewsFiles(newsDir);</span>
-  const files = <span class="cstat-no" title="statement not covered" >allFilePaths.map(<span class="fstat-no" title="function not covered" >(f</span>p) =&gt; <span class="cstat-no" title="statement not covered" >relative(newsDir, fp).split(sep).join('/'))</span>;</span>
+  const files = <span class="cstat-no" title="statement not covered" >allFilePaths.<span class="fstat-no" title="function not covered" >map((f</span>p) =&gt; <span class="cstat-no" title="statement not covered" >relative(newsDir, fp).split(sep).join('/'))</span>;</span>
 &nbsp;
   const articles: ArticleMetadata[] = <span class="cstat-no" title="statement not covered" >[];</span>
 &nbsp;
@@ -470,7 +470,7 @@ function <span class="fstat-no" title="function not covered" >extractMetadata():
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    while ((match = jsonLdRegex.exec(content)) !== null) {</span>
 <span class="cstat-no" title="statement not covered" >      try {</span>
-        const parsed = <span class="cstat-no" title="statement not covered" >JSON.parse(match[1]!) as JsonLdArticle;</span>
+        const parsed = <span class="cstat-no" title="statement not covered" >JSON.parse(match[1]!) </span>as JsonLdArticle;
 <span class="cstat-no" title="statement not covered" >        if (parsed['@type'] === 'NewsArticle') {</span>
 <span class="cstat-no" title="statement not covered" >          articleData = parsed;</span>
 <span class="cstat-no" title="statement not covered" >          break;</span>
@@ -505,9 +505,9 @@ function <span class="fstat-no" title="function not covered" >extractMetadata():
       datePublished: articleData.datePublished ?? '',
       dateModified: articleData.dateModified ?? '',
       articleSection: articleData.articleSection ?? '',
-      wordCount: articleData.wordCount || (<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+      wordCount: articleData.<span class="fstat-no" title="function not covered" >wordCount || (() =&gt; {</span>
         const stripped = <span class="cstat-no" title="statement not covered" >content.replace(/&lt;[^&gt;]+&gt;/g, ' ');</span>
-<span class="cstat-no" title="statement not covered" >        return stripped.split(/\s+/).filter(<span class="fstat-no" title="function not covered" >(w</span>: string) =&gt; <span class="cstat-no" title="statement not covered" >w.length &gt; 0)</span>.length;</span>
+<span class="cstat-no" title="statement not covered" >        return stripped.split(/\s+/).<span class="fstat-no" title="function not covered" >filter((w</span>: string) =&gt; <span class="cstat-no" title="statement not covered" >w.length &gt; 0).</span>length;</span>
       })(),
       inLanguage: articleData.inLanguage ?? lang as string,
       keywords: articleData.keywords ?? '',
@@ -517,7 +517,7 @@ function <span class="fstat-no" title="function not covered" >extractMetadata():
   }
 &nbsp;
   // Sort by date descending, then by language
-<span class="cstat-no" title="statement not covered" >  articles.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  articles.<span class="fstat-no" title="function not covered" >sort((a</span>, b) =&gt; {</span>
     const dateCompare = <span class="cstat-no" title="statement not covered" >b.datePublished.localeCompare(a.datePublished);</span>
 <span class="cstat-no" title="statement not covered" >    if (dateCompare !== 0) <span class="cstat-no" title="statement not covered" >return dateCompare;</span></span>
 <span class="cstat-no" title="statement not covered" >    return a.lang.localeCompare(b.lang);</span>
@@ -527,8 +527,8 @@ function <span class="fstat-no" title="function not covered" >extractMetadata():
     version: '1.0.0',
     generatedAt: new Date().toISOString(),
     totalArticles: articles.length,
-    uniqueSlugs: [...new Set(articles.map(<span class="fstat-no" title="function not covered" >(a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.slug)</span>)].length,
-    languages: [...new Set(articles.map(<span class="fstat-no" title="function not covered" >(a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.lang)</span>)].sort(),
+    uniqueSlugs: [...new Set(articles.<span class="fstat-no" title="function not covered" >map((a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.slug))</span>].length,
+    languages: [...new Set(articles.<span class="fstat-no" title="function not covered" >map((a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.lang))</span>].sort(),
     articles,
   };
 &nbsp;
@@ -550,7 +550,7 @@ function <span class="fstat-no" title="function not covered" >extractMetadata():
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../prettify.js"></script>
         <script>

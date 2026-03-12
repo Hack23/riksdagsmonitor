@@ -582,19 +582,19 @@ export function generateMonthAheadContent(data: ArticleContentData, lang: Langua
 &nbsp;
     // Lede: how many propositions are in the pipeline
     const propLedeTemplates: Record&lt;string, (n: number) =&gt; string&gt; = {
-      sv: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} propositioner befinner sig i den lagstiftande processen denna månad.`,</span>
-      da: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} lovforslag befinder sig i den lovgivningsmæssige proces denne måned.`,</span>
-      no: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} proposisjoner er i den lovgivningsmessige prosessen denne måneden.`,</span>
-      fi: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} hallituksen esitystä on lainsäädäntöprosessissa tässä kuussa.`,</span>
-      de: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} Regierungsvorlagen befinden sich diesen Monat im Gesetzgebungsprozess.`,</span>
-      fr: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} propositions gouvernementales sont en cours de traitement législatif ce mois-ci.`,</span>
-      es: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} proposiciones gubernamentales se encuentran en el proceso legislativo este mes.`,</span>
-      nl: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} regeringsvoorstellen bevinden zich deze maand in het wetgevingsproces.`,</span>
-      ar: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} مقترحات حكومية في المسار التشريعي هذا الشهر.`,</span>
-      he: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} הצעות ממשלה נמצאות בתהליך החקיקתי החודש.`,</span>
-      ja: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>今月は${n}件の政府提案が立法プロセスにあります。`,</span>
-      ko: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>이달 ${n}건의 정부 법안이 입법 프로세스에 있습니다.`,</span>
-      zh: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>本月${n}项政府提案处于立法审议过程中。`,</span>
+<span class="fstat-no" title="function not covered" >      sv: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} propositioner befinner sig i den lagstiftande processen denna månad.`,</span>
+<span class="fstat-no" title="function not covered" >      da: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} lovforslag befinder sig i den lovgivningsmæssige proces denne måned.`,</span>
+<span class="fstat-no" title="function not covered" >      no: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} proposisjoner er i den lovgivningsmessige prosessen denne måneden.`,</span>
+<span class="fstat-no" title="function not covered" >      fi: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} hallituksen esitystä on lainsäädäntöprosessissa tässä kuussa.`,</span>
+<span class="fstat-no" title="function not covered" >      de: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} Regierungsvorlagen befinden sich diesen Monat im Gesetzgebungsprozess.`,</span>
+<span class="fstat-no" title="function not covered" >      fr: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} propositions gouvernementales sont en cours de traitement législatif ce mois-ci.`,</span>
+<span class="fstat-no" title="function not covered" >      es: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} proposiciones gubernamentales se encuentran en el proceso legislativo este mes.`,</span>
+<span class="fstat-no" title="function not covered" >      nl: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} regeringsvoorstellen bevinden zich deze maand in het wetgevingsproces.`,</span>
+<span class="fstat-no" title="function not covered" >      ar: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} مقترحات حكومية في المسار التشريعي هذا الشهر.`,</span>
+<span class="fstat-no" title="function not covered" >      he: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} הצעות ממשלה נמצאות בתהליך החקיקתי החודש.`,</span>
+<span class="fstat-no" title="function not covered" >      ja: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`今月は${n}件の政府提案が立法プロセスにあります。`,</span>
+<span class="fstat-no" title="function not covered" >      ko: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`이달 ${n}건의 정부 법안이 입법 프로세스에 있습니다.`,</span>
+<span class="fstat-no" title="function not covered" >      zh: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`本月${n}项政府提案处于立法审议过程中。`,</span>
     };
     const propLedeTpl = propLedeTemplates[lang as string];
     const propLede = propLedeTpl
@@ -656,12 +656,12 @@ export function generateMonthAheadContent(data: ArticleContentData, lang: Langua
         const rec = report as Record&lt;string, string&gt;;
         const titleText = rec['titel'] || rec['title'] || <span class="branch-2 cbranch-no" title="branch not covered" >'Report';</span>
         const escapedTitle = escapeHtml(titleText);
-        const titleHtml = (rec['titel'] &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!rec['title'<span class="branch-0 cbranch-no" title="branch not covered" >]) ? s</span>vSpan(escapedTitle, lang) : e</span>scapedTitle;
+        const titleHtml = (rec['titel'] &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!rec[<span class="branch-0 cbranch-no" title="branch not covered" >'title']) ? s</span>vSpan(escapedTitle, lang) </span>: escapedTitle;
         const dokId = rec['dok_id'] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
         const urlBase = 'https://riksdagen.se/sv/dokument-och-lagar/dokument/';
         const safeUrl = dokId ? sanitizeUrl(`${urlBase}${encodeURIComponent(dokId)}/`) : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
         content += `    &lt;div class="document-entry"&gt;\n`;
-        content += `      &lt;h4&gt;${safeUrl ? `&lt;a href="${safeUrl}" target="_blank" rel="noopener noreferrer"&gt;` : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>${titleHtml}${safeUrl ? '&lt;/a&gt;' : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>&lt;/h4&gt;\n`;
+        content += `      &lt;h4&gt;${safeUrl ? `&lt;a href="${safeUrl}" target="_blank" rel="noopener noreferrer"&gt;` : <span class="branch-1 cbranch-no" title="branch not covered" >''}${t</span>itleHtml}${safeUrl ? '&lt;/a&gt;' : <span class="branch-1 cbranch-no" title="branch not covered" >''}&lt;</span>/h4&gt;\n`;
         const reportDateHtml = formatDocumentDate(report as RawDocument, lang);
         <span class="missing-if-branch" title="if path not taken" >I</span>if (reportDateHtml) <span class="cstat-no" title="statement not covered" >content += `      &lt;p&gt;${reportDateHtml}&lt;/p&gt;\n`;</span>
         content += `    &lt;/div&gt;\n`;
@@ -701,19 +701,19 @@ export function generateMonthAheadContent(data: ArticleContentData, lang: Langua
     <span class="missing-if-branch" title="else path not taken" >E</span>if (allTrendDomains.size &gt; 0) {
       const domainList = Array.from(allTrendDomains).slice(0, 5).join(', ');  // top 5 domains for readability
       const domainIntroTemplates: Record&lt;string, (d: string, n: number) =&gt; string&gt; = {
-        sv: <span class="fstat-no" title="function not covered" >(d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} motioner identifierar aktiva policydomäner: ${d}.`,</span>
-        da: <span class="fstat-no" title="function not covered" >(d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} motioner identificerer aktive politikdomæner: ${d}.`,</span>
-        no: <span class="fstat-no" title="function not covered" >(d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} forslag identifiserer aktive politikkdomener: ${d}.`,</span>
-        fi: <span class="fstat-no" title="function not covered" >(d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} aloitetta tunnistaa aktiiviset politiikka-alueet: ${d}.`,</span>
-        de: <span class="fstat-no" title="function not covered" >(d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} Anträge identifizieren aktive Politikbereiche: ${d}.`,</span>
-        fr: <span class="fstat-no" title="function not covered" >(d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} motions identifient des domaines politiques actifs: ${d}.`,</span>
-        es: <span class="fstat-no" title="function not covered" >(d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} mociones identifican áreas de política activas: ${d}.`,</span>
-        nl: <span class="fstat-no" title="function not covered" >(d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} moties identificeren actieve beleidsgebieden: ${d}.`,</span>
-        ar: <span class="fstat-no" title="function not covered" >(d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} اقتراحات تُحدد مجالات السياسة النشطة: ${d}.`,</span>
-        he: <span class="fstat-no" title="function not covered" >(d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} הצעות מזהות תחומי מדיניות פעילים: ${d}.`,</span>
-        ja: <span class="fstat-no" title="function not covered" >(d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n}件の動議が活発な政策領域を特定しています: ${d}。`,</span>
-        ko: <span class="fstat-no" title="function not covered" >(d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n}건의 동의가 활발한 정책 분야를 식별합니다: ${d}.`,</span>
-        zh: <span class="fstat-no" title="function not covered" >(d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n}项动议确定了活跃的政策领域：${d}。`,</span>
+<span class="fstat-no" title="function not covered" >        sv: (d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} motioner identifierar aktiva policydomäner: ${d}.`,</span>
+<span class="fstat-no" title="function not covered" >        da: (d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} motioner identificerer aktive politikdomæner: ${d}.`,</span>
+<span class="fstat-no" title="function not covered" >        no: (d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} forslag identifiserer aktive politikkdomener: ${d}.`,</span>
+<span class="fstat-no" title="function not covered" >        fi: (d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} aloitetta tunnistaa aktiiviset politiikka-alueet: ${d}.`,</span>
+<span class="fstat-no" title="function not covered" >        de: (d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} Anträge identifizieren aktive Politikbereiche: ${d}.`,</span>
+<span class="fstat-no" title="function not covered" >        fr: (d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} motions identifient des domaines politiques actifs: ${d}.`,</span>
+<span class="fstat-no" title="function not covered" >        es: (d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} mociones identifican áreas de política activas: ${d}.`,</span>
+<span class="fstat-no" title="function not covered" >        nl: (d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} moties identificeren actieve beleidsgebieden: ${d}.`,</span>
+<span class="fstat-no" title="function not covered" >        ar: (d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} اقتراحات تُحدد مجالات السياسة النشطة: ${d}.`,</span>
+<span class="fstat-no" title="function not covered" >        he: (d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n} הצעות מזהות תחומי מדיניות פעילים: ${d}.`,</span>
+<span class="fstat-no" title="function not covered" >        ja: (d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n}件の動議が活発な政策領域を特定しています: ${d}。`,</span>
+<span class="fstat-no" title="function not covered" >        ko: (d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n}건의 동의가 활발한 정책 분야를 식별합니다: ${d}.`,</span>
+<span class="fstat-no" title="function not covered" >        zh: (d</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${n}项动议确定了活跃的政策领域：${d}。`,</span>
       };
       const domTpl = domainIntroTemplates[lang as string];
       const domainIntroRaw = domTpl
@@ -726,26 +726,26 @@ export function generateMonthAheadContent(data: ArticleContentData, lang: Langua
     // Top parties by motion volume
     const topParties = Object.entries(byPartyTrend)
       .filter(([k]) =&gt; k !== 'unknown' &amp;&amp; k !== 'other')
-      .sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >b[1] - a[1])</span>
+      .<span class="fstat-no" title="function not covered" >sort((a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >b[1] - a[1])</span>
       .slice(0, 4);  // 4 parties: covers the typical Swedish governing+major-opposition parties
 &nbsp;
     <span class="missing-if-branch" title="else path not taken" >E</span>if (topParties.length &gt; 0) {
       content += `    &lt;ul&gt;\n`;
       topParties.forEach(([party, count]) =&gt; {
         const partyMotionTemplates: Record&lt;string, (p: string, n: number) =&gt; string&gt; = {
-          sv: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} motioner inlämnade`,</span>
-          da: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} motioner indgivet`,</span>
-          no: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} forslag innsendt`,</span>
-          fi: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} aloitetta jätetty`,</span>
-          de: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} Anträge eingereicht`,</span>
-          fr: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} motions déposées`,</span>
-          es: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} mociones presentadas`,</span>
-          nl: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} moties ingediend`,</span>
-          ar: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} اقتراحات مقدمة`,</span>
-          he: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} הצעות הוגשו`,</span>
-          ja: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n}件の動議を提出`,</span>
-          ko: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n}건의 동의 제출`,</span>
-          zh: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n}项动议提交`,</span>
+<span class="fstat-no" title="function not covered" >          sv: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} motioner inlämnade`,</span>
+<span class="fstat-no" title="function not covered" >          da: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} motioner indgivet`,</span>
+<span class="fstat-no" title="function not covered" >          no: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} forslag innsendt`,</span>
+<span class="fstat-no" title="function not covered" >          fi: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} aloitetta jätetty`,</span>
+<span class="fstat-no" title="function not covered" >          de: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} Anträge eingereicht`,</span>
+<span class="fstat-no" title="function not covered" >          fr: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} motions déposées`,</span>
+<span class="fstat-no" title="function not covered" >          es: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} mociones presentadas`,</span>
+<span class="fstat-no" title="function not covered" >          nl: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} moties ingediend`,</span>
+<span class="fstat-no" title="function not covered" >          ar: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} اقتراحات مقدمة`,</span>
+<span class="fstat-no" title="function not covered" >          he: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n} הצעות הוגשו`,</span>
+<span class="fstat-no" title="function not covered" >          ja: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n}件の動議を提出`,</span>
+<span class="fstat-no" title="function not covered" >          ko: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n}건의 동의 제출`,</span>
+<span class="fstat-no" title="function not covered" >          zh: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`${p}: ${n}项动议提交`,</span>
         };
         const partyTpl = partyMotionTemplates[lang as string];
         const partyEntry = partyTpl
@@ -766,7 +766,7 @@ export function generateMonthAheadContent(data: ArticleContentData, lang: Langua
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:17.052Z
+                at 2026-03-12T22:50:12.565Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

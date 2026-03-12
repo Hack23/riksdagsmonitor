@@ -679,7 +679,7 @@ export function generateCommitteeContent(data: ArticleContentData, lang: Languag
 &nbsp;
     // Add committee context: how many reports from this committee
     <span class="missing-if-branch" title="if path not taken" >I</span>if (committeeReports.length &gt; 1) {
-      const <span class="cstat-no" title="statement not covered" >countContextFn = L(lang, 'committeeCountContext') as string | ((n: number) =&gt; string);</span>
+      const <span class="cstat-no" title="statement not covered" >countContextFn = L(lang, 'committeeCountContext') </span>as string | ((n: number) =&gt; string);
       const countContext = <span class="cstat-no" title="statement not covered" >typeof countContextFn === 'function'</span>
         ? countContextFn(committeeReports.length)
         : `${committeeReports.length} reports from this committee signal intensive legislative work within its portfolio.`;
@@ -791,18 +791,18 @@ export function generateCommitteeContent(data: ArticleContentData, lang: Languag
     };
     const votingCountTemplates: Record&lt;string, (n: number) =&gt; string&gt; = {
       sv: (n) =&gt; `${n} röstningsprotokoll visar hur partierna röstade i utskottsbeslut denna period.`,
-      da: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} afstemningsprotokoller viser, hvordan partierne stemte om udvalgets beslutninger.`,</span>
-      no: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} voteringsprotokoll viser hvordan partiene stemte i komitévedtak.`,</span>
-      fi: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} äänestysrekisteriä osoittaa, miten puolueet äänestivät valiokunnan päätöksistä.`,</span>
-      de: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} Abstimmungsrekorde zeigen, wie die Parteien über Ausschussbeschlüsse abstimmten.`,</span>
-      fr: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} procès-verbaux de vote montrent comment les partis ont voté sur les décisions de commission.`,</span>
-      es: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} registros de votación muestran cómo votaron los partidos en las decisiones de la comisión.`,</span>
-      nl: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} stemregisters tonen hoe partijen stemden over commissiebeslissingen.`,</span>
-      ar: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} سجلات التصويت تظهر كيف صوتت الأحزاب على قرارات اللجنة.`,</span>
-      he: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} פרוטוקולי הצבעה מציגים כיצד הצביעו המפלגות על החלטות הוועדה.`,</span>
-      ja: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}件の投票記録が、委員会決定に対する各党の投票方法を示しています。`,</span>
-      ko: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}건의 투표 기록이 위원회 결정에 대한 각 정당의 투표 방식을 보여줍니다.`,</span>
-      zh: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}条投票记录显示各党派对委员会决定的投票情况。`,</span>
+<span class="fstat-no" title="function not covered" >      da: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} afstemningsprotokoller viser, hvordan partierne stemte om udvalgets beslutninger.`,</span>
+<span class="fstat-no" title="function not covered" >      no: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} voteringsprotokoll viser hvordan partiene stemte i komitévedtak.`,</span>
+<span class="fstat-no" title="function not covered" >      fi: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} äänestysrekisteriä osoittaa, miten puolueet äänestivät valiokunnan päätöksistä.`,</span>
+<span class="fstat-no" title="function not covered" >      de: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} Abstimmungsrekorde zeigen, wie die Parteien über Ausschussbeschlüsse abstimmten.`,</span>
+<span class="fstat-no" title="function not covered" >      fr: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} procès-verbaux de vote montrent comment les partis ont voté sur les décisions de commission.`,</span>
+<span class="fstat-no" title="function not covered" >      es: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} registros de votación muestran cómo votaron los partidos en las decisiones de la comisión.`,</span>
+<span class="fstat-no" title="function not covered" >      nl: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} stemregisters tonen hoe partijen stemden over commissiebeslissingen.`,</span>
+<span class="fstat-no" title="function not covered" >      ar: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} سجلات التصويت تظهر كيف صوتت الأحزاب على قرارات اللجنة.`,</span>
+<span class="fstat-no" title="function not covered" >      he: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} פרוטוקולי הצבעה מציגים כיצד הצביעו המפלגות על החלטות הוועדה.`,</span>
+<span class="fstat-no" title="function not covered" >      ja: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}件の投票記録が、委員会決定に対する各党の投票方法を示しています。`,</span>
+<span class="fstat-no" title="function not covered" >      ko: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}건의 투표 기록이 위원회 결정에 대한 각 정당의 투표 방식을 보여줍니다.`,</span>
+<span class="fstat-no" title="function not covered" >      zh: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}条投票记录显示各党派对委员会决定的投票情况。`,</span>
     };
     const votingHeader = votingSectionHeaders[lang as string] ?? 'Voting Results';
     const votingCountFn = votingCountTemplates[lang as string];
@@ -824,18 +824,18 @@ export function generateCommitteeContent(data: ArticleContentData, lang: Languag
     };
     const debateCountTemplates: Record&lt;string, (n: number) =&gt; string&gt; = {
       sv: (n) =&gt; `${n} anföranden i kammaren belyser de viktigaste argumenten och partipositionerna i dessa frågor.`,
-      da: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} parlamentariske taler belyser nøgleargumenter og partipositioner.`,</span>
-      no: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} parlamentariske innlegg belyser nøkkelargumenter og partiposisjoner.`,</span>
-      fi: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} parlamentaarista puheenvuoroa valaisee keskeisiä argumentteja ja puolueiden kantoja.`,</span>
-      de: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} parlamentarische Reden beleuchten Hauptargumente und Parteipositionen.`,</span>
-      fr: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} discours parlementaires éclairent les arguments clés et les positions des partis.`,</span>
-      es: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} discursos parlamentarios iluminan los principales argumentos y posiciones de los partidos.`,</span>
-      nl: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} parlementaire toespraken belichten de belangrijkste argumenten en partijposities.`,</span>
-      ar: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} خطاب برلماني يسلط الضوء على الحجج الرئيسية ومواقف الأحزاب.`,</span>
-      he: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} נאומים פרלמנטריים מאירים טיעונים מרכזיים ועמדות מפלגות.`,</span>
-      ja: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}件の議会演説が主要な論点と各党の立場を明らかにしています。`,</span>
-      ko: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}건의 의회 연설이 주요 논점과 각 정당의 입장을 보여줍니다.`,</span>
-      zh: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}篇议会演讲揭示了主要论点和各党派立场。`,</span>
+<span class="fstat-no" title="function not covered" >      da: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} parlamentariske taler belyser nøgleargumenter og partipositioner.`,</span>
+<span class="fstat-no" title="function not covered" >      no: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} parlamentariske innlegg belyser nøkkelargumenter og partiposisjoner.`,</span>
+<span class="fstat-no" title="function not covered" >      fi: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} parlamentaarista puheenvuoroa valaisee keskeisiä argumentteja ja puolueiden kantoja.`,</span>
+<span class="fstat-no" title="function not covered" >      de: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} parlamentarische Reden beleuchten Hauptargumente und Parteipositionen.`,</span>
+<span class="fstat-no" title="function not covered" >      fr: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} discours parlementaires éclairent les arguments clés et les positions des partis.`,</span>
+<span class="fstat-no" title="function not covered" >      es: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} discursos parlamentarios iluminan los principales argumentos y posiciones de los partidos.`,</span>
+<span class="fstat-no" title="function not covered" >      nl: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} parlementaire toespraken belichten de belangrijkste argumenten en partijposities.`,</span>
+<span class="fstat-no" title="function not covered" >      ar: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} خطاب برلماني يسلط الضوء على الحجج الرئيسية ومواقف الأحزاب.`,</span>
+<span class="fstat-no" title="function not covered" >      he: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} נאומים פרלמנטריים מאירים טיעונים מרכזיים ועמדות מפלגות.`,</span>
+<span class="fstat-no" title="function not covered" >      ja: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}件の議会演説が主要な論点と各党の立場を明らかにしています。`,</span>
+<span class="fstat-no" title="function not covered" >      ko: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}건의 의회 연설이 주요 논점과 각 정당의 입장을 보여줍니다.`,</span>
+<span class="fstat-no" title="function not covered" >      zh: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}篇议会演讲揭示了主要论点和各党派立场。`,</span>
     };
     const debateHeader = debateSectionHeaders[lang as string] ?? 'Committee Debate';
     const debateCountFn = debateCountTemplates[lang as string];
@@ -858,19 +858,19 @@ export function generateCommitteeContent(data: ArticleContentData, lang: Languag
       ja: '政府法案との連携', ko: '정부 법안과의 연계', zh: '与政府法案的关联',
     };
     const billCountTemplates: Record&lt;string, (n: number) =&gt; string&gt; = {
-      sv: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} regeringspropositioner är kopplade till dessa betänkanden och visar lagstiftningskedjan.`,</span>
-      da: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} regeringsforslag er knyttet til disse betænkninger og viser den lovgivningsmæssige kæde.`,</span>
-      no: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} regjeringsproposisjoner er knyttet til disse innstillingene og viser den legislative kjeden.`,</span>
-      fi: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} hallituksen esitystä liittyy näihin mietintöihin ja osoittaa lainsäädäntöketjun.`,</span>
-      de: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} Regierungsvorlagen sind mit diesen Berichten verknüpft und zeigen die Gesetzgebungskette.`,</span>
-      fr: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} projets de loi gouvernementaux sont liés à ces rapports, montrant la chaîne législative.`,</span>
-      es: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} proyectos de ley gubernamentales están vinculados a estos informes, mostrando la cadena legislativa.`,</span>
-      nl: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} regeringsvoorstellen zijn gekoppeld aan deze rapporten en tonen de wetgevingsketen.`,</span>
-      ar: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} مشاريع قوانين حكومية مرتبطة بهذه التقارير، مما يُظهر السلسلة التشريعية.`,</span>
-      he: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} הצעות חוק ממשלתיות קשורות לדוחות אלה, ומציגות את השרשרת החקיקתית.`,</span>
-      ja: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}件の政府法案がこれらの報告書に関連しており、立法プロセスの連鎖を示しています。`,</span>
-      ko: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}건의 정부 법안이 이 보고서들과 연계되어 입법 과정의 연결고리를 보여줍니다.`,</span>
-      zh: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}项政府法案与这些报告相关，展示了立法链条。`,</span>
+<span class="fstat-no" title="function not covered" >      sv: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} regeringspropositioner är kopplade till dessa betänkanden och visar lagstiftningskedjan.`,</span>
+<span class="fstat-no" title="function not covered" >      da: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} regeringsforslag er knyttet til disse betænkninger og viser den lovgivningsmæssige kæde.`,</span>
+<span class="fstat-no" title="function not covered" >      no: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} regjeringsproposisjoner er knyttet til disse innstillingene og viser den legislative kjeden.`,</span>
+<span class="fstat-no" title="function not covered" >      fi: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} hallituksen esitystä liittyy näihin mietintöihin ja osoittaa lainsäädäntöketjun.`,</span>
+<span class="fstat-no" title="function not covered" >      de: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} Regierungsvorlagen sind mit diesen Berichten verknüpft und zeigen die Gesetzgebungskette.`,</span>
+<span class="fstat-no" title="function not covered" >      fr: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} projets de loi gouvernementaux sont liés à ces rapports, montrant la chaîne législative.`,</span>
+<span class="fstat-no" title="function not covered" >      es: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} proyectos de ley gubernamentales están vinculados a estos informes, mostrando la cadena legislativa.`,</span>
+<span class="fstat-no" title="function not covered" >      nl: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} regeringsvoorstellen zijn gekoppeld aan deze rapporten en tonen de wetgevingsketen.`,</span>
+<span class="fstat-no" title="function not covered" >      ar: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} مشاريع قوانين حكومية مرتبطة بهذه التقارير، مما يُظهر السلسلة التشريعية.`,</span>
+<span class="fstat-no" title="function not covered" >      he: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n} הצעות חוק ממשלתיות קשורות לדוחות אלה, ומציגות את השרשרת החקיקתית.`,</span>
+<span class="fstat-no" title="function not covered" >      ja: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}件の政府法案がこれらの報告書に関連しており、立法プロセスの連鎖を示しています。`,</span>
+<span class="fstat-no" title="function not covered" >      ko: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}건의 정부 법안이 이 보고서들과 연계되어 입법 과정의 연결고리를 보여줍니다.`,</span>
+<span class="fstat-no" title="function not covered" >      zh: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${n}项政府法案与这些报告相关，展示了立法链条。`,</span>
     };
     const billHeader = billSectionHeaders[lang as string] ?? 'Government Bill Linkage';
     const billCountFn = billCountTemplates[lang as string];
@@ -881,7 +881,7 @@ export function generateCommitteeContent(data: ArticleContentData, lang: Languag
     content += `    &lt;p&gt;${escapeHtml(billCountText)}&lt;/p&gt;\n`;
     propositions.slice(0, 3).forEach(prop =&gt; { // display up to 3 linked propositions
       <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof prop !== 'object' || prop === null) <span class="cstat-no" title="statement not covered" >return;</span>
-      const propTitle = escapeHtml((prop as RawDocument).titel || (prop as RawDocument).title || (<span class="branch-2 cbranch-no" title="branch not covered" >prop as RawDocument).dokumentnamn || <span class="branch-3 cbranch-no" title="branch not covered" >'</span>')</span>;
+      const propTitle = escapeHtml((prop as RawDocument).titel || (prop as RawDocument).title || (<span class="branch-2 cbranch-no" title="branch not covered" >prop as RawDocument).dokumentnamn || <span class="branch-3 cbranch-no" title="branch not covered" >'</span>');</span>
       <span class="missing-if-branch" title="else path not taken" >E</span>if (propTitle) {
         content += `    &lt;p&gt;→ ${propTitle}&lt;/p&gt;\n`;
       }
@@ -898,7 +898,7 @@ export function generateCommitteeContent(data: ArticleContentData, lang: Languag
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

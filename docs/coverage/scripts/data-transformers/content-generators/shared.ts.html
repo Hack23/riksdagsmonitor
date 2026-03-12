@@ -1650,18 +1650,18 @@ export function localizeDocType(code: string, lang: Language | string, count?: n
 /** Per-language title-suffix templates for inverted-pyramid lede construction. */
 export const TITLE_SUFFIX_TEMPLATES: Readonly&lt;Record&lt;string, (t: string) =&gt; string&gt;&gt; = {
   sv: t =&gt; ` — inklusive "${t}"`,
-  da: <span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >`</span> — herunder "${t}"`,</span>
-  no: <span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >`</span> — inkludert "${t}"`,</span>
-  fi: <span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >`</span> — mukaan lukien "${t}"`,</span>
+<span class="fstat-no" title="function not covered" >  da: t</span> =&gt; <span class="cstat-no" title="statement not covered" >` — herunder "${t}"`,</span>
+<span class="fstat-no" title="function not covered" >  no: t</span> =&gt; <span class="cstat-no" title="statement not covered" >` — inkludert "${t}"`,</span>
+<span class="fstat-no" title="function not covered" >  fi: t</span> =&gt; <span class="cstat-no" title="statement not covered" >` — mukaan lukien "${t}"`,</span>
   de: t =&gt; ` — darunter "${t}"`,
-  fr: <span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >`</span> — notamment "${t}"`,</span>
-  es: <span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >`</span> — incluyendo "${t}"`,</span>
-  nl: <span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >`</span> — inclusief "${t}"`,</span>
-  ar: <span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >`</span> — بما فيها "${t}"`,</span>
-  he: <span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >`</span> — כולל "${t}"`,</span>
-  ja: <span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >`</span>、「${t}」を含む`,</span>
-  ko: <span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >`</span>, "${t}" 포함`,</span>
-  zh: <span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >`</span>，包括"${t}"`,</span>
+<span class="fstat-no" title="function not covered" >  fr: t</span> =&gt; <span class="cstat-no" title="statement not covered" >` — notamment "${t}"`,</span>
+<span class="fstat-no" title="function not covered" >  es: t</span> =&gt; <span class="cstat-no" title="statement not covered" >` — incluyendo "${t}"`,</span>
+<span class="fstat-no" title="function not covered" >  nl: t</span> =&gt; <span class="cstat-no" title="statement not covered" >` — inclusief "${t}"`,</span>
+<span class="fstat-no" title="function not covered" >  ar: t</span> =&gt; <span class="cstat-no" title="statement not covered" >` — بما فيها "${t}"`,</span>
+<span class="fstat-no" title="function not covered" >  he: t</span> =&gt; <span class="cstat-no" title="statement not covered" >` — כולל "${t}"`,</span>
+<span class="fstat-no" title="function not covered" >  ja: t</span> =&gt; <span class="cstat-no" title="statement not covered" >`、「${t}」を含む`,</span>
+<span class="fstat-no" title="function not covered" >  ko: t</span> =&gt; <span class="cstat-no" title="statement not covered" >`, "${t}" 포함`,</span>
+<span class="fstat-no" title="function not covered" >  zh: t</span> =&gt; <span class="cstat-no" title="statement not covered" >`，包括"${t}"`,</span>
 };
 &nbsp;
 /** Extract meaningful keywords from text for cross-reference matching (min 2 chars, captures EU, KU, etc.; splits on whitespace, hyphens, and commas) */
@@ -1672,7 +1672,7 @@ function extractKeywords(text: string): string[] {
 /** Find documents related to a calendar event by organ match or keyword overlap (max 3) */
 export function findRelatedDocuments(event: RawCalendarEvent, documents: RawDocument[]): RawDocument[] {
   const eventOrgan = event.organ ?? <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
-  const keywords = extractKeywords(event.rubrik ?? event.titel ?? event.title ?? <span class="branch-3 cbranch-no" title="branch not covered" >'')</span>;
+  const keywords = extractKeywords(event.rubrik ?? event.titel ?? event.title ?? <span class="branch-3 cbranch-no" title="branch not covered" >'');</span>
   return documents.filter(doc =&gt; {
     const docOrgan = doc.organ ?? <span class="branch-1 cbranch-no" title="branch not covered" >doc.committee ?? <span class="branch-2 cbranch-no" title="branch not covered" >'</span>';</span>
     if (eventOrgan &amp;&amp; docOrgan &amp;&amp; eventOrgan.toLowerCase() === docOrgan.toLowerCase()) return true;
@@ -1683,10 +1683,10 @@ export function findRelatedDocuments(event: RawCalendarEvent, documents: RawDocu
 &nbsp;
 /** Find written questions related to a calendar event by keyword overlap (max 3) */
 export function findRelatedQuestions(event: RawCalendarEvent, questions: RawDocument[]): RawDocument[] {
-  const keywords = extractKeywords(event.rubrik ?? event.titel ?? event.title ?? <span class="branch-3 cbranch-no" title="branch not covered" >'')</span>;
-  return questions.filter(<span class="fstat-no" title="function not covered" >q =&gt; {</span>
+  const keywords = extractKeywords(event.rubrik ?? event.titel ?? event.title ?? <span class="branch-3 cbranch-no" title="branch not covered" >'');</span>
+  return questions.<span class="fstat-no" title="function not covered" >filter(q</span> =&gt; {
     const <span class="cstat-no" title="statement not covered" >qText = (q.titel ?? q.title ?? '').toLowerCase();</span>
-<span class="cstat-no" title="statement not covered" >    return keywords.some(<span class="fstat-no" title="function not covered" >kw =&gt; <span class="cstat-no" title="statement not covered" >q</span>Text.includes(kw))</span>;</span>
+<span class="cstat-no" title="statement not covered" >    return keywords.<span class="fstat-no" title="function not covered" >some(k</span>w =&gt; <span class="cstat-no" title="statement not covered" >qText.includes(kw))</span>;</span>
   }).slice(0, 3);
 }
 &nbsp;
@@ -1780,7 +1780,7 @@ function analyseWinnersLosers(
     const ratio = govDocs.length / Math.max(1, oppDocs.length);
     <span class="missing-if-branch" title="if path not taken" >I</span>if (ratio &gt; 2) {
 <span class="cstat-no" title="statement not covered" >      parts.push(govAdvantageText(lang, govDocs.length, oppDocs.length));</span>
-    <span class="missing-if-branch" title="if path not taken" >I</span>} else if (ratio &lt; 0.5) {
+    } else if (<span class="missing-if-branch" title="if path not taken" >I</span>ratio &lt; 0.5) {
 <span class="cstat-no" title="statement not covered" >      parts.push(oppPressureText(lang, oppDocs.length));</span>
     } else {
       parts.push(balancedText(lang));
@@ -2099,7 +2099,7 @@ function motImpactText(lang: Language | string, n: number): string {
 &nbsp;
 function thinMajorityImpactText(lang: Language | string, margin: number): string {
   const t: Record&lt;string, string&gt; = {
-    en: `The thin majority margin of ${margin} seat${margin !== 1 ? 's' : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span> means any defection could defeat government measures, amplifying the political stakes.`,
+    en: `The thin majority margin of ${margin} seat${margin !== 1 ? 's' : <span class="branch-1 cbranch-no" title="branch not covered" >''} </span>means any defection could defeat government measures, amplifying the political stakes.`,
     sv: `Den tunna majoritetsmarginal på ${margin} mandat innebär att varje avhopp kan fälla regeringens förslag.`,
   };
   return t[lang as string] ?? t.en;
@@ -2169,7 +2169,7 @@ function generateCriticalAssessment(docs: RawDocument[], lang: Language | string
   }
 &nbsp;
   // Check for lack of debate data (information gap)
-  const withSpeeches = docs.filter(d =&gt; d.speeches &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >d.speeches.length &gt; 0)</span>.length;
+  const withSpeeches = docs.filter(d =&gt; d.speeches &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >d.speeches.length &gt; 0).</span>length;
   if (withSpeeches === 0 &amp;&amp; docs.length &gt; 3) {
     parts.push(noDebateDataText(lang));
   }
@@ -2251,7 +2251,7 @@ function generatePerspectivesAnalysis(docs: RawDocument[], lang: Language | stri
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -831,7 +831,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
 &nbsp;
     highPriority.forEach(event =&gt; {
       // Derive dayName from event date if not present
-      const dayName = event.dayName || (event.datum || event.from || event.start ? formatDayName(new Date(event.datum || event.from || event.start || <span class="branch-3 cbranch-no" title="branch not covered" >'')</span>, lang) : '');
+      const dayName = event.dayName || (event.datum || event.from || event.start ? formatDayName(new Date(event.datum || event.from || event.start || <span class="branch-3 cbranch-no" title="branch not covered" >''),</span> lang) : '');
       const eventTime = event.time || event.tid || 'Expected';
       const eventTitle = event.title || event.titel || <span class="branch-2 cbranch-no" title="branch not covered" >'Event';</span>
 &nbsp;
@@ -873,12 +873,12 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
           const dokId = drec['dok_id'] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
           const docUrl = dokId ? sanitizeUrl(`https://riksdagen.se/sv/dokument-och-lagar/dokument/${encodeURIComponent(dokId)}/`) : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
           content += `      &lt;div class="document-entry"&gt;\n`;
-          content += `        &lt;h5&gt;${docUrl ? `&lt;a href="${docUrl}" target="_blank" rel="noopener noreferrer"&gt;` : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>${svSpan(escapeHtml(docTitle), lang)}${docUrl ? '&lt;/a&gt;' : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>&lt;/h5&gt;\n`;
+          content += `        &lt;h5&gt;${docUrl ? `&lt;a href="${docUrl}" target="_blank" rel="noopener noreferrer"&gt;` : <span class="branch-1 cbranch-no" title="branch not covered" >''}${s</span>vSpan(escapeHtml(docTitle), lang)}${docUrl ? '&lt;/a&gt;' : <span class="branch-1 cbranch-no" title="branch not covered" >''}&lt;</span>/h5&gt;\n`;
           const sig = generatePolicySignificance(doc, lang);
           <span class="missing-if-branch" title="else path not taken" >E</span>if (sig) content += `        &lt;p class="policy-significance"&gt;${escapeHtml(sig)}&lt;/p&gt;\n`;
           content += `      &lt;/div&gt;\n`;
         });
-        relatedPolicyQs.forEach(<span class="fstat-no" title="function not covered" >q =&gt; {</span>
+        relatedPolicyQs.<span class="fstat-no" title="function not covered" >forEach(q</span> =&gt; {
           const qrec = <span class="cstat-no" title="statement not covered" >q as Record&lt;string, string&gt;;</span>
           const qTitle = <span class="cstat-no" title="statement not covered" >qrec['titel'] ?? qrec['title'] ?? 'Question';</span>
           const qParty = <span class="cstat-no" title="statement not covered" >qrec['parti'] ? ` (${escapeHtml(qrec['parti'])})` : '';</span>
@@ -937,7 +937,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
       const safeUrl = dokId ? sanitizeUrl(`${urlBase}${encodeURIComponent(dokId)}/`) : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
 &nbsp;
       content += `\n    &lt;div class="document-entry"&gt;\n`;
-      content += `      &lt;h4&gt;${safeUrl ? `&lt;a href="${safeUrl}" target="_blank" rel="noopener noreferrer"&gt;` : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>${titleHtml}${safeUrl ? '&lt;/a&gt;' : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>&lt;/h4&gt;\n`;
+      content += `      &lt;h4&gt;${safeUrl ? `&lt;a href="${safeUrl}" target="_blank" rel="noopener noreferrer"&gt;` : <span class="branch-1 cbranch-no" title="branch not covered" >''}${t</span>itleHtml}${safeUrl ? '&lt;/a&gt;' : <span class="branch-1 cbranch-no" title="branch not covered" >''}&lt;</span>/h4&gt;\n`;
       const dateHtml = formatDocumentDate(doc as import('../types.js').RawDocument, lang);
       <span class="missing-if-branch" title="if path not taken" >I</span>if (dateHtml) <span class="cstat-no" title="statement not covered" >content += `      &lt;p&gt;${dateHtml}&lt;/p&gt;\n`;</span>
       <span class="missing-if-branch" title="else path not taken" >E</span>if (significance) {
@@ -971,7 +971,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
       const dok_id = rec['dok_id'] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
       const qUrl = dok_id ? sanitizeUrl(`https://riksdagen.se/sv/dokument-och-lagar/dokument/${encodeURIComponent(dok_id)}/`) : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
       content += `    &lt;div class="document-entry"&gt;\n`;
-      content += `      &lt;h4&gt;${qUrl ? `&lt;a href="${qUrl}" target="_blank" rel="noopener noreferrer"&gt;` : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>${svSpan(escapeHtml(titleText), lang)}${qUrl ? '&lt;/a&gt;' : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>&lt;/h4&gt;\n`;
+      content += `      &lt;h4&gt;${qUrl ? `&lt;a href="${qUrl}" target="_blank" rel="noopener noreferrer"&gt;` : <span class="branch-1 cbranch-no" title="branch not covered" >''}${s</span>vSpan(escapeHtml(titleText), lang)}${qUrl ? '&lt;/a&gt;' : <span class="branch-1 cbranch-no" title="branch not covered" >''}&lt;</span>/h4&gt;\n`;
       <span class="missing-if-branch" title="else path not taken" >E</span>if (party) content += `      &lt;p class="policy-significance"&gt;${party}&lt;/p&gt;\n`;
       content += `    &lt;/div&gt;\n`;
     });
@@ -1013,7 +1013,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
         .trim()
         .slice(0, 200);
       content += `    &lt;div class="document-entry"&gt;\n`;
-      content += `      &lt;h4&gt;${iUrl ? `&lt;a href="${iUrl}" target="_blank" rel="noopener noreferrer"&gt;` : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>${svSpan(escapeHtml(titleText), lang)}${iUrl ? '&lt;/a&gt;' : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>&lt;/h4&gt;\n`;
+      content += `      &lt;h4&gt;${iUrl ? `&lt;a href="${iUrl}" target="_blank" rel="noopener noreferrer"&gt;` : <span class="branch-1 cbranch-no" title="branch not covered" >''}${s</span>vSpan(escapeHtml(titleText), lang)}${iUrl ? '&lt;/a&gt;' : <span class="branch-1 cbranch-no" title="branch not covered" >''}&lt;</span>/h4&gt;\n`;
       <span class="missing-if-branch" title="else path not taken" >E</span>if (party) content += `      &lt;p class="policy-significance"&gt;${party}&lt;/p&gt;\n`;
       if (ministerName) content += `      &lt;p class="minister-target"&gt;→ ${svSpan(escapeHtml(ministerName), lang)}&lt;/p&gt;\n`;
       if (cleanedSummary) content += `      &lt;p&gt;${svSpan(escapeHtml(cleanedSummary) + '…', lang)}&lt;/p&gt;\n`;
@@ -1091,18 +1091,18 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
         const domainList = Array.from(weekDomains).slice(0, 4).join(', ');
         const domainSummaryTemplates: Record&lt;string, (d: string) =&gt; string&gt; = {
           sv: d =&gt; `Den lagstiftande dagordningen berör ${d} — ett brett politiskt fokus denna period.`,
-          da: <span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >`</span>Den lovgivningsmæssige dagsorden berører ${d} — et bredt politisk fokus i denne periode.`,</span>
-          no: <span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >`</span>Den lovgivningsmessige agendaen berører ${d} — et bredt politisk fokus denne perioden.`,</span>
-          fi: <span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >`</span>Lainsäädäntöohjelma kattaa ${d} — laaja poliittinen painopiste tällä kaudella.`,</span>
-          de: <span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >`</span>Die gesetzgeberische Tagesordnung berührt ${d} — ein breiter politischer Fokus in diesem Zeitraum.`,</span>
-          fr: <span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >`</span>L'agenda législatif touche ${d} — un large spectre politique cette période.`,</span>
-          es: <span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >`</span>La agenda legislativa toca ${d} — un amplio enfoque político en este período.`,</span>
-          nl: <span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >`</span>De wetgevende agenda raakt ${d} — een breed politiek focus in deze periode.`,</span>
+<span class="fstat-no" title="function not covered" >          da: d</span> =&gt; <span class="cstat-no" title="statement not covered" >`Den lovgivningsmæssige dagsorden berører ${d} — et bredt politisk fokus i denne periode.`,</span>
+<span class="fstat-no" title="function not covered" >          no: d</span> =&gt; <span class="cstat-no" title="statement not covered" >`Den lovgivningsmessige agendaen berører ${d} — et bredt politisk fokus denne perioden.`,</span>
+<span class="fstat-no" title="function not covered" >          fi: d</span> =&gt; <span class="cstat-no" title="statement not covered" >`Lainsäädäntöohjelma kattaa ${d} — laaja poliittinen painopiste tällä kaudella.`,</span>
+<span class="fstat-no" title="function not covered" >          de: d</span> =&gt; <span class="cstat-no" title="statement not covered" >`Die gesetzgeberische Tagesordnung berührt ${d} — ein breiter politischer Fokus in diesem Zeitraum.`,</span>
+<span class="fstat-no" title="function not covered" >          fr: d</span> =&gt; <span class="cstat-no" title="statement not covered" >`L'agenda législatif touche ${d} — un large spectre politique cette période.`,</span>
+<span class="fstat-no" title="function not covered" >          es: d</span> =&gt; <span class="cstat-no" title="statement not covered" >`La agenda legislativa toca ${d} — un amplio enfoque político en este período.`,</span>
+<span class="fstat-no" title="function not covered" >          nl: d</span> =&gt; <span class="cstat-no" title="statement not covered" >`De wetgevende agenda raakt ${d} — een breed politiek focus in deze periode.`,</span>
           ar: d =&gt; `يغطي جدول الأعمال التشريعي ${d} — تركيز سياسي واسع في هذه الفترة.`,
           he: d =&gt; `סדר היום החקיקתי נוגע ב${d} — מוקד פוליטי רחב בתקופה זו.`,
-          ja: <span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >`</span>立法アジェンダは${d}に及び、この期間の幅広い政策的焦点を示しています。`,</span>
-          ko: <span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >`</span>입법 안건은 ${d}에 걸쳐 있으며, 이 기간의 광범위한 정책 초점을 나타냅니다.`,</span>
-          zh: <span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >`</span>立法议程涉及${d}——显示本期广泛的政策关注。`,</span>
+<span class="fstat-no" title="function not covered" >          ja: d</span> =&gt; <span class="cstat-no" title="statement not covered" >`立法アジェンダは${d}に及び、この期間の幅広い政策的焦点を示しています。`,</span>
+<span class="fstat-no" title="function not covered" >          ko: d</span> =&gt; <span class="cstat-no" title="statement not covered" >`입법 안건은 ${d}에 걸쳐 있으며, 이 기간의 광범위한 정책 초점을 나타냅니다.`,</span>
+<span class="fstat-no" title="function not covered" >          zh: d</span> =&gt; <span class="cstat-no" title="statement not covered" >`立法议程涉及${d}——显示本期广泛的政策关注。`,</span>
         };
         const domTpl = domainSummaryTemplates[lang as string];
         const domainSummary = domTpl
@@ -1117,18 +1117,18 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
       const scrutinyCount = questions.length + interpellations.length;
       const scrutinyTemplates: Record&lt;string, (n: number) =&gt; string&gt; = {
         sv: n =&gt; `${n} parlamentariska granskningsåtgärder (frågor och interpellationer) signalerar aktiv oppositionsövervakning.`,
-        da: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} parlamentariske kontrolforanstaltninger signalerer aktiv oppositionsovervågning.`,</span>
-        no: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} parlamentariske kontrolltiltak signaliserer aktiv overvåking fra opposisjonen.`,</span>
-        fi: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} parlamentaarista valvontatoimenpidettä signaloi aktiivista oppositiovalvontaa.`,</span>
-        de: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} parlamentarische Kontrollmaßnahmen signalisieren aktive Oppositionsüberwachung.`,</span>
-        fr: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} mesures de contrôle parlementaire signalent une surveillance active de l'opposition.`,</span>
-        es: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} medidas de control parlamentario señalan una supervisión activa de la oposición.`,</span>
-        nl: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} parlementaire controlemaatregelen signaleren actief oppositietoezicht.`,</span>
-        ar: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} إجراءات رقابة برلمانية تشير إلى مراقبة نشطة من المعارضة.`,</span>
-        he: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n} אמצעי פיקוח פרלמנטריים מסמנים מעקב פעיל של האופוזיציה.`,</span>
-        ja: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n}件の議会監視措置は、野党による積極的な監視を示しています。`,</span>
-        ko: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n}건의 의회 감시 조치는 야당의 적극적인 감시를 나타냅니다.`,</span>
-        zh: <span class="fstat-no" title="function not covered" >n =&gt; <span class="cstat-no" title="statement not covered" >`</span>${n}项议会监督措施表明反对派正在积极监督。`,</span>
+<span class="fstat-no" title="function not covered" >        da: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} parlamentariske kontrolforanstaltninger signalerer aktiv oppositionsovervågning.`,</span>
+<span class="fstat-no" title="function not covered" >        no: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} parlamentariske kontrolltiltak signaliserer aktiv overvåking fra opposisjonen.`,</span>
+<span class="fstat-no" title="function not covered" >        fi: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} parlamentaarista valvontatoimenpidettä signaloi aktiivista oppositiovalvontaa.`,</span>
+<span class="fstat-no" title="function not covered" >        de: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} parlamentarische Kontrollmaßnahmen signalisieren aktive Oppositionsüberwachung.`,</span>
+<span class="fstat-no" title="function not covered" >        fr: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} mesures de contrôle parlementaire signalent une surveillance active de l'opposition.`,</span>
+<span class="fstat-no" title="function not covered" >        es: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} medidas de control parlamentario señalan una supervisión activa de la oposición.`,</span>
+<span class="fstat-no" title="function not covered" >        nl: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} parlementaire controlemaatregelen signaleren actief oppositietoezicht.`,</span>
+<span class="fstat-no" title="function not covered" >        ar: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} إجراءات رقابة برلمانية تشير إلى مراقبة نشطة من المعارضة.`,</span>
+<span class="fstat-no" title="function not covered" >        he: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n} אמצעי פיקוח פרלמנטריים מסמנים מעקב פעיל של האופוזיציה.`,</span>
+<span class="fstat-no" title="function not covered" >        ja: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n}件の議会監視措置は、野党による積極的な監視を示しています。`,</span>
+<span class="fstat-no" title="function not covered" >        ko: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n}건의 의회 감시 조치는 야당의 적극적인 감시를 나타냅니다.`,</span>
+<span class="fstat-no" title="function not covered" >        zh: n</span> =&gt; <span class="cstat-no" title="statement not covered" >`${n}项议会监督措施表明反对派正在积极监督。`,</span>
       };
       const scrTpl = scrutinyTemplates[lang as string];
       const scrutinySummary = scrTpl
@@ -1150,7 +1150,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:17.052Z
+                at 2026-03-12T22:50:12.565Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

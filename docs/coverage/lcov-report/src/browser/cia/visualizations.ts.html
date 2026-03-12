@@ -1203,11 +1203,11 @@ export class CIADashboardRenderer {
     }
 &nbsp;
     // Party Seats Chart
-    const seatsCtx = <span class="cstat-no" title="statement not covered" >document.getElementById('party-seats-chart') as HTMLCanvasElement | null;</span>
+    const seatsCtx = <span class="cstat-no" title="statement not covered" >document.getElementById('party-seats-chart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >    if (seatsCtx &amp;&amp; typeof Chart !== 'undefined') {</span>
       // Defensive check for nested party properties
-      const hasValidMetrics = <span class="cstat-no" title="statement not covered" >partyPerf.parties.every(</span>
-<span class="fstat-no" title="function not covered" >        p =&gt; <span class="cstat-no" title="statement not covered" >p</span> &amp;&amp; p.metrics &amp;&amp; typeof p.metrics.seats === 'number'</span>
+      const hasValidMetrics = <span class="cstat-no" title="statement not covered" >partyPerf.parties.<span class="fstat-no" title="function not covered" >every(</span></span>
+        p =&gt; <span class="cstat-no" title="statement not covered" >p &amp;&amp; p.metrics &amp;&amp; typeof p.metrics.seats === 'number'</span>
       );
 <span class="cstat-no" title="statement not covered" >      if (!hasValidMetrics) {</span>
 <span class="cstat-no" title="statement not covered" >        console.warn('Some parties have invalid or missing metrics data');</span>
@@ -1216,11 +1216,11 @@ export class CIADashboardRenderer {
 <span class="cstat-no" title="statement not covered" >      this.charts.seats = new Chart(seatsCtx, {</span>
         type: 'bar',
         data: {
-          labels: partyPerf.parties.map(<span class="fstat-no" title="function not covered" >p =&gt; <span class="cstat-no" title="statement not covered" >p</span>.shortName || 'Unknown')</span>,
+          labels: partyPerf.parties.<span class="fstat-no" title="function not covered" >map(p</span> =&gt; <span class="cstat-no" title="statement not covered" >p.shortName || 'Unknown'),</span>
           datasets: [
             {
               label: 'Current Seats',
-              data: partyPerf.parties.map(<span class="fstat-no" title="function not covered" >p =&gt;</span>
+              data: partyPerf.parties.<span class="fstat-no" title="function not covered" >map(p</span> =&gt;
 <span class="cstat-no" title="statement not covered" >                p &amp;&amp; p.metrics &amp;&amp; typeof p.metrics.seats === 'number' ? p.metrics.seats : 0</span>
               ),
               backgroundColor: [
@@ -1270,10 +1270,10 @@ export class CIADashboardRenderer {
     }
 &nbsp;
     // Party Cohesion Chart
-    const cohesionCtx = <span class="cstat-no" title="statement not covered" >document.getElementById('party-cohesion-chart') as HTMLCanvasElement | null;</span>
+    const cohesionCtx = <span class="cstat-no" title="statement not covered" >document.getElementById('party-cohesion-chart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >    if (cohesionCtx &amp;&amp; typeof Chart !== 'undefined') {</span>
-      const hasValidVoting = <span class="cstat-no" title="statement not covered" >partyPerf.parties.every(</span>
-<span class="fstat-no" title="function not covered" >        p =&gt;</span>
+      const hasValidVoting = <span class="cstat-no" title="statement not covered" >partyPerf.parties.<span class="fstat-no" title="function not covered" >every(</span></span>
+        p =&gt;
 <span class="cstat-no" title="statement not covered" >          p &amp;&amp;</span>
           p.voting &amp;&amp;
           typeof p.voting.cohesionScore === 'number' &amp;&amp;
@@ -1286,11 +1286,11 @@ export class CIADashboardRenderer {
 <span class="cstat-no" title="statement not covered" >      this.charts.cohesion = new Chart(cohesionCtx, {</span>
         type: 'line',
         data: {
-          labels: partyPerf.parties.map(<span class="fstat-no" title="function not covered" >p =&gt; <span class="cstat-no" title="statement not covered" >p</span>.shortName || 'Unknown')</span>,
+          labels: partyPerf.parties.<span class="fstat-no" title="function not covered" >map(p</span> =&gt; <span class="cstat-no" title="statement not covered" >p.shortName || 'Unknown'),</span>
           datasets: [
             {
               label: 'Voting Cohesion (%)',
-              data: partyPerf.parties.map(<span class="fstat-no" title="function not covered" >p =&gt;</span>
+              data: partyPerf.parties.<span class="fstat-no" title="function not covered" >map(p</span> =&gt;
 <span class="cstat-no" title="statement not covered" >                p &amp;&amp; p.voting &amp;&amp; typeof p.voting.cohesionScore === 'number'</span>
                   ? p.voting.cohesionScore
                   : 0
@@ -1304,7 +1304,7 @@ export class CIADashboardRenderer {
             },
             {
               label: 'Rebellion Rate (%)',
-              data: partyPerf.parties.map(<span class="fstat-no" title="function not covered" >p =&gt;</span>
+              data: partyPerf.parties.<span class="fstat-no" title="function not covered" >map(p</span> =&gt;
 <span class="cstat-no" title="statement not covered" >                p &amp;&amp; p.voting &amp;&amp; typeof p.voting.rebellionRate === 'number'</span>
                   ? p.voting.rebellionRate
                   : 0
@@ -1355,7 +1355,7 @@ export class CIADashboardRenderer {
 <span class="cstat-no" title="statement not covered" >    container.textContent = '';</span>
     const fragment = <span class="cstat-no" title="statement not covered" >document.createDocumentFragment();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    top10.rankings.forEach(<span class="fstat-no" title="function not covered" >(m</span>p: MPRanking) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    top10.rankings.<span class="fstat-no" title="function not covered" >forEach((m</span>p: MPRanking) =&gt; {</span>
       const item = <span class="cstat-no" title="statement not covered" >document.createElement('div');</span>
 <span class="cstat-no" title="statement not covered" >      item.className = 'ranking-item';</span>
 &nbsp;
@@ -1413,7 +1413,7 @@ export class CIADashboardRenderer {
   /** Render voting patterns heatmap. */
 <span class="fstat-no" title="function not covered" >  renderVotingPatterns(): void {</span>
     const { votingPatterns } = <span class="cstat-no" title="statement not covered" >this.data;</span>
-    const ctx = <span class="cstat-no" title="statement not covered" >document.getElementById('voting-heatmap') as HTMLCanvasElement | null;</span>
+    const ctx = <span class="cstat-no" title="statement not covered" >document.getElementById('voting-heatmap') </span>as HTMLCanvasElement | null;
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (!ctx || typeof Chart === 'undefined') <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
@@ -1434,7 +1434,7 @@ export class CIADashboardRenderer {
       type: 'bar',
       data: {
         labels: matrix.labels,
-        datasets: matrix.agreementMatrix.map(<span class="fstat-no" title="function not covered" >(r</span>ow: number[], i: number) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+        datasets: matrix.agreementMatrix.<span class="fstat-no" title="function not covered" >map((r</span>ow: number[], i: number) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
           label: matrix.partyNames[i],
           data: row,
           backgroundColor: `hsla(${i * 45}, 70%, 50%, 0.6)`,
@@ -1479,7 +1479,7 @@ export class CIADashboardRenderer {
 <span class="cstat-no" title="statement not covered" >    container.textContent = '';</span>
     const fragment = <span class="cstat-no" title="statement not covered" >document.createDocumentFragment();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    committees.committees.forEach(<span class="fstat-no" title="function not covered" >(c</span>ommittee: CommitteeEntry) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    committees.committees.<span class="fstat-no" title="function not covered" >forEach((c</span>ommittee: CommitteeEntry) =&gt; {</span>
       const card = <span class="cstat-no" title="statement not covered" >document.createElement('div');</span>
 <span class="cstat-no" title="statement not covered" >      card.className = 'committee-card';</span>
 &nbsp;
@@ -1490,7 +1490,7 @@ export class CIADashboardRenderer {
       const stats = <span class="cstat-no" title="statement not covered" >document.createElement('div');</span>
 <span class="cstat-no" title="statement not covered" >      stats.className = 'committee-stats';</span>
 &nbsp;
-      const createStat = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(l</span>abel: string, value: string | number): HTMLDivElement =&gt; {</span>
+      const <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >createStat = (l</span>abel: string, value: string | number): HTMLDivElement =&gt; {</span>
         const stat = <span class="cstat-no" title="statement not covered" >document.createElement('div');</span>
 <span class="cstat-no" title="statement not covered" >        stat.className = 'committee-stat';</span>
 &nbsp;
@@ -1531,7 +1531,7 @@ export class CIADashboardRenderer {
 <span class="cstat-no" title="statement not covered" >      issues.appendChild(issuesHeading);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      if (Array.isArray(committee.keyIssues)) {</span>
-<span class="cstat-no" title="statement not covered" >        committee.keyIssues.forEach(<span class="fstat-no" title="function not covered" >(i</span>ssue: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        committee.keyIssues.<span class="fstat-no" title="function not covered" >forEach((i</span>ssue: string) =&gt; {</span>
           const tag = <span class="cstat-no" title="statement not covered" >document.createElement('span');</span>
 <span class="cstat-no" title="statement not covered" >          tag.className = 'issue-tag';</span>
 <span class="cstat-no" title="statement not covered" >          tag.textContent = issue;</span>
@@ -1576,7 +1576,7 @@ export class CIADashboardRenderer {
 &nbsp;
   /** Destroy all charts (for cleanup). */
 <span class="fstat-no" title="function not covered" >  destroy(): void {</span>
-<span class="cstat-no" title="statement not covered" >    Object.values(this.charts).forEach(<span class="fstat-no" title="function not covered" >chart =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >    Object.values(this.charts).<span class="fstat-no" title="function not covered" >forEach(c</span>hart =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (chart &amp;&amp; typeof chart.destroy === 'function') {</span>
 <span class="cstat-no" title="statement not covered" >        chart.destroy();</span>
       }
@@ -1591,7 +1591,7 @@ export class CIADashboardRenderer {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:17.052Z
+                at 2026-03-12T22:50:12.565Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

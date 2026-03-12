@@ -3343,21 +3343,21 @@ export async function generateWeekAhead(): Promise&lt;GenerationResult&gt; {
 &nbsp;
     // 2. Fetch upcoming/recent documents
     const rawDocs = await client.searchDocuments({ from_date: dateRange.start, to_date: dateRange.end, limit: 30 })
-      .catch((e: unknown) =&gt; { <span class="missing-if-branch" title="else path not taken" >E</span>if (requireMcp) throw e; <span class="cstat-no" title="statement not covered" >return [] as unknown[]; }</span>);
+      .catch((e: unknown) =&gt; { <span class="missing-if-branch" title="else path not taken" >E</span>if (requireMcp) throw e; <span class="cstat-no" title="statement not covered" >return [] as unknown[]; });</span>
     const documents: RawDocument[] = Array.isArray(rawDocs) ? rawDocs as RawDocument[] : <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
     console.log(`  📊 Found ${documents.length} upcoming documents`);
 &nbsp;
     // 3. Fetch parliamentary questions (fragor)
     console.log('  🔄 Fetching parliamentary questions...');
     const rawQuestions = await client.fetchWrittenQuestions({ limit: 20 })
-      .catch(<span class="fstat-no" title="function not covered" >(e</span>: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >if (requireMcp) <span class="cstat-no" title="statement not covered" >throw e; <span class="cstat-no" title="statement not covered" >r</span></span>eturn [] as unknown[]; }</span>);
+      .<span class="fstat-no" title="function not covered" >catch((e</span>: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >if (requireMcp) <span class="cstat-no" title="statement not covered" >throw e; <span class="cstat-no" title="statement not covered" >r</span></span>eturn [] as unknown[]; });</span>
     const questions: unknown[] = Array.isArray(rawQuestions) ? rawQuestions : <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
     console.log(`  📊 Found ${questions.length} written questions`);
 &nbsp;
     // 4. Fetch interpellations (interpellationer)
     console.log('  🔄 Fetching interpellations...');
     const rawInterpellations = await client.fetchInterpellations({ limit: 15 })
-      .catch(<span class="fstat-no" title="function not covered" >(e</span>: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >if (requireMcp) <span class="cstat-no" title="statement not covered" >throw e; <span class="cstat-no" title="statement not covered" >r</span></span>eturn [] as unknown[]; }</span>);
+      .<span class="fstat-no" title="function not covered" >catch((e</span>: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >if (requireMcp) <span class="cstat-no" title="statement not covered" >throw e; <span class="cstat-no" title="statement not covered" >r</span></span>eturn [] as unknown[]; });</span>
     const interpellations: unknown[] = Array.isArray(rawInterpellations) ? rawInterpellations : <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
     console.log(`  📊 Found ${interpellations.length} interpellations`);
 &nbsp;
@@ -3982,7 +3982,7 @@ function <span class="fstat-no" title="function not covered" >generateDeepInspec
 <span class="cstat-no" title="statement not covered" >  html += `\n&lt;section class="document-intelligence-analysis" aria-label="${esc(docIntelHeading)}"&gt;\n`;</span>
 <span class="cstat-no" title="statement not covered" >  html += `  &lt;h2&gt;${esc(docIntelHeading)}&lt;/h2&gt;\n`;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  docs.forEach(<span class="fstat-no" title="function not covered" >(d</span>oc, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  docs.<span class="fstat-no" title="function not covered" >forEach((d</span>oc, idx) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    html += buildDocumentEntry(doc, topic, lang, idx + 1, docs.length);</span>
   });
 &nbsp;
@@ -4025,9 +4025,9 @@ function <span class="fstat-no" title="function not covered" >buildTopicContextP
   // include tangential policy areas that bleed into "other areas" beyond the stated focus.
   // The topic itself IS the scope; detected domains would only add noise.
 <span class="cstat-no" title="statement not covered" >  if (!topic) {</span>
-<span class="cstat-no" title="statement not covered" >    docs.forEach(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; d</span>etectPolicyDomains(d, lang).forEach(<span class="fstat-no" title="function not covered" >dom =&gt; <span class="cstat-no" title="statement not covered" >a</span>llDomains.add(dom))</span>)</span>;</span>
+<span class="cstat-no" title="statement not covered" >    docs.<span class="fstat-no" title="function not covered" >forEach(<span class="cstat-no" title="statement not covered" >d</span> =&gt; detectPolicyDomains(d, lang).<span class="fstat-no" title="function not covered" >forEach(d</span>om =&gt; <span class="cstat-no" title="statement not covered" >allDomains.add(dom))</span>)</span>;</span>
   }
-  const domainList = <span class="cstat-no" title="statement not covered" >[...allDomains].slice(0, 5).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >e</span>sc(d))</span>.join(', ');</span>
+  const domainList = <span class="cstat-no" title="statement not covered" >[...allDomains].slice(0, 5).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >esc(d))</span>.join(', ');</span>
 &nbsp;
   const templates: Partial&lt;Record&lt;Language, string&gt;&gt; = <span class="cstat-no" title="statement not covered" >{</span>
     en: `This deep-inspection analyses ${docCount} targeted parliamentary document${docCount !== 1 ? 's' : ''}${topic ? ` with an exclusive focus on &lt;strong&gt;${esc(topic)}&lt;/strong&gt;` : ''}. ${domainList ? `Policy domains covered: ${domainList}.` : ''} Each document has been individually reviewed for relevance, legislative significance, and strategic implications — all findings are evaluated through the lens of the stated focus.`,
@@ -4073,7 +4073,7 @@ function <span class="fstat-no" title="function not covered" >buildDocumentEntry
 <span class="cstat-no" title="statement not covered" >  if (doc.dok_id) <span class="cstat-no" title="statement not covered" >metaParts.push(`&lt;code&gt;${esc(doc.dok_id)}&lt;/code&gt;`);</span></span>
 <span class="cstat-no" title="statement not covered" >  if (date) <span class="cstat-no" title="statement not covered" >metaParts.push(`&lt;time datetime="${date}"&gt;${date}&lt;/time&gt;`);</span></span>
 <span class="cstat-no" title="statement not covered" >  if (organ) <span class="cstat-no" title="statement not covered" >metaParts.push(`&lt;span class="doc-organ"&gt;${esc(organ)}&lt;/span&gt;`);</span></span>
-<span class="cstat-no" title="statement not covered" >  if (domains.length &gt; 0 &amp;&amp; !topic) <span class="cstat-no" title="statement not covered" >metaParts.push(`&lt;em&gt;${domains.map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >e</span>sc(d))</span>.join(', ')}&lt;/em&gt;`);</span></span>
+<span class="cstat-no" title="statement not covered" >  if (domains.length &gt; 0 &amp;&amp; !topic) <span class="cstat-no" title="statement not covered" >metaParts.push(`&lt;em&gt;${domains.<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >esc(d))</span>.join(', ')}&lt;/em&gt;`);</span></span>
 <span class="cstat-no" title="statement not covered" >  if (metaParts.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >    entry += `    &lt;p class="doc-meta"&gt;${metaParts.join(' · ')}&lt;/p&gt;\n`;</span>
   }
@@ -4123,17 +4123,17 @@ function <span class="fstat-no" title="function not covered" >buildDocumentEntry
 /** Build strategic implications paragraph tied to the topic and document patterns. */
 function <span class="fstat-no" title="function not covered" >buildStrategicImplications(d</span>ocs: RawDocument[], topic: string | null, lang: Language): string {
   const esc = <span class="cstat-no" title="statement not covered" >escapeHtml;</span>
-  const propCount = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'prop')</span>.length;</span>
-  const betCount = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'bet')</span>.length;</span>
-  const motCount = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'mot')</span>.length;</span>
-  const pressmCount = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'pressm')</span>.length;</span>
-  const extCount = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'ext')</span>.length;</span>
-  const enrichedCount = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >d</span>.contentFetched)</span>.length;</span>
+  const propCount = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'prop').</span>length;</span>
+  const betCount = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'bet').</span>length;</span>
+  const motCount = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'mot').</span>length;</span>
+  const pressmCount = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'pressm').</span>length;</span>
+  const extCount = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'ext').</span>length;</span>
+  const enrichedCount = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(d</span> =&gt; <span class="cstat-no" title="statement not covered" >d.contentFetched).</span>length;</span>
   const legislativeCount = <span class="cstat-no" title="statement not covered" >propCount + betCount + motCount;</span>
 &nbsp;
   // Detect all policy domains across documents for richer context
   const allDomains = <span class="cstat-no" title="statement not covered" >new Set&lt;string&gt;();</span>
-<span class="cstat-no" title="statement not covered" >  docs.forEach(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; d</span>etectPolicyDomains(d, lang).forEach(<span class="fstat-no" title="function not covered" >dom =&gt; <span class="cstat-no" title="statement not covered" >a</span>llDomains.add(dom))</span>)</span>;</span>
+<span class="cstat-no" title="statement not covered" >  docs.<span class="fstat-no" title="function not covered" >forEach(<span class="cstat-no" title="statement not covered" >d</span> =&gt; detectPolicyDomains(d, lang).<span class="fstat-no" title="function not covered" >forEach(d</span>om =&gt; <span class="cstat-no" title="statement not covered" >allDomains.add(dom))</span>)</span>;</span>
   const domainPhrase = <span class="cstat-no" title="statement not covered" >allDomains.size &gt; 0 ? [...allDomains].slice(0, 3).join(', ') : '';</span>
 &nbsp;
   // Choose a template style based on document composition
@@ -4148,7 +4148,7 @@ function <span class="fstat-no" title="function not covered" >buildStrategicImpl
       ? 'Government press communications signal policy priorities and upcoming legislative action.'
       : 'These external references illuminate the policy landscape and highlight areas of potential legislative interest.';
 <span class="cstat-no" title="statement not covered" >    enText = `Based on analysis of ${docs.length} document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriched with full text)${topic ? ` specifically addressing &lt;strong&gt;${esc(topic)}&lt;/strong&gt;` : ''}: This deep inspection examines ${typeDesc}${domainPhrase ? ` spanning ${domainPhrase}` : ''}. ${signalText} Stakeholders should track whether formal propositions or committee referrals follow, which would confirm the transition from policy signalling to legislative commitment.`;</span>
-<span class="cstat-no" title="statement not covered" >  } else if (isLegislativeFocused) {</span>
+  } else if (<span class="cstat-no" title="statement not covered" >isLegislativeFocused) {</span>
     const signalText = <span class="cstat-no" title="statement not covered" >propCount &gt; betCount ? 'active government agenda-setting' : betCount &gt; propCount ? 'strong parliamentary scrutiny' : 'balanced legislative activity';</span>
 <span class="cstat-no" title="statement not covered" >    enText = `Based on analysis of ${docs.length} parliamentary document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriched with full text)${topic ? ` specifically addressing &lt;strong&gt;${esc(topic)}&lt;/strong&gt;` : ''}: The legislative pipeline shows ${propCount} government proposition${propCount !== 1 ? 's' : ''}, ${betCount} committee report${betCount !== 1 ? 's' : ''}, and ${motCount} opposition motion${motCount !== 1 ? 's' : ''}. This distribution signals ${signalText}${domainPhrase ? ` in ${domainPhrase}` : ' in this policy area'}. Stakeholders should monitor committee deliberations and chamber voting patterns as the most reliable indicators of policy trajectory.`;</span>
   } else {
@@ -4163,7 +4163,7 @@ function <span class="fstat-no" title="function not covered" >buildStrategicImpl
       ? 'Regeringens presskommunikation signalerar politiska prioriteringar och kommande lagstiftningsåtgärder.'
       : 'Dessa externa referenser belyser det politiska landskapet och lyfter fram områden med potentiellt lagstiftningsintresse.';
 <span class="cstat-no" title="statement not covered" >    svText = `Baserat på analys av ${docs.length} dokument (${enrichedPhraseSv})${topic ? ` med specifik inriktning på &lt;strong&gt;${esc(topic)}&lt;/strong&gt;` : ''}: Denna djupanalys granskar ${typeDescSv}${domainPhrase ? ` inom ${domainPhrase}` : ''}. ${signalTextSv} Intressenter bör bevaka om formella propositioner eller utskottsremisser följer.`;</span>
-<span class="cstat-no" title="statement not covered" >  } else if (isLegislativeFocused &amp;&amp; legislativeCount &gt; 0) {</span>
+  } else if (<span class="cstat-no" title="statement not covered" >isLegislativeFocused &amp;&amp; legislativeCount &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >    svText = `Baserat på analys av ${docs.length} riksdagsdokument (${enrichedPhraseSv})${topic ? ` med specifik inriktning på &lt;strong&gt;${esc(topic)}&lt;/strong&gt;` : ''}: Det lagstiftande flödet visar ${propCount} proposition${propCount !== 1 ? 'er' : ''}, ${betCount} betänkande${betCount !== 1 ? 'n' : ''} och ${motCount} motion${motCount !== 1 ? 'er' : ''}. Intressenter bör följa utskottens överläggningar och kammarens voteringsmönster.`;</span>
   } else {
 <span class="cstat-no" title="statement not covered" >    svText = `Baserat på analys av ${docs.length} dokument (${enrichedPhraseSv})${topic ? ` med specifik inriktning på &lt;strong&gt;${esc(topic)}&lt;/strong&gt;` : ''}${domainPhrase ? ` inom ${domainPhrase}` : ''}: Analysen ger en ögonblicksbild av den aktuella politiska inriktningen och dess betydelse för centrala intressenter.`;</span>
@@ -4186,17 +4186,17 @@ function <span class="fstat-no" title="function not covered" >buildKeyTakeaways(
   const items: string[] = <span class="cstat-no" title="statement not covered" >[];</span>
 &nbsp;
   // Derive takeaways from document patterns
-  const propDocs = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'prop')</span>;</span>
-  const betDocs  = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'bet')</span>;</span>
-  const motDocs  = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'mot')</span>;</span>
-  const euDocs   = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'fpm')</span>;</span>
-  const sfsDocs  = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'sfs')</span>;</span>
-  const pressmDocs = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'pressm')</span>;</span>
+  const propDocs = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'prop');</span></span>
+  const betDocs  = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'bet');</span></span>
+  const motDocs  = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'mot');</span></span>
+  const euDocs   = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'fpm');</span></span>
+  const sfsDocs  = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'sfs');</span></span>
+  const pressmDocs = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'pressm');</span></span>
 &nbsp;
   const topicPhrase = <span class="cstat-no" title="statement not covered" >topic ? ` (${esc(topic)})` : '';</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (propDocs.length &gt; 0) {</span>
-    const titles = <span class="cstat-no" title="statement not covered" >propDocs.slice(0, 2).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >e</span>sc(d.titel || d.title || d.dok_id || ''))</span>.join('; ');</span>
+    const titles = <span class="cstat-no" title="statement not covered" >propDocs.slice(0, 2).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >esc(d.titel || d.title || d.dok_id || ''))</span>.join('; ');</span>
 <span class="cstat-no" title="statement not covered" >    items.push(lang === 'sv'</span>
       ? `&lt;strong&gt;${propDocs.length} proposition${propDocs.length !== 1 ? 'er' : ''}&lt;/strong&gt;${topicPhrase} aktiv lagstiftning: ${titles}`
       : `&lt;strong&gt;${propDocs.length} government proposition${propDocs.length !== 1 ? 's' : ''}&lt;/strong&gt;${topicPhrase} in active legislation: ${titles}`);
@@ -4231,15 +4231,15 @@ function <span class="fstat-no" title="function not covered" >buildKeyTakeaways(
 &nbsp;
   // Content-derived insight: detected policy domains
   const allDomains = <span class="cstat-no" title="statement not covered" >new Set&lt;string&gt;();</span>
-<span class="cstat-no" title="statement not covered" >  docs.forEach(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; d</span>etectPolicyDomains(d, lang).forEach(<span class="fstat-no" title="function not covered" >dom =&gt; <span class="cstat-no" title="statement not covered" >a</span>llDomains.add(dom))</span>)</span>;</span>
+<span class="cstat-no" title="statement not covered" >  docs.<span class="fstat-no" title="function not covered" >forEach(<span class="cstat-no" title="statement not covered" >d</span> =&gt; detectPolicyDomains(d, lang).<span class="fstat-no" title="function not covered" >forEach(d</span>om =&gt; <span class="cstat-no" title="statement not covered" >allDomains.add(dom))</span>)</span>;</span>
 <span class="cstat-no" title="statement not covered" >  if (allDomains.size &gt; 0) {</span>
-    const domainList = <span class="cstat-no" title="statement not covered" >[...allDomains].slice(0, 4).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >e</span>sc(d))</span>.join(', ');</span>
+    const domainList = <span class="cstat-no" title="statement not covered" >[...allDomains].slice(0, 4).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >esc(d))</span>.join(', ');</span>
 <span class="cstat-no" title="statement not covered" >    items.push(lang === 'sv'</span>
       ? `&lt;strong&gt;Identifierade policyområden:&lt;/strong&gt; ${domainList}`
       : `&lt;strong&gt;Policy domains identified:&lt;/strong&gt; ${domainList}`);
   }
 &nbsp;
-  const enriched = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >d</span>.contentFetched)</span>.length;</span>
+  const enriched = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(d</span> =&gt; <span class="cstat-no" title="statement not covered" >d.contentFetched).</span>length;</span>
 <span class="cstat-no" title="statement not covered" >  if (enriched &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >    items.push(lang === 'sv'</span>
       ? `&lt;strong&gt;${enriched} av ${docs.length} dokument&lt;/strong&gt; ${enriched === 1 ? 'berikat' : 'berikade'} med fulltext för djupanalys`
@@ -4252,7 +4252,7 @@ function <span class="fstat-no" title="function not covered" >buildKeyTakeaways(
       : `Deep analysis conducted on ${docs.length} document${docs.length !== 1 ? 's' : ''}${topicPhrase}`);
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return `&lt;ul class="key-takeaways-list"&gt;\n${items.map(<span class="fstat-no" title="function not covered" >i =&gt; <span class="cstat-no" title="statement not covered" >`</span>  &lt;li&gt;${i}&lt;/li&gt;`)</span>.join('\n')}\n&lt;/ul&gt;\n`;</span>
+<span class="cstat-no" title="statement not covered" >  return `&lt;ul class="key-takeaways-list"&gt;\n${items.<span class="fstat-no" title="function not covered" >map(i</span> =&gt; <span class="cstat-no" title="statement not covered" >`  &lt;li&gt;${i}&lt;/li&gt;`).</span>join('\n')}\n&lt;/ul&gt;\n`;</span>
 }
 &nbsp;
 // ---------------------------------------------------------------------------
@@ -4299,41 +4299,41 @@ function <span class="fstat-no" title="function not covered" >buildDeepInspectio
 ): TemplateSection[] {
 <span class="cstat-no" title="statement not covered" >  if (docs.length === 0) <span class="cstat-no" title="statement not covered" >return [];</span></span>
 &nbsp;
-  const titleOf = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(<span class="cstat-no" title="statement not covered" >d</span>: RawDocument): string =&gt;</span></span>
+  const <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >titleOf = (<span class="cstat-no" title="statement not covered" >d</span>: RawDocument): string =&gt;</span></span>
     (d.titel || d.title || d.dokumentnamn || d.dok_id || '').slice(0, 80);
-  const toEntry = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(d</span>: RawDocument, impact: 'high' | 'medium' | 'low' = <span class="branch-0 cbranch-no" title="branch not covered" >'medium'): SwotEntry =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span></span>
+  const <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >toEntry = (d</span>: RawDocument, impact: 'high' | 'medium' | 'low' = <span class="branch-0 cbranch-no" title="branch not covered" >'medium'): SwotEntry =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span></span>
     text: titleOf(d), impact,
   });
 &nbsp;
   // Classify by document type
-  const propDocs = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'prop')</span>;</span>
-  const betDocs  = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'bet')</span>;</span>
-  const motDocs  = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'mot')</span>;</span>
-  const skrDocs  = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'skr')</span>;</span>
-  const sfsDocs  = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt;</span></span></span>
+  const propDocs = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'prop');</span></span>
+  const betDocs  = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'bet');</span></span>
+  const motDocs  = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'mot');</span></span>
+  const skrDocs  = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'skr');</span></span>
+  const sfsDocs  = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt;</span></span>
     (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
-  const euDocs   = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'fpm')</span>;</span>
-  const pressmDocs = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'pressm')</span>;</span>
-  const extDocs  = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; (d</span>.doktyp || d.documentType) === 'ext')</span>;</span>
-  const otherDocs = <span class="cstat-no" title="statement not covered" >docs.filter(<span class="fstat-no" title="function not covered" >d =&gt;</span></span>
+  const euDocs   = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'fpm');</span></span>
+  const pressmDocs = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'pressm');</span></span>
+  const extDocs  = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >d</span> =&gt; (d.doktyp || d.documentType) === 'ext');</span></span>
+  const otherDocs = <span class="cstat-no" title="statement not covered" >docs.<span class="fstat-no" title="function not covered" >filter(d</span> =&gt;</span>
 <span class="cstat-no" title="statement not covered" >    !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || ''))</span>;
 &nbsp;
   // ── Government / Policy Administration ────────────────────────────────────
   const govStrengths: SwotEntry[] = <span class="cstat-no" title="statement not covered" >[</span>
-    ...propDocs.slice(0, 3).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >t</span>oEntry(d, 'high'))</span>,
-    ...sfsDocs.slice(0, 2).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >t</span>oEntry(d, 'high'))</span>,
-    ...skrDocs.slice(0, 1).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >t</span>oEntry(d, 'medium'))</span>,
-    ...pressmDocs.slice(0, 2).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >t</span>oEntry(d, 'high'))</span>,
+    ...propDocs.slice(0, 3).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >toEntry(d, 'high'))</span>,
+    ...sfsDocs.slice(0, 2).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >toEntry(d, 'high'))</span>,
+    ...skrDocs.slice(0, 1).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >toEntry(d, 'medium'))</span>,
+    ...pressmDocs.slice(0, 2).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >toEntry(d, 'high'))</span>,
   ];
   const govWeaknesses: SwotEntry[] = <span class="cstat-no" title="statement not covered" >[</span>
-    ...betDocs.slice(0, 2).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >t</span>oEntry(d, 'medium'))</span>,
+    ...betDocs.slice(0, 2).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >toEntry(d, 'medium'))</span>,
   ];
   const govOpportunities: SwotEntry[] = <span class="cstat-no" title="statement not covered" >[</span>
-    ...euDocs.slice(0, 2).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >t</span>oEntry(d, 'high'))</span>,
-    ...skrDocs.slice(1, 2).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >t</span>oEntry(d, 'medium'))</span>,
+    ...euDocs.slice(0, 2).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >toEntry(d, 'high'))</span>,
+    ...skrDocs.slice(1, 2).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >toEntry(d, 'medium'))</span>,
   ];
   const govThreats: SwotEntry[] = <span class="cstat-no" title="statement not covered" >[</span>
-    ...motDocs.slice(0, 2).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >t</span>oEntry(d, 'medium'))</span>,
+    ...motDocs.slice(0, 2).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >toEntry(d, 'medium'))</span>,
   ];
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (govStrengths.length === 0) <span class="cstat-no" title="statement not covered" >govStrengths.push({ text: swotDefault('govStrength', topic, lang), impact: 'medium' });</span></span>
@@ -4343,13 +4343,13 @@ function <span class="fstat-no" title="function not covered" >buildDeepInspectio
 &nbsp;
   // ── Parliament / Opposition ────────────────────────────────────────────────
   const oppStrengths: SwotEntry[] = <span class="cstat-no" title="statement not covered" >[</span>
-    ...betDocs.slice(0, 3).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >t</span>oEntry(d, 'high'))</span>,
-    ...motDocs.slice(0, 2).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >t</span>oEntry(d, 'medium'))</span>,
+    ...betDocs.slice(0, 3).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >toEntry(d, 'high'))</span>,
+    ...motDocs.slice(0, 2).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >toEntry(d, 'medium'))</span>,
   ];
   const oppWeaknesses: SwotEntry[] = <span class="cstat-no" title="statement not covered" >[];</span>
   const oppOpportunities: SwotEntry[] = <span class="cstat-no" title="statement not covered" >[];</span>
   const oppThreats: SwotEntry[] = <span class="cstat-no" title="statement not covered" >[</span>
-    ...propDocs.slice(0, 1).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >t</span>oEntry(d, 'medium'))</span>,
+    ...propDocs.slice(0, 1).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >toEntry(d, 'medium'))</span>,
   ];
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (oppStrengths.length === 0) <span class="cstat-no" title="statement not covered" >oppStrengths.push({ text: swotDefault('oppStrength', topic, lang), impact: 'high' });</span></span>
@@ -4360,8 +4360,8 @@ function <span class="fstat-no" title="function not covered" >buildDeepInspectio
   // ── Private Sector / Civil Society ────────────────────────────────────────
   const privateStrengths: SwotEntry[] = <span class="cstat-no" title="statement not covered" >[</span>
     { text: swotDefault('privateStrength', topic, lang), impact: 'high' },
-    ...sfsDocs.slice(0, 1).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >t</span>oEntry(d, 'medium'))</span>,
-    ...extDocs.slice(0, 2).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >t</span>oEntry(d, 'high'))</span>,
+    ...sfsDocs.slice(0, 1).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >toEntry(d, 'medium'))</span>,
+    ...extDocs.slice(0, 2).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >toEntry(d, 'high'))</span>,
   ];
   const privateWeaknesses: SwotEntry[] = <span class="cstat-no" title="statement not covered" >[</span>
     { text: swotDefault('privateWeakness1', topic, lang), impact: 'medium' },
@@ -4369,7 +4369,7 @@ function <span class="fstat-no" title="function not covered" >buildDeepInspectio
   ];
   const privateOpportunities: SwotEntry[] = <span class="cstat-no" title="statement not covered" >[</span>
     { text: swotDefault('privateOpportunity', topic, lang), impact: 'high' },
-    ...euDocs.slice(0, 1).map(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >t</span>oEntry(d, 'high'))</span>,
+    ...euDocs.slice(0, 1).<span class="fstat-no" title="function not covered" >map(d</span> =&gt; <span class="cstat-no" title="statement not covered" >toEntry(d, 'high'))</span>,
   ];
   const privateThreats: SwotEntry[] = <span class="cstat-no" title="statement not covered" >[</span>
     { text: swotDefault('privateThreat1', topic, lang), impact: 'high' },
@@ -4447,14 +4447,14 @@ function <span class="fstat-no" title="function not covered" >buildDeepInspectio
 &nbsp;
   // ── Dashboard: document type distribution ─────────────────────────────────
   const typeCounts: Record&lt;string, number&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >  docs.forEach(<span class="fstat-no" title="function not covered" >d =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >  docs.<span class="fstat-no" title="function not covered" >forEach(d</span> =&gt; {</span>
     const t = <span class="cstat-no" title="statement not covered" >d.doktyp || d.documentType || 'other';</span>
 <span class="cstat-no" title="statement not covered" >    typeCounts[t] = (typeCounts[t] || 0) + 1;</span>
   });
   const rawTypeKeys = <span class="cstat-no" title="statement not covered" >Object.keys(typeCounts);</span>
   // Use localized display names for chart labels (e.g., "Press Release" not "pressm")
-  const chartLabels = <span class="cstat-no" title="statement not covered" >rawTypeKeys.map(<span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >d</span>ocTypeLabel(t, lang, typeCounts[t]))</span>;</span>
-  const chartValues = <span class="cstat-no" title="statement not covered" >rawTypeKeys.map(<span class="fstat-no" title="function not covered" >t =&gt; <span class="cstat-no" title="statement not covered" >t</span>ypeCounts[t])</span>;</span>
+  const chartLabels = <span class="cstat-no" title="statement not covered" >rawTypeKeys.<span class="fstat-no" title="function not covered" >map(t</span> =&gt; <span class="cstat-no" title="statement not covered" >docTypeLabel(t, lang, typeCounts[t]))</span>;</span>
+  const chartValues = <span class="cstat-no" title="statement not covered" >rawTypeKeys.<span class="fstat-no" title="function not covered" >map(t</span> =&gt; <span class="cstat-no" title="statement not covered" >typeCounts[t]);</span></span>
 &nbsp;
   const <span class="cstat-no" title="statement not covered" >dashboardSection = generateDashboardSection({</span>
     data: {
@@ -4470,7 +4470,7 @@ function <span class="fstat-no" title="function not covered" >buildDeepInspectio
         datasets: [{
           label: deepLabel('documents', lang),
           data: chartValues,
-          backgroundColor: rawTypeKeys.map(<span class="fstat-no" title="function not covered" >(_</span>, i) =&gt; <span class="cstat-no" title="statement not covered" >DEEP_CHART_PALETTE[i % DEEP_CHART_PALETTE.length])</span>,
+          backgroundColor: rawTypeKeys.<span class="fstat-no" title="function not covered" >map((_</span>, i) =&gt; <span class="cstat-no" title="statement not covered" >DEEP_CHART_PALETTE[i % DEEP_CHART_PALETTE.length]),</span>
         }],
       }],
     },
@@ -4479,7 +4479,7 @@ function <span class="fstat-no" title="function not covered" >buildDeepInspectio
 &nbsp;
   // ── Mindmap: topic → detected policy domains → document types ────────────
   const allDetectedDomains = <span class="cstat-no" title="statement not covered" >new Set&lt;string&gt;();</span>
-<span class="cstat-no" title="statement not covered" >  docs.forEach(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >d =&gt; d</span>etectPolicyDomains(d, lang).forEach(<span class="fstat-no" title="function not covered" >dom =&gt; <span class="cstat-no" title="statement not covered" >a</span>llDetectedDomains.add(dom))</span>)</span>;</span>
+<span class="cstat-no" title="statement not covered" >  docs.<span class="fstat-no" title="function not covered" >forEach(<span class="cstat-no" title="statement not covered" >d</span> =&gt; detectPolicyDomains(d, lang).<span class="fstat-no" title="function not covered" >forEach(d</span>om =&gt; <span class="cstat-no" title="statement not covered" >allDetectedDomains.add(dom))</span>)</span>;</span>
   const detectedDomainList = <span class="cstat-no" title="statement not covered" >[...allDetectedDomains].slice(0, 8);</span>
 &nbsp;
   const mindmapBranches: MindmapBranch[] = <span class="cstat-no" title="statement not covered" >[];</span>
@@ -4490,7 +4490,7 @@ function <span class="fstat-no" title="function not covered" >buildDeepInspectio
       label: deepLabel('documentTypes', lang),
       color: 'cyan',
       icon: '📄',
-      items: rawTypeKeys.map(<span class="fstat-no" title="function not covered" >(t</span>, i) =&gt; <span class="cstat-no" title="statement not covered" >`${docTypeLabel(t, lang, chartValues[i])} (${chartValues[i] ?? 0})`)</span>,
+      items: rawTypeKeys.<span class="fstat-no" title="function not covered" >map((t</span>, i) =&gt; <span class="cstat-no" title="statement not covered" >`${docTypeLabel(t, lang, chartValues[i])} (${chartValues[i] ?? 0})`),</span>
     });
   }
 &nbsp;
@@ -4630,10 +4630,10 @@ export async function <span class="fstat-no" title="function not covered" >gener
 <span class="cstat-no" title="statement not covered" >      if (docId) {</span>
 <span class="cstat-no" title="statement not covered" >        console.log(`  🔗 Resolved URL → dok_id: ${docId}`);</span>
 <span class="cstat-no" title="statement not covered" >        urlDerivedIds.push(docId);</span>
-<span class="cstat-no" title="statement not covered" >      } else if (isGovernmentUrl(url)) {</span>
+      } else if (<span class="cstat-no" title="statement not covered" >isGovernmentUrl(url)) {</span>
 <span class="cstat-no" title="statement not covered" >        console.log(`  🏛️ Government URL detected (will fetch via g0v): ${url}`);</span>
 <span class="cstat-no" title="statement not covered" >        governmentUrls.push(url);</span>
-<span class="cstat-no" title="statement not covered" >      } else if (isGitHubUrl(url)) {</span>
+      } else if (<span class="cstat-no" title="statement not covered" >isGitHubUrl(url)) {</span>
 <span class="cstat-no" title="statement not covered" >        console.log(`  📦 GitHub URL detected (will fetch raw content): ${url}`);</span>
 <span class="cstat-no" title="statement not covered" >        gitHubUrls.push(url);</span>
       } else {
@@ -4751,7 +4751,7 @@ export async function <span class="fstat-no" title="function not covered" >gener
 <span class="cstat-no" title="statement not covered" >    if (targetDocs.length === 0 &amp;&amp; focusTopic) {</span>
 <span class="cstat-no" title="statement not covered" >      console.log(`  🔄 Searching documents for topic: ${focusTopic}`);</span>
       const rawDocs = <span class="cstat-no" title="statement not covered" >await client.searchDocuments({ titel: focusTopic, limit: 10 })</span>
-        .catch(<span class="fstat-no" title="function not covered" >(e</span>: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >if (requireMcp) <span class="cstat-no" title="statement not covered" >throw e; <span class="cstat-no" title="statement not covered" >r</span></span>eturn [] as RawDocument[]; }</span>);
+        .<span class="fstat-no" title="function not covered" >catch((e</span>: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >if (requireMcp) <span class="cstat-no" title="statement not covered" >throw e; <span class="cstat-no" title="statement not covered" >r</span></span>eturn [] as RawDocument[]; });</span>
 <span class="cstat-no" title="statement not covered" >      targetDocs.push(...(Array.isArray(rawDocs) ? rawDocs as RawDocument[] : []));</span>
     }
 &nbsp;
@@ -4768,12 +4768,12 @@ export async function <span class="fstat-no" title="function not covered" >gener
       targetDocs as Parameters&lt;MCPClient['enrichDocumentsWithContent']&gt;[0], 3
     );
     const enrichedDocs = <span class="cstat-no" title="statement not covered" >enriched as RawDocument[];</span>
-    const enrichedCount: number = (<span class="cstat-no" title="statement not covered" >enrichedDocs as Array&lt;Record&lt;string, unknown&gt;&gt;).filter(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >d</span>['contentFetched'])</span>.length;</span>
+    const enrichedCount: number = (<span class="cstat-no" title="statement not covered" >enrichedDocs as Array&lt;Record&lt;string, unknown&gt;&gt;).<span class="fstat-no" title="function not covered" >filter(d</span> =&gt; <span class="cstat-no" title="statement not covered" >d['contentFetched']).</span>length;</span>
 <span class="cstat-no" title="statement not covered" >    console.log(`  ✅ Enriched ${enrichedCount}/${enrichedDocs.length} documents with content`);</span>
 &nbsp;
     const today: Date = <span class="cstat-no" title="statement not covered" >new Date();</span>
 &nbsp;
-    const sanitizeSlugSegment = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(v</span>alue: string): string =&gt;</span>
+    const <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >sanitizeSlugSegment = (v</span>alue: string): string =&gt;</span>
 <span class="cstat-no" title="statement not covered" >      value</span>
         .toLowerCase()
         .replace(/[^a-z0-9\s-]/g, '')
@@ -4888,7 +4888,7 @@ export async function <span class="fstat-no" title="function not covered" >gener
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:17.052Z
+                at 2026-03-12T22:50:12.565Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

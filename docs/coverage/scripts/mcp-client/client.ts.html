@@ -1023,8 +1023,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1535,7 +1535,7 @@ export class MCPClient {
     }
 &nbsp;
     const controller = new AbortController();
-    const timeoutId = setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >c</span>ontroller.abort(), t</span>his.timeout);
+    const timeoutId = <span class="fstat-no" title="function not covered" >setTimeout(() =&gt; <span class="cstat-no" title="statement not covered" >c</span>ontroller.abort(),</span> this.timeout);
 &nbsp;
     try {
       const isGateway =
@@ -1605,7 +1605,7 @@ export class MCPClient {
         const isToolLookupError =
           errorMsg.includes('not found') ||
           errorMsg.includes('Internal error') ||
-<span class="branch-2 cbranch-no" title="branch not covered" >          errorMsg.includes('Unknown tool') ||</span>
+<span class="branch-2 cbranch-no" title="branch not covered" >          errorMsg.includes('Unknown tool') </span>||
 <span class="branch-3 cbranch-no" title="branch not covered" >          errorMsg.includes('unknown tool');</span>
 &nbsp;
         if (isToolLookupError &amp;&amp; toolName.startsWith('riksdag-regering--') &amp;&amp; !skipPrefix) {
@@ -1619,7 +1619,7 @@ export class MCPClient {
 <span class="cstat-no" title="statement not covered" >          if (retryCount &lt; 2) {</span>
             const <span class="cstat-no" title="statement not covered" >delay = (retryCount + 1) * 2000;</span>
 <span class="cstat-no" title="statement not covered" >            console.warn(`⚠️ Session error, re-initializing after ${delay}ms...`);</span>
-<span class="cstat-no" title="statement not covered" >            await new Promise&lt;void&gt;(<span class="fstat-no" title="function not covered" >(r</span>) =&gt; <span class="cstat-no" title="statement not covered" >setTimeout(r, delay))</span>;</span>
+<span class="cstat-no" title="statement not covered" >            await new <span class="fstat-no" title="function not covered" >Promise&lt;void&gt;((r</span>) =&gt; <span class="cstat-no" title="statement not covered" >setTimeout(r, delay))</span>;</span>
 <span class="cstat-no" title="statement not covered" >            await this.initializeSession();</span>
 <span class="cstat-no" title="statement not covered" >            return this.request(tool, params, retryCount + 1, skipPrefix);</span>
           }
@@ -1628,11 +1628,11 @@ export class MCPClient {
         throw new Error(`MCP tool error: ${errorMsg}`);
       }
 &nbsp;
-      const result = (jsonRpcResponse.result ?? <span class="branch-1 cbranch-no" title="branch not covered" >{}) as Record&lt;string, unknown&gt;;</span>
+      const result = (jsonRpcResponse.result ?? <span class="branch-1 cbranch-no" title="branch not covered" >{})</span> as Record&lt;string, unknown&gt;;
       const content = result['content'] as Array&lt;{ text?: string }&gt; | undefined;
       <span class="missing-if-branch" title="if path not taken" >I</span>if (Array.isArray(content) &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >content[0]?.text) {</span>
 <span class="cstat-no" title="statement not covered" >        try {</span>
-          const parsed = <span class="cstat-no" title="statement not covered" >JSON.parse(content[0].text) as Record&lt;string, unknown&gt;;</span>
+          const parsed = <span class="cstat-no" title="statement not covered" >JSON.parse(content[0].text) </span>as Record&lt;string, unknown&gt;;
 <span class="cstat-no" title="statement not covered" >          if (parsed['payloadPath']) {</span>
             const fs = <span class="cstat-no" title="statement not covered" >await import('fs');</span>
             const payloadRaw = <span class="cstat-no" title="statement not covered" >JSON.parse(</span>
@@ -1725,7 +1725,7 @@ export class MCPClient {
     <span class="missing-if-branch" title="if path not taken" >I</span>if (this.sessionId || !this.authToken) <span class="cstat-no" title="statement not covered" >return;</span>
 &nbsp;
     const controller = new AbortController();
-    const timeoutId = setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >c</span>ontroller.abort(), t</span>his.timeout);
+    const timeoutId = <span class="fstat-no" title="function not covered" >setTimeout(() =&gt; <span class="cstat-no" title="statement not covered" >c</span>ontroller.abort(),</span> this.timeout);
 &nbsp;
     try {
       const headers: Record&lt;string, string&gt; = {
@@ -1769,7 +1769,7 @@ export class MCPClient {
         this.baseURL,
         {
           ...headers,
-          ...(this.sessionId ? <span class="branch-0 cbranch-no" title="branch not covered" >{ 'Mcp-Session-Id': this.sessionId } : {</span>}),
+          ...(this.sessionId ? <span class="branch-0 cbranch-no" title="branch not covered" >{ 'Mcp-Session-Id': this.sessionId } </span>: {}),
         },
         JSON.stringify({
           jsonrpc: '2.0',
@@ -1829,14 +1829,14 @@ export class MCPClient {
     return (response['dokument'] ?? response['motions'] ?? []) as unknown[];
   }
 &nbsp;
-  async <span class="fstat-no" title="function not covered" >fetchWrittenQuestions(p</span>arams: { limit?: number; rm?: string } = <span class="branch-0 cbranch-no" title="branch not covered" >{}): Promise&lt;unknown[]&gt; {</span>
+  async <span class="fstat-no" title="function not covered" >fetchWrittenQuestions(p</span>arams: { limit?: number; rm?: string } = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span>: Promise&lt;unknown[]&gt; {
     const reqParams: Record&lt;string, unknown&gt; = <span class="cstat-no" title="statement not covered" >{ limit: params.limit ?? 20 };</span>
 <span class="cstat-no" title="statement not covered" >    if (params.rm) <span class="cstat-no" title="statement not covered" >reqParams['rm'] = params.rm;</span></span>
     const response = <span class="cstat-no" title="statement not covered" >await this.request('get_fragor', reqParams);</span>
 <span class="cstat-no" title="statement not covered" >    return (response['dokument'] ?? response['questions'] ?? []) as unknown[];</span>
   }
 &nbsp;
-  async <span class="fstat-no" title="function not covered" >fetchInterpellations(p</span>arams: { limit?: number; rm?: string } = <span class="branch-0 cbranch-no" title="branch not covered" >{}): Promise&lt;unknown[]&gt; {</span>
+  async <span class="fstat-no" title="function not covered" >fetchInterpellations(p</span>arams: { limit?: number; rm?: string } = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span>: Promise&lt;unknown[]&gt; {
     const reqParams: Record&lt;string, unknown&gt; = <span class="cstat-no" title="statement not covered" >{ limit: params.limit ?? 15 };</span>
 <span class="cstat-no" title="statement not covered" >    if (params.rm) <span class="cstat-no" title="statement not covered" >reqParams['rm'] = params.rm;</span></span>
     const response = <span class="cstat-no" title="statement not covered" >await this.request('get_interpellationer', reqParams);</span>
@@ -1876,7 +1876,7 @@ export class MCPClient {
     return (response['votes'] ?? []) as unknown[];
   }
 &nbsp;
-  async <span class="fstat-no" title="function not covered" >fetchVotingGroup(p</span>arams: FetchVotingGroupFilters = <span class="branch-0 cbranch-no" title="branch not covered" >{}): Promise&lt;unknown[]&gt; {</span>
+  async <span class="fstat-no" title="function not covered" >fetchVotingGroup(p</span>arams: FetchVotingGroupFilters = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span>: Promise&lt;unknown[]&gt; {
     const response = <span class="cstat-no" title="statement not covered" >await this.request(</span>
       'get_voting_group',
       params as unknown as Record&lt;string, unknown&gt;,
@@ -1925,7 +1925,7 @@ export class MCPClient {
 &nbsp;
 <span class="cstat-no" title="statement not covered" >          try {</span>
             const details = <span class="cstat-no" title="statement not covered" >await this.fetchDocumentDetails(dok_id, false);</span>
-            const intressent = (<span class="cstat-no" title="statement not covered" >details['intressent'] ?? {}) as Record&lt;string, string&gt;;</span>
+            const intressent = (<span class="cstat-no" title="statement not covered" >details['intressent'] ?? {})</span> as Record&lt;string, string&gt;;
             const author = <span class="cstat-no" title="statement not covered" >intressent['tilltalsnamn']</span>
               ? `${intressent['tilltalsnamn']} ${intressent['efternamn']}`.trim()
               : doc.intressent_namn ?? intressent['namn'] ?? 'Unknown';
@@ -1967,7 +1967,7 @@ export class MCPClient {
       }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      if (i + safeConcurrency &lt; documents.length) {</span>
-<span class="cstat-no" title="statement not covered" >        await new Promise&lt;void&gt;(<span class="fstat-no" title="function not covered" >(r</span>esolve) =&gt; <span class="cstat-no" title="statement not covered" >setTimeout(resolve, 200))</span>;</span>
+<span class="cstat-no" title="statement not covered" >        await new <span class="fstat-no" title="function not covered" >Promise&lt;void&gt;((r</span>esolve) =&gt; <span class="cstat-no" title="statement not covered" >setTimeout(resolve, 200))</span>;</span>
       }
     }
 &nbsp;
@@ -2012,7 +2012,7 @@ export class MCPClient {
   async <span class="fstat-no" title="function not covered" >fetchExternalUrlContent(r</span>awUrl: string): Promise&lt;string | null&gt; {
 <span class="cstat-no" title="statement not covered" >    try {</span>
       const controller = <span class="cstat-no" title="statement not covered" >new AbortController();</span>
-      const timeout = <span class="cstat-no" title="statement not covered" >setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >c</span>ontroller.abort(), E</span>XTERNAL_URL_FETCH_TIMEOUT_MS);</span>
+      const timeout = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >setTimeout(() =&gt; <span class="cstat-no" title="statement not covered" >c</span>ontroller.abort(),</span> EXTERNAL_URL_FETCH_TIMEOUT_MS);</span>
       const response = <span class="cstat-no" title="statement not covered" >await fetch(rawUrl, {</span>
         signal: controller.signal,
         headers: { 'Accept': 'text/plain, text/markdown, text/html, */*' },
@@ -2056,7 +2056,7 @@ export class MCPClient {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -854,7 +854,7 @@ export class Election2026Predictions {
 <span class="cstat-no" title="statement not covered" >    container.textContent = '';</span>
     const fragment = <span class="cstat-no" title="statement not covered" >document.createDocumentFragment();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    parties.forEach(<span class="fstat-no" title="function not covered" >(p</span>arty: PartyForecast) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    parties.<span class="fstat-no" title="function not covered" >forEach((p</span>arty: PartyForecast) =&gt; {</span>
       const changeClass = <span class="cstat-no" title="statement not covered" >party.change &gt;= 0 ? 'positive' : 'negative';</span>
       const changeSymbol = <span class="cstat-no" title="statement not covered" >party.change &gt;= 0 ? '+' : '';</span>
       const cardClass = <span class="cstat-no" title="statement not covered" >party.change &gt;= 0 ? 'gain' : 'loss';</span>
@@ -947,7 +947,7 @@ export class Election2026Predictions {
 <span class="cstat-no" title="statement not covered" >    container.textContent = '';</span>
     const fragment = <span class="cstat-no" title="statement not covered" >document.createDocumentFragment();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    coalitionScenarios.forEach(<span class="fstat-no" title="function not covered" >(s</span>cenario: CoalitionScenario) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    coalitionScenarios.<span class="fstat-no" title="function not covered" >forEach((s</span>cenario: CoalitionScenario) =&gt; {</span>
       const majorityClass = <span class="cstat-no" title="statement not covered" >scenario.majority ? 'yes' : 'no';</span>
       const majorityText = <span class="cstat-no" title="statement not covered" >scenario.majority ? 'Majority ✓' : 'No Majority';</span>
 &nbsp;
@@ -966,7 +966,7 @@ export class Election2026Predictions {
 <span class="cstat-no" title="statement not covered" >      composition.className = 'scenario-composition';</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      if (Array.isArray(scenario.composition)) {</span>
-<span class="cstat-no" title="statement not covered" >        scenario.composition.forEach(<span class="fstat-no" title="function not covered" >(p</span>artyId: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        scenario.composition.<span class="fstat-no" title="function not covered" >forEach((p</span>artyId: string) =&gt; {</span>
           const badge = <span class="cstat-no" title="statement not covered" >document.createElement('span');</span>
 <span class="cstat-no" title="statement not covered" >          badge.className = 'party-badge';</span>
 <span class="cstat-no" title="statement not covered" >          badge.textContent = partyId;</span>
@@ -1034,7 +1034,7 @@ export class Election2026Predictions {
 &nbsp;
     const list = <span class="cstat-no" title="statement not covered" >document.createElement('ul');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    keyFactors.forEach(<span class="fstat-no" title="function not covered" >(f</span>actor: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    keyFactors.<span class="fstat-no" title="function not covered" >forEach((f</span>actor: string) =&gt; {</span>
       const listItem = <span class="cstat-no" title="statement not covered" >document.createElement('li');</span>
 <span class="cstat-no" title="statement not covered" >      listItem.textContent = String(factor);</span>
 <span class="cstat-no" title="statement not covered" >      list.appendChild(listItem);</span>
@@ -1104,12 +1104,12 @@ export class Election2026Predictions {
     }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return {</span>
-      totalSeats: parties.reduce(<span class="fstat-no" title="function not covered" >(s</span>um, p) =&gt; <span class="cstat-no" title="statement not covered" >sum + p.predictedSeats, 0</span>),
-      gainers: parties.filter(<span class="fstat-no" title="function not covered" >p =&gt; <span class="cstat-no" title="statement not covered" >p</span>.change &gt; 0)</span>.length,
-      losers: parties.filter(<span class="fstat-no" title="function not covered" >p =&gt; <span class="cstat-no" title="statement not covered" >p</span>.change &lt; 0)</span>.length,
-      stable: parties.filter(<span class="fstat-no" title="function not covered" >p =&gt; <span class="cstat-no" title="statement not covered" >p</span>.change === 0)</span>.length,
-      biggestGain: parties.reduce(<span class="fstat-no" title="function not covered" >(m</span>ax, p) =&gt; (<span class="cstat-no" title="statement not covered" >p.change &gt; max.change ? p : max), p</span>arties[0]),
-      biggestLoss: parties.reduce(<span class="fstat-no" title="function not covered" >(m</span>in, p) =&gt; (<span class="cstat-no" title="statement not covered" >p.change &lt; min.change ? p : min), p</span>arties[0]),
+      totalSeats: parties.<span class="fstat-no" title="function not covered" >reduce((s</span>um, p) =&gt; <span class="cstat-no" title="statement not covered" >sum + p.predictedSeats, 0</span>),
+      gainers: parties.<span class="fstat-no" title="function not covered" >filter(p</span> =&gt; <span class="cstat-no" title="statement not covered" >p.change &gt; 0).</span>length,
+      losers: parties.<span class="fstat-no" title="function not covered" >filter(p</span> =&gt; <span class="cstat-no" title="statement not covered" >p.change &lt; 0).</span>length,
+      stable: parties.<span class="fstat-no" title="function not covered" >filter(p</span> =&gt; <span class="cstat-no" title="statement not covered" >p.change === 0).</span>length,
+      biggestGain: parties.<span class="fstat-no" title="function not covered" >reduce((m</span>ax, p) =&gt; (<span class="cstat-no" title="statement not covered" >p.change &gt; max.change ? p : max), p</span>arties[0]),
+      biggestLoss: parties.<span class="fstat-no" title="function not covered" >reduce((m</span>in, p) =&gt; (<span class="cstat-no" title="statement not covered" >p.change &lt; min.change ? p : min), p</span>arties[0]),
     };
   }
 }
@@ -1120,7 +1120,7 @@ export class Election2026Predictions {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

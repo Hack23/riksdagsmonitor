@@ -1851,18 +1851,18 @@ export function generatePolicySignificance(doc: RawDocument, lang: Language | st
     if (organEntry) {
       const committeeRefTemplates: Record&lt;string, (name: string) =&gt; string&gt; = {
         sv: (n) =&gt; `Ärendet behandlas av ${n.toLowerCase()} för parlamentarisk beredning.`,
-        da: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`Sagen behandles af ${n} til parlamentarisk behandling.`,</span>
-        no: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`Saken behandles av ${n} for parlamentarisk behandling.`,</span>
-        fi: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`Asia käsitellään valiokunnassa ${n} parlamentaarista käsittelyä varten.`,</span>
-        de: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`Die Angelegenheit wird dem ${n} zur parlamentarischen Prüfung überwiesen.`,</span>
-        fr: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`L'affaire est renvoyée à la ${n} pour examen parlementaire.`,</span>
-        es: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`El asunto se remite a la ${n} para examen parlamentario.`,</span>
-        nl: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`De zaak wordt verwezen naar de ${n} voor parlementaire behandeling.`,</span>
-        ar: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`تم إحالة الموضوع إلى ${n} للنظر البرلماني.`,</span>
-        he: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`הנושא הועבר ל${n} לבחינה פרלמנטרית.`,</span>
-        ja: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`この件は${n}に付託され、議会審議が行われます。`,</span>
-        ko: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`이 안건은 ${n}에 회부되어 의회 심의를 받습니다.`,</span>
-        zh: <span class="fstat-no" title="function not covered" >(n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`此事项已移交${n}进行议会审查。`,</span>
+<span class="fstat-no" title="function not covered" >        da: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`Sagen behandles af ${n} til parlamentarisk behandling.`,</span>
+<span class="fstat-no" title="function not covered" >        no: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`Saken behandles av ${n} for parlamentarisk behandling.`,</span>
+<span class="fstat-no" title="function not covered" >        fi: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`Asia käsitellään valiokunnassa ${n} parlamentaarista käsittelyä varten.`,</span>
+<span class="fstat-no" title="function not covered" >        de: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`Die Angelegenheit wird dem ${n} zur parlamentarischen Prüfung überwiesen.`,</span>
+<span class="fstat-no" title="function not covered" >        fr: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`L'affaire est renvoyée à la ${n} pour examen parlementaire.`,</span>
+<span class="fstat-no" title="function not covered" >        es: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`El asunto se remite a la ${n} para examen parlamentario.`,</span>
+<span class="fstat-no" title="function not covered" >        nl: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`De zaak wordt verwezen naar de ${n} voor parlementaire behandeling.`,</span>
+<span class="fstat-no" title="function not covered" >        ar: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`تم إحالة الموضوع إلى ${n} للنظر البرلماني.`,</span>
+<span class="fstat-no" title="function not covered" >        he: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`הנושא הועבר ל${n} לבחינה פרלמנטרית.`,</span>
+<span class="fstat-no" title="function not covered" >        ja: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`この件は${n}に付託され、議会審議が行われます。`,</span>
+<span class="fstat-no" title="function not covered" >        ko: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`이 안건은 ${n}에 회부되어 의회 심의를 받습니다.`,</span>
+<span class="fstat-no" title="function not covered" >        zh: (n</span>) =&gt; <span class="cstat-no" title="statement not covered" >`此事项已移交${n}进行议会审查。`,</span>
       };
       // Use getCommitteeName for consistent localization: Swedish name for sv,
       // English name for all others (client-side data-translate handles further l10n)
@@ -1891,7 +1891,7 @@ export function generatePolicySignificance(doc: RawDocument, lang: Language | st
 export function generateDeepPolicyAnalysis(doc: RawDocument, lang: Language | string, impliedDoktyp?: string, maxPassageChars = 300): string {
   const effectiveDoktyp = doc.doktyp || doc.documentType || impliedDoktyp || <span class="branch-3 cbranch-no" title="branch not covered" >'';</span>
   const rawText = doc.fullText || doc.fullContent || '';
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (rawText &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!isPersonProfileText(rawText)) {</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (rawText &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!isPersonProfileText(rawText))</span> {
     const cleanedText = (<span class="cstat-no" title="statement not covered" >effectiveDoktyp === 'mot' &amp;&amp; rawText.includes('Motion till riksdagen'))</span>
       ? cleanMotionText(rawText)
       : rawText;
@@ -1993,7 +1993,7 @@ export const SCB_DOMAIN_TABLES: Readonly&lt;Record&lt;DomainKey, { query: string
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:17.052Z
+                at 2026-03-12T22:50:12.565Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

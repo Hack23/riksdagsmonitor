@@ -713,7 +713,7 @@ export function generatePropositionsContent(data: ArticleContentData, lang: Lang
   byCommitteeGroup.forEach((committeeProps, committeeKey) =&gt; {
     if (multiCommittee) {
       const committeeLabel = committeeKey
-        ? escapeHtml(getCommitteeName(committeeKey, lang)<span class="branch-1 cbranch-no" title="branch not covered" >)</span>
+        ? escapeHtml(getCommitteeName(committeeKey, lang))<span class="branch-1 cbranch-no" title="branch not covered" ></span>
         : escapeHtml(String(L(lang, 'otherCommittee')));
       content += `    &lt;h3&gt;${committeeLabel}&lt;/h3&gt;\n`;
     }
@@ -788,18 +788,18 @@ export function generatePropositionsContent(data: ArticleContentData, lang: Lang
     const topName = getCommitteeName(topCommittee, lang);
     const priorityTemplates: Record&lt;string, (n: string, c: number) =&gt; string&gt; = {
       sv: (n, c) =&gt; `${n} tar emot ${c} av propositionerna – ett tecken på att detta är ett centralt prioriterat område för regeringen denna session.`,
-      da: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} modtager ${c} af lovforslagene — et klart signal om regeringsprioritet.`,</span>
-      no: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} mottar ${c} av proposisjonene — et sterkt signal om regjeringsprioritet.`,</span>
-      fi: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} vastaanottaa ${c} esityksistä — vahva merkki hallituksen painopistealueesta.`,</span>
-      de: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} erhält ${c} der Vorlagen — ein starkes Signal für die Regierungspriorität in diesem Bereich.`,</span>
-      fr: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} reçoit ${c} des propositions — un signal fort de priorité gouvernementale.`,</span>
-      es: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} recibe ${c} de las proposiciones — una señal clara de prioridad gubernamental.`,</span>
-      nl: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} ontvangt ${c} van de voorstellen — een sterk signaal van overheidsprioriteit.`,</span>
-      ar: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} يستقبل ${c} من المقترحات — إشارة قوية لأولوية حكومية.`,</span>
-      he: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} מקבל ${c} מההצעות — אות חזק לעדיפות ממשלתית.`,</span>
-      ja: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n}は${c}件の提案を受け取り、政府の重点分野であることを示しています。`,</span>
-      ko: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n}이(가) ${c}건의 법안을 받아 정부 우선순위를 강하게 나타냅니다.`,</span>
-      zh: <span class="fstat-no" title="function not covered" >(n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n}收到${c}项提案——强烈表明这是政府本期的优先领域。`,</span>
+<span class="fstat-no" title="function not covered" >      da: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} modtager ${c} af lovforslagene — et klart signal om regeringsprioritet.`,</span>
+<span class="fstat-no" title="function not covered" >      no: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} mottar ${c} av proposisjonene — et sterkt signal om regjeringsprioritet.`,</span>
+<span class="fstat-no" title="function not covered" >      fi: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} vastaanottaa ${c} esityksistä — vahva merkki hallituksen painopistealueesta.`,</span>
+<span class="fstat-no" title="function not covered" >      de: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} erhält ${c} der Vorlagen — ein starkes Signal für die Regierungspriorität in diesem Bereich.`,</span>
+<span class="fstat-no" title="function not covered" >      fr: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} reçoit ${c} des propositions — un signal fort de priorité gouvernementale.`,</span>
+<span class="fstat-no" title="function not covered" >      es: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} recibe ${c} de las proposiciones — una señal clara de prioridad gubernamental.`,</span>
+<span class="fstat-no" title="function not covered" >      nl: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} ontvangt ${c} van de voorstellen — een sterk signaal van overheidsprioriteit.`,</span>
+<span class="fstat-no" title="function not covered" >      ar: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} يستقبل ${c} من المقترحات — إشارة قوية لأولوية حكومية.`,</span>
+<span class="fstat-no" title="function not covered" >      he: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n} מקבל ${c} מההצעות — אות חזק לעדיפות ממשלתית.`,</span>
+<span class="fstat-no" title="function not covered" >      ja: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n}は${c}件の提案を受け取り、政府の重点分野であることを示しています。`,</span>
+<span class="fstat-no" title="function not covered" >      ko: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n}이(가) ${c}건의 법안을 받아 정부 우선순위를 강하게 나타냅니다.`,</span>
+<span class="fstat-no" title="function not covered" >      zh: (n</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >`${n}收到${c}项提案——强烈表明这是政府本期的优先领域。`,</span>
     };
     const priorityTpl = priorityTemplates[lang as string];
     const priorityNote = priorityTpl
@@ -964,7 +964,7 @@ export function generatePropositionsContent(data: ArticleContentData, lang: Lang
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

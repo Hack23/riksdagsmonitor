@@ -755,13 +755,13 @@ function <span class="fstat-no" title="function not covered" >renderCoalitionNet
     .attr('style', 'max-width: 100%; height: auto;');
 &nbsp;
   // Create nodes from parties
-  const nodes: PartyNode[] = <span class="cstat-no" title="statement not covered" >Object.keys(PARTIES).map(<span class="fstat-no" title="function not covered" >(i</span>d: string): PartyNode =&gt; {</span>
+  const nodes: PartyNode[] = <span class="cstat-no" title="statement not covered" >Object.keys(PARTIES).<span class="fstat-no" title="function not covered" >map((i</span>d: string): PartyNode =&gt; {</span>
     // Calculate influence from alignment data (sum of alignment rates with other parties)
     let influence: number = <span class="cstat-no" title="statement not covered" >5;</span>
     const alignment: CoalitionAlignment | null = <span class="cstat-no" title="statement not covered" >dataCache.coalitionAlignment;</span>
 <span class="cstat-no" title="statement not covered" >    if (alignment &amp;&amp; alignment[id]) {</span>
-      const rates: number[] = <span class="cstat-no" title="statement not covered" >Object.values(alignment[id]).filter(<span class="fstat-no" title="function not covered" >(v</span>): v is number =&gt; <span class="cstat-no" title="statement not covered" >typeof v === 'number')</span>;</span>
-<span class="cstat-no" title="statement not covered" >      influence = rates.length &gt; 0 ? (rates.reduce(<span class="fstat-no" title="function not covered" >(s</span>: number, v: number) =&gt; <span class="cstat-no" title="statement not covered" >s + v, 0</span>) / rates.length) / 10 + 3 : 5;</span>
+      const rates: number[] = <span class="cstat-no" title="statement not covered" >Object.values(alignment[id]).<span class="fstat-no" title="function not covered" >filter((v</span>): v is number =&gt; <span class="cstat-no" title="statement not covered" >typeof v === 'number');</span></span>
+<span class="cstat-no" title="statement not covered" >      influence = rates.length &gt; 0 ? (rates.<span class="fstat-no" title="function not covered" >reduce((s</span>: number, v: number) =&gt; <span class="cstat-no" title="statement not covered" >s + v, 0</span>) / rates.length) / 10 + 3 : 5;</span>
     }
 <span class="cstat-no" title="statement not covered" >    return {</span>
       id,
@@ -776,8 +776,8 @@ function <span class="fstat-no" title="function not covered" >renderCoalitionNet
   const links: CoalitionLink[] = <span class="cstat-no" title="statement not covered" >[];</span>
   const alignment: CoalitionAlignment | null = <span class="cstat-no" title="statement not covered" >dataCache.coalitionAlignment;</span>
   
-<span class="cstat-no" title="statement not covered" >  nodes.forEach(<span class="fstat-no" title="function not covered" >(s</span>ource: PartyNode, i: number) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    nodes.forEach(<span class="fstat-no" title="function not covered" >(t</span>arget: PartyNode, j: number) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  nodes.<span class="fstat-no" title="function not covered" >forEach((s</span>ource: PartyNode, i: number) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    nodes.<span class="fstat-no" title="function not covered" >forEach((t</span>arget: PartyNode, j: number) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (i &lt; j) {</span>
         const strength: number = <span class="cstat-no" title="statement not covered" >alignment &amp;&amp; alignment[source.id] &amp;&amp; alignment[source.id][target.id] </span>
           ? alignment[source.id][target.id] / 100
@@ -794,10 +794,10 @@ function <span class="fstat-no" title="function not covered" >renderCoalitionNet
 &nbsp;
   // Create force simulation
   const simulation: d3.Simulation&lt;PartyNode, CoalitionLink&gt; = <span class="cstat-no" title="statement not covered" >d3.forceSimulation&lt;PartyNode&gt;(nodes)</span>
-    .force('link', d3.forceLink&lt;PartyNode, CoalitionLink&gt;(links).id(<span class="fstat-no" title="function not covered" >(d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >d.id)</span>.distance(150))
+    .force('link', d3.forceLink&lt;PartyNode, CoalitionLink&gt;(links).<span class="fstat-no" title="function not covered" >id((d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >d.id).</span>distance(150))
     .force('charge', d3.forceManyBody&lt;PartyNode&gt;().strength(-400))
     .force('center', d3.forceCenter&lt;PartyNode&gt;(width / 2, height / 2))
-    .force('collision', d3.forceCollide&lt;PartyNode&gt;().radius(<span class="fstat-no" title="function not covered" >(d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >d.influence * 3 + 10)</span>);
+    .force('collision', d3.forceCollide&lt;PartyNode&gt;().<span class="fstat-no" title="function not covered" >radius((d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >d.influence * 3 + 10))</span>;
 &nbsp;
   // Create links
   const link: d3.Selection&lt;SVGLineElement, CoalitionLink, SVGGElement, unknown&gt; = <span class="cstat-no" title="statement not covered" >svg.append('g')</span>
@@ -807,8 +807,8 @@ function <span class="fstat-no" title="function not covered" >renderCoalitionNet
     .enter()
     .append('line')
     .attr('stroke', '#999')
-    .attr('stroke-opacity', <span class="fstat-no" title="function not covered" >(d</span>: CoalitionLink) =&gt; <span class="cstat-no" title="statement not covered" >d.strength)</span>
-    .attr('stroke-width', <span class="fstat-no" title="function not covered" >(d</span>: CoalitionLink) =&gt; <span class="cstat-no" title="statement not covered" >Math.sqrt(d.strength * 10))</span>
+    .attr(<span class="fstat-no" title="function not covered" >'stroke-opacity', (d</span>: CoalitionLink) =&gt; <span class="cstat-no" title="statement not covered" >d.strength)</span>
+    .attr(<span class="fstat-no" title="function not covered" >'stroke-width', (d</span>: CoalitionLink) =&gt; <span class="cstat-no" title="statement not covered" >Math.sqrt(d.strength * 10))</span>
     .style('cursor', 'pointer')
     .on('mouseover', <span class="fstat-no" title="function not covered" >function(this: SVGLineElement, e</span>vent: MouseEvent, d: CoalitionLink): void {
       // Highlight edge — use outer d directly (single element selected)
@@ -836,7 +836,7 @@ function <span class="fstat-no" title="function not covered" >renderCoalitionNet
     .append('g')
     .attr('tabindex', '0')
     .attr('role', 'button')
-    .attr('aria-label', <span class="fstat-no" title="function not covered" >(d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >`${d.fullName} party node`)</span>
+    .attr(<span class="fstat-no" title="function not covered" >'aria-label', (d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >`${d.fullName} party node`)</span>
     .style('cursor', 'pointer')
     .call(d3.drag&lt;SVGGElement, PartyNode&gt;()
       .on('start', dragstarted)
@@ -845,14 +845,14 @@ function <span class="fstat-no" title="function not covered" >renderCoalitionNet
 &nbsp;
   // Add circles to nodes
 <span class="cstat-no" title="statement not covered" >  node.append('circle')</span>
-    .attr('r', <span class="fstat-no" title="function not covered" >(d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >d.influence * 3)</span>
-    .attr('fill', <span class="fstat-no" title="function not covered" >(d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >d.color)</span>
+    .attr(<span class="fstat-no" title="function not covered" >'r', (d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >d.influence * 3)</span>
+    .attr(<span class="fstat-no" title="function not covered" >'fill', (d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >d.color)</span>
     .attr('stroke', '#fff')
     .attr('stroke-width', 2);
 &nbsp;
   // Add labels to nodes
 <span class="cstat-no" title="statement not covered" >  node.append('text')</span>
-    .text(<span class="fstat-no" title="function not covered" >(d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >d.id)</span>
+    .<span class="fstat-no" title="function not covered" >text((d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >d.id)</span>
     .attr('x', 0)
     .attr('y', 0)
     .attr('text-anchor', 'middle')
@@ -864,9 +864,9 @@ function <span class="fstat-no" title="function not covered" >renderCoalitionNet
 &nbsp;
   // Add party name labels
 <span class="cstat-no" title="statement not covered" >  node.append('text')</span>
-    .text(<span class="fstat-no" title="function not covered" >(d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >d.name)</span>
+    .<span class="fstat-no" title="function not covered" >text((d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >d.name)</span>
     .attr('x', 0)
-    .attr('y', <span class="fstat-no" title="function not covered" >(d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >d.influence * 3 + 15)</span>
+    .attr(<span class="fstat-no" title="function not covered" >'y', (d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >d.influence * 3 + 15)</span>
     .attr('text-anchor', 'middle')
     .attr('font-size', '12px')
     .attr('fill', 'var(--text-color)')
@@ -898,14 +898,14 @@ function <span class="fstat-no" title="function not covered" >renderCoalitionNet
   });
 &nbsp;
   // Update positions on simulation tick
-<span class="cstat-no" title="statement not covered" >  simulation.on('tick', <span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >  simulation.on(<span class="fstat-no" title="function not covered" >'tick', () =&gt; {</span></span>
 <span class="cstat-no" title="statement not covered" >    link</span>
-      .attr('x1', <span class="fstat-no" title="function not covered" >(d</span>: CoalitionLink) =&gt; (<span class="cstat-no" title="statement not covered" >d.source as PartyNode).x!)</span>
-      .attr('y1', <span class="fstat-no" title="function not covered" >(d</span>: CoalitionLink) =&gt; (<span class="cstat-no" title="statement not covered" >d.source as PartyNode).y!)</span>
-      .attr('x2', <span class="fstat-no" title="function not covered" >(d</span>: CoalitionLink) =&gt; (<span class="cstat-no" title="statement not covered" >d.target as PartyNode).x!)</span>
-      .attr('y2', <span class="fstat-no" title="function not covered" >(d</span>: CoalitionLink) =&gt; (<span class="cstat-no" title="statement not covered" >d.target as PartyNode).y!)</span>;
+      .attr(<span class="fstat-no" title="function not covered" >'x1', (d</span>: CoalitionLink) =&gt; (<span class="cstat-no" title="statement not covered" >d.source as PartyNode).x!)</span>
+      .attr(<span class="fstat-no" title="function not covered" >'y1', (d</span>: CoalitionLink) =&gt; (<span class="cstat-no" title="statement not covered" >d.source as PartyNode).y!)</span>
+      .attr(<span class="fstat-no" title="function not covered" >'x2', (d</span>: CoalitionLink) =&gt; (<span class="cstat-no" title="statement not covered" >d.target as PartyNode).x!)</span>
+      .attr(<span class="fstat-no" title="function not covered" >'y2', (d</span>: CoalitionLink) =&gt; (<span class="cstat-no" title="statement not covered" >d.target as PartyNode).y!);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    node.attr('transform', <span class="fstat-no" title="function not covered" >(d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >`translate(${d.x ?? 0},${d.y ?? 0})`)</span>;</span>
+<span class="cstat-no" title="statement not covered" >    node.attr(<span class="fstat-no" title="function not covered" >'transform', (d</span>: PartyNode) =&gt; <span class="cstat-no" title="statement not covered" >`translate(${d.x ?? 0},${d.y ?? 0})`);</span></span>
   });
 &nbsp;
   // Drag functions
@@ -965,8 +965,8 @@ function <span class="fstat-no" title="function not covered" >renderAlignmentHea
   // Create heat map data
   const heatMapData: HeatMapDatum[] = <span class="cstat-no" title="statement not covered" >[];</span>
   const coalitionAlignment: CoalitionAlignment | null = <span class="cstat-no" title="statement not covered" >dataCache.coalitionAlignment;</span>
-<span class="cstat-no" title="statement not covered" >  partyIds.forEach(<span class="fstat-no" title="function not covered" >(p</span>arty1: string) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    partyIds.forEach(<span class="fstat-no" title="function not covered" >(p</span>arty2: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  partyIds.<span class="fstat-no" title="function not covered" >forEach((p</span>arty1: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    partyIds.<span class="fstat-no" title="function not covered" >forEach((p</span>arty2: string) =&gt; {</span>
       const alignmentValue: number = <span class="cstat-no" title="statement not covered" >party1 === party2 ? 1.0 : </span>
         ((coalitionAlignment &amp;&amp; coalitionAlignment[party1] &amp;&amp; coalitionAlignment[party1][party2]) 
           ? coalitionAlignment[party1][party2] / 100 : 0.5);
@@ -984,11 +984,11 @@ function <span class="fstat-no" title="function not covered" >renderAlignmentHea
     .data(heatMapData)
     .enter()
     .append('rect')
-    .attr('x', <span class="fstat-no" title="function not covered" >(d</span>: HeatMapDatum) =&gt; <span class="cstat-no" title="statement not covered" >partyIds.indexOf(d.party2) * cellSize)</span>
-    .attr('y', <span class="fstat-no" title="function not covered" >(d</span>: HeatMapDatum) =&gt; <span class="cstat-no" title="statement not covered" >partyIds.indexOf(d.party1) * cellSize)</span>
+    .attr(<span class="fstat-no" title="function not covered" >'x', (d</span>: HeatMapDatum) =&gt; <span class="cstat-no" title="statement not covered" >partyIds.indexOf(d.party2) * cellSize)</span>
+    .attr(<span class="fstat-no" title="function not covered" >'y', (d</span>: HeatMapDatum) =&gt; <span class="cstat-no" title="statement not covered" >partyIds.indexOf(d.party1) * cellSize)</span>
     .attr('width', cellSize)
     .attr('height', cellSize)
-    .attr('fill', <span class="fstat-no" title="function not covered" >(d</span>: HeatMapDatum) =&gt; <span class="cstat-no" title="statement not covered" >colorScale(d.alignment))</span>
+    .attr(<span class="fstat-no" title="function not covered" >'fill', (d</span>: HeatMapDatum) =&gt; <span class="cstat-no" title="statement not covered" >colorScale(d.alignment))</span>
     .attr('stroke', '#fff')
     .attr('stroke-width', 1)
     .style('cursor', 'pointer')
@@ -1004,12 +1004,12 @@ function <span class="fstat-no" title="function not covered" >renderAlignmentHea
     .append('text')
     .attr('class', 'row-label')
     .attr('x', -10)
-    .attr('y', <span class="fstat-no" title="function not covered" >(_</span>d: string, i: number) =&gt; <span class="cstat-no" title="statement not covered" >i * cellSize + cellSize / 2)</span>
+    .attr(<span class="fstat-no" title="function not covered" >'y', (_</span>d: string, i: number) =&gt; <span class="cstat-no" title="statement not covered" >i * cellSize + cellSize / 2)</span>
     .attr('text-anchor', 'end')
     .attr('dominant-baseline', 'middle')
     .attr('font-size', '12px')
     .attr('fill', 'var(--text-color)')
-    .text(<span class="fstat-no" title="function not covered" >(d</span>: string) =&gt; <span class="cstat-no" title="statement not covered" >PARTIES[d].name)</span>;
+    .<span class="fstat-no" title="function not covered" >text((d</span>: string) =&gt; <span class="cstat-no" title="statement not covered" >PARTIES[d].name);</span>
 &nbsp;
   // Add column labels
 <span class="cstat-no" title="statement not covered" >  g.selectAll&lt;SVGTextElement, string&gt;('.col-label')</span>
@@ -1017,12 +1017,12 @@ function <span class="fstat-no" title="function not covered" >renderAlignmentHea
     .enter()
     .append('text')
     .attr('class', 'col-label')
-    .attr('x', <span class="fstat-no" title="function not covered" >(_</span>d: string, i: number) =&gt; <span class="cstat-no" title="statement not covered" >i * cellSize + cellSize / 2)</span>
+    .attr(<span class="fstat-no" title="function not covered" >'x', (_</span>d: string, i: number) =&gt; <span class="cstat-no" title="statement not covered" >i * cellSize + cellSize / 2)</span>
     .attr('y', -10)
     .attr('text-anchor', 'middle')
     .attr('font-size', '12px')
     .attr('fill', 'var(--text-color)')
-    .text(<span class="fstat-no" title="function not covered" >(d</span>: string) =&gt; <span class="cstat-no" title="statement not covered" >d)</span>;
+    .<span class="fstat-no" title="function not covered" >text((d</span>: string) =&gt; <span class="cstat-no" title="statement not covered" >d);</span>
 &nbsp;
   // Add title
 <span class="cstat-no" title="statement not covered" >  svg.append('text')</span>
@@ -1045,7 +1045,7 @@ function <span class="fstat-no" title="function not covered" >renderAlignmentHea
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

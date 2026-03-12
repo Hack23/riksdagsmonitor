@@ -734,8 +734,8 @@
 <span class="cline-any cline-yes">53x</span>
 <span class="cline-any cline-yes">53x</span>
 <span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-yes">46x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1189,11 +1189,11 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     const rm = getCurrentRiksmote(today);
     const [recentReports, recentPropositions, recentMotions] = await Promise.all([
       Promise.resolve().then(() =&gt; client.fetchCommitteeReports(30, rm))
-        .catch(<span class="fstat-no" title="function not covered" >(e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch committee reports:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }</span>),
+        .<span class="fstat-no" title="function not covered" >catch((e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch committee reports:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }),</span>
       Promise.resolve().then(() =&gt; client.fetchPropositions(20, rm))
-        .catch(<span class="fstat-no" title="function not covered" >(e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch propositions:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }</span>),
+        .<span class="fstat-no" title="function not covered" >catch((e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch propositions:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }),</span>
       Promise.resolve().then(() =&gt; client.fetchMotions(20, rm))
-        .catch(<span class="fstat-no" title="function not covered" >(e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch motions:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }</span>),
+        .<span class="fstat-no" title="function not covered" >catch((e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch motions:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }),</span>
     ]);
 &nbsp;
     // Record MCP calls for traceability
@@ -1256,7 +1256,7 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     console.log('  🔄 Step 4 — Fetching speeches from the period...');
     const rawSpeeches = await Promise.resolve()
       .then(() =&gt; client.searchSpeeches({ from: fromStr, to: toStr, limit: 100 }))
-      .catch(<span class="fstat-no" title="function not covered" >(e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch speeches:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }</span>);
+      .<span class="fstat-no" title="function not covered" >catch((e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch speeches:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; });</span>
     const speeches: Array&lt;Record&lt;string, unknown&gt;&gt; = Array.isArray(rawSpeeches) ? rawSpeeches as Array&lt;Record&lt;string, unknown&gt;&gt; : <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
     mcpCalls.push({ tool: 'search_anforanden', result: speeches });
     console.log(`  🗣 Found ${speeches.length} speeches`);
@@ -1277,7 +1277,7 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     const [prevMonthDocs, twoMonthsDocs] = await Promise.all([
       // Use a higher per-period cap to better approximate total volume for trend metrics; full-text enrichment is not needed here
       client.searchDocuments({ from_date: formatDateForSlug(prevStart), to_date: fromStr, limit: 1000 })
-        .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {
+        .<span class="fstat-no" title="function not covered" >catch((e</span>rror) =&gt; {
 <span class="cstat-no" title="statement not covered" >          console.error(</span>
             'MonthlyReview Step 6 — search_dokument failed for previous month trend window',
             { from_date: formatDateForSlug(prevStart), to_date: fromStr, limit: 1000 },
@@ -1286,7 +1286,7 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
 <span class="cstat-no" title="statement not covered" >          return [] as RawDocument[];</span>
         }),
       client.searchDocuments({ from_date: formatDateForSlug(prev2Start), to_date: formatDateForSlug(prevStart), limit: 1000 })
-        .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {
+        .<span class="fstat-no" title="function not covered" >catch((e</span>rror) =&gt; {
 <span class="cstat-no" title="statement not covered" >          console.error(</span>
             'MonthlyReview Step 6 — search_dokument failed for two-months-ago trend window',
             { from_date: formatDateForSlug(prev2Start), to_date: formatDateForSlug(prevStart), limit: 1000 },
@@ -1307,7 +1307,7 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
     // Filter party keys: trim whitespace and drop unknown/empty sentinels (returns null to exclude)
     // Note: distinct from the normalizePartyKey helper in helpers.ts which maps unknowns to 'other'
     const filterPartyKey = (raw: unknown): string | null =&gt; {
-      const value = String(raw ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>.trim();
+      const value = String(raw ?? <span class="branch-1 cbranch-no" title="branch not covered" >'').</span>trim();
       <span class="missing-if-branch" title="if path not taken" >I</span>if (!value) <span class="cstat-no" title="statement not covered" >return null;</span>
       const lower = value.toLowerCase();
       <span class="missing-if-branch" title="if path not taken" >I</span>if (lower === 'unknown' || lower === 'okänd') <span class="cstat-no" title="statement not covered" >return null;</span>
@@ -1523,8 +1523,8 @@ export function validateMonthlyReview(article: ArticleInput): MonthlyReviewValid
 function checkMonthlySummary(article: ArticleInput): boolean {
   <span class="missing-if-branch" title="if path not taken" >I</span>if (!article || !article.content) <span class="cstat-no" title="statement not covered" >return false;</span>
   return article.content.toLowerCase().includes('month') ||
-<span class="branch-1 cbranch-no" title="branch not covered" >         article.content.toLowerCase().includes('summary') ||</span>
-<span class="branch-2 cbranch-no" title="branch not covered" >         article.content.toLowerCase().includes('review') ||</span>
+<span class="branch-1 cbranch-no" title="branch not covered" >         article.content.toLowerCase().includes('summary') </span>||
+<span class="branch-2 cbranch-no" title="branch not covered" >         article.content.toLowerCase().includes('review') </span>||
 <span class="branch-3 cbranch-no" title="branch not covered" >         article.content.toLowerCase().includes('retrospective');</span>
 }
 &nbsp;
@@ -1576,7 +1576,7 @@ function checkMonthInNumbers(article: ArticleInput): boolean {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:17.052Z
+                at 2026-03-12T22:50:12.565Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

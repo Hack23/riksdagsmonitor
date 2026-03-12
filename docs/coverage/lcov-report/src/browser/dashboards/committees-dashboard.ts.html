@@ -2472,13 +2472,13 @@ class DataManager {
   }
 &nbsp;
   /** Read from localStorage cache. */
-  private <span class="fstat-no" title="function not covered" >getCached(k</span>ey: string): any[] | null {
+<span class="fstat-no" title="function not covered" >  private g</span>etCached(key: string): any[] | null {
     const cacheKey = <span class="cstat-no" title="statement not covered" >CONFIG.cache.prefix + key;</span>
 <span class="cstat-no" title="statement not covered" >    try {</span>
       const cached = <span class="cstat-no" title="statement not covered" >localStorage.getItem(cacheKey);</span>
 <span class="cstat-no" title="statement not covered" >      if (!cached) <span class="cstat-no" title="statement not covered" >return null;</span></span>
 &nbsp;
-      const { data, timestamp } = <span class="cstat-no" title="statement not covered" >JSON.parse(cached) as CacheEntry&lt;any[]&gt;;</span>
+      const { data, timestamp } = <span class="cstat-no" title="statement not covered" >JSON.parse(cached) </span>as CacheEntry&lt;any[]&gt;;
       const age = <span class="cstat-no" title="statement not covered" >Date.now() - timestamp;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      if (age &lt; CONFIG.cache.ttl) {</span>
@@ -2487,13 +2487,13 @@ class DataManager {
 <span class="cstat-no" title="statement not covered" >      localStorage.removeItem(cacheKey);</span>
 <span class="cstat-no" title="statement not covered" >      return null;</span>
     } catch {
-<span class="cstat-no" title="statement not covered" >      try { <span class="cstat-no" title="statement not covered" >localStorage.removeItem(cacheKey); }</span> catch { /* ignore */ }</span>
+<span class="cstat-no" title="statement not covered" >      try { <span class="cstat-no" title="statement not covered" >localStorage.removeItem(cacheKey); } catch {</span> /* ignore */ }</span>
 <span class="cstat-no" title="statement not covered" >      return null;</span>
     }
   }
 &nbsp;
   /** Write to localStorage cache. */
-  private <span class="fstat-no" title="function not covered" >setCached(k</span>ey: string, data: any[]): void {
+<span class="fstat-no" title="function not covered" >  private s</span>etCached(key: string, data: any[]): void {
     const cacheKey = <span class="cstat-no" title="statement not covered" >CONFIG.cache.prefix + key;</span>
     const cacheData: CacheEntry&lt;any[]&gt; = <span class="cstat-no" title="statement not covered" >{ data, timestamp: Date.now() };</span>
 <span class="cstat-no" title="statement not covered" >    try {</span>
@@ -2573,10 +2573,10 @@ class NetworkDiagram {
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    this.simulation = d3</span>
       .forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id(<span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.id)</span>.distance(100))
+      .force('link', d3.forceLink(links).<span class="fstat-no" title="function not covered" >id((d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.id).</span>distance(100))
       .force('charge', d3.forceManyBody().strength(-400))
       .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collision', d3.forceCollide().radius(<span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.radius + 10)</span>);
+      .force('collision', d3.forceCollide().<span class="fstat-no" title="function not covered" >radius((d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.radius + 10))</span>;
 &nbsp;
     const link = <span class="cstat-no" title="statement not covered" >this.svg</span>
       .append('g')
@@ -2586,7 +2586,7 @@ class NetworkDiagram {
       .enter()
       .append('line')
       .attr('stroke', 'var(--border-color)')
-      .attr('stroke-width', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >Math.sqrt(d.value) * 2)</span>
+      .attr(<span class="fstat-no" title="function not covered" >'stroke-width', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >Math.sqrt(d.value) * 2)</span>
       .attr('stroke-opacity', 0.6);
 &nbsp;
     const node = <span class="cstat-no" title="statement not covered" >this.svg</span>
@@ -2598,19 +2598,19 @@ class NetworkDiagram {
       .append('g')
       .attr('tabindex', '0')
       .attr('role', 'button')
-      .attr('aria-label', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`${d.name} committee with ${d.productivity} productivity score`)</span>
+      .attr(<span class="fstat-no" title="function not covered" >'aria-label', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`${d.name} committee with ${d.productivity} productivity score`)</span>
       .call(
         d3
           .drag()
-          .on('start', <span class="fstat-no" title="function not covered" >(e</span>vent: any) =&gt; <span class="cstat-no" title="statement not covered" >this.dragStarted(event))</span>
-          .on('drag', <span class="fstat-no" title="function not covered" >(e</span>vent: any) =&gt; <span class="cstat-no" title="statement not covered" >this.dragged(event))</span>
-          .on('end', <span class="fstat-no" title="function not covered" >(e</span>vent: any) =&gt; <span class="cstat-no" title="statement not covered" >this.dragEnded(event))</span>,
+          .on(<span class="fstat-no" title="function not covered" >'start', (e</span>vent: any) =&gt; <span class="cstat-no" title="statement not covered" >this.dragStarted(event))</span>
+          .on(<span class="fstat-no" title="function not covered" >'drag', (e</span>vent: any) =&gt; <span class="cstat-no" title="statement not covered" >this.dragged(event))</span>
+          .on(<span class="fstat-no" title="function not covered" >'end', (e</span>vent: any) =&gt; <span class="cstat-no" title="statement not covered" >this.dragEnded(event))</span>,
       );
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    node</span>
       .append('circle')
-      .attr('r', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.radius)</span>
-      .attr('fill', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.color)</span>
+      .attr(<span class="fstat-no" title="function not covered" >'r', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.radius)</span>
+      .attr(<span class="fstat-no" title="function not covered" >'fill', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.color)</span>
       .attr('stroke', 'var(--card-bg)')
       .attr('stroke-width', 2);
 &nbsp;
@@ -2621,20 +2621,20 @@ class NetworkDiagram {
       .attr('font-size', '12px')
       .attr('font-weight', 'bold')
       .attr('fill', 'var(--text-color)')
-      .text(<span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.code)</span>;
+      .<span class="fstat-no" title="function not covered" >text((d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.code);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    node</span>
       .append('title')
-      .text(<span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`${d.name}\nProductivity: ${d.productivity}\nDecisions: ${d.decisions}`)</span>;
+      .<span class="fstat-no" title="function not covered" >text((d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`${d.name}\nProductivity: ${d.productivity}\nDecisions: ${d.decisions}`);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    this.simulation.on('tick', <span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.simulation.on(<span class="fstat-no" title="function not covered" >'tick', () =&gt; {</span></span>
 <span class="cstat-no" title="statement not covered" >      link</span>
-        .attr('x1', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.source.x)</span>
-        .attr('y1', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.source.y)</span>
-        .attr('x2', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.target.x)</span>
-        .attr('y2', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.target.y)</span>;
+        .attr(<span class="fstat-no" title="function not covered" >'x1', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.source.x)</span>
+        .attr(<span class="fstat-no" title="function not covered" >'y1', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.source.y)</span>
+        .attr(<span class="fstat-no" title="function not covered" >'x2', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.target.x)</span>
+        .attr(<span class="fstat-no" title="function not covered" >'y2', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.target.y);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      node.attr('transform', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`translate(${d.x},${d.y})`)</span>;</span>
+<span class="cstat-no" title="statement not covered" >      node.attr(<span class="fstat-no" title="function not covered" >'transform', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`translate(${d.x},${d.y})`);</span></span>
     });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    this.addLegend(width, height);</span>
@@ -2642,7 +2642,7 @@ class NetworkDiagram {
   }
 &nbsp;
   /** Build nodes &amp; links from productivity data. */
-  private <span class="fstat-no" title="function not covered" >processNetworkData(): { nodes: NetworkNode[]; links: NetworkLink[] } {</span>
+<span class="fstat-no" title="function not covered" >  private p</span>rocessNetworkData(): { nodes: NetworkNode[]; links: NetworkLink[] } {
     const prodLookup: Record&lt;string, number&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
     const decisionsLookup: Record&lt;string, number&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
 &nbsp;
@@ -2669,7 +2669,7 @@ class NetworkDiagram {
       }
     }
 &nbsp;
-    const nodes: NetworkNode[] = <span class="cstat-no" title="statement not covered" >CONFIG.committees.map(<span class="fstat-no" title="function not covered" >(c</span>ommittee) =&gt; {</span>
+    const nodes: NetworkNode[] = <span class="cstat-no" title="statement not covered" >CONFIG.committees.<span class="fstat-no" title="function not covered" >map((c</span>ommittee) =&gt; {</span>
       const productivity = <span class="cstat-no" title="statement not covered" >prodLookup[committee.code] || 70;</span>
       const decisions = <span class="cstat-no" title="statement not covered" >decisionsLookup[committee.code] || 50;</span>
 <span class="cstat-no" title="statement not covered" >      return {</span>
@@ -2701,7 +2701,7 @@ class NetworkDiagram {
   }
 &nbsp;
   /** SVG legend for the network diagram. */
-  private <span class="fstat-no" title="function not covered" >addLegend(_</span>width: number, height: number): void {
+<span class="fstat-no" title="function not covered" >  private a</span>ddLegend(_width: number, height: number): void {
     const legend = <span class="cstat-no" title="statement not covered" >this.svg</span>
       .append('g')
       .attr('class', 'legend')
@@ -2726,7 +2726,7 @@ class NetworkDiagram {
   }
 &nbsp;
   /** Build accessible HTML table from nodes and links. */
-  private <span class="fstat-no" title="function not covered" >updateAccessibleTable(n</span>odes: NetworkNode[], links: NetworkLink[]): void {
+<span class="fstat-no" title="function not covered" >  private u</span>pdateAccessibleTable(nodes: NetworkNode[], links: NetworkLink[]): void {
     const table = <span class="cstat-no" title="statement not covered" >document.getElementById('committeeNetworkTable');</span>
 <span class="cstat-no" title="statement not covered" >    if (!table) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
@@ -2735,7 +2735,7 @@ class NetworkDiagram {
 <span class="cstat-no" title="statement not covered" >    html += '&lt;tbody&gt;';</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    for (const node of nodes) {</span>
-      const connections = <span class="cstat-no" title="statement not covered" >links.filter(<span class="fstat-no" title="function not covered" >(l</span>) =&gt; {</span>
+      const connections = <span class="cstat-no" title="statement not covered" >links.<span class="fstat-no" title="function not covered" >filter((l</span>) =&gt; {</span>
         const sourceId = <span class="cstat-no" title="statement not covered" >typeof l.source === 'string' ? l.source : (l.source as any)?.id;</span>
         const targetId = <span class="cstat-no" title="statement not covered" >typeof l.target === 'string' ? l.target : (l.target as any)?.id;</span>
 <span class="cstat-no" title="statement not covered" >        return sourceId === node.id || targetId === node.id;</span>
@@ -2753,18 +2753,18 @@ class NetworkDiagram {
   }
 &nbsp;
   /* Drag handlers */
-  private <span class="fstat-no" title="function not covered" >dragStarted(e</span>vent: any): void {
+<span class="fstat-no" title="function not covered" >  private d</span>ragStarted(event: any): void {
 <span class="cstat-no" title="statement not covered" >    if (!event.active) <span class="cstat-no" title="statement not covered" >this.simulation.alphaTarget(0.3).restart();</span></span>
 <span class="cstat-no" title="statement not covered" >    event.subject.fx = event.subject.x;</span>
 <span class="cstat-no" title="statement not covered" >    event.subject.fy = event.subject.y;</span>
   }
 &nbsp;
-  private <span class="fstat-no" title="function not covered" >dragged(e</span>vent: any): void {
+<span class="fstat-no" title="function not covered" >  private d</span>ragged(event: any): void {
 <span class="cstat-no" title="statement not covered" >    event.subject.fx = event.x;</span>
 <span class="cstat-no" title="statement not covered" >    event.subject.fy = event.y;</span>
   }
 &nbsp;
-  private <span class="fstat-no" title="function not covered" >dragEnded(e</span>vent: any): void {
+<span class="fstat-no" title="function not covered" >  private d</span>ragEnded(event: any): void {
 <span class="cstat-no" title="statement not covered" >    if (!event.active) <span class="cstat-no" title="statement not covered" >this.simulation.alphaTarget(0);</span></span>
 <span class="cstat-no" title="statement not covered" >    event.subject.fx = null;</span>
 <span class="cstat-no" title="statement not covered" >    event.subject.fy = null;</span>
@@ -2828,16 +2828,16 @@ class ProductivityHeatMap {
       .data(matrix)
       .enter()
       .append('rect')
-      .attr('x', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >xScale(d.year))</span>
-      .attr('y', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >yScale(d.committee))</span>
+      .attr(<span class="fstat-no" title="function not covered" >'x', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >xScale(d.year))</span>
+      .attr(<span class="fstat-no" title="function not covered" >'y', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >yScale(d.committee))</span>
       .attr('width', xScale.bandwidth())
       .attr('height', yScale.bandwidth())
-      .attr('fill', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >colorScale(d.value))</span>
+      .attr(<span class="fstat-no" title="function not covered" >'fill', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >colorScale(d.value))</span>
       .attr('stroke', 'var(--card-bg)')
       .attr('stroke-width', 1)
       .attr('tabindex', '0')
       .attr('role', 'button')
-      .attr('aria-label', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`${d.committee} in ${d.year}: ${d.value.toFixed(1)} productivity`)</span>
+      .attr(<span class="fstat-no" title="function not covered" >'aria-label', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`${d.committee} in ${d.year}: ${d.value.toFixed(1)} productivity`)</span>
       .on('mouseover', <span class="fstat-no" title="function not covered" >function (this: SVGRectElement) {</span>
 <span class="cstat-no" title="statement not covered" >        d3.select(this).attr('stroke', 'var(--accent-color)').attr('stroke-width', 2);</span>
       })
@@ -2845,7 +2845,7 @@ class ProductivityHeatMap {
 <span class="cstat-no" title="statement not covered" >        d3.select(this).attr('stroke', 'var(--card-bg)').attr('stroke-width', 1);</span>
       })
       .append('title')
-      .text(<span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`${d.committee} (${d.year})\nProductivity: ${d.value.toFixed(1)}`)</span>;
+      .<span class="fstat-no" title="function not covered" >text((d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`${d.committee} (${d.year})\nProductivity: ${d.value.toFixed(1)}`);</span>
 &nbsp;
     // X axis
 <span class="cstat-no" title="statement not covered" >    g.append('g')</span>
@@ -2878,8 +2878,8 @@ class ProductivityHeatMap {
   }
 &nbsp;
   /** Convert productivity data into a flat matrix of cells. */
-  private <span class="fstat-no" title="function not covered" >processHeatMapData(): { matrix: HeatMapCell[]; years: string[]; committees: string[] } {</span>
-    const committees = <span class="cstat-no" title="statement not covered" >CONFIG.committees.map(<span class="fstat-no" title="function not covered" >(c</span>) =&gt; <span class="cstat-no" title="statement not covered" >c.code)</span>;</span>
+<span class="fstat-no" title="function not covered" >  private p</span>rocessHeatMapData(): { matrix: HeatMapCell[]; years: string[]; committees: string[] } {
+    const committees = <span class="cstat-no" title="statement not covered" >CONFIG.committees.<span class="fstat-no" title="function not covered" >map((c</span>) =&gt; <span class="cstat-no" title="statement not covered" >c.code);</span></span>
 &nbsp;
     const dataLookup: Record&lt;string, number&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
 <span class="cstat-no" title="statement not covered" >    if (this.data?.productivityMatrix) {</span>
@@ -2924,7 +2924,7 @@ class ProductivityHeatMap {
   }
 &nbsp;
   /** Add a gradient color legend below the heatmap. */
-  private <span class="fstat-no" title="function not covered" >addColorLegend(g</span>: any, _colorScale: any, innerWidth: number, innerHeight: number): void {
+<span class="fstat-no" title="function not covered" >  private a</span>ddColorLegend(g: any, _colorScale: any, innerWidth: number, innerHeight: number): void {
     const legendWidth = <span class="cstat-no" title="statement not covered" >200;</span>
     const legendHeight = <span class="cstat-no" title="statement not covered" >15;</span>
 &nbsp;
@@ -2951,12 +2951,12 @@ class ProductivityHeatMap {
   }
 &nbsp;
   /** Accessible HTML table fallback. */
-  private <span class="fstat-no" title="function not covered" >updateAccessibleTable(m</span>atrix: HeatMapCell[]): void {
+<span class="fstat-no" title="function not covered" >  private u</span>pdateAccessibleTable(matrix: HeatMapCell[]): void {
     const table = <span class="cstat-no" title="statement not covered" >document.getElementById('productivityMatrixTable');</span>
 <span class="cstat-no" title="statement not covered" >    if (!table) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
-    const years = <span class="cstat-no" title="statement not covered" >[...new Set(matrix.map(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.year)</span>)];</span>
-    const committees = <span class="cstat-no" title="statement not covered" >[...new Set(matrix.map(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.committee)</span>)];</span>
+    const years = <span class="cstat-no" title="statement not covered" >[...new Set(matrix.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.year))</span>];</span>
+    const committees = <span class="cstat-no" title="statement not covered" >[...new Set(matrix.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.committee))</span>];</span>
 &nbsp;
     let html = <span class="cstat-no" title="statement not covered" >'&lt;caption&gt;Committee Productivity Matrix (2020-2026)&lt;/caption&gt;';</span>
 <span class="cstat-no" title="statement not covered" >    html += '&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Committee&lt;/th&gt;';</span>
@@ -2968,7 +2968,7 @@ class ProductivityHeatMap {
 <span class="cstat-no" title="statement not covered" >    for (const committee of committees) {</span>
 <span class="cstat-no" title="statement not covered" >      html += `&lt;tr&gt;&lt;td&gt;${committee}&lt;/td&gt;`;</span>
 <span class="cstat-no" title="statement not covered" >      for (const year of years) {</span>
-        const cell = <span class="cstat-no" title="statement not covered" >matrix.find(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.committee === committee &amp;&amp; d.year === year)</span>;</span>
+        const cell = <span class="cstat-no" title="statement not covered" >matrix.<span class="fstat-no" title="function not covered" >find((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.committee === committee &amp;&amp; d.year === year);</span></span>
 <span class="cstat-no" title="statement not covered" >        html += `&lt;td&gt;${cell ? cell.value.toFixed(1) : 'N/A'}&lt;/td&gt;`;</span>
       }
 <span class="cstat-no" title="statement not covered" >      html += '&lt;/tr&gt;';</span>
@@ -2998,15 +2998,15 @@ class ChartJSVisualizations {
   }
 &nbsp;
   /** Committee comparison bar chart. */
-  private <span class="fstat-no" title="function not covered" >renderCommitteeComparison(d</span>ata: AllCommitteeData): void {
-    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('committeeComparisonChart') as HTMLCanvasElement | null;</span>
+<span class="fstat-no" title="function not covered" >  private r</span>enderCommitteeComparison(data: AllCommitteeData): void {
+    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('committeeComparisonChart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >    if (!canvas) {</span>
 <span class="cstat-no" title="statement not covered" >      logger.error('[ChartJS] committeeComparisonChart canvas not found');</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
     }
 &nbsp;
     const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d');</span>
-    const labels = <span class="cstat-no" title="statement not covered" >CONFIG.committees.map(<span class="fstat-no" title="function not covered" >(c</span>) =&gt; <span class="cstat-no" title="statement not covered" >c.code)</span>;</span>
+    const labels = <span class="cstat-no" title="statement not covered" >CONFIG.committees.<span class="fstat-no" title="function not covered" >map((c</span>) =&gt; <span class="cstat-no" title="statement not covered" >c.code);</span></span>
 &nbsp;
     const prodLookup: Record&lt;string, number&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
 <span class="cstat-no" title="statement not covered" >    if (data?.productivityMatrix) {</span>
@@ -3023,8 +3023,8 @@ class ChartJSVisualizations {
       }
     }
 &nbsp;
-    const productivity = <span class="cstat-no" title="statement not covered" >labels.map(<span class="fstat-no" title="function not covered" >(c</span>ode) =&gt; <span class="cstat-no" title="statement not covered" >prodLookup[code] || 50)</span>;</span>
-    const colors = <span class="cstat-no" title="statement not covered" >CONFIG.committees.map(<span class="fstat-no" title="function not covered" >(c</span>) =&gt; <span class="cstat-no" title="statement not covered" >c.color)</span>;</span>
+    const productivity = <span class="cstat-no" title="statement not covered" >labels.<span class="fstat-no" title="function not covered" >map((c</span>ode) =&gt; <span class="cstat-no" title="statement not covered" >prodLookup[code] || 50);</span></span>
+    const colors = <span class="cstat-no" title="statement not covered" >CONFIG.committees.<span class="fstat-no" title="function not covered" >map((c</span>) =&gt; <span class="cstat-no" title="statement not covered" >c.color);</span></span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (this.charts.comparison) {</span>
 <span class="cstat-no" title="statement not covered" >      this.charts.comparison.destroy();</span>
@@ -3054,7 +3054,7 @@ class ChartJSVisualizations {
         plugins: {
           title: { display: true, text: 'Committee Productivity Comparison', color: textColor, font: { size: 16, weight: 'bold' } },
           legend: { display: false },
-          tooltip: { callbacks: { label: <span class="fstat-no" title="function not covered" >(c</span>ontext: any) =&gt; <span class="cstat-no" title="statement not covered" >`Productivity: ${context.parsed.y.toFixed(1)}` }</span> },
+          tooltip: { callbacks: { <span class="fstat-no" title="function not covered" >label: (c</span>ontext: any) =&gt; <span class="cstat-no" title="statement not covered" >`Productivity: ${context.parsed.y.toFixed(1)}` } </span>},
         },
         scales: {
           y: { beginAtZero: true, max: 100, title: { display: true, text: 'Productivity Score (0-100)', color: textColor }, ticks: { color: textColor }, grid: { color: borderColor } },
@@ -3065,8 +3065,8 @@ class ChartJSVisualizations {
   }
 &nbsp;
   /** Decision effectiveness stacked bar chart. */
-  private <span class="fstat-no" title="function not covered" >renderDecisionEffectiveness(d</span>ata: AllCommitteeData): void {
-    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('decisionEffectivenessChart') as HTMLCanvasElement | null;</span>
+<span class="fstat-no" title="function not covered" >  private r</span>enderDecisionEffectiveness(data: AllCommitteeData): void {
+    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('decisionEffectivenessChart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >    if (!canvas) {</span>
 <span class="cstat-no" title="statement not covered" >      logger.error('[ChartJS] decisionEffectivenessChart canvas not found');</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
@@ -3092,15 +3092,15 @@ class ChartJSVisualizations {
       }
     }
 &nbsp;
-    const approved = <span class="cstat-no" title="statement not covered" >labels.map(<span class="fstat-no" title="function not covered" >(y</span>ear) =&gt; {</span>
+    const approved = <span class="cstat-no" title="statement not covered" >labels.<span class="fstat-no" title="function not covered" >map((y</span>ear) =&gt; {</span>
       const total = <span class="cstat-no" title="statement not covered" >yearDocCounts[year] || 100;</span>
 <span class="cstat-no" title="statement not covered" >      return Math.min(100, total &gt; 0 ? 70 : 0);</span>
     });
-    const rejected = <span class="cstat-no" title="statement not covered" >labels.map(<span class="fstat-no" title="function not covered" >(y</span>ear) =&gt; {</span>
+    const rejected = <span class="cstat-no" title="statement not covered" >labels.<span class="fstat-no" title="function not covered" >map((y</span>ear) =&gt; {</span>
       const total = <span class="cstat-no" title="statement not covered" >yearDocCounts[year] || 100;</span>
 <span class="cstat-no" title="statement not covered" >      return total &gt; 0 ? 20 : 0;</span>
     });
-    const pending = <span class="cstat-no" title="statement not covered" >labels.map(<span class="fstat-no" title="function not covered" >(_</span>, i) =&gt; <span class="cstat-no" title="statement not covered" >Math.max(0, 100 - approved[i] - rejected[i]))</span>;</span>
+    const pending = <span class="cstat-no" title="statement not covered" >labels.<span class="fstat-no" title="function not covered" >map((_</span>, i) =&gt; <span class="cstat-no" title="statement not covered" >Math.max(0, 100 - approved[i] - rejected[i]))</span>;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (this.charts.effectiveness) {</span>
 <span class="cstat-no" title="statement not covered" >      this.charts.effectiveness.destroy();</span>
@@ -3126,7 +3126,7 @@ class ChartJSVisualizations {
         plugins: {
           title: { display: true, text: 'Decision Outcomes by Year', color: textColor, font: { size: 16, weight: 'bold' } },
           legend: { labels: { color: textColor } },
-          tooltip: { callbacks: { label: <span class="fstat-no" title="function not covered" >(c</span>ontext: any) =&gt; <span class="cstat-no" title="statement not covered" >`${context.dataset.label}: ${context.parsed.y.toFixed(1)}%` }</span> },
+          tooltip: { callbacks: { <span class="fstat-no" title="function not covered" >label: (c</span>ontext: any) =&gt; <span class="cstat-no" title="statement not covered" >`${context.dataset.label}: ${context.parsed.y.toFixed(1)}%` } </span>},
         },
         scales: {
           x: { stacked: true, title: { display: true, text: 'Year', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
@@ -3137,8 +3137,8 @@ class ChartJSVisualizations {
   }
 &nbsp;
   /** Seasonal activity line chart. */
-  private <span class="fstat-no" title="function not covered" >renderSeasonalPatterns(d</span>ata: AllCommitteeData): void {
-    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('seasonalPatternsChart') as HTMLCanvasElement | null;</span>
+<span class="fstat-no" title="function not covered" >  private r</span>enderSeasonalPatterns(data: AllCommitteeData): void {
+    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('seasonalPatternsChart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >    if (!canvas) {</span>
 <span class="cstat-no" title="statement not covered" >      logger.error('[ChartJS] seasonalPatternsChart canvas not found');</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
@@ -3164,9 +3164,9 @@ class ChartJSVisualizations {
 &nbsp;
     const datasets =
 <span class="cstat-no" title="statement not covered" >      availableYears.length &gt; 0</span>
-        ? availableYears.map(<span class="fstat-no" title="function not covered" >(y</span>ear, idx) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+        ? availableYears.<span class="fstat-no" title="function not covered" >map((y</span>ear, idx) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
             label: year,
-            data: [1, 2, 3, 4].map(<span class="fstat-no" title="function not covered" >(q</span>) =&gt; <span class="cstat-no" title="statement not covered" >yearQuarterData[year][q] || 0)</span>,
+            data: [1, 2, 3, 4].<span class="fstat-no" title="function not covered" >map((q</span>) =&gt; <span class="cstat-no" title="statement not covered" >yearQuarterData[year][q] || 0),</span>
             borderColor: yearColors[idx % yearColors.length],
             backgroundColor: yearColors[idx % yearColors.length] + '1A',
             tension: 0.4,
@@ -3194,7 +3194,7 @@ class ChartJSVisualizations {
         plugins: {
           title: { display: true, text: 'Quarterly Activity Patterns (2023-2025)', color: textColor, font: { size: 16, weight: 'bold' } },
           legend: { labels: { color: textColor } },
-          tooltip: { callbacks: { label: <span class="fstat-no" title="function not covered" >(c</span>ontext: any) =&gt; <span class="cstat-no" title="statement not covered" >`${context.dataset.label}: ${context.parsed.y} activity score` }</span> },
+          tooltip: { callbacks: { <span class="fstat-no" title="function not covered" >label: (c</span>ontext: any) =&gt; <span class="cstat-no" title="statement not covered" >`${context.dataset.label}: ${context.parsed.y} activity score` } </span>},
         },
         scales: {
           y: { beginAtZero: true, max: 100, title: { display: true, text: 'Activity Score', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
@@ -3346,7 +3346,7 @@ export async function <span class="fstat-no" title="function not covered" >init(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:17.052Z
+                at 2026-03-12T22:50:12.565Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

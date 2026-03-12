@@ -901,7 +901,7 @@ export function calculateInfluenceScore(doc: RawDocument): number {
   const organ = doc.organ || doc.committee || '';
   if (HIGH_INFLUENCE_COMMITTEES.has(organ)) {
     score += 30;
-  <span class="missing-if-branch" title="if path not taken" >I</span>} else if (organ) {
+  } else if (<span class="missing-if-branch" title="if path not taken" >I</span>organ) {
 <span class="cstat-no" title="statement not covered" >    score += 15;</span>
   }
 &nbsp;
@@ -1022,18 +1022,18 @@ export function generateOppositionStrategySection(motions: RawDocument[], lang: 
     // Fallback inline templates per language
     const templates: Record&lt;string, (p: string, n: number) =&gt; string&gt; = {
       sv: (p, n) =&gt; `&lt;strong&gt;${p}&lt;/strong&gt; är mest aktiv med ${n} motion${n !== 1 ? <span class="branch-0 cbranch-no" title="branch not covered" >'er' : '</span>'}`,
-      da: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt; fører med ${n} forslag`,</span>
-      no: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt; leder med ${n} forslag`,</span>
-      fi: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt; johtaa ${n} aloitteella`,</span>
+<span class="fstat-no" title="function not covered" >      da: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt; fører med ${n} forslag`,</span>
+<span class="fstat-no" title="function not covered" >      no: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt; leder med ${n} forslag`,</span>
+<span class="fstat-no" title="function not covered" >      fi: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt; johtaa ${n} aloitteella`,</span>
       de: (p, n) =&gt; `&lt;strong&gt;${p}&lt;/strong&gt; führt mit ${n} Antrag${n !== 1 ? 'en' : ''}`,
       fr: (p, n) =&gt; `&lt;strong&gt;${p}&lt;/strong&gt; mène avec ${n} motion${n !== 1 ? 's' : ''}`,
-      es: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt; lidera con ${n} mocion${n !== 1 ? 'es' : ''}`,</span>
-      nl: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt; leidt met ${n} motie${n !== 1 ? 's' : ''}`,</span>
+<span class="fstat-no" title="function not covered" >      es: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt; lidera con ${n} mocion${n !== 1 ? 'es' : ''}`,</span>
+<span class="fstat-no" title="function not covered" >      nl: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt; leidt met ${n} motie${n !== 1 ? 's' : ''}`,</span>
       ar: (p, n) =&gt; `&lt;strong&gt;${p}&lt;/strong&gt; يتصدر بـ${n} اقتراح`,
-      he: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt; מוביל עם ${n} הצעות`,</span>
+<span class="fstat-no" title="function not covered" >      he: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt; מוביל עם ${n} הצעות`,</span>
       ja: (p, n) =&gt; `&lt;strong&gt;${p}&lt;/strong&gt;が${n}件の動議で最も活発`,
-      ko: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt;이(가) ${n}건의 동의로 선두`,</span>
-      zh: <span class="fstat-no" title="function not covered" >(p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt;以${n}项动议领先`,</span>
+<span class="fstat-no" title="function not covered" >      ko: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt;이(가) ${n}건의 동의로 선두`,</span>
+<span class="fstat-no" title="function not covered" >      zh: (p</span>, n) =&gt; <span class="cstat-no" title="statement not covered" >`&lt;strong&gt;${p}&lt;/strong&gt;以${n}项动议领先`,</span>
     };
     const tpl = templates[lang as string];
     text = tpl ? tpl(safeParty, count) : `&lt;strong&gt;${safeParty}&lt;/strong&gt; leads opposition activity with ${count} motion${count !== 1 ? 's' : ''}`;
@@ -1057,18 +1057,18 @@ export function generateOppositionStrategySection(motions: RawDocument[], lang: 
     const safeSecond = escapeHtml(secondParty);
     const followTemplates: Record&lt;string, (p: string, n: number) =&gt; string&gt; = {
       sv: (p, c) =&gt; ` ${p} följer med ${c} motion${c !== 1 ? <span class="branch-0 cbranch-no" title="branch not covered" >'er' : '</span>'}.`,
-      da: <span class="fstat-no" title="function not covered" >(p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p} følger med ${c} forslag.`,</span>
-      no: <span class="fstat-no" title="function not covered" >(p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p} følger med ${c} forslag.`,</span>
-      fi: <span class="fstat-no" title="function not covered" >(p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p} seuraa ${c} aloitteella.`,</span>
+<span class="fstat-no" title="function not covered" >      da: (p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p} følger med ${c} forslag.`,</span>
+<span class="fstat-no" title="function not covered" >      no: (p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p} følger med ${c} forslag.`,</span>
+<span class="fstat-no" title="function not covered" >      fi: (p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p} seuraa ${c} aloitteella.`,</span>
       de: (p, c) =&gt; ` ${p} folgt mit ${c} Antrag${c !== 1 ? <span class="branch-0 cbranch-no" title="branch not covered" >'en' : '</span>'}.`,
       fr: (p, c) =&gt; ` ${p} suit avec ${c} motion${c !== 1 ? <span class="branch-0 cbranch-no" title="branch not covered" >'s' : '</span>'}.`,
-      es: <span class="fstat-no" title="function not covered" >(p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p} sigue con ${c} mocion${c !== 1 ? 'es' : ''}.`,</span>
-      nl: <span class="fstat-no" title="function not covered" >(p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p} volgt met ${c} motie${c !== 1 ? 's' : ''}.`,</span>
+<span class="fstat-no" title="function not covered" >      es: (p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p} sigue con ${c} mocion${c !== 1 ? 'es' : ''}.`,</span>
+<span class="fstat-no" title="function not covered" >      nl: (p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p} volgt met ${c} motie${c !== 1 ? 's' : ''}.`,</span>
       ar: (p, c) =&gt; ` ${p} يتبع بـ${c} اقتراح.`,
-      he: <span class="fstat-no" title="function not covered" >(p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p} עוקב עם ${c} הצעות.`,</span>
+<span class="fstat-no" title="function not covered" >      he: (p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p} עוקב עם ${c} הצעות.`,</span>
       ja: (p, c) =&gt; ` ${p}が${c}件で続きます。`,
-      ko: <span class="fstat-no" title="function not covered" >(p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p}이(가) ${c}건으로 뒤를 잇습니다.`,</span>
-      zh: <span class="fstat-no" title="function not covered" >(p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p}以${c}项紧随其后。`,</span>
+<span class="fstat-no" title="function not covered" >      ko: (p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p}이(가) ${c}건으로 뒤를 잇습니다.`,</span>
+<span class="fstat-no" title="function not covered" >      zh: (p</span>, c) =&gt; <span class="cstat-no" title="statement not covered" >` ${p}以${c}项紧随其后。`,</span>
     };
     const followTpl = followTemplates[lang as string];
     text += followTpl
@@ -1121,7 +1121,7 @@ export function renderMotionEntry(motion: RawDocument, lang: Language | string):
     || (motion.summary || motion.notis || '').includes('Motion till riksdagen');
   const summaryHtml = (summaryText &amp;&amp; summaryText !== motionDefaultVal &amp;&amp; isSwedishContent)
     ? svSpan(escapeHtml(summaryText), lang)
-    : escapeHtml(summaryText || (<span class="branch-1 cbranch-no" title="branch not covered" >typeof motionDefaultVal === 'string' ? motionDefaultVal : ''))</span>;
+    : escapeHtml(summaryText || (<span class="branch-1 cbranch-no" title="branch not covered" >typeof motionDefaultVal === 'string' ? motionDefaultVal : ''));</span>
 &nbsp;
   const readFullVal = L(lang, 'readFullMotion');
   const whyItMattersVal = L(lang, 'whyItMatters');
@@ -1158,7 +1158,7 @@ export function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: 
   // not document content and must never appear in article document entries.
   const safeRawText = isPersonProfileText(rawText) ? <span class="branch-0 cbranch-no" title="branch not covered" >'' : r</span>awText;
   // For motions, clean Swedish boilerplate before extracting passage
-  const cleanedText = (normalizedType === 'motion' &amp;&amp; safeRawText.includes('Motion till riksdagen'<span class="branch-0 cbranch-no" title="branch not covered" >))</span>
+  const cleanedText = (normalizedType === 'motion' &amp;&amp; safeRawText.includes('Motion till riksdagen')<span class="branch-0 cbranch-no" title="branch not covered" >)</span>
     ? cleanMotionText(safeRawText)
     : safeRawText;
   const passage = extractKeyPassage(cleanedText, 500);
@@ -1178,7 +1178,7 @@ export function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: 
   // ── PRIMARY: related speeches (direct evidence from the chamber) ─────────
   const speeches = doc.speeches || [];
   <span class="missing-if-branch" title="if path not taken" >I</span>if (speeches.length &gt; 0) {
-    const speakerLines = <span class="cstat-no" title="statement not covered" >speeches.slice(0, 2).map(<span class="fstat-no" title="function not covered" >s =&gt; {</span></span>
+    const speakerLines = <span class="cstat-no" title="statement not covered" >speeches.slice(0, 2).<span class="fstat-no" title="function not covered" >map(s</span> =&gt; {</span>
       const who = <span class="cstat-no" title="statement not covered" >[s.talare, s.parti ? `(${s.parti})` : ''].filter(Boolean).join(' ');</span>
 <span class="cstat-no" title="statement not covered" >      return who ? escapeHtml(who) : 'Unknown speaker';</span>
     }).join(', ');
@@ -1240,7 +1240,7 @@ export function generateDocumentIntelligenceAnalysis(doc: RawDocument, docType: 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

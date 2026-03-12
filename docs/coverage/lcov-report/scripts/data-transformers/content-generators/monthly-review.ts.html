@@ -643,21 +643,21 @@ function generateStrategicOutlook(metrics: MonthlyMetrics, data: ArticleContentD
     const trajectoryTemplates: Record&lt;string, (inc: boolean) =&gt; string&gt; = {
       en: inc =&gt; inc ? 'Legislative activity is accelerating — document volume is up month-over-month.' : 'Legislative activity is decelerating — document volume is down month-over-month.',
       sv: inc =&gt; inc ? <span class="branch-0 cbranch-no" title="branch not covered" >'Riksdagsaktiviteten accelererar — dokumentvolymen ökar månad för månad.' : '</span>Riksdagsaktiviteten avtar — dokumentvolymen minskar månad för månad.',
-      da: <span class="fstat-no" title="function not covered" >inc =&gt; <span class="cstat-no" title="statement not covered" >i</span>nc ? 'Den lovgivende aktivitet accelererer — dokumentmængden stiger måned for måned.' : 'Den lovgivende aktivitet aftager — dokumentmængden falder måned for måned.',</span>
-      no: <span class="fstat-no" title="function not covered" >inc =&gt; <span class="cstat-no" title="statement not covered" >i</span>nc ? 'Den lovgivende aktiviteten akselererer — dokumentvolumet øker måned for måned.' : 'Den lovgivende aktiviteten avtar — dokumentvolumet synker måned for måned.',</span>
-      fi: <span class="fstat-no" title="function not covered" >inc =&gt; <span class="cstat-no" title="statement not covered" >i</span>nc ? 'Lainsäädäntöaktiivisuus kiihtyy — asiakirjojen määrä kasvaa kuukaudesta toiseen.' : 'Lainsäädäntöaktiivisuus hidastuu — asiakirjojen määrä laskee kuukaudesta toiseen.',</span>
+<span class="fstat-no" title="function not covered" >      da: i</span>nc =&gt; <span class="cstat-no" title="statement not covered" >inc ? 'Den lovgivende aktivitet accelererer — dokumentmængden stiger måned for måned.' : 'Den lovgivende aktivitet aftager — dokumentmængden falder måned for måned.',</span>
+<span class="fstat-no" title="function not covered" >      no: i</span>nc =&gt; <span class="cstat-no" title="statement not covered" >inc ? 'Den lovgivende aktiviteten akselererer — dokumentvolumet øker måned for måned.' : 'Den lovgivende aktiviteten avtar — dokumentvolumet synker måned for måned.',</span>
+<span class="fstat-no" title="function not covered" >      fi: i</span>nc =&gt; <span class="cstat-no" title="statement not covered" >inc ? 'Lainsäädäntöaktiivisuus kiihtyy — asiakirjojen määrä kasvaa kuukaudesta toiseen.' : 'Lainsäädäntöaktiivisuus hidastuu — asiakirjojen määrä laskee kuukaudesta toiseen.',</span>
       de: inc =&gt; inc ? <span class="branch-0 cbranch-no" title="branch not covered" >'Die Gesetzgebungsaktivität nimmt zu — das Dokumentenvolumen steigt von Monat zu Monat.' : '</span>Die Gesetzgebungsaktivität nimmt ab — das Dokumentenvolumen sinkt von Monat zu Monat.',
-      fr: <span class="fstat-no" title="function not covered" >inc =&gt; <span class="cstat-no" title="statement not covered" >i</span>nc ? "L'activité législative s'accélère — le volume documentaire augmente d'un mois sur l'autre." : "L'activité législative ralentit — le volume documentaire diminue d'un mois sur l'autre.",</span>
-      es: <span class="fstat-no" title="function not covered" >inc =&gt; <span class="cstat-no" title="statement not covered" >i</span>nc ? 'La actividad legislativa está acelerando — el volumen de documentos aumenta mes a mes.' : 'La actividad legislativa está desacelerando — el volumen de documentos disminuye mes a mes.',</span>
-      nl: <span class="fstat-no" title="function not covered" >inc =&gt; <span class="cstat-no" title="statement not covered" >i</span>nc ? 'De wetgevende activiteit neemt toe — het documentvolume stijgt maand over maand.' : 'De wetgevende activiteit neemt af — het documentvolume daalt maand over maand.',</span>
-      ar: <span class="fstat-no" title="function not covered" >inc =&gt; <span class="cstat-no" title="statement not covered" >i</span>nc ? 'النشاط التشريعي يتسارع — حجم الوثائق يزداد شهراً بعد شهر.' : 'النشاط التشريعي يتباطأ — حجم الوثائق يتراجع شهراً بعد شهر.',</span>
-      he: <span class="fstat-no" title="function not covered" >inc =&gt; <span class="cstat-no" title="statement not covered" >i</span>nc ? 'הפעילות החקיקתית מתאיצה — נפח המסמכים עולה מחודש לחודש.' : 'הפעילות החקיקתית מואטת — נפח המסמכים יורד מחודש לחודש.',</span>
-      ja: <span class="fstat-no" title="function not covered" >inc =&gt; <span class="cstat-no" title="statement not covered" >i</span>nc ? '立法活動が加速しています — 文書量が前月比で増加しています。' : '立法活動が減速しています — 文書量が前月比で減少しています。',</span>
-      ko: <span class="fstat-no" title="function not covered" >inc =&gt; <span class="cstat-no" title="statement not covered" >i</span>nc ? '입법 활동이 가속화되고 있습니다 — 문서량이 전월 대비 증가하고 있습니다.' : '입법 활동이 감속되고 있습니다 — 문서량이 전월 대비 감소하고 있습니다.',</span>
-      zh: <span class="fstat-no" title="function not covered" >inc =&gt; <span class="cstat-no" title="statement not covered" >i</span>nc ? '立法活动正在加速——文件数量环比增加。' : '立法活动正在减速——文件数量环比减少。',</span>
+<span class="fstat-no" title="function not covered" >      fr: i</span>nc =&gt; <span class="cstat-no" title="statement not covered" >inc ? "L'activité législative s'accélère — le volume documentaire augmente d'un mois sur l'autre." : "L'activité législative ralentit — le volume documentaire diminue d'un mois sur l'autre.",</span>
+<span class="fstat-no" title="function not covered" >      es: i</span>nc =&gt; <span class="cstat-no" title="statement not covered" >inc ? 'La actividad legislativa está acelerando — el volumen de documentos aumenta mes a mes.' : 'La actividad legislativa está desacelerando — el volumen de documentos disminuye mes a mes.',</span>
+<span class="fstat-no" title="function not covered" >      nl: i</span>nc =&gt; <span class="cstat-no" title="statement not covered" >inc ? 'De wetgevende activiteit neemt toe — het documentvolume stijgt maand over maand.' : 'De wetgevende activiteit neemt af — het documentvolume daalt maand over maand.',</span>
+<span class="fstat-no" title="function not covered" >      ar: i</span>nc =&gt; <span class="cstat-no" title="statement not covered" >inc ? 'النشاط التشريعي يتسارع — حجم الوثائق يزداد شهراً بعد شهر.' : 'النشاط التشريعي يتباطأ — حجم الوثائق يتراجع شهراً بعد شهر.',</span>
+<span class="fstat-no" title="function not covered" >      he: i</span>nc =&gt; <span class="cstat-no" title="statement not covered" >inc ? 'הפעילות החקיקתית מתאיצה — נפח המסמכים עולה מחודש לחודש.' : 'הפעילות החקיקתית מואטת — נפח המסמכים יורד מחודש לחודש.',</span>
+<span class="fstat-no" title="function not covered" >      ja: i</span>nc =&gt; <span class="cstat-no" title="statement not covered" >inc ? '立法活動が加速しています — 文書量が前月比で増加しています。' : '立法活動が減速しています — 文書量が前月比で減少しています。',</span>
+<span class="fstat-no" title="function not covered" >      ko: i</span>nc =&gt; <span class="cstat-no" title="statement not covered" >inc ? '입법 활동이 가속화되고 있습니다 — 문서량이 전월 대비 증가하고 있습니다.' : '입법 활동이 감속되고 있습니다 — 문서량이 전월 대비 감소하고 있습니다.',</span>
+<span class="fstat-no" title="function not covered" >      zh: i</span>nc =&gt; <span class="cstat-no" title="statement not covered" >inc ? '立法活动正在加速——文件数量环比增加。' : '立法活动正在减速——文件数量环比减少。',</span>
     };
     const tpl = trajectoryTemplates[lang as string];
-    const trajectoryText = tpl ? tpl(isIncreasing<span class="branch-1 cbranch-no" title="branch not covered" >) : (trajectoryTemplates['en'] ?? (<span class="fstat-no" title="function not covered" >inc =&gt; <span class="cstat-no" title="statement not covered" >i</span>nc ? 'Legislative activity is accelerating.' : 'Legislative activity is decelerating.'))(i</span>sIncreasing);</span>
+    const trajectoryText = tpl ? tpl(isIncreasing)<span class="branch-1 cbranch-no" title="branch not covered" > : (trajectoryTemplates[<span class="fstat-no" title="function not covered" >'en'] ?? (i</span>nc =&gt; <span class="cstat-no" title="statement not covered" >inc ? 'Legislative activity is accelerating.' : 'Legislative activity is decelerating.'))(i</span>sIncreasing);</span>
     html += `        &lt;li&gt;${escapeHtml(trajectoryText)}&lt;/li&gt;\n`;
   }
 &nbsp;
@@ -700,7 +700,7 @@ export function generateMonthlyReviewContent(data: ArticleContentData, lang: Lan
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:17.052Z
+                at 2026-03-12T22:50:12.565Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -1104,7 +1104,7 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
       console.log('  ℹ️ No calendar events — fetching upcoming documents from legislative pipeline...');
       const rawDocs = await Promise.resolve()
         .then(() =&gt; client.searchDocuments({ from_date: fromStr, to_date: toStr, limit: 30 }))
-        .catch(<span class="fstat-no" title="function not covered" >(e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch documents:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }</span>);
+        .<span class="fstat-no" title="function not covered" >catch((e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch documents:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; });</span>
       documents = Array.isArray(rawDocs) ? rawDocs as RawDocument[] : <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
       mcpCalls.push({ tool: 'search_dokument', result: documents });
       console.log(`  📊 Found ${documents.length} upcoming documents`);
@@ -1117,7 +1117,7 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
         const pastFromStr = formatDateForSlug(pastStart);
         const rawRecentDocs = await Promise.resolve()
           .then(() =&gt; client.searchDocuments({ from_date: pastFromStr, to_date: fromStr, limit: 50 }))
-          .catch(<span class="fstat-no" title="function not covered" >(e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch recent docs:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }</span>);
+          .<span class="fstat-no" title="function not covered" >catch((e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch recent docs:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; });</span>
         documents = Array.isArray(rawRecentDocs) ? rawRecentDocs as RawDocument[] : <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
         mcpCalls.push({ tool: 'search_dokument', result: documents });
         console.log(`  📊 Found ${documents.length} recent pipeline documents`);
@@ -1133,13 +1133,13 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
     const [committeeReports, propositionDocs, motionDocs] = await Promise.all([
       Promise.resolve()
         .then(() =&gt; client.fetchCommitteeReports(20, currentRiksmote) as Promise&lt;unknown[]&gt;)
-        .catch(<span class="fstat-no" title="function not covered" >(e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.warn('Non-fatal: failed to fetch committee reports, continuing with empty list:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }</span>),
+        .<span class="fstat-no" title="function not covered" >catch((e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.warn('Non-fatal: failed to fetch committee reports, continuing with empty list:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }),</span>
       Promise.resolve()
         .then(() =&gt; client.fetchPropositions(15, currentRiksmote) as Promise&lt;unknown[]&gt;)
-        .catch(<span class="fstat-no" title="function not covered" >(e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.warn('Non-fatal: failed to fetch propositions, continuing with empty list:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }</span>),
+        .<span class="fstat-no" title="function not covered" >catch((e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.warn('Non-fatal: failed to fetch propositions, continuing with empty list:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }),</span>
       Promise.resolve()
         .then(() =&gt; client.fetchMotions(50, currentRiksmote) as Promise&lt;unknown[]&gt;)
-        .catch(<span class="fstat-no" title="function not covered" >(e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.warn('Non-fatal: failed to fetch motions, continuing with empty list:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }</span>),
+        .<span class="fstat-no" title="function not covered" >catch((e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.warn('Non-fatal: failed to fetch motions, continuing with empty list:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }),</span>
     ]);
 &nbsp;
     mcpCalls.push({ tool: 'get_betankanden', result: committeeReports });
@@ -1432,7 +1432,7 @@ function checkLegislativePipeline(article: ArticleInput): boolean {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

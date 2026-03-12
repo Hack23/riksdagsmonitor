@@ -784,7 +784,7 @@ function <span class="fstat-no" title="function not covered" >extractTerms(c</sp
  * Analyze all news articles.
  */
 function <span class="fstat-no" title="function not covered" >analyzeArticles(d</span>irectory: string = <span class="branch-0 cbranch-no" title="branch not covered" >'news', d</span>atePrefix: string | null = <span class="branch-0 cbranch-no" title="branch not covered" >null): AnalysisResults {</span>
-  const results: AnalysisResults = <span class="cstat-no" title="statement not covered" >{} as AnalysisResults;</span>
+  const results: AnalysisResults = <span class="cstat-no" title="statement not covered" >{} </span>as AnalysisResults;
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  for (const lang of Object.keys(LANGUAGES) as Language[]) {</span>
 <span class="cstat-no" title="statement not covered" >    results[lang] = {</span>
@@ -795,7 +795,7 @@ function <span class="fstat-no" title="function not covered" >analyzeArticles(d<
   }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  try {</span>
-    const files = <span class="cstat-no" title="statement not covered" >readdirSync(directory).filter(<span class="fstat-no" title="function not covered" >(f</span>) =&gt; {</span>
+    const files = <span class="cstat-no" title="statement not covered" >readdirSync(directory).<span class="fstat-no" title="function not covered" >filter((f</span>) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (!f.endsWith('.html')) <span class="cstat-no" title="statement not covered" >return false;</span></span>
 <span class="cstat-no" title="statement not covered" >      if (datePrefix &amp;&amp; !f.includes(datePrefix)) <span class="cstat-no" title="statement not covered" >return false;</span></span>
 <span class="cstat-no" title="statement not covered" >      return true;</span>
@@ -825,11 +825,11 @@ function <span class="fstat-no" title="function not covered" >analyzeArticles(d<
 &nbsp;
         // Determine article type
         let articleType = <span class="cstat-no" title="statement not covered" >'general';</span>
-<span class="cstat-no" title="statement not covered" >        if (file.includes('committee')) <span class="cstat-no" title="statement not covered" >articleType = <span class="cstat-no" title="statement not covered" >'committee-reports';</span></span></span>
-        else if (file.includes('proposition')) <span class="cstat-no" title="statement not covered" >articleType = <span class="cstat-no" title="statement not covered" >'propositions';</span></span>
-        else if (file.includes('motion')) <span class="cstat-no" title="statement not covered" >articleType = <span class="cstat-no" title="statement not covered" >'motions';</span></span>
-        else if (file.includes('evening')) <span class="cstat-no" title="statement not covered" >articleType = <span class="cstat-no" title="statement not covered" >'evening-analysis';</span></span>
-        else if (file.includes('week-ahead')) <span class="cstat-no" title="statement not covered" >articleType = 'week-ahead';</span>
+<span class="cstat-no" title="statement not covered" >        if (file.includes('committee')) <span class="cstat-no" title="statement not covered" >articleType = 'committee-reports';</span></span>
+        else if (<span class="cstat-no" title="statement not covered" >file.includes('proposition')) <span class="cstat-no" title="statement not covered" >articleType = 'propositions';</span></span>
+        else if (<span class="cstat-no" title="statement not covered" >file.includes('motion')) <span class="cstat-no" title="statement not covered" >articleType = 'motions';</span></span>
+        else if (<span class="cstat-no" title="statement not covered" >file.includes('evening')) <span class="cstat-no" title="statement not covered" >articleType = 'evening-analysis';</span></span>
+        else if (<span class="cstat-no" title="statement not covered" >file.includes('week-ahead')) <span class="cstat-no" title="statement not covered" >articleType = 'week-ahead';</span></span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        results[lang as Language].samples.push({</span>
           file: basename(file),
@@ -884,10 +884,10 @@ function <span class="fstat-no" title="function not covered" >generateReport(r</
 <span class="cstat-no" title="statement not covered" >    if (documentLabels.size &gt; 0) <span class="cstat-no" title="statement not covered" >console.log(`  "Document": ${Array.from(documentLabels).join(', ')}`);</span></span>
 &nbsp;
     // Show sample titles from any articles (prioritize committee reports)
-    const committeeReports = <span class="cstat-no" title="statement not covered" >data.samples.filter(<span class="fstat-no" title="function not covered" >(s</span>) =&gt; <span class="cstat-no" title="statement not covered" >s.type === 'committee-reports')</span>;</span>
+    const committeeReports = <span class="cstat-no" title="statement not covered" >data.samples.<span class="fstat-no" title="function not covered" >filter((s</span>) =&gt; <span class="cstat-no" title="statement not covered" >s.type === 'committee-reports');</span></span>
     const sampleWithTitles =
-<span class="cstat-no" title="statement not covered" >      committeeReports.find(<span class="fstat-no" title="function not covered" >(s</span>) =&gt; <span class="cstat-no" title="statement not covered" >s.terms.titles &amp;&amp; s.terms.titles.length &gt; 0)</span> ||</span>
-      data.samples.find(<span class="fstat-no" title="function not covered" >(s</span>) =&gt; <span class="cstat-no" title="statement not covered" >s.terms.titles &amp;&amp; s.terms.titles.length &gt; 0)</span>;
+<span class="cstat-no" title="statement not covered" >      committeeReports.<span class="fstat-no" title="function not covered" >find((s</span>) =&gt; <span class="cstat-no" title="statement not covered" >s.terms.titles &amp;&amp; s.terms.titles.length &gt; 0) </span>||</span>
+      data.samples.<span class="fstat-no" title="function not covered" >find((s</span>) =&gt; <span class="cstat-no" title="statement not covered" >s.terms.titles &amp;&amp; s.terms.titles.length &gt; 0);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (sampleWithTitles &amp;&amp; sampleWithTitles.terms.titles &amp;&amp; sampleWithTitles.terms.titles.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >      console.log(`  Sample titles: ${sampleWithTitles.terms.titles.slice(0, 3).join(', ')}`);</span>
@@ -910,9 +910,9 @@ function <span class="fstat-no" title="function not covered" >generateReport(r</
 <span class="cstat-no" title="statement not covered" >    for (const [reason, files] of Object.entries(byReason)) {</span>
 <span class="cstat-no" title="statement not covered" >      console.log(`${reason}: ${files.length} file(s)`);</span>
 <span class="cstat-no" title="statement not covered" >      if (files.length &lt;= 5) {</span>
-<span class="cstat-no" title="statement not covered" >        files.forEach(<span class="fstat-no" title="function not covered" >(f</span>) =&gt; <span class="cstat-no" title="statement not covered" >console.log(`  - ${f}`))</span>;</span>
+<span class="cstat-no" title="statement not covered" >        files.<span class="fstat-no" title="function not covered" >forEach((f</span>) =&gt; <span class="cstat-no" title="statement not covered" >console.log(`  - ${f}`))</span>;</span>
       } else {
-<span class="cstat-no" title="statement not covered" >        files.slice(0, 3).forEach(<span class="fstat-no" title="function not covered" >(f</span>) =&gt; <span class="cstat-no" title="statement not covered" >console.log(`  - ${f}`))</span>;</span>
+<span class="cstat-no" title="statement not covered" >        files.slice(0, 3).<span class="fstat-no" title="function not covered" >forEach((f</span>) =&gt; <span class="cstat-no" title="statement not covered" >console.log(`  - ${f}`))</span>;</span>
 <span class="cstat-no" title="statement not covered" >        console.log(`  ... and ${files.length - 3} more`);</span>
       }
 <span class="cstat-no" title="statement not covered" >      console.log();</span>
@@ -936,10 +936,10 @@ let directory = <span class="cstat-no" title="statement not covered" >'news';</s
 <span class="cstat-no" title="statement not covered" >  if (args[i] === '--date-prefix' &amp;&amp; args[i + 1]) {</span>
 <span class="cstat-no" title="statement not covered" >    datePrefix = args[i + 1]!;</span>
 <span class="cstat-no" title="statement not covered" >    i++;</span>
-<span class="cstat-no" title="statement not covered" >  } else if (args[i] === '--directory' &amp;&amp; args[i + 1]) {</span>
+  } else if (<span class="cstat-no" title="statement not covered" >args[i] === '--directory' &amp;&amp; args[i + 1]) {</span>
 <span class="cstat-no" title="statement not covered" >    directory = args[i + 1]!;</span>
 <span class="cstat-no" title="statement not covered" >    i++;</span>
-<span class="cstat-no" title="statement not covered" >  } else if (args[i] === '--help' || args[i] === '-h') {</span>
+  } else if (<span class="cstat-no" title="statement not covered" >args[i] === '--help' || args[i] === '-h') {</span>
 <span class="cstat-no" title="statement not covered" >    console.log(`</span>
 Usage: node scripts/extract-vocabulary.js [options]
 &nbsp;
@@ -967,7 +967,7 @@ const results = <span class="cstat-no" title="statement not covered" >analyzeArt
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../prettify.js"></script>
         <script>

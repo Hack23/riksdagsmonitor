@@ -2063,7 +2063,7 @@ export class CIADataLoader {
   }
 &nbsp;
   /** CSV data source definitions – maps to real PostgreSQL view exports. */
-<span class="cstat-no" title="statement not covered" >  static CSV_SOURCES: CSVSourceMap = {</span>
+  static CSV_SOURCES: CSVSourceMap = <span class="cstat-no" title="statement not covered" >{</span>
     personStatus: {
       local: 'distribution_person_status.csv',
       description: 'Active MP counts by status'
@@ -2131,7 +2131,7 @@ export class CIADataLoader {
     const lines = <span class="cstat-no" title="statement not covered" >csvText.trim().split('\n');</span>
 <span class="cstat-no" title="statement not covered" >    if (lines.length &lt; 2) <span class="cstat-no" title="statement not covered" >return [];</span></span>
 &nbsp;
-    const headers = <span class="cstat-no" title="statement not covered" >lines[0].split(',').map(<span class="fstat-no" title="function not covered" >h =&gt; <span class="cstat-no" title="statement not covered" >h</span>.trim().replace(/^"|"$/g, ''))</span>;</span>
+    const headers = <span class="cstat-no" title="statement not covered" >lines[0].split(',').<span class="fstat-no" title="function not covered" >map(h</span> =&gt; <span class="cstat-no" title="statement not covered" >h.trim().replace(/^"|"$/g, ''))</span>;</span>
     const rows: CSVRow[] = <span class="cstat-no" title="statement not covered" >[];</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >1; i</span> &lt; lines.length; i++) {</span>
@@ -2146,7 +2146,7 @@ export class CIADataLoader {
         const ch = <span class="cstat-no" title="statement not covered" >line[j];</span>
 <span class="cstat-no" title="statement not covered" >        if (ch === '"') {</span>
 <span class="cstat-no" title="statement not covered" >          inQuotes = !inQuotes;</span>
-<span class="cstat-no" title="statement not covered" >        } else if (ch === ',' &amp;&amp; !inQuotes) {</span>
+        } else if (<span class="cstat-no" title="statement not covered" >ch === ',' &amp;&amp; !inQuotes) {</span>
 <span class="cstat-no" title="statement not covered" >          values.push(current.trim());</span>
 <span class="cstat-no" title="statement not covered" >          current = '';</span>
         } else {
@@ -2156,7 +2156,7 @@ export class CIADataLoader {
 <span class="cstat-no" title="statement not covered" >      values.push(current.trim());</span>
 &nbsp;
       const row: CSVRow = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >      headers.forEach(<span class="fstat-no" title="function not covered" >(h</span>, idx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      headers.<span class="fstat-no" title="function not covered" >forEach((h</span>, idx) =&gt; {</span>
         const val = <span class="cstat-no" title="statement not covered" >values[idx] || '';</span>
         const num = <span class="cstat-no" title="statement not covered" >Number(val);</span>
 <span class="cstat-no" title="statement not covered" >        row[h] = val !== '' &amp;&amp; !isNaN(num) ? num : val;</span>
@@ -2234,27 +2234,27 @@ export class CIADataLoader {
     ]);
 &nbsp;
     // Count active MPs
-    const activeRow = <span class="cstat-no" title="statement not covered" >personStatus.find(<span class="fstat-no" title="function not covered" >r =&gt; <span class="cstat-no" title="statement not covered" >r</span>.status === 'Tjänstgörande riksdagsledamot')</span>;</span>
+    const activeRow = <span class="cstat-no" title="statement not covered" >personStatus.<span class="fstat-no" title="function not covered" >find(r</span> =&gt; <span class="cstat-no" title="statement not covered" >r.status === 'Tjänstgörande riksdagsledamot');</span></span>
     const totalMPs = <span class="cstat-no" title="statement not covered" >activeRow ? (activeRow.person_count as number) : 349;</span>
 &nbsp;
     // Count unique parties from risk data (only real riksdag parties)
     const riksdagParties = <span class="cstat-no" title="statement not covered" >['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];</span>
     const partiesInData = <span class="cstat-no" title="statement not covered" >new Set(</span>
-      riskByParty.map(<span class="fstat-no" title="function not covered" >r =&gt; <span class="cstat-no" title="statement not covered" >r</span>.party as string)</span>.filter(<span class="fstat-no" title="function not covered" >p =&gt; <span class="cstat-no" title="statement not covered" >r</span>iksdagParties.includes(p))</span>
+      riskByParty.<span class="fstat-no" title="function not covered" >map(r</span> =&gt; <span class="cstat-no" title="statement not covered" >r.party as string).<span class="fstat-no" title="function not covered" ></span>filter(p</span> =&gt; <span class="cstat-no" title="statement not covered" >riksdagParties.includes(p))</span>
     );
     const totalParties = <span class="cstat-no" title="statement not covered" >partiesInData.size || 8;</span>
 &nbsp;
     // Risk alerts from risk_by_party
-    const highRisk = <span class="cstat-no" title="statement not covered" >riskByParty.filter(<span class="fstat-no" title="function not covered" >r =&gt; <span class="cstat-no" title="statement not covered" >r</span>.risk_level === 'HIGH')</span>;</span>
-    const medRisk = <span class="cstat-no" title="statement not covered" >riskByParty.filter(<span class="fstat-no" title="function not covered" >r =&gt; <span class="cstat-no" title="statement not covered" >r</span>.risk_level === 'MEDIUM')</span>;</span>
-    const lowRisk = <span class="cstat-no" title="statement not covered" >riskByParty.filter(<span class="fstat-no" title="function not covered" >r =&gt; <span class="cstat-no" title="statement not covered" >r</span>.risk_level === 'LOW')</span>;</span>
-    const critical = <span class="cstat-no" title="statement not covered" >highRisk.reduce(<span class="fstat-no" title="function not covered" >(s</span>um, r) =&gt; <span class="cstat-no" title="statement not covered" >sum + ((r.politician_count as number) || 0), 0</span>);</span>
-    const major = <span class="cstat-no" title="statement not covered" >medRisk.reduce(<span class="fstat-no" title="function not covered" >(s</span>um, r) =&gt; <span class="cstat-no" title="statement not covered" >sum + ((r.politician_count as number) || 0), 0</span>);</span>
-    const minor = <span class="cstat-no" title="statement not covered" >lowRisk.reduce(<span class="fstat-no" title="function not covered" >(s</span>um, r) =&gt; <span class="cstat-no" title="statement not covered" >sum + ((r.politician_count as number) || 0), 0</span>);</span>
+    const highRisk = <span class="cstat-no" title="statement not covered" >riskByParty.<span class="fstat-no" title="function not covered" >filter(r</span> =&gt; <span class="cstat-no" title="statement not covered" >r.risk_level === 'HIGH');</span></span>
+    const medRisk = <span class="cstat-no" title="statement not covered" >riskByParty.<span class="fstat-no" title="function not covered" >filter(r</span> =&gt; <span class="cstat-no" title="statement not covered" >r.risk_level === 'MEDIUM');</span></span>
+    const lowRisk = <span class="cstat-no" title="statement not covered" >riskByParty.<span class="fstat-no" title="function not covered" >filter(r</span> =&gt; <span class="cstat-no" title="statement not covered" >r.risk_level === 'LOW');</span></span>
+    const critical = <span class="cstat-no" title="statement not covered" >highRisk.<span class="fstat-no" title="function not covered" >reduce((s</span>um, r) =&gt; <span class="cstat-no" title="statement not covered" >sum + ((r.politician_count as number) || 0), 0</span>);</span>
+    const major = <span class="cstat-no" title="statement not covered" >medRisk.<span class="fstat-no" title="function not covered" >reduce((s</span>um, r) =&gt; <span class="cstat-no" title="statement not covered" >sum + ((r.politician_count as number) || 0), 0</span>);</span>
+    const minor = <span class="cstat-no" title="statement not covered" >lowRisk.<span class="fstat-no" title="function not covered" >reduce((s</span>um, r) =&gt; <span class="cstat-no" title="statement not covered" >sum + ((r.politician_count as number) || 0), 0</span>);</span>
 &nbsp;
     // Total risk rules from risk levels
     const totalRiskRules = <span class="cstat-no" title="statement not covered" >riskLevels.length &gt; 0</span>
-      ? riskLevels.reduce(<span class="fstat-no" title="function not covered" >(s</span>um, r) =&gt; <span class="cstat-no" title="statement not covered" >sum + ((r.politician_count as number) || 0), 0</span>)
+      ? riskLevels.<span class="fstat-no" title="function not covered" >reduce((s</span>um, r) =&gt; <span class="cstat-no" title="statement not covered" >sum + ((r.politician_count as number) || 0), 0</span>)
       : 45;
 &nbsp;
     // Latest year ballot activity
@@ -2264,9 +2264,9 @@ export class CIADataLoader {
 &nbsp;
     // Coalition stability from resilience scores (Tidö = M, KD, L, SD)
     const tidoParties = <span class="cstat-no" title="statement not covered" >['M', 'KD', 'L', 'SD'];</span>
-    const tidoResilience = <span class="cstat-no" title="statement not covered" >resilience.filter(<span class="fstat-no" title="function not covered" >r =&gt; <span class="cstat-no" title="statement not covered" >t</span>idoParties.includes(r.party as string))</span>;</span>
+    const tidoResilience = <span class="cstat-no" title="statement not covered" >resilience.<span class="fstat-no" title="function not covered" >filter(r</span> =&gt; <span class="cstat-no" title="statement not covered" >tidoParties.includes(r.party as string))</span>;</span>
     const avgResilience = <span class="cstat-no" title="statement not covered" >tidoResilience.length &gt; 0</span>
-      ? Math.round(tidoResilience.reduce(<span class="fstat-no" title="function not covered" >(s</span>, r) =&gt; <span class="cstat-no" title="statement not covered" >s + ((r.avg_resilience_score as number) || 0), 0</span>) / tidoResilience.length)
+      ? Math.round(tidoResilience.<span class="fstat-no" title="function not covered" >reduce((s</span>, r) =&gt; <span class="cstat-no" title="statement not covered" >s + ((r.avg_resilience_score as number) || 0), 0</span>) / tidoResilience.length)
       : 72;
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return {</span>
@@ -2327,11 +2327,11 @@ export class CIADataLoader {
 &nbsp;
     // Only include real riksdag parties
     const riksdagParties = <span class="cstat-no" title="statement not covered" >['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];</span>
-    const activePerformance = <span class="cstat-no" title="statement not covered" >performance.filter(<span class="fstat-no" title="function not covered" >p =&gt; <span class="cstat-no" title="statement not covered" >r</span>iksdagParties.includes(p.party as string))</span>;</span>
+    const activePerformance = <span class="cstat-no" title="statement not covered" >performance.<span class="fstat-no" title="function not covered" >filter(p</span> =&gt; <span class="cstat-no" title="statement not covered" >riksdagParties.includes(p.party as string))</span>;</span>
 &nbsp;
     // Build a lookup from the detailed metrics
     const metricsMap: Record&lt;string, CSVRow&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >    metrics.forEach(<span class="fstat-no" title="function not covered" >m =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >    metrics.<span class="fstat-no" title="function not covered" >forEach(m</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (riksdagParties.includes(m.party as string)) {</span>
 <span class="cstat-no" title="statement not covered" >        metricsMap[m.party as string] = m;</span>
       }
@@ -2340,8 +2340,8 @@ export class CIADataLoader {
     // Get latest momentum per party
     const latestMomentum: Record&lt;string, CSVRow&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
 <span class="cstat-no" title="statement not covered" >    momentum</span>
-      .filter(<span class="fstat-no" title="function not covered" >m =&gt; <span class="cstat-no" title="statement not covered" >r</span>iksdagParties.includes(m.party as string))</span>
-      .forEach(<span class="fstat-no" title="function not covered" >m =&gt; {</span>
+      .<span class="fstat-no" title="function not covered" >filter(m</span> =&gt; <span class="cstat-no" title="statement not covered" >riksdagParties.includes(m.party as string))</span>
+      .<span class="fstat-no" title="function not covered" >forEach(m</span> =&gt; {
         const party = <span class="cstat-no" title="statement not covered" >m.party as string;</span>
 <span class="cstat-no" title="statement not covered" >        if (</span>
           !latestMomentum[party] ||
@@ -2358,7 +2358,7 @@ export class CIADataLoader {
       S: 107, SD: 73, M: 68, C: 24, V: 24, KD: 19, L: 16, MP: 18
     };
 &nbsp;
-    const parties: PartyEntry[] = <span class="cstat-no" title="statement not covered" >activePerformance.map(<span class="fstat-no" title="function not covered" >p =&gt; {</span></span>
+    const parties: PartyEntry[] = <span class="cstat-no" title="statement not covered" >activePerformance.<span class="fstat-no" title="function not covered" >map(p</span> =&gt; {</span>
       const party = <span class="cstat-no" title="statement not covered" >p.party as string;</span>
       const m = <span class="cstat-no" title="statement not covered" >metricsMap[party] || {};</span>
       const mom = <span class="cstat-no" title="statement not covered" >latestMomentum[party] || {};</span>
@@ -2390,7 +2390,7 @@ export class CIADataLoader {
     });
 &nbsp;
     // Sort by seats descending
-<span class="cstat-no" title="statement not covered" >    parties.sort(<span class="fstat-no" title="function not covered" >(a</span>, <span class="cstat-no" title="statement not covered" >b) =&gt; (b.metrics.seats || 0) - (a.metrics.seats || 0))</span>;</span>
+<span class="cstat-no" title="statement not covered" >    parties.<span class="fstat-no" title="function not covered" >sort((a</span>, <span class="cstat-no" title="statement not covered" >b) =&gt; (b.metrics.seats || 0) - (a.metrics.seats || 0));</span></span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return {</span>
       title: 'Party Performance Dashboard',
@@ -2413,17 +2413,17 @@ export class CIADataLoader {
 &nbsp;
     // Build risk lookup by person_id
     const riskMap: Record&lt;string, CSVRow&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >    riskSummary.forEach(<span class="fstat-no" title="function not covered" >r =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >    riskSummary.<span class="fstat-no" title="function not covered" >forEach(r</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      riskMap[r.person_id as string] = r;</span>
     });
 &nbsp;
     // Sort by network_connections descending, take top 10
     const sorted = <span class="cstat-no" title="statement not covered" >[...influence]</span>
-      .filter(<span class="fstat-no" title="function not covered" >mp =&gt; (<span class="cstat-no" title="statement not covered" >m</span>p.network_connections as number) &gt; 0)</span>
-      .sort(<span class="fstat-no" title="function not covered" >(a</span>, <span class="cstat-no" title="statement not covered" >b) =&gt; ((b.network_connections as number) || 0) - ((a.network_connections as number) || 0))</span>
+      .<span class="fstat-no" title="function not covered" >filter(m</span>p =&gt; (<span class="cstat-no" title="statement not covered" >mp.network_connections as number) &gt; 0)</span>
+      .<span class="fstat-no" title="function not covered" >sort((a</span>, <span class="cstat-no" title="statement not covered" >b) =&gt; ((b.network_connections as number) || 0) - ((a.network_connections as number) || 0))</span>
       .slice(0, 10);
 &nbsp;
-    const rankings: MPRanking[] = <span class="cstat-no" title="statement not covered" >sorted.map(<span class="fstat-no" title="function not covered" >(m</span>p, idx) =&gt; {</span>
+    const rankings: MPRanking[] = <span class="cstat-no" title="statement not covered" >sorted.<span class="fstat-no" title="function not covered" >map((m</span>p, idx) =&gt; {</span>
       const risk = <span class="cstat-no" title="statement not covered" >riskMap[mp.person_id as string] || {};</span>
 <span class="cstat-no" title="statement not covered" >      return {</span>
         rank: idx + 1,
@@ -2435,7 +2435,7 @@ export class CIADataLoader {
           ? (mp.influence_classification as string)
               .replace(/_/g, ' ')
               .toLowerCase()
-              .replace(/\b\w/g, <span class="fstat-no" title="function not covered" >(c</span>: string) =&gt; <span class="cstat-no" title="statement not covered" >c.toUpperCase())</span>
+              .replace(<span class="fstat-no" title="function not covered" >/\b\w/g, (c</span>: string) =&gt; <span class="cstat-no" title="statement not covered" >c.toUpperCase())</span>
           : '',
         influenceScore: (mp.network_connections as number) || 0,
         networkConnections: (mp.network_connections as number) || 0,
@@ -2468,14 +2468,14 @@ export class CIADataLoader {
 &nbsp;
     // Build activity lookup by org code
     const activityMap: Record&lt;string, number&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >    activity.forEach(<span class="fstat-no" title="function not covered" >a =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >    activity.<span class="fstat-no" title="function not covered" >forEach(a</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      activityMap[a.org as string] = (a.document_count as number) || 0;</span>
     });
 &nbsp;
     // Map committee names to codes
     const committees: CommitteeEntry[] = <span class="cstat-no" title="statement not covered" >productivity</span>
-      .filter(<span class="fstat-no" title="function not covered" >c =&gt; <span class="cstat-no" title="statement not covered" >c</span>.committee_name &amp;&amp; (c.total_members as number) &gt; 0)</span>
-      .map(<span class="fstat-no" title="function not covered" >c =&gt; {</span>
+      .<span class="fstat-no" title="function not covered" >filter(c</span> =&gt; <span class="cstat-no" title="statement not covered" >c.committee_name &amp;&amp; (c.total_members as number) &gt; 0)</span>
+      .<span class="fstat-no" title="function not covered" >map(c</span> =&gt; {
         const code = (<span class="cstat-no" title="statement not covered" >c.committee_name as string).substring(0, 3).toUpperCase();</span>
 <span class="cstat-no" title="statement not covered" >        return {</span>
           id: code,
@@ -2493,7 +2493,7 @@ export class CIADataLoader {
       });
 &nbsp;
     // Build simple network graph from committees
-    const nodes: NetworkNode[] = <span class="cstat-no" title="statement not covered" >committees.map(<span class="fstat-no" title="function not covered" >c =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span></span>
+    const nodes: NetworkNode[] = <span class="cstat-no" title="statement not covered" >committees.<span class="fstat-no" title="function not covered" >map(c</span> =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
       id: c.id,
       name: c.name,
       size: c.influenceScore
@@ -2549,8 +2549,8 @@ export class CIADataLoader {
     // Build latest win rate per party from effectiveness trends
     const latestWinRate: Record&lt;string, CSVRow&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
 <span class="cstat-no" title="statement not covered" >    effectiveness</span>
-      .filter(<span class="fstat-no" title="function not covered" >e =&gt; <span class="cstat-no" title="statement not covered" >r</span>iksdagParties.includes(e.party as string))</span>
-      .forEach(<span class="fstat-no" title="function not covered" >e =&gt; {</span>
+      .<span class="fstat-no" title="function not covered" >filter(e</span> =&gt; <span class="cstat-no" title="statement not covered" >riksdagParties.includes(e.party as string))</span>
+      .<span class="fstat-no" title="function not covered" >forEach(e</span> =&gt; {
         const party = <span class="cstat-no" title="statement not covered" >e.party as string;</span>
 <span class="cstat-no" title="statement not covered" >        if (</span>
           !latestWinRate[party] ||
@@ -2563,9 +2563,9 @@ export class CIADataLoader {
       });
 &nbsp;
     // Build agreement matrix: parties with similar win rates are more aligned
-    const agreementMatrix: number[][] = <span class="cstat-no" title="statement not covered" >labels.map(<span class="fstat-no" title="function not covered" >p1 =&gt; {</span></span>
+    const agreementMatrix: number[][] = <span class="cstat-no" title="statement not covered" >labels.<span class="fstat-no" title="function not covered" >map(p</span>1 =&gt; {</span>
       const wr1 = <span class="cstat-no" title="statement not covered" >latestWinRate[p1] ? (latestWinRate[p1].avg_win_rate as number) : 50;</span>
-<span class="cstat-no" title="statement not covered" >      return labels.map(<span class="fstat-no" title="function not covered" >p2 =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >      return labels.<span class="fstat-no" title="function not covered" >map(p</span>2 =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (p1 === p2) <span class="cstat-no" title="statement not covered" >return 100;</span></span>
         const wr2 = <span class="cstat-no" title="statement not covered" >latestWinRate[p2] ? (latestWinRate[p2].avg_win_rate as number) : 50;</span>
 <span class="cstat-no" title="statement not covered" >        return Math.max(0, Math.round(100 - Math.abs(wr1 - wr2)));</span>
@@ -2574,10 +2574,10 @@ export class CIADataLoader {
 &nbsp;
     // Rebellion tracking from risk data (HIGH risk ~ rebellious)
     const rebellionTracking: RebellionEntry[] = <span class="cstat-no" title="statement not covered" >riksdagParties</span>
-      .map(<span class="fstat-no" title="function not covered" >party =&gt; {</span>
-        const partyRisks = <span class="cstat-no" title="statement not covered" >riskByParty.filter(<span class="fstat-no" title="function not covered" >r =&gt; <span class="cstat-no" title="statement not covered" >r</span>.party === party)</span>;</span>
-        const highRisk = <span class="cstat-no" title="statement not covered" >partyRisks.find(<span class="fstat-no" title="function not covered" >r =&gt; <span class="cstat-no" title="statement not covered" >r</span>.risk_level === 'HIGH')</span>;</span>
-        const total = <span class="cstat-no" title="statement not covered" >partyRisks.reduce(<span class="fstat-no" title="function not covered" >(s</span>, r) =&gt; <span class="cstat-no" title="statement not covered" >s + ((r.politician_count as number) || 0), 0</span>);</span>
+      .<span class="fstat-no" title="function not covered" >map(p</span>arty =&gt; {
+        const partyRisks = <span class="cstat-no" title="statement not covered" >riskByParty.<span class="fstat-no" title="function not covered" >filter(r</span> =&gt; <span class="cstat-no" title="statement not covered" >r.party === party);</span></span>
+        const highRisk = <span class="cstat-no" title="statement not covered" >partyRisks.<span class="fstat-no" title="function not covered" >find(r</span> =&gt; <span class="cstat-no" title="statement not covered" >r.risk_level === 'HIGH');</span></span>
+        const total = <span class="cstat-no" title="statement not covered" >partyRisks.<span class="fstat-no" title="function not covered" >reduce((s</span>, r) =&gt; <span class="cstat-no" title="statement not covered" >s + ((r.politician_count as number) || 0), 0</span>);</span>
         const highCount = <span class="cstat-no" title="statement not covered" >highRisk ? (highRisk.politician_count as number) : 0;</span>
         const rebellionRate = <span class="cstat-no" title="statement not covered" >total &gt; 0 ? Math.round((highCount / total) * 100 * 10) / 10 : 0;</span>
 <span class="cstat-no" title="statement not covered" >        return {</span>
@@ -2586,7 +2586,7 @@ export class CIADataLoader {
           trend: rebellionRate &gt; 25 ? 'increasing' : rebellionRate &gt; 15 ? 'stable' : 'decreasing'
         };
       })
-      .filter(<span class="fstat-no" title="function not covered" >r =&gt; <span class="cstat-no" title="statement not covered" >r</span>.rebellionRate &gt; 0)</span>;
+      .<span class="fstat-no" title="function not covered" >filter(r</span> =&gt; <span class="cstat-no" title="statement not covered" >r.rebellionRate &gt; 0);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return {</span>
       title: 'Voting Patterns Analysis',
@@ -2632,7 +2632,7 @@ export class CIADataLoader {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

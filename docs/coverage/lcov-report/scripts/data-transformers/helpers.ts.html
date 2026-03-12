@@ -1022,7 +1022,7 @@ export function cleanMotionText(raw: string): string {
   text = text.replace(/^Motion till riksdagen\s+\S+\s+av\s+[^(]+\([A-ZÅÄÖ]{1,5}\)\s*/i, '').trim();
   // Strip "med anledning av prop. YYYY/YY:NNN " prefix
   text = text.replace(/^med anledning av prop\.\s+\S+\s*/i, '').trim();
-  return text.length &gt; MIN_CLEANED ? <span class="branch-0 cbranch-no" title="branch not covered" >text.slice(0, MAX_CLEANED) : r</span>aw.slice(0, MAX_RAW_FALLBACK);
+  return text.length &gt; MIN_CLEANED ? <span class="branch-0 cbranch-no" title="branch not covered" >text.slice(0, MAX_CLEANED) </span>: raw.slice(0, MAX_RAW_FALLBACK);
 }
 &nbsp;
 /**
@@ -1102,7 +1102,7 @@ export function generateEnhancedSummary(doc: RawDocument, type: string, lang: La
     const raw = (doc.summary || doc.notis || <span class="branch-2 cbranch-no" title="branch not covered" >'');</span>
     // Skip person-profile data (e.g. "Tjänstgörande riksdagsledamot...", "Avliden 2011-09-20...")
     <span class="missing-if-branch" title="else path not taken" >E</span>if (!isPersonProfileText(raw)) {
-      <span class="missing-if-branch" title="else path not taken" >E</span>if (raw.includes('Motion till riksdagen') || <span class="branch-1 cbranch-no" title="branch not covered" >raw.includes('Förslag till riksdagsbeslut')) {</span>
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (raw.includes('Motion till riksdagen') || <span class="branch-1 cbranch-no" title="branch not covered" >raw.includes('Förslag till riksdagsbeslut'))</span> {
         return cleanMotionText(raw);
       }
 <span class="cstat-no" title="statement not covered" >      return raw;</span>
@@ -1127,7 +1127,7 @@ export function generateEnhancedSummary(doc: RawDocument, type: string, lang: La
 &nbsp;
   if (type === 'report' &amp;&amp; organ) {
     const labelVal = L(lang, 'committeeReport');
-    parts.push(`${organ} ${typeof labelVal === 'string' ? labelVal : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>`);
+    parts.push(`${organ} ${typeof labelVal === 'string' ? labelVal : <span class="branch-1 cbranch-no" title="branch not covered" >''}`);</span>
     <span class="missing-if-branch" title="if path not taken" >I</span>if (subtyp) {
       const onVal = <span class="cstat-no" title="statement not covered" >L(lang, 'on');</span>
 <span class="cstat-no" title="statement not covered" >      parts.push(`${typeof onVal === 'string' ? onVal : ''} ${subtyp}`);</span>
@@ -1139,23 +1139,23 @@ export function generateEnhancedSummary(doc: RawDocument, type: string, lang: La
 <span class="cstat-no" title="statement not covered" >      return ministrySummary;</span>
     }
     const propLabel = L(lang, 'governmentProposition');
-    parts.push(typeof propLabel === 'string' ? propLabel : <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>;
+    parts.push(typeof propLabel === 'string' ? propLabel : <span class="branch-1 cbranch-no" title="branch not covered" >'');</span>
     if (organ) {
       const referredVal = L(lang, 'referredTo');
-      parts.push(`${typeof referredVal === 'string' ? referredVal : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span> ${organ}`);
+      parts.push(`${typeof referredVal === 'string' ? referredVal : <span class="branch-1 cbranch-no" title="branch not covered" >''} </span>${organ}`);
     }
   } else if (type === 'motion') {
     const author = (doc.intressent_namn !== 'Unknown' ? doc.intressent_namn : null) || doc.author;
     const party = doc.parti !== 'Unknown' ? doc.parti : undefined;
     if (author &amp;&amp; party) {
       const motionByVal = L(lang, 'motionBy');
-      parts.push(`${typeof motionByVal === 'string' ? motionByVal : <span class="branch-1 cbranch-no" title="branch not covered" >''}</span> ${author} (${party})`);
-    <span class="missing-if-branch" title="if path not taken" >I</span>} else if (author) {
+      parts.push(`${typeof motionByVal === 'string' ? motionByVal : <span class="branch-1 cbranch-no" title="branch not covered" >''} </span>${author} (${party})`);
+    } else if (<span class="missing-if-branch" title="if path not taken" >I</span>author) {
       const motionByVal = <span class="cstat-no" title="statement not covered" >L(lang, 'motionBy');</span>
 <span class="cstat-no" title="statement not covered" >      parts.push(`${typeof motionByVal === 'string' ? motionByVal : ''} ${author}`);</span>
     } else {
       const parlMotion = L(lang, 'parliamentaryMotion');
-      parts.push(typeof parlMotion === 'string' ? parlMotion : <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>;
+      parts.push(typeof parlMotion === 'string' ? parlMotion : <span class="branch-1 cbranch-no" title="branch not covered" >'');</span>
     }
     <span class="missing-if-branch" title="if path not taken" >I</span>if (subtyp) {
       const onVal = <span class="cstat-no" title="statement not covered" >L(lang, 'on');</span>
@@ -1171,7 +1171,7 @@ export function generateEnhancedSummary(doc: RawDocument, type: string, lang: La
   // Fallback to default if no useful metadata
   if (parts.length === 0) {
     const fallback = type === 'report' ? L(lang, 'reportDefault') :
-           type === 'proposition' ? <span class="branch-0 cbranch-no" title="branch not covered" >L(lang, 'propDefault') :</span>
+           type === 'proposition' ? <span class="branch-0 cbranch-no" title="branch not covered" >L(lang, 'propDefault') </span>:
            L(lang, 'motionDefault');
     return typeof fallback === 'string' ? fallback : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
   }
@@ -1285,7 +1285,7 @@ export function filterFreshDocuments(docs: RawDocument[], maxAgeDays = 30): RawD
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:17.052Z
+                at 2026-03-12T22:50:12.565Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

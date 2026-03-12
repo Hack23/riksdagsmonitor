@@ -1,6 +1,19 @@
-riksdagsmonitor@0.7.14 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@0.7.15 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+├─┬ @emnapi/core@1.8.1 extraneous
+│ ├── @emnapi/wasi-threads@1.1.0 deduped
+│ └── tslib@2.8.1
+├─┬ @emnapi/runtime@1.8.1 extraneous
+│ └── tslib@2.8.1 deduped
+├─┬ @emnapi/wasi-threads@1.1.0 extraneous
+│ └── tslib@2.8.1 deduped
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.0.3 deduped
+├─┬ @napi-rs/wasm-runtime@1.1.1 extraneous
+│ ├── @emnapi/core@1.8.1 deduped
+│ ├── @emnapi/runtime@1.8.1 deduped
+│ └── @tybys/wasm-util@0.10.1 deduped
+├─┬ @tybys/wasm-util@0.10.1 extraneous
+│ └── tslib@2.8.1 deduped
 ├─┬ @types/d3@7.4.3
 │ ├── @types/d3-array@3.2.2
 │ ├─┬ @types/d3-axis@3.0.6
@@ -94,7 +107,8 @@ riksdagsmonitor@0.7.14 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── mrmime@2.0.1
 │ │ └── totalist@3.0.1
 │ ├─┬ tinyglobby@0.2.15
-│ │ ├── fdir@6.5.0 deduped
+│ │ ├─┬ fdir@6.5.0
+│ │ │ └── picomatch@4.0.3 deduped
 │ │ └── picomatch@4.0.3 deduped
 │ ├── tinyrainbow@3.0.3 deduped
 │ └── vitest@4.1.0 deduped
@@ -315,7 +329,7 @@ riksdagsmonitor@0.7.14 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │   └── indent-string@4.0.0
 │ │ ├── rfdc@1.4.1
 │ │ ├─┬ rxjs@7.8.2
-│ │ │ └── tslib@2.8.1
+│ │ │ └── tslib@2.8.1 deduped
 │ │ ├── through@2.3.8
 │ │ └─┬ wrap-ansi@7.0.0
 │ │   ├── ansi-styles@4.3.0 deduped
@@ -769,49 +783,51 @@ riksdagsmonitor@0.7.14 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ vite-plugin-sri-gen@1.3.2
 │ ├─┬ parse5@8.0.0
 │ │ └── entities@6.0.1
-│ └── vite@7.3.1 deduped
-├─┬ vite@7.3.1
+│ └── vite@8.0.0 deduped
+├─┬ vite@8.0.0
+│ ├── @oxc-project/runtime@0.115.0
 │ ├── @types/node@25.5.0 deduped
+│ ├── UNMET OPTIONAL DEPENDENCY @vitejs/devtools@^0.0.0-alpha.31
 │ ├── esbuild@0.27.3 deduped
-│ ├─┬ fdir@6.5.0
-│ │ └── picomatch@4.0.3 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
 │ ├── jiti@2.6.1 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY less@^4.0.0
-│ ├── UNMET OPTIONAL DEPENDENCY lightningcss@^1.21.0
+│ ├─┬ lightningcss@1.32.0
+│ │ ├── detect-libc@2.1.2
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-android-arm64@1.32.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-darwin-arm64@1.32.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-darwin-x64@1.32.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-freebsd-x64@1.32.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-linux-arm-gnueabihf@1.32.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-linux-arm64-gnu@1.32.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-linux-arm64-musl@1.32.0
+│ │ ├── lightningcss-linux-x64-gnu@1.32.0
+│ │ ├── lightningcss-linux-x64-musl@1.32.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY lightningcss-win32-arm64-msvc@1.32.0
+│ │ └── UNMET OPTIONAL DEPENDENCY lightningcss-win32-x64-msvc@1.32.0
 │ ├── picomatch@4.0.3 deduped
-│ ├─┬ postcss@8.5.6
+│ ├─┬ postcss@8.5.8
 │ │ ├── nanoid@3.3.11
 │ │ ├── picocolors@1.1.1 deduped
 │ │ └── source-map-js@1.2.1 deduped
-│ ├─┬ rollup@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-android-arm-eabi@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-android-arm64@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-darwin-arm64@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-darwin-x64@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-freebsd-arm64@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-freebsd-x64@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-arm-gnueabihf@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-arm-musleabihf@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-arm64-gnu@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-arm64-musl@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-loong64-gnu@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-loong64-musl@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-ppc64-gnu@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-ppc64-musl@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-riscv64-gnu@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-riscv64-musl@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-linux-s390x-gnu@4.59.0
-│ │ ├── @rollup/rollup-linux-x64-gnu@4.59.0
-│ │ ├── @rollup/rollup-linux-x64-musl@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-openbsd-x64@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-openharmony-arm64@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-win32-arm64-msvc@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-win32-ia32-msvc@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-win32-x64-gnu@4.59.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rollup/rollup-win32-x64-msvc@4.59.0
-│ │ ├── @types/estree@1.0.8 deduped
-│ │ └── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.2
+│ ├─┬ rolldown@1.0.0-rc.9
+│ │ ├── @oxc-project/types@0.115.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-android-arm64@1.0.0-rc.9
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-arm64@1.0.0-rc.9
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-x64@1.0.0-rc.9
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-freebsd-x64@1.0.0-rc.9
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm-gnueabihf@1.0.0-rc.9
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-gnu@1.0.0-rc.9
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-musl@1.0.0-rc.9
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-ppc64-gnu@1.0.0-rc.9
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-s390x-gnu@1.0.0-rc.9
+│ │ ├── @rolldown/binding-linux-x64-gnu@1.0.0-rc.9
+│ │ ├── @rolldown/binding-linux-x64-musl@1.0.0-rc.9
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-openharmony-arm64@1.0.0-rc.9
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-wasm32-wasi@1.0.0-rc.9
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-arm64-msvc@1.0.0-rc.9
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-x64-msvc@1.0.0-rc.9
+│ │ └── @rolldown/pluginutils@1.0.0-rc.9
 │ ├── UNMET OPTIONAL DEPENDENCY sass-embedded@^1.70.0
 │ ├── UNMET OPTIONAL DEPENDENCY sass@^1.70.0
 │ ├── UNMET OPTIONAL DEPENDENCY stylus@>=0.54.8
@@ -841,7 +857,7 @@ riksdagsmonitor@0.7.14 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── estree-walker@3.0.3 deduped
 │ │ ├── magic-string@0.30.21 deduped
 │ │ ├── UNMET OPTIONAL DEPENDENCY msw@^2.4.9
-│ │ └── vite@7.3.1 deduped
+│ │ └── vite@8.0.0 deduped
 │ ├─┬ @vitest/pretty-format@4.1.0
 │ │ └── tinyrainbow@3.0.3 deduped
 │ ├─┬ @vitest/runner@4.1.0
@@ -869,7 +885,7 @@ riksdagsmonitor@0.7.14 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── tinyexec@1.0.2
 │ ├── tinyglobby@0.2.15 deduped
 │ ├── tinyrainbow@3.0.3 deduped
-│ ├── vite@7.3.1 deduped
+│ ├── vite@8.0.0 deduped
 │ └─┬ why-is-node-running@2.3.0
 │   ├── siginfo@2.0.0
 │   └── stackback@0.0.2

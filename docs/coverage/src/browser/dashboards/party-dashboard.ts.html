@@ -3159,14 +3159,14 @@ function <span class="fstat-no" title="function not covered" >parseCSVText(c</sp
   const lines = <span class="cstat-no" title="statement not covered" >csvText.trim().split('\n');</span>
 <span class="cstat-no" title="statement not covered" >  if (lines.length &lt; 2) <span class="cstat-no" title="statement not covered" >return [];</span></span>
 &nbsp;
-  const headers = <span class="cstat-no" title="statement not covered" >lines[0].split(',').map(<span class="fstat-no" title="function not covered" >(h</span>) =&gt; <span class="cstat-no" title="statement not covered" >h.trim())</span>;</span>
+  const headers = <span class="cstat-no" title="statement not covered" >lines[0].split(',').<span class="fstat-no" title="function not covered" >map((h</span>) =&gt; <span class="cstat-no" title="statement not covered" >h.trim())</span>;</span>
   const data: CSVRow[] = <span class="cstat-no" title="statement not covered" >[];</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  for (let i = <span class="cstat-no" title="statement not covered" >1; i</span> &lt; lines.length; i++) {</span>
-    const values = <span class="cstat-no" title="statement not covered" >lines[i].split(',').map(<span class="fstat-no" title="function not covered" >(v</span>) =&gt; <span class="cstat-no" title="statement not covered" >v.trim())</span>;</span>
+    const values = <span class="cstat-no" title="statement not covered" >lines[i].split(',').<span class="fstat-no" title="function not covered" >map((v</span>) =&gt; <span class="cstat-no" title="statement not covered" >v.trim())</span>;</span>
 <span class="cstat-no" title="statement not covered" >    if (values.length === headers.length) {</span>
       const row: CSVRow = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >      headers.forEach(<span class="fstat-no" title="function not covered" >(h</span>eader, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      headers.<span class="fstat-no" title="function not covered" >forEach((h</span>eader, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        row[header] = values[index];</span>
       });
 <span class="cstat-no" title="statement not covered" >      data.push(row);</span>
@@ -3275,7 +3275,7 @@ function <span class="fstat-no" title="function not covered" >initChartDefaults(
  * Shows all 8 parties' effectiveness scores as multi-line time series.
  */
 function <span class="fstat-no" title="function not covered" >createEffectivenessChart(d</span>ata: CSVRow[]): void {
-  const ctx = <span class="cstat-no" title="statement not covered" >document.getElementById('partyEffectivenessChart') as HTMLCanvasElement | null;</span>
+  const ctx = <span class="cstat-no" title="statement not covered" >document.getElementById('partyEffectivenessChart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >  if (!ctx) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
   const Chart = (<span class="cstat-no" title="statement not covered" >globalThis as any).Chart;</span>
@@ -3296,7 +3296,7 @@ function <span class="fstat-no" title="function not covered" >createEffectivenes
   const partyData: Record&lt;string, Record&lt;number, number&gt;&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
   const allYears = <span class="cstat-no" title="statement not covered" >new Set&lt;number&gt;();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  data.forEach(<span class="fstat-no" title="function not covered" >(r</span>ow) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  data.<span class="fstat-no" title="function not covered" >forEach((r</span>ow) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    if (row.party &amp;&amp; row.year &amp;&amp; row.avg_win_rate) {</span>
       const party = <span class="cstat-no" title="statement not covered" >row.party;</span>
       const year = <span class="cstat-no" title="statement not covered" >parseInt(row.year, 10);</span>
@@ -3311,15 +3311,15 @@ function <span class="fstat-no" title="function not covered" >createEffectivenes
   });
 &nbsp;
   // Create sorted year array
-  const years: number[] = <span class="cstat-no" title="statement not covered" >Array.from(allYears).sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a - b)</span>;</span>
+  const years: number[] = <span class="cstat-no" title="statement not covered" >Array.from(allYears).<span class="fstat-no" title="function not covered" >sort((a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a - b);</span></span>
 <span class="cstat-no" title="statement not covered" >  if (years.length === 0) {</span>
     // Fallback to year range if no data
-<span class="cstat-no" title="statement not covered" >    years.push(...Array.from({ length: 37 }, <span class="fstat-no" title="function not covered" >(_</span>, i) =&gt; <span class="cstat-no" title="statement not covered" >1990 + i)</span>);</span>
+<span class="cstat-no" title="statement not covered" >    years.push(...Array.from({ length: 37 }<span class="fstat-no" title="function not covered" >, (_</span>, i) =&gt; <span class="cstat-no" title="statement not covered" >1990 + i))</span>;</span>
   }
 &nbsp;
-  const datasets = <span class="cstat-no" title="statement not covered" >PARTIES.map(<span class="fstat-no" title="function not covered" >(p</span>arty) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+  const datasets = <span class="cstat-no" title="statement not covered" >PARTIES.<span class="fstat-no" title="function not covered" >map((p</span>arty) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
     label: t.parties[party] ?? party,
-    data: years.map(<span class="fstat-no" title="function not covered" >(y</span>ear) =&gt; <span class="cstat-no" title="statement not covered" >partyData[party]?.[year] ?? null)</span>,
+    data: years.<span class="fstat-no" title="function not covered" >map((y</span>ear) =&gt; <span class="cstat-no" title="statement not covered" >partyData[party]?.[year] ?? null),</span>
     borderColor: CONFIG.chartColors[party],
     backgroundColor: CONFIG.chartColors[party] + '20',
     borderWidth: 2,
@@ -3380,7 +3380,7 @@ function <span class="fstat-no" title="function not covered" >createEffectivenes
  * Ranks all 8 parties by performance score.
  */
 function <span class="fstat-no" title="function not covered" >createComparisonChart(d</span>ata: CSVRow[]): void {
-  const ctx = <span class="cstat-no" title="statement not covered" >document.getElementById('partyComparisonChart') as HTMLCanvasElement | null;</span>
+  const ctx = <span class="cstat-no" title="statement not covered" >document.getElementById('partyComparisonChart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >  if (!ctx) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
   const Chart = (<span class="cstat-no" title="statement not covered" >globalThis as any).Chart;</span>
@@ -3398,8 +3398,8 @@ function <span class="fstat-no" title="function not covered" >createComparisonCh
   }
 &nbsp;
   // Process real CSV data
-  const chartData: ComparisonDataPoint[] = <span class="cstat-no" title="statement not covered" >PARTIES.map(<span class="fstat-no" title="function not covered" >(p</span>arty) =&gt; {</span>
-    const partyRow = <span class="cstat-no" title="statement not covered" >data.find(<span class="fstat-no" title="function not covered" >(r</span>ow) =&gt; <span class="cstat-no" title="statement not covered" >row.party === party)</span>;</span>
+  const chartData: ComparisonDataPoint[] = <span class="cstat-no" title="statement not covered" >PARTIES.<span class="fstat-no" title="function not covered" >map((p</span>arty) =&gt; {</span>
+    const partyRow = <span class="cstat-no" title="statement not covered" >data.<span class="fstat-no" title="function not covered" >find((r</span>ow) =&gt; <span class="cstat-no" title="statement not covered" >row.party === party);</span></span>
     let score = <span class="cstat-no" title="statement not covered" >50; // Default fallback</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (partyRow) {</span>
@@ -3419,18 +3419,18 @@ function <span class="fstat-no" title="function not covered" >createComparisonCh
   });
 &nbsp;
   // Sort by score descending
-<span class="cstat-no" title="statement not covered" >  chartData.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >b.score - a.score)</span>;</span>
+<span class="cstat-no" title="statement not covered" >  chartData.<span class="fstat-no" title="function not covered" >sort((a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >b.score - a.score);</span></span>
 &nbsp;
   const chart = <span class="cstat-no" title="statement not covered" >new Chart(ctx, {</span>
     type: 'bar',
     data: {
-      labels: chartData.map(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.party)</span>,
+      labels: chartData.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.party),</span>
       datasets: [
         {
           label: t.comparisonTitle,
-          data: chartData.map(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.score)</span>,
-          backgroundColor: chartData.map(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.color)</span>,
-          borderColor: chartData.map(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.color)</span>,
+          data: chartData.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.score),</span>
+          backgroundColor: chartData.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.color),</span>
+          borderColor: chartData.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.color),</span>
           borderWidth: 1,
         },
       ],
@@ -3497,7 +3497,7 @@ function <span class="fstat-no" title="function not covered" >createCoalitionNet
   // Process real CSV data for coalitions
   const coalitions: CoalitionDataPoint[] = <span class="cstat-no" title="statement not covered" >[];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  data.forEach(<span class="fstat-no" title="function not covered" >(r</span>ow) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  data.<span class="fstat-no" title="function not covered" >forEach((r</span>ow) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    if (row.party1 &amp;&amp; row.party2 &amp;&amp; row.alignment_rate) {</span>
       const rate = <span class="cstat-no" title="statement not covered" >parseFloat(row.alignment_rate) || 0;</span>
       const party1Label = <span class="cstat-no" title="statement not covered" >t.parties[row.party1] ?? row.party1;</span>
@@ -3513,7 +3513,7 @@ function <span class="fstat-no" title="function not covered" >createCoalitionNet
   });
 &nbsp;
   // Sort by strength descending
-<span class="cstat-no" title="statement not covered" >  coalitions.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >b.strength - a.strength)</span>;</span>
+<span class="cstat-no" title="statement not covered" >  coalitions.<span class="fstat-no" title="function not covered" >sort((a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >b.strength - a.strength);</span></span>
 &nbsp;
   // Take top 6 coalitions
   let topCoalitions = <span class="cstat-no" title="statement not covered" >coalitions.slice(0, 6);</span>
@@ -3540,8 +3540,8 @@ function <span class="fstat-no" title="function not covered" >createCoalitionNet
   }
 &nbsp;
   const html = <span class="cstat-no" title="statement not covered" >topCoalitions</span>
-    .map(
-<span class="fstat-no" title="function not covered" >      (c</span>oalition) =&gt; <span class="cstat-no" title="statement not covered" >`</span>
+    .<span class="fstat-no" title="function not covered" >map(</span>
+      (coalition) =&gt; <span class="cstat-no" title="statement not covered" >`</span>
       &lt;div class="coalition-item" style="margin-bottom: 1rem;"&gt;
         &lt;div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;"&gt;
           &lt;span style="font-weight: 600;"&gt;${coalition.name}&lt;/span&gt;
@@ -3563,7 +3563,7 @@ function <span class="fstat-no" title="function not covered" >createCoalitionNet
  * Shows relative momentum scores for all 8 parties.
  */
 function <span class="fstat-no" title="function not covered" >createMomentumChart(d</span>ata: CSVRow[]): void {
-  const ctx = <span class="cstat-no" title="statement not covered" >document.getElementById('partyMomentumChart') as HTMLCanvasElement | null;</span>
+  const ctx = <span class="cstat-no" title="statement not covered" >document.getElementById('partyMomentumChart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >  if (!ctx) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
   const Chart = (<span class="cstat-no" title="statement not covered" >globalThis as any).Chart;</span>
@@ -3581,15 +3581,15 @@ function <span class="fstat-no" title="function not covered" >createMomentumChar
   }
 &nbsp;
   // Process real CSV data for momentum
-  const momentumData: MomentumDataPoint[] = <span class="cstat-no" title="statement not covered" >PARTIES.map(<span class="fstat-no" title="function not covered" >(p</span>arty) =&gt; {</span>
+  const momentumData: MomentumDataPoint[] = <span class="cstat-no" title="statement not covered" >PARTIES.<span class="fstat-no" title="function not covered" >map((p</span>arty) =&gt; {</span>
     // Filter data for this party and get most recent quarter
-    const partyRows = <span class="cstat-no" title="statement not covered" >data.filter(</span>
-<span class="fstat-no" title="function not covered" >      (r</span>ow) =&gt; <span class="cstat-no" title="statement not covered" >row.party === party &amp;&amp; row.momentum !== undefined &amp;&amp; row.momentum !== '',</span>
+    const partyRows = <span class="cstat-no" title="statement not covered" >data.<span class="fstat-no" title="function not covered" >filter(</span></span>
+      (row) =&gt; <span class="cstat-no" title="statement not covered" >row.party === party &amp;&amp; row.momentum !== undefined &amp;&amp; row.momentum !== '',</span>
     );
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (partyRows.length &gt; 0) {</span>
       // Sort by year and quarter to get latest
-<span class="cstat-no" title="statement not covered" >      partyRows.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      partyRows.<span class="fstat-no" title="function not covered" >sort((a</span>, b) =&gt; {</span>
         const yearDiff = <span class="cstat-no" title="statement not covered" >parseInt(b.year, 10) - parseInt(a.year, 10);</span>
 <span class="cstat-no" title="statement not covered" >        if (yearDiff !== 0) <span class="cstat-no" title="statement not covered" >return yearDiff;</span></span>
 <span class="cstat-no" title="statement not covered" >        return parseInt(b.quarter, 10) - parseInt(a.quarter, 10);</span>
@@ -3609,13 +3609,13 @@ function <span class="fstat-no" title="function not covered" >createMomentumChar
   const chart = <span class="cstat-no" title="statement not covered" >new Chart(ctx, {</span>
     type: 'doughnut',
     data: {
-      labels: PARTIES.map(<span class="fstat-no" title="function not covered" >(p</span>) =&gt; <span class="cstat-no" title="statement not covered" >t.parties[p] ?? p)</span>,
+      labels: PARTIES.<span class="fstat-no" title="function not covered" >map((p</span>) =&gt; <span class="cstat-no" title="statement not covered" >t.parties[p] ?? p),</span>
       datasets: [
         {
           label: t.momentumTitle,
-          data: momentumData.map(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.momentum)</span>,
-          backgroundColor: PARTIES.map(<span class="fstat-no" title="function not covered" >(p</span>) =&gt; <span class="cstat-no" title="statement not covered" >CONFIG.chartColors[p] + '80')</span>,
-          borderColor: PARTIES.map(<span class="fstat-no" title="function not covered" >(p</span>) =&gt; <span class="cstat-no" title="statement not covered" >CONFIG.chartColors[p])</span>,
+          data: momentumData.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.momentum),</span>
+          backgroundColor: PARTIES.<span class="fstat-no" title="function not covered" >map((p</span>) =&gt; <span class="cstat-no" title="statement not covered" >CONFIG.chartColors[p] + '80'),</span>
+          borderColor: PARTIES.<span class="fstat-no" title="function not covered" >map((p</span>) =&gt; <span class="cstat-no" title="statement not covered" >CONFIG.chartColors[p]),</span>
           borderWidth: 2,
         },
       ],
@@ -3628,8 +3628,8 @@ function <span class="fstat-no" title="function not covered" >createMomentumChar
         tooltip: {
           callbacks: {
 <span class="fstat-no" title="function not covered" >            label(c</span>ontext: any) {
-              const total = (<span class="cstat-no" title="statement not covered" >context.dataset.data as number[]).reduce(</span>
-<span class="fstat-no" title="function not covered" >                (a</span>: number, b: number) =&gt; <span class="cstat-no" title="statement not covered" >a + b,</span>
+              const total = (<span class="cstat-no" title="statement not covered" >context.dataset.data as number[]).<span class="fstat-no" title="function not covered" >reduce(</span></span>
+                (a: number, b: number) =&gt; <span class="cstat-no" title="statement not covered" >a + b,</span>
                 0,
               );
               const <span class="cstat-no" title="statement not covered" >percentage = ((context.parsed / total) * 100).toFixed(1);</span>
@@ -3683,19 +3683,19 @@ export async function <span class="fstat-no" title="function not covered" >init(
     // Fetch all data sources in parallel for performance
     const [partyPerformance, partyEffectiveness, partyMomentum, coalitionAlignment] =
 <span class="cstat-no" title="statement not covered" >      await Promise.all([</span>
-        fetchData(CONFIG.dataSources.partyPerformance).catch(<span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
+        fetchData(CONFIG.dataSources.partyPerformance).<span class="fstat-no" title="function not covered" >catch((e</span>) =&gt; {
 <span class="cstat-no" title="statement not covered" >          logger.warn('partyPerformance:', e);</span>
 <span class="cstat-no" title="statement not covered" >          return [] as CSVRow[];</span>
         }),
-        fetchData(CONFIG.dataSources.partyEffectiveness).catch(<span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
+        fetchData(CONFIG.dataSources.partyEffectiveness).<span class="fstat-no" title="function not covered" >catch((e</span>) =&gt; {
 <span class="cstat-no" title="statement not covered" >          logger.warn('partyEffectiveness:', e);</span>
 <span class="cstat-no" title="statement not covered" >          return [] as CSVRow[];</span>
         }),
-        fetchData(CONFIG.dataSources.partyMomentum).catch(<span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
+        fetchData(CONFIG.dataSources.partyMomentum).<span class="fstat-no" title="function not covered" >catch((e</span>) =&gt; {
 <span class="cstat-no" title="statement not covered" >          logger.warn('partyMomentum:', e);</span>
 <span class="cstat-no" title="statement not covered" >          return [] as CSVRow[];</span>
         }),
-        fetchData(CONFIG.dataSources.coalitionAlignment).catch(<span class="fstat-no" title="function not covered" >(e</span>) =&gt; {
+        fetchData(CONFIG.dataSources.coalitionAlignment).<span class="fstat-no" title="function not covered" >catch((e</span>) =&gt; {
 <span class="cstat-no" title="statement not covered" >          logger.warn('coalitionAlignment:', e);</span>
 <span class="cstat-no" title="statement not covered" >          return [] as CSVRow[];</span>
         }),
@@ -3724,9 +3724,9 @@ export async function <span class="fstat-no" title="function not covered" >init(
     // (including &lt;canvas&gt; elements) is preserved for a subsequent retry.
     const errContainer = <span class="cstat-no" title="statement not covered" >document.createElement('div');</span>
 <span class="cstat-no" title="statement not covered" >    dashboardSection.appendChild(errContainer);</span>
-<span class="cstat-no" title="statement not covered" >    renderErrorFallback(errContainer, t.errorMessage, <span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >    renderErrorFallback(errContainer, t.<span class="fstat-no" title="function not covered" >errorMessage, () =&gt; {</span></span>
 <span class="cstat-no" title="statement not covered" >      errContainer.remove();</span>
-<span class="cstat-no" title="statement not covered" >      init().catch(<span class="fstat-no" title="function not covered" >(e</span>rr) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >      init().<span class="fstat-no" title="function not covered" >catch((e</span>rr) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >        logger.error('Retry failed during party dashboard re-initialization:', err),</span>
       );
     }, t.retryMessage);
@@ -3739,7 +3739,7 @@ export async function <span class="fstat-no" title="function not covered" >init(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

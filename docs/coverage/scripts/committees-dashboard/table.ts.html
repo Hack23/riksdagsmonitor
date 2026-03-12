@@ -951,7 +951,7 @@ export class ChartJSVisualizations {
    * Committee Comparison Bar Chart
    */
 <span class="fstat-no" title="function not covered" >  renderCommitteeComparison(d</span>ata: CommitteeData): void {
-    const canvas: HTMLCanvasElement | null = <span class="cstat-no" title="statement not covered" >document.getElementById('committeeComparisonChart') as HTMLCanvasElement | null;</span>
+    const canvas: HTMLCanvasElement | null = <span class="cstat-no" title="statement not covered" >document.getElementById('committeeComparisonChart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >    if (!canvas) {</span>
 <span class="cstat-no" title="statement not covered" >      console.error('[ChartJS] committeeComparisonChart canvas not found');</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
@@ -961,12 +961,12 @@ export class ChartJSVisualizations {
 <span class="cstat-no" title="statement not covered" >    if (!ctx) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
     // Process data from loaded productivity data
-    const labels: string[] = <span class="cstat-no" title="statement not covered" >CONFIG.committees.map(<span class="fstat-no" title="function not covered" >(c</span>: CommitteeDefinition) =&gt; <span class="cstat-no" title="statement not covered" >c.code)</span>;</span>
+    const labels: string[] = <span class="cstat-no" title="statement not covered" >CONFIG.committees.<span class="fstat-no" title="function not covered" >map((c</span>: CommitteeDefinition) =&gt; <span class="cstat-no" title="statement not covered" >c.code);</span></span>
     
     // Build productivity lookup from real data
     const prodLookup: Record&lt;string, number&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
 <span class="cstat-no" title="statement not covered" >    if (data &amp;&amp; data.productivityMatrix) {</span>
-<span class="cstat-no" title="statement not covered" >      data.productivityMatrix.forEach(<span class="fstat-no" title="function not covered" >(r</span>ow: ProductivityMatrixRow) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      data.productivityMatrix.<span class="fstat-no" title="function not covered" >forEach((r</span>ow: ProductivityMatrixRow) =&gt; {</span>
         const code: string = <span class="cstat-no" title="statement not covered" >row.committee_code || '';</span>
 <span class="cstat-no" title="statement not covered" >        if (code &amp;&amp; !prodLookup[code]) {</span>
           const <span class="cstat-no" title="statement not covered" >level: string = (row.productivity_level || '').toUpperCase();</span>
@@ -978,8 +978,8 @@ export class ChartJSVisualizations {
       });
     }
     
-    const productivity: number[] = <span class="cstat-no" title="statement not covered" >labels.map(<span class="fstat-no" title="function not covered" >(c</span>ode: string) =&gt; <span class="cstat-no" title="statement not covered" >prodLookup[code] || 50)</span>;</span>
-    const colors: string[] = <span class="cstat-no" title="statement not covered" >CONFIG.committees.map(<span class="fstat-no" title="function not covered" >(c</span>: CommitteeDefinition) =&gt; <span class="cstat-no" title="statement not covered" >c.color)</span>;</span>
+    const productivity: number[] = <span class="cstat-no" title="statement not covered" >labels.<span class="fstat-no" title="function not covered" >map((c</span>ode: string) =&gt; <span class="cstat-no" title="statement not covered" >prodLookup[code] || 50);</span></span>
+    const colors: string[] = <span class="cstat-no" title="statement not covered" >CONFIG.committees.<span class="fstat-no" title="function not covered" >map((c</span>: CommitteeDefinition) =&gt; <span class="cstat-no" title="statement not covered" >c.color);</span></span>
 &nbsp;
     // Destroy existing chart
 <span class="cstat-no" title="statement not covered" >    if (this.charts.comparison) {</span>
@@ -995,7 +995,7 @@ export class ChartJSVisualizations {
           label: 'Productivity Score',
           data: productivity,
           backgroundColor: colors,
-          borderColor: colors.map(<span class="fstat-no" title="function not covered" >(c</span>: string) =&gt; <span class="cstat-no" title="statement not covered" >c)</span>,
+          borderColor: colors.<span class="fstat-no" title="function not covered" >map((c</span>: string) =&gt; <span class="cstat-no" title="statement not covered" >c),</span>
           borderWidth: 2
         }]
       },
@@ -1062,7 +1062,7 @@ export class ChartJSVisualizations {
    * Decision Effectiveness Stacked Bar Chart
    */
 <span class="fstat-no" title="function not covered" >  renderDecisionEffectiveness(d</span>ata: CommitteeData): void {
-    const canvas: HTMLCanvasElement | null = <span class="cstat-no" title="statement not covered" >document.getElementById('decisionEffectivenessChart') as HTMLCanvasElement | null;</span>
+    const canvas: HTMLCanvasElement | null = <span class="cstat-no" title="statement not covered" >document.getElementById('decisionEffectivenessChart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >    if (!canvas) {</span>
 <span class="cstat-no" title="statement not covered" >      console.error('[ChartJS] decisionEffectivenessChart canvas not found');</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
@@ -1074,7 +1074,7 @@ export class ChartJSVisualizations {
     // Process data from loaded decision/document data
     const yearSet = <span class="cstat-no" title="statement not covered" >new Set&lt;string&gt;();</span>
 <span class="cstat-no" title="statement not covered" >    if (data &amp;&amp; data.annualDocuments) {</span>
-<span class="cstat-no" title="statement not covered" >      data.annualDocuments.forEach(<span class="fstat-no" title="function not covered" >(r</span>ow: AnnualDocumentRow) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      data.annualDocuments.<span class="fstat-no" title="function not covered" >forEach((r</span>ow: AnnualDocumentRow) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (row.year) <span class="cstat-no" title="statement not covered" >yearSet.add(String(row.year));</span></span>
       });
     }
@@ -1085,7 +1085,7 @@ export class ChartJSVisualizations {
     // Calculate total documents per year from real data
     const yearDocCounts: Record&lt;string, number&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
 <span class="cstat-no" title="statement not covered" >    if (data &amp;&amp; data.annualDocuments) {</span>
-<span class="cstat-no" title="statement not covered" >      data.annualDocuments.forEach(<span class="fstat-no" title="function not covered" >(r</span>ow: AnnualDocumentRow) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      data.annualDocuments.<span class="fstat-no" title="function not covered" >forEach((r</span>ow: AnnualDocumentRow) =&gt; {</span>
         const year: string = <span class="cstat-no" title="statement not covered" >String(row.year);</span>
         const count: number = <span class="cstat-no" title="statement not covered" >parseInt(String(row.doc_count)) || 0;</span>
 <span class="cstat-no" title="statement not covered" >        yearDocCounts[year] = (yearDocCounts[year] || 0) + count;</span>
@@ -1094,15 +1094,15 @@ export class ChartJSVisualizations {
     
     // Approximate decision outcomes using document proportions
     // Based on typical Riksdag decision patterns (~70% approved, ~20% rejected, ~10% pending)
-    const approved: number[] = <span class="cstat-no" title="statement not covered" >labels.map(<span class="fstat-no" title="function not covered" >(y</span>ear: string) =&gt; {</span>
+    const approved: number[] = <span class="cstat-no" title="statement not covered" >labels.<span class="fstat-no" title="function not covered" >map((y</span>ear: string) =&gt; {</span>
       const total: number = <span class="cstat-no" title="statement not covered" >yearDocCounts[year] || 100;</span>
 <span class="cstat-no" title="statement not covered" >      return Math.min(100, (total &gt; 0 ? 70 : 0));</span>
     });
-    const rejected: number[] = <span class="cstat-no" title="statement not covered" >labels.map(<span class="fstat-no" title="function not covered" >(y</span>ear: string) =&gt; {</span>
+    const rejected: number[] = <span class="cstat-no" title="statement not covered" >labels.<span class="fstat-no" title="function not covered" >map((y</span>ear: string) =&gt; {</span>
       const total: number = <span class="cstat-no" title="statement not covered" >yearDocCounts[year] || 100;</span>
 <span class="cstat-no" title="statement not covered" >      return total &gt; 0 ? 20 : 0;</span>
     });
-    const pending: number[] = <span class="cstat-no" title="statement not covered" >labels.map(<span class="fstat-no" title="function not covered" >(_</span>year: string, i: number) =&gt; <span class="cstat-no" title="statement not covered" >Math.max(0, 100 - approved[i] - rejected[i]))</span>;</span>
+    const pending: number[] = <span class="cstat-no" title="statement not covered" >labels.<span class="fstat-no" title="function not covered" >map((_</span>year: string, i: number) =&gt; <span class="cstat-no" title="statement not covered" >Math.max(0, 100 - approved[i] - rejected[i]))</span>;</span>
 &nbsp;
     // Destroy existing chart
 <span class="cstat-no" title="statement not covered" >    if (this.charts.effectiveness) {</span>
@@ -1205,7 +1205,7 @@ export class ChartJSVisualizations {
    * Seasonal Activity Patterns Line Chart
    */
 <span class="fstat-no" title="function not covered" >  renderSeasonalPatterns(d</span>ata: CommitteeData): void {
-    const canvas: HTMLCanvasElement | null = <span class="cstat-no" title="statement not covered" >document.getElementById('seasonalPatternsChart') as HTMLCanvasElement | null;</span>
+    const canvas: HTMLCanvasElement | null = <span class="cstat-no" title="statement not covered" >document.getElementById('seasonalPatternsChart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >    if (!canvas) {</span>
 <span class="cstat-no" title="statement not covered" >      console.error('[ChartJS] seasonalPatternsChart canvas not found');</span>
 <span class="cstat-no" title="statement not covered" >      return;</span>
@@ -1220,7 +1220,7 @@ export class ChartJSVisualizations {
     // Group seasonal data by year and quarter
     const yearQuarterData: Record&lt;string, Record&lt;number, number&gt;&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
 <span class="cstat-no" title="statement not covered" >    if (data &amp;&amp; data.seasonalPatterns) {</span>
-<span class="cstat-no" title="statement not covered" >      data.seasonalPatterns.forEach(<span class="fstat-no" title="function not covered" >(r</span>ow: SeasonalPatternRow) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      data.seasonalPatterns.<span class="fstat-no" title="function not covered" >forEach((r</span>ow: SeasonalPatternRow) =&gt; {</span>
         const year: string = <span class="cstat-no" title="statement not covered" >String(row.year || '');</span>
         const quarter: number = <span class="cstat-no" title="statement not covered" >parseInt(String(row.quarter)) || 0;</span>
 <span class="cstat-no" title="statement not covered" >        if (year &amp;&amp; quarter &gt;= 1 &amp;&amp; quarter &lt;= 4) {</span>
@@ -1236,9 +1236,9 @@ export class ChartJSVisualizations {
     const yearColors: string[] = <span class="cstat-no" title="statement not covered" >['#1e88e5', '#43a047', '#fb8c00'];</span>
     
     const datasets: any[] = <span class="cstat-no" title="statement not covered" >availableYears.length &gt; 0 </span>
-      ? availableYears.map(<span class="fstat-no" title="function not covered" >(y</span>ear: string, idx: number) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+      ? availableYears.<span class="fstat-no" title="function not covered" >map((y</span>ear: string, idx: number) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
           label: year,
-          data: [1, 2, 3, 4].map(<span class="fstat-no" title="function not covered" >(q</span>: number) =&gt; <span class="cstat-no" title="statement not covered" >yearQuarterData[year][q] || 0)</span>,
+          data: [1, 2, 3, 4].<span class="fstat-no" title="function not covered" >map((q</span>: number) =&gt; <span class="cstat-no" title="statement not covered" >yearQuarterData[year][q] || 0),</span>
           borderColor: yearColors[idx % yearColors.length],
           backgroundColor: yearColors[idx % yearColors.length] + '1A',
           tension: 0.4
@@ -1326,7 +1326,7 @@ export class ChartJSVisualizations {
    * Destroy all Chart.js instances
    */
 <span class="fstat-no" title="function not covered" >  destroy(): void {</span>
-<span class="cstat-no" title="statement not covered" >    Object.keys(this.charts).forEach(<span class="fstat-no" title="function not covered" >(k</span>ey: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    Object.keys(this.charts).<span class="fstat-no" title="function not covered" >forEach((k</span>ey: string) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (this.charts[key] &amp;&amp; typeof this.charts[key].destroy === 'function') {</span>
 <span class="cstat-no" title="statement not covered" >        this.charts[key].destroy();</span>
       }
@@ -1342,7 +1342,7 @@ export class ChartJSVisualizations {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

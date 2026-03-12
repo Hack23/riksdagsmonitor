@@ -1478,11 +1478,11 @@ function <span class="fstat-no" title="function not covered" >parseCSV(c</span>s
     // CSP-safe fallback: simple header-based CSV parser
     const lines = <span class="cstat-no" title="statement not covered" >csvText.trim().split('\n');</span>
 <span class="cstat-no" title="statement not covered" >    if (lines.length &lt; 2) <span class="cstat-no" title="statement not covered" >return [];</span></span>
-    const headers = <span class="cstat-no" title="statement not covered" >lines[0]!.split(',').map(<span class="fstat-no" title="function not covered" >(h</span>) =&gt; <span class="cstat-no" title="statement not covered" >h.trim().replace(/^"|"$/g, ''))</span>;</span>
-<span class="cstat-no" title="statement not covered" >    return lines.slice(1).filter(<span class="fstat-no" title="function not covered" >(l</span>) =&gt; <span class="cstat-no" title="statement not covered" >l.trim())</span>.map(<span class="fstat-no" title="function not covered" >(l</span>ine) =&gt; {</span>
-      const values = <span class="cstat-no" title="statement not covered" >line.split(',').map(<span class="fstat-no" title="function not covered" >(v</span>) =&gt; <span class="cstat-no" title="statement not covered" >v.trim().replace(/^"|"$/g, ''))</span>;</span>
+    const headers = <span class="cstat-no" title="statement not covered" >lines[0]!.split(',').<span class="fstat-no" title="function not covered" >map((h</span>) =&gt; <span class="cstat-no" title="statement not covered" >h.trim().replace(/^"|"$/g, ''))</span>;</span>
+<span class="cstat-no" title="statement not covered" >    return lines.slice(1).<span class="fstat-no" title="function not covered" >filter((l</span>) =&gt; <span class="cstat-no" title="statement not covered" >l.trim())</span>.<span class="fstat-no" title="function not covered" >map((l</span>ine) =&gt; {</span>
+      const values = <span class="cstat-no" title="statement not covered" >line.split(',').<span class="fstat-no" title="function not covered" >map((v</span>) =&gt; <span class="cstat-no" title="statement not covered" >v.trim().replace(/^"|"$/g, ''))</span>;</span>
       const row: Record&lt;string, string&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >      headers.forEach(<span class="fstat-no" title="function not covered" >(h</span>eader, i) =&gt; { <span class="cstat-no" title="statement not covered" >row[header] = values[i] ?? ''; }</span>);</span>
+<span class="cstat-no" title="statement not covered" >      headers.<span class="fstat-no" title="function not covered" >forEach((h</span>eader, i) =&gt; { <span class="cstat-no" title="statement not covered" >row[header] = values[i] ?? ''; });</span></span>
 <span class="cstat-no" title="statement not covered" >      return row;</span>
     });
   }
@@ -1513,7 +1513,7 @@ async function <span class="fstat-no" title="function not covered" >fetchCoaliti
     const csvData = <span class="cstat-no" title="statement not covered" >await fetchCSV(DATA_CONFIG.files['coalition']);</span>
 <span class="cstat-no" title="statement not covered" >    if (csvData &amp;&amp; csvData.length &gt; 0) {</span>
       const alignment: Record&lt;string, Record&lt;string, number&gt;&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >      csvData.forEach(<span class="fstat-no" title="function not covered" >row =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >      csvData.<span class="fstat-no" title="function not covered" >forEach(r</span>ow =&gt; {</span>
         const party1 = <span class="cstat-no" title="statement not covered" >row['party1']; c</span>onst party2 = <span class="cstat-no" title="statement not covered" >row['party2']; c</span>onst alignmentRate = <span class="cstat-no" title="statement not covered" >parseFloat(row['alignment_rate']);</span>
 <span class="cstat-no" title="statement not covered" >        if (!PARTIES[party1] || !PARTIES[party2]) <span class="cstat-no" title="statement not covered" >return;</span></span>
 <span class="cstat-no" title="statement not covered" >        if (!alignment[party1]) <span class="cstat-no" title="statement not covered" >alignment[party1] = {};</span></span>
@@ -1533,7 +1533,7 @@ async function <span class="fstat-no" title="function not covered" >fetchBehavio
     const csvData = <span class="cstat-no" title="statement not covered" >await fetchCSV(DATA_CONFIG.files['behavioral']);</span>
 <span class="cstat-no" title="statement not covered" >    if (csvData &amp;&amp; csvData.length &gt; 0) {</span>
       const partyData: Record&lt;string, { total: number; standardBehavior: number }&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >      csvData.forEach(<span class="fstat-no" title="function not covered" >row =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >      csvData.<span class="fstat-no" title="function not covered" >forEach(r</span>ow =&gt; {</span>
         const party = <span class="cstat-no" title="statement not covered" >row['party'];</span>
 <span class="cstat-no" title="statement not covered" >        if (party === '-') <span class="cstat-no" title="statement not covered" >return;</span></span>
 <span class="cstat-no" title="statement not covered" >        if (!partyData[party]) <span class="cstat-no" title="statement not covered" >partyData[party] = { total: 0, standardBehavior: 0 };</span></span>
@@ -1542,7 +1542,7 @@ async function <span class="fstat-no" title="function not covered" >fetchBehavio
 <span class="cstat-no" title="statement not covered" >        if (row['behavioral_assessment'] === 'STANDARD_BEHAVIOR') <span class="cstat-no" title="statement not covered" >partyData[party].standardBehavior += count;</span></span>
       });
       const patterns: Record&lt;string, number&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >      Object.keys(partyData).forEach(<span class="fstat-no" title="function not covered" >party =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >      Object.keys(partyData).<span class="fstat-no" title="function not covered" >forEach(p</span>arty =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (partyData[party].total &gt; 0) {</span>
           const consistency = (<span class="cstat-no" title="statement not covered" >partyData[party].standardBehavior / partyData[party].total) * 100;</span>
 <span class="cstat-no" title="statement not covered" >          patterns[party] = Math.max(75, Math.min(100, consistency || 80));</span>
@@ -1569,7 +1569,7 @@ async function <span class="fstat-no" title="function not covered" >fetchAnomaly
     const csvData = <span class="cstat-no" title="statement not covered" >await fetchCSV(DATA_CONFIG.files['anomalyByParty']);</span>
 <span class="cstat-no" title="statement not covered" >    if (csvData &amp;&amp; csvData.length &gt; 0) {</span>
       const anomalies: AnomalyEntry[] = <span class="cstat-no" title="statement not covered" >[];</span>
-<span class="cstat-no" title="statement not covered" >      csvData.forEach(<span class="fstat-no" title="function not covered" >row =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >      csvData.<span class="fstat-no" title="function not covered" >forEach(r</span>ow =&gt; {</span>
         const party = <span class="cstat-no" title="statement not covered" >row['party'];</span>
 <span class="cstat-no" title="statement not covered" >        if (party === '-' || !party) <span class="cstat-no" title="statement not covered" >return;</span></span>
         const avgRebellions = <span class="cstat-no" title="statement not covered" >parseFloat(row['avg_rebellions']) || 0;</span>
@@ -1592,12 +1592,12 @@ async function <span class="fstat-no" title="function not covered" >fetchAnnualV
     const csvData = <span class="cstat-no" title="statement not covered" >await fetchCSV(DATA_CONFIG.files['annualVotes']);</span>
 <span class="cstat-no" title="statement not covered" >    if (csvData &amp;&amp; csvData.length &gt; 0) {</span>
       const annualData: Record&lt;string, AnnualVoteEntry[]&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >      csvData.forEach(<span class="fstat-no" title="function not covered" >row =&gt; {</span></span>
-        const year = <span class="cstat-no" title="statement not covered" >parseInt(row['year']); c</span>onst party = <span class="cstat-no" title="statement not covered" >row['party']; c</span>onst voteCount = <span class="cstat-no" title="statement not covered" >parseInt(row['vote_count']) || 0;</span>
+<span class="cstat-no" title="statement not covered" >      csvData.<span class="fstat-no" title="function not covered" >forEach(r</span>ow =&gt; {</span>
+        const year = <span class="cstat-no" title="statement not covered" >parseInt(row['year']);</span> const party = <span class="cstat-no" title="statement not covered" >row['party']; c</span>onst voteCount = <span class="cstat-no" title="statement not covered" >parseInt(row['vote_count']) || 0;</span>
 <span class="cstat-no" title="statement not covered" >        if (!annualData[party]) <span class="cstat-no" title="statement not covered" >annualData[party] = [];</span></span>
 <span class="cstat-no" title="statement not covered" >        annualData[party].push({ year, votes: voteCount });</span>
       });
-<span class="cstat-no" title="statement not covered" >      Object.keys(annualData).forEach(<span class="fstat-no" title="function not covered" >party =&gt; {</span> <span class="cstat-no" title="statement not covered" >annualData[party].sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a.year - b.year)</span>; }</span>);</span>
+<span class="cstat-no" title="statement not covered" >      Object.keys(annualData).<span class="fstat-no" title="function not covered" >forEach(p</span>arty =&gt; { <span class="cstat-no" title="statement not covered" >annualData[party].<span class="fstat-no" title="function not covered" >sort((a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a.year - b.year);</span> });</span></span>
 <span class="cstat-no" title="statement not covered" >      dataCache.annualVotes = annualData;</span>
 <span class="cstat-no" title="statement not covered" >      logger.info('Annual votes data loaded from CSV');</span>
     } else { <span class="cstat-no" title="statement not covered" >dataCache.annualVotes = generateMockAnnualVotesData(); <span class="cstat-no" title="statement not covered" >c</span>oalitionDataSourceType = 'mock'; }</span>
@@ -1617,20 +1617,20 @@ function <span class="fstat-no" title="function not covered" >renderCoalitionNet
 &nbsp;
   const svg = <span class="cstat-no" title="statement not covered" >d3.select('#coalitionNetwork').append('svg').attr('width', width).attr('height', height).attr('viewBox', [0, 0, width, height]).attr('style', 'max-width: 100%; height: auto;');</span>
 &nbsp;
-  const nodes: CoalitionNode[] = <span class="cstat-no" title="statement not covered" >Object.keys(PARTIES).map(<span class="fstat-no" title="function not covered" >id =&gt; {</span></span>
+  const nodes: CoalitionNode[] = <span class="cstat-no" title="statement not covered" >Object.keys(PARTIES).<span class="fstat-no" title="function not covered" >map(i</span>d =&gt; {</span>
     let influence = <span class="cstat-no" title="statement not covered" >5;</span>
     const alignment = <span class="cstat-no" title="statement not covered" >dataCache.coalitionAlignment;</span>
 <span class="cstat-no" title="statement not covered" >    if (alignment &amp;&amp; alignment[id]) {</span>
-      const rates = <span class="cstat-no" title="statement not covered" >Object.values(alignment[id]).filter(<span class="fstat-no" title="function not covered" >(v</span>): v is number =&gt; <span class="cstat-no" title="statement not covered" >typeof v === 'number')</span>;</span>
-<span class="cstat-no" title="statement not covered" >      influence = rates.length &gt; 0 ? (rates.reduce(<span class="fstat-no" title="function not covered" >(s</span>, v) =&gt; <span class="cstat-no" title="statement not covered" >s + v, 0</span>) / rates.length) * 10 + 3 : 5;</span>
+      const rates = <span class="cstat-no" title="statement not covered" >Object.values(alignment[id]).<span class="fstat-no" title="function not covered" >filter((v</span>): v is number =&gt; <span class="cstat-no" title="statement not covered" >typeof v === 'number');</span></span>
+<span class="cstat-no" title="statement not covered" >      influence = rates.length &gt; 0 ? (rates.<span class="fstat-no" title="function not covered" >reduce((s</span>, v) =&gt; <span class="cstat-no" title="statement not covered" >s + v, 0</span>) / rates.length) * 10 + 3 : 5;</span>
     }
 <span class="cstat-no" title="statement not covered" >    return { id, name: PARTIES[id].name, fullName: PARTIES[id].fullName, color: PARTIES[id].color, influence: Math.max(5, Math.min(15, influence)) };</span>
   });
 &nbsp;
   const links: CoalitionLink[] = <span class="cstat-no" title="statement not covered" >[];</span>
   const alignment = <span class="cstat-no" title="statement not covered" >dataCache.coalitionAlignment;</span>
-<span class="cstat-no" title="statement not covered" >  nodes.forEach(<span class="fstat-no" title="function not covered" >(s</span>ource, i) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    nodes.forEach(<span class="fstat-no" title="function not covered" >(t</span>arget, j) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  nodes.<span class="fstat-no" title="function not covered" >forEach((s</span>ource, i) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    nodes.<span class="fstat-no" title="function not covered" >forEach((t</span>arget, j) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (i &lt; j) {</span>
         const rawStrengthForward = <span class="cstat-no" title="statement not covered" >alignment?.[source.id]?.[target.id];</span>
         const rawStrengthBackward = <span class="cstat-no" title="statement not covered" >alignment?.[target.id]?.[source.id];</span>
@@ -1642,13 +1642,13 @@ function <span class="fstat-no" title="function not covered" >renderCoalitionNet
   });
 &nbsp;
   const simulation = <span class="cstat-no" title="statement not covered" >d3.forceSimulation(nodes)</span>
-    .force('link', d3.forceLink(links).id(<span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.id)</span>.distance(150))
+    .force('link', d3.forceLink(links).<span class="fstat-no" title="function not covered" >id((d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.id).</span>distance(150))
     .force('charge', d3.forceManyBody().strength(-400))
     .force('center', d3.forceCenter(width / 2, height / 2))
-    .force('collision', d3.forceCollide().radius(<span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.influence * 3 + 10)</span>);
+    .force('collision', d3.forceCollide().<span class="fstat-no" title="function not covered" >radius((d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.influence * 3 + 10))</span>;
 &nbsp;
   const link = <span class="cstat-no" title="statement not covered" >svg.append('g').attr('class', 'links').selectAll('line').data(links).enter().append('line')</span>
-    .attr('stroke', '#999').attr('stroke-opacity', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.strength)</span>.attr('stroke-width', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >Math.sqrt(d.strength * 10))</span>
+    .attr('stroke', '#999').attr(<span class="fstat-no" title="function not covered" >'stroke-opacity', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.strength).</span>attr(<span class="fstat-no" title="function not covered" >'stroke-width', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >Math.sqrt(d.strength * 10))</span>
     .style('cursor', 'pointer')
     .on('mouseover', <span class="fstat-no" title="function not covered" >function(this: SVGLineElement, e</span>vent: any, d: any) {
 <span class="cstat-no" title="statement not covered" >      d3.select(this).attr('stroke', '#ff6600').attr('stroke-width', Math.sqrt(d.strength * 10) + 2);</span>
@@ -1660,15 +1660,15 @@ function <span class="fstat-no" title="function not covered" >renderCoalitionNet
     });
 &nbsp;
   const node = <span class="cstat-no" title="statement not covered" >svg.append('g').attr('class', 'nodes').selectAll('g').data(nodes).enter().append('g')</span>
-    .attr('tabindex', '0').attr('role', 'button').attr('aria-label', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`${d.fullName} party node`)</span>.style('cursor', 'pointer')
+    .attr('tabindex', '0').attr('role', 'button').attr(<span class="fstat-no" title="function not covered" >'aria-label', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`${d.fullName} party node`).</span>style('cursor', 'pointer')
     .call(d3.drag()
-      .on('start', <span class="fstat-no" title="function not covered" >(e</span>vent: any, d: any) =&gt; { <span class="cstat-no" title="statement not covered" >if (!event.active) <span class="cstat-no" title="statement not covered" >simulation.alphaTarget(0.3).restart(); <span class="cstat-no" title="statement not covered" >d</span></span>.fx = d.x; <span class="cstat-no" title="statement not covered" >d</span>.fy = d.y; }</span>)
-      .on('drag', <span class="fstat-no" title="function not covered" >(_</span>event: any, d: any) =&gt; { <span class="cstat-no" title="statement not covered" >d.fx = _event.x; <span class="cstat-no" title="statement not covered" >d</span>.fy = _event.y; }</span>)
-      .on('end', <span class="fstat-no" title="function not covered" >(e</span>vent: any, d: any) =&gt; { <span class="cstat-no" title="statement not covered" >if (!event.active) <span class="cstat-no" title="statement not covered" >simulation.alphaTarget(0); <span class="cstat-no" title="statement not covered" >d</span></span>.fx = null; <span class="cstat-no" title="statement not covered" >d</span>.fy = null; }</span>));
+      .on(<span class="fstat-no" title="function not covered" >'start', (e</span>vent: any, d: any) =&gt; { <span class="cstat-no" title="statement not covered" >if (!event.active) <span class="cstat-no" title="statement not covered" >simulation.alphaTarget(0.3).restart(); <span class="cstat-no" title="statement not covered" >d</span></span>.fx = d.x; <span class="cstat-no" title="statement not covered" >d</span>.fy = d.y; })</span>
+      .on(<span class="fstat-no" title="function not covered" >'drag', (_</span>event: any, d: any) =&gt; { <span class="cstat-no" title="statement not covered" >d.fx = _event.x; <span class="cstat-no" title="statement not covered" >d</span>.fy = _event.y; })</span>
+      .on(<span class="fstat-no" title="function not covered" >'end', (e</span>vent: any, d: any) =&gt; { <span class="cstat-no" title="statement not covered" >if (!event.active) <span class="cstat-no" title="statement not covered" >simulation.alphaTarget(0); <span class="cstat-no" title="statement not covered" >d</span></span>.fx = null; <span class="cstat-no" title="statement not covered" >d</span>.fy = null; }))</span>;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  node.append('circle').attr('r', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.influence * 3)</span>.attr('fill', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.color)</span>.attr('stroke', '#fff').attr('stroke-width', 2);</span>
-<span class="cstat-no" title="statement not covered" >  node.append('text').text(<span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.id)</span>.attr('x', 0).attr('y', 0).attr('text-anchor', 'middle').attr('dominant-baseline', 'middle').attr('fill', '#fff').attr('font-weight', 'bold').attr('font-size', '14px').attr('pointer-events', 'none');</span>
-<span class="cstat-no" title="statement not covered" >  node.append('text').text(<span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.name)</span>.attr('x', 0).attr('y', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.influence * 3 + 15)</span>.attr('text-anchor', 'middle').attr('font-size', '12px').attr('fill', 'var(--text-color)').attr('pointer-events', 'none');</span>
+<span class="cstat-no" title="statement not covered" >  node.append('circle').attr(<span class="fstat-no" title="function not covered" >'r', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.influence * 3).</span>attr(<span class="fstat-no" title="function not covered" >'fill', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.color).</span>attr('stroke', '#fff').attr('stroke-width', 2);</span>
+<span class="cstat-no" title="statement not covered" >  node.append('text').<span class="fstat-no" title="function not covered" >text((d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.id).</span>attr('x', 0).attr('y', 0).attr('text-anchor', 'middle').attr('dominant-baseline', 'middle').attr('fill', '#fff').attr('font-weight', 'bold').attr('font-size', '14px').attr('pointer-events', 'none');</span>
+<span class="cstat-no" title="statement not covered" >  node.append('text').<span class="fstat-no" title="function not covered" >text((d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.name).</span>attr('x', 0).attr(<span class="fstat-no" title="function not covered" >'y', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.influence * 3 + 15).</span>attr('text-anchor', 'middle').attr('font-size', '12px').attr('fill', 'var(--text-color)').attr('pointer-events', 'none');</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  node.on('mouseover', <span class="fstat-no" title="function not covered" >function(this: SVGGElement, e</span>vent: any, d: any) {</span>
 <span class="cstat-no" title="statement not covered" >    d3.select(this).select('circle').attr('stroke-width', 4).attr('stroke', '#ff6600');</span>
@@ -1682,9 +1682,9 @@ function <span class="fstat-no" title="function not covered" >renderCoalitionNet
 <span class="cstat-no" title="statement not covered" >    if (event.key === 'Enter' || event.key === ' ') { <span class="cstat-no" title="statement not covered" >event.preventDefault(); <span class="cstat-no" title="statement not covered" >a</span>lert(`${d.fullName}\nInfluence Score: ${d.influence.toFixed(1)}\nColor: ${d.color}`); }</span></span>
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  simulation.on('tick', <span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" >    link.attr('x1', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.source.x)</span>.attr('y1', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.source.y)</span>.attr('x2', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.target.x)</span>.attr('y2', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.target.y)</span>;</span>
-<span class="cstat-no" title="statement not covered" >    node.attr('transform', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`translate(${d.x},${d.y})`)</span>;</span>
+<span class="cstat-no" title="statement not covered" >  simulation.on(<span class="fstat-no" title="function not covered" >'tick', () =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >    link.attr(<span class="fstat-no" title="function not covered" >'x1', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.source.x).</span>attr(<span class="fstat-no" title="function not covered" >'y1', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.source.y).</span>attr(<span class="fstat-no" title="function not covered" >'x2', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.target.x).</span>attr(<span class="fstat-no" title="function not covered" >'y2', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d.target.y);</span></span>
+<span class="cstat-no" title="statement not covered" >    node.attr(<span class="fstat-no" title="function not covered" >'transform', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`translate(${d.x},${d.y})`);</span></span>
   });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  createAccessibleNetworkTable(nodes, links);</span>
@@ -1707,8 +1707,8 @@ function <span class="fstat-no" title="function not covered" >renderAlignmentHea
   const colorScale = <span class="cstat-no" title="statement not covered" >d3.scaleSequential(d3.interpolateRdYlGn).domain([0, 1]);</span>
 &nbsp;
   const heatMapData: { party1: string; party2: string; alignment: number }[] = <span class="cstat-no" title="statement not covered" >[];</span>
-<span class="cstat-no" title="statement not covered" >  partyIds.forEach(<span class="fstat-no" title="function not covered" >party1 =&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" >    partyIds.forEach(<span class="fstat-no" title="function not covered" >party2 =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >  partyIds.<span class="fstat-no" title="function not covered" >forEach(p</span>arty1 =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    partyIds.<span class="fstat-no" title="function not covered" >forEach(p</span>arty2 =&gt; {</span>
       const rawAlignmentDirect = <span class="cstat-no" title="statement not covered" >dataCache.coalitionAlignment?.[party1]?.[party2];</span>
       const rawAlignmentReverse = <span class="cstat-no" title="statement not covered" >dataCache.coalitionAlignment?.[party2]?.[party1];</span>
       const alignmentSource = <span class="cstat-no" title="statement not covered" >typeof rawAlignmentDirect === 'number' ? rawAlignmentDirect : (typeof rawAlignmentReverse === 'number' ? rawAlignmentReverse : 0.5);</span>
@@ -1718,26 +1718,26 @@ function <span class="fstat-no" title="function not covered" >renderAlignmentHea
   });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  g.selectAll('rect').data(heatMapData).enter().append('rect')</span>
-    .attr('x', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >partyIds.indexOf(d.party2) * cellSize)</span>.attr('y', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >partyIds.indexOf(d.party1) * cellSize)</span>
-    .attr('width', cellSize).attr('height', cellSize).attr('fill', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >colorScale(d.alignment))</span>.attr('stroke', '#fff').attr('stroke-width', 1).style('cursor', 'pointer')
-    .on('mouseover', <span class="fstat-no" title="function not covered" >function(e</span>vent: any, d: any) { <span class="cstat-no" title="statement not covered" >showTooltip(event, `${PARTIES[d.party1].name} ↔ ${PARTIES[d.party2].name}&lt;br&gt;Alignment: ${(d.alignment * 100).toFixed(0)}%`); }</span>)
+    .attr(<span class="fstat-no" title="function not covered" >'x', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >partyIds.indexOf(d.party2) * cellSize).</span>attr(<span class="fstat-no" title="function not covered" >'y', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >partyIds.indexOf(d.party1) * cellSize)</span>
+    .attr('width', cellSize).attr('height', cellSize).attr(<span class="fstat-no" title="function not covered" >'fill', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >colorScale(d.alignment))</span>.attr('stroke', '#fff').attr('stroke-width', 1).style('cursor', 'pointer')
+    .on('mouseover', <span class="fstat-no" title="function not covered" >function(e</span>vent: any, d: any) { <span class="cstat-no" title="statement not covered" >showTooltip(event, `${PARTIES[d.party1].name} ↔ ${PARTIES[d.party2].name}&lt;br&gt;Alignment: ${(d.alignment * 100).toFixed(0)}%`); })</span>
     .on('mouseout', hideTooltip);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  g.selectAll('.row-label').data(partyIds).enter().append('text').attr('class', 'row-label').attr('x', -10).attr('y', <span class="fstat-no" title="function not covered" >(_</span>d: any, i: number) =&gt; <span class="cstat-no" title="statement not covered" >i * cellSize + cellSize / 2)</span>.attr('text-anchor', 'end').attr('dominant-baseline', 'middle').attr('font-size', '12px').attr('fill', 'var(--text-color)').text(<span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >PARTIES[d].name)</span>;</span>
-<span class="cstat-no" title="statement not covered" >  g.selectAll('.col-label').data(partyIds).enter().append('text').attr('class', 'col-label').attr('x', <span class="fstat-no" title="function not covered" >(_</span>d: any, i: number) =&gt; <span class="cstat-no" title="statement not covered" >i * cellSize + cellSize / 2)</span>.attr('y', -10).attr('text-anchor', 'middle').attr('font-size', '12px').attr('fill', 'var(--text-color)').text(<span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d)</span>;</span>
+<span class="cstat-no" title="statement not covered" >  g.selectAll('.row-label').data(partyIds).enter().append('text').attr('class', 'row-label').attr('x', -10).attr(<span class="fstat-no" title="function not covered" >'y', (_</span>d: any, i: number) =&gt; <span class="cstat-no" title="statement not covered" >i * cellSize + cellSize / 2).</span>attr('text-anchor', 'end').attr('dominant-baseline', 'middle').attr('font-size', '12px').attr('fill', 'var(--text-color)').<span class="fstat-no" title="function not covered" >text((d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >PARTIES[d].name);</span></span>
+<span class="cstat-no" title="statement not covered" >  g.selectAll('.col-label').data(partyIds).enter().append('text').attr('class', 'col-label').attr(<span class="fstat-no" title="function not covered" >'x', (_</span>d: any, i: number) =&gt; <span class="cstat-no" title="statement not covered" >i * cellSize + cellSize / 2).</span>attr('y', -10).attr('text-anchor', 'middle').attr('font-size', '12px').attr('fill', 'var(--text-color)').<span class="fstat-no" title="function not covered" >text((d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d);</span></span>
 <span class="cstat-no" title="statement not covered" >  svg.append('text').attr('x', width / 2).attr('y', 20).attr('text-anchor', 'middle').attr('font-size', '14px').attr('font-weight', 'bold').attr('fill', 'var(--text-color)').text('Party Voting Alignment Matrix');</span>
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >renderVotingAnomalyChart(): void {</span>
-  const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('votingAnomalyChart') as HTMLCanvasElement | null;</span>
+  const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('votingAnomalyChart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >  if (!canvas) <span class="cstat-no" title="statement not covered" >return;</span></span>
   const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d');</span>
 &nbsp;
-  const datasets = <span class="cstat-no" title="statement not covered" >Object.keys(PARTIES).map(<span class="fstat-no" title="function not covered" >partyId =&gt; {</span></span>
-    const <span class="cstat-no" title="statement not covered" >partyData = (dataCache.votingAnomalies || []).filter(<span class="fstat-no" title="function not covered" >a =&gt; <span class="cstat-no" title="statement not covered" >a</span>.party === partyId)</span>;</span>
+  const datasets = <span class="cstat-no" title="statement not covered" >Object.keys(PARTIES).<span class="fstat-no" title="function not covered" >map(p</span>artyId =&gt; {</span>
+    const <span class="cstat-no" title="statement not covered" >partyData = (dataCache.votingAnomalies || []).<span class="fstat-no" title="function not covered" >filter(a</span> =&gt; <span class="cstat-no" title="statement not covered" >a.party === partyId);</span></span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
       label: PARTIES[partyId].name,
-      data: partyData.map(<span class="fstat-no" title="function not covered" >a =&gt; (<span class="cstat-no" title="statement not covered" >{</span> x: new Date(a.date).getTime(), y: a.deviation }))</span>,
+      data: partyData.<span class="fstat-no" title="function not covered" >map(a</span> =&gt; (<span class="cstat-no" title="statement not covered" >{ x: new Date(a.date).getTime(), y: a.deviation })),</span>
       backgroundColor: PARTIES[partyId].color,
       borderColor: PARTIES[partyId].color,
       pointRadius: 6, pointHoverRadius: 8
@@ -1748,31 +1748,31 @@ function <span class="fstat-no" title="function not covered" >renderVotingAnomal
     type: 'scatter', data: { datasets },
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: { title: { display: true, text: 'Voting Anomalies (Last 5 Years)', font: { size: 16, weight: 'bold' } }, tooltip: { callbacks: { label: <span class="fstat-no" title="function not covered" >(c</span>ontext: any) =&gt; { const date = <span class="cstat-no" title="statement not covered" >new Date(context.parsed.x); <span class="cstat-no" title="statement not covered" >r</span>eturn `${context.dataset.label}: Deviation ${context.parsed.y.toFixed(2)} on ${date.toLocaleDateString()}`; }</span> } }, legend: { display: true, position: 'bottom' } },
-      scales: { x: { type: 'linear', title: { display: true, text: 'Date' }, ticks: { callback: <span class="fstat-no" title="function not covered" >(v</span>alue: any) =&gt; <span class="cstat-no" title="statement not covered" >new Date(value).getFullYear().toString() }</span> }, y: { title: { display: true, text: 'Deviation Score' }, beginAtZero: true } }
+      plugins: { title: { display: true, text: 'Voting Anomalies (Last 5 Years)', font: { size: 16, weight: 'bold' } }, tooltip: { callbacks: { <span class="fstat-no" title="function not covered" >label: (c</span>ontext: any) =&gt; { const date = <span class="cstat-no" title="statement not covered" >new Date(context.parsed.x);</span> <span class="cstat-no" title="statement not covered" >return `${context.dataset.label}: Deviation ${context.parsed.y.toFixed(2)} on ${date.toLocaleDateString()}`; } } </span>}, legend: { display: true, position: 'bottom' } },
+      scales: { x: { type: 'linear', title: { display: true, text: 'Date' }, ticks: { <span class="fstat-no" title="function not covered" >callback: (v</span>alue: any) =&gt; <span class="cstat-no" title="statement not covered" >new Date(value).getFullYear().toString() </span>} }, y: { title: { display: true, text: 'Deviation Score' }, beginAtZero: true } }
     }
   });
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >renderBehavioralPatternsChart(): void {</span>
-  const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('behavioralPatternsChart') as HTMLCanvasElement | null;</span>
+  const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('behavioralPatternsChart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >  if (!canvas) <span class="cstat-no" title="statement not covered" >return;</span></span>
   const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d');</span>
   const partyIds = <span class="cstat-no" title="statement not covered" >Object.keys(PARTIES);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  new Chart(ctx, {</span>
     type: 'bar',
-    data: { labels: partyIds.map(<span class="fstat-no" title="function not covered" >id =&gt; <span class="cstat-no" title="statement not covered" >P</span>ARTIES[id].name)</span>, datasets: [{ label: 'Party Consistency Score (%)', data: partyIds.map(<span class="fstat-no" title="function not covered" >id =&gt; <span class="cstat-no" title="statement not covered" >d</span>ataCache.behavioralPatterns?.[id] || 80)</span>, backgroundColor: partyIds.map(<span class="fstat-no" title="function not covered" >id =&gt; <span class="cstat-no" title="statement not covered" >P</span>ARTIES[id].color)</span>, borderColor: partyIds.map(<span class="fstat-no" title="function not covered" >id =&gt; <span class="cstat-no" title="statement not covered" >P</span>ARTIES[id].color)</span>, borderWidth: 1 }] },
+    data: { labels: partyIds.<span class="fstat-no" title="function not covered" >map(i</span>d =&gt; <span class="cstat-no" title="statement not covered" >PARTIES[id].name),</span> datasets: [{ label: 'Party Consistency Score (%)', data: partyIds.<span class="fstat-no" title="function not covered" >map(i</span>d =&gt; <span class="cstat-no" title="statement not covered" >dataCache.behavioralPatterns?.[id] || 80),</span> backgroundColor: partyIds.<span class="fstat-no" title="function not covered" >map(i</span>d =&gt; <span class="cstat-no" title="statement not covered" >PARTIES[id].color),</span> borderColor: partyIds.<span class="fstat-no" title="function not covered" >map(i</span>d =&gt; <span class="cstat-no" title="statement not covered" >PARTIES[id].color),</span> borderWidth: 1 }] },
     options: {
       indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-      plugins: { title: { display: true, text: 'Party Voting Consistency (2019-2024)', font: { size: 16, weight: 'bold' } }, legend: { display: false }, tooltip: { callbacks: { label: <span class="fstat-no" title="function not covered" >(c</span>ontext: any) =&gt; <span class="cstat-no" title="statement not covered" >`Consistency: ${context.parsed.x.toFixed(1)}%` }</span> } },
+      plugins: { title: { display: true, text: 'Party Voting Consistency (2019-2024)', font: { size: 16, weight: 'bold' } }, legend: { display: false }, tooltip: { callbacks: { <span class="fstat-no" title="function not covered" >label: (c</span>ontext: any) =&gt; <span class="cstat-no" title="statement not covered" >`Consistency: ${context.parsed.x.toFixed(1)}%` } </span>} },
       scales: { x: { beginAtZero: true, max: 100, title: { display: true, text: 'Consistency Score (%)' } } }
     }
   });
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >renderDecisionTrendsChart(): void {</span>
-  const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('decisionTrendsChart') as HTMLCanvasElement | null;</span>
+  const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('decisionTrendsChart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >  if (!canvas) <span class="cstat-no" title="statement not covered" >return;</span></span>
   const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d');</span>
   let years: number[] = <span class="cstat-no" title="statement not covered" >[];</span>
@@ -1780,19 +1780,19 @@ function <span class="fstat-no" title="function not covered" >renderDecisionTren
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (dataCache.annualVotes &amp;&amp; Object.keys(dataCache.annualVotes).length &gt; 0) {</span>
     const allYears = <span class="cstat-no" title="statement not covered" >new Set&lt;number&gt;();</span>
-<span class="cstat-no" title="statement not covered" >    Object.values(dataCache.annualVotes).forEach(<span class="fstat-no" title="function not covered" >partyData =&gt; {</span> <span class="cstat-no" title="statement not covered" >partyData.forEach(<span class="fstat-no" title="function not covered" >d =&gt; <span class="cstat-no" title="statement not covered" >a</span>llYears.add(d.year))</span>; }</span>);</span>
-<span class="cstat-no" title="statement not covered" >    years = Array.from(allYears).sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a - b)</span>;</span>
+<span class="cstat-no" title="statement not covered" >    Object.values(dataCache.annualVotes).<span class="fstat-no" title="function not covered" >forEach(p</span>artyData =&gt; { <span class="cstat-no" title="statement not covered" >partyData.<span class="fstat-no" title="function not covered" >forEach(d</span> =&gt; <span class="cstat-no" title="statement not covered" >allYears.add(d.year))</span>; });</span></span>
+<span class="cstat-no" title="statement not covered" >    years = Array.from(allYears).<span class="fstat-no" title="function not covered" >sort((a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a - b);</span></span>
 <span class="cstat-no" title="statement not covered" >    useRealData = true;</span>
   }
 <span class="cstat-no" title="statement not covered" >  if (years.length === 0) { <span class="cstat-no" title="statement not covered" >for (let year = <span class="cstat-no" title="statement not covered" >1990; y</span>ear &lt;= 2026; year++) <span class="cstat-no" title="statement not covered" >years.push(year); }</span></span></span>
 &nbsp;
-  const datasets = <span class="cstat-no" title="statement not covered" >Object.keys(PARTIES).map(<span class="fstat-no" title="function not covered" >partyId =&gt; {</span></span>
+  const datasets = <span class="cstat-no" title="statement not covered" >Object.keys(PARTIES).<span class="fstat-no" title="function not covered" >map(p</span>artyId =&gt; {</span>
     let data: number[];
 <span class="cstat-no" title="statement not covered" >    if (useRealData &amp;&amp; dataCache.annualVotes?.[partyId]) {</span>
       const partyYearData: Record&lt;number, number&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >      dataCache.annualVotes[partyId].forEach(<span class="fstat-no" title="function not covered" >d =&gt; {</span> <span class="cstat-no" title="statement not covered" >partyYearData[d.year] = d.votes; }</span>);</span>
-<span class="cstat-no" title="statement not covered" >      data = years.map(<span class="fstat-no" title="function not covered" >year =&gt; <span class="cstat-no" title="statement not covered" >p</span>artyYearData[year] || 0)</span>;</span>
-    } else { <span class="cstat-no" title="statement not covered" >data = years.map(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >0</span>)</span>; }</span>
+<span class="cstat-no" title="statement not covered" >      dataCache.annualVotes[partyId].<span class="fstat-no" title="function not covered" >forEach(d</span> =&gt; { <span class="cstat-no" title="statement not covered" >partyYearData[d.year] = d.votes; });</span></span>
+<span class="cstat-no" title="statement not covered" >      data = years.<span class="fstat-no" title="function not covered" >map(y</span>ear =&gt; <span class="cstat-no" title="statement not covered" >partyYearData[year] || 0);</span></span>
+    } else { <span class="cstat-no" title="statement not covered" >data = years.<span class="fstat-no" title="function not covered" >map(() =&gt; <span class="cstat-no" title="statement not covered" >0</span>);</span> }</span>
 <span class="cstat-no" title="statement not covered" >    return { label: PARTIES[partyId].name, data, borderColor: PARTIES[partyId].color, backgroundColor: PARTIES[partyId].color + '20', tension: 0.4, fill: false };</span>
   });
 &nbsp;
@@ -1800,7 +1800,7 @@ function <span class="fstat-no" title="function not covered" >renderDecisionTren
     type: 'line', data: { labels: years, datasets },
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: { title: { display: true, text: `Annual Voting Activity Trends (${years[0]}-${years[years.length - 1]})`, font: { size: 16, weight: 'bold' } }, legend: { display: true, position: 'bottom' }, tooltip: { mode: 'index', intersect: false, callbacks: { label: <span class="fstat-no" title="function not covered" >(c</span>ontext: any) =&gt; <span class="cstat-no" title="statement not covered" >context.dataset.label + ': ' + context.parsed.y.toLocaleString() + ' votes' }</span> } },
+      plugins: { title: { display: true, text: `Annual Voting Activity Trends (${years[0]}-${years[years.length - 1]})`, font: { size: 16, weight: 'bold' } }, legend: { display: true, position: 'bottom' }, tooltip: { mode: 'index', intersect: false, callbacks: { <span class="fstat-no" title="function not covered" >label: (c</span>ontext: any) =&gt; <span class="cstat-no" title="statement not covered" >context.dataset.label + ': ' + context.parsed.y.toLocaleString() + ' votes' } } },</span>
       scales: { x: { title: { display: true, text: 'Year' } }, y: { title: { display: true, text: 'Number of Votes' }, beginAtZero: true } }
     }
   });
@@ -1814,10 +1814,10 @@ function <span class="fstat-no" title="function not covered" >createAccessibleNe
   const table = <span class="cstat-no" title="statement not covered" >document.getElementById('coalitionNetworkTable');</span>
 <span class="cstat-no" title="statement not covered" >  if (!table) <span class="cstat-no" title="statement not covered" >return;</span></span>
   let html = <span class="cstat-no" title="statement not covered" >'&lt;caption&gt;Coalition Network Data&lt;/caption&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Party&lt;/th&gt;&lt;th&gt;Influence&lt;/th&gt;&lt;th&gt;Coalition Partners&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;';</span>
-<span class="cstat-no" title="statement not covered" >  nodes.forEach(<span class="fstat-no" title="function not covered" >n =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >  nodes.<span class="fstat-no" title="function not covered" >forEach(n</span> =&gt; {</span>
     const partners = <span class="cstat-no" title="statement not covered" >links</span>
-      .filter(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >l =&gt; (l</span>.source.id || l.source) === n.id || (l.target.id || l.target) === n.id)</span>
-      .map(<span class="fstat-no" title="function not covered" >l =&gt; {</span> const <span class="cstat-no" title="statement not covered" >pid = (l.source.id || l.source) === n.id ? (l.target.id || l.target) : (l.source.id || l.source); <span class="cstat-no" title="statement not covered" >r</span>eturn `${PARTIES[pid]?.name || pid} (${(l.strength * 100).toFixed(0)}%)`; }</span>)
+      .<span class="fstat-no" title="function not covered" >filter(<span class="cstat-no" title="statement not covered" >l</span> =&gt; (l.source.id || l.source) === n.id || (l.target.id || l.target) === n.id)</span>
+      .<span class="fstat-no" title="function not covered" >map(l</span> =&gt; { const <span class="cstat-no" title="statement not covered" >pid = (l.source.id || l.source) === n.id ? (l.target.id || l.target) : (l.source.id || l.source); <span class="cstat-no" title="statement not covered" >r</span>eturn `${PARTIES[pid]?.name || pid} (${(l.strength * 100).toFixed(0)}%)`; })</span>
       .join(', ');
 <span class="cstat-no" title="statement not covered" >    html += `&lt;tr&gt;&lt;td&gt;${n.fullName}&lt;/td&gt;&lt;td&gt;${n.influence.toFixed(1)}&lt;/td&gt;&lt;td&gt;${partners}&lt;/td&gt;&lt;/tr&gt;`;</span>
   });
@@ -1885,11 +1885,11 @@ function <span class="fstat-no" title="function not covered" >generateMockCoalit
   const data: Record&lt;string, Record&lt;string, number&gt;&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
   const rightBloc = <span class="cstat-no" title="statement not covered" >['M', 'KD', 'L', 'SD'];</span>
   const leftBloc = <span class="cstat-no" title="statement not covered" >['S', 'V', 'MP'];</span>
-<span class="cstat-no" title="statement not covered" >  Object.keys(PARTIES).forEach(<span class="fstat-no" title="function not covered" >p1 =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >  Object.keys(PARTIES).<span class="fstat-no" title="function not covered" >forEach(p</span>1 =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    data[p1] = {};</span>
-<span class="cstat-no" title="statement not covered" >    Object.keys(PARTIES).forEach(<span class="fstat-no" title="function not covered" >p2 =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >    Object.keys(PARTIES).<span class="fstat-no" title="function not covered" >forEach(p</span>2 =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (p1 !== p2) {</span>
-        const sameBloc = (<span class="cstat-no" title="statement not covered" >rightBloc.includes(p1) &amp;&amp; rightBloc.includes(p2)) || (leftBloc.includes(p1) &amp;&amp; leftBloc.includes(p2));</span>
+        const sameBloc = (<span class="cstat-no" title="statement not covered" >rightBloc.includes(p1) &amp;&amp; rightBloc.includes(p2)) || (leftBloc.includes(p1) &amp;&amp; leftBloc.includes(p2))</span>;
 <span class="cstat-no" title="statement not covered" >        data[p1][p2] = sameBloc ? 0.70 : 0.35;</span>
       }
     });
@@ -1899,7 +1899,7 @@ function <span class="fstat-no" title="function not covered" >generateMockCoalit
 &nbsp;
 function <span class="fstat-no" title="function not covered" >generateMockBehavioralData(): Record&lt;string, number&gt; {</span>
   const data: Record&lt;string, number&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >  Object.keys(PARTIES).forEach(<span class="fstat-no" title="function not covered" >p =&gt; {</span> <span class="cstat-no" title="statement not covered" >data[p] = 80; }</span>);</span>
+<span class="cstat-no" title="statement not covered" >  Object.keys(PARTIES).<span class="fstat-no" title="function not covered" >forEach(p</span> =&gt; { <span class="cstat-no" title="statement not covered" >data[p] = 80; });</span></span>
 <span class="cstat-no" title="statement not covered" >  return data;</span>
 }
 &nbsp;
@@ -1981,7 +1981,7 @@ export async function <span class="fstat-no" title="function not covered" >init(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:17.052Z
+                at 2026-03-12T22:50:12.565Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

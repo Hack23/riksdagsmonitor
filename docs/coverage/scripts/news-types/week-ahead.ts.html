@@ -1357,7 +1357,7 @@ export async function generateWeekAhead(options: GenerationOptions = {}): Promis
     console.log('  🔄 Step 2 — Fetching upcoming documents...');
     const rawDocuments = await Promise.resolve()
       .then(() =&gt; client.searchDocuments({ from_date: range.start, to_date: range.end, limit: 30 }))
-      .catch(<span class="fstat-no" title="function not covered" >(e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch upcoming documents:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }</span>);
+      .<span class="fstat-no" title="function not covered" >catch((e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch upcoming documents:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; });</span>
     const documents: RawDocument[] = Array.isArray(rawDocuments) ? rawDocuments as RawDocument[] : <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
     mcpCalls.push({ tool: 'search_dokument', result: documents });
     console.log(`  📊 Found ${documents.length} upcoming documents`);
@@ -1369,7 +1369,7 @@ export async function generateWeekAhead(options: GenerationOptions = {}): Promis
     console.log('  🔄 Step 3 — Fetching recent speeches for context...');
     const rawSpeeches = await Promise.resolve()
       .then(() =&gt; client.searchSpeeches({ from: recentFrom, to: range.end, limit: 50 }))
-      .catch(<span class="fstat-no" title="function not covered" >(e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch speeches:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }</span>);
+      .<span class="fstat-no" title="function not covered" >catch((e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch speeches:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; });</span>
     const speeches: Array&lt;Record&lt;string, unknown&gt;&gt; = Array.isArray(rawSpeeches) ? rawSpeeches as Array&lt;Record&lt;string, unknown&gt;&gt; : <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
     mcpCalls.push({ tool: 'search_anforanden', result: speeches });
     console.log(`  🗣 Found ${speeches.length} recent speeches`);
@@ -1378,7 +1378,7 @@ export async function generateWeekAhead(options: GenerationOptions = {}): Promis
     console.log('  🔄 Step 4 — Fetching parliamentary questions...');
     const rawQuestions = await Promise.resolve()
       .then(() =&gt; client.fetchWrittenQuestions({ limit: 20 }))
-      .catch(<span class="fstat-no" title="function not covered" >(e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch fragor:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }</span>);
+      .<span class="fstat-no" title="function not covered" >catch((e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch fragor:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; });</span>
     const questions: RawDocument[] = Array.isArray(rawQuestions) ? rawQuestions as RawDocument[] : <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
     mcpCalls.push({ tool: 'get_fragor', result: questions });
     console.log(`  📊 Found ${questions.length} written questions`);
@@ -1387,7 +1387,7 @@ export async function generateWeekAhead(options: GenerationOptions = {}): Promis
     console.log('  🔄 Step 5 — Fetching interpellations...');
     const rawInterpellations = await Promise.resolve()
       .then(() =&gt; client.fetchInterpellations({ limit: 15 }))
-      .catch(<span class="fstat-no" title="function not covered" >(e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch interpellationer:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; }</span>);
+      .<span class="fstat-no" title="function not covered" >catch((e</span>rr: unknown) =&gt; { <span class="cstat-no" title="statement not covered" >console.error('Failed to fetch interpellationer:', err); <span class="cstat-no" title="statement not covered" >r</span>eturn [] as unknown[]; });</span>
     const interpellations: RawDocument[] = Array.isArray(rawInterpellations) ? rawInterpellations as RawDocument[] : <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
     mcpCalls.push({ tool: 'get_interpellationer', result: interpellations });
     console.log(`  📊 Found ${interpellations.length} interpellations`);
@@ -1582,7 +1582,7 @@ function checkDailyCoverage(_article: ArticleInput, _days: number = 7): boolean 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

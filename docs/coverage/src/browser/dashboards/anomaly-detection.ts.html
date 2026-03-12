@@ -39,7 +39,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/85</span>
+                <span class='fraction'>0/84</span>
             </div>
         
             
@@ -2764,9 +2764,9 @@ function <span class="fstat-no" title="function not covered" >generateFallbackDa
       let direction = <span class="cstat-no" title="statement not covered" >'WITHIN_NORMAL_RANGE';</span>
       const dominantZ = <span class="cstat-no" title="statement not covered" >absBallotZ &gt;= absDocZ ? ballotZRaw : docZRaw;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (maxZ &gt;= 3.0) { <span class="cstat-no" title="statement not covered" >severity = 'CRITICAL'; <span class="cstat-no" title="statement not covered" >a</span>nomalyType = absBallotZ &gt;= absDocZ ? 'BALLOT_ANOMALY' : 'DOCUMENT_ANOMALY'; <span class="cstat-no" title="statement not covered" >d</span>irection = dominantZ &gt; 0 ? 'UNUSUALLY_HIGH' : 'UNUSUALLY_LOW'; <span class="cstat-no" title="statement not covered" >}</span></span></span>
-      else if (maxZ &gt;= 2.0) { <span class="cstat-no" title="statement not covered" >severity = 'HIGH'; <span class="cstat-no" title="statement not covered" >a</span>nomalyType = absBallotZ &gt;= absDocZ ? 'BALLOT_ANOMALY' : 'DOCUMENT_ANOMALY'; <span class="cstat-no" title="statement not covered" >d</span>irection = dominantZ &gt; 0 ? 'UNUSUALLY_HIGH' : 'UNUSUALLY_LOW'; <span class="cstat-no" title="statement not covered" >}</span></span>
-      else if (maxZ &gt;= 1.0) { <span class="cstat-no" title="statement not covered" >severity = 'MODERATE'; }</span>
+<span class="cstat-no" title="statement not covered" >      if (maxZ &gt;= 3.0) { <span class="cstat-no" title="statement not covered" >severity = 'CRITICAL'; <span class="cstat-no" title="statement not covered" >a</span>nomalyType = absBallotZ &gt;= absDocZ ? 'BALLOT_ANOMALY' : 'DOCUMENT_ANOMALY'; <span class="cstat-no" title="statement not covered" >d</span>irection = dominantZ &gt; 0 ? 'UNUSUALLY_HIGH' : 'UNUSUALLY_LOW'; }</span></span>
+      else if (<span class="cstat-no" title="statement not covered" >maxZ &gt;= 2.0) { <span class="cstat-no" title="statement not covered" >severity = 'HIGH'; <span class="cstat-no" title="statement not covered" >a</span>nomalyType = absBallotZ &gt;= absDocZ ? 'BALLOT_ANOMALY' : 'DOCUMENT_ANOMALY'; <span class="cstat-no" title="statement not covered" >d</span>irection = dominantZ &gt; 0 ? 'UNUSUALLY_HIGH' : 'UNUSUALLY_LOW'; }</span></span>
+      else if (<span class="cstat-no" title="statement not covered" >maxZ &gt;= 1.0) { <span class="cstat-no" title="statement not covered" >severity = 'MODERATE'; }</span></span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      data.push({</span>
         year: String(year),
@@ -2797,7 +2797,7 @@ function <span class="fstat-no" title="function not covered" >generateFallbackDa
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  data.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  data.<span class="fstat-no" title="function not covered" >sort((a</span>, b) =&gt; {</span>
     const yearDiff = <span class="cstat-no" title="statement not covered" >parseInt(b.year as string, 10) - parseInt(a.year as string, 10);</span>
 <span class="cstat-no" title="statement not covered" >    if (yearDiff !== 0) <span class="cstat-no" title="statement not covered" >return yearDiff;</span></span>
 <span class="cstat-no" title="statement not covered" >    return parseInt(b.quarter as string, 10) - parseInt(a.quarter as string, 10);</span>
@@ -2810,9 +2810,9 @@ function <span class="fstat-no" title="function not covered" >generateFallbackDa
 // DATA MANAGER
 // ============================================================================
 &nbsp;
-<span class="fstat-no" title="function not covered" >class A</span>nomalyDetectionDataManager {
-<span class="cstat-no" title="statement not covered" >  data: CSVRow[] | null = null;</span>
-<span class="cstat-no" title="statement not covered" >  dataSourceType: DataSourceType = 'live';</span>
+class AnomalyDetectionDataManager {
+  data: CSVRow[] | null = <span class="cstat-no" title="statement not covered" >null;</span>
+  dataSourceType: DataSourceType = <span class="cstat-no" title="statement not covered" >'live';</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >  getTranslations(): AnomalyTranslationsFull {</span>
 <span class="cstat-no" title="statement not covered" >    return getTranslations();</span>
@@ -2866,21 +2866,21 @@ function <span class="fstat-no" title="function not covered" >generateFallbackDa
 &nbsp;
 <span class="fstat-no" title="function not covered" >  parseCSV(c</span>svText: string): CSVRow[] {
     const lines = <span class="cstat-no" title="statement not covered" >csvText.trim().split('\n');</span>
-    const headers = <span class="cstat-no" title="statement not covered" >lines[0].split(',').map(<span class="fstat-no" title="function not covered" >(h</span>) =&gt; <span class="cstat-no" title="statement not covered" >h.trim())</span>;</span>
+    const headers = <span class="cstat-no" title="statement not covered" >lines[0].split(',').<span class="fstat-no" title="function not covered" >map((h</span>) =&gt; <span class="cstat-no" title="statement not covered" >h.trim())</span>;</span>
     const data: CSVRow[] = <span class="cstat-no" title="statement not covered" >[];</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >1; i</span> &lt; lines.length; i++) {</span>
       const values = <span class="cstat-no" title="statement not covered" >this.parseCSVLine(lines[i]);</span>
 <span class="cstat-no" title="statement not covered" >      if (values.length === headers.length) {</span>
         const record: CSVRow = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >        headers.forEach(<span class="fstat-no" title="function not covered" >(h</span>eader, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        headers.<span class="fstat-no" title="function not covered" >forEach((h</span>eader, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >          record[header] = values[index];</span>
         });
 <span class="cstat-no" title="statement not covered" >        data.push(record);</span>
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    data.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    data.<span class="fstat-no" title="function not covered" >sort((a</span>, b) =&gt; {</span>
       const yearDiff = <span class="cstat-no" title="statement not covered" >parseInt(b.year as string, 10) - parseInt(a.year as string, 10);</span>
 <span class="cstat-no" title="statement not covered" >      if (yearDiff !== 0) <span class="cstat-no" title="statement not covered" >return yearDiff;</span></span>
 <span class="cstat-no" title="statement not covered" >      return parseInt(b.quarter as string, 10) - parseInt(a.quarter as string, 10);</span>
@@ -2898,7 +2898,7 @@ function <span class="fstat-no" title="function not covered" >generateFallbackDa
       const char = <span class="cstat-no" title="statement not covered" >line[i];</span>
 <span class="cstat-no" title="statement not covered" >      if (char === '"') {</span>
 <span class="cstat-no" title="statement not covered" >        inQuotes = !inQuotes;</span>
-<span class="cstat-no" title="statement not covered" >      } else if (char === ',' &amp;&amp; !inQuotes) {</span>
+      } else if (<span class="cstat-no" title="statement not covered" >char === ',' &amp;&amp; !inQuotes) {</span>
 <span class="cstat-no" title="statement not covered" >        values.push(current.trim());</span>
 <span class="cstat-no" title="statement not covered" >        current = '';</span>
       } else {
@@ -2939,9 +2939,9 @@ function <span class="fstat-no" title="function not covered" >generateFallbackDa
 <span class="fstat-no" title="function not covered" >  identifyActiveAnomalies(): CSVRow[] {</span>
 <span class="cstat-no" title="statement not covered" >    if (!this.data) <span class="cstat-no" title="statement not covered" >return [];</span></span>
 <span class="cstat-no" title="statement not covered" >    return this.data</span>
-      .filter(<span class="fstat-no" title="function not covered" >(r</span>ecord) =&gt; <span class="cstat-no" title="statement not covered" >record.anomaly_type !== 'NO_ANOMALY')</span>
-      .sort(
-<span class="fstat-no" title="function not covered" >        (a</span>, b) =&gt;
+      .<span class="fstat-no" title="function not covered" >filter((r</span>ecord) =&gt; <span class="cstat-no" title="statement not covered" >record.anomaly_type !== 'NO_ANOMALY')</span>
+      .<span class="fstat-no" title="function not covered" >sort(</span>
+        (a, b) =&gt;
 <span class="cstat-no" title="statement not covered" >          Math.abs(parseFloat(b.max_z_score as string)) -</span>
           Math.abs(parseFloat(a.max_z_score as string)),
       );
@@ -2954,17 +2954,17 @@ function <span class="fstat-no" title="function not covered" >generateFallbackDa
     const total = <span class="cstat-no" title="statement not covered" >this.data.length;</span>
     const anomalyCount = <span class="cstat-no" title="statement not covered" >anomalies.length;</span>
 &nbsp;
-    const criticalCount = <span class="cstat-no" title="statement not covered" >anomalies.filter(<span class="fstat-no" title="function not covered" >(a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_severity === 'CRITICAL')</span>.length;</span>
-    const highCount = <span class="cstat-no" title="statement not covered" >anomalies.filter(<span class="fstat-no" title="function not covered" >(a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_severity === 'HIGH')</span>.length;</span>
-    const moderateCount = <span class="cstat-no" title="statement not covered" >anomalies.filter(<span class="fstat-no" title="function not covered" >(a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_severity === 'MODERATE')</span>.length;</span>
+    const criticalCount = <span class="cstat-no" title="statement not covered" >anomalies.<span class="fstat-no" title="function not covered" >filter((a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_severity === 'CRITICAL').</span>length;</span>
+    const highCount = <span class="cstat-no" title="statement not covered" >anomalies.<span class="fstat-no" title="function not covered" >filter((a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_severity === 'HIGH').</span>length;</span>
+    const moderateCount = <span class="cstat-no" title="statement not covered" >anomalies.<span class="fstat-no" title="function not covered" >filter((a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_severity === 'MODERATE').</span>length;</span>
 &nbsp;
-    const ballotAnomalies = <span class="cstat-no" title="statement not covered" >anomalies.filter(<span class="fstat-no" title="function not covered" >(a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_type === 'BALLOT_ANOMALY')</span>.length;</span>
-    const documentAnomalies = <span class="cstat-no" title="statement not covered" >anomalies.filter(<span class="fstat-no" title="function not covered" >(a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_type === 'DOCUMENT_ANOMALY')</span>.length;</span>
-    const attendanceAnomalies = <span class="cstat-no" title="statement not covered" >anomalies.filter(<span class="fstat-no" title="function not covered" >(a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_type === 'ATTENDANCE_ANOMALY')</span>.length;</span>
+    const ballotAnomalies = <span class="cstat-no" title="statement not covered" >anomalies.<span class="fstat-no" title="function not covered" >filter((a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_type === 'BALLOT_ANOMALY').</span>length;</span>
+    const documentAnomalies = <span class="cstat-no" title="statement not covered" >anomalies.<span class="fstat-no" title="function not covered" >filter((a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_type === 'DOCUMENT_ANOMALY').</span>length;</span>
+    const attendanceAnomalies = <span class="cstat-no" title="statement not covered" >anomalies.<span class="fstat-no" title="function not covered" >filter((a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_type === 'ATTENDANCE_ANOMALY').</span>length;</span>
 &nbsp;
     const avgZScore =
 <span class="cstat-no" title="statement not covered" >      anomalies.length &gt; 0</span>
-        ? anomalies.reduce(<span class="fstat-no" title="function not covered" >(s</span>um, a) =&gt; <span class="cstat-no" title="statement not covered" >sum + Math.abs(parseFloat(a.max_z_score as string)), 0</span>) /
+        ? anomalies.<span class="fstat-no" title="function not covered" >reduce((s</span>um, a) =&gt; <span class="cstat-no" title="statement not covered" >sum + Math.abs(parseFloat(a.max_z_score as string)),</span> 0) /
           anomalies.length
         : 0;
 &nbsp;
@@ -2986,8 +2986,8 @@ function <span class="fstat-no" title="function not covered" >generateFallbackDa
 <span class="cstat-no" title="statement not covered" >    if (!this.data || this.data.length === 0) <span class="cstat-no" title="statement not covered" >return null;</span></span>
 &nbsp;
     const recentQuarters = <span class="cstat-no" title="statement not covered" >this.data.slice(0, 2);</span>
-    const criticalAnomalies = <span class="cstat-no" title="statement not covered" >recentQuarters.filter(</span>
-<span class="fstat-no" title="function not covered" >      (r</span>ecord) =&gt;
+    const criticalAnomalies = <span class="cstat-no" title="statement not covered" >recentQuarters.<span class="fstat-no" title="function not covered" >filter(</span></span>
+      (record) =&gt;
 <span class="cstat-no" title="statement not covered" >        record.anomaly_severity === 'CRITICAL' || record.anomaly_severity === 'HIGH',</span>
     );
 <span class="cstat-no" title="statement not covered" >    return criticalAnomalies.length &gt; 0 ? criticalAnomalies[0] : null;</span>
@@ -3028,7 +3028,7 @@ class AnomalyAlertSystem {
 &nbsp;
       const dismissBtn = <span class="cstat-no" title="statement not covered" >banner.querySelector('.dismiss-alert');</span>
 <span class="cstat-no" title="statement not covered" >      if (dismissBtn) {</span>
-        (<span class="cstat-no" title="statement not covered" >dismissBtn as HTMLElement).onclick = <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >t</span>his.dismissAlert();</span></span>
+        (<span class="cstat-no" title="statement not covered" >dismissBtn as HTMLElement).<span class="fstat-no" title="function not covered" >onclick = () =&gt; <span class="cstat-no" title="statement not covered" >t</span>his.dismissAlert();</span></span>
       }
     }
   }
@@ -3054,7 +3054,7 @@ class AnomalyAlertSystem {
 <span class="cstat-no" title="statement not covered" >    if (type === 'BALLOT_ANOMALY') {</span>
 <span class="cstat-no" title="statement not covered" >      actualValue = `${anomaly.total_ballots} ballots`;</span>
 <span class="cstat-no" title="statement not covered" >      baseline = `${Math.round(parseFloat(anomaly.q_baseline_ballots as string))} baseline`;</span>
-<span class="cstat-no" title="statement not covered" >    } else if (type === 'DOCUMENT_ANOMALY') {</span>
+    } else if (<span class="cstat-no" title="statement not covered" >type === 'DOCUMENT_ANOMALY') {</span>
 <span class="cstat-no" title="statement not covered" >      actualValue = `${anomaly.documents_produced} documents`;</span>
 <span class="cstat-no" title="statement not covered" >      baseline = `${Math.round(parseFloat(anomaly.q_baseline_docs as string))} baseline`;</span>
     }
@@ -3069,7 +3069,7 @@ class AnomalyAlertSystem {
 &nbsp;
 class AnomalyDetectionCharts {
   private readonly dataManager: AnomalyDetectionDataManager;
-<span class="cstat-no" title="statement not covered" >  private chartInstances: Record&lt;string, any&gt; = {};</span>
+  private chartInstances: Record&lt;string, any&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >  constructor(d</span>ataManager: AnomalyDetectionDataManager) {
 <span class="cstat-no" title="statement not covered" >    this.dataManager = dataManager;</span>
@@ -3085,13 +3085,13 @@ class AnomalyDetectionCharts {
   }
 &nbsp;
   private async <span class="fstat-no" title="function not covered" >renderAnomalyTimeline(): Promise&lt;void&gt; {</span>
-    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('anomaly-timeline-chart') as HTMLCanvasElement | null;</span>
+    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('anomaly-timeline-chart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >    if (!canvas) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
     const data = <span class="cstat-no" title="statement not covered" >this.dataManager.data!;</span>
-    const anomalies = <span class="cstat-no" title="statement not covered" >data.filter(<span class="fstat-no" title="function not covered" >(r</span>) =&gt; <span class="cstat-no" title="statement not covered" >r.anomaly_type !== 'NO_ANOMALY')</span>;</span>
+    const anomalies = <span class="cstat-no" title="statement not covered" >data.<span class="fstat-no" title="function not covered" >filter((r</span>) =&gt; <span class="cstat-no" title="statement not covered" >r.anomaly_type !== 'NO_ANOMALY');</span></span>
 &nbsp;
-    const dataPoints = <span class="cstat-no" title="statement not covered" >anomalies.map(<span class="fstat-no" title="function not covered" >(r</span>ecord) =&gt; {</span>
+    const dataPoints = <span class="cstat-no" title="statement not covered" >anomalies.<span class="fstat-no" title="function not covered" >map((r</span>ecord) =&gt; {</span>
       const year = <span class="cstat-no" title="statement not covered" >parseInt(record.year as string, 10);</span>
       const quarter = <span class="cstat-no" title="statement not covered" >parseInt(record.quarter as string, 10);</span>
 <span class="cstat-no" title="statement not covered" >      return {</span>
@@ -3103,7 +3103,7 @@ class AnomalyDetectionCharts {
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (this.chartInstances.timeline) <span class="cstat-no" title="statement not covered" >this.chartInstances.timeline.destroy();</span></span>
 &nbsp;
-    const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d')!;</span>
+    const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d')!</span>;
 <span class="cstat-no" title="statement not covered" >    this.chartInstances.timeline = new Chart(ctx, {</span>
       type: 'scatter',
       data: {
@@ -3111,13 +3111,13 @@ class AnomalyDetectionCharts {
           {
             label: 'Anomalies',
             data: dataPoints,
-            backgroundColor: dataPoints.map(<span class="fstat-no" title="function not covered" >(p</span>) =&gt;
+            backgroundColor: dataPoints.<span class="fstat-no" title="function not covered" >map((p</span>) =&gt;
 <span class="cstat-no" title="statement not covered" >              this.getSeverityColor(p.record.anomaly_severity as string),</span>
             ),
-            borderColor: dataPoints.map(<span class="fstat-no" title="function not covered" >(p</span>) =&gt;
+            borderColor: dataPoints.<span class="fstat-no" title="function not covered" >map((p</span>) =&gt;
 <span class="cstat-no" title="statement not covered" >              this.getSeverityColor(p.record.anomaly_severity as string),</span>
             ),
-            pointRadius: dataPoints.map(<span class="fstat-no" title="function not covered" >(p</span>) =&gt;
+            pointRadius: dataPoints.<span class="fstat-no" title="function not covered" >map((p</span>) =&gt;
 <span class="cstat-no" title="statement not covered" >              this.getSeverityRadius(p.record.anomaly_severity as string),</span>
             ),
             pointHoverRadius: 8,
@@ -3131,7 +3131,7 @@ class AnomalyDetectionCharts {
           legend: { display: false },
           tooltip: {
             callbacks: {
-              label: <span class="fstat-no" title="function not covered" >(c</span>ontext: any) =&gt; {
+<span class="fstat-no" title="function not covered" >              label: (c</span>ontext: any) =&gt; {
                 const record = <span class="cstat-no" title="statement not covered" >context.raw.record;</span>
 <span class="cstat-no" title="statement not covered" >                return [</span>
                   `${record.year} Q${record.quarter}`,
@@ -3147,12 +3147,12 @@ class AnomalyDetectionCharts {
         scales: {
           x: {
             title: { display: true, text: 'Year' },
-            ticks: { callback: <span class="fstat-no" title="function not covered" >(v</span>alue: any) =&gt; <span class="cstat-no" title="statement not covered" >Math.floor(value) }</span>,
+            ticks: { <span class="fstat-no" title="function not covered" >callback: (v</span>alue: any) =&gt; <span class="cstat-no" title="statement not covered" >Math.floor(value) </span>},
           },
           y: {
             title: { display: true, text: 'Z-Score' },
             grid: {
-              color: <span class="fstat-no" title="function not covered" >(c</span>ontext: any) =&gt; {
+<span class="fstat-no" title="function not covered" >              color: (c</span>ontext: any) =&gt; {
 <span class="cstat-no" title="statement not covered" >                if (context.tick.value === 2.0 || context.tick.value === -2.0) {</span>
 <span class="cstat-no" title="statement not covered" >                  return '#f57c00';</span>
                 }
@@ -3166,13 +3166,13 @@ class AnomalyDetectionCharts {
   }
 &nbsp;
   private async <span class="fstat-no" title="function not covered" >renderZScoreDistribution(): Promise&lt;void&gt; {</span>
-    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('zscore-distribution-chart') as HTMLCanvasElement | null;</span>
+    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('zscore-distribution-chart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >    if (!canvas) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
     const data = <span class="cstat-no" title="statement not covered" >this.dataManager.data!;</span>
     const zScores: number[] = <span class="cstat-no" title="statement not covered" >[];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    data.forEach(<span class="fstat-no" title="function not covered" >(r</span>ecord) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    data.<span class="fstat-no" title="function not covered" >forEach((r</span>ecord) =&gt; {</span>
       const ballotZ = <span class="cstat-no" title="statement not covered" >parseFloat(record.ballot_z_score as string);</span>
       const docZ = <span class="cstat-no" title="statement not covered" >parseFloat(record.doc_z_score as string);</span>
       const attendanceZ = <span class="cstat-no" title="statement not covered" >parseFloat(record.attendance_z_score as string);</span>
@@ -3195,26 +3195,26 @@ class AnomalyDetectionCharts {
       });
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    zScores.forEach(<span class="fstat-no" title="function not covered" >(z</span>) =&gt; {</span>
-      const bin = <span class="cstat-no" title="statement not covered" >bins.find(<span class="fstat-no" title="function not covered" >(b</span>) =&gt; <span class="cstat-no" title="statement not covered" >z &gt;= b.min &amp;&amp; z &lt; b.max)</span>;</span>
+<span class="cstat-no" title="statement not covered" >    zScores.<span class="fstat-no" title="function not covered" >forEach((z</span>) =&gt; {</span>
+      const bin = <span class="cstat-no" title="statement not covered" >bins.<span class="fstat-no" title="function not covered" >find((b</span>) =&gt; <span class="cstat-no" title="statement not covered" >z &gt;= b.min &amp;&amp; z &lt; b.max);</span></span>
 <span class="cstat-no" title="statement not covered" >      if (bin) <span class="cstat-no" title="statement not covered" >bin.count++;</span></span>
     });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (this.chartInstances.distribution) <span class="cstat-no" title="statement not covered" >this.chartInstances.distribution.destroy();</span></span>
 &nbsp;
-    const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d')!;</span>
+    const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d')!</span>;
 <span class="cstat-no" title="statement not covered" >    this.chartInstances.distribution = new Chart(ctx, {</span>
       type: 'bar',
       data: {
-        labels: bins.map(<span class="fstat-no" title="function not covered" >(b</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${b.min.toFixed(1)}`)</span>,
+        labels: bins.<span class="fstat-no" title="function not covered" >map((b</span>) =&gt; <span class="cstat-no" title="statement not covered" >`${b.min.toFixed(1)}`),</span>
         datasets: [
           {
             label: 'Frequency',
-            data: bins.map(<span class="fstat-no" title="function not covered" >(b</span>) =&gt; <span class="cstat-no" title="statement not covered" >b.count)</span>,
-            backgroundColor: bins.map(<span class="fstat-no" title="function not covered" >(b</span>) =&gt;
+            data: bins.<span class="fstat-no" title="function not covered" >map((b</span>) =&gt; <span class="cstat-no" title="statement not covered" >b.count),</span>
+            backgroundColor: bins.<span class="fstat-no" title="function not covered" >map((b</span>) =&gt;
 <span class="cstat-no" title="statement not covered" >              b.isOutlier ? 'rgba(211, 47, 47, 0.7)' : 'rgba(0, 217, 255, 0.7)',</span>
             ),
-            borderColor: bins.map(<span class="fstat-no" title="function not covered" >(b</span>) =&gt; (<span class="cstat-no" title="statement not covered" >b.isOutlier ? '#d32f2f' : '#00d9ff'))</span>,
+            borderColor: bins.<span class="fstat-no" title="function not covered" >map((b</span>) =&gt; (<span class="cstat-no" title="statement not covered" >b.isOutlier ? '#d32f2f' : '#00d9ff')),</span>
             borderWidth: 1,
           },
         ],
@@ -3225,7 +3225,7 @@ class AnomalyDetectionCharts {
         plugins: {
           legend: { display: false },
           tooltip: {
-            callbacks: { label: <span class="fstat-no" title="function not covered" >(c</span>ontext: any) =&gt; <span class="cstat-no" title="statement not covered" >`Count: ${context.parsed.y}` }</span>,
+            callbacks: { <span class="fstat-no" title="function not covered" >label: (c</span>ontext: any) =&gt; <span class="cstat-no" title="statement not covered" >`Count: ${context.parsed.y}` },</span>
           },
         },
         scales: {
@@ -3237,17 +3237,17 @@ class AnomalyDetectionCharts {
   }
 &nbsp;
   private async <span class="fstat-no" title="function not covered" >renderAnomalyTypeChart(): Promise&lt;void&gt; {</span>
-    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('anomaly-type-chart') as HTMLCanvasElement | null;</span>
+    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('anomaly-type-chart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >    if (!canvas) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
     const anomalies = <span class="cstat-no" title="statement not covered" >this.dataManager.identifyActiveAnomalies();</span>
-    const ballotCount = <span class="cstat-no" title="statement not covered" >anomalies.filter(<span class="fstat-no" title="function not covered" >(a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_type === 'BALLOT_ANOMALY')</span>.length;</span>
-    const documentCount = <span class="cstat-no" title="statement not covered" >anomalies.filter(<span class="fstat-no" title="function not covered" >(a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_type === 'DOCUMENT_ANOMALY')</span>.length;</span>
-    const attendanceCount = <span class="cstat-no" title="statement not covered" >anomalies.filter(<span class="fstat-no" title="function not covered" >(a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_type === 'ATTENDANCE_ANOMALY')</span>.length;</span>
+    const ballotCount = <span class="cstat-no" title="statement not covered" >anomalies.<span class="fstat-no" title="function not covered" >filter((a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_type === 'BALLOT_ANOMALY').</span>length;</span>
+    const documentCount = <span class="cstat-no" title="statement not covered" >anomalies.<span class="fstat-no" title="function not covered" >filter((a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_type === 'DOCUMENT_ANOMALY').</span>length;</span>
+    const attendanceCount = <span class="cstat-no" title="statement not covered" >anomalies.<span class="fstat-no" title="function not covered" >filter((a</span>) =&gt; <span class="cstat-no" title="statement not covered" >a.anomaly_type === 'ATTENDANCE_ANOMALY').</span>length;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (this.chartInstances.typeChart) <span class="cstat-no" title="statement not covered" >this.chartInstances.typeChart.destroy();</span></span>
 &nbsp;
-    const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d')!;</span>
+    const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d')!</span>;
 <span class="cstat-no" title="statement not covered" >    this.chartInstances.typeChart = new Chart(ctx, {</span>
       type: 'doughnut',
       data: {
@@ -3272,7 +3272,7 @@ class AnomalyDetectionCharts {
           legend: { position: 'bottom' },
           tooltip: {
             callbacks: {
-              label: <span class="fstat-no" title="function not covered" >(c</span>ontext: any) =&gt; {
+<span class="fstat-no" title="function not covered" >              label: (c</span>ontext: any) =&gt; {
                 const total = <span class="cstat-no" title="statement not covered" >ballotCount + documentCount + attendanceCount;</span>
                 const pct = <span class="cstat-no" title="statement not covered" >total &gt; 0 ? ((context.parsed / total) * 100).toFixed(1) : 0;</span>
 <span class="cstat-no" title="statement not covered" >                return `${context.label}: ${context.parsed} (${pct}%)`;</span>
@@ -3291,7 +3291,7 @@ class AnomalyDetectionCharts {
     const data = <span class="cstat-no" title="statement not covered" >this.dataManager.data!;</span>
 <span class="cstat-no" title="statement not covered" >    container.innerHTML = '';</span>
 &nbsp;
-    const years = <span class="cstat-no" title="statement not covered" >Array.from(new Set(data.map(<span class="fstat-no" title="function not covered" >(r</span>) =&gt; <span class="cstat-no" title="statement not covered" >parseInt(r.year as string, 10))</span>)).sort();</span>
+    const years = <span class="cstat-no" title="statement not covered" >Array.from(new Set(data.<span class="fstat-no" title="function not covered" >map((r</span>) =&gt; <span class="cstat-no" title="statement not covered" >parseInt(r.year as string, 10))</span>)).sort();</span>
     const quarters = <span class="cstat-no" title="statement not covered" >[1, 2, 3, 4];</span>
 &nbsp;
     const width = <span class="cstat-no" title="statement not covered" >container.clientWidth || 800;</span>
@@ -3310,14 +3310,14 @@ class AnomalyDetectionCharts {
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    cells</span>
       .append('rect')
-      .attr('x', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >margin.left + (parseInt(d.quarter) - 1) * cellWidth)</span>
-      .attr('y', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; {
+      .attr(<span class="fstat-no" title="function not covered" >'x', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >margin.left + (parseInt(d.quarter) - 1) * cellWidth)</span>
+      .attr(<span class="fstat-no" title="function not covered" >'y', (d</span>: any) =&gt; {
         const yearIndex = <span class="cstat-no" title="statement not covered" >years.indexOf(parseInt(d.year));</span>
 <span class="cstat-no" title="statement not covered" >        return margin.top + yearIndex * cellHeight;</span>
       })
       .attr('width', cellWidth - 2)
       .attr('height', cellHeight - 2)
-      .attr('fill', <span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >this.getHeatmapColor(d.anomaly_severity))</span>
+      .attr(<span class="fstat-no" title="function not covered" >'fill', (d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >this.getHeatmapColor(d.anomaly_severity))</span>
       .attr('stroke', '#0a0e27')
       .attr('stroke-width', 1)
       .style('cursor', 'pointer')
@@ -3356,12 +3356,12 @@ class AnomalyDetectionCharts {
       .append('text')
       .attr('class', 'year-label')
       .attr('x', margin.left - 10)
-      .attr('y', <span class="fstat-no" title="function not covered" >(_</span>d: any, i: number) =&gt; <span class="cstat-no" title="statement not covered" >margin.top + i * cellHeight + cellHeight / 2)</span>
+      .attr(<span class="fstat-no" title="function not covered" >'y', (_</span>d: any, i: number) =&gt; <span class="cstat-no" title="statement not covered" >margin.top + i * cellHeight + cellHeight / 2)</span>
       .attr('text-anchor', 'end')
       .attr('dominant-baseline', 'middle')
       .attr('fill', '#e0e0e0')
       .attr('font-size', '12px')
-      .text(<span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d)</span>;
+      .<span class="fstat-no" title="function not covered" >text((d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >d);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    svg</span>
       .selectAll('.quarter-label')
@@ -3369,16 +3369,16 @@ class AnomalyDetectionCharts {
       .enter()
       .append('text')
       .attr('class', 'quarter-label')
-      .attr('x', <span class="fstat-no" title="function not covered" >(_</span>d: any, i: number) =&gt; <span class="cstat-no" title="statement not covered" >margin.left + i * cellWidth + cellWidth / 2)</span>
+      .attr(<span class="fstat-no" title="function not covered" >'x', (_</span>d: any, i: number) =&gt; <span class="cstat-no" title="statement not covered" >margin.left + i * cellWidth + cellWidth / 2)</span>
       .attr('y', margin.top - 10)
       .attr('text-anchor', 'middle')
       .attr('fill', '#e0e0e0')
       .attr('font-size', '12px')
-      .text(<span class="fstat-no" title="function not covered" >(d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`Q${d}`)</span>;
+      .<span class="fstat-no" title="function not covered" >text((d</span>: any) =&gt; <span class="cstat-no" title="statement not covered" >`Q${d}`);</span>
   }
 &nbsp;
   private async <span class="fstat-no" title="function not covered" >renderQuarterlyFrequency(): Promise&lt;void&gt; {</span>
-    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('quarterly-frequency-chart') as HTMLCanvasElement | null;</span>
+    const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('quarterly-frequency-chart') </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >    if (!canvas) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
     const anomalies = <span class="cstat-no" title="statement not covered" >this.dataManager.identifyActiveAnomalies();</span>
@@ -3389,18 +3389,18 @@ class AnomalyDetectionCharts {
       4: { critical: 0, high: 0, moderate: 0, total: 0 },
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    anomalies.forEach(<span class="fstat-no" title="function not covered" >(r</span>ecord) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    anomalies.<span class="fstat-no" title="function not covered" >forEach((r</span>ecord) =&gt; {</span>
       const quarter = <span class="cstat-no" title="statement not covered" >parseInt(record.quarter as string, 10);</span>
       const severity = <span class="cstat-no" title="statement not covered" >record.anomaly_severity as string;</span>
 <span class="cstat-no" title="statement not covered" >      quarterData[quarter].total++;</span>
-<span class="cstat-no" title="statement not covered" >      if (severity === 'CRITICAL') <span class="cstat-no" title="statement not covered" >quarterData[quarter].<span class="cstat-no" title="statement not covered" >critical++;</span></span></span>
-      else if (severity === 'HIGH') <span class="cstat-no" title="statement not covered" >quarterData[quarter].<span class="cstat-no" title="statement not covered" >high++;</span></span>
-      else if (severity === 'MODERATE') <span class="cstat-no" title="statement not covered" >quarterData[quarter].moderate++;</span>
+<span class="cstat-no" title="statement not covered" >      if (severity === 'CRITICAL') <span class="cstat-no" title="statement not covered" >quarterData[quarter].critical++;</span></span>
+      else if (<span class="cstat-no" title="statement not covered" >severity === 'HIGH') <span class="cstat-no" title="statement not covered" >quarterData[quarter].high++;</span></span>
+      else if (<span class="cstat-no" title="statement not covered" >severity === 'MODERATE') <span class="cstat-no" title="statement not covered" >quarterData[quarter].moderate++;</span></span>
     });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (this.chartInstances.quarterly) <span class="cstat-no" title="statement not covered" >this.chartInstances.quarterly.destroy();</span></span>
 &nbsp;
-    const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d')!;</span>
+    const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d')!</span>;
 <span class="cstat-no" title="statement not covered" >    this.chartInstances.quarterly = new Chart(ctx, {</span>
       type: 'bar',
       data: {
@@ -3408,21 +3408,21 @@ class AnomalyDetectionCharts {
         datasets: [
           {
             label: 'Critical',
-            data: [1, 2, 3, 4].map(<span class="fstat-no" title="function not covered" >(q</span>) =&gt; <span class="cstat-no" title="statement not covered" >quarterData[q].critical)</span>,
+            data: [1, 2, 3, 4].<span class="fstat-no" title="function not covered" >map((q</span>) =&gt; <span class="cstat-no" title="statement not covered" >quarterData[q].critical),</span>
             backgroundColor: 'rgba(211, 47, 47, 0.8)',
             borderColor: '#d32f2f',
             borderWidth: 1,
           },
           {
             label: 'High',
-            data: [1, 2, 3, 4].map(<span class="fstat-no" title="function not covered" >(q</span>) =&gt; <span class="cstat-no" title="statement not covered" >quarterData[q].high)</span>,
+            data: [1, 2, 3, 4].<span class="fstat-no" title="function not covered" >map((q</span>) =&gt; <span class="cstat-no" title="statement not covered" >quarterData[q].high),</span>
             backgroundColor: 'rgba(245, 124, 0, 0.8)',
             borderColor: '#f57c00',
             borderWidth: 1,
           },
           {
             label: 'Moderate',
-            data: [1, 2, 3, 4].map(<span class="fstat-no" title="function not covered" >(q</span>) =&gt; <span class="cstat-no" title="statement not covered" >quarterData[q].moderate)</span>,
+            data: [1, 2, 3, 4].<span class="fstat-no" title="function not covered" >map((q</span>) =&gt; <span class="cstat-no" title="statement not covered" >quarterData[q].moderate),</span>
             backgroundColor: 'rgba(251, 192, 45, 0.8)',
             borderColor: '#fbc02d',
             borderWidth: 1,
@@ -3459,7 +3459,7 @@ class AnomalyDetectionCharts {
 <span class="cstat-no" title="statement not covered" >      return;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    recent.forEach(<span class="fstat-no" title="function not covered" >(r</span>ecord) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    recent.<span class="fstat-no" title="function not covered" >forEach((r</span>ecord) =&gt; {</span>
       const item = <span class="cstat-no" title="statement not covered" >document.createElement('div');</span>
 <span class="cstat-no" title="statement not covered" >      item.className = `anomaly-feed-item ${(record.anomaly_severity as string).toLowerCase()}`;</span>
 &nbsp;
@@ -3470,7 +3470,7 @@ class AnomalyDetectionCharts {
       let detailsText = <span class="cstat-no" title="statement not covered" >'';</span>
 <span class="cstat-no" title="statement not covered" >      if (record.anomaly_type === 'BALLOT_ANOMALY') {</span>
 <span class="cstat-no" title="statement not covered" >        detailsText = `${record.total_ballots} ballots vs ${Math.round(parseFloat(record.q_baseline_ballots as string))} baseline`;</span>
-<span class="cstat-no" title="statement not covered" >      } else if (record.anomaly_type === 'DOCUMENT_ANOMALY') {</span>
+      } else if (<span class="cstat-no" title="statement not covered" >record.anomaly_type === 'DOCUMENT_ANOMALY') {</span>
 <span class="cstat-no" title="statement not covered" >        detailsText = `${record.documents_produced} documents vs ${Math.round(parseFloat(record.q_baseline_docs as string))} baseline`;</span>
       }
 &nbsp;
@@ -3505,7 +3505,7 @@ class AnomalyDetectionCharts {
         ['Details:', detailsText],
       ];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      lines.forEach(<span class="fstat-no" title="function not covered" >([</span>label, value]) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      lines.<span class="fstat-no" title="function not covered" >forEach(([</span>label, value]) =&gt; {</span>
         const p = <span class="cstat-no" title="statement not covered" >document.createElement('p');</span>
 <span class="cstat-no" title="statement not covered" >        p.style.margin = '2px 0';</span>
         const strong = <span class="cstat-no" title="statement not covered" >document.createElement('strong');</span>
@@ -3522,7 +3522,7 @@ class AnomalyDetectionCharts {
 &nbsp;
   // --- colour helpers ---
 &nbsp;
-  private <span class="fstat-no" title="function not covered" >getSeverityColor(s</span>everity: string): string {
+<span class="fstat-no" title="function not covered" >  private g</span>etSeverityColor(severity: string): string {
     const colors: Record&lt;string, string&gt; = <span class="cstat-no" title="statement not covered" >{</span>
       CRITICAL: '#d32f2f',
       HIGH: '#f57c00',
@@ -3532,7 +3532,7 @@ class AnomalyDetectionCharts {
 <span class="cstat-no" title="statement not covered" >    return colors[severity] || '#666';</span>
   }
 &nbsp;
-  private <span class="fstat-no" title="function not covered" >getSeverityRadius(s</span>everity: string): number {
+<span class="fstat-no" title="function not covered" >  private g</span>etSeverityRadius(severity: string): number {
     const sizes: Record&lt;string, number&gt; = <span class="cstat-no" title="statement not covered" >{</span>
       CRITICAL: 8,
       HIGH: 7,
@@ -3542,7 +3542,7 @@ class AnomalyDetectionCharts {
 <span class="cstat-no" title="statement not covered" >    return sizes[severity] || 5;</span>
   }
 &nbsp;
-  private <span class="fstat-no" title="function not covered" >getHeatmapColor(s</span>everity: string): string {
+<span class="fstat-no" title="function not covered" >  private g</span>etHeatmapColor(severity: string): string {
     const colors: Record&lt;string, string&gt; = <span class="cstat-no" title="statement not covered" >{</span>
       CRITICAL: '#d32f2f',
       HIGH: '#f57c00',
@@ -3560,7 +3560,7 @@ class AnomalyDetectionCharts {
 &nbsp;
 function <span class="fstat-no" title="function not covered" >showLoading(t</span>ranslations: AnomalyTranslationsFull): void {
   const sections = <span class="cstat-no" title="statement not covered" >document.querySelectorAll('#anomaly-detection-dashboard .chart-card');</span>
-<span class="cstat-no" title="statement not covered" >  sections.forEach(<span class="fstat-no" title="function not covered" >(s</span>ection) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  sections.<span class="fstat-no" title="function not covered" >forEach((s</span>ection) =&gt; {</span>
     const canvas = <span class="cstat-no" title="statement not covered" >section.querySelector('canvas');</span>
     const container = <span class="cstat-no" title="statement not covered" >section.querySelector&lt;HTMLElement&gt;(</span>
       'div[id$="-heatmap"], div[id$="-feed"]',
@@ -3577,7 +3577,7 @@ function <span class="fstat-no" title="function not covered" >showLoading(t</spa
 <span class="cstat-no" title="statement not covered" >      if (canvas) {</span>
 <span class="cstat-no" title="statement not covered" >        canvas.classList.add('hidden');</span>
 <span class="cstat-no" title="statement not covered" >        section.appendChild(loading);</span>
-<span class="cstat-no" title="statement not covered" >      } else if (container) {</span>
+      } else if (<span class="cstat-no" title="statement not covered" >container) {</span>
 <span class="cstat-no" title="statement not covered" >        container.innerHTML = '';</span>
 <span class="cstat-no" title="statement not covered" >        container.appendChild(loading);</span>
       }
@@ -3587,10 +3587,10 @@ function <span class="fstat-no" title="function not covered" >showLoading(t</spa
 &nbsp;
 function <span class="fstat-no" title="function not covered" >hideLoading(): void {</span>
   const loadingIndicators = <span class="cstat-no" title="statement not covered" >document.querySelectorAll('.loading-indicator');</span>
-<span class="cstat-no" title="statement not covered" >  loadingIndicators.forEach(<span class="fstat-no" title="function not covered" >(i</span>ndicator) =&gt; <span class="cstat-no" title="statement not covered" >indicator.remove())</span>;</span>
+<span class="cstat-no" title="statement not covered" >  loadingIndicators.<span class="fstat-no" title="function not covered" >forEach((i</span>ndicator) =&gt; <span class="cstat-no" title="statement not covered" >indicator.remove())</span>;</span>
 &nbsp;
   const canvases = <span class="cstat-no" title="statement not covered" >document.querySelectorAll('#anomaly-detection-dashboard canvas');</span>
-<span class="cstat-no" title="statement not covered" >  canvases.forEach(<span class="fstat-no" title="function not covered" >(c</span>anvas) =&gt; <span class="cstat-no" title="statement not covered" >canvas.classList.remove('hidden'))</span>;</span>
+<span class="cstat-no" title="statement not covered" >  canvases.<span class="fstat-no" title="function not covered" >forEach((c</span>anvas) =&gt; <span class="cstat-no" title="statement not covered" >canvas.classList.remove('hidden'))</span>;</span>
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >showDashboardError(m</span>essage: string): void {
@@ -3676,7 +3676,7 @@ export async function <span class="fstat-no" title="function not covered" >init(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

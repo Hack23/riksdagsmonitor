@@ -39,7 +39,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/62</span>
+                <span class='fraction'>0/61</span>
             </div>
         
             
@@ -3253,18 +3253,18 @@ const UI_TRANSLATIONS: Record&lt;string, MinistryUITranslations&gt; = <span clas
 // ============================================================================
 &nbsp;
 class DataCache {
-<span class="cstat-no" title="statement not covered" >  private cache = new Map&lt;string, CacheItem&lt;CSVRow[]&gt;&gt;();</span>
-<span class="cstat-no" title="statement not covered" >  private readonly storageKey = 'ministryDashboardCache';</span>
+  private cache = <span class="cstat-no" title="statement not covered" >new Map&lt;string, CacheItem&lt;CSVRow[]&gt;&gt;();</span>
+  private readonly storageKey = <span class="cstat-no" title="statement not covered" >'ministryDashboardCache';</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >  constructor() {</span>
 <span class="cstat-no" title="statement not covered" >    this.loadFromStorage();</span>
   }
 &nbsp;
-  private <span class="fstat-no" title="function not covered" >loadFromStorage(): void {</span>
+<span class="fstat-no" title="function not covered" >  private l</span>oadFromStorage(): void {
 <span class="cstat-no" title="statement not covered" >    try {</span>
       const stored = <span class="cstat-no" title="statement not covered" >localStorage.getItem(this.storageKey);</span>
 <span class="cstat-no" title="statement not covered" >      if (stored) {</span>
-        const data = <span class="cstat-no" title="statement not covered" >JSON.parse(stored) as Record&lt;string, CacheItem&lt;CSVRow[]&gt;&gt;;</span>
+        const data = <span class="cstat-no" title="statement not covered" >JSON.parse(stored) </span>as Record&lt;string, CacheItem&lt;CSVRow[]&gt;&gt;;
 <span class="cstat-no" title="statement not covered" >        for (const key of Object.keys(data)) {</span>
 <span class="cstat-no" title="statement not covered" >          this.cache.set(key, data[key]);</span>
         }
@@ -3274,10 +3274,10 @@ class DataCache {
     }
   }
 &nbsp;
-  private <span class="fstat-no" title="function not covered" >saveToStorage(): void {</span>
+<span class="fstat-no" title="function not covered" >  private s</span>aveToStorage(): void {
 <span class="cstat-no" title="statement not covered" >    try {</span>
       const data: Record&lt;string, CacheItem&lt;CSVRow[]&gt;&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >      this.cache.forEach(<span class="fstat-no" title="function not covered" >(v</span>alue, key) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.cache.<span class="fstat-no" title="function not covered" >forEach((v</span>alue, key) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        data[key] = value;</span>
       });
 <span class="cstat-no" title="statement not covered" >      localStorage.setItem(this.storageKey, JSON.stringify(data));</span>
@@ -3330,7 +3330,7 @@ function <span class="fstat-no" title="function not covered" >parseCSVLine(l</sp
       } else {
 <span class="cstat-no" title="statement not covered" >        inQuotes = !inQuotes;</span>
       }
-<span class="cstat-no" title="statement not covered" >    } else if (char === ',' &amp;&amp; !inQuotes) {</span>
+    } else if (<span class="cstat-no" title="statement not covered" >char === ',' &amp;&amp; !inQuotes) {</span>
 <span class="cstat-no" title="statement not covered" >      values.push(current.trim());</span>
 <span class="cstat-no" title="statement not covered" >      current = '';</span>
     } else {
@@ -3352,7 +3352,7 @@ function <span class="fstat-no" title="function not covered" >parseCSV(t</span>e
     const values = <span class="cstat-no" title="statement not covered" >parseCSVLine(lines[i]);</span>
 <span class="cstat-no" title="statement not covered" >    if (values.length !== headers.length) <span class="cstat-no" title="statement not covered" >continue;</span></span>
     const row: CSVRow = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >    headers.forEach(<span class="fstat-no" title="function not covered" >(h</span>eader, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    headers.<span class="fstat-no" title="function not covered" >forEach((h</span>eader, index) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      row[header] = values[index] || '';</span>
     });
 <span class="cstat-no" title="statement not covered" >    data.push(row);</span>
@@ -3364,8 +3364,8 @@ function <span class="fstat-no" title="function not covered" >parseCSV(t</span>e
 // DATA FETCHER
 // ============================================================================
 &nbsp;
-<span class="fstat-no" title="function not covered" >class D</span>ataFetcher {
-<span class="cstat-no" title="statement not covered" >  private cache = new DataCache();</span>
+class DataFetcher {
+  private cache = <span class="cstat-no" title="statement not covered" >new DataCache();</span>
 &nbsp;
   async <span class="fstat-no" title="function not covered" >fetchCSV(f</span>ilename: string): Promise&lt;CSVRow[]&gt; {
     const cached = <span class="cstat-no" title="statement not covered" >this.cache.get(filename);</span>
@@ -3429,7 +3429,7 @@ function <span class="fstat-no" title="function not covered" >transformRiskData(
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (prodView &amp;&amp; prodView.length &gt; 0) {</span>
     const ministryMap: Record&lt;string, { docs: number; count: number; assessment: string }&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >    prodView.forEach(<span class="fstat-no" title="function not covered" >(r</span>ow) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    prodView.<span class="fstat-no" title="function not covered" >forEach((r</span>ow) =&gt; {</span>
       const ministry = (<span class="cstat-no" title="statement not covered" >row.ministry_name as string) || (row.name as string) || '';</span>
 <span class="cstat-no" title="statement not covered" >      if (!ministry) <span class="cstat-no" title="statement not covered" >return;</span></span>
 <span class="cstat-no" title="statement not covered" >      if (!ministryMap[ministry]) <span class="cstat-no" title="statement not covered" >ministryMap[ministry] = { docs: 0, count: 0, assessment: '' };</span></span>
@@ -3444,9 +3444,9 @@ function <span class="fstat-no" title="function not covered" >transformRiskData(
       const assess = <span class="cstat-no" title="statement not covered" >m.assessment.toLowerCase();</span>
 <span class="cstat-no" title="statement not covered" >      if (assess.includes('underperforming') || assess.includes('concern') || assess.includes('investigation')) {</span>
 <span class="cstat-no" title="statement not covered" >        riskScore = 7.5;</span>
-<span class="cstat-no" title="statement not covered" >      } else if (assess.includes('high-performing') || assess.includes('top')) {</span>
+      } else if (<span class="cstat-no" title="statement not covered" >assess.includes('high-performing') || assess.includes('top')) {</span>
 <span class="cstat-no" title="statement not covered" >        riskScore = 2.5;</span>
-<span class="cstat-no" title="statement not covered" >      } else if (assess.includes('standard')) {</span>
+      } else if (<span class="cstat-no" title="statement not covered" >assess.includes('standard')) {</span>
 <span class="cstat-no" title="statement not covered" >        riskScore = 4.0;</span>
       }
 <span class="cstat-no" title="statement not covered" >      riskEntries.push({</span>
@@ -3465,7 +3465,7 @@ function <span class="fstat-no" title="function not covered" >transformRiskData(
       'Näringsdepartementet', 'Miljödepartementet', 'Kulturdepartementet',
       'Infrastrukturdepartementet',
     ];
-<span class="cstat-no" title="statement not covered" >    defaultMinistries.forEach(<span class="fstat-no" title="function not covered" >(m</span>inistry, riskIdx) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    defaultMinistries.<span class="fstat-no" title="function not covered" >forEach((m</span>inistry, riskIdx) =&gt; {</span>
       const levelRow = <span class="cstat-no" title="statement not covered" >rawData.riskLevels[riskIdx % rawData.riskLevels.length];</span>
       const score = <span class="cstat-no" title="statement not covered" >riskLevelMap[levelRow.risk_level as string] || 5.0;</span>
 <span class="cstat-no" title="statement not covered" >      riskEntries.push({ ministry, riskScore: score.toFixed(2), alerts: Math.max(0, Math.round((score - 3) * 2)) });</span>
@@ -3480,7 +3480,7 @@ function <span class="fstat-no" title="function not covered" >transformProductiv
 <span class="cstat-no" title="statement not covered" >  if (prod.length === 0) <span class="cstat-no" title="statement not covered" >return [];</span></span>
 &nbsp;
   const ministryData: Record&lt;string, { year: number; docs: number }[]&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >  prod.forEach(<span class="fstat-no" title="function not covered" >(r</span>ow) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  prod.<span class="fstat-no" title="function not covered" >forEach((r</span>ow) =&gt; {</span>
     const ministry = (<span class="cstat-no" title="statement not covered" >row.ministry_name as string) || '';</span>
 <span class="cstat-no" title="statement not covered" >    if (!ministry) <span class="cstat-no" title="statement not covered" >return;</span></span>
 <span class="cstat-no" title="statement not covered" >    if (!ministryData[ministry]) <span class="cstat-no" title="statement not covered" >ministryData[ministry] = [];</span></span>
@@ -3490,8 +3490,8 @@ function <span class="fstat-no" title="function not covered" >transformProductiv
     });
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return Object.keys(ministryData).map(<span class="fstat-no" title="function not covered" >(m</span>inistry) =&gt; {</span>
-    const entries = <span class="cstat-no" title="statement not covered" >ministryData[ministry].sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >b.year - a.year)</span>;</span>
+<span class="cstat-no" title="statement not covered" >  return Object.keys(ministryData).<span class="fstat-no" title="function not covered" >map((m</span>inistry) =&gt; {</span>
+    const entries = <span class="cstat-no" title="statement not covered" >ministryData[ministry].<span class="fstat-no" title="function not covered" >sort((a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >b.year - a.year);</span></span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
       ministry,
       currentQuarter: (entries[0] ? entries[0].docs : 0).toFixed(1),
@@ -3504,19 +3504,19 @@ function <span class="fstat-no" title="function not covered" >transformInfluence
   const influenceView = <span class="cstat-no" title="statement not covered" >rawData.influenceView || [];</span>
 <span class="cstat-no" title="statement not covered" >  if (influenceView.length &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >    return influenceView</span>
-      .filter(<span class="fstat-no" title="function not covered" >(r</span>ow) =&gt; <span class="cstat-no" title="statement not covered" >row.first_name &amp;&amp; row.last_name)</span>
-      .map(<span class="fstat-no" title="function not covered" >(r</span>ow) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+      .<span class="fstat-no" title="function not covered" >filter((r</span>ow) =&gt; <span class="cstat-no" title="statement not covered" >row.first_name &amp;&amp; row.last_name)</span>
+      .<span class="fstat-no" title="function not covered" >map((r</span>ow) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
         name: `${row.first_name} ${row.last_name}`,
         ministry: (row.party as string) || '',
         influence: parseFloat(row.network_connections as string) || 0,
       }))
-      .sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; (<span class="cstat-no" title="statement not covered" >b.influence as number) - (a.influence as number))</span>
+      .<span class="fstat-no" title="function not covered" >sort((a</span>, b) =&gt; (<span class="cstat-no" title="statement not covered" >b.influence as number) - (a.influence as number))</span>
       .slice(0, 10);
   }
 &nbsp;
   const percentiles = <span class="cstat-no" title="statement not covered" >rawData.influence || [];</span>
 <span class="cstat-no" title="statement not covered" >  if (percentiles.length &gt; 0) {</span>
-    const connRow = <span class="cstat-no" title="statement not covered" >percentiles.find(<span class="fstat-no" title="function not covered" >(r</span>) =&gt; <span class="cstat-no" title="statement not covered" >r.column_name === 'network_connections')</span>;</span>
+    const connRow = <span class="cstat-no" title="statement not covered" >percentiles.<span class="fstat-no" title="function not covered" >find((r</span>) =&gt; <span class="cstat-no" title="statement not covered" >r.column_name === 'network_connections');</span></span>
 <span class="cstat-no" title="statement not covered" >    if (connRow) {</span>
       const median = <span class="cstat-no" title="statement not covered" >parseFloat(connRow.median as string) || 100;</span>
       const p90 = <span class="cstat-no" title="statement not covered" >parseFloat(connRow.p90 as string) || 200;</span>
@@ -3538,7 +3538,7 @@ function <span class="fstat-no" title="function not covered" >transformDecisionI
   const impactEntries: DecisionImpactEntry[] = <span class="cstat-no" title="statement not covered" >[];</span>
   const ministryGroups: Record&lt;string, { committee: string; approvalRate: number; totalProposals: number }[]&gt; = <span class="cstat-no" title="statement not covered" >{};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  decisions.forEach(<span class="fstat-no" title="function not covered" >(r</span>ow) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  decisions.<span class="fstat-no" title="function not covered" >forEach((r</span>ow) =&gt; {</span>
     const ministry = (<span class="cstat-no" title="statement not covered" >row.ministry_code as string) || '';</span>
 <span class="cstat-no" title="statement not covered" >    if (!ministry) <span class="cstat-no" title="statement not covered" >return;</span></span>
 <span class="cstat-no" title="statement not covered" >    if (!ministryGroups[ministry]) <span class="cstat-no" title="statement not covered" >ministryGroups[ministry] = [];</span></span>
@@ -3551,8 +3551,8 @@ function <span class="fstat-no" title="function not covered" >transformDecisionI
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  for (const ministry of Object.keys(ministryGroups)) {</span>
     const entries = <span class="cstat-no" title="statement not covered" >ministryGroups[ministry];</span>
-    const avgApproval = <span class="cstat-no" title="statement not covered" >entries.reduce(<span class="fstat-no" title="function not covered" >(s</span>um, e) =&gt; <span class="cstat-no" title="statement not covered" >sum + e.approvalRate, 0</span>) / entries.length;</span>
-<span class="cstat-no" title="statement not covered" >    ['Q1 2024', 'Q2 2024', 'Q3 2024', 'Q4 2024'].forEach(<span class="fstat-no" title="function not covered" >(p</span>eriod, idx) =&gt; {</span>
+    const avgApproval = <span class="cstat-no" title="statement not covered" >entries.<span class="fstat-no" title="function not covered" >reduce((s</span>um, e) =&gt; <span class="cstat-no" title="statement not covered" >sum + e.approvalRate, 0</span>) / entries.length;</span>
+<span class="cstat-no" title="statement not covered" >    ['Q1 2024', 'Q2 2024', 'Q3 2024', 'Q4 2024'].<span class="fstat-no" title="function not covered" >forEach((p</span>eriod, idx) =&gt; {</span>
       const <span class="cstat-no" title="statement not covered" >variation =</span>
         (idx % 2 === 0 ? 1 : -1) *
         (entries.length &gt; idx ? entries[idx].approvalRate - avgApproval : 0) * 0.1;
@@ -3602,7 +3602,7 @@ function <span class="fstat-no" title="function not covered" >renderRiskHeatMap(
     .append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`);
 &nbsp;
-  const ministries = <span class="cstat-no" title="statement not covered" >data.map(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >translations[d.ministry] || d.ministry)</span>;</span>
+  const ministries = <span class="cstat-no" title="statement not covered" >data.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >translations[d.ministry] || d.ministry);</span></span>
 &nbsp;
   const yScale = <span class="cstat-no" title="statement not covered" >d3.scaleBand().domain(ministries).range([0, height]).padding(0.1);</span>
   const xScale = <span class="cstat-no" title="statement not covered" >d3.scaleLinear().domain([0, 10]).range([0, width]);</span>
@@ -3636,21 +3636,21 @@ function <span class="fstat-no" title="function not covered" >renderRiskHeatMap(
     .append('rect')
     .attr('class', 'risk-bar')
     .attr('x', 0)
-    .attr('y', <span class="fstat-no" title="function not covered" >(_</span>d: RiskEntry, i: number) =&gt; <span class="cstat-no" title="statement not covered" >yScale(ministries[i])!)</span>
-    .attr('width', <span class="fstat-no" title="function not covered" >(d</span>: RiskEntry) =&gt; <span class="cstat-no" title="statement not covered" >xScale(parseFloat(d.riskScore) || 0))</span>
+    .attr(<span class="fstat-no" title="function not covered" >'y', (_</span>d: RiskEntry, i: number) =&gt; <span class="cstat-no" title="statement not covered" >yScale(ministries[i])!</span>)
+    .attr(<span class="fstat-no" title="function not covered" >'width', (d</span>: RiskEntry) =&gt; <span class="cstat-no" title="statement not covered" >xScale(parseFloat(d.riskScore) || 0))</span>
     .attr('height', yScale.bandwidth())
-    .attr('fill', <span class="fstat-no" title="function not covered" >(d</span>: RiskEntry) =&gt; <span class="cstat-no" title="statement not covered" >colorScale(parseFloat(d.riskScore) || 0))</span>
+    .attr(<span class="fstat-no" title="function not covered" >'fill', (d</span>: RiskEntry) =&gt; <span class="cstat-no" title="statement not covered" >colorScale(parseFloat(d.riskScore) || 0))</span>
     .attr('rx', 4)
     .attr('tabindex', 0)
     .attr('role', 'button')
-    .attr('aria-label', <span class="fstat-no" title="function not covered" >(d</span>: RiskEntry, i: number) =&gt; <span class="cstat-no" title="statement not covered" >`${ministries[i]}: Risk score ${d.riskScore}`)</span>
+    .attr(<span class="fstat-no" title="function not covered" >'aria-label', (d</span>: RiskEntry, i: number) =&gt; <span class="cstat-no" title="statement not covered" >`${ministries[i]}: Risk score ${d.riskScore}`)</span>
     .style('cursor', 'pointer')
-    .on('mouseover', <span class="fstat-no" title="function not covered" >(_</span>event: MouseEvent, d: RiskEntry) =&gt; {
+    .on(<span class="fstat-no" title="function not covered" >'mouseover', (_</span>event: MouseEvent, d: RiskEntry) =&gt; {
       const riskLevel = <span class="cstat-no" title="statement not covered" >parseFloat(d.riskScore);</span>
       let level = <span class="cstat-no" title="statement not covered" >'Low';</span>
-<span class="cstat-no" title="statement not covered" >      if (riskLevel &gt;= 8.0) <span class="cstat-no" title="statement not covered" >level = <span class="cstat-no" title="statement not covered" >'Critical';</span></span></span>
-      else if (riskLevel &gt;= 6.0) <span class="cstat-no" title="statement not covered" >level = <span class="cstat-no" title="statement not covered" >'High';</span></span>
-      else if (riskLevel &gt;= 4.0) <span class="cstat-no" title="statement not covered" >level = 'Medium';</span>
+<span class="cstat-no" title="statement not covered" >      if (riskLevel &gt;= 8.0) <span class="cstat-no" title="statement not covered" >level = 'Critical';</span></span>
+      else if (<span class="cstat-no" title="statement not covered" >riskLevel &gt;= 6.0) <span class="cstat-no" title="statement not covered" >level = 'High';</span></span>
+      else if (<span class="cstat-no" title="statement not covered" >riskLevel &gt;= 4.0) <span class="cstat-no" title="statement not covered" >level = 'Medium';</span></span>
       const ministryName = <span class="cstat-no" title="statement not covered" >translations[d.ministry] || d.ministry;</span>
 <span class="cstat-no" title="statement not covered" >      tooltip.selectAll('*').remove();</span>
 <span class="cstat-no" title="statement not covered" >      tooltip.append('strong').text(ministryName);</span>
@@ -3662,10 +3662,10 @@ function <span class="fstat-no" title="function not covered" >renderRiskHeatMap(
 <span class="cstat-no" title="statement not covered" >      tooltip.append('span').text(`Alerts: ${d.alerts || 'N/A'}`);</span>
 <span class="cstat-no" title="statement not covered" >      tooltip.style('visibility', 'visible');</span>
     })
-    .on('mousemove', <span class="fstat-no" title="function not covered" >(e</span>vent: MouseEvent) =&gt; {
+    .on(<span class="fstat-no" title="function not covered" >'mousemove', (e</span>vent: MouseEvent) =&gt; {
 <span class="cstat-no" title="statement not covered" >      tooltip.style('top', `${event.pageY - 10}px`).style('left', `${event.pageX + 10}px`);</span>
     })
-    .on('mouseout', <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+    .on(<span class="fstat-no" title="function not covered" >'mouseout', () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      tooltip.style('visibility', 'hidden');</span>
     });
 &nbsp;
@@ -3676,7 +3676,7 @@ function <span class="fstat-no" title="function not covered" >renderRiskHeatMap(
     { label: 'High (6.0-8.0)', color: CONFIG.colors.riskHigh },
     { label: 'Critical (&gt;8.0)', color: CONFIG.colors.riskCritical },
   ];
-<span class="cstat-no" title="statement not covered" >  legendData.forEach(<span class="fstat-no" title="function not covered" >(i</span>tem, i) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  legendData.<span class="fstat-no" title="function not covered" >forEach((i</span>tem, i) =&gt; {</span>
     const g = <span class="cstat-no" title="statement not covered" >legend.append('g').attr('transform', `translate(${i * 150}, 0)`);</span>
 <span class="cstat-no" title="statement not covered" >    g.append('rect').attr('width', 20).attr('height', 20).attr('fill', item.color).attr('rx', 4);</span>
 <span class="cstat-no" title="statement not covered" >    g.append('text').attr('x', 30).attr('y', 15).text(item.label).style('font-size', '12px').style('fill', 'var(--text-color)');</span>
@@ -3687,17 +3687,17 @@ function <span class="fstat-no" title="function not covered" >renderInfluenceCha
   canvasId: string,
   data: InfluenceEntry[],
 ): void {
-  const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById(canvasId) as HTMLCanvasElement | null;</span>
+  const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById(canvasId) </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >  if (!canvas || !data || data.length === 0) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
   const Chart = (<span class="cstat-no" title="statement not covered" >globalThis as any).Chart;</span>
 <span class="cstat-no" title="statement not covered" >  if (!Chart) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
-  const sorted = <span class="cstat-no" title="statement not covered" >[...data].sort(<span class="fstat-no" title="function not covered" >(a</span>, <span class="cstat-no" title="statement not covered" >b) =&gt; (Number(b.influence) || 0) - (Number(a.influence) || 0))</span>.slice(0, 10);</span>
-  const labels = <span class="cstat-no" title="statement not covered" >sorted.map(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.name || 'Unknown')</span>;</span>
-  const values = <span class="cstat-no" title="statement not covered" >sorted.map(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >Number(d.influence) || 0)</span>;</span>
+  const sorted = <span class="cstat-no" title="statement not covered" >[...data].<span class="fstat-no" title="function not covered" >sort((a</span>, <span class="cstat-no" title="statement not covered" >b) =&gt; (Number(b.influence) || 0) - (Number(a.influence) || 0)).</span>slice(0, 10);</span>
+  const labels = <span class="cstat-no" title="statement not covered" >sorted.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.name || 'Unknown');</span></span>
+  const values = <span class="cstat-no" title="statement not covered" >sorted.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >Number(d.influence) || 0);</span></span>
 &nbsp;
-  const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d')!;</span>
+  const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d')!</span>;
 <span class="cstat-no" title="statement not covered" >  new Chart(ctx, {</span>
     type: 'bar',
     data: {
@@ -3708,7 +3708,7 @@ function <span class="fstat-no" title="function not covered" >renderInfluenceCha
       indexAxis: 'y',
       responsive: true,
       maintainAspectRatio: false,
-      plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(0,0,0,0.8)', callbacks: { label: <span class="fstat-no" title="function not covered" >(c</span>tx: any) =&gt; <span class="cstat-no" title="statement not covered" >`Influence: ${ctx.parsed.x.toFixed(2)}` }</span> } },
+      plugins: { legend: { display: false }, tooltip: { backgroundColor: 'rgba(0,0,0,0.8)', callbacks: { <span class="fstat-no" title="function not covered" >label: (c</span>tx: any) =&gt; <span class="cstat-no" title="statement not covered" >`Influence: ${ctx.parsed.x.toFixed(2)}` } } },</span>
       scales: {
         x: { beginAtZero: true, max: 100, ticks: { color: 'var(--text-color)' }, grid: { color: 'var(--border-color)' } },
         y: { ticks: { color: 'var(--text-color)', font: { size: 12 } }, grid: { display: false } },
@@ -3722,18 +3722,18 @@ function <span class="fstat-no" title="function not covered" >renderProductivity
   data: ProductivityEntry[],
   lang: string,
 ): void {
-  const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById(canvasId) as HTMLCanvasElement | null;</span>
+  const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById(canvasId) </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >  if (!canvas || !data || data.length === 0) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
   const Chart = (<span class="cstat-no" title="statement not covered" >globalThis as any).Chart;</span>
 <span class="cstat-no" title="statement not covered" >  if (!Chart) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
   const ministryTranslations = <span class="cstat-no" title="statement not covered" >MINISTRY_TRANSLATIONS[lang] || MINISTRY_TRANSLATIONS.en;</span>
-  const labels = <span class="cstat-no" title="statement not covered" >data.map(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >ministryTranslations[d.ministry] || d.ministry)</span>;</span>
-  const current = <span class="cstat-no" title="statement not covered" >data.map(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >parseFloat(d.currentQuarter) || 0)</span>;</span>
-  const previous = <span class="cstat-no" title="statement not covered" >data.map(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >parseFloat(d.previousQuarter) || 0)</span>;</span>
+  const labels = <span class="cstat-no" title="statement not covered" >data.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >ministryTranslations[d.ministry] || d.ministry);</span></span>
+  const current = <span class="cstat-no" title="statement not covered" >data.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >parseFloat(d.currentQuarter) || 0);</span></span>
+  const previous = <span class="cstat-no" title="statement not covered" >data.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >parseFloat(d.previousQuarter) || 0);</span></span>
 &nbsp;
-  const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d')!;</span>
+  const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d')!</span>;
 <span class="cstat-no" title="statement not covered" >  new Chart(ctx, {</span>
     type: 'bar',
     data: {
@@ -3761,20 +3761,20 @@ function <span class="fstat-no" title="function not covered" >renderDecisionImpa
   data: DecisionImpactEntry[],
   lang: string,
 ): void {
-  const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById(canvasId) as HTMLCanvasElement | null;</span>
+  const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById(canvasId) </span>as HTMLCanvasElement | null;
 <span class="cstat-no" title="statement not covered" >  if (!canvas || !data || data.length === 0) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
   const Chart = (<span class="cstat-no" title="statement not covered" >globalThis as any).Chart;</span>
 <span class="cstat-no" title="statement not covered" >  if (!Chart) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
-  const ministries = <span class="cstat-no" title="statement not covered" >Array.from(new Set(data.map(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.ministry)</span>)).slice(0, 5);</span>
-  const periods = <span class="cstat-no" title="statement not covered" >Array.from(new Set(data.map(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.period)</span>)).sort();</span>
+  const ministries = <span class="cstat-no" title="statement not covered" >Array.from(new Set(data.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.ministry))</span>).slice(0, 5);</span>
+  const periods = <span class="cstat-no" title="statement not covered" >Array.from(new Set(data.<span class="fstat-no" title="function not covered" >map((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.period))</span>).sort();</span>
   const lineColors = <span class="cstat-no" title="statement not covered" >['#006633', '#00cc66', '#008838', '#007744', '#004422'];</span>
 &nbsp;
-  const datasets = <span class="cstat-no" title="statement not covered" >ministries.map(<span class="fstat-no" title="function not covered" >(m</span>inistry, index) =&gt; {</span>
-    const mData = <span class="cstat-no" title="statement not covered" >data.filter(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.ministry === ministry)</span>;</span>
-    const values = <span class="cstat-no" title="statement not covered" >periods.map(<span class="fstat-no" title="function not covered" >(p</span>eriod) =&gt; {</span>
-      const item = <span class="cstat-no" title="statement not covered" >mData.find(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.period === period)</span>;</span>
+  const datasets = <span class="cstat-no" title="statement not covered" >ministries.<span class="fstat-no" title="function not covered" >map((m</span>inistry, index) =&gt; {</span>
+    const mData = <span class="cstat-no" title="statement not covered" >data.<span class="fstat-no" title="function not covered" >filter((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.ministry === ministry);</span></span>
+    const values = <span class="cstat-no" title="statement not covered" >periods.<span class="fstat-no" title="function not covered" >map((p</span>eriod) =&gt; {</span>
+      const item = <span class="cstat-no" title="statement not covered" >mData.<span class="fstat-no" title="function not covered" >find((d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.period === period);</span></span>
 <span class="cstat-no" title="statement not covered" >      return item ? parseFloat(item.impact) || 0 : 0;</span>
     });
     const <span class="cstat-no" title="statement not covered" >translatedName = (MINISTRY_TRANSLATIONS[lang] || MINISTRY_TRANSLATIONS.en)[ministry] || ministry;</span>
@@ -3789,7 +3789,7 @@ function <span class="fstat-no" title="function not covered" >renderDecisionImpa
     };
   });
 &nbsp;
-  const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d')!;</span>
+  const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d')!</span>;
 <span class="cstat-no" title="statement not covered" >  new Chart(ctx, {</span>
     type: 'line',
     data: { labels: periods, datasets },
@@ -3810,7 +3810,7 @@ function <span class="fstat-no" title="function not covered" >renderAccessibilit
   data: TransformedMinistryData,
   lang: string,
 ): void {
-  const table = <span class="cstat-no" title="statement not covered" >document.getElementById(tableId) as HTMLTableElement | null;</span>
+  const table = <span class="cstat-no" title="statement not covered" >document.getElementById(tableId) </span>as HTMLTableElement | null;
 <span class="cstat-no" title="statement not covered" >  if (!table || !data) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
   const ministryTranslations = <span class="cstat-no" title="statement not covered" >MINISTRY_TRANSLATIONS[lang] || MINISTRY_TRANSLATIONS.en;</span>
@@ -3825,7 +3825,7 @@ function <span class="fstat-no" title="function not covered" >renderAccessibilit
 &nbsp;
   const thead = <span class="cstat-no" title="statement not covered" >document.createElement('thead');</span>
   const headerRow = <span class="cstat-no" title="statement not covered" >document.createElement('tr');</span>
-<span class="cstat-no" title="statement not covered" >  [headers.ministry, headers.riskScore, headers.riskLevel, headers.productivity].forEach(<span class="fstat-no" title="function not covered" >(t</span>ext) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  [headers.ministry, headers.riskScore, headers.riskLevel, headers.productivity].<span class="fstat-no" title="function not covered" >forEach((t</span>ext) =&gt; {</span>
     const th = <span class="cstat-no" title="statement not covered" >document.createElement('th');</span>
 <span class="cstat-no" title="statement not covered" >    th.setAttribute('scope', 'col');</span>
 <span class="cstat-no" title="statement not covered" >    th.textContent = text;</span>
@@ -3835,12 +3835,12 @@ function <span class="fstat-no" title="function not covered" >renderAccessibilit
 <span class="cstat-no" title="statement not covered" >  table.appendChild(thead);</span>
 &nbsp;
   const tbody = <span class="cstat-no" title="statement not covered" >document.createElement('tbody');</span>
-<span class="cstat-no" title="statement not covered" >  data.riskLevels.forEach(<span class="fstat-no" title="function not covered" >(i</span>tem, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  data.riskLevels.<span class="fstat-no" title="function not covered" >forEach((i</span>tem, index) =&gt; {</span>
     const riskScore = <span class="cstat-no" title="statement not covered" >parseFloat(item.riskScore) || 0;</span>
     let riskLevel = <span class="cstat-no" title="statement not covered" >'Low';</span>
-<span class="cstat-no" title="statement not covered" >    if (riskScore &gt;= 8.0) <span class="cstat-no" title="statement not covered" >riskLevel = <span class="cstat-no" title="statement not covered" >'Critical';</span></span></span>
-    else if (riskScore &gt;= 6.0) <span class="cstat-no" title="statement not covered" >riskLevel = <span class="cstat-no" title="statement not covered" >'High';</span></span>
-    else if (riskScore &gt;= 4.0) <span class="cstat-no" title="statement not covered" >riskLevel = 'Medium';</span>
+<span class="cstat-no" title="statement not covered" >    if (riskScore &gt;= 8.0) <span class="cstat-no" title="statement not covered" >riskLevel = 'Critical';</span></span>
+    else if (<span class="cstat-no" title="statement not covered" >riskScore &gt;= 6.0) <span class="cstat-no" title="statement not covered" >riskLevel = 'High';</span></span>
+    else if (<span class="cstat-no" title="statement not covered" >riskScore &gt;= 4.0) <span class="cstat-no" title="statement not covered" >riskLevel = 'Medium';</span></span>
 &nbsp;
     const prod = <span class="cstat-no" title="statement not covered" >data.productivity[index];</span>
     const prodValue = <span class="cstat-no" title="statement not covered" >prod ? prod.currentQuarter : 'N/A';</span>
@@ -3852,7 +3852,7 @@ function <span class="fstat-no" title="function not covered" >renderAccessibilit
       riskLevel,
       prodValue,
     ];
-<span class="cstat-no" title="statement not covered" >    cells.forEach(<span class="fstat-no" title="function not covered" >(t</span>ext) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    cells.<span class="fstat-no" title="function not covered" >forEach((t</span>ext) =&gt; {</span>
       const td = <span class="cstat-no" title="statement not covered" >document.createElement('td');</span>
 <span class="cstat-no" title="statement not covered" >      td.textContent = String(text);</span>
 <span class="cstat-no" title="statement not covered" >      row.appendChild(td);</span>
@@ -3943,7 +3943,7 @@ export async function <span class="fstat-no" title="function not covered" >init(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:16.886Z
+                at 2026-03-12T22:50:12.399Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

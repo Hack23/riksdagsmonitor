@@ -576,10 +576,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">4473x</span>
+<span class="cline-any cline-yes">4479x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">561x</span>
+<span class="cline-any cline-yes">552x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -773,12 +773,12 @@ export async function generateNews(): Promise&lt;typeof stats&gt; {
           // Fetch recent votes (no date filter — search_voteringar uses rm/bet/punkt)
           const recentVotes = await Promise.resolve()
             .then(() =&gt; sharedClient.fetchVotingRecords({ limit: 20 }))
-            .catch(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >[</span>] as unknown[])</span>;
+            .<span class="fstat-no" title="function not covered" >catch(() =&gt; <span class="cstat-no" title="statement not covered" >[</span>] </span>as unknown[]);
 &nbsp;
           // Fetch today's most significant documents
           const todayDocs = await Promise.resolve()
             .then(() =&gt; sharedClient.searchDocuments({ from_date: todayStr, to_date: todayStr, limit: 20 }))
-            .catch(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >[</span>] as unknown[])</span>;
+            .<span class="fstat-no" title="function not covered" >catch(() =&gt; <span class="cstat-no" title="statement not covered" >[</span>] </span>as unknown[]);
 &nbsp;
           <span class="missing-if-branch" title="if path not taken" >I</span>if (recentVotes.length === 0 &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >todayDocs.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >            console.log('  ℹ️ No significant votes or documents found today — skipping breaking news');</span>
@@ -820,7 +820,7 @@ export async function generateNews(): Promise&lt;typeof stats&gt; {
             writeArticle: translatingWriteArticle,
           });
           if (!breakingResult.success) {
-            console.error('❌ Breaking news generation failed:', breakingResult.error ?? <span class="branch-1 cbranch-no" title="branch not covered" >'unknown error')</span>;
+            console.error('❌ Breaking news generation failed:', breakingResult.error ?? <span class="branch-1 cbranch-no" title="branch not covered" >'unknown error');</span>
             stats.errors++;
           }
         } catch (err: unknown) {
@@ -929,19 +929,19 @@ export async function generateNews(): Promise&lt;typeof stats&gt; {
 &nbsp;
 export function <span class="fstat-no" title="function not covered" >runCli(): Promise&lt;void&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  return generateNews()</span>
-    .then(<span class="fstat-no" title="function not covered" >result =&gt; {</span>
+    .<span class="fstat-no" title="function not covered" >then(r</span>esult =&gt; {
 <span class="cstat-no" title="statement not covered" >      if (result.errors &gt; 0) {</span>
 <span class="cstat-no" title="statement not covered" >        process.exit(1);</span>
       }
       // Soft failure: exit 2 when ALL generated articles are below quality threshold
       const qualityScores = <span class="cstat-no" title="statement not covered" >result.qualityScores;</span>
-<span class="cstat-no" title="statement not covered" >      if (qualityScores.length &gt; 0 &amp;&amp; qualityScores.every(<span class="fstat-no" title="function not covered" >q =&gt; <span class="cstat-no" title="statement not covered" >!</span>q.passed)</span>) {</span>
+<span class="cstat-no" title="statement not covered" >      if (qualityScores.length &gt; 0 &amp;&amp; qualityScores.<span class="fstat-no" title="function not covered" >every(q</span> =&gt; <span class="cstat-no" title="statement not covered" >!q.passed))</span> {</span>
 <span class="cstat-no" title="statement not covered" >        console.warn(`⚠️  Exiting with code 2: all ${qualityScores.length} articles scored below quality threshold ${QUALITY_THRESHOLD}`);</span>
 <span class="cstat-no" title="statement not covered" >        process.exit(2);</span>
       }
 <span class="cstat-no" title="statement not covered" >      process.exit(0);</span>
     })
-    .catch(<span class="fstat-no" title="function not covered" >(e</span>rror: unknown) =&gt; {
+    .<span class="fstat-no" title="function not covered" >catch((e</span>rror: unknown) =&gt; {
 <span class="cstat-no" title="statement not covered" >      console.error('❌ Fatal error:', error);</span>
 <span class="cstat-no" title="statement not covered" >      process.exit(1);</span>
     });
@@ -961,7 +961,7 @@ export function <span class="fstat-no" title="function not covered" >runCli(): P
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-12T17:16:17.052Z
+                at 2026-03-12T22:50:12.565Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
