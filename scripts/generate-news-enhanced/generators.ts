@@ -675,8 +675,8 @@ function deepLabel(key: string, lang: Language): string {
   return (map?.[lang]) ?? (map?.en ?? key);
 }
 
-function docTypeLabel(doktyp: string, lang: Language): string {
-  return localizeDocType(doktyp, lang);
+function docTypeLabel(doktyp: string, lang: Language, count?: number): string {
+  return localizeDocType(doktyp, lang, count);
 }
 
 /**
@@ -784,7 +784,7 @@ function buildDocumentEntry(
   const doktyp = doc.doktyp || doc.documentType || '';
   const date = doc.datum ? esc(doc.datum) : '';
   const organ = doc.organ || doc.committee || '';
-  const typeLabel = doktyp ? docTypeLabel(doktyp, lang) : '';
+  const typeLabel = doktyp ? docTypeLabel(doktyp, lang, 1) : '';
   const domains = detectPolicyDomains(doc, lang);
 
   let entry = `\n  <article class="document-entry" data-index="${index}">\n`;
@@ -884,7 +884,7 @@ function buildStrategicImplications(docs: RawDocument[], topic: string | null, l
     const typeDescSv = pressmCount > 0 ? `${pressmCount} pressmeddelande${pressmCount !== 1 ? 'n' : ''}` : `${extCount} extern${extCount !== 1 ? 'a' : ''} referens${extCount !== 1 ? 'er' : ''}`;
     const signalTextSv = pressmCount > 0
       ? 'Regeringens presskommunikation signalerar politiska prioriteringar och kommande lagstiftningsåtgärder.'
-      : 'Dessa externa referenser belyser det politiska landskapet och belyser områden av potentiellt lagstiftningsintresse.';
+      : 'Dessa externa referenser belyser det politiska landskapet och lyfter fram områden med potentiellt lagstiftningsintresse.';
     svText = `Baserat på analys av ${docs.length} dokument (${enrichedPhraseSv})${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Denna djupanalys granskar ${typeDescSv}${domainPhrase ? ` inom ${domainPhrase}` : ''}. ${signalTextSv} Intressenter bör bevaka om formella propositioner eller utskottsremisser följer.`;
   } else if (isLegislativeFocused && legislativeCount > 0) {
     svText = `Baserat på analys av ${docs.length} riksdagsdokument (${enrichedPhraseSv})${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Det lagstiftande flödet visar ${propCount} proposition${propCount !== 1 ? 'er' : ''}, ${betCount} betänkande${betCount !== 1 ? 'n' : ''} och ${motCount} motion${motCount !== 1 ? 'er' : ''}. Intressenter bör följa utskottens överläggningar och kammarens voteringsmönster.`;
@@ -1176,7 +1176,7 @@ function buildDeepInspectionSections(
   });
   const rawTypeKeys = Object.keys(typeCounts);
   // Use localized display names for chart labels (e.g., "Press Release" not "pressm")
-  const chartLabels = rawTypeKeys.map(t => docTypeLabel(t, lang));
+  const chartLabels = rawTypeKeys.map(t => docTypeLabel(t, lang, typeCounts[t]));
   const chartValues = rawTypeKeys.map(t => typeCounts[t]);
 
   const dashboardSection = generateDashboardSection({
@@ -1213,7 +1213,7 @@ function buildDeepInspectionSections(
       label: deepLabel('documentTypes', lang),
       color: 'cyan',
       icon: '📄',
-      items: rawTypeKeys.map((t, i) => `${docTypeLabel(t, lang)} (${chartValues[i] ?? 0})`),
+      items: rawTypeKeys.map((t, i) => `${docTypeLabel(t, lang, chartValues[i])} (${chartValues[i] ?? 0})`),
     });
   }
 
