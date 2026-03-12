@@ -107,7 +107,7 @@ describe('MCPClient', () => {
         const { getDefaultClient } = await import('../scripts/mcp-client.js');
         const gwClient = getDefaultClient();
 
-        expect(gwClient.authToken).toBe('Bearer test-gw-key-123');
+        expect(gwClient.authToken).toBe('test-gw-key-123');
       } finally {
         if (origAuth !== undefined) {
           process.env['MCP_AUTH_TOKEN'] = origAuth;
@@ -148,7 +148,7 @@ describe('MCPClient', () => {
         await vi.resetModules();
         const { getDefaultClient } = await import('../scripts/mcp-client.js');
         const fileClient = getDefaultClient();
-        expect(fileClient.authToken).toBe('Bearer file-based-key-456');
+        expect(fileClient.authToken).toBe('file-based-key-456');
       } finally {
         if (origAuth !== undefined) process.env['MCP_AUTH_TOKEN'] = origAuth;
         else delete process.env['MCP_AUTH_TOKEN'];
@@ -254,7 +254,7 @@ describe('MCPClient', () => {
         await vi.resetModules();
         const { getDefaultClient } = await import('../scripts/mcp-client.js');
         const client = getDefaultClient();
-        expect(client.authToken).toBe('Bearer mcpserver-token-abc');
+        expect(client.authToken).toBe('mcpserver-token-abc');
       } finally {
         if (origAuth !== undefined) process.env['MCP_AUTH_TOKEN'] = origAuth;
         else delete process.env['MCP_AUTH_TOKEN'];
@@ -293,8 +293,8 @@ describe('MCPClient', () => {
         await vi.resetModules();
         const { getDefaultClient } = await import('../scripts/mcp-client.js');
         const client = getDefaultClient();
-        // gateway.apiKey takes priority — gets "Bearer " prepended
-        expect(client.authToken).toBe('Bearer gateway-key-wins');
+        // gateway.apiKey takes priority — returned as raw API key
+        expect(client.authToken).toBe('gateway-key-wins');
       } finally {
         if (origAuth !== undefined) process.env['MCP_AUTH_TOKEN'] = origAuth;
         else delete process.env['MCP_AUTH_TOKEN'];
@@ -353,7 +353,7 @@ describe('MCPClient', () => {
         await vi.resetModules();
         const { getDefaultClient } = await import('../scripts/mcp-client.js');
         const client = getDefaultClient();
-        expect(client.authToken).toBe('Bearer custom-path-key-789');
+        expect(client.authToken).toBe('custom-path-key-789');
       } finally {
         if (origAuth !== undefined) process.env['MCP_AUTH_TOKEN'] = origAuth;
         else delete process.env['MCP_AUTH_TOKEN'];
