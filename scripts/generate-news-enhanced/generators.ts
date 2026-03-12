@@ -820,14 +820,46 @@ function buildStrategicImplications(docs: RawDocument[], topic: string | null, l
   const propCount = docs.filter(d => (d.doktyp || d.documentType) === 'prop').length;
   const betCount = docs.filter(d => (d.doktyp || d.documentType) === 'bet').length;
   const motCount = docs.filter(d => (d.doktyp || d.documentType) === 'mot').length;
+  const pressmCount = docs.filter(d => (d.doktyp || d.documentType) === 'pressm').length;
+  const extCount = docs.filter(d => (d.doktyp || d.documentType) === 'ext').length;
   const enrichedCount = docs.filter(d => d.contentFetched).length;
+  const legislativeCount = propCount + betCount + motCount;
+
+  // Detect all policy domains across documents for richer context
+  const allDomains = new Set<string>();
+  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
+  const domainPhrase = allDomains.size > 0 ? [...allDomains].slice(0, 3).join(', ') : '';
+
+  // Choose a template style based on document composition
+  const isLegislativeFocused = legislativeCount > 0;
+  const isPressOrExternal = pressmCount + extCount > 0 && legislativeCount === 0;
+
+  let enText: string;
+  if (isPressOrExternal) {
+    // Non-legislative documents (press releases, external) — policy-signalling focus
+    const typeDesc = pressmCount > 0 ? `${pressmCount} government press release${pressmCount !== 1 ? 's' : ''}` : `${extCount} external reference${extCount !== 1 ? 's' : ''}`;
+    enText = `Based on analysis of ${docs.length} document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriched with full text)${topic ? ` specifically addressing <strong>${esc(topic)}</strong>` : ''}: This deep inspection examines ${typeDesc}${domainPhrase ? ` spanning ${domainPhrase}` : ''}. Government press communications signal policy priorities and upcoming legislative action. Stakeholders should track whether formal propositions or committee referrals follow, which would confirm the transition from policy signalling to legislative commitment.`;
+  } else if (isLegislativeFocused) {
+    const signalText = propCount > betCount ? 'active government agenda-setting' : betCount > propCount ? 'strong parliamentary scrutiny' : 'balanced legislative activity';
+    enText = `Based on analysis of ${docs.length} parliamentary document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriched with full text)${topic ? ` specifically addressing <strong>${esc(topic)}</strong>` : ''}: The legislative pipeline shows ${propCount} government proposition${propCount !== 1 ? 's' : ''}, ${betCount} committee report${betCount !== 1 ? 's' : ''}, and ${motCount} opposition motion${motCount !== 1 ? 's' : ''}. This distribution signals ${signalText}${domainPhrase ? ` in ${domainPhrase}` : ' in this policy area'}. Stakeholders should monitor committee deliberations and chamber voting patterns as the most reliable indicators of policy trajectory.`;
+  } else {
+    enText = `Based on analysis of ${docs.length} document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriched with full text)${topic ? ` specifically addressing <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? `, covering ${domainPhrase}` : ''}: This analysis provides a snapshot of current policy direction. Stakeholders should monitor subsequent legislative developments for concrete implementation signals.`;
+  }
+
+  let svText: string;
+  if (isPressOrExternal) {
+    const typeDescSv = pressmCount > 0 ? `${pressmCount} pressmeddelande${pressmCount !== 1 ? 'n' : ''}` : `${extCount} extern${extCount !== 1 ? 'a' : ''} referens${extCount !== 1 ? 'er' : ''}`;
+    svText = `Baserat på analys av ${docs.length} dokument (${enrichedCount} berikade med fulltext)${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Denna djupanalys granskar ${typeDescSv}${domainPhrase ? ` inom ${domainPhrase}` : ''}. Regeringens presskommunikation signalerar politiska prioriteringar och kommande lagstiftningsåtgärder. Intressenter bör bevaka om formella propositioner eller utskottsremisser följer.`;
+  } else {
+    svText = `Baserat på analys av ${docs.length} riksdagsdokument (${enrichedCount} berikade med fulltext)${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Det lagstiftande flödet visar ${propCount} proposition${propCount !== 1 ? 'er' : ''}, ${betCount} betänkande${betCount !== 1 ? 'n' : ''} och ${motCount} motion${motCount !== 1 ? 'er' : ''}. Intressenter bör följa utskottens överläggningar och kammarens voteringsmönster.`;
+  }
 
   const templates: Partial<Record<Language, string>> = {
-    en: `Based on analysis of ${docs.length} parliamentary documents (${enrichedCount} enriched with full text)${topic ? ` specifically addressing <strong>${esc(topic)}</strong>` : ''}: The legislative pipeline shows ${propCount} government proposition${propCount !== 1 ? 's' : ''}, ${betCount} committee report${betCount !== 1 ? 's' : ''}, and ${motCount} opposition motion${motCount !== 1 ? 's' : ''}. This distribution signals ${propCount > betCount ? 'active government agenda-setting' : betCount > propCount ? 'strong parliamentary scrutiny' : 'balanced legislative activity'} in this policy area. Stakeholders should monitor committee deliberations and chamber voting patterns as the most reliable indicators of policy trajectory.`,
-    sv: `Baserat på analys av ${docs.length} riksdagsdokument (${enrichedCount} berikade med fulltext)${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Det lagstiftande flödet visar ${propCount} proposition${propCount !== 1 ? 'er' : ''}, ${betCount} betänkande${betCount !== 1 ? 'n' : ''} och ${motCount} motion${motCount !== 1 ? 'er' : ''}. Intressenter bör följa utskottens överläggningar och kammarens voteringsmönster.`,
-    de: `Basierend auf der Analyse von ${docs.length} parlamentarischen Dokumenten (${enrichedCount} mit vollständigem Text angereichert)${topic ? ` speziell zu <strong>${esc(topic)}</strong>` : ''}: Der Gesetzgebungsprozess zeigt ${propCount} Regierungsvorlage${propCount !== 1 ? 'n' : ''}, ${betCount} Ausschussbericht${betCount !== 1 ? 'e' : ''} und ${motCount} Oppositionsantrag${motCount !== 1 ? 'e' : ''}.`,
-    fr: `Basé sur l'analyse de ${docs.length} documents parlementaires (${enrichedCount} enrichis avec le texte complet)${topic ? ` abordant spécifiquement <strong>${esc(topic)}</strong>` : ''}: Le pipeline législatif montre ${propCount} proposition${propCount !== 1 ? 's' : ''} gouvernementale${propCount !== 1 ? 's' : ''}, ${betCount} rapport${betCount !== 1 ? 's' : ''} de commission et ${motCount} motion${motCount !== 1 ? 's' : ''} d'opposition.`,
-    es: `Basado en el análisis de ${docs.length} documentos parlamentarios (${enrichedCount} enriquecidos con texto completo)${topic ? ` que abordan específicamente <strong>${esc(topic)}</strong>` : ''}: La actividad legislativa muestra ${propCount} proposición${propCount !== 1 ? 'es' : ''} gubernamental${propCount !== 1 ? 'es' : ''}, ${betCount} informe${betCount !== 1 ? 's' : ''} de comité y ${motCount} moción${motCount !== 1 ? 'es' : ''} de oposición.`,
+    en: enText,
+    sv: svText,
+    de: `Basierend auf der Analyse von ${docs.length} Dokument${docs.length !== 1 ? 'en' : ''} (${enrichedCount} mit vollständigem Text angereichert)${topic ? ` speziell zu <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `Der Gesetzgebungsprozess zeigt ${propCount} Regierungsvorlage${propCount !== 1 ? 'n' : ''}, ${betCount} Ausschussbericht${betCount !== 1 ? 'e' : ''} und ${motCount} Oppositionsantrag${motCount !== 1 ? 'e' : ''}.` : 'Die Analyse bietet eine Momentaufnahme der aktuellen politischen Richtung.'}`,
+    fr: `Basé sur l'analyse de ${docs.length} document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enrichi${enrichedCount !== 1 ? 's' : ''} avec le texte complet)${topic ? ` abordant spécifiquement <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `Le pipeline législatif montre ${propCount} proposition${propCount !== 1 ? 's' : ''} gouvernementale${propCount !== 1 ? 's' : ''}, ${betCount} rapport${betCount !== 1 ? 's' : ''} de commission et ${motCount} motion${motCount !== 1 ? 's' : ''} d'opposition.` : 'L\'analyse offre un aperçu de l\'orientation politique actuelle.'}`,
+    es: `Basado en el análisis de ${docs.length} documento${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriquecido${enrichedCount !== 1 ? 's' : ''} con texto completo)${topic ? ` que abordan específicamente <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `La actividad legislativa muestra ${propCount} proposición${propCount !== 1 ? 'es' : ''} gubernamental${propCount !== 1 ? 'es' : ''}, ${betCount} informe${betCount !== 1 ? 's' : ''} de comité y ${motCount} moción${motCount !== 1 ? 'es' : ''} de oposición.` : 'El análisis proporciona una instantánea de la dirección política actual.'}`,
   };
   const text = templates[lang] ?? templates.en ?? '';
   return `<p>${text}</p>`;
@@ -844,6 +876,7 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
   const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
   const euDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
   const sfsDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'sfs');
+  const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
 
   const topicPhrase = topic ? ` (${esc(topic)})` : '';
 
@@ -874,11 +907,28 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
       : `<strong>${euDocs.length} EU position paper${euDocs.length !== 1 ? 's' : ''}</strong> reveal the European dimension of${topicPhrase}`);
   }
 
+  // Press release / government communication insights
+  if (pressmDocs.length > 0) {
+    items.push(lang === 'sv'
+      ? `<strong>${pressmDocs.length} pressmeddelande${pressmDocs.length !== 1 ? 'n' : ''} från regeringen</strong> signalerar kommande policyåtgärder${topicPhrase}`
+      : `<strong>${pressmDocs.length} government press release${pressmDocs.length !== 1 ? 's' : ''}</strong> signal${pressmDocs.length === 1 ? 's' : ''} upcoming policy action${topicPhrase}`);
+  }
+
+  // Content-derived insight: detected policy domains
+  const allDomains = new Set<string>();
+  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
+  if (allDomains.size > 0) {
+    const domainList = [...allDomains].slice(0, 4).map(d => esc(d)).join(', ');
+    items.push(lang === 'sv'
+      ? `<strong>Identifierade policyområden:</strong> ${domainList}`
+      : `<strong>Policy domains identified:</strong> ${domainList}`);
+  }
+
   const enriched = docs.filter(d => d.contentFetched).length;
   if (enriched > 0) {
     items.push(lang === 'sv'
       ? `<strong>${enriched} av ${docs.length} dokument</strong> berikade med fulltext för djupanalys`
-      : `<strong>${enriched} of ${docs.length} documents</strong> enriched with full text for deep analysis`);
+      : `<strong>${enriched} of ${docs.length} document${docs.length !== 1 ? 's' : ''}</strong> enriched with full text for deep analysis`);
   }
 
   if (items.length === 0) {
@@ -897,20 +947,20 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
 /** Localised default SWOT entry text for when a stakeholder's quadrant has no documents. */
 const SWOT_DEFAULTS: Readonly<Record<string, Partial<Record<Language, [string, string]>>>> = {
   // [withTopic, withoutTopic]
-  govStrength:        { en: ['Policy framework on %t', 'Policy legislation in place'], sv: ['Policyramverk för %t', 'Befintlig policylagstiftning'], de: ['Politikrahmen zu %t', 'Politikgesetzgebung vorhanden'], fr: ['Cadre politique sur %t', 'Législation politique en place'], es: ['Marco de política sobre %t', 'Legislación de política vigente'] },
-  govWeakness:        { en: ['Implementation timeline and resource prioritisation', 'Implementation timeline and resource prioritisation'], sv: ['Genomförandetidsplan och resursprioritering', 'Genomförandetidsplan och resursprioritering'], de: ['Umsetzungszeitplan und Ressourcenpriorisierung', 'Umsetzungszeitplan und Ressourcenpriorisierung'] },
+  govStrength:        { en: ['Policy initiative and agenda-setting on %t', 'Policy legislation in place'], sv: ['Politiskt initiativ och agendasättning för %t', 'Befintlig policylagstiftning'], de: ['Politische Initiative und Agenda-Setting zu %t', 'Politikgesetzgebung vorhanden'], fr: ['Initiative politique sur %t', 'Législation politique en place'], es: ['Iniciativa política sobre %t', 'Legislación de política vigente'] },
+  govWeakness:        { en: ['Implementation timeline and resource allocation for %t', 'Implementation timeline and resource prioritisation'], sv: ['Genomförandetidsplan och resurstilldelning för %t', 'Genomförandetidsplan och resursprioritering'], de: ['Umsetzungszeitplan und Ressourcenallokation für %t', 'Umsetzungszeitplan und Ressourcenpriorisierung'] },
   govOpportunity:     { en: ['EU and international cooperation on %t', 'EU framework alignment'], sv: ['EU och internationellt samarbete om %t', 'EU-ramverksanpassning'], de: ['EU- und internationale Kooperation zu %t', 'EU-Rahmenausrichtung'] },
-  govThreat:          { en: ['Evolving threats and execution risks in %t', 'Evolving threat landscape'], sv: ['Föränderliga hot och genomföranderisker inom %t', 'Föränderligt hotlandskap'], de: ['Sich entwickelnde Bedrohungen in %t', 'Sich entwickelnde Bedrohungslandschaft'] },
-  oppStrength:        { en: ['Parliamentary oversight and accountability function', 'Parliamentary oversight and accountability function'], sv: ['Parlamentarisk tillsyn och ansvarsfunktion', 'Parlamentarisk tillsyn och ansvarsfunktion'], de: ['Parlamentarische Aufsicht und Rechenschaftsfunktion', 'Parlamentarische Aufsicht und Rechenschaftsfunktion'] },
-  oppWeakness:        { en: ['Limited access to classified data on %t', 'Limited classified information access'], sv: ['Begränsad tillgång till sekretessbelagd data om %t', 'Begränsad tillgång till sekretessbelagd information'], de: ['Begrenzter Zugang zu klassifizierten Daten zu %t', 'Begrenzter Zugang zu klassifizierten Informationen'] },
+  govThreat:          { en: ['Execution risks and stakeholder resistance to %t reform', 'Evolving threat landscape'], sv: ['Genomföranderisker och motstånd mot %t-reform', 'Föränderligt hotlandskap'], de: ['Umsetzungsrisiken und Widerstand gegen %t-Reform', 'Sich entwickelnde Bedrohungslandschaft'] },
+  oppStrength:        { en: ['Parliamentary oversight and scrutiny of %t proposals', 'Parliamentary oversight and accountability function'], sv: ['Parlamentarisk tillsyn och granskning av %t-förslag', 'Parlamentarisk tillsyn och ansvarsfunktion'], de: ['Parlamentarische Kontrolle der %t-Vorschläge', 'Parlamentarische Aufsicht und Rechenschaftsfunktion'] },
+  oppWeakness:        { en: ['Limited access to implementation data on %t', 'Limited classified information access'], sv: ['Begränsad tillgång till genomförandedata om %t', 'Begränsad tillgång till sekretessbelagd information'], de: ['Begrenzter Zugang zu Umsetzungsdaten zu %t', 'Begrenzter Zugang zu klassifizierten Informationen'] },
   oppOpportunity:     { en: ['Cross-party consensus building on %t', 'Cross-party consensus building'], sv: ['Konsensusbyggande över partigränser om %t', 'Konsensusbyggande över partigränser'], de: ['Parteiübergreifender Konsensaufbau zu %t', 'Parteiübergreifender Konsensaufbau'] },
-  oppThreat:          { en: ['Government majority limiting amendment capacity', 'Government majority limiting amendment capacity'], sv: ['Regeringsmajoriteten begränsar ändringskapaciteten', 'Regeringsmajoriteten begränsar ändringskapaciteten'], de: ['Regierungsmehrheit schränkt Änderungskapazität ein', 'Regierungsmehrheit schränkt Änderungskapazität ein'] },
-  privateStrength:    { en: ['Technical expertise and operational capacity in %t', 'Technical expertise and operational capacity'], sv: ['Teknisk expertis och operativ kapacitet inom %t', 'Teknisk expertis och operativ kapacitet'], de: ['Technisches Fachwissen und operative Kapazität in %t', 'Technisches Fachwissen und operative Kapazität'] },
-  privateWeakness1:   { en: ['Compliance costs and regulatory burden', 'Compliance costs and regulatory burden'], sv: ['Efterlevnadskostnader och regulatorisk börda', 'Efterlevnadskostnader och regulatorisk börda'], de: ['Compliance-Kosten und regulatorische Belastung', 'Compliance-Kosten und regulatorische Belastung'] },
-  privateWeakness2:   { en: ['Resource allocation for emerging requirements', 'Resource allocation for emerging requirements'], sv: ['Resursallokering för nya krav', 'Resursallokering för nya krav'], de: ['Ressourcenzuweisung für neue Anforderungen', 'Ressourcenzuweisung für neue Anforderungen'] },
+  oppThreat:          { en: ['Government majority limiting amendment capacity on %t', 'Government majority limiting amendment capacity'], sv: ['Regeringsmajoriteten begränsar ändringskapaciteten för %t', 'Regeringsmajoriteten begränsar ändringskapaciteten'], de: ['Regierungsmehrheit schränkt Änderungskapazität bei %t ein', 'Regierungsmehrheit schränkt Änderungskapazität ein'] },
+  privateStrength:    { en: ['Domain expertise and operational capacity in %t', 'Technical expertise and operational capacity'], sv: ['Domänexpertis och operativ kapacitet inom %t', 'Teknisk expertis och operativ kapacitet'], de: ['Fachkompetenz und operative Kapazität in %t', 'Technisches Fachwissen und operative Kapazität'] },
+  privateWeakness1:   { en: ['Compliance costs and adaptation burden from %t regulation', 'Compliance costs and regulatory burden'], sv: ['Efterlevnadskostnader och anpassningsbörda från %t-reglering', 'Efterlevnadskostnader och regulatorisk börda'], de: ['Compliance-Kosten und Anpassungsbelastung durch %t-Regulierung', 'Compliance-Kosten und regulatorische Belastung'] },
+  privateWeakness2:   { en: ['Resource allocation for emerging %t requirements', 'Resource allocation for emerging requirements'], sv: ['Resursallokering för nya %t-krav', 'Resursallokering för nya krav'], de: ['Ressourcenzuweisung für neue %t-Anforderungen', 'Ressourcenzuweisung für neue Anforderungen'] },
   privateOpportunity: { en: ['Investment and innovation driven by %t policy', 'Policy-driven investment and innovation'], sv: ['Investering och innovation driven av %t-politik', 'Policydriven investering och innovation'], de: ['Investitionen und Innovation durch %t-Politik', 'Politikgetriebene Investitionen und Innovation'] },
-  privateThreat1:     { en: ['Rapid evolution of threats within %t', 'Rapid threat evolution'], sv: ['Snabb hotutveckling inom %t', 'Snabb hotutveckling'], de: ['Schnelle Entwicklung der Bedrohungen in %t', 'Schnelle Bedrohungsentwicklung'] },
-  privateThreat2:     { en: ['Short implementation timelines for new requirements', 'Short implementation timelines for new requirements'], sv: ['Korta implementeringstidsplaner för nya krav', 'Korta implementeringstidsplaner för nya krav'], de: ['Kurze Umsetzungsfristen für neue Anforderungen', 'Kurze Umsetzungsfristen für neue Anforderungen'] },
+  privateThreat1:     { en: ['Rapid policy evolution creating uncertainty for %t stakeholders', 'Rapid threat evolution'], sv: ['Snabb policyutveckling skapar osäkerhet för %t-intressenter', 'Snabb hotutveckling'], de: ['Schnelle Politikentwicklung schafft Unsicherheit für %t-Stakeholder', 'Schnelle Bedrohungsentwicklung'] },
+  privateThreat2:     { en: ['Short implementation timelines for new %t requirements', 'Short implementation timelines for new requirements'], sv: ['Korta implementeringstidsplaner för nya %t-krav', 'Korta implementeringstidsplaner för nya krav'], de: ['Kurze Umsetzungsfristen für neue %t-Anforderungen', 'Kurze Umsetzungsfristen für neue Anforderungen'] },
 };
 
 /** Return a localised SWOT fallback string, substituting %t for the topic when present. */
@@ -1086,8 +1136,10 @@ function buildDeepInspectionSections(
     const t = d.doktyp || d.documentType || 'other';
     typeCounts[t] = (typeCounts[t] || 0) + 1;
   });
-  const chartLabels = Object.keys(typeCounts);
-  const chartValues = chartLabels.map(t => typeCounts[t]);
+  const rawTypeKeys = Object.keys(typeCounts);
+  // Use localized display names for chart labels (e.g., "Press Release" not "pressm")
+  const chartLabels = rawTypeKeys.map(t => docTypeLabel(t, lang));
+  const chartValues = rawTypeKeys.map(t => typeCounts[t]);
 
   const dashboardSection = generateDashboardSection({
     data: {
@@ -1103,7 +1155,7 @@ function buildDeepInspectionSections(
         datasets: [{
           label: 'Documents',
           data: chartValues,
-          backgroundColor: chartLabels.map((_, i) => DEEP_CHART_PALETTE[i % DEEP_CHART_PALETTE.length]),
+          backgroundColor: rawTypeKeys.map((_, i) => DEEP_CHART_PALETTE[i % DEEP_CHART_PALETTE.length]),
         }],
       }],
     },
@@ -1117,13 +1169,13 @@ function buildDeepInspectionSections(
 
   const mindmapBranches: MindmapBranch[] = [];
 
-  // Document type branch
-  if (chartLabels.length > 0) {
+  // Document type branch — use localized names
+  if (rawTypeKeys.length > 0) {
     mindmapBranches.push({
       label: 'Document Types',
       color: 'cyan',
       icon: '📄',
-      items: chartLabels.map((t, i) => `${t} (${chartValues[i] ?? 0})`),
+      items: rawTypeKeys.map((t, i) => `${docTypeLabel(t, lang)} (${chartValues[i] ?? 0})`),
     });
   }
 

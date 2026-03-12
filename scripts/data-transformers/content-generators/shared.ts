@@ -14,6 +14,23 @@ import type { RawDocument, RawCalendarEvent, CIAContext } from '../types.js';
 import { L, normalizePartyKey } from '../helpers.js';
 import { detectPolicyDomains } from '../policy-analysis.js';
 
+/** Localise raw Riksdag document type codes for display. */
+const DOC_TYPE_DISPLAY: Readonly<Record<string, Partial<Record<Language, string>>>> = {
+  prop: { en: 'Propositions', sv: 'Propositioner' },
+  bet:  { en: 'Committee Reports', sv: 'Betänkanden' },
+  mot:  { en: 'Motions', sv: 'Motioner' },
+  skr:  { en: 'Government Communications', sv: 'Skrivelser' },
+  sfs:  { en: 'Laws/Statutes', sv: 'Lagar/Förordningar' },
+  fpm:  { en: 'EU Position Papers', sv: 'Faktapromemorior' },
+  pressm: { en: 'Press Releases', sv: 'Pressmeddelanden' },
+  ext:  { en: 'External References', sv: 'Externa referenser' },
+};
+
+function localizeDocType(code: string, lang: Language | string): string {
+  const map = DOC_TYPE_DISPLAY[code];
+  return (map?.[lang as Language]) ?? (map?.en ?? code);
+}
+
 /** Per-language title-suffix templates for inverted-pyramid lede construction. */
 export const TITLE_SUFFIX_TEMPLATES: Readonly<Record<string, (t: string) => string>> = {
   sv: t => ` — inklusive "${t}"`,
@@ -228,10 +245,11 @@ function neutralText(lang: Language | string): string {
 export function generateDeepAnalysisSection(opts: DeepAnalysisOptions): string {
   const { documents, lang, cia, articleType, whyContext } = opts;
 
-  // Deep analysis requires at least 2 documents to produce meaningful
-  // cross-document insights (actor patterns, domain aggregation, etc.).
-  // Single-document analysis is already handled by per-entry "Why It Matters".
-  if (!documents || documents.length < 2) return '';
+  // Deep analysis requires at least 2 documents for cross-document insights
+  // in standard article types. For deep-inspection articles, allow single-
+  // document analysis since the whole article is dedicated to in-depth review.
+  const minDocs = articleType === 'deep-inspection' ? 1 : 2;
+  if (!documents || documents.length < minDocs) return '';
 
   const lbl = (key: string): string => {
     const val = L(lang, key);
@@ -273,7 +291,7 @@ export function generateDeepAnalysisSection(opts: DeepAnalysisOptions): string {
     }
     const typeList = [...docTypes.entries()]
       .sort((a, b) => b[1] - a[1])
-      .map(([t, c]) => `${escapeHtml(t)}: ${c}`)
+      .map(([t, c]) => `${escapeHtml(localizeDocType(t, lang))}: ${c}`)
       .join(', ');
     parts.push(`    <p>${domainItems}</p>`);
     parts.push(`    <p><em>${typeList}</em></p>`);
