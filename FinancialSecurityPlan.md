@@ -37,12 +37,12 @@ Riksdagsmonitor uses a **dual-deployment architecture** with AWS CloudFront + S3
 |----------------|-------------------|------------------|
 | **Primary Infrastructure (AWS)** | **$7.50** | **$90.00** |
 | **DR Infrastructure (GitHub Pages)** | **$0.00** | **$0.00** |
-| **Domain & DNS** | **$4.50** | **$54.00** |
+| **Domain Registration** | **$1.00** | **$12.00** |
 | **Security Tooling** | **$0.00** | **$0.00** |
 | **Development CI/CD** | **$0.00** | **$0.00** |
-| **Grand Total** | **$12.00** | **$144.00** |
+| **Grand Total** | **$8.50** | **$102.00** |
 
-> **Note:** Riksdagsmonitor leverages free-tier and open-source services extensively. The primary recurring costs are AWS S3/CloudFront hosting and domain registration. All security tooling is free for open-source projects.
+> **Note:** Riksdagsmonitor leverages free-tier and open-source services extensively. The primary recurring costs are AWS S3/CloudFront hosting (including Route 53 DNS) and domain registration. All security tooling is free for open-source projects.
 
 ---
 
@@ -74,9 +74,9 @@ Riksdagsmonitor uses a **dual-deployment architecture** with AWS CloudFront + S3
 | **Component** | **Service** | **Monthly (USD)** | **Annual (USD)** | **Notes** |
 |---------------|-------------|-------------------|------------------|-----------|
 | **Domain** | riksdagsmonitor.com | $1.00 | $12.00 | Annual domain renewal |
-| **DNS** | Route 53 Hosted Zone | $0.50 | $6.00 | Monthly hosted zone fee |
+| **DNS** | Route 53 Hosted Zone | $0.00 | $0.00 | Included in AWS section above (Route 53 line) |
 | **SSL Certificate** | ACM | $0.00 | $0.00 | Free for AWS services |
-| **Subtotal (Domain)** | | **$1.50** | **$18.00** | |
+| **Subtotal (Domain)** | | **$1.00** | **$12.00** | Domain registration only; DNS cost in AWS section |
 
 ---
 
@@ -105,7 +105,7 @@ Riksdagsmonitor uses a **dual-deployment architecture** with AWS CloudFront + S3
 | **Metric** | **Value** | **Source** |
 |------------|-----------|-----------|
 | **Total Annual Security Investment** | $0/year | Free OSS tooling |
-| **Total Annual Infrastructure** | $144/year | AWS + domain costs |
+| **Total Annual Infrastructure** | $102/year | AWS + domain costs |
 | **Security-to-Infrastructure Ratio** | Included | Security is built-in, not bolt-on |
 | **Vulnerability Detection Rate** | >95% | Automated scanning pipeline (CodeQL + Dependabot + npm audit) |
 | **Mean Time to Detect (MTTD)** | <24 hours | Automated CI/CD scanning on every push |
@@ -126,9 +126,9 @@ Riksdagsmonitor uses a **dual-deployment architecture** with AWS CloudFront + S3
 | [**Cryptography Policy**](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md) | $0.00 | ACM + SRI + GitHub Secret Scanning | TLS 1.3 certificates<br>Subresource integrity<br>Secret leak prevention |
 | [**Network Security Policy**](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Network_Security_Policy.md) | $60.00 | CloudFront | DDoS protection (AWS Shield Standard)<br>Edge caching reduces origin exposure |
 | [**Information Security Policy**](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) | $0.00 | CloudWatch (basic) + GitHub Audit Log | Infrastructure monitoring<br>Repository access auditing |
-| [**Business Continuity Plan**](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Business_Continuity_Plan.md) | $72.00 | S3 Multi-Region + GitHub Pages DR | Dual-deployment resilience<br>99.998% availability target |
+| [**Business Continuity Plan**](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Business_Continuity_Plan.md) | $30.00 | S3 ($6) + Route 53 DNS ($12) + Domain ($12) | Dual-deployment resilience<br>GitHub Pages DR at $0 additional |
 | [**Secure Development Policy**](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) | $0.00 | SLSA + SBOM + harden-runner | Supply chain security<br>Build provenance attestation |
-| **Total** | **$144.00** | | |
+| **Total** | **$102.00** | | |
 
 ### Cost Efficiency Analysis
 
@@ -137,19 +137,18 @@ Riksdagsmonitor uses a **dual-deployment architecture** with AWS CloudFront + S3
 │                    Annual Cost Distribution                      │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                  │
-│  CloudFront CDN      ████████████████████████████████  $60 (42%) │
-│  S3 Storage          ██                                $6  (4%)  │
-│  Route 53 DNS        ██████████                       $24 (17%)  │
-│  Domain Registration ████████                         $12  (8%)  │
-│  Route 53 Health     ████████                         $12  (8%)  │
-│  CloudFront DR       ██████████████████████████████   $30 (21%)  │
-│  Security Tooling    (included in free tier)           $0  (0%)  │
+│  CloudFront CDN      █████████████████████████████████  $60 (59%)│
+│  Route 53 DNS        ██████                            $12 (12%) │
+│  Route 53 Health     ██████                            $12 (12%) │
+│  Domain Registration ██████                            $12 (12%) │
+│  S3 Storage          ███                               $6  (6%)  │
+│  Security Tooling    (included in free tier)            $0  (0%) │
 │                                                                  │
-│  Total: $144/year ($12/month)                                    │
+│  Total: $102/year ($8.50/month)                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-**Key Insight**: By leveraging open-source security tooling and GitHub's free tier for public repositories, Riksdagsmonitor achieves **enterprise-grade security posture at near-zero security cost**. The entire annual budget of $144 is spent on infrastructure availability, not security tooling.
+**Key Insight**: By leveraging open-source security tooling and GitHub's free tier for public repositories, Riksdagsmonitor achieves **enterprise-grade security posture at near-zero security cost**. The entire annual budget of $102 is spent on infrastructure availability, not security tooling.
 
 ---
 
