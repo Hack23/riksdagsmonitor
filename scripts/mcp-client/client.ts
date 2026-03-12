@@ -49,9 +49,9 @@ function getDefaultTimeout(): number {
  *   4. mcpServers['riksdag-regering'].headers.Authorization from MCP config file
  *      (raw API key — used as-is)
  *
- * When running inside the gh-aw sandbox the gateway requires a Bearer token but
- * the key may be stored in either the legacy gateway section or the mcpServers
- * section of the MCP config JSON.
+ * The MCP gateway expects a raw API key (no "Bearer " prefix). If a legacy
+ * "Bearer <key>" value is stored in the config, the prefix is stripped
+ * automatically.
  */
 function getDefaultAuthToken(): string {
   if (process.env['MCP_AUTH_TOKEN']) return process.env['MCP_AUTH_TOKEN'];
@@ -69,11 +69,12 @@ function getDefaultAuthToken(): string {
       if (apiKey) return apiKey;
 
       // Priority 4: mcpServers['riksdag-regering'].headers.Authorization
+      // Strip legacy "Bearer " prefix if present — gateway expects raw API key
       const mcpServers = raw['mcpServers'] as Record<string, unknown> | undefined;
       const rrServer = mcpServers?.['riksdag-regering'] as Record<string, unknown> | undefined;
       const headers = rrServer?.['headers'] as Record<string, unknown> | undefined;
       const authHeader = headers?.['Authorization'] as string | undefined;
-      if (authHeader) return authHeader; // Already includes "Bearer " prefix
+      if (authHeader) return authHeader.replace(/^Bearer\s+/i, '');
     }
   } catch {
     // Config file read is best-effort — fall through to empty token
