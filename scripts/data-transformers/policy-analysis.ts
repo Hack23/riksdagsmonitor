@@ -286,7 +286,8 @@ export function detectNarrativeFrames(doc: RawDocument): NarrativeFrame[] {
   return Array.from(frames);
 }
 
-type _LangPair = { en: Record<string, string>; sv: Record<string, string> } & Partial<Record<string, Record<string, string>>>;
+/** Per-language analysis text. `en` and `sv` are always required; other languages are optional and fall back to `en`. */
+type _LangPair = { en: Record<string, string>; sv: Record<string, string> } & Partial<Record<Language, Record<string, string>>>;
 
 /**
  * Build a reverse lookup from any localised domain name back to the English key.
@@ -502,8 +503,9 @@ export function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string,
   const entry = DOMAIN_ANALYSES[lookupKey];
   if (!entry) return '';
 
-  // Prefer the exact language, fall back to English
-  const langEntry = entry[lang as string] ?? entry.en;
+  // Prefer the exact language entry, fall back to English
+  const langKey = lang as Language;
+  const langEntry = entry[langKey] ?? entry.en;
   const typeKey = (doktyp === 'mot' || doktyp === 'bet') ? doktyp : 'default';
   return langEntry[typeKey] ?? langEntry['default'] ?? '';
 }
