@@ -23,7 +23,7 @@
 #
 # Manual-only multi-type article generator. For automated per-type generation, use the dedicated news-committee-reports, news-propositions, news-motions, news-week-ahead, news-month-ahead, news-weekly-review, news-monthly-review workflows. For translations, use news-translate workflow.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"b900b9d6f9f586e4738689f8d3aa24a6d4d827efd7e0a531940f93735ba36d8f","compiler_version":"v0.58.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"c30ea23e8dc845af2025a6803d5813de9762e6c76b936871730af84cf1be6f97","compiler_version":"v0.58.0"}
 
 name: "News: Article Generator (Manual)"
 "on":
