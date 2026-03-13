@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   <title>Opposition Motions: Battle Lines This Week</title>
   <meta name="description" content="Analysis of 10 opposition motions revealing parliamentary fault lines">
   <meta name="keywords" content="motions, opposition, parliament, proposals, Swedish Parliament, Riksdag, politics, Sweden">
@@ -70,14 +70,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap">
   
   <!-- Main stylesheet - contains all article styles -->
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Anti-flash: apply saved theme before first paint -->
-  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
+  <script src="../js/theme-init.js"></script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">
@@ -244,8 +243,6 @@
     <a href="index.html" aria-label="Riksdagsmonitor News">
       <img src="../images/riksdagsmonitornews-logo.webp" alt="Riksdagsmonitor News" class="article-site-logo" width="100" height="100" loading="eager">
     </a>
-    <div class="site-tagline">Latest news and analysis from Sweden's Riksdag. AI-generated political intelligence based on OSINT/INTOP data covering parliament, government, and agencies with systematic transparency.</div>
-    <h1>Opposition Motions: Battle Lines This Week</h1>
     <div class="article-meta">
       <time datetime="2026-03-13">13 March 2026</time>
       <span class="separator">•</span>
@@ -474,7 +471,7 @@
   </div>
 </footer>
 
-<script type="module" src="../scripts/back-to-top.ts"></script>
+<script type="module" src="../js/back-to-top.js"></script>
 <script src="../js/theme-toggle.js"></script>
 </body>
 </html>
