@@ -2,38 +2,17 @@
   "timestamp": "2026-03-13T06:28:10.071Z",
   "types": [
     "motions"
+  "timestamp": "2026-03-13T05:25:31.004Z",
+  "types": [
+    "propositions"
   ],
   "languagesGenerated": [
     "en",
-    "sv",
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "sv"
   ],
   "allRequestedLanguages": [
     "en",
-    "sv",
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "sv"
   ],
   "batchSize": "all",
   "skipExisting": true,
@@ -54,6 +33,11 @@
     "2026-03-13-opposition-motions-ja.html",
     "2026-03-13-opposition-motions-ko.html",
     "2026-03-13-opposition-motions-zh.html"
+  "generated": 2,
+  "errors": 0,
+  "articles": [
+    "2026-03-13-government-propositions-en.html",
+    "2026-03-13-government-propositions-sv.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
