@@ -7,6 +7,9 @@
  * @license Apache-2.0
  */
 
+import fs from 'fs';
+import path from 'path';
+
 import {
   transformCalendarToEventGrid,
   generateArticleContent,
@@ -36,7 +39,9 @@ import { MCPClient } from '../mcp-client.js';
 import type { Language } from '../types/language.js';
 import type { GenerationResult, DateRange, ArticleCategory, TemplateSection, SwotEntry } from '../types/article.js';
 import type { TitleSet } from './types.js';
-import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic } from './config.js';
+import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic, analysisDepth, METADATA_DIR } from './config.js';
+import { runAnalysisPipeline } from '../ai-analysis/pipeline.js';
+import type { AnalysisResult, AnalysisIterationMetadata } from '../ai-analysis/types.js';
 import {
   getWeekAheadDateRange,
   formatDateForSlug,
@@ -1066,6 +1071,168 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
 // Deep-Inspection TemplateSection builders (SWOT + Dashboard)
 // ---------------------------------------------------------------------------
 
+/**
+ * Write AI analysis iteration metadata to news/metadata/ for audit trail.
+ * Silently skips on write errors to avoid breaking article generation.
+ */
+function writeAnalysisMetadata(
+  articleSlug: string,
+  metadata: AnalysisIterationMetadata,
+): void {
+  try {
+    const filename = path.join(METADATA_DIR, `ai-analysis-${articleSlug}-${metadata.lang}.json`);
+    fs.writeFileSync(filename, JSON.stringify(metadata, null, 2), 'utf-8');
+  } catch (err: unknown) {
+    console.warn(`  ⚠️ Could not write analysis metadata: ${(err as Error).message}`);
+  }
+}
+
+/**
+ * Convert an AI AnalysisResult to TemplateSection[] for use in generateArticleHTML.
+ * This replaces buildDeepInspectionSections when the AI pipeline is used.
+ * Template section rendering (HTML structure, CSS, accessibility) is unchanged.
+ */
+function buildDeepInspectionSectionsFromAnalysis(
+  analysis: AnalysisResult,
+  docs: RawDocument[],
+  topic: string | null,
+  lang: Language,
+): TemplateSection[] {
+  if (docs.length === 0) return [];
+
+  // Convert AnalysisStakeholderSwot → StakeholderSwot (for generateStakeholderSwotSection)
+  const stakeholders: StakeholderSwot[] = analysis.stakeholderSwot.map(sh => ({
+    name: sh.name,
+    role: sh.role,
+    swot: {
+      strengths:     sh.swot.strengths.map(e => ({ text: e.text, impact: e.impact })) satisfies SwotEntry[],
+      weaknesses:    sh.swot.weaknesses.map(e => ({ text: e.text, impact: e.impact })) satisfies SwotEntry[],
+      opportunities: sh.swot.opportunities.map(e => ({ text: e.text, impact: e.impact })) satisfies SwotEntry[],
+      threats:       sh.swot.threats.map(e => ({ text: e.text, impact: e.impact })) satisfies SwotEntry[],
+    },
+  }));
+
+  const strategicContext = topic
+    ? `Analysis exclusively focused on: ${topic} — ${docs.length} parliamentary documents examined (confidence: ${analysis.confidenceScore}/100)`
+    : `Multi-stakeholder analysis of ${docs.length} parliamentary documents (confidence: ${analysis.confidenceScore}/100)`;
+
+  const swotSection = generateStakeholderSwotSection({ stakeholders, lang, strategicContext });
+
+  // Dashboard from analysis data
+  const dashboardSection = generateDashboardSection({
+    data: {
+      title: analysis.dashboardData.title,
+      summary: analysis.dashboardData.summary,
+      charts: [{
+        id: 'deep-inspection-doc-types',
+        type: 'bar',
+        title: analysis.dashboardData.summary,
+        labels: analysis.dashboardData.typeDistribution.map(t => t.label),
+        datasets: [{
+          label: lang === 'sv' ? 'Dokument' : 'Documents',
+          data: analysis.dashboardData.typeDistribution.map(t => t.value),
+          backgroundColor: analysis.dashboardData.typeDistribution.map(t => t.color),
+        }],
+      }],
+    },
+    lang,
+  });
+
+  // Mindmap from analysis branches
+  const mindmapBranches: MindmapBranch[] = analysis.mindmapBranches.map(b => ({
+    label: b.label,
+    color: b.color,
+    icon: b.icon,
+    items: b.items,
+  }));
+
+  const mindmapSection = generateMindmapSection({
+    topic: topic || 'Parliamentary Analysis',
+    branches: mindmapBranches,
+    lang,
+    summary: topic
+      ? `Conceptual map for deep inspection: ${topic}`
+      : `Conceptual map for ${docs.length} parliamentary documents`,
+  });
+
+  // Classify docs for Sankey section
+  const propDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
+  const betDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
+  const motDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
+  const sfsDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
+  const euDocs     = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
+  const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
+  const extDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
+  const otherDocs  = docs.filter(d => !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || ''));
+
+  // Localised stakeholder names
+  const govName     = stakeholders[0]?.name ?? 'Government';
+  const oppName     = stakeholders[1]?.name ?? 'Parliament';
+  const privateName = stakeholders[2]?.name ?? 'Civil Society';
+
+  const sankeyNodes: SankeyNode[] = [
+    { id: 'gov', label: govName,     color: 'cyan' },
+    { id: 'opp', label: oppName,     color: 'magenta' },
+    { id: 'pvt', label: privateName, color: 'purple' },
+  ];
+
+  const sankeyFlows: SankeyFlow[] = [];
+  if (propDocs.length > 0) {
+    sankeyNodes.push({ id: 'prop', label: 'Propositions', color: 'orange' });
+    sankeyFlows.push({ source: 'gov', target: 'prop', value: propDocs.length, label: `${propDocs.length}` });
+  }
+  if (betDocs.length > 0) {
+    sankeyNodes.push({ id: 'bet', label: 'Committee Reports', color: 'blue' });
+    sankeyFlows.push({ source: 'opp', target: 'bet', value: betDocs.length, label: `${betDocs.length}` });
+  }
+  if (motDocs.length > 0) {
+    sankeyNodes.push({ id: 'mot', label: 'Motions', color: 'yellow' });
+    sankeyFlows.push({ source: 'opp', target: 'mot', value: motDocs.length, label: `${motDocs.length}` });
+  }
+  if (sfsDocs.length > 0) {
+    sankeyNodes.push({ id: 'sfs', label: 'Laws (SFS)', color: 'green' });
+    sankeyFlows.push({ source: 'gov', target: 'sfs', value: sfsDocs.length, label: `${sfsDocs.length}` });
+  }
+  if (euDocs.length > 0) {
+    sankeyNodes.push({ id: 'eu', label: 'EU Positions', color: 'blue' });
+    sankeyFlows.push({ source: 'pvt', target: 'eu', value: euDocs.length, label: `${euDocs.length}` });
+  }
+  if (pressmDocs.length > 0) {
+    sankeyNodes.push({ id: 'pressm', label: 'Press Releases', color: 'orange' });
+    sankeyFlows.push({ source: 'gov', target: 'pressm', value: pressmDocs.length, label: `${pressmDocs.length}` });
+  }
+  if (extDocs.length > 0) {
+    sankeyNodes.push({ id: 'ext', label: 'External / Reference', color: 'purple' });
+    sankeyFlows.push({ source: 'pvt', target: 'ext', value: extDocs.length, label: `${extDocs.length}` });
+  }
+  if (otherDocs.length > 0) {
+    sankeyNodes.push({ id: 'other', label: 'Other Docs', color: 'purple' });
+    sankeyFlows.push({ source: 'pvt', target: 'other', value: otherDocs.length, label: `${otherDocs.length}` });
+  }
+
+  const sankeySection: TemplateSection | null = sankeyFlows.length >= 2
+    ? generateSankeySection({
+        nodes: sankeyNodes,
+        flows: sankeyFlows,
+        lang,
+        title: topic ? `Legislative Flow — ${topic}` : 'Legislative Flow',
+        summary: `Flow of ${docs.length} parliamentary documents from initiating actors to document types`,
+      })
+    : null;
+
+  const economicSection = analysis.policyAssessment.domains.length > 0
+    ? generateEconomicDashboardSection({ policyDomains: analysis.policyAssessment.domains, lang })
+    : null;
+
+  const additionalSections: TemplateSection[] = [
+    ...(sankeySection ? [sankeySection] : []),
+    ...(economicSection ? [economicSection] : []),
+    mindmapSection,
+  ];
+
+  return [dashboardSection, swotSection, ...additionalSections];
+}
+
 /** Localised default SWOT entry text for when a stakeholder's quadrant has no documents. */
 const SWOT_DEFAULTS: Readonly<Record<string, Partial<Record<Language, [string, string]>>>> = {
   // [withTopic, withoutTopic]
@@ -1095,11 +1262,15 @@ function swotDefault(key: string, topic: string | null, lang: Language): string 
 
 /**
  * Build SWOT and dashboard TemplateSections for a deep-inspection article.
- * Derives SWOT entries from actual document metadata and titles — every entry
- * is explicitly tied to the focus topic. Returns TemplateSection[] ready for
- * generateArticleHTML.sections.
+/**
+ * Build SWOT and dashboard TemplateSections for a deep-inspection article
+ * using the legacy metadata-only approach (kept as fallback).
+ *
+ * @deprecated Use `buildDeepInspectionSectionsFromAnalysis` (AI pipeline) instead.
+ * Kept for backward compatibility and as a fallback when the AI pipeline
+ * is not available.
  */
-function buildDeepInspectionSections(
+export function buildDeepInspectionSections(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,
@@ -1639,14 +1810,46 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
     };
 
     for (const lang of languages) {
-      console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
+      console.log(`  🌐 Generating ${lang.toUpperCase()} version (analysis-depth: ${analysisDepth})...`);
+
+      // ── AI Analysis Pipeline (multi-iteration) ───────────────────────────
+      const pipelineStart = Date.now();
+      const { analysis, validation } = await runAnalysisPipeline(enrichedDocs, {
+        depth: analysisDepth,
+        lang,
+        focusTopic: sanitizedTopic,
+      });
+      const pipelineDuration = Date.now() - pipelineStart;
+
+      console.log(`    🤖 Analysis: ${analysis.iterationsCompleted} iteration(s) completed, confidence: ${analysis.confidenceScore}/100 (${pipelineDuration}ms)`);
+      if (validation) {
+        const passLabel = validation.passed ? '✅' : '⚠️';
+        console.log(`    ${passLabel} Validation score: ${validation.score}/100${validation.issues.length > 0 ? `, issues: ${validation.issues.join('; ')}` : ''}`);
+      }
+
+      // Write iteration metadata for audit trail
+      const iterationMetadata: AnalysisIterationMetadata = {
+        articleSlug: slug,
+        lang,
+        depth: analysisDepth,
+        iterationsCompleted: analysis.iterationsCompleted,
+        iterationDurationsMs: [pipelineDuration],
+        confidenceScore: analysis.confidenceScore,
+        validationResult: validation,
+        documentCount: analysis.documentCount,
+        enrichedCount: analysis.enrichedCount,
+        focusTopic: sanitizedTopic,
+        completedAt: analysis.completedAt,
+      };
+      writeAnalysisMetadata(slug, iterationMetadata);
 
       // Topic-focused deep-inspection content (NOT generic content)
       const content: string = generateDeepInspectionContent(enrichedDocs, sanitizedTopic, lang);
 
-      // Metadata still derived from document data
+      // Metadata derived from document data
       const contentData = { documents: enrichedDocs as Parameters<typeof generateArticleContent>[0]['documents'] };
-      const watchPoints = extractWatchPoints(contentData, lang);
+      // Use AI-derived watch points (richer than the generic extractWatchPoints)
+      const watchPoints = analysis.watchPoints.map(wp => ({ title: wp.title, description: wp.description }));
       const metadata = generateMetadata(contentData, 'deep-inspection', lang);
       const readTime: string = calculateReadTime(content);
       const sourceMethods = ['get_dokument', 'get_dokument_innehall', 'search_dokument'];
@@ -1654,8 +1857,8 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       if (gitHubUrls.length > 0) sourceMethods.push('GitHub raw content');
       const sources: string[] = generateSources(sourceMethods);
 
-      // SWOT + dashboard sections — topic-focused, document-derived
-      const sections = buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang);
+      // SWOT + dashboard sections — built from AI analysis result (not hardcoded templates)
+      const sections = buildDeepInspectionSectionsFromAnalysis(analysis, enrichedDocs, sanitizedTopic, lang);
 
       const langTitles: TitleSet = titles[lang] || titles.en;
 

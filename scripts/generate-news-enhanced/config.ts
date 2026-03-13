@@ -63,6 +63,36 @@ export const documentUrls: string[] = rawDocumentUrls
 
 /** Specific policy topic to focus deep-inspection analysis on */
 export const focusTopic: string = parseArgValue(focusTopicArg);
+
+// ---------------------------------------------------------------------------
+// Analysis depth (controls number of AI analysis iterations)
+// ---------------------------------------------------------------------------
+
+/**
+ * --analysis-depth=<quick|standard|deep>
+ *
+ * Controls how many AI analysis iterations run for deep-inspection articles:
+ * - `quick`    — 1 pass (initial analysis only; fast)
+ * - `standard` — 2 passes (initial + SWOT refinement; default)
+ * - `deep`     — 3 passes (initial + refinement + stakeholder validation)
+ */
+const analysisDepthArg: string | undefined = args.find(arg => arg.startsWith('--analysis-depth='));
+const rawAnalysisDepth: string = parseArgValue(analysisDepthArg ?? '').toLowerCase();
+const VALID_ANALYSIS_DEPTHS = ['quick', 'standard', 'deep'] as const;
+type AnalysisDepthValue = typeof VALID_ANALYSIS_DEPTHS[number];
+
+function parseAnalysisDepth(raw: string): AnalysisDepthValue {
+  if ((VALID_ANALYSIS_DEPTHS as readonly string[]).includes(raw)) {
+    return raw as AnalysisDepthValue;
+  }
+  if (raw && raw !== '') {
+    console.warn(`⚠️ Unknown --analysis-depth value "${raw}", falling back to "standard". Valid values: ${VALID_ANALYSIS_DEPTHS.join(', ')}`);
+  }
+  return 'standard';
+}
+
+export const analysisDepth: AnalysisDepthValue = parseAnalysisDepth(rawAnalysisDepth);
+
 const DEFAULT_QUALITY_THRESHOLD = 40;
 let parsedQualityThreshold: number = DEFAULT_QUALITY_THRESHOLD;
 if (qualityThresholdArg) {
