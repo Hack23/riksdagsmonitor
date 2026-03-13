@@ -1,0 +1,156 @@
+{
+  "test.html": {
+    "filename": "test.html",
+    "lang": "en",
+    "articleType": "propositions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 15,
+      "passesThreshold": false,
+      "iterationCount": 2,
+      "dimensions": {
+        "factualAccuracy": 0,
+        "stakeholderCoverage": 0,
+        "analyticalDepth": 0,
+        "editorialConsistency": 30,
+        "evidenceQuality": 0,
+        "languageQuality": 100
+      },
+      "issueCount": 5
+    },
+    "timestamp": "2026-03-13T21:48:52.688Z"
+  },
+  "test-sv.html": {
+    "filename": "test-sv.html",
+    "lang": "sv",
+    "articleType": "motions",
+    "score": 22,
+    "passed": false,
+    "multidimensional": {
+      "overallScore": 4,
+      "passesThreshold": false,
+      "iterationCount": 2,
+      "dimensions": {
+        "factualAccuracy": 0,
+        "stakeholderCoverage": 0,
+        "analyticalDepth": 0,
+        "editorialConsistency": 0,
+        "evidenceQuality": 0,
+        "languageQuality": 38
+      },
+      "issueCount": 5
+    },
+    "timestamp": "2026-03-13T21:48:52.676Z"
+  },
+  "test-en.html": {
+    "filename": "test-en.html",
+    "lang": "en",
+    "articleType": "motions",
+    "score": 4,
+    "passed": false,
+    "multidimensional": {
+      "overallScore": 1,
+      "passesThreshold": false,
+      "iterationCount": 2,
+      "dimensions": {
+        "factualAccuracy": 0,
+        "stakeholderCoverage": 0,
+        "analyticalDepth": 0,
+        "editorialConsistency": 0,
+        "evidenceQuality": 0,
+        "languageQuality": 9
+      },
+      "issueCount": 6
+    },
+    "timestamp": "2026-03-13T21:48:52.679Z"
+  },
+  "test-de.html": {
+    "filename": "test-de.html",
+    "lang": "de",
+    "articleType": "committee-reports",
+    "score": 75,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 8,
+      "passesThreshold": false,
+      "iterationCount": 2,
+      "dimensions": {
+        "factualAccuracy": 0,
+        "stakeholderCoverage": 0,
+        "analyticalDepth": 0,
+        "editorialConsistency": 20,
+        "evidenceQuality": 0,
+        "languageQuality": 51
+      },
+      "issueCount": 5
+    },
+    "timestamp": "2026-03-13T21:48:52.686Z"
+  },
+  "2026-02-23-motions-en.html": {
+    "filename": "2026-02-23-motions-en.html",
+    "lang": "en",
+    "articleType": "motions",
+    "score": 81,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 12,
+      "passesThreshold": false,
+      "iterationCount": 2,
+      "dimensions": {
+        "factualAccuracy": 0,
+        "stakeholderCoverage": 0,
+        "analyticalDepth": 0,
+        "editorialConsistency": 30,
+        "evidenceQuality": 0,
+        "languageQuality": 79
+      },
+      "issueCount": 5
+    },
+    "timestamp": "2026-03-13T21:48:52.664Z"
+  },
+  "2026-02-23-propositions-en.html": {
+    "filename": "2026-02-23-propositions-en.html",
+    "lang": "en",
+    "articleType": "propositions",
+    "score": 81,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 12,
+      "passesThreshold": false,
+      "iterationCount": 2,
+      "dimensions": {
+        "factualAccuracy": 0,
+        "stakeholderCoverage": 0,
+        "analyticalDepth": 0,
+        "editorialConsistency": 30,
+        "evidenceQuality": 0,
+        "languageQuality": 79
+      },
+      "issueCount": 5
+    },
+    "timestamp": "2026-03-13T21:48:52.666Z"
+  },
+  "test2-en.html": {
+    "filename": "test2-en.html",
+    "lang": "en",
+    "articleType": "motions",
+    "score": 20,
+    "passed": false,
+    "multidimensional": {
+      "overallScore": 4,
+      "passesThreshold": false,
+      "iterationCount": 2,
+      "dimensions": {
+        "factualAccuracy": 0,
+        "stakeholderCoverage": 0,
+        "analyticalDepth": 0,
+        "editorialConsistency": 0,
+        "evidenceQuality": 0,
+        "languageQuality": 36
+      },
+      "issueCount": 5
+    },
+    "timestamp": "2026-03-13T21:48:52.678Z"
+  }
+}

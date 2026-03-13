@@ -71,6 +71,59 @@
                 "hasAllPillars": {
                   "type": "boolean",
                   "description": "Whether all 5 Editorial Pillars are present (evening-analysis only)"
+                },
+                "dimensions": {
+                  "type": "object",
+                  "description": "6-dimension quality scores from multi-pass assessment (0–100 each)",
+                  "properties": {
+                    "factualAccuracy": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 100,
+                      "description": "Factual accuracy score (25% weight)"
+                    },
+                    "stakeholderCoverage": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 100,
+                      "description": "Stakeholder coverage score (20% weight)"
+                    },
+                    "analyticalDepth": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 100,
+                      "description": "Analytical depth score (20% weight)"
+                    },
+                    "editorialConsistency": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 100,
+                      "description": "Editorial consistency score (15% weight)"
+                    },
+                    "evidenceQuality": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 100,
+                      "description": "Evidence quality score (10% weight)"
+                    },
+                    "languageQuality": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 100,
+                      "description": "Language quality score (10% weight)"
+                    }
+                  }
+                },
+                "multidimensionalOverallScore": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "description": "Weighted overall score from multi-dimensional assessment"
+                },
+                "iterationCount": {
+                  "type": "integer",
+                  "minimum": 2,
+                  "description": "Number of quality assessment iterations performed (always ≥ 2)"
                 }
               },
               "required": ["qualityScore", "analyticalDepth", "wordCount"]

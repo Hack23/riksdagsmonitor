@@ -12,7 +12,13 @@ import { translateSwedishContent } from '../translation-dictionary.js';
 import type { Language } from '../types/language.js';
 import type { DateRange, ArticleQualityScore } from '../types/article.js';
 import {
+  assessArticleQuality,
+  printQualityReport,
+  injectQualityMetadata,
+} from '../ai-analysis/quality-assessor.js';
+import {
   NEWS_DIR,
+  METADATA_DIR,
   dryRunArg,
   stats,
   QUALITY_THRESHOLD,
@@ -59,40 +65,101 @@ export async function writeArticle(html: string, filename: string): Promise<bool
 }
 
 // ---------------------------------------------------------------------------
+// Per-article quality score persistence
+// ---------------------------------------------------------------------------
+
+/** In-memory store for per-article multi-dimensional scores (flushed at end of run) */
+const perArticleScores: Record<string, {
+  filename: string;
+  lang: string;
+  articleType: string;
+  score: number;
+  passed: boolean;
+  multidimensional: {
+    overallScore: number;
+    passesThreshold: boolean;
+    iterationCount: number;
+    dimensions: Record<string, number>;
+    issueCount: number;
+  };
+  timestamp: string;
+}> = {};
+
+/**
+ * Persist all collected per-article quality scores to
+ * `news/metadata/quality-scores.json`.  Called automatically after each
+ * article write so the file is always up-to-date even on partial runs.
+ */
+function flushQualityScores(): void {
+  if (dryRunArg) return;
+  try {
+    if (!fs.existsSync(METADATA_DIR)) {
+      fs.mkdirSync(METADATA_DIR, { recursive: true });
+    }
+    const outPath = path.join(METADATA_DIR, 'quality-scores.json');
+    // Merge with any previously stored scores so we accumulate across runs
+    let existing: typeof perArticleScores = {};
+    if (fs.existsSync(outPath)) {
+      try {
+        existing = JSON.parse(fs.readFileSync(outPath, 'utf-8')) as typeof perArticleScores;
+      } catch {
+        // Corrupt file — start fresh
+      }
+    }
+    const merged = { ...existing, ...perArticleScores };
+    // Warn if we are overwriting previously stored scores for any filename
+    const overwritten = Object.keys(perArticleScores).filter(k => k in existing);
+    if (overwritten.length > 0) {
+      console.warn(`  ℹ️  Updating quality scores for ${overwritten.length} previously scored article(s): ${overwritten.join(', ')}`);
+    }
+    fs.writeFileSync(outPath, JSON.stringify(merged, null, 2), 'utf-8');
+  } catch (err: unknown) {
+    console.warn(`  ⚠️  Could not persist quality scores: ${(err as Error).message}`);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Article quality validation
 // ---------------------------------------------------------------------------
 
 /**
  * Validate the quality of a generated article HTML.
  *
- * Scoring (0–100):
- *  - wordScore      (0–50): proportional to word count up to 1 000 words
- *  - sectionScore   (0–30): based on number of analytical <h2> sections (full at ≥ 3)
- *  - translationScore (0–20): deducted for each data-translate="true" span in non-Swedish
+ * Performs two sequential assessments:
+ *
+ *  1. **Structural scoring** (0–100): word count (0–50), h2 sections (0–30),
+ *     translation completeness (0–20). Used as the primary pass/fail gate
+ *     against `QUALITY_THRESHOLD`.
+ *
+ *  2. **Multi-dimensional assessment** via `assessArticleQuality()`, which
+ *     internally runs its own two passes (dimension computation + aggregation),
+ *     producing a 6-dimension weighted score, issue list, and suggestions.
+ *
+ * Total: 3 assessment passes — 1 structural + 2 multi-dimensional.
  *
  * @param html        - raw HTML of the article
  * @param lang        - language code of the article (e.g. "en")
  * @param articleType - article type slug (e.g. "motions")
  * @param filename    - filename for the quality record
- * @returns           ArticleQualityScore with metrics and pass/fail result
+ * @param sourceDocIds - optional list of source document IDs for factual-accuracy check
+ * @returns           ArticleQualityScore with metrics, pass/fail, and multidimensional assessment
  */
 export function validateArticleQuality(
   html: string,
   lang: string,
   articleType: string,
-  filename: string
+  filename: string,
+  sourceDocIds: readonly string[] = [],
 ): ArticleQualityScore {
-  // ----- word count (approximate: strip tags, count whitespace-delimited tokens) -----
+  // ── Pass 1: structural scoring ────────────────────────────────────────────
   const stripped: string = html.replace(/<[^>]+>/g, ' ');
   const wordCount: number = stripped.split(/\s+/).filter(w => w.length > 0).length;
   const wordScore: number = Math.min(50, Math.round((wordCount / 1000) * 50));
 
-  // ----- analytical sections (h2 headings) -----
   const h2Matches: RegExpMatchArray | null = html.match(/<h2[\s>]/gi);
   const analyticalSections: number = h2Matches ? h2Matches.length : 0;
   const sectionScore: number = Math.min(30, Math.round((analyticalSections / 3) * 30));
 
-  // ----- translation completeness (non-Swedish only) -----
   const untranslatedMatches: RegExpMatchArray | null = html.match(/data-translate="true"/g);
   const untranslatedSpans: number = untranslatedMatches ? untranslatedMatches.length : 0;
   const translationDeduction: number = lang === 'sv' ? 0 : Math.min(20, untranslatedSpans * 2);
@@ -100,16 +167,21 @@ export function validateArticleQuality(
 
   const score: number = wordScore + sectionScore + translationScore;
 
-  // ----- unknown authors -----
   const unknownMatches: RegExpMatchArray | null = html.match(/Unknown \(Unknown\)/g);
   const unknownAuthors: number = unknownMatches ? unknownMatches.length : 0;
 
   const passed: boolean = score >= QUALITY_THRESHOLD;
 
-  // ----- console report -----
+  // ── Pass 2: multi-dimensional assessment ─────────────────────────────────
+  // Threshold for multi-dimensional pipeline: 60 out of 100
+  const multiPassThreshold = 60;
+  const multidimensional = assessArticleQuality(html, lang, sourceDocIds, multiPassThreshold);
+  printQualityReport(multidimensional, filename);
+
+  // ----- console report (structural) -----
   const scoreLabel: string = passed ? '✅' : '⚠️';
   const reportId: string = filename.replace(/\.html$/, '');
-  console.log(`\n📊 Article Quality Report: ${reportId}`);
+  console.log(`\n📊 Article Quality Report (structural): ${reportId}`);
   console.log(`   Word count:           ${wordCount} (score: ${wordScore}/50)`);
   console.log(`   Analytical sections:  ${analyticalSections} (score: ${sectionScore}/30)`);
   console.log(`   Untranslated spans:   ${untranslatedSpans} (score: ${translationScore}/20)`);
@@ -132,6 +204,41 @@ export function validateArticleQuality(
     }
   }
 
+  if (!multidimensional.passesThreshold) {
+    console.warn(`   ⚠️  Multi-dimensional score ${multidimensional.overallScore}/100 below threshold ${multiPassThreshold}.`);
+    if (multidimensional.suggestions.length > 0) {
+      console.warn('      Top improvement suggestions:');
+      for (const s of multidimensional.suggestions.slice(0, 3)) {
+        console.warn(`        → ${s}`);
+      }
+    }
+  }
+
+  // Accumulate per-article score for flush
+  perArticleScores[filename] = {
+    filename,
+    lang,
+    articleType,
+    score,
+    passed,
+    multidimensional: {
+      overallScore: multidimensional.overallScore,
+      passesThreshold: multidimensional.passesThreshold,
+      iterationCount: multidimensional.iterationCount,
+      dimensions: {
+        factualAccuracy:      multidimensional.dimensions.factualAccuracy.score,
+        stakeholderCoverage:  multidimensional.dimensions.stakeholderCoverage.score,
+        analyticalDepth:      multidimensional.dimensions.analyticalDepth.score,
+        editorialConsistency: multidimensional.dimensions.editorialConsistency.score,
+        evidenceQuality:      multidimensional.dimensions.evidenceQuality.score,
+        languageQuality:      multidimensional.dimensions.languageQuality.score,
+      },
+      issueCount: multidimensional.issues.length,
+    },
+    timestamp: new Date().toISOString(),
+  };
+  flushQualityScores();
+
   return {
     filename,
     lang,
@@ -141,14 +248,15 @@ export function validateArticleQuality(
     untranslatedSpans,
     analyticalSections,
     score,
-    passed
+    passed,
+    multidimensional,
   };
 }
 
 /**
  * Write article in specified language
  */
-export async function writeSingleArticle(html: string, slug: string, lang: Language, articleType?: string): Promise<string> {
+export async function writeSingleArticle(html: string, slug: string, lang: Language, articleType?: string, sourceDocIds?: readonly string[]): Promise<string> {
   const filename: string = `${slug}-${lang}.html`;
   // Translate any remaining Swedish data-translate spans before writing or validating
   const translatedHtml: string = translateSwedishContent(html, lang);
@@ -157,9 +265,21 @@ export async function writeSingleArticle(html: string, slug: string, lang: Langu
   // full slug if the slug does not follow the YYYY-MM-DD-{type} pattern.
   const slugParts: string[] = slug.split('-');
   const inferredType: string = slugParts.length >= 4 ? slugParts.slice(3).join('-') : slug;
-  const qualityScore: ArticleQualityScore = validateArticleQuality(translatedHtml, lang, articleType ?? inferredType, filename);
+  const qualityScore: ArticleQualityScore = validateArticleQuality(
+    translatedHtml,
+    lang,
+    articleType ?? inferredType,
+    filename,
+    sourceDocIds ?? [],
+  );
   stats.qualityScores.push(qualityScore);
-  await writeArticle(translatedHtml, filename);
+
+  // Inject quality metadata (meta tag + JSON-LD) into article HTML
+  const finalHtml: string = qualityScore.multidimensional
+    ? injectQualityMetadata(translatedHtml, qualityScore.multidimensional)
+    : translatedHtml;
+
+  await writeArticle(finalHtml, filename);
   stats.generated += 1;
   stats.articles.push(filename);
   return filename;

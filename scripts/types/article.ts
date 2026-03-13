@@ -129,6 +129,56 @@ export interface ArticleQualityScore {
   score: number;
   /** Whether the article passed the quality threshold */
   passed: boolean;
+  /** Optional multi-dimensional quality assessment (populated by quality-assessor) */
+  multidimensional?: MultiDimensionalQualityAssessment;
+}
+
+// ---------------------------------------------------------------------------
+// Multi-dimensional quality assessment types (re-exported from quality-assessor)
+// ---------------------------------------------------------------------------
+
+/** Score for a single quality dimension */
+export interface DimensionScore {
+  /** 0–100 score for this dimension */
+  score: number;
+  /** Evidence items used to compute the score */
+  evidence: string[];
+  /** Suggested improvements for this dimension */
+  improvements: string[];
+}
+
+/** Severity of a quality issue */
+export type QualityIssueSeverity = 'critical' | 'major' | 'minor';
+
+/** A single quality problem found in an article */
+export interface QualityIssue {
+  severity: QualityIssueSeverity;
+  dimension: string;
+  description: string;
+  suggestedFix: string;
+}
+
+/** Full multi-dimensional quality assessment result */
+export interface MultiDimensionalQualityAssessment {
+  /** 0–100 weighted overall score */
+  overallScore: number;
+  /** Per-dimension scores */
+  dimensions: {
+    factualAccuracy: DimensionScore;
+    stakeholderCoverage: DimensionScore;
+    analyticalDepth: DimensionScore;
+    editorialConsistency: DimensionScore;
+    evidenceQuality: DimensionScore;
+    languageQuality: DimensionScore;
+  };
+  /** Issues detected (sorted: critical → major → minor) */
+  issues: QualityIssue[];
+  /** Suggested improvements */
+  suggestions: string[];
+  /** Whether the article passes the quality threshold */
+  passesThreshold: boolean;
+  /** Iteration count (always ≥ 2) */
+  iterationCount: number;
 }
 
 /** Aggregate statistics for a full news generation run */

@@ -402,6 +402,76 @@ fi
 echo ""
 
 # ============================================================================
+# Check 13: Content quality scores from multi-dimensional assessment
+# ============================================================================
+echo "📋 Check 13: Content quality scores (multi-dimensional assessment)"
+
+QUALITY_SCORES_FILE="news/metadata/quality-scores.json"
+
+if [ ! -f "$QUALITY_SCORES_FILE" ]; then
+  echo -e "${YELLOW}⚠️ quality-scores.json not found — no articles generated yet or file not persisted${NC}"
+  WARNINGS=$((WARNINGS + 1))
+else
+  # Parse quality scores using node/jq if available
+  if command -v node &>/dev/null; then
+    QUALITY_SUMMARY=$(node -e "
+      const fs = require('fs');
+      try {
+        const scores = JSON.parse(fs.readFileSync('$QUALITY_SCORES_FILE', 'utf-8'));
+        const entries = Object.values(scores);
+        if (entries.length === 0) { console.log('NO_ARTICLES'); process.exit(0); }
+        const overallScores = entries
+          .filter(e => e.multidimensional && typeof e.multidimensional.overallScore === 'number')
+          .map(e => e.multidimensional.overallScore);
+        if (overallScores.length === 0) { console.log('NO_MULTIDIM'); process.exit(0); }
+        const avg = Math.round(overallScores.reduce((a, b) => a + b, 0) / overallScores.length);
+        const passed = overallScores.filter(s => s >= 60).length;
+        const critical = entries.filter(e => e.multidimensional && !e.multidimensional.passesThreshold).length;
+        console.log(avg + '|' + passed + '|' + overallScores.length + '|' + critical);
+      } catch(e) { console.log('ERROR:' + e.message); }
+    " 2>/dev/null)
+
+    if [[ "$QUALITY_SUMMARY" == "NO_ARTICLES" ]]; then
+      echo -e "${YELLOW}⚠️ quality-scores.json is empty — no articles scored${NC}"
+      WARNINGS=$((WARNINGS + 1))
+    elif [[ "$QUALITY_SUMMARY" == "NO_MULTIDIM" ]]; then
+      echo -e "${YELLOW}⚠️ No multi-dimensional scores found in quality-scores.json${NC}"
+      WARNINGS=$((WARNINGS + 1))
+    elif [[ "$QUALITY_SUMMARY" == ERROR:* ]]; then
+      echo -e "${YELLOW}⚠️ Could not parse quality-scores.json: ${QUALITY_SUMMARY}${NC}"
+      WARNINGS=$((WARNINGS + 1))
+    else
+      AVG_SCORE=$(echo "$QUALITY_SUMMARY" | cut -d'|' -f1)
+      PASSED_COUNT=$(echo "$QUALITY_SUMMARY" | cut -d'|' -f2)
+      TOTAL_COUNT=$(echo "$QUALITY_SUMMARY" | cut -d'|' -f3)
+      CRITICAL_COUNT=$(echo "$QUALITY_SUMMARY" | cut -d'|' -f4)
+
+      echo -e "   Average multi-dimensional score: ${AVG_SCORE}/100"
+      echo -e "   Articles passing threshold (≥60): ${PASSED_COUNT}/${TOTAL_COUNT}"
+
+      if [ "$CRITICAL_COUNT" -gt 0 ]; then
+        echo -e "${YELLOW}⚠️ $CRITICAL_COUNT article(s) scored below the 60/100 multi-dimensional threshold${NC}"
+        WARNINGS=$((WARNINGS + 1))
+      fi
+
+      if [ "$AVG_SCORE" -lt 40 ]; then
+        echo -e "${RED}❌ Average content quality score ${AVG_SCORE}/100 is critically low (< 40)${NC}"
+        ERRORS=$((ERRORS + 1))
+      elif [ "$AVG_SCORE" -lt 60 ]; then
+        echo -e "${YELLOW}⚠️ Average content quality score ${AVG_SCORE}/100 is below recommended level (< 60)${NC}"
+        WARNINGS=$((WARNINGS + 1))
+      else
+        echo -e "${GREEN}✅ Content quality average ${AVG_SCORE}/100 meets threshold${NC}"
+      fi
+    fi
+  else
+    echo -e "${YELLOW}⚠️ node not available — skipping quality score analysis${NC}"
+    WARNINGS=$((WARNINGS + 1))
+  fi
+fi
+echo ""
+
+# ============================================================================
 # Summary
 # ============================================================================
 echo "================================================================"
