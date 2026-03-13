@@ -33,7 +33,7 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     govProposals: 'Propuestas gubernamentales',
     govProposalsDesc: (n: number): string => `${n} nuevas proposiciones gubernamentales en revisión`,
     weekAhead: 'Semana próxima', committeeReportsTag: 'Informes de comisión',
-    govPropsTag: 'Proposiciones gubernamentales', oppMotionsTag: 'Mociones de oposición',
+    govPropsTag: 'Proposiciones gubernamentales', oppMotionsTag: 'Mociones de oposición', interpellationsTag: 'Debates de interpelación',
     // Enhanced summary labels
     committeeReport: 'informe de comisión',
     on: 'sobre',
@@ -134,7 +134,7 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     govProposals: 'Regeringsvoorstellen',
     govProposalsDesc: (n: number): string => `${n} nieuwe regeringsvoorstellen in behandeling`,
     weekAhead: 'Week vooruit', committeeReportsTag: 'Commissierapporten',
-    govPropsTag: 'Regeringsvoorstellen', oppMotionsTag: 'Oppositiemoties',
+    govPropsTag: 'Regeringsvoorstellen', oppMotionsTag: 'Oppositiemoties', interpellationsTag: 'Interpellatiedebatten',
     // Enhanced summary labels
     committeeReport: 'commissierapport',
     on: 'over',
@@ -235,7 +235,7 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     govProposals: 'مقترحات حكومية',
     govProposalsDesc: (n: number): string => `${n} مقترحات حكومية جديدة قيد المراجعة`,
     weekAhead: 'الأسبوع القادم', committeeReportsTag: 'تقارير اللجان',
-    govPropsTag: 'مقترحات الحكومة', oppMotionsTag: 'اقتراحات المعارضة',
+    govPropsTag: 'مقترحات الحكومة', oppMotionsTag: 'اقتراحات المعارضة', interpellationsTag: 'مناقشات الاستجواب',
     // Enhanced summary labels
     committeeReport: 'تقرير لجنة',
     on: 'بشأن',
@@ -336,7 +336,7 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     govProposals: 'הצעות ממשלה',
     govProposalsDesc: (n: number): string => `${n} הצעות ממשלה חדשות בבחינה`,
     weekAhead: 'השבוע הקרוב', committeeReportsTag: 'דוחות ועדה',
-    govPropsTag: 'הצעות ממשלה', oppMotionsTag: 'הצעות אופוזיציה',
+    govPropsTag: 'הצעות ממשלה', oppMotionsTag: 'הצעות אופוזיציה', interpellationsTag: 'דיוני אינטרפלציה',
     // Enhanced summary labels
     committeeReport: 'דוח ועדה',
     on: 'על',
@@ -437,7 +437,7 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     govProposals: '政府提案',
     govProposalsDesc: (n: number): string => `${n}件の新しい政府提案が審議中`,
     weekAhead: '来週の展望', committeeReportsTag: '委員会報告',
-    govPropsTag: '政府提案', oppMotionsTag: '野党動議',
+    govPropsTag: '政府提案', oppMotionsTag: '野党動議', interpellationsTag: '質問主意書討論',
     // Enhanced summary labels
     committeeReport: '委員会報告',
     on: 'について',
@@ -538,7 +538,7 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     govProposals: '정부 법안',
     govProposalsDesc: (n: number): string => `${n}개 새 정부 법안 검토 중`,
     weekAhead: '다음 주 전망', committeeReportsTag: '위원회 보고서',
-    govPropsTag: '정부 법안', oppMotionsTag: '야당 동의',
+    govPropsTag: '정부 법안', oppMotionsTag: '야당 동의', interpellationsTag: '대정부 질의 토론',
     // Enhanced summary labels
     committeeReport: '위원회 보고서',
     on: '에 관한',
@@ -639,7 +639,7 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     govProposals: '政府提案',
     govProposalsDesc: (n: number): string => `${n}项新政府提案正在审查中`,
     weekAhead: '下周展望', committeeReportsTag: '委员会报告',
-    govPropsTag: '政府提案', oppMotionsTag: '反对党动议',
+    govPropsTag: '政府提案', oppMotionsTag: '反对党动议', interpellationsTag: '质询辩论',
     // Enhanced summary labels
     committeeReport: '委员会报告',
     on: '关于',

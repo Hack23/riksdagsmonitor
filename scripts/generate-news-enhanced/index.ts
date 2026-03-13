@@ -42,6 +42,7 @@ import {
   generateCommitteeReports,
   generatePropositions,
   generateMotions,
+  generateInterpellations,
   generateDeepInspection,
 } from './generators.js';
 import { generateMonthAhead } from '../news-types/month-ahead.js';
@@ -66,6 +67,7 @@ export {
   generateCommitteeReports,
   generatePropositions,
   generateMotions,
+  generateInterpellations,
   generateDeepInspection,
   translateSwedishContent,
 };
@@ -102,6 +104,9 @@ export async function generateNews(): Promise<typeof stats> {
         break;
       case 'motions':
         await generateMotions();
+        break;
+      case 'interpellations':
+        await generateInterpellations();
         break;
       case 'breaking': {
         // Auto-detect most significant recent development: fetch today's votes and documents

@@ -147,6 +147,14 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
         tags.push(typeof tagVal === 'string' ? tagVal : '');
       }
       break;
+    case 'interpellations':
+      keywords.push(kw('interpellations'), kw('parliamentary questions'), kw('parliament'), kw('accountability'));
+      topics.push('parliament', 'accountability');
+      {
+        const tagVal = L(lang, 'interpellationsTag');
+        tags.push(typeof tagVal === 'string' ? tagVal : '');
+      }
+      break;
     case 'month-ahead':
       keywords.push(kw('parliament'), kw('month ahead'), kw('calendar'), kw('outlook'));
       topics.push('parliament', 'outlook');

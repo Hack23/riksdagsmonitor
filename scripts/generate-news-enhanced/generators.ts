@@ -414,6 +414,90 @@ export async function generateMotions(): Promise<GenerationResult> {
 }
 
 /**
+ * Generate Interpellation Debates article
+ */
+export async function generateInterpellations(): Promise<GenerationResult> {
+  console.log('🔔 Generating Interpellation Debates article...');
+
+  try {
+    const client: MCPClient = await getSharedClient();
+
+    console.log('  🔄 Fetching interpellations from riksdag-regering-mcp...');
+    let interpellations: unknown[] = filterFreshDocuments(await client.fetchInterpellations({ limit: 15 }) as RawDocument[]);
+    console.log(`  📊 Found ${interpellations.length} interpellations`);
+
+    if (interpellations.length === 0) {
+      console.log('  ℹ️ No new interpellations found, skipping');
+      return { success: true, files: 0 };
+    }
+
+    // Enrich documents with content and metadata
+    console.log('  🔍 Enriching documents with detailed content...');
+    interpellations = await client.enrichDocumentsWithContent(interpellations as Parameters<MCPClient['enrichDocumentsWithContent']>[0], 3);
+    const enrichedCount: number = (interpellations as Array<Record<string, unknown>>).filter(m => m['contentFetched']).length;
+    console.log(`  ✅ Enriched ${enrichedCount}/${interpellations.length} interpellations with content`);
+
+    const today: Date = new Date();
+    const slug: string = `${formatDateForSlug(today)}-interpellation-debates`;
+
+    for (const lang of languages) {
+      console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
+
+      const typedInterps = interpellations as Parameters<typeof generateArticleContent>[0]['motions'];
+      const content: string = generateArticleContent({ motions: typedInterps }, 'interpellations', lang);
+      const watchPoints = extractWatchPoints({ motions: typedInterps }, lang);
+      const metadata = generateMetadata({ motions: typedInterps }, 'interpellations', lang);
+      const readTime: string = calculateReadTime(content);
+      const sources: string[] = generateSources(['get_interpellationer', 'get_dokument_innehall']);
+
+      const titles: Record<Language, TitleSet> = {
+        en: { title: `Interpellation Debates: Holding Government to Account`, subtitle: `Analysis of ${interpellations.length} interpellation debates demanding ministerial accountability` },
+        sv: { title: `Interpellationsdebatter: Regeringen ställs till svars`, subtitle: `Analys av ${interpellations.length} interpellationsdebatter som kräver ministersvar` },
+        da: { title: `Interpellationsdebatter: Regeringen stilles til ansvar`, subtitle: `Analyse af ${interpellations.length} interpellationsdebatter` },
+        no: { title: `Interpellasjonsdebatter: Regjeringen stilles til ansvar`, subtitle: `Analyse av ${interpellations.length} interpellasjonsdebatter` },
+        fi: { title: `Välikysymyskeskustelut: Hallitus tilivelvollisena`, subtitle: `Analyysi ${interpellations.length} välikysymyskeskustelusta` },
+        de: { title: `Interpellationsdebatten: Regierung in der Verantwortung`, subtitle: `Analyse von ${interpellations.length} Interpellationsdebatten` },
+        fr: { title: `Débats d'interpellation: Le gouvernement sommé de répondre`, subtitle: `Analyse de ${interpellations.length} débats d'interpellation` },
+        es: { title: `Debates de interpelación: El gobierno rinde cuentas`, subtitle: `Análisis de ${interpellations.length} debates de interpelación` },
+        nl: { title: `Interpellatiedebatten: Regering ter verantwoording`, subtitle: `Analyse van ${interpellations.length} interpellatiedebatten` },
+        ar: { title: `مناقشات الاستجواب: محاسبة الحكومة`, subtitle: `تحليل ${interpellations.length} مناقشات استجواب` },
+        he: { title: `דיוני אינטרפלציה: הממשלה נדרשת לתת דין וחשבון`, subtitle: `ניתוח ${interpellations.length} דיוני אינטרפלציה` },
+        ja: { title: `質問主意書討論：政府の説明責任を追及`, subtitle: `${interpellations.length}件の質問主意書討論の分析` },
+        ko: { title: `대정부 질의 토론: 정부 책임 추궁`, subtitle: `${interpellations.length}건의 대정부 질의 토론 분석` },
+        zh: { title: `质询辩论：追究政府责任`, subtitle: `${interpellations.length}场质询辩论分析` }
+      };
+
+      const langTitles: TitleSet = titles[lang] || titles.en;
+
+      const html: string = generateArticleHTML({
+        slug: `${slug}-${lang}.html`,
+        title: langTitles.title,
+        subtitle: langTitles.subtitle,
+        date: toISODate(today),
+        type: 'analysis' as ArticleCategory,
+        readTime,
+        lang,
+        content,
+        watchPoints,
+        sources,
+        keywords: metadata.keywords,
+        topics: metadata.topics,
+        tags: metadata.tags
+      });
+
+      await writeSingleArticle(html, slug, lang, 'interpellations');
+    }
+
+    return { success: true, files: languages.length, slug };
+
+  } catch (error: unknown) {
+    console.error('❌ Error generating Interpellations:', (error as Error).message);
+    stats.errors++;
+    return { success: false, error: (error as Error).message };
+  }
+}
+
+/**
  * Extract a Riksdag document ID (dok_id) from a known URL pattern.
  * Supports:
  *   - https://riksdagen.se/sv/dokument-och-lagar/dokument/{type}/{dok_id}/

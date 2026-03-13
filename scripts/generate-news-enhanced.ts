@@ -17,7 +17,7 @@
  *
  * Valid article types (defined in config.ts):
  *   'week-ahead', 'month-ahead', 'weekly-review', 'monthly-review',
- *   'committee-reports', 'propositions', 'motions', 'breaking'
+ *   'committee-reports', 'propositions', 'motions', 'interpellations', 'breaking'
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -28,6 +28,7 @@ export {
   generateCommitteeReports,
   generatePropositions,
   generateMotions,
+  generateInterpellations,
   writeSingleArticle,
   writeArticlePair,
   validateArticleQuality,
