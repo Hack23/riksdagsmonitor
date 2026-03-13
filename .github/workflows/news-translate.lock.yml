@@ -23,7 +23,7 @@
 #
 # Dedicated translation workflow for news articles. Generates high-quality translations for all non-core languages. Dispatched by content workflows or run manually/on schedule to translate untranslated articles.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"11424d16b5fed420740a949ce369d2c7c1c951826b43624bd637c57d5589a973","compiler_version":"v0.57.2"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"a56d1a4ba9fecebf58a28510487fefb57cc063a5ddd14e9f66a768fc7c2bb14d","compiler_version":"v0.57.2"}
 
 name: "News: Translate Articles"
 "on":
@@ -52,6 +52,7 @@ permissions: {}
 
 concurrency:
   group: "gh-aw-${{ github.workflow }}"
+  cancel-in-progress: true
 
 run-name: "News: Translate Articles"
 
@@ -272,6 +273,7 @@ jobs:
       security-events: read
     concurrency:
       group: "gh-aw-copilot-${{ github.workflow }}-${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}"
+      cancel-in-progress: true
     env:
       DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
       GH_AW_ASSETS_ALLOWED_EXTS: ""
