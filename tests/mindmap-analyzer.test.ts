@@ -67,39 +67,42 @@ describe('buildAIMindmapBranches', () => {
 
   it('includes a Legislative Pipeline branch when propositions are present', () => {
     const result = buildAIMindmapBranches(makeDocSet(), null, 'en');
-    const pipelineBranch = result.branches.find(b => b.label.includes('Pipeline') || b.label.includes('Lagstiftning'));
+    // Use icon ⚖️ as a stable identifier — independent of language
+    const pipelineBranch = result.branches.find(b => b.icon === '⚖️');
     expect(pipelineBranch).toBeDefined();
   });
 
   it('marks the Legislative Pipeline branch as critical importance', () => {
     const result = buildAIMindmapBranches(makeDocSet(), null, 'en');
-    const pipelineBranch = result.branches.find(b => b.label.includes('Pipeline'));
+    const pipelineBranch = result.branches.find(b => b.icon === '⚖️');
     expect(pipelineBranch?.importance).toBe('critical');
   });
 
   it('includes sub-branches for the legislative pipeline when multiple doc types present', () => {
     const result = buildAIMindmapBranches(makeDocSet(), null, 'en');
-    const pipelineBranch = result.branches.find(b => b.label.includes('Pipeline'));
+    const pipelineBranch = result.branches.find(b => b.icon === '⚖️');
     expect(pipelineBranch?.subBranches).toBeDefined();
     expect(pipelineBranch?.subBranches!.length).toBeGreaterThan(0);
   });
 
   it('includes a Risks & Blockers branch when motions are present', () => {
     const result = buildAIMindmapBranches(makeDocSet(), null, 'en');
-    const riskBranch = result.branches.find(b => b.label.includes('Risk') || b.label.includes('Blocker'));
+    // Use icon ⚠️ as a stable identifier
+    const riskBranch = result.branches.find(b => b.icon === '⚠️');
     expect(riskBranch).toBeDefined();
   });
 
   it('includes an EU Context branch when EU documents are present', () => {
     const result = buildAIMindmapBranches(makeDocSet(), null, 'en');
-    const euBranch = result.branches.find(b => b.label.includes('EU') || b.label.includes('International'));
+    // Use icon 🇪🇺 as a stable identifier
+    const euBranch = result.branches.find(b => b.icon === '🇪🇺');
     expect(euBranch).toBeDefined();
   });
 
   it('includes cross-committee dependencies when multiple organs are involved', () => {
     const result = buildAIMindmapBranches(makeDocSet(), null, 'en');
-    const crossBranch = result.branches.find(b =>
-      b.label.includes('Committee') || b.label.includes('Kommitté') || b.label.includes('Cross'));
+    // Use icon 🔄 as a stable identifier
+    const crossBranch = result.branches.find(b => b.icon === '🔄');
     expect(crossBranch).toBeDefined();
   });
 
@@ -136,8 +139,8 @@ describe('buildAIMindmapBranches', () => {
   it('works with Swedish language output', () => {
     const result = buildAIMindmapBranches(makeDocSet(), null, 'sv');
     expect(result.branches.length).toBeGreaterThanOrEqual(5);
-    // Swedish pipeline label
-    const pipelineBranch = result.branches.find(b => b.label.includes('Lagstiftning'));
+    // Swedish pipeline branch — use icon as stable identifier
+    const pipelineBranch = result.branches.find(b => b.icon === '⚖️');
     expect(pipelineBranch).toBeDefined();
   });
 

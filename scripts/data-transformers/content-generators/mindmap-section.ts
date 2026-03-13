@@ -106,6 +106,9 @@ const BRANCH_COLORS: Readonly<Record<MindmapBranchColor, { bg: string; border: s
   red:     { bg: '#2a0a0a', border: '#e63946', text: '#e63946' },
 };
 
+// Maximum nesting depth: 0 = top-level branch, 1 = sub-branch, sub-branches do not nest further
+const MAX_NESTING_DEPTH = 1;
+
 // ---------------------------------------------------------------------------
 // Section title labels (14 languages)
 // ---------------------------------------------------------------------------
@@ -132,8 +135,9 @@ const SECTION_TITLES: Partial<Record<string, string>> = {
 // ---------------------------------------------------------------------------
 
 /** Render a single branch or sub-branch node with its leaf items and nested sub-branches.
- * Supports up to 3 nesting levels: branch (level 0) → sub-branch (level 1) → leaf items.
- * Level is capped at 2 to prevent unbounded recursion in malformed input.
+ * Supports nesting up to MAX_NESTING_DEPTH levels deep.
+ * When `level` reaches MAX_NESTING_DEPTH, sub-branch rendering is skipped — preventing
+ * unbounded recursion regardless of how deeply subBranches are nested in input data.
  */
 function renderBranch(branch: MindmapBranch, level: number = 0): string {
   const palette = BRANCH_COLORS[branch.color] ?? BRANCH_COLORS.cyan;
@@ -151,9 +155,9 @@ function renderBranch(branch: MindmapBranch, level: number = 0): string {
           .join('\n')}\n      </ul>`
       : '';
 
-  // Sub-branches rendered one level deeper (only from top-level branches)
+  // Sub-branches are only rendered when we have not yet reached the maximum nesting depth
   const subBranchBlock =
-    level < 2 && branch.subBranches && branch.subBranches.length > 0
+    level < MAX_NESTING_DEPTH && branch.subBranches && branch.subBranches.length > 0
       ? `\n      <div class="mindmap-sub-branches" role="list">\n${branch.subBranches
           .map(sb => renderBranch(sb, level + 1))
           .join('\n')}\n      </div>`

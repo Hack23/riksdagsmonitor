@@ -141,13 +141,16 @@ function extractOrgans(docs: RawDocument[]): string[] {
   return [...organs].filter(Boolean);
 }
 
+/** Detect whether a single document has EU connection signals */
+function hasEuSignals(doc: RawDocument): boolean {
+  const t = (doc.titel || doc.title || '').toLowerCase();
+  return /\beu\b/.test(t) || t.includes('europa') || t.includes('direktiv') ||
+    (doc.doktyp || doc.documentType) === 'fpm';
+}
+
 /** Detect whether any document has EU connection signals */
 function hasEuConnection(docs: RawDocument[]): boolean {
-  return docs.some(d => {
-    const t = (d.titel || d.title || '').toLowerCase();
-    return /\beu\b/.test(t) || t.includes('europa') || t.includes('direktiv') ||
-      (d.doktyp || d.documentType) === 'fpm';
-  });
+  return docs.some(hasEuSignals);
 }
 
 /** Classify documents by broad legislative role */
@@ -278,13 +281,14 @@ function pass2RelationshipDiscovery(
     });
   }
 
-  // Stakeholder network — built from document actors
+  // Stakeholder network — built from document actors (names, authors, political parties)
   const actorSet = new Set<string>();
   docs.forEach(d => {
     if (d.intressent_namn) actorSet.add(d.intressent_namn);
     if (d.author) actorSet.add(d.author);
+    if (d.parti) actorSet.add(d.parti);
   });
-  const actors = [...actorSet].slice(0, 5);
+  const actors = [...actorSet].slice(0, 4);
 
   const stakeholderItems: string[] = [...actors];
   if (classified.propositions.length > 0) stakeholderItems.push(`Government (${classified.propositions.length} propositions)`);
@@ -322,12 +326,11 @@ function pass2RelationshipDiscovery(
     }
   }
 
-  // EU / international context
-  const euDocs = [...classified.euPositions, ...docs.filter(d => {
-    const t = (d.titel || d.title || '').toLowerCase();
-    return /\beu\b/.test(t) || t.includes('europa') || t.includes('direktiv');
-  })];
-  const uniqueEuDocs = euDocs.filter((d, i, arr) => arr.indexOf(d) === i);
+  // EU / international context — use set deduplication by dok_id
+  const euDocMap = new Map<string, RawDocument>();
+  classified.euPositions.forEach(d => euDocMap.set(d.dok_id ?? titleOf(d), d));
+  docs.filter(hasEuSignals).forEach(d => euDocMap.set(d.dok_id ?? titleOf(d), d));
+  const uniqueEuDocs = [...euDocMap.values()];
   if (uniqueEuDocs.length > 0) {
     branches.push({
       label: L(LABELS.euInternationalContext, lang, 'EU & International Context'),
@@ -388,15 +391,30 @@ function pass3ValidationAndCompleteness(
     });
   }
 
-  // Guarantee minimum 5 branches for analytical richness
+  // Guarantee minimum 5 branches for analytical richness — use varied fallback labels
+  const fallbackBranches: Pick<MindmapBranch, 'label' | 'color' | 'icon' | 'importance' | 'items'>[] = [
+    { label: L(LABELS.policyDomains, lang, 'Policy Domains'), color: 'green', icon: '📋', importance: 'low',
+      items: [`${docs.length} parliamentary documents analysed`] },
+    { label: L(LABELS.stakeholderNetwork, lang, 'Stakeholder Network'), color: 'cyan', icon: '👥', importance: 'low',
+      items: ['Government', 'Parliament', 'Civil Society'] },
+    { label: L(LABELS.legislativeTimeline, lang, 'Legislative Timeline'), color: 'yellow', icon: '📅', importance: 'low',
+      items: [`Session ${new Date().getFullYear()}`] },
+    { label: L(LABELS.euInternationalContext, lang, 'EU & International Context'), color: 'blue', icon: '🌐', importance: 'low',
+      items: ['European Union', 'International obligations'] },
+    { label: L(LABELS.riskBlockers, lang, 'Risks & Blockers'), color: 'magenta', icon: '⚠️', importance: 'low',
+      items: ['Legislative gaps', 'Implementation challenges'] },
+  ];
+  let fallbackIdx = 0;
   while (branches.length < 5) {
-    branches.push({
-      label: L(LABELS.policyDomains, lang, 'Policy Domains'),
-      color: 'green',
-      icon: '📋',
-      importance: 'low',
-      items: [`${docs.length} parliamentary documents analysed`],
-    });
+    const fb = fallbackBranches[fallbackIdx % fallbackBranches.length];
+    fallbackIdx++;
+    // Skip if a branch with this label already exists
+    if (!branches.some(b => b.label === fb.label)) {
+      branches.push({ ...fb });
+    } else if (fallbackIdx > fallbackBranches.length * 2) {
+      // Safety: avoid infinite loop
+      break;
+    }
   }
 
   return branches;
