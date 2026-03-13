@@ -1083,7 +1083,8 @@ function writeAnalysisMetadata(
     const filename = path.join(METADATA_DIR, `ai-analysis-${articleSlug}-${metadata.lang}.json`);
     fs.writeFileSync(filename, JSON.stringify(metadata, null, 2), 'utf-8');
   } catch (err: unknown) {
-    console.warn(`  ⚠️ Could not write analysis metadata: ${(err as Error).message}`);
+    const msg = err instanceof Error ? err.message : String(err);
+    console.warn(`  ⚠️ Could not write analysis metadata: ${msg}`);
   }
 }
 
@@ -1264,11 +1265,12 @@ function swotDefault(key: string, topic: string | null, lang: Language): string 
  * Build SWOT and dashboard TemplateSections for a deep-inspection article.
 /**
  * Build SWOT and dashboard TemplateSections for a deep-inspection article
- * using the legacy metadata-only approach (kept as fallback).
+ * using the legacy metadata-only approach.
  *
- * @deprecated Use `buildDeepInspectionSectionsFromAnalysis` (AI pipeline) instead.
- * Kept for backward compatibility and as a fallback when the AI pipeline
- * is not available.
+ * @deprecated The `generateDeepInspection()` generator now uses
+ * `buildDeepInspectionSectionsFromAnalysis` (AI pipeline) by default.
+ * This function is retained for external consumers that construct article
+ * sections without the pipeline, and for integration tests.
  */
 export function buildDeepInspectionSections(
   docs: RawDocument[],

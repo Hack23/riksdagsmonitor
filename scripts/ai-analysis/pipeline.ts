@@ -290,11 +290,10 @@ function applyLanguageFraming(
 ): string {
   if (lang === 'en') return enText;
 
-  const topicFrag = topic ? ` (${escapeHtml(topic)})` : '';
-  const domainFrag = domain ? ` inom ${escapeHtml(domain)}` : '';
-
   // Swedish translations (most detailed — primary source language for analysis)
   if (lang === 'sv') {
+    const topicFrag = topic ? ` (${escapeHtml(topic)})` : '';
+    const domainFrag = domain ? ` inom ${escapeHtml(domain)}` : '';
     const svCompositions: Record<string, Record<string, string>> = {
       government: {
         strengths: `Lagstiftningsbehörighet och exekutiv agendasättningskapacitet${topicFrag}${domainFrag} genom propositioner och förordningar`,

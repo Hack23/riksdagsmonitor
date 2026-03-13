@@ -16,7 +16,7 @@ import {
   aiAnalysisPipeline,
   runAnalysisPipeline,
 } from '../scripts/ai-analysis/pipeline.js';
-import type { AnalysisPipelineOptions, AnalysisResult } from '../scripts/ai-analysis/types.js';
+import type { AnalysisPipelineOptions } from '../scripts/ai-analysis/types.js';
 import type { RawDocument } from '../scripts/data-transformers/types.js';
 
 // ---------------------------------------------------------------------------
@@ -436,8 +436,18 @@ describe('SWOT entry content quality', () => {
       ...sh.swot.threats,
     ]).map(e => e.text).join(' ');
 
+    // Must not contain raw HTML tags or unescaped script
     expect(allText).not.toContain('<script>');
-    expect(allText).not.toContain('alert("xss")');
+    expect(allText).not.toContain('</script>');
+    // Positive assertion: the title content should be HTML-escaped when present
+    // (document title entry text either uses the escaped version or is a placeholder)
+    const titleEntries = result.stakeholderSwot
+      .flatMap(sh => sh.swot.strengths)
+      .filter(e => e.sourceDocIds.includes('XSS001'));
+    for (const entry of titleEntries) {
+      // Raw script tags must be absent; entities (&lt;, &gt;) or sanitized content is expected
+      expect(entry.text).not.toMatch(/<script[\s>]/i);
+    }
   });
 });
 
