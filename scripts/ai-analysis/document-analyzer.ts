@@ -187,7 +187,13 @@ export function clearAnalysisCache(): void {
 
 /** Return the cache key for a document. */
 function cacheKey(doc: RawDocument): string {
-  return doc.dok_id ?? doc.url ?? `${doc.titel ?? doc.title ?? 'unknown'}-${doc.datum ?? ''}`;
+  if (doc.dok_id) return `dok:${doc.dok_id}`;
+  if (doc.url) return `url:${doc.url}`;
+  // Include summary and fullText length as disambiguation fields to reduce collisions
+  const title = doc.titel ?? doc.title ?? 'unknown';
+  const date = doc.datum ?? '';
+  const contentLen = (doc.fullText?.length ?? 0) + (doc.summary?.length ?? 0);
+  return `title:${title}-${date}-${contentLen}`;
 }
 
 // ---------------------------------------------------------------------------
@@ -875,7 +881,12 @@ export function analyzeDocument(
     return _analysisCache.get(key)!;
   }
 
-  // Iteration 1 & 2: core analysis
+/** Minimum relevance score assigned to any detected policy domain. */
+const MIN_DOMAIN_RELEVANCE = 30;
+/** Maximum (baseline) relevance score for the first detected domain. */
+const MAX_DOMAIN_RELEVANCE = 100;
+/** Per-rank decay applied to successive domain relevance scores. */
+const DOMAIN_RELEVANCE_DECAY = 15;
   const relevantStakeholders = selectRelevantStakeholders(doc);
   const stakeholderImpacts = relevantStakeholders.map(group =>
     buildStakeholderImpact(group, doc, lang, ciaContext),
@@ -887,7 +898,7 @@ export function analyzeDocument(
   const policyDomains: PolicyDomain[] = rawDomains.map((d, i) => ({
     key: d,
     name: d,
-    relevanceScore: Math.max(30, 100 - i * 15),
+    relevanceScore: Math.max(MIN_DOMAIN_RELEVANCE, MAX_DOMAIN_RELEVANCE - i * DOMAIN_RELEVANCE_DECAY),
   }));
 
   // Iteration 2: coalition + context
