@@ -151,7 +151,7 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
       keywords.push(kw('interpellations'), kw('parliamentary questions'), kw('parliament'), kw('accountability'));
       topics.push('parliament', 'accountability');
       {
-        const tagVal = L(lang, 'oppMotionsTag');
+        const tagVal = L(lang, 'interpellationsTag');
         tags.push(typeof tagVal === 'string' ? tagVal : '');
       }
       break;

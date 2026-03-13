@@ -61,6 +61,7 @@ export interface ContentLabelSet {
   committeeReportsTag: string;
   govPropsTag: string;
   oppMotionsTag: string;
+  interpellationsTag: string;
   committeeReport: string;
   on: string;
   governmentProposition: string;

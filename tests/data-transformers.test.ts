@@ -589,7 +589,7 @@ describe('Data Transformers', () => {
       'oppMotions', 'noMotions', 'author', 'party', 'motionDefault',
       'genericContent', 'monitorDev', 'committeeDebates', 'committeeDebatesDesc',
       'govProposals', 'govProposalsDesc', 'weekAhead', 'committeeReportsTag',
-      'govPropsTag', 'oppMotionsTag'
+      'govPropsTag', 'oppMotionsTag', 'interpellationsTag'
     ];
 
     it('should have labels for all 14 supported languages', () => {

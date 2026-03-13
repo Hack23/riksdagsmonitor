@@ -33,7 +33,7 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     govProposals: 'Government Proposals',
     govProposalsDesc: (n: number): string => `${n} new government propositions under review`,
     weekAhead: 'Week Ahead', committeeReportsTag: 'Committee Reports',
-    govPropsTag: 'Government Propositions', oppMotionsTag: 'Opposition Motions',
+    govPropsTag: 'Government Propositions', oppMotionsTag: 'Opposition Motions', interpellationsTag: 'Interpellation Debates',
     // Enhanced summary labels
     committeeReport: 'committee report',
     on: 'on',
@@ -134,7 +134,7 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     govProposals: 'Regeringsförslag',
     govProposalsDesc: (n: number): string => `${n} nya regeringspropositioner under granskning`,
     weekAhead: 'Veckan som kommer', committeeReportsTag: 'Kommittérapporter',
-    govPropsTag: 'Regeringens propositioner', oppMotionsTag: 'Oppositionens motioner',
+    govPropsTag: 'Regeringens propositioner', oppMotionsTag: 'Oppositionens motioner', interpellationsTag: 'Interpellationsdebatter',
     // Enhanced summary labels
     committeeReport: 'kommittérapport',
     on: 'om',
@@ -235,7 +235,7 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     govProposals: 'Regeringsforslag',
     govProposalsDesc: (n: number): string => `${n} nye regeringsforslag under behandling`,
     weekAhead: 'Ugen fremover', committeeReportsTag: 'Udvalgsbetænkninger',
-    govPropsTag: 'Regeringsforslag', oppMotionsTag: 'Oppositionsforslag',
+    govPropsTag: 'Regeringsforslag', oppMotionsTag: 'Oppositionsforslag', interpellationsTag: 'Interpellationsdebatter',
     // Enhanced summary labels
     committeeReport: 'udvalgsbetænkning',
     on: 'om',
@@ -336,7 +336,7 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     govProposals: 'Regjeringsforslag',
     govProposalsDesc: (n: number): string => `${n} nye regjeringsproposisjoner under vurdering`,
     weekAhead: 'Uke fremover', committeeReportsTag: 'Komitéinnstillinger',
-    govPropsTag: 'Regjeringens proposisjoner', oppMotionsTag: 'Opposisjonsforslag',
+    govPropsTag: 'Regjeringens proposisjoner', oppMotionsTag: 'Opposisjonsforslag', interpellationsTag: 'Interpellasjonsdebatter',
     // Enhanced summary labels
     committeeReport: 'komitéinnstilling',
     on: 'om',
@@ -437,7 +437,7 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     govProposals: 'Hallituksen esitykset',
     govProposalsDesc: (n: number): string => `${n} uutta hallituksen esitystä käsittelyssä`,
     weekAhead: 'Tuleva viikko', committeeReportsTag: 'Valiokuntamietinnöt',
-    govPropsTag: 'Hallituksen esitykset', oppMotionsTag: 'Opposition aloitteet',
+    govPropsTag: 'Hallituksen esitykset', oppMotionsTag: 'Opposition aloitteet', interpellationsTag: 'Välikysymyskeskustelut',
     // Enhanced summary labels
     committeeReport: 'valiokunnan mietintö',
     on: 'aiheesta',
@@ -538,7 +538,7 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     govProposals: 'Regierungsvorlagen',
     govProposalsDesc: (n: number): string => `${n} neue Regierungsvorlagen in Prüfung`,
     weekAhead: 'Woche Voraus', committeeReportsTag: 'Ausschussberichte',
-    govPropsTag: 'Regierungsvorlagen', oppMotionsTag: 'Oppositionsanträge',
+    govPropsTag: 'Regierungsvorlagen', oppMotionsTag: 'Oppositionsanträge', interpellationsTag: 'Interpellationsdebatten',
     // Enhanced summary labels
     committeeReport: 'Ausschussbericht',
     on: 'über',
@@ -639,7 +639,7 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     govProposals: 'Propositions gouvernementales',
     govProposalsDesc: (n: number): string => `${n} nouvelles propositions gouvernementales à l'examen`,
     weekAhead: 'Semaine à venir', committeeReportsTag: 'Rapports de commission',
-    govPropsTag: 'Propositions gouvernementales', oppMotionsTag: 'Motions d\'opposition',
+    govPropsTag: 'Propositions gouvernementales', oppMotionsTag: 'Motions d\'opposition', interpellationsTag: 'Débats d\'interpellation',
     // Enhanced summary labels
     committeeReport: 'rapport de commission',
     on: 'sur',
