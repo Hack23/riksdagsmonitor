@@ -20,14 +20,32 @@ import { L } from '../helpers.js';
 // Types
 // ---------------------------------------------------------------------------
 
+/** Stakeholder category for multi-perspective intelligence analysis */
+export type StakeholderCategory =
+  | 'government'
+  | 'opposition'
+  | 'private'
+  | 'civil-society'
+  | 'municipal'
+  | 'international'
+  | 'media'
+  | 'academia'
+  | 'labor';
+
 /** A single stakeholder with their own SWOT analysis */
 export interface StakeholderSwot {
   /** Stakeholder name (e.g. "Government Coalition", "Opposition Parties") */
   name: string;
   /** Role or description of the stakeholder */
   role?: string;
+  /** Stakeholder category for analysis routing */
+  category?: StakeholderCategory;
   /** SWOT data for this stakeholder */
   swot: SwotData;
+  /** Document IDs (dok_id) that provide evidence for this SWOT analysis */
+  evidenceRefs?: string[];
+  /** Confidence level for this stakeholder analysis based on evidence quantity/quality */
+  confidenceLevel?: 'high' | 'medium' | 'low';
 }
 
 /** Options for the multi-stakeholder SWOT section generator */

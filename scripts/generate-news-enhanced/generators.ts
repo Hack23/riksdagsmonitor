@@ -23,18 +23,18 @@ import {
   generateEconomicDashboardSection,
   generateMindmapSection,
   generateSankeySection,
-  type StakeholderSwot,
   type MindmapBranch,
   type SankeyNode,
   type SankeyFlow,
 } from '../data-transformers/index.js';
 import { generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
 import { generateDeepPolicyAnalysis, detectPolicyDomains } from '../data-transformers/policy-analysis.js';
+import { buildMultiStakeholderSwot, STAKEHOLDER_NAMES } from './swot-analyzer.js';
 import { escapeHtml } from '../html-utils.js';
 import { generateArticleHTML } from '../article-template.js';
 import { MCPClient } from '../mcp-client.js';
 import type { Language } from '../types/language.js';
-import type { GenerationResult, DateRange, ArticleCategory, TemplateSection, SwotEntry } from '../types/article.js';
+import type { GenerationResult, DateRange, ArticleCategory, TemplateSection } from '../types/article.js';
 import type { TitleSet } from './types.js';
 import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic } from './config.js';
 import {
@@ -1066,37 +1066,11 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
 // Deep-Inspection TemplateSection builders (SWOT + Dashboard)
 // ---------------------------------------------------------------------------
 
-/** Localised default SWOT entry text for when a stakeholder's quadrant has no documents. */
-const SWOT_DEFAULTS: Readonly<Record<string, Partial<Record<Language, [string, string]>>>> = {
-  // [withTopic, withoutTopic]
-  govStrength:        { en: ['Policy initiative and agenda-setting on %t', 'Policy legislation in place'], sv: ['Politiskt initiativ och agendasättning för %t', 'Befintlig policylagstiftning'], de: ['Politische Initiative und Agenda-Setting zu %t', 'Politikgesetzgebung vorhanden'], fr: ['Initiative politique sur %t', 'Législation politique en place'], es: ['Iniciativa política sobre %t', 'Legislación de política vigente'] },
-  govWeakness:        { en: ['Implementation timeline and resource allocation for %t', 'Implementation timeline and resource prioritisation'], sv: ['Genomförandetidsplan och resurstilldelning för %t', 'Genomförandetidsplan och resursprioritering'], de: ['Umsetzungszeitplan und Ressourcenallokation für %t', 'Umsetzungszeitplan und Ressourcenpriorisierung'] },
-  govOpportunity:     { en: ['EU and international cooperation on %t', 'EU framework alignment'], sv: ['EU och internationellt samarbete om %t', 'EU-ramverksanpassning'], de: ['EU- und internationale Kooperation zu %t', 'EU-Rahmenausrichtung'] },
-  govThreat:          { en: ['Execution risks and stakeholder resistance to %t reform', 'Evolving threat landscape'], sv: ['Genomföranderisker och motstånd mot %t-reform', 'Föränderligt hotlandskap'], de: ['Umsetzungsrisiken und Widerstand gegen %t-Reform', 'Sich entwickelnde Bedrohungslandschaft'] },
-  oppStrength:        { en: ['Parliamentary oversight and scrutiny of %t proposals', 'Parliamentary oversight and accountability function'], sv: ['Parlamentarisk tillsyn och granskning av %t-förslag', 'Parlamentarisk tillsyn och ansvarsfunktion'], de: ['Parlamentarische Kontrolle der %t-Vorschläge', 'Parlamentarische Aufsicht und Rechenschaftsfunktion'] },
-  oppWeakness:        { en: ['Limited access to implementation data on %t', 'Limited classified information access'], sv: ['Begränsad tillgång till genomförandedata om %t', 'Begränsad tillgång till sekretessbelagd information'], de: ['Begrenzter Zugang zu Umsetzungsdaten zu %t', 'Begrenzter Zugang zu klassifizierten Informationen'] },
-  oppOpportunity:     { en: ['Cross-party consensus building on %t', 'Cross-party consensus building'], sv: ['Konsensusbyggande över partigränser om %t', 'Konsensusbyggande över partigränser'], de: ['Parteiübergreifender Konsensaufbau zu %t', 'Parteiübergreifender Konsensaufbau'] },
-  oppThreat:          { en: ['Government majority limiting amendment capacity on %t', 'Government majority limiting amendment capacity'], sv: ['Regeringsmajoriteten begränsar ändringskapaciteten för %t', 'Regeringsmajoriteten begränsar ändringskapaciteten'], de: ['Regierungsmehrheit schränkt Änderungskapazität bei %t ein', 'Regierungsmehrheit schränkt Änderungskapazität ein'] },
-  privateStrength:    { en: ['Domain expertise and operational capacity in %t', 'Technical expertise and operational capacity'], sv: ['Domänexpertis och operativ kapacitet inom %t', 'Teknisk expertis och operativ kapacitet'], de: ['Fachkompetenz und operative Kapazität in %t', 'Technisches Fachwissen und operative Kapazität'] },
-  privateWeakness1:   { en: ['Compliance costs and adaptation burden from %t regulation', 'Compliance costs and regulatory burden'], sv: ['Efterlevnadskostnader och anpassningsbörda från %t-reglering', 'Efterlevnadskostnader och regulatorisk börda'], de: ['Compliance-Kosten und Anpassungsbelastung durch %t-Regulierung', 'Compliance-Kosten und regulatorische Belastung'] },
-  privateWeakness2:   { en: ['Resource allocation for emerging %t requirements', 'Resource allocation for emerging requirements'], sv: ['Resursallokering för nya %t-krav', 'Resursallokering för nya krav'], de: ['Ressourcenzuweisung für neue %t-Anforderungen', 'Ressourcenzuweisung für neue Anforderungen'] },
-  privateOpportunity: { en: ['Investment and innovation driven by %t policy', 'Policy-driven investment and innovation'], sv: ['Investering och innovation driven av %t-politik', 'Policydriven investering och innovation'], de: ['Investitionen und Innovation durch %t-Politik', 'Politikgetriebene Investitionen und Innovation'] },
-  privateThreat1:     { en: ['Rapid policy evolution creating uncertainty for %t stakeholders', 'Rapid threat evolution'], sv: ['Snabb policyutveckling skapar osäkerhet för %t-intressenter', 'Snabb hotutveckling'], de: ['Schnelle Politikentwicklung schafft Unsicherheit für %t-Stakeholder', 'Schnelle Bedrohungsentwicklung'] },
-  privateThreat2:     { en: ['Short implementation timelines for new %t requirements', 'Short implementation timelines for new requirements'], sv: ['Korta implementeringstidsplaner för nya %t-krav', 'Korta implementeringstidsplaner för nya krav'], de: ['Kurze Umsetzungsfristen für neue %t-Anforderungen', 'Kurze Umsetzungsfristen für neue Anforderungen'] },
-};
-
-/** Return a localised SWOT fallback string, substituting %t for the topic when present. */
-function swotDefault(key: string, topic: string | null, lang: Language): string {
-  const variants = SWOT_DEFAULTS[key];
-  const pair = variants?.[lang] ?? variants?.en ?? [key, key];
-  const [withTopic, withoutTopic] = pair;
-  return topic ? withTopic.replace('%t', topic) : withoutTopic;
-}
-
 /**
  * Build SWOT and dashboard TemplateSections for a deep-inspection article.
- * Derives SWOT entries from actual document metadata and titles — every entry
- * is explicitly tied to the focus topic. Returns TemplateSection[] ready for
+ * Uses buildMultiStakeholderSwot() to derive 7–9 stakeholder perspectives
+ * from actual document content (titles, types, document IDs as evidence).
+ * Returns TemplateSection[] ready for
  * generateArticleHTML.sections.
  */
 function buildDeepInspectionSections(
@@ -1106,108 +1080,25 @@ function buildDeepInspectionSections(
 ): TemplateSection[] {
   if (docs.length === 0) return [];
 
-  const titleOf = (d: RawDocument): string =>
-    (d.titel || d.title || d.dokumentnamn || d.dok_id || '').slice(0, 80);
-  const toEntry = (d: RawDocument, impact: 'high' | 'medium' | 'low' = 'medium'): SwotEntry => ({
-    text: titleOf(d), impact,
-  });
-
-  // Classify by document type
-  const propDocs = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
-  const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
-  const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
-  const skrDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
-  const sfsDocs  = docs.filter(d =>
+  // Classify by document type (needed for downstream sankey/dashboard sections)
+  const propDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
+  const betDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
+  const motDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
+  const sfsDocs    = docs.filter(d =>
     (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
-  const euDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
+  const euDocs     = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
   const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
-  const extDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
-  const otherDocs = docs.filter(d =>
+  const extDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
+  const otherDocs  = docs.filter(d =>
     !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || ''));
 
-  // ── Government / Policy Administration ────────────────────────────────────
-  const govStrengths: SwotEntry[] = [
-    ...propDocs.slice(0, 3).map(d => toEntry(d, 'high')),
-    ...sfsDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-    ...skrDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
-    ...pressmDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-  ];
-  const govWeaknesses: SwotEntry[] = [
-    ...betDocs.slice(0, 2).map(d => toEntry(d, 'medium')),
-  ];
-  const govOpportunities: SwotEntry[] = [
-    ...euDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-    ...skrDocs.slice(1, 2).map(d => toEntry(d, 'medium')),
-  ];
-  const govThreats: SwotEntry[] = [
-    ...motDocs.slice(0, 2).map(d => toEntry(d, 'medium')),
-  ];
+  // Build 7–9 stakeholder SWOT analyses from actual document content
+  const stakeholders = buildMultiStakeholderSwot(docs, lang);
 
-  if (govStrengths.length === 0) govStrengths.push({ text: swotDefault('govStrength', topic, lang), impact: 'medium' });
-  if (govWeaknesses.length === 0) govWeaknesses.push({ text: swotDefault('govWeakness', topic, lang), impact: 'medium' });
-  if (govOpportunities.length === 0) govOpportunities.push({ text: swotDefault('govOpportunity', topic, lang), impact: 'high' });
-  if (govThreats.length === 0) govThreats.push({ text: swotDefault('govThreat', topic, lang), impact: 'medium' });
-
-  // ── Parliament / Opposition ────────────────────────────────────────────────
-  const oppStrengths: SwotEntry[] = [
-    ...betDocs.slice(0, 3).map(d => toEntry(d, 'high')),
-    ...motDocs.slice(0, 2).map(d => toEntry(d, 'medium')),
-  ];
-  const oppWeaknesses: SwotEntry[] = [];
-  const oppOpportunities: SwotEntry[] = [];
-  const oppThreats: SwotEntry[] = [
-    ...propDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
-  ];
-
-  if (oppStrengths.length === 0) oppStrengths.push({ text: swotDefault('oppStrength', topic, lang), impact: 'high' });
-  if (oppWeaknesses.length === 0) oppWeaknesses.push({ text: swotDefault('oppWeakness', topic, lang), impact: 'medium' });
-  if (oppOpportunities.length === 0) oppOpportunities.push({ text: swotDefault('oppOpportunity', topic, lang), impact: 'high' });
-  if (oppThreats.length === 0) oppThreats.push({ text: swotDefault('oppThreat', topic, lang), impact: 'medium' });
-
-  // ── Private Sector / Civil Society ────────────────────────────────────────
-  const privateStrengths: SwotEntry[] = [
-    { text: swotDefault('privateStrength', topic, lang), impact: 'high' },
-    ...sfsDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
-    ...extDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-  ];
-  const privateWeaknesses: SwotEntry[] = [
-    { text: swotDefault('privateWeakness1', topic, lang), impact: 'medium' },
-    { text: swotDefault('privateWeakness2', topic, lang), impact: 'medium' },
-  ];
-  const privateOpportunities: SwotEntry[] = [
-    { text: swotDefault('privateOpportunity', topic, lang), impact: 'high' },
-    ...euDocs.slice(0, 1).map(d => toEntry(d, 'high')),
-  ];
-  const privateThreats: SwotEntry[] = [
-    { text: swotDefault('privateThreat1', topic, lang), impact: 'high' },
-    { text: swotDefault('privateThreat2', topic, lang), impact: 'medium' },
-  ];
-
-  // ── Localised stakeholder names ────────────────────────────────────────────
-  const govNames: Partial<Record<Language, string>> = {
-    en: 'Government / Policy Administration', sv: 'Regering / Policyförvaltning',
-    da: 'Regering / Politisk forvaltning', no: 'Regjering / Politisk forvaltning',
-    fi: 'Hallitus / Poliittinen hallinto', de: 'Regierung / Politikverwaltung',
-    fr: 'Gouvernement / Administration', es: 'Gobierno / Administración pública',
-    nl: 'Regering / Beleidsadministratie', ar: 'الحكومة / الإدارة السياسية',
-    he: 'ממשלה / מינהל מדיניות', ja: '政府 / 政策行政', ko: '정부 / 정책 행정', zh: '政府 / 政策管理',
-  };
-  const oppNames: Partial<Record<Language, string>> = {
-    en: 'Parliament / Opposition', sv: 'Riksdag / Opposition',
-    da: 'Folketing / Opposition', no: 'Storting / Opposisjon',
-    fi: 'Eduskunta / Oppositio', de: 'Parlament / Opposition',
-    fr: 'Parlement / Opposition', es: 'Parlamento / Oposición',
-    nl: 'Parlement / Oppositie', ar: 'البرلمان / المعارضة',
-    he: 'פרלמנט / אופוזיציה', ja: '議会 / 野党', ko: '의회 / 야당', zh: '议会 / 反对派',
-  };
-  const privateNames: Partial<Record<Language, string>> = {
-    en: 'Private Sector / Civil Society', sv: 'Privat sektor / Civilsamhälle',
-    da: 'Privat sektor / Civilsamfund', no: 'Privat sektor / Sivilsamfunn',
-    fi: 'Yksityissektori / Kansalaisyhteiskunta', de: 'Privatsektor / Zivilgesellschaft',
-    fr: 'Secteur privé / Société civile', es: 'Sector privado / Sociedad civil',
-    nl: 'Privésector / Maatschappelijk middenveld', ar: 'القطاع الخاص / المجتمع المدني',
-    he: 'המגזר הפרטי / החברה האזרחית', ja: '民間セクター / 市民社会', ko: '민간 부문 / 시민 사회', zh: '私营部门 / 民间社会',
-  };
+  // Derive localised names for the mindmap / sankey from the STAKEHOLDER_NAMES map
+  const govName     = STAKEHOLDER_NAMES.government?.[lang]     ?? STAKEHOLDER_NAMES.government?.en     ?? 'Government Coalition';
+  const oppName     = STAKEHOLDER_NAMES.opposition?.[lang]     ?? STAKEHOLDER_NAMES.opposition?.en     ?? 'Opposition Parties';
+  const privateName = STAKEHOLDER_NAMES.private?.[lang]        ?? STAKEHOLDER_NAMES.private?.en        ?? 'Private Sector';
 
   const dataSourceBranchLabels: Partial<Record<Language, string>> = {
     en: 'Data Sources', sv: 'Datakällor', da: 'Datakilder', no: 'Datakilder',
@@ -1231,21 +1122,6 @@ function buildDeepInspectionSections(
     ko: ['Riksdag MCP (법률, 동의, 제안)', '세계은행 (경제 지표)', 'SCB 스웨덴 통계청'],
     zh: ['议会 MCP（法律、动议、提案）', '世界银行（经济指标）', 'SCB 瑞典统计局'],
   };
-
-  const stakeholders: StakeholderSwot[] = [
-    {
-      name: govNames[lang] ?? govNames.en!,
-      swot: { strengths: govStrengths, weaknesses: govWeaknesses, opportunities: govOpportunities, threats: govThreats },
-    },
-    {
-      name: oppNames[lang] ?? oppNames.en!,
-      swot: { strengths: oppStrengths, weaknesses: oppWeaknesses, opportunities: oppOpportunities, threats: oppThreats },
-    },
-    {
-      name: privateNames[lang] ?? privateNames.en!,
-      swot: { strengths: privateStrengths, weaknesses: privateWeaknesses, opportunities: privateOpportunities, threats: privateThreats },
-    },
-  ];
 
   const strategicContext = topic
     ? `Analysis exclusively focused on: ${topic} — ${docs.length} parliamentary documents examined`
@@ -1311,16 +1187,12 @@ function buildDeepInspectionSections(
     });
   }
 
-  // Stakeholder branch
+  // Stakeholder branch — list all analysed stakeholders (up to 9)
   mindmapBranches.push({
     label: deepLabel('stakeholders', lang),
     color: 'yellow',
     icon: '👥',
-    items: [
-      govNames[lang] ?? govNames.en!,
-      oppNames[lang] ?? oppNames.en!,
-      privateNames[lang] ?? privateNames.en!,
-    ],
+    items: stakeholders.map(s => s.name),
   });
 
   // Data context branch
@@ -1341,10 +1213,15 @@ function buildDeepInspectionSections(
   });
 
   // ── Sankey: party/doc-type flow → legislative outcome ─────────────────────
+  // The sankey uses only the three primary legislative actors (government,
+  // opposition, civil society) as source nodes because the document types
+  // (prop, bet, mot, sfs, eu, pressm, ext) map naturally to these three
+  // origin groups. Additional stakeholders (municipal, media, academia, etc.)
+  // are analysis perspectives rather than document-originating actors.
   const sankeyNodes: SankeyNode[] = [
-    { id: 'gov', label: govNames[lang]    ?? 'Government', color: 'cyan' },
-    { id: 'opp', label: oppNames[lang]    ?? 'Parliament', color: 'magenta' },
-    { id: 'pvt', label: privateNames[lang] ?? 'Civil Society', color: 'purple' },
+    { id: 'gov', label: govName,     color: 'cyan' },
+    { id: 'opp', label: oppName,     color: 'magenta' },
+    { id: 'pvt', label: privateName, color: 'purple' },
   ];
 
   // Add document type nodes and target outcome nodes
