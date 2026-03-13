@@ -120,6 +120,8 @@ You are the **Evening Political Analyst** for Riksdagsmonitor. Generate comprehe
 3. Safe output tools are **always in your tool list**. NEVER search for them via bash.
 4. **NEVER** write your own MCP HTTP/JSON-RPC client. Use the scripts or direct tool calls only.
 5. Exiting without calling a safe output tool = workflow failure.
+6. **NEVER re-query MCP data you already received.** Each MCP tool must be called AT MOST ONCE per run. If you already have data from `get_calendar_events`, `search_voteringar`, etc., use the results you have — do NOT call them again. Duplicate queries waste time and context. If a query fails or times out, retry ONCE, then proceed with available data.
+7. **Move forward, never backward.** Once you complete a phase (Setup → Data → Generate → Validate → PR), NEVER go back to a previous phase. Mark each phase complete with a bash echo before proceeding.
 
 ## ⏱️ Time Budget (45 minutes)
 
@@ -130,12 +132,25 @@ START_TIME=$(date +%s)
 | Phase | Minutes | Action |
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()`, determine day type |
-| Data | 3–10 | Query MCP tools for parliamentary activity |
-| Generate | 10–30 | Run generation script OR manual synthesis (see Step 3) |
-| Validate | 30–38 | Translate, validate, commit |
+| Data | 3–8 | Query MCP tools ONCE for parliamentary activity |
+| Generate | 8–30 | Generate EN and SV articles from data already gathered |
+| Validate | 30–38 | Validate, commit |
 | PR | 38–43 | `safeoutputs___create_pull_request` |
 
-**Hard cutoffs** — check elapsed time before each phase:
+**Hard cutoffs** — run this bash check before EVERY new phase:
+```bash
+source /tmp/gh-aw/agent/timing.env
+ELAPSED=$(( $(date +%s) - START_TIME ))
+ELAPSED_MIN=$(( ELAPSED / 60 ))
+echo "⏱️ Elapsed: ${ELAPSED_MIN} minutes"
+if [ "$ELAPSED_MIN" -ge 35 ]; then
+  echo "⚠️ TIME CRITICAL: Skip to PR creation immediately"
+fi
+if [ "$ELAPSED_MIN" -ge 43 ]; then
+  echo "🛑 HARD STOP: Call safe output NOW"
+fi
+```
+
 - `>= 35 min` → Stop generating, commit what you have, create PR immediately
 - `>= 43 min` → STOP ALL WORK, call safe output immediately
 
@@ -237,32 +252,42 @@ Example 3: Party Behavior Analysis
 
 ## Step 2: Gather Parliamentary Data
 
+⚠️ **CRITICAL: Call each MCP tool AT MOST ONCE. NEVER re-query data.** Save results to variables and reuse them.
+
 Replace `<today>` with today's `YYYY-MM-DD`, `<rm>` with the calculated riksmöte value, and `<fromDate>` with the lookback start date.
 
 **Saturday** (weekly wrap-up, 5-day lookback):
 ```
-get_calendar_events({ from: "<fromDate>", tom: "<today>", limit: 100 })
-search_voteringar({ rm: "<rm>", limit: 100 })
-get_betankanden({ rm: "<rm>", limit: 50 })
-search_anforanden({ rm: "<rm>", limit: 100 })
-search_regering({ dateFrom: "<fromDate>", dateTo: "<today>", limit: 50 })
-get_propositioner({ rm: "<rm>", limit: 20 })
-get_motioner({ rm: "<rm>", limit: 50 })
-get_fragor({ rm: "<rm>", limit: 50 })
-get_interpellationer({ rm: "<rm>", limit: 20 })
-get_calendar_events({ from: "<nextMonday>", tom: "<nextFriday>", limit: 50 })
+get_calendar_events({ from: "<fromDate>", tom: "<today>", limit: 30 })
+search_voteringar({ rm: "<rm>", limit: 20 })
+get_betankanden({ rm: "<rm>", limit: 15 })
+search_anforanden({ rm: "<rm>", limit: 20 })
+search_regering({ dateFrom: "<fromDate>", dateTo: "<today>", limit: 20 })
+get_propositioner({ rm: "<rm>", limit: 10 })
+get_motioner({ rm: "<rm>", limit: 15 })
+get_fragor({ rm: "<rm>", limit: 15 })
+get_interpellationer({ rm: "<rm>", limit: 10 })
+get_calendar_events({ from: "<nextMonday>", tom: "<nextFriday>", limit: 20 })
 ```
 
 **Weekday** (daily, lookback_hours):
 ```
-get_calendar_events({ from: "<fromDate>", tom: "<today>", limit: 50 })
-search_voteringar({ rm: "<rm>", limit: 50 })
-get_betankanden({ rm: "<rm>", limit: 20 })
-search_anforanden({ rm: "<rm>", limit: 50 })
-search_regering({ dateFrom: "<fromDate>", dateTo: "<today>", limit: 30 })
+get_calendar_events({ from: "<fromDate>", tom: "<today>", limit: 20 })
+search_voteringar({ rm: "<rm>", limit: 15 })
+get_betankanden({ rm: "<rm>", limit: 10 })
+search_anforanden({ rm: "<rm>", limit: 15 })
+search_regering({ dateFrom: "<fromDate>", dateTo: "<today>", limit: 15 })
 get_propositioner({ rm: "<rm>", limit: 10 })
-get_motioner({ rm: "<rm>", limit: 20 })
-get_calendar_events({ from: "<tomorrow>", tom: "<tomorrow>", limit: 50 })
+get_motioner({ rm: "<rm>", limit: 10 })
+get_calendar_events({ from: "<tomorrow>", tom: "<tomorrow>", limit: 20 })
+```
+
+**After gathering data, mark the phase complete:**
+```bash
+echo "✅ DATA PHASE COMPLETE — DO NOT re-query any MCP tools above"
+source /tmp/gh-aw/agent/timing.env
+ELAPSED=$(( $(date +%s) - START_TIME ))
+echo "⏱️ Elapsed: $(( ELAPSED / 60 )) minutes — proceeding to article generation"
 ```
 
 **Filter results by date** — many tools don't support date params directly. Filter to `>= fromDate` in analysis.
@@ -295,17 +320,29 @@ SCRIPT_EXIT=$?
 
 ### Weekday — Manual Evening Analysis
 
+⚠️ **IMPORTANT: Generate EN and SV articles only.** The news-translate workflow handles all other languages. Do NOT attempt to generate 14 language versions — this wastes time and context.
+
 The `evening-analysis` article type is NOT in the script's `VALID_ARTICLE_TYPES` (see `scripts/generate-news-enhanced/config.ts`). Evening analysis requires **analytical synthesis** across multiple data sources which the template-based script cannot provide. Generate articles manually using MCP data gathered in Step 2.
 
-**Process ONE language at a time** (en first, then sv, then remaining):
+**Check time before starting:**
+```bash
+source /tmp/gh-aw/agent/timing.env
+ELAPSED=$(( $(date +%s) - START_TIME ))
+ELAPSED_MIN=$(( ELAPSED / 60 ))
+echo "⏱️ Elapsed: ${ELAPSED_MIN} minutes — starting article generation"
+if [ "$ELAPSED_MIN" -ge 35 ]; then
+  echo "⚠️ TIME CRITICAL: Skip to Step 5 (PR creation)"
+fi
+```
 
-For each language in [en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh]:
+**Process EN first, then SV:**
+
+For each language in [en, sv]:
 1. Check elapsed time — if >= 35 minutes, stop and proceed to Step 5
 2. Create `news/YYYY-MM-DD-evening-analysis-{lang}.html`
 3. Use `<link rel="stylesheet" href="../styles.css">` — NO embedded `<style>` tags
 4. Include language switcher, article-top-nav, Schema.org NewsArticle, hreflang tags
-5. Use `dir="rtl"` for Arabic (ar) and Hebrew (he)
-6. Include proper `<html lang="{lang}">` attribute
+5. Include proper `<html lang="{lang}">` attribute
 
 **Article structure:**
 1. **Lead Story** — Most significant development, why it matters
@@ -375,39 +412,19 @@ safeoutputs___create_pull_request({
 })
 ```
 
-## 🌐 MANDATORY Translation Quality Rules
+## 🌐 Translation Quality Rules
 
-### Non-Negotiable Requirements for Non-EN/SV Articles:
-1. **ALL section headings** (h1, h2, h3) MUST be in the target language
-2. **ALL body paragraphs** MUST be written in the target language
-3. **Meta keywords** MUST be translated to the target language
-4. **No English fallback**: If you cannot translate a phrase, use the target language equivalent or omit
-5. **data-translate markers**: ZERO `data-translate="true"` spans allowed in final output
+Since this workflow generates **EN and SV articles only** (translations to other languages are handled by the `news-translate` workflow), focus on:
 
-### Per-Language Requirements:
-- **RTL languages (ar, he)**: Ensure `dir="rtl"` on `<html>` and proper text direction
-- **CJK languages (ja, ko, zh)**: Use native script only, no romanization in body text
-- **Nordic languages (da, no, fi)**: Use language-specific parliamentary terms, not Swedish
-- **European languages (de, fr, es, nl)**: Use formal register appropriate for political journalism
-
-### Localized Section Headings (use CONTENT_LABELS):
-Instead of English section headings, use localized equivalents from `scripts/data-transformers/constants/content-labels-part1.ts` and `content-labels-part2.ts`:
-- "Key Takeaways" → Use `CONTENT_LABELS[lang].keyTakeaways`
-- "Why It Matters" → Use `CONTENT_LABELS[lang].whyItMatters`
-- "Deep Analysis" → Use `CONTENT_LABELS[lang].deepAnalysis`
-- "What This Means" → Use `CONTENT_LABELS[lang].whatThisMeans`
-
-### Post-Generation Validation:
-After generating all articles, run:
-```bash
-npx tsx scripts/validate-news-translations.ts
-```
-Fix any files flagged before committing. Articles with >3 English phrases in non-EN versions must be regenerated.
-
-### Additional Rules:
-- Swedish API titles MUST be translated to target language
+### For SV articles:
+- ALL section headings in Swedish (use these known `CONTENT_LABELS['sv']` values — do NOT read the full CONTENT_LABELS file; keep in sync with `scripts/data-transformers/constants/content-labels-part1.ts`):
+  - "Key Takeaways" → "Centrala slutsatser"
+  - "Why It Matters" → "Varför det spelar roll"
+  - "Deep Analysis" → "Djupanalys"
+  - "What This Means" → "Vad detta innebär"
+- Swedish API titles may be used directly (they're already in Swedish)
 - Party abbreviations (S, M, SD, V, MP, C, L, KD) are NEVER translated
-- ZERO TOLERANCE for language mixing
+- ZERO language mixing between EN and SV versions
 
 ## Error Handling
 
@@ -419,4 +436,9 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 | Stale data | `hoursSinceSync > 48` from `get_sync_status()` | Add disclaimer noting data staleness; proceed with cached data |
 | Too broad results | Query returns excessive data without date filtering | Add explicit `from_date`/`to_date` parameters to narrow scope |
 
-🎯 **Now begin: Check date/day-of-week, warm up MCP with `get_sync_status()`, gather parliamentary data, generate analysis articles, and call a safe output tool.**
+🎯 **Now begin the sequential phases — NEVER go back to a completed phase:**
+1. **Setup** (0-3 min): Check date/day-of-week, `get_sync_status()` — ONE call only
+2. **Data** (3-8 min): Query MCP tools — each tool called AT MOST ONCE, then mark "DATA PHASE COMPLETE"
+3. **Generate** (8-30 min): Write EN and SV articles using data already gathered — do NOT re-query MCP
+4. **Validate** (30-38 min): Run validation, commit locally
+5. **PR** (38-43 min): Call `safeoutputs___create_pull_request` or `safeoutputs___noop`
