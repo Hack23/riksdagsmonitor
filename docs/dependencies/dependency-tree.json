@@ -1,5 +1,5 @@
 {
-  "version": "0.7.15",
+  "version": "0.7.16",
   "name": "riksdagsmonitor",
   "problems": [
     "extraneous: @emnapi/core@1.8.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor/node_modules/@emnapi/core",
@@ -2620,8 +2620,8 @@
       "overridden": false
     },
     "happy-dom": {
-      "version": "20.8.3",
-      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.8.3.tgz",
+      "version": "20.8.4",
+      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.8.4.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -3972,7 +3972,7 @@
           "overridden": false
         },
         "happy-dom": {
-          "version": "20.8.3"
+          "version": "20.8.4"
         },
         "jsdom": {},
         "magic-string": {
