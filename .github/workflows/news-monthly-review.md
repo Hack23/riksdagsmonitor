@@ -16,6 +16,10 @@ on:
         description: 'Core languages for content generation (en,sv | nordic | eu-core | all). Translations for remaining languages are handled by the dedicated news-translate workflow.'
         required: false
         default: en,sv
+      analysis_depth:
+        description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.'
+        required: false
+        default: deep
 
 permissions:
   contents: read
@@ -119,6 +123,39 @@ This is a **retrospective** article providing comprehensive analysis of the past
 3. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
+
+
+## 📊 MANDATORY Multi-Step AI Analysis Framework
+
+> **Read `analysis_depth` input first** (default: `deep`). This controls iteration count and section requirements.
+
+Based on the editorial profile for `monthly-review` (from `scripts/editorial-framework.ts`):
+- **SWOT**: full (5+ stakeholder perspectives per quadrant)
+- **Dashboard**: required (min. 4 Chart.js charts)
+- **Mindmap**: required (CSS policy mindmap)
+- **Min. stakeholders**: 7 perspectives
+- **AI iterations**: 3 (deep/comprehensive) or 2 (standard)
+
+### Phase 1 — Data Collection & Initial Analysis
+1. Fetch MCP data: full month's `get_betankanden`, `get_propositioner`, `get_motioner`, `search_anforanden`, `search_voteringar`, `get_interpellationer`, `get_fragor`, `get_sync_status`
+2. Compute monthly metrics: totals, trend vs. previous month, party rankings, legislative efficiency
+3. Build initial outline: flagship lede, monthly statistics, party performance, looking ahead
+
+### Phase 2 — Iterative Depth Enhancement (3 iterations for `deep`/`comprehensive`)
+For each AI iteration:
+1. **Full SWOT**: Generate `generateSwotSection()` with ≥5 stakeholder perspectives per quadrant (government coalition, opposition parties, affected citizens, EU/Nordic context, media/civil society, business sector, academic/think-tanks)
+2. **Monthly Dashboard**: Generate `generateEconomicDashboardSection()` with ≥4 charts (monthly trends, party activity ranking, policy domain heatmap, legislative pipeline)
+3. **Policy Mindmap**: Generate `generateMindmapSection()` showing the month's cross-cutting policy themes
+4. **Stakeholder SWOT**: Generate `generateStakeholderSwotSection()` with ≥7 perspectives for comprehensive depth
+5. **Quality Gate** (check before next iteration):
+   - Verify trend comparison uses actual previous-month data from MCP
+   - Verify party rankings section covers all 8 Riksdag parties
+   - Verify all Swedish API text is translated
+   - Verify word count ≥ 1800
+   - If failing any check: re-generate the failing section before proceeding
+
+### Phase 3 — Final Quality Gate Before PR
+Run all validation checks from the **MANDATORY Quality Validation** section below before committing.
 
 ## MANDATORY Date Validation
 

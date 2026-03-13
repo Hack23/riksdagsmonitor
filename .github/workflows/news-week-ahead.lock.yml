@@ -23,7 +23,7 @@
 #
 # Generates week-ahead prospective articles in core languages (EN, SV). Translations handled by news-translate workflow. Runs Fridays to preview the upcoming parliamentary week.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"890d34e214ef9fe0420f7cc7172d9c944657669a3060b121945d6a2bab80b6db","compiler_version":"v0.58.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"c5e74c7a5202d4ab93390524ab9b8c5b7f2513fe23bf40939350623f2d202de1","compiler_version":"v0.58.0"}
 
 name: "News: Week Ahead"
 "on":
@@ -31,6 +31,10 @@ name: "News: Week Ahead"
   - cron: "0 7 * * 5"
   workflow_dispatch:
     inputs:
+      analysis_depth:
+        default: standard
+        description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.
+        required: false
       force_generation:
         default: false
         description: Force generation even if recent articles exist

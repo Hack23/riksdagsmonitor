@@ -23,7 +23,7 @@
 #
 # Generates committee reports analysis articles in core languages (EN, SV). Translations for remaining 12 languages are handled by the dedicated news-translate workflow via dispatch-workflow. Single article type per run.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"1c4b7899cafd225a0d39c3af17e03494da166f19d0426d4976836a22669cff56","compiler_version":"v0.58.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"e7e89964ff8f7be5706ed5533819e055770fafc6575ab2ef70cd7c82e4067f1a","compiler_version":"v0.58.0"}
 
 name: "News: Committee Reports"
 "on":
@@ -31,6 +31,10 @@ name: "News: Committee Reports"
   - cron: "0 4 * * 1-5"
   workflow_dispatch:
     inputs:
+      analysis_depth:
+        default: deep
+        description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.
+        required: false
       force_generation:
         default: false
         description: Force generation even if recent articles exist

@@ -40,11 +40,16 @@ export interface RawDocument {
   subtype?: string;
   documentType?: string;
   url?: string;
+  dok_url?: string;
   summary?: string;
   notis?: string;
   intressent_namn?: string;
   author?: string;
   parti?: string;
+  /** Target minister for interpellations (mottagare field from API) */
+  mottagare?: string;
+  /** intressent_id — parliamentary member ID who authored the document */
+  intressent_id?: string;
   /** Publication date from the MCP API (ISO format YYYY-MM-DD) */
   datum?: string;
   /** Riksmöte (parliamentary session, e.g. "2025/26") */
@@ -137,6 +142,8 @@ export interface ArticleContentData {
   reports?: RawDocument[];
   propositions?: RawDocument[];
   motions?: RawDocument[];
+  /** Parliamentary interpellations (interpellationer) — used by interpellations article type */
+  interpellations?: RawDocument[];
   documents?: RawDocument[];
   highlights?: Array<{ title: string; description: string }>;
   context?: string;

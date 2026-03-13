@@ -16,6 +16,10 @@ on:
         description: 'Core languages for content generation (en,sv | nordic | eu-core | all). Translations for remaining languages are handled by the dedicated news-translate workflow.'
         required: false
         default: en,sv
+      analysis_depth:
+        description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.'
+        required: false
+        default: standard
 
 permissions:
   contents: read
@@ -117,6 +121,34 @@ If **force_generation** is `true`, generate articles even if recent ones exist. 
 3. **`.github/skills/prospective-news-coverage/SKILL.md`** — Forward-looking coverage
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
+
+
+## 📊 MANDATORY Multi-Step AI Analysis Framework
+
+> **Read `analysis_depth` input first** (default: `standard`). This controls iteration count and section requirements.
+
+Based on the editorial profile for `week-ahead` (from `scripts/editorial-framework.ts`):
+- **SWOT**: quick (1-paragraph overview only)
+- **Dashboard**: required (min. 2 Chart.js charts)
+- **Mindmap**: not required
+- **Min. stakeholders**: 3 perspectives
+- **AI iterations**: 1 (standard) or 2 (deep/comprehensive)
+
+### Phase 1 — Data Collection & Initial Analysis
+1. Fetch MCP data (`get_calendar_events`, `get_fragor`, `get_interpellationer`, `get_sync_status`)
+2. Extract watch-points and key parliamentary events for the coming week
+3. Build initial outline: week summary lede, calendar-driven event blocks, watch-point highlights
+
+### Phase 2 — Depth Enhancement (for `deep`/`comprehensive` depth only)
+1. **Quick SWOT**: 1-paragraph SWOT overview of the week's political balance
+2. **Event Dashboard**: Generate `generateDashboardSection()` with ≥2 charts (committee meeting density, event type breakdown)
+3. **Quality Gate**:
+   - Verify watch-points are specific and actionable (not just event titles)
+   - Verify all Swedish API text is translated
+   - Verify word count ≥ 600
+
+### Phase 3 — Final Quality Gate Before PR
+Run all validation checks from the **MANDATORY Quality Validation** section below before committing.
 
 ## MANDATORY Date Validation
 

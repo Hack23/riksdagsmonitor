@@ -25,6 +25,10 @@ on:
         description: 'Core content languages (en,sv | nordic | eu-core | all). Translations handled by news-translate workflow.'
         required: false
         default: en,sv
+      analysis_depth:
+        description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.'
+        required: false
+        default: standard
 
 permissions:
   contents: read
@@ -357,7 +361,30 @@ safeoutputs___create_pull_request({
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
 
-## 🌐 MANDATORY Translation Quality Rules
+## 📊 MANDATORY Multi-Step AI Analysis Framework
+
+> **Read `analysis_depth` input first** (default: `standard`). This controls iteration count and section requirements.
+
+For breaking news, this workflow uses the `breaking` profile (from `scripts/editorial-framework.ts`):
+- **SWOT**: quick (1-paragraph overview when article_types includes non-breaking types)
+- **Dashboard**: not required for breaking, required for deeper types
+- **AI iterations**: 1 (standard) or 2 (deep/comprehensive)
+
+### Phase 1 — Event Detection & Significance Scoring
+1. Fetch real-time MCP data based on `article_types` input
+2. Score each event for newsworthiness; only generate articles for significant events
+3. Build initial outlines per article type
+
+### Phase 2 — Depth Enhancement (per `analysis_depth`)
+When `analysis_depth` is `deep` or `comprehensive`:
+1. Add **Quick SWOT** paragraph for each major article
+2. Add **Activity Chart** using `generateDashboardSection()`
+3. **Quality Gate**: word count ≥ 400, no identical why-it-matters, all Swedish text translated
+
+### Phase 3 — Final Quality Gate Before PR
+Run `bash scripts/validate-news-generation.sh` before committing.
+
+
 
 ### Non-Negotiable Requirements for Non-EN/SV Articles:
 1. **ALL section headings** (h1, h2, h3) MUST be in the target language

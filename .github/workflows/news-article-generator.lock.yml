@@ -23,12 +23,16 @@
 #
 # Manual-only multi-type article generator. For automated per-type generation, use the dedicated news-committee-reports, news-propositions, news-motions, news-week-ahead, news-month-ahead, news-weekly-review, news-monthly-review workflows. For translations, use news-translate workflow.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"c30ea23e8dc845af2025a6803d5813de9762e6c76b936871730af84cf1be6f97","compiler_version":"v0.58.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"baa08767efabd878eb558280d7fd6b0464e6ad81736ad7a7934d175bf55355e8","compiler_version":"v0.58.0"}
 
 name: "News: Article Generator (Manual)"
 "on":
   workflow_dispatch:
     inputs:
+      analysis_depth:
+        default: standard
+        description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.
+        required: false
       article_types:
         description: Comma-separated article types (week-ahead,month-ahead,weekly-review,monthly-review,committee-reports,propositions,motions,interpellations,breaking,deep-inspection). Leave empty for day-of-week schedule.
         required: false

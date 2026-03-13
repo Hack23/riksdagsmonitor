@@ -23,7 +23,7 @@
 #
 # Generates comprehensive evening analysis articles in core languages (EN, SV) with Playwright validation. Translations handled by news-translate workflow. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"6dc11196cb6c0f996b63031af5ada000c7083338501190fd67b58f1cc7fc3212","compiler_version":"v0.58.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"c5c439046d6a6b436dc9d61c706528476b00dafaa687d9c3f139cc35ffd6e762","compiler_version":"v0.58.0"}
 
 name: "News Evening Analysis"
 "on":
@@ -32,6 +32,10 @@ name: "News Evening Analysis"
   - cron: "0 16 * * 6"
   workflow_dispatch:
     inputs:
+      analysis_depth:
+        default: standard
+        description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.
+        required: false
       coverage_depth:
         default: standard
         description: "Coverage depth: standard, deep, comprehensive"
@@ -542,6 +546,11 @@ jobs:
               "inputSchema": {
                 "additionalProperties": false,
                 "properties": {
+                  "analysis_depth": {
+                    "default": "standard",
+                    "description": "Analysis depth to apply during translation quality validation (standard, deep, comprehensive). Mirrors the source article depth.",
+                    "type": "string"
+                  },
                   "article_date": {
                     "description": "Article date (YYYY-MM-DD). Defaults to today.",
                     "type": "string"

@@ -23,7 +23,7 @@
 #
 # Generates interpellation debates analysis articles in core languages (EN, SV). Translations for remaining 12 languages are handled by the dedicated news-translate workflow via dispatch-workflow. Single article type per run.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"5fe2efeb1ef184e05acfa63f73c5f93b34194862d9168ff692a4660a0b5348c4","compiler_version":"v0.58.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"54d0007a3c61a6ec8ab94b1df4d362cb0a98670f20a5697ca279003517f988a7","compiler_version":"v0.58.0"}
 
 name: "News: Interpellation Debates"
 "on":
@@ -31,6 +31,10 @@ name: "News: Interpellation Debates"
   - cron: "0 7 * * 1-5"
   workflow_dispatch:
     inputs:
+      analysis_depth:
+        default: standard
+        description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.
+        required: false
       force_generation:
         default: false
         description: Force generation even if recent articles exist

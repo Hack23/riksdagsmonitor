@@ -14,6 +14,10 @@ on:
         description: 'Coverage depth: standard, deep, comprehensive'
         required: false
         default: standard
+      analysis_depth:
+        description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.'
+        required: false
+        default: standard
       languages:
         description: 'Core content languages (en,sv | nordic | eu-core | all). Translations handled by news-translate workflow.'
         required: false
@@ -147,7 +151,34 @@ START_TIME=$(date +%s)
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
 
-## Step 1: Date Validation & MCP Health Check
+## 📊 MANDATORY Multi-Step AI Analysis Framework
+
+> **Read `analysis_depth` input first** (default: `standard`). This controls iteration count and section requirements.
+
+Based on the editorial profile for `evening-analysis` (from `scripts/editorial-framework.ts`):
+- **SWOT**: quick (1-paragraph overview)
+- **Dashboard**: required (min. 1 Chart.js chart)
+- **Mindmap**: not required
+- **Min. stakeholders**: 3 perspectives
+- **AI iterations**: 1 (standard) or 2 (deep/comprehensive)
+
+### Phase 1 — Data Collection & Initial Analysis
+1. Fetch today's activity from MCP (`search_anforanden` — filter by `datum`, `get_betankanden` — filter by `publicerad`, `search_voteringar` — filter by `datum`, `get_sync_status`)
+2. Score newsworthiness of each item using `scoreNewsworthiness()` logic
+3. Build initial outline: day-in-review lede, top stories, votes summary, tonight's context
+
+### Phase 2 — Depth Enhancement (for `deep`/`comprehensive` depth)
+1. **Quick SWOT**: 1-paragraph SWOT overview of the day's political balance
+2. **Activity Dashboard**: Generate `generateDashboardSection()` with ≥1 chart (today's activity breakdown)
+3. **Quality Gate**:
+   - Verify article covers events from today's date (not yesterday or tomorrow)
+   - Verify all Swedish API text is translated
+   - Verify word count ≥ 600
+
+### Phase 3 — Final Quality Gate Before PR
+Run validation checks before committing.
+
+ & MCP Health Check
 
 ```bash
 echo "=== Date Validation Check ==="

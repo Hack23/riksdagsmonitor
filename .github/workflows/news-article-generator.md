@@ -26,6 +26,10 @@ on:
       focus_topic:
         description: 'Specific topic or policy area to focus deep-inspection analysis on (e.g. "cyber security, cyberthreats, ai security, ai future", defence, migration, budget). Multiple related keywords can be comma-separated for richer analysis.'
         required: false
+      analysis_depth:
+        description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.'
+        required: false
+        default: standard
 
 permissions:
   contents: read
@@ -189,7 +193,26 @@ START_TIME=$(date +%s)
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
 
-## Step 1: Date Validation & MCP Health Check
+## 📊 MANDATORY Multi-Step AI Analysis Framework
+
+> **Read `analysis_depth` input first** (default: `standard`). This controls how many AI iterations to apply per article type.
+
+Each article type has a profile in `scripts/editorial-framework.ts` with the exact SWOT depth, dashboard requirements, mindmap requirements, stakeholder count, and AI iteration count to target. Use `getArticleTypeProfile(articleType)` to retrieve the profile, then apply the corresponding sections:
+
+| Depth | Iterations | SWOT | Dashboard | Mindmap |
+|-------|-----------|------|-----------|---------|
+| standard | profile.aiIterations × 1 | as profile | as profile | as profile |
+| deep | max(2, profile.aiIterations) | as profile | as profile | as profile |
+| comprehensive | profile.aiIterations | full always | always | always |
+
+### Per-Article-Type Iteration Pattern
+For each article type being generated in this run:
+1. **Phase 1**: Fetch data → initial outline
+2. **Phase 2**: Enhance with SWOT + Dashboard + Mindmap (per profile requirements)
+3. **Quality Gate**: word count ≥ profile.minWordCount, no identical why-it-matters, all Swedish translated
+4. **Additional iterations**: if `analysis_depth` is `deep` or `comprehensive` and quality gate fails
+
+ & MCP Health Check
 
 ```bash
 echo "=== Date Validation Check ==="

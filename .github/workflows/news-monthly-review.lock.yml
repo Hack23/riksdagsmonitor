@@ -23,7 +23,7 @@
 #
 # Generates monthly review retrospective articles in core languages (EN, SV). Translations handled by news-translate workflow. Runs on 28th of each month.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"5791024e7c5acb25a9f4e9acdc78cdf53b8a2ec89d410a5c69b374be0c6775ad","compiler_version":"v0.58.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"ee8e69066258aed61d2d2da406bc81453873c605e80e5775709ecc2e9996de52","compiler_version":"v0.58.0"}
 
 name: "News: Monthly Review"
 "on":
@@ -31,6 +31,10 @@ name: "News: Monthly Review"
   - cron: "0 10 28 * *"
   workflow_dispatch:
     inputs:
+      analysis_depth:
+        default: deep
+        description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.
+        required: false
       force_generation:
         default: false
         description: Force generation even if recent articles exist

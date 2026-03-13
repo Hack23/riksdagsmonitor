@@ -25,6 +25,10 @@ on:
         description: 'Source language to translate from (default: en)'
         required: false
         default: en
+      analysis_depth:
+        description: 'Analysis depth to apply during translation quality validation (standard, deep, comprehensive). Mirrors the source article depth.'
+        required: false
+        default: standard
 
 permissions:
   contents: read
@@ -148,7 +152,19 @@ If EN source articles do not exist on disk when this workflow runs, it means the
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
 
-## Step 1: Determine Translation Scope
+## 📊 Translation Analysis Depth
+
+> **Read `analysis_depth` input** (default: `standard`). This mirrors the source article depth and controls how rigorously translated sections are validated.
+
+| Depth | Validation focus |
+|-------|-----------------|
+| standard | Translate all headings, body, meta; verify no English leakage |
+| deep | + Verify SWOT/dashboard labels are localized; re-translate untranslated spans |
+| comprehensive | + Full review of all 14-language variants; cross-language consistency check |
+
+Use the depth to decide how many passes to make over each translated article before committing.
+
+
 
 ```bash
 echo "=== Translation Scope Check ==="

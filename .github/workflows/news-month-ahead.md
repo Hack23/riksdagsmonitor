@@ -16,6 +16,10 @@ on:
         description: 'Core languages for content generation (en,sv | nordic | eu-core | all). Translations for remaining languages are handled by the dedicated news-translate workflow.'
         required: false
         default: en,sv
+      analysis_depth:
+        description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.'
+        required: false
+        default: standard
 
 permissions:
   contents: read
@@ -119,6 +123,36 @@ This is a **prospective** article providing a 30-day forward-looking strategic o
 3. **`.github/skills/prospective-news-coverage/SKILL.md`** — Forward-looking coverage
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
+
+
+## 📊 MANDATORY Multi-Step AI Analysis Framework
+
+> **Read `analysis_depth` input first** (default: `standard`). This controls iteration count and section requirements.
+
+Based on the editorial profile for `month-ahead` (from `scripts/editorial-framework.ts`):
+- **SWOT**: condensed (3 stakeholder perspectives per quadrant)
+- **Dashboard**: required (min. 2 Chart.js charts)
+- **Mindmap**: required (CSS policy mindmap)
+- **Min. stakeholders**: 5 perspectives
+- **AI iterations**: 2 (standard/deep) or full (comprehensive)
+
+### Phase 1 — Data Collection & Initial Analysis
+1. Fetch MCP data (`get_calendar_events`, `get_propositioner`, `get_motioner`, `get_interpellationer`, `get_sync_status`)
+2. Build monthly legislative pipeline with key milestones
+3. Build initial outline: strategic outlook lede, legislative pipeline, policy domain forecast
+
+### Phase 2 — Iterative Depth Enhancement (repeat per `analysis_depth`)
+For each AI iteration:
+1. **Condensed SWOT**: Generate `generateSwotSection()` with ≥3 stakeholder perspectives focusing on upcoming legislative priorities
+2. **Strategic Dashboard**: Generate `generateDashboardSection()` with ≥2 charts (documents by week, policy domain distribution)
+3. **Policy Mindmap**: Generate `generateMindmapSection()` showing inter-connected policy areas
+4. **Quality Gate** (check before next iteration):
+   - Verify forward-looking watch-points reference specific scheduled events
+   - Verify all Swedish API text is translated
+   - Verify word count ≥ 900
+
+### Phase 3 — Final Quality Gate Before PR
+Run all validation checks from the **MANDATORY Quality Validation** section below before committing.
 
 ## MANDATORY Date Validation
 

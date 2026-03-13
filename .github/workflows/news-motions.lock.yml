@@ -23,7 +23,7 @@
 #
 # Generates opposition motions analysis articles in core languages (EN, SV). Translations for remaining 12 languages are handled by the dedicated news-translate workflow via dispatch-workflow. Single article type per run.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"e1d60f870e2b311322d476753c2d3d8a54856e37fe6b373c564396560f43ab64","compiler_version":"v0.58.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"87717dedf6cd35761b6bb5f79c8f2983c697dbdab74cf2b09c7310b50f4bb6c6","compiler_version":"v0.58.0"}
 
 name: "News: Opposition Motions"
 "on":
@@ -31,6 +31,10 @@ name: "News: Opposition Motions"
   - cron: "0 6 * * 1-5"
   workflow_dispatch:
     inputs:
+      analysis_depth:
+        default: standard
+        description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.
+        required: false
       force_generation:
         default: false
         description: Force generation even if recent articles exist

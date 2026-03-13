@@ -23,7 +23,7 @@
 #
 # Monitors Riksdag and Government for real-time updates and generates breaking news articles in core languages (EN, SV) with Playwright validation. Translations handled by news-translate workflow. Runs twice daily on weekdays, once on weekends.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"f0a5cc538e1f41c797e715b5d2e382a256675eab5571ea87cc710214a02c1a1b","compiler_version":"v0.58.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"9ac8decf4f6b2cb929368ff49e8f55e41f28183f48d99ed08e79bae0f33a4ed7","compiler_version":"v0.58.0"}
 
 name: "News Realtime Monitor"
 "on":
@@ -33,6 +33,10 @@ name: "News Realtime Monitor"
   - cron: "0 12 * * 0,6"
   workflow_dispatch:
     inputs:
+      analysis_depth:
+        default: standard
+        description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.
+        required: false
       article_types:
         default: breaking
         description: "Comma-separated article types to generate (breaking,committee-reports,propositions,motions,interpellations,week-ahead,month-ahead,weekly-review,monthly-review,deep-inspection). Default: breaking"

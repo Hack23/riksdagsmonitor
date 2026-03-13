@@ -98,7 +98,7 @@ export async function generateWeekAhead(): Promise<GenerationResult> {
         events: events as Parameters<typeof transformCalendarToEventGrid>[0],
         documents,
         questions,
-        interpellations,
+        interpellations: interpellations as RawDocument[],
         highlights: [] as Array<{title: string; description: string}>,
       };
       const content: string = generateArticleContent(weekData, 'week-ahead', lang);

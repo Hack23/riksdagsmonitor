@@ -433,3 +433,162 @@ describe('Article Type Completeness', () => {
     }
   });
 });
+
+describe('Editorial Framework', () => {
+  it('should have editorial-framework.ts with article type profiles', () => {
+    const frameworkPath = path.join(__dirname, '..', 'scripts', 'editorial-framework.ts');
+    expect(
+      fs.existsSync(frameworkPath),
+      'Missing scripts/editorial-framework.ts'
+    ).toBe(true);
+  });
+
+  it('editorial framework should define profiles for all article types', () => {
+    const frameworkPath = path.join(__dirname, '..', 'scripts', 'editorial-framework.ts');
+    if (!fs.existsSync(frameworkPath)) return;
+    const content = fs.readFileSync(frameworkPath, 'utf-8');
+
+    const requiredTypes = [
+      'committee-reports', 'propositions', 'motions', 'interpellations',
+      'week-ahead', 'month-ahead', 'weekly-review', 'monthly-review',
+      'evening-analysis', 'breaking', 'deep-inspection'
+    ];
+    for (const type of requiredTypes) {
+      expect(
+        content.includes(`'${type}'`),
+        `Editorial framework should include profile for '${type}'`
+      ).toBe(true);
+    }
+  });
+
+  it('editorial framework should define AnalysisDepth type with standard, deep, comprehensive', () => {
+    const frameworkPath = path.join(__dirname, '..', 'scripts', 'editorial-framework.ts');
+    if (!fs.existsSync(frameworkPath)) return;
+    const content = fs.readFileSync(frameworkPath, 'utf-8');
+    expect(content).toContain("'standard'");
+    expect(content).toContain("'deep'");
+    expect(content).toContain("'comprehensive'");
+    expect(content).toContain('AnalysisDepth');
+  });
+
+  it('editorial framework should specify quality thresholds', () => {
+    const frameworkPath = path.join(__dirname, '..', 'scripts', 'editorial-framework.ts');
+    if (!fs.existsSync(frameworkPath)) return;
+    const content = fs.readFileSync(frameworkPath, 'utf-8');
+    expect(content).toContain('minWordCount');
+    expect(content).toContain('minQualityScore');
+    expect(content).toContain('aiIterations');
+  });
+
+  it('editorial framework should require SWOT, dashboard, mindmap for deep article types', () => {
+    const frameworkPath = path.join(__dirname, '..', 'scripts', 'editorial-framework.ts');
+    if (!fs.existsSync(frameworkPath)) return;
+    const content = fs.readFileSync(frameworkPath, 'utf-8');
+    expect(content).toContain('swot:');
+    expect(content).toContain('dashboard:');
+    expect(content).toContain('mindmap:');
+    expect(content).toContain('minStakeholders:');
+  });
+});
+
+describe('Analysis Depth Input', () => {
+  const ALL_NEWS_WORKFLOWS = [
+    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+    'news-evening-analysis.md',
+    'news-realtime-monitor.md',
+    'news-article-generator.md',
+    'news-translate.md'
+  ];
+
+  it('all news workflows should have analysis_depth input parameter', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('analysis_depth'),
+        `Workflow ${workflowFile} should have analysis_depth input parameter`
+      ).toBe(true);
+    }
+  });
+
+  it('dedicated article type workflows should default analysis_depth to standard or deep', () => {
+    for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+      const content = fs.readFileSync(filepath, 'utf-8');
+      const hasValidDefault = content.includes('default: standard') || content.includes('default: deep') || content.includes('default: comprehensive');
+      expect(
+        hasValidDefault,
+        `Workflow ${workflowFile} should have a valid analysis_depth default (standard, deep, or comprehensive)`
+      ).toBe(true);
+    }
+  });
+
+  it('all dedicated workflows should have multi-step AI analysis framework section', () => {
+    for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('Multi-Step AI Analysis Framework') || content.includes('analysis_depth'),
+        `Workflow ${workflowFile} should reference analysis depth and multi-step AI analysis`
+      ).toBe(true);
+    }
+  });
+});
+
+describe('Interpellations Generator', () => {
+  it('should have a dedicated interpellations content generator', () => {
+    const generatorPath = path.join(
+      __dirname, '..', 'scripts', 'data-transformers', 'content-generators', 'interpellations.ts'
+    );
+    expect(
+      fs.existsSync(generatorPath),
+      'Missing dedicated interpellations.ts content generator'
+    ).toBe(true);
+  });
+
+  it('interpellations generator should export generateInterpellationsContent', () => {
+    const generatorPath = path.join(
+      __dirname, '..', 'scripts', 'data-transformers', 'content-generators', 'interpellations.ts'
+    );
+    if (!fs.existsSync(generatorPath)) return;
+    const content = fs.readFileSync(generatorPath, 'utf-8');
+    expect(content).toContain('export function generateInterpellationsContent');
+  });
+
+  it('interpellations generator should not use motions headings', () => {
+    const generatorPath = path.join(
+      __dirname, '..', 'scripts', 'data-transformers', 'content-generators', 'interpellations.ts'
+    );
+    if (!fs.existsSync(generatorPath)) return;
+    const content = fs.readFileSync(generatorPath, 'utf-8');
+    // Must not import from motions.ts (it's its own module)
+    expect(content).not.toContain("from './motions.js'");
+    expect(content).not.toContain("from './motions'");
+    // Must reference interpellations heading not oppMotions
+    expect(content).not.toContain("'oppMotions'");
+  });
+
+  it('data-transformers index should route interpellations to dedicated generator', () => {
+    const indexPath = path.join(__dirname, '..', 'scripts', 'data-transformers', 'index.ts');
+    if (!fs.existsSync(indexPath)) return;
+    const content = fs.readFileSync(indexPath, 'utf-8');
+    // interpellations must NOT be grouped with motions in the same case
+    const interpCase = content.match(/case 'interpellations'[^}]+?return generateInterpellationsContent/s);
+    expect(
+      interpCase !== null,
+      "data-transformers/index.ts should route 'interpellations' to generateInterpellationsContent, not generateMotionsContent"
+    ).toBe(true);
+  });
+
+  it('content-generators barrel should export generateInterpellationsContent', () => {
+    const barrelPath = path.join(
+      __dirname, '..', 'scripts', 'data-transformers', 'content-generators.ts'
+    );
+    if (!fs.existsSync(barrelPath)) return;
+    const content = fs.readFileSync(barrelPath, 'utf-8');
+    expect(content).toContain('generateInterpellationsContent');
+  });
+});

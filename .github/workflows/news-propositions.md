@@ -16,6 +16,10 @@ on:
         description: 'Core languages for content generation (en,sv | nordic | eu-core | all). Translations for remaining languages are handled by the dedicated news-translate workflow.'
         required: false
         default: en,sv
+      analysis_depth:
+        description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.'
+        required: false
+        default: deep
 
 permissions:
   contents: read
@@ -117,6 +121,38 @@ If **force_generation** is `true`, generate articles even if recent ones exist. 
 3. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
+
+
+## 📊 MANDATORY Multi-Step AI Analysis Framework
+
+> **Read `analysis_depth` input first** (default: `deep`). This controls iteration count and section requirements.
+
+Based on the editorial profile for `propositions` (from `scripts/editorial-framework.ts`):
+- **SWOT**: full (5+ stakeholder perspectives per quadrant)
+- **Dashboard**: required (min. 2 Chart.js charts)
+- **Mindmap**: required (CSS policy mindmap)
+- **Min. stakeholders**: 5 perspectives
+- **AI iterations**: 2 (standard) or 3 (deep/comprehensive)
+
+### Phase 1 — Data Collection & Initial Analysis
+1. Fetch MCP data (`get_propositioner`, `get_sync_status`, cross-reference `get_betankanden`)
+2. Detect policy domains and extract legislative timeline for each proposition
+3. Build initial outline: lede, thematic groupings by policy area, key takeaways
+
+### Phase 2 — Iterative Depth Enhancement (repeat per `analysis_depth`)
+For each AI iteration:
+1. **SWOT Analysis**: Generate `generateSwotSection()` with ≥5 stakeholder perspectives when `analysis_depth` is `deep` or `comprehensive`
+2. **Policy Dashboard**: Generate `generateDashboardSection()` with ≥2 charts (proposition volume by ministry, timeline)
+3. **Mindmap**: Generate `generateMindmapSection()` showing policy impact connections
+4. **Quality Gate** (check before next iteration):
+   - Verify legislative timeline is included per proposition
+   - Verify no identical "Why It Matters" text across entries
+   - Verify all Swedish API text is translated
+   - Verify word count ≥ 800
+   - If failing any check: re-generate the failing section before proceeding
+
+### Phase 3 — Final Quality Gate Before PR
+Run all validation checks from the **MANDATORY Quality Validation** section below before committing.
 
 ## MANDATORY Date Validation
 
