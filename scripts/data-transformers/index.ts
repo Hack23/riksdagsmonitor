@@ -61,6 +61,7 @@ export {
   generateMindmapSection,
   generateSankeySection,
   generateCiaOverviewSection,
+  generateInterpellationsContent,
 } from './content-generators.js';
 export type {
   SwotSectionOptions,
@@ -98,6 +99,7 @@ import {
   generateCommitteeContent,
   generatePropositionsContent,
   generateMotionsContent,
+  generateInterpellationsContent,
   generateGenericContent,
   generateMonthlyReviewContent,
   generateMonthAheadContent,
@@ -127,8 +129,9 @@ export function generateArticleContent(
     case 'propositions':
       return generatePropositionsContent(data, lang);
     case 'motions':
-    case 'interpellations':
       return generateMotionsContent(data, lang);
+    case 'interpellations':
+      return generateInterpellationsContent(data, lang);
     case 'monthly-review':
       return generateMonthlyReviewContent(data, lang);
     case 'weekly-review':
