@@ -244,7 +244,7 @@ export async function generateInterpellations(options: GenerationOptions = {}): 
   }
 }
 
-function getTitles(lang: Language, count: number, documents: RawDocument[] = []): TitleSet {
+function getTitles(lang: Language, count: number, _documents: RawDocument[] = []): TitleSet {
   const titles: Record<Language, TitleSet> = {
     en: {
       title: `Interpellation Debates: Holding Government to Account`,
@@ -303,9 +303,6 @@ function getTitles(lang: Language, count: number, documents: RawDocument[] = [])
       subtitle: `${count}场质询辩论分析`
     }
   };
-
-  // Suppress unused parameter warning — reserved for future content-title enrichment
-  void documents;
 
   return titles[lang] || titles.en;
 }
