@@ -4,8 +4,12 @@
  * no JavaScript or third-party libraries required.
  *
  * The mindmap renders a central topic node surrounded by color-coded branch
- * nodes. Each branch can have child leaf items. The layout uses CSS Flexbox
+ * nodes. Each branch can have child leaf items and nested sub-branches (3-level
+ * nesting: branch → sub-branch → leaf items). The layout uses CSS Flexbox
  * and connecting-line pseudo-elements, working at all viewport widths.
+ *
+ * AI-enriched branches carry importance indicators, evidence references, and
+ * cross-branch connection metadata that is rendered via CSS-only techniques.
  *
  * Typical usage: inject into deep-inspection articles to visualise the
  * relationship between a focus topic and detected policy domains, parliamentary
@@ -36,6 +40,21 @@ export type MindmapBranchColor =
   | 'blue'     // international / EU context
   | 'red';     // urgency / critical issues
 
+/** Relative importance of a mindmap branch — drives visual weight */
+export type BranchImportance = 'critical' | 'high' | 'medium' | 'low';
+
+/** A directional relationship between two mindmap branches */
+export interface BranchConnection {
+  /** Label or identifier of the source branch */
+  from: string;
+  /** Label or identifier of the target branch */
+  to: string;
+  /** Semantic type of the relationship */
+  type: 'dependency' | 'conflict' | 'alignment' | 'sequence';
+  /** Short human-readable description of the connection */
+  label?: string;
+}
+
 /** A single branch of the mindmap, attached to the central node */
 export interface MindmapBranch {
   /** Branch label (rendered in the colored branch node) */
@@ -46,6 +65,14 @@ export interface MindmapBranch {
   items?: string[];
   /** Optional icon/emoji prefix for the branch label */
   icon?: string;
+  /** Nested second-level branches (sub-branches with optional leaf items) */
+  subBranches?: MindmapBranch[];
+  /** Relative importance — reflected visually via border weight and glow */
+  importance?: BranchImportance;
+  /** Document IDs or titles that serve as evidence for this branch */
+  evidenceRefs?: string[];
+  /** Labels of related branches that share dependencies or alignment */
+  connections?: string[];
 }
 
 /** Options for the mindmap section generator */
@@ -60,6 +87,8 @@ export interface MindmapSectionOptions {
   title?: string;
   /** Optional introductory paragraph rendered above the mindmap */
   summary?: string;
+  /** Cross-branch connections to render as relationship indicators */
+  connections?: BranchConnection[];
 }
 
 // ---------------------------------------------------------------------------
@@ -102,12 +131,19 @@ const SECTION_TITLES: Partial<Record<string, string>> = {
 // Rendering helpers
 // ---------------------------------------------------------------------------
 
-/** Render a single branch node with its leaf items */
-function renderBranch(branch: MindmapBranch): string {
+/** Render a single branch or sub-branch node with its leaf items and nested sub-branches.
+ * Supports up to 3 nesting levels: branch (level 0) → sub-branch (level 1) → leaf items.
+ * Level is capped at 2 to prevent unbounded recursion in malformed input.
+ */
+function renderBranch(branch: MindmapBranch, level: number = 0): string {
   const palette = BRANCH_COLORS[branch.color] ?? BRANCH_COLORS.cyan;
   const iconPrefix = branch.icon ? `${branch.icon} ` : '';
   const labelHtml = `${escapeHtml(iconPrefix)}${escapeHtml(branch.label)}`;
 
+  // Importance data attribute for CSS-driven visual weight
+  const importanceAttr = branch.importance ? ` data-importance="${branch.importance}"` : '';
+
+  // Leaf items (present at any nesting level)
   const leafItems =
     branch.items && branch.items.length > 0
       ? `\n      <ul class="mindmap-leaf-list" role="list">\n${branch.items
@@ -115,10 +151,33 @@ function renderBranch(branch: MindmapBranch): string {
           .join('\n')}\n      </ul>`
       : '';
 
-  return `    <div class="mindmap-branch" role="listitem"
+  // Sub-branches rendered one level deeper (only from top-level branches)
+  const subBranchBlock =
+    level < 2 && branch.subBranches && branch.subBranches.length > 0
+      ? `\n      <div class="mindmap-sub-branches" role="list">\n${branch.subBranches
+          .map(sb => renderBranch(sb, level + 1))
+          .join('\n')}\n      </div>`
+      : '';
+
+  const outerClass = level === 0 ? 'mindmap-branch' : 'mindmap-sub-branch';
+
+  return `    <div class="${outerClass}" role="listitem"${importanceAttr}
       style="--branch-bg:${palette.bg};--branch-border:${palette.border};--branch-text:${palette.text}">
-      <div class="mindmap-branch-label">${labelHtml}</div>${leafItems}
+      <div class="mindmap-branch-label">${labelHtml}</div>${leafItems}${subBranchBlock}
     </div>`;
+}
+
+/** Render the cross-branch connections panel (pure CSS — no JS) */
+function renderConnections(connections: BranchConnection[]): string {
+  if (connections.length === 0) return '';
+
+  const items = connections.map(c => {
+    const label = c.label ? escapeHtml(c.label) : `${escapeHtml(c.from)} → ${escapeHtml(c.to)}`;
+    return `    <li class="mindmap-connection" data-type="${c.type}"
+        data-from="${escapeHtml(c.from)}" data-to="${escapeHtml(c.to)}">${label}</li>`;
+  }).join('\n');
+
+  return `  <ul class="mindmap-connections" role="list" aria-label="Branch connections">\n${items}\n  </ul>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -130,7 +189,9 @@ function renderBranch(branch: MindmapBranch): string {
  *
  * Returns a `TemplateSection` (pure HTML/CSS — no JavaScript) that can be
  * appended to `ArticleData.sections`. The mindmap renders a central topic node
- * surrounded by colored branch nodes, each optionally containing child items.
+ * surrounded by colored branch nodes, each optionally containing child items,
+ * nested sub-branches (3-level nesting), importance indicators, and
+ * cross-branch connections.
  *
  * The CSS for `.mindmap-section` lives in `styles.css`. No client-side JS is
  * required or loaded.
@@ -145,13 +206,18 @@ function renderBranch(branch: MindmapBranch): string {
  *       label: 'Key Actors',
  *       color: 'cyan',
  *       icon: '👥',
+ *       importance: 'critical',
  *       items: ['Ministry of Defence', 'NCSC', 'Riksdag Defence Committee'],
  *     },
  *     {
  *       label: 'Legislative Risks',
  *       color: 'magenta',
  *       icon: '⚠️',
+ *       importance: 'high',
  *       items: ['Insufficient NIS2 implementation budget', 'Fragmented agency mandates'],
+ *       subBranches: [
+ *         { label: 'Budget Gap', color: 'red', items: ['FY2025 shortfall', 'NCSC underfunding'] },
+ *       ],
  *     },
  *     {
  *       label: 'EU Context',
@@ -159,6 +225,9 @@ function renderBranch(branch: MindmapBranch): string {
  *       icon: '🇪🇺',
  *       items: ['NIS2 Directive', 'Cyber Resilience Act', 'ENISA framework'],
  *     },
+ *   ],
+ *   connections: [
+ *     { from: 'Legislative Risks', to: 'EU Context', type: 'dependency', label: 'NIS2 deadline drives urgency' },
  *   ],
  * });
  * articleData.sections = [...(articleData.sections ?? []), section];
@@ -176,6 +245,10 @@ export function generateMindmapSection(opts: MindmapSectionOptions): TemplateSec
   const branchCount = branches.length;
   const branchItems = branches.map(b => renderBranch(b)).join('\n');
 
+  const connectionsBlock = opts.connections && opts.connections.length > 0
+    ? `\n${renderConnections(opts.connections)}`
+    : '';
+
   const html = `<section class="mindmap-section" aria-label="${escapeHtml(titleText)}">
   <h2>${escapeHtml(titleText)}</h2>
 ${summaryBlock}  <div class="mindmap-container" data-branch-count="${branchCount}">
@@ -183,7 +256,7 @@ ${summaryBlock}  <div class="mindmap-container" data-branch-count="${branchCount
     <div class="mindmap-branches" role="list">
 ${branchItems}
     </div>
-  </div>
+  </div>${connectionsBlock}
 </section>`;
 
   return {

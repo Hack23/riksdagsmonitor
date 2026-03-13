@@ -24,12 +24,12 @@ import {
   generateMindmapSection,
   generateSankeySection,
   type StakeholderSwot,
-  type MindmapBranch,
   type SankeyNode,
   type SankeyFlow,
 } from '../data-transformers/index.js';
 import { generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
 import { generateDeepPolicyAnalysis, detectPolicyDomains } from '../data-transformers/policy-analysis.js';
+import { buildAIMindmapBranches } from '../ai-analysis/mindmap-analyzer.js';
 import { escapeHtml } from '../html-utils.js';
 import { generateArticleHTML } from '../article-template.js';
 import { MCPClient } from '../mcp-client.js';
@@ -1284,61 +1284,21 @@ function buildDeepInspectionSections(
     lang,
   });
 
-  // ── Mindmap: topic → detected policy domains → document types ────────────
-  const allDetectedDomains = new Set<string>();
-  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
-  const detectedDomainList = [...allDetectedDomains].slice(0, 8);
-
-  const mindmapBranches: MindmapBranch[] = [];
-
-  // Document type branch — use localized names
-  if (rawTypeKeys.length > 0) {
-    mindmapBranches.push({
-      label: deepLabel('documentTypes', lang),
-      color: 'cyan',
-      icon: '📄',
-      items: rawTypeKeys.map((t, i) => `${docTypeLabel(t, lang, chartValues[i])} (${chartValues[i] ?? 0})`),
-    });
-  }
-
-  // Policy domain branch
-  if (detectedDomainList.length > 0) {
-    mindmapBranches.push({
-      label: deepLabel('policyDomains', lang),
-      color: 'green',
-      icon: '🏛️',
-      items: detectedDomainList,
-    });
-  }
-
-  // Stakeholder branch
-  mindmapBranches.push({
-    label: deepLabel('stakeholders', lang),
-    color: 'yellow',
-    icon: '👥',
-    items: [
-      govNames[lang] ?? govNames.en!,
-      oppNames[lang] ?? oppNames.en!,
-      privateNames[lang] ?? privateNames.en!,
-    ],
-  });
-
-  // Data context branch
-  mindmapBranches.push({
-    label: dataSourceBranchLabels[lang] ?? dataSourceBranchLabels.en!,
-    color: 'purple',
-    icon: '📊',
-    items: dataSourceItems[lang] ?? dataSourceItems.en!,
-  });
+  // ── Mindmap: AI-driven policy connection analysis (three-pass) ─────────────
+  const aiMindmap = buildAIMindmapBranches(docs, topic, lang);
 
   const mindmapSection = generateMindmapSection({
     topic: topic || 'Parliamentary Analysis',
-    branches: mindmapBranches,
+    branches: aiMindmap.branches,
+    connections: aiMindmap.connections,
     lang,
-    summary: topic
-      ? `Conceptual map for deep inspection: ${topic}`
-      : `Conceptual map for ${docs.length} parliamentary documents`,
+    summary: aiMindmap.summary,
   });
+
+  // ── Detected policy domains (shared with economic dashboard) ─────────────
+  const allDetectedDomains = new Set<string>();
+  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
+  const detectedDomainList = [...allDetectedDomains].slice(0, 8);
 
   // ── Sankey: party/doc-type flow → legislative outcome ─────────────────────
   const sankeyNodes: SankeyNode[] = [

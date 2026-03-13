@@ -74,6 +74,8 @@ export type {
   MindmapSectionOptions,
   MindmapBranch,
   MindmapBranchColor,
+  BranchImportance,
+  BranchConnection,
   SankeySectionOptions,
   SankeyNode,
   SankeyFlow,
