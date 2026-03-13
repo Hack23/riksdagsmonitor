@@ -286,3 +286,98 @@ export interface DashboardData {
   /** Optional narrative summary displayed above the charts */
   summary?: string;
 }
+
+// ---------------------------------------------------------------------------
+// Multi-panel dashboard types
+// ---------------------------------------------------------------------------
+
+/** Layout variant for multi-panel dashboards */
+export type DashboardPanelLayout = 'grid-2x2' | 'grid-3x2' | 'full-width' | 'sidebar';
+
+/** A single cell in a heat-map grid */
+export interface HeatMapCell {
+  /** Numeric intensity value (0–100) */
+  value: number;
+  /** Optional text label rendered inside the cell */
+  label?: string;
+}
+
+/** CSS-only heat-map configuration */
+export interface HeatMapConfig {
+  /** Unique identifier used as the container element id */
+  id: string;
+  /** Chart title */
+  title: string;
+  /** Row labels (left axis) */
+  rowLabels: string[];
+  /** Column labels (top axis) */
+  columnLabels: string[];
+  /** Row-major matrix of cells (rows.length × columns.length) */
+  cells: HeatMapCell[][];
+  /** Label for the low-intensity end of the scale */
+  minLabel?: string;
+  /** Label for the high-intensity end of the scale */
+  maxLabel?: string;
+}
+
+/** CSS-only gauge/dial configuration */
+export interface GaugeConfig {
+  /** Unique identifier used as the container element id */
+  id: string;
+  /** Chart title */
+  title: string;
+  /** Current value (0–100) */
+  value: number;
+  /** Optional descriptive label rendered below the value */
+  label?: string;
+  /** Label for the low end (default: "0") */
+  minLabel?: string;
+  /** Label for the high end (default: "100") */
+  maxLabel?: string;
+}
+
+/** A cross-panel AI-generated insight */
+export interface AIInsight {
+  /** Unique identifier */
+  id: string;
+  /** Insight text */
+  text: string;
+  /** Relative importance */
+  relevance?: 'high' | 'medium' | 'low';
+}
+
+/** A single panel within a multi-panel dashboard */
+export interface DashboardPanel {
+  /** Unique panel identifier */
+  id: string;
+  /** Panel heading */
+  title: string;
+  /** Chart.js chart configuration (mutually exclusive with heatMap / gauge) */
+  chart?: DashboardChartConfig;
+  /** CSS-only heat map (mutually exclusive with chart / gauge) */
+  heatMap?: HeatMapConfig;
+  /** CSS-only gauge (mutually exclusive with chart / heatMap) */
+  gauge?: GaugeConfig;
+  /** AI-generated interpretation paragraph for this panel */
+  interpretation?: string;
+  /** Which stakeholder perspective this panel represents */
+  stakeholderView?: string;
+  /** Data confidence level (0–100) */
+  confidenceLevel?: number;
+  /** Optional accessible data table fallback */
+  table?: DashboardTableConfig;
+}
+
+/** Configuration for a multi-panel dashboard section */
+export interface MultiPanelDashboard {
+  /** Dashboard section title */
+  title: string;
+  /** AI-generated executive summary displayed above all panels */
+  summary?: string;
+  /** Individual dashboard panels */
+  panels: DashboardPanel[];
+  /** Responsive grid layout variant (default: "grid-2x2") */
+  layout?: DashboardPanelLayout;
+  /** Cross-panel AI insights listed at the bottom */
+  aiInsights?: AIInsight[];
+}

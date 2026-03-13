@@ -109,7 +109,12 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Medio',
     swotImpactLow: 'Bajo',
     dashboardTitle: 'Panel de control',
-    dashboardSummary: 'Resumen'
+    dashboardSummary: 'Resumen',
+    dashboardPanel: 'Panel',
+    dashboardInterpretation: 'Análisis',
+    dashboardAiInsights: 'Ideas clave',
+    dashboardConfidence: 'Confianza',
+    dashboardStakeholder: 'Parte interesada'
   },
   nl: {
     whyMatters: 'Waarom deze week belangrijk is',
@@ -210,7 +215,12 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Gemiddeld',
     swotImpactLow: 'Laag',
     dashboardTitle: 'Dashboard',
-    dashboardSummary: 'Samenvatting'
+    dashboardSummary: 'Samenvatting',
+    dashboardPanel: 'Paneel',
+    dashboardInterpretation: 'Analyse',
+    dashboardAiInsights: 'Belangrijkste inzichten',
+    dashboardConfidence: 'Betrouwbaarheid',
+    dashboardStakeholder: 'Belanghebbende'
   },
   ar: {
     whyMatters: 'لماذا هذا الأسبوع مهم',
@@ -311,7 +321,12 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'متوسط',
     swotImpactLow: 'منخفض',
     dashboardTitle: 'لوحة المعلومات',
-    dashboardSummary: 'ملخص'
+    dashboardSummary: 'ملخص',
+    dashboardPanel: 'لوحة',
+    dashboardInterpretation: 'تحليل',
+    dashboardAiInsights: 'رؤى رئيسية',
+    dashboardConfidence: 'الثقة',
+    dashboardStakeholder: 'صاحب المصلحة'
   },
   he: {
     whyMatters: 'למה השבוע הזה חשוב',
@@ -412,7 +427,12 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'בינוני',
     swotImpactLow: 'נמוך',
     dashboardTitle: 'לוח מחוונים',
-    dashboardSummary: 'סיכום'
+    dashboardSummary: 'סיכום',
+    dashboardPanel: 'לוח',
+    dashboardInterpretation: 'ניתוח',
+    dashboardAiInsights: 'תובנות מרכזיות',
+    dashboardConfidence: 'ביטחון',
+    dashboardStakeholder: 'בעל עניין'
   },
   ja: {
     whyMatters: 'なぜ今週が重要か',
@@ -513,7 +533,12 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: '中',
     swotImpactLow: '低',
     dashboardTitle: 'ダッシュボード',
-    dashboardSummary: '概要'
+    dashboardSummary: '概要',
+    dashboardPanel: 'パネル',
+    dashboardInterpretation: '分析',
+    dashboardAiInsights: '主要な洞察',
+    dashboardConfidence: '信頼度',
+    dashboardStakeholder: '利害関係者'
   },
   ko: {
     whyMatters: '이번 주가 중요한 이유',
@@ -614,7 +639,12 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: '보통',
     swotImpactLow: '낮음',
     dashboardTitle: '대시보드',
-    dashboardSummary: '요약'
+    dashboardSummary: '요약',
+    dashboardPanel: '패널',
+    dashboardInterpretation: '분석',
+    dashboardAiInsights: '주요 인사이트',
+    dashboardConfidence: '신뢰도',
+    dashboardStakeholder: '이해관계자'
   },
   zh: {
     whyMatters: '为什么本周很重要',
@@ -715,6 +745,11 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: '中',
     swotImpactLow: '低',
     dashboardTitle: '仪表板',
-    dashboardSummary: '摘要'
+    dashboardSummary: '摘要',
+    dashboardPanel: '面板',
+    dashboardInterpretation: '分析',
+    dashboardAiInsights: '关键洞察',
+    dashboardConfidence: '置信度',
+    dashboardStakeholder: '利益相关者'
   }
 };

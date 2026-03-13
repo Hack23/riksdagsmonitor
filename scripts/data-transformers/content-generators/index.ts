@@ -34,8 +34,8 @@ export { generateDeepAnalysisSection, localizeDocType, DOC_TYPE_DISPLAY } from '
 export type { DeepAnalysisOptions, DocTypeLocalization } from './shared.js';
 export { generateSwotSection } from './swot-section.js';
 export type { SwotSectionOptions } from './swot-section.js';
-export { generateDashboardSection } from './dashboard-section.js';
-export type { DashboardSectionOptions } from './dashboard-section.js';
+export { generateDashboardSection, generateMultiPanelDashboardSection } from './dashboard-section.js';
+export type { DashboardSectionOptions, MultiPanelDashboardOptions } from './dashboard-section.js';
 export { generateStakeholderSwotSection } from './stakeholder-swot-section.js';
 export type { StakeholderSwotSectionOptions, StakeholderSwot } from './stakeholder-swot-section.js';
 export { generateEconomicDashboardSection, findIndicatorsForDomains, buildEconomicCharts, buildEconomicTables } from './economic-dashboard-section.js';

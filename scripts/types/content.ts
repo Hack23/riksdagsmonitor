@@ -141,4 +141,10 @@ export interface ContentLabelSet {
   // Dashboard section labels
   dashboardTitle: string;
   dashboardSummary: string;
+  // Multi-panel dashboard labels
+  dashboardPanel: string;
+  dashboardInterpretation: string;
+  dashboardAiInsights: string;
+  dashboardConfidence: string;
+  dashboardStakeholder: string;
 }

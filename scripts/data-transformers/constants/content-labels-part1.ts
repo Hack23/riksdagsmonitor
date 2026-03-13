@@ -109,7 +109,12 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Medium',
     swotImpactLow: 'Low',
     dashboardTitle: 'Dashboard',
-    dashboardSummary: 'Summary'
+    dashboardSummary: 'Summary',
+    dashboardPanel: 'Panel',
+    dashboardInterpretation: 'Analysis',
+    dashboardAiInsights: 'Key Insights',
+    dashboardConfidence: 'Confidence',
+    dashboardStakeholder: 'Stakeholder'
   },
   sv: {
     whyMatters: 'Varför denna vecka är viktig',
@@ -210,7 +215,12 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Medel',
     swotImpactLow: 'Låg',
     dashboardTitle: 'Instrumentpanel',
-    dashboardSummary: 'Sammanfattning'
+    dashboardSummary: 'Sammanfattning',
+    dashboardPanel: 'Panel',
+    dashboardInterpretation: 'Analys',
+    dashboardAiInsights: 'Viktiga insikter',
+    dashboardConfidence: 'Tillförlitlighet',
+    dashboardStakeholder: 'Intressent'
   },
   da: {
     whyMatters: 'Hvorfor denne uge er vigtig',
@@ -311,7 +321,12 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Middel',
     swotImpactLow: 'Lav',
     dashboardTitle: 'Dashboard',
-    dashboardSummary: 'Sammenfatning'
+    dashboardSummary: 'Sammenfatning',
+    dashboardPanel: 'Panel',
+    dashboardInterpretation: 'Analyse',
+    dashboardAiInsights: 'Vigtigste indsigter',
+    dashboardConfidence: 'Tillid',
+    dashboardStakeholder: 'Interessent'
   },
   no: {
     whyMatters: 'Hvorfor denne uken er viktig',
@@ -412,7 +427,12 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Middels',
     swotImpactLow: 'Lav',
     dashboardTitle: 'Dashbord',
-    dashboardSummary: 'Sammendrag'
+    dashboardSummary: 'Sammendrag',
+    dashboardPanel: 'Panel',
+    dashboardInterpretation: 'Analyse',
+    dashboardAiInsights: 'Viktige innsikter',
+    dashboardConfidence: 'Tillit',
+    dashboardStakeholder: 'Interessent'
   },
   fi: {
     whyMatters: 'Miksi tämä viikko on tärkeä',
@@ -513,7 +533,12 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Keskitaso',
     swotImpactLow: 'Matala',
     dashboardTitle: 'Kojelauta',
-    dashboardSummary: 'Yhteenveto'
+    dashboardSummary: 'Yhteenveto',
+    dashboardPanel: 'Paneeli',
+    dashboardInterpretation: 'Analyysi',
+    dashboardAiInsights: 'Tärkeimmät havainnot',
+    dashboardConfidence: 'Luotettavuus',
+    dashboardStakeholder: 'Sidosryhmä'
   },
   de: {
     whyMatters: 'Warum diese Woche wichtig ist',
@@ -614,7 +639,12 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Mittel',
     swotImpactLow: 'Niedrig',
     dashboardTitle: 'Dashboard',
-    dashboardSummary: 'Zusammenfassung'
+    dashboardSummary: 'Zusammenfassung',
+    dashboardPanel: 'Panel',
+    dashboardInterpretation: 'Analyse',
+    dashboardAiInsights: 'Wichtige Erkenntnisse',
+    dashboardConfidence: 'Konfidenz',
+    dashboardStakeholder: 'Interessengruppe'
   },
   fr: {
     whyMatters: 'Pourquoi cette semaine est importante',
@@ -715,6 +745,11 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Moyen',
     swotImpactLow: 'Faible',
     dashboardTitle: 'Tableau de bord',
-    dashboardSummary: 'Résumé'
+    dashboardSummary: 'Résumé',
+    dashboardPanel: 'Panneau',
+    dashboardInterpretation: 'Analyse',
+    dashboardAiInsights: 'Points clés',
+    dashboardConfidence: 'Confiance',
+    dashboardStakeholder: 'Partie prenante'
   },
 };
