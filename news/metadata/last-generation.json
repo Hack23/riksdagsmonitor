@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-13T06:28:10.071Z",
+  "timestamp": "2026-03-13T06:21:18.004Z",
   "types": [
     "motions"
   ],
@@ -15,19 +15,7 @@
   "errors": 0,
   "articles": [
     "2026-03-13-opposition-motions-en.html",
-    "2026-03-13-opposition-motions-sv.html",
-    "2026-03-13-opposition-motions-da.html",
-    "2026-03-13-opposition-motions-no.html",
-    "2026-03-13-opposition-motions-fi.html",
-    "2026-03-13-opposition-motions-de.html",
-    "2026-03-13-opposition-motions-fr.html",
-    "2026-03-13-opposition-motions-es.html",
-    "2026-03-13-opposition-motions-nl.html",
-    "2026-03-13-opposition-motions-ar.html",
-    "2026-03-13-opposition-motions-he.html",
-    "2026-03-13-opposition-motions-ja.html",
-    "2026-03-13-opposition-motions-ko.html",
-    "2026-03-13-opposition-motions-zh.html"
+    "2026-03-13-opposition-motions-sv.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
