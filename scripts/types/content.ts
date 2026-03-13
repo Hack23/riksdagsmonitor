@@ -96,6 +96,10 @@ export interface ContentLabelSet {
   committeeBreakdown: (n: number, c: number) => string;
   propsBreakdown: (n: number) => string;
   motionsBreakdown: (n: number) => string;
+  /** Empty-state message for interpellations articles */
+  noInterpellations: string;
+  /** Analytical lede for interpellations articles */
+  interpellationsBreakdown: (n: number) => string;
   // Localized body text labels (avoid hardcoded en/sv fallbacks)
   committeeCountContext: (n: number) => string;
   committeeActivityTakeaway: (committees: string, extra: number) => string;

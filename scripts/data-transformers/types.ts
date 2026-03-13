@@ -137,6 +137,8 @@ export interface ArticleContentData {
   reports?: RawDocument[];
   propositions?: RawDocument[];
   motions?: RawDocument[];
+  /** Parliamentary interpellations (interpellationer) */
+  interpellations?: RawDocument[];
   documents?: RawDocument[];
   highlights?: Array<{ title: string; description: string }>;
   context?: string;
