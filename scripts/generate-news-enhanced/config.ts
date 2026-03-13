@@ -44,10 +44,11 @@ export const skipExistingArg: boolean = args.includes('--skip-existing');
 export const batchSize: number = batchSizeArg ? parseInt(parseArgValue(batchSizeArg) || '0', 10) : 0;
 const qualityThresholdArg: string | undefined = args.find(arg => arg.startsWith('--quality-threshold='));
 
-// Deep-inspection arguments: document IDs, URLs, and focus topic for targeted analysis
+// Deep-inspection arguments: document IDs, URLs, focus topic, and analysis depth
 const documentIdsArg: string | undefined = args.find(arg => arg.startsWith('--document-ids='));
 const documentUrlsArg: string | undefined = args.find(arg => arg.startsWith('--document-urls='));
 const focusTopicArg: string | undefined = args.find(arg => arg.startsWith('--focus-topic='));
+const depthArg: string | undefined = args.find(arg => arg.startsWith('--depth='));
 
 /** Comma-separated Riksdag document IDs for deep-inspection (e.g. H901FiU1,H901JuU25) */
 const rawDocumentIds: string = parseArgValue(documentIdsArg);
@@ -63,6 +64,21 @@ export const documentUrls: string[] = rawDocumentUrls
 
 /** Specific policy topic to focus deep-inspection analysis on */
 export const focusTopic: string = parseArgValue(focusTopicArg);
+
+/**
+ * Analysis depth for deep-inspection (1–4).
+ *  1 — surface analysis (what happened) — default, fastest
+ *  2 — adds predictive assessment and historical context
+ *  3 — adds executive intelligence summary and methodology section
+ *  4 — full multi-iteration intelligence report with all sections
+ */
+const rawDepth: string = parseArgValue(depthArg);
+const parsedDepth: number = rawDepth ? parseInt(rawDepth, 10) : 1;
+export const analysisDepth: 1 | 2 | 3 | 4 =
+  parsedDepth >= 4 ? 4 :
+  parsedDepth === 3 ? 3 :
+  parsedDepth === 2 ? 2 :
+  1;
 const DEFAULT_QUALITY_THRESHOLD = 40;
 let parsedQualityThreshold: number = DEFAULT_QUALITY_THRESHOLD;
 if (qualityThresholdArg) {
