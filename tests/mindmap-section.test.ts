@@ -2,11 +2,13 @@
  * Tests for generateMindmapSection — color-coded CSS mindmap generator.
  * Validates HTML structure, branch rendering, color attributes, XSS escaping,
  * accessibility, RTL support, and TemplateSection shape.
+ * Also tests new AI-driven features: central thesis, weighted items,
+ * sub-branches, cross-branch connections, and dimension attributes.
  */
 
 import { describe, it, expect } from 'vitest';
 import { generateMindmapSection } from '../scripts/data-transformers/content-generators/mindmap-section.js';
-import type { MindmapBranch } from '../scripts/data-transformers/content-generators/mindmap-section.js';
+import type { MindmapBranch, AIMindmapItem, SubBranch, MindmapConnection } from '../scripts/data-transformers/content-generators/mindmap-section.js';
 
 /** Build a minimal set of branches for testing */
 function makeBranches(): MindmapBranch[] {
@@ -191,8 +193,8 @@ describe('generateMindmapSection', () => {
       lang: 'en',
     });
     expect(section.html).toContain('aria-label=');
-    expect(section.html).toContain('role="list"');
-    expect(section.html).toContain('role="listitem"');
+    expect(section.html).toContain('role="tree"');
+    expect(section.html).toContain('role="treeitem"');
   });
 
   it('includes data-branch-count attribute', () => {
@@ -235,5 +237,153 @@ describe('generateMindmapSection', () => {
         generateMindmapSection({ topic: 'T', branches: [{ label: 'B', color }], lang: 'en' })
       ).not.toThrow();
     }
+  });
+
+  // ── AI-driven features ────────────────────────────────────────────────────
+
+  it('renders central thesis when provided', () => {
+    const section = generateMindmapSection({
+      topic: 'Climate Policy',
+      branches: [],
+      lang: 'en',
+      centralThesis: 'Parliamentary focus spans energy transition and climate obligations.',
+    });
+    expect(section.html).toContain('class="mindmap-thesis"');
+    expect(section.html).toContain('Parliamentary focus spans energy transition');
+  });
+
+  it('does not render thesis block when centralThesis is absent', () => {
+    const section = generateMindmapSection({ topic: 'T', branches: [], lang: 'en' });
+    expect(section.html).not.toContain('mindmap-thesis');
+  });
+
+  it('wraps center node in .mindmap-center-wrapper', () => {
+    const section = generateMindmapSection({ topic: 'T', branches: [], lang: 'en' });
+    expect(section.html).toContain('class="mindmap-center-wrapper"');
+  });
+
+  it('renders AI-weighted items with data-weight attribute', () => {
+    const aiItems: AIMindmapItem[] = [
+      { text: 'Critical issue', weight: 'critical' },
+      { text: 'Moderate item', weight: 'moderate' },
+      { text: 'Minor note', weight: 'minor' },
+    ];
+    const section = generateMindmapSection({
+      topic: 'T',
+      branches: [{ label: 'AI Branch', color: 'cyan', aiItems }],
+      lang: 'en',
+    });
+    expect(section.html).toContain('data-weight="critical"');
+    expect(section.html).toContain('data-weight="moderate"');
+    expect(section.html).toContain('data-weight="minor"');
+    expect(section.html).toContain('Critical issue');
+    expect(section.html).toContain('mindmap-ai-list');
+  });
+
+  it('prefers aiItems over items when both are provided', () => {
+    const branch: MindmapBranch = {
+      label: 'B',
+      color: 'green',
+      items: ['Plain item'],
+      aiItems: [{ text: 'AI item', weight: 'significant' }],
+    };
+    const section = generateMindmapSection({ topic: 'T', branches: [branch], lang: 'en' });
+    expect(section.html).toContain('AI item');
+    expect(section.html).not.toContain('Plain item');
+  });
+
+  it('renders sub-branches with sub-branch labels and items', () => {
+    const subBranches: SubBranch[] = [
+      { label: 'Government', items: ['Policy initiative', 'Budget authority'] },
+      { label: 'Opposition', items: ['Oversight function'] },
+    ];
+    const section = generateMindmapSection({
+      topic: 'T',
+      branches: [{ label: 'Power', color: 'cyan', subBranches }],
+      lang: 'en',
+    });
+    expect(section.html).toContain('class="mindmap-sub-branches"');
+    expect(section.html).toContain('class="mindmap-sub-branch"');
+    expect(section.html).toContain('class="mindmap-sub-branch-label"');
+    expect(section.html).toContain('Government');
+    expect(section.html).toContain('Policy initiative');
+    expect(section.html).toContain('Opposition');
+    expect(section.html).toContain('Oversight function');
+  });
+
+  it('renders cross-branch connections', () => {
+    const connections: MindmapConnection[] = [
+      { fromBranch: 'Power', toBranch: 'Impact', relationship: 'Power shapes impact' },
+    ];
+    const section = generateMindmapSection({ topic: 'T', branches: [], lang: 'en', connections });
+    expect(section.html).toContain('class="mindmap-connections"');
+    expect(section.html).toContain('class="mindmap-connection"');
+    expect(section.html).toContain('data-from="Power"');
+    expect(section.html).toContain('data-to="Impact"');
+    expect(section.html).toContain('Power shapes impact');
+  });
+
+  it('does not render connections block when connections is absent', () => {
+    const section = generateMindmapSection({ topic: 'T', branches: [], lang: 'en' });
+    expect(section.html).not.toContain('mindmap-connections');
+  });
+
+  it('renders dimension attribute on branch when provided', () => {
+    const section = generateMindmapSection({
+      topic: 'T',
+      branches: [{ label: 'B', color: 'cyan', dimension: 'power' }],
+      lang: 'en',
+    });
+    expect(section.html).toContain('data-dimension="power"');
+  });
+
+  it('uses ARIA tree role for branches container', () => {
+    const section = generateMindmapSection({ topic: 'T', branches: makeBranches(), lang: 'en' });
+    expect(section.html).toContain('role="tree"');
+    expect(section.html).toContain('role="treeitem"');
+  });
+
+  it('escapes XSS in centralThesis', () => {
+    const section = generateMindmapSection({
+      topic: 'T',
+      branches: [],
+      lang: 'en',
+      centralThesis: '<script>alert(1)</script>',
+    });
+    expect(section.html).not.toContain('<script>');
+    expect(section.html).toContain('&lt;script&gt;');
+  });
+
+  it('escapes XSS in connection relationship', () => {
+    const connections: MindmapConnection[] = [
+      { fromBranch: 'A', toBranch: 'B', relationship: '<img src=x onerror=alert(1)>' },
+    ];
+    const section = generateMindmapSection({ topic: 'T', branches: [], lang: 'en', connections });
+    expect(section.html).not.toContain('<img');
+    expect(section.html).toContain('&lt;img');
+  });
+
+  it('escapes XSS in sub-branch label', () => {
+    const subBranches: SubBranch[] = [{ label: '<script>evil</script>', items: ['x'] }];
+    const section = generateMindmapSection({
+      topic: 'T',
+      branches: [{ label: 'B', color: 'cyan', subBranches }],
+      lang: 'en',
+    });
+    expect(section.html).not.toContain('<script>evil');
+    expect(section.html).not.toContain('</script>');
+    expect(section.html).toContain('&lt;script&gt;');
+    expect(section.html).toContain('&lt;/script&gt;');
+  });
+
+  it('escapes XSS in AI item text', () => {
+    const aiItems: AIMindmapItem[] = [{ text: '<b>bold</b>', weight: 'critical' }];
+    const section = generateMindmapSection({
+      topic: 'T',
+      branches: [{ label: 'B', color: 'green', aiItems }],
+      lang: 'en',
+    });
+    expect(section.html).not.toContain('<b>');
+    expect(section.html).toContain('&lt;b&gt;');
   });
 });

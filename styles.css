@@ -9958,6 +9958,121 @@ body.news-page {
   padding-right: 1.25rem;
 }
 
+/* AI Mindmap — central thesis */
+.news-article .mindmap-center-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.news-article .mindmap-thesis {
+  font-size: 0.82rem;
+  color: #a0c8d8;
+  font-style: italic;
+  text-align: center;
+  max-width: 300px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* AI Mindmap — weighted items */
+.news-article .mindmap-ai-item[data-weight="critical"] {
+  font-weight: 700;
+  color: #e63946;
+  font-size: 0.87rem;
+}
+.news-article .mindmap-ai-item[data-weight="significant"] {
+  font-weight: 600;
+  color: #ffbe0b;
+  font-size: 0.84rem;
+}
+.news-article .mindmap-ai-item[data-weight="moderate"] {
+  color: #cccccc;
+  font-size: 0.82rem;
+}
+.news-article .mindmap-ai-item[data-weight="minor"] {
+  color: #aaaaaa;
+  font-size: 0.78rem;
+  font-style: italic;
+}
+
+/* AI Mindmap — sub-branches */
+.news-article .mindmap-sub-branches {
+  margin-top: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.news-article .mindmap-sub-branch {
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
+}
+
+.news-article .mindmap-sub-branch-label {
+  color: var(--branch-text, #00d9ff);
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  opacity: 0.85;
+}
+
+.news-article .mindmap-sub-items {
+  list-style: circle;
+  margin: 0;
+  padding-left: 1rem;
+  color: #aaaaaa;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+/* AI Mindmap — cross-branch connection indicators */
+.news-article .mindmap-connections {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(0,0,0,0.15);
+  border-left: 2px solid rgba(255,255,255,0.15);
+  border-radius: 4px;
+}
+
+.news-article .mindmap-connection {
+  font-size: 0.75rem;
+  color: #aaaaaa;
+  padding: 0.15rem 0;
+  font-style: italic;
+}
+
+/* AI Mindmap dimension color indicators */
+.news-article .mindmap-branch[data-dimension="power"] { border-left-width: 4px; }
+.news-article .mindmap-branch[data-dimension="impact"] { border-left-width: 4px; }
+.news-article .mindmap-branch[data-dimension="timeline"] { border-left-width: 4px; }
+.news-article .mindmap-branch[data-dimension="scope"] { border-left-width: 4px; }
+.news-article .mindmap-branch[data-dimension="motivation"] { border-left-width: 4px; }
+
+@media (min-width: 768px) {
+  .news-article .mindmap-center-wrapper {
+    flex: 0 0 auto;
+    align-self: center;
+  }
+  .news-article .mindmap-thesis {
+    max-width: 260px;
+  }
+}
+
+[dir="rtl"] .news-article .mindmap-sub-items {
+  padding-left: 0;
+  padding-right: 1rem;
+}
+
+[dir="rtl"] .news-article .mindmap-connections {
+  border-left: none;
+  border-right: 2px solid rgba(255,255,255,0.15);
+}
+
 /* Sankey Section */
 .news-article .sankey-section-wrapper,
 .sankey-section-wrapper {

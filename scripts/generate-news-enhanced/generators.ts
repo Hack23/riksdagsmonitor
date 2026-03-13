@@ -24,11 +24,10 @@ import {
   generateMindmapSection,
   generateSankeySection,
   type StakeholderSwot,
-  type MindmapBranch,
   type SankeyNode,
   type SankeyFlow,
 } from '../data-transformers/index.js';
-import { generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
+import { generateDeepAnalysisSection, localizeDocType, buildAIMindmapAnalysis, buildMindmapOptionsFromAnalysis } from '../data-transformers/content-generators/index.js';
 import { generateDeepPolicyAnalysis, detectPolicyDomains } from '../data-transformers/policy-analysis.js';
 import { escapeHtml } from '../html-utils.js';
 import { generateArticleHTML } from '../article-template.js';
@@ -1209,29 +1208,6 @@ function buildDeepInspectionSections(
     he: 'המגזר הפרטי / החברה האזרחית', ja: '民間セクター / 市民社会', ko: '민간 부문 / 시민 사회', zh: '私营部门 / 民间社会',
   };
 
-  const dataSourceBranchLabels: Partial<Record<Language, string>> = {
-    en: 'Data Sources', sv: 'Datakällor', da: 'Datakilder', no: 'Datakilder',
-    fi: 'Tietolähteet', de: 'Datenquellen', fr: 'Sources de données', es: 'Fuentes de datos',
-    nl: 'Gegevensbronnen', ar: 'مصادر البيانات', he: 'מקורות נתונים',
-    ja: 'データソース', ko: '데이터 출처', zh: '数据来源',
-  };
-  const dataSourceItems: Partial<Record<Language, string[]>> = {
-    en: ['Riksdag MCP (laws, motions, propositions)', 'World Bank (economic indicators)', 'SCB Statistics Sweden'],
-    sv: ['Riksdagens MCP (lagar, motioner, propositioner)', 'Världsbanken (ekonomiska indikatorer)', 'SCB Statistikmyndigheten'],
-    da: ['Riksdag MCP (love, motioner, forslag)', 'Verdensbanken (økonomiske indikatorer)', 'SCB Statistikmyndigheten'],
-    no: ['Riksdag MCP (lover, motioner, proposisjoner)', 'Verdensbanken (økonomiske indikatorer)', 'SCB Statistikmyndigheten'],
-    fi: ['Riksdagin MCP (lait, kirjelmät, esitykset)', 'Maailmanpankki (taloudelliset indikaattorit)', 'SCB Tilastoviranomainen'],
-    de: ['Riksdag MCP (Gesetze, Anträge, Vorlagen)', 'Weltbank (Wirtschaftsindikatoren)', 'SCB Statistikmyndigheten'],
-    fr: ['Riksdag MCP (lois, motions, propositions)', 'Banque mondiale (indicateurs économiques)', 'SCB Statistikmyndigheten'],
-    es: ['Riksdag MCP (leyes, mociones, proposiciones)', 'Banco Mundial (indicadores económicos)', 'SCB Statistikmyndigheten'],
-    nl: ['Riksdag MCP (wetten, moties, voorstellen)', 'Wereldbank (economische indicatoren)', 'SCB Statistikmyndigheten'],
-    ar: ['ريكسداغ MCP (قوانين، اقتراحات)', 'البنك الدولي (مؤشرات اقتصادية)', 'SCB إحصاء السويد'],
-    he: ['ריקסדאג MCP (חוקים, הצעות)', 'הבנק העולמי (אינדיקטורים כלכליים)', 'SCB הלשכה המרכזית לסטטיסטיקה'],
-    ja: ['Riksdag MCP (法律・動議・提案)', '世界銀行（経済指標）', 'SCB スウェーデン統計局'],
-    ko: ['Riksdag MCP (법률, 동의, 제안)', '세계은행 (경제 지표)', 'SCB 스웨덴 통계청'],
-    zh: ['议会 MCP（法律、动议、提案）', '世界银行（经济指标）', 'SCB 瑞典统计局'],
-  };
-
   const stakeholders: StakeholderSwot[] = [
     {
       name: govNames[lang] ?? govNames.en!,
@@ -1284,61 +1260,24 @@ function buildDeepInspectionSections(
     lang,
   });
 
-  // ── Mindmap: topic → detected policy domains → document types ────────────
+  // ── Mindmap: AI-driven conceptual map across 5 political dimensions ─────────
   const allDetectedDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
   const detectedDomainList = [...allDetectedDomains].slice(0, 8);
 
-  const mindmapBranches: MindmapBranch[] = [];
-
-  // Document type branch — use localized names
-  if (rawTypeKeys.length > 0) {
-    mindmapBranches.push({
-      label: deepLabel('documentTypes', lang),
-      color: 'cyan',
-      icon: '📄',
-      items: rawTypeKeys.map((t, i) => `${docTypeLabel(t, lang, chartValues[i])} (${chartValues[i] ?? 0})`),
-    });
-  }
-
-  // Policy domain branch
-  if (detectedDomainList.length > 0) {
-    mindmapBranches.push({
-      label: deepLabel('policyDomains', lang),
-      color: 'green',
-      icon: '🏛️',
-      items: detectedDomainList,
-    });
-  }
-
-  // Stakeholder branch
-  mindmapBranches.push({
-    label: deepLabel('stakeholders', lang),
-    color: 'yellow',
-    icon: '👥',
-    items: [
-      govNames[lang] ?? govNames.en!,
-      oppNames[lang] ?? oppNames.en!,
-      privateNames[lang] ?? privateNames.en!,
-    ],
-  });
-
-  // Data context branch
-  mindmapBranches.push({
-    label: dataSourceBranchLabels[lang] ?? dataSourceBranchLabels.en!,
-    color: 'purple',
-    icon: '📊',
-    items: dataSourceItems[lang] ?? dataSourceItems.en!,
-  });
-
-  const mindmapSection = generateMindmapSection({
-    topic: topic || 'Parliamentary Analysis',
-    branches: mindmapBranches,
-    lang,
-    summary: topic
-      ? `Conceptual map for deep inspection: ${topic}`
-      : `Conceptual map for ${docs.length} parliamentary documents`,
-  });
+  const aiAnalysis = buildAIMindmapAnalysis(docs, topic, lang);
+  const mindmapSection = generateMindmapSection(
+    buildMindmapOptionsFromAnalysis(
+      aiAnalysis,
+      lang,
+      topic || 'Parliamentary Analysis',
+      {
+        summary: topic
+          ? `Conceptual map for deep inspection: ${topic}`
+          : `Conceptual map for ${docs.length} parliamentary documents`,
+      },
+    ),
+  );
 
   // ── Sankey: party/doc-type flow → legislative outcome ─────────────────────
   const sankeyNodes: SankeyNode[] = [

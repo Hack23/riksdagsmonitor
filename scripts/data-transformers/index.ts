@@ -61,6 +61,8 @@ export {
   generateMindmapSection,
   generateSankeySection,
   generateCiaOverviewSection,
+  buildAIMindmapAnalysis,
+  buildMindmapOptionsFromAnalysis,
 } from './content-generators.js';
 export type {
   SwotSectionOptions,
@@ -74,6 +76,12 @@ export type {
   MindmapSectionOptions,
   MindmapBranch,
   MindmapBranchColor,
+  MindmapDimension,
+  AIMindmapItem,
+  AIMindmapItemWeight,
+  SubBranch,
+  MindmapConnection,
+  AIMindmapAnalysis,
   SankeySectionOptions,
   SankeyNode,
   SankeyFlow,

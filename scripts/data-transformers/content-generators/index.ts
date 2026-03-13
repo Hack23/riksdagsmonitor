@@ -43,7 +43,9 @@ export type { EconomicDashboardOptions, EconomicDataPoint } from './economic-das
 export { scoreNewsworthiness } from './newsworthiness.js';
 export type { NewsworthinessScore, NewsworthinessDimension } from './newsworthiness.js';
 export { generateMindmapSection } from './mindmap-section.js';
-export type { MindmapSectionOptions, MindmapBranch, MindmapBranchColor } from './mindmap-section.js';
+export type { MindmapSectionOptions, MindmapBranch, MindmapBranchColor, MindmapDimension, AIMindmapItem, AIMindmapItemWeight, SubBranch, MindmapConnection } from './mindmap-section.js';
+export { buildAIMindmapAnalysis, buildMindmapOptionsFromAnalysis } from './ai-mindmap-analyzer.js';
+export type { AIMindmapAnalysis } from './ai-mindmap-analyzer.js';
 export { generateSankeySection } from './sankey-section.js';
 export type { SankeySectionOptions, SankeyNode, SankeyFlow, SankeyNodeColor } from './sankey-section.js';
 export { generateCiaOverviewSection } from './cia-overview-section.js';
