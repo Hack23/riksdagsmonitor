@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-12T14:20:12.386Z",
+  "timestamp": "2026-03-13T06:28:10.071Z",
   "types": [
-    "week-ahead"
+    "motions"
   ],
   "languagesGenerated": [
     "en",
@@ -36,24 +36,24 @@
     "zh"
   ],
   "batchSize": "all",
-  "skipExisting": false,
+  "skipExisting": true,
   "generated": 14,
   "errors": 0,
   "articles": [
-    "2026-03-12-week-ahead-en.html",
-    "2026-03-12-week-ahead-sv.html",
-    "2026-03-12-week-ahead-da.html",
-    "2026-03-12-week-ahead-no.html",
-    "2026-03-12-week-ahead-fi.html",
-    "2026-03-12-week-ahead-de.html",
-    "2026-03-12-week-ahead-fr.html",
-    "2026-03-12-week-ahead-es.html",
-    "2026-03-12-week-ahead-nl.html",
-    "2026-03-12-week-ahead-ar.html",
-    "2026-03-12-week-ahead-he.html",
-    "2026-03-12-week-ahead-ja.html",
-    "2026-03-12-week-ahead-ko.html",
-    "2026-03-12-week-ahead-zh.html"
+    "2026-03-13-opposition-motions-en.html",
+    "2026-03-13-opposition-motions-sv.html",
+    "2026-03-13-opposition-motions-da.html",
+    "2026-03-13-opposition-motions-no.html",
+    "2026-03-13-opposition-motions-fi.html",
+    "2026-03-13-opposition-motions-de.html",
+    "2026-03-13-opposition-motions-fr.html",
+    "2026-03-13-opposition-motions-es.html",
+    "2026-03-13-opposition-motions-nl.html",
+    "2026-03-13-opposition-motions-ar.html",
+    "2026-03-13-opposition-motions-he.html",
+    "2026-03-13-opposition-motions-ja.html",
+    "2026-03-13-opposition-motions-ko.html",
+    "2026-03-13-opposition-motions-zh.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
