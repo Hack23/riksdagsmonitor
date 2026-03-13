@@ -33,6 +33,10 @@ name: "News Realtime Monitor"
   - cron: "0 12 * * 0,6"
   workflow_dispatch:
     inputs:
+      article_types:
+        default: breaking
+        description: "Comma-separated article types to generate (breaking,committee-reports,propositions,motions,interpellations,week-ahead,month-ahead,weekly-review,monthly-review,deep-inspection). Default: breaking"
+        required: false
       focus:
         default: all
         description: "Focus area: votes, debates, questions, all"
@@ -119,6 +123,7 @@ jobs:
           GH_AW_GITHUB_ACTOR: ${{ github.actor }}
           GH_AW_GITHUB_EVENT_COMMENT_ID: ${{ github.event.comment.id }}
           GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPES: ${{ github.event.inputs.article_types }}
           GH_AW_GITHUB_EVENT_INPUTS_FOCUS: ${{ github.event.inputs.focus }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
           GH_AW_GITHUB_EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
@@ -183,6 +188,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPES: ${{ github.event.inputs.article_types }}
           GH_AW_GITHUB_EVENT_INPUTS_FOCUS: ${{ github.event.inputs.focus }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
         with:
@@ -198,6 +204,7 @@ jobs:
           GH_AW_GITHUB_ACTOR: ${{ github.actor }}
           GH_AW_GITHUB_EVENT_COMMENT_ID: ${{ github.event.comment.id }}
           GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPES: ${{ github.event.inputs.article_types }}
           GH_AW_GITHUB_EVENT_INPUTS_FOCUS: ${{ github.event.inputs.focus }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
           GH_AW_GITHUB_EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
@@ -219,6 +226,7 @@ jobs:
                 GH_AW_GITHUB_ACTOR: process.env.GH_AW_GITHUB_ACTOR,
                 GH_AW_GITHUB_EVENT_COMMENT_ID: process.env.GH_AW_GITHUB_EVENT_COMMENT_ID,
                 GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: process.env.GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER,
+                GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPES: process.env.GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPES,
                 GH_AW_GITHUB_EVENT_INPUTS_FOCUS: process.env.GH_AW_GITHUB_EVENT_INPUTS_FOCUS,
                 GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: process.env.GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES,
                 GH_AW_GITHUB_EVENT_ISSUE_NUMBER: process.env.GH_AW_GITHUB_EVENT_ISSUE_NUMBER,

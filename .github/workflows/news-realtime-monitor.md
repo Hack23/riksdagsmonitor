@@ -13,6 +13,10 @@ on:
     - cron: '0 12 * * 0,6'
   workflow_dispatch:
     inputs:
+      article_types:
+        description: 'Comma-separated article types to generate (breaking,committee-reports,propositions,motions,interpellations,week-ahead,month-ahead,weekly-review,monthly-review,deep-inspection). Default: breaking'
+        required: false
+        default: breaking
       focus:
         description: 'Focus area: votes, debates, questions, all'
         required: false
@@ -105,6 +109,7 @@ You are the **Real-Time Political Monitor** for Riksdagsmonitor. Detect signific
 
 ## 🔧 Workflow Dispatch Parameters
 
+- **article_types** = `${{ github.event.inputs.article_types }}`
 - **focus** = `${{ github.event.inputs.focus }}`
 - **languages** = `${{ github.event.inputs.languages }}`
 
@@ -212,6 +217,12 @@ safeoutputs___noop({ "message": "No significant parliamentary events. Checked: v
 **🚨 ALWAYS use the TypeScript generation script — it handles MCP queries, HTML templating, all 14 languages, translation, and article quality internally.**
 
 ```bash
+# Use the article_types workflow dispatch parameter
+# For scheduled runs (empty input), default to breaking. Manual dispatch can specify any valid type.
+ARTICLE_TYPES_INPUT="${{ github.event.inputs.article_types }}"
+[ -z "$ARTICLE_TYPES_INPUT" ] && ARTICLE_TYPES_INPUT="breaking"
+export ARTICLE_TYPES_INPUT
+
 # Use the languages workflow dispatch parameter
 # For scheduled runs (empty input), default to core languages (en,sv) to stay within time budget.
 # Manual dispatch can specify "all" for 14-language generation.
@@ -236,8 +247,8 @@ if [ "$ELAPSED" -ge 2100 ]; then
   NEW_ARTICLES=""
 else
   # Set up MCP connection and generate with 20-minute timeout
-  # LANG_ARG is exported so the subshell inherits it safely (no command-string interpolation)
-  timeout 1200 bash -lc 'source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts --types=breaking --languages="$LANG_ARG" --skip-existing'
+  # LANG_ARG and ARTICLE_TYPES_INPUT are exported so the subshell inherits them safely
+  timeout 1200 bash -lc 'source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts --types="$ARTICLE_TYPES_INPUT" --languages="$LANG_ARG" --skip-existing'
   SCRIPT_EXIT=$?
   TIMED_OUT=false
   if [ "$SCRIPT_EXIT" -eq 124 ]; then
@@ -250,7 +261,7 @@ else
   TODAY="$(date +%Y-%m-%d)"
   NEW_ARTICLES="$(git status --porcelain -- news/ | awk '{print $2}' | grep "${TODAY}-" || true)"
   if [ -z "$NEW_ARTICLES" ]; then
-    echo "No new breaking news articles were created."
+    echo "No new articles were created."
   else
     echo "Newly generated articles:"
     printf '%s\n' "$NEW_ARTICLES"

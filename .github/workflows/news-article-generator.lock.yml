@@ -30,7 +30,7 @@ name: "News: Article Generator (Manual)"
   workflow_dispatch:
     inputs:
       article_types:
-        description: Comma-separated article types (week-ahead,month-ahead,weekly-review,monthly-review,committee-reports,propositions,motions,breaking,deep-inspection). Leave empty for day-of-week schedule.
+        description: Comma-separated article types (week-ahead,month-ahead,weekly-review,monthly-review,committee-reports,propositions,motions,interpellations,breaking,deep-inspection). Leave empty for day-of-week schedule.
         required: false
       document_ids:
         description: Comma-separated Riksdag document IDs for deep-inspection analysis (e.g. H901FiU1,H901JuU25)
