@@ -1,4 +1,14 @@
 /* ==================================================
+   Component and theme imports — loaded before all rules so that
+   per-type custom-property overrides in article-types.css take effect
+   at rule level, not via !important.
+   ================================================== */
+@import './styles/components/swot.css';
+@import './styles/components/dashboard.css';
+@import './styles/components/mindmap.css';
+@import './styles/themes/article-types.css';
+
+/* ==================================================
    FONT FALLBACK METRICS — prevents CLS while web fonts load
    size-adjust/ascent-override/descent-override approximate
    each web font's metrics so that the fallback glyphs occupy

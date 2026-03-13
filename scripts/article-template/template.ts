@@ -13,6 +13,7 @@ import { CONTENT_LABELS } from '../data-transformers.js';
 import type { Language } from '../types/language.js';
 import type { ArticleData, EventGridItem, WatchPoint, TemplateSection } from '../types/article.js';
 import { SITE_TAGLINE, OG_LOCALE_MAP, TYPE_LABELS, ALL_LANG_CODES } from './constants.js';
+import { getStyleClass } from './registry.js';
 import {
   getBreadcrumbName,
   getFooterLabel,
@@ -40,6 +41,7 @@ export function generateArticleHTML(data: ArticleData): string {
     subtitle,
     date,
     type,
+    articleType,
     readTime = '5 min read',
     lang = 'en',
     locale,
@@ -64,6 +66,10 @@ export function generateArticleHTML(data: ArticleData): string {
 
   // Fall back to English labels if language not supported
   const typeLabel: string = TYPE_LABELS[lang]?.[type] || TYPE_LABELS.en[type] || 'News';
+
+  // Derive the per-type CSS class from the registry (e.g. 'article-type-propositions')
+  // Use articleType when provided (routing type), fall back to type (category label)
+  const articleTypeClass: string = getStyleClass(articleType ?? type);
 
   // Generate hreflang tags for all available language variants
   const isRTL: boolean = lang === 'ar' || lang === 'he';
@@ -134,6 +140,8 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
   
   <!-- Main stylesheet - contains all article styles -->
   <link rel="stylesheet" href="../styles.css">
+  <!-- Per-type accent theme: overrides CSS custom properties for article type -->
+  <link rel="stylesheet" href="../styles/themes/article-types.css">
   
   <!-- Anti-flash: apply saved theme before first paint -->
   <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
@@ -276,7 +284,7 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
   </a>
 </div>
 
-<article id="main-content" class="news-article">
+<article id="main-content" class="news-article ${articleTypeClass}">
   <header class="article-header">
     <div class="hero-banner">
       <img src="../images/riksdagsmonitornews-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
