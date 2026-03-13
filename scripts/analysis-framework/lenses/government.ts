@@ -26,7 +26,7 @@ import { detectPolicyDomains } from '../../data-transformers/policy-analysis.js'
 
 /** Keywords that indicate a document involves coalition-critical decisions */
 const COALITION_CRITICAL_KEYWORDS: readonly string[] = [
-  'tidöavtal', 'tidöpartner', 'sammarbetspartier', 'januariavtal',
+  'tidöavtal', 'tidöpartner', 'samarbetspartier', 'januariavtal',
   'samarbetspartierna', 'sd-stöd', 'budgetram', 'budgetproposition',
   'statsbudget', 'ramproposition', 'takpolitik',
 ];
