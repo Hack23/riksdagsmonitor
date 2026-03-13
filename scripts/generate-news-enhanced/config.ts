@@ -85,7 +85,7 @@ export const requireMcp: boolean = parseArgValue(requireMcpArg ?? '') !== 'false
 // Valid article types
 // ---------------------------------------------------------------------------
 
-export const VALID_ARTICLE_TYPES: readonly string[] = ['week-ahead', 'month-ahead', 'weekly-review', 'monthly-review', 'committee-reports', 'propositions', 'motions', 'breaking', 'deep-inspection'];
+export const VALID_ARTICLE_TYPES: readonly string[] = ['week-ahead', 'month-ahead', 'weekly-review', 'monthly-review', 'committee-reports', 'propositions', 'motions', 'interpellations', 'breaking', 'deep-inspection'];
 
 const rawArticleTypes: string[] = typesArg
   ? parseArgValue(typesArg).split(',').map(t => t.trim()).filter(Boolean)

@@ -26,6 +26,7 @@ const ARTICLE_TYPE_WORKFLOWS: Record<string, string> = {
   'committee-reports': 'news-committee-reports.md',
   'propositions': 'news-propositions.md',
   'motions': 'news-motions.md',
+  'interpellations': 'news-interpellations.md',
   'week-ahead': 'news-week-ahead.md',
   'month-ahead': 'news-month-ahead.md',
   'weekly-review': 'news-weekly-review.md',
@@ -310,7 +311,7 @@ describe('Schedule Staggering', () => {
   it('should stagger weekday workflows across different hours', () => {
     const weekdaySchedules: Array<{ file: string; hour: number }> = [];
 
-    const weekdayWorkflows = ['news-committee-reports.md', 'news-propositions.md', 'news-motions.md'];
+    const weekdayWorkflows = ['news-committee-reports.md', 'news-propositions.md', 'news-motions.md', 'news-interpellations.md'];
 
     for (const workflowFile of weekdayWorkflows) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
@@ -386,7 +387,7 @@ describe('Article Type Completeness', () => {
 
     const expectedTypes = [
       'week-ahead', 'month-ahead', 'weekly-review', 'monthly-review',
-      'committee-reports', 'propositions', 'motions', 'breaking'
+      'committee-reports', 'propositions', 'motions', 'interpellations', 'breaking'
     ];
 
     for (const type of expectedTypes) {
@@ -403,7 +404,7 @@ describe('Article Type Completeness', () => {
 
     const expectedTypes = [
       'week-ahead', 'month-ahead', 'weekly-review', 'monthly-review',
-      'committee-reports', 'propositions', 'motions', 'breaking'
+      'committee-reports', 'propositions', 'motions', 'interpellations', 'breaking'
     ];
 
     for (const type of expectedTypes) {

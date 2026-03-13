@@ -17,6 +17,7 @@ export type ArticleType =
   | 'committee-reports'
   | 'propositions'
   | 'motions'
+  | 'interpellations'
   | 'breaking'
   | 'deep-inspection';
 
