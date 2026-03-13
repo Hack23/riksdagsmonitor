@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       article_types:
-        description: Comma-separated article types (week-ahead,month-ahead,weekly-review,monthly-review,committee-reports,propositions,motions,breaking,deep-inspection). Leave empty for day-of-week schedule.
+        description: Comma-separated article types (week-ahead,month-ahead,weekly-review,monthly-review,committee-reports,propositions,motions,interpellations,breaking,deep-inspection). Leave empty for day-of-week schedule.
         required: false
       force_generation:
         description: Force generation even if recent articles exist
@@ -229,11 +229,11 @@ ARTICLE_TYPES="${{ github.event.inputs.article_types }}"
 if [ -z "$ARTICLE_TYPES" ]; then
   DAY_OF_WEEK=$(date -u +"%u")  # 1=Monday, 7=Sunday
   case "$DAY_OF_WEEK" in
-    5)  ARTICLE_TYPES="week-ahead,committee-reports,propositions,motions"
+    5)  ARTICLE_TYPES="week-ahead,committee-reports,propositions,motions,interpellations"
         echo "📅 Friday schedule" ;;
-    6|7) ARTICLE_TYPES="committee-reports,propositions,motions"
+    6|7) ARTICLE_TYPES="committee-reports,propositions,motions,interpellations"
         echo "📅 Weekend schedule" ;;
-    *)  ARTICLE_TYPES="committee-reports,propositions,motions"
+    *)  ARTICLE_TYPES="committee-reports,propositions,motions,interpellations"
         echo "📅 Weekday schedule" ;;
   esac
 fi
@@ -253,7 +253,7 @@ esac
 echo "📰 Types: $ARTICLE_TYPES | Languages: $LANG_ARG"
 ```
 
-Valid article types (defined in `scripts/generate-news-enhanced/config.ts:VALID_ARTICLE_TYPES`): `week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`, `committee-reports`, `propositions`, `motions`, `breaking`, `deep-inspection`. Note: `evening-analysis` is NOT a valid script type — evening analysis requires manual synthesis (see `news-evening-analysis.md`).
+Valid article types (defined in `scripts/generate-news-enhanced/config.ts:VALID_ARTICLE_TYPES`): `week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`, `committee-reports`, `propositions`, `motions`, `interpellations`, `breaking`, `deep-inspection`. Note: `evening-analysis` is NOT a valid script type — evening analysis requires manual synthesis (see `news-evening-analysis.md`).
 
 ## Step 3: Generate Articles (Script-First)
 
