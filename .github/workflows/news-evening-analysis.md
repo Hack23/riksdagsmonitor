@@ -178,7 +178,7 @@ Based on the editorial profile for `evening-analysis` (from `scripts/editorial-f
 ### Phase 3 — Final Quality Gate Before PR
 Run validation checks before committing.
 
- & MCP Health Check
+## Step 1: Date Validation & MCP Health Check
 
 ```bash
 echo "=== Date Validation Check ==="

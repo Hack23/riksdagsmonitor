@@ -33,7 +33,7 @@ export function generateInterpellationsContent(
   data: ArticleContentData,
   lang: Language | string,
 ): string {
-  const interpellations: RawDocument[] = data.interpellations ?? data.motions ?? [];
+  const interpellations: RawDocument[] = data.interpellations ?? [];
 
   const heading = L(lang, 'interpellationsTag') as string || 'Interpellation Debates';
   let content = `<h2>${heading}</h2>\n`;

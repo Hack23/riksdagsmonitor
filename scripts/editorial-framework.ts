@@ -391,12 +391,16 @@ export function resolveAiIterations(
   requestedDepth: AnalysisDepth,
 ): number {
   const profile = getArticleTypeProfile(articleType);
-  const depthMultiplier: Record<AnalysisDepth, number> = {
-    standard: 1,
-    deep: Math.min(2, profile.aiIterations),
-    comprehensive: profile.aiIterations,
-  };
-  return Math.max(1, depthMultiplier[requestedDepth] ?? profile.aiIterations);
+  switch (requestedDepth) {
+    case 'standard':
+      return Math.max(1, profile.aiIterations);
+    case 'deep':
+      // deep always enforces at least 2 iterations regardless of profile default
+      return Math.max(2, profile.aiIterations);
+    case 'comprehensive':
+      // comprehensive uses the full profile iteration count (minimum 3)
+      return Math.max(3, profile.aiIterations);
+  }
 }
 
 /**

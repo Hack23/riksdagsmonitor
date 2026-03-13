@@ -46,7 +46,7 @@ export interface RawDocument {
   intressent_namn?: string;
   author?: string;
   parti?: string;
-  /** Target minister for interpellations (mottagare field from API) */
+  /** Target recipient/minister for interpellations and written questions (mottagare field from API); may be present on other document types */
   mottagare?: string;
   /** intressent_id — parliamentary member ID who authored the document */
   intressent_id?: string;

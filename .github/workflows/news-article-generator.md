@@ -212,7 +212,7 @@ For each article type being generated in this run:
 3. **Quality Gate**: word count ≥ profile.minWordCount, no identical why-it-matters, all Swedish translated
 4. **Additional iterations**: if `analysis_depth` is `deep` or `comprehensive` and quality gate fails
 
- & MCP Health Check
+## Step 1: Date Validation & MCP Health Check
 
 ```bash
 echo "=== Date Validation Check ==="

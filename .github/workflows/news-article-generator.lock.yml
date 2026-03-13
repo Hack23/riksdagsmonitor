@@ -562,6 +562,11 @@ jobs:
               "inputSchema": {
                 "additionalProperties": false,
                 "properties": {
+                  "analysis_depth": {
+                    "default": "standard",
+                    "description": "Analysis depth to apply during translation quality validation (standard, deep, comprehensive). Mirrors the source article depth.",
+                    "type": "string"
+                  },
                   "article_date": {
                     "description": "Article date (YYYY-MM-DD). Defaults to today.",
                     "type": "string"
