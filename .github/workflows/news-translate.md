@@ -38,6 +38,7 @@ timeout-minutes: 45
 
 concurrency:
   job-discriminator: ${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}
+  cancel-in-progress: true
 
 network:
   allowed:
