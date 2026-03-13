@@ -374,7 +374,10 @@ const REGISTRY: Readonly<Record<ArticleType, ArticleTemplate>> = {
 
 /**
  * Retrieve the full template configuration for a given article type.
- * Falls back to the `breaking` template if the type is unknown.
+ * Falls back to the `breaking` template for unknown types — this means
+ * any unrecognised type string will receive the compact, urgency-focused
+ * breaking-news layout rather than an error, ensuring graceful degradation
+ * across all content generation pipelines.
  *
  * @param type - ArticleType identifier
  * @returns ArticleTemplate configuration object

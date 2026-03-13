@@ -36,14 +36,14 @@ const ALL_ARTICLE_TYPES: readonly ArticleType[] = [
   'deep-inspection',
 ] as const;
 
-function makeMockArticleData(type: ArticleType | string): ArticleData {
+function makeMockArticleData(articleTypeName: ArticleType | string): ArticleData {
   return {
-    slug: `2026-03-13-${type}-en.html`,
-    title: `Test Article: ${type}`,
+    slug: `2026-03-13-${articleTypeName}-en.html`,
+    title: `Test Article: ${articleTypeName}`,
     subtitle: 'Test subtitle for article type testing.',
     date: '2026-03-13',
     type: 'analysis' as ArticleData['type'],
-    articleType: type as ArticleType,
+    articleType: articleTypeName as ArticleType,
     readTime: '3 min read',
     lang: 'en',
     content: '<p>Test content paragraph.</p>',

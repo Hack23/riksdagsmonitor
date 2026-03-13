@@ -114,7 +114,7 @@
   --type-label:      #ff1744;
 }
 
-/* ── Evening Analysis — Indigo/Dark ────────────────────────────────────── */
+/* ── Evening Analysis — Indigo/Dark (reserved for future article type) ─── */
 .news-article.article-type-evening-analysis {
   --type-accent:     #7c4dff;
   --type-accent-rgb: 124, 77, 255;
