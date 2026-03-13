@@ -431,6 +431,8 @@ safeoutputs___dispatch_workflow({
 })
 ```
 
+> **⚠️ Timing note:** The dispatch runs immediately after creating this PR, but the translate workflow checks out `main` where the EN/SV articles may not yet exist (the content PR hasn't been merged). In this case, the translate workflow will `noop` gracefully. The scheduled translate cron (11:00 and 17:00 UTC weekdays) will pick up the translations after the content PR is merged.
+
 ## Error Handling
 
 | Scenario | Cause | Fix |
