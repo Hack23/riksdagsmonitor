@@ -36,12 +36,14 @@ import { MCPClient } from '../mcp-client.js';
 import type { Language } from '../types/language.js';
 import type { GenerationResult, DateRange, ArticleCategory, TemplateSection, SwotEntry } from '../types/article.js';
 import type { TitleSet } from './types.js';
-import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic } from './config.js';
+import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic, analysisIterations } from './config.js';
 import {
   getWeekAheadDateRange,
   formatDateForSlug,
   writeSingleArticle,
 } from './helpers.js';
+import { AIAnalysisPipeline } from './ai-analysis-pipeline.js';
+import { sharedAnalysisCache } from './analysis-cache.js';
 
 // ---------------------------------------------------------------------------
 // Generator functions
@@ -767,11 +769,14 @@ function docTypeLabel(doktyp: string, lang: Language, count?: number): string {
  * Generate topic-focused, comprehensive deep-inspection article content.
  * All sections are explicitly oriented around `topic`. Uses enriched full-text
  * content from each document and the 5W deep-analysis framework.
+ * When an AIAnalysisResult is supplied, its strategic implications and key
+ * takeaways replace the template-based versions for richer, context-aware output.
  */
 function generateDeepInspectionContent(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,
+  aiResult?: import('./ai-analysis-pipeline.js').AIAnalysisResult,
 ): string {
   const esc = escapeHtml;
   let html = '';
@@ -810,14 +815,26 @@ function generateDeepInspectionContent(
   const stratHeading = deepLabel('strategicImplications', lang);
   html += `\n<section class="strategic-implications" aria-label="${esc(stratHeading)}">\n`;
   html += `  <h2>${esc(stratHeading)}</h2>\n`;
-  html += `  ${buildStrategicImplications(docs, topic, lang)}\n`;
+  // Use AI-generated strategic implications when available (richer than template version)
+  const strategicImplHtml = aiResult?.strategicImplications
+    ?? buildStrategicImplications(docs, topic, lang);
+  html += `  ${strategicImplHtml}\n`;
   html += `</section>\n`;
 
   // ── 5. Key takeaways ───────────────────────────────────────────────────────
   const takeawayHeading = deepLabel('keyTakeaways', lang);
   html += `\n<section class="key-takeaways" aria-label="${esc(takeawayHeading)}">\n`;
   html += `  <h2>${esc(takeawayHeading)}</h2>\n`;
-  html += buildKeyTakeaways(docs, topic, lang);
+  if (aiResult?.keyTakeaways && aiResult.keyTakeaways.length > 0) {
+    // Use AI-generated takeaways
+    html += `<ul class="key-takeaways-list">\n`;
+    aiResult.keyTakeaways.forEach(item => {
+      html += `  <li>${esc(item)}</li>\n`;
+    });
+    html += `</ul>\n`;
+  } else {
+    html += buildKeyTakeaways(docs, topic, lang);
+  }
   html += `</section>\n`;
 
   return html;
@@ -1103,16 +1120,11 @@ function buildDeepInspectionSections(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,
+  aiResult?: import('./ai-analysis-pipeline.js').AIAnalysisResult,
 ): TemplateSection[] {
   if (docs.length === 0) return [];
 
-  const titleOf = (d: RawDocument): string =>
-    (d.titel || d.title || d.dokumentnamn || d.dok_id || '').slice(0, 80);
-  const toEntry = (d: RawDocument, impact: 'high' | 'medium' | 'low' = 'medium'): SwotEntry => ({
-    text: titleOf(d), impact,
-  });
-
-  // Classify by document type
+  // Classify by document type (needed for dashboard / sankey regardless of AI)
   const propDocs = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
   const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
   const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
@@ -1125,63 +1137,85 @@ function buildDeepInspectionSections(
   const otherDocs = docs.filter(d =>
     !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || ''));
 
-  // ── Government / Policy Administration ────────────────────────────────────
-  const govStrengths: SwotEntry[] = [
-    ...propDocs.slice(0, 3).map(d => toEntry(d, 'high')),
-    ...sfsDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-    ...skrDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
-    ...pressmDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-  ];
-  const govWeaknesses: SwotEntry[] = [
-    ...betDocs.slice(0, 2).map(d => toEntry(d, 'medium')),
-  ];
-  const govOpportunities: SwotEntry[] = [
-    ...euDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-    ...skrDocs.slice(1, 2).map(d => toEntry(d, 'medium')),
-  ];
-  const govThreats: SwotEntry[] = [
-    ...motDocs.slice(0, 2).map(d => toEntry(d, 'medium')),
-  ];
+  // ── SWOT entries — from AI pipeline when available, else SWOT_DEFAULTS ─────
+  let govStrengths: SwotEntry[];
+  let govWeaknesses: SwotEntry[];
+  let govOpportunities: SwotEntry[];
+  let govThreats: SwotEntry[];
+  let oppStrengths: SwotEntry[];
+  let oppWeaknesses: SwotEntry[];
+  let oppOpportunities: SwotEntry[];
+  let oppThreats: SwotEntry[];
+  let privateStrengths: SwotEntry[];
+  let privateWeaknesses: SwotEntry[];
+  let privateOpportunities: SwotEntry[];
+  let privateThreats: SwotEntry[];
 
-  if (govStrengths.length === 0) govStrengths.push({ text: swotDefault('govStrength', topic, lang), impact: 'medium' });
-  if (govWeaknesses.length === 0) govWeaknesses.push({ text: swotDefault('govWeakness', topic, lang), impact: 'medium' });
-  if (govOpportunities.length === 0) govOpportunities.push({ text: swotDefault('govOpportunity', topic, lang), impact: 'high' });
-  if (govThreats.length === 0) govThreats.push({ text: swotDefault('govThreat', topic, lang), impact: 'medium' });
+  if (aiResult) {
+    // Use AI-pipeline generated SWOT entries (context-aware, all 14 languages)
+    ({ strengths: govStrengths, weaknesses: govWeaknesses,
+       opportunities: govOpportunities, threats: govThreats } = aiResult.dynamicSwotEntries.government);
+    ({ strengths: oppStrengths, weaknesses: oppWeaknesses,
+       opportunities: oppOpportunities, threats: oppThreats } = aiResult.dynamicSwotEntries.opposition);
+    ({ strengths: privateStrengths, weaknesses: privateWeaknesses,
+       opportunities: privateOpportunities, threats: privateThreats } = aiResult.dynamicSwotEntries.privateSector);
+  } else {
+    // Legacy path: derive from document metadata + SWOT_DEFAULTS fallbacks
+    const titleOf = (d: RawDocument): string =>
+      (d.titel || d.title || d.dokumentnamn || d.dok_id || '').slice(0, 80);
+    const toEntry = (d: RawDocument, impact: 'high' | 'medium' | 'low' = 'medium'): SwotEntry => ({
+      text: titleOf(d), impact,
+    });
 
-  // ── Parliament / Opposition ────────────────────────────────────────────────
-  const oppStrengths: SwotEntry[] = [
-    ...betDocs.slice(0, 3).map(d => toEntry(d, 'high')),
-    ...motDocs.slice(0, 2).map(d => toEntry(d, 'medium')),
-  ];
-  const oppWeaknesses: SwotEntry[] = [];
-  const oppOpportunities: SwotEntry[] = [];
-  const oppThreats: SwotEntry[] = [
-    ...propDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
-  ];
+    govStrengths = [
+      ...propDocs.slice(0, 3).map(d => toEntry(d, 'high')),
+      ...sfsDocs.slice(0, 2).map(d => toEntry(d, 'high')),
+      ...skrDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
+      ...pressmDocs.slice(0, 2).map(d => toEntry(d, 'high')),
+    ];
+    govWeaknesses = [...betDocs.slice(0, 2).map(d => toEntry(d, 'medium'))];
+    govOpportunities = [
+      ...euDocs.slice(0, 2).map(d => toEntry(d, 'high')),
+      ...skrDocs.slice(1, 2).map(d => toEntry(d, 'medium')),
+    ];
+    govThreats = [...motDocs.slice(0, 2).map(d => toEntry(d, 'medium'))];
 
-  if (oppStrengths.length === 0) oppStrengths.push({ text: swotDefault('oppStrength', topic, lang), impact: 'high' });
-  if (oppWeaknesses.length === 0) oppWeaknesses.push({ text: swotDefault('oppWeakness', topic, lang), impact: 'medium' });
-  if (oppOpportunities.length === 0) oppOpportunities.push({ text: swotDefault('oppOpportunity', topic, lang), impact: 'high' });
-  if (oppThreats.length === 0) oppThreats.push({ text: swotDefault('oppThreat', topic, lang), impact: 'medium' });
+    if (govStrengths.length === 0) govStrengths.push({ text: swotDefault('govStrength', topic, lang), impact: 'medium' });
+    if (govWeaknesses.length === 0) govWeaknesses.push({ text: swotDefault('govWeakness', topic, lang), impact: 'medium' });
+    if (govOpportunities.length === 0) govOpportunities.push({ text: swotDefault('govOpportunity', topic, lang), impact: 'high' });
+    if (govThreats.length === 0) govThreats.push({ text: swotDefault('govThreat', topic, lang), impact: 'medium' });
 
-  // ── Private Sector / Civil Society ────────────────────────────────────────
-  const privateStrengths: SwotEntry[] = [
-    { text: swotDefault('privateStrength', topic, lang), impact: 'high' },
-    ...sfsDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
-    ...extDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-  ];
-  const privateWeaknesses: SwotEntry[] = [
-    { text: swotDefault('privateWeakness1', topic, lang), impact: 'medium' },
-    { text: swotDefault('privateWeakness2', topic, lang), impact: 'medium' },
-  ];
-  const privateOpportunities: SwotEntry[] = [
-    { text: swotDefault('privateOpportunity', topic, lang), impact: 'high' },
-    ...euDocs.slice(0, 1).map(d => toEntry(d, 'high')),
-  ];
-  const privateThreats: SwotEntry[] = [
-    { text: swotDefault('privateThreat1', topic, lang), impact: 'high' },
-    { text: swotDefault('privateThreat2', topic, lang), impact: 'medium' },
-  ];
+    oppStrengths = [
+      ...betDocs.slice(0, 3).map(d => toEntry(d, 'high')),
+      ...motDocs.slice(0, 2).map(d => toEntry(d, 'medium')),
+    ];
+    oppWeaknesses = [];
+    oppOpportunities = [];
+    oppThreats = [...propDocs.slice(0, 1).map(d => toEntry(d, 'medium'))];
+
+    if (oppStrengths.length === 0) oppStrengths.push({ text: swotDefault('oppStrength', topic, lang), impact: 'high' });
+    if (oppWeaknesses.length === 0) oppWeaknesses.push({ text: swotDefault('oppWeakness', topic, lang), impact: 'medium' });
+    if (oppOpportunities.length === 0) oppOpportunities.push({ text: swotDefault('oppOpportunity', topic, lang), impact: 'high' });
+    if (oppThreats.length === 0) oppThreats.push({ text: swotDefault('oppThreat', topic, lang), impact: 'medium' });
+
+    privateStrengths = [
+      { text: swotDefault('privateStrength', topic, lang), impact: 'high' },
+      ...sfsDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
+      ...extDocs.slice(0, 2).map(d => toEntry(d, 'high')),
+    ];
+    privateWeaknesses = [
+      { text: swotDefault('privateWeakness1', topic, lang), impact: 'medium' },
+      { text: swotDefault('privateWeakness2', topic, lang), impact: 'medium' },
+    ];
+    privateOpportunities = [
+      { text: swotDefault('privateOpportunity', topic, lang), impact: 'high' },
+      ...euDocs.slice(0, 1).map(d => toEntry(d, 'high')),
+    ];
+    privateThreats = [
+      { text: swotDefault('privateThreat1', topic, lang), impact: 'high' },
+      { text: swotDefault('privateThreat2', topic, lang), impact: 'medium' },
+    ];
+  }
 
   // ── Localised stakeholder names ────────────────────────────────────────────
   const govNames: Partial<Record<Language, string>> = {
@@ -1287,7 +1321,16 @@ function buildDeepInspectionSections(
   // ── Mindmap: topic → detected policy domains → document types ────────────
   const allDetectedDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
-  const detectedDomainList = [...allDetectedDomains].slice(0, 8);
+  // Augment with AI-detected domains when available.
+  // emergingTrends format: "domain1, domain2 [CONFIDENCE], ..." — strip bracketed suffix.
+  if (aiResult?.synthesis?.emergingTrends) {
+    aiResult.synthesis.emergingTrends
+      .split(',')
+      .map(s => s.split('[')[0]?.trim() ?? '')
+      .filter(Boolean)
+      .forEach(dom => allDetectedDomains.add(dom));
+  }
+  const detectedDomainList = [...allDetectedDomains].filter(Boolean).slice(0, 8);
 
   const mindmapBranches: MindmapBranch[] = [];
 
@@ -1641,8 +1684,18 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
-      // Topic-focused deep-inspection content (NOT generic content)
-      const content: string = generateDeepInspectionContent(enrichedDocs, sanitizedTopic, lang);
+      // Run multi-iteration AI analysis pipeline — cache result across languages
+      const cacheKey = sharedAnalysisCache.generateKey(enrichedDocs, sanitizedTopic, analysisIterations, lang);
+      let aiResult = sharedAnalysisCache.get(cacheKey);
+      if (!aiResult) {
+        const pipeline = new AIAnalysisPipeline({ iterations: analysisIterations });
+        aiResult = pipeline.analyze(enrichedDocs, sanitizedTopic, lang);
+        sharedAnalysisCache.set(cacheKey, aiResult);
+        console.log(`    🤖 AI analysis: ${aiResult.iterations} iteration(s), quality score ${aiResult.qualityScore}`);
+      }
+
+      // Topic-focused deep-inspection content (uses AI strategic implications & takeaways)
+      const content: string = generateDeepInspectionContent(enrichedDocs, sanitizedTopic, lang, aiResult);
 
       // Metadata still derived from document data
       const contentData = { documents: enrichedDocs as Parameters<typeof generateArticleContent>[0]['documents'] };
@@ -1654,8 +1707,8 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       if (gitHubUrls.length > 0) sourceMethods.push('GitHub raw content');
       const sources: string[] = generateSources(sourceMethods);
 
-      // SWOT + dashboard sections — topic-focused, document-derived
-      const sections = buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang);
+      // SWOT + dashboard sections — AI-generated dynamic entries (context-aware, all 14 languages)
+      const sections = buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang, aiResult);
 
       const langTitles: TitleSet = titles[lang] || titles.en;
 

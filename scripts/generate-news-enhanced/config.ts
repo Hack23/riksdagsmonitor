@@ -63,6 +63,23 @@ export const documentUrls: string[] = rawDocumentUrls
 
 /** Specific policy topic to focus deep-inspection analysis on */
 export const focusTopic: string = parseArgValue(focusTopicArg);
+
+// --iterations=N: number of AI analysis iterations for deep-inspection (default: 3)
+const iterationsArg: string | undefined = args.find(arg => arg.startsWith('--iterations='));
+const DEFAULT_ITERATIONS = 3;
+let parsedIterations: number = DEFAULT_ITERATIONS;
+if (iterationsArg) {
+  const rawIter: string = parseArgValue(iterationsArg);
+  const numIter: number = rawIter === '' ? NaN : Number(rawIter);
+  if (Number.isFinite(numIter) && numIter >= 1) {
+    parsedIterations = Math.min(10, Math.max(1, Math.floor(numIter)));
+  } else {
+    console.warn(`Invalid --iterations value "${rawIter}", falling back to default ${DEFAULT_ITERATIONS}.`);
+  }
+}
+/** Number of AI analysis iterations for deep-inspection articles. Default: 3. */
+export const analysisIterations: number = parsedIterations;
+
 const DEFAULT_QUALITY_THRESHOLD = 40;
 let parsedQualityThreshold: number = DEFAULT_QUALITY_THRESHOLD;
 if (qualityThresholdArg) {
