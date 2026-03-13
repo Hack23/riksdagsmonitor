@@ -108,6 +108,7 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactHigh: 'Alto',
     swotImpactMedium: 'Medio',
     swotImpactLow: 'Bajo',
+    swotJustification: 'Análisis',
     dashboardTitle: 'Panel de control',
     dashboardSummary: 'Resumen'
   },
@@ -209,6 +210,7 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactHigh: 'Hoog',
     swotImpactMedium: 'Gemiddeld',
     swotImpactLow: 'Laag',
+    swotJustification: 'Analyse',
     dashboardTitle: 'Dashboard',
     dashboardSummary: 'Samenvatting'
   },
@@ -310,6 +312,7 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactHigh: 'مرتفع',
     swotImpactMedium: 'متوسط',
     swotImpactLow: 'منخفض',
+    swotJustification: 'تحليل',
     dashboardTitle: 'لوحة المعلومات',
     dashboardSummary: 'ملخص'
   },
@@ -411,6 +414,7 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactHigh: 'גבוה',
     swotImpactMedium: 'בינוני',
     swotImpactLow: 'נמוך',
+    swotJustification: 'ניתוח',
     dashboardTitle: 'לוח מחוונים',
     dashboardSummary: 'סיכום'
   },
@@ -512,6 +516,7 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactHigh: '高',
     swotImpactMedium: '中',
     swotImpactLow: '低',
+    swotJustification: '分析',
     dashboardTitle: 'ダッシュボード',
     dashboardSummary: '概要'
   },
@@ -613,6 +618,7 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactHigh: '높음',
     swotImpactMedium: '보통',
     swotImpactLow: '낮음',
+    swotJustification: '분석',
     dashboardTitle: '대시보드',
     dashboardSummary: '요약'
   },
@@ -714,6 +720,7 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactHigh: '高',
     swotImpactMedium: '中',
     swotImpactLow: '低',
+    swotJustification: '分析',
     dashboardTitle: '仪表板',
     dashboardSummary: '摘要'
   }

@@ -108,6 +108,7 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactHigh: 'High',
     swotImpactMedium: 'Medium',
     swotImpactLow: 'Low',
+    swotJustification: 'Analysis',
     dashboardTitle: 'Dashboard',
     dashboardSummary: 'Summary'
   },
@@ -209,6 +210,7 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactHigh: 'Hög',
     swotImpactMedium: 'Medel',
     swotImpactLow: 'Låg',
+    swotJustification: 'Analys',
     dashboardTitle: 'Instrumentpanel',
     dashboardSummary: 'Sammanfattning'
   },
@@ -310,6 +312,7 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactHigh: 'Høj',
     swotImpactMedium: 'Middel',
     swotImpactLow: 'Lav',
+    swotJustification: 'Analyse',
     dashboardTitle: 'Dashboard',
     dashboardSummary: 'Sammenfatning'
   },
@@ -411,6 +414,7 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactHigh: 'Høy',
     swotImpactMedium: 'Middels',
     swotImpactLow: 'Lav',
+    swotJustification: 'Analyse',
     dashboardTitle: 'Dashbord',
     dashboardSummary: 'Sammendrag'
   },
@@ -512,6 +516,7 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactHigh: 'Korkea',
     swotImpactMedium: 'Keskitaso',
     swotImpactLow: 'Matala',
+    swotJustification: 'Analyysi',
     dashboardTitle: 'Kojelauta',
     dashboardSummary: 'Yhteenveto'
   },
@@ -613,6 +618,7 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactHigh: 'Hoch',
     swotImpactMedium: 'Mittel',
     swotImpactLow: 'Niedrig',
+    swotJustification: 'Analyse',
     dashboardTitle: 'Dashboard',
     dashboardSummary: 'Zusammenfassung'
   },
@@ -714,6 +720,7 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactHigh: 'Élevé',
     swotImpactMedium: 'Moyen',
     swotImpactLow: 'Faible',
+    swotJustification: 'Analyse',
     dashboardTitle: 'Tableau de bord',
     dashboardSummary: 'Résumé'
   },

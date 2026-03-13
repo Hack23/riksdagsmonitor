@@ -1,13 +1,21 @@
 /**
  * Tests for generateStakeholderSwotSection — multi-stakeholder SWOT analysis.
  * Validates HTML structure, multiple stakeholder cards, impact badges, XSS
- * escaping, strategic context, and TemplateSection shape.
+ * escaping, strategic context, TemplateSection shape, trend indicators,
+ * justification sections, and enhanced AI entry rendering.
  */
 
 import { describe, it, expect } from 'vitest';
 import { generateStakeholderSwotSection } from '../scripts/data-transformers/content-generators/stakeholder-swot-section.js';
 import type { StakeholderSwot } from '../scripts/data-transformers/content-generators/stakeholder-swot-section.js';
-import type { SwotData } from '../scripts/types/article.js';
+import type { SwotData, SwotEntry } from '../scripts/types/article.js';
+
+/** Extended entry shape matching AISwotEntry (without importing the ai-swot-analyzer module) */
+interface EnhancedEntry extends SwotEntry {
+  justification?: string;
+  trendDirection?: 'improving' | 'stable' | 'deteriorating';
+  quantitativeEvidence?: string;
+}
 
 /** Minimal SWOT data for tests */
 function makeSwot(overrides: Partial<SwotData> = {}): SwotData {
@@ -219,5 +227,187 @@ describe('generateStakeholderSwotSection', () => {
       lang: 'en',
     });
     expect(section.html).toContain('Recent polling shows movement.');
+  });
+
+  // ---------------------------------------------------------------------------
+  // Enhanced AI entry rendering — trend indicators, justification, evidence
+  // ---------------------------------------------------------------------------
+
+  describe('trend indicator rendering', () => {
+    it('renders ↑ symbol for improving trend', () => {
+      const entry: EnhancedEntry = {
+        text: 'Policy momentum',
+        impact: 'high',
+        trendDirection: 'improving',
+      };
+      const section = generateStakeholderSwotSection({
+        stakeholders: [{ name: 'Gov', swot: makeSwot({ strengths: [entry] }) }],
+        lang: 'en',
+      });
+      expect(section.html).toContain('↑');
+      expect(section.html).toContain('swot-trend--improving');
+    });
+
+    it('renders → symbol for stable trend', () => {
+      const entry: EnhancedEntry = {
+        text: 'Stable situation',
+        impact: 'medium',
+        trendDirection: 'stable',
+      };
+      const section = generateStakeholderSwotSection({
+        stakeholders: [{ name: 'Gov', swot: makeSwot({ strengths: [entry] }) }],
+        lang: 'en',
+      });
+      expect(section.html).toContain('→');
+      expect(section.html).toContain('swot-trend--stable');
+    });
+
+    it('renders ↓ symbol for deteriorating trend', () => {
+      const entry: EnhancedEntry = {
+        text: 'Declining support',
+        impact: 'low',
+        trendDirection: 'deteriorating',
+      };
+      const section = generateStakeholderSwotSection({
+        stakeholders: [{ name: 'Gov', swot: makeSwot({ weaknesses: [entry] }) }],
+        lang: 'en',
+      });
+      expect(section.html).toContain('↓');
+      expect(section.html).toContain('swot-trend--deteriorating');
+    });
+
+    it('renders trend aria-label for accessibility', () => {
+      const entry: EnhancedEntry = {
+        text: 'Test',
+        impact: 'high',
+        trendDirection: 'improving',
+      };
+      const section = generateStakeholderSwotSection({
+        stakeholders: [{ name: 'Gov', swot: makeSwot({ strengths: [entry] }) }],
+        lang: 'en',
+      });
+      expect(section.html).toContain('aria-label="improving"');
+    });
+
+    it('does not render trend indicator when trendDirection is absent', () => {
+      const entry: SwotEntry = { text: 'No trend', impact: 'medium' };
+      const section = generateStakeholderSwotSection({
+        stakeholders: [{ name: 'Gov', swot: makeSwot({ strengths: [entry] }) }],
+        lang: 'en',
+      });
+      expect(section.html).not.toContain('swot-trend');
+    });
+  });
+
+  describe('justification section rendering', () => {
+    it('renders expandable justification in a <details> element', () => {
+      const entry: EnhancedEntry = {
+        text: 'Key policy',
+        impact: 'high',
+        justification: 'This policy is significant because it restructures the welfare system.',
+      };
+      const section = generateStakeholderSwotSection({
+        stakeholders: [{ name: 'Gov', swot: makeSwot({ strengths: [entry] }) }],
+        lang: 'en',
+      });
+      expect(section.html).toContain('<details class="swot-justification">');
+      expect(section.html).toContain('This policy is significant because it restructures the welfare system.');
+    });
+
+    it('renders justification as a <p> inside <details>', () => {
+      const entry: EnhancedEntry = {
+        text: 'Key policy',
+        impact: 'high',
+        justification: 'Detailed analysis here.',
+      };
+      const section = generateStakeholderSwotSection({
+        stakeholders: [{ name: 'Gov', swot: makeSwot({ strengths: [entry] }) }],
+        lang: 'en',
+      });
+      expect(section.html).toContain('<p>Detailed analysis here.</p>');
+    });
+
+    it('escapes XSS in justification', () => {
+      const entry: EnhancedEntry = {
+        text: 'Safe text',
+        impact: 'medium',
+        justification: '<script>alert("xss")</script>',
+      };
+      const section = generateStakeholderSwotSection({
+        stakeholders: [{ name: 'Gov', swot: makeSwot({ strengths: [entry] }) }],
+        lang: 'en',
+      });
+      expect(section.html).not.toContain('<script>alert');
+      expect(section.html).toContain('&lt;script&gt;');
+    });
+
+    it('does not render justification block when justification is absent', () => {
+      const entry: SwotEntry = { text: 'Simple entry', impact: 'medium' };
+      const section = generateStakeholderSwotSection({
+        stakeholders: [{ name: 'Gov', swot: makeSwot({ strengths: [entry] }) }],
+        lang: 'en',
+      });
+      expect(section.html).not.toContain('<details class="swot-justification">');
+    });
+  });
+
+  describe('quantitative evidence rendering', () => {
+    it('renders quantitative evidence in a swot-evidence span', () => {
+      const entry: EnhancedEntry = {
+        text: 'Strong majority',
+        impact: 'high',
+        quantitativeEvidence: '73% majority vote',
+      };
+      const section = generateStakeholderSwotSection({
+        stakeholders: [{ name: 'Gov', swot: makeSwot({ strengths: [entry] }) }],
+        lang: 'en',
+      });
+      expect(section.html).toContain('class="swot-evidence"');
+      expect(section.html).toContain('73% majority vote');
+    });
+
+    it('escapes XSS in quantitative evidence', () => {
+      const entry: EnhancedEntry = {
+        text: 'Data point',
+        impact: 'medium',
+        quantitativeEvidence: '<script>bad()</script>',
+      };
+      const section = generateStakeholderSwotSection({
+        stakeholders: [{ name: 'Gov', swot: makeSwot({ strengths: [entry] }) }],
+        lang: 'en',
+      });
+      expect(section.html).not.toContain('<script>bad');
+      expect(section.html).toContain('&lt;script&gt;');
+    });
+
+    it('does not render evidence span when quantitativeEvidence is absent', () => {
+      const entry: SwotEntry = { text: 'No evidence', impact: 'low' };
+      const section = generateStakeholderSwotSection({
+        stakeholders: [{ name: 'Gov', swot: makeSwot({ strengths: [entry] }) }],
+        lang: 'en',
+      });
+      expect(section.html).not.toContain('swot-evidence');
+    });
+  });
+
+  describe('combined AI entry fields', () => {
+    it('renders all enhanced fields together without error', () => {
+      const entry: EnhancedEntry = {
+        text: 'Comprehensive policy',
+        impact: 'high',
+        trendDirection: 'improving',
+        justification: 'Justified by recent propositions',
+        quantitativeEvidence: 'SEK 2.1 bn committed',
+      };
+      const section = generateStakeholderSwotSection({
+        stakeholders: [{ name: 'Gov', swot: makeSwot({ strengths: [entry] }) }],
+        lang: 'en',
+      });
+      expect(section.html).toContain('Comprehensive policy');
+      expect(section.html).toContain('↑');
+      expect(section.html).toContain('Justified by recent propositions');
+      expect(section.html).toContain('SEK 2.1 bn committed');
+      expect(section.html).toContain('swot-impact--high');
+    });
   });
 });

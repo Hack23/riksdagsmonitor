@@ -81,6 +81,48 @@ const STRATEGIC_CONTEXT_LABELS: Readonly<Record<string, string>> = {
 };
 
 // ---------------------------------------------------------------------------
+// Extended entry interface (AI-generated SWOT entries carry extra metadata)
+// ---------------------------------------------------------------------------
+
+/**
+ * Extended SwotEntry with AI-analysis fields.
+ * These fields are optional so the renderer remains backward-compatible with
+ * plain `SwotEntry` objects that lack them.
+ */
+interface EnhancedSwotEntry extends SwotEntry {
+  /** Human-readable explanation for why this item was included */
+  justification?: string;
+  /** Direction this factor is heading */
+  trendDirection?: 'improving' | 'stable' | 'deteriorating';
+  /** Supporting quantitative evidence (e.g. "73% majority", "SEK 2.1 bn") */
+  quantitativeEvidence?: string;
+}
+
+// ---------------------------------------------------------------------------
+// Trend indicator helper
+// ---------------------------------------------------------------------------
+
+const TREND_SYMBOLS: Readonly<Record<string, string>> = {
+  improving:    '↑',
+  stable:       '→',
+  deteriorating: '↓',
+};
+
+const TREND_CLASSES: Readonly<Record<string, string>> = {
+  improving:    'swot-trend--improving',
+  stable:       'swot-trend--stable',
+  deteriorating: 'swot-trend--deteriorating',
+};
+
+function trendIndicator(entry: EnhancedSwotEntry): string {
+  const dir = entry.trendDirection;
+  if (!dir) return '';
+  const sym = TREND_SYMBOLS[dir] ?? '';
+  const cls = TREND_CLASSES[dir] ?? '';
+  return ` <span class="swot-trend ${cls}" aria-label="${escapeHtml(dir)}">${sym}</span>`;
+}
+
+// ---------------------------------------------------------------------------
 // Impact badge helper (shared with swot-section.ts pattern)
 // ---------------------------------------------------------------------------
 
@@ -103,7 +145,18 @@ function impactBadge(impact: SwotImpact | undefined, lbl: (key: string) => strin
 
 function renderEntries(entries: SwotEntry[], lbl: (key: string) => string): string {
   if (!entries || entries.length === 0) return '';
-  return entries.map(e => `          <li>${escapeHtml(e.text)}${impactBadge(e.impact, lbl)}</li>`).join('\n');
+  return entries.map(e => {
+    const enhanced = e as EnhancedSwotEntry;
+    const badges = impactBadge(e.impact, lbl) + trendIndicator(enhanced);
+    const quantEvidence = enhanced.quantitativeEvidence
+      ? ` <span class="swot-evidence">(${escapeHtml(enhanced.quantitativeEvidence)})</span>`
+      : '';
+    const justification = enhanced.justification?.trim()
+      // 'Analysis' fallback is a safety net; swotJustification is defined for all 14 supported languages
+      ? `\n            <details class="swot-justification"><summary>${escapeHtml(lbl('swotJustification') || 'Analysis')}</summary><p>${escapeHtml(enhanced.justification.trim())}</p></details>`
+      : '';
+    return `          <li>${escapeHtml(e.text)}${badges}${quantEvidence}${justification}</li>`;
+  }).join('\n');
 }
 
 function renderStakeholderSwot(stakeholder: StakeholderSwot, lbl: (key: string) => string): string {
