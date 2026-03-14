@@ -894,12 +894,12 @@ export class AIAnalysisPipeline {
     // Pass 2 (iterations >= 2): per-document deep analysis
     const documentAnalyses = this.iterations >= 2
       ? this.analyzeDocumentsDeep(classified, focusTopic, lang)
-      : documents.map(d => this.stubDocumentAnalysis(d));
+      : documents.map(d => this.createMinimalDocumentAnalysis(d));
 
     // Pass 3 (iterations >= 2): cross-document synthesis
     let synthesis = this.iterations >= 2
       ? this.synthesizeAcrossDocuments(classified, documentAnalyses, focusTopic, lang)
-      : this.stubSynthesis();
+      : this.createEmptySynthesis();
 
     // Build dynamic SWOT (always — uses classification data from Pass 1)
     const dynamicSwotEntries = this.buildDynamicSwot(classified, focusTopic, lang);
@@ -941,7 +941,7 @@ export class AIAnalysisPipeline {
   // ── Stub helpers for iterations=1 (skip Passes 2–3) ───────────────────────
 
   /** Return a minimal document analysis when Pass 2 is skipped (iterations=1). */
-  private stubDocumentAnalysis(d: RawDocument): AIDocumentAnalysis {
+  private createMinimalDocumentAnalysis(d: RawDocument): AIDocumentAnalysis {
     return {
       dok_id: d.dok_id ?? '',
       title: docTitle(d),
@@ -954,7 +954,7 @@ export class AIAnalysisPipeline {
   }
 
   /** Return an empty synthesis when Pass 3 is skipped (iterations=1). */
-  private stubSynthesis(): AISynthesis {
+  private createEmptySynthesis(): AISynthesis {
     return {
       policyConvergence: '',
       coalitionStressIndicators: '',
