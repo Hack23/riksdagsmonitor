@@ -4,6 +4,7 @@
  */
 
 import type { Language } from './language.js';
+import type { MultiDimensionalQualityAssessment } from '../ai-analysis/quality-assessor.js';
 
 /** Category label shown in article headers */
 export type ArticleCategory = 'prospective' | 'retrospective' | 'analysis' | 'breaking';
@@ -109,6 +110,18 @@ export interface DateRange {
   end: string;
 }
 
+// ---------------------------------------------------------------------------
+// Multi-dimensional quality assessment types — single source of truth in
+// scripts/ai-analysis/quality-assessor.ts, re-exported here for convenience.
+// ---------------------------------------------------------------------------
+
+export type {
+  DimensionScore,
+  QualityIssueSeverity,
+  QualityIssue,
+  MultiDimensionalQualityAssessment,
+} from '../ai-analysis/quality-assessor.js';
+
 /** Quality metrics for a single generated article */
 export interface ArticleQualityScore {
   /** Filename of the article (e.g. "2026-02-23-motions-en.html") */
@@ -131,54 +144,6 @@ export interface ArticleQualityScore {
   passed: boolean;
   /** Optional multi-dimensional quality assessment (populated by quality-assessor) */
   multidimensional?: MultiDimensionalQualityAssessment;
-}
-
-// ---------------------------------------------------------------------------
-// Multi-dimensional quality assessment types (re-exported from quality-assessor)
-// ---------------------------------------------------------------------------
-
-/** Score for a single quality dimension */
-export interface DimensionScore {
-  /** 0–100 score for this dimension */
-  score: number;
-  /** Evidence items used to compute the score */
-  evidence: string[];
-  /** Suggested improvements for this dimension */
-  improvements: string[];
-}
-
-/** Severity of a quality issue */
-export type QualityIssueSeverity = 'critical' | 'major' | 'minor';
-
-/** A single quality problem found in an article */
-export interface QualityIssue {
-  severity: QualityIssueSeverity;
-  dimension: string;
-  description: string;
-  suggestedFix: string;
-}
-
-/** Full multi-dimensional quality assessment result */
-export interface MultiDimensionalQualityAssessment {
-  /** 0–100 weighted overall score */
-  overallScore: number;
-  /** Per-dimension scores */
-  dimensions: {
-    factualAccuracy: DimensionScore;
-    stakeholderCoverage: DimensionScore;
-    analyticalDepth: DimensionScore;
-    editorialConsistency: DimensionScore;
-    evidenceQuality: DimensionScore;
-    languageQuality: DimensionScore;
-  };
-  /** Issues detected (sorted: critical → major → minor) */
-  issues: QualityIssue[];
-  /** Suggested improvements */
-  suggestions: string[];
-  /** Whether the article passes the quality threshold */
-  passesThreshold: boolean;
-  /** Iteration count (always ≥ 2) */
-  iterationCount: number;
 }
 
 /** Aggregate statistics for a full news generation run */

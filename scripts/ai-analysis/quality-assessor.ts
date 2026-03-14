@@ -141,13 +141,38 @@ function countDocumentIds(html: string): Set<string> {
   return ids;
 }
 
+/**
+ * Count how many of the 8 Swedish parliamentary parties are mentioned.
+ *
+ * Multi-character variants (e.g. `Socialdemokraterna`, `Vänsterpartiet`) use
+ * case-insensitive substring matching — safe for non-ASCII letters like `ä`/`ö`
+ * that JS `\b` cannot handle.
+ *
+ * Single/short party abbreviations (`S`, `M`, `SD`, `KD`, `MP`, `C`, `V`, `L`)
+ * use a regex with explicit delimiter logic so that an embedded letter "M" inside
+ * "Moderaterna" doesn't falsely match the party code `M`.
+ */
 function countParties(html: string): Set<string> {
   const found = new Set<string>();
+  const lower = html.toLowerCase();
   for (const [code, variants] of Object.entries(PARTY_VARIANTS)) {
     for (const variant of variants) {
-      if (new RegExp(`\\b${variant}\\b`, 'i').test(html)) {
-        found.add(code);
-        break;
+      // Short abbreviation (≤ 2 chars): require non-letter boundaries
+      if (variant.length <= 2) {
+        // Use a regex that ensures the match is delimited by non-letter chars
+        // (or start/end of string). Use Unicode-aware \p{L} via the `u` flag.
+        const escaped = variant.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const re = new RegExp(`(?<![\\p{L}])${escaped}(?![\\p{L}])`, 'iu');
+        if (re.test(html)) {
+          found.add(code);
+          break;
+        }
+      } else {
+        // Multi-character variant: case-insensitive substring match is safe
+        if (lower.includes(variant.toLowerCase())) {
+          found.add(code);
+          break;
+        }
       }
     }
   }
@@ -581,42 +606,58 @@ export function printQualityReport(
 }
 
 /**
- * Inject quality metadata into article HTML as a <meta> tag and inline JSON-LD.
+ * Inject quality metadata into article HTML as a `<meta>` tag and,
+ * optionally, an inline JSON-LD block.
  *
- * The JSON-LD uses a custom `@type: "QualityAssessment"` and is placed
- * inside a `<script type="application/ld+json">` block in the `<head>`.
- * This does not require 'unsafe-inline' for non-JSON-LD scripts (JSON-LD
- * is always permitted under standard CSP).
+ * **CSP note:** An inline `<script type="application/ld+json">` element is
+ * still an inline script from the browser's perspective.  If the page's
+ * Content-Security-Policy sets `script-src` without `'unsafe-inline'` (e.g.
+ * `script-src 'self' https:`, which is the standard pattern in this repo),
+ * the JSON-LD block will be blocked by the browser.  To keep things safe:
  *
- * @param html       - Original article HTML
- * @param assessment - Quality assessment result
- * @returns          Modified HTML with quality metadata injected
+ *  - The `<meta name="quality-score">` tag is **always** injected (CSP-safe).
+ *  - The JSON-LD `<script>` block is only injected when `injectJsonLd` is
+ *    `true` (default: `false`).  Callers that know their CSP allows inline
+ *    scripts can opt in.
+ *
+ * @param html          - Original article HTML
+ * @param assessment    - Quality assessment result
+ * @param injectJsonLd  - If `true`, also add the JSON-LD script block
+ *                        (requires CSP to permit inline scripts). Default: `false`.
+ * @returns             Modified HTML with quality metadata injected
  */
 export function injectQualityMetadata(
   html: string,
   assessment: MultiDimensionalQualityAssessment,
+  injectJsonLd = false,
 ): string {
   const { overallScore, dimensions, passesThreshold, iterationCount } = assessment;
 
-  const jsonLd = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'QualityAssessment',
-    overallScore,
-    passesThreshold,
-    iterationCount,
-    dimensions: {
-      factualAccuracy:      dimensions.factualAccuracy.score,
-      stakeholderCoverage:  dimensions.stakeholderCoverage.score,
-      analyticalDepth:      dimensions.analyticalDepth.score,
-      editorialConsistency: dimensions.editorialConsistency.score,
-      evidenceQuality:      dimensions.evidenceQuality.score,
-      languageQuality:      dimensions.languageQuality.score,
-    },
-  });
-
+  // Always inject the CSP-safe <meta> tag
   const metaTag = `  <meta name="quality-score" content="${overallScore}">`;
-  const jsonLdTag = `  <script type="application/ld+json">\n  ${jsonLd}\n  </script>`;
-  const injection = `${metaTag}\n${jsonLdTag}`;
+
+  let injection = metaTag;
+
+  // Only inject inline JSON-LD when explicitly opted in (requires CSP 'unsafe-inline')
+  if (injectJsonLd) {
+    const jsonLd = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'QualityAssessment',
+      overallScore,
+      passesThreshold,
+      iterationCount,
+      dimensions: {
+        factualAccuracy:      dimensions.factualAccuracy.score,
+        stakeholderCoverage:  dimensions.stakeholderCoverage.score,
+        analyticalDepth:      dimensions.analyticalDepth.score,
+        editorialConsistency: dimensions.editorialConsistency.score,
+        evidenceQuality:      dimensions.evidenceQuality.score,
+        languageQuality:      dimensions.languageQuality.score,
+      },
+    });
+    const jsonLdTag = `  <script type="application/ld+json">\n  ${jsonLd}\n  </script>`;
+    injection = `${metaTag}\n${jsonLdTag}`;
+  }
 
   // Insert before </head>
   if (html.includes('</head>')) {

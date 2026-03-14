@@ -68,7 +68,7 @@ export async function writeArticle(html: string, filename: string): Promise<bool
 // Per-article quality score persistence
 // ---------------------------------------------------------------------------
 
-/** In-memory store for per-article multi-dimensional scores (flushed at end of run) */
+/** In-memory store for per-article multi-dimensional scores (written per-run) */
 const perArticleScores: Record<string, {
   filename: string;
   lang: string;
@@ -87,8 +87,11 @@ const perArticleScores: Record<string, {
 
 /**
  * Persist all collected per-article quality scores to
- * `news/metadata/quality-scores.json`.  Called automatically after each
- * article write so the file is always up-to-date even on partial runs.
+ * `news/metadata/quality-scores.json`.  Called after each article write.
+ *
+ * **Per-run overwrite**: Only the current run's scores are written.  Previous
+ * runs' data is replaced so that stale/test entries never accumulate and
+ * Check 13's average score reflects the current generation only.
  */
 function flushQualityScores(): void {
   if (dryRunArg) return;
@@ -97,22 +100,8 @@ function flushQualityScores(): void {
       fs.mkdirSync(METADATA_DIR, { recursive: true });
     }
     const outPath = path.join(METADATA_DIR, 'quality-scores.json');
-    // Merge with any previously stored scores so we accumulate across runs
-    let existing: typeof perArticleScores = {};
-    if (fs.existsSync(outPath)) {
-      try {
-        existing = JSON.parse(fs.readFileSync(outPath, 'utf-8')) as typeof perArticleScores;
-      } catch {
-        // Corrupt file — start fresh
-      }
-    }
-    const merged = { ...existing, ...perArticleScores };
-    // Warn if we are overwriting previously stored scores for any filename
-    const overwritten = Object.keys(perArticleScores).filter(k => k in existing);
-    if (overwritten.length > 0) {
-      console.warn(`  ℹ️  Updating quality scores for ${overwritten.length} previously scored article(s): ${overwritten.join(', ')}`);
-    }
-    fs.writeFileSync(outPath, JSON.stringify(merged, null, 2), 'utf-8');
+    // Overwrite with current run's scores only — no merging with stale data
+    fs.writeFileSync(outPath, JSON.stringify(perArticleScores, null, 2), 'utf-8');
   } catch (err: unknown) {
     console.warn(`  ⚠️  Could not persist quality scores: ${(err as Error).message}`);
   }

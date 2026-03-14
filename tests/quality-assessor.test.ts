@@ -205,6 +205,19 @@ describe('assessArticleQuality', () => {
       const result = assessArticleQuality(html, 'en');
       expect(result.dimensions.stakeholderCoverage.evidence.length).toBeGreaterThan(0);
     });
+
+    it('should detect parties with non-ASCII characters (Vänsterpartiet, Miljöpartiet)', () => {
+      // This verifies the Unicode-safe matching (no \\b boundaries)
+      const html = buildArticleHtml({ parties: ['Vänsterpartiet', 'Miljöpartiet'] });
+      const result = assessArticleQuality(html, 'en');
+      // Both V and MP should be detected — evidence format: "N/8 parties represented: V, MP"
+      const partyEvidence = result.dimensions.stakeholderCoverage.evidence.find(
+        e => e.includes('/8 parties represented')
+      );
+      expect(partyEvidence).toBeDefined();
+      expect(partyEvidence).toContain('V');
+      expect(partyEvidence).toContain('MP');
+    });
   });
 
   // ---------------------------------------------------------------------------
@@ -212,9 +225,8 @@ describe('assessArticleQuality', () => {
   describe('analyticalDepth dimension', () => {
     it('should score higher for articles with analytical language', () => {
       const rich = buildArticleHtml({});  // has because/therefore/however/according to etc.
-      const bare = buildArticleHtml({ wordCount: 600, h2Count: 3 });
 
-      // Override the body text in bare to have no analytical words
+      // Override the body text to have no analytical words
       const bareHtml = '<html><body><p>' + Array(600).fill('simple').join(' ') + '</p></body></html>';
       const scoreRich = assessArticleQuality(rich, 'en').dimensions.analyticalDepth.score;
       const scoreBare = assessArticleQuality(bareHtml, 'en').dimensions.analyticalDepth.score;
@@ -314,14 +326,10 @@ describe('assessArticleQuality', () => {
 
     it('should not deduct for untranslated spans in Swedish articles', () => {
       const svWithSpans = buildArticleHtml({ untranslatedSpans: 10 });
-      const svNoSpans = buildArticleHtml({ untranslatedSpans: 0 });
 
       const scoreWithSpans = assessArticleQuality(svWithSpans, 'sv').dimensions.languageQuality.score;
-      const scoreNoSpans = assessArticleQuality(svNoSpans, 'sv').dimensions.languageQuality.score;
 
-      // Both articles score the same on the translation sub-check (sv is exempt).
-      // Scores may differ slightly due to extra words from the span text, but
-      // the span-count itself should not cause a reduction.
+      // Swedish articles are exempt from untranslated-span penalties.
       // Verify by comparing with a de (German) article that DOES penalise spans:
       const deWithSpans = assessArticleQuality(svWithSpans, 'de').dimensions.languageQuality.score;
       expect(scoreWithSpans).toBeGreaterThanOrEqual(deWithSpans);
@@ -445,10 +453,18 @@ describe('injectQualityMetadata', () => {
     expect(result).toContain(`content="${assessment.overallScore}"`);
   });
 
-  it('should inject a JSON-LD quality assessment block', () => {
+  it('should NOT inject JSON-LD by default (CSP-safe)', () => {
     const html = '<html><head><title>Test</title></head><body></body></html>';
     const assessment = assessArticleQuality(buildArticleHtml({}), 'en');
     const result = injectQualityMetadata(html, assessment);
+    expect(result).not.toContain('<script type="application/ld+json">');
+    expect(result).toContain('<meta name="quality-score"');
+  });
+
+  it('should inject JSON-LD when injectJsonLd is true', () => {
+    const html = '<html><head><title>Test</title></head><body></body></html>';
+    const assessment = assessArticleQuality(buildArticleHtml({}), 'en');
+    const result = injectQualityMetadata(html, assessment, true);
     expect(result).toContain('<script type="application/ld+json">');
     expect(result).toContain('"QualityAssessment"');
     expect(result).toContain('"overallScore"');
