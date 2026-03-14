@@ -114,12 +114,23 @@ const TREND_CLASSES: Readonly<Record<string, string>> = {
   deteriorating: 'swot-trend--deteriorating',
 };
 
-function trendIndicator(entry: EnhancedSwotEntry): string {
+/** Localised i18n keys for trend direction (used in aria-label) */
+const TREND_LABEL_KEYS: Readonly<Record<string, string>> = {
+  improving:     'swotTrendImproving',
+  stable:        'swotTrendStable',
+  deteriorating: 'swotTrendDeteriorating',
+};
+
+function trendIndicator(entry: EnhancedSwotEntry, lbl: (key: string) => string): string {
   const dir = entry.trendDirection;
   if (!dir) return '';
   const sym = TREND_SYMBOLS[dir] ?? '';
   const cls = TREND_CLASSES[dir] ?? '';
-  return ` <span class="swot-trend ${cls}" aria-label="${escapeHtml(dir)}">${sym}</span>`;
+  const labelKey = TREND_LABEL_KEYS[dir];
+  const localizedLabel = labelKey ? lbl(labelKey) : dir;
+  // If lbl() returns the key itself (missing translation), fall back to the raw English direction name
+  const ariaLabel = (localizedLabel === labelKey) ? dir : localizedLabel;
+  return ` <span class="swot-trend ${cls}" aria-label="${escapeHtml(ariaLabel)}">${sym}</span>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -147,13 +158,15 @@ function renderEntries(entries: SwotEntry[], lbl: (key: string) => string): stri
   if (!entries || entries.length === 0) return '';
   return entries.map(e => {
     const enhanced = e as EnhancedSwotEntry;
-    const badges = impactBadge(e.impact, lbl) + trendIndicator(enhanced);
+    const badges = impactBadge(e.impact, lbl) + trendIndicator(enhanced, lbl);
     const quantEvidence = enhanced.quantitativeEvidence
       ? ` <span class="swot-evidence">(${escapeHtml(enhanced.quantitativeEvidence)})</span>`
       : '';
+    const justLabel = lbl('swotJustification');
+    // lbl() returns the key name when no translation is found; detect that and use English fallback
+    const justSummary = (justLabel !== 'swotJustification') ? justLabel : 'Analysis';
     const justification = enhanced.justification?.trim()
-      // 'Analysis' fallback is a safety net; swotJustification is defined for all 14 supported languages
-      ? `\n            <details class="swot-justification"><summary>${escapeHtml(lbl('swotJustification') || 'Analysis')}</summary><p>${escapeHtml(enhanced.justification.trim())}</p></details>`
+      ? `\n            <details class="swot-justification"><summary>${escapeHtml(justSummary)}</summary><p>${escapeHtml(enhanced.justification.trim())}</p></details>`
       : '';
     return `          <li>${escapeHtml(e.text)}${badges}${quantEvidence}${justification}</li>`;
   }).join('\n');

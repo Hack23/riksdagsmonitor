@@ -347,9 +347,9 @@ function docEntry(
 // Topic-aware analytical statement builder
 // ---------------------------------------------------------------------------
 
-/** Build a topical statement: "X in {topic}" or fallback X */
+/** Build a topical statement: "X in {topic}" or strip %t placeholder when absent */
 function withTopic(template: string, topic: string | null): string {
-  if (!topic) return template;
+  if (!topic) return template.replace(/%t/g, '');
   return template.replace('%t', topic);
 }
 
@@ -360,7 +360,7 @@ function withTopic(template: string, topic: string | null): string {
 function buildGovernmentSwot(
   docs: RawDocument[],
   topic: string | null,
-  lang: Language,
+  _lang: Language,
 ): Pick<AISwotAnalysis, 'strengths' | 'weaknesses' | 'opportunities' | 'threats'> {
   const propDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
   const sfsDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
@@ -471,7 +471,7 @@ function buildGovernmentSwot(
 function buildOppositionSwot(
   docs: RawDocument[],
   topic: string | null,
-  lang: Language,
+  _lang: Language,
 ): Pick<AISwotAnalysis, 'strengths' | 'weaknesses' | 'opportunities' | 'threats'> {
   const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
   const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');

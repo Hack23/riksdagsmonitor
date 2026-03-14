@@ -109,6 +109,9 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Medio',
     swotImpactLow: 'Bajo',
     swotJustification: 'Análisis',
+    swotTrendImproving: 'Mejorando',
+    swotTrendStable: 'Estable',
+    swotTrendDeteriorating: 'Deteriorando',
     dashboardTitle: 'Panel de control',
     dashboardSummary: 'Resumen'
   },
@@ -211,6 +214,9 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Gemiddeld',
     swotImpactLow: 'Laag',
     swotJustification: 'Analyse',
+    swotTrendImproving: 'Verbeterend',
+    swotTrendStable: 'Stabiel',
+    swotTrendDeteriorating: 'Verslechterend',
     dashboardTitle: 'Dashboard',
     dashboardSummary: 'Samenvatting'
   },
@@ -313,6 +319,9 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'متوسط',
     swotImpactLow: 'منخفض',
     swotJustification: 'تحليل',
+    swotTrendImproving: 'تحسن',
+    swotTrendStable: 'مستقر',
+    swotTrendDeteriorating: 'تدهور',
     dashboardTitle: 'لوحة المعلومات',
     dashboardSummary: 'ملخص'
   },
@@ -415,6 +424,9 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'בינוני',
     swotImpactLow: 'נמוך',
     swotJustification: 'ניתוח',
+    swotTrendImproving: 'משתפר',
+    swotTrendStable: 'יציב',
+    swotTrendDeteriorating: 'מתדרדר',
     dashboardTitle: 'לוח מחוונים',
     dashboardSummary: 'סיכום'
   },
@@ -517,6 +529,9 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: '中',
     swotImpactLow: '低',
     swotJustification: '分析',
+    swotTrendImproving: '改善中',
+    swotTrendStable: '安定',
+    swotTrendDeteriorating: '悪化中',
     dashboardTitle: 'ダッシュボード',
     dashboardSummary: '概要'
   },
@@ -619,6 +634,9 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: '보통',
     swotImpactLow: '낮음',
     swotJustification: '분석',
+    swotTrendImproving: '개선 중',
+    swotTrendStable: '안정',
+    swotTrendDeteriorating: '악화 중',
     dashboardTitle: '대시보드',
     dashboardSummary: '요약'
   },
@@ -721,6 +739,9 @@ export const CONTENT_LABELS_PART2: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: '中',
     swotImpactLow: '低',
     swotJustification: '分析',
+    swotTrendImproving: '改善中',
+    swotTrendStable: '稳定',
+    swotTrendDeteriorating: '恶化中',
     dashboardTitle: '仪表板',
     dashboardSummary: '摘要'
   }

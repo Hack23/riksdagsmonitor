@@ -286,7 +286,20 @@ describe('generateStakeholderSwotSection', () => {
         stakeholders: [{ name: 'Gov', swot: makeSwot({ strengths: [entry] }) }],
         lang: 'en',
       });
-      expect(section.html).toContain('aria-label="improving"');
+      expect(section.html).toContain('aria-label="Improving"');
+    });
+
+    it('renders localised trend aria-label for Swedish', () => {
+      const entry: EnhancedEntry = {
+        text: 'Test',
+        impact: 'high',
+        trendDirection: 'improving',
+      };
+      const section = generateStakeholderSwotSection({
+        stakeholders: [{ name: 'Gov', swot: makeSwot({ strengths: [entry] }) }],
+        lang: 'sv',
+      });
+      expect(section.html).toContain('aria-label="Förbättras"');
     });
 
     it('does not render trend indicator when trendDirection is absent', () => {

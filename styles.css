@@ -9659,6 +9659,39 @@ body.news-page {
 .news-article .swot-impact--medium { color: #f39c12; }
 .news-article .swot-impact--low { color: #27ae60; }
 
+/* Trend direction indicators */
+.news-article .swot-trend {
+  font-weight: 700;
+  margin-left: 0.25em;
+}
+.news-article .swot-trend--improving { color: #27ae60; }
+.news-article .swot-trend--stable { color: #7f8c8d; }
+.news-article .swot-trend--deteriorating { color: #e74c3c; }
+
+/* Quantitative evidence */
+.news-article .swot-evidence {
+  font-size: 0.85em;
+  color: #6c757d;
+  font-style: italic;
+  margin-left: 0.25em;
+}
+
+/* Expandable justification */
+.news-article .swot-justification {
+  margin-top: 0.25rem;
+  font-size: 0.85em;
+  color: #555;
+}
+.news-article .swot-justification summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #2471a3;
+}
+.news-article .swot-justification p {
+  margin: 0.25rem 0 0 0;
+  line-height: 1.4;
+}
+
 [dir="rtl"] .news-article .swot-analysis {
   direction: rtl;
   text-align: right;
@@ -9668,6 +9701,9 @@ body.news-page {
   padding-left: 0;
   padding-right: 1.25rem;
 }
+
+[dir="rtl"] .news-article .swot-trend { margin-left: 0; margin-right: 0.25em; }
+[dir="rtl"] .news-article .swot-evidence { margin-left: 0; margin-right: 0.25em; }
 
 /* Dashboard Section */
 .news-article .article-dashboard {

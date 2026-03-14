@@ -109,6 +109,9 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Medium',
     swotImpactLow: 'Low',
     swotJustification: 'Analysis',
+    swotTrendImproving: 'Improving',
+    swotTrendStable: 'Stable',
+    swotTrendDeteriorating: 'Deteriorating',
     dashboardTitle: 'Dashboard',
     dashboardSummary: 'Summary'
   },
@@ -211,6 +214,9 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Medel',
     swotImpactLow: 'Låg',
     swotJustification: 'Analys',
+    swotTrendImproving: 'Förbättras',
+    swotTrendStable: 'Stabil',
+    swotTrendDeteriorating: 'Försämras',
     dashboardTitle: 'Instrumentpanel',
     dashboardSummary: 'Sammanfattning'
   },
@@ -313,6 +319,9 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Middel',
     swotImpactLow: 'Lav',
     swotJustification: 'Analyse',
+    swotTrendImproving: 'Forbedres',
+    swotTrendStable: 'Stabil',
+    swotTrendDeteriorating: 'Forværres',
     dashboardTitle: 'Dashboard',
     dashboardSummary: 'Sammenfatning'
   },
@@ -415,6 +424,9 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Middels',
     swotImpactLow: 'Lav',
     swotJustification: 'Analyse',
+    swotTrendImproving: 'Forbedres',
+    swotTrendStable: 'Stabil',
+    swotTrendDeteriorating: 'Forverres',
     dashboardTitle: 'Dashbord',
     dashboardSummary: 'Sammendrag'
   },
@@ -517,6 +529,9 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Keskitaso',
     swotImpactLow: 'Matala',
     swotJustification: 'Analyysi',
+    swotTrendImproving: 'Paranee',
+    swotTrendStable: 'Vakaa',
+    swotTrendDeteriorating: 'Heikkenee',
     dashboardTitle: 'Kojelauta',
     dashboardSummary: 'Yhteenveto'
   },
@@ -619,6 +634,9 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Mittel',
     swotImpactLow: 'Niedrig',
     swotJustification: 'Analyse',
+    swotTrendImproving: 'Verbessernd',
+    swotTrendStable: 'Stabil',
+    swotTrendDeteriorating: 'Verschlechternd',
     dashboardTitle: 'Dashboard',
     dashboardSummary: 'Zusammenfassung'
   },
@@ -721,6 +739,9 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     swotImpactMedium: 'Moyen',
     swotImpactLow: 'Faible',
     swotJustification: 'Analyse',
+    swotTrendImproving: 'En amélioration',
+    swotTrendStable: 'Stable',
+    swotTrendDeteriorating: 'En détérioration',
     dashboardTitle: 'Tableau de bord',
     dashboardSummary: 'Résumé'
   },

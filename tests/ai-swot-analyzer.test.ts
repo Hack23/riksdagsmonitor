@@ -9,7 +9,6 @@ import {
   buildAISwotStakeholders,
 } from '../scripts/data-transformers/content-generators/ai-swot-analyzer.js';
 import type {
-  StakeholderPerspective,
   TrendDirection,
   AISwotEntry,
 } from '../scripts/data-transformers/content-generators/ai-swot-analyzer.js';
