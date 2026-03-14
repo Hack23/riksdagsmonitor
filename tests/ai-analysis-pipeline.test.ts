@@ -305,6 +305,43 @@ describe('AIAnalysisPipeline', () => {
       const result = pipeline.analyze([PROP], null, 'en');
       expect(result.iterations).toBe(10);
     });
+
+    it('floors fractional iterations to integer', () => {
+      const pipeline = new AIAnalysisPipeline({ iterations: 2.7 });
+      const result = pipeline.analyze([PROP], null, 'en');
+      expect(result.iterations).toBe(2);
+      expect(Number.isInteger(result.iterations)).toBe(true);
+    });
+
+    it('enrichedCount uses fullText/fullContent, not just contentFetched', () => {
+      // contentFetched=true but no fullText/fullContent → should NOT count as enriched
+      const fetchedOnly = makeDoc({
+        dok_id: 'E1', doktyp: 'prop', contentFetched: true,
+      });
+      const fetchedOnly2 = makeDoc({
+        dok_id: 'E2', doktyp: 'bet', contentFetched: true,
+      });
+      const fetchedOnly3 = makeDoc({
+        dok_id: 'E3', doktyp: 'mot', contentFetched: true,
+      });
+      const pipeline = new AIAnalysisPipeline({ iterations: 3 });
+      const result = pipeline.analyze([fetchedOnly, fetchedOnly2, fetchedOnly3], null, 'en');
+      // None have fullText/fullContent, so enrichedCount=0 → no enriched takeaway
+      const enrichedTakeaway = result.keyTakeaways.find(t => t.includes('enriched'));
+      expect(enrichedTakeaway).toBeUndefined();
+
+      // Now add a doc WITH fullText — should produce enriched takeaway
+      const enriched1 = makeDoc({
+        dok_id: 'E4', doktyp: 'prop', contentFetched: true, fullText: 'Full text here',
+      });
+      const enriched2 = makeDoc({
+        dok_id: 'E5', doktyp: 'bet', contentFetched: true, fullContent: 'Full content here',
+      });
+      const result2 = pipeline.analyze([enriched1, enriched2], null, 'en');
+      const enrichedTakeaway2 = result2.keyTakeaways.find(t => t.includes('enriched'));
+      expect(enrichedTakeaway2).toBeDefined();
+      expect(enrichedTakeaway2).toContain('2 of 2');
+    });
   });
 });
 

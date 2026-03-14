@@ -181,15 +181,30 @@ const SPECIFICITY_BONUS = 20;
 /** Bonus score added when the analysis contains cross-reference terms. */
 const CROSS_REF_BONUS = 20;
 
+/** CJK Unicode range test — for languages without whitespace word boundaries (zh, ja, ko). */
+const CJK_REGEX = /[\u3000-\u9fff\uac00-\ud7af\uff00-\uffef]/;
+/** Characters-per-point for CJK character-based scoring (replaces words/WORDS_PER_POINT). */
+const CJK_CHARS_PER_POINT = 5;
+
 /** Score analysis depth: 0–100 based on content length and richness. */
 function scoreAnalysisDepth(text: string): number {
   if (!text || text.length === 0) return 0;
-  const words = text.split(/\s+/).length;
-  const hasSpecific = /\d{4}|\d+\s*(kr|miljarder|miljoner|percent|%)/.test(text);
-  const hasCrossRef = /cross-party|coalition|EU|EU-|Nordic|parliamentary/.test(text);
-  let score = Math.min(WORD_SCORE_CAP, Math.floor(words / WORDS_PER_POINT));
+
+  // Use character-length scoring for CJK text (no whitespace word boundaries)
+  const isCJK = CJK_REGEX.test(text);
+  const contentSize = isCJK
+    ? Math.floor(text.length / CJK_CHARS_PER_POINT)
+    : text.split(/\s+/).length / WORDS_PER_POINT;
+  let score = Math.min(WORD_SCORE_CAP, Math.floor(contentSize));
+
+  // Specificity: numeric references in any language
+  const hasSpecific = /\d{4}|\d+\s*(kr|miljarder|miljoner|percent|%|万|億|兆|조|억)/.test(text);
   if (hasSpecific) score += SPECIFICITY_BONUS;
+
+  // Cross-reference markers — multilingual equivalents
+  const hasCrossRef = /cross-party|coalition|EU|EU-|Nordic|parliamentary|tvärs?parti|koalition|parlamentar|超党派|連立|議会|초당파|연립|의회|跨党派|联盟|议会/.test(text);
   if (hasCrossRef) score += CROSS_REF_BONUS;
+
   return Math.min(100, score);
 }
 
@@ -265,7 +280,7 @@ const EU_ALIGNMENT_SIGNAL: Lang14 = L14(
 // ── SWOT quadrant labels ─────────────────────────────────────────────────────
 const GOV_STRENGTH_LABELS: Record<string, Lang14> = {
   propositions: L14(
-    'Active legislative pipeline: %n government proposal%s drive %t policy',
+    'Active legislative pipeline: %n government proposal%s driving %t policy',
     'Aktiv lagstiftningspipeline: %n propositioner driver %t-politik',
     'Aktiv lovgivningspipeline: %n lovforslag driver %t-politik',
     'Aktiv lovgivningspipeline: %n stortingsproposisjoner driver %t-politikk',
@@ -316,7 +331,7 @@ const GOV_STRENGTH_LABELS: Record<string, Lang14> = {
 
 const OPP_STRENGTH_LABELS: Record<string, Lang14> = {
   committee: L14(
-    'Parliamentary scrutiny: %n committee report%s examine %t',
+    'Parliamentary scrutiny: %n committee report%s examining %t',
     'Parlamentarisk granskning: %n betänkanden granskar %t',
     'Parlamentarisk kontrol: %n udvalgsrapporter undersøger %t',
     'Parlamentarisk kontroll: %n komitérapporter undersøker %t',
@@ -332,7 +347,7 @@ const OPP_STRENGTH_LABELS: Record<string, Lang14> = {
     '议会审查：%n 份委员会报告审查%t',
   ),
   motions: L14(
-    'Opposition challenge: %n motion%s contest %t proposals',
+    'Opposition challenge: %n motion%s contesting %t proposals',
     'Oppositionsutmaning: %n motioner utmanar %t-förslag',
     'Oppositionsudfordring: %n motioner udfordrer %t-forslag',
     'Opposisjonsutfordring: %n motioner utfordrer %t-forslag',
@@ -860,7 +875,7 @@ export class AIAnalysisPipeline {
   private readonly qualityThreshold: number;
 
   constructor(options: { iterations?: number; qualityThreshold?: number } = {}) {
-    this.iterations = Math.min(10, Math.max(1, options.iterations ?? 3));
+    this.iterations = Math.min(10, Math.max(1, Math.floor(options.iterations ?? 3)));
     this.qualityThreshold = options.qualityThreshold ?? QUALITY_THRESHOLD;
   }
 
@@ -904,18 +919,21 @@ export class AIAnalysisPipeline {
     const keyTakeaways = this.buildKeyTakeaways(classified, focusTopic, lang);
 
     // Pass 4 (iterations >= 3): QA + refinement
-    // When quality is below threshold, re-run synthesis and replace the original.
-    // The score is blended at 50% weight so minor improvements are credited.
-    const REFINEMENT_WEIGHT = 0.5;
+    // When quality is below threshold, re-run synthesis and keep the better score.
+    // NOTE: With deterministic heuristics the refined output is identical to the
+    // original, so the score stays the same. The path is kept as a future extension
+    // point for non-deterministic analysis (e.g. when LLM integration is added).
     let qualityScore = this.scoreAnalysis(documentAnalyses, synthesis, dynamicSwotEntries);
     if (this.iterations >= 3 && qualityScore < this.qualityThreshold) {
-      // Re-run synthesis and replace original when below quality threshold
       const refinedSynthesis = this.synthesizeAcrossDocuments(
         classified, documentAnalyses, focusTopic, lang,
       );
       const refinedScore = this.scoreAnalysis(documentAnalyses, refinedSynthesis, dynamicSwotEntries);
-      qualityScore = Math.min(100, qualityScore + refinedScore * REFINEMENT_WEIGHT);
-      synthesis = refinedSynthesis;
+      // Take the better of the two scores — no additive inflation.
+      if (refinedScore >= qualityScore) {
+        qualityScore = refinedScore;
+        synthesis = refinedSynthesis;
+      }
     }
 
     return {
@@ -974,7 +992,9 @@ export class AIAnalysisPipeline {
     docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => domainSet.add(dom)));
 
     const hasStress = docs.some(d => hasCoalitionStress(d));
-    const enrichedCount = docs.filter(d => d.contentFetched).length;
+    // Use actual content presence (fullText || fullContent) rather than bare
+    // contentFetched — the latter can be true even when no text was fetched.
+    const enrichedCount = docs.filter(d => !!(d.fullText || d.fullContent)).length;
 
     return {
       propDocs, betDocs, motDocs, skrDocs, sfsDocs, euDocs,
