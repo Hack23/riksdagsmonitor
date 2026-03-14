@@ -149,6 +149,23 @@ const SECTION_TITLES: Partial<Record<string, string>> = {
   zh: '政策思维导图',
 };
 
+const CONNECTIONS_ARIA_LABELS: Partial<Record<string, string>> = {
+  en: 'Cross-branch connections',
+  sv: 'Grenarnas kopplingar',
+  da: 'Grenkoblinger',
+  no: 'Grenforbindelser',
+  fi: 'Haarojen yhteydet',
+  de: 'Zweigverbindungen',
+  fr: 'Connexions entre branches',
+  es: 'Conexiones entre ramas',
+  nl: 'Verbindingen tussen takken',
+  ar: 'الروابط بين الفروع',
+  he: 'קשרים בין ענפים',
+  ja: 'ブランチ間の接続',
+  ko: '브랜치 간 연결',
+  zh: '分支间连接',
+};
+
 // ---------------------------------------------------------------------------
 // Rendering helpers
 // ---------------------------------------------------------------------------
@@ -182,8 +199,9 @@ function renderSubBranches(subBranches: SubBranch[]): string {
 }
 
 /** Render cross-branch connection indicators */
-function renderConnections(connections: MindmapConnection[]): string {
+function renderConnections(connections: MindmapConnection[], lang: Language | string): string {
   if (connections.length === 0) return '';
+  const ariaLabel = CONNECTIONS_ARIA_LABELS[lang as string] ?? CONNECTIONS_ARIA_LABELS.en!;
   const items = connections
     .map(
       c =>
@@ -192,7 +210,7 @@ function renderConnections(connections: MindmapConnection[]): string {
         `</div>`,
     )
     .join('\n');
-  return `  <div class="mindmap-connections" aria-label="Cross-branch connections" role="note">\n${items}\n  </div>\n`;
+  return `  <div class="mindmap-connections" aria-label="${escapeHtml(ariaLabel)}" role="note">\n${items}\n  </div>\n`;
 }
 
 /** Render a single branch node with its leaf items, AI items, and sub-branches */
@@ -286,7 +304,7 @@ export function generateMindmapSection(opts: MindmapSectionOptions): TemplateSec
   const branchItems = branches.map(b => renderBranch(b)).join('\n');
 
   const connectionsHtml =
-    connections && connections.length > 0 ? renderConnections(connections) : '';
+    connections && connections.length > 0 ? renderConnections(connections, opts.lang) : '';
 
   const html = `<section class="mindmap-section" aria-label="${escapeHtml(titleText)}">
   <h2>${escapeHtml(titleText)}</h2>

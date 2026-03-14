@@ -1265,7 +1265,8 @@ function buildDeepInspectionSections(
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
   const detectedDomainList = [...allDetectedDomains].slice(0, 8);
 
-  const aiAnalysis = buildAIMindmapAnalysis(docs, topic, lang);
+  // Pass precomputed domains to avoid iterating docs twice
+  const aiAnalysis = buildAIMindmapAnalysis(docs, topic, lang, detectedDomainList);
   const mindmapSection = generateMindmapSection(
     buildMindmapOptionsFromAnalysis(
       aiAnalysis,

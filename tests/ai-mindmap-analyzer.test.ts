@@ -175,3 +175,79 @@ describe('buildMindmapOptionsFromAnalysis', () => {
     expect(opts.summary).toBe('Custom summary text');
   });
 });
+
+describe('buildAIMindmapAnalysis — localization completeness', () => {
+  const nonEnglishLangs: Array<{ code: string; name: string; sampleWord: RegExp }> = [
+    { code: 'sv', name: 'Swedish', sampleWord: /Maktdynamik/ },
+    { code: 'de', name: 'German', sampleWord: /Machtdynamik/ },
+    { code: 'fr', name: 'French', sampleWord: /Dynamiques de pouvoir/ },
+    { code: 'ja', name: 'Japanese', sampleWord: /権力力学/ },
+    { code: 'zh', name: 'Chinese', sampleWord: /权力动态/ },
+    { code: 'ar', name: 'Arabic', sampleWord: /ديناميكيات القوة/ },
+  ];
+
+  nonEnglishLangs.forEach(({ code, name, sampleWord }) => {
+    it(`timeline branch items do not contain English-only text for ${name}`, () => {
+      const analysis = buildAIMindmapAnalysis(makeDocs(), 'Policy', code);
+      const timelineBranch = analysis.branches.find(b => b.dimension === 'timeline');
+      expect(timelineBranch).toBeDefined();
+      const itemTexts = timelineBranch!.aiItems?.map(i => i.text).join(' ') ?? '';
+      // Should NOT have the old English-only strings
+      expect(itemTexts).not.toContain('Recent activity:');
+      expect(itemTexts).not.toContain('Active propositions:');
+      expect(itemTexts).not.toContain('Total legislative pipeline:');
+    });
+
+    it(`power branch label uses localized text for ${name}`, () => {
+      const analysis = buildAIMindmapAnalysis(makeDocs(), 'Policy', code);
+      const powerBranch = analysis.branches.find(b => b.dimension === 'power');
+      expect(powerBranch?.label).toMatch(sampleWord);
+    });
+  });
+
+  // Languages where document word is clearly different from English
+  const distinctDocLangs: Array<{ code: string; name: string; docWord: RegExp }> = [
+    { code: 'sv', name: 'Swedish', docWord: /dokument/ },
+    { code: 'de', name: 'German', docWord: /Dokument/ },
+    { code: 'ja', name: 'Japanese', docWord: /件/ },
+    { code: 'zh', name: 'Chinese', docWord: /份文件/ },
+    { code: 'ar', name: 'Arabic', docWord: /وثيقة/ },
+  ];
+
+  distinctDocLangs.forEach(({ code, name, docWord }) => {
+    it(`power branch items use localized document word for ${name}`, () => {
+      const analysis = buildAIMindmapAnalysis(makeDocs(), 'Policy', code);
+      const powerBranch = analysis.branches.find(b => b.dimension === 'power');
+      expect(powerBranch).toBeDefined();
+      const itemTexts = powerBranch!.aiItems?.map(i => i.text).join(' ') ?? '';
+      expect(itemTexts).toMatch(docWord);
+    });
+  });
+
+  it('precomputedDomains parameter avoids duplicate domain detection', () => {
+    const docs = makeDocs();
+    const domains = ['Healthcare', 'Finance'];
+    const analysis1 = buildAIMindmapAnalysis(docs, 'Test', 'en', domains);
+    const analysis2 = buildAIMindmapAnalysis(docs, 'Test', 'en');
+    // Both should produce same number of branches/connections
+    expect(analysis1.branches).toHaveLength(5);
+    expect(analysis1.connections.length).toBeGreaterThan(0);
+    // Impact branch should use the precomputed domains
+    const impactBranch = analysis1.branches.find(b => b.dimension === 'impact');
+    expect(impactBranch?.aiItems?.some(i => i.text === 'Healthcare')).toBe(true);
+    // Normal analysis should still work
+    expect(analysis2.branches).toHaveLength(5);
+  });
+
+  it('null topic fallback uses localized language for German', () => {
+    const analysis = buildAIMindmapAnalysis([], null, 'de');
+    expect(analysis.centralThesis).toContain('parlamentarische Tätigkeit');
+    expect(analysis.centralThesis).not.toContain('parliamentary activity');
+  });
+
+  it('null topic fallback uses localized language for Swedish', () => {
+    const analysis = buildAIMindmapAnalysis([], null, 'sv');
+    expect(analysis.centralThesis).toContain('riksdagsverksamhet');
+    expect(analysis.centralThesis).not.toContain('parliamentary activity');
+  });
+});

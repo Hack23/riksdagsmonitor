@@ -10047,11 +10047,7 @@ body.news-page {
 }
 
 /* AI Mindmap dimension color indicators */
-.news-article .mindmap-branch[data-dimension="power"] { border-left-width: 4px; }
-.news-article .mindmap-branch[data-dimension="impact"] { border-left-width: 4px; }
-.news-article .mindmap-branch[data-dimension="timeline"] { border-left-width: 4px; }
-.news-article .mindmap-branch[data-dimension="scope"] { border-left-width: 4px; }
-.news-article .mindmap-branch[data-dimension="motivation"] { border-left-width: 4px; }
+.news-article .mindmap-branch[data-dimension] { border-left-width: 4px; }
 
 @media (min-width: 768px) {
   .news-article .mindmap-center-wrapper {

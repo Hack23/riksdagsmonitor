@@ -386,4 +386,21 @@ describe('generateMindmapSection', () => {
     expect(section.html).not.toContain('<b>');
     expect(section.html).toContain('&lt;b&gt;');
   });
+
+  it('localizes the connections aria-label for Swedish', () => {
+    const connections: MindmapConnection[] = [
+      { fromBranch: 'A', toBranch: 'B', relationship: 'shapes' },
+    ];
+    const section = generateMindmapSection({ topic: 'T', branches: [], lang: 'sv', connections });
+    expect(section.html).toContain('aria-label="Grenarnas kopplingar"');
+    expect(section.html).not.toContain('aria-label="Cross-branch connections"');
+  });
+
+  it('localizes the connections aria-label for Japanese', () => {
+    const connections: MindmapConnection[] = [
+      { fromBranch: 'A', toBranch: 'B', relationship: 'shapes' },
+    ];
+    const section = generateMindmapSection({ topic: 'T', branches: [], lang: 'ja', connections });
+    expect(section.html).toContain('aria-label="ブランチ間の接続"');
+  });
 });
