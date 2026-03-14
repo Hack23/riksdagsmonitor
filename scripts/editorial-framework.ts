@@ -237,6 +237,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<string, ArticleTypeProfile>>
       'executive-summary',
       'stakeholder-impact',
       'swot-analysis',
+      'policy-dashboard',
       'deep-analysis',
       'watch-points',
       'sources-methodology',
@@ -262,6 +263,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<string, ArticleTypeProfile>>
       'executive-summary',
       'stakeholder-impact',
       'swot-analysis',
+      'policy-dashboard',
       'deep-analysis',
       'watch-points',
       'sources-methodology',
@@ -311,6 +313,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<string, ArticleTypeProfile>>
     defaultAnalysisDepth: 'standard',
     requiredSections: [
       'executive-summary',
+      'swot-analysis',
       'policy-dashboard',
       'watch-points',
       'sources-methodology',
@@ -335,6 +338,8 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<string, ArticleTypeProfile>>
     requiredSections: [
       'executive-summary',
       'stakeholder-impact',
+      'swot-analysis',
+      'policy-dashboard',
       'deep-analysis',
       'watch-points',
       'sources-methodology',

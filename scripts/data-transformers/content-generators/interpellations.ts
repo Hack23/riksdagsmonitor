@@ -50,9 +50,10 @@ export function generateInterpellationsContent(
   content += `<p class="article-lede">${escapeHtml(ledeParagraph)}</p>\n`;
 
   // Group by target minister (mottagare field) for ministerial accountability analysis
+  // Use raw mottagare as key; HTML-escape only when rendering to output
   const byMinister: Record<string, RawDocument[]> = {};
   interpellations.forEach(interp => {
-    const minister = escapeHtml(String(interp.mottagare ?? 'Minister'));
+    const minister = String(interp.mottagare ?? 'Minister');
     if (!byMinister[minister]) byMinister[minister] = [];
     byMinister[minister].push(interp);
   });
@@ -71,7 +72,7 @@ export function generateInterpellationsContent(
       .slice(0, 8)
       .forEach(([minister, interps]) => {
         const countLabel = interps.length === 1 ? 'interpellation' : 'interpellations';
-        content += `        <li><strong>${minister}</strong> — ${interps.length} ${countLabel}</li>\n`;
+        content += `        <li><strong>${escapeHtml(minister)}</strong> — ${interps.length} ${countLabel}</li>\n`;
       });
     content += `      </ul>\n    </div>\n`;
   }
