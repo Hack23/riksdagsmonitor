@@ -138,6 +138,11 @@ export interface ContentLabelSet {
   swotImpactHigh: string;
   swotImpactMedium: string;
   swotImpactLow: string;
+  // SWOT justification and trend labels
+  swotJustification: string;
+  swotTrendImproving: string;
+  swotTrendStable: string;
+  swotTrendDeteriorating: string;
   // Dashboard section labels
   dashboardTitle: string;
   dashboardSummary: string;

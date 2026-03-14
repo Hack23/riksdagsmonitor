@@ -1,11 +1,17 @@
 /**
  * @module data-transformers/content-generators/ai-swot-analyzer
- * @description AI-driven multi-perspective SWOT analysis builder.
+ * @description Heuristic multi-perspective SWOT analysis builder.
  *
  * Produces substantive analytical SWOT entries for 6 stakeholder perspectives
- * by reasoning over parliamentary document metadata, summaries, and topics.
- * Each entry carries justification, trend direction, confidence scoring, and
- * optional quantitative evidence — rather than raw document title truncation.
+ * using document-type-aware routing and rules-based reasoning over parliamentary
+ * document metadata, summaries, and topics.  Each entry carries justification,
+ * trend direction, confidence scoring, and optional quantitative evidence —
+ * rather than raw document title truncation.
+ *
+ * Note: the current implementation is deterministic / rules-based.  It does NOT
+ * invoke LLM or MCP prompts; "AI" in the public API names is aspirational and
+ * kept for interface stability.  A future iteration may wire the prompts into
+ * the editorial-framework MCP pipeline.
  *
  * The six perspectives are:
  *  1. Government Coalition (M, KD, L + SD support)

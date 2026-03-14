@@ -130,7 +130,7 @@ function trendIndicator(entry: EnhancedSwotEntry, lbl: (key: string) => string):
   const localizedLabel = labelKey ? lbl(labelKey) : dir;
   // If lbl() returns the key itself (missing translation), fall back to the raw English direction name
   const ariaLabel = (localizedLabel === labelKey) ? dir : localizedLabel;
-  return ` <span class="swot-trend ${cls}" aria-label="${escapeHtml(ariaLabel)}">${sym}</span>`;
+  return ` <span class="swot-trend ${cls}" role="img" aria-label="${escapeHtml(ariaLabel)}">${sym}</span>`;
 }
 
 // ---------------------------------------------------------------------------

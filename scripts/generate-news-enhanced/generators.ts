@@ -1084,6 +1084,7 @@ function buildDeepInspectionSections(
   const propDocs = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
   const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
   const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
+  const skrDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
   const sfsDocs  = docs.filter(d =>
     (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
   const euDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
@@ -1124,6 +1125,30 @@ function buildDeepInspectionSections(
     fr: 'Secteur privé & entreprises', es: 'Sector privado y empresas',
     nl: 'Private sector & bedrijfsleven', ar: 'القطاع الخاص والأعمال',
     he: 'המגזר הפרטי והעסקים', ja: '民間セクターとビジネス', ko: '민간 부문 및 기업', zh: '私营部门与商业',
+  };
+  const euNames: Partial<Record<Language, string>> = {
+    en: 'EU & International Actors', sv: 'EU och internationella aktörer',
+    da: 'EU og internationale aktører', no: 'EU og internasjonale aktører',
+    fi: 'EU ja kansainväliset toimijat', de: 'EU & internationale Akteure',
+    fr: 'UE et acteurs internationaux', es: 'UE y actores internacionales',
+    nl: 'EU & internationale actoren', ar: 'الاتحاد الأوروبي والجهات الدولية',
+    he: 'האיחוד האירופי ושחקנים בינלאומיים', ja: 'EU・国際アクター', ko: 'EU 및 국제 행위자', zh: '欧盟与国际行为者',
+  };
+  const civilNames: Partial<Record<Language, string>> = {
+    en: 'Civil Society & NGOs', sv: 'Civilsamhälle och organisationer',
+    da: 'Civilsamfund og NGO\'er', no: 'Sivilsamfunn og organisasjoner',
+    fi: 'Kansalaisyhteiskunta ja järjestöt', de: 'Zivilgesellschaft & NGOs',
+    fr: 'Société civile & ONG', es: 'Sociedad civil y ONG',
+    nl: 'Maatschappelijk middenveld & NGO\'s', ar: 'المجتمع المدني والمنظمات غير الحكومية',
+    he: 'החברה האזרחית וארגוני מגזר שלישי', ja: '市民社会とNGO', ko: '시민 사회 및 NGO', zh: '公民社会与非政府组织',
+  };
+  const citizenNames: Partial<Record<Language, string>> = {
+    en: 'Swedish Citizens & Voters', sv: 'Svenska medborgare och väljare',
+    da: 'Svenske borgere og vælgere', no: 'Svenske borgere og velgere',
+    fi: 'Ruotsin kansalaiset ja äänestäjät', de: 'Schwedische Bürger & Wähler',
+    fr: 'Citoyens & électeurs suédois', es: 'Ciudadanos y votantes suecos',
+    nl: 'Zweedse burgers & kiezers', ar: 'المواطنون والناخبون السويديون',
+    he: 'אזרחים ובוחרים שוודים', ja: 'スウェーデン市民と有権者', ko: '스웨덴 시민 및 유권자', zh: '瑞典公民与选民',
   };
 
     const dataSourceBranchLabels: Partial<Record<Language, string>> = {
@@ -1217,7 +1242,10 @@ function buildDeepInspectionSections(
     items: [
       govNames[lang] ?? govNames.en!,
       oppNames[lang] ?? oppNames.en!,
+      euNames[lang] ?? euNames.en!,
       privateNames[lang] ?? privateNames.en!,
+      civilNames[lang] ?? civilNames.en!,
+      citizenNames[lang] ?? citizenNames.en!,
     ],
   });
 
@@ -1265,11 +1293,15 @@ function buildDeepInspectionSections(
   }
   if (euDocs.length > 0) {
     sankeyNodes.push({ id: 'eu', label: 'EU Positions', color: 'blue' });
-    sankeyFlows.push({ source: 'pvt', target: 'eu', value: euDocs.length, label: `${euDocs.length}` });
+    sankeyFlows.push({ source: 'gov', target: 'eu', value: euDocs.length, label: `${euDocs.length}` });
   }
   if (pressmDocs.length > 0) {
     sankeyNodes.push({ id: 'pressm', label: 'Press Releases', color: 'orange' });
     sankeyFlows.push({ source: 'gov', target: 'pressm', value: pressmDocs.length, label: `${pressmDocs.length}` });
+  }
+  if (skrDocs.length > 0) {
+    sankeyNodes.push({ id: 'skr', label: 'Gov. Communications (Skr)', color: 'teal' });
+    sankeyFlows.push({ source: 'gov', target: 'skr', value: skrDocs.length, label: `${skrDocs.length}` });
   }
   if (extDocs.length > 0) {
     sankeyNodes.push({ id: 'ext', label: 'External / Reference', color: 'purple' });

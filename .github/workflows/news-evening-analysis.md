@@ -198,9 +198,40 @@ Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc quer
 
 Filter results to only include items with dates `>= fromDate`.
 
+For tools without native date support, apply a post-query date filter:
+
+```javascript
+// Calculate lookback window (e.g. 24 hours = 86400000 ms, 1 hour = 3600000 ms)
+const fromDate = new Date(Date.now() - 24 * 3600000).toISOString().slice(0, 10);
+const results = queryResults.filter(
+  item => new Date(item.publicerad || item.datum || item.inlämnad) >= new Date(fromDate)
+);
+```
+
 ### Cross-Referencing Strategy
 
-Cross-reference related data sources for richer analysis (e.g., committee reports with voting records, government propositions with parliamentary motions). Filter all results by date to `>= fromDate`.
+Cross-reference related data sources for richer analysis. Filter all results by date to `>= fromDate`.
+
+#### Example 1: Committee Report Deep Dive
+```
+// 1. Fetch today's committee reports
+// 2. For each report, search for related motions and voting records
+// 3. Cross-reference committee members with party affiliations
+```
+
+#### Example 2: Government Activity Analysis
+```
+// 1. Fetch government propositions from the current riksmöte
+// 2. Cross-reference with EU position papers (fpm) for alignment
+// 3. Check press releases for communication framing
+```
+
+#### Example 3: Party Behavior Analysis
+```
+// 1. Fetch voting records for the period
+// 2. Cross-reference with party motions and interpellations
+// 3. Identify cross-party consensus or opposition patterns
+```
 
 ### Saturday vs Weekday Mode
 
