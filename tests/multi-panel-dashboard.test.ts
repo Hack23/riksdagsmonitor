@@ -708,4 +708,75 @@ describe('generateMultiPanelDashboardSection', () => {
     expect(section.html).toContain('class="panel-type-label sr-only"');
     expect(section.html).toContain('>Panel: </span>');
   });
+
+  // ---------------------------------------------------------------------------
+  // Review feedback round 3: heatmap NaN/Infinity guards & ID prefix fixes
+  // ---------------------------------------------------------------------------
+
+  it('heatmap treats NaN cell values as 0', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'hm', title: 'HM',
+        heatMap: makeHeatMapConfig({
+          cells: [[{ value: NaN }, { value: 50 }], [{ value: 30 }, { value: NaN }]],
+        }),
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).not.toContain('NaN');
+    expect(section.html).toContain('--intensity:');
+  });
+
+  it('heatmap treats Infinity cell values as 0', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'hm', title: 'HM',
+        heatMap: makeHeatMapConfig({
+          cells: [[{ value: Infinity }, { value: 50 }], [{ value: 30 }, { value: -Infinity }]],
+        }),
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).not.toContain('Infinity');
+    expect(section.html).not.toContain('NaN');
+  });
+
+  it('heatmap with all-NaN cells renders without NaN in legend', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'hm', title: 'HM',
+        heatMap: makeHeatMapConfig({
+          cells: [[{ value: NaN }, { value: NaN }], [{ value: NaN }, { value: NaN }]],
+        }),
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).not.toContain('NaN');
+  });
+
+  it('heatmap ID with empty config.id does not double-prefix panelId', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'myPanel', title: 'HM',
+        heatMap: makeHeatMapConfig({ id: '' }),
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    // Should be "myPanel-heatmap", not "myPanel-myPanel-heatmap"
+    expect(section.html).toContain('id="myPanel-heatmap"');
+    expect(section.html).not.toContain('id="myPanel-myPanel-heatmap"');
+  });
+
+  it('gauge ID with empty config.id does not double-prefix panelId', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'myPanel', title: 'G',
+        gauge: makeGaugeConfig({ id: '' }),
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    // Should be "myPanel-gauge", not "myPanel-myPanel-gauge"
+    expect(section.html).toContain('id="myPanel-gauge"');
+    expect(section.html).not.toContain('id="myPanel-myPanel-gauge"');
+  });
 });

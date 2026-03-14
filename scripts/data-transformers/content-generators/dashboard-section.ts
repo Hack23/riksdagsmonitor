@@ -275,7 +275,7 @@ ${tableBlocks}
  */
 function renderHeatMap(config: HeatMapConfig, panelId: string, usedIds: Set<string>): string {
   // Deduplicate heatmap IDs: prefix with panelId and track across the dashboard
-  let baseId = config.id.replace(/[^a-zA-Z0-9_-]/g, '') || `${panelId}-heatmap`;
+  let baseId = config.id.replace(/[^a-zA-Z0-9_-]/g, '') || 'heatmap';
   baseId = `${panelId}-${baseId}`;
   let safeId = baseId;
   let counter = 1;
@@ -301,10 +301,23 @@ function renderHeatMap(config: HeatMapConfig, panelId: string, usedIds: Set<stri
     }
   }
 
-  // Compute global min/max for normalising intensity using reduce (safe for large datasets)
-  const allValues = cells.flatMap(row => row.map(c => (typeof c.value === 'number' ? c.value : 0)));
-  const minVal = allValues.length > 0 ? allValues.reduce((a, b) => Math.min(a, b), Infinity) : 0;
-  const maxVal = allValues.length > 0 ? allValues.reduce((a, b) => Math.max(a, b), -Infinity) : 100;
+  // Compute global min/max in a single streaming pass — no intermediate array allocation.
+  // Non-finite values (NaN, Infinity) are treated as 0 to match gauge/confidence guards.
+  let minVal = Infinity;
+  let maxVal = -Infinity;
+  let hasFiniteValue = false;
+  for (const row of cells) {
+    for (const cell of row) {
+      const v = Number.isFinite(cell.value) ? cell.value : 0;
+      if (v < minVal) minVal = v;
+      if (v > maxVal) maxVal = v;
+      hasFiniteValue = true;
+    }
+  }
+  if (!hasFiniteValue) {
+    minVal = 0;
+    maxVal = 100;
+  }
   // When all values are equal, use 1 as range to avoid division by zero; all cells will render at 0 intensity.
   const range = maxVal - minVal === 0 ? 1 : maxVal - minVal;
 
@@ -324,7 +337,7 @@ function renderHeatMap(config: HeatMapConfig, panelId: string, usedIds: Set<stri
     const rowHeaderCell = `<div role="rowheader" class="heatmap-cell heatmap-row-label">${escapeHtml(rowLabel)}</div>`;
     const dataCells = row.map((cell, cIdx) => {
       const colLabel = columnLabels[cIdx] ?? String(cIdx + 1);
-      const numVal = typeof cell.value === 'number' ? cell.value : 0;
+      const numVal = Number.isFinite(cell.value) ? cell.value : 0;
       const intensity = ((numVal - minVal) / range).toFixed(3);
       const displayText = cell.label ?? String(numVal);
       const ariaText = `${escapeHtml(rowLabel)} / ${escapeHtml(colLabel)}: ${escapeHtml(displayText)}`;
@@ -359,7 +372,7 @@ ${legend}
  */
 function renderGauge(config: GaugeConfig, panelId: string, usedIds: Set<string>): string {
   // Deduplicate gauge IDs: prefix with panelId and track across the dashboard
-  let baseId = config.id.replace(/[^a-zA-Z0-9_-]/g, '') || `${panelId}-gauge`;
+  let baseId = config.id.replace(/[^a-zA-Z0-9_-]/g, '') || 'gauge';
   baseId = `${panelId}-${baseId}`;
   let safeId = baseId;
   let counter = 1;
