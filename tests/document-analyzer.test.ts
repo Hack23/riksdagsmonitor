@@ -788,8 +788,9 @@ describe('generateExecutiveSummary', () => {
   it('uses fullContent as fallback when fullText is absent', () => {
     const doc: RawDocument = { ...propDoc, dok_id: 'FC-1', fullText: undefined, fullContent: '<p>HTML enriched content from fullContent field</p>' };
     const summary = generateExecutiveSummary(doc, 'en');
-    // Should still produce a passage from fullContent
+    // Should extract passage from fullContent (HTML stripped by extractKeyPassage)
     expect(summary).toContain('Key provision');
+    expect(summary).toContain('HTML enriched content');
   });
 
   it('does not throw when fullText is absent', () => {

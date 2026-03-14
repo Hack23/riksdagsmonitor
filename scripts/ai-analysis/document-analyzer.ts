@@ -542,10 +542,8 @@ export function buildPestleAnalysis(doc: RawDocument, lang?: Language | string):
   const title = doc.titel ?? doc.title ?? doc.rubrik ?? '';
   // Use 'en' for internal domain-trigger checks so hasDomain matches reliably
   // regardless of caller language; the analysis text is English anyway.
-  const triggerDomains = detectPolicyDomains(doc, 'en');
-  // Detect with requested lang for any localized output (currently unused,
-  // but reserved for future locale-aware PESTLE text).
-  void lang;
+  // TODO: use `lang` to produce locale-aware PESTLE dimension text once translations are available.
+  const triggerDomains = detectPolicyDomains(doc, lang ?? 'en');
 
   const political: string[] = [
     docType === 'prop'
