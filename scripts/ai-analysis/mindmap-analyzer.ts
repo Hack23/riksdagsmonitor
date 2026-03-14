@@ -313,6 +313,8 @@ function hasEuConnection(docs: RawDocument[]): boolean {
 
 /** Detect whether a document is an SFS (law) document.
  *  Matches the codebase convention: doktyp/documentType === 'sfs' OR dokumentnamn starts with 'SFS'.
+ *  Dual detection is needed because some SFS documents arrive without a doktyp field but
+ *  carry an 'SFS'-prefixed dokumentnamn (e.g. "SFS 2025:123").
  */
 function isSfsDoc(d: RawDocument): boolean {
   return (d.doktyp || d.documentType) === 'sfs' ||

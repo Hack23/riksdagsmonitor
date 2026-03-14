@@ -234,7 +234,8 @@ export function formatDateForSlug(date: Date = new Date()): string {
  * The session runs September–August: e.g. September 2025 → "2025/26".
  *
  * Re-exports the shared implementation from `scripts/shared/riksmote.ts`
- * to keep Sep–Aug boundary logic consistent across the codebase.
+ * to maintain the existing public API while keeping Sep–Aug boundary logic
+ * consistent across generators (motions, propositions, weekly/monthly review).
  */
 export { getCurrentRiksmote };
 

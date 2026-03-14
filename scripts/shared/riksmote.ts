@@ -11,7 +11,7 @@
 
 /**
  * Calculate the Swedish riksmöte (parliamentary session) string for a given date.
- * The session runs September–August: month ≥ 8 (Sep) starts a new session.
+ * The session runs September–August: month ≥ 8 (0-indexed: Sep = 8) starts a new session.
  *
  * @param date - Date to calculate riksmöte for (defaults to current date)
  * @returns Riksmöte string in "YYYY/YY" format, e.g. "2025/26"
