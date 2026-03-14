@@ -222,8 +222,8 @@ export function propSummaryFromOrgan(organ: string, lang: Language | string): st
  * Uses document type, subtype, organ, and other metadata to create informative placeholder
  */
 export function generateEnhancedSummary(doc: RawDocument, type: string, lang: Language | string): string {
-  // For motions: clean raw Swedish notis text before returning
-  if ((type === 'motion') && (doc.summary || doc.notis)) {
+  // For motions/interpellations: clean raw Swedish notis text before returning
+  if ((type === 'motion' || type === 'interpellation') && (doc.summary || doc.notis)) {
     const raw = (doc.summary || doc.notis || '');
     // Skip person-profile data (e.g. "Tjänstgörande riksdagsledamot...", "Avliden 2011-09-20...")
     if (!isPersonProfileText(raw)) {
@@ -286,6 +286,25 @@ export function generateEnhancedSummary(doc: RawDocument, type: string, lang: La
       const onVal = L(lang, 'on');
       parts.push(`${typeof onVal === 'string' ? onVal : ''} ${subtyp}`);
     }
+  } else if (type === 'interpellation') {
+    const author = (doc.intressent_namn !== 'Unknown' ? doc.intressent_namn : null) || doc.author;
+    const party = doc.parti !== 'Unknown' ? doc.parti : undefined;
+    if (author && party) {
+      const motionByVal = L(lang, 'motionBy');
+      parts.push(`${typeof motionByVal === 'string' ? motionByVal : ''} ${author} (${party})`);
+    } else if (author) {
+      const motionByVal = L(lang, 'motionBy');
+      parts.push(`${typeof motionByVal === 'string' ? motionByVal : ''} ${author}`);
+    }
+    // Include target minister (mottagare) if available
+    const mottagare = (doc as Record<string, unknown>)['mottagare'];
+    if (mottagare && typeof mottagare === 'string') {
+      parts.push(`→ ${escapeHtml(mottagare)}`);
+    }
+    if (subtyp) {
+      const onVal = L(lang, 'on');
+      parts.push(`${typeof onVal === 'string' ? onVal : ''} ${subtyp}`);
+    }
   }
 
   // Add document type information if useful
@@ -297,6 +316,7 @@ export function generateEnhancedSummary(doc: RawDocument, type: string, lang: La
   if (parts.length === 0) {
     const fallback = type === 'report' ? L(lang, 'reportDefault') :
            type === 'proposition' ? L(lang, 'propDefault') :
+           type === 'interpellation' ? L(lang, 'interpellationDefault') :
            L(lang, 'motionDefault');
     return typeof fallback === 'string' ? fallback : '';
   }

@@ -325,8 +325,10 @@ export function renderInterpellationEntry(doc: RawDocument, lang: Language | str
 
   const summaryText = generateEnhancedSummary(doc, 'interpellation', lang);
   const interpDefaultVal = L(lang, 'interpellationDefault');
+  // Detect Swedish content: use titel-without-title heuristic (same as renderMotionEntry) 
+  // or match Swedish-specific boilerplate (not just "Interpellation" which is the same in English)
   const isSwedishContent = (doc.titel && !doc.title)
-    || (doc.summary || doc.notis || '').includes('Interpellation');
+    || (doc.summary || doc.notis || '').includes('Interpellation till');
   const summaryHtml = (summaryText && summaryText !== interpDefaultVal && isSwedishContent)
     ? svSpan(escapeHtml(summaryText), lang)
     : escapeHtml(summaryText || (typeof interpDefaultVal === 'string' ? interpDefaultVal : ''));

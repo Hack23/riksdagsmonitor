@@ -2668,6 +2668,9 @@ describe('content generators include publication dates', () => {
       } as MockArticlePayload, 'interpellations', 'en') as string;
       expect(content).toContain('interpellation-entry');
       expect(content).not.toContain('motion-entry');
+      // Without summary/notis, should fall back to interpellation default, not motion default
+      expect(content).toContain('Parliamentary interpellation demanding government accountability');
+      expect(content).not.toContain('Parliamentary motion by opposition member');
     });
 
     it('should use "Read the full interpellation" link text, not motions', () => {
