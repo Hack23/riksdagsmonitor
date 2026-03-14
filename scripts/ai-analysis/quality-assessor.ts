@@ -120,9 +120,12 @@ function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-/** Normalize a document ID for deduplication and comparison. */
+/** Normalize a document ID for deduplication and comparison.
+ *  Strips all whitespace so format variants like `Prop. 2024/25:1`
+ *  and `Prop.2024/25:1` collapse to the same canonical form.
+ */
 function normalizeDocId(id: string): string {
-  return id.replace(/\s+/g, ' ').trim().toUpperCase();
+  return id.replace(/\s+/g, '').toUpperCase();
 }
 
 function countDocumentIds(html: string): Set<string> {
@@ -183,12 +186,10 @@ function assessFactualAccuracy(
   }
 
   // Bonus: verify cited IDs against source list — reward matches, don't penalise
-  if (sourceDocIds.length > 0) {
-    const normalizedSources = sourceDocIds.map(normalizeDocId);
-    const matched = [...foundIds].filter(id =>
-      normalizedSources.some(src => src.includes(id))
-    ).length;
-    const matchRatio = matched / Math.max(foundIds.size, 1);
+  if (sourceDocIds.length > 0 && foundIds.size > 0) {
+    const normalizedSourceSet = new Set(sourceDocIds.map(normalizeDocId));
+    const matched = [...foundIds].filter(id => normalizedSourceSet.has(id)).length;
+    const matchRatio = matched / foundIds.size;
     // Add up to 20 bonus points when all cited IDs match source docs
     const bonus = Math.round(20 * matchRatio);
     score = Math.min(100, score + bonus);
