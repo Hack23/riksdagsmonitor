@@ -414,8 +414,9 @@ describe('STAKEHOLDER_NAMES', () => {
   it('provides names for all 14 supported languages for all categories', () => {
     for (const cat of categories) {
       for (const lang of ALL_LANGUAGES) {
-        const name = STAKEHOLDER_NAMES[cat][lang] ?? STAKEHOLDER_NAMES[cat].en;
-        expect(name?.trim().length).toBeGreaterThan(0);
+        const name = STAKEHOLDER_NAMES[cat][lang];
+        expect(name, `missing ${lang} translation for ${cat}`).toBeDefined();
+        expect(name!.trim().length, `empty ${lang} translation for ${cat}`).toBeGreaterThan(0);
       }
     }
   });

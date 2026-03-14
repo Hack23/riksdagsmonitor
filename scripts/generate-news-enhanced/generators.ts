@@ -1216,15 +1216,15 @@ function buildDeepInspectionSections(
   // The sankey uses three primary legislative actor groups as source nodes:
   //   - government: initiates propositions, laws, gov. communications, press releases
   //   - opposition: initiates committee reports and motions
-  //   - external actors (private sector/civil society): associated with EU
-  //     positions, external references, and other document types
+  //   - private sector / external actors: associated with EU positions,
+  //     external references, and other document types
   // Additional SWOT stakeholders (municipal, media, academia, etc.) are
   // analysis perspectives rather than document-originating actors.
-  const civilSocietyName = STAKEHOLDER_NAMES['civil-society']?.[lang] ?? STAKEHOLDER_NAMES['civil-society']?.en ?? 'Civil Society';
+  const privateName = STAKEHOLDER_NAMES.private?.[lang] ?? STAKEHOLDER_NAMES.private?.en ?? 'Private Sector / Industry';
   const sankeyNodes: SankeyNode[] = [
     { id: 'gov', label: govName,           color: 'cyan' },
     { id: 'opp', label: oppName,           color: 'magenta' },
-    { id: 'pvt', label: civilSocietyName,  color: 'purple' },
+    { id: 'pvt', label: privateName,       color: 'purple' },
   ];
 
   // Add document type nodes and target outcome nodes
