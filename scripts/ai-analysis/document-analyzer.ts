@@ -195,25 +195,39 @@ export function clearAnalysisCache(): void {
   _analysisCache.clear();
 }
 
-/** Return the cache key for a document. */
-function cacheKey(doc: RawDocument): string {
+/** Sum content-field lengths for collision-resistant cache/identity keys. */
+function contentFingerprint(doc: RawDocument): number {
+  return (doc.fullText?.length ?? 0) + (doc.summary?.length ?? 0)
+    + (doc.fullContent?.length ?? 0) + (doc.notis?.length ?? 0);
+}
+
+/** Return a base identity string for a document (no lang/context suffix). */
+function documentBaseKey(doc: RawDocument): string {
   if (doc.dok_id) return `dok:${doc.dok_id}`;
   if (doc.url) return `url:${doc.url}`;
-  // Include summary, fullText, fullContent, and notis lengths to reduce collisions
   const title = doc.titel ?? doc.title ?? 'unknown';
   const date = doc.datum ?? '';
-  const contentLen = (doc.fullText?.length ?? 0) + (doc.summary?.length ?? 0)
-    + (doc.fullContent?.length ?? 0) + (doc.notis?.length ?? 0);
-  return `title:${title}-${date}-${contentLen}`;
+  return `title:${title}-${date}-${contentFingerprint(doc)}`;
 }
 
 /**
- * Derive a stable, collision-resistant document identifier using the same
- * fallback strategy as `cacheKey()` so that anonymous documents don't all
- * collapse to the string `'unknown'`.
+ * Return the cache key for a document.
+ *
+ * The key includes the document identity *plus* `lang` and a CIA-context
+ * discriminator so that analyses with different languages or different context
+ * inputs are never served from the same cache slot.
+ */
+function cacheKey(doc: RawDocument, lang: string = 'en', hasCIA: boolean = false): string {
+  return `${documentBaseKey(doc)}|${lang}|cia:${hasCIA ? '1' : '0'}`;
+}
+
+/**
+ * Derive a stable, collision-resistant document identifier.
+ * Unlike `cacheKey()`, this is independent of language and CIA context —
+ * it identifies the document itself, not a particular analysis of it.
  */
 function stableDocumentId(doc: RawDocument): string {
-  return cacheKey(doc);
+  return documentBaseKey(doc);
 }
 
 // ---------------------------------------------------------------------------
@@ -350,7 +364,7 @@ const STAKEHOLDER_SIGNALS: Readonly<Record<StakeholderGroup, string[]>> = {
 export function selectRelevantStakeholders(doc: RawDocument): StakeholderGroup[] {
   const alwaysIncluded: StakeholderGroup[] = ['government-coalition', 'opposition-parties', 'citizens-voters'];
   const text = [
-    doc.titel, doc.title, doc.rubrik, doc.summary, doc.notis, doc.fullText,
+    doc.titel, doc.title, doc.rubrik, doc.summary, doc.notis, doc.fullText, doc.fullContent,
   ].filter(Boolean).join(' ').toLowerCase();
 
   const optional: StakeholderGroup[] = [
@@ -541,9 +555,10 @@ function buildStakeholderImpact(
 export function buildPestleAnalysis(doc: RawDocument, lang?: Language | string): PESTLEAnalysis {
   const docType = doc.doktyp ?? doc.documentType ?? '';
   const title = doc.titel ?? doc.title ?? doc.rubrik ?? '';
-  // Use 'en' for internal domain-trigger checks so hasDomain matches reliably
-  // regardless of caller language; the analysis text is English anyway.
-  // TODO: use `lang` to produce locale-aware PESTLE dimension text once translations are available.
+  // Pass the caller's language through — `hasDomain()` uses `DOMAIN_NAME_TO_KEY`
+  // which is language-agnostic (covers all 14 languages), so domain-trigger
+  // checks work reliably regardless of which language `detectPolicyDomains`
+  // returns.
   const triggerDomains = detectPolicyDomains(doc, lang ?? 'en');
 
   const political: string[] = [
@@ -669,7 +684,8 @@ export function buildImplementationAssessment(doc: RawDocument): ImplementationA
   const domains = detectPolicyDomains(doc);
 
   const feasibility: ImplementationAssessment['feasibility'] =
-    docType === 'prop' && influenceScore >= 60 ? 'medium'
+    docType === 'prop' && influenceScore < 45 ? 'high'
+    : docType === 'prop' ? 'medium'  // influenceScore >= 45 — moderate or high complexity
     : docType === 'mot' ? 'low'
     : 'medium';
 
@@ -724,7 +740,9 @@ export function buildRiskAssessment(doc: RawDocument, ciaContext?: CIAContext): 
     severity: politicalSeverity,
     description: docType === 'prop'
       ? 'Risk of parliamentary defeat if coalition unity falters.'
-      : 'Limited likelihood of parliamentary success given prevailing government majority dynamics.',
+      : docType === 'mot'
+        ? 'Limited likelihood of parliamentary success given prevailing government majority dynamics.'
+        : 'Political risk depends on committee handling and cross-party alignment.',
     mitigationOptions: ['Cross-party dialogue', 'Committee amendments to broaden support', 'Public consultation to build legitimacy'],
   });
 
@@ -944,7 +962,7 @@ export function analyzeDocument(
   ciaContext?: CIAContext,
   forceRefresh = false,
 ): DocumentAnalysis {
-  const key = cacheKey(doc);
+  const key = cacheKey(doc, typeof lang === 'string' ? lang : 'en', !!ciaContext);
   if (!forceRefresh && _analysisCache.has(key)) {
     return _analysisCache.get(key)!;
   }

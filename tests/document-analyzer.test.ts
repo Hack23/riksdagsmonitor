@@ -569,6 +569,26 @@ describe('analyzeDocument — caching', () => {
     const second = analyzeDocument(propDoc, 'en');
     expect(second).not.toBe(first);
   });
+
+  it('returns different cached objects for different languages', () => {
+    clearAnalysisCache();
+    const enResult = analyzeDocument(propDoc, 'en');
+    const svResult = analyzeDocument(propDoc, 'sv');
+    // Different cache slots for different languages
+    expect(svResult).not.toBe(enResult);
+    // But same document identity
+    expect(svResult.documentId).toBe(enResult.documentId);
+  });
+
+  it('returns different cached objects with and without CIA context', () => {
+    clearAnalysisCache();
+    const withoutCIA = analyzeDocument(propDoc, 'en');
+    const withCIA = analyzeDocument(propDoc, 'en', stableCIA);
+    // Different cache slots when CIA context is provided
+    expect(withCIA).not.toBe(withoutCIA);
+    // Same document identity
+    expect(withCIA.documentId).toBe(withoutCIA.documentId);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -639,6 +659,16 @@ describe('selectRelevantStakeholders', () => {
     const groups = selectRelevantStakeholders(propDoc);
     const seen = new Set(groups);
     expect(groups.length).toBe(seen.size);
+  });
+
+  it('detects stakeholder signals from fullContent when fullText is absent', () => {
+    const doc: RawDocument = {
+      dok_id: 'FC-SIGNALS',
+      titel: 'Generiskt dokument',
+      fullContent: '<p>Kommunerna och regionerna ska ansvara för genomförandet</p>',
+    };
+    const groups = selectRelevantStakeholders(doc);
+    expect(groups).toContain('municipalities-regions');
   });
 });
 
@@ -739,6 +769,15 @@ describe('buildImplementationAssessment', () => {
     expect(impl.feasibility).toBe('low');
   });
 
+  it('simple proposition returns high feasibility', () => {
+    // A simple prop with no committee, no party → low influence score → high feasibility
+    const simpleProp: RawDocument = {
+      dok_id: 'SIMPLE-01', doktyp: 'prop', titel: 'Enkel proposition',
+    };
+    const impl = buildImplementationAssessment(simpleProp);
+    expect(impl.feasibility).toBe('high');
+  });
+
   it('fiscal doc references Finansdepartementet or Skatteverket', () => {
     const impl = buildImplementationAssessment(budgetDoc);
     const agencies = impl.agenciesInvolved.join(' ');
@@ -771,6 +810,21 @@ describe('buildRiskAssessment', () => {
     for (const r of risks) {
       expect(r.description.length).toBeGreaterThan(0);
     }
+  });
+
+  it('motion political risk mentions "parliamentary success"', () => {
+    const risks = buildRiskAssessment(motionDoc);
+    const politicalRisk = risks.find(r => r.type === 'political');
+    expect(politicalRisk).toBeDefined();
+    expect(politicalRisk!.description).toContain('parliamentary success');
+  });
+
+  it('non-motion non-prop doc uses neutral risk description', () => {
+    const doc: RawDocument = { dok_id: 'BET-01', doktyp: 'bet', titel: 'Utskottsbetänkande' };
+    const risks = buildRiskAssessment(doc);
+    const politicalRisk = risks.find(r => r.type === 'political');
+    expect(politicalRisk).toBeDefined();
+    expect(politicalRisk!.description).toContain('cross-party alignment');
   });
 });
 

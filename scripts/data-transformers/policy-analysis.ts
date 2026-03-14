@@ -311,20 +311,17 @@ export function detectNarrativeFrames(doc: RawDocument): NarrativeFrame[] {
 type _LangPair = { en: Record<string, string>; sv: Record<string, string> };
 
 /**
- * Build a reverse lookup from any localised domain name back to the English key.
- * This allows getDomainSpecificAnalysis to work with the localised strings
- * returned by detectPolicyDomains().
+ * Reverse lookup from any localised domain name to the English display name.
+ * Derived from `DOMAIN_NAME_TO_KEY` + `DOMAIN_KEY_TO_EN` to avoid maintaining
+ * a second translation table that could drift from the canonical source.
  */
-const _LOCALISED_TO_EN: Record<string, string> = {};
-for (const [, translations] of Object.entries(DOMAIN_NAMES)) {
-  const enName = translations.en;
-  for (const [langKey, localisedName] of Object.entries(translations)) {
-    // Skip the English entry — it maps to itself and adds no new lookup value
-    if (langKey === 'en') continue;
-    _LOCALISED_TO_EN[localisedName] = enName;
-    _LOCALISED_TO_EN[localisedName.toLowerCase()] = enName;
+const _LOCALISED_TO_EN: Readonly<Record<string, string>> = (() => {
+  const m: Record<string, string> = {};
+  for (const [localised, key] of Object.entries(DOMAIN_NAME_TO_KEY)) {
+    m[localised] = DOMAIN_KEY_TO_EN[key];
   }
-}
+  return m;
+})();
 
 /** Module-level constant — allocated once, shared across all calls. */
 const DOMAIN_ANALYSES: Record<string, _LangPair> = {
