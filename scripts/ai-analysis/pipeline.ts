@@ -200,7 +200,7 @@ const WP_SFS_DESC: Partial<Record<Language, (n: number) => string>> = {
   fr: (n) => `${n} loi${n !== 1 ? 's' : ''} établissent le cadre juridique — les parties prenantes doivent procéder à un examen de conformité`,
   es: (n) => `${n} ley${n !== 1 ? 'es' : ''} establecen el marco legal — las partes interesadas deben realizar una revisión de cumplimiento`,
   nl: (n) => `${n} wet${n !== 1 ? 'ten' : ''} vormen het juridische kader — belanghebbenden moeten een nalevingsonderzoek uitvoeren`,
-  ar: (n) => `${n} قانون${n !== 1 ? '/قوانين' : ''} يؤسس الإطار القانوني — يجب على أصحاب المصلحة إجراء مراجعة الامتثال`,
+  ar: (n) => `${n} ${n === 1 ? 'قانون يؤسس' : 'قوانين تؤسس'} الإطار القانوني — يجب على أصحاب المصلحة إجراء مراجعة الامتثال`,
   he: (n) => `${n} חוקים מבססים את המסגרת המשפטית — בעלי עניין חייבים לבצע בדיקת ציות`,
   ja: (n) => `${n}件の制定法が法的枠組みを確立 — 利害関係者はコンプライアンスレビューを実施すべき`,
   ko: (n) => `${n}건의 법률이 법적 프레임워크를 수립 — 이해관계자는 컴플라이언스 검토를 수행해야 함`,
@@ -224,7 +224,7 @@ const WP_MOTIONS_DESC: Partial<Record<Language, (n: number) => string>> = {
   da: (n) => `${n} forslag signalerer alternative politiske retninger`,
   no: (n) => `${n} motjon${n !== 1 ? 'er' : ''} signaliserer alternative politiske retninger`,
   fi: (n) => `${n} aloite${n !== 1 ? 'tta' : ''} viestii vaihtoehtoisista politiikan suunnista`,
-  de: (n) => `${n} Antrag${n !== 1 ? '/Anträge' : ''} signalisieren alternative Politikrichtungen`,
+  de: (n) => `${n} ${n !== 1 ? 'Anträge signalisieren' : 'Antrag signalisiert'} alternative Politikrichtungen`,
   fr: (n) => `${n} motion${n !== 1 ? 's' : ''} signalent des orientations politiques alternatives`,
   es: (n) => `${n} moción${n !== 1 ? 'es' : ''} señalan direcciones políticas alternativas`,
   nl: (n) => `${n} motie${n !== 1 ? 's' : ''} signaleren alternatieve beleidsrichtingen`,
@@ -256,7 +256,7 @@ const WP_EU_DESC: Partial<Record<Language, (n: number) => string>> = {
   fr: (n) => `${n} document${n !== 1 ? 's' : ''} de position UE révèlent la dimension européenne — le droit de l'UE peut limiter les options nationales`,
   es: (n) => `${n} documento${n !== 1 ? 's' : ''} de posición de la UE revelan la dimensión europea — la legislación de la UE puede limitar las opciones nacionales`,
   nl: (n) => `${n} EU-positiedocument${n !== 1 ? 'en' : ''} onthullen de Europese dimensie — EU-wetgeving kan nationale beleidsopties beperken`,
-  ar: (n) => `${n} وثيقة${n !== 1 ? '/وثائق' : ''} موقف أوروبي تكشف البعد الأوروبي — قد يقيد قانون الاتحاد الأوروبي خيارات السياسة الوطنية`,
+  ar: (n) => `${n} ${n === 1 ? 'وثيقة موقف أوروبي تكشف' : 'وثائق موقف أوروبي تكشف'} البعد الأوروبي — قد يقيد قانون الاتحاد الأوروبي خيارات السياسة الوطنية`,
   he: (n) => `${n} מסמכי עמדה של האיחוד האירופי חושפים את הממד האירופי — חוק האיחוד עשוי להגביל אפשרויות מדיניות לאומיות`,
   ja: (n) => `${n}件のEU意見書が欧州次元を明示 — EU法が国内政策の選択肢を制約する可能性`,
   ko: (n) => `${n}건의 EU 입장 문서가 유럽 차원을 드러냄 — EU법이 국내 정책 옵션을 제한할 수 있음`,
@@ -302,7 +302,7 @@ const DASHBOARD_DOCS_ANALYSED: Partial<Record<Language, (n: number) => string>> 
   da: (n) => `${n} parlamentsdokument${n !== 1 ? 'er' : ''} analyseret`,
   no: (n) => `${n} parlamentsdokument${n !== 1 ? 'er' : ''} analysert`,
   fi: (n) => `${n} asiakirja${n !== 1 ? 'a' : ''} analysoitu`,
-  de: (n) => `${n} parlamentarische${n !== 1 ? '' : 's'} Dokument${n !== 1 ? 'e' : ''} analysiert`,
+  de: (n) => `${n} parlamentarische${n === 1 ? 's' : ''} Dokument${n !== 1 ? 'e' : ''} analysiert`,
   fr: (n) => `${n} document${n !== 1 ? 's' : ''} parlementaire${n !== 1 ? 's' : ''} analysé${n !== 1 ? 's' : ''}`,
   es: (n) => `${n} documento${n !== 1 ? 's' : ''} parlamentario${n !== 1 ? 's' : ''} analizado${n !== 1 ? 's' : ''}`,
   nl: (n) => `${n} parlementair${n !== 1 ? 'e' : ''} document${n !== 1 ? 'en' : ''} geanalyseerd`,
@@ -623,9 +623,10 @@ function buildPolicyAssessment(
 
   // Build a narrative from available evidence — topic + primary domain + document count
   const withEnrichedFn = NARRATIVE_WITH_ENRICHED[lang] ?? NARRATIVE_WITH_ENRICHED.en!;
+  const docsLabelFn = DASHBOARD_DOCS_ANALYSED[lang] ?? DASHBOARD_DOCS_ANALYSED.en!;
   const evidenceDesc = enrichedCount > 0
     ? withEnrichedFn(docs.length, enrichedCount)
-    : `${docs.length} ${(NARRATIVE_PARLIAMENTARY_ACTIVITY[lang] ?? '').includes(' ') ? '' : ''}documents`;
+    : docsLabelFn(docs.length);
 
   const analysisOf = NARRATIVE_ANALYSIS_OF[lang] ?? NARRATIVE_ANALYSIS_OF.en!;
   const reveals = NARRATIVE_REVEALS[lang] ?? NARRATIVE_REVEALS.en!;
