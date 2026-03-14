@@ -85,9 +85,8 @@ function containsAny(text: string, keywords: readonly string[]): boolean {
 // Scoring helpers
 // ---------------------------------------------------------------------------
 
-function computeImpact(doc: RawDocument): ImpactLevel {
+function computeImpact(doc: RawDocument, domains: string[]): ImpactLevel {
   const allText = [doc.titel, doc.title, doc.summary, doc.notis].filter(Boolean).join(' ');
-  const domains = detectPolicyDomains(doc, 'en');
 
   const hasEconDomain = domains.some(d =>
     ['fiscal', 'trade', 'labour', 'housing', 'fiscal policy', 'trade', 'labour market'].some(
@@ -121,10 +120,9 @@ function computeSentiment(doc: RawDocument): Sentiment {
 // Summary generation
 // ---------------------------------------------------------------------------
 
-function buildSummary(doc: RawDocument, _cia: CIAContext | undefined, _lang: Language | string): string {
+function buildSummary(doc: RawDocument, _cia: CIAContext | undefined, _lang: Language | string, domains: string[]): string {
   const docType = doc.doktyp || doc.documentType || 'document';
   const allText = [doc.titel, doc.title, doc.summary, doc.notis].filter(Boolean).join(' ');
-  const domains = detectPolicyDomains(doc, 'en');
 
   const hasReg = containsAny(allText, REGULATION_KEYWORDS);
   const hasTrade = domains.some(d => d.toLowerCase().includes('trade'));
@@ -196,7 +194,7 @@ function buildDashboardMetrics(doc: RawDocument, _cia: CIAContext | undefined): 
 // Mindmap nodes
 // ---------------------------------------------------------------------------
 
-function buildMindmapNodes(doc: RawDocument, _lang: Language | string): MindmapNode[] {
+function buildMindmapNodes(doc: RawDocument, _lang: Language | string, domains: string[]): MindmapNode[] {
   const nodes: MindmapNode[] = [];
   const allText = [doc.titel, doc.title, doc.summary, doc.notis].filter(Boolean).join(' ');
 
@@ -209,8 +207,6 @@ function buildMindmapNodes(doc: RawDocument, _lang: Language | string): MindmapN
   if (containsAny(allText, NEGATIVE_ECON_KEYWORDS)) {
     nodes.push({ branch: 'Economic Risks', item: 'Contraction Indicators', weight: 'critical' });
   }
-
-  const domains = detectPolicyDomains(doc, 'en');
   for (const d of domains.filter(d =>
     ['fiscal', 'trade', 'labour'].some(e => d.toLowerCase().includes(e))
   ).slice(0, 2)) {
@@ -259,14 +255,14 @@ export function analyzeEconomicPerspective(
 
   return {
     lens: 'economic',
-    summary: buildSummary(doc, cia, lang),
-    impact: computeImpact(doc),
+    summary: buildSummary(doc, cia, lang, domains),
+    impact: computeImpact(doc, domains),
     sentiment: computeSentiment(doc),
     keyActors: keyActors.slice(0, 5),
     relatedPolicies: relatedPolicies.slice(0, 5),
     swotContribution: buildSwotContributions(doc, cia, lang),
     dashboardMetrics: buildDashboardMetrics(doc, cia),
-    mindmapNodes: buildMindmapNodes(doc, lang),
+    mindmapNodes: buildMindmapNodes(doc, lang, domains),
     confidence: computeConfidence(doc, cia),
   };
 }

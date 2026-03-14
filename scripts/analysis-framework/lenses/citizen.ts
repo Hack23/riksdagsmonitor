@@ -79,9 +79,8 @@ function containsAny(text: string, keywords: readonly string[]): boolean {
 // Scoring helpers
 // ---------------------------------------------------------------------------
 
-function computeImpact(doc: RawDocument): ImpactLevel {
+function computeImpact(doc: RawDocument, domains: string[]): ImpactLevel {
   const allText = [doc.titel, doc.title, doc.summary, doc.notis].filter(Boolean).join(' ');
-  const domains = detectPolicyDomains(doc, 'en');
 
   const hasCitizenDomain = domains.some(d =>
     HIGH_CITIZEN_IMPACT_DOMAINS.some(cd => d.toLowerCase().includes(cd.toLowerCase()))
@@ -115,9 +114,8 @@ function computeSentiment(doc: RawDocument): Sentiment {
 // Summary generation
 // ---------------------------------------------------------------------------
 
-function buildSummary(doc: RawDocument, _cia: CIAContext | undefined, _lang: Language | string): string {
+function buildSummary(doc: RawDocument, _cia: CIAContext | undefined, _lang: Language | string, domains: string[]): string {
   const docType = doc.doktyp || doc.documentType || 'document';
-  const domains = detectPolicyDomains(doc, 'en');
   const allText = [doc.titel, doc.title, doc.summary, doc.notis].filter(Boolean).join(' ');
 
   const hasCostImpact = containsAny(allText, COST_OF_LIVING_KEYWORDS);
@@ -134,11 +132,10 @@ function buildSummary(doc: RawDocument, _cia: CIAContext | undefined, _lang: Lan
 // SWOT contributions
 // ---------------------------------------------------------------------------
 
-function buildSwotContributions(doc: RawDocument, _cia: CIAContext | undefined, lang: Language | string): SwotContribution[] {
+function buildSwotContributions(doc: RawDocument, _cia: CIAContext | undefined, lang: Language | string, domains: string[]): SwotContribution[] {
   const { stakeholder } = label(lang);
   const contributions: SwotContribution[] = [];
   const allText = [doc.titel, doc.title, doc.summary, doc.notis].filter(Boolean).join(' ');
-  const domains = detectPolicyDomains(doc, 'en');
 
   if (domains.some(d => HIGH_CITIZEN_IMPACT_DOMAINS.some(cd => d.toLowerCase().includes(cd.toLowerCase())))) {
     contributions.push({
@@ -256,12 +253,12 @@ export function analyzeCitizenPerspective(
 
   return {
     lens: 'citizen',
-    summary: buildSummary(doc, cia, lang),
-    impact: computeImpact(doc),
+    summary: buildSummary(doc, cia, lang, domains),
+    impact: computeImpact(doc, domains),
     sentiment: computeSentiment(doc),
     keyActors: keyActors.slice(0, 5),
     relatedPolicies: relatedPolicies.slice(0, 5),
-    swotContribution: buildSwotContributions(doc, cia, lang),
+    swotContribution: buildSwotContributions(doc, cia, lang, domains),
     dashboardMetrics: buildDashboardMetrics(doc, cia),
     mindmapNodes: buildMindmapNodes(doc, lang),
     confidence: computeConfidence(doc),

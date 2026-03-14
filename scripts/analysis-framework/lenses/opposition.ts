@@ -95,10 +95,9 @@ function computeSentiment(doc: RawDocument): Sentiment {
 // Summary generation
 // ---------------------------------------------------------------------------
 
-function buildSummary(doc: RawDocument, cia: CIAContext | undefined, _lang: Language | string): string {
+function buildSummary(doc: RawDocument, cia: CIAContext | undefined, _lang: Language | string, domains: string[]): string {
   const title = doc.titel || doc.title || 'Untitled';
   const docType = doc.doktyp || doc.documentType || 'document';
-  const domains = detectPolicyDomains(doc, 'en');
   const domainPhrase = domains.length > 0 ? ` in ${domains.slice(0, 2).join(' and ')}` : '';
 
   const denialNote = cia
@@ -191,10 +190,9 @@ function buildDashboardMetrics(_doc: RawDocument, cia: CIAContext | undefined): 
 // Mindmap nodes
 // ---------------------------------------------------------------------------
 
-function buildMindmapNodes(doc: RawDocument, _lang: Language | string): MindmapNode[] {
+function buildMindmapNodes(doc: RawDocument, _lang: Language | string, domains: string[]): MindmapNode[] {
   const nodes: MindmapNode[] = [];
   const docType = doc.doktyp || doc.documentType || '';
-  const domains = detectPolicyDomains(doc, 'en');
 
   nodes.push({
     branch: 'Scrutiny Targets',
@@ -260,14 +258,14 @@ export function analyzeOppositionPerspective(
 
   return {
     lens: 'opposition',
-    summary: buildSummary(doc, cia, lang),
+    summary: buildSummary(doc, cia, lang, domains),
     impact: computeImpact(doc),
     sentiment: computeSentiment(doc),
     keyActors: [...new Set(keyActors)].slice(0, 5),
     relatedPolicies: relatedPolicies.slice(0, 5),
     swotContribution: buildSwotContributions(doc, cia, lang),
     dashboardMetrics: buildDashboardMetrics(doc, cia),
-    mindmapNodes: buildMindmapNodes(doc, lang),
+    mindmapNodes: buildMindmapNodes(doc, lang, domains),
     confidence: computeConfidence(doc, cia),
   };
 }

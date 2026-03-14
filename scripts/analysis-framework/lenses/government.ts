@@ -123,10 +123,9 @@ function computeSentiment(doc: RawDocument, cia: CIAContext | undefined): Sentim
 // Summary generation
 // ---------------------------------------------------------------------------
 
-function buildSummary(doc: RawDocument, cia: CIAContext | undefined, _lang: Language | string): string {
+function buildSummary(doc: RawDocument, cia: CIAContext | undefined, _lang: Language | string, domains: string[]): string {
   const title = doc.titel || doc.title || 'Untitled';
   const docType = doc.doktyp || doc.documentType || 'document';
-  const domains = detectPolicyDomains(doc, 'en');
   const domainPhrase = domains.length > 0 ? ` touching ${domains.slice(0, 2).join(' and ')}` : '';
 
   const stabilityNote = cia && cia.coalitionStability.stabilityScore < 50
@@ -148,11 +147,10 @@ function buildSummary(doc: RawDocument, cia: CIAContext | undefined, _lang: Lang
 // SWOT contributions
 // ---------------------------------------------------------------------------
 
-function buildSwotContributions(doc: RawDocument, cia: CIAContext | undefined, lang: Language | string): SwotContribution[] {
+function buildSwotContributions(doc: RawDocument, cia: CIAContext | undefined, lang: Language | string, domains: string[]): SwotContribution[] {
   const { stakeholder } = label(lang);
   const contributions: SwotContribution[] = [];
   const docType = doc.doktyp || doc.documentType || '';
-  const domains = detectPolicyDomains(doc, 'en');
 
   // Strength: government-initiated propositions reinforce policy mandate
   if (docType === 'prop') {
@@ -201,7 +199,7 @@ function buildSwotContributions(doc: RawDocument, cia: CIAContext | undefined, l
 // Dashboard metrics
 // ---------------------------------------------------------------------------
 
-function buildDashboardMetrics(doc: RawDocument, cia: CIAContext | undefined): DashboardMetric[] {
+function buildDashboardMetrics(_doc: RawDocument, cia: CIAContext | undefined, domains: string[]): DashboardMetric[] {
   const metrics: DashboardMetric[] = [];
 
   if (cia) {
@@ -217,7 +215,6 @@ function buildDashboardMetrics(doc: RawDocument, cia: CIAContext | undefined): D
     });
   }
 
-  const domains = detectPolicyDomains(doc, 'en');
   metrics.push({
     metricName: 'Policy Domains Affected',
     value: domains.length,
@@ -231,10 +228,9 @@ function buildDashboardMetrics(doc: RawDocument, cia: CIAContext | undefined): D
 // Mindmap nodes
 // ---------------------------------------------------------------------------
 
-function buildMindmapNodes(doc: RawDocument, _lang: Language | string): MindmapNode[] {
+function buildMindmapNodes(doc: RawDocument, _lang: Language | string, domains: string[]): MindmapNode[] {
   const nodes: MindmapNode[] = [];
   const docType = doc.doktyp || doc.documentType || '';
-  const domains = detectPolicyDomains(doc, 'en');
 
   nodes.push({
     branch: 'Legislative Pipeline',
@@ -302,14 +298,14 @@ export function analyzeGovernmentPerspective(
 
   return {
     lens: 'government',
-    summary: buildSummary(doc, cia, lang),
+    summary: buildSummary(doc, cia, lang, domains),
     impact: computeImpact(doc, cia),
     sentiment: computeSentiment(doc, cia),
     keyActors: [...new Set(keyActors)].slice(0, 5),
     relatedPolicies: relatedPolicies.slice(0, 5),
-    swotContribution: buildSwotContributions(doc, cia, lang),
-    dashboardMetrics: buildDashboardMetrics(doc, cia),
-    mindmapNodes: buildMindmapNodes(doc, lang),
+    swotContribution: buildSwotContributions(doc, cia, lang, domains),
+    dashboardMetrics: buildDashboardMetrics(doc, cia, domains),
+    mindmapNodes: buildMindmapNodes(doc, lang, domains),
     confidence: computeConfidence(doc, cia),
   };
 }
