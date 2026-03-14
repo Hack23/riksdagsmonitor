@@ -29,7 +29,6 @@ import type { RawDocument } from '../types.js';
 import { detectPolicyDomains } from '../policy-analysis.js';
 import type {
   MindmapBranch,
-  MindmapBranchColor,
   MindmapConnection,
   AIMindmapItem,
   SubBranch,
@@ -116,7 +115,7 @@ const DOC_COUNT_FORMATTERS: Partial<Record<Language, (n: number) => string>> = {
   es: n => n === 1 ? 'documento' : 'documentos',
   nl: n => n === 1 ? 'document' : 'documenten',
   ar: () => 'وثيقة',
-  he: () => 'מסמכים',
+  he: n => n === 1 ? 'מסמך' : 'מסמכים',
   ja: () => '件',
   ko: n => n === 1 ? '문서' : '문서',
   zh: () => '份文件',
@@ -491,6 +490,13 @@ function classify(count: number): AIMindmapItem['weight'] {
   return 'minor';
 }
 
+/** Classify domain item weight by rank (0 = most important) */
+function classifyByRank(rank: number): AIMindmapItem['weight'] {
+  if (rank === 0) return 'critical';
+  if (rank < 3) return 'significant';
+  return 'moderate';
+}
+
 function docCount(n: number, lang: Language | string): string {
   const fn = DOC_COUNT_FORMATTERS[lang as Language] ?? DOC_COUNT_FORMATTERS.en!;
   return `${n} ${fn(n)}`;
@@ -504,9 +510,20 @@ function buildPowerBranch(
   docs: RawDocument[],
   lang: Language | string,
 ): MindmapBranch {
-  const propDocs  = docs.filter(d => ['prop', 'skr', 'pressm'].includes(d.doktyp || d.documentType || ''));
-  const oppDocs   = docs.filter(d => ['bet', 'mot'].includes(d.doktyp || d.documentType || ''));
-  const otherDocs = docs.filter(d => !propDocs.includes(d) && !oppDocs.includes(d));
+  // Single-pass classification using Sets for O(n) performance
+  const GOV_TYPES = new Set(['prop', 'skr', 'pressm']);
+  const OPP_TYPES = new Set(['bet', 'mot']);
+
+  const propDocs: RawDocument[]  = [];
+  const oppDocs: RawDocument[]   = [];
+  const otherDocs: RawDocument[] = [];
+
+  for (const d of docs) {
+    const typ = d.doktyp || d.documentType || '';
+    if (GOV_TYPES.has(typ)) propDocs.push(d);
+    else if (OPP_TYPES.has(typ)) oppDocs.push(d);
+    else otherDocs.push(d);
+  }
 
   const aiItems: AIMindmapItem[] = [
     {
@@ -538,7 +555,7 @@ function buildPowerBranch(
 
   return {
     label: l(lang, DIMENSION_LABELS.power),
-    color: 'cyan' as MindmapBranchColor,
+    color: 'cyan',
     icon: '🏛️',
     dimension: 'power',
     aiItems,
@@ -552,7 +569,7 @@ function buildImpactBranch(
 ): MindmapBranch {
   const aiItems: AIMindmapItem[] = domainList.slice(0, 5).map((domain, i) => ({
     text: domain,
-    weight: (i === 0 ? 'critical' : i < 3 ? 'significant' : 'moderate') as AIMindmapItem['weight'],
+    weight: classifyByRank(i),
   }));
 
   if (aiItems.length === 0) {
@@ -576,7 +593,7 @@ function buildImpactBranch(
 
   return {
     label: l(lang, DIMENSION_LABELS.impact),
-    color: 'red' as MindmapBranchColor,
+    color: 'red',
     icon: '⚡',
     dimension: 'impact',
     aiItems,
@@ -634,7 +651,7 @@ function buildTimelineBranch(
 
   return {
     label: l(lang, DIMENSION_LABELS.timeline),
-    color: 'yellow' as MindmapBranchColor,
+    color: 'yellow',
     icon: '⏱️',
     dimension: 'timeline',
     aiItems,
@@ -694,7 +711,7 @@ function buildScopeBranch(
 
   return {
     label: l(lang, DIMENSION_LABELS.scope),
-    color: 'blue' as MindmapBranchColor,
+    color: 'blue',
     icon: '🌍',
     dimension: 'scope',
     aiItems,
@@ -721,7 +738,7 @@ function buildMotivationBranch(
       text: lfSS(lang, MOTIVATION_FNS2.addressedAreas, topicStr, domainsStr),
       weight: 'significant',
     },
-    ...keyTitles.map(t => ({ text: t, weight: 'moderate' as AIMindmapItem['weight'] })),
+    ...keyTitles.map((t): AIMindmapItem => ({ text: t, weight: 'moderate' })),
   ];
 
   const subBranches: SubBranch[] = [
@@ -750,7 +767,7 @@ function buildMotivationBranch(
 
   return {
     label: l(lang, DIMENSION_LABELS.motivation),
-    color: 'green' as MindmapBranchColor,
+    color: 'green',
     icon: '💡',
     dimension: 'motivation',
     aiItems,

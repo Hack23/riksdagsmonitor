@@ -12,7 +12,7 @@
  * - Weighted item visualization (critical / significant / moderate / minor)
  * - Stakeholder sub-branches on primary branches
  * - Cross-branch connection indicators
- * - ARIA tree role for screen reader accessibility
+ * - ARIA list role for screen reader accessibility
  *
  * Typical usage: inject into deep-inspection articles to visualise the
  * relationship between a focus topic and detected policy domains, parliamentary
@@ -234,7 +234,7 @@ function renderBranch(branch: MindmapBranch): string {
       ? `\n      <div class="mindmap-sub-branches">\n${renderSubBranches(branch.subBranches)}\n      </div>`
       : '';
 
-  return `    <div class="mindmap-branch" role="treeitem"${dimAttr}
+  return `    <div class="mindmap-branch" role="listitem"${dimAttr}
       style="--branch-bg:${palette.bg};--branch-border:${palette.border};--branch-text:${palette.text}">
       <div class="mindmap-branch-label">${labelHtml}</div>${contentHtml}${subBranchesHtml}
     </div>`;
@@ -312,7 +312,7 @@ ${summaryBlock}  <div class="mindmap-container" data-branch-count="${branchCount
     <div class="mindmap-center-wrapper">
       <div class="mindmap-center" role="heading" aria-level="3">${escapeHtml(topic)}</div>${thesisHtml}
     </div>
-    <div class="mindmap-branches" role="tree" aria-label="${escapeHtml(titleText)}">
+    <div class="mindmap-branches" role="list" aria-label="${escapeHtml(titleText)}">
 ${branchItems}
     </div>
   </div>

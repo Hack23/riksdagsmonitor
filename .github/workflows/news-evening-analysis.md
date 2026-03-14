@@ -198,9 +198,52 @@ Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc quer
 
 Filter results to only include items with dates `>= fromDate`.
 
+```javascript
+// Date calculation using millisecond constants
+const lookbackMs = lookbackHours * 3600000; // 3600000 ms per hour (or 86400000 ms per day)
+const fromDate = new Date(Date.now() - lookbackMs).toISOString().slice(0, 10);
+
+// Post-query date filtering example
+const filteredResults = results.filter(item => new Date(item.datum) >= new Date(fromDate));
+```
+
 ### Cross-Referencing Strategy
 
 Cross-reference related data sources for richer analysis (e.g., committee reports with voting records, government propositions with parliamentary motions). Filter all results by date to `>= fromDate`.
+
+**Example 1: Committee Report Deep Dive**
+```
+// 1. Fetch the committee report
+get_betankanden({ rm: "<rm>", limit: 20 })
+// 2. Cross-reference with related votes
+search_voteringar({ rm: "<rm>", bet: "<bet_id>", limit: 50 })
+// 3. Check for related government propositions
+get_propositioner({ rm: "<rm>", limit: 10 })
+```
+
+**Example 2: Government Activity Analysis**
+```
+// 1. Fetch government propositions
+get_propositioner({ rm: "<rm>", limit: 10 })
+// 2. Cross-reference with committee assignments and reports
+get_betankanden({ rm: "<rm>", limit: 20 })
+// 3. Check opposition motions related to the same topic
+get_motioner({ rm: "<rm>", limit: 20 })
+```
+
+**Example 3: Party Behavior Analysis**
+```
+// 1. Analyze voting patterns
+search_voteringar({ rm: "<rm>", limit: 50 })
+// 2. Cross-reference with filed motions
+get_motioner({ rm: "<rm>", limit: 20 })
+// 3. Check interpellations for accountability questions
+get_interpellationer({ rm: "<rm>", limit: 20 })
+```
+
+**Troubleshooting**:
+- Too broad results → Tighten date range or add keyword filters
+- Missing data → Verify riksmöte calculation and date ranges
 
 ### Saturday vs Weekday Mode
 

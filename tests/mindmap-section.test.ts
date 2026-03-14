@@ -193,8 +193,8 @@ describe('generateMindmapSection', () => {
       lang: 'en',
     });
     expect(section.html).toContain('aria-label=');
-    expect(section.html).toContain('role="tree"');
-    expect(section.html).toContain('role="treeitem"');
+    expect(section.html).toContain('role="list"');
+    expect(section.html).toContain('role="listitem"');
   });
 
   it('includes data-branch-count attribute', () => {
@@ -339,8 +339,8 @@ describe('generateMindmapSection', () => {
 
   it('uses ARIA tree role for branches container', () => {
     const section = generateMindmapSection({ topic: 'T', branches: makeBranches(), lang: 'en' });
-    expect(section.html).toContain('role="tree"');
-    expect(section.html).toContain('role="treeitem"');
+    expect(section.html).toContain('role="list"');
+    expect(section.html).toContain('role="listitem"');
   });
 
   it('escapes XSS in centralThesis', () => {
