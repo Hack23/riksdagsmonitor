@@ -123,6 +123,7 @@ export interface ContentLabelSet {
   questioner: string;
   oppositionOversight: string;
   readFullInterpellation: string;
+  partyInterpellationsFiled: (party: string, n: number) => string;
   twitterLabel1: string;
   twitterLabel2: string;
   jobTitle: string;

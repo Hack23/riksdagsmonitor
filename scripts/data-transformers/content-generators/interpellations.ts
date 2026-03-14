@@ -83,7 +83,12 @@ export function generateInterpellationsContent(data: ArticleContentData, lang: L
     for (const [minister, ministerInterps] of sortedMinisters) {
       content += `\n    <h3>${svSpan(escapeHtml(minister), lang)} (${ministerInterps.length})</h3>\n`;
       ministerInterps.forEach(interp => {
-        content += renderInterpellationEntry(interp, lang);
+        // Demote entry headings to h4 under minister h3 to maintain h2→h3→h4 hierarchy
+        const entryHtml = renderInterpellationEntry(interp, lang);
+        const demotedHtml = entryHtml
+          .replace(/<h3(\b[^>]*)?>/g, '<h4$1>')
+          .replace(/<\/h3>/g, '</h4>');
+        content += demotedHtml;
       });
     }
   }
@@ -91,7 +96,8 @@ export function generateInterpellationsContent(data: ArticleContentData, lang: L
   // Unassigned interpellations (no mottagare field)
   if (unassigned.length > 0) {
     if (ministerCount > 0) {
-      content += `\n    <h2>${L(lang, 'independentMotions')}</h2>\n`;
+      // Use a neutral heading instead of motion-specific "Independent Motions"
+      content += `\n    <h2>${L(lang, 'otherDocuments')}</h2>\n`;
     }
     unassigned.forEach(interp => {
       content += renderInterpellationEntry(interp, lang);
@@ -123,8 +129,12 @@ export function generateInterpellationsContent(data: ArticleContentData, lang: L
       .sort(([, a], [, b]) => b.length - a.length);
 
     partyLabels.forEach(([party, partyInterps]) => {
-      const filedByLabel = L(lang, 'interpellationBy');
-      content += `        <li><strong>${escapeHtml(party)}</strong>: ${escapeHtml(String(filedByLabel))} ${partyInterps.length}</li>\n`;
+      // Use dedicated aggregate label for grammatical, localized phrasing
+      const labelFn = L(lang, 'partyInterpellationsFiled') as string | ((p: string, n: number) => string);
+      const labelText = typeof labelFn === 'function'
+        ? labelFn(party, partyInterps.length)
+        : `${party}: ${partyInterps.length} interpellation${partyInterps.length > 1 ? 's' : ''} filed`;
+      content += `        <li>${escapeHtml(String(labelText))}</li>\n`;
     });
     content += `      </ul>\n    </div>\n`;
   }

@@ -96,12 +96,12 @@ describe('Interpellations Content Generator', () => {
       expect(content).toContain('ministerial accountability');
     });
 
-    it('should not use "Read the full motion" text', () => {
-      // Motion-specific link text should not appear in interpellation articles
+    it('should use readFullInterpellation, not readFullMotion link text', () => {
       const content = generateInterpellationsContent({ motions: sampleInterpellations }, 'en');
-      // The link text uses readFullMotion label which is acceptable for interpellations
-      // but CSS class and headings should be motion-entry (shared markup) - that's OK
-      expect(content).not.toContain('Opposition Strategy');
+      // Interpellation-specific link text must be present
+      expect(content).toContain('View interpellation');
+      // Motion-specific link text must NOT appear in interpellation articles
+      expect(content).not.toContain('Read the full motion');
     });
 
     it('should show opposition oversight section', () => {
@@ -138,6 +138,53 @@ describe('Interpellations Content Generator', () => {
       expect(content).toContain('Interpellation');
       // Should not crash and should still render the entry
       expect(content).toContain('Karin Svensson Smith');
+      // Should NOT use motion-specific "Independent Motions" heading
+      expect(content).not.toContain('Independent Motions');
+    });
+
+    it('should use otherDocuments heading for unassigned interpellations when ministers exist', () => {
+      const mixed = [
+        ...sampleInterpellations,
+        {
+          titel: 'Interpellation utan mottagare',
+          dok_id: 'IP9998',
+          parti: 'MP',
+          intressent_namn: 'Test Person',
+          url: 'https://www.riksdagen.se/sv/dokument/IP9998',
+          datum: '2026-03-10',
+        },
+      ];
+      const content = generateInterpellationsContent({ motions: mixed }, 'en');
+      expect(content).toContain('Other documents');
+      expect(content).not.toContain('Independent Motions');
+    });
+
+    it('should demote entry headings to h4 under minister h3 sections', () => {
+      const content = generateInterpellationsContent({ motions: sampleInterpellations }, 'en');
+      // Minister names should be h3
+      expect(content).toMatch(/<h3>.*Socialminister.*<\/h3>/);
+      // Entry titles under ministers should be h4 (demoted from h3)
+      expect(content).toContain('<h4>');
+      // Entries within minister sections should NOT have h3 (only h4)
+      // Find content between first minister h3 and next h2/h3
+      const ministerSection = content.split('<h3>')[1]; // after first minister heading
+      if (ministerSection) {
+        const withinSection = ministerSection.split('</h3>')[1]; // after closing the minister heading
+        if (withinSection) {
+          const beforeNextSection = withinSection.split('<h2>')[0] || withinSection.split('<h3>')[0] || withinSection;
+          // Within a minister section, entries should use h4 not h3
+          expect(beforeNextSection).toContain('<h4>');
+        }
+      }
+    });
+
+    it('should use partyInterpellationsFiled in oversight section, not interpellationBy', () => {
+      const content = generateInterpellationsContent({ motions: sampleInterpellations }, 'en');
+      // Should use grammatical aggregate label like "S: 2 interpellations filed"
+      expect(content).toContain('interpellations filed');
+      // Should NOT use the awkward per-entry "Filed by" label in aggregate context
+      const oversightSection = content.split('Opposition Oversight')[1] || '';
+      expect(oversightSection).not.toMatch(/<strong>S<\/strong>: Filed by/);
     });
   });
 
@@ -250,6 +297,19 @@ describe('Interpellations Content Generator', () => {
         expect(labels?.oppositionOversight, `oppositionOversight missing for ${lang}`)
           .toBeTruthy();
         expect(typeof labels?.oppositionOversight).toBe('string');
+      }
+    });
+
+    it('should have partyInterpellationsFiled function for all 14 languages', () => {
+      for (const lang of LANGUAGES) {
+        const labels = CONTENT_LABELS[lang as Language];
+        expect(labels?.partyInterpellationsFiled, `partyInterpellationsFiled missing for ${lang}`)
+          .toBeTruthy();
+        expect(typeof labels?.partyInterpellationsFiled).toBe('function');
+        const result = (labels?.partyInterpellationsFiled as (p: string, n: number) => string)('S', 3);
+        expect(result).toBeTruthy();
+        expect(result).toContain('S');
+        expect(result).toContain('3');
       }
     });
   });
