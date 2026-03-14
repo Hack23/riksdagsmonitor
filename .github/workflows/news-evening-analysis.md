@@ -116,10 +116,11 @@ You are the **Evening Political Analyst** for Riksdagsmonitor. Generate comprehe
    - Articles generated → `safeoutputs___create_pull_request({...})`
    - No significant activity → `safeoutputs___noop({"message": "..."})`
    - Tool unavailable → `safeoutputs___missing_tool({"reason": "..."})`
+   - MCP data unavailable → `safeoutputs___missing_data({"reason": "..."})`
 2. `safeoutputs___create_pull_request` handles branch creation and push. **NEVER** run `git push` or `git checkout -b`.
-3. Safe output tools are **always in your tool list**. NEVER search for them via bash.
+3. **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them.
 4. **NEVER** write your own MCP HTTP/JSON-RPC client. Use the scripts or direct tool calls only.
-5. Exiting without calling a safe output tool = workflow failure.
+5. Exiting without calling a safe output tool = **workflow failure**. If anything goes wrong at any point, call `safeoutputs___noop` immediately.
 
 ## ⏱️ Time Budget (45 minutes)
 
@@ -180,11 +181,7 @@ STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm
 
 ### DATA FRESHNESS CHECK
 
-Parse sync status and compute `hoursSinceSync = (Date.now() - new Date(last_updated).getTime()) / 3600000`. If hoursSinceSync > 48, data is stale — add a disclaimer note in analysis and mention "stale data (> 48 hours old)". Example:
-```js
-const hoursSinceSync = (Date.now() - new Date(syncResult.last_updated).getTime()) / 3600000;
-if (hoursSinceSync > 48) { /* add stale data disclaimer */ }
-```
+After `get_sync_status()` succeeds, check if data is stale. If `hoursSinceSync > 48`, add a disclaimer note in analysis mentioning "stale data (> 48 hours old)" but proceed with cached data.
 
 ### IMPORTANT: Date Filtering in Analysis
 
@@ -202,31 +199,11 @@ Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc quer
 - `get_propositioner` — filter by `publicerad` date
 - `search_anforanden` — filter by `datum` field
 
-Post-query filtering pattern:
-```js
-const fromDate = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
-results.filter(d => new Date(d.datum) >= new Date(fromDate))
-```
+Filter results to only include items with dates `>= fromDate`.
 
 ### Cross-Referencing Strategy
 
-Example 1: Committee Report Deep Dive
-```
-// 1. Fetch recent betänkanden
-// 2. Cross-reference with search_voteringar for the same beteckning
-```
-
-Example 2: Government Activity Analysis
-```
-// 1. Query search_regering for today's propositions
-// 2. Check get_propositioner for detailed data
-```
-
-Example 3: Party Behavior Analysis
-```
-// 1. Get voteringar grouped by party
-// 2. Compare with recent search_anforanden
-```
+Cross-reference related data sources for richer analysis (e.g., committee reports with voting records, government propositions with parliamentary motions). Filter all results by date to `>= fromDate`.
 
 ### Saturday vs Weekday Mode
 
@@ -239,6 +216,20 @@ Example 3: Party Behavior Analysis
 - **comprehensive** — Full coverage including minor events (2500-4000 words)
 
 ## Step 2: Gather Parliamentary Data
+
+**Check elapsed time before proceeding:**
+```bash
+source /tmp/gh-aw/agent/timing.env 2>/dev/null || true
+if [ -z "$START_TIME" ]; then
+  echo "⚠️ WARNING: START_TIME not set — timing unreliable"
+  START_TIME=$(date +%s)
+fi
+ELAPSED=$(( ($(date +%s) - $START_TIME) / 60 ))
+echo "Elapsed: ${ELAPSED} minutes"
+if [ "$ELAPSED" -ge 35 ]; then
+  echo "⚠️ TIME CRITICAL: Skip data gathering, call safe output NOW"
+fi
+```
 
 Replace `<today>` with today's `YYYY-MM-DD`, `<rm>` with the calculated riksmöte value, and `<fromDate>` with the lookback start date.
 
@@ -268,9 +259,11 @@ get_motioner({ rm: "<rm>", limit: 20 })
 get_calendar_events({ from: "<tomorrow>", tom: "<tomorrow>", limit: 50 })
 ```
 
-**Filter results by date** — many tools don't support date params directly. Filter to `>= fromDate` in analysis.
+**Filter results by date** — apply post-query date filtering as described in Step 1.
 
 **Statistical enrichment (optional):** For economic policy topics, use World Bank and SCB MCP servers as context. See `scripts/world-bank-context.ts` and `scripts/scb-context.ts`. Never block on SCB/World Bank failures.
+
+**If ALL queries return empty results** (no votes, no speeches, no reports, no government activity), call `safeoutputs___noop({"message": "No significant parliamentary activity found for today's evening analysis."})` immediately and stop.
 
 ## Step 3: Generate Articles
 
@@ -300,9 +293,23 @@ SCRIPT_EXIT=$?
 
 The `evening-analysis` article type is NOT in the script's `VALID_ARTICLE_TYPES` (see `scripts/generate-news-enhanced/config.ts`). Evening analysis requires **analytical synthesis** across multiple data sources which the template-based script cannot provide. Generate articles manually using MCP data gathered in Step 2.
 
-**Process ONE language at a time** (en first, then sv, then remaining):
+**Determine target languages from input:**
+```bash
+LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
+[ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="en,sv"
 
-For each language in [en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh]:
+case "$LANGUAGES_INPUT" in
+  "nordic") LANG_ARG="en,sv,da,no,fi" ;;
+  "eu-core") LANG_ARG="en,sv,de,fr,es,nl" ;;
+  "all") LANG_ARG="en,sv,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh" ;;
+  *) LANG_ARG="$LANGUAGES_INPUT" ;;
+esac
+echo "Target languages: $LANG_ARG"
+```
+
+**Process ONE language at a time** (en first, then sv, then any remaining):
+
+For each language in the resolved `LANG_ARG` list:
 1. Check elapsed time — if >= 35 minutes, stop and proceed to Step 5
 2. Create `news/YYYY-MM-DD-evening-analysis-{lang}.html`
 3. Use `<link rel="stylesheet" href="../styles.css">` — NO embedded `<style>` tags
@@ -360,9 +367,25 @@ fi
 
 ## Step 5: Commit & Create PR
 
-### HOW SAFE PR CREATION WORKS
+### MANDATORY PR Creation (READ THIS FIRST)
 
-⚠️ DO NOT use `git push` — the safe output tool handles publishing. Commit locally, then use the tool.
+> **🚀 HOW SAFE PR CREATION WORKS**
+>
+> The `safeoutputs___create_pull_request` tool handles **everything**: branch creation, pushing commits, and opening the PR. You do NOT create branches or push manually.
+>
+> **Exact steps:**
+> 1. Write article files to `news/` using `bash` or `edit` tools
+> 2. Stage and commit locally: `git add news/ && git commit -m "🌆 Evening Analysis - $(date +%Y-%m-%d)"`
+> 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
+>
+> **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
+> **❌ DO NOT** call `safeoutputs___noop` if articles were generated but PR creation failed — let the workflow FAIL instead.
+
+- ✅ **REQUIRED:** `safeoutputs___create_pull_request` when articles were generated
+- ✅ **ONLY USE `safeoutputs___noop` if genuinely no parliamentary activity** in the queried date range
+- ❌ **NEVER use `safeoutputs___noop` as fallback for PR creation failures**
+
+> **🚨 NEVER search for safe output tools via bash.** After `git commit`, call `safeoutputs___create_pull_request` directly as your VERY NEXT action.
 
 ```bash
 git add news/
@@ -417,9 +440,21 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 | Scenario | Cause | Fix |
 |----------|-------|-----|
 | Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL}"` — source and npx MUST be chained with `&&` on one line; expected output: `MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering` |
-| Empty results | No parliamentary activity for the queried date range | Widen lookback window or skip article generation with `safeoutputs___noop` |
-| Timeout | MCP server response exceeds `timeout-minutes` | Reduce query scope or increase timeout |
+| Empty results | No parliamentary activity for the queried date range | Call `safeoutputs___noop({"message": "No significant parliamentary activity found for today."})` immediately |
+| Timeout | MCP server response exceeds `timeout-minutes` | Reduce query scope or call `safeoutputs___noop` immediately |
 | Stale data | `hoursSinceSync > 48` from `get_sync_status()` | Add disclaimer noting data staleness; proceed with cached data |
 | Too broad results | Query returns excessive data without date filtering | Add explicit `from_date`/`to_date` parameters to narrow scope |
+
+## 🚨 CRITICAL FINAL REMINDER
+
+**YOU MUST call exactly one safe output tool before exiting.** This is the single most important rule of this workflow.
+
+- If you generated articles → `safeoutputs___create_pull_request({...})`
+- If no parliamentary activity → `safeoutputs___noop({"message": "No significant parliamentary activity found for today's evening analysis."})`
+- If MCP server unreachable → `safeoutputs___noop({"message": "MCP server unavailable. No articles generated."})`
+- If MCP data unavailable → `safeoutputs___missing_data({"reason": "MCP returned no usable data for evening analysis."})`
+- If any error occurs → `safeoutputs___noop({"message": "Error during evening analysis: <brief description>"})`
+
+**Failing to call a safe output tool = automatic workflow failure and a bug report.**
 
 🎯 **Now begin: Check date/day-of-week, warm up MCP with `get_sync_status()`, gather parliamentary data, generate analysis articles, and call a safe output tool.**
