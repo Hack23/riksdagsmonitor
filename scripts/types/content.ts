@@ -122,6 +122,7 @@ export interface ContentLabelSet {
   interpellationBy: string;
   questioner: string;
   oppositionOversight: string;
+  readFullInterpellation: string;
   twitterLabel1: string;
   twitterLabel2: string;
   jobTitle: string;

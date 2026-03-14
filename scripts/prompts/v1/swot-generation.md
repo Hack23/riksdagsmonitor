@@ -33,12 +33,23 @@ Each SWOT entry must:
 
 ### SWOT Entry Format
 
+> **Note**: The format below is a template structure (pseudocode), not executable code. See the concrete example below.
+
 ```
 [Strength/Weakness/Opportunity/Threat]:
 - Statement: [Specific, evidence-based claim]
 - Evidence: [dok_id, vote reference, or speech reference]
 - Confidence: HIGH/MEDIUM/LOW
 - Impact: HIGH/MEDIUM/LOW
+```
+
+**Concrete example:**
+```
+[Strength — Government coalition]:
+- Statement: Budget surplus of 15 billion SEK provides room for pre-election social spending
+- Evidence: FiU10 committee report, prop. 2025/26:1
+- Confidence: HIGH
+- Impact: HIGH
 ```
 
 ### Multi-Stakeholder SWOT

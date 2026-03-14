@@ -54,6 +54,9 @@ If score < 7:
 ### Quick Self-Check Commands
 
 ```bash
+# Set target article file (replace with actual generated file)
+ARTICLE_FILE="news/$(date +%Y-%m-%d)-<article-type>-<lang>.html"
+
 # Check for untranslated spans (should be 0 in non-SV articles)
 grep -c 'data-translate="true"' "$ARTICLE_FILE" || echo "0"
 

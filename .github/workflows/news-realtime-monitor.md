@@ -196,13 +196,41 @@ get_propositioner({ rm: "<rm>", limit: 20 })
 get_betankanden({ rm: "<rm>", limit: 20 })
 ```
 
-### Significance Assessment
+### Significance Assessment — AI-Driven Severity Classification
 
-**HIGH** (generate breaking article): Close votes, cross-party splits, new propositions, major committee reports, government crisis, SOU reports, confidence motions.
+Apply three-tier severity classification to ALL detected events. This classification determines whether to generate articles and what depth of analysis to apply.
 
-**MEDIUM** (generate update article): Regular committee reports, standard motions, scheduled debates, ministerial questions.
+**HIGH** (generate breaking article with deep analysis):
+- Close votes (margin ≤ 5 seats) or unexpected vote outcomes
+- Cross-party coalitions forming (parties voting against their usual block)
+- New government propositions on high-priority topics (defense, migration, economy)
+- Major committee reports with significant policy changes
+- Government crisis indicators (VU, confidence motion, minister resignation)
+- SOU reports on major policy areas
+- Budget amendments or extraordinary fiscal measures
 
-**LOW** (skip): Routine procedural votes, standard meetings, previously covered topics.
+**MEDIUM** (generate update article with standard analysis):
+- Regular committee reports (betänkanden)
+- Opposition motions on significant policy areas
+- Scheduled debates with notable party positions
+- Ministerial interpellations from multiple parties
+- Cross-party cooperation announcements
+
+**LOW** (skip, use noop):
+- Routine procedural votes
+- Standard meetings with no new developments
+- Previously covered topics within last 6 hours (check workflow-state.json)
+- Scheduling announcements without policy substance
+
+**Severity scoring formula** (score 1–10, capped at 10):
+- +3 if coalition majority at risk
+- +2 if > 3 parties involved
+- +2 if budget/fiscal implications
+- +2 if defense/security policy
+- +1 if involves named minister
+- -2 if similar topic covered in last 6 hours
+
+Map raw score to tier: **≥ 7 = HIGH** | **4–6 = MEDIUM** | **≤ 3 = LOW**
 
 ### No-Events Early Exit (MOST COMMON OUTCOME)
 
@@ -356,6 +384,9 @@ safeoutputs___create_pull_request({
 3. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
+6. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
+7. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
+8. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
 
 ## 🌐 MANDATORY Translation Quality Rules
 

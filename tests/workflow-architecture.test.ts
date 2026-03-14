@@ -433,3 +433,147 @@ describe('Article Type Completeness', () => {
     }
   });
 });
+
+describe('Shared Prompts Library Integration', () => {
+  const PROMPTS_DIR = path.join(__dirname, '..', 'scripts', 'prompts', 'v1');
+
+  it('should have all required prompt files', () => {
+    const requiredFiles = [
+      'political-analysis.md',
+      'swot-generation.md',
+      'dashboard-generation.md',
+      'stakeholder-perspectives.md',
+      'quality-criteria.md',
+    ];
+    for (const file of requiredFiles) {
+      expect(
+        fs.existsSync(path.join(PROMPTS_DIR, file)),
+        `Missing required prompt: scripts/prompts/v1/${file}`
+      ).toBe(true);
+    }
+  });
+
+  it('should reference quality-criteria.md in all content workflows', () => {
+    const contentWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md',
+      'news-article-generator.md',
+    ];
+    for (const workflowFile of contentWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('quality-criteria.md'),
+        `Workflow ${workflowFile} should reference scripts/prompts/v1/quality-criteria.md`
+      ).toBe(true);
+    }
+  });
+
+  it('should reference political-analysis.md in all content workflows', () => {
+    const contentWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md',
+      'news-article-generator.md',
+    ];
+    for (const workflowFile of contentWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('political-analysis.md'),
+        `Workflow ${workflowFile} should reference scripts/prompts/v1/political-analysis.md`
+      ).toBe(true);
+    }
+  });
+
+  it('should reference stakeholder-perspectives.md in all content workflows', () => {
+    const contentWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-article-generator.md',
+    ];
+    for (const workflowFile of contentWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('stakeholder-perspectives.md'),
+        `Workflow ${workflowFile} should reference scripts/prompts/v1/stakeholder-perspectives.md`
+      ).toBe(true);
+    }
+  });
+});
+
+describe('Iterative Analysis Protocol', () => {
+  const ANALYTICAL_WORKFLOWS = [
+    'news-interpellations.md',
+    'news-motions.md',
+    'news-committee-reports.md',
+    'news-propositions.md',
+  ];
+
+  it('should have iterative analysis protocol in analytical workflows', () => {
+    for (const workflowFile of ANALYTICAL_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('Iterative Analysis Protocol') || content.includes('iteration'),
+        `Workflow ${workflowFile} should include iterative analysis protocol`
+      ).toBe(true);
+    }
+  });
+
+  it('should have maximum 3 iterations limit in iterative workflows', () => {
+    for (const workflowFile of ANALYTICAL_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('3 iterations') || content.includes('Maximum 3'),
+        `Workflow ${workflowFile} should specify maximum 3 iterations`
+      ).toBe(true);
+    }
+  });
+
+  it('should have minimum quality score 7/10 in analytical workflows', () => {
+    for (const workflowFile of ANALYTICAL_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('7/10'),
+        `Workflow ${workflowFile} should specify minimum quality score of 7/10`
+      ).toBe(true);
+    }
+  });
+});
+
+describe('Realtime Monitor Enhancement', () => {
+  const REALTIME_WORKFLOW = path.join(WORKFLOWS_DIR, 'news-realtime-monitor.md');
+
+  it('should have breaking news severity classification', () => {
+    if (!fs.existsSync(REALTIME_WORKFLOW)) return;
+    const content = fs.readFileSync(REALTIME_WORKFLOW, 'utf-8');
+    expect(content).toContain('HIGH');
+    expect(content).toContain('MEDIUM');
+    expect(content).toContain('LOW');
+  });
+
+  it('should reference quality-criteria.md', () => {
+    if (!fs.existsSync(REALTIME_WORKFLOW)) return;
+    const content = fs.readFileSync(REALTIME_WORKFLOW, 'utf-8');
+    expect(content).toContain('quality-criteria.md');
+  });
+
+  it('should have AI-driven severity scoring logic', () => {
+    if (!fs.existsSync(REALTIME_WORKFLOW)) return;
+    const content = fs.readFileSync(REALTIME_WORKFLOW, 'utf-8');
+    // Should have structured assessment with specific criteria
+    expect(content).toContain('confidence motion');
+    expect(content).toContain('fiscal');
+  });
+});

@@ -212,7 +212,7 @@ function renderInterpellationEntry(interp: RawDocument, lang: Language | string)
 
   const dateHtml = formatDocumentDate(interp, lang);
 
-  const readFullVal = L(lang, 'readFullMotion');
+  const readFullVal = L(lang, 'readFullInterpellation');
   const interpellationByVal = L(lang, 'interpellationBy');
 
   return `

@@ -13,10 +13,17 @@
  */
 
 import { describe, it, expect } from 'vitest';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { generateArticleContent } from '../scripts/data-transformers.js';
 import { generateInterpellationsContent } from '../scripts/data-transformers/content-generators/interpellations.js';
 import { CONTENT_LABELS } from '../scripts/data-transformers/constants/index.js';
 import type { Language } from '../scripts/types/language.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const PROMPTS_DIR = path.join(__dirname, '..', 'scripts', 'prompts', 'v1');
 
 const LANGUAGES: Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
 
@@ -250,32 +257,25 @@ describe('Interpellations Content Generator', () => {
 
 describe('Shared Prompts Library', () => {
   it('should have all required prompt files in v1/', () => {
-    import('fs').then(fs => {
-      import('path').then(path => {
-        const promptsDir = path.join(process.cwd(), 'scripts', 'prompts', 'v1');
-        const requiredFiles = [
-          'political-analysis.md',
-          'swot-generation.md',
-          'dashboard-generation.md',
-          'stakeholder-perspectives.md',
-          'quality-criteria.md',
-        ];
-        for (const file of requiredFiles) {
-          expect(
-            fs.existsSync(path.join(promptsDir, file)),
-            `Missing prompt file: v1/${file}`
-          ).toBe(true);
-        }
-      });
-    });
+    const requiredFiles = [
+      'political-analysis.md',
+      'swot-generation.md',
+      'dashboard-generation.md',
+      'stakeholder-perspectives.md',
+      'quality-criteria.md',
+    ];
+    for (const file of requiredFiles) {
+      expect(
+        fs.existsSync(path.join(PROMPTS_DIR, file)),
+        `Missing prompt file: v1/${file}`
+      ).toBe(true);
+    }
   });
 
-  it('should have quality-criteria.md with scoring dimensions', async () => {
-    const { readFileSync, existsSync } = await import('fs');
-    const { join } = await import('path');
-    const filePath = join(process.cwd(), 'scripts', 'prompts', 'v1', 'quality-criteria.md');
-    expect(existsSync(filePath), 'quality-criteria.md must exist').toBe(true);
-    const content = readFileSync(filePath, 'utf-8');
+  it('should have quality-criteria.md with scoring dimensions', () => {
+    const filePath = path.join(PROMPTS_DIR, 'quality-criteria.md');
+    expect(fs.existsSync(filePath), 'quality-criteria.md must exist').toBe(true);
+    const content = fs.readFileSync(filePath, 'utf-8');
     expect(content).toContain('Factual Accuracy');
     expect(content).toContain('Analytical Depth');
     expect(content).toContain('Perspective Coverage');
@@ -284,12 +284,10 @@ describe('Shared Prompts Library', () => {
     expect(content).toContain('7/10'); // minimum passing score
   });
 
-  it('should have political-analysis.md with six perspectives', async () => {
-    const { readFileSync, existsSync } = await import('fs');
-    const { join } = await import('path');
-    const filePath = join(process.cwd(), 'scripts', 'prompts', 'v1', 'political-analysis.md');
-    expect(existsSync(filePath), 'political-analysis.md must exist').toBe(true);
-    const content = readFileSync(filePath, 'utf-8');
+  it('should have political-analysis.md with six perspectives', () => {
+    const filePath = path.join(PROMPTS_DIR, 'political-analysis.md');
+    expect(fs.existsSync(filePath), 'political-analysis.md must exist').toBe(true);
+    const content = fs.readFileSync(filePath, 'utf-8');
     expect(content).toContain('Government perspective');
     expect(content).toContain('Opposition perspective');
     expect(content).toContain('Citizen perspective');
@@ -298,12 +296,10 @@ describe('Shared Prompts Library', () => {
     expect(content).toContain('Media');
   });
 
-  it('should have stakeholder-perspectives.md with party attribution standards', async () => {
-    const { readFileSync, existsSync } = await import('fs');
-    const { join } = await import('path');
-    const filePath = join(process.cwd(), 'scripts', 'prompts', 'v1', 'stakeholder-perspectives.md');
-    expect(existsSync(filePath), 'stakeholder-perspectives.md must exist').toBe(true);
-    const content = readFileSync(filePath, 'utf-8');
+  it('should have stakeholder-perspectives.md with party attribution standards', () => {
+    const filePath = path.join(PROMPTS_DIR, 'stakeholder-perspectives.md');
+    expect(fs.existsSync(filePath), 'stakeholder-perspectives.md must exist').toBe(true);
+    const content = fs.readFileSync(filePath, 'utf-8');
     expect(content).toContain('2 parties cited');
     expect(content).toContain('opposition');
   });
