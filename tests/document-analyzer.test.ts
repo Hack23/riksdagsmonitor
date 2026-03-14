@@ -351,6 +351,19 @@ describe('analyzeDocument — historical context', () => {
     expect(typeof historicalContext.policyEvolution).toBe('string');
     expect(historicalContext.policyEvolution.length).toBeGreaterThan(0);
   });
+
+  it('policyEvolution uses doc.rm when present', () => {
+    const doc: RawDocument = { ...propDoc, dok_id: 'RM-TEST', rm: '2024/25' };
+    const { historicalContext } = analyzeDocument(doc, 'en');
+    expect(historicalContext.policyEvolution).toContain('2024/25');
+  });
+
+  it('policyEvolution derives riksmöte from datum when rm is absent', () => {
+    // October 2025 → session 2025/26
+    const doc: RawDocument = { ...propDoc, dok_id: 'DATE-TEST', rm: undefined, datum: '2025-10-15' };
+    const { historicalContext } = analyzeDocument(doc, 'en');
+    expect(historicalContext.policyEvolution).toContain('2025/26');
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -800,6 +813,25 @@ describe('generateExecutiveSummary', () => {
   it('includes influence score in summary', () => {
     const summary = generateExecutiveSummary(propDoc, 'en');
     expect(summary).toContain('influence score');
+  });
+
+  it('uses doc.rm for session reference when present', () => {
+    const doc: RawDocument = { ...propDoc, dok_id: 'RM-SUM', rm: '2024/25' };
+    const summary = generateExecutiveSummary(doc, 'en');
+    expect(summary).toContain('2024/25');
+  });
+
+  it('derives riksmöte from datum when rm is absent', () => {
+    const doc: RawDocument = { ...propDoc, dok_id: 'DATE-SUM', rm: undefined, datum: '2025-10-15' };
+    const summary = generateExecutiveSummary(doc, 'en');
+    expect(summary).toContain('2025/26');
+  });
+
+  it('handles skr documents without throwing', () => {
+    const skrDoc: RawDocument = { dok_id: 'SKR-01', doktyp: 'skr', titel: 'Skrivelse om infrastruktur', datum: '2026-01-20' };
+    expect(() => generateExecutiveSummary(skrDoc, 'en')).not.toThrow();
+    const summary = generateExecutiveSummary(skrDoc, 'en');
+    expect(summary.length).toBeGreaterThan(50);
   });
 });
 

@@ -33,6 +33,7 @@ import {
   normalizePartyKey,
 } from '../data-transformers/helpers.js';
 import { escapeHtml } from '../html-utils.js';
+import { getCurrentRiksmote } from '../news-types/motions.js';
 
 // ---------------------------------------------------------------------------
 // Stakeholder definitions
@@ -649,8 +650,9 @@ export function buildHistoricalContext(doc: RawDocument): HistoricalContext {
   if (docType === 'prop') relatedLegislation.push('Will replace or amend existing statutes upon parliamentary approval.');
   relatedLegislation.push('Related committee reports (betänkanden) expected in subsequent session.');
 
+  const riksmote = deriveRiksmote(doc);
   const policyEvolution = domains.length > 0
-    ? `This document advances policy in ${domains.slice(0, 3).join(', ')} — domains with active legislative activity in the 2025/26 parliamentary session.`
+    ? `This document advances policy in ${domains.slice(0, 3).join(', ')} — domains with active legislative activity in the ${riksmote} parliamentary session.`
     : 'Part of the ongoing parliamentary work programme for the current session.';
 
   return { precedents, relatedLegislation, policyEvolution };
@@ -779,15 +781,35 @@ export function buildRiskAssessment(doc: RawDocument, ciaContext?: CIAContext): 
  * normalized type strings (`'proposition'`, `'motion'`, `'report'`, …) that
  * `generateEnhancedSummary()` in `helpers.ts` expects for content branching.
  * Without this, the helper silently falls through to a generic default text.
+ *
+ * Note: 'skr' (government communication / skrivelse) maps to 'report' because
+ * `generateEnhancedSummary()` only has branches for 'report'|'proposition'|'motion'.
+ * Government communications are informational reports by nature, so 'report' is the
+ * closest semantic match.
  */
 function normalizeDocType(doktyp: string): string {
   switch (doktyp) {
     case 'prop': return 'proposition';
     case 'mot': return 'motion';
     case 'bet': return 'report';
-    case 'skr': return 'communication';
+    case 'skr': return 'report';
     default: return doktyp;
   }
+}
+
+/**
+ * Derive the riksmöte (parliamentary session) string from a document.
+ * Prefers `doc.rm` when present; otherwise derives from `doc.datum` via
+ * `getCurrentRiksmote()`. Falls back to the current session if neither is
+ * available.
+ */
+function deriveRiksmote(doc: RawDocument): string {
+  if (doc.rm) return doc.rm;
+  if (doc.datum) {
+    const d = new Date(doc.datum);
+    if (!isNaN(d.getTime())) return getCurrentRiksmote(d);
+  }
+  return getCurrentRiksmote();
 }
 
 /** Generate a structured executive summary for a document. */
@@ -812,7 +834,8 @@ export function generateExecutiveSummary(doc: RawDocument, lang: Language | stri
   const domainStr = domains.length > 0 ? domains.slice(0, 3).join(', ') : 'general policy';
   const normalizedType = normalizeDocType(docType);
   const enhancedSummary = escapeHtml(generateEnhancedSummary(doc, normalizedType, lang));
-  const para2 = `The document intersects ${domainStr} policy domains, placing it within the broader legislative agenda of the 2025/26 parliamentary session. ${enhancedSummary}`;
+  const riksmote = deriveRiksmote(doc);
+  const para2 = `The document intersects ${domainStr} policy domains, placing it within the broader legislative agenda of the ${riksmote} parliamentary session. ${enhancedSummary}`;
 
   // Paragraph 3: Strategic significance
   const para3 = docType === 'prop'
