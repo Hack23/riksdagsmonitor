@@ -792,19 +792,22 @@ function normalizeDocType(doktyp: string): string {
     case 'prop': return 'proposition';
     case 'mot': return 'motion';
     case 'bet': return 'report';
-    case 'skr': return 'report';
+    case 'skr': return 'report'; // Government communications treated as reports
     default: return doktyp;
   }
 }
 
+/** Pattern for valid riksmöte strings: YYYY/YY */
+const RIKSMOTE_PATTERN = /^\d{4}\/\d{2}$/;
+
 /**
  * Derive the riksmöte (parliamentary session) string from a document.
- * Prefers `doc.rm` when present; otherwise derives from `doc.datum` via
- * `getCurrentRiksmote()`. Falls back to the current session if neither is
+ * Prefers `doc.rm` when present and valid; otherwise derives from `doc.datum`
+ * via `getCurrentRiksmote()`. Falls back to the current session if neither is
  * available.
  */
 function deriveRiksmote(doc: RawDocument): string {
-  if (doc.rm) return doc.rm;
+  if (doc.rm && RIKSMOTE_PATTERN.test(doc.rm)) return doc.rm;
   if (doc.datum) {
     const d = new Date(doc.datum);
     if (!isNaN(d.getTime())) return getCurrentRiksmote(d);

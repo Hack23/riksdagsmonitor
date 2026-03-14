@@ -364,6 +364,14 @@ describe('analyzeDocument — historical context', () => {
     const { historicalContext } = analyzeDocument(doc, 'en');
     expect(historicalContext.policyEvolution).toContain('2025/26');
   });
+
+  it('rejects invalid rm format and falls back to datum', () => {
+    // Invalid rm format should be ignored; datum Oct 2025 → "2025/26"
+    const doc: RawDocument = { ...propDoc, dok_id: 'BAD-RM', rm: 'bad-format', datum: '2025-10-15' };
+    const { historicalContext } = analyzeDocument(doc, 'en');
+    expect(historicalContext.policyEvolution).toContain('2025/26');
+    expect(historicalContext.policyEvolution).not.toContain('bad-format');
+  });
 });
 
 // ---------------------------------------------------------------------------
