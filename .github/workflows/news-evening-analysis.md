@@ -202,6 +202,42 @@ Filter results to only include items with dates `>= fromDate`.
 
 Cross-reference related data sources for richer analysis (e.g., committee reports with voting records, government propositions with parliamentary motions). Filter all results by date to `>= fromDate`.
 
+**Example 1: Committee Report Deep Dive**
+```javascript
+// 1. Fetch committee reports
+const reports = get_betankanden({ rm: "<rm>", limit: 50 });
+// 2. Cross-reference with voting records
+const votes = search_voteringar({ rm: "<rm>", bet: report.beteckning });
+// 3. Filter results by date
+const fresh = reports.filter(r => new Date(r.publicerad) >= new Date(fromDate));
+```
+
+**Example 2: Government Activity Analysis**
+```javascript
+// 1. Fetch government propositions
+const props = get_propositioner({ rm: "<rm>", limit: 20 });
+// 2. Cross-reference with committee handling
+const filtered = props.filter(p => new Date(p.publicerad) >= new Date(fromDate));
+```
+
+**Example 3: Party Behavior Analysis**
+```javascript
+// 1. Fetch motions by party
+const motions = get_motioner({ rm: "<rm>", limit: 100 });
+// 2. Cross-reference with speeches
+const speeches = search_anforanden({ rm: "<rm>", parti: party });
+```
+
+### Date Calculation Helpers
+
+```javascript
+const now = new Date();
+const oneDayMs = 86400000;    // 24 * 60 * 60 * 1000
+const oneHourMs = 3600000;    // 60 * 60 * 1000
+const fromDate = new Date(now.getTime() - lookbackHours * oneHourMs).toISOString().slice(0, 10);
+const fiveDaysAgo = new Date(now.getTime() - 5 * oneDayMs).toISOString().slice(0, 10);
+```
+
 ### Saturday vs Weekday Mode
 
 - **Saturday** (day_of_week=6): Produce a **Weekly Parliamentary Review** looking back 5 days (Monday–Friday). Use `coverage_depth: comprehensive`. Title: "The Week in Swedish Politics: {key theme}". Article slug: `weekly-review`.

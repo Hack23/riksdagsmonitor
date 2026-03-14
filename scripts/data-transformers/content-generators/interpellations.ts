@@ -33,13 +33,12 @@ import { detectPolicyDomains, generateDeepPolicyAnalysis } from '../policy-analy
 /**
  * Extract minister name or responsible department from an interpellation document.
  * Interpellations are directed to a specific minister; this information may appear
- * in the document title, summary, or mottagare field.
+ * in the `mottagare` field or in the document title (pattern: "till X statsråd/minister").
  */
 function extractMinisterTarget(doc: RawDocument): string {
-  // Some MCP responses include a mottagare (recipient) field
-  const mottagare = (doc as Record<string, unknown>)['mottagare'];
-  if (typeof mottagare === 'string' && mottagare.trim()) {
-    return mottagare.trim();
+  // Prefer the typed mottagare (recipient) field from the interpellations API
+  if (typeof doc.mottagare === 'string' && doc.mottagare.trim()) {
+    return doc.mottagare.trim();
   }
   // Fall back to looking for "till [name] statsråd|statsminister|minister" pattern in the title
   // Only match when followed by a minister-related term to avoid false positives (e.g. "till Gaza")
@@ -64,7 +63,11 @@ function renderInterpellationEntry(doc: RawDocument, lang: Language | string): s
     : escapedTitle;
 
   const docName = escapeHtml(doc.dokumentnamn || doc.dok_id || titleText);
-  const authorText = escapeHtml(doc.intressent_namn || doc.author || '');
+  // Filter out "Unknown" sentinel values that leak from enrichDocumentsWithContent()
+  const rawAuthor = doc.intressent_namn || doc.author || '';
+  const authorText = (rawAuthor && rawAuthor.toLowerCase() !== 'unknown')
+    ? escapeHtml(rawAuthor)
+    : '';
   // Only show party when the raw value is present and not an "Unknown" sentinel
   const rawParti = typeof doc.parti === 'string' ? doc.parti.trim() : '';
   const hasParty = rawParti !== '' && rawParti.toLowerCase() !== 'unknown';

@@ -294,4 +294,57 @@ describe('Interpellations Content Generator', () => {
       expect(result).toContain('No interpellations');
     });
   });
+
+  describe('Author sentinel filtering', () => {
+    it('should NOT display "Unknown" as author name', () => {
+      const data = {
+        motions: [
+          {
+            titel: 'Test interpellation',
+            url: '#',
+            dokumentnamn: 'IP1',
+            intressent_namn: 'Unknown',
+            parti: 'V',
+          },
+        ] as MockInterpellation[],
+      };
+
+      const result = generateArticleContent(data, 'interpellations', 'en') as string;
+      // Should not render the sentinel value "Unknown" to readers
+      expect(result).not.toContain('Interpellation by:</strong> Unknown');
+    });
+
+    it('should NOT display "unknown" (lowercase) as author name', () => {
+      const data = {
+        motions: [
+          {
+            titel: 'Test interpellation',
+            url: '#',
+            dokumentnamn: 'IP1',
+            author: 'unknown',
+          },
+        ] as MockInterpellation[],
+      };
+
+      const result = generateArticleContent(data, 'interpellations', 'en') as string;
+      expect(result).not.toContain('Interpellation by:</strong> unknown');
+    });
+
+    it('should display real author names', () => {
+      const data = {
+        motions: [
+          {
+            titel: 'Test interpellation',
+            url: '#',
+            dokumentnamn: 'IP1',
+            intressent_namn: 'Anna Andersson',
+            parti: 'S',
+          },
+        ] as MockInterpellation[],
+      };
+
+      const result = generateArticleContent(data, 'interpellations', 'en') as string;
+      expect(result).toContain('Interpellation by:</strong> Anna Andersson');
+    });
+  });
 });
