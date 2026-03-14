@@ -339,6 +339,7 @@ describe('generateArticleHTML article-type class injection', () => {
     const html = generateArticleHTML(data);
     // Should have base class only, NOT article-type-breaking or any other per-type class
     expect(html).toContain('class="news-article"');
+    expect(html).not.toContain('article-type-breaking');
     expect(html).not.toMatch(/article-type-/);
   });
 
