@@ -1092,8 +1092,8 @@ function writeAnalysisMetadata(
 // Localized label helpers for AI-derived deep-inspection sections (14 languages)
 // ---------------------------------------------------------------------------
 
-type LangFn = (n: number, conf: number) => string;
-type LangStrFn = (n: number) => string;
+type LanguageFormatWithConfidence = (n: number, conf: number) => string;
+type LanguageFormatFunction = (n: number) => string;
 
 const STRATEGIC_CONTEXT_FOCUSED: Partial<Record<Language, (topic: string, n: number, conf: number) => string>> = {
   en: (t, n, c) => `Analysis exclusively focused on: ${t} — ${n} parliamentary documents examined (confidence: ${c}/100)`,
@@ -1112,7 +1112,7 @@ const STRATEGIC_CONTEXT_FOCUSED: Partial<Record<Language, (topic: string, n: num
   zh: (t, n, c) => `分析专注于: ${t} — ${n}份议会文件已审查（置信度: ${c}/100）`,
 };
 
-const STRATEGIC_CONTEXT_MULTI: Partial<Record<Language, LangFn>> = {
+const STRATEGIC_CONTEXT_MULTI: Partial<Record<Language, LanguageFormatWithConfidence>> = {
   en: (n, c) => `Multi-stakeholder analysis of ${n} parliamentary documents (confidence: ${c}/100)`,
   sv: (n, c) => `Intressentanalys av ${n} riksdagsdokument (konfidens: ${c}/100)`,
   da: (n, c) => `Interessentanalyse af ${n} parlamentsdokumenter (konfidens: ${c}/100)`,
@@ -1153,7 +1153,7 @@ const MINDMAP_SUMMARY_FOCUSED: Partial<Record<Language, (topic: string) => strin
   zh: (t) => `深度审查概念图: ${t}`,
 };
 
-const MINDMAP_SUMMARY_GENERIC: Partial<Record<Language, LangStrFn>> = {
+const MINDMAP_SUMMARY_GENERIC: Partial<Record<Language, LanguageFormatFunction>> = {
   en: (n) => `Conceptual map for ${n} parliamentary documents`,
   sv: (n) => `Konceptuell karta för ${n} riksdagsdokument`,
   da: (n) => `Konceptuelt kort for ${n} parlamentsdokumenter`,
@@ -1177,7 +1177,7 @@ const SANKEY_TITLE_LABEL: Partial<Record<Language, string>> = {
   ja: '立法フロー', ko: '입법 흐름', zh: '立法流程',
 };
 
-const SANKEY_SUMMARY: Partial<Record<Language, LangStrFn>> = {
+const SANKEY_SUMMARY: Partial<Record<Language, LanguageFormatFunction>> = {
   en: (n) => `Flow of ${n} parliamentary documents from initiating actors to document types`,
   sv: (n) => `Flöde av ${n} riksdagsdokument från initierande aktörer till dokumenttyper`,
   da: (n) => `Flow af ${n} parlamentsdokumenter fra initierende aktører til dokumenttyper`,

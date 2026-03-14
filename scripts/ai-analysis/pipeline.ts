@@ -573,9 +573,9 @@ function applyLanguageFraming(
   if (lang === 'en') return enText;
 
   type RoleCompositions = Record<string, Record<string, string>>;
-  type CompositionBuilder = (topicFrag: string, domainFrag: string) => RoleCompositions;
+  type SwotCompositionBuilder = (topicFrag: string, domainFrag: string) => RoleCompositions;
 
-  const builders: Partial<Record<Language, { domainPrep: string; builder: CompositionBuilder }>> = {
+  const builders: Partial<Record<Language, { domainPrep: string; builder: SwotCompositionBuilder }>> = {
     sv: {
       domainPrep: 'inom',
       builder: (tf, df) => ({
@@ -882,8 +882,8 @@ function applyLanguageFraming(
     const topicFrag = topic ? ` (${escapeHtml(topic)})` : '';
     const domainFrag = domain ? ` ${entry.domainPrep} ${escapeHtml(domain)}` : '';
     const compositions = entry.builder(topicFrag, domainFrag);
-    const roleC = compositions[role] ?? compositions['government']!;
-    const text = roleC[quadrant];
+    const roleComposition = compositions[role] ?? compositions['government']!;
+    const text = roleComposition[quadrant];
     if (text) return text;
   }
 
