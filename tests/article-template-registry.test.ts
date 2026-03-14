@@ -86,6 +86,14 @@ describe('Article Template Registry', () => {
       expect(tpl.type).toBe('breaking');
     });
 
+    it('should fall back to breaking for prototype-pollution keys', () => {
+      for (const key of ['__proto__', 'constructor', 'toString', 'hasOwnProperty']) {
+        const tpl = getTemplate(key);
+        expect(tpl.type).toBe('breaking');
+        expect(tpl.styleClass).toBe('article-type-breaking');
+      }
+    });
+
     it('each template should have a non-empty description', () => {
       for (const type of ALL_ARTICLE_TYPES) {
         const tpl = getTemplate(type);

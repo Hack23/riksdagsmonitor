@@ -383,7 +383,9 @@ const REGISTRY: Readonly<Record<ArticleType, ArticleTemplate>> = {
  * @returns ArticleTemplate configuration object
  */
 export function getTemplate(type: ArticleType | string): ArticleTemplate {
-  return (REGISTRY as Record<string, ArticleTemplate>)[type] ?? REGISTRY['breaking'];
+  return Object.hasOwn(REGISTRY, type)
+    ? REGISTRY[type as ArticleType]
+    : REGISTRY['breaking'];
 }
 
 /**
