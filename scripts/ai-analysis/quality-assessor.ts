@@ -140,7 +140,8 @@ function countDocumentIds(html: string): Set<string> {
  * `Vänsterpartiet` and `Miljöpartiet`.
  */
 function countParties(html: string): Set<string> {
-  return extractPartyMentions(html) as Set<string>;
+  const codes = extractPartyMentions(html);
+  return new Set<string>(codes);
 }
 
 // ---------------------------------------------------------------------------
@@ -177,11 +178,11 @@ function assessFactualAccuracy(
   }
 
   // Bonus: verify cited IDs against source list — reward matches, don't penalise
-  if (sourceDocIds.length > 0 && foundIds.size > 0) {
+  if (sourceDocIds.length > 0) {
     const matched = [...foundIds].filter(id =>
       sourceDocIds.some(src => src.toUpperCase().includes(id.toUpperCase()))
     ).length;
-    const matchRatio = matched / foundIds.size;
+    const matchRatio = matched / Math.max(foundIds.size, 1);
     // Add up to 20 bonus points when all cited IDs match source docs
     const bonus = Math.round(20 * matchRatio);
     score = Math.min(100, score + bonus);
