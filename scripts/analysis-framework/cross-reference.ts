@@ -109,13 +109,23 @@ function detectImplements(docs: RawDocument[]): DocumentLink[] {
   const implementers = docs.filter(d => containsAny(docText(d), EU_IMPL_KEYWORDS));
   const directives = docs.filter(d => containsAny(docText(d), ['eu-direktiv', 'eu directive', 'förordning', 'fördrag']));
 
+  // Pre-compute domains to avoid redundant detectPolicyDomains calls in the nested loop
+  const implDomainCache = new Map<string, string[]>();
+  for (const impl of implementers) {
+    implDomainCache.set(docId(impl), detectPolicyDomains(impl, 'en'));
+  }
+  const dirDomainCache = new Map<string, string[]>();
+  for (const dir of directives) {
+    dirDomainCache.set(docId(dir), detectPolicyDomains(dir, 'en'));
+  }
+
   for (const impl of implementers) {
     for (const dir of directives) {
       if (docId(impl) === docId(dir)) continue;
 
       // Heuristic: same policy domain and implementation keyword
-      const implDomains = detectPolicyDomains(impl, 'en');
-      const dirDomains = detectPolicyDomains(dir, 'en');
+      const implDomains = implDomainCache.get(docId(impl)) ?? [];
+      const dirDomains = dirDomainCache.get(docId(dir)) ?? [];
       const overlap = implDomains.filter(d => dirDomains.includes(d));
 
       if (overlap.length >= 1) {
