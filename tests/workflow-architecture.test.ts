@@ -493,6 +493,7 @@ describe('Shared Prompts Library Integration', () => {
     const contentWorkflows = [
       ...Object.values(ARTICLE_TYPE_WORKFLOWS),
       'news-evening-analysis.md',
+      'news-realtime-monitor.md',
       'news-article-generator.md',
     ];
     for (const workflowFile of contentWorkflows) {
@@ -521,8 +522,11 @@ describe('Iterative Analysis Protocol', () => {
       if (!fs.existsSync(filepath)) continue;
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
-        content.includes('Iterative Analysis Protocol') || content.includes('iteration'),
-        `Workflow ${workflowFile} should include iterative analysis protocol`
+        content.includes('Iterative Analysis Protocol') &&
+        content.includes('Iteration 1') &&
+        content.includes('Maximum 3 iterations') &&
+        /score\s*<\s*7/.test(content),
+        `Workflow ${workflowFile} should include iterative analysis protocol with 'Iteration 1', 'Maximum 3 iterations', and 'score < 7' markers`
       ).toBe(true);
     }
   });
