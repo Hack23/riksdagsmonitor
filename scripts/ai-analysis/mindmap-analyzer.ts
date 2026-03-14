@@ -185,19 +185,59 @@ const SUMMARY_TEMPLATES: Partial<Record<Language, string>> = {
   sv: 'Analys av {count} parlamentariska dokument visar {domains} som centrala politikområden. '
     + 'Lagstiftningsprocessen omfattar {docTypes} dokumenttyper med {committees} utskott involverade. '
     + '{euNote}',
+  da: 'Analyse af {count} parlamentariske dokumenter afslører {domains} som de centrale politikområder. '
+    + 'Den lovgivningsmæssige pipeline omfatter {docTypes} dokumenttyper med {committees} udvalg involveret. '
+    + '{euNote}',
+  no: 'Analyse av {count} parlamentariske dokumenter avdekker {domains} som de sentrale politikkområdene. '
+    + 'Lovgivningsprosessen spenner over {docTypes} dokumenttyper med {committees} komiteer involvert. '
+    + '{euNote}',
+  fi: '{count} parlamentaarisen asiakirjan analyysi paljastaa {domains} keskeisiksi politiikka-alueiksi. '
+    + 'Lainsäädäntöprosessi kattaa {docTypes} asiakirjatyyppiä, joissa on mukana {committees} valiokuntaa. '
+    + '{euNote}',
   de: 'Die Analyse von {count} parlamentarischen Dokumenten zeigt {domains} als zentrale Politikbereiche. '
     + 'Der Gesetzgebungsprozess umfasst {docTypes} Dokumenttypen mit {committees} beteiligten Ausschüssen. '
     + '{euNote}',
   fr: "L'analyse de {count} documents parlementaires révèle {domains} comme domaines politiques centraux. "
     + 'Le pipeline législatif couvre {docTypes} types de documents avec {committees} commissions impliquées. '
     + '{euNote}',
+  es: 'El análisis de {count} documentos parlamentarios revela {domains} como los dominios políticos centrales. '
+    + 'El proceso legislativo abarca {docTypes} tipos de documentos con {committees} comisiones involucradas. '
+    + '{euNote}',
+  nl: 'Analyse van {count} parlementaire documenten onthult {domains} als de centrale beleidsdomeinen. '
+    + 'Het wetgevingsproces omvat {docTypes} documenttypen met {committees} commissies betrokken. '
+    + '{euNote}',
+  ar: 'يكشف تحليل {count} وثيقة برلمانية عن {domains} كمجالات سياسية مركزية. '
+    + 'يمتد المسار التشريعي عبر {docTypes} أنواع من الوثائق مع مشاركة {committees} لجان. '
+    + '{euNote}',
+  he: 'ניתוח של {count} מסמכים פרלמנטריים חושף את {domains} כתחומי המדיניות המרכזיים. '
+    + 'תהליך החקיקה משתרע על פני {docTypes} סוגי מסמכים עם מעורבות של {committees} ועדות. '
+    + '{euNote}',
+  ja: '{count}件の議会文書の分析により、{domains}が中心的な政策分野として明らかになりました。'
+    + '立法プロセスは{docTypes}種類の文書にわたり、{committees}の委員会が関与しています。'
+    + '{euNote}',
+  ko: '{count}개 의회 문서 분석 결과 {domains}이(가) 핵심 정책 분야로 나타났습니다. '
+    + '입법 파이프라인은 {docTypes}개 문서 유형에 걸쳐 있으며 {committees}개 위원회가 관련되어 있습니다. '
+    + '{euNote}',
+  zh: '对{count}份议会文件的分析表明，{domains}是核心政策领域。'
+    + '立法流程涵盖{docTypes}种文件类型，涉及{committees}个委员会。'
+    + '{euNote}',
 };
 
 const EU_NOTES: Partial<Record<Language, string>> = {
   en: 'EU obligations and directives form an important external driver.',
   sv: 'EU-skyldigheter och direktiv utgör en viktig extern drivkraft.',
+  da: 'EU-forpligtelser og direktiver udgør en vigtig ekstern drivkraft.',
+  no: 'EU-forpliktelser og direktiver utgjør en viktig ekstern drivkraft.',
+  fi: 'EU-velvoitteet ja direktiivit muodostavat tärkeän ulkoisen tekijän.',
   de: 'EU-Verpflichtungen und Richtlinien bilden einen wichtigen externen Treiber.',
   fr: 'Les obligations et directives de l\'UE constituent un facteur externe important.',
+  es: 'Las obligaciones y directivas de la UE constituyen un importante impulsor externo.',
+  nl: 'EU-verplichtingen en richtlijnen vormen een belangrijke externe drijfveer.',
+  ar: 'تشكل التزامات وتوجيهات الاتحاد الأوروبي محركًا خارجيًا مهمًا.',
+  he: 'חובות והנחיות האיחוד האירופי מהוות גורם חיצוני חשוב.',
+  ja: 'EUの義務と指令は重要な外的要因を形成しています。',
+  ko: 'EU 의무 및 지침은 중요한 외부 동인을 형성합니다.',
+  zh: '欧盟义务和指令构成了重要的外部驱动因素。',
 };
 
 // ---------------------------------------------------------------------------
@@ -478,6 +518,14 @@ function pass3ValidationAndCompleteness(
   const sessionLabel = docs.find(d => d.rm)?.rm ?? docs.find(d => d.datum)?.datum?.slice(0, 4) ?? '';
 
   const FALLBACK_LABELS = {
+    documentsAnalysed: {
+      en: '{n} parliamentary documents analysed', sv: '{n} parlamentariska dokument analyserade',
+      da: '{n} parlamentariske dokumenter analyseret', no: '{n} parlamentariske dokumenter analysert',
+      fi: '{n} parlamentaarista asiakirjaa analysoitu', de: '{n} parlamentarische Dokumente analysiert',
+      fr: '{n} documents parlementaires analysés', es: '{n} documentos parlamentarios analizados',
+      nl: '{n} parlementaire documenten geanalyseerd', ar: 'تم تحليل {n} وثيقة برلمانية',
+      he: '{n} מסמכים פרלמנטריים נותחו', ja: '{n}件の議会文書を分析', ko: '{n}개 의회 문서 분석', zh: '分析了{n}份议会文件',
+    } as Partial<Record<Language | string, string>>,
     euItems: {
       en: ['European Union', 'International obligations'], sv: ['Europeiska unionen', 'Internationella skyldigheter'],
       da: ['Den Europæiske Union', 'Internationale forpligtelser'], no: ['EU', 'Internasjonale forpliktelser'],
@@ -498,7 +546,7 @@ function pass3ValidationAndCompleteness(
 
   const fallbackBranches: Pick<MindmapBranch, 'label' | 'color' | 'icon' | 'importance' | 'items'>[] = [
     { label: L(LABELS.policyDomains, lang, 'Policy Domains'), color: 'green', icon: '📋', importance: 'low',
-      items: [`${docs.length} parliamentary documents analysed`] },
+      items: [(L(FALLBACK_LABELS.documentsAnalysed, lang, '{n} parliamentary documents analysed')).replace('{n}', String(docs.length))] },
     { label: L(LABELS.stakeholderNetwork, lang, 'Stakeholder Network'), color: 'cyan', icon: '👥', importance: 'low',
       items: [L(STAKEHOLDER_LABELS.government, lang, 'Government'), L(STAKEHOLDER_LABELS.parliament, lang, 'Parliament'), L(STAKEHOLDER_LABELS.civilSociety, lang, 'Civil Society')] },
     { label: L(LABELS.legislativeTimeline, lang, 'Legislative Timeline'), color: 'yellow', icon: '📅', importance: 'low',
@@ -537,7 +585,7 @@ function generateSummary(
   const domainList = [...allDomains].slice(0, 3);
 
   const organs = extractOrgans(docs);
-  const docTypeCount = new Set(docs.map(d => d.doktyp || d.documentType)).size;
+  const docTypeCount = new Set(docs.map(d => d.doktyp || d.documentType).filter(Boolean)).size;
   const euNote = hasEuConnection(docs) ? (L(EU_NOTES, lang, 'EU obligations form an important external driver.')) : '';
 
   const template = L(SUMMARY_TEMPLATES, lang,

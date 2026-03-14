@@ -134,6 +134,12 @@ const SECTION_TITLES: Partial<Record<string, string>> = {
 // Rendering helpers
 // ---------------------------------------------------------------------------
 
+/** Allowed importance levels — hoisted to module scope for efficiency */
+const VALID_IMPORTANCE = new Set<string>(['critical', 'high', 'medium', 'low']);
+
+/** Allowed connection types — hoisted to module scope for efficiency */
+const VALID_CONN_TYPES = new Set<string>(['dependency', 'conflict', 'alignment', 'sequence']);
+
 /** Render a single branch or sub-branch node with its leaf items and nested sub-branches.
  * Supports nesting up to MAX_NESTING_DEPTH levels deep.
  * When `level` reaches MAX_NESTING_DEPTH, sub-branch rendering is skipped — preventing
@@ -145,7 +151,6 @@ function renderBranch(branch: MindmapBranch, level: number = 0): string {
   const labelHtml = `${escapeHtml(iconPrefix)}${escapeHtml(branch.label)}`;
 
   // Importance data attribute for CSS-driven visual weight — validated against allowed set to prevent attribute injection
-  const VALID_IMPORTANCE = new Set<string>(['critical', 'high', 'medium', 'low']);
   const importanceAttr = branch.importance && VALID_IMPORTANCE.has(branch.importance)
     ? ` data-importance="${branch.importance}"`
     : '';
@@ -177,8 +182,6 @@ function renderBranch(branch: MindmapBranch, level: number = 0): string {
 /** Render the cross-branch connections panel (pure CSS — no JS) */
 function renderConnections(connections: BranchConnection[]): string {
   if (connections.length === 0) return '';
-
-  const VALID_CONN_TYPES = new Set<string>(['dependency', 'conflict', 'alignment', 'sequence']);
 
   const items = connections.map(c => {
     const label = c.label ? escapeHtml(c.label) : `${escapeHtml(c.from)} → ${escapeHtml(c.to)}`;
