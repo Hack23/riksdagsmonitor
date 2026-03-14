@@ -120,12 +120,17 @@ function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
+/** Normalize a document ID for deduplication and comparison. */
+function normalizeDocId(id: string): string {
+  return id.replace(/\s+/g, ' ').trim().toUpperCase();
+}
+
 function countDocumentIds(html: string): Set<string> {
   const ids = new Set<string>();
   for (const pattern of DOCUMENT_ID_PATTERNS) {
     const re = new RegExp(pattern.source, pattern.flags.replace('g', '') + 'g');
     for (const m of html.matchAll(re)) {
-      ids.add(m[0]);
+      ids.add(normalizeDocId(m[0]));
     }
   }
   return ids;
@@ -179,8 +184,9 @@ function assessFactualAccuracy(
 
   // Bonus: verify cited IDs against source list — reward matches, don't penalise
   if (sourceDocIds.length > 0) {
+    const normalizedSources = sourceDocIds.map(normalizeDocId);
     const matched = [...foundIds].filter(id =>
-      sourceDocIds.some(src => src.toUpperCase().includes(id.toUpperCase()))
+      normalizedSources.some(src => src.includes(id))
     ).length;
     const matchRatio = matched / Math.max(foundIds.size, 1);
     // Add up to 20 bonus points when all cited IDs match source docs
@@ -613,18 +619,20 @@ export function injectQualityMetadata(
   if (injectJsonLd) {
     const jsonLd = JSON.stringify({
       '@context': 'https://schema.org',
-      '@type': 'QualityAssessment',
-      overallScore,
-      passesThreshold,
-      iterationCount,
-      dimensions: {
-        factualAccuracy:      dimensions.factualAccuracy.score,
-        stakeholderCoverage:  dimensions.stakeholderCoverage.score,
-        analyticalDepth:      dimensions.analyticalDepth.score,
-        editorialConsistency: dimensions.editorialConsistency.score,
-        evidenceQuality:      dimensions.evidenceQuality.score,
-        languageQuality:      dimensions.languageQuality.score,
-      },
+      '@type': 'Rating',
+      ratingValue: overallScore,
+      bestRating: 100,
+      worstRating: 0,
+      ratingExplanation: `Multi-dimensional quality assessment (${iterationCount} passes)`,
+      additionalProperty: [
+        { '@type': 'PropertyValue', name: 'passesThreshold', value: passesThreshold },
+        { '@type': 'PropertyValue', name: 'factualAccuracy', value: dimensions.factualAccuracy.score },
+        { '@type': 'PropertyValue', name: 'stakeholderCoverage', value: dimensions.stakeholderCoverage.score },
+        { '@type': 'PropertyValue', name: 'analyticalDepth', value: dimensions.analyticalDepth.score },
+        { '@type': 'PropertyValue', name: 'editorialConsistency', value: dimensions.editorialConsistency.score },
+        { '@type': 'PropertyValue', name: 'evidenceQuality', value: dimensions.evidenceQuality.score },
+        { '@type': 'PropertyValue', name: 'languageQuality', value: dimensions.languageQuality.score },
+      ],
     });
     const jsonLdTag = `  <script type="application/ld+json">\n  ${jsonLd}\n  </script>`;
     injection = `${metaTag}\n${jsonLdTag}`;

@@ -466,8 +466,8 @@ describe('injectQualityMetadata', () => {
     const assessment = assessArticleQuality(buildArticleHtml({}), 'en');
     const result = injectQualityMetadata(html, assessment, true);
     expect(result).toContain('<script type="application/ld+json">');
-    expect(result).toContain('"QualityAssessment"');
-    expect(result).toContain('"overallScore"');
+    expect(result).toContain('"Rating"');
+    expect(result).toContain('"ratingValue"');
   });
 
   it('should place the injection before </head>', () => {

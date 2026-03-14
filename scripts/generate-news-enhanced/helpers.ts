@@ -263,7 +263,7 @@ export async function writeSingleArticle(html: string, slug: string, lang: Langu
   );
   stats.qualityScores.push(qualityScore);
 
-  // Inject quality metadata (meta tag + JSON-LD) into article HTML
+  // Inject quality metadata (CSP-safe <meta> tag only; opt-in JSON-LD via injectJsonLd param)
   const finalHtml: string = qualityScore.multidimensional
     ? injectQualityMetadata(translatedHtml, qualityScore.multidimensional)
     : translatedHtml;
