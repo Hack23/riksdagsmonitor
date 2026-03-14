@@ -18,6 +18,7 @@
  */
 
 import { detectPolicyDomains } from '../data-transformers/policy-analysis.js';
+import { escapeHtml } from '../html-utils.js';
 import type { RawDocument } from '../data-transformers.js';
 import type { Language } from '../types/language.js';
 import type { SwotEntry } from '../types/article.js';
@@ -530,41 +531,146 @@ const PRIVATE_THREAT_UNCERTAINTY: Lang14 = L14(
 );
 
 // ── Strategic implications (all 14 languages) ────────────────────────────────
+// NOTE: Templates use count-only placeholders (%prop, %bet, %mot) and full
+// language-correct word forms — no suffix-based plural placeholders (%ps/%bs/%ms).
+// This avoids incorrect forms like "betänkandeer" in Swedish or
+// "proposiciones" → "proposicioness" in Spanish.
 
 const STRATEGIC_IMPL_TEMPLATES: Record<string, Lang14> = {
   legislative: L14(
-    'Based on analysis of %total document%s (%enriched enriched with full text)%topic: The legislative pipeline shows %prop government proposal%ps, %bet committee report%bs, and %mot opposition motion%ms. This distribution signals %signal%domain. Stakeholders should monitor committee deliberations and chamber voting patterns as the most reliable indicators of policy trajectory.',
-    'Baserat på analys av %total dokument (%enriched berikade med fulltext)%topic: Det lagstiftande flödet visar %prop proposition%ps, %bet betänkande%bs och %mot motion%ms. Fördelningen signalerar %signal%domain. Intressenter bör följa utskottens överläggningar och kammarens voteringsmönster.',
-    'Baseret på analyse af %total dokument%s (%enriched beriget med fuldtekst)%topic: Det lovgivningsmæssige flow viser %prop lovforslag, %bet udvalgsrapport%bs og %mot opposition%ms. Fordelingen signalerer %signal%domain.',
-    'Basert på analyse av %total dokument%s (%enriched beriket med fulltekst)%topic: Det lovgivningsmessige forløpet viser %prop stortingsproposisjon%ps, %bet komitérapport%bs og %mot motionsforslag%ms. Fordelingen signaliserer %signal%domain.',
-    'Perustuen %total asiakirjan analyysiin (%enriched rikastetussa koko tekstissä)%topic: Lainsäädäntöputki näyttää %prop hallituksen esitys%ps, %bet valiokuntamietintö%bs ja %mot kirjelmä%ms. Jakauma merkitsee %signal%domain.',
-    'Basierend auf der Analyse von %total Dokument%s (%enriched mit vollständigem Text angereichert)%topic: Die Gesetzgebungs-Pipeline zeigt %prop Regierungsvorlage%ps, %bet Ausschussbericht%bs und %mot Oppositionsantrag%ms. Diese Verteilung signalisiert %signal%domain.',
-    'Basé sur l\'analyse de %total document%s (%enriched enrichi%ss avec le texte complet)%topic: La pipeline législative montre %prop proposition%ps gouvernementale%ss, %bet rapport%bs de commission et %mot motion%ms d\'opposition. Cette distribution signale %signal%domain.',
-    'Basado en el análisis de %total documento%s (%enriched enriquecido%ss con texto completo)%topic: La actividad legislativa muestra %prop proposición%ps gubernamental%ss, %bet informe%bs de comité y %mot moción%ms de oposición. Esta distribución señala %signal%domain.',
-    'Gebaseerd op analyse van %total document%s (%enriched verrijkt met volledige tekst)%topic: De wetgevingspijplijn toont %prop overheidsvoorstel%ps, %bet commissierapport%bs en %mot oppositiemotie%ms. Deze verdeling geeft aan: %signal%domain.',
-    'استناداً إلى تحليل %total وثيقة%s (%enriched مُعززة بالنص الكامل)%topic: يُظهر المسار التشريعي %prop مقترح حكومي، %bet تقرير لجنة و%mot اقتراح معارضة. يُشير هذا التوزيع إلى %signal%domain.',
-    'בהתבסס על ניתוח %total מסמך%s (%enriched מועשר בטקסט מלא)%topic: הצינור החקיקתי מראה %prop הצעת חוק ממשלתית, %bet דוח ועדה ו-%mot הצעת חוק אופוזיציה. ההתפלגות מסמנת %signal%domain.',
+    'Based on analysis of %total documents (%enriched enriched with full text)%topic: The legislative pipeline shows %prop government proposals, %bet committee reports, and %mot opposition motions. This distribution signals %signal%domain. Stakeholders should monitor committee deliberations and chamber voting patterns as the most reliable indicators of policy trajectory.',
+    'Baserat på analys av %total dokument (%enriched berikade med fulltext)%topic: Det lagstiftande flödet visar %prop propositioner, %bet betänkanden och %mot motioner. Fördelningen signalerar %signal%domain. Intressenter bör följa utskottens överläggningar och kammarens voteringsmönster.',
+    'Baseret på analyse af %total dokumenter (%enriched beriget med fuldtekst)%topic: Det lovgivningsmæssige flow viser %prop lovforslag, %bet udvalgsrapporter og %mot oppositionsforslag. Fordelingen signalerer %signal%domain.',
+    'Basert på analyse av %total dokumenter (%enriched beriket med fulltekst)%topic: Det lovgivningsmessige forløpet viser %prop stortingsproposisjoner, %bet komitérapporter og %mot motionsforslag. Fordelingen signaliserer %signal%domain.',
+    'Perustuen %total asiakirjan analyysiin (%enriched rikastetussa koko tekstissä)%topic: Lainsäädäntöputki näyttää %prop hallituksen esitystä, %bet valiokuntamietintöä ja %mot kirjelmää. Jakauma merkitsee %signal%domain.',
+    'Basierend auf der Analyse von %total Dokumenten (%enriched mit vollständigem Text angereichert)%topic: Die Gesetzgebungs-Pipeline zeigt %prop Regierungsvorlagen, %bet Ausschussberichte und %mot Oppositionsanträge. Diese Verteilung signalisiert %signal%domain.',
+    'Basé sur l\'analyse de %total documents (%enriched enrichis avec le texte complet)%topic: La pipeline législative montre %prop propositions gouvernementales, %bet rapports de commission et %mot motions d\'opposition. Cette distribution signale %signal%domain.',
+    'Basado en el análisis de %total documentos (%enriched enriquecidos con texto completo)%topic: La actividad legislativa muestra %prop proposiciones gubernamentales, %bet informes de comité y %mot mociones de oposición. Esta distribución señala %signal%domain.',
+    'Gebaseerd op analyse van %total documenten (%enriched verrijkt met volledige tekst)%topic: De wetgevingspijplijn toont %prop overheidsvoorstellen, %bet commissierapporten en %mot oppositiemoties. Deze verdeling geeft aan: %signal%domain.',
+    'استناداً إلى تحليل %total وثيقة (%enriched مُعززة بالنص الكامل)%topic: يُظهر المسار التشريعي %prop مقترحات حكومية، %bet تقارير لجان و%mot اقتراحات معارضة. يُشير هذا التوزيع إلى %signal%domain.',
+    'בהתבסס על ניתוח %total מסמכים (%enriched מועשרים בטקסט מלא)%topic: הצינור החקיקתי מראה %prop הצעות חוק ממשלתיות, %bet דוחות ועדה ו-%mot הצעות חוק אופוזיציה. ההתפלגות מסמנת %signal%domain.',
     '%total件の文書（%enriched件全文で充実）の分析に基づき%topic、立法パイプラインは%prop件の政府提案、%bet件の委員会報告、%mot件の野党動議を示しています。この分布は%domain%signalを示します。',
     '%total개 문서(%enriched개 전문 보강) 분석 기반%topic: 입법 파이프라인은 %prop개 정부 제안, %bet개 위원회 보고서, %mot개 야당 동의를 보여줍니다. 이 분포는 %domain%signal을 나타냅니다.',
     '基于对%total份文件（%enriched份全文丰富）的分析%topic：立法管道显示%prop项政府提案、%bet份委员会报告和%mot项反对派动议。这一分布表明%domain%signal。',
   ),
   nonLegislative: L14(
-    'Based on analysis of %total document%s (%enriched enriched with full text)%topic: This analysis examines %typeDesc%domain. %signalText Stakeholders should track whether formal propositions or committee referrals follow.',
+    'Based on analysis of %total documents (%enriched enriched with full text)%topic: This analysis examines %typeDesc%domain. %signalText Stakeholders should track whether formal propositions or committee referrals follow.',
     'Baserat på analys av %total dokument (%enriched berikade med fulltext)%topic: Denna analys granskar %typeDesc%domain. %signalText Intressenter bör bevaka om formella propositioner eller utskottsremisser följer.',
-    'Baseret på analyse af %total dokument%s (%enriched beriget med fuldtekst)%topic: Denne analyse undersøger %typeDesc%domain. %signalText',
-    'Basert på analyse av %total dokument%s (%enriched beriket med fulltekst)%topic: Denne analysen undersøker %typeDesc%domain. %signalText',
+    'Baseret på analyse af %total dokumenter (%enriched beriget med fuldtekst)%topic: Denne analyse undersøger %typeDesc%domain. %signalText',
+    'Basert på analyse av %total dokumenter (%enriched beriket med fulltekst)%topic: Denne analysen undersøker %typeDesc%domain. %signalText',
     'Perustuen %total asiakirjan analyysiin (%enriched rikastetussa koko tekstissä)%topic: Tämä analyysi tarkastelee %typeDesc%domain. %signalText',
-    'Basierend auf der Analyse von %total Dokument%s (%enriched mit vollständigem Text angereichert)%topic: Diese Analyse untersucht %typeDesc%domain. %signalText',
-    'Basé sur l\'analyse de %total document%s (%enriched enrichi%ss avec le texte complet)%topic: Cette analyse examine %typeDesc%domain. %signalText',
-    'Basado en el análisis de %total documento%s (%enriched enriquecido%ss con texto completo)%topic: Este análisis examina %typeDesc%domain. %signalText',
-    'Gebaseerd op analyse van %total document%s (%enriched verrijkt met volledige tekst)%topic: Deze analyse onderzoekt %typeDesc%domain. %signalText',
-    'استناداً إلى تحليل %total وثيقة%s (%enriched مُعززة بالنص الكامل)%topic: تحلل هذه الدراسة %typeDesc%domain. %signalText',
-    'בהתבסס על ניתוח %total מסמך%s (%enriched מועשר בטקסט מלא)%topic: ניתוח זה בוחן %typeDesc%domain. %signalText',
+    'Basierend auf der Analyse von %total Dokumenten (%enriched mit vollständigem Text angereichert)%topic: Diese Analyse untersucht %typeDesc%domain. %signalText',
+    'Basé sur l\'analyse de %total documents (%enriched enrichis avec le texte complet)%topic: Cette analyse examine %typeDesc%domain. %signalText',
+    'Basado en el análisis de %total documentos (%enriched enriquecidos con texto completo)%topic: Este análisis examina %typeDesc%domain. %signalText',
+    'Gebaseerd op analyse van %total documenten (%enriched verrijkt met volledige tekst)%topic: Deze analyse onderzoekt %typeDesc%domain. %signalText',
+    'استناداً إلى تحليل %total وثيقة (%enriched مُعززة بالنص الكامل)%topic: تحلل هذه الدراسة %typeDesc%domain. %signalText',
+    'בהתבסס על ניתוח %total מסמכים (%enriched מועשרים בטקסט מלא)%topic: ניתוח זה בוחן %typeDesc%domain. %signalText',
     '%total件の文書（%enriched件全文で充実）の分析に基づき%topic、この分析は%domain%typeDescを検討します。%signalText',
     '%total개 문서(%enriched개 전문 보강) 분석 기반%topic: 이 분석은 %domain%typeDesc를 검토합니다. %signalText',
     '基于对%total份文件（%enriched份全文丰富）的分析%topic：本分析研究%domain%typeDesc。%signalText',
   ),
 };
+
+// ── Localised signal phrases for strategic implications ──────────────────────
+
+const SIGNAL_GOVT_AGENDA: Lang14 = L14(
+  'active government agenda-setting',
+  'aktiv regeringsagendasättning',
+  'aktiv regeringsdagsordenssætning',
+  'aktiv regjeringsagendaoppsetting',
+  'aktiivista hallituksen agendan asettamista',
+  'aktive Regierungsagenda',
+  'établissement actif de l\'agenda gouvernemental',
+  'agenda gubernamental activa',
+  'actieve regeringsagenda',
+  'تحديد أجندة حكومية نشطة',
+  'קביעת סדר יום ממשלתי פעיל',
+  '積極的な政府アジェンダの設定',
+  '적극적인 정부 의제 설정',
+  '积极的政府议程设定',
+);
+
+const SIGNAL_PARL_SCRUTINY: Lang14 = L14(
+  'strong parliamentary scrutiny',
+  'stark parlamentarisk granskning',
+  'stærk parlamentarisk kontrol',
+  'sterk parlamentarisk kontroll',
+  'vahvaa parlamentaarista valvontaa',
+  'starke parlamentarische Kontrolle',
+  'contrôle parlementaire fort',
+  'fuerte escrutinio parlamentario',
+  'sterk parlementair toezicht',
+  'رقابة برلمانية قوية',
+  'פיקוח פרלמנטרי חזק',
+  '強力な議会審査',
+  '강력한 의회 심사',
+  '强有力的议会审查',
+);
+
+const SIGNAL_BALANCED: Lang14 = L14(
+  'balanced legislative activity',
+  'balanserad lagstiftningsverksamhet',
+  'afbalanceret lovgivningsaktivitet',
+  'balansert lovgivningsaktivitet',
+  'tasapainoista lainsäädäntötoimintaa',
+  'ausgewogene Gesetzgebungstätigkeit',
+  'activité législative équilibrée',
+  'actividad legislativa equilibrada',
+  'evenwichtige wetgevingsactiviteit',
+  'نشاط تشريعي متوازن',
+  'פעילות חקיקה מאוזנת',
+  '均衡な立法活動',
+  '균형 잡힌 입법 활동',
+  '平衡的立法活动',
+);
+
+const SIGNAL_PRESS: Lang14 = L14(
+  'Government press communications signal policy priorities and upcoming legislative action.',
+  'Regeringens presskommunikation signalerar policyprioriteter och kommande lagstiftningsåtgärder.',
+  'Regeringens pressekommunikation signalerer politiske prioriteter og kommende lovgivningstiltag.',
+  'Regjeringens pressekommunikasjon signaliserer politiske prioriteringer og kommende lovgivningstiltak.',
+  'Hallituksen lehdistöviestintä viestii politiikan prioriteeteista ja tulevasta lainsäädännöstä.',
+  'Regierungspressekommunikation signalisiert politische Prioritäten und bevorstehende Gesetzgebung.',
+  'Les communications de presse du gouvernement signalent les priorités politiques et les actions législatives à venir.',
+  'Las comunicaciones de prensa del gobierno señalan prioridades políticas y acciones legislativas próximas.',
+  'Overheidspersberichten signaleren beleidsprioriteiten en aanstaande wetgevingsactie.',
+  'بيانات الحكومة الصحفية تشير إلى أولويات السياسة والإجراءات التشريعية القادمة.',
+  'תקשורת עיתונות ממשלתית מסמנת עדיפויות מדיניות ופעולות חקיקה קרובות.',
+  '政府の広報は政策の優先事項と今後の法案活動を示唆しています。',
+  '정부 언론 커뮤니케이션이 정책 우선순위와 향후 입법 활동을 알립니다.',
+  '政府新闻通信表明政策优先事项和即将进行的立法行动。',
+);
+
+const SIGNAL_EXTERNAL: Lang14 = L14(
+  'External references illuminate the policy landscape.',
+  'Externa referenser belyser det politiska landskapet.',
+  'Eksterne referencer belyser det politiske landskab.',
+  'Eksterne referanser belyser det politiske landskapet.',
+  'Ulkoiset viittaukset valaisevat politiikan maisemaa.',
+  'Externe Referenzen erhellen die politische Landschaft.',
+  'Les références externes éclairent le paysage politique.',
+  'Las referencias externas iluminan el panorama político.',
+  'Externe referenties werpen licht op het politieke landschap.',
+  'المراجع الخارجية تسلط الضوء على المشهد السياسي.',
+  'הפניות חיצוניות מאירות את הנוף הפוליטי.',
+  '外部参照が政策環境を明らかにします。',
+  '외부 참조가 정책 환경을 조명합니다.',
+  '外部参考资料阐明了政策格局。',
+);
+
+// ── Localised non-legislative type descriptions ──────────────────────────────
+
+const TYPE_DESC_PRESS: Lang14 = L14(
+  'press releases', 'pressmeddelanden', 'pressemeddelelser', 'pressemeldinger',
+  'lehdistötiedotteita', 'Pressemitteilungen', 'communiqués de presse', 'comunicados de prensa',
+  'persberichten', 'بيانات صحفية', 'הודעות לעיתונות', 'プレスリリース', '보도자료', '新闻稿',
+);
+
+const TYPE_DESC_EXTERNAL: Lang14 = L14(
+  'external references', 'externa referenser', 'eksterne referencer', 'eksterne referanser',
+  'ulkoisia viittauksia', 'externe Referenzen', 'références externes', 'referencias externas',
+  'externe referenties', 'مراجع خارجية', 'הפניות חיצוניות', '外部参照', '외부 참조', '外部参考',
+);
 
 // ── Key takeaway templates ────────────────────────────────────────────────────
 
@@ -764,7 +870,7 @@ export class AIAnalysisPipeline {
     const documentAnalyses = this.analyzeDocumentsDeep(classified, focusTopic, lang);
 
     // Pass 3: cross-document synthesis
-    const synthesis = this.synthesizeAcrossDocuments(
+    let synthesis = this.synthesizeAcrossDocuments(
       classified, documentAnalyses, focusTopic, lang,
     );
 
@@ -780,20 +886,18 @@ export class AIAnalysisPipeline {
     const keyTakeaways = this.buildKeyTakeaways(classified, focusTopic, lang);
 
     // Pass 4 (when iterations >= 3): QA + refinement
-    // The refined score is blended with the original at 50% weight (REFINEMENT_WEIGHT)
-    // so that minor synthesis improvements are credited without over-rewarding.
+    // When quality is below threshold, re-run synthesis and replace the original.
+    // The score is blended at 50% weight so minor improvements are credited.
     const REFINEMENT_WEIGHT = 0.5;
     let qualityScore = this.scoreAnalysis(documentAnalyses, synthesis, dynamicSwotEntries);
     if (this.iterations >= 3 && qualityScore < this.qualityThreshold) {
-      // Re-run synthesis with extra cross-document pass to improve score
+      // Re-run synthesis and replace original when below quality threshold
       const refinedSynthesis = this.synthesizeAcrossDocuments(
         classified, documentAnalyses, focusTopic, lang,
       );
-      qualityScore = Math.min(
-        100,
-        qualityScore
-          + this.scoreAnalysis(documentAnalyses, refinedSynthesis, dynamicSwotEntries) * REFINEMENT_WEIGHT,
-      );
+      const refinedScore = this.scoreAnalysis(documentAnalyses, refinedSynthesis, dynamicSwotEntries);
+      qualityScore = Math.min(100, qualityScore + refinedScore * REFINEMENT_WEIGHT);
+      synthesis = refinedSynthesis;
     }
 
     return {
@@ -1177,6 +1281,7 @@ export class AIAnalysisPipeline {
     focusTopic: string | null,
     lang: Language,
   ): string {
+    const esc = escapeHtml;
     const topic = focusTopic ?? classified.allDomains[0] ?? '';
     const { propDocs, betDocs, motDocs, pressmDocs, extDocs, enrichedCount, allDomains } = classified;
     const total = propDocs.length + betDocs.length + motDocs.length
@@ -1184,51 +1289,45 @@ export class AIAnalysisPipeline {
       + classified.skrDocs.length + classified.euDocs.length + classified.otherDocs.length;
     const legislativeCount = propDocs.length + betDocs.length + motDocs.length;
     const isLegislative = legislativeCount > 0;
-    const domainPhrase = allDomains.slice(0, 3).join(', ');
-    const topicInsert = topic ? ` (${topic})` : '';
+    const domainPhrase = allDomains.slice(0, 3).map(d => esc(d)).join(', ');
+    const topicInsert = topic ? ` (${esc(topic)})` : '';
     const domainInsert = domainPhrase ? ` — ${domainPhrase}` : '';
 
     if (isLegislative) {
-      const signalKey = propDocs.length > betDocs.length
-        ? 'active government agenda-setting'
+      // Use fully localized signal phrase
+      const signalPhrase = propDocs.length > betDocs.length
+        ? pickLang(SIGNAL_GOVT_AGENDA, lang)
         : betDocs.length > propDocs.length
-          ? 'strong parliamentary scrutiny'
-          : 'balanced legislative activity';
+          ? pickLang(SIGNAL_PARL_SCRUTINY, lang)
+          : pickLang(SIGNAL_BALANCED, lang);
       const template = pickLang(STRATEGIC_IMPL_TEMPLATES.legislative, lang);
       return `<p>${interp(template, {
         total,
-        s: plural(total, lang),
         enriched: enrichedCount,
         topic: topicInsert,
         prop: propDocs.length,
-        ps: plural(propDocs.length, lang),
         bet: betDocs.length,
-        bs: plural(betDocs.length, lang),
         mot: motDocs.length,
-        ms: plural(motDocs.length, lang),
-        signal: signalKey,
+        signal: esc(signalPhrase),
         domain: domainInsert,
-        ss: plural(enrichedCount, lang),
       })}</p>`;
     }
 
-    // Non-legislative documents
-    const typeDesc = pressmDocs.length > 0
-      ? `${pressmDocs.length} press release${pressmDocs.length !== 1 ? 's' : ''}`
-      : `${extDocs.length} external reference${extDocs.length !== 1 ? 's' : ''}`;
+    // Non-legislative documents — use localized description and signal text
+    const typeDesc = esc(pressmDocs.length > 0
+      ? `${pressmDocs.length} ${pickLang(TYPE_DESC_PRESS, lang)}`
+      : `${extDocs.length} ${pickLang(TYPE_DESC_EXTERNAL, lang)}`);
     const signalText = pressmDocs.length > 0
-      ? 'Government press communications signal policy priorities and upcoming legislative action.'
-      : 'External references illuminate the policy landscape.';
+      ? pickLang(SIGNAL_PRESS, lang)
+      : pickLang(SIGNAL_EXTERNAL, lang);
     const template = pickLang(STRATEGIC_IMPL_TEMPLATES.nonLegislative, lang);
     return `<p>${interp(template, {
       total,
-      s: plural(total, lang),
       enriched: enrichedCount,
       topic: topicInsert,
       typeDesc,
       domain: domainInsert,
-      signalText,
-      ss: plural(enrichedCount, lang),
+      signalText: esc(signalText),
     })}</p>`;
   }
 

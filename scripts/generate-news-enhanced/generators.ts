@@ -815,7 +815,9 @@ function generateDeepInspectionContent(
   const stratHeading = deepLabel('strategicImplications', lang);
   html += `\n<section class="strategic-implications" aria-label="${esc(stratHeading)}">\n`;
   html += `  <h2>${esc(stratHeading)}</h2>\n`;
-  // Use AI-generated strategic implications when available (richer than template version)
+  // Use AI-generated strategic implications when available (richer than template version).
+  // Safe to inject directly: buildStrategicImplications() escapes all dynamic values
+  // (topic, domain, signal) at construction time via escapeHtml().
   const strategicImplHtml = aiResult?.strategicImplications
     ?? buildStrategicImplications(docs, topic, lang);
   html += `  ${strategicImplHtml}\n`;
@@ -1684,7 +1686,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
-      // Run multi-iteration AI analysis pipeline — cache result across languages
+      // Run multi-iteration AI analysis pipeline — cache result per language
       const cacheKey = sharedAnalysisCache.generateKey(enrichedDocs, sanitizedTopic, analysisIterations, lang);
       let aiResult = sharedAnalysisCache.get(cacheKey);
       if (!aiResult) {

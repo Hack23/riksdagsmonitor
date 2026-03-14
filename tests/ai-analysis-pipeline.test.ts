@@ -204,6 +204,20 @@ describe('AIAnalysisPipeline', () => {
       expect(result.strategicImplications.trim()).toMatch(/^<p>/);
       expect(result.strategicImplications).toContain('</p>');
     });
+
+    it('escapes HTML-special characters in focus topic to prevent XSS', () => {
+      const pipeline = new AIAnalysisPipeline();
+      const result = pipeline.analyze([PROP], '<img onerror=alert(1)>', 'en');
+      expect(result.strategicImplications).not.toContain('<img');
+      expect(result.strategicImplications).toContain('&lt;img');
+    });
+
+    it('produces localized signal text for Swedish (not English)', () => {
+      const pipeline = new AIAnalysisPipeline();
+      const result = pipeline.analyze([PROP, BET, MOT], null, 'sv');
+      // Swedish template should not contain "active government agenda-setting" (English)
+      expect(result.strategicImplications).not.toContain('active government');
+    });
   });
 
   // ── Multi-language support ─────────────────────────────────────────────────
@@ -331,14 +345,17 @@ describe('AnalysisCache', () => {
   });
 
   it('expires entries after TTL', () => {
-    const fakeResult = { iterations: 1 } as Parameters<AnalysisCache['set']>[1];
-    // Store with 1 ms TTL
-    cache.set('key-ttl', fakeResult, 1);
-    // Fast-forward time by 10 ms
     vi.useFakeTimers();
-    vi.advanceTimersByTime(10);
-    expect(cache.get('key-ttl')).toBeUndefined();
-    vi.useRealTimers();
+    try {
+      const fakeResult = { iterations: 1 } as Parameters<AnalysisCache['set']>[1];
+      // Store with 1 ms TTL (createdAt uses mocked Date.now)
+      cache.set('key-ttl', fakeResult, 1);
+      // Fast-forward time by 10 ms so TTL is exceeded
+      vi.advanceTimersByTime(10);
+      expect(cache.get('key-ttl')).toBeUndefined();
+    } finally {
+      vi.useRealTimers();
+    }
   });
 
   it('generateKey returns a non-empty deterministic string', () => {

@@ -61,10 +61,11 @@ export class AnalysisCache {
     iterations: number,
     lang: Language,
   ): string {
-    const docPart = docs
+    // Use all doc IDs (order-independent via sort) plus count to avoid collisions
+    const docIds = docs
       .map(d => d.dok_id ?? d.titel ?? d.title ?? '')
-      .slice(0, 20)
-      .join(',');
+      .sort();
+    const docPart = `${docIds.length}:${docIds.join(',')}`;
     const raw = `${docPart}|${topic ?? ''}|${iterations}|${lang}`;
     return quickHash(raw);
   }

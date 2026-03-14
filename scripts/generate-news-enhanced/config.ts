@@ -71,7 +71,8 @@ let parsedIterations: number = DEFAULT_ITERATIONS;
 if (iterationsArg) {
   const rawIter: string = parseArgValue(iterationsArg);
   const numIter: number = rawIter === '' ? NaN : Number(rawIter);
-  if (Number.isFinite(numIter) && numIter >= 1) {
+  if (Number.isFinite(numIter)) {
+    // Clamp to 1–10; 0/negative values map to 1 rather than falling back to default
     parsedIterations = Math.min(10, Math.max(1, Math.floor(numIter)));
   } else {
     console.warn(`Invalid --iterations value "${rawIter}", falling back to default ${DEFAULT_ITERATIONS}.`);
