@@ -1084,7 +1084,7 @@ export class AIAnalysisPipeline {
     topicStr: string,
     _lang: Language,
   ): string {
-    // Use enriched content snippet when available (fullText || fullContent per codebase convention)
+    // Use enriched content snippet when available (fullText ?? fullContent per codebase convention)
     const contentSnippet = (doc.fullText ?? doc.fullContent ?? doc.summary ?? doc.notis ?? '');
     if (contentSnippet && contentSnippet.length > 50) {
       return contentSnippet.slice(0, 200).replace(/\s+/g, ' ');
