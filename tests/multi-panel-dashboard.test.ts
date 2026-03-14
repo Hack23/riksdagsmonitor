@@ -10,7 +10,6 @@ import type {
   DashboardPanel,
   HeatMapConfig,
   GaugeConfig,
-  DashboardChartConfig,
   AIInsight,
 } from '../scripts/types/article.js';
 
@@ -149,13 +148,15 @@ describe('generateMultiPanelDashboardSection', () => {
     expect(section.html).not.toContain('<script>');
   });
 
-  it('renders panel interpretation paragraph', () => {
+  it('renders panel interpretation paragraph with localised label', () => {
     const data = makeDashboard({
       panels: [makeChartPanel({ interpretation: 'Coalition under stress.' })],
     });
     const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
     expect(section.html).toContain('Coalition under stress.');
     expect(section.html).toContain('class="panel-interpretation"');
+    expect(section.html).toContain('class="panel-interpretation-label sr-only"');
+    expect(section.html).toContain('Analysis');
   });
 
   it('renders stakeholder view with label', () => {
@@ -483,5 +484,118 @@ describe('generateMultiPanelDashboardSection', () => {
     expect(section.html).not.toContain('<script>');
     expect(section.html).not.toContain('DOMContentLoaded');
     expect(section.html).not.toContain('new Chart(');
+  });
+
+  // ---------------------------------------------------------------------------
+  // Review feedback: NaN / Infinity guards
+  // ---------------------------------------------------------------------------
+
+  it('gauge treats NaN value as 0', () => {
+    const data = makeDashboard({
+      panels: [{ id: 'g', title: 'G', gauge: makeGaugeConfig({ value: NaN }) }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('--gauge-pct:0.000');
+    expect(section.html).toContain('0%');
+    expect(section.html).not.toContain('NaN');
+  });
+
+  it('gauge treats Infinity value as 0 (clamped)', () => {
+    const data = makeDashboard({
+      panels: [{ id: 'g', title: 'G', gauge: makeGaugeConfig({ value: Infinity }) }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).not.toContain('NaN');
+    expect(section.html).not.toContain('Infinity');
+    expect(section.html).toContain('--gauge-pct:0.000');
+  });
+
+  it('skips confidence block when confidenceLevel is NaN', () => {
+    const data = makeDashboard({
+      panels: [makeChartPanel({ confidenceLevel: NaN })],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).not.toContain('role="meter"');
+    expect(section.html).not.toContain('NaN');
+  });
+
+  it('skips confidence block when confidenceLevel is Infinity', () => {
+    const data = makeDashboard({
+      panels: [makeChartPanel({ confidenceLevel: Infinity })],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).not.toContain('role="meter"');
+    expect(section.html).not.toContain('Infinity');
+  });
+
+  // ---------------------------------------------------------------------------
+  // Review feedback: chart ID uniqueness across panels
+  // ---------------------------------------------------------------------------
+
+  it('deduplicates chart IDs across panels by prefixing with panelId', () => {
+    const data = makeDashboard({
+      panels: [
+        makeChartPanel({ id: 'panel-a', chart: { id: 'my-chart', type: 'bar', title: 'A', labels: ['X'], datasets: [{ label: 'D', data: [1] }] } }),
+        makeChartPanel({ id: 'panel-b', chart: { id: 'my-chart', type: 'bar', title: 'B', labels: ['Y'], datasets: [{ label: 'D', data: [2] }] } }),
+      ],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    // Both charts should have unique IDs (prefixed with panel id)
+    expect(section.html).toContain('id="panel-a-my-chart"');
+    expect(section.html).toContain('id="panel-b-my-chart"');
+  });
+
+  // ---------------------------------------------------------------------------
+  // Review feedback: mutually exclusive visual types
+  // ---------------------------------------------------------------------------
+
+  it('throws when a panel defines both chart and heatMap', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'bad',
+        title: 'Bad Panel',
+        chart: { id: 'c', type: 'bar', title: 'C', labels: ['X'], datasets: [{ label: 'D', data: [1] }] },
+        heatMap: makeHeatMapConfig(),
+      }],
+    });
+    expect(() => generateMultiPanelDashboardSection({ data, lang: 'en' })).toThrow(/Only one visual type/);
+  });
+
+  it('throws when a panel defines both chart and gauge', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'bad',
+        title: 'Bad Panel',
+        chart: { id: 'c', type: 'bar', title: 'C', labels: ['X'], datasets: [{ label: 'D', data: [1] }] },
+        gauge: makeGaugeConfig(),
+      }],
+    });
+    expect(() => generateMultiPanelDashboardSection({ data, lang: 'en' })).toThrow(/Only one visual type/);
+  });
+
+  it('throws when a panel defines all three visual types', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'bad',
+        title: 'Bad Panel',
+        chart: { id: 'c', type: 'bar', title: 'C', labels: ['X'], datasets: [{ label: 'D', data: [1] }] },
+        heatMap: makeHeatMapConfig(),
+        gauge: makeGaugeConfig(),
+      }],
+    });
+    expect(() => generateMultiPanelDashboardSection({ data, lang: 'en' })).toThrow(/Only one visual type/);
+  });
+
+  // ---------------------------------------------------------------------------
+  // Review feedback: dashboardInterpretation label used in markup
+  // ---------------------------------------------------------------------------
+
+  it('uses dashboardInterpretation label in Swedish', () => {
+    const data = makeDashboard({
+      panels: [makeChartPanel({ interpretation: 'Test.' })],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'sv' });
+    expect(section.html).toContain('Analys');
+    expect(section.html).toContain('class="panel-interpretation-label sr-only"');
   });
 });

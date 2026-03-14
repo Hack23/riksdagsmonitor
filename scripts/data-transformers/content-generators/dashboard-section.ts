@@ -327,7 +327,8 @@ ${legend}
  */
 function renderGauge(config: GaugeConfig): string {
   const safeId = config.id.replace(/[^a-zA-Z0-9_-]/g, '') || 'gauge-0';
-  const clamped = Math.min(100, Math.max(0, config.value));
+  const safeValue = Number.isFinite(config.value) ? config.value : 0;
+  const clamped = Math.min(100, Math.max(0, safeValue));
   const pct = clamped / 100;
   const minLabel = config.minLabel ?? '0';
   const maxLabel = config.maxLabel ?? '100';
@@ -360,12 +361,25 @@ function sanitisePanelId(rawId: string, index: number): string {
 /**
  * Render a single dashboard panel including optional chart, heat map, gauge,
  * AI interpretation, confidence indicator, and accessible table fallback.
+ *
+ * Only one visual type may be set per panel (chart, heatMap, or gauge).
+ * If more than one is provided, an error is thrown to prevent ambiguous output.
  */
 function renderPanel(
   panel: DashboardPanel,
   index: number,
   lbl: (key: string) => string,
+  usedChartIds: Set<string>,
 ): string {
+  // Runtime validation: enforce mutual exclusivity of visual types
+  const visualCount = [panel.chart, panel.heatMap, panel.gauge].filter(Boolean).length;
+  if (visualCount > 1) {
+    throw new Error(
+      `DashboardPanel "${panel.id}" defines ${visualCount} visual types (chart/heatMap/gauge). ` +
+      'Only one visual type is allowed per panel.',
+    );
+  }
+
   const panelId = sanitisePanelId(panel.id, index);
   const headingId = `${panelId}-heading`;
 
@@ -373,7 +387,15 @@ function renderPanel(
   let visualBlock = '';
   if (panel.chart) {
     const config = serialiseChartConfig(panel.chart);
-    const chartId = panel.chart.id.replace(/[^a-zA-Z0-9_-]/g, '') || `${panelId}-chart`;
+    // Deduplicate chart IDs: prefix with panelId and track across the dashboard
+    let baseChartId = panel.chart.id.replace(/[^a-zA-Z0-9_-]/g, '') || `${panelId}-chart`;
+    baseChartId = `${panelId}-${baseChartId}`;
+    let chartId = baseChartId;
+    let counter = 1;
+    while (usedChartIds.has(chartId)) {
+      chartId = `${baseChartId}-${counter++}`;
+    }
+    usedChartIds.add(chartId);
     const ariaLabel = panel.chart.title?.trim() || chartId;
     visualBlock = `    <div class="panel-chart-wrapper">
       <canvas id="${escapeHtml(chartId)}" role="img" aria-label="${escapeHtml(ariaLabel)}" data-chart-config="${escapeHtml(config)}"></canvas>
@@ -384,9 +406,12 @@ function renderPanel(
     visualBlock = `    <div class="panel-gauge-wrapper">\n${renderGauge(panel.gauge)}\n    </div>`;
   }
 
-  // AI interpretation
+  // AI interpretation — use localised label as a visually-hidden heading
   const interpretationBlock = panel.interpretation?.trim()
-    ? `    <p class="panel-interpretation">${escapeHtml(panel.interpretation.trim())}</p>`
+    ? `    <div class="panel-interpretation-wrapper">
+      <p class="panel-interpretation-label sr-only">${escapeHtml(lbl('dashboardInterpretation'))}</p>
+      <p class="panel-interpretation">${escapeHtml(panel.interpretation.trim())}</p>
+    </div>`
     : '';
 
   // Stakeholder view badge
@@ -394,9 +419,9 @@ function renderPanel(
     ? `    <p class="panel-stakeholder"><span class="panel-stakeholder-label">${escapeHtml(lbl('dashboardStakeholder'))}: </span>${escapeHtml(panel.stakeholderView.trim())}</p>`
     : '';
 
-  // Confidence indicator
+  // Confidence indicator — guard NaN/Infinity values
   let confidenceBlock = '';
-  if (panel.confidenceLevel != null) {
+  if (panel.confidenceLevel != null && Number.isFinite(panel.confidenceLevel)) {
     const pct = Math.min(100, Math.max(0, panel.confidenceLevel));
     confidenceBlock = `    <div class="panel-confidence" aria-label="${escapeHtml(lbl('dashboardConfidence'))}: ${pct}%">
       <span class="panel-confidence-label">${escapeHtml(lbl('dashboardConfidence'))}</span>
@@ -488,9 +513,10 @@ export function generateMultiPanelDashboardSection(
     ? `  <p class="multi-panel-summary">${escapeHtml(data.summary.trim())}</p>\n`
     : '';
 
-  // Panels
+  // Panels — shared chart ID tracker ensures DOM id uniqueness across all panels
+  const usedChartIds = new Set<string>();
   const panelBlocks = data.panels
-    .map((panel, idx) => renderPanel(panel, idx, lbl))
+    .map((panel, idx) => renderPanel(panel, idx, lbl, usedChartIds))
     .join('\n');
 
   const panelsGrid = `  <div class="multi-panel-grid ${escapeHtml(layoutClass)}">\n${panelBlocks}\n  </div>`;
