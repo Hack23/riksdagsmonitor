@@ -180,6 +180,13 @@ export interface DocumentAnalysis {
 
 const _analysisCache = new Map<string, DocumentAnalysis>();
 
+/** Minimum relevance score assigned to any detected policy domain. */
+const MIN_DOMAIN_RELEVANCE = 30;
+/** Maximum (baseline) relevance score for the first detected domain. */
+const MAX_DOMAIN_RELEVANCE = 100;
+/** Per-rank decay applied to successive domain relevance scores. */
+const DOMAIN_RELEVANCE_DECAY = 15;
+
 /** Clear the in-process analysis cache (useful for testing). */
 export function clearAnalysisCache(): void {
   _analysisCache.clear();
@@ -194,6 +201,15 @@ function cacheKey(doc: RawDocument): string {
   const date = doc.datum ?? '';
   const contentLen = (doc.fullText?.length ?? 0) + (doc.summary?.length ?? 0);
   return `title:${title}-${date}-${contentLen}`;
+}
+
+/**
+ * Derive a stable, collision-resistant document identifier using the same
+ * fallback strategy as `cacheKey()` so that anonymous documents don't all
+ * collapse to the string `'unknown'`.
+ */
+function stableDocumentId(doc: RawDocument): string {
+  return cacheKey(doc);
 }
 
 // ---------------------------------------------------------------------------
@@ -518,10 +534,10 @@ function buildStakeholderImpact(
 // ---------------------------------------------------------------------------
 
 /** Build PESTLE analysis dimensions from a document. */
-export function buildPestleAnalysis(doc: RawDocument, _lang?: Language | string): PESTLEAnalysis {
+export function buildPestleAnalysis(doc: RawDocument, lang?: Language | string): PESTLEAnalysis {
   const docType = doc.doktyp ?? doc.documentType ?? '';
   const title = doc.titel ?? doc.title ?? doc.rubrik ?? '';
-  const domains = detectPolicyDomains(doc);
+  const domains = detectPolicyDomains(doc, lang);
 
   const political: string[] = [
     docType === 'prop'
@@ -700,7 +716,7 @@ export function buildRiskAssessment(doc: RawDocument, ciaContext?: CIAContext): 
     severity: politicalSeverity,
     description: docType === 'prop'
       ? 'Risk of parliamentary defeat if coalition unity falters.'
-      : 'Limited likelihood of parliamentary success given opposition majority dynamics.',
+      : 'Limited likelihood of parliamentary success given prevailing government majority dynamics.',
     mitigationOptions: ['Cross-party dialogue', 'Committee amendments to broaden support', 'Public consultation to build legitimacy'],
   });
 
@@ -752,6 +768,17 @@ export function buildRiskAssessment(doc: RawDocument, ciaContext?: CIAContext): 
 // Executive summary builder
 // ---------------------------------------------------------------------------
 
+/** Map raw Riksdag doktyp codes to the normalized type strings expected by generateEnhancedSummary(). */
+function normalizeDocType(doktyp: string): string {
+  switch (doktyp) {
+    case 'prop': return 'proposition';
+    case 'mot': return 'motion';
+    case 'bet': return 'report';
+    case 'skr': return 'communication';
+    default: return doktyp;
+  }
+}
+
 /** Generate a structured executive summary for a document. */
 export function generateExecutiveSummary(doc: RawDocument, lang: Language | string): string {
   const title = doc.titel ?? doc.title ?? doc.rubrik ?? 'Document';
@@ -769,8 +796,11 @@ export function generateExecutiveSummary(doc: RawDocument, lang: Language | stri
   const para1 = `This ${typeLabel}${authorPart} — ${escapeHtml(title)} — is a parliamentary document with an influence score of ${influenceScore}/100.${contentSentence}`;
 
   // Paragraph 2: Policy significance across domains
+  // Escape the enhanced summary to prevent XSS when rendered as HTML
   const domainStr = domains.length > 0 ? domains.slice(0, 3).join(', ') : 'general policy';
-  const para2 = `The document intersects ${domainStr} policy domains, placing it within the broader legislative agenda of the 2025/26 parliamentary session. ${generateEnhancedSummary(doc, docType, lang)}`;
+  const normalizedType = normalizeDocType(docType);
+  const enhancedSummary = escapeHtml(generateEnhancedSummary(doc, normalizedType, lang));
+  const para2 = `The document intersects ${domainStr} policy domains, placing it within the broader legislative agenda of the 2025/26 parliamentary session. ${enhancedSummary}`;
 
   // Paragraph 3: Strategic significance
   const para3 = docType === 'prop'
@@ -881,12 +911,6 @@ export function analyzeDocument(
     return _analysisCache.get(key)!;
   }
 
-/** Minimum relevance score assigned to any detected policy domain. */
-const MIN_DOMAIN_RELEVANCE = 30;
-/** Maximum (baseline) relevance score for the first detected domain. */
-const MAX_DOMAIN_RELEVANCE = 100;
-/** Per-rank decay applied to successive domain relevance scores. */
-const DOMAIN_RELEVANCE_DECAY = 15;
   const relevantStakeholders = selectRelevantStakeholders(doc);
   const stakeholderImpacts = relevantStakeholders.map(group =>
     buildStakeholderImpact(group, doc, lang, ciaContext),
@@ -915,7 +939,7 @@ const DOMAIN_RELEVANCE_DECAY = 15;
   const iterations = buildIterations(doc, relevantStakeholders);
 
   const analysis: DocumentAnalysis = {
-    documentId: doc.dok_id ?? doc.url ?? 'unknown',
+    documentId: stableDocumentId(doc),
     documentTitle: doc.titel ?? doc.title ?? doc.rubrik ?? 'Unknown Document',
     executiveSummary,
     stakeholderImpacts,

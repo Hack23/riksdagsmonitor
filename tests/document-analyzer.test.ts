@@ -23,7 +23,6 @@ import {
   generateExecutiveSummary,
 } from '../scripts/ai-analysis/document-analyzer.js';
 import type { RawDocument, CIAContext } from '../scripts/data-transformers/types.js';
-import type { DocumentAnalysis as _DocumentAnalysis } from '../scripts/ai-analysis/document-analyzer.js';
 
 // ---------------------------------------------------------------------------
 // Fixtures
@@ -121,7 +120,7 @@ describe('analyzeDocument — result shape', () => {
   it('returns a DocumentAnalysis with all required fields', () => {
     const result = analyzeDocument(propDoc, 'en');
     expect(result).toBeDefined();
-    expect(result.documentId).toBe('H9031');
+    expect(result.documentId).toBe('dok:H9031');
     expect(result.documentTitle).toBe('Proposition om hälso- och sjukvårdsreform');
     expect(typeof result.executiveSummary).toBe('string');
     expect(result.executiveSummary.length).toBeGreaterThan(0);
@@ -141,18 +140,18 @@ describe('analyzeDocument — result shape', () => {
 
   it('uses dok_id as documentId when available', () => {
     const result = analyzeDocument(propDoc, 'en');
-    expect(result.documentId).toBe('H9031');
+    expect(result.documentId).toBe('dok:H9031');
   });
 
   it('falls back to url then title for documentId when dok_id missing', () => {
     const doc: RawDocument = { url: 'https://example.com/doc', titel: 'Test' };
     const result = analyzeDocument(doc, 'en');
-    expect(result.documentId).toBe('https://example.com/doc');
+    expect(result.documentId).toBe('url:https://example.com/doc');
   });
 
-  it('uses "unknown" documentId when no identifier available', () => {
+  it('uses title-based fallback documentId when no primary identifier available', () => {
     const result = analyzeDocument({}, 'en');
-    expect(result.documentId).toBe('unknown');
+    expect(result.documentId).toMatch(/^title:/);
   });
 });
 
@@ -561,7 +560,7 @@ describe('analyzeDocuments — batch analysis', () => {
     // Prime cache with propDoc
     const first = analyzeDocument(propDoc, 'en');
     const results = analyzeDocuments([propDoc, motionDoc], 'en');
-    const propResult = results.get('H9031');
+    const propResult = results.get('dok:H9031');
     // Same object reference since cache was primed
     expect(propResult).toBe(first);
   });
