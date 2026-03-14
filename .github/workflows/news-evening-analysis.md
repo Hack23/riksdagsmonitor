@@ -198,9 +198,43 @@ Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc quer
 
 Filter results to only include items with dates `>= fromDate`.
 
+**Post-query date filtering pattern** (use with tools that lack native date params):
+```javascript
+// Calculate fromDate using ms constants: 86400000 ms/day, 3600000 ms/hour
+const fromDate = new Date(Date.now() - lookbackHours * 3600000).toISOString().slice(0, 10);
+const today = new Date().toISOString().slice(0, 10);
+
+// Filter results by date field
+results.filter(item => new Date(item.publicerad || item.datum) >= new Date(fromDate))
+```
+
 ### Cross-Referencing Strategy
 
 Cross-reference related data sources for richer analysis (e.g., committee reports with voting records, government propositions with parliamentary motions). Filter all results by date to `>= fromDate`.
+
+Example 1: Committee Report Deep Dive
+```javascript
+// 1. Get committee reports
+const reports = await get_betankanden({ rm: riksmote, limit: 50 });
+// 2. Cross-reference with voting records
+const votes = await search_voteringar({ rm: riksmote, bet: report.beteckning });
+```
+
+Example 2: Government Activity Analysis
+```javascript
+// 1. Get government propositions
+const props = await get_propositioner({ rm: riksmote, limit: 20 });
+// 2. Cross-reference with parliamentary motions
+const motions = await get_motioner({ rm: riksmote, limit: 50 });
+```
+
+Example 3: Party Behavior Analysis
+```javascript
+// 1. Get voting records grouped by party
+const partyVotes = await search_voteringar({ rm: riksmote, groupBy: 'parti' });
+// 2. Cross-reference with interpellations
+const interpellations = await get_interpellationer({ rm: riksmote, limit: 50 });
+```
 
 ### Saturday vs Weekday Mode
 

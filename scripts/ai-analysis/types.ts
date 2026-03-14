@@ -9,7 +9,8 @@
  *   3. Validation     — stakeholder completeness and confidence scoring (deep mode only)
  *
  * Templates in `generators.ts` consume `AnalysisResult` to render HTML sections;
- * all analytical *text* originates from this module, never from hardcoded strings.
+ * analytical text originates from the analysis pipeline with placeholder fallbacks
+ * when document evidence is missing for a stakeholder × quadrant combination.
  *
  * @author Hack23 AB
  * @license Apache-2.0

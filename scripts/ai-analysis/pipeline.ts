@@ -120,8 +120,264 @@ const DATA_SOURCE_ITEMS: Partial<Record<Language, string[]>> = {
 };
 
 // ---------------------------------------------------------------------------
-// Document type helpers
+// Watch point labels (14 languages)
 // ---------------------------------------------------------------------------
+
+/** "Active Government Propositions" */
+const WP_ACTIVE_PROPS: LangRecord = {
+  en: 'Active Government Propositions', sv: 'Aktiva propositioner',
+  da: 'Aktive regeringsforslag', no: 'Aktive regjeringsproposisjoner',
+  fi: 'Aktiiviset hallituksen esitykset', de: 'Aktive Regierungsvorschläge',
+  fr: 'Propositions gouvernementales actives', es: 'Proposiciones gubernamentales activas',
+  nl: 'Actieve regeringsvoorstellen', ar: 'مقترحات حكومية نشطة',
+  he: 'הצעות ממשלה פעילות', ja: '活動中の政府提案', ko: '활성 정부 제안', zh: '活跃的政府提案',
+};
+
+/** "proposition(s) require parliamentary action" */
+const WP_PROPS_DESC: Partial<Record<Language, (n: number) => string>> = {
+  en: (n) => `${n} proposition${n !== 1 ? 's' : ''} require parliamentary action`,
+  sv: (n) => `${n} proposition${n !== 1 ? 'er' : ''} kräver parlamentarisk behandling`,
+  da: (n) => `${n} forslag kræver parlamentarisk behandling`,
+  no: (n) => `${n} proposisjon${n !== 1 ? 'er' : ''} krever parlamentarisk behandling`,
+  fi: (n) => `${n} esitys${n !== 1 ? 'tä' : ''} vaatii parlamentaarista käsittelyä`,
+  de: (n) => `${n} Regierungsvorlage${n !== 1 ? 'n' : ''} erfordern parlamentarische Bearbeitung`,
+  fr: (n) => `${n} proposition${n !== 1 ? 's' : ''} nécessitent un examen parlementaire`,
+  es: (n) => `${n} proposición${n !== 1 ? 'es' : ''} requiere${n !== 1 ? 'n' : ''} acción parlamentaria`,
+  nl: (n) => `${n} voorstel${n !== 1 ? 'len' : ''} vereisen parlementaire behandeling`,
+  ar: (n) => `${n} مقترح${n !== 1 ? 'ات' : ''} تتطلب إجراء برلمانيا`,
+  he: (n) => `${n} הצעות דורשות טיפול פרלמנטרי`,
+  ja: (n) => `${n}件の提案が国会審議を必要とする`,
+  ko: (n) => `${n}건의 제안이 의회 심의를 필요로 함`,
+  zh: (n) => `${n}项提案需要议会审议`,
+};
+
+/** "Committee Reports to Monitor" */
+const WP_COMMITTEE: LangRecord = {
+  en: 'Committee Reports to Monitor', sv: 'Utskottsbetänkanden att följa',
+  da: 'Udvalgsrapporter at følge', no: 'Komitérapporter å følge',
+  fi: 'Seurattavat valiokuntamietinnöt', de: 'Zu beobachtende Ausschussberichte',
+  fr: 'Rapports de commission à suivre', es: 'Informes de comisión a seguir',
+  nl: 'Commissierapporten om te volgen', ar: 'تقارير اللجان للمتابعة',
+  he: 'דוחות ועדות למעקב', ja: '監視すべき委員会報告', ko: '모니터링할 위원회 보고서', zh: '需要关注的委员会报告',
+};
+
+/** "committee report(s) shaping the parliamentary position" */
+const WP_COMMITTEE_DESC: Partial<Record<Language, (n: number) => string>> = {
+  en: (n) => `${n} committee report${n !== 1 ? 's' : ''} shaping the parliamentary position`,
+  sv: (n) => `${n} betänkande${n !== 1 ? 'n' : ''} formar den parlamentariska ståndpunkten`,
+  da: (n) => `${n} udvalgsrapport${n !== 1 ? 'er' : ''} former den parlamentariske holdning`,
+  no: (n) => `${n} komitérapport${n !== 1 ? 'er' : ''} former den parlamentariske posisjonen`,
+  fi: (n) => `${n} mietintö${n !== 1 ? 'ä' : ''} muokkaa parlamentaarista kantaa`,
+  de: (n) => `${n} Ausschussbericht${n !== 1 ? 'e' : ''} prägen die parlamentarische Position`,
+  fr: (n) => `${n} rapport${n !== 1 ? 's' : ''} de commission façonnent la position parlementaire`,
+  es: (n) => `${n} informe${n !== 1 ? 's' : ''} de comisión moldean la posición parlamentaria`,
+  nl: (n) => `${n} commissierapport${n !== 1 ? 'en' : ''} vormen de parlementaire positie`,
+  ar: (n) => `${n} تقرير${n !== 1 ? 'ات' : ''} لجان تشكل الموقف البرلماني`,
+  he: (n) => `${n} דוחות ועדות מעצבים את עמדת הפרלמנט`,
+  ja: (n) => `${n}件の委員会報告が議会の立場を形成`,
+  ko: (n) => `${n}건의 위원회 보고서가 의회 입장을 형성`,
+  zh: (n) => `${n}份委员会报告正在塑造议会立场`,
+};
+
+/** "Enacted Laws in Force" */
+const WP_SFS: LangRecord = {
+  en: 'Enacted Laws in Force', sv: 'Antagna lagar i kraft',
+  da: 'Vedtagne love i kraft', no: 'Vedtatte lover i kraft',
+  fi: 'Voimassa olevat lait', de: 'Erlassene Gesetze in Kraft',
+  fr: 'Lois promulguées en vigueur', es: 'Leyes promulgadas en vigor',
+  nl: 'Uitgevaardigde wetten van kracht', ar: 'قوانين صادرة سارية المفعول',
+  he: 'חוקים שנחקקו בתוקף', ja: '施行中の制定法', ko: '시행 중인 법률', zh: '已生效的法律',
+};
+
+/** "enacted law(s) establish the legal framework — stakeholders must conduct compliance review" */
+const WP_SFS_DESC: Partial<Record<Language, (n: number) => string>> = {
+  en: (n) => `${n} enacted law${n !== 1 ? 's' : ''} establish the legal framework — stakeholders must conduct compliance review`,
+  sv: (n) => `${n} lag/förordning${n !== 1 ? 'ar' : ''} etablerar rättslig ram — intressenter behöver genomföra efterlevnadsgranskning`,
+  da: (n) => `${n} lov${n !== 1 ? 'e' : ''} etablerer den juridiske ramme — interessenter skal foretage overholdelsesvurdering`,
+  no: (n) => `${n} lov${n !== 1 ? 'er' : ''} etablerer det juridiske rammeverket — interessenter må gjennomføre samsvarsvurdering`,
+  fi: (n) => `${n} laki${n !== 1 ? 'a' : ''} muodostaa oikeudellisen kehyksen — sidosryhmien on suoritettava vaatimustenmukaisuustarkistus`,
+  de: (n) => `${n} Gesetz${n !== 1 ? 'e' : ''} bilden den Rechtsrahmen — Stakeholder müssen Compliance-Prüfung durchführen`,
+  fr: (n) => `${n} loi${n !== 1 ? 's' : ''} établissent le cadre juridique — les parties prenantes doivent procéder à un examen de conformité`,
+  es: (n) => `${n} ley${n !== 1 ? 'es' : ''} establecen el marco legal — las partes interesadas deben realizar una revisión de cumplimiento`,
+  nl: (n) => `${n} wet${n !== 1 ? 'ten' : ''} vormen het juridische kader — belanghebbenden moeten een nalevingsonderzoek uitvoeren`,
+  ar: (n) => `${n} قانون${n !== 1 ? '/قوانين' : ''} يؤسس الإطار القانوني — يجب على أصحاب المصلحة إجراء مراجعة الامتثال`,
+  he: (n) => `${n} חוקים מבססים את המסגרת המשפטית — בעלי עניין חייבים לבצע בדיקת ציות`,
+  ja: (n) => `${n}件の制定法が法的枠組みを確立 — 利害関係者はコンプライアンスレビューを実施すべき`,
+  ko: (n) => `${n}건의 법률이 법적 프레임워크를 수립 — 이해관계자는 컴플라이언스 검토를 수행해야 함`,
+  zh: (n) => `${n}项法律确立了法律框架 — 利益相关者必须进行合规审查`,
+};
+
+/** "Opposition Motions to Track" */
+const WP_MOTIONS: LangRecord = {
+  en: 'Opposition Motions to Track', sv: 'Oppositionsmotioner att bevaka',
+  da: 'Oppositionsforslag at følge', no: 'Opposisjonsmotioner å følge',
+  fi: 'Seurattavat oppositioaloitteet', de: 'Oppositionsanträge zu verfolgen',
+  fr: 'Motions de l\'opposition à suivre', es: 'Mociones de la oposición a seguir',
+  nl: 'Oppositiemoties om te volgen', ar: 'مقترحات المعارضة للمتابعة',
+  he: 'הצעות אופוזיציה למעקב', ja: '追跡すべき野党動議', ko: '추적할 야당 동의', zh: '需要跟踪的反对派动议',
+};
+
+/** "motion(s) signal alternative policy directions" */
+const WP_MOTIONS_DESC: Partial<Record<Language, (n: number) => string>> = {
+  en: (n) => `${n} motion${n !== 1 ? 's' : ''} signal alternative policy directions`,
+  sv: (n) => `${n} motion${n !== 1 ? 'er' : ''} signalerar alternativa politiska inriktningar`,
+  da: (n) => `${n} forslag signalerer alternative politiske retninger`,
+  no: (n) => `${n} motjon${n !== 1 ? 'er' : ''} signaliserer alternative politiske retninger`,
+  fi: (n) => `${n} aloite${n !== 1 ? 'tta' : ''} viestii vaihtoehtoisista politiikan suunnista`,
+  de: (n) => `${n} Antrag${n !== 1 ? '/Anträge' : ''} signalisieren alternative Politikrichtungen`,
+  fr: (n) => `${n} motion${n !== 1 ? 's' : ''} signalent des orientations politiques alternatives`,
+  es: (n) => `${n} moción${n !== 1 ? 'es' : ''} señalan direcciones políticas alternativas`,
+  nl: (n) => `${n} motie${n !== 1 ? 's' : ''} signaleren alternatieve beleidsrichtingen`,
+  ar: (n) => `${n} مقترح${n !== 1 ? 'ات' : ''} تشير إلى اتجاهات سياسية بديلة`,
+  he: (n) => `${n} הצעות מסמנות כיווני מדיניות חלופיים`,
+  ja: (n) => `${n}件の動議が代替政策の方向性を示唆`,
+  ko: (n) => `${n}건의 동의가 대안적 정책 방향을 시사`,
+  zh: (n) => `${n}项动议显示替代政策方向`,
+};
+
+/** "EU Dimension" */
+const WP_EU: LangRecord = {
+  en: 'EU Dimension', sv: 'EU-dimension',
+  da: 'EU-dimension', no: 'EU-dimensjon',
+  fi: 'EU-ulottuvuus', de: 'EU-Dimension',
+  fr: 'Dimension UE', es: 'Dimensión UE',
+  nl: 'EU-dimensie', ar: 'البعد الأوروبي',
+  he: 'ממד אירופי', ja: 'EU次元', ko: 'EU 차원', zh: 'EU维度',
+};
+
+/** "EU position paper(s) reveal European dimension — EU law may constrain national policy options" */
+const WP_EU_DESC: Partial<Record<Language, (n: number) => string>> = {
+  en: (n) => `${n} EU position paper${n !== 1 ? 's' : ''} reveal European dimension — EU law may constrain national policy options`,
+  sv: (n) => `${n} EU-faktapromemoria avslöjar Europaperspektiv — EU-regelverket kan begränsa nationell handlingsfrihet`,
+  da: (n) => `${n} EU-positionspapir${n !== 1 ? 'er' : ''} afslører europæisk dimension — EU-lovgivning kan begrænse nationale politiske muligheder`,
+  no: (n) => `${n} EU-posisjonspapir${n !== 1 ? 'er' : ''} avslører europeisk dimensjon — EU-lovgivning kan begrense nasjonale politiske alternativer`,
+  fi: (n) => `${n} EU-asiakirja${n !== 1 ? 'a' : ''} paljastaa eurooppalaisen ulottuvuuden — EU-lainsäädäntö voi rajoittaa kansallisia vaihtoehtoja`,
+  de: (n) => `${n} EU-Positionspapier${n !== 1 ? 'e' : ''} zeigen die europäische Dimension — EU-Recht kann nationale Politikoptionen einschränken`,
+  fr: (n) => `${n} document${n !== 1 ? 's' : ''} de position UE révèlent la dimension européenne — le droit de l'UE peut limiter les options nationales`,
+  es: (n) => `${n} documento${n !== 1 ? 's' : ''} de posición de la UE revelan la dimensión europea — la legislación de la UE puede limitar las opciones nacionales`,
+  nl: (n) => `${n} EU-positiedocument${n !== 1 ? 'en' : ''} onthullen de Europese dimensie — EU-wetgeving kan nationale beleidsopties beperken`,
+  ar: (n) => `${n} وثيقة${n !== 1 ? '/وثائق' : ''} موقف أوروبي تكشف البعد الأوروبي — قد يقيد قانون الاتحاد الأوروبي خيارات السياسة الوطنية`,
+  he: (n) => `${n} מסמכי עמדה של האיחוד האירופי חושפים את הממד האירופי — חוק האיחוד עשוי להגביל אפשרויות מדיניות לאומיות`,
+  ja: (n) => `${n}件のEU意見書が欧州次元を明示 — EU法が国内政策の選択肢を制約する可能性`,
+  ko: (n) => `${n}건의 EU 입장 문서가 유럽 차원을 드러냄 — EU법이 국내 정책 옵션을 제한할 수 있음`,
+  zh: (n) => `${n}份EU立场文件揭示欧洲维度 — EU法律可能限制国内政策选择`,
+};
+
+/** "Narrative Frames to Monitor" */
+const WP_NARRATIVE: LangRecord = {
+  en: 'Narrative Frames to Monitor', sv: 'Narrativa ramar att övervaka',
+  da: 'Narrative rammer at overvåge', no: 'Narrative rammer å overvåke',
+  fi: 'Seurattavat narratiiviset kehykset', de: 'Zu beobachtende narrative Rahmen',
+  fr: 'Cadres narratifs à surveiller', es: 'Marcos narrativos a supervisar',
+  nl: 'Narratieve kaders om te monitoren', ar: 'الأطر السردية للمراقبة',
+  he: 'מסגרות נרטיביות למעקב', ja: '監視すべきナラティブフレーム', ko: '모니터링할 서사 프레임', zh: '需要监控的叙事框架',
+};
+
+/** "Political rhetorical frames identified: " */
+const WP_NARRATIVE_DESC: LangRecord = {
+  en: 'Political rhetorical frames identified: ', sv: 'Politiska retoriska ramar identifierade: ',
+  da: 'Politiske retoriske rammer identificeret: ', no: 'Politiske retoriske rammer identifisert: ',
+  fi: 'Poliittisia retorisia kehyksiä tunnistettu: ', de: 'Politische rhetorische Rahmen identifiziert: ',
+  fr: 'Cadres rhétoriques politiques identifiés : ', es: 'Marcos retóricos políticos identificados: ',
+  nl: 'Politieke retorische kaders geïdentificeerd: ', ar: 'تم تحديد أطر بلاغية سياسية: ',
+  he: 'מסגרות רטוריות פוליטיות שזוהו: ', ja: '政治的修辞フレーム特定: ', ko: '정치적 수사 프레임 확인: ', zh: '已识别的政治修辞框架: ',
+};
+
+// ---------------------------------------------------------------------------
+// Dashboard labels (14 languages)
+// ---------------------------------------------------------------------------
+
+const DASHBOARD_TITLE: LangRecord = {
+  en: 'Document Intelligence', sv: 'Dokumentintelligens',
+  da: 'Dokumentefterretning', no: 'Dokumentetterretning',
+  fi: 'Asiakirjatiedustelu', de: 'Dokumentenintelligenz',
+  fr: 'Renseignement documentaire', es: 'Inteligencia documental',
+  nl: 'Documentintelligentie', ar: 'استخبارات الوثائق',
+  he: 'מודיעין מסמכים', ja: '文書インテリジェンス', ko: '문서 인텔리전스', zh: '文件情报',
+};
+
+const DASHBOARD_DOCS_ANALYSED: Partial<Record<Language, (n: number) => string>> = {
+  en: (n) => `${n} parliamentary document${n !== 1 ? 's' : ''} analysed`,
+  sv: (n) => `${n} riksdagsdokument analyserad${n !== 1 ? 'e' : ''}`,
+  da: (n) => `${n} parlamentsdokument${n !== 1 ? 'er' : ''} analyseret`,
+  no: (n) => `${n} parlamentsdokument${n !== 1 ? 'er' : ''} analysert`,
+  fi: (n) => `${n} asiakirja${n !== 1 ? 'a' : ''} analysoitu`,
+  de: (n) => `${n} parlamentarische${n !== 1 ? '' : 's'} Dokument${n !== 1 ? 'e' : ''} analysiert`,
+  fr: (n) => `${n} document${n !== 1 ? 's' : ''} parlementaire${n !== 1 ? 's' : ''} analysé${n !== 1 ? 's' : ''}`,
+  es: (n) => `${n} documento${n !== 1 ? 's' : ''} parlamentario${n !== 1 ? 's' : ''} analizado${n !== 1 ? 's' : ''}`,
+  nl: (n) => `${n} parlementair${n !== 1 ? 'e' : ''} document${n !== 1 ? 'en' : ''} geanalyseerd`,
+  ar: (n) => `${n} وثيقة برلمانية تم تحليلها`,
+  he: (n) => `${n} מסמכים פרלמנטריים נותחו`,
+  ja: (n) => `${n}件の議会文書を分析`,
+  ko: (n) => `${n}건의 의회 문서 분석됨`,
+  zh: (n) => `${n}份议会文件已分析`,
+};
+
+// ---------------------------------------------------------------------------
+// Policy narrative labels (14 languages)
+// ---------------------------------------------------------------------------
+
+const NARRATIVE_ANALYSIS_OF: LangRecord = {
+  en: 'Analysis of', sv: 'Analys av',
+  da: 'Analyse af', no: 'Analyse av',
+  fi: 'Analyysi', de: 'Analyse von',
+  fr: 'Analyse de', es: 'Análisis de',
+  nl: 'Analyse van', ar: 'تحليل',
+  he: 'ניתוח', ja: '分析:', ko: '분석:', zh: '分析',
+};
+
+const NARRATIVE_REVEALS: LangRecord = {
+  en: 'reveals', sv: 'visar',
+  da: 'afslører', no: 'avslører',
+  fi: 'paljastaa', de: 'zeigt',
+  fr: 'révèle', es: 'revela',
+  nl: 'onthult', ar: 'يكشف',
+  he: 'חושף', ja: 'が示す', ko: '이(가) 드러남', zh: '揭示',
+};
+
+const NARRATIVE_POLICY_ACTIVITY: LangRecord = {
+  en: 'policy activity in', sv: 'politikaktivitet inom',
+  da: 'politisk aktivitet i', no: 'politisk aktivitet innen',
+  fi: 'poliittista toimintaa alueella', de: 'politische Aktivität in',
+  fr: 'activité politique dans', es: 'actividad política en',
+  nl: 'beleidsactiviteit in', ar: 'نشاط سياسي في',
+  he: 'פעילות מדיניותית ב', ja: 'の政策活動', ko: '의 정책 활동', zh: '中的政策活动',
+};
+
+const NARRATIVE_PARLIAMENTARY_ACTIVITY: LangRecord = {
+  en: 'parliamentary activity', sv: 'parlamentarisk aktivitet',
+  da: 'parlamentarisk aktivitet', no: 'parlamentarisk aktivitet',
+  fi: 'parlamentaarista toimintaa', de: 'parlamentarische Aktivität',
+  fr: 'activité parlementaire', es: 'actividad parlamentaria',
+  nl: 'parlementaire activiteit', ar: 'نشاط برلماني',
+  he: 'פעילות פרלמנטרית', ja: '議会活動', ko: '의회 활동', zh: '议会活动',
+};
+
+const NARRATIVE_WITH_ENRICHED: Partial<Record<Language, (total: number, enriched: number) => string>> = {
+  en: (t, e) => `${t} documents (${e} with enriched full text)`,
+  sv: (t, e) => `${t} dokument (${e} med berikad fulltext)`,
+  da: (t, e) => `${t} dokumenter (${e} med beriget fuldtekst)`,
+  no: (t, e) => `${t} dokumenter (${e} med beriket fulltekst)`,
+  fi: (t, e) => `${t} asiakirjaa (${e} rikastetulla kokotekstillä)`,
+  de: (t, e) => `${t} Dokumente (${e} mit angereichertem Volltext)`,
+  fr: (t, e) => `${t} documents (${e} avec texte intégral enrichi)`,
+  es: (t, e) => `${t} documentos (${e} con texto completo enriquecido)`,
+  nl: (t, e) => `${t} documenten (${e} met verrijkte volledige tekst)`,
+  ar: (t, e) => `${t} وثيقة (${e} بنص كامل مُثرى)`,
+  he: (t, e) => `${t} מסמכים (${e} עם טקסט מלא מועשר)`,
+  ja: (t, e) => `${t}件の文書 (${e}件はフルテキスト充実)`,
+  ko: (t, e) => `${t}건의 문서 (${e}건 전문 보강)`,
+  zh: (t, e) => `${t}份文件 (${e}份含完整文本)`,
+};
+
+const NARRATIVE_FOCUS: LangRecord = {
+  en: 'with focus on', sv: 'med fokus på',
+  da: 'med fokus på', no: 'med fokus på',
+  fi: 'painopisteenä', de: 'mit Fokus auf',
+  fr: 'avec un accent sur', es: 'con enfoque en',
+  nl: 'met focus op', ar: 'مع التركيز على',
+  he: 'עם דגש על', ja: 'に焦点を当てて', ko: '에 초점을 맞추어', zh: '重点关注',
+};
 
 function docType(doc: RawDocument): string {
   return (doc.doktyp || doc.documentType || '').toLowerCase();
@@ -187,7 +443,7 @@ function relevantLabel(lang: Language): string {
   return map[lang] ?? 'relevant to';
 }
 
-/** Derive impact from document type: propositions/laws are high, committee reports medium, rest low. */
+/** Derive impact from document type: propositions/laws/committee reports/EU positions are high, motions/government comms/press medium, rest low. */
 function impactFromDocType(dt: string): 'high' | 'medium' | 'low' {
   if (['prop', 'sfs', 'bet', 'fpm'].includes(dt)) return 'high';
   if (['mot', 'skr', 'pressm'].includes(dt)) return 'medium';
@@ -366,15 +622,23 @@ function buildPolicyAssessment(
   const confidence = assessConfidenceLevel(docs.length, enrichedCount > 0 ? 80 : 40);
 
   // Build a narrative from available evidence — topic + primary domain + document count
-  const topicFragment = topic ? ` on ${escapeHtml(topic)}` : '';
-  const domainFragment = primaryDomain ? ` in ${escapeHtml(primaryDomain)}` : '';
+  const withEnrichedFn = NARRATIVE_WITH_ENRICHED[lang] ?? NARRATIVE_WITH_ENRICHED.en!;
   const evidenceDesc = enrichedCount > 0
-    ? `${docs.length} documents (${enrichedCount} with enriched full text)`
-    : `${docs.length} documents`;
+    ? withEnrichedFn(docs.length, enrichedCount)
+    : `${docs.length} ${(NARRATIVE_PARLIAMENTARY_ACTIVITY[lang] ?? '').includes(' ') ? '' : ''}documents`;
 
-  const narrative = lang === 'sv'
-    ? `Analys av ${evidenceDesc} visar ${domains.length > 0 ? `politikaktivitet inom ${domains.slice(0, 3).map(d => escapeHtml(d)).join(', ')}` : 'parlamentarisk aktivitet'}${topic ? ` med fokus på ${escapeHtml(topic)}` : ''}.`
-    : `Analysis of ${evidenceDesc} reveals ${domains.length > 0 ? `policy activity in ${domains.slice(0, 3).map(d => escapeHtml(d)).join(', ')}` : 'parliamentary activity'}${topicFragment}${domainFragment}.`;
+  const analysisOf = NARRATIVE_ANALYSIS_OF[lang] ?? NARRATIVE_ANALYSIS_OF.en!;
+  const reveals = NARRATIVE_REVEALS[lang] ?? NARRATIVE_REVEALS.en!;
+  const policyActivity = NARRATIVE_POLICY_ACTIVITY[lang] ?? NARRATIVE_POLICY_ACTIVITY.en!;
+  const parlActivity = NARRATIVE_PARLIAMENTARY_ACTIVITY[lang] ?? NARRATIVE_PARLIAMENTARY_ACTIVITY.en!;
+  const focusLabel = NARRATIVE_FOCUS[lang] ?? NARRATIVE_FOCUS.en!;
+
+  const domainList = domains.slice(0, 3).map(d => escapeHtml(d)).join(', ');
+  const activityPhrase = domains.length > 0
+    ? `${policyActivity} ${domainList}`
+    : parlActivity;
+  const topicPhrase = topic ? ` ${focusLabel} ${escapeHtml(topic)}` : '';
+  const narrative = `${analysisOf} ${evidenceDesc} ${reveals} ${activityPhrase}${topicPhrase}.`;
 
   return { domains, primaryDomain, narrative, confidence };
 }
@@ -401,55 +665,50 @@ function buildWatchPoints(
 
   if (propDocs.length > 0) {
     const titles = propDocs.slice(0, 2).map(d => esc(docTitle(d))).join('; ');
+    const descFn = WP_PROPS_DESC[lang] ?? WP_PROPS_DESC.en!;
     points.push({
-      title: lang === 'sv' ? `Aktiva propositioner${topicSuffix}` : `Active Government Propositions${topicSuffix}`,
-      description: lang === 'sv'
-        ? `${propDocs.length} proposition${propDocs.length !== 1 ? 'er' : ''} kräver parlamentarisk behandling: ${titles}`
-        : `${propDocs.length} proposition${propDocs.length !== 1 ? 's' : ''} require parliamentary action: ${titles}`,
+      title: `${WP_ACTIVE_PROPS[lang] ?? WP_ACTIVE_PROPS.en!}${topicSuffix}`,
+      description: `${descFn(propDocs.length)}: ${titles}`,
       urgency: 'high',
       sourceDocIds: propDocs.map(docId).filter(Boolean),
     });
   }
 
   if (betDocs.length > 0) {
+    const descFn = WP_COMMITTEE_DESC[lang] ?? WP_COMMITTEE_DESC.en!;
     points.push({
-      title: lang === 'sv' ? `Utskottsbetänkanden att följa${topicSuffix}` : `Committee Reports to Monitor${topicSuffix}`,
-      description: lang === 'sv'
-        ? `${betDocs.length} betänkande${betDocs.length !== 1 ? 'n' : ''} formar den parlamentariska ståndpunkten${topicSuffix}`
-        : `${betDocs.length} committee report${betDocs.length !== 1 ? 's' : ''} shaping the parliamentary position${topicSuffix}`,
+      title: `${WP_COMMITTEE[lang] ?? WP_COMMITTEE.en!}${topicSuffix}`,
+      description: `${descFn(betDocs.length)}${topicSuffix}`,
       urgency: 'high',
       sourceDocIds: betDocs.map(docId).filter(Boolean),
     });
   }
 
   if (sfsDocs.length > 0) {
+    const descFn = WP_SFS_DESC[lang] ?? WP_SFS_DESC.en!;
     points.push({
-      title: lang === 'sv' ? `Antagna lagar i kraft${topicSuffix}` : `Enacted Laws in Force${topicSuffix}`,
-      description: lang === 'sv'
-        ? `${sfsDocs.length} lag/förordning${sfsDocs.length !== 1 ? 'ar' : ''} etablerar rättslig ram${topicSuffix} — intressenter behöver genomföra efterlevnadsgranskning`
-        : `${sfsDocs.length} enacted law${sfsDocs.length !== 1 ? 's' : ''} establish the legal framework${topicSuffix} — stakeholders must conduct compliance review`,
+      title: `${WP_SFS[lang] ?? WP_SFS.en!}${topicSuffix}`,
+      description: descFn(sfsDocs.length),
       urgency: 'critical',
       sourceDocIds: sfsDocs.map(docId).filter(Boolean),
     });
   }
 
   if (motDocs.length > 0) {
+    const descFn = WP_MOTIONS_DESC[lang] ?? WP_MOTIONS_DESC.en!;
     points.push({
-      title: lang === 'sv' ? `Oppositionsmotioner att bevaka${topicSuffix}` : `Opposition Motions to Track${topicSuffix}`,
-      description: lang === 'sv'
-        ? `${motDocs.length} motion${motDocs.length !== 1 ? 'er' : ''} signalerar alternativa politiska inriktningar${topicSuffix}`
-        : `${motDocs.length} motion${motDocs.length !== 1 ? 's' : ''} signal alternative policy directions${topicSuffix}`,
+      title: `${WP_MOTIONS[lang] ?? WP_MOTIONS.en!}${topicSuffix}`,
+      description: `${descFn(motDocs.length)}${topicSuffix}`,
       urgency: 'medium',
       sourceDocIds: motDocs.map(docId).filter(Boolean),
     });
   }
 
   if (euDocs.length > 0) {
+    const descFn = WP_EU_DESC[lang] ?? WP_EU_DESC.en!;
     points.push({
-      title: lang === 'sv' ? `EU-dimension${topicSuffix}` : `EU Dimension${topicSuffix}`,
-      description: lang === 'sv'
-        ? `${euDocs.length} EU-faktapromemoria avslöjar Europaperspektiv${topicSuffix} — EU-regelverket kan begränsa nationell handlingsfrihet`
-        : `${euDocs.length} EU position paper${euDocs.length !== 1 ? 's' : ''} reveal European dimension${topicSuffix} — EU law may constrain national policy options`,
+      title: `${WP_EU[lang] ?? WP_EU.en!}${topicSuffix}`,
+      description: descFn(euDocs.length),
       urgency: 'medium',
       sourceDocIds: euDocs.map(docId).filter(Boolean),
     });
@@ -461,10 +720,8 @@ function buildWatchPoints(
   if (allFrames.size > 0) {
     const frameList = [...allFrames].slice(0, 3).join(', ');
     points.push({
-      title: lang === 'sv' ? 'Narrativa ramar att övervaka' : 'Narrative Frames to Monitor',
-      description: lang === 'sv'
-        ? `Politiska retoriska ramar identifierade: ${escapeHtml(frameList)}`
-        : `Political rhetorical frames identified: ${escapeHtml(frameList)}`,
+      title: WP_NARRATIVE[lang] ?? WP_NARRATIVE.en!,
+      description: `${WP_NARRATIVE_DESC[lang] ?? WP_NARRATIVE_DESC.en!}${escapeHtml(frameList)}`,
       urgency: 'low',
       sourceDocIds: [],
     });
@@ -588,10 +845,10 @@ function buildDashboardData(
     color: TYPE_PALETTE[i % TYPE_PALETTE.length] ?? '#00d9ff',
   }));
 
-  const docIntelLabel = lang === 'sv' ? 'Dokumentintelligens' : 'Document Intelligence';
+  const docIntelLabel = DASHBOARD_TITLE[lang] ?? DASHBOARD_TITLE.en!;
   const title = topic ? `${docIntelLabel} — ${escapeHtml(topic)}` : docIntelLabel;
-  const analysedLabel = lang === 'sv' ? 'riksdagsdokument analyserade' : 'parliamentary documents analysed';
-  const summary = `${docs.length} ${analysedLabel}`;
+  const docsAnalysedFn = DASHBOARD_DOCS_ANALYSED[lang] ?? DASHBOARD_DOCS_ANALYSED.en!;
+  const summary = docsAnalysedFn(docs.length);
 
   return { title, summary, typeDistribution };
 }

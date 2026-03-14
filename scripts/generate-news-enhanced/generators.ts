@@ -1073,7 +1073,7 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
 
 /**
  * Write AI analysis iteration metadata to news/metadata/ for audit trail.
- * Silently skips on write errors to avoid breaking article generation.
+ * Write errors are non-fatal (logged via console.warn) to avoid breaking article generation.
  */
 function writeAnalysisMetadata(
   articleSlug: string,
@@ -1130,7 +1130,7 @@ function buildDeepInspectionSectionsFromAnalysis(
         title: analysis.dashboardData.summary,
         labels: analysis.dashboardData.typeDistribution.map(t => t.label),
         datasets: [{
-          label: lang === 'sv' ? 'Dokument' : 'Documents',
+          label: deepLabel('documents', lang),
           data: analysis.dashboardData.typeDistribution.map(t => t.value),
           backgroundColor: analysis.dashboardData.typeDistribution.map(t => t.color),
         }],
@@ -1182,39 +1182,39 @@ function buildDeepInspectionSectionsFromAnalysis(
 
   const sankeyFlows: SankeyFlow[] = [];
   if (propDocs.length > 0) {
-    sankeyNodes.push({ id: 'prop', label: 'Propositions', color: 'orange' });
+    sankeyNodes.push({ id: 'prop', label: localizeDocType('prop', lang, propDocs.length), color: 'orange' });
     sankeyFlows.push({ source: 'gov', target: 'prop', value: propDocs.length, label: `${propDocs.length}` });
   }
   if (betDocs.length > 0) {
-    sankeyNodes.push({ id: 'bet', label: 'Committee Reports', color: 'blue' });
+    sankeyNodes.push({ id: 'bet', label: localizeDocType('bet', lang, betDocs.length), color: 'blue' });
     sankeyFlows.push({ source: 'opp', target: 'bet', value: betDocs.length, label: `${betDocs.length}` });
   }
   if (motDocs.length > 0) {
-    sankeyNodes.push({ id: 'mot', label: 'Motions', color: 'yellow' });
+    sankeyNodes.push({ id: 'mot', label: localizeDocType('mot', lang, motDocs.length), color: 'yellow' });
     sankeyFlows.push({ source: 'opp', target: 'mot', value: motDocs.length, label: `${motDocs.length}` });
   }
   if (sfsDocs.length > 0) {
-    sankeyNodes.push({ id: 'sfs', label: 'Laws (SFS)', color: 'green' });
+    sankeyNodes.push({ id: 'sfs', label: localizeDocType('sfs', lang, sfsDocs.length), color: 'green' });
     sankeyFlows.push({ source: 'gov', target: 'sfs', value: sfsDocs.length, label: `${sfsDocs.length}` });
   }
   if (skrDocs.length > 0) {
-    sankeyNodes.push({ id: 'skr', label: 'Government Communications', color: 'cyan' });
+    sankeyNodes.push({ id: 'skr', label: localizeDocType('skr', lang, skrDocs.length), color: 'cyan' });
     sankeyFlows.push({ source: 'gov', target: 'skr', value: skrDocs.length, label: `${skrDocs.length}` });
   }
   if (euDocs.length > 0) {
-    sankeyNodes.push({ id: 'eu', label: 'EU Positions', color: 'blue' });
+    sankeyNodes.push({ id: 'eu', label: localizeDocType('fpm', lang, euDocs.length), color: 'blue' });
     sankeyFlows.push({ source: 'pvt', target: 'eu', value: euDocs.length, label: `${euDocs.length}` });
   }
   if (pressmDocs.length > 0) {
-    sankeyNodes.push({ id: 'pressm', label: 'Press Releases', color: 'orange' });
+    sankeyNodes.push({ id: 'pressm', label: localizeDocType('pressm', lang, pressmDocs.length), color: 'orange' });
     sankeyFlows.push({ source: 'gov', target: 'pressm', value: pressmDocs.length, label: `${pressmDocs.length}` });
   }
   if (extDocs.length > 0) {
-    sankeyNodes.push({ id: 'ext', label: 'External / Reference', color: 'purple' });
+    sankeyNodes.push({ id: 'ext', label: localizeDocType('ext', lang, extDocs.length), color: 'purple' });
     sankeyFlows.push({ source: 'pvt', target: 'ext', value: extDocs.length, label: `${extDocs.length}` });
   }
   if (otherDocs.length > 0) {
-    sankeyNodes.push({ id: 'other', label: 'Other Docs', color: 'purple' });
+    sankeyNodes.push({ id: 'other', label: localizeDocType('other', lang, otherDocs.length), color: 'purple' });
     sankeyFlows.push({ source: 'pvt', target: 'other', value: otherDocs.length, label: `${otherDocs.length}` });
   }
 
