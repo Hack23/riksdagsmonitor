@@ -22,7 +22,7 @@ import {
 } from '../document-analysis.js';
 
 export function generateInterpellationsContent(data: ArticleContentData, lang: Language | string): string {
-  const interpellations: RawDocument[] = data.interpellations || data.motions || [];
+  const interpellations: RawDocument[] = data.interpellations || [];
 
   let content = `<h2>${L(lang, 'interpellationsTag')}</h2>\n`;
 

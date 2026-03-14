@@ -290,16 +290,15 @@ export function generateEnhancedSummary(doc: RawDocument, type: string, lang: La
     const author = (doc.intressent_namn !== 'Unknown' ? doc.intressent_namn : null) || doc.author;
     const party = doc.parti !== 'Unknown' ? doc.parti : undefined;
     if (author && party) {
-      const motionByVal = L(lang, 'motionBy');
-      parts.push(`${typeof motionByVal === 'string' ? motionByVal : ''} ${author} (${party})`);
+      const filedByVal = L(lang, 'filedBy');
+      parts.push(`${typeof filedByVal === 'string' ? filedByVal : ''} ${author} (${party})`);
     } else if (author) {
-      const motionByVal = L(lang, 'motionBy');
-      parts.push(`${typeof motionByVal === 'string' ? motionByVal : ''} ${author}`);
+      const filedByVal = L(lang, 'filedBy');
+      parts.push(`${typeof filedByVal === 'string' ? filedByVal : ''} ${author}`);
     }
     // Include target minister (mottagare) if available
-    const mottagare = (doc as Record<string, unknown>)['mottagare'];
-    if (mottagare && typeof mottagare === 'string') {
-      parts.push(`→ ${escapeHtml(mottagare)}`);
+    if (doc.mottagare) {
+      parts.push(`→ ${escapeHtml(doc.mottagare)}`);
     }
     if (subtyp) {
       const onVal = L(lang, 'on');

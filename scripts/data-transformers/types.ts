@@ -55,6 +55,8 @@ export interface RawDocument {
   fullContent?: string;
   /** Whether this document was enriched with full content */
   contentFetched?: boolean;
+  /** Target minister / recipient (used by interpellations) */
+  mottagare?: string;
   /** Related speeches mentioning this document */
   speeches?: Array<{ talare?: string; parti?: string; text?: string; anforande_nummer?: string }>;
 }
