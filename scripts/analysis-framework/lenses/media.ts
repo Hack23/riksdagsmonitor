@@ -16,7 +16,7 @@ import type { RawDocument, CIAContext } from '../../data-transformers/types.js';
 import type { Language } from '../../types/language.js';
 import type { PerspectiveAnalysis, ImpactLevel, Sentiment, SwotContribution, DashboardMetric, MindmapNode } from '../types.js';
 import { detectPolicyDomains, detectNarrativeFrames } from '../../data-transformers/policy-analysis.js';
-import { scoreNewsworthiness } from '../../data-transformers/content-generators/newsworthiness.js';
+import { scoreNewsworthiness, type NewsworthinessScore } from '../../data-transformers/content-generators/newsworthiness.js';
 
 // ---------------------------------------------------------------------------
 // Controversy keyword banks
@@ -80,8 +80,7 @@ function countKeywords(text: string, keywords: readonly string[]): number {
 // Scoring helpers
 // ---------------------------------------------------------------------------
 
-function computeImpact(doc: RawDocument, cia: CIAContext | undefined): ImpactLevel {
-  const newsScore = scoreNewsworthiness([doc], cia);
+function computeImpact(newsScore: { overall: number }): ImpactLevel {
   if (newsScore.overall >= 65) return 'high';
   if (newsScore.overall >= 35) return 'medium';
   return 'low';
@@ -102,10 +101,9 @@ function computeSentiment(doc: RawDocument): Sentiment {
 // Summary generation
 // ---------------------------------------------------------------------------
 
-function buildSummary(doc: RawDocument, cia: CIAContext | undefined, _lang: Language | string): string {
+function buildSummary(doc: RawDocument, newsScore: NewsworthinessScore, _lang: Language | string): string {
   const docType = doc.doktyp || doc.documentType || 'document';
   const allText = [doc.titel, doc.title, doc.summary, doc.notis].filter(Boolean).join(' ');
-  const newsScore = scoreNewsworthiness([doc], cia);
   const frames = detectNarrativeFrames(doc);
 
   const controversyNote = containsAny(allText, CONTROVERSY_KEYWORDS)
@@ -125,11 +123,10 @@ function buildSummary(doc: RawDocument, cia: CIAContext | undefined, _lang: Lang
 // SWOT contributions
 // ---------------------------------------------------------------------------
 
-function buildSwotContributions(doc: RawDocument, cia: CIAContext | undefined, lang: Language | string): SwotContribution[] {
+function buildSwotContributions(doc: RawDocument, newsScore: NewsworthinessScore, lang: Language | string): SwotContribution[] {
   const { stakeholder } = label(lang);
   const contributions: SwotContribution[] = [];
   const allText = [doc.titel, doc.title, doc.summary, doc.notis].filter(Boolean).join(' ');
-  const newsScore = scoreNewsworthiness([doc], cia);
 
   if (newsScore.warrantsDeepInspection) {
     contributions.push({
@@ -165,8 +162,7 @@ function buildSwotContributions(doc: RawDocument, cia: CIAContext | undefined, l
 // Dashboard metrics
 // ---------------------------------------------------------------------------
 
-function buildDashboardMetrics(doc: RawDocument, cia: CIAContext | undefined): DashboardMetric[] {
-  const newsScore = scoreNewsworthiness([doc], cia);
+function buildDashboardMetrics(doc: RawDocument, newsScore: NewsworthinessScore): DashboardMetric[] {
   const allText = [doc.titel, doc.title, doc.summary, doc.notis].filter(Boolean).join(' ');
 
   return [
@@ -239,13 +235,13 @@ export function analyzeMediaPerspective(
 
   return {
     lens: 'media',
-    summary: buildSummary(doc, cia, lang),
-    impact: computeImpact(doc, cia),
+    summary: buildSummary(doc, newsScore, lang),
+    impact: computeImpact(newsScore),
     sentiment: computeSentiment(doc),
     keyActors: keyActors.slice(0, 5),
     relatedPolicies: relatedPolicies.slice(0, 5),
-    swotContribution: buildSwotContributions(doc, cia, lang),
-    dashboardMetrics: buildDashboardMetrics(doc, cia),
+    swotContribution: buildSwotContributions(doc, newsScore, lang),
+    dashboardMetrics: buildDashboardMetrics(doc, newsScore),
     mindmapNodes: buildMindmapNodes(doc, lang),
     confidence: computeConfidence(doc, cia),
   };

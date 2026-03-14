@@ -54,7 +54,7 @@ const LENS_LABELS: Readonly<Record<string, { lensName: string; stakeholder: stri
   sv: { lensName: 'Medborgarperspektiv', stakeholder: 'Medborgarna' },
   da: { lensName: 'Borgerperspektiv', stakeholder: 'Borgerne' },
   no: { lensName: 'Borgerperspektiv', stakeholder: 'Borgerne' },
-  fi: { lensName: 'Kansalaisperspektiivi', stakeholder: 'Kansalaiset' },
+  fi: { lensName: 'Kansalaisnäkökulma', stakeholder: 'Kansalaiset' },
   de: { lensName: 'Bürgerperspektive', stakeholder: 'Bürgerinnen und Bürger' },
   fr: { lensName: 'Perspective citoyenne', stakeholder: 'Citoyens' },
   es: { lensName: 'Perspectiva ciudadana', stakeholder: 'Ciudadanos' },

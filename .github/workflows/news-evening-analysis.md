@@ -178,7 +178,11 @@ STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm
 
 ### DATA FRESHNESS CHECK
 
-After `get_sync_status()` succeeds, check if data is stale. If `hoursSinceSync > 48`, add a disclaimer note in analysis mentioning "stale data (> 48 hours old)" but proceed with cached data.
+Parse sync status and compute `hoursSinceSync = (Date.now() - new Date(last_updated).getTime()) / 3600000`. If hoursSinceSync > 48, data is stale — add a disclaimer note in analysis and mention "stale data (> 48 hours old)" but proceed with cached data. Example:
+```js
+const hoursSinceSync = (Date.now() - new Date(syncResult.last_updated).getTime()) / 3600000;
+if (hoursSinceSync > 48) { /* add stale data disclaimer */ }
+```
 
 ### IMPORTANT: Date Filtering in Analysis
 
@@ -198,9 +202,33 @@ Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc quer
 
 Filter results to only include items with dates `>= fromDate`.
 
+Post-query filtering pattern:
+```js
+const fromDate = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+results.filter(d => new Date(d.datum) >= new Date(fromDate))
+```
+
 ### Cross-Referencing Strategy
 
-Cross-reference related data sources for richer analysis (e.g., committee reports with voting records, government propositions with parliamentary motions). Filter all results by date to `>= fromDate`.
+Cross-reference related data sources for richer analysis. Filter all results by date to `>= fromDate`.
+
+Example 1: Committee Report Deep Dive
+```
+// 1. Fetch recent betänkanden
+// 2. Cross-reference with search_voteringar for the same beteckning
+```
+
+Example 2: Government Activity Analysis
+```
+// 1. Query search_regering for today's propositions
+// 2. Check get_propositioner for detailed data
+```
+
+Example 3: Party Behavior Analysis
+```
+// 1. Get voteringar grouped by party
+// 2. Compare with recent search_anforanden
+```
 
 ### Saturday vs Weekday Mode
 

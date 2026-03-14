@@ -65,7 +65,7 @@ const LENS_LABELS: Readonly<Record<string, { lensName: string; stakeholder: stri
   da: { lensName: 'Internationalt perspektiv', stakeholder: 'Det internationale samfund' },
   no: { lensName: 'Internasjonalt perspektiv', stakeholder: 'Det internasjonale samfunnet' },
   fi: { lensName: 'Kansainvälinen näkökulma', stakeholder: 'Kansainvälinen yhteisö' },
-  de: { lensName: 'Internationales Perspektive', stakeholder: 'Internationale Gemeinschaft' },
+  de: { lensName: 'Internationale Perspektive', stakeholder: 'Internationale Gemeinschaft' },
   fr: { lensName: 'Perspective internationale', stakeholder: 'Communauté internationale' },
   es: { lensName: 'Perspectiva internacional', stakeholder: 'Comunidad internacional' },
   nl: { lensName: 'Internationaal perspectief', stakeholder: 'Internationale gemeenschap' },
