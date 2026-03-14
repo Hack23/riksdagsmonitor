@@ -472,3 +472,83 @@ describe('analyzeDashboardData — keyword-driven risk scores', () => {
     expect(govAlignProp).toBeGreaterThan(govAlignMotion);
   });
 });
+
+// ---------------------------------------------------------------------------
+// fullContent fallback (codebase convention: fullText || fullContent)
+// ---------------------------------------------------------------------------
+
+describe('analyzeDashboardData — fullContent fallback', () => {
+  it('assessDataQuality returns high when documents have fullContent (not fullText)', () => {
+    const docs = Array.from({ length: 5 }, (_, i) =>
+      makeDoc({ fullContent: `<p>Full HTML content for document ${i} that is longer than 100 characters and contains meaningful content about policy.</p>` }),
+    );
+    const result = analyzeDashboardData(docs, null, 'en');
+    expect(result.dataQuality).toBe('high');
+  });
+
+  it('radar confidence is higher when documents have fullContent', () => {
+    const withContent = Array.from({ length: 3 }, () =>
+      makeDoc({ fullContent: '<p>Full content that is longer than 100 characters to trigger the enriched-content quality signal in the analyzer.</p>' }),
+    );
+    const withoutContent = Array.from({ length: 3 }, () => makeDoc());
+
+    const richResult = analyzeDashboardData(withContent, null, 'en');
+    const leanResult = analyzeDashboardData(withoutContent, null, 'en');
+
+    const richConfidence = (richResult.charts[0] as AIChartConfig).confidence;
+    const leanConfidence = (leanResult.charts[0] as AIChartConfig).confidence;
+    expect(richConfidence).toBeGreaterThan(leanConfidence);
+  });
+
+  it('keywords in fullContent are counted for risk scoring', () => {
+    const docsWithContent = Array.from({ length: 5 }, () =>
+      makeDoc({
+        doktyp: 'prop',
+        titel: 'Allmän proposition',
+        fullContent: '<p>Budget kostnad finansiering skatt anslag spending increase</p>',
+      }),
+    );
+    const docsWithoutContent = Array.from({ length: 5 }, () =>
+      makeDoc({ doktyp: 'prop', titel: 'Allmän proposition' }),
+    );
+
+    const rich = analyzeDashboardData(docsWithContent, null, 'en');
+    const lean = analyzeDashboardData(docsWithoutContent, null, 'en');
+
+    const richBudget = (rich.charts[0].datasets[0].data as number[])[2]; // budget pressure
+    const leanBudget = (lean.charts[0].datasets[0].data as number[])[2];
+    expect(richBudget).toBeGreaterThanOrEqual(leanBudget);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// skr (government communication) counted as government document
+// ---------------------------------------------------------------------------
+
+describe('analyzeDashboardData — skr document handling', () => {
+  it('skr documents boost government alignment like propositions', () => {
+    const skrDocs  = Array.from({ length: 6 }, () => makeDoc({ doktyp: 'skr' }));
+    const propDocs = Array.from({ length: 6 }, () => makeDoc({ doktyp: 'prop' }));
+
+    const skrResult  = analyzeDashboardData(skrDocs,  null, 'en');
+    const propResult = analyzeDashboardData(propDocs, null, 'en');
+
+    const govAlignSkr  = ((skrResult.charts[1].datasets[0].data[0]) as { x: number }).x;
+    const govAlignProp = ((propResult.charts[1].datasets[0].data[0]) as { x: number }).x;
+    // skr and prop should both produce high government alignment
+    expect(govAlignSkr).toEqual(govAlignProp);
+  });
+
+  it('skr documents do not dilute government alignment to base level', () => {
+    const motDocs = Array.from({ length: 6 }, () => makeDoc({ doktyp: 'mot' }));
+    const skrDocs = Array.from({ length: 6 }, () => makeDoc({ doktyp: 'skr' }));
+
+    const motResult = analyzeDashboardData(motDocs, null, 'en');
+    const skrResult = analyzeDashboardData(skrDocs, null, 'en');
+
+    const govAlignMot = ((motResult.charts[1].datasets[0].data[0]) as { x: number }).x;
+    const govAlignSkr = ((skrResult.charts[1].datasets[0].data[0]) as { x: number }).x;
+    // skr-heavy should have higher gov alignment than motion-heavy
+    expect(govAlignSkr).toBeGreaterThan(govAlignMot);
+  });
+});

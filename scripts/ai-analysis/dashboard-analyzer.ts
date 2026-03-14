@@ -277,7 +277,7 @@ function countKeywords(doc: RawDocument, keywords: string[]): number {
     doc.title ?? '',
     doc.summary ?? '',
     doc.notis ?? '',
-    (doc.fullText ?? '').slice(0, 500),
+    (doc.fullText || doc.fullContent || '').slice(0, 500),
   ].join(' ').toLowerCase();
   return keywords.filter(kw => haystack.includes(kw.toLowerCase())).length;
 }
@@ -342,7 +342,7 @@ function buildRiskRadarChart(
 
   const scores = [implementationScore, oppositionScore, budgetScore, regulatoryScore, timelineScore];
 
-  const hasFullText = docs.some(d => d.fullText && d.fullText.length > 100);
+  const hasFullText = docs.some(d => (d.fullText || d.fullContent || '').length > 100);
   const confidence = hasFullText ? 0.8 : 0.5;
 
   const chart: AIChartConfig = {
@@ -380,7 +380,9 @@ function buildStakeholderAlignmentChart(
   docs: RawDocument[],
   lang: string,
 ): { chart: AIChartConfig; table: DashboardTableConfig } {
-  const propCount   = docs.filter(d => (d.doktyp ?? d.documentType) === 'prop').length;
+  const propCount   = docs.filter(d =>
+    ['prop', 'skr'].includes((d.doktyp ?? d.documentType) ?? ''),
+  ).length;
   const motCount    = docs.filter(d => (d.doktyp ?? d.documentType) === 'mot').length;
   const betCount    = docs.filter(d => (d.doktyp ?? d.documentType) === 'bet').length;
   const sfsDocs     = docs.filter(d =>
@@ -551,7 +553,7 @@ function buildLegislativePipelineChart(
  */
 function assessDataQuality(docs: RawDocument[]): DataQuality {
   if (docs.length === 0) return 'low';
-  const withFullText = docs.filter(d => d.fullText && d.fullText.length > 100).length;
+  const withFullText = docs.filter(d => (d.fullText || d.fullContent || '').length > 100).length;
   if (withFullText >= 3 || (withFullText >= 1 && docs.length >= 5)) return 'high';
   if (docs.length >= 3) return 'medium';
   return 'low';
