@@ -380,4 +380,49 @@ describe('Interpellations Content Generator', () => {
       expect(result).toContain('Interpellation by:</strong> Anna Andersson');
     });
   });
+
+  describe('Data fallback', () => {
+    it('should use data.documents when data.motions is an empty array', () => {
+      const data = {
+        motions: [] as MockInterpellation[],
+        documents: [
+          {
+            titel: 'Interpellation from documents fallback',
+            url: '#',
+            dokumentnamn: 'IP-DOC1',
+            parti: 'M',
+          },
+        ] as MockInterpellation[],
+      };
+
+      const result = generateArticleContent(data, 'interpellations', 'en') as string;
+      // Should pick up the document from data.documents, not show empty state
+      expect(result).toContain('Interpellation from documents fallback');
+      expect(result).not.toContain('No interpellations');
+    });
+
+    it('should prefer data.motions when it has items', () => {
+      const data = {
+        motions: [
+          {
+            titel: 'Primary interpellation',
+            url: '#',
+            dokumentnamn: 'IP-MOT1',
+            parti: 'S',
+          },
+        ] as MockInterpellation[],
+        documents: [
+          {
+            titel: 'Secondary interpellation',
+            url: '#',
+            dokumentnamn: 'IP-DOC1',
+            parti: 'V',
+          },
+        ] as MockInterpellation[],
+      };
+
+      const result = generateArticleContent(data, 'interpellations', 'en') as string;
+      expect(result).toContain('Primary interpellation');
+    });
+  });
 });

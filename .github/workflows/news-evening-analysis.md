@@ -216,8 +216,10 @@ const fresh = reports.filter(r => new Date(r.publicerad) >= new Date(fromDate));
 ```javascript
 // 1. Fetch government propositions
 const props = get_propositioner({ rm: "<rm>", limit: 20 });
-// 2. Cross-reference with committee handling
+// 2. Filter propositions by date
 const filtered = props.filter(p => new Date(p.publicerad) >= new Date(fromDate));
+// 3. Cross-reference with committee handling
+const handling = filtered.map(p => search_dokument({ relaterat_id: p.dok_id, doktyp: "bet" }));
 ```
 
 **Example 3: Party Behavior Analysis**

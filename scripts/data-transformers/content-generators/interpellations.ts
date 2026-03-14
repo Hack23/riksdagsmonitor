@@ -141,7 +141,8 @@ function renderInterpellationEntry(doc: RawDocument, lang: Language | string): s
 export function generateInterpellationsContent(data: ArticleContentData, lang: Language | string): string {
   // Interpellations are stored in data.motions by the data pipeline
   // (for backward compatibility) but may also appear in data.documents.
-  const interpellations: RawDocument[] = data.motions || data.documents || [];
+  const motionsArray = data.motions ?? [];
+  const interpellations: RawDocument[] = motionsArray.length > 0 ? motionsArray : (data.documents ?? []);
 
   let content = `<h2>${L(lang, 'interpellationsTag')}</h2>\n`;
 
