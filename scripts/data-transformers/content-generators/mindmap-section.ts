@@ -130,6 +130,24 @@ const SECTION_TITLES: Partial<Record<string, string>> = {
   zh: '政策思维导图',
 };
 
+/** Localised aria-label for the connections panel (screen-reader text) */
+const CONNECTIONS_ARIA_LABELS: Partial<Record<string, string>> = {
+  en: 'Branch connections',
+  sv: 'Grenkopplingar',
+  da: 'Grenforbindelser',
+  no: 'Grenforbindelser',
+  fi: 'Haarayhteydet',
+  de: 'Verzweigungsverbindungen',
+  fr: 'Connexions entre branches',
+  es: 'Conexiones entre ramas',
+  nl: 'Takverbindingen',
+  ar: 'اتصالات الفروع',
+  he: 'חיבורי ענפים',
+  ja: 'ブランチ接続',
+  ko: '분기 연결',
+  zh: '分支连接',
+};
+
 // ---------------------------------------------------------------------------
 // Rendering helpers
 // ---------------------------------------------------------------------------
@@ -180,7 +198,7 @@ function renderBranch(branch: MindmapBranch, level: number = 0): string {
 }
 
 /** Render the cross-branch connections panel (pure CSS — no JS) */
-function renderConnections(connections: BranchConnection[]): string {
+function renderConnections(connections: BranchConnection[], lang?: Language | string): string {
   if (connections.length === 0) return '';
 
   const items = connections.map(c => {
@@ -190,7 +208,9 @@ function renderConnections(connections: BranchConnection[]): string {
         data-from="${escapeHtml(c.from)}" data-to="${escapeHtml(c.to)}">${label}</li>`;
   }).join('\n');
 
-  return `  <ul class="mindmap-connections" role="list" aria-label="Branch connections">\n${items}\n  </ul>`;
+  const ariaLabel = (lang && CONNECTIONS_ARIA_LABELS[lang as string]) || CONNECTIONS_ARIA_LABELS.en || 'Branch connections';
+
+  return `  <ul class="mindmap-connections" role="list" aria-label="${escapeHtml(ariaLabel)}">\n${items}\n  </ul>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -259,7 +279,7 @@ export function generateMindmapSection(opts: MindmapSectionOptions): TemplateSec
   const branchItems = branches.map(b => renderBranch(b)).join('\n');
 
   const connectionsBlock = opts.connections && opts.connections.length > 0
-    ? `\n${renderConnections(opts.connections)}`
+    ? `\n${renderConnections(opts.connections, opts.lang)}`
     : '';
 
   const html = `<section class="mindmap-section" aria-label="${escapeHtml(titleText)}">

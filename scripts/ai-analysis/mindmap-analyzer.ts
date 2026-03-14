@@ -240,6 +240,38 @@ const EU_NOTES: Partial<Record<Language, string>> = {
   zh: '欧盟义务和指令构成了重要的外部驱动因素。',
 };
 
+// Localised empty-docs fallback labels
+const EMPTY_DOCS_LABELS = {
+  conceptualMapFor: {
+    en: 'Conceptual map for: {topic}', sv: 'Konceptkarta för: {topic}', da: 'Konceptkort for: {topic}',
+    no: 'Konseptkart for: {topic}', fi: 'Käsitekartta: {topic}', de: 'Konzeptkarte für: {topic}',
+    fr: 'Carte conceptuelle pour : {topic}', es: 'Mapa conceptual para: {topic}', nl: 'Conceptkaart voor: {topic}',
+    ar: 'خريطة مفاهيم لـ: {topic}', he: 'מפת מושגים עבור: {topic}', ja: 'コンセプトマップ: {topic}', ko: '개념 지도: {topic}', zh: '概念图: {topic}',
+  } as Partial<Record<Language, string>>,
+  noDocuments: {
+    en: 'No parliamentary documents available for analysis.',
+    sv: 'Inga parlamentariska dokument tillgängliga för analys.',
+    da: 'Ingen parlamentariske dokumenter tilgængelige til analyse.',
+    no: 'Ingen parlamentariske dokumenter tilgjengelige for analyse.',
+    fi: 'Ei analysoitavia parlamentaarisia asiakirjoja saatavilla.',
+    de: 'Keine parlamentarischen Dokumente für die Analyse verfügbar.',
+    fr: "Aucun document parlementaire disponible pour l'analyse.",
+    es: 'No hay documentos parlamentarios disponibles para el análisis.',
+    nl: 'Geen parlementaire documenten beschikbaar voor analyse.',
+    ar: 'لا توجد وثائق برلمانية متاحة للتحليل.',
+    he: 'אין מסמכים פרלמנטריים זמינים לניתוח.',
+    ja: '分析可能な議会文書がありません。',
+    ko: '분석할 수 있는 의회 문서가 없습니다.',
+    zh: '没有可供分析的议会文件。',
+  } as Partial<Record<Language, string>>,
+  noDocumentsItem: {
+    en: 'No documents available', sv: 'Inga dokument tillgängliga', da: 'Ingen dokumenter tilgængelige',
+    no: 'Ingen dokumenter tilgjengelige', fi: 'Ei asiakirjoja saatavilla', de: 'Keine Dokumente verfügbar',
+    fr: 'Aucun document disponible', es: 'No hay documentos disponibles', nl: 'Geen documenten beschikbaar',
+    ar: 'لا توجد وثائق متاحة', he: 'אין מסמכים זמינים', ja: '利用可能な文書がありません', ko: '사용 가능한 문서 없음', zh: '没有可用文件',
+  } as Partial<Record<Language, string>>,
+};
+
 // ---------------------------------------------------------------------------
 // Internal helpers
 // ---------------------------------------------------------------------------
@@ -254,6 +286,20 @@ function extractOrgans(docs: RawDocument[]): string[] {
   const organs = new Set<string>();
   docs.forEach(d => { if (d.organ || d.committee) organs.add((d.organ || d.committee)!); });
   return [...organs].filter(Boolean);
+}
+
+/** Derive riksmöte (parliamentary session) string from a date string.
+ *  The Swedish parliamentary session runs September–August:
+ *  e.g. a document dated "2025-10-15" → "2025/26", "2026-03-14" → "2025/26".
+ */
+function datumToRiksmote(datum: string): string {
+  const d = new Date(datum);
+  if (isNaN(d.getTime())) return datum.slice(0, 4); // invalid date: fall back to year
+  const year = d.getFullYear();
+  const month = d.getMonth(); // 0-based; September = 8
+  const startYear = month >= 8 ? year : year - 1;
+  const endYY = String(startYear + 1).slice(-2);
+  return `${startYear}/${endYY}`;
 }
 
 /** Detect whether a single document has EU connection signals */
@@ -515,7 +561,8 @@ function pass3ValidationAndCompleteness(
 
   // Guarantee minimum 5 branches for analytical richness — use varied fallback labels
   // Derive session identifier from document metadata (rm or datum) for reproducibility
-  const sessionLabel = docs.find(d => d.rm)?.rm ?? docs.find(d => d.datum)?.datum?.slice(0, 4) ?? '';
+  const datumDoc = docs.find(d => d.datum);
+  const sessionLabel = docs.find(d => d.rm)?.rm ?? (datumDoc ? datumToRiksmote(datumDoc.datum!) : '');
 
   const FALLBACK_LABELS = {
     documentsAnalysed: {
@@ -629,12 +676,12 @@ export function buildAIMindmapBranches(
         color: 'cyan',
         icon: '📋',
         importance: 'low',
-        items: [topic || 'No documents available'],
+        items: [topic || L(EMPTY_DOCS_LABELS.noDocumentsItem, lang, 'No documents available')],
       }],
       connections: [],
       summary: topic
-        ? `Conceptual map for: ${topic}`
-        : 'No parliamentary documents available for analysis.',
+        ? L(EMPTY_DOCS_LABELS.conceptualMapFor, lang, 'Conceptual map for: {topic}').replace('{topic}', topic)
+        : L(EMPTY_DOCS_LABELS.noDocuments, lang, 'No parliamentary documents available for analysis.'),
     };
   }
 
