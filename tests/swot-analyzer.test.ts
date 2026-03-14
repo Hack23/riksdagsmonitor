@@ -122,6 +122,16 @@ describe('buildMultiStakeholderSwot', () => {
     expect(cats).not.toContain('municipal');
   });
 
+  it('adds municipal stakeholder for SFS docs identified by dokumentnamn (missing doktyp)', () => {
+    const docs = [
+      makeDoc({ dok_id: 'sfs-x', dokumentnamn: 'SFS 2024:456', titel: 'Lag om kommunal verksamhet' }),
+      makeDoc({ dok_id: 'mot-1', doktyp: 'mot', titel: 'Motion om skogsvård' }),
+    ];
+    const result = buildMultiStakeholderSwot(docs, 'en');
+    const cats = result.map(s => s.category);
+    expect(cats).toContain('municipal');
+  });
+
   it('adds international stakeholder when EU position papers (fpm) are present', () => {
     const result = buildMultiStakeholderSwot(makeEuDocs(), 'en');
     const cats = result.map(s => s.category);

@@ -885,6 +885,8 @@ function selectRelevantStakeholders(
 ): StakeholderCategory[] {
   const types = new Set(docs.map(d => d.doktyp || d.documentType || ''));
   const titles = docs.map(d => (d.titel || d.title || '').toLowerCase()).join(' ');
+  // SFS docs may lack doktyp but have dokumentnamn starting with "SFS"
+  const hasSfs = types.has('sfs') || docs.some(d => (d.dokumentnamn || '').startsWith('SFS'));
 
   const categories: StakeholderCategory[] = ['government', 'opposition', 'private', 'civil-society'];
 
@@ -892,7 +894,7 @@ function selectRelevantStakeholders(
   // content concerning municipalities/regions/kommuner.
   // NOTE: 'skr' (skrivelse / government communication) is intentionally excluded
   // as it represents government communications, not municipal/regional matters.
-  if (types.has('prop') || types.has('sfs')
+  if (types.has('prop') || hasSfs
       || titles.includes('kommuner') || titles.includes('region')
       || titles.includes('municipality') || titles.includes('local government')) {
     categories.push('municipal');
