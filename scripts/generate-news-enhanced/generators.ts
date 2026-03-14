@@ -1115,7 +1115,8 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
   const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
   const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
   const euDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
-  const sfsDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'sfs');
+  const sfsDocs  = docs.filter(d =>
+    (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
   const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
 
   const topicPhrase = topic ? ` (${esc(topic)})` : '';
@@ -1164,7 +1165,7 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
       : `<strong>Policy domains identified:</strong> ${domainList}`);
   }
 
-  const enriched = docs.filter(d => d.contentFetched).length;
+  const enriched = docs.filter(d => d.fullText || d.fullContent).length;
   if (enriched > 0) {
     items.push(lang === 'sv'
       ? `<strong>${enriched} av ${docs.length} dokument</strong> ${enriched === 1 ? 'berikat' : 'berikade'} med fulltext för djupanalys`
@@ -1195,8 +1196,9 @@ function buildExecutiveSummary(docs: RawDocument[], topic: string | null, lang: 
   const propCount = docs.filter(d => (d.doktyp || d.documentType) === 'prop').length;
   const betCount  = docs.filter(d => (d.doktyp || d.documentType) === 'bet').length;
   const motCount  = docs.filter(d => (d.doktyp || d.documentType) === 'mot').length;
-  const sfsDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'sfs');
-  const enriched  = docs.filter(d => d.contentFetched).length;
+  const sfsDocs   = docs.filter(d =>
+    (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
+  const enriched  = docs.filter(d => d.fullText || d.fullContent).length;
   const allDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
   const domainList = [...allDomains].slice(0, 4);
@@ -1246,7 +1248,7 @@ const DOCUMENT_BONUS_DIVISOR = 10;
  */
 function deriveConfidence(docs: RawDocument[]): number {
   if (docs.length === 0) return 0;
-  const enriched = docs.filter(d => d.contentFetched).length;
+  const enriched = docs.filter(d => d.fullText || d.fullContent).length;
   const enrichmentRate = enriched / docs.length; // 0–1
   const docBonus = Math.min(MAX_DOCUMENT_BONUS, Math.round((docs.length / DOCUMENT_BONUS_DIVISOR) * MAX_DOCUMENT_BONUS));
   return Math.min(100, Math.round(enrichmentRate * ENRICHMENT_WEIGHT) + docBonus);
@@ -1277,7 +1279,8 @@ function buildPredictiveAssessment(docs: RawDocument[], topic: string | null, la
   const propCount = docs.filter(d => (d.doktyp || d.documentType) === 'prop').length;
   const betCount  = docs.filter(d => (d.doktyp || d.documentType) === 'bet').length;
   const motCount  = docs.filter(d => (d.doktyp || d.documentType) === 'mot').length;
-  const sfsDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'sfs');
+  const sfsDocs   = docs.filter(d =>
+    (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
   const confidence = deriveConfidence(docs);
 
   // Passage likelihood heuristic: if committee reports exceed motions → likely passage
@@ -1395,7 +1398,8 @@ function buildPredictiveAssessment(docs: RawDocument[], topic: string | null, la
  */
 function buildHistoricalContext(docs: RawDocument[], topic: string | null, lang: Language): string {
   const esc = escapeHtml;
-  const sfsDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'sfs');
+  const sfsDocs   = docs.filter(d =>
+    (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
   const propCount = docs.filter(d => (d.doktyp || d.documentType) === 'prop').length;
   const allDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
@@ -1434,7 +1438,7 @@ function buildHistoricalContext(docs: RawDocument[], topic: string | null, lang:
  */
 function buildMethodologySection(docs: RawDocument[], topic: string | null, lang: Language, depth: number): string {
   const esc = escapeHtml;
-  const enriched = docs.filter(d => d.contentFetched).length;
+  const enriched = docs.filter(d => d.fullText || d.fullContent).length;
   const confidence = deriveConfidence(docs);
   const heading = deepLabel('methodology', lang);
   const topicStr = topic ? esc(topic) : null;

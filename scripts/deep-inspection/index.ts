@@ -17,8 +17,6 @@
  * ```typescript
  * const pipeline = new DeepInspectionPipeline({
  *   documentIds: ['H901FiU1'],
- *   focusTopic: 'defence budget',
- *   depth: 4,
  * });
  * const result = await pipeline.run();
  * ```
@@ -28,7 +26,7 @@
  */
 
 import { generateDeepInspection } from '../generate-news-enhanced/generators.js';
-import { analysisDepth } from '../generate-news-enhanced/config.js';
+import { analysisDepth, focusTopic } from '../generate-news-enhanced/config.js';
 import type { GenerationResult } from '../types/article.js';
 
 /** Parameters accepted by DeepInspectionPipeline. */
@@ -48,20 +46,6 @@ export interface DeepInspectionPipelineParams {
    * **Note**: Same CLI-first constraint as `documentIds`.
    */
   documentUrls?: string[];
-  /** Policy topic to focus the analysis on (used for log labelling). */
-  focusTopic?: string;
-  /**
-   * Analysis depth (1–4):
-   *  1 — surface analysis (what happened) — default, fastest
-   *  2 — adds predictive assessment and historical context
-   *  3 — adds executive intelligence summary and methodology section
-   *  4 — full multi-iteration intelligence report with all sections
-   *
-   * **Note**: This must match the `--depth` CLI arg passed at process start,
-   * since config.ts reads it at module load time. Setting this here only
-   * affects log labels, not the actual generation depth.
-   */
-  depth?: 1 | 2 | 3 | 4;
 }
 
 /**
@@ -85,10 +69,9 @@ export interface DeepInspectionResult extends GenerationResult {
  * load time — so `run()` simply invokes the generator and enriches the result.
  */
 export class DeepInspectionPipeline {
-  private readonly params: DeepInspectionPipelineParams;
-
-  constructor(params: DeepInspectionPipelineParams = {}) {
-    this.params = params;
+  constructor(_params: DeepInspectionPipelineParams = {}) {
+    // Params are reserved for future extensibility (document targeting).
+    // Currently, all targeting is read from CLI config at module load time.
   }
 
   /**
@@ -118,7 +101,7 @@ export class DeepInspectionPipeline {
    */
   async run(): Promise<DeepInspectionResult> {
     const depth = analysisDepth;
-    const topic = this.params.focusTopic;
+    const topic = focusTopic || undefined;
 
     console.log(`🔬 DeepInspectionPipeline starting — depth ${depth}: ${this.phaseLabel(depth)}`);
     if (topic) console.log(`   Topic: ${topic}`);

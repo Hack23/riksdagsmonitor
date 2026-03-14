@@ -8,7 +8,20 @@
  * - generateDeepInspectionContent depth-gated sections via exported utilities
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
+
+// Mock generators to avoid network/filesystem side effects in pipeline.run() test
+vi.mock('../scripts/generate-news-enhanced/generators.js', () => ({
+  generateDeepInspection: vi.fn().mockResolvedValue({
+    success: true,
+    fileCount: 0,
+    slug: 'test-slug',
+  }),
+  extractDocIdFromUrl: vi.fn(),
+  isGovernmentUrl: vi.fn(),
+  sanitizePlainText: vi.fn(),
+  hashPathSuffix: vi.fn(),
+}));
 
 // ---------------------------------------------------------------------------
 // 1. Config — analysisDepth parsing
@@ -56,26 +69,21 @@ describe('DeepInspectionPipeline', () => {
     const pipeline = new DeepInspectionPipeline({
       documentIds: ['H901FiU1'],
       documentUrls: ['https://riksdagen.se/sv/dokument-och-lagar/dokument/motion/H901FiU1'],
-      focusTopic: 'cybersecurity',
-      depth: 4,
     });
     expect(pipeline).toBeDefined();
     expect(typeof pipeline.run).toBe('function');
   });
 
-  it('DeepInspectionPipelineParams interface allows all depth values', async () => {
-    const { DeepInspectionPipeline } = await import('../scripts/deep-inspection/index.js');
-    for (const depth of [1, 2, 3, 4] as const) {
-      const p = new DeepInspectionPipeline({ depth });
-      expect(p).toBeDefined();
-    }
-  });
-
-  it('pipeline run() is an async function without side effects on construction', async () => {
+  it('pipeline run() returns a Promise when called with a mocked generator', async () => {
     const { DeepInspectionPipeline } = await import('../scripts/deep-inspection/index.js');
     const pipeline = new DeepInspectionPipeline();
-    // Verify run is an async function by checking its constructor name
-    expect(pipeline.run.constructor.name).toBe('AsyncFunction');
+    const resultPromise = pipeline.run();
+    expect(resultPromise).toBeInstanceOf(Promise);
+
+    const result = await resultPromise;
+    expect(result).toBeDefined();
+    expect(result.depth).toBeDefined();
+    expect([1, 2, 3, 4]).toContain(result.depth);
   });
 });
 
