@@ -104,6 +104,7 @@ export interface ContentLabelSet {
   policyImplicationsContext: (propCount: number, domainCount: number) => string;
   genericOverview: (n: number) => string;
   partyMotionsFiled: (party: string, n: number) => string;
+  partyInterpellationsFiled: (party: string, n: number) => string;
   otherCommittee: string;
   otherDocuments: string;
   policySignificanceTouches: (domains: string) => string;

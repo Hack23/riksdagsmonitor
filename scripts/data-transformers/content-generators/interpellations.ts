@@ -16,6 +16,7 @@ import { getPillarTransition } from '../../editorial-pillars.js';
 import {
   L,
   svSpan,
+  sanitizeUrl,
   normalizePartyKey,
 } from '../helpers.js';
 import { detectPolicyDomains } from '../policy-analysis.js';
@@ -133,7 +134,10 @@ export function generateInterpellationsContent(
       .filter(([p]) => p !== 'other')
       .sort(([, a], [, b]) => b.length - a.length)
       .forEach(([party, partyInterps]) => {
-        const detail = _getPartyInterpellationsLabel(lang, party, partyInterps.length);
+        const partyLabelFn = L(lang, 'partyInterpellationsFiled') as ((party: string, n: number) => string);
+        const detail = typeof partyLabelFn === 'function'
+          ? partyLabelFn(party, partyInterps.length)
+          : `${party}: ${partyInterps.length} interpellation${partyInterps.length !== 1 ? 's' : ''} filed`;
         content += `        <li>${escapeHtml(String(detail))}</li>\n`;
       });
     content += `      </ul>\n    </div>\n`;
@@ -177,8 +181,12 @@ function _renderInterpellationEntry(interp: RawDocument, lang: Language | string
   const party = escapeHtml(String(interp.parti ?? ''));
   const author = escapeHtml(String(interp.intressent_namn ?? interp.intressent_id ?? ''));
   const datum = escapeHtml(String(interp.datum ?? ''));
-  const url = String(interp.url ?? interp.dok_url ?? '');
-  const safeUrl = url && /^https?:\/\//.test(url) ? url : '';
+  const safeUrl = sanitizeUrl(interp.url ?? interp.dok_url);
+
+  // Only apply svSpan when title comes from Swedish source field (interp.titel)
+  const titleHtml = (interp.titel && !interp.title)
+    ? svSpan(title, lang)
+    : title;
 
   const askedByLabel = _getLocalizedLabel(lang, 'askedBy', 'Asked by');
   const targetLabel = _getLocalizedLabel(lang, 'targetMinister', 'Target minister');
@@ -187,9 +195,9 @@ function _renderInterpellationEntry(interp: RawDocument, lang: Language | string
 
   let entry = `    <div class="motion-entry">\n`;
   if (title) {
-    entry += safeUrl
-      ? `      <h3><a href="${escapeHtml(safeUrl)}" rel="noopener noreferrer" target="_blank">${svSpan(title, lang)}</a></h3>\n`
-      : `      <h3>${svSpan(title, lang)}</h3>\n`;
+    entry += (safeUrl && safeUrl !== '#')
+      ? `      <h3><a href="${safeUrl}" rel="noopener noreferrer" target="_blank">${titleHtml}</a></h3>\n`
+      : `      <h3>${titleHtml}</h3>\n`;
   }
   if (minister) {
     entry += `      <p><strong>${targetLabel}:</strong> ${minister}</p>\n`;
@@ -397,21 +405,4 @@ function _getInterpellationsBreakdown(lang: Language | string, count: number): s
   };
   const fn = templates[String(lang)] ?? templates['en']!;
   return fn(count);
-}
-
-/**
- * Get a localized label for per-party interpellation filing count.
- *
- * @param lang - Target language
- * @param party - Party abbreviation
- * @param count - Number of interpellations filed by this party
- * @returns Localized label string
- */
-function _getPartyInterpellationsLabel(lang: Language | string, party: string, count: number): string {
-  const templates: Record<string, (p: string, n: number) => string> = {
-    en: (p, n) => `${p}: ${n} interpellation${n !== 1 ? 's' : ''} filed`,
-    sv: (p, n) => `${p}: ${n} interpellation${n !== 1 ? 'er' : ''} inlämnad${n !== 1 ? 'e' : ''}`,
-  };
-  const fn = templates[String(lang)] ?? templates['en']!;
-  return fn(party, count);
 }

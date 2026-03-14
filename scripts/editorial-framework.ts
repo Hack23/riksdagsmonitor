@@ -211,6 +211,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<string, ArticleTypeProfile>>
       'stakeholder-impact',
       'swot-analysis',
       'policy-dashboard',
+      'policy-mindmap',
       'deep-analysis',
       'watch-points',
       'sources-methodology',
