@@ -205,12 +205,12 @@ function renderConnections(connections: MindmapConnection[], lang: Language | st
   const items = connections
     .map(
       c =>
-        `    <div class="mindmap-connection" data-from="${escapeHtml(c.fromBranch)}" data-to="${escapeHtml(c.toBranch)}">` +
+        `    <div class="mindmap-connection" role="listitem" data-from="${escapeHtml(c.fromBranch)}" data-to="${escapeHtml(c.toBranch)}">` +
         `↔ ${escapeHtml(c.fromBranch)} ↔ ${escapeHtml(c.toBranch)}: ${escapeHtml(c.relationship)}` +
         `</div>`,
     )
     .join('\n');
-  return `  <div class="mindmap-connections" aria-label="${escapeHtml(ariaLabel)}" role="note">\n${items}\n  </div>\n`;
+  return `  <div class="mindmap-connections" aria-label="${escapeHtml(ariaLabel)}" role="list">\n${items}\n  </div>\n`;
 }
 
 /** Render a single branch node with its leaf items, AI items, and sub-branches */

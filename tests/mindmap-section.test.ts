@@ -337,7 +337,7 @@ describe('generateMindmapSection', () => {
     expect(section.html).toContain('data-dimension="power"');
   });
 
-  it('uses ARIA tree role for branches container', () => {
+  it('uses ARIA list role for branches container', () => {
     const section = generateMindmapSection({ topic: 'T', branches: makeBranches(), lang: 'en' });
     expect(section.html).toContain('role="list"');
     expect(section.html).toContain('role="listitem"');
