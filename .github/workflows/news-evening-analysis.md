@@ -217,7 +217,11 @@ Cross-reference related data sources for richer analysis (e.g., committee report
 **Check elapsed time before proceeding:**
 ```bash
 source /tmp/gh-aw/agent/timing.env 2>/dev/null || true
-ELAPSED=$(( ($(date +%s) - ${START_TIME:-$(date +%s)}) / 60 ))
+if [ -z "$START_TIME" ]; then
+  echo "⚠️ WARNING: START_TIME not set — timing unreliable"
+  START_TIME=$(date +%s)
+fi
+ELAPSED=$(( ($(date +%s) - $START_TIME) / 60 ))
 echo "Elapsed: ${ELAPSED} minutes"
 if [ "$ELAPSED" -ge 35 ]; then
   echo "⚠️ TIME CRITICAL: Skip data gathering, call safe output NOW"
@@ -445,6 +449,7 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 - If you generated articles → `safeoutputs___create_pull_request({...})`
 - If no parliamentary activity → `safeoutputs___noop({"message": "No significant parliamentary activity found for today's evening analysis."})`
 - If MCP server unreachable → `safeoutputs___noop({"message": "MCP server unavailable. No articles generated."})`
+- If MCP data unavailable → `safeoutputs___missing_data({"reason": "MCP returned no usable data for evening analysis."})`
 - If any error occurs → `safeoutputs___noop({"message": "Error during evening analysis: <brief description>"})`
 
 **Failing to call a safe output tool = automatic workflow failure and a bug report.**
