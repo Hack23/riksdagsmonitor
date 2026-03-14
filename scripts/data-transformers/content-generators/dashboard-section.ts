@@ -268,10 +268,38 @@ ${tableBlocks}
  * Intensity is driven by a `--intensity` CSS custom property (0–1) on each
  * data cell, allowing the stylesheet to map it to a colour scale without any
  * inline scripts.
+ *
+ * @param config - Heat map configuration
+ * @param panelId - Parent panel id used to prefix the DOM id for uniqueness
+ * @param usedIds - Shared Set tracking all emitted DOM ids to prevent duplicates
  */
-function renderHeatMap(config: HeatMapConfig): string {
-  const safeId = config.id.replace(/[^a-zA-Z0-9_-]/g, '') || 'heatmap-0';
+function renderHeatMap(config: HeatMapConfig, panelId: string, usedIds: Set<string>): string {
+  // Deduplicate heatmap IDs: prefix with panelId and track across the dashboard
+  let baseId = config.id.replace(/[^a-zA-Z0-9_-]/g, '') || 'heatmap';
+  baseId = `${panelId}-${baseId}`;
+  let safeId = baseId;
+  let counter = 1;
+  while (usedIds.has(safeId)) {
+    safeId = `${baseId}-${counter++}`;
+  }
+  usedIds.add(safeId);
   const { rowLabels, columnLabels, cells } = config;
+
+  // Validate rectangular shape: every data row must match columnLabels length
+  for (let rIdx = 0; rIdx < cells.length; rIdx++) {
+    if (cells[rIdx].length !== columnLabels.length) {
+      throw new Error(
+        `HeatMapConfig "${config.id}": row ${rIdx} has ${cells[rIdx].length} cells but there are ` +
+        `${columnLabels.length} column labels. Heat map cells must be rectangular.`,
+      );
+    }
+  }
+  if (cells.length !== rowLabels.length) {
+    throw new Error(
+      `HeatMapConfig "${config.id}": ${cells.length} data rows but ${rowLabels.length} row labels. ` +
+      'Heat map rows must match rowLabels length.',
+    );
+  }
 
   // Compute global min/max for normalising intensity using reduce (safe for large datasets)
   const allValues = cells.flatMap(row => row.map(c => (typeof c.value === 'number' ? c.value : 0)));
@@ -324,9 +352,21 @@ ${legend}
  *
  * The gauge angle is driven by a `--gauge-pct` CSS custom property (0–1),
  * which the stylesheet maps to a `conic-gradient` arc — no JS required.
+ *
+ * @param config - Gauge configuration
+ * @param panelId - Parent panel id used to prefix the DOM id for uniqueness
+ * @param usedIds - Shared Set tracking all emitted DOM ids to prevent duplicates
  */
-function renderGauge(config: GaugeConfig): string {
-  const safeId = config.id.replace(/[^a-zA-Z0-9_-]/g, '') || 'gauge-0';
+function renderGauge(config: GaugeConfig, panelId: string, usedIds: Set<string>): string {
+  // Deduplicate gauge IDs: prefix with panelId and track across the dashboard
+  let baseId = config.id.replace(/[^a-zA-Z0-9_-]/g, '') || 'gauge';
+  baseId = `${panelId}-${baseId}`;
+  let safeId = baseId;
+  let counter = 1;
+  while (usedIds.has(safeId)) {
+    safeId = `${baseId}-${counter++}`;
+  }
+  usedIds.add(safeId);
   const safeValue = Number.isFinite(config.value) ? config.value : 0;
   const clamped = Math.min(100, Math.max(0, safeValue));
   const pct = clamped / 100;
@@ -352,10 +392,19 @@ function renderGauge(config: GaugeConfig): string {
 // Multi-panel dashboard helpers
 // ---------------------------------------------------------------------------
 
-/** Sanitise a panel id for safe use as a DOM element id. */
-function sanitisePanelId(rawId: string, index: number): string {
-  const base = rawId.replace(/[^a-zA-Z0-9_-]/g, '') || `panel-${index}`;
-  return base;
+/**
+ * Sanitise a panel id for safe use as a DOM element id, and ensure uniqueness
+ * across panels by tracking used ids in a shared Set.
+ */
+function sanitisePanelId(rawId: string, index: number, usedPanelIds: Set<string>): string {
+  let base = rawId.replace(/[^a-zA-Z0-9_-]/g, '') || `panel-${index}`;
+  let safeId = base;
+  let counter = 1;
+  while (usedPanelIds.has(safeId)) {
+    safeId = `${base}-${counter++}`;
+  }
+  usedPanelIds.add(safeId);
+  return safeId;
 }
 
 /**
@@ -370,6 +419,8 @@ function renderPanel(
   index: number,
   lbl: (key: string) => string,
   usedChartIds: Set<string>,
+  usedPanelIds: Set<string>,
+  usedVisualIds: Set<string>,
 ): string {
   // Runtime validation: enforce mutual exclusivity of visual types
   const visualCount = [panel.chart, panel.heatMap, panel.gauge].filter(Boolean).length;
@@ -380,7 +431,7 @@ function renderPanel(
     );
   }
 
-  const panelId = sanitisePanelId(panel.id, index);
+  const panelId = sanitisePanelId(panel.id, index, usedPanelIds);
   const headingId = `${panelId}-heading`;
 
   // Chart content (Chart.js canvas or CSS-only visual)
@@ -401,15 +452,15 @@ function renderPanel(
       <canvas id="${escapeHtml(chartId)}" role="img" aria-label="${escapeHtml(ariaLabel)}" data-chart-config="${escapeHtml(config)}"></canvas>
     </div>`;
   } else if (panel.heatMap) {
-    visualBlock = `    <div class="panel-heatmap-wrapper">\n${renderHeatMap(panel.heatMap)}\n    </div>`;
+    visualBlock = `    <div class="panel-heatmap-wrapper">\n${renderHeatMap(panel.heatMap, panelId, usedVisualIds)}\n    </div>`;
   } else if (panel.gauge) {
-    visualBlock = `    <div class="panel-gauge-wrapper">\n${renderGauge(panel.gauge)}\n    </div>`;
+    visualBlock = `    <div class="panel-gauge-wrapper">\n${renderGauge(panel.gauge, panelId, usedVisualIds)}\n    </div>`;
   }
 
-  // AI interpretation — use localised label as a visually-hidden heading
+  // AI interpretation — use localised label as a visually-hidden semantic heading
   const interpretationBlock = panel.interpretation?.trim()
     ? `    <div class="panel-interpretation-wrapper">
-      <p class="panel-interpretation-label sr-only">${escapeHtml(lbl('dashboardInterpretation'))}</p>
+      <h4 class="panel-interpretation-label sr-only">${escapeHtml(lbl('dashboardInterpretation'))}</h4>
       <p class="panel-interpretation">${escapeHtml(panel.interpretation.trim())}</p>
     </div>`
     : '';
@@ -436,7 +487,7 @@ function renderPanel(
   const tableBlock = panel.table ? renderTable(panel.table) : '';
 
   return `  <article class="dashboard-panel" id="${escapeHtml(panelId)}" aria-labelledby="${escapeHtml(headingId)}">
-    <h3 id="${escapeHtml(headingId)}">${escapeHtml(panel.title)}</h3>
+    <h3 id="${escapeHtml(headingId)}"><span class="panel-type-label sr-only">${escapeHtml(lbl('dashboardPanel'))}: </span>${escapeHtml(panel.title)}</h3>
 ${visualBlock}
 ${interpretationBlock}
 ${stakeholderBlock}
@@ -513,10 +564,12 @@ export function generateMultiPanelDashboardSection(
     ? `  <p class="multi-panel-summary">${escapeHtml(data.summary.trim())}</p>\n`
     : '';
 
-  // Panels — shared chart ID tracker ensures DOM id uniqueness across all panels
+  // Panels — shared ID trackers ensure DOM id uniqueness across all panels
   const usedChartIds = new Set<string>();
+  const usedPanelIds = new Set<string>();
+  const usedVisualIds = new Set<string>();
   const panelBlocks = data.panels
-    .map((panel, idx) => renderPanel(panel, idx, lbl, usedChartIds))
+    .map((panel, idx) => renderPanel(panel, idx, lbl, usedChartIds, usedPanelIds, usedVisualIds))
     .join('\n');
 
   const panelsGrid = `  <div class="multi-panel-grid ${escapeHtml(layoutClass)}">\n${panelBlocks}\n  </div>`;

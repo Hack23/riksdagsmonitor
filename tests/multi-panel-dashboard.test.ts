@@ -148,14 +148,14 @@ describe('generateMultiPanelDashboardSection', () => {
     expect(section.html).not.toContain('<script>');
   });
 
-  it('renders panel interpretation paragraph with localised label', () => {
+  it('renders panel interpretation paragraph with localised label as <h4>', () => {
     const data = makeDashboard({
       panels: [makeChartPanel({ interpretation: 'Coalition under stress.' })],
     });
     const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
     expect(section.html).toContain('Coalition under stress.');
     expect(section.html).toContain('class="panel-interpretation"');
-    expect(section.html).toContain('class="panel-interpretation-label sr-only"');
+    expect(section.html).toContain('<h4 class="panel-interpretation-label sr-only">');
     expect(section.html).toContain('Analysis');
   });
 
@@ -590,12 +590,122 @@ describe('generateMultiPanelDashboardSection', () => {
   // Review feedback: dashboardInterpretation label used in markup
   // ---------------------------------------------------------------------------
 
-  it('uses dashboardInterpretation label in Swedish', () => {
+  it('uses dashboardInterpretation label in Swedish as <h4>', () => {
     const data = makeDashboard({
       panels: [makeChartPanel({ interpretation: 'Test.' })],
     });
     const section = generateMultiPanelDashboardSection({ data, lang: 'sv' });
     expect(section.html).toContain('Analys');
-    expect(section.html).toContain('class="panel-interpretation-label sr-only"');
+    expect(section.html).toContain('<h4 class="panel-interpretation-label sr-only">');
+  });
+
+  // ---------------------------------------------------------------------------
+  // Review feedback round 2: heatmap shape validation
+  // ---------------------------------------------------------------------------
+
+  it('throws when heat map row count mismatches rowLabels', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'hm', title: 'HM',
+        heatMap: {
+          id: 'hm1', title: 'Bad', rowLabels: ['R1'],
+          columnLabels: ['C1'], cells: [[{ value: 1 }], [{ value: 2 }]],
+        },
+      }],
+    });
+    expect(() => generateMultiPanelDashboardSection({ data, lang: 'en' })).toThrow(/row labels/i);
+  });
+
+  it('throws when heat map column count mismatches columnLabels', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'hm', title: 'HM',
+        heatMap: {
+          id: 'hm1', title: 'Bad', rowLabels: ['R1', 'R2'],
+          columnLabels: ['C1', 'C2'], cells: [[{ value: 1 }, { value: 2 }], [{ value: 3 }]],
+        },
+      }],
+    });
+    expect(() => generateMultiPanelDashboardSection({ data, lang: 'en' })).toThrow(/rectangular/i);
+  });
+
+  // ---------------------------------------------------------------------------
+  // Review feedback round 2: heatmap & gauge ID deduplication
+  // ---------------------------------------------------------------------------
+
+  it('prefixes heatmap IDs with panelId', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'panel-a', title: 'HM', heatMap: makeHeatMapConfig({ id: 'mymap' }),
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('id="panel-a-mymap"');
+  });
+
+  it('prefixes gauge IDs with panelId', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'panel-b', title: 'G', gauge: makeGaugeConfig({ id: 'mygauge' }),
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('id="panel-b-mygauge"');
+  });
+
+  it('deduplicates heatmap IDs across panels', () => {
+    const data = makeDashboard({
+      panels: [
+        { id: 'p1', title: 'HM1', heatMap: makeHeatMapConfig({ id: 'dup' }) },
+        { id: 'p2', title: 'HM2', heatMap: makeHeatMapConfig({ id: 'dup' }) },
+      ],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('id="p1-dup"');
+    expect(section.html).toContain('id="p2-dup"');
+  });
+
+  it('deduplicates gauge IDs across panels', () => {
+    const data = makeDashboard({
+      panels: [
+        { id: 'p1', title: 'G1', gauge: makeGaugeConfig({ id: 'dup' }) },
+        { id: 'p2', title: 'G2', gauge: makeGaugeConfig({ id: 'dup' }) },
+      ],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('id="p1-dup"');
+    expect(section.html).toContain('id="p2-dup"');
+  });
+
+  // ---------------------------------------------------------------------------
+  // Review feedback round 2: panel ID deduplication
+  // ---------------------------------------------------------------------------
+
+  it('deduplicates panel IDs when two panels share the same id', () => {
+    const data = makeDashboard({
+      panels: [
+        makeChartPanel({ id: 'dup', title: 'Panel 1' }),
+        makeChartPanel({ id: 'dup', title: 'Panel 2', chart: { id: 'c2', type: 'bar', title: 'C', labels: ['X'], datasets: [{ label: 'D', data: [1] }] } }),
+      ],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('id="dup"');
+    expect(section.html).toContain('id="dup-1"');
+  });
+
+  // ---------------------------------------------------------------------------
+  // Review feedback round 2: dashboardPanel label used in markup
+  // ---------------------------------------------------------------------------
+
+  it('uses dashboardPanel label as sr-only prefix in panel heading', () => {
+    const section = generateMultiPanelDashboardSection({ data: makeDashboard(), lang: 'en' });
+    expect(section.html).toContain('class="panel-type-label sr-only"');
+    expect(section.html).toContain('Panel');
+  });
+
+  it('uses localised dashboardPanel label in Swedish', () => {
+    const section = generateMultiPanelDashboardSection({ data: makeDashboard(), lang: 'sv' });
+    expect(section.html).toContain('class="panel-type-label sr-only"');
+    expect(section.html).toContain('>Panel: </span>');
   });
 });
