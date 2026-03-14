@@ -285,7 +285,7 @@ describe('buildAISwotStakeholders', () => {
       const result = buildAISwotStakeholders(docs, null, 'en');
       const govStrengths = result[0].swot.strengths as AISwotEntry[];
       const hasSkr = govStrengths.some(e =>
-        e.relatedDocuments.some(r => r.includes('Skr.')) || e.text.toLowerCase().includes('skrivelse')
+        e.relatedDocuments.some(r => r.includes('Skr.'))
       );
       expect(hasSkr).toBe(true);
     });
