@@ -279,6 +279,16 @@ describe('buildAISwotStakeholders', () => {
       const hasLaw = citizenStrengths.some(e => e.relatedDocuments.some(r => r.includes('SFS')));
       expect(hasLaw).toBe(true);
     });
+
+    it('government written communications (skr) appear in government coalition strengths', () => {
+      const docs = [makeDoc({ doktyp: 'skr', titel: 'Skr. 2025/26:1 Government annual report' })];
+      const result = buildAISwotStakeholders(docs, null, 'en');
+      const govStrengths = result[0].swot.strengths as AISwotEntry[];
+      const hasSkr = govStrengths.some(e =>
+        e.relatedDocuments.some(r => r.includes('Skr.')) || e.text.toLowerCase().includes('skrivelse')
+      );
+      expect(hasSkr).toBe(true);
+    });
   });
 
   describe('cross-reference metadata', () => {

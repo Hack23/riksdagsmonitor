@@ -27,7 +27,7 @@ import {
   type SankeyNode,
   type SankeyFlow,
 } from '../data-transformers/index.js';
-import { buildAISwotStakeholders } from '../data-transformers/content-generators/ai-swot-analyzer.js';
+import { buildAISwotStakeholders, STAKEHOLDER_NAMES } from '../data-transformers/content-generators/ai-swot-analyzer.js';
 import { generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
 import { generateDeepPolicyAnalysis, detectPolicyDomains } from '../data-transformers/policy-analysis.js';
 import { escapeHtml } from '../html-utils.js';
@@ -1101,55 +1101,13 @@ function buildDeepInspectionSections(
     : `Multi-stakeholder analysis of ${docs.length} parliamentary documents`;
   const swotSection = generateStakeholderSwotSection({ stakeholders, lang, strategicContext });
 
-  // ── Localised names for mindmap/sankey labels ─────────────────────────────
-  const govNames: Partial<Record<Language, string>> = {
-    en: 'Government Coalition', sv: 'Regeringskoalitionen',
-    da: 'Regeringskoalitionen', no: 'Regjeringskoalisjonen',
-    fi: 'Hallituskoalitio', de: 'Regierungskoalition',
-    fr: 'Coalition gouvernementale', es: 'Coalición gubernamental',
-    nl: 'Regeringscoalitie', ar: 'الائتلاف الحكومي',
-    he: 'הקואליציה הממשלתית', ja: '政府連立', ko: '정부 연립', zh: '执政联盟',
-  };
-  const oppNames: Partial<Record<Language, string>> = {
-    en: 'Social Democratic Opposition', sv: 'Socialdemokratisk opposition',
-    da: 'Socialdemokratisk opposition', no: 'Sosialdemokratisk opposisjon',
-    fi: 'Sosiaalidemokraattinen oppositio', de: 'Sozialdemokratische Opposition',
-    fr: 'Opposition sociale-démocrate', es: 'Oposición socialdemócrata',
-    nl: 'Sociaaldemocratische oppositie', ar: 'المعارضة الاشتراكية الديمقراطية',
-    he: 'האופוזיציה הסוציאל-דמוקרטית', ja: '社会民主主義野党', ko: '사회민주주의 야당', zh: '社会民主主义反对派',
-  };
-  const privateNames: Partial<Record<Language, string>> = {
-    en: 'Private Sector & Business', sv: 'Privat sektor och näringsliv',
-    da: 'Privat sektor og erhvervsliv', no: 'Privat sektor og næringsliv',
-    fi: 'Yksityissektori ja elinkeinoelämä', de: 'Privatwirtschaft & Unternehmen',
-    fr: 'Secteur privé & entreprises', es: 'Sector privado y empresas',
-    nl: 'Private sector & bedrijfsleven', ar: 'القطاع الخاص والأعمال',
-    he: 'המגזר הפרטי והעסקים', ja: '民間セクターとビジネス', ko: '민간 부문 및 기업', zh: '私营部门与商业',
-  };
-  const euNames: Partial<Record<Language, string>> = {
-    en: 'EU & International Actors', sv: 'EU och internationella aktörer',
-    da: 'EU og internationale aktører', no: 'EU og internasjonale aktører',
-    fi: 'EU ja kansainväliset toimijat', de: 'EU & internationale Akteure',
-    fr: 'UE et acteurs internationaux', es: 'UE y actores internacionales',
-    nl: 'EU & internationale actoren', ar: 'الاتحاد الأوروبي والجهات الدولية',
-    he: 'האיחוד האירופי ושחקנים בינלאומיים', ja: 'EU・国際アクター', ko: 'EU 및 국제 행위자', zh: '欧盟与国际行为者',
-  };
-  const civilNames: Partial<Record<Language, string>> = {
-    en: 'Civil Society & NGOs', sv: 'Civilsamhälle och organisationer',
-    da: 'Civilsamfund og NGO\'er', no: 'Sivilsamfunn og organisasjoner',
-    fi: 'Kansalaisyhteiskunta ja järjestöt', de: 'Zivilgesellschaft & NGOs',
-    fr: 'Société civile & ONG', es: 'Sociedad civil y ONG',
-    nl: 'Maatschappelijk middenveld & NGO\'s', ar: 'المجتمع المدني والمنظمات غير الحكومية',
-    he: 'החברה האזרחית וארגוני מגזר שלישי', ja: '市民社会とNGO', ko: '시민 사회 및 NGO', zh: '公民社会与非政府组织',
-  };
-  const citizenNames: Partial<Record<Language, string>> = {
-    en: 'Swedish Citizens & Voters', sv: 'Svenska medborgare och väljare',
-    da: 'Svenske borgere og vælgere', no: 'Svenske borgere og velgere',
-    fi: 'Ruotsin kansalaiset ja äänestäjät', de: 'Schwedische Bürger & Wähler',
-    fr: 'Citoyens & électeurs suédois', es: 'Ciudadanos y votantes suecos',
-    nl: 'Zweedse burgers & kiezers', ar: 'المواطنون والناخبون السويديون',
-    he: 'אזרחים ובוחרים שוודים', ja: 'スウェーデン市民と有権者', ko: '스웨덴 시민 및 유권자', zh: '瑞典公民与选民',
-  };
+  // ── Localised names for mindmap/sankey labels (single source from ai-swot-analyzer)
+  const govNames    = STAKEHOLDER_NAMES['government-coalition'];
+  const oppNames    = STAKEHOLDER_NAMES['opposition'];
+  const privateNames = STAKEHOLDER_NAMES['private-sector'];
+  const euNames     = STAKEHOLDER_NAMES['eu-international'];
+  const civilNames  = STAKEHOLDER_NAMES['civil-society'];
+  const citizenNames = STAKEHOLDER_NAMES['citizens-voters'];
 
     const dataSourceBranchLabels: Partial<Record<Language, string>> = {
     en: 'Data Sources', sv: 'Datakällor', da: 'Datakilder', no: 'Datakilder',

@@ -91,7 +91,7 @@ export interface AISwotAnalysis {
 // Localised stakeholder names (all 14 languages)
 // ---------------------------------------------------------------------------
 
-const STAKEHOLDER_NAMES: Readonly<Record<StakeholderPerspective, Partial<Record<Language, string>>>> = {
+export const STAKEHOLDER_NAMES: Readonly<Record<StakeholderPerspective, Partial<Record<Language, string>>>> = {
   'government-coalition': {
     en: 'Government Coalition',
     sv: 'Regeringskoalitionen',
@@ -369,6 +369,7 @@ function buildGovernmentSwot(
   _lang: Language,
 ): Pick<AISwotAnalysis, 'strengths' | 'weaknesses' | 'opportunities' | 'threats'> {
   const propDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
+  const skrDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
   const sfsDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
   const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
   const betDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
@@ -400,6 +401,14 @@ function buildGovernmentSwot(
       d, withTopic('Government communication%t', topicStr ? ` ${topic}` : null),
       'medium',
       withTopic(`Press communication signals proactive policy messaging${topicStr}`, topic),
+      'stable',
+    ));
+  });
+  skrDocs.slice(0, 1).forEach(d => {
+    strengths.push(docEntry(
+      d, withTopic('Government written communication (skrivelse)%t', topicStr ? ` ${topic}` : null),
+      'medium',
+      withTopic(`Government skrivelse conveys policy position or report to parliament${topicStr}`, topic),
       'stable',
     ));
   });
@@ -912,7 +921,10 @@ const MIN_CONFIDENCE = 0.40;
 
 function computeConfidence(docs: RawDocument[], perspective: StakeholderPerspective): number {
   const docBonus = Math.min(MAX_DOC_VOLUME_BONUS, docs.length * CONFIDENCE_PER_DOC);
-  const enriched = docs.filter(d => d.contentFetched || (d.fullText && d.fullText.length > 100)).length;
+  const enriched = docs.filter(d => {
+    const hasFullText = (d.fullText && d.fullText.length > 100) || (d.fullContent && d.fullContent.length > 100);
+    return hasFullText;
+  }).length;
   const enrichedBonus = Math.min(MAX_ENRICHMENT_BONUS, enriched * CONFIDENCE_PER_ENRICHED_DOC);
 
   // EU stakeholder gets slightly lower confidence when there are no fpm docs
