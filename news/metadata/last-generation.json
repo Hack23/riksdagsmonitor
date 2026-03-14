@@ -36,7 +36,7 @@
     "zh"
   ],
   "batchSize": "all",
-  "skipExisting": false,
+  "skipExisting": true,
   "generated": 14,
   "errors": 0,
   "articles": [
