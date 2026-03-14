@@ -22,6 +22,8 @@ import {
   detectPolicyDomains,
   assessConfidenceLevel,
   type ConfidenceLevel,
+  DOMAIN_NAME_TO_KEY,
+  type DomainKey,
 } from '../data-transformers/policy-analysis.js';
 import { calculateInfluenceScore } from '../data-transformers/document-analysis.js';
 import { calculateCoalitionRiskIndex } from '../data-transformers/risk-analysis.js';
@@ -196,10 +198,11 @@ export function clearAnalysisCache(): void {
 function cacheKey(doc: RawDocument): string {
   if (doc.dok_id) return `dok:${doc.dok_id}`;
   if (doc.url) return `url:${doc.url}`;
-  // Include summary and fullText length as disambiguation fields to reduce collisions
+  // Include summary, fullText, fullContent, and notis lengths to reduce collisions
   const title = doc.titel ?? doc.title ?? 'unknown';
   const date = doc.datum ?? '';
-  const contentLen = (doc.fullText?.length ?? 0) + (doc.summary?.length ?? 0);
+  const contentLen = (doc.fullText?.length ?? 0) + (doc.summary?.length ?? 0)
+    + (doc.fullContent?.length ?? 0) + (doc.notis?.length ?? 0);
   return `title:${title}-${date}-${contentLen}`;
 }
 
@@ -290,37 +293,35 @@ function stakeholderName(group: StakeholderGroup, lang: Language | string): stri
 }
 
 // ---------------------------------------------------------------------------
-// Domain key → English name lookup (mirrors DOMAIN_NAMES in policy-analysis.ts)
-// Used internally to map raw domain keys to the localized strings returned
-// by detectPolicyDomains().
+// Domain key ↔ localised name helpers (reuses canonical mapping from
+// policy-analysis.ts via DOMAIN_NAME_TO_KEY — no duplication)
 // ---------------------------------------------------------------------------
-
-const DOMAIN_EN_NAMES: Readonly<Record<string, string>> = {
-  fiscal: 'fiscal policy',
-  defence: 'defence and security policy',
-  environment: 'environmental and climate policy',
-  education: 'education policy',
-  healthcare: 'healthcare policy',
-  migration: 'migration policy',
-  'eu-foreign': 'EU and foreign affairs',
-  justice: 'justice policy',
-  labour: 'labour market policy',
-  housing: 'housing policy',
-  transport: 'transport policy',
-  trade: 'trade and industry policy',
-};
 
 /**
  * Check whether a domain key (e.g. 'healthcare') is present in the array
- * returned by `detectPolicyDomains()`.  detectPolicyDomains returns localised
- * display names such as 'healthcare policy', so a direct `includes('healthcare')`
- * would fail.  This helper maps keys to their English display names first.
+ * returned by `detectPolicyDomains()`.  Since `detectPolicyDomains` returns
+ * localised display names, this helper uses the canonical reverse mapping
+ * (`DOMAIN_NAME_TO_KEY`) to convert each localised name back to its key
+ * before comparison — so it works correctly regardless of language.
  */
 function hasDomain(domains: string[], key: string): boolean {
-  const englishName = DOMAIN_EN_NAMES[key];
-  if (englishName) return domains.includes(englishName);
-  // Fallback: substring match for unknown keys
-  return domains.some(d => d.toLowerCase().includes(key.toLowerCase()));
+  return domains.some(d => {
+    const canonicalKey = DOMAIN_NAME_TO_KEY[d] ?? DOMAIN_NAME_TO_KEY[d.toLowerCase()];
+    if (canonicalKey === key) return true;
+    // Fallback: substring match for unknown/un-mapped entries
+    return d.toLowerCase().includes(key.toLowerCase());
+  });
+}
+
+/**
+ * Derive canonical domain keys from a localised domain name array.
+ * Returns `[canonicalKey, localisedDisplayName]` tuples.
+ */
+function toDomainKeyPairs(domains: string[]): Array<{ key: DomainKey | string; name: string }> {
+  return domains.map(d => ({
+    key: DOMAIN_NAME_TO_KEY[d] ?? DOMAIN_NAME_TO_KEY[d.toLowerCase()] ?? d,
+    name: d,
+  }));
 }
 
 
@@ -329,7 +330,7 @@ function hasDomain(domains: string[], key: string): boolean {
 const STAKEHOLDER_SIGNALS: Readonly<Record<StakeholderGroup, string[]>> = {
   'government-coalition': ['proposition', 'regering', 'budget', 'statsminister', 'minister'],
   'opposition-parties': ['motion', 'opposition', 'socialdemokrat', 'vänsterpartiet', 'centerpartiet', 'miljöpartiet'],
-  'state-agencies': ['myndighet', 'länsstyrelse', 'riksdag', 'domstol', 'polis', 'skatteverket', 'folkhälsomyndighet'],
+  'state-agencies': ['myndighet', 'länsstyrelse', 'domstol', 'polis', 'skatteverket', 'folkhälsomyndighet'],
   'municipalities-regions': ['kommuner', 'regioner', 'landsting', 'skr', 'primärkommunal'],
   'private-sector': ['näringsliv', 'företag', 'arbetsgivare', 'industry', 'handel', 'marknad'],
   'labor-market': ['facket', 'lo', 'tco', 'saco', 'arbetsrätt', 'lön', 'fackförbund'],
@@ -342,7 +343,8 @@ const STAKEHOLDER_SIGNALS: Readonly<Record<StakeholderGroup, string[]>> = {
 
 /**
  * Determine which stakeholder groups are relevant for a document.
- * Government coalition and citizens/voters are always included.
+ * Government coalition, opposition parties, and citizens/voters are always
+ * included; other groups are added based on document-content signals.
  */
 export function selectRelevantStakeholders(doc: RawDocument): StakeholderGroup[] {
   const alwaysIncluded: StakeholderGroup[] = ['government-coalition', 'opposition-parties', 'citizens-voters'];
@@ -378,6 +380,7 @@ export function selectRelevantStakeholders(doc: RawDocument): StakeholderGroup[]
 function buildStakeholderSwot(
   group: StakeholderGroup,
   doc: RawDocument,
+  lang: Language | string,
   ciaContext?: CIAContext,
 ): SwotData {
   const docType = doc.doktyp ?? doc.documentType ?? '';
@@ -390,7 +393,7 @@ function buildStakeholderSwot(
   if (group === 'government-coalition') {
     const stabilityScore = ciaContext?.coalitionStability?.stabilityScore ?? 70;
     return {
-      subject: stakeholderName(group, 'en'),
+      subject: stakeholderName(group, lang),
       strengths: [
         { text: isGovernment ? 'Advances governing agenda through this proposition' : 'May leverage document in policy debate', impact: 'high' },
         { text: `Coalition stability score: ${stabilityScore}/100`, impact: stabilityScore >= 60 ? 'high' : 'medium' },
@@ -413,7 +416,7 @@ function buildStakeholderSwot(
   // Opposition SWOT
   if (group === 'opposition-parties') {
     return {
-      subject: stakeholderName(group, 'en'),
+      subject: stakeholderName(group, lang),
       strengths: [
         { text: isMotion ? `Party ${party} actively engaged through motions` : 'Can hold government accountable through debate', impact: 'high' },
         { text: 'Democratic scrutiny role provides legitimacy', impact: 'medium' },
@@ -436,7 +439,7 @@ function buildStakeholderSwot(
   // Generic stakeholder SWOT — domain-aware
   const hasHighInfluence = calculateInfluenceScore(doc) > 60;
   return {
-    subject: stakeholderName(group, 'en'),
+    subject: stakeholderName(group, lang),
     strengths: [
       { text: 'Established institutional capacity to respond', impact: 'medium' },
       { text: 'Domain expertise in relevant policy areas', impact: 'medium' },
@@ -524,7 +527,7 @@ function buildStakeholderImpact(
     indirectEffects,
     implementationBurden: burden,
     politicalImplications,
-    swot: buildStakeholderSwot(group, doc, ciaContext),
+    swot: buildStakeholderSwot(group, doc, lang, ciaContext),
     confidence,
   };
 }
@@ -537,7 +540,12 @@ function buildStakeholderImpact(
 export function buildPestleAnalysis(doc: RawDocument, lang?: Language | string): PESTLEAnalysis {
   const docType = doc.doktyp ?? doc.documentType ?? '';
   const title = doc.titel ?? doc.title ?? doc.rubrik ?? '';
-  const domains = detectPolicyDomains(doc, lang);
+  // Use 'en' for internal domain-trigger checks so hasDomain matches reliably
+  // regardless of caller language; the analysis text is English anyway.
+  const triggerDomains = detectPolicyDomains(doc, 'en');
+  // Detect with requested lang for any localized output (currently unused,
+  // but reserved for future locale-aware PESTLE text).
+  void lang;
 
   const political: string[] = [
     docType === 'prop'
@@ -546,20 +554,20 @@ export function buildPestleAnalysis(doc: RawDocument, lang?: Language | string):
         ? 'Opposition-initiated motion — reflects parliamentary accountability mechanism.'
         : 'Parliamentary document shapes political agenda.',
   ];
-  if (hasDomain(domains, 'defence')) political.push('Intersects with national security and defence strategy.');
-  if (hasDomain(domains, 'eu-foreign')) political.push('EU/international obligations may constrain domestic policy space.');
+  if (hasDomain(triggerDomains, 'defence')) political.push('Intersects with national security and defence strategy.');
+  if (hasDomain(triggerDomains, 'eu-foreign')) political.push('EU/international obligations may constrain domestic policy space.');
 
   const economic: string[] = [];
-  if (hasDomain(domains, 'fiscal')) economic.push('Direct fiscal implications for state budget allocation.');
-  if (hasDomain(domains, 'labour')) economic.push('Employment and wage effects across affected sectors.');
-  if (hasDomain(domains, 'trade')) economic.push('Trade competitiveness and export/import dynamics affected.');
+  if (hasDomain(triggerDomains, 'fiscal')) economic.push('Direct fiscal implications for state budget allocation.');
+  if (hasDomain(triggerDomains, 'labour')) economic.push('Employment and wage effects across affected sectors.');
+  if (hasDomain(triggerDomains, 'trade')) economic.push('Trade competitiveness and export/import dynamics affected.');
   if (economic.length === 0) economic.push('Indirect economic effects possible through regulatory changes.');
 
   const social: string[] = [];
-  if (hasDomain(domains, 'healthcare')) social.push('Healthcare access and quality of life implications.');
-  if (hasDomain(domains, 'education')) social.push('Educational outcomes and social mobility effects.');
-  if (hasDomain(domains, 'migration')) social.push('Migration flows and social cohesion dimensions.');
-  if (hasDomain(domains, 'housing')) social.push('Housing availability and affordability impacts.');
+  if (hasDomain(triggerDomains, 'healthcare')) social.push('Healthcare access and quality of life implications.');
+  if (hasDomain(triggerDomains, 'education')) social.push('Educational outcomes and social mobility effects.');
+  if (hasDomain(triggerDomains, 'migration')) social.push('Migration flows and social cohesion dimensions.');
+  if (hasDomain(triggerDomains, 'housing')) social.push('Housing availability and affordability impacts.');
   if (social.length === 0) social.push('Social equity and public service delivery effects possible.');
 
   const technological: string[] = [
@@ -571,11 +579,11 @@ export function buildPestleAnalysis(doc: RawDocument, lang?: Language | string):
   const legal: string[] = [
     docType === 'prop' ? 'Proposed as primary legislation — will require Riksdag vote.' : 'May require amendments to existing statutes.',
   ];
-  if (hasDomain(domains, 'justice')) legal.push('Criminal justice or rule-of-law provisions included.');
-  if (hasDomain(domains, 'eu-foreign')) legal.push('EU Directive transposition obligations may apply.');
+  if (hasDomain(triggerDomains, 'justice')) legal.push('Criminal justice or rule-of-law provisions included.');
+  if (hasDomain(triggerDomains, 'eu-foreign')) legal.push('EU Directive transposition obligations may apply.');
 
   const environmental: string[] = [];
-  if (hasDomain(domains, 'environment')) {
+  if (hasDomain(triggerDomains, 'environment')) {
     environmental.push('Direct environmental and climate policy implications.');
     environmental.push('May interact with EU Green Deal commitments.');
   } else {
@@ -795,7 +803,8 @@ export function generateExecutiveSummary(doc: RawDocument, lang: Language | stri
   // Paragraph 1: What the document is and who authored it
   const typeLabel = docType === 'prop' ? 'government proposition' : docType === 'mot' ? 'parliamentary motion' : 'parliamentary document';
   const authorPart = party && party !== 'other' ? ` filed by ${party.toUpperCase()}` : '';
-  const passage = doc.fullText ? extractKeyPassage(doc.fullText, 200) : '';
+  const effectiveText = doc.fullText ?? doc.fullContent ?? '';
+  const passage = effectiveText ? extractKeyPassage(effectiveText, 200) : '';
   const contentSentence = passage ? ` Key provision: "${escapeHtml(passage)}"` : '';
 
   const para1 = `This ${typeLabel}${authorPart} — ${escapeHtml(title)} — is a parliamentary document with an influence score of ${influenceScore}/100.${contentSentence}`;
@@ -924,9 +933,9 @@ export function analyzeDocument(
   const rawDomains = detectPolicyDomains(doc);
   const influenceScore = calculateInfluenceScore(doc);
 
-  const policyDomains: PolicyDomain[] = rawDomains.map((d, i) => ({
-    key: d,
-    name: d,
+  const policyDomains: PolicyDomain[] = toDomainKeyPairs(rawDomains).map(({ key: k, name: n }, i) => ({
+    key: k,
+    name: n,
     relevanceScore: Math.max(MIN_DOMAIN_RELEVANCE, MAX_DOMAIN_RELEVANCE - i * DOMAIN_RELEVANCE_DECAY),
   }));
 

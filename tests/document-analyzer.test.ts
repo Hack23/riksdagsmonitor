@@ -271,6 +271,19 @@ describe('analyzeDocument — policy domains', () => {
       expect(d.relevanceScore).toBeLessThanOrEqual(100);
     }
   });
+
+  it('policy domain keys are canonical identifiers, not localized display names', () => {
+    clearAnalysisCache();
+    const { policyDomains } = analyzeDocument({ ...propDoc, dok_id: 'DOMKEY-1' }, 'en');
+    // Healthcare doc should produce a domain key like 'healthcare', not 'healthcare policy'
+    const healthDomain = policyDomains.find(d => d.key === 'healthcare');
+    if (healthDomain) {
+      // key should be the short canonical form
+      expect(healthDomain.key).not.toContain(' ');
+      // name should be the localized display name
+      expect(healthDomain.name.length).toBeGreaterThan(healthDomain.key.length);
+    }
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -772,6 +785,13 @@ describe('generateExecutiveSummary', () => {
     expect(summary.length).toBeGreaterThan(100);
   });
 
+  it('uses fullContent as fallback when fullText is absent', () => {
+    const doc: RawDocument = { ...propDoc, dok_id: 'FC-1', fullText: undefined, fullContent: '<p>HTML enriched content from fullContent field</p>' };
+    const summary = generateExecutiveSummary(doc, 'en');
+    // Should still produce a passage from fullContent
+    expect(summary).toContain('Key provision');
+  });
+
   it('does not throw when fullText is absent', () => {
     expect(() => generateExecutiveSummary(minimalDoc, 'en')).not.toThrow();
   });
@@ -804,5 +824,21 @@ describe('multi-language support', () => {
     const result = analyzeDocument({ ...propDoc, dok_id: 'LANG-SV' }, 'sv');
     const cit = result.stakeholderImpacts.find(s => s.stakeholder === 'citizens-voters');
     expect(cit?.displayName).toBe('Medborgare och väljare');
+  });
+
+  it('PESTLE triggers work correctly for non-EN language (Swedish)', () => {
+    clearAnalysisCache();
+    // Use a healthcare doc — PESTLE should include healthcare entry regardless of lang
+    const svResult = analyzeDocument({ ...propDoc, dok_id: 'PESTLE-SV' }, 'sv');
+    const enResult = analyzeDocument({ ...propDoc, dok_id: 'PESTLE-EN' }, 'en');
+    // Both should have the same number of social entries (healthcare trigger fires for both)
+    expect(svResult.pestleDimensions.social.length).toBe(enResult.pestleDimensions.social.length);
+  });
+
+  it('SWOT subject is localized when lang is non-EN', () => {
+    clearAnalysisCache();
+    const result = analyzeDocument({ ...propDoc, dok_id: 'SWOT-SV' }, 'sv');
+    const gov = result.stakeholderImpacts.find(s => s.stakeholder === 'government-coalition');
+    expect(gov?.swot.subject).toBe('Regeringskoalitionen');
   });
 });

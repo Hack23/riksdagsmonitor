@@ -59,7 +59,7 @@ import {
 // Per-language domain name translations (12 domains × 14 languages)
 // English keys are used internally; localised names are returned to callers.
 // ---------------------------------------------------------------------------
-type DomainKey = 'fiscal' | 'defence' | 'environment' | 'education' | 'healthcare'
+export type DomainKey = 'fiscal' | 'defence' | 'environment' | 'education' | 'healthcare'
   | 'migration' | 'eu-foreign' | 'justice' | 'labour' | 'housing' | 'transport' | 'trade';
 
 const DOMAIN_NAMES: Readonly<Record<DomainKey, Record<string, string>>> = {
@@ -148,7 +148,29 @@ const DOMAIN_NAMES: Readonly<Record<DomainKey, Record<string, string>>> = {
   },
 };
 
-/** Resolve a localised domain name from a domain key and language. */
+/**
+ * Map from canonical domain key to its English display name.
+ * Single source of truth — mirrors DOMAIN_NAMES[key].en for each key.
+ */
+export const DOMAIN_KEY_TO_EN: Readonly<Record<DomainKey, string>> = Object.fromEntries(
+  Object.entries(DOMAIN_NAMES).map(([key, translations]) => [key, translations.en]),
+) as Record<DomainKey, string>;
+
+/**
+ * Reverse lookup: map any localised domain display name back to its canonical key.
+ * Covers all 14 languages so callers can reliably derive the key from any
+ * string returned by `detectPolicyDomains()`.
+ */
+export const DOMAIN_NAME_TO_KEY: Readonly<Record<string, DomainKey>> = (() => {
+  const m: Record<string, DomainKey> = {};
+  for (const [key, translations] of Object.entries(DOMAIN_NAMES)) {
+    for (const localisedName of Object.values(translations)) {
+      m[localisedName] = key as DomainKey;
+      m[localisedName.toLowerCase()] = key as DomainKey;
+    }
+  }
+  return m;
+})();
 function domainName(key: DomainKey, lang: Language | string): string {
   return DOMAIN_NAMES[key][lang] ?? DOMAIN_NAMES[key].en;
 }
