@@ -500,27 +500,33 @@ describe('Analysis Depth Input', () => {
     'news-translate.md'
   ];
 
-  it('all news workflows should have analysis_depth input parameter', () => {
+  it('all news workflows should have analysis_depth under workflow_dispatch inputs', () => {
     for (const workflowFile of ALL_NEWS_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       if (!fs.existsSync(filepath)) continue;
       const content = fs.readFileSync(filepath, 'utf-8');
+      // Verify analysis_depth appears in the YAML frontmatter inputs section
+      const frontmatter = content.match(/^---\n([\s\S]*?)\n---/)?.[1] ?? '';
+      const hasInputBlock = frontmatter.includes('workflow_dispatch');
+      const hasAnalysisDepth = frontmatter.includes('analysis_depth');
       expect(
-        content.includes('analysis_depth'),
-        `Workflow ${workflowFile} should have analysis_depth input parameter`
+        hasInputBlock && hasAnalysisDepth,
+        `Workflow ${workflowFile} should have analysis_depth under workflow_dispatch.inputs in frontmatter`
       ).toBe(true);
     }
   });
 
-  it('dedicated article type workflows should default analysis_depth to standard or deep', () => {
+  it('dedicated article type workflows should default analysis_depth to standard or deep in frontmatter', () => {
     for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       if (!fs.existsSync(filepath)) continue;
       const content = fs.readFileSync(filepath, 'utf-8');
-      const hasValidDefault = content.includes('default: standard') || content.includes('default: deep') || content.includes('default: comprehensive');
+      // Extract the analysis_depth input block from frontmatter
+      const frontmatter = content.match(/^---\n([\s\S]*?)\n---/)?.[1] ?? '';
+      const depthBlock = frontmatter.match(/analysis_depth:[\s\S]*?default:\s*(standard|deep|comprehensive)/);
       expect(
-        hasValidDefault,
-        `Workflow ${workflowFile} should have a valid analysis_depth default (standard, deep, or comprehensive)`
+        depthBlock !== null,
+        `Workflow ${workflowFile} should have analysis_depth with valid default (standard, deep, or comprehensive) in frontmatter`
       ).toBe(true);
     }
   });
@@ -533,6 +539,18 @@ describe('Analysis Depth Input', () => {
       expect(
         content.includes('Multi-Step AI Analysis Framework') || content.includes('analysis_depth'),
         `Workflow ${workflowFile} should reference analysis depth and multi-step AI analysis`
+      ).toBe(true);
+    }
+  });
+
+  it('all dedicated workflows should list analysis_depth in dispatch parameters section', () => {
+    for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('analysis_depth') && content.includes('github.event.inputs.analysis_depth'),
+        `Workflow ${workflowFile} should list analysis_depth in dispatch parameters section`
       ).toBe(true);
     }
   });
@@ -575,12 +593,27 @@ describe('Interpellations Generator', () => {
     const indexPath = path.join(__dirname, '..', 'scripts', 'data-transformers', 'index.ts');
     if (!fs.existsSync(indexPath)) return;
     const content = fs.readFileSync(indexPath, 'utf-8');
-    // interpellations must NOT be grouped with motions in the same case
-    const interpCase = content.match(/case 'interpellations'[^}]+?return generateInterpellationsContent/s);
+    // Both conditions must hold: interpellations case exists AND it calls the dedicated generator
     expect(
-      interpCase !== null,
-      "data-transformers/index.ts should route 'interpellations' to generateInterpellationsContent, not generateMotionsContent"
+      content.includes("case 'interpellations'"),
+      "data-transformers/index.ts should have a case for 'interpellations'"
     ).toBe(true);
+    expect(
+      content.includes('generateInterpellationsContent'),
+      "data-transformers/index.ts should reference generateInterpellationsContent"
+    ).toBe(true);
+    // Verify the interpellations case does NOT fall through to motions
+    // Extract lines around the interpellations case to ensure it has its own return
+    const lines = content.split('\n');
+    const interpIdx = lines.findIndex(l => l.includes("case 'interpellations'"));
+    if (interpIdx >= 0) {
+      // Look at the next few lines for a return statement with the right function
+      const nextLines = lines.slice(interpIdx, interpIdx + 3).join('\n');
+      expect(
+        nextLines.includes('generateInterpellationsContent'),
+        "case 'interpellations' should return generateInterpellationsContent (not fall through to motions)"
+      ).toBe(true);
+    }
   });
 
   it('content-generators barrel should export generateInterpellationsContent', () => {

@@ -393,12 +393,13 @@ export function resolveAiIterations(
   const profile = getArticleTypeProfile(articleType);
   switch (requestedDepth) {
     case 'standard':
-      return Math.max(1, profile.aiIterations);
+      // standard caps at 2 iterations even if profile has more (1–2 range)
+      return Math.min(2, Math.max(1, profile.aiIterations));
     case 'deep':
-      // deep always enforces at least 2 iterations regardless of profile default
-      return Math.max(2, profile.aiIterations);
+      // deep enforces 2–3 iterations
+      return Math.min(3, Math.max(2, profile.aiIterations));
     case 'comprehensive':
-      // comprehensive uses the full profile iteration count (minimum 3)
+      // comprehensive uses the full profile iteration count (minimum 3, no cap)
       return Math.max(3, profile.aiIterations);
   }
 }

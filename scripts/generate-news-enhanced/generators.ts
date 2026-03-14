@@ -81,7 +81,7 @@ export async function generateWeekAhead(): Promise<GenerationResult> {
     console.log('  🔄 Fetching interpellations...');
     const rawInterpellations = await client.fetchInterpellations({ limit: 15 })
       .catch((e: unknown) => { if (requireMcp) throw e; return [] as unknown[]; });
-    const interpellations: unknown[] = Array.isArray(rawInterpellations) ? rawInterpellations : [];
+    const interpellations: RawDocument[] = Array.isArray(rawInterpellations) ? rawInterpellations as RawDocument[] : [];
     console.log(`  📊 Found ${interpellations.length} interpellations`);
 
     const today: Date = new Date();
@@ -98,7 +98,7 @@ export async function generateWeekAhead(): Promise<GenerationResult> {
         events: events as Parameters<typeof transformCalendarToEventGrid>[0],
         documents,
         questions,
-        interpellations: interpellations as RawDocument[],
+        interpellations,
         highlights: [] as Array<{title: string; description: string}>,
       };
       const content: string = generateArticleContent(weekData, 'week-ahead', lang);

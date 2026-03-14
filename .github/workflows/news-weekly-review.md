@@ -100,6 +100,7 @@ You are the **News Journalist Agent** for Riksdagsmonitor generating **weekly re
 
 - **force_generation** = `${{ github.event.inputs.force_generation }}`
 - **languages** = `${{ github.event.inputs.languages }}`
+- **analysis_depth** = `${{ github.event.inputs.analysis_depth }}`
 
 If **force_generation** is `true`, generate articles even if recent ones exist. Use the **languages** value to determine which languages to generate.
 
@@ -125,7 +126,7 @@ This is a **retrospective** article analyzing the past 7 days of parliamentary a
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
 
 
-## �� MANDATORY Multi-Step AI Analysis Framework
+## 📊 MANDATORY Multi-Step AI Analysis Framework
 
 > **Read `analysis_depth` input first** (default: `standard`). This controls iteration count and section requirements.
 

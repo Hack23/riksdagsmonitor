@@ -100,6 +100,7 @@ You are the **News Journalist Agent** for Riksdagsmonitor generating **oppositio
 
 - **force_generation** = `${{ github.event.inputs.force_generation }}`
 - **languages** = `${{ github.event.inputs.languages }}`
+- **analysis_depth** = `${{ github.event.inputs.analysis_depth }}`
 
 If **force_generation** is `true`, generate articles even if recent ones exist. Use the **languages** value to determine which languages to generate.
 

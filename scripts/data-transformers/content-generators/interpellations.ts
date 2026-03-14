@@ -39,21 +39,13 @@ export function generateInterpellationsContent(
   let content = `<h2>${heading}</h2>\n`;
 
   if (interpellations.length === 0) {
-    const noMotionsLabel = L(lang, 'noMotions') as string;
-    const noDataMsg =
-      noMotionsLabel.replace(/motion/gi, 'interpellation') ||
-      'No interpellation debates available at this time.';
+    const noDataMsg = _getLocalizedLabel(lang, 'noInterpellations', 'No interpellation debates available at this time.');
     content += `<p>${noDataMsg}</p>\n`;
     return content;
   }
 
   // Analytical lede paragraph — accountability focus, not opposition strategy
-  const breakdownFn = L(lang, 'motionsBreakdown') as string | ((n: number) => string);
-  const rawBreakdown =
-    typeof breakdownFn === 'function' ? breakdownFn(interpellations.length) : null;
-  const ledeParagraph = rawBreakdown
-    ? String(rawBreakdown).replace(/motion/gi, 'interpellation')
-    : `${interpellations.length} interpellations pending minister responses in the Riksdag, highlighting key accountability debates.`;
+  const ledeParagraph = _getInterpellationsBreakdown(lang, interpellations.length);
   content += `<p class="article-lede">${escapeHtml(ledeParagraph)}</p>\n`;
 
   // Group by target minister (mottagare field) for ministerial accountability analysis
@@ -141,11 +133,7 @@ export function generateInterpellationsContent(
       .filter(([p]) => p !== 'other')
       .sort(([, a], [, b]) => b.length - a.length)
       .forEach(([party, partyInterps]) => {
-        const detailFn = L(lang, 'partyMotionsFiled') as string | ((party: string, n: number) => string);
-        const detail =
-          typeof detailFn === 'function'
-            ? String(detailFn(party, partyInterps.length)).replace(/motion/gi, 'interpellation')
-            : `${party}: ${partyInterps.length} interpellations filed`;
+        const detail = _getPartyInterpellationsLabel(lang, party, partyInterps.length);
         content += `        <li>${escapeHtml(String(detail))}</li>\n`;
       });
     content += `      </ul>\n    </div>\n`;
@@ -187,7 +175,7 @@ function _renderInterpellationEntry(interp: RawDocument, lang: Language | string
   const title = escapeHtml(String(interp.titel ?? interp.title ?? ''));
   const minister = escapeHtml(String(interp.mottagare ?? ''));
   const party = escapeHtml(String(interp.parti ?? ''));
-  const author = escapeHtml(String(interp.intressent_id ?? interp.intressent_namn ?? ''));
+  const author = escapeHtml(String(interp.intressent_namn ?? interp.intressent_id ?? ''));
   const datum = escapeHtml(String(interp.datum ?? ''));
   const url = String(interp.url ?? interp.dok_url ?? '');
   const safeUrl = url && /^https?:\/\//.test(url) ? url : '';
@@ -237,18 +225,30 @@ function _generateInterpellationWhyItMatters(
   const domains = detectPolicyDomains(interp, lang);
   const domain = domains[0] ?? '';
   const minister = String(interp.mottagare ?? '');
+  const langStr = String(lang);
 
   if (domain && minister) {
-    return `This interpellation demands ${minister} respond publicly to parliamentary scrutiny on ${domain} policy, creating formal accountability in the legislative record.`;
+    const templates: Record<string, (m: string, d: string) => string> = {
+      en: (m, d) => `This interpellation demands ${m} respond publicly to parliamentary scrutiny on ${d} policy, creating formal accountability in the legislative record.`,
+      sv: (m, d) => `Denna interpellation kräver att ${m} offentligt besvarar riksdagens granskning av ${d}-politiken, vilket skapar formell ansvarsskyldighet i riksdagsprotokollen.`,
+    };
+    const fn = templates[langStr] ?? templates['en']!;
+    return fn(minister, domain);
   }
   if (minister) {
-    return `This interpellation requires ${minister} to provide a formal written response to parliament, strengthening democratic oversight.`;
+    const templates: Record<string, (m: string) => string> = {
+      en: m => `This interpellation requires ${m} to provide a formal written response to parliament, strengthening democratic oversight.`,
+      sv: m => `Denna interpellation kräver att ${m} lämnar ett formellt skriftligt svar till riksdagen, vilket stärker den demokratiska tillsynen.`,
+    };
+    const fn = templates[langStr] ?? templates['en']!;
+    return fn(minister);
   }
+  const defaults: Record<string, string> = {
+    en: 'Interpellations create formal accountability by requiring ministers to respond publicly to parliamentary questions, strengthening democratic oversight.',
+    sv: 'Interpellationer skapar formell ansvarsskyldighet genom att kräva att ministrar offentligt besvarar riksdagens frågor, vilket stärker den demokratiska tillsynen.',
+  };
   const whyDefault = L(lang, 'whyMattersDefault') as string;
-  return (
-    whyDefault ||
-    'Interpellations create formal accountability by requiring ministers to respond publicly to parliamentary questions, strengthening democratic oversight.'
-  );
+  return whyDefault || defaults[langStr] || defaults['en']!;
 }
 
 /**
@@ -323,6 +323,22 @@ function _getLocalizedLabel(lang: Language | string, key: string, fallback: stri
       ko: '대상 장관',
       zh: '目标部长',
     },
+    noInterpellations: {
+      en: 'No interpellation debates available at this time.',
+      sv: 'Inga interpellationsdebatter tillgängliga för tillfället.',
+      da: 'Ingen interpellationsdebatter tilgængelige på nuværende tidspunkt.',
+      no: 'Ingen interpellasjonsdebatter tilgjengelige for øyeblikket.',
+      fi: 'Välikysymyskeskusteluja ei ole saatavilla tällä hetkellä.',
+      de: 'Derzeit keine Interpellationsdebatten verfügbar.',
+      fr: "Aucun débat d'interpellation disponible pour le moment.",
+      es: 'No hay debates de interpelación disponibles en este momento.',
+      nl: 'Momenteel geen interpellatiedebatten beschikbaar.',
+      ar: 'لا توجد مناقشات استجواب متاحة في الوقت الحالي.',
+      he: 'אין דיוני אינטרפלציה זמינים כעת.',
+      ja: '現在利用可能な質問主意書討論はありません。',
+      ko: '현재 이용 가능한 대정부 질의 토론이 없습니다.',
+      zh: '目前没有可用的质询辩论。',
+    },
   };
   return labels[key]?.[String(lang)] ?? labels[key]?.['en'] ?? fallback;
 }
@@ -353,4 +369,49 @@ function _getMinisterContextMsg(lang: Language | string, ministerCount: number):
   };
   const fn = templates[String(lang)] ?? templates['en']!;
   return fn(ministerCount);
+}
+
+/**
+ * Get a localized breakdown sentence for the interpellations lede paragraph.
+ *
+ * @param lang - Target language
+ * @param count - Number of interpellations
+ * @returns Localized breakdown string
+ */
+function _getInterpellationsBreakdown(lang: Language | string, count: number): string {
+  const templates: Record<string, (n: number) => string> = {
+    en: n => `${n} interpellation${n !== 1 ? 's' : ''} pending minister responses in the Riksdag, highlighting key accountability debates.`,
+    sv: n => `${n} interpellation${n !== 1 ? 'er' : ''} väntar på ministersvar i riksdagen, vilket belyser viktiga ansvarsdebatter.`,
+    da: n => `${n} interpellation${n !== 1 ? 'er' : ''} afventer ministersvar i Riksdagen, hvilket fremhæver centrale ansvarsdebatter.`,
+    no: n => `${n} interpellasjon${n !== 1 ? 'er' : ''} venter på statsrådsvar i Riksdagen, noe som belyser viktige ansvarsdebatter.`,
+    fi: n => `${n} välikysymys${n !== 1 ? 'tä' : ''} odottaa ministerien vastauksia valtiopäivillä, mikä korostaa keskeisiä vastuullisuuskeskusteluja.`,
+    de: n => `${n} Interpellation${n !== 1 ? 'en' : ''} warten auf Ministerantworten im Riksdag und beleuchten wichtige Rechenschaftsdebatten.`,
+    fr: n => `${n} interpellation${n !== 1 ? 's' : ''} en attente de réponses ministérielles au Riksdag, mettant en lumière les débats de responsabilité clés.`,
+    es: n => `${n} interpelaci${n !== 1 ? 'ones' : 'ón'} pendiente${n !== 1 ? 's' : ''} de respuestas ministeriales en el Riksdag, destacando debates clave de rendición de cuentas.`,
+    nl: n => `${n} interpellatie${n !== 1 ? 's' : ''} wachten op ministeriële antwoorden in de Riksdag, waarbij belangrijke verantwoordingsdebatten worden belicht.`,
+    ar: n => `${n} استجواب${n !== 1 ? 'ات' : ''} في انتظار ردود الوزراء في البرلمان السويدي، مما يبرز مناقشات المساءلة الرئيسية.`,
+    he: n => `${n} אינטרפלצי${n !== 1 ? 'ות' : 'ה'} ממתינ${n !== 1 ? 'ות' : 'ה'} לתגובות שרים ברקסדאג, המדגיש${n !== 1 ? 'ות' : 'ה'} דיוני אחריות מרכזיים.`,
+    ja: n => `国会で${n}件の質問主意書が大臣の回答を待っており、主要な説明責任討論を浮き彫りにしています。`,
+    ko: n => `국회에서 ${n}건의 대정부 질의가 장관 답변을 기다리고 있으며, 주요 책임 토론을 부각시키고 있습니다.`,
+    zh: n => `${n}项质询正等待部长在议会中的回应，凸显了关键的问责辩论。`,
+  };
+  const fn = templates[String(lang)] ?? templates['en']!;
+  return fn(count);
+}
+
+/**
+ * Get a localized label for per-party interpellation filing count.
+ *
+ * @param lang - Target language
+ * @param party - Party abbreviation
+ * @param count - Number of interpellations filed by this party
+ * @returns Localized label string
+ */
+function _getPartyInterpellationsLabel(lang: Language | string, party: string, count: number): string {
+  const templates: Record<string, (p: string, n: number) => string> = {
+    en: (p, n) => `${p}: ${n} interpellation${n !== 1 ? 's' : ''} filed`,
+    sv: (p, n) => `${p}: ${n} interpellation${n !== 1 ? 'er' : ''} inlämnad${n !== 1 ? 'e' : ''}`,
+  };
+  const fn = templates[String(lang)] ?? templates['en']!;
+  return fn(party, count);
 }
