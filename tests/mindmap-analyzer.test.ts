@@ -36,8 +36,8 @@ function makeDocSet(): RawDocument[] {
     makePropDoc('Defence preparedness appropriation', 'FöU'),
     makeBetDoc('Finance committee report on tax reform', 'FiU'),
     makeBetDoc('Defence committee review of preparedness', 'FöU'),
-    makeMotDoc('Opposition motion on education funding', 'UbU'),
-    makeMotDoc('Opposition motion on healthcare reform', 'SoU'),
+    makeMotDoc('Opposition motion on education funding', 'V'),
+    makeMotDoc('Opposition motion on healthcare reform', 'MP'),
     makeEuDoc('EU directive on financial regulation transposition'),
   ];
 }
@@ -117,7 +117,7 @@ describe('buildAIMindmapBranches', () => {
     expect(Array.isArray(result.connections)).toBe(true);
   });
 
-  it('generates a dependency connection from pipeline to EU context', () => {
+  it('generates an alignment connection from pipeline to EU context', () => {
     const result = buildAIMindmapBranches(makeDocSet(), null, 'en');
     const euConn = result.connections.find(c => c.type === 'alignment' && c.to.includes('EU'));
     expect(euConn).toBeDefined();

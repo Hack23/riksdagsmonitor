@@ -144,8 +144,11 @@ function renderBranch(branch: MindmapBranch, level: number = 0): string {
   const iconPrefix = branch.icon ? `${branch.icon} ` : '';
   const labelHtml = `${escapeHtml(iconPrefix)}${escapeHtml(branch.label)}`;
 
-  // Importance data attribute for CSS-driven visual weight
-  const importanceAttr = branch.importance ? ` data-importance="${branch.importance}"` : '';
+  // Importance data attribute for CSS-driven visual weight — validated against allowed set to prevent attribute injection
+  const VALID_IMPORTANCE = new Set<string>(['critical', 'high', 'medium', 'low']);
+  const importanceAttr = branch.importance && VALID_IMPORTANCE.has(branch.importance)
+    ? ` data-importance="${branch.importance}"`
+    : '';
 
   // Leaf items (present at any nesting level)
   const leafItems =
@@ -175,9 +178,12 @@ function renderBranch(branch: MindmapBranch, level: number = 0): string {
 function renderConnections(connections: BranchConnection[]): string {
   if (connections.length === 0) return '';
 
+  const VALID_CONN_TYPES = new Set<string>(['dependency', 'conflict', 'alignment', 'sequence']);
+
   const items = connections.map(c => {
     const label = c.label ? escapeHtml(c.label) : `${escapeHtml(c.from)} → ${escapeHtml(c.to)}`;
-    return `    <li class="mindmap-connection" data-type="${c.type}"
+    const safeType = VALID_CONN_TYPES.has(c.type) ? c.type : 'dependency';
+    return `    <li class="mindmap-connection" data-type="${safeType}"
         data-from="${escapeHtml(c.from)}" data-to="${escapeHtml(c.to)}">${label}</li>`;
   }).join('\n');
 
