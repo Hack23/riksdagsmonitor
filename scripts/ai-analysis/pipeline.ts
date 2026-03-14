@@ -131,6 +131,11 @@ function docId(doc: RawDocument): string {
   return doc.dok_id || '';
 }
 
+/** Test whether a document is an SFS (enacted law/statute) — matches both `doktyp === 'sfs'` and `dokumentnamn` starting with 'SFS'. */
+function isSfsDoc(doc: RawDocument): boolean {
+  return docType(doc) === 'sfs' || (doc.dokumentnamn || '').startsWith('SFS');
+}
+
 /** Extract a meaningful text passage from an enriched document. */
 function extractPassage(doc: RawDocument, maxChars = 400): string | null {
   const raw = doc.fullText || doc.fullContent || '';
@@ -150,7 +155,7 @@ function entryFromDoc(doc: RawDocument, topic: string | null, lang: Language): s
 
   if (topic) {
     // Explicit relevance framing when a focus topic is present
-    const relevance = relevanteLabel(lang);
+    const relevance = relevantLabel(lang);
     return typeLabel
       ? `${esc(typeLabel)}: ${esc(title)} — ${relevance} ${esc(topic)}`
       : `${esc(title)} — ${relevance} ${esc(topic)}`;
@@ -159,7 +164,7 @@ function entryFromDoc(doc: RawDocument, topic: string | null, lang: Language): s
 }
 
 /** Small localised phrase: "relevant to" / "relevant för" … */
-function relevanteLabel(lang: Language): string {
+function relevantLabel(lang: Language): string {
   const map: LangRecord = {
     en: 'relevant to', sv: 'relevant för', da: 'relevant for', no: 'relevant for',
     fi: 'liittyy', de: 'relevant für', fr: 'pertinent pour', es: 'relevante para',
@@ -228,13 +233,19 @@ function placeholderEntry(
 }
 
 // ---------------------------------------------------------------------------
-// Placeholder text builders — content-derived, not hardcoded templates
+// Placeholder text builders — structural fallbacks for when no document evidence
+// is available for a SWOT quadrant. These are NOT the primary analysis text;
+// they are only used when a stakeholder × quadrant combination has no matching
+// documents. In document-rich analyses, every SWOT entry is content-derived.
+// Future LLM integration point: replace this function with an API call.
 // ---------------------------------------------------------------------------
 
 /**
- * Build a contextual placeholder SWOT text from role × quadrant × topic × domain.
- * Instead of static strings, this composes a specific analytical claim based on
- * available context, making every entry unique to the analysis.
+ * Build a structural fallback SWOT text from role × quadrant × topic × domain.
+ * Used only when no document evidence exists for a particular quadrant;
+ * content-derived entries always take precedence over these placeholders.
+ * Each placeholder is contextualised with the focus topic and primary domain
+ * to keep entries relevant even without direct document backing.
  */
 function buildPlaceholderText(
   role: string,
@@ -369,7 +380,7 @@ function buildWatchPoints(
   const propDocs = docs.filter(d => docType(d) === 'prop');
   const betDocs  = docs.filter(d => docType(d) === 'bet');
   const motDocs  = docs.filter(d => docType(d) === 'mot');
-  const sfsDocs  = docs.filter(d => docType(d) === 'sfs');
+  const sfsDocs  = docs.filter(isSfsDoc);
   const euDocs   = docs.filter(d => docType(d) === 'fpm');
 
   const topicSuffix = topic ? ` (${esc(topic)})` : '';
@@ -611,7 +622,7 @@ async function analyzeDocuments(
   const betDocs     = docs.filter(d => docType(d) === 'bet');
   const motDocs     = docs.filter(d => docType(d) === 'mot');
   const skrDocs     = docs.filter(d => docType(d) === 'skr');
-  const sfsDocs     = docs.filter(d => docType(d) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
+  const sfsDocs     = docs.filter(isSfsDoc);
   const euDocs      = docs.filter(d => docType(d) === 'fpm');
   const pressmDocs  = docs.filter(d => docType(d) === 'pressm');
   const extDocs     = docs.filter(d => docType(d) === 'ext');
@@ -722,7 +733,7 @@ async function refineAnalysis(
   options: AnalysisPipelineOptions,
 ): Promise<AnalysisResult> {
   const { lang, focusTopic: topic } = options;
-  const enrichedDocs = docs.filter(d => d.contentFetched && d.fullText);
+  const enrichedDocs = docs.filter(d => d.contentFetched && (d.fullText || d.fullContent));
 
   if (enrichedDocs.length === 0) {
     // No enriched docs — return with iteration count bumped
@@ -737,7 +748,7 @@ async function refineAnalysis(
   const propDocs   = enrichedDocs.filter(d => docType(d) === 'prop');
   const betDocs    = enrichedDocs.filter(d => docType(d) === 'bet');
   const motDocs    = enrichedDocs.filter(d => docType(d) === 'mot');
-  const sfsDocs    = enrichedDocs.filter(d => docType(d) === 'sfs');
+  const sfsDocs    = enrichedDocs.filter(isSfsDoc);
   const euDocs     = enrichedDocs.filter(d => docType(d) === 'fpm');
   const pressmDocs = enrichedDocs.filter(d => docType(d) === 'pressm');
   const extDocs    = enrichedDocs.filter(d => docType(d) === 'ext');
@@ -943,29 +954,42 @@ export const aiAnalysisPipeline: AnalysisPipeline = {
 
 /**
  * Run the full analysis pipeline according to the specified depth.
- * Returns the final AnalysisResult and optional ValidationResult.
+ * Returns the final AnalysisResult, optional ValidationResult, and
+ * per-iteration timing data for audit metadata.
  *
  * @param docs - Raw documents to analyse
  * @param options - Pipeline options (depth, lang, focusTopic)
- * @returns `{ analysis, validation }` where validation is null for depth < 'deep'
+ * @returns `{ analysis, validation, iterationDurationsMs }` where
+ *   validation is null for depth < 'deep' and iterationDurationsMs
+ *   contains one entry per completed iteration/validation pass.
  */
 export async function runAnalysisPipeline(
   docs: RawDocument[],
   options: AnalysisPipelineOptions,
-): Promise<{ analysis: AnalysisResult; validation: ValidationResult | null }> {
+): Promise<{ analysis: AnalysisResult; validation: ValidationResult | null; iterationDurationsMs: number[] }> {
+  const iterationDurationsMs: number[] = [];
+
   // Iteration 1
+  const t1 = Date.now();
   let analysis = await aiAnalysisPipeline.analyzeDocuments(docs, options);
+  iterationDurationsMs.push(Date.now() - t1);
 
   // Iteration 2 (standard + deep)
   if (options.depth !== 'quick') {
+    const t2 = Date.now();
     analysis = await aiAnalysisPipeline.refineAnalysis(analysis, docs, options);
+    iterationDurationsMs.push(Date.now() - t2);
   }
 
-  // Iteration 3 (deep only)
+  // Iteration 3 — validation (deep only)
   let validation: ValidationResult | null = null;
   if (options.depth === 'deep') {
+    const t3 = Date.now();
     validation = await aiAnalysisPipeline.validateCompleteness(analysis, docs);
+    iterationDurationsMs.push(Date.now() - t3);
+    // Bump iterationsCompleted to reflect the validation pass
+    analysis = { ...analysis, iterationsCompleted: 3, completedAt: new Date().toISOString() };
   }
 
-  return { analysis, validation };
+  return { analysis, validation, iterationDurationsMs };
 }

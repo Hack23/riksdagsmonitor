@@ -334,24 +334,27 @@ describe('aiAnalysisPipeline.validateCompleteness', () => {
 describe('runAnalysisPipeline', () => {
   it('quick depth: runs 1 iteration, no validation', async () => {
     const docs = [makePropDoc()];
-    const { analysis, validation } = await runAnalysisPipeline(docs, makeOptions({ depth: 'quick' }));
+    const { analysis, validation, iterationDurationsMs } = await runAnalysisPipeline(docs, makeOptions({ depth: 'quick' }));
     expect(analysis.iterationsCompleted).toBe(1);
     expect(validation).toBeNull();
+    expect(iterationDurationsMs).toHaveLength(1);
   });
 
   it('standard depth: runs 2 iterations, no validation', async () => {
     const docs = [makePropDoc(), makeMotDoc()];
-    const { analysis, validation } = await runAnalysisPipeline(docs, makeOptions({ depth: 'standard' }));
+    const { analysis, validation, iterationDurationsMs } = await runAnalysisPipeline(docs, makeOptions({ depth: 'standard' }));
     expect(analysis.iterationsCompleted).toBe(2);
     expect(validation).toBeNull();
+    expect(iterationDurationsMs).toHaveLength(2);
   });
 
-  it('deep depth: runs 2 iterations + validation', async () => {
+  it('deep depth: runs 3 iterations (incl. validation)', async () => {
     const docs = [makePropDoc(), makeBetDoc()];
-    const { analysis, validation } = await runAnalysisPipeline(docs, makeOptions({ depth: 'deep' }));
-    expect(analysis.iterationsCompleted).toBe(2);
+    const { analysis, validation, iterationDurationsMs } = await runAnalysisPipeline(docs, makeOptions({ depth: 'deep' }));
+    expect(analysis.iterationsCompleted).toBe(3);
     expect(validation).not.toBeNull();
     expect(validation?.score).toBeDefined();
+    expect(iterationDurationsMs).toHaveLength(3);
   });
 
   it('deep depth with enriched docs: validation passes', async () => {

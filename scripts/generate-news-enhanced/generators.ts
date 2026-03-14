@@ -1262,8 +1262,6 @@ function swotDefault(key: string, topic: string | null, lang: Language): string 
 }
 
 /**
- * Build SWOT and dashboard TemplateSections for a deep-inspection article.
-/**
  * Build SWOT and dashboard TemplateSections for a deep-inspection article
  * using the legacy metadata-only approach.
  *
@@ -1815,13 +1813,12 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version (analysis-depth: ${analysisDepth})...`);
 
       // ── AI Analysis Pipeline (multi-iteration) ───────────────────────────
-      const pipelineStart = Date.now();
-      const { analysis, validation } = await runAnalysisPipeline(enrichedDocs, {
+      const { analysis, validation, iterationDurationsMs } = await runAnalysisPipeline(enrichedDocs, {
         depth: analysisDepth,
         lang,
         focusTopic: sanitizedTopic,
       });
-      const pipelineDuration = Date.now() - pipelineStart;
+      const pipelineDuration = iterationDurationsMs.reduce((a, b) => a + b, 0);
 
       console.log(`    🤖 Analysis: ${analysis.iterationsCompleted} iteration(s) completed, confidence: ${analysis.confidenceScore}/100 (${pipelineDuration}ms)`);
       if (validation) {
@@ -1835,7 +1832,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
         lang,
         depth: analysisDepth,
         iterationsCompleted: analysis.iterationsCompleted,
-        iterationDurationsMs: [pipelineDuration],
+        iterationDurationsMs,
         confidenceScore: analysis.confidenceScore,
         validationResult: validation,
         documentCount: analysis.documentCount,

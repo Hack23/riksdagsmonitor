@@ -255,7 +255,7 @@ export interface AnalysisPipeline {
 
 /**
  * Metadata record written after each analysis run for audit and debugging.
- * Stored as `news/metadata/ai-analysis-<slug>.json`.
+ * Stored as `news/metadata/ai-analysis-<slug>-<lang>.json`.
  */
 export interface AnalysisIterationMetadata {
   /** Article slug this analysis was produced for */
