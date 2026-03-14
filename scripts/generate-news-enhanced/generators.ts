@@ -816,8 +816,9 @@ function generateDeepInspectionContent(
   html += `\n<section class="strategic-implications" aria-label="${esc(stratHeading)}">\n`;
   html += `  <h2>${esc(stratHeading)}</h2>\n`;
   // Use AI-generated strategic implications when available (richer than template version).
-  // Safe to inject directly: buildStrategicImplications() escapes all dynamic values
-  // (topic, domain, signal) at construction time via escapeHtml().
+  // Safe to inject directly: AIAnalysisPipeline.buildStrategicImplications() escapes all
+  // dynamic values (topic, domain, signal) at construction time via escapeHtml(). The
+  // fallback buildStrategicImplications() in generators.ts also escapes its inputs.
   const strategicImplHtml = aiResult?.strategicImplications
     ?? buildStrategicImplications(docs, topic, lang);
   html += `  ${strategicImplHtml}\n`;

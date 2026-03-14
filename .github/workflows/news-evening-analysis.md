@@ -184,6 +184,14 @@ After `get_sync_status()` succeeds, check if data is stale. If `hoursSinceSync >
 
 Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc queries, use `scripts/mcp-query-cli.ts` — NEVER implement custom MCP client code (PROHIBITION).
 
+**Date calculation pattern:**
+```javascript
+const now = new Date();
+const fromDate = new Date(now.getTime() - lookbackHours * 3600000); // 3600000 ms = 1 hour
+const weekAgo = new Date(now.getTime() - 7 * 86400000); // 86400000 ms = 1 day
+const today = now.toISOString().split('T')[0];
+```
+
 **Tools with native date params** (supports from/tom or dateFrom/dateTo):
 - `get_calendar_events` — supports `from`/`tom` parameters
 - `search_regering` — supports `dateFrom`/`dateTo` parameters
@@ -196,11 +204,39 @@ Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc quer
 - `get_propositioner` — filter by `publicerad` date
 - `search_anforanden` — filter by `datum` field
 
-Filter results to only include items with dates `>= fromDate`.
+Filter results to only include items with dates `>= fromDate`:
+```javascript
+// Post-query date filtering example
+const results = rawResults.filter(item => new Date(item.publicerad || item.datum || item.inlämnad) >= fromDate);
+```
 
 ### Cross-Referencing Strategy
 
-Cross-reference related data sources for richer analysis (e.g., committee reports with voting records, government propositions with parliamentary motions). Filter all results by date to `>= fromDate`.
+Cross-reference related data sources for richer analysis. Filter all results by date to `>= fromDate`.
+
+**Example 1: Committee Report Deep Dive**
+```javascript
+// 1. Fetch committee reports
+const reports = await get_betankanden({ rm: currentRm });
+// 2. For each report, cross-reference voting records
+const votes = await search_voteringar({ bet: report.beteckning });
+```
+
+**Example 2: Government Activity Analysis**
+```javascript
+// 1. Fetch propositions
+const props = await get_propositioner({ rm: currentRm });
+// 2. Cross-reference with government press releases
+const press = await search_regering({ type: 'pressmeddelanden', dateFrom: fromDate });
+```
+
+**Example 3: Party Behavior Analysis**
+```javascript
+// 1. Get motions filed by party
+const motions = await get_motioner({ rm: currentRm });
+// 2. Get party voting patterns
+const votes = await search_voteringar({ parti: partyCode, rm: currentRm });
+```
 
 ### Saturday vs Weekday Mode
 

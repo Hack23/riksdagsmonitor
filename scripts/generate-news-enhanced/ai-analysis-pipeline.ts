@@ -1,17 +1,22 @@
 /**
  * @module generate-news-enhanced/ai-analysis-pipeline
- * @description Multi-iteration AI analysis pipeline for deep political intelligence.
- * Replaces single-pass template-based content with iterative analysis that
- * accumulates context across passes to produce deeper, more nuanced political
- * insights from every stakeholder perspective.
+ * @description Heuristic-based multi-iteration analysis pipeline for deep political
+ * intelligence. Uses deterministic document classification, template-driven
+ * per-document analysis, cross-document synthesis, and quality scoring to produce
+ * context-aware political insights from every stakeholder perspective.
  *
- * Architecture — four analysis passes:
+ * NOTE: This module does NOT integrate with external LLM/MCP services. All analysis
+ * is performed via rule-based heuristics and localised template interpolation. The
+ * "iteration" depth controls how many passes run (see {@link AIAnalysisPipeline}).
+ *
+ * Architecture — four analysis passes (gated by iteration depth):
  *  1. Data Collection & Classification — classify by type/domain, detect policy areas
- *  2. AI Deep Analysis — per-document legislative impact, cross-party implications,
- *     historical context, and EU/Nordic comparison
- *  3. Cross-Document Synthesis — convergence/divergence patterns, coalition stress,
- *     emerging trends, stakeholder power dynamics
- *  4. Quality Assurance & Refinement — score output, re-generate below threshold
+ *  2. Deep Analysis (iterations ≥ 2) — per-document legislative impact, cross-party
+ *     implications, historical context, and EU/Nordic comparison
+ *  3. Cross-Document Synthesis (iterations ≥ 2) — convergence/divergence patterns,
+ *     coalition stress, emerging trends, stakeholder power dynamics
+ *  4. Quality Assurance & Refinement (iterations ≥ 3) — score output, re-generate
+ *     below threshold
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -158,8 +163,10 @@ function classifyStakeholder(d: RawDocument): 'government' | 'opposition' | 'eu'
 /** Identify whether a document signals cross-party coalition stress. */
 function hasCoalitionStress(d: RawDocument): boolean {
   const title = docTitle(d).toLowerCase();
+  // Require strong conflict markers — generic terms like "motion" or "opposition"
+  // are too broad and would flag most document mixes, reducing signal quality.
   const stressKeywords = [
-    'avslag', 'reject', 'opposition', 'motion', 'tillägg', 'amendment',
+    'avslag', 'reject', 'tillägg', 'amendment',
     'reservation', 'minoritet', 'minority',
   ];
   return stressKeywords.some(kw => title.includes(kw));
@@ -675,67 +682,67 @@ const TYPE_DESC_EXTERNAL: Lang14 = L14(
 // ── Key takeaway templates ────────────────────────────────────────────────────
 
 const TAKEAWAY_PROP: Lang14 = L14(
-  'Government has submitted %n legislative proposal%s on %t — active policy commitment',
+  'Government has submitted %n legislative proposals on %t — active policy commitment',
   'Regeringen har lämnat %n lagstiftningsförslag om %t — aktivt politiskt engagemang',
   'Regeringen har fremsat %n lovforslag om %t — aktivt politisk engagement',
   'Regjeringen har fremmet %n lovforslag om %t — aktivt politisk engasjement',
   'Hallitus on antanut %n lakiesitystä %t:stä — aktiivinen poliittinen sitoutuminen',
-  'Die Regierung hat %n Gesetzgebungsvorschlag zu %t eingebracht — aktives politisches Engagement',
-  'Le gouvernement a soumis %n proposition%s législative%ss sur %t — engagement politique actif',
-  'El gobierno ha presentado %n propuesta%s legislativa%ss sobre %t — compromiso político activo',
-  'De regering heeft %n wetsvoorstel%s ingediend over %t — actief politiek engagement',
-  'قدّمت الحكومة %n اقتراح%s تشريعي%s بشأن %t — التزام سياسي نشط',
-  'הממשלה הגישה %n הצעת חוק בנושא %t — מחויבות פוליטית פעילה',
+  'Die Regierung hat %n Gesetzgebungsvorschläge zu %t eingebracht — aktives politisches Engagement',
+  'Le gouvernement a soumis %n propositions législatives sur %t — engagement politique actif',
+  'El gobierno ha presentado %n propuestas legislativas sobre %t — compromiso político activo',
+  'De regering heeft %n wetsvoorstellen ingediend over %t — actief politiek engagement',
+  'قدّمت الحكومة %n اقتراحات تشريعية بشأن %t — التزام سياسي نشط',
+  'הממשלה הגישה %n הצעות חוק בנושא %t — מחויבות פוליטית פעילה',
   '政府は%t について%n件の法案を提出 — 積極的な政策コミットメント',
   '정부는 %t에 관한 %n건의 입법 제안서 제출 — 적극적 정책 공약',
   '政府已提交%n项关于%t的立法提案——积极的政策承诺',
 );
 
 const TAKEAWAY_BET: Lang14 = L14(
-  '%n committee report%s scrutinise%sv %t — parliamentary oversight engaged',
-  '%n betänkande%s granskar %t — parlamentarisk tillsyn aktiverad',
-  '%n udvalgsrapport%s undersøger %t — parlamentarisk kontrol aktiveret',
-  '%n komitérapport%s undersøker %t — parlamentarisk kontroll engasjert',
-  '%n valiokuntamietintö%s tarkastelee %t:tä — parlamentaarinen valvonta aktivoitu',
-  '%n Ausschussbericht%se prüfen %t — parlamentarische Kontrolle aktiv',
-  '%n rapport%s de commission examine%sv %t — contrôle parlementaire engagé',
-  '%n informe%s de comité examine%sv %t — supervisión parlamentaria activada',
-  '%n commissierapport%s onderzoek%svt %t — parlementaire controle actief',
-  '%n تقرير لجنة يفحص%s %t — الرقابة البرلمانية مفعّلة',
-  '%n דוח ועדה בוחן%s %t — פיקוח פרלמנטרי פעיל',
+  '%n committee reports %verb %t — parliamentary oversight engaged',
+  '%n betänkanden granskar %t — parlamentarisk tillsyn aktiverad',
+  '%n udvalgsrapporter undersøger %t — parlamentarisk kontrol aktiveret',
+  '%n komitérapporter undersøker %t — parlamentarisk kontroll engasjert',
+  '%n valiokuntamietintöä tarkastelee %t:tä — parlamentaarinen valvonta aktivoitu',
+  '%n Ausschussberichte prüfen %t — parlamentarische Kontrolle aktiv',
+  '%n rapports de commission %verb %t — contrôle parlementaire engagé',
+  '%n informes de comité %verb %t — supervisión parlamentaria activada',
+  '%n commissierapporten %verb %t — parlementaire controle actief',
+  '%n تقارير لجان تفحص %t — الرقابة البرلمانية مفعّلة',
+  '%n דוחות ועדה בוחנים %t — פיקוח פרלמנטרי פעיל',
   '%n件の委員会報告書が%tを審査 — 議会監視が活性化',
   '%n건의 위원회 보고서가 %t 심사 — 의회 감독 활성화',
   '%n份委员会报告审查%t——议会监督已启动',
 );
 
 const TAKEAWAY_MOT: Lang14 = L14(
-  '%n opposition motion%s challenge%sv %t — cross-party debate active',
-  '%n oppositionsmotion%s utmanar %t — debatt över partigränser pågår',
-  '%n oppositionsmotion%s udfordrer %t — tværpartipolitisk debat aktiv',
-  '%n opposisjonsmotions%s utfordrer %t — tverr-partipolitisk debatt aktiv',
-  '%n oppositiokirjelmä%s haastaa %t — puolueidenvälinen debatti aktiivinen',
-  '%n Oppositionsantrag%se fechten %t an — parteiübergreifende Debatte aktiv',
-  '%n motion%s d\'opposition contestent %t — débat interpartis actif',
-  '%n mocion%ses de oposición impugnan %t — debate entre partidos activo',
-  '%n oppositiemotie%s betwisten %t — overpartijdebat actief',
-  '%n اقتراح معارضة يطعن%s في %t — النقاش عبر الأحزاب نشط',
-  '%n הצעות אופוזיציה מתמודדות%s עם %t — דיון בין-מפלגתי פעיל',
+  '%n opposition motions %verb %t — cross-party debate active',
+  '%n oppositionsmotioner utmanar %t — debatt över partigränser pågår',
+  '%n oppositionsmotioner udfordrer %t — tværpartipolitisk debat aktiv',
+  '%n opposisjonsmotioner utfordrer %t — tverr-partipolitisk debatt aktiv',
+  '%n oppositiokirjelmää haastaa %t — puolueidenvälinen debatti aktiivinen',
+  '%n Oppositionsanträge fechten %t an — parteiübergreifende Debatte aktiv',
+  '%n motions d\'opposition %verb %t — débat interpartis actif',
+  '%n mociones de oposición %verb %t — debate entre partidos activo',
+  '%n oppositiemoties %verb %t — overpartijdebat actief',
+  '%n اقتراحات معارضة تطعن في %t — النقاش عبر الأحزاب نشط',
+  '%n הצעות אופוזיציה מתמודדות עם %t — דיון בין-מפלגתי פעיל',
   '%n件の野党動議が%tに異議申し立て — 超党派討論が活発',
   '%n건의 야당 동의가 %t에 이의 제기 — 초당파 논쟁 활성화',
   '%n项反对派动议对%t提出异议——跨党派辩论活跃',
 );
 
 const TAKEAWAY_EU: Lang14 = L14(
-  '%n EU alignment document%s — international context framing %t',
+  '%n EU alignment documents — international context framing %t',
   '%n EU-anpassningsdokument — internationellt sammanhang ramas in kring %t',
-  '%n EU-tilpasningsdokument — international kontekst rammer %t',
-  '%n EU-tilpasningsdokument — internasjonalt kontekst rammer %t',
+  '%n EU-tilpasningsdokumenter — international kontekst rammer %t',
+  '%n EU-tilpasningsdokumenter — internasjonalt kontekst rammer %t',
   '%n EU-yhdenmukaistamisasiakirjaa — kansainvälinen konteksti kehystää %t:n',
-  '%n EU-Ausrichtungsdokument%se — internationale Kontextrahmung für %t',
-  '%n document%s d\'alignement UE — contexte international encadrant %t',
-  '%n documento%s de alineación UE — contexto internacional enmarcando %t',
-  '%n EU-afstemmingsdocument%s — internationale contextkaders %t',
-  '%n وثيقة توافق أوروبية — السياق الدولي يؤطر %t',
+  '%n EU-Ausrichtungsdokumente — internationale Kontextrahmung für %t',
+  '%n documents d\'alignement UE — contexte international encadrant %t',
+  '%n documentos de alineación UE — contexto internacional enmarcando %t',
+  '%n EU-afstemmingsdocumenten — internationale contextkaders %t',
+  '%n وثائق توافق أوروبية — السياق الدولي يؤطر %t',
   '%n מסמכי התאמה לאיחוד האירופי — הקשר בינ\'ל מסגר %t',
   '%n件のEU整合文書 — 国際的文脈が%tをフレーミング',
   '%n건의 EU 정합 문서 — 국제 맥락이 %t를 틀 지어',
@@ -807,6 +814,24 @@ function verbPlural(n: number, lang: Language): string {
   return '';
 }
 
+/** Full verb form for TAKEAWAY_BET templates (committee reports "scrutinise"/"examine"). */
+function betVerbForm(n: number, lang: Language): string {
+  if (lang === 'en') return n === 1 ? 'scrutinises' : 'scrutinise';
+  if (lang === 'fr') return n === 1 ? 'examine' : 'examinent';
+  if (lang === 'es') return n === 1 ? 'examina' : 'examinan';
+  if (lang === 'nl') return n === 1 ? 'onderzoekt' : 'onderzoeken';
+  return ''; // Other languages use fixed verb forms in templates
+}
+
+/** Full verb form for TAKEAWAY_MOT templates (opposition motions "challenge"/"contest"). */
+function motVerbForm(n: number, lang: Language): string {
+  if (lang === 'en') return n === 1 ? 'challenges' : 'challenge';
+  if (lang === 'fr') return n === 1 ? 'conteste' : 'contestent';
+  if (lang === 'es') return n === 1 ? 'impugna' : 'impugnan';
+  if (lang === 'nl') return n === 1 ? 'betwist' : 'betwisten';
+  return ''; // Other languages use fixed verb forms in templates
+}
+
 // ---------------------------------------------------------------------------
 // Document classification result (Pass 1 output)
 // ---------------------------------------------------------------------------
@@ -831,13 +856,13 @@ interface ClassifiedDocuments {
 // ---------------------------------------------------------------------------
 
 /**
- * Multi-iteration AI analysis pipeline for deep political intelligence.
+ * Heuristic-based multi-iteration analysis pipeline for deep political intelligence.
  *
  * Instantiate once per deep-inspection run; call analyze() to execute all passes.
- * The number of iterations controls analysis depth:
- *  - 1 iteration: basic classification + templated SWOT
- *  - 2 iterations: adds document-specific analysis
- *  - 3+ iterations (default): full cross-document synthesis + QA refinement
+ * The number of iterations gates which passes run:
+ *  - 1 iteration: Pass 1 only (classification + templated SWOT/implications/takeaways)
+ *  - 2 iterations: Passes 1–3 (adds per-document analysis + cross-document synthesis)
+ *  - 3+ iterations (default): Passes 1–4 (adds QA scoring with refinement on failure)
  */
 export class AIAnalysisPipeline {
   private readonly iterations: number;
@@ -863,29 +888,31 @@ export class AIAnalysisPipeline {
     focusTopic: string | null,
     lang: Language,
   ): AIAnalysisResult {
-    // Pass 1: classify documents
+    // Pass 1 (always): classify documents
     const classified = this.classifyDocuments(documents, lang);
 
-    // Pass 2: per-document deep analysis
-    const documentAnalyses = this.analyzeDocumentsDeep(classified, focusTopic, lang);
+    // Pass 2 (iterations >= 2): per-document deep analysis
+    const documentAnalyses = this.iterations >= 2
+      ? this.analyzeDocumentsDeep(classified, focusTopic, lang)
+      : documents.map(d => this.stubDocumentAnalysis(d));
 
-    // Pass 3: cross-document synthesis
-    let synthesis = this.synthesizeAcrossDocuments(
-      classified, documentAnalyses, focusTopic, lang,
-    );
+    // Pass 3 (iterations >= 2): cross-document synthesis
+    let synthesis = this.iterations >= 2
+      ? this.synthesizeAcrossDocuments(classified, documentAnalyses, focusTopic, lang)
+      : this.stubSynthesis();
 
-    // Build dynamic SWOT
+    // Build dynamic SWOT (always — uses classification data from Pass 1)
     const dynamicSwotEntries = this.buildDynamicSwot(classified, focusTopic, lang);
 
-    // Build strategic implications
+    // Build strategic implications (always)
     const strategicImplications = this.buildStrategicImplications(
       classified, focusTopic, lang,
     );
 
-    // Build key takeaways
+    // Build key takeaways (always)
     const keyTakeaways = this.buildKeyTakeaways(classified, focusTopic, lang);
 
-    // Pass 4 (when iterations >= 3): QA + refinement
+    // Pass 4 (iterations >= 3): QA + refinement
     // When quality is below threshold, re-run synthesis and replace the original.
     // The score is blended at 50% weight so minor improvements are credited.
     const REFINEMENT_WEIGHT = 0.5;
@@ -908,6 +935,31 @@ export class AIAnalysisPipeline {
       strategicImplications,
       keyTakeaways,
       qualityScore,
+    };
+  }
+
+  // ── Stub helpers for iterations=1 (skip Passes 2–3) ───────────────────────
+
+  /** Return a minimal document analysis when Pass 2 is skipped (iterations=1). */
+  private stubDocumentAnalysis(d: RawDocument): AIDocumentAnalysis {
+    return {
+      dok_id: d.dok_id ?? '',
+      title: docTitle(d),
+      legislativeImpact: '',
+      crossPartyImplications: '',
+      historicalContext: '',
+      euNordicComparison: '',
+      qualityScore: 0,
+    };
+  }
+
+  /** Return an empty synthesis when Pass 3 is skipped (iterations=1). */
+  private stubSynthesis(): AISynthesis {
+    return {
+      policyConvergence: '',
+      coalitionStressIndicators: '',
+      emergingTrends: '',
+      stakeholderPowerDynamics: '',
     };
   }
 
@@ -1349,24 +1401,24 @@ export class AIAnalysisPipeline {
 
     if (propDocs.length > 0) {
       items.push(interp(pickLang(TAKEAWAY_PROP, lang), {
-        n: propDocs.length, s: plural(propDocs.length, lang), t: topic,
+        n: propDocs.length, t: topic,
       }));
     }
     if (betDocs.length > 0) {
       items.push(interp(pickLang(TAKEAWAY_BET, lang), {
-        n: betDocs.length, s: plural(betDocs.length, lang),
-        v: verbPlural(betDocs.length, lang), t: topic,
+        n: betDocs.length, t: topic,
+        verb: betVerbForm(betDocs.length, lang),
       }));
     }
     if (motDocs.length > 0) {
       items.push(interp(pickLang(TAKEAWAY_MOT, lang), {
-        n: motDocs.length, s: plural(motDocs.length, lang),
-        v: verbPlural(motDocs.length, lang), t: topic,
+        n: motDocs.length, t: topic,
+        verb: motVerbForm(motDocs.length, lang),
       }));
     }
     if (euDocs.length > 0) {
       items.push(interp(pickLang(TAKEAWAY_EU, lang), {
-        n: euDocs.length, s: plural(euDocs.length, lang), t: topic,
+        n: euDocs.length, t: topic,
       }));
     }
     if (enrichedCount > 0 && enrichedCount >= Math.ceil(total / 2)) {
