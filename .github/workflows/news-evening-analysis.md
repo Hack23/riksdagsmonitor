@@ -113,6 +113,7 @@ You are the **Evening Political Analyst** for Riksdagsmonitor. Generate comprehe
 - **coverage_depth** = `${{ github.event.inputs.coverage_depth }}`
 - **languages** = `${{ github.event.inputs.languages }}`
 - **lookback_hours** = `${{ github.event.inputs.lookback_hours }}`
+- **analysis_depth** = `${{ github.event.inputs.analysis_depth }}`
 
 ## ⚠️ NON-NEGOTIABLE RULES
 

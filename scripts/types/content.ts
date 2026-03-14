@@ -105,6 +105,8 @@ export interface ContentLabelSet {
   genericOverview: (n: number) => string;
   partyMotionsFiled: (party: string, n: number) => string;
   partyInterpellationsFiled: (party: string, n: number) => string;
+  unknownMinister: string;
+  ministerInterpellationCount: (minister: string, n: number) => string;
   otherCommittee: string;
   otherDocuments: string;
   policySignificanceTouches: (domains: string) => string;

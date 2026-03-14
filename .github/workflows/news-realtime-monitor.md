@@ -116,6 +116,7 @@ You are the **Real-Time Political Monitor** for Riksdagsmonitor. Detect signific
 - **article_types** = `${{ github.event.inputs.article_types }}`
 - **focus** = `${{ github.event.inputs.focus }}`
 - **languages** = `${{ github.event.inputs.languages }}`
+- **analysis_depth** = `${{ github.event.inputs.analysis_depth }}`
 
 ## ⚠️ NON-NEGOTIABLE RULES
 

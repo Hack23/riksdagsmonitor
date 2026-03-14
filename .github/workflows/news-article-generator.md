@@ -119,6 +119,7 @@ You are the **News Journalist Agent** for Riksdagsmonitor. Generate high-quality
 - **document_ids** = `${{ github.event.inputs.document_ids }}`
 - **document_urls** = `${{ github.event.inputs.document_urls }}`
 - **focus_topic** = `${{ github.event.inputs.focus_topic }}`
+- **analysis_depth** = `${{ github.event.inputs.analysis_depth }}`
 
 **Rules:**
 1. If **article_types** is non-empty, generate ONLY those types. Do NOT fall back to day-of-week schedule.

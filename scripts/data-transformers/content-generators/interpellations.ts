@@ -51,9 +51,10 @@ export function generateInterpellationsContent(
 
   // Group by target minister (mottagare field) for ministerial accountability analysis
   // Use raw mottagare as key; HTML-escape only when rendering to output
+  const unknownMinisterLabel = (L(lang, 'unknownMinister') as string) || 'Unknown minister';
   const byMinister: Record<string, RawDocument[]> = {};
   interpellations.forEach(interp => {
-    const minister = String(interp.mottagare ?? 'Minister');
+    const minister = String(interp.mottagare || unknownMinisterLabel);
     if (!byMinister[minister]) byMinister[minister] = [];
     byMinister[minister].push(interp);
   });
@@ -65,14 +66,17 @@ export function generateInterpellationsContent(
     const contextMsg = _getMinisterContextMsg(lang, ministerCount);
     content += `    <p>${escapeHtml(contextMsg)}</p>\n`;
 
-    // Per-minister breakdown
+    // Per-minister breakdown using localized count labels
+    const ministerCountFn = L(lang, 'ministerInterpellationCount') as ((minister: string, n: number) => string) | undefined;
     content += `    <div class="context-box">\n      <ul>\n`;
     Object.entries(byMinister)
       .sort(([, a], [, b]) => b.length - a.length)
       .slice(0, 8)
       .forEach(([minister, interps]) => {
-        const countLabel = interps.length === 1 ? 'interpellation' : 'interpellations';
-        content += `        <li><strong>${escapeHtml(minister)}</strong> — ${interps.length} ${countLabel}</li>\n`;
+        const detail = typeof ministerCountFn === 'function'
+          ? ministerCountFn(minister, interps.length)
+          : `${minister} — ${interps.length} interpellation${interps.length !== 1 ? 's' : ''}`;
+        content += `        <li>${escapeHtml(String(detail))}</li>\n`;
       });
     content += `      </ul>\n    </div>\n`;
   }
@@ -120,14 +124,14 @@ export function generateInterpellationsContent(
     articleType: 'interpellations',
   });
 
-  // Inter-pillar transition before opposition oversight section
-  const watchTransition = getPillarTransition(lang, 'watchToOpposition');
-  if (watchTransition) {
-    content += `    <p class="pillar-transition">${escapeHtml(watchTransition)}</p>\n`;
-  }
-
   // Opposition oversight section — which parties are most active in accountability
   if (partyCount > 0) {
+    // Inter-pillar transition before opposition oversight section
+    const watchTransition = getPillarTransition(lang, 'watchToOpposition');
+    if (watchTransition) {
+      content += `    <p class="pillar-transition">${escapeHtml(watchTransition)}</p>\n`;
+    }
+
     const coalitionHeading = L(lang, 'coalitionDynamics') as string || 'Parliamentary Oversight';
     content += `\n    <h2>${coalitionHeading}</h2>\n`;
     content += `    <div class="context-box">\n      <ul>\n`;

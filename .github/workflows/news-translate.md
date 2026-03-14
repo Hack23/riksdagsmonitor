@@ -113,6 +113,7 @@ You are the **Translation Agent** for Riksdagsmonitor. Your SOLE focus is produc
 - **article_type** = `${{ github.event.inputs.article_type }}`
 - **languages** = `${{ github.event.inputs.languages }}`
 - **source_language** = `${{ github.event.inputs.source_language }}`
+- **analysis_depth** = `${{ github.event.inputs.analysis_depth }}`
 
 ## 🚨 CRITICAL: Translation-Only Focus
 
