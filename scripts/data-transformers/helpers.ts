@@ -297,8 +297,9 @@ export function generateEnhancedSummary(doc: RawDocument, type: string, lang: La
       parts.push(`${typeof filedByVal === 'string' ? filedByVal : ''} ${author}`);
     }
     // Include target minister (mottagare) if available
+    // NOTE: do NOT escapeHtml here — callers escape the returned summary string
     if (doc.mottagare) {
-      parts.push(`→ ${escapeHtml(doc.mottagare)}`);
+      parts.push(`→ ${doc.mottagare}`);
     }
     if (subtyp) {
       const onVal = L(lang, 'on');
