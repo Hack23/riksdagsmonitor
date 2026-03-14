@@ -367,13 +367,13 @@ function pass2RelationshipDiscovery(
 
   const stakeholderItems: string[] = [...actors];
   if (classified.propositions.length > 0) {
-    stakeholderItems.push(`${L(STAKEHOLDER_LABELS.government, lang, 'Government')} (${classified.propositions.length} ${localizeDocType('prop', lang, classified.propositions.length).toLowerCase()})`);
+    stakeholderItems.push(`${L(STAKEHOLDER_LABELS.government, lang, 'Government')} (${classified.propositions.length} ${localizeDocType('prop', lang, classified.propositions.length)})`);
   }
   if (classified.motions.length > 0) {
-    stakeholderItems.push(`${L(STAKEHOLDER_LABELS.opposition, lang, 'Opposition')} (${classified.motions.length} ${localizeDocType('mot', lang, classified.motions.length).toLowerCase()})`);
+    stakeholderItems.push(`${L(STAKEHOLDER_LABELS.opposition, lang, 'Opposition')} (${classified.motions.length} ${localizeDocType('mot', lang, classified.motions.length)})`);
   }
   if (classified.pressReleases.length > 0) {
-    stakeholderItems.push(`${L(STAKEHOLDER_LABELS.civilSociety, lang, 'Civil Society')} (${classified.pressReleases.length} ${localizeDocType('pressm', lang, classified.pressReleases.length).toLowerCase()})`);
+    stakeholderItems.push(`${L(STAKEHOLDER_LABELS.civilSociety, lang, 'Civil Society')} (${classified.pressReleases.length} ${localizeDocType('pressm', lang, classified.pressReleases.length)})`);
   }
 
   if (stakeholderItems.length > 0) {
@@ -475,8 +475,7 @@ function pass3ValidationAndCompleteness(
 
   // Guarantee minimum 5 branches for analytical richness — use varied fallback labels
   // Derive session identifier from document metadata (rm or datum) for reproducibility
-  const sessionFromDocs = docs.find(d => d.rm)?.rm ?? docs.find(d => d.datum)?.datum?.slice(0, 4) ?? '';
-  const sessionLabel = sessionFromDocs ? sessionFromDocs : '';
+  const sessionLabel = docs.find(d => d.rm)?.rm ?? docs.find(d => d.datum)?.datum?.slice(0, 4) ?? '';
 
   const FALLBACK_LABELS = {
     euItems: {
