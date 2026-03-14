@@ -1088,6 +1088,112 @@ function writeAnalysisMetadata(
   }
 }
 
+// ---------------------------------------------------------------------------
+// Localized label helpers for AI-derived deep-inspection sections (14 languages)
+// ---------------------------------------------------------------------------
+
+type LangFn = (n: number, conf: number) => string;
+type LangStrFn = (n: number) => string;
+
+const STRATEGIC_CONTEXT_FOCUSED: Partial<Record<Language, (topic: string, n: number, conf: number) => string>> = {
+  en: (t, n, c) => `Analysis exclusively focused on: ${t} — ${n} parliamentary documents examined (confidence: ${c}/100)`,
+  sv: (t, n, c) => `Analys exklusivt fokuserad på: ${t} — ${n} riksdagsdokument granskade (konfidens: ${c}/100)`,
+  da: (t, n, c) => `Analyse udelukkende fokuseret på: ${t} — ${n} parlamentsdokumenter undersøgt (konfidens: ${c}/100)`,
+  no: (t, n, c) => `Analyse utelukkende fokusert på: ${t} — ${n} parlamentsdokumenter undersøkt (konfidens: ${c}/100)`,
+  fi: (t, n, c) => `Analyysi keskittyy yksinomaan: ${t} — ${n} eduskunta-asiakirjaa tarkastettu (luottamus: ${c}/100)`,
+  de: (t, n, c) => `Analyse ausschließlich fokussiert auf: ${t} — ${n} parlamentarische Dokumente geprüft (Konfidenz: ${c}/100)`,
+  fr: (t, n, c) => `Analyse exclusivement centrée sur : ${t} — ${n} documents parlementaires examinés (confiance : ${c}/100)`,
+  es: (t, n, c) => `Análisis enfocado exclusivamente en: ${t} — ${n} documentos parlamentarios examinados (confianza: ${c}/100)`,
+  nl: (t, n, c) => `Analyse uitsluitend gericht op: ${t} — ${n} parlementaire documenten onderzocht (betrouwbaarheid: ${c}/100)`,
+  ar: (t, n, c) => `تحليل مركّز حصرياً على: ${t} — ${n} وثيقة برلمانية تم فحصها (ثقة: ${c}/100)`,
+  he: (t, n, c) => `ניתוח ממוקד באופן בלעדי ב: ${t} — ${n} מסמכים פרלמנטריים נבדקו (ביטחון: ${c}/100)`,
+  ja: (t, n, c) => `分析対象: ${t} — ${n}件の議会文書を調査（信頼度: ${c}/100）`,
+  ko: (t, n, c) => `분석 대상: ${t} — ${n}건의 의회 문서 조사 (신뢰도: ${c}/100)`,
+  zh: (t, n, c) => `分析专注于: ${t} — ${n}份议会文件已审查（置信度: ${c}/100）`,
+};
+
+const STRATEGIC_CONTEXT_MULTI: Partial<Record<Language, LangFn>> = {
+  en: (n, c) => `Multi-stakeholder analysis of ${n} parliamentary documents (confidence: ${c}/100)`,
+  sv: (n, c) => `Intressentanalys av ${n} riksdagsdokument (konfidens: ${c}/100)`,
+  da: (n, c) => `Interessentanalyse af ${n} parlamentsdokumenter (konfidens: ${c}/100)`,
+  no: (n, c) => `Interessentanalyse av ${n} parlamentsdokumenter (konfidens: ${c}/100)`,
+  fi: (n, c) => `Sidosryhmäanalyysi ${n} eduskunta-asiakirjasta (luottamus: ${c}/100)`,
+  de: (n, c) => `Multi-Stakeholder-Analyse von ${n} parlamentarischen Dokumenten (Konfidenz: ${c}/100)`,
+  fr: (n, c) => `Analyse multi-parties prenantes de ${n} documents parlementaires (confiance : ${c}/100)`,
+  es: (n, c) => `Análisis multiparticipativo de ${n} documentos parlamentarios (confianza: ${c}/100)`,
+  nl: (n, c) => `Multi-stakeholderanalyse van ${n} parlementaire documenten (betrouwbaarheid: ${c}/100)`,
+  ar: (n, c) => `تحليل متعدد الأطراف لـ ${n} وثيقة برلمانية (ثقة: ${c}/100)`,
+  he: (n, c) => `ניתוח רב-בעלי עניין של ${n} מסמכים פרלמנטריים (ביטחון: ${c}/100)`,
+  ja: (n, c) => `${n}件の議会文書のマルチステークホルダー分析（信頼度: ${c}/100）`,
+  ko: (n, c) => `${n}건의 의회 문서 다자 이해관계자 분석 (신뢰도: ${c}/100)`,
+  zh: (n, c) => `${n}份议会文件的多利益相关方分析（置信度: ${c}/100）`,
+};
+
+const MINDMAP_FALLBACK_TOPIC: Partial<Record<Language, string>> = {
+  en: 'Parliamentary Analysis', sv: 'Parlamentarisk analys', da: 'Parlamentarisk analyse', no: 'Parlamentarisk analyse',
+  fi: 'Eduskunta-analyysi', de: 'Parlamentarische Analyse', fr: 'Analyse parlementaire', es: 'Análisis parlamentario',
+  nl: 'Parlementaire analyse', ar: 'تحليل برلماني', he: 'ניתוח פרלמנטרי',
+  ja: '議会分析', ko: '의회 분석', zh: '议会分析',
+};
+
+const MINDMAP_SUMMARY_FOCUSED: Partial<Record<Language, (topic: string) => string>> = {
+  en: (t) => `Conceptual map for deep inspection: ${t}`,
+  sv: (t) => `Konceptuell karta för djupinspektion: ${t}`,
+  da: (t) => `Konceptuelt kort til dybdeinspektion: ${t}`,
+  no: (t) => `Konseptuelt kart for dybdeinspeksjon: ${t}`,
+  fi: (t) => `Käsitekartta syväanalyysiin: ${t}`,
+  de: (t) => `Konzeptkarte zur Tiefeninspektion: ${t}`,
+  fr: (t) => `Carte conceptuelle pour inspection approfondie : ${t}`,
+  es: (t) => `Mapa conceptual para inspección profunda: ${t}`,
+  nl: (t) => `Conceptkaart voor diepgaande inspectie: ${t}`,
+  ar: (t) => `خريطة مفاهيمية للتفتيش المعمق: ${t}`,
+  he: (t) => `מפה מושגית לבדיקה מעמיקה: ${t}`,
+  ja: (t) => `深層検査の概念マップ: ${t}`,
+  ko: (t) => `심층 검사 개념 맵: ${t}`,
+  zh: (t) => `深度审查概念图: ${t}`,
+};
+
+const MINDMAP_SUMMARY_GENERIC: Partial<Record<Language, LangStrFn>> = {
+  en: (n) => `Conceptual map for ${n} parliamentary documents`,
+  sv: (n) => `Konceptuell karta för ${n} riksdagsdokument`,
+  da: (n) => `Konceptuelt kort for ${n} parlamentsdokumenter`,
+  no: (n) => `Konseptuelt kart for ${n} parlamentsdokumenter`,
+  fi: (n) => `Käsitekartta ${n} eduskunta-asiakirjasta`,
+  de: (n) => `Konzeptkarte für ${n} parlamentarische Dokumente`,
+  fr: (n) => `Carte conceptuelle de ${n} documents parlementaires`,
+  es: (n) => `Mapa conceptual de ${n} documentos parlamentarios`,
+  nl: (n) => `Conceptkaart voor ${n} parlementaire documenten`,
+  ar: (n) => `خريطة مفاهيمية لـ ${n} وثيقة برلمانية`,
+  he: (n) => `מפה מושגית ל-${n} מסמכים פרלמנטריים`,
+  ja: (n) => `${n}件の議会文書の概念マップ`,
+  ko: (n) => `${n}건의 의회 문서 개념 맵`,
+  zh: (n) => `${n}份议会文件概念图`,
+};
+
+const SANKEY_TITLE_LABEL: Partial<Record<Language, string>> = {
+  en: 'Legislative Flow', sv: 'Lagstiftningsflöde', da: 'Lovgivningsflow', no: 'Lovgivningsflyt',
+  fi: 'Lainsäädännön kulku', de: 'Gesetzgebungsfluss', fr: 'Flux législatif', es: 'Flujo legislativo',
+  nl: 'Wetgevingsstroming', ar: 'تدفق التشريعات', he: 'זרימה חקיקתית',
+  ja: '立法フロー', ko: '입법 흐름', zh: '立法流程',
+};
+
+const SANKEY_SUMMARY: Partial<Record<Language, LangStrFn>> = {
+  en: (n) => `Flow of ${n} parliamentary documents from initiating actors to document types`,
+  sv: (n) => `Flöde av ${n} riksdagsdokument från initierande aktörer till dokumenttyper`,
+  da: (n) => `Flow af ${n} parlamentsdokumenter fra initierende aktører til dokumenttyper`,
+  no: (n) => `Flyt av ${n} parlamentsdokumenter fra initierende aktører til dokumenttyper`,
+  fi: (n) => `${n} eduskunta-asiakirjan kulku aloittavista toimijoista asiakirjatyyppeihin`,
+  de: (n) => `Fluss von ${n} parlamentarischen Dokumenten von initiierenden Akteuren zu Dokumenttypen`,
+  fr: (n) => `Flux de ${n} documents parlementaires des acteurs initiateurs aux types de documents`,
+  es: (n) => `Flujo de ${n} documentos parlamentarios de actores iniciadores a tipos de documentos`,
+  nl: (n) => `Stroom van ${n} parlementaire documenten van initiërende actoren naar documenttypen`,
+  ar: (n) => `تدفق ${n} وثيقة برلمانية من الأطراف المبادرة إلى أنواع الوثائق`,
+  he: (n) => `זרימת ${n} מסמכים פרלמנטריים מגורמים יוזמים לסוגי מסמכים`,
+  ja: (n) => `${n}件の議会文書の発議者から文書種類への流れ`,
+  ko: (n) => `${n}건의 의회 문서가 발의 주체에서 문서 유형으로의 흐름`,
+  zh: (n) => `${n}份议会文件从发起方到文件类型的流程`,
+};
+
 /**
  * Convert an AI AnalysisResult to TemplateSection[] for use in generateArticleHTML.
  * This replaces buildDeepInspectionSections when the AI pipeline is used.
@@ -1114,8 +1220,8 @@ function buildDeepInspectionSectionsFromAnalysis(
   }));
 
   const strategicContext = topic
-    ? `Analysis exclusively focused on: ${topic} — ${docs.length} parliamentary documents examined (confidence: ${analysis.confidenceScore}/100)`
-    : `Multi-stakeholder analysis of ${docs.length} parliamentary documents (confidence: ${analysis.confidenceScore}/100)`;
+    ? (STRATEGIC_CONTEXT_FOCUSED[lang] ?? STRATEGIC_CONTEXT_FOCUSED.en!)(topic, docs.length, analysis.confidenceScore)
+    : (STRATEGIC_CONTEXT_MULTI[lang] ?? STRATEGIC_CONTEXT_MULTI.en!)(docs.length, analysis.confidenceScore);
 
   const swotSection = generateStakeholderSwotSection({ stakeholders, lang, strategicContext });
 
@@ -1148,12 +1254,12 @@ function buildDeepInspectionSectionsFromAnalysis(
   }));
 
   const mindmapSection = generateMindmapSection({
-    topic: topic || 'Parliamentary Analysis',
+    topic: topic || (MINDMAP_FALLBACK_TOPIC[lang] ?? MINDMAP_FALLBACK_TOPIC.en!),
     branches: mindmapBranches,
     lang,
     summary: topic
-      ? `Conceptual map for deep inspection: ${topic}`
-      : `Conceptual map for ${docs.length} parliamentary documents`,
+      ? (MINDMAP_SUMMARY_FOCUSED[lang] ?? MINDMAP_SUMMARY_FOCUSED.en!)(topic)
+      : (MINDMAP_SUMMARY_GENERIC[lang] ?? MINDMAP_SUMMARY_GENERIC.en!)(docs.length),
   });
 
   // Classify docs for Sankey section
@@ -1223,8 +1329,10 @@ function buildDeepInspectionSectionsFromAnalysis(
         nodes: sankeyNodes,
         flows: sankeyFlows,
         lang,
-        title: topic ? `Legislative Flow — ${topic}` : 'Legislative Flow',
-        summary: `Flow of ${docs.length} parliamentary documents from initiating actors to document types`,
+        title: topic
+          ? `${SANKEY_TITLE_LABEL[lang] ?? SANKEY_TITLE_LABEL.en!} — ${topic}`
+          : (SANKEY_TITLE_LABEL[lang] ?? SANKEY_TITLE_LABEL.en!),
+        summary: (SANKEY_SUMMARY[lang] ?? SANKEY_SUMMARY.en!)(docs.length),
       })
     : null;
 
@@ -1426,8 +1534,8 @@ export function buildDeepInspectionSections(
   ];
 
   const strategicContext = topic
-    ? `Analysis exclusively focused on: ${topic} — ${docs.length} parliamentary documents examined`
-    : `Multi-stakeholder analysis of ${docs.length} parliamentary documents`;
+    ? (STRATEGIC_CONTEXT_FOCUSED[lang] ?? STRATEGIC_CONTEXT_FOCUSED.en!)(topic, docs.length, 50)
+    : (STRATEGIC_CONTEXT_MULTI[lang] ?? STRATEGIC_CONTEXT_MULTI.en!)(docs.length, 50);
   const swotSection = generateStakeholderSwotSection({ stakeholders, lang, strategicContext });
 
   // ── Dashboard: document type distribution ─────────────────────────────────
@@ -1510,12 +1618,12 @@ export function buildDeepInspectionSections(
   });
 
   const mindmapSection = generateMindmapSection({
-    topic: topic || 'Parliamentary Analysis',
+    topic: topic || (MINDMAP_FALLBACK_TOPIC[lang] ?? MINDMAP_FALLBACK_TOPIC.en!),
     branches: mindmapBranches,
     lang,
     summary: topic
-      ? `Conceptual map for deep inspection: ${topic}`
-      : `Conceptual map for ${docs.length} parliamentary documents`,
+      ? (MINDMAP_SUMMARY_FOCUSED[lang] ?? MINDMAP_SUMMARY_FOCUSED.en!)(topic)
+      : (MINDMAP_SUMMARY_GENERIC[lang] ?? MINDMAP_SUMMARY_GENERIC.en!)(docs.length),
   });
 
   // ── Sankey: party/doc-type flow → legislative outcome ─────────────────────
@@ -1566,8 +1674,10 @@ export function buildDeepInspectionSections(
         nodes: sankeyNodes,
         flows: sankeyFlows,
         lang,
-        title: topic ? `Legislative Flow — ${topic}` : 'Legislative Flow',
-        summary: `Flow of ${docs.length} parliamentary documents from initiating actors to document types`,
+        title: topic
+          ? `${SANKEY_TITLE_LABEL[lang] ?? SANKEY_TITLE_LABEL.en!} — ${topic}`
+          : (SANKEY_TITLE_LABEL[lang] ?? SANKEY_TITLE_LABEL.en!),
+        summary: (SANKEY_SUMMARY[lang] ?? SANKEY_SUMMARY.en!)(docs.length),
       })
     : null;
 
