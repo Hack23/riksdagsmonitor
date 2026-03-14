@@ -805,15 +805,6 @@ function plural(n: number, lang: Language): string {
   return n !== 1 ? 's' : '';
 }
 
-function verbPlural(n: number, lang: Language): string {
-  // verb agreement: English 3rd-person singular '-s' removed when plural subject
-  if (lang === 'en') return n === 1 ? 's' : '';
-  // French '-nt' for plural
-  if (lang === 'fr') return n !== 1 ? 'nt' : '';
-  // Others: no marker needed in template
-  return '';
-}
-
 /** Full verb form for TAKEAWAY_BET templates (committee reports "scrutinise"/"examine"). */
 function betVerbForm(n: number, lang: Language): string {
   if (lang === 'en') return n === 1 ? 'scrutinises' : 'scrutinise';
@@ -976,7 +967,8 @@ export class AIAnalysisPipeline {
     const pressmDocs = docs.filter(d => docType(d) === 'pressm');
     const extDocs    = docs.filter(d => EXT_TYPES.has(docType(d)));
     const otherDocs  = docs.filter(d =>
-      !['prop','bet','mot','skr','sfs','fpm','pressm','ext','external'].includes(docType(d)));
+      !['prop','bet','mot','skr','sfs','fpm','pressm','ext','external'].includes(docType(d))
+      && !(d.dokumentnamn ?? '').startsWith('SFS'));
 
     const domainSet = new Set<string>();
     docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => domainSet.add(dom)));
@@ -1092,8 +1084,8 @@ export class AIAnalysisPipeline {
     topicStr: string,
     _lang: Language,
   ): string {
-    // Use enriched content snippet when available
-    const contentSnippet = (doc.fullText ?? doc.contentText ?? doc.notis ?? '');
+    // Use enriched content snippet when available (fullText || fullContent per codebase convention)
+    const contentSnippet = (doc.fullText ?? doc.fullContent ?? doc.summary ?? doc.notis ?? '');
     if (contentSnippet && contentSnippet.length > 50) {
       return contentSnippet.slice(0, 200).replace(/\s+/g, ' ');
     }
