@@ -816,6 +816,24 @@ const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, stri
     ko: '방법론 및 신뢰도',
     zh: '方法论与置信度',
   },
+  likelyOutcome: {
+    en: 'Likely Outcome', sv: 'Troligt utfall', da: 'Sandsynligt udfald', no: 'Sannsynlig utfall',
+    fi: 'Todennäköinen lopputulos', de: 'Wahrscheinliches Ergebnis', fr: 'Résultat probable', es: 'Resultado probable',
+    nl: 'Waarschijnlijk resultaat', ar: 'النتيجة المحتملة', he: 'תוצאה סבירה',
+    ja: '見込まれる結果', ko: '예상 결과', zh: '可能结果',
+  },
+  coalitionStability: {
+    en: 'Coalition Stability Forecast', sv: 'Koalitionsstabilitetsprognos', da: 'Koalitionsstabilitetsprognose', no: 'Koalisjonstabilitetsprognose',
+    fi: 'Koalition vakausennuste', de: 'Koalitionsstabilitätsprognose', fr: 'Prévision de stabilité de coalition', es: 'Pronóstico de estabilidad de coalición',
+    nl: 'Coalitiesstabiliteitsprognose', ar: 'توقعات استقرار الائتلاف', he: 'תחזית יציבות קואליציה',
+    ja: '連立安定性予測', ko: '연립 안정성 예측', zh: '联合稳定性预测',
+  },
+  riskScenarios: {
+    en: 'Risk Scenarios', sv: 'Riskscenarier', da: 'Risikoscenarier', no: 'Risikoscenarier',
+    fi: 'Riskiskenaariot', de: 'Risikoszenarien', fr: 'Scénarios de risque', es: 'Escenarios de riesgo',
+    nl: "Risicoscenario's", ar: 'سيناريوهات المخاطر', he: 'תרחישי סיכון',
+    ja: 'リスクシナリオ', ko: '위험 시나리오', zh: '风险情景',
+  },
 };
 
 function deepLabel(key: string, lang: Language): string {
@@ -1269,7 +1287,13 @@ function buildPredictiveAssessment(docs: RawDocument[], topic: string | null, la
     : Math.max(MIN_PASSAGE_PROBABILITY, BASE_PASSAGE_PROBABILITY - motCount * OPPOSITION_MOTION_PENALTY);
   const blockPct = 100 - passagePct;
 
-  const topicStr = topic ? esc(topic) : (lang === 'sv' ? 'detta område' : 'this area');
+  const topicFallback: Partial<Record<Language, string>> = {
+    en: 'this area', sv: 'detta område', da: 'dette område', no: 'dette området',
+    fi: 'tämä alue', de: 'diesem Bereich', fr: 'ce domaine', es: 'esta área',
+    nl: 'dit gebied', ar: 'هذا المجال', he: 'תחום זה',
+    ja: 'この分野', ko: '이 분야', zh: '该领域',
+  };
+  const topicStr = topic ? esc(topic) : (topicFallback[lang] ?? topicFallback.en!);
 
   const headingPredictive = deepLabel('predictiveAssessment', lang);
   const headingOutcome = deepLabel('likelyOutcome', lang);
@@ -1384,9 +1408,9 @@ function buildHistoricalContext(docs: RawDocument[], topic: string | null, lang:
   const templates: Partial<Record<Language, string>> = {
     en: `${topicStr ? `<strong>${topicStr}</strong> sits within` : 'This policy sits within'} a long tradition of Swedish parliamentary reform. ${hasEnacted ? `The presence of ${sfsDocs.length} enacted statute${sfsDocs.length !== 1 ? 's' : ''} indicates this area has established legal precedent.` : propCount > 0 ? `Active propositions suggest this policy cycle mirrors earlier reform waves, where government-initiated legislation progressed through committee scrutiny to enactment within 12–24 months.` : 'Early-stage documents suggest this represents a new policy initiative without direct statutory precedent.'} ${domainList.length > 0 ? `In the Nordic context, ${domainList.join(', ')} policy areas have historically benefited from cross-party consensus, with Sweden typically aligning with Danish and Norwegian approaches before adopting EU framework requirements.` : ''} International benchmarking indicates that comparable democracies — particularly Denmark, Norway, and Finland — have addressed similar policy challenges through incremental legislative packages rather than sweeping reform. Trend analysis across recent parliamentary sessions suggests that ${topicStr ? `${topicStr} legislation` : 'policy in this area'} is accelerating, driven by EU harmonisation requirements and coalition agreement commitments.`,
     sv: `${topicStr ? `<strong>${topicStr}</strong> ingår i` : 'Denna policy ingår i'} en lång tradition av svensk parlamentarisk reform. ${hasEnacted ? `Förekomsten av ${sfsDocs.length} antagen lag/förordning visar att området har etablerat rättslig praxis.` : propCount > 0 ? 'Aktiva propositioner tyder på att detta policycykeln speglar tidigare reformvågor.' : 'Tidiga dokument tyder på ett nytt policyinitiativ utan direkt lagstadgat prejudikat.'} ${domainList.length > 0 ? `I nordisk kontext har ${domainList.join(', ')} historiskt gynnats av partikonsensus, med Sverige som vanligtvis anpassar sig till danska och norska tillvägagångssätt.` : ''} Trendanalys indikerar att ${topicStr ? `${topicStr}-lagstiftning` : 'politiken på detta område'} accelererar, driven av EU-harmoniseringskrav och koalitionsöverenskommelser.`,
-    da: `${topicStr ? `<strong>${topicStr}</strong> er del af` : 'Denne politik er del af'} en lang tradition for dansk parlamentarisk reform. ${domainList.length > 0 ? `I nordisk kontekst har ${domainList.join(', ')} historisk nydt gavn af tværpolitisk konsensus.` : ''} Trendanalyse viser, at politikken på dette område accelererer.`,
-    no: `${topicStr ? `<strong>${topicStr}</strong> er en del av` : 'Denne politikken er en del av'} en lang tradisjon for norsk parlamentarisk reform. ${domainList.length > 0 ? `I nordisk kontekst har ${domainList.join(', ')} historisk nytt godt av tverrpolitisk konsensus.` : ''} Trendanalyse indikerer at politikk på dette området akselererer.`,
-    fi: `${topicStr ? `<strong>${topicStr}</strong> on osa` : 'Tämä politiikka on osa'} pitkää suomalaista parlamentaarista uudistusperinnettä. ${domainList.length > 0 ? `Pohjoismaisessa kontekstissa ${domainList.join(', ')} aloilla on historiallisesti hyöty puolueiden välisestä yhteisymmärryksestä.` : ''} Trendanalyysi osoittaa, että tämän alan politiikka kiihtyy.`,
+    da: `${topicStr ? `<strong>${topicStr}</strong> er del af` : 'Denne politik er del af'} en lang tradition for svensk Riksdagsreform. ${domainList.length > 0 ? `I nordisk kontekst har ${domainList.join(', ')} historisk nydt gavn af tværpolitisk konsensus.` : ''} Trendanalyse viser, at politikken på dette område accelererer.`,
+    no: `${topicStr ? `<strong>${topicStr}</strong> er en del av` : 'Denne politikken er en del av'} en lang tradisjon for svensk riksdagsreform. ${domainList.length > 0 ? `I nordisk kontekst har ${domainList.join(', ')} historisk nytt godt av tverrpolitisk konsensus.` : ''} Trendanalyse indikerer at politikk på dette området akselererer.`,
+    fi: `${topicStr ? `<strong>${topicStr}</strong> on osa` : 'Tämä politiikka on osa'} pitkää Ruotsin valtiopäivien uudistusperinnettä. ${domainList.length > 0 ? `Pohjoismaisessa kontekstissa ${domainList.join(', ')} aloilla on historiallisesti hyöty puolueiden välisestä yhteisymmärryksestä.` : ''} Trendanalyysi osoittaa, että tämän alan politiikka kiihtyy.`,
     de: `${topicStr ? `<strong>${topicStr}</strong> steht in` : 'Diese Politik steht in'} einer langen Tradition schwedischer parlamentarischer Reform. ${hasEnacted ? `Das Vorhandensein von ${sfsDocs.length} verabschiedeten Statuten zeigt, dass in diesem Bereich rechtliche Präzedenzfälle etabliert sind.` : ''} ${domainList.length > 0 ? `Im nordischen Kontext haben ${domainList.join(', ')}-Politikbereiche historisch von einem parteiübergreifenden Konsens profitiert.` : ''} Die Trendanalyse zeigt, dass sich ${topicStr ? `${topicStr}-Gesetzgebung` : 'die Politik in diesem Bereich'} beschleunigt.`,
     fr: `${topicStr ? `<strong>${topicStr}</strong> s\u2019inscrit dans` : "Cette politique s\u2019inscrit dans"} une longue tradition de réforme parlementaire suédoise. ${hasEnacted ? `La présence de ${sfsDocs.length} statuts adoptés indique que ce domaine a établi des précédents juridiques.` : ''} ${domainList.length > 0 ? `Dans le contexte nordique, les domaines ${domainList.join(', ')} ont historiquement bénéficié d\u2019un consensus multipartite.` : ''} L\u2019analyse de tendances indique que ${topicStr ? `la législation sur ${topicStr}` : 'la politique dans ce domaine'} s\u2019accélère.`,
     es: `${topicStr ? `<strong>${topicStr}</strong> se inscribe en` : 'Esta política se inscribe en'} una larga tradición de reforma parlamentaria sueca. ${hasEnacted ? `La presencia de ${sfsDocs.length} estatutos promulgados indica que esta área ha establecido precedentes legales.` : ''} ${domainList.length > 0 ? `En el contexto nórdico, las áreas de política ${domainList.join(', ')} históricamente se han beneficiado del consenso multipartidista.` : ''} El análisis de tendencias indica que ${topicStr ? `la legislación sobre ${topicStr}` : 'la política en esta área'} se está acelerando.`,
@@ -1421,7 +1445,7 @@ function buildMethodologySection(docs: RawDocument[], topic: string | null, lang
     da: ['Overfladeanalyse (hændelser og aktører identificeret)', 'Dybdeanalyse (motivationer og strategiske implikationer)', 'Prædiktiv analyse (prognoser og risikoscenarier)', 'Kvalitetsgennemgang (bias-tjek og fuldstændighedsverificering)'],
     no: ['Overflateanalyse (hendelser og aktører identifisert)', 'Dybdeanalyse (motivasjoner og strategiske implikasjoner)', 'Prediktiv analyse (prognoser og risikoscenarier)', 'Kvalitetsgjennomgang (bias-sjekk og fullstendighetsverifisering)'],
     fi: ['Pintaanalyysi (tapahtumat ja toimijat tunnistettu)', 'Syväanalyysi (motiivit ja strategiset vaikutukset)', 'Ennakoiva analyysi (ennusteet ja riskiskenaariot)', 'Laaduntarkistus (vinoutumien tarkistus ja kattavuuden varmennus)'],
-    de: ['Oberflächenanalyse (Ereignisse und Akteure identifiziert)', 'Tiefenanalyse (Motivationen und strategische Implikationen)', 'Prädiktive Analyse (Prognosen und Risikoszernarien)', 'Qualitätsprüfung (Bias-Prüfung und Vollständigkeitsverifikation)'],
+    de: ['Oberflächenanalyse (Ereignisse und Akteure identifiziert)', 'Tiefenanalyse (Motivationen und strategische Implikationen)', 'Prädiktive Analyse (Prognosen und Risikoszenarien)', 'Qualitätsprüfung (Bias-Prüfung und Vollständigkeitsverifikation)'],
     fr: ['Analyse de surface (événements et acteurs identifiés)', 'Analyse approfondie (motivations et implications stratégiques)', 'Analyse prédictive (prévisions et scénarios de risque)', 'Revue qualité (vérification des biais et de l\'exhaustivité)'],
     es: ['Análisis superficial (eventos y actores identificados)', 'Análisis profundo (motivaciones e implicaciones estratégicas)', 'Análisis predictivo (pronósticos y escenarios de riesgo)', 'Revisión de calidad (verificación de sesgos y exhaustividad)'],
     nl: ['Oppervlakteanalyse (gebeurtenissen en actoren geïdentificeerd)', 'Diepteanalyse (motivaties en strategische implicaties)', 'Voorspellende analyse (prognoses en risicoscenario\'s)', 'Kwaliteitsreview (bias-controle en volledigheidsverificatie)'],

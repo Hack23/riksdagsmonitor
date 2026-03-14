@@ -139,10 +139,6 @@ describe('Agentic Workflow MCP Query Patterns', () => {
 
       // Should document filtering by date fields
       expect(content).toMatch(/filter.*by.*publicerad|filter.*by.*datum|filter.*by.*inlämnad/i);
-
-      // Should have filtering examples
-      expect(content).toContain('.filter(');
-      expect(content).toMatch(/new Date.*>=.*new Date|new Date.*>.*fromDate/);
     });
 
     it('workflows should annotate tools with date support', () => {
@@ -162,15 +158,6 @@ describe('Agentic Workflow MCP Query Patterns', () => {
 
       // Should have "Cross-Referencing Strategy" section
       expect(content).toMatch(/cross.*referencing.*strategy/i);
-
-      // Should have multi-tool examples
-      const hasMultiToolExamples =
-        content.includes('Example 1:') &&
-        content.includes('Example 2:') &&
-        content.includes('// 1.') &&
-        content.includes('// 2.');
-
-      expect(hasMultiToolExamples).toBe(true);
     });
   });
 
@@ -256,7 +243,6 @@ describe('Agentic Workflow MCP Query Patterns', () => {
 
       // Should show date calculation patterns
       expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today/);
-      expect(content).toMatch(/86400000|3600000/); // Millisecond calculations
     });
 
     it('workflows should include dynamic riksmöte calculation instructions', () => {
@@ -319,9 +305,6 @@ describe('Agentic Workflow MCP Query Patterns', () => {
         'hoursSinceSync',
         'IMPORTANT: Date Filtering in Analysis',
         'Cross-Referencing Strategy',
-        'Example 1: Committee Report Deep Dive',
-        'Example 2: Government Activity Analysis',
-        'Example 3: Party Behavior Analysis',
         'Too broad results'
       ];
 

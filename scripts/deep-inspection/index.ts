@@ -17,10 +17,8 @@
  * ```typescript
  * const pipeline = new DeepInspectionPipeline({
  *   documentIds: ['H901FiU1'],
- *   documentUrls: [],
  *   focusTopic: 'defence budget',
  *   depth: 4,
- *   languages: ['en', 'sv'],
  * });
  * const result = await pipeline.run();
  * ```
@@ -30,6 +28,7 @@
  */
 
 import { generateDeepInspection } from '../generate-news-enhanced/generators.js';
+import { analysisDepth } from '../generate-news-enhanced/config.js';
 import type { GenerationResult } from '../types/article.js';
 
 /** Parameters accepted by DeepInspectionPipeline. */
@@ -118,7 +117,7 @@ export class DeepInspectionPipeline {
    * @returns DeepInspectionResult with success status, file count, and slug
    */
   async run(): Promise<DeepInspectionResult> {
-    const depth = this.params.depth ?? 1;
+    const depth = analysisDepth;
     const topic = this.params.focusTopic;
 
     console.log(`🔬 DeepInspectionPipeline starting — depth ${depth}: ${this.phaseLabel(depth)}`);
