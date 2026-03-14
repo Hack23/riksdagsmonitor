@@ -546,7 +546,7 @@ function pass3ValidationAndCompleteness(
 
   const fallbackBranches: Pick<MindmapBranch, 'label' | 'color' | 'icon' | 'importance' | 'items'>[] = [
     { label: L(LABELS.policyDomains, lang, 'Policy Domains'), color: 'green', icon: '📋', importance: 'low',
-      items: [(L(FALLBACK_LABELS.documentsAnalysed, lang, '{n} parliamentary documents analysed')).replace('{n}', String(docs.length))] },
+      items: [L(FALLBACK_LABELS.documentsAnalysed, lang, '{n} parliamentary documents analysed').replace('{n}', String(docs.length))] },
     { label: L(LABELS.stakeholderNetwork, lang, 'Stakeholder Network'), color: 'cyan', icon: '👥', importance: 'low',
       items: [L(STAKEHOLDER_LABELS.government, lang, 'Government'), L(STAKEHOLDER_LABELS.parliament, lang, 'Parliament'), L(STAKEHOLDER_LABELS.civilSociety, lang, 'Civil Society')] },
     { label: L(LABELS.legislativeTimeline, lang, 'Legislative Timeline'), color: 'yellow', icon: '📅', importance: 'low',
