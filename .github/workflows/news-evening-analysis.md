@@ -201,9 +201,46 @@ Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc quer
 
 Filter results to only include items with dates `>= fromDate`.
 
+**Post-query date filtering example** (use 86400000 ms = 1 day, 3600000 ms = 1 hour):
+```javascript
+const fromDate = new Date(Date.now() - lookback_hours * 3600000).toISOString().slice(0, 10);
+const results = rawResults.filter(item => {
+  const itemDate = item.datum || item.publicerad || item.inlämnad;
+  return new Date(itemDate) >= new Date(fromDate);
+});
+```
+
 ### Cross-Referencing Strategy
 
 Cross-reference related data sources for richer analysis (e.g., committee reports with voting records, government propositions with parliamentary motions). Filter all results by date to `>= fromDate`.
+
+**Example 1: Committee Report Deep Dive**
+```javascript
+// 1. Fetch committee reports
+const reports = await get_betankanden({ rm: riksmote, limit: 20 });
+// 2. Cross-reference with voting records
+const votes = await search_voteringar({ rm: riksmote, limit: 50 });
+const reportsWithVotes = reports.filter(r => votes.some(v => v.bet === r.bet));
+```
+
+**Example 2: Government Activity Analysis**
+```javascript
+// 1. Fetch government propositions
+const props = await get_propositioner({ rm: riksmote, limit: 20 });
+// 2. Cross-reference with committee referrals
+const referred = props.filter(p => p.referredTo);
+```
+
+**Example 3: Party Behavior Analysis**
+```javascript
+// 1. Fetch party motions
+const motions = await get_motioner({ rm: riksmote, limit: 50 });
+// 2. Group by party for oversight analysis
+const byParty = motions.reduce((acc, m) => {
+  acc[m.parti] = (acc[m.parti] || 0) + 1;
+  return acc;
+}, {});
+```
 
 ### Saturday vs Weekday Mode
 
