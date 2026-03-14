@@ -1,7 +1,7 @@
 /**
  * @module data-transformers/content-generators/interpellations
  * @description Generator for "interpellations" article content. Renders parliamentary
- * interpellations grouped by policy theme or target minister, with accountability analysis.
+ * interpellations grouped by submitting party and policy theme, with accountability analysis.
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -18,7 +18,7 @@ import {
 } from '../helpers.js';
 import { detectPolicyDomains } from '../policy-analysis.js';
 import {
-  renderMotionEntry,
+  renderInterpellationEntry,
 } from '../document-analysis.js';
 
 export function generateInterpellationsContent(data: ArticleContentData, lang: Language | string): string {
@@ -73,7 +73,7 @@ export function generateInterpellationsContent(data: ArticleContentData, lang: L
       content += `\n    <h3>${escapeHtml(theme)} (${themeInterps.length})</h3>\n`;
       themeInterps.forEach(interp => {
         // Demote entry headings one level when inside a themed section
-        const entryHtml = renderMotionEntry(interp, lang);
+        const entryHtml = renderInterpellationEntry(interp, lang);
         const demotedHtml = entryHtml
           .replace(/<h3(\b[^>]*)?>/g, '<h4$1>')
           .replace(/<\/h3>/g, '</h4>');
@@ -82,7 +82,7 @@ export function generateInterpellationsContent(data: ArticleContentData, lang: L
     });
   } else {
     // Single theme or no detection: flat list
-    interpellations.forEach(interp => { content += renderMotionEntry(interp, lang); });
+    interpellations.forEach(interp => { content += renderInterpellationEntry(interp, lang); });
   }
 
   // Deep Analysis section (5W framework)
@@ -103,7 +103,7 @@ export function generateInterpellationsContent(data: ArticleContentData, lang: L
     content += `    <div class="context-box">\n      <ul>\n`;
     Object.entries(byParty).forEach(([party, partyInterps]) => {
       if (party !== 'other') {
-        const detailFn = L(lang, 'partyMotionsFiled') as string | ((party: string, n: number) => string);
+        const detailFn = L(lang, 'partyInterpellationsFiled') as string | ((party: string, n: number) => string);
         const detail = typeof detailFn === 'function'
           ? detailFn(party, partyInterps.length)
           : `${party}: ${partyInterps.length} interpellations filed`;

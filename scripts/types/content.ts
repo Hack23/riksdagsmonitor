@@ -79,6 +79,12 @@ export interface ContentLabelSet {
   motionsOverview: (n: number) => string;
   motionSignificance: string;
   readFullMotion: string;
+  /** Default summary for an interpellation document entry */
+  interpellationDefault: string;
+  /** "Read the full interpellation" link text */
+  readFullInterpellation: string;
+  /** Party interpellations filed breakdown (e.g. "SD: 3 interpellations filed") */
+  partyInterpellationsFiled: (party: string, n: number) => string;
   policyContext: string;
   filedBy: string;
   /** Label for document publication date (e.g. "Published", "Publicerad") */

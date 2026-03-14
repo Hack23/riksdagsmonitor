@@ -294,6 +294,59 @@ export function renderMotionEntry(motion: RawDocument, lang: Language | string):
 }
 
 /**
+ * Render a single interpellation entry with interpellation-specific labels and CSS classes.
+ * Uses 'ip' doktyp for domain analysis and interpellation-specific link/default labels.
+ */
+export function renderInterpellationEntry(doc: RawDocument, lang: Language | string): string {
+  const titleText = doc.titel || doc.title || '';
+  const escapedTitle = escapeHtml(titleText);
+  const titleHtml = (doc.titel && !doc.title)
+    ? svSpan(escapedTitle, lang)
+    : escapedTitle;
+  const docName = escapeHtml(doc.dokumentnamn || doc.dok_id || titleText);
+
+  const unknownVal = L(lang, 'unknown');
+  let authorName = (doc.intressent_namn !== 'Unknown' ? doc.intressent_namn : null)
+                || (doc.author !== 'Unknown' ? doc.author : null)
+                || '';
+  let partyName = (doc.parti !== 'Unknown' ? doc.parti : '') || '';
+  if (!authorName || !partyName) {
+    const rawText = doc.undertitel || doc.summary || doc.notis || doc.fullText || doc.titel || doc.rubrik || '';
+    const parsed = parseMotionAuthorParty(rawText);
+    if (parsed) {
+      if (parsed.author && !authorName) authorName = parsed.author;
+      if (parsed.party && !partyName) partyName = parsed.party;
+    }
+  }
+  if (!authorName) authorName = typeof unknownVal === 'string' ? unknownVal : 'Unknown';
+  const authorLine = partyName
+    ? `${escapeHtml(authorName)} (${escapeHtml(partyName)})`
+    : escapeHtml(authorName);
+
+  const summaryText = generateEnhancedSummary(doc, 'interpellation', lang);
+  const interpDefaultVal = L(lang, 'interpellationDefault');
+  const isSwedishContent = (doc.titel && !doc.title)
+    || (doc.summary || doc.notis || '').includes('Interpellation');
+  const summaryHtml = (summaryText && summaryText !== interpDefaultVal && isSwedishContent)
+    ? svSpan(escapeHtml(summaryText), lang)
+    : escapeHtml(summaryText || (typeof interpDefaultVal === 'string' ? interpDefaultVal : ''));
+
+  const readFullVal = L(lang, 'readFullInterpellation');
+  const whyItMattersVal = L(lang, 'whyItMatters');
+  const dateHtml = formatDocumentDate(doc, lang);
+
+  return `
+    <div class="interpellation-entry">
+      <h3>${titleHtml}</h3>
+      <p><strong>${L(lang, 'filedBy')}:</strong> ${authorLine}</p>${dateHtml ? `\n      <p>${dateHtml}</p>` : ''}
+      <p>${summaryHtml}</p>
+      <p><strong>${escapeHtml(String(whyItMattersVal))}:</strong> ${generateDeepPolicyAnalysis(doc, lang, 'ip')}</p>
+      <p><a href="${sanitizeUrl(doc.url)}" class="document-link" rel="noopener noreferrer">${escapeHtml(String(readFullVal))}: ${docName}</a></p>
+    </div>
+`;
+}
+
+/**
  * Generate per-document analysis.
  * PRIMARY: full document text, policy significance, related speeches.
  * SECONDARY (only when genuinely informative): CIA historical context footnote.
