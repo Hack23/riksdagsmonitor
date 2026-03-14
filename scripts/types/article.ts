@@ -82,7 +82,9 @@ export interface ArticleData {
    * lookup (e.g. `'week-ahead'`, `'motions'`, `'interpellations'`).
    * When provided, `generateArticleHTML` will apply the matching
    * `article-type-*` CSS class to the `<article>` element.
-   * Falls back to `type` (ArticleCategory) when omitted.
+   * When omitted, no per-type class is applied — the article keeps base
+   * `.news-article` styling.  (`type: ArticleCategory` values like
+   * `'analysis'` are **not** valid `ArticleType` keys.)
    */
   articleType?: ArticleType;
   readTime?: string;

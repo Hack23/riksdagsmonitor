@@ -296,9 +296,9 @@ describe('generateArticleHTML article-type class injection', () => {
     expect(html).toContain('class="news-article article-type-committee-reports"');
   });
 
-  it('should link to the article-types CSS theme file', () => {
+  it('should NOT have a separate article-types.css link (loaded via @import)', () => {
     const html = generateArticleHTML(makeMockArticleData('propositions') as ArticleData);
-    expect(html).toContain('styles/themes/article-types.css');
+    expect(html).not.toContain('<link rel="stylesheet" href="../styles/themes/article-types.css">');
   });
 
   it('should still include the main styles.css link', () => {
@@ -320,5 +320,30 @@ describe('generateArticleHTML article-type class injection', () => {
     // Should still produce valid HTML
     expect(html).toContain('<!DOCTYPE html>');
     expect(html).toContain('class="news-article');
+  });
+
+  it('should use base news-article class when articleType is omitted', () => {
+    const data: ArticleData = {
+      slug: '2026-03-13-analysis-en.html',
+      title: 'Test Without articleType',
+      subtitle: 'Testing omitted articleType field.',
+      date: '2026-03-13',
+      type: 'analysis' as ArticleData['type'],
+      // articleType intentionally omitted
+      lang: 'en',
+      content: '<p>Test content.</p>',
+      sources: ['Riksdagen'],
+      keywords: ['test'],
+      tags: [],
+    };
+    const html = generateArticleHTML(data);
+    // Should have base class only, NOT article-type-breaking or any other per-type class
+    expect(html).toContain('class="news-article"');
+    expect(html).not.toMatch(/article-type-/);
+  });
+
+  it('should render the type label with type-badge class', () => {
+    const html = generateArticleHTML(makeMockArticleData('propositions') as ArticleData);
+    expect(html).toContain('class="type-badge"');
   });
 });

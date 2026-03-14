@@ -68,8 +68,10 @@ export function generateArticleHTML(data: ArticleData): string {
   const typeLabel: string = TYPE_LABELS[lang]?.[type] || TYPE_LABELS.en[type] || 'News';
 
   // Derive the per-type CSS class from the registry (e.g. 'article-type-propositions')
-  // Use articleType when provided (routing type), fall back to type (category label)
-  const articleTypeClass: string = getStyleClass(articleType ?? type);
+  // Only apply when articleType is explicitly set — ArticleCategory values are not
+  // valid ArticleType keys, so falling back to `type` would silently resolve to
+  // the 'breaking' default.  When omitted, keep the base `.news-article` styling.
+  const articleTypeClass: string = articleType ? ` ${getStyleClass(articleType)}` : '';
 
   // Generate hreflang tags for all available language variants
   const isRTL: boolean = lang === 'ar' || lang === 'he';
@@ -138,10 +140,8 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
   
-  <!-- Main stylesheet - contains all article styles -->
+  <!-- Main stylesheet — includes all article styles + component/theme imports -->
   <link rel="stylesheet" href="../styles.css">
-  <!-- Per-type accent theme: overrides CSS custom properties for article type -->
-  <link rel="stylesheet" href="../styles/themes/article-types.css">
   
   <!-- Anti-flash: apply saved theme before first paint -->
   <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
@@ -284,7 +284,7 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
   </a>
 </div>
 
-<article id="main-content" class="news-article ${articleTypeClass}">
+<article id="main-content" class="news-article${articleTypeClass}">
   <header class="article-header">
     <div class="hero-banner">
       <img src="../images/riksdagsmonitornews-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
@@ -301,7 +301,7 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
     <div class="article-meta">
       <time datetime="${isoDate}">${formattedDate}</time>
       <span class="separator">•</span>
-      <span>${typeLabel}</span>
+      <span class="type-badge">${typeLabel}</span>
       <span class="separator">•</span>
       <span>${readTime}</span>
     </div>
