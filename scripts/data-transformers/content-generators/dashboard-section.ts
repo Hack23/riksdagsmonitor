@@ -275,7 +275,7 @@ ${tableBlocks}
  */
 function renderHeatMap(config: HeatMapConfig, panelId: string, usedIds: Set<string>): string {
   // Deduplicate heatmap IDs: prefix with panelId and track across the dashboard
-  let baseId = config.id.replace(/[^a-zA-Z0-9_-]/g, '') || 'heatmap';
+  let baseId = config.id.replace(/[^a-zA-Z0-9_-]/g, '') || `${panelId}-heatmap`;
   baseId = `${panelId}-${baseId}`;
   let safeId = baseId;
   let counter = 1;
@@ -285,7 +285,13 @@ function renderHeatMap(config: HeatMapConfig, panelId: string, usedIds: Set<stri
   usedIds.add(safeId);
   const { rowLabels, columnLabels, cells } = config;
 
-  // Validate rectangular shape: every data row must match columnLabels length
+  // Validate rectangular shape: row count first, then per-row cell count
+  if (cells.length !== rowLabels.length) {
+    throw new Error(
+      `HeatMapConfig "${config.id}": ${cells.length} data rows but ${rowLabels.length} row labels. ` +
+      'Heat map rows must match rowLabels length.',
+    );
+  }
   for (let rIdx = 0; rIdx < cells.length; rIdx++) {
     if (cells[rIdx].length !== columnLabels.length) {
       throw new Error(
@@ -293,12 +299,6 @@ function renderHeatMap(config: HeatMapConfig, panelId: string, usedIds: Set<stri
         `${columnLabels.length} column labels. Heat map cells must be rectangular.`,
       );
     }
-  }
-  if (cells.length !== rowLabels.length) {
-    throw new Error(
-      `HeatMapConfig "${config.id}": ${cells.length} data rows but ${rowLabels.length} row labels. ` +
-      'Heat map rows must match rowLabels length.',
-    );
   }
 
   // Compute global min/max for normalising intensity using reduce (safe for large datasets)
@@ -359,7 +359,7 @@ ${legend}
  */
 function renderGauge(config: GaugeConfig, panelId: string, usedIds: Set<string>): string {
   // Deduplicate gauge IDs: prefix with panelId and track across the dashboard
-  let baseId = config.id.replace(/[^a-zA-Z0-9_-]/g, '') || 'gauge';
+  let baseId = config.id.replace(/[^a-zA-Z0-9_-]/g, '') || `${panelId}-gauge`;
   baseId = `${panelId}-${baseId}`;
   let safeId = baseId;
   let counter = 1;
