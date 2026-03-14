@@ -1,9 +1,10 @@
 /**
  * @module generate-news-enhanced/swot-analyzer
- * @description Multi-stakeholder SWOT analysis derived from actual document
- * content. Analyzes document types, titles, and policy signals to produce
- * document-specific SWOT entries for 9 stakeholder perspectives in all
- * 14 supported languages. Replaces the static SWOT_DEFAULTS template system.
+ * @description Multi-stakeholder SWOT analysis derived from document metadata
+ * (types, titles, and document IDs). Classifies documents by type and uses
+ * title keywords to produce metadata-driven SWOT entries for up to 9
+ * stakeholder perspectives in all 14 supported languages. Replaces the static
+ * SWOT_DEFAULTS template system.
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -726,17 +727,152 @@ export const STAKEHOLDER_NAMES: Readonly<Record<StakeholderCategory, Stakeholder
   },
 };
 
-// Stakeholder roles (English only – kept short for role line)
-const STAKEHOLDER_ROLES: Readonly<Record<StakeholderCategory, string>> = {
-  government:    'Tidö Agreement: M, KD, L + SD support',
-  opposition:    'S, V, C, MP — parliamentary accountability',
-  private:       'Industry, employers\' federations, SMEs',
-  'civil-society': 'NGOs, civil rights organisations, public interest',
-  municipal:     'SKR, local government, county councils',
-  international: 'EU institutions, Nordic cooperation, OECD',
-  media:         'Press, broadcast, OSINT — public scrutiny',
-  academia:      'Universities, think tanks, independent research',
-  labor:         'LO, TCO, Saco — labour market organisations',
+// Stakeholder roles — localised for all 14 languages
+const STAKEHOLDER_ROLES: Readonly<Record<StakeholderCategory, Partial<Record<Language, string>>>> = {
+  government: {
+    en: 'Tidö Agreement: M, KD, L + SD support',
+    sv: 'Tidöavtalet: M, KD, L + SD-stöd',
+    da: 'Tidö-aftalen: M, KD, L + SD-støtte',
+    no: 'Tidö-avtalen: M, KD, L + SD-støtte',
+    fi: 'Tidö-sopimus: M, KD, L + SD-tuki',
+    de: 'Tidö-Abkommen: M, KD, L + SD-Unterstützung',
+    fr: 'Accord de Tidö : M, KD, L + soutien SD',
+    es: 'Acuerdo de Tidö: M, KD, L + apoyo SD',
+    nl: 'Tidö-akkoord: M, KD, L + SD-steun',
+    ar: 'اتفاقية تيدو: M, KD, L + دعم SD',
+    he: 'הסכם טידו: M, KD, L + תמיכת SD',
+    ja: 'ティドー協定：M, KD, L + SD支持',
+    ko: '티되 협약: M, KD, L + SD 지지',
+    zh: '蒂德协议：M, KD, L + SD支持',
+  },
+  opposition: {
+    en: 'S, V, C, MP — parliamentary accountability',
+    sv: 'S, V, C, MP — parlamentarisk ansvarsutkrävande',
+    da: 'S, V, C, MP — parlamentarisk ansvarlighed',
+    no: 'S, V, C, MP — parlamentarisk ansvarliggjøring',
+    fi: 'S, V, C, MP — parlamentaarinen vastuuvelvollisuus',
+    de: 'S, V, C, MP — parlamentarische Verantwortlichkeit',
+    fr: 'S, V, C, MP — responsabilité parlementaire',
+    es: 'S, V, C, MP — responsabilidad parlamentaria',
+    nl: 'S, V, C, MP — parlementaire verantwoording',
+    ar: 'S, V, C, MP — المساءلة البرلمانية',
+    he: 'S, V, C, MP — אחריות פרלמנטרית',
+    ja: 'S, V, C, MP — 議会の説明責任',
+    ko: 'S, V, C, MP — 의회 책임',
+    zh: 'S, V, C, MP — 议会问责',
+  },
+  private: {
+    en: 'Industry, employers\' federations, SMEs',
+    sv: 'Industri, arbetsgivarorganisationer, SME',
+    da: 'Industri, arbejdsgiverforeninger, SMV',
+    no: 'Industri, arbeidsgiverforeninger, SMB',
+    fi: 'Teollisuus, työnantajaliitot, pk-yritykset',
+    de: 'Industrie, Arbeitgeberverbände, KMU',
+    fr: 'Industrie, fédérations patronales, PME',
+    es: 'Industria, federaciones patronales, PYME',
+    nl: 'Industrie, werkgeversorganisaties, MKB',
+    ar: 'الصناعة، اتحادات أصحاب العمل، الشركات الصغيرة',
+    he: 'תעשייה, התאחדויות מעסיקים, עסקים קטנים',
+    ja: '産業界、使用者団体、中小企業',
+    ko: '산업, 고용주 연합, 중소기업',
+    zh: '产业界、雇主联合会、中小企业',
+  },
+  'civil-society': {
+    en: 'NGOs, civil rights organisations, public interest',
+    sv: 'Civilsamhällsorganisationer, medborgerliga rättigheter, allmänintresse',
+    da: 'NGO\'er, borgerrettighedsorganisationer, offentlig interesse',
+    no: 'NGO-er, borgerrettighetsorganisasjoner, offentlig interesse',
+    fi: 'Kansalaisjärjestöt, kansalaisoikeusjärjestöt, yleinen etu',
+    de: 'NGOs, Bürgerrechtsorganisationen, Gemeinwohl',
+    fr: 'ONG, organisations de droits civiques, intérêt public',
+    es: 'ONG, organizaciones de derechos civiles, interés público',
+    nl: 'NGO\'s, burgerrechtenorganisaties, publiek belang',
+    ar: 'المنظمات غير الحكومية، منظمات الحقوق المدنية، المصلحة العامة',
+    he: 'ארגונים לא-ממשלתיים, ארגוני זכויות אזרח, אינטרס ציבורי',
+    ja: 'NGO、公民権団体、公益',
+    ko: 'NGO, 시민권 단체, 공익',
+    zh: '非政府组织、公民权利组织、公共利益',
+  },
+  municipal: {
+    en: 'SKR, local government, county councils',
+    sv: 'SKR, kommuner, regioner',
+    da: 'KL, kommuner, regioner',
+    no: 'KS, kommuner, fylkeskommuner',
+    fi: 'Kuntaliitto, kunnat, maakunnat',
+    de: 'SKR, Kommunen, Kreistage',
+    fr: 'SKR, collectivités locales, conseils de comté',
+    es: 'SKR, gobierno local, consejos de condado',
+    nl: 'SKR, lokaal bestuur, provincies',
+    ar: 'SKR، الحكومات المحلية، مجالس المقاطعات',
+    he: 'SKR, שלטון מקומי, מועצות מחוזיות',
+    ja: 'SKR、地方自治体、県議会',
+    ko: 'SKR, 지방 정부, 카운티 의회',
+    zh: 'SKR、地方政府、县议会',
+  },
+  international: {
+    en: 'EU institutions, Nordic cooperation, OECD',
+    sv: 'EU-institutioner, nordiskt samarbete, OECD',
+    da: 'EU-institutioner, nordisk samarbejde, OECD',
+    no: 'EU-institusjoner, nordisk samarbeid, OECD',
+    fi: 'EU-instituutiot, pohjoismainen yhteistyö, OECD',
+    de: 'EU-Institutionen, nordische Zusammenarbeit, OECD',
+    fr: 'Institutions européennes, coopération nordique, OCDE',
+    es: 'Instituciones de la UE, cooperación nórdica, OCDE',
+    nl: 'EU-instellingen, Noordse samenwerking, OESO',
+    ar: 'مؤسسات الاتحاد الأوروبي، التعاون النوردي، OECD',
+    he: 'מוסדות ה-EU, שיתוף פעולה נורדי, OECD',
+    ja: 'EU機関、北欧協力、OECD',
+    ko: 'EU 기관, 북유럽 협력, OECD',
+    zh: '欧盟机构、北欧合作、OECD',
+  },
+  media: {
+    en: 'Press, broadcast, OSINT — public scrutiny',
+    sv: 'Press, etermedia, OSINT — offentlig granskning',
+    da: 'Presse, medier, OSINT — offentlig kontrol',
+    no: 'Presse, kringkasting, OSINT — offentlig gransking',
+    fi: 'Lehdistö, media, OSINT — julkinen valvonta',
+    de: 'Presse, Rundfunk, OSINT — öffentliche Kontrolle',
+    fr: 'Presse, médias, OSINT — contrôle public',
+    es: 'Prensa, medios, OSINT — escrutinio público',
+    nl: 'Pers, media, OSINT — publieke controle',
+    ar: 'الصحافة، الإعلام، OSINT — الرقابة العامة',
+    he: 'עיתונות, שידור, OSINT — ביקורת ציבורית',
+    ja: '報道、放送、OSINT — 公的監視',
+    ko: '언론, 방송, OSINT — 공적 감시',
+    zh: '新闻、广播、OSINT — 公众监督',
+  },
+  academia: {
+    en: 'Universities, think tanks, independent research',
+    sv: 'Universitet, tankesmedjor, oberoende forskning',
+    da: 'Universiteter, tænketanke, uafhængig forskning',
+    no: 'Universiteter, tankesmier, uavhengig forskning',
+    fi: 'Yliopistot, ajatushautomot, riippumaton tutkimus',
+    de: 'Universitäten, Denkfabriken, unabhängige Forschung',
+    fr: 'Universités, think tanks, recherche indépendante',
+    es: 'Universidades, centros de pensamiento, investigación independiente',
+    nl: 'Universiteiten, denktanks, onafhankelijk onderzoek',
+    ar: 'الجامعات، مراكز الفكر، البحوث المستقلة',
+    he: 'אוניברסיטאות, מכוני מחקר, מחקר עצמאי',
+    ja: '大学、シンクタンク、独立研究機関',
+    ko: '대학, 싱크탱크, 독립 연구',
+    zh: '大学、智库、独立研究',
+  },
+  labor: {
+    en: 'LO, TCO, Saco — labour market organisations',
+    sv: 'LO, TCO, Saco — arbetsmarknadsorganisationer',
+    da: 'LO, FTF, AC — arbejdsmarkedsorganisationer',
+    no: 'LO, YS, Unio — arbeidsmarkedsorganisasjoner',
+    fi: 'SAK, STTK, Akava — työmarkkinajärjestöt',
+    de: 'LO, TCO, Saco — Arbeitsmarktorganisationen',
+    fr: 'LO, TCO, Saco — organisations du marché du travail',
+    es: 'LO, TCO, Saco — organizaciones del mercado laboral',
+    nl: 'LO, TCO, Saco — arbeidsmarktorganisaties',
+    ar: 'LO, TCO, Saco — منظمات سوق العمل',
+    he: 'LO, TCO, Saco — ארגוני שוק העבודה',
+    ja: 'LO, TCO, Saco — 労働市場組織',
+    ko: 'LO, TCO, Saco — 노동시장 조직',
+    zh: 'LO, TCO, Saco — 劳动市场组织',
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -753,14 +889,17 @@ function selectRelevantStakeholders(
   const categories: StakeholderCategory[] = ['government', 'opposition', 'private', 'civil-society'];
 
   // Municipal/regional — added when there are laws (SFS), propositions, or
-  // content concerning municipalities/regions/kommuner
-  if (types.has('prop') || types.has('sfs') || types.has('skr')
+  // content concerning municipalities/regions/kommuner.
+  // NOTE: 'skr' (skrivelse / government communication) is intentionally excluded
+  // as it represents government communications, not municipal/regional matters.
+  if (types.has('prop') || types.has('sfs')
       || titles.includes('kommuner') || titles.includes('region')
       || titles.includes('municipality') || titles.includes('local government')) {
     categories.push('municipal');
   }
 
-  // International/EU — added when EU position papers or EU-related content
+  // International/EU — primarily triggered by EU position papers (fpm);
+  // also triggered by title keywords indicating EU/international policy scope
   if (types.has('fpm') || types.has('eu')
       || titles.includes(' eu ') || titles.includes('europa')
       || titles.includes('international') || titles.includes('nato')
@@ -768,7 +907,8 @@ function selectRelevantStakeholders(
     categories.push('international');
   }
 
-  // Media — added when press releases or transparency-sensitive policy
+  // Media — primarily triggered by press releases (pressm);
+  // also triggered by title keywords indicating transparency/public scrutiny topics
   if (types.has('pressm') || titles.includes('offentlig') || titles.includes('public')
       || titles.includes('transparens') || titles.includes('transparency')
       || titles.includes('press') || titles.includes('media')) {
@@ -1129,7 +1269,7 @@ export function buildMultiStakeholderSwot(
 
     stakeholders.push({
       name,
-      role: STAKEHOLDER_ROLES[cat],
+      role: STAKEHOLDER_ROLES[cat]?.[lang] ?? STAKEHOLDER_ROLES[cat]?.en,
       category: cat,
       swot: result.swot,
       evidenceRefs: result.refs.length > 0 ? result.refs : undefined,

@@ -1068,8 +1068,8 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
 
 /**
  * Build SWOT and dashboard TemplateSections for a deep-inspection article.
- * Uses buildMultiStakeholderSwot() to derive 7–9 stakeholder perspectives
- * from actual document content (titles, types, document IDs as evidence).
+ * Uses buildMultiStakeholderSwot() to derive 4–9 stakeholder perspectives
+ * from document metadata (types, titles, document IDs as evidence).
  * Returns TemplateSection[] ready for
  * generateArticleHTML.sections.
  */
@@ -1084,6 +1084,7 @@ function buildDeepInspectionSections(
   const propDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
   const betDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
   const motDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
+  const skrDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
   const sfsDocs    = docs.filter(d =>
     (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
   const euDocs     = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
@@ -1092,13 +1093,12 @@ function buildDeepInspectionSections(
   const otherDocs  = docs.filter(d =>
     !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || ''));
 
-  // Build 7–9 stakeholder SWOT analyses from actual document content
+  // Build 4–9 stakeholder SWOT analyses from document metadata
   const stakeholders = buildMultiStakeholderSwot(docs, lang);
 
   // Derive localised names for the mindmap / sankey from the STAKEHOLDER_NAMES map
   const govName     = STAKEHOLDER_NAMES.government?.[lang]     ?? STAKEHOLDER_NAMES.government?.en     ?? 'Government Coalition';
   const oppName     = STAKEHOLDER_NAMES.opposition?.[lang]     ?? STAKEHOLDER_NAMES.opposition?.en     ?? 'Opposition Parties';
-  const privateName = STAKEHOLDER_NAMES.private?.[lang]        ?? STAKEHOLDER_NAMES.private?.en        ?? 'Private Sector';
 
   const dataSourceBranchLabels: Partial<Record<Language, string>> = {
     en: 'Data Sources', sv: 'Datakällor', da: 'Datakilder', no: 'Datakilder',
@@ -1213,15 +1213,18 @@ function buildDeepInspectionSections(
   });
 
   // ── Sankey: party/doc-type flow → legislative outcome ─────────────────────
-  // The sankey uses only the three primary legislative actors (government,
-  // opposition, civil society) as source nodes because the document types
-  // (prop, bet, mot, sfs, eu, pressm, ext) map naturally to these three
-  // origin groups. Additional stakeholders (municipal, media, academia, etc.)
-  // are analysis perspectives rather than document-originating actors.
+  // The sankey uses three primary legislative actor groups as source nodes:
+  //   - government: initiates propositions, laws, gov. communications, press releases
+  //   - opposition: initiates committee reports and motions
+  //   - external actors (private sector/civil society): associated with EU
+  //     positions, external references, and other document types
+  // Additional SWOT stakeholders (municipal, media, academia, etc.) are
+  // analysis perspectives rather than document-originating actors.
+  const civilSocietyName = STAKEHOLDER_NAMES['civil-society']?.[lang] ?? STAKEHOLDER_NAMES['civil-society']?.en ?? 'Civil Society';
   const sankeyNodes: SankeyNode[] = [
-    { id: 'gov', label: govName,     color: 'cyan' },
-    { id: 'opp', label: oppName,     color: 'magenta' },
-    { id: 'pvt', label: privateName, color: 'purple' },
+    { id: 'gov', label: govName,           color: 'cyan' },
+    { id: 'opp', label: oppName,           color: 'magenta' },
+    { id: 'pvt', label: civilSocietyName,  color: 'purple' },
   ];
 
   // Add document type nodes and target outcome nodes
@@ -1241,6 +1244,10 @@ function buildDeepInspectionSections(
   if (sfsDocs.length > 0) {
     sankeyNodes.push({ id: 'sfs', label: 'Laws (SFS)', color: 'green' });
     sankeyFlows.push({ source: 'gov', target: 'sfs', value: sfsDocs.length, label: `${sfsDocs.length}` });
+  }
+  if (skrDocs.length > 0) {
+    sankeyNodes.push({ id: 'skr', label: 'Gov. Communications', color: 'cyan' });
+    sankeyFlows.push({ source: 'gov', target: 'skr', value: skrDocs.length, label: `${skrDocs.length}` });
   }
   if (euDocs.length > 0) {
     sankeyNodes.push({ id: 'eu', label: 'EU Positions', color: 'blue' });

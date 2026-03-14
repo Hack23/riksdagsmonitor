@@ -2,7 +2,7 @@
  * Tests for buildMultiStakeholderSwot and STAKEHOLDER_NAMES in swot-analyzer.ts
  *
  * Validates:
- * - Minimum 5 stakeholder perspectives are generated
+ * - Minimum 4 stakeholder perspectives are generated (the four core categories)
  * - All 9 stakeholder categories produce valid SWOT data
  * - Evidence references (dok_ids) are linked to source documents
  * - Dynamic stakeholder selection based on document type mix
@@ -112,6 +112,16 @@ describe('buildMultiStakeholderSwot', () => {
     expect(cats).toContain('municipal');
   });
 
+  it('does NOT add municipal stakeholder for skr-only documents (government communications)', () => {
+    const docs = [
+      makeDoc({ dok_id: 'skr-1', doktyp: 'skr', titel: 'Skrivelse om statlig verksamhet' }),
+      makeDoc({ dok_id: 'mot-1', doktyp: 'mot', titel: 'Motion om skogsvård' }),
+    ];
+    const result = buildMultiStakeholderSwot(docs, 'en');
+    const cats = result.map(s => s.category);
+    expect(cats).not.toContain('municipal');
+  });
+
   it('adds international stakeholder when EU position papers (fpm) are present', () => {
     const result = buildMultiStakeholderSwot(makeEuDocs(), 'en');
     const cats = result.map(s => s.category);
@@ -192,6 +202,19 @@ describe('buildMultiStakeholderSwot', () => {
     for (const stakeholder of result) {
       expect(stakeholder.role).toBeTruthy();
     }
+  });
+
+  it('role strings are localised for non-English languages', () => {
+    const enResult = buildMultiStakeholderSwot(makeTypicalDocs(), 'en');
+    const svResult = buildMultiStakeholderSwot(makeTypicalDocs(), 'sv');
+
+    const enGov = enResult.find(s => s.category === 'government');
+    const svGov = svResult.find(s => s.category === 'government');
+
+    // Swedish role should differ from English role
+    expect(svGov!.role).not.toBe(enGov!.role);
+    // Swedish role should contain Swedish text
+    expect(svGov!.role).toContain('Tidöavtalet');
   });
 
   it('every stakeholder has a confidenceLevel field', () => {
