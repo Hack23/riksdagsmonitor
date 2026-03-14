@@ -779,4 +779,17 @@ describe('generateMultiPanelDashboardSection', () => {
     expect(section.html).toContain('id="myPanel-gauge"');
     expect(section.html).not.toContain('id="myPanel-myPanel-gauge"');
   });
+
+  it('chart canvas ID with empty chart.id does not double-prefix panelId', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'myPanel', title: 'C',
+        chart: { id: '', type: 'bar', title: 'Chart', labels: ['A'], datasets: [{ label: 'D', data: [1] }] },
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    // Should be "myPanel-chart", not "myPanel-myPanel-chart"
+    expect(section.html).toContain('id="myPanel-chart"');
+    expect(section.html).not.toContain('id="myPanel-myPanel-chart"');
+  });
 });

@@ -452,7 +452,7 @@ function renderPanel(
   if (panel.chart) {
     const config = serialiseChartConfig(panel.chart);
     // Deduplicate chart IDs: prefix with panelId and track across the dashboard
-    let baseChartId = panel.chart.id.replace(/[^a-zA-Z0-9_-]/g, '') || `${panelId}-chart`;
+    let baseChartId = panel.chart.id.replace(/[^a-zA-Z0-9_-]/g, '') || 'chart';
     baseChartId = `${panelId}-${baseChartId}`;
     let chartId = baseChartId;
     let counter = 1;
