@@ -24,6 +24,7 @@ import type { RawDocument } from '../data-transformers.js';
 import type { MindmapBranch, BranchConnection } from '../data-transformers/content-generators/mindmap-section.js';
 import { localizeDocType } from '../data-transformers/content-generators/shared.js';
 import { detectPolicyDomains, detectNarrativeFrames } from '../data-transformers/policy-analysis.js';
+import { getCurrentRiksmote } from '../shared/riksmote.js';
 import type { Language } from '../types/language.js';
 
 // ---------------------------------------------------------------------------
@@ -289,17 +290,13 @@ function extractOrgans(docs: RawDocument[]): string[] {
 }
 
 /** Derive riksmöte (parliamentary session) string from a date string.
- *  The Swedish parliamentary session runs September–August:
- *  e.g. a document dated "2025-10-15" → "2025/26", "2026-03-14" → "2025/26".
+ *  Delegates to the shared `getCurrentRiksmote()` utility so the Sep–Aug
+ *  boundary logic stays in sync with generators/motions.
  */
 function datumToRiksmote(datum: string): string {
   const d = new Date(datum);
   if (isNaN(d.getTime())) return datum.slice(0, 4); // invalid date: fall back to year
-  const year = d.getFullYear();
-  const month = d.getMonth(); // 0-based; September = 8
-  const startYear = month >= 8 ? year : year - 1;
-  const endYY = String(startYear + 1).slice(-2);
-  return `${startYear}/${endYY}`;
+  return getCurrentRiksmote(d);
 }
 
 /** Detect whether a single document has EU connection signals */
@@ -314,16 +311,26 @@ function hasEuConnection(docs: RawDocument[]): boolean {
   return docs.some(hasEuSignals);
 }
 
+/** Detect whether a document is an SFS (law) document.
+ *  Matches the codebase convention: doktyp/documentType === 'sfs' OR dokumentnamn starts with 'SFS'.
+ */
+function isSfsDoc(d: RawDocument): boolean {
+  return (d.doktyp || d.documentType) === 'sfs' ||
+    (d.dokumentnamn || '').startsWith('SFS');
+}
+
 /** Classify documents by broad legislative role */
 function classifyDocs(docs: RawDocument[]) {
   return {
     propositions: docs.filter(d => (d.doktyp || d.documentType) === 'prop'),
     committeeReports: docs.filter(d => (d.doktyp || d.documentType) === 'bet'),
     motions: docs.filter(d => (d.doktyp || d.documentType) === 'mot'),
-    laws: docs.filter(d => (d.doktyp || d.documentType) === 'sfs'),
+    laws: docs.filter(d => isSfsDoc(d)),
     euPositions: docs.filter(d => (d.doktyp || d.documentType) === 'fpm'),
     pressReleases: docs.filter(d => (d.doktyp || d.documentType) === 'pressm'),
-    other: docs.filter(d => !['prop','bet','mot','sfs','fpm','pressm'].includes((d.doktyp || d.documentType) || '')),
+    other: docs.filter(d =>
+      !['prop','bet','mot','sfs','fpm','pressm'].includes((d.doktyp || d.documentType) || '') &&
+      !isSfsDoc(d)),
   };
 }
 
@@ -534,7 +541,7 @@ function pass3ValidationAndCompleteness(
     const localisedSources = DATA_SOURCE_ITEMS[lang] ?? DATA_SOURCE_ITEMS.en!;
     const sourceItems: string[] = [];
     if (docs.some(d => d.dok_id)) sourceItems.push(localisedSources[0]);
-    if (docs.some(d => d.fullText)) sourceItems.push(ENRICHMENT_LABELS[lang] ?? ENRICHMENT_LABELS.en!);
+    if (docs.some(d => d.fullText || d.fullContent)) sourceItems.push(ENRICHMENT_LABELS[lang] ?? ENRICHMENT_LABELS.en!);
     sourceItems.push(localisedSources[1], localisedSources[2]);
 
     branches.push({
