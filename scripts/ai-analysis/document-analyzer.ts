@@ -768,7 +768,12 @@ export function buildRiskAssessment(doc: RawDocument, ciaContext?: CIAContext): 
 // Executive summary builder
 // ---------------------------------------------------------------------------
 
-/** Map raw Riksdag doktyp codes to the normalized type strings expected by generateEnhancedSummary(). */
+/**
+ * Map raw Riksdag doktyp codes (`'prop'`, `'mot'`, `'bet'`, `'skr'`) to the
+ * normalized type strings (`'proposition'`, `'motion'`, `'report'`, …) that
+ * `generateEnhancedSummary()` in `helpers.ts` expects for content branching.
+ * Without this, the helper silently falls through to a generic default text.
+ */
 function normalizeDocType(doktyp: string): string {
   switch (doktyp) {
     case 'prop': return 'proposition';
