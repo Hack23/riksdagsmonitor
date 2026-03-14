@@ -41,11 +41,14 @@ function extractMinisterTarget(doc: RawDocument): string {
   if (typeof mottagare === 'string' && mottagare.trim()) {
     return mottagare.trim();
   }
-  // Fall back to looking for "till X statsråd" / "till statsminister" pattern in the title
+  // Fall back to looking for "till [name] statsråd|statsminister|minister" pattern in the title
+  // Only match when followed by a minister-related term to avoid false positives (e.g. "till Gaza")
   const titleText = doc.titel || doc.title || '';
-  const toMatch = titleText.match(/(?:till|to|an|à)\s+([^–—\-]{3,60}?)(?:\s*[-–—]|\s*$)/i);
-  if (toMatch?.[1]) {
-    return toMatch[1].trim();
+  const ministerMatch = titleText.match(
+    /(?:till|to)\s+(.{3,60}?)\s*(?:statsråd|statsminister|minister)/i
+  );
+  if (ministerMatch?.[1]) {
+    return ministerMatch[1].trim();
   }
   return '';
 }
@@ -62,7 +65,10 @@ function renderInterpellationEntry(doc: RawDocument, lang: Language | string): s
 
   const docName = escapeHtml(doc.dokumentnamn || doc.dok_id || titleText);
   const authorText = escapeHtml(doc.intressent_namn || doc.author || '');
-  const partyText = escapeHtml(normalizePartyKey(doc.parti).toUpperCase());
+  // Only show party when the raw value is present and not an "Unknown" sentinel
+  const rawParti = typeof doc.parti === 'string' ? doc.parti.trim() : '';
+  const hasParty = rawParti !== '' && rawParti.toLowerCase() !== 'unknown';
+  const partyText = hasParty ? escapeHtml(rawParti.toUpperCase()) : '';
   const dateHtml = formatDocumentDate(doc, lang);
   const ministerTarget = extractMinisterTarget(doc);
 
@@ -159,11 +165,11 @@ export function generateInterpellationsContent(data: ArticleContentData, lang: L
   // Debate dynamics section — how many parties are holding ministers accountable
   content += `\n    <h2>${L(lang, 'debateDynamics')}</h2>\n`;
   if (partyCount > 1) {
-    const strategyFn = L(lang, 'oppositionStrategyContext') as string | ((n: number) => string);
-    const strategyContext = typeof strategyFn === 'function'
-      ? strategyFn(partyCount)
-      : `Interpellations from ${partyCount} different parties demonstrate broad parliamentary scrutiny.`;
-    content += `    <p>${escapeHtml(String(strategyContext))}</p>\n`;
+    const scrutinyFn = L(lang, 'interpellationsScrutinyContext') as string | ((n: number) => string);
+    const scrutinyContext = typeof scrutinyFn === 'function'
+      ? scrutinyFn(partyCount)
+      : `Interpellations from ${partyCount} different parties demonstrate broad parliamentary scrutiny of government ministers.`;
+    content += `    <p>${escapeHtml(String(scrutinyContext))}</p>\n`;
   }
 
   // Group interpellations by policy domain for thematic accountability analysis
@@ -198,11 +204,11 @@ export function generateInterpellationsContent(data: ArticleContentData, lang: L
 
   // Accountability Analysis section
   content += `\n    <h2>${L(lang, 'accountabilityAnalysis')}</h2>\n`;
-  const policyImpFn = L(lang, 'policyImplicationsContext') as string | ((p: number, d: number) => string);
-  const policyImpText = typeof policyImpFn === 'function'
-    ? policyImpFn(interpellations.length, themeCount)
-    : `These ${interpellations.length} interpellations span ${themeCount} policy domain${themeCount !== 1 ? 's' : ''}, reflecting the breadth of parliamentary accountability demands.`;
-  content += `    <p>${escapeHtml(String(policyImpText))}</p>\n`;
+  const accountabilityFn = L(lang, 'interpellationsAccountabilityContext') as string | ((count: number, domains: number) => string);
+  const accountabilityText = typeof accountabilityFn === 'function'
+    ? accountabilityFn(interpellations.length, themeCount)
+    : `These ${interpellations.length} interpellations span ${themeCount} policy domain${themeCount !== 1 ? 's' : ''}, reflecting the breadth of parliamentary accountability demands on the government.`;
+  content += `    <p>${escapeHtml(String(accountabilityText))}</p>\n`;
 
   // Deep Analysis section (5W framework)
   content += generateDeepAnalysisSection({
@@ -224,10 +230,10 @@ export function generateInterpellationsContent(data: ArticleContentData, lang: L
     content += `    <div class="context-box">\n      <ul>\n`;
     Object.entries(byParty).forEach(([party, partyIps]) => {
       if (party !== 'other') {
-        const detailFn = L(lang, 'partyMotionsFiled') as string | ((party: string, n: number) => string);
+        const detailFn = L(lang, 'partyInterpellationsFiled') as string | ((party: string, n: number) => string);
         const detail = typeof detailFn === 'function'
           ? detailFn(party, partyIps.length)
-          : `${party}: ${partyIps.length} interpellations filed`;
+          : `${party}: ${partyIps.length} interpellation${partyIps.length > 1 ? 's' : ''} filed`;
         content += `        <li>${escapeHtml(String(detail))}</li>\n`;
       }
     });

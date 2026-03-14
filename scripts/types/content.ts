@@ -101,10 +101,17 @@ export interface ContentLabelSet {
   interpellationDefault: string;
   interpellationsBreakdown: (n: number) => string;
   debateDynamics: string;
+  /** Label for the target minister (recipient), e.g. "Directed to" */
   ministerAccountability: string;
   accountabilityAnalysis: string;
   readFullInterpellation: string;
   interpellationBy: string;
+  /** Debate dynamics context — interpellations-specific (replaces oppositionStrategyContext for interpellations) */
+  interpellationsScrutinyContext: (n: number) => string;
+  /** Accountability analysis context — interpellations-specific (replaces policyImplicationsContext for interpellations) */
+  interpellationsAccountabilityContext: (count: number, domains: number) => string;
+  /** Party interpellations filed — interpellations-specific (replaces partyMotionsFiled for interpellations) */
+  partyInterpellationsFiled: (party: string, n: number) => string;
   // Localized body text labels (avoid hardcoded en/sv fallbacks)
   committeeCountContext: (n: number) => string;
   committeeActivityTakeaway: (committees: string, extra: number) => string;
