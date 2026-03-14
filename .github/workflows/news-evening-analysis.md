@@ -207,7 +207,7 @@ Cross-reference related data sources for richer analysis (e.g., committee report
 // 1. Fetch committee reports
 const reports = get_betankanden({ rm: "<rm>", limit: 50 });
 // 2. Cross-reference with voting records
-const votes = search_voteringar({ rm: "<rm>", bet: report.beteckning });
+const votes = search_voteringar({ rm: "<rm>", bet: reports[0].beteckning });
 // 3. Filter results by date
 const fresh = reports.filter(r => new Date(r.publicerad) >= new Date(fromDate));
 ```
@@ -226,6 +226,8 @@ const filtered = props.filter(p => new Date(p.publicerad) >= new Date(fromDate))
 const motions = get_motioner({ rm: "<rm>", limit: 100 });
 // 2. Cross-reference with speeches
 const speeches = search_anforanden({ rm: "<rm>", parti: party });
+// 3. Filter motions by date
+const recentMotions = motions.filter(m => new Date(m.datum) >= new Date(fromDate));
 ```
 
 ### Date Calculation Helpers

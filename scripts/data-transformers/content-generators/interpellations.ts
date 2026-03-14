@@ -40,11 +40,12 @@ function extractMinisterTarget(doc: RawDocument): string {
   if (typeof doc.mottagare === 'string' && doc.mottagare.trim()) {
     return doc.mottagare.trim();
   }
-  // Fall back to looking for "till [name] statsråd|statsminister|minister" pattern in the title
-  // Only match when followed by a minister-related term to avoid false positives (e.g. "till Gaza")
+  // Fall back to looking for minister-directed phrases in the title.
+  // Capture the full minister phrase including compound titles like "utrikesminister"/"finansminister".
+  // Only match when a minister-related term is present to avoid false positives (e.g. "till Gaza").
   const titleText = doc.titel || doc.title || '';
   const ministerMatch = titleText.match(
-    /(?:till|to)\s+(.{3,60}?)\s*(?:statsråd|statsminister|minister)/i
+    /(?:till|to)\s+(.{3,60}?\s*(?:statsråd(?:et)?|statsminister[ns]?|(?:\w+)?minister[ns]?))/i
   );
   if (ministerMatch?.[1]) {
     return ministerMatch[1].trim();
@@ -221,14 +222,13 @@ export function generateInterpellationsContent(data: ArticleContentData, lang: L
     articleType: 'interpellations',
   });
 
-  // Narrative bridge before coalition dynamics (inter-pillar transition)
-  const watchTransition = getPillarTransition(lang, 'watchToOpposition');
-  if (watchTransition) {
-    content += `    <p class="pillar-transition">${escapeHtml(watchTransition)}</p>\n`;
-  }
-
   // Coalition dynamics — which parties are driving accountability
   if (partyCount > 0) {
+    // Narrative bridge before coalition dynamics (inter-pillar transition)
+    const watchTransition = getPillarTransition(lang, 'watchToOpposition');
+    if (watchTransition) {
+      content += `    <p class="pillar-transition">${escapeHtml(watchTransition)}</p>\n`;
+    }
     content += `\n    <h2>${L(lang, 'coalitionDynamics')}</h2>\n`;
     content += `    <div class="context-box">\n      <ul>\n`;
     Object.entries(byParty).forEach(([party, partyIps]) => {

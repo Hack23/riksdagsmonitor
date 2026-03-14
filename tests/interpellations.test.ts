@@ -231,6 +231,39 @@ describe('Interpellations Content Generator', () => {
       // The regex should match "till justitie- och inrikes" before "minister"
       expect(result).toContain('Directed to');
     });
+
+    it('should extract full compound minister title like "utrikesminister"', () => {
+      const data = {
+        motions: [
+          {
+            titel: 'Fråga till utrikesministern om bistånd',
+            parti: 'V',
+            url: '#',
+            dokumentnamn: 'IP2',
+          },
+        ] as MockInterpellation[],
+      };
+
+      const result = generateArticleContent(data, 'interpellations', 'en') as string;
+      // The regex should capture "utrikesministern" — not just "utrikes"
+      expect(result).toContain('utrikesministern');
+    });
+
+    it('should extract full compound "finansministern" target', () => {
+      const data = {
+        motions: [
+          {
+            titel: 'Interpellation till finansministern',
+            parti: 'M',
+            url: '#',
+            dokumentnamn: 'IP3',
+          },
+        ] as MockInterpellation[],
+      };
+
+      const result = generateArticleContent(data, 'interpellations', 'en') as string;
+      expect(result).toContain('finansministern');
+    });
   });
 
   describe('Party rendering', () => {
