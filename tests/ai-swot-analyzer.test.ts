@@ -383,7 +383,8 @@ describe('buildAISwotStakeholders', () => {
       // Summary is exactly 20 chars → not > 20, so title is used instead
       const usedTitle = govStrengths.some(e => e.text.includes('Proposition'));
       const usedSummary = govStrengths.some(e => e.text === '12345678901234567890');
-      expect(usedTitle || !usedSummary).toBe(true);
+      expect(usedTitle).toBe(true);
+      expect(usedSummary).toBe(false);
     });
 
     it('uses summary when it is 21 characters (just above threshold)', () => {

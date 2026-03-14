@@ -1091,7 +1091,8 @@ function buildDeepInspectionSections(
   const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
   const extDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
   const otherDocs = docs.filter(d =>
-    !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || ''));
+    !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || '')
+    && !(d.dokumentnamn || '').startsWith('SFS'));
 
   // ── AI-driven 6-stakeholder SWOT ─────────────────────────────────────────
   const stakeholders = buildAISwotStakeholders(docs, topic, lang);
@@ -1109,7 +1110,7 @@ function buildDeepInspectionSections(
   const civilNames  = STAKEHOLDER_NAMES['civil-society'];
   const citizenNames = STAKEHOLDER_NAMES['citizens-voters'];
 
-    const dataSourceBranchLabels: Partial<Record<Language, string>> = {
+  const dataSourceBranchLabels: Partial<Record<Language, string>> = {
     en: 'Data Sources', sv: 'Datakällor', da: 'Datakilder', no: 'Datakilder',
     fi: 'Tietolähteet', de: 'Datenquellen', fr: 'Sources de données', es: 'Fuentes de datos',
     nl: 'Gegevensbronnen', ar: 'مصادر البيانات', he: 'מקורות נתונים',
@@ -1258,7 +1259,7 @@ function buildDeepInspectionSections(
     sankeyFlows.push({ source: 'gov', target: 'pressm', value: pressmDocs.length, label: `${pressmDocs.length}` });
   }
   if (skrDocs.length > 0) {
-    sankeyNodes.push({ id: 'skr', label: 'Gov. Communications (Skr)', color: 'teal' });
+    sankeyNodes.push({ id: 'skr', label: 'Gov. Communications (Skr)', color: 'green' });
     sankeyFlows.push({ source: 'gov', target: 'skr', value: skrDocs.length, label: `${skrDocs.length}` });
   }
   if (extDocs.length > 0) {
