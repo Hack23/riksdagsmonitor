@@ -1102,9 +1102,9 @@ function buildDeepInspectionSectionsFromAnalysis(
   if (docs.length === 0) return [];
 
   // Convert AnalysisStakeholderSwot → StakeholderSwot (for generateStakeholderSwotSection)
+  // Omit sh.role (internal key like "government") — sh.name already carries the localised label
   const stakeholders: StakeholderSwot[] = analysis.stakeholderSwot.map(sh => ({
     name: sh.name,
-    role: sh.role,
     swot: {
       strengths:     sh.swot.strengths.map(e => ({ text: e.text, impact: e.impact })) satisfies SwotEntry[],
       weaknesses:    sh.swot.weaknesses.map(e => ({ text: e.text, impact: e.impact })) satisfies SwotEntry[],
@@ -1161,15 +1161,18 @@ function buildDeepInspectionSectionsFromAnalysis(
   const betDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
   const motDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
   const sfsDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
+  const skrDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
   const euDocs     = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
   const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
   const extDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
   const otherDocs  = docs.filter(d => !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || ''));
 
-  // Localised stakeholder names
-  const govName     = stakeholders[0]?.name ?? 'Government';
-  const oppName     = stakeholders[1]?.name ?? 'Parliament';
-  const privateName = stakeholders[2]?.name ?? 'Civil Society';
+  // Select stakeholder names by role key (not array index) to avoid silent mislabeling
+  const findStakeholderName = (role: string, fallback: string): string =>
+    analysis.stakeholderSwot.find(s => s.role === role)?.name ?? fallback;
+  const govName     = findStakeholderName('government', 'Government');
+  const oppName     = findStakeholderName('parliament', 'Parliament');
+  const privateName = findStakeholderName('private-sector', 'Civil Society');
 
   const sankeyNodes: SankeyNode[] = [
     { id: 'gov', label: govName,     color: 'cyan' },
@@ -1193,6 +1196,10 @@ function buildDeepInspectionSectionsFromAnalysis(
   if (sfsDocs.length > 0) {
     sankeyNodes.push({ id: 'sfs', label: 'Laws (SFS)', color: 'green' });
     sankeyFlows.push({ source: 'gov', target: 'sfs', value: sfsDocs.length, label: `${sfsDocs.length}` });
+  }
+  if (skrDocs.length > 0) {
+    sankeyNodes.push({ id: 'skr', label: 'Government Communications', color: 'cyan' });
+    sankeyFlows.push({ source: 'gov', target: 'skr', value: skrDocs.length, label: `${skrDocs.length}` });
   }
   if (euDocs.length > 0) {
     sankeyNodes.push({ id: 'eu', label: 'EU Positions', color: 'blue' });

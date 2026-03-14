@@ -14,6 +14,7 @@ import { MCPClient } from '../mcp-client.js';
 import type { Language } from '../types/language.js';
 import type { GenerationStats } from '../types/article.js';
 import type { BatchStatus } from './types.js';
+import type { AnalysisDepth } from '../ai-analysis/types.js';
 
 const __filename: string = fileURLToPath(import.meta.url);
 export const __dirname: string = path.dirname(__filename);
@@ -78,12 +79,11 @@ export const focusTopic: string = parseArgValue(focusTopicArg);
  */
 const analysisDepthArg: string | undefined = args.find(arg => arg.startsWith('--analysis-depth='));
 const rawAnalysisDepth: string = parseArgValue(analysisDepthArg ?? '').toLowerCase();
-const VALID_ANALYSIS_DEPTHS = ['quick', 'standard', 'deep'] as const;
-type AnalysisDepthValue = typeof VALID_ANALYSIS_DEPTHS[number];
+const VALID_ANALYSIS_DEPTHS: readonly AnalysisDepth[] = ['quick', 'standard', 'deep'];
 
-function parseAnalysisDepth(raw: string): AnalysisDepthValue {
+function parseAnalysisDepth(raw: string): AnalysisDepth {
   if ((VALID_ANALYSIS_DEPTHS as readonly string[]).includes(raw)) {
-    return raw as AnalysisDepthValue;
+    return raw as AnalysisDepth;
   }
   if (raw && raw !== '') {
     console.warn(`⚠️ Unknown --analysis-depth value "${raw}", falling back to "standard". Valid values: ${VALID_ANALYSIS_DEPTHS.join(', ')}`);
@@ -91,7 +91,7 @@ function parseAnalysisDepth(raw: string): AnalysisDepthValue {
   return 'standard';
 }
 
-export const analysisDepth: AnalysisDepthValue = parseAnalysisDepth(rawAnalysisDepth);
+export const analysisDepth: AnalysisDepth = parseAnalysisDepth(rawAnalysisDepth);
 
 const DEFAULT_QUALITY_THRESHOLD = 40;
 let parsedQualityThreshold: number = DEFAULT_QUALITY_THRESHOLD;

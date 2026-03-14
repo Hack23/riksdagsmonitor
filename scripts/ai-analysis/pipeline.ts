@@ -11,10 +11,14 @@
  *   - Iteration 3 (`validateCompleteness`): assess stakeholder coverage, policy
  *     domain confidence, and watch-point quality. Reports gap scores.
  *
- * No hardcoded SWOT template strings are used — all analytical text is derived
- * from document metadata, content passages, and policy domain analysis.
+ * Primary analysis text is content-derived from document metadata, passages, and
+ * policy domain analysis. Fallback placeholder sentences (`buildPlaceholderText`)
+ * are used only when a stakeholder × quadrant combination has zero matching
+ * documents; they are never on the critical path for document-rich analyses.
+ *
  * The implementation is designed as a drop-in target for future LLM API
- * integration: replace the `_buildSwotFromContent` helpers with API calls.
+ * integration: replace the content-extraction helpers (and fallback placeholders)
+ * with API calls.
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -134,6 +138,16 @@ function docId(doc: RawDocument): string {
 /** Test whether a document is an SFS (enacted law/statute) — matches both `doktyp === 'sfs'` and `dokumentnamn` starting with 'SFS'. */
 function isSfsDoc(doc: RawDocument): boolean {
   return docType(doc) === 'sfs' || (doc.dokumentnamn || '').startsWith('SFS');
+}
+
+/**
+ * Unified predicate for "document has enriched full content available".
+ * `contentFetched` alone only means metadata was retrieved; actual full-text
+ * or full-HTML content may still be absent (e.g., `include_full_text=false`).
+ * Use this consistently for enrichedCount, confidence scoring, and validation.
+ */
+function hasEnrichedContent(doc: RawDocument): boolean {
+  return Boolean(doc.contentFetched && (doc.fullText || doc.fullContent));
 }
 
 /** Extract a meaningful text passage from an enriched document. */
@@ -348,7 +362,7 @@ function buildPolicyAssessment(
   const domains = [...allDomains].slice(0, 8);
   const primaryDomain = domains[0] ?? null;
 
-  const enrichedCount = docs.filter(d => d.contentFetched).length;
+  const enrichedCount = docs.filter(hasEnrichedContent).length;
   const confidence = assessConfidenceLevel(docs.length, enrichedCount > 0 ? 80 : 40);
 
   // Build a narrative from available evidence — topic + primary domain + document count
@@ -588,11 +602,11 @@ function buildDashboardData(
 
 function calculateConfidenceScore(docs: RawDocument[]): number {
   if (docs.length === 0) return 0;
-  const enriched = docs.filter(d => d.contentFetched).length;
+  const enriched = docs.filter(hasEnrichedContent).length;
   const enrichmentRatio = enriched / docs.length;
   const typeVariety = new Set(docs.map(docType)).size;
   // Score: 0-100
-  // - enrichment ratio contributes 50%
+  // - enrichment ratio contributes 50%  (based on actual full content)
   // - doc count (up to 10) contributes 30%
   // - type variety (up to 5) contributes 20%
   const enrichmentScore = enrichmentRatio * 50;
@@ -718,7 +732,7 @@ async function analyzeDocuments(
     completedAt: new Date().toISOString(),
     lang,
     documentCount: docs.length,
-    enrichedCount: docs.filter(d => d.contentFetched).length,
+    enrichedCount: docs.filter(hasEnrichedContent).length,
     focusTopic: topic,
   };
 }
@@ -733,10 +747,14 @@ async function refineAnalysis(
   options: AnalysisPipelineOptions,
 ): Promise<AnalysisResult> {
   const { lang, focusTopic: topic } = options;
-  const enrichedDocs = docs.filter(d => d.contentFetched && (d.fullText || d.fullContent));
+  const enrichedDocs = docs.filter(hasEnrichedContent);
 
   if (enrichedDocs.length === 0) {
-    // No enriched docs — return with iteration count bumped
+    // No documents with full text/content available — refinement is a no-op.
+    // This is expected when enrichDocumentsWithContent() fetches metadata only
+    // (include_full_text=false). We still bump iterationsCompleted to 2 so the
+    // pipeline contract is honoured, but enrichedCount remains 0 to signal
+    // that no actual text-based enrichment occurred.
     return { ...initial, iterationsCompleted: 2, completedAt: new Date().toISOString() };
   }
 
