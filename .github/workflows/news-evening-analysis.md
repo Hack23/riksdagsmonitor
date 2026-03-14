@@ -198,9 +198,45 @@ Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc quer
 
 Filter results to only include items with dates `>= fromDate`.
 
+**Date calculation pattern:**
+```javascript
+const now = new Date();
+const lookbackMs = parseInt(lookback_hours) * 3600000; // 3600000 ms per hour
+const fromDate = new Date(now.getTime() - lookbackMs).toISOString().slice(0, 10);
+// For weekly review (Saturday): 5 * 86400000 ms = 5 days
+const weekStart = new Date(now.getTime() - 5 * 86400000).toISOString().slice(0, 10);
+```
+
+**Post-query filtering example:**
+```javascript
+const recentBetankanden = allBetankanden.filter(b => new Date(b.publicerad) >= new Date(fromDate));
+const recentMotioner = allMotioner.filter(m => new Date(m.datum) > new Date(fromDate));
+```
+
 ### Cross-Referencing Strategy
 
-Cross-reference related data sources for richer analysis (e.g., committee reports with voting records, government propositions with parliamentary motions). Filter all results by date to `>= fromDate`.
+Cross-reference related data sources for richer analysis. Filter all results by date to `>= fromDate`.
+
+#### Example 1: Committee Report Deep Dive
+```
+// 1. Fetch committee reports for the period
+// 2. For each report, look up related voting records via search_voteringar(bet: reportId)
+// 3. Cross-reference with any motions that reference the same bet
+```
+
+#### Example 2: Government Activity Analysis
+```
+// 1. Get government propositions (get_propositioner)
+// 2. Search for committee reports (get_betankanden) that reference each proposition
+// 3. Look up debate speeches (search_anforanden) on the same topic
+```
+
+#### Example 3: Party Behavior Analysis
+```
+// 1. Get voting records grouped by party (search_voteringar with groupBy: parti)
+// 2. Cross-reference with motions filed by each party
+// 3. Identify where parties voted against their own motions
+```
 
 ### Saturday vs Weekday Mode
 

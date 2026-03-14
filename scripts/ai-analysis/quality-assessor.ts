@@ -18,6 +18,8 @@
  * @license Apache-2.0
  */
 
+import { extractPartyMentions } from '../party-variants.js';
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -90,18 +92,6 @@ const DOCUMENT_ID_PATTERNS: readonly RegExp[] = [
   /\bFr\.\s*\d{4}\/\d{2}:\d+\b/gi,
 ];
 
-/** Party codes and their name variants for stakeholder detection */
-const PARTY_VARIANTS: Readonly<Record<string, readonly string[]>> = {
-  S:  ['Socialdemokraterna', 'Social Democrats', 'S'],
-  M:  ['Moderaterna', 'Moderate', 'M'],
-  SD: ['Sverigedemokraterna', 'Sweden Democrats', 'SD'],
-  C:  ['Centerpartiet', 'Centre Party', 'C'],
-  V:  ['Vänsterpartiet', 'Left Party', 'V'],
-  KD: ['Kristdemokraterna', 'Christian Democrats', 'KD'],
-  L:  ['Liberalerna', 'Liberals', 'L'],
-  MP: ['Miljöpartiet', 'Green Party', 'MP'],
-} as const;
-
 /** Words / phrases indicating causal or analytical reasoning */
 const CAUSAL_WORDS: readonly string[] = [
   'because', 'therefore', 'as a result', 'consequently',
@@ -144,39 +134,13 @@ function countDocumentIds(html: string): Set<string> {
 /**
  * Count how many of the 8 Swedish parliamentary parties are mentioned.
  *
- * Multi-character variants (e.g. `Socialdemokraterna`, `Vänsterpartiet`) use
- * case-insensitive substring matching — safe for non-ASCII letters like `ä`/`ö`
- * that JS `\b` cannot handle.
- *
- * Single/short party abbreviations (`S`, `M`, `SD`, `KD`, `MP`, `C`, `V`, `L`)
- * use a regex with explicit delimiter logic so that an embedded letter "M" inside
- * "Moderaterna" doesn't falsely match the party code `M`.
+ * Delegates to the canonical `extractPartyMentions()` from
+ * `scripts/party-variants.ts` which uses Unicode-aware regex boundaries
+ * (`\p{L}`, `\p{N}`) for correct matching of Swedish names like
+ * `Vänsterpartiet` and `Miljöpartiet`.
  */
 function countParties(html: string): Set<string> {
-  const found = new Set<string>();
-  const lower = html.toLowerCase();
-  for (const [code, variants] of Object.entries(PARTY_VARIANTS)) {
-    for (const variant of variants) {
-      // Short abbreviation (≤ 2 chars): require non-letter boundaries
-      if (variant.length <= 2) {
-        // Use a regex that ensures the match is delimited by non-letter chars
-        // (or start/end of string). Use Unicode-aware \p{L} via the `u` flag.
-        const escaped = variant.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const re = new RegExp(`(?<![\\p{L}])${escaped}(?![\\p{L}])`, 'iu');
-        if (re.test(html)) {
-          found.add(code);
-          break;
-        }
-      } else {
-        // Multi-character variant: case-insensitive substring match is safe
-        if (lower.includes(variant.toLowerCase())) {
-          found.add(code);
-          break;
-        }
-      }
-    }
-  }
-  return found;
+  return extractPartyMentions(html) as Set<string>;
 }
 
 // ---------------------------------------------------------------------------
@@ -212,14 +176,16 @@ function assessFactualAccuracy(
     }
   }
 
-  // Bonus: verify cited IDs against source list
-  if (sourceDocIds.length > 0) {
+  // Bonus: verify cited IDs against source list — reward matches, don't penalise
+  if (sourceDocIds.length > 0 && foundIds.size > 0) {
     const matched = [...foundIds].filter(id =>
       sourceDocIds.some(src => src.toUpperCase().includes(id.toUpperCase()))
     ).length;
-    const matchRatio = matched / Math.max(foundIds.size, 1);
-    score = Math.min(100, Math.round(score * (0.7 + 0.3 * matchRatio)));
-    evidence.push(`${matched}/${foundIds.size} cited IDs matched against source documents`);
+    const matchRatio = matched / foundIds.size;
+    // Add up to 20 bonus points when all cited IDs match source docs
+    const bonus = Math.round(20 * matchRatio);
+    score = Math.min(100, score + bonus);
+    evidence.push(`${matched}/${foundIds.size} cited IDs verified against source documents (+${bonus} bonus)`);
   }
 
   return { score, evidence, improvements };
@@ -615,16 +581,20 @@ export function printQualityReport(
  * `script-src 'self' https:`, which is the standard pattern in this repo),
  * the JSON-LD block will be blocked by the browser.  To keep things safe:
  *
- *  - The `<meta name="quality-score">` tag is **always** injected (CSP-safe).
+ *  - The `<meta name="quality-score">` tag is injected when a `</head>`
+ *    insertion point is found (CSP-safe).
  *  - The JSON-LD `<script>` block is only injected when `injectJsonLd` is
  *    `true` (default: `false`).  Callers that know their CSP allows inline
  *    scripts can opt in.
+ *  - If the HTML contains no `</head>` tag the function returns the original
+ *    HTML unchanged (no injection possible without a `<head>` section).
  *
  * @param html          - Original article HTML
  * @param assessment    - Quality assessment result
  * @param injectJsonLd  - If `true`, also add the JSON-LD script block
  *                        (requires CSP to permit inline scripts). Default: `false`.
- * @returns             Modified HTML with quality metadata injected
+ * @returns             Modified HTML with quality metadata injected, or the
+ *                      original HTML if no `</head>` tag is present.
  */
 export function injectQualityMetadata(
   html: string,

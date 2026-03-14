@@ -87,7 +87,8 @@ const perArticleScores: Record<string, {
 
 /**
  * Persist all collected per-article quality scores to
- * `news/metadata/quality-scores.json`.  Called after each article write.
+ * `news/metadata/quality-scores.json`.  Called after each successful
+ * article write in `writeSingleArticle()`.
  *
  * **Per-run overwrite**: Only the current run's scores are written.  Previous
  * runs' data is replaced so that stale/test entries never accumulate and
@@ -203,7 +204,7 @@ export function validateArticleQuality(
     }
   }
 
-  // Accumulate per-article score for flush
+  // Accumulate per-article score (flushed after successful write in writeSingleArticle)
   perArticleScores[filename] = {
     filename,
     lang,
@@ -226,7 +227,6 @@ export function validateArticleQuality(
     },
     timestamp: new Date().toISOString(),
   };
-  flushQualityScores();
 
   return {
     filename,
@@ -269,6 +269,8 @@ export async function writeSingleArticle(html: string, slug: string, lang: Langu
     : translatedHtml;
 
   await writeArticle(finalHtml, filename);
+  // Persist quality scores after successful write so the file stays in sync
+  flushQualityScores();
   stats.generated += 1;
   stats.articles.push(filename);
   return filename;
