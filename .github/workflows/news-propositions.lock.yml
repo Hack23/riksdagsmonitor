@@ -23,7 +23,7 @@
 #
 # Generates government propositions analysis articles in core languages (EN, SV). Translations for remaining 12 languages are handled by the dedicated news-translate workflow via dispatch-workflow. Single article type per run.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"087d2b338af280b476cb7d49b8a943e9fb76f136bdc8541b71adda215b46e91c","compiler_version":"v0.58.1"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"036b19230a16ac965f0ca8c9bdb61887a20c351cf2cc240ba4a65da73f782c13","compiler_version":"v0.58.1"}
 
 name: "News: Government Propositions"
 "on":
