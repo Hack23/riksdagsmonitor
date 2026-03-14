@@ -113,6 +113,15 @@ export interface ContentLabelSet {
   responsesToProp: string;
   independentMotions: string;
   govEngagement: string;
+  // Interpellation-specific labels
+  noInterpellations: string;
+  interpellationsBreakdown: (n: number) => string;
+  ministerAccountability: string;
+  ministerAccountabilityContext: (n: number) => string;
+  targetMinister: string;
+  interpellationBy: string;
+  questioner: string;
+  oppositionOversight: string;
   twitterLabel1: string;
   twitterLabel2: string;
   jobTitle: string;
