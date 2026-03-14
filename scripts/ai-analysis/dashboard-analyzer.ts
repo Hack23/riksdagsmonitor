@@ -396,7 +396,7 @@ function buildStakeholderAlignmentChart(
 
   // Government: high alignment when many propositions/laws; influence = proportion of proposals
   const govAlignment = Math.round(Math.min(10, 2 + (propCount + sfsDocs) / total * 10) * 10) / 10;
-  const govInfluence = Math.round(Math.min(10, 3 + propCount / total * 10) * 10) / 10;
+  const govInfluence = Math.round(Math.min(10, 3 + (propCount + sfsDocs) / total * 10) * 10) / 10;
 
   // Opposition: alignment inversely related to number of opposing motions
   const oppAlignment = Math.round(Math.max(1, Math.min(10, 8 - motCount / total * 6)) * 10) / 10;

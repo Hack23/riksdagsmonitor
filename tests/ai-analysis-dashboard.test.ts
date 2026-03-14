@@ -2,7 +2,7 @@
  * Tests for analyzeDashboardData — AI-powered multi-chart dashboard analyzer.
  *
  * Validates:
- * - Returns exactly 3 AI-analyzed charts (radar, scatter, bar) + 1 fallback bar
+ * - Returns exactly 3 AI-analyzed charts (radar, scatter, bar)
  * - Each chart has a corresponding accessible data table
  * - All 14 languages supported without errors
  * - Correct chart types: radar, scatter, bar
