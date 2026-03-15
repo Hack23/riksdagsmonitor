@@ -221,8 +221,6 @@ Example 1: Committee Report Deep Dive
 ```
 // 1. Fetch recent betänkanden
 // 2. Cross-reference with search_voteringar for the same beteckning
-// 1. Fetch committee reports
-// 2. Cross-reference with voting records for the same beteckning
 // 3. Enrich with related speeches from the same debate
 ```
 
@@ -230,8 +228,6 @@ Example 2: Government Activity Analysis
 ```
 // 1. Query search_regering for today's propositions
 // 2. Check get_propositioner for detailed data
-// 1. Fetch government propositions for the period
-// 2. Cross-reference with opposition motions referencing the same prop
 // 3. Check committee assignments and processing status
 ```
 
@@ -239,8 +235,6 @@ Example 3: Party Behavior Analysis
 ```
 // 1. Get voteringar grouped by party
 // 2. Compare with recent search_anforanden
-// 1. Gather voting records by party
-// 2. Cross-reference with interpellations and written questions
 // 3. Identify patterns in party opposition strategy
 ```
 
