@@ -171,8 +171,9 @@ function countParties(html: string): Set<string> {
 function assessFactualAccuracy(
   html: string,
   sourceDocIds: readonly string[],
+  precomputedDocIds?: Set<string>,
 ): DimensionScore {
-  const foundIds = countDocumentIds(html);
+  const foundIds = precomputedDocIds ?? countDocumentIds(html);
   const evidence: string[] = [];
   const improvements: string[] = [];
 
@@ -357,13 +358,13 @@ function assessEditorialConsistency(html: string): DimensionScore {
  * Measures how well assertions are backed by specific document references,
  * source links, or official statistics.
  */
-function assessEvidenceQuality(html: string): DimensionScore {
+function assessEvidenceQuality(html: string, precomputedDocIds?: Set<string>): DimensionScore {
   const evidence: string[] = [];
   const improvements: string[] = [];
   let score = 0;
 
   // Document IDs as evidence anchors (40 pts for ≥ 3)
-  const docIds = countDocumentIds(html);
+  const docIds = precomputedDocIds ?? countDocumentIds(html);
   const docPts = Math.min(40, Math.round((docIds.size / 3) * 40));
   score += docPts;
   if (docIds.size > 0) {
@@ -382,8 +383,9 @@ function assessEvidenceQuality(html: string): DimensionScore {
     improvements.push('Add source links to official documents or press releases');
   }
 
-  // Sources section (30 pts)
-  const hasSources = /class=["'][^"']*\bsources\b/.test(html) || /Sources:/i.test(html) || /<h[23][^>]*>\s*Sources/i.test(html);
+  // Sources section (30 pts) — match the canonical `article-sources` container
+  // and common class/heading variants used by templates and localizations.
+  const hasSources = /class=["'][^"']*\barticle-sources\b/.test(html) || /class=["'][^"']*\bsources\b/.test(html) || /<h[23][^>]*>\s*Sources/i.test(html);
   if (hasSources) {
     score += 30;
     evidence.push('Sources section present');
@@ -501,12 +503,15 @@ export function assessArticleQuality(
   passThreshold = 60,
 ): MultiDimensionalQualityAssessment {
   // ── Pass 1: compute dimension scores ──────────────────────────────────────
-  const factualAccuracy      = assessFactualAccuracy(html, sourceDocIds);
-  const stakeholderCoverage  = assessStakeholderCoverage(html);
-  const analyticalDepth      = assessAnalyticalDepth(html);
-  const editorialConsistency = assessEditorialConsistency(html);
-  const evidenceQuality      = assessEvidenceQuality(html);
-  const languageQuality      = assessLanguageQuality(html, lang);
+  // Pre-compute document IDs once so both factualAccuracy and evidenceQuality
+  // reuse the same set without scanning the HTML twice.
+  const docIds                = countDocumentIds(html);
+  const factualAccuracy       = assessFactualAccuracy(html, sourceDocIds, docIds);
+  const stakeholderCoverage   = assessStakeholderCoverage(html);
+  const analyticalDepth       = assessAnalyticalDepth(html);
+  const editorialConsistency  = assessEditorialConsistency(html);
+  const evidenceQuality       = assessEvidenceQuality(html, docIds);
+  const languageQuality       = assessLanguageQuality(html, lang);
 
   const dimensions = {
     factualAccuracy,
