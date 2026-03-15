@@ -16,7 +16,6 @@ import type { AIAnalysisResult } from './ai-analysis-pipeline.js';
 const DEFAULT_TTL_MS = 30 * 60 * 1000;
 
 interface CacheEntry {
-  key: string;
   result: AIAnalysisResult;
   createdAt: number;
   ttlMs: number;
@@ -94,7 +93,7 @@ export class AnalysisCache {
    * @param ttlMs - Time-to-live in milliseconds (default: 30 min)
    */
   set(key: string, result: AIAnalysisResult, ttlMs: number = DEFAULT_TTL_MS): void {
-    this.store.set(key, { key, result, createdAt: Date.now(), ttlMs });
+    this.store.set(key, { result, createdAt: Date.now(), ttlMs });
   }
 
   /** Remove all entries from the cache. */

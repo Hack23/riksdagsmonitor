@@ -992,11 +992,11 @@ export class AIAnalysisPipeline {
     const skrDocs    = docs.filter(d => docType(d) === 'skr');
     const sfsDocs    = docs.filter(d =>
       docType(d) === 'sfs' || (d.dokumentnamn ?? '').startsWith('SFS'));
-    const euDocs     = docs.filter(d => docType(d) === 'fpm');
+    const euDocs     = docs.filter(d => EU_TYPES.has(docType(d)));
     const pressmDocs = docs.filter(d => docType(d) === 'pressm');
     const extDocs    = docs.filter(d => EXT_TYPES.has(docType(d)));
     const otherDocs  = docs.filter(d =>
-      !['prop','bet','mot','skr','sfs','fpm','pressm','ext','external'].includes(docType(d))
+      !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext','external'].includes(docType(d))
       && !(d.dokumentnamn ?? '').startsWith('SFS'));
 
     const domainSet = new Set<string>();
@@ -1134,7 +1134,7 @@ export class AIAnalysisPipeline {
     topicStr: string,
     lang: Language,
   ): string {
-    if (classified.euDocs.length > 0 || docType(doc) === 'fpm') {
+    if (classified.euDocs.length > 0 || EU_TYPES.has(docType(doc))) {
       return pickLang(EU_OPPORTUNITY, lang).replace('%t', topicStr);
     }
     return '';
