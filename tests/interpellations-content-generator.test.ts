@@ -309,6 +309,55 @@ describe('Interpellations Content Generator', () => {
       }
     });
   });
+
+  describe('CSS class markers', () => {
+    it('should use interpellation-entry CSS class, not motion-entry', () => {
+      const content = generateInterpellationsContent({ interpellations: sampleInterpellations }, 'en');
+      expect(content).toContain('interpellation-entry');
+      expect(content).not.toContain('motion-entry');
+    });
+  });
+
+  describe('Analytical lede', () => {
+    it('should include article-lede class with document count', () => {
+      const content = generateArticleContent({ interpellations: sampleInterpellations }, 'interpellations', 'en') as string;
+      expect(content).toContain('article-lede');
+      expect(content).toContain('3');
+    });
+  });
+
+  describe('Policy analysis ip fallback', () => {
+    it('should render ip-specific policy text, not committee review', () => {
+      const content = generateArticleContent({
+        interpellations: [{ titel: 'Interpellation om vård', parti: 'V', url: '#', dokumentnamn: 'IP1' }],
+      }, 'interpellations', 'en') as string;
+      expect(content).not.toContain('Requires committee review');
+      expect(content).toContain(CONTENT_LABELS.en.whyItMatters);
+    });
+  });
+
+  describe('Label function smoke tests', () => {
+    it('should produce interpellationStrategyContext with numeric argument', () => {
+      const fn = CONTENT_LABELS.en.interpellationStrategyContext;
+      expect(typeof fn).toBe('function');
+      const result = fn(4);
+      expect(result).toContain('4');
+    });
+
+    it('should have interpellationDefault for all 14 languages', () => {
+      for (const lang of LANGUAGES) {
+        const labels = CONTENT_LABELS[lang as Language];
+        expect(labels?.interpellationDefault, `interpellationDefault missing for ${lang}`).toBeTruthy();
+      }
+    });
+
+    it('should have readFullInterpellation for all 14 languages', () => {
+      for (const lang of LANGUAGES) {
+        const labels = CONTENT_LABELS[lang as Language];
+        expect(labels?.readFullInterpellation, `readFullInterpellation missing for ${lang}`).toBeTruthy();
+      }
+    });
+  });
 });
 
 describe('Shared Prompts Library', () => {

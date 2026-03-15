@@ -539,6 +539,27 @@ export function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string,
 }
 
 /**
+ * Localised interpellation fallback text: references minister obligation
+ * to respond, not committee review.  Hoisted to module-level to avoid
+ * per-call allocation inside generatePolicySignificance().
+ */
+const IP_FALLBACK: Readonly<Record<string, string>> = {
+  sv: 'Interpellationen debatteras i kammaren där ministern är skyldig att svara och förklara sina beslut.',
+  da: 'Interpellationen debatteres i Riksdagens kammare, hvor ministeren er forpligtet til at svare og stå til ansvar.',
+  no: 'Interpellasjonen debatteres i Riksdagens kammare, der ministeren er forpliktet til å svare og stå til ansvar.',
+  fi: 'Välikysymys käsitellään Riksdagin täysistunnossa, jossa ministerin on vastattava ja oltava tilivelvollinen.',
+  de: 'Die Interpellation wird in der Kammer debattiert, wobei der Minister verpflichtet ist, Rede und Antwort zu stehen.',
+  fr: "L'interpellation est débattue en séance plénière, où le ministre est tenu de répondre et de rendre des comptes.",
+  es: 'La interpelación se debate en el pleno, donde el ministro está obligado a responder y rendir cuentas.',
+  nl: 'De interpellatie wordt besproken in de Kamer, waar de minister verplicht is te antwoorden en verantwoording af te leggen.',
+  ar: 'تتم مناقشة الاستجواب في الجلسة العامة حيث يتعين على الوزير الرد وتحمل المسؤولية.',
+  he: 'האינטרפלציה נדונה במליאה, שם השר מחויב להשיב ולתת דין וחשבון.',
+  ja: '質問主意書は本会議で審議され、大臣は答弁と説明責任を果たす義務があります。',
+  ko: '대정부질문은 본회의에서 논의되며, 장관은 답변하고 책임을 져야 할 의무가 있습니다.',
+  zh: '质询在全体会议上进行辩论，部长有义务回应并承担责任。',
+};
+
+/**
  * Generate policy significance context for a document based on its metadata.
  * Uses the localised policySignificanceTouches label plus a domain-specific
  * analysis sentence instead of generic boilerplate.
@@ -546,7 +567,7 @@ export function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string,
  * when no domain keyword matches but the document's organ field identifies a
  * known Riksdag committee.
  * @param impliedDoktyp - document type inferred from the calling context
- *   ('mot', 'bet', 'prop') when doc.doktyp / doc.documentType is absent.
+ *   ('mot', 'bet', 'prop', 'ip') when doc.doktyp / doc.documentType is absent.
  */
 export function generatePolicySignificance(doc: RawDocument, lang: Language | string, impliedDoktyp?: string): string {
   const domains = detectPolicyDomains(doc, lang);
@@ -596,22 +617,7 @@ export function generatePolicySignificance(doc: RawDocument, lang: Language | st
   // Interpellation-specific fallback: references minister obligation, not committee review
   const doktyp2 = doc.doktyp || doc.documentType || impliedDoktyp || '';
   if (doktyp2 === 'ip') {
-    const ipFallback: Record<string, string> = {
-      sv: 'Interpellationen debatteras i kammaren där ministern är skyldig att svara och förklara sina beslut.',
-      da: 'Interpellationen debatteres i Riksdagens kammare, hvor ministeren er forpligtet til at svare og stå til ansvar.',
-      no: 'Interpellasjonen debatteres i Riksdagens kammare, der ministeren er forpliktet til å svare og stå til ansvar.',
-      fi: 'Välikysymys käsitellään Riksdagin täysistunnossa, jossa ministerin on vastattava ja oltava tilivelvollinen.',
-      de: 'Die Interpellation wird in der Kammer debattiert, wobei der Minister verpflichtet ist, Rede und Antwort zu stehen.',
-      fr: "L'interpellation est débattue en séance plénière, où le ministre est tenu de répondre et de rendre des comptes.",
-      es: 'La interpelación se debate en el pleno, donde el ministro está obligado a responder y rendir cuentas.',
-      nl: 'De interpellatie wordt besproken in de Kamer, waar de minister verplicht is te antwoorden en verantwoording af te leggen.',
-      ar: 'تتم مناقشة الاستجواب في الجلسة العامة حيث يتعين على الوزير الرد وتحمل المسؤولية.',
-      he: 'האינטרפלציה נדונה במליאה, שם השר מחויב להשיב ולתת דין וחשבון.',
-      ja: '質問主意書は本会議で審議され、大臣は答弁と説明責任を果たす義務があります。',
-      ko: '대정부질문은 본회의에서 논의되며, 장관은 답변하고 책임을 져야 할 의무가 있습니다.',
-      zh: '质询在全体会议上进行辩论，部长有义务回应并承担责任。',
-    };
-    return ipFallback[lang as string]
+    return IP_FALLBACK[lang as string]
       ?? 'The interpellation is debated in the chamber, where the minister is obliged to respond and be held accountable.';
   }
 
