@@ -10234,6 +10234,124 @@ body.news-page {
 .news-article .cia-coalition-fill { background: #00d9ff; }
 .news-article .cia-opposition-fill { background: #ff006e; }
 
+/* CIA Panel - risk level color variants (replaces inline style attributes) */
+.news-article .cia-score--positive,
+.news-article .cia-panel-heading.cia-score--positive,
+.news-article .cia-score-number.cia-score--positive { color: #83cf39; }
+
+.news-article .cia-risk-badge--high {
+  background: rgba(255, 0, 110, 0.125);
+  border: 1px solid #ff006e;
+  color: #ff006e;
+}
+
+.news-article .cia-stability-bar--positive { background: #83cf39; }
+
+.news-article .cia-stat-value--risk { color: #ff006e; }
+
+/* CIA alignment bar width classes (replaces inline width styles) */
+.news-article .cia-bar-w-0 { width: 0%; }
+.news-article .cia-bar-w-1 { width: 1%; }
+.news-article .cia-bar-w-2 { width: 2%; }
+.news-article .cia-bar-w-3 { width: 3%; }
+.news-article .cia-bar-w-4 { width: 4%; }
+.news-article .cia-bar-w-5 { width: 5%; }
+.news-article .cia-bar-w-6 { width: 6%; }
+.news-article .cia-bar-w-7 { width: 7%; }
+.news-article .cia-bar-w-8 { width: 8%; }
+.news-article .cia-bar-w-9 { width: 9%; }
+.news-article .cia-bar-w-10 { width: 10%; }
+.news-article .cia-bar-w-11 { width: 11%; }
+.news-article .cia-bar-w-12 { width: 12%; }
+.news-article .cia-bar-w-13 { width: 13%; }
+.news-article .cia-bar-w-14 { width: 14%; }
+.news-article .cia-bar-w-15 { width: 15%; }
+.news-article .cia-bar-w-16 { width: 16%; }
+.news-article .cia-bar-w-17 { width: 17%; }
+.news-article .cia-bar-w-18 { width: 18%; }
+.news-article .cia-bar-w-19 { width: 19%; }
+.news-article .cia-bar-w-20 { width: 20%; }
+.news-article .cia-bar-w-21 { width: 21%; }
+.news-article .cia-bar-w-22 { width: 22%; }
+.news-article .cia-bar-w-23 { width: 23%; }
+.news-article .cia-bar-w-24 { width: 24%; }
+.news-article .cia-bar-w-25 { width: 25%; }
+.news-article .cia-bar-w-26 { width: 26%; }
+.news-article .cia-bar-w-27 { width: 27%; }
+.news-article .cia-bar-w-28 { width: 28%; }
+.news-article .cia-bar-w-29 { width: 29%; }
+.news-article .cia-bar-w-30 { width: 30%; }
+.news-article .cia-bar-w-31 { width: 31%; }
+.news-article .cia-bar-w-32 { width: 32%; }
+.news-article .cia-bar-w-33 { width: 33%; }
+.news-article .cia-bar-w-34 { width: 34%; }
+.news-article .cia-bar-w-35 { width: 35%; }
+.news-article .cia-bar-w-36 { width: 36%; }
+.news-article .cia-bar-w-37 { width: 37%; }
+.news-article .cia-bar-w-38 { width: 38%; }
+.news-article .cia-bar-w-39 { width: 39%; }
+.news-article .cia-bar-w-40 { width: 40%; }
+.news-article .cia-bar-w-41 { width: 41%; }
+.news-article .cia-bar-w-42 { width: 42%; }
+.news-article .cia-bar-w-43 { width: 43%; }
+.news-article .cia-bar-w-44 { width: 44%; }
+.news-article .cia-bar-w-45 { width: 45%; }
+.news-article .cia-bar-w-46 { width: 46%; }
+.news-article .cia-bar-w-47 { width: 47%; }
+.news-article .cia-bar-w-48 { width: 48%; }
+.news-article .cia-bar-w-49 { width: 49%; }
+.news-article .cia-bar-w-50 { width: 50%; }
+.news-article .cia-bar-w-51 { width: 51%; }
+.news-article .cia-bar-w-52 { width: 52%; }
+.news-article .cia-bar-w-53 { width: 53%; }
+.news-article .cia-bar-w-54 { width: 54%; }
+.news-article .cia-bar-w-55 { width: 55%; }
+.news-article .cia-bar-w-56 { width: 56%; }
+.news-article .cia-bar-w-57 { width: 57%; }
+.news-article .cia-bar-w-58 { width: 58%; }
+.news-article .cia-bar-w-59 { width: 59%; }
+.news-article .cia-bar-w-60 { width: 60%; }
+.news-article .cia-bar-w-61 { width: 61%; }
+.news-article .cia-bar-w-62 { width: 62%; }
+.news-article .cia-bar-w-63 { width: 63%; }
+.news-article .cia-bar-w-64 { width: 64%; }
+.news-article .cia-bar-w-65 { width: 65%; }
+.news-article .cia-bar-w-66 { width: 66%; }
+.news-article .cia-bar-w-67 { width: 67%; }
+.news-article .cia-bar-w-68 { width: 68%; }
+.news-article .cia-bar-w-69 { width: 69%; }
+.news-article .cia-bar-w-70 { width: 70%; }
+.news-article .cia-bar-w-71 { width: 71%; }
+.news-article .cia-bar-w-72 { width: 72%; }
+.news-article .cia-bar-w-73 { width: 73%; }
+.news-article .cia-bar-w-74 { width: 74%; }
+.news-article .cia-bar-w-75 { width: 75%; }
+.news-article .cia-bar-w-76 { width: 76%; }
+.news-article .cia-bar-w-77 { width: 77%; }
+.news-article .cia-bar-w-78 { width: 78%; }
+.news-article .cia-bar-w-79 { width: 79%; }
+.news-article .cia-bar-w-80 { width: 80%; }
+.news-article .cia-bar-w-81 { width: 81%; }
+.news-article .cia-bar-w-82 { width: 82%; }
+.news-article .cia-bar-w-83 { width: 83%; }
+.news-article .cia-bar-w-84 { width: 84%; }
+.news-article .cia-bar-w-85 { width: 85%; }
+.news-article .cia-bar-w-86 { width: 86%; }
+.news-article .cia-bar-w-87 { width: 87%; }
+.news-article .cia-bar-w-88 { width: 88%; }
+.news-article .cia-bar-w-89 { width: 89%; }
+.news-article .cia-bar-w-90 { width: 90%; }
+.news-article .cia-bar-w-91 { width: 91%; }
+.news-article .cia-bar-w-92 { width: 92%; }
+.news-article .cia-bar-w-93 { width: 93%; }
+.news-article .cia-bar-w-94 { width: 94%; }
+.news-article .cia-bar-w-95 { width: 95%; }
+.news-article .cia-bar-w-96 { width: 96%; }
+.news-article .cia-bar-w-97 { width: 97%; }
+.news-article .cia-bar-w-98 { width: 98%; }
+.news-article .cia-bar-w-99 { width: 99%; }
+.news-article .cia-bar-w-100 { width: 100%; }
+
 .news-article .cia-bar-pct {
   flex: 0 0 2.5rem;
   text-align: right;
