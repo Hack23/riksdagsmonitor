@@ -443,10 +443,10 @@ export async function generateInterpellations(): Promise<GenerationResult> {
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
-      const typedInterps = interpellations as Parameters<typeof generateArticleContent>[0]['motions'];
-      const content: string = generateArticleContent({ motions: typedInterps }, 'interpellations', lang);
-      const watchPoints = extractWatchPoints({ motions: typedInterps }, lang);
-      const metadata = generateMetadata({ motions: typedInterps }, 'interpellations', lang);
+      const typedInterps = interpellations as import('../data-transformers/types.js').ArticleContentData['interpellations'];
+      const content: string = generateArticleContent({ interpellations: typedInterps }, 'interpellations', lang);
+      const watchPoints = extractWatchPoints({ interpellations: typedInterps }, lang);
+      const metadata = generateMetadata({ interpellations: typedInterps }, 'interpellations', lang);
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_interpellationer', 'get_dokument_innehall']);
 

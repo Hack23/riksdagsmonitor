@@ -287,15 +287,9 @@ export function generateEnhancedSummary(doc: RawDocument, type: string, lang: La
       parts.push(`${typeof onVal === 'string' ? onVal : ''} ${subtyp}`);
     }
   } else if (type === 'interpellation') {
-    const author = (doc.intressent_namn !== 'Unknown' ? doc.intressent_namn : null) || doc.author;
-    const party = doc.parti !== 'Unknown' ? doc.parti : undefined;
-    if (author && party) {
-      const filedByVal = L(lang, 'filedBy');
-      parts.push(`${typeof filedByVal === 'string' ? filedByVal : ''} ${author} (${party})`);
-    } else if (author) {
-      const filedByVal = L(lang, 'filedBy');
-      parts.push(`${typeof filedByVal === 'string' ? filedByVal : ''} ${author}`);
-    }
+    // NOTE: do NOT prefix with author/party here — renderInterpellationEntry()
+    // already renders a dedicated "Filed by:" line, so including it in the
+    // summary would duplicate the attribution.
     // Include target minister (mottagare) if available
     // NOTE: do NOT escapeHtml here — callers escape the returned summary string
     if (doc.mottagare) {
