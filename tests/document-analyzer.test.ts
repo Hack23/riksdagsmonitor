@@ -186,6 +186,15 @@ describe('analyzeDocument — stakeholder impacts', () => {
     expect(oppImpact?.directImpact.direction).toBe('positive');
   });
 
+  it('opposition SWOT does not produce "Party other" text when parti is absent', () => {
+    const noPartyDoc: RawDocument = { dok_id: 'NP-1', doktyp: 'mot', titel: 'Motion om bostadspolitik' };
+    const result = analyzeDocument(noPartyDoc, 'en');
+    const oppImpact = result.stakeholderImpacts.find(s => s.stakeholder === 'opposition-parties');
+    expect(oppImpact).toBeDefined();
+    const allText = oppImpact!.swot.strengths.map(s => s.text).join(' ');
+    expect(allText).not.toContain('Party other');
+  });
+
   it('each stakeholder impact has a SWOT with 4 quadrants', () => {
     const result = analyzeDocument(propDoc, 'en');
     for (const si of result.stakeholderImpacts) {
@@ -602,6 +611,16 @@ describe('analyzeDocument — caching', () => {
     expect(withCIA).not.toBe(withoutCIA);
     // Same document identity
     expect(withCIA.documentId).toBe(withoutCIA.documentId);
+  });
+
+  it('different CIA contexts produce different cache slots for the same document', () => {
+    clearAnalysisCache();
+    const resultStable = analyzeDocument(propDoc, 'en', stableCIA);
+    const resultUnstable = analyzeDocument(propDoc, 'en', unstableCIA);
+    // Two different CIA contexts → must NOT return the same cached object
+    expect(resultUnstable).not.toBe(resultStable);
+    // But the document identity is the same
+    expect(resultUnstable.documentId).toBe(resultStable.documentId);
   });
 
   it('cache invalidates when document is enriched with fullText', () => {

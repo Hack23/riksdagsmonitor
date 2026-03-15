@@ -244,30 +244,57 @@ function documentBaseKey(doc: RawDocument, fp?: string): string {
 }
 
 /**
+ * Return a short stable discriminator string for a CIAContext.
+ *
+ * Different CIA contexts (e.g. different coalition-stability scores or
+ * overall motion denial rates) produce a different discriminator so that
+ * cached analyses are not reused across meaningfully different intelligence
+ * inputs.  The discriminator is a truncated SHA-256 hex digest (8 chars)
+ * of the key numeric fields.
+ */
+function ciaDiscriminator(ctx: CIAContext): string {
+  const payload = [
+    ctx.coalitionStability?.stabilityScore ?? 0,
+    ctx.coalitionStability?.defectionProbability ?? 0,
+    ctx.coalitionStability?.majorityMargin ?? 0,
+    ctx.overallMotionDenialRate ?? 0,
+  ].join('|');
+  return createHash('sha256').update(payload).digest('hex').slice(0, 8);
+}
+
+/**
  * Return the cache key for a document.
  *
  * The key includes the document identity *plus* a content fingerprint,
  * `lang`, and a CIA-context discriminator so that:
  * - analyses with different languages or CIA context get separate slots
+ * - different CIA contexts (e.g. different coalition stability or denial
+ *   rates) produce separate cache slots instead of returning stale results
  * - enriched documents (with `fullText`/`fullContent` added after initial
  *   metadata-only fetch) are not served stale pre-enrichment results
  *
  * The fingerprint is computed once and reused in both the base key (for
  * title-only fallback) and the cache key suffix to avoid redundant SHA-256
  * work.
+ *
+ * @returns a tuple of [cacheKey, fingerprint] so callers can reuse the fp
  */
-function cacheKey(doc: RawDocument, lang: string = 'en', hasCIA: boolean = false): string {
+function cacheKeyAndFp(doc: RawDocument, lang: string = 'en', ciaContext?: CIAContext): [string, string] {
   const fp = contentFingerprint(doc);
-  return `${documentBaseKey(doc, fp)}|${fp}|${lang}|cia:${hasCIA ? '1' : '0'}`;
+  const ciaDisc = ciaContext ? ciaDiscriminator(ciaContext) : '0';
+  return [`${documentBaseKey(doc, fp)}|${fp}|${lang}|cia:${ciaDisc}`, fp];
 }
 
 /**
  * Derive a stable, collision-resistant document identifier.
- * Unlike `cacheKey()`, this is independent of language and CIA context —
+ * Unlike `cacheKeyAndFp()`, this is independent of language and CIA context —
  * it identifies the document itself, not a particular analysis of it.
+ *
+ * @param doc - Raw document
+ * @param fp - Precomputed content fingerprint (avoids redundant SHA-256)
  */
-function stableDocumentId(doc: RawDocument): string {
-  return documentBaseKey(doc);
+function stableDocumentId(doc: RawDocument, fp?: string): string {
+  return documentBaseKey(doc, fp);
 }
 
 // ---------------------------------------------------------------------------
@@ -471,10 +498,11 @@ function buildStakeholderSwot(
 
   // Opposition SWOT
   if (group === 'opposition-parties') {
+    const partyLabel = party && party !== 'other' ? `Party ${party.toUpperCase()}` : 'The opposition';
     return {
       subject: stakeholderName(group, lang),
       strengths: [
-        { text: isMotion ? `Party ${party} actively engaged through motions` : 'Can hold government accountable through debate', impact: 'high' },
+        { text: isMotion ? `${partyLabel} actively engaged through motions` : 'Can hold government accountable through debate', impact: 'high' },
         { text: 'Democratic scrutiny role provides legitimacy', impact: 'medium' },
       ],
       weaknesses: [
@@ -594,15 +622,15 @@ function buildStakeholderImpact(
 // ---------------------------------------------------------------------------
 
 /** Build PESTLE analysis dimensions from a document. */
-export function buildPestleAnalysis(doc: RawDocument, lang?: Language | string): PESTLEAnalysis {
+export function buildPestleAnalysis(doc: RawDocument, lang?: Language | string, ctx?: PrecomputedContext): PESTLEAnalysis {
   const docType = doc.doktyp ?? doc.documentType ?? '';
   const title = doc.titel ?? doc.title ?? doc.rubrik ?? '';
   const titleLower = title.toLowerCase();
-  // Pass the caller's language through — `hasDomain()` uses `DOMAIN_NAME_TO_KEY`
-  // which is language-agnostic (covers all 14 languages), so domain-trigger
-  // checks work reliably regardless of which language `detectPolicyDomains`
-  // returns.
-  const triggerDomains = detectPolicyDomains(doc, lang ?? 'en');
+  // Reuse precomputed domains when available; otherwise detect with the
+  // caller's language.  `hasDomain()` uses `DOMAIN_NAME_TO_KEY` which is
+  // language-agnostic (covers all 14 languages), so domain-trigger checks
+  // work reliably regardless of which language the domains were detected in.
+  const triggerDomains = ctx?.domains ?? detectPolicyDomains(doc, lang ?? 'en');
 
   const political: string[] = [
     docType === 'prop'
@@ -628,7 +656,7 @@ export function buildPestleAnalysis(doc: RawDocument, lang?: Language | string):
   if (social.length === 0) social.push('Social equity and public service delivery effects possible.');
 
   const technological: string[] = [
-    titleLower.includes('digital') || titleLower.includes('cyber') || /\b(?:IT|ICT)\b/.test(title) || titleLower.includes('it-system')
+    titleLower.includes('digital') || titleLower.includes('cyber') || /\b(?:IT|ICT)\b/i.test(title) || titleLower.includes('it-system')
       ? 'Digital infrastructure or technology governance dimensions present.'
       : 'Technology adoption for implementation may be required.',
   ];
@@ -893,7 +921,7 @@ function deriveRiksmote(doc: RawDocument): string {
 export function generateExecutiveSummary(doc: RawDocument, lang: Language | string, ctx?: PrecomputedContext): string {
   const title = doc.titel ?? doc.title ?? doc.rubrik ?? 'Document';
   const docType = doc.doktyp ?? doc.documentType ?? '';
-  const domains = ctx?.domains ?? detectPolicyDomains(doc);
+  const domains = ctx?.domains ?? detectPolicyDomains(doc, lang);
   const influenceScore = ctx?.influenceScore ?? calculateInfluenceScore(doc);
   const party = normalizePartyKey(doc.parti);
 
@@ -1019,7 +1047,7 @@ export function analyzeDocument(
   ciaContext?: CIAContext,
   forceRefresh = false,
 ): DocumentAnalysis {
-  const key = cacheKey(doc, typeof lang === 'string' ? lang : 'en', !!ciaContext);
+  const [key, fp] = cacheKeyAndFp(doc, typeof lang === 'string' ? lang : 'en', ciaContext);
   if (!forceRefresh && _analysisCache.has(key)) {
     return _analysisCache.get(key)!;
   }
@@ -1036,7 +1064,7 @@ export function analyzeDocument(
   const stakeholderImpacts = relevantStakeholders.map(group =>
     buildStakeholderImpact(group, doc, lang, ciaContext, ctx),
   );
-  const pestleDimensions = buildPestleAnalysis(doc, lang);
+  const pestleDimensions = buildPestleAnalysis(doc, lang, ctx);
 
   const policyDomains: PolicyDomain[] = toDomainKeyPairs(rawDomains).map(({ key: k, name: n }, i) => ({
     key: k,
@@ -1058,7 +1086,7 @@ export function analyzeDocument(
   const iterations = buildIterations(doc, relevantStakeholders, ctx);
 
   const analysis: DocumentAnalysis = {
-    documentId: stableDocumentId(doc),
+    documentId: stableDocumentId(doc, fp),
     documentTitle: doc.titel ?? doc.title ?? doc.rubrik ?? 'Unknown Document',
     executiveSummary,
     stakeholderImpacts,
