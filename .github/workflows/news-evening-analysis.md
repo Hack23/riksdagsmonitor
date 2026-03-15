@@ -192,10 +192,12 @@ If `hoursSinceSync > 48`, add a disclaimer note in analysis mentioning "stale da
 
 Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc queries, use `scripts/mcp-query-cli.ts` — NEVER implement custom MCP client code (PROHIBITION).
 
-Calculate date range for queries:
+Calculate date range for queries (day-granularity via `.slice(0, 10)` truncation):
 ```js
 const today = new Date().toISOString().slice(0, 10);
-const fromDate = new Date(Date.now() - lookbackHours * 3600000).toISOString().slice(0, 10);
+// lookback_hours input is rounded up to full days for date-string comparison
+const lookbackDays = Math.ceil(lookbackHours / 24);
+const fromDate = new Date(Date.now() - lookbackDays * 86400000).toISOString().slice(0, 10);
 // For weekly review (Saturday): 5-day lookback = 5 * 86400000 ms
 const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 10);
 ```
@@ -217,9 +219,9 @@ Filter results to only include items with dates `>= fromDate` using ISO-string c
 const filtered = results.filter(item => (item.datum || item.publicerad || '').slice(0, 10) >= fromDate);
 ```
 
-**Post-query date filtering example** (use 86400000 ms = 1 day, 3600000 ms = 1 hour):
+**Post-query date filtering example** (day-granularity; 86400000 ms = 1 day):
 ```javascript
-const fromDate = new Date(Date.now() - lookback_hours * 3600000).toISOString().slice(0, 10);
+const fromDate = new Date(Date.now() - lookback_days * 86400000).toISOString().slice(0, 10);
 const results = rawResults.filter(item => {
   const itemDate = (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10);
   return itemDate >= fromDate; // lexicographic YYYY-MM-DD comparison — no timezone drift
