@@ -79,6 +79,12 @@ export interface ContentLabelSet {
   motionsOverview: (n: number) => string;
   motionSignificance: string;
   readFullMotion: string;
+  /** Default summary for an interpellation document entry */
+  interpellationDefault: string;
+  /** "Read the full interpellation" link text */
+  readFullInterpellation: string;
+  /** Party interpellations filed breakdown (e.g. "SD: 3 interpellations filed") */
+  partyInterpellationsFiled: (party: string, n: number) => string;
   policyContext: string;
   filedBy: string;
   /** Label for document publication date (e.g. "Published", "Publicerad") */
@@ -96,11 +102,17 @@ export interface ContentLabelSet {
   committeeBreakdown: (n: number, c: number) => string;
   propsBreakdown: (n: number) => string;
   motionsBreakdown: (n: number) => string;
+  /** Empty-state message for interpellations articles */
+  noInterpellations: string;
+  /** Analytical lede for interpellations articles */
+  interpellationsBreakdown: (n: number) => string;
   // Localized body text labels (avoid hardcoded en/sv fallbacks)
   committeeCountContext: (n: number) => string;
   committeeActivityTakeaway: (committees: string, extra: number) => string;
   committeeMomentumTakeaway: (n: number) => string;
   oppositionStrategyContext: (n: number) => string;
+  /** Interpellation-specific strategy context (parliamentary oversight framing, not motions) */
+  interpellationStrategyContext: (n: number) => string;
   policyImplicationsContext: (propCount: number, domainCount: number) => string;
   genericOverview: (n: number) => string;
   partyMotionsFiled: (party: string, n: number) => string;
