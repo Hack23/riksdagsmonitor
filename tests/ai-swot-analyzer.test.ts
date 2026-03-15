@@ -356,6 +356,16 @@ describe('buildAISwotStakeholders', () => {
         }
       }
     });
+
+    it('context metadata labels are localised for Swedish', () => {
+      const sv = buildAISwotStakeholders([], null, 'sv');
+      expect(sv[0].swot.context).toContain('Konfidens:');
+    });
+
+    it('context metadata labels are localised for Japanese', () => {
+      const ja = buildAISwotStakeholders([], null, 'ja');
+      expect(ja[0].swot.context).toContain('信頼度:');
+    });
   });
 
   describe('summary text content', () => {

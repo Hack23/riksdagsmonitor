@@ -27,8 +27,7 @@ import {
   type SankeyNode,
   type SankeyFlow,
 } from '../data-transformers/index.js';
-import { buildAISwotStakeholders, STAKEHOLDER_NAMES } from '../data-transformers/content-generators/ai-swot-analyzer.js';
-import { generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
+import { buildAISwotStakeholders, STAKEHOLDER_NAMES, generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
 import { generateDeepPolicyAnalysis, detectPolicyDomains } from '../data-transformers/policy-analysis.js';
 import { escapeHtml } from '../html-utils.js';
 import { generateArticleHTML } from '../article-template.js';

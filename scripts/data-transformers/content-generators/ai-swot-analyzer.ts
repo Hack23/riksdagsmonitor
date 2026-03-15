@@ -13,6 +13,11 @@
  * and kept for interface stability.  A future iteration may wire the prompts
  * into the editorial-framework MCP pipeline.
  *
+ * Analytical prose (entry text, justification) is English-only because the
+ * deep-inspection pipeline currently generates English articles.  Stakeholder
+ * names, roles, and context metadata labels ("Confidence", "Cross-references")
+ * are fully localised in all 14 supported languages.
+ *
  * The six perspectives are:
  *  1. Government Coalition (M, KD, L + SD support)
  *  2. Social Democratic Opposition (S, V, C, MP)
@@ -294,6 +299,48 @@ const STAKEHOLDER_ROLES: Readonly<Record<StakeholderPerspective, Partial<Record<
 };
 
 // ---------------------------------------------------------------------------
+// Localised context metadata labels (all 14 languages)
+// ---------------------------------------------------------------------------
+
+const CONTEXT_LABELS: Readonly<{
+  confidence: Partial<Record<Language, string>>;
+  crossReferences: Partial<Record<Language, string>>;
+}> = {
+  confidence: {
+    en: 'Confidence',
+    sv: 'Konfidens',
+    da: 'Tillid',
+    no: 'Tillit',
+    fi: 'Luottamus',
+    de: 'Konfidenz',
+    fr: 'Confiance',
+    es: 'Confianza',
+    nl: 'Vertrouwen',
+    ar: 'الثقة',
+    he: 'ביטחון',
+    ja: '信頼度',
+    ko: '신뢰도',
+    zh: '置信度',
+  },
+  crossReferences: {
+    en: 'Cross-references',
+    sv: 'Korsreferenser',
+    da: 'Krydsreferencer',
+    no: 'Kryssreferanser',
+    fi: 'Ristiviittaukset',
+    de: 'Querverweise',
+    fr: 'Références croisées',
+    es: 'Referencias cruzadas',
+    nl: 'Kruisverwijzingen',
+    ar: 'مراجع متقاطعة',
+    he: 'הפניות צולבות',
+    ja: '相互参照',
+    ko: '교차 참조',
+    zh: '交叉引用',
+  },
+};
+
+// ---------------------------------------------------------------------------
 // Document classification helpers
 // ---------------------------------------------------------------------------
 
@@ -356,7 +403,46 @@ function docEntry(
 /** Build a topical statement: "X in {topic}" or strip %t placeholder when absent */
 function withTopic(template: string, topic: string | null): string {
   if (!topic) return template.replace(/%t/g, '');
-  return template.replace('%t', topic);
+  return template.replace(/%t/g, topic);
+}
+
+// ---------------------------------------------------------------------------
+// Pre-bucketed document classification (single pass)
+// ---------------------------------------------------------------------------
+
+/** Pre-classified document buckets to avoid repeated filtering in each builder */
+interface DocBuckets {
+  prop: RawDocument[];
+  skr: RawDocument[];
+  sfs: RawDocument[];
+  pressm: RawDocument[];
+  bet: RawDocument[];
+  fpm: RawDocument[];
+  mot: RawDocument[];
+  ext: RawDocument[];
+}
+
+/** Classify docs into type buckets in a single pass */
+function bucketDocs(docs: RawDocument[]): DocBuckets {
+  const b: DocBuckets = { prop: [], skr: [], sfs: [], pressm: [], bet: [], fpm: [], mot: [], ext: [] };
+  for (const d of docs) {
+    const t = d.doktyp || d.documentType || '';
+    switch (t) {
+      case 'prop':   b.prop.push(d);   break;
+      case 'skr':    b.skr.push(d);    break;
+      case 'sfs':    b.sfs.push(d);    break;
+      case 'pressm': b.pressm.push(d); break;
+      case 'bet':    b.bet.push(d);    break;
+      case 'fpm':    b.fpm.push(d);    break;
+      case 'mot':    b.mot.push(d);    break;
+      case 'ext':    b.ext.push(d);    break;
+      default:
+        // SFS-by-name heuristic (doktyp missing but dokumentnamn starts with SFS)
+        if ((d.dokumentnamn || '').startsWith('SFS')) { b.sfs.push(d); }
+        break;
+    }
+  }
+  return b;
 }
 
 // ---------------------------------------------------------------------------
@@ -364,20 +450,15 @@ function withTopic(template: string, topic: string | null): string {
 // ---------------------------------------------------------------------------
 
 function buildGovernmentSwot(
-  docs: RawDocument[],
+  b: DocBuckets,
   topic: string | null,
   _lang: Language,
 ): Pick<AISwotAnalysis, 'strengths' | 'weaknesses' | 'opportunities' | 'threats'> {
-  const propDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
-  const skrDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
-  const sfsDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
-  const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
-  const betDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
-  const euDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
-  const motDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
+  const { prop: propDocs, skr: skrDocs, sfs: sfsDocs, pressm: pressmDocs, bet: betDocs, fpm: euDocs, mot: motDocs } = b;
 
   const topicStr = topic ? ` on ${topic}` : '';
-  const docCount = `${docs.length} parliamentary document${docs.length !== 1 ? 's' : ''} examined`;
+  const totalDocs = propDocs.length + skrDocs.length + sfsDocs.length + pressmDocs.length + betDocs.length + euDocs.length + motDocs.length;
+  const docCount = `${totalDocs} parliamentary document${totalDocs !== 1 ? 's' : ''} examined`;
 
   const strengths: AISwotEntry[] = [];
   propDocs.slice(0, 2).forEach(d => {
@@ -484,13 +565,11 @@ function buildGovernmentSwot(
 }
 
 function buildOppositionSwot(
-  docs: RawDocument[],
+  b: DocBuckets,
   topic: string | null,
   _lang: Language,
 ): Pick<AISwotAnalysis, 'strengths' | 'weaknesses' | 'opportunities' | 'threats'> {
-  const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
-  const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
-  const propDocs = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
+  const { bet: betDocs, mot: motDocs, prop: propDocs } = b;
 
   const topicStr = topic ? ` on ${topic}` : '';
 
@@ -564,12 +643,11 @@ function buildOppositionSwot(
 }
 
 function buildEUInternationalSwot(
-  docs: RawDocument[],
+  b: DocBuckets,
   topic: string | null,
   _lang: Language,
 ): Pick<AISwotAnalysis, 'strengths' | 'weaknesses' | 'opportunities' | 'threats'> {
-  const euDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
-  const extDocs = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
+  const { fpm: euDocs, ext: extDocs } = b;
   const topicStr = topic ? ` on ${topic}` : '';
 
   const strengths: AISwotEntry[] = [];
@@ -634,12 +712,11 @@ function buildEUInternationalSwot(
 }
 
 function buildPrivateSectorSwot(
-  docs: RawDocument[],
+  b: DocBuckets,
   topic: string | null,
   _lang: Language,
 ): Pick<AISwotAnalysis, 'strengths' | 'weaknesses' | 'opportunities' | 'threats'> {
-  const sfsDocs = docs.filter(d => (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
-  const extDocs = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
+  const { sfs: sfsDocs, ext: extDocs } = b;
   const topicStr = topic ? ` in ${topic}` : '';
 
   const strengths: AISwotEntry[] = [];
@@ -703,12 +780,11 @@ function buildPrivateSectorSwot(
 }
 
 function buildCivilSocietySwot(
-  docs: RawDocument[],
+  b: DocBuckets,
   topic: string | null,
   _lang: Language,
 ): Pick<AISwotAnalysis, 'strengths' | 'weaknesses' | 'opportunities' | 'threats'> {
-  const betDocs = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
-  const motDocs = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
+  const { bet: betDocs, mot: motDocs } = b;
   const topicStr = topic ? ` on ${topic}` : '';
 
   const strengths: AISwotEntry[] = [];
@@ -773,13 +849,11 @@ function buildCivilSocietySwot(
 }
 
 function buildCitizensSwot(
-  docs: RawDocument[],
+  b: DocBuckets,
   topic: string | null,
   _lang: Language,
 ): Pick<AISwotAnalysis, 'strengths' | 'weaknesses' | 'opportunities' | 'threats'> {
-  const propDocs = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
-  const sfsDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
-  const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
+  const { prop: propDocs, sfs: sfsDocs, bet: betDocs } = b;
   const topicStr = topic ? ` on ${topic}` : '';
 
   const strengths: AISwotEntry[] = [];
@@ -855,11 +929,11 @@ function buildCitizensSwot(
 // Cross-reference generator
 // ---------------------------------------------------------------------------
 
-function buildCrossReferences(docs: RawDocument[], topic: string | null): SwotCrossReference[] {
+function buildCrossReferences(b: DocBuckets, topic: string | null): SwotCrossReference[] {
   const refs: SwotCrossReference[] = [];
 
   // Government strengths → Opposition threats
-  if (docs.filter(d => (d.doktyp || d.documentType) === 'prop').length > 0) {
+  if (b.prop.length > 0) {
     refs.push({
       fromStakeholder: 'government-coalition',
       fromQuadrant: 'strengths',
@@ -872,7 +946,7 @@ function buildCrossReferences(docs: RawDocument[], topic: string | null): SwotCr
   }
 
   // EU opportunities → Private sector opportunities
-  if (docs.filter(d => (d.doktyp || d.documentType) === 'fpm').length > 0) {
+  if (b.fpm.length > 0) {
     refs.push({
       fromStakeholder: 'eu-international',
       fromQuadrant: 'opportunities',
@@ -885,11 +959,7 @@ function buildCrossReferences(docs: RawDocument[], topic: string | null): SwotCr
   }
 
   // Private sector regulatory burden → Civil society accountability (only when evidence present)
-  const hasRegulatoryDocs = docs.some(d =>
-    (d.doktyp || d.documentType) === 'sfs'
-    || (d.dokumentnamn || '').startsWith('SFS')
-    || (d.doktyp || d.documentType) === 'skr',
-  );
+  const hasRegulatoryDocs = b.sfs.length > 0 || b.skr.length > 0;
   if (hasRegulatoryDocs) {
     refs.push({
       fromStakeholder: 'private-sector',
@@ -926,7 +996,7 @@ const MAX_CONFIDENCE = 0.95;
 /** Absolute minimum confidence (always some baseline reasoning possible) */
 const MIN_CONFIDENCE = 0.40;
 
-function computeConfidence(docs: RawDocument[], perspective: StakeholderPerspective): number {
+function computeConfidence(docs: RawDocument[], b: DocBuckets, perspective: StakeholderPerspective): number {
   const docBonus = Math.min(MAX_DOC_VOLUME_BONUS, docs.length * CONFIDENCE_PER_DOC);
   const enriched = docs.filter(d => {
     const hasFullText = (d.fullText && d.fullText.length > 100) || (d.fullContent && d.fullContent.length > 100);
@@ -935,7 +1005,7 @@ function computeConfidence(docs: RawDocument[], perspective: StakeholderPerspect
   const enrichedBonus = Math.min(MAX_ENRICHMENT_BONUS, enriched * CONFIDENCE_PER_ENRICHED_DOC);
 
   // EU stakeholder gets slightly lower confidence when there are no fpm docs
-  const euPenalty = perspective === 'eu-international' && docs.filter(d => (d.doktyp || d.documentType) === 'fpm').length === 0 ? EU_NO_DATA_PENALTY : 0;
+  const euPenalty = perspective === 'eu-international' && b.fpm.length === 0 ? EU_NO_DATA_PENALTY : 0;
 
   return Math.min(MAX_CONFIDENCE, Math.max(MIN_CONFIDENCE, BASE_CONFIDENCE + docBonus + enrichedBonus + euPenalty));
 }
@@ -969,29 +1039,36 @@ export function buildAISwotStakeholders(
     'citizens-voters',
   ];
 
+  // Pre-bucket documents by type in a single pass for efficiency
+  const b = bucketDocs(docs);
+
   const builders: Record<StakeholderPerspective, () => Pick<AISwotAnalysis, 'strengths' | 'weaknesses' | 'opportunities' | 'threats'>> = {
-    'government-coalition': () => buildGovernmentSwot(docs, topic, lang),
-    opposition:             () => buildOppositionSwot(docs, topic, lang),
-    'eu-international':     () => buildEUInternationalSwot(docs, topic, lang),
-    'private-sector':       () => buildPrivateSectorSwot(docs, topic, lang),
-    'civil-society':        () => buildCivilSocietySwot(docs, topic, lang),
-    'citizens-voters':      () => buildCitizensSwot(docs, topic, lang),
+    'government-coalition': () => buildGovernmentSwot(b, topic, lang),
+    opposition:             () => buildOppositionSwot(b, topic, lang),
+    'eu-international':     () => buildEUInternationalSwot(b, topic, lang),
+    'private-sector':       () => buildPrivateSectorSwot(b, topic, lang),
+    'civil-society':        () => buildCivilSocietySwot(b, topic, lang),
+    'citizens-voters':      () => buildCitizensSwot(b, topic, lang),
   };
 
-  const crossRefs = buildCrossReferences(docs, topic);
+  const crossRefs = buildCrossReferences(b, topic);
+
+  // Localised labels for context metadata
+  const confidenceLabel = CONTEXT_LABELS.confidence[lang] ?? CONTEXT_LABELS.confidence.en!;
+  const crossRefLabel   = CONTEXT_LABELS.crossReferences[lang] ?? CONTEXT_LABELS.crossReferences.en!;
 
   return perspectives.map(p => {
     const name = STAKEHOLDER_NAMES[p][lang] ?? STAKEHOLDER_NAMES[p].en!;
     const role = STAKEHOLDER_ROLES[p][lang] ?? STAKEHOLDER_ROLES[p].en!;
     const swotData = builders[p]();
-    const confidence = computeConfidence(docs, p);
+    const confidence = computeConfidence(docs, b, p);
 
-    // Attach confidence and crossReferences as context metadata
+    // Attach confidence and crossReferences as context metadata (localised)
     const contextParts: string[] = [];
-    contextParts.push(`Confidence: ${Math.round(confidence * 100)}%`);
+    contextParts.push(`${confidenceLabel}: ${Math.round(confidence * 100)}%`);
     const ownRefs = crossRefs.filter(r => r.fromStakeholder === p || r.toStakeholder === p);
     if (ownRefs.length > 0) {
-      contextParts.push(`Cross-references: ${ownRefs.length}`);
+      contextParts.push(`${crossRefLabel}: ${ownRefs.length}`);
     }
 
     return {
