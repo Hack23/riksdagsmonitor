@@ -217,8 +217,10 @@ Example 1: Committee Report Deep Dive
 // 1. Get committee reports
 const reports = await get_betankanden({ rm: riksmote, limit: 50 });
 // 2. Cross-reference with voting records for each report
+const reportVotes = [];
 for (const report of reports) {
   const votes = await search_voteringar({ rm: riksmote, bet: report.beteckning });
+  reportVotes.push({ report, votes });
 }
 ```
 
