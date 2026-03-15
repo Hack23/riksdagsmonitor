@@ -226,7 +226,7 @@ function contentFingerprint(doc: RawDocument): string {
     doc.fullContent ?? '',
     doc.notis ?? '',
   ].join('\x00');
-  return createHash('sha256').update(payload).digest('hex').slice(0, 16);
+  return createHash('sha256').update(payload).digest('hex').slice(0, 32);
 }
 
 /**

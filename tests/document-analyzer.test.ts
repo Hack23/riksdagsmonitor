@@ -963,6 +963,11 @@ describe('multi-language support', () => {
     const enNames = enResult.policyDomains.map(d => d.name);
     // The domain sets should not be identical strings since langs differ
     expect(svNames.join()).not.toBe(enNames.join());
+    // Verify actual localization: Swedish names should contain Swedish-language text
+    const joinedSv = svNames.join(' ').toLowerCase();
+    expect(
+      joinedSv.includes('hälso') || joinedSv.includes('politik') || joinedSv.includes('försvar'),
+    ).toBe(true);
   });
 
   it('confidence boosts for fullContent-only docs (not just fullText)', () => {
