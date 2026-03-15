@@ -77,6 +77,16 @@ export interface ArticleData {
   subtitle: string;
   date: string;
   type: ArticleCategory;
+  /**
+   * Optional routing article type used for CSS theming and template registry
+   * lookup (e.g. `'week-ahead'`, `'motions'`, `'interpellations'`).
+   * When provided, `generateArticleHTML` will apply the matching
+   * `article-type-*` CSS class to the `<article>` element.
+   * When omitted, no per-type class is applied — the article keeps base
+   * `.news-article` styling.  (`type: ArticleCategory` values like
+   * `'analysis'` are **not** valid `ArticleType` keys.)
+   */
+  articleType?: ArticleType;
   readTime?: string;
   lang?: Language;
   locale?: string;
