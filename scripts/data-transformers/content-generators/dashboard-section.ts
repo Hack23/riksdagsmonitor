@@ -503,8 +503,14 @@ function renderPanel(
   // Accessible table fallback
   const tableBlock = panel.table ? renderTable(panel.table) : '';
 
+  // Only add sr-only "Panel:" prefix when a real title is provided,
+  // to avoid redundant "Panel: Panel 1" when the title falls back to a generated label.
+  const headingPrefix = realTitle
+    ? `<span class="panel-type-label sr-only">${escapeHtml(lbl('dashboardPanel'))}: </span>`
+    : '';
+
   return `  <article class="dashboard-panel" id="${escapeHtml(panelId)}" aria-labelledby="${escapeHtml(headingId)}">
-    <h3 id="${escapeHtml(headingId)}">${realTitle ? `<span class="panel-type-label sr-only">${escapeHtml(lbl('dashboardPanel'))}: </span>` : ''}${escapeHtml(safeTitle)}</h3>
+    <h3 id="${escapeHtml(headingId)}">${headingPrefix}${escapeHtml(safeTitle)}</h3>
 ${visualBlock}
 ${interpretationBlock}
 ${stakeholderBlock}
