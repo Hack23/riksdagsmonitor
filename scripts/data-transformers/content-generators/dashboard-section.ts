@@ -260,6 +260,9 @@ const VALID_LAYOUTS = new Set(['grid-2x2', 'grid-3x2', 'full-width', 'sidebar'])
 /** Allowed relevance values for AI insight styling */
 const VALID_RELEVANCE = new Set(['high', 'medium', 'low']);
 
+/** Intensity used when all heatmap cell values are equal (mid-scale) */
+const EQUAL_VALUES_INTENSITY = 0.5;
+
 /**
  * Ensure `baseId` is globally unique across the entire dashboard section by
  * suffixing `-1`, `-2`, etc. when the id is already in `usedIds`.
@@ -349,7 +352,7 @@ function renderHeatMap(config: HeatMapConfig, panelId: string, usedIds: Set<stri
     const dataCells = row.map((cell, cIdx) => {
       const colLabel = columnLabels[cIdx] ?? String(cIdx + 1);
       const numVal = Number.isFinite(cell.value) ? cell.value : 0;
-      const intensity = allEqual ? '0.500' : ((numVal - minVal) / range).toFixed(3);
+      const intensity = allEqual ? EQUAL_VALUES_INTENSITY.toFixed(3) : ((numVal - minVal) / range).toFixed(3);
       const displayText = cell.label ?? String(numVal);
       const ariaText = `${escapeHtml(rowLabel)} / ${escapeHtml(colLabel)}: ${escapeHtml(displayText)}`;
       return `<div role="cell" class="heatmap-cell heatmap-data-cell" style="--intensity:${intensity}" aria-label="${ariaText}">${escapeHtml(displayText)}</div>`;
