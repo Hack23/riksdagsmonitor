@@ -251,7 +251,7 @@ Example 3: Party Behavior Analysis
 // 3. Identify patterns in party opposition strategy
 ```
 
-**Example 1: Committee Report Deep Dive**
+**Detailed Example: Committee Report Deep Dive**
 ```javascript
 // 1. Fetch committee reports
 const reports = await get_betankanden({ rm: riksmote, limit: 20 });
@@ -260,7 +260,7 @@ const votes = await search_voteringar({ rm: riksmote, limit: 50 });
 const reportsWithVotes = reports.filter(r => votes.some(v => v.bet === r.bet));
 ```
 
-**Example 2: Government Activity Analysis**
+**Detailed Example: Government Activity Analysis**
 ```javascript
 // 1. Fetch government propositions
 const props = await get_propositioner({ rm: riksmote, limit: 20 });
@@ -268,7 +268,7 @@ const props = await get_propositioner({ rm: riksmote, limit: 20 });
 const referred = props.filter(p => p.referredTo);
 ```
 
-**Example 3: Party Behavior Analysis**
+**Detailed Example: Party Behavior Analysis**
 ```javascript
 // 1. Fetch party motions
 const motions = await get_motioner({ rm: riksmote, limit: 50 });
