@@ -1007,10 +1007,7 @@ const MIN_CONFIDENCE = 0.40;
 
 function computeConfidence(docs: RawDocument[], b: DocBuckets, perspective: StakeholderPerspective): number {
   const docBonus = Math.min(MAX_DOC_VOLUME_BONUS, docs.length * CONFIDENCE_PER_DOC);
-  const enriched = docs.filter(d => {
-    const hasFullText = (d.fullText && d.fullText.length > 100) || (d.fullContent && d.fullContent.length > 100);
-    return hasFullText;
-  }).length;
+  const enriched = docs.filter(d => d.contentFetched).length;
   const enrichedBonus = Math.min(MAX_ENRICHMENT_BONUS, enriched * CONFIDENCE_PER_ENRICHED_DOC);
 
   // EU stakeholder gets slightly lower confidence when there are no fpm docs
