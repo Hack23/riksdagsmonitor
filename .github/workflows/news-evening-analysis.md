@@ -233,18 +233,6 @@ const recent = results.filter(b => new Date(b.publicerad) >= new Date(fromDate))
 
 Cross-reference related data sources for richer analysis. Filter all results by date to `>= fromDate`.
 
-Example 1: Committee Report Deep Dive
-```
-// 1. Fetch recent betänkanden
-// 2. Cross-reference with search_voteringar for the same beteckning
-// 3. Enrich with related speeches from the same debate
-```
-
-Example 2: Government Activity Analysis
-```
-// 1. Query search_regering for today's propositions
-// 2. Check get_propositioner for detailed data
-// 3. Check committee assignments and processing status
 **Example 1: Committee Report Deep Dive**
 ```javascript
 // 1. Get recent committee reports
@@ -270,9 +258,6 @@ const govDocs = search_regering({ dateFrom: fromDate, dateTo: today, limit: 30 }
 const propositions = get_propositioner({ rm: currentRm, limit: 20 })
   .filter(p => new Date(p.publicerad) >= new Date(fromDate));
 ```
-// 1. Get voteringar grouped by party
-// 2. Compare with recent search_anforanden
-// 3. Identify patterns in party opposition strategy
 
 **Example 3: Party Behavior Analysis**
 ```javascript
