@@ -117,6 +117,9 @@ If **force_generation** is `true`, generate articles even if recent ones exist. 
 3. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
+6. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
+7. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
+8. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
 
 ## MANDATORY Date Validation
 
@@ -295,10 +298,21 @@ If the generated article lacks these analytical sections, manually add contextua
 ## MANDATORY Quality Validation
 
 After article generation, verify EACH article meets these minimum standards before committing.
+Apply the quality rubric from **`scripts/prompts/v1/quality-criteria.md`** (minimum score: 7/10).
+
+### Iterative Analysis Protocol
+
+For each generated article, apply up to 3 iterations:
+1. **Iteration 1** — Generate initial draft from MCP data
+2. **Self-assess** — Score against quality rubric (Accuracy + Depth + Perspectives + Translation + Editorial)
+3. **If score < 7**: Identify lowest-scoring dimension and regenerate those sections
+4. **Iteration 2** — Address quality gaps, add missing parliamentary oversight analysis
+5. **If still < 7**: Final iteration — add analytical depth, ensure party/theme-grouped structure
+6. **Maximum 3 iterations** — Never publish below 5/10
 
 ### Required Sections (at least 3 of 5):
 1. **Analytical Lede** (paragraph, not just document count)
-2. **Thematic Analysis** (interpellations grouped by policy theme or target minister)
+2. **Parliamentary Oversight** (interpellations grouped by submitting party and policy theme — uses dedicated generator)
 3. **Strategic Context** (why these interpellations matter politically)
 4. **Stakeholder Impact** (which ministers are under pressure)
 5. **What Happens Next** (expected debate schedule and outcomes)
@@ -307,7 +321,7 @@ After article generation, verify EACH article meets these minimum standards befo
 - ❌ `"Filed by: Unknown (Unknown)"` — FIX author/party metadata before committing
 - ❌ `data-translate="true"` spans in non-Swedish articles — TRANSLATE before committing
 - ❌ Identical "Why It Matters" text for all entries — DIFFERENTIATE analysis per interpellation
-- ❌ Flat list of interpellations without grouping — GROUP by policy theme or target minister
+- ❌ Flat list of interpellations without grouping — GROUP by policy theme and submitting party
 - ❌ Article under 500 words — EXPAND with analytical sections
 
 ### Bash Validation Commands:
