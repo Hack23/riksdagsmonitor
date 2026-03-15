@@ -159,72 +159,72 @@ describe('new deep-inspection section labels', () => {
 // ---------------------------------------------------------------------------
 
 describe('generateDeepInspectionContent depth-gated sections', () => {
-  const generatorsSrcForDepth = fs.readFileSync(
+  const generatorsSrc = fs.readFileSync(
     path.resolve(__dirname, '../scripts/generate-news-enhanced/generators.ts'), 'utf-8');
 
   // Depth 1 (always present): Topic Context, Document Intelligence, 5W Analysis,
   // Strategic Implications, Key Takeaways — no depth guard needed for these
   it('depth 1 sections have no depth guard', () => {
     // These section CSS classes should appear without depth conditions
-    expect(generatorsSrcForDepth).toContain('class="deep-topic-context"');
-    expect(generatorsSrcForDepth).toContain('class="document-intelligence-analysis"');
-    expect(generatorsSrcForDepth).toContain('class="strategic-implications"');
-    expect(generatorsSrcForDepth).toContain('class="key-takeaways"');
+    expect(generatorsSrc).toContain('class="deep-topic-context"');
+    expect(generatorsSrc).toContain('class="document-intelligence-analysis"');
+    expect(generatorsSrc).toContain('class="strategic-implications"');
+    expect(generatorsSrc).toContain('class="key-takeaways"');
   });
 
   // Depth 2: adds Historical Context + Predictive Assessment
   it('depth ≥ 2 gates Historical Context and Predictive Assessment', () => {
-    expect(generatorsSrcForDepth).toContain('if (depth >= 2)');
+    expect(generatorsSrc).toContain('if (depth >= 2)');
     // Verify the functions called inside depth ≥ 2 blocks
-    expect(generatorsSrcForDepth).toContain('buildHistoricalContext(docs, topic, lang)');
-    expect(generatorsSrcForDepth).toContain('buildPredictiveAssessment(docs, topic, lang)');
+    expect(generatorsSrc).toContain('buildHistoricalContext(docs, topic, lang)');
+    expect(generatorsSrc).toContain('buildPredictiveAssessment(docs, topic, lang)');
   });
 
   // Depth 3: adds Executive Summary + Methodology
   it('depth ≥ 3 gates Executive Intelligence Summary and Methodology', () => {
-    expect(generatorsSrcForDepth).toContain('if (depth >= 3)');
-    expect(generatorsSrcForDepth).toContain('buildExecutiveSummary(docs, topic, lang)');
-    expect(generatorsSrcForDepth).toContain('buildMethodologySection(docs, topic, lang, depth)');
+    expect(generatorsSrc).toContain('if (depth >= 3)');
+    expect(generatorsSrc).toContain('buildExecutiveSummary(docs, topic, lang)');
+    expect(generatorsSrc).toContain('buildMethodologySection(docs, topic, lang, depth)');
   });
 
   // Depth 4: methodology section includes 4 quality-review iterations
   it('methodology section renders iteration items up to depth', () => {
-    expect(generatorsSrcForDepth).toContain('labels.slice(0, depth)');
+    expect(generatorsSrc).toContain('labels.slice(0, depth)');
   });
 
   // Verify section headings use deepLabel() with correct keys
   it('section headings use deepLabel() with expected keys', () => {
-    expect(generatorsSrcForDepth).toContain("deepLabel('topicContext', lang)");
-    expect(generatorsSrcForDepth).toContain("deepLabel('documentIntelligence', lang)");
-    expect(generatorsSrcForDepth).toContain("deepLabel('strategicImplications', lang)");
-    expect(generatorsSrcForDepth).toContain("deepLabel('keyTakeaways', lang)");
+    expect(generatorsSrc).toContain("deepLabel('topicContext', lang)");
+    expect(generatorsSrc).toContain("deepLabel('documentIntelligence', lang)");
+    expect(generatorsSrc).toContain("deepLabel('strategicImplications', lang)");
+    expect(generatorsSrc).toContain("deepLabel('keyTakeaways', lang)");
   });
 
   // Verify buildExecutiveSummary produces <section> with expected CSS class
   it('buildExecutiveSummary produces section with executive-summary class', () => {
-    expect(generatorsSrcForDepth).toContain('class="executive-intelligence-summary"');
+    expect(generatorsSrc).toContain('class="executive-intelligence-summary"');
   });
 
   // Verify buildPredictiveAssessment and buildHistoricalContext produce expected sections
   it('buildPredictiveAssessment produces section with predictive-assessment class', () => {
-    expect(generatorsSrcForDepth).toContain('class="predictive-assessment"');
+    expect(generatorsSrc).toContain('class="predictive-assessment"');
   });
 
   it('buildHistoricalContext produces section with historical-context class', () => {
-    expect(generatorsSrcForDepth).toContain('class="historical-context"');
+    expect(generatorsSrc).toContain('class="historical-context"');
   });
 
   it('buildMethodologySection produces section with methodology-confidence class', () => {
-    expect(generatorsSrcForDepth).toContain('class="methodology-confidence"');
+    expect(generatorsSrc).toContain('class="methodology-confidence"');
   });
 
   // Verify deriveConfidence is called for predictive and methodology sections
   it('deriveConfidence heuristic is used for confidence scoring', () => {
-    expect(generatorsSrcForDepth).toContain('deriveConfidence(');
+    expect(generatorsSrc).toContain('deriveConfidence(');
     // Named constants for confidence/prediction heuristics
-    expect(generatorsSrcForDepth).toContain('ENRICHMENT_WEIGHT');
-    expect(generatorsSrcForDepth).toContain('MAX_DOCUMENT_BONUS');
-    expect(generatorsSrcForDepth).toContain('BASE_PASSAGE_PROBABILITY');
+    expect(generatorsSrc).toContain('ENRICHMENT_WEIGHT');
+    expect(generatorsSrc).toContain('MAX_DOCUMENT_BONUS');
+    expect(generatorsSrc).toContain('BASE_PASSAGE_PROBABILITY');
   });
 });
 

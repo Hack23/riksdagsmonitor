@@ -73,10 +73,10 @@ export const focusTopic: string = parseArgValue(focusTopicArg);
  *  4 — full report: adds quality-review iteration in methodology (4 iterations)
  */
 const rawDepth: string = parseArgValue(depthArg);
-const depthPresent: boolean = !!depthArg;
+const depthArgProvided: boolean = !!depthArg;
 const parsedDepthNum: number = rawDepth ? Number(rawDepth) : NaN;
 const depthIsValid: boolean = Number.isInteger(parsedDepthNum) && parsedDepthNum >= 1 && parsedDepthNum <= 4;
-if (depthPresent && !depthIsValid) {
+if (depthArgProvided && !depthIsValid) {
   console.warn(`Invalid --depth value "${rawDepth}" (expected integer 1–4), falling back to default 1.`);
 }
 const safeDepth: number = depthIsValid ? parsedDepthNum : 1;
