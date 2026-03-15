@@ -290,7 +290,7 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
       <img src="../images/riksdagsmonitornews-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
     </div>
     <div class="hero-header-text">
-      <h1>${title}</h1>
+      <h1>${escapeHtml(title)}</h1>
       <div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}</div>
     </div>
     <a href="${getNewsIndexFilename(ALL_LANG_CODES.includes(lang as Language) ? lang : 'en')}" aria-label="Riksdagsmonitor News">
