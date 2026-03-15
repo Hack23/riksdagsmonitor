@@ -106,18 +106,6 @@ export interface ContentLabelSet {
   noInterpellations: string;
   /** Analytical lede for interpellations articles */
   interpellationsBreakdown: (n: number) => string;
-  /** Section heading for debate dynamics */
-  debateDynamics: string;
-  /** Label for the target minister (recipient), e.g. "Directed to" */
-  ministerAccountability: string;
-  /** Section heading for accountability analysis */
-  accountabilityAnalysis: string;
-  /** Author attribution for interpellations (e.g. "Interpellation by") */
-  interpellationBy: string;
-  /** Debate dynamics context — interpellations-specific (replaces oppositionStrategyContext for interpellations) */
-  interpellationsScrutinyContext: (n: number) => string;
-  /** Accountability analysis context — interpellations-specific (replaces policyImplicationsContext for interpellations) */
-  interpellationsAccountabilityContext: (count: number, domains: number) => string;
   // Localized body text labels (avoid hardcoded en/sv fallbacks)
   committeeCountContext: (n: number) => string;
   committeeActivityTakeaway: (committees: string, extra: number) => string;

@@ -2,9 +2,9 @@
  * Unit Tests for Interpellations Content Generator
  * Validates:
  * - Output does not contain motion/proposition-specific phrasing
- * - Minister target extraction does not misparse titles like "... till Gaza"
  * - Interpellations label keys exist for all 14 languages
- * - Party rendering skips missing/unknown parties (no "OTHER")
+ * - Party rendering and coalition dynamics work correctly
+ * - Empty state renders appropriately
  */
 
 import { describe, it, expect, afterEach, vi } from 'vitest';
@@ -41,14 +41,9 @@ describe('Interpellations Content Generator', () => {
       'noInterpellations',
       'interpellationDefault',
       'interpellationsBreakdown',
-      'debateDynamics',
-      'ministerAccountability',
-      'accountabilityAnalysis',
       'readFullInterpellation',
-      'interpellationBy',
-      'interpellationsScrutinyContext',
-      'interpellationsAccountabilityContext',
       'partyInterpellationsFiled',
+      'interpellationStrategyContext',
     ] as const;
 
     ALL_LANGUAGES.forEach((lang) => {
@@ -67,22 +62,11 @@ describe('Interpellations Content Generator', () => {
       expect(fn(3)).toContain('3');
     });
 
-    it('should have function-valued interpellationsScrutinyContext for en', () => {
-      const fn = CONTENT_LABELS.en.interpellationsScrutinyContext;
+    it('should have function-valued interpellationStrategyContext for en', () => {
+      const fn = CONTENT_LABELS.en.interpellationStrategyContext;
       expect(typeof fn).toBe('function');
       const result = fn(4);
       expect(result).toContain('4');
-      expect(result).not.toContain('Motion');
-      expect(result).not.toContain('motion');
-    });
-
-    it('should have function-valued interpellationsAccountabilityContext for en', () => {
-      const fn = CONTENT_LABELS.en.interpellationsAccountabilityContext;
-      expect(typeof fn).toBe('function');
-      const result = fn(5, 3);
-      expect(result).toContain('5');
-      expect(result).toContain('3');
-      expect(result).not.toContain('proposition');
     });
 
     it('should have function-valued partyInterpellationsFiled for en', () => {
@@ -94,20 +78,10 @@ describe('Interpellations Content Generator', () => {
       expect(result).toContain('interpellation');
       expect(result).not.toContain('motion');
     });
-
-    it('ministerAccountability should NOT say "Minister Response" in en', () => {
-      expect(CONTENT_LABELS.en.ministerAccountability).not.toContain('Response');
-      expect(CONTENT_LABELS.en.ministerAccountability).toContain('Directed');
-    });
-
-    it('ministerAccountability should NOT say "Ministersvar" in sv', () => {
-      expect(CONTENT_LABELS.sv.ministerAccountability).not.toContain('Ministersvar');
-      expect(CONTENT_LABELS.sv.ministerAccountability).toContain('Riktat');
-    });
   });
 
   describe('Output content', () => {
-    it('should generate interpellations content without motion phrasing', () => {
+    it('should generate interpellations content with interpellation-specific heading', () => {
       const data = {
         interpellations: [
           {
@@ -133,37 +107,15 @@ describe('Interpellations Content Generator', () => {
 
       // Should contain interpellations-specific content
       expect(result).toContain('Interpellation');
-      expect(result).toContain('Debate Dynamics');
-      expect(result).toContain('Accountability Analysis');
+      expect(result).toContain('interpellation-entry');
 
       // Should NOT contain motion-specific phrasing
       expect(result).not.toContain('Opposition Motions');
       expect(result).not.toContain('Read the full motion');
       expect(result).not.toContain('motion-entry');
-      // Should not use the motions-specific "Motions from X parties" label
-      expect(result).not.toMatch(/Motions from \d+ different parties/);
     });
 
-    it('should not contain proposition-specific phrasing in accountability section', () => {
-      const data = {
-        interpellations: [
-          {
-            titel: 'Om försvaret till statsrådet',
-            parti: 'M',
-            url: 'https://riksdagen.se/ip3',
-            dokumentnamn: 'IP 2025/26:3',
-            intressent_namn: 'Defense Person',
-          },
-        ] as MockInterpellation[],
-      };
-
-      const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      // Should not reference propositions in the accountability section
-      expect(result).not.toContain('propositions touch on');
-      expect(result).not.toContain('legislative ambition');
-    });
-
-    it('should use interpellations-specific party count label', () => {
+    it('should use interpellations-specific party count in coalition dynamics', () => {
       const data = {
         interpellations: [
           { titel: 'IP 1', parti: 'V', url: '#', dokumentnamn: 'IP1' },
@@ -176,212 +128,19 @@ describe('Interpellations Content Generator', () => {
       expect(result).toContain('interpellation');
       expect(result).not.toMatch(/\d+ motion[s]? filed/);
     });
-  });
 
-  describe('Minister target extraction', () => {
-    it('should extract target from mottagare field', () => {
+    it('should render parliamentary oversight strategy for multi-party interpellations', () => {
       const data = {
         interpellations: [
-          {
-            titel: 'Fråga om humanitär hjälp till Gaza',
-            parti: 'V',
-            url: '#',
-            dokumentnamn: 'IP1',
-            mottagare: 'Utrikesministern',
-          },
+          { titel: 'IP 1', parti: 'V', url: '#', dokumentnamn: 'IP1' },
+          { titel: 'IP 2', parti: 'S', url: '#', dokumentnamn: 'IP2' },
+          { titel: 'IP 3', parti: 'M', url: '#', dokumentnamn: 'IP3' },
         ] as MockInterpellation[],
       };
 
       const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      expect(result).toContain('Utrikesministern');
-    });
-
-    it('should NOT extract "Gaza" as minister from title "... till Gaza"', () => {
-      const data = {
-        interpellations: [
-          {
-            titel: 'Humanitär hjälp till Gaza – en fråga om solidaritet',
-            parti: 'V',
-            url: '#',
-            dokumentnamn: 'IP1',
-            // No mottagare field
-          },
-        ] as MockInterpellation[],
-      };
-
-      const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      // Should NOT show "Gaza" as a minister target
-      expect(result).not.toContain('Directed to</strong> Gaza');
-      expect(result).not.toContain('Directed to:</strong> Gaza');
-    });
-
-    it('should extract target from "till X statsråd" pattern', () => {
-      const data = {
-        interpellations: [
-          {
-            titel: 'Interpellation till justitie- och inrikesminister',
-            parti: 'SD',
-            url: '#',
-            dokumentnamn: 'IP1',
-          },
-        ] as MockInterpellation[],
-      };
-
-      const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      // The regex should match "till justitie- och inrikes" before "minister"
-      expect(result).toContain('Directed to');
-    });
-
-    it('should extract full compound minister title like "utrikesminister"', () => {
-      const data = {
-        interpellations: [
-          {
-            titel: 'Fråga till utrikesministern om bistånd',
-            parti: 'V',
-            url: '#',
-            dokumentnamn: 'IP2',
-          },
-        ] as MockInterpellation[],
-      };
-
-      const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      // The regex should capture "utrikesministern" — not just "utrikes"
-      expect(result).toContain('utrikesministern');
-    });
-
-    it('should extract full compound "finansministern" target', () => {
-      const data = {
-        interpellations: [
-          {
-            titel: 'Interpellation till finansministern',
-            parti: 'M',
-            url: '#',
-            dokumentnamn: 'IP3',
-          },
-        ] as MockInterpellation[],
-      };
-
-      const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      expect(result).toContain('finansministern');
-    });
-
-    it('should capture possessive "ministerns" suffix (not drop trailing s)', () => {
-      const data = {
-        interpellations: [
-          {
-            titel: 'Interpellation till finansministerns ansvar',
-            parti: 'S',
-            url: '#',
-            dokumentnamn: 'IP4',
-          },
-        ] as MockInterpellation[],
-      };
-
-      const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      expect(result).toContain('finansministerns');
-    });
-
-    it('should capture "statsrådets" inflection', () => {
-      const data = {
-        interpellations: [
-          {
-            titel: 'Interpellation till statsrådets politik',
-            parti: 'V',
-            url: '#',
-            dokumentnamn: 'IP5',
-          },
-        ] as MockInterpellation[],
-      };
-
-      const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      expect(result).toContain('statsrådets');
-    });
-
-    it('should extract compound minister title with Swedish diacritics like "miljöministern"', () => {
-      const data = {
-        interpellations: [
-          {
-            titel: 'Interpellation till miljöministern om kemikaliepolitiken',
-            parti: 'MP',
-            url: '#',
-            dokumentnamn: 'IP-MILJO',
-          },
-        ] as MockInterpellation[],
-      };
-
-      const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      // The regex must match ö in "miljöministern" via Unicode \p{L}
-      expect(result).toContain('miljöministern');
-    });
-
-    it('should extract compound minister title with ö like "försvarsministern"', () => {
-      const data = {
-        interpellations: [
-          {
-            titel: 'Interpellation till försvarsministern om säkerhetspolitik',
-            parti: 'S',
-            url: '#',
-            dokumentnamn: 'IP-FORSVAR',
-          },
-        ] as MockInterpellation[],
-      };
-
-      const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      expect(result).toContain('försvarsministern');
-    });
-  });
-
-  describe('Party rendering', () => {
-    it('should NOT display "OTHER" when party is missing', () => {
-      const data = {
-        interpellations: [
-          {
-            titel: 'Test interpellation',
-            url: '#',
-            dokumentnamn: 'IP1',
-            intressent_namn: 'Some Author',
-            // parti is not set
-          },
-        ] as MockInterpellation[],
-      };
-
-      const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      expect(result).not.toContain('OTHER');
-    });
-
-    it('should NOT display "OTHER" when party is "Unknown"', () => {
-      const data = {
-        interpellations: [
-          {
-            titel: 'Test interpellation',
-            url: '#',
-            dokumentnamn: 'IP1',
-            intressent_namn: 'Some Author',
-            parti: 'Unknown',
-          },
-        ] as MockInterpellation[],
-      };
-
-      const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      expect(result).not.toContain('OTHER');
-      expect(result).not.toContain('UNKNOWN');
-    });
-
-    it('should display actual party when present', () => {
-      const data = {
-        interpellations: [
-          {
-            titel: 'Test interpellation',
-            url: '#',
-            dokumentnamn: 'IP1',
-            intressent_namn: 'Some Author',
-            parti: 'V',
-          },
-        ] as MockInterpellation[],
-      };
-
-      const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      expect(result).toContain('Party:</strong> V');
+      // Should contain multi-party strategy context
+      expect(result).toContain('Opposition Strategy');
     });
   });
 
@@ -391,62 +150,15 @@ describe('Interpellations Content Generator', () => {
       const result = generateArticleContent(data, 'interpellations', 'en') as string;
       expect(result).toContain('No interpellations');
     });
-  });
 
-  describe('Author sentinel filtering', () => {
-    it('should NOT display "Unknown" as author name', () => {
-      const data = {
-        interpellations: [
-          {
-            titel: 'Test interpellation',
-            url: '#',
-            dokumentnamn: 'IP1',
-            intressent_namn: 'Unknown',
-            parti: 'V',
-          },
-        ] as MockInterpellation[],
-      };
-
-      const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      // Should not render the sentinel value "Unknown" to readers
-      expect(result).not.toContain('Interpellation by:</strong> Unknown');
-    });
-
-    it('should NOT display "unknown" (lowercase) as author name', () => {
-      const data = {
-        interpellations: [
-          {
-            titel: 'Test interpellation',
-            url: '#',
-            dokumentnamn: 'IP1',
-            author: 'unknown',
-          },
-        ] as MockInterpellation[],
-      };
-
-      const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      expect(result).not.toContain('Interpellation by:</strong> unknown');
-    });
-
-    it('should display real author names', () => {
-      const data = {
-        interpellations: [
-          {
-            titel: 'Test interpellation',
-            url: '#',
-            dokumentnamn: 'IP1',
-            intressent_namn: 'Anna Andersson',
-            parti: 'S',
-          },
-        ] as MockInterpellation[],
-      };
-
-      const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      expect(result).toContain('Interpellation by:</strong> Anna Andersson');
+    it('should show Swedish no-interpellations message', () => {
+      const data = { interpellations: [] as MockInterpellation[] };
+      const result = generateArticleContent(data, 'interpellations', 'sv') as string;
+      expect(result).toContain('Inga interpellationer');
     });
   });
 
-  describe('Data fallback', () => {
+  describe('Data contract', () => {
     it('should use data.interpellations when provided', () => {
       const data = {
         interpellations: [
@@ -464,13 +176,48 @@ describe('Interpellations Content Generator', () => {
       expect(result).not.toContain('No interpellations');
     });
 
-    it('should show empty state when interpellations is empty', () => {
+    it('should show empty state when interpellations array is empty', () => {
       const data = {
         interpellations: [] as MockInterpellation[],
       };
 
       const result = generateArticleContent(data, 'interpellations', 'en') as string;
       expect(result).toContain('No interpellations');
+    });
+  });
+
+  describe('Analytical lede', () => {
+    it('should include analytical lede with document count', () => {
+      const data = {
+        interpellations: [
+          { titel: 'IP 1', parti: 'V', url: '#', dokumentnamn: 'IP1' },
+          { titel: 'IP 2', parti: 'S', url: '#', dokumentnamn: 'IP2' },
+          { titel: 'IP 3', parti: 'M', url: '#', dokumentnamn: 'IP3' },
+        ] as MockInterpellation[],
+      };
+
+      const result = generateArticleContent(data, 'interpellations', 'en') as string;
+      expect(result).toContain('article-lede');
+      expect(result).toContain('3');
+    });
+  });
+
+  describe('Policy analysis', () => {
+    it('should render ip-specific policy analysis text (not committee review)', () => {
+      const data = {
+        interpellations: [
+          {
+            titel: 'Interpellation om vård',
+            parti: 'V',
+            url: '#',
+            dokumentnamn: 'IP1',
+          },
+        ] as MockInterpellation[],
+      };
+
+      const result = generateArticleContent(data, 'interpellations', 'en') as string;
+      // The ip-specific policy analysis should reference accountability, not committee review
+      expect(result).not.toContain('Requires committee review');
     });
   });
 });
