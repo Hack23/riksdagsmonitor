@@ -397,6 +397,18 @@ function isSfsDoc(doc: RawDocument): boolean {
 }
 
 /**
+ * Normalize document type key, treating SFS-by-name documents (missing `doktyp`
+ * but with `dokumentnamn` starting with 'SFS') as `'sfs'` and empty types as `'other'`.
+ * Reuse this everywhere a doc-type key is needed (mindmap, dashboard, confidence).
+ */
+function normalizedDocType(doc: RawDocument): string {
+  const raw = docType(doc);
+  if (raw) return raw;
+  if (isSfsDoc(doc)) return 'sfs';
+  return 'other';
+}
+
+/**
  * Unified predicate for "document has enriched full content available".
  * `contentFetched` alone only means metadata was retrieved; actual full-text
  * or full-HTML content may still be absent (e.g., `include_full_text=false`).
@@ -1043,7 +1055,7 @@ function buildMindmapBranches(
   // Document type branch
   const typeCounts: Record<string, number> = {};
   docs.forEach(d => {
-    const t = docType(d) || 'other';
+    const t = normalizedDocType(d);
     typeCounts[t] = (typeCounts[t] || 0) + 1;
   });
   const typeKeys = Object.keys(typeCounts);
@@ -1132,7 +1144,7 @@ function buildDashboardData(
 ): DashboardData {
   const typeCounts: Record<string, number> = {};
   docs.forEach(d => {
-    const t = docType(d) || 'other';
+    const t = normalizedDocType(d);
     typeCounts[t] = (typeCounts[t] || 0) + 1;
   });
 
@@ -1159,7 +1171,7 @@ function calculateConfidenceScore(docs: RawDocument[]): number {
   if (docs.length === 0) return 0;
   const enriched = docs.filter(hasEnrichedContent).length;
   const enrichmentRatio = enriched / docs.length;
-  const typeVariety = new Set(docs.map(docType)).size;
+  const typeVariety = new Set(docs.map(normalizedDocType)).size;
   // Score: 0-100
   // - enrichment ratio contributes 50%  (based on actual full content)
   // - doc count (up to 10) contributes 30%

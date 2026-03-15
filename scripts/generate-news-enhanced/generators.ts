@@ -1961,7 +1961,11 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       };
       writeAnalysisMetadata(slug, iterationMetadata);
 
-      // Topic-focused deep-inspection content (NOT generic content)
+      // Topic-focused deep-inspection content (template-driven body text).
+      // At this stage the AI pipeline supplies structured sections (SWOT,
+      // dashboard, mindmap, Sankey, watch points) while the main narrative
+      // body is still produced by generateDeepInspectionContent(). Wiring
+      // AI-derived narrative into the article body is the next phase.
       const content: string = generateDeepInspectionContent(enrichedDocs, sanitizedTopic, lang);
 
       // Metadata derived from document data
