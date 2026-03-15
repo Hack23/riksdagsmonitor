@@ -188,6 +188,9 @@ START_TIME=$(date +%s)
 3. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
+6. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
+7. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
+8. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
 
 ## Step 1: Date Validation & MCP Health Check
 
