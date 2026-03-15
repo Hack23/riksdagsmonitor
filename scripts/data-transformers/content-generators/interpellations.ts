@@ -32,8 +32,8 @@ import { detectPolicyDomains, generateDeepPolicyAnalysis } from '../policy-analy
  * Groups interpellations by target minister and provides accountability analysis.
  */
 export function generateInterpellationsContent(data: ArticleContentData, lang: Language | string): string {
-  // Interpellations are stored in the motions field for backward compatibility
-  const interpellations = data.motions || [];
+  // Prefer dedicated interpellations field; fall back to motions for backward compatibility
+  const interpellations = data.interpellations || data.motions || [];
 
   const headingVal = L(lang, 'interpellationsTag');
   let content = `<h2>${String(headingVal)}</h2>\n`;

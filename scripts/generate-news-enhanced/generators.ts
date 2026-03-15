@@ -98,7 +98,7 @@ export async function generateWeekAhead(): Promise<GenerationResult> {
         events: events as Parameters<typeof transformCalendarToEventGrid>[0],
         documents,
         questions,
-        interpellations,
+        interpellations: interpellations as RawDocument[],
         highlights: [] as Array<{title: string; description: string}>,
       };
       const content: string = generateArticleContent(weekData, 'week-ahead', lang);
@@ -443,10 +443,10 @@ export async function generateInterpellations(): Promise<GenerationResult> {
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
-      const typedInterps = interpellations as Parameters<typeof generateArticleContent>[0]['motions'];
-      const content: string = generateArticleContent({ motions: typedInterps }, 'interpellations', lang);
-      const watchPoints = extractWatchPoints({ motions: typedInterps }, lang);
-      const metadata = generateMetadata({ motions: typedInterps }, 'interpellations', lang);
+      const typedInterps = interpellations as Parameters<typeof generateArticleContent>[0]['interpellations'];
+      const content: string = generateArticleContent({ interpellations: typedInterps }, 'interpellations', lang);
+      const watchPoints = extractWatchPoints({ interpellations: typedInterps }, lang);
+      const metadata = generateMetadata({ interpellations: typedInterps }, 'interpellations', lang);
       const readTime: string = calculateReadTime(content);
       const sources: string[] = generateSources(['get_interpellationer', 'get_dokument_innehall']);
 

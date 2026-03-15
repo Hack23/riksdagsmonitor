@@ -61,43 +61,43 @@ const sampleInterpellations = [
 describe('Interpellations Content Generator', () => {
   describe('Dedicated generator output', () => {
     it('should use interpellationsTag heading, not oppMotions', () => {
-      const content = generateInterpellationsContent({ motions: sampleInterpellations }, 'en');
+      const content = generateInterpellationsContent({ interpellations: sampleInterpellations }, 'en');
       expect(content).toContain('Interpellation Debates');
       expect(content).not.toContain('Opposition Motions');
     });
 
     it('should use interpellationsTag heading in Swedish', () => {
-      const content = generateInterpellationsContent({ motions: sampleInterpellations }, 'sv');
+      const content = generateInterpellationsContent({ interpellations: sampleInterpellations }, 'sv');
       expect(content).toContain('Interpellationsdebatter');
       expect(content).not.toContain('Oppositionens motioner');
     });
 
     it('should use interpellationsTag heading in German', () => {
-      const content = generateInterpellationsContent({ motions: sampleInterpellations }, 'de');
+      const content = generateInterpellationsContent({ interpellations: sampleInterpellations }, 'de');
       expect(content).toContain('Interpellationsdebatten');
       expect(content).not.toContain('Oppositionsanträge');
     });
 
     it('should group interpellations by target minister', () => {
-      const content = generateInterpellationsContent({ motions: sampleInterpellations }, 'en');
+      const content = generateInterpellationsContent({ interpellations: sampleInterpellations }, 'en');
       expect(content).toContain('Socialminister Jakob Forssmed');
       expect(content).toContain('Försvarsminister Pål Jonson');
       expect(content).toContain('Skolminister Lotta Edholm');
     });
 
     it('should show ministerial accountability section heading', () => {
-      const content = generateInterpellationsContent({ motions: sampleInterpellations }, 'en');
+      const content = generateInterpellationsContent({ interpellations: sampleInterpellations }, 'en');
       expect(content).toContain('Ministerial Accountability');
     });
 
     it('should show interpellationsBreakdown lede paragraph', () => {
-      const content = generateInterpellationsContent({ motions: sampleInterpellations }, 'en');
+      const content = generateInterpellationsContent({ interpellations: sampleInterpellations }, 'en');
       expect(content).toContain('3 interpellations');
       expect(content).toContain('ministerial accountability');
     });
 
     it('should use readFullInterpellation, not readFullMotion link text', () => {
-      const content = generateInterpellationsContent({ motions: sampleInterpellations }, 'en');
+      const content = generateInterpellationsContent({ interpellations: sampleInterpellations }, 'en');
       // Interpellation-specific link text must be present
       expect(content).toContain('View interpellation');
       // Motion-specific link text must NOT appear in interpellation articles
@@ -105,19 +105,19 @@ describe('Interpellations Content Generator', () => {
     });
 
     it('should show opposition oversight section', () => {
-      const content = generateInterpellationsContent({ motions: sampleInterpellations }, 'en');
+      const content = generateInterpellationsContent({ interpellations: sampleInterpellations }, 'en');
       expect(content).toContain('Opposition Oversight');
     });
 
     it('should show party activity in oversight section', () => {
-      const content = generateInterpellationsContent({ motions: sampleInterpellations }, 'en');
+      const content = generateInterpellationsContent({ interpellations: sampleInterpellations }, 'en');
       // S party has 2 interpellations, V has 1
       expect(content).toContain('S');
       expect(content).toContain('V');
     });
 
     it('should handle empty interpellations gracefully', () => {
-      const content = generateInterpellationsContent({ motions: [] }, 'en');
+      const content = generateInterpellationsContent({ interpellations: [] }, 'en');
       expect(content).toContain('No interpellations available');
       expect(content).not.toContain('Ministerial Accountability');
     });
@@ -134,7 +134,7 @@ describe('Interpellations Content Generator', () => {
           datum: '2026-03-10',
         },
       ];
-      const content = generateInterpellationsContent({ motions: noMinisterInterps }, 'en');
+      const content = generateInterpellationsContent({ interpellations: noMinisterInterps }, 'en');
       expect(content).toContain('Interpellation');
       // Should not crash and should still render the entry
       expect(content).toContain('Karin Svensson Smith');
@@ -154,13 +154,13 @@ describe('Interpellations Content Generator', () => {
           datum: '2026-03-10',
         },
       ];
-      const content = generateInterpellationsContent({ motions: mixed }, 'en');
+      const content = generateInterpellationsContent({ interpellations: mixed }, 'en');
       expect(content).toContain('Other documents');
       expect(content).not.toContain('Independent Motions');
     });
 
     it('should demote entry headings to h4 under minister h3 sections', () => {
-      const content = generateInterpellationsContent({ motions: sampleInterpellations }, 'en');
+      const content = generateInterpellationsContent({ interpellations: sampleInterpellations }, 'en');
       // Minister names should be h3
       expect(content).toMatch(/<h3>.*Socialminister.*<\/h3>/);
       // Entry titles under ministers should be h4 (demoted from h3)
@@ -179,18 +179,24 @@ describe('Interpellations Content Generator', () => {
     });
 
     it('should use partyInterpellationsFiled in oversight section, not interpellationBy', () => {
-      const content = generateInterpellationsContent({ motions: sampleInterpellations }, 'en');
+      const content = generateInterpellationsContent({ interpellations: sampleInterpellations }, 'en');
       // Should use grammatical aggregate label like "S: 2 interpellations filed"
       expect(content).toContain('interpellations filed');
       // Should NOT use the awkward per-entry "Filed by" label in aggregate context
       const oversightSection = content.split('Opposition Oversight')[1] || '';
       expect(oversightSection).not.toMatch(/<strong>S<\/strong>: Filed by/);
     });
+
+    it('should fall back to data.motions when data.interpellations is absent (backward compat)', () => {
+      const content = generateInterpellationsContent({ motions: sampleInterpellations }, 'en');
+      expect(content).toContain('Interpellation Debates');
+      expect(content).toContain('Socialminister Jakob Forssmed');
+    });
   });
 
   describe('Routing via generateArticleContent', () => {
     it('should route interpellations type to interpellations generator, not motions', () => {
-      const content = generateArticleContent({ motions: sampleInterpellations }, 'interpellations', 'en') as string;
+      const content = generateArticleContent({ interpellations: sampleInterpellations }, 'interpellations', 'en') as string;
       expect(content).toContain('Interpellation Debates');
       expect(content).not.toContain('Opposition Motions');
     });
@@ -202,7 +208,7 @@ describe('Interpellations Content Generator', () => {
     });
 
     it('should route interpellations in Swedish to interpellations generator', () => {
-      const content = generateArticleContent({ motions: sampleInterpellations }, 'interpellations', 'sv') as string;
+      const content = generateArticleContent({ interpellations: sampleInterpellations }, 'interpellations', 'sv') as string;
       expect(content).toContain('Interpellationsdebatter');
       expect(content).not.toContain('Oppositionens motioner');
     });
@@ -211,7 +217,7 @@ describe('Interpellations Content Generator', () => {
   describe('Multi-language support', () => {
     for (const lang of LANGUAGES) {
       it(`should generate valid non-empty content in ${lang}`, () => {
-        const content = generateInterpellationsContent({ motions: sampleInterpellations }, lang);
+        const content = generateInterpellationsContent({ interpellations: sampleInterpellations }, lang);
         expect(content).toBeTruthy();
         expect(content.length).toBeGreaterThan(100);
         // Should contain h2 headings
@@ -224,7 +230,7 @@ describe('Interpellations Content Generator', () => {
       });
 
       it(`should have interpellationsTag heading in ${lang}`, () => {
-        const content = generateInterpellationsContent({ motions: sampleInterpellations }, lang);
+        const content = generateInterpellationsContent({ interpellations: sampleInterpellations }, lang);
         const tag = CONTENT_LABELS[lang as Language]?.interpellationsTag;
         if (typeof tag === 'string' && tag.length > 0) {
           expect(content).toContain(tag);
