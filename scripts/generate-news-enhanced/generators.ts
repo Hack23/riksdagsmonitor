@@ -852,7 +852,7 @@ function docTypeLabel(doktyp: string, lang: Language, count?: number): string {
  * content from each document and the 5W deep-analysis framework.
  *
  * @param depth - Analysis depth (1–4). Higher depth adds more intelligence sections:
- *   1 = Topic Context + Document Intelligence + Strategic Implications + Key Takeaways
+ *   1 = Topic Context + Document Intelligence + 5W Deep Analysis + Strategic Implications + Key Takeaways
  *   2 = depth 1 + Predictive Assessment + Historical Context
  *   3 = depth 2 + Executive Intelligence Summary + Methodology (3 iterations)
  *   4 = depth 3 + quality-review iteration in Methodology (4 iterations)
@@ -1314,72 +1314,72 @@ function buildPredictiveAssessment(docs: RawDocument[], topic: string | null, la
 
   const sections: Partial<Record<Language, { outcome: string; coalition: string; scenarios: string }>> = {
     en: {
-      outcome: `Based on document composition analysis, the probability of legislative passage${topic ? ` for <strong>${topicStr}</strong>` : ''} is estimated at <strong>${passagePct}%</strong>, with a ${blockPct}% probability of delay or amendment. ${propCount > 0 ? `${propCount} active proposition${propCount !== 1 ? 's' : ''} indicate committed government intent.` : ''} ${betCount > 0 ? `${betCount} committee report${betCount !== 1 ? 's' : ''} confirm parliamentary engagement.` : ''} ${sfsDocs.length > 0 ? 'Enacted statutes confirm legal framework establishment.' : ''}`,
+      outcome: `Based on document composition analysis, the probability of legislative passage for <strong>${topicStr}</strong> is estimated at <strong>${passagePct}%</strong>, with a ${blockPct}% probability of delay or amendment. ${propCount > 0 ? `${propCount} active proposition${propCount !== 1 ? 's' : ''} indicate committed government intent.` : ''} ${betCount > 0 ? `${betCount} committee report${betCount !== 1 ? 's' : ''} confirm parliamentary engagement.` : ''} ${sfsDocs.length > 0 ? 'Enacted statutes confirm legal framework establishment.' : ''}`,
       coalition: `Coalition stability assessment: ${betCount > motCount ? 'High — committee activity suggests governing coalition alignment.' : motCount > betCount ? 'Moderate — active opposition motions signal coalition stress points.' : 'Moderate — balanced legislative activity indicates ongoing negotiation.'} Monitor subsequent committee votes as the primary coalition stability indicator. Overall analysis confidence: <strong>${confidence}%</strong>.`,
-      scenarios: `<ul class="risk-scenarios"><li><strong>Best case (${passagePct}% probability):</strong> ${topic ? `${topicStr} legislation passes with cross-party support, entering implementation phase.` : 'Key legislation advances with broad parliamentary consensus.'}</li><li><strong>Most likely case:</strong> ${betCount > 0 ? 'Committee scrutiny leads to amendments before final vote, delaying implementation by 3–6 months.' : 'Legislation proceeds through normal parliamentary cycle with minor modifications.'}</li><li><strong>Worst case (${blockPct}% probability):</strong> ${motCount > propCount ? 'Opposition motions gain traction, forcing significant policy revisions or deferral to next session.' : 'External developments or coalition disagreements cause unexpected delay or withdrawal.'}</li></ul>`,
+      scenarios: `<ul class="risk-scenarios"><li><strong>Best case (${passagePct}% probability):</strong> ${topicStr} legislation passes with cross-party support, entering implementation phase.</li><li><strong>Most likely case:</strong> ${betCount > 0 ? 'Committee scrutiny leads to amendments before final vote, delaying implementation by 3–6 months.' : 'Legislation proceeds through normal parliamentary cycle with minor modifications.'}</li><li><strong>Worst case (${blockPct}% probability):</strong> ${motCount > propCount ? 'Opposition motions gain traction, forcing significant policy revisions or deferral to next session.' : 'External developments or coalition disagreements cause unexpected delay or withdrawal.'}</li></ul>`,
     },
     sv: {
-      outcome: `Baserat på dokumentsammansättningsanalys uppskattas sannolikheten för lagstiftningspassage${topic ? ` för <strong>${topicStr}</strong>` : ''} till <strong>${passagePct}%</strong>, med ${blockPct}% sannolikhet för fördröjning eller ändring. ${propCount > 0 ? `${propCount} aktiv${propCount !== 1 ? 'a' : ''} proposition${propCount !== 1 ? 'er' : ''} visar regeringens engagemang.` : ''} Analyskonfidens: <strong>${confidence}%</strong>.`,
+      outcome: `Baserat på dokumentsammansättningsanalys uppskattas sannolikheten för lagstiftningspassage för <strong>${topicStr}</strong> till <strong>${passagePct}%</strong>, med ${blockPct}% sannolikhet för fördröjning eller ändring. ${propCount > 0 ? `${propCount} aktiv${propCount !== 1 ? 'a' : ''} proposition${propCount !== 1 ? 'er' : ''} visar regeringens engagemang.` : ''} Analyskonfidens: <strong>${confidence}%</strong>.`,
       coalition: `Koalitionsstabilitetsbedömning: ${betCount > motCount ? 'Hög — utskottsaktivitet tyder på koalitionsanpassning.' : motCount > betCount ? 'Måttlig — aktiva oppositionsmotioner signalerar stressmoment.' : 'Måttlig — balanserad aktivitet indikerar pågående förhandlingar.'}`,
       scenarios: `<ul class="risk-scenarios"><li><strong>Bästa scenariot (${passagePct}% sannolikhet):</strong> Lagstiftning antas med bred parlamentarisk konsensus.</li><li><strong>Troligaste scenariot:</strong> Utskottsgranskning leder till ändringar innan slutomröstning, med 3–6 månaders försenad implementering.</li><li><strong>Sämsta scenariot (${blockPct}% sannolikhet):</strong> ${motCount > propCount ? 'Oppositionsinitiativ tvingar till väsentliga policyrevisioner.' : 'Externa omständigheter orsakar oväntad försening.'}</li></ul>`,
     },
     de: {
-      outcome: `Basierend auf der Dokumentzusammensetzung wird die Wahrscheinlichkeit einer gesetzlichen Verabschiedung${topic ? ` für <strong>${topicStr}</strong>` : ''} auf <strong>${passagePct}%</strong> geschätzt. Analysekonfidens: <strong>${confidence}%</strong>.`,
+      outcome: `Basierend auf der Dokumentzusammensetzung wird die Wahrscheinlichkeit einer gesetzlichen Verabschiedung für <strong>${topicStr}</strong> auf <strong>${passagePct}%</strong> geschätzt. Analysekonfidens: <strong>${confidence}%</strong>.`,
       coalition: `Koalitionsstabilitätsbewertung: ${betCount > motCount ? 'Hoch — Ausschussaktivität deutet auf Koalitionsausrichtung hin.' : 'Mittel — laufende Verhandlungen erforderlich.'}`,
       scenarios: `<ul class="risk-scenarios"><li><strong>Bestes Szenario (${passagePct}%):</strong> Gesetze werden mit breitem Konsens verabschiedet.</li><li><strong>Wahrscheinlichstes Szenario:</strong> Ausschussprüfung führt zu Änderungen vor der Endabstimmung.</li><li><strong>Schlimmstes Szenario (${blockPct}%):</strong> Unerwartete Verzögerungen aufgrund externer Faktoren.</li></ul>`,
     },
     fr: {
-      outcome: `Sur la base de l'analyse de la composition des documents, la probabilité de passage législatif${topic ? ` pour <strong>${topicStr}</strong>` : ''} est estimée à <strong>${passagePct}%</strong>. Confiance d'analyse : <strong>${confidence}%</strong>.`,
+      outcome: `Sur la base de l'analyse de la composition des documents, la probabilité de passage législatif pour <strong>${topicStr}</strong> est estimée à <strong>${passagePct}%</strong>. Confiance d'analyse : <strong>${confidence}%</strong>.`,
       coalition: `Évaluation de la stabilité de coalition : ${betCount > motCount ? 'Élevée — l\'activité des commissions suggère un alignement de la coalition.' : 'Modérée — négociations en cours nécessaires.'}`,
       scenarios: `<ul class="risk-scenarios"><li><strong>Meilleur cas (${passagePct}%) :</strong> La législation est adoptée avec un large consensus.</li><li><strong>Cas le plus probable :</strong> L'examen en commission entraîne des amendements avant le vote final.</li><li><strong>Pire cas (${blockPct}%) :</strong> Des retards inattendus dus à des facteurs externes.</li></ul>`,
     },
     es: {
-      outcome: `Con base en el análisis de composición de documentos, la probabilidad de aprobación legislativa${topic ? ` para <strong>${topicStr}</strong>` : ''} se estima en <strong>${passagePct}%</strong>. Confianza del análisis: <strong>${confidence}%</strong>.`,
+      outcome: `Con base en el análisis de composición de documentos, la probabilidad de aprobación legislativa para <strong>${topicStr}</strong> se estima en <strong>${passagePct}%</strong>. Confianza del análisis: <strong>${confidence}%</strong>.`,
       coalition: `Evaluación de estabilidad de coalición: ${betCount > motCount ? 'Alta — la actividad del comité sugiere alineación de la coalición.' : 'Moderada — se requieren negociaciones en curso.'}`,
       scenarios: `<ul class="risk-scenarios"><li><strong>Mejor caso (${passagePct}%):</strong> La legislación se aprueba con amplio consenso.</li><li><strong>Caso más probable:</strong> El escrutinio del comité lleva a enmiendas antes de la votación final.</li><li><strong>Peor caso (${blockPct}%):</strong> Retrasos inesperados debidos a factores externos.</li></ul>`,
     },
     da: {
-      outcome: `Baseret på dokumentsammensætningsanalyse anslås sandsynligheden for lovgivningsmæssig vedtagelse${topic ? ` for <strong>${topicStr}</strong>` : ''} til <strong>${passagePct}%</strong>. Analysekonfidensgrad: <strong>${confidence}%</strong>.`,
+      outcome: `Baseret på dokumentsammensætningsanalyse anslås sandsynligheden for lovgivningsmæssig vedtagelse for <strong>${topicStr}</strong> til <strong>${passagePct}%</strong>. Analysekonfidensgrad: <strong>${confidence}%</strong>.`,
       coalition: `Koalitionsstabilitetsvurdering: ${betCount > motCount ? 'Høj — udvalgsaktivitet tyder på koalitionssammensætning.' : 'Moderat — igangværende forhandlinger nødvendige.'}`,
       scenarios: `<ul class="risk-scenarios"><li><strong>Bedste tilfælde (${passagePct}%):</strong> Lovgivning vedtages med bred konsensus.</li><li><strong>Sandsynligste tilfælde:</strong> Udvalgsgennemgang fører til ændringer.</li><li><strong>Værste tilfælde (${blockPct}%):</strong> Uventede forsinkelser.</li></ul>`,
     },
     no: {
-      outcome: `Basert på dokumentsammensetningsanalyse anslås sannsynligheten for lovgivningsmessig vedtak${topic ? ` for <strong>${topicStr}</strong>` : ''} til <strong>${passagePct}%</strong>. Analysekonfidens: <strong>${confidence}%</strong>.`,
+      outcome: `Basert på dokumentsammensetningsanalyse anslås sannsynligheten for lovgivningsmessig vedtak for <strong>${topicStr}</strong> til <strong>${passagePct}%</strong>. Analysekonfidens: <strong>${confidence}%</strong>.`,
       coalition: `Koalisjonstabilitetsvurdering: ${betCount > motCount ? 'Høy — komitéaktivitet tyder på koalisjonssamstemmighet.' : 'Moderat — pågående forhandlinger nødvendig.'}`,
       scenarios: `<ul class="risk-scenarios"><li><strong>Beste tilfelle (${passagePct}%):</strong> Lovgivning vedtas med bred konsensus.</li><li><strong>Mest sannsynlig:</strong> Komitégjennomgang fører til endringer.</li><li><strong>Verste tilfelle (${blockPct}%):</strong> Uventede forsinkelser.</li></ul>`,
     },
     fi: {
-      outcome: `Asiakirjakoostumuksen analyysin perusteella lainsäädännön läpimenon todennäköisyys${topic ? ` aiheessa <strong>${topicStr}</strong>` : ''} arvioidaan <strong>${passagePct}%</strong>:ksi. Analyysin luottamustaso: <strong>${confidence}%</strong>.`,
+      outcome: `Asiakirjakoostumuksen analyysin perusteella lainsäädännön läpimenon todennäköisyys aiheessa <strong>${topicStr}</strong> arvioidaan <strong>${passagePct}%</strong>:ksi. Analyysin luottamustaso: <strong>${confidence}%</strong>.`,
       coalition: `Koalition vakausarvio: ${betCount > motCount ? 'Korkea — valiokuntien aktiivisuus viittaa koalition yhdenmukaisuuteen.' : 'Kohtalainen — käynnissä olevia neuvotteluja tarvitaan.'}`,
       scenarios: `<ul class="risk-scenarios"><li><strong>Paras tapaus (${passagePct}%):</strong> Lainsäädäntö hyväksytään laajalla konsensuksella.</li><li><strong>Todennäköisin:</strong> Valiokuntatarkastus johtaa muutoksiin.</li><li><strong>Pahin tapaus (${blockPct}%):</strong> Odottamattomia viivästyksiä.</li></ul>`,
     },
     nl: {
-      outcome: `Op basis van documentsamenstelling wordt de kans op wetgevende doorgang${topic ? ` voor <strong>${topicStr}</strong>` : ''} geschat op <strong>${passagePct}%</strong>. Analysebetrouwbaarheid: <strong>${confidence}%</strong>.`,
+      outcome: `Op basis van documentsamenstelling wordt de kans op wetgevende doorgang voor <strong>${topicStr}</strong> geschat op <strong>${passagePct}%</strong>. Analysebetrouwbaarheid: <strong>${confidence}%</strong>.`,
       coalition: `Coalitiesstabiliteitsbeoordeling: ${betCount > motCount ? 'Hoog — commissieactiviteit suggereert coalitie-afstemming.' : 'Matig — lopende onderhandelingen vereist.'}`,
       scenarios: `<ul class="risk-scenarios"><li><strong>Beste geval (${passagePct}%):</strong> Wetgeving aangenomen met brede consensus.</li><li><strong>Meest waarschijnlijk:</strong> Commissieonderzoek leidt tot wijzigingen.</li><li><strong>Slechtste geval (${blockPct}%):</strong> Onverwachte vertragingen.</li></ul>`,
     },
     ar: {
-      outcome: `استناداً إلى تحليل تكوين الوثائق، تُقدَّر احتمالية المرور التشريعي${topic ? ` لـ<strong>${topicStr}</strong>` : ''} بـ<strong>${passagePct}%</strong>. ثقة التحليل: <strong>${confidence}%</strong>.`,
+      outcome: `استناداً إلى تحليل تكوين الوثائق، تُقدَّر احتمالية المرور التشريعي لـ<strong>${topicStr}</strong> بـ<strong>${passagePct}%</strong>. ثقة التحليل: <strong>${confidence}%</strong>.`,
       coalition: `تقييم استقرار الائتلاف: ${betCount > motCount ? 'مرتفع — نشاط اللجان يشير إلى توافق الائتلاف.' : 'متوسط — مفاوضات جارية مطلوبة.'}`,
       scenarios: `<ul class="risk-scenarios"><li><strong>أفضل الأحوال (${passagePct}%):</strong> تُقرّ التشريعات بتوافق واسع.</li><li><strong>الحالة الأكثر احتمالاً:</strong> تؤدي مراجعة اللجان إلى تعديلات.</li><li><strong>أسوأ الأحوال (${blockPct}%):</strong> تأخيرات غير متوقعة.</li></ul>`,
     },
     he: {
-      outcome: `בהתבסס על ניתוח הרכב מסמכים, הסבירות למעבר חקיקתי${topic ? ` עבור <strong>${topicStr}</strong>` : ''} מוערכת ב-<strong>${passagePct}%</strong>. רמת ביטחון הניתוח: <strong>${confidence}%</strong>.`,
+      outcome: `בהתבסס על ניתוח הרכב מסמכים, הסבירות למעבר חקיקתי עבור <strong>${topicStr}</strong> מוערכת ב-<strong>${passagePct}%</strong>. רמת ביטחון הניתוח: <strong>${confidence}%</strong>.`,
       coalition: `הערכת יציבות קואליציה: ${betCount > motCount ? 'גבוהה — פעילות ועדות מצביעה על יישור הקואליציה.' : 'בינונית — נדרשים משא ומתן מתמשך.'}`,
       scenarios: `<ul class="risk-scenarios"><li><strong>התרחיש הטוב ביותר (${passagePct}%):</strong> חקיקה עוברת עם הסכמה רחבה.</li><li><strong>התרחיש הסביר ביותר:</strong> בדיקת ועדה מובילה לתיקונים.</li><li><strong>התרחיש הגרוע ביותר (${blockPct}%):</strong> עיכובים בלתי צפויים.</li></ul>`,
     },
     ja: {
-      outcome: `文書構成分析に基づき、${topic ? `<strong>${topicStr}</strong>の` : ''}立法可決確率は<strong>${passagePct}%</strong>と推定されます。分析信頼度：<strong>${confidence}%</strong>。`,
+      outcome: `文書構成分析に基づき、<strong>${topicStr}</strong>の立法可決確率は<strong>${passagePct}%</strong>と推定されます。分析信頼度：<strong>${confidence}%</strong>。`,
       coalition: `連立安定性評価：${betCount > motCount ? '高 — 委員会活動は連立整合を示唆。' : '中 — 継続的な交渉が必要。'}`,
       scenarios: `<ul class="risk-scenarios"><li><strong>最良シナリオ（${passagePct}%）：</strong>広範な合意で法案可決。</li><li><strong>最有力シナリオ：</strong>委員会審査による修正後に最終投票。</li><li><strong>最悪シナリオ（${blockPct}%）：</strong>予期せぬ遅延が発生。</li></ul>`,
     },
     ko: {
-      outcome: `문서 구성 분석에 기반하여, ${topic ? `<strong>${topicStr}</strong>의` : ''} 입법 통과 확률은 <strong>${passagePct}%</strong>로 추정됩니다. 분석 신뢰도: <strong>${confidence}%</strong>.`,
+      outcome: `문서 구성 분석에 기반하여, <strong>${topicStr}</strong>의 입법 통과 확률은 <strong>${passagePct}%</strong>로 추정됩니다. 분석 신뢰도: <strong>${confidence}%</strong>.`,
       coalition: `연립 안정성 평가: ${betCount > motCount ? '높음 — 위원회 활동이 연립 조정을 시사.' : '보통 — 지속적인 협상 필요.'}`,
       scenarios: `<ul class="risk-scenarios"><li><strong>최선의 경우 (${passagePct}%):</strong> 광범위한 합의로 법안 통과.</li><li><strong>가장 유력한 경우:</strong> 위원회 심사로 인한 수정 후 최종 투표.</li><li><strong>최악의 경우 (${blockPct}%):</strong> 예상치 못한 지연.</li></ul>`,
     },
     zh: {
-      outcome: `基于文件构成分析，${topic ? `<strong>${topicStr}</strong>的` : ''}立法通过概率估计为<strong>${passagePct}%</strong>。分析置信度：<strong>${confidence}%</strong>。`,
+      outcome: `基于文件构成分析，<strong>${topicStr}</strong>的立法通过概率估计为<strong>${passagePct}%</strong>。分析置信度：<strong>${confidence}%</strong>。`,
       coalition: `联合稳定性评估：${betCount > motCount ? '高 — 委员会活动表明联合一致性。' : '中等 — 需要持续谈判。'}`,
       scenarios: `<ul class="risk-scenarios"><li><strong>最佳情景（${passagePct}%）：</strong>立法以广泛共识通过。</li><li><strong>最可能情景：</strong>委员会审查导致最终投票前进行修订。</li><li><strong>最坏情景（${blockPct}%）：</strong>出现意外延误。</li></ul>`,
     },
