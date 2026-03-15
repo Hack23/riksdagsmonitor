@@ -1,11 +1,9 @@
 {
-  "timestamp": "2026-03-13T13:20:03.653Z",
+  "timestamp": "2026-03-14T16:16:38.288Z",
   "types": [
-    "interpellations"
+    "weekly-review"
   ],
   "languagesGenerated": [
-    "en",
-    "sv",
     "da",
     "no",
     "fi",
@@ -37,23 +35,21 @@
   ],
   "batchSize": "all",
   "skipExisting": true,
-  "generated": 14,
+  "generated": 12,
   "errors": 0,
   "articles": [
-    "2026-03-13-interpellation-debates-en.html",
-    "2026-03-13-interpellation-debates-sv.html",
-    "2026-03-13-interpellation-debates-da.html",
-    "2026-03-13-interpellation-debates-no.html",
-    "2026-03-13-interpellation-debates-fi.html",
-    "2026-03-13-interpellation-debates-de.html",
-    "2026-03-13-interpellation-debates-fr.html",
-    "2026-03-13-interpellation-debates-es.html",
-    "2026-03-13-interpellation-debates-nl.html",
-    "2026-03-13-interpellation-debates-ar.html",
-    "2026-03-13-interpellation-debates-he.html",
-    "2026-03-13-interpellation-debates-ja.html",
-    "2026-03-13-interpellation-debates-ko.html",
-    "2026-03-13-interpellation-debates-zh.html"
+    "2026-03-14-weekly-review-da.html",
+    "2026-03-14-weekly-review-no.html",
+    "2026-03-14-weekly-review-fi.html",
+    "2026-03-14-weekly-review-de.html",
+    "2026-03-14-weekly-review-fr.html",
+    "2026-03-14-weekly-review-es.html",
+    "2026-03-14-weekly-review-nl.html",
+    "2026-03-14-weekly-review-ar.html",
+    "2026-03-14-weekly-review-he.html",
+    "2026-03-14-weekly-review-ja.html",
+    "2026-03-14-weekly-review-ko.html",
+    "2026-03-14-weekly-review-zh.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
