@@ -792,4 +792,22 @@ describe('generateMultiPanelDashboardSection', () => {
     expect(section.html).toContain('id="myPanel-chart"');
     expect(section.html).not.toContain('id="myPanel-myPanel-chart"');
   });
+
+  it('cross-namespace dedup: heading ID is deduplicated if it collides with another panel ID', () => {
+    // Panel 1 id = "p1" → headingId = "p1-heading"
+    // Panel 2 id = "p1-heading" → would collide with panel 1's headingId
+    // Single shared Set ensures the second panel gets a suffixed ID
+    const data = makeDashboard({
+      panels: [
+        { id: 'p1', title: 'First', gauge: { id: 'g1', title: 'G1', value: 50 } },
+        { id: 'p1-heading', title: 'Second', gauge: { id: 'g2', title: 'G2', value: 60 } },
+      ],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    // Panel 1 gets id="p1", heading id="p1-heading"
+    // Panel 2 tries id="p1-heading" but that's taken, so it gets "p1-heading-1"
+    expect(section.html).toContain('id="p1"');
+    expect(section.html).toContain('id="p1-heading"');
+    expect(section.html).toContain('id="p1-heading-1"');
+  });
 });

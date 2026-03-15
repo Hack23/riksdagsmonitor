@@ -263,6 +263,21 @@ ${tableBlocks}
 // ---------------------------------------------------------------------------
 
 /**
+ * Ensure `baseId` is globally unique across the entire dashboard section by
+ * suffixing `-1`, `-2`, etc. when the id is already in `usedIds`.
+ * The unique id is added to the Set before returning.
+ */
+function deduplicateId(baseId: string, usedIds: Set<string>): string {
+  let safeId = baseId;
+  let counter = 1;
+  while (usedIds.has(safeId)) {
+    safeId = `${baseId}-${counter++}`;
+  }
+  usedIds.add(safeId);
+  return safeId;
+}
+
+/**
  * Render a CSS-only heat map as an accessible grid table.
  *
  * Intensity is driven by a `--intensity` CSS custom property (0–1) on each
@@ -277,12 +292,7 @@ function renderHeatMap(config: HeatMapConfig, panelId: string, usedIds: Set<stri
   // Deduplicate heatmap IDs: prefix with panelId and track across the dashboard
   let baseId = config.id.replace(/[^a-zA-Z0-9_-]/g, '') || 'heatmap';
   baseId = `${panelId}-${baseId}`;
-  let safeId = baseId;
-  let counter = 1;
-  while (usedIds.has(safeId)) {
-    safeId = `${baseId}-${counter++}`;
-  }
-  usedIds.add(safeId);
+  const safeId = deduplicateId(baseId, usedIds);
   const { rowLabels, columnLabels, cells } = config;
 
   // Validate rectangular shape: row count first, then per-row cell count
@@ -305,16 +315,16 @@ function renderHeatMap(config: HeatMapConfig, panelId: string, usedIds: Set<stri
   // Non-finite values (NaN, Infinity) are treated as 0 to match gauge/confidence guards.
   let minVal = Infinity;
   let maxVal = -Infinity;
-  let hasFiniteValue = false;
+  let hasAnyCells = false;
   for (const row of cells) {
     for (const cell of row) {
       const v = Number.isFinite(cell.value) ? cell.value : 0;
       if (v < minVal) minVal = v;
       if (v > maxVal) maxVal = v;
-      hasFiniteValue = true;
+      hasAnyCells = true;
     }
   }
-  if (!hasFiniteValue) {
+  if (!hasAnyCells) {
     minVal = 0;
     maxVal = 100;
   }
@@ -374,12 +384,7 @@ function renderGauge(config: GaugeConfig, panelId: string, usedIds: Set<string>)
   // Deduplicate gauge IDs: prefix with panelId and track across the dashboard
   let baseId = config.id.replace(/[^a-zA-Z0-9_-]/g, '') || 'gauge';
   baseId = `${panelId}-${baseId}`;
-  let safeId = baseId;
-  let counter = 1;
-  while (usedIds.has(safeId)) {
-    safeId = `${baseId}-${counter++}`;
-  }
-  usedIds.add(safeId);
+  const safeId = deduplicateId(baseId, usedIds);
   const safeValue = Number.isFinite(config.value) ? config.value : 0;
   const clamped = Math.min(100, Math.max(0, safeValue));
   const pct = clamped / 100;
@@ -409,15 +414,9 @@ function renderGauge(config: GaugeConfig, panelId: string, usedIds: Set<string>)
  * Sanitise a panel id for safe use as a DOM element id, and ensure uniqueness
  * across panels by tracking used ids in a shared Set.
  */
-function sanitisePanelId(rawId: string, index: number, usedPanelIds: Set<string>): string {
-  let base = rawId.replace(/[^a-zA-Z0-9_-]/g, '') || `panel-${index}`;
-  let safeId = base;
-  let counter = 1;
-  while (usedPanelIds.has(safeId)) {
-    safeId = `${base}-${counter++}`;
-  }
-  usedPanelIds.add(safeId);
-  return safeId;
+function sanitisePanelId(rawId: string, index: number, usedIds: Set<string>): string {
+  const base = rawId.replace(/[^a-zA-Z0-9_-]/g, '') || `panel-${index}`;
+  return deduplicateId(base, usedIds);
 }
 
 /**
@@ -431,9 +430,7 @@ function renderPanel(
   panel: DashboardPanel,
   index: number,
   lbl: (key: string) => string,
-  usedChartIds: Set<string>,
-  usedPanelIds: Set<string>,
-  usedVisualIds: Set<string>,
+  usedIds: Set<string>,
 ): string {
   // Runtime validation: enforce mutual exclusivity of visual types
   const visualCount = [panel.chart, panel.heatMap, panel.gauge].filter(Boolean).length;
@@ -444,8 +441,8 @@ function renderPanel(
     );
   }
 
-  const panelId = sanitisePanelId(panel.id, index, usedPanelIds);
-  const headingId = `${panelId}-heading`;
+  const panelId = sanitisePanelId(panel.id, index, usedIds);
+  const headingId = deduplicateId(`${panelId}-heading`, usedIds);
 
   // Chart content (Chart.js canvas or CSS-only visual)
   let visualBlock = '';
@@ -454,20 +451,15 @@ function renderPanel(
     // Deduplicate chart IDs: prefix with panelId and track across the dashboard
     let baseChartId = panel.chart.id.replace(/[^a-zA-Z0-9_-]/g, '') || 'chart';
     baseChartId = `${panelId}-${baseChartId}`;
-    let chartId = baseChartId;
-    let counter = 1;
-    while (usedChartIds.has(chartId)) {
-      chartId = `${baseChartId}-${counter++}`;
-    }
-    usedChartIds.add(chartId);
+    const chartId = deduplicateId(baseChartId, usedIds);
     const ariaLabel = panel.chart.title?.trim() || chartId;
     visualBlock = `    <div class="panel-chart-wrapper">
       <canvas id="${escapeHtml(chartId)}" role="img" aria-label="${escapeHtml(ariaLabel)}" data-chart-config="${escapeHtml(config)}"></canvas>
     </div>`;
   } else if (panel.heatMap) {
-    visualBlock = `    <div class="panel-heatmap-wrapper">\n${renderHeatMap(panel.heatMap, panelId, usedVisualIds)}\n    </div>`;
+    visualBlock = `    <div class="panel-heatmap-wrapper">\n${renderHeatMap(panel.heatMap, panelId, usedIds)}\n    </div>`;
   } else if (panel.gauge) {
-    visualBlock = `    <div class="panel-gauge-wrapper">\n${renderGauge(panel.gauge, panelId, usedVisualIds)}\n    </div>`;
+    visualBlock = `    <div class="panel-gauge-wrapper">\n${renderGauge(panel.gauge, panelId, usedIds)}\n    </div>`;
   }
 
   // AI interpretation — use localised label as a visually-hidden semantic heading
@@ -577,12 +569,11 @@ export function generateMultiPanelDashboardSection(
     ? `  <p class="multi-panel-summary">${escapeHtml(data.summary.trim())}</p>\n`
     : '';
 
-  // Panels — shared ID trackers ensure DOM id uniqueness across all panels
-  const usedChartIds = new Set<string>();
-  const usedPanelIds = new Set<string>();
-  const usedVisualIds = new Set<string>();
+  // Panels — single shared ID tracker ensures DOM id uniqueness across ALL emitted ids
+  // (panel articles, chart canvases, heatmap/gauge containers, and heading ids)
+  const usedIds = new Set<string>();
   const panelBlocks = data.panels
-    .map((panel, idx) => renderPanel(panel, idx, lbl, usedChartIds, usedPanelIds, usedVisualIds))
+    .map((panel, idx) => renderPanel(panel, idx, lbl, usedIds))
     .join('\n');
 
   const panelsGrid = `  <div class="multi-panel-grid ${escapeHtml(layoutClass)}">\n${panelBlocks}\n  </div>`;

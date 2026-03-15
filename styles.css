@@ -9830,16 +9830,19 @@ body.news-page {
 
 /* CSS-only Heat Map */
 .news-article .dashboard-heatmap {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 2px;
   width: 100%;
 }
 
 .news-article .heatmap-row {
-  display: contents;
+  display: flex;
+  gap: 2px;
 }
 
 .news-article .heatmap-cell {
+  flex: 1 1 0;
   padding: 0.4rem 0.5rem;
   text-align: center;
   font-size: 0.85rem;

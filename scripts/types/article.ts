@@ -296,7 +296,7 @@ export type DashboardPanelLayout = 'grid-2x2' | 'grid-3x2' | 'full-width' | 'sid
 
 /** A single cell in a heat-map grid */
 export interface HeatMapCell {
-  /** Numeric intensity value (0–100) */
+  /** Numeric intensity value (any scale; the renderer normalises to 0–1 using the dataset min/max) */
   value: number;
   /** Optional text label rendered inside the cell */
   label?: string;

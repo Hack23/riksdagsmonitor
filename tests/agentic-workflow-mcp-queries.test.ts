@@ -161,9 +161,6 @@ describe('Agentic Workflow MCP Query Patterns', () => {
 
       // Should have "Cross-Referencing Strategy" section
       expect(content).toMatch(/cross.*referencing.*strategy/i);
-
-      // Should describe cross-referencing approach (may be prose or structured examples)
-      expect(content).toMatch(/cross.*referenc/i);
     });
   });
 
