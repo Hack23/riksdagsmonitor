@@ -62,7 +62,7 @@ describe('Workflow Architecture', () => {
 
     for (const [articleType, workflowFile] of Object.entries(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
       const content = fs.readFileSync(filepath, 'utf-8');
       const cron = extractCronSchedule(content);
@@ -83,7 +83,7 @@ describe('Workflow Architecture', () => {
 
   it('should not have schedule on multi-type generator', () => {
     const generatorPath = path.join(WORKFLOWS_DIR, 'news-article-generator.md');
-    if (!fs.existsSync(generatorPath)) return;
+    expect(fs.existsSync(generatorPath), 'generate-news-enhanced.ts should exist').toBe(true);
 
     const frontmatter = parseFrontmatter(generatorPath);
     // The multi-type generator should use workflow_dispatch only, not schedule
@@ -94,7 +94,7 @@ describe('Workflow Architecture', () => {
   it('should have single article type focus in each dedicated workflow', () => {
     for (const [articleType, workflowFile] of Object.entries(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
       const content = fs.readFileSync(filepath, 'utf-8');
 
@@ -111,7 +111,7 @@ describe('Workflow Architecture', () => {
   it('should have workflow_dispatch trigger on all article type workflows', () => {
     for (const [_articleType, workflowFile] of Object.entries(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
@@ -124,7 +124,7 @@ describe('Workflow Architecture', () => {
   it('should have schedule trigger on all article type workflows', () => {
     for (const [_articleType, workflowFile] of Object.entries(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
       const frontmatter = parseFrontmatter(filepath);
       const hasCron = frontmatter.includes('cron:');
@@ -138,7 +138,7 @@ describe('Workflow Architecture', () => {
   it('should use safe-outputs in all article type workflows', () => {
     for (const [_articleType, workflowFile] of Object.entries(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
@@ -187,7 +187,7 @@ describe('Workflow Architecture', () => {
   it('should have least privilege permissions on all workflows', () => {
     for (const [_articleType, workflowFile] of Object.entries(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
@@ -211,28 +211,28 @@ describe('Translation Workflow Architecture', () => {
 
   it('translation workflow should have workflow_dispatch trigger', () => {
     const filepath = path.join(WORKFLOWS_DIR, TRANSLATE_WORKFLOW);
-    if (!fs.existsSync(filepath)) return;
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
     const content = fs.readFileSync(filepath, 'utf-8');
     expect(content).toContain('workflow_dispatch');
   });
 
   it('translation workflow should have schedule trigger for catch-up', () => {
     const filepath = path.join(WORKFLOWS_DIR, TRANSLATE_WORKFLOW);
-    if (!fs.existsSync(filepath)) return;
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
     const content = fs.readFileSync(filepath, 'utf-8');
     expect(content).toContain('cron:');
   });
 
   it('translation workflow should have concurrency.job-discriminator', () => {
     const filepath = path.join(WORKFLOWS_DIR, TRANSLATE_WORKFLOW);
-    if (!fs.existsSync(filepath)) return;
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
     const content = fs.readFileSync(filepath, 'utf-8');
     expect(content).toContain('job-discriminator');
   });
 
   it('translation workflow should support article_date and article_type inputs', () => {
     const filepath = path.join(WORKFLOWS_DIR, TRANSLATE_WORKFLOW);
-    if (!fs.existsSync(filepath)) return;
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
     const content = fs.readFileSync(filepath, 'utf-8');
     expect(content).toContain('article_date');
     expect(content).toContain('article_type');
@@ -240,7 +240,7 @@ describe('Translation Workflow Architecture', () => {
 
   it('translation workflow should contain canonical translation quality rules', () => {
     const filepath = path.join(WORKFLOWS_DIR, TRANSLATE_WORKFLOW);
-    if (!fs.existsSync(filepath)) return;
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
     const content = fs.readFileSync(filepath, 'utf-8');
     expect(content).toContain('MANDATORY Translation Quality Rules');
     expect(content).toContain('RTL languages');
@@ -250,7 +250,7 @@ describe('Translation Workflow Architecture', () => {
 
   it('translation workflow should have safe-outputs with create-pull-request', () => {
     const filepath = path.join(WORKFLOWS_DIR, TRANSLATE_WORKFLOW);
-    if (!fs.existsSync(filepath)) return;
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
     const content = fs.readFileSync(filepath, 'utf-8');
     expect(content).toContain('safe-outputs');
     expect(content).toContain('create-pull-request');
@@ -258,7 +258,7 @@ describe('Translation Workflow Architecture', () => {
 
   it('translation workflow should have contents: read permission', () => {
     const filepath = path.join(WORKFLOWS_DIR, TRANSLATE_WORKFLOW);
-    if (!fs.existsSync(filepath)) return;
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
     const content = fs.readFileSync(filepath, 'utf-8');
     expect(content).toContain('contents: read');
   });
@@ -272,7 +272,7 @@ describe('Translation Workflow Architecture', () => {
 
     for (const workflowFile of contentWorkflows) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
@@ -292,7 +292,7 @@ describe('Translation Workflow Architecture', () => {
 
     for (const workflowFile of contentWorkflows) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
@@ -315,7 +315,7 @@ describe('Schedule Staggering', () => {
 
     for (const workflowFile of weekdayWorkflows) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
       const content = fs.readFileSync(filepath, 'utf-8');
       const cron = extractCronSchedule(content);
@@ -340,7 +340,7 @@ describe('Schedule Staggering', () => {
 
     for (const workflowFile of weekendFiles) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
       const content = fs.readFileSync(filepath, 'utf-8');
       const cron = extractCronSchedule(content);
@@ -363,7 +363,7 @@ describe('Schedule Staggering', () => {
 
     for (const workflowFile of monthlyFiles) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
       const content = fs.readFileSync(filepath, 'utf-8');
       const cron = extractCronSchedule(content);
@@ -462,7 +462,7 @@ describe('Shared Prompts Library Integration', () => {
     ];
     for (const workflowFile of contentWorkflows) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes('quality-criteria.md'),
@@ -480,7 +480,7 @@ describe('Shared Prompts Library Integration', () => {
     ];
     for (const workflowFile of contentWorkflows) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes('political-analysis.md'),
@@ -498,7 +498,7 @@ describe('Shared Prompts Library Integration', () => {
     ];
     for (const workflowFile of contentWorkflows) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes('stakeholder-perspectives.md'),
@@ -519,7 +519,7 @@ describe('Iterative Analysis Protocol', () => {
   it('should have iterative analysis protocol in analytical workflows', () => {
     for (const workflowFile of ANALYTICAL_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes('Iterative Analysis Protocol') &&
@@ -534,7 +534,7 @@ describe('Iterative Analysis Protocol', () => {
   it('should have maximum 3 iterations limit in iterative workflows', () => {
     for (const workflowFile of ANALYTICAL_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes('3 iterations') || content.includes('Maximum 3'),
@@ -546,7 +546,7 @@ describe('Iterative Analysis Protocol', () => {
   it('should have minimum quality score 7/10 in analytical workflows', () => {
     for (const workflowFile of ANALYTICAL_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes('7/10'),
@@ -560,7 +560,7 @@ describe('Realtime Monitor Enhancement', () => {
   const REALTIME_WORKFLOW = path.join(WORKFLOWS_DIR, 'news-realtime-monitor.md');
 
   it('should have breaking news severity classification', () => {
-    if (!fs.existsSync(REALTIME_WORKFLOW)) return;
+    expect(fs.existsSync(REALTIME_WORKFLOW), 'news-realtime-monitor.md should exist').toBe(true);
     const content = fs.readFileSync(REALTIME_WORKFLOW, 'utf-8');
     expect(content).toContain('HIGH');
     expect(content).toContain('MEDIUM');
@@ -568,13 +568,13 @@ describe('Realtime Monitor Enhancement', () => {
   });
 
   it('should reference quality-criteria.md', () => {
-    if (!fs.existsSync(REALTIME_WORKFLOW)) return;
+    expect(fs.existsSync(REALTIME_WORKFLOW), 'news-realtime-monitor.md should exist').toBe(true);
     const content = fs.readFileSync(REALTIME_WORKFLOW, 'utf-8');
     expect(content).toContain('quality-criteria.md');
   });
 
   it('should have AI-driven severity scoring logic', () => {
-    if (!fs.existsSync(REALTIME_WORKFLOW)) return;
+    expect(fs.existsSync(REALTIME_WORKFLOW), 'news-realtime-monitor.md should exist').toBe(true);
     const content = fs.readFileSync(REALTIME_WORKFLOW, 'utf-8');
     // Should have structured assessment with specific criteria
     expect(content).toContain('confidence motion');

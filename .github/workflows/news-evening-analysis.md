@@ -212,17 +212,17 @@ const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 
 - `get_propositioner` — filter by `publicerad` date
 - `search_anforanden` — filter by `datum` field
 
-Filter results to only include items with dates `>= fromDate`:
+Filter results to only include items with dates `>= fromDate` using ISO-string comparison (avoids timezone-sensitive `new Date()` parsing):
 ```js
-const filtered = results.filter(item => new Date(item.datum || item.publicerad) >= new Date(fromDate));
+const filtered = results.filter(item => (item.datum || item.publicerad || '').slice(0, 10) >= fromDate);
 ```
 
 **Post-query date filtering example** (use 86400000 ms = 1 day, 3600000 ms = 1 hour):
 ```javascript
 const fromDate = new Date(Date.now() - lookback_hours * 3600000).toISOString().slice(0, 10);
 const results = rawResults.filter(item => {
-  const itemDate = item.datum || item.publicerad || item.inlämnad;
-  return new Date(itemDate) >= new Date(fromDate);
+  const itemDate = (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10);
+  return itemDate >= fromDate; // lexicographic YYYY-MM-DD comparison — no timezone drift
 });
 ```
 
