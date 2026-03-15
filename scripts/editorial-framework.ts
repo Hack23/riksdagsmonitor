@@ -387,10 +387,12 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
 /**
  * Get the profile for an article type.
  *
- * @param articleType - The article type identifier
+ * @param articleType - The article type identifier (accepts arbitrary strings from external workflow inputs; unrecognized types fall back to 'breaking')
  * @returns The editorial profile, or the 'breaking' profile as a safe fallback
  */
 export function getArticleTypeProfile(articleType: string): ArticleTypeProfile {
+  // Cast needed: articleType comes from external sources (workflow_dispatch, CLI) and may not be
+  // in EditorialProfileKey; the fallback to 'breaking' handles unknown values safely.
   return (ARTICLE_TYPE_PROFILES as Readonly<Record<string, ArticleTypeProfile>>)[articleType]
     ?? ARTICLE_TYPE_PROFILES['breaking'];
 }

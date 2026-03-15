@@ -192,7 +192,7 @@ export function generateInterpellationsContent(
 function _renderInterpellationEntry(
   interp: RawDocument,
   lang: Language | string,
-  domainCache?: Map<RawDocument, string[]>,
+  domainCache: Map<RawDocument, string[]>,
   headingTag: 'h3' | 'h4' = 'h3',
 ): string {
   const title = escapeHtml(String(interp.titel ?? interp.title ?? ''));
@@ -246,15 +246,15 @@ function _renderInterpellationEntry(
  *
  * @param interp - Raw interpellation document
  * @param lang - Target language
- * @param domainCache - Optional precomputed policy domains (avoids redundant detectPolicyDomains call)
+ * @param domainCache - Precomputed policy domains per document (avoids redundant detectPolicyDomains call)
  * @returns Localized explanation string
  */
 function _generateInterpellationWhyItMatters(
   interp: RawDocument,
   lang: Language | string,
-  domainCache?: Map<RawDocument, string[]>,
+  domainCache: Map<RawDocument, string[]>,
 ): string {
-  const domains = domainCache?.get(interp) ?? detectPolicyDomains(interp, lang);
+  const domains = domainCache.get(interp) ?? detectPolicyDomains(interp, lang);
   const domain = domains[0] ?? '';
   const minister = String(interp.mottagare ?? '');
   const langStr = String(lang);
