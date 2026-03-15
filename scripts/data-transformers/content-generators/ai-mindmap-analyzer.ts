@@ -119,7 +119,7 @@ const DOC_COUNT_FORMATTERS: Partial<Record<Language, (n: number) => string>> = {
   fr: n => n === 1 ? 'document' : 'documents',
   es: n => n === 1 ? 'documento' : 'documentos',
   nl: n => n === 1 ? 'document' : 'documenten',
-  ar: () => 'وثيقة',
+  ar: n => n === 1 ? 'وثيقة' : 'وثائق',
   he: n => n === 1 ? 'מסמך' : 'מסמכים',
   ja: () => '件',
   ko: n => n === 1 ? '문서' : '문서',
@@ -511,6 +511,9 @@ function docCount(n: number, lang: Language | string): string {
 // Branch builders
 // ---------------------------------------------------------------------------
 
+/** EU/international doc types (module-level to avoid per-call allocation) */
+const INTL_TYPES = new Set(['fpm', 'eu']);
+
 function buildPowerBranch(
   docs: RawDocument[],
   lang: Language | string,
@@ -868,8 +871,8 @@ export function buildAIMindmapAnalysis(
     domainList = [...allDomains].slice(0, 6);
   }
 
-  // Classify EU / international documents
-  const intlDocs = docs.filter(d => ['fpm', 'eu'].includes(d.doktyp || d.documentType || ''));
+  // Classify EU / international documents (reuses module-level Set)
+  const intlDocs = docs.filter(d => INTL_TYPES.has(d.doktyp || d.documentType || ''));
 
   // Build the five dimension branches
   const branches: MindmapBranch[] = [

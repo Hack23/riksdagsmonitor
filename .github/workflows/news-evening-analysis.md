@@ -224,7 +224,7 @@ Cross-reference related data sources for richer analysis. Filter all results by 
 ```javascript
 // 1. Get recent committee reports
 const betankanden = get_betankanden({ rm: currentRm, limit: 20 });
-const recentBet = betankanden.filter(b => new Date(b.publicerad) >= new Date(fromDate));
+const recentBet = betankanden.filter(b => (b.publicerad || '').slice(0, 10) >= fromDate);
 
 // 2. For each report, get full details
 const reportDetails = recentBet.map(bet =>
@@ -243,18 +243,18 @@ const govDocs = search_regering({ dateFrom: fromDate, dateTo: today, limit: 30 }
 
 // 2. Get related propositions
 const propositions = get_propositioner({ rm: currentRm, limit: 20 })
-  .filter(p => new Date(p.publicerad) >= new Date(fromDate));
+  .filter(p => (p.publicerad || '').slice(0, 10) >= fromDate);
 ```
 
 **Example 3: Party Behavior Analysis**
 ```javascript
 // 1. Get party voting records
 const votes = search_voteringar({ rm: currentRm, limit: 100 })
-  .filter(v => new Date(v.datum) >= new Date(fromDate));
+  .filter(v => (v.datum || '').slice(0, 10) >= fromDate);
 
 // 2. Get party speeches
 const speeches = search_anforanden({ rm: currentRm, limit: 100 })
-  .filter(a => new Date(a.datum) >= new Date(fromDate));
+  .filter(a => (a.datum || '').slice(0, 10) >= fromDate);
 ```
 
 **Troubleshooting**:
