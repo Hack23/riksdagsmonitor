@@ -13,8 +13,7 @@
 
 import { escapeHtml } from '../../html-utils.js';
 import type { Language } from '../../types/language.js';
-import type { TemplateSection, SwotData, SwotEntry, SwotImpact } from '../../types/article.js';
-import type { TrendDirection } from './ai-swot-analyzer.js';
+import type { TemplateSection, SwotData, SwotEntry, SwotImpact, TrendDirection } from '../../types/article.js';
 import { L } from '../helpers.js';
 
 // ---------------------------------------------------------------------------

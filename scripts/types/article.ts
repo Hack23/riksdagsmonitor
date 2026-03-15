@@ -204,6 +204,9 @@ export interface BreakingNewsValidation {
 /** Impact level for a SWOT entry */
 export type SwotImpact = 'high' | 'medium' | 'low';
 
+/** Trend direction for a SWOT entry (shared across analyzer and renderer) */
+export type TrendDirection = 'improving' | 'stable' | 'deteriorating';
+
 /** A single item in one of the four SWOT quadrants */
 export interface SwotEntry {
   /** Description text for this factor */

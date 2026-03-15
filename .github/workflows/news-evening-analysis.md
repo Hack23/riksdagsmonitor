@@ -227,6 +227,8 @@ const fromDate = new Date(Date.now() - 24 * 3600000).toISOString().slice(0, 10);
 const results = queryResults.filter(
   item => (item.publicerad || item.datum || item.inlämnad || '').slice(0, 10) >= fromDate
 );
+```
+
 Filter results to only include items with dates `>= fromDate` using ISO-string comparison (avoids timezone-sensitive `new Date()` parsing):
 ```js
 const filtered = results.filter(item => (item.datum || item.publicerad || '').slice(0, 10) >= fromDate);

@@ -31,9 +31,12 @@
  */
 
 import type { Language } from '../../types/language.js';
-import type { SwotImpact } from '../../types/article.js';
+import type { SwotImpact, TrendDirection } from '../../types/article.js';
 import type { StakeholderSwot } from './stakeholder-swot-section.js';
 import type { RawDocument } from '../types.js';
+
+// Re-export TrendDirection for backward compatibility (canonical home is types/article.ts)
+export type { TrendDirection } from '../../types/article.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -47,9 +50,6 @@ export type StakeholderPerspective =
   | 'private-sector'
   | 'civil-society'
   | 'citizens-voters';
-
-/** Trend direction for a SWOT entry */
-export type TrendDirection = 'improving' | 'stable' | 'deteriorating';
 
 /**
  * Enhanced SWOT entry with AI-generated analytical content.
