@@ -639,7 +639,9 @@ function pass3ValidationAndCompleteness(
   // Legislative timeline — add dates from documents (oldest-first, stable on ties)
   const datedDocs = docs.filter(d => d.datum).sort((a, b) => a.datum!.localeCompare(b.datum!));
   if (datedDocs.length >= 2) {
-    const timelineItems = datedDocs.slice(0, 5).map(d => `${d.datum} — ${titleOf(d)}`).filter(t => !t.endsWith(' — '));
+    const timelineItems = datedDocs.slice(0, 5)
+      .filter(d => titleOf(d))
+      .map(d => `${d.datum} — ${titleOf(d)}`);
     branches.push({
       label: L(LABELS.legislativeTimeline, lang, 'Legislative Timeline'),
       color: 'yellow',
