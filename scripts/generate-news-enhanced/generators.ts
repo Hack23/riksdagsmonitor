@@ -1233,7 +1233,7 @@ function buildDeepInspectionSectionsFromAnalysis(
       charts: [{
         id: 'deep-inspection-doc-types',
         type: 'bar',
-        title: analysis.dashboardData.summary,
+        title: deepLabel('documentsByType', lang),
         labels: analysis.dashboardData.typeDistribution.map(t => t.label),
         datasets: [{
           label: deepLabel('documents', lang),

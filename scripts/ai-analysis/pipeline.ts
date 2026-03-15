@@ -471,7 +471,7 @@ function buildEnrichedEntry(
   passageMaxChars: number,
 ): AnalysisSwotEntry {
   const passage = extractPassage(doc, passageMaxChars);
-  const type = docType(doc);
+  const type = normalizedDocType(doc);
   const domainAnalysis = detectPolicyDomains(doc, lang);
   const domainText = domainAnalysis.length > 0
     ? getDomainSpecificAnalysis(domainAnalysis[0]!, type, lang)
