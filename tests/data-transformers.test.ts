@@ -83,6 +83,26 @@ interface MockArticlePayload {
   }>;
   votes?: unknown[];
   speeches?: unknown[];
+  questions?: Array<{
+    titel?: string;
+    parti?: string;
+    dok_id?: string;
+  }>;
+  interpellations?: Array<{
+    titel?: string;
+    title?: string;
+    url?: string;
+    parti?: string;
+    dokumentnamn?: string;
+    dok_id?: string;
+    intressent_namn?: string;
+    author?: string;
+    notis?: string;
+    summary?: string;
+    undertitel?: string;
+    datum?: string;
+    mottagare?: string;
+  }>;
 }
 
 describe('Data Transformers', () => {
@@ -2621,5 +2641,81 @@ describe('content generators include publication dates', () => {
       }],
     } as MockArticlePayload, 'committee-reports', 'en') as string;
     expect(content).not.toContain('class="doc-date"');
+  });
+
+  describe('generateInterpellationsContent', () => {
+    it('should render interpellations heading and empty state in EN', () => {
+      const content = generateArticleContent({
+        interpellations: [],
+      } as MockArticlePayload, 'interpellations', 'en') as string;
+      expect(content).toContain('Interpellation Debates');
+      expect(content).toContain('No interpellations available');
+    });
+
+    it('should render interpellations heading and empty state in SV', () => {
+      const content = generateArticleContent({
+        interpellations: [],
+      } as MockArticlePayload, 'interpellations', 'sv') as string;
+      expect(content).toContain('Interpellationsdebatter');
+      expect(content).toContain('Inga interpellationer');
+    });
+
+    it('should render interpellation entries with interpellation-specific CSS class', () => {
+      const content = generateArticleContent({
+        interpellations: [
+          { titel: 'Interpellation om vården', parti: 'V', dok_id: 'I1', url: 'https://riksdagen.se/ip1' },
+        ],
+      } as MockArticlePayload, 'interpellations', 'en') as string;
+      expect(content).toContain('interpellation-entry');
+      expect(content).not.toContain('motion-entry');
+      // Without summary/notis, should fall back to interpellation default, not motion default
+      expect(content).toContain('Parliamentary interpellation demanding government accountability');
+      expect(content).not.toContain('Parliamentary motion by opposition member');
+    });
+
+    it('should use "Read the full interpellation" link text, not motions', () => {
+      const content = generateArticleContent({
+        interpellations: [
+          { titel: 'Interpellation om skolan', parti: 'SD', dok_id: 'I2', url: 'https://riksdagen.se/ip2' },
+        ],
+      } as MockArticlePayload, 'interpellations', 'en') as string;
+      expect(content).toContain('Read the full interpellation');
+      expect(content).not.toContain('Read the full motion');
+    });
+
+    it('should use partyInterpellationsFiled label in party breakdown', () => {
+      const content = generateArticleContent({
+        interpellations: [
+          { titel: 'IP om vården', parti: 'V', dok_id: 'I1', url: 'https://riksdagen.se/ip1' },
+          { titel: 'IP om skolan', parti: 'SD', dok_id: 'I2', url: 'https://riksdagen.se/ip2' },
+        ],
+      } as MockArticlePayload, 'interpellations', 'en') as string;
+      expect(content).toContain('interpellation');
+      // Should use interpellations label, not motions
+      expect(content).not.toMatch(/\d+ motion[s]? filed/);
+    });
+
+    it('should render analytical lede with interpellations breakdown', () => {
+      const content = generateArticleContent({
+        interpellations: [
+          { titel: 'IP om arbetsmarknad', parti: 'V', dok_id: 'I1', url: 'https://riksdagen.se/ip1' },
+          { titel: 'IP om migration', parti: 'SD', dok_id: 'I2', url: 'https://riksdagen.se/ip2' },
+          { titel: 'IP om försvar', parti: 'M', dok_id: 'I3', url: 'https://riksdagen.se/ip3' },
+        ],
+      } as MockArticlePayload, 'interpellations', 'en') as string;
+      expect(content).toContain('article-lede');
+      expect(content).toContain('3 interpellations');
+    });
+
+    it('should render SV interpellation entries with SV-specific labels', () => {
+      const content = generateArticleContent({
+        interpellations: [
+          { titel: 'Interpellation om vården', parti: 'V', dok_id: 'I1', url: 'https://riksdagen.se/ip1' },
+        ],
+      } as MockArticlePayload, 'interpellations', 'sv') as string;
+      expect(content).toContain('Läs hela interpellationen');
+      expect(content).not.toContain('Läs hela motionen');
+      expect(content).toContain('interpellation-entry');
+    });
   });
 });
