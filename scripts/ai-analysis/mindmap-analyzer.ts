@@ -125,8 +125,8 @@ const STAKEHOLDER_LABELS = {
     nl: 'Maatschappelijk middenveld', ar: 'المجتمع المدني', he: 'החברה האזרחית', ja: '市民社会', ko: '시민 사회', zh: '民间社会',
   } as Partial<Record<Language, string>>,
   parliament: {
-    en: 'Parliament', sv: 'Riksdag', da: 'Folketing', no: 'Storting',
-    fi: 'Eduskunta', de: 'Parlament', fr: 'Parlement', es: 'Parlamento',
+    en: 'Parliament', sv: 'Riksdag', da: 'Riksdag', no: 'Riksdag',
+    fi: 'Riksdag', de: 'Parlament', fr: 'Parlement', es: 'Parlamento',
     nl: 'Parlement', ar: 'البرلمان', he: 'פרלמנט', ja: '議会', ko: '의회', zh: '议会',
   } as Partial<Record<Language, string>>,
 };
