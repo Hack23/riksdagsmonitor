@@ -1046,7 +1046,7 @@ function buildStrategicImplications(docs: RawDocument[], topic: string | null, l
   const motCount = docs.filter(d => (d.doktyp || d.documentType) === 'mot').length;
   const pressmCount = docs.filter(d => (d.doktyp || d.documentType) === 'pressm').length;
   const extCount = docs.filter(d => (d.doktyp || d.documentType) === 'ext').length;
-  const enrichedCount = docs.filter(d => d.fullText || d.fullContent).length;
+  const enrichedCount = docs.filter(d => d.contentFetched).length;
   const legislativeCount = propCount + betCount + motCount;
 
   // Detect all policy domains across documents for richer context
@@ -1167,7 +1167,7 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
       : `<strong>Policy domains identified:</strong> ${domainList}`);
   }
 
-  const enriched = docs.filter(d => d.fullText || d.fullContent).length;
+  const enriched = docs.filter(d => d.contentFetched).length;
   if (enriched > 0) {
     items.push(lang === 'sv'
       ? `<strong>${enriched} av ${docs.length} dokument</strong> ${enriched === 1 ? 'berikat' : 'berikade'} med fulltext för djupanalys`
@@ -1200,7 +1200,7 @@ function buildExecutiveSummary(docs: RawDocument[], topic: string | null, lang: 
   const motCount  = docs.filter(d => (d.doktyp || d.documentType) === 'mot').length;
   const sfsDocs   = docs.filter(d =>
     (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
-  const enriched  = docs.filter(d => d.fullText || d.fullContent).length;
+  const enriched  = docs.filter(d => d.contentFetched).length;
   const allDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
   const domainList = [...allDomains].slice(0, 4);
@@ -1253,12 +1253,12 @@ const DOCUMENT_BONUS_DIVISOR = 10;
  * document enrichment rate and document count.  Returns an integer.
  *
  * Formula: confidence = (enrichmentRate × ENRICHMENT_WEIGHT) + docBonus
- *  - enrichmentRate: fraction of documents enriched with full text (0–1)
+ *  - enrichmentRate: fraction of documents with contentFetched (0–1)
  *  - docBonus: up to MAX_DOCUMENT_BONUS, proportional to doc count up to DOCUMENT_BONUS_DIVISOR
  */
 function deriveConfidence(docs: RawDocument[]): number {
   if (docs.length === 0) return 0;
-  const enriched = docs.filter(d => d.fullText || d.fullContent).length;
+  const enriched = docs.filter(d => d.contentFetched).length;
   const enrichmentRate = enriched / docs.length; // 0–1
   const docBonus = Math.min(MAX_DOCUMENT_BONUS, Math.round((docs.length / DOCUMENT_BONUS_DIVISOR) * MAX_DOCUMENT_BONUS));
   return Math.min(100, Math.round(enrichmentRate * ENRICHMENT_WEIGHT) + docBonus);
@@ -1448,7 +1448,7 @@ function buildHistoricalContext(docs: RawDocument[], topic: string | null, lang:
  */
 function buildMethodologySection(docs: RawDocument[], topic: string | null, lang: Language, depth: number): string {
   const esc = escapeHtml;
-  const enriched = docs.filter(d => d.fullText || d.fullContent).length;
+  const enriched = docs.filter(d => d.contentFetched).length;
   const confidence = deriveConfidence(docs);
   const heading = deepLabel('methodology', lang);
   const topicStr = topic ? esc(topic) : null;
