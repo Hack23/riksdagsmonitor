@@ -285,10 +285,10 @@ const weekAgo = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
 
 **Post-query filtering example:**
 ```javascript
-// Filter betankanden by publicerad date
-const recent = results.filter(r => new Date(r.publicerad) >= new Date(fromDate));
+// Filter betankanden by publicerad date (ISO-string day comparison — avoids timezone-sensitive Date parsing)
+const recent = results.filter(r => r.publicerad?.slice(0, 10) >= fromDate);
 // Filter voteringar by datum
-const todayVotes = votes.filter(v => new Date(v.datum) >= new Date(fromDate));
+const todayVotes = votes.filter(v => v.datum?.slice(0, 10) >= fromDate);
 ```
 
 ### Cross-Referencing Strategy

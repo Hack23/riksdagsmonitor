@@ -722,14 +722,19 @@ describe('Interpellations Generator', () => {
       "data-transformers/index.ts should reference generateInterpellationsContent"
     ).toBe(true);
     // Verify the interpellations case does NOT fall through to motions
-    // Extract lines around the interpellations case to ensure it has its own return
+    // Scan forward from 'case interpellations' until the next case/default to verify the right generator
     const lines = content.split('\n');
     const interpIdx = lines.findIndex(l => l.includes("case 'interpellations'"));
     if (interpIdx >= 0) {
-      // Look at the next few lines for a return statement with the right function
-      const nextLines = lines.slice(interpIdx, interpIdx + 3).join('\n');
+      // Collect lines from the case label to the next case/default boundary
+      const caseBlock: string[] = [];
+      for (let i = interpIdx; i < lines.length; i++) {
+        if (i > interpIdx && /^\s*(case\s|default\s*:)/.test(lines[i])) break;
+        caseBlock.push(lines[i]);
+      }
+      const caseContent = caseBlock.join('\n');
       expect(
-        nextLines.includes('generateInterpellationsContent'),
+        caseContent.includes('generateInterpellationsContent'),
         "case 'interpellations' should return generateInterpellationsContent (not fall through to motions)"
       ).toBe(true);
     }
