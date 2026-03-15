@@ -557,7 +557,7 @@ export function generatePolicySignificance(doc: RawDocument, lang: Language | st
   const effectiveDoktyp = doc.doktyp || doc.documentType || impliedDoktyp || '';
   if (effectiveDoktyp === 'ip') {
     return lang === 'sv'
-      ? 'Interpellationen debatteras i kammaren där ministern är skyldig att svara och stå till svars.'
+      ? 'Interpellationen debatteras i kammaren där ministern är skyldig att svara och förklara sina beslut.'
       : 'The interpellation is debated in the chamber, where the minister is obliged to respond and be held accountable.';
   }
 
