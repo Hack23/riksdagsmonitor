@@ -137,6 +137,12 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
+      // Should document filtering by date fields
+      expect(content).toMatch(/filter.*by.*publicerad|filter.*by.*datum|filter.*by.*inlämnad/i);
+
+      // Should have filtering examples
+      expect(content).toContain('.filter(');
+      expect(content).toMatch(/new Date.*>=.*new Date|new Date.*>.*fromDate|>=\s*fromDate/);
       // Should document filtering by date fields — the workflow uses
       // placeholder parameters (fromDate/toDate/from/tom) and inline
       // JS .filter() calls with date comparisons for post-query filtering.
