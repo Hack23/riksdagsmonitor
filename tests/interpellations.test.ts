@@ -105,8 +105,9 @@ describe('Interpellations Content Generator', () => {
 
       const result = generateArticleContent(data, 'interpellations', 'en') as string;
 
-      // Should contain interpellations-specific content
-      expect(result).toContain('Interpellation');
+      // Should contain interpellations-specific heading element
+      expect(result).toMatch(/<h2[^>]*>.*Interpellation.*<\/h2>/);
+      // Should have interpellation-entry CSS class
       expect(result).toContain('interpellation-entry');
 
       // Should NOT contain motion-specific phrasing
@@ -139,8 +140,10 @@ describe('Interpellations Content Generator', () => {
       };
 
       const result = generateArticleContent(data, 'interpellations', 'en') as string;
-      // Should contain multi-party strategy context
+      // Should contain multi-party strategy context heading
       expect(result).toContain('Opposition Strategy');
+      // Should contain interpellation-specific strategy context (not motions phrasing)
+      expect(result).toContain('parliamentary oversight');
     });
   });
 
@@ -218,6 +221,8 @@ describe('Interpellations Content Generator', () => {
       const result = generateArticleContent(data, 'interpellations', 'en') as string;
       // The ip-specific policy analysis should reference accountability, not committee review
       expect(result).not.toContain('Requires committee review');
+      // Should contain accountability-focused analysis (from ip doktyp in policy-analysis.ts)
+      expect(result).toContain('Why It Matters');
     });
   });
 });
