@@ -24,6 +24,11 @@ function titleOf(d: RawDocument): string {
   return (d.titel || d.title || d.dokumentnamn || d.dok_id || '').slice(0, 80);
 }
 
+/** Derive lower-case keyword text from a document for stakeholder/EU detection */
+function searchTextOf(d: RawDocument): string {
+  return (d.titel || d.title || d.dokumentnamn || '').toLowerCase();
+}
+
 /** Extract the document ID for use as an evidence reference */
 function refOf(d: RawDocument): string | undefined {
   return d.dok_id || undefined;
@@ -894,7 +899,7 @@ function selectRelevantStakeholders(
 ): StakeholderCategory[] {
   const types = new Set(docs.map(d => d.doktyp || d.documentType || ''));
   // Build keyword text from the same canonical sources titleOf() uses
-  const titles = docs.map(d => (d.titel || d.title || d.dokumentnamn || '').toLowerCase()).join(' ');
+  const titles = docs.map(d => searchTextOf(d)).join(' ');
   // SFS docs may lack doktyp but have dokumentnamn starting with "SFS"
   const hasSfs = types.has('sfs') || docs.some(d => (d.dokumentnamn || '').startsWith('SFS'));
 
@@ -1240,8 +1245,8 @@ export function buildMultiStakeholderSwot(
   const euDocs     = docs.filter(d => {
     const t = d.doktyp || d.documentType;
     if (t === 'fpm' || t === 'eu') return true;
-    const title = (d.titel || d.title || d.dokumentnamn || '').toLowerCase();
-    return /\beu\b/i.test(title) || /europa/i.test(title);
+    const text = searchTextOf(d);
+    return /\beu\b/i.test(text) || /europa/i.test(text);
   });
   const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
   const extDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
