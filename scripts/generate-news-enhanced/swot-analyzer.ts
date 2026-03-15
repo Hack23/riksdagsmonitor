@@ -1204,7 +1204,7 @@ function assessConfidence(refCount: number): 'high' | 'medium' | 'low' {
  *
  * Stakeholder selection is dynamic: the four core perspectives (government,
  * opposition, private sector, civil society) are always included. Up to five
- * additional perspectives (municipal, international, media, academia, labour)
+ * additional perspectives (municipal, international, media, academia, labor)
  * are added when the document mix indicates their relevance.
  *
  * @param docs  Classified parliamentary documents to analyse
