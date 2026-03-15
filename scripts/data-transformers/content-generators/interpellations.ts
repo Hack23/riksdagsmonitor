@@ -83,10 +83,11 @@ function renderInterpellationEntry(doc: RawDocument, lang: Language | string): s
   const defaultText = L(lang, 'interpellationDefault');
 
   // Policy analysis — explains what accountability issue is being raised.
-  // No explicit doktyp override is passed; policy-analysis.ts only distinguishes
-  // 'mot'/'bet' with type-specific text — all other types (including interpellations)
-  // fall through to the 'default' analysis, which is the correct behavior here.
-  const policyAnalysis = generateDeepPolicyAnalysis(doc, lang);
+  // 'ip' is the interpellation document type code.  getDomainSpecificAnalysis()
+  // and generatePolicySignificance() recognise 'ip' and produce
+  // accountability-focused text referencing minister scrutiny and chamber
+  // debate rather than committee processing or proposals.
+  const policyAnalysis = generateDeepPolicyAnalysis(doc, lang, 'ip');
 
   let html = `\n    <div class="interpellation-entry">\n`;
   html += `      <h3>${titleHtml}</h3>\n`;

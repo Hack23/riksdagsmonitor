@@ -1528,6 +1528,36 @@ describe('Data Transformers', () => {
       // Should contain Swedish domain-specific text about NATO
       expect(content).toMatch(/NATO|säkerhetsåtaganden|strategisk/i);
     });
+
+    it('should use ip-specific analysis for interpellations — not default/proposal text', () => {
+      const content = generateArticleContent({
+        motions: [{ titel: 'Försvarspolitik', url: 'https://example.com/1', dok_id: 'IP1' }]
+      } as MockArticlePayload, 'interpellations', 'en') as string;
+
+      // ip-specific text references minister accountability / NATO scrutiny
+      expect(content).toMatch(/minister|accountability|scrutini/i);
+      // NOT the default proposition-focused text about "cross-party consensus-building"
+      expect(content).not.toContain('cross-party consensus-building mechanisms');
+    });
+
+    it('should use ip-specific Swedish analysis for interpellations in sv', () => {
+      const content = generateArticleContent({
+        motions: [{ titel: 'Klimatpolitik', url: 'https://example.com/1', dok_id: 'IP2' }]
+      } as MockArticlePayload, 'interpellations', 'sv') as string;
+
+      // ip-specific Swedish text references minister accountability
+      expect(content).toMatch(/ministern|statsråd|insyn|redovisning/i);
+    });
+
+    it('should use interpellation generic fallback when no domain detected', () => {
+      const content = generateArticleContent({
+        motions: [{ titel: 'Allmän fråga', url: 'https://example.com/1', dok_id: 'IP3' }]
+      } as MockArticlePayload, 'interpellations', 'en') as string;
+
+      // Generic interpellation text — references minister obligation, not committee review
+      expect(content).toMatch(/minister is obliged to respond|held accountable/i);
+      expect(content).not.toContain('Requires committee review');
+    });
   });
 
   describe('Thematic grouping in motions content', () => {
