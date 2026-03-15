@@ -104,28 +104,18 @@ function detectRespondsTo(docs: RawDocument[]): DocumentLink[] {
 /**
  * Detect "implements" links: documents implementing EU directives or treaty commitments.
  */
-function detectImplements(docs: RawDocument[]): DocumentLink[] {
+function detectImplements(docs: RawDocument[], domainCache: Map<string, string[]>): DocumentLink[] {
   const links: DocumentLink[] = [];
   const implementers = docs.filter(d => containsAny(docText(d), EU_IMPL_KEYWORDS));
   const directives = docs.filter(d => containsAny(docText(d), ['eu-direktiv', 'eu directive', 'förordning', 'fördrag']));
-
-  // Pre-compute domains to avoid redundant detectPolicyDomains calls in the nested loop
-  const implDomainCache = new Map<string, string[]>();
-  for (const impl of implementers) {
-    implDomainCache.set(docId(impl), detectPolicyDomains(impl, 'en'));
-  }
-  const dirDomainCache = new Map<string, string[]>();
-  for (const dir of directives) {
-    dirDomainCache.set(docId(dir), detectPolicyDomains(dir, 'en'));
-  }
 
   for (const impl of implementers) {
     for (const dir of directives) {
       if (docId(impl) === docId(dir)) continue;
 
       // Heuristic: same policy domain and implementation keyword
-      const implDomains = implDomainCache.get(docId(impl)) ?? [];
-      const dirDomains = dirDomainCache.get(docId(dir)) ?? [];
+      const implDomains = domainCache.get(docId(impl)) ?? [];
+      const dirDomains = domainCache.get(docId(dir)) ?? [];
       const overlap = implDomains.filter(d => dirDomains.includes(d));
 
       if (overlap.length >= 1) {
@@ -223,13 +213,8 @@ function detectContradicts(docs: RawDocument[]): DocumentLink[] {
 /**
  * Detect "related-topic" links: documents sharing multiple policy domains.
  */
-function detectRelatedTopics(docs: RawDocument[]): DocumentLink[] {
+function detectRelatedTopics(docs: RawDocument[], domainCache: Map<string, string[]>): DocumentLink[] {
   const links: DocumentLink[] = [];
-  const domainCache = new Map<string, string[]>();
-
-  for (const doc of docs) {
-    domainCache.set(docId(doc), detectPolicyDomains(doc, 'en'));
-  }
 
   for (let i = 0; i < docs.length; i++) {
     for (let j = i + 1; j < docs.length; j++) {
@@ -294,12 +279,18 @@ function deduplicateLinks(links: DocumentLink[]): DocumentLink[] {
 export function detectCrossDocumentLinks(docs: RawDocument[]): DocumentLink[] {
   if (docs.length < 2) return [];
 
+  // Pre-compute domains once for the entire batch — shared by detectImplements and detectRelatedTopics
+  const domainCache = new Map<string, string[]>();
+  for (const doc of docs) {
+    domainCache.set(docId(doc), detectPolicyDomains(doc, 'en'));
+  }
+
   const all: DocumentLink[] = [
     ...detectRespondsTo(docs),
-    ...detectImplements(docs),
+    ...detectImplements(docs, domainCache),
     ...detectAmends(docs),
     ...detectContradicts(docs),
-    ...detectRelatedTopics(docs),
+    ...detectRelatedTopics(docs, domainCache),
   ];
 
   return deduplicateLinks(all);

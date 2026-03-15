@@ -40,7 +40,7 @@ const LENS_LABELS: Readonly<Record<string, { lensName: string; stakeholder: stri
   sv: { lensName: 'Oppositionsperspektiv', stakeholder: 'Oppositionen' },
   da: { lensName: 'Oppositionsperspektiv', stakeholder: 'Oppositionen' },
   no: { lensName: 'Opposisjonsperspektiv', stakeholder: 'Opposisjonen' },
-  fi: { lensName: 'Oppositiönäkökulma', stakeholder: 'Oppositio' },
+  fi: { lensName: 'Opposition näkökulma', stakeholder: 'Oppositio' },
   de: { lensName: 'Oppositionsperspektive', stakeholder: 'Opposition' },
   fr: { lensName: "Perspective de l'opposition", stakeholder: "Opposition" },
   es: { lensName: 'Perspectiva de la oposición', stakeholder: 'Oposición' },
