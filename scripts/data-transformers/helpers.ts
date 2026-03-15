@@ -222,7 +222,9 @@ export function propSummaryFromOrgan(organ: string, lang: Language | string): st
  * Uses document type, subtype, organ, and other metadata to create informative placeholder
  */
 export function generateEnhancedSummary(doc: RawDocument, type: string, lang: Language | string): string {
-  // For motions/interpellations: clean raw Swedish notis text before returning
+  // For motions/interpellations: clean raw Swedish notis text before returning.
+  // Note: cleanMotionText() only handles motion-specific boilerplate ("Motion till riksdagen",
+  // "Förslag till riksdagsbeslut"); interpellation text without those phrases is returned as-is.
   if ((type === 'motion' || type === 'interpellation') && (doc.summary || doc.notis)) {
     const raw = (doc.summary || doc.notis || '');
     // Skip person-profile data (e.g. "Tjänstgörande riksdagsledamot...", "Avliden 2011-09-20...")

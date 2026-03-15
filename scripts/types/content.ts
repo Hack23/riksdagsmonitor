@@ -111,6 +111,8 @@ export interface ContentLabelSet {
   committeeActivityTakeaway: (committees: string, extra: number) => string;
   committeeMomentumTakeaway: (n: number) => string;
   oppositionStrategyContext: (n: number) => string;
+  /** Interpellation-specific strategy context (parliamentary oversight framing, not motions) */
+  interpellationStrategyContext: (n: number) => string;
   policyImplicationsContext: (propCount: number, domainCount: number) => string;
   genericOverview: (n: number) => string;
   partyMotionsFiled: (party: string, n: number) => string;

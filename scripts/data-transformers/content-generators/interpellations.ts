@@ -47,10 +47,10 @@ export function generateInterpellationsContent(data: ArticleContentData, lang: L
   });
   const partyCount = Object.keys(byParty).filter(p => p !== 'other').length;
 
-  // Opposition strategy section with per-party analysis
+  // Parliamentary oversight strategy section with per-party analysis
   if (partyCount > 1) {
     content += `\n    <h2>${L(lang, 'oppositionStrategy')}</h2>\n`;
-    const strategyFn = L(lang, 'oppositionStrategyContext') as string | ((n: number) => string);
+    const strategyFn = L(lang, 'interpellationStrategyContext') as string | ((n: number) => string);
     const strategyContext = typeof strategyFn === 'function'
       ? strategyFn(partyCount)
       : `Interpellations from ${partyCount} different parties reveal coordinated parliamentary oversight efforts.`;
