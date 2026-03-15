@@ -433,7 +433,7 @@ function pass1ContentDecomposition(
           ? `${localizeDocType('prop', lang, classified.propositions.length)} (${classified.propositions.length})`
           : localizeDocType('prop', lang, 1),
         color: 'orange',
-        items: classified.propositions.slice(0, 4).map(d => titleOf(d)),
+        items: classified.propositions.slice(0, 4).map(d => titleOf(d)).filter(Boolean),
       });
     }
     if (classified.committeeReports.length > 0) {
@@ -442,14 +442,14 @@ function pass1ContentDecomposition(
           ? `${localizeDocType('bet', lang, classified.committeeReports.length)} (${classified.committeeReports.length})`
           : localizeDocType('bet', lang, 1),
         color: 'blue',
-        items: classified.committeeReports.slice(0, 4).map(d => titleOf(d)),
+        items: classified.committeeReports.slice(0, 4).map(d => titleOf(d)).filter(Boolean),
       });
     }
     if (classified.laws.length > 0) {
       subBranches.push({
         label: `${localizeDocType('sfs', lang, classified.laws.length)} (${classified.laws.length})`,
         color: 'green',
-        items: classified.laws.slice(0, 3).map(d => titleOf(d)),
+        items: classified.laws.slice(0, 3).map(d => titleOf(d)).filter(Boolean),
       });
     }
 
@@ -458,7 +458,7 @@ function pass1ContentDecomposition(
       color: 'orange',
       icon: '⚖️',
       importance: 'critical',
-      items: pipelineDocs.slice(0, 3).map(d => titleOf(d)),
+      items: pipelineDocs.slice(0, 3).map(d => titleOf(d)).filter(Boolean),
       subBranches: subBranches.length > 0 ? subBranches : undefined,
     });
   }
@@ -561,7 +561,7 @@ function pass2RelationshipDiscovery(
 
   // Risks & blockers — opposition motions as conflict signals
   if (classified.motions.length > 0) {
-    const riskItems = classified.motions.slice(0, 4).map(d => titleOf(d));
+    const riskItems = classified.motions.slice(0, 4).map(d => titleOf(d)).filter(Boolean);
     branches.push({
       label: L(LABELS.riskBlockers, lang, 'Risks & Blockers'),
       color: 'magenta',
@@ -591,7 +591,7 @@ function pass2RelationshipDiscovery(
       color: 'blue',
       icon: '🇪🇺',
       importance: 'high',
-      items: uniqueEuDocs.slice(0, 4).map(d => titleOf(d)),
+      items: uniqueEuDocs.slice(0, 4).map(d => titleOf(d)).filter(Boolean),
     });
     // Only emit pipeline → EU connection when the pipeline branch actually exists
     if (hasPipelineBranch) {
@@ -639,7 +639,7 @@ function pass3ValidationAndCompleteness(
   // Legislative timeline — add dates from documents (oldest-first, stable on ties)
   const datedDocs = docs.filter(d => d.datum).sort((a, b) => a.datum!.localeCompare(b.datum!));
   if (datedDocs.length >= 2) {
-    const timelineItems = datedDocs.slice(0, 5).map(d => `${d.datum} — ${titleOf(d)}`);
+    const timelineItems = datedDocs.slice(0, 5).map(d => `${d.datum} — ${titleOf(d)}`).filter(t => !t.endsWith(' — '));
     branches.push({
       label: L(LABELS.legislativeTimeline, lang, 'Legislative Timeline'),
       color: 'yellow',
@@ -736,7 +736,8 @@ function generateSummary(
     .replace('{domains}', domainList.length > 0 ? domainList.join(', ') : L(MULTIPLE_POLICY_AREAS, lang, 'multiple policy areas'))
     .replace('{docTypes}', String(docTypeCount))
     .replace('{committees}', String(organs.length))
-    .replace('{euNote}', euNote);
+    .replace('{euNote}', euNote)
+    .trimEnd();
 }
 
 // ---------------------------------------------------------------------------
