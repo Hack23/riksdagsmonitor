@@ -1134,9 +1134,12 @@ function buildDeepInspectionSections(
 
 
   // ── Dashboard: document type distribution ─────────────────────────────────
+  // Normalize SFS-by-name docs (missing doktyp but dokumentnamn starts with 'SFS')
+  // so they are counted under 'sfs', consistent with sfsDocs/otherDocs/Sankey filtering.
   const typeCounts: Record<string, number> = {};
   docs.forEach(d => {
-    const t = d.doktyp || d.documentType || 'other';
+    const raw = d.doktyp || d.documentType || '';
+    const t = (!raw && (d.dokumentnamn || '').startsWith('SFS')) ? 'sfs' : (raw || 'other');
     typeCounts[t] = (typeCounts[t] || 0) + 1;
   });
   const rawTypeKeys = Object.keys(typeCounts);

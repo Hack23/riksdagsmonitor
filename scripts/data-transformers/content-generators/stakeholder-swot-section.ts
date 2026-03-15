@@ -102,20 +102,23 @@ interface EnhancedSwotEntry extends SwotEntry {
 // Trend indicator helper
 // ---------------------------------------------------------------------------
 
-const TREND_SYMBOLS: Readonly<Record<string, string>> = {
+/** Supported trend direction values — kept in sync with TrendDirection from ai-swot-analyzer */
+type TrendDir = 'improving' | 'stable' | 'deteriorating';
+
+const TREND_SYMBOLS: Readonly<Record<TrendDir, string>> = {
   improving:    '↑',
   stable:       '→',
   deteriorating: '↓',
 };
 
-const TREND_CLASSES: Readonly<Record<string, string>> = {
+const TREND_CLASSES: Readonly<Record<TrendDir, string>> = {
   improving:    'swot-trend--improving',
   stable:       'swot-trend--stable',
   deteriorating: 'swot-trend--deteriorating',
 };
 
 /** Localised i18n keys for trend direction (used in aria-label) */
-const TREND_LABEL_KEYS: Readonly<Record<string, string>> = {
+const TREND_LABEL_KEYS: Readonly<Record<TrendDir, string>> = {
   improving:     'swotTrendImproving',
   stable:        'swotTrendStable',
   deteriorating: 'swotTrendDeteriorating',
