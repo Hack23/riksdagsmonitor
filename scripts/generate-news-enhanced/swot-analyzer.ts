@@ -1230,8 +1230,8 @@ export function buildMultiStakeholderSwot(
   const euDocs     = docs.filter(d => {
     const t = d.doktyp || d.documentType;
     if (t === 'fpm' || t === 'eu') return true;
-    const title = (d.titel || d.title || '').toLowerCase();
-    return /\beu\b/i.test(title) || title.includes('europa');
+    const title = d.titel || d.title || '';
+    return /\beu\b/i.test(title) || /europa/i.test(title);
   });
   const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
   const extDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'ext');

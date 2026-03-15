@@ -177,10 +177,11 @@ describe('buildMultiStakeholderSwot', () => {
     const result = buildMultiStakeholderSwot(docs, 'en');
     const intl = result.find(s => s.category === 'international');
     expect(intl, 'international stakeholder should be present').toBeDefined();
-    // The EU-keyword docs should appear in evidence refs
+    // Both EU-keyword docs should appear in evidence refs
     expect(intl!.evidenceRefs).toBeDefined();
-    expect(intl!.evidenceRefs!.length).toBeGreaterThan(0);
+    expect(intl!.evidenceRefs!.length).toBeGreaterThanOrEqual(2);
     expect(intl!.evidenceRefs).toContain('prop-eu-1');
+    expect(intl!.evidenceRefs).toContain('bet-eu-1');
   });
 
   it('adds media stakeholder when press releases (pressm) are present', () => {
