@@ -53,7 +53,7 @@ const CONFLICT_PAIRS: ReadonlyArray<readonly [string, string]> = [
 // Helper utilities
 // ---------------------------------------------------------------------------
 
-function docId(doc: RawDocument): string {
+export function docId(doc: RawDocument): string {
   return doc.dok_id || doc.url || doc.titel || doc.title || 'unknown';
 }
 

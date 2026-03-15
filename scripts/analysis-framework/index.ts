@@ -43,7 +43,7 @@ import { analyzeCitizenPerspective } from './lenses/citizen.js';
 import { analyzeEconomicPerspective } from './lenses/economic.js';
 import { analyzeInternationalPerspective } from './lenses/international.js';
 import { analyzeMediaPerspective } from './lenses/media.js';
-import { detectCrossDocumentLinks } from './cross-reference.js';
+import { detectCrossDocumentLinks, docId } from './cross-reference.js';
 import {
   computeSignificanceScore,
   computeOverallConfidence,
@@ -64,15 +64,19 @@ import {
  * @param doc  - The parliamentary document to analyse
  * @param cia  - Optional CIA context (coalition stability, party performance, etc.)
  * @param lang - Target language for all generated text (default: 'en')
+ * @param precomputedDomains - Optional pre-computed policy domains for this document.
+ *                             When provided (e.g. from `analyzeDocuments()`), avoids a
+ *                             redundant `detectPolicyDomains` call.
  * @returns    A complete `DocumentAnalysisResult`
  */
 export function analyzeDocument(
   doc: RawDocument,
   cia?: CIAContext,
   lang: Language | string = 'en',
+  precomputedDomains?: string[],
 ): DocumentAnalysisResult {
-  // Compute domains once per document — avoids 8+ redundant detectPolicyDomains calls
-  const domains = detectPolicyDomains(doc, 'en');
+  // Reuse caller-provided domains or compute once per document
+  const domains = precomputedDomains ?? detectPolicyDomains(doc, 'en');
 
   const perspectives: PerspectiveAnalysis[] = [
     analyzeGovernmentPerspective(doc, cia, lang, domains),
@@ -128,9 +132,8 @@ export function analyzeDocuments(
   const domainMap = new Map<string, string[]>();
   const results: DocumentAnalysisResult[] = docs.map(doc => {
     const domains = detectPolicyDomains(doc, 'en');
-    const id = doc.dok_id || doc.url || doc.titel || '';
-    domainMap.set(id, domains);
-    return analyzeDocument(doc, cia, lang);
+    domainMap.set(docId(doc), domains);
+    return analyzeDocument(doc, cia, lang, domains);
   });
 
   // Cross-document link detection across the full batch — reuses domain map
@@ -138,9 +141,9 @@ export function analyzeDocuments(
 
   // Attach relevant links to each document result
   for (const result of results) {
-    const docId = result.document.dok_id || result.document.url || result.document.titel || '';
+    const id = docId(result.document);
     result.crossDocumentLinks = crossDocumentLinks.filter(
-      link => link.sourceId === docId || link.targetId === docId
+      link => link.sourceId === id || link.targetId === id
     );
   }
 
@@ -170,7 +173,7 @@ export type {
   BatchAnalysisResult,
 } from './types.js';
 
-export { detectCrossDocumentLinks } from './cross-reference.js';
+export { detectCrossDocumentLinks, docId } from './cross-reference.js';
 export { computeSignificanceScore, computeOverallConfidence, extractKeyInsights } from './significance-scorer.js';
 export { analyzeGovernmentPerspective } from './lenses/government.js';
 export { analyzeOppositionPerspective } from './lenses/opposition.js';
