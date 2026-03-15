@@ -9876,7 +9876,7 @@ body.news-page {
     var(--primary-color, #006633) calc(var(--intensity, 0) * 100%),
     var(--badge-bg, #f0f4f8)
   );
-  /* Switch to white text when intensity > 0.55 to maintain WCAG 4.5:1 contrast */
+  /* Gradually blend text toward white as intensity increases (clamped 0–100%) for WCAG 4.5:1 contrast */
   color: color-mix(
     in srgb,
     #fff min(calc(var(--intensity, 0) * 180%), 100%),
