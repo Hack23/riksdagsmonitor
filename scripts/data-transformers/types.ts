@@ -45,7 +45,7 @@ export interface RawDocument {
   intressent_namn?: string;
   author?: string;
   parti?: string;
-  /** Recipient minister for interpellations (mottagare field from the API) */
+  /** Recipient minister / target for interpellations (mottagare field from the Riksdag API) */
   mottagare?: string;
   /** Publication date from the MCP API (ISO format YYYY-MM-DD) */
   datum?: string;
