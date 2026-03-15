@@ -61,7 +61,7 @@ export class AnalysisCache {
     iterations: number,
     lang: Language,
   ): string {
-    // Use all doc IDs (order-independent via sort) plus count to avoid collisions
+    // Use all doc IDs (order-independent via sort) plus count to reduce the risk of collisions
     const docIds = docs
       .map(d => d.dok_id ?? d.titel ?? d.title ?? '')
       .sort();

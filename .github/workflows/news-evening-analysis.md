@@ -216,15 +216,20 @@ Cross-reference related data sources for richer analysis. Filter all results by 
 
 **Example 1: Committee Report Deep Dive**
 ```javascript
-// 1. Fetch committee reports
+// 1. Fetch committee reports for the current riksmöte
+const currentRm = '2025/26'; // adjust to current session
 const reports = await get_betankanden({ rm: currentRm });
 // 2. For each report, cross-reference voting records
-const votes = await search_voteringar({ bet: report.beteckning });
+for (const report of reports) {
+  const votes = await search_voteringar({ bet: report.beteckning });
+}
 ```
 
 **Example 2: Government Activity Analysis**
 ```javascript
-// 1. Fetch propositions
+// 1. Fetch propositions for the current riksmöte
+const currentRm = '2025/26'; // adjust to current session
+const fromDate = new Date(Date.now() - 7 * 86400000).toISOString().split('T')[0];
 const props = await get_propositioner({ rm: currentRm });
 // 2. Cross-reference with government press releases
 const press = await search_regering({ type: 'pressmeddelanden', dateFrom: fromDate });
@@ -233,6 +238,8 @@ const press = await search_regering({ type: 'pressmeddelanden', dateFrom: fromDa
 **Example 3: Party Behavior Analysis**
 ```javascript
 // 1. Get motions filed by party
+const currentRm = '2025/26'; // adjust to current session
+const partyCode = 'S'; // e.g. S, M, SD, V, MP, C, L, KD
 const motions = await get_motioner({ rm: currentRm });
 // 2. Get party voting patterns
 const votes = await search_voteringar({ parti: partyCode, rm: currentRm });
