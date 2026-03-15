@@ -23,7 +23,7 @@
 #
 # Dedicated translation workflow for news articles. Generates high-quality translations for all non-core languages. Dispatched by content workflows or run manually/on schedule to translate untranslated articles.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"624f2f39ce3dfbe5f8a8de607bb43ad1f1d4c258a9d3872346483c5263a9a1f2","compiler_version":"v0.58.3"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"a007a4b42e843d92c067bf69f79829a272174868fbb2c122cb0b9a79bdeb795f","compiler_version":"v0.58.3"}
 
 name: "News: Translate Articles"
 "on":

@@ -23,7 +23,7 @@
 #
 # Generates month-ahead strategic outlook articles in core languages (EN, SV). Translations handled by news-translate workflow. Runs on 1st of each month.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"820328008f3f02b810d36c18322cae105b1b86ea19594228719c2b6601ea09aa","compiler_version":"v0.58.3"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"b44b5a9d2056180135a3bb2acdf95c507e1ed5680e63de1c6da7fdde17d568ee","compiler_version":"v0.58.3"}
 
 name: "News: Month Ahead"
 "on":
