@@ -179,14 +179,24 @@ STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm
 ### DATA FRESHNESS CHECK
 
 Parse sync status and compute `hoursSinceSync = (Date.now() - new Date(last_updated).getTime()) / 3600000`. If hoursSinceSync > 48, data is stale — add a disclaimer note in analysis and mention "stale data (> 48 hours old)" but proceed with cached data. Example:
+After `get_sync_status()` succeeds, compute hours since last sync and check if data is stale:
 ```js
 const hoursSinceSync = (Date.now() - new Date(syncResult.last_updated).getTime()) / 3600000;
 if (hoursSinceSync > 48) { /* add stale data disclaimer */ }
 ```
+If `hoursSinceSync > 48`, add a disclaimer note in analysis mentioning "stale data (> 48 hours old)" but proceed with cached data.
 
 ### IMPORTANT: Date Filtering in Analysis
 
 Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc queries, use `scripts/mcp-query-cli.ts` — NEVER implement custom MCP client code (PROHIBITION).
+
+Calculate date range for queries:
+```js
+const today = new Date().toISOString().slice(0, 10);
+const fromDate = new Date(Date.now() - lookbackHours * 3600000).toISOString().slice(0, 10);
+// For weekly review (Saturday): 5-day lookback = 5 * 86400000 ms
+const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 10);
+```
 
 **Tools with native date params** (supports from/tom or dateFrom/dateTo):
 - `get_calendar_events` — supports `from`/`tom` parameters
@@ -200,7 +210,10 @@ Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc quer
 - `get_propositioner` — filter by `publicerad` date
 - `search_anforanden` — filter by `datum` field
 
-Filter results to only include items with dates `>= fromDate`.
+Filter results to only include items with dates `>= fromDate`:
+```js
+const filtered = results.filter(item => new Date(item.datum || item.publicerad) >= new Date(fromDate));
+```
 
 Post-query filtering pattern:
 ```js
@@ -216,18 +229,27 @@ Example 1: Committee Report Deep Dive
 ```
 // 1. Fetch recent betänkanden
 // 2. Cross-reference with search_voteringar for the same beteckning
+// 1. Fetch committee reports
+// 2. Cross-reference with voting records for the same beteckning
+// 3. Enrich with related speeches from the same debate
 ```
 
 Example 2: Government Activity Analysis
 ```
 // 1. Query search_regering for today's propositions
 // 2. Check get_propositioner for detailed data
+// 1. Fetch government propositions for the period
+// 2. Cross-reference with opposition motions referencing the same prop
+// 3. Check committee assignments and processing status
 ```
 
 Example 3: Party Behavior Analysis
 ```
 // 1. Get voteringar grouped by party
 // 2. Compare with recent search_anforanden
+// 1. Gather voting records by party
+// 2. Cross-reference with interpellations and written questions
+// 3. Identify patterns in party opposition strategy
 ```
 
 ### Saturday vs Weekday Mode
