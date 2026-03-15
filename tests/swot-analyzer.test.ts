@@ -168,6 +168,21 @@ describe('buildMultiStakeholderSwot', () => {
     expect(cats).toContain('international');
   });
 
+  it('international SWOT evidence refs include EU-keyword title docs, not just fpm type', () => {
+    const docs = [
+      makeDoc({ dok_id: 'prop-eu-1', doktyp: 'prop', titel: 'Genomförande av EU-direktiv om hållbarhet' }),
+      makeDoc({ dok_id: 'bet-eu-1', doktyp: 'bet', titel: 'Betänkande om EU budget' }),
+      makeDoc({ dok_id: 'mot-1', doktyp: 'mot', titel: 'Motion om arbetsmarknad' }),
+    ];
+    const result = buildMultiStakeholderSwot(docs, 'en');
+    const intl = result.find(s => s.category === 'international');
+    expect(intl, 'international stakeholder should be present').toBeDefined();
+    // The EU-keyword docs should appear in evidence refs
+    expect(intl!.evidenceRefs).toBeDefined();
+    expect(intl!.evidenceRefs!.length).toBeGreaterThan(0);
+    expect(intl!.evidenceRefs).toContain('prop-eu-1');
+  });
+
   it('adds media stakeholder when press releases (pressm) are present', () => {
     const result = buildMultiStakeholderSwot(makeMediaDocs(), 'en');
     const cats = result.map(s => s.category);

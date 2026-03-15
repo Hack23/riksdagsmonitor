@@ -1224,7 +1224,15 @@ export function buildMultiStakeholderSwot(
   const skrDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
   const sfsDocs    = docs.filter(d =>
     (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
-  const euDocs     = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
+  // EU docs: includes fpm/eu doc types AND docs whose titles match EU keywords,
+  // so the international SWOT is grounded in the same docs that trigger the
+  // international stakeholder in selectRelevantStakeholders().
+  const euDocs     = docs.filter(d => {
+    const t = d.doktyp || d.documentType;
+    if (t === 'fpm' || t === 'eu') return true;
+    const title = (d.titel || d.title || '').toLowerCase();
+    return /\beu\b/i.test(title) || title.includes('europa');
+  });
   const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
   const extDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
 

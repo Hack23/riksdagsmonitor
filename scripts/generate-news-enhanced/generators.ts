@@ -1086,7 +1086,7 @@ async function buildDeepInspectionSections(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,
-): TemplateSection[] {
+): Promise<TemplateSection[]> {
   if (docs.length === 0) return [];
 
   // Lazy-import swot-analyzer to avoid loading its large localization maps
