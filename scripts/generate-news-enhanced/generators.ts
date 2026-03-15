@@ -1017,7 +1017,7 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
   const propDocs = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
   const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
   const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
-  const euDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
+  const euDocs   = docs.filter(d => { const t = (d.doktyp || d.documentType) || ''; return t === 'fpm' || t === 'eu'; });
   const sfsDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'sfs');
   const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
 
@@ -1135,11 +1135,11 @@ function buildDeepInspectionSections(
   const skrDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
   const sfsDocs  = docs.filter(d =>
     (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
-  const euDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
+  const euDocs   = docs.filter(d => { const t = (d.doktyp || d.documentType) || ''; return t === 'fpm' || t === 'eu'; });
   const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
   const extDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
   const otherDocs = docs.filter(d =>
-    !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || ''));
+    !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext'].includes((d.doktyp || d.documentType) || ''));
 
   // ── SWOT entries — from AI pipeline when available, else SWOT_DEFAULTS ─────
   let govStrengths: SwotEntry[];
