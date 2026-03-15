@@ -216,9 +216,13 @@ Cross-reference related data sources for richer analysis. Filter all results by 
 
 **Example 1: Committee Report Deep Dive**
 ```javascript
-// 1. Fetch committee reports for the current riksmöte
+// Setup: riksmöte + date threshold
 const currentRm = '2025/26'; // adjust to current session
-const reports = await get_betankanden({ rm: currentRm });
+const fromDate = new Date(Date.now() - 7 * 86400000); // 7 days ago (Date object)
+const fromDateIso = fromDate.toISOString().split('T')[0]; // ISO string for native params
+// 1. Fetch committee reports, filter by date
+const allReports = await get_betankanden({ rm: currentRm });
+const reports = allReports.filter(r => new Date(r.publicerad || r.datum) >= fromDate);
 // 2. For each report, cross-reference voting records
 for (const report of reports) {
   const votes = await search_voteringar({ bet: report.beteckning });
@@ -227,22 +231,29 @@ for (const report of reports) {
 
 **Example 2: Government Activity Analysis**
 ```javascript
-// 1. Fetch propositions for the current riksmöte
+// Setup: riksmöte + date threshold
 const currentRm = '2025/26'; // adjust to current session
-const fromDate = new Date(Date.now() - 7 * 86400000).toISOString().split('T')[0];
-const props = await get_propositioner({ rm: currentRm });
-// 2. Cross-reference with government press releases
-const press = await search_regering({ type: 'pressmeddelanden', dateFrom: fromDate });
+const fromDate = new Date(Date.now() - 7 * 86400000); // 7 days ago (Date object)
+const fromDateIso = fromDate.toISOString().split('T')[0]; // ISO string for native params
+// 1. Fetch propositions, filter by date
+const allProps = await get_propositioner({ rm: currentRm });
+const props = allProps.filter(p => new Date(p.publicerad || p.datum) >= fromDate);
+// 2. Cross-reference with government press releases (native dateFrom param)
+const press = await search_regering({ type: 'pressmeddelanden', dateFrom: fromDateIso });
 ```
 
 **Example 3: Party Behavior Analysis**
 ```javascript
-// 1. Get motions filed by party
+// Setup: riksmöte + date threshold + party
 const currentRm = '2025/26'; // adjust to current session
+const fromDate = new Date(Date.now() - 7 * 86400000); // 7 days ago (Date object)
 const partyCode = 'S'; // e.g. S, M, SD, V, MP, C, L, KD
-const motions = await get_motioner({ rm: currentRm });
-// 2. Get party voting patterns
-const votes = await search_voteringar({ parti: partyCode, rm: currentRm });
+// 1. Get motions filed by party, filter by date
+const allMotions = await get_motioner({ rm: currentRm });
+const motions = allMotions.filter(m => new Date(m.inlämnad || m.datum) >= fromDate);
+// 2. Get party voting patterns, filter by date
+const allVotes = await search_voteringar({ parti: partyCode, rm: currentRm });
+const votes = allVotes.filter(v => new Date(v.datum) >= fromDate);
 ```
 
 ### Saturday vs Weekday Mode

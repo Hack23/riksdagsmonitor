@@ -694,6 +694,40 @@ const TYPE_DESC_EXTERNAL: Lang14 = L14(
   'externe referenties', 'مراجع خارجية', 'הפניות חיצוניות', '外部参照', '외부 참조', '外部参考',
 );
 
+const TYPE_DESC_REGULATORY: Lang14 = L14(
+  'regulatory and parliamentary documents',
+  'reglerande och parlamentariska dokument',
+  'regulatoriske og parlamentariske dokumenter',
+  'regulatoriske og parlamentariske dokumenter',
+  'sääntely- ja parlamentaarisia asiakirjoja',
+  'Regulierungs- und Parlamentsdokumente',
+  'documents réglementaires et parlementaires',
+  'documentos regulatorios y parlamentarios',
+  'regelgevende en parlementaire documenten',
+  'وثائق تنظيمية وبرلمانية',
+  'מסמכים רגולטוריים ופרלמנטריים',
+  '規制・議会文書',
+  '규제 및 의회 문서',
+  '监管和议会文件',
+);
+
+const SIGNAL_SNAPSHOT: Lang14 = L14(
+  'This snapshot provides a regulatory and institutional overview — monitor whether formal legislative proposals follow.',
+  'Denna ögonblicksbild ger en regulatorisk och institutionell överblick — bevaka om formella lagförslag följer.',
+  'Dette øjebliksbillede giver et regulatorisk og institutionelt overblik — følg om formelle lovforslag følger.',
+  'Dette øyeblikksbildet gir en regulatorisk og institusjonell oversikt — følg med på om formelle lovforslag følger.',
+  'Tämä tilannekuva antaa sääntely- ja institutionaalisen yleiskuvan — seuraa, seuraavatko viralliset lakiehdotukset.',
+  'Dieser Überblick bietet eine regulatorische und institutionelle Übersicht — beobachten Sie, ob formelle Gesetzesvorschläge folgen.',
+  'Cet aperçu offre une vue réglementaire et institutionnelle — surveillez si des propositions législatives formelles suivent.',
+  'Esta instantánea proporciona una visión regulatoria e institucional — monitoree si siguen propuestas legislativas formales.',
+  'Dit overzicht biedt een regelgevend en institutioneel beeld — volg of formele wetsvoorstellen volgen.',
+  'توفر هذه اللقطة نظرة تنظيمية ومؤسسية — راقب ما إذا كانت ستتبعها مقترحات تشريعية رسمية.',
+  'תמונת מצב זו מספקת סקירה רגולטורית ומוסדית — עקבו אחרי האם הצעות חוק פורמליות ייכנסו.',
+  'このスナップショットは規制・制度の概要を提供します — 正式な法案提出が続くか注視してください。',
+  '이 스냅샷은 규제 및 제도적 개요를 제공합니다 — 공식 법률안 제출이 뒤따르는지 모니터링하십시오.',
+  '此快照提供监管和制度概览——关注是否有正式立法提案跟进。',
+);
+
 // ── Key takeaway templates ────────────────────────────────────────────────────
 
 const TAKEAWAY_PROP: Lang14 = L14(
@@ -1377,13 +1411,32 @@ export class AIAnalysisPipeline {
       })}</p>`;
     }
 
-    // Non-legislative documents — use localized description and signal text
-    const typeDesc = esc(pressmDocs.length > 0
-      ? `${pressmDocs.length} ${pickLang(TYPE_DESC_PRESS, lang)}`
-      : `${extDocs.length} ${pickLang(TYPE_DESC_EXTERNAL, lang)}`);
-    const signalText = pressmDocs.length > 0
-      ? pickLang(SIGNAL_PRESS, lang)
-      : pickLang(SIGNAL_EXTERNAL, lang);
+    // Non-legislative documents — branch on press/ext vs regulatory/snapshot
+    const hasPressOrExt = pressmDocs.length > 0 || extDocs.length > 0;
+
+    if (hasPressOrExt) {
+      const typeDesc = esc(pressmDocs.length > 0
+        ? `${pressmDocs.length} ${pickLang(TYPE_DESC_PRESS, lang)}`
+        : `${extDocs.length} ${pickLang(TYPE_DESC_EXTERNAL, lang)}`);
+      const signalText = pressmDocs.length > 0
+        ? pickLang(SIGNAL_PRESS, lang)
+        : pickLang(SIGNAL_EXTERNAL, lang);
+      const template = pickLang(STRATEGIC_IMPL_TEMPLATES.nonLegislative, lang);
+      return `<p>${interp(template, {
+        total,
+        enriched: enrichedCount,
+        topic: topicInsert,
+        typeDesc,
+        domain: domainInsert,
+        signalText: esc(signalText),
+      })}</p>`;
+    }
+
+    // Regulatory / snapshot — SFS, SKR, FPM, or other parliamentary documents only
+    const regulatoryCount = classified.sfsDocs.length + classified.skrDocs.length
+      + classified.euDocs.length + classified.otherDocs.length;
+    const typeDesc = esc(`${regulatoryCount} ${pickLang(TYPE_DESC_REGULATORY, lang)}`);
+    const signalText = pickLang(SIGNAL_SNAPSHOT, lang);
     const template = pickLang(STRATEGIC_IMPL_TEMPLATES.nonLegislative, lang);
     return `<p>${interp(template, {
       total,

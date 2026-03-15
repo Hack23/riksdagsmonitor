@@ -342,6 +342,18 @@ describe('AIAnalysisPipeline', () => {
       expect(enrichedTakeaway2).toBeDefined();
       expect(enrichedTakeaway2).toContain('2 of 2');
     });
+
+    it('SFS/SKR-only inputs use regulatory snapshot, not misleading press/ext text', () => {
+      const sfsDoc = makeDoc({ dok_id: 'SFS1', doktyp: 'sfs', titel: 'SFS 2026:1' });
+      const skrDoc = makeDoc({ dok_id: 'SKR1', doktyp: 'skr', titel: 'Skrivelse' });
+      const pipeline = new AIAnalysisPipeline({ iterations: 3 });
+      const result = pipeline.analyze([sfsDoc, skrDoc], null, 'en');
+      // Should NOT contain "0 external references" or "0 press releases"
+      expect(result.strategicImplications).not.toContain('0 external');
+      expect(result.strategicImplications).not.toContain('0 press');
+      // Should contain regulatory language
+      expect(result.strategicImplications).toMatch(/regulatory|snapshot|parliamentary/i);
+    });
   });
 });
 
