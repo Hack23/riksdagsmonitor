@@ -159,8 +159,8 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
-      // Check for date support annotations
-      expect(content).toMatch(/supports.*from.*tom|supports.*from_date.*to_date|supports.*dateFrom.*dateTo|fromDate|from:/);
+      // Check for date support annotations (all alternatives anchored to tool-support context)
+      expect(content).toMatch(/supports.*from.*tom|supports.*from_date.*to_date|supports.*dateFrom.*dateTo/);
       expect(content).toMatch(/filter by.*datum|filter by.*publicerad|filter by.*inlämnad/);
     });
   });
@@ -177,11 +177,6 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       const hasCrossRefGuidance =
         (content.includes('Example 1:') && content.includes('Example 2:')) ||
         (content.includes('cross-reference') || content.includes('Cross-reference'));
-      // Should have numbered multi-tool query examples that demonstrate
-      // combining different API calls in a single analysis workflow
-      const hasMultiToolExamples =
-        content.includes('Example 1:') && content.includes('Example 2:');
-
       expect(hasCrossRefGuidance).toBe(true);
     });
   });

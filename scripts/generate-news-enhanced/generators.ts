@@ -1292,10 +1292,8 @@ function buildDeepInspectionSections(
     summary: aiMindmap.summary,
   });
 
-  // ── Detected policy domains (shared with economic dashboard) ─────────────
-  const allDetectedDomains = new Set<string>();
-  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
-  const detectedDomainList = [...allDetectedDomains].slice(0, 8);
+  // ── Detected policy domains (reuse from AI mindmap — avoids duplicate scanning) ─
+  const detectedDomainList = aiMindmap.detectedDomains.slice(0, 8);
 
   // ── Sankey: party/doc-type flow → legislative outcome ─────────────────────
   const sankeyNodes: SankeyNode[] = [

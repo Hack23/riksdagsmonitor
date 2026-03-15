@@ -39,6 +39,8 @@ export interface MindmapAnalysisResult {
   connections: BranchConnection[];
   /** AI-generated analytical summary paragraph */
   summary: string;
+  /** Detected policy domains (computed once, reusable by callers such as the economic dashboard) */
+  detectedDomains: string[];
 }
 
 // ---------------------------------------------------------------------------
@@ -419,6 +421,7 @@ function pass1ContentDecomposition(
   docs: RawDocument[],
   classified: ReturnType<typeof classifyDocs>,
   lang: Language | string,
+  precomputedDomains: string[],
 ): MindmapBranch[] {
   const branches: MindmapBranch[] = [];
 
@@ -463,10 +466,8 @@ function pass1ContentDecomposition(
     });
   }
 
-  // Policy domains from content analysis
-  const allDomains = new Set<string>();
-  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
-  const domainList = [...allDomains].slice(0, 6);
+  // Policy domains from content analysis (precomputed by caller)
+  const domainList = precomputedDomains.slice(0, 6);
   if (domainList.length > 0) {
     branches.push({
       label: L(LABELS.policyDomains, lang, 'Policy Domains'),
@@ -718,10 +719,9 @@ function pass3ValidationAndCompleteness(
 function generateSummary(
   docs: RawDocument[],
   lang: Language | string,
+  precomputedDomains: string[],
 ): string {
-  const allDomains = new Set<string>();
-  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
-  const domainList = [...allDomains].slice(0, 3);
+  const domainList = precomputedDomains.slice(0, 3);
 
   const organs = extractOrgans(docs);
   // Normalize doc types: map isSfsDoc() documents to 'sfs' so SFS detected via
@@ -778,13 +778,19 @@ export function buildAIMindmapBranches(
       summary: topic
         ? L(EMPTY_DOCS_LABELS.conceptualMapFor, lang, 'Conceptual map for: {topic}').replace('{topic}', topic)
         : L(EMPTY_DOCS_LABELS.noDocuments, lang, 'No parliamentary documents available for analysis.'),
+      detectedDomains: [],
     };
   }
 
   const classified = classifyDocs(docs);
 
+  // Compute policy domains once — reused across pass 1, summary, and returned to callers
+  const allDomains = new Set<string>();
+  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
+  const detectedDomains = [...allDomains];
+
   // Pass 1 — content decomposition
-  const pass1Branches = pass1ContentDecomposition(docs, classified, lang);
+  const pass1Branches = pass1ContentDecomposition(docs, classified, lang, detectedDomains);
 
   // Pass 2 — relationship discovery
   const { branches: pass2Branches, connections } = pass2RelationshipDiscovery(docs, classified, lang);
@@ -801,7 +807,7 @@ export function buildAIMindmapBranches(
   const finalBranches = pass3ValidationAndCompleteness(docs, merged, lang);
 
   // Generate cohesive analytical summary
-  const summary = generateSummary(docs, lang);
+  const summary = generateSummary(docs, lang, detectedDomains);
 
-  return { branches: finalBranches, connections, summary };
+  return { branches: finalBranches, connections, summary, detectedDomains };
 }
