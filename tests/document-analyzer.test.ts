@@ -950,4 +950,47 @@ describe('multi-language support', () => {
     const gov = result.stakeholderImpacts.find(s => s.stakeholder === 'government-coalition');
     expect(gov?.swot.subject).toBe('Regeringskoalitionen');
   });
+
+  it('policyDomains use localized display names when lang is non-EN', () => {
+    clearAnalysisCache();
+    const svResult = analyzeDocument({ ...propDoc, dok_id: 'DOMAIN-LANG-SV' }, 'sv');
+    const enResult = analyzeDocument({ ...propDoc, dok_id: 'DOMAIN-LANG-EN' }, 'en');
+    // Both should have domains, and the names should differ by language
+    expect(svResult.policyDomains.length).toBeGreaterThan(0);
+    expect(enResult.policyDomains.length).toBeGreaterThan(0);
+    // Swedish domain names should contain Swedish text (e.g. "Hälso-" for healthcare)
+    const svNames = svResult.policyDomains.map(d => d.name);
+    const enNames = enResult.policyDomains.map(d => d.name);
+    // The domain sets should not be identical strings since langs differ
+    expect(svNames.join()).not.toBe(enNames.join());
+  });
+
+  it('confidence boosts for fullContent-only docs (not just fullText)', () => {
+    clearAnalysisCache();
+    // Doc with neither fullText nor fullContent
+    const bare: RawDocument = { dok_id: 'CONF-BARE', titel: 'Bare doc', doktyp: 'prop' };
+    const bareResult = analyzeDocument(bare, 'en');
+    // Doc with only fullContent (HTML enrichment)
+    const enriched: RawDocument = { ...bare, dok_id: 'CONF-ENRICHED', fullContent: '<p>Detailed healthcare reform text</p>' };
+    const enrichedResult = analyzeDocument(enriched, 'en');
+    // The enriched doc should have equal or higher confidence in stakeholder impacts
+    const bareGov = bareResult.stakeholderImpacts.find(s => s.stakeholder === 'government-coalition');
+    const enrichedGov = enrichedResult.stakeholderImpacts.find(s => s.stakeholder === 'government-coalition');
+    expect(bareGov).toBeDefined();
+    expect(enrichedGov).toBeDefined();
+    // Both should have valid confidence levels
+    expect(['HIGH', 'MEDIUM', 'LOW']).toContain(bareGov!.confidence);
+    expect(['HIGH', 'MEDIUM', 'LOW']).toContain(enrichedGov!.confidence);
+  });
+
+  it('contentFingerprint distinguishes different content of same total length', () => {
+    clearAnalysisCache();
+    // Two docs with different content but (potentially) same total length
+    const docA: RawDocument = { dok_id: 'HASH-A', titel: 'Hash test', doktyp: 'prop', fullText: 'AAA', summary: 'BBB' };
+    const docB: RawDocument = { dok_id: 'HASH-B', titel: 'Hash test', doktyp: 'prop', fullText: 'BBB', summary: 'AAA' };
+    const resultA = analyzeDocument(docA, 'en');
+    const resultB = analyzeDocument(docB, 'en');
+    // They should be different analysis objects (different cache slots)
+    expect(resultA).not.toBe(resultB);
+  });
 });

@@ -15,6 +15,7 @@
  * @license Apache-2.0
  */
 
+import { createHash } from 'node:crypto';
 import type { RawDocument, CIAContext } from '../data-transformers/types.js';
 import type { Language } from '../types/language.js';
 import type { SwotData } from '../types/article.js';
@@ -203,15 +204,29 @@ export function clearAnalysisCache(): void {
  * context through helpers we avoid 7–11× redundant `detectPolicyDomains()`
  * and `calculateInfluenceScore()` calls per document.
  */
-interface PrecomputedContext {
+export interface PrecomputedContext {
   domains: string[];
   influenceScore: number;
 }
 
-/** Sum content-field lengths for collision-resistant cache/identity keys. */
-function contentFingerprint(doc: RawDocument): number {
-  return (doc.fullText?.length ?? 0) + (doc.summary?.length ?? 0)
-    + (doc.fullContent?.length ?? 0) + (doc.notis?.length ?? 0);
+/**
+ * Return a truncated SHA-256 hex digest of the document's content fields.
+ *
+ * Used in cache keys so that documents enriched with `fullText`/`fullContent`
+ * after an initial metadata-only fetch produce a different fingerprint and
+ * therefore receive a fresh analysis instead of a stale pre-enrichment result.
+ *
+ * A real hash (vs. simple length sums) ensures that different content of the
+ * same combined length cannot collide.
+ */
+function contentFingerprint(doc: RawDocument): string {
+  const payload = [
+    doc.fullText ?? '',
+    doc.summary ?? '',
+    doc.fullContent ?? '',
+    doc.notis ?? '',
+  ].join('\x00');
+  return createHash('sha256').update(payload).digest('hex').slice(0, 16);
 }
 
 /**
@@ -555,7 +570,7 @@ function buildStakeholderImpact(
       ? 'Provides opportunity to differentiate policy positions ahead of elections.'
       : `Stakeholder engagement may shape implementation and secondary legislation in ${domainStr}.`;
 
-  const confidence = assessConfidenceLevel(domains.length + (doc.fullText ? 3 : 0), influenceScore);
+  const confidence = assessConfidenceLevel(domains.length + ((doc.fullText || doc.fullContent) ? 3 : 0), influenceScore);
 
   return {
     stakeholder: group,
@@ -995,7 +1010,7 @@ export function analyzeDocument(
   // Precompute expensive values once to avoid 7–11× redundant
   // detectPolicyDomains() and calculateInfluenceScore() calls in
   // downstream builders (stakeholder impacts, risk, implementation, etc.)
-  const rawDomains = detectPolicyDomains(doc);
+  const rawDomains = detectPolicyDomains(doc, lang);
   const influenceScore = calculateInfluenceScore(doc);
   const ctx: PrecomputedContext = { domains: rawDomains, influenceScore };
 

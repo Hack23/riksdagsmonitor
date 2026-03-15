@@ -38,4 +38,5 @@ export type {
   RiskAssessment,
   AnalysisIteration,
   DocumentAnalysis,
+  PrecomputedContext,
 } from './document-analyzer.js';
