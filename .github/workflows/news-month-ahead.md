@@ -135,7 +135,7 @@ Based on the editorial profile for `month-ahead` (from `scripts/editorial-framew
 - **Dashboard**: required (min. 2 Chart.js charts)
 - **Mindmap**: required (CSS policy mindmap)
 - **Min. stakeholders**: 5 perspectives
-- **AI iterations**: 2 (standard/deep) or full (comprehensive)
+- **AI iterations**: 2 (standard), 2 (deep), or 3 (comprehensive)
 
 ### Phase 1 — Data Collection & Initial Analysis
 1. Fetch MCP data (`get_calendar_events`, `get_propositioner`, `get_motioner`, `get_interpellationer`, `get_sync_status`)

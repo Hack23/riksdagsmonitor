@@ -133,7 +133,7 @@ Based on the editorial profile for `interpellations` (from `scripts/editorial-fr
 - **Dashboard**: required (min. 1 Chart.js chart)
 - **Mindmap**: not required
 - **Min. stakeholders**: 4 perspectives
-- **AI iterations**: 2 (standard/deep) or full (comprehensive)
+- **AI iterations**: 2 (standard), 2 (deep), or 3 (comprehensive)
 
 ### Phase 1 — Data Collection & Initial Analysis
 1. Fetch MCP data (`get_interpellationer`, `get_sync_status`, cross-reference `search_anforanden`, `get_calendar_events`)

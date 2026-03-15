@@ -135,7 +135,7 @@ Based on the editorial profile for `weekly-review` (from `scripts/editorial-fram
 - **Dashboard**: required (min. 2 Chart.js charts)
 - **Mindmap**: required (CSS policy mindmap)
 - **Min. stakeholders**: 5 perspectives
-- **AI iterations**: 2 (standard/deep) or full (comprehensive)
+- **AI iterations**: 2 (standard), 2 (deep), or 3 (comprehensive)
 
 ### Phase 1 — Data Collection & Initial Analysis
 1. Fetch MCP data (`get_betankanden`, `get_propositioner`, `get_motioner`, `search_anforanden`, `search_voteringar`, `get_sync_status`)
