@@ -258,8 +258,8 @@ function renderBranch(branch: MindmapBranch): string {
  * - `MindmapBranch.aiItems` — Weighted items with `data-weight` attribute
  * - `MindmapBranch.subBranches` — Stakeholder sub-branches (hierarchical depth)
  *
- * The CSS for `.mindmap-section` lives in `styles.css`. No client-side JS is
- * required or loaded.
+ * The CSS for `.mindmap-section` lives in `styles/components/mindmap.css`
+ * (imported by `styles.css`). No client-side JS is required or loaded.
  *
  * @example
  * ```ts
