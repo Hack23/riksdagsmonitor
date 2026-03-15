@@ -2673,13 +2673,13 @@ describe('content generators include publication dates', () => {
       expect(content).not.toContain('Parliamentary motion by opposition member');
     });
 
-    it('should use "Read the full interpellation" link text, not motions', () => {
+    it('should use "View interpellation" link text, not motions', () => {
       const content = generateArticleContent({
         interpellations: [
           { titel: 'Interpellation om skolan', parti: 'SD', dok_id: 'I2', url: 'https://riksdagen.se/ip2' },
         ],
       } as MockArticlePayload, 'interpellations', 'en') as string;
-      expect(content).toContain('Read the full interpellation');
+      expect(content).toContain('View interpellation');
       expect(content).not.toContain('Read the full motion');
     });
 
@@ -2713,7 +2713,7 @@ describe('content generators include publication dates', () => {
           { titel: 'Interpellation om vården', parti: 'V', dok_id: 'I1', url: 'https://riksdagen.se/ip1' },
         ],
       } as MockArticlePayload, 'interpellations', 'sv') as string;
-      expect(content).toContain('Läs hela interpellationen');
+      expect(content).toContain('Visa interpellationen');
       expect(content).not.toContain('Läs hela motionen');
       expect(content).toContain('interpellation-entry');
     });
