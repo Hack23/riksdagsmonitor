@@ -556,6 +556,10 @@ function buildPowerBranch(
       label: l(lang, STAKEHOLDER_LABELS.opp),
       items: oppDocs.slice(0, 2).map(d => getDocTitle(d)).filter(Boolean),
     },
+    {
+      label: l(lang, STAKEHOLDER_LABELS.other),
+      items: otherDocs.slice(0, 2).map(d => getDocTitle(d)).filter(Boolean),
+    },
   ].filter(sb => sb.items && sb.items.length > 0);
 
   return {
