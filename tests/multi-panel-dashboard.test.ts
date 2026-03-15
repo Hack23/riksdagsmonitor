@@ -878,17 +878,78 @@ describe('generateMultiPanelDashboardSection', () => {
       }],
     });
     const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
-    // The legend should NOT be inside the role="table" element
-    const tableMatch = section.html.match(/role="table"[^]*?<\/div>/);
-    if (tableMatch) {
-      // The first closing </div> after role="table" should be the table's close
-      // and the legend should come after it
-      const tableSection = tableMatch[0];
-      expect(tableSection).not.toContain('heatmap-legend');
+    // Use index positions: the legend must appear AFTER the table's closing tag
+    const tableOpenIdx = section.html.indexOf('role="table"');
+    expect(tableOpenIdx).toBeGreaterThan(-1);
+
+    // Find the matching closing </div> for the role="table" element
+    // by counting nested div open/close tags from the opening tag
+    const tableStart = section.html.lastIndexOf('<div', tableOpenIdx);
+    let depth = 0;
+    let tableEndIdx = -1;
+    let pos = tableStart;
+    while (pos < section.html.length) {
+      const nextOpen = section.html.indexOf('<div', pos);
+      const nextClose = section.html.indexOf('</div>', pos);
+      if (nextClose === -1) break;
+      if (nextOpen !== -1 && nextOpen < nextClose) {
+        depth++;
+        pos = nextOpen + 4;
+      } else {
+        depth--;
+        if (depth === 0) {
+          tableEndIdx = nextClose + '</div>'.length;
+          break;
+        }
+        pos = nextClose + '</div>'.length;
+      }
     }
-    // But it should still be in the output
-    expect(section.html).toContain('heatmap-legend');
-    // And we should have the wrapper
-    expect(section.html).toContain('dashboard-heatmap-wrapper');
+    expect(tableEndIdx).toBeGreaterThan(-1);
+
+    // The legend must appear AFTER the table's closing tag
+    const legendIdx = section.html.indexOf('heatmap-legend', tableEndIdx);
+    expect(legendIdx).toBeGreaterThan(tableEndIdx);
+
+    // Legend should NOT appear inside the role="table" container
+    const insideTable = section.html.substring(tableStart, tableEndIdx);
+    expect(insideTable).not.toContain('heatmap-legend');
+  });
+
+  it('heatmap legend is accessible (no aria-hidden)', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'hm-panel', title: 'HM Panel',
+        heatMap: makeHeatMapConfig(),
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    // Legend should be accessible to screen readers
+    const legendMatch = section.html.match(/<div class="heatmap-legend"[^>]*>/);
+    expect(legendMatch).toBeTruthy();
+    expect(legendMatch![0]).not.toContain('aria-hidden');
+  });
+
+  it('panel with empty title falls back to generated label', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'empty-title', title: '',
+        gauge: { id: 'g1', title: 'G', value: 50 },
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    // Should not produce an empty heading — should fall back to "Panel 1"
+    expect(section.html).toContain('Panel 1');
+    expect(section.html).not.toMatch(/<h3[^>]*>(<span[^>]*>[^<]*<\/span>)\s*<\/h3>/);
+  });
+
+  it('panel with whitespace-only title falls back to generated label', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'ws-title', title: '   ',
+        gauge: { id: 'g2', title: 'G', value: 60 },
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('Panel 1');
   });
 });

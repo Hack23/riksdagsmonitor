@@ -362,8 +362,8 @@ function renderHeatMap(config: HeatMapConfig, panelId: string, usedIds: Set<stri
     return `  <div role="row" class="heatmap-row">${rowHeaderCell}${dataCells}</div>`;
   }).join('\n');
 
-  // Legend
-  const legend = `  <div class="heatmap-legend" aria-hidden="true">
+  // Legend — outside role="table" so screen readers can access the scale context
+  const legend = `  <div class="heatmap-legend">
     <span class="heatmap-legend-label">${escapeHtml(minLabel)}</span>
     <div class="heatmap-legend-scale"></div>
     <span class="heatmap-legend-label">${escapeHtml(maxLabel)}</span>
@@ -450,6 +450,9 @@ function renderPanel(
     );
   }
 
+  // Validate panel title — fall back to generated label when empty/whitespace
+  const safeTitle = panel.title?.trim() || `${lbl('dashboardPanel')} ${index + 1}`;
+
   const panelId = sanitisePanelId(panel.id, index, usedIds);
   const headingId = deduplicateId(`${panelId}-heading`, usedIds);
 
@@ -501,7 +504,7 @@ function renderPanel(
   const tableBlock = panel.table ? renderTable(panel.table) : '';
 
   return `  <article class="dashboard-panel" id="${escapeHtml(panelId)}" aria-labelledby="${escapeHtml(headingId)}">
-    <h3 id="${escapeHtml(headingId)}"><span class="panel-type-label sr-only">${escapeHtml(lbl('dashboardPanel'))}: </span>${escapeHtml(panel.title)}</h3>
+    <h3 id="${escapeHtml(headingId)}"><span class="panel-type-label sr-only">${escapeHtml(lbl('dashboardPanel'))}: </span>${escapeHtml(safeTitle)}</h3>
 ${visualBlock}
 ${interpretationBlock}
 ${stakeholderBlock}
