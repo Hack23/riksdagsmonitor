@@ -939,7 +939,10 @@ describe('generateMultiPanelDashboardSection', () => {
     const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
     // Should not produce an empty heading — should fall back to "Panel 1"
     expect(section.html).toContain('Panel 1');
-    expect(section.html).not.toMatch(/<h3[^>]*>(<span[^>]*>[^<]*<\/span>)\s*<\/h3>/);
+    // The <h3> should contain visible text beyond just the sr-only span
+    const h3Match = section.html.match(/<h3[^>]*>([\s\S]*?)<\/h3>/);
+    expect(h3Match).toBeTruthy();
+    expect(h3Match![1]).toContain('Panel 1');
   });
 
   it('panel with whitespace-only title falls back to generated label', () => {
