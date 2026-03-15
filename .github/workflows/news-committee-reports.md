@@ -138,7 +138,7 @@ Based on the editorial profile for `committee-reports` (from `scripts/editorial-
 - **Dashboard**: required (min. 2 Chart.js charts)
 - **Mindmap**: required (CSS policy mindmap)
 - **Min. stakeholders**: 5 perspectives
-- **AI iterations**: 2 (standard) or 3 (deep/comprehensive)
+- **AI iterations**: 2 (standard), 3 (deep), or 3 (comprehensive)
 
 ### Phase 1 — Data Collection & Initial Analysis
 1. Fetch MCP data (`get_betankanden`, `get_sync_status`, cross-reference `search_voteringar`)

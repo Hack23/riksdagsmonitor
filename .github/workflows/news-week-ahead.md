@@ -133,7 +133,7 @@ Based on the editorial profile for `week-ahead` (from `scripts/editorial-framewo
 - **Dashboard**: required (min. 2 Chart.js charts)
 - **Mindmap**: not required
 - **Min. stakeholders**: 3 perspectives
-- **AI iterations**: 1 (standard) or 2 (deep/comprehensive)
+- **AI iterations**: 1 (standard), 2 (deep), or 3 (comprehensive)
 
 ### Phase 1 — Data Collection & Initial Analysis
 1. Fetch MCP data (`get_calendar_events`, `get_fragor`, `get_interpellationer`, `get_sync_status`)

@@ -369,7 +369,7 @@ safeoutputs___create_pull_request({
 For breaking news, this workflow uses the `breaking` profile (from `scripts/editorial-framework.ts`):
 - **SWOT**: quick (1-paragraph overview when article_types includes non-breaking types)
 - **Dashboard**: not required for breaking, required for deeper types
-- **AI iterations**: 1 (standard) or 2 (deep/comprehensive)
+- **AI iterations**: 1 (standard), 2 (deep), or 3 (comprehensive)
 
 ### Phase 1 — Event Detection & Significance Scoring
 1. Fetch real-time MCP data based on `article_types` input

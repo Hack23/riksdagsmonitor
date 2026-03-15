@@ -202,9 +202,9 @@ Each article type has a profile in `scripts/editorial-framework.ts` with the exa
 
 | Depth | Iterations | SWOT | Dashboard | Mindmap |
 |-------|-----------|------|-----------|---------|
-| standard | profile.aiIterations × 1 | as profile | as profile | as profile |
-| deep | max(2, profile.aiIterations) | as profile | as profile | as profile |
-| comprehensive | profile.aiIterations | full always | always | always |
+| standard | min(2, profile.aiIterations) | as profile | as profile | as profile |
+| deep | clamp(2–3, profile.aiIterations) | as profile | as profile | as profile |
+| comprehensive | max(3, profile.aiIterations) | full always | always | always |
 
 ### Per-Article-Type Iteration Pattern
 For each article type being generated in this run:

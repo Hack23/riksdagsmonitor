@@ -162,7 +162,7 @@ Based on the editorial profile for `evening-analysis` (from `scripts/editorial-f
 - **Dashboard**: required (min. 1 Chart.js chart)
 - **Mindmap**: not required
 - **Min. stakeholders**: 3 perspectives
-- **AI iterations**: 1 (standard) or 2 (deep/comprehensive)
+- **AI iterations**: 1 (standard), 2 (deep), or 3 (comprehensive)
 
 ### Phase 1 — Data Collection & Initial Analysis
 1. Fetch today's activity from MCP (`search_anforanden` — filter by `datum`, `get_betankanden` — filter by `publicerad`, `search_voteringar` — filter by `datum`, `get_sync_status`)

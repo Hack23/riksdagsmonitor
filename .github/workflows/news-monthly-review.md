@@ -135,7 +135,7 @@ Based on the editorial profile for `monthly-review` (from `scripts/editorial-fra
 - **Dashboard**: required (min. 4 Chart.js charts)
 - **Mindmap**: required (CSS policy mindmap)
 - **Min. stakeholders**: 7 perspectives
-- **AI iterations**: 3 (deep/comprehensive) or 2 (standard)
+- **AI iterations**: 3 (comprehensive), 3 (deep), or 2 (standard)
 
 ### Phase 1 — Data Collection & Initial Analysis
 1. Fetch MCP data: full month's `get_betankanden`, `get_propositioner`, `get_motioner`, `search_anforanden`, `search_voteringar`, `get_interpellationer`, `get_fragor`, `get_sync_status`

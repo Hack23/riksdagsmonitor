@@ -198,7 +198,7 @@ function _renderInterpellationEntry(interp: RawDocument, lang: Language | string
   const publishedLabel = L(lang, 'published') as string || 'Published';
   const whyMattersLabel = L(lang, 'whyItMatters') as string || 'Why it matters';
 
-  let entry = `    <div class="motion-entry">\n`;
+  let entry = `    <div class="document-entry">\n`;
   if (title) {
     entry += (safeUrl && safeUrl !== '#')
       ? `      <h3><a href="${safeUrl}" rel="noopener noreferrer" target="_blank">${titleHtml}</a></h3>\n`
