@@ -690,7 +690,7 @@ describe('analyzeDocuments — batch analysis', () => {
   });
 
   it('de-duplicates inputs preferring enriched version', () => {
-    // Two versions of the same doc_id: one metadata-only, one enriched
+    // Two versions of the same dok_id: one metadata-only, one enriched
     const metaOnly: RawDocument = { dok_id: 'DUP-01', doktyp: 'prop', titel: 'Duplicate test' };
     const enriched: RawDocument = { dok_id: 'DUP-01', doktyp: 'prop', titel: 'Duplicate test', fullText: 'Enriched content with policy details.' };
     // Regardless of order, the enriched version should win

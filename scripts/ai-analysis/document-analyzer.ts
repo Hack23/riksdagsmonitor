@@ -973,7 +973,7 @@ export function generateExecutiveSummary(doc: RawDocument, lang: Language | stri
       : docType === 'ip'
         ? 'As an interpellation, this document formally questions a minister on a specific policy matter, requiring a public response and parliamentary debate.'
         : docType === 'bet'
-          ? 'As a committee report, this document presents the committee\'s recommendation to the Riksdag after deliberating on one or more government proposals or motions.'
+          ? `As a committee report, this document presents the committee's recommendation to the Riksdag after deliberating on one or more government proposals or motions.`
           : 'This document contributes to the parliamentary record and informs committee deliberations and future legislative activity.';
 
   return `${para1}\n\n${para2}\n\n${para3}`;
