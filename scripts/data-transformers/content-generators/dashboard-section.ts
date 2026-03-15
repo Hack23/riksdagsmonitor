@@ -220,16 +220,8 @@ export function generateDashboardSection(opts: DashboardSectionOptions): Templat
   // Sanitise chart IDs once — ensure non-empty and unique for valid DOM ids
   const usedIds = new Set<string>();
   const sanitisedCharts = data.charts.map((chart, index) => {
-    let baseId = chart.id.replace(/[^a-zA-Z0-9_-]/g, '');
-    if (!baseId) {
-      baseId = `chart-${index}`;
-    }
-    let safeId = baseId;
-    let counter = 1;
-    while (usedIds.has(safeId)) {
-      safeId = `${baseId}-${counter++}`;
-    }
-    usedIds.add(safeId);
+    const baseId = chart.id.replace(/[^a-zA-Z0-9_-]/g, '') || `chart-${index}`;
+    const safeId = deduplicateId(baseId, usedIds);
     return { ...chart, safeId };
   });
 
@@ -369,8 +361,9 @@ function renderHeatMap(config: HeatMapConfig, panelId: string, usedIds: Set<stri
     <span class="heatmap-legend-label">${escapeHtml(maxLabel)}</span>
   </div>`;
 
+  const safeTitle = config.title?.trim() || 'Heat map';
   return `<div class="dashboard-heatmap-wrapper">
-<div id="${escapeHtml(safeId)}" class="dashboard-heatmap" role="table" aria-label="${escapeHtml(config.title)}">
+<div id="${escapeHtml(safeId)}" class="dashboard-heatmap" role="table" aria-label="${escapeHtml(safeTitle)}">
 ${headerRow}
 ${dataRows}
 </div>

@@ -955,4 +955,26 @@ describe('generateMultiPanelDashboardSection', () => {
     const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
     expect(section.html).toContain('Panel 1');
   });
+
+  it('heatmap with empty title falls back to "Heat map" in aria-label', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'hm-empty', title: 'HM Panel',
+        heatMap: makeHeatMapConfig({ title: '' }),
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('aria-label="Heat map"');
+  });
+
+  it('heatmap with whitespace-only title falls back to "Heat map" in aria-label', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'hm-ws', title: 'HM Panel',
+        heatMap: makeHeatMapConfig({ title: '   ' }),
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('aria-label="Heat map"');
+  });
 });

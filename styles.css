@@ -9866,9 +9866,14 @@ body.news-page {
     var(--primary-color, #006633) calc(var(--intensity, 0) * 100%),
     var(--badge-bg, #f0f4f8)
   );
-  color: var(--text-color, #111);
+  /* Switch to white text when intensity > 0.55 to maintain WCAG 4.5:1 contrast */
+  color: color-mix(
+    in srgb,
+    #fff calc(var(--intensity, 0) * 180%),
+    var(--text-color, #111)
+  );
   border-radius: 4px;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .news-article .heatmap-legend {

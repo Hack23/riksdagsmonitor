@@ -155,7 +155,7 @@ describe('Agentic Workflow MCP Query Patterns', () => {
   });
 
   describe('Cross-Referencing Strategy', () => {
-    it('news-evening-analysis.md should have cross-referencing examples', () => {
+    it('news-evening-analysis.md should have a Cross-Referencing Strategy section', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
