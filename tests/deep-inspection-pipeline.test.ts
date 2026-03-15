@@ -127,7 +127,6 @@ describe('new deep-inspection section labels', () => {
     for (const key of NEW_KEYS) {
       // Each key should appear as a property name in the labels object
       expect(generatorsSrc).toContain(`${key}:`);
-      // And have an 'en:' entry (English label) within its block
     }
     // Verify specific English labels to ensure they're real translations, not stubs
     expect(generatorsSrc).toContain("en: 'Executive Intelligence Summary'");
