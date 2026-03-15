@@ -228,20 +228,18 @@ const results = rawResults.filter(item => {
 });
 ```
 
-**Date calculation pattern:**
+**Date calculation pattern** (day-granularity — `.split('T')[0]` truncates to YYYY-MM-DD):
 ```javascript
 const today = new Date().toISOString().split('T')[0];
 const dayOfWeek = new Date().getUTCDay(); // 0=Sunday, 6=Saturday
-const lookbackHours = dayOfWeek === 6 ? 120 : 12;
-const fromDate = dayOfWeek === 6
-  ? new Date(Date.now() - 5 * 86400000).toISOString().split('T')[0]  // Monday
-  : new Date(Date.now() - lookbackHours * 3600000).toISOString().split('T')[0];
+const lookbackDays = dayOfWeek === 6 ? 5 : Math.ceil(12 / 24); // Saturday=5 days, else ceil(hours/24)
+const fromDate = new Date(Date.now() - lookbackDays * 86400000).toISOString().split('T')[0];
 ```
 
 **Post-query filtering example:**
 ```javascript
 const results = get_betankanden({ rm: currentRm, limit: 50 });
-const recent = results.filter(b => new Date(b.publicerad) >= new Date(fromDate));
+const recent = results.filter(b => (b.publicerad || '').slice(0, 10) >= fromDate);
 ```
 
 ### Cross-Referencing Strategy
@@ -252,7 +250,7 @@ Cross-reference related data sources for richer analysis. Filter all results by 
 ```javascript
 // 1. Get recent committee reports
 const betankanden = get_betankanden({ rm: currentRm, limit: 20 });
-const recentBet = betankanden.filter(b => new Date(b.publicerad) >= new Date(fromDate));
+const recentBet = betankanden.filter(b => (b.publicerad || '').slice(0, 10) >= fromDate);
 
 // 2. For each report, get full details
 const reportDetails = recentBet.map(bet =>
@@ -271,18 +269,18 @@ const govDocs = search_regering({ dateFrom: fromDate, dateTo: today, limit: 30 }
 
 // 2. Get related propositions
 const propositions = get_propositioner({ rm: currentRm, limit: 20 })
-  .filter(p => new Date(p.publicerad) >= new Date(fromDate));
+  .filter(p => (p.publicerad || '').slice(0, 10) >= fromDate);
 ```
 
 **Example 3: Party Behavior Analysis**
 ```javascript
 // 1. Get party voting records
 const votes = search_voteringar({ rm: currentRm, limit: 100 })
-  .filter(v => new Date(v.datum) >= new Date(fromDate));
+  .filter(v => (v.datum || '').slice(0, 10) >= fromDate);
 
 // 2. Get party speeches
 const speeches = search_anforanden({ rm: currentRm, limit: 100 })
-  .filter(a => new Date(a.datum) >= new Date(fromDate));
+  .filter(a => (a.datum || '').slice(0, 10) >= fromDate);
 ```
 
 **Detailed Example: Committee Report Deep Dive**

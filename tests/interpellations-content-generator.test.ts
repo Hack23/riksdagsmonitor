@@ -78,7 +78,7 @@ describe('Interpellations Content Generator', () => {
       expect(content).not.toContain('Oppositionsanträge');
     });
 
-    it('should group interpellations by target minister', () => {
+    it('should render target minister names in interpellation entries', () => {
       const content = generateInterpellationsContent({ interpellations: sampleInterpellations }, 'en');
       expect(content).toContain('Socialminister Jakob Forssmed');
       expect(content).toContain('Försvarsminister Pål Jonson');
