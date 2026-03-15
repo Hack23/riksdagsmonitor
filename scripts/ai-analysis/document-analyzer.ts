@@ -430,15 +430,36 @@ const STAKEHOLDER_SIGNALS: Readonly<Record<StakeholderGroup, string[]>> = {
   'government-coalition': ['proposition', 'regering', 'budget', 'statsminister', 'minister'],
   'opposition-parties': ['motion', 'opposition', 'socialdemokrat', 'vänsterpartiet', 'centerpartiet', 'miljöpartiet'],
   'state-agencies': ['myndighet', 'länsstyrelse', 'domstol', 'polis', 'skatteverket', 'folkhälsomyndighet'],
-  'municipalities-regions': ['kommuner', 'regioner', 'landsting', 'skr', 'primärkommunal'],
+  'municipalities-regions': ['kommuner', 'regioner', 'landsting', 'kommuner och regioner', 'primärkommunal'],
   'private-sector': ['näringsliv', 'företag', 'arbetsgivare', 'industry', 'handel', 'marknad'],
-  'labor-market': ['facket', 'lo', 'tco', 'saco', 'arbetsrätt', 'lön', 'fackförbund'],
+  'labor-market': ['facket', 'fackförbund', 'arbetsrätt', 'arbetsmarknad', 'lo', 'tco', 'saco'],
   'civil-society': ['civilsamhälle', 'ngo', 'ideell', 'förening', 'frivillig'],
-  'international-eu': ['eu', 'europa', 'nato', 'fn', 'nordisk', 'internationell'],
+  'international-eu': ['europa', 'nato', 'nordisk', 'internationell', 'eu', 'fn'],
   'media-press': ['offentlighet', 'tryckfrihet', 'medier', 'yttrandefrihet', 'journalistik'],
   'academia-research': ['forskning', 'universitet', 'vetenskap', 'kunskapsunderlag'],
   'citizens-voters': ['medborgare', 'allmänhet', 'val', 'röst'],
 };
+
+/** Max length for a signal to be considered "short" and require word-boundary matching. */
+const SHORT_SIGNAL_MAX_LEN = 4;
+
+/** Pre-compiled word-boundary regexes for short signals (≤ SHORT_SIGNAL_MAX_LEN chars). */
+const _shortSignalRegexCache = new Map<string, RegExp>();
+
+/**
+ * Check whether `text` contains a signal term, using word-boundary regex for
+ * short tokens (≤ {@link SHORT_SIGNAL_MAX_LEN} chars) to avoid substring false
+ * positives (e.g. "lo" matching "lokalt", "skr" matching "skrivelse").
+ */
+function matchesSignal(text: string, signal: string): boolean {
+  if (signal.length > SHORT_SIGNAL_MAX_LEN) return text.includes(signal);
+  let re = _shortSignalRegexCache.get(signal);
+  if (!re) {
+    re = new RegExp(`\\b${signal}\\b`, 'i');
+    _shortSignalRegexCache.set(signal, re);
+  }
+  return re.test(text);
+}
 
 /**
  * Determine which stakeholder groups are relevant for a document.
@@ -459,7 +480,7 @@ export function selectRelevantStakeholders(doc: RawDocument): StakeholderGroup[]
 
   const relevant = optional.filter(group => {
     const signals = STAKEHOLDER_SIGNALS[group] ?? [];
-    return signals.some(s => text.includes(s));
+    return signals.some(s => matchesSignal(text, s));
   });
 
   // Deduplicate, preserving order: always-included first then optional relevants

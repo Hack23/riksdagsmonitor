@@ -754,6 +754,38 @@ describe('selectRelevantStakeholders', () => {
     const groups = selectRelevantStakeholders(doc);
     expect(groups).toContain('municipalities-regions');
   });
+
+  it('does not false-positive municipalities-regions from "skrivelse" substring', () => {
+    const doc: RawDocument = { titel: 'Regeringens skrivelse om statsbudgeten', dok_id: 'FP1' };
+    const groups = selectRelevantStakeholders(doc);
+    expect(groups).not.toContain('municipalities-regions');
+  });
+
+  it('does not false-positive labor-market from "lokalt" or "colorful"', () => {
+    const doc: RawDocument = { titel: 'Lokalt engagemang i politik och samhälle', dok_id: 'FP2' };
+    const groups = selectRelevantStakeholders(doc);
+    expect(groups).not.toContain('labor-market');
+  });
+
+  it('detects labor-market when LO appears as standalone word', () => {
+    const doc: RawDocument = { titel: 'LO kräver högre löner', dok_id: 'FP3' };
+    const groups = selectRelevantStakeholders(doc);
+    expect(groups).toContain('labor-market');
+  });
+
+  it('does not false-positive international-eu from "europeiska" (not "europa")', () => {
+    const doc: RawDocument = { titel: 'Den europeiska integrationen', dok_id: 'FP4' };
+    const groups = selectRelevantStakeholders(doc);
+    // "europeiska" does not contain "europa" (diverge at char 6: e vs a)
+    // and "eu" uses word-boundary matching so it doesn't match inside "europeiska"
+    expect(groups).not.toContain('international-eu');
+  });
+
+  it('does not false-positive international-eu from "fnurra" substring', () => {
+    const doc: RawDocument = { titel: 'Fnurra på tråden i debatten', dok_id: 'FP5' };
+    const groups = selectRelevantStakeholders(doc);
+    expect(groups).not.toContain('international-eu');
+  });
 });
 
 // ---------------------------------------------------------------------------
