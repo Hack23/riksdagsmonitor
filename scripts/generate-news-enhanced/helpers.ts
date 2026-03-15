@@ -22,6 +22,7 @@ import {
   dryRunArg,
   stats,
   QUALITY_THRESHOLD,
+  MULTIDIM_QUALITY_THRESHOLD,
   toISODate,
 } from './config.js';
 
@@ -107,8 +108,10 @@ export function flushQualityScores(): void {
     }
     const outPath = path.join(METADATA_DIR, 'quality-scores.json');
     const tmpPath = outPath + '.tmp';
-    // Atomic write: write to temp file, then rename to avoid corrupt JSON on crash
+    // Atomic write: write to temp file, then rename to avoid corrupt JSON on crash.
+    // On Windows fs.renameSync may fail if the destination exists, so remove first.
     fs.writeFileSync(tmpPath, JSON.stringify(perArticleScores, null, 2), 'utf-8');
+    try { fs.unlinkSync(outPath); } catch { /* destination may not exist yet */ }
     fs.renameSync(tmpPath, outPath);
   } catch (err: unknown) {
     console.warn(`  ⚠️  Could not persist quality scores: ${(err as Error).message}`);
@@ -173,9 +176,7 @@ export function validateArticleQuality(
   const passed: boolean = score >= QUALITY_THRESHOLD;
 
   // ── Pass 2: multi-dimensional assessment ─────────────────────────────────
-  // Threshold for multi-dimensional pipeline: 60 out of 100
-  const multiPassThreshold = 60;
-  const multidimensional = assessArticleQuality(html, lang, sourceDocIds, multiPassThreshold);
+  const multidimensional = assessArticleQuality(html, lang, sourceDocIds, MULTIDIM_QUALITY_THRESHOLD);
   printQualityReport(multidimensional, filename);
 
   // ----- console report (structural) -----
@@ -205,7 +206,7 @@ export function validateArticleQuality(
   }
 
   if (!multidimensional.passesThreshold) {
-    console.warn(`   ⚠️  Multi-dimensional score ${multidimensional.overallScore}/100 below threshold ${multiPassThreshold}.`);
+    console.warn(`   ⚠️  Multi-dimensional score ${multidimensional.overallScore}/100 below threshold ${MULTIDIM_QUALITY_THRESHOLD}.`);
     if (multidimensional.suggestions.length > 0) {
       console.warn('      Top improvement suggestions:');
       for (const s of multidimensional.suggestions.slice(0, 3)) {
@@ -285,10 +286,15 @@ export async function writeSingleArticle(html: string, slug: string, lang: Langu
 }
 
 // Flush quality scores once when the process exits (avoids per-article write amplification).
-// Register on both 'exit' and signal handlers so scores are persisted on graceful shutdown.
-process.on('exit', () => flushQualityScores());
-process.on('SIGINT', () => { flushQualityScores(); process.exit(130); });
-process.on('SIGTERM', () => { flushQualityScores(); process.exit(143); });
+// Use process.once() to avoid duplicate listeners when the module is imported multiple times
+// (e.g. in test runners or worker contexts).
+let _flushGuardInstalled = false;
+if (!_flushGuardInstalled) {
+  _flushGuardInstalled = true;
+  process.once('exit', () => flushQualityScores());
+  process.once('SIGINT', () => { flushQualityScores(); process.exit(130); });
+  process.once('SIGTERM', () => { flushQualityScores(); process.exit(143); });
+}
 
 /**
  * Write EN/SV article pair (legacy function for backward compatibility)

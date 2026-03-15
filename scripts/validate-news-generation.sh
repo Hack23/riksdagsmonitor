@@ -407,7 +407,7 @@ echo ""
 echo "📋 Check 13: Content quality scores (multi-dimensional assessment)"
 
 QUALITY_SCORES_FILE="news/metadata/quality-scores.json"
-MULTIDIM_THRESHOLD=60  # single source of truth for pass/fail threshold
+MULTIDIM_THRESHOLD=60  # mirrors MULTIDIM_QUALITY_THRESHOLD in config.ts — keep in sync
 
 if [ ! -f "$QUALITY_SCORES_FILE" ]; then
   echo -e "${YELLOW}⚠️ quality-scores.json not found — no articles generated yet or file not persisted${NC}"

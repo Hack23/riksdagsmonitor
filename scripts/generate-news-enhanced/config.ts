@@ -76,6 +76,13 @@ if (qualityThresholdArg) {
 }
 export const QUALITY_THRESHOLD: number = parsedQualityThreshold;
 
+/**
+ * Default threshold (0–100) for the multi-dimensional quality assessment
+ * pipeline.  Articles scoring below this value are flagged but still written.
+ * Referenced by `validateArticleQuality()` and the Check 13 validation script.
+ */
+export const MULTIDIM_QUALITY_THRESHOLD = 60;
+
 // --require-mcp flag: when true (default), abort if MCP server is unreachable after all retries.
 // Set --require-mcp=false for local development/testing without a live MCP server.
 const requireMcpArg: string | undefined = args.find(arg => arg.startsWith('--require-mcp'));
