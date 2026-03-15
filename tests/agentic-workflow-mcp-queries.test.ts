@@ -141,7 +141,7 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       expect(content).toMatch(/filter.*by.*publicerad|filter.*by.*datum|filter.*by.*inlämnad|Date Filtering/i);
 
       // Should reference date-based filtering approach
-      expect(content).toMatch(/from_date|to_date|fromDate|dateTo|>= fromDate/i);
+      expect(content).toMatch(/from_date|to_date|fromDate|dateFrom|dateTo|>= fromDate/i);
     });
 
     it('workflows should annotate tools with date support', () => {

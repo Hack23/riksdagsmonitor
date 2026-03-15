@@ -450,7 +450,8 @@ function renderPanel(
   }
 
   // Validate panel title — fall back to generated label when empty/whitespace
-  const safeTitle = panel.title?.trim() || `${lbl('dashboardPanel')} ${index + 1}`;
+  const realTitle = panel.title?.trim();
+  const safeTitle = realTitle || `${lbl('dashboardPanel')} ${index + 1}`;
 
   const panelId = sanitisePanelId(panel.id, index, usedIds);
   const headingId = deduplicateId(`${panelId}-heading`, usedIds);
@@ -503,7 +504,7 @@ function renderPanel(
   const tableBlock = panel.table ? renderTable(panel.table) : '';
 
   return `  <article class="dashboard-panel" id="${escapeHtml(panelId)}" aria-labelledby="${escapeHtml(headingId)}">
-    <h3 id="${escapeHtml(headingId)}"><span class="panel-type-label sr-only">${escapeHtml(lbl('dashboardPanel'))}: </span>${escapeHtml(safeTitle)}</h3>
+    <h3 id="${escapeHtml(headingId)}">${realTitle ? `<span class="panel-type-label sr-only">${escapeHtml(lbl('dashboardPanel'))}: </span>` : ''}${escapeHtml(safeTitle)}</h3>
 ${visualBlock}
 ${interpretationBlock}
 ${stakeholderBlock}

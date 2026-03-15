@@ -697,16 +697,32 @@ describe('generateMultiPanelDashboardSection', () => {
   // Review feedback round 2: dashboardPanel label used in markup
   // ---------------------------------------------------------------------------
 
-  it('uses dashboardPanel label as sr-only prefix in panel heading', () => {
+  it('uses dashboardPanel label as sr-only prefix in panel heading when title is provided', () => {
     const section = generateMultiPanelDashboardSection({ data: makeDashboard(), lang: 'en' });
     expect(section.html).toContain('class="panel-type-label sr-only"');
     expect(section.html).toContain('Panel');
   });
 
-  it('uses localised dashboardPanel label in Swedish', () => {
+  it('uses localised dashboardPanel label in Swedish when title is provided', () => {
     const section = generateMultiPanelDashboardSection({ data: makeDashboard(), lang: 'sv' });
     expect(section.html).toContain('class="panel-type-label sr-only"');
     expect(section.html).toContain('>Panel: </span>');
+  });
+
+  it('omits sr-only dashboardPanel prefix when panel title is empty (avoids "Panel: Panel 1")', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'no-prefix', title: '',
+        gauge: { id: 'g1', title: 'G', value: 50 },
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    // The fallback title "Panel 1" should appear
+    expect(section.html).toContain('Panel 1');
+    // But without the sr-only prefix that would make it "Panel: Panel 1"
+    const h3Match = section.html.match(/<h3[^>]*>([\s\S]*?)<\/h3>/);
+    expect(h3Match).toBeTruthy();
+    expect(h3Match![1]).not.toContain('panel-type-label');
   });
 
   // ---------------------------------------------------------------------------
