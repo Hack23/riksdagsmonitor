@@ -16,6 +16,7 @@ export {
   generateCommitteeContent,
   generatePropositionsContent,
   generateMotionsContent,
+  generateInterpellationsContent,
   generateGenericContent,
   generateMonthlyReviewContent,
   generateMonthAheadContent,
