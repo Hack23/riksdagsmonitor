@@ -597,6 +597,7 @@ function buildStakeholderImpact(
 export function buildPestleAnalysis(doc: RawDocument, lang?: Language | string): PESTLEAnalysis {
   const docType = doc.doktyp ?? doc.documentType ?? '';
   const title = doc.titel ?? doc.title ?? doc.rubrik ?? '';
+  const titleLower = title.toLowerCase();
   // Pass the caller's language through — `hasDomain()` uses `DOMAIN_NAME_TO_KEY`
   // which is language-agnostic (covers all 14 languages), so domain-trigger
   // checks work reliably regardless of which language `detectPolicyDomains`
@@ -627,7 +628,7 @@ export function buildPestleAnalysis(doc: RawDocument, lang?: Language | string):
   if (social.length === 0) social.push('Social equity and public service delivery effects possible.');
 
   const technological: string[] = [
-    title.toLowerCase().includes('digital') || title.toLowerCase().includes('cyber') || /\b(?:IT|ICT)\b/.test(title) || title.toLowerCase().includes('it-system')
+    titleLower.includes('digital') || titleLower.includes('cyber') || /\b(?:IT|ICT)\b/.test(title) || titleLower.includes('it-system')
       ? 'Digital infrastructure or technology governance dimensions present.'
       : 'Technology adoption for implementation may be required.',
   ];
@@ -879,8 +880,9 @@ function deriveRiksmote(doc: RawDocument): string {
   if (doc.datum) {
     const m = DATUM_PATTERN.exec(doc.datum);
     if (m) {
+      const [, year, month, day] = m;
       // Construct at local noon to avoid cross-day timezone shifts
-      const d = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]), 12, 0, 0);
+      const d = new Date(Number(year), Number(month) - 1, Number(day), 12, 0, 0);
       return getCurrentRiksmote(d);
     }
   }
