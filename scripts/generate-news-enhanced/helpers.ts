@@ -284,8 +284,11 @@ export async function writeSingleArticle(html: string, slug: string, lang: Langu
   return filename;
 }
 
-// Flush quality scores once when the process exits (avoids per-article write amplification)
+// Flush quality scores once when the process exits (avoids per-article write amplification).
+// Register on both 'exit' and signal handlers so scores are persisted on graceful shutdown.
 process.on('exit', () => flushQualityScores());
+process.on('SIGINT', () => { flushQualityScores(); process.exit(130); });
+process.on('SIGTERM', () => { flushQualityScores(); process.exit(143); });
 
 /**
  * Write EN/SV article pair (legacy function for backward compatibility)

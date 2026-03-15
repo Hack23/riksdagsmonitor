@@ -455,7 +455,7 @@ else
         WARNINGS=$((WARNINGS + 1))
       fi
 
-      CRITICAL_THRESHOLD=$((MULTIDIM_THRESHOLD * 2 / 3))  # ~40 when threshold is 60
+      CRITICAL_THRESHOLD=$((MULTIDIM_THRESHOLD * 2 / 3))  # 2/3 of MULTIDIM_THRESHOLD
       if [ "$AVG_SCORE" -lt "$CRITICAL_THRESHOLD" ]; then
         echo -e "${RED}❌ Average content quality score ${AVG_SCORE}/100 is critically low (< ${CRITICAL_THRESHOLD})${NC}"
         ERRORS=$((ERRORS + 1))
