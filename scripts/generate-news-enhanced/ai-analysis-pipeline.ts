@@ -1003,9 +1003,10 @@ export class AIAnalysisPipeline {
     docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => domainSet.add(dom)));
 
     const hasStress = docs.some(d => hasCoalitionStress(d));
-    // Use actual content presence (fullText || fullContent) rather than bare
-    // contentFetched — the latter can be true even when no text was fetched.
-    const enrichedCount = docs.filter(d => !!(d.fullText || d.fullContent)).length;
+    // Count metadata-enriched docs via contentFetched — consistent with the
+    // rest of the codebase (MCPClient sets contentFetched:true without
+    // necessarily populating fullText/fullContent).
+    const enrichedCount = docs.filter(d => !!d.contentFetched).length;
 
     return {
       propDocs, betDocs, motDocs, skrDocs, sfsDocs, euDocs,
