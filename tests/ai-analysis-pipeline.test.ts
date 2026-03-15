@@ -229,7 +229,7 @@ describe('aiAnalysisPipeline.refineAnalysis', () => {
     expect(refined.iterationsCompleted).toBe(2);
   });
 
-  it('returns initial unchanged when no enriched docs', async () => {
+  it('preserves analysis content but updates metadata when no enriched docs', async () => {
     const docs = [makePropDoc(), makeMotDoc()]; // not enriched
     const initial = await aiAnalysisPipeline.analyzeDocuments(docs, makeOptions());
     const refined = await aiAnalysisPipeline.refineAnalysis(initial, docs, makeOptions());

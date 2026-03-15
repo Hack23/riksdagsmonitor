@@ -233,7 +233,9 @@ export interface AnalysisPipeline {
    * enriched document text is available. Adds additional watch points
    * and strengthens confidence scores.
    *
-   * When no documents are enriched, returns the initial analysis unchanged.
+   * When no documents are enriched, the analysis content (SWOT, watch
+   * points, etc.) remains unchanged but metadata fields
+   * (`iterationsCompleted`, `completedAt`) are always updated.
    */
   refineAnalysis(
     initial: AnalysisResult,

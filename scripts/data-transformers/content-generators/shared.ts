@@ -117,6 +117,18 @@ export const DOC_TYPE_DISPLAY: Readonly<Record<string, DocTypeLocalization>> = {
       nl: 'Externe referenties', ar: 'مراجع خارجية', he: 'הפניות חיצוניות', ja: '外部参照', ko: '외부 참조', zh: '外部参考',
     },
   },
+  other: {
+    singular: {
+      en: 'Other Document', sv: 'Övrigt dokument', da: 'Andet dokument', no: 'Annet dokument',
+      fi: 'Muu asiakirja', de: 'Sonstiges Dokument', fr: 'Autre document', es: 'Otro documento',
+      nl: 'Overig document', ar: 'مستند آخر', he: 'מסמך אחר', ja: 'その他の文書', ko: '기타 문서', zh: '其他文件',
+    },
+    plural: {
+      en: 'Other Documents', sv: 'Övriga dokument', da: 'Andre dokumenter', no: 'Andre dokumenter',
+      fi: 'Muut asiakirjat', de: 'Sonstige Dokumente', fr: 'Autres documents', es: 'Otros documentos',
+      nl: 'Overige documenten', ar: 'مستندات أخرى', he: 'מסמכים אחרים', ja: 'その他の文書', ko: '기타 문서', zh: '其他文件',
+    },
+  },
 };
 
 export function localizeDocType(code: string, lang: Language | string, count?: number): string {
