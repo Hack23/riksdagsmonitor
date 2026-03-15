@@ -184,6 +184,14 @@ export interface DocumentAnalysis {
 
 const _analysisCache = new Map<string, DocumentAnalysis>();
 
+/**
+ * Maximum number of entries retained in `_analysisCache`.
+ * When the limit is reached the oldest entry (first inserted — Map iteration
+ * order) is evicted.  This prevents unbounded memory growth in long-running
+ * processes or large batch runs.
+ */
+export const MAX_CACHE_SIZE = 500;
+
 /** Minimum relevance score assigned to any detected policy domain. */
 const MIN_DOMAIN_RELEVANCE = 30;
 /** Maximum (baseline) relevance score for the first detected domain. */
@@ -221,36 +229,70 @@ export interface PrecomputedContext {
  */
 const _fingerprintCache = new WeakMap<RawDocument, { fp: string; guard: string }>();
 
-/** Lightweight signature of content field lengths for mutation detection. */
+/**
+ * Lightweight signature of content **and metadata** field lengths/values for
+ * mutation detection.  Covers both the content fields hashed by
+ * `contentFingerprint()` and the metadata fields that affect analysis output
+ * (stakeholder selection, executive summary, PESTLE, etc.).
+ */
 function contentGuard(doc: RawDocument): string {
-  return `${doc.fullText?.length ?? -1}|${doc.summary?.length ?? -1}|${doc.fullContent?.length ?? -1}|${doc.notis?.length ?? -1}`;
+  return [
+    // Content fields
+    doc.fullText?.length ?? -1,
+    doc.summary?.length ?? -1,
+    doc.fullContent?.length ?? -1,
+    doc.notis?.length ?? -1,
+    // Metadata fields that affect analysis output
+    doc.titel?.length ?? -1,
+    doc.title?.length ?? -1,
+    doc.rubrik?.length ?? -1,
+    doc.doktyp ?? '',
+    doc.parti ?? '',
+    doc.datum ?? '',
+    doc.rm ?? '',
+    doc.organ ?? '',
+    doc.mottagare ?? '',
+  ].join('|');
 }
 
 /**
- * Return a truncated SHA-256 hex digest of the document's content fields.
+ * Return a truncated SHA-256 hex digest of the document's content **and
+ * metadata** fields.
  *
  * Used in cache keys so that documents enriched with `fullText`/`fullContent`
- * after an initial metadata-only fetch produce a different fingerprint and
- * therefore receive a fresh analysis instead of a stale pre-enrichment result.
+ * after an initial metadata-only fetch — or whose metadata changes between
+ * calls (e.g. corrected `doktyp`, updated `parti`) — produce a different
+ * fingerprint and therefore receive a fresh analysis instead of a stale one.
  *
  * A real hash (vs. simple length sums) ensures that different content of the
  * same combined length cannot collide.
  *
  * Results are cached in a WeakMap keyed by object identity **plus** a
- * lightweight content-length guard.  When a document object is mutated in
- * place (e.g. `doc.fullText = "..."` added during enrichment) the guard
- * changes, triggering a re-hash so that subsequent `analyzeDocument()`
- * calls receive a fresh analysis instead of the stale pre-enrichment one.
+ * lightweight content/metadata guard.  When a document object is mutated in
+ * place (e.g. `doc.fullText = "..."` added during enrichment, or metadata
+ * corrected) the guard changes, triggering a re-hash so that subsequent
+ * `analyzeDocument()` calls receive a fresh analysis instead of a stale one.
  */
 function contentFingerprint(doc: RawDocument): string {
   const guard = contentGuard(doc);
   const cached = _fingerprintCache.get(doc);
   if (cached !== undefined && cached.guard === guard) return cached.fp;
   const payload = [
+    // Content fields
     doc.fullText ?? '',
     doc.summary ?? '',
     doc.fullContent ?? '',
     doc.notis ?? '',
+    // Metadata fields that affect analysis output
+    doc.titel ?? '',
+    doc.title ?? '',
+    doc.rubrik ?? '',
+    doc.doktyp ?? '',
+    doc.parti ?? '',
+    doc.datum ?? '',
+    doc.rm ?? '',
+    doc.organ ?? '',
+    doc.mottagare ?? '',
   ].join('\x00');
   const fp = createHash('sha256').update(payload).digest('hex').slice(0, 32);
   _fingerprintCache.set(doc, { fp, guard });
@@ -1167,6 +1209,14 @@ export function analyzeDocument(
   };
 
   _analysisCache.set(key, analysis);
+
+  // Evict oldest entry when cache exceeds size limit.
+  // Map iteration order is insertion order, so the first key is the oldest.
+  if (_analysisCache.size > MAX_CACHE_SIZE) {
+    const oldest = _analysisCache.keys().next().value;
+    if (oldest !== undefined) _analysisCache.delete(oldest);
+  }
+
   return analysis;
 }
 

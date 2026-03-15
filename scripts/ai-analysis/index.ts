@@ -15,6 +15,7 @@ export {
   analyzeDocument,
   analyzeDocuments,
   clearAnalysisCache,
+  MAX_CACHE_SIZE,
   selectRelevantStakeholders,
   buildPestleAnalysis,
   buildCoalitionDynamics,

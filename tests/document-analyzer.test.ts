@@ -14,6 +14,7 @@ import {
   analyzeDocument,
   analyzeDocuments,
   clearAnalysisCache,
+  MAX_CACHE_SIZE,
   selectRelevantStakeholders,
   buildPestleAnalysis,
   buildCoalitionDynamics,
@@ -670,6 +671,30 @@ describe('analyzeDocument — caching', () => {
     // Document identity remains stable (same dok_id)
     expect(after.documentId).toBe(before.documentId);
   });
+
+  it('evicts oldest entry when cache exceeds MAX_CACHE_SIZE', () => {
+    clearAnalysisCache();
+    // Fill the cache with MAX_CACHE_SIZE entries
+    const results: ReturnType<typeof analyzeDocument>[] = [];
+    for (let i = 0; i < MAX_CACHE_SIZE; i++) {
+      results.push(analyzeDocument({ dok_id: `EVICT-${i}`, titel: `Doc ${i}`, doktyp: 'prop' }, 'en'));
+    }
+    // The first entry IS still cached (cache not yet full)
+    const firstCached = analyzeDocument({ dok_id: 'EVICT-0', titel: 'Doc 0', doktyp: 'prop' }, 'en');
+    expect(firstCached).toBe(results[0]);
+
+    // Insert one more → cache has MAX_CACHE_SIZE + 1, eviction fires
+    analyzeDocument({ dok_id: 'EVICT-EXTRA', titel: 'Extra', doktyp: 'prop' }, 'en');
+
+    // The first entry should have been evicted; analysing it again produces a new object
+    const firstAfterEviction = analyzeDocument({ dok_id: 'EVICT-0', titel: 'Doc 0', doktyp: 'prop' }, 'en');
+    expect(firstAfterEviction).not.toBe(results[0]);
+
+    // The extra entry IS still cached
+    const extraAgain = analyzeDocument({ dok_id: 'EVICT-EXTRA', titel: 'Extra', doktyp: 'prop' }, 'en');
+    const extraOnce = analyzeDocument({ dok_id: 'EVICT-EXTRA', titel: 'Extra', doktyp: 'prop' }, 'en');
+    expect(extraOnce).toBe(extraAgain);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -1147,5 +1172,37 @@ describe('multi-language support', () => {
     const resultB = analyzeDocument(docB, 'en');
     // They should be different analysis objects (different cache slots despite same dok_id)
     expect(resultA).not.toBe(resultB);
+  });
+
+  it('cache invalidates when metadata fields change (e.g. doktyp, parti)', () => {
+    clearAnalysisCache();
+    const docV1: RawDocument = { dok_id: 'META-1', titel: 'Metadata test', doktyp: 'prop', parti: 'S' };
+    const resultV1 = analyzeDocument(docV1, 'en');
+    // Same dok_id but corrected metadata
+    const docV2: RawDocument = { dok_id: 'META-1', titel: 'Metadata test', doktyp: 'mot', parti: 'V' };
+    const resultV2 = analyzeDocument(docV2, 'en');
+    // Metadata change → different fingerprint → different cache slot
+    expect(resultV2).not.toBe(resultV1);
+  });
+
+  it('cache invalidates when title is corrected for same dok_id', () => {
+    clearAnalysisCache();
+    const docV1: RawDocument = { dok_id: 'TITLE-1', titel: 'Original title', doktyp: 'prop' };
+    const resultV1 = analyzeDocument(docV1, 'en');
+    const docV2: RawDocument = { dok_id: 'TITLE-1', titel: 'Corrected title about healthcare reform', doktyp: 'prop' };
+    const resultV2 = analyzeDocument(docV2, 'en');
+    expect(resultV2).not.toBe(resultV1);
+  });
+
+  it('in-place metadata mutation invalidates fingerprint cache', () => {
+    clearAnalysisCache();
+    const doc: RawDocument = { dok_id: 'MUTATE-META', titel: 'Mutation meta test', doktyp: 'prop' };
+    const before = analyzeDocument(doc, 'en');
+    // Mutate metadata in place
+    (doc as Record<string, unknown>).doktyp = 'mot';
+    (doc as Record<string, unknown>).parti = 'S';
+    const after = analyzeDocument(doc, 'en');
+    // Guard detects metadata mutation → fresh analysis
+    expect(after).not.toBe(before);
   });
 });
