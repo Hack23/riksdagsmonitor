@@ -13,6 +13,8 @@ import { CONTENT_LABELS } from '../data-transformers.js';
 import type { Language } from '../types/language.js';
 import type { ArticleData, EventGridItem, WatchPoint, TemplateSection } from '../types/article.js';
 import { SITE_TAGLINE, OG_LOCALE_MAP, TYPE_LABELS, ALL_LANG_CODES } from './constants.js';
+import { getStyleClass } from './registry.js';
+import { ARTICLE_TYPE_NAMES } from './types.js';
 import {
   getBreadcrumbName,
   getFooterLabel,
@@ -40,6 +42,7 @@ export function generateArticleHTML(data: ArticleData): string {
     subtitle,
     date,
     type,
+    articleType,
     readTime = '5 min read',
     lang = 'en',
     locale,
@@ -62,8 +65,22 @@ export function generateArticleHTML(data: ArticleData): string {
   // Fix invalid HTML nesting once so both the rendered body and JSON-LD are consistent
   const fixedContent: string = fixHtmlNesting(content);
 
-  // Fall back to English labels if language not supported
-  const typeLabel: string = TYPE_LABELS[lang]?.[type] || TYPE_LABELS.en[type] || 'News';
+  // Fall back to English labels if language not supported.
+  // When articleType is set, prefer the per-type localized name from
+  // ARTICLE_TYPE_NAMES (e.g. "Propositioner") over the category label
+  // from TYPE_LABELS (e.g. "Analysis").  Fall back to TYPE_LABELS when
+  // articleType is omitted or has no entry.
+  const typeLabel: string = (articleType && ARTICLE_TYPE_NAMES[articleType]?.[lang])
+    || (articleType && ARTICLE_TYPE_NAMES[articleType]?.['en'])
+    || TYPE_LABELS[lang]?.[type]
+    || TYPE_LABELS.en[type]
+    || 'News';
+
+  // Derive the per-type CSS class from the registry (e.g. 'article-type-propositions')
+  // Only apply when articleType is explicitly set — ArticleCategory values are not
+  // valid ArticleType keys, so falling back to `type` would silently resolve to
+  // the 'breaking' default.  When omitted, keep the base `.news-article` styling.
+  const articleTypeClass: string = articleType ? ` ${getStyleClass(articleType)}` : '';
 
   // Generate hreflang tags for all available language variants
   const isRTL: boolean = lang === 'ar' || lang === 'he';
@@ -132,7 +149,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
   
-  <!-- Main stylesheet - contains all article styles -->
+  <!-- Main stylesheet — includes all article styles + component/theme imports -->
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Anti-flash: apply saved theme before first paint -->
@@ -276,24 +293,22 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
   </a>
 </div>
 
-<article id="main-content" class="news-article">
+<article id="main-content" class="news-article${articleTypeClass}">
   <header class="article-header">
     <div class="hero-banner">
       <img src="../images/riksdagsmonitornews-banner.webp" alt="" class="hero-banner-bg" width="1536" height="1024" loading="eager" aria-hidden="true">
     </div>
     <div class="hero-header-text">
-      <h1>${title}</h1>
+      <h1>${escapeHtml(title)}</h1>
       <div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}</div>
     </div>
     <a href="${getNewsIndexFilename(ALL_LANG_CODES.includes(lang as Language) ? lang : 'en')}" aria-label="Riksdagsmonitor News">
       <img src="../images/riksdagsmonitornews-logo.webp" alt="Riksdagsmonitor News" class="article-site-logo" width="100" height="100" loading="eager">
     </a>
-    <div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}</div>
-    <h1>${escapeHtml(title)}</h1>
     <div class="article-meta">
       <time datetime="${isoDate}">${formattedDate}</time>
       <span class="separator">•</span>
-      <span>${typeLabel}</span>
+      <span class="type-badge">${typeLabel}</span>
       <span class="separator">•</span>
       <span>${readTime}</span>
     </div>

@@ -1,0 +1,123 @@
+/**
+ * Mindmap Section Component Styles
+ * Provides layout and visual styles for mindmap / topic-cluster sections
+ * embedded in news articles.
+ *
+ * @author Hack23 AB
+ * @license Apache-2.0
+ */
+
+/* Mindmap Section */
+.news-article .mindmap-section-wrapper,
+.mindmap-section-wrapper {
+  margin: 2rem 0;
+}
+
+.news-article .mindmap-section {
+  background: #0a0e27;
+  border: 2px solid var(--type-accent, #00d9ff);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.news-article .mindmap-section h2 {
+  font-size: 1.4rem;
+  color: var(--type-accent, #00d9ff);
+  border-bottom: 2px solid var(--type-accent, #00d9ff);
+  padding-bottom: 0.75rem;
+  margin: 0 0 1rem 0;
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+}
+
+.news-article .mindmap-summary {
+  color: #a0a0a0;
+  font-size: 0.95rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.news-article .mindmap-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.news-article .mindmap-center {
+  background: linear-gradient(135deg, #0a2a33, #003344);
+  border: 3px solid var(--type-accent, #00d9ff);
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  color: var(--type-accent, #00d9ff);
+  font-weight: 700;
+  font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.15rem);
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+  text-align: center;
+  box-shadow: 0 0 20px rgba(var(--type-accent-rgb, 0, 217, 255), 0.25);
+  max-width: 280px;
+}
+
+.news-article .mindmap-branches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.news-article .mindmap-branch {
+  background: var(--branch-bg, #0a2a33);
+  border: 2px solid var(--branch-border, #00d9ff);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  min-width: 180px;
+  max-width: 240px;
+  flex: 1 1 180px;
+}
+
+.news-article .mindmap-branch-label {
+  color: var(--branch-text, #00d9ff);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-heading, 'Orbitron', sans-serif);
+}
+
+.news-article .mindmap-leaf-list {
+  list-style: disc;
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #cccccc;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.news-article .mindmap-leaf-list li {
+  margin-bottom: 0.2rem;
+}
+
+@media (min-width: 768px) {
+  .news-article .mindmap-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .news-article .mindmap-center {
+    flex: 0 0 auto;
+    align-self: center;
+  }
+  .news-article .mindmap-branches {
+    width: auto;
+    flex: 1;
+  }
+}
+
+[dir="rtl"] .news-article .mindmap-section {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .news-article .mindmap-leaf-list {
+  padding-left: 0;
+  padding-right: 1.25rem;
+}
+

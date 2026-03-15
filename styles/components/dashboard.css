@@ -1,0 +1,133 @@
+/**
+ * Article Dashboard Component Styles
+ * Provides layout and visual styles for Chart.js dashboard sections
+ * and economic indicator panels embedded in news articles.
+ *
+ * @author Hack23 AB
+ * @license Apache-2.0
+ */
+
+/* Dashboard Section */
+.news-article .article-dashboard {
+  background: var(--badge-bg, #f0f4f8);
+  border: 2px solid var(--primary-color, #006633);
+  border-radius: var(--border-radius-lg, 12px);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.news-article .article-dashboard h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  color: var(--primary-color, #006633);
+  border-bottom: 2px solid var(--primary-color, #006633);
+  padding-bottom: 0.75rem;
+}
+
+.news-article .dashboard-summary {
+  margin: 0 0 1rem 0;
+  line-height: 1.7;
+}
+
+.news-article .dashboard-chart-wrapper {
+  margin: 1rem 0;
+  max-width: 100%;
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.news-article .dashboard-chart-wrapper canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.news-article .dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.news-article .dashboard-table th,
+.news-article .dashboard-table td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color, #ddd);
+}
+
+.news-article .dashboard-table th {
+  background: var(--primary-color, #006633);
+  color: white;
+  font-weight: 600;
+}
+
+.news-article .dashboard-table caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+[dir="rtl"] .news-article .article-dashboard {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .news-article .dashboard-table th,
+[dir="rtl"] .news-article .dashboard-table td {
+  text-align: right;
+}
+
+[dir="rtl"] .news-article .dashboard-table caption {
+  text-align: right;
+}
+
+
+/* Economic Dashboard Section */
+.news-article .economic-dashboard-section {
+  background: var(--badge-bg, #f0f4f8);
+  border: 2px solid #4895ef;
+  border-radius: var(--border-radius-lg, 12px);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.news-article .economic-dashboard-placeholder {
+  background: var(--badge-bg, #f0f4f8);
+  border: 2px dashed #4895ef;
+  border-radius: var(--border-radius-lg, 12px);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.news-article .economic-dashboard-section h2,
+.news-article .economic-dashboard-placeholder h2 {
+  font-size: 1.4rem;
+  color: #4895ef;
+  border-bottom: 2px solid #4895ef;
+  padding-bottom: 0.75rem;
+  margin: 0 0 1rem 0;
+}
+
+.news-article .economic-indicators-list {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.news-article .economic-indicators-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* RTL adjustments for economic dashboard */
+[dir="rtl"] .news-article .economic-dashboard-section,
+[dir="rtl"] .news-article .economic-dashboard-placeholder {
+  text-align: right;
+}
+
+[dir="rtl"] .news-article .economic-indicators-list {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+
