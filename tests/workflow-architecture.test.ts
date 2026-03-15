@@ -456,6 +456,11 @@ describe('Editorial Framework', () => {
       expect(
         profileKeys.includes(type),
         `ARTICLE_TYPE_PROFILES should include profile for '${type}'`
+      ).toBe(true);
+    }
+  });
+});
+
 describe('Shared Prompts Library Integration', () => {
   const PROMPTS_DIR = path.join(__dirname, '..', 'scripts', 'prompts', 'v1');
 
@@ -520,11 +525,11 @@ describe('Analysis Depth Input', () => {
       if (!fs.existsSync(filepath)) continue;
       // Reuse the existing parseFrontmatter helper
       const frontmatter = parseFrontmatter(filepath);
-      const hasInputBlock = frontmatter.includes('workflow_dispatch');
-      const hasAnalysisDepth = frontmatter.includes('analysis_depth');
+      // Verify analysis_depth appears after workflow_dispatch: → inputs: (proper nesting)
+      const nestedUnderInputs = /workflow_dispatch:\s*\n\s+inputs:[\s\S]*?analysis_depth:/.test(frontmatter);
       expect(
-        hasInputBlock && hasAnalysisDepth,
-        `Workflow ${workflowFile} should have analysis_depth under workflow_dispatch.inputs in frontmatter`
+        nestedUnderInputs,
+        `Workflow ${workflowFile} should have analysis_depth nested under workflow_dispatch.inputs in frontmatter`
       ).toBe(true);
     }
   });
@@ -539,6 +544,10 @@ describe('Analysis Depth Input', () => {
       expect(
         depthBlock !== null,
         `Workflow ${workflowFile} should have analysis_depth with valid default (standard, deep, or comprehensive) in frontmatter`
+      ).toBe(true);
+    }
+  });
+
   it('should reference quality-criteria.md in all content workflows', () => {
     const contentWorkflows = [
       ...Object.values(ARTICLE_TYPE_WORKFLOWS),
@@ -623,8 +632,12 @@ describe('Iterative Analysis Protocol', () => {
       if (!fs.existsSync(filepath)) continue;
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
-        content.includes('Multi-Step AI Analysis Framework') || content.includes('analysis_depth'),
-        `Workflow ${workflowFile} should reference analysis depth and multi-step AI analysis`
+        content.includes('Multi-Step AI Analysis Framework'),
+        `Workflow ${workflowFile} should have a Multi-Step AI Analysis Framework section in the markdown body`
+      ).toBe(true);
+    }
+  });
+
   it('should have maximum 3 iterations limit in iterative workflows', () => {
     for (const workflowFile of ANALYTICAL_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
@@ -645,6 +658,10 @@ describe('Iterative Analysis Protocol', () => {
       expect(
         content.includes('analysis_depth') && content.includes('github.event.inputs.analysis_depth'),
         `Workflow ${workflowFile} should list analysis_depth in dispatch parameters section`
+      ).toBe(true);
+    }
+  });
+
   it('should have minimum quality score 7/10 in analytical workflows', () => {
     for (const workflowFile of ANALYTICAL_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
@@ -725,6 +742,9 @@ describe('Interpellations Generator', () => {
     if (!fs.existsSync(barrelPath)) return;
     const content = fs.readFileSync(barrelPath, 'utf-8');
     expect(content).toContain('generateInterpellationsContent');
+  });
+});
+
 describe('Realtime Monitor Enhancement', () => {
   const REALTIME_WORKFLOW = path.join(WORKFLOWS_DIR, 'news-realtime-monitor.md');
 
