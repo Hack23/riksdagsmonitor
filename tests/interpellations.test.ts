@@ -314,7 +314,7 @@ describe('Interpellations Content Generator', () => {
       expect(result).toContain('miljöministern');
     });
 
-    it('should extract compound minister title with å like "inrikesministern" preceded by "försvars- och"', () => {
+    it('should extract compound minister title with ö like "försvarsministern"', () => {
       const data = {
         motions: [
           {
