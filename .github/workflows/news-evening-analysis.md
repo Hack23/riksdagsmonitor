@@ -110,10 +110,12 @@ You are the **Evening Political Analyst** for Riksdagsmonitor. Generate comprehe
 
 ## 🔧 Workflow Dispatch Parameters
 
-- **coverage_depth** = `${{ github.event.inputs.coverage_depth }}`
+- **coverage_depth** = `${{ github.event.inputs.coverage_depth }}` — Controls article **content scope**: how many topics and how broad the coverage (e.g., `comprehensive` on Saturdays for weekly wrap-up).
+- **analysis_depth** = `${{ github.event.inputs.analysis_depth }}` — Controls **AI analysis quality**: SWOT complexity, stakeholder count, dashboard charts, and iteration count per the editorial framework.
 - **languages** = `${{ github.event.inputs.languages }}`
 - **lookback_hours** = `${{ github.event.inputs.lookback_hours }}`
-- **analysis_depth** = `${{ github.event.inputs.analysis_depth }}`
+
+> **Note:** `coverage_depth` and `analysis_depth` are distinct inputs. `coverage_depth` determines *what* to cover (breadth); `analysis_depth` determines *how deeply* to analyze it (quality). They default independently — adjust each based on the article's needs.
 
 ## ⚠️ NON-NEGOTIABLE RULES
 

@@ -15,6 +15,7 @@ import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { ARTICLE_TYPE_PROFILES } from '../scripts/editorial-framework';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -444,9 +445,7 @@ describe('Editorial Framework', () => {
   });
 
   it('editorial framework should define profiles for all article types', () => {
-    const frameworkPath = path.join(__dirname, '..', 'scripts', 'editorial-framework.ts');
-    if (!fs.existsSync(frameworkPath)) return;
-    const content = fs.readFileSync(frameworkPath, 'utf-8');
+    const profileKeys = Object.keys(ARTICLE_TYPE_PROFILES);
 
     const requiredTypes = [
       'committee-reports', 'propositions', 'motions', 'interpellations',
@@ -455,8 +454,8 @@ describe('Editorial Framework', () => {
     ];
     for (const type of requiredTypes) {
       expect(
-        content.includes(`'${type}'`),
-        `Editorial framework should include profile for '${type}'`
+        profileKeys.includes(type),
+        `ARTICLE_TYPE_PROFILES should include profile for '${type}'`
       ).toBe(true);
     }
   });
@@ -504,9 +503,8 @@ describe('Analysis Depth Input', () => {
     for (const workflowFile of ALL_NEWS_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       if (!fs.existsSync(filepath)) continue;
-      const content = fs.readFileSync(filepath, 'utf-8');
-      // Verify analysis_depth appears in the YAML frontmatter inputs section
-      const frontmatter = content.match(/^---\n([\s\S]*?)\n---/)?.[1] ?? '';
+      // Reuse the existing parseFrontmatter helper
+      const frontmatter = parseFrontmatter(filepath);
       const hasInputBlock = frontmatter.includes('workflow_dispatch');
       const hasAnalysisDepth = frontmatter.includes('analysis_depth');
       expect(
@@ -520,9 +518,8 @@ describe('Analysis Depth Input', () => {
     for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       if (!fs.existsSync(filepath)) continue;
-      const content = fs.readFileSync(filepath, 'utf-8');
-      // Extract the analysis_depth input block from frontmatter
-      const frontmatter = content.match(/^---\n([\s\S]*?)\n---/)?.[1] ?? '';
+      // Reuse the existing parseFrontmatter helper
+      const frontmatter = parseFrontmatter(filepath);
       const depthBlock = frontmatter.match(/analysis_depth:[\s\S]*?default:\s*(standard|deep|comprehensive)/);
       expect(
         depthBlock !== null,
