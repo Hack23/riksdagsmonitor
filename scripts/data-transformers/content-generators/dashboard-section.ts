@@ -326,8 +326,11 @@ function renderHeatMap(config: HeatMapConfig, panelId: string, usedIds: Set<stri
     minVal = 0;
     maxVal = 100;
   }
-  // When all values are equal, use 1 as range to avoid division by zero; all cells will render at 0 intensity.
-  const range = maxVal - minVal === 0 ? 1 : maxVal - minVal;
+  // When all values are equal, render every cell at mid-intensity (0.5) so a
+  // uniform dataset is distinguishable from an empty one.  Use 1 as divisor to
+  // avoid division by zero.
+  const allEqual = maxVal - minVal === 0;
+  const range = allEqual ? 1 : maxVal - minVal;
 
   const minLabel = config.minLabel ?? String(minVal);
   const maxLabel = config.maxLabel ?? String(maxVal);
@@ -346,7 +349,7 @@ function renderHeatMap(config: HeatMapConfig, panelId: string, usedIds: Set<stri
     const dataCells = row.map((cell, cIdx) => {
       const colLabel = columnLabels[cIdx] ?? String(cIdx + 1);
       const numVal = Number.isFinite(cell.value) ? cell.value : 0;
-      const intensity = ((numVal - minVal) / range).toFixed(3);
+      const intensity = allEqual ? '0.500' : ((numVal - minVal) / range).toFixed(3);
       const displayText = cell.label ?? String(numVal);
       const ariaText = `${escapeHtml(rowLabel)} / ${escapeHtml(colLabel)}: ${escapeHtml(displayText)}`;
       return `<div role="cell" class="heatmap-cell heatmap-data-cell" style="--intensity:${intensity}" aria-label="${ariaText}">${escapeHtml(displayText)}</div>`;
@@ -486,7 +489,7 @@ function renderPanel(
     const pct = Math.min(100, Math.max(0, panel.confidenceLevel));
     confidenceBlock = `    <div class="panel-confidence" aria-label="${escapeHtml(lbl('dashboardConfidence'))}: ${pct}%">
       <span class="panel-confidence-label">${escapeHtml(lbl('dashboardConfidence'))}</span>
-      <div class="panel-confidence-bar" role="meter" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100" style="--confidence:${(pct / 100).toFixed(3)}">
+      <div class="panel-confidence-bar" role="meter" aria-label="${escapeHtml(lbl('dashboardConfidence'))}" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100" aria-valuetext="${pct}%" style="--confidence:${(pct / 100).toFixed(3)}">
         <div class="panel-confidence-fill"></div>
       </div>
       <span class="panel-confidence-value">${pct}%</span>

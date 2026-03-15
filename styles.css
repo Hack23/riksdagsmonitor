@@ -9869,7 +9869,7 @@ body.news-page {
   /* Switch to white text when intensity > 0.55 to maintain WCAG 4.5:1 contrast */
   color: color-mix(
     in srgb,
-    #fff calc(var(--intensity, 0) * 180%),
+    #fff min(calc(var(--intensity, 0) * 180%), 100%),
     var(--text-color, #111)
   );
   border-radius: 4px;

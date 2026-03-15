@@ -977,4 +977,31 @@ describe('generateMultiPanelDashboardSection', () => {
     const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
     expect(section.html).toContain('aria-label="Heat map"');
   });
+
+  it('confidence meter has an accessible name and aria-valuetext', () => {
+    const data = makeDashboard({
+      panels: [makeChartPanel({ confidenceLevel: 85 })],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    // role="meter" element itself must have aria-label and aria-valuetext
+    const meterMatch = section.html.match(/role="meter"[^>]*/);
+    expect(meterMatch).not.toBeNull();
+    expect(meterMatch![0]).toContain('aria-label=');
+    expect(meterMatch![0]).toContain('aria-valuetext="85%"');
+  });
+
+  it('heatmap with all-equal values renders cells at 0.5 intensity', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'eq', title: 'Equal',
+        heatMap: makeHeatMapConfig({
+          cells: [[{ value: 42 }, { value: 42 }], [{ value: 42 }, { value: 42 }]],
+        }),
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    // Every data cell should be at mid-intensity, not 0
+    expect(section.html).toContain('--intensity:0.500');
+    expect(section.html).not.toContain('--intensity:0.000');
+  });
 });
