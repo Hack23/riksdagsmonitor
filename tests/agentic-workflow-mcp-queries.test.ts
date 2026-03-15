@@ -263,10 +263,10 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
-      // Should show date calculation patterns or reference date parameters
-      expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today|from_date|to_date/);
       // Should show date calculation patterns — either JS millisecond
       // arithmetic or bash/shell date commands with lookback logic
+      // (date-parameter names like from_date/to_date/dateFrom are tested
+      //  in the dedicated "Post-Query Date Filtering" suite above)
       expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today/);
       expect(content).toMatch(/86400000|3600000|lookback_hours|lookback/);
     });
