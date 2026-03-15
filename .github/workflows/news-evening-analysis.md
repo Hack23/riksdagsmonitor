@@ -196,11 +196,8 @@ const now = new Date();
 const fromDate = new Date(now.getTime() - lookbackHours * 3600000); // 3600000 ms = 1 hour
 const weekAgo = new Date(now.getTime() - 7 * 86400000); // 86400000 ms = 1 day
 const today = now.toISOString().split('T')[0];
-Calculate date range for queries:
-```js
-const today = new Date().toISOString().slice(0, 10);
-const fromDate = new Date(Date.now() - lookbackHours * 3600000).toISOString().slice(0, 10);
-// For weekly review (Saturday): 5-day lookback = 5 * 86400000 ms
+// ISO string variants for tools with native date params
+const fromDateIso = fromDate.toISOString().slice(0, 10);
 const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 10);
 ```
 
@@ -218,10 +215,8 @@ const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 
 
 Filter results to only include items with dates `>= fromDate`:
 ```javascript
-// Post-query date filtering example
-const results = rawResults.filter(item => new Date(item.publicerad || item.datum || item.inlämnad) >= fromDate);
-```js
-const filtered = results.filter(item => new Date(item.datum || item.publicerad) >= new Date(fromDate));
+// Post-query date filtering example (fromDate is a Date object from the calculation above)
+const filtered = rawResults.filter(item => new Date(item.publicerad || item.datum || item.inlämnad) >= fromDate);
 ```
 
 ### Cross-Referencing Strategy
@@ -268,25 +263,6 @@ const motions = allMotions.filter(m => new Date(m.inlämnad || m.datum) >= fromD
 // 2. Get party voting patterns, filter by date
 const allVotes = await search_voteringar({ parti: partyCode, rm: currentRm });
 const votes = allVotes.filter(v => new Date(v.datum) >= fromDate);
-Example 1: Committee Report Deep Dive
-```
-// 1. Fetch committee reports
-// 2. Cross-reference with voting records for the same beteckning
-// 3. Enrich with related speeches from the same debate
-```
-
-Example 2: Government Activity Analysis
-```
-// 1. Fetch government propositions for the period
-// 2. Cross-reference with opposition motions referencing the same prop
-// 3. Check committee assignments and processing status
-```
-
-Example 3: Party Behavior Analysis
-```
-// 1. Gather voting records by party
-// 2. Cross-reference with interpellations and written questions
-// 3. Identify patterns in party opposition strategy
 ```
 
 ### Saturday vs Weekday Mode

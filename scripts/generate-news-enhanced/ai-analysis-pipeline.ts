@@ -32,30 +32,6 @@ import type { SwotEntry } from '../types/article.js';
 // Public interfaces
 // ---------------------------------------------------------------------------
 
-/**
- * Represents a single iteration's input context for the AI analysis pipeline.
- * Each iteration builds on the accumulated context from previous passes.
- */
-export interface AIAnalysisIteration {
-  /** Which pass this is (1-indexed). */
-  iteration: number;
-  /** Accumulated context text from all previous iterations. */
-  context: string;
-  /** The documents being analysed in this iteration. */
-  documents: RawDocument[];
-  /** Optional focus topic constraining the analysis scope. */
-  focusTopic: string | null;
-  /** Raw output text from the immediately preceding iteration, if any. */
-  previousAnalysis?: string;
-  /** Stakeholder perspective driving this iteration's framing. */
-  stakeholderPerspective:
-    | 'government'
-    | 'opposition'
-    | 'civil-society'
-    | 'media'
-    | 'international';
-}
-
 /** Per-document deep analysis produced in Pass 2. */
 export interface AIDocumentAnalysis {
   /** Riksdag document identifier. */
@@ -82,8 +58,9 @@ export interface AISynthesis {
   coalitionStressIndicators: string;
   /**
    * Emerging legislative trends detected.
-   * Format: comma-separated domain names optionally suffixed with a
-   * bracketed confidence level, e.g. "fiscal policy, defence [HIGH], environment [MEDIUM]".
+   * Format: comma-separated domain names with a single bracketed confidence
+   * level appended to the whole list, e.g. "fiscal policy, defence, environment [HIGH]".
+   * Empty string when no domains are detected.
    */
   emergingTrends: string;
   /** Stakeholder power dynamics implied by the document distribution. */
