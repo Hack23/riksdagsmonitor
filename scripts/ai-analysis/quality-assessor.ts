@@ -590,9 +590,8 @@ export function printQualityReport(
  *
  * **CSP note:** An inline `<script type="application/ld+json">` element is
  * still an inline script from the browser's perspective.  If the page's
- * Content-Security-Policy sets `script-src` without `'unsafe-inline'` (e.g.
- * `script-src 'self' https:`, which is the standard pattern in this repo),
- * the JSON-LD block will be blocked by the browser.  To keep things safe:
+ * Content-Security-Policy sets `script-src` without `'unsafe-inline'`, the
+ * JSON-LD block will be blocked by the browser.  To keep things safe:
  *
  *  - The `<meta name="quality-score">` tag is injected when a `</head>`
  *    insertion point is found (CSP-safe).

@@ -210,7 +210,7 @@ const weekStart = new Date(now.getTime() - 5 * 86400000).toISOString().slice(0, 
 **Post-query filtering example:**
 ```javascript
 const recentBetankanden = allBetankanden.filter(b => new Date(b.publicerad) >= new Date(fromDate));
-const recentMotioner = allMotioner.filter(m => new Date(m.datum) > new Date(fromDate));
+const recentMotioner = allMotioner.filter(m => new Date(m.inlämnad) >= new Date(fromDate));
 ```
 
 ### Cross-Referencing Strategy
