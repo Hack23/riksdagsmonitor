@@ -235,12 +235,12 @@ function contentFingerprint(doc: RawDocument): string {
  * This is the human-recognizable, stable document identity used for
  * `documentId` in results and Map keys in `analyzeDocuments()`.
  */
-function documentBaseKey(doc: RawDocument): string {
+function documentBaseKey(doc: RawDocument, fp?: string): string {
   if (doc.dok_id) return `dok:${doc.dok_id}`;
   if (doc.url) return `url:${doc.url}`;
   const title = doc.titel ?? doc.title ?? 'unknown';
   const date = doc.datum ?? '';
-  return `title:${title}-${date}-${contentFingerprint(doc)}`;
+  return `title:${title}-${date}-${fp ?? contentFingerprint(doc)}`;
 }
 
 /**
@@ -251,9 +251,14 @@ function documentBaseKey(doc: RawDocument): string {
  * - analyses with different languages or CIA context get separate slots
  * - enriched documents (with `fullText`/`fullContent` added after initial
  *   metadata-only fetch) are not served stale pre-enrichment results
+ *
+ * The fingerprint is computed once and reused in both the base key (for
+ * title-only fallback) and the cache key suffix to avoid redundant SHA-256
+ * work.
  */
 function cacheKey(doc: RawDocument, lang: string = 'en', hasCIA: boolean = false): string {
-  return `${documentBaseKey(doc)}|${contentFingerprint(doc)}|${lang}|cia:${hasCIA ? '1' : '0'}`;
+  const fp = contentFingerprint(doc);
+  return `${documentBaseKey(doc, fp)}|${fp}|${lang}|cia:${hasCIA ? '1' : '0'}`;
 }
 
 /**
@@ -622,7 +627,7 @@ export function buildPestleAnalysis(doc: RawDocument, lang?: Language | string):
   if (social.length === 0) social.push('Social equity and public service delivery effects possible.');
 
   const technological: string[] = [
-    title.toLowerCase().includes('digital') || title.toLowerCase().includes('it')
+    title.toLowerCase().includes('digital') || title.toLowerCase().includes('cyber') || /\b(?:IT|ICT)\b/.test(title) || title.toLowerCase().includes('it-system')
       ? 'Digital infrastructure or technology governance dimensions present.'
       : 'Technology adoption for implementation may be required.',
   ];
@@ -855,17 +860,29 @@ function normalizeDocType(doktyp: string): string {
 /** Pattern for valid riksmöte strings: YYYY/YY */
 const RIKSMOTE_PATTERN = /^\d{4}\/\d{2}$/;
 
+/** Pattern for YYYY-MM-DD date strings. */
+const DATUM_PATTERN = /^(\d{4})-(\d{2})-(\d{2})$/;
+
 /**
  * Derive the riksmöte (parliamentary session) string from a document.
  * Prefers `doc.rm` when present and valid; otherwise derives from `doc.datum`
  * via `getCurrentRiksmote()`. Falls back to the current session if neither is
  * available.
+ *
+ * The datum is parsed via regex and reconstructed at local noon to avoid
+ * timezone-sensitive date shifts that can occur with `new Date('YYYY-MM-DD')`
+ * (which is parsed as UTC midnight, shifting to the previous day in UTC+
+ * timezones).
  */
 function deriveRiksmote(doc: RawDocument): string {
   if (doc.rm && RIKSMOTE_PATTERN.test(doc.rm)) return doc.rm;
   if (doc.datum) {
-    const d = new Date(doc.datum);
-    if (!isNaN(d.getTime())) return getCurrentRiksmote(d);
+    const m = DATUM_PATTERN.exec(doc.datum);
+    if (m) {
+      // Construct at local noon to avoid cross-day timezone shifts
+      const d = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]), 12, 0, 0);
+      return getCurrentRiksmote(d);
+    }
   }
   return getCurrentRiksmote();
 }

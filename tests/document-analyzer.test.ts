@@ -247,6 +247,21 @@ describe('analyzeDocument — PESTLE dimensions', () => {
     const economicJoined = pestleDimensions.economic.join(' ');
     expect(economicJoined.toLowerCase()).toContain('fiscal');
   });
+
+  it('does not flag generic Swedish words as IT/digital dimension (no false positive on "politik")', () => {
+    clearAnalysisCache();
+    const doc: RawDocument = { dok_id: 'IT-FP', titel: 'Hälso- och sjukvårdspolitik', doktyp: 'prop' };
+    const { pestleDimensions } = analyzeDocument(doc, 'sv');
+    // The technological dimension should use the generic fallback, not the "IT present" branch
+    expect(pestleDimensions.technological.join(' ')).not.toContain('Digital infrastructure');
+  });
+
+  it('correctly detects IT/digital dimension for genuine IT documents', () => {
+    clearAnalysisCache();
+    const doc: RawDocument = { dok_id: 'IT-OK', titel: 'IT-system för myndigheter', doktyp: 'prop' };
+    const { pestleDimensions } = analyzeDocument(doc, 'sv');
+    expect(pestleDimensions.technological.join(' ')).toContain('Digital infrastructure');
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -277,12 +292,11 @@ describe('analyzeDocument — policy domains', () => {
     const { policyDomains } = analyzeDocument({ ...propDoc, dok_id: 'DOMKEY-1' }, 'en');
     // Healthcare doc should produce a domain key like 'healthcare', not 'healthcare policy'
     const healthDomain = policyDomains.find(d => d.key === 'healthcare');
-    if (healthDomain) {
-      // key should be the short canonical form
-      expect(healthDomain.key).not.toContain(' ');
-      // name should be the localized display name
-      expect(healthDomain.name.length).toBeGreaterThan(healthDomain.key.length);
-    }
+    expect(healthDomain).toBeDefined();
+    // key should be the short canonical form
+    expect(healthDomain!.key).not.toContain(' ');
+    // name should be the localized display name
+    expect(healthDomain!.name.length).toBeGreaterThan(healthDomain!.key.length);
   });
 });
 
@@ -903,6 +917,15 @@ describe('generateExecutiveSummary', () => {
     expect(summary).toContain('2025/26');
   });
 
+  it('derives riksmöte correctly for September-boundary dates (timezone-safe)', () => {
+    // September 1st is the boundary between sessions — must not shift to August in any timezone
+    clearAnalysisCache();
+    const doc: RawDocument = { ...propDoc, dok_id: 'TZ-SAFE', rm: undefined, datum: '2025-09-01' };
+    const summary = generateExecutiveSummary(doc, 'en');
+    // Sep 2025 → 2025/26 session (not 2024/25 from an off-by-one timezone shift)
+    expect(summary).toContain('2025/26');
+  });
+
   it('handles skr documents without throwing', () => {
     const skrDoc: RawDocument = { dok_id: 'SKR-01', doktyp: 'skr', titel: 'Skrivelse om infrastruktur', datum: '2026-01-20' };
     expect(() => generateExecutiveSummary(skrDoc, 'en')).not.toThrow();
@@ -990,12 +1013,12 @@ describe('multi-language support', () => {
 
   it('contentFingerprint distinguishes different content of same total length', () => {
     clearAnalysisCache();
-    // Two docs with different content but (potentially) same total length
-    const docA: RawDocument = { dok_id: 'HASH-A', titel: 'Hash test', doktyp: 'prop', fullText: 'AAA', summary: 'BBB' };
-    const docB: RawDocument = { dok_id: 'HASH-B', titel: 'Hash test', doktyp: 'prop', fullText: 'BBB', summary: 'AAA' };
+    // Same dok_id but different content — fingerprint difference should cause separate cache slots
+    const docA: RawDocument = { dok_id: 'HASH-SAME', titel: 'Hash test', doktyp: 'prop', fullText: 'AAA', summary: 'BBB' };
+    const docB: RawDocument = { dok_id: 'HASH-SAME', titel: 'Hash test', doktyp: 'prop', fullText: 'BBB', summary: 'AAA' };
     const resultA = analyzeDocument(docA, 'en');
     const resultB = analyzeDocument(docB, 'en');
-    // They should be different analysis objects (different cache slots)
+    // They should be different analysis objects (different cache slots despite same dok_id)
     expect(resultA).not.toBe(resultB);
   });
 });
