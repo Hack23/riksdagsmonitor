@@ -36,6 +36,7 @@ import {
   writeSingleArticle,
   writeArticlePair,
   validateArticleQuality,
+  installFlushHandlers,
 } from './helpers.js';
 import {
   generateWeekAhead,
@@ -274,6 +275,7 @@ export async function generateNews(): Promise<typeof stats> {
 // ---------------------------------------------------------------------------
 
 export function runCli(): Promise<void> {
+  installFlushHandlers();
   return generateNews()
     .then(result => {
       if (result.errors > 0) {

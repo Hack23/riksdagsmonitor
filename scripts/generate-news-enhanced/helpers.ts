@@ -111,7 +111,9 @@ export function flushQualityScores(): void {
     // Atomic write: write to temp file, then rename to avoid corrupt JSON on crash.
     // On Windows fs.renameSync may fail if the destination exists, so remove first.
     fs.writeFileSync(tmpPath, JSON.stringify(perArticleScores, null, 2), 'utf-8');
-    try { fs.unlinkSync(outPath); } catch { /* destination may not exist yet */ }
+    try { fs.unlinkSync(outPath); } catch (e: unknown) {
+      if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e;
+    }
     fs.renameSync(tmpPath, outPath);
   } catch (err: unknown) {
     console.warn(`  ⚠️  Could not persist quality scores: ${(err as Error).message}`);
@@ -285,11 +287,14 @@ export async function writeSingleArticle(html: string, slug: string, lang: Langu
   return filename;
 }
 
-// Flush quality scores once when the process exits (avoids per-article write amplification).
-// Use process.once() to avoid duplicate listeners when the module is imported multiple times
-// (e.g. in test runners or worker contexts).
+/**
+ * Install process-exit signal handlers that flush quality scores once.
+ * Call from the CLI entrypoint (not at module load time) to avoid side
+ * effects when helpers.ts is imported by tests or other tooling.
+ */
 let _flushGuardInstalled = false;
-if (!_flushGuardInstalled) {
+export function installFlushHandlers(): void {
+  if (_flushGuardInstalled) return;
   _flushGuardInstalled = true;
   process.once('exit', () => flushQualityScores());
   process.once('SIGINT', () => { flushQualityScores(); process.exit(130); });
