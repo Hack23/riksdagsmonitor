@@ -69,11 +69,14 @@ export const focusTopic: string = parseArgValue(focusTopicArg);
  * Analysis depth for deep-inspection (1–4).
  *  1 — surface analysis (what happened) — default, fastest
  *  2 — adds predictive assessment and historical context
- *  3 — adds executive intelligence summary and methodology section
- *  4 — full multi-iteration intelligence report with all sections
+ *  3 — adds executive intelligence summary and methodology (3 iterations)
+ *  4 — full report: adds quality-review iteration in methodology (4 iterations)
  */
 const rawDepth: string = parseArgValue(depthArg);
 const parsedDepth: number = rawDepth ? parseInt(rawDepth, 10) : 1;
+if (rawDepth && (!Number.isFinite(parsedDepth) || parsedDepth < 1 || parsedDepth > 4)) {
+  console.warn(`Invalid --depth value "${rawDepth}" (expected 1–4), falling back to default 1.`);
+}
 export const analysisDepth: 1 | 2 | 3 | 4 =
   parsedDepth >= 4 ? 4 :
   parsedDepth === 3 ? 3 :

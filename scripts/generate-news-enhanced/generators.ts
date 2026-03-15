@@ -854,8 +854,8 @@ function docTypeLabel(doktyp: string, lang: Language, count?: number): string {
  * @param depth - Analysis depth (1–4). Higher depth adds more intelligence sections:
  *   1 = Topic Context + Document Intelligence + Strategic Implications + Key Takeaways
  *   2 = depth 1 + Predictive Assessment + Historical Context
- *   3 = depth 2 + Executive Intelligence Summary + Methodology
- *   4 = depth 3 (full report, all sections)
+ *   3 = depth 2 + Executive Intelligence Summary + Methodology (3 iterations)
+ *   4 = depth 3 + quality-review iteration in Methodology (4 iterations)
  */
 function generateDeepInspectionContent(
   docs: RawDocument[],
@@ -1219,7 +1219,7 @@ function buildExecutiveSummary(docs: RawDocument[], topic: string | null, lang: 
       const svClauseStr = svClauses.length > 1
         ? svClauses.slice(0, -1).join(', ') + ' och ' + svClauses[svClauses.length - 1]
         : svClauses[0];
-      return `Denna djupanalys granskar ${docs.length} riksdagsdokument${topic ? ` rörande <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? ` inom ${domainPhrase}` : ''}. Av dessa berikades ${enriched} med fulltext. Det lagstiftande läget är ${govLed ? 'regeringsledet' : 'oppositionsdrivet'} med ${svClauseStr}. ${hasEnactedLaw ? `${sfsDocs.length} lag${sfsDocs.length !== 1 ? 'ar' : ''} har redan antagits och fastställt ett rättsligt ramverk.` : highScrutiny ? 'Utskottsengagemanget visar att policyn är under aktiv parlamentarisk granskning.' : 'Lagstiftningspipelinen befinner sig i ett tidigt skede.'} Beslutsfattare bör prioritera att följa utskottens arbete och omröstningar i kammaren.`;
+      return `Denna djupanalys granskar ${docs.length} riksdagsdokument${topic ? ` rörande <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? ` inom ${domainPhrase}` : ''}. Av dessa berikades ${enriched} med fulltext. Det lagstiftande läget är ${govLed ? 'regeringsdrivet' : 'oppositionsdrivet'} med ${svClauseStr}. ${hasEnactedLaw ? `${sfsDocs.length} lag${sfsDocs.length !== 1 ? 'ar' : ''} har redan antagits och fastställt ett rättsligt ramverk.` : highScrutiny ? 'Utskottsengagemanget visar att policyn är under aktiv parlamentarisk granskning.' : 'Lagstiftningspipelinen befinner sig i ett tidigt skede.'} Beslutsfattare bör prioritera att följa utskottens arbete och omröstningar i kammaren.`;
     })(),
     da: `Denne dybdeanalyse undersøger ${docs.length} parlamentariske dokumenter${topic ? ` om <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? ` inden for ${domainPhrase}` : ''}. ${enriched} af disse er beriget med fulde tekster. Den lovgivningsmæssige holdning er ${govLed ? 'regeringsdrevet' : 'oppositionsdrevet'} med ${propCount} forslag og ${betCount} udvalgsrapport${betCount !== 1 ? 'er' : ''}. Beslutningstagere bør følge udvalgsdrøftelser og afstemninger.`,
     no: `Denne dybdeanalysen undersøker ${docs.length} parlamentariske dokumenter${topic ? ` om <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? ` innen ${domainPhrase}` : ''}. ${enriched} av disse er beriket med fulltekst. Den lovgivningsmessige posisjonen er ${govLed ? 'regjeringsledet' : 'opposisjonsdrevet'} med ${propCount} forslag og ${betCount} komitérapport${betCount !== 1 ? 'er' : ''}. Beslutningstakere bør følge komitéforhandlinger og voteringsmønstre.`,

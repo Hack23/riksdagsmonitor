@@ -74,18 +74,20 @@ describe('DeepInspectionPipeline', () => {
     }));
     vi.resetModules();
 
-    const { DeepInspectionPipeline } = await import('../scripts/deep-inspection/index.js');
-    const pipeline = new DeepInspectionPipeline();
-    const resultPromise = pipeline.run();
-    expect(resultPromise).toBeInstanceOf(Promise);
+    try {
+      const { DeepInspectionPipeline } = await import('../scripts/deep-inspection/index.js');
+      const pipeline = new DeepInspectionPipeline();
+      const resultPromise = pipeline.run();
+      expect(resultPromise).toBeInstanceOf(Promise);
 
-    const result = await resultPromise;
-    expect(result).toBeDefined();
-    expect(result.depth).toBeDefined();
-    expect([1, 2, 3, 4]).toContain(result.depth);
-
-    vi.doUnmock('../scripts/generate-news-enhanced/generators.js');
-    vi.resetModules();
+      const result = await resultPromise;
+      expect(result).toBeDefined();
+      expect(result.depth).toBeDefined();
+      expect([1, 2, 3, 4]).toContain(result.depth);
+    } finally {
+      vi.doUnmock('../scripts/generate-news-enhanced/generators.js');
+      vi.resetModules();
+    }
   });
 });
 
