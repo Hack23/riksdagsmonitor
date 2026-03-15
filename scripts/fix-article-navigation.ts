@@ -116,8 +116,10 @@ export function transformContent(
     let inserted = false;
 
     // Pattern A: insert after closing </nav> of language-switcher, before article/div.news-article
+    // Note: the article/div tag may have attributes before class= (e.g. id="main-content")
+    // and may carry additional classes (e.g. "news-article article-type-propositions")
     if (result.includes('</nav>')) {
-      const navPattern = /((<\/nav>)([\s]*)(<(?:article|div)\s+class="(?:news-article|container)"))/s;
+      const navPattern = /((<\/nav>)([\s]*)(<(?:article|div)\b[^>]*?\bclass="(?:news-article(?:\s[^"]*)?|container)"))/s;
       const match = navPattern.exec(result);
       if (match) {
         const endOfNav = match.index + match[2].length;
@@ -129,9 +131,10 @@ export function transformContent(
       }
     }
 
-    // Pattern B: insert directly before <article class="news-article"> or <div class="container">
+    // Pattern B: insert directly before <article/div with class="news-article ..." or "container">
+    // Allows arbitrary attributes (e.g. id="main-content") before class=
     if (!inserted) {
-      const articlePattern = /(<(?:article|div)\s+class="(?:news-article|container)")/;
+      const articlePattern = /(<(?:article|div)\b[^>]*?\bclass="(?:news-article(?:\s[^"]*)?|container)")/;
       const match = articlePattern.exec(result);
       if (match) {
         result = result.slice(0, match.index) + topNavHtml + '\n' + result.slice(match.index);

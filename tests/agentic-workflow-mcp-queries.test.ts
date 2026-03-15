@@ -139,6 +139,14 @@ describe('Agentic Workflow MCP Query Patterns', () => {
 
       // Should document filtering by date fields
       expect(content).toMatch(/filter.*by.*publicerad|filter.*by.*datum|filter.*by.*inlämnad/i);
+      // Should document filtering by date fields — the workflow uses
+      // placeholder parameters (fromDate/toDate/from/tom) and inline
+      // JS .filter() calls with date comparisons for post-query filtering.
+      expect(content).toMatch(/filter.*by.*date|filter.*results.*date|date.*filter/i);
+
+      // Should reference fromDate/toDate or from/tom query parameters
+      // Use word-boundary anchors to avoid false positives (e.g. "custom" matching tom)
+      expect(content).toMatch(/\bfromDate\b|\bfrom_date\b|\bdateFrom\b|\btoDate\b|\bto_date\b|\bdateTo\b|\bfrom\b.*\btom\b/);
     });
 
     it('workflows should annotate tools with date support', () => {
@@ -173,6 +181,10 @@ describe('Agentic Workflow MCP Query Patterns', () => {
     it('cross-referencing section should reference data source combinations', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
       const content = fs.readFileSync(filepath, 'utf-8');
+      // Should have numbered multi-tool query examples that demonstrate
+      // combining different API calls in a single analysis workflow
+      const hasMultiToolExamples =
+        content.includes('Example 1:') && content.includes('Example 2:');
 
       // Should mention cross-referencing related data sources
       expect(content).toMatch(/Cross-reference related data sources/i);
@@ -261,8 +273,10 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
-      // Should show date calculation patterns
+      // Should show date calculation patterns — either JS millisecond
+      // arithmetic or bash/shell date commands with lookback logic
       expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today/);
+      expect(content).toMatch(/86400000|3600000|lookback_hours|lookback/);
     });
 
     it('workflows should include dynamic riksmöte calculation instructions', () => {
