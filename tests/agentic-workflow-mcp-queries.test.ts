@@ -142,7 +142,7 @@ describe('Agentic Workflow MCP Query Patterns', () => {
 
       // Should have filtering examples
       expect(content).toContain('.filter(');
-      expect(content).toMatch(/new Date.*>=.*new Date|new Date.*>.*fromDate/);
+      expect(content).toMatch(/\.slice\(0,\s*10\)\s*>=\s*fromDate|new Date.*>=.*new Date/);
     });
 
     it('workflows should annotate tools with date support', () => {
