@@ -1,0 +1,263 @@
+/**
+ * Article Type Theme System
+ *
+ * Defines CSS custom property overrides for each article type within the
+ * cyberpunk design system.  Every `<article class="news-article article-type-*">`
+ * element inherits these variables, which are consumed by component styles
+ * (SWOT, dashboard, mindmap, section borders, etc.).
+ *
+ * Design guide:
+ * | Article Type      | Accent          | Layout emphasis                |
+ * |-------------------|-----------------|-------------------------------|
+ * | week-ahead        | Cyan            | Calendar grid + analysis      |
+ * | committee-reports | Green           | Report cards + voting          |
+ * | propositions      | Orange          | Impact assessment              |
+ * | motions           | Magenta         | Cross-party analysis           |
+ * | interpellations   | Yellow          | Q&A format                     |
+ * | deep-inspection   | Purple          | Full dashboard                 |
+ * | weekly-review     | Cyan+Green      | Summary + highlights           |
+ * | monthly-review    | Full spectrum   | Comprehensive                  |
+ * | breaking          | Red             | Alert format                   |
+ * | evening-analysis  | Dark/Indigo     | Reflective analysis            |
+ *
+ * @author Hack23 AB
+ * @license Apache-2.0
+ */
+
+/* ── Base article defaults (inherits global cyberpunk palette) ──────────── */
+.news-article {
+  --type-accent:     var(--primary-cyan, #00d9ff);
+  --type-accent-rgb: 0, 217, 255;
+  --type-bg:         rgba(0, 217, 255, 0.04);
+  --type-border:     var(--primary-cyan, #00d9ff);
+  --type-label:      var(--primary-cyan, #00d9ff);
+}
+
+/* ── Week Ahead — Cyan ──────────────────────────────────────────────────── */
+.news-article.article-type-week-ahead {
+  --type-accent:     #00d9ff;
+  --type-accent-rgb: 0, 217, 255;
+  --type-bg:         rgba(0, 217, 255, 0.04);
+  --type-border:     #00d9ff;
+  --type-label:      #00d9ff;
+}
+
+/* ── Committee Reports — Green ──────────────────────────────────────────── */
+.news-article.article-type-committee-reports {
+  --type-accent:     #00c853;
+  --type-accent-rgb: 0, 200, 83;
+  --type-bg:         rgba(0, 200, 83, 0.04);
+  --type-border:     #00c853;
+  --type-label:      #00c853;
+}
+
+/* ── Propositions — Orange ──────────────────────────────────────────────── */
+.news-article.article-type-propositions {
+  --type-accent:     #ff8800;
+  --type-accent-rgb: 255, 136, 0;
+  --type-bg:         rgba(255, 136, 0, 0.05);
+  --type-border:     #ff8800;
+  --type-label:      #ff8800;
+}
+
+/* ── Motions — Magenta ──────────────────────────────────────────────────── */
+.news-article.article-type-motions {
+  --type-accent:     #ff006e;
+  --type-accent-rgb: 255, 0, 110;
+  --type-bg:         rgba(255, 0, 110, 0.05);
+  --type-border:     #ff006e;
+  --type-label:      #ff006e;
+}
+
+/* ── Interpellations — Yellow ───────────────────────────────────────────── */
+.news-article.article-type-interpellations {
+  --type-accent:     #ffbe0b;
+  --type-accent-rgb: 255, 190, 11;
+  --type-bg:         rgba(255, 190, 11, 0.05);
+  --type-border:     #ffbe0b;
+  --type-label:      #ffbe0b;
+}
+
+/* ── Deep Inspection — Purple ───────────────────────────────────────────── */
+.news-article.article-type-deep-inspection {
+  --type-accent:     #aa00ff;
+  --type-accent-rgb: 170, 0, 255;
+  --type-bg:         rgba(170, 0, 255, 0.05);
+  --type-border:     #aa00ff;
+  --type-label:      #aa00ff;
+}
+
+/* ── Weekly Review — Cyan + Green gradient ──────────────────────────────── */
+.news-article.article-type-weekly-review {
+  --type-accent:     #00e5cc;
+  --type-accent-rgb: 0, 229, 204;
+  --type-bg:         rgba(0, 229, 204, 0.04);
+  --type-border:     #00e5cc;
+  --type-label:      #00e5cc;
+}
+
+/* ── Monthly Review — Amber (full spectrum represented by warm gold) ─────── */
+.news-article.article-type-monthly-review {
+  --type-accent:     #ffd600;
+  --type-accent-rgb: 255, 214, 0;
+  --type-bg:         rgba(255, 214, 0, 0.04);
+  --type-border:     #ffd600;
+  --type-label:      #ffd600;
+}
+
+/* ── Breaking News — Red ────────────────────────────────────────────────── */
+.news-article.article-type-breaking {
+  --type-accent:     #ff1744;
+  --type-accent-rgb: 255, 23, 68;
+  --type-bg:         rgba(255, 23, 68, 0.05);
+  --type-border:     #ff1744;
+  --type-label:      #ff1744;
+}
+
+/*
+ * ── Evening Analysis — Indigo/Dark ────────────────────────────────────────
+ * Reserved for future article type.  Not yet registered in ArticleType,
+ * ARTICLE_TYPE_NAMES, or the template registry.  The CSS custom properties
+ * are defined here so that they are ready to use the moment the type is
+ * promoted to the registry without a stylesheet release.
+ */
+.news-article.article-type-evening-analysis {
+  --type-accent:     #7c4dff;
+  --type-accent-rgb: 124, 77, 255;
+  --type-bg:         rgba(124, 77, 255, 0.05);
+  --type-border:     #7c4dff;
+  --type-label:      #7c4dff;
+}
+
+/* ── Month Ahead (alias for week-ahead palette, longer horizon) ─────────── */
+.news-article.article-type-month-ahead {
+  --type-accent:     #00b8d4;
+  --type-accent-rgb: 0, 184, 212;
+  --type-bg:         rgba(0, 184, 212, 0.04);
+  --type-border:     #00b8d4;
+  --type-label:      #00b8d4;
+}
+
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Apply accent colour to key structural elements via CSS variable           */
+/* ────────────────────────────────────────────────────────────────────────── */
+
+/* Article header accent stripe */
+.news-article[class*="article-type-"] .article-meta {
+  border-top: 2px solid var(--type-accent);
+  padding-top: 0.5rem;
+}
+
+/* Type label badge */
+.news-article[class*="article-type-"] .article-meta .type-badge {
+  background: rgba(var(--type-accent-rgb), 0.12);
+  color: var(--type-accent);
+  border: 1px solid rgba(var(--type-accent-rgb), 0.35);
+  border-radius: 4px;
+  padding: 0.1em 0.45em;
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* Heading accent underlines within typed articles */
+.news-article[class*="article-type-"] h2 {
+  border-left: 3px solid var(--type-accent);
+  padding-left: 0.6rem;
+}
+
+/* Section wrapper highlight */
+.news-article[class*="article-type-"] .article-section {
+  border-left: 3px solid rgba(var(--type-accent-rgb), 0.3);
+  padding-left: 1rem;
+  margin-left: 0;
+}
+
+/* Override SWOT border to use type accent */
+.news-article[class*="article-type-"] .swot-analysis,
+.news-article[class*="article-type-"] .stakeholder-swot-analysis,
+.news-article[class*="article-type-"] .article-dashboard,
+.news-article[class*="article-type-"] .economic-dashboard-section,
+.news-article[class*="article-type-"] .economic-dashboard-placeholder {
+  border-color: var(--type-accent);
+}
+
+.news-article[class*="article-type-"] .swot-analysis h2,
+.news-article[class*="article-type-"] .stakeholder-swot-analysis h2,
+.news-article[class*="article-type-"] .article-dashboard h2,
+.news-article[class*="article-type-"] .economic-dashboard-section h2,
+.news-article[class*="article-type-"] .economic-dashboard-placeholder h2 {
+  color: var(--type-accent);
+  border-bottom-color: var(--type-accent);
+}
+
+/* Mindmap override */
+.news-article[class*="article-type-"] .mindmap-section {
+  border-color: var(--type-accent);
+}
+
+.news-article[class*="article-type-"] .mindmap-section h2,
+.news-article[class*="article-type-"] .mindmap-center,
+.news-article[class*="article-type-"] .mindmap-branch-label {
+  color: var(--type-accent);
+}
+
+.news-article[class*="article-type-"] .mindmap-center {
+  border-color: var(--type-accent);
+  box-shadow: 0 0 20px rgba(var(--type-accent-rgb), 0.25);
+}
+
+.news-article[class*="article-type-"] .mindmap-branch {
+  border-color: var(--type-accent);
+}
+
+/* Breaking news pulsing accent border */
+.news-article.article-type-breaking {
+  border-top: 4px solid var(--type-accent);
+  animation: breaking-pulse 2s ease-in-out infinite;
+}
+
+@keyframes breaking-pulse {
+  0%, 100% { border-top-color: var(--type-accent); }
+  50%       { border-top-color: rgba(var(--type-accent-rgb), 0.4); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-article.article-type-breaking {
+    animation: none;
+  }
+}
+
+/* ── RTL support ────────────────────────────────────────────────────────── */
+[dir="rtl"] .news-article[class*="article-type-"] h2 {
+  border-left: none;
+  border-right: 3px solid var(--type-accent);
+  padding-left: 0;
+  padding-right: 0.6rem;
+}
+
+/* ── Responsive: remove h2 left-border on small screens ────────────────── */
+/* Placed AFTER the general RTL rule so the bottom-border treatment wins   */
+@media (max-width: 480px) {
+  .news-article[class*="article-type-"] h2 {
+    border-left: none;
+    padding-left: 0;
+    border-bottom: 2px solid var(--type-accent);
+    padding-bottom: 0.25rem;
+  }
+
+  /* RTL small screens also use bottom-border treatment */
+  [dir="rtl"] .news-article[class*="article-type-"] h2 {
+    border-right: none;
+    padding-right: 0;
+  }
+}
+
+[dir="rtl"] .news-article[class*="article-type-"] .article-section {
+  border-left: none;
+  border-right: 3px solid rgba(var(--type-accent-rgb), 0.3);
+  padding-left: 0;
+  padding-right: 1rem;
+  margin-right: 0;
+}
