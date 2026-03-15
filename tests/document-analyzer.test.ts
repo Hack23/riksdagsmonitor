@@ -589,6 +589,20 @@ describe('analyzeDocument — caching', () => {
     // Same document identity
     expect(withCIA.documentId).toBe(withoutCIA.documentId);
   });
+
+  it('cache invalidates when document is enriched with fullText', () => {
+    clearAnalysisCache();
+    // Analyse the document without fullText
+    const bare: RawDocument = { dok_id: 'ENRICH-1', titel: 'Enrichment test', doktyp: 'prop' };
+    const before = analyzeDocument(bare, 'en');
+    // "Enrich" the document by adding fullText (same dok_id)
+    const enriched: RawDocument = { ...bare, fullText: 'Detailed body text about healthcare reform.' };
+    const after = analyzeDocument(enriched, 'en');
+    // Content fingerprint changed → different cache slot → new object
+    expect(after).not.toBe(before);
+    // But document identity is stable
+    expect(after.documentId).toBe(before.documentId);
+  });
 });
 
 // ---------------------------------------------------------------------------

@@ -99,7 +99,7 @@ export interface PESTLEAnalysis {
 
 /** Detected policy domain with relevance score */
 export interface PolicyDomain {
-  key: string;
+  key: DomainKey | string;
   name: string;
   relevanceScore: number;
 }
@@ -195,13 +195,31 @@ export function clearAnalysisCache(): void {
   _analysisCache.clear();
 }
 
+/**
+ * Precomputed values that are expensive to derive and shared across
+ * multiple builder functions within a single `analyzeDocument()` call.
+ *
+ * By computing `domains` and `influenceScore` once and threading this
+ * context through helpers we avoid 7–11× redundant `detectPolicyDomains()`
+ * and `calculateInfluenceScore()` calls per document.
+ */
+interface PrecomputedContext {
+  domains: string[];
+  influenceScore: number;
+}
+
 /** Sum content-field lengths for collision-resistant cache/identity keys. */
 function contentFingerprint(doc: RawDocument): number {
   return (doc.fullText?.length ?? 0) + (doc.summary?.length ?? 0)
     + (doc.fullContent?.length ?? 0) + (doc.notis?.length ?? 0);
 }
 
-/** Return a base identity string for a document (no lang/context suffix). */
+/**
+ * Return a base identity string for a document (no lang/context suffix).
+ *
+ * This is the human-recognizable, stable document identity used for
+ * `documentId` in results and Map keys in `analyzeDocuments()`.
+ */
 function documentBaseKey(doc: RawDocument): string {
   if (doc.dok_id) return `dok:${doc.dok_id}`;
   if (doc.url) return `url:${doc.url}`;
@@ -213,12 +231,14 @@ function documentBaseKey(doc: RawDocument): string {
 /**
  * Return the cache key for a document.
  *
- * The key includes the document identity *plus* `lang` and a CIA-context
- * discriminator so that analyses with different languages or different context
- * inputs are never served from the same cache slot.
+ * The key includes the document identity *plus* a content fingerprint,
+ * `lang`, and a CIA-context discriminator so that:
+ * - analyses with different languages or CIA context get separate slots
+ * - enriched documents (with `fullText`/`fullContent` added after initial
+ *   metadata-only fetch) are not served stale pre-enrichment results
  */
 function cacheKey(doc: RawDocument, lang: string = 'en', hasCIA: boolean = false): string {
-  return `${documentBaseKey(doc)}|${lang}|cia:${hasCIA ? '1' : '0'}`;
+  return `${documentBaseKey(doc)}|${contentFingerprint(doc)}|${lang}|cia:${hasCIA ? '1' : '0'}`;
 }
 
 /**
@@ -397,12 +417,13 @@ function buildStakeholderSwot(
   doc: RawDocument,
   lang: Language | string,
   ciaContext?: CIAContext,
+  ctx?: PrecomputedContext,
 ): SwotData {
   const docType = doc.doktyp ?? doc.documentType ?? '';
   const isGovernment = docType === 'prop';
   const isMotion = docType === 'mot';
   const party = normalizePartyKey(doc.parti);
-  const domains = detectPolicyDomains(doc);
+  const domains = ctx?.domains ?? detectPolicyDomains(doc);
 
   // Government coalition SWOT
   if (group === 'government-coalition') {
@@ -452,7 +473,7 @@ function buildStakeholderSwot(
   }
 
   // Generic stakeholder SWOT — domain-aware
-  const hasHighInfluence = calculateInfluenceScore(doc) > 60;
+  const hasHighInfluence = (ctx?.influenceScore ?? calculateInfluenceScore(doc)) > 60;
   return {
     subject: stakeholderName(group, lang),
     strengths: [
@@ -496,11 +517,12 @@ function buildStakeholderImpact(
   doc: RawDocument,
   lang: Language | string,
   ciaContext?: CIAContext,
+  ctx?: PrecomputedContext,
 ): StakeholderImpact {
   const direction = deriveImpactDirection(group, doc);
-  const influenceScore = calculateInfluenceScore(doc);
+  const influenceScore = ctx?.influenceScore ?? calculateInfluenceScore(doc);
   const magnitude = influenceScore >= 65 ? 'significant' : influenceScore >= 35 ? 'moderate' : 'minor';
-  const domains = detectPolicyDomains(doc);
+  const domains = ctx?.domains ?? detectPolicyDomains(doc);
   const domainStr = domains.slice(0, 2).join(', ') || 'general policy';
   const displayName = stakeholderName(group, lang);
 
@@ -542,7 +564,7 @@ function buildStakeholderImpact(
     indirectEffects,
     implementationBurden: burden,
     politicalImplications,
-    swot: buildStakeholderSwot(group, doc, lang, ciaContext),
+    swot: buildStakeholderSwot(group, doc, lang, ciaContext, ctx),
     confidence,
   };
 }
@@ -649,9 +671,9 @@ export function buildCoalitionDynamics(doc: RawDocument, ciaContext?: CIAContext
 // ---------------------------------------------------------------------------
 
 /** Build historical and legislative context (structural inference). */
-export function buildHistoricalContext(doc: RawDocument): HistoricalContext {
+export function buildHistoricalContext(doc: RawDocument, precomputedDomains?: string[]): HistoricalContext {
   const docType = doc.doktyp ?? doc.documentType ?? '';
-  const domains = detectPolicyDomains(doc);
+  const domains = precomputedDomains ?? detectPolicyDomains(doc);
 
   const precedents: string[] = [];
   if (hasDomain(domains, 'fiscal')) precedents.push('Swedish fiscal consolidation policies dating to the 1990s banking crisis reforms.');
@@ -678,10 +700,10 @@ export function buildHistoricalContext(doc: RawDocument): HistoricalContext {
 // ---------------------------------------------------------------------------
 
 /** Build implementation feasibility assessment from document metadata. */
-export function buildImplementationAssessment(doc: RawDocument): ImplementationAssessment {
+export function buildImplementationAssessment(doc: RawDocument, ctx?: PrecomputedContext): ImplementationAssessment {
   const docType = doc.doktyp ?? doc.documentType ?? '';
-  const influenceScore = calculateInfluenceScore(doc);
-  const domains = detectPolicyDomains(doc);
+  const influenceScore = ctx?.influenceScore ?? calculateInfluenceScore(doc);
+  const domains = ctx?.domains ?? detectPolicyDomains(doc);
 
   const feasibility: ImplementationAssessment['feasibility'] =
     docType === 'prop' && influenceScore < 45 ? 'high'
@@ -727,9 +749,9 @@ export function buildImplementationAssessment(doc: RawDocument): ImplementationA
 // ---------------------------------------------------------------------------
 
 /** Build risk assessment list for a document. */
-export function buildRiskAssessment(doc: RawDocument, ciaContext?: CIAContext): RiskAssessment[] {
+export function buildRiskAssessment(doc: RawDocument, ciaContext?: CIAContext, ctx?: PrecomputedContext): RiskAssessment[] {
   const docType = doc.doktyp ?? doc.documentType ?? '';
-  const domains = detectPolicyDomains(doc);
+  const domains = ctx?.domains ?? detectPolicyDomains(doc);
   const riskIndex = ciaContext ? calculateCoalitionRiskIndex(ciaContext) : null;
   const risks: RiskAssessment[] = [];
 
@@ -747,7 +769,7 @@ export function buildRiskAssessment(doc: RawDocument, ciaContext?: CIAContext): 
   });
 
   // Implementation risks
-  const influenceScore = calculateInfluenceScore(doc);
+  const influenceScore = ctx?.influenceScore ?? calculateInfluenceScore(doc);
   if (influenceScore >= 50) {
     risks.push({
       type: 'implementation',
@@ -834,11 +856,11 @@ function deriveRiksmote(doc: RawDocument): string {
 }
 
 /** Generate a structured executive summary for a document. */
-export function generateExecutiveSummary(doc: RawDocument, lang: Language | string): string {
+export function generateExecutiveSummary(doc: RawDocument, lang: Language | string, ctx?: PrecomputedContext): string {
   const title = doc.titel ?? doc.title ?? doc.rubrik ?? 'Document';
   const docType = doc.doktyp ?? doc.documentType ?? '';
-  const domains = detectPolicyDomains(doc);
-  const influenceScore = calculateInfluenceScore(doc);
+  const domains = ctx?.domains ?? detectPolicyDomains(doc);
+  const influenceScore = ctx?.influenceScore ?? calculateInfluenceScore(doc);
   const party = normalizePartyKey(doc.parti);
 
   // Paragraph 1: What the document is and who authored it
@@ -873,8 +895,9 @@ export function generateExecutiveSummary(doc: RawDocument, lang: Language | stri
 // ---------------------------------------------------------------------------
 
 /** Build the four-iteration analysis protocol record. */
-function buildIterations(doc: RawDocument, stakeholders: StakeholderGroup[]): AnalysisIteration[] {
-  const domains = detectPolicyDomains(doc);
+function buildIterations(doc: RawDocument, stakeholders: StakeholderGroup[], ctx?: PrecomputedContext): AnalysisIteration[] {
+  const domains = ctx?.domains ?? detectPolicyDomains(doc);
+  const influence = ctx?.influenceScore ?? calculateInfluenceScore(doc);
   return [
     {
       iteration: 1,
@@ -882,7 +905,7 @@ function buildIterations(doc: RawDocument, stakeholders: StakeholderGroup[]): An
       summary: 'Initial analysis from document metadata, type, and available content.',
       refinements: [
         `Identified ${domains.length} policy domain(s): ${domains.join(', ') || 'general'}.`,
-        `Influence score calculated: ${calculateInfluenceScore(doc)}/100.`,
+        `Influence score calculated: ${influence}/100.`,
       ],
     },
     {
@@ -923,9 +946,9 @@ function buildIterations(doc: RawDocument, stakeholders: StakeholderGroup[]): An
 // ---------------------------------------------------------------------------
 
 /** Build per-dimension confidence scores for the analysis. */
-function buildConfidenceScores(doc: RawDocument, ciaContext?: CIAContext): Map<string, ConfidenceLevel> {
+function buildConfidenceScores(doc: RawDocument, ciaContext?: CIAContext, ctx?: PrecomputedContext): Map<string, ConfidenceLevel> {
   const scores = new Map<string, ConfidenceLevel>();
-  const domains = detectPolicyDomains(doc);
+  const domains = ctx?.domains ?? detectPolicyDomains(doc);
   const hasFullText = !!(doc.fullText || doc.fullContent);
   const hasCIA = !!ciaContext;
 
@@ -968,12 +991,18 @@ export function analyzeDocument(
   }
 
   const relevantStakeholders = selectRelevantStakeholders(doc);
-  const stakeholderImpacts = relevantStakeholders.map(group =>
-    buildStakeholderImpact(group, doc, lang, ciaContext),
-  );
-  const pestleDimensions = buildPestleAnalysis(doc, lang);
+
+  // Precompute expensive values once to avoid 7–11× redundant
+  // detectPolicyDomains() and calculateInfluenceScore() calls in
+  // downstream builders (stakeholder impacts, risk, implementation, etc.)
   const rawDomains = detectPolicyDomains(doc);
   const influenceScore = calculateInfluenceScore(doc);
+  const ctx: PrecomputedContext = { domains: rawDomains, influenceScore };
+
+  const stakeholderImpacts = relevantStakeholders.map(group =>
+    buildStakeholderImpact(group, doc, lang, ciaContext, ctx),
+  );
+  const pestleDimensions = buildPestleAnalysis(doc, lang);
 
   const policyDomains: PolicyDomain[] = toDomainKeyPairs(rawDomains).map(({ key: k, name: n }, i) => ({
     key: k,
@@ -983,16 +1012,16 @@ export function analyzeDocument(
 
   // Iteration 2: coalition + context
   const coalitionDynamics = buildCoalitionDynamics(doc, ciaContext);
-  const historicalContext = buildHistoricalContext(doc);
+  const historicalContext = buildHistoricalContext(doc, rawDomains);
 
   // Iteration 3: implementation + risk
-  const implementationAssessment = buildImplementationAssessment(doc);
-  const riskAssessment = buildRiskAssessment(doc, ciaContext);
+  const implementationAssessment = buildImplementationAssessment(doc, ctx);
+  const riskAssessment = buildRiskAssessment(doc, ciaContext, ctx);
 
   // Iteration 4: synthesis
-  const executiveSummary = generateExecutiveSummary(doc, lang);
-  const confidenceScores = buildConfidenceScores(doc, ciaContext);
-  const iterations = buildIterations(doc, relevantStakeholders);
+  const executiveSummary = generateExecutiveSummary(doc, lang, ctx);
+  const confidenceScores = buildConfidenceScores(doc, ciaContext, ctx);
+  const iterations = buildIterations(doc, relevantStakeholders, ctx);
 
   const analysis: DocumentAnalysis = {
     documentId: stableDocumentId(doc),
