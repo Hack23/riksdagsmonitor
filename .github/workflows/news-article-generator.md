@@ -204,7 +204,7 @@ Each article type has a profile in `scripts/editorial-framework.ts` with the exa
 |-------|-----------|------|-----------|---------|
 | standard | min(2, profile.aiIterations) | as profile | as profile | as profile |
 | deep | clamp(2–3, profile.aiIterations) | as profile | as profile | as profile |
-| comprehensive | max(3, profile.aiIterations) | full always | always | always |
+| comprehensive | max(3, profile.aiIterations) | as profile | as profile | as profile |
 
 ### Per-Article-Type Iteration Pattern
 For each article type being generated in this run:

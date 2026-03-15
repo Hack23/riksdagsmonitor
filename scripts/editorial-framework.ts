@@ -391,10 +391,13 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
  * @returns The editorial profile, or the 'breaking' profile as a safe fallback
  */
 export function getArticleTypeProfile(articleType: string): ArticleTypeProfile {
-  // Cast needed: articleType comes from external sources (workflow_dispatch, CLI) and may not be
-  // in EditorialProfileKey; the fallback to 'breaking' handles unknown values safely.
-  return (ARTICLE_TYPE_PROFILES as Readonly<Record<string, ArticleTypeProfile>>)[articleType]
-    ?? ARTICLE_TYPE_PROFILES['breaking'];
+  // articleType comes from external sources (workflow_dispatch, CLI) and may not be
+  // in EditorialProfileKey.  Use Object.hasOwn to guard against prototype keys
+  // ('__proto__', 'constructor', etc.) that would bypass the intended lookup.
+  if (Object.hasOwn(ARTICLE_TYPE_PROFILES, articleType)) {
+    return (ARTICLE_TYPE_PROFILES as Readonly<Record<string, ArticleTypeProfile>>)[articleType];
+  }
+  return ARTICLE_TYPE_PROFILES['breaking'];
 }
 
 /**

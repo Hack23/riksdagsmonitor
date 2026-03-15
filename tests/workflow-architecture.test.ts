@@ -15,7 +15,7 @@ import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { ARTICLE_TYPE_PROFILES } from '../scripts/editorial-framework';
+import { ARTICLE_TYPE_PROFILES } from '../scripts/editorial-framework.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
