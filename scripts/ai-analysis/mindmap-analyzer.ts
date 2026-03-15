@@ -24,6 +24,7 @@ import type { RawDocument } from '../data-transformers.js';
 import type { MindmapBranch, BranchConnection } from '../data-transformers/content-generators/mindmap-section.js';
 import { localizeDocType } from '../data-transformers/content-generators/shared.js';
 import { detectPolicyDomains, detectNarrativeFrames } from '../data-transformers/policy-analysis.js';
+import { getCurrentRiksmote } from '../shared/riksmote.js';
 import type { Language } from '../types/language.js';
 
 // ---------------------------------------------------------------------------
@@ -357,7 +358,7 @@ function extractOrgans(docs: RawDocument[]): string[] {
  */
 function datumToRiksmote(datum: string): string {
   const m = /^(\d{4})-(\d{2})/.exec(datum);
-  if (!m) return datum.slice(0, 4); // invalid format: fall back to year
+  if (!m) return getCurrentRiksmote(new Date()); // invalid format: fall back to current session
   const year = Number(m[1]);
   const month = Number(m[2]) - 1; // 0-based (Jan=0, Sep=8)
   const startYear = month >= 8 ? year : year - 1;
