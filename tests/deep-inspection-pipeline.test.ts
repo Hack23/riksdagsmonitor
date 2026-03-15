@@ -63,7 +63,7 @@ describe('DeepInspectionPipeline', () => {
     vi.doMock('../scripts/generate-news-enhanced/generators.js', () => ({
       generateDeepInspection: vi.fn().mockResolvedValue({
         success: true,
-        fileCount: 0,
+        files: 0,
         slug: 'test-slug',
       }),
       extractDocIdFromUrl: vi.fn(),
