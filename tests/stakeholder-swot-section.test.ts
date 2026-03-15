@@ -8,12 +8,12 @@
 import { describe, it, expect } from 'vitest';
 import { generateStakeholderSwotSection } from '../scripts/data-transformers/content-generators/stakeholder-swot-section.js';
 import type { StakeholderSwot } from '../scripts/data-transformers/content-generators/stakeholder-swot-section.js';
-import type { SwotData, SwotEntry } from '../scripts/types/article.js';
+import type { SwotData, SwotEntry, TrendDirection } from '../scripts/types/article.js';
 
 /** Extended entry shape matching AISwotEntry (without importing the ai-swot-analyzer module) */
 interface EnhancedEntry extends SwotEntry {
   justification?: string;
-  trendDirection?: 'improving' | 'stable' | 'deteriorating';
+  trendDirection?: TrendDirection;
   quantitativeEvidence?: string;
 }
 

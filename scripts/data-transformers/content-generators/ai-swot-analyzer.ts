@@ -96,7 +96,7 @@ export interface AISwotAnalysis {
 // Localised stakeholder names (all 14 languages)
 // ---------------------------------------------------------------------------
 
-export const STAKEHOLDER_NAMES: Readonly<Record<StakeholderPerspective, Partial<Record<Language, string>>>> = {
+export const STAKEHOLDER_NAMES: Readonly<Record<StakeholderPerspective, Readonly<Record<Language, string>>>> = {
   'government-coalition': {
     en: 'Government Coalition',
     sv: 'Regeringskoalitionen',
@@ -199,7 +199,7 @@ export const STAKEHOLDER_NAMES: Readonly<Record<StakeholderPerspective, Partial<
 // Localised stakeholder roles (all 14 languages)
 // ---------------------------------------------------------------------------
 
-const STAKEHOLDER_ROLES: Readonly<Record<StakeholderPerspective, Partial<Record<Language, string>>>> = {
+const STAKEHOLDER_ROLES: Readonly<Record<StakeholderPerspective, Readonly<Record<Language, string>>>> = {
   'government-coalition': {
     en: 'Tidö Agreement parties: M, KD, L with SD support',
     sv: 'Tidöavtalspartierna: M, KD, L med SD:s stöd',
@@ -303,8 +303,8 @@ const STAKEHOLDER_ROLES: Readonly<Record<StakeholderPerspective, Partial<Record<
 // ---------------------------------------------------------------------------
 
 const CONTEXT_LABELS: Readonly<{
-  confidence: Partial<Record<Language, string>>;
-  crossReferences: Partial<Record<Language, string>>;
+  confidence: Readonly<Record<Language, string>>;
+  crossReferences: Readonly<Record<Language, string>>;
 }> = {
   confidence: {
     en: 'Confidence',
@@ -1060,12 +1060,12 @@ export function buildAISwotStakeholders(
   const crossRefs = buildCrossReferences(b, topic);
 
   // Localised labels for context metadata
-  const confidenceLabel = CONTEXT_LABELS.confidence[lang] ?? CONTEXT_LABELS.confidence.en ?? 'Confidence';
-  const crossRefLabel   = CONTEXT_LABELS.crossReferences[lang] ?? CONTEXT_LABELS.crossReferences.en ?? 'Cross-references';
+  const confidenceLabel = CONTEXT_LABELS.confidence[lang];
+  const crossRefLabel   = CONTEXT_LABELS.crossReferences[lang];
 
   return perspectives.map(p => {
-    const name = STAKEHOLDER_NAMES[p][lang] ?? STAKEHOLDER_NAMES[p].en!;
-    const role = STAKEHOLDER_ROLES[p][lang] ?? STAKEHOLDER_ROLES[p].en!;
+    const name = STAKEHOLDER_NAMES[p][lang];
+    const role = STAKEHOLDER_ROLES[p][lang];
     const swotData = builders[p]();
     const confidence = computeConfidence(docs, b, p);
 

@@ -214,9 +214,6 @@ const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 
 - `search_anforanden` — filter by `datum` field
 
 Filter results to only include items with dates `>= fromDate` using timezone-safe ISO string comparison:
-```js
-const filtered = results.filter(item => (item.datum || item.publicerad || '').slice(0, 10) >= fromDate);
-```
 
 For tools without native date support, apply a post-query date filter:
 
