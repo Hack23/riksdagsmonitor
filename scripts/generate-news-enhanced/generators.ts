@@ -1002,7 +1002,7 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
   const propDocs = docs.filter(d => effectiveType(d) === 'prop');
   const betDocs  = docs.filter(d => effectiveType(d) === 'bet');
   const motDocs  = docs.filter(d => effectiveType(d) === 'mot');
-  const euDocs   = docs.filter(d => effectiveType(d) === 'fpm');
+  const euDocs   = docs.filter(d => effectiveType(d) === 'fpm' || effectiveType(d) === 'eu');
   const sfsDocs  = docs.filter(d => effectiveType(d) === 'sfs');
   const pressmDocs = docs.filter(d => effectiveType(d) === 'pressm');
 
@@ -1106,18 +1106,18 @@ async function buildDeepInspectionSections(
   const motDocs    = docs.filter(d => effectiveType(d) === 'mot');
   const skrDocs    = docs.filter(d => effectiveType(d) === 'skr');
   const sfsDocs    = docs.filter(d => effectiveType(d) === 'sfs');
-  const euDocs     = docs.filter(d => effectiveType(d) === 'fpm');
+  const euDocs     = docs.filter(d => effectiveType(d) === 'fpm' || effectiveType(d) === 'eu');
   const pressmDocs = docs.filter(d => effectiveType(d) === 'pressm');
   const extDocs    = docs.filter(d => effectiveType(d) === 'ext');
   const otherDocs  = docs.filter(d =>
-    !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes(effectiveType(d)));
+    !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext'].includes(effectiveType(d)));
 
   // Build 4–9 stakeholder SWOT analyses from document metadata
   const stakeholders = buildMultiStakeholderSwot(docs, lang);
 
   // Derive localised names for the mindmap / sankey from the STAKEHOLDER_NAMES map
-  const govName     = STAKEHOLDER_NAMES.government?.[lang]     ?? STAKEHOLDER_NAMES.government?.en     ?? 'Government Coalition';
-  const oppName     = STAKEHOLDER_NAMES.opposition?.[lang]     ?? STAKEHOLDER_NAMES.opposition?.en     ?? 'Opposition Parties';
+  const govName     = STAKEHOLDER_NAMES.government[lang]     ?? STAKEHOLDER_NAMES.government.en     ?? 'Government Coalition';
+  const oppName     = STAKEHOLDER_NAMES.opposition[lang]     ?? STAKEHOLDER_NAMES.opposition.en     ?? 'Opposition Parties';
 
   const dataSourceBranchLabels: Partial<Record<Language, string>> = {
     en: 'Data Sources', sv: 'Datakällor', da: 'Datakilder', no: 'Datakilder',
@@ -1252,7 +1252,7 @@ async function buildDeepInspectionSections(
   //     external references, and other document types
   // Additional SWOT stakeholders (municipal, media, academia, etc.) are
   // analysis perspectives rather than document-originating actors.
-  const privateName = STAKEHOLDER_NAMES.private?.[lang] ?? STAKEHOLDER_NAMES.private?.en ?? 'Private Sector / Industry';
+  const privateName = STAKEHOLDER_NAMES.private[lang] ?? STAKEHOLDER_NAMES.private.en ?? 'Private Sector / Industry';
   const sankeyNodes: SankeyNode[] = [
     { id: 'gov', label: govName,           color: 'cyan' },
     { id: 'opp', label: oppName,           color: 'magenta' },

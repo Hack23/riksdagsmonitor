@@ -664,7 +664,7 @@ const LAB_T: LangMap = {
 // Stakeholder localised names (all 14 languages)
 // ---------------------------------------------------------------------------
 
-type StakeholderNames = Readonly<Partial<Record<Language, string>>>;
+type StakeholderNames = Readonly<Record<Language, string>>;
 
 export const STAKEHOLDER_NAMES: Readonly<Record<StakeholderCategory, StakeholderNames>> = {
   government: {
@@ -742,7 +742,7 @@ export const STAKEHOLDER_NAMES: Readonly<Record<StakeholderCategory, Stakeholder
 };
 
 // Stakeholder roles — localised for all 14 languages
-const STAKEHOLDER_ROLES: Readonly<Record<StakeholderCategory, Partial<Record<Language, string>>>> = {
+const STAKEHOLDER_ROLES: Readonly<Record<StakeholderCategory, Record<Language, string>>> = {
   government: {
     en: 'Tidö Agreement: M, KD, L + SD support',
     sv: 'Tidöavtalet: M, KD, L + SD-stöd',
@@ -1291,11 +1291,11 @@ export function buildMultiStakeholderSwot(
         continue;
     }
 
-    const name = STAKEHOLDER_NAMES[cat]?.[lang] ?? STAKEHOLDER_NAMES[cat]?.en ?? cat;
+    const name = STAKEHOLDER_NAMES[cat][lang] ?? STAKEHOLDER_NAMES[cat].en ?? cat;
 
     stakeholders.push({
       name,
-      role: STAKEHOLDER_ROLES[cat]?.[lang] ?? STAKEHOLDER_ROLES[cat]?.en,
+      role: STAKEHOLDER_ROLES[cat][lang] ?? STAKEHOLDER_ROLES[cat].en,
       category: cat,
       swot: result.swot,
       evidenceRefs: result.refs.length > 0 ? result.refs : undefined,
