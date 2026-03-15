@@ -726,7 +726,8 @@ function generateSummary(
   const organs = extractOrgans(docs);
   // Normalize doc types: map isSfsDoc() documents to 'sfs' so SFS detected via
   // dokumentnamn.startsWith('SFS') (without doktyp) are counted consistently.
-  const docTypeCount = new Set(docs.map(d => isSfsDoc(d) ? 'sfs' : (d.doktyp || d.documentType)).filter(Boolean)).size;
+  // Documents with no type are normalized to 'other' (matching codebase convention).
+  const docTypeCount = new Set(docs.map(d => isSfsDoc(d) ? 'sfs' : (d.doktyp || d.documentType || 'other'))).size;
   const euNote = hasEuConnection(docs) ? (L(EU_NOTES, lang, 'EU obligations form an important external driver.')) : '';
 
   const template = L(SUMMARY_TEMPLATES, lang,
