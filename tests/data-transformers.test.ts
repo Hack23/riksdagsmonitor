@@ -1578,6 +1578,24 @@ describe('Data Transformers', () => {
       expect(content).toMatch(/minister is obliged to respond|held accountable/i);
       expect(content).not.toContain('Requires committee review');
     });
+
+    it('should localize interpellation generic fallback for non-en/sv languages', () => {
+      const deDe = generateArticleContent({
+        interpellations: [{ titel: 'Allgemeine Frage', url: 'https://example.com/1', dok_id: 'IP4' }]
+      } as MockArticlePayload, 'interpellations', 'de') as string;
+
+      // German interpellation fallback references minister accountability
+      expect(deDe).toMatch(/Minister verpflichtet|Rede und Antwort/i);
+      expect(deDe).not.toContain('Requires committee review');
+
+      const frFr = generateArticleContent({
+        interpellations: [{ titel: 'Question générale', url: 'https://example.com/1', dok_id: 'IP5' }]
+      } as MockArticlePayload, 'interpellations', 'fr') as string;
+
+      // French interpellation fallback references minister accountability
+      expect(frFr).toMatch(/ministre est tenu|rendre des comptes/i);
+      expect(frFr).not.toContain('Requires committee review');
+    });
   });
 
   describe('Thematic grouping in motions content', () => {
