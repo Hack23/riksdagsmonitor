@@ -407,6 +407,7 @@ echo ""
 echo "📋 Check 13: Content quality scores (multi-dimensional assessment)"
 
 QUALITY_SCORES_FILE="news/metadata/quality-scores.json"
+MULTIDIM_THRESHOLD=60  # single source of truth for pass/fail threshold
 
 if [ ! -f "$QUALITY_SCORES_FILE" ]; then
   echo -e "${YELLOW}⚠️ quality-scores.json not found — no articles generated yet or file not persisted${NC}"
@@ -425,7 +426,7 @@ else
           .map(e => e.multidimensional.overallScore);
         if (overallScores.length === 0) { console.log('NO_MULTIDIM'); process.exit(0); }
         const avg = Math.round(overallScores.reduce((a, b) => a + b, 0) / overallScores.length);
-        const passed = overallScores.filter(s => s >= 60).length;
+        const passed = overallScores.filter(s => s >= ${MULTIDIM_THRESHOLD}).length;
         const critical = entries.filter(e => e.multidimensional && !e.multidimensional.passesThreshold).length;
         console.log(avg + '|' + passed + '|' + overallScores.length + '|' + critical);
       } catch(e) { console.log('ERROR:' + e.message); }
@@ -447,18 +448,19 @@ else
       CRITICAL_COUNT=$(echo "$QUALITY_SUMMARY" | cut -d'|' -f4)
 
       echo -e "   Average multi-dimensional score: ${AVG_SCORE}/100"
-      echo -e "   Articles passing threshold (≥60): ${PASSED_COUNT}/${TOTAL_COUNT}"
+      echo -e "   Articles passing threshold (≥${MULTIDIM_THRESHOLD}): ${PASSED_COUNT}/${TOTAL_COUNT}"
 
       if [ "$CRITICAL_COUNT" -gt 0 ]; then
-        echo -e "${YELLOW}⚠️ $CRITICAL_COUNT article(s) scored below the 60/100 multi-dimensional threshold${NC}"
+        echo -e "${YELLOW}⚠️ $CRITICAL_COUNT article(s) scored below the ${MULTIDIM_THRESHOLD}/100 multi-dimensional threshold${NC}"
         WARNINGS=$((WARNINGS + 1))
       fi
 
-      if [ "$AVG_SCORE" -lt 40 ]; then
-        echo -e "${RED}❌ Average content quality score ${AVG_SCORE}/100 is critically low (< 40)${NC}"
+      CRITICAL_THRESHOLD=$((MULTIDIM_THRESHOLD * 2 / 3))  # ~40 when threshold is 60
+      if [ "$AVG_SCORE" -lt "$CRITICAL_THRESHOLD" ]; then
+        echo -e "${RED}❌ Average content quality score ${AVG_SCORE}/100 is critically low (< ${CRITICAL_THRESHOLD})${NC}"
         ERRORS=$((ERRORS + 1))
-      elif [ "$AVG_SCORE" -lt 60 ]; then
-        echo -e "${YELLOW}⚠️ Average content quality score ${AVG_SCORE}/100 is below recommended level (< 60)${NC}"
+      elif [ "$AVG_SCORE" -lt "$MULTIDIM_THRESHOLD" ]; then
+        echo -e "${YELLOW}⚠️ Average content quality score ${AVG_SCORE}/100 is below recommended level (< ${MULTIDIM_THRESHOLD})${NC}"
         WARNINGS=$((WARNINGS + 1))
       else
         echo -e "${GREEN}✅ Content quality average ${AVG_SCORE}/100 meets threshold${NC}"

@@ -260,12 +260,10 @@ Cross-reference related data sources for richer analysis. Filter all results by 
 // 1. Get voting records grouped by party (search_voteringar with groupBy: parti)
 // 2. Cross-reference with motions filed by each party
 // 3. Identify where parties voted against their own motions
-Example 1: Committee Report Deep Dive
 ```
-// 1. Fetch committee reports
-// 2. Cross-reference with voting records for the same beteckning
-// 3. Enrich with related speeches from the same debate
-```
+
+### Detailed Code Examples
+
 **Example 1: Committee Report Deep Dive**
 ```javascript
 // 1. Get recent committee reports

@@ -64,8 +64,8 @@ export interface MultiDimensionalQualityAssessment {
   suggestions: string[];
   /** Whether the article passes the quality threshold */
   passesThreshold: boolean;
-  /** Iteration count used (always ≥ 2) */
-  iterationCount: number;
+  /** Number of assessment passes performed (always ≥ 2) */
+  assessmentPasses: number;
 }
 
 // ---------------------------------------------------------------------------
@@ -489,7 +489,7 @@ function buildIssues(
  *   Pass 1 — compute all six dimension scores from the HTML content
  *   Pass 2 — aggregate dimensions into a weighted overall score and build the issues list
  *
- * Always returns `iterationCount >= 2`.
+ * Always returns `assessmentPasses >= 2`.
  *
  * @param html            - Full HTML content of the article
  * @param lang            - ISO 639-1 language code (e.g. "en")
@@ -551,7 +551,7 @@ export function assessArticleQuality(
     issues,
     suggestions,
     passesThreshold: overallScore >= passThreshold,
-    iterationCount: 2, // Two assessment passes: Pass 1 computes dimension scores, Pass 2 aggregates and builds issues
+    assessmentPasses: 2, // Two assessment passes: Pass 1 computes dimension scores, Pass 2 aggregates and builds issues
   };
 }
 
@@ -562,11 +562,11 @@ export function printQualityReport(
   assessment: MultiDimensionalQualityAssessment,
   filename: string,
 ): void {
-  const { overallScore, passesThreshold, dimensions, issues, suggestions, iterationCount } = assessment;
+  const { overallScore, passesThreshold, dimensions, issues, suggestions, assessmentPasses } = assessment;
   const label = passesThreshold ? '✅' : '⚠️';
   console.log(`\n📊 Multi-Dimensional Quality Report: ${filename.replace(/\.html$/, '')}`);
   console.log(`   Overall Score:          ${overallScore}/100 — ${passesThreshold ? 'PASSED' : 'BELOW THRESHOLD'} ${label}`);
-  console.log(`   Iterations:             ${iterationCount}`);
+  console.log(`   Assessment Passes:      ${assessmentPasses}`);
   console.log(`   Factual Accuracy:       ${dimensions.factualAccuracy.score}/100     (weight 25%)`);
   console.log(`   Stakeholder Coverage:   ${dimensions.stakeholderCoverage.score}/100     (weight 20%)`);
   console.log(`   Analytical Depth:       ${dimensions.analyticalDepth.score}/100     (weight 20%)`);
@@ -618,7 +618,7 @@ export function injectQualityMetadata(
   assessment: MultiDimensionalQualityAssessment,
   injectJsonLd = false,
 ): string {
-  const { overallScore, dimensions, passesThreshold, iterationCount } = assessment;
+  const { overallScore, dimensions, passesThreshold, assessmentPasses } = assessment;
 
   // Always inject the CSP-safe <meta> tag
   const metaTag = `  <meta name="quality-score" content="${overallScore}">`;
@@ -633,7 +633,7 @@ export function injectQualityMetadata(
       ratingValue: overallScore,
       bestRating: 100,
       worstRating: 0,
-      ratingExplanation: `Multi-dimensional quality assessment (${iterationCount} passes)`,
+      ratingExplanation: `Multi-dimensional quality assessment (${assessmentPasses} passes)`,
       additionalProperty: [
         { '@type': 'PropertyValue', name: 'passesThreshold', value: passesThreshold },
         { '@type': 'PropertyValue', name: 'factualAccuracy', value: dimensions.factualAccuracy.score },

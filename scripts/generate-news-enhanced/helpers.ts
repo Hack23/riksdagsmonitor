@@ -78,7 +78,7 @@ const perArticleScores: Record<string, {
   multidimensional: {
     overallScore: number;
     passesThreshold: boolean;
-    iterationCount: number;
+    assessmentPasses: number;
     dimensions: Record<string, number>;
     issueCount: number;
   };
@@ -87,22 +87,29 @@ const perArticleScores: Record<string, {
 
 /**
  * Persist all collected per-article quality scores to
- * `news/metadata/quality-scores.json`.  Called after each successful
- * article write in `writeSingleArticle()`.
+ * `news/metadata/quality-scores.json`.
+ *
+ * Uses atomic write (write to temp file, then rename) to avoid leaving
+ * truncated/invalid JSON on disk if the process is interrupted mid-write.
  *
  * **Per-run overwrite**: Only the current run's scores are written.  Previous
  * runs' data is replaced so that stale/test entries never accumulate and
  * Check 13's average score reflects the current generation only.
+ *
+ * Call once at the end of the overall generation run (not per-article) to
+ * avoid write amplification when many articles are generated.
  */
-function flushQualityScores(): void {
+export function flushQualityScores(): void {
   if (dryRunArg) return;
   try {
     if (!fs.existsSync(METADATA_DIR)) {
       fs.mkdirSync(METADATA_DIR, { recursive: true });
     }
     const outPath = path.join(METADATA_DIR, 'quality-scores.json');
-    // Overwrite with current run's scores only — no merging with stale data
-    fs.writeFileSync(outPath, JSON.stringify(perArticleScores, null, 2), 'utf-8');
+    const tmpPath = outPath + '.tmp';
+    // Atomic write: write to temp file, then rename to avoid corrupt JSON on crash
+    fs.writeFileSync(tmpPath, JSON.stringify(perArticleScores, null, 2), 'utf-8');
+    fs.renameSync(tmpPath, outPath);
   } catch (err: unknown) {
     console.warn(`  ⚠️  Could not persist quality scores: ${(err as Error).message}`);
   }
@@ -207,7 +214,7 @@ export function validateArticleQuality(
     }
   }
 
-  // Accumulate per-article score (flushed after successful write in writeSingleArticle)
+  // Accumulate per-article score (flushed at end of run via exported flushQualityScores())
   perArticleScores[filename] = {
     filename,
     lang,
@@ -217,7 +224,7 @@ export function validateArticleQuality(
     multidimensional: {
       overallScore: multidimensional.overallScore,
       passesThreshold: multidimensional.passesThreshold,
-      iterationCount: multidimensional.iterationCount,
+      assessmentPasses: multidimensional.assessmentPasses,
       dimensions: {
         factualAccuracy:      multidimensional.dimensions.factualAccuracy.score,
         stakeholderCoverage:  multidimensional.dimensions.stakeholderCoverage.score,
@@ -272,12 +279,13 @@ export async function writeSingleArticle(html: string, slug: string, lang: Langu
     : translatedHtml;
 
   await writeArticle(finalHtml, filename);
-  // Persist quality scores after successful write so the file stays in sync
-  flushQualityScores();
   stats.generated += 1;
   stats.articles.push(filename);
   return filename;
 }
+
+// Flush quality scores once when the process exits (avoids per-article write amplification)
+process.on('exit', () => flushQualityScores());
 
 /**
  * Write EN/SV article pair (legacy function for backward compatibility)

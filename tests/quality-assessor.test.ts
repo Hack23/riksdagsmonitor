@@ -8,7 +8,7 @@
  * - Issue detection and severity classification
  * - Suggestion generation
  * - passesThreshold flag
- * - iterationCount always >= 2
+ * - assessmentPasses always >= 2
  * - injectQualityMetadata — adds meta tag and JSON-LD to article HTML
  * - printQualityReport — console output (smoke test)
  */
@@ -111,13 +111,13 @@ describe('assessArticleQuality', () => {
       expect(result).toHaveProperty('issues');
       expect(result).toHaveProperty('suggestions');
       expect(result).toHaveProperty('passesThreshold');
-      expect(result).toHaveProperty('iterationCount');
+      expect(result).toHaveProperty('assessmentPasses');
     });
 
-    it('should always have iterationCount >= 2', () => {
+    it('should always have assessmentPasses >= 2', () => {
       const html = buildArticleHtml({});
       const result = assessArticleQuality(html, 'en');
-      expect(result.iterationCount).toBeGreaterThanOrEqual(2);
+      expect(result.assessmentPasses).toBeGreaterThanOrEqual(2);
     });
 
     it('should have all 6 dimensions', () => {

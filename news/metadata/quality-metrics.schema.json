@@ -120,10 +120,10 @@
                   "maximum": 100,
                   "description": "Weighted overall score from multi-dimensional assessment"
                 },
-                "iterationCount": {
+                "assessmentPasses": {
                   "type": "integer",
                   "minimum": 2,
-                  "description": "Number of quality assessment iterations performed (always ≥ 2)"
+                  "description": "Number of quality assessment passes performed (always ≥ 2)"
                 }
               },
               "required": ["qualityScore", "analyticalDepth", "wordCount"]
