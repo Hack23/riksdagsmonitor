@@ -119,7 +119,8 @@ describe('buildAIMindmapAnalysis', () => {
     expect(powerBranch).toBeDefined();
     // Power branch aiItems should include government and opposition document counts
     const itemTexts = powerBranch!.aiItems?.map(i => i.text) ?? [];
-    expect(itemTexts.some(t => /Government|Government/.test(t))).toBe(true);
+    expect(itemTexts.some(t => /Government/.test(t))).toBe(true);
+    expect(itemTexts.some(t => /Opposition/.test(t))).toBe(true);
   });
 
   it('scope branch reflects EU document presence', () => {

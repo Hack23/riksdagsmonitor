@@ -339,8 +339,8 @@ describe('generateMindmapSection', () => {
 
   it('uses ARIA list role for branches container', () => {
     const section = generateMindmapSection({ topic: 'T', branches: makeBranches(), lang: 'en' });
-    expect(section.html).toContain('role="list"');
-    expect(section.html).toContain('role="listitem"');
+    expect(section.html).toContain('class="mindmap-branches" role="list"');
+    expect(section.html).toContain('class="mindmap-branch" role="listitem"');
   });
 
   it('escapes XSS in centralThesis', () => {
