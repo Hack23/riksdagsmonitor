@@ -1201,8 +1201,10 @@ export class AIAnalysisPipeline {
       ? docAnalyses.reduce((sum, a) => sum + a.qualityScore, 0) / docAnalyses.length
       : 0;
     const trendConfidence = avgQuality >= 60 ? 'HIGH' : avgQuality >= 35 ? 'MEDIUM' : 'LOW';
-    const emergingTrends = classified.allDomains.slice(0, 3).join(', ')
-      + (trendConfidence ? ` [${trendConfidence}]` : '');
+    const domainList = classified.allDomains.slice(0, 3).join(', ');
+    const emergingTrends = domainList
+      ? `${domainList} [${trendConfidence}]`
+      : '';
 
     // Stakeholder power dynamics
     const govDocs = classified.propDocs.length + classified.sfsDocs.length + classified.pressmDocs.length;

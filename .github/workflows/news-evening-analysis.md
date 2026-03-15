@@ -186,6 +186,7 @@ Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc quer
 
 **Date calculation pattern:**
 ```javascript
+const lookbackHours = 24; // adjust as needed (e.g. 8 for evening analysis, 168 for weekly)
 const now = new Date();
 const fromDate = new Date(now.getTime() - lookbackHours * 3600000); // 3600000 ms = 1 hour
 const weekAgo = new Date(now.getTime() - 7 * 86400000); // 86400000 ms = 1 day
