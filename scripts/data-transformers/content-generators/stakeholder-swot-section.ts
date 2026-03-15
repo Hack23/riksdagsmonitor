@@ -14,6 +14,7 @@
 import { escapeHtml } from '../../html-utils.js';
 import type { Language } from '../../types/language.js';
 import type { TemplateSection, SwotData, SwotEntry, SwotImpact } from '../../types/article.js';
+import type { TrendDirection } from './ai-swot-analyzer.js';
 import { L } from '../helpers.js';
 
 // ---------------------------------------------------------------------------
@@ -102,23 +103,20 @@ interface EnhancedSwotEntry extends SwotEntry {
 // Trend indicator helper
 // ---------------------------------------------------------------------------
 
-/** Supported trend direction values — kept in sync with TrendDirection from ai-swot-analyzer */
-type TrendDir = 'improving' | 'stable' | 'deteriorating';
-
-const TREND_SYMBOLS: Readonly<Record<TrendDir, string>> = {
+const TREND_SYMBOLS: Readonly<Record<TrendDirection, string>> = {
   improving:    '↑',
   stable:       '→',
   deteriorating: '↓',
 };
 
-const TREND_CLASSES: Readonly<Record<TrendDir, string>> = {
+const TREND_CLASSES: Readonly<Record<TrendDirection, string>> = {
   improving:    'swot-trend--improving',
   stable:       'swot-trend--stable',
   deteriorating: 'swot-trend--deteriorating',
 };
 
 /** Localised i18n keys for trend direction (used in aria-label) */
-const TREND_LABEL_KEYS: Readonly<Record<TrendDir, string>> = {
+const TREND_LABEL_KEYS: Readonly<Record<TrendDirection, string>> = {
   improving:     'swotTrendImproving',
   stable:        'swotTrendStable',
   deteriorating: 'swotTrendDeteriorating',
