@@ -27,6 +27,7 @@ export { generateWeekAheadContent } from './week-ahead.js';
 export { generateCommitteeContent } from './committee.js';
 export { generatePropositionsContent } from './propositions.js';
 export { generateMotionsContent } from './motions.js';
+export { generateInterpellationsContent } from './interpellations.js';
 export { generateGenericContent } from './generic.js';
 export { generateMonthlyReviewContent } from './monthly-review.js';
 export { generateMonthAheadContent } from './month-ahead.js';
