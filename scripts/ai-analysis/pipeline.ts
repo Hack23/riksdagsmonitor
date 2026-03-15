@@ -945,7 +945,9 @@ function buildPolicyAssessment(
 
   const metadataEnrichedCount = docs.filter(isMetadataEnriched).length;
   const fullTextCount = docs.filter(hasFullTextContent).length;
-  const confidence = assessConfidenceLevel(docs.length, metadataEnrichedCount > 0 ? (fullTextCount > 0 ? 80 : 60) : 40);
+  // Confidence baseline: 40 (raw metadata), 60 (metadata-enriched), 80 (full-text available)
+  const baseConfidence = fullTextCount > 0 ? 80 : metadataEnrichedCount > 0 ? 60 : 40;
+  const confidence = assessConfidenceLevel(docs.length, baseConfidence);
 
   // Build a narrative from available evidence — topic + primary domain + document count
   const withEnrichedFn = NARRATIVE_WITH_ENRICHED[lang] ?? NARRATIVE_WITH_ENRICHED.en!;
@@ -1188,12 +1190,10 @@ function calculateConfidenceScore(docs: RawDocument[]): number {
   const metadataEnriched = docs.filter(isMetadataEnriched).length;
   const fullText = docs.filter(hasFullTextContent).length;
   const typeVariety = new Set(docs.map(normalizedDocType)).size;
-  // Score: 0-100
-  // - enrichment contributes 50%:
-  //     metadata-enriched docs (contentFetched) contribute up to 30%
-  //     full-text docs (fullText/fullContent) contribute the remaining 20%
-  // - doc count (up to 10) contributes 30%
-  // - type variety (up to 5) contributes 20%
+  // Score: 0-100, split across three dimensions:
+  // - Enrichment (total 50%): metadata-enriched (30%) + full-text (20%)
+  // - Document count (up to 10): 30%
+  // - Type variety (up to 5): 20%
   const metadataRatio = metadataEnriched / docs.length;
   const fullTextRatio = fullText / docs.length;
   const enrichmentScore = metadataRatio * 30 + fullTextRatio * 20;
