@@ -271,47 +271,6 @@ const speeches = search_anforanden({ rm: currentRm, limit: 100 })
   .filter(a => new Date(a.datum) >= new Date(fromDate));
 ```
 
-**Example 1: Committee Report Deep Dive**
-```javascript
-// 1. Fetch committee reports
-const reports = get_betankanden({ rm: "<rm>", limit: 50 });
-// 2. Cross-reference with voting records
-const votes = search_voteringar({ rm: "<rm>", bet: reports[0].beteckning });
-// 3. Filter results by date
-const fresh = reports.filter(r => new Date(r.publicerad) >= new Date(fromDate));
-```
-
-**Example 2: Government Activity Analysis**
-```javascript
-// 1. Fetch government propositions
-const props = get_propositioner({ rm: "<rm>", limit: 20 });
-// 2. Filter propositions by date
-const filtered = props.filter(p => new Date(p.publicerad) >= new Date(fromDate));
-// 3. Cross-reference with committee handling
-const handling = filtered.map(p => search_dokument({ relaterat_id: p.dok_id, doktyp: "bet" }));
-```
-
-**Example 3: Party Behavior Analysis**
-```javascript
-const partyCode = "S"; // example party code
-// 1. Fetch motions by party
-const motions = get_motioner({ rm: currentRm, limit: 100 });
-// 2. Cross-reference with speeches
-const speeches = search_anforanden({ rm: currentRm, parti: partyCode });
-// 3. Filter motions by date (inlämnad = submission date for motions)
-const recentMotions = motions.filter(m => new Date(m.inlämnad) >= new Date(fromDate));
-```
-
-### Date Calculation Helpers
-
-```javascript
-const now = new Date();
-const oneDayMs = 86400000;    // 24 * 60 * 60 * 1000
-const oneHourMs = 3600000;    // 60 * 60 * 1000
-const fromDate = new Date(now.getTime() - lookbackHours * oneHourMs).toISOString().slice(0, 10);
-const fiveDaysAgo = new Date(now.getTime() - 5 * oneDayMs).toISOString().slice(0, 10);
-```
-
 ### Saturday vs Weekday Mode
 
 - **Saturday** (day_of_week=6): Produce a **Weekly Parliamentary Review** looking back 5 days (Monday–Friday). Use `coverage_depth: comprehensive`. Title: "The Week in Swedish Politics: {key theme}". Article slug: `weekly-review`.

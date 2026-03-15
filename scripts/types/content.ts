@@ -79,6 +79,12 @@ export interface ContentLabelSet {
   motionsOverview: (n: number) => string;
   motionSignificance: string;
   readFullMotion: string;
+  /** Default summary for an interpellation document entry */
+  interpellationDefault: string;
+  /** "Read the full interpellation" link text */
+  readFullInterpellation: string;
+  /** Party interpellations filed breakdown (e.g. "SD: 3 interpellations filed") */
+  partyInterpellationsFiled: (party: string, n: number) => string;
   policyContext: string;
   filedBy: string;
   /** Label for document publication date (e.g. "Published", "Publicerad") */
@@ -96,24 +102,22 @@ export interface ContentLabelSet {
   committeeBreakdown: (n: number, c: number) => string;
   propsBreakdown: (n: number) => string;
   motionsBreakdown: (n: number) => string;
-  // Interpellations-specific labels
   /** Empty-state message for interpellations articles */
   noInterpellations: string;
-  interpellationDefault: string;
   /** Analytical lede for interpellations articles */
   interpellationsBreakdown: (n: number) => string;
+  /** Section heading for debate dynamics */
   debateDynamics: string;
   /** Label for the target minister (recipient), e.g. "Directed to" */
   ministerAccountability: string;
+  /** Section heading for accountability analysis */
   accountabilityAnalysis: string;
-  readFullInterpellation: string;
+  /** Author attribution for interpellations (e.g. "Interpellation by") */
   interpellationBy: string;
   /** Debate dynamics context — interpellations-specific (replaces oppositionStrategyContext for interpellations) */
   interpellationsScrutinyContext: (n: number) => string;
   /** Accountability analysis context — interpellations-specific (replaces policyImplicationsContext for interpellations) */
   interpellationsAccountabilityContext: (count: number, domains: number) => string;
-  /** Party interpellations filed — interpellations-specific (replaces partyMotionsFiled for interpellations) */
-  partyInterpellationsFiled: (party: string, n: number) => string;
   // Localized body text labels (avoid hardcoded en/sv fallbacks)
   committeeCountContext: (n: number) => string;
   committeeActivityTakeaway: (committees: string, extra: number) => string;
