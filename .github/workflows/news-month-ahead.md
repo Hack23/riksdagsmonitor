@@ -119,6 +119,9 @@ This is a **prospective** article providing a 30-day forward-looking strategic o
 3. **`.github/skills/prospective-news-coverage/SKILL.md`** — Forward-looking coverage
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
+6. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
+7. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
+8. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
 
 ## MANDATORY Date Validation
 
