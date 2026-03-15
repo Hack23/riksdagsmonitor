@@ -94,7 +94,7 @@ interface EnhancedSwotEntry extends SwotEntry {
   /** Human-readable explanation for why this item was included */
   justification?: string;
   /** Direction this factor is heading */
-  trendDirection?: 'improving' | 'stable' | 'deteriorating';
+  trendDirection?: TrendDirection;
   /** Supporting quantitative evidence (e.g. "73% majority", "SEK 2.1 bn") */
   quantitativeEvidence?: string;
 }
