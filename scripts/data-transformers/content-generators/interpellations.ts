@@ -45,7 +45,7 @@ function extractMinisterTarget(doc: RawDocument): string {
   // Only match when a minister-related term is present to avoid false positives (e.g. "till Gaza").
   const titleText = doc.titel || doc.title || '';
   const ministerMatch = titleText.match(
-    /(?:till|to)\s+(.{3,60}?\s*(?:statsråd(?:et)?|statsminister[ns]?|(?:\w+)?minister[ns]?))/i
+    /(?:till|to)\s+(.{3,60}?\s*(?:statsråd(?:et[s]?)?|statsminister(?:n(?:s)?|s)?|(?:\w+)?minister(?:n(?:s)?|s)?))/i
   );
   if (ministerMatch?.[1]) {
     return ministerMatch[1].trim();
@@ -82,9 +82,11 @@ function renderInterpellationEntry(doc: RawDocument, lang: Language | string): s
   const readFullLabel = L(lang, 'readFullInterpellation');
   const defaultText = L(lang, 'interpellationDefault');
 
-  // Policy analysis — explains what accountability issue is being raised
-  // 'ip' = interpellation document type code (riksdag.se document type abbreviation)
-  const policyAnalysis = generateDeepPolicyAnalysis(doc, lang, 'ip');
+  // Policy analysis — explains what accountability issue is being raised.
+  // No explicit doktyp override is passed; policy-analysis.ts only distinguishes
+  // 'mot'/'bet' with type-specific text — all other types (including interpellations)
+  // fall through to the 'default' analysis, which is the correct behavior here.
+  const policyAnalysis = generateDeepPolicyAnalysis(doc, lang);
 
   let html = `\n    <div class="interpellation-entry">\n`;
   html += `      <h3>${titleHtml}</h3>\n`;

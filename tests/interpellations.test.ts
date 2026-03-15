@@ -264,6 +264,38 @@ describe('Interpellations Content Generator', () => {
       const result = generateArticleContent(data, 'interpellations', 'en') as string;
       expect(result).toContain('finansministern');
     });
+
+    it('should capture possessive "ministerns" suffix (not drop trailing s)', () => {
+      const data = {
+        motions: [
+          {
+            titel: 'Interpellation till finansministerns ansvar',
+            parti: 'S',
+            url: '#',
+            dokumentnamn: 'IP4',
+          },
+        ] as MockInterpellation[],
+      };
+
+      const result = generateArticleContent(data, 'interpellations', 'en') as string;
+      expect(result).toContain('finansministerns');
+    });
+
+    it('should capture "statsrådets" inflection', () => {
+      const data = {
+        motions: [
+          {
+            titel: 'Interpellation till statsrådets politik',
+            parti: 'V',
+            url: '#',
+            dokumentnamn: 'IP5',
+          },
+        ] as MockInterpellation[],
+      };
+
+      const result = generateArticleContent(data, 'interpellations', 'en') as string;
+      expect(result).toContain('statsrådets');
+    });
   });
 
   describe('Party rendering', () => {
