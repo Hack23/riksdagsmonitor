@@ -408,6 +408,12 @@ echo "📋 Check 13: Content quality scores (multi-dimensional assessment)"
 
 QUALITY_SCORES_FILE="news/metadata/quality-scores.json"
 MULTIDIM_THRESHOLD=${MULTIDIM_THRESHOLD:-60}  # mirrors MULTIDIM_QUALITY_THRESHOLD in config.ts; override via env
+# Validate threshold is a positive integer to avoid injection into downstream commands
+if ! [[ "$MULTIDIM_THRESHOLD" =~ ^[0-9]+$ ]]; then
+  echo -e "${RED}❌ MULTIDIM_THRESHOLD must be a positive integer, got: '${MULTIDIM_THRESHOLD}'${NC}"
+  ERRORS=$((ERRORS + 1))
+  MULTIDIM_THRESHOLD=60
+fi
 
 if [ ! -f "$QUALITY_SCORES_FILE" ]; then
   echo -e "${YELLOW}⚠️ quality-scores.json not found — no articles generated yet or file not persisted${NC}"
@@ -415,9 +421,10 @@ if [ ! -f "$QUALITY_SCORES_FILE" ]; then
 else
   # Parse quality scores using node/jq if available
   if command -v node &>/dev/null; then
-    QUALITY_SUMMARY=$(node -e "
+    QUALITY_SUMMARY=$(MULTIDIM_THRESHOLD="$MULTIDIM_THRESHOLD" node -e "
       const fs = require('fs');
       try {
+        const threshold = parseInt(process.env.MULTIDIM_THRESHOLD, 10) || 60;
         const scores = JSON.parse(fs.readFileSync('$QUALITY_SCORES_FILE', 'utf-8'));
         const entries = Object.values(scores);
         if (entries.length === 0) { console.log('NO_ARTICLES'); process.exit(0); }
@@ -426,7 +433,7 @@ else
           .map(e => e.multidimensional.overallScore);
         if (overallScores.length === 0) { console.log('NO_MULTIDIM'); process.exit(0); }
         const avg = Math.round(overallScores.reduce((a, b) => a + b, 0) / overallScores.length);
-        const passed = overallScores.filter(s => s >= ${MULTIDIM_THRESHOLD}).length;
+        const passed = overallScores.filter(s => s >= threshold).length;
         const critical = entries.filter(e => e.multidimensional && !e.multidimensional.passesThreshold).length;
         console.log(avg + '|' + passed + '|' + overallScores.length + '|' + critical);
       } catch(e) { console.log('ERROR:' + e.message); }

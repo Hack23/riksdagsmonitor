@@ -85,15 +85,19 @@ const DIMENSION_WEIGHTS = {
 /**
  * Riksdag/Regering document ID patterns.
  * Committee codes may contain non-ASCII Swedish letters (e.g. FöU, CU),
- * so character classes include ÅÄÖ alongside A-Z.
+ * so we use Unicode-aware boundaries via the `u` flag and explicit non-word
+ * guards `(?:^|[^\p{L}\p{N}_])` / `(?:$|[^\p{L}\p{N}_])` because the
+ * standard `\b` anchor is ASCII-only and mishandles ÅÄÖ.
  */
+const UB = '(?:^|[^\\p{L}\\p{N}_])';  // Unicode-aware start boundary
+const UE = '(?:$|[^\\p{L}\\p{N}_])';  // Unicode-aware end boundary
 const DOCUMENT_ID_PATTERNS: readonly RegExp[] = [
-  /\b[A-ZÅÄÖ]{1,4}\d{1,4}\/\d{2}:\d+\b/gi,
-  /\bProp\.\s*\d{4}\/\d{2}:\d+\b/gi,
-  /\bBet\.\s*\d{4}\/\d{2}:[A-ZÅÄÖ]{1,4}\d+\b/gi,
-  /\bMot\.\s*\d{4}\/\d{2}:\d+\b/gi,
-  /\bIP\s*\d{4}\/\d{2}:\d+\b/gi,
-  /\bFr\.\s*\d{4}\/\d{2}:\d+\b/gi,
+  new RegExp(`${UB}([\\p{L}]{1,4}\\d{1,4}/\\d{2}:\\d+)${UE}`, 'giu'),
+  new RegExp(`${UB}(Prop\\.\\s*\\d{4}/\\d{2}:\\d+)${UE}`, 'giu'),
+  new RegExp(`${UB}(Bet\\.\\s*\\d{4}/\\d{2}:[\\p{L}]{1,4}\\d+)${UE}`, 'giu'),
+  new RegExp(`${UB}(Mot\\.\\s*\\d{4}/\\d{2}:\\d+)${UE}`, 'giu'),
+  new RegExp(`${UB}(IP\\s*\\d{4}/\\d{2}:\\d+)${UE}`, 'giu'),
+  new RegExp(`${UB}(Fr\\.\\s*\\d{4}/\\d{2}:\\d+)${UE}`, 'giu'),
 ];
 
 /** Words / phrases indicating causal or analytical reasoning */
@@ -142,7 +146,9 @@ function countDocumentIds(html: string): Set<string> {
   for (const pattern of DOCUMENT_ID_PATTERNS) {
     const re = new RegExp(pattern.source, pattern.flags.replace('g', '') + 'g');
     for (const m of html.matchAll(re)) {
-      ids.add(normalizeDocId(m[0]));
+      // Group 1 contains the actual document ID (the Unicode boundary guards
+      // in the full match are non-capturing context).
+      ids.add(normalizeDocId(m[1] ?? m[0]));
     }
   }
   return ids;
@@ -652,9 +658,11 @@ export function injectQualityMetadata(
     injection = `${metaTag}\n${jsonLdTag}`;
   }
 
-  // Insert before </head>
-  if (html.includes('</head>')) {
-    return html.replace('</head>', `${injection}\n</head>`);
+  // Insert before </head> (case-insensitive to handle <\/HEAD> etc.)
+  const headCloseRe = /<\/head\s*>/i;
+  const headMatch = headCloseRe.exec(html);
+  if (headMatch) {
+    return html.replace(headMatch[0], `${injection}\n${headMatch[0]}`);
   }
 
   return html;

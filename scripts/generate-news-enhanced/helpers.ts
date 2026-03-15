@@ -108,13 +108,18 @@ export function flushQualityScores(): void {
     }
     const outPath = path.join(METADATA_DIR, 'quality-scores.json');
     const tmpPath = outPath + '.tmp';
-    // Atomic write: write to temp file, then rename to avoid corrupt JSON on crash.
-    // On Windows fs.renameSync may fail if the destination exists, so remove first.
+    // Best-effort atomic write: write to temp file, then rename.
+    // Try rename first (atomic on POSIX). On Windows the rename may fail when
+    // the destination exists, so fall back to unlink-then-rename.
     fs.writeFileSync(tmpPath, JSON.stringify(perArticleScores, null, 2), 'utf-8');
-    try { fs.unlinkSync(outPath); } catch (e: unknown) {
-      if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e;
+    try {
+      fs.renameSync(tmpPath, outPath);
+    } catch (_renameErr: unknown) {
+      try { fs.unlinkSync(outPath); } catch (e: unknown) {
+        if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e;
+      }
+      fs.renameSync(tmpPath, outPath);
     }
-    fs.renameSync(tmpPath, outPath);
   } catch (err: unknown) {
     console.warn(`  ⚠️  Could not persist quality scores: ${(err as Error).message}`);
   }
