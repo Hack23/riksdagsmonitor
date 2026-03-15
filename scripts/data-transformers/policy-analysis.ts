@@ -286,7 +286,8 @@ export function detectNarrativeFrames(doc: RawDocument): NarrativeFrame[] {
   return Array.from(frames);
 }
 
-type _LangPair = { en: Record<string, string>; sv: Record<string, string> };
+/** Per-language analysis text. `en` and `sv` are always required; other languages are optional and fall back to `en`. */
+type _LangPair = { en: Record<string, string>; sv: Record<string, string> } & Partial<Record<Language, Record<string, string>>>;
 
 /**
  * Build a reverse lookup from any localised domain name back to the English key.
@@ -318,7 +319,10 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
         bet: 'Finansutskottets ståndpunkt i finanspolitiska frågor är i regel avgörande – kammaren följer nästan alltid utskottets rekommendation.',
         ip: 'Interpellationen kräver ministerns redovisning av finanspolitiken och tvingar ansvarigt statsråd att försvara skatte- och utgiftsbeslut i öppen kammardebatt.',
         default: 'Regeringens finanspolitiska förslag måste klara finansutskottets granskning och harmonisera med överskottsmålet för att nå bifall.'
-      }
+      },
+      de: { default: `Haushaltspolitische Vorschläge müssen die strenge Prüfung des Finanzausschusses bestehen und die schwedische Überschussregel einhalten.` },
+      fr: { default: `Les propositions fiscales doivent passer l'examen rigoureux de la commission des finances et s'aligner sur la règle d'excédent budgétaire suédoise.` },
+      es: { default: `Las propuestas fiscales deben superar el riguroso escrutinio del comité de finanzas y alinearse con la regla de superávit fiscal sueca.` }
     },
     'defence and security policy': {
       en: {
@@ -332,7 +336,10 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
         bet: 'Utskottsbetänkanden om försvar formar Sveriges militära inriktning och NATO-integration – besluten har konsekvenser i decennier.',
         ip: 'Interpellationen granskar ministerns försvars- och säkerhetsbeslut och kräver offentlig redovisning av Sveriges NATO-åtaganden och militära beredskap.',
         default: 'Försvarspropositioner engagerar Sveriges NATO-förpliktelser och mekanismer för brett partistöd inom säkerhetspolitiken.'
-      }
+      },
+      de: { default: `Verteidigungsvorschläge berühren Schwedens NATO-Verpflichtungen und Mechanismen zur parteiübergreifenden Konsensfindung in der nationalen Sicherheitspolitik.` },
+      fr: { default: `Les propositions de défense engagent les obligations de la Suède envers l'OTAN et les mécanismes de consensus multipartite pour la législation de sécurité nationale.` },
+      es: { default: `Las propuestas de defensa comprometen las obligaciones de Suecia con la OTAN y los mecanismos de consenso multipartidario para la legislación de seguridad nacional.` }
     },
     'environmental and climate policy': {
       en: {
@@ -346,7 +353,10 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
         bet: 'Miljöutskottet väger klimatambition mot ekonomisk konkurrenskraft – dess rekommendation sätter lagstiftningens utgångspunkt.',
         ip: 'Interpellationen ställer ministern till svars för miljö- och klimatåtaganden och kräver insyn i utsläppsmål och genomförandetider.',
         default: 'Miljöförslag måste navigera konkurrerande intressen från industrin, regionerna och EU:s klimatåtaganden.'
-      }
+      },
+      de: { default: `Umweltvorschläge müssen konkurrierende Interessen aus Industrie, regionalen Regierungen und EU-Klimaverpflichtungen ausbalancieren.` },
+      fr: { default: `Les propositions environnementales doivent naviguer entre les intérêts concurrents de l'industrie, des gouvernements régionaux et des engagements climatiques de l'UE.` },
+      es: { default: `Las propuestas medioambientales deben navegar entre los intereses en competencia de la industria, los gobiernos regionales y los compromisos climáticos de la UE.` }
     },
     'healthcare policy': {
       en: {
@@ -360,7 +370,10 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
         bet: 'Socialutskottets betänkanden om hälso- och sjukvård sätter ramarna för det regionalt levererade men nationellt finansierade hälsosystemet.',
         ip: 'Interpellationen utmanar ministern om sjukvårdens leverans och patientresultat och kräver svar om tjänstebrister, väntetider eller regionala skillnader.',
         default: 'Hälso- och sjukvårdspropositioner kräver samordning mellan stat, regioner och professioner – en komplexitet som formar lagstiftningens tidslinje.'
-      }
+      },
+      de: { default: `Gesundheitsvorschläge erfordern Koordination zwischen nationaler Regierung, Regionalräten und Fachverbänden — eine Komplexität, die den Gesetzgebungszeitplan prägt.` },
+      fr: { default: `Les propositions en matière de santé nécessitent une coordination entre le gouvernement national, les conseils régionaux et les organismes professionnels.` },
+      es: { default: `Las propuestas sanitarias requieren coordinación entre el gobierno nacional, los consejos regionales y los organismos profesionales — una complejidad que determina el calendario legislativo.` }
     },
     'migration policy': {
       en: {
@@ -374,7 +387,10 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
         bet: 'Socialförsäkringsutskottets migrationsbetänkanden navigerar Sveriges åtaganden enligt EU-rätten och FN:s flyktingkonvention.',
         ip: 'Interpellationen kräver ministerns offentliga försvar av migrationsbeslut och pressar på ansvarsskyldighet för asylprocesser, integrationsresultat eller utvisningspolitik.',
         default: 'Migrationspropositioner måste balansera EU-rättsliga förpliktelser med nationella politiska imperativ.'
-      }
+      },
+      de: { default: `Migrationsvorschläge müssen EU-Regulierungsverpflichtungen mit nationalen politischen Erfordernissen in Einklang bringen — parteiübergreifende Unterstützung ist für dauerhafte Gesetzgebung unerlässlich.` },
+      fr: { default: `Les propositions migratoires doivent équilibrer les obligations réglementaires de l'UE et les impératifs politiques nationaux — le soutien multipartite est essentiel pour une législation durable.` },
+      es: { default: `Las propuestas migratorias deben equilibrar las obligaciones regulatorias de la UE con los imperativos políticos nacionales, siendo el apoyo multipartidario esencial para una legislación duradera.` }
     },
     'EU and foreign affairs': {
       en: {
@@ -388,7 +404,10 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
         bet: 'Utrikesutskottets betänkanden om EU-frågor speglar Sveriges positionering inom unionen och kan binda framtida förhandlingslinjer.',
         ip: 'Interpellationen tvingar ministern att redovisa Sveriges utrikespolitiska eller EU-relaterade förhandlingsposition i öppen debatt och stärker riksdagens insyn i regeringens diplomati.',
         default: 'EU- och utrikespropositioner engagerar Sveriges fördragsförpliktelser och kräver samordning med europeiska partner.'
-      }
+      },
+      de: { default: `EU- und Außenpolitikvorschläge berühren Schwedens Vertragserpflichtungen und erfordern oft eine Koordination mit europäischen Partnern.` },
+      fr: { default: `Les propositions en matière d'UE et d'affaires étrangères engagent les obligations conventionnelles de la Suède et nécessitent souvent une coordination avec les partenaires européens.` },
+      es: { default: `Las propuestas de la UE y de asuntos exteriores comprometen las obligaciones convencionales de Suecia y a menudo requieren coordinación con los socios europeos.` }
     },
     'justice policy': {
       en: {
@@ -402,7 +421,10 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
         bet: 'Justitieutskottet formar den straffrättsliga ramen; dess betänkanden om straffsatser och polisverksamhet påverkar direkt åklagarnas praxis.',
         ip: 'Interpellationen tvingar ministern att försvara rättspolitiska beslut i kammaren och bemöta allmänhetens oro om brottslighet, straffsatser eller polisens effektivitet.',
         default: 'Rättsliga propositioner balanserar rättsstatsprinciper, mänskliga rättigheter och allmän säkerhet.'
-      }
+      },
+      de: { default: `Justizvorschläge balancieren Rechtsstaatsprinzipien, Menschenrechtsverpflichtungen und öffentliche Sicherheitsforderungen — sorgfältige Ausarbeitung ist erforderlich, um der verfassungsrechtlichen Prüfung standzuhalten.` },
+      fr: { default: `Les propositions de justice équilibrent les principes de l'État de droit, les obligations en matière de droits de l'homme et les exigences de sécurité publique.` },
+      es: { default: `Las propuestas de justicia equilibran los principios del Estado de derecho, las obligaciones de derechos humanos y las demandas de seguridad pública — requiriendo una redacción cuidadosa para resistir el escrutinio constitucional.` }
     },
     'labour market policy': {
       en: {
@@ -416,7 +438,10 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
         bet: 'Arbetsmarknadsutskottets betänkanden om arbetsplatslagar måste navigera kollektivavtalens självständighet.',
         ip: 'Interpellationen ställer ministern till svars för anställningsvillkor, lönepolitik eller arbetsmarknadsreglering och kräver svar inför arbetsmarknadens parter och allmänheten.',
         default: 'Arbetsmarknadspropositioner träder in i en arena där trepartsförhandlingar formar det slutliga lagstiftningsresultatet.'
-      }
+      },
+      de: { default: `Arbeitsmarktvorschläge betreten eine Arena, in der Tarifverhandlungen das Gesetzgebungsergebnis ebenso stark prägen wie Parlamentsabstimmungen.` },
+      fr: { default: `Les propositions sur le marché du travail entrent dans une arène où la négociation tripartite détermine le résultat législatif autant que les votes parlementaires.` },
+      es: { default: `Las propuestas del mercado laboral entran en una arena donde la negociación tripartita determina el resultado legislativo tanto como los votos parlamentarios.` }
     },
     'housing policy': {
       en: {
@@ -430,7 +455,10 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
         bet: 'Civilutskottets bostadsbetänkanden hanterar en av Sveriges mest ihållande politiska utmaningar.',
         ip: 'Interpellationen pressar ministern att svara för bostadsbrist, hyresreglering eller bygghinder – frågor med direkt påverkan på hushållens välfärd.',
         default: 'Bostadspropositioner måste balansera konkurrerande intressen från kommuner, fastighetsägare, hyresgäster och byggföretag.'
-      }
+      },
+      de: { default: `Wohnungsvorschläge müssen konkurrierende Interessen von Gemeinden, Eigentümern, Mietern und Bauträgern in Einklang bringen.` },
+      fr: { default: `Les propositions de logement doivent concilier les intérêts concurrents des municipalités, propriétaires, locataires et promoteurs.` },
+      es: { default: `Las propuestas de vivienda deben conciliar los intereses en competencia de municipios, propietarios, inquilinos y promotores.` }
     },
     'transport policy': {
       en: {
@@ -444,7 +472,10 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
         bet: 'Trafikutskottets betänkanden vägleder Sveriges nationella infrastrukturplanering och påverkar direkt långsiktiga investeringsprioriteringar.',
         ip: 'Interpellationen utmanar ministern om transportinfrastruktur, trafiksäkerhet eller kollektivtrafik och kräver insyn i investeringsprioriteringar och regional rättvisa.',
         default: 'Transportpropositioner engagerar den nationella infrastrukturbudgeten, regional jämlikhet och klimatomställningsmål.'
-      }
+      },
+      de: { default: `Verkehrsvorschläge betreffen den nationalen Infrastrukturhaushalt, regionale Gerechtigkeit und Klimaübergangsziele.` },
+      fr: { default: `Les propositions de transport concernent le budget national d'infrastructure, l'équité régionale et les objectifs de transition climatique.` },
+      es: { default: `Las propuestas de transporte implican el presupuesto nacional de infraestructura, la equidad regional y los objetivos de transición climática.` }
     },
     'trade and industry policy': {
       en: {
@@ -458,7 +489,10 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
         bet: 'Näringsutskottets betänkanden formar Sveriges affärsmiljö och sätter villkoren för investeringar och export.',
         ip: 'Interpellationen ställer ministern till svars för handels-, konkurrens- eller industripolitik och kräver motivering av de policyval som påverkar Sveriges ekonomiska ställning.',
         default: 'Näringspolitiska propositioner engagerar internationella åtaganden, EU:s inre marknadsregler och inhemsk konkurrenskraft.'
-      }
+      },
+      de: { default: `Industrie- und Handelsvorschläge berühren gleichzeitig internationale Verpflichtungen, EU-Binnenmarktregeln und inländische Wettbewerbserfordernisse.` },
+      fr: { default: `Les propositions industrielles et commerciales engagent simultanément des engagements internationaux, les règles du marché unique européen et les impératifs de compétitivité nationale.` },
+      es: { default: `Las propuestas industriales y comerciales comprometen simultáneamente compromisos internacionales, normas del mercado único europeo e imperativos de competitividad nacional.` }
     },
     'education policy': {
       en: {
@@ -472,7 +506,10 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
         bet: 'Utbildningsutskottets betänkanden formar direkt läroplaner, finansieringsmodeller och skolreglering.',
         ip: 'Interpellationen kräver att ministern förklarar utbildningspolitiska val i öppen debatt — vare sig det gäller skolstandard, lärarrekrytering eller friskolesystemet.',
         default: 'Utbildningspropositioner måste balansera nationella läroplaner med kommunalt leveransansvar och de privata aktörernas omstridda roll.'
-      }
+      },
+      de: { default: `Bildungsvorschläge berühren geteilte Zuständigkeiten zwischen Zentralregierung, Kommunen und unabhängigen Schulträgern.` },
+      fr: { default: `Les propositions en matière d\'éducation engagent des responsabilités partagées entre le gouvernement central, les municipalités et les opérateurs scolaires indépendants.` },
+      es: { default: `Las propuestas educativas comprometen responsabilidades compartidas entre el gobierno central, los municipios y los operadores escolares independientes.` }
     }
 };
 

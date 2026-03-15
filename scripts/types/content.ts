@@ -97,8 +97,10 @@ export interface ContentLabelSet {
   propsBreakdown: (n: number) => string;
   motionsBreakdown: (n: number) => string;
   // Interpellations-specific labels
+  /** Empty-state message for interpellations articles */
   noInterpellations: string;
   interpellationDefault: string;
+  /** Analytical lede for interpellations articles */
   interpellationsBreakdown: (n: number) => string;
   debateDynamics: string;
   /** Label for the target minister (recipient), e.g. "Directed to" */
@@ -117,6 +119,8 @@ export interface ContentLabelSet {
   committeeActivityTakeaway: (committees: string, extra: number) => string;
   committeeMomentumTakeaway: (n: number) => string;
   oppositionStrategyContext: (n: number) => string;
+  /** Interpellation-specific strategy context (parliamentary oversight framing, not motions) */
+  interpellationStrategyContext: (n: number) => string;
   policyImplicationsContext: (propCount: number, domainCount: number) => string;
   genericOverview: (n: number) => string;
   partyMotionsFiled: (party: string, n: number) => string;

@@ -137,15 +137,12 @@ function renderInterpellationEntry(doc: RawDocument, lang: Language | string): s
  * 4. **Deep Analysis** — 5W framework (who, what, when, why, impact)
  * 5. **Coalition Dynamics** — Cross-party accountability patterns
  *
- * @param data - Article content data (interpellations loaded in `data.motions`)
+ * @param data - Article content data (interpellations loaded in `data.interpellations`)
  * @param lang - Target language
  * @returns Generated HTML content string
  */
 export function generateInterpellationsContent(data: ArticleContentData, lang: Language | string): string {
-  // Interpellations are stored in data.motions by the data pipeline
-  // (for backward compatibility) but may also appear in data.documents.
-  const motionsArray = data.motions ?? [];
-  const interpellations: RawDocument[] = motionsArray.length > 0 ? motionsArray : (data.documents ?? []);
+  const interpellations: RawDocument[] = data.interpellations || [];
 
   let content = `<h2>${L(lang, 'interpellationsTag')}</h2>\n`;
 

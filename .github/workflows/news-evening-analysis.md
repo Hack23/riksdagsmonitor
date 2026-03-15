@@ -178,11 +178,24 @@ STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm
 
 ### DATA FRESHNESS CHECK
 
-After `get_sync_status()` succeeds, check if data is stale. If `hoursSinceSync > 48`, add a disclaimer note in analysis mentioning "stale data (> 48 hours old)" but proceed with cached data.
+After `get_sync_status()` succeeds, compute hours since last sync and check if data is stale:
+```js
+const hoursSinceSync = (Date.now() - new Date(syncResult.last_updated).getTime()) / 3600000;
+if (hoursSinceSync > 48) { /* add stale data disclaimer */ }
+```
+If `hoursSinceSync > 48`, add a disclaimer note in analysis mentioning "stale data (> 48 hours old)" but proceed with cached data.
 
 ### IMPORTANT: Date Filtering in Analysis
 
 Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc queries, use `scripts/mcp-query-cli.ts` — NEVER implement custom MCP client code (PROHIBITION).
+
+Calculate date range for queries:
+```js
+const today = new Date().toISOString().slice(0, 10);
+const fromDate = new Date(Date.now() - lookbackHours * 3600000).toISOString().slice(0, 10);
+// For weekly review (Saturday): 5-day lookback = 5 * 86400000 ms
+const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 10);
+```
 
 **Tools with native date params** (supports from/tom or dateFrom/dateTo):
 - `get_calendar_events` — supports `from`/`tom` parameters
@@ -196,11 +209,67 @@ Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc quer
 - `get_propositioner` — filter by `publicerad` date
 - `search_anforanden` — filter by `datum` field
 
-Filter results to only include items with dates `>= fromDate`.
+Filter results to only include items with dates `>= fromDate`:
+```js
+const filtered = results.filter(item => new Date(item.datum || item.publicerad) >= new Date(fromDate));
+```
+
+**Date calculation pattern:**
+```javascript
+const today = new Date().toISOString().split('T')[0];
+const dayOfWeek = new Date().getUTCDay(); // 0=Sunday, 6=Saturday
+const lookbackHours = dayOfWeek === 6 ? 120 : 12;
+const fromDate = dayOfWeek === 6
+  ? new Date(Date.now() - 5 * 86400000).toISOString().split('T')[0]  // Monday
+  : new Date(Date.now() - lookbackHours * 3600000).toISOString().split('T')[0];
+```
+
+**Post-query filtering example:**
+```javascript
+const results = get_betankanden({ rm: currentRm, limit: 50 });
+const recent = results.filter(b => new Date(b.publicerad) >= new Date(fromDate));
+```
 
 ### Cross-Referencing Strategy
 
-Cross-reference related data sources for richer analysis (e.g., committee reports with voting records, government propositions with parliamentary motions). Filter all results by date to `>= fromDate`.
+Cross-reference related data sources for richer analysis. Filter all results by date to `>= fromDate`.
+
+**Example 1: Committee Report Deep Dive**
+```javascript
+// 1. Get recent committee reports
+const betankanden = get_betankanden({ rm: currentRm, limit: 20 });
+const recentBet = betankanden.filter(b => new Date(b.publicerad) >= new Date(fromDate));
+
+// 2. For each report, get full details
+const reportDetails = recentBet.map(bet =>
+  get_dokument({ dok_id: bet.dok_id, include_full_text: false })
+);
+
+// 3. Check related votes
+const relatedVotes = search_voteringar({ rm: currentRm, limit: 50 })
+  .filter(v => recentBet.some(bet => v.bet === bet.beteckning));
+```
+
+**Example 2: Government Activity Analysis**
+```javascript
+// 1. Get government documents in date range
+const govDocs = search_regering({ dateFrom: fromDate, dateTo: today, limit: 30 });
+
+// 2. Get related propositions
+const propositions = get_propositioner({ rm: currentRm, limit: 20 })
+  .filter(p => new Date(p.publicerad) >= new Date(fromDate));
+```
+
+**Example 3: Party Behavior Analysis**
+```javascript
+// 1. Get party voting records
+const votes = search_voteringar({ rm: currentRm, limit: 100 })
+  .filter(v => new Date(v.datum) >= new Date(fromDate));
+
+// 2. Get party speeches
+const speeches = search_anforanden({ rm: currentRm, limit: 100 })
+  .filter(a => new Date(a.datum) >= new Date(fromDate));
+```
 
 **Example 1: Committee Report Deep Dive**
 ```javascript
