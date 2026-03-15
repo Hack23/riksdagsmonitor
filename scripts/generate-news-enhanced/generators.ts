@@ -752,6 +752,12 @@ const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, stri
     nl: 'Belanghebbenden', ar: 'أصحاب المصلحة', he: 'בעלי עניין',
     ja: 'ステークホルダー', ko: '이해관계자', zh: '利益相关者',
   },
+  govCommunications: {
+    en: 'Gov. Communications', sv: 'Regeringsmeddelanden', da: 'Regeringsmeddelelser', no: 'Regjeringsmeldinger',
+    fi: 'Hallituksen tiedonannot', de: 'Regierungsmitteilungen', fr: 'Communications gouvernementales', es: 'Comunicaciones del Gobierno',
+    nl: 'Regeringsmededelingen', ar: 'بلاغات حكومية', he: 'הודעות ממשלתיות',
+    ja: '政府通信', ko: '정부 통신', zh: '政府通报',
+  },
 };
 
 function deepLabel(key: string, lang: Language): string {
@@ -1272,7 +1278,7 @@ async function buildDeepInspectionSections(
     sankeyFlows.push({ source: 'gov', target: 'sfs', value: sfsDocs.length, label: `${sfsDocs.length}` });
   }
   if (skrDocs.length > 0) {
-    sankeyNodes.push({ id: 'skr', label: 'Gov. Communications', color: 'cyan' });
+    sankeyNodes.push({ id: 'skr', label: deepLabel('govCommunications', lang), color: 'cyan' });
     sankeyFlows.push({ source: 'gov', target: 'skr', value: skrDocs.length, label: `${skrDocs.length}` });
   }
   if (euDocs.length > 0) {

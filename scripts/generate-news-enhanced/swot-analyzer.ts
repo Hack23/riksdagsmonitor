@@ -29,15 +29,24 @@ function refOf(d: RawDocument): string | undefined {
   return d.dok_id || undefined;
 }
 
-/** Convert raw docs into SWOT entries, collecting dok_ids as evidence refs */
+/** Convert raw docs into SWOT entries, collecting dok_ids as evidence refs.
+ *  Docs whose derived title is empty are skipped to avoid blank list items. */
 function docsToEntries(
   docs: RawDocument[],
   impact: 'high' | 'medium' | 'low' = 'medium',
   limit = 3,
 ): { entries: SwotEntry[]; refs: string[] } {
   const slice = docs.slice(0, limit);
-  const entries: SwotEntry[] = slice.map(d => ({ text: titleOf(d), impact }));
-  const refs: string[] = slice.map(refOf).filter((r): r is string => !!r);
+  const entries: SwotEntry[] = [];
+  const refs: string[] = [];
+  for (const d of slice) {
+    const text = titleOf(d);
+    if (text) {
+      entries.push({ text, impact });
+    }
+    const r = refOf(d);
+    if (r) refs.push(r);
+  }
   return { entries, refs };
 }
 
@@ -884,7 +893,8 @@ function selectRelevantStakeholders(
   docs: RawDocument[],
 ): StakeholderCategory[] {
   const types = new Set(docs.map(d => d.doktyp || d.documentType || ''));
-  const titles = docs.map(d => (d.titel || d.title || '').toLowerCase()).join(' ');
+  // Build keyword text from the same canonical sources titleOf() uses
+  const titles = docs.map(d => (d.titel || d.title || d.dokumentnamn || '').toLowerCase()).join(' ');
   // SFS docs may lack doktyp but have dokumentnamn starting with "SFS"
   const hasSfs = types.has('sfs') || docs.some(d => (d.dokumentnamn || '').startsWith('SFS'));
 
@@ -1224,13 +1234,13 @@ export function buildMultiStakeholderSwot(
   const skrDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
   const sfsDocs    = docs.filter(d =>
     (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
-  // EU docs: includes fpm/eu doc types AND docs whose titles match EU keywords,
+  // EU docs: includes fpm/eu doc types AND docs whose titles/names match EU keywords,
   // so the international SWOT is grounded in the same docs that trigger the
   // international stakeholder in selectRelevantStakeholders().
   const euDocs     = docs.filter(d => {
     const t = d.doktyp || d.documentType;
     if (t === 'fpm' || t === 'eu') return true;
-    const title = d.titel || d.title || '';
+    const title = (d.titel || d.title || d.dokumentnamn || '').toLowerCase();
     return /\beu\b/i.test(title) || /europa/i.test(title);
   });
   const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
