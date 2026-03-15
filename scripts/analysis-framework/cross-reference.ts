@@ -169,10 +169,9 @@ function detectAmends(docs: RawDocument[]): DocumentLink[] {
  * "avreglering").  This prevents compound-word matches from masking the
  * simpler term.
  */
-function matchesTerm(text: string, term: string, needsBoundary: boolean): boolean {
-  if (!needsBoundary) return text.includes(term);
-  // Word-boundary match: the term must not be preceded by a letter
-  return new RegExp(`(?<![a-zåäö])${escapeForRegex(term)}`, 'i').test(text);
+function matchesTerm(text: string, term: string, regex: RegExp | null): boolean {
+  if (!regex) return text.includes(term);
+  return regex.test(text);
 }
 
 function escapeForRegex(s: string): string {
@@ -182,6 +181,20 @@ function escapeForRegex(s: string): string {
 /** Pre-computed flags: true when one conflict term is a substring of the other */
 const BOUNDARY_FLAGS: ReadonlyArray<readonly [boolean, boolean]> = CONFLICT_PAIRS.map(
   ([a, b]) => [b.includes(a), a.includes(b)] as const
+);
+
+/**
+ * Pre-compiled regex patterns for conflict terms that need word-boundary matching.
+ * `null` means the term can use simple `includes()`.
+ */
+const TERM_REGEXES: ReadonlyArray<readonly [RegExp | null, RegExp | null]> = CONFLICT_PAIRS.map(
+  ([a, b], idx) => {
+    const [aNeedsBoundary, bNeedsBoundary] = BOUNDARY_FLAGS[idx];
+    return [
+      aNeedsBoundary ? new RegExp(`(?<![a-zåäö])${escapeForRegex(a)}`, 'i') : null,
+      bNeedsBoundary ? new RegExp(`(?<![a-zåäö])${escapeForRegex(b)}`, 'i') : null,
+    ] as const;
+  }
 );
 
 /**
@@ -199,12 +212,12 @@ function detectContradicts(docs: RawDocument[]): DocumentLink[] {
 
       for (let p = 0; p < CONFLICT_PAIRS.length; p++) {
         const [termA, termB] = CONFLICT_PAIRS[p];
-        const [aNeedsBoundary, bNeedsBoundary] = BOUNDARY_FLAGS[p];
+        const [regexA, regexB] = TERM_REGEXES[p];
 
-        const aHasA = matchesTerm(textA, termA.toLowerCase(), aNeedsBoundary);
-        const aHasB = matchesTerm(textA, termB.toLowerCase(), bNeedsBoundary);
-        const bHasA = matchesTerm(textB, termA.toLowerCase(), aNeedsBoundary);
-        const bHasB = matchesTerm(textB, termB.toLowerCase(), bNeedsBoundary);
+        const aHasA = matchesTerm(textA, termA.toLowerCase(), regexA);
+        const aHasB = matchesTerm(textA, termB.toLowerCase(), regexB);
+        const bHasA = matchesTerm(textB, termA.toLowerCase(), regexA);
+        const bHasB = matchesTerm(textB, termB.toLowerCase(), regexB);
 
         // True contradiction: one doc has term A, the other has term B (not both)
         if ((aHasA && !aHasB) && (bHasB && !bHasA)) {
