@@ -884,16 +884,23 @@ function buildCrossReferences(docs: RawDocument[], topic: string | null): SwotCr
     });
   }
 
-  // Private sector regulatory burden → Civil society accountability
-  refs.push({
-    fromStakeholder: 'private-sector',
-    fromQuadrant: 'weaknesses',
-    toStakeholder: 'civil-society',
-    toQuadrant: 'opportunities',
-    rationale: topic
-      ? `Business compliance challenges on ${topic} create space for civil society to advocate proportionate regulation`
-      : 'Regulatory compliance burdens provide civil society with advocacy leverage for balanced policy design',
-  });
+  // Private sector regulatory burden → Civil society accountability (only when evidence present)
+  const hasRegulatoryDocs = docs.some(d =>
+    (d.doktyp || d.documentType) === 'sfs'
+    || (d.dokumentnamn || '').startsWith('SFS')
+    || (d.doktyp || d.documentType) === 'skr',
+  );
+  if (hasRegulatoryDocs) {
+    refs.push({
+      fromStakeholder: 'private-sector',
+      fromQuadrant: 'weaknesses',
+      toStakeholder: 'civil-society',
+      toQuadrant: 'opportunities',
+      rationale: topic
+        ? `Business compliance challenges on ${topic} create space for civil society to advocate proportionate regulation`
+        : 'Regulatory compliance burdens provide civil society with advocacy leverage for balanced policy design',
+    });
+  }
 
   return refs;
 }
