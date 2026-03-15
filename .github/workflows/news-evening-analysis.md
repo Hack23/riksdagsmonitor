@@ -201,12 +201,9 @@ const weekAgo = new Date(now.getTime() - 7 * 86400000); // 86400000 ms = 1 day
 const today = now.toISOString().split('T')[0];
 // ISO string variants for tools with native date params
 const fromDateIso = fromDate.toISOString().slice(0, 10);
-Calculate date range for queries (day-granularity via `.slice(0, 10)` truncation):
-```js
-const today = new Date().toISOString().slice(0, 10);
-// lookback_hours input is rounded up to full days for date-string comparison
+// Day-granularity date strings (via .slice(0, 10) truncation):
 const lookbackDays = Math.ceil(lookbackHours / 24);
-const fromDate = new Date(Date.now() - lookbackDays * 86400000).toISOString().slice(0, 10);
+const fromDateStr = new Date(Date.now() - lookbackDays * 86400000).toISOString().slice(0, 10);
 // For weekly review (Saturday): 5-day lookback = 5 * 86400000 ms
 const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 10);
 ```
@@ -225,11 +222,10 @@ const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 
 
 Filter results to only include items with dates `>= fromDate`:
 ```javascript
-// Post-query date filtering example (fromDate is a Date object from the calculation above)
+// Post-query date filtering (fromDate is a Date object from the calculation above)
 const filtered = rawResults.filter(item => new Date(item.publicerad || item.datum || item.inlämnad) >= fromDate);
-Filter results to only include items with dates `>= fromDate` using ISO-string comparison (avoids timezone-sensitive `new Date()` parsing):
-```js
-const filtered = results.filter(item => (item.datum || item.publicerad || '').slice(0, 10) >= fromDate);
+// Alternative: ISO-string comparison (avoids timezone-sensitive new Date() parsing)
+const filteredStr = results.filter(item => (item.datum || item.publicerad || '').slice(0, 10) >= fromDateIso);
 ```
 
 **Post-query date filtering example** (day-granularity; 86400000 ms = 1 day):
