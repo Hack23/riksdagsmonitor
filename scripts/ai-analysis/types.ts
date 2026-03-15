@@ -57,6 +57,9 @@ export interface AnalysisSwotEntry {
   confidence: 'HIGH' | 'MEDIUM' | 'LOW';
 }
 
+/** The three well-known stakeholder roles used by the analysis pipeline. */
+export type KnownStakeholderRole = 'government' | 'parliament' | 'private-sector';
+
 /**
  * A SWOT matrix for a single stakeholder perspective.
  * All text fields are AI-derived from document content analysis.
@@ -65,7 +68,7 @@ export interface AnalysisStakeholderSwot {
   /** Localised stakeholder name (Government, Parliament, Private Sector, etc.) */
   name: string;
   /** Internal role key for cross-language consistency */
-  role: 'government' | 'parliament' | 'private-sector' | string;
+  role: KnownStakeholderRole | (string & {});
   swot: {
     strengths: AnalysisSwotEntry[];
     weaknesses: AnalysisSwotEntry[];

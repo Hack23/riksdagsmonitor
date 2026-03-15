@@ -508,7 +508,7 @@ function buildEnrichedEntry(
     text,
     impact: impactFromDocType(type),
     sourceDocIds: [docId(doc)].filter(Boolean),
-    confidence: passage ? 'HIGH' : 'MEDIUM',
+    confidence: passage ? 'HIGH' : isMetadataEnriched(doc) ? 'MEDIUM' : 'LOW',
   };
 }
 
