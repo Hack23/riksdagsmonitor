@@ -777,7 +777,7 @@ describe('selectRelevantStakeholders', () => {
     expect(groups).not.toContain('municipalities-regions');
   });
 
-  it('does not false-positive labor-market from "lokalt" or "colorful"', () => {
+  it('does not false-positive labor-market from "lokalt"', () => {
     const doc: RawDocument = { titel: 'Lokalt engagemang i politik och samhälle', dok_id: 'FP2' };
     const groups = selectRelevantStakeholders(doc);
     expect(groups).not.toContain('labor-market');
@@ -1035,6 +1035,13 @@ describe('generateExecutiveSummary', () => {
     expect(() => generateExecutiveSummary(skrDoc, 'en')).not.toThrow();
     const summary = generateExecutiveSummary(skrDoc, 'en');
     expect(summary.length).toBeGreaterThan(50);
+  });
+
+  it('skr documents produce government communication-specific paragraph 3', () => {
+    const skrDoc: RawDocument = { dok_id: 'SKR-02', doktyp: 'skr', titel: 'Skrivelse om infrastruktur', datum: '2026-01-20' };
+    const summary = generateExecutiveSummary(skrDoc, 'en');
+    expect(summary).toContain('government communication');
+    expect(summary).toContain('parliamentary oversight and public accountability');
   });
 
   it('uses "interpellation" type label for ip documents', () => {
