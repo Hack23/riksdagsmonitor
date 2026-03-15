@@ -147,6 +147,9 @@ START_TIME=$(date +%s)
 3. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
+6. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
+7. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
+8. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
 
 ## Step 1: Date Validation & MCP Health Check
 
@@ -188,10 +191,12 @@ if (hoursSinceSync > 48) { /* add stale data disclaimer */ }
 
 Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc queries, use `scripts/mcp-query-cli.ts` — NEVER implement custom MCP client code (PROHIBITION).
 
-Calculate date range for queries:
+Calculate date range for queries (day-granularity via `.slice(0, 10)` truncation):
 ```js
 const today = new Date().toISOString().slice(0, 10);
-const fromDate = new Date(Date.now() - lookbackHours * 3600000).toISOString().slice(0, 10);
+// lookback_hours input is rounded up to full days for date-string comparison
+const lookbackDays = Math.ceil(lookbackHours / 24);
+const fromDate = new Date(Date.now() - lookbackDays * 86400000).toISOString().slice(0, 10);
 // For weekly review (Saturday): 5-day lookback = 5 * 86400000 ms
 const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 10);
 ```
@@ -208,25 +213,32 @@ const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 
 - `get_propositioner` — filter by `publicerad` date
 - `search_anforanden` — filter by `datum` field
 
-Filter results to only include items with dates `>= fromDate`:
+Filter results to only include items with dates `>= fromDate` using ISO-string comparison (avoids timezone-sensitive `new Date()` parsing):
 ```js
-const filtered = results.filter(item => new Date(item.datum || item.publicerad) >= new Date(fromDate));
+const filtered = results.filter(item => (item.datum || item.publicerad || '').slice(0, 10) >= fromDate);
 ```
 
-**Date calculation pattern:**
+**Post-query date filtering example** (day-granularity; 86400000 ms = 1 day):
+```javascript
+const fromDate = new Date(Date.now() - lookback_days * 86400000).toISOString().slice(0, 10);
+const results = rawResults.filter(item => {
+  const itemDate = (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10);
+  return itemDate >= fromDate; // lexicographic YYYY-MM-DD comparison — no timezone drift
+});
+```
+
+**Date calculation pattern** (day-granularity — `.split('T')[0]` truncates to YYYY-MM-DD):
 ```javascript
 const today = new Date().toISOString().split('T')[0];
 const dayOfWeek = new Date().getUTCDay(); // 0=Sunday, 6=Saturday
-const lookbackHours = dayOfWeek === 6 ? 120 : 12;
-const fromDate = dayOfWeek === 6
-  ? new Date(Date.now() - 5 * 86400000).toISOString().split('T')[0]  // Monday
-  : new Date(Date.now() - lookbackHours * 3600000).toISOString().split('T')[0];
+const lookbackDays = dayOfWeek === 6 ? 5 : Math.ceil(12 / 24); // Saturday=5 days, else ceil(hours/24)
+const fromDate = new Date(Date.now() - lookbackDays * 86400000).toISOString().split('T')[0];
 ```
 
 **Post-query filtering example:**
 ```javascript
 const results = get_betankanden({ rm: currentRm, limit: 50 });
-const recent = results.filter(b => new Date(b.publicerad) >= new Date(fromDate));
+const recent = results.filter(b => (b.publicerad || '').slice(0, 10) >= fromDate);
 ```
 
 ### Cross-Referencing Strategy
@@ -237,7 +249,7 @@ Cross-reference related data sources for richer analysis. Filter all results by 
 ```javascript
 // 1. Get recent committee reports
 const betankanden = get_betankanden({ rm: currentRm, limit: 20 });
-const recentBet = betankanden.filter(b => new Date(b.publicerad) >= new Date(fromDate));
+const recentBet = betankanden.filter(b => (b.publicerad || '').slice(0, 10) >= fromDate);
 
 // 2. For each report, get full details
 const reportDetails = recentBet.map(bet =>
@@ -256,18 +268,46 @@ const govDocs = search_regering({ dateFrom: fromDate, dateTo: today, limit: 30 }
 
 // 2. Get related propositions
 const propositions = get_propositioner({ rm: currentRm, limit: 20 })
-  .filter(p => new Date(p.publicerad) >= new Date(fromDate));
+  .filter(p => (p.publicerad || '').slice(0, 10) >= fromDate);
 ```
 
 **Example 3: Party Behavior Analysis**
 ```javascript
 // 1. Get party voting records
 const votes = search_voteringar({ rm: currentRm, limit: 100 })
-  .filter(v => new Date(v.datum) >= new Date(fromDate));
+  .filter(v => (v.datum || '').slice(0, 10) >= fromDate);
 
 // 2. Get party speeches
 const speeches = search_anforanden({ rm: currentRm, limit: 100 })
-  .filter(a => new Date(a.datum) >= new Date(fromDate));
+  .filter(a => (a.datum || '').slice(0, 10) >= fromDate);
+```
+
+**Detailed Example: Committee Report Deep Dive**
+```javascript
+// 1. Fetch committee reports
+const reports = await get_betankanden({ rm: riksmote, limit: 20 });
+// 2. Cross-reference with voting records
+const votes = await search_voteringar({ rm: riksmote, limit: 50 });
+const reportsWithVotes = reports.filter(r => votes.some(v => v.bet === r.bet));
+```
+
+**Detailed Example: Government Activity Analysis**
+```javascript
+// 1. Fetch government propositions
+const props = await get_propositioner({ rm: riksmote, limit: 20 });
+// 2. Cross-reference with committee referrals
+const referred = props.filter(p => p.referredTo);
+```
+
+**Detailed Example: Party Behavior Analysis**
+```javascript
+// 1. Fetch party motions
+const motions = await get_motioner({ rm: riksmote, limit: 50 });
+// 2. Group by party for oversight analysis
+const byParty = motions.reduce((acc, m) => {
+  acc[m.parti] = (acc[m.parti] || 0) + 1;
+  return acc;
+}, {});
 ```
 
 ### Saturday vs Weekday Mode
