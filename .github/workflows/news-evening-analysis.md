@@ -269,25 +269,6 @@ const votes = search_voteringar({ rm: currentRm, limit: 100 })
 // 2. Get party speeches
 const speeches = search_anforanden({ rm: currentRm, limit: 100 })
   .filter(a => new Date(a.datum) >= new Date(fromDate));
-Example 1: Committee Report Deep Dive
-```
-// 1. Fetch committee reports
-// 2. Cross-reference with voting records for the same beteckning
-// 3. Enrich with related speeches from the same debate
-```
-
-Example 2: Government Activity Analysis
-```
-// 1. Fetch government propositions for the period
-// 2. Cross-reference with opposition motions referencing the same prop
-// 3. Check committee assignments and processing status
-```
-
-Example 3: Party Behavior Analysis
-```
-// 1. Gather voting records by party
-// 2. Cross-reference with interpellations and written questions
-// 3. Identify patterns in party opposition strategy
 ```
 
 ### Saturday vs Weekday Mode

@@ -181,6 +181,12 @@ const L: Record<string, LangMap> = {
     nl: 'EU-standpunt', ar: 'موقف الاتحاد الأوروبي', he: 'עמדת האיחוד האירופי',
     ja: 'EU 立場', ko: 'EU 입장', zh: '欧盟立场',
   },
+  otherDocuments: {
+    en: 'Other Documents', sv: 'Övriga dokument', da: 'Andre dokumenter', no: 'Andre dokumenter',
+    fi: 'Muut asiakirjat', de: 'Sonstige Dokumente', fr: 'Autres documents', es: 'Otros documentos',
+    nl: 'Overige documenten', ar: 'وثائق أخرى', he: 'מסמכים אחרים',
+    ja: 'その他の文書', ko: '기타 문서', zh: '其他文件',
+  },
   government: {
     en: 'Government', sv: 'Regering', da: 'Regering', no: 'Regjering',
     fi: 'Hallitus', de: 'Regierung', fr: 'Gouvernement', es: 'Gobierno',
@@ -488,7 +494,7 @@ function buildLegislativePipelineChart(
   const stageCounts: Record<string, number> = {};
   docs.forEach(doc => {
     const t = (doc.doktyp ?? doc.documentType ?? 'other').toLowerCase();
-    const stageKey = DOC_TYPE_TO_STAGE[t] ?? 'parliamentaryMotion';
+    const stageKey = DOC_TYPE_TO_STAGE[t] ?? 'otherDocuments';
     stageCounts[stageKey] = (stageCounts[stageKey] ?? 0) + 1;
   });
 
@@ -500,6 +506,7 @@ function buildLegislativePipelineChart(
     'enactedLaw',
     'pressRelease',
     'euPosition',
+    'otherDocuments',
   ];
 
   const presentStages = stageOrder.filter(s => (stageCounts[s] ?? 0) > 0);
