@@ -961,7 +961,7 @@ function buildStrategicImplications(docs: RawDocument[], topic: string | null, l
   // Detect all policy domains across documents for richer context
   const allDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
-  const domainPhrase = allDomains.size > 0 ? [...allDomains].slice(0, 3).join(', ') : '';
+  const domainPhrase = allDomains.size > 0 ? [...allDomains].slice(0, 3).map(d => esc(d)).join(', ') : '';
 
   // Choose a template style based on document composition
   const isLegislativeFocused = legislativeCount > 0;
@@ -1325,7 +1325,7 @@ function buildDeepInspectionSections(
   const allDetectedDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
   // Augment with AI-detected domains when available.
-  // emergingTrends format: "domain1, domain2 [CONFIDENCE], ..." — strip bracketed suffix.
+  // emergingTrends format: "domain1, domain2, domain3 [CONFIDENCE]" — single suffix on whole list.
   if (aiResult?.synthesis?.emergingTrends) {
     aiResult.synthesis.emergingTrends
       .split(',')
