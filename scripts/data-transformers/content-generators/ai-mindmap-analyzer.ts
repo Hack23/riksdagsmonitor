@@ -426,7 +426,7 @@ const THESIS_TEMPLATES: Partial<Record<Language, (topic: string, count: number, 
   fr: (t, n, d) => `L'analyse parlementaire de ${t} couvre ${n} document${n !== 1 ? 's' : ''} dans les domaines ${d}.`,
   es: (t, n, d) => `El análisis parlamentario de ${t} abarca ${n} documento${n !== 1 ? 's' : ''} en los ámbitos ${d}.`,
   nl: (t, n, d) => `Parlementaire analyse van ${t} omvat ${n} document${n !== 1 ? 'en' : ''} over ${d}.`,
-  ar: (t, n, _d) => `التحليل البرلماني لـ${t} يشمل ${n} وثيقة.`,
+  ar: (t, n, _d) => `التحليل البرلماني لـ${t} يشمل ${n} ${n === 1 ? 'وثيقة' : 'وثائق'}.`,
   he: (t, n, _d) => `הניתוח הפרלמנטרי של ${t} כולל ${n} ${n === 1 ? 'מסמך' : 'מסמכים'}.`,
   ja: (t, n, d) => `${t}に関する議会分析は${d}にわたる${n}件の文書を包含しています。`,
   ko: (t, n, d) => `${t}에 대한 의회 분석은 ${d}에 걸쳐 ${n}개의 문서를 포함합니다.`,
@@ -514,14 +514,17 @@ function docCount(n: number, lang: Language | string): string {
 /** EU/international doc types (module-level to avoid per-call allocation) */
 const INTL_TYPES = new Set(['fpm', 'eu']);
 
+/** Government-originating doc types (module-level to avoid per-call allocation) */
+const GOV_TYPES = new Set(['prop', 'skr', 'pressm']);
+
+/** Opposition-originating doc types (module-level to avoid per-call allocation) */
+const OPP_TYPES = new Set(['bet', 'mot']);
+
 function buildPowerBranch(
   docs: RawDocument[],
   lang: Language | string,
 ): MindmapBranch {
-  // Single-pass classification using Sets for O(n) performance
-  const GOV_TYPES = new Set(['prop', 'skr', 'pressm']);
-  const OPP_TYPES = new Set(['bet', 'mot']);
-
+  // Single-pass classification using module-level Sets for O(n) performance
   const govDocs: RawDocument[]   = [];
   const oppDocs: RawDocument[]   = [];
   const otherDocs: RawDocument[] = [];
@@ -613,20 +616,24 @@ function buildImpactBranch(
   };
 }
 
+/** Extract the best available date string from a document (datum > publicerad > inlämnad). */
+function docDateStr(d: RawDocument): string {
+  const extra = d as Record<string, unknown>;
+  const raw = d.datum || extra['publicerad'] || extra['inlämnad'] || '';
+  return typeof raw === 'string' ? raw.slice(0, 10) : '';
+}
+
 function buildTimelineBranch(
   docs: RawDocument[],
   lang: Language | string,
 ): MindmapBranch {
+  // Normalize cutoff to UTC midnight to avoid off-by-one near local midnight
   const cutoff = new Date();
-  cutoff.setMonth(cutoff.getMonth() - 3);
-  const cutoffIso = cutoff.toISOString().slice(0, 10); // YYYY-MM-DD for date-only comparison
+  cutoff.setUTCMonth(cutoff.getUTCMonth() - 3);
+  cutoff.setUTCHours(0, 0, 0, 0);
+  const cutoffIso = cutoff.toISOString().slice(0, 10); // YYYY-MM-DD
 
-  const recentDocs = docs.filter(d => {
-    if (!d.datum) return false;
-    // Compare date-only strings to avoid time-of-day / timezone parsing differences
-    const dateStr = typeof d.datum === 'string' ? d.datum.slice(0, 10) : '';
-    return dateStr >= cutoffIso;
-  });
+  const recentDocs = docs.filter(d => docDateStr(d) >= cutoffIso);
 
   const propDocs = docs.filter(d => (d.doktyp || d.documentType || '') === 'prop');
   const urgencyWeight: AIMindmapItem['weight'] =
