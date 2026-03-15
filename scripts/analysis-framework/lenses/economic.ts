@@ -248,9 +248,10 @@ export function analyzeEconomicPerspective(
   doc: RawDocument,
   cia: CIAContext | undefined,
   lang: Language | string,
+  precomputedDomains?: string[],
 ): PerspectiveAnalysis {
   const keyActors = ['Finance Ministry', 'Riksbank', 'Employers Federation', 'Trade Unions', 'Chamber of Commerce'];
-  const domains = detectPolicyDomains(doc, 'en');
+  const domains = precomputedDomains ?? detectPolicyDomains(doc, 'en');
   const relatedPolicies = [...domains, 'Economic Policy Framework', 'Growth Strategy'].filter(Boolean);
 
   return {

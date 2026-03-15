@@ -227,9 +227,10 @@ export function analyzeMediaPerspective(
   doc: RawDocument,
   cia: CIAContext | undefined,
   lang: Language | string,
+  precomputedDomains?: string[],
 ): PerspectiveAnalysis {
   const keyActors = ['Swedish Media', 'SVT', 'DN', 'Aftonbladet', 'SR'];
-  const domains = detectPolicyDomains(doc, 'en');
+  const domains = precomputedDomains ?? detectPolicyDomains(doc, 'en');
   const newsScore = scoreNewsworthiness([doc], cia);
   const relatedPolicies = [...domains, ...newsScore.topics.slice(0, 2)].filter(Boolean);
 

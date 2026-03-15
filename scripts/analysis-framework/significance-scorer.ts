@@ -74,8 +74,8 @@ function scoreCommitteeTier(doc: RawDocument): number {
   return COMMITTEE_SCORES[committee] ?? 1;
 }
 
-function scorePolicyDomainBreadth(doc: RawDocument): number {
-  const domains = detectPolicyDomains(doc, 'en');
+function scorePolicyDomainBreadth(doc: RawDocument, precomputedDomains?: string[]): number {
+  const domains = precomputedDomains ?? detectPolicyDomains(doc, 'en');
   // 1 domain = 3, 2 domains = 5, 3+ = 8, 4+ = 10
   if (domains.length === 0) return 1;
   if (domains.length === 1) return 3;
@@ -137,17 +137,19 @@ function scorePerspectiveImpacts(perspectives: PerspectiveAnalysis[]): number {
  * @param doc          - The document to score
  * @param cia          - Optional CIA context for coalition stability
  * @param perspectives - Pre-computed perspective analyses (for dimension 6)
+ * @param precomputedDomains - Optional pre-computed policy domains (avoids redundant detectPolicyDomains call)
  * @returns            Integer significance score in range [1, 10]
  */
 export function computeSignificanceScore(
   doc: RawDocument,
   cia: CIAContext | undefined,
   perspectives: PerspectiveAnalysis[],
+  precomputedDomains?: string[],
 ): number {
   const dims = [
     { score: scoreDocumentType(doc), weight: 0.25 },
     { score: scoreCommitteeTier(doc), weight: 0.20 },
-    { score: scorePolicyDomainBreadth(doc), weight: 0.15 },
+    { score: scorePolicyDomainBreadth(doc, precomputedDomains), weight: 0.15 },
     { score: scoreCoalitionContext(cia), weight: 0.20 },
     { score: scoreContentRichness(doc), weight: 0.10 },
     { score: scorePerspectiveImpacts(perspectives), weight: 0.10 },

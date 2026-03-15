@@ -36,6 +36,7 @@ import type {
   PerspectiveAnalysis,
 } from './types.js';
 
+import { detectPolicyDomains } from '../data-transformers/policy-analysis.js';
 import { analyzeGovernmentPerspective } from './lenses/government.js';
 import { analyzeOppositionPerspective } from './lenses/opposition.js';
 import { analyzeCitizenPerspective } from './lenses/citizen.js';
@@ -70,16 +71,19 @@ export function analyzeDocument(
   cia?: CIAContext,
   lang: Language | string = 'en',
 ): DocumentAnalysisResult {
+  // Compute domains once per document — avoids 8+ redundant detectPolicyDomains calls
+  const domains = detectPolicyDomains(doc, 'en');
+
   const perspectives: PerspectiveAnalysis[] = [
-    analyzeGovernmentPerspective(doc, cia, lang),
-    analyzeOppositionPerspective(doc, cia, lang),
-    analyzeCitizenPerspective(doc, cia, lang),
-    analyzeEconomicPerspective(doc, cia, lang),
-    analyzeInternationalPerspective(doc, cia, lang),
-    analyzeMediaPerspective(doc, cia, lang),
+    analyzeGovernmentPerspective(doc, cia, lang, domains),
+    analyzeOppositionPerspective(doc, cia, lang, domains),
+    analyzeCitizenPerspective(doc, cia, lang, domains),
+    analyzeEconomicPerspective(doc, cia, lang, domains),
+    analyzeInternationalPerspective(doc, cia, lang, domains),
+    analyzeMediaPerspective(doc, cia, lang, domains),
   ];
 
-  const overallSignificance = computeSignificanceScore(doc, cia, perspectives);
+  const overallSignificance = computeSignificanceScore(doc, cia, perspectives, domains);
   const confidenceScore = computeOverallConfidence(doc, perspectives);
   const keyInsights = extractKeyInsights(perspectives);
 

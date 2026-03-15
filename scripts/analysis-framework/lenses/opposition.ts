@@ -40,7 +40,7 @@ const LENS_LABELS: Readonly<Record<string, { lensName: string; stakeholder: stri
   sv: { lensName: 'Oppositionsperspektiv', stakeholder: 'Oppositionen' },
   da: { lensName: 'Oppositionsperspektiv', stakeholder: 'Oppositionen' },
   no: { lensName: 'Opposisjonsperspektiv', stakeholder: 'Opposisjonen' },
-  fi: { lensName: 'Opposition näkökulma', stakeholder: 'Oppositio' },
+  fi: { lensName: 'Oppositiönäkökulma', stakeholder: 'Oppositio' },
   de: { lensName: 'Oppositionsperspektive', stakeholder: 'Opposition' },
   fr: { lensName: "Perspective de l'opposition", stakeholder: "Opposition" },
   es: { lensName: 'Perspectiva de la oposición', stakeholder: 'Oposición' },
@@ -243,6 +243,7 @@ export function analyzeOppositionPerspective(
   doc: RawDocument,
   cia: CIAContext | undefined,
   lang: Language | string,
+  precomputedDomains?: string[],
 ): PerspectiveAnalysis {
   // Key actors: opposition parties in parliament
   const keyActors: string[] = ['Opposition Leader', 'Shadow Cabinet'];
@@ -253,7 +254,7 @@ export function analyzeOppositionPerspective(
   }
   if (doc.parti) keyActors.unshift(doc.parti);
 
-  const domains = detectPolicyDomains(doc, 'en');
+  const domains = precomputedDomains ?? detectPolicyDomains(doc, 'en');
   const relatedPolicies = [...domains, 'Electoral Programme', 'Parliamentary Scrutiny'].filter(Boolean);
 
   return {

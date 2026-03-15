@@ -283,6 +283,7 @@ export function analyzeGovernmentPerspective(
   doc: RawDocument,
   cia: CIAContext | undefined,
   lang: Language | string,
+  precomputedDomains?: string[],
 ): PerspectiveAnalysis {
   const keyActors: string[] = ['Prime Minister', 'Cabinet'];
   if (cia) {
@@ -293,7 +294,7 @@ export function analyzeGovernmentPerspective(
     keyActors.push(...govParties);
   }
 
-  const domains = detectPolicyDomains(doc, 'en');
+  const domains = precomputedDomains ?? detectPolicyDomains(doc, 'en');
   const relatedPolicies = [...domains, 'Coalition Programme 2022-2026'].filter(Boolean);
 
   return {

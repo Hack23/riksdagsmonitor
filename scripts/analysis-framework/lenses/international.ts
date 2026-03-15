@@ -259,9 +259,10 @@ export function analyzeInternationalPerspective(
   doc: RawDocument,
   cia: CIAContext | undefined,
   lang: Language | string,
+  precomputedDomains?: string[],
 ): PerspectiveAnalysis {
   const keyActors = ['EU Commission', 'Foreign Ministry', 'NATO', 'Nordic Council', 'UN'];
-  const domains = detectPolicyDomains(doc, 'en');
+  const domains = precomputedDomains ?? detectPolicyDomains(doc, 'en');
   const allText = [doc.titel, doc.title, doc.summary, doc.notis].filter(Boolean).join(' ');
 
   const relatedPolicies = [...domains];

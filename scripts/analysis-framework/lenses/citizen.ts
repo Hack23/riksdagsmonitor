@@ -246,9 +246,10 @@ export function analyzeCitizenPerspective(
   doc: RawDocument,
   cia: CIAContext | undefined,
   lang: Language | string,
+  precomputedDomains?: string[],
 ): PerspectiveAnalysis {
   const keyActors = ['Civil Society', 'Trade Unions', 'Consumer Groups', 'Ombudsmen'];
-  const domains = detectPolicyDomains(doc, 'en');
+  const domains = precomputedDomains ?? detectPolicyDomains(doc, 'en');
   const relatedPolicies = [...domains, 'Public Services Charter', 'Rights Framework'].filter(Boolean);
 
   return {
