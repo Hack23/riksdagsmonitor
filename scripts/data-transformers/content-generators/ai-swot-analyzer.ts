@@ -402,8 +402,8 @@ function docEntry(
 
 /** Build a topical statement: "X in {topic}" or strip %t placeholder when absent */
 function withTopic(template: string, topic: string | null): string {
-  if (!topic) return template.replace(/%t/g, '');
-  return template.replace(/%t/g, topic);
+  if (!topic) return template.replaceAll('%t', '');
+  return template.replaceAll('%t', topic);
 }
 
 // ---------------------------------------------------------------------------
@@ -445,6 +445,12 @@ function bucketDocs(docs: RawDocument[]): DocBuckets {
   return b;
 }
 
+/** Sum of all bucketed documents */
+function bucketTotal(b: DocBuckets): number {
+  return b.prop.length + b.skr.length + b.sfs.length + b.pressm.length
+       + b.bet.length + b.fpm.length + b.mot.length + b.ext.length;
+}
+
 // ---------------------------------------------------------------------------
 // Per-stakeholder SWOT builders
 // ---------------------------------------------------------------------------
@@ -457,8 +463,8 @@ function buildGovernmentSwot(
   const { prop: propDocs, skr: skrDocs, sfs: sfsDocs, pressm: pressmDocs, bet: betDocs, fpm: euDocs, mot: motDocs } = b;
 
   const topicStr = topic ? ` on ${topic}` : '';
-  const totalDocs = propDocs.length + skrDocs.length + sfsDocs.length + pressmDocs.length + betDocs.length + euDocs.length + motDocs.length;
-  const docCount = `${totalDocs} parliamentary document${totalDocs !== 1 ? 's' : ''} examined`;
+  const total = bucketTotal(b);
+  const docCount = `${total} parliamentary document${total !== 1 ? 's' : ''} examined`;
 
   const strengths: AISwotEntry[] = [];
   propDocs.slice(0, 2).forEach(d => {
@@ -1054,8 +1060,8 @@ export function buildAISwotStakeholders(
   const crossRefs = buildCrossReferences(b, topic);
 
   // Localised labels for context metadata
-  const confidenceLabel = CONTEXT_LABELS.confidence[lang] ?? CONTEXT_LABELS.confidence.en!;
-  const crossRefLabel   = CONTEXT_LABELS.crossReferences[lang] ?? CONTEXT_LABELS.crossReferences.en!;
+  const confidenceLabel = CONTEXT_LABELS.confidence[lang] ?? CONTEXT_LABELS.confidence.en ?? 'Confidence';
+  const crossRefLabel   = CONTEXT_LABELS.crossReferences[lang] ?? CONTEXT_LABELS.crossReferences.en ?? 'Cross-references';
 
   return perspectives.map(p => {
     const name = STAKEHOLDER_NAMES[p][lang] ?? STAKEHOLDER_NAMES[p].en!;
