@@ -10048,6 +10048,7 @@ body.news-page {
 
 /* AI Mindmap dimension color indicators */
 .news-article .mindmap-branch[data-dimension] { border-left-width: 4px; }
+[dir="rtl"] .news-article .mindmap-branch[data-dimension] { border-left-width: 2px; border-right-width: 4px; }
 
 @media (min-width: 768px) {
   .news-article .mindmap-center-wrapper {

@@ -427,7 +427,7 @@ const THESIS_TEMPLATES: Partial<Record<Language, (topic: string, count: number, 
   es: (t, n, d) => `El análisis parlamentario de ${t} abarca ${n} documento${n !== 1 ? 's' : ''} en los ámbitos ${d}.`,
   nl: (t, n, d) => `Parlementaire analyse van ${t} omvat ${n} document${n !== 1 ? 'en' : ''} over ${d}.`,
   ar: (t, n, _d) => `التحليل البرلماني لـ${t} يشمل ${n} وثيقة.`,
-  he: (t, n, _d) => `הניתוח הפרלמנטרי של ${t} כולל ${n} מסמכים.`,
+  he: (t, n, _d) => `הניתוח הפרלמנטרי של ${t} כולל ${n} ${n === 1 ? 'מסמך' : 'מסמכים'}.`,
   ja: (t, n, d) => `${t}に関する議会分析は${d}にわたる${n}件の文書を包含しています。`,
   ko: (t, n, d) => `${t}에 대한 의회 분석은 ${d}에 걸쳐 ${n}개의 문서를 포함합니다.`,
   zh: (t, n, d) => `关于${t}的议会分析涵盖${d}领域的${n}份文件。`,
@@ -614,12 +614,15 @@ function buildTimelineBranch(
   docs: RawDocument[],
   lang: Language | string,
 ): MindmapBranch {
+  const cutoff = new Date();
+  cutoff.setMonth(cutoff.getMonth() - 3);
+  const cutoffIso = cutoff.toISOString().slice(0, 10); // YYYY-MM-DD for date-only comparison
+
   const recentDocs = docs.filter(d => {
     if (!d.datum) return false;
-    const date = new Date(d.datum);
-    const cutoff = new Date();
-    cutoff.setMonth(cutoff.getMonth() - 3);
-    return date >= cutoff;
+    // Compare date-only strings to avoid time-of-day / timezone parsing differences
+    const dateStr = typeof d.datum === 'string' ? d.datum.slice(0, 10) : '';
+    return dateStr >= cutoffIso;
   });
 
   const propDocs = docs.filter(d => ['prop'].includes(d.doktyp || d.documentType || ''));
