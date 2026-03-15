@@ -155,7 +155,81 @@ describe('new deep-inspection section labels', () => {
 });
 
 // ---------------------------------------------------------------------------
-// 4. Strategic implications — 14-language coverage
+// 4. Depth-gated sections — verify depth conditions in source
+// ---------------------------------------------------------------------------
+
+describe('generateDeepInspectionContent depth-gated sections', () => {
+  const generatorsSrcForDepth = fs.readFileSync(
+    path.resolve(__dirname, '../scripts/generate-news-enhanced/generators.ts'), 'utf-8');
+
+  // Depth 1 (always present): Topic Context, Document Intelligence, 5W Analysis,
+  // Strategic Implications, Key Takeaways — no depth guard needed for these
+  it('depth 1 sections have no depth guard', () => {
+    // These section CSS classes should appear without depth conditions
+    expect(generatorsSrcForDepth).toContain('class="deep-topic-context"');
+    expect(generatorsSrcForDepth).toContain('class="document-intelligence-analysis"');
+    expect(generatorsSrcForDepth).toContain('class="strategic-implications"');
+    expect(generatorsSrcForDepth).toContain('class="key-takeaways"');
+  });
+
+  // Depth 2: adds Historical Context + Predictive Assessment
+  it('depth ≥ 2 gates Historical Context and Predictive Assessment', () => {
+    expect(generatorsSrcForDepth).toContain('if (depth >= 2)');
+    // Verify the functions called inside depth ≥ 2 blocks
+    expect(generatorsSrcForDepth).toContain('buildHistoricalContext(docs, topic, lang)');
+    expect(generatorsSrcForDepth).toContain('buildPredictiveAssessment(docs, topic, lang)');
+  });
+
+  // Depth 3: adds Executive Summary + Methodology
+  it('depth ≥ 3 gates Executive Intelligence Summary and Methodology', () => {
+    expect(generatorsSrcForDepth).toContain('if (depth >= 3)');
+    expect(generatorsSrcForDepth).toContain('buildExecutiveSummary(docs, topic, lang)');
+    expect(generatorsSrcForDepth).toContain('buildMethodologySection(docs, topic, lang, depth)');
+  });
+
+  // Depth 4: methodology section includes 4 quality-review iterations
+  it('methodology section renders iteration items up to depth', () => {
+    expect(generatorsSrcForDepth).toContain('labels.slice(0, depth)');
+  });
+
+  // Verify section headings use deepLabel() with correct keys
+  it('section headings use deepLabel() with expected keys', () => {
+    expect(generatorsSrcForDepth).toContain("deepLabel('topicContext', lang)");
+    expect(generatorsSrcForDepth).toContain("deepLabel('documentIntelligence', lang)");
+    expect(generatorsSrcForDepth).toContain("deepLabel('strategicImplications', lang)");
+    expect(generatorsSrcForDepth).toContain("deepLabel('keyTakeaways', lang)");
+  });
+
+  // Verify buildExecutiveSummary produces <section> with expected CSS class
+  it('buildExecutiveSummary produces section with executive-summary class', () => {
+    expect(generatorsSrcForDepth).toContain('class="executive-intelligence-summary"');
+  });
+
+  // Verify buildPredictiveAssessment and buildHistoricalContext produce expected sections
+  it('buildPredictiveAssessment produces section with predictive-assessment class', () => {
+    expect(generatorsSrcForDepth).toContain('class="predictive-assessment"');
+  });
+
+  it('buildHistoricalContext produces section with historical-context class', () => {
+    expect(generatorsSrcForDepth).toContain('class="historical-context"');
+  });
+
+  it('buildMethodologySection produces section with methodology-confidence class', () => {
+    expect(generatorsSrcForDepth).toContain('class="methodology-confidence"');
+  });
+
+  // Verify deriveConfidence is called for predictive and methodology sections
+  it('deriveConfidence heuristic is used for confidence scoring', () => {
+    expect(generatorsSrcForDepth).toContain('deriveConfidence(');
+    // Named constants for confidence/prediction heuristics
+    expect(generatorsSrcForDepth).toContain('ENRICHMENT_WEIGHT');
+    expect(generatorsSrcForDepth).toContain('MAX_DOCUMENT_BONUS');
+    expect(generatorsSrcForDepth).toContain('BASE_PASSAGE_PROBABILITY');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// 5. Strategic implications — 14-language coverage
 // ---------------------------------------------------------------------------
 
 describe('buildStrategicImplications 14-language coverage', () => {
@@ -174,7 +248,7 @@ describe('buildStrategicImplications 14-language coverage', () => {
 });
 
 // ---------------------------------------------------------------------------
-// 5. Deep-inspection module — pipeline exports
+// 6. Deep-inspection module — pipeline exports
 // ---------------------------------------------------------------------------
 
 describe('scripts/deep-inspection/index.js exports', () => {

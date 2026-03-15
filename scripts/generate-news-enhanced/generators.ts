@@ -1514,8 +1514,8 @@ function buildMethodologySection(docs: RawDocument[], topic: string | null, lang
   };
 
   const labels = iterationLabels[lang] ?? iterationLabels.en!;
-  const iterationItems = labels.slice(0, depth).map((label, i) =>
-    `<li><strong>${i + 1}.</strong> ${esc(label)}</li>`
+  const iterationItems = labels.slice(0, depth).map((label) =>
+    `<li>${esc(label)}</li>`
   ).join('\n    ');
 
   const sourceLabels: Partial<Record<Language, string>> = {
