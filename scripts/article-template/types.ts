@@ -166,8 +166,8 @@ export const ARTICLE_TYPE_NAMES: Readonly<Record<ArticleType, Readonly<Record<La
     he: 'הצעות ממשלה', ja: '政府提案', ko: '정부 법안', zh: '政府提案',
   },
   'motions': {
-    en: 'Opposition Motions', sv: 'Oppositionsmotioner', da: 'Oppositionsmotioner',
-    no: 'Opposisjonsmotioner', fi: 'Oppositiomotiot', de: 'Oppositionsanträge',
+    en: 'Opposition Motions', sv: 'Oppositionsmotioner', da: 'Oppositionsforslag',
+    no: 'Opposisjonsforslag', fi: 'Oppositiomotiot', de: 'Oppositionsanträge',
     fr: 'Motions d\'opposition', es: 'Mociones de oposición', nl: 'Oppositiemoties',
     ar: 'مقترحات المعارضة', he: 'הצעות אופוזיציה', ja: '野党動議', ko: '야당 동의',
     zh: '反对党动议',

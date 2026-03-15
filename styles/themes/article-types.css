@@ -227,7 +227,16 @@
   }
 }
 
+/* ── RTL support ────────────────────────────────────────────────────────── */
+[dir="rtl"] .news-article[class*="article-type-"] h2 {
+  border-left: none;
+  border-right: 3px solid var(--type-accent);
+  padding-left: 0;
+  padding-right: 0.6rem;
+}
+
 /* ── Responsive: remove h2 left-border on small screens ────────────────── */
+/* Placed AFTER the general RTL rule so the bottom-border treatment wins   */
 @media (max-width: 480px) {
   .news-article[class*="article-type-"] h2 {
     border-left: none;
@@ -241,14 +250,6 @@
     border-right: none;
     padding-right: 0;
   }
-}
-
-/* ── RTL support ────────────────────────────────────────────────────────── */
-[dir="rtl"] .news-article[class*="article-type-"] h2 {
-  border-left: none;
-  border-right: 3px solid var(--type-accent);
-  padding-left: 0;
-  padding-right: 0.6rem;
 }
 
 [dir="rtl"] .news-article[class*="article-type-"] .article-section {
