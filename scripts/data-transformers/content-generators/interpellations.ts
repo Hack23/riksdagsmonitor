@@ -45,7 +45,7 @@ function extractMinisterTarget(doc: RawDocument): string {
   // Only match when a minister-related term is present to avoid false positives (e.g. "till Gaza").
   const titleText = doc.titel || doc.title || '';
   const ministerMatch = titleText.match(
-    /(?:till|to)\s+(.{3,60}?\s*(?:statsråd(?:et[s]?)?|statsminister(?:n(?:s)?|s)?|(?:\w+)?minister(?:n(?:s)?|s)?))/i
+    /(?:till|to)\s+(.{3,60}?\s*(?:statsråd(?:et[s]?)?|statsminister(?:n(?:s)?|s)?|(?:[\p{L}\p{M}]+)?minister(?:n(?:s)?|s)?))/iu
   );
   if (ministerMatch?.[1]) {
     return ministerMatch[1].trim();

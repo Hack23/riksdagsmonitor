@@ -296,6 +296,39 @@ describe('Interpellations Content Generator', () => {
       const result = generateArticleContent(data, 'interpellations', 'en') as string;
       expect(result).toContain('statsrådets');
     });
+
+    it('should extract compound minister title with Swedish diacritics like "miljöministern"', () => {
+      const data = {
+        motions: [
+          {
+            titel: 'Interpellation till miljöministern om kemikaliepolitiken',
+            parti: 'MP',
+            url: '#',
+            dokumentnamn: 'IP-MILJO',
+          },
+        ] as MockInterpellation[],
+      };
+
+      const result = generateArticleContent(data, 'interpellations', 'en') as string;
+      // The regex must match ö in "miljöministern" via Unicode \p{L}
+      expect(result).toContain('miljöministern');
+    });
+
+    it('should extract compound minister title with å like "inrikesministern" preceded by "försvars- och"', () => {
+      const data = {
+        motions: [
+          {
+            titel: 'Interpellation till försvarsministern om säkerhetspolitik',
+            parti: 'S',
+            url: '#',
+            dokumentnamn: 'IP-FORSVAR',
+          },
+        ] as MockInterpellation[],
+      };
+
+      const result = generateArticleContent(data, 'interpellations', 'en') as string;
+      expect(result).toContain('försvarsministern');
+    });
   });
 
   describe('Party rendering', () => {

@@ -224,12 +224,13 @@ const handling = filtered.map(p => search_dokument({ relaterat_id: p.dok_id, dok
 
 **Example 3: Party Behavior Analysis**
 ```javascript
+const partyCode = "S"; // example party code
 // 1. Fetch motions by party
-const motions = get_motioner({ rm: "<rm>", limit: 100 });
+const motions = get_motioner({ rm: currentRm, limit: 100 });
 // 2. Cross-reference with speeches
-const speeches = search_anforanden({ rm: "<rm>", parti: party });
-// 3. Filter motions by date
-const recentMotions = motions.filter(m => new Date(m.datum) >= new Date(fromDate));
+const speeches = search_anforanden({ rm: currentRm, parti: partyCode });
+// 3. Filter motions by date (inlämnad = submission date for motions)
+const recentMotions = motions.filter(m => new Date(m.inlämnad) >= new Date(fromDate));
 ```
 
 ### Date Calculation Helpers
