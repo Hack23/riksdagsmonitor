@@ -82,13 +82,13 @@ The following patterns automatically fail quality validation regardless of score
 - CSP header without `https:` allowance
 - Inline JavaScript in article body
 
-### Quality Metadata
+### Quality Metadata (Future Convention)
 
-After scoring, inject quality metadata into the article:
+After scoring, consider injecting quality metadata into the article as a future convention for automated quality tracking:
 ```html
 <meta name="article-quality-score" content="8.5">
 <meta name="article-quality-version" content="v1">
 <meta name="article-iterations" content="2">
 ```
 
-These are used by the quality monitoring dashboard to track generation quality over time.
+> **Note**: These meta tags are an aspirational convention for future quality monitoring integration. No pipeline currently reads them automatically. Include them when practical to prepare for future dashboard support.

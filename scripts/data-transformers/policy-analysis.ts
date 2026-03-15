@@ -310,11 +310,13 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
       en: {
         mot: 'Fiscal policy motions directly challenge the government\'s budget assumptions and signal opposition readiness to contest tax and spending priorities.',
         bet: 'The Finance Committee\'s position on fiscal matters is usually decisive — the chamber almost always follows its recommendation on budgetary questions.',
+        ip: 'Interpellations on fiscal policy demand ministerial accountability on budget execution and tax priorities, forcing the government to publicly defend its economic stewardship.',
         default: 'Government fiscal proposals must clear rigorous Finance Committee scrutiny and align with Sweden\'s fiscal surplus rule, making the committee\'s verdict pivotal.'
       },
       sv: {
         mot: 'Finanspolitiska motioner utmanar direkt regeringens budgetantaganden och signalerar oppositionens beredskap att bestrida skatte- och utgiftsprioriteringar.',
         bet: 'Finansutskottets ståndpunkt i finanspolitiska frågor är i regel avgörande – kammaren följer nästan alltid utskottets rekommendation.',
+        ip: 'Interpellationer om finanspolitik kräver ministeriellt ansvarsutkrävande kring budgetgenomförande och skattepolitik, och tvingar regeringen att offentligt försvara sin ekonomiska förvaltning.',
         default: 'Regeringens finanspolitiska förslag måste klara finansutskottets granskning och harmonisera med överskottsmålet för att nå bifall.'
       }
     },
@@ -322,11 +324,13 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
       en: {
         mot: 'Defence motions carry heightened strategic significance following Sweden\'s NATO accession, pressing the government on long-term security commitments.',
         bet: 'Committee reports on defence shape Sweden\'s military posture and NATO integration trajectory — decisions here have multi-decade consequences.',
+        ip: 'Defence interpellations probe ministerial preparedness on NATO commitments, military readiness, and arms export decisions — demanding transparency on security-critical matters.',
         default: 'Defence proposals engage Sweden\'s NATO obligations and cross-party consensus-building mechanisms for national security legislation.'
       },
       sv: {
         mot: 'Försvarsrelaterade motioner har förhöjd strategisk betydelse efter Sveriges NATO-inträde och pressar regeringen om långsiktiga säkerhetsåtaganden.',
         bet: 'Utskottsbetänkanden om försvar formar Sveriges militära inriktning och NATO-integration – besluten har konsekvenser i decennier.',
+        ip: 'Försvarsinterpellationer granskar ministeriell beredskap kring NATO-åtaganden, militär förmåga och vapenexportbeslut — och kräver öppenhet i säkerhetskritiska frågor.',
         default: 'Försvarspropositioner engagerar Sveriges NATO-förpliktelser och mekanismer för brett partistöd inom säkerhetspolitiken.'
       }
     },
@@ -334,11 +338,13 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
       en: {
         mot: 'Climate motions reflect growing parliamentary pressure for faster decarbonisation, often targeting specific industries or the pace of policy implementation.',
         bet: 'The Environment Committee\'s recommendations balance climate ambition against economic competitiveness — its position sets the legislative baseline.',
+        ip: 'Climate interpellations hold ministers accountable for emission targets, green transition pace, and environmental enforcement — a key scrutiny mechanism for policy delivery.',
         default: 'Environmental proposals must navigate competing interests from industry, regional governments, and EU climate commitments, making parliamentary support critical.'
       },
       sv: {
         mot: 'Klimatmotioner speglar växande parlamentariskt tryck för snabbare koldioxidminskning och riktar sig ofta mot specifika branscher.',
         bet: 'Miljöutskottet väger klimatambition mot ekonomisk konkurrenskraft – dess rekommendation sätter lagstiftningens utgångspunkt.',
+        ip: 'Klimatinterpellationer ställer ministrar till svars för utsläppsmål, omställningstakten och miljötillsyn — ett centralt granskningsverktyg för politikens genomförande.',
         default: 'Miljöförslag måste navigera konkurrerande intressen från industrin, regionerna och EU:s klimatåtaganden.'
       }
     },
@@ -346,11 +352,13 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
       en: {
         mot: 'Healthcare motions typically target gaps in regional service delivery, pressing for national minimum standards, additional funding, or new patient rights.',
         bet: 'Social Affairs Committee reports on healthcare set the framework for Sweden\'s regionally delivered but nationally financed health system.',
+        ip: 'Healthcare interpellations press ministers on waiting times, regional disparities, and patient safety — demanding explanations for systemic failures in care delivery.',
         default: 'Healthcare proposals require coordination between national government, regional councils, and professional bodies — a complexity that shapes the legislative timeline.'
       },
       sv: {
         mot: 'Hälso- och sjukvårdsmotioner riktar sig typiskt mot brister i regionala tjänster och driver på för nationella miniminivåer eller nya patienträttigheter.',
         bet: 'Socialutskottets betänkanden om hälso- och sjukvård sätter ramarna för det regionalt levererade men nationellt finansierade hälsosystemet.',
+        ip: 'Sjukvårdsinterpellationer pressar ministrar om väntetider, regionala skillnader och patientsäkerhet — och kräver förklaringar till systembrister i vården.',
         default: 'Hälso- och sjukvårdspropositioner kräver samordning mellan stat, regioner och professioner – en komplexitet som formar lagstiftningens tidslinje.'
       }
     },
@@ -358,11 +366,13 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
       en: {
         mot: 'Migration motions reflect one of Sweden\'s most contested policy areas, with parties divided on asylum rules, integration requirements, and deportation procedures.',
         bet: 'The Social Insurance Committee\'s migration reports navigate Sweden\'s EU law obligations and UN Refugee Convention commitments alongside domestic political pressures.',
+        ip: 'Migration interpellations confront ministers on asylum processing, deportation execution, and integration outcomes — exposing policy gaps in one of Sweden\'s most charged political areas.',
         default: 'Migration proposals must balance EU regulatory obligations with national political imperatives, making cross-party support essential for durable legislation.'
       },
       sv: {
         mot: 'Migrationsmotioner speglar ett av Sveriges mest omtvistade politikområden, med partier delade om asylregler, integrationskrav och återvändanderutiner.',
         bet: 'Socialförsäkringsutskottets migrationsbetänkanden navigerar Sveriges åtaganden enligt EU-rätten och FN:s flyktingkonvention.',
+        ip: 'Migrationsinterpellationer konfronterar ministrar med asylhantering, återvändande och integrationsresultat — och blottlägger policybrister i ett av Sveriges mest laddade politikområden.',
         default: 'Migrationspropositioner måste balansera EU-rättsliga förpliktelser med nationella politiska imperativ.'
       }
     },
@@ -370,11 +380,13 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
       en: {
         mot: 'EU and foreign affairs motions signal parliamentary expectations for government negotiating positions — influential despite executive prerogative in external relations.',
         bet: 'The Foreign Affairs Committee\'s reports on EU matters reflect Sweden\'s positioning within the bloc and may bind future negotiating postures.',
+        ip: 'Foreign affairs interpellations challenge the government\'s diplomatic positions, EU negotiation strategies, and international commitments — demanding transparency on Sweden\'s external conduct.',
         default: 'EU and foreign affairs proposals engage Sweden\'s treaty obligations and often require coordination with European partners before domestic enactment.'
       },
       sv: {
         mot: 'EU- och utrikespolitiska motioner signalerar parlamentets förväntningar på regeringens förhandlingspositioner.',
         bet: 'Utrikesutskottets betänkanden om EU-frågor speglar Sveriges positionering inom unionen och kan binda framtida förhandlingslinjer.',
+        ip: 'Utrikespolitiska interpellationer utmanar regeringens diplomatiska positioner, EU-förhandlingsstrategier och internationella åtaganden — och kräver transparens kring Sveriges utrikespolitiska agerande.',
         default: 'EU- och utrikespropositioner engagerar Sveriges fördragsförpliktelser och kräver samordning med europeiska partner.'
       }
     },
@@ -382,11 +394,13 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
       en: {
         mot: 'Justice motions address crime, sentencing, and policing — areas with high public salience where opposition parties frequently press for tougher or more targeted measures.',
         bet: 'The Justice Committee shapes the criminal law framework; its reports on sentencing and policing directly affect prosecution practice and enforcement priorities.',
+        ip: 'Justice interpellations demand ministerial responses on crime trends, prosecution capacity, and policing resources — a high-visibility scrutiny tool on public safety.',
         default: 'Justice proposals balance rule-of-law principles, human rights obligations, and public safety demands — requiring careful drafting to withstand constitutional scrutiny.'
       },
       sv: {
         mot: 'Rättsliga motioner rör brott, straff och polis – frågor med hög allmän relevans där oppositionen ofta driver på för hårdare åtgärder.',
         bet: 'Justitieutskottet formar den straffrättsliga ramen; dess betänkanden om straffsatser och polisverksamhet påverkar direkt åklagarnas praxis.',
+        ip: 'Rättsliga interpellationer kräver ministersvar om brottstrender, åklagarkapacitet och polisresurser — ett uppmärksammat granskningsverktyg kring allmän säkerhet.',
         default: 'Rättsliga propositioner balanserar rättsstatsprinciper, mänskliga rättigheter och allmän säkerhet.'
       }
     },
@@ -394,11 +408,13 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
       en: {
         mot: 'Labour market motions engage sensitive negotiations between employers, unions, and the state — every motion sends a signal to Sweden\'s social partners.',
         bet: 'The Labour Committee\'s reports on workplace legislation must navigate collective bargaining autonomy while setting minimum statutory floors.',
+        ip: 'Labour market interpellations challenge ministers on employment conditions, union rights, and workforce integration — pressing for accountability in a policy area shaped by social-partner dynamics.',
         default: 'Labour market proposals enter an arena where tripartite negotiation shapes the final legislative outcome as much as parliamentary votes.'
       },
       sv: {
         mot: 'Arbetsmarknadsmotioner engagerar känsliga förhandlingar mellan arbetsgivare, fackförbund och stat – varje motion signalerar till parterna.',
         bet: 'Arbetsmarknadsutskottets betänkanden om arbetsplatslagar måste navigera kollektivavtalens självständighet.',
+        ip: 'Arbetsmarknadsinterpellationer utmanar ministrar om anställningsvillkor, fackliga rättigheter och integration på arbetsmarknaden — och kräver ansvar i ett politikområde präglat av partssamverkan.',
         default: 'Arbetsmarknadspropositioner träder in i en arena där trepartsförhandlingar formar det slutliga lagstiftningsresultatet.'
       }
     },
@@ -406,11 +422,13 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
       en: {
         mot: 'Housing motions reflect structural tension between demand for affordable homes and constraints of planning law, rent regulation, and construction cost pressures.',
         bet: 'The Civil Affairs Committee\'s housing reports address one of Sweden\'s most persistent policy challenges, where committee decisions unlock or block major regulatory change.',
+        ip: 'Housing interpellations press ministers on construction targets, rent regulation, and homelessness — demanding answers on one of Sweden\'s most persistent structural challenges.',
         default: 'Housing proposals must reconcile competing interests from municipalities, property owners, tenants, and developers — a coalition rarely achieved quickly.'
       },
       sv: {
         mot: 'Bostadsmotioner speglar strukturell spänning mellan efterfrågan på prisvärda bostäder och begränsningarna i plan- och hyreslagstiftning.',
         bet: 'Civilutskottets bostadsbetänkanden hanterar en av Sveriges mest ihållande politiska utmaningar.',
+        ip: 'Bostadsinterpellationer pressar ministrar om byggtakt, hyresreglering och hemlöshet — och kräver svar på en av Sveriges mest ihållande strukturella utmaningar.',
         default: 'Bostadspropositioner måste balansera konkurrerande intressen från kommuner, fastighetsägare, hyresgäster och byggföretag.'
       }
     },
@@ -418,11 +436,13 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
       en: {
         mot: 'Transport motions address infrastructure investment, road safety, and public transit — areas where regional and national interests frequently diverge.',
         bet: 'The Transport Committee\'s reports guide Sweden\'s national infrastructure planning cycle, directly affecting long-term investment priorities.',
+        ip: 'Transport interpellations challenge ministers on infrastructure delays, road safety failures, and public transit adequacy — demanding accountability for regional connectivity gaps.',
         default: 'Transport proposals engage the national infrastructure budget, regional equity, and climate transition targets — all must be balanced in committee deliberation.'
       },
       sv: {
         mot: 'Transportmotioner rör infrastrukturinvesteringar, trafiksäkerhet och kollektivtrafik – frågor där regionala och nationella intressen ofta divergerar.',
         bet: 'Trafikutskottets betänkanden vägleder Sveriges nationella infrastrukturplanering och påverkar direkt långsiktiga investeringsprioriteringar.',
+        ip: 'Transportinterpellationer utmanar ministrar om infrastrukturförseningar, trafiksäkerhetsbrister och kollektivtrafikens tillräcklighet — och kräver ansvar för regionala uppkopplingsbrister.',
         default: 'Transportpropositioner engagerar den nationella infrastrukturbudgeten, regional jämlikhet och klimatomställningsmål.'
       }
     },
@@ -430,11 +450,13 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
       en: {
         mot: 'Industry and trade motions often target competitiveness, innovation, or trade agreements — signalling party positions ahead of EU-level or bilateral negotiations.',
         bet: 'The Committee on Industry and Trade shapes Sweden\'s business environment through reports that set conditions for investment, innovation, and exports.',
+        ip: 'Trade and industry interpellations hold ministers accountable for business climate, export support, and innovation policy — scrutinising competitiveness in a globally exposed economy.',
         default: 'Industry and trade proposals engage international commitments, EU single-market rules, and domestic competitiveness imperatives simultaneously.'
       },
       sv: {
         mot: 'Näringspolitiska motioner riktar sig ofta mot konkurrenskraft, innovation eller handelsavtal och signalerar partipositioner inför förhandlingar.',
         bet: 'Näringsutskottets betänkanden formar Sveriges affärsmiljö och sätter villkoren för investeringar och export.',
+        ip: 'Handels- och näringsinterpellationer ställer ministrar till svars för företagsklimatet, exportstöd och innovationspolitik — och granskar konkurrenskraften i en globalt exponerad ekonomi.',
         default: 'Näringspolitiska propositioner engagerar internationella åtaganden, EU:s inre marknadsregler och inhemsk konkurrenskraft.'
       }
     },
@@ -442,11 +464,13 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
       en: {
         mot: 'Education motions reflect deep disagreements on school standards, teacher pay, and the role of independent schools — one of Sweden\'s most contested domestic debates.',
         bet: 'The Education Committee\'s reports directly shape curriculum standards, funding formulas, and school regulation — decisions with long generational consequences.',
+        ip: 'Education interpellations demand ministerial accountability on school quality, teacher shortages, and free-school regulation — targeting policy failures with generational impact.',
         default: 'Education proposals must balance national curriculum standards with municipal delivery autonomy and the contested role of private providers in the Swedish school system.'
       },
       sv: {
         mot: 'Utbildningsmotioner speglar djupa meningsskiljaktigheter om skolstandard, lärarlöner och friskolornas roll.',
         bet: 'Utbildningsutskottets betänkanden formar direkt läroplaner, finansieringsmodeller och skolreglering.',
+        ip: 'Utbildningsinterpellationer kräver ministeriellt ansvar för skolkvalitet, lärarbrist och friskolereglering — och riktar in sig på policybrister med generationseffekter.',
         default: 'Utbildningspropositioner måste balansera nationella läroplaner med kommunalt leveransansvar och de privata aktörernas omstridda roll.'
       }
     }
@@ -458,7 +482,7 @@ const EN_DOMAIN_MAP: Record<string, string> = _LOCALISED_TO_EN;
 /**
  * Return a substantive domain-specific and type-specific analysis sentence.
  * Each of 12 policy domains has tailored text for motions (mot), committee
- * reports (bet), and propositions/default, in both English and Swedish.
+ * reports (bet), interpellations (ip), and propositions/default, in both English and Swedish.
  */
 export function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string, lang: Language | string): string {
   const isSv = lang === 'sv';
@@ -468,7 +492,7 @@ export function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string,
   if (!entry) return '';
 
   const langEntry = isSv ? entry.sv : entry.en;
-  const typeKey = (doktyp === 'mot' || doktyp === 'bet') ? doktyp : 'default';
+  const typeKey = (doktyp === 'mot' || doktyp === 'bet' || doktyp === 'ip') ? doktyp : 'default';
   return langEntry[typeKey] ?? langEntry['default'] ?? '';
 }
 

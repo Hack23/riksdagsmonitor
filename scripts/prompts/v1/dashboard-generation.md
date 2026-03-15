@@ -52,15 +52,28 @@ Both functions accept structured data objects. See:
 
 ### Dashboard for Committee Reports
 
+Dashboard sections are rendered by `generateDashboardSection()` which accepts `DashboardSectionOptions`:
+- `data` — a `DashboardData` object with `title`, `charts` (array of `DashboardChartConfig`), optional `tables`, and optional `summary`
+- `lang` — target language code
+
 ```typescript
 // Example: Committee activity dashboard
-const dashboardOptions = {
-  title: L(lang, 'dashboardTitle'),
-  metrics: [
-    { label: 'Reports processed', value: reportCount, trend: 'up' },
-    { label: 'Committees active', value: committeeCount, trend: 'stable' },
-    { label: 'Pending votes', value: pendingVotes, trend: 'down' }
-  ],
+const dashboardOptions: DashboardSectionOptions = {
+  data: {
+    title: L(lang, 'dashboardTitle'),
+    summary: 'Committee activity for the current parliamentary session.',
+    charts: [{
+      id: 'committee-activity',
+      type: 'bar',
+      title: 'Reports by Committee',
+      labels: ['FiU', 'JuU', 'SoU', 'UbU', 'TU'],
+      datasets: [{
+        label: 'Reports processed',
+        data: [12, 8, 15, 6, 9],
+        backgroundColor: ['#00d9ff', '#ff006e', '#ffbe0b', '#83cf39', '#006ab3'],
+      }],
+    }],
+  },
   lang,
 };
 ```

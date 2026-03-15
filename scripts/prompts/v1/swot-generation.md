@@ -72,4 +72,18 @@ For articles covering multiple parties or stakeholders, generate separate SWOT f
 SWOT sections are rendered by `generateSwotSection()` in:
 `scripts/data-transformers/content-generators/swot-section.ts`
 
-Pass entries as `SwotSectionOptions.entries[]` with confidence and impact metadata.
+Pass SWOT data as `SwotSectionOptions.data` (a `SwotData` object with four quadrants: `strengths`, `weaknesses`, `opportunities`, `threats`) and include impact metadata on each entry. The `SwotEntry` type supports a `text` field and an optional `impact` level (`'high'` | `'medium'` | `'low'`).
+
+```typescript
+// Example: generating a SWOT section
+const section = generateSwotSection({
+  data: {
+    subject: 'Socialdemokraterna (S)',
+    strengths: [{ text: 'Largest party', impact: 'high' }],
+    weaknesses: [{ text: 'Internal divisions', impact: 'medium' }],
+    opportunities: [{ text: 'Rising voter concern on welfare', impact: 'high' }],
+    threats: [{ text: 'Coalition fragmentation', impact: 'medium' }],
+  },
+  lang: 'en',
+});
+```
