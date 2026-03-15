@@ -75,7 +75,7 @@ export interface ArticleTypeProfile {
   requiredSections: EditorialSection[];
   /** Quality gate thresholds that must be met before PR creation */
   qualityThresholds: {
-    /** Minimum quality score (0–100) from article-quality-enhancer.ts */
+    /** Minimum quality score (0.0–1.0) matching article-quality-enhancer.ts scale */
     minQualityScore: number;
     /** Minimum number of policy domains detected */
     minPolicyDomains: number;
@@ -118,7 +118,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'sources-methodology',
     ],
     qualityThresholds: {
-      minQualityScore: 70,
+      minQualityScore: 0.70,
       minPolicyDomains: 3,
       requireStakeholderDiversity: true,
     },
@@ -145,7 +145,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'sources-methodology',
     ],
     qualityThresholds: {
-      minQualityScore: 65,
+      minQualityScore: 0.65,
       minPolicyDomains: 3,
       requireStakeholderDiversity: true,
     },
@@ -172,7 +172,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'sources-methodology',
     ],
     qualityThresholds: {
-      minQualityScore: 55,
+      minQualityScore: 0.55,
       minPolicyDomains: 2,
       requireStakeholderDiversity: true,
     },
@@ -199,7 +199,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'sources-methodology',
     ],
     qualityThresholds: {
-      minQualityScore: 55,
+      minQualityScore: 0.55,
       minPolicyDomains: 2,
       requireStakeholderDiversity: true,
     },
@@ -226,7 +226,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'sources-methodology',
     ],
     qualityThresholds: {
-      minQualityScore: 50,
+      minQualityScore: 0.50,
       minPolicyDomains: 2,
       requireStakeholderDiversity: false,
     },
@@ -252,7 +252,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'sources-methodology',
     ],
     qualityThresholds: {
-      minQualityScore: 50,
+      minQualityScore: 0.50,
       minPolicyDomains: 1,
       requireStakeholderDiversity: false,
     },
@@ -278,7 +278,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'sources-methodology',
     ],
     qualityThresholds: {
-      minQualityScore: 50,
+      minQualityScore: 0.50,
       minPolicyDomains: 1,
       requireStakeholderDiversity: false,
     },
@@ -304,7 +304,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'sources-methodology',
     ],
     qualityThresholds: {
-      minQualityScore: 50,
+      minQualityScore: 0.50,
       minPolicyDomains: 2,
       requireStakeholderDiversity: false,
     },
@@ -328,7 +328,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'sources-methodology',
     ],
     qualityThresholds: {
-      minQualityScore: 40,
+      minQualityScore: 0.40,
       minPolicyDomains: 1,
       requireStakeholderDiversity: false,
     },
@@ -354,7 +354,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'sources-methodology',
     ],
     qualityThresholds: {
-      minQualityScore: 40,
+      minQualityScore: 0.40,
       minPolicyDomains: 1,
       requireStakeholderDiversity: false,
     },
@@ -377,7 +377,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'sources-methodology',
     ],
     qualityThresholds: {
-      minQualityScore: 40,
+      minQualityScore: 0.40,
       minPolicyDomains: 1,
       requireStakeholderDiversity: false,
     },
@@ -447,7 +447,7 @@ export function isValidAnalysisDepth(depth: unknown): depth is AnalysisDepth {
  */
 export const GLOBAL_QUALITY_FLOOR = {
   minWordCount: 400,
-  minQualityScore: 40,
+  minQualityScore: 0.40,
   minPolicyDomains: 1,
 } as const;
 
