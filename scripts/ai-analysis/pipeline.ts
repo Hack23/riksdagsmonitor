@@ -564,6 +564,12 @@ function buildPlaceholderText(
 type SwotRoleCompositions = Record<string, Record<string, string>>;
 type SwotCompositionBuilder = (topicFrag: string, domainFrag: string) => SwotRoleCompositions;
 
+/**
+ * Per-language SWOT placeholder composition builders.
+ * Covers sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh (13 non-English languages).
+ * English is handled by the caller (applyLanguageFraming returns enText directly).
+ * Languages not present fall back to English via the caller's default path.
+ */
 const SWOT_LANGUAGE_BUILDERS: Partial<Record<Language, { domainPrep: string; builder: SwotCompositionBuilder }>> = {
   sv: {
     domainPrep: 'inom',
