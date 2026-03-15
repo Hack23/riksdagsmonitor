@@ -101,6 +101,11 @@ const STAKEHOLDER_LABELS: Record<string, Partial<Record<Language, string>>> = {
     de: 'Zivilgesellschaft', fr: 'Société civile', es: 'Sociedad civil', nl: 'Maatschappelijk middenveld',
     ar: 'المجتمع المدني', he: 'החברה האזרחית', ja: '市民社会', ko: '시민 사회', zh: '公民社会',
   },
+  other: {
+    en: 'Other actors', sv: 'Övriga aktörer', da: 'Andre aktører', no: 'Andre aktører', fi: 'Muut toimijat',
+    de: 'Andere Akteure', fr: 'Autres acteurs', es: 'Otros actores', nl: 'Andere actoren',
+    ar: 'جهات أخرى', he: 'גורמים אחרים', ja: 'その他の関係者', ko: '기타 관계자', zh: '其他相关方',
+  },
 };
 
 /** Singular/plural document count formatter for each language */
@@ -514,21 +519,21 @@ function buildPowerBranch(
   const GOV_TYPES = new Set(['prop', 'skr', 'pressm']);
   const OPP_TYPES = new Set(['bet', 'mot']);
 
-  const propDocs: RawDocument[]  = [];
+  const govDocs: RawDocument[]   = [];
   const oppDocs: RawDocument[]   = [];
   const otherDocs: RawDocument[] = [];
 
   for (const d of docs) {
     const typ = d.doktyp || d.documentType || '';
-    if (GOV_TYPES.has(typ)) propDocs.push(d);
+    if (GOV_TYPES.has(typ)) govDocs.push(d);
     else if (OPP_TYPES.has(typ)) oppDocs.push(d);
     else otherDocs.push(d);
   }
 
   const aiItems: AIMindmapItem[] = [
     {
-      text: `${l(lang, STAKEHOLDER_LABELS.gov)}: ${docCount(propDocs.length, lang)}`,
-      weight: classify(propDocs.length),
+      text: `${l(lang, STAKEHOLDER_LABELS.gov)}: ${docCount(govDocs.length, lang)}`,
+      weight: classify(govDocs.length),
     },
     {
       text: `${l(lang, STAKEHOLDER_LABELS.opp)}: ${docCount(oppDocs.length, lang)}`,
@@ -537,7 +542,7 @@ function buildPowerBranch(
   ];
   if (otherDocs.length > 0) {
     aiItems.push({
-      text: `${l(lang, STAKEHOLDER_LABELS.civil)}: ${docCount(otherDocs.length, lang)}`,
+      text: `${l(lang, STAKEHOLDER_LABELS.other)}: ${docCount(otherDocs.length, lang)}`,
       weight: classify(otherDocs.length),
     });
   }
@@ -545,7 +550,7 @@ function buildPowerBranch(
   const subBranches: SubBranch[] = [
     {
       label: l(lang, STAKEHOLDER_LABELS.gov),
-      items: propDocs.slice(0, 2).map(d => getDocTitle(d)).filter(Boolean),
+      items: govDocs.slice(0, 2).map(d => getDocTitle(d)).filter(Boolean),
     },
     {
       label: l(lang, STAKEHOLDER_LABELS.opp),

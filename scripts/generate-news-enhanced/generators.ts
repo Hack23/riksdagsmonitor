@@ -23,11 +23,13 @@ import {
   generateEconomicDashboardSection,
   generateMindmapSection,
   generateSankeySection,
+  buildAIMindmapAnalysis,
+  buildMindmapOptionsFromAnalysis,
   type StakeholderSwot,
   type SankeyNode,
   type SankeyFlow,
 } from '../data-transformers/index.js';
-import { generateDeepAnalysisSection, localizeDocType, buildAIMindmapAnalysis, buildMindmapOptionsFromAnalysis } from '../data-transformers/content-generators/index.js';
+import { generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
 import { generateDeepPolicyAnalysis, detectPolicyDomains } from '../data-transformers/policy-analysis.js';
 import { escapeHtml } from '../html-utils.js';
 import { generateArticleHTML } from '../article-template.js';
