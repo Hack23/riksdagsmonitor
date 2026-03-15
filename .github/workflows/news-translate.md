@@ -15,7 +15,7 @@ on:
         description: 'Article date (YYYY-MM-DD). Defaults to today.'
         required: false
       article_type:
-        description: 'Article type to translate (propositions, motions, committee-reports, week-ahead, month-ahead, weekly-review, monthly-review, breaking, evening-analysis, deep-inspection). Leave empty to scan for all untranslated articles.'
+        description: 'Article type to translate (propositions, motions, committee-reports, week-ahead, month-ahead, weekly-review, monthly-review, breaking, evening-analysis, deep-inspection, interpellations). Leave empty to scan for all untranslated articles.'
         required: false
       languages:
         description: 'Target languages (da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh | nordic-extra | eu-extra | cjk | rtl | all-extra). Default: all-extra (all except en,sv)'
