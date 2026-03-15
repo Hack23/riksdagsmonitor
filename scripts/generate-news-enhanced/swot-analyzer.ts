@@ -901,9 +901,10 @@ function selectRelevantStakeholders(
   }
 
   // International/EU — primarily triggered by EU position papers (fpm);
-  // also triggered by title keywords indicating EU/international policy scope
+  // also triggered by title keywords indicating EU/international policy scope.
+  // Uses word-boundary regex for 'eu' to catch "EU-förordning", "EU budget", etc.
   if (types.has('fpm') || types.has('eu')
-      || titles.includes(' eu ') || titles.includes('europa')
+      || /\beu\b/i.test(titles) || titles.includes('europa')
       || titles.includes('international') || titles.includes('nato')
       || titles.includes('nordic') || titles.includes('norden')) {
     categories.push('international');

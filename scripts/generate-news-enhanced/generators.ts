@@ -1080,19 +1080,23 @@ function buildDeepInspectionSections(
 ): TemplateSection[] {
   if (docs.length === 0) return [];
 
-  // Classify by document type (needed for downstream sankey/dashboard sections)
-  const propDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
-  const betDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
-  const motDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
-  const skrDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
-  const sfsDocs    = docs.filter(d =>
-    (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
-  const euDocs     = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
-  const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
-  const extDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
+  // Classify by document type (needed for downstream sankey/dashboard sections).
+  // Normalize SFS-by-name docs (missing doktyp but dokumentnamn starting with "SFS")
+  // to effective type 'sfs' so all aggregations (filters, typeCounts, charts) are consistent.
+  const effectiveType = (d: RawDocument): string =>
+    (d.doktyp || d.documentType)
+    || ((d.dokumentnamn || '').startsWith('SFS') ? 'sfs' : 'other');
+
+  const propDocs   = docs.filter(d => effectiveType(d) === 'prop');
+  const betDocs    = docs.filter(d => effectiveType(d) === 'bet');
+  const motDocs    = docs.filter(d => effectiveType(d) === 'mot');
+  const skrDocs    = docs.filter(d => effectiveType(d) === 'skr');
+  const sfsDocs    = docs.filter(d => effectiveType(d) === 'sfs');
+  const euDocs     = docs.filter(d => effectiveType(d) === 'fpm');
+  const pressmDocs = docs.filter(d => effectiveType(d) === 'pressm');
+  const extDocs    = docs.filter(d => effectiveType(d) === 'ext');
   const otherDocs  = docs.filter(d =>
-    !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || '')
-    && !(d.dokumentnamn || '').startsWith('SFS'));
+    !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes(effectiveType(d)));
 
   // Build 4–9 stakeholder SWOT analyses from document metadata
   const stakeholders = buildMultiStakeholderSwot(docs, lang);
@@ -1132,7 +1136,7 @@ function buildDeepInspectionSections(
   // ── Dashboard: document type distribution ─────────────────────────────────
   const typeCounts: Record<string, number> = {};
   docs.forEach(d => {
-    const t = d.doktyp || d.documentType || 'other';
+    const t = effectiveType(d);
     typeCounts[t] = (typeCounts[t] || 0) + 1;
   });
   const rawTypeKeys = Object.keys(typeCounts);

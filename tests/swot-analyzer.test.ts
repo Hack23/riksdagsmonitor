@@ -148,6 +148,26 @@ describe('buildMultiStakeholderSwot', () => {
     expect(cats).not.toContain('international');
   });
 
+  it('adds international stakeholder when title starts with "EU" (word-boundary detection)', () => {
+    const docs = [
+      makeDoc({ dok_id: 'mot-1', doktyp: 'mot', titel: 'EU-förordning om digital marknad' }),
+      makeDoc({ dok_id: 'mot-2', doktyp: 'mot', titel: 'En enkel motion' }),
+    ];
+    const result = buildMultiStakeholderSwot(docs, 'en');
+    const cats = result.map(s => s.category);
+    expect(cats).toContain('international');
+  });
+
+  it('adds international stakeholder when title contains "EU-" compound (word-boundary detection)', () => {
+    const docs = [
+      makeDoc({ dok_id: 'prop-1', doktyp: 'prop', titel: 'Genomförande av EU-direktiv om hållbarhet' }),
+      makeDoc({ dok_id: 'bet-1', doktyp: 'bet', titel: 'Betänkande om EU budget' }),
+    ];
+    const result = buildMultiStakeholderSwot(docs, 'en');
+    const cats = result.map(s => s.category);
+    expect(cats).toContain('international');
+  });
+
   it('adds media stakeholder when press releases (pressm) are present', () => {
     const result = buildMultiStakeholderSwot(makeMediaDocs(), 'en');
     const cats = result.map(s => s.category);
