@@ -430,7 +430,7 @@ const STAKEHOLDER_SIGNALS: Readonly<Record<StakeholderGroup, string[]>> = {
   'government-coalition': ['proposition', 'regering', 'budget', 'statsminister', 'minister'],
   'opposition-parties': ['motion', 'opposition', 'socialdemokrat', 'vänsterpartiet', 'centerpartiet', 'miljöpartiet'],
   'state-agencies': ['myndighet', 'länsstyrelse', 'domstol', 'polis', 'skatteverket', 'folkhälsomyndighet'],
-  'municipalities-regions': ['kommuner', 'regioner', 'landsting', 'kommuner och regioner', 'primärkommunal'],
+  'municipalities-regions': ['kommuner', 'regioner', 'landsting', 'primärkommunal'],
   'private-sector': ['näringsliv', 'företag', 'arbetsgivare', 'industry', 'handel', 'marknad'],
   'labor-market': ['facket', 'fackförbund', 'arbetsrätt', 'arbetsmarknad', 'lo', 'tco', 'saco'],
   'civil-society': ['civilsamhälle', 'ngo', 'ideell', 'förening', 'frivillig'],
@@ -444,7 +444,10 @@ const STAKEHOLDER_SIGNALS: Readonly<Record<StakeholderGroup, string[]>> = {
 const SHORT_SIGNAL_MAX_LEN = 4;
 
 /** Pre-compiled word-boundary regexes for short signals (≤ SHORT_SIGNAL_MAX_LEN chars). */
-const _shortSignalRegexCache = new Map<string, RegExp>();
+const shortSignalRegexCache = new Map<string, RegExp>();
+
+/** Escape regex metacharacters in a string. */
+function escapeRegExp(s: string): string { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
 /**
  * Check whether `text` contains a signal term, using word-boundary regex for
@@ -453,10 +456,10 @@ const _shortSignalRegexCache = new Map<string, RegExp>();
  */
 function matchesSignal(text: string, signal: string): boolean {
   if (signal.length > SHORT_SIGNAL_MAX_LEN) return text.includes(signal);
-  let re = _shortSignalRegexCache.get(signal);
+  let re = shortSignalRegexCache.get(signal);
   if (!re) {
-    re = new RegExp(`\\b${signal}\\b`, 'i');
-    _shortSignalRegexCache.set(signal, re);
+    re = new RegExp(`\\b${escapeRegExp(signal)}\\b`, 'i');
+    shortSignalRegexCache.set(signal, re);
   }
   return re.test(text);
 }
