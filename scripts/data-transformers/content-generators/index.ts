@@ -7,6 +7,7 @@
  * - **committee** — generateCommitteeContent
  * - **propositions** — generatePropositionsContent
  * - **motions** — generateMotionsContent
+ * - **interpellations** — generateInterpellationsContent (dedicated, separate from motions)
  * - **generic** — generateGenericContent
  * - **monthly-review** — generateMonthlyReviewContent
  * - **month-ahead** — generateMonthAheadContent
