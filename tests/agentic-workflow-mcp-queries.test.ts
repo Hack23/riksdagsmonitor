@@ -143,7 +143,8 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       expect(content).toMatch(/filter.*by.*date|filter.*results.*date|date.*filter/i);
 
       // Should reference fromDate/toDate or from/tom query parameters
-      expect(content).toMatch(/fromDate|from_date|dateFrom|toDate|to_date|dateTo|tom\b/);
+      // Use word-boundary anchors to avoid false positives (e.g. "custom" matching tom)
+      expect(content).toMatch(/\bfromDate\b|\bfrom_date\b|\bdateFrom\b|\btoDate\b|\bto_date\b|\bdateTo\b|\bfrom\b.*\btom\b/);
     });
 
     it('workflows should annotate tools with date support', () => {
