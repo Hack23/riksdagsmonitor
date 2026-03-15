@@ -219,7 +219,6 @@ Filter results to only include items with dates `>= fromDate` using ISO-string c
 const filtered = results.filter(item =>
   (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10) >= fromDate
 );
-const filtered = results.filter(item => (item.datum || item.publicerad || '').slice(0, 10) >= fromDate);
 ```
 
 **Post-query date filtering example** (day-granularity; 86400000 ms = 1 day):

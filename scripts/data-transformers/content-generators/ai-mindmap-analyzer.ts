@@ -858,7 +858,7 @@ function buildCentralThesis(
  * @example
  * ```ts
  * const analysis = buildAIMindmapAnalysis(docs, 'Cybersecurity Policy', 'en');
- * const opts = buildMindmapOptionsFromAnalysis(analysis, 'en');
+ * const opts = buildMindmapOptionsFromAnalysis(analysis, 'en', 'Cybersecurity Policy');
  * const section = generateMindmapSection(opts);
  * ```
  */
