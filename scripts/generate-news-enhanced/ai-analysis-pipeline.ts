@@ -46,8 +46,8 @@ export interface AIDocumentAnalysis {
   historicalContext: string;
   /** EU and Nordic comparative dimension. */
   euNordicComparison: string;
-  /** Quality score 0–100 for this document's analysis depth. */
-  qualityScore: number;
+  /** Analysis depth score 0–100 (distinct from the 0.0–1.0 qualityScore used by article-quality-enhancer). */
+  analysisScore: number;
 }
 
 /** Cross-document synthesis produced in Pass 3. */
@@ -103,8 +103,8 @@ export interface AIAnalysisResult {
   strategicImplications: string;
   /** Bullet-list key takeaways. */
   keyTakeaways: string[];
-  /** Overall quality score 0–100. */
-  qualityScore: number;
+  /** Overall analysis depth score 0–100 (distinct from the 0.0–1.0 qualityScore used by article-quality-enhancer). */
+  analysisScore: number;
 }
 
 // ---------------------------------------------------------------------------
@@ -934,15 +934,15 @@ export class AIAnalysisPipeline {
     // NOTE: With deterministic heuristics the refined output is identical to the
     // original, so the score stays the same. The path is kept as a future extension
     // point for non-deterministic analysis (e.g. when LLM integration is added).
-    let qualityScore = this.scoreAnalysis(documentAnalyses, synthesis, dynamicSwotEntries);
-    if (this.iterations >= 3 && qualityScore < this.qualityThreshold) {
+    let analysisScore = this.scoreAnalysis(documentAnalyses, synthesis, dynamicSwotEntries);
+    if (this.iterations >= 3 && analysisScore < this.qualityThreshold) {
       const refinedSynthesis = this.synthesizeAcrossDocuments(
         classified, documentAnalyses, focusTopic, lang,
       );
       const refinedScore = this.scoreAnalysis(documentAnalyses, refinedSynthesis, dynamicSwotEntries);
       // Take the better of the two scores — no additive inflation.
-      if (refinedScore >= qualityScore) {
-        qualityScore = refinedScore;
+      if (refinedScore >= analysisScore) {
+        analysisScore = refinedScore;
         synthesis = refinedSynthesis;
       }
     }
@@ -954,7 +954,7 @@ export class AIAnalysisPipeline {
       dynamicSwotEntries,
       strategicImplications,
       keyTakeaways,
-      qualityScore,
+      analysisScore,
     };
   }
 
@@ -969,7 +969,7 @@ export class AIAnalysisPipeline {
       crossPartyImplications: '',
       historicalContext: '',
       euNordicComparison: '',
-      qualityScore: 0,
+      analysisScore: 0,
     };
   }
 
@@ -1064,7 +1064,7 @@ export class AIAnalysisPipeline {
     const euNordicComparison = this.buildEuNordicComparison(doc, classified, topicStr, lang);
 
     const analysisText = [legislativeImpact, crossPartyImplications, historicalContext, euNordicComparison].join(' ');
-    const qualityScore = scoreAnalysisDepth(analysisText);
+    const analysisScore = scoreAnalysisDepth(analysisText);
 
     return {
       dok_id: doc.dok_id ?? title.slice(0, 20),
@@ -1073,7 +1073,7 @@ export class AIAnalysisPipeline {
       crossPartyImplications,
       historicalContext,
       euNordicComparison,
-      qualityScore,
+      analysisScore,
     };
   }
 
@@ -1176,7 +1176,7 @@ export class AIAnalysisPipeline {
 
     // Emerging trends
     const avgQuality = docAnalyses.length > 0
-      ? docAnalyses.reduce((sum, a) => sum + a.qualityScore, 0) / docAnalyses.length
+      ? docAnalyses.reduce((sum, a) => sum + a.analysisScore, 0) / docAnalyses.length
       : 0;
     const trendConfidence = avgQuality >= 60 ? 'HIGH' : avgQuality >= 35 ? 'MEDIUM' : 'LOW';
     const domainList = classified.allDomains.slice(0, 3).join(', ');
@@ -1489,7 +1489,7 @@ export class AIAnalysisPipeline {
 
     // Document analysis quality (up to 40 points)
     if (docAnalyses.length > 0) {
-      const avgDoc = docAnalyses.reduce((sum, a) => sum + a.qualityScore, 0) / docAnalyses.length;
+      const avgDoc = docAnalyses.reduce((sum, a) => sum + a.analysisScore, 0) / docAnalyses.length;
       score += Math.floor(avgDoc * 0.4);
     }
 

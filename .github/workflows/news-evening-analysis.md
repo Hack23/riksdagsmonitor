@@ -224,7 +224,7 @@ Filter results to only include items with dates `>= fromDate`:
 // Post-query date filtering (fromDate is a Date object from the calculation above)
 const filtered = rawResults.filter(item => new Date(item.publicerad || item.datum || item.inlämnad) >= fromDate);
 // Alternative: ISO-string comparison (avoids timezone-sensitive new Date() parsing)
-const filteredStr = results.filter(item => (item.datum || item.publicerad || '').slice(0, 10) >= fromDateIso);
+const filteredStr = rawResults.filter(item => (item.datum || item.publicerad || '').slice(0, 10) >= fromDateIso);
 ```
 
 **Post-query date filtering example** (day-granularity; 86400000 ms = 1 day):
@@ -287,6 +287,7 @@ const press = await search_regering({ type: 'pressmeddelanden', dateFrom: fromDa
 // Setup: riksmöte + date threshold + party
 const currentRm = '2025/26'; // adjust to current session
 const fromDate = new Date(Date.now() - 7 * 86400000); // 7 days ago (Date object)
+const fromDateIso = fromDate.toISOString().slice(0, 10); // YYYY-MM-DD for lexicographic comparison
 const partyCode = 'S'; // e.g. S, M, SD, V, MP, C, L, KD
 // 1. Get motions filed by party, filter by date
 const allMotions = await get_motioner({ rm: currentRm });
@@ -296,7 +297,7 @@ const allVotes = await search_voteringar({ parti: partyCode, rm: currentRm });
 const votes = allVotes.filter(v => new Date(v.datum) >= fromDate);
 // 1. Get recent committee reports
 const betankanden = get_betankanden({ rm: currentRm, limit: 20 });
-const recentBet = betankanden.filter(b => (b.publicerad || '').slice(0, 10) >= fromDate);
+const recentBet = betankanden.filter(b => (b.publicerad || '').slice(0, 10) >= fromDateIso);
 
 // 2. For each report, get full details
 const reportDetails = recentBet.map(bet =>

@@ -63,11 +63,11 @@ describe('AIAnalysisPipeline', () => {
       expect(result.synthesis.policyConvergence.length).toBeGreaterThan(0);
     });
 
-    it('produces a quality score between 0 and 100', () => {
+    it('produces an analysis score between 0 and 100', () => {
       const pipeline = new AIAnalysisPipeline();
       const result = pipeline.analyze(ALL_DOCS, null, 'en');
-      expect(result.qualityScore).toBeGreaterThanOrEqual(0);
-      expect(result.qualityScore).toBeLessThanOrEqual(100);
+      expect(result.analysisScore).toBeGreaterThanOrEqual(0);
+      expect(result.analysisScore).toBeLessThanOrEqual(100);
     });
 
     it('returns at least one key takeaway for a mixed document set', () => {
@@ -247,7 +247,7 @@ describe('AIAnalysisPipeline', () => {
       const pipeline = new AIAnalysisPipeline({ iterations: 1 });
       const result = pipeline.analyze([PROP], null, 'en');
       expect(result.iterations).toBe(1);
-      expect(result.qualityScore).toBeGreaterThanOrEqual(0);
+      expect(result.analysisScore).toBeGreaterThanOrEqual(0);
     });
 
     it('iteration=5 produces a valid result', () => {
@@ -262,13 +262,13 @@ describe('AIAnalysisPipeline', () => {
       expect(result.iterations).toBe(3);
     });
 
-    it('quality score with 3 iterations >= quality with 1 iteration on rich document set', () => {
+    it('analysis score with 3 iterations >= score with 1 iteration on rich document set', () => {
       const pipeline1 = new AIAnalysisPipeline({ iterations: 1 });
       const pipeline3 = new AIAnalysisPipeline({ iterations: 3 });
       const r1 = pipeline1.analyze(ALL_DOCS, 'security', 'en');
       const r3 = pipeline3.analyze(ALL_DOCS, 'security', 'en');
-      // With 3 iterations, quality should be at least as good
-      expect(r3.qualityScore).toBeGreaterThanOrEqual(r1.qualityScore);
+      // With 3 iterations, analysis score should be at least as good
+      expect(r3.analysisScore).toBeGreaterThanOrEqual(r1.analysisScore);
     });
   });
 
@@ -373,7 +373,7 @@ describe('AnalysisCache', () => {
   });
 
   it('stores and retrieves a result', () => {
-    const fakeResult = { iterations: 1, qualityScore: 80 } as Parameters<AnalysisCache['set']>[1];
+    const fakeResult = { iterations: 1, analysisScore: 80 } as Parameters<AnalysisCache['set']>[1];
     cache.set('key-1', fakeResult);
     expect(cache.get('key-1')).toBe(fakeResult);
   });

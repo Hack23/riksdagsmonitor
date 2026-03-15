@@ -1708,7 +1708,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
         const pipeline = new AIAnalysisPipeline({ iterations: analysisIterations });
         aiResult = pipeline.analyze(enrichedDocs, sanitizedTopic, lang);
         sharedAnalysisCache.set(cacheKey, aiResult);
-        console.log(`    🤖 AI analysis: ${aiResult.iterations} iteration(s), quality score ${aiResult.qualityScore}`);
+        console.log(`    🤖 AI analysis: ${aiResult.iterations} iteration(s), analysis score ${aiResult.analysisScore}`);
       }
 
       // Topic-focused deep-inspection content (uses AI strategic implications & takeaways)
