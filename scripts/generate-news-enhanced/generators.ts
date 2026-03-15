@@ -29,6 +29,7 @@ import {
 } from '../data-transformers/index.js';
 import { buildAISwotStakeholders, STAKEHOLDER_NAMES, generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
 import { generateDeepPolicyAnalysis, detectPolicyDomains } from '../data-transformers/policy-analysis.js';
+import { analyzeDashboardData } from '../ai-analysis/dashboard-analyzer.js';
 import { escapeHtml } from '../html-utils.js';
 import { generateArticleHTML } from '../article-template.js';
 import { MCPClient } from '../mcp-client.js';
@@ -1135,6 +1136,12 @@ function buildDeepInspectionSections(
   // ── Dashboard: document type distribution ─────────────────────────────────
   // Normalize SFS-by-name docs (missing doktyp but dokumentnamn starts with 'SFS')
   // so they are counted under 'sfs', consistent with sfsDocs/otherDocs/Sankey filtering.
+  // ── AI-analyzed multi-chart dashboard ─────────────────────────────────────
+  // Produces 3 chart types (radar, scatter, bar) with accessible data tables.
+  const dashboardAnalysis = analyzeDashboardData(docs, topic, lang);
+
+  // Also build the classic document-type distribution bar chart as chart #4
+  // so existing article consumers still see document counts.
   const typeCounts: Record<string, number> = {};
   docs.forEach(d => {
     const raw = d.doktyp || d.documentType || '';
@@ -1146,23 +1153,31 @@ function buildDeepInspectionSections(
   const chartLabels = rawTypeKeys.map(t => docTypeLabel(t, lang, typeCounts[t]));
   const chartValues = rawTypeKeys.map(t => typeCounts[t]);
 
+  const docTypeChart = {
+    id: 'deep-inspection-doc-types',
+    type: 'bar' as const,
+    title: deepLabel('documentsByType', lang),
+    labels: chartLabels,
+    datasets: [{
+      label: deepLabel('documents', lang),
+      data: chartValues,
+      backgroundColor: rawTypeKeys.map((_, i) => DEEP_CHART_PALETTE[i % DEEP_CHART_PALETTE.length]),
+    }],
+  };
+  const docTypeTable = {
+    caption: deepLabel('documentsByType', lang),
+    headers: [deepLabel('documentTypes', lang), deepLabel('documents', lang)],
+    rows: rawTypeKeys.map((t, i) => [docTypeLabel(t, lang, chartValues[i]), String(chartValues[i])]),
+  };
+
   const dashboardSection = generateDashboardSection({
     data: {
       title: topic
         ? `${deepLabel('documentIntelligence', lang)} — ${topic}`
         : deepLabel('documentIntelligence', lang),
-      summary: `${docs.length} ${deepLabel(docs.length === 1 ? 'documentAnalysed' : 'documentsAnalysed', lang)}`,
-      charts: [{
-        id: 'deep-inspection-doc-types',
-        type: 'bar',
-        title: deepLabel('documentsByType', lang),
-        labels: chartLabels,
-        datasets: [{
-          label: deepLabel('documents', lang),
-          data: chartValues,
-          backgroundColor: rawTypeKeys.map((_, i) => DEEP_CHART_PALETTE[i % DEEP_CHART_PALETTE.length]),
-        }],
-      }],
+      summary: dashboardAnalysis.summary,
+      charts: [...dashboardAnalysis.charts, docTypeChart],
+      tables: [...dashboardAnalysis.tables, docTypeTable],
     },
     lang,
   });
