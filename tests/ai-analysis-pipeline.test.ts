@@ -485,14 +485,18 @@ describe('SWOT entry content quality', () => {
     // Pipeline returns plain text for ALL outputs — SWOT entries, mindmap items,
     // dashboard labels, and watch points.  HTML-escaping is the responsibility
     // of downstream renderers (generateStakeholderSwotSection, generateMindmapSection,
-    // generateDashboardSection, generateWatchSection) which call escapeHtml() on
-    // all interpolated text.
+    // generateDashboardSection) which call escapeHtml() on all interpolated text.
+    // For watch points, the deep-inspection call site in generators.ts escapes
+    // AI-derived watch points before passing them to generateWatchSection(),
+    // which renders pre-escaped HTML (to stay compatible with extractWatchPoints()
+    // which already escapes and injects svSpan() HTML markers).
     for (const entry of titleEntries) {
       expect(entry.text).toContain('<script>');
     }
 
     // Watch points also return plain text — raw angle brackets are preserved.
-    // generateWatchSection() escapes title/description at render time.
+    // generators.ts escapes AI watch points at the call site before passing
+    // to generateWatchSection().
     const wpDescs = result.watchPoints.map(wp => wp.description);
     const hasRawTitle = wpDescs.some(d => d.includes('<script>'));
     expect(hasRawTitle).toBe(true);

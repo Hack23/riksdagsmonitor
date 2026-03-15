@@ -404,7 +404,7 @@ function docTitle(doc: RawDocument): string {
 }
 
 function docId(doc: RawDocument): string {
-  return doc.dok_id || '';
+  return doc.dok_id || doc.url || doc.titel || doc.title || doc.dokumentnamn || 'unknown';
 }
 
 /** Test whether a document is an SFS (enacted law/statute) — matches both `doktyp === 'sfs'` and `dokumentnamn` starting with 'SFS'. */
@@ -1513,11 +1513,11 @@ async function validateCompleteness(
       suggestions.push(`${sh.name}: consider adding threat analysis`);
       score -= 2;
     }
-    // Check for low-confidence placeholder-only entries
+    // Check for placeholder-only entries (no document evidence backing them)
     const allEntries = [...strengths, ...weaknesses, ...opportunities, ...threats];
-    const allLowConfidence = allEntries.length > 0 && allEntries.every(e => e.confidence === 'LOW');
-    if (allLowConfidence) {
-      issues.push(`${sh.name}: all SWOT entries are low-confidence placeholders — enrich with document content`);
+    const allPlaceholders = allEntries.length > 0 && allEntries.every(e => e.sourceDocIds.length === 0);
+    if (allPlaceholders) {
+      issues.push(`${sh.name}: all SWOT entries lack document evidence (sourceDocIds empty) — enrich with document content`);
       score -= 10;
     }
   }
