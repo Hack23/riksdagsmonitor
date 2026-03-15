@@ -625,7 +625,7 @@ function buildTimelineBranch(
     return dateStr >= cutoffIso;
   });
 
-  const propDocs = docs.filter(d => ['prop'].includes(d.doktyp || d.documentType || ''));
+  const propDocs = docs.filter(d => (d.doktyp || d.documentType || '') === 'prop');
   const urgencyWeight: AIMindmapItem['weight'] =
     recentDocs.length > 5 ? 'critical' :
     recentDocs.length > 2 ? 'significant' :

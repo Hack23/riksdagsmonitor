@@ -1285,7 +1285,7 @@ function buildDeepInspectionSections(
   // ── Mindmap: AI-driven conceptual map across 5 political dimensions ─────────
   const allDetectedDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
-  const detectedDomainList = [...allDetectedDomains].slice(0, 8);
+  const detectedDomainList = [...allDetectedDomains].slice(0, 6);
 
   // Pass precomputed domains to avoid iterating docs twice
   const aiAnalysis = buildAIMindmapAnalysis(docs, topic, lang, detectedDomainList);

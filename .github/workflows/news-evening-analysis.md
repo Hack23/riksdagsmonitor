@@ -211,30 +211,9 @@ const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 
 
 Filter results to only include items with dates `>= fromDate`:
 ```js
-const filtered = results.filter(item => new Date(item.datum || item.publicerad) >= new Date(fromDate));
-```
-
-```javascript
-// Date calculation using millisecond constants
-const lookbackMs = lookbackHours * 3600000; // 3600000 ms per hour (or 86400000 ms per day)
-const fromDate = new Date(Date.now() - lookbackMs).toISOString().slice(0, 10);
-
-// Post-query date filtering example
-const filteredResults = results.filter(item => new Date(item.datum) >= new Date(fromDate));
-**Date calculation pattern:**
-```javascript
-const today = new Date().toISOString().split('T')[0];
-const dayOfWeek = new Date().getUTCDay(); // 0=Sunday, 6=Saturday
-const lookbackHours = dayOfWeek === 6 ? 120 : 12;
-const fromDate = dayOfWeek === 6
-  ? new Date(Date.now() - 5 * 86400000).toISOString().split('T')[0]  // Monday
-  : new Date(Date.now() - lookbackHours * 3600000).toISOString().split('T')[0];
-```
-
-**Post-query filtering example:**
-```javascript
-const results = get_betankanden({ rm: currentRm, limit: 50 });
-const recent = results.filter(b => new Date(b.publicerad) >= new Date(fromDate));
+const filtered = results.filter(item =>
+  (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10) >= fromDate
+);
 ```
 
 ### Cross-Referencing Strategy
@@ -276,36 +255,6 @@ const votes = search_voteringar({ rm: currentRm, limit: 100 })
 // 2. Get party speeches
 const speeches = search_anforanden({ rm: currentRm, limit: 100 })
   .filter(a => new Date(a.datum) >= new Date(fromDate));
-```
-
-**Example 1: Committee Report Deep Dive**
-```
-// 1. Fetch the committee report
-get_betankanden({ rm: "<rm>", limit: 20 })
-// 2. Cross-reference with related votes
-search_voteringar({ rm: "<rm>", bet: "<bet_id>", limit: 50 })
-// 3. Check for related government propositions
-get_propositioner({ rm: "<rm>", limit: 10 })
-```
-
-**Example 2: Government Activity Analysis**
-```
-// 1. Fetch government propositions
-get_propositioner({ rm: "<rm>", limit: 10 })
-// 2. Cross-reference with committee assignments and reports
-get_betankanden({ rm: "<rm>", limit: 20 })
-// 3. Check opposition motions related to the same topic
-get_motioner({ rm: "<rm>", limit: 20 })
-```
-
-**Example 3: Party Behavior Analysis**
-```
-// 1. Analyze voting patterns
-search_voteringar({ rm: "<rm>", limit: 50 })
-// 2. Cross-reference with filed motions
-get_motioner({ rm: "<rm>", limit: 20 })
-// 3. Check interpellations for accountability questions
-get_interpellationer({ rm: "<rm>", limit: 20 })
 ```
 
 **Troubleshooting**:
