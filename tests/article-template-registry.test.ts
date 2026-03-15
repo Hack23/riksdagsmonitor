@@ -271,37 +271,37 @@ describe('ARTICLE_TYPE_NAMES', () => {
 describe('generateArticleHTML article-type class injection', () => {
   it('should include article-type CSS class in article element for week-ahead', () => {
     const html = generateArticleHTML(makeMockArticleData('week-ahead') as ArticleData);
-    expect(html).toContain('class="news-article article-type-week-ahead"');
+    expect(html).toMatch(/<article[^>]*\bclass="[^"]*\bnews-article\b[^"]*\barticle-type-week-ahead\b/);
   });
 
   it('should include article-type CSS class for propositions', () => {
     const html = generateArticleHTML(makeMockArticleData('propositions') as ArticleData);
-    expect(html).toContain('class="news-article article-type-propositions"');
+    expect(html).toMatch(/<article[^>]*\bclass="[^"]*\bnews-article\b[^"]*\barticle-type-propositions\b/);
   });
 
   it('should include article-type CSS class for motions', () => {
     const html = generateArticleHTML(makeMockArticleData('motions') as ArticleData);
-    expect(html).toContain('class="news-article article-type-motions"');
+    expect(html).toMatch(/<article[^>]*\bclass="[^"]*\bnews-article\b[^"]*\barticle-type-motions\b/);
   });
 
   it('should include article-type CSS class for interpellations', () => {
     const html = generateArticleHTML(makeMockArticleData('interpellations') as ArticleData);
-    expect(html).toContain('class="news-article article-type-interpellations"');
+    expect(html).toMatch(/<article[^>]*\bclass="[^"]*\bnews-article\b[^"]*\barticle-type-interpellations\b/);
   });
 
   it('should include article-type CSS class for breaking', () => {
     const html = generateArticleHTML(makeMockArticleData('breaking') as ArticleData);
-    expect(html).toContain('class="news-article article-type-breaking"');
+    expect(html).toMatch(/<article[^>]*\bclass="[^"]*\bnews-article\b[^"]*\barticle-type-breaking\b/);
   });
 
   it('should include article-type CSS class for deep-inspection', () => {
     const html = generateArticleHTML(makeMockArticleData('deep-inspection') as ArticleData);
-    expect(html).toContain('class="news-article article-type-deep-inspection"');
+    expect(html).toMatch(/<article[^>]*\bclass="[^"]*\bnews-article\b[^"]*\barticle-type-deep-inspection\b/);
   });
 
   it('should include article-type CSS class for committee-reports', () => {
     const html = generateArticleHTML(makeMockArticleData('committee-reports') as ArticleData);
-    expect(html).toContain('class="news-article article-type-committee-reports"');
+    expect(html).toMatch(/<article[^>]*\bclass="[^"]*\bnews-article\b[^"]*\barticle-type-committee-reports\b/);
   });
 
   it('should NOT have a separate article-types.css link (loaded via @import)', () => {
@@ -318,7 +318,7 @@ describe('generateArticleHTML article-type class injection', () => {
     const html = generateArticleHTML(makeMockArticleData('weekly-review') as ArticleData);
     expect(html).toContain('<!DOCTYPE html>');
     expect(html).toContain('<html lang="en">');
-    expect(html).toContain('class="news-article article-type-weekly-review"');
+    expect(html).toMatch(/<article[^>]*\bclass="[^"]*\bnews-article\b[^"]*\barticle-type-weekly-review\b/);
     expect(html).toContain('</html>');
   });
 
@@ -330,7 +330,7 @@ describe('generateArticleHTML article-type class injection', () => {
     const html = generateArticleHTML(data as ArticleData);
     // Should still produce valid HTML with fallback to breaking style
     expect(html).toContain('<!DOCTYPE html>');
-    expect(html).toContain('class="news-article article-type-breaking"');
+    expect(html).toMatch(/<article[^>]*\bclass="[^"]*\bnews-article\b[^"]*\barticle-type-breaking\b/);
   });
 
   it('should use base news-article class when articleType is omitted', () => {

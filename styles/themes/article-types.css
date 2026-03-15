@@ -178,7 +178,8 @@
 .news-article[class*="article-type-"] .swot-analysis,
 .news-article[class*="article-type-"] .stakeholder-swot-analysis,
 .news-article[class*="article-type-"] .article-dashboard,
-.news-article[class*="article-type-"] .economic-dashboard-section {
+.news-article[class*="article-type-"] .economic-dashboard-section,
+.news-article[class*="article-type-"] .economic-dashboard-placeholder {
   border-color: var(--type-accent);
 }
 

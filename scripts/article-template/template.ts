@@ -14,6 +14,7 @@ import type { Language } from '../types/language.js';
 import type { ArticleData, EventGridItem, WatchPoint, TemplateSection } from '../types/article.js';
 import { SITE_TAGLINE, OG_LOCALE_MAP, TYPE_LABELS, ALL_LANG_CODES } from './constants.js';
 import { getStyleClass } from './registry.js';
+import { ARTICLE_TYPE_NAMES } from './types.js';
 import {
   getBreadcrumbName,
   getFooterLabel,
@@ -64,8 +65,16 @@ export function generateArticleHTML(data: ArticleData): string {
   // Fix invalid HTML nesting once so both the rendered body and JSON-LD are consistent
   const fixedContent: string = fixHtmlNesting(content);
 
-  // Fall back to English labels if language not supported
-  const typeLabel: string = TYPE_LABELS[lang]?.[type] || TYPE_LABELS.en[type] || 'News';
+  // Fall back to English labels if language not supported.
+  // When articleType is set, prefer the per-type localized name from
+  // ARTICLE_TYPE_NAMES (e.g. "Propositioner") over the category label
+  // from TYPE_LABELS (e.g. "Analysis").  Fall back to TYPE_LABELS when
+  // articleType is omitted or has no entry.
+  const typeLabel: string = (articleType && ARTICLE_TYPE_NAMES[articleType]?.[lang])
+    || (articleType && ARTICLE_TYPE_NAMES[articleType]?.['en'])
+    || TYPE_LABELS[lang]?.[type]
+    || TYPE_LABELS.en[type]
+    || 'News';
 
   // Derive the per-type CSS class from the registry (e.g. 'article-type-propositions')
   // Only apply when articleType is explicitly set — ArticleCategory values are not
@@ -296,8 +305,6 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
     <a href="${getNewsIndexFilename(ALL_LANG_CODES.includes(lang as Language) ? lang : 'en')}" aria-label="Riksdagsmonitor News">
       <img src="../images/riksdagsmonitornews-logo.webp" alt="Riksdagsmonitor News" class="article-site-logo" width="100" height="100" loading="eager">
     </a>
-    <div class="site-tagline">${SITE_TAGLINE[lang] || SITE_TAGLINE.en}</div>
-    <h1>${escapeHtml(title)}</h1>
     <div class="article-meta">
       <time datetime="${isoDate}">${formattedDate}</time>
       <span class="separator">•</span>
