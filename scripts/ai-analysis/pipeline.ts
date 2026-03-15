@@ -32,7 +32,6 @@ import {
   detectNarrativeFrames,
   assessConfidenceLevel,
 } from '../data-transformers/policy-analysis.js';
-import { escapeHtml } from '../html-utils.js';
 import { extractKeyPassage, cleanMotionText, isPersonProfileText } from '../data-transformers/helpers.js';
 import { localizeDocType } from '../data-transformers/content-generators/index.js';
 
@@ -963,7 +962,6 @@ function buildWatchPoints(
   lang: Language,
 ): AnalysisWatchPoint[] {
   const points: AnalysisWatchPoint[] = [];
-  const esc = escapeHtml;
 
   const propDocs = docs.filter(d => docType(d) === 'prop');
   const betDocs  = docs.filter(d => docType(d) === 'bet');
@@ -971,10 +969,10 @@ function buildWatchPoints(
   const sfsDocs  = docs.filter(isSfsDoc);
   const euDocs   = docs.filter(d => docType(d) === 'fpm');
 
-  const topicSuffix = topic ? ` (${esc(topic)})` : '';
+  const topicSuffix = topic ? ` (${topic})` : '';
 
   if (propDocs.length > 0) {
-    const titles = propDocs.slice(0, 2).map(d => esc(docTitle(d))).join('; ');
+    const titles = propDocs.slice(0, 2).map(d => docTitle(d)).join('; ');
     const descFn = WP_PROPS_DESC[lang] ?? WP_PROPS_DESC.en!;
     points.push({
       title: `${WP_ACTIVE_PROPS[lang] ?? WP_ACTIVE_PROPS.en!}${topicSuffix}`,
@@ -1031,7 +1029,7 @@ function buildWatchPoints(
     const frameList = [...allFrames].slice(0, 3).join(', ');
     points.push({
       title: WP_NARRATIVE[lang] ?? WP_NARRATIVE.en!,
-      description: `${WP_NARRATIVE_DESC[lang] ?? WP_NARRATIVE_DESC.en!}${escapeHtml(frameList)}`,
+      description: `${WP_NARRATIVE_DESC[lang] ?? WP_NARRATIVE_DESC.en!}${frameList}`,
       urgency: 'low',
       sourceDocIds: [],
     });

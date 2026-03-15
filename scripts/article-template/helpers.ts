@@ -149,7 +149,13 @@ ${event.items.map(item => `          <li class="event-item">
 }
 
 /**
- * Generate "Watch Section" with key points
+ * Generate "Watch Section" with key points.
+ *
+ * `WatchPoint.title` and `.description` are **plain text** (not pre-escaped).
+ * This renderer applies `escapeHtml()` to both fields before interpolating
+ * them into the HTML template — consistent with the pipeline-wide contract
+ * that all analysis outputs are plain text and escaping happens at the
+ * render site exactly once.
  */
 export function generateWatchSection(watchPoints: ReadonlyArray<WatchPoint>, lang: Language = 'en'): string {
   const title: string = WATCH_SECTION_TITLES[lang] || WATCH_SECTION_TITLES.en;
@@ -159,7 +165,7 @@ export function generateWatchSection(watchPoints: ReadonlyArray<WatchPoint>, lan
       <h2>${title}</h2>
       <ul class="watch-list">
 ${watchPoints.map(point => `        <li>
-          <strong>${point.title}:</strong> ${point.description}
+          <strong>${escapeHtml(point.title)}:</strong> ${escapeHtml(point.description)}
         </li>`).join('\n')}
       </ul>
     </section>`;

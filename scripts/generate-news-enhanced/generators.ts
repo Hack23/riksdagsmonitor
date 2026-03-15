@@ -1970,7 +1970,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
 
       // Metadata derived from document data
       const contentData = { documents: enrichedDocs as Parameters<typeof generateArticleContent>[0]['documents'] };
-      // Use AI-derived watch points (richer than the generic extractWatchPoints)
+      // Use AI-derived watch points (plain text — escaping handled by generateWatchSection renderer)
       const watchPoints = analysis.watchPoints.map(wp => ({ title: wp.title, description: wp.description }));
       const metadata = generateMetadata(contentData, 'deep-inspection', lang);
       const readTime: string = calculateReadTime(content);

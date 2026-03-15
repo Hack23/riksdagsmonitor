@@ -77,9 +77,16 @@ export interface AnalysisStakeholderSwot {
 /**
  * A single watch point derived from document analysis.
  * Replaces hardcoded watch-point templates.
+ *
+ * All string fields (`title`, `description`) contain **plain text** — HTML
+ * escaping is performed by the downstream renderer (`generateWatchSection`)
+ * at interpolation time, consistent with the escaping contract for all other
+ * pipeline outputs (SWOT entries, mindmap items, dashboard labels).
  */
 export interface AnalysisWatchPoint {
+  /** Plain-text watch point heading (escaped by renderer) */
   title: string;
+  /** Plain-text watch point body (escaped by renderer) */
   description: string;
   /** Urgency level for display sorting */
   urgency: 'critical' | 'high' | 'medium' | 'low';
