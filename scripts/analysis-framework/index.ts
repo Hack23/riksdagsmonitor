@@ -124,12 +124,17 @@ export function analyzeDocuments(
   const startMs = Date.now();
 
   // Per-document analyses (no cross-references yet)
-  const results: DocumentAnalysisResult[] = docs.map(doc =>
-    analyzeDocument(doc, cia, lang)
-  );
+  // Build a shared domain map so detectCrossDocumentLinks() doesn't re-compute.
+  const domainMap = new Map<string, string[]>();
+  const results: DocumentAnalysisResult[] = docs.map(doc => {
+    const domains = detectPolicyDomains(doc, 'en');
+    const id = doc.dok_id || doc.url || doc.titel || '';
+    domainMap.set(id, domains);
+    return analyzeDocument(doc, cia, lang);
+  });
 
-  // Cross-document link detection across the full batch
-  const crossDocumentLinks = detectCrossDocumentLinks(docs);
+  // Cross-document link detection across the full batch — reuses domain map
+  const crossDocumentLinks = detectCrossDocumentLinks(docs, domainMap);
 
   // Attach relevant links to each document result
   for (const result of results) {

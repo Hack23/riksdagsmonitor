@@ -164,6 +164,27 @@ function detectAmends(docs: RawDocument[]): DocumentLink[] {
 }
 
 /**
+ * Test whether `text` contains the term, using word-boundary regex when the
+ * term is a substring of its conflict partner (e.g. "reglering" inside
+ * "avreglering").  This prevents compound-word matches from masking the
+ * simpler term.
+ */
+function matchesTerm(text: string, term: string, needsBoundary: boolean): boolean {
+  if (!needsBoundary) return text.includes(term);
+  // Word-boundary match: the term must not be preceded by a letter
+  return new RegExp(`(?<![a-zåäö])${escapeForRegex(term)}`, 'i').test(text);
+}
+
+function escapeForRegex(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/** Pre-computed flags: true when one conflict term is a substring of the other */
+const BOUNDARY_FLAGS: ReadonlyArray<readonly [boolean, boolean]> = CONFLICT_PAIRS.map(
+  ([a, b]) => [b.includes(a), a.includes(b)] as const
+);
+
+/**
  * Detect "contradicts" links: documents with opposing policy positions.
  */
 function detectContradicts(docs: RawDocument[]): DocumentLink[] {
@@ -176,11 +197,14 @@ function detectContradicts(docs: RawDocument[]): DocumentLink[] {
       const textA = docText(docA);
       const textB = docText(docB);
 
-      for (const [termA, termB] of CONFLICT_PAIRS) {
-        const aHasA = textA.includes(termA.toLowerCase());
-        const aHasB = textA.includes(termB.toLowerCase());
-        const bHasA = textB.includes(termA.toLowerCase());
-        const bHasB = textB.includes(termB.toLowerCase());
+      for (let p = 0; p < CONFLICT_PAIRS.length; p++) {
+        const [termA, termB] = CONFLICT_PAIRS[p];
+        const [aNeedsBoundary, bNeedsBoundary] = BOUNDARY_FLAGS[p];
+
+        const aHasA = matchesTerm(textA, termA.toLowerCase(), aNeedsBoundary);
+        const aHasB = matchesTerm(textA, termB.toLowerCase(), bNeedsBoundary);
+        const bHasA = matchesTerm(textB, termA.toLowerCase(), aNeedsBoundary);
+        const bHasB = matchesTerm(textB, termB.toLowerCase(), bNeedsBoundary);
 
         // True contradiction: one doc has term A, the other has term B (not both)
         if ((aHasA && !aHasB) && (bHasB && !bHasA)) {
@@ -273,16 +297,24 @@ function deduplicateLinks(links: DocumentLink[]): DocumentLink[] {
  * - `contradicts`   — Documents with opposing policy positions
  * - `related-topic` — Thematically related documents (≥2 shared domains)
  *
- * @param docs - Batch of documents to cross-reference
- * @returns    Deduplicated array of detected `DocumentLink` objects
+ * @param docs            - Batch of documents to cross-reference
+ * @param precomputedMap  - Optional pre-computed domain map (docId → domains).
+ *                          When provided, avoids redundant `detectPolicyDomains`
+ *                          calls for documents already analysed in `analyzeDocuments()`.
+ * @returns               Deduplicated array of detected `DocumentLink` objects
  */
-export function detectCrossDocumentLinks(docs: RawDocument[]): DocumentLink[] {
+export function detectCrossDocumentLinks(
+  docs: RawDocument[],
+  precomputedMap?: Map<string, string[]>,
+): DocumentLink[] {
   if (docs.length < 2) return [];
 
-  // Pre-compute domains once for the entire batch — shared by detectImplements and detectRelatedTopics
-  const domainCache = new Map<string, string[]>();
-  for (const doc of docs) {
-    domainCache.set(docId(doc), detectPolicyDomains(doc, 'en'));
+  // Re-use caller-provided domain map or build one from scratch
+  const domainCache = precomputedMap ?? new Map<string, string[]>();
+  if (!precomputedMap) {
+    for (const doc of docs) {
+      domainCache.set(docId(doc), detectPolicyDomains(doc, 'en'));
+    }
   }
 
   const all: DocumentLink[] = [
