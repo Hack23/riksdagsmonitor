@@ -674,26 +674,24 @@ describe('analyzeDocument — caching', () => {
 
   it('evicts oldest entry when cache exceeds MAX_CACHE_SIZE', () => {
     clearAnalysisCache();
-    // Fill the cache with MAX_CACHE_SIZE entries
+    // Fill the cache with exactly MAX_CACHE_SIZE entries
     const results: ReturnType<typeof analyzeDocument>[] = [];
     for (let i = 0; i < MAX_CACHE_SIZE; i++) {
       results.push(analyzeDocument({ dok_id: `EVICT-${i}`, titel: `Doc ${i}`, doktyp: 'prop' }, 'en'));
     }
-    // The first entry IS still cached (cache not yet full)
+    // The first entry is still cached (cache is exactly at capacity)
     const firstCached = analyzeDocument({ dok_id: 'EVICT-0', titel: 'Doc 0', doktyp: 'prop' }, 'en');
     expect(firstCached).toBe(results[0]);
 
-    // Insert one more → cache has MAX_CACHE_SIZE + 1, eviction fires
-    analyzeDocument({ dok_id: 'EVICT-EXTRA', titel: 'Extra', doktyp: 'prop' }, 'en');
+    // Insert one more → cache exceeds MAX_CACHE_SIZE, eviction fires
+    const extraResult = analyzeDocument({ dok_id: 'EVICT-EXTRA', titel: 'Extra', doktyp: 'prop' }, 'en');
 
     // The first entry should have been evicted; analysing it again produces a new object
     const firstAfterEviction = analyzeDocument({ dok_id: 'EVICT-0', titel: 'Doc 0', doktyp: 'prop' }, 'en');
     expect(firstAfterEviction).not.toBe(results[0]);
 
-    // The extra entry IS still cached
-    const extraAgain = analyzeDocument({ dok_id: 'EVICT-EXTRA', titel: 'Extra', doktyp: 'prop' }, 'en');
-    const extraOnce = analyzeDocument({ dok_id: 'EVICT-EXTRA', titel: 'Extra', doktyp: 'prop' }, 'en');
-    expect(extraOnce).toBe(extraAgain);
+    // The extra entry IS still cached (same reference on re-request)
+    expect(analyzeDocument({ dok_id: 'EVICT-EXTRA', titel: 'Extra', doktyp: 'prop' }, 'en')).toBe(extraResult);
   });
 });
 
