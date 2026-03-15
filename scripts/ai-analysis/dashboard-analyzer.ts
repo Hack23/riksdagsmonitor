@@ -268,7 +268,7 @@ const TIMELINE_RISK_KEYWORDS = [
 
 /**
  * Count how many risk keywords appear in a document's text fields.
- * Looks at title, summary, and a portion of fullText.
+ * Looks at title, summary, and a portion of fullText (or fullContent as fallback).
  */
 function countKeywords(doc: RawDocument, keywords: string[]): number {
   const haystack = [
@@ -487,7 +487,7 @@ function buildLegislativePipelineChart(
   // Aggregate counts per stage
   const stageCounts: Record<string, number> = {};
   docs.forEach(doc => {
-    const t = (doc.doktyp ?? doc.documentType ?? 'mot').toLowerCase();
+    const t = (doc.doktyp ?? doc.documentType ?? 'other').toLowerCase();
     const stageKey = DOC_TYPE_TO_STAGE[t] ?? 'parliamentaryMotion';
     stageCounts[stageKey] = (stageCounts[stageKey] ?? 0) + 1;
   });
