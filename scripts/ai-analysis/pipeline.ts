@@ -416,9 +416,11 @@ function extractPassage(doc: RawDocument, maxChars = 400): string | null {
   return extractKeyPassage(cleaned, maxChars) || null;
 }
 
-/** Return a SwotEntry text built from a document title — concise but explicit. */
+/**
+ * Return a SwotEntry text built from a document title — concise but explicit.
+ * Returns plain text; HTML-escaping happens at the render site (section generators).
+ */
 function entryFromDoc(doc: RawDocument, topic: string | null, lang: Language): string {
-  const esc = escapeHtml;
   const title = docTitle(doc);
   const type = docType(doc);
   const typeLabel = type ? localizeDocType(type, lang, 1) : '';
@@ -427,10 +429,10 @@ function entryFromDoc(doc: RawDocument, topic: string | null, lang: Language): s
     // Explicit relevance framing when a focus topic is present
     const relevance = relevantLabel(lang);
     return typeLabel
-      ? `${esc(typeLabel)}: ${esc(title)} — ${relevance} ${esc(topic)}`
-      : `${esc(title)} — ${relevance} ${esc(topic)}`;
+      ? `${typeLabel}: ${title} — ${relevance} ${topic}`
+      : `${title} — ${relevance} ${topic}`;
   }
-  return typeLabel ? `${esc(typeLabel)}: ${esc(title)}` : esc(title);
+  return typeLabel ? `${typeLabel}: ${title}` : title;
 }
 
 /** Small localised phrase: "relevant to" / "relevant för" … */
@@ -458,7 +460,6 @@ function buildEnrichedEntry(
   passageMaxChars: number,
 ): AnalysisSwotEntry {
   const passage = extractPassage(doc, passageMaxChars);
-  const esc = escapeHtml;
   const type = docType(doc);
   const domainAnalysis = detectPolicyDomains(doc, lang);
   const domainText = domainAnalysis.length > 0
@@ -468,8 +469,7 @@ function buildEnrichedEntry(
   let text: string;
   if (passage) {
     // Content-derived: lead with passage excerpt, append domain context
-    const passageHtml = esc(passage);
-    text = domainText ? `${passageHtml} — ${domainText}` : passageHtml;
+    text = domainText ? `${passage} — ${domainText}` : passage;
   } else {
     // Metadata-derived: title + domain context
     text = entryFromDoc(doc, topic, lang);
@@ -524,8 +524,8 @@ function buildPlaceholderText(
   domain: string | null,
   lang: Language,
 ): string {
-  const topicFrag = topic ? ` (${escapeHtml(topic)})` : '';
-  const domainFrag = domain ? ` in ${escapeHtml(domain)}` : '';
+  const topicFrag = topic ? ` (${topic})` : '';
+  const domainFrag = domain ? ` in ${domain}` : '';
 
   // English composition — other languages use the same structure for consistency
   // Future AI integration point: replace this function with an LLM prompt.
@@ -557,48 +557,37 @@ function buildPlaceholderText(
   return applyLanguageFraming(text, lang, role, quadrant, topic, domain);
 }
 
-/**
- * Apply language-specific framing to a placeholder text.
- * Provides localised SWOT placeholder compositions for all 14 supported languages
- * so non-English articles render in their target language.
- */
-function applyLanguageFraming(
-  enText: string,
-  lang: Language,
-  role: string,
-  quadrant: string,
-  topic: string | null,
-  domain: string | null,
-): string {
-  if (lang === 'en') return enText;
+// ---------------------------------------------------------------------------
+// SWOT composition builders (module-level constant — hoisted from applyLanguageFraming)
+// ---------------------------------------------------------------------------
 
-  type RoleCompositions = Record<string, Record<string, string>>;
-  type SwotCompositionBuilder = (topicFrag: string, domainFrag: string) => RoleCompositions;
+type SwotRoleCompositions = Record<string, Record<string, string>>;
+type SwotCompositionBuilder = (topicFrag: string, domainFrag: string) => SwotRoleCompositions;
 
-  const builders: Partial<Record<Language, { domainPrep: string; builder: SwotCompositionBuilder }>> = {
-    sv: {
-      domainPrep: 'inom',
-      builder: (tf, df) => ({
-        government: {
-          strengths: `Lagstiftningsbehörighet och exekutiv agendasättningskapacitet${tf}${df} genom propositioner och förordningar`,
-          weaknesses: `Genomföranderisker och resursallokeringsutmaningar${tf}${df} som kräver myndighetssamordning`,
-          opportunities: `EU-reglering och internationella samarbetsramverk${tf}${df} för politikutveckling`,
-          threats: `Parlamentarisk oppositionsgranskning och utskottsändringsrisker${tf}${df} som kan fördröja eller modifiera lagstiftningsresultat`,
-        },
-        parliament: {
-          strengths: `Tillsynsmandat och utskottsgranskning${tf}${df} genom betänkanden och kammardebatten`,
-          weaknesses: `Informationsasymmetri gentemot den exekutiva grenen${tf}${df} i genomförandedetaljer`,
-          opportunities: `Konsensusbyggande över partigränser${tf}${df} för att stärka lagstiftning`,
-          threats: `Regeringsmajoriteten begränsar effektiv ändringskapacitet${tf}${df} i utskott och kammare`,
-        },
-        'private-sector': {
-          strengths: `Domänexpertis, operativ kapacitet och sektorsspecifik kunskap${tf}${df} som påverkar policyutformning`,
-          weaknesses: `Efterlevnadsanpassningsbörda och regulatorisk osäkerhet${tf}${df} som skapar planeringsutmaningar`,
-          opportunities: `Policydriven investering, innovationspotential och marknadsutveckling${tf}${df}`,
-          threats: `Snabb policyutveckling och korta genomförandetidsplaner${tf}${df} skapar konkurrensmässig osäkerhet`,
-        },
-      }),
-    },
+const SWOT_LANGUAGE_BUILDERS: Partial<Record<Language, { domainPrep: string; builder: SwotCompositionBuilder }>> = {
+  sv: {
+    domainPrep: 'inom',
+    builder: (tf, df) => ({
+      government: {
+        strengths: `Lagstiftningsbehörighet och exekutiv agendasättningskapacitet${tf}${df} genom propositioner och förordningar`,
+        weaknesses: `Genomföranderisker och resursallokeringsutmaningar${tf}${df} som kräver myndighetssamordning`,
+        opportunities: `EU-reglering och internationella samarbetsramverk${tf}${df} för politikutveckling`,
+        threats: `Parlamentarisk oppositionsgranskning och utskottsändringsrisker${tf}${df} som kan fördröja eller modifiera lagstiftningsresultat`,
+      },
+      parliament: {
+        strengths: `Tillsynsmandat och utskottsgranskning${tf}${df} genom betänkanden och kammardebatten`,
+        weaknesses: `Informationsasymmetri gentemot den exekutiva grenen${tf}${df} i genomförandedetaljer`,
+        opportunities: `Konsensusbyggande över partigränser${tf}${df} för att stärka lagstiftning`,
+        threats: `Regeringsmajoriteten begränsar effektiv ändringskapacitet${tf}${df} i utskott och kammare`,
+      },
+      'private-sector': {
+        strengths: `Domänexpertis, operativ kapacitet och sektorsspecifik kunskap${tf}${df} som påverkar policyutformning`,
+        weaknesses: `Efterlevnadsanpassningsbörda och regulatorisk osäkerhet${tf}${df} som skapar planeringsutmaningar`,
+        opportunities: `Policydriven investering, innovationspotential och marknadsutveckling${tf}${df}`,
+        threats: `Snabb policyutveckling och korta genomförandetidsplaner${tf}${df} skapar konkurrensmässig osäkerhet`,
+      },
+    }),
+  },
     da: {
       domainPrep: 'inden for',
       builder: (tf, df) => ({
@@ -875,12 +864,27 @@ function applyLanguageFraming(
         },
       }),
     },
-  };
+};
 
-  const entry = builders[lang];
+/**
+ * Apply language-specific framing to a placeholder text.
+ * Provides localised SWOT placeholder compositions for all 14 supported languages
+ * so non-English articles render in their target language.
+ */
+function applyLanguageFraming(
+  enText: string,
+  lang: Language,
+  role: string,
+  quadrant: string,
+  topic: string | null,
+  domain: string | null,
+): string {
+  if (lang === 'en') return enText;
+
+  const entry = SWOT_LANGUAGE_BUILDERS[lang];
   if (entry) {
-    const topicFrag = topic ? ` (${escapeHtml(topic)})` : '';
-    const domainFrag = domain ? ` ${entry.domainPrep} ${escapeHtml(domain)}` : '';
+    const topicFrag = topic ? ` (${topic})` : '';
+    const domainFrag = domain ? ` ${entry.domainPrep} ${domain}` : '';
     const compositions = entry.builder(topicFrag, domainFrag);
     const roleComposition = compositions[role] ?? compositions['government']!;
     const text = roleComposition[quadrant];
@@ -921,11 +925,11 @@ function buildPolicyAssessment(
   const parlActivity = NARRATIVE_PARLIAMENTARY_ACTIVITY[lang] ?? NARRATIVE_PARLIAMENTARY_ACTIVITY.en!;
   const focusLabel = NARRATIVE_FOCUS[lang] ?? NARRATIVE_FOCUS.en!;
 
-  const domainList = domains.slice(0, 3).map(d => escapeHtml(d)).join(', ');
+  const domainList = domains.slice(0, 3).join(', ');
   const activityPhrase = domains.length > 0
     ? `${policyActivity} ${domainList}`
     : parlActivity;
-  const topicPhrase = topic ? ` ${focusLabel} ${escapeHtml(topic)}` : '';
+  const topicPhrase = topic ? ` ${focusLabel} ${topic}` : '';
   const narrative = `${analysisOf} ${evidenceDesc} ${reveals} ${activityPhrase}${topicPhrase}.`;
 
   return { domains, primaryDomain, narrative, confidence };
@@ -1134,7 +1138,7 @@ function buildDashboardData(
   }));
 
   const docIntelLabel = DASHBOARD_TITLE[lang] ?? DASHBOARD_TITLE.en!;
-  const title = topic ? `${docIntelLabel} — ${escapeHtml(topic)}` : docIntelLabel;
+  const title = topic ? `${docIntelLabel} — ${topic}` : docIntelLabel;
   const docsAnalysedFn = DASHBOARD_DOCS_ANALYSED[lang] ?? DASHBOARD_DOCS_ANALYSED.en!;
   const summary = docsAnalysedFn(docs.length);
 

@@ -425,31 +425,30 @@ describe('SWOT entry content quality', () => {
     expect(weakPlaceholders.length).toBeGreaterThanOrEqual(1);
   });
 
-  it('XSS: escapes HTML in document titles within SWOT entries', async () => {
+  it('XSS: pipeline returns plain text; escaping deferred to render site', async () => {
     const xssDoc: RawDocument = {
       dok_id: 'XSS001',
       doktyp: 'prop',
       titel: '<script>alert("xss")</script>',
     };
     const result = await aiAnalysisPipeline.analyzeDocuments([xssDoc], makeOptions());
-    const allText = result.stakeholderSwot.flatMap(sh => [
-      ...sh.swot.strengths,
-      ...sh.swot.weaknesses,
-      ...sh.swot.opportunities,
-      ...sh.swot.threats,
-    ]).map(e => e.text).join(' ');
-
-    // Must not contain raw HTML tags or unescaped script
-    expect(allText).not.toContain('<script>');
-    expect(allText).not.toContain('</script>');
-    // Positive assertion: the title content should be HTML-escaped when present
-    // (document title entry text either uses the escaped version or is a placeholder)
     const titleEntries = result.stakeholderSwot
       .flatMap(sh => sh.swot.strengths)
       .filter(e => e.sourceDocIds.includes('XSS001'));
+
+    // Pipeline returns plain text — the raw title is preserved as-is.
+    // HTML-escaping is the responsibility of downstream section generators
+    // (generateStakeholderSwotSection, generateMindmapSection, etc.)
+    // which call escapeHtml() on all interpolated text.
     for (const entry of titleEntries) {
-      // Raw script tags must be absent; entities (&lt;, &gt;) or sanitized content is expected
-      expect(entry.text).not.toMatch(/<script[\s>]/i);
+      expect(entry.text).toContain('<script>');
+    }
+
+    // Watch points *do* escape because generateWatchSection() interpolates
+    // title/description directly without escaping.
+    for (const wp of result.watchPoints) {
+      expect(wp.title).not.toMatch(/<script[\s>]/i);
+      expect(wp.description).not.toMatch(/<script[\s>]/i);
     }
   });
 });

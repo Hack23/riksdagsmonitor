@@ -1271,14 +1271,16 @@ function buildDeepInspectionSectionsFromAnalysis(
   const euDocs     = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
   const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
   const extDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
-  const otherDocs  = docs.filter(d => !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || ''));
+  const otherDocs  = docs.filter(d =>
+    !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || '')
+    && !(d.dokumentnamn || '').startsWith('SFS'));
 
   // Select stakeholder names by role key (not array index) to avoid silent mislabeling
   const findStakeholderName = (role: string, fallback: string): string =>
     analysis.stakeholderSwot.find(s => s.role === role)?.name ?? fallback;
   const govName     = findStakeholderName('government', 'Government');
   const oppName     = findStakeholderName('parliament', 'Parliament');
-  const privateName = findStakeholderName('private-sector', 'Civil Society');
+  const privateName = findStakeholderName('private-sector', 'Private Sector');
 
   const sankeyNodes: SankeyNode[] = [
     { id: 'gov', label: govName,     color: 'cyan' },
