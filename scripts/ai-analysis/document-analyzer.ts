@@ -210,14 +210,21 @@ export interface PrecomputedContext {
 }
 
 /**
- * WeakMap cache for content fingerprints.
+ * WeakMap cache for content fingerprints, storing both the SHA-256 digest
+ * and a lightweight guard derived from content field lengths.
  *
- * Avoids re-hashing large `fullText`/`fullContent` payloads on repeated
- * `analyzeDocument()` calls when the same object reference is reused.
- * Uses `WeakMap` so that fingerprints are garbage-collected when the
- * document object is no longer referenced.
+ * On cache hit the guard is re-checked against the current field lengths.
+ * If any content field was mutated in place (e.g. `fullText` added after
+ * an initial metadata-only analysis) the guard will mismatch and the
+ * fingerprint is recomputed.  This prevents stale fingerprints when
+ * documents are enriched by mutation (the production enrichment path).
  */
-const _fingerprintCache = new WeakMap<RawDocument, string>();
+const _fingerprintCache = new WeakMap<RawDocument, { fp: string; guard: string }>();
+
+/** Lightweight signature of content field lengths for mutation detection. */
+function contentGuard(doc: RawDocument): string {
+  return `${doc.fullText?.length ?? -1}|${doc.summary?.length ?? -1}|${doc.fullContent?.length ?? -1}|${doc.notis?.length ?? -1}`;
+}
 
 /**
  * Return a truncated SHA-256 hex digest of the document's content fields.
@@ -229,12 +236,16 @@ const _fingerprintCache = new WeakMap<RawDocument, string>();
  * A real hash (vs. simple length sums) ensures that different content of the
  * same combined length cannot collide.
  *
- * Results are cached in a WeakMap keyed by object identity, so repeated
- * calls with the same document reference skip the SHA-256 computation.
+ * Results are cached in a WeakMap keyed by object identity **plus** a
+ * lightweight content-length guard.  When a document object is mutated in
+ * place (e.g. `doc.fullText = "..."` added during enrichment) the guard
+ * changes, triggering a re-hash so that subsequent `analyzeDocument()`
+ * calls receive a fresh analysis instead of the stale pre-enrichment one.
  */
 function contentFingerprint(doc: RawDocument): string {
+  const guard = contentGuard(doc);
   const cached = _fingerprintCache.get(doc);
-  if (cached !== undefined) return cached;
+  if (cached !== undefined && cached.guard === guard) return cached.fp;
   const payload = [
     doc.fullText ?? '',
     doc.summary ?? '',
@@ -242,7 +253,7 @@ function contentFingerprint(doc: RawDocument): string {
     doc.notis ?? '',
   ].join('\x00');
   const fp = createHash('sha256').update(payload).digest('hex').slice(0, 32);
-  _fingerprintCache.set(doc, fp);
+  _fingerprintCache.set(doc, { fp, guard });
   return fp;
 }
 

@@ -654,6 +654,22 @@ describe('analyzeDocument — caching', () => {
     // But document identity is stable
     expect(after.documentId).toBe(before.documentId);
   });
+
+  it('cache invalidates when same object is mutated in place (production enrichment path)', () => {
+    clearAnalysisCache();
+    // Start with a bare metadata-only document
+    const doc: RawDocument = { dok_id: 'MUTATE-1', titel: 'Mutation test', doktyp: 'prop' };
+    const before = analyzeDocument(doc, 'en');
+    // Production enrichment mutates the SAME object reference
+    (doc as Record<string, unknown>).fullText = 'Full text added by in-place enrichment about healthcare.';
+    (doc as Record<string, unknown>).fullContent = '<p>HTML content about healthcare reform</p>';
+    const after = analyzeDocument(doc, 'en');
+    // Despite being the same object reference, the fingerprint guard detects
+    // the mutation so a fresh analysis is returned
+    expect(after).not.toBe(before);
+    // Document identity remains stable (same dok_id)
+    expect(after.documentId).toBe(before.documentId);
+  });
 });
 
 // ---------------------------------------------------------------------------
