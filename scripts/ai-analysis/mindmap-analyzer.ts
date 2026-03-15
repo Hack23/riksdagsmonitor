@@ -432,6 +432,7 @@ function pass2RelationshipDiscovery(
   const connections: BranchConnection[] = [];
 
   const organs = extractOrgans(docs);
+  const hasPipelineBranch = classified.propositions.length + classified.committeeReports.length + classified.laws.length > 0;
 
   // Cross-committee dependencies
   if (organs.length > 1) {
@@ -442,13 +443,15 @@ function pass2RelationshipDiscovery(
       importance: organs.length >= 3 ? 'high' : 'medium',
       items: organs.slice(0, 6),
     });
-    // Mark dependency from legislative pipeline to cross-committee
-    connections.push({
-      from: L(LABELS.legislativePipeline, lang, 'Legislative Pipeline'),
-      to: L(LABELS.crossCommitteeDeps, lang, 'Cross-Committee Dependencies'),
-      type: 'dependency',
-      label: L(CONNECTION_LABELS.committeesInvolved, lang, '{n} committees involved').replace('{n}', String(organs.length)),
-    });
+    // Mark dependency from legislative pipeline to cross-committee — only when pipeline branch exists
+    if (hasPipelineBranch) {
+      connections.push({
+        from: L(LABELS.legislativePipeline, lang, 'Legislative Pipeline'),
+        to: L(LABELS.crossCommitteeDeps, lang, 'Cross-Committee Dependencies'),
+        type: 'dependency',
+        label: L(CONNECTION_LABELS.committeesInvolved, lang, '{n} committees involved').replace('{n}', String(organs.length)),
+      });
+    }
   }
 
   // Stakeholder network — built from document actors (names, authors, political parties)
@@ -515,12 +518,15 @@ function pass2RelationshipDiscovery(
       importance: 'high',
       items: uniqueEuDocs.slice(0, 4).map(d => titleOf(d)),
     });
-    connections.push({
-      from: L(LABELS.legislativePipeline, lang, 'Legislative Pipeline'),
-      to: L(LABELS.euInternationalContext, lang, 'EU & International Context'),
-      type: 'alignment',
-      label: L(CONNECTION_LABELS.euTransposition, lang, 'EU transposition obligations'),
-    });
+    // Only emit pipeline → EU connection when the pipeline branch actually exists
+    if (hasPipelineBranch) {
+      connections.push({
+        from: L(LABELS.legislativePipeline, lang, 'Legislative Pipeline'),
+        to: L(LABELS.euInternationalContext, lang, 'EU & International Context'),
+        type: 'alignment',
+        label: L(CONNECTION_LABELS.euTransposition, lang, 'EU transposition obligations'),
+      });
+    }
   }
 
   return { branches, connections };
@@ -555,8 +561,8 @@ function pass3ValidationAndCompleteness(
     });
   }
 
-  // Legislative timeline — add dates from documents
-  const datedDocs = docs.filter(d => d.datum).sort((a, b) => (a.datum! > b.datum! ? 1 : -1));
+  // Legislative timeline — add dates from documents (oldest-first, stable on ties)
+  const datedDocs = docs.filter(d => d.datum).sort((a, b) => a.datum!.localeCompare(b.datum!));
   if (datedDocs.length >= 2) {
     const timelineItems = datedDocs.slice(0, 5).map(d => `${d.datum} — ${titleOf(d)}`);
     branches.push({
@@ -641,7 +647,9 @@ function generateSummary(
   const domainList = [...allDomains].slice(0, 3);
 
   const organs = extractOrgans(docs);
-  const docTypeCount = new Set(docs.map(d => d.doktyp || d.documentType).filter(Boolean)).size;
+  // Normalize doc types: map isSfsDoc() documents to 'sfs' so SFS detected via
+  // dokumentnamn.startsWith('SFS') (without doktyp) are counted consistently.
+  const docTypeCount = new Set(docs.map(d => isSfsDoc(d) ? 'sfs' : (d.doktyp || d.documentType)).filter(Boolean)).size;
   const euNote = hasEuConnection(docs) ? (L(EU_NOTES, lang, 'EU obligations form an important external driver.')) : '';
 
   const template = L(SUMMARY_TEMPLATES, lang,
