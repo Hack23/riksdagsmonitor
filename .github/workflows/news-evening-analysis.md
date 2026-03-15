@@ -221,12 +221,20 @@ const lookbackMs = parseInt(lookback_hours) * 3600000; // 3600000 ms per hour
 const fromDate = new Date(now.getTime() - lookbackMs).toISOString().slice(0, 10);
 // For weekly review (Saturday): 5 * 86400000 ms = 5 days
 const weekStart = new Date(now.getTime() - 5 * 86400000).toISOString().slice(0, 10);
+const today = new Date().toISOString().split('T')[0];
+const dayOfWeek = new Date().getUTCDay(); // 0=Sunday, 6=Saturday
+const lookbackHours = dayOfWeek === 6 ? 120 : 12;
+const fromDate = dayOfWeek === 6
+  ? new Date(Date.now() - 5 * 86400000).toISOString().split('T')[0]  // Monday
+  : new Date(Date.now() - lookbackHours * 3600000).toISOString().split('T')[0];
 ```
 
 **Post-query filtering example:**
 ```javascript
 const recentBetankanden = allBetankanden.filter(b => new Date(b.publicerad) >= new Date(fromDate));
 const recentMotioner = allMotioner.filter(m => new Date(m.inlämnad) >= new Date(fromDate));
+const results = get_betankanden({ rm: currentRm, limit: 50 });
+const recent = results.filter(b => new Date(b.publicerad) >= new Date(fromDate));
 ```
 
 ### Cross-Referencing Strategy
@@ -258,19 +266,41 @@ Example 1: Committee Report Deep Dive
 // 2. Cross-reference with voting records for the same beteckning
 // 3. Enrich with related speeches from the same debate
 ```
+**Example 1: Committee Report Deep Dive**
+```javascript
+// 1. Get recent committee reports
+const betankanden = get_betankanden({ rm: currentRm, limit: 20 });
+const recentBet = betankanden.filter(b => new Date(b.publicerad) >= new Date(fromDate));
 
-Example 2: Government Activity Analysis
-```
-// 1. Fetch government propositions for the period
-// 2. Cross-reference with opposition motions referencing the same prop
-// 3. Check committee assignments and processing status
+// 2. For each report, get full details
+const reportDetails = recentBet.map(bet =>
+  get_dokument({ dok_id: bet.dok_id, include_full_text: false })
+);
+
+// 3. Check related votes
+const relatedVotes = search_voteringar({ rm: currentRm, limit: 50 })
+  .filter(v => recentBet.some(bet => v.bet === bet.beteckning));
 ```
 
-Example 3: Party Behavior Analysis
+**Example 2: Government Activity Analysis**
+```javascript
+// 1. Get government documents in date range
+const govDocs = search_regering({ dateFrom: fromDate, dateTo: today, limit: 30 });
+
+// 2. Get related propositions
+const propositions = get_propositioner({ rm: currentRm, limit: 20 })
+  .filter(p => new Date(p.publicerad) >= new Date(fromDate));
 ```
-// 1. Gather voting records by party
-// 2. Cross-reference with interpellations and written questions
-// 3. Identify patterns in party opposition strategy
+
+**Example 3: Party Behavior Analysis**
+```javascript
+// 1. Get party voting records
+const votes = search_voteringar({ rm: currentRm, limit: 100 })
+  .filter(v => new Date(v.datum) >= new Date(fromDate));
+
+// 2. Get party speeches
+const speeches = search_anforanden({ rm: currentRm, limit: 100 })
+  .filter(a => new Date(a.datum) >= new Date(fromDate));
 ```
 
 ### Saturday vs Weekday Mode
