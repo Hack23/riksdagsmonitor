@@ -810,4 +810,85 @@ describe('generateMultiPanelDashboardSection', () => {
     expect(section.html).toContain('id="p1-heading"');
     expect(section.html).toContain('id="p1-heading-1"');
   });
+
+  // ------- Review round 7: validation & ARIA hardening -------
+
+  it('validates layout against allowed set and falls back to grid-2x2 for invalid values', () => {
+    const data = makeDashboard({
+      layout: 'invalid-layout' as any,
+      panels: [makeChartPanel({ id: 'p1' })],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('class="multi-panel-grid grid-2x2"');
+    expect(section.html).not.toContain('invalid-layout');
+  });
+
+  it('falls back to grid-2x2 when layout is undefined', () => {
+    const data = makeDashboard({ panels: [makeChartPanel({ id: 'p1' })] });
+    delete (data as any).layout;
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('class="multi-panel-grid grid-2x2"');
+  });
+
+  it('validates AIInsight relevance and omits modifier class for invalid values', () => {
+    const data = makeDashboard({
+      panels: [makeChartPanel({ id: 'p1' })],
+      aiInsights: [{ id: 'i1', text: 'Test insight', relevance: 'EVIL <script>' as any }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    // Should NOT contain the raw string as a class modifier
+    expect(section.html).not.toContain('insight-EVIL');
+    expect(section.html).not.toContain('<script>');
+    // Should still render the item without a relevance modifier
+    expect(section.html).toContain('class="ai-insight-item"');
+    expect(section.html).toContain('Test insight');
+  });
+
+  it('renders valid AIInsight relevance classes for known values', () => {
+    const data = makeDashboard({
+      panels: [makeChartPanel({ id: 'p1' })],
+      aiInsights: [
+        { id: 'h', text: 'High', relevance: 'high' },
+        { id: 'm', text: 'Med', relevance: 'medium' },
+        { id: 'l', text: 'Low', relevance: 'low' },
+      ],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('insight-high');
+    expect(section.html).toContain('insight-medium');
+    expect(section.html).toContain('insight-low');
+  });
+
+  it('gauge uses fallback title "Gauge" for empty title in aria-label', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'g-panel', title: 'G Panel',
+        gauge: { id: 'g1', title: '', value: 50 },
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('aria-label="Gauge: 50%"');
+  });
+
+  it('heatmap legend is outside the role="table" element', () => {
+    const data = makeDashboard({
+      panels: [{
+        id: 'hm-panel', title: 'HM Panel',
+        heatMap: makeHeatMapConfig(),
+      }],
+    });
+    const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
+    // The legend should NOT be inside the role="table" element
+    const tableMatch = section.html.match(/role="table"[^]*?<\/div>/);
+    if (tableMatch) {
+      // The first closing </div> after role="table" should be the table's close
+      // and the legend should come after it
+      const tableSection = tableMatch[0];
+      expect(tableSection).not.toContain('heatmap-legend');
+    }
+    // But it should still be in the output
+    expect(section.html).toContain('heatmap-legend');
+    // And we should have the wrapper
+    expect(section.html).toContain('dashboard-heatmap-wrapper');
+  });
 });

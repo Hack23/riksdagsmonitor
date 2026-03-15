@@ -262,6 +262,12 @@ ${tableBlocks}
 // CSS-only chart renderers (no Chart.js dependency)
 // ---------------------------------------------------------------------------
 
+/** Allowed layout values for the multi-panel grid */
+const VALID_LAYOUTS = new Set(['grid-2x2', 'grid-3x2', 'full-width', 'sidebar']);
+
+/** Allowed relevance values for AI insight styling */
+const VALID_RELEVANCE = new Set(['high', 'medium', 'low']);
+
 /**
  * Ensure `baseId` is globally unique across the entire dashboard section by
  * suffixing `-1`, `-2`, etc. when the id is already in `usedIds`.
@@ -363,9 +369,11 @@ function renderHeatMap(config: HeatMapConfig, panelId: string, usedIds: Set<stri
     <span class="heatmap-legend-label">${escapeHtml(maxLabel)}</span>
   </div>`;
 
-  return `<div id="${escapeHtml(safeId)}" class="dashboard-heatmap" role="table" aria-label="${escapeHtml(config.title)}">
+  return `<div class="dashboard-heatmap-wrapper">
+<div id="${escapeHtml(safeId)}" class="dashboard-heatmap" role="table" aria-label="${escapeHtml(config.title)}">
 ${headerRow}
 ${dataRows}
+</div>
 ${legend}
 </div>`;
 }
@@ -392,13 +400,14 @@ function renderGauge(config: GaugeConfig, panelId: string, usedIds: Set<string>)
   const maxLabel = config.maxLabel ?? '100';
   const displayValue = `${clamped}%`;
 
-  return `<div id="${escapeHtml(safeId)}" class="dashboard-gauge" role="figure" aria-label="${escapeHtml(config.title)}: ${escapeHtml(displayValue)}">
+  const safeTitle = config.title?.trim() || 'Gauge';
+  return `<div id="${escapeHtml(safeId)}" class="dashboard-gauge" role="figure" aria-label="${escapeHtml(safeTitle)}: ${escapeHtml(displayValue)}">
   <div class="gauge-track" aria-hidden="true">
     <div class="gauge-fill" style="--gauge-pct:${pct.toFixed(3)}"></div>
     <div class="gauge-center"></div>
   </div>
   <div class="gauge-value" aria-hidden="true">${escapeHtml(displayValue)}</div>
-  <div class="gauge-label">${escapeHtml(config.label ?? config.title)}</div>
+  <div class="gauge-label">${escapeHtml(config.label ?? safeTitle)}</div>
   <div class="gauge-range" aria-hidden="true">
     <span class="gauge-min">${escapeHtml(minLabel)}</span>
     <span class="gauge-max">${escapeHtml(maxLabel)}</span>
@@ -562,7 +571,7 @@ export function generateMultiPanelDashboardSection(
 
   const rawTitle = data.title?.trim();
   const titleText = rawTitle || lbl('dashboardTitle');
-  const layoutClass = data.layout ?? 'grid-2x2';
+  const layoutClass = (data.layout && VALID_LAYOUTS.has(data.layout)) ? data.layout : 'grid-2x2';
 
   // Summary
   const summaryBlock = data.summary?.trim()
@@ -582,7 +591,7 @@ export function generateMultiPanelDashboardSection(
   let insightsBlock = '';
   if (data.aiInsights && data.aiInsights.length > 0) {
     const insightItems = data.aiInsights.map(ins => {
-      const relevanceClass = ins.relevance ? ` insight-${escapeHtml(ins.relevance)}` : '';
+      const relevanceClass = (ins.relevance && VALID_RELEVANCE.has(ins.relevance)) ? ` insight-${ins.relevance}` : '';
       return `      <li class="ai-insight-item${relevanceClass}">${escapeHtml(ins.text)}</li>`;
     }).join('\n');
     insightsBlock = `  <aside class="multi-panel-insights" aria-label="${escapeHtml(lbl('dashboardAiInsights'))}">
