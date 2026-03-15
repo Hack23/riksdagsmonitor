@@ -210,6 +210,16 @@ export interface PrecomputedContext {
 }
 
 /**
+ * WeakMap cache for content fingerprints.
+ *
+ * Avoids re-hashing large `fullText`/`fullContent` payloads on repeated
+ * `analyzeDocument()` calls when the same object reference is reused.
+ * Uses `WeakMap` so that fingerprints are garbage-collected when the
+ * document object is no longer referenced.
+ */
+const _fingerprintCache = new WeakMap<RawDocument, string>();
+
+/**
  * Return a truncated SHA-256 hex digest of the document's content fields.
  *
  * Used in cache keys so that documents enriched with `fullText`/`fullContent`
@@ -218,15 +228,22 @@ export interface PrecomputedContext {
  *
  * A real hash (vs. simple length sums) ensures that different content of the
  * same combined length cannot collide.
+ *
+ * Results are cached in a WeakMap keyed by object identity, so repeated
+ * calls with the same document reference skip the SHA-256 computation.
  */
 function contentFingerprint(doc: RawDocument): string {
+  const cached = _fingerprintCache.get(doc);
+  if (cached !== undefined) return cached;
   const payload = [
     doc.fullText ?? '',
     doc.summary ?? '',
     doc.fullContent ?? '',
     doc.notis ?? '',
   ].join('\x00');
-  return createHash('sha256').update(payload).digest('hex').slice(0, 32);
+  const fp = createHash('sha256').update(payload).digest('hex').slice(0, 32);
+  _fingerprintCache.set(doc, fp);
+  return fp;
 }
 
 /**
@@ -867,12 +884,12 @@ export function buildRiskAssessment(doc: RawDocument, ciaContext?: CIAContext, c
 
 /**
  * Map raw Riksdag doktyp codes (`'prop'`, `'mot'`, `'bet'`, `'skr'`) to the
- * normalized type strings (`'proposition'`, `'motion'`, `'report'`, …) that
+ * normalized type strings (`'proposition'`, `'motion'`, `'interpellation'`, `'report'`, …) that
  * `generateEnhancedSummary()` in `helpers.ts` expects for content branching.
  * Without this, the helper silently falls through to a generic default text.
  *
  * Note: 'skr' (government communication / skrivelse) maps to 'report' because
- * `generateEnhancedSummary()` only has branches for 'report'|'proposition'|'motion'.
+ * `generateEnhancedSummary()` only has branches for 'report'|'proposition'|'motion'|'interpellation'.
  * Government communications are informational reports by nature, so 'report' is the
  * closest semantic match.
  */
@@ -880,6 +897,7 @@ function normalizeDocType(doktyp: string): string {
   switch (doktyp) {
     case 'prop': return 'proposition';
     case 'mot': return 'motion';
+    case 'ip': return 'interpellation';
     case 'bet': return 'report';
     case 'skr': return 'report'; // Government communications treated as reports
     default: return doktyp;
@@ -926,7 +944,12 @@ export function generateExecutiveSummary(doc: RawDocument, lang: Language | stri
   const party = normalizePartyKey(doc.parti);
 
   // Paragraph 1: What the document is and who authored it
-  const typeLabel = docType === 'prop' ? 'government proposition' : docType === 'mot' ? 'parliamentary motion' : 'parliamentary document';
+  const typeLabel = docType === 'prop' ? 'government proposition'
+    : docType === 'mot' ? 'parliamentary motion'
+    : docType === 'ip' ? 'interpellation'
+    : docType === 'bet' ? 'committee report'
+    : docType === 'skr' ? 'government communication'
+    : 'parliamentary document';
   const authorPart = party && party !== 'other' ? ` filed by ${party.toUpperCase()}` : '';
   const effectiveText = doc.fullText ?? doc.fullContent ?? '';
   const passage = effectiveText ? extractKeyPassage(effectiveText, 200) : '';
@@ -947,7 +970,11 @@ export function generateExecutiveSummary(doc: RawDocument, lang: Language | stri
     ? 'As a government proposition, this document represents executive policy intent and will be scrutinised by the relevant parliamentary committee before a plenary vote.'
     : docType === 'mot'
       ? 'As an opposition motion, this document fulfils the parliamentary oversight function, pressing the government on policy gaps and alternative directions.'
-      : 'This document contributes to the parliamentary record and informs committee deliberations and future legislative activity.';
+      : docType === 'ip'
+        ? 'As an interpellation, this document formally questions a minister on a specific policy matter, requiring a public response and parliamentary debate.'
+        : docType === 'bet'
+          ? 'As a committee report, this document presents the committee\'s recommendation to the Riksdag after deliberating on one or more government proposals or motions.'
+          : 'This document contributes to the parliamentary record and informs committee deliberations and future legislative activity.';
 
   return `${para1}\n\n${para2}\n\n${para3}`;
 }
@@ -1110,14 +1137,40 @@ export function analyzeDocument(
  * Analyse multiple documents in batch, returning a map from document ID to
  * analysis result.  Uses caching so documents appearing multiple times are
  * only analysed once.
+ *
+ * When the input array contains multiple versions of the same document
+ * (e.g. a metadata-only record and a content-enriched record sharing the
+ * same `dok_id`), the batch is de-duplicated up-front using a "prefer
+ * enriched" strategy: among entries that share the same stable document
+ * base key, the version with `fullText` or `fullContent` wins.  This
+ * prevents order-dependent overwrites and ensures the richest available
+ * version is analysed.
  */
 export function analyzeDocuments(
   docs: RawDocument[],
   lang: Language | string = 'en',
   ciaContext?: CIAContext,
 ): Map<string, DocumentAnalysis> {
-  const results = new Map<string, DocumentAnalysis>();
+  // De-duplicate: prefer enriched versions when multiple entries share
+  // the same stable base key (dok_id or url).
+  const deduped = new Map<string, RawDocument>();
   for (const doc of docs) {
+    const baseId = documentBaseKey(doc);
+    const existing = deduped.get(baseId);
+    if (!existing) {
+      deduped.set(baseId, doc);
+    } else {
+      // Prefer whichever has richer content fields
+      const existingHasContent = !!(existing.fullText || existing.fullContent);
+      const docHasContent = !!(doc.fullText || doc.fullContent);
+      if (docHasContent && !existingHasContent) {
+        deduped.set(baseId, doc);
+      }
+    }
+  }
+
+  const results = new Map<string, DocumentAnalysis>();
+  for (const doc of deduped.values()) {
     const analysis = analyzeDocument(doc, lang, ciaContext);
     results.set(analysis.documentId, analysis);
   }

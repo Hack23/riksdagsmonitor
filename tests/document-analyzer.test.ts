@@ -74,6 +74,17 @@ const minimalDoc: RawDocument = {
   titel: 'Okänt dokument',
 };
 
+/** Interpellation fixture */
+const interpDoc: RawDocument = {
+  dok_id: 'H905IP01',
+  doktyp: 'ip',
+  titel: 'Interpellation om arbetsmarknadsläget',
+  parti: 'S',
+  datum: '2026-03-01',
+  mottagare: 'Arbetsmarknadsministern',
+  fullText: 'Fråga till ministern om arbetsmarknadspolitiken och arbetslösheten.',
+};
+
 /** Stable CIA context */
 const stableCIA: CIAContext = {
   partyPerformance: [
@@ -152,6 +163,13 @@ describe('analyzeDocument — result shape', () => {
   it('uses title-based fallback documentId when no primary identifier available', () => {
     const result = analyzeDocument({}, 'en');
     expect(result.documentId).toMatch(/^title:/);
+  });
+
+  it('interpellation documents produce a valid analysis with correct type mapping', () => {
+    const result = analyzeDocument(interpDoc, 'en');
+    expect(result.documentId).toBe('dok:H905IP01');
+    expect(result.executiveSummary).toContain('interpellation');
+    expect(result.executiveSummary).toContain('formally questions a minister');
   });
 });
 
@@ -670,6 +688,25 @@ describe('analyzeDocuments — batch analysis', () => {
     const results = analyzeDocuments([], 'en');
     expect(results.size).toBe(0);
   });
+
+  it('de-duplicates inputs preferring enriched version', () => {
+    // Two versions of the same doc_id: one metadata-only, one enriched
+    const metaOnly: RawDocument = { dok_id: 'DUP-01', doktyp: 'prop', titel: 'Duplicate test' };
+    const enriched: RawDocument = { dok_id: 'DUP-01', doktyp: 'prop', titel: 'Duplicate test', fullText: 'Enriched content with policy details.' };
+    // Regardless of order, the enriched version should win
+    const results = analyzeDocuments([metaOnly, enriched], 'en');
+    expect(results.size).toBe(1);
+    const analysis = [...results.values()][0];
+    // The enriched version produces a key passage; the metadata-only one does not
+    expect(analysis.executiveSummary).toContain('Key provision');
+  });
+
+  it('de-duplicates when enriched version comes first', () => {
+    const enriched: RawDocument = { dok_id: 'DUP-02', doktyp: 'mot', titel: 'Order test', fullContent: '<p>Policy content</p>' };
+    const metaOnly: RawDocument = { dok_id: 'DUP-02', doktyp: 'mot', titel: 'Order test' };
+    const results = analyzeDocuments([enriched, metaOnly], 'en');
+    expect(results.size).toBe(1);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -950,6 +987,22 @@ describe('generateExecutiveSummary', () => {
     expect(() => generateExecutiveSummary(skrDoc, 'en')).not.toThrow();
     const summary = generateExecutiveSummary(skrDoc, 'en');
     expect(summary.length).toBeGreaterThan(50);
+  });
+
+  it('uses "interpellation" type label for ip documents', () => {
+    const summary = generateExecutiveSummary(interpDoc, 'en');
+    expect(summary).toContain('interpellation');
+  });
+
+  it('ip documents produce interpellation-specific paragraph 3', () => {
+    const summary = generateExecutiveSummary(interpDoc, 'en');
+    expect(summary).toContain('formally questions a minister');
+  });
+
+  it('bet documents produce committee report type label', () => {
+    const betDoc: RawDocument = { dok_id: 'BET-01', doktyp: 'bet', titel: 'Betänkande om transport', organ: 'TU', datum: '2026-02-15' };
+    const summary = generateExecutiveSummary(betDoc, 'en');
+    expect(summary).toContain('committee report');
   });
 });
 
