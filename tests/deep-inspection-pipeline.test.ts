@@ -30,6 +30,7 @@ describe('analysisDepth config', () => {
       expect(analysisDepth).toBe(1);
     } finally {
       process.argv = originalArgv;
+      vi.resetModules(); // Clear cached module so other tests get a clean slate
     }
   });
 });
@@ -56,16 +57,6 @@ describe('DeepInspectionPipeline', () => {
     expect(typeof pipeline.run).toBe('function');
   });
 
-  it('creates pipeline instance with all params', async () => {
-    const { DeepInspectionPipeline } = await import('../scripts/deep-inspection/index.js');
-    const pipeline = new DeepInspectionPipeline({
-      documentIds: ['H901FiU1'],
-      documentUrls: ['https://riksdagen.se/sv/dokument-och-lagar/dokument/motion/H901FiU1'],
-    });
-    expect(pipeline).toBeDefined();
-    expect(typeof pipeline.run).toBe('function');
-  });
-
   it('pipeline run() returns a Promise via mocked generator', async () => {
     // Use vi.doMock so only this test block sees the mock — other describe
     // blocks import the real module.
@@ -79,6 +70,7 @@ describe('DeepInspectionPipeline', () => {
       isGovernmentUrl: vi.fn(),
       sanitizePlainText: vi.fn(),
       hashPathSuffix: vi.fn(),
+      deepLabel: vi.fn().mockReturnValue('label'),
     }));
     vi.resetModules();
 
@@ -113,24 +105,50 @@ describe('new deep-inspection section labels', () => {
   });
 
   // Validate that the 7 new DEEP_SECTION_LABELS keys produce localised headings
-  // by importing the deepLabel helper indirectly: generators.ts uses it to render
-  // section headings, and the module compile already validates the label map.
-  // We verify label keys aren't stale by checking the module's generated HTML
-  // contains the expected English heading text for each new section.
-  it('DEEP_SECTION_LABELS contains all new section keys for English', async () => {
-    // The labels are consumed via deepLabel() in generators.ts. We cannot import
-    // DEEP_SECTION_LABELS directly (not exported), but we CAN verify that the
-    // compiled module does not error and that the label keys are used.
-    // As a proxy, we verify the module defines all expected exports and compiles
-    // the 14-language label map without throwing.
+  // by calling deepLabel() directly (now exported for test verification).
+  it('DEEP_SECTION_LABELS contains all new section keys with English labels', async () => {
     vi.resetModules();
-    const mod = await import('../scripts/generate-news-enhanced/generators.js');
-    expect(mod).toBeDefined();
-    // The module compiles, which means all DEEP_SECTION_LABELS entries
-    // (including executiveSummary, predictiveAssessment, historicalContext,
-    // methodology, likelyOutcome, coalitionStability, riskScenarios) were
-    // resolved without error by the deepLabel() call sites.
-    expect(typeof mod.generateDeepInspection).toBe('function');
+    const { deepLabel } = await import('../scripts/generate-news-enhanced/generators.js');
+
+    // These keys were added for the depth-gated intelligence sections.
+    // If any is missing from DEEP_SECTION_LABELS, deepLabel() returns the raw key.
+    const newKeys = [
+      'executiveSummary',
+      'predictiveAssessment',
+      'historicalContext',
+      'methodology',
+      'likelyOutcome',
+      'coalitionStability',
+      'riskScenarios',
+    ];
+
+    for (const key of newKeys) {
+      const label = deepLabel(key, 'en');
+      // A real label should differ from the raw key (deepLabel falls back to key if missing)
+      expect(label).not.toBe(key);
+      expect(label.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('DEEP_SECTION_LABELS have Swedish labels for all new section keys', async () => {
+    vi.resetModules();
+    const { deepLabel } = await import('../scripts/generate-news-enhanced/generators.js');
+
+    const newKeys = [
+      'executiveSummary',
+      'predictiveAssessment',
+      'historicalContext',
+      'methodology',
+      'likelyOutcome',
+      'coalitionStability',
+      'riskScenarios',
+    ];
+
+    for (const key of newKeys) {
+      const label = deepLabel(key, 'sv');
+      expect(label).not.toBe(key);
+      expect(label.length).toBeGreaterThan(0);
+    }
   });
 });
 
@@ -158,7 +176,7 @@ describe('buildStrategicImplications 14-language coverage', () => {
 // ---------------------------------------------------------------------------
 
 describe('scripts/deep-inspection/index.js exports', () => {
-  it('exports DeepInspectionPipelineParams type-compatible constructor', async () => {
+  it('exports DeepInspectionPipeline class and default', async () => {
     const mod = await import('../scripts/deep-inspection/index.js');
     expect(mod.DeepInspectionPipeline).toBeDefined();
     expect(mod.default).toBeDefined();

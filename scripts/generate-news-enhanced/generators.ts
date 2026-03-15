@@ -836,7 +836,8 @@ const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, stri
   },
 };
 
-function deepLabel(key: string, lang: Language): string {
+/** @internal Exported for test verification of label map completeness. */
+export function deepLabel(key: string, lang: Language): string {
   const map = DEEP_SECTION_LABELS[key];
   return (map?.[lang]) ?? (map?.en ?? key);
 }
@@ -1186,9 +1187,9 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
 // ---------------------------------------------------------------------------
 
 /**
- * Build a 200-word Executive Intelligence Summary.
+ * Build a concise Executive Intelligence Summary.
  * Synthesises document composition, policy domains, and legislative posture
- * into a concise briefing paragraph for decision-makers.
+ * into a briefing paragraph for decision-makers.
  * Iteration 1 + Iteration 2 outcome: "what happened & why it matters".
  */
 function buildExecutiveSummary(docs: RawDocument[], topic: string | null, lang: Language): string {
@@ -1319,7 +1320,7 @@ function buildPredictiveAssessment(docs: RawDocument[], topic: string | null, la
     },
     sv: {
       outcome: `Baserat på dokumentsammansättningsanalys uppskattas sannolikheten för lagstiftningspassage${topic ? ` för <strong>${topicStr}</strong>` : ''} till <strong>${passagePct}%</strong>, med ${blockPct}% sannolikhet för fördröjning eller ändring. ${propCount > 0 ? `${propCount} aktiv${propCount !== 1 ? 'a' : ''} proposition${propCount !== 1 ? 'er' : ''} visar regeringens engagemang.` : ''} Analyskonfidens: <strong>${confidence}%</strong>.`,
-      coalition: `Koalitionsstabilitetsbedömning: ${betCount > motCount ? 'Hög — utskottsaktivitet tyder på koalitionsanpassning.' : motCount > betCount ? 'Måttlig — aktiva oppositionsmotioner signalerar stressmomenter.' : 'Måttlig — balanserad aktivitet indikerar pågående förhandlingar.'}`,
+      coalition: `Koalitionsstabilitetsbedömning: ${betCount > motCount ? 'Hög — utskottsaktivitet tyder på koalitionsanpassning.' : motCount > betCount ? 'Måttlig — aktiva oppositionsmotioner signalerar stressmoment.' : 'Måttlig — balanserad aktivitet indikerar pågående förhandlingar.'}`,
       scenarios: `<ul class="risk-scenarios"><li><strong>Bästa scenariot (${passagePct}% sannolikhet):</strong> Lagstiftning antas med bred parlamentarisk konsensus.</li><li><strong>Troligaste scenariot:</strong> Utskottsgranskning leder till ändringar innan slutomröstning, med 3–6 månaders försenad implementering.</li><li><strong>Sämsta scenariot (${blockPct}% sannolikhet):</strong> ${motCount > propCount ? 'Oppositionsinitiativ tvingar till väsentliga policyrevisioner.' : 'Externa omständigheter orsakar oväntad försening.'}</li></ul>`,
     },
     de: {
@@ -1419,7 +1420,7 @@ function buildHistoricalContext(docs: RawDocument[], topic: string | null, lang:
 
   const templates: Partial<Record<Language, string>> = {
     en: `${topicStr ? `<strong>${topicStr}</strong> sits within` : 'This policy sits within'} a long tradition of Swedish parliamentary reform. ${hasEnacted ? `The presence of ${sfsDocs.length} enacted statute${sfsDocs.length !== 1 ? 's' : ''} indicates this area has established legal precedent.` : propCount > 0 ? `Active propositions suggest this policy cycle mirrors earlier reform waves, where government-initiated legislation progressed through committee scrutiny to enactment within 12–24 months.` : 'Early-stage documents suggest this represents a new policy initiative without direct statutory precedent.'} ${domainList.length > 0 ? `In the Nordic context, ${domainList.join(', ')} policy areas have historically benefited from cross-party consensus, with Sweden typically aligning with Danish and Norwegian approaches before adopting EU framework requirements.` : ''} International benchmarking indicates that comparable democracies — particularly Denmark, Norway, and Finland — have addressed similar policy challenges through incremental legislative packages rather than sweeping reform. Trend analysis across recent parliamentary sessions suggests that ${topicStr ? `${topicStr} legislation` : 'policy in this area'} is accelerating, driven by EU harmonisation requirements and coalition agreement commitments.`,
-    sv: `${topicStr ? `<strong>${topicStr}</strong> ingår i` : 'Denna policy ingår i'} en lång tradition av svensk parlamentarisk reform. ${hasEnacted ? `Förekomsten av ${sfsDocs.length} antagen lag/förordning visar att området har etablerat rättslig praxis.` : propCount > 0 ? 'Aktiva propositioner tyder på att detta policycykeln speglar tidigare reformvågor.' : 'Tidiga dokument tyder på ett nytt policyinitiativ utan direkt lagstadgat prejudikat.'} ${domainList.length > 0 ? `I nordisk kontext har ${domainList.join(', ')} historiskt gynnats av partikonsensus, med Sverige som vanligtvis anpassar sig till danska och norska tillvägagångssätt.` : ''} Trendanalys indikerar att ${topicStr ? `${topicStr}-lagstiftning` : 'politiken på detta område'} accelererar, driven av EU-harmoniseringskrav och koalitionsöverenskommelser.`,
+    sv: `${topicStr ? `<strong>${topicStr}</strong> ingår i` : 'Denna policy ingår i'} en lång tradition av svensk parlamentarisk reform. ${hasEnacted ? `Förekomsten av ${sfsDocs.length} antagen lag/förordning visar att området har etablerat rättslig praxis.` : propCount > 0 ? 'Aktiva propositioner tyder på att denna policycykel speglar tidigare reformvågor.' : 'Tidiga dokument tyder på ett nytt policyinitiativ utan direkt lagstadgat prejudikat.'} ${domainList.length > 0 ? `I nordisk kontext har ${domainList.join(', ')} historiskt gynnats av partikonsensus, med Sverige som vanligtvis anpassar sig till danska och norska tillvägagångssätt.` : ''} Trendanalys indikerar att ${topicStr ? `${topicStr}-lagstiftning` : 'politiken på detta område'} accelererar, driven av EU-harmoniseringskrav och koalitionsöverenskommelser.`,
     da: `${topicStr ? `<strong>${topicStr}</strong> er del af` : 'Denne politik er del af'} en lang tradition for svensk Riksdagsreform. ${domainList.length > 0 ? `I nordisk kontekst har ${domainList.join(', ')} historisk nydt gavn af tværpolitisk konsensus.` : ''} Trendanalyse viser, at politikken på dette område accelererer.`,
     no: `${topicStr ? `<strong>${topicStr}</strong> er en del av` : 'Denne politikken er en del av'} en lang tradisjon for svensk riksdagsreform. ${domainList.length > 0 ? `I nordisk kontekst har ${domainList.join(', ')} historisk nytt godt av tverrpolitisk konsensus.` : ''} Trendanalyse indikerer at politikk på dette området akselererer.`,
     fi: `${topicStr ? `<strong>${topicStr}</strong> on osa` : 'Tämä politiikka on osa'} pitkää Ruotsin valtiopäivien uudistusperinnettä. ${domainList.length > 0 ? `Pohjoismaisessa kontekstissa ${domainList.join(', ')} aloilla on historiallisesti hyöty puolueiden välisestä yhteisymmärryksestä.` : ''} Trendanalyysi osoittaa, että tämän alan politiikka kiihtyy.`,

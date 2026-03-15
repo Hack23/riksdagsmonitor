@@ -149,6 +149,16 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       expect(content).toMatch(/supports.*from.*tom|supports.*from_date.*to_date|supports.*dateFrom.*dateTo/);
       expect(content).toMatch(/filter by.*datum|filter by.*publicerad|filter by.*inlämnad/);
     });
+
+    it('news-evening-analysis.md should document >= fromDate post-query filtering', () => {
+      const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
+      const content = fs.readFileSync(filepath, 'utf-8');
+
+      // Should have explicit >= fromDate filtering guidance
+      expect(content).toMatch(/>= fromDate/);
+      // Should reference Filter results instruction
+      expect(content).toMatch(/Filter results/i);
+    });
   });
 
   describe('Cross-Referencing Strategy', () => {
@@ -158,6 +168,16 @@ describe('Agentic Workflow MCP Query Patterns', () => {
 
       // Should have "Cross-Referencing Strategy" section
       expect(content).toMatch(/cross.*referencing.*strategy/i);
+    });
+
+    it('cross-referencing section should reference data source combinations', () => {
+      const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
+      const content = fs.readFileSync(filepath, 'utf-8');
+
+      // Should mention cross-referencing related data sources
+      expect(content).toMatch(/Cross-reference related data sources/i);
+      // Should mention committee reports or voting records as cross-ref targets
+      expect(content).toMatch(/committee reports|voting records|propositions|motions/i);
     });
   });
 

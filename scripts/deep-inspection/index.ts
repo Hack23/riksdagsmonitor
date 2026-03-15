@@ -15,9 +15,7 @@
  *
  * @example
  * ```typescript
- * const pipeline = new DeepInspectionPipeline({
- *   documentIds: ['H901FiU1'],
- * });
+ * const pipeline = new DeepInspectionPipeline();
  * const result = await pipeline.run();
  * ```
  *
@@ -28,25 +26,6 @@
 import { generateDeepInspection } from '../generate-news-enhanced/generators.js';
 import { analysisDepth, focusTopic } from '../generate-news-enhanced/config.js';
 import type { GenerationResult } from '../types/article.js';
-
-/** Parameters accepted by DeepInspectionPipeline. */
-export interface DeepInspectionPipelineParams {
-  /**
-   * Riksdag document IDs (e.g. H901FiU1).
-   *
-   * **Note**: These values are informational when constructing the pipeline
-   * programmatically. The actual targeting is read from CLI `--document-ids`
-   * at module load time by `config.ts`. Pass these here for future extensibility
-   * and documentation clarity.
-   */
-  documentIds?: string[];
-  /**
-   * riksdagen.se / regeringen.se / github.com URLs.
-   *
-   * **Note**: Same CLI-first constraint as `documentIds`.
-   */
-  documentUrls?: string[];
-}
 
 /**
  * Result produced by a pipeline run.
@@ -67,13 +46,12 @@ export interface DeepInspectionResult extends GenerationResult {
  * reads targeting parameters and `analysisDepth` from CLI config. When used
  * programmatically via this class, those CLI values are already set at module
  * load time — so `run()` simply invokes the generator and enriches the result.
+ *
+ * All targeting (document IDs, URLs) and analysis depth are controlled via CLI
+ * arguments parsed by `config.ts` at module load time. This class provides a
+ * clean programmatic entrypoint without duplicating CLI parameter handling.
  */
 export class DeepInspectionPipeline {
-  constructor(_params: DeepInspectionPipelineParams = {}) {
-    // Params are reserved for future extensibility (document targeting).
-    // Currently, all targeting is read from CLI config at module load time.
-  }
-
   /**
    * Phase labels for logging purposes.
    * @internal
