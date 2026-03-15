@@ -342,8 +342,8 @@ export interface AIInsight {
   id: string;
   /** Insight text */
   text: string;
-  /** Relative importance */
-  relevance?: 'high' | 'medium' | 'low';
+  /** Relative importance (always required for consistent styling/filtering) */
+  relevance: 'high' | 'medium' | 'low';
 }
 
 /** A single panel within a multi-panel dashboard */
@@ -372,7 +372,7 @@ export interface DashboardPanel {
 export interface MultiPanelDashboard {
   /** Dashboard section title */
   title: string;
-  /** AI-generated executive summary displayed above all panels */
+  /** AI-generated executive summary displayed above all panels (omitted when absent) */
   summary?: string;
   /** Individual dashboard panels */
   panels: DashboardPanel[];

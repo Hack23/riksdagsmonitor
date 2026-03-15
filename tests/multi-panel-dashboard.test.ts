@@ -361,7 +361,7 @@ describe('generateMultiPanelDashboardSection', () => {
 
   it('escapes XSS in AI insight text', () => {
     const data = makeDashboard({
-      aiInsights: [{ id: 'ins', text: '<script>evil()</script>' }],
+      aiInsights: [{ id: 'ins', text: '<script>evil()</script>', relevance: 'low' }],
     });
     const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
     expect(section.html).not.toContain('<script>evil');
@@ -478,7 +478,7 @@ describe('generateMultiPanelDashboardSection', () => {
         { id: 'hm', title: 'HM', heatMap: makeHeatMapConfig() },
         { id: 'g', title: 'G', gauge: makeGaugeConfig() },
       ],
-      aiInsights: [{ id: 'i', text: 'Insight.' }],
+      aiInsights: [{ id: 'i', text: 'Insight.', relevance: 'medium' }],
     });
     const section = generateMultiPanelDashboardSection({ data, lang: 'en' });
     expect(section.html).not.toContain('<script>');
