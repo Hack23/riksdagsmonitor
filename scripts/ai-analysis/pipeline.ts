@@ -352,7 +352,7 @@ const NARRATIVE_PARLIAMENTARY_ACTIVITY: LangRecord = {
   he: 'פעילות פרלמנטרית', ja: '議会活動', ko: '의회 활동', zh: '议会活动',
 };
 
-const NARRATIVE_WITH_ENRICHED: Partial<Record<Language, (total: number, enriched: number) => string>> = {
+const NARRATIVE_WITH_FULL_TEXT: Partial<Record<Language, (total: number, enriched: number) => string>> = {
   en: (t, e) => `${t} documents (${e} with enriched full text)`,
   sv: (t, e) => `${t} dokument (${e} med berikad fulltext)`,
   da: (t, e) => `${t} dokumenter (${e} med beriget fuldtekst)`,
@@ -367,6 +367,23 @@ const NARRATIVE_WITH_ENRICHED: Partial<Record<Language, (total: number, enriched
   ja: (t, e) => `${t}件の文書 (${e}件はフルテキスト充実)`,
   ko: (t, e) => `${t}건의 문서 (${e}건 전문 보강)`,
   zh: (t, e) => `${t}份文件 (${e}份含完整文本)`,
+};
+
+const NARRATIVE_WITH_METADATA: Partial<Record<Language, (total: number, enriched: number) => string>> = {
+  en: (t, e) => `${t} documents (${e} with enriched metadata)`,
+  sv: (t, e) => `${t} dokument (${e} med berikad metadata)`,
+  da: (t, e) => `${t} dokumenter (${e} med beriget metadata)`,
+  no: (t, e) => `${t} dokumenter (${e} med beriket metadata)`,
+  fi: (t, e) => `${t} asiakirjaa (${e} rikastetulla metatiedolla)`,
+  de: (t, e) => `${t} Dokumente (${e} mit angereicherten Metadaten)`,
+  fr: (t, e) => `${t} documents (${e} avec métadonnées enrichies)`,
+  es: (t, e) => `${t} documentos (${e} con metadatos enriquecidos)`,
+  nl: (t, e) => `${t} documenten (${e} met verrijkte metadata)`,
+  ar: (t, e) => `${t} وثيقة (${e} ببيانات وصفية مُثرية)`,
+  he: (t, e) => `${t} מסמכים (${e} עם מטא-נתונים מועשרים)`,
+  ja: (t, e) => `${t}件の文書 (${e}件はメタデータ充実)`,
+  ko: (t, e) => `${t}건의 문서 (${e}건 메타데이터 보강)`,
+  zh: (t, e) => `${t}份文件 (${e}份含丰富元数据)`,
 };
 
 const NARRATIVE_FOCUS: LangRecord = {
@@ -450,8 +467,8 @@ function extractPassage(doc: RawDocument, maxChars = 400): string | null {
  */
 function entryFromDoc(doc: RawDocument, topic: string | null, lang: Language): string {
   const title = docTitle(doc);
-  const type = docType(doc);
-  const typeLabel = type ? localizeDocType(type, lang, 1) : '';
+  const type = normalizedDocType(doc);
+  const typeLabel = type && type !== 'other' ? localizeDocType(type, lang, 1) : '';
 
   if (topic) {
     // Explicit relevance framing when a focus topic is present
@@ -950,11 +967,18 @@ function buildPolicyAssessment(
   const confidence = assessConfidenceLevel(docs.length, baseConfidence);
 
   // Build a narrative from available evidence — topic + primary domain + document count
-  const withEnrichedFn = NARRATIVE_WITH_ENRICHED[lang] ?? NARRATIVE_WITH_ENRICHED.en!;
+  // Use "full text" wording only when fullTextCount > 0; fall back to "metadata" wording
   const docsLabelFn = DASHBOARD_DOCS_ANALYSED[lang] ?? DASHBOARD_DOCS_ANALYSED.en!;
-  const evidenceDesc = metadataEnrichedCount > 0
-    ? withEnrichedFn(docs.length, metadataEnrichedCount)
-    : docsLabelFn(docs.length);
+  let evidenceDesc: string;
+  if (fullTextCount > 0) {
+    const fullTextFn = NARRATIVE_WITH_FULL_TEXT[lang] ?? NARRATIVE_WITH_FULL_TEXT.en!;
+    evidenceDesc = fullTextFn(docs.length, fullTextCount);
+  } else if (metadataEnrichedCount > 0) {
+    const metadataFn = NARRATIVE_WITH_METADATA[lang] ?? NARRATIVE_WITH_METADATA.en!;
+    evidenceDesc = metadataFn(docs.length, metadataEnrichedCount);
+  } else {
+    evidenceDesc = docsLabelFn(docs.length);
+  }
 
   const analysisOf = NARRATIVE_ANALYSIS_OF[lang] ?? NARRATIVE_ANALYSIS_OF.en!;
   const reveals = NARRATIVE_REVEALS[lang] ?? NARRATIVE_REVEALS.en!;

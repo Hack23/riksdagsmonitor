@@ -227,8 +227,7 @@ const today = new Date().toISOString().slice(0, 10);
 
 // Filter results by date field (day-granularity string comparison avoids timezone issues)
 // Include inlämnad for motions which use that date field
-results.filter(item => (item.publicerad || item.datum || item.inlämnad || '').slice(0, 10) >= fromDate)
-const filtered = results.filter(item => (item.datum || item.publicerad || '').slice(0, 10) >= fromDate);
+const filtered = results.filter(item => (item.publicerad || item.datum || item.inlämnad || '').slice(0, 10) >= fromDate);
 ```
 
 **Post-query date filtering example** (day-granularity; 86400000 ms = 1 day):
