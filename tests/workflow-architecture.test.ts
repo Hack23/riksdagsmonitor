@@ -516,7 +516,7 @@ describe('Analysis Depth Input', () => {
     }
   });
 
-  it('dedicated article type workflows should default analysis_depth to standard or deep in frontmatter', () => {
+  it('dedicated article type workflows should default analysis_depth to a valid depth (standard, deep, or comprehensive) in frontmatter', () => {
     for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       if (!fs.existsSync(filepath)) continue;

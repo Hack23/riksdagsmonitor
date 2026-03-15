@@ -422,7 +422,8 @@ export function isValidAnalysisDepth(depth: unknown): depth is AnalysisDepth {
 
 /**
  * Minimum quality thresholds shared across all article types as a floor.
- * Individual profiles may raise these values but cannot lower them below these floors.
+ * Individual profiles are expected to meet or exceed these values, though
+ * no runtime validation currently enforces this constraint.
  */
 export const GLOBAL_QUALITY_FLOOR = {
   minWordCount: 400,

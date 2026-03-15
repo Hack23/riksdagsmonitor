@@ -235,7 +235,7 @@ Filter results to only include items with dates `>= fromDate`.
 const today = new Date().toISOString().slice(0, 10);
 const fromDate = new Date(Date.now() - 86400000).toISOString().slice(0, 10); // 24h lookback
 const weekAgo = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
-// For Saturday weekly review, use 5-day lookback (3600000 ms = 1 hour)
+// For Saturday weekly review, use 5-day lookback (5 * 86400000 ms)
 ```
 
 **Post-query filtering example:**

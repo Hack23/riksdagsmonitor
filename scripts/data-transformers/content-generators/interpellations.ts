@@ -206,6 +206,9 @@ function _renderInterpellationEntry(interp: RawDocument, lang: Language | string
   }
   if (minister) {
     entry += `      <p><strong>${targetLabel}:</strong> ${minister}</p>\n`;
+  } else {
+    const unknownLabel = (L(lang, 'unknownMinister') as string) || 'Unknown minister';
+    entry += `      <p><strong>${targetLabel}:</strong> ${escapeHtml(unknownLabel)}</p>\n`;
   }
   if (party || author) {
     const byParts: string[] = [];
@@ -260,8 +263,7 @@ function _generateInterpellationWhyItMatters(
     en: 'Interpellations create formal accountability by requiring ministers to respond publicly to parliamentary questions, strengthening democratic oversight.',
     sv: 'Interpellationer skapar formell ansvarsskyldighet genom att kräva att ministrar offentligt besvarar riksdagens frågor, vilket stärker den demokratiska tillsynen.',
   };
-  const whyDefault = L(lang, 'whyMattersDefault') as string;
-  return whyDefault || defaults[langStr] || defaults['en']!;
+  return defaults[langStr] || defaults['en']!;
 }
 
 /**
