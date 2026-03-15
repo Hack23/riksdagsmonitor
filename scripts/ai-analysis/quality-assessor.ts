@@ -117,7 +117,12 @@ const EVIDENCE_WORDS: readonly string[] = [
 // ---------------------------------------------------------------------------
 
 function stripHtml(html: string): string {
-  return html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+  return html
+    .replace(/<script[\s>][\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s>][\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 /** Normalize a document ID for deduplication and comparison.
@@ -265,7 +270,7 @@ function assessAnalyticalDepth(html: string): DimensionScore {
   if (evidenceW > 0) evidence.push(`${evidenceW} evidence-based indicator(s)`);
 
   // Multiple perspectives (blockquotes or attributed quotes)
-  const quotes = (html.match(/<blockquote>/gi) || []).length +
+  const quotes = (html.match(/<blockquote[\s>]/gi) || []).length +
                  Math.floor((text.match(/"\w/g) || []).length / 2);
   raw += Math.min(quotes * 4, 20);
   if (quotes > 0) evidence.push(`${quotes} attributed quote(s) or blockquote(s)`);

@@ -142,7 +142,10 @@ export function validateArticleQuality(
   sourceDocIds: readonly string[] = [],
 ): ArticleQualityScore {
   // ── Pass 1: structural scoring ────────────────────────────────────────────
-  const stripped: string = html.replace(/<[^>]+>/g, ' ');
+  const stripped: string = html
+    .replace(/<script[\s>][\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s>][\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ');
   const wordCount: number = stripped.split(/\s+/).filter(w => w.length > 0).length;
   const wordScore: number = Math.min(50, Math.round((wordCount / 1000) * 50));
 
