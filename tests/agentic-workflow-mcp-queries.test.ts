@@ -138,8 +138,8 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       const content = fs.readFileSync(filepath, 'utf-8');
 
       // Should document filtering by date fields — the workflow uses
-      // placeholder parameters (fromDate/toDate/from/tom) and an explicit
-      // date-filtering section rather than inline JS filter() calls.
+      // placeholder parameters (fromDate/toDate/from/tom) and inline
+      // JS .filter() calls with date comparisons for post-query filtering.
       expect(content).toMatch(/filter.*by.*date|filter.*results.*date|date.*filter/i);
 
       // Should reference fromDate/toDate or from/tom query parameters
@@ -165,11 +165,10 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       // Should have "Cross-Referencing Strategy" section
       expect(content).toMatch(/cross.*referencing.*strategy/i);
 
-      // Should have multi-tool query examples (either numbered examples or
-      // explicit multi-tool invocation patterns)
+      // Should have numbered multi-tool query examples that demonstrate
+      // combining different API calls in a single analysis workflow
       const hasMultiToolExamples =
-        (content.includes('Example 1:') && content.includes('Example 2:')) ||
-        (content.includes('get_calendar_events') && content.includes('search_voteringar'));
+        content.includes('Example 1:') && content.includes('Example 2:');
 
       expect(hasMultiToolExamples).toBe(true);
     });

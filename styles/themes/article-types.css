@@ -186,7 +186,8 @@
 .news-article[class*="article-type-"] .swot-analysis h2,
 .news-article[class*="article-type-"] .stakeholder-swot-analysis h2,
 .news-article[class*="article-type-"] .article-dashboard h2,
-.news-article[class*="article-type-"] .economic-dashboard-section h2 {
+.news-article[class*="article-type-"] .economic-dashboard-section h2,
+.news-article[class*="article-type-"] .economic-dashboard-placeholder h2 {
   color: var(--type-accent);
   border-bottom-color: var(--type-accent);
 }

@@ -381,7 +381,7 @@ const REGISTRY: Readonly<Record<ArticleType, ArticleTemplate>> = {
  *
  * Uses `Object.hasOwn()` (ES2022) for prototype-pollution safety.
  * This is compatible with the project's `tsconfig.scripts.json` target
- * (`"target": "ES2022"`) and the Node 18+ runtime requirement.
+ * (`"target": "ES2022"`) and the Node ≥24 runtime requirement (`engines.node`).
  *
  * @param type - ArticleType identifier
  * @returns ArticleTemplate configuration object
