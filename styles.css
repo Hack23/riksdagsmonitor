@@ -10234,6 +10234,31 @@ body.news-page {
 .news-article .cia-coalition-fill { background: #00d9ff; }
 .news-article .cia-opposition-fill { background: #ff006e; }
 
+/* CIA Panel - risk level color variants (replaces inline style attributes) */
+.news-article .cia-score--positive,
+.news-article .cia-panel-heading.cia-score--positive,
+.news-article .cia-score-number.cia-score--positive { color: #83cf39; }
+
+.news-article .cia-risk-badge--high {
+  background: rgba(255, 0, 110, 0.125);
+  border: 1px solid #ff006e;
+  color: #ff006e;
+}
+
+.news-article .cia-stability-bar--positive { background: #83cf39; }
+
+.news-article .cia-stat-value--risk { color: #ff006e; }
+
+/* CIA alignment bar width classes (replaces inline width styles) */
+.news-article .cia-bar-w-16 { width: 16%; }
+.news-article .cia-bar-w-17 { width: 17%; }
+.news-article .cia-bar-w-22 { width: 22%; }
+.news-article .cia-bar-w-23 { width: 23%; }
+.news-article .cia-bar-w-77 { width: 77%; }
+.news-article .cia-bar-w-78 { width: 78%; }
+.news-article .cia-bar-w-83 { width: 83%; }
+.news-article .cia-bar-w-84 { width: 84%; }
+
 .news-article .cia-bar-pct {
   flex: 0 0 2.5rem;
   text-align: right;
