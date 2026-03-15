@@ -1,0 +1,184 @@
+/**
+ * SWOT Analysis Component Styles
+ * Provides layout and visual styles for SWOT and Stakeholder SWOT sections
+ * embedded in news articles.
+ *
+ * @author Hack23 AB
+ * @license Apache-2.0
+ */
+
+/* SWOT Analysis Section */
+.news-article .swot-analysis {
+  background: var(--badge-bg, #f0f4f8);
+  border: 2px solid var(--primary-color, #006633);
+  border-radius: var(--border-radius-lg, 12px);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.news-article .swot-analysis h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  color: var(--primary-color, #006633);
+  border-bottom: 2px solid var(--primary-color, #006633);
+  padding-bottom: 0.75rem;
+}
+
+.news-article .swot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .news-article .swot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.news-article .swot-quadrant {
+  padding: 1rem;
+  border-radius: var(--border-radius, 8px);
+  border: 1px solid var(--border-color, #ddd);
+}
+
+.news-article .swot-quadrant h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.news-article .swot-quadrant ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.news-article .swot-quadrant li {
+  margin-bottom: 0.35rem;
+  line-height: 1.5;
+}
+
+.news-article .swot-strengths {
+  background: rgba(39, 174, 96, 0.08);
+  border-color: #27ae60;
+}
+
+.news-article .swot-strengths h3 { color: #1e8449; }
+
+.news-article .swot-weaknesses {
+  background: rgba(231, 76, 60, 0.08);
+  border-color: #e74c3c;
+}
+
+.news-article .swot-weaknesses h3 { color: #c0392b; }
+
+.news-article .swot-opportunities {
+  background: rgba(52, 152, 219, 0.08);
+  border-color: #3498db;
+}
+
+.news-article .swot-opportunities h3 { color: #2471a3; }
+
+.news-article .swot-threats {
+  background: rgba(243, 156, 18, 0.08);
+  border-color: #f39c12;
+}
+
+.news-article .swot-threats h3 { color: #d68910; }
+
+.news-article .swot-subject {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.news-article .swot-context {
+  margin-top: 1rem;
+  color: var(--text-secondary, #555);
+}
+
+.news-article .swot-impact {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.news-article .swot-impact--high { color: #e74c3c; }
+.news-article .swot-impact--medium { color: #f39c12; }
+.news-article .swot-impact--low { color: #27ae60; }
+
+[dir="rtl"] .news-article .swot-analysis {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .news-article .swot-quadrant ul {
+  padding-left: 0;
+  padding-right: 1.25rem;
+}
+
+
+/* Stakeholder SWOT Analysis Section */
+.news-article .stakeholder-swot-analysis {
+  background: var(--badge-bg, #f0f4f8);
+  border: 2px solid var(--primary-color, #006633);
+  border-radius: var(--border-radius-lg, 12px);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.news-article .stakeholder-swot-analysis h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  color: var(--primary-color, #006633);
+  border-bottom: 2px solid var(--primary-color, #006633);
+  padding-bottom: 0.75rem;
+}
+
+.news-article .stakeholder-swot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.news-article .stakeholder-swot-card {
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: var(--border-radius-sm, 8px);
+  padding: 1rem;
+  background: var(--card-bg, #fff);
+}
+
+.news-article .stakeholder-swot-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color, #006633);
+}
+
+.news-article .stakeholder-swot-card .stakeholder-role {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #666);
+  margin: 0 0 0.75rem 0;
+}
+
+.news-article .strategic-context {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: var(--primary-color, #006633);
+  border-radius: var(--border-radius-sm, 8px);
+  color: white;
+}
+
+.news-article .strategic-context h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+}
+
+[dir="rtl"] .news-article .stakeholder-swot-analysis {
+  direction: rtl;
+  text-align: right;
+}
+
