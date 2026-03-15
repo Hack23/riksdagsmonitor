@@ -306,13 +306,13 @@ For each generated article, apply up to 3 iterations:
 1. **Iteration 1** — Generate initial draft from MCP data
 2. **Self-assess** — Score against quality rubric (Accuracy + Depth + Perspectives + Translation + Editorial)
 3. **If score < 7**: Identify lowest-scoring dimension and regenerate those sections
-4. **Iteration 2** — Address quality gaps, add missing ministerial accountability analysis
-5. **If still < 7**: Final iteration — add analytical depth, ensure minister-grouped structure
+4. **Iteration 2** — Address quality gaps, add missing parliamentary oversight analysis
+5. **If still < 7**: Final iteration — add analytical depth, ensure party/theme-grouped structure
 6. **Maximum 3 iterations** — Never publish below 5/10
 
 ### Required Sections (at least 3 of 5):
 1. **Analytical Lede** (paragraph, not just document count)
-2. **Ministerial Accountability** (interpellations grouped by target minister — uses dedicated generator)
+2. **Parliamentary Oversight** (interpellations grouped by submitting party and policy theme — uses dedicated generator)
 3. **Strategic Context** (why these interpellations matter politically)
 4. **Stakeholder Impact** (which ministers are under pressure)
 5. **What Happens Next** (expected debate schedule and outcomes)
@@ -321,7 +321,7 @@ For each generated article, apply up to 3 iterations:
 - ❌ `"Filed by: Unknown (Unknown)"` — FIX author/party metadata before committing
 - ❌ `data-translate="true"` spans in non-Swedish articles — TRANSLATE before committing
 - ❌ Identical "Why It Matters" text for all entries — DIFFERENTIATE analysis per interpellation
-- ❌ Flat list of interpellations without grouping — GROUP by policy theme or target minister
+- ❌ Flat list of interpellations without grouping — GROUP by policy theme and submitting party
 - ❌ Article under 500 words — EXPAND with analytical sections
 
 ### Bash Validation Commands:
