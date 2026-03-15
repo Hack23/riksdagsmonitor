@@ -165,7 +165,9 @@ export interface AnalysisResult {
   lang: Language;
   /** Number of documents analysed */
   documentCount: number;
-  /** Number of documents with full enriched content */
+  /** Number of metadata-enriched documents (contentFetched = true).
+   *  This counts documents whose metadata was fetched via enrichDocumentsWithContent(),
+   *  regardless of whether full text is available. */
   enrichedCount: number;
   /** Focus topic (null if multi-document analysis without topic) */
   focusTopic: string | null;
@@ -284,7 +286,7 @@ export interface AnalysisIterationMetadata {
   validationResult: ValidationResult | null;
   /** Number of documents analysed */
   documentCount: number;
-  /** Number of enriched documents */
+  /** Number of metadata-enriched documents (contentFetched = true) */
   enrichedCount: number;
   /** Focus topic (null if none) */
   focusTopic: string | null;

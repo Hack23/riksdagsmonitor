@@ -211,7 +211,7 @@ const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 
 
 Filter results to only include items with dates `>= fromDate`:
 ```js
-const filtered = results.filter(item => (item.datum || item.publicerad || '').slice(0, 10) >= fromDate);
+const filtered = results.filter(item => (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10) >= fromDate);
 ```
 
 **Post-query date filtering pattern** (use with tools that lack native date params):
@@ -221,7 +221,8 @@ const fromDate = new Date(Date.now() - lookbackHours * 3600000).toISOString().sl
 const today = new Date().toISOString().slice(0, 10);
 
 // Filter results by date field (day-granularity string comparison avoids timezone issues)
-results.filter(item => (item.publicerad || item.datum || '').slice(0, 10) >= fromDate)
+// Include inlämnad for motions which use that date field
+results.filter(item => (item.publicerad || item.datum || item.inlämnad || '').slice(0, 10) >= fromDate)
 ```
 
 **Date calculation pattern:**

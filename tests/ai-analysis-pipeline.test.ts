@@ -67,6 +67,22 @@ function makeEnrichedPropDoc(): RawDocument {
   };
 }
 
+/** Metadata-enriched only (contentFetched but no fullText/fullContent).
+ *  This mirrors what `enrichDocumentsWithContent()` typically produces for
+ *  Riksdag docs (called with include_full_text=false). */
+function makeMetadataEnrichedPropDoc(): RawDocument {
+  return {
+    dok_id: 'TEST005',
+    doktyp: 'prop',
+    titel: 'Proposition om klimatanpassning',
+    datum: '2026-03-01',
+    organ: 'MJU',
+    contentFetched: true,
+    summary: 'Regeringen föreslår nya regler för kommunernas klimatanpassningsarbete.',
+    notis: 'Klimatanpassning — kommunala åtgärder',
+  };
+}
+
 function makeOptions(overrides: Partial<AnalysisPipelineOptions> = {}): AnalysisPipelineOptions {
   return {
     depth: 'standard',
@@ -237,6 +253,18 @@ describe('aiAnalysisPipeline.refineAnalysis', () => {
     expect(refined.documentCount).toBe(initial.documentCount);
   });
 
+  it('updates enrichedCount for metadata-enriched docs without full text', async () => {
+    // Simulate the typical MCP enrichment: contentFetched=true but no fullText
+    const docs = [makeMetadataEnrichedPropDoc(), makePropDoc()];
+    const options = makeOptions();
+    const initial = await aiAnalysisPipeline.analyzeDocuments(docs, options);
+    // enrichedCount should reflect metadata enrichment from iteration 1
+    expect(initial.enrichedCount).toBe(1);
+    const refined = await aiAnalysisPipeline.refineAnalysis(initial, docs, options);
+    // enrichedCount should still be 1 after refinement (metadata-enriched count preserved)
+    expect(refined.enrichedCount).toBe(1);
+  });
+
   it('produces higher confidence score with enriched documents', async () => {
     const docs = [makeEnrichedPropDoc(), makePropDoc(), makeMotDoc()];
     const options = makeOptions();
@@ -268,12 +296,16 @@ describe('aiAnalysisPipeline.refineAnalysis', () => {
     expect(highConfidenceEntries.length).toBeGreaterThan(0);
   });
 
-  it('sets enrichedCount to the number of enriched documents', async () => {
-    const docs = [makeEnrichedPropDoc(), makePropDoc()];
+  it('sets enrichedCount to the number of metadata-enriched documents', async () => {
+    // makeEnrichedPropDoc has contentFetched:true + fullText
+    // makeMetadataEnrichedPropDoc has contentFetched:true but no fullText
+    // makePropDoc has neither
+    const docs = [makeEnrichedPropDoc(), makeMetadataEnrichedPropDoc(), makePropDoc()];
     const options = makeOptions();
     const initial = await aiAnalysisPipeline.analyzeDocuments(docs, options);
     const refined = await aiAnalysisPipeline.refineAnalysis(initial, docs, options);
-    expect(refined.enrichedCount).toBe(1);
+    // enrichedCount reflects metadata enrichment (contentFetched), not just full-text
+    expect(refined.enrichedCount).toBe(2);
   });
 
   it('sets completedAt to a valid ISO timestamp', async () => {
@@ -324,6 +356,20 @@ describe('aiAnalysisPipeline.validateCompleteness', () => {
 
     const hasEnrichmentIssue = validation.issues.some(i => i.toLowerCase().includes('enriched') || i.toLowerCase().includes('full text'));
     expect(hasEnrichmentIssue).toBe(true);
+  });
+
+  it('suggests full text when only metadata-enriched', async () => {
+    const docs = [makeMetadataEnrichedPropDoc()]; // contentFetched but no fullText
+    const options = makeOptions();
+    let analysis = await aiAnalysisPipeline.analyzeDocuments(docs, options);
+    analysis = await aiAnalysisPipeline.refineAnalysis(analysis, docs, options);
+    const validation = await aiAnalysisPipeline.validateCompleteness(analysis, docs);
+
+    // enrichedCount should be 1 (metadata-enriched), but suggestions should
+    // mention full text since no fullText/fullContent is available.
+    expect(analysis.enrichedCount).toBe(1);
+    const hasSuggestion = validation.suggestions.some(s => s.toLowerCase().includes('full text'));
+    expect(hasSuggestion).toBe(true);
   });
 });
 

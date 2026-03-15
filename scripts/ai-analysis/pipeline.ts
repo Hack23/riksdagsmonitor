@@ -408,12 +408,29 @@ function normalizedDocType(doc: RawDocument): string {
 }
 
 /**
- * Unified predicate for "document has enriched full content available".
- * `contentFetched` alone only means metadata was retrieved; actual full-text
- * or full-HTML content may still be absent (e.g., `include_full_text=false`).
- * Use this consistently for enrichedCount, confidence scoring, and validation.
+ * Predicate: document metadata was enriched via `enrichDocumentsWithContent()`.
+ *
+ * `contentFetched` is set when the MCP client retrieves document details
+ * (title, summary, organ, notis, etc.) — even when called with
+ * `include_full_text=false`. This is the normal case for Riksdag documents.
+ *
+ * Use for: enrichedCount, confidence scoring baseline, validation messaging.
  */
-function hasEnrichedContent(doc: RawDocument): boolean {
+function isMetadataEnriched(doc: RawDocument): boolean {
+  return Boolean(doc.contentFetched);
+}
+
+/**
+ * Predicate: document has full-text or full-HTML content available.
+ *
+ * This is a stricter check than `isMetadataEnriched`: it requires the
+ * document to actually have downloadable text/HTML body, which only happens
+ * when the MCP client is called with `include_full_text=true` (or when the
+ * field is populated by other means).
+ *
+ * Use for: passage extraction, deep text analysis, HIGH-confidence SWOT.
+ */
+function hasFullTextContent(doc: RawDocument): boolean {
   return Boolean(doc.contentFetched && (doc.fullText || doc.fullContent));
 }
 
@@ -926,14 +943,15 @@ function buildPolicyAssessment(
   const domains = [...allDomains].slice(0, 8);
   const primaryDomain = domains[0] ?? null;
 
-  const enrichedCount = docs.filter(hasEnrichedContent).length;
-  const confidence = assessConfidenceLevel(docs.length, enrichedCount > 0 ? 80 : 40);
+  const metadataEnrichedCount = docs.filter(isMetadataEnriched).length;
+  const fullTextCount = docs.filter(hasFullTextContent).length;
+  const confidence = assessConfidenceLevel(docs.length, metadataEnrichedCount > 0 ? (fullTextCount > 0 ? 80 : 60) : 40);
 
   // Build a narrative from available evidence — topic + primary domain + document count
   const withEnrichedFn = NARRATIVE_WITH_ENRICHED[lang] ?? NARRATIVE_WITH_ENRICHED.en!;
   const docsLabelFn = DASHBOARD_DOCS_ANALYSED[lang] ?? DASHBOARD_DOCS_ANALYSED.en!;
-  const evidenceDesc = enrichedCount > 0
-    ? withEnrichedFn(docs.length, enrichedCount)
+  const evidenceDesc = metadataEnrichedCount > 0
+    ? withEnrichedFn(docs.length, metadataEnrichedCount)
     : docsLabelFn(docs.length);
 
   const analysisOf = NARRATIVE_ANALYSIS_OF[lang] ?? NARRATIVE_ANALYSIS_OF.en!;
@@ -1167,14 +1185,18 @@ function buildDashboardData(
 
 function calculateConfidenceScore(docs: RawDocument[]): number {
   if (docs.length === 0) return 0;
-  const enriched = docs.filter(hasEnrichedContent).length;
-  const enrichmentRatio = enriched / docs.length;
+  const metadataEnriched = docs.filter(isMetadataEnriched).length;
+  const fullText = docs.filter(hasFullTextContent).length;
   const typeVariety = new Set(docs.map(normalizedDocType)).size;
   // Score: 0-100
-  // - enrichment ratio contributes 50%  (based on actual full content)
+  // - enrichment contributes 50%:
+  //     metadata-enriched docs (contentFetched) contribute up to 30%
+  //     full-text docs (fullText/fullContent) contribute the remaining 20%
   // - doc count (up to 10) contributes 30%
   // - type variety (up to 5) contributes 20%
-  const enrichmentScore = enrichmentRatio * 50;
+  const metadataRatio = metadataEnriched / docs.length;
+  const fullTextRatio = fullText / docs.length;
+  const enrichmentScore = metadataRatio * 30 + fullTextRatio * 20;
   const countScore = Math.min(docs.length / 10, 1) * 30;
   const varietyScore = Math.min(typeVariety / 5, 1) * 20;
   return Math.round(enrichmentScore + countScore + varietyScore);
@@ -1297,7 +1319,7 @@ async function analyzeDocuments(
     completedAt: new Date().toISOString(),
     lang,
     documentCount: docs.length,
-    enrichedCount: docs.filter(hasEnrichedContent).length,
+    enrichedCount: docs.filter(isMetadataEnriched).length,
     focusTopic: topic,
   };
 }
@@ -1312,15 +1334,19 @@ async function refineAnalysis(
   options: AnalysisPipelineOptions,
 ): Promise<AnalysisResult> {
   const { lang, focusTopic: topic } = options;
-  const enrichedDocs = docs.filter(hasEnrichedContent);
+  const fullTextDocs = docs.filter(hasFullTextContent);
 
-  if (enrichedDocs.length === 0) {
-    // No documents with full text/content available — refinement is a no-op.
-    // This is expected when enrichDocumentsWithContent() fetches metadata only
-    // (include_full_text=false). We still bump iterationsCompleted to 2 so the
-    // pipeline contract is honoured, but enrichedCount remains 0 to signal
-    // that no actual text-based enrichment occurred.
-    return { ...initial, iterationsCompleted: 2, completedAt: new Date().toISOString() };
+  // Update enrichedCount to reflect metadata enrichment (may be > 0 even
+  // when no full-text documents are available — the typical Riksdag case).
+  const metadataCount = docs.filter(isMetadataEnriched).length;
+
+  if (fullTextDocs.length === 0) {
+    // No documents with full text/content available — passage-based refinement
+    // is a no-op.  This is expected when enrichDocumentsWithContent() fetches
+    // metadata only (include_full_text=false).  We still bump
+    // iterationsCompleted to 2 so the pipeline contract is honoured, and
+    // update enrichedCount to reflect the metadata-enriched population.
+    return { ...initial, iterationsCompleted: 2, completedAt: new Date().toISOString(), enrichedCount: metadataCount };
   }
 
   // Re-derive SWOT entries with longer passages for enriched documents
@@ -1328,14 +1354,14 @@ async function refineAnalysis(
   const refined = { ...initial, iterationsCompleted: 2, completedAt: new Date().toISOString() };
 
   // Rebuild stakeholder SWOT with richer content from enriched documents
-  const propDocs   = enrichedDocs.filter(d => docType(d) === 'prop');
-  const betDocs    = enrichedDocs.filter(d => docType(d) === 'bet');
-  const motDocs    = enrichedDocs.filter(d => docType(d) === 'mot');
-  const sfsDocs    = enrichedDocs.filter(isSfsDoc);
-  const euDocs     = enrichedDocs.filter(d => docType(d) === 'fpm');
-  const pressmDocs = enrichedDocs.filter(d => docType(d) === 'pressm');
-  const extDocs    = enrichedDocs.filter(d => docType(d) === 'ext');
-  const skrDocs    = enrichedDocs.filter(d => docType(d) === 'skr');
+  const propDocs   = fullTextDocs.filter(d => docType(d) === 'prop');
+  const betDocs    = fullTextDocs.filter(d => docType(d) === 'bet');
+  const motDocs    = fullTextDocs.filter(d => docType(d) === 'mot');
+  const sfsDocs    = fullTextDocs.filter(isSfsDoc);
+  const euDocs     = fullTextDocs.filter(d => docType(d) === 'fpm');
+  const pressmDocs = fullTextDocs.filter(d => docType(d) === 'pressm');
+  const extDocs    = fullTextDocs.filter(d => docType(d) === 'ext');
+  const skrDocs    = fullTextDocs.filter(d => docType(d) === 'skr');
 
   // Upgrade government SWOT entries where we now have full text
   refined.stakeholderSwot = refined.stakeholderSwot.map(sh => {
@@ -1402,20 +1428,20 @@ async function refineAnalysis(
 
   // Recalculate confidence score with enriched data
   refined.confidenceScore = calculateConfidenceScore(docs);
-  refined.enrichedCount = enrichedDocs.length;
+  refined.enrichedCount = metadataCount;
 
   // Refresh policy assessment narrative with enriched evidence
   refined.policyAssessment = buildPolicyAssessment(docs, topic, lang);
 
   // Add additional stakeholder perspectives from narrative frame analysis
   const allFrames = new Set<string>();
-  enrichedDocs.slice(0, 20).forEach(d => detectNarrativeFrames(d).forEach(f => allFrames.add(f)));
+  fullTextDocs.slice(0, 20).forEach(d => detectNarrativeFrames(d).forEach(f => allFrames.add(f)));
 
   // Enrich mindmap with additional data from full text analysis
   refined.mindmapBranches = buildMindmapBranches(docs, topic, refined.policyAssessment.domains, lang);
 
   // Add civil society branch if we have external docs
-  const civilSocietyDocs = enrichedDocs.filter(d => ['ext', 'fpm'].includes(docType(d)));
+  const civilSocietyDocs = fullTextDocs.filter(d => ['ext', 'fpm'].includes(docType(d)));
   if (civilSocietyDocs.length > 0 && allFrames.size > 0) {
     // Add a narrative analysis branch to mindmap
     const hasBranch = refined.mindmapBranches.some(b => b.label === narrativeFramesLabel(lang));
@@ -1438,7 +1464,7 @@ async function refineAnalysis(
 
 async function validateCompleteness(
   analysis: AnalysisResult,
-  _docs: RawDocument[],
+  docs: RawDocument[],
 ): Promise<ValidationResult> {
   const issues: string[] = [];
   const suggestions: string[] = [];
@@ -1484,10 +1510,14 @@ async function validateCompleteness(
     score -= 3;
   }
 
-  // Check enrichment ratio
+  // Check enrichment ratio — differentiate metadata-enriched vs full-text
+  const fullTextAvailable = docs.filter(hasFullTextContent).length;
   if (analysis.documentCount > 0 && analysis.enrichedCount === 0) {
-    issues.push('No documents have enriched full text — analysis quality is limited to metadata');
+    issues.push('No documents have been enriched — analysis quality is limited to raw metadata');
     score -= 15;
+  } else if (analysis.enrichedCount > 0 && fullTextAvailable === 0) {
+    suggestions.push('Documents are metadata-enriched but lack full text — consider using include_full_text=true for deeper analysis');
+    score -= 5;
   }
 
   // Check confidence score
@@ -1499,6 +1529,10 @@ async function validateCompleteness(
   // Bonus: rich analysis with many enriched documents
   if (analysis.enrichedCount >= 3) {
     score = Math.min(100, score + 5);
+  }
+  // Extra bonus for full-text enrichment
+  if (fullTextAvailable >= 2) {
+    score = Math.min(100, score + 3);
   }
 
   const finalScore = Math.max(0, score);
