@@ -9963,25 +9963,29 @@ body.news-page {
 /* ── Branch importance indicators ──────────────────────────────────────── */
 
 /* Critical: thick border + neon glow (uses a fixed cyan glow fallback) */
-.news-article .mindmap-branch[data-importance="critical"] {
+.news-article .mindmap-branch[data-importance="critical"],
+.news-article .mindmap-sub-branch[data-importance="critical"] {
   border-width: 3px;
   box-shadow: 0 0 12px rgba(0, 217, 255, 0.35), 0 0 4px rgba(0, 217, 255, 0.15);
 }
 
 /* High: medium border + subtle glow */
-.news-article .mindmap-branch[data-importance="high"] {
+.news-article .mindmap-branch[data-importance="high"],
+.news-article .mindmap-sub-branch[data-importance="high"] {
   border-width: 2.5px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Medium: standard border (default) */
-.news-article .mindmap-branch[data-importance="medium"] {
+.news-article .mindmap-branch[data-importance="medium"],
+.news-article .mindmap-sub-branch[data-importance="medium"] {
   border-width: 2px;
   opacity: 0.95;
 }
 
 /* Low: thin border + reduced opacity */
-.news-article .mindmap-branch[data-importance="low"] {
+.news-article .mindmap-branch[data-importance="low"],
+.news-article .mindmap-sub-branch[data-importance="low"] {
   border-width: 1.5px;
   opacity: 0.75;
 }

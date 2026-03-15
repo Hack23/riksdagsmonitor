@@ -752,6 +752,12 @@ const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, stri
     nl: 'Belanghebbenden', ar: 'أصحاب المصلحة', he: 'בעלי עניין',
     ja: 'ステークホルダー', ko: '이해관계자', zh: '利益相关者',
   },
+  parliamentaryAnalysis: {
+    en: 'Parliamentary Analysis', sv: 'Parlamentarisk analys', da: 'Parlamentarisk analyse',
+    no: 'Parlamentarisk analyse', fi: 'Parlamenttianalyysi', de: 'Parlamentarische Analyse',
+    fr: 'Analyse parlementaire', es: 'Análisis parlamentario', nl: 'Parlementaire analyse',
+    ar: 'تحليل برلماني', he: 'ניתוח פרלמנטרי', ja: '議会分析', ko: '의회 분석', zh: '议会分析',
+  },
 };
 
 function deepLabel(key: string, lang: Language): string {
@@ -1265,7 +1271,7 @@ function buildDeepInspectionSections(
   const aiMindmap = buildAIMindmapBranches(docs, topic, lang);
 
   const mindmapSection = generateMindmapSection({
-    topic: topic || 'Parliamentary Analysis',
+    topic: topic || deepLabel('parliamentaryAnalysis', lang),
     branches: aiMindmap.branches,
     connections: aiMindmap.connections,
     lang,

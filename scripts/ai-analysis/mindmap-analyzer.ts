@@ -333,6 +333,14 @@ const EMPTY_DOCS_LABELS = {
   } as Partial<Record<Language, string>>,
 };
 
+// Localised fallback for domain list in summary when no domains detected
+const MULTIPLE_POLICY_AREAS: Partial<Record<Language, string>> = {
+  en: 'multiple policy areas', sv: 'flera politikområden', da: 'flere politikområder',
+  no: 'flere politikkområder', fi: 'useita politiikka-alueita', de: 'mehrere Politikbereiche',
+  fr: 'plusieurs domaines politiques', es: 'múltiples áreas de política', nl: 'meerdere beleidsdomeinen',
+  ar: 'مجالات سياسية متعددة', he: 'תחומי מדיניות מרובים', ja: '複数の政策分野', ko: '다수의 정책 분야', zh: '多个政策领域',
+};
+
 // ---------------------------------------------------------------------------
 // Internal helpers
 // ---------------------------------------------------------------------------
@@ -725,7 +733,7 @@ function generateSummary(
 
   return template
     .replace('{count}', String(docs.length))
-    .replace('{domains}', domainList.length > 0 ? domainList.join(', ') : 'multiple policy areas')
+    .replace('{domains}', domainList.length > 0 ? domainList.join(', ') : L(MULTIPLE_POLICY_AREAS, lang, 'multiple policy areas'))
     .replace('{docTypes}', String(docTypeCount))
     .replace('{committees}', String(organs.length))
     .replace('{euNote}', euNote);
