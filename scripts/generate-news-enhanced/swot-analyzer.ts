@@ -35,7 +35,8 @@ function refOf(d: RawDocument): string | undefined {
 }
 
 /** Convert raw docs into SWOT entries, collecting dok_ids as evidence refs.
- *  Docs whose derived title is empty are skipped to avoid blank list items. */
+ *  Docs whose derived title is empty or whitespace-only are skipped (along
+ *  with their refs) to avoid blank list items and inflated evidence counts. */
 function docsToEntries(
   docs: RawDocument[],
   impact: 'high' | 'medium' | 'low' = 'medium',
@@ -45,12 +46,12 @@ function docsToEntries(
   const entries: SwotEntry[] = [];
   const refs: string[] = [];
   for (const d of slice) {
-    const text = titleOf(d);
+    const text = titleOf(d).trim();
     if (text) {
       entries.push({ text, impact });
+      const r = refOf(d);
+      if (r) refs.push(r);
     }
-    const r = refOf(d);
-    if (r) refs.push(r);
   }
   return { entries, refs };
 }
@@ -60,7 +61,7 @@ function docsToEntries(
 // These replace the old SWOT_DEFAULTS template strings and cover all languages.
 // ---------------------------------------------------------------------------
 
-type LangMap = Partial<Record<Language, string>>;
+type LangMap = Readonly<Record<Language, string>>;
 
 function loc(map: LangMap, lang: Language): string {
   return map[lang] ?? map.en ?? '';
