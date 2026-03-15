@@ -142,6 +142,9 @@ describe('Agentic Workflow MCP Query Patterns', () => {
 
       // Should have filtering guidance (either JS code examples or fromDate/toDate parameter patterns)
       expect(content).toMatch(/\.filter\(|fromDate|from_date|>= fromDate/);
+      // Should have filtering examples
+      expect(content).toContain('.filter(');
+      expect(content).toMatch(/new Date.*>=.*new Date|new Date.*>.*fromDate|>=\s*fromDate/);
       // Should document filtering by date fields — the workflow uses
       // placeholder parameters (fromDate/toDate/from/tom) and inline
       // JS .filter() calls with date comparisons for post-query filtering.
