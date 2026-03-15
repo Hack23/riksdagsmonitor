@@ -598,9 +598,9 @@ export function generatePolicySignificance(doc: RawDocument, lang: Language | st
   if (doktyp2 === 'ip') {
     const ipFallback: Record<string, string> = {
       sv: 'Interpellationen debatteras i kammaren där ministern är skyldig att svara och förklara sina beslut.',
-      da: 'Interpellationen debatteres i Folketinget, hvor ministeren er forpligtet til at svare og stå til ansvar.',
-      no: 'Interpellasjonen debatteres i Stortinget, der ministeren er forpliktet til å svare og stå til ansvar.',
-      fi: 'Välikysymys käsitellään täysistunnossa, jossa ministerin on vastattava ja oltava tilivelvollinen.',
+      da: 'Interpellationen debatteres i Riksdagens kammare, hvor ministeren er forpligtet til at svare og stå til ansvar.',
+      no: 'Interpellasjonen debatteres i Riksdagens kammare, der ministeren er forpliktet til å svare og stå til ansvar.',
+      fi: 'Välikysymys käsitellään Riksdagenin täysistunnossa, jossa ministerin on vastattava ja oltava tilivelvollinen.',
       de: 'Die Interpellation wird in der Kammer debattiert, wobei der Minister verpflichtet ist, Rede und Antwort zu stehen.',
       fr: "L'interpellation est débattue en séance plénière, où le ministre est tenu de répondre et de rendre des comptes.",
       es: 'La interpelación se debate en el pleno, donde el ministro está obligado a responder y rendir cuentas.',
