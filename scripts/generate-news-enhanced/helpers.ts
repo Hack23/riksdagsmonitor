@@ -293,12 +293,21 @@ export async function writeSingleArticle(html: string, slug: string, lang: Langu
  * effects when helpers.ts is imported by tests or other tooling.
  */
 let _flushGuardInstalled = false;
+let _flushed = false;
+
+/** Flush quality scores at most once per process lifetime. */
+function flushOnce(): void {
+  if (_flushed) return;
+  _flushed = true;
+  flushQualityScores();
+}
+
 export function installFlushHandlers(): void {
   if (_flushGuardInstalled) return;
   _flushGuardInstalled = true;
-  process.once('exit', () => flushQualityScores());
-  process.once('SIGINT', () => { flushQualityScores(); process.exit(130); });
-  process.once('SIGTERM', () => { flushQualityScores(); process.exit(143); });
+  process.once('exit', () => flushOnce());
+  process.once('SIGINT', () => { flushOnce(); process.exit(130); });
+  process.once('SIGTERM', () => { flushOnce(); process.exit(143); });
 }
 
 /**

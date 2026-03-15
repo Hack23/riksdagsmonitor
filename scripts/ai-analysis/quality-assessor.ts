@@ -82,11 +82,15 @@ const DIMENSION_WEIGHTS = {
   languageQuality: 0.10,
 } as const;
 
-/** Riksdag/Regering document ID patterns */
+/**
+ * Riksdag/Regering document ID patterns.
+ * Committee codes may contain non-ASCII Swedish letters (e.g. FöU, CU),
+ * so character classes include ÅÄÖ alongside A-Z.
+ */
 const DOCUMENT_ID_PATTERNS: readonly RegExp[] = [
-  /\b[A-Z]{1,3}\d{1,4}\/\d{2}:\d+\b/g,
+  /\b[A-ZÅÄÖ]{1,4}\d{1,4}\/\d{2}:\d+\b/gi,
   /\bProp\.\s*\d{4}\/\d{2}:\d+\b/gi,
-  /\bBet\.\s*\d{4}\/\d{2}:[A-Z]{1,3}\d+\b/gi,
+  /\bBet\.\s*\d{4}\/\d{2}:[A-ZÅÄÖ]{1,4}\d+\b/gi,
   /\bMot\.\s*\d{4}\/\d{2}:\d+\b/gi,
   /\bIP\s*\d{4}\/\d{2}:\d+\b/gi,
   /\bFr\.\s*\d{4}\/\d{2}:\d+\b/gi,
