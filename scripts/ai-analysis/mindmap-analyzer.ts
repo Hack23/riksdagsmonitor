@@ -24,7 +24,6 @@ import type { RawDocument } from '../data-transformers.js';
 import type { MindmapBranch, BranchConnection } from '../data-transformers/content-generators/mindmap-section.js';
 import { localizeDocType } from '../data-transformers/content-generators/shared.js';
 import { detectPolicyDomains, detectNarrativeFrames } from '../data-transformers/policy-analysis.js';
-import { getCurrentRiksmote } from '../shared/riksmote.js';
 import type { Language } from '../types/language.js';
 
 // ---------------------------------------------------------------------------
@@ -169,6 +168,66 @@ const DATA_SOURCE_ITEMS: Partial<Record<Language | string, string[]>> = {
   zh: ['议会 MCP（法律、动议、提案）', '世界银行（经济指标）', 'SCB 瑞典统计局'],
 };
 
+// Localised display strings for NarrativeFrame IDs
+// Maps internal kebab-case IDs to human-readable, per-language strings.
+const NARRATIVE_FRAME_LABELS: Record<string, Partial<Record<Language, string>>> = {
+  'law-and-order': {
+    en: 'Law & Order', sv: 'Lag & ordning', da: 'Lov & orden',
+    no: 'Lov & orden', fi: 'Laki & järjestys', de: 'Recht & Ordnung',
+    fr: 'Loi & ordre', es: 'Ley & orden', nl: 'Recht & orde',
+    ar: 'القانون والنظام', he: 'חוק וסדר', ja: '法と秩序', ko: '법과 질서', zh: '法律与秩序',
+  },
+  'welfare-state-defence': {
+    en: 'Welfare State Defence', sv: 'Välfärdsförsvar', da: 'Velfærdsforsvar',
+    no: 'Velferdsforsvar', fi: 'Hyvinvointivaltion puolustus', de: 'Sozialstaatsverteidigung',
+    fr: "Défense de l'État-providence", es: 'Defensa del estado de bienestar', nl: 'Verdediging verzorgingsstaat',
+    ar: 'الدفاع عن دولة الرفاه', he: 'הגנה על מדינת הרווחה', ja: '福祉国家の擁護', ko: '복지국가 방어', zh: '福利国家防御',
+  },
+  'fiscal-responsibility': {
+    en: 'Fiscal Responsibility', sv: 'Finanspolitiskt ansvar', da: 'Finansielt ansvar',
+    no: 'Finanspolitisk ansvarlighet', fi: 'Finanssivastuu', de: 'Haushaltsdisziplin',
+    fr: 'Responsabilité budgétaire', es: 'Responsabilidad fiscal', nl: 'Begrotingsverantwoordelijkheid',
+    ar: 'المسؤولية المالية', he: 'אחריות פיסקלית', ja: '財政責任', ko: '재정 책임', zh: '财政责任',
+  },
+  'green-transition': {
+    en: 'Green Transition', sv: 'Grön omställning', da: 'Grøn omstilling',
+    no: 'Grønn omstilling', fi: 'Vihreä siirtymä', de: 'Grüne Wende',
+    fr: 'Transition verte', es: 'Transición verde', nl: 'Groene transitie',
+    ar: 'التحول الأخضر', he: 'מעבר ירוק', ja: 'グリーン・トランジション', ko: '녹색 전환', zh: '绿色转型',
+  },
+  'national-security': {
+    en: 'National Security', sv: 'Nationell säkerhet', da: 'National sikkerhed',
+    no: 'Nasjonal sikkerhet', fi: 'Kansallinen turvallisuus', de: 'Nationale Sicherheit',
+    fr: 'Sécurité nationale', es: 'Seguridad nacional', nl: 'Nationale veiligheid',
+    ar: 'الأمن القومي', he: 'ביטחון לאומי', ja: '国家安全保障', ko: '국가 안보', zh: '国家安全',
+  },
+  'integration-challenge': {
+    en: 'Integration Challenge', sv: 'Integrationsfrågor', da: 'Integrationsproblematik',
+    no: 'Integreringsutfordringer', fi: 'Kotouttamishaasteet', de: 'Integrationsfragen',
+    fr: "Défis d'intégration", es: 'Desafíos de integración', nl: 'Integratievraagstukken',
+    ar: 'تحديات الاندماج', he: 'אתגרי השילוב', ja: '統合の課題', ko: '통합 과제', zh: '融合挑战',
+  },
+  'eu-sovereignty': {
+    en: 'EU & Sovereignty', sv: 'EU & suveränitet', da: 'EU & suverænitet',
+    no: 'EU & suverenitet', fi: 'EU & suvereniteetti', de: 'EU & Souveränität',
+    fr: "UE & souveraineté", es: 'UE & soberanía', nl: 'EU & soevereiniteit',
+    ar: 'الاتحاد الأوروبي والسيادة', he: 'האיחוד האירופי וריבונות', ja: 'EU・主権', ko: 'EU 및 주권', zh: 'EU与主权',
+  },
+  'workers-rights': {
+    en: "Workers' Rights", sv: 'Arbetstagarrättigheter', da: 'Arbejdstagerrettigheder',
+    no: 'Arbeidstakerrettigheter', fi: 'Työntekijöiden oikeudet', de: 'Arbeitnehmerrechte',
+    fr: 'Droits des travailleurs', es: 'Derechos laborales', nl: 'Werknemersrechten',
+    ar: 'حقوق العمال', he: 'זכויות עובדים', ja: '労働者の権利', ko: '노동자 권리', zh: '工人权利',
+  },
+};
+
+/** Look up the localized display string for a NarrativeFrame ID */
+function localizeNarrativeFrame(frameId: string, lang: Language | string): string {
+  const table = NARRATIVE_FRAME_LABELS[frameId];
+  if (!table) return frameId;
+  return (table as Record<string, string>)[lang] ?? table.en ?? frameId;
+}
+
 // Localised text enrichment labels
 const ENRICHMENT_LABELS: Partial<Record<Language | string, string>> = {
   en: 'Full document text enrichment', sv: 'Fullständig dokumenttextberikning',
@@ -290,13 +349,20 @@ function extractOrgans(docs: RawDocument[]): string[] {
 }
 
 /** Derive riksmöte (parliamentary session) string from a date string.
- *  Delegates to the shared `getCurrentRiksmote()` utility so the Sep–Aug
- *  boundary logic stays in sync with generators/motions.
+ *  Parses year/month directly from the `YYYY-MM-DD` string to avoid
+ *  timezone-sensitive `new Date()` parsing that can shift the month at
+ *  midnight UTC (e.g. "2025-09-01" → Aug 31 in UTC-1 runtimes).
+ *  Falls back to `getCurrentRiksmote(new Date())` if the string is
+ *  not a valid ISO date.
  */
 function datumToRiksmote(datum: string): string {
-  const d = new Date(datum);
-  if (isNaN(d.getTime())) return datum.slice(0, 4); // invalid date: fall back to year
-  return getCurrentRiksmote(d);
+  const m = /^(\d{4})-(\d{2})/.exec(datum);
+  if (!m) return datum.slice(0, 4); // invalid format: fall back to year
+  const year = Number(m[1]);
+  const month = Number(m[2]) - 1; // 0-based (Jan=0, Sep=8)
+  const startYear = month >= 8 ? year : year - 1;
+  const endYY = String(startYear + 1).slice(-2);
+  return `${startYear}/${endYY}`;
 }
 
 /** Detect whether a single document has EU connection signals */
@@ -412,7 +478,7 @@ function pass1ContentDecomposition(
       color: 'yellow',
       icon: '🔗',
       importance: 'high',
-      items: frameList.slice(0, 5),
+      items: frameList.slice(0, 5).map(f => localizeNarrativeFrame(f, lang)),
     });
   }
 
