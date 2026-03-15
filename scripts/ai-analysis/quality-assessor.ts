@@ -89,15 +89,15 @@ const DIMENSION_WEIGHTS = {
  * guards `(?:^|[^\p{L}\p{N}_])` / `(?:$|[^\p{L}\p{N}_])` because the
  * standard `\b` anchor is ASCII-only and mishandles ÅÄÖ.
  */
-const UB = '(?:^|[^\\p{L}\\p{N}_])';  // Unicode-aware start boundary
-const UE = '(?:$|[^\\p{L}\\p{N}_])';  // Unicode-aware end boundary
+const UNICODE_WORD_START = '(?:^|[^\\p{L}\\p{N}_])';  // Unicode-aware start boundary
+const UNICODE_WORD_END = '(?:$|[^\\p{L}\\p{N}_])';    // Unicode-aware end boundary
 const DOCUMENT_ID_PATTERNS: readonly RegExp[] = [
-  new RegExp(`${UB}([\\p{L}]{1,4}\\d{1,4}/\\d{2}:\\d+)${UE}`, 'giu'),
-  new RegExp(`${UB}(Prop\\.\\s*\\d{4}/\\d{2}:\\d+)${UE}`, 'giu'),
-  new RegExp(`${UB}(Bet\\.\\s*\\d{4}/\\d{2}:[\\p{L}]{1,4}\\d+)${UE}`, 'giu'),
-  new RegExp(`${UB}(Mot\\.\\s*\\d{4}/\\d{2}:\\d+)${UE}`, 'giu'),
-  new RegExp(`${UB}(IP\\s*\\d{4}/\\d{2}:\\d+)${UE}`, 'giu'),
-  new RegExp(`${UB}(Fr\\.\\s*\\d{4}/\\d{2}:\\d+)${UE}`, 'giu'),
+  new RegExp(`${UNICODE_WORD_START}([\\p{L}]{1,4}\\d{1,4}/\\d{2}:\\d+)${UNICODE_WORD_END}`, 'giu'),
+  new RegExp(`${UNICODE_WORD_START}(Prop\\.\\s*\\d{4}/\\d{2}:\\d+)${UNICODE_WORD_END}`, 'giu'),
+  new RegExp(`${UNICODE_WORD_START}(Bet\\.\\s*\\d{4}/\\d{2}:[\\p{L}]{1,4}\\d+)${UNICODE_WORD_END}`, 'giu'),
+  new RegExp(`${UNICODE_WORD_START}(Mot\\.\\s*\\d{4}/\\d{2}:\\d+)${UNICODE_WORD_END}`, 'giu'),
+  new RegExp(`${UNICODE_WORD_START}(IP\\s*\\d{4}/\\d{2}:\\d+)${UNICODE_WORD_END}`, 'giu'),
+  new RegExp(`${UNICODE_WORD_START}(Fr\\.\\s*\\d{4}/\\d{2}:\\d+)${UNICODE_WORD_END}`, 'giu'),
 ];
 
 /** Words / phrases indicating causal or analytical reasoning */
@@ -146,8 +146,10 @@ function countDocumentIds(html: string): Set<string> {
   for (const pattern of DOCUMENT_ID_PATTERNS) {
     const re = new RegExp(pattern.source, pattern.flags.replace('g', '') + 'g');
     for (const m of html.matchAll(re)) {
-      // Group 1 contains the actual document ID (the Unicode boundary guards
-      // in the full match are non-capturing context).
+      // Group 1 contains the actual document ID; the boundary guards are
+      // non-capturing context.  Fallback to m[0] is a safety net for any
+      // future pattern without a capture group — should never trigger for
+      // the current DOCUMENT_ID_PATTERNS.
       ids.add(normalizeDocId(m[1] ?? m[0]));
     }
   }
