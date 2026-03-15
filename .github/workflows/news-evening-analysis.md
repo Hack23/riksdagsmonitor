@@ -215,12 +215,11 @@ STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm
 
 ### DATA FRESHNESS CHECK
 
-After `get_sync_status()` succeeds, compute hours since last sync and check if data is stale:
+After `get_sync_status()` succeeds, compute hours since last sync and check if data is stale. If `hoursSinceSync > 48`, add a disclaimer note in analysis mentioning "stale data (> 48 hours old)" but proceed with cached data. Example:
 ```js
 const hoursSinceSync = (Date.now() - new Date(syncResult.last_updated).getTime()) / 3600000;
 if (hoursSinceSync > 48) { /* add stale data disclaimer */ }
 ```
-If `hoursSinceSync > 48`, add a disclaimer note in analysis mentioning "stale data (> 48 hours old)" but proceed with cached data.
 
 ### IMPORTANT: Date Filtering in Analysis
 
