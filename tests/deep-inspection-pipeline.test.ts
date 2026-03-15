@@ -9,6 +9,8 @@
  */
 
 import { describe, it, expect, vi } from 'vitest';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 
 // ---------------------------------------------------------------------------
 // 1. Config — analysisDepth parsing
@@ -70,7 +72,6 @@ describe('DeepInspectionPipeline', () => {
       isGovernmentUrl: vi.fn(),
       sanitizePlainText: vi.fn(),
       hashPathSuffix: vi.fn(),
-      deepLabel: vi.fn().mockReturnValue('label'),
     }));
     vi.resetModules();
 
@@ -92,7 +93,7 @@ describe('DeepInspectionPipeline', () => {
 });
 
 // ---------------------------------------------------------------------------
-// 3. DEEP_SECTION_LABELS — new labels exist (uses real module)
+// 3. DEEP_SECTION_LABELS — new labels exist (verified via source inspection)
 // ---------------------------------------------------------------------------
 
 describe('new deep-inspection section labels', () => {
@@ -106,51 +107,47 @@ describe('new deep-inspection section labels', () => {
     expect(typeof mod.hashPathSuffix).toBe('function');
   });
 
-  // Validate that the 7 new DEEP_SECTION_LABELS keys produce localised headings
-  // by calling deepLabel() directly (now exported for test verification).
-  it('DEEP_SECTION_LABELS contains all new section keys with English labels', async () => {
-    vi.resetModules();
-    const { deepLabel } = await import('../scripts/generate-news-enhanced/generators.js');
+  // Validate DEEP_SECTION_LABELS completeness by checking that the source
+  // contains English and Swedish label entries for every expected key.
+  // This keeps deepLabel() file-private while still catching missing labels.
+  const generatorsSrc = fs.readFileSync(
+    path.resolve(__dirname, '../scripts/generate-news-enhanced/generators.ts'), 'utf-8');
 
-    // These keys were added for the depth-gated intelligence sections.
-    // If any is missing from DEEP_SECTION_LABELS, deepLabel() returns the raw key.
-    const newKeys = [
-      'executiveSummary',
-      'predictiveAssessment',
-      'historicalContext',
-      'methodology',
-      'likelyOutcome',
-      'coalitionStability',
-      'riskScenarios',
-    ];
+  const NEW_KEYS = [
+    'executiveSummary',
+    'predictiveAssessment',
+    'historicalContext',
+    'methodology',
+    'likelyOutcome',
+    'coalitionStability',
+    'riskScenarios',
+  ];
 
-    for (const key of newKeys) {
-      const label = deepLabel(key, 'en');
-      // A real label should differ from the raw key (deepLabel falls back to key if missing)
-      expect(label).not.toBe(key);
-      expect(label.length).toBeGreaterThan(0);
+  it('DEEP_SECTION_LABELS contains all new section keys with English labels', () => {
+    for (const key of NEW_KEYS) {
+      // Each key should appear as a property name in the labels object
+      expect(generatorsSrc).toContain(`${key}:`);
+      // And have an 'en:' entry (English label) within its block
     }
+    // Verify specific English labels to ensure they're real translations, not stubs
+    expect(generatorsSrc).toContain("en: 'Executive Intelligence Summary'");
+    expect(generatorsSrc).toContain("en: 'Predictive Assessment'");
+    expect(generatorsSrc).toContain("en: 'Historical Context & Precedents'");
+    expect(generatorsSrc).toContain("en: 'Methodology & Confidence'");
+    expect(generatorsSrc).toContain("en: 'Likely Outcome'");
+    expect(generatorsSrc).toContain("en: 'Coalition Stability Forecast'");
+    expect(generatorsSrc).toContain("en: 'Risk Scenarios'");
   });
 
-  it('DEEP_SECTION_LABELS have Swedish labels for all new section keys', async () => {
-    vi.resetModules();
-    const { deepLabel } = await import('../scripts/generate-news-enhanced/generators.js');
-
-    const newKeys = [
-      'executiveSummary',
-      'predictiveAssessment',
-      'historicalContext',
-      'methodology',
-      'likelyOutcome',
-      'coalitionStability',
-      'riskScenarios',
-    ];
-
-    for (const key of newKeys) {
-      const label = deepLabel(key, 'sv');
-      expect(label).not.toBe(key);
-      expect(label.length).toBeGreaterThan(0);
-    }
+  it('DEEP_SECTION_LABELS have Swedish labels for all new section keys', () => {
+    // Verify specific Swedish labels
+    expect(generatorsSrc).toContain("sv: 'Sammanfattning för beslutsfattare'");
+    expect(generatorsSrc).toContain("sv: 'Prediktiv bedömning'");
+    expect(generatorsSrc).toContain("sv: 'Historisk kontext och prejudikat'");
+    expect(generatorsSrc).toContain("sv: 'Metodik och konfidensgrad'");
+    expect(generatorsSrc).toContain("sv: 'Troligt utfall'");
+    expect(generatorsSrc).toContain("sv: 'Koalitionsstabilitetsprognos'");
+    expect(generatorsSrc).toContain("sv: 'Riskscenarier'");
   });
 });
 

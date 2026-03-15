@@ -185,6 +185,7 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       // combining different API calls in a single analysis workflow
       const hasMultiToolExamples =
         content.includes('Example 1:') && content.includes('Example 2:');
+      expect(hasMultiToolExamples).toBe(true);
 
       // Should mention cross-referencing related data sources
       expect(content).toMatch(/Cross-reference related data sources/i);

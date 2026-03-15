@@ -837,10 +837,14 @@ const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, stri
   },
 };
 
-/** @internal Exported for test verification of label map completeness. */
-export function deepLabel(key: string, lang: Language): string {
+function deepLabel(key: string, lang: Language): string {
   const map = DEEP_SECTION_LABELS[key];
   return (map?.[lang]) ?? (map?.en ?? key);
+}
+
+/** Checks whether a document represents an SFS (enacted statute). */
+function isSfsDoc(d: RawDocument): boolean {
+  return (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS');
 }
 
 function docTypeLabel(doktyp: string, lang: Language, count?: number): string {
@@ -1117,8 +1121,7 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
   const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
   const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
   const euDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
-  const sfsDocs  = docs.filter(d =>
-    (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
+  const sfsDocs  = docs.filter(isSfsDoc);
   const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
 
   const topicPhrase = topic ? ` (${esc(topic)})` : '';
@@ -1198,8 +1201,7 @@ function buildExecutiveSummary(docs: RawDocument[], topic: string | null, lang: 
   const propCount = docs.filter(d => (d.doktyp || d.documentType) === 'prop').length;
   const betCount  = docs.filter(d => (d.doktyp || d.documentType) === 'bet').length;
   const motCount  = docs.filter(d => (d.doktyp || d.documentType) === 'mot').length;
-  const sfsDocs   = docs.filter(d =>
-    (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
+  const sfsDocs   = docs.filter(isSfsDoc);
   const enriched  = docs.filter(d => d.contentFetched).length;
   const allDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
@@ -1332,8 +1334,7 @@ function buildPredictiveAssessment(docs: RawDocument[], topic: string | null, la
   const propCount = docs.filter(d => (d.doktyp || d.documentType) === 'prop').length;
   const betCount  = docs.filter(d => (d.doktyp || d.documentType) === 'bet').length;
   const motCount  = docs.filter(d => (d.doktyp || d.documentType) === 'mot').length;
-  const sfsDocs   = docs.filter(d =>
-    (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
+  const sfsDocs   = docs.filter(isSfsDoc);
   const confidence = deriveConfidence(docs);
 
   // Passage likelihood heuristic: if committee reports exceed motions → likely passage
@@ -1451,8 +1452,7 @@ function buildPredictiveAssessment(docs: RawDocument[], topic: string | null, la
  */
 function buildHistoricalContext(docs: RawDocument[], topic: string | null, lang: Language): string {
   const esc = escapeHtml;
-  const sfsDocs   = docs.filter(d =>
-    (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
+  const sfsDocs   = docs.filter(isSfsDoc);
   const propCount = docs.filter(d => (d.doktyp || d.documentType) === 'prop').length;
   const allDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
@@ -1638,8 +1638,7 @@ function buildDeepInspectionSections(
   const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
   const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
   const skrDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
-  const sfsDocs  = docs.filter(d =>
-    (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
+  const sfsDocs  = docs.filter(isSfsDoc);
   const euDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
   const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
   const extDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
