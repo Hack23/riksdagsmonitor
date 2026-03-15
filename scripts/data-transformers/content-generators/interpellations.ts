@@ -91,10 +91,16 @@ export function generateInterpellationsContent(
 
   const partyCount = Object.keys(byParty).filter(p => p !== 'other').length;
 
+  // Precompute policy domains once per interpellation for reuse in theming + whyItMatters
+  const domainCache = new Map<RawDocument, string[]>();
+  interpellations.forEach(interp => {
+    domainCache.set(interp, detectPolicyDomains(interp, lang));
+  });
+
   // Individual interpellation entries grouped by policy theme
   const byTheme: Record<string, RawDocument[]> = {};
   interpellations.forEach(interp => {
-    const domains = detectPolicyDomains(interp, lang);
+    const domains = domainCache.get(interp) ?? [];
     const theme = domains[0] || String(L(lang, 'generalMatters'));
     if (!byTheme[theme]) byTheme[theme] = [];
     byTheme[theme].push(interp);
@@ -107,12 +113,13 @@ export function generateInterpellationsContent(
     Object.entries(byTheme).forEach(([theme, themeInterps]) => {
       content += `\n    <h3>${escapeHtml(theme)} (${themeInterps.length})</h3>\n`;
       themeInterps.forEach(interp => {
-        content += _renderInterpellationEntry(interp, lang);
+        // Use <h4> under theme <h3> to maintain strict heading hierarchy
+        content += _renderInterpellationEntry(interp, lang, domainCache, 'h4');
       });
     });
   } else {
     interpellations.forEach(interp => {
-      content += _renderInterpellationEntry(interp, lang);
+      content += _renderInterpellationEntry(interp, lang, domainCache);
     });
   }
 
@@ -178,9 +185,16 @@ export function generateInterpellationsContent(
  *
  * @param interp - Raw interpellation document
  * @param lang - Target language
+ * @param domainCache - Precomputed policy domains per document (avoids redundant detectPolicyDomains calls)
+ * @param headingTag - HTML heading tag for entry titles ('h3' at top level, 'h4' under theme headings)
  * @returns HTML string for a single interpellation entry
  */
-function _renderInterpellationEntry(interp: RawDocument, lang: Language | string): string {
+function _renderInterpellationEntry(
+  interp: RawDocument,
+  lang: Language | string,
+  domainCache?: Map<RawDocument, string[]>,
+  headingTag: 'h3' | 'h4' = 'h3',
+): string {
   const title = escapeHtml(String(interp.titel ?? interp.title ?? ''));
   const minister = escapeHtml(String(interp.mottagare ?? ''));
   const party = escapeHtml(String(interp.parti ?? ''));
@@ -201,8 +215,8 @@ function _renderInterpellationEntry(interp: RawDocument, lang: Language | string
   let entry = `    <div class="document-entry">\n`;
   if (title) {
     entry += (safeUrl && safeUrl !== '#')
-      ? `      <h3><a href="${safeUrl}" rel="noopener noreferrer" target="_blank">${titleHtml}</a></h3>\n`
-      : `      <h3>${titleHtml}</h3>\n`;
+      ? `      <${headingTag}><a href="${safeUrl}" rel="noopener noreferrer" target="_blank">${titleHtml}</a></${headingTag}>\n`
+      : `      <${headingTag}>${titleHtml}</${headingTag}>\n`;
   }
   if (minister) {
     entry += `      <p><strong>${targetLabel}:</strong> ${minister}</p>\n`;
@@ -219,8 +233,8 @@ function _renderInterpellationEntry(interp: RawDocument, lang: Language | string
   if (datum) {
     entry += `      <p><em>${publishedLabel}: ${datum}</em></p>\n`;
   }
-  // Why it matters — interpellation-specific context
-  const whyText = _generateInterpellationWhyItMatters(interp, lang);
+  // Why it matters — interpellation-specific context (reuse precomputed domains)
+  const whyText = _generateInterpellationWhyItMatters(interp, lang, domainCache);
   entry += `      <p class="why-it-matters"><strong>${whyMattersLabel}:</strong> ${escapeHtml(whyText)}</p>\n`;
   entry += `    </div>\n`;
   return entry;
@@ -232,13 +246,15 @@ function _renderInterpellationEntry(interp: RawDocument, lang: Language | string
  *
  * @param interp - Raw interpellation document
  * @param lang - Target language
+ * @param domainCache - Optional precomputed policy domains (avoids redundant detectPolicyDomains call)
  * @returns Localized explanation string
  */
 function _generateInterpellationWhyItMatters(
   interp: RawDocument,
   lang: Language | string,
+  domainCache?: Map<RawDocument, string[]>,
 ): string {
-  const domains = detectPolicyDomains(interp, lang);
+  const domains = domainCache?.get(interp) ?? detectPolicyDomains(interp, lang);
   const domain = domains[0] ?? '';
   const minister = String(interp.mottagare ?? '');
   const langStr = String(lang);

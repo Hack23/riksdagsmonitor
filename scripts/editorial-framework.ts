@@ -16,6 +16,8 @@
  * @license Apache-2.0
  */
 
+import type { ArticleType } from './types/article.js';
+
 /**
  * SWOT analysis depth for an article type.
  * - 'full': Complete SWOT with 5+ stakeholder perspectives per quadrant
@@ -83,11 +85,18 @@ export interface ArticleTypeProfile {
 }
 
 /**
+ * Constrained union of all valid editorial profile keys.
+ * Covers the canonical ArticleType union plus 'evening-analysis' which is
+ * workflow-specific but not a routable article type.
+ */
+export type EditorialProfileKey = ArticleType | 'evening-analysis';
+
+/**
  * Editorial profiles for all 11 article types supported by the news generation pipeline.
  *
  * Profiles are ordered by analysis complexity from most to least intensive.
  */
-export const ARTICLE_TYPE_PROFILES: Readonly<Record<string, ArticleTypeProfile>> = {
+export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, ArticleTypeProfile>> = {
   'deep-inspection': {
     label: 'Deep Inspection',
     swot: 'full',
@@ -382,7 +391,8 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<string, ArticleTypeProfile>>
  * @returns The editorial profile, or the 'breaking' profile as a safe fallback
  */
 export function getArticleTypeProfile(articleType: string): ArticleTypeProfile {
-  return ARTICLE_TYPE_PROFILES[articleType] ?? ARTICLE_TYPE_PROFILES['breaking']!;
+  return (ARTICLE_TYPE_PROFILES as Readonly<Record<string, ArticleTypeProfile>>)[articleType]
+    ?? ARTICLE_TYPE_PROFILES['breaking'];
 }
 
 /**
@@ -407,6 +417,11 @@ export function resolveAiIterations(
     case 'comprehensive':
       // comprehensive uses the full profile iteration count (minimum 3, no cap)
       return Math.max(3, profile.aiIterations);
+    default: {
+      // Exhaustive guard — if a new AnalysisDepth value is added, this will error at compile time
+      const _exhaustive: never = requestedDepth;
+      throw new Error(`Unknown analysis depth: ${String(_exhaustive)}`);
+    }
   }
 }
 
