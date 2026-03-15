@@ -114,7 +114,13 @@
   --type-label:      #ff1744;
 }
 
-/* ── Evening Analysis — Indigo/Dark (reserved for future article type) ─── */
+/*
+ * ── Evening Analysis — Indigo/Dark ────────────────────────────────────────
+ * Reserved for future article type.  Not yet registered in ArticleType,
+ * ARTICLE_TYPE_NAMES, or the template registry.  The CSS custom properties
+ * are defined here so that they are ready to use the moment the type is
+ * promoted to the registry without a stylesheet release.
+ */
 .news-article.article-type-evening-analysis {
   --type-accent:     #7c4dff;
   --type-accent-rgb: 124, 77, 255;
@@ -228,6 +234,12 @@
     padding-left: 0;
     border-bottom: 2px solid var(--type-accent);
     padding-bottom: 0.25rem;
+  }
+
+  /* RTL small screens also use bottom-border treatment */
+  [dir="rtl"] .news-article[class*="article-type-"] h2 {
+    border-right: none;
+    padding-right: 0;
   }
 }
 

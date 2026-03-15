@@ -15,7 +15,7 @@
 
 .news-article .mindmap-section {
   background: #0a0e27;
-  border: 2px solid #00d9ff;
+  border: 2px solid var(--type-accent, #00d9ff);
   border-radius: 12px;
   padding: 2rem;
   margin: 2rem 0;
@@ -23,8 +23,8 @@
 
 .news-article .mindmap-section h2 {
   font-size: 1.4rem;
-  color: #00d9ff;
-  border-bottom: 2px solid #00d9ff;
+  color: var(--type-accent, #00d9ff);
+  border-bottom: 2px solid var(--type-accent, #00d9ff);
   padding-bottom: 0.75rem;
   margin: 0 0 1rem 0;
   font-family: var(--font-heading, 'Orbitron', sans-serif);
@@ -45,15 +45,15 @@
 
 .news-article .mindmap-center {
   background: linear-gradient(135deg, #0a2a33, #003344);
-  border: 3px solid #00d9ff;
+  border: 3px solid var(--type-accent, #00d9ff);
   border-radius: 12px;
   padding: 1rem 2rem;
-  color: #00d9ff;
+  color: var(--type-accent, #00d9ff);
   font-weight: 700;
   font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.15rem);
   font-family: var(--font-heading, 'Orbitron', sans-serif);
   text-align: center;
-  box-shadow: 0 0 20px rgba(0, 217, 255, 0.25);
+  box-shadow: 0 0 20px rgba(var(--type-accent-rgb, 0, 217, 255), 0.25);
   max-width: 280px;
 }
 

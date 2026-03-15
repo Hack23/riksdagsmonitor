@@ -120,3 +120,14 @@
   line-height: 1.5;
 }
 
+/* RTL adjustments for economic dashboard */
+[dir="rtl"] .news-article .economic-dashboard-section,
+[dir="rtl"] .news-article .economic-dashboard-placeholder {
+  text-align: right;
+}
+
+[dir="rtl"] .news-article .economic-indicators-list {
+  padding-left: 0;
+  padding-right: 1.5rem;
+}
+

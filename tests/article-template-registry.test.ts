@@ -323,11 +323,14 @@ describe('generateArticleHTML article-type class injection', () => {
   });
 
   it('should fall back gracefully for unknown article type string', () => {
-    const data = { ...makeMockArticleData('breaking'), type: 'analysis' as ArticleData['type'] };
+    const data = {
+      ...makeMockArticleData('breaking'),
+      articleType: 'nonexistent-type' as ArticleData['articleType'],
+    };
     const html = generateArticleHTML(data as ArticleData);
-    // Should still produce valid HTML
+    // Should still produce valid HTML with fallback to breaking style
     expect(html).toContain('<!DOCTYPE html>');
-    expect(html).toContain('class="news-article');
+    expect(html).toContain('class="news-article article-type-breaking"');
   });
 
   it('should use base news-article class when articleType is omitted', () => {

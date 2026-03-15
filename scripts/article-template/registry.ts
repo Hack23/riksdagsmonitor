@@ -379,6 +379,10 @@ const REGISTRY: Readonly<Record<ArticleType, ArticleTemplate>> = {
  * breaking-news layout rather than an error, ensuring graceful degradation
  * across all content generation pipelines.
  *
+ * Uses `Object.hasOwn()` (ES2022) for prototype-pollution safety.
+ * This is compatible with the project's `tsconfig.scripts.json` target
+ * (`"target": "ES2022"`) and the Node 18+ runtime requirement.
+ *
  * @param type - ArticleType identifier
  * @returns ArticleTemplate configuration object
  */
