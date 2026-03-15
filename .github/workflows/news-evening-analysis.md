@@ -263,11 +263,6 @@ Cross-reference related data sources for richer analysis. Filter all results by 
 // 1. Fetch voting records for the period
 // 2. Cross-reference with party motions and interpellations
 // 3. Identify cross-party consensus or opposition patterns
-Example 1: Committee Report Deep Dive
-```
-// 1. Fetch committee reports
-// 2. Cross-reference with voting records for the same beteckning
-// 3. Enrich with related speeches from the same debate
 ```
 **Example 1: Committee Report Deep Dive**
 ```javascript

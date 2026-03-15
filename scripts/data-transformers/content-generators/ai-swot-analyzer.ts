@@ -420,11 +420,12 @@ interface DocBuckets {
   fpm: RawDocument[];
   mot: RawDocument[];
   ext: RawDocument[];
+  other: RawDocument[];
 }
 
 /** Classify docs into type buckets in a single pass */
 function bucketDocs(docs: RawDocument[]): DocBuckets {
-  const b: DocBuckets = { prop: [], skr: [], sfs: [], pressm: [], bet: [], fpm: [], mot: [], ext: [] };
+  const b: DocBuckets = { prop: [], skr: [], sfs: [], pressm: [], bet: [], fpm: [], mot: [], ext: [], other: [] };
   for (const d of docs) {
     const t = d.doktyp || d.documentType || '';
     switch (t) {
@@ -439,6 +440,7 @@ function bucketDocs(docs: RawDocument[]): DocBuckets {
       default:
         // SFS-by-name heuristic (doktyp missing but dokumentnamn starts with SFS)
         if ((d.dokumentnamn || '').startsWith('SFS')) { b.sfs.push(d); }
+        else { b.other.push(d); }
         break;
     }
   }
@@ -448,7 +450,8 @@ function bucketDocs(docs: RawDocument[]): DocBuckets {
 /** Sum of all bucketed documents */
 function bucketTotal(b: DocBuckets): number {
   return b.prop.length + b.skr.length + b.sfs.length + b.pressm.length
-       + b.bet.length + b.fpm.length + b.mot.length + b.ext.length;
+       + b.bet.length + b.fpm.length + b.mot.length + b.ext.length
+       + b.other.length;
 }
 
 // ---------------------------------------------------------------------------
