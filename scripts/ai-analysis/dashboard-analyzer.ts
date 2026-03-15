@@ -146,7 +146,7 @@ const L: Record<string, LangMap> = {
     ja: '提案草案', ko: '초안 제안', zh: '初步提案',
   },
   parliamentaryMotion: {
-    en: 'Parliamentary Motion', sv: 'Motion', da: 'Motion', no: 'Motesjon',
+    en: 'Parliamentary Motion', sv: 'Motion', da: 'Motion', no: 'Forslag',
     fi: 'Kirjelmä', de: 'Parlamentarischer Antrag', fr: 'Motion parlementaire', es: 'Moción parlamentaria',
     nl: 'Parlementaire motie', ar: 'اقتراح برلماني', he: 'הצעת חוק פרלמנטרית',
     ja: '議会動議', ko: '의회 동의', zh: '议会动议',
