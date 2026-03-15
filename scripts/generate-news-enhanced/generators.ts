@@ -1100,17 +1100,20 @@ async function buildDeepInspectionSections(
   // when generators.ts is used for non-deep-inspection article types.
   const { buildMultiStakeholderSwot, STAKEHOLDER_NAMES } = await import('./swot-analyzer.js');
 
+  // Precompute effectiveType() once per document to avoid repeated string checks.
+  const docTypes = docs.map(d => effectiveType(d));
+
   // Classify by document type (needed for downstream sankey/dashboard sections).
-  const propDocs   = docs.filter(d => effectiveType(d) === 'prop');
-  const betDocs    = docs.filter(d => effectiveType(d) === 'bet');
-  const motDocs    = docs.filter(d => effectiveType(d) === 'mot');
-  const skrDocs    = docs.filter(d => effectiveType(d) === 'skr');
-  const sfsDocs    = docs.filter(d => effectiveType(d) === 'sfs');
-  const euDocs     = docs.filter(d => effectiveType(d) === 'fpm' || effectiveType(d) === 'eu');
-  const pressmDocs = docs.filter(d => effectiveType(d) === 'pressm');
-  const extDocs    = docs.filter(d => effectiveType(d) === 'ext');
-  const otherDocs  = docs.filter(d =>
-    !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext'].includes(effectiveType(d)));
+  const propDocs   = docs.filter((_, i) => docTypes[i] === 'prop');
+  const betDocs    = docs.filter((_, i) => docTypes[i] === 'bet');
+  const motDocs    = docs.filter((_, i) => docTypes[i] === 'mot');
+  const skrDocs    = docs.filter((_, i) => docTypes[i] === 'skr');
+  const sfsDocs    = docs.filter((_, i) => docTypes[i] === 'sfs');
+  const euDocs     = docs.filter((_, i) => docTypes[i] === 'fpm' || docTypes[i] === 'eu');
+  const pressmDocs = docs.filter((_, i) => docTypes[i] === 'pressm');
+  const extDocs    = docs.filter((_, i) => docTypes[i] === 'ext');
+  const otherDocs  = docs.filter((_, i) =>
+    !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext'].includes(docTypes[i]));
 
   // Build 4–9 stakeholder SWOT analyses from document metadata
   const stakeholders = buildMultiStakeholderSwot(docs, lang);
