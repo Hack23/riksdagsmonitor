@@ -178,13 +178,11 @@ STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm
 
 ### DATA FRESHNESS CHECK
 
-Parse sync status and compute `hoursSinceSync = (Date.now() - new Date(last_updated).getTime()) / 3600000`. If hoursSinceSync > 48, data is stale — add a disclaimer note in analysis and mention "stale data (> 48 hours old)" but proceed with cached data. Example:
-After `get_sync_status()` succeeds, compute hours since last sync and check if data is stale:
+After `get_sync_status()` succeeds, compute hours since last sync and check if data is stale. If `hoursSinceSync > 48`, add a disclaimer note in analysis mentioning "stale data (> 48 hours old)" but proceed with cached data. Example:
 ```js
 const hoursSinceSync = (Date.now() - new Date(syncResult.last_updated).getTime()) / 3600000;
 if (hoursSinceSync > 48) { /* add stale data disclaimer */ }
 ```
-If `hoursSinceSync > 48`, add a disclaimer note in analysis mentioning "stale data (> 48 hours old)" but proceed with cached data.
 
 ### IMPORTANT: Date Filtering in Analysis
 
@@ -213,12 +211,6 @@ const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 
 Filter results to only include items with dates `>= fromDate`:
 ```js
 const filtered = results.filter(item => new Date(item.datum || item.publicerad) >= new Date(fromDate));
-```
-
-Post-query filtering pattern:
-```js
-const fromDate = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
-results.filter(d => new Date(d.datum) >= new Date(fromDate))
 ```
 
 ### Cross-Referencing Strategy
