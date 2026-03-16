@@ -189,7 +189,7 @@ describe('generateDeepInspectionContent depth-gated sections', () => {
 
   // Depth 4: methodology section includes 4 quality-review iterations
   it('methodology section renders iteration items up to depth', () => {
-    expect(generatorsSrc).toContain('labels.slice(0, depth)');
+    expect(generatorsSrc).toContain('labels.slice(0, clampedDepth)');
   });
 
   // Verify section headings use deepLabel() with correct keys
@@ -222,8 +222,9 @@ describe('generateDeepInspectionContent depth-gated sections', () => {
   it('deriveConfidence heuristic is used for confidence scoring', () => {
     expect(generatorsSrc).toContain('deriveConfidence(');
     // Named constants for confidence/prediction heuristics
-    expect(generatorsSrc).toContain('ENRICHMENT_WEIGHT');
-    expect(generatorsSrc).toContain('MAX_DOCUMENT_BONUS');
+    expect(generatorsSrc).toContain('CONFIDENCE_HIGH_THRESHOLD');
+    expect(generatorsSrc).toContain('CONFIDENCE_MEDIUM_THRESHOLD');
+    expect(generatorsSrc).toContain('CONFIDENCE_MIN_DOCS_HIGH');
     expect(generatorsSrc).toContain('BASE_PASSAGE_PROBABILITY');
   });
 });
