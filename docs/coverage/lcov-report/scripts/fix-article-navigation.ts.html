@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">39.47% </span>
+                <span class="strong">36.84% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>45/114</span>
+                <span class='fraction'>42/114</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.18% </span>
+                <span class="strong">27.77% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>19/54</span>
+                <span class='fraction'>15/54</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.9% </span>
+                <span class="strong">39.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>44/105</span>
+                <span class='fraction'>41/105</span>
             </div>
         
             
@@ -294,7 +294,10 @@
 <a name='L229'></a><a href='#L229'>229</a>
 <a name='L230'></a><a href='#L230'>230</a>
 <a name='L231'></a><a href='#L231'>231</a>
-<a name='L232'></a><a href='#L232'>232</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -412,24 +415,27 @@
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -643,10 +649,12 @@ export function transformContent(
     let inserted = false;
 &nbsp;
     // Pattern A: insert after closing &lt;/nav&gt; of language-switcher, before article/div.news-article
+    // Note: the article/div tag may have attributes before class= (e.g. id="main-content")
+    // and may carry additional classes (e.g. "news-article article-type-propositions")
     <span class="missing-if-branch" title="else path not taken" >E</span>if (result.includes('&lt;/nav&gt;')) {
-      const navPattern = /((&lt;\/nav&gt;)([\s]*)(&lt;(?:article|div)\s+class="(?:news-article|container)"))/s;
+      const navPattern = /((&lt;\/nav&gt;)([\s]*)(&lt;(?:article|div)\b[^&gt;]*?\bclass="(?:news-article(?:\s[^"]*)?|container)"))/s;
       const match = navPattern.exec(result);
-      if (match) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (match) {
         const endOfNav = match.index + match[2].length;
         const whitespace = match[3];
         const articleTag = match[4];
@@ -656,17 +664,18 @@ export function transformContent(
       }
     }
 &nbsp;
-    // Pattern B: insert directly before &lt;article class="news-article"&gt; or &lt;div class="container"&gt;
-    if (!inserted) {
-      const articlePattern = /(&lt;(?:article|div)\s+class="(?:news-article|container)")/;
-      const match = articlePattern.exec(result);
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (match) {
+    // Pattern B: insert directly before &lt;article/div with class="news-article ..." or "container"&gt;
+    // Allows arbitrary attributes (e.g. id="main-content") before class=
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!inserted) {
+      const articlePattern = <span class="cstat-no" title="statement not covered" >/(&lt;(?:article|div)\b[^&gt;]*?\bclass="(?:news-article(?:\s[^"]*)?|container)")/;</span>
+      const match = <span class="cstat-no" title="statement not covered" >articlePattern.exec(result);</span>
+<span class="cstat-no" title="statement not covered" >      if (match) {</span>
 <span class="cstat-no" title="statement not covered" >        result = result.slice(0, match.index) + topNavHtml + '\n' + result.slice(match.index);</span>
 <span class="cstat-no" title="statement not covered" >        inserted = true;</span>
       }
     }
 &nbsp;
-    if (inserted) addedTopnav = true;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (inserted) addedTopnav = true;
   }
 &nbsp;
   return { content: result, addedSwitcher, addedTopnav, fixedTopnav };
@@ -763,7 +772,7 @@ function <span class="fstat-no" title="function not covered" >main(): void {</sp
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-13T10:20:51.479Z
+                at 2026-03-16T00:55:14.807Z
             </div>
         <script src="../prettify.js"></script>
         <script>
