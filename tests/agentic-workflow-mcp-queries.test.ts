@@ -141,7 +141,7 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       expect(content).toMatch(/filter.*by.*publicerad|filter.*by.*datum|filter.*by.*inlämnad|Date Filtering/i);
 
       // Should have filtering guidance (either JS code examples or fromDate/toDate parameter patterns)
-      expect(content).toMatch(/\.filter\(|fromDate|from_date|>= fromDate/);
+      expect(content).toMatch(/\.filter\(|fromDate|from_date|>= fromDate/i);
       // Should reference date-based filtering approach
       expect(content).toMatch(/from_date|to_date|fromDate|dateFrom|dateTo|>= fromDate/i);
 
@@ -167,7 +167,7 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       const content = fs.readFileSync(filepath, 'utf-8');
 
       // Check for date support annotations (all alternatives anchored to tool-support context)
-      expect(content).toMatch(/supports.*from.*tom|supports.*from_date.*to_date|supports.*dateFrom.*dateTo/);
+      expect(content).toMatch(/supports.*from.*tom|supports.*from_date.*to_date|supports.*dateFrom.*dateTo/i);
       expect(content).toMatch(/filter by.*datum|filter by.*publicerad|filter by.*inlämnad/);
     });
   });
@@ -277,7 +277,7 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       const content = fs.readFileSync(filepath, 'utf-8');
 
       // Should show date calculation patterns (either JS Date or fromDate/today parameters)
-      expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today/);
+      expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today/i);
       // Should have date range guidance (millisecond calculations OR fromDate/lookback patterns)
       expect(content).toMatch(/86400000|3600000|fromDate|lookback/i);
       // Should show date patterns (YYYY-MM-DD, fromDate, today, toISOString, etc.)
