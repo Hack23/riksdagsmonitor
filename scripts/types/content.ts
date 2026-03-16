@@ -83,8 +83,6 @@ export interface ContentLabelSet {
   interpellationDefault: string;
   /** "Read the full interpellation" link text */
   readFullInterpellation: string;
-  /** Party interpellations filed breakdown (e.g. "SD: 3 interpellations filed") */
-  partyInterpellationsFiled: (party: string, n: number) => string;
   policyContext: string;
   filedBy: string;
   /** Label for document publication date (e.g. "Published", "Publicerad") */
@@ -116,6 +114,9 @@ export interface ContentLabelSet {
   policyImplicationsContext: (propCount: number, domainCount: number) => string;
   genericOverview: (n: number) => string;
   partyMotionsFiled: (party: string, n: number) => string;
+  partyInterpellationsFiled: (party: string, n: number) => string;
+  unknownMinister: string;
+  ministerInterpellationCount: (minister: string, n: number) => string;
   otherCommittee: string;
   otherDocuments: string;
   policySignificanceTouches: (domains: string) => string;
