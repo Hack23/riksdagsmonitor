@@ -14,12 +14,17 @@
  */
 
 import { describe, it, expect, vi } from 'vitest';
+import fs from 'fs';
 import {
   assessArticleQuality,
   injectQualityMetadata,
   printQualityReport,
   type MultiDimensionalQualityAssessment,
 } from '../scripts/ai-analysis/quality-assessor.js';
+import {
+  flushQualityScores,
+  installFlushHandlers,
+} from '../scripts/generate-news-enhanced/helpers.js';
 
 // ---------------------------------------------------------------------------
 // Helpers — build sample HTML snippets
@@ -503,12 +508,6 @@ describe('printQualityReport', () => {
 // ---------------------------------------------------------------------------
 // flushQualityScores / installFlushHandlers / flushOnce coverage
 // ---------------------------------------------------------------------------
-
-import fs from 'fs';
-import {
-  flushQualityScores,
-  installFlushHandlers,
-} from '../scripts/generate-news-enhanced/helpers.js';
 
 describe('flushQualityScores & installFlushHandlers', () => {
   beforeEach(() => {
