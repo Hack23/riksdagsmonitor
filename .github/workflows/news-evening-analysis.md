@@ -247,11 +247,32 @@ const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 
 - `get_propositioner` — filter by `publicerad` date
 - `search_anforanden` — filter by `datum` field
 
+Filter results to only include items with dates `>= fromDate` using timezone-safe ISO string comparison:
+
+For tools without native date support, apply a post-query date filter:
+
+```javascript
+// Calculate lookback window (e.g. 24 hours = 86400000 ms, 1 hour = 3600000 ms)
+const fromDate = new Date(Date.now() - 24 * 3600000).toISOString().slice(0, 10);
+const results = queryResults.filter(
+  item => (item.publicerad || item.datum || item.inlämnad || '').slice(0, 10) >= fromDate
+);
+```
+
 Filter results to only include items with dates `>= fromDate` using ISO-string comparison (avoids timezone-sensitive `new Date()` parsing):
 ```js
-const filtered = results.filter(item =>
-  (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10) >= fromDate
-);
+const filtered = results.filter(item => (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10) >= fromDate);
+```
+
+**Post-query date filtering pattern** (use with tools that lack native date params):
+```javascript
+// Calculate fromDate using ms constants: 86400000 ms/day, 3600000 ms/hour
+const fromDate = new Date(Date.now() - lookbackHours * 3600000).toISOString().slice(0, 10);
+const today = new Date().toISOString().slice(0, 10);
+
+// Filter results by date field (day-granularity string comparison avoids timezone issues)
+// Include inlämnad for motions which use that date field
+const filtered = results.filter(item => (item.publicerad || item.datum || item.inlämnad || '').slice(0, 10) >= fromDate);
 ```
 
 **Post-query date filtering example** (day-granularity; 86400000 ms = 1 day):
