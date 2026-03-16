@@ -247,6 +247,18 @@ const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 
 - `get_propositioner` — filter by `publicerad` date
 - `search_anforanden` — filter by `datum` field
 
+Filter results to only include items with dates `>= fromDate` using timezone-safe ISO string comparison:
+
+For tools without native date support, apply a post-query date filter:
+
+```javascript
+// Calculate lookback window (e.g. 24 hours = 86400000 ms, 1 hour = 3600000 ms)
+const fromDate = new Date(Date.now() - 24 * 3600000).toISOString().slice(0, 10);
+const results = queryResults.filter(
+  item => (item.publicerad || item.datum || item.inlämnad || '').slice(0, 10) >= fromDate
+);
+```
+
 Filter results to only include items with dates `>= fromDate` using ISO-string comparison (avoids timezone-sensitive `new Date()` parsing):
 ```js
 const filtered = results.filter(item => (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10) >= fromDate);
