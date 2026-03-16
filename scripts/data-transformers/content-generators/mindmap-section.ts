@@ -176,7 +176,7 @@ function renderAIItems(items: AIMindmapItem[]): string {
   const listItems = items
     .map(
       item =>
-        `        <li class="mindmap-ai-item" data-weight="${escapeHtml(item.weight)}">${escapeHtml(item.text)}</li>`,
+        `        <li class="mindmap-ai-item" role="listitem" data-weight="${escapeHtml(item.weight)}">${escapeHtml(item.text)}</li>`,
     )
     .join('\n');
   return `\n      <ul class="mindmap-leaf-list mindmap-ai-list" role="list">\n${listItems}\n      </ul>`;
@@ -190,7 +190,7 @@ function renderSubBranches(subBranches: SubBranch[]): string {
       const subItems =
         sb.items && sb.items.length > 0
           ? `\n          <ul class="mindmap-sub-items" role="list">\n${sb.items
-              .map(i => `            <li>${escapeHtml(i)}</li>`)
+              .map(i => `            <li role="listitem">${escapeHtml(i)}</li>`)
               .join('\n')}\n          </ul>`
           : '';
       return `      <div class="mindmap-sub-branch">\n        <div class="mindmap-sub-branch-label">${escapeHtml(sb.label)}</div>${subItems}\n      </div>`;
@@ -225,7 +225,7 @@ function renderBranch(branch: MindmapBranch): string {
     contentHtml = renderAIItems(branch.aiItems);
   } else if (branch.items && branch.items.length > 0) {
     contentHtml = `\n      <ul class="mindmap-leaf-list" role="list">\n${branch.items
-      .map(item => `        <li>${escapeHtml(item)}</li>`)
+      .map(item => `        <li role="listitem">${escapeHtml(item)}</li>`)
       .join('\n')}\n      </ul>`;
   }
 

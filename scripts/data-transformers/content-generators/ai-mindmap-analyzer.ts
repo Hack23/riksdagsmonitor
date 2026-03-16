@@ -627,9 +627,8 @@ function buildTimelineBranch(
   docs: RawDocument[],
   lang: Language | string,
 ): MindmapBranch {
-  // Normalize cutoff to UTC midnight to avoid off-by-one near local midnight
-  const cutoff = new Date();
-  cutoff.setUTCMonth(cutoff.getUTCMonth() - 3);
+  // Use 90-day subtraction to avoid setUTCMonth rollover (e.g. May 31 → "Feb 31" → March)
+  const cutoff = new Date(Date.now() - 90 * 86_400_000);
   cutoff.setUTCHours(0, 0, 0, 0);
   const cutoffIso = cutoff.toISOString().slice(0, 10); // YYYY-MM-DD
 
@@ -896,11 +895,13 @@ export function buildAIMindmapAnalysis(
   // Synthesize central thesis
   const centralThesis = buildCentralThesis(docs, topic, domainList, lang);
 
-  // Confidence score: data richness proxy
-  const confidenceScore = Math.min(
-    1,
-    (Math.min(docs.length, 10) / 10) * 0.6 + (Math.min(domainList.length, 6) / 6) * 0.4,
-  );
+  // Confidence score: data richness proxy — 0 when no documents
+  const confidenceScore = docs.length === 0
+    ? 0
+    : Math.min(
+        1,
+        (Math.min(docs.length, 10) / 10) * 0.6 + (Math.min(domainList.length, 6) / 6) * 0.4,
+      );
 
   return { centralThesis, branches, connections, confidenceScore };
 }

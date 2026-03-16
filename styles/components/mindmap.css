@@ -31,7 +31,7 @@
 }
 
 .news-article .mindmap-summary {
-  color: #a0a0a0;
+  color: var(--text-secondary, #a0a0a0);
   font-size: 0.95rem;
   margin: 0 0 1.5rem 0;
 }
@@ -131,7 +131,7 @@
 
 .news-article .mindmap-thesis {
   font-size: 0.82rem;
-  color: #a0c8d8;
+  color: var(--type-accent, #00d9ff);
   font-style: italic;
   text-align: center;
   max-width: 300px;
@@ -142,20 +142,20 @@
 /* AI Mindmap — weighted items */
 .news-article .mindmap-ai-item[data-weight="critical"] {
   font-weight: 700;
-  color: #e63946;
+  color: var(--danger-color, #e63946);
   font-size: 0.87rem;
 }
 .news-article .mindmap-ai-item[data-weight="significant"] {
   font-weight: 600;
-  color: #ffbe0b;
+  color: var(--warning-color, #ffbe0b);
   font-size: 0.84rem;
 }
 .news-article .mindmap-ai-item[data-weight="moderate"] {
-  color: #cccccc;
+  color: var(--text-secondary, #cccccc);
   font-size: 0.82rem;
 }
 .news-article .mindmap-ai-item[data-weight="minor"] {
-  color: #aaaaaa;
+  color: var(--text-secondary, #aaaaaa);
   font-size: 0.78rem;
   font-style: italic;
 }
@@ -188,7 +188,7 @@
   list-style: circle;
   margin: 0;
   padding-left: 1rem;
-  color: #aaaaaa;
+  color: var(--text-secondary, #aaaaaa);
   font-size: 0.75rem;
   line-height: 1.4;
 }
@@ -204,7 +204,7 @@
 
 .news-article .mindmap-connection {
   font-size: 0.75rem;
-  color: #aaaaaa;
+  color: var(--text-secondary, #aaaaaa);
   padding: 0.15rem 0;
   font-style: italic;
 }
