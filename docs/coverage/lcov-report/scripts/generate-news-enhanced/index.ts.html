@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.04% </span>
+                <span class="strong">61.9% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>67/103</span>
+                <span class='fraction'>65/105</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.42% </span>
+                <span class="strong">47.88% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>36/70</span>
+                <span class='fraction'>34/71</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.82% </span>
+                <span class="strong">52.94% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>10/17</span>
+                <span class='fraction'>9/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.28% </span>
+                <span class="strong">62% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>63/98</span>
+                <span class='fraction'>62/100</span>
             </div>
         
             
@@ -360,7 +360,14 @@
 <a name='L295'></a><a href='#L295'>295</a>
 <a name='L296'></a><a href='#L296'>296</a>
 <a name='L297'></a><a href='#L297'>297</a>
-<a name='L298'></a><a href='#L298'>298</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -456,6 +463,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -576,10 +586,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">4539x</span>
+<span class="cline-any cline-yes">4623x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">417x</span>
+<span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -616,11 +626,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
@@ -701,6 +711,7 @@ import {
   generateCommitteeReports,
   generatePropositions,
   generateMotions,
+  generateInterpellations,
   generateDeepInspection,
 } from './generators.js';
 import { generateMonthAhead } from '../news-types/month-ahead.js';
@@ -725,6 +736,7 @@ export {
   generateCommitteeReports,
   generatePropositions,
   generateMotions,
+  generateInterpellations,
   generateDeepInspection,
   translateSwedishContent,
 };
@@ -761,6 +773,9 @@ export async function generateNews(): Promise&lt;typeof stats&gt; {
 <span class="cstat-no" title="statement not covered" >        break;</span>
 <span class="branch-3 cbranch-no" title="branch not covered" >      case 'motions':</span>
 <span class="cstat-no" title="statement not covered" >        await generateMotions();</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+<span class="branch-4 cbranch-no" title="branch not covered" >      case 'interpellations':</span>
+<span class="cstat-no" title="statement not covered" >        await generateInterpellations();</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
       case 'breaking': {
         // Auto-detect most significant recent development: fetch today's votes and documents
@@ -832,19 +847,19 @@ export async function generateNews(): Promise&lt;typeof stats&gt; {
         }
         break;
       }
-<span class="branch-5 cbranch-no" title="branch not covered" >      case 'month-ahead':</span>
+<span class="branch-6 cbranch-no" title="branch not covered" >      case 'month-ahead':</span>
 <span class="cstat-no" title="statement not covered" >        await generateMonthAhead({ languages, writeArticle: translatingWriteArticle });</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
-<span class="branch-6 cbranch-no" title="branch not covered" >      case 'weekly-review':</span>
+<span class="branch-7 cbranch-no" title="branch not covered" >      case 'weekly-review':</span>
 <span class="cstat-no" title="statement not covered" >        await generateWeeklyReview({ languages, writeArticle: translatingWriteArticle });</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
-<span class="branch-7 cbranch-no" title="branch not covered" >      case 'monthly-review':</span>
+<span class="branch-8 cbranch-no" title="branch not covered" >      case 'monthly-review':</span>
 <span class="cstat-no" title="statement not covered" >        await generateMonthlyReview({ languages, writeArticle: translatingWriteArticle });</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
-<span class="branch-8 cbranch-no" title="branch not covered" >      case 'deep-inspection':</span>
+<span class="branch-9 cbranch-no" title="branch not covered" >      case 'deep-inspection':</span>
 <span class="cstat-no" title="statement not covered" >        await generateDeepInspection();</span>
 <span class="cstat-no" title="statement not covered" >        break;</span>
-<span class="branch-9 cbranch-no" title="branch not covered" >      default:</span>
+<span class="branch-10 cbranch-no" title="branch not covered" >      default:</span>
 <span class="cstat-no" title="statement not covered" >        console.warn(`⚠️ Unknown article type: ${type}`);</span>
     }
   }
@@ -873,10 +888,10 @@ export async function generateNews(): Promise&lt;typeof stats&gt; {
   // Write batch status for workflow orchestration
   const today: string = toISODate(new Date());
   const existingFiles: string[] = fs.existsSync(NEWS_DIR)
-    ? fs.readdirSync(NEWS_DIR).filter(f =&gt; f.startsWith(today) &amp;&amp; f.endsWith('.html'))
+    ? fs.readdirSync(NEWS_DIR).filter(f =&gt; f.startsWith(today) &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >f.endsWith('.html'))</span>
     : [];
   const completedLangs: Language[] = allRequestedLanguages.filter(lang =&gt;
-    existingFiles.some(f =&gt; f.endsWith(`-${lang}.html`))
+    existingFiles.<span class="fstat-no" title="function not covered" >some(f</span> =&gt; <span class="cstat-no" title="statement not covered" >f.endsWith(`-${lang}.html`))</span>
   );
   const remainingLangs: Language[] = allRequestedLanguages.filter(l =&gt; !completedLangs.includes(l));
 &nbsp;
@@ -916,8 +931,8 @@ export async function generateNews(): Promise&lt;typeof stats&gt; {
     console.log(`\n📦 Batch progress: ${completedLangs.length}/${allRequestedLanguages.length} languages done`);
     console.log(`   Remaining: ${remainingLangs.join(', ')}`);
     console.log('   Re-run with --skip-existing to continue with next batch');
-  } else {
-    console.log(`\n🎉 All ${allRequestedLanguages.length} languages generated!`);
+  } else <span class="missing-if-branch" title="else path not taken" >E</span>{
+<span class="cstat-no" title="statement not covered" >    console.log(`\n🎉 All ${allRequestedLanguages.length} languages generated!`);</span>
   }
 &nbsp;
   return stats;
@@ -961,7 +976,7 @@ export function <span class="fstat-no" title="function not covered" >runCli(): P
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-13T10:20:51.479Z
+                at 2026-03-16T00:55:14.807Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
