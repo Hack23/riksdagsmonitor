@@ -146,8 +146,9 @@ function trendIndicator(entry: EnhancedSwotEntry, lbl: (key: string) => string):
   const cls = TREND_CLASSES[dir] ?? '';
   if (!sym) return ''; // Guard: unknown direction value → skip indicator
   const labelKey = TREND_LABEL_KEYS[dir];
-  const localizedLabel = labelKey ? lbl(labelKey) : dir;
-  const ariaLabel = localizedLabel;
+  const raw = labelKey ? lbl(labelKey) : dir;
+  // If the label lookup returned the key itself (incomplete label map), fall back to the direction name
+  const ariaLabel = (raw === labelKey) ? dir : raw;
   return ` <span class="swot-trend ${cls}" role="img" aria-label="${escapeHtml(ariaLabel)}">${sym}</span>`;
 }
 

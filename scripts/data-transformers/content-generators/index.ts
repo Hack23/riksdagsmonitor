@@ -51,4 +51,4 @@ export type { SankeySectionOptions, SankeyNode, SankeyFlow, SankeyNodeColor } fr
 export { generateCiaOverviewSection } from './cia-overview-section.js';
 export type { CiaOverviewSectionOptions } from './cia-overview-section.js';
 export { buildAISwotStakeholders, STAKEHOLDER_NAMES } from './ai-swot-analyzer.js';
-export type { StakeholderPerspective, TrendDirection as SwotTrendDirection, AISwotEntry, AISwotAnalysis, SwotCrossReference } from './ai-swot-analyzer.js';
+export type { StakeholderPerspective, TrendDirection, AISwotEntry, AISwotAnalysis, SwotCrossReference } from './ai-swot-analyzer.js';
