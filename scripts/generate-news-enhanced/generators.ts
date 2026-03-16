@@ -876,7 +876,7 @@ function docTypeLabel(doktyp: string, lang: Language, count?: number): string {
  *
  * @param depth - Analysis depth (1–4). Higher depth adds more intelligence sections:
  *   1 = Topic Context + Document Intelligence + 5W Deep Analysis + Strategic Implications + Key Takeaways
- *   2 = depth 1 + Predictive Assessment + Historical Context
+ *   2 = depth 1 + Historical Context + Predictive Assessment
  *   3 = depth 2 + Executive Intelligence Summary + Methodology (3 iterations)
  *   4 = depth 3 + quality-review iteration in Methodology (4 iterations)
  */
@@ -955,6 +955,15 @@ function generateDeepInspectionContent(
 
   return html;
 }
+
+/**
+ * Test-only hooks for deep-inspection content generation.
+ * Exported to support behavioral tests without source inspection.
+ * @internal
+ */
+export const __deepInspectionTestHooks = {
+  generateDeepInspectionContent,
+};
 
 /** Build the topic context introductory paragraph. */
 function buildTopicContextParagraph(docs: RawDocument[], topic: string | null, lang: Language): string {

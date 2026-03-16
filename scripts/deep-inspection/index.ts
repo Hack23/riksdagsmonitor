@@ -1,17 +1,11 @@
 /**
  * @module deep-inspection
- * @description DeepInspectionPipeline — modular 4-phase pipeline for
- * AI-driven political intelligence reports.
+ * @description DeepInspectionPipeline — thin programmatic entrypoint wrapper
+ * around `generateDeepInspection()`.
  *
- * ## Pipeline Phases
- * 1. **Collect** — Resolve document IDs from URLs, fetch riksdag documents
- *    and government / GitHub content, then enrich with full text.
- * 2. **Analyse** — Multi-iteration analysis (depth 1–4), progressively
- *    adding executive summary, predictive assessment, historical context,
- *    and methodology confidence sections.
- * 3. **Synthesise** — Build TemplateSection visualisations (SWOT, dashboard,
- *    mindmap, sankey, economic) from enriched document metadata.
- * 4. **Render** — Generate per-language HTML articles and write to disk.
+ * The underlying generator performs collection, analysis, synthesis, and
+ * rendering internally. This class intentionally does not re-implement those
+ * phases; it only delegates execution and returns enriched run metadata.
  *
  * @example
  * ```typescript
@@ -39,10 +33,8 @@ export interface DeepInspectionResult extends GenerationResult {
 }
 
 /**
- * DeepInspectionPipeline orchestrates the 4-phase deep-inspection generation:
- * collect → analyse → synthesise → render.
- *
- * The pipeline delegates to `generateDeepInspection()` in generators.ts, which
+ * DeepInspectionPipeline delegates execution to
+ * `generateDeepInspection()` in generators.ts, which
  * reads targeting parameters and `analysisDepth` from CLI config. When used
  * programmatically via this class, those CLI values are already set at module
  * load time — so `run()` simply invokes the generator and enriches the result.
@@ -67,13 +59,7 @@ export class DeepInspectionPipeline {
   }
 
   /**
-   * Run the full 4-phase pipeline.
-   *
-   * Phases:
-   * 1. **Collect** — documents fetched and enriched by `generateDeepInspection()`
-   * 2. **Analyse** — multi-iteration HTML content generated (depth-gated sections)
-   * 3. **Synthesise** — SWOT, dashboard, mindmap, sankey visualisations built
-   * 4. **Render** — per-language HTML written to the `news/` directory
+   * Run deep-inspection generation via the underlying generator wrapper.
    *
    * @returns DeepInspectionResult with success status, file count, and slug
    */

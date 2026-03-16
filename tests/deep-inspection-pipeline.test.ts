@@ -9,18 +9,13 @@
  */
 
 import { describe, it, expect, vi } from 'vitest';
-import * as fs from 'node:fs';
-import * as path from 'node:path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import type { RawDocument } from '../scripts/data-transformers.js';
 
 // ---------------------------------------------------------------------------
 // 1. Config — analysisDepth parsing
 // ---------------------------------------------------------------------------
 
-describe('analysisDepth config', () => {
+describe.sequential('analysisDepth config', () => {
   it('exports analysisDepth as a valid depth value (1–4)', async () => {
     const { analysisDepth } = await import('../scripts/generate-news-enhanced/config.js');
     expect([1, 2, 3, 4]).toContain(analysisDepth);
@@ -97,146 +92,96 @@ describe('DeepInspectionPipeline', () => {
 });
 
 // ---------------------------------------------------------------------------
-// 3. DEEP_SECTION_LABELS — new labels exist (verified via source inspection)
-// ---------------------------------------------------------------------------
-
-describe('new deep-inspection section labels', () => {
-  it('generators.ts compiles and exports expected functions (real module)', async () => {
-    vi.resetModules();
-    const mod = await import('../scripts/generate-news-enhanced/generators.js');
-    expect(typeof mod.generateDeepInspection).toBe('function');
-    expect(typeof mod.extractDocIdFromUrl).toBe('function');
-    expect(typeof mod.isGovernmentUrl).toBe('function');
-    expect(typeof mod.sanitizePlainText).toBe('function');
-    expect(typeof mod.hashPathSuffix).toBe('function');
-  });
-
-  // Validate DEEP_SECTION_LABELS completeness by checking that the source
-  // contains English and Swedish label entries for every expected key.
-  // This keeps deepLabel() file-private while still catching missing labels.
-  const generatorsSrc = fs.readFileSync(
-    path.resolve(__dirname, '../scripts/generate-news-enhanced/generators.ts'), 'utf-8');
-
-  const NEW_KEYS = [
-    'executiveSummary',
-    'predictiveAssessment',
-    'historicalContext',
-    'methodology',
-    'likelyOutcome',
-    'coalitionStability',
-    'riskScenarios',
-  ];
-
-  it('DEEP_SECTION_LABELS contains all new section keys with English labels', () => {
-    for (const key of NEW_KEYS) {
-      // Each key should appear as a property name in the labels object
-      expect(generatorsSrc).toContain(`${key}:`);
-    }
-    // Verify specific English labels to ensure they're real translations, not stubs
-    expect(generatorsSrc).toContain("en: 'Executive Intelligence Summary'");
-    expect(generatorsSrc).toContain("en: 'Predictive Assessment'");
-    expect(generatorsSrc).toContain("en: 'Historical Context & Precedents'");
-    expect(generatorsSrc).toContain("en: 'Methodology & Confidence'");
-    expect(generatorsSrc).toContain("en: 'Likely Outcome'");
-    expect(generatorsSrc).toContain("en: 'Coalition Stability Forecast'");
-    expect(generatorsSrc).toContain("en: 'Risk Scenarios'");
-  });
-
-  it('DEEP_SECTION_LABELS have Swedish labels for all new section keys', () => {
-    // Verify specific Swedish labels
-    expect(generatorsSrc).toContain("sv: 'Sammanfattning för beslutsfattare'");
-    expect(generatorsSrc).toContain("sv: 'Prediktiv bedömning'");
-    expect(generatorsSrc).toContain("sv: 'Historisk kontext och prejudikat'");
-    expect(generatorsSrc).toContain("sv: 'Metodik och konfidensgrad'");
-    expect(generatorsSrc).toContain("sv: 'Troligt utfall'");
-    expect(generatorsSrc).toContain("sv: 'Koalitionsstabilitetsprognos'");
-    expect(generatorsSrc).toContain("sv: 'Riskscenarier'");
-  });
-});
-
-// ---------------------------------------------------------------------------
-// 4. Depth-gated sections — verify depth conditions in source
+// 3–4. DEEP_SECTION_LABELS and depth-gated content — behavioral assertions
 // ---------------------------------------------------------------------------
 
 describe('generateDeepInspectionContent depth-gated sections', () => {
-  const generatorsSrc = fs.readFileSync(
-    path.resolve(__dirname, '../scripts/generate-news-enhanced/generators.ts'), 'utf-8');
+  const docs: RawDocument[] = [
+    {
+      dok_id: 'H901FiU1',
+      doktyp: 'bet',
+      dokumentnamn: 'Betänkande FiU1',
+      titel: 'Finansutskottets betänkande',
+      summary: 'Sammanfattning av betänkande.',
+      contentFetched: true,
+      datum: '2026-03-10',
+      organ: 'FiU',
+    },
+    {
+      dok_id: 'H901Prop1',
+      doktyp: 'prop',
+      dokumentnamn: 'Proposition 2025/26:1',
+      titel: 'Regeringens proposition',
+      summary: 'Sammanfattning av proposition.',
+      contentFetched: true,
+      datum: '2026-03-08',
+      organ: 'Fi',
+    },
+    {
+      dok_id: 'H901SFS1',
+      doktyp: 'sfs',
+      dokumentnamn: 'SFS 2026:123',
+      titel: 'Svensk författningssamling',
+      summary: 'Antagen författning.',
+      contentFetched: true,
+      datum: '2026-03-01',
+      organ: 'KU',
+    },
+  ];
 
-  // Depth 1 (always present): Topic Context, Document Intelligence, 5W Analysis,
-  // Strategic Implications, Key Takeaways — no depth guard needed for these
-  it('depth 1 sections have no depth guard', () => {
-    // These section CSS classes should appear without depth conditions
-    expect(generatorsSrc).toContain('class="deep-topic-context"');
-    expect(generatorsSrc).toContain('class="document-intelligence-analysis"');
-    expect(generatorsSrc).toContain('class="strategic-implications"');
-    expect(generatorsSrc).toContain('class="key-takeaways"');
+  const render = async (depth: 1 | 2 | 3 | 4, lang: 'en' | 'sv' = 'en') => {
+    const { __deepInspectionTestHooks } = await import('../scripts/generate-news-enhanced/generators.js');
+    return __deepInspectionTestHooks.generateDeepInspectionContent(
+      docs,
+      'Fiscal policy',
+      lang,
+      depth,
+    );
+  };
+
+  it('depth 1 renders baseline sections and excludes advanced classes', async () => {
+    const html = await render(1, 'en');
+    expect(html).toContain('class="deep-topic-context"');
+    expect(html).toContain('class="document-intelligence-analysis"');
+    expect(html).toContain('class="strategic-implications"');
+    expect(html).toContain('class="key-takeaways"');
+    expect(html).not.toContain('class="historical-context"');
+    expect(html).not.toContain('class="predictive-assessment"');
+    expect(html).not.toContain('class="executive-intelligence-summary"');
+    expect(html).not.toContain('class="methodology-confidence"');
   });
 
-  // Depth 2: adds Historical Context + Predictive Assessment
-  it('depth ≥ 2 gates Historical Context and Predictive Assessment', () => {
-    expect(generatorsSrc).toContain('if (depth >= 2)');
-    expect(generatorsSrc).toContain('buildHistoricalContext(');
-    expect(generatorsSrc).toContain('buildPredictiveAssessment(');
+  it('depth 2 adds historical and predictive sections only', async () => {
+    const html = await render(2, 'en');
+    expect(html).toContain('class="historical-context"');
+    expect(html).toContain('class="predictive-assessment"');
+    expect(html).not.toContain('class="executive-intelligence-summary"');
+    expect(html).not.toContain('class="methodology-confidence"');
   });
 
-  // Depth 3: adds Executive Summary + Methodology
-  it('depth ≥ 3 gates Executive Intelligence Summary and Methodology', () => {
-    expect(generatorsSrc).toContain('if (depth >= 3)');
-    expect(generatorsSrc).toContain('buildExecutiveSummary(');
-    expect(generatorsSrc).toContain('buildMethodologySection(');
+  it('depth 3 adds executive summary and methodology', async () => {
+    const html = await render(3, 'en');
+    expect(html).toContain('class="executive-intelligence-summary"');
+    expect(html).toContain('class="methodology-confidence"');
+    expect(html).toContain('Likely Outcome');
+    expect(html).toContain('Coalition Stability Forecast');
+    expect(html).toContain('Risk Scenarios');
   });
 
-  // Depth 4: methodology section includes 4 quality-review iterations
-  it('methodology section renders iteration items up to clamped depth', () => {
-    expect(generatorsSrc).toContain('labels.slice(0, clampedDepth)');
+  it('depth 4 includes the quality-review methodology iteration', async () => {
+    const html = await render(4, 'en');
+    expect(html).toContain('Quality review (bias check and completeness verification)');
   });
 
-  // Verify section headings use deepLabel() with correct keys
-  it('section headings use deepLabel() with expected keys', () => {
-    expect(generatorsSrc).toContain("deepLabel('topicContext'");
-    expect(generatorsSrc).toContain("deepLabel('documentIntelligence'");
-    expect(generatorsSrc).toContain("deepLabel('strategicImplications'");
-    expect(generatorsSrc).toContain("deepLabel('keyTakeaways'");
-  });
-
-  // Verify section builders produce expected CSS classes
-  it('section builders produce expected CSS class attributes', () => {
-    expect(generatorsSrc).toContain('class="executive-intelligence-summary"');
-    expect(generatorsSrc).toContain('class="predictive-assessment"');
-    expect(generatorsSrc).toContain('class="historical-context"');
-    expect(generatorsSrc).toContain('class="methodology-confidence"');
-  });
-
-  // Verify deriveConfidence is called for predictive and methodology sections
-  it('deriveConfidence heuristic is used for confidence scoring', () => {
-    expect(generatorsSrc).toContain('deriveConfidence(');
-    // Named constants for confidence/prediction heuristics
-    expect(generatorsSrc).toContain('CONFIDENCE_HIGH_THRESHOLD');
-    expect(generatorsSrc).toContain('CONFIDENCE_MEDIUM_THRESHOLD');
-    expect(generatorsSrc).toContain('CONFIDENCE_MIN_DOCS_HIGH');
-    expect(generatorsSrc).toContain('BASE_PASSAGE_PROBABILITY');
-  });
-
-  // Verify effectiveType() is used consistently for doc-type counts
-  // instead of raw (d.doktyp || d.documentType) in section builders
-  it('section builders use effectiveType() for doc-type counting', () => {
-    // effectiveType should be called consistently, not raw doktyp access
-    expect(generatorsSrc).toContain("effectiveType(d) === 'prop'");
-    expect(generatorsSrc).toContain("effectiveType(d) === 'bet'");
-    expect(generatorsSrc).toContain("effectiveType(d) === 'mot'");
-  });
-
-  // Verify noLegSignal incorporates betCount and SFS presence
-  it('noLegSignal includes betCount and SFS in legislative signal detection', () => {
-    // betCount should be part of the legislative signal expression
-    expect(generatorsSrc).toContain('propCount + motCount + betCount === 0');
-    expect(generatorsSrc).toContain('!hasEnactedLaw');
-  });
-
-  // Verify methodology data-sources description is localized (not always English)
-  it('methodology data-sources description is localized per language', () => {
-    expect(generatorsSrc).toContain('sourceDesc[lang]');
-    expect(generatorsSrc).toContain("sourceDesc:");
+  it('renders localized Swedish labels for advanced sections', async () => {
+    const html = await render(3, 'sv');
+    expect(html).toContain('Sammanfattning för beslutsfattare');
+    expect(html).toContain('Historisk kontext och prejudikat');
+    expect(html).toContain('Prediktiv bedömning');
+    expect(html).toContain('Metodik och konfidensgrad');
+    expect(html).toContain('Troligt utfall');
+    expect(html).toContain('Koalitionsstabilitetsprognos');
+    expect(html).toContain('Riskscenarier');
   });
 });
 

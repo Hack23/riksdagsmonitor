@@ -174,7 +174,7 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       const content = fs.readFileSync(filepath, 'utf-8');
 
       // Should have explicit >= fromDate filtering guidance
-      expect(content).toMatch(/>= fromDate/);
+      expect(content).toMatch(/>=\s*fromDate/);
       // Should reference Filter results instruction
       expect(content).toMatch(/Filter results/i);
     });
