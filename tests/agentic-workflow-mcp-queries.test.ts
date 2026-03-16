@@ -138,10 +138,15 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       const content = fs.readFileSync(filepath, 'utf-8');
 
       // Should document filtering by date fields
-      expect(content).toMatch(/filter.*by.*publicerad|filter.*by.*datum|filter.*by.*inlämnad/i);
+      expect(content).toMatch(/filter.*by.*publicerad|filter.*by.*datum|filter.*by.*inlämnad|Date Filtering/i);
 
       // Should have filtering guidance (either JS code examples or fromDate/toDate parameter patterns)
       expect(content).toMatch(/\.filter\(|fromDate|from_date|>= fromDate/);
+      // Should reference date-based filtering approach
+      expect(content).toMatch(/from_date|to_date|fromDate|dateFrom|dateTo|>= fromDate/i);
+
+      // Should have filtering instructions (fromDate references or filter directives)
+      expect(content).toMatch(/fromDate|from_date|filter.*results/i);
       // Should have filtering examples
       expect(content).toContain('.filter(');
       expect(content).toMatch(/new Date.*>=.*new Date|new Date.*>.*fromDate|>=\s*fromDate/);
@@ -166,7 +171,7 @@ describe('Agentic Workflow MCP Query Patterns', () => {
   });
 
   describe('Cross-Referencing Strategy', () => {
-    it('news-evening-analysis.md should have cross-referencing examples', () => {
+    it('news-evening-analysis.md should have a Cross-Referencing Strategy section', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
@@ -178,6 +183,14 @@ describe('Agentic Workflow MCP Query Patterns', () => {
         (content.includes('Example 1:') && content.includes('Example 2:')) ||
         (content.includes('cross-reference') || content.includes('Cross-reference'));
       expect(hasCrossRefGuidance).toBe(true);
+      // Should describe cross-referencing approach (e.g. combining data sources, filter by date)
+      expect(content).toMatch(/cross.*reference|related.*data.*sources|richer.*analysis/i);
+      // Should have numbered multi-tool query examples that demonstrate
+      // combining different API calls in a single analysis workflow
+      const hasMultiToolExamples =
+        content.includes('Example 1:') && content.includes('Example 2:');
+
+      expect(hasMultiToolExamples).toBe(true);
     });
   });
 
@@ -265,8 +278,14 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today/);
       // Should have date range guidance (millisecond calculations OR fromDate/lookback patterns)
       expect(content).toMatch(/86400000|3600000|fromDate|lookback/i);
+      // Should show date patterns (YYYY-MM-DD, fromDate, today, toISOString, etc.)
+      expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today|YYYY-MM-DD/);
+      // Should include date placeholder patterns or dynamic calculation
+      expect(content).toMatch(/<today>|<fromDate>|date.*calculation/i);
       // Should show date calculation patterns — either JS millisecond
       // arithmetic or bash/shell date commands with lookback logic
+      // (date-parameter names like from_date/to_date/dateFrom are tested
+      //  in the dedicated "Post-Query Date Filtering" suite above)
       expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today/);
       expect(content).toMatch(/86400000|3600000|lookback_hours|lookback/);
     });

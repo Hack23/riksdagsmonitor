@@ -61,6 +61,7 @@ export {
   generateMindmapSection,
   generateSankeySection,
   generateCiaOverviewSection,
+  generateInterpellationsContent,
 } from './content-generators.js';
 export type {
   SwotSectionOptions,
