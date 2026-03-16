@@ -283,8 +283,10 @@ function assessAnalyticalDepth(html: string): DimensionScore {
   if (evidenceW > 0) evidence.push(`${evidenceW} evidence-based indicator(s)`);
 
   // Multiple perspectives (blockquotes or attributed quotes)
+  // Count blockquotes plus quoted spans detected by matching pairs of
+  // straight double-quotes surrounding at least one character.
   const quotes = (html.match(/<blockquote[\s>]/gi) || []).length +
-                 Math.floor((text.match(/"\p{L}/gu) || []).length / 2);
+                 (text.match(/"[^"]{2,}"/g) || []).length;
   raw += Math.min(quotes * 4, 20);
   if (quotes > 0) evidence.push(`${quotes} attributed quote(s) or blockquote(s)`);
 

@@ -114,11 +114,19 @@ export function flushQualityScores(): void {
     fs.writeFileSync(tmpPath, JSON.stringify(perArticleScores, null, 2), 'utf-8');
     try {
       fs.renameSync(tmpPath, outPath);
-    } catch (_renameErr: unknown) {
-      try { fs.unlinkSync(outPath); } catch (e: unknown) {
-        if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e;
+    } catch (renameErr: unknown) {
+      // Only attempt unlink+rename for known Windows cross-device/exists codes.
+      // Other failures (permissions, missing parent dir, etc.) should propagate
+      // so we don't delete an otherwise valid quality-scores.json.
+      const code = (renameErr as NodeJS.ErrnoException).code;
+      if (code === 'EEXIST' || code === 'EPERM' || code === 'EACCES' || code === 'EXDEV') {
+        try { fs.unlinkSync(outPath); } catch (e: unknown) {
+          if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e;
+        }
+        fs.renameSync(tmpPath, outPath);
+      } else {
+        throw renameErr;
       }
-      fs.renameSync(tmpPath, outPath);
     }
     // Clear in-memory map after a successful flush so that subsequent
     // invocations in the same Node process don't carry stale entries.
