@@ -419,7 +419,7 @@ function isSfsDoc(doc: RawDocument): boolean {
  */
 function normalizedDocType(doc: RawDocument): string {
   const raw = docType(doc);
-  if (raw === 'eu') return 'fpm';    // normalize 'eu' → 'fpm' for consistent labeling
+  if (raw === 'eu') return 'fpm';    // EU position papers ('eu') are foreign policy matters ('fpm') — normalize for consistent dashboard/localization labels
   if (raw) return raw;
   if (isSfsDoc(doc)) return 'sfs';
   return 'other';
