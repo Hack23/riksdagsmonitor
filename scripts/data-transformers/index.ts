@@ -61,6 +61,8 @@ export {
   generateMindmapSection,
   generateSankeySection,
   generateCiaOverviewSection,
+  buildAIMindmapAnalysis,
+  buildMindmapOptionsFromAnalysis,
   generateInterpellationsContent,
 } from './content-generators.js';
 export type {
@@ -75,8 +77,12 @@ export type {
   MindmapSectionOptions,
   MindmapBranch,
   MindmapBranchColor,
-  BranchImportance,
-  BranchConnection,
+  MindmapDimension,
+  AIMindmapItem,
+  AIMindmapItemWeight,
+  SubBranch,
+  MindmapConnection,
+  AIMindmapAnalysis,
   SankeySectionOptions,
   SankeyNode,
   SankeyFlow,

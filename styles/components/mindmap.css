@@ -31,7 +31,7 @@
 }
 
 .news-article .mindmap-summary {
-  color: #a0a0a0;
+  color: var(--text-secondary, #a0a0a0);
   font-size: 0.95rem;
   margin: 0 0 1.5rem 0;
 }
@@ -121,132 +121,115 @@
   padding-right: 1.25rem;
 }
 
-/* ── Sub-branches (level 2 nesting) ─────────────────────────────────────── */
-
-.news-article .mindmap-sub-branches {
+/* AI Mindmap — central thesis */
+.news-article .mindmap-center-wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
-  margin-top: 0.75rem;
+}
+
+.news-article .mindmap-thesis {
+  font-size: 0.82rem;
+  color: var(--type-accent, #00d9ff);
+  font-style: italic;
+  text-align: center;
+  max-width: 300px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* AI Mindmap — weighted items */
+.news-article .mindmap-ai-item[data-weight="critical"] {
+  font-weight: 700;
+  color: var(--danger-color, #e63946);
+  font-size: 0.87rem;
+}
+.news-article .mindmap-ai-item[data-weight="significant"] {
+  font-weight: 600;
+  color: var(--warning-color, #ffbe0b);
+  font-size: 0.84rem;
+}
+.news-article .mindmap-ai-item[data-weight="moderate"] {
+  color: var(--text-secondary, #cccccc);
+  font-size: 0.82rem;
+}
+.news-article .mindmap-ai-item[data-weight="minor"] {
+  color: var(--text-secondary, #aaaaaa);
+  font-size: 0.78rem;
+  font-style: italic;
+}
+
+/* AI Mindmap — sub-branches */
+.news-article .mindmap-sub-branches {
+  margin-top: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .news-article .mindmap-sub-branch {
-  background: var(--branch-bg, #0a2a33);
-  border: 1px solid var(--branch-border, #00d9ff);
-  border-left: 3px solid var(--branch-border, #00d9ff);
-  border-radius: 6px;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.85rem;
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
 }
 
-.news-article .mindmap-sub-branch .mindmap-branch-label {
-  font-size: 0.82rem;
-  margin-bottom: 0.35rem;
-}
-
-.news-article .mindmap-sub-branch .mindmap-leaf-list {
+.news-article .mindmap-sub-branch-label {
+  color: var(--branch-text, #00d9ff);
   font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  opacity: 0.85;
 }
 
-/* ── Branch importance indicators ──────────────────────────────────────── */
-
-/* Critical: thick border + neon glow (uses a fixed cyan glow fallback) */
-.news-article .mindmap-branch[data-importance="critical"],
-.news-article .mindmap-sub-branch[data-importance="critical"] {
-  border-width: 3px;
-  box-shadow: 0 0 12px rgba(0, 217, 255, 0.35), 0 0 4px rgba(0, 217, 255, 0.15);
+.news-article .mindmap-sub-items {
+  list-style: circle;
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--text-secondary, #aaaaaa);
+  font-size: 0.75rem;
+  line-height: 1.4;
 }
 
-/* High: medium border + subtle glow */
-.news-article .mindmap-branch[data-importance="high"],
-.news-article .mindmap-sub-branch[data-importance="high"] {
-  border-width: 2.5px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-/* Medium: standard border (default) */
-.news-article .mindmap-branch[data-importance="medium"],
-.news-article .mindmap-sub-branch[data-importance="medium"] {
-  border-width: 2px;
-  opacity: 0.95;
-}
-
-/* Low: thin border + reduced opacity */
-.news-article .mindmap-branch[data-importance="low"],
-.news-article .mindmap-sub-branch[data-importance="low"] {
-  border-width: 1.5px;
-  opacity: 0.75;
-}
-
-/* ── Cross-branch connections panel ─────────────────────────────────────── */
-
+/* AI Mindmap — cross-branch connection indicators */
 .news-article .mindmap-connections {
-  list-style: none;
-  margin: 1rem 0 0;
-  padding: 0.75rem 1rem;
-  background: rgba(0, 217, 255, 0.04);
-  border: 1px solid rgba(0, 217, 255, 0.2);
-  border-radius: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(0,0,0,0.15);
+  border-left: 2px solid rgba(255,255,255,0.15);
+  border-radius: 4px;
 }
 
 .news-article .mindmap-connection {
-  display: inline-flex;
-  align-items: center;
-  font-size: 0.78rem;
-  color: #a0c8d8;
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
-  border: 1px solid transparent;
+  font-size: 0.75rem;
+  color: var(--text-secondary, #aaaaaa);
+  padding: 0.15rem 0;
+  font-style: italic;
 }
 
-/* Connection type colour coding */
-.news-article .mindmap-connection[data-type="dependency"] {
-  border-color: rgba(72, 149, 239, 0.5);
-  color: #4895ef;
-}
-.news-article .mindmap-connection[data-type="dependency"]::before {
-  content: "⟶ ";
-  margin-right: 0.3rem;
+/* AI Mindmap dimension color indicators */
+.news-article .mindmap-branch[data-dimension] { border-left-width: 4px; }
+[dir="rtl"] .news-article .mindmap-branch[data-dimension] { border-left-width: 2px; border-right-width: 4px; }
+
+@media (min-width: 768px) {
+  .news-article .mindmap-center-wrapper {
+    flex: 0 0 auto;
+    align-self: center;
+  }
+  .news-article .mindmap-thesis {
+    max-width: 260px;
+  }
 }
 
-.news-article .mindmap-connection[data-type="conflict"] {
-  border-color: rgba(255, 0, 110, 0.5);
-  color: #ff006e;
-}
-.news-article .mindmap-connection[data-type="conflict"]::before {
-  content: "⚡ ";
-  margin-right: 0.3rem;
+[dir="rtl"] .news-article .mindmap-sub-items {
+  padding-left: 0;
+  padding-right: 1rem;
 }
 
-.news-article .mindmap-connection[data-type="alignment"] {
-  border-color: rgba(131, 207, 57, 0.5);
-  color: #83cf39;
-}
-.news-article .mindmap-connection[data-type="alignment"]::before {
-  content: "↔ ";
-  margin-right: 0.3rem;
-}
-
-.news-article .mindmap-connection[data-type="sequence"] {
-  border-color: rgba(255, 190, 11, 0.5);
-  color: #ffbe0b;
-}
-.news-article .mindmap-connection[data-type="sequence"]::before {
-  content: "▶ ";
-  margin-right: 0.3rem;
-}
-
-/* ── RTL sub-branch / connections support ────────────────────────────────── */
-
-[dir="rtl"] .news-article .mindmap-sub-branch {
+[dir="rtl"] .news-article .mindmap-connections {
   border-left: none;
-  border-right: 3px solid var(--branch-border, #00d9ff);
-}
-
-[dir="rtl"] .news-article .mindmap-sub-branches {
-  direction: rtl;
+  border-right: 2px solid rgba(255,255,255,0.15);
 }
 

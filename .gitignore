@@ -6,12 +6,12 @@
 .vscode/
 .idea/
 node_modules/
-api/
+/api/
 dist/
 build/
 *.log
 data/cia-exports/
-types/
+/types/
 !scripts/types/
 schemas/metadata/
 validation-report.json
@@ -24,10 +24,10 @@ external-links-report.json
 .nyc_output/
 
 # Cypress
-cypress/screenshots/
-cypress/videos/
-cypress/downloads/
-cypress/reports/
+/cypress/screenshots/
+/cypress/videos/
+/cypress/downloads/
+/cypress/reports/
 
 # Vitest
 .vitest/
@@ -39,8 +39,8 @@ cypress/reports/
 # Test/report builds (generated during development, copied to docs/ during release)
 builds/
 
-# JSDoc generated documentation (committed for GitHub Pages deployment)
-# api/ - Now committed to enable GitHub Pages documentation hosting
+# JSDoc generated documentation
+# /api/ ignores top-level TypeDoc output only; docs/api/ is committed for GitHub Pages
 
 # Environment variables
 .env
@@ -50,9 +50,6 @@ builds/
 # Lock files (keep package-lock.json)
 # yarn.lock
 # pnpm-lock.yaml
-test-libraries.html
-news-*-screenshot.png
-article-page.png
 
 # News metadata (runtime state, not versioned)
 news/metadata/generation-result.json
@@ -62,13 +59,9 @@ scripts/__pycache__/
 # Build-time generated files (created by prebuild script, NOT committed)
 # These caused constant merge conflicts when committed by parallel agent PRs.
 # They are regenerated at build time via: npm run prebuild
-sitemap.xml
-news/index.html
-news/index_*.html
-data/news-articles.json
-rss.xml
-sitemap*
-homepage-full.png
-before-*.png
-after-*.png
-news-article-check.png
+/sitemap.xml
+/news/index.html
+/news/index_*.html
+/data/news-articles.json
+/rss.xml
+/sitemap*

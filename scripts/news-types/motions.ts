@@ -169,7 +169,6 @@
  * @see https://www.riksdagen.se/ (Riksdag Parliamentary Records)
  */
 
-import { getCurrentRiksmote } from '../shared/riksmote.js';
 import { MCPClient } from '../mcp-client.js';
 import {
   generateArticleContent,
@@ -232,12 +231,14 @@ export function formatDateForSlug(date: Date = new Date()): string {
 /**
  * Calculate the current Swedish riksmöte (parliamentary session) string.
  * The session runs September–August: e.g. September 2025 → "2025/26".
- *
- * Re-exports the shared implementation from `scripts/shared/riksmote.ts`
- * to maintain the existing public API while keeping Sep–Aug boundary logic
- * consistent across generators (motions, propositions, weekly/monthly review).
  */
-export { getCurrentRiksmote };
+export function getCurrentRiksmote(date: Date = new Date()): string {
+  const year = date.getFullYear();
+  const month = date.getMonth(); // 0-based; September = 8
+  const startYear = month >= 8 ? year : year - 1;
+  const endYY = String(startYear + 1).slice(-2);
+  return `${startYear}/${endYY}`;
+}
 
 /**
  * Generate Opposition Motions article

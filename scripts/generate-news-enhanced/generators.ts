@@ -23,12 +23,13 @@ import {
   generateEconomicDashboardSection,
   generateMindmapSection,
   generateSankeySection,
+  buildAIMindmapAnalysis,
+  buildMindmapOptionsFromAnalysis,
   type SankeyNode,
   type SankeyFlow,
 } from '../data-transformers/index.js';
 import { generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
 import { generateDeepPolicyAnalysis, detectPolicyDomains } from '../data-transformers/policy-analysis.js';
-import { buildAIMindmapBranches } from '../ai-analysis/mindmap-analyzer.js';
 import { analyzeDashboardData } from '../ai-analysis/dashboard-analyzer.js';
 import { escapeHtml } from '../html-utils.js';
 import { generateArticleHTML } from '../article-template.js';
@@ -753,16 +754,22 @@ const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, stri
     ja: 'ステークホルダー', ko: '이해관계자', zh: '利益相关者',
   },
   parliamentaryAnalysis: {
-    en: 'Parliamentary Analysis', sv: 'Parlamentarisk analys', da: 'Parlamentarisk analyse',
-    no: 'Parlamentarisk analyse', fi: 'Parlamenttianalyysi', de: 'Parlamentarische Analyse',
-    fr: 'Analyse parlementaire', es: 'Análisis parlamentario', nl: 'Parlementaire analyse',
-    ar: 'تحليل برلماني', he: 'ניתוח פרלמנטרי', ja: '議会分析', ko: '의회 분석', zh: '议会分析',
+    en: 'Parliamentary Analysis', sv: 'Riksdagsanalys', da: 'Parlamentarisk analyse', no: 'Parlamentarisk analyse',
+    fi: 'Parlamentaarinen analyysi', de: 'Parlamentarische Analyse', fr: 'Analyse parlementaire', es: 'Análisis parlamentario',
+    nl: 'Parlementaire analyse', ar: 'التحليل البرلماني', he: 'ניתוח פרלמנטרי',
+    ja: '議会分析', ko: '의회 분석', zh: '议会分析',
   },
   govCommunications: {
     en: 'Gov. Communications', sv: 'Regeringsmeddelanden', da: 'Regeringsmeddelelser', no: 'Regjeringsmeldinger',
     fi: 'Hallituksen tiedonannot', de: 'Regierungsmitteilungen', fr: 'Communications gouvernementales', es: 'Comunicaciones del Gobierno',
     nl: 'Regeringsmededelingen', ar: 'بلاغات حكومية', he: 'הודעות ממשלתיות',
     ja: '政府通信', ko: '정부 통신', zh: '政府通报',
+  },
+  conceptualMap: {
+    en: 'Conceptual map', sv: 'Konceptkarta', da: 'Konceptkort', no: 'Konseptkart',
+    fi: 'Käsitekartta', de: 'Konzeptkarte', fr: 'Carte conceptuelle', es: 'Mapa conceptual',
+    nl: 'Conceptmap', ar: 'خريطة مفاهيمية', he: 'מפת מושגים',
+    ja: 'コンセプトマップ', ko: '개념 맵', zh: '概念图',
   },
 };
 
@@ -1128,7 +1135,6 @@ async function buildDeepInspectionSections(
   const govName     = STAKEHOLDER_NAMES.government[lang]     ?? STAKEHOLDER_NAMES.government.en     ?? 'Government Coalition';
   const oppName     = STAKEHOLDER_NAMES.opposition[lang]     ?? STAKEHOLDER_NAMES.opposition.en     ?? 'Opposition Parties';
 
-
   const strategicContext = topic
     ? `Analysis exclusively focused on: ${topic} — ${docs.length} parliamentary documents examined`
     : `Multi-stakeholder analysis of ${docs.length} parliamentary documents`;
@@ -1179,19 +1185,25 @@ async function buildDeepInspectionSections(
     lang,
   });
 
-  // ── Mindmap: AI-driven policy connection analysis (three-pass) ─────────────
-  const aiMindmap = buildAIMindmapBranches(docs, topic, lang);
+  // ── Mindmap: AI-driven conceptual map across 5 political dimensions ─────────
+  const allDetectedDomains = new Set<string>();
+  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
+  const detectedDomainList = [...allDetectedDomains].slice(0, 6);
 
-  const mindmapSection = generateMindmapSection({
-    topic: topic || deepLabel('parliamentaryAnalysis', lang),
-    branches: aiMindmap.branches,
-    connections: aiMindmap.connections,
-    lang,
-    summary: aiMindmap.summary,
-  });
-
-  // ── Detected policy domains (reuse from AI mindmap — avoids duplicate scanning) ─
-  const detectedDomainList = aiMindmap.detectedDomains.slice(0, 8);
+  // Pass precomputed domains to avoid iterating docs twice
+  const aiAnalysis = buildAIMindmapAnalysis(docs, topic, lang, detectedDomainList);
+  const mindmapSection = generateMindmapSection(
+    buildMindmapOptionsFromAnalysis(
+      aiAnalysis,
+      lang,
+      topic || deepLabel('parliamentaryAnalysis', lang),
+      {
+        summary: topic
+          ? `${deepLabel('conceptualMap', lang)}: ${topic}`
+          : `${deepLabel('conceptualMap', lang)} — ${docs.length} ${deepLabel('documents', lang).toLowerCase()}`,
+      },
+    ),
+  );
 
   // ── Sankey: party/doc-type flow → legislative outcome ─────────────────────
   // The sankey uses three primary legislative actor groups as source nodes:
