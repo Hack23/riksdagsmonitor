@@ -752,6 +752,12 @@ const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, stri
     nl: 'Belanghebbenden', ar: 'أصحاب المصلحة', he: 'בעלי עניין',
     ja: 'ステークホルダー', ko: '이해관계자', zh: '利益相关者',
   },
+  govCommunications: {
+    en: 'Gov. Communications', sv: 'Regeringsmeddelanden', da: 'Regeringsmeddelelser', no: 'Regjeringsmeldinger',
+    fi: 'Hallituksen tiedonannot', de: 'Regierungsmitteilungen', fr: 'Communications gouvernementales', es: 'Comunicaciones del Gobierno',
+    nl: 'Regeringsmededelingen', ar: 'بلاغات حكومية', he: 'הודעות ממשלתיות',
+    ja: '政府通信', ko: '정부 통신', zh: '政府通报',
+  },
 };
 
 function deepLabel(key: string, lang: Language): string {
@@ -930,11 +936,11 @@ function buildDocumentEntry(
 /** Build strategic implications paragraph tied to the topic and document patterns. */
 function buildStrategicImplications(docs: RawDocument[], topic: string | null, lang: Language): string {
   const esc = escapeHtml;
-  const propCount = docs.filter(d => (d.doktyp || d.documentType) === 'prop').length;
-  const betCount = docs.filter(d => (d.doktyp || d.documentType) === 'bet').length;
-  const motCount = docs.filter(d => (d.doktyp || d.documentType) === 'mot').length;
-  const pressmCount = docs.filter(d => (d.doktyp || d.documentType) === 'pressm').length;
-  const extCount = docs.filter(d => (d.doktyp || d.documentType) === 'ext').length;
+  const propCount = docs.filter(d => effectiveType(d) === 'prop').length;
+  const betCount = docs.filter(d => effectiveType(d) === 'bet').length;
+  const motCount = docs.filter(d => effectiveType(d) === 'mot').length;
+  const pressmCount = docs.filter(d => effectiveType(d) === 'pressm').length;
+  const extCount = docs.filter(d => effectiveType(d) === 'ext').length;
   const enrichedCount = docs.filter(d => d.contentFetched).length;
   const legislativeCount = propCount + betCount + motCount;
 
@@ -993,12 +999,12 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
   const items: string[] = [];
 
   // Derive takeaways from document patterns
-  const propDocs = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
-  const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
-  const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
-  const euDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
-  const sfsDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'sfs');
-  const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
+  const propDocs = docs.filter(d => effectiveType(d) === 'prop');
+  const betDocs  = docs.filter(d => effectiveType(d) === 'bet');
+  const motDocs  = docs.filter(d => effectiveType(d) === 'mot');
+  const euDocs   = docs.filter(d => effectiveType(d) === 'fpm' || effectiveType(d) === 'eu');
+  const sfsDocs  = docs.filter(d => effectiveType(d) === 'sfs');
+  const pressmDocs = docs.filter(d => effectiveType(d) === 'pressm');
 
   const topicPhrase = topic ? ` (${esc(topic)})` : '';
 
@@ -1067,16 +1073,27 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
 // ---------------------------------------------------------------------------
 
 /**
+ * Compute the effective document type for a RawDocument.
+ * SFS-by-name docs (missing doktyp/documentType but dokumentnamn starting with "SFS")
+ * are normalised to 'sfs' so filters, typeCounts, and chart labels stay consistent.
+ */
+function effectiveType(d: RawDocument): string {
+  return (d.doktyp || d.documentType)
+    || ((d.dokumentnamn || '').startsWith('SFS') ? 'sfs' : 'other');
+}
+
+/**
  * Build SWOT and dashboard TemplateSections for a deep-inspection article.
- * Derives SWOT entries from actual document metadata and titles — every entry
- * is explicitly tied to the focus topic. Returns TemplateSection[] ready for
+ * Uses buildMultiStakeholderSwot() to derive 4–9 stakeholder perspectives
+ * from document metadata (types, titles, document IDs as evidence).
+ * Returns TemplateSection[] ready for
  * generateArticleHTML.sections.
  */
-function buildDeepInspectionSections(
+async function buildDeepInspectionSections(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,
-): TemplateSection[] {
+): Promise<TemplateSection[]> {
   if (docs.length === 0) return [];
 
   // Classify by document type (used for Sankey flow diagram below)
@@ -1108,6 +1125,31 @@ function buildDeepInspectionSections(
   const euNames     = STAKEHOLDER_NAMES['eu-international'];
   const civilNames  = STAKEHOLDER_NAMES['civil-society'];
   const citizenNames = STAKEHOLDER_NAMES['citizens-voters'];
+  // Lazy-import swot-analyzer to avoid loading its large localization maps
+  // when generators.ts is used for non-deep-inspection article types.
+  const { buildMultiStakeholderSwot, STAKEHOLDER_NAMES } = await import('./swot-analyzer.js');
+
+  // Precompute effectiveType() once per document to avoid repeated string checks.
+  const docTypes = docs.map(d => effectiveType(d));
+
+  // Classify by document type (needed for downstream sankey/dashboard sections).
+  const propDocs   = docs.filter((_, i) => docTypes[i] === 'prop');
+  const betDocs    = docs.filter((_, i) => docTypes[i] === 'bet');
+  const motDocs    = docs.filter((_, i) => docTypes[i] === 'mot');
+  const skrDocs    = docs.filter((_, i) => docTypes[i] === 'skr');
+  const sfsDocs    = docs.filter((_, i) => docTypes[i] === 'sfs');
+  const euDocs     = docs.filter((_, i) => docTypes[i] === 'fpm' || docTypes[i] === 'eu');
+  const pressmDocs = docs.filter((_, i) => docTypes[i] === 'pressm');
+  const extDocs    = docs.filter((_, i) => docTypes[i] === 'ext');
+  const otherDocs  = docs.filter((_, i) =>
+    !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext'].includes(docTypes[i]));
+
+  // Build 4–9 stakeholder SWOT analyses from document metadata
+  const stakeholders = buildMultiStakeholderSwot(docs, lang);
+
+  // Derive localised names for the mindmap / sankey from the STAKEHOLDER_NAMES map
+  const govName     = STAKEHOLDER_NAMES.government[lang]     ?? STAKEHOLDER_NAMES.government.en     ?? 'Government Coalition';
+  const oppName     = STAKEHOLDER_NAMES.opposition[lang]     ?? STAKEHOLDER_NAMES.opposition.en     ?? 'Opposition Parties';
 
   const dataSourceBranchLabels: Partial<Record<Language, string>> = {
     en: 'Data Sources', sv: 'Datakällor', da: 'Datakilder', no: 'Datakilder',
@@ -1132,6 +1174,10 @@ function buildDeepInspectionSections(
     zh: ['议会 MCP（法律、动议、提案）', '世界银行（经济指标）', 'SCB 瑞典统计局'],
   };
 
+  const strategicContext = topic
+    ? `Analysis exclusively focused on: ${topic} — ${docs.length} parliamentary documents examined`
+    : `Multi-stakeholder analysis of ${docs.length} parliamentary documents`;
+  const swotSection = generateStakeholderSwotSection({ stakeholders, lang, strategicContext });
 
   // ── Dashboard: document type distribution ─────────────────────────────────
   // Normalize SFS-by-name docs (missing doktyp but dokumentnamn starts with 'SFS')
@@ -1146,6 +1192,7 @@ function buildDeepInspectionSections(
   docs.forEach(d => {
     const raw = d.doktyp || d.documentType || '';
     const t = (!raw && (d.dokumentnamn || '').startsWith('SFS')) ? 'sfs' : (raw || 'other');
+    const t = effectiveType(d);
     typeCounts[t] = (typeCounts[t] || 0) + 1;
   });
   const rawTypeKeys = Object.keys(typeCounts);
@@ -1209,7 +1256,7 @@ function buildDeepInspectionSections(
     });
   }
 
-  // Stakeholder branch
+  // Stakeholder branch — list all analysed stakeholders (up to 9)
   mindmapBranches.push({
     label: deepLabel('stakeholders', lang),
     color: 'yellow',
@@ -1222,6 +1269,7 @@ function buildDeepInspectionSections(
       civilNames[lang] ?? civilNames.en!,
       citizenNames[lang] ?? citizenNames.en!,
     ],
+    items: stakeholders.map(s => s.name),
   });
 
   // Data context branch
@@ -1242,10 +1290,18 @@ function buildDeepInspectionSections(
   });
 
   // ── Sankey: party/doc-type flow → legislative outcome ─────────────────────
+  // The sankey uses three primary legislative actor groups as source nodes:
+  //   - government: initiates propositions, laws, gov. communications, press releases
+  //   - opposition: initiates committee reports and motions
+  //   - private sector / external actors: associated with EU positions,
+  //     external references, and other document types
+  // Additional SWOT stakeholders (municipal, media, academia, etc.) are
+  // analysis perspectives rather than document-originating actors.
+  const privateName = STAKEHOLDER_NAMES.private[lang] ?? STAKEHOLDER_NAMES.private.en ?? 'Private Sector / Industry';
   const sankeyNodes: SankeyNode[] = [
-    { id: 'gov', label: govNames[lang]    ?? 'Government', color: 'cyan' },
-    { id: 'opp', label: oppNames[lang]    ?? 'Parliament', color: 'magenta' },
-    { id: 'pvt', label: privateNames[lang] ?? 'Civil Society', color: 'purple' },
+    { id: 'gov', label: govName,           color: 'cyan' },
+    { id: 'opp', label: oppName,           color: 'magenta' },
+    { id: 'pvt', label: privateName,       color: 'purple' },
   ];
 
   // Add document type nodes and target outcome nodes
@@ -1265,6 +1321,10 @@ function buildDeepInspectionSections(
   if (sfsDocs.length > 0) {
     sankeyNodes.push({ id: 'sfs', label: 'Laws (SFS)', color: 'green' });
     sankeyFlows.push({ source: 'gov', target: 'sfs', value: sfsDocs.length, label: `${sfsDocs.length}` });
+  }
+  if (skrDocs.length > 0) {
+    sankeyNodes.push({ id: 'skr', label: deepLabel('govCommunications', lang), color: 'cyan' });
+    sankeyFlows.push({ source: 'gov', target: 'skr', value: skrDocs.length, label: `${skrDocs.length}` });
   }
   if (euDocs.length > 0) {
     sankeyNodes.push({ id: 'eu', label: 'EU Positions', color: 'blue' });
@@ -1560,7 +1620,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       const sources: string[] = generateSources(sourceMethods);
 
       // SWOT + dashboard sections — topic-focused, document-derived
-      const sections = buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang);
+      const sections = await buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang);
 
       const langTitles: TitleSet = titles[lang] || titles.en;
 
