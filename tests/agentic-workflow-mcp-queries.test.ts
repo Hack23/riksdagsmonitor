@@ -140,6 +140,8 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       // Should document filtering by date fields
       expect(content).toMatch(/filter.*by.*publicerad|filter.*by.*datum|filter.*by.*inlämnad/i);
 
+      // Should have filtering instructions (fromDate references or filter directives)
+      expect(content).toMatch(/fromDate|from_date|filter.*results/i);
       // Should have filtering examples
       expect(content).toContain('.filter(');
       expect(content).toMatch(/new Date.*>=.*new Date|new Date.*>.*fromDate|>=\s*fromDate/);
@@ -171,6 +173,8 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       // Should have "Cross-Referencing Strategy" section
       expect(content).toMatch(/cross.*referencing.*strategy/i);
 
+      // Should describe cross-referencing approach (e.g. combining data sources, filter by date)
+      expect(content).toMatch(/cross.*reference|related.*data.*sources|richer.*analysis/i);
       // Should have numbered multi-tool query examples that demonstrate
       // combining different API calls in a single analysis workflow
       const hasMultiToolExamples =
@@ -260,6 +264,10 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
+      // Should show date patterns (YYYY-MM-DD, fromDate, today, toISOString, etc.)
+      expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today|YYYY-MM-DD/);
+      // Should include date placeholder patterns or dynamic calculation
+      expect(content).toMatch(/<today>|<fromDate>|date.*calculation/i);
       // Should show date calculation patterns — either JS millisecond
       // arithmetic or bash/shell date commands with lookback logic
       expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today/);

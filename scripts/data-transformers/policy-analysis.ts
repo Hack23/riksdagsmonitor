@@ -59,7 +59,7 @@ import {
 // Per-language domain name translations (12 domains × 14 languages)
 // English keys are used internally; localised names are returned to callers.
 // ---------------------------------------------------------------------------
-type DomainKey = 'fiscal' | 'defence' | 'environment' | 'education' | 'healthcare'
+export type DomainKey = 'fiscal' | 'defence' | 'environment' | 'education' | 'healthcare'
   | 'migration' | 'eu-foreign' | 'justice' | 'labour' | 'housing' | 'transport' | 'trade';
 
 const DOMAIN_NAMES: Readonly<Record<DomainKey, Record<string, string>>> = {
@@ -148,7 +148,29 @@ const DOMAIN_NAMES: Readonly<Record<DomainKey, Record<string, string>>> = {
   },
 };
 
-/** Resolve a localised domain name from a domain key and language. */
+/**
+ * Map from canonical domain key to its English display name.
+ * Single source of truth — mirrors DOMAIN_NAMES[key].en for each key.
+ */
+export const DOMAIN_KEY_TO_EN: Readonly<Record<DomainKey, string>> = Object.fromEntries(
+  Object.entries(DOMAIN_NAMES).map(([key, translations]) => [key, translations.en]),
+) as Record<DomainKey, string>;
+
+/**
+ * Reverse lookup: map any localised domain display name back to its canonical key.
+ * Covers all 14 languages so callers can reliably derive the key from any
+ * string returned by `detectPolicyDomains()`.
+ */
+export const DOMAIN_NAME_TO_KEY: Readonly<Record<string, DomainKey>> = (() => {
+  const m: Record<string, DomainKey> = {};
+  for (const [key, translations] of Object.entries(DOMAIN_NAMES)) {
+    for (const localisedName of Object.values(translations)) {
+      m[localisedName] = key as DomainKey;
+      m[localisedName.toLowerCase()] = key as DomainKey;
+    }
+  }
+  return m;
+})();
 function domainName(key: DomainKey, lang: Language | string): string {
   return DOMAIN_NAMES[key][lang] ?? DOMAIN_NAMES[key].en;
 }
@@ -290,20 +312,17 @@ export function detectNarrativeFrames(doc: RawDocument): NarrativeFrame[] {
 type _LangPair = { en: Record<string, string>; sv: Record<string, string> } & Partial<Record<Language, Record<string, string>>>;
 
 /**
- * Build a reverse lookup from any localised domain name back to the English key.
- * This allows getDomainSpecificAnalysis to work with the localised strings
- * returned by detectPolicyDomains().
+ * Reverse lookup from any localised domain name to the English display name.
+ * Derived from `DOMAIN_NAME_TO_KEY` + `DOMAIN_KEY_TO_EN` to avoid maintaining
+ * a second translation table that could drift from the canonical source.
  */
-const _LOCALISED_TO_EN: Record<string, string> = {};
-for (const [, translations] of Object.entries(DOMAIN_NAMES)) {
-  const enName = translations.en;
-  for (const [langKey, localisedName] of Object.entries(translations)) {
-    // Skip the English entry — it maps to itself and adds no new lookup value
-    if (langKey === 'en') continue;
-    _LOCALISED_TO_EN[localisedName] = enName;
-    _LOCALISED_TO_EN[localisedName.toLowerCase()] = enName;
+const _LOCALISED_TO_EN: Readonly<Record<string, string>> = (() => {
+  const m: Record<string, string> = {};
+  for (const [localised, key] of Object.entries(DOMAIN_NAME_TO_KEY)) {
+    m[localised] = DOMAIN_KEY_TO_EN[key];
   }
-}
+  return m;
+})();
 
 /** Module-level constant — allocated once, shared across all calls. */
 const DOMAIN_ANALYSES: Record<string, _LangPair> = {
