@@ -1269,11 +1269,11 @@ function buildDeepInspectionSectionsFromAnalysis(
   const motDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
   const sfsDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
   const skrDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
-  const euDocs     = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
+  const euDocs     = docs.filter(d => (d.doktyp || d.documentType) === 'fpm' || (d.doktyp || d.documentType) === 'eu');
   const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
   const extDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
   const otherDocs  = docs.filter(d =>
-    !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || '')
+    !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext'].includes((d.doktyp || d.documentType) || '')
     && !(d.dokumentnamn || '').startsWith('SFS'));
 
   // Select stakeholder names by role key (not array index) to avoid silent mislabeling

@@ -1011,7 +1011,7 @@ function buildWatchPoints(
   const betDocs  = docs.filter(d => docType(d) === 'bet');
   const motDocs  = docs.filter(d => docType(d) === 'mot');
   const sfsDocs  = docs.filter(isSfsDoc);
-  const euDocs   = docs.filter(d => docType(d) === 'fpm');
+  const euDocs   = docs.filter(d => docType(d) === 'fpm' || docType(d) === 'eu');
 
   const topicSuffix = topic ? ` (${topic})` : '';
 
@@ -1248,7 +1248,7 @@ async function analyzeDocuments(
   const motDocs     = docs.filter(d => docType(d) === 'mot');
   const skrDocs     = docs.filter(d => docType(d) === 'skr');
   const sfsDocs     = docs.filter(isSfsDoc);
-  const euDocs      = docs.filter(d => docType(d) === 'fpm');
+  const euDocs      = docs.filter(d => docType(d) === 'fpm' || docType(d) === 'eu');
   const pressmDocs  = docs.filter(d => docType(d) === 'pressm');
   const extDocs     = docs.filter(d => docType(d) === 'ext');
 
