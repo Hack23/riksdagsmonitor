@@ -26,6 +26,10 @@ on:
       focus_topic:
         description: 'Specific topic or policy area to focus deep-inspection analysis on (e.g. "cyber security, cyberthreats, ai security, ai future", defence, migration, budget). Multiple related keywords can be comma-separated for richer analysis.'
         required: false
+      analysis_depth:
+        description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.'
+        required: false
+        default: standard
 
 permissions:
   contents: read
@@ -115,6 +119,7 @@ You are the **News Journalist Agent** for Riksdagsmonitor. Generate high-quality
 - **document_ids** = `${{ github.event.inputs.document_ids }}`
 - **document_urls** = `${{ github.event.inputs.document_urls }}`
 - **focus_topic** = `${{ github.event.inputs.focus_topic }}`
+- **analysis_depth** = `${{ github.event.inputs.analysis_depth }}`
 
 **Rules:**
 1. If **article_types** is non-empty, generate ONLY those types. Do NOT fall back to day-of-week schedule.
@@ -191,6 +196,25 @@ START_TIME=$(date +%s)
 6. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
 7. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
 8. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
+
+## 📊 MANDATORY Multi-Step AI Analysis Framework
+
+> **Read `analysis_depth` input first** (default: `standard`). This controls how many AI iterations to apply per article type.
+
+Each article type has a profile in `scripts/editorial-framework.ts` with the exact SWOT depth, dashboard requirements, mindmap requirements, stakeholder count, and AI iteration count to target. Use `getArticleTypeProfile(articleType)` to retrieve the profile, then apply the corresponding sections:
+
+| Depth | Iterations | SWOT | Dashboard | Mindmap |
+|-------|-----------|------|-----------|---------|
+| standard | min(2, profile.aiIterations) | as profile | as profile | as profile |
+| deep | clamp(2–3, profile.aiIterations) | as profile | as profile | as profile |
+| comprehensive | max(3, profile.aiIterations) | as profile | as profile | as profile |
+
+### Per-Article-Type Iteration Pattern
+For each article type being generated in this run:
+1. **Phase 1**: Fetch data → initial outline
+2. **Phase 2**: Enhance with SWOT + Dashboard + Mindmap (per profile requirements)
+3. **Quality Gate**: word count ≥ profile.minWordCount, no identical why-it-matters, all Swedish translated
+4. **Additional iterations**: if `analysis_depth` is `deep` or `comprehensive` and quality gate fails
 
 ## Step 1: Date Validation & MCP Health Check
 
