@@ -15,6 +15,9 @@ import type { AIAnalysisResult } from './ai-analysis-pipeline.js';
 /** Default TTL for cached analysis results: 30 minutes */
 const DEFAULT_TTL_MS = 30 * 60 * 1000;
 
+/** Maximum number of entries the cache will hold before purging expired + oldest. */
+const MAX_CACHE_SIZE = 500;
+
 interface CacheEntry {
   result: AIAnalysisResult;
   createdAt: number;
@@ -95,6 +98,32 @@ export class AnalysisCache {
    */
   set(key: string, result: AIAnalysisResult, ttlMs: number = DEFAULT_TTL_MS): void {
     this.store.set(key, { result, createdAt: Date.now(), ttlMs });
+    // Opportunistically purge expired entries to prevent unbounded growth.
+    this.purgeExpired();
+  }
+
+  /**
+   * Remove all expired entries from the cache.
+   * Called opportunistically from `set()` to prevent memory growth in
+   * long-lived processes. Also enforces a maximum cache size.
+   */
+  purgeExpired(): void {
+    const now = Date.now();
+    for (const [k, entry] of this.store) {
+      if (now - entry.createdAt > entry.ttlMs) {
+        this.store.delete(k);
+      }
+    }
+    // If still over the cap after purging expired entries, evict oldest first.
+    if (this.store.size > MAX_CACHE_SIZE) {
+      const sorted = [...this.store.entries()].sort(
+        (a, b) => a[1].createdAt - b[1].createdAt,
+      );
+      const toRemove = sorted.slice(0, this.store.size - MAX_CACHE_SIZE);
+      for (const [k] of toRemove) {
+        this.store.delete(k);
+      }
+    }
   }
 
   /** Remove all entries from the cache. */
@@ -102,7 +131,7 @@ export class AnalysisCache {
     this.store.clear();
   }
 
-  /** Number of entries currently in the cache (including potentially expired ones). */
+  /** Number of live (non-expired) entries currently in the cache. */
   get size(): number {
     return this.store.size;
   }

@@ -905,6 +905,24 @@ export class AIAnalysisPipeline {
     focusTopic: string | null,
     lang: Language,
   ): AIAnalysisResult {
+    // Early return for empty input — no meaningful analysis can be produced.
+    if (documents.length === 0) {
+      const empty: DynamicSwotEntries = {
+        government:    { strengths: [], weaknesses: [], opportunities: [], threats: [] },
+        opposition:    { strengths: [], weaknesses: [], opportunities: [], threats: [] },
+        privateSector: { strengths: [], weaknesses: [], opportunities: [], threats: [] },
+      };
+      return {
+        iterations: this.iterations,
+        documentAnalyses: [],
+        synthesis: this.createEmptySynthesis(),
+        dynamicSwotEntries: empty,
+        strategicImplications: '',
+        keyTakeaways: [],
+        analysisScore: 0,
+      };
+    }
+
     // Pass 1 (always): classify documents
     const classified = this.classifyDocuments(documents, lang);
 
