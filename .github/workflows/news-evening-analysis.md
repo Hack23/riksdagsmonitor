@@ -225,12 +225,18 @@ if (hoursSinceSync > 48) { /* add stale data disclaimer */ }
 
 Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc queries, use `scripts/mcp-query-cli.ts` — NEVER implement custom MCP client code (PROHIBITION).
 
-Calculate date range for queries (day-granularity via `.slice(0, 10)` truncation):
-```js
-const today = new Date().toISOString().slice(0, 10);
-// lookback_hours input is rounded up to full days for date-string comparison
+**Date calculation pattern:**
+```javascript
+const lookbackHours = 24; // adjust as needed (e.g. 8 for evening analysis, 168 for weekly)
+const now = new Date();
+const fromDate = new Date(now.getTime() - lookbackHours * 3600000); // 3600000 ms = 1 hour
+const weekAgo = new Date(now.getTime() - 7 * 86400000); // 86400000 ms = 1 day
+const today = now.toISOString().split('T')[0];
+// ISO string variants for tools with native date params
+const fromDateIso = fromDate.toISOString().slice(0, 10);
+// Day-granularity date strings (via .slice(0, 10) truncation):
 const lookbackDays = Math.ceil(lookbackHours / 24);
-const fromDate = new Date(Date.now() - lookbackDays * 86400000).toISOString().slice(0, 10);
+const fromDateStr = new Date(Date.now() - lookbackDays * 86400000).toISOString().slice(0, 10);
 // For weekly review (Saturday): 5-day lookback = 5 * 86400000 ms
 const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 10);
 ```
@@ -261,18 +267,11 @@ const results = queryResults.filter(
 
 Filter results to only include items with dates `>= fromDate` using ISO-string comparison (avoids timezone-sensitive `new Date()` parsing):
 ```js
-const filtered = results.filter(item => (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10) >= fromDate);
-```
-
-**Post-query date filtering pattern** (use with tools that lack native date params):
-```javascript
-// Calculate fromDate using ms constants: 86400000 ms/day, 3600000 ms/hour
-const fromDate = new Date(Date.now() - lookbackHours * 3600000).toISOString().slice(0, 10);
-const today = new Date().toISOString().slice(0, 10);
-
-// Filter results by date field (day-granularity string comparison avoids timezone issues)
-// Include inlämnad for motions which use that date field
-const filtered = results.filter(item => (item.publicerad || item.datum || item.inlämnad || '').slice(0, 10) >= fromDate);
+const filtered = results.filter(item =>
+  (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10) >= fromDate
+);
+// Discouraged alternative: new Date() parsing — timezone/format sensitive
+// const filtered = rawResults.filter(item => new Date(item.publicerad || item.datum || item.inlämnad) >= fromDate);
 ```
 
 **Post-query date filtering example** (day-granularity; 86400000 ms = 1 day):
@@ -301,6 +300,7 @@ const today = new Date().toISOString().split('T')[0];
 const recentBetankanden = allBetankanden.filter(b => new Date(b.publicerad) >= new Date(fromDate));
 const recentMotioner = allMotioner.filter(m => new Date(m.inlämnad) >= new Date(fromDate));
 const results = get_betankanden({ rm: currentRm, limit: 50 });
+const results = await get_betankanden({ rm: currentRm, limit: 50 });
 const recent = results.filter(b => (b.publicerad || '').slice(0, 10) >= fromDate);
 ```
 
@@ -349,39 +349,66 @@ Cross-reference related data sources for richer analysis. Filter all results by 
 
 **Example 1: Committee Report Deep Dive**
 ```javascript
-// 1. Get recent committee reports
-const betankanden = get_betankanden({ rm: currentRm, limit: 20 });
-const recentBet = betankanden.filter(b => (b.publicerad || '').slice(0, 10) >= fromDate);
+// Setup: riksmöte + date threshold (ISO-string comparison — timezone-safe)
+const currentRm = '2025/26'; // adjust to current session
+const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10); // YYYY-MM-DD
+// 1. Fetch committee reports, filter by date using ISO-string comparison
+const allReports = await get_betankanden({ rm: currentRm });
+const reports = allReports.filter(r => (r.publicerad || r.datum || '').slice(0, 10) >= fromDateIso);
+// 2. For each report, cross-reference voting records
+for (const report of reports) {
+  const votes = await search_voteringar({ bet: report.beteckning });
+}
+```
 
-// 2. For each report, get full details
-const reportDetails = recentBet.map(bet =>
-  get_dokument({ dok_id: bet.dok_id, include_full_text: false })
-);
+**Example 2: Government Activity Analysis**
+```javascript
+// Setup: riksmöte + date threshold (ISO-string comparison — timezone-safe)
+const currentRm = '2025/26'; // adjust to current session
+const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10); // YYYY-MM-DD
+// 1. Fetch propositions, filter by date using ISO-string comparison
+const allProps = await get_propositioner({ rm: currentRm });
+const props = allProps.filter(p => (p.publicerad || p.datum || '').slice(0, 10) >= fromDateIso);
+// 2. Cross-reference with government press releases (native dateFrom param)
+const press = await search_regering({ type: 'pressmeddelanden', dateFrom: fromDateIso });
+```
 
-// 3. Check related votes
-const relatedVotes = search_voteringar({ rm: currentRm, limit: 50 })
-  .filter(v => recentBet.some(bet => v.bet === bet.beteckning));
+**Example 3: Party Behavior Analysis**
+```javascript
+// Setup: riksmöte + date threshold + party (ISO-string comparison — timezone-safe)
+const currentRm = '2025/26'; // adjust to current session
+const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10); // YYYY-MM-DD
+const partyCode = 'S'; // e.g. S, M, SD, V, MP, C, L, KD
+// 1. Get motions filed by party, filter by date using ISO-string comparison
+const allMotions = await get_motioner({ rm: currentRm });
+const motions = allMotions.filter(m => (m.inlämnad || m.datum || '').slice(0, 10) >= fromDateIso);
+// 2. Get party voting patterns, filter by date
+const allVotes = await search_voteringar({ parti: partyCode, rm: currentRm });
+const votes = allVotes.filter(v => (v.datum || '').slice(0, 10) >= fromDateIso);
 ```
 
 **Example 2: Government Activity Analysis**
 ```javascript
 // 1. Get government documents in date range
-const govDocs = search_regering({ dateFrom: fromDate, dateTo: today, limit: 30 });
+const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
+const today = new Date().toISOString().slice(0, 10);
+const govDocs = await search_regering({ dateFrom: fromDateIso, dateTo: today, limit: 30 });
 
 // 2. Get related propositions
-const propositions = get_propositioner({ rm: currentRm, limit: 20 })
-  .filter(p => (p.publicerad || '').slice(0, 10) >= fromDate);
+const propositions = (await get_propositioner({ rm: currentRm, limit: 20 }))
+  .filter(p => (p.publicerad || '').slice(0, 10) >= fromDateIso);
 ```
 
 **Example 3: Party Behavior Analysis**
 ```javascript
 // 1. Get party voting records
-const votes = search_voteringar({ rm: currentRm, limit: 100 })
-  .filter(v => (v.datum || '').slice(0, 10) >= fromDate);
+const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
+const votes = (await search_voteringar({ rm: currentRm, limit: 100 }))
+  .filter(v => (v.datum || '').slice(0, 10) >= fromDateIso);
 
 // 2. Get party speeches
-const speeches = search_anforanden({ rm: currentRm, limit: 100 })
-  .filter(a => (a.datum || '').slice(0, 10) >= fromDate);
+const speeches = (await search_anforanden({ rm: currentRm, limit: 100 }))
+  .filter(a => (a.datum || '').slice(0, 10) >= fromDateIso);
 ```
 
 **Detailed Example: Committee Report Deep Dive**
