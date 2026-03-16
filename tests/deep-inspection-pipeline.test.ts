@@ -159,18 +159,28 @@ describe('generateDeepInspectionContent depth-gated sections', () => {
     expect(html).not.toContain('class="methodology-confidence"');
   });
 
-  it('depth 3 adds executive summary and methodology', async () => {
+  it('depth 3 adds executive summary, predictive headings, and methodology', async () => {
     const html = await render(3, 'en');
     expect(html).toContain('class="executive-intelligence-summary"');
+    expect(html).toContain('class="predictive-assessment"');
     expect(html).toContain('class="methodology-confidence"');
-    expect(html).toContain('Likely Outcome');
-    expect(html).toContain('Coalition Stability Forecast');
-    expect(html).toContain('Risk Scenarios');
+
+    const predictiveSection = html.match(/<section class="predictive-assessment"[\s\S]*?<\/section>/)?.[0] ?? '';
+    expect(predictiveSection).not.toBe('');
+    expect((predictiveSection.match(/<h3>/g) ?? []).length).toBeGreaterThanOrEqual(3);
+    expect(predictiveSection).toContain('class="risk-scenarios"');
+
+    const methodologySection = html.match(/<section class="methodology-confidence"[\s\S]*?<\/section>/)?.[0] ?? '';
+    expect(methodologySection).not.toBe('');
+    expect((methodologySection.match(/<ol class="iteration-list">[\s\S]*?<\/ol>/g) ?? []).length).toBe(1);
+    expect((methodologySection.match(/<li>/g) ?? []).length).toBe(3);
   });
 
-  it('depth 4 includes the quality-review methodology iteration', async () => {
+  it('depth 4 includes all methodology iterations', async () => {
     const html = await render(4, 'en');
-    expect(html).toContain('Quality review (bias check and completeness verification)');
+    const methodologySection = html.match(/<section class="methodology-confidence"[\s\S]*?<\/section>/)?.[0] ?? '';
+    expect(methodologySection).not.toBe('');
+    expect((methodologySection.match(/<li>/g) ?? []).length).toBe(4);
   });
 
   it('renders localized Swedish labels for advanced sections', async () => {

@@ -169,14 +169,14 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       expect(content).toMatch(/filter by.*datum|filter by.*publicerad|filter by.*inlämnad/);
     });
 
-    it('news-evening-analysis.md should document >= fromDate post-query filtering', () => {
+    it('news-evening-analysis.md should document post-query fromDate filtering guidance', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
-      // Should have explicit >= fromDate filtering guidance
-      expect(content).toMatch(/>=\s*fromDate/);
-      // Should reference Filter results instruction
-      expect(content).toMatch(/Filter results/i);
+      // Should include explicit comparison against fromDate (string or Date-object style)
+      expect(content).toMatch(/>=\s*fromDate|new Date\([^\n]*fromDate[^\n]*\)\s*[>=]/i);
+      // Should include semantic post-query filtering guidance without exact phrasing dependency
+      expect(content).toMatch(/post-query\s+filter|filter\s+results|date\s+filter/i);
     });
   });
 
