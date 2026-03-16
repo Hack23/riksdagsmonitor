@@ -1058,9 +1058,9 @@ export function buildAISwotStakeholders(
 
   const crossRefs = buildCrossReferences(b, topic);
 
-  // Localised labels for context metadata
-  const confidenceLabel = CONTEXT_LABELS.confidence[lang];
-  const crossRefLabel   = CONTEXT_LABELS.crossReferences[lang];
+  // Localised labels for context metadata (with English fallback for safety)
+  const confidenceLabel = CONTEXT_LABELS.confidence[lang] ?? CONTEXT_LABELS.confidence.en;
+  const crossRefLabel   = CONTEXT_LABELS.crossReferences[lang] ?? CONTEXT_LABELS.crossReferences.en;
 
   return perspectives.map(p => {
     const name = STAKEHOLDER_NAMES[p][lang];

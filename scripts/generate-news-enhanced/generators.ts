@@ -1109,19 +1109,28 @@ async function buildDeepInspectionSections(
 ): Promise<TemplateSection[]> {
   if (docs.length === 0) return [];
 
-  // Classify by document type (used for Sankey flow diagram below)
-  const propDocs = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
-  const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
-  const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
-  const skrDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
-  const sfsDocs  = docs.filter(d =>
-    (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
-  const euDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
-  const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
-  const extDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
-  const otherDocs = docs.filter(d =>
-    !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || '')
-    && !(d.dokumentnamn || '').startsWith('SFS'));
+  // Single-pass classification: bucket docs by effectiveType() to avoid N×filter passes.
+  // EU docs use both 'fpm' and 'eu' raw types; effectiveType() preserves the raw value,
+  // so we merge both into the euDocs bucket below.
+  const buckets = new Map<string, RawDocument[]>();
+  for (const d of docs) {
+    const t = effectiveType(d);
+    let arr = buckets.get(t);
+    if (!arr) { arr = []; buckets.set(t, arr); }
+    arr.push(d);
+  }
+  const propDocs   = buckets.get('prop')   ?? [];
+  const betDocs    = buckets.get('bet')    ?? [];
+  const motDocs    = buckets.get('mot')    ?? [];
+  const skrDocs    = buckets.get('skr')    ?? [];
+  const sfsDocs    = buckets.get('sfs')    ?? [];
+  const euDocs     = [...(buckets.get('fpm') ?? []), ...(buckets.get('eu') ?? [])];
+  const pressmDocs = buckets.get('pressm') ?? [];
+  const extDocs    = buckets.get('ext')    ?? [];
+  const classifiedTypes = new Set(['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext']);
+  const otherDocs  = [...buckets.entries()]
+    .filter(([k]) => !classifiedTypes.has(k))
+    .flatMap(([, v]) => v);
 
   // ── AI-driven 6-stakeholder SWOT ─────────────────────────────────────────
   const stakeholders = buildAISwotStakeholders(docs, topic, lang);
@@ -1132,36 +1141,9 @@ async function buildDeepInspectionSections(
   const swotSection = generateStakeholderSwotSection({ stakeholders, lang, strategicContext });
 
   // ── Localised names for mindmap/sankey labels (single source from ai-swot-analyzer)
-  const govName     = AI_STAKEHOLDER_NAMES['government-coalition'][lang];
-  const oppName     = AI_STAKEHOLDER_NAMES['opposition'][lang];
-  const privateName = AI_STAKEHOLDER_NAMES['private-sector'][lang];
-
-  const dataSourceBranchLabels: Partial<Record<Language, string>> = {
-    en: 'Data Sources', sv: 'Datakällor', da: 'Datakilder', no: 'Datakilder',
-    fi: 'Tietolähteet', de: 'Datenquellen', fr: 'Sources de données', es: 'Fuentes de datos',
-    nl: 'Gegevensbronnen', ar: 'مصادر البيانات', he: 'מקורות נתונים',
-    ja: 'データソース', ko: '데이터 출처', zh: '数据来源',
-  };
-  const dataSourceItems: Partial<Record<Language, string[]>> = {
-    en: ['Riksdag MCP (laws, motions, propositions)', 'World Bank (economic indicators)', 'SCB Statistics Sweden'],
-    sv: ['Riksdagens MCP (lagar, motioner, propositioner)', 'Världsbanken (ekonomiska indikatorer)', 'SCB Statistikmyndigheten'],
-    da: ['Riksdag MCP (love, motioner, forslag)', 'Verdensbanken (økonomiske indikatorer)', 'SCB Statistikmyndigheten'],
-    no: ['Riksdag MCP (lover, motioner, proposisjoner)', 'Verdensbanken (økonomiske indikatorer)', 'SCB Statistikmyndigheten'],
-    fi: ['Riksdagin MCP (lait, kirjelmät, esitykset)', 'Maailmanpankki (taloudelliset indikaattorit)', 'SCB Tilastoviranomainen'],
-    de: ['Riksdag MCP (Gesetze, Anträge, Vorlagen)', 'Weltbank (Wirtschaftsindikatoren)', 'SCB Statistikmyndigheten'],
-    fr: ['Riksdag MCP (lois, motions, propositions)', 'Banque mondiale (indicateurs économiques)', 'SCB Statistikmyndigheten'],
-    es: ['Riksdag MCP (leyes, mociones, proposiciones)', 'Banco Mundial (indicadores económicos)', 'SCB Statistikmyndigheten'],
-    nl: ['Riksdag MCP (wetten, moties, voorstellen)', 'Wereldbank (economische indicatoren)', 'SCB Statistikmyndigheten'],
-    ar: ['ريكسداغ MCP (قوانين، اقتراحات)', 'البنك الدولي (مؤشرات اقتصادية)', 'SCB إحصاء السويد'],
-    he: ['ריקסדאג MCP (חוקים, הצעות)', 'הבנק העולמי (אינדיקטורים כלכליים)', 'SCB הלשכה המרכזית לסטטיסטיקה'],
-    ja: ['Riksdag MCP (法律・動議・提案)', '世界銀行（経済指標）', 'SCB スウェーデン統計局'],
-    ko: ['Riksdag MCP (법률, 동의, 제안)', '세계은행 (경제 지표)', 'SCB 스웨덴 통계청'],
-    zh: ['议会 MCP（法律、动议、提案）', '世界银行（经济指标）', 'SCB 瑞典统计局'],
-  };
-  const strategicContext = topic
-    ? `Analysis exclusively focused on: ${topic} — ${docs.length} parliamentary documents examined`
-    : `Multi-stakeholder analysis of ${docs.length} parliamentary documents`;
-  const swotSection = generateStakeholderSwotSection({ stakeholders, lang, strategicContext });
+  const govName     = AI_STAKEHOLDER_NAMES['government-coalition'][lang] ?? AI_STAKEHOLDER_NAMES['government-coalition'].en;
+  const oppName     = AI_STAKEHOLDER_NAMES['opposition'][lang]           ?? AI_STAKEHOLDER_NAMES['opposition'].en;
+  const privateName = AI_STAKEHOLDER_NAMES['private-sector'][lang]       ?? AI_STAKEHOLDER_NAMES['private-sector'].en;
 
   // ── AI-analyzed multi-chart dashboard ─────────────────────────────────────
   // Produces 3 chart types (radar, scatter, bar) with accessible data tables.
@@ -1212,54 +1194,6 @@ async function buildDeepInspectionSections(
   const allDetectedDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
   const detectedDomainList = [...allDetectedDomains].slice(0, 8);
-
-  const mindmapBranches: MindmapBranch[] = [];
-
-  // Document type branch — use localized names
-  if (rawTypeKeys.length > 0) {
-    mindmapBranches.push({
-      label: deepLabel('documentTypes', lang),
-      color: 'cyan',
-      icon: '📄',
-      items: rawTypeKeys.map((t, i) => `${docTypeLabel(t, lang, chartValues[i])} (${chartValues[i] ?? 0})`),
-    });
-  }
-
-  // Policy domain branch
-  if (detectedDomainList.length > 0) {
-    mindmapBranches.push({
-      label: deepLabel('policyDomains', lang),
-      color: 'green',
-      icon: '🏛️',
-      items: detectedDomainList,
-    });
-  }
-
-  // Stakeholder branch — list all analysed stakeholders (up to 6)
-  mindmapBranches.push({
-    label: deepLabel('stakeholders', lang),
-    color: 'yellow',
-    icon: '👥',
-    items: stakeholders.map(s => s.name),
-  });
-
-  // Data context branch
-  mindmapBranches.push({
-    label: dataSourceBranchLabels[lang] ?? dataSourceBranchLabels.en!,
-    color: 'purple',
-    icon: '📊',
-    items: dataSourceItems[lang] ?? dataSourceItems.en!,
-  });
-
-  const mindmapSection = generateMindmapSection({
-    topic: topic || 'Parliamentary Analysis',
-    branches: mindmapBranches,
-    lang,
-    summary: topic
-      ? `Conceptual map for deep inspection: ${topic}`
-      : `Conceptual map for ${docs.length} parliamentary documents`,
-  });
-  const detectedDomainList = [...allDetectedDomains].slice(0, 6);
 
   // Pass precomputed domains to avoid iterating docs twice
   const aiAnalysis = buildAIMindmapAnalysis(docs, topic, lang, detectedDomainList);
