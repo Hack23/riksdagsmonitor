@@ -98,8 +98,8 @@ export const analysisDepth: 1 | 2 | 3 | 4 =
  * - `standard` — 2 passes (initial + SWOT refinement; default)
  * - `deep`     — 3 passes (initial + refinement + stakeholder validation)
  */
-const analysisDepthArg: string | undefined = args.find(arg => arg.startsWith('--analysis-depth='));
-const rawAnalysisDepth: string = parseArgValue(analysisDepthArg ?? '').toLowerCase();
+const analysisModeArg: string | undefined = args.find(arg => arg.startsWith('--analysis-depth='));
+const rawAnalysisMode: string = parseArgValue(analysisModeArg ?? '').toLowerCase();
 const VALID_ANALYSIS_DEPTHS: readonly AnalysisDepth[] = ['quick', 'standard', 'deep'];
 
 function parseAnalysisDepth(raw: string): AnalysisDepth {
@@ -112,7 +112,7 @@ function parseAnalysisDepth(raw: string): AnalysisDepth {
   return 'standard';
 }
 
-export const analysisDepth: AnalysisDepth = parseAnalysisDepth(rawAnalysisDepth);
+export const analysisMode: AnalysisDepth = parseAnalysisDepth(rawAnalysisMode);
 
 const DEFAULT_QUALITY_THRESHOLD = 40;
 let parsedQualityThreshold: number = DEFAULT_QUALITY_THRESHOLD;

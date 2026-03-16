@@ -39,10 +39,9 @@ import { MCPClient } from '../mcp-client.js';
 import type { Language } from '../types/language.js';
 import type { GenerationResult, DateRange, ArticleCategory, TemplateSection, SwotEntry } from '../types/article.js';
 import type { TitleSet } from './types.js';
-import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic, analysisDepth } from './config.js';
 import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic, analysisDepth, METADATA_DIR } from './config.js';
 import { runAnalysisPipeline } from '../ai-analysis/pipeline.js';
-import type { AnalysisResult, AnalysisIterationMetadata } from '../ai-analysis/types.js';
+import type { AnalysisResult, AnalysisIterationMetadata, AnalysisDepth } from '../ai-analysis/types.js';
 import {
   getWeekAheadDateRange,
   formatDateForSlug,
@@ -954,6 +953,12 @@ function generateDeepInspectionContent(
   }
 
   return html;
+}
+
+function mapReportDepthToPipelineDepth(depth: 1 | 2 | 3 | 4): AnalysisDepth {
+  if (depth <= 1) return 'quick';
+  if (depth === 2) return 'standard';
+  return 'deep';
 }
 
 /**
@@ -2171,10 +2176,11 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
 
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version (analysis-depth: ${analysisDepth})...`);
+      const pipelineDepth: AnalysisDepth = mapReportDepthToPipelineDepth(analysisDepth);
 
       // ── AI Analysis Pipeline (multi-iteration) ───────────────────────────
       const { analysis, validation, iterationDurationsMs } = await runAnalysisPipeline(enrichedDocs, {
-        depth: analysisDepth,
+        depth: pipelineDepth,
         lang,
         focusTopic: sanitizedTopic,
       });
@@ -2190,7 +2196,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       const iterationMetadata: AnalysisIterationMetadata = {
         articleSlug: slug,
         lang,
-        depth: analysisDepth,
+        depth: pipelineDepth,
         iterationsCompleted: analysis.iterationsCompleted,
         iterationDurationsMs,
         confidenceScore: analysis.confidenceScore,
@@ -2204,12 +2210,6 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
 
       // Topic-focused deep-inspection content (NOT generic content)
       const content: string = generateDeepInspectionContent(enrichedDocs, sanitizedTopic, lang, analysisDepth);
-      // Topic-focused deep-inspection content (template-driven body text).
-      // At this stage the AI pipeline supplies structured sections (SWOT,
-      // dashboard, mindmap, Sankey, watch points) while the main narrative
-      // body is still produced by generateDeepInspectionContent(). Wiring
-      // AI-derived narrative into the article body is the next phase.
-      const content: string = generateDeepInspectionContent(enrichedDocs, sanitizedTopic, lang);
 
       // Metadata derived from document data
       const contentData = { documents: enrichedDocs as Parameters<typeof generateArticleContent>[0]['documents'] };
