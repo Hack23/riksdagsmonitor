@@ -261,7 +261,7 @@ aws s3 sync "$SRC" "$BUCKET" \
 # ── Delete orphaned objects from S3 ──
 # Since we use cp --recursive (not sync) for the per-type passes, removed/renamed
 # files would otherwise linger in the bucket.  A final sync --delete cleans them.
-aws s3 sync "$SRC" "$BUCKET" --delete --size-only \
+aws s3 sync "$SRC" "$BUCKET" --delete \
   "${SKIP[@]}"
 
 echo "✅ S3 deployment completed"

@@ -34,7 +34,7 @@ try {
   if (fs.existsSync(txtPath)) {
     treeText = fs.readFileSync(txtPath, 'utf8');
     // Count unique packages from the text tree (use Set to avoid duplicates)
-    const pkgMatches = treeText.match(/[├└│─┬]─\s+(\S+@)\S+/g);
+    const pkgMatches = treeText.match(/[├└│─┬]─\s+(\S+)@\S+/g);
     if (pkgMatches) {
       const uniquePkgs = new Set(pkgMatches.map(m => m.replace(/[├└│─┬]─\s+/, '').replace(/@[^@]+$/, '')));
       totalDeps = uniquePkgs.size;
