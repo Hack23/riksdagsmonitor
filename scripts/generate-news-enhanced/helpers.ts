@@ -197,7 +197,9 @@ export function validateArticleQuality(
 
   // ── Pass 2: multi-dimensional assessment ─────────────────────────────────
   const multidimensional = assessArticleQuality(html, lang, sourceDocIds, MULTIDIM_QUALITY_THRESHOLD);
-  printQualityReport(multidimensional, filename);
+  if (multidimensional.passesThreshold === false || process.env.NEWS_QUALITY_VERBOSE === '1') {
+    printQualityReport(multidimensional, filename);
+  }
 
   // ----- console report (structural) -----
   const scoreLabel: string = passed ? '✅' : '⚠️';

@@ -287,8 +287,11 @@ const results = rawResults.filter(item => {
 ```javascript
 const now = new Date();
 const lookback_hours = 12; // default; override via workflow input
-const lookbackMs = parseInt(String(lookback_hours), 10) * 3600000; // 3600000 ms per hour
-if (Number.isNaN(lookbackMs)) throw new Error('Invalid lookback_hours');
+const lookbackHours = Number(lookback_hours);
+if (!Number.isFinite(lookbackHours) || !Number.isInteger(lookbackHours) || lookbackHours <= 0) {
+  throw new Error('Invalid lookback_hours');
+}
+const lookbackMs = lookbackHours * 3600000; // 3600000 ms per hour
 const fromDate = new Date(now.getTime() - lookbackMs).toISOString().slice(0, 10);
 // For weekly review (Saturday): 5 * 86400000 ms = 5 days
 const weekStart = new Date(now.getTime() - 5 * 86400000).toISOString().slice(0, 10);
