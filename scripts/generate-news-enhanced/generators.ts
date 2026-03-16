@@ -1127,6 +1127,7 @@ async function buildDeepInspectionSections(
   const euDocs     = [...(buckets.get('fpm') ?? []), ...(buckets.get('eu') ?? [])];
   const pressmDocs = buckets.get('pressm') ?? [];
   const extDocs    = buckets.get('ext')    ?? [];
+  // classifiedTypes must mirror every bucket key consumed above (including both EU keys)
   const classifiedTypes = new Set(['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext']);
   const otherDocs  = [...buckets.entries()]
     .filter(([k]) => !classifiedTypes.has(k))
