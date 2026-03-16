@@ -15,7 +15,6 @@ import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -434,6 +433,33 @@ describe('Article Type Completeness', () => {
   });
 });
 
+describe('Editorial Framework', () => {
+  it('should have editorial-framework.ts with article type profiles', () => {
+    const frameworkPath = path.join(__dirname, '..', 'scripts', 'editorial-framework.ts');
+    expect(
+      fs.existsSync(frameworkPath),
+      'Missing scripts/editorial-framework.ts'
+    ).toBe(true);
+  });
+
+  it('editorial framework should define profiles for all article types', async () => {
+    const { ARTICLE_TYPE_PROFILES } = await import('../scripts/editorial-framework.js');
+    const profileKeys = Object.keys(ARTICLE_TYPE_PROFILES);
+
+    const requiredTypes = [
+      'committee-reports', 'propositions', 'motions', 'interpellations',
+      'week-ahead', 'month-ahead', 'weekly-review', 'monthly-review',
+      'evening-analysis', 'breaking', 'deep-inspection'
+    ];
+    for (const type of requiredTypes) {
+      expect(
+        profileKeys.includes(type),
+        `ARTICLE_TYPE_PROFILES should include profile for '${type}'`
+      ).toBe(true);
+    }
+  });
+});
+
 describe('Shared Prompts Library Integration', () => {
   const PROMPTS_DIR = path.join(__dirname, '..', 'scripts', 'prompts', 'v1');
 
@@ -449,6 +475,74 @@ describe('Shared Prompts Library Integration', () => {
       expect(
         fs.existsSync(path.join(PROMPTS_DIR, file)),
         `Missing required prompt: scripts/prompts/v1/${file}`
+      ).toBe(true);
+    }
+  });
+
+  it('editorial framework should define AnalysisDepth type with standard, deep, comprehensive', () => {
+    const frameworkPath = path.join(__dirname, '..', 'scripts', 'editorial-framework.ts');
+    if (!fs.existsSync(frameworkPath)) return;
+    const content = fs.readFileSync(frameworkPath, 'utf-8');
+    expect(content).toContain("'standard'");
+    expect(content).toContain("'deep'");
+    expect(content).toContain("'comprehensive'");
+    expect(content).toContain('AnalysisDepth');
+  });
+
+  it('editorial framework should specify quality thresholds', () => {
+    const frameworkPath = path.join(__dirname, '..', 'scripts', 'editorial-framework.ts');
+    if (!fs.existsSync(frameworkPath)) return;
+    const content = fs.readFileSync(frameworkPath, 'utf-8');
+    expect(content).toContain('minWordCount');
+    expect(content).toContain('minQualityScore');
+    expect(content).toContain('aiIterations');
+  });
+
+  it('editorial framework should require SWOT, dashboard, mindmap for deep article types', () => {
+    const frameworkPath = path.join(__dirname, '..', 'scripts', 'editorial-framework.ts');
+    if (!fs.existsSync(frameworkPath)) return;
+    const content = fs.readFileSync(frameworkPath, 'utf-8');
+    expect(content).toContain('swot:');
+    expect(content).toContain('dashboard:');
+    expect(content).toContain('mindmap:');
+    expect(content).toContain('minStakeholders:');
+  });
+});
+
+describe('Analysis Depth Input', () => {
+  const ALL_NEWS_WORKFLOWS = [
+    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+    'news-evening-analysis.md',
+    'news-realtime-monitor.md',
+    'news-article-generator.md',
+    'news-translate.md'
+  ];
+
+  it('all news workflows should have analysis_depth under workflow_dispatch inputs', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+      // Reuse the existing parseFrontmatter helper
+      const frontmatter = parseFrontmatter(filepath);
+      // Verify analysis_depth appears after workflow_dispatch: → inputs: (proper nesting)
+      const nestedUnderInputs = /workflow_dispatch:\s*\n\s+inputs:[\s\S]*?analysis_depth:/.test(frontmatter);
+      expect(
+        nestedUnderInputs,
+        `Workflow ${workflowFile} should have analysis_depth nested under workflow_dispatch.inputs in frontmatter`
+      ).toBe(true);
+    }
+  });
+
+  it('dedicated article type workflows should default analysis_depth to a valid depth (standard, deep, or comprehensive) in frontmatter', () => {
+    for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+      // Reuse the existing parseFrontmatter helper
+      const frontmatter = parseFrontmatter(filepath);
+      const depthBlock = frontmatter.match(/analysis_depth:[\s\S]*?default:\s*(standard|deep|comprehensive)/);
+      expect(
+        depthBlock !== null,
+        `Workflow ${workflowFile} should have analysis_depth with valid default (standard, deep, or comprehensive) in frontmatter`
       ).toBe(true);
     }
   });
@@ -531,6 +625,18 @@ describe('Iterative Analysis Protocol', () => {
     }
   });
 
+  it('all dedicated workflows should have multi-step AI analysis framework section', () => {
+    for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('Multi-Step AI Analysis Framework'),
+        `Workflow ${workflowFile} should have a Multi-Step AI Analysis Framework section in the markdown body`
+      ).toBe(true);
+    }
+  });
+
   it('should have maximum 3 iterations limit in iterative workflows', () => {
     for (const workflowFile of ANALYTICAL_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
@@ -539,6 +645,18 @@ describe('Iterative Analysis Protocol', () => {
       expect(
         content.includes('3 iterations') || content.includes('Maximum 3'),
         `Workflow ${workflowFile} should specify maximum 3 iterations`
+      ).toBe(true);
+    }
+  });
+
+  it('all dedicated workflows should list analysis_depth in dispatch parameters section', () => {
+    for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('analysis_depth') && content.includes('github.event.inputs.analysis_depth'),
+        `Workflow ${workflowFile} should list analysis_depth in dispatch parameters section`
       ).toBe(true);
     }
   });
@@ -553,6 +671,81 @@ describe('Iterative Analysis Protocol', () => {
         `Workflow ${workflowFile} should specify minimum quality score of 7/10`
       ).toBe(true);
     }
+  });
+});
+
+describe('Interpellations Generator', () => {
+  it('should have a dedicated interpellations content generator', () => {
+    const generatorPath = path.join(
+      __dirname, '..', 'scripts', 'data-transformers', 'content-generators', 'interpellations.ts'
+    );
+    expect(
+      fs.existsSync(generatorPath),
+      'Missing dedicated interpellations.ts content generator'
+    ).toBe(true);
+  });
+
+  it('interpellations generator should export generateInterpellationsContent', () => {
+    const generatorPath = path.join(
+      __dirname, '..', 'scripts', 'data-transformers', 'content-generators', 'interpellations.ts'
+    );
+    if (!fs.existsSync(generatorPath)) return;
+    const content = fs.readFileSync(generatorPath, 'utf-8');
+    expect(content).toContain('export function generateInterpellationsContent');
+  });
+
+  it('interpellations generator should not use motions headings', () => {
+    const generatorPath = path.join(
+      __dirname, '..', 'scripts', 'data-transformers', 'content-generators', 'interpellations.ts'
+    );
+    if (!fs.existsSync(generatorPath)) return;
+    const content = fs.readFileSync(generatorPath, 'utf-8');
+    // Must not import from motions.ts (it's its own module)
+    expect(content).not.toContain("from './motions.js'");
+    expect(content).not.toContain("from './motions'");
+    // Must reference interpellations heading not oppMotions
+    expect(content).not.toContain("'oppMotions'");
+  });
+
+  it('data-transformers index should route interpellations to dedicated generator', () => {
+    const indexPath = path.join(__dirname, '..', 'scripts', 'data-transformers', 'index.ts');
+    if (!fs.existsSync(indexPath)) return;
+    const content = fs.readFileSync(indexPath, 'utf-8');
+    // Both conditions must hold: interpellations case exists AND it calls the dedicated generator
+    expect(
+      content.includes("case 'interpellations'"),
+      "data-transformers/index.ts should have a case for 'interpellations'"
+    ).toBe(true);
+    expect(
+      content.includes('generateInterpellationsContent'),
+      "data-transformers/index.ts should reference generateInterpellationsContent"
+    ).toBe(true);
+    // Verify the interpellations case does NOT fall through to motions
+    // Scan forward from 'case interpellations' until the next case/default to verify the right generator
+    const lines = content.split('\n');
+    const interpIdx = lines.findIndex(l => l.includes("case 'interpellations'"));
+    if (interpIdx >= 0) {
+      // Collect lines from the case label to the next case/default boundary
+      const caseBlock: string[] = [];
+      for (let i = interpIdx; i < lines.length; i++) {
+        if (i > interpIdx && /^\s*(case\s|default\s*:)/.test(lines[i])) break;
+        caseBlock.push(lines[i]);
+      }
+      const caseContent = caseBlock.join('\n');
+      expect(
+        caseContent.includes('generateInterpellationsContent'),
+        "case 'interpellations' should return generateInterpellationsContent (not fall through to motions)"
+      ).toBe(true);
+    }
+  });
+
+  it('content-generators barrel should export generateInterpellationsContent', () => {
+    const barrelPath = path.join(
+      __dirname, '..', 'scripts', 'data-transformers', 'content-generators.ts'
+    );
+    if (!fs.existsSync(barrelPath)) return;
+    const content = fs.readFileSync(barrelPath, 'utf-8');
+    expect(content).toContain('generateInterpellationsContent');
   });
 });
 
