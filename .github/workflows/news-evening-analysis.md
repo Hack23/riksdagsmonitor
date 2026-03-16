@@ -14,6 +14,10 @@ on:
         description: 'Coverage depth: standard, deep, comprehensive'
         required: false
         default: standard
+      analysis_depth:
+        description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.'
+        required: false
+        default: standard
       languages:
         description: 'Core content languages (en,sv | nordic | eu-core | all). Translations handled by news-translate workflow.'
         required: false
@@ -106,9 +110,12 @@ You are the **Evening Political Analyst** for Riksdagsmonitor. Generate comprehe
 
 ## 🔧 Workflow Dispatch Parameters
 
-- **coverage_depth** = `${{ github.event.inputs.coverage_depth }}`
+- **coverage_depth** = `${{ github.event.inputs.coverage_depth }}` — Controls article **content scope**: how many topics and how broad the coverage (e.g., `comprehensive` on Saturdays for weekly wrap-up).
+- **analysis_depth** = `${{ github.event.inputs.analysis_depth }}` — Controls **AI analysis quality**: SWOT complexity, stakeholder count, dashboard charts, and iteration count per the editorial framework.
 - **languages** = `${{ github.event.inputs.languages }}`
 - **lookback_hours** = `${{ github.event.inputs.lookback_hours }}`
+
+> **Note:** `coverage_depth` and `analysis_depth` are distinct inputs. `coverage_depth` determines *what* to cover (breadth); `analysis_depth` determines *how deeply* to analyze it (quality). They default independently — adjust each based on the article's needs.
 
 ## ⚠️ NON-NEGOTIABLE RULES
 
@@ -150,6 +157,33 @@ START_TIME=$(date +%s)
 6. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
 7. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
 8. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
+
+## 📊 MANDATORY Multi-Step AI Analysis Framework
+
+> **Read `analysis_depth` input first** (default: `standard`). This controls iteration count and section requirements.
+
+Based on the editorial profile for `evening-analysis` (from `scripts/editorial-framework.ts`):
+- **SWOT**: quick (1-paragraph overview)
+- **Dashboard**: required (min. 1 Chart.js chart)
+- **Mindmap**: not required
+- **Min. stakeholders**: 3 perspectives
+- **AI iterations**: 1 (standard), 2 (deep), or 3 (comprehensive)
+
+### Phase 1 — Data Collection & Initial Analysis
+1. Fetch today's activity from MCP (`search_anforanden` — filter by `datum`, `get_betankanden` — filter by `publicerad`, `search_voteringar` — filter by `datum`, `get_sync_status`)
+2. Score newsworthiness of each item using `scoreNewsworthiness()` logic
+3. Build initial outline: day-in-review lede, top stories, votes summary, tonight's context
+
+### Phase 2 — Depth Enhancement (for `deep`/`comprehensive` depth)
+1. **Quick SWOT**: 1-paragraph SWOT overview of the day's political balance
+2. **Activity Dashboard**: Generate `generateDashboardSection()` with ≥1 chart (today's activity breakdown)
+3. **Quality Gate**:
+   - Verify article covers events from today's date (not yesterday or tomorrow)
+   - Verify all Swedish API text is translated
+   - Verify word count ≥ 600
+
+### Phase 3 — Final Quality Gate Before PR
+Run validation checks before committing.
 
 ## Step 1: Date Validation & MCP Health Check
 
@@ -248,6 +282,22 @@ const fromDate = new Date(Date.now() - lookbackDays * 86400000).toISOString().sp
 ```javascript
 const results = get_betankanden({ rm: currentRm, limit: 50 });
 const recent = results.filter(b => (b.publicerad || '').slice(0, 10) >= fromDate);
+```
+
+**Date calculation example:**
+```javascript
+const today = new Date().toISOString().slice(0, 10);
+const fromDate = new Date(Date.now() - 86400000).toISOString().slice(0, 10); // 24h lookback
+const weekAgo = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
+// For Saturday weekly review, use 5-day lookback (5 * 86400000 ms)
+```
+
+**Post-query filtering example:**
+```javascript
+// Filter betankanden by publicerad date (ISO-string day comparison — avoids timezone-sensitive Date parsing)
+const recent = results.filter(r => r.publicerad?.slice(0, 10) >= fromDate);
+// Filter voteringar by datum
+const todayVotes = votes.filter(v => v.datum?.slice(0, 10) >= fromDate);
 ```
 
 ### Cross-Referencing Strategy

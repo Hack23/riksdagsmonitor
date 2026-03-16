@@ -16,6 +16,10 @@ on:
         description: 'Core languages for content generation (en,sv | nordic | eu-core | all). Translations for remaining languages are handled by the dedicated news-translate workflow.'
         required: false
         default: en,sv
+      analysis_depth:
+        description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.'
+        required: false
+        default: standard
 
 permissions:
   contents: read
@@ -96,6 +100,7 @@ You are the **News Journalist Agent** for Riksdagsmonitor generating **weekly re
 
 - **force_generation** = `${{ github.event.inputs.force_generation }}`
 - **languages** = `${{ github.event.inputs.languages }}`
+- **analysis_depth** = `${{ github.event.inputs.analysis_depth }}`
 
 If **force_generation** is `true`, generate articles even if recent ones exist. Use the **languages** value to determine which languages to generate.
 
@@ -122,6 +127,37 @@ This is a **retrospective** article analyzing the past 7 days of parliamentary a
 6. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
 7. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
 8. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
+
+
+## 📊 MANDATORY Multi-Step AI Analysis Framework
+
+> **Read `analysis_depth` input first** (default: `standard`). This controls iteration count and section requirements.
+
+Based on the editorial profile for `weekly-review` (from `scripts/editorial-framework.ts`):
+- **SWOT**: condensed (3 stakeholder perspectives per quadrant)
+- **Dashboard**: required (min. 2 Chart.js charts)
+- **Mindmap**: required (CSS policy mindmap)
+- **Min. stakeholders**: 5 perspectives
+- **AI iterations**: 2 (standard), 2 (deep), or 3 (comprehensive)
+
+### Phase 1 — Data Collection & Initial Analysis
+1. Fetch MCP data (`get_betankanden`, `get_propositioner`, `get_motioner`, `search_anforanden`, `search_voteringar`, `get_sync_status`)
+2. Compute weekly metrics: document counts, key votes, most active parties
+3. Build initial outline: week-in-review lede, top stories, key votes, what to watch next week
+
+### Phase 2 — Iterative Depth Enhancement (repeat per `analysis_depth`)
+For each AI iteration:
+1. **Condensed SWOT**: Generate `generateSwotSection()` with ≥3 stakeholder perspectives on the week's balance of power
+2. **Week-in-Review Dashboard**: Generate `generateDashboardSection()` with ≥2 charts (activity by day, document type breakdown)
+3. **Policy Mindmap**: Generate `generateMindmapSection()` showing how the week's stories interconnect
+4. **Quality Gate** (check before next iteration):
+   - Verify the article covers the actual past week (Mon–Fri), not a forecast
+   - Verify voting analysis section includes specific vote outcomes
+   - Verify all Swedish API text is translated
+   - Verify word count ≥ 1000
+
+### Phase 3 — Final Quality Gate Before PR
+Run all validation checks from the **MANDATORY Quality Validation** section below before committing.
 
 ## MANDATORY Date Validation
 
