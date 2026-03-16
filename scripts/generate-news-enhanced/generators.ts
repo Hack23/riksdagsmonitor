@@ -37,10 +37,11 @@ import { MCPClient } from '../mcp-client.js';
 import type { Language } from '../types/language.js';
 import type { GenerationResult, DateRange, ArticleCategory, TemplateSection } from '../types/article.js';
 import type { TitleSet } from './types.js';
-import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic, analysisDepth, METADATA_DIR } from './config.js';
+import fs from 'node:fs';
+import path from 'node:path';
+import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic, analysisDepth, analysisIterations, METADATA_DIR } from './config.js';
 import { runAnalysisPipeline } from '../ai-analysis/pipeline.js';
-import type { AnalysisResult, AnalysisIterationMetadata, AnalysisDepth } from '../ai-analysis/types.js';
-import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic, analysisIterations } from './config.js';
+import type { AnalysisIterationMetadata, AnalysisDepth } from '../ai-analysis/types.js';
 import {
   getWeekAheadDateRange,
   formatDateForSlug,
@@ -983,6 +984,16 @@ function mapReportDepthToPipelineDepth(depth: 1 | 2 | 3 | 4): AnalysisDepth {
   if (depth <= 1) return 'quick';
   if (depth === 2) return 'standard';
   return 'deep';
+}
+
+function writeAnalysisMetadata(slug: string, metadata: AnalysisIterationMetadata): void {
+  try {
+    fs.mkdirSync(METADATA_DIR, { recursive: true });
+    const filePath = path.join(METADATA_DIR, `ai-analysis-${slug}-${metadata.lang}.json`);
+    fs.writeFileSync(filePath, JSON.stringify(metadata, null, 2), 'utf8');
+  } catch (error) {
+    console.warn(`⚠️ Failed to write analysis metadata for ${slug}/${metadata.lang}:`, error);
+  }
 }
 
 /**
@@ -2119,8 +2130,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
         lang,
         focusTopic: sanitizedTopic,
       });
-      const pipelineDuration = iterationDurationsMs.reduce((a, b) => a + b, 0);
-      console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
+      console.log(`  🌐 Generating ${lang.toUpperCase()} version... (pipeline ${iterationDurationsMs.reduce((a, b) => a + b, 0)}ms)`);
 
       // Run multi-iteration AI analysis pipeline — cache result per language
       const cacheKey = sharedAnalysisCache.generateKey(enrichedDocs, sanitizedTopic, analysisIterations, lang);
@@ -2148,10 +2158,8 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       };
       writeAnalysisMetadata(slug, iterationMetadata);
 
-      // Topic-focused deep-inspection content (NOT generic content)
-      const content: string = generateDeepInspectionContent(enrichedDocs, sanitizedTopic, lang, analysisDepth);
-      // Topic-focused deep-inspection content (uses AI strategic implications & takeaways)
-      const content: string = generateDeepInspectionContent(enrichedDocs, sanitizedTopic, lang, aiResult);
+      // Topic-focused deep-inspection content (uses AI strategic implications & takeaways when available)
+      const content: string = generateDeepInspectionContent(enrichedDocs, sanitizedTopic, lang, analysisDepth, aiResult);
 
       // Metadata still derived from document data
       const contentData = { documents: enrichedDocs as Parameters<typeof generateArticleContent>[0]['documents'] };
