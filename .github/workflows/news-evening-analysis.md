@@ -264,14 +264,16 @@ const results = rawResults.filter(item => {
 **Date calculation pattern** (day-granularity — `.split('T')[0]` truncates to YYYY-MM-DD):
 ```javascript
 const now = new Date();
-const lookbackMs = parseInt(lookback_hours) * 3600000; // 3600000 ms per hour
+const lookback_hours = 12; // default; override via workflow input
+const lookbackMs = parseInt(String(lookback_hours), 10) * 3600000; // 3600000 ms per hour
+if (Number.isNaN(lookbackMs)) throw new Error('Invalid lookback_hours');
 const fromDate = new Date(now.getTime() - lookbackMs).toISOString().slice(0, 10);
 // For weekly review (Saturday): 5 * 86400000 ms = 5 days
 const weekStart = new Date(now.getTime() - 5 * 86400000).toISOString().slice(0, 10);
 const today = new Date().toISOString().split('T')[0];
 const dayOfWeek = new Date().getUTCDay(); // 0=Sunday, 6=Saturday
-const lookbackDays = dayOfWeek === 6 ? 5 : Math.ceil(12 / 24); // Saturday=5 days, else ceil(hours/24)
-const fromDate = new Date(Date.now() - lookbackDays * 86400000).toISOString().split('T')[0];
+const lookbackDays = dayOfWeek === 6 ? 5 : Math.ceil(lookback_hours / 24); // Saturday=5 days, else ceil(hours/24)
+const fromDateAlt = new Date(Date.now() - lookbackDays * 86400000).toISOString().split('T')[0];
 ```
 
 **Post-query filtering example:**

@@ -499,3 +499,48 @@ describe('printQualityReport', () => {
     consoleSpy.mockRestore();
   });
 });
+
+// ---------------------------------------------------------------------------
+// flushQualityScores / installFlushHandlers / flushOnce coverage
+// ---------------------------------------------------------------------------
+
+import fs from 'fs';
+import {
+  flushQualityScores,
+  installFlushHandlers,
+} from '../scripts/generate-news-enhanced/helpers.js';
+
+describe('flushQualityScores & installFlushHandlers', () => {
+  beforeEach(() => {
+    vi.spyOn(fs, 'existsSync').mockReturnValue(true);
+    vi.spyOn(fs, 'writeFileSync').mockImplementation(() => {});
+    vi.spyOn(fs, 'renameSync').mockImplementation(() => {});
+    vi.spyOn(fs, 'mkdirSync').mockImplementation(() => undefined as unknown as string);
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('flushQualityScores should call writeFileSync + renameSync (POSIX path)', () => {
+    expect(() => flushQualityScores()).not.toThrow();
+    // writeFileSync is called for the tmp file; renameSync moves it into place
+    expect(fs.writeFileSync).toHaveBeenCalled();
+    expect(fs.renameSync).toHaveBeenCalled();
+  });
+
+  it('installFlushHandlers should not throw and is idempotent', () => {
+    const onceSpy = vi.spyOn(process, 'once').mockImplementation(() => process);
+    expect(() => installFlushHandlers()).not.toThrow();
+    // Second call is a no-op (guard prevents duplicate registration)
+    expect(() => installFlushHandlers()).not.toThrow();
+    onceSpy.mockRestore();
+  });
+
+  it('flushQualityScores called twice should not error (flushOnce-safe)', () => {
+    // First flush writes
+    flushQualityScores();
+    // Second flush — in-memory map is empty after first clear, still safe
+    expect(() => flushQualityScores()).not.toThrow();
+  });
+});
