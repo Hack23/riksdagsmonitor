@@ -20,7 +20,6 @@ import {
   generateDeepAnalysisSection,
   analyzeDocumentsForContent,
 } from '../scripts/data-transformers/content-generators/shared.js';
-import type { DeepAnalysisOptions } from '../scripts/data-transformers/content-generators/shared.js';
 import { clearAnalysisCache } from '../scripts/ai-analysis/document-analyzer.js';
 import type { RawDocument, CIAContext } from '../scripts/data-transformers/types.js';
 
@@ -55,18 +54,20 @@ const euDoc: RawDocument = {
   fullText: 'Implementering av EU-direktiv rörande digitala tjänster och internationell handel.',
 };
 
-const ciaContext: CIAContext = {
+const ciaContext = {
   coalitionStability: {
     stabilityScore: 65,
     defectionProbability: 0.15,
     majorityMargin: 3,
   },
   partyPerformance: [
-    { partyName: 'M', metrics: { cohesionScore: 85, seats: 68, motionApprovalRate: 0.02, questions: 0 } },
-    { partyName: 'KD', metrics: { cohesionScore: 80, seats: 19, motionApprovalRate: 0.01, questions: 0 } },
-    { partyName: 'S', metrics: { cohesionScore: 90, seats: 107, motionApprovalRate: 0.05, questions: 0 } },
+    { id: 'M', partyName: 'M', metrics: { cohesionScore: 85, seats: 68, successRate: 0.9, motionsSubmitted: 20, motionsPassed: 18, motionApprovalRate: 0.02, questions: 0 }, trends: { supportTrend: 'stable', activityTrend: 'increasing' } },
+    { id: 'KD', partyName: 'KD', metrics: { cohesionScore: 80, seats: 19, successRate: 0.85, motionsSubmitted: 10, motionsPassed: 8, motionApprovalRate: 0.01, questions: 0 }, trends: { supportTrend: 'stable', activityTrend: 'stable' } },
+    { id: 'S', partyName: 'S', metrics: { cohesionScore: 90, seats: 107, successRate: 0.1, motionsSubmitted: 50, motionsPassed: 5, motionApprovalRate: 0.05, questions: 0 }, trends: { supportTrend: 'increasing', activityTrend: 'increasing' } },
   ],
-} as CIAContext;
+  votingPatterns: {},
+  overallMotionDenialRate: 0.95,
+} as unknown as CIAContext;
 
 beforeEach(() => {
   clearAnalysisCache();
@@ -345,7 +346,7 @@ describe('Framework analysis confidence and iterations', () => {
     expect(analysis.iterations[3].label).toBe('synthesis');
   });
 
-  it('should have 7+ stakeholder groups for policy documents', () => {
+  it('should have 3+ stakeholder groups including always-included groups', () => {
     const { frameworkAnalysis } = analyzeDocumentsForContent([propDoc], 'en');
     const analysis = [...frameworkAnalysis.values()][0];
     expect(analysis.stakeholderImpacts.length).toBeGreaterThanOrEqual(3);

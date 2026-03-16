@@ -526,7 +526,7 @@ export function generateDeepAnalysisSection(opts: DeepAnalysisOptions): string {
   if (perspectiveAnalysis && perspectiveAnalysis.results.length > 0) {
     const allInsights = perspectiveAnalysis.results.flatMap(r => r.keyInsights);
     if (allInsights.length > 0) {
-      const uniqueInsights = [...new Set(allInsights)].slice(0, 5);
+      const uniqueInsights = [...new Set(allInsights)].slice(0, MAX_PERSPECTIVE_INSIGHTS);
       parts.push(`    <div class="perspective-insights">`);
       const insightItems = uniqueInsights.map(i => `      <li>${escapeHtml(i)}</li>`).join('\n');
       parts.push(`    <ul>\n${insightItems}\n    </ul>`);
@@ -833,6 +833,19 @@ function generatePerspectivesAnalysis(docs: RawDocument[], lang: Language | stri
 // Framework analysis section renderers
 // ---------------------------------------------------------------------------
 
+/** Max items per PESTLE dimension in aggregated display */
+const MAX_PESTLE_ITEMS = 4;
+/** Max stakeholder impacts shown in the summary list */
+const MAX_STAKEHOLDER_IMPACTS = 7;
+/** Max risk items shown in the risk assessment summary */
+const MAX_RISK_ITEMS = 5;
+/** Max perspective insights shown from 6-lens analysis */
+const MAX_PERSPECTIVE_INSIGHTS = 5;
+/** Max implementation obstacles listed */
+const MAX_IMPLEMENTATION_OBSTACLES = 4;
+/** Max agencies displayed in implementation assessment */
+const MAX_AGENCIES_DISPLAYED = 5;
+
 /**
  * Aggregate PESTLE dimensions across multiple document analyses into a
  * deduplicated list per dimension and render as an HTML description list.
@@ -854,7 +867,7 @@ function renderAggregatedPestle(analyses: DocumentAnalysis[], _lang: Language | 
   }
 
   // Deduplicate per dimension
-  const dedup = (arr: string[]): string[] => [...new Set(arr)].slice(0, 4);
+  const dedup = (arr: string[]): string[] => [...new Set(arr)].slice(0, MAX_PESTLE_ITEMS);
 
   const dims: Array<[string, string[]]> = [
     ['Political', dedup(merged.political)],
@@ -892,7 +905,7 @@ function renderStakeholderImpactSummary(analyses: DocumentAnalysis[]): string {
     }
   }
 
-  const impacts = [...impactMap.values()].slice(0, 7);
+  const impacts = [...impactMap.values()].slice(0, MAX_STAKEHOLDER_IMPACTS);
   if (impacts.length === 0) return '    <p>No stakeholder impact data available.</p>';
 
   const rows = impacts.map(i => {
@@ -921,7 +934,7 @@ function renderRiskAssessment(risks: RiskAssessment[]): string {
     }
   }
 
-  const top = [...byType.values()].slice(0, 5);
+  const top = [...byType.values()].slice(0, MAX_RISK_ITEMS);
   const rows = top.map(r => {
     const icon = r.severity === 'high' ? '🔴' : r.severity === 'medium' ? '🟡' : '🟢';
     return `      <li>${icon} <strong>${escapeHtml(r.type)}</strong> (${escapeHtml(r.severity)}): ${escapeHtml(r.description)}</li>`;
@@ -960,12 +973,12 @@ function renderImplementationAssessment(analyses: DocumentAnalysis[]): string {
   parts.push(`    <p>${fIcon} <strong>Feasibility:</strong> ${escapeHtml(highestFeasibility)}. ${escapeHtml(assessments[0].estimatedTimeline)}</p>`);
 
   if (allObstacles.size > 0) {
-    const obstacleList = [...allObstacles].slice(0, 4).map(o => `<li>${escapeHtml(o)}</li>`).join('');
+    const obstacleList = [...allObstacles].slice(0, MAX_IMPLEMENTATION_OBSTACLES).map(o => `<li>${escapeHtml(o)}</li>`).join('');
     parts.push(`    <p><strong>Key obstacles:</strong></p>\n    <ul>${obstacleList}</ul>`);
   }
 
   if (allAgencies.size > 0) {
-    parts.push(`    <p><strong>Agencies involved:</strong> ${[...allAgencies].slice(0, 5).map(a => escapeHtml(a)).join(', ')}</p>`);
+    parts.push(`    <p><strong>Agencies involved:</strong> ${[...allAgencies].slice(0, MAX_AGENCIES_DISPLAYED).map(a => escapeHtml(a)).join(', ')}</p>`);
   }
 
   return parts.join('\n');
