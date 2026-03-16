@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' https:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'">
   <title>Regeringens propositioner: Veckans prioriteringar</title>
   <meta name="description" content="Analys av 10 regeringsdokument (8 propositioner och 2 skrivelser) som formar den lagstiftande agendan">
   <meta name="keywords" content="regering, propositioner, riksdag, lagstiftning, Riksdagen, Riksdag, politik, Sverige">
@@ -58,14 +58,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap"></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Share+Tech+Mono&display=swap">
   
   <!-- Main stylesheet — includes all article styles + component/theme imports -->
   <link rel="stylesheet" href="../styles.css">
   
   <!-- Anti-flash: apply saved theme before first paint -->
-  <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
+  <script src="../js/theme-init.js"></script>
   
   <!-- Schema.org NewsArticle structured data -->
   <script type="application/ld+json">
@@ -149,7 +148,7 @@
         "@type": "ListItem",
         "position": 2,
         "name": "Nyheter",
-        "item": "https://riksdagsmonitor.com/news/index.html"
+        "item": "https://riksdagsmonitor.com/news/index_sv.html"
       },
       {
         "@type": "ListItem",
