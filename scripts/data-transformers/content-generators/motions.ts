@@ -7,7 +7,7 @@
  * @license Apache-2.0
  */
 
-import { generateDeepAnalysisSection } from './shared.js';
+import { generateDeepAnalysisSection, analyzeDocumentsForContent } from './shared.js';
 import { escapeHtml } from '../../html-utils.js';
 import type { Language } from '../../types/language.js';
 import type { ArticleContentData, RawDocument } from '../types.js';
@@ -126,13 +126,18 @@ export function generateMotionsContent(data: ArticleContentData, lang: Language 
     }
   }
 
-  // Deep Analysis section (5W framework)
-  content += generateDeepAnalysisSection({
-    documents: motions,
-    lang,
-    cia: data.ciaContext,
-    articleType: 'motions',
-  });
+  // Deep Analysis section (5W framework + document analysis framework)
+  if (motions.length >= 2) {
+    const { frameworkAnalysis, perspectiveAnalysis } = analyzeDocumentsForContent(motions, lang, data.ciaContext);
+    content += generateDeepAnalysisSection({
+      documents: motions,
+      lang,
+      cia: data.ciaContext,
+      articleType: 'motions',
+      frameworkAnalysis,
+      perspectiveAnalysis,
+    });
+  }
 
   // Party activity breakdown
   if (partyCount > 0) {

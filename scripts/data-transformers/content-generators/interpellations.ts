@@ -7,7 +7,7 @@
  * @license Apache-2.0
  */
 
-import { generateDeepAnalysisSection } from './shared.js';
+import { generateDeepAnalysisSection, analyzeDocumentsForContent } from './shared.js';
 import { escapeHtml } from '../../html-utils.js';
 import type { Language } from '../../types/language.js';
 import type { ArticleContentData, RawDocument } from '../types.js';
@@ -85,13 +85,18 @@ export function generateInterpellationsContent(data: ArticleContentData, lang: L
     interpellations.forEach(interp => { content += renderInterpellationEntry(interp, lang); });
   }
 
-  // Deep Analysis section (5W framework)
-  content += generateDeepAnalysisSection({
-    documents: interpellations,
-    lang,
-    cia: data.ciaContext,
-    articleType: 'interpellations',
-  });
+  // Deep Analysis section (5W framework + document analysis framework)
+  if (interpellations.length >= 2) {
+    const { frameworkAnalysis, perspectiveAnalysis } = analyzeDocumentsForContent(interpellations, lang, data.ciaContext);
+    content += generateDeepAnalysisSection({
+      documents: interpellations,
+      lang,
+      cia: data.ciaContext,
+      articleType: 'interpellations',
+      frameworkAnalysis,
+      perspectiveAnalysis,
+    });
+  }
 
   // Party accountability breakdown
   if (partyCount > 0) {

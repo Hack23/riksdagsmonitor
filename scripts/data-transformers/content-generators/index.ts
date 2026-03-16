@@ -32,7 +32,7 @@ export { generateInterpellationsContent } from './interpellations.js';
 export { generateGenericContent } from './generic.js';
 export { generateMonthlyReviewContent } from './monthly-review.js';
 export { generateMonthAheadContent } from './month-ahead.js';
-export { generateDeepAnalysisSection, localizeDocType, DOC_TYPE_DISPLAY } from './shared.js';
+export { generateDeepAnalysisSection, localizeDocType, DOC_TYPE_DISPLAY, analyzeDocumentsForContent } from './shared.js';
 export type { DeepAnalysisOptions, DocTypeLocalization } from './shared.js';
 export { generateSwotSection } from './swot-section.js';
 export type { SwotSectionOptions } from './swot-section.js';

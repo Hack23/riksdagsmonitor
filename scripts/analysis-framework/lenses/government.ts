@@ -287,7 +287,7 @@ export function analyzeGovernmentPerspective(
 ): PerspectiveAnalysis {
   const keyActors: string[] = ['Prime Minister', 'Cabinet'];
   if (cia) {
-    const govParties = cia.partyPerformance
+    const govParties = (cia.partyPerformance ?? [])
       .filter(p => p.metrics.seats > 0)
       .slice(0, 3)
       .map(p => p.partyName);

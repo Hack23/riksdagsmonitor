@@ -148,6 +148,11 @@ export interface ContentLabelSet {
   deepAnalysisConsequences: string;
   deepAnalysisCritical: string;
   deepAnalysisPerspectives: string;
+  // Framework analysis section labels (PESTLE, Stakeholder Impact, Risk, Implementation)
+  deepAnalysisPestle: string;
+  deepAnalysisStakeholderImpact: string;
+  deepAnalysisRisk: string;
+  deepAnalysisImplementation: string;
   // SWOT analysis section labels
   swotAnalysis: string;
   swotStrengths: string;

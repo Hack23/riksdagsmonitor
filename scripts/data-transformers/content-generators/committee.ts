@@ -21,7 +21,7 @@ import {
   formatDocumentDate,
 } from '../helpers.js';
 import { detectPolicyDomains, generateDeepPolicyAnalysis } from '../policy-analysis.js';
-import { generateDeepAnalysisSection } from './shared.js';
+import { generateDeepAnalysisSection, analyzeDocumentsForContent } from './shared.js';
 
 export function generateCommitteeContent(data: ArticleContentData, lang: Language | string): string {
   const reports = data.reports || [];
@@ -108,13 +108,18 @@ export function generateCommitteeContent(data: ArticleContentData, lang: Languag
     content += `    <p class="pillar-transition">${escapeHtml(pulseTransition)}</p>\n`;
   }
 
-  // Deep Analysis section (5W framework)
-  content += generateDeepAnalysisSection({
-    documents: reports,
-    lang,
-    cia: data.ciaContext,
-    articleType: 'committee-reports',
-  });
+  // Deep Analysis section (5W framework + document analysis framework)
+  if (reports.length >= 2) {
+    const { frameworkAnalysis, perspectiveAnalysis } = analyzeDocumentsForContent(reports, lang, data.ciaContext);
+    content += generateDeepAnalysisSection({
+      documents: reports,
+      lang,
+      cia: data.ciaContext,
+      articleType: 'committee-reports',
+      frameworkAnalysis,
+      perspectiveAnalysis,
+    });
+  }
 
   // Key takeaways section
   content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
