@@ -834,6 +834,7 @@ const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, stri
     fi: 'Riskiskenaariot', de: 'Risikoszenarien', fr: 'Scénarios de risque', es: 'Escenarios de riesgo',
     nl: "Risicoscenario's", ar: 'سيناريوهات المخاطر', he: 'תרחישי סיכון',
     ja: 'リスクシナリオ', ko: '위험 시나리오', zh: '风险情景',
+  },
   parliamentaryAnalysis: {
     en: 'Parliamentary Analysis', sv: 'Riksdagsanalys', da: 'Parlamentarisk analyse', no: 'Parlamentarisk analyse',
     fi: 'Parlamentaarinen analyysi', de: 'Parlamentarische Analyse', fr: 'Analyse parlementaire', es: 'Análisis parlamentario',
@@ -1215,9 +1216,9 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
  */
 function buildExecutiveSummary(docs: RawDocument[], topic: string | null, lang: Language): string {
   const esc = escapeHtml;
-  const propCount = docs.filter(d => (d.doktyp || d.documentType) === 'prop').length;
-  const betCount  = docs.filter(d => (d.doktyp || d.documentType) === 'bet').length;
-  const motCount  = docs.filter(d => (d.doktyp || d.documentType) === 'mot').length;
+  const propCount = docs.filter(d => effectiveType(d) === 'prop').length;
+  const betCount  = docs.filter(d => effectiveType(d) === 'bet').length;
+  const motCount  = docs.filter(d => effectiveType(d) === 'mot').length;
   const sfsDocs   = docs.filter(isSfsDoc);
   const enriched  = docs.filter(d => d.contentFetched).length;
   const allDomains = new Set<string>();
@@ -1225,9 +1226,9 @@ function buildExecutiveSummary(docs: RawDocument[], topic: string | null, lang: 
   const domainList = [...allDomains].slice(0, 4);
   const domainPhrase = domainList.map(d => esc(d)).join(', ');
 
-  // Determine legislative posture — neutral when no props/motions exist
+  // Determine legislative posture — neutral when no props/motions/bets/SFS exist
   const hasEnactedLaw = sfsDocs.length > 0;
-  const noLegSignal = propCount + motCount === 0;
+  const noLegSignal = propCount + motCount + betCount === 0 && !hasEnactedLaw;
   const govLed = noLegSignal ? null : propCount > motCount;
   const highScrutiny = betCount > 0;
 
@@ -1350,9 +1351,9 @@ const OPPOSITION_MOTION_PENALTY = 5;
 
 function buildPredictiveAssessment(docs: RawDocument[], topic: string | null, lang: Language): string {
   const esc = escapeHtml;
-  const propCount = docs.filter(d => (d.doktyp || d.documentType) === 'prop').length;
-  const betCount  = docs.filter(d => (d.doktyp || d.documentType) === 'bet').length;
-  const motCount  = docs.filter(d => (d.doktyp || d.documentType) === 'mot').length;
+  const propCount = docs.filter(d => effectiveType(d) === 'prop').length;
+  const betCount  = docs.filter(d => effectiveType(d) === 'bet').length;
+  const motCount  = docs.filter(d => effectiveType(d) === 'mot').length;
   const sfsDocs   = docs.filter(isSfsDoc);
   const confidence = deriveConfidence(docs);
 
@@ -1472,7 +1473,7 @@ function buildPredictiveAssessment(docs: RawDocument[], topic: string | null, la
 function buildHistoricalContext(docs: RawDocument[], topic: string | null, lang: Language): string {
   const esc = escapeHtml;
   const sfsDocs   = docs.filter(isSfsDoc);
-  const propCount = docs.filter(d => (d.doktyp || d.documentType) === 'prop').length;
+  const propCount = docs.filter(d => effectiveType(d) === 'prop').length;
   const allDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
   const domainList = [...allDomains].slice(0, 3).map(d => esc(d));
@@ -1544,6 +1545,22 @@ function buildMethodologySection(docs: RawDocument[], topic: string | null, lang
     nl: 'Gegevensbronnen', ar: 'مصادر البيانات', he: 'מקורות נתונים',
     ja: 'データソース', ko: '데이터 출처', zh: '数据来源',
   };
+  const sourceDesc: Partial<Record<Language, string>> = {
+    en: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v proxy), and supplementary external sources (GitHub raw content, public government URLs) when available',
+    sv: 'Riksdagens MCP-API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v-proxy) samt kompletterande externa källor (GitHub-råinnehåll, offentliga myndighets-URL:er) vid tillgänglighet',
+    da: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v proxy) samt supplerende eksterne kilder ved tilgængelighed',
+    no: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v proxy) samt supplerende eksterne kilder ved tilgjengelighet',
+    fi: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v-välityspalvelin) sekä täydentävät ulkoiset lähteet saatavuuden mukaan',
+    de: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v-Proxy) sowie ergänzende externe Quellen bei Verfügbarkeit',
+    fr: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (proxy g0v) et sources externes complémentaires selon disponibilité',
+    es: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (proxy g0v) y fuentes externas complementarias según disponibilidad',
+    nl: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v proxy) en aanvullende externe bronnen indien beschikbaar',
+    ar: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall)، regeringen.se (وكيل g0v)، ومصادر خارجية تكميلية عند التوفر',
+    he: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (פרוקסי g0v), ומקורות חיצוניים משלימים בהתאם לזמינות',
+    ja: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall)、regeringen.se (g0v プロキシ)、および利用可能な場合は補足的な外部ソース',
+    ko: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v 프록시) 및 이용 가능한 경우 보충 외부 소스',
+    zh: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall)、regeringen.se (g0v代理) 以及可用时的补充外部来源',
+  };
   const iterLabel: Partial<Record<Language, string>> = {
     en: 'Analysis iterations completed', sv: 'Genomförda analysiterationer', da: 'Gennemførte analyseiterationer',
     no: 'Gjennomførte analyseiterationer', fi: 'Suoritetut analyysikierrokset', de: 'Abgeschlossene Analyseiterationen',
@@ -1589,7 +1606,7 @@ function buildMethodologySection(docs: RawDocument[], topic: string | null, lang
     `  <h2>${esc(heading)}</h2>`,
     `  <dl class="methodology-details">`,
     `    <dt>${esc(sourceLabels[lang] ?? sourceLabels.en!)}</dt>`,
-    `    <dd>Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v proxy), and supplementary external sources (GitHub raw content, public government URLs) when available</dd>`,
+    `    <dd>${sourceDesc[lang] ?? sourceDesc.en}</dd>`,
     `    <dt>${esc(iterLabel[lang] ?? iterLabel.en!)}</dt>`,
     `    <dd><ol class="iteration-list">\n    ${iterationItems}\n    </ol></dd>`,
     `    <dt>${esc(confLabel[lang] ?? confLabel.en!)}</dt>`,

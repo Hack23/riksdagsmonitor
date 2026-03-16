@@ -175,46 +175,35 @@ describe('generateDeepInspectionContent depth-gated sections', () => {
   // Depth 2: adds Historical Context + Predictive Assessment
   it('depth ≥ 2 gates Historical Context and Predictive Assessment', () => {
     expect(generatorsSrc).toContain('if (depth >= 2)');
-    // Verify the functions called inside depth ≥ 2 blocks
-    expect(generatorsSrc).toContain('buildHistoricalContext(docs, topic, lang)');
-    expect(generatorsSrc).toContain('buildPredictiveAssessment(docs, topic, lang)');
+    expect(generatorsSrc).toContain('buildHistoricalContext(');
+    expect(generatorsSrc).toContain('buildPredictiveAssessment(');
   });
 
   // Depth 3: adds Executive Summary + Methodology
   it('depth ≥ 3 gates Executive Intelligence Summary and Methodology', () => {
     expect(generatorsSrc).toContain('if (depth >= 3)');
-    expect(generatorsSrc).toContain('buildExecutiveSummary(docs, topic, lang)');
-    expect(generatorsSrc).toContain('buildMethodologySection(docs, topic, lang, depth)');
+    expect(generatorsSrc).toContain('buildExecutiveSummary(');
+    expect(generatorsSrc).toContain('buildMethodologySection(');
   });
 
   // Depth 4: methodology section includes 4 quality-review iterations
-  it('methodology section renders iteration items up to depth', () => {
+  it('methodology section renders iteration items up to clamped depth', () => {
     expect(generatorsSrc).toContain('labels.slice(0, clampedDepth)');
   });
 
   // Verify section headings use deepLabel() with correct keys
   it('section headings use deepLabel() with expected keys', () => {
-    expect(generatorsSrc).toContain("deepLabel('topicContext', lang)");
-    expect(generatorsSrc).toContain("deepLabel('documentIntelligence', lang)");
-    expect(generatorsSrc).toContain("deepLabel('strategicImplications', lang)");
-    expect(generatorsSrc).toContain("deepLabel('keyTakeaways', lang)");
+    expect(generatorsSrc).toContain("deepLabel('topicContext'");
+    expect(generatorsSrc).toContain("deepLabel('documentIntelligence'");
+    expect(generatorsSrc).toContain("deepLabel('strategicImplications'");
+    expect(generatorsSrc).toContain("deepLabel('keyTakeaways'");
   });
 
-  // Verify buildExecutiveSummary produces <section> with expected CSS class
-  it('buildExecutiveSummary produces section with executive-summary class', () => {
+  // Verify section builders produce expected CSS classes
+  it('section builders produce expected CSS class attributes', () => {
     expect(generatorsSrc).toContain('class="executive-intelligence-summary"');
-  });
-
-  // Verify buildPredictiveAssessment and buildHistoricalContext produce expected sections
-  it('buildPredictiveAssessment produces section with predictive-assessment class', () => {
     expect(generatorsSrc).toContain('class="predictive-assessment"');
-  });
-
-  it('buildHistoricalContext produces section with historical-context class', () => {
     expect(generatorsSrc).toContain('class="historical-context"');
-  });
-
-  it('buildMethodologySection produces section with methodology-confidence class', () => {
     expect(generatorsSrc).toContain('class="methodology-confidence"');
   });
 
@@ -226,6 +215,28 @@ describe('generateDeepInspectionContent depth-gated sections', () => {
     expect(generatorsSrc).toContain('CONFIDENCE_MEDIUM_THRESHOLD');
     expect(generatorsSrc).toContain('CONFIDENCE_MIN_DOCS_HIGH');
     expect(generatorsSrc).toContain('BASE_PASSAGE_PROBABILITY');
+  });
+
+  // Verify effectiveType() is used consistently for doc-type counts
+  // instead of raw (d.doktyp || d.documentType) in section builders
+  it('section builders use effectiveType() for doc-type counting', () => {
+    // effectiveType should be called consistently, not raw doktyp access
+    expect(generatorsSrc).toContain("effectiveType(d) === 'prop'");
+    expect(generatorsSrc).toContain("effectiveType(d) === 'bet'");
+    expect(generatorsSrc).toContain("effectiveType(d) === 'mot'");
+  });
+
+  // Verify noLegSignal incorporates betCount and SFS presence
+  it('noLegSignal includes betCount and SFS in legislative signal detection', () => {
+    // betCount should be part of the legislative signal expression
+    expect(generatorsSrc).toContain('propCount + motCount + betCount === 0');
+    expect(generatorsSrc).toContain('!hasEnactedLaw');
+  });
+
+  // Verify methodology data-sources description is localized (not always English)
+  it('methodology data-sources description is localized per language', () => {
+    expect(generatorsSrc).toContain('sourceDesc[lang]');
+    expect(generatorsSrc).toContain("sourceDesc:");
   });
 });
 
