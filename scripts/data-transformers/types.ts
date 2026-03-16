@@ -40,11 +40,16 @@ export interface RawDocument {
   subtype?: string;
   documentType?: string;
   url?: string;
+  dok_url?: string;
   summary?: string;
   notis?: string;
   intressent_namn?: string;
   author?: string;
   parti?: string;
+  /** Target recipient/minister for interpellations and written questions (mottagare field from API); may be present on other document types */
+  mottagare?: string;
+  /** intressent_id — parliamentary member ID who authored the document */
+  intressent_id?: string;
   /** Publication date from the MCP API (ISO format YYYY-MM-DD) */
   datum?: string;
   /** Riksmöte (parliamentary session, e.g. "2025/26") */
@@ -55,8 +60,6 @@ export interface RawDocument {
   fullContent?: string;
   /** Whether this document was enriched with full content */
   contentFetched?: boolean;
-  /** Target minister / recipient (used by interpellations) */
-  mottagare?: string;
   /** Related speeches mentioning this document */
   speeches?: Array<{ talare?: string; parti?: string; text?: string; anforande_nummer?: string }>;
 }
