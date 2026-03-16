@@ -1385,15 +1385,6 @@ function swotDefault(key: string, topic: string | null, lang: Language): string 
 }
 
 /**
- * Build SWOT and dashboard TemplateSections for a deep-inspection article
- * using the legacy metadata-only approach.
- *
- * @deprecated The `generateDeepInspection()` generator now uses
- * `buildDeepInspectionSectionsFromAnalysis` (AI pipeline) by default.
- * This function is retained for external consumers that construct article
- * sections without the pipeline, and for integration tests.
- */
-export function buildDeepInspectionSections(
  * Compute the effective document type for a RawDocument.
  * SFS-by-name docs (missing doktyp/documentType but dokumentnamn starting with "SFS")
  * are normalised to 'sfs' so filters, typeCounts, and chart labels stay consistent.
@@ -1934,8 +1925,6 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
 
       // SWOT + dashboard sections — built from AI analysis result (not hardcoded templates)
       const sections = buildDeepInspectionSectionsFromAnalysis(analysis, enrichedDocs, sanitizedTopic, lang);
-      // SWOT + dashboard sections — topic-focused, document-derived
-      const sections = await buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang);
 
       const langTitles: TitleSet = titles[lang] || titles.en;
 
