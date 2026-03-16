@@ -23,7 +23,7 @@ import { detectPolicyDomains, generateDeepPolicyAnalysis } from '../policy-analy
 import {
   groupPropositionsByCommittee,
 } from '../document-analysis.js';
-import { generateDeepAnalysisSection } from './shared.js';
+import { generateDeepAnalysisSection, analyzeDocumentsForContent } from './shared.js';
 
 export function generatePropositionsContent(data: ArticleContentData, lang: Language | string): string {
   const propositions = data.propositions || [];
@@ -155,12 +155,14 @@ export function generatePropositionsContent(data: ArticleContentData, lang: Lang
     content += `    <p class="pillar-transition">${escapeHtml(propTransition)}</p>\n`;
   }
 
-  // Deep Analysis section (5W framework)
+  // Deep Analysis section (5W framework + document analysis framework)
+  const frameworkAnalysis = analyzeDocumentsForContent(propositions, lang, data.ciaContext);
   content += generateDeepAnalysisSection({
     documents: propositions,
     lang,
     cia: data.ciaContext,
     articleType: 'propositions',
+    frameworkAnalysis,
   });
 
   // ── Key takeaways: synthesize propositions batch ──────────────────────────

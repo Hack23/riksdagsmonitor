@@ -121,7 +121,7 @@ export function calculateCoalitionRiskIndex(data: CIAContext | undefined): Coali
   const { coalitionStability, partyPerformance } = data;
 
   // Component 1: Voting discipline (average cohesion score across parties, inverted to risk)
-  const cohesionScores = partyPerformance
+  const cohesionScores = (partyPerformance ?? [])
     .map(p => p.metrics.cohesionScore ?? 0)
     .filter(s => s > 0);
   const avgCohesion = cohesionScores.length > 0

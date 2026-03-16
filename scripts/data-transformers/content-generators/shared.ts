@@ -13,6 +13,14 @@ import type { Language } from '../../types/language.js';
 import type { RawDocument, RawCalendarEvent, CIAContext } from '../types.js';
 import { L, normalizePartyKey } from '../helpers.js';
 import { detectPolicyDomains } from '../policy-analysis.js';
+import {
+  analyzeDocuments as analyzeDocumentsBatch,
+  type DocumentAnalysis,
+  type PESTLEAnalysis,
+  type StakeholderImpact,
+  type RiskAssessment,
+  type ImplementationAssessment,
+} from '../../ai-analysis/document-analyzer.js';
 
 /** Localise raw Riksdag document type codes for display (singular/plural-aware, multi-language). */
 export type DocTypeLocalization = {
@@ -219,6 +227,34 @@ export interface DeepAnalysisOptions {
   articleType: string;
   /** Extra context sentences to inject into the "Why" subsection */
   whyContext?: string;
+  /**
+   * Pre-computed document analyses from the AI analysis framework.
+   * When provided, the deep analysis section is enriched with PESTLE
+   * dimensions, stakeholder impact assessments, risk assessments, and
+   * implementation feasibility data from the framework.
+   *
+   * Use `analyzeDocumentsForContent()` to produce this map.
+   */
+  frameworkAnalysis?: Map<string, DocumentAnalysis>;
+}
+
+/**
+ * Run the document analysis framework over a set of documents and return a
+ * `Map<string, DocumentAnalysis>` keyed by document ID.  This is the bridge
+ * between the AI analysis framework and the content generators.
+ *
+ * Content generators should call this once per article and pass the result
+ * into `generateDeepAnalysisSection()` via the `frameworkAnalysis` option.
+ *
+ * Results are cached internally by the framework, so repeated calls with
+ * the same documents are cheap.
+ */
+export function analyzeDocumentsForContent(
+  docs: RawDocument[],
+  lang: Language | string,
+  cia?: CIAContext,
+): Map<string, DocumentAnalysis> {
+  return analyzeDocumentsBatch(docs, lang, cia);
 }
 
 /**
@@ -352,7 +388,7 @@ function neutralText(lang: Language | string): string {
  * @returns HTML string for the deep analysis section, or empty string if insufficient data
  */
 export function generateDeepAnalysisSection(opts: DeepAnalysisOptions): string {
-  const { documents, lang, cia, articleType, whyContext } = opts;
+  const { documents, lang, cia, articleType, whyContext, frameworkAnalysis } = opts;
 
   // Deep analysis requires at least 2 documents for cross-document insights
   // in standard article types. For deep-inspection articles, allow single-
@@ -441,6 +477,32 @@ export function generateDeepAnalysisSection(opts: DeepAnalysisOptions): string {
     parts.push(`    <h3>${escapeHtml(lbl('deepAnalysisPerspectives'))}</h3>`);
     const perspectivesText = generatePerspectivesAnalysis(documents, lang, parties);
     parts.push(`    <p>${perspectivesText}</p>`);
+  }
+
+  // ── FRAMEWORK ANALYSIS SECTIONS ────────────────────────────────────────────
+  // When the document analysis framework has been run, inject its richer
+  // PESTLE, stakeholder impact, risk, and implementation assessment data.
+  if (frameworkAnalysis && frameworkAnalysis.size > 0) {
+    const analyses = [...frameworkAnalysis.values()];
+
+    // PESTLE Analysis — aggregate across all analysed documents
+    parts.push(`    <h3>${escapeHtml(lbl('deepAnalysisPestle'))}</h3>`);
+    parts.push(renderAggregatedPestle(analyses, lang));
+
+    // Stakeholder Impact — summarise stakeholder impacts from the framework
+    parts.push(`    <h3>${escapeHtml(lbl('deepAnalysisStakeholderImpact'))}</h3>`);
+    parts.push(renderStakeholderImpactSummary(analyses));
+
+    // Risk Assessment — aggregate risk factors across documents
+    const allRisks = analyses.flatMap(a => a.riskAssessment);
+    if (allRisks.length > 0) {
+      parts.push(`    <h3>${escapeHtml(lbl('deepAnalysisRisk'))}</h3>`);
+      parts.push(renderRiskAssessment(allRisks));
+    }
+
+    // Implementation Assessment — summarise implementation feasibility
+    parts.push(`    <h3>${escapeHtml(lbl('deepAnalysisImplementation'))}</h3>`);
+    parts.push(renderImplementationAssessment(analyses));
   }
 
   parts.push('    </section>\n');
@@ -736,4 +798,150 @@ function generatePerspectivesAnalysis(docs: RawDocument[], lang: Language | stri
 
   if (partyAnalyses.length === 0) return '';
   return partyAnalyses.join(' · ');
+}
+
+// ---------------------------------------------------------------------------
+// Framework analysis section renderers
+// ---------------------------------------------------------------------------
+
+/**
+ * Aggregate PESTLE dimensions across multiple document analyses into a
+ * deduplicated list per dimension and render as an HTML description list.
+ */
+function renderAggregatedPestle(analyses: DocumentAnalysis[], _lang: Language | string): string {
+  const merged: PESTLEAnalysis = {
+    political: [], economic: [], social: [],
+    technological: [], legal: [], environmental: [],
+  };
+
+  for (const a of analyses) {
+    const p = a.pestleDimensions;
+    merged.political.push(...p.political);
+    merged.economic.push(...p.economic);
+    merged.social.push(...p.social);
+    merged.technological.push(...p.technological);
+    merged.legal.push(...p.legal);
+    merged.environmental.push(...p.environmental);
+  }
+
+  // Deduplicate per dimension
+  const dedup = (arr: string[]): string[] => [...new Set(arr)].slice(0, 4);
+
+  const dims: Array<[string, string[]]> = [
+    ['Political', dedup(merged.political)],
+    ['Economic', dedup(merged.economic)],
+    ['Social', dedup(merged.social)],
+    ['Technological', dedup(merged.technological)],
+    ['Legal', dedup(merged.legal)],
+    ['Environmental', dedup(merged.environmental)],
+  ];
+
+  const items = dims
+    .filter(([, items]) => items.length > 0)
+    .map(([label, items]) =>
+      `      <dt><strong>${escapeHtml(label)}</strong></dt>\n      <dd>${items.map(i => escapeHtml(i)).join(' ')}</dd>`,
+    )
+    .join('\n');
+
+  return `    <dl class="pestle-analysis">\n${items}\n    </dl>`;
+}
+
+/**
+ * Render a summary of stakeholder impacts across all analysed documents.
+ * Shows up to 7 stakeholder groups with their impact direction and burden.
+ */
+function renderStakeholderImpactSummary(analyses: DocumentAnalysis[]): string {
+  // Collect all stakeholder impacts, deduplicated by stakeholder name
+  const impactMap = new Map<string, StakeholderImpact>();
+  for (const a of analyses) {
+    for (const impact of a.stakeholderImpacts) {
+      // Keep the first (or higher-magnitude) impact per stakeholder
+      const existing = impactMap.get(impact.stakeholder);
+      if (!existing) {
+        impactMap.set(impact.stakeholder, impact);
+      }
+    }
+  }
+
+  const impacts = [...impactMap.values()].slice(0, 7);
+  if (impacts.length === 0) return '    <p>No stakeholder impact data available.</p>';
+
+  const rows = impacts.map(i => {
+    const directionIcon =
+      i.directImpact.direction === 'positive' ? '↑'
+      : i.directImpact.direction === 'negative' ? '↓'
+      : i.directImpact.direction === 'mixed' ? '↕'
+      : '→';
+    return `      <li><strong>${escapeHtml(i.displayName)}</strong>: ${directionIcon} ${escapeHtml(i.directImpact.summary)} (${escapeHtml(i.confidence)})</li>`;
+  });
+
+  return `    <ul class="stakeholder-impact-list">\n${rows.join('\n')}\n    </ul>`;
+}
+
+/**
+ * Render a risk assessment summary. Groups risks by type and shows up to 5.
+ */
+function renderRiskAssessment(risks: RiskAssessment[]): string {
+  // Deduplicate by type+severity, preferring higher severity
+  const byType = new Map<string, RiskAssessment>();
+  for (const r of risks) {
+    const key = r.type;
+    const existing = byType.get(key);
+    if (!existing || severityRank(r.severity) > severityRank(existing.severity)) {
+      byType.set(key, r);
+    }
+  }
+
+  const top = [...byType.values()].slice(0, 5);
+  const rows = top.map(r => {
+    const icon = r.severity === 'high' ? '🔴' : r.severity === 'medium' ? '🟡' : '🟢';
+    return `      <li>${icon} <strong>${escapeHtml(r.type)}</strong> (${escapeHtml(r.severity)}): ${escapeHtml(r.description)}</li>`;
+  });
+
+  return `    <ul class="risk-assessment-list">\n${rows.join('\n')}\n    </ul>`;
+}
+
+function severityRank(s: string): number {
+  return s === 'high' ? 3 : s === 'medium' ? 2 : 1;
+}
+
+/**
+ * Render implementation assessment summary from framework analyses.
+ */
+function renderImplementationAssessment(analyses: DocumentAnalysis[]): string {
+  // Pick the first non-trivial implementation assessment
+  const assessments: ImplementationAssessment[] = analyses.map(a => a.implementationAssessment);
+  if (assessments.length === 0) return '    <p>No implementation data available.</p>';
+
+  // Aggregate obstacles and agencies across all documents
+  const allObstacles = new Set<string>();
+  const allAgencies = new Set<string>();
+  let highestFeasibility: ImplementationAssessment['feasibility'] = 'high';
+
+  for (const ia of assessments) {
+    ia.keyObstacles.forEach(o => allObstacles.add(o));
+    ia.agenciesInvolved.forEach(a => allAgencies.add(a));
+    if (feasibilityRank(ia.feasibility) < feasibilityRank(highestFeasibility)) {
+      highestFeasibility = ia.feasibility;
+    }
+  }
+
+  const parts: string[] = [];
+  const fIcon = highestFeasibility === 'high' ? '🟢' : highestFeasibility === 'medium' ? '🟡' : '🔴';
+  parts.push(`    <p>${fIcon} <strong>Feasibility:</strong> ${escapeHtml(highestFeasibility)}. ${escapeHtml(assessments[0].estimatedTimeline)}</p>`);
+
+  if (allObstacles.size > 0) {
+    const obstacleList = [...allObstacles].slice(0, 4).map(o => `<li>${escapeHtml(o)}</li>`).join('');
+    parts.push(`    <p><strong>Key obstacles:</strong></p>\n    <ul>${obstacleList}</ul>`);
+  }
+
+  if (allAgencies.size > 0) {
+    parts.push(`    <p><strong>Agencies involved:</strong> ${[...allAgencies].slice(0, 5).map(a => escapeHtml(a)).join(', ')}</p>`);
+  }
+
+  return parts.join('\n');
+}
+
+function feasibilityRank(f: string): number {
+  return f === 'high' ? 3 : f === 'medium' ? 2 : 1;
 }

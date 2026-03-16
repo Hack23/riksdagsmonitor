@@ -24,7 +24,7 @@ import {
   generateOppositionStrategySection,
   generateDocumentIntelligenceAnalysis,
 } from '../document-analysis.js';
-import { TITLE_SUFFIX_TEMPLATES, generateDeepAnalysisSection } from './shared.js';
+import { TITLE_SUFFIX_TEMPLATES, generateDeepAnalysisSection, analyzeDocumentsForContent } from './shared.js';
 
 export function generateGenericContent(data: ArticleContentData, lang: Language | string): string {
   const docs = data.documents || [];
@@ -237,12 +237,14 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
     content += `    <p class="pillar-transition">${escapeHtml(oppositionTransition)}</p>\n`;
   }
 
-  // Deep Analysis section (5W framework)
+  // Deep Analysis section (5W framework + document analysis framework)
+  const frameworkAnalysis = analyzeDocumentsForContent(docs, lang, cia);
   content += generateDeepAnalysisSection({
     documents: docs,
     lang,
     cia,
     articleType: 'generic',
+    frameworkAnalysis,
   });
 
   // ── Key takeaways ────────────────────────────────────────────────────────
