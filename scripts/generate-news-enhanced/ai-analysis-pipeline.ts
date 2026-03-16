@@ -923,29 +923,31 @@ export class AIAnalysisPipeline {
       };
     }
 
+    const normalizedFocusTopic = focusTopic?.trim() || null;
+
     // Pass 1 (always): classify documents
     const classified = this.classifyDocuments(documents, lang);
 
     // Pass 2 (iterations >= 2): per-document deep analysis
     const documentAnalyses = this.iterations >= 2
-      ? this.analyzeDocumentsDeep(classified, focusTopic, lang)
+      ? this.analyzeDocumentsDeep(classified, normalizedFocusTopic, lang)
       : documents.map(d => this.createMinimalDocumentAnalysis(d));
 
     // Pass 3 (iterations >= 2): cross-document synthesis
     let synthesis = this.iterations >= 2
-      ? this.synthesizeAcrossDocuments(classified, documentAnalyses, focusTopic, lang)
+      ? this.synthesizeAcrossDocuments(classified, documentAnalyses, normalizedFocusTopic, lang)
       : this.createEmptySynthesis();
 
     // Build dynamic SWOT (always — uses classification data from Pass 1)
-    const dynamicSwotEntries = this.buildDynamicSwot(classified, focusTopic, lang);
+    const dynamicSwotEntries = this.buildDynamicSwot(classified, normalizedFocusTopic, lang);
 
     // Build strategic implications (always)
     const strategicImplications = this.buildStrategicImplications(
-      classified, focusTopic, lang,
+      classified, normalizedFocusTopic, lang,
     );
 
     // Build key takeaways (always)
-    const keyTakeaways = this.buildKeyTakeaways(classified, focusTopic, lang);
+    const keyTakeaways = this.buildKeyTakeaways(classified, normalizedFocusTopic, lang);
 
     // Pass 4 (iterations >= 3): QA + refinement
     // When quality is below threshold, re-run synthesis and keep the better score.
@@ -955,7 +957,7 @@ export class AIAnalysisPipeline {
     let analysisScore = this.scoreAnalysis(documentAnalyses, synthesis, dynamicSwotEntries);
     if (this.iterations >= 3 && analysisScore < this.qualityThreshold) {
       const refinedSynthesis = this.synthesizeAcrossDocuments(
-        classified, documentAnalyses, focusTopic, lang,
+        classified, documentAnalyses, normalizedFocusTopic, lang,
       );
       const refinedScore = this.scoreAnalysis(documentAnalyses, refinedSynthesis, dynamicSwotEntries);
       // Take the better of the two scores — no additive inflation.
@@ -981,7 +983,7 @@ export class AIAnalysisPipeline {
   /** Return a minimal document analysis when Pass 2 is skipped (iterations=1). */
   private createMinimalDocumentAnalysis(d: RawDocument): AIDocumentAnalysis {
     return {
-      dok_id: d.dok_id ?? '',
+      dok_id: this.buildAnalysisDocId(d),
       title: docTitle(d),
       legislativeImpact: '',
       crossPartyImplications: '',
@@ -989,6 +991,13 @@ export class AIAnalysisPipeline {
       euNordicComparison: '',
       analysisScore: 0,
     };
+  }
+
+  private buildAnalysisDocId(doc: RawDocument): string {
+    if (doc.dok_id) return doc.dok_id;
+    const titleFallback = docTitle(doc).slice(0, 20);
+    if (titleFallback) return titleFallback;
+    return `${docType(doc)}:${(doc.datum ?? '').slice(0, 10)}`;
   }
 
   /** Return an empty synthesis when Pass 3 is skipped (iterations=1). */
@@ -1085,7 +1094,7 @@ export class AIAnalysisPipeline {
     const analysisScore = scoreAnalysisDepth(analysisText);
 
     return {
-      dok_id: doc.dok_id ?? title.slice(0, 20),
+      dok_id: this.buildAnalysisDocId(doc),
       title,
       legislativeImpact,
       crossPartyImplications,

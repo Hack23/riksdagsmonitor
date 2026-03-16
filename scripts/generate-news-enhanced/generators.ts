@@ -1516,7 +1516,8 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
 
     const slug: string = `${formatDateForSlug(today)}-deep-inspection-${topicSlug}`;
 
-    const sanitizedTopic: string | null = focusTopic ? sanitizePlainText(focusTopic) : null;
+    const sanitizedTopicRaw = focusTopic ? sanitizePlainText(focusTopic) : '';
+    const sanitizedTopic: string | null = sanitizedTopicRaw.trim() || null;
     const defaultTopicLabels: Record<Language, string> = {
       en: 'Policy Analysis',
       sv: 'Policyanalys',
