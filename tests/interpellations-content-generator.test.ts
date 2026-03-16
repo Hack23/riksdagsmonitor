@@ -322,7 +322,7 @@ describe('Interpellations Content Generator', () => {
     it('should include article-lede class with document count', () => {
       const content = generateArticleContent({ interpellations: sampleInterpellations }, 'interpellations', 'en') as string;
       expect(content).toContain('article-lede');
-      expect(content).toContain('3');
+      expect(content).toContain('3 interpellations');
     });
   });
 
