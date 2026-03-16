@@ -23,7 +23,8 @@ import {
   generateEconomicDashboardSection,
   generateMindmapSection,
   generateSankeySection,
-  type MindmapBranch,
+  buildAIMindmapAnalysis,
+  buildMindmapOptionsFromAnalysis,
   type SankeyNode,
   type SankeyFlow,
 } from '../data-transformers/index.js';
@@ -754,11 +755,23 @@ const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, stri
     nl: 'Belanghebbenden', ar: 'أصحاب المصلحة', he: 'בעלי עניין',
     ja: 'ステークホルダー', ko: '이해관계자', zh: '利益相关者',
   },
+  parliamentaryAnalysis: {
+    en: 'Parliamentary Analysis', sv: 'Riksdagsanalys', da: 'Parlamentarisk analyse', no: 'Parlamentarisk analyse',
+    fi: 'Parlamentaarinen analyysi', de: 'Parlamentarische Analyse', fr: 'Analyse parlementaire', es: 'Análisis parlamentario',
+    nl: 'Parlementaire analyse', ar: 'التحليل البرلماني', he: 'ניתוח פרלמנטרי',
+    ja: '議会分析', ko: '의회 분석', zh: '议会分析',
+  },
   govCommunications: {
     en: 'Gov. Communications', sv: 'Regeringsmeddelanden', da: 'Regeringsmeddelelser', no: 'Regjeringsmeldinger',
     fi: 'Hallituksen tiedonannot', de: 'Regierungsmitteilungen', fr: 'Communications gouvernementales', es: 'Comunicaciones del Gobierno',
     nl: 'Regeringsmededelingen', ar: 'بلاغات حكومية', he: 'הודעות ממשלתיות',
     ja: '政府通信', ko: '정부 통신', zh: '政府通报',
+  },
+  conceptualMap: {
+    en: 'Conceptual map', sv: 'Konceptkarta', da: 'Konceptkort', no: 'Konseptkart',
+    fi: 'Käsitekartta', de: 'Konzeptkarte', fr: 'Carte conceptuelle', es: 'Mapa conceptual',
+    nl: 'Conceptmap', ar: 'خريطة مفاهيمية', he: 'מפת מושגים',
+    ja: 'コンセプトマップ', ko: '개념 맵', zh: '概念图',
   },
 };
 
@@ -1223,29 +1236,6 @@ async function buildDeepInspectionSections(
   const govName     = STAKEHOLDER_NAMES.government[lang]     ?? STAKEHOLDER_NAMES.government.en     ?? 'Government Coalition';
   const oppName     = STAKEHOLDER_NAMES.opposition[lang]     ?? STAKEHOLDER_NAMES.opposition.en     ?? 'Opposition Parties';
 
-  const dataSourceBranchLabels: Partial<Record<Language, string>> = {
-    en: 'Data Sources', sv: 'Datakällor', da: 'Datakilder', no: 'Datakilder',
-    fi: 'Tietolähteet', de: 'Datenquellen', fr: 'Sources de données', es: 'Fuentes de datos',
-    nl: 'Gegevensbronnen', ar: 'مصادر البيانات', he: 'מקורות נתונים',
-    ja: 'データソース', ko: '데이터 출처', zh: '数据来源',
-  };
-  const dataSourceItems: Partial<Record<Language, string[]>> = {
-    en: ['Riksdag MCP (laws, motions, propositions)', 'World Bank (economic indicators)', 'SCB Statistics Sweden'],
-    sv: ['Riksdagens MCP (lagar, motioner, propositioner)', 'Världsbanken (ekonomiska indikatorer)', 'SCB Statistikmyndigheten'],
-    da: ['Riksdag MCP (love, motioner, forslag)', 'Verdensbanken (økonomiske indikatorer)', 'SCB Statistikmyndigheten'],
-    no: ['Riksdag MCP (lover, motioner, proposisjoner)', 'Verdensbanken (økonomiske indikatorer)', 'SCB Statistikmyndigheten'],
-    fi: ['Riksdagin MCP (lait, kirjelmät, esitykset)', 'Maailmanpankki (taloudelliset indikaattorit)', 'SCB Tilastoviranomainen'],
-    de: ['Riksdag MCP (Gesetze, Anträge, Vorlagen)', 'Weltbank (Wirtschaftsindikatoren)', 'SCB Statistikmyndigheten'],
-    fr: ['Riksdag MCP (lois, motions, propositions)', 'Banque mondiale (indicateurs économiques)', 'SCB Statistikmyndigheten'],
-    es: ['Riksdag MCP (leyes, mociones, proposiciones)', 'Banco Mundial (indicadores económicos)', 'SCB Statistikmyndigheten'],
-    nl: ['Riksdag MCP (wetten, moties, voorstellen)', 'Wereldbank (economische indicatoren)', 'SCB Statistikmyndigheten'],
-    ar: ['ريكسداغ MCP (قوانين، اقتراحات)', 'البنك الدولي (مؤشرات اقتصادية)', 'SCB إحصاء السويد'],
-    he: ['ריקסדאג MCP (חוקים, הצעות)', 'הבנק העולמי (אינדיקטורים כלכליים)', 'SCB הלשכה המרכזית לסטטיסטיקה'],
-    ja: ['Riksdag MCP (法律・動議・提案)', '世界銀行（経済指標）', 'SCB スウェーデン統計局'],
-    ko: ['Riksdag MCP (법률, 동의, 제안)', '세계은행 (경제 지표)', 'SCB 스웨덴 통계청'],
-    zh: ['议会 MCP（法律、动议、提案）', '世界银行（经济指标）', 'SCB 瑞典统计局'],
-  };
-
   const strategicContext = topic
     ? `Analysis exclusively focused on: ${topic} — ${docs.length} parliamentary documents examined`
     : `Multi-stakeholder analysis of ${docs.length} parliamentary documents`;
@@ -1296,7 +1286,7 @@ async function buildDeepInspectionSections(
     lang,
   });
 
-  // ── Mindmap: topic → detected policy domains → document types ────────────
+  // ── Mindmap: AI-driven conceptual map across 5 political dimensions ─────────
   const allDetectedDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
   // Augment with AI-detected domains when available.
@@ -1356,6 +1346,22 @@ async function buildDeepInspectionSections(
       ? `Conceptual map for deep inspection: ${topic}`
       : `Conceptual map for ${docs.length} parliamentary documents`,
   });
+  const detectedDomainList = [...allDetectedDomains].slice(0, 6);
+
+  // Pass precomputed domains to avoid iterating docs twice
+  const aiAnalysis = buildAIMindmapAnalysis(docs, topic, lang, detectedDomainList);
+  const mindmapSection = generateMindmapSection(
+    buildMindmapOptionsFromAnalysis(
+      aiAnalysis,
+      lang,
+      topic || deepLabel('parliamentaryAnalysis', lang),
+      {
+        summary: topic
+          ? `${deepLabel('conceptualMap', lang)}: ${topic}`
+          : `${deepLabel('conceptualMap', lang)} — ${docs.length} ${deepLabel('documents', lang).toLowerCase()}`,
+      },
+    ),
+  );
 
   // ── Sankey: party/doc-type flow → legislative outcome ─────────────────────
   // The sankey uses three primary legislative actor groups as source nodes:
