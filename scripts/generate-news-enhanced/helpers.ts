@@ -12,10 +12,17 @@ import { translateSwedishContent } from '../translation-dictionary.js';
 import type { Language } from '../types/language.js';
 import type { DateRange, ArticleQualityScore } from '../types/article.js';
 import {
+  assessArticleQuality,
+  printQualityReport,
+  injectQualityMetadata,
+} from '../ai-analysis/quality-assessor.js';
+import {
   NEWS_DIR,
+  METADATA_DIR,
   dryRunArg,
   stats,
   QUALITY_THRESHOLD,
+  MULTIDIM_QUALITY_THRESHOLD,
   toISODate,
 } from './config.js';
 
@@ -59,40 +66,123 @@ export async function writeArticle(html: string, filename: string): Promise<bool
 }
 
 // ---------------------------------------------------------------------------
+// Per-article quality score persistence
+// ---------------------------------------------------------------------------
+
+/** In-memory store for per-article multi-dimensional scores (written per-run) */
+const perArticleScores: Record<string, {
+  filename: string;
+  lang: string;
+  articleType: string;
+  score: number;
+  passed: boolean;
+  multidimensional: {
+    overallScore: number;
+    passesThreshold: boolean;
+    assessmentPasses: number;
+    dimensions: Record<string, number>;
+    issueCount: number;
+  };
+  timestamp: string;
+}> = {};
+
+/**
+ * Persist all collected per-article quality scores to
+ * `news/metadata/quality-scores.json`.
+ *
+ * Uses atomic write (write to temp file, then rename) to avoid leaving
+ * truncated/invalid JSON on disk if the process is interrupted mid-write.
+ *
+ * **Per-run overwrite**: Only the current run's scores are written.  Previous
+ * runs' data is replaced so that stale/test entries never accumulate and
+ * Check 13's average score reflects the current generation only.
+ *
+ * Call once at the end of the overall generation run (not per-article) to
+ * avoid write amplification when many articles are generated.
+ */
+export function flushQualityScores(): void {
+  if (dryRunArg) return;
+  try {
+    if (!fs.existsSync(METADATA_DIR)) {
+      fs.mkdirSync(METADATA_DIR, { recursive: true });
+    }
+    const outPath = path.join(METADATA_DIR, 'quality-scores.json');
+    const tmpPath = outPath + '.tmp';
+    // Best-effort atomic write: write to temp file, then rename.
+    // Try rename first (atomic on POSIX). On Windows the rename may fail when
+    // the destination exists, so fall back to unlink-then-rename.
+    fs.writeFileSync(tmpPath, JSON.stringify(perArticleScores, null, 2), 'utf-8');
+    try {
+      fs.renameSync(tmpPath, outPath);
+    } catch (renameErr: unknown) {
+      // Only attempt unlink+rename for known Windows cross-device/exists codes.
+      // Other failures (permissions, missing parent dir, etc.) should propagate
+      // so we don't delete an otherwise valid quality-scores.json.
+      const code = (renameErr as NodeJS.ErrnoException).code;
+      if (code === 'EEXIST' || code === 'EPERM' || code === 'EACCES' || code === 'EXDEV') {
+        try { fs.unlinkSync(outPath); } catch (e: unknown) {
+          if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e;
+        }
+        fs.renameSync(tmpPath, outPath);
+      } else {
+        throw renameErr;
+      }
+    }
+    // Clear in-memory map after a successful flush so that subsequent
+    // invocations in the same Node process don't carry stale entries.
+    for (const key of Object.keys(perArticleScores)) {
+      delete perArticleScores[key];
+    }
+  } catch (err: unknown) {
+    console.warn(`  ⚠️  Could not persist quality scores: ${(err as Error).message}`);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Article quality validation
 // ---------------------------------------------------------------------------
 
 /**
  * Validate the quality of a generated article HTML.
  *
- * Scoring (0–100):
- *  - wordScore      (0–50): proportional to word count up to 1 000 words
- *  - sectionScore   (0–30): based on number of analytical <h2> sections (full at ≥ 3)
- *  - translationScore (0–20): deducted for each data-translate="true" span in non-Swedish
+ * Performs two sequential assessments:
+ *
+ *  1. **Structural scoring** (0–100): word count (0–50), h2 sections (0–30),
+ *     translation completeness (0–20). Used as the primary pass/fail gate
+ *     against `QUALITY_THRESHOLD`.
+ *
+ *  2. **Multi-dimensional assessment** via `assessArticleQuality()`, which
+ *     internally runs its own two passes (dimension computation + aggregation),
+ *     producing a 6-dimension weighted score, issue list, and suggestions.
+ *
+ * Total: 3 assessment passes — 1 structural + 2 multi-dimensional.
  *
  * @param html        - raw HTML of the article
  * @param lang        - language code of the article (e.g. "en")
  * @param articleType - article type slug (e.g. "motions")
  * @param filename    - filename for the quality record
- * @returns           ArticleQualityScore with metrics and pass/fail result
+ * @param sourceDocIds - optional list of source document IDs for factual-accuracy check
+ * @returns           ArticleQualityScore with metrics, pass/fail, and multidimensional assessment
  */
 export function validateArticleQuality(
   html: string,
   lang: string,
   articleType: string,
-  filename: string
+  filename: string,
+  sourceDocIds: readonly string[] = [],
 ): ArticleQualityScore {
-  // ----- word count (approximate: strip tags, count whitespace-delimited tokens) -----
-  const stripped: string = html.replace(/<[^>]+>/g, ' ');
+  // ── Pass 1: structural scoring ────────────────────────────────────────────
+  const stripped: string = html
+    .replace(/<script[\s>][\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s>][\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ');
   const wordCount: number = stripped.split(/\s+/).filter(w => w.length > 0).length;
   const wordScore: number = Math.min(50, Math.round((wordCount / 1000) * 50));
 
-  // ----- analytical sections (h2 headings) -----
   const h2Matches: RegExpMatchArray | null = html.match(/<h2[\s>]/gi);
   const analyticalSections: number = h2Matches ? h2Matches.length : 0;
   const sectionScore: number = Math.min(30, Math.round((analyticalSections / 3) * 30));
 
-  // ----- translation completeness (non-Swedish only) -----
   const untranslatedMatches: RegExpMatchArray | null = html.match(/data-translate="true"/g);
   const untranslatedSpans: number = untranslatedMatches ? untranslatedMatches.length : 0;
   const translationDeduction: number = lang === 'sv' ? 0 : Math.min(20, untranslatedSpans * 2);
@@ -100,16 +190,21 @@ export function validateArticleQuality(
 
   const score: number = wordScore + sectionScore + translationScore;
 
-  // ----- unknown authors -----
   const unknownMatches: RegExpMatchArray | null = html.match(/Unknown \(Unknown\)/g);
   const unknownAuthors: number = unknownMatches ? unknownMatches.length : 0;
 
   const passed: boolean = score >= QUALITY_THRESHOLD;
 
-  // ----- console report -----
+  // ── Pass 2: multi-dimensional assessment ─────────────────────────────────
+  const multidimensional = assessArticleQuality(html, lang, sourceDocIds, MULTIDIM_QUALITY_THRESHOLD);
+  if (multidimensional.passesThreshold === false || process.env.NEWS_QUALITY_VERBOSE === '1') {
+    printQualityReport(multidimensional, filename);
+  }
+
+  // ----- console report (structural) -----
   const scoreLabel: string = passed ? '✅' : '⚠️';
   const reportId: string = filename.replace(/\.html$/, '');
-  console.log(`\n📊 Article Quality Report: ${reportId}`);
+  console.log(`\n📊 Article Quality Report (structural): ${reportId}`);
   console.log(`   Word count:           ${wordCount} (score: ${wordScore}/50)`);
   console.log(`   Analytical sections:  ${analyticalSections} (score: ${sectionScore}/30)`);
   console.log(`   Untranslated spans:   ${untranslatedSpans} (score: ${translationScore}/20)`);
@@ -132,6 +227,40 @@ export function validateArticleQuality(
     }
   }
 
+  if (!multidimensional.passesThreshold) {
+    console.warn(`   ⚠️  Multi-dimensional score ${multidimensional.overallScore}/100 below threshold ${MULTIDIM_QUALITY_THRESHOLD}.`);
+    if (multidimensional.suggestions.length > 0) {
+      console.warn('      Top improvement suggestions:');
+      for (const s of multidimensional.suggestions.slice(0, 3)) {
+        console.warn(`        → ${s}`);
+      }
+    }
+  }
+
+  // Accumulate per-article score (flushed at end of run via exported flushQualityScores())
+  perArticleScores[filename] = {
+    filename,
+    lang,
+    articleType,
+    score,
+    passed,
+    multidimensional: {
+      overallScore: multidimensional.overallScore,
+      passesThreshold: multidimensional.passesThreshold,
+      assessmentPasses: multidimensional.assessmentPasses,
+      dimensions: {
+        factualAccuracy:      multidimensional.dimensions.factualAccuracy.score,
+        stakeholderCoverage:  multidimensional.dimensions.stakeholderCoverage.score,
+        analyticalDepth:      multidimensional.dimensions.analyticalDepth.score,
+        editorialConsistency: multidimensional.dimensions.editorialConsistency.score,
+        evidenceQuality:      multidimensional.dimensions.evidenceQuality.score,
+        languageQuality:      multidimensional.dimensions.languageQuality.score,
+      },
+      issueCount: multidimensional.issues.length,
+    },
+    timestamp: new Date().toISOString(),
+  };
+
   return {
     filename,
     lang,
@@ -141,14 +270,15 @@ export function validateArticleQuality(
     untranslatedSpans,
     analyticalSections,
     score,
-    passed
+    passed,
+    multidimensional,
   };
 }
 
 /**
  * Write article in specified language
  */
-export async function writeSingleArticle(html: string, slug: string, lang: Language, articleType?: string): Promise<string> {
+export async function writeSingleArticle(html: string, slug: string, lang: Language, articleType?: string, sourceDocIds?: readonly string[]): Promise<string> {
   const filename: string = `${slug}-${lang}.html`;
   // Translate any remaining Swedish data-translate spans before writing or validating
   const translatedHtml: string = translateSwedishContent(html, lang);
@@ -157,12 +287,53 @@ export async function writeSingleArticle(html: string, slug: string, lang: Langu
   // full slug if the slug does not follow the YYYY-MM-DD-{type} pattern.
   const slugParts: string[] = slug.split('-');
   const inferredType: string = slugParts.length >= 4 ? slugParts.slice(3).join('-') : slug;
-  const qualityScore: ArticleQualityScore = validateArticleQuality(translatedHtml, lang, articleType ?? inferredType, filename);
+  const qualityScore: ArticleQualityScore = validateArticleQuality(
+    translatedHtml,
+    lang,
+    articleType ?? inferredType,
+    filename,
+    sourceDocIds ?? [],
+  );
   stats.qualityScores.push(qualityScore);
-  await writeArticle(translatedHtml, filename);
+
+  // Inject quality metadata (CSP-safe <meta> tag only; opt-in JSON-LD via injectJsonLd param)
+  const finalHtml: string = qualityScore.multidimensional
+    ? injectQualityMetadata(translatedHtml, qualityScore.multidimensional)
+    : translatedHtml;
+
+  await writeArticle(finalHtml, filename);
   stats.generated += 1;
   stats.articles.push(filename);
   return filename;
+}
+
+/**
+ * Install process-exit signal handlers that flush quality scores once.
+ * Call from the CLI entrypoint (not at module load time) to avoid side
+ * effects when helpers.ts is imported by tests or other tooling.
+ */
+let _flushGuardInstalled = false;
+let _flushed = false;
+
+/** Flush quality scores at most once per process lifetime. */
+function flushOnce(): void {
+  if (_flushed) return;
+  if (Object.keys(perArticleScores).length === 0) {
+    _flushed = true;
+    return;
+  }
+  flushQualityScores();
+  if (Object.keys(perArticleScores).length === 0) {
+    _flushed = true;
+  }
+}
+
+export function installFlushHandlers(): void {
+  if (_flushGuardInstalled) return;
+  _flushGuardInstalled = true;
+  process.once('exit', () => flushOnce());
+  process.once('SIGINT', () => { flushOnce(); process.exit(130); });
+  process.once('SIGTERM', () => { flushOnce(); process.exit(143); });
 }
 
 /**

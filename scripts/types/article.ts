@@ -4,6 +4,7 @@
  */
 
 import type { Language } from './language.js';
+import type { MultiDimensionalQualityAssessment } from '../ai-analysis/quality-assessor.js';
 
 /** Category label shown in article headers */
 export type ArticleCategory = 'prospective' | 'retrospective' | 'analysis' | 'breaking';
@@ -119,6 +120,18 @@ export interface DateRange {
   end: string;
 }
 
+// ---------------------------------------------------------------------------
+// Multi-dimensional quality assessment types — single source of truth in
+// scripts/ai-analysis/quality-assessor.ts, re-exported here for convenience.
+// ---------------------------------------------------------------------------
+
+export type {
+  DimensionScore,
+  QualityIssueSeverity,
+  QualityIssue,
+  MultiDimensionalQualityAssessment,
+} from '../ai-analysis/quality-assessor.js';
+
 /** Quality metrics for a single generated article */
 export interface ArticleQualityScore {
   /** Filename of the article (e.g. "2026-02-23-motions-en.html") */
@@ -139,6 +152,8 @@ export interface ArticleQualityScore {
   score: number;
   /** Whether the article passed the quality threshold */
   passed: boolean;
+  /** Optional multi-dimensional quality assessment (populated by quality-assessor) */
+  multidimensional?: MultiDimensionalQualityAssessment;
 }
 
 /** Aggregate statistics for a full news generation run */

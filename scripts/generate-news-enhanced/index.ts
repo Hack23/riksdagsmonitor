@@ -31,11 +31,13 @@ import {
 } from './config.js';
 import {
   formatDateForSlug,
+  flushQualityScores,
   getWeekAheadDateRange,
   writeArticle,
   writeSingleArticle,
   writeArticlePair,
   validateArticleQuality,
+  installFlushHandlers,
 } from './helpers.js';
 import {
   generateWeekAhead,
@@ -266,6 +268,9 @@ export async function generateNews(): Promise<typeof stats> {
     console.log(`\n🎉 All ${allRequestedLanguages.length} languages generated!`);
   }
 
+  // Ensure quality-scores.json is persisted for both CLI and programmatic usage.
+  flushQualityScores();
+
   return stats;
 }
 
@@ -274,6 +279,7 @@ export async function generateNews(): Promise<typeof stats> {
 // ---------------------------------------------------------------------------
 
 export function runCli(): Promise<void> {
+  installFlushHandlers();
   return generateNews()
     .then(result => {
       if (result.errors > 0) {

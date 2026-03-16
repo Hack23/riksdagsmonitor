@@ -283,18 +283,28 @@ const results = rawResults.filter(item => {
 });
 ```
 
-**Date calculation pattern** (day-granularity — `.split('T')[0]` truncates to YYYY-MM-DD):
+**Date calculation pattern** (day-granularity — `.toISOString().slice(0, 10)` truncates to YYYY-MM-DD):
 ```javascript
-const today = new Date().toISOString().split('T')[0];
-const dayOfWeek = new Date().getUTCDay(); // 0=Sunday, 6=Saturday
-const lookbackDays = dayOfWeek === 6 ? 5 : Math.ceil(12 / 24); // Saturday=5 days, else ceil(hours/24)
-const fromDate = new Date(Date.now() - lookbackDays * 86400000).toISOString().split('T')[0];
+const now = new Date();
+const lookback_hours = 12; // default; override via workflow input
+const lookbackHours = Number(lookback_hours);
+if (!Number.isFinite(lookbackHours) || !Number.isInteger(lookbackHours) || lookbackHours <= 0) {
+  throw new Error('Invalid lookback_hours');
+}
+const lookbackMs = lookbackHours * 3600000; // 3600000 ms per hour
+const fromDate = new Date(now.getTime() - lookbackMs).toISOString().slice(0, 10);
+// For weekly review (Saturday): 5 * 86400000 ms = 5 days
+const weekStart = new Date(now.getTime() - 5 * 86400000).toISOString().slice(0, 10);
+const today = now.toISOString().slice(0, 10);
 ```
 
 **Post-query filtering example:**
 ```javascript
 const results = await get_betankanden({ rm: currentRm, limit: 50 });
-const recent = results.filter(b => (b.publicerad || '').slice(0, 10) >= fromDate);
+const recent = results.filter(item => {
+  const itemDate = (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10);
+  return itemDate >= fromDate;
+});
 ```
 
 **Date calculation example:**
@@ -316,6 +326,29 @@ const todayVotes = votes.filter(v => v.datum?.slice(0, 10) >= fromDate);
 ### Cross-Referencing Strategy
 
 Cross-reference related data sources for richer analysis. Filter all results by date to `>= fromDate`.
+
+#### Example 1: Committee Report Deep Dive
+```
+// 1. Fetch committee reports for the period
+// 2. For each report, look up related voting records via search_voteringar(bet: reportId)
+// 3. Cross-reference with any motions that reference the same bet
+```
+
+#### Example 2: Government Activity Analysis
+```
+// 1. Get government propositions (get_propositioner)
+// 2. Search for committee reports (get_betankanden) that reference each proposition
+// 3. Look up debate speeches (search_anforanden) on the same topic
+```
+
+#### Example 3: Party Behavior Analysis
+```
+// 1. Get voting records grouped by party (search_voteringar with groupBy: parti)
+// 2. Cross-reference with motions filed by each party
+// 3. Identify where parties voted against their own motions
+```
+
+### Detailed Code Examples
 
 **Example 1: Committee Report Deep Dive**
 ```javascript
