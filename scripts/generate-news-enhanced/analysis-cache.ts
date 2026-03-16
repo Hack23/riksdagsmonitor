@@ -133,6 +133,7 @@ export class AnalysisCache {
 
   /** Number of live (non-expired) entries currently in the cache. */
   get size(): number {
+    this.purgeExpired();
     return this.store.size;
   }
 }

@@ -253,10 +253,6 @@ const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 
 - `get_propositioner` — filter by `publicerad` date
 - `search_anforanden` — filter by `datum` field
 
-Filter results to only include items with dates `>= fromDate` using ISO-string comparison (recommended — avoids timezone-sensitive `new Date()` parsing):
-```javascript
-const filtered = rawResults.filter(item =>
-  (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10) >= fromDateIso
 Filter results to only include items with dates `>= fromDate` using timezone-safe ISO string comparison:
 
 For tools without native date support, apply a post-query date filter:
@@ -323,13 +319,12 @@ Cross-reference related data sources for richer analysis. Filter all results by 
 
 **Example 1: Committee Report Deep Dive**
 ```javascript
-// Setup: riksmöte + date threshold
+// Setup: riksmöte + date threshold (ISO-string comparison — timezone-safe)
 const currentRm = '2025/26'; // adjust to current session
-const fromDate = new Date(Date.now() - 7 * 86400000); // 7 days ago (Date object)
-const fromDateIso = fromDate.toISOString().split('T')[0]; // ISO string for native params
-// 1. Fetch committee reports, filter by date
+const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10); // YYYY-MM-DD
+// 1. Fetch committee reports, filter by date using ISO-string comparison
 const allReports = await get_betankanden({ rm: currentRm });
-const reports = allReports.filter(r => new Date(r.publicerad || r.datum) >= fromDate);
+const reports = allReports.filter(r => (r.publicerad || r.datum || '').slice(0, 10) >= fromDateIso);
 // 2. For each report, cross-reference voting records
 for (const report of reports) {
   const votes = await search_voteringar({ bet: report.beteckning });
@@ -338,63 +333,52 @@ for (const report of reports) {
 
 **Example 2: Government Activity Analysis**
 ```javascript
-// Setup: riksmöte + date threshold
+// Setup: riksmöte + date threshold (ISO-string comparison — timezone-safe)
 const currentRm = '2025/26'; // adjust to current session
-const fromDate = new Date(Date.now() - 7 * 86400000); // 7 days ago (Date object)
-const fromDateIso = fromDate.toISOString().split('T')[0]; // ISO string for native params
-// 1. Fetch propositions, filter by date
+const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10); // YYYY-MM-DD
+// 1. Fetch propositions, filter by date using ISO-string comparison
 const allProps = await get_propositioner({ rm: currentRm });
-const props = allProps.filter(p => new Date(p.publicerad || p.datum) >= fromDate);
+const props = allProps.filter(p => (p.publicerad || p.datum || '').slice(0, 10) >= fromDateIso);
 // 2. Cross-reference with government press releases (native dateFrom param)
 const press = await search_regering({ type: 'pressmeddelanden', dateFrom: fromDateIso });
 ```
 
 **Example 3: Party Behavior Analysis**
 ```javascript
-// Setup: riksmöte + date threshold + party
+// Setup: riksmöte + date threshold + party (ISO-string comparison — timezone-safe)
 const currentRm = '2025/26'; // adjust to current session
-const fromDate = new Date(Date.now() - 7 * 86400000); // 7 days ago (Date object)
-const fromDateIso = fromDate.toISOString().slice(0, 10); // YYYY-MM-DD for lexicographic comparison
+const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10); // YYYY-MM-DD
 const partyCode = 'S'; // e.g. S, M, SD, V, MP, C, L, KD
-// 1. Get motions filed by party, filter by date
+// 1. Get motions filed by party, filter by date using ISO-string comparison
 const allMotions = await get_motioner({ rm: currentRm });
-const motions = allMotions.filter(m => new Date(m.inlämnad || m.datum) >= fromDate);
+const motions = allMotions.filter(m => (m.inlämnad || m.datum || '').slice(0, 10) >= fromDateIso);
 // 2. Get party voting patterns, filter by date
 const allVotes = await search_voteringar({ parti: partyCode, rm: currentRm });
-const votes = allVotes.filter(v => new Date(v.datum) >= fromDate);
-// 1. Get recent committee reports
-const betankanden = await get_betankanden({ rm: currentRm, limit: 20 });
-const recentBet = betankanden.filter(b => (b.publicerad || '').slice(0, 10) >= fromDateIso);
-
-// 2. For each report, get full details
-const reportDetails = recentBet.map(bet =>
-  get_dokument({ dok_id: bet.dok_id, include_full_text: false })
-);
-
-// 3. Check related votes
-const relatedVotes = search_voteringar({ rm: currentRm, limit: 50 })
-  .filter(v => recentBet.some(bet => v.bet === bet.beteckning));
+const votes = allVotes.filter(v => (v.datum || '').slice(0, 10) >= fromDateIso);
 ```
 
 **Example 2: Government Activity Analysis**
 ```javascript
 // 1. Get government documents in date range
-const govDocs = search_regering({ dateFrom: fromDate, dateTo: today, limit: 30 });
+const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
+const today = new Date().toISOString().slice(0, 10);
+const govDocs = await search_regering({ dateFrom: fromDateIso, dateTo: today, limit: 30 });
 
 // 2. Get related propositions
-const propositions = get_propositioner({ rm: currentRm, limit: 20 })
-  .filter(p => (p.publicerad || '').slice(0, 10) >= fromDate);
+const propositions = (await get_propositioner({ rm: currentRm, limit: 20 }))
+  .filter(p => (p.publicerad || '').slice(0, 10) >= fromDateIso);
 ```
 
 **Example 3: Party Behavior Analysis**
 ```javascript
 // 1. Get party voting records
-const votes = search_voteringar({ rm: currentRm, limit: 100 })
-  .filter(v => (v.datum || '').slice(0, 10) >= fromDate);
+const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
+const votes = (await search_voteringar({ rm: currentRm, limit: 100 }))
+  .filter(v => (v.datum || '').slice(0, 10) >= fromDateIso);
 
 // 2. Get party speeches
-const speeches = search_anforanden({ rm: currentRm, limit: 100 })
-  .filter(a => (a.datum || '').slice(0, 10) >= fromDate);
+const speeches = (await search_anforanden({ rm: currentRm, limit: 100 }))
+  .filter(a => (a.datum || '').slice(0, 10) >= fromDateIso);
 ```
 
 **Detailed Example: Committee Report Deep Dive**

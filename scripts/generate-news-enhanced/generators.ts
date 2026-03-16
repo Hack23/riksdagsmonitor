@@ -1117,124 +1117,18 @@ function effectiveType(d: RawDocument): string {
 
 /**
  * Build SWOT and dashboard TemplateSections for a deep-inspection article.
- * Uses buildMultiStakeholderSwot() to derive 4–9 stakeholder perspectives
+ * Uses buildAISwotStakeholders() to derive 6 stakeholder perspectives
  * from document metadata (types, titles, document IDs as evidence).
- * Returns TemplateSection[] ready for
- * generateArticleHTML.sections.
+ * Returns TemplateSection[] ready for generateArticleHTML.sections.
  */
-async function buildDeepInspectionSections(
+function buildDeepInspectionSections(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,
   aiResult?: import('./ai-analysis-pipeline.js').AIAnalysisResult,
-): Promise<TemplateSection[]> {
+): TemplateSection[] {
   if (docs.length === 0) return [];
 
-  // Lazy-import swot-analyzer to avoid loading its large localization maps
-  // when generators.ts is used for non-deep-inspection article types.
-  const { buildMultiStakeholderSwot, STAKEHOLDER_NAMES } = await import('./swot-analyzer.js');
-
-  // Precompute effectiveType() once per document to avoid repeated string checks.
-  const docTypes = docs.map(d => effectiveType(d));
-
-  // Classify by document type (needed for dashboard / sankey regardless of AI)
-  const propDocs   = docs.filter((_, i) => docTypes[i] === 'prop');
-  const betDocs    = docs.filter((_, i) => docTypes[i] === 'bet');
-  const motDocs    = docs.filter((_, i) => docTypes[i] === 'mot');
-  const skrDocs    = docs.filter((_, i) => docTypes[i] === 'skr');
-  const sfsDocs    = docs.filter((_, i) => docTypes[i] === 'sfs');
-  const euDocs     = docs.filter((_, i) => docTypes[i] === 'fpm' || docTypes[i] === 'eu');
-  const pressmDocs = docs.filter((_, i) => docTypes[i] === 'pressm');
-  const extDocs    = docs.filter((_, i) => docTypes[i] === 'ext');
-  const otherDocs  = docs.filter((_, i) =>
-    !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext'].includes(docTypes[i]));
-
-  // ── SWOT entries — from AI pipeline when available, else SWOT_DEFAULTS ─────
-  let govStrengths: SwotEntry[];
-  let govWeaknesses: SwotEntry[];
-  let govOpportunities: SwotEntry[];
-  let govThreats: SwotEntry[];
-  let oppStrengths: SwotEntry[];
-  let oppWeaknesses: SwotEntry[];
-  let oppOpportunities: SwotEntry[];
-  let oppThreats: SwotEntry[];
-  let privateStrengths: SwotEntry[];
-  let privateWeaknesses: SwotEntry[];
-  let privateOpportunities: SwotEntry[];
-  let privateThreats: SwotEntry[];
-
-  if (aiResult) {
-    // Use AI-pipeline generated SWOT entries (context-aware, all 14 languages)
-    ({ strengths: govStrengths, weaknesses: govWeaknesses,
-       opportunities: govOpportunities, threats: govThreats } = aiResult.dynamicSwotEntries.government);
-    ({ strengths: oppStrengths, weaknesses: oppWeaknesses,
-       opportunities: oppOpportunities, threats: oppThreats } = aiResult.dynamicSwotEntries.opposition);
-    ({ strengths: privateStrengths, weaknesses: privateWeaknesses,
-       opportunities: privateOpportunities, threats: privateThreats } = aiResult.dynamicSwotEntries.privateSector);
-  } else {
-    // Legacy path: derive from document metadata + SWOT_DEFAULTS fallbacks
-    const titleOf = (d: RawDocument): string =>
-      (d.titel || d.title || d.dokumentnamn || d.dok_id || '').slice(0, 80);
-    const toEntry = (d: RawDocument, impact: 'high' | 'medium' | 'low' = 'medium'): SwotEntry => ({
-      text: titleOf(d), impact,
-    });
-
-    govStrengths = [
-      ...propDocs.slice(0, 3).map(d => toEntry(d, 'high')),
-      ...sfsDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-      ...skrDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
-      ...pressmDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-    ];
-    govWeaknesses = [...betDocs.slice(0, 2).map(d => toEntry(d, 'medium'))];
-    govOpportunities = [
-      ...euDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-      ...skrDocs.slice(1, 2).map(d => toEntry(d, 'medium')),
-    ];
-    govThreats = [...motDocs.slice(0, 2).map(d => toEntry(d, 'medium'))];
-
-    if (govStrengths.length === 0) govStrengths.push({ text: swotDefault('govStrength', topic, lang), impact: 'medium' });
-    if (govWeaknesses.length === 0) govWeaknesses.push({ text: swotDefault('govWeakness', topic, lang), impact: 'medium' });
-    if (govOpportunities.length === 0) govOpportunities.push({ text: swotDefault('govOpportunity', topic, lang), impact: 'high' });
-    if (govThreats.length === 0) govThreats.push({ text: swotDefault('govThreat', topic, lang), impact: 'medium' });
-
-    oppStrengths = [
-      ...betDocs.slice(0, 3).map(d => toEntry(d, 'high')),
-      ...motDocs.slice(0, 2).map(d => toEntry(d, 'medium')),
-    ];
-    oppWeaknesses = [];
-    oppOpportunities = [];
-    oppThreats = [...propDocs.slice(0, 1).map(d => toEntry(d, 'medium'))];
-
-    if (oppStrengths.length === 0) oppStrengths.push({ text: swotDefault('oppStrength', topic, lang), impact: 'high' });
-    if (oppWeaknesses.length === 0) oppWeaknesses.push({ text: swotDefault('oppWeakness', topic, lang), impact: 'medium' });
-    if (oppOpportunities.length === 0) oppOpportunities.push({ text: swotDefault('oppOpportunity', topic, lang), impact: 'high' });
-    if (oppThreats.length === 0) oppThreats.push({ text: swotDefault('oppThreat', topic, lang), impact: 'medium' });
-
-    privateStrengths = [
-      { text: swotDefault('privateStrength', topic, lang), impact: 'high' },
-      ...sfsDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
-      ...extDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-    ];
-    privateWeaknesses = [
-      { text: swotDefault('privateWeakness1', topic, lang), impact: 'medium' },
-      { text: swotDefault('privateWeakness2', topic, lang), impact: 'medium' },
-    ];
-    privateOpportunities = [
-      { text: swotDefault('privateOpportunity', topic, lang), impact: 'high' },
-      ...euDocs.slice(0, 1).map(d => toEntry(d, 'high')),
-    ];
-    privateThreats = [
-      { text: swotDefault('privateThreat1', topic, lang), impact: 'high' },
-      { text: swotDefault('privateThreat2', topic, lang), impact: 'medium' },
-    ];
-  }
-
-  // Build 4–9 stakeholder SWOT analyses from document metadata
-  const stakeholders = buildMultiStakeholderSwot(docs, lang);
-
-  // Derive localised names for the mindmap / sankey from the STAKEHOLDER_NAMES map
-  const govName     = STAKEHOLDER_NAMES.government[lang]     ?? STAKEHOLDER_NAMES.government.en     ?? 'Government Coalition';
-  const oppName     = STAKEHOLDER_NAMES.opposition[lang]     ?? STAKEHOLDER_NAMES.opposition.en     ?? 'Opposition Parties';
   // Single-pass classification: bucket docs by effectiveType() to avoid N×filter passes.
   // EU docs use both 'fpm' and 'eu' raw types; effectiveType() preserves the raw value,
   // so we merge both into the euDocs bucket below.
@@ -1330,55 +1224,6 @@ async function buildDeepInspectionSections(
       .forEach(dom => allDetectedDomains.add(dom));
   }
   const detectedDomainList = [...allDetectedDomains].filter(Boolean).slice(0, 8);
-
-  const mindmapBranches: MindmapBranch[] = [];
-
-  // Document type branch — use localized names
-  if (rawTypeKeys.length > 0) {
-    mindmapBranches.push({
-      label: deepLabel('documentTypes', lang),
-      color: 'cyan',
-      icon: '📄',
-      items: rawTypeKeys.map((t, i) => `${docTypeLabel(t, lang, chartValues[i])} (${chartValues[i] ?? 0})`),
-    });
-  }
-
-  // Policy domain branch
-  if (detectedDomainList.length > 0) {
-    mindmapBranches.push({
-      label: deepLabel('policyDomains', lang),
-      color: 'green',
-      icon: '🏛️',
-      items: detectedDomainList,
-    });
-  }
-
-  // Stakeholder branch — list all analysed stakeholders (up to 9)
-  mindmapBranches.push({
-    label: deepLabel('stakeholders', lang),
-    color: 'yellow',
-    icon: '👥',
-    items: stakeholders.map(s => s.name),
-  });
-
-  // Data context branch
-  mindmapBranches.push({
-    label: dataSourceBranchLabels[lang] ?? dataSourceBranchLabels.en!,
-    color: 'purple',
-    icon: '📊',
-    items: dataSourceItems[lang] ?? dataSourceItems.en!,
-  });
-
-  const mindmapSection = generateMindmapSection({
-    topic: topic || 'Parliamentary Analysis',
-    branches: mindmapBranches,
-    lang,
-    summary: topic
-      ? `Conceptual map for deep inspection: ${topic}`
-      : `Conceptual map for ${docs.length} parliamentary documents`,
-  });
-  const detectedDomainList = [...allDetectedDomains].slice(0, 6);
-  const detectedDomainList = [...allDetectedDomains].slice(0, 8);
 
   // Pass precomputed domains to avoid iterating docs twice
   const aiAnalysis = buildAIMindmapAnalysis(docs, topic, lang, detectedDomainList);
@@ -1732,7 +1577,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       const sources: string[] = generateSources(sourceMethods);
 
       // SWOT + dashboard sections — AI-generated dynamic entries (context-aware, all 14 languages)
-      const sections = await buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang, aiResult);
+      const sections = buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang, aiResult);
 
       const langTitles: TitleSet = titles[lang] || titles.en;
 
