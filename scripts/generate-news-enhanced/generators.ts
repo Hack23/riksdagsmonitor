@@ -37,7 +37,11 @@ import { MCPClient } from '../mcp-client.js';
 import type { Language } from '../types/language.js';
 import type { GenerationResult, DateRange, ArticleCategory, TemplateSection } from '../types/article.js';
 import type { TitleSet } from './types.js';
-import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic, analysisIterations } from './config.js';
+import fs from 'node:fs';
+import path from 'node:path';
+import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic, analysisDepth, analysisIterations, METADATA_DIR } from './config.js';
+import { runAnalysisPipeline } from '../ai-analysis/pipeline.js';
+import type { AnalysisIterationMetadata, AnalysisDepth } from '../ai-analysis/types.js';
 import {
   getWeekAheadDateRange,
   formatDateForSlug,
@@ -755,6 +759,88 @@ const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, stri
     nl: 'Belanghebbenden', ar: 'أصحاب المصلحة', he: 'בעלי עניין',
     ja: 'ステークホルダー', ko: '이해관계자', zh: '利益相关者',
   },
+  executiveSummary: {
+    en: 'Executive Intelligence Summary',
+    sv: 'Sammanfattning för beslutsfattare',
+    da: 'Ledelsesinformation',
+    no: 'Lederinformasjon',
+    fi: 'Johdon yhteenveto',
+    de: 'Führungszusammenfassung',
+    fr: 'Résumé pour décideurs',
+    es: 'Resumen ejecutivo de inteligencia',
+    nl: 'Managementsamenvatting',
+    ar: 'ملخص الاستخبارات التنفيذية',
+    he: 'סיכום מודיעין מנהלים',
+    ja: 'エグゼクティブ・インテリジェンス要約',
+    ko: '경영진 인텔리전스 요약',
+    zh: '执行情报摘要',
+  },
+  predictiveAssessment: {
+    en: 'Predictive Assessment',
+    sv: 'Prediktiv bedömning',
+    da: 'Prædiktiv vurdering',
+    no: 'Prediktiv vurdering',
+    fi: 'Ennakoiva arviointi',
+    de: 'Prädiktive Bewertung',
+    fr: 'Évaluation prédictive',
+    es: 'Evaluación predictiva',
+    nl: 'Voorspellende beoordeling',
+    ar: 'التقييم التنبؤي',
+    he: 'הערכה חיזויית',
+    ja: '予測評価',
+    ko: '예측 평가',
+    zh: '预测性评估',
+  },
+  historicalContext: {
+    en: 'Historical Context & Precedents',
+    sv: 'Historisk kontext och prejudikat',
+    da: 'Historisk kontekst og præcedenser',
+    no: 'Historisk kontekst og presedens',
+    fi: 'Historiallinen konteksti ja ennakkotapaukset',
+    de: 'Historischer Kontext und Präzedenzfälle',
+    fr: 'Contexte historique et précédents',
+    es: 'Contexto histórico y precedentes',
+    nl: 'Historische context en precedenten',
+    ar: 'السياق التاريخي والسوابق',
+    he: 'הקשר היסטורי ותקדימים',
+    ja: '歴史的背景と先例',
+    ko: '역사적 맥락 및 선례',
+    zh: '历史背景与先例',
+  },
+  methodology: {
+    en: 'Methodology & Confidence',
+    sv: 'Metodik och konfidensgrad',
+    da: 'Metodologi og konfidens',
+    no: 'Metodologi og konfidens',
+    fi: 'Menetelmä ja luottamustaso',
+    de: 'Methodik und Konfidenz',
+    fr: 'Méthodologie et confiance',
+    es: 'Metodología y confianza',
+    nl: 'Methodologie en betrouwbaarheid',
+    ar: 'المنهجية ودرجة الثقة',
+    he: 'מתודולוגיה ורמת ביטחון',
+    ja: '方法論と信頼度',
+    ko: '방법론 및 신뢰도',
+    zh: '方法论与置信度',
+  },
+  likelyOutcome: {
+    en: 'Likely Outcome', sv: 'Troligt utfall', da: 'Sandsynligt udfald', no: 'Sannsynlig utfall',
+    fi: 'Todennäköinen lopputulos', de: 'Wahrscheinliches Ergebnis', fr: 'Résultat probable', es: 'Resultado probable',
+    nl: 'Waarschijnlijk resultaat', ar: 'النتيجة المحتملة', he: 'תוצאה סבירה',
+    ja: '見込まれる結果', ko: '예상 결과', zh: '可能结果',
+  },
+  coalitionStability: {
+    en: 'Coalition Stability Forecast', sv: 'Koalitionsstabilitetsprognos', da: 'Koalitionsstabilitetsprognose', no: 'Koalisjonstabilitetsprognose',
+    fi: 'Koalition vakausennuste', de: 'Koalitionsstabilitätsprognose', fr: 'Prévision de stabilité de coalition', es: 'Pronóstico de estabilidad de coalición',
+    nl: 'Coalitiesstabiliteitsprognose', ar: 'توقعات استقرار الائتلاف', he: 'תחזית יציבות קואליציה',
+    ja: '連立安定性予測', ko: '연립 안정성 예측', zh: '联合稳定性预测',
+  },
+  riskScenarios: {
+    en: 'Risk Scenarios', sv: 'Riskscenarier', da: 'Risikoscenarier', no: 'Risikoscenarier',
+    fi: 'Riskiskenaariot', de: 'Risikoszenarien', fr: 'Scénarios de risque', es: 'Escenarios de riesgo',
+    nl: "Risicoscenario's", ar: 'سيناريوهات المخاطر', he: 'תרחישי סיכון',
+    ja: 'リスクシナリオ', ko: '위험 시나리오', zh: '风险情景',
+  },
   parliamentaryAnalysis: {
     en: 'Parliamentary Analysis', sv: 'Riksdagsanalys', da: 'Parlamentarisk analyse', no: 'Parlamentarisk analyse',
     fi: 'Parlamentaarinen analyysi', de: 'Parlamentarische Analyse', fr: 'Analyse parlementaire', es: 'Análisis parlamentario',
@@ -780,6 +866,11 @@ function deepLabel(key: string, lang: Language): string {
   return (map?.[lang]) ?? (map?.en ?? key);
 }
 
+/** Checks whether a document represents an SFS (enacted statute). Delegates to {@link effectiveType}. */
+function isSfsDoc(d: RawDocument): boolean {
+  return effectiveType(d) === 'sfs';
+}
+
 function docTypeLabel(doktyp: string, lang: Language, count?: number): string {
   return localizeDocType(doktyp, lang, count);
 }
@@ -788,6 +879,12 @@ function docTypeLabel(doktyp: string, lang: Language, count?: number): string {
  * Generate topic-focused, comprehensive deep-inspection article content.
  * All sections are explicitly oriented around `topic`. Uses enriched full-text
  * content from each document and the 5W deep-analysis framework.
+ *
+ * @param depth - Analysis depth (1–4). Higher depth adds more intelligence sections:
+ *   1 = Topic Context + Document Intelligence + 5W Deep Analysis + Strategic Implications + Key Takeaways
+ *   2 = depth 1 + Historical Context + Predictive Assessment
+ *   3 = depth 2 + Executive Intelligence Summary + Methodology (3 iterations)
+ *   4 = depth 3 + quality-review iteration in Methodology (4 iterations)
  * When an AIAnalysisResult is supplied, its strategic implications and key
  * takeaways replace the template-based versions for richer, context-aware output.
  */
@@ -795,10 +892,16 @@ function generateDeepInspectionContent(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,
+  depth: 1 | 2 | 3 | 4 = 1,
   aiResult?: import('./ai-analysis-pipeline.js').AIAnalysisResult,
 ): string {
   const esc = escapeHtml;
   let html = '';
+
+  // ── 0. Executive Intelligence Summary (depth ≥ 3) ────────────────────────
+  if (depth >= 3) {
+    html += buildExecutiveSummary(docs, topic, lang);
+  }
 
   // ── 1. Topic Context ───────────────────────────────────────────────────────
   const topicHeading = deepLabel('topicContext', lang);
@@ -843,7 +946,17 @@ function generateDeepInspectionContent(
   html += `  ${strategicImplHtml}\n`;
   html += `</section>\n`;
 
-  // ── 5. Key takeaways ───────────────────────────────────────────────────────
+  // ── 5. Historical Context (depth ≥ 2) ─────────────────────────────────────
+  if (depth >= 2) {
+    html += buildHistoricalContext(docs, topic, lang);
+  }
+
+  // ── 6. Predictive Assessment (depth ≥ 2) ──────────────────────────────────
+  if (depth >= 2) {
+    html += buildPredictiveAssessment(docs, topic, lang);
+  }
+
+  // ── 7. Key takeaways ───────────────────────────────────────────────────────
   const takeawayHeading = deepLabel('keyTakeaways', lang);
   html += `\n<section class="key-takeaways" aria-label="${esc(takeawayHeading)}">\n`;
   html += `  <h2>${esc(takeawayHeading)}</h2>\n`;
@@ -859,8 +972,38 @@ function generateDeepInspectionContent(
   }
   html += `</section>\n`;
 
+  // ── 8. Methodology & Confidence (depth ≥ 3) ───────────────────────────────
+  if (depth >= 3) {
+    html += buildMethodologySection(docs, topic, lang, depth);
+  }
+
   return html;
 }
+
+function mapReportDepthToPipelineDepth(depth: 1 | 2 | 3 | 4): AnalysisDepth {
+  if (depth <= 1) return 'quick';
+  if (depth === 2) return 'standard';
+  return 'deep';
+}
+
+function writeAnalysisMetadata(slug: string, metadata: AnalysisIterationMetadata): void {
+  try {
+    fs.mkdirSync(METADATA_DIR, { recursive: true });
+    const filePath = path.join(METADATA_DIR, `ai-analysis-${slug}-${metadata.lang}.json`);
+    fs.writeFileSync(filePath, JSON.stringify(metadata, null, 2), 'utf8');
+  } catch (error) {
+    console.warn(`⚠️ Failed to write analysis metadata for ${slug}/${metadata.lang}:`, error);
+  }
+}
+
+/**
+ * Test-only hooks for deep-inspection content generation.
+ * Exported to support behavioral tests without source inspection.
+ * @internal
+ */
+export const __deepInspectionTestHooks = {
+  generateDeepInspectionContent,
+};
 
 /** Build the topic context introductory paragraph. */
 function buildTopicContextParagraph(docs: RawDocument[], topic: string | null, lang: Language): string {
@@ -1018,9 +1161,18 @@ function buildStrategicImplications(docs: RawDocument[], topic: string | null, l
   const templates: Partial<Record<Language, string>> = {
     en: enText,
     sv: svText,
+    da: `Baseret på analyse af ${docs.length} dokument${docs.length !== 1 ? 'er' : ''} (${enrichedCount} beriget med fulde tekster)${topic ? ` specifikt om <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `Den lovgivningsmæssige aktivitet viser ${propCount} regeringsforslag, ${betCount} udvalgsrapport${betCount !== 1 ? 'er' : ''} og ${motCount} oppositionsforslag.` : 'Analysen giver et øjebliksbillede af den aktuelle politiske retning.'}`,
+    no: `Basert på analyse av ${docs.length} dokument${docs.length !== 1 ? 'er' : ''} (${enrichedCount} beriket med fulltekst)${topic ? ` spesifikt om <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `Lovgivningsaktiviteten viser ${propCount} regjeringsforslag, ${betCount} komitérapport${betCount !== 1 ? 'er' : ''} og ${motCount} opposisjonsforslag.` : 'Analysen gir et øyeblikksbilde av den aktuelle politiske retningen.'}`,
+    fi: `Perustuen ${docs.length} asiakirjan analyysiin (${enrichedCount} rikastettu koko tekstillä)${topic ? ` koskien erityisesti <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `Lainsäädäntötoiminta osoittaa ${propCount} hallituksen esitystä, ${betCount} valiokunnan mietintöä ja ${motCount} oppositioaloitetta.` : 'Analyysi tarjoaa tilannekuvan nykyisestä poliittisesta suunnasta.'}`,
     de: `Basierend auf der Analyse von ${docs.length} Dokument${docs.length !== 1 ? 'en' : ''} (${enrichedCount} mit vollständigem Text angereichert)${topic ? ` speziell zu <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `Der Gesetzgebungsprozess zeigt ${propCount} Regierungsvorlage${propCount !== 1 ? 'n' : ''}, ${betCount} Ausschussbericht${betCount !== 1 ? 'e' : ''} und ${motCount} Oppositionsantrag${motCount !== 1 ? 'e' : ''}.` : 'Die Analyse bietet eine Momentaufnahme der aktuellen politischen Richtung.'}`,
     fr: `Basé sur l'analyse de ${docs.length} document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enrichi${enrichedCount !== 1 ? 's' : ''} avec le texte complet)${topic ? ` abordant spécifiquement <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `Le pipeline législatif montre ${propCount} proposition${propCount !== 1 ? 's' : ''} gouvernementale${propCount !== 1 ? 's' : ''}, ${betCount} rapport${betCount !== 1 ? 's' : ''} de commission et ${motCount} motion${motCount !== 1 ? 's' : ''} d'opposition.` : 'L\'analyse offre un aperçu de l\'orientation politique actuelle.'}`,
     es: `Basado en el análisis de ${docs.length} documento${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriquecido${enrichedCount !== 1 ? 's' : ''} con texto completo)${topic ? ` que abordan específicamente <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `La actividad legislativa muestra ${propCount} proposición${propCount !== 1 ? 'es' : ''} gubernamental${propCount !== 1 ? 'es' : ''}, ${betCount} informe${betCount !== 1 ? 's' : ''} de comité y ${motCount} moción${motCount !== 1 ? 'es' : ''} de oposición.` : 'El análisis proporciona una instantánea de la dirección política actual.'}`,
+    nl: `Gebaseerd op analyse van ${docs.length} document${docs.length !== 1 ? 'en' : ''} (${enrichedCount} verrijkt met volledige tekst)${topic ? ` specifiek over <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `De wetgevende activiteit toont ${propCount} regeringsvoorstel${propCount !== 1 ? 'len' : ''}, ${betCount} commissierapport${betCount !== 1 ? 'en' : ''} en ${motCount} oppositiemotie${motCount !== 1 ? 's' : ''}.` : 'De analyse biedt een momentopname van de huidige politieke richting.'}`,
+    ar: `استناداً إلى تحليل ${docs.length} وثيقة (${enrichedCount} مُعزَّزة بالنص الكامل)${topic ? ` تتناول تحديداً <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `يُظهر النشاط التشريعي ${propCount} مقترحاً حكومياً و${betCount} تقرير${betCount !== 1 ? 'اً' : ''} للجنة و${motCount} اقتراح${motCount !== 1 ? 'اً' : ''} معارضاً.` : 'يوفر التحليل لقطة للاتجاه السياسي الحالي.'}`,
+    he: `בהתבסס על ניתוח ${docs.length} מסמכ${docs.length !== 1 ? 'ים' : ''} (${enrichedCount} עם טקסט מלא)${topic ? ` המתמקדים ב<strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `הפעילות החקיקתית מראה ${propCount} הצעת חוק ממשלתית, ${betCount} דוח ועדה ו-${motCount} הצעת אופוזיציה.` : 'הניתוח מספק תמונת מצב של הכיוון הפוליטי הנוכחי.'}`,
+    ja: `${docs.length}件の文書分析（${enrichedCount}件は全文で強化）${topic ? `、<strong>${esc(topic)}</strong>に特化` : ''}に基づく: ${isLegislativeFocused ? `立法活動は${propCount}件の政府提案、${betCount}件の委員会報告、${motCount}件の野党動議を示しています。` : '分析は現在の政策方向のスナップショットを提供しています。'}`,
+    ko: `${docs.length}개 문서 분석(${enrichedCount}개 전문 보강)${topic ? `, <strong>${esc(topic)}</strong>에 집중` : ''}에 기반: ${isLegislativeFocused ? `입법 활동은 ${propCount}개 정부 제안, ${betCount}개 위원회 보고서, ${motCount}개 야당 발의안을 보여줍니다.` : '분석은 현재 정책 방향의 스냅샷을 제공합니다.'}`,
+    zh: `基于对${docs.length}份文件（${enrichedCount}份含全文）的分析${topic ? `，专注于<strong>${esc(topic)}</strong>` : ''}：${isLegislativeFocused ? `立法活动显示${propCount}项政府提案、${betCount}份委员会报告和${motCount}项反对党动议。` : '该分析提供了当前政策方向的快照。'}`,
   };
   const text = templates[lang] ?? templates.en ?? '';
   return `<p>${text}</p>`;
@@ -1099,6 +1251,422 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
   }
 
   return `<ul class="key-takeaways-list">\n${items.map(i => `  <li>${i}</li>`).join('\n')}\n</ul>\n`;
+}
+
+// ---------------------------------------------------------------------------
+// Multi-iteration deep-inspection intelligence section builders
+// ---------------------------------------------------------------------------
+
+/**
+ * Build a concise Executive Intelligence Summary.
+ * Synthesises document composition, policy domains, and legislative posture
+ * into a briefing paragraph for decision-makers.
+ * Iteration 1 + Iteration 2 outcome: "what happened & why it matters".
+ */
+function buildExecutiveSummary(docs: RawDocument[], topic: string | null, lang: Language): string {
+  const esc = escapeHtml;
+  const propCount = docs.filter(d => effectiveType(d) === 'prop').length;
+  const betCount  = docs.filter(d => effectiveType(d) === 'bet').length;
+  const motCount  = docs.filter(d => effectiveType(d) === 'mot').length;
+  const sfsDocs   = docs.filter(isSfsDoc);
+  const enriched  = docs.filter(d => d.contentFetched).length;
+  const allDomains = new Set<string>();
+  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
+  const domainList = [...allDomains].slice(0, 4);
+  const domainPhrase = domainList.map(d => esc(d)).join(', ');
+
+  // Determine legislative posture — neutral when no props/motions/bets/SFS exist
+  const hasEnactedLaw = sfsDocs.length > 0;
+  const noLegSignal = propCount + motCount + betCount === 0 && !hasEnactedLaw;
+  const govLed = noLegSignal ? null : propCount > motCount;
+  const highScrutiny = betCount > 0;
+
+  const templates: Partial<Record<Language, string>> = {
+    en: (() => {
+      const enPosture = govLed === null ? 'non-legislative' : govLed ? 'government-led' : 'opposition-driven';
+      const enClauses: string[] = [];
+      if (propCount > 0) enClauses.push(`${propCount} proposition${propCount !== 1 ? 's' : ''} advancing the executive agenda`);
+      if (betCount > 0) enClauses.push(`${betCount} committee report${betCount !== 1 ? 's' : ''} providing parliamentary scrutiny`);
+      if (motCount > 0) enClauses.push(`${motCount} opposition motion${motCount !== 1 ? 's' : ''} challenging the direction`);
+      const enClauseStr = enClauses.length > 0
+        ? `, with ${enClauses.length === 1 ? enClauses[0] : enClauses.slice(0, -1).join(', ') + ', and ' + enClauses[enClauses.length - 1]}`
+        : '';
+      return `This deep-inspection intelligence report analyses ${docs.length} parliamentary document${docs.length !== 1 ? 's' : ''}${topic ? ` on <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? `, spanning ${domainPhrase}` : ''}. Of these, ${enriched} ${enriched === 1 ? 'was' : 'were'} enriched with full text to enable substantive analysis. The legislative posture is ${enPosture}${enClauseStr}. ${hasEnactedLaw ? `${sfsDocs.length} statute${sfsDocs.length !== 1 ? 's' : ''} ${sfsDocs.length !== 1 ? 'have' : 'has'} already been enacted, establishing a legal baseline.` : highScrutiny ? 'Committee engagement indicates that the policy is under active parliamentary review, signalling that key decisions are imminent.' : 'The legislative pipeline remains at an early stage, requiring close monitoring for acceleration signals.'} ${domainPhrase ? `Policy domains engaged — ${domainPhrase} — reflect the cross-cutting nature of this initiative.` : 'The documents reflect focused policy engagement in this area.'} Decision-makers should prioritise tracking committee deliberations and chamber voting patterns as the most reliable forward indicators.`;
+    })(),
+    sv: (() => {
+      const svClauses: string[] = [];
+      if (propCount > 0) svClauses.push(`${propCount} proposition${propCount !== 1 ? 'er' : ''}`);
+      if (betCount > 0) svClauses.push(`${betCount} utskottsbetänkande${betCount !== 1 ? 'n' : ''} som ger parlamentarisk granskning`);
+      if (motCount > 0) svClauses.push(`${motCount} opposition${motCount !== 1 ? 'smotioner' : 'smotion'} som ifrågasätter inriktningen`);
+      const svPosture = govLed === null ? 'icke-lagstiftningsmässigt' : govLed ? 'regeringsdrivet' : 'oppositionsdrivet';
+      const svClauseStr = svClauses.length > 0
+        ? (svClauses.length > 1
+          ? ' med ' + svClauses.slice(0, -1).join(', ') + ' och ' + svClauses[svClauses.length - 1]
+          : ' med ' + svClauses[0])
+        : '';
+      return `Denna djupanalys granskar ${docs.length} riksdagsdokument${topic ? ` rörande <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? ` inom ${domainPhrase}` : ''}. Av dessa berikades ${enriched} med fulltext. Det lagstiftande läget är ${svPosture}${svClauseStr}. ${hasEnactedLaw ? `${sfsDocs.length} lag${sfsDocs.length !== 1 ? 'ar' : ''} har redan antagits och fastställt ett rättsligt ramverk.` : highScrutiny ? 'Utskottsengagemanget visar att policyn är under aktiv parlamentarisk granskning.' : 'Lagstiftningspipelinen befinner sig i ett tidigt skede.'} Beslutsfattare bör prioritera att följa utskottens arbete och omröstningar i kammaren.`;
+    })(),
+    da: (() => {
+      const daClauses: string[] = [];
+      if (propCount > 0) daClauses.push(`${propCount} forslag`);
+      if (betCount > 0) daClauses.push(`${betCount} udvalgsrapport${betCount !== 1 ? 'er' : ''}`);
+      const daClauseStr = daClauses.length > 0 ? ` med ${daClauses.join(' og ')}` : '';
+      return `Denne dybdeanalyse undersøger ${docs.length} parlamentariske dokumenter${topic ? ` om <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? ` inden for ${domainPhrase}` : ''}. ${enriched} af disse er beriget med fulde tekster. Den lovgivningsmæssige holdning er ${govLed === null ? 'ikke-lovgivningsmæssig' : govLed ? 'regeringsdrevet' : 'oppositionsdrevet'}${daClauseStr}. Beslutningstagere bør følge udvalgsdrøftelser og afstemninger.`;
+    })(),
+    no: (() => {
+      const noClauses: string[] = [];
+      if (propCount > 0) noClauses.push(`${propCount} forslag`);
+      if (betCount > 0) noClauses.push(`${betCount} komitérapport${betCount !== 1 ? 'er' : ''}`);
+      const noClauseStr = noClauses.length > 0 ? ` med ${noClauses.join(' og ')}` : '';
+      return `Denne dybdeanalysen undersøker ${docs.length} parlamentariske dokumenter${topic ? ` om <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? ` innen ${domainPhrase}` : ''}. ${enriched} av disse er beriket med fulltekst. Den lovgivningsmessige posisjonen er ${govLed === null ? 'ikke-lovgivningsmessig' : govLed ? 'regjeringsledet' : 'opposisjonsdrevet'}${noClauseStr}. Beslutningstakere bør følge komitéforhandlinger og voteringsmønstre.`;
+    })(),
+    fi: (() => {
+      const fiClauses: string[] = [];
+      if (propCount > 0) fiClauses.push(`${propCount} esitystä`);
+      if (betCount > 0) fiClauses.push(`${betCount} valiokunnan mietintöä`);
+      const fiClauseStr = fiClauses.length > 0 ? ` — ${fiClauses.join(' ja ')}` : '';
+      return `Tämä syväanalyysi tutkii ${docs.length} parlamentaarista asiakirjaa${topic ? ` aiheesta <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? ` alueilla ${domainPhrase}` : ''}. Näistä ${enriched} rikastettiin koko tekstillä. Lainsäädäntöasenne on ${govLed === null ? 'ei-lainsäädännöllinen' : govLed ? 'hallitusvetoinen' : 'oppositiovetoinen'}${fiClauseStr}. Päätöksentekijöiden tulisi seurata valiokuntien harkintaa ja äänestyksiä.`;
+    })(),
+    de: `Dieser Tiefenanalysebericht untersucht ${docs.length} Parlamentsdokument${docs.length !== 1 ? 'e' : ''}${topic ? ` zu <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? ` in den Bereichen ${domainPhrase}` : ''}. Davon wurden ${enriched} mit vollständigem Text angereichert. Die gesetzgeberische Haltung ist ${govLed === null ? 'nicht-gesetzgeberisch' : govLed ? 'regierungsgeführt' : 'oppositionsgetrieben'}${propCount > 0 ? ` mit ${propCount} Regierungsvorlage${propCount !== 1 ? 'n' : ''}` : ''}${betCount > 0 ? `${propCount > 0 ? ' und' : ' mit'} ${betCount} Ausschussbericht${betCount !== 1 ? 'en' : ''}` : ''}. Entscheidungsträger sollten Ausschussberatungen und Abstimmungsmuster verfolgen.`,
+    fr: `Ce rapport d'analyse approfondie examine ${docs.length} document${docs.length !== 1 ? 's' : ''} parlementaire${docs.length !== 1 ? 's' : ''}${topic ? ` sur <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? `, couvrant ${domainPhrase}` : ''}. Parmi ceux-ci, ${enriched} ont été enrichis avec le texte complet. La posture législative est ${govLed === null ? 'non législative' : govLed ? 'gouvernementale' : "portée par l'opposition"}${propCount > 0 ? ` avec ${propCount} proposition${propCount !== 1 ? 's' : ''}` : ''}${betCount > 0 ? `${propCount > 0 ? ' et' : ' avec'} ${betCount} rapport${betCount !== 1 ? 's' : ''} de commission` : ''}. Les décideurs devraient suivre les délibérations des commissions et les votes.`,
+    es: `Este informe de análisis profundo examina ${docs.length} documento${docs.length !== 1 ? 's' : ''} parlamentario${docs.length !== 1 ? 's' : ''}${topic ? ` sobre <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? `, abarcando ${domainPhrase}` : ''}. De estos, ${enriched} fueron enriquecidos con texto completo. La postura legislativa es ${govLed === null ? 'no legislativa' : govLed ? 'liderada por el gobierno' : 'impulsada por la oposición'}${propCount > 0 ? ` con ${propCount} proposición${propCount !== 1 ? 'es' : ''}` : ''}${betCount > 0 ? `${propCount > 0 ? ' y' : ' con'} ${betCount} informe${betCount !== 1 ? 's' : ''} de comité` : ''}. Los tomadores de decisiones deben seguir las deliberaciones del comité y los patrones de votación.`,
+    nl: `Dit diepgaand analyserapport onderzoekt ${docs.length} parlementair${docs.length !== 1 ? 'e' : ''} document${docs.length !== 1 ? 'en' : ''}${topic ? ` over <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? `, gericht op ${domainPhrase}` : ''}. Hiervan werden ${enriched} verrijkt met volledige tekst. De wetgevende houding is ${govLed === null ? 'niet-wetgevend' : govLed ? 'regeringsgeleid' : 'oppositiegedreven'}${propCount > 0 ? ` met ${propCount} voorstel${propCount !== 1 ? 'len' : ''}` : ''}${betCount > 0 ? `${propCount > 0 ? ' en' : ' met'} ${betCount} commissierapport${betCount !== 1 ? 'en' : ''}` : ''}. Beslissers moeten commissiedeliberaties en stempatronen volgen.`,
+    ar: `يحلل تقرير التحليل المعمق هذا ${docs.length} وثيقة برلمانية${topic ? ` حول <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? ` في مجالات ${domainPhrase}` : ''}. منها ${enriched} مُعزَّزة بالنص الكامل. الموقف التشريعي ${govLed === null ? 'غير تشريعي' : govLed ? 'حكومي القيادة' : 'تقوده المعارضة'}${propCount > 0 ? ` مع ${propCount} مقترح${propCount !== 1 ? 'ات' : ''}` : ''}${betCount > 0 ? ` و${betCount} تقرير${betCount !== 1 ? 'ات' : ''} لجنة` : ''}. يجب على صانعي القرار متابعة مداولات اللجان وأنماط التصويت.`,
+    he: `דוח הניתוח המעמיק הזה בוחן ${docs.length} מסמך${docs.length !== 1 ? 'ים' : ''} פרלמנטר${docs.length !== 1 ? 'יים' : 'י'}${topic ? ` בנושא <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? ` בתחומי ${domainPhrase}` : ''}. מתוכם ${enriched} הועשרו בטקסט מלא. העמדה החקיקתית ${govLed === null ? 'לא-חקיקתית' : govLed ? 'בהנהגת הממשלה' : 'בהנהגת האופוזיציה'}${propCount > 0 ? ` עם ${propCount} הצעת חוק` : ''}${betCount > 0 ? ` ו-${betCount} דוח ועדה` : ''}. מקבלי ההחלטות צריכים לעקוב אחר דיוני הוועדות ודפוסי ההצבעה.`,
+    ja: (() => {
+      const jaClauses: string[] = [];
+      if (propCount > 0) jaClauses.push(`${propCount}件の提案`);
+      if (betCount > 0) jaClauses.push(`${betCount}件の委員会報告`);
+      const jaClauseStr = jaClauses.length > 0 ? `で、${jaClauses.join('と')}があります` : 'です';
+      return `この詳細分析レポートは${docs.length}件の議会文書${topic ? `（<strong>${esc(topic)}</strong>に関する）` : ''}${domainPhrase ? `（${domainPhrase}分野）` : ''}を分析します。${enriched}件は全文で強化されています。立法スタンスは${govLed === null ? '非立法的' : govLed ? '政府主導' : '野党主導'}${jaClauseStr}。意思決定者は委員会審議と投票パターンを追跡する必要があります。`;
+    })(),
+    ko: (() => {
+      const koClauses: string[] = [];
+      if (propCount > 0) koClauses.push(`${propCount}개 제안`);
+      if (betCount > 0) koClauses.push(`${betCount}개 위원회 보고서`);
+      const koClauseStr = koClauses.length > 0 ? `이며, ${koClauses.join('과 ')}가 있습니다` : '입니다';
+      return `이 심층 분석 보고서는 ${docs.length}개의 의회 문서${topic ? `（<strong>${esc(topic)}</strong> 관련）` : ''}${domainPhrase ? `（${domainPhrase} 분야）` : ''}를 분석합니다. 이 중 ${enriched}개는 전문으로 보강되었습니다. 입법 태도는 ${govLed === null ? '비입법적' : govLed ? '정부 주도' : '야당 주도'}${koClauseStr}. 의사결정자는 위원회 심의와 투표 패턴을 추적해야 합니다.`;
+    })(),
+    zh: `本深度分析报告分析了${docs.length}份议会文件${topic ? `（关于<strong>${esc(topic)}</strong>）` : ''}${domainPhrase ? `（涵盖${domainPhrase}）` : ''}。其中${enriched}份以全文强化。立法立场${govLed === null ? '为非立法性' : govLed ? '由政府主导' : '由反对党推动'}${propCount > 0 ? `，有${propCount}份提案` : ''}${betCount > 0 ? `${propCount > 0 ? '和' : '，有'}${betCount}份委员会报告` : ''}。决策者应追踪委员会审议和投票模式。`,
+  };
+
+  const heading = deepLabel('executiveSummary', lang);
+  const text = templates[lang] ?? templates.en ?? '';
+  return `\n<section class="executive-intelligence-summary" aria-label="${esc(heading)}">\n  <h2>${esc(heading)}</h2>\n  <p>${text}</p>\n</section>\n`;
+}
+
+/** Enrichment ratio threshold for HIGH confidence. */
+const CONFIDENCE_HIGH_THRESHOLD = 0.7;
+/** Enrichment ratio threshold for MEDIUM confidence. */
+const CONFIDENCE_MEDIUM_THRESHOLD = 0.3;
+/** Minimum document count for HIGH confidence. */
+const CONFIDENCE_MIN_DOCS_HIGH = 3;
+
+/**
+ * Derive a tri-state confidence level for the overall analysis based on
+ * document enrichment rate, document count, and SFS presence.
+ *
+ * @returns `'HIGH'` | `'MEDIUM'` | `'LOW'`
+ */
+function deriveConfidence(docs: RawDocument[]): 'HIGH' | 'MEDIUM' | 'LOW' {
+  if (docs.length === 0) return 'LOW';
+  const enriched = docs.filter(d => d.contentFetched).length;
+  const ratio = docs.length > 0 ? enriched / docs.length : 0;
+  const hasSfs = docs.some(isSfsDoc);
+  if (ratio >= CONFIDENCE_HIGH_THRESHOLD && docs.length >= CONFIDENCE_MIN_DOCS_HIGH) return 'HIGH';
+  if (ratio >= CONFIDENCE_MEDIUM_THRESHOLD || hasSfs) return 'MEDIUM';
+  return 'LOW';
+}
+
+/**
+ * Build a Predictive Assessment section with confidence percentages.
+ * Covers: likely legislative outcomes, coalition stability forecast, and
+ * risk scenarios (best / worst / most-likely).
+ * Iteration 3 output: "what happens next".
+ */
+
+/** Base passage probability when legislative environment is favourable. */
+const BASE_PASSAGE_PROBABILITY = 50;
+/** Maximum passage probability cap for any single analysis. */
+const MAX_PASSAGE_PROBABILITY = 90;
+/** Minimum passage probability floor (avoids 0%). */
+const MIN_PASSAGE_PROBABILITY = 20;
+/** Confidence points added per committee report (bet) — signals parliamentary alignment. */
+const COMMITTEE_REPORT_WEIGHT = 8;
+/** Confidence points added per enacted statute (sfs) — confirms legal framework exists. */
+const ENACTED_STATUTE_WEIGHT = 15;
+/** Confidence points deducted per opposition motion (mot) — signals resistance. */
+const OPPOSITION_MOTION_PENALTY = 5;
+
+function buildPredictiveAssessment(docs: RawDocument[], topic: string | null, lang: Language): string {
+  const esc = escapeHtml;
+  const propCount = docs.filter(d => effectiveType(d) === 'prop').length;
+  const betCount  = docs.filter(d => effectiveType(d) === 'bet').length;
+  const motCount  = docs.filter(d => effectiveType(d) === 'mot').length;
+  const sfsDocs   = docs.filter(isSfsDoc);
+  const confidence = deriveConfidence(docs);
+
+  // Passage likelihood heuristic: if committee reports exceed motions → likely passage
+  const passageLikely = betCount > motCount || sfsDocs.length > 0;
+  const passagePct = passageLikely
+    ? Math.min(MAX_PASSAGE_PROBABILITY, BASE_PASSAGE_PROBABILITY + betCount * COMMITTEE_REPORT_WEIGHT + sfsDocs.length * ENACTED_STATUTE_WEIGHT)
+    : Math.max(MIN_PASSAGE_PROBABILITY, BASE_PASSAGE_PROBABILITY - motCount * OPPOSITION_MOTION_PENALTY);
+  const blockPct = 100 - passagePct;
+
+  const topicFallback: Partial<Record<Language, string>> = {
+    en: 'this area', sv: 'detta område', da: 'dette område', no: 'dette området',
+    fi: 'tämä alue', de: 'diesem Bereich', fr: 'ce domaine', es: 'esta área',
+    nl: 'dit gebied', ar: 'هذا المجال', he: 'תחום זה',
+    ja: 'この分野', ko: '이 분야', zh: '该领域',
+  };
+  const topicStr = topic ? esc(topic) : (topicFallback[lang] ?? topicFallback.en!);
+
+  const headingPredictive = deepLabel('predictiveAssessment', lang);
+  const headingOutcome = deepLabel('likelyOutcome', lang);
+  const headingCoalition = deepLabel('coalitionStability', lang);
+  const headingRisk = deepLabel('riskScenarios', lang);
+
+  const sections: Partial<Record<Language, { outcome: string; coalition: string; scenarios: string }>> = {
+    en: {
+      outcome: `Based on document composition analysis, the probability of legislative passage for <strong>${topicStr}</strong> is estimated at <strong>${passagePct}%</strong>, with a ${blockPct}% probability of delay or amendment. ${propCount > 0 ? `${propCount} active proposition${propCount !== 1 ? 's' : ''} indicate committed government intent.` : ''} ${betCount > 0 ? `${betCount} committee report${betCount !== 1 ? 's' : ''} confirm parliamentary engagement.` : ''} ${sfsDocs.length > 0 ? 'Enacted statutes confirm legal framework establishment.' : ''}`,
+      coalition: `Coalition stability assessment: ${betCount > motCount ? 'High — committee activity suggests governing coalition alignment.' : motCount > betCount ? 'Moderate — active opposition motions signal coalition stress points.' : 'Moderate — balanced legislative activity indicates ongoing negotiation.'} Monitor subsequent committee votes as the primary coalition stability indicator. Overall analysis confidence: <strong>${confidence}</strong>.`,
+      scenarios: `<ul class="risk-scenarios"><li><strong>Best case (${passagePct}% probability):</strong> ${topicStr} legislation passes with cross-party support, entering implementation phase.</li><li><strong>Most likely case:</strong> ${betCount > 0 ? 'Committee scrutiny leads to amendments before final vote, delaying implementation by 3–6 months.' : 'Legislation proceeds through normal parliamentary cycle with minor modifications.'}</li><li><strong>Worst case (${blockPct}% probability):</strong> ${motCount > propCount ? 'Opposition motions gain traction, forcing significant policy revisions or deferral to next session.' : 'External developments or coalition disagreements cause unexpected delay or withdrawal.'}</li></ul>`,
+    },
+    sv: {
+      outcome: `Baserat på dokumentsammansättningsanalys uppskattas sannolikheten för lagstiftningspassage för <strong>${topicStr}</strong> till <strong>${passagePct}%</strong>, med ${blockPct}% sannolikhet för fördröjning eller ändring. ${propCount > 0 ? `${propCount} aktiv${propCount !== 1 ? 'a' : ''} proposition${propCount !== 1 ? 'er' : ''} visar regeringens engagemang.` : ''} Analyskonfidens: <strong>${confidence}</strong>.`,
+      coalition: `Koalitionsstabilitetsbedömning: ${betCount > motCount ? 'Hög — utskottsaktivitet tyder på koalitionsanpassning.' : motCount > betCount ? 'Måttlig — aktiva oppositionsmotioner signalerar stressmoment.' : 'Måttlig — balanserad aktivitet indikerar pågående förhandlingar.'}`,
+      scenarios: `<ul class="risk-scenarios"><li><strong>Bästa scenariot (${passagePct}% sannolikhet):</strong> Lagstiftning antas med bred parlamentarisk konsensus.</li><li><strong>Troligaste scenariot:</strong> Utskottsgranskning leder till ändringar innan slutomröstning, med 3–6 månaders försenad implementering.</li><li><strong>Sämsta scenariot (${blockPct}% sannolikhet):</strong> ${motCount > propCount ? 'Oppositionsinitiativ tvingar till väsentliga policyrevisioner.' : 'Externa omständigheter orsakar oväntad försening.'}</li></ul>`,
+    },
+    de: {
+      outcome: `Basierend auf der Dokumentzusammensetzung wird die Wahrscheinlichkeit einer gesetzlichen Verabschiedung für <strong>${topicStr}</strong> auf <strong>${passagePct}%</strong> geschätzt. Analysekonfidens: <strong>${confidence}</strong>.`,
+      coalition: `Koalitionsstabilitätsbewertung: ${betCount > motCount ? 'Hoch — Ausschussaktivität deutet auf Koalitionsausrichtung hin.' : 'Mittel — laufende Verhandlungen erforderlich.'}`,
+      scenarios: `<ul class="risk-scenarios"><li><strong>Bestes Szenario (${passagePct}%):</strong> Gesetze werden mit breitem Konsens verabschiedet.</li><li><strong>Wahrscheinlichstes Szenario:</strong> Ausschussprüfung führt zu Änderungen vor der Endabstimmung.</li><li><strong>Schlimmstes Szenario (${blockPct}%):</strong> Unerwartete Verzögerungen aufgrund externer Faktoren.</li></ul>`,
+    },
+    fr: {
+      outcome: `Sur la base de l'analyse de la composition des documents, la probabilité de passage législatif pour <strong>${topicStr}</strong> est estimée à <strong>${passagePct}%</strong>. Confiance d'analyse : <strong>${confidence}</strong>.`,
+      coalition: `Évaluation de la stabilité de coalition : ${betCount > motCount ? 'Élevée — l\'activité des commissions suggère un alignement de la coalition.' : 'Modérée — négociations en cours nécessaires.'}`,
+      scenarios: `<ul class="risk-scenarios"><li><strong>Meilleur cas (${passagePct}%) :</strong> La législation est adoptée avec un large consensus.</li><li><strong>Cas le plus probable :</strong> L'examen en commission entraîne des amendements avant le vote final.</li><li><strong>Pire cas (${blockPct}%) :</strong> Des retards inattendus dus à des facteurs externes.</li></ul>`,
+    },
+    es: {
+      outcome: `Con base en el análisis de composición de documentos, la probabilidad de aprobación legislativa para <strong>${topicStr}</strong> se estima en <strong>${passagePct}%</strong>. Confianza del análisis: <strong>${confidence}</strong>.`,
+      coalition: `Evaluación de estabilidad de coalición: ${betCount > motCount ? 'Alta — la actividad del comité sugiere alineación de la coalición.' : 'Moderada — se requieren negociaciones en curso.'}`,
+      scenarios: `<ul class="risk-scenarios"><li><strong>Mejor caso (${passagePct}%):</strong> La legislación se aprueba con amplio consenso.</li><li><strong>Caso más probable:</strong> El escrutinio del comité lleva a enmiendas antes de la votación final.</li><li><strong>Peor caso (${blockPct}%):</strong> Retrasos inesperados debidos a factores externos.</li></ul>`,
+    },
+    da: {
+      outcome: `Baseret på dokumentsammensætningsanalyse anslås sandsynligheden for lovgivningsmæssig vedtagelse for <strong>${topicStr}</strong> til <strong>${passagePct}%</strong>. Analysekonfidensgrad: <strong>${confidence}</strong>.`,
+      coalition: `Koalitionsstabilitetsvurdering: ${betCount > motCount ? 'Høj — udvalgsaktivitet tyder på koalitionssammensætning.' : 'Moderat — igangværende forhandlinger nødvendige.'}`,
+      scenarios: `<ul class="risk-scenarios"><li><strong>Bedste tilfælde (${passagePct}%):</strong> Lovgivning vedtages med bred konsensus.</li><li><strong>Sandsynligste tilfælde:</strong> Udvalgsgennemgang fører til ændringer.</li><li><strong>Værste tilfælde (${blockPct}%):</strong> Uventede forsinkelser.</li></ul>`,
+    },
+    no: {
+      outcome: `Basert på dokumentsammensetningsanalyse anslås sannsynligheten for lovgivningsmessig vedtak for <strong>${topicStr}</strong> til <strong>${passagePct}%</strong>. Analysekonfidens: <strong>${confidence}</strong>.`,
+      coalition: `Koalisjonstabilitetsvurdering: ${betCount > motCount ? 'Høy — komitéaktivitet tyder på koalisjonssamstemmighet.' : 'Moderat — pågående forhandlinger nødvendig.'}`,
+      scenarios: `<ul class="risk-scenarios"><li><strong>Beste tilfelle (${passagePct}%):</strong> Lovgivning vedtas med bred konsensus.</li><li><strong>Mest sannsynlig:</strong> Komitégjennomgang fører til endringer.</li><li><strong>Verste tilfelle (${blockPct}%):</strong> Uventede forsinkelser.</li></ul>`,
+    },
+    fi: {
+      outcome: `Asiakirjakoostumuksen analyysin perusteella lainsäädännön läpimenon todennäköisyys aiheessa <strong>${topicStr}</strong> arvioidaan <strong>${passagePct}%</strong>:ksi. Analyysin luottamustaso: <strong>${confidence}</strong>.`,
+      coalition: `Koalition vakausarvio: ${betCount > motCount ? 'Korkea — valiokuntien aktiivisuus viittaa koalition yhdenmukaisuuteen.' : 'Kohtalainen — käynnissä olevia neuvotteluja tarvitaan.'}`,
+      scenarios: `<ul class="risk-scenarios"><li><strong>Paras tapaus (${passagePct}%):</strong> Lainsäädäntö hyväksytään laajalla konsensuksella.</li><li><strong>Todennäköisin:</strong> Valiokuntatarkastus johtaa muutoksiin.</li><li><strong>Pahin tapaus (${blockPct}%):</strong> Odottamattomia viivästyksiä.</li></ul>`,
+    },
+    nl: {
+      outcome: `Op basis van documentsamenstelling wordt de kans op wetgevende doorgang voor <strong>${topicStr}</strong> geschat op <strong>${passagePct}%</strong>. Analysebetrouwbaarheid: <strong>${confidence}</strong>.`,
+      coalition: `Coalitiesstabiliteitsbeoordeling: ${betCount > motCount ? 'Hoog — commissieactiviteit suggereert coalitie-afstemming.' : 'Matig — lopende onderhandelingen vereist.'}`,
+      scenarios: `<ul class="risk-scenarios"><li><strong>Beste geval (${passagePct}%):</strong> Wetgeving aangenomen met brede consensus.</li><li><strong>Meest waarschijnlijk:</strong> Commissieonderzoek leidt tot wijzigingen.</li><li><strong>Slechtste geval (${blockPct}%):</strong> Onverwachte vertragingen.</li></ul>`,
+    },
+    ar: {
+      outcome: `استناداً إلى تحليل تكوين الوثائق، تُقدَّر احتمالية المرور التشريعي لـ<strong>${topicStr}</strong> بـ<strong>${passagePct}%</strong>. ثقة التحليل: <strong>${confidence}</strong>.`,
+      coalition: `تقييم استقرار الائتلاف: ${betCount > motCount ? 'مرتفع — نشاط اللجان يشير إلى توافق الائتلاف.' : 'متوسط — مفاوضات جارية مطلوبة.'}`,
+      scenarios: `<ul class="risk-scenarios"><li><strong>أفضل الأحوال (${passagePct}%):</strong> تُقرّ التشريعات بتوافق واسع.</li><li><strong>الحالة الأكثر احتمالاً:</strong> تؤدي مراجعة اللجان إلى تعديلات.</li><li><strong>أسوأ الأحوال (${blockPct}%):</strong> تأخيرات غير متوقعة.</li></ul>`,
+    },
+    he: {
+      outcome: `בהתבסס על ניתוח הרכב מסמכים, הסבירות למעבר חקיקתי עבור <strong>${topicStr}</strong> מוערכת ב-<strong>${passagePct}%</strong>. רמת ביטחון הניתוח: <strong>${confidence}</strong>.`,
+      coalition: `הערכת יציבות קואליציה: ${betCount > motCount ? 'גבוהה — פעילות ועדות מצביעה על יישור הקואליציה.' : 'בינונית — נדרשים משא ומתן מתמשך.'}`,
+      scenarios: `<ul class="risk-scenarios"><li><strong>התרחיש הטוב ביותר (${passagePct}%):</strong> חקיקה עוברת עם הסכמה רחבה.</li><li><strong>התרחיש הסביר ביותר:</strong> בדיקת ועדה מובילה לתיקונים.</li><li><strong>התרחיש הגרוע ביותר (${blockPct}%):</strong> עיכובים בלתי צפויים.</li></ul>`,
+    },
+    ja: {
+      outcome: `文書構成分析に基づき、<strong>${topicStr}</strong>の立法可決確率は<strong>${passagePct}%</strong>と推定されます。分析信頼度：<strong>${confidence}</strong>。`,
+      coalition: `連立安定性評価：${betCount > motCount ? '高 — 委員会活動は連立整合を示唆。' : '中 — 継続的な交渉が必要。'}`,
+      scenarios: `<ul class="risk-scenarios"><li><strong>最良シナリオ（${passagePct}%）：</strong>広範な合意で法案可決。</li><li><strong>最有力シナリオ：</strong>委員会審査による修正後に最終投票。</li><li><strong>最悪シナリオ（${blockPct}%）：</strong>予期せぬ遅延が発生。</li></ul>`,
+    },
+    ko: {
+      outcome: `문서 구성 분석에 기반하여, <strong>${topicStr}</strong>의 입법 통과 확률은 <strong>${passagePct}%</strong>로 추정됩니다. 분석 신뢰도: <strong>${confidence}</strong>.`,
+      coalition: `연립 안정성 평가: ${betCount > motCount ? '높음 — 위원회 활동이 연립 조정을 시사.' : '보통 — 지속적인 협상 필요.'}`,
+      scenarios: `<ul class="risk-scenarios"><li><strong>최선의 경우 (${passagePct}%):</strong> 광범위한 합의로 법안 통과.</li><li><strong>가장 유력한 경우:</strong> 위원회 심사로 인한 수정 후 최종 투표.</li><li><strong>최악의 경우 (${blockPct}%):</strong> 예상치 못한 지연.</li></ul>`,
+    },
+    zh: {
+      outcome: `基于文件构成分析，<strong>${topicStr}</strong>的立法通过概率估计为<strong>${passagePct}%</strong>。分析置信度：<strong>${confidence}</strong>。`,
+      coalition: `联合稳定性评估：${betCount > motCount ? '高 — 委员会活动表明联合一致性。' : '中等 — 需要持续谈判。'}`,
+      scenarios: `<ul class="risk-scenarios"><li><strong>最佳情景（${passagePct}%）：</strong>立法以广泛共识通过。</li><li><strong>最可能情景：</strong>委员会审查导致最终投票前进行修订。</li><li><strong>最坏情景（${blockPct}%）：</strong>出现意外延误。</li></ul>`,
+    },
+  };
+
+  const s = sections[lang] ?? sections.en!;
+  return [
+    `\n<section class="predictive-assessment" aria-label="${esc(headingPredictive)}">`,
+    `  <h2>${esc(headingPredictive)}</h2>`,
+    `  <h3>${esc(headingOutcome)}</h3>`,
+    `  <p>${s.outcome}</p>`,
+    `  <h3>${esc(headingCoalition)}</h3>`,
+    `  <p>${s.coalition}</p>`,
+    `  <h3>${esc(headingRisk)}</h3>`,
+    `  ${s.scenarios}`,
+    `</section>`,
+  ].join('\n') + '\n';
+}
+
+/**
+ * Build a Historical Context & Precedents section.
+ * Provides trend analysis, Nordic/EU benchmarking context, and precedent
+ * references based on document types and detected policy domains.
+ * Iteration 2 + Iteration 3 output: "why it matters historically".
+ */
+function buildHistoricalContext(docs: RawDocument[], topic: string | null, lang: Language): string {
+  const esc = escapeHtml;
+  const sfsDocs   = docs.filter(isSfsDoc);
+  const propCount = docs.filter(d => effectiveType(d) === 'prop').length;
+  const allDomains = new Set<string>();
+  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
+  const domainList = [...allDomains].slice(0, 3).map(d => esc(d));
+  const hasEnacted = sfsDocs.length > 0;
+  const topicStr = topic ? esc(topic) : null;
+
+  const heading = deepLabel('historicalContext', lang);
+
+  const templates: Partial<Record<Language, string>> = {
+    en: `${topicStr ? `<strong>${topicStr}</strong> sits within` : 'This policy sits within'} a long tradition of Swedish parliamentary reform. ${hasEnacted ? `The presence of ${sfsDocs.length} enacted statute${sfsDocs.length !== 1 ? 's' : ''} indicates this area has established legal precedent.` : propCount > 0 ? `Active propositions suggest this policy cycle mirrors earlier reform waves, where government-initiated legislation progressed through committee scrutiny to enactment within 12–24 months.` : 'Early-stage documents suggest this represents a new policy initiative without direct statutory precedent.'} ${domainList.length > 0 ? `In the Nordic context, ${domainList.join(', ')} policy areas have historically benefited from cross-party consensus, with Sweden typically aligning with Danish and Norwegian approaches before adopting EU framework requirements.` : ''} International benchmarking indicates that comparable democracies — particularly Denmark, Norway, and Finland — have addressed similar policy challenges through incremental legislative packages rather than sweeping reform. Trend analysis across recent parliamentary sessions suggests that ${topicStr ? `${topicStr} legislation` : 'policy in this area'} is accelerating, driven by EU harmonisation requirements and coalition agreement commitments.`,
+    sv: `${topicStr ? `<strong>${topicStr}</strong> ingår i` : 'Denna policy ingår i'} en lång tradition av svensk parlamentarisk reform. ${hasEnacted ? `Förekomsten av ${sfsDocs.length} antagen lag/förordning visar att området har etablerat rättslig praxis.` : propCount > 0 ? 'Aktiva propositioner tyder på att denna policycykel speglar tidigare reformvågor.' : 'Tidiga dokument tyder på ett nytt policyinitiativ utan direkt lagstadgat prejudikat.'} ${domainList.length > 0 ? `I nordisk kontext har ${domainList.join(', ')} historiskt gynnats av partikonsensus, med Sverige som vanligtvis anpassar sig till danska och norska tillvägagångssätt.` : ''} Trendanalys indikerar att ${topicStr ? `${topicStr}-lagstiftning` : 'politiken på detta område'} accelererar, driven av EU-harmoniseringskrav och koalitionsöverenskommelser.`,
+    da: `${topicStr ? `<strong>${topicStr}</strong> er del af` : 'Denne politik er del af'} en lang tradition for svensk Riksdagsreform. ${domainList.length > 0 ? `I nordisk kontekst har ${domainList.join(', ')} historisk nydt gavn af tværpolitisk konsensus.` : ''} Trendanalyse viser, at politikken på dette område accelererer.`,
+    no: `${topicStr ? `<strong>${topicStr}</strong> er en del av` : 'Denne politikken er en del av'} en lang tradisjon for svensk riksdagsreform. ${domainList.length > 0 ? `I nordisk kontekst har ${domainList.join(', ')} historisk nytt godt av tverrpolitisk konsensus.` : ''} Trendanalyse indikerer at politikk på dette området akselererer.`,
+    fi: `${topicStr ? `<strong>${topicStr}</strong> on osa` : 'Tämä politiikka on osa'} pitkää Ruotsin valtiopäivien uudistusperinnettä. ${domainList.length > 0 ? `Pohjoismaisessa kontekstissa ${domainList.join(', ')} aloilla on historiallisesti hyöty puolueiden välisestä yhteisymmärryksestä.` : ''} Trendanalyysi osoittaa, että tämän alan politiikka kiihtyy.`,
+    de: `${topicStr ? `<strong>${topicStr}</strong> steht in` : 'Diese Politik steht in'} einer langen Tradition schwedischer parlamentarischer Reform. ${hasEnacted ? `Das Vorhandensein von ${sfsDocs.length} verabschiedeten Statuten zeigt, dass in diesem Bereich rechtliche Präzedenzfälle etabliert sind.` : ''} ${domainList.length > 0 ? `Im nordischen Kontext haben ${domainList.join(', ')}-Politikbereiche historisch von einem parteiübergreifenden Konsens profitiert.` : ''} Die Trendanalyse zeigt, dass sich ${topicStr ? `${topicStr}-Gesetzgebung` : 'die Politik in diesem Bereich'} beschleunigt.`,
+    fr: `${topicStr ? `<strong>${topicStr}</strong> s\u2019inscrit dans` : "Cette politique s\u2019inscrit dans"} une longue tradition de réforme parlementaire suédoise. ${hasEnacted ? `La présence de ${sfsDocs.length} statuts adoptés indique que ce domaine a établi des précédents juridiques.` : ''} ${domainList.length > 0 ? `Dans le contexte nordique, les domaines ${domainList.join(', ')} ont historiquement bénéficié d\u2019un consensus multipartite.` : ''} L\u2019analyse de tendances indique que ${topicStr ? `la législation sur ${topicStr}` : 'la politique dans ce domaine'} s\u2019accélère.`,
+    es: `${topicStr ? `<strong>${topicStr}</strong> se inscribe en` : 'Esta política se inscribe en'} una larga tradición de reforma parlamentaria sueca. ${hasEnacted ? `La presencia de ${sfsDocs.length} estatutos promulgados indica que esta área ha establecido precedentes legales.` : ''} ${domainList.length > 0 ? `En el contexto nórdico, las áreas de política ${domainList.join(', ')} históricamente se han beneficiado del consenso multipartidista.` : ''} El análisis de tendencias indica que ${topicStr ? `la legislación sobre ${topicStr}` : 'la política en esta área'} se está acelerando.`,
+    nl: `${topicStr ? `<strong>${topicStr}</strong> maakt deel uit van` : 'Dit beleid maakt deel uit van'} een lange traditie van Zweedse parlementaire hervorming. ${hasEnacted ? `De aanwezigheid van ${sfsDocs.length} ingevoerde wetgeving geeft aan dat er juridische precedenten zijn vastgesteld.` : ''} ${domainList.length > 0 ? `In de Noordse context hebben beleidsterreinen ${domainList.join(', ')} historisch geprofiteerd van partijoverstijgende consensus.` : ''} Trendanalyse geeft aan dat beleid op dit gebied versnelt.`,
+    ar: `${topicStr ? `<strong>${topicStr}</strong> يقع ضمن` : 'تقع هذه السياسة ضمن'} تقليد طويل من الإصلاح البرلماني السويدي. ${hasEnacted ? `وجود ${sfsDocs.length} قانون${sfsDocs.length !== 1 ? 'ين' : ''} مُعتمد يشير إلى وجود سوابق قانونية راسخة.` : ''} ${domainList.length > 0 ? `في السياق الإسكندنافي، استفادت مجالات ${domainList.join('، ')} تاريخياً من توافق متعدد الأحزاب.` : ''} يشير تحليل الاتجاهات إلى تسارع السياسات في هذا المجال.`,
+    he: `${topicStr ? `<strong>${topicStr}</strong> ממוקם ב` : 'מדיניות זו ממוקמת ב'}מסורת ארוכה של רפורמה פרלמנטרית שוודית. ${hasEnacted ? `נוכחות ${sfsDocs.length} חוקים שאושרו מצביעה על כך שנקבעו תקדימים משפטיים.` : ''} ${domainList.length > 0 ? `בהקשר הנורדי, תחומי ${domainList.join(', ')} נהנו היסטורית מקונצנזוס בין-מפלגתי.` : ''} ניתוח מגמות מצביע על האצת מדיניות בתחום זה.`,
+    ja: `${topicStr ? `<strong>${topicStr}</strong>は` : 'この政策は'}スウェーデン議会改革の長い伝統の中に位置します。${hasEnacted ? `${sfsDocs.length}件の制定された法律の存在は、この分野に法的先例があることを示しています。` : ''}${domainList.length > 0 ? `北欧の文脈では、${domainList.join('、')}分野は歴史的に超党派の合意から恩恵を受けてきました。` : ''}トレンド分析は、この分野の政策が加速していることを示しています。`,
+    ko: `${topicStr ? `<strong>${topicStr}</strong>는` : '이 정책은'} 스웨덴 의회 개혁의 오랜 전통 속에 있습니다. ${hasEnacted ? `${sfsDocs.length}개의 제정된 법률의 존재는 이 분야에 법적 선례가 있음을 나타냅니다.` : ''}${domainList.length > 0 ? `북유럽 맥락에서 ${domainList.join(', ')} 정책 영역은 역사적으로 초당적 합의에서 혜택을 받았습니다.` : ''} 추세 분석은 이 분야의 정책이 가속화되고 있음을 시사합니다.`,
+    zh: `${topicStr ? `<strong>${topicStr}</strong>处于` : '这一政策处于'}瑞典议会改革的悠久传统之中。${hasEnacted ? `${sfsDocs.length}项已颁布法规的存在表明该领域已建立法律先例。` : ''}${domainList.length > 0 ? `在北欧背景下，${domainList.join('、')}政策领域历史上受益于跨党派共识。` : ''}趋势分析表明该领域的政策正在加速。`,
+  };
+
+  const text = templates[lang] ?? templates.en ?? '';
+  return `\n<section class="historical-context" aria-label="${esc(heading)}">\n  <h2>${esc(heading)}</h2>\n  <p>${text}</p>\n</section>\n`;
+}
+
+/**
+ * Build a Methodology & Confidence section.
+ * Documents data sources, analysis methods, confidence scores, and known
+ * limitations — providing epistemic transparency for the intelligence report.
+ * Iteration 4 output: "is the analysis sound".
+ */
+function buildMethodologySection(docs: RawDocument[], topic: string | null, lang: Language, depth: number): string {
+  const clampedDepth = Math.max(1, Math.min(4, Math.round(depth)));
+  const esc = escapeHtml;
+  const enriched = docs.filter(d => d.contentFetched).length;
+  const confidence = deriveConfidence(docs);
+  const heading = deepLabel('methodology', lang);
+  const topicStr = topic ? esc(topic) : null;
+
+  const iterationLabels: Partial<Record<Language, string[]>> = {
+    en: ['Surface analysis (events and actors identified)', 'Deep analysis (motivations and strategic implications)', 'Predictive analysis (outcome forecasting and risk scenarios)', 'Quality review (bias check and completeness verification)'],
+    sv: ['Ytanalys (händelser och aktörer identifierade)', 'Djupanalys (motivationer och strategiska implikationer)', 'Prediktiv analys (prognoser och riskscenarier)', 'Kvalitetsgranskning (biaskontroll och fullständighetsverifiering)'],
+    da: ['Overfladeanalyse (hændelser og aktører identificeret)', 'Dybdeanalyse (motivationer og strategiske implikationer)', 'Prædiktiv analyse (prognoser og risikoscenarier)', 'Kvalitetsgennemgang (bias-tjek og fuldstændighedsverificering)'],
+    no: ['Overflateanalyse (hendelser og aktører identifisert)', 'Dybdeanalyse (motivasjoner og strategiske implikasjoner)', 'Prediktiv analyse (prognoser og risikoscenarier)', 'Kvalitetsgjennomgang (bias-sjekk og fullstendighetsverifisering)'],
+    fi: ['Pintaanalyysi (tapahtumat ja toimijat tunnistettu)', 'Syväanalyysi (motiivit ja strategiset vaikutukset)', 'Ennakoiva analyysi (ennusteet ja riskiskenaariot)', 'Laaduntarkistus (vinoutumien tarkistus ja kattavuuden varmennus)'],
+    de: ['Oberflächenanalyse (Ereignisse und Akteure identifiziert)', 'Tiefenanalyse (Motivationen und strategische Implikationen)', 'Prädiktive Analyse (Prognosen und Risikoszenarien)', 'Qualitätsprüfung (Bias-Prüfung und Vollständigkeitsverifikation)'],
+    fr: ['Analyse de surface (événements et acteurs identifiés)', 'Analyse approfondie (motivations et implications stratégiques)', 'Analyse prédictive (prévisions et scénarios de risque)', 'Revue qualité (vérification des biais et de l\'exhaustivité)'],
+    es: ['Análisis superficial (eventos y actores identificados)', 'Análisis profundo (motivaciones e implicaciones estratégicas)', 'Análisis predictivo (pronósticos y escenarios de riesgo)', 'Revisión de calidad (verificación de sesgos y exhaustividad)'],
+    nl: ['Oppervlakteanalyse (gebeurtenissen en actoren geïdentificeerd)', 'Diepteanalyse (motivaties en strategische implicaties)', 'Voorspellende analyse (prognoses en risicoscenario\'s)', 'Kwaliteitsreview (bias-controle en volledigheidsverificatie)'],
+    ar: ['تحليل سطحي (تحديد الأحداث والجهات الفاعلة)', 'تحليل معمق (الدوافع والتداعيات الاستراتيجية)', 'تحليل تنبؤي (توقعات وسيناريوهات المخاطر)', 'مراجعة الجودة (التحقق من التحيز والاكتمال)'],
+    he: ['ניתוח שטחי (זיהוי אירועים ושחקנים)', 'ניתוח עמוק (מניעים והשלכות אסטרטגיות)', 'ניתוח חיזויי (תחזיות ותרחישי סיכון)', 'ביקורת איכות (בדיקת הטיה ואימות שלמות)'],
+    ja: ['表面分析（出来事と関係者の特定）', '詳細分析（動機と戦略的示唆）', '予測分析（結果予測とリスクシナリオ）', '品質レビュー（バイアスチェックと網羅性検証）'],
+    ko: ['표면 분석 (사건 및 행위자 식별)', '심층 분석 (동기 및 전략적 시사점)', '예측 분석 (결과 예측 및 위험 시나리오)', '품질 검토 (편향 확인 및 완전성 검증)'],
+    zh: ['表面分析（事件和行为者识别）', '深度分析（动机和战略影响）', '预测分析（结果预测和风险情景）', '质量审查（偏差检查和完整性验证）'],
+  };
+
+  const labels = iterationLabels[lang] ?? iterationLabels.en!;
+  const iterationItems = labels.slice(0, clampedDepth).map((label) =>
+    `<li>${esc(label)}</li>`
+  ).join('\n    ');
+
+  const sourceLabels: Partial<Record<Language, string>> = {
+    en: 'Data Sources', sv: 'Datakällor', da: 'Datakilder', no: 'Datakilder',
+    fi: 'Tietolähteet', de: 'Datenquellen', fr: 'Sources de données', es: 'Fuentes de datos',
+    nl: 'Gegevensbronnen', ar: 'مصادر البيانات', he: 'מקורות נתונים',
+    ja: 'データソース', ko: '데이터 출처', zh: '数据来源',
+  };
+  const sourceDesc: Partial<Record<Language, string>> = {
+    en: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v proxy), and supplementary external sources (GitHub raw content, public government URLs) when available',
+    sv: 'Riksdagens MCP-API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v-proxy) samt kompletterande externa källor (GitHub-råinnehåll, offentliga myndighets-URL:er) vid tillgänglighet',
+    da: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v proxy) samt supplerende eksterne kilder ved tilgængelighed',
+    no: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v proxy) samt supplerende eksterne kilder ved tilgjengelighet',
+    fi: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v-välityspalvelin) sekä täydentävät ulkoiset lähteet saatavuuden mukaan',
+    de: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v-Proxy) sowie ergänzende externe Quellen bei Verfügbarkeit',
+    fr: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (proxy g0v) et sources externes complémentaires selon disponibilité',
+    es: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (proxy g0v) y fuentes externas complementarias según disponibilidad',
+    nl: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v proxy) en aanvullende externe bronnen indien beschikbaar',
+    ar: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall)، regeringen.se (وكيل g0v)، ومصادر خارجية تكميلية عند التوفر',
+    he: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (פרוקסי g0v), ומקורות חיצוניים משלימים בהתאם לזמינות',
+    ja: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall)、regeringen.se (g0v プロキシ)、および利用可能な場合は補足的な外部ソース',
+    ko: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v 프록시) 및 이용 가능한 경우 보충 외부 소스',
+    zh: 'Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall)、regeringen.se (g0v代理) 以及可用时的补充外部来源',
+  };
+  const iterLabel: Partial<Record<Language, string>> = {
+    en: 'Analysis iterations completed', sv: 'Genomförda analysiterationer', da: 'Gennemførte analyseiterationer',
+    no: 'Gjennomførte analyseiterationer', fi: 'Suoritetut analyysikierrokset', de: 'Abgeschlossene Analyseiterationen',
+    fr: 'Itérations d\'analyse terminées', es: 'Iteraciones de análisis completadas', nl: 'Voltooide analyseiteraties',
+    ar: 'تكرارات التحليل المكتملة', he: 'איטרציות ניתוח שהושלמו', ja: '完了した分析反復', ko: '완료된 분석 반복', zh: '已完成的分析迭代',
+  };
+  const confLabel: Partial<Record<Language, string>> = {
+    en: 'Overall confidence score', sv: 'Övergripande konfidenspoäng', da: 'Samlet konfidensscore',
+    no: 'Samlet konfidensskår', fi: 'Kokonaisluottamuspistemäärä', de: 'Gesamtkonfidenzwert',
+    fr: 'Score de confiance global', es: 'Puntuación de confianza general', nl: 'Algehele betrouwbaarheidsscore',
+    ar: 'درجة الثقة الكلية', he: 'ציון ביטחון כולל', ja: '全体的な信頼スコア', ko: '전체 신뢰도 점수', zh: '整体置信度分数',
+  };
+  const enrichLabel: Partial<Record<Language, string>> = {
+    en: 'Documents enriched with full text', sv: 'Dokument berikade med fulltext', da: 'Dokumenter beriget med fulde tekster',
+    no: 'Dokumenter beriket med fulltekst', fi: 'Asiakirjat rikastettu koko tekstillä', de: 'Dokumente mit vollständigem Text angereichert',
+    fr: 'Documents enrichis avec le texte complet', es: 'Documentos enriquecidos con texto completo', nl: 'Documenten verrijkt met volledige tekst',
+    ar: 'وثائق معززة بالنص الكامل', he: 'מסמכים מועשרים בטקסט מלא', ja: '全文で強化された文書', ko: '전문으로 보강된 문서', zh: '以全文强化的文件',
+  };
+  const limitLabel: Partial<Record<Language, string>> = {
+    en: 'Known limitations', sv: 'Kända begränsningar', da: 'Kendte begrænsninger', no: 'Kjente begrensninger',
+    fi: 'Tunnetut rajoitukset', de: 'Bekannte Einschränkungen', fr: 'Limitations connues', es: 'Limitaciones conocidas',
+    nl: 'Bekende beperkingen', ar: 'القيود المعروفة', he: 'מגבלות ידועות', ja: '既知の制限事項', ko: '알려진 제한사항', zh: '已知限制',
+  };
+  const limitText: Partial<Record<Language, string>> = {
+    en: `Analysis based on publicly available parliamentary data only. ${enriched < docs.length ? `${docs.length - enriched} document${docs.length - enriched !== 1 ? 's' : ''} analysed without full text due to availability constraints.` : 'All documents enriched with full text.'} ${topicStr ? `Topic focus limited to: ${topicStr}.` : ''} Predictive assessments use heuristic models and should be treated as indicative, not definitive.`,
+    sv: `Analys baserad enbart på offentligt tillgängliga parlamentariska data. ${enriched < docs.length ? `${docs.length - enriched} dokument analyserade utan fulltext.` : 'Alla dokument berikade med fulltext.'} Prediktiva bedömningar är heuristiska och ska behandlas som vägledande.`,
+    da: `Analyse baseret på offentligt tilgængelige parlamentariske data. Prædiktive vurderinger er vejledende.`,
+    no: `Analyse basert på offentlig tilgjengelige parlamentariske data. Prediktive vurderinger er heuristiske.`,
+    fi: `Analyysi perustuu vain julkisesti saatavilla oleviin parlamentaarisiin tietoihin. Ennustavat arviot ovat heuristisia.`,
+    de: `Analyse basiert ausschließlich auf öffentlich zugänglichen parlamentarischen Daten. Prädiktive Bewertungen sind heuristisch.`,
+    fr: `Analyse basée uniquement sur des données parlementaires accessibles au public. Les évaluations prédictives sont heuristiques.`,
+    es: `Análisis basado únicamente en datos parlamentarios disponibles públicamente. Las evaluaciones predictivas son heurísticas.`,
+    nl: `Analyse gebaseerd op alleen publiek beschikbare parlementaire gegevens. Voorspellende beoordelingen zijn heuristisch.`,
+    ar: `التحليل مستند إلى البيانات البرلمانية المتاحة للعموم فقط. التقييمات التنبؤية هيوريستية.`,
+    he: `ניתוח מבוסס על נתונים פרלמנטריים זמינים לציבור בלבד. הערכות חיזויות הן היוריסטיות.`,
+    ja: `分析は公開されている議会データのみに基づいています。予測評価はヒューリスティックなものです。`,
+    ko: `분석은 공개적으로 이용 가능한 의회 데이터만을 기반으로 합니다. 예측 평가는 경험적입니다.`,
+    zh: `分析仅基于公开可用的议会数据。预测评估是启发式的。`,
+  };
+
+  return [
+    `\n<section class="methodology-confidence" aria-label="${esc(heading)}">`,
+    `  <h2>${esc(heading)}</h2>`,
+    `  <dl class="methodology-details">`,
+    `    <dt>${esc(sourceLabels[lang] ?? sourceLabels.en!)}</dt>`,
+    `    <dd>${sourceDesc[lang] ?? sourceDesc.en}</dd>`,
+    `    <dt>${esc(iterLabel[lang] ?? iterLabel.en!)}</dt>`,
+    `    <dd><ol class="iteration-list">\n    ${iterationItems}\n    </ol></dd>`,
+    `    <dt>${esc(confLabel[lang] ?? confLabel.en!)}</dt>`,
+    `    <dd><strong>${confidence}</strong></dd>`,
+    `    <dt>${esc(enrichLabel[lang] ?? enrichLabel.en!)}</dt>`,
+    `    <dd>${enriched} / ${docs.length}</dd>`,
+    `    <dt>${esc(limitLabel[lang] ?? limitLabel.en!)}</dt>`,
+    `    <dd>${limitText[lang] ?? limitText.en}</dd>`,
+    `  </dl>`,
+    `</section>`,
+  ].join('\n') + '\n';
 }
 
 // ---------------------------------------------------------------------------
@@ -1336,6 +1904,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
   console.log(`  📋 Document IDs: ${documentIds.length > 0 ? documentIds.join(', ') : '(none)'}`);
   console.log(`  🔗 Document URLs: ${documentUrls.length > 0 ? documentUrls.join(', ') : '(none)'}`);
   console.log(`  🎯 Focus topic: ${focusTopic || '(none)'}`);
+  console.log(`  🔬 Analysis depth: ${analysisDepth} (${['surface', 'predictive+historical', 'full with executive summary', 'full multi-iteration'][analysisDepth - 1]})`);
 
   try {
     const client: MCPClient = await getSharedClient();
@@ -1552,7 +2121,16 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
     };
 
     for (const lang of languages) {
-      console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
+      console.log(`  🌐 Generating ${lang.toUpperCase()} version (analysis-depth: ${analysisDepth})...`);
+      const pipelineDepth: AnalysisDepth = mapReportDepthToPipelineDepth(analysisDepth);
+
+      // ── AI Analysis Pipeline (multi-iteration) ───────────────────────────
+      const { analysis, validation, iterationDurationsMs } = await runAnalysisPipeline(enrichedDocs, {
+        depth: pipelineDepth,
+        lang,
+        focusTopic: sanitizedTopic,
+      });
+      console.log(`  🌐 Generating ${lang.toUpperCase()} version... (pipeline ${iterationDurationsMs.reduce((a, b) => a + b, 0)}ms)`);
 
       // Run multi-iteration AI analysis pipeline — cache result per language
       const cacheKey = sharedAnalysisCache.generateKey(enrichedDocs, sanitizedTopic, analysisIterations, lang);
@@ -1564,8 +2142,24 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
         console.log(`    🤖 AI analysis: ${aiResult.iterations} iteration(s), analysis score ${aiResult.analysisScore}`);
       }
 
-      // Topic-focused deep-inspection content (uses AI strategic implications & takeaways)
-      const content: string = generateDeepInspectionContent(enrichedDocs, sanitizedTopic, lang, aiResult);
+      // Write iteration metadata for audit trail
+      const iterationMetadata: AnalysisIterationMetadata = {
+        articleSlug: slug,
+        lang,
+        depth: pipelineDepth,
+        iterationsCompleted: analysis.iterationsCompleted,
+        iterationDurationsMs,
+        confidenceScore: analysis.confidenceScore,
+        validationResult: validation,
+        documentCount: analysis.documentCount,
+        enrichedCount: analysis.enrichedCount,
+        focusTopic: sanitizedTopic,
+        completedAt: analysis.completedAt,
+      };
+      writeAnalysisMetadata(slug, iterationMetadata);
+
+      // Topic-focused deep-inspection content (uses AI strategic implications & takeaways when available)
+      const content: string = generateDeepInspectionContent(enrichedDocs, sanitizedTopic, lang, analysisDepth, aiResult);
 
       // Metadata still derived from document data
       const contentData = { documents: enrichedDocs as Parameters<typeof generateArticleContent>[0]['documents'] };
