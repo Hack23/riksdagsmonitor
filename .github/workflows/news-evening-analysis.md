@@ -296,7 +296,7 @@ const motions = allMotions.filter(m => new Date(m.inlämnad || m.datum) >= fromD
 const allVotes = await search_voteringar({ parti: partyCode, rm: currentRm });
 const votes = allVotes.filter(v => new Date(v.datum) >= fromDate);
 // 1. Get recent committee reports
-const betankanden = get_betankanden({ rm: currentRm, limit: 20 });
+const betankanden = await get_betankanden({ rm: currentRm, limit: 20 });
 const recentBet = betankanden.filter(b => (b.publicerad || '').slice(0, 10) >= fromDateIso);
 
 // 2. For each report, get full details

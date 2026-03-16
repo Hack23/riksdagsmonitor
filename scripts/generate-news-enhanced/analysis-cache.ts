@@ -60,9 +60,10 @@ export class AnalysisCache {
     iterations: number,
     lang: Language,
   ): string {
-    // Use all doc IDs (order-independent via sort) plus count to reduce the risk of collisions
+    // Use stable per-doc identifiers (order-independent via sort) to reduce collision risk.
+    // When dok_id is absent, include doktyp + datum alongside the title for uniqueness.
     const docIds = docs
-      .map(d => d.dok_id ?? d.titel ?? d.title ?? '')
+      .map(d => d.dok_id ?? `${d.doktyp ?? ''}:${d.datum ?? ''}:${d.titel ?? d.title ?? ''}`)
       .sort();
     const docPart = `${docIds.length}:${docIds.join(',')}`;
     const raw = `${docPart}|${topic ?? ''}|${iterations}|${lang}`;

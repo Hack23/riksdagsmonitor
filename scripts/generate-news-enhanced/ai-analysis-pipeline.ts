@@ -1222,10 +1222,7 @@ export class AIAnalysisPipeline {
     ];
     if (govStrengths.length === 0) {
       govStrengths.push({
-        text: interp(pickLang(
-          propDocs.length > 0 ? GOV_STRENGTH_LABELS.propositions : GOV_STRENGTH_LABELS.default,
-          lang,
-        ), { n: propDocs.length, s: plural(propDocs.length, lang), t: topic }),
+        text: interp(pickLang(GOV_STRENGTH_LABELS.default, lang), { n: 0, s: plural(0, lang), t: topic }),
         impact: 'medium',
       });
     }
@@ -1502,11 +1499,14 @@ export class AIAnalysisPipeline {
     ].join(' ');
     score += Math.min(30, Math.floor(scoreAnalysisDepth(synthText) * 0.3));
 
-    // SWOT richness (up to 30 points)
+    // SWOT richness (up to 30 points) — count all 12 quadrants
     const swotCount =
       swot.government.strengths.length + swot.government.weaknesses.length
+      + swot.government.opportunities.length + swot.government.threats.length
       + swot.opposition.strengths.length + swot.opposition.weaknesses.length
-      + swot.privateSector.strengths.length;
+      + swot.opposition.opportunities.length + swot.opposition.threats.length
+      + swot.privateSector.strengths.length + swot.privateSector.weaknesses.length
+      + swot.privateSector.opportunities.length + swot.privateSector.threats.length;
     score += Math.min(30, swotCount * 3);
 
     return Math.min(100, score);
