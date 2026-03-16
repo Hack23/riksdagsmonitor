@@ -140,6 +140,8 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       // Should document filtering by date fields
       expect(content).toMatch(/filter.*by.*publicerad|filter.*by.*datum|filter.*by.*inlämnad|Date Filtering/i);
 
+      // Should have filtering guidance (either JS code examples or date-parameter patterns)
+      expect(content).toMatch(/\.filter\(|\bfromDate\b|\bfrom_date\b|\bdateFrom\b|\bdateTo\b/i);
       // Should have filtering examples (date string comparison or Date object comparison)
       // Should reference date-based filtering approach
       expect(content).toMatch(/from_date|to_date|fromDate|dateFrom|dateTo|>= fromDate/i);
@@ -166,8 +168,8 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
-      // Check for date support annotations
-      expect(content).toMatch(/supports.*from.*tom|supports.*from_date.*to_date|supports.*dateFrom.*dateTo/);
+      // Check for date support annotations (all alternatives anchored to tool-support context)
+      expect(content).toMatch(/supports.*from.*tom|supports.*from_date.*to_date|supports.*dateFrom.*dateTo/i);
       expect(content).toMatch(/filter by.*datum|filter by.*publicerad|filter by.*inlämnad/);
     });
 
@@ -194,6 +196,11 @@ describe('Agentic Workflow MCP Query Patterns', () => {
     it('cross-referencing section should reference data source combinations', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
       const content = fs.readFileSync(filepath, 'utf-8');
+      // Should have cross-referencing guidance (either numbered examples or descriptive patterns)
+      const hasCrossRefGuidance =
+        (content.includes('Example 1:') && content.includes('Example 2:')) ||
+        /cross[\s-]?referenc(?:e|ing)/i.test(content);
+      expect(hasCrossRefGuidance).toBe(true);
       // Should describe cross-referencing approach (e.g. combining data sources, filter by date)
       expect(content).toMatch(/cross.*reference|related.*data.*sources|richer.*analysis/i);
       // Should have numbered multi-tool query examples that demonstrate
@@ -289,15 +296,11 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
-      // Should show date patterns (YYYY-MM-DD, fromDate, today, toISOString, etc.)
-      expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today|YYYY-MM-DD/);
+      // Should show date calculation patterns (either JS Date or fromDate/today parameters)
+      expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today/i);
       // Should include date placeholder patterns or dynamic calculation
       expect(content).toMatch(/<today>|<fromDate>|date.*calculation/i);
-      // Should show date calculation patterns — either JS millisecond
-      // arithmetic or bash/shell date commands with lookback logic
-      // (date-parameter names like from_date/to_date/dateFrom are tested
-      //  in the dedicated "Post-Query Date Filtering" suite above)
-      expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today/);
+      // Should show date-range arithmetic or lookback logic
       expect(content).toMatch(/86400000|3600000|lookback_hours|lookback/);
     });
 
