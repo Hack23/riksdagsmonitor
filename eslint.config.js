@@ -85,6 +85,10 @@ export default [
       'cypress/**',
       'builds/**',
       'docs/coverage/**',
+      'docs/test-results/**',
+      'docs/cypress/**',
+      'docs/dependencies/**',
+      'docs/api/assets/**', // Ignore generated TypeDoc assets
       '*.min.js',
       'js/lib/**', // Ignore vendored libraries
       'dashboard/lib/**',
