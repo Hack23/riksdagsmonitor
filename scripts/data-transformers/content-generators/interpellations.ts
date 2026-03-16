@@ -86,15 +86,17 @@ export function generateInterpellationsContent(data: ArticleContentData, lang: L
   }
 
   // Deep Analysis section (5W framework + document analysis framework)
-  const { frameworkAnalysis, perspectiveAnalysis } = analyzeDocumentsForContent(interpellations, lang, data.ciaContext);
-  content += generateDeepAnalysisSection({
-    documents: interpellations,
-    lang,
-    cia: data.ciaContext,
-    articleType: 'interpellations',
-    frameworkAnalysis,
-    perspectiveAnalysis,
-  });
+  if (interpellations.length >= 2) {
+    const { frameworkAnalysis, perspectiveAnalysis } = analyzeDocumentsForContent(interpellations, lang, data.ciaContext);
+    content += generateDeepAnalysisSection({
+      documents: interpellations,
+      lang,
+      cia: data.ciaContext,
+      articleType: 'interpellations',
+      frameworkAnalysis,
+      perspectiveAnalysis,
+    });
+  }
 
   // Party accountability breakdown
   if (partyCount > 0) {

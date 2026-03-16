@@ -263,15 +263,17 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
     // Deep Analysis section (5W framework + document analysis framework)
     const allWeekDocs = [...documents, ...questions, ...interpellations];
     const weekCia = data.ciaContext;
-    const { frameworkAnalysis, perspectiveAnalysis } = analyzeDocumentsForContent(allWeekDocs, lang, weekCia);
-    content += generateDeepAnalysisSection({
-      documents: allWeekDocs,
-      lang,
-      cia: weekCia,
-      articleType: 'week-ahead',
-      frameworkAnalysis,
-      perspectiveAnalysis,
-    });
+    if (allWeekDocs.length >= 2) {
+      const { frameworkAnalysis, perspectiveAnalysis } = analyzeDocumentsForContent(allWeekDocs, lang, weekCia);
+      content += generateDeepAnalysisSection({
+        documents: allWeekDocs,
+        lang,
+        cia: weekCia,
+        articleType: 'week-ahead',
+        frameworkAnalysis,
+        perspectiveAnalysis,
+      });
+    }
 
     content += `\n    <h2>${L(lang, 'keyTakeaways')}</h2>\n`;
     content += `    <div class="context-box">\n      <ul>\n`;
