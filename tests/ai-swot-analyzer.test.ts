@@ -9,9 +9,9 @@ import {
   buildAISwotStakeholders,
 } from '../scripts/data-transformers/content-generators/ai-swot-analyzer.js';
 import type {
-  TrendDirection,
   AISwotEntry,
 } from '../scripts/data-transformers/content-generators/ai-swot-analyzer.js';
+import type { TrendDirection } from '../scripts/types/article.js';
 import type { RawDocument } from '../scripts/data-transformers/types.js';
 
 // ---------------------------------------------------------------------------

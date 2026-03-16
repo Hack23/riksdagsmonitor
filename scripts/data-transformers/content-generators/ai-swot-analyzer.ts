@@ -13,10 +13,10 @@
  * and kept for interface stability.  A future iteration may wire the prompts
  * into the editorial-framework MCP pipeline.
  *
- * Analytical prose (entry text, justification) is English-only because the
- * deep-inspection pipeline currently generates English articles.  Stakeholder
- * names, roles, and context metadata labels ("Confidence", "Cross-references")
- * are fully localised in all 14 supported languages.
+ * Analytical prose (entry text, justification) is English-only even though the
+ * deep-inspection pipeline renders articles in all 14 language versions.
+ * Stakeholder names, roles, and context metadata labels ("Confidence",
+ * "Cross-references") are fully localised in all 14 supported languages.
  *
  * The six perspectives are:
  *  1. Government Coalition (M, KD, L + SD support)
