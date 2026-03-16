@@ -154,7 +154,7 @@ try {
     '    .back-link{margin-top:2rem;display:inline-block}\n' +
     '  </style>\n</head>\n<body>\n  <div class="container">\n' +
     '    <h1>🎭 E2E Test Results (Cypress)</h1>\n' +
-    '    <p class="meta">Generated: ' + new Date().toISOString() + '</p>\n' +
+    '    <p class="meta">Cypress E2E test run</p>\n' +
     '    <div class="status-banner ' + statusClass + '">' + overallStatus + '</div>\n' +
     '    <div class="stats">\n' +
     '      <div class="stat pass"><div class="num">' + totalPassing + '</div><div class="label">Passing</div></div>\n' +
@@ -183,7 +183,7 @@ try {
     '      search.addEventListener("input",function(){\n' +
     '        var q=search.value;\n' +
     '        if(!q){logEl.innerHTML=original;return;}\n' +
-    '        var safe=q.replace(/[.*+?^${}()|[\\]\\\\]/g,"\\\\$&");\n' +
+    '        var safe=q.replace(/[-.*+?^${}()|[\\]\\\\]/g,"\\\\$&");\n' +
     '        var re=new RegExp("("+safe+")","gi");\n' +
     '        logEl.innerHTML=original.replace(re,"<mark style=\\"background:#ffbe0b;color:#0a0e27\\">$1</mark>");\n' +
     '      });\n' +

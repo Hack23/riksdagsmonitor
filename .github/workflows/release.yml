@@ -215,17 +215,15 @@ jobs:
           echo "📊 Copying test reports to docs/..."
           npm run build:test-reports
           
-          # Generate unit test results HTML index from vitest JSON
-          node scripts/generate-test-results-html.cjs || echo "⚠️ Failed to generate unit test results HTML"
+          # Vitest HTML reporter output (builds/test-results/html/) is copied
+          # automatically by build:test-reports to docs/test-results/html/
+          # Istanbul HTML coverage is copied to docs/coverage/ (includes index.html)
           
           # Generate E2E test results HTML index from log output
           node scripts/generate-e2e-results-html.cjs || echo "⚠️ Failed to generate E2E test results HTML"
           
           # Generate dependency report HTML from npm tree
           node scripts/generate-dependency-report-html.cjs || echo "⚠️ Failed to generate dependency report HTML"
-          
-          # Generate coverage summary dashboard from coverage-final.json
-          node scripts/generate-coverage-summary-html.cjs || echo "⚠️ Failed to generate coverage summary HTML"
           
           echo "✅ Test reports copied to docs/"
 
@@ -286,9 +284,9 @@ jobs:
               <div class="grid">
                 <div class="card">
                   <h3>🧪 Unit Test Results</h3>
-                  <p>Extensive Vitest results with pass/fail/skip stats, per-suite detail tables, slowest tests ranking, and search/filter.</p>
+                  <p>Interactive Vitest HTML report with test tree, filtering, duration breakdown, and re-run capability (built-in @vitest/ui reporter).</p>
                   <div class="links">
-                    <a href="test-results/index.html">View Test Results →</a>
+                    <a href="test-results/html/index.html">Vitest HTML Report →</a>
                     <a href="test-results/vitest-results.json" class="secondary">JSON</a>
                   </div>
                 </div>
@@ -302,20 +300,11 @@ jobs:
                 </div>
 
                 <div class="card">
-                  <h3>📊 Coverage Summary</h3>
-                  <p>High-level coverage dashboard with threshold gauges, per-directory breakdown, and links to detailed Istanbul/LCOV reports.</p>
+                  <h3>📊 Test Coverage</h3>
+                  <p>Istanbul HTML coverage report with per-file line/branch/function/statement metrics, source annotation, and directory breakdown (built-in @vitest/coverage-v8).</p>
                   <div class="links">
-                    <a href="coverage/summary.html">Coverage Dashboard →</a>
-                    <a href="coverage/index.html" class="secondary">Istanbul HTML</a>
+                    <a href="coverage/index.html">Istanbul Report →</a>
                     <a href="coverage/lcov-report/index.html" class="secondary">LCOV</a>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <h3>📊 Detailed Coverage</h3>
-                  <p>Full Istanbul HTML coverage report with per-file line/branch/function/statement metrics and source annotation.</p>
-                  <div class="links">
-                    <a href="coverage/index.html">View Coverage →</a>
                     <a href="coverage/coverage-final.json" class="secondary">JSON</a>
                   </div>
                 </div>

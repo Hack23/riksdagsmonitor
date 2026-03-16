@@ -245,4 +245,23 @@ else
   echo "ℹ️ No docs directory found at $SRC/docs, skipping docs deployment"
 fi
 
+# ── Catch-all pass for any unlisted file types ──
+# Uploads any remaining files (e.g. .webmanifest, .wasm, .mjs, .pdf, .map)
+# that weren't handled by the per-extension passes above.  Lets the CLI guess
+# the MIME type for these rare formats, which is better than not uploading them.
+aws s3 sync "$SRC" "$BUCKET" \
+  --exclude '*.html' --exclude '*.css' --exclude '*.js' \
+  --exclude '*.webp' --exclude '*.png' --exclude '*.jpg' --exclude '*.jpeg' \
+  --exclude '*.gif' --exclude '*.svg' --exclude '*.ico' \
+  --exclude '*.woff2' --exclude '*.woff' --exclude '*.ttf' --exclude '*.eot' --exclude '*.otf' \
+  --exclude '*.xml' --exclude '*.json' --exclude '*.txt' \
+  --cache-control 'public, max-age=86400' \
+  "${SKIP[@]}" --exclude 'docs/*'
+
+# ── Delete orphaned objects from S3 ──
+# Since we use cp --recursive (not sync) for the per-type passes, removed/renamed
+# files would otherwise linger in the bucket.  A final sync --delete cleans them.
+aws s3 sync "$SRC" "$BUCKET" --delete --size-only \
+  "${SKIP[@]}"
+
 echo "✅ S3 deployment completed"

@@ -33,9 +33,12 @@ try {
 
   if (fs.existsSync(txtPath)) {
     treeText = fs.readFileSync(txtPath, 'utf8');
-    // Count unique packages from the text tree
-    const pkgMatches = treeText.match(/[├└│─┬]─\s+\S+@\S+/g);
-    if (pkgMatches) totalDeps = pkgMatches.length;
+    // Count unique packages from the text tree (use Set to avoid duplicates)
+    const pkgMatches = treeText.match(/[├└│─┬]─\s+(\S+@)\S+/g);
+    if (pkgMatches) {
+      const uniquePkgs = new Set(pkgMatches.map(m => m.replace(/[├└│─┬]─\s+/, '').replace(/@[^@]+$/, '')));
+      totalDeps = uniquePkgs.size;
+    }
   }
 
   if (fs.existsSync(jsonPath)) {
@@ -101,7 +104,7 @@ try {
     '    .hidden{display:none !important}\n' +
     '  </style>\n</head>\n<body>\n  <div class="container">\n' +
     '    <h1>📦 Dependency Report</h1>\n' +
-    '    <p class="meta">' + escapeHtml(projectName) + (projectVersion ? ' v' + escapeHtml(projectVersion) : '') + ' · Generated: ' + new Date().toISOString() + '</p>\n' +
+    '    <p class="meta">' + escapeHtml(projectName) + (projectVersion ? ' v' + escapeHtml(projectVersion) : '') + '</p>\n' +
     '    <div class="stats">\n' +
     '      <div class="stat"><div class="num">' + directDeps + '</div><div class="label">Direct Dependencies</div></div>\n' +
     '      <div class="stat"><div class="num">' + productionDeps + '</div><div class="label">Production</div></div>\n' +
