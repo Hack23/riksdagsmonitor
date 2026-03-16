@@ -26,7 +26,6 @@ import {
   generateEconomicDashboardSection,
   generateMindmapSection,
   generateSankeySection,
-  type StakeholderSwot,
   type MindmapBranch,
   type SankeyNode,
   type SankeyFlow,
@@ -38,7 +37,7 @@ import { escapeHtml } from '../html-utils.js';
 import { generateArticleHTML } from '../article-template.js';
 import { MCPClient } from '../mcp-client.js';
 import type { Language } from '../types/language.js';
-import type { GenerationResult, DateRange, ArticleCategory, TemplateSection, SwotEntry } from '../types/article.js';
+import type { GenerationResult, DateRange, ArticleCategory, TemplateSection } from '../types/article.js';
 import type { TitleSet } from './types.js';
 import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic, analysisDepth, METADATA_DIR } from './config.js';
 import { runAnalysisPipeline } from '../ai-analysis/pipeline.js';
@@ -758,6 +757,12 @@ const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, stri
     nl: 'Belanghebbenden', ar: 'أصحاب المصلحة', he: 'בעלי עניין',
     ja: 'ステークホルダー', ko: '이해관계자', zh: '利益相关者',
   },
+  govCommunications: {
+    en: 'Gov. Communications', sv: 'Regeringsmeddelanden', da: 'Regeringsmeddelelser', no: 'Regjeringsmeldinger',
+    fi: 'Hallituksen tiedonannot', de: 'Regierungsmitteilungen', fr: 'Communications gouvernementales', es: 'Comunicaciones del Gobierno',
+    nl: 'Regeringsmededelingen', ar: 'بلاغات حكومية', he: 'הודעות ממשלתיות',
+    ja: '政府通信', ko: '정부 통신', zh: '政府通报',
+  },
 };
 
 function deepLabel(key: string, lang: Language): string {
@@ -936,11 +941,11 @@ function buildDocumentEntry(
 /** Build strategic implications paragraph tied to the topic and document patterns. */
 function buildStrategicImplications(docs: RawDocument[], topic: string | null, lang: Language): string {
   const esc = escapeHtml;
-  const propCount = docs.filter(d => (d.doktyp || d.documentType) === 'prop').length;
-  const betCount = docs.filter(d => (d.doktyp || d.documentType) === 'bet').length;
-  const motCount = docs.filter(d => (d.doktyp || d.documentType) === 'mot').length;
-  const pressmCount = docs.filter(d => (d.doktyp || d.documentType) === 'pressm').length;
-  const extCount = docs.filter(d => (d.doktyp || d.documentType) === 'ext').length;
+  const propCount = docs.filter(d => effectiveType(d) === 'prop').length;
+  const betCount = docs.filter(d => effectiveType(d) === 'bet').length;
+  const motCount = docs.filter(d => effectiveType(d) === 'mot').length;
+  const pressmCount = docs.filter(d => effectiveType(d) === 'pressm').length;
+  const extCount = docs.filter(d => effectiveType(d) === 'ext').length;
   const enrichedCount = docs.filter(d => d.contentFetched).length;
   const legislativeCount = propCount + betCount + motCount;
 
@@ -999,12 +1004,12 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
   const items: string[] = [];
 
   // Derive takeaways from document patterns
-  const propDocs = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
-  const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
-  const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
-  const euDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
-  const sfsDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'sfs');
-  const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
+  const propDocs = docs.filter(d => effectiveType(d) === 'prop');
+  const betDocs  = docs.filter(d => effectiveType(d) === 'bet');
+  const motDocs  = docs.filter(d => effectiveType(d) === 'mot');
+  const euDocs   = docs.filter(d => effectiveType(d) === 'fpm' || effectiveType(d) === 'eu');
+  const sfsDocs  = docs.filter(d => effectiveType(d) === 'sfs');
+  const pressmDocs = docs.filter(d => effectiveType(d) === 'pressm');
 
   const topicPhrase = topic ? ` (${esc(topic)})` : '';
 
@@ -1389,114 +1394,54 @@ function swotDefault(key: string, topic: string | null, lang: Language): string 
  * sections without the pipeline, and for integration tests.
  */
 export function buildDeepInspectionSections(
+ * Compute the effective document type for a RawDocument.
+ * SFS-by-name docs (missing doktyp/documentType but dokumentnamn starting with "SFS")
+ * are normalised to 'sfs' so filters, typeCounts, and chart labels stay consistent.
+ */
+function effectiveType(d: RawDocument): string {
+  return (d.doktyp || d.documentType)
+    || ((d.dokumentnamn || '').startsWith('SFS') ? 'sfs' : 'other');
+}
+
+/**
+ * Build SWOT and dashboard TemplateSections for a deep-inspection article.
+ * Uses buildMultiStakeholderSwot() to derive 4–9 stakeholder perspectives
+ * from document metadata (types, titles, document IDs as evidence).
+ * Returns TemplateSection[] ready for
+ * generateArticleHTML.sections.
+ */
+async function buildDeepInspectionSections(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,
-): TemplateSection[] {
+): Promise<TemplateSection[]> {
   if (docs.length === 0) return [];
 
-  const titleOf = (d: RawDocument): string =>
-    (d.titel || d.title || d.dokumentnamn || d.dok_id || '').slice(0, 80);
-  const toEntry = (d: RawDocument, impact: 'high' | 'medium' | 'low' = 'medium'): SwotEntry => ({
-    text: titleOf(d), impact,
-  });
+  // Lazy-import swot-analyzer to avoid loading its large localization maps
+  // when generators.ts is used for non-deep-inspection article types.
+  const { buildMultiStakeholderSwot, STAKEHOLDER_NAMES } = await import('./swot-analyzer.js');
 
-  // Classify by document type
-  const propDocs = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
-  const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
-  const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
-  const skrDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
-  const sfsDocs  = docs.filter(d =>
-    (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
-  const euDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
-  const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
-  const extDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
-  const otherDocs = docs.filter(d =>
-    !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || ''));
+  // Precompute effectiveType() once per document to avoid repeated string checks.
+  const docTypes = docs.map(d => effectiveType(d));
 
-  // ── Government / Policy Administration ────────────────────────────────────
-  const govStrengths: SwotEntry[] = [
-    ...propDocs.slice(0, 3).map(d => toEntry(d, 'high')),
-    ...sfsDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-    ...skrDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
-    ...pressmDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-  ];
-  const govWeaknesses: SwotEntry[] = [
-    ...betDocs.slice(0, 2).map(d => toEntry(d, 'medium')),
-  ];
-  const govOpportunities: SwotEntry[] = [
-    ...euDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-    ...skrDocs.slice(1, 2).map(d => toEntry(d, 'medium')),
-  ];
-  const govThreats: SwotEntry[] = [
-    ...motDocs.slice(0, 2).map(d => toEntry(d, 'medium')),
-  ];
+  // Classify by document type (needed for downstream sankey/dashboard sections).
+  const propDocs   = docs.filter((_, i) => docTypes[i] === 'prop');
+  const betDocs    = docs.filter((_, i) => docTypes[i] === 'bet');
+  const motDocs    = docs.filter((_, i) => docTypes[i] === 'mot');
+  const skrDocs    = docs.filter((_, i) => docTypes[i] === 'skr');
+  const sfsDocs    = docs.filter((_, i) => docTypes[i] === 'sfs');
+  const euDocs     = docs.filter((_, i) => docTypes[i] === 'fpm' || docTypes[i] === 'eu');
+  const pressmDocs = docs.filter((_, i) => docTypes[i] === 'pressm');
+  const extDocs    = docs.filter((_, i) => docTypes[i] === 'ext');
+  const otherDocs  = docs.filter((_, i) =>
+    !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext'].includes(docTypes[i]));
 
-  if (govStrengths.length === 0) govStrengths.push({ text: swotDefault('govStrength', topic, lang), impact: 'medium' });
-  if (govWeaknesses.length === 0) govWeaknesses.push({ text: swotDefault('govWeakness', topic, lang), impact: 'medium' });
-  if (govOpportunities.length === 0) govOpportunities.push({ text: swotDefault('govOpportunity', topic, lang), impact: 'high' });
-  if (govThreats.length === 0) govThreats.push({ text: swotDefault('govThreat', topic, lang), impact: 'medium' });
+  // Build 4–9 stakeholder SWOT analyses from document metadata
+  const stakeholders = buildMultiStakeholderSwot(docs, lang);
 
-  // ── Parliament / Opposition ────────────────────────────────────────────────
-  const oppStrengths: SwotEntry[] = [
-    ...betDocs.slice(0, 3).map(d => toEntry(d, 'high')),
-    ...motDocs.slice(0, 2).map(d => toEntry(d, 'medium')),
-  ];
-  const oppWeaknesses: SwotEntry[] = [];
-  const oppOpportunities: SwotEntry[] = [];
-  const oppThreats: SwotEntry[] = [
-    ...propDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
-  ];
-
-  if (oppStrengths.length === 0) oppStrengths.push({ text: swotDefault('oppStrength', topic, lang), impact: 'high' });
-  if (oppWeaknesses.length === 0) oppWeaknesses.push({ text: swotDefault('oppWeakness', topic, lang), impact: 'medium' });
-  if (oppOpportunities.length === 0) oppOpportunities.push({ text: swotDefault('oppOpportunity', topic, lang), impact: 'high' });
-  if (oppThreats.length === 0) oppThreats.push({ text: swotDefault('oppThreat', topic, lang), impact: 'medium' });
-
-  // ── Private Sector / Civil Society ────────────────────────────────────────
-  const privateStrengths: SwotEntry[] = [
-    { text: swotDefault('privateStrength', topic, lang), impact: 'high' },
-    ...sfsDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
-    ...extDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-  ];
-  const privateWeaknesses: SwotEntry[] = [
-    { text: swotDefault('privateWeakness1', topic, lang), impact: 'medium' },
-    { text: swotDefault('privateWeakness2', topic, lang), impact: 'medium' },
-  ];
-  const privateOpportunities: SwotEntry[] = [
-    { text: swotDefault('privateOpportunity', topic, lang), impact: 'high' },
-    ...euDocs.slice(0, 1).map(d => toEntry(d, 'high')),
-  ];
-  const privateThreats: SwotEntry[] = [
-    { text: swotDefault('privateThreat1', topic, lang), impact: 'high' },
-    { text: swotDefault('privateThreat2', topic, lang), impact: 'medium' },
-  ];
-
-  // ── Localised stakeholder names ────────────────────────────────────────────
-  const govNames: Partial<Record<Language, string>> = {
-    en: 'Government / Policy Administration', sv: 'Regering / Policyförvaltning',
-    da: 'Regering / Politisk forvaltning', no: 'Regjering / Politisk forvaltning',
-    fi: 'Hallitus / Poliittinen hallinto', de: 'Regierung / Politikverwaltung',
-    fr: 'Gouvernement / Administration', es: 'Gobierno / Administración pública',
-    nl: 'Regering / Beleidsadministratie', ar: 'الحكومة / الإدارة السياسية',
-    he: 'ממשלה / מינהל מדיניות', ja: '政府 / 政策行政', ko: '정부 / 정책 행정', zh: '政府 / 政策管理',
-  };
-  const oppNames: Partial<Record<Language, string>> = {
-    en: 'Parliament / Opposition', sv: 'Riksdag / Opposition',
-    da: 'Folketing / Opposition', no: 'Storting / Opposisjon',
-    fi: 'Eduskunta / Oppositio', de: 'Parlament / Opposition',
-    fr: 'Parlement / Opposition', es: 'Parlamento / Oposición',
-    nl: 'Parlement / Oppositie', ar: 'البرلمان / المعارضة',
-    he: 'פרלמנט / אופוזיציה', ja: '議会 / 野党', ko: '의회 / 야당', zh: '议会 / 反对派',
-  };
-  const privateNames: Partial<Record<Language, string>> = {
-    en: 'Private Sector / Civil Society', sv: 'Privat sektor / Civilsamhälle',
-    da: 'Privat sektor / Civilsamfund', no: 'Privat sektor / Sivilsamfunn',
-    fi: 'Yksityissektori / Kansalaisyhteiskunta', de: 'Privatsektor / Zivilgesellschaft',
-    fr: 'Secteur privé / Société civile', es: 'Sector privado / Sociedad civil',
-    nl: 'Privésector / Maatschappelijk middenveld', ar: 'القطاع الخاص / المجتمع المدني',
-    he: 'המגזר הפרטי / החברה האזרחית', ja: '民間セクター / 市民社会', ko: '민간 부문 / 시민 사회', zh: '私营部门 / 民间社会',
-  };
+  // Derive localised names for the mindmap / sankey from the STAKEHOLDER_NAMES map
+  const govName     = STAKEHOLDER_NAMES.government[lang]     ?? STAKEHOLDER_NAMES.government.en     ?? 'Government Coalition';
+  const oppName     = STAKEHOLDER_NAMES.opposition[lang]     ?? STAKEHOLDER_NAMES.opposition.en     ?? 'Opposition Parties';
 
   const dataSourceBranchLabels: Partial<Record<Language, string>> = {
     en: 'Data Sources', sv: 'Datakällor', da: 'Datakilder', no: 'Datakilder',
@@ -1521,21 +1466,6 @@ export function buildDeepInspectionSections(
     zh: ['议会 MCP（法律、动议、提案）', '世界银行（经济指标）', 'SCB 瑞典统计局'],
   };
 
-  const stakeholders: StakeholderSwot[] = [
-    {
-      name: govNames[lang] ?? govNames.en!,
-      swot: { strengths: govStrengths, weaknesses: govWeaknesses, opportunities: govOpportunities, threats: govThreats },
-    },
-    {
-      name: oppNames[lang] ?? oppNames.en!,
-      swot: { strengths: oppStrengths, weaknesses: oppWeaknesses, opportunities: oppOpportunities, threats: oppThreats },
-    },
-    {
-      name: privateNames[lang] ?? privateNames.en!,
-      swot: { strengths: privateStrengths, weaknesses: privateWeaknesses, opportunities: privateOpportunities, threats: privateThreats },
-    },
-  ];
-
   const strategicContext = topic
     ? (STRATEGIC_CONTEXT_FOCUSED[lang] ?? STRATEGIC_CONTEXT_FOCUSED.en!)(topic, docs.length, 50)
     : (STRATEGIC_CONTEXT_MULTI[lang] ?? STRATEGIC_CONTEXT_MULTI.en!)(docs.length, 50);
@@ -1549,7 +1479,7 @@ export function buildDeepInspectionSections(
   // so existing article consumers still see document counts.
   const typeCounts: Record<string, number> = {};
   docs.forEach(d => {
-    const t = d.doktyp || d.documentType || 'other';
+    const t = effectiveType(d);
     typeCounts[t] = (typeCounts[t] || 0) + 1;
   });
   const rawTypeKeys = Object.keys(typeCounts);
@@ -1613,16 +1543,12 @@ export function buildDeepInspectionSections(
     });
   }
 
-  // Stakeholder branch
+  // Stakeholder branch — list all analysed stakeholders (up to 9)
   mindmapBranches.push({
     label: deepLabel('stakeholders', lang),
     color: 'yellow',
     icon: '👥',
-    items: [
-      govNames[lang] ?? govNames.en!,
-      oppNames[lang] ?? oppNames.en!,
-      privateNames[lang] ?? privateNames.en!,
-    ],
+    items: stakeholders.map(s => s.name),
   });
 
   // Data context branch
@@ -1643,10 +1569,18 @@ export function buildDeepInspectionSections(
   });
 
   // ── Sankey: party/doc-type flow → legislative outcome ─────────────────────
+  // The sankey uses three primary legislative actor groups as source nodes:
+  //   - government: initiates propositions, laws, gov. communications, press releases
+  //   - opposition: initiates committee reports and motions
+  //   - private sector / external actors: associated with EU positions,
+  //     external references, and other document types
+  // Additional SWOT stakeholders (municipal, media, academia, etc.) are
+  // analysis perspectives rather than document-originating actors.
+  const privateName = STAKEHOLDER_NAMES.private[lang] ?? STAKEHOLDER_NAMES.private.en ?? 'Private Sector / Industry';
   const sankeyNodes: SankeyNode[] = [
-    { id: 'gov', label: govNames[lang]    ?? 'Government', color: 'cyan' },
-    { id: 'opp', label: oppNames[lang]    ?? 'Parliament', color: 'magenta' },
-    { id: 'pvt', label: privateNames[lang] ?? 'Civil Society', color: 'purple' },
+    { id: 'gov', label: govName,           color: 'cyan' },
+    { id: 'opp', label: oppName,           color: 'magenta' },
+    { id: 'pvt', label: privateName,       color: 'purple' },
   ];
 
   // Add document type nodes and target outcome nodes
@@ -1666,6 +1600,10 @@ export function buildDeepInspectionSections(
   if (sfsDocs.length > 0) {
     sankeyNodes.push({ id: 'sfs', label: 'Laws (SFS)', color: 'green' });
     sankeyFlows.push({ source: 'gov', target: 'sfs', value: sfsDocs.length, label: `${sfsDocs.length}` });
+  }
+  if (skrDocs.length > 0) {
+    sankeyNodes.push({ id: 'skr', label: deepLabel('govCommunications', lang), color: 'cyan' });
+    sankeyFlows.push({ source: 'gov', target: 'skr', value: skrDocs.length, label: `${skrDocs.length}` });
   }
   if (euDocs.length > 0) {
     sankeyNodes.push({ id: 'eu', label: 'EU Positions', color: 'blue' });
@@ -1996,6 +1934,8 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
 
       // SWOT + dashboard sections — built from AI analysis result (not hardcoded templates)
       const sections = buildDeepInspectionSectionsFromAnalysis(analysis, enrichedDocs, sanitizedTopic, lang);
+      // SWOT + dashboard sections — topic-focused, document-derived
+      const sections = await buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang);
 
       const langTitles: TitleSet = titles[lang] || titles.en;
 
