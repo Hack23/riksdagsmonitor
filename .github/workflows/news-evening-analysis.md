@@ -261,6 +261,9 @@ const today = new Date().toISOString().slice(0, 10);
 // Filter results by date field (day-granularity string comparison avoids timezone issues)
 // Include inlämnad for motions which use that date field
 const filtered = results.filter(item => (item.publicerad || item.datum || item.inlämnad || '').slice(0, 10) >= fromDate);
+const filtered = results.filter(item =>
+  (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10) >= fromDate
+);
 ```
 
 **Post-query date filtering example** (day-granularity; 86400000 ms = 1 day):
@@ -370,6 +373,10 @@ const byParty = motions.reduce((acc, m) => {
   return acc;
 }, {});
 ```
+
+**Troubleshooting**:
+- Too broad results → Tighten date range or add keyword filters
+- Missing data → Verify riksmöte calculation and date ranges
 
 ### Saturday vs Weekday Mode
 

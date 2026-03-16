@@ -26,7 +26,8 @@ import {
   generateEconomicDashboardSection,
   generateMindmapSection,
   generateSankeySection,
-  type MindmapBranch,
+  buildAIMindmapAnalysis,
+  buildMindmapOptionsFromAnalysis,
   type SankeyNode,
   type SankeyFlow,
   type StakeholderSwot,
@@ -752,11 +753,23 @@ const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, stri
     nl: 'Belanghebbenden', ar: 'أصحاب المصلحة', he: 'בעלי עניין',
     ja: 'ステークホルダー', ko: '이해관계자', zh: '利益相关者',
   },
+  parliamentaryAnalysis: {
+    en: 'Parliamentary Analysis', sv: 'Riksdagsanalys', da: 'Parlamentarisk analyse', no: 'Parlamentarisk analyse',
+    fi: 'Parlamentaarinen analyysi', de: 'Parlamentarische Analyse', fr: 'Analyse parlementaire', es: 'Análisis parlamentario',
+    nl: 'Parlementaire analyse', ar: 'التحليل البرلماني', he: 'ניתוח פרלמנטרי',
+    ja: '議会分析', ko: '의회 분석', zh: '议会分析',
+  },
   govCommunications: {
     en: 'Gov. Communications', sv: 'Regeringsmeddelanden', da: 'Regeringsmeddelelser', no: 'Regjeringsmeldinger',
     fi: 'Hallituksen tiedonannot', de: 'Regierungsmitteilungen', fr: 'Communications gouvernementales', es: 'Comunicaciones del Gobierno',
     nl: 'Regeringsmededelingen', ar: 'بلاغات حكومية', he: 'הודעות ממשלתיות',
     ja: '政府通信', ko: '정부 통신', zh: '政府通报',
+  },
+  conceptualMap: {
+    en: 'Conceptual map', sv: 'Konceptkarta', da: 'Konceptkort', no: 'Konseptkart',
+    fi: 'Käsitekartta', de: 'Konzeptkarte', fr: 'Carte conceptuelle', es: 'Mapa conceptual',
+    nl: 'Conceptmap', ar: 'خريطة مفاهيمية', he: 'מפת מושגים',
+    ja: 'コンセプトマップ', ko: '개념 맵', zh: '概念图',
   },
 };
 
@@ -1219,6 +1232,31 @@ function buildDeepInspectionSectionsFromAnalysis(
       threats:       sh.swot.threats.map(e => ({ text: e.text, impact: e.impact })) satisfies SwotEntry[],
     },
   }));
+  // Lazy-import swot-analyzer to avoid loading its large localization maps
+  // when generators.ts is used for non-deep-inspection article types.
+  const { buildMultiStakeholderSwot, STAKEHOLDER_NAMES } = await import('./swot-analyzer.js');
+
+  // Precompute effectiveType() once per document to avoid repeated string checks.
+  const docTypes = docs.map(d => effectiveType(d));
+
+  // Classify by document type (needed for downstream sankey/dashboard sections).
+  const propDocs   = docs.filter((_, i) => docTypes[i] === 'prop');
+  const betDocs    = docs.filter((_, i) => docTypes[i] === 'bet');
+  const motDocs    = docs.filter((_, i) => docTypes[i] === 'mot');
+  const skrDocs    = docs.filter((_, i) => docTypes[i] === 'skr');
+  const sfsDocs    = docs.filter((_, i) => docTypes[i] === 'sfs');
+  const euDocs     = docs.filter((_, i) => docTypes[i] === 'fpm' || docTypes[i] === 'eu');
+  const pressmDocs = docs.filter((_, i) => docTypes[i] === 'pressm');
+  const extDocs    = docs.filter((_, i) => docTypes[i] === 'ext');
+  const otherDocs  = docs.filter((_, i) =>
+    !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext'].includes(docTypes[i]));
+
+  // Build 4–9 stakeholder SWOT analyses from document metadata
+  const stakeholders = buildMultiStakeholderSwot(docs, lang);
+
+  // Derive localised names for the mindmap / sankey from the STAKEHOLDER_NAMES map
+  const govName     = STAKEHOLDER_NAMES.government[lang]     ?? STAKEHOLDER_NAMES.government.en     ?? 'Government Coalition';
+  const oppName     = STAKEHOLDER_NAMES.opposition[lang]     ?? STAKEHOLDER_NAMES.opposition.en     ?? 'Opposition Parties';
 
   const strategicContext = topic
     ? (STRATEGIC_CONTEXT_FOCUSED[lang] ?? STRATEGIC_CONTEXT_FOCUSED.en!)(topic, docs.length, analysis.confidenceScore)
@@ -1262,6 +1300,25 @@ function buildDeepInspectionSectionsFromAnalysis(
       ? (MINDMAP_SUMMARY_FOCUSED[lang] ?? MINDMAP_SUMMARY_FOCUSED.en!)(topic)
       : (MINDMAP_SUMMARY_GENERIC[lang] ?? MINDMAP_SUMMARY_GENERIC.en!)(docs.length),
   });
+  // ── Mindmap: AI-driven conceptual map across 5 political dimensions ─────────
+  const allDetectedDomains = new Set<string>();
+  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
+  const detectedDomainList = [...allDetectedDomains].slice(0, 6);
+
+  // Pass precomputed domains to avoid iterating docs twice
+  const aiAnalysis = buildAIMindmapAnalysis(docs, topic, lang, detectedDomainList);
+  const mindmapSection = generateMindmapSection(
+    buildMindmapOptionsFromAnalysis(
+      aiAnalysis,
+      lang,
+      topic || deepLabel('parliamentaryAnalysis', lang),
+      {
+        summary: topic
+          ? `${deepLabel('conceptualMap', lang)}: ${topic}`
+          : `${deepLabel('conceptualMap', lang)} — ${docs.length} ${deepLabel('documents', lang).toLowerCase()}`,
+      },
+    ),
+  );
 
   // Classify docs for Sankey section
   const propDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
