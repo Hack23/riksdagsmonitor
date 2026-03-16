@@ -421,7 +421,9 @@ if [ ! -f "$QUALITY_SCORES_FILE" ]; then
 else
   # Parse quality scores using node/jq if available
   if command -v node &>/dev/null; then
-    QUALITY_SUMMARY=$(MULTIDIM_THRESHOLD="$MULTIDIM_THRESHOLD" node scripts/validate-quality-scores.cjs "$QUALITY_SCORES_FILE" 2>/dev/null)
+    if ! QUALITY_SUMMARY=$(MULTIDIM_THRESHOLD="$MULTIDIM_THRESHOLD" node scripts/validate-quality-scores.cjs "$QUALITY_SCORES_FILE" 2>/dev/null); then
+      QUALITY_SUMMARY="ERROR:EXECUTION_FAILED"
+    fi
 
     if [[ "$QUALITY_SUMMARY" == "NO_ARTICLES" ]]; then
       echo -e "${YELLOW}⚠️ quality-scores.json is empty — no articles scored${NC}"
@@ -433,28 +435,33 @@ else
       echo -e "${YELLOW}⚠️ Could not parse quality-scores.json: ${QUALITY_SUMMARY}${NC}"
       WARNINGS=$((WARNINGS + 1))
     else
-      AVG_SCORE=$(echo "$QUALITY_SUMMARY" | cut -d'|' -f1)
-      PASSED_COUNT=$(echo "$QUALITY_SUMMARY" | cut -d'|' -f2)
-      TOTAL_COUNT=$(echo "$QUALITY_SUMMARY" | cut -d'|' -f3)
-      CRITICAL_COUNT=$(echo "$QUALITY_SUMMARY" | cut -d'|' -f4)
-
-      echo -e "   Average multi-dimensional score: ${AVG_SCORE}/100"
-      echo -e "   Articles passing threshold (≥${MULTIDIM_THRESHOLD}): ${PASSED_COUNT}/${TOTAL_COUNT}"
-
-      if [ "$CRITICAL_COUNT" -gt 0 ]; then
-        echo -e "${YELLOW}⚠️ $CRITICAL_COUNT article(s) scored below the ${MULTIDIM_THRESHOLD}/100 multi-dimensional threshold${NC}"
-        WARNINGS=$((WARNINGS + 1))
-      fi
-
-      CRITICAL_THRESHOLD=$((MULTIDIM_THRESHOLD * 2 / 3))  # 2/3 of MULTIDIM_THRESHOLD
-      if [ "$AVG_SCORE" -lt "$CRITICAL_THRESHOLD" ]; then
-        echo -e "${RED}❌ Average content quality score ${AVG_SCORE}/100 is critically low (< ${CRITICAL_THRESHOLD})${NC}"
-        ERRORS=$((ERRORS + 1))
-      elif [ "$AVG_SCORE" -lt "$MULTIDIM_THRESHOLD" ]; then
-        echo -e "${YELLOW}⚠️ Average content quality score ${AVG_SCORE}/100 is below recommended level (< ${MULTIDIM_THRESHOLD})${NC}"
+      if ! [[ "$QUALITY_SUMMARY" =~ ^[0-9]+\|[0-9]+\|[0-9]+\|[0-9]+$ ]]; then
+        echo -e "${YELLOW}⚠️ Malformed quality summary from parser: ${QUALITY_SUMMARY}${NC}"
         WARNINGS=$((WARNINGS + 1))
       else
-        echo -e "${GREEN}✅ Content quality average ${AVG_SCORE}/100 meets threshold${NC}"
+        AVG_SCORE=$(echo "$QUALITY_SUMMARY" | cut -d'|' -f1)
+        PASSED_COUNT=$(echo "$QUALITY_SUMMARY" | cut -d'|' -f2)
+        TOTAL_COUNT=$(echo "$QUALITY_SUMMARY" | cut -d'|' -f3)
+        CRITICAL_COUNT=$(echo "$QUALITY_SUMMARY" | cut -d'|' -f4)
+
+        echo -e "   Average multi-dimensional score: ${AVG_SCORE}/100"
+        echo -e "   Articles passing threshold (≥${MULTIDIM_THRESHOLD}): ${PASSED_COUNT}/${TOTAL_COUNT}"
+
+        if [ "$CRITICAL_COUNT" -gt 0 ]; then
+          echo -e "${YELLOW}⚠️ $CRITICAL_COUNT article(s) scored below the ${MULTIDIM_THRESHOLD}/100 multi-dimensional threshold${NC}"
+          WARNINGS=$((WARNINGS + 1))
+        fi
+
+        CRITICAL_THRESHOLD=$((MULTIDIM_THRESHOLD * 2 / 3))  # 2/3 of MULTIDIM_THRESHOLD
+        if [ "$AVG_SCORE" -lt "$CRITICAL_THRESHOLD" ]; then
+          echo -e "${RED}❌ Average content quality score ${AVG_SCORE}/100 is critically low (< ${CRITICAL_THRESHOLD})${NC}"
+          ERRORS=$((ERRORS + 1))
+        elif [ "$AVG_SCORE" -lt "$MULTIDIM_THRESHOLD" ]; then
+          echo -e "${YELLOW}⚠️ Average content quality score ${AVG_SCORE}/100 is below recommended level (< ${MULTIDIM_THRESHOLD})${NC}"
+          WARNINGS=$((WARNINGS + 1))
+        else
+          echo -e "${GREEN}✅ Content quality average ${AVG_SCORE}/100 meets threshold${NC}"
+        fi
       fi
     fi
   else

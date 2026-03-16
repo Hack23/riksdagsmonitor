@@ -283,7 +283,7 @@ const results = rawResults.filter(item => {
 });
 ```
 
-**Date calculation pattern** (day-granularity — `.split('T')[0]` truncates to YYYY-MM-DD):
+**Date calculation pattern** (day-granularity — `.toISOString().slice(0, 10)` truncates to YYYY-MM-DD):
 ```javascript
 const now = new Date();
 const lookback_hours = 12; // default; override via workflow input
@@ -292,16 +292,16 @@ if (Number.isNaN(lookbackMs)) throw new Error('Invalid lookback_hours');
 const fromDate = new Date(now.getTime() - lookbackMs).toISOString().slice(0, 10);
 // For weekly review (Saturday): 5 * 86400000 ms = 5 days
 const weekStart = new Date(now.getTime() - 5 * 86400000).toISOString().slice(0, 10);
-const today = new Date().toISOString().split('T')[0];
+const today = now.toISOString().slice(0, 10);
 ```
 
 **Post-query filtering example:**
 ```javascript
-const recentBetankanden = allBetankanden.filter(b => new Date(b.publicerad) >= new Date(fromDate));
-const recentMotioner = allMotioner.filter(m => new Date(m.inlämnad) >= new Date(fromDate));
-const results = get_betankanden({ rm: currentRm, limit: 50 });
 const results = await get_betankanden({ rm: currentRm, limit: 50 });
-const recent = results.filter(b => (b.publicerad || '').slice(0, 10) >= fromDate);
+const recent = results.filter(item => {
+  const itemDate = (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10);
+  return itemDate >= fromDate;
+});
 ```
 
 **Date calculation example:**
