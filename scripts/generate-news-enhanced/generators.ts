@@ -1019,12 +1019,6 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
   const items: string[] = [];
 
   // Derive takeaways from document patterns
-  const propDocs = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
-  const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
-  const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
-  const euDocs   = docs.filter(d => { const t = (d.doktyp || d.documentType) || ''; return t === 'fpm' || t === 'eu'; });
-  const sfsDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'sfs');
-  const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
   const propDocs = docs.filter(d => effectiveType(d) === 'prop');
   const betDocs  = docs.filter(d => effectiveType(d) === 'bet');
   const motDocs  = docs.filter(d => effectiveType(d) === 'mot');
@@ -1120,21 +1114,27 @@ async function buildDeepInspectionSections(
   topic: string | null,
   lang: Language,
   aiResult?: import('./ai-analysis-pipeline.js').AIAnalysisResult,
-): TemplateSection[] {
+): Promise<TemplateSection[]> {
   if (docs.length === 0) return [];
 
+  // Lazy-import swot-analyzer to avoid loading its large localization maps
+  // when generators.ts is used for non-deep-inspection article types.
+  const { buildMultiStakeholderSwot, STAKEHOLDER_NAMES } = await import('./swot-analyzer.js');
+
+  // Precompute effectiveType() once per document to avoid repeated string checks.
+  const docTypes = docs.map(d => effectiveType(d));
+
   // Classify by document type (needed for dashboard / sankey regardless of AI)
-  const propDocs = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
-  const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
-  const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
-  const skrDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
-  const sfsDocs  = docs.filter(d =>
-    (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
-  const euDocs   = docs.filter(d => { const t = (d.doktyp || d.documentType) || ''; return t === 'fpm' || t === 'eu'; });
-  const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
-  const extDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
-  const otherDocs = docs.filter(d =>
-    !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext'].includes((d.doktyp || d.documentType) || ''));
+  const propDocs   = docs.filter((_, i) => docTypes[i] === 'prop');
+  const betDocs    = docs.filter((_, i) => docTypes[i] === 'bet');
+  const motDocs    = docs.filter((_, i) => docTypes[i] === 'mot');
+  const skrDocs    = docs.filter((_, i) => docTypes[i] === 'skr');
+  const sfsDocs    = docs.filter((_, i) => docTypes[i] === 'sfs');
+  const euDocs     = docs.filter((_, i) => docTypes[i] === 'fpm' || docTypes[i] === 'eu');
+  const pressmDocs = docs.filter((_, i) => docTypes[i] === 'pressm');
+  const extDocs    = docs.filter((_, i) => docTypes[i] === 'ext');
+  const otherDocs  = docs.filter((_, i) =>
+    !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext'].includes(docTypes[i]));
 
   // ── SWOT entries — from AI pipeline when available, else SWOT_DEFAULTS ─────
   let govStrengths: SwotEntry[];
@@ -1215,53 +1215,6 @@ async function buildDeepInspectionSections(
       { text: swotDefault('privateThreat2', topic, lang), impact: 'medium' },
     ];
   }
-
-  // ── Localised stakeholder names ────────────────────────────────────────────
-  const govNames: Partial<Record<Language, string>> = {
-    en: 'Government / Policy Administration', sv: 'Regering / Policyförvaltning',
-    da: 'Regering / Politisk forvaltning', no: 'Regjering / Politisk forvaltning',
-    fi: 'Hallitus / Poliittinen hallinto', de: 'Regierung / Politikverwaltung',
-    fr: 'Gouvernement / Administration', es: 'Gobierno / Administración pública',
-    nl: 'Regering / Beleidsadministratie', ar: 'الحكومة / الإدارة السياسية',
-    he: 'ממשלה / מינהל מדיניות', ja: '政府 / 政策行政', ko: '정부 / 정책 행정', zh: '政府 / 政策管理',
-  };
-  const oppNames: Partial<Record<Language, string>> = {
-    en: 'Parliament / Opposition', sv: 'Riksdag / Opposition',
-    da: 'Folketing / Opposition', no: 'Storting / Opposisjon',
-    fi: 'Eduskunta / Oppositio', de: 'Parlament / Opposition',
-    fr: 'Parlement / Opposition', es: 'Parlamento / Oposición',
-    nl: 'Parlement / Oppositie', ar: 'البرلمان / المعارضة',
-    he: 'פרלמנט / אופוזיציה', ja: '議会 / 野党', ko: '의회 / 야당', zh: '议会 / 反对派',
-  };
-  const privateNames: Partial<Record<Language, string>> = {
-    en: 'Private Sector / Civil Society', sv: 'Privat sektor / Civilsamhälle',
-    da: 'Privat sektor / Civilsamfund', no: 'Privat sektor / Sivilsamfunn',
-    fi: 'Yksityissektori / Kansalaisyhteiskunta', de: 'Privatsektor / Zivilgesellschaft',
-    fr: 'Secteur privé / Société civile', es: 'Sector privado / Sociedad civil',
-    nl: 'Privésector / Maatschappelijk middenveld', ar: 'القطاع الخاص / المجتمع المدني',
-    he: 'המגזר הפרטי / החברה האזרחית', ja: '民間セクター / 市民社会', ko: '민간 부문 / 시민 사회', zh: '私营部门 / 民间社会',
-  };
-): Promise<TemplateSection[]> {
-  if (docs.length === 0) return [];
-
-  // Lazy-import swot-analyzer to avoid loading its large localization maps
-  // when generators.ts is used for non-deep-inspection article types.
-  const { buildMultiStakeholderSwot, STAKEHOLDER_NAMES } = await import('./swot-analyzer.js');
-
-  // Precompute effectiveType() once per document to avoid repeated string checks.
-  const docTypes = docs.map(d => effectiveType(d));
-
-  // Classify by document type (needed for downstream sankey/dashboard sections).
-  const propDocs   = docs.filter((_, i) => docTypes[i] === 'prop');
-  const betDocs    = docs.filter((_, i) => docTypes[i] === 'bet');
-  const motDocs    = docs.filter((_, i) => docTypes[i] === 'mot');
-  const skrDocs    = docs.filter((_, i) => docTypes[i] === 'skr');
-  const sfsDocs    = docs.filter((_, i) => docTypes[i] === 'sfs');
-  const euDocs     = docs.filter((_, i) => docTypes[i] === 'fpm' || docTypes[i] === 'eu');
-  const pressmDocs = docs.filter((_, i) => docTypes[i] === 'pressm');
-  const extDocs    = docs.filter((_, i) => docTypes[i] === 'ext');
-  const otherDocs  = docs.filter((_, i) =>
-    !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext'].includes(docTypes[i]));
 
   // Build 4–9 stakeholder SWOT analyses from document metadata
   const stakeholders = buildMultiStakeholderSwot(docs, lang);
@@ -1741,9 +1694,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       const sources: string[] = generateSources(sourceMethods);
 
       // SWOT + dashboard sections — AI-generated dynamic entries (context-aware, all 14 languages)
-      const sections = buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang, aiResult);
-      // SWOT + dashboard sections — topic-focused, document-derived
-      const sections = await buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang);
+      const sections = await buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang, aiResult);
 
       const langTitles: TitleSet = titles[lang] || titles.en;
 
