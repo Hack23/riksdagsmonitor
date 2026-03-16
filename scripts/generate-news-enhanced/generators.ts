@@ -28,7 +28,7 @@ import {
   type SankeyNode,
   type SankeyFlow,
 } from '../data-transformers/index.js';
-import { generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
+import { buildAISwotStakeholders, STAKEHOLDER_NAMES as AI_STAKEHOLDER_NAMES, generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
 import { generateDeepPolicyAnalysis, detectPolicyDomains } from '../data-transformers/policy-analysis.js';
 import { analyzeDashboardData } from '../ai-analysis/dashboard-analyzer.js';
 import { escapeHtml } from '../html-utils.js';
@@ -1648,36 +1648,42 @@ async function buildDeepInspectionSections(
 ): Promise<TemplateSection[]> {
   if (docs.length === 0) return [];
 
-  // Lazy-import swot-analyzer to avoid loading its large localization maps
-  // when generators.ts is used for non-deep-inspection article types.
-  const { buildMultiStakeholderSwot, STAKEHOLDER_NAMES } = await import('./swot-analyzer.js');
+  // Single-pass classification: bucket docs by effectiveType() to avoid N×filter passes.
+  // EU docs use both 'fpm' and 'eu' raw types; effectiveType() preserves the raw value,
+  // so we merge both into the euDocs bucket below.
+  const buckets = new Map<string, RawDocument[]>();
+  for (const d of docs) {
+    const t = effectiveType(d);
+    let arr = buckets.get(t);
+    if (!arr) { arr = []; buckets.set(t, arr); }
+    arr.push(d);
+  }
+  const propDocs   = buckets.get('prop')   ?? [];
+  const betDocs    = buckets.get('bet')    ?? [];
+  const motDocs    = buckets.get('mot')    ?? [];
+  const skrDocs    = buckets.get('skr')    ?? [];
+  const sfsDocs    = buckets.get('sfs')    ?? [];
+  const euDocs     = [...(buckets.get('fpm') ?? []), ...(buckets.get('eu') ?? [])];
+  const pressmDocs = buckets.get('pressm') ?? [];
+  const extDocs    = buckets.get('ext')    ?? [];
+  // classifiedTypes must mirror every bucket key consumed above (including both EU keys)
+  const classifiedTypes = new Set(['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext']);
+  const otherDocs  = [...buckets.entries()]
+    .filter(([k]) => !classifiedTypes.has(k))
+    .flatMap(([, v]) => v);
 
-  // Precompute effectiveType() once per document to avoid repeated string checks.
-  const docTypes = docs.map(d => effectiveType(d));
-
-  // Classify by document type (needed for downstream sankey/dashboard sections).
-  const propDocs   = docs.filter((_, i) => docTypes[i] === 'prop');
-  const betDocs    = docs.filter((_, i) => docTypes[i] === 'bet');
-  const motDocs    = docs.filter((_, i) => docTypes[i] === 'mot');
-  const skrDocs    = docs.filter((_, i) => docTypes[i] === 'skr');
-  const sfsDocs    = docs.filter((_, i) => docTypes[i] === 'sfs');
-  const euDocs     = docs.filter((_, i) => docTypes[i] === 'fpm' || docTypes[i] === 'eu');
-  const pressmDocs = docs.filter((_, i) => docTypes[i] === 'pressm');
-  const extDocs    = docs.filter((_, i) => docTypes[i] === 'ext');
-  const otherDocs  = docs.filter((_, i) =>
-    !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext'].includes(docTypes[i]));
-
-  // Build 4–9 stakeholder SWOT analyses from document metadata
-  const stakeholders = buildMultiStakeholderSwot(docs, lang);
-
-  // Derive localised names for the mindmap / sankey from the STAKEHOLDER_NAMES map
-  const govName     = STAKEHOLDER_NAMES.government[lang]     ?? STAKEHOLDER_NAMES.government.en     ?? 'Government Coalition';
-  const oppName     = STAKEHOLDER_NAMES.opposition[lang]     ?? STAKEHOLDER_NAMES.opposition.en     ?? 'Opposition Parties';
+  // ── AI-driven 6-stakeholder SWOT ─────────────────────────────────────────
+  const stakeholders = buildAISwotStakeholders(docs, topic, lang);
 
   const strategicContext = topic
     ? `Analysis exclusively focused on: ${topic} — ${docs.length} parliamentary documents examined`
     : `Multi-stakeholder analysis of ${docs.length} parliamentary documents`;
   const swotSection = generateStakeholderSwotSection({ stakeholders, lang, strategicContext });
+
+  // ── Localised names for mindmap/sankey labels (single source from ai-swot-analyzer)
+  const govName     = AI_STAKEHOLDER_NAMES['government-coalition'][lang] ?? AI_STAKEHOLDER_NAMES['government-coalition'].en;
+  const oppName     = AI_STAKEHOLDER_NAMES['opposition'][lang]           ?? AI_STAKEHOLDER_NAMES['opposition'].en;
+  const privateName = AI_STAKEHOLDER_NAMES['private-sector'][lang]       ?? AI_STAKEHOLDER_NAMES['private-sector'].en;
 
   // ── AI-analyzed multi-chart dashboard ─────────────────────────────────────
   // Produces 3 chart types (radar, scatter, bar) with accessible data tables.
@@ -1727,7 +1733,7 @@ async function buildDeepInspectionSections(
   // ── Mindmap: AI-driven conceptual map across 5 political dimensions ─────────
   const allDetectedDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
-  const detectedDomainList = [...allDetectedDomains].slice(0, 6);
+  const detectedDomainList = [...allDetectedDomains].slice(0, 8);
 
   // Pass precomputed domains to avoid iterating docs twice
   const aiAnalysis = buildAIMindmapAnalysis(docs, topic, lang, detectedDomainList);
@@ -1746,13 +1752,13 @@ async function buildDeepInspectionSections(
 
   // ── Sankey: party/doc-type flow → legislative outcome ─────────────────────
   // The sankey uses three primary legislative actor groups as source nodes:
-  //   - government: initiates propositions, laws, gov. communications, press releases
+  //   - government: initiates propositions, laws, gov. communications, press releases,
+  //     and EU position papers (fpm) — these originate from government ministries
   //   - opposition: initiates committee reports and motions
-  //   - private sector / external actors: associated with EU positions,
-  //     external references, and other document types
-  // Additional SWOT stakeholders (municipal, media, academia, etc.) are
+  //   - private sector / external actors: associated with external references
+  //     and other document types
+  // Additional SWOT stakeholders (civil society, citizens, etc.) are
   // analysis perspectives rather than document-originating actors.
-  const privateName = STAKEHOLDER_NAMES.private[lang] ?? STAKEHOLDER_NAMES.private.en ?? 'Private Sector / Industry';
   const sankeyNodes: SankeyNode[] = [
     { id: 'gov', label: govName,           color: 'cyan' },
     { id: 'opp', label: oppName,           color: 'magenta' },
@@ -1778,12 +1784,12 @@ async function buildDeepInspectionSections(
     sankeyFlows.push({ source: 'gov', target: 'sfs', value: sfsDocs.length, label: `${sfsDocs.length}` });
   }
   if (skrDocs.length > 0) {
-    sankeyNodes.push({ id: 'skr', label: deepLabel('govCommunications', lang), color: 'cyan' });
+    sankeyNodes.push({ id: 'skr', label: deepLabel('govCommunications', lang), color: 'green' });
     sankeyFlows.push({ source: 'gov', target: 'skr', value: skrDocs.length, label: `${skrDocs.length}` });
   }
   if (euDocs.length > 0) {
     sankeyNodes.push({ id: 'eu', label: 'EU Positions', color: 'blue' });
-    sankeyFlows.push({ source: 'pvt', target: 'eu', value: euDocs.length, label: `${euDocs.length}` });
+    sankeyFlows.push({ source: 'gov', target: 'eu', value: euDocs.length, label: `${euDocs.length}` });
   }
   if (pressmDocs.length > 0) {
     sankeyNodes.push({ id: 'pressm', label: 'Press Releases', color: 'orange' });
