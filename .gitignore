@@ -6,12 +6,12 @@
 .vscode/
 .idea/
 node_modules/
-api/
+/api/
 dist/
 build/
 *.log
 data/cia-exports/
-types/
+/types/
 !scripts/types/
 schemas/metadata/
 validation-report.json
@@ -39,8 +39,8 @@ cypress/reports/
 # Test/report builds (generated during development, copied to docs/ during release)
 builds/
 
-# JSDoc generated documentation (committed for GitHub Pages deployment)
-# api/ - Now committed to enable GitHub Pages documentation hosting
+# JSDoc generated documentation
+# /api/ ignores top-level TypeDoc output only; docs/api/ is committed for GitHub Pages
 
 # Environment variables
 .env
