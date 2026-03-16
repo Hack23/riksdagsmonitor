@@ -249,7 +249,7 @@ export function analyzeOppositionPerspective(
   const keyActors: string[] = ['Opposition Leader', 'Shadow Cabinet'];
   if (cia) {
     // Include parties that are not the largest governing bloc
-    const parties = cia.partyPerformance.slice(0, 4).map(p => p.partyName);
+    const parties = (cia.partyPerformance ?? []).slice(0, 4).map(p => p.partyName);
     keyActors.push(...parties);
   }
   if (doc.parti) keyActors.unshift(doc.parti);

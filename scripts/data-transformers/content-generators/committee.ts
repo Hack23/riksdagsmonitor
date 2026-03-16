@@ -109,13 +109,14 @@ export function generateCommitteeContent(data: ArticleContentData, lang: Languag
   }
 
   // Deep Analysis section (5W framework + document analysis framework)
-  const frameworkAnalysis = analyzeDocumentsForContent(reports, lang, data.ciaContext);
+  const { frameworkAnalysis, perspectiveAnalysis } = analyzeDocumentsForContent(reports, lang, data.ciaContext);
   content += generateDeepAnalysisSection({
     documents: reports,
     lang,
     cia: data.ciaContext,
     articleType: 'committee-reports',
     frameworkAnalysis,
+    perspectiveAnalysis,
   });
 
   // Key takeaways section

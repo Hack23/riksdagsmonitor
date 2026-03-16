@@ -156,13 +156,14 @@ export function generatePropositionsContent(data: ArticleContentData, lang: Lang
   }
 
   // Deep Analysis section (5W framework + document analysis framework)
-  const frameworkAnalysis = analyzeDocumentsForContent(propositions, lang, data.ciaContext);
+  const { frameworkAnalysis, perspectiveAnalysis } = analyzeDocumentsForContent(propositions, lang, data.ciaContext);
   content += generateDeepAnalysisSection({
     documents: propositions,
     lang,
     cia: data.ciaContext,
     articleType: 'propositions',
     frameworkAnalysis,
+    perspectiveAnalysis,
   });
 
   // ── Key takeaways: synthesize propositions batch ──────────────────────────

@@ -21,6 +21,10 @@ import {
   type RiskAssessment,
   type ImplementationAssessment,
 } from '../../ai-analysis/document-analyzer.js';
+import {
+  analyzeDocuments as analyzeDocumentsPerspectives,
+  type BatchAnalysisResult,
+} from '../../analysis-framework/index.js';
 
 /** Localise raw Riksdag document type codes for display (singular/plural-aware, multi-language). */
 export type DocTypeLocalization = {
@@ -236,15 +240,24 @@ export interface DeepAnalysisOptions {
    * Use `analyzeDocumentsForContent()` to produce this map.
    */
   frameworkAnalysis?: Map<string, DocumentAnalysis>;
+  /**
+   * Multi-perspective analysis from the analysis-framework (6 lenses:
+   * government, opposition, citizen, economic, international, media).
+   * When provided, key insights and perspective summaries are injected
+   * into the deep analysis section.
+   *
+   * Use `analyzeDocumentsForContent()` to produce this automatically.
+   */
+  perspectiveAnalysis?: BatchAnalysisResult;
 }
 
 /**
- * Run the document analysis framework over a set of documents and return a
- * `Map<string, DocumentAnalysis>` keyed by document ID.  This is the bridge
- * between the AI analysis framework and the content generators.
+ * Run the document analysis framework over a set of documents and return
+ * both the per-document analysis map and the multi-perspective batch result.
  *
- * Content generators should call this once per article and pass the result
- * into `generateDeepAnalysisSection()` via the `frameworkAnalysis` option.
+ * Content generators should call this once per article and pass the results
+ * into `generateDeepAnalysisSection()` via the `frameworkAnalysis` and
+ * `perspectiveAnalysis` options.
  *
  * Results are cached internally by the framework, so repeated calls with
  * the same documents are cheap.
@@ -253,8 +266,10 @@ export function analyzeDocumentsForContent(
   docs: RawDocument[],
   lang: Language | string,
   cia?: CIAContext,
-): Map<string, DocumentAnalysis> {
-  return analyzeDocumentsBatch(docs, lang, cia);
+): { frameworkAnalysis: Map<string, DocumentAnalysis>; perspectiveAnalysis: BatchAnalysisResult } {
+  const frameworkAnalysis = analyzeDocumentsBatch(docs, lang, cia);
+  const perspectiveAnalysis = analyzeDocumentsPerspectives(docs, cia, lang);
+  return { frameworkAnalysis, perspectiveAnalysis };
 }
 
 /**
@@ -388,7 +403,7 @@ function neutralText(lang: Language | string): string {
  * @returns HTML string for the deep analysis section, or empty string if insufficient data
  */
 export function generateDeepAnalysisSection(opts: DeepAnalysisOptions): string {
-  const { documents, lang, cia, articleType, whyContext, frameworkAnalysis } = opts;
+  const { documents, lang, cia, articleType, whyContext, frameworkAnalysis, perspectiveAnalysis } = opts;
 
   // Deep analysis requires at least 2 documents for cross-document insights
   // in standard article types. For deep-inspection articles, allow single-
@@ -503,6 +518,20 @@ export function generateDeepAnalysisSection(opts: DeepAnalysisOptions): string {
     // Implementation Assessment — summarise implementation feasibility
     parts.push(`    <h3>${escapeHtml(lbl('deepAnalysisImplementation'))}</h3>`);
     parts.push(renderImplementationAssessment(analyses));
+  }
+
+  // ── MULTI-PERSPECTIVE INSIGHTS (6 lenses) ────────────────────────────────
+  // When the analysis-framework has been run, inject key insights from the
+  // government, opposition, citizen, economic, international, and media lenses.
+  if (perspectiveAnalysis && perspectiveAnalysis.results.length > 0) {
+    const allInsights = perspectiveAnalysis.results.flatMap(r => r.keyInsights);
+    if (allInsights.length > 0) {
+      const uniqueInsights = [...new Set(allInsights)].slice(0, 5);
+      parts.push(`    <div class="perspective-insights">`);
+      const insightItems = uniqueInsights.map(i => `      <li>${escapeHtml(i)}</li>`).join('\n');
+      parts.push(`    <ul>\n${insightItems}\n    </ul>`);
+      parts.push(`    </div>`);
+    }
   }
 
   parts.push('    </section>\n');

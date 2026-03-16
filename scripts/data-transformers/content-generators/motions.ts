@@ -127,13 +127,14 @@ export function generateMotionsContent(data: ArticleContentData, lang: Language 
   }
 
   // Deep Analysis section (5W framework + document analysis framework)
-  const frameworkAnalysis = analyzeDocumentsForContent(motions, lang, data.ciaContext);
+  const { frameworkAnalysis, perspectiveAnalysis } = analyzeDocumentsForContent(motions, lang, data.ciaContext);
   content += generateDeepAnalysisSection({
     documents: motions,
     lang,
     cia: data.ciaContext,
     articleType: 'motions',
     frameworkAnalysis,
+    perspectiveAnalysis,
   });
 
   // Party activity breakdown

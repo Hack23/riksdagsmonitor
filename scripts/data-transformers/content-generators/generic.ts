@@ -238,13 +238,14 @@ export function generateGenericContent(data: ArticleContentData, lang: Language 
   }
 
   // Deep Analysis section (5W framework + document analysis framework)
-  const frameworkAnalysis = analyzeDocumentsForContent(docs, lang, cia);
+  const { frameworkAnalysis, perspectiveAnalysis } = analyzeDocumentsForContent(docs, lang, cia);
   content += generateDeepAnalysisSection({
     documents: docs,
     lang,
     cia,
     articleType: 'generic',
     frameworkAnalysis,
+    perspectiveAnalysis,
   });
 
   // ── Key takeaways ────────────────────────────────────────────────────────
