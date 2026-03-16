@@ -393,11 +393,8 @@ describe('Generate News Enhanced - Part 1', () => {
       const htmlSV = '<html lang="sv"><body>Swedish</body></html>';
       await moduleExports.writeArticlePair(htmlEN, htmlSV, 'test-slug');
 
-      // Actual: calls writeSingleArticle twice (exactly 2 article .html files)
-      // Note: writeFileSync may also be called for quality-scores.json metadata
-      const calls = (fs.writeFileSync as ReturnType<typeof vi.fn>).mock.calls;
-      const htmlCalls = calls.filter((c: unknown[]) => typeof c[0] === 'string' && (c[0] as string).endsWith('.html'));
-      expect(htmlCalls.length).toBe(2);
+      // writeArticlePair writes exactly 2 .html files; no other writes expected
+      expect((fs.writeFileSync as ReturnType<typeof vi.fn>).mock.calls.length).toBe(2);
     });
   });
 

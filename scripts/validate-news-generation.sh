@@ -408,9 +408,9 @@ echo "📋 Check 13: Content quality scores (multi-dimensional assessment)"
 
 QUALITY_SCORES_FILE="news/metadata/quality-scores.json"
 MULTIDIM_THRESHOLD=${MULTIDIM_THRESHOLD:-60}  # mirrors MULTIDIM_QUALITY_THRESHOLD in config.ts; override via env
-# Validate threshold is a positive integer to avoid injection into downstream commands
-if ! [[ "$MULTIDIM_THRESHOLD" =~ ^[0-9]+$ ]]; then
-  echo -e "${RED}❌ MULTIDIM_THRESHOLD must be a positive integer, got: '${MULTIDIM_THRESHOLD}'${NC}"
+# Validate threshold is a positive integer (>= 1) to avoid injection into downstream commands
+if ! [[ "$MULTIDIM_THRESHOLD" =~ ^[1-9][0-9]*$ ]]; then
+  echo -e "${RED}❌ MULTIDIM_THRESHOLD must be a positive integer (>= 1), got: '${MULTIDIM_THRESHOLD}'${NC}"
   ERRORS=$((ERRORS + 1))
   MULTIDIM_THRESHOLD=60
 fi

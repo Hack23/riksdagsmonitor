@@ -120,6 +120,11 @@ export function flushQualityScores(): void {
       }
       fs.renameSync(tmpPath, outPath);
     }
+    // Clear in-memory map after a successful flush so that subsequent
+    // invocations in the same Node process don't carry stale entries.
+    for (const key of Object.keys(perArticleScores)) {
+      delete perArticleScores[key];
+    }
   } catch (err: unknown) {
     console.warn(`  ⚠️  Could not persist quality scores: ${(err as Error).message}`);
   }
