@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.16% </span>
+                <span class="strong">92.79% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>103/106</span>
+                <span class='fraction'>103/111</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.14% </span>
+                <span class="strong">81.17% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>69/82</span>
+                <span class='fraction'>69/85</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">95.19% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>99/99</span>
+                <span class='fraction'>99/104</span>
             </div>
         
             
@@ -463,7 +463,15 @@
 <a name='L398'></a><a href='#L398'>398</a>
 <a name='L399'></a><a href='#L399'>399</a>
 <a name='L400'></a><a href='#L400'>400</a>
-<a name='L401'></a><a href='#L401'>401</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L401'></a><a href='#L401'>401</a>
+<a name='L402'></a><a href='#L402'>402</a>
+<a name='L403'></a><a href='#L403'>403</a>
+<a name='L404'></a><a href='#L404'>404</a>
+<a name='L405'></a><a href='#L405'>405</a>
+<a name='L406'></a><a href='#L406'>406</a>
+<a name='L407'></a><a href='#L407'>407</a>
+<a name='L408'></a><a href='#L408'>408</a>
+<a name='L409'></a><a href='#L409'>409</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -483,7 +491,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -613,6 +621,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -678,7 +694,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -695,7 +711,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -715,7 +731,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1012,6 +1028,14 @@ export function generateMetadata(data: ArticleContentData, type: ArticleType | s
         tags.push(typeof tagVal === 'string' ? tagVal : <span class="branch-1 cbranch-no" title="branch not covered" >'');</span>
       }
       break;
+<span class="branch-4 cbranch-no" title="branch not covered" >    case 'interpellations':</span>
+<span class="cstat-no" title="statement not covered" >      keywords.push(kw('interpellations'), kw('parliamentary questions'), kw('parliament'), kw('accountability'));</span>
+<span class="cstat-no" title="statement not covered" >      topics.push('parliament', 'accountability');</span>
+      {
+        const <span class="cstat-no" title="statement not covered" >tagVal = L(lang, 'interpellationsTag');</span>
+<span class="cstat-no" title="statement not covered" >        tags.push(typeof tagVal === 'string' ? tagVal : '');</span>
+      }
+<span class="cstat-no" title="statement not covered" >      break;</span>
     case 'month-ahead':
       keywords.push(kw('parliament'), kw('month ahead'), kw('calendar'), kw('outlook'));
       topics.push('parliament', 'outlook');
@@ -1270,7 +1294,7 @@ export function generateSources(tools: string[] = []): string[] {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-13T10:20:51.315Z
+                at 2026-03-16T00:55:14.623Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
