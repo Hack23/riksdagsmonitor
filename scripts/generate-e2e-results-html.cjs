@@ -41,9 +41,9 @@ try {
   const pendingCountMatch = log.match(/(\d+)\s+pending/g);
 
   let totalPassing = 0, totalFailing = 0, totalPending = 0;
-  if (passingCountMatch) passingCountMatch.forEach(m => { totalPassing += parseInt(m); });
-  if (failingCountMatch) failingCountMatch.forEach(m => { totalFailing += parseInt(m); });
-  if (pendingCountMatch) pendingCountMatch.forEach(m => { totalPending += parseInt(m); });
+  if (passingCountMatch) passingCountMatch.forEach(m => { totalPassing += parseInt(m, 10); });
+  if (failingCountMatch) failingCountMatch.forEach(m => { totalFailing += parseInt(m, 10); });
+  if (pendingCountMatch) pendingCountMatch.forEach(m => { totalPending += parseInt(m, 10); });
   const totalTests = totalPassing + totalFailing + totalPending;
 
   const overallStatus = totalFailing > 0 ? '❌ Some tests failed'
@@ -61,11 +61,11 @@ try {
     specLines.push({
       name: specMatch[1],
       duration: specMatch[2],
-      tests: parseInt(specMatch[3]) || 0,
-      passing: parseInt(specMatch[4]) || 0,
-      failing: specMatch[5] === '-' ? 0 : parseInt(specMatch[5]) || 0,
-      pending: specMatch[6] === '-' ? 0 : parseInt(specMatch[6]) || 0,
-      skipped: specMatch[7] === '-' ? 0 : parseInt(specMatch[7]) || 0
+      tests: parseInt(specMatch[3], 10) || 0,
+      passing: parseInt(specMatch[4], 10) || 0,
+      failing: specMatch[5] === '-' ? 0 : parseInt(specMatch[5], 10) || 0,
+      pending: specMatch[6] === '-' ? 0 : parseInt(specMatch[6], 10) || 0,
+      skipped: specMatch[7] === '-' ? 0 : parseInt(specMatch[7], 10) || 0
     });
   }
 

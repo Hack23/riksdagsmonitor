@@ -22,10 +22,18 @@ BUCKET="${2:?Usage: deploy-s3.sh <source-dir> <s3-bucket-url>}"
 
 # Directories that must never be uploaded
 SKIP=(
-  --exclude '.git/*' --exclude 'screenshots/*' --exclude 'node_modules/*'
-  --exclude 'artifacts/*' --exclude 'tests/*' --exclude 'cypress/*'
-  --exclude '.github/*' --exclude 'schemas/*' --exclude 'scripts/*'
-  --exclude '.devcontainer/*' --exclude 'quicksight/*' --exclude 'src/*'
+  --exclude '.git/*'
+  --exclude 'screenshots/*'
+  --exclude 'node_modules/*'
+  --exclude 'artifacts/*'
+  --exclude 'tests/*'
+  --exclude 'cypress/*'
+  --exclude '.github/*'
+  --exclude 'schemas/*'
+  --exclude 'scripts/*'
+  --exclude '.devcontainer/*'
+  --exclude 'quicksight/*'
+  --exclude 'src/*'
   --exclude 'builds/*'
 )
 
