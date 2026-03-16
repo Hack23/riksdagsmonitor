@@ -109,10 +109,14 @@ export default defineConfig({
     // Hook timeout
     hookTimeout: 10000,
     
-    // Reporter configuration - verbose to console, JSON to builds/ for release docs
+    // Reporter configuration
+    // - verbose: console output during CI
+    // - json: machine-readable results for downstream tooling
+    // - html: interactive Vitest UI report (uses @vitest/ui) for release docs
     reporters: [
       'verbose',
-      ['json', { outputFile: process.env.VITEST_JSON_OUTPUT || 'builds/test-results/vitest-results.json' }]
+      ['json', { outputFile: process.env.VITEST_JSON_OUTPUT || 'builds/test-results/vitest-results.json' }],
+      ['html', { outputFile: 'builds/test-results/html/index.html' }]
     ],
     
     // Watch mode settings
