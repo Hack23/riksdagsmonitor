@@ -1457,7 +1457,7 @@ async function refineAnalysis(
   // Refresh policy assessment narrative with enriched evidence
   refined.policyAssessment = buildPolicyAssessment(docs, topic, lang);
 
-  // Add additional stakeholder perspectives from narrative frame analysis
+  // Collect narrative frames from full-text docs and (optionally) add a mindmap branch
   const allFrames = new Set<string>();
   fullTextDocs.slice(0, 20).forEach(d => detectNarrativeFrames(d).forEach(f => allFrames.add(f)));
 

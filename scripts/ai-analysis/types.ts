@@ -81,15 +81,18 @@ export interface AnalysisStakeholderSwot {
  * A single watch point derived from document analysis.
  * Replaces hardcoded watch-point templates.
  *
- * All string fields (`title`, `description`) contain **plain text** — HTML
- * escaping is performed by the downstream renderer (`generateWatchSection`)
- * at interpolation time, consistent with the escaping contract for all other
- * pipeline outputs (SWOT entries, mindmap items, dashboard labels).
+ * All string fields (`title`, `description`) contain **plain text** — they
+ * must be escaped via `escapeHtml()` at the call site before passing to
+ * `generateWatchSection()`, which renders pre-escaped HTML (it does not
+ * escape itself). The escaping call site is in `generators.ts` inside the
+ * deep-inspection path. This is consistent with the escaping contract for
+ * all other pipeline outputs (SWOT entries, mindmap items, dashboard labels)
+ * where renderers receive plain text and escape at interpolation time.
  */
 export interface AnalysisWatchPoint {
-  /** Plain-text watch point heading (escaped by renderer) */
+  /** Plain-text watch point heading (must be escaped before passing to generateWatchSection) */
   title: string;
-  /** Plain-text watch point body (escaped by renderer) */
+  /** Plain-text watch point body (must be escaped before passing to generateWatchSection) */
   description: string;
   /** Urgency level for display sorting */
   urgency: 'critical' | 'high' | 'medium' | 'low';
