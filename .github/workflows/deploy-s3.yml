@@ -2,6 +2,7 @@ name: Deploy to S3
 on:
   push:
     branches: ["main"]
+  workflow_dispatch:
 permissions:
   contents: read
   id-token: write
@@ -138,64 +139,7 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
       
       - name: Deploy to S3 with cache headers
-        run: |
-          BUCKET="s3://${{ env.S3_BUCKET_NAME }}"
-          SRC="dist"
-
-          # HTML files - short cache, must-revalidate
-          aws s3 sync "$SRC" "$BUCKET" --exclude '*' --include '*.html' \
-            --cache-control 'public, max-age=3600, must-revalidate' \
-            --content-type 'text/html; charset=utf-8' \
-            --exclude 'screenshots/*' --exclude '.git/*'
-
-          # CSS files - long cache, immutable
-          aws s3 sync "$SRC" "$BUCKET" --exclude '*' --include '*.css' \
-            --cache-control 'public, max-age=31536000, immutable' \
-            --content-type 'text/css' \
-            --exclude 'screenshots/*' --exclude '.git/*'
-
-          # JS files - long cache, immutable
-          aws s3 sync "$SRC" "$BUCKET" --exclude '*' --include '*.js' \
-            --cache-control 'public, max-age=31536000, immutable' \
-            --content-type 'application/javascript' \
-            --exclude 'screenshots/*' --exclude '.git/*'
-
-          # Image files - long cache, immutable
-          aws s3 sync "$SRC" "$BUCKET" --exclude '*' \
-            --include '*.webp' --include '*.png' --include '*.jpg' --include '*.jpeg' \
-            --include '*.gif' --include '*.svg' --include '*.ico' \
-            --cache-control 'public, max-age=31536000, immutable' \
-            --exclude 'screenshots/*' --exclude '.git/*'
-
-          # Font files - long cache, immutable
-          aws s3 sync "$SRC" "$BUCKET" --exclude '*' \
-            --include '*.woff' --include '*.woff2' --include '*.ttf' --include '*.eot' --include '*.otf' \
-            --cache-control 'public, max-age=31536000, immutable' \
-            --exclude 'screenshots/*' --exclude '.git/*'
-
-          # Metadata files - medium cache (1 day)
-          aws s3 sync "$SRC" "$BUCKET" --exclude '*' \
-            --include '*.xml' --include '*.json' --include '*.txt' \
-            --cache-control 'public, max-age=86400' \
-            --exclude 'screenshots/*' --exclude '.git/*'
-
-          # Everything else (catch files not handled by type-specific syncs above)
-          aws s3 sync "$SRC" "$BUCKET" \
-            --exclude '.git/*' --exclude 'screenshots/*' \
-            --exclude '.github/*' --exclude 'schemas/*' \
-            --exclude 'scripts/*' --exclude '.devcontainer/*' --exclude 'quicksight/*' \
-            --exclude 'src/*' --exclude 'tests/*' --exclude 'cypress/*' \
-            --exclude 'node_modules/*' --exclude 'builds/*' \
-            --exclude '*.md' --exclude 'package*.json' --exclude '.gitignore' \
-            --exclude 'tsconfig*.json' --exclude '*.config.js' --exclude 'jsdoc.json' \
-            --exclude 'typedoc.json' --exclude 'eslint.config.js' \
-            --exclude '*.html' --exclude '*.css' --exclude '*.js' \
-            --exclude '*.webp' --exclude '*.png' --exclude '*.jpg' --exclude '*.jpeg' \
-            --exclude '*.gif' --exclude '*.svg' --exclude '*.ico' \
-            --exclude '*.woff' --exclude '*.woff2' --exclude '*.ttf' --exclude '*.eot' --exclude '*.otf' \
-            --exclude '*.xml' --exclude '*.json' --exclude '*.txt'
-
-          echo "✅ Deploy with cache headers completed"
+        run: bash scripts/deploy-s3.sh dist "s3://${{ env.S3_BUCKET_NAME }}"
       
       # Invalidate CloudFront cache to ensure latest content is served
       # Note: Using blanket "/*" invalidation is optimal for this use case:
