@@ -1027,7 +1027,7 @@ export function generateExecutiveSummary(doc: RawDocument, lang: Language | stri
     : docType === 'bet' ? 'committee report'
     : docType === 'skr' ? 'government communication'
     : 'parliamentary document';
-  const authorPart = party && party !== 'other' ? ` filed by ${party.toUpperCase()}` : '';
+  const authorPart = party && party !== 'other' ? ` filed by ${escapeHtml(party.toUpperCase())}` : '';
   const effectiveText = doc.fullText ?? doc.fullContent ?? '';
   const passage = effectiveText ? extractKeyPassage(effectiveText, 200) : '';
   const contentSentence = passage ? ` Key provision: "${escapeHtml(passage)}"` : '';
