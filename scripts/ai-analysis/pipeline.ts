@@ -419,6 +419,7 @@ function isSfsDoc(doc: RawDocument): boolean {
  */
 function normalizedDocType(doc: RawDocument): string {
   const raw = docType(doc);
+  if (raw === 'eu') return 'fpm';    // normalize 'eu' → 'fpm' for consistent labeling
   if (raw) return raw;
   if (isSfsDoc(doc)) return 'sfs';
   return 'other';
@@ -492,7 +493,7 @@ function relevantLabel(lang: Language): string {
 
 /** Derive impact from document type: propositions/laws/committee reports/EU positions are high, motions/government comms/press medium, rest low. */
 function impactFromDocType(dt: string): 'high' | 'medium' | 'low' {
-  if (['prop', 'sfs', 'bet', 'fpm'].includes(dt)) return 'high';
+  if (['prop', 'sfs', 'bet', 'fpm', 'eu'].includes(dt)) return 'high';
   if (['mot', 'skr', 'pressm'].includes(dt)) return 'medium';
   return 'low';
 }
@@ -1382,7 +1383,7 @@ async function refineAnalysis(
   const betDocs    = fullTextDocs.filter(d => docType(d) === 'bet');
   const motDocs    = fullTextDocs.filter(d => docType(d) === 'mot');
   const sfsDocs    = fullTextDocs.filter(isSfsDoc);
-  const euDocs     = fullTextDocs.filter(d => docType(d) === 'fpm');
+  const euDocs     = fullTextDocs.filter(d => docType(d) === 'fpm' || docType(d) === 'eu');
   const pressmDocs = fullTextDocs.filter(d => docType(d) === 'pressm');
   const extDocs    = fullTextDocs.filter(d => docType(d) === 'ext');
   const skrDocs    = fullTextDocs.filter(d => docType(d) === 'skr');
@@ -1465,7 +1466,7 @@ async function refineAnalysis(
   refined.mindmapBranches = buildMindmapBranches(docs, topic, refined.policyAssessment.domains, lang);
 
   // Add civil society branch if we have external docs
-  const civilSocietyDocs = fullTextDocs.filter(d => ['ext', 'fpm'].includes(docType(d)));
+  const civilSocietyDocs = fullTextDocs.filter(d => ['ext', 'fpm', 'eu'].includes(docType(d)));
   if (civilSocietyDocs.length > 0 && allFrames.size > 0) {
     // Add a narrative analysis branch to mindmap
     const hasBranch = refined.mindmapBranches.some(b => b.label === narrativeFramesLabel(lang));

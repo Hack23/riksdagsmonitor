@@ -7,8 +7,8 @@
  * @license Apache-2.0
  */
 
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 import {
   transformCalendarToEventGrid,
@@ -26,8 +26,7 @@ import {
   generateEconomicDashboardSection,
   generateMindmapSection,
   generateSankeySection,
-  buildAIMindmapAnalysis,
-  buildMindmapOptionsFromAnalysis,
+  type MindmapBranch,
   type SankeyNode,
   type SankeyFlow,
   type StakeholderSwot,
@@ -1094,6 +1093,7 @@ function writeAnalysisMetadata(
   metadata: AnalysisIterationMetadata,
 ): void {
   try {
+    fs.mkdirSync(METADATA_DIR, { recursive: true });
     const filename = path.join(METADATA_DIR, `ai-analysis-${articleSlug}-${metadata.lang}.json`);
     fs.writeFileSync(filename, JSON.stringify(metadata, null, 2), 'utf-8');
   } catch (err: unknown) {
@@ -1232,10 +1232,6 @@ function buildDeepInspectionSectionsFromAnalysis(
       threats:       sh.swot.threats.map(e => ({ text: e.text, impact: e.impact })) satisfies SwotEntry[],
     },
   }));
-  // Lazy-import swot-analyzer to avoid loading its large localization maps
-  // when generators.ts is used for non-deep-inspection article types.
-  const { buildMultiStakeholderSwot, STAKEHOLDER_NAMES } = await import('./swot-analyzer.js');
-
   // Precompute effectiveType() once per document to avoid repeated string checks.
   const docTypes = docs.map(d => effectiveType(d));
 
@@ -1250,13 +1246,6 @@ function buildDeepInspectionSectionsFromAnalysis(
   const extDocs    = docs.filter((_, i) => docTypes[i] === 'ext');
   const otherDocs  = docs.filter((_, i) =>
     !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext'].includes(docTypes[i]));
-
-  // Build 4–9 stakeholder SWOT analyses from document metadata
-  const stakeholders = buildMultiStakeholderSwot(docs, lang);
-
-  // Derive localised names for the mindmap / sankey from the STAKEHOLDER_NAMES map
-  const govName     = STAKEHOLDER_NAMES.government[lang]     ?? STAKEHOLDER_NAMES.government.en     ?? 'Government Coalition';
-  const oppName     = STAKEHOLDER_NAMES.opposition[lang]     ?? STAKEHOLDER_NAMES.opposition.en     ?? 'Opposition Parties';
 
   const strategicContext = topic
     ? (STRATEGIC_CONTEXT_FOCUSED[lang] ?? STRATEGIC_CONTEXT_FOCUSED.en!)(topic, docs.length, analysis.confidenceScore)
@@ -1300,49 +1289,19 @@ function buildDeepInspectionSectionsFromAnalysis(
       ? (MINDMAP_SUMMARY_FOCUSED[lang] ?? MINDMAP_SUMMARY_FOCUSED.en!)(topic)
       : (MINDMAP_SUMMARY_GENERIC[lang] ?? MINDMAP_SUMMARY_GENERIC.en!)(docs.length),
   });
-  // ── Mindmap: AI-driven conceptual map across 5 political dimensions ─────────
-  const allDetectedDomains = new Set<string>();
-  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
-  const detectedDomainList = [...allDetectedDomains].slice(0, 6);
 
-  // Pass precomputed domains to avoid iterating docs twice
-  const aiAnalysis = buildAIMindmapAnalysis(docs, topic, lang, detectedDomainList);
-  const mindmapSection = generateMindmapSection(
-    buildMindmapOptionsFromAnalysis(
-      aiAnalysis,
-      lang,
-      topic || deepLabel('parliamentaryAnalysis', lang),
-      {
-        summary: topic
-          ? `${deepLabel('conceptualMap', lang)}: ${topic}`
-          : `${deepLabel('conceptualMap', lang)} — ${docs.length} ${deepLabel('documents', lang).toLowerCase()}`,
-      },
-    ),
-  );
-
-  // Classify docs for Sankey section
-  const propDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
-  const betDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
-  const motDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
-  const sfsDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'sfs' || (d.dokumentnamn || '').startsWith('SFS'));
-  const skrDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
-  const euDocs     = docs.filter(d => (d.doktyp || d.documentType) === 'fpm' || (d.doktyp || d.documentType) === 'eu');
-  const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
-  const extDocs    = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
-  const otherDocs  = docs.filter(d =>
-    !['prop','bet','mot','skr','sfs','fpm','eu','pressm','ext'].includes((d.doktyp || d.documentType) || '')
-    && !(d.dokumentnamn || '').startsWith('SFS'));
+  // Sankey section reuses doc classification from above (propDocs, betDocs, etc.)
 
   // Select stakeholder names by role key (not array index) to avoid silent mislabeling
   const findStakeholderName = (role: string, fallback: string): string =>
     analysis.stakeholderSwot.find(s => s.role === role)?.name ?? fallback;
-  const govName     = findStakeholderName('government', 'Government');
-  const oppName     = findStakeholderName('parliament', 'Parliament');
+  const sankeyGovName     = findStakeholderName('government', 'Government');
+  const sankeyOppName     = findStakeholderName('parliament', 'Parliament');
   const privateName = findStakeholderName('private-sector', 'Private Sector');
 
   const sankeyNodes: SankeyNode[] = [
-    { id: 'gov', label: govName,     color: 'cyan' },
-    { id: 'opp', label: oppName,     color: 'magenta' },
+    { id: 'gov', label: sankeyGovName,     color: 'cyan' },
+    { id: 'opp', label: sankeyOppName,     color: 'magenta' },
     { id: 'pvt', label: privateName, color: 'purple' },
   ];
 
