@@ -5,126 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Riksdagsmonitor Documentation Hub</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #e0e0e0;
-      background: linear-gradient(135deg, #0a0e27 0%, #1a1e3d 100%);
-      min-height: 100vh;
-      padding: 2rem;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    h1 {
-      color: #00d9ff;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
-    }
-    .subtitle {
-      color: #ff006e;
-      font-size: 1.2rem;
-      margin-bottom: 3rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-    .card {
-      background: rgba(26, 30, 61, 0.6);
-      border: 1px solid rgba(0, 217, 255, 0.3);
-      border-radius: 8px;
-      padding: 2rem;
-      transition: all 0.3s ease;
-    }
-    .card:hover {
-      border-color: #00d9ff;
-      box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
-      transform: translateY(-5px);
-    }
-    .card h2 {
-      color: #ffbe0b;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .card p {
-      margin-bottom: 1.5rem;
-      color: #b0b0b0;
-    }
-    .card a {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%);
-      color: #0a0e27;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-    .card a:hover {
-      background: linear-gradient(135deg, #00ffff 0%, #00d9ff 100%);
-      box-shadow: 0 0 10px rgba(0, 217, 255, 0.6);
-    }
-    .footer {
-      text-align: center;
-      color: #808080;
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(0, 217, 255, 0.2);
-    }
+    :root{--bg:#0a0e27;--bg2:#1a1e3d;--cyan:#00d9ff;--green:#00ff88;--red:#ff006e;--yellow:#ffbe0b;--text:#e0e0e0;--muted:#808080;--card:rgba(26,30,61,.6);--border:rgba(0,217,255,.3)}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:var(--text);background:linear-gradient(135deg,var(--bg) 0%,var(--bg2) 100%);min-height:100vh;padding:2rem}
+    .container{max-width:1200px;margin:0 auto}
+    h1{color:var(--cyan);font-size:2.5rem;margin-bottom:.5rem;text-shadow:0 0 10px rgba(0,217,255,.5)}
+    .subtitle{color:var(--red);font-size:1.2rem;margin-bottom:1rem}
+    .release-info{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1rem 1.5rem;margin-bottom:2rem;font-size:.9rem;color:var(--muted)}
+    .release-info strong{color:var(--cyan)}
+    h2{color:var(--yellow);font-size:1.3rem;margin:2rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(0,217,255,.15)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:2rem}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;transition:all .3s ease}
+    .card:hover{border-color:var(--cyan);box-shadow:0 0 20px rgba(0,217,255,.4);transform:translateY(-4px)}
+    .card h3{color:var(--yellow);font-size:1.2rem;margin-bottom:.75rem}
+    .card p{margin-bottom:1rem;color:#b0b0b0;font-size:.9rem}
+    .card .links{display:flex;flex-wrap:wrap;gap:.5rem}
+    .card .links a{display:inline-block;padding:.5rem 1rem;background:linear-gradient(135deg,#00d9ff 0%,#0099cc 100%);color:#0a0e27;text-decoration:none;border-radius:4px;font-weight:700;font-size:.85rem;transition:all .3s ease}
+    .card .links a:hover{background:linear-gradient(135deg,#00ffff 0%,#00d9ff 100%);box-shadow:0 0 10px rgba(0,217,255,.6)}
+    .card .links a.secondary{background:rgba(0,217,255,.1);color:var(--cyan);border:1px solid var(--border)}
+    .card .links a.secondary:hover{background:rgba(0,217,255,.2)}
+    .footer{text-align:center;color:var(--muted);margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(0,217,255,.2);font-size:.85rem}
   </style>
 </head>
 <body>
   <div class="container">
     <h1>📚 Riksdagsmonitor Documentation Hub</h1>
-    <p class="subtitle">Swedish Parliament Intelligence Platform - Technical Documentation</p>
-    
+    <p class="subtitle">Swedish Parliament Intelligence Platform — Technical Documentation</p>
+
+    <div class="release-info">
+      📅 Generated during release workflow · <strong>Riksdagsmonitor</strong> by Hack23 AB
+    </div>
+
+    <h2>📖 API &amp; Architecture</h2>
     <div class="grid">
       <div class="card">
-        <h2>📖 API Documentation</h2>
+        <h3>📖 API Documentation</h3>
         <p>Comprehensive TypeDoc-generated API reference for all TypeScript modules, dashboard components, and utility functions.</p>
-        <a href="api/index.html">View API Docs →</a>
-      </div>
-      
-      <div class="card">
-        <h2>📊 Test Coverage</h2>
-        <p>Vitest coverage report showing line, branch, function, and statement coverage across the codebase.</p>
-        <a href="coverage/index.html">View Coverage →</a>
-      </div>
-      
-      <div class="card">
-        <h2>🧪 Test Results</h2>
-        <p>Detailed unit test results from Vitest, including all test suites and individual test cases.</p>
-        <a href="test-results/index.html">View Test Results →</a>
-      </div>
-      
-      <div class="card">
-        <h2>🎭 E2E Tests (Cypress)</h2>
-        <p>End-to-end test reports from Cypress, validating dashboard functionality and user interactions.</p>
-        <a href="cypress/index.html">View E2E Reports →</a>
-      </div>
-      
-      <div class="card">
-        <h2>📦 Dependencies</h2>
-        <p>Complete dependency tree showing all npm packages and their versions used in the project.</p>
-        <a href="dependencies/dependency-tree.txt">View Dependency Tree →</a>
-      </div>
-      
-      <div class="card">
-        <h2>🏠 Back to Main Site</h2>
-        <p>Return to the main Riksdagsmonitor platform to explore Swedish Parliament intelligence dashboards.</p>
-        <a href="../index.html">Go to Main Site →</a>
+        <div class="links">
+          <a href="api/index.html">View API Docs →</a>
+        </div>
       </div>
     </div>
-    
+
+    <h2>🧪 Testing &amp; Quality</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🧪 Unit Test Results</h3>
+        <p>Interactive Vitest HTML report with test tree, filtering, duration breakdown, and re-run capability (built-in @vitest/ui reporter).</p>
+        <div class="links">
+          <a href="test-results/html/index.html">Vitest HTML Report →</a>
+          <a href="test-results/vitest-results.json" class="secondary">JSON</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🎭 E2E Test Results</h3>
+        <p>Cypress end-to-end test reports with spec-level breakdown, timing per spec, screenshot gallery, and searchable log.</p>
+        <div class="links">
+          <a href="cypress/index.html">View E2E Reports →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>📊 Test Coverage</h3>
+        <p>Istanbul HTML coverage report with per-file line/branch/function/statement metrics, source annotation, and directory breakdown (built-in @vitest/coverage-v8).</p>
+        <div class="links">
+          <a href="coverage/index.html">Istanbul Report →</a>
+          <a href="coverage/lcov-report/index.html" class="secondary">LCOV</a>
+          <a href="coverage/coverage-final.json" class="secondary">JSON</a>
+        </div>
+      </div>
+    </div>
+
+    <h2>📦 Dependencies &amp; Supply Chain</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>📦 Dependency Report</h3>
+        <p>Interactive dependency report with package counts, search, prod/dev badges, and expandable full tree view.</p>
+        <div class="links">
+          <a href="dependencies/index.html">View Dependencies →</a>
+          <a href="dependencies/dependency-tree.json" class="secondary">JSON</a>
+          <a href="dependencies/dependency-tree.txt" class="secondary">TXT</a>
+        </div>
+      </div>
+    </div>
+
+    <h2>🔗 Quick Links</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🏠 Main Site</h3>
+        <p>Return to the main Riksdagsmonitor platform to explore Swedish Parliament intelligence dashboards.</p>
+        <div class="links">
+          <a href="../index.html">Go to Main Site →</a>
+        </div>
+      </div>
+    </div>
+
     <div class="footer">
-      <p>Generated during release workflow | Riksdagsmonitor by Hack23 AB</p>
-      <p>Licensed under Apache License 2.0</p>
+      <p>Generated during release workflow · Riksdagsmonitor by Hack23 AB · Licensed under Apache License 2.0</p>
     </div>
   </div>
 </body>
