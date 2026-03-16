@@ -172,6 +172,16 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       expect(content).toMatch(/supports.*from.*tom|supports.*from_date.*to_date|supports.*dateFrom.*dateTo/i);
       expect(content).toMatch(/filter by.*datum|filter by.*publicerad|filter by.*inlämnad/);
     });
+
+    it('news-evening-analysis.md should document post-query fromDate filtering guidance', () => {
+      const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
+      const content = fs.readFileSync(filepath, 'utf-8');
+
+      // Should include explicit comparison against fromDate (string or Date-object style)
+      expect(content).toMatch(/>=\s*fromDate|new Date\([^\n]*fromDate[^\n]*\)\s*[>=]/i);
+      // Should include semantic post-query filtering guidance without exact phrasing dependency
+      expect(content).toMatch(/post-query\s+filter|filter\s+results|date\s+filter/i);
+    });
   });
 
   describe('Cross-Referencing Strategy', () => {
@@ -181,7 +191,11 @@ describe('Agentic Workflow MCP Query Patterns', () => {
 
       // Should have "Cross-Referencing Strategy" section
       expect(content).toMatch(/cross.*referencing.*strategy/i);
+    });
 
+    it('cross-referencing section should reference data source combinations', () => {
+      const filepath = path.join(WORKFLOWS_DIR, 'news-evening-analysis.md');
+      const content = fs.readFileSync(filepath, 'utf-8');
       // Should have cross-referencing guidance (either numbered examples or descriptive patterns)
       const hasCrossRefGuidance =
         (content.includes('Example 1:') && content.includes('Example 2:')) ||
@@ -193,8 +207,12 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       // combining different API calls in a single analysis workflow
       const hasMultiToolExamples =
         content.includes('Example 1:') && content.includes('Example 2:');
-
       expect(hasMultiToolExamples).toBe(true);
+
+      // Should mention cross-referencing related data sources
+      expect(content).toMatch(/Cross-reference related data sources/i);
+      // Should mention committee reports or voting records as cross-ref targets
+      expect(content).toMatch(/committee reports|voting records|propositions|motions/i);
     });
   });
 
