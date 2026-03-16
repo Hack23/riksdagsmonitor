@@ -16,6 +16,10 @@ on:
         description: 'Core languages for content generation (en,sv | nordic | eu-core | all). Translations for remaining languages are handled by the dedicated news-translate workflow.'
         required: false
         default: en,sv
+      analysis_depth:
+        description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.'
+        required: false
+        default: deep
 
 permissions:
   contents: read
@@ -96,6 +100,7 @@ You are the **News Journalist Agent** for Riksdagsmonitor generating **committee
 
 - **force_generation** = `${{ github.event.inputs.force_generation }}`
 - **languages** = `${{ github.event.inputs.languages }}`
+- **analysis_depth** = `${{ github.event.inputs.analysis_depth }}`
 
 If **force_generation** is `true`, generate articles even if recent ones exist. Use the **languages** value to determine which languages to generate.
 
@@ -125,6 +130,37 @@ Before generating articles, consult these skills:
 6. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
 7. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
 8. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
+
+
+## 📊 MANDATORY Multi-Step AI Analysis Framework
+
+> **Read `analysis_depth` input first** (default: `deep`). This controls iteration count and section requirements.
+
+Based on the editorial profile for `committee-reports` (from `scripts/editorial-framework.ts`):
+- **SWOT**: full (5+ stakeholder perspectives per quadrant)
+- **Dashboard**: required (min. 2 Chart.js charts)
+- **Mindmap**: required (CSS policy mindmap)
+- **Min. stakeholders**: 5 perspectives
+- **AI iterations**: 2 (standard), 2 (deep), or 3 (comprehensive)
+
+### Phase 1 — Data Collection & Initial Analysis
+1. Fetch MCP data (`get_betankanden`, `get_sync_status`, cross-reference `search_voteringar`)
+2. Detect policy domains for each report using `scripts/statistical-claims-detector.ts`
+3. Build initial outline: lede, thematic groupings, key takeaways
+
+### Phase 2 — Iterative Depth Enhancement (repeat per `analysis_depth`)
+For each AI iteration:
+1. **SWOT Analysis**: Generate `generateSwotSection()` with ≥5 stakeholder perspectives when `analysis_depth` is `deep` or `comprehensive`
+2. **Policy Dashboard**: Generate `generateDashboardSection()` with ≥2 charts (bar chart of committee activity, line trend)
+3. **Mindmap**: Generate `generateMindmapSection()` showing policy domain connections
+4. **Quality Gate** (check before next iteration):
+   - Verify no identical "Why It Matters" text across entries
+   - Verify all Swedish API text is translated
+   - Verify word count ≥ 800
+   - If failing any check: re-generate the failing section before proceeding
+
+### Phase 3 — Final Quality Gate Before PR
+Run all validation checks from the **MANDATORY Quality Validation** section below before committing.
 
 ## MANDATORY Date Validation
 
