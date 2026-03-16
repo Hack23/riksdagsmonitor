@@ -59,7 +59,7 @@ import {
 // Per-language domain name translations (12 domains × 14 languages)
 // English keys are used internally; localised names are returned to callers.
 // ---------------------------------------------------------------------------
-type DomainKey = 'fiscal' | 'defence' | 'environment' | 'education' | 'healthcare'
+export type DomainKey = 'fiscal' | 'defence' | 'environment' | 'education' | 'healthcare'
   | 'migration' | 'eu-foreign' | 'justice' | 'labour' | 'housing' | 'transport' | 'trade';
 
 const DOMAIN_NAMES: Readonly<Record<DomainKey, Record<string, string>>> = {
@@ -148,7 +148,29 @@ const DOMAIN_NAMES: Readonly<Record<DomainKey, Record<string, string>>> = {
   },
 };
 
-/** Resolve a localised domain name from a domain key and language. */
+/**
+ * Map from canonical domain key to its English display name.
+ * Single source of truth — mirrors DOMAIN_NAMES[key].en for each key.
+ */
+export const DOMAIN_KEY_TO_EN: Readonly<Record<DomainKey, string>> = Object.fromEntries(
+  Object.entries(DOMAIN_NAMES).map(([key, translations]) => [key, translations.en]),
+) as Record<DomainKey, string>;
+
+/**
+ * Reverse lookup: map any localised domain display name back to its canonical key.
+ * Covers all 14 languages so callers can reliably derive the key from any
+ * string returned by `detectPolicyDomains()`.
+ */
+export const DOMAIN_NAME_TO_KEY: Readonly<Record<string, DomainKey>> = (() => {
+  const m: Record<string, DomainKey> = {};
+  for (const [key, translations] of Object.entries(DOMAIN_NAMES)) {
+    for (const localisedName of Object.values(translations)) {
+      m[localisedName] = key as DomainKey;
+      m[localisedName.toLowerCase()] = key as DomainKey;
+    }
+  }
+  return m;
+})();
 function domainName(key: DomainKey, lang: Language | string): string {
   return DOMAIN_NAMES[key][lang] ?? DOMAIN_NAMES[key].en;
 }
@@ -290,20 +312,17 @@ export function detectNarrativeFrames(doc: RawDocument): NarrativeFrame[] {
 type _LangPair = { en: Record<string, string>; sv: Record<string, string> } & Partial<Record<Language, Record<string, string>>>;
 
 /**
- * Build a reverse lookup from any localised domain name back to the English key.
- * This allows getDomainSpecificAnalysis to work with the localised strings
- * returned by detectPolicyDomains().
+ * Reverse lookup from any localised domain name to the English display name.
+ * Derived from `DOMAIN_NAME_TO_KEY` + `DOMAIN_KEY_TO_EN` to avoid maintaining
+ * a second translation table that could drift from the canonical source.
  */
-const _LOCALISED_TO_EN: Record<string, string> = {};
-for (const [, translations] of Object.entries(DOMAIN_NAMES)) {
-  const enName = translations.en;
-  for (const [langKey, localisedName] of Object.entries(translations)) {
-    // Skip the English entry — it maps to itself and adds no new lookup value
-    if (langKey === 'en') continue;
-    _LOCALISED_TO_EN[localisedName] = enName;
-    _LOCALISED_TO_EN[localisedName.toLowerCase()] = enName;
+const _LOCALISED_TO_EN: Readonly<Record<string, string>> = (() => {
+  const m: Record<string, string> = {};
+  for (const [localised, key] of Object.entries(DOMAIN_NAME_TO_KEY)) {
+    m[localised] = DOMAIN_KEY_TO_EN[key];
   }
-}
+  return m;
+})();
 
 /** Module-level constant — allocated once, shared across all calls. */
 const DOMAIN_ANALYSES: Record<string, _LangPair> = {
@@ -539,6 +558,27 @@ export function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string,
 }
 
 /**
+ * Localised interpellation fallback text: references minister obligation
+ * to respond, not committee review.  Hoisted to module-level to avoid
+ * per-call allocation inside generatePolicySignificance().
+ */
+const IP_FALLBACK: Readonly<Record<string, string>> = {
+  sv: 'Interpellationen debatteras i kammaren där ministern är skyldig att svara och förklara sina beslut.',
+  da: 'Interpellationen debatteres i Riksdagens kammare, hvor ministeren er forpligtet til at svare og stå til ansvar.',
+  no: 'Interpellasjonen debatteres i Riksdagens kammare, der ministeren er forpliktet til å svare og stå til ansvar.',
+  fi: 'Välikysymys käsitellään Riksdagin täysistunnossa, jossa ministerin on vastattava ja oltava tilivelvollinen.',
+  de: 'Die Interpellation wird in der Kammer debattiert, wobei der Minister verpflichtet ist, Rede und Antwort zu stehen.',
+  fr: "L'interpellation est débattue en séance plénière, où le ministre est tenu de répondre et de rendre des comptes.",
+  es: 'La interpelación se debate en el pleno, donde el ministro está obligado a responder y rendir cuentas.',
+  nl: 'De interpellatie wordt besproken in de Kamer, waar de minister verplicht is te antwoorden en verantwoording af te leggen.',
+  ar: 'تتم مناقشة الاستجواب في الجلسة العامة حيث يتعين على الوزير الرد وتحمل المسؤولية.',
+  he: 'האינטרפלציה נדונה במליאה, שם השר מחויב להשיב ולתת דין וחשבון.',
+  ja: '質問主意書は本会議で審議され、大臣は答弁と説明責任を果たす義務があります。',
+  ko: '대정부질문은 본회의에서 논의되며, 장관은 답변하고 책임을 져야 할 의무가 있습니다.',
+  zh: '质询在全体会议上进行辩论，部长有义务回应并承担责任。',
+};
+
+/**
  * Generate policy significance context for a document based on its metadata.
  * Uses the localised policySignificanceTouches label plus a domain-specific
  * analysis sentence instead of generic boilerplate.
@@ -546,7 +586,7 @@ export function getDomainSpecificAnalysis(primaryDomain: string, doktyp: string,
  * when no domain keyword matches but the document's organ field identifies a
  * known Riksdag committee.
  * @param impliedDoktyp - document type inferred from the calling context
- *   ('mot', 'bet', 'prop') when doc.doktyp / doc.documentType is absent.
+ *   ('mot', 'bet', 'prop', 'ip') when doc.doktyp / doc.documentType is absent.
  */
 export function generatePolicySignificance(doc: RawDocument, lang: Language | string, impliedDoktyp?: string): string {
   const domains = detectPolicyDomains(doc, lang);
@@ -593,6 +633,13 @@ export function generatePolicySignificance(doc: RawDocument, lang: Language | st
     }
   }
 
+  // Interpellation-specific fallback: references minister obligation, not committee review
+  const doktyp2 = doc.doktyp || doc.documentType || impliedDoktyp || '';
+  if (doktyp2 === 'ip') {
+    return IP_FALLBACK[lang as string]
+      ?? 'The interpellation is debated in the chamber, where the minister is obliged to respond and be held accountable.';
+  }
+
   // Generic significance when no domain detected and no known committee
   const genericVal = L(lang, 'policySignificanceGeneric');
   return typeof genericVal === 'string' ? genericVal : 'Requires committee review and chamber debate before a decision is reached.';
@@ -605,7 +652,7 @@ export function generatePolicySignificance(doc: RawDocument, lang: Language | st
  * above in structured views and must not be duplicated here.
  * Falls back to generatePolicySignificance when no enriched text is available.
  * @param impliedDoktyp - document type inferred from the calling context
- *   ('mot', 'bet', 'prop') when doc.doktyp / doc.documentType is absent.
+ *   ('mot', 'bet', 'prop', 'ip') when doc.doktyp / doc.documentType is absent.
  */
 export function generateDeepPolicyAnalysis(doc: RawDocument, lang: Language | string, impliedDoktyp?: string, maxPassageChars = 300): string {
   const effectiveDoktyp = doc.doktyp || doc.documentType || impliedDoktyp || '';
