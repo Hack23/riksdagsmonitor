@@ -45,10 +45,11 @@ export const skipExistingArg: boolean = args.includes('--skip-existing');
 export const batchSize: number = batchSizeArg ? parseInt(parseArgValue(batchSizeArg) || '0', 10) : 0;
 const qualityThresholdArg: string | undefined = args.find(arg => arg.startsWith('--quality-threshold='));
 
-// Deep-inspection arguments: document IDs, URLs, and focus topic for targeted analysis
+// Deep-inspection arguments: document IDs, URLs, focus topic, and analysis depth
 const documentIdsArg: string | undefined = args.find(arg => arg.startsWith('--document-ids='));
 const documentUrlsArg: string | undefined = args.find(arg => arg.startsWith('--document-urls='));
 const focusTopicArg: string | undefined = args.find(arg => arg.startsWith('--focus-topic='));
+const depthArg: string | undefined = args.find(arg => arg.startsWith('--depth='));
 
 /** Comma-separated Riksdag document IDs for deep-inspection (e.g. H901FiU1,H901JuU25) */
 const rawDocumentIds: string = parseArgValue(documentIdsArg);
@@ -65,6 +66,26 @@ export const documentUrls: string[] = rawDocumentUrls
 /** Specific policy topic to focus deep-inspection analysis on */
 export const focusTopic: string = parseArgValue(focusTopicArg);
 
+/**
+ * Analysis depth for deep-inspection (1–4).
+ *  1 — surface analysis (what happened) — default, fastest
+ *  2 — adds predictive assessment and historical context
+ *  3 — adds executive intelligence summary and methodology (3 iterations)
+ *  4 — full report: adds quality-review iteration in methodology (4 iterations)
+ */
+const rawDepth: string = parseArgValue(depthArg);
+const depthArgProvided: boolean = !!depthArg;
+const parsedDepthNum: number = rawDepth ? Number(rawDepth) : NaN;
+const depthIsValid: boolean = Number.isInteger(parsedDepthNum) && parsedDepthNum >= 1 && parsedDepthNum <= 4;
+if (depthArgProvided && !depthIsValid) {
+  console.warn(`Invalid --depth value "${rawDepth}" (expected integer 1–4), falling back to default 1.`);
+}
+const safeDepth: number = depthIsValid ? parsedDepthNum : 1;
+export const analysisDepth: 1 | 2 | 3 | 4 =
+  safeDepth === 4 ? 4 :
+  safeDepth === 3 ? 3 :
+  safeDepth === 2 ? 2 :
+  1;
 // --iterations=N: number of AI analysis iterations for deep-inspection (default: 3)
 const iterationsArg: string | undefined = args.find(arg => arg.startsWith('--iterations='));
 const DEFAULT_ITERATIONS = 3;
@@ -93,8 +114,8 @@ export const analysisIterations: number = parsedIterations;
  * - `standard` — 2 passes (initial + SWOT refinement; default)
  * - `deep`     — 3 passes (initial + refinement + stakeholder validation)
  */
-const analysisDepthArg: string | undefined = args.find(arg => arg.startsWith('--analysis-depth='));
-const rawAnalysisDepth: string = parseArgValue(analysisDepthArg ?? '').toLowerCase();
+const analysisModeArg: string | undefined = args.find(arg => arg.startsWith('--analysis-depth='));
+const rawAnalysisMode: string = parseArgValue(analysisModeArg ?? '').toLowerCase();
 const VALID_ANALYSIS_DEPTHS: readonly AnalysisDepth[] = ['quick', 'standard', 'deep'];
 
 function parseAnalysisDepth(raw: string): AnalysisDepth {
@@ -107,7 +128,7 @@ function parseAnalysisDepth(raw: string): AnalysisDepth {
   return 'standard';
 }
 
-export const analysisDepth: AnalysisDepth = parseAnalysisDepth(rawAnalysisDepth);
+export const analysisMode: AnalysisDepth = parseAnalysisDepth(rawAnalysisMode);
 
 const DEFAULT_QUALITY_THRESHOLD = 40;
 let parsedQualityThreshold: number = DEFAULT_QUALITY_THRESHOLD;
