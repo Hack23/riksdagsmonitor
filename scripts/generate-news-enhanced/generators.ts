@@ -833,6 +833,7 @@ const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, stri
     fi: 'Riskiskenaariot', de: 'Risikoszenarien', fr: 'Scénarios de risque', es: 'Escenarios de riesgo',
     nl: "Risicoscenario's", ar: 'سيناريوهات المخاطر', he: 'תרחישי סיכון',
     ja: 'リスクシナリオ', ko: '위험 시나리오', zh: '风险情景',
+  },
   govCommunications: {
     en: 'Gov. Communications', sv: 'Regeringsmeddelanden', da: 'Regeringsmeddelelser', no: 'Regjeringsmeldinger',
     fi: 'Hallituksen tiedonannot', de: 'Regierungsmitteilungen', fr: 'Communications gouvernementales', es: 'Comunicaciones del Gobierno',
@@ -1121,12 +1122,6 @@ function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Lang
   const items: string[] = [];
 
   // Derive takeaways from document patterns
-  const propDocs = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
-  const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
-  const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
-  const euDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
-  const sfsDocs  = docs.filter(isSfsDoc);
-  const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
   const propDocs = docs.filter(d => effectiveType(d) === 'prop');
   const betDocs  = docs.filter(d => effectiveType(d) === 'bet');
   const motDocs  = docs.filter(d => effectiveType(d) === 'mot');
@@ -1231,7 +1226,9 @@ function buildExecutiveSummary(docs: RawDocument[], topic: string | null, lang: 
       if (propCount > 0) enClauses.push(`${propCount} proposition${propCount !== 1 ? 's' : ''} advancing the executive agenda`);
       if (betCount > 0) enClauses.push(`${betCount} committee report${betCount !== 1 ? 's' : ''} providing parliamentary scrutiny`);
       if (motCount > 0) enClauses.push(`${motCount} opposition motion${motCount !== 1 ? 's' : ''} challenging the direction`);
-      const enClauseStr = enClauses.length > 0 ? `, with ${enClauses.join(', and ')}` : '';
+      const enClauseStr = enClauses.length > 0
+        ? `, with ${enClauses.length === 1 ? enClauses[0] : enClauses.slice(0, -1).join(', ') + ', and ' + enClauses[enClauses.length - 1]}`
+        : '';
       return `This deep-inspection intelligence report analyses ${docs.length} parliamentary document${docs.length !== 1 ? 's' : ''}${topic ? ` on <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? `, spanning ${domainPhrase}` : ''}. Of these, ${enriched} ${enriched === 1 ? 'was' : 'were'} enriched with full text to enable substantive analysis. The legislative posture is ${enPosture}${enClauseStr}. ${hasEnactedLaw ? `${sfsDocs.length} statute${sfsDocs.length !== 1 ? 's' : ''} ${sfsDocs.length !== 1 ? 'have' : 'has'} already been enacted, establishing a legal baseline.` : highScrutiny ? 'Committee engagement indicates that the policy is under active parliamentary review, signalling that key decisions are imminent.' : 'The legislative pipeline remains at an early stage, requiring close monitoring for acceleration signals.'} ${domainPhrase ? `Policy domains engaged — ${domainPhrase} — reflect the cross-cutting nature of this initiative.` : 'The documents reflect focused policy engagement in this area.'} Decision-makers should prioritise tracking committee deliberations and chamber voting patterns as the most reliable forward indicators.`;
     })(),
     sv: (() => {
@@ -1579,7 +1576,7 @@ function buildMethodologySection(docs: RawDocument[], topic: string | null, lang
     `  <h2>${esc(heading)}</h2>`,
     `  <dl class="methodology-details">`,
     `    <dt>${esc(sourceLabels[lang] ?? sourceLabels.en!)}</dt>`,
-    `    <dd>Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v proxy)</dd>`,
+    `    <dd>Riksdag MCP API (search_dokument, get_dokument, get_dokument_innehall), regeringen.se (g0v proxy), and supplementary external sources (GitHub raw content, public government URLs) when available</dd>`,
     `    <dt>${esc(iterLabel[lang] ?? iterLabel.en!)}</dt>`,
     `    <dd><ol class="iteration-list">\n    ${iterationItems}\n    </ol></dd>`,
     `    <dt>${esc(confLabel[lang] ?? confLabel.en!)}</dt>`,
@@ -1625,35 +1622,6 @@ async function buildDeepInspectionSections(
   // when generators.ts is used for non-deep-inspection article types.
   const { buildMultiStakeholderSwot, STAKEHOLDER_NAMES } = await import('./swot-analyzer.js');
 
-  // Classify by document type
-  const propDocs = docs.filter(d => (d.doktyp || d.documentType) === 'prop');
-  const betDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'bet');
-  const motDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'mot');
-  const skrDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'skr');
-  const sfsDocs  = docs.filter(isSfsDoc);
-  const euDocs   = docs.filter(d => (d.doktyp || d.documentType) === 'fpm');
-  const pressmDocs = docs.filter(d => (d.doktyp || d.documentType) === 'pressm');
-  const extDocs  = docs.filter(d => (d.doktyp || d.documentType) === 'ext');
-  const otherDocs = docs.filter(d =>
-    !['prop','bet','mot','skr','sfs','fpm','pressm','ext'].includes((d.doktyp || d.documentType) || ''));
-
-  // ── Government / Policy Administration ────────────────────────────────────
-  const govStrengths: SwotEntry[] = [
-    ...propDocs.slice(0, 3).map(d => toEntry(d, 'high')),
-    ...sfsDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-    ...skrDocs.slice(0, 1).map(d => toEntry(d, 'medium')),
-    ...pressmDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-  ];
-  const govWeaknesses: SwotEntry[] = [
-    ...betDocs.slice(0, 2).map(d => toEntry(d, 'medium')),
-  ];
-  const govOpportunities: SwotEntry[] = [
-    ...euDocs.slice(0, 2).map(d => toEntry(d, 'high')),
-    ...skrDocs.slice(1, 2).map(d => toEntry(d, 'medium')),
-  ];
-  const govThreats: SwotEntry[] = [
-    ...motDocs.slice(0, 2).map(d => toEntry(d, 'medium')),
-  ];
   // Precompute effectiveType() once per document to avoid repeated string checks.
   const docTypes = docs.map(d => effectiveType(d));
 
