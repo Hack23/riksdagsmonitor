@@ -63,6 +63,7 @@ export {
   generateCiaOverviewSection,
   buildAIMindmapAnalysis,
   buildMindmapOptionsFromAnalysis,
+  generateInterpellationsContent,
 } from './content-generators.js';
 export type {
   SwotSectionOptions,
