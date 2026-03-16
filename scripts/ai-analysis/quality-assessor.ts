@@ -93,6 +93,7 @@ const UNICODE_WORD_START = '(?:^|[^\\p{L}\\p{N}_])';  // Unicode-aware start bou
 const UNICODE_WORD_END = '(?:$|[^\\p{L}\\p{N}_])';    // Unicode-aware end boundary
 const DOCUMENT_ID_PATTERNS: readonly RegExp[] = [
   new RegExp(`${UNICODE_WORD_START}([\\p{L}]{1,4}\\d{1,4}/\\d{2}:\\d+)${UNICODE_WORD_END}`, 'giu'),
+  new RegExp(`${UNICODE_WORD_START}(\\d{4}/\\d{2}:[\\p{L}]{1,4}\\d+)${UNICODE_WORD_END}`, 'giu'),
   new RegExp(`${UNICODE_WORD_START}(Prop\\.\\s*\\d{4}/\\d{2}:\\d+)${UNICODE_WORD_END}`, 'giu'),
   new RegExp(`${UNICODE_WORD_START}(Bet\\.\\s*\\d{4}/\\d{2}:[\\p{L}]{1,4}\\d+)${UNICODE_WORD_END}`, 'giu'),
   new RegExp(`${UNICODE_WORD_START}(Mot\\.\\s*\\d{4}/\\d{2}:\\d+)${UNICODE_WORD_END}`, 'giu'),
@@ -261,7 +262,8 @@ function assessStakeholderCoverage(html: string): DimensionScore {
  * Measures substantive analysis beyond surface-level description.
  */
 function assessAnalyticalDepth(html: string): DimensionScore {
-  const text = stripHtml(html).toLowerCase();
+  const strippedText = stripHtml(html);
+  const text = strippedText.toLowerCase();
   const evidence: string[] = [];
   const improvements: string[] = [];
   let raw = 0;
@@ -283,10 +285,13 @@ function assessAnalyticalDepth(html: string): DimensionScore {
   if (evidenceW > 0) evidence.push(`${evidenceW} evidence-based indicator(s)`);
 
   // Multiple perspectives (blockquotes or attributed quotes)
-  // Count blockquotes plus quoted spans detected by matching pairs of
-  // straight double-quotes surrounding at least one character.
+  // Count blockquotes plus quoted spans after normalizing common quote forms
+  // so multilingual text (e.g., curly quotes or &quot;) isn't undercounted.
+  const normalizedQuoteText = strippedText
+    .replace(/&quot;/g, '"')
+    .replace(/[“”„‟«»]/g, '"');
   const quotes = (html.match(/<blockquote[\s>]/gi) || []).length +
-                 (text.match(/"[^"]{2,}"/g) || []).length;
+                 (normalizedQuoteText.match(/"[^"]{2,}"/g) || []).length;
   raw += Math.min(quotes * 4, 20);
   if (quotes > 0) evidence.push(`${quotes} attributed quote(s) or blockquote(s)`);
 

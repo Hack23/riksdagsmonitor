@@ -188,6 +188,16 @@ describe('assessArticleQuality', () => {
       // withMatch should be >= noMatch (source confirmation bonus)
       expect(withMatch).toBeGreaterThanOrEqual(noMatch);
     });
+
+    it('should detect bare document IDs like 2024/25:FiU10', () => {
+      const withBare = buildArticleHtml({ docIds: ['2024/25:FiU10'] });
+      const withoutDocs = buildArticleHtml({ docIds: [] });
+
+      const scoreWithBare = assessArticleQuality(withBare, 'en').dimensions.factualAccuracy.score;
+      const scoreWithout = assessArticleQuality(withoutDocs, 'en').dimensions.factualAccuracy.score;
+
+      expect(scoreWithBare).toBeGreaterThan(scoreWithout);
+    });
   });
 
   // ---------------------------------------------------------------------------
@@ -247,6 +257,17 @@ describe('assessArticleQuality', () => {
       const scoreWithout = assessArticleQuality(withoutQuote, 'en').dimensions.analyticalDepth.score;
 
       expect(scoreWith).toBeGreaterThanOrEqual(scoreWithout);
+    });
+
+    it('should count both curly-quoted and &quot;-quoted spans as attributed quotes', () => {
+      const words = Array(500).fill('analysis').join(' ');
+      const withUnicodeQuotes = `<html><body><p>${words}</p><p>“Detta är ett citat som ska räknas.”</p><p>&quot;Another quoted statement for evidence quality.&quot;</p></body></html>`;
+      const withoutQuotes = `<html><body><p>${words}</p></body></html>`;
+
+      const withScore = assessArticleQuality(withUnicodeQuotes, 'sv').dimensions.analyticalDepth.score;
+      const withoutScore = assessArticleQuality(withoutQuotes, 'sv').dimensions.analyticalDepth.score;
+
+      expect(withScore).toBeGreaterThan(withoutScore);
     });
   });
 
@@ -506,7 +527,7 @@ describe('printQualityReport', () => {
 });
 
 // ---------------------------------------------------------------------------
-// flushQualityScores / installFlushHandlers / flushOnce coverage
+// flushQualityScores / installFlushHandlers coverage
 // ---------------------------------------------------------------------------
 
 describe('flushQualityScores & installFlushHandlers', () => {
