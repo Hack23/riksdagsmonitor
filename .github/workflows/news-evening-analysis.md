@@ -280,7 +280,7 @@ const fromDate = new Date(Date.now() - lookbackDays * 86400000).toISOString().sp
 
 **Post-query filtering example:**
 ```javascript
-const results = get_betankanden({ rm: currentRm, limit: 50 });
+const results = await get_betankanden({ rm: currentRm, limit: 50 });
 const recent = results.filter(b => (b.publicerad || '').slice(0, 10) >= fromDate);
 ```
 
