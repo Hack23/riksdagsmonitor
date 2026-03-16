@@ -35,8 +35,7 @@ import type { SwotImpact, TrendDirection } from '../../types/article.js';
 import type { StakeholderSwot } from './stakeholder-swot-section.js';
 import type { RawDocument } from '../types.js';
 
-// Re-export TrendDirection for backward compatibility (canonical home is types/article.ts)
-export type { TrendDirection } from '../../types/article.js';
+// TrendDirection is canonically defined in types/article.ts — import from there directly
 
 // ---------------------------------------------------------------------------
 // Types
@@ -474,7 +473,7 @@ function buildGovernmentSwot(
     strengths.push(docEntry(
       d, withTopic('Government proposition%t', topicStr ? ` ${topic}` : null),
       'high',
-      withTopic(`Government-initiated proposition demonstrates legislative agenda-setting capacity${topicStr}`, topic),
+      `Government-initiated proposition demonstrates legislative agenda-setting capacity${topicStr}`,
       'stable',
     ));
   });
@@ -482,7 +481,7 @@ function buildGovernmentSwot(
     strengths.push(docEntry(
       d, withTopic('Enacted law%t', topicStr ? ` ${topic}` : null),
       'high',
-      withTopic(`Enacted statute indicates completed legislative cycle${topicStr}`, topic),
+      `Enacted statute indicates completed legislative cycle${topicStr}`,
       'stable',
     ));
   });
@@ -490,7 +489,7 @@ function buildGovernmentSwot(
     strengths.push(docEntry(
       d, withTopic('Government communication%t', topicStr ? ` ${topic}` : null),
       'medium',
-      withTopic(`Press communication signals proactive policy messaging${topicStr}`, topic),
+      `Press communication signals proactive policy messaging${topicStr}`,
       'stable',
     ));
   });
@@ -498,7 +497,7 @@ function buildGovernmentSwot(
     strengths.push(docEntry(
       d, withTopic('Government written communication (skrivelse)%t', topicStr ? ` ${topic}` : null),
       'medium',
-      withTopic(`Government skrivelse conveys policy position or report to parliament${topicStr}`, topic),
+      `Government skrivelse conveys policy position or report to parliament${topicStr}`,
       'stable',
     ));
   });
@@ -506,7 +505,7 @@ function buildGovernmentSwot(
     strengths.push(makeAIEntry(
       withTopic('Policy initiative and agenda-setting%t', topicStr ? ` on ${topic}` : ''),
       'medium',
-      withTopic(`Government holds exclusive right to introduce primary legislation${topicStr}`, topic),
+      `Government holds exclusive right to introduce primary legislation${topicStr}`,
       [],
       'stable',
     ));
@@ -517,7 +516,7 @@ function buildGovernmentSwot(
     weaknesses.push(docEntry(
       d, 'Implementation scrutiny in committee report',
       'medium',
-      withTopic(`Committee scrutiny reveals implementation challenges${topicStr}`, topic),
+      `Committee scrutiny reveals implementation challenges${topicStr}`,
       'stable',
     ));
   });
@@ -525,7 +524,7 @@ function buildGovernmentSwot(
     weaknesses.push(makeAIEntry(
       withTopic('Implementation timeline and resource prioritisation%t', topicStr ? ` for ${topic}` : ''),
       'medium',
-      withTopic(`Complex legislation requires sustained administrative capacity${topicStr}`, topic),
+      `Complex legislation requires sustained administrative capacity${topicStr}`,
       [],
       'stable',
     ));
@@ -536,7 +535,7 @@ function buildGovernmentSwot(
     opportunities.push(docEntry(
       d, 'EU framework position paper',
       'high',
-      withTopic(`EU/international alignment can strengthen domestic policy credibility${topicStr}`, topic),
+      `EU/international alignment can strengthen domestic policy credibility${topicStr}`,
       'improving',
     ));
   });
@@ -544,7 +543,7 @@ function buildGovernmentSwot(
     opportunities.push(makeAIEntry(
       withTopic('EU and international cooperation%t', topicStr ? ` on ${topic}` : ''),
       'high',
-      withTopic(`Multilateral frameworks provide legitimacy and co-funding for domestic reforms${topicStr}`, topic),
+      `Multilateral frameworks provide legitimacy and co-funding for domestic reforms${topicStr}`,
       [],
       'improving',
     ));
@@ -555,7 +554,7 @@ function buildGovernmentSwot(
     threats.push(docEntry(
       d, 'Opposition motion challenging policy',
       'medium',
-      withTopic(`Opposition motions create parliamentary counter-pressure${topicStr}`, topic),
+      `Opposition motions create parliamentary counter-pressure${topicStr}`,
       'stable',
     ));
   });
@@ -563,7 +562,7 @@ function buildGovernmentSwot(
     threats.push(makeAIEntry(
       withTopic('Execution risks and political resistance%t', topicStr ? ` to ${topic} reform` : ''),
       'medium',
-      withTopic(`Policy implementation faces stakeholder friction and opposition challenge${topicStr}`, topic),
+      `Policy implementation faces stakeholder friction and opposition challenge${topicStr}`,
       [],
       'stable',
       docCount,
@@ -587,7 +586,7 @@ function buildOppositionSwot(
     strengths.push(docEntry(
       d, 'Committee oversight report',
       'high',
-      withTopic(`Committee report enables structured parliamentary scrutiny${topicStr}`, topic),
+      `Committee report enables structured parliamentary scrutiny${topicStr}`,
       'stable',
     ));
   });
@@ -595,7 +594,7 @@ function buildOppositionSwot(
     strengths.push(docEntry(
       d, 'Opposition motion for alternative policy',
       'medium',
-      withTopic(`Tabling motions demonstrates alternative policy capacity and public positioning${topicStr}`, topic),
+      `Tabling motions demonstrates alternative policy capacity and public positioning${topicStr}`,
       'stable',
     ));
   });
@@ -603,7 +602,7 @@ function buildOppositionSwot(
     strengths.push(makeAIEntry(
       withTopic('Parliamentary oversight and scrutiny%t', topicStr ? ` of ${topic} proposals` : ''),
       'high',
-      withTopic(`Opposition fulfils democratic accountability function${topicStr}`, topic),
+      `Opposition fulfils democratic accountability function${topicStr}`,
       [],
       'stable',
     ));
@@ -613,7 +612,7 @@ function buildOppositionSwot(
     makeAIEntry(
       withTopic('Limited access to implementation data%t', topicStr ? ` on ${topic}` : ''),
       'medium',
-      withTopic(`Government controls executive information; opposition relies on public documents${topicStr}`, topic),
+      `Government controls executive information; opposition relies on public documents${topicStr}`,
       [],
       'stable',
     ),
@@ -623,7 +622,7 @@ function buildOppositionSwot(
     makeAIEntry(
       withTopic('Cross-party consensus building%t', topicStr ? ` on ${topic}` : ''),
       'high',
-      withTopic(`Issue salience creates openings for coalition with centrist defectors${topicStr}`, topic),
+      `Issue salience creates openings for coalition with centrist defectors${topicStr}`,
       [],
       'improving',
     ),
@@ -634,7 +633,7 @@ function buildOppositionSwot(
     threats.push(docEntry(
       d, 'Government proposition limiting amendment scope',
       'medium',
-      withTopic(`Government majority can pass legislation with minimal opposition amendments${topicStr}`, topic),
+      `Government majority can pass legislation with minimal opposition amendments${topicStr}`,
       'stable',
     ));
   });
@@ -642,7 +641,7 @@ function buildOppositionSwot(
     threats.push(makeAIEntry(
       withTopic('Government majority limiting amendment capacity%t', topicStr ? ` on ${topic}` : ''),
       'medium',
-      withTopic(`Parliamentary arithmetic constrains opposition legislative influence${topicStr}`, topic),
+      `Parliamentary arithmetic constrains opposition legislative influence${topicStr}`,
       [],
       'stable',
     ));
@@ -664,7 +663,7 @@ function buildEUInternationalSwot(
     strengths.push(docEntry(
       d, 'EU/international regulatory framework',
       'high',
-      withTopic(`EU regulatory alignment provides Sweden with binding legal framework and co-funding${topicStr}`, topic),
+      `EU regulatory alignment provides Sweden with binding legal framework and co-funding${topicStr}`,
       'improving',
     ));
   });
@@ -672,7 +671,7 @@ function buildEUInternationalSwot(
     strengths.push(makeAIEntry(
       withTopic('EU regulatory frameworks and directives%t', topicStr ? ` for ${topic}` : ''),
       'high',
-      withTopic(`EU membership provides supranational standards that shape national policy${topicStr}`, topic),
+      `EU membership provides supranational standards that shape national policy${topicStr}`,
       [],
       'stable',
     ));
@@ -682,7 +681,7 @@ function buildEUInternationalSwot(
     strengths.push(docEntry(
       d, 'External expert input',
       'medium',
-      withTopic(`International expertise validates and contextualises domestic policy positions${topicStr}`, topic),
+      `International expertise validates and contextualises domestic policy positions${topicStr}`,
       'stable',
     ));
   });
@@ -691,7 +690,7 @@ function buildEUInternationalSwot(
     makeAIEntry(
       withTopic('Implementation variation across EU member states%t', topicStr ? ` regarding ${topic}` : ''),
       'medium',
-      withTopic(`Divergent transposition timelines can create competitive disadvantages for Sweden${topicStr}`, topic),
+      `Divergent transposition timelines can create competitive disadvantages for Sweden${topicStr}`,
       [],
       'stable',
     ),
@@ -701,7 +700,7 @@ function buildEUInternationalSwot(
     makeAIEntry(
       withTopic('Diplomatic leadership and norm-setting%t', topicStr ? ` on ${topic}` : ''),
       'high',
-      withTopic(`Sweden can use international forums to shape standards and attract investment${topicStr}`, topic),
+      `Sweden can use international forums to shape standards and attract investment${topicStr}`,
       [],
       'improving',
     ),
@@ -711,7 +710,7 @@ function buildEUInternationalSwot(
     makeAIEntry(
       withTopic('Geopolitical uncertainty impacting Swedish policy space%t', topicStr ? ` for ${topic}` : ''),
       'high',
-      withTopic(`Shifting international dynamics can constrain or override domestic policy choices${topicStr}`, topic),
+      `Shifting international dynamics can constrain or override domestic policy choices${topicStr}`,
       [],
       'deteriorating',
     ),
@@ -733,7 +732,7 @@ function buildPrivateSectorSwot(
     strengths.push(docEntry(
       d, 'Industry input to policy process',
       'high',
-      withTopic(`Industry representation in consultation demonstrates established influence channels${topicStr}`, topic),
+      `Industry representation in consultation demonstrates established influence channels${topicStr}`,
       'stable',
     ));
   });
@@ -741,7 +740,7 @@ function buildPrivateSectorSwot(
     strengths.push(makeAIEntry(
       withTopic('Domain expertise and operational capacity%t', topicStr ? ` in ${topic}` : ''),
       'high',
-      withTopic(`Private sector holds implementation knowledge critical to policy success${topicStr}`, topic),
+      `Private sector holds implementation knowledge critical to policy success${topicStr}`,
       [],
       'stable',
     ));
@@ -751,7 +750,7 @@ function buildPrivateSectorSwot(
     makeAIEntry(
       withTopic('Compliance costs from new regulatory requirements%t', topicStr ? ` in ${topic}` : ''),
       'medium',
-      withTopic(`Legislative changes impose adaptation costs particularly on SMEs${topicStr}`, topic),
+      `Legislative changes impose adaptation costs particularly on SMEs${topicStr}`,
       [],
       'deteriorating',
     ),
@@ -760,7 +759,7 @@ function buildPrivateSectorSwot(
     weaknesses.push(docEntry(
       d, 'New regulatory requirement',
       'medium',
-      withTopic(`Enacted statute creates compliance obligations for business${topicStr}`, topic),
+      `Enacted statute creates compliance obligations for business${topicStr}`,
       'stable',
     ));
   });
@@ -769,7 +768,7 @@ function buildPrivateSectorSwot(
     makeAIEntry(
       withTopic('Investment and innovation from policy-driven market development%t', topicStr ? ` in ${topic}` : ''),
       'high',
-      withTopic(`Government programmes create new markets and procurement opportunities${topicStr}`, topic),
+      `Government programmes create new markets and procurement opportunities${topicStr}`,
       [],
       'improving',
     ),
@@ -779,7 +778,7 @@ function buildPrivateSectorSwot(
     makeAIEntry(
       withTopic('Regulatory uncertainty during policy transition%t', topicStr ? ` on ${topic}` : ''),
       'high',
-      withTopic(`Short implementation timelines and evolving rules hamper business planning${topicStr}`, topic),
+      `Short implementation timelines and evolving rules hamper business planning${topicStr}`,
       [],
       'deteriorating',
     ),
@@ -801,7 +800,7 @@ function buildCivilSocietySwot(
     strengths.push(docEntry(
       d, 'Civil society input in committee process',
       'high',
-      withTopic(`Committee consultation includes civil society perspectives that shape final legislation${topicStr}`, topic),
+      `Committee consultation includes civil society perspectives that shape final legislation${topicStr}`,
       'stable',
     ));
   });
@@ -809,7 +808,7 @@ function buildCivilSocietySwot(
     strengths.push(makeAIEntry(
       withTopic('Democratic accountability and rights advocacy%t', topicStr ? ` regarding ${topic}` : ''),
       'high',
-      withTopic(`Civil society provides independent oversight and public interest representation${topicStr}`, topic),
+      `Civil society provides independent oversight and public interest representation${topicStr}`,
       [],
       'stable',
     ));
@@ -819,7 +818,7 @@ function buildCivilSocietySwot(
     makeAIEntry(
       withTopic('Resource constraints limiting monitoring capacity%t', topicStr ? ` for ${topic}` : ''),
       'medium',
-      withTopic(`NGOs often lack funding to mount sustained campaigns on complex legislation${topicStr}`, topic),
+      `NGOs often lack funding to mount sustained campaigns on complex legislation${topicStr}`,
       [],
       'stable',
     ),
@@ -829,7 +828,7 @@ function buildCivilSocietySwot(
     makeAIEntry(
       withTopic('Public mobilisation on rights-sensitive policies%t', topicStr ? ` related to ${topic}` : ''),
       'high',
-      withTopic(`Heightened media attention creates window for civil society agenda-setting${topicStr}`, topic),
+      `Heightened media attention creates window for civil society agenda-setting${topicStr}`,
       [],
       'improving',
     ),
@@ -840,7 +839,7 @@ function buildCivilSocietySwot(
     threats.push(docEntry(
       d, 'Restrictive legislative motion',
       'medium',
-      withTopic(`Proposed legislation may restrict civic space or NGO operational freedoms${topicStr}`, topic),
+      `Proposed legislation may restrict civic space or NGO operational freedoms${topicStr}`,
       'deteriorating',
     ));
   });
@@ -848,7 +847,7 @@ function buildCivilSocietySwot(
     threats.push(makeAIEntry(
       withTopic('Legislative changes reducing civic freedoms%t', topicStr ? ` in ${topic}` : ''),
       'medium',
-      withTopic(`Policy reforms can inadvertently curtail associational rights or protest space${topicStr}`, topic),
+      `Policy reforms can inadvertently curtail associational rights or protest space${topicStr}`,
       [],
       'stable',
     ));
@@ -870,7 +869,7 @@ function buildCitizensSwot(
     strengths.push(docEntry(
       d, 'Enacted welfare or service law',
       'high',
-      withTopic(`Enacted legislation directly improves public service delivery${topicStr}`, topic),
+      `Enacted legislation directly improves public service delivery${topicStr}`,
       'stable',
     ));
   });
@@ -878,7 +877,7 @@ function buildCitizensSwot(
     strengths.push(makeAIEntry(
       withTopic('Democratic representation through elected parliament%t', topicStr ? ` on ${topic}` : ''),
       'high',
-      withTopic(`Citizens exercise electoral accountability over policy direction${topicStr}`, topic),
+      `Citizens exercise electoral accountability over policy direction${topicStr}`,
       [],
       'stable',
     ));
@@ -888,7 +887,7 @@ function buildCitizensSwot(
     makeAIEntry(
       withTopic('Information asymmetry on policy impacts%t', topicStr ? ` of ${topic}` : ''),
       'medium',
-      withTopic(`Complex legislation is difficult for citizens to evaluate without expert analysis${topicStr}`, topic),
+      `Complex legislation is difficult for citizens to evaluate without expert analysis${topicStr}`,
       [],
       'stable',
     ),
@@ -899,7 +898,7 @@ function buildCitizensSwot(
     opportunities.push(docEntry(
       d, 'Government reform proposition',
       'high',
-      withTopic(`Government reform proposals create opportunities for improved public services${topicStr}`, topic),
+      `Government reform proposals create opportunities for improved public services${topicStr}`,
       'improving',
     ));
   });
@@ -907,7 +906,7 @@ function buildCitizensSwot(
     opportunities.push(docEntry(
       d, 'Transparent committee review process',
       'medium',
-      withTopic(`Open committee proceedings allow citizens to track legislative development${topicStr}`, topic),
+      `Open committee proceedings allow citizens to track legislative development${topicStr}`,
       'stable',
     ));
   });
@@ -915,7 +914,7 @@ function buildCitizensSwot(
     opportunities.push(makeAIEntry(
       withTopic('Policy reforms improving public service quality%t', topicStr ? ` for ${topic}` : ''),
       'high',
-      withTopic(`Parliamentary activity on this issue indicates political will to improve outcomes${topicStr}`, topic),
+      `Parliamentary activity on this issue indicates political will to improve outcomes${topicStr}`,
       [],
       'improving',
     ));
@@ -925,7 +924,7 @@ function buildCitizensSwot(
     makeAIEntry(
       withTopic('Policy implementation gaps reducing service quality%t', topicStr ? ` in ${topic}` : ''),
       'medium',
-      withTopic(`Distance between legislative intent and administrative execution affects citizen outcomes${topicStr}`, topic),
+      `Distance between legislative intent and administrative execution affects citizen outcomes${topicStr}`,
       [],
       'stable',
     ),
