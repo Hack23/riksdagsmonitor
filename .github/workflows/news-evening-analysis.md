@@ -272,18 +272,6 @@ const filtered = results.filter(item =>
 );
 // Discouraged alternative: new Date() parsing — timezone/format sensitive
 // const filtered = rawResults.filter(item => new Date(item.publicerad || item.datum || item.inlämnad) >= fromDate);
-const filtered = results.filter(item => (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10) >= fromDate);
-```
-
-**Post-query date filtering pattern** (use with tools that lack native date params):
-```javascript
-// Calculate fromDate using ms constants: 86400000 ms/day, 3600000 ms/hour
-const fromDate = new Date(Date.now() - lookbackHours * 3600000).toISOString().slice(0, 10);
-const today = new Date().toISOString().slice(0, 10);
-
-// Filter results by date field (day-granularity string comparison avoids timezone issues)
-// Include inlämnad for motions which use that date field
-const filtered = results.filter(item => (item.publicerad || item.datum || item.inlämnad || '').slice(0, 10) >= fromDate);
 ```
 
 **Post-query date filtering example** (day-granularity; 86400000 ms = 1 day):
