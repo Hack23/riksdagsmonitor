@@ -7,9 +7,6 @@
  * @license Apache-2.0
  */
 
-import fs from 'node:fs';
-import path from 'node:path';
-
 import {
   transformCalendarToEventGrid,
   generateArticleContent,
@@ -26,27 +23,31 @@ import {
   generateEconomicDashboardSection,
   generateMindmapSection,
   generateSankeySection,
-  type MindmapBranch,
+  buildAIMindmapAnalysis,
+  buildMindmapOptionsFromAnalysis,
   type SankeyNode,
   type SankeyFlow,
-  type StakeholderSwot,
 } from '../data-transformers/index.js';
-import { generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
+import { buildAISwotStakeholders, STAKEHOLDER_NAMES as AI_STAKEHOLDER_NAMES, generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
 import { generateDeepPolicyAnalysis, detectPolicyDomains } from '../data-transformers/policy-analysis.js';
+import { analyzeDashboardData } from '../ai-analysis/dashboard-analyzer.js';
 import { escapeHtml } from '../html-utils.js';
 import { generateArticleHTML } from '../article-template.js';
 import { MCPClient } from '../mcp-client.js';
 import type { Language } from '../types/language.js';
-import type { GenerationResult, DateRange, ArticleCategory, TemplateSection, SwotEntry } from '../types/article.js';
+import type { GenerationResult, DateRange, ArticleCategory, TemplateSection } from '../types/article.js';
 import type { TitleSet } from './types.js';
 import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic, analysisDepth, METADATA_DIR } from './config.js';
 import { runAnalysisPipeline } from '../ai-analysis/pipeline.js';
 import type { AnalysisResult, AnalysisIterationMetadata, AnalysisDepth } from '../ai-analysis/types.js';
+import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic, analysisIterations } from './config.js';
 import {
   getWeekAheadDateRange,
   formatDateForSlug,
   writeSingleArticle,
 } from './helpers.js';
+import { AIAnalysisPipeline } from './ai-analysis-pipeline.js';
+import { sharedAnalysisCache } from './analysis-cache.js';
 
 // ---------------------------------------------------------------------------
 // Generator functions
@@ -644,6 +645,11 @@ export function sanitizePlainText(text: string): string {
 // Deep-Inspection content generator (topic-focused, comprehensive)
 // ---------------------------------------------------------------------------
 
+/** Cyberpunk-theme colour palette for deep-inspection dashboard charts. */
+const DEEP_CHART_PALETTE: readonly string[] = [
+  '#00d9ff', '#ff006e', '#ffbe0b', '#00ff88', '#ff8800', '#aa00ff',
+];
+
 /** Per-language headings for sections of the deep-inspection article. */
 const DEEP_SECTION_LABELS: Readonly<Record<string, Partial<Record<Language, string>>>> = {
   documentIntelligence: {
@@ -878,12 +884,15 @@ function docTypeLabel(doktyp: string, lang: Language, count?: number): string {
  *   2 = depth 1 + Historical Context + Predictive Assessment
  *   3 = depth 2 + Executive Intelligence Summary + Methodology (3 iterations)
  *   4 = depth 3 + quality-review iteration in Methodology (4 iterations)
+ * When an AIAnalysisResult is supplied, its strategic implications and key
+ * takeaways replace the template-based versions for richer, context-aware output.
  */
 function generateDeepInspectionContent(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,
   depth: 1 | 2 | 3 | 4 = 1,
+  aiResult?: import('./ai-analysis-pipeline.js').AIAnalysisResult,
 ): string {
   const esc = escapeHtml;
   let html = '';
@@ -927,7 +936,13 @@ function generateDeepInspectionContent(
   const stratHeading = deepLabel('strategicImplications', lang);
   html += `\n<section class="strategic-implications" aria-label="${esc(stratHeading)}">\n`;
   html += `  <h2>${esc(stratHeading)}</h2>\n`;
-  html += `  ${buildStrategicImplications(docs, topic, lang)}\n`;
+  // Use AI-generated strategic implications when available (richer than template version).
+  // Safe to inject directly: AIAnalysisPipeline.buildStrategicImplications() escapes all
+  // dynamic values (topic, domain, signal) at construction time via escapeHtml(). The
+  // fallback buildStrategicImplications() in generators.ts also escapes its inputs.
+  const strategicImplHtml = aiResult?.strategicImplications
+    ?? buildStrategicImplications(docs, topic, lang);
+  html += `  ${strategicImplHtml}\n`;
   html += `</section>\n`;
 
   // ── 5. Historical Context (depth ≥ 2) ─────────────────────────────────────
@@ -944,7 +959,16 @@ function generateDeepInspectionContent(
   const takeawayHeading = deepLabel('keyTakeaways', lang);
   html += `\n<section class="key-takeaways" aria-label="${esc(takeawayHeading)}">\n`;
   html += `  <h2>${esc(takeawayHeading)}</h2>\n`;
-  html += buildKeyTakeaways(docs, topic, lang);
+  if (aiResult?.keyTakeaways && aiResult.keyTakeaways.length > 0) {
+    // Use AI-generated takeaways
+    html += `<ul class="key-takeaways-list">\n`;
+    aiResult.keyTakeaways.forEach(item => {
+      html += `  <li>${esc(item)}</li>\n`;
+    });
+    html += `</ul>\n`;
+  } else {
+    html += buildKeyTakeaways(docs, topic, lang);
+  }
   html += `</section>\n`;
 
   // ── 8. Methodology & Confidence (depth ≥ 3) ───────────────────────────────
@@ -1088,7 +1112,7 @@ function buildStrategicImplications(docs: RawDocument[], topic: string | null, l
   // Detect all policy domains across documents for richer context
   const allDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
-  const domainPhrase = allDomains.size > 0 ? [...allDomains].slice(0, 3).join(', ') : '';
+  const domainPhrase = allDomains.size > 0 ? [...allDomains].slice(0, 3).map(d => esc(d)).join(', ') : '';
 
   // Choose a template style based on document composition
   const isLegislativeFocused = legislativeCount > 0;
@@ -1639,156 +1663,32 @@ function buildMethodologySection(docs: RawDocument[], topic: string | null, lang
 // ---------------------------------------------------------------------------
 
 /**
- * Write AI analysis iteration metadata to news/metadata/ for audit trail.
- * Write errors are non-fatal (logged via console.warn) to avoid breaking article generation.
+ * Compute the effective document type for a RawDocument.
+ * SFS-by-name docs (missing doktyp/documentType but dokumentnamn starting with "SFS")
+ * are normalised to 'sfs' so filters, typeCounts, and chart labels stay consistent.
  */
-function writeAnalysisMetadata(
-  articleSlug: string,
-  metadata: AnalysisIterationMetadata,
-): void {
-  try {
-    fs.mkdirSync(METADATA_DIR, { recursive: true });
-    const filename = path.join(METADATA_DIR, `ai-analysis-${articleSlug}-${metadata.lang}.json`);
-    fs.writeFileSync(filename, JSON.stringify(metadata, null, 2), 'utf-8');
-  } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : String(err);
-    console.warn(`  ⚠️ Could not write analysis metadata: ${msg}`);
-  }
+function effectiveType(d: RawDocument): string {
+  return (d.doktyp || d.documentType)
+    || ((d.dokumentnamn || '').startsWith('SFS') ? 'sfs' : 'other');
 }
 
-// ---------------------------------------------------------------------------
-// Localized label helpers for AI-derived deep-inspection sections (14 languages)
-// ---------------------------------------------------------------------------
-
-type LanguageFormatWithConfidence = (n: number, conf: number) => string;
-type LanguageFormatFunction = (n: number) => string;
-
-const STRATEGIC_CONTEXT_FOCUSED: Partial<Record<Language, (topic: string, n: number, conf: number) => string>> = {
-  en: (t, n, c) => `Analysis exclusively focused on: ${t} — ${n} parliamentary documents examined (confidence: ${c}/100)`,
-  sv: (t, n, c) => `Analys exklusivt fokuserad på: ${t} — ${n} riksdagsdokument granskade (konfidens: ${c}/100)`,
-  da: (t, n, c) => `Analyse udelukkende fokuseret på: ${t} — ${n} parlamentsdokumenter undersøgt (konfidens: ${c}/100)`,
-  no: (t, n, c) => `Analyse utelukkende fokusert på: ${t} — ${n} parlamentsdokumenter undersøkt (konfidens: ${c}/100)`,
-  fi: (t, n, c) => `Analyysi keskittyy yksinomaan: ${t} — ${n} eduskunta-asiakirjaa tarkastettu (luottamus: ${c}/100)`,
-  de: (t, n, c) => `Analyse ausschließlich fokussiert auf: ${t} — ${n} parlamentarische Dokumente geprüft (Konfidenz: ${c}/100)`,
-  fr: (t, n, c) => `Analyse exclusivement centrée sur : ${t} — ${n} documents parlementaires examinés (confiance : ${c}/100)`,
-  es: (t, n, c) => `Análisis enfocado exclusivamente en: ${t} — ${n} documentos parlamentarios examinados (confianza: ${c}/100)`,
-  nl: (t, n, c) => `Analyse uitsluitend gericht op: ${t} — ${n} parlementaire documenten onderzocht (betrouwbaarheid: ${c}/100)`,
-  ar: (t, n, c) => `تحليل مركّز حصرياً على: ${t} — ${n} وثيقة برلمانية تم فحصها (ثقة: ${c}/100)`,
-  he: (t, n, c) => `ניתוח ממוקד באופן בלעדי ב: ${t} — ${n} מסמכים פרלמנטריים נבדקו (ביטחון: ${c}/100)`,
-  ja: (t, n, c) => `分析対象: ${t} — ${n}件の議会文書を調査（信頼度: ${c}/100）`,
-  ko: (t, n, c) => `분석 대상: ${t} — ${n}건의 의회 문서 조사 (신뢰도: ${c}/100)`,
-  zh: (t, n, c) => `分析专注于: ${t} — ${n}份议会文件已审查（置信度: ${c}/100）`,
-};
-
-const STRATEGIC_CONTEXT_MULTI: Partial<Record<Language, LanguageFormatWithConfidence>> = {
-  en: (n, c) => `Multi-stakeholder analysis of ${n} parliamentary documents (confidence: ${c}/100)`,
-  sv: (n, c) => `Intressentanalys av ${n} riksdagsdokument (konfidens: ${c}/100)`,
-  da: (n, c) => `Interessentanalyse af ${n} parlamentsdokumenter (konfidens: ${c}/100)`,
-  no: (n, c) => `Interessentanalyse av ${n} parlamentsdokumenter (konfidens: ${c}/100)`,
-  fi: (n, c) => `Sidosryhmäanalyysi ${n} eduskunta-asiakirjasta (luottamus: ${c}/100)`,
-  de: (n, c) => `Multi-Stakeholder-Analyse von ${n} parlamentarischen Dokumenten (Konfidenz: ${c}/100)`,
-  fr: (n, c) => `Analyse multi-parties prenantes de ${n} documents parlementaires (confiance : ${c}/100)`,
-  es: (n, c) => `Análisis multiparticipativo de ${n} documentos parlamentarios (confianza: ${c}/100)`,
-  nl: (n, c) => `Multi-stakeholderanalyse van ${n} parlementaire documenten (betrouwbaarheid: ${c}/100)`,
-  ar: (n, c) => `تحليل متعدد الأطراف لـ ${n} وثيقة برلمانية (ثقة: ${c}/100)`,
-  he: (n, c) => `ניתוח רב-בעלי עניין של ${n} מסמכים פרלמנטריים (ביטחון: ${c}/100)`,
-  ja: (n, c) => `${n}件の議会文書のマルチステークホルダー分析（信頼度: ${c}/100）`,
-  ko: (n, c) => `${n}건의 의회 문서 다자 이해관계자 분석 (신뢰도: ${c}/100)`,
-  zh: (n, c) => `${n}份议会文件的多利益相关方分析（置信度: ${c}/100）`,
-};
-
-const MINDMAP_FALLBACK_TOPIC: Partial<Record<Language, string>> = {
-  en: 'Parliamentary Analysis', sv: 'Parlamentarisk analys', da: 'Parlamentarisk analyse', no: 'Parlamentarisk analyse',
-  fi: 'Eduskunta-analyysi', de: 'Parlamentarische Analyse', fr: 'Analyse parlementaire', es: 'Análisis parlamentario',
-  nl: 'Parlementaire analyse', ar: 'تحليل برلماني', he: 'ניתוח פרלמנטרי',
-  ja: '議会分析', ko: '의회 분석', zh: '议会分析',
-};
-
-const MINDMAP_SUMMARY_FOCUSED: Partial<Record<Language, (topic: string) => string>> = {
-  en: (t) => `Conceptual map for deep inspection: ${t}`,
-  sv: (t) => `Konceptuell karta för djupinspektion: ${t}`,
-  da: (t) => `Konceptuelt kort til dybdeinspektion: ${t}`,
-  no: (t) => `Konseptuelt kart for dybdeinspeksjon: ${t}`,
-  fi: (t) => `Käsitekartta syväanalyysiin: ${t}`,
-  de: (t) => `Konzeptkarte zur Tiefeninspektion: ${t}`,
-  fr: (t) => `Carte conceptuelle pour inspection approfondie : ${t}`,
-  es: (t) => `Mapa conceptual para inspección profunda: ${t}`,
-  nl: (t) => `Conceptkaart voor diepgaande inspectie: ${t}`,
-  ar: (t) => `خريطة مفاهيمية للتفتيش المعمق: ${t}`,
-  he: (t) => `מפה מושגית לבדיקה מעמיקה: ${t}`,
-  ja: (t) => `深層検査の概念マップ: ${t}`,
-  ko: (t) => `심층 검사 개념 맵: ${t}`,
-  zh: (t) => `深度审查概念图: ${t}`,
-};
-
-const MINDMAP_SUMMARY_GENERIC: Partial<Record<Language, LanguageFormatFunction>> = {
-  en: (n) => `Conceptual map for ${n} parliamentary documents`,
-  sv: (n) => `Konceptuell karta för ${n} riksdagsdokument`,
-  da: (n) => `Konceptuelt kort for ${n} parlamentsdokumenter`,
-  no: (n) => `Konseptuelt kart for ${n} parlamentsdokumenter`,
-  fi: (n) => `Käsitekartta ${n} eduskunta-asiakirjasta`,
-  de: (n) => `Konzeptkarte für ${n} parlamentarische Dokumente`,
-  fr: (n) => `Carte conceptuelle de ${n} documents parlementaires`,
-  es: (n) => `Mapa conceptual de ${n} documentos parlamentarios`,
-  nl: (n) => `Conceptkaart voor ${n} parlementaire documenten`,
-  ar: (n) => `خريطة مفاهيمية لـ ${n} وثيقة برلمانية`,
-  he: (n) => `מפה מושגית ל-${n} מסמכים פרלמנטריים`,
-  ja: (n) => `${n}件の議会文書の概念マップ`,
-  ko: (n) => `${n}건의 의회 문서 개념 맵`,
-  zh: (n) => `${n}份议会文件概念图`,
-};
-
-const SANKEY_TITLE_LABEL: Partial<Record<Language, string>> = {
-  en: 'Legislative Flow', sv: 'Lagstiftningsflöde', da: 'Lovgivningsflow', no: 'Lovgivningsflyt',
-  fi: 'Lainsäädännön kulku', de: 'Gesetzgebungsfluss', fr: 'Flux législatif', es: 'Flujo legislativo',
-  nl: 'Wetgevingsstroming', ar: 'تدفق التشريعات', he: 'זרימה חקיקתית',
-  ja: '立法フロー', ko: '입법 흐름', zh: '立法流程',
-};
-
-const SANKEY_SUMMARY: Partial<Record<Language, LanguageFormatFunction>> = {
-  en: (n) => `Flow of ${n} parliamentary documents from initiating actors to document types`,
-  sv: (n) => `Flöde av ${n} riksdagsdokument från initierande aktörer till dokumenttyper`,
-  da: (n) => `Flow af ${n} parlamentsdokumenter fra initierende aktører til dokumenttyper`,
-  no: (n) => `Flyt av ${n} parlamentsdokumenter fra initierende aktører til dokumenttyper`,
-  fi: (n) => `${n} eduskunta-asiakirjan kulku aloittavista toimijoista asiakirjatyyppeihin`,
-  de: (n) => `Fluss von ${n} parlamentarischen Dokumenten von initiierenden Akteuren zu Dokumenttypen`,
-  fr: (n) => `Flux de ${n} documents parlementaires des acteurs initiateurs aux types de documents`,
-  es: (n) => `Flujo de ${n} documentos parlamentarios de actores iniciadores a tipos de documentos`,
-  nl: (n) => `Stroom van ${n} parlementaire documenten van initiërende actoren naar documenttypen`,
-  ar: (n) => `تدفق ${n} وثيقة برلمانية من الأطراف المبادرة إلى أنواع الوثائق`,
-  he: (n) => `זרימת ${n} מסמכים פרלמנטריים מגורמים יוזמים לסוגי מסמכים`,
-  ja: (n) => `${n}件の議会文書の発議者から文書種類への流れ`,
-  ko: (n) => `${n}건의 의회 문서가 발의 주체에서 문서 유형으로의 흐름`,
-  zh: (n) => `${n}份议会文件从发起方到文件类型的流程`,
-};
-
 /**
- * Convert an AI AnalysisResult to TemplateSection[] for use in generateArticleHTML.
- * This replaces buildDeepInspectionSections when the AI pipeline is used.
- * Template section rendering (HTML structure, CSS, accessibility) is unchanged.
+ * Build SWOT and dashboard TemplateSections for a deep-inspection article.
+ * Uses buildAISwotStakeholders() to derive 6 stakeholder perspectives
+ * from document metadata (types, titles, document IDs as evidence).
+ * Returns TemplateSection[] ready for generateArticleHTML.sections.
  */
-function buildDeepInspectionSectionsFromAnalysis(
-  analysis: AnalysisResult,
+function buildDeepInspectionSections(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,
+  aiResult?: import('./ai-analysis-pipeline.js').AIAnalysisResult,
 ): TemplateSection[] {
   if (docs.length === 0) return [];
 
-  // Convert AnalysisStakeholderSwot → StakeholderSwot (for generateStakeholderSwotSection)
-  // Omit sh.role (internal key like "government") — sh.name already carries the localised label
-  const stakeholders: StakeholderSwot[] = analysis.stakeholderSwot.map(sh => ({
-    name: sh.name,
-    swot: {
-      strengths:     sh.swot.strengths.map(e => ({ text: e.text, impact: e.impact })) satisfies SwotEntry[],
-      weaknesses:    sh.swot.weaknesses.map(e => ({ text: e.text, impact: e.impact })) satisfies SwotEntry[],
-      opportunities: sh.swot.opportunities.map(e => ({ text: e.text, impact: e.impact })) satisfies SwotEntry[],
-      threats:       sh.swot.threats.map(e => ({ text: e.text, impact: e.impact })) satisfies SwotEntry[],
-    },
-  }));
-
   // Single-pass classification: bucket docs by effectiveType() to avoid N×filter passes.
-  // EU docs use both 'fpm' and 'eu' raw types and are merged into the euDocs bucket.
+  // EU docs use both 'fpm' and 'eu' raw types; effectiveType() preserves the raw value,
+  // so we merge both into the euDocs bucket below.
   const buckets = new Map<string, RawDocument[]>();
   for (const d of docs) {
     const t = effectiveType(d);
@@ -1810,116 +1710,161 @@ function buildDeepInspectionSectionsFromAnalysis(
     .filter(([k]) => !classifiedTypes.has(k))
     .flatMap(([, v]) => v);
 
+  // ── AI-driven 6-stakeholder SWOT ─────────────────────────────────────────
+  const stakeholders = buildAISwotStakeholders(docs, topic, lang);
+
   const strategicContext = topic
-    ? (STRATEGIC_CONTEXT_FOCUSED[lang] ?? STRATEGIC_CONTEXT_FOCUSED.en!)(topic, docs.length, analysis.confidenceScore)
-    : (STRATEGIC_CONTEXT_MULTI[lang] ?? STRATEGIC_CONTEXT_MULTI.en!)(docs.length, analysis.confidenceScore);
+    ? `Analysis exclusively focused on: ${topic} — ${docs.length} parliamentary documents examined`
+    : `Multi-stakeholder analysis of ${docs.length} parliamentary documents`;
   const swotSection = generateStakeholderSwotSection({ stakeholders, lang, strategicContext });
 
-  // Dashboard from analysis output
+  // ── Localised names for mindmap/sankey labels (single source from ai-swot-analyzer)
+  const govName     = AI_STAKEHOLDER_NAMES['government-coalition'][lang] ?? AI_STAKEHOLDER_NAMES['government-coalition'].en;
+  const oppName     = AI_STAKEHOLDER_NAMES['opposition'][lang]           ?? AI_STAKEHOLDER_NAMES['opposition'].en;
+  const privateName = AI_STAKEHOLDER_NAMES['private-sector'][lang]       ?? AI_STAKEHOLDER_NAMES['private-sector'].en;
+
+  // ── AI-analyzed multi-chart dashboard ─────────────────────────────────────
+  // Produces 3 chart types (radar, scatter, bar) with accessible data tables.
+  const dashboardAnalysis = analyzeDashboardData(docs, topic, lang);
+
+  // Also build the classic document-type distribution bar chart as chart #4
+  // so existing article consumers still see document counts.
+  const typeCounts: Record<string, number> = {};
+  docs.forEach(d => {
+    const t = effectiveType(d);
+    typeCounts[t] = (typeCounts[t] || 0) + 1;
+  });
+  const rawTypeKeys = Object.keys(typeCounts);
+  // Use localized display names for chart labels (e.g., "Press Release" not "pressm")
+  const chartLabels = rawTypeKeys.map(t => docTypeLabel(t, lang, typeCounts[t]));
+  const chartValues = rawTypeKeys.map(t => typeCounts[t]);
+
+  const docTypeChart = {
+    id: 'deep-inspection-doc-types',
+    type: 'bar' as const,
+    title: deepLabel('documentsByType', lang),
+    labels: chartLabels,
+    datasets: [{
+      label: deepLabel('documents', lang),
+      data: chartValues,
+      backgroundColor: rawTypeKeys.map((_, i) => DEEP_CHART_PALETTE[i % DEEP_CHART_PALETTE.length]),
+    }],
+  };
+  const docTypeTable = {
+    caption: deepLabel('documentsByType', lang),
+    headers: [deepLabel('documentTypes', lang), deepLabel('documents', lang)],
+    rows: rawTypeKeys.map((t, i) => [docTypeLabel(t, lang, chartValues[i]), String(chartValues[i])]),
+  };
+
   const dashboardSection = generateDashboardSection({
     data: {
-      title: analysis.dashboardData.title,
-      summary: analysis.dashboardData.summary,
-      charts: [{
-        id: 'deep-inspection-doc-types',
-        type: 'bar',
-        title: deepLabel('documentsByType', lang),
-        labels: analysis.dashboardData.typeDistribution.map(t => t.label),
-        datasets: [{
-          label: deepLabel('documents', lang),
-          data: analysis.dashboardData.typeDistribution.map(t => t.value),
-          backgroundColor: analysis.dashboardData.typeDistribution.map(t => t.color),
-        }],
-      }],
+      title: topic
+        ? `${deepLabel('documentIntelligence', lang)} — ${topic}`
+        : deepLabel('documentIntelligence', lang),
+      summary: dashboardAnalysis.summary,
+      charts: [...dashboardAnalysis.charts, docTypeChart],
+      tables: [...dashboardAnalysis.tables, docTypeTable],
     },
     lang,
   });
 
-  // Mindmap from analysis branches
-  const mindmapBranches: MindmapBranch[] = analysis.mindmapBranches.map(b => ({
-    label: b.label,
-    color: b.color,
-    icon: b.icon,
-    items: b.items,
-  }));
+  // ── Mindmap: AI-driven conceptual map across 5 political dimensions ─────────
+  const allDetectedDomains = new Set<string>();
+  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
+  // Augment with AI-detected domains when available.
+  // emergingTrends format: "domain1, domain2, domain3 [CONFIDENCE]" — single suffix on whole list.
+  if (aiResult?.synthesis?.emergingTrends) {
+    aiResult.synthesis.emergingTrends
+      .split(',')
+      .map(s => s.split('[')[0]?.trim() ?? '')
+      .filter(Boolean)
+      .forEach(dom => allDetectedDomains.add(dom));
+  }
+  const detectedDomainList = [...allDetectedDomains].filter(Boolean).slice(0, 8);
 
-  const mindmapSection = generateMindmapSection({
-    topic: topic || (MINDMAP_FALLBACK_TOPIC[lang] ?? MINDMAP_FALLBACK_TOPIC.en!),
-    branches: mindmapBranches,
-    lang,
-    summary: topic
-      ? (MINDMAP_SUMMARY_FOCUSED[lang] ?? MINDMAP_SUMMARY_FOCUSED.en!)(topic)
-      : (MINDMAP_SUMMARY_GENERIC[lang] ?? MINDMAP_SUMMARY_GENERIC.en!)(docs.length),
-  });
+  // Pass precomputed domains to avoid iterating docs twice
+  const aiAnalysis = buildAIMindmapAnalysis(docs, topic, lang, detectedDomainList);
+  const mindmapSection = generateMindmapSection(
+    buildMindmapOptionsFromAnalysis(
+      aiAnalysis,
+      lang,
+      topic || deepLabel('parliamentaryAnalysis', lang),
+      {
+        summary: topic
+          ? `${deepLabel('conceptualMap', lang)}: ${topic}`
+          : `${deepLabel('conceptualMap', lang)} — ${docs.length} ${deepLabel('documents', lang).toLowerCase()}`,
+      },
+    ),
+  );
 
-  // Sankey section reuses doc classification from above (propDocs, betDocs, etc.)
-
-  // Select stakeholder names by role key (not array index) to avoid silent mislabeling
-  const findStakeholderName = (role: string, fallback: string): string =>
-    analysis.stakeholderSwot.find(s => s.role === role)?.name ?? fallback;
-  const sankeyGovName     = findStakeholderName('government', 'Government');
-  const sankeyOppName     = findStakeholderName('parliament', 'Parliament');
-  const privateName = findStakeholderName('private-sector', 'Private Sector');
-
-  // Sankey: actor groups → document types
+  // ── Sankey: party/doc-type flow → legislative outcome ─────────────────────
+  // The sankey uses three primary legislative actor groups as source nodes:
+  //   - government: initiates propositions, laws, gov. communications, press releases,
+  //     and EU position papers (fpm) — these originate from government ministries
+  //   - opposition: initiates committee reports and motions
+  //   - private sector / external actors: associated with external references
+  //     and other document types
+  // Additional SWOT stakeholders (civil society, citizens, etc.) are
+  // analysis perspectives rather than document-originating actors.
   const sankeyNodes: SankeyNode[] = [
-    { id: 'gov', label: sankeyGovName,     color: 'cyan' },
-    { id: 'opp', label: sankeyOppName,     color: 'magenta' },
-    { id: 'pvt', label: privateName, color: 'purple' },
+    { id: 'gov', label: govName,           color: 'cyan' },
+    { id: 'opp', label: oppName,           color: 'magenta' },
+    { id: 'pvt', label: privateName,       color: 'purple' },
   ];
 
+  // Add document type nodes and target outcome nodes
   const sankeyFlows: SankeyFlow[] = [];
   if (propDocs.length > 0) {
-    sankeyNodes.push({ id: 'prop', label: localizeDocType('prop', lang, propDocs.length), color: 'orange' });
+    sankeyNodes.push({ id: 'prop', label: 'Propositions', color: 'orange' });
     sankeyFlows.push({ source: 'gov', target: 'prop', value: propDocs.length, label: `${propDocs.length}` });
   }
   if (betDocs.length > 0) {
-    sankeyNodes.push({ id: 'bet', label: localizeDocType('bet', lang, betDocs.length), color: 'blue' });
+    sankeyNodes.push({ id: 'bet', label: 'Committee Reports', color: 'blue' });
     sankeyFlows.push({ source: 'opp', target: 'bet', value: betDocs.length, label: `${betDocs.length}` });
   }
   if (motDocs.length > 0) {
-    sankeyNodes.push({ id: 'mot', label: localizeDocType('mot', lang, motDocs.length), color: 'yellow' });
+    sankeyNodes.push({ id: 'mot', label: 'Motions', color: 'yellow' });
     sankeyFlows.push({ source: 'opp', target: 'mot', value: motDocs.length, label: `${motDocs.length}` });
   }
   if (sfsDocs.length > 0) {
-    sankeyNodes.push({ id: 'sfs', label: localizeDocType('sfs', lang, sfsDocs.length), color: 'green' });
+    sankeyNodes.push({ id: 'sfs', label: 'Laws (SFS)', color: 'green' });
     sankeyFlows.push({ source: 'gov', target: 'sfs', value: sfsDocs.length, label: `${sfsDocs.length}` });
   }
   if (skrDocs.length > 0) {
-    sankeyNodes.push({ id: 'skr', label: localizeDocType('skr', lang, skrDocs.length), color: 'cyan' });
+    sankeyNodes.push({ id: 'skr', label: deepLabel('govCommunications', lang), color: 'green' });
     sankeyFlows.push({ source: 'gov', target: 'skr', value: skrDocs.length, label: `${skrDocs.length}` });
   }
   if (euDocs.length > 0) {
-    sankeyNodes.push({ id: 'eu', label: localizeDocType('fpm', lang, euDocs.length), color: 'blue' });
+    sankeyNodes.push({ id: 'eu', label: 'EU Positions', color: 'blue' });
     sankeyFlows.push({ source: 'gov', target: 'eu', value: euDocs.length, label: `${euDocs.length}` });
   }
   if (pressmDocs.length > 0) {
-    sankeyNodes.push({ id: 'pressm', label: localizeDocType('pressm', lang, pressmDocs.length), color: 'orange' });
+    sankeyNodes.push({ id: 'pressm', label: 'Press Releases', color: 'orange' });
     sankeyFlows.push({ source: 'gov', target: 'pressm', value: pressmDocs.length, label: `${pressmDocs.length}` });
   }
   if (extDocs.length > 0) {
-    sankeyNodes.push({ id: 'ext', label: localizeDocType('ext', lang, extDocs.length), color: 'purple' });
+    sankeyNodes.push({ id: 'ext', label: 'External / Reference', color: 'purple' });
     sankeyFlows.push({ source: 'pvt', target: 'ext', value: extDocs.length, label: `${extDocs.length}` });
   }
   if (otherDocs.length > 0) {
-    sankeyNodes.push({ id: 'other', label: localizeDocType('other', lang, otherDocs.length), color: 'purple' });
+    sankeyNodes.push({ id: 'other', label: 'Other Docs', color: 'purple' });
     sankeyFlows.push({ source: 'pvt', target: 'other', value: otherDocs.length, label: `${otherDocs.length}` });
   }
 
+  // Only include Sankey when there is more than one non-trivial flow (otherwise uninformative)
   const sankeySection: TemplateSection | null = sankeyFlows.length >= 2
     ? generateSankeySection({
         nodes: sankeyNodes,
         flows: sankeyFlows,
         lang,
-        title: topic
-          ? `${SANKEY_TITLE_LABEL[lang] ?? SANKEY_TITLE_LABEL.en!} — ${topic}`
-          : (SANKEY_TITLE_LABEL[lang] ?? SANKEY_TITLE_LABEL.en!),
-        summary: (SANKEY_SUMMARY[lang] ?? SANKEY_SUMMARY.en!)(docs.length),
+        title: topic ? `Legislative Flow — ${topic}` : 'Legislative Flow',
+        summary: `Flow of ${docs.length} parliamentary documents from initiating actors to document types`,
       })
     : null;
 
-  const economicSection = analysis.policyAssessment.domains.length > 0
-    ? generateEconomicDashboardSection({ policyDomains: analysis.policyAssessment.domains, lang })
+  // ── World Bank / Economic Dashboard ──────────────────────────────────────
+  const economicSection = detectedDomainList.length > 0
+    ? generateEconomicDashboardSection({ policyDomains: detectedDomainList, lang })
     : null;
 
   const additionalSections: TemplateSection[] = [
@@ -1930,17 +1875,6 @@ function buildDeepInspectionSectionsFromAnalysis(
 
   return [dashboardSection, swotSection, ...additionalSections];
 }
-
-/**
- * Compute the effective document type for a RawDocument.
- * SFS-by-name docs (missing doktyp/documentType but dokumentnamn starting with "SFS")
- * are normalised to 'sfs' so filters, typeCounts, and chart labels stay consistent.
- */
-function effectiveType(d: RawDocument): string {
-  return (d.doktyp || d.documentType)
-    || ((d.dokumentnamn || '').startsWith('SFS') ? 'sfs' : 'other');
-}
-
 
 /**
  * Generate Deep-Inspection article targeting specific documents or policy topics.
@@ -2140,7 +2074,8 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
 
     const slug: string = `${formatDateForSlug(today)}-deep-inspection-${topicSlug}`;
 
-    const sanitizedTopic: string | null = focusTopic ? sanitizePlainText(focusTopic) : null;
+    const sanitizedTopicRaw = focusTopic ? sanitizePlainText(focusTopic) : '';
+    const sanitizedTopic: string | null = sanitizedTopicRaw.trim() || null;
     const defaultTopicLabels: Record<Language, string> = {
       en: 'Policy Analysis',
       sv: 'Policyanalys',
@@ -2185,11 +2120,16 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
         focusTopic: sanitizedTopic,
       });
       const pipelineDuration = iterationDurationsMs.reduce((a, b) => a + b, 0);
+      console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
-      console.log(`    🤖 Analysis: ${analysis.iterationsCompleted} iteration(s) completed, confidence: ${analysis.confidenceScore}/100 (${pipelineDuration}ms)`);
-      if (validation) {
-        const passLabel = validation.passed ? '✅' : '⚠️';
-        console.log(`    ${passLabel} Validation score: ${validation.score}/100${validation.issues.length > 0 ? `, issues: ${validation.issues.join('; ')}` : ''}`);
+      // Run multi-iteration AI analysis pipeline — cache result per language
+      const cacheKey = sharedAnalysisCache.generateKey(enrichedDocs, sanitizedTopic, analysisIterations, lang);
+      let aiResult = sharedAnalysisCache.get(cacheKey);
+      if (!aiResult) {
+        const pipeline = new AIAnalysisPipeline({ iterations: analysisIterations });
+        aiResult = pipeline.analyze(enrichedDocs, sanitizedTopic, lang);
+        sharedAnalysisCache.set(cacheKey, aiResult);
+        console.log(`    🤖 AI analysis: ${aiResult.iterations} iteration(s), analysis score ${aiResult.analysisScore}`);
       }
 
       // Write iteration metadata for audit trail
@@ -2210,12 +2150,12 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
 
       // Topic-focused deep-inspection content (NOT generic content)
       const content: string = generateDeepInspectionContent(enrichedDocs, sanitizedTopic, lang, analysisDepth);
+      // Topic-focused deep-inspection content (uses AI strategic implications & takeaways)
+      const content: string = generateDeepInspectionContent(enrichedDocs, sanitizedTopic, lang, aiResult);
 
-      // Metadata derived from document data
+      // Metadata still derived from document data
       const contentData = { documents: enrichedDocs as Parameters<typeof generateArticleContent>[0]['documents'] };
-      // Use AI-derived watch points (plain text — escape here before passing to
-      // generateWatchSection which renders pre-escaped HTML directly)
-      const watchPoints = analysis.watchPoints.map(wp => ({ title: escapeHtml(wp.title), description: escapeHtml(wp.description) }));
+      const watchPoints = extractWatchPoints(contentData, lang);
       const metadata = generateMetadata(contentData, 'deep-inspection', lang);
       const readTime: string = calculateReadTime(content);
       const sourceMethods = ['get_dokument', 'get_dokument_innehall', 'search_dokument'];
@@ -2223,8 +2163,8 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       if (gitHubUrls.length > 0) sourceMethods.push('GitHub raw content');
       const sources: string[] = generateSources(sourceMethods);
 
-      // SWOT + dashboard sections — built from AI analysis result (not hardcoded templates)
-      const sections = buildDeepInspectionSectionsFromAnalysis(analysis, enrichedDocs, sanitizedTopic, lang);
+      // SWOT + dashboard sections — AI-generated dynamic entries (context-aware, all 14 languages)
+      const sections = buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang, aiResult);
 
       const langTitles: TitleSet = titles[lang] || titles.en;
 
