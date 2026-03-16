@@ -43,7 +43,8 @@
   border: 1px solid var(--border-color, #ddd);
 }
 
-.news-article .swot-quadrant h3 {
+.news-article .swot-quadrant h3,
+.news-article .swot-quadrant h4 {
   margin: 0 0 0.75rem 0;
   font-size: 1rem;
   font-weight: 600;
@@ -65,28 +66,32 @@
   border-color: #27ae60;
 }
 
-.news-article .swot-strengths h3 { color: #1e8449; }
+.news-article .swot-strengths h3,
+.news-article .swot-strengths h4 { color: #1e8449; }
 
 .news-article .swot-weaknesses {
   background: rgba(231, 76, 60, 0.08);
   border-color: #e74c3c;
 }
 
-.news-article .swot-weaknesses h3 { color: #c0392b; }
+.news-article .swot-weaknesses h3,
+.news-article .swot-weaknesses h4 { color: #c0392b; }
 
 .news-article .swot-opportunities {
   background: rgba(52, 152, 219, 0.08);
   border-color: #3498db;
 }
 
-.news-article .swot-opportunities h3 { color: #2471a3; }
+.news-article .swot-opportunities h3,
+.news-article .swot-opportunities h4 { color: #2471a3; }
 
 .news-article .swot-threats {
   background: rgba(243, 156, 18, 0.08);
   border-color: #f39c12;
 }
 
-.news-article .swot-threats h3 { color: #d68910; }
+.news-article .swot-threats h3,
+.news-article .swot-threats h4 { color: #d68910; }
 
 .news-article .swot-subject {
   font-size: 1.1rem;
@@ -108,6 +113,39 @@
 .news-article .swot-impact--medium { color: #f39c12; }
 .news-article .swot-impact--low { color: #27ae60; }
 
+/* Trend direction indicators */
+.news-article .swot-trend {
+  font-weight: 700;
+  margin-left: 0.25em;
+}
+.news-article .swot-trend--improving { color: #27ae60; }
+.news-article .swot-trend--stable { color: #7f8c8d; }
+.news-article .swot-trend--deteriorating { color: #e74c3c; }
+
+/* Quantitative evidence */
+.news-article .swot-evidence {
+  font-size: 0.85em;
+  color: #6c757d;
+  font-style: italic;
+  margin-left: 0.25em;
+}
+
+/* Expandable justification */
+.news-article .swot-justification {
+  margin-top: 0.25rem;
+  font-size: 0.85em;
+  color: #555;
+}
+.news-article .swot-justification summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #2471a3;
+}
+.news-article .swot-justification p {
+  margin: 0.25rem 0 0 0;
+  line-height: 1.4;
+}
+
 [dir="rtl"] .news-article .swot-analysis {
   direction: rtl;
   text-align: right;
@@ -117,6 +155,9 @@
   padding-left: 0;
   padding-right: 1.25rem;
 }
+
+[dir="rtl"] .news-article .swot-trend { margin-left: 0; margin-right: 0.25em; }
+[dir="rtl"] .news-article .swot-evidence { margin-left: 0; margin-right: 0.25em; }
 
 
 /* Stakeholder SWOT Analysis Section */
