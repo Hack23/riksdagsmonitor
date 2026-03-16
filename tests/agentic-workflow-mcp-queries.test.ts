@@ -140,13 +140,8 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       // Should document filtering by date fields
       expect(content).toMatch(/filter.*by.*publicerad|filter.*by.*datum|filter.*by.*inlämnad|Date Filtering/i);
 
-      // Should have filtering guidance (either JS code examples or fromDate/toDate parameter patterns)
-      expect(content).toMatch(/\.filter\(|fromDate|from_date|>= fromDate/i);
-      // Should reference date-based filtering approach
-      expect(content).toMatch(/from_date|to_date|fromDate|dateFrom|dateTo|>= fromDate/i);
-
-      // Should have filtering instructions (fromDate references or filter directives)
-      expect(content).toMatch(/fromDate|from_date|filter.*results/i);
+      // Should have filtering guidance (either JS code examples or date-parameter patterns)
+      expect(content).toMatch(/\.filter\(|\bfromDate\b|\bfrom_date\b|\bdateFrom\b|\bdateTo\b/i);
       // Should have filtering examples
       expect(content).toContain('.filter(');
       expect(content).toMatch(/\.slice\(0,\s*10\)\s*>=\s*fromDate|new Date.*>=.*new Date/);
@@ -183,7 +178,7 @@ describe('Agentic Workflow MCP Query Patterns', () => {
       // Should have cross-referencing guidance (either numbered examples or descriptive patterns)
       const hasCrossRefGuidance =
         (content.includes('Example 1:') && content.includes('Example 2:')) ||
-        (content.includes('cross-reference') || content.includes('Cross-reference'));
+        /cross[\s-]?referenc(?:e|ing)/i.test(content);
       expect(hasCrossRefGuidance).toBe(true);
       // Should describe cross-referencing approach (e.g. combining data sources, filter by date)
       expect(content).toMatch(/cross.*reference|related.*data.*sources|richer.*analysis/i);
@@ -278,17 +273,9 @@ describe('Agentic Workflow MCP Query Patterns', () => {
 
       // Should show date calculation patterns (either JS Date or fromDate/today parameters)
       expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today/i);
-      // Should have date range guidance (millisecond calculations OR fromDate/lookback patterns)
-      expect(content).toMatch(/86400000|3600000|fromDate|lookback/i);
-      // Should show date patterns (YYYY-MM-DD, fromDate, today, toISOString, etc.)
-      expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today|YYYY-MM-DD/);
       // Should include date placeholder patterns or dynamic calculation
       expect(content).toMatch(/<today>|<fromDate>|date.*calculation/i);
-      // Should show date calculation patterns — either JS millisecond
-      // arithmetic or bash/shell date commands with lookback logic
-      // (date-parameter names like from_date/to_date/dateFrom are tested
-      //  in the dedicated "Post-Query Date Filtering" suite above)
-      expect(content).toMatch(/new Date.*toISOString|Date\.now\(\)|fromDate|today/);
+      // Should show date-range arithmetic or lookback logic
       expect(content).toMatch(/86400000|3600000|lookback_hours|lookback/);
     });
 
