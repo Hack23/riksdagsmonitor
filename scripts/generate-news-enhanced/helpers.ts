@@ -316,8 +316,14 @@ let _flushed = false;
 /** Flush quality scores at most once per process lifetime. */
 function flushOnce(): void {
   if (_flushed) return;
-  _flushed = true;
+  if (Object.keys(perArticleScores).length === 0) {
+    _flushed = true;
+    return;
+  }
   flushQualityScores();
+  if (Object.keys(perArticleScores).length === 0) {
+    _flushed = true;
+  }
 }
 
 export function installFlushHandlers(): void {

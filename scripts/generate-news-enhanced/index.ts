@@ -31,6 +31,7 @@ import {
 } from './config.js';
 import {
   formatDateForSlug,
+  flushQualityScores,
   getWeekAheadDateRange,
   writeArticle,
   writeSingleArticle,
@@ -266,6 +267,9 @@ export async function generateNews(): Promise<typeof stats> {
   } else {
     console.log(`\n🎉 All ${allRequestedLanguages.length} languages generated!`);
   }
+
+  // Ensure quality-scores.json is persisted for both CLI and programmatic usage.
+  flushQualityScores();
 
   return stats;
 }
