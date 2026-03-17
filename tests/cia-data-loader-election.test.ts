@@ -153,12 +153,12 @@ describe('CIADataLoader', () => {
   describe('no JSON dependency', () => {
     it('should not have a loadJSON method', () => {
       const loader = new CIADataLoader();
-      expect((loader as any).loadJSON).toBeUndefined();
+      expect('loadJSON' in loader).toBe(false);
     });
 
     it('should not have a jsonBaseURL property', () => {
       const loader = new CIADataLoader();
-      expect((loader as any).jsonBaseURL).toBeUndefined();
+      expect('jsonBaseURL' in loader).toBe(false);
     });
   });
 });
