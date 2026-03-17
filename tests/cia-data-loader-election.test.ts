@@ -116,6 +116,23 @@ S,Social Democrats,107,95,-12,26.8,,`;
       expect(result.forecast.parties[0].confidenceInterval).toBeUndefined();
     });
 
+    it('should drop forecast rows with non-numeric required fields', async () => {
+      const csvWithInvalidRequiredNumeric = `id,name,currentSeats,predictedSeats,change,voteShare,confidenceMin,confidenceMax
+S,Social Democrats,107,95,-12,26.8,88,102
+M,Moderates,,72,4,20.3,67,77`;
+
+      globalThis.fetch = mockFetchForCSV({
+        'election_forecast.csv': csvWithInvalidRequiredNumeric,
+        'coalition_scenarios.csv': COALITION_CSV
+      });
+
+      const loader = new CIADataLoader();
+      const result = await loader.loadElectionAnalysis();
+
+      expect(result.forecast.parties).toHaveLength(1);
+      expect(result.forecast.parties[0].name).toBe('Social Democrats');
+    });
+
     it('should parse coalition scenarios correctly', async () => {
       globalThis.fetch = mockFetchForCSV({
         'election_forecast.csv': FORECAST_CSV,
@@ -134,6 +151,23 @@ S,Social Democrats,107,95,-12,26.8,,`;
       expect(tido.totalSeats).toBe(185);
       expect(tido.majority).toBe(true);
       expect(tido.riskLevel).toBe('moderate');
+    });
+
+    it('should drop coalition rows with non-numeric required fields', async () => {
+      const coalitionWithInvalidNumeric = `name,probability,composition,totalSeats,majority,riskLevel
+Valid Coalition,35,"M,KD,SD,L",185,true,moderate
+Invalid Coalition,,"S,V,MP,C",164,false,high`;
+
+      globalThis.fetch = mockFetchForCSV({
+        'election_forecast.csv': FORECAST_CSV,
+        'coalition_scenarios.csv': coalitionWithInvalidNumeric
+      });
+
+      const loader = new CIADataLoader();
+      const result = await loader.loadElectionAnalysis();
+
+      expect(result.coalitionScenarios).toHaveLength(1);
+      expect(result.coalitionScenarios[0].name).toBe('Valid Coalition');
     });
 
     it('should return empty parties when CSV fetch fails', async () => {

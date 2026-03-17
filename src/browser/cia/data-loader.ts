@@ -531,27 +531,64 @@ export class CIADataLoader {
       this.loadCSV(CIADataLoader.CSV_SOURCES.coalitionScenarios.local)
     ]);
 
-    const parties = forecastRows.map(r => ({
-      name: r.name as string,
-      currentSeats: r.currentSeats as number,
-      predictedSeats: r.predictedSeats as number,
-      change: r.change as number,
-      voteShare: r.voteShare as number,
-      confidenceInterval:
-        typeof r.confidenceMin === 'number' && Number.isFinite(r.confidenceMin) &&
-        typeof r.confidenceMax === 'number' && Number.isFinite(r.confidenceMax)
-          ? { min: r.confidenceMin, max: r.confidenceMax }
-          : undefined
-    }));
+    const toFiniteNumber = (value: unknown): number | undefined => {
+      if (typeof value === 'number' && Number.isFinite(value)) return value;
+      if (typeof value === 'string' && value.trim() !== '') {
+        const num = Number(value);
+        if (Number.isFinite(num)) return num;
+      }
+      return undefined;
+    };
 
-    const coalitionScenarios = scenarioRows.map(r => ({
-      name: r.name as string,
-      probability: r.probability as number,
-      composition: (r.composition as string).split(',').map(s => s.trim()),
-      totalSeats: r.totalSeats as number,
-      majority: String(r.majority).toLowerCase() === 'true',
-      riskLevel: r.riskLevel as string
-    }));
+    const parties = forecastRows.flatMap(r => {
+      const name = String(r.name ?? '').trim();
+      const currentSeats = toFiniteNumber(r.currentSeats);
+      const predictedSeats = toFiniteNumber(r.predictedSeats);
+      const change = toFiniteNumber(r.change);
+      const voteShare = toFiniteNumber(r.voteShare);
+
+      if (!name || currentSeats === undefined || predictedSeats === undefined || change === undefined || voteShare === undefined) {
+        return [];
+      }
+
+      const confidenceMin = toFiniteNumber(r.confidenceMin);
+      const confidenceMax = toFiniteNumber(r.confidenceMax);
+
+      return [{
+        name,
+        currentSeats,
+        predictedSeats,
+        change,
+        voteShare,
+        confidenceInterval:
+          confidenceMin !== undefined && confidenceMax !== undefined
+            ? { min: confidenceMin, max: confidenceMax }
+            : undefined
+      }];
+    });
+
+    const coalitionScenarios = scenarioRows.flatMap(r => {
+      const name = String(r.name ?? '').trim();
+      const probability = toFiniteNumber(r.probability);
+      const totalSeats = toFiniteNumber(r.totalSeats);
+      const composition = String(r.composition ?? '')
+        .split(',')
+        .map(s => s.trim())
+        .filter(Boolean);
+
+      if (!name || probability === undefined || totalSeats === undefined || composition.length === 0) {
+        return [];
+      }
+
+      return [{
+        name,
+        probability,
+        composition,
+        totalSeats,
+        majority: String(r.majority).toLowerCase() === 'true',
+        riskLevel: String(r.riskLevel ?? '')
+      }];
+    });
 
     return {
       forecast: { parties },
