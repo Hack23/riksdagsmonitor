@@ -5,26 +5,22 @@
  * @description
  * **CIA Intelligence Data Loader & Pipeline Orchestrator**
  * 
- * Core data acquisition module implementing multi-source intelligence data loading
+ * Core data acquisition module implementing intelligence data loading
  * from the Citizen Intelligence Agency (CIA) Platform. Manages CSV export ingestion
- * for 19+ intelligence product categories and JSON fallback for model-generated
- * electoral forecasts. Provides resilient data pipeline with local-first strategy
- * and remote fallback capabilities.
+ * for 19+ intelligence product categories using repository-hosted `cia-data`
+ * assets. Missing datasets degrade safely to empty arrays with warnings.
  * 
  * ## Data Pipeline Architecture
  * 
- * **Multi-Tier Source Strategy**:
+ * **Source Strategy**:
  * ```
- * Tier 1 (Local):    ../cia-data/{category}/*.csv (deployed assets)
- * Tier 2 (JSON):     ../data/cia-exports/current/*.json (model outputs)
- * Tier 3 (Fallback): GitHub Raw API (authoritative source)
+ * Local CSV: ../cia-data/{category}/*.csv (deployed assets)
  * ```
  * 
  * **Benefits**:
  * - **Performance**: Local CSV loads ~10x faster than GitHub API
- * - **Resilience**: Degradation from local → JSON → remote
+ * - **Resilience**: Missing files degrade to empty datasets with warnings
  * - **Offline**: Works with locally deployed data packages
- * - **Freshness**: GitHub fallback ensures latest data availability
  * 
  * ## Intelligence Product Categories
  * 
@@ -59,40 +55,26 @@
  * 18. **historicalTrends** - Multi-year pattern analysis
  * 
  * ### Predictive Models
- * 19. **electionForecasts** - 2026 election predictions (JSON)
+ * 19. **electionForecasts** - 2026 election predictions (CSV)
  * 
  * ## Data Source Mapping
  * 
  * **CSV Sources** (Real PostgreSQL Views):
  * - Local: `../cia-data/{category}/{view_name}.csv`
- * - Remote: `https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/{view_name}.csv`
  * 
- * **JSON Sources** (Model-Generated):
- * - Local: `../data/cia-exports/current/{product_name}.json`
- * - Schema: CIA Platform JSON export format v2.0
+ * ## Loading Strategy
  * 
- * ## Intelligent Loading Strategy
- * 
- * **Load Priority Algorithm**:
+ * **Load Algorithm**:
  * ```javascript
  * async loadData(category) {
- *   try {
- *     return await this.loadLocal(category);      // Tier 1: Local CSV
- *   } catch (err) {
- *     try {
- *       return await this.loadJSON(category);     // Tier 2: Local JSON
- *     } catch (err) {
- *       return await this.loadRemote(category);   // Tier 3: GitHub
- *     }
- *   }
+ *   return await this.loadCSV(category); // local CSV fetch, [] on failure
  * }
  * ```
  * 
  * **Error Handling**:
- * - Network failures: Retry with exponential backoff (3 attempts)
- * - Parse errors: Fallback to next tier
+ * - Network failures: Return empty dataset with warning
+ * - Parse errors: Return empty dataset with warning
  * - Missing data: Return empty dataset with warning
- * - CORS errors: Proxy through service worker (if available)
  * 
  * ## Data Validation Pipeline
  * 
@@ -151,7 +133,7 @@
  * ```javascript
  * const loader = new CIADataLoader();
  * const riskData = await loader.loadCSV('riskByParty');
- * const forecast = await loader.loadJSON('electionForecast2026');
+ * const forecast = await loader.loadElectionAnalysis();
  * ```
  * 
  * **Consuming Modules**:
@@ -177,7 +159,6 @@
 export class CIADataLoader {
   constructor() {
     this.csvBaseURL = '../cia-data/';
-    this.jsonBaseURL = '../data/cia-exports/current/';
     this.fallbackURL = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
   }
 
@@ -240,6 +221,14 @@ export class CIADataLoader {
     partyEffectiveness: {
       local: 'party/distribution_party_effectiveness_trends.csv',
       description: 'Party effectiveness trends with win rate'
+    },
+    electionForecast: {
+      local: 'election/election_forecast.csv',
+      description: 'Election 2026 seat predictions per party'
+    },
+    coalitionScenarios: {
+      local: 'election/coalition_scenarios.csv',
+      description: 'Coalition scenario probability modeling'
     }
   };
 
@@ -316,28 +305,6 @@ export class CIADataLoader {
     
     console.warn(`No data loaded for ${localPath}`);
     return [];
-  }
-
-  /**
-   * Load JSON with fallback (for election predictions only)
-   * @param {string} filename - JSON filename
-   * @returns {Promise<Object>} - Parsed JSON
-   */
-  async loadJSON(filename) {
-    const urls = [
-      `${this.jsonBaseURL}${filename}`
-    ];
-    
-    for (const url of urls) {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) continue;
-        return await response.json();
-      } catch (e) {
-        console.warn(`Failed to load JSON from ${url}:`, e.message);
-      }
-    }
-    throw new Error(`Failed to load ${filename}`);
   }
 
   /**
@@ -428,10 +395,105 @@ export class CIADataLoader {
   }
 
   /**
-   * Load election analysis - kept as JSON (model-generated predictions)
+   * Build election analysis from CSV sources
+   * Replaces election-analysis.json
    */
   async loadElectionAnalysis() {
-    return this.loadJSON('election-analysis.json');
+    const [forecastRows, scenarioRows] = await Promise.all([
+      this.loadCSV(CIADataLoader.CSV_SOURCES.electionForecast.local),
+      this.loadCSV(CIADataLoader.CSV_SOURCES.coalitionScenarios.local)
+    ]);
+
+    const toFiniteNumber = value => {
+      if (typeof value === 'number' && Number.isFinite(value)) return value;
+      if (typeof value === 'string' && value.trim() !== '') {
+        const num = Number(value);
+        if (Number.isFinite(num)) return num;
+      }
+      return undefined;
+    };
+
+    const toBoolean = value => {
+      if (typeof value === 'boolean') return value;
+      if (typeof value === 'string') {
+        const normalized = value.trim().toLowerCase();
+        if (normalized === 'true') return true;
+        if (normalized === 'false') return false;
+      }
+      return undefined;
+    };
+
+    const parties = forecastRows.flatMap(r => {
+      const name = String(r.name ?? '').trim();
+      const currentSeats = toFiniteNumber(r.currentSeats);
+      const predictedSeats = toFiniteNumber(r.predictedSeats);
+      const change = toFiniteNumber(r.change);
+      const voteShare = toFiniteNumber(r.voteShare);
+
+      if (!name || currentSeats === undefined || predictedSeats === undefined || change === undefined || voteShare === undefined) {
+        return [];
+      }
+
+      const confidenceMin = toFiniteNumber(r.confidenceMin);
+      const confidenceMax = toFiniteNumber(r.confidenceMax);
+
+      return [{
+        name,
+        currentSeats,
+        predictedSeats,
+        change,
+        voteShare,
+        confidenceInterval:
+          confidenceMin !== undefined && confidenceMax !== undefined
+            ? { min: confidenceMin, max: confidenceMax }
+            : undefined
+      }];
+    });
+
+    const coalitionScenarios = scenarioRows.flatMap(r => {
+      const name = String(r.name ?? '').trim();
+      const probability = toFiniteNumber(r.probability);
+      const totalSeats = toFiniteNumber(r.totalSeats);
+      const majority = toBoolean(r.majority);
+      const riskLevel = String(r.riskLevel ?? '').trim();
+      const composition = String(r.composition ?? '')
+        .split(',')
+        .map(s => s.trim())
+        .filter(Boolean);
+
+      if (
+        !name ||
+        probability === undefined ||
+        totalSeats === undefined ||
+        majority === undefined ||
+        !riskLevel ||
+        composition.length === 0
+      ) {
+        return [];
+      }
+
+      return [{
+        name,
+        probability,
+        composition,
+        totalSeats,
+        majority,
+        riskLevel
+      }];
+    });
+
+    return {
+      forecast: { parties },
+      coalitionScenarios,
+      keyFactors: [
+        'Economic conditions',
+        'Immigration policy',
+        'Climate change priorities',
+        'Healthcare reform',
+        'NATO membership impact'
+      ],
+      electionDate: '2026-09-13'
+    };
   }
 
   /**

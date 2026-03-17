@@ -51,6 +51,8 @@ export interface CSVSourceMap {
   committeeProductivity: CSVSourceDefinition;
   committeeActivity: CSVSourceDefinition;
   partyEffectiveness: CSVSourceDefinition;
+  electionForecast: CSVSourceDefinition;
+  coalitionScenarios: CSVSourceDefinition;
 }
 
 /** A single parsed CSV row (header-keyed, auto-typed values). */
@@ -280,12 +282,10 @@ export interface CIADataPayload {
 
 export class CIADataLoader {
   readonly csvBaseURL: string;
-  readonly jsonBaseURL: string;
   readonly fallbackURL: string;
 
   constructor() {
     this.csvBaseURL = '../cia-data/';
-    this.jsonBaseURL = '../data/cia-exports/current/';
     this.fallbackURL = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
   }
 
@@ -346,6 +346,14 @@ export class CIADataLoader {
     partyEffectiveness: {
       local: 'party/distribution_party_effectiveness_trends.csv',
       description: 'Party effectiveness trends with win rate'
+    },
+    electionForecast: {
+      local: 'election/election_forecast.csv',
+      description: 'Election 2026 seat predictions per party'
+    },
+    coalitionScenarios: {
+      local: 'election/coalition_scenarios.csv',
+      description: 'Coalition scenario probability modeling'
     }
   };
 
@@ -422,29 +430,6 @@ export class CIADataLoader {
 
     console.warn(`No data loaded for ${localPath}`);
     return [];
-  }
-
-  /**
-   * Load JSON with fallback (for election predictions only).
-   * @param filename - JSON filename
-   * @returns Parsed JSON
-   */
-  async loadJSON<T = unknown>(filename: string): Promise<T> {
-    const urls: string[] = [
-      `${this.jsonBaseURL}${filename}`
-    ];
-
-    for (const url of urls) {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) continue;
-        return (await response.json()) as T;
-      } catch (e: unknown) {
-        const message = e instanceof Error ? e.message : String(e);
-        console.warn(`Failed to load JSON from ${url}:`, message);
-      }
-    }
-    throw new Error(`Failed to load ${filename}`);
   }
 
   /**
@@ -536,9 +521,106 @@ export class CIADataLoader {
     };
   }
 
-  /** Load election analysis – kept as JSON (model-generated predictions). */
+  /**
+   * Build election analysis from CSV sources.
+   * Replaces election-analysis.json.
+   */
   async loadElectionAnalysis(): Promise<ElectionAnalysis> {
-    return this.loadJSON<ElectionAnalysis>('election-analysis.json');
+    const [forecastRows, scenarioRows] = await Promise.all([
+      this.loadCSV(CIADataLoader.CSV_SOURCES.electionForecast.local),
+      this.loadCSV(CIADataLoader.CSV_SOURCES.coalitionScenarios.local)
+    ]);
+
+    const toFiniteNumber = (value: unknown): number | undefined => {
+      if (typeof value === 'number' && Number.isFinite(value)) return value;
+      if (typeof value === 'string' && value.trim() !== '') {
+        const num = Number(value);
+        if (Number.isFinite(num)) return num;
+      }
+      return undefined;
+    };
+
+    const toBoolean = (value: unknown): boolean | undefined => {
+      if (typeof value === 'boolean') return value;
+      if (typeof value === 'string') {
+        const normalized = value.trim().toLowerCase();
+        if (normalized === 'true') return true;
+        if (normalized === 'false') return false;
+      }
+      return undefined;
+    };
+
+    const parties = forecastRows.flatMap(r => {
+      const name = String(r.name ?? '').trim();
+      const currentSeats = toFiniteNumber(r.currentSeats);
+      const predictedSeats = toFiniteNumber(r.predictedSeats);
+      const change = toFiniteNumber(r.change);
+      const voteShare = toFiniteNumber(r.voteShare);
+
+      if (!name || currentSeats === undefined || predictedSeats === undefined || change === undefined || voteShare === undefined) {
+        return [];
+      }
+
+      const confidenceMin = toFiniteNumber(r.confidenceMin);
+      const confidenceMax = toFiniteNumber(r.confidenceMax);
+
+      return [{
+        name,
+        currentSeats,
+        predictedSeats,
+        change,
+        voteShare,
+        confidenceInterval:
+          confidenceMin !== undefined && confidenceMax !== undefined
+            ? { min: confidenceMin, max: confidenceMax }
+            : undefined
+      }];
+    });
+
+    const coalitionScenarios = scenarioRows.flatMap(r => {
+      const name = String(r.name ?? '').trim();
+      const probability = toFiniteNumber(r.probability);
+      const totalSeats = toFiniteNumber(r.totalSeats);
+      const majority = toBoolean(r.majority);
+      const riskLevel = String(r.riskLevel ?? '').trim();
+      const composition = String(r.composition ?? '')
+        .split(',')
+        .map(s => s.trim())
+        .filter(Boolean);
+
+      if (
+        !name ||
+        probability === undefined ||
+        totalSeats === undefined ||
+        majority === undefined ||
+        !riskLevel ||
+        composition.length === 0
+      ) {
+        return [];
+      }
+
+      return [{
+        name,
+        probability,
+        composition,
+        totalSeats,
+        majority,
+        riskLevel
+      }];
+    });
+
+    return {
+      forecast: { parties },
+      coalitionScenarios,
+      keyFactors: [
+        'Economic conditions',
+        'Immigration policy',
+        'Climate change priorities',
+        'Healthcare reform',
+        'NATO membership impact'
+      ],
+      electionDate: '2026-09-13'
+    };
   }
 
   /**

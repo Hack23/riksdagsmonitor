@@ -10,7 +10,6 @@ node_modules/
 dist/
 build/
 *.log
-data/cia-exports/
 /types/
 !scripts/types/
 schemas/metadata/
