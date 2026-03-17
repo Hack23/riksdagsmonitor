@@ -538,8 +538,43 @@ export class CIADataLoader {
 
   /** Load election analysis – kept as JSON (model-generated predictions). */
   async loadElectionAnalysis(): Promise<ElectionAnalysis> {
-    return this.loadJSON<ElectionAnalysis>('election-analysis.json');
+    try {
+      return await this.loadJSON<ElectionAnalysis>('election-analysis.json');
+    } catch {
+      console.warn('Election analysis JSON unavailable, using fallback data');
+      return CIADataLoader.FALLBACK_ELECTION_ANALYSIS;
+    }
   }
+
+  /** Fallback election analysis based on 2022 election results. */
+  static readonly FALLBACK_ELECTION_ANALYSIS: ElectionAnalysis = {
+    forecast: {
+      parties: [
+        { name: 'Social Democrats', currentSeats: 107, predictedSeats: 107, change: 0, voteShare: 30.3 },
+        { name: 'Sweden Democrats', currentSeats: 73, predictedSeats: 73, change: 0, voteShare: 20.5 },
+        { name: 'Moderates', currentSeats: 68, predictedSeats: 68, change: 0, voteShare: 19.1 },
+        { name: 'Left Party', currentSeats: 24, predictedSeats: 24, change: 0, voteShare: 6.7 },
+        { name: 'Centre Party', currentSeats: 24, predictedSeats: 24, change: 0, voteShare: 6.7 },
+        { name: 'Christian Democrats', currentSeats: 19, predictedSeats: 19, change: 0, voteShare: 5.3 },
+        { name: 'Green Party', currentSeats: 18, predictedSeats: 18, change: 0, voteShare: 5.1 },
+        { name: 'Liberals', currentSeats: 16, predictedSeats: 16, change: 0, voteShare: 4.6 }
+      ]
+    },
+    coalitionScenarios: [
+      { name: 'Tidö Coalition', composition: ['M', 'KD', 'SD', 'L'], totalSeats: 176, probability: 40, majority: true, riskLevel: 'moderate' },
+      { name: 'Left-Green Coalition', composition: ['S', 'V', 'MP', 'C'], totalSeats: 173, probability: 30, majority: false, riskLevel: 'high' },
+      { name: 'Grand Coalition', composition: ['S', 'M', 'C'], totalSeats: 199, probability: 20, majority: true, riskLevel: 'low' },
+      { name: 'SD-Led Coalition', composition: ['SD', 'M', 'KD'], totalSeats: 160, probability: 10, majority: false, riskLevel: 'high' }
+    ],
+    keyFactors: [
+      'Economic conditions',
+      'Immigration policy',
+      'Climate priorities',
+      'Healthcare reform',
+      'NATO membership'
+    ],
+    electionDate: '2026-09-13'
+  };
 
   /**
    * Build party performance from CSV sources.
