@@ -31,6 +31,10 @@ import type {
   VotingPatterns,
   MPRanking,
   CommitteeEntry,
+  MinistryDashboard,
+  DemographicsDashboard,
+  DocumentActivityDashboard,
+  RiskEvolutionDashboard,
 } from './data-loader.js';
 
 /* ------------------------------------------------------------------ */
@@ -50,6 +54,10 @@ export interface RendererData {
   top10?: Top10Influential;
   committees?: CommitteeNetwork;
   votingPatterns?: VotingPatterns;
+  ministry?: MinistryDashboard;
+  demographics?: DemographicsDashboard;
+  documentActivity?: DocumentActivityDashboard;
+  riskEvolution?: RiskEvolutionDashboard;
 }
 
 /** Chart.js instance reference map. */
@@ -493,6 +501,291 @@ export class CIADashboardRenderer {
       vizDiv.appendChild(p2);
       networkViz.appendChild(vizDiv);
     }
+  }
+
+  /** Render ministry performance section. */
+  renderMinistryPerformance(): void {
+    const { ministry } = this.data;
+    const container = document.getElementById('ministry-list');
+
+    if (!container) return;
+
+    if (!ministry || !Array.isArray(ministry.ministries) || ministry.ministries.length === 0) {
+      console.warn('Invalid or missing ministry data');
+      return;
+    }
+
+    container.textContent = '';
+    const fragment = document.createDocumentFragment();
+
+    ministry.ministries.forEach(m => {
+      const card = document.createElement('div');
+      card.className = 'committee-card';
+
+      const nameEl = document.createElement('h3');
+      nameEl.className = 'committee-name';
+      nameEl.textContent = m.name;
+
+      const stats = document.createElement('div');
+      stats.className = 'committee-stats';
+
+      const createStat = (label: string, value: string | number): HTMLDivElement => {
+        const stat = document.createElement('div');
+        stat.className = 'committee-stat';
+        const statLabel = document.createElement('span');
+        statLabel.className = 'stat-label';
+        statLabel.textContent = label + ':';
+        const statValue = document.createElement('span');
+        statValue.className = 'stat-value';
+        statValue.textContent = String(value);
+        stat.appendChild(statLabel);
+        stat.appendChild(statValue);
+        return stat;
+      };
+
+      stats.appendChild(createStat('Documents', m.documentsProduced));
+      stats.appendChild(createStat('Bills', m.governmentBills));
+      stats.appendChild(createStat('Period', `${m.year} Q${m.quarter}`));
+
+      const assessment = document.createElement('div');
+      assessment.className = 'committee-issues';
+      const assessHeading = document.createElement('h4');
+      assessHeading.textContent = 'Assessment';
+      assessment.appendChild(assessHeading);
+      const tag = document.createElement('span');
+      tag.className = 'issue-tag';
+      tag.textContent = m.effectiveness || 'N/A';
+      assessment.appendChild(tag);
+
+      card.appendChild(nameEl);
+      card.appendChild(stats);
+      card.appendChild(assessment);
+      fragment.appendChild(card);
+    });
+
+    container.appendChild(fragment);
+  }
+
+  /** Render demographics charts (gender + experience). */
+  renderDemographics(): void {
+    const { demographics } = this.data;
+
+    if (!demographics) {
+      console.warn('Invalid or missing demographics data');
+      return;
+    }
+
+    // Gender chart
+    const genderCtx = document.getElementById('gender-chart') as HTMLCanvasElement | null;
+    if (genderCtx && typeof Chart !== 'undefined' && demographics.genderByParty.length > 0) {
+      const riksdagParties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
+      const maleData = riksdagParties.map(p => {
+        const entry = demographics.genderByParty.find(g => g.party === p && g.gender === 'MAN');
+        return entry ? entry.count : 0;
+      });
+      const femaleData = riksdagParties.map(p => {
+        const entry = demographics.genderByParty.find(g => g.party === p && g.gender === 'KVINNA');
+        return entry ? entry.count : 0;
+      });
+
+      this.charts.gender = new Chart(genderCtx, {
+        type: 'bar',
+        data: {
+          labels: riksdagParties,
+          datasets: [
+            {
+              label: 'Male',
+              data: maleData,
+              backgroundColor: 'rgba(54, 162, 235, 0.7)',
+              borderColor: 'rgb(54, 162, 235)',
+              borderWidth: 1
+            },
+            {
+              label: 'Female',
+              data: femaleData,
+              backgroundColor: 'rgba(255, 99, 132, 0.7)',
+              borderColor: 'rgb(255, 99, 132)',
+              borderWidth: 1
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: 'Gender Distribution by Party',
+              font: { size: 16, weight: 'bold' }
+            }
+          },
+          scales: {
+            x: { stacked: true },
+            y: { stacked: true, beginAtZero: true, title: { display: true, text: 'Count' } }
+          }
+        }
+      });
+    }
+
+    // Experience chart
+    const expCtx = document.getElementById('experience-chart') as HTMLCanvasElement | null;
+    if (expCtx && typeof Chart !== 'undefined' && demographics.experienceByParty.length > 0) {
+      const riksdagParties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
+      const levels = [...new Set(demographics.experienceByParty.map(e => e.experienceLevel))];
+      const colors = [
+        'rgba(75, 192, 192, 0.7)',
+        'rgba(153, 102, 255, 0.7)',
+        'rgba(255, 159, 64, 0.7)',
+        'rgba(255, 205, 86, 0.7)',
+        'rgba(201, 203, 207, 0.7)',
+        'rgba(54, 162, 235, 0.7)'
+      ];
+
+      this.charts.experience = new Chart(expCtx, {
+        type: 'bar',
+        data: {
+          labels: riksdagParties,
+          datasets: levels.map((level, i) => ({
+            label: level.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, c => c.toUpperCase()),
+            data: riksdagParties.map(p => {
+              const entry = demographics.experienceByParty.find(e => e.party === p && e.experienceLevel === level);
+              return entry ? entry.politicianCount : 0;
+            }),
+            backgroundColor: colors[i % colors.length],
+            borderWidth: 1
+          }))
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: 'Experience Levels by Party',
+              font: { size: 16, weight: 'bold' }
+            }
+          },
+          scales: {
+            x: { stacked: true },
+            y: { stacked: true, beginAtZero: true, title: { display: true, text: 'Politicians' } }
+          }
+        }
+      });
+    }
+  }
+
+  /** Render document activity charts. */
+  renderDocumentActivity(): void {
+    const { documentActivity } = this.data;
+
+    if (!documentActivity) {
+      console.warn('Invalid or missing document activity data');
+      return;
+    }
+
+    const docCtx = document.getElementById('document-trends-chart') as HTMLCanvasElement | null;
+    if (docCtx && typeof Chart !== 'undefined' && documentActivity.documentTypes.length > 0) {
+      // Aggregate by year for the main doc types
+      const mainTypes = ['mot', 'bet', 'prop'];
+      const years = [...new Set(documentActivity.documentTypes.map(d => d.year))].sort();
+      // Only show recent years (last 10)
+      const recentYears = years.slice(-10);
+
+      this.charts.documents = new Chart(docCtx, {
+        type: 'line',
+        data: {
+          labels: recentYears.map(String),
+          datasets: mainTypes.map((type, i) => {
+            const colors = ['rgb(0, 217, 255)', 'rgb(255, 0, 110)', 'rgb(255, 190, 11)'];
+            return {
+              label: type === 'mot' ? 'Motions' : type === 'bet' ? 'Committee Reports' : 'Propositions',
+              data: recentYears.map(y => {
+                const entry = documentActivity.documentTypes.find(d => d.year === y && d.documentType === type);
+                return entry ? entry.docCount : 0;
+              }),
+              borderColor: colors[i],
+              backgroundColor: colors[i].replace('rgb', 'rgba').replace(')', ', 0.1)'),
+              tension: 0.4,
+              fill: true,
+              pointRadius: 4,
+              pointHoverRadius: 6
+            };
+          })
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: 'Parliamentary Document Production Trends',
+              font: { size: 16, weight: 'bold' }
+            }
+          },
+          scales: {
+            y: { beginAtZero: true, title: { display: true, text: 'Document Count' } }
+          }
+        }
+      });
+    }
+  }
+
+  /** Render risk evolution chart. */
+  renderRiskEvolution(): void {
+    const { riskEvolution } = this.data;
+    const container = document.getElementById('risk-evolution-list');
+
+    if (!container) return;
+
+    if (!riskEvolution || !Array.isArray(riskEvolution.entries) || riskEvolution.entries.length === 0) {
+      console.warn('Invalid or missing risk evolution data');
+      return;
+    }
+
+    container.textContent = '';
+    const fragment = document.createDocumentFragment();
+
+    // Group by period
+    const periodGroups: Record<string, typeof riskEvolution.entries> = {};
+    riskEvolution.entries.forEach(e => {
+      const period = e.period.substring(0, 7); // YYYY-MM
+      if (!periodGroups[period]) periodGroups[period] = [];
+      periodGroups[period].push(e);
+    });
+
+    Object.entries(periodGroups)
+      .sort(([a], [b]) => b.localeCompare(a))
+      .forEach(([period, entries]) => {
+        const card = document.createElement('div');
+        card.className = 'committee-card';
+
+        const header = document.createElement('h3');
+        header.className = 'committee-name';
+        header.textContent = period;
+
+        const stats = document.createElement('div');
+        stats.className = 'committee-stats';
+
+        entries.forEach(e => {
+          const stat = document.createElement('div');
+          stat.className = 'committee-stat';
+          const label = document.createElement('span');
+          label.className = 'stat-label';
+          label.textContent = `${e.severity}:`;
+          const value = document.createElement('span');
+          value.className = 'stat-value';
+          value.textContent = `${e.politicianCount} (avg: ${e.avgRiskScore.toFixed(1)})`;
+          stat.appendChild(label);
+          stat.appendChild(value);
+          stats.appendChild(stat);
+        });
+
+        card.appendChild(header);
+        card.appendChild(stats);
+        fragment.appendChild(card);
+      });
+
+    container.appendChild(fragment);
   }
 
   /** Destroy all charts (for cleanup). */

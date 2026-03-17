@@ -229,6 +229,46 @@ export class CIADataLoader {
     coalitionScenarios: {
       local: 'election/coalition_scenarios.csv',
       description: 'Coalition scenario probability modeling'
+    },
+    coalitionAlignment: {
+      local: 'party/distribution_coalition_alignment.csv',
+      description: 'Real party-pair voting alignment rates'
+    },
+    genderByParty: {
+      local: 'party/distribution_gender_by_party.csv',
+      description: 'Gender distribution per party'
+    },
+    experienceByParty: {
+      local: 'party/distribution_experience_by_party.csv',
+      description: 'Experience levels per party'
+    },
+    ministryEffectiveness: {
+      local: 'ministry/distribution_ministry_effectiveness.csv',
+      description: 'Ministry effectiveness assessments'
+    },
+    annualDocTypes: {
+      local: 'voting/distribution_annual_document_types.csv',
+      description: 'Annual document type counts'
+    },
+    decisionTrends: {
+      local: 'voting/distribution_decision_trends.csv',
+      description: 'Decision approval trends over time'
+    },
+    electionRegions: {
+      local: 'election/distribution_election_regions.csv',
+      description: 'MPs per election region'
+    },
+    governmentRoles: {
+      local: 'view_riksdagen_goverment_role_member_sample.csv',
+      description: 'Government minister role assignments'
+    },
+    riskEvolution: {
+      local: 'distribution_risk_evolution_temporal.csv',
+      description: 'Risk score changes over time'
+    },
+    behavioralPatterns: {
+      local: 'party/distribution_behavioral_patterns_by_party.csv',
+      description: 'Behavioral risk patterns per party'
     }
   };
 
@@ -643,23 +683,55 @@ export class CIADataLoader {
       activityMap[a.org] = a.document_count || 0;
     });
 
-    // Map committee names to codes (extract first 2-3 uppercase chars from name)
-    const committees = productivity
-      .filter(c => c.committee_name && c.total_members > 0)
+    // Map known committee names to their Riksdag org codes
+    const nameToOrgCode = {
+      'Konstitutionsutskottet': 'KU', 'Civilutskottet': 'CU', 'Trafikutskottet': 'TU',
+      'Näringsutskottet': 'NU', 'Miljö- och jordbruksutskottet': 'MJU', 'Utrikesutskottet': 'UU',
+      'Arbetsmarknadsutskottet': 'AU', 'Socialförsäkringsutskottet': 'SfU', 'Socialutskottet': 'SoU',
+      'Justitieutskottet': 'JuU', 'Skatteutskottet': 'SkU', 'EU-nämnden': 'EUN',
+      'Kulturutskottet': 'KrU', 'Utbildningsutskottet': 'UbU', 'Finansutskottet': 'FiU',
+      'Försvarsutskottet': 'FöU', 'Lagutskottet': 'LU', 'Bostadsutskottet': 'BoU'
+    };
+
+    // Deduplicate committees by name, keeping entry with most data
+    const bestByName = {};
+    productivity.forEach(c => {
+      const name = c.committee_name;
+      if (!name) return;
+      const existing = bestByName[name];
+      if (!existing || (c.total_documents || 0) > (existing.total_documents || 0) ||
+          ((c.total_documents || 0) === (existing.total_documents || 0) &&
+           (c.total_members || 0) > (existing.total_members || 0))) {
+        bestByName[name] = c;
+      }
+    });
+
+    // Filter out INACTIVE and zero-member committees
+    const committees = Object.values(bestByName)
+      .filter(c => {
+        const name = c.committee_name;
+        const members = c.total_members || 0;
+        const level = c.productivity_level || '';
+        return name !== 'Riksdagen' && members > 0 &&
+          (level !== 'INACTIVE' || (c.total_documents || 0) > 0);
+      })
       .map(c => {
-        const code = c.committee_name.substring(0, 3).toUpperCase();
+        const name = c.committee_name;
+        const code = nameToOrgCode[name] || name.substring(0, 3).toUpperCase();
+        const activityDocs = activityMap[code] || 0;
         return {
           id: code,
-          name: c.committee_name,
+          name,
           memberCount: c.total_members || 0,
           influenceScore: c.docs_per_member ? Math.round(c.docs_per_member * 100) : 0,
-          documentsProcessed: c.total_documents || 0,
+          documentsProcessed: c.total_documents || activityDocs,
           productivityLevel: c.productivity_level || '',
-          meetingsPerYear: 0,
+          meetingsPerYear: activityDocs > 0 ? Math.round(activityDocs / 25) : 0,
           keyIssues: [c.productivity_level || 'N/A'],
           _source: 'csv'
         };
-      });
+      })
+      .sort((a, b) => b.documentsProcessed - a.documentsProcessed);
 
     // Build simple network graph from committees
     const nodes = committees.map(c => ({
@@ -697,11 +769,11 @@ export class CIADataLoader {
 
   /**
    * Build voting patterns from CSV sources
-   * Replaces voting-patterns.json
-   * Uses party effectiveness trends since coalition_alignment CSV is empty
+   * Uses real coalition alignment data for the agreement matrix
    */
   async loadVotingPatterns() {
-    const [effectiveness, riskByParty] = await Promise.all([
+    const [coalitionAlignment, effectiveness, riskByParty] = await Promise.all([
+      this.loadCSV(CIADataLoader.CSV_SOURCES.coalitionAlignment.local),
       this.loadCSV(CIADataLoader.CSV_SOURCES.partyEffectiveness.local),
       this.loadCSV(CIADataLoader.CSV_SOURCES.riskByParty.local)
     ]);
@@ -710,29 +782,43 @@ export class CIADataLoader {
     const labels = riksdagParties;
     const partyNames = ['Social Democrats', 'Moderates', 'Sweden Democrats', 'Centre', 'Left', 'Christian Democrats', 'Liberals', 'Green'];
 
-    // Build latest win rate per party from effectiveness trends
-    const latestWinRate = {};
-    effectiveness
-      .filter(e => riksdagParties.includes(e.party))
-      .forEach(e => {
-        if (!latestWinRate[e.party] || e.year > latestWinRate[e.party].year ||
-            (e.year === latestWinRate[e.party].year && e.quarter > latestWinRate[e.party].quarter)) {
-          latestWinRate[e.party] = e;
-        }
+    // Build agreement matrix from real coalition alignment data
+    const alignmentLookup = {};
+    coalitionAlignment
+      .filter(r => riksdagParties.includes(r.party1) && riksdagParties.includes(r.party2))
+      .forEach(r => {
+        const rate = Math.round((r.alignment_rate || 0) * 100);
+        alignmentLookup[`${r.party1}:${r.party2}`] = rate;
+        alignmentLookup[`${r.party2}:${r.party1}`] = rate;
       });
 
-    // Build agreement matrix: parties with similar win rates are more aligned
-    const agreementMatrix = labels.map(p1 => {
-      const wr1 = latestWinRate[p1] ? latestWinRate[p1].avg_win_rate : 50;
-      return labels.map(p2 => {
-        if (p1 === p2) return 100;
-        const wr2 = latestWinRate[p2] ? latestWinRate[p2].avg_win_rate : 50;
-        // Similarity = 100 - absolute difference in win rates
-        return Math.max(0, Math.round(100 - Math.abs(wr1 - wr2)));
-      });
-    });
+    const hasAlignmentData = Object.keys(alignmentLookup).length > 0;
+    let agreementMatrix;
 
-    // Rebellion tracking from risk data (HIGH risk ~ rebellious)
+    if (hasAlignmentData) {
+      agreementMatrix = labels.map(p1 =>
+        labels.map(p2 => p1 === p2 ? 100 : (alignmentLookup[`${p1}:${p2}`] ?? 50))
+      );
+    } else {
+      const latestWinRate = {};
+      effectiveness
+        .filter(e => riksdagParties.includes(e.party))
+        .forEach(e => {
+          if (!latestWinRate[e.party] || e.year > latestWinRate[e.party].year ||
+              (e.year === latestWinRate[e.party].year && e.quarter > latestWinRate[e.party].quarter)) {
+            latestWinRate[e.party] = e;
+          }
+        });
+      agreementMatrix = labels.map(p1 => {
+        const wr1 = latestWinRate[p1] ? latestWinRate[p1].avg_win_rate : 50;
+        return labels.map(p2 => {
+          if (p1 === p2) return 100;
+          const wr2 = latestWinRate[p2] ? latestWinRate[p2].avg_win_rate : 50;
+          return Math.max(0, Math.round(100 - Math.abs(wr1 - wr2)));
+        });
+      });
+    }
+
     const rebellionTracking = riksdagParties.map(party => {
       const partyRisks = riskByParty.filter(r => r.party === party);
       const highRisk = partyRisks.find(r => r.risk_level === 'HIGH');
@@ -748,7 +834,7 @@ export class CIADataLoader {
 
     return {
       title: 'Voting Patterns Analysis',
-      description: 'Derived from CIA party effectiveness trends and risk data',
+      description: hasAlignmentData ? 'Real coalition alignment data from CIA voting analysis' : 'Derived from CIA party effectiveness trends and risk data',
       lastUpdated: new Date().toISOString(),
       analysisPeriod: '2022-2026',
       votingMatrix: { labels, partyNames, agreementMatrix },
@@ -759,18 +845,77 @@ export class CIADataLoader {
   }
 
   /**
+   * Build ministry dashboard from CSV sources
+   */
+  async loadMinistryDashboard() {
+    const rows = await this.loadCSV(CIADataLoader.CSV_SOURCES.ministryEffectiveness.local);
+    const ministries = rows
+      .filter(r => r.ministry_name && (r.documents_produced || 0) > 0)
+      .map(r => ({
+        name: r.ministry_name,
+        effectiveness: r.effectiveness_assessment || '',
+        documentsProduced: r.documents_produced || 0,
+        governmentBills: r.government_bills || 0,
+        year: r.year || 0,
+        quarter: r.quarter || 0
+      }))
+      .sort((a, b) => b.documentsProduced - a.documentsProduced);
+    return { title: 'Ministry Performance', description: 'Ministry effectiveness from CIA database exports', lastUpdated: new Date().toISOString(), ministries, _source: 'csv' };
+  }
+
+  /**
+   * Build demographics dashboard from CSV sources
+   */
+  async loadDemographics() {
+    const riksdagParties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
+    const [genderRows, experienceRows] = await Promise.all([
+      this.loadCSV(CIADataLoader.CSV_SOURCES.genderByParty.local),
+      this.loadCSV(CIADataLoader.CSV_SOURCES.experienceByParty.local)
+    ]);
+    const genderByParty = genderRows.filter(r => riksdagParties.includes(r.party)).map(r => ({ party: r.party, gender: r.gender, count: r.count || 0 }));
+    const experienceByParty = experienceRows.filter(r => riksdagParties.includes(r.party)).map(r => ({ party: r.party, experienceLevel: r.experience_level || '', politicianCount: r.politician_count || 0 }));
+    return { title: 'Parliamentary Demographics', description: 'Gender and experience distribution from CIA database exports', lastUpdated: new Date().toISOString(), genderByParty, experienceByParty, _source: 'csv' };
+  }
+
+  /**
+   * Build document activity dashboard from CSV sources
+   */
+  async loadDocumentActivity() {
+    const [docTypeRows, decisionRows] = await Promise.all([
+      this.loadCSV(CIADataLoader.CSV_SOURCES.annualDocTypes.local),
+      this.loadCSV(CIADataLoader.CSV_SOURCES.decisionTrends.local)
+    ]);
+    const documentTypes = docTypeRows.filter(r => (r.doc_count || 0) > 0).map(r => ({ year: r.year || 0, documentType: r.document_type || '', docCount: r.doc_count || 0 }));
+    const decisionTrends = decisionRows.filter(r => (r.decision_count || 0) > 0).map(r => ({ year: r.year || 0, month: r.month || 0, decisionCount: r.decision_count || 0, approvedDecisions: r.approved_decisions || 0, rejectedDecisions: r.rejected_decisions || 0, approvalRate: r.approval_rate || 0 }));
+    return { title: 'Parliamentary Document Activity', description: 'Document production and decision trends from CIA database exports', lastUpdated: new Date().toISOString(), documentTypes, decisionTrends, _source: 'csv' };
+  }
+
+  /**
+   * Build risk evolution dashboard from CSV sources
+   */
+  async loadRiskEvolution() {
+    const rows = await this.loadCSV(CIADataLoader.CSV_SOURCES.riskEvolution.local);
+    const entries = rows.filter(r => (r.politician_count || 0) > 0).map(r => ({ period: r.assessment_period || '', severity: r.risk_severity || '', politicianCount: r.politician_count || 0, avgRiskScore: r.avg_risk_score || 0 }));
+    return { title: 'Risk Score Evolution', description: 'Temporal risk score changes from CIA database exports', lastUpdated: new Date().toISOString(), entries, _source: 'csv' };
+  }
+
+  /**
    * Load all data in parallel
    * @returns {Promise<Object>} - Object with all data
    */
   async loadAll() {
-    const [overview, election, partyPerf, top10, committees, votingPatterns] = 
+    const [overview, election, partyPerf, top10, committees, votingPatterns, ministry, demographics, documentActivity, riskEvolution] = 
       await Promise.all([
         this.loadOverviewDashboard(),
         this.loadElectionAnalysis(),
         this.loadPartyPerformance(),
         this.loadTop10Influential(),
         this.loadCommitteeNetwork(),
-        this.loadVotingPatterns()
+        this.loadVotingPatterns(),
+        this.loadMinistryDashboard(),
+        this.loadDemographics(),
+        this.loadDocumentActivity(),
+        this.loadRiskEvolution()
       ]);
 
     return {
@@ -779,7 +924,11 @@ export class CIADataLoader {
       partyPerf,
       top10,
       committees,
-      votingPatterns
+      votingPatterns,
+      ministry,
+      demographics,
+      documentActivity,
+      riskEvolution
     };
   }
 }
