@@ -424,7 +424,8 @@ export class CIADataLoader {
       change: r.change,
       voteShare: r.voteShare,
       confidenceInterval:
-        r.confidenceMin != null && r.confidenceMax != null
+        typeof r.confidenceMin === 'number' && Number.isFinite(r.confidenceMin) &&
+        typeof r.confidenceMax === 'number' && Number.isFinite(r.confidenceMax)
           ? { min: r.confidenceMin, max: r.confidenceMax }
           : undefined
     }));

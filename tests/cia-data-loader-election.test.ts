@@ -100,6 +100,22 @@ describe('CIADataLoader', () => {
       expect(s.confidenceInterval).toEqual({ min: 88, max: 102 });
     });
 
+    it('should drop confidenceInterval when CSV cells are empty strings', async () => {
+      const csvWithBlanks = `id,name,currentSeats,predictedSeats,change,voteShare,confidenceMin,confidenceMax
+S,Social Democrats,107,95,-12,26.8,,`;
+
+      globalThis.fetch = mockFetchForCSV({
+        'election_forecast.csv': csvWithBlanks,
+        'coalition_scenarios.csv': COALITION_CSV
+      });
+
+      const loader = new CIADataLoader();
+      const result = await loader.loadElectionAnalysis();
+
+      // Empty CSV cells should NOT produce { min: '', max: '' }
+      expect(result.forecast.parties[0].confidenceInterval).toBeUndefined();
+    });
+
     it('should parse coalition scenarios correctly', async () => {
       globalThis.fetch = mockFetchForCSV({
         'election_forecast.csv': FORECAST_CSV,
