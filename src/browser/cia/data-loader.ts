@@ -383,6 +383,31 @@ export class CIADataLoader {
   readonly csvBaseURL: string;
   readonly fallbackURL: string;
 
+  /** The 8 parties represented in the Swedish Riksdag. */
+  static readonly RIKSDAG_PARTIES = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
+
+  /** Mapping of full Swedish committee names to their Riksdag org codes. */
+  static readonly COMMITTEE_ORG_CODES: Record<string, string> = {
+    'Konstitutionsutskottet': 'KU',
+    'Civilutskottet': 'CU',
+    'Trafikutskottet': 'TU',
+    'Näringsutskottet': 'NU',
+    'Miljö- och jordbruksutskottet': 'MJU',
+    'Utrikesutskottet': 'UU',
+    'Arbetsmarknadsutskottet': 'AU',
+    'Socialförsäkringsutskottet': 'SfU',
+    'Socialutskottet': 'SoU',
+    'Justitieutskottet': 'JuU',
+    'Skatteutskottet': 'SkU',
+    'EU-nämnden': 'EUN',
+    'Kulturutskottet': 'KrU',
+    'Utbildningsutskottet': 'UbU',
+    'Finansutskottet': 'FiU',
+    'Försvarsutskottet': 'FöU',
+    'Lagutskottet': 'LU',
+    'Bostadsutskottet': 'BoU'
+  };
+
   constructor() {
     this.csvBaseURL = '../cia-data/';
     this.fallbackURL = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
@@ -589,7 +614,7 @@ export class CIADataLoader {
     const totalMPs = activeRow ? (activeRow.person_count as number) : 349;
 
     // Count unique parties from risk data (only real riksdag parties)
-    const riksdagParties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
+    const riksdagParties = CIADataLoader.RIKSDAG_PARTIES;
     const partiesInData = new Set(
       riskByParty.map(r => r.party as string).filter(p => riksdagParties.includes(p))
     );
@@ -774,7 +799,7 @@ export class CIADataLoader {
     ]);
 
     // Only include real riksdag parties
-    const riksdagParties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
+    const riksdagParties = CIADataLoader.RIKSDAG_PARTIES;
     const activePerformance = performance.filter(p => riksdagParties.includes(p.party as string));
 
     // Build a lookup from the detailed metrics
@@ -921,27 +946,8 @@ export class CIADataLoader {
       activityMap[a.org as string] = (a.document_count as number) || 0;
     });
 
-    // Map known committee names to their Riksdag org codes
-    const nameToOrgCode: Record<string, string> = {
-      'Konstitutionsutskottet': 'KU',
-      'Civilutskottet': 'CU',
-      'Trafikutskottet': 'TU',
-      'Näringsutskottet': 'NU',
-      'Miljö- och jordbruksutskottet': 'MJU',
-      'Utrikesutskottet': 'UU',
-      'Arbetsmarknadsutskottet': 'AU',
-      'Socialförsäkringsutskottet': 'SfU',
-      'Socialutskottet': 'SoU',
-      'Justitieutskottet': 'JuU',
-      'Skatteutskottet': 'SkU',
-      'EU-nämnden': 'EUN',
-      'Kulturutskottet': 'KrU',
-      'Utbildningsutskottet': 'UbU',
-      'Finansutskottet': 'FiU',
-      'Försvarsutskottet': 'FöU',
-      'Lagutskottet': 'LU',
-      'Bostadsutskottet': 'BoU'
-    };
+    // Use class-level committee name-to-org-code mapping
+    const nameToOrgCode = CIADataLoader.COMMITTEE_ORG_CODES;
 
     // Deduplicate committees by name, keeping the entry with the most data
     const bestByName: Record<string, CSVRow> = {};
@@ -1034,7 +1040,7 @@ export class CIADataLoader {
       this.loadCSV(CIADataLoader.CSV_SOURCES.riskByParty.local)
     ]);
 
-    const riksdagParties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
+    const riksdagParties = CIADataLoader.RIKSDAG_PARTIES;
     const labels = riksdagParties;
     const partyNames = [
       'Social Democrats', 'Moderates', 'Sweden Democrats', 'Centre',
@@ -1151,7 +1157,7 @@ export class CIADataLoader {
    * Build demographics dashboard from CSV sources.
    */
   async loadDemographics(): Promise<DemographicsDashboard> {
-    const riksdagParties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
+    const riksdagParties = CIADataLoader.RIKSDAG_PARTIES;
     const [genderRows, experienceRows] = await Promise.all([
       this.loadCSV(CIADataLoader.CSV_SOURCES.genderByParty.local),
       this.loadCSV(CIADataLoader.CSV_SOURCES.experienceByParty.local)
