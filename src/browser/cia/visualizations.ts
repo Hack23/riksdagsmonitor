@@ -72,6 +72,7 @@ interface ChartInstanceMap {
 export class CIADashboardRenderer {
   readonly data: RendererData;
   private charts: ChartInstanceMap;
+  private static readonly RIKSDAG_PARTIES = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
 
   constructor(data: RendererData) {
     this.data = data;
@@ -570,7 +571,11 @@ export class CIADashboardRenderer {
   renderDemographics(): void {
     const { demographics } = this.data;
 
-    if (!demographics) {
+    if (
+      !demographics ||
+      !Array.isArray(demographics.genderByParty) ||
+      !Array.isArray(demographics.experienceByParty)
+    ) {
       console.warn('Invalid or missing demographics data');
       return;
     }
@@ -578,7 +583,7 @@ export class CIADashboardRenderer {
     // Gender chart
     const genderCtx = document.getElementById('gender-chart') as HTMLCanvasElement | null;
     if (genderCtx && typeof Chart !== 'undefined' && demographics.genderByParty.length > 0) {
-      const riksdagParties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
+      const riksdagParties = CIADashboardRenderer.RIKSDAG_PARTIES;
       const maleData = riksdagParties.map(p => {
         const entry = demographics.genderByParty.find(g => g.party === p && g.gender === 'MAN');
         return entry ? entry.count : 0;
@@ -630,8 +635,10 @@ export class CIADashboardRenderer {
     // Experience chart
     const expCtx = document.getElementById('experience-chart') as HTMLCanvasElement | null;
     if (expCtx && typeof Chart !== 'undefined' && demographics.experienceByParty.length > 0) {
-      const riksdagParties = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
-      const levels = [...new Set(demographics.experienceByParty.map(e => e.experienceLevel))];
+      const riksdagParties = CIADashboardRenderer.RIKSDAG_PARTIES;
+      const levels = [...new Set(demographics.experienceByParty.map(e => e.experienceLevel))]
+        .filter(Boolean)
+        .sort((a, b) => a.localeCompare(b));
       const colors = [
         'rgba(75, 192, 192, 0.7)',
         'rgba(153, 102, 255, 0.7)',
@@ -678,7 +685,11 @@ export class CIADashboardRenderer {
   renderDocumentActivity(): void {
     const { documentActivity } = this.data;
 
-    if (!documentActivity) {
+    if (
+      !documentActivity ||
+      !Array.isArray(documentActivity.documentTypes) ||
+      !Array.isArray(documentActivity.decisionTrends)
+    ) {
       console.warn('Invalid or missing document activity data');
       return;
     }
@@ -686,6 +697,8 @@ export class CIADashboardRenderer {
     const docCtx = document.getElementById('document-trends-chart') as HTMLCanvasElement | null;
     if (docCtx && typeof Chart !== 'undefined' && documentActivity.documentTypes.length > 0) {
       // Aggregate by year for the main doc types
+      // Primary Swedish parliament document types:
+      // mot = motions, bet = committee reports (betänkanden), prop = government propositions.
       const mainTypes = ['mot', 'bet', 'prop'];
       const years = [...new Set(documentActivity.documentTypes.map(d => d.year))].sort();
       // Only show recent years (last 10)

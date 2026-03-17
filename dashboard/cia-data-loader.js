@@ -157,6 +157,37 @@
  */
 
 export class CIADataLoader {
+  /** The 8 parties represented in the Swedish Riksdag. */
+  static RIKSDAG_PARTIES = ['S', 'M', 'SD', 'C', 'V', 'KD', 'L', 'MP'];
+
+  /** Mapping of full Swedish committee names to their Riksdag org codes. */
+  static COMMITTEE_ORG_CODES = {
+    'Konstitutionsutskottet': 'KU',
+    'Civilutskottet': 'CU',
+    'Trafikutskottet': 'TU',
+    'Näringsutskottet': 'NU',
+    'Miljö- och jordbruksutskottet': 'MJU',
+    'Utrikesutskottet': 'UU',
+    'Arbetsmarknadsutskottet': 'AU',
+    'Socialförsäkringsutskottet': 'SfU',
+    'Socialutskottet': 'SoU',
+    'Justitieutskottet': 'JuU',
+    'Skatteutskottet': 'SkU',
+    'EU-nämnden': 'EUN',
+    'Kulturutskottet': 'KrU',
+    'Utbildningsutskottet': 'UbU',
+    'Finansutskottet': 'FiU',
+    'Försvarsutskottet': 'FöU',
+    'Lagutskottet': 'LU',
+    'Bostadsutskottet': 'BoU'
+  };
+
+  /**
+   * Heuristic divisor to estimate meetings/year from committee document counts.
+   * Assumption: ~25 published documents per active committee meeting.
+   */
+  static COMMITTEE_DOCS_PER_MEETING_ESTIMATE = 25;
+
   constructor() {
     this.csvBaseURL = '../cia-data/';
     this.fallbackURL = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
@@ -683,15 +714,7 @@ export class CIADataLoader {
       activityMap[a.org] = a.document_count || 0;
     });
 
-    // Map known committee names to their Riksdag org codes
-    const nameToOrgCode = {
-      'Konstitutionsutskottet': 'KU', 'Civilutskottet': 'CU', 'Trafikutskottet': 'TU',
-      'Näringsutskottet': 'NU', 'Miljö- och jordbruksutskottet': 'MJU', 'Utrikesutskottet': 'UU',
-      'Arbetsmarknadsutskottet': 'AU', 'Socialförsäkringsutskottet': 'SfU', 'Socialutskottet': 'SoU',
-      'Justitieutskottet': 'JuU', 'Skatteutskottet': 'SkU', 'EU-nämnden': 'EUN',
-      'Kulturutskottet': 'KrU', 'Utbildningsutskottet': 'UbU', 'Finansutskottet': 'FiU',
-      'Försvarsutskottet': 'FöU', 'Lagutskottet': 'LU', 'Bostadsutskottet': 'BoU'
-    };
+    const nameToOrgCode = CIADataLoader.COMMITTEE_ORG_CODES;
 
     // Deduplicate committees by name, keeping entry with most data
     const bestByName = {};
@@ -706,31 +729,31 @@ export class CIADataLoader {
       }
     });
 
-    // Filter out INACTIVE and zero-member committees
+    // Normalize committee metrics first so filtering and rendering use one consistent source.
     const committees = Object.values(bestByName)
-      .filter(c => {
-        const name = c.committee_name;
-        const members = c.total_members || 0;
-        const level = c.productivity_level || '';
-        return name !== 'Riksdagen' && members > 0 &&
-          (level !== 'INACTIVE' || (c.total_documents || 0) > 0);
-      })
       .map(c => {
         const name = c.committee_name;
         const code = nameToOrgCode[name] || name.substring(0, 3).toUpperCase();
+        const totalDocuments = c.total_documents || 0;
         const activityDocs = activityMap[code] || 0;
+        const documentsProcessed = Math.max(totalDocuments, activityDocs);
+        const productivityLevel = c.productivity_level || '';
         return {
           id: code,
           name,
           memberCount: c.total_members || 0,
           influenceScore: c.docs_per_member ? Math.round(c.docs_per_member * 100) : 0,
-          documentsProcessed: c.total_documents || activityDocs,
-          productivityLevel: c.productivity_level || '',
-          meetingsPerYear: activityDocs > 0 ? Math.round(activityDocs / 25) : 0,
-          keyIssues: [c.productivity_level || 'N/A'],
+          documentsProcessed,
+          productivityLevel,
+          meetingsPerYear: documentsProcessed > 0
+            ? Math.round(documentsProcessed / CIADataLoader.COMMITTEE_DOCS_PER_MEETING_ESTIMATE)
+            : 0,
+          keyIssues: [productivityLevel || 'N/A'],
           _source: 'csv'
         };
       })
+      .filter(c => c.name !== 'Riksdagen' && c.memberCount > 0 &&
+        (c.productivityLevel !== 'INACTIVE' || c.documentsProcessed > 0))
       .sort((a, b) => b.documentsProcessed - a.documentsProcessed);
 
     // Build simple network graph from committees

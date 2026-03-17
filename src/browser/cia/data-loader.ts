@@ -408,6 +408,12 @@ export class CIADataLoader {
     'Bostadsutskottet': 'BoU'
   };
 
+  /**
+   * Heuristic divisor to estimate meetings/year from committee document counts.
+   * Assumption: ~25 published documents per active committee meeting.
+   */
+  static readonly COMMITTEE_DOCS_PER_MEETING_ESTIMATE = 25;
+
   constructor() {
     this.csvBaseURL = '../cia-data/';
     this.fallbackURL = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
@@ -962,20 +968,15 @@ export class CIADataLoader {
       }
     });
 
-    // Filter out INACTIVE and zero-member committees; keep only real, active ones
+    // Normalize committee metrics first so filtering and rendering use one consistent source.
     const committees: CommitteeEntry[] = Object.values(bestByName)
-      .filter(c => {
-        const name = c.committee_name as string;
-        const members = (c.total_members as number) || 0;
-        const level = (c.productivity_level as string) || '';
-        // Keep committees with either documents or active members, skip generic "Riksdagen"
-        return name !== 'Riksdagen' && members > 0 &&
-          (level !== 'INACTIVE' || (c.total_documents as number) > 0);
-      })
       .map(c => {
         const name = c.committee_name as string;
         const code = nameToOrgCode[name] || name.substring(0, 3).toUpperCase();
+        const totalDocuments = (c.total_documents as number) || 0;
         const activityDocs = activityMap[code] || 0;
+        const documentsProcessed = Math.max(totalDocuments, activityDocs);
+        const productivityLevel = (c.productivity_level as string) || '';
         return {
           id: code,
           name,
@@ -983,12 +984,25 @@ export class CIADataLoader {
           influenceScore: c.docs_per_member
             ? Math.round((c.docs_per_member as number) * 100)
             : 0,
-          documentsProcessed: (c.total_documents as number) || activityDocs,
-          productivityLevel: (c.productivity_level as string) || '',
-          meetingsPerYear: activityDocs > 0 ? Math.round(activityDocs / 25) : 0,
-          keyIssues: [(c.productivity_level as string) || 'N/A'],
+          documentsProcessed,
+          productivityLevel,
+          meetingsPerYear:
+            documentsProcessed > 0
+              ? Math.round(
+                  documentsProcessed / CIADataLoader.COMMITTEE_DOCS_PER_MEETING_ESTIMATE
+                )
+              : 0,
+          keyIssues: [productivityLevel || 'N/A'],
           _source: 'csv'
         };
+      })
+      .filter(c => {
+        // Keep real committees only; skip generic node and inactive rows with no measured output.
+        return (
+          c.name !== 'Riksdagen' &&
+          c.memberCount > 0 &&
+          (c.productivityLevel !== 'INACTIVE' || c.documentsProcessed > 0)
+        );
       })
       .sort((a, b) => b.documentsProcessed - a.documentsProcessed);
 
