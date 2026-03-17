@@ -170,6 +170,30 @@ Invalid Coalition,,"S,V,MP,C",164,false,high`;
       expect(result.coalitionScenarios[0].name).toBe('Valid Coalition');
     });
 
+    it('should drop coalition rows with invalid majority and empty risk level', async () => {
+      const coalitionWithInvalidFlags = `name,probability,composition,totalSeats,majority,riskLevel
+Valid Coalition,35,"M,KD,SD,L",185,true,moderate
+Unknown Majority,28,"S,V,MP,C",164,maybe,high
+Missing Risk,22,"S,M,C",189,false,`;
+
+      globalThis.fetch = mockFetchForCSV({
+        'election_forecast.csv': FORECAST_CSV,
+        'coalition_scenarios.csv': coalitionWithInvalidFlags
+      });
+
+      const loader = new CIADataLoader();
+      const result = await loader.loadElectionAnalysis();
+
+      expect(result.coalitionScenarios).toHaveLength(1);
+      expect(result.coalitionScenarios[0]).toEqual(
+        expect.objectContaining({
+          name: 'Valid Coalition',
+          majority: true,
+          riskLevel: 'moderate'
+        })
+      );
+    });
+
     it('should return empty parties when CSV fetch fails', async () => {
       // Arrange: all fetches return 404
       globalThis.fetch = vi.fn().mockResolvedValue({
@@ -200,15 +224,21 @@ Invalid Coalition,,"S,V,MP,C",164,false,high`;
     });
   });
 
-  describe('no JSON dependency', () => {
-    it('should not have a loadJSON method', () => {
-      const loader = new CIADataLoader();
-      expect('loadJSON' in loader).toBe(false);
-    });
+  describe('election analysis source behavior', () => {
+    it('should request election CSV files and never request election-analysis.json', async () => {
+      const fetchSpy = mockFetchForCSV({
+        'election_forecast.csv': FORECAST_CSV,
+        'coalition_scenarios.csv': COALITION_CSV
+      });
+      globalThis.fetch = fetchSpy;
 
-    it('should not have a jsonBaseURL property', () => {
       const loader = new CIADataLoader();
-      expect('jsonBaseURL' in loader).toBe(false);
+      await loader.loadElectionAnalysis();
+
+      const requestedURLs = fetchSpy.mock.calls.map(([url]) => String(url));
+      expect(requestedURLs.some(url => url.includes('election_forecast.csv'))).toBe(true);
+      expect(requestedURLs.some(url => url.includes('coalition_scenarios.csv'))).toBe(true);
+      expect(requestedURLs.some(url => url.includes('election-analysis.json'))).toBe(false);
     });
   });
 });

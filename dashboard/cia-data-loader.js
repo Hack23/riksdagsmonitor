@@ -413,6 +413,16 @@ export class CIADataLoader {
       return undefined;
     };
 
+    const toBoolean = value => {
+      if (typeof value === 'boolean') return value;
+      if (typeof value === 'string') {
+        const normalized = value.trim().toLowerCase();
+        if (normalized === 'true') return true;
+        if (normalized === 'false') return false;
+      }
+      return undefined;
+    };
+
     const parties = forecastRows.flatMap(r => {
       const name = String(r.name ?? '').trim();
       const currentSeats = toFiniteNumber(r.currentSeats);
@@ -444,12 +454,21 @@ export class CIADataLoader {
       const name = String(r.name ?? '').trim();
       const probability = toFiniteNumber(r.probability);
       const totalSeats = toFiniteNumber(r.totalSeats);
+      const majority = toBoolean(r.majority);
+      const riskLevel = String(r.riskLevel ?? '').trim();
       const composition = String(r.composition ?? '')
         .split(',')
         .map(s => s.trim())
         .filter(Boolean);
 
-      if (!name || probability === undefined || totalSeats === undefined || composition.length === 0) {
+      if (
+        !name ||
+        probability === undefined ||
+        totalSeats === undefined ||
+        majority === undefined ||
+        !riskLevel ||
+        composition.length === 0
+      ) {
         return [];
       }
 
@@ -458,8 +477,8 @@ export class CIADataLoader {
         probability,
         composition,
         totalSeats,
-        majority: String(r.majority).toLowerCase() === 'true',
-        riskLevel: String(r.riskLevel ?? '')
+        majority,
+        riskLevel
       }];
     });
 
