@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/43</span>
+                <span class='fraction'>0/47</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/38</span>
+                <span class='fraction'>0/42</span>
             </div>
         
             
@@ -172,7 +172,15 @@
 <a name='L107'></a><a href='#L107'>107</a>
 <a name='L108'></a><a href='#L108'>108</a>
 <a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -237,11 +245,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -330,7 +346,7 @@ async function <span class="fstat-no" title="function not covered" >initDashboar
 <span class="cstat-no" title="statement not covered" >  try {</span>
     // Load all CIA exports using the loadAll method
     const data: CIADataPayload = <span class="cstat-no" title="statement not covered" >await loader.loadAll();</span>
-    const { overview, election, partyPerf, top10, committees, votingPatterns } = <span class="cstat-no" title="statement not covered" >data;</span>
+    const { overview, election, partyPerf, top10, committees, votingPatterns, ministry, demographics, documentActivity, riskEvolution } = <span class="cstat-no" title="statement not covered" >data;</span>
 &nbsp;
     // Hide loading state
     const loadingState = <span class="cstat-no" title="statement not covered" >document.getElementById('loading-state');</span>
@@ -344,7 +360,11 @@ async function <span class="fstat-no" title="function not covered" >initDashboar
       partyPerf,
       top10,
       committees,
-      votingPatterns
+      votingPatterns,
+      ministry,
+      demographics,
+      documentActivity,
+      riskEvolution
     };
     const renderer = <span class="cstat-no" title="statement not covered" >new CIADashboardRenderer(rendererData);</span>
 &nbsp;
@@ -356,6 +376,10 @@ async function <span class="fstat-no" title="function not covered" >initDashboar
 <span class="cstat-no" title="statement not covered" >    renderer.renderTop10Rankings();</span>
 <span class="cstat-no" title="statement not covered" >    renderer.renderVotingPatterns();</span>
 <span class="cstat-no" title="statement not covered" >    renderer.renderCommitteeNetwork();</span>
+<span class="cstat-no" title="statement not covered" >    renderer.renderMinistryPerformance();</span>
+<span class="cstat-no" title="statement not covered" >    renderer.renderDemographics();</span>
+<span class="cstat-no" title="statement not covered" >    renderer.renderDocumentActivity();</span>
+<span class="cstat-no" title="statement not covered" >    renderer.renderRiskEvolution();</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    electionRenderer.renderSeatPredictions();</span>
 <span class="cstat-no" title="statement not covered" >    electionRenderer.renderCoalitionScenarios();</span>
@@ -397,7 +421,7 @@ async function <span class="fstat-no" title="function not covered" >initDashboar
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-16T21:44:00.705Z
+                at 2026-03-17T15:59:25.052Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
