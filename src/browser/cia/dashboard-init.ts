@@ -47,7 +47,7 @@ async function initDashboard(): Promise<void> {
   try {
     // Load all CIA exports using the loadAll method
     const data: CIADataPayload = await loader.loadAll();
-    const { overview, election, partyPerf, top10, committees, votingPatterns } = data;
+    const { overview, election, partyPerf, top10, committees, votingPatterns, ministry, demographics, documentActivity, riskEvolution } = data;
 
     // Hide loading state
     const loadingState = document.getElementById('loading-state');
@@ -61,7 +61,11 @@ async function initDashboard(): Promise<void> {
       partyPerf,
       top10,
       committees,
-      votingPatterns
+      votingPatterns,
+      ministry,
+      demographics,
+      documentActivity,
+      riskEvolution
     };
     const renderer = new CIADashboardRenderer(rendererData);
 
@@ -73,6 +77,10 @@ async function initDashboard(): Promise<void> {
     renderer.renderTop10Rankings();
     renderer.renderVotingPatterns();
     renderer.renderCommitteeNetwork();
+    renderer.renderMinistryPerformance();
+    renderer.renderDemographics();
+    renderer.renderDocumentActivity();
+    renderer.renderRiskEvolution();
 
     electionRenderer.renderSeatPredictions();
     electionRenderer.renderCoalitionScenarios();
