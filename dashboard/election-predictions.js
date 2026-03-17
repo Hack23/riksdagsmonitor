@@ -443,7 +443,7 @@ export class Election2026Predictions {
   /**
    * Render key factors affecting the election
    * NOTE: Reserved for future implementation - requires adding <div id="key-factors"></div> to HTML
-   * and calling this method from dashboard-init.js. The data is available in election-analysis.json.
+   * and calling this method from dashboard-init.js. The data is built from election CSV sources.
    */
   renderKeyFactors() {
     const container = document.getElementById('key-factors');
@@ -486,7 +486,7 @@ export class Election2026Predictions {
   /**
    * Get election date formatted
    * NOTE: Reserved for future implementation - can be used to display election date in dashboard header.
-   * The data is available as electionDate in election-analysis.json.
+   * The data is available as electionDate from election CSV sources.
    * @returns {string} Formatted election date or empty string if invalid
    */
   getFormattedElectionDate() {

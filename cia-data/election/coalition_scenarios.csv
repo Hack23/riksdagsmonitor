@@ -1,0 +1,5 @@
+name,probability,composition,totalSeats,majority,riskLevel
+Tidö Coalition (Renewed),35,"M,KD,SD,L",185,true,moderate
+Left-Green Coalition,28,"S,V,MP,C",164,false,high
+Grand Coalition,22,"S,M,C",189,true,low
+SD-Led Coalition,15,"SD,M,KD",175,true,high

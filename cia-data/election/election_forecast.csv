@@ -1,0 +1,9 @@
+id,name,currentSeats,predictedSeats,change,voteShare,confidenceMin,confidenceMax
+S,Social Democrats,107,95,-12,26.8,88,102
+SD,Sweden Democrats,73,82,9,23.1,76,88
+M,Moderates,68,72,4,20.3,67,77
+V,Left Party,24,28,4,7.9,24,32
+C,Centre Party,24,22,-2,6.2,18,26
+KD,Christian Democrats,19,21,2,5.9,17,25
+MP,Green Party,18,19,1,5.4,15,23
+L,Liberals,16,10,-6,4.4,0,15

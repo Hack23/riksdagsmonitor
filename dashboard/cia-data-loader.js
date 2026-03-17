@@ -16,13 +16,12 @@
  * **Multi-Tier Source Strategy**:
  * ```
  * Tier 1 (Local):    ../cia-data/{category}/*.csv (deployed assets)
- * Tier 2 (JSON):     ../data/cia-exports/current/*.json (model outputs)
- * Tier 3 (Fallback): GitHub Raw API (authoritative source)
+ * Tier 2 (Fallback): GitHub Raw API (authoritative source)
  * ```
  * 
  * **Benefits**:
  * - **Performance**: Local CSV loads ~10x faster than GitHub API
- * - **Resilience**: Degradation from local → JSON → remote
+ * - **Resilience**: Degradation from local → remote
  * - **Offline**: Works with locally deployed data packages
  * - **Freshness**: GitHub fallback ensures latest data availability
  * 
@@ -67,10 +66,6 @@
  * - Local: `../cia-data/{category}/{view_name}.csv`
  * - Remote: `https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/{view_name}.csv`
  * 
- * **JSON Sources** (Model-Generated):
- * - Local: `../data/cia-exports/current/{product_name}.json`
- * - Schema: CIA Platform JSON export format v2.0
- * 
  * ## Intelligent Loading Strategy
  * 
  * **Load Priority Algorithm**:
@@ -80,7 +75,7 @@
  *     return await this.loadLocal(category);      // Tier 1: Local CSV
  *   } catch (err) {
  *     try {
- *       return await this.loadJSON(category);     // Tier 2: Local JSON
+ *       return await this.loadCSV(category);      // Tier 2: CSV fallback
  *     } catch (err) {
  *       return await this.loadRemote(category);   // Tier 3: GitHub
  *     }
@@ -151,7 +146,7 @@
  * ```javascript
  * const loader = new CIADataLoader();
  * const riskData = await loader.loadCSV('riskByParty');
- * const forecast = await loader.loadJSON('electionForecast2026');
+ * const forecast = await loader.loadElectionAnalysis();
  * ```
  * 
  * **Consuming Modules**:
@@ -177,7 +172,6 @@
 export class CIADataLoader {
   constructor() {
     this.csvBaseURL = '../cia-data/';
-    this.jsonBaseURL = '../data/cia-exports/current/';
     this.fallbackURL = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
   }
 
@@ -240,6 +234,14 @@ export class CIADataLoader {
     partyEffectiveness: {
       local: 'party/distribution_party_effectiveness_trends.csv',
       description: 'Party effectiveness trends with win rate'
+    },
+    electionForecast: {
+      local: 'election/election_forecast.csv',
+      description: 'Election 2026 seat predictions per party'
+    },
+    coalitionScenarios: {
+      local: 'election/coalition_scenarios.csv',
+      description: 'Coalition scenario probability modeling'
     }
   };
 
@@ -316,28 +318,6 @@ export class CIADataLoader {
     
     console.warn(`No data loaded for ${localPath}`);
     return [];
-  }
-
-  /**
-   * Load JSON with fallback (for election predictions only)
-   * @param {string} filename - JSON filename
-   * @returns {Promise<Object>} - Parsed JSON
-   */
-  async loadJSON(filename) {
-    const urls = [
-      `${this.jsonBaseURL}${filename}`
-    ];
-    
-    for (const url of urls) {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) continue;
-        return await response.json();
-      } catch (e) {
-        console.warn(`Failed to load JSON from ${url}:`, e.message);
-      }
-    }
-    throw new Error(`Failed to load ${filename}`);
   }
 
   /**
@@ -428,49 +408,49 @@ export class CIADataLoader {
   }
 
   /**
-   * Load election analysis - kept as JSON (model-generated predictions)
-   * Falls back to default data when JSON is unavailable
+   * Build election analysis from CSV sources
+   * Replaces election-analysis.json
    */
   async loadElectionAnalysis() {
-    try {
-      return await this.loadJSON('election-analysis.json');
-    } catch {
-      console.warn('Election analysis JSON unavailable, using fallback data');
-      return CIADataLoader.FALLBACK_ELECTION_ANALYSIS;
-    }
-  }
+    const [forecastRows, scenarioRows] = await Promise.all([
+      this.loadCSV(CIADataLoader.CSV_SOURCES.electionForecast.local),
+      this.loadCSV(CIADataLoader.CSV_SOURCES.coalitionScenarios.local)
+    ]);
 
-  /**
-   * Fallback election analysis based on 2022 election results
-   */
-  static FALLBACK_ELECTION_ANALYSIS = {
-    forecast: {
-      parties: [
-        { name: 'Social Democrats', currentSeats: 107, predictedSeats: 107, change: 0, voteShare: 30.3 },
-        { name: 'Sweden Democrats', currentSeats: 73, predictedSeats: 73, change: 0, voteShare: 20.5 },
-        { name: 'Moderates', currentSeats: 68, predictedSeats: 68, change: 0, voteShare: 19.1 },
-        { name: 'Left Party', currentSeats: 24, predictedSeats: 24, change: 0, voteShare: 6.7 },
-        { name: 'Centre Party', currentSeats: 24, predictedSeats: 24, change: 0, voteShare: 6.7 },
-        { name: 'Christian Democrats', currentSeats: 19, predictedSeats: 19, change: 0, voteShare: 5.3 },
-        { name: 'Green Party', currentSeats: 18, predictedSeats: 18, change: 0, voteShare: 5.1 },
-        { name: 'Liberals', currentSeats: 16, predictedSeats: 16, change: 0, voteShare: 4.6 }
-      ]
-    },
-    coalitionScenarios: [
-      { name: 'Tidö Coalition', composition: ['M', 'KD', 'SD', 'L'], totalSeats: 176, probability: 40, majority: true, riskLevel: 'moderate' },
-      { name: 'Left-Green Coalition', composition: ['S', 'V', 'MP', 'C'], totalSeats: 173, probability: 30, majority: false, riskLevel: 'high' },
-      { name: 'Grand Coalition', composition: ['S', 'M', 'C'], totalSeats: 199, probability: 20, majority: true, riskLevel: 'low' },
-      { name: 'SD-Led Coalition', composition: ['SD', 'M', 'KD'], totalSeats: 160, probability: 10, majority: false, riskLevel: 'high' }
-    ],
-    keyFactors: [
-      'Economic conditions',
-      'Immigration policy',
-      'Climate priorities',
-      'Healthcare reform',
-      'NATO membership'
-    ],
-    electionDate: '2026-09-13'
-  };
+    const parties = forecastRows.map(r => ({
+      name: r.name,
+      currentSeats: r.currentSeats,
+      predictedSeats: r.predictedSeats,
+      change: r.change,
+      voteShare: r.voteShare,
+      confidenceInterval:
+        r.confidenceMin != null && r.confidenceMax != null
+          ? { min: r.confidenceMin, max: r.confidenceMax }
+          : undefined
+    }));
+
+    const coalitionScenarios = scenarioRows.map(r => ({
+      name: r.name,
+      probability: r.probability,
+      composition: String(r.composition).split(',').map(s => s.trim()),
+      totalSeats: r.totalSeats,
+      majority: String(r.majority).toLowerCase() === 'true',
+      riskLevel: r.riskLevel
+    }));
+
+    return {
+      forecast: { parties },
+      coalitionScenarios,
+      keyFactors: [
+        'Economic conditions',
+        'Immigration policy',
+        'Climate change priorities',
+        'Healthcare reform',
+        'NATO membership impact'
+      ],
+      electionDate: '2026-09-13'
+    };
+  }
 
   /**
    * Build party performance from CSV sources
