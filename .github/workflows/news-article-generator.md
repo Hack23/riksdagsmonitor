@@ -173,7 +173,7 @@ bash({ command: "npm ci --prefer-offline --no-audit", description: "Install npm 
 bash({ command: "npx htmlhint 'news/*-*.html'", description: "Validate HTML files" })
 ```
 
-**❌ WRONG** — missing parameters causes `"command": Required, "description": Required` errors:
+**❌ WRONG** — missing parameters cause `"command": Required, "description": Required` errors:
 ```
 bash("npm ci")           // ← WRONG: no named parameters
 bash({ command: "..." }) // ← WRONG: missing description
