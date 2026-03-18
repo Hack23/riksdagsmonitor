@@ -22,7 +22,7 @@
 #
 # Generates comprehensive evening analysis articles in core languages (EN, SV) with Playwright validation. Translations handled by news-translate workflow. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"c5c439046d6a6b436dc9d61c706528476b00dafaa687d9c3f139cc35ffd6e762","compiler_version":"v0.61.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"b095f6c507b89c06faa6c8efbce32d3951e28b2b54f1d1bf8d1c0684cca70b04","compiler_version":"v0.61.0"}
 
 name: "News Evening Analysis"
 "on":
@@ -301,17 +301,16 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
-      - name: Setup Node.js
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
-        with:
-          node-version: '25'
-          package-manager-cache: false
       - name: Create gh-aw temp directory
         run: bash /opt/gh-aw/actions/create_gh_aw_tmp_dir.sh
       - name: Configure gh CLI for GitHub Enterprise
         run: bash /opt/gh-aw/actions/configure_gh_for_ghe.sh
         env:
           GH_TOKEN: ${{ github.token }}
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # 6044e13b5dc448c55e2357c09f80417699197238
+        with:
+          node-version: "25"
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit
 
