@@ -582,6 +582,19 @@ For each language in the resolved `LANG_ARG` list:
 5. Use `dir="rtl"` for Arabic (ar) and Hebrew (he)
 6. Include proper `<html lang="{lang}">` attribute
 
+> 🚫 **NEVER use bash heredoc (`cat > file << 'EOF'`) to write article HTML.** Heredoc truncates large content and causes silent failures.
+>
+> ✅ **Build the file incrementally** with multiple small `printf` appends (no heredoc, no size limits):
+> ```bash
+> FILE="news/YYYY-MM-DD-evening-analysis-en.html"
+> printf '%s\n' '<!DOCTYPE html>' > "$FILE"
+> printf '%s\n' '<html lang="en">' >> "$FILE"
+> printf '%s\n' '<head><link rel="stylesheet" href="../styles.css"></head>' >> "$FILE"
+> printf '%s\n' '<body>' >> "$FILE"
+> # ... append each section separately ...
+> printf '%s\n' '</body></html>' >> "$FILE"
+> ```
+
 **Article structure:**
 1. **Lead Story** — Most significant development, why it matters
 2. **Parliamentary Pulse** — Key votes, debates, committee decisions

@@ -336,12 +336,32 @@ fi
 
 ### Fallback: Manual Generation (ONLY if script fails with error AND no articles created)
 
-If the script fails, generate articles manually ONE language at a time:
+> **Before declaring script failure, verify MCP is live in the same shell:**
+> ```bash
+> source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL}"
+> ```
+> Expected output: `MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering`
+> If the value is blank or "unset", `mcp-setup.sh` failed to read the gateway key — check `GH_AW_MCP_CONFIG`. If set correctly, retry the full script command.
+
+If the script genuinely fails after verifying MCP, generate articles manually ONE language at a time:
 1. Check elapsed time — if >= 38 minutes, stop and call noop with summary
 2. Write HTML to `news/YYYY-MM-DD-{slug}-{lang}.html`
 3. Use `<link rel="stylesheet" href="../styles.css">` — NO embedded `<style>` tags
 4. Include language switcher, article-top-nav, Schema.org NewsArticle, hreflang tags
 5. Use `dir="rtl"` for Arabic (ar) and Hebrew (he)
+
+> 🚫 **NEVER use bash heredoc (`cat > file << 'EOF'`) to write article HTML.** Heredoc truncates large content and causes silent failures.
+>
+> ✅ **Build the file incrementally** with multiple small `printf` appends (no heredoc, no size limits):
+> ```bash
+> FILE="news/YYYY-MM-DD-slug-en.html"
+> printf '%s\n' '<!DOCTYPE html>' > "$FILE"
+> printf '%s\n' '<html lang="en">' >> "$FILE"
+> printf '%s\n' '<head><link rel="stylesheet" href="../styles.css"></head>' >> "$FILE"
+> printf '%s\n' '<body>' >> "$FILE"
+> # ... append each section separately ...
+> printf '%s\n' '</body></html>' >> "$FILE"
+> ```
 
 ## Step 4: Validate & Translate
 

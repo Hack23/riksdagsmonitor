@@ -774,3 +774,35 @@ describe('Realtime Monitor Enhancement', () => {
     expect(content).toContain('fiscal');
   });
 });
+
+describe('Manual Article Generation Safety', () => {
+  const MANUAL_GENERATION_WORKFLOWS = [
+    'news-realtime-monitor.md',
+    'news-article-generator.md',
+    'news-evening-analysis.md',
+  ];
+
+  it('workflows with manual fallback should prohibit bash heredoc for file writing', () => {
+    for (const workflowFile of MANUAL_GENERATION_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('NEVER use bash heredoc'),
+        `Workflow ${workflowFile} should prohibit bash heredoc for article writing`
+      ).toBe(true);
+    }
+  });
+
+  it('workflows with manual fallback should recommend incremental printf for safe file writing', () => {
+    for (const workflowFile of MANUAL_GENERATION_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes("printf '%s\\n'"),
+        `Workflow ${workflowFile} should recommend incremental printf for safe file writing`
+      ).toBe(true);
+    }
+  });
+});
