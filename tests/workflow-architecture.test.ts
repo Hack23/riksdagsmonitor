@@ -794,14 +794,14 @@ describe('Manual Article Generation Safety', () => {
     }
   });
 
-  it('workflows with manual fallback should recommend python3 for safe file writing', () => {
+  it('workflows with manual fallback should recommend incremental printf for safe file writing', () => {
     for (const workflowFile of MANUAL_GENERATION_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
-        content.includes('python3'),
-        `Workflow ${workflowFile} should recommend python3 for safe file writing`
+        content.includes("printf '%s\\n'"),
+        `Workflow ${workflowFile} should recommend incremental printf for safe file writing`
       ).toBe(true);
     }
   });
