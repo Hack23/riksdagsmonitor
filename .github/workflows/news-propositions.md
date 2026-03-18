@@ -19,7 +19,7 @@ on:
       analysis_depth:
         description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.'
         required: false
-        default: deep
+        default: standard
 
 permissions:
   contents: read
@@ -29,7 +29,7 @@ permissions:
   discussions: read
   security-events: read
 
-timeout-minutes: 30
+timeout-minutes: 45
 
 network:
   allowed:
@@ -108,12 +108,12 @@ If **force_generation** is `true`, generate articles even if recent ones exist. 
 
 **This workflow generates ONLY `propositions` articles.** Do not generate other article types.
 
-## ⏱️ Time Budget (30 minutes)
+## ⏱️ Time Budget (45 minutes)
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
 - **Minutes 3–10**: Query MCP tools for propositions data
-- **Minutes 10–22**: Generate articles for all 14 languages
-- **Minutes 22–27**: Validate and commit
-- **Minutes 27–30**: Create PR with `safeoutputs___create_pull_request`
+- **Minutes 10–35**: Generate articles for all 14 languages
+- **Minutes 35–42**: Validate and commit
+- **Minutes 42–45**: Create PR with `safeoutputs___create_pull_request`
 
 ## Required Skills
 
@@ -129,14 +129,14 @@ If **force_generation** is `true`, generate articles even if recent ones exist. 
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
 
-> **Read `analysis_depth` input first** (default: `deep`). This controls iteration count and section requirements.
+> **Read `analysis_depth` input first** (default: `standard`). This controls iteration count and section requirements.
 
 Based on the editorial profile for `propositions` (from `scripts/editorial-framework.ts`):
-- **SWOT**: full (5+ stakeholder perspectives per quadrant)
-- **Dashboard**: required (min. 2 Chart.js charts)
-- **Mindmap**: required (CSS policy mindmap)
-- **Min. stakeholders**: 5 perspectives
-- **AI iterations**: 2 (standard), 2 (deep), or 3 (comprehensive)
+- **SWOT**: condensed (3 stakeholder perspectives per quadrant) for `standard`; full (5+) for `deep`/`comprehensive`
+- **Dashboard**: required (min. 1 Chart.js chart for `standard`; min. 2 for `deep`/`comprehensive`)
+- **Mindmap**: optional for `standard`; required for `deep`/`comprehensive`
+- **Min. stakeholders**: 3 perspectives (`standard`), 5 (`deep`/`comprehensive`)
+- **AI iterations**: 1-2 (standard), 2-3 (deep), 3+ (comprehensive)
 
 ### Phase 1 — Data Collection & Initial Analysis
 1. Fetch MCP data (`get_propositioner`, `get_sync_status`, cross-reference `get_betankanden`)
@@ -145,9 +145,9 @@ Based on the editorial profile for `propositions` (from `scripts/editorial-frame
 
 ### Phase 2 — Iterative Depth Enhancement (repeat per `analysis_depth`)
 For each AI iteration:
-1. **SWOT Analysis**: Generate `generateSwotSection()` with ≥5 stakeholder perspectives when `analysis_depth` is `deep` or `comprehensive`
-2. **Policy Dashboard**: Generate `generateDashboardSection()` with ≥2 charts (proposition volume by ministry, timeline)
-3. **Mindmap**: Generate `generateMindmapSection()` showing policy impact connections
+1. **SWOT Analysis**: Generate `generateSwotSection()` with ≥3 stakeholder perspectives (≥5 when `analysis_depth` is `deep` or `comprehensive`)
+2. **Policy Dashboard**: Generate `generateDashboardSection()` with ≥1 chart (≥2 for `deep`/`comprehensive`)
+3. **Mindmap**: Generate `generateMindmapSection()` showing policy impact connections (only for `deep`/`comprehensive`)
 4. **Quality Gate** (check before next iteration):
    - Verify legislative timeline is included per proposition
    - Verify no identical "Why It Matters" text across entries
