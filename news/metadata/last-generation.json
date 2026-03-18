@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-03-17T05:30:49.635Z",
+  "types": [
+    "propositions"
+  ],
+  "languagesGenerated": [
+    "en",
+    "sv"
+  ],
+  "allRequestedLanguages": [
+    "en",
+    "sv"
+  ],
+  "batchSize": "all",
+  "skipExisting": true,
+  "generated": 2,
+  "errors": 0,
+  "articles": [
+    "2026-03-17-government-propositions-en.html",
+    "2026-03-17-government-propositions-sv.html"
+  ],
+  "status": "enhanced",
+  "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
+}

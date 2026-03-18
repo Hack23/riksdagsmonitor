@@ -1,0 +1,46 @@
+{
+  "2026-03-17-government-propositions-en.html": {
+    "filename": "2026-03-17-government-propositions-en.html",
+    "lang": "en",
+    "articleType": "propositions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 62,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 80,
+        "stakeholderCoverage": 33,
+        "analyticalDepth": 16,
+        "editorialConsistency": 80,
+        "evidenceQuality": 100,
+        "languageQuality": 100
+      },
+      "issueCount": 2
+    },
+    "timestamp": "2026-03-17T05:30:55.064Z"
+  },
+  "2026-03-17-government-propositions-sv.html": {
+    "filename": "2026-03-17-government-propositions-sv.html",
+    "lang": "sv",
+    "articleType": "propositions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 56,
+      "passesThreshold": false,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 80,
+        "stakeholderCoverage": 17,
+        "analyticalDepth": 4,
+        "editorialConsistency": 80,
+        "evidenceQuality": 100,
+        "languageQuality": 100
+      },
+      "issueCount": 2
+    },
+    "timestamp": "2026-03-17T05:30:55.091Z"
+  }
+}
