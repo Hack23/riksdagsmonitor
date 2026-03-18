@@ -54,6 +54,7 @@ name: "News: Translate Articles"
 permissions: {}
 
 concurrency:
+  group: "gh-aw-${{ github.workflow }}-${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}"
   cancel-in-progress: true
 
 run-name: "News: Translate Articles"

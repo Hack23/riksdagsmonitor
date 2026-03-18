@@ -41,6 +41,7 @@ permissions:
 timeout-minutes: 45
 
 concurrency:
+  group: gh-aw-news-translate-${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}
   job-discriminator: ${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}
   cancel-in-progress: true
 
