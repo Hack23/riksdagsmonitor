@@ -582,6 +582,35 @@ For each language in the resolved `LANG_ARG` list:
 5. Use `dir="rtl"` for Arabic (ar) and Hebrew (he)
 6. Include proper `<html lang="{lang}">` attribute
 
+> 🚫 **NEVER use bash heredoc (`cat > file << 'EOF'`) to write article HTML.** Heredoc truncates large content and causes silent failures.
+>
+> ✅ **Use `python3` to write files safely:**
+> ```bash
+> python3 -c "
+> import sys, pathlib
+> pathlib.Path(sys.argv[1]).write_text(sys.stdin.read(), encoding='utf-8')
+> " news/YYYY-MM-DD-evening-analysis-en.html << 'PYEOF'
+> ...HTML content here...
+> PYEOF
+> ```
+>
+> ✅ **Or build the file incrementally** with multiple small `echo`/`printf` appends:
+> ```bash
+> FILE="news/YYYY-MM-DD-evening-analysis-en.html"
+> printf '%s\n' '<!DOCTYPE html>' > "$FILE"
+> printf '%s\n' '<html lang="en">' >> "$FILE"
+> # ... append section by section ...
+> ```
+>
+> ✅ **Best approach**: Build article body in a shell variable, then write it atomically:
+> ```bash
+> ARTICLE_BODY="<p>Lead paragraph...</p>"
+> ARTICLE_BODY+="<h2>Section</h2><p>Details...</p>"
+> python3 -c "
+> import sys; open(sys.argv[1],'w').write(sys.argv[2])
+> " "news/YYYY-MM-DD-evening-analysis-en.html" "$ARTICLE_BODY"
+> ```
+
 **Article structure:**
 1. **Lead Story** — Most significant development, why it matters
 2. **Parliamentary Pulse** — Key votes, debates, committee decisions

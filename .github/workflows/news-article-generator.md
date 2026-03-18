@@ -401,6 +401,35 @@ For **non-deep-inspection** article types only, if the script fails, generate ar
 4. Include language switcher, article-top-nav, Schema.org NewsArticle, hreflang tags
 5. Use `dir="rtl"` for Arabic (ar) and Hebrew (he)
 
+> 🚫 **NEVER use bash heredoc (`cat > file << 'EOF'`) to write article HTML.** Heredoc truncates large content and causes silent failures.
+>
+> ✅ **Use `python3` to write files safely:**
+> ```bash
+> python3 -c "
+> import sys, pathlib
+> pathlib.Path(sys.argv[1]).write_text(sys.stdin.read(), encoding='utf-8')
+> " news/YYYY-MM-DD-slug-en.html << 'PYEOF'
+> ...HTML content here...
+> PYEOF
+> ```
+>
+> ✅ **Or build the file incrementally** with multiple small `echo`/`printf` appends:
+> ```bash
+> FILE="news/YYYY-MM-DD-slug-en.html"
+> printf '%s\n' '<!DOCTYPE html>' > "$FILE"
+> printf '%s\n' '<html lang="en">' >> "$FILE"
+> # ... append section by section ...
+> ```
+>
+> ✅ **Best approach**: Build article body in a shell variable, then write it atomically:
+> ```bash
+> ARTICLE_BODY="<p>Lead paragraph...</p>"
+> ARTICLE_BODY+="<h2>Section</h2><p>Details...</p>"
+> python3 -c "
+> import sys; open(sys.argv[1],'w').write(sys.argv[2])
+> " "news/YYYY-MM-DD-slug-en.html" "$ARTICLE_BODY"
+> ```
+
 ## Step 4: Translate & Validate
 
 Check for untranslated Swedish content in non-Swedish articles:

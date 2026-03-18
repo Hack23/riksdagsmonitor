@@ -336,12 +336,48 @@ fi
 
 ### Fallback: Manual Generation (ONLY if script fails with error AND no articles created)
 
-If the script fails, generate articles manually ONE language at a time:
+> **Before declaring script failure, verify MCP is live in the same shell:**
+> ```bash
+> source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL}"
+> ```
+> Expected output: `MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering`
+> If the value is blank or "unset", `mcp-setup.sh` failed to read the gateway key — check `GH_AW_MCP_CONFIG`. If set correctly, retry the full script command.
+
+If the script genuinely fails after verifying MCP, generate articles manually ONE language at a time:
 1. Check elapsed time — if >= 38 minutes, stop and call noop with summary
 2. Write HTML to `news/YYYY-MM-DD-{slug}-{lang}.html`
 3. Use `<link rel="stylesheet" href="../styles.css">` — NO embedded `<style>` tags
 4. Include language switcher, article-top-nav, Schema.org NewsArticle, hreflang tags
 5. Use `dir="rtl"` for Arabic (ar) and Hebrew (he)
+
+> 🚫 **NEVER use bash heredoc (`cat > file << 'EOF'`) to write article HTML.** Heredoc truncates large content and causes silent failures.
+>
+> ✅ **Use `python3` to write files safely:**
+> ```bash
+> python3 -c "
+> import sys, pathlib
+> pathlib.Path(sys.argv[1]).write_text(sys.stdin.read(), encoding='utf-8')
+> " news/YYYY-MM-DD-slug-en.html << 'PYEOF'
+> ...HTML content here...
+> PYEOF
+> ```
+>
+> ✅ **Or build the file incrementally** with multiple small `echo`/`printf` appends:
+> ```bash
+> FILE="news/YYYY-MM-DD-slug-en.html"
+> printf '%s\n' '<!DOCTYPE html>' > "$FILE"
+> printf '%s\n' '<html lang="en">' >> "$FILE"
+> # ... append section by section ...
+> ```
+>
+> ✅ **Best approach**: Build article body in a shell variable, then write it atomically:
+> ```bash
+> ARTICLE_BODY="<p>Lead paragraph...</p>"
+> ARTICLE_BODY+="<h2>Section</h2><p>Details...</p>"
+> python3 -c "
+> import sys; open(sys.argv[1],'w').write(sys.argv[2])
+> " "news/YYYY-MM-DD-slug-en.html" "$ARTICLE_BODY"
+> ```
 
 ## Step 4: Validate & Translate
 
