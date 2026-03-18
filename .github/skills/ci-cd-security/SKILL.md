@@ -99,7 +99,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
         with:
-          node-version: '24'
+          node-version: '25'
           cache: 'npm'
           
       - name: Install Dependencies

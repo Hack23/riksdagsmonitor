@@ -323,7 +323,7 @@ Riksdagsmonitor integrates multiple authoritative Swedish open data sources:
 - **Hosting:** GitHub Pages with CloudFront CDN
 - **CI/CD:** GitHub Actions for automated testing and deployment
 - **Data Platform:** CIA OSINT platform (Java/Spring Boot backend)
-- **Runtime:** Node.js 24.x
+- **Runtime:** Node.js 25.x
 
 ### JavaScript Architecture
 - **8 Dashboard Modules:**
@@ -401,7 +401,7 @@ At Hack23 AB, we believe that true security comes through transparency and demon
 ## 🚀 Development
 
 ### Prerequisites
-- **Node.js**: 24.x or higher
+- **Node.js**: 25.x or higher
 - **npm**: 10.x or higher (comes with Node.js)
 - Git with GPG signing configured
 - GitHub account with MFA enabled
