@@ -137,7 +137,7 @@ bash("npm ci")           // ← WRONG: no named parameters
 bash({ command: "..." }) // ← WRONG: missing description
 ```
 
-> When you see ` ```bash ` code blocks below, they show the **command content** to execute. You MUST wrap each in a proper bash tool call with both `command` and `description` parameters. For multi-line scripts, join commands with `&&` or `;` into a single `command` string.
+> When you see fenced bash code blocks below (three backticks followed by bash), they show the **command content** to execute. You MUST wrap each in a proper bash tool call with both `command` and `description` parameters. For multi-line scripts, join commands with `&&` or `;` into a single `command` string.
 
 ## Required Skills
 
