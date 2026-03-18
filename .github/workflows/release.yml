@@ -104,7 +104,7 @@ jobs:
           cache: "npm"
 
       - name: Cache dependencies
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -112,7 +112,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Cache Cypress binary
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: ~/.cache/Cypress
           key: cypress-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
@@ -120,7 +120,7 @@ jobs:
             cypress-${{ runner.os }}-
 
       - name: Cache build artifacts
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: .tsbuildinfo
           key: ${{ runner.os }}-tsbuild-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('src/browser/**/*.ts', 'scripts/**/*.ts', 'scripts/**/*.js') }}
@@ -393,7 +393,7 @@ jobs:
           cache: "npm"
 
       - name: Cache dependencies
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -401,7 +401,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Cache Vite build cache
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
         with:
           path: node_modules/.vite
           key: ${{ runner.os }}-vite-${{ hashFiles('**/package-lock.json') }}
