@@ -22,7 +22,7 @@
 #
 # Generates committee reports analysis articles in core languages (EN, SV). Translations for remaining 12 languages are handled by the dedicated news-translate workflow via dispatch-workflow. Single article type per run.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"e7e89964ff8f7be5706ed5533819e055770fafc6575ab2ef70cd7c82e4067f1a","compiler_version":"v0.61.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"9c953f8cf4dd8348030fc73d75ea403892808bfd0363d59b4832ce0e1759e4d7","compiler_version":"v0.61.0"}
 
 name: "News: Committee Reports"
 "on":
@@ -31,7 +31,7 @@ name: "News: Committee Reports"
   workflow_dispatch:
     inputs:
       analysis_depth:
-        default: deep
+        default: standard
         description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.
         required: false
       force_generation:
@@ -697,7 +697,7 @@ jobs:
       - name: Execute GitHub Copilot CLI
         id: agentic_execution
         # Copilot CLI tool arguments (sorted):
-        timeout-minutes: 30
+        timeout-minutes: 45
         run: |
           set -o pipefail
           touch /tmp/gh-aw/agent-step-summary.md
@@ -1066,7 +1066,7 @@ jobs:
           GH_AW_CODE_PUSH_FAILURE_COUNT: ${{ needs.safe_outputs.outputs.code_push_failure_count }}
           GH_AW_GROUP_REPORTS: "false"
           GH_AW_FAILURE_REPORT_AS_ISSUE: "true"
-          GH_AW_TIMEOUT_MINUTES: "30"
+          GH_AW_TIMEOUT_MINUTES: "45"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
