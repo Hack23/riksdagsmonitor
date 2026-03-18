@@ -38,7 +38,7 @@ This strategy should be read alongside the [Business Continuity Plan](BCPPlan.md
 **Primary Goal**: Maintain Riksdagsmonitor on a supported, secure technology stack by proactively tracking dependency lifecycles and planning migrations before components reach end-of-life.
 
 **Key Principles**:
-- Upgrade to new Node.js Current versions promptly; adopt LTS within **4 weeks** of promotion
+- Upgrade to new Node.js Current versions promptly; LTS promotion happens in-place (no second migration needed)
 - Keep build tooling (Vite, Vitest, TypeScript) on latest stable versions
 - Maintain zero known critical/high vulnerabilities via automated scanning
 - Plan major migrations **12 months** before dependency EOL dates
@@ -171,24 +171,29 @@ Node.js 25 is an **odd-numbered Current release** under the old model — it wil
 
 > ⚠️ **Node.js 25 is short-lived.** Riksdagsmonitor will be on Node.js 25 for only ~2 weeks before upgrading to Node.js 26 LTS upon its release.
 
-### 🔜 Imminent: Node.js 26 LTS (Action: Upgrade in ~2 weeks)
+### 🔜 Imminent: Node.js 26 (Action: Upgrade in ~2 weeks)
 
-Node.js 26 is the **last release under the old two-per-year schedule** and will become LTS in October 2026. We plan to upgrade **immediately after Node.js 26 is released**.
+Node.js 26 is the **last release under the old two-per-year schedule**. It releases as "Current" in April 2026 and will be promoted to **LTS in October 2026** — no additional migration will be needed at that point, as the project will already be on Node.js 26.
+
+> **Strategy**: Adopt Node.js 26 **immediately after its release** (~April 1, 2026). Since Node.js 26 will become LTS in October 2026, adopting it promptly as "Current" and staying on it satisfies the LTS principle — the project will transition from Current to LTS **in-place** without another upgrade step.
 
 | Milestone | Date | Action |
 |-----------|------|--------|
 | Node.js 26 Current Release | **~April 1, 2026** | 🚀 **Upgrade riksdagsmonitor immediately after release** |
-| Node.js 26 LTS Promotion | October 2026 | ✅ Already on Node.js 26 |
+| Node.js 26 LTS Promotion | October 2026 | ✅ No migration needed — already on Node.js 26 (Current → LTS in-place) |
 | Node.js 26 Active LTS End | **October 2027** | Begin evaluating Node.js 27 |
 | Node.js 26 Maintenance End | **April 2029** | Must be off Node.js 26 |
 
 **Upgrade preparation checklist (for Node.js 26):**
-- [ ] Monitor [Node.js 26 release notes](https://nodejs.org/en/blog/) for breaking changes
-- [ ] Test `npm ci` and build/test suite on Node.js 26 RC in CI matrix
-- [ ] Update all `node-version: '25'` → `'26'` across workflows
+- [ ] Monitor [Node.js 26 release notes](https://nodejs.org/en/blog/) and test against Node.js 26 RC in CI matrix before stable release
+- [ ] Validate TypeScript native type-stripping (`process.features.typescript === "strip"`) still works
+- [ ] Confirm all 43+ workflows pass on Node.js 26 (blocking CI jobs)
+- [ ] Verify GitHub Actions `ubuntu-latest` runners include Node.js 26
+- [ ] Update all `node-version: '25'` → `'26'` across all workflow YAML, lock, and markdown files
 - [ ] Update `package.json` `engines.node` from `>=25` to `>=26`
 - [ ] Update `.nvmrc` from `25` to `26`
-- [ ] Update documentation (End-of-Life-Strategy.md, WORKFLOWS.md, FUTURE_WORKFLOWS.md)
+- [ ] Update skills documentation (`./github/skills/**SKILL.md`) code examples
+- [ ] Update documentation (End-of-Life-Strategy.md, WORKFLOWS.md, FUTURE_WORKFLOWS.md, README.md, TESTING.md)
 
 ### Future: Node.js 27 LTS (New Schedule)
 
