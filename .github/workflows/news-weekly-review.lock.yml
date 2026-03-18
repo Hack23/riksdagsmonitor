@@ -22,7 +22,7 @@
 #
 # Generates weekly review retrospective articles in core languages (EN, SV). Translations handled by news-translate workflow. Runs Saturdays to review the past week.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"f499cdf1f90299e11da562880857d85886084b13914f7e6eba73185808670910","compiler_version":"v0.61.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"edaa0e95d0bd05f684aee0642e4e3f9fa3cc0c936a9af2b2d3d88d90b4bb0ad2","compiler_version":"v0.61.0"}
 
 name: "News: Weekly Review"
 "on":
@@ -293,17 +293,16 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
-      - name: Setup Node.js
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
-        with:
-          node-version: '25'
-          package-manager-cache: false
       - name: Create gh-aw temp directory
         run: bash /opt/gh-aw/actions/create_gh_aw_tmp_dir.sh
       - name: Configure gh CLI for GitHub Enterprise
         run: bash /opt/gh-aw/actions/configure_gh_for_ghe.sh
         env:
           GH_TOKEN: ${{ github.token }}
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # 6044e13b5dc448c55e2357c09f80417699197238
+        with:
+          node-version: "25"
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit
 

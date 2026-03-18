@@ -22,7 +22,7 @@
 #
 # Monitors Riksdag and Government for real-time updates and generates breaking news articles in core languages (EN, SV) with Playwright validation. Translations handled by news-translate workflow. Runs twice daily on weekdays, once on weekends.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"9ac8decf4f6b2cb929368ff49e8f55e41f28183f48d99ed08e79bae0f33a4ed7","compiler_version":"v0.61.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"bf94bc0ec21bc661b9c0151c5a82e2189706d9cae06e51e6177a679f5e378f54","compiler_version":"v0.61.0"}
 
 name: "News Realtime Monitor"
 "on":
@@ -302,17 +302,16 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
-      - name: Setup Node.js
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
-        with:
-          node-version: '25'
-          package-manager-cache: false
       - name: Create gh-aw temp directory
         run: bash /opt/gh-aw/actions/create_gh_aw_tmp_dir.sh
       - name: Configure gh CLI for GitHub Enterprise
         run: bash /opt/gh-aw/actions/configure_gh_for_ghe.sh
         env:
           GH_TOKEN: ${{ github.token }}
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # 6044e13b5dc448c55e2357c09f80417699197238
+        with:
+          node-version: "25"
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit
 

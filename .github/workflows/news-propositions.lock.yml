@@ -22,7 +22,7 @@
 #
 # Generates government propositions analysis articles in core languages (EN, SV). Translations for remaining 12 languages are handled by the dedicated news-translate workflow via dispatch-workflow. Single article type per run.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"1733acb1a926a2343b66f42bc0f3bff294e0ca4ad83dbf80d8da4d3bf2fdc17d","compiler_version":"v0.61.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"9649ab691ad109299f2bc4145e90f4a6cbbbf963d11258c77f47a63f35175221","compiler_version":"v0.61.0"}
 
 name: "News: Government Propositions"
 "on":
@@ -293,17 +293,16 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
-      - name: Setup Node.js
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
-        with:
-          node-version: '25'
-          package-manager-cache: false
       - name: Create gh-aw temp directory
         run: bash /opt/gh-aw/actions/create_gh_aw_tmp_dir.sh
       - name: Configure gh CLI for GitHub Enterprise
         run: bash /opt/gh-aw/actions/configure_gh_for_ghe.sh
         env:
           GH_TOKEN: ${{ github.token }}
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # 6044e13b5dc448c55e2357c09f80417699197238
+        with:
+          node-version: "25"
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit
 
