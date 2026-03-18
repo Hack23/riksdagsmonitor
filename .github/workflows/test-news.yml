@@ -99,7 +99,7 @@ jobs:
           path: dist/
       
       - name: Run Cypress tests
-        uses: cypress-io/github-action@82482149c343a5dee155d22104111b9319f9dd45 # v7.1.6
+        uses: cypress-io/github-action@ed2d88ccbbf936c5aac087dd43e10425abc3534f # v7.1.7
         with:
           start: npm run preview
           wait-on: 'http://localhost:4173'
