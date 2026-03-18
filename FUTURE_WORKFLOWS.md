@@ -1,7 +1,7 @@
 # 🔮 Riksdagsmonitor — Future Workflows Vision
 
-**Document Version:** 2.1
-**Last Updated:** 2026-03-10
+**Document Version:** 2.2
+**Last Updated:** 2026-03-18
 **Classification:** Public
 **Owner:** Hack23 AB (Org.nr 5595347807)
 **Horizon:** 2026–2037
@@ -602,10 +602,11 @@ architecture:
 
 | Year | Node.js | TypeScript | Bundler | Test Runner |
 |------|---------|------------|---------|-------------|
-| 2026 | 24 | 5.9 | Vite 7 | Vitest 4 |
-| 2027 | 26 | 6.x | Vite 8 | Vitest 5 |
-| 2028 | 28 | 7.x | Vite 9 / Turbopack | Vitest 6 |
-| 2029 | 30 | 8.x | Next-gen bundler | Native test runner |
+| 2026 Q1 | 25 (Current) | 5.9 | Vite 7 | Vitest 4 |
+| 2026 Q2 | **26 LTS** (upgrade ~Apr 1) | 5.9 | Vite 7 | Vitest 4 |
+| 2027 | 27 LTS (new model) | 6.x | Vite 8 | Vitest 5 |
+| 2028 | 28 LTS (new model) | 7.x | Vite 9 / Turbopack | Vitest 6 |
+| 2029 | 29 LTS (new model) | 8.x | Next-gen bundler | Native test runner |
 
 ### AI & ML
 
@@ -667,11 +668,12 @@ gantt
 
 | Year | Projected Total | New Capabilities |
 |------|----------------|------------------|
-| 2026 Q1 | **43** | TypeScript foundation, 10 agentic workflows ✅ |
+| 2026 Q1 | **43** | TypeScript foundation, 10 agentic workflows, Node.js 25 ✅ |
+| 2026 Q2 | **44** | **Node.js 26 LTS upgrade** (immediately after ~Apr 1 release) |
 | 2026 Q4 | **50** | CIA pipeline v2, preview deploys, visual regression |
-| 2027 Q4 | **55** | OSINT pipeline, ML predictions, real-time streams |
-| 2028 Q4 | **65** | Self-healing, canary deploy, AI editorial board |
-| 2029 Q4 | **75+** | Intelligence API, multi-parliament, federation |
+| 2027 Q4 | **55** | Node.js 27 LTS, OSINT pipeline, ML predictions, real-time streams |
+| 2028 Q4 | **65** | Node.js 28 LTS, self-healing, canary deploy, AI editorial board |
+| 2029 Q4 | **75+** | Node.js 29 LTS, intelligence API, multi-parliament, federation |
 
 ---
 
@@ -827,7 +829,7 @@ gantt
 
 ---
 
-**Document Version:** 2.1
-**Last Updated:** 2026-03-10
+**Document Version:** 2.2
+**Last Updated:** 2026-03-18
 **Classification:** Public
 **Owner:** Hack23 AB
