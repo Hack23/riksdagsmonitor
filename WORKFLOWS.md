@@ -17,7 +17,7 @@
 [![Test Coverage](https://img.shields.io/badge/Coverage-Reports-green?logo=vitest)](https://riksdagsmonitor.com/docs/coverage/)
 
 **Document Version:** 6.0
-**Last Updated:** 2026-03-10
+**Last Updated:** 2026-03-18
 **Classification:** Public
 **Owner:** Hack23 AB (Org.nr 5595347807)
 
@@ -25,7 +25,7 @@
 
 This document describes the Continuous Integration and Continuous Deployment (CI/CD) workflows for Riksdagsmonitor. All workflows are implemented using GitHub Actions and follow Hack23 AB's [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md).
 
-The project has been migrated from JavaScript to **TypeScript** (31 modules in `src/browser/`) with all workflows updated accordingly. TypeScript compilation is handled by Vite (esbuild) for browser bundles and Node 24's native type-stripping for scripts.
+The project has been migrated from JavaScript to **TypeScript** (31 modules in `src/browser/`) with all workflows updated accordingly. TypeScript compilation is handled by Vite (esbuild) for browser bundles and Node 25's native type-stripping for scripts.
 
 **Total Workflows: 43** (23 standard YAML + 10 agentic markdown sources + 10 compiled lock files)
 **Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled)
@@ -35,7 +35,7 @@ The project has been migrated from JavaScript to **TypeScript** (31 modules in `
 
 | Component | Version | Purpose |
 |-----------|---------|---------|
-| Node.js | 24 | Runtime (native TypeScript strip-types) |
+| Node.js | 25 | Runtime (native TypeScript strip-types) |
 | TypeScript | 5.9.3 | Type system |
 | Vite | 7.3.1 | Build toolchain (esbuild) |
 | Vitest | 4.0.18 | Unit testing (2890 tests) |
@@ -189,7 +189,7 @@ graph TD
 ```yaml
 steps:
   - Checkout
-  - Setup Node.js 24
+  - Setup Node.js 25
   - Install dependencies (npm ci)
   - Run ESLint: npx eslint .
   - Artifact upload: eslint-results
@@ -238,7 +238,7 @@ Generates a consolidated step summary with pass/fail status for all jobs.
 ```yaml
 steps:
   - Checkout
-  - Setup Node.js 24
+  - Setup Node.js 25
   - Install dependencies
   - TypeScript type-check (browser): npx tsc --project tsconfig.browser.json --noEmit
   - TypeScript type-check (scripts): npx tsc --project tsconfig.scripts.json --noEmit
@@ -278,7 +278,7 @@ steps:
 
 ```yaml
 steps:
-  - Checkout, Setup Node.js 24, Install deps
+  - Checkout, Setup Node.js 25, Install deps
   - Generate TypeDoc: npx typedoc
   - Validate documentation coverage
   - Check generated TypeDoc files exist
@@ -340,7 +340,7 @@ steps:
 ```yaml
 steps:
   - Checkout
-  - Setup Node.js 24
+  - Setup Node.js 25
   - Install dependencies: npm ci
   - Build: npm run build          # ← Critical: Vite build before deploy
   - Configure AWS credentials
@@ -366,13 +366,13 @@ steps:
 
 ```yaml
 steps:
-  - Checkout, Setup Node.js 24, Install deps
-  - Fetch: node scripts/load-cia-stats.ts        # Node 24 native TS
-  - Update: node scripts/update-stats-from-cia.ts  # Node 24 native TS
+  - Checkout, Setup Node.js 25, Install deps
+  - Fetch: node scripts/load-cia-stats.ts        # Node 25 native TS
+  - Update: node scripts/update-stats-from-cia.ts  # Node 25 native TS
   - Commit and push changes (if any)
 ```
 
-**Note:** Uses Node 24's native TypeScript type-stripping (`process.features.typescript === "strip"`). No `--experimental-strip-types` flag needed — `.ts` files run directly with `node`.
+**Note:** Uses Node 25's native TypeScript type-stripping (`process.features.typescript === "strip"`). No `--experimental-strip-types` flag needed — `.ts` files run directly with `node`.
 
 #### 7.2 Data Pipeline (`data-pipeline.yml`)
 
@@ -481,7 +481,7 @@ Compiles `.md` workflow sources to `.lock.yml` using `gh aw compile`. Creates Gi
 steps:
   - Checkout
   - Setup Web Test Environment (Chrome + Xvfb)
-  - Setup Node.js 24
+  - Setup Node.js 25
   - Install MCP server packages globally
   - Install Playwright browsers
   - Verify all MCP server installations
@@ -606,7 +606,7 @@ The following table summarizes how each workflow interacts with TypeScript:
 | `codeql.yml` | Scans TS for vulnerabilities | `javascript-typescript` matrix |
 | `release.yml` | Builds TS → JS bundles | Vite/esbuild |
 | `deploy-s3.yml` | Builds then deploys bundles | `npm run build` → S3 sync |
-| `update-cia-stats.yml` | Runs `.ts` scripts directly | Node 24 native TS strip |
+| `update-cia-stats.yml` | Runs `.ts` scripts directly | Node 25 native TS strip |
 | `vitest.config.js` | Coverage includes TS source | `src/browser/**/*.ts` in includes |
 | `test-dashboard.yml` | Triggers on TS changes | `src/browser/**` in path filter |
 | `test-homepage.yml` | Triggers on TS changes | `src/browser/**` in path filter |
@@ -620,7 +620,7 @@ The following table summarizes how each workflow interacts with TypeScript:
 schedule:
   - cron: '0 2 * * *'     # Update CIA stats daily at 03:00 CET
 steps:
-  - node scripts/load-cia-stats.ts    # Node 24 native TS
+  - node scripts/load-cia-stats.ts    # Node 25 native TS
   - node scripts/update-stats-from-cia.ts
   - git commit + push (if changed)
 ```
@@ -719,8 +719,8 @@ paths:
   - 'tsconfig*.json'
 ```
 
-#### Issue: Node 24 cannot run .ts scripts
-**Solution:** Node 24 has native TypeScript type-stripping. Verify:
+#### Issue: Node version cannot run .ts scripts
+**Solution:** Node.js 25 has native TypeScript type-stripping. Verify:
 ```bash
 node -e "console.log(process.features.typescript)"  # Should print "strip"
 ```
@@ -829,6 +829,6 @@ git commit -m "chore: recompile agentic workflow lock files"
 ---
 
 **Document Version:** 6.0
-**Last Updated:** 2026-03-10
+**Last Updated:** 2026-03-18
 **Classification:** Public
 **Owner:** Hack23 AB
