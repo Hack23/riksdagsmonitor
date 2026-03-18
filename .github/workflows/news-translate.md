@@ -146,6 +146,30 @@ If EN source articles do not exist on disk when this workflow runs, it means the
 - **Minutes 40–43**: Validate translations, run quality checks
 - **Minutes 43–45**: Create PR with `safeoutputs___create_pull_request`
 
+## ⚠️ CRITICAL: Bash Tool Call Format
+
+**Every `bash` tool call MUST include both required parameters — omitting either causes validation errors:**
+
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| `command` | ✅ YES | The shell command string to execute |
+| `description` | ✅ YES | Short human-readable label (≤100 chars) |
+
+**✅ CORRECT** — always provide both `command` and `description`:
+```
+bash({ command: "date -u '+%Y-%m-%d'", description: "Get current UTC date" })
+bash({ command: "npm ci --prefer-offline --no-audit", description: "Install npm dependencies" })
+bash({ command: "npx htmlhint 'news/*-*.html'", description: "Validate HTML files" })
+```
+
+**❌ WRONG** — missing parameters causes `"command": Required, "description": Required` errors:
+```
+bash("npm ci")           // ← WRONG: no named parameters
+bash({ command: "..." }) // ← WRONG: missing description
+```
+
+> When you see ` ```bash ` code blocks below, they show the **command content** to execute. You MUST wrap each in a proper bash tool call with both `command` and `description` parameters. For multi-line scripts, join commands with `&&` or `;` into a single `command` string.
+
 ## Required Skills
 
 1. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines (CRITICAL — read this first)

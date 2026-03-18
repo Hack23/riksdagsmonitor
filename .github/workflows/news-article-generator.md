@@ -157,6 +157,30 @@ You are the **News Journalist Agent** for Riksdagsmonitor. Generate high-quality
    - **SCB MCP** (`api.scb.se`) — Swedish statistics context for matching policy domains
    - **CIA-data** (JSON exports) — when loaded via `--document-urls` pointing to CIA exports
 
+## ⚠️ CRITICAL: Bash Tool Call Format
+
+**Every `bash` tool call MUST include both required parameters — omitting either causes validation errors:**
+
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| `command` | ✅ YES | The shell command string to execute |
+| `description` | ✅ YES | Short human-readable label (≤100 chars) |
+
+**✅ CORRECT** — always provide both `command` and `description`:
+```
+bash({ command: "date -u '+%Y-%m-%d'", description: "Get current UTC date" })
+bash({ command: "npm ci --prefer-offline --no-audit", description: "Install npm dependencies" })
+bash({ command: "npx htmlhint 'news/*-*.html'", description: "Validate HTML files" })
+```
+
+**❌ WRONG** — missing parameters causes `"command": Required, "description": Required` errors:
+```
+bash("npm ci")           // ← WRONG: no named parameters
+bash({ command: "..." }) // ← WRONG: missing description
+```
+
+> When you see ` ```bash ` code blocks below, they show the **command content** to execute. You MUST wrap each in a proper bash tool call with both `command` and `description` parameters. For multi-line scripts, join commands with `&&` or `;` into a single `command` string.
+
 ## ⚠️ NON-NEGOTIABLE RULES
 
 1. Every run **MUST** end with exactly one safe output tool call:
