@@ -148,12 +148,13 @@ If EN source articles do not exist on disk when this workflow runs, it means the
 
 ### 🚨 BATCH LIMITING (prevents timeout)
 
-When scanning reveals **more than 2 article types** needing translation, process only the **first 2 types** (alphabetically). The remaining types will be picked up by the next scheduled run or a manual dispatch.
+When scanning reveals **more than 2 article types** needing translation, sort them alphabetically and process only the **first 2 types**. The remaining types will be picked up by the next scheduled run or a manual dispatch.
 
 **Time guard**: Before starting translation of each article type, check elapsed time:
 ```bash
+TIME_GUARD_SECONDS=2400  # 40 minutes
 ELAPSED=$(( $(date +%s) - START_TIME ))
-if [ "$ELAPSED" -gt 2400 ]; then
+if [ "$ELAPSED" -gt "$TIME_GUARD_SECONDS" ]; then
   echo "⏰ 40+ minutes elapsed — skipping remaining article types to avoid timeout"
   echo "   Remaining types will be handled by the next scheduled run."
 fi
@@ -275,10 +276,11 @@ if [ -z "$ARTICLE_TYPE" ]; then
   else
     echo "📋 Articles needing translation ($UNTRANSLATED_COUNT types): $UNTRANSLATED_TYPES"
     if [ "$UNTRANSLATED_COUNT" -gt 2 ]; then
-      # Apply batch limit: only take first 2 types
-      BATCH_TYPES=$(echo "$UNTRANSLATED_TYPES" | cut -d',' -f1-2)
-      REMAINING=$(echo "$UNTRANSLATED_TYPES" | cut -d',' -f3-)
-      echo "⚠️ BATCH LIMIT: Processing only first 2 types: $BATCH_TYPES"
+      # Sort alphabetically for deterministic batch selection, then take first 2
+      SORTED_TYPES=$(echo "$UNTRANSLATED_TYPES" | tr ',' '\n' | sort | tr '\n' ',' | sed 's/,$//')
+      BATCH_TYPES=$(echo "$SORTED_TYPES" | cut -d',' -f1-2)
+      REMAINING=$(echo "$SORTED_TYPES" | cut -d',' -f3-)
+      echo "⚠️ BATCH LIMIT: Processing only first 2 types (sorted): $BATCH_TYPES"
       echo "   Deferred to next run: $REMAINING"
       UNTRANSLATED_TYPES="$BATCH_TYPES"
     fi
@@ -407,9 +409,10 @@ After the script generates baseline files, run a **quick parity check** to ident
 ```bash
 # Re-derive variables (each code block runs in its own shell session)
 source /tmp/gh-aw/agent/timing.env 2>/dev/null || START_TIME=$(date +%s)
+TIME_GUARD_SECONDS=2400  # 40 minutes
 ELAPSED=$(( $(date +%s) - START_TIME ))
 echo "⏰ Elapsed time: $((ELAPSED / 60)) minutes"
-if [ "$ELAPSED" -gt 2400 ]; then
+if [ "$ELAPSED" -gt "$TIME_GUARD_SECONDS" ]; then
   echo "⚠️ 40+ minutes elapsed — skipping parity check to avoid timeout"
   echo "   Proceeding directly to validation and PR creation."
   exit 0
