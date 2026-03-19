@@ -45,6 +45,16 @@
 | [Workflows](WORKFLOWS.md) | 🔧 DevOps | CI/CD automation and pipelines |
 | [CRA Assessment](CRA-ASSESSMENT.md) | ⚖️ Compliance | EU Cyber Resilience Act conformity |
 
+### Hack23 ISMS Policy References
+
+| Policy | Focus | Link |
+|--------|-------|------|
+| Secure Development Policy | SDLC security, architecture requirements | [Secure_Development_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
+| Open Source Policy | OSS governance, license compliance | [Open_Source_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) |
+| CRA Conformity Assessment Process | CRA self-assessment template | [CRA_Conformity_Assessment_Process.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CRA_Conformity_Assessment_Process.md) |
+| Threat Modeling Policy | STRIDE/MITRE ATT&CK methodology | [Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) |
+| Classification Framework | CIA triad, RTO/RPO | [CLASSIFICATION.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) |
+
 ---
 
 ## 📋 Table of Contents
@@ -2308,6 +2318,7 @@ The primary residual risks are LLM02 (output handling) mitigated by human review
 | Business Continuity | BCPPlan.md | Active | Quarterly |
 | Third Party Management | Third_Party_Management.md | Active | Annual |
 | Open Source | Open_Source_Policy.md | Active | Annual |
+| CRA Conformity | CRA_Conformity_Assessment_Process.md | Active | Annual |
 
 ### GV.OV — Oversight
 
