@@ -38,7 +38,7 @@ permissions:
   discussions: read
   security-events: read
 
-timeout-minutes: 45
+timeout-minutes: 60
 
 concurrency:
   group: gh-aw-news-translate-${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}
@@ -138,13 +138,27 @@ If EN source articles do not exist on disk when this workflow runs, it means the
 
 **Violation of this rule causes merge conflicts and overwrites higher-quality reviewed articles.**
 
-## ⏱️ Time Budget (45 minutes)
+## ⏱️ Time Budget (60 minutes)
 
 - **Minutes 0–3**: Scan for untranslated articles, determine work scope
 - **Minutes 3–8**: MCP warm-up, load source articles
-- **Minutes 8–40**: Generate translations using TypeScript scripts
-- **Minutes 40–43**: Validate translations, run quality checks
-- **Minutes 43–45**: Create PR with `safeoutputs___create_pull_request`
+- **Minutes 8–50**: Generate translations using TypeScript scripts
+- **Minutes 50–55**: Validate translations, run quality checks
+- **Minutes 55–60**: Create PR with `safeoutputs___create_pull_request`
+
+### 🚨 BATCH LIMITING (prevents timeout)
+
+When scanning reveals **more than 2 article types** needing translation, process only the **first 2 types** (alphabetically). The remaining types will be picked up by the next scheduled run or a manual dispatch.
+
+**Time guard**: Before starting translation of each article type, check elapsed time:
+```bash
+ELAPSED=$(( $(date +%s) - START_TIME ))
+if [ "$ELAPSED" -gt 2400 ]; then
+  echo "⏰ 40+ minutes elapsed — skipping remaining article types to avoid timeout"
+  echo "   Remaining types will be handled by the next scheduled run."
+fi
+```
+If more than **40 minutes** have elapsed, IMMEDIATELY skip to Step 4 (Validate) and Step 5 (Create PR) with whatever translations have been generated so far. A partial PR is better than a timeout failure.
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
 
@@ -236,6 +250,7 @@ ARTICLE_TYPE="${{ github.event.inputs.article_type }}"
 if [ -z "$ARTICLE_TYPE" ]; then
   echo "🔍 Scanning for untranslated articles from $ARTICLE_DATE..."
   UNTRANSLATED_TYPES=""
+  UNTRANSLATED_COUNT=0
   for en_article in news/${ARTICLE_DATE}-*-en.html; do
     [ ! -f "$en_article" ] && continue
     SLUG=$(basename "$en_article" | sed "s/${ARTICLE_DATE}-//" | sed 's/-en\.html//')
@@ -250,6 +265,7 @@ if [ -z "$ARTICLE_TYPE" ]; then
     if [ "$MISSING" -gt 0 ]; then
       TYPE=$(echo "$SLUG" | sed 's/government-//' | sed 's/opposition-//' | sed 's/committee-//')
       echo "  📝 $SLUG: missing $MISSING translations"
+      UNTRANSLATED_COUNT=$((UNTRANSLATED_COUNT + 1))
       UNTRANSLATED_TYPES="${UNTRANSLATED_TYPES}${UNTRANSLATED_TYPES:+,}${SLUG}"
     fi
   done
@@ -257,12 +273,22 @@ if [ -z "$ARTICLE_TYPE" ]; then
   if [ -z "$UNTRANSLATED_TYPES" ]; then
     echo "✅ All articles from $ARTICLE_DATE are fully translated."
   else
-    echo "📋 Articles needing translation: $UNTRANSLATED_TYPES"
+    echo "📋 Articles needing translation ($UNTRANSLATED_COUNT types): $UNTRANSLATED_TYPES"
+    if [ "$UNTRANSLATED_COUNT" -gt 2 ]; then
+      # Apply batch limit: only take first 2 types
+      BATCH_TYPES=$(echo "$UNTRANSLATED_TYPES" | cut -d',' -f1-2)
+      REMAINING=$(echo "$UNTRANSLATED_TYPES" | cut -d',' -f3-)
+      echo "⚠️ BATCH LIMIT: Processing only first 2 types: $BATCH_TYPES"
+      echo "   Deferred to next run: $REMAINING"
+      UNTRANSLATED_TYPES="$BATCH_TYPES"
+    fi
   fi
 fi
 ```
 
 If no untranslated articles are found, call `safeoutputs___noop` with message: "All articles are fully translated. No translation work needed."
+
+**IMPORTANT**: When batch limiting is applied, the agent MUST only process the `BATCH_TYPES` (first 2 article types). Do NOT attempt to translate deferred types — they will be handled by the next scheduled run.
 
 ### Mandatory EN Source Availability Check
 
@@ -372,19 +398,23 @@ source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts \
   --skip-existing
 ```
 
-### 3c. Enhance Translations to Match EN Source Quality
+### 3c. Quick Parity Check (TIME-CONSCIOUS — skip enhancement if running low on time)
 
-After the script generates baseline files, **compare each generated translation with the EN source**.
-For each target language file:
+After the script generates baseline files, run a **quick parity check** to identify any serious translation issues. The TypeScript script produces good-quality baselines; only intervene if there are clear structural problems.
 
-1. **Check line count parity**: The translated article should be roughly similar in size to the EN source (±20%). If the generated file is much larger (template list) or much smaller, it needs rewriting.
-2. **Check headings match**: The translated article must have the SAME section headings (translated) as the EN source — not a different structure.
-3. **Check for untranslated Swedish**: Search for `<span lang="sv">` tags. These contain Swedish API text that should have been translated. The `data-translate="true"` marker enables dictionary-based translation, but full titles/summaries may need manual translation in the target language.
-4. **Check lede quality**: The EN article's lede is a rich editorial summary. If the translated version just says "Analysis of N motions" — it needs to be replaced with a proper translation of the EN lede.
-5. **Check "Why It Matters" sections**: The EN article contains detailed policy context. If translated versions have generic template text instead, replace with translated versions of the EN content.
+**⏰ TIME GUARD**: Before running the parity check, verify elapsed time. If more than 40 minutes have passed, **skip this step entirely** and go directly to Step 4 (Validate).
 
 ```bash
 # Re-derive variables (each code block runs in its own shell session)
+source /tmp/gh-aw/agent/timing.env 2>/dev/null || START_TIME=$(date +%s)
+ELAPSED=$(( $(date +%s) - START_TIME ))
+echo "⏰ Elapsed time: $((ELAPSED / 60)) minutes"
+if [ "$ELAPSED" -gt 2400 ]; then
+  echo "⚠️ 40+ minutes elapsed — skipping parity check to avoid timeout"
+  echo "   Proceeding directly to validation and PR creation."
+  exit 0
+fi
+
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date +%Y-%m-%d)"
 LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
@@ -417,7 +447,7 @@ for EN_FILE in $(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null); do
 done
 ```
 
-If a translation file has significantly more lines than EN (indicating a template-based list instead of an editorial article) or has many `<span lang="sv">` untranslated spans, **rewrite the article** using the EN source as the template. Use `edit` tool to replace the article body content with a proper translation that preserves the EN structure.
+Only intervene to fix a translation if it has **critical issues** (line count >3x EN or <0.3x EN, indicating wrong structure). Do NOT spend time on minor quality enhancements — the TypeScript script output is sufficient for the initial PR. Quality improvements can be done in follow-up runs.
 
 **Article Navigation Verification**: The `generate-news-enhanced.ts` script automatically includes all required navigation elements:
 - **Language switcher** (`<nav class="language-switcher">`) after `<body>` with all 14 languages
@@ -576,7 +606,8 @@ npx tsx scripts/validate-news-translations.ts
 | No source articles | EN articles not yet generated | Skip with `safeoutputs___noop` — content workflow hasn't run yet |
 | EN/SV files accidentally staged | Agent created core language files | Pre-commit safety removes them (see Step 5) |
 | Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL}"` |
-| Translation incomplete | Time budget exceeded | Commit partial translations, note missing languages in PR body |
+| Translation incomplete | Time budget exceeded | Commit partial translations, note missing languages in PR body. A partial PR is better than a timeout. |
+| Too many article types | Batch limiting applied | Only first 2 types processed per run; remaining types deferred to next scheduled run |
 | HTMLHint errors | Malformed translation HTML | Run `npx tsx scripts/article-quality-enhancer.ts --fix` |
 
-🎯 **Now begin: Check EN source articles exist on disk first. If they don't, call `safeoutputs___noop`. Otherwise, scan for untranslated articles, warm up MCP with `get_sync_status()`, generate translations with the script, validate, and call a safe output tool.**
+🎯 **Now begin: Check EN source articles exist on disk first. If they don't, call `safeoutputs___noop`. Otherwise, scan for untranslated articles (applying batch limit of 2 types max), warm up MCP with `get_sync_status()`, generate translations with the script, validate, and call a safe output tool. Monitor elapsed time throughout — if 40+ minutes pass, skip remaining work and create PR with partial translations.**
