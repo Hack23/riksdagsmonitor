@@ -1870,12 +1870,13 @@ graph TB
 |----------|------|---------|--------|
 | **[Future Architecture](FUTURE_ARCHITECTURE.md)** | 🚀 Evolution | **This document:** AWS serverless roadmap, AI enhancement | ✅ Active |
 | **[Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md)** | 🛡️ Security | Planned AWS security enhancements (GuardDuty, Security Hub, WAF) | ✅ Active |
-| **Future State Diagrams** | 🔄 Behavior | AI-enhanced state transitions, event-driven workflows | 📝 Planned |
+| **[Future State Diagrams](FUTURE_STATEDIAGRAM.md)** | 🔄 Behavior | AI-enhanced state transitions, event-driven workflows | ✅ Active |
 | **[Future Flowcharts](FUTURE_FLOWCHART.md)** | 🔄 Process | Bedrock AI workflows, Step Functions orchestration | ✅ Active |
-| **Future Mindmaps** | 🧠 Concept | Future capability evolution, AWS service relationships | 📝 Planned |
-| **Future SWOT Analysis** | 💼 Business | Future strategic opportunities and growth strategies | 📝 Planned |
-| **Future Workflows** | 🔧 DevOps | Enhanced CI/CD with AWS CodePipeline, blue/green deployments | 📝 Planned |
-| **Future Data Model** | 📊 Data | Aurora, DynamoDB, Neptune data architecture | 📝 Planned |
+| **[Future Mindmaps](FUTURE_MINDMAP.md)** | 🧠 Concept | Future capability evolution, AWS service relationships | ✅ Active |
+| **[Future SWOT Analysis](FUTURE_SWOT.md)** | 💼 Business | Future strategic opportunities and growth strategies | ✅ Active |
+| **[Future Threat Model](FUTURE_THREAT_MODEL.md)** | 🎯 Security | Future threat analysis for planned features | ✅ Active |
+| **[Future Workflows](FUTURE_WORKFLOWS.md)** | 🔧 DevOps | Enhanced CI/CD with advanced pipelines | ✅ Active |
+| **[Future Data Model](FUTURE_DATA_MODEL.md)** | 📊 Data | Aurora, DynamoDB, Neptune data architecture | ✅ Active |
 
 ### External References & Standards
 
