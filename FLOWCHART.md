@@ -881,6 +881,30 @@ flowchart TD
 
 ---
 
+## 📚 Related Documents
+
+### Riksdagsmonitor Architecture Portfolio
+
+| Document | Focus | Description |
+|----------|-------|-------------|
+| [🏛️ Architecture](ARCHITECTURE.md) | 🏗️ C4 Models | System context, containers, components |
+| [📊 Data Model](DATA_MODEL.md) | 📊 Data | Entity relationships and data dictionary |
+| **[🔄 Flowchart](FLOWCHART.md)** | **🔄 Processes** | **Business and data flow diagrams (this document)** |
+| [📈 State Diagram](STATEDIAGRAM.md) | 📈 States | System state transitions and lifecycles |
+| [🧠 Mindmap](MINDMAP.md) | 🧠 Concepts | System conceptual relationships |
+| [💼 SWOT](SWOT.md) | 💼 Strategy | Strategic analysis and positioning |
+| [🛡️ Security Architecture](SECURITY_ARCHITECTURE.md) | 🔒 Security | Current security controls and design |
+| [🎯 Threat Model](THREAT_MODEL.md) | 🎯 Threats | STRIDE/MITRE ATT&CK analysis |
+| [🚀 Future Architecture](FUTURE_ARCHITECTURE.md) | 🔮 Evolution | Architectural evolution roadmap |
+| [🔄 Future Flowchart](FUTURE_FLOWCHART.md) | 🔮 Processes | Improved process workflows |
+
+### Hack23 ISMS Policies
+
+- [🛡️ Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) — Architecture documentation requirements
+- [🏷️ Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) — CIA triad classification
+
+---
+
 **📋 Document Control:**  
 **✅ Approved by:** James Pether Sörling, CEO  
 **📤 Distribution:** Public  

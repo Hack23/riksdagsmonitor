@@ -914,6 +914,21 @@ This Future Security Architecture demonstrates Hack23 AB's commitment to **proac
 - [Black Trigram](https://github.com/Hack23/blacktrigram) - Reference security patterns
 - [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC) - ISMS policies and standards
 
+### Riksdagsmonitor Architecture Portfolio
+
+| Document | Focus |
+|----------|-------|
+| [🏛️ Architecture](ARCHITECTURE.md) | C4 models |
+| [📊 Data Model](DATA_MODEL.md) | Data entities |
+| [🔄 Flowchart](FLOWCHART.md) | Process flows |
+| [📈 State Diagram](STATEDIAGRAM.md) | State transitions |
+| [🧠 Mindmap](MINDMAP.md) | Conceptual relationships |
+| [💼 SWOT](SWOT.md) | Strategic analysis |
+| [🛡️ Security Architecture](SECURITY_ARCHITECTURE.md) | Current security controls |
+| [🎯 Threat Model](THREAT_MODEL.md) | STRIDE/MITRE ATT&CK |
+| [🔮 Future Threat Model](FUTURE_THREAT_MODEL.md) | Future threat analysis |
+| **[🔮 Future Security Architecture](FUTURE_SECURITY_ARCHITECTURE.md)** | **Planned security (this document)** |
+
 ---
 
 <p align="center">

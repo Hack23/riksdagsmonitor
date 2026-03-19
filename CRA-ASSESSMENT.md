@@ -11,13 +11,13 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--02--24-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--19-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-02-24 (UTC)
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-05-24
+**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-03-19 (UTC)
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-19
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -37,6 +37,8 @@ As a cybersecurity consulting company, our approach to CRA compliance becomes a 
 This process provides a concise, repeatable CRA Conformity Assessment for Riksdagsmonitor. Aligns with CRA Annex I & V, Hack23 classification, secure development, and transparency policies.
 
 **Scope:** Riksdagsmonitor platform within [Asset Register](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Asset_Register.md) requiring EU market placement.
+
+**Process Alignment:** This assessment follows the [CRA Conformity Assessment Process](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CRA_Conformity_Assessment_Process.md) template and is governed by the [Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) for open source compliance requirements.
 
 ---
 
@@ -377,6 +379,7 @@ CRA assessment updated only when changes constitute "substantial modification" u
 - **[🔍 Vulnerability Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md)** — Security testing, coordinated disclosure
 - **[🤝 Third Party Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Third_Party_Management.md)** — Supplier risk assessment
 - **[🔓 Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md)** — OSS governance, license compliance
+- **[🛡️ CRA Conformity Assessment Process](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CRA_Conformity_Assessment_Process.md)** — CRA self-assessment template and methodology
 
 #### **🚨 Incident Response & Recovery**
 - **[🚨 Incident Response Plan](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md)** — Security event handling
@@ -392,6 +395,112 @@ CRA assessment updated only when changes constitute "substantial modification" u
 - **[✅ Compliance Checklist](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Compliance_Checklist.md)** — Regulatory requirement tracking
 
 ---
+
+## 🔓 **Open Source Policy Conformity**
+
+*Demonstrating compliance with [Hack23 AB Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md)*
+
+### **🎖️ Security Posture Evidence (OSP §1)**
+
+| Requirement | Status | Evidence |
+|------------|--------|---------|
+| **OpenSSF Scorecard ≥7.0** | ✅ Active | [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/riksdagsmonitor/badge)](https://scorecard.dev/viewer/?uri=github.com/Hack23/riksdagsmonitor) |
+| **Quality Gate Passed** | ✅ Active | [Quality Checks Workflow](https://github.com/Hack23/riksdagsmonitor/actions/workflows/quality-checks.yml) |
+| **License Badge** | ✅ Active | [![license](https://img.shields.io/github/license/Hack23/riksdagsmonitor.svg)](https://github.com/Hack23/riksdagsmonitor/blob/main/LICENSE) |
+| **Threat Model Published** | ✅ Active | [![Threat Model](https://img.shields.io/badge/Threat_Model-Public_Documentation-blue?style=flat-square&logo=github&logoColor=white)](https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md) |
+| **STRIDE Analysis Complete** | ✅ Active | [![STRIDE Analysis](https://img.shields.io/badge/STRIDE-Complete_Analysis-green?style=flat-square&logo=security&logoColor=white)](https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md) |
+
+### **📋 Governance Artifacts (OSP §2)**
+
+| Required Artifact | Status | Evidence |
+|------------------|--------|---------|
+| **SECURITY_ARCHITECTURE.md** | ✅ Present | [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) — Defense-in-depth with Mermaid diagrams |
+| **FUTURE_SECURITY_ARCHITECTURE.md** | ✅ Present | [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) — Security roadmap |
+| **SECURITY.md** | ✅ Present | [SECURITY.md](SECURITY.md) — Coordinated vulnerability disclosure |
+| **WORKFLOWS.md** | ✅ Present | [WORKFLOWS.md](WORKFLOWS.md) — CI/CD pipeline with security gates |
+| **LICENSE** | ✅ Apache 2.0 | [LICENSE](https://github.com/Hack23/riksdagsmonitor/blob/main/LICENSE) — OSI-approved |
+| **CRA-ASSESSMENT.md** | ✅ Present | This document |
+| **CODE_OF_CONDUCT.md** | ✅ Present | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) — Community standards |
+| **CONTRIBUTING.md** | ✅ Present | [CONTRIBUTING.md](CONTRIBUTING.md) — Contribution guidelines |
+| **README.md** | ✅ Present | [README.md](README.md) — Includes project classification section |
+
+### **🔒 Security Implementation (OSP §3)**
+
+| Requirement | Status | Evidence |
+|------------|--------|---------|
+| **Supply Chain: Dependency Scanning** | ✅ Automated | [Dependabot Config](https://github.com/Hack23/riksdagsmonitor/blob/main/.github/dependabot.yml) |
+| **Supply Chain: SHA-pinned Actions** | ✅ Enforced | [WORKFLOWS.md](WORKFLOWS.md) — All Actions pinned to SHA |
+| **Supply Chain: step-security/harden-runner** | ✅ Active | Egress auditing on all workflows |
+| **Vulnerability Management SLA** | ✅ Active | [SECURITY.md](SECURITY.md) — Coordinated disclosure + Dependabot auto-remediation |
+| **SAST: CodeQL** | ✅ Active | [CodeQL Workflow](https://github.com/Hack23/riksdagsmonitor/actions/workflows/codeql.yml) |
+| **SCA: Dependency Review** | ✅ Active | [Dependency Review Workflow](https://github.com/Hack23/riksdagsmonitor/actions/workflows/dependency-review.yml) |
+| **Secret Scanning** | ✅ Active | [Security Overview](https://github.com/Hack23/riksdagsmonitor/security) |
+
+### **📊 License Compliance (OSP §4)**
+
+| Requirement | Status | Evidence |
+|------------|--------|---------|
+| **Primary License: Apache 2.0** | ✅ Approved (Permissive) | [LICENSE](https://github.com/Hack23/riksdagsmonitor/blob/main/LICENSE) |
+| **Dependencies: Permissive Licenses** | ✅ All permissive | npm dependencies under MIT/ISC/Apache 2.0/BSD |
+| **No Prohibited Licenses** | ✅ Verified | No AGPL/GPL/advertising-clause licenses in dependency tree |
+
+### **🏷️ Classification & Documentation (OSP §5)**
+
+| Requirement | Status | Evidence |
+|------------|--------|---------|
+| **CIA Triad Classification** | ✅ Declared | Public / High Integrity / High Availability |
+| **Business Impact Assessment** | ✅ Documented | [SWOT.md](SWOT.md) + [CRA Risk Assessment](#4️⃣-risk-assessment) |
+| **RTO/RPO Objectives** | ✅ Defined | RTO: <24h (Medium) / RPO: <24h (Daily) |
+
+### **🔐 Data Protection (OSP §6)**
+
+| Requirement | Status | Evidence |
+|------------|--------|---------|
+| **No PII/GDPR data** | ✅ Compliant | No personal data collection — static site, no user accounts |
+| **No production credentials** | ✅ Compliant | GitHub secret scanning active |
+| **Public data only** | ✅ Compliant | All data sourced from public government APIs |
+
+### **🤝 Third-Party Contributions (OSP §7)**
+
+| Requirement | Status | Evidence |
+|------------|--------|---------|
+| **Contribution guidelines** | ✅ Published | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| **Code of Conduct** | ✅ Published | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) |
+| **PR review process** | ✅ Active | Branch protection + required reviews |
+
+---
+
+## 📋 **CRA Conformity Assessment Process Alignment**
+
+*Demonstrating compliance with [Hack23 AB CRA Conformity Assessment Process](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CRA_Conformity_Assessment_Process.md)*
+
+### **Process Step Completion Matrix**
+
+| Process Step | Template Section | Status | Riksdagsmonitor Evidence |
+|-------------|-----------------|--------|--------------------------|
+| **1️⃣ Project Identification** | CRA Annex V §1 | ✅ Complete | [Section 1](#1️⃣-project-identification) — Product description, badges, data sources |
+| **2️⃣ CRA Scope & Classification** | CRA Art. 6-7 | ✅ Complete | [Section 2](#2️⃣-cra-scope--classification) — Non-commercial OSS, Standard, Community distribution |
+| **3️⃣ Technical Documentation** | CRA Annex V §2 | ✅ Complete | [Section 3](#3️⃣-technical-documentation) — 9 CRA technical areas documented with evidence links |
+| **4️⃣ Risk Assessment** | CRA Annex V §3 | ✅ Complete | [Section 4](#4️⃣-risk-assessment) — 6 risk categories assessed with residual risk |
+| **5️⃣ Essential Requirements** | CRA Annex I | ✅ Complete | [Section 5](#5️⃣-essential-cybersecurity-requirements) — 13 essential requirements mapped |
+| **6️⃣ Conformity Evidence** | CRA Art. 19 | ✅ Complete | [Section 6](#6️⃣-conformity-assessment-evidence) — Badges, CI/CD evidence, release artifacts |
+| **7️⃣ Post-Market Surveillance** | CRA Art. 23 | ✅ Complete | [Section 7](#7️⃣-post-market-surveillance) — Monitoring, reporting, update mechanisms |
+| **8️⃣ Declaration of Conformity** | CRA Art. 28 | ✅ Draft | [Section 8](#8️⃣-eu-declaration-of-conformity) — DoC template ready for formal placement |
+| **9️⃣ Assessment Approval** | Internal | ✅ Complete | [Section 9](#9️⃣-assessment-completion--approval) — CEO approval documented |
+
+### **Classification Selections**
+
+| Classification Dimension | Selected Value | Justification |
+|--------------------------|---------------|---------------|
+| 🏪 **Market Category** | [![OSS](https://img.shields.io/badge/Market-Open_Source-lightgreen?style=flat-square&logo=github&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | Apache 2.0 licensed, freely available on GitHub |
+| 🛡️ **Confidentiality** | [![Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels) | All data from public government sources |
+| ✅ **Integrity** | [![High](https://img.shields.io/badge/I-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels) | Political data accuracy is essential for democratic trust |
+| ⏱️ **Availability** | [![High](https://img.shields.io/badge/A-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels) | 99.998% design availability (AWS CloudFront multi-region + GitHub Pages DR), automated failover |
+| 🕐 **RTO** | [![Medium](https://img.shields.io/badge/RTO-Medium_(4--24hrs)-lightgreen?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#rto-classifications) | GitHub Pages DR available within hours |
+| 🔄 **RPO** | [![Daily](https://img.shields.io/badge/RPO-Daily_(4--24hrs)-lightblue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#rpo-classifications) | Git-based continuous backup, daily content generation |
+| 🏢 **CRA Applicability** | [![Non-commercial OSS](https://img.shields.io/badge/Applicability-Non--commercial_OSS-lightgreen?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | Volunteer-driven, no revenue model |
+| 🌐 **Distribution** | [![Community](https://img.shields.io/badge/Distribution-Community-green?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | GitHub public repository |
+| 📋 **CRA Classification** | [![Standard](https://img.shields.io/badge/CRA-Standard-green?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | Not in Annex III/IV critical categories |
 
 ---
 
@@ -643,8 +752,9 @@ Place: Sweden
 **✅ Approved by:** James Pether Sörling, CEO
 **📤 Distribution:** Public
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels)
-**📅 Effective Date:** 2026-02-25
-**⏰ Next Review:** 2026-05-25
-**🎯 CRA Alignment:** Template supports CRA Annex V technical documentation and self-assessment requirements
+**📅 Effective Date:** 2026-03-19
+**⏰ Next Review:** 2026-06-19
+**🎯 CRA Alignment:** Follows [CRA Conformity Assessment Process](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CRA_Conformity_Assessment_Process.md) template — supports CRA Annex V technical documentation and self-assessment requirements
+**🔓 OSS Alignment:** Conforms with [Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) — governance artifacts, security posture evidence, license compliance
 **🏢 ISMS Integration:** Comprehensive alignment with public ISMS framework for operational excellence
 **🎯 Framework Compliance:** [![ISO 27001](https://img.shields.io/badge/ISO_27001-2022_Aligned-blue?style=flat-square&logo=iso&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![NIST CSF 2.0](https://img.shields.io/badge/NIST_CSF-2.0_Aligned-green?style=flat-square&logo=nist&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) [![CIS Controls](https://img.shields.io/badge/CIS_Controls-v8.1_Aligned-orange?style=flat-square&logo=cisecurity&logoColor=white)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)

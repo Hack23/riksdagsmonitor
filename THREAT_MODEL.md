@@ -2892,6 +2892,8 @@ Riksdagsmonitor-specific security practices for civic transparency platforms.
 - [📉 Risk Register](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Register.md) - Enterprise risk management
 - [🤖 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) - LLM application security requirements
 - [🔒 OWASP LLM Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/OWASP_LLM_Security_Policy.md) - LLM Top 10 controls
+- [🔓 Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) - OSS governance, security posture evidence
+- [🛡️ CRA Conformity Assessment Process](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CRA_Conformity_Assessment_Process.md) - CRA self-assessment methodology
 
 #### Compliance Frameworks:
 - [📋 ISO 27001:2022 Controls](https://github.com/Hack23/ISMS-PUBLIC/blob/main/ISO_27001_Annex_A.md) - Annex A control mapping

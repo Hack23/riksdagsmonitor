@@ -578,6 +578,13 @@ gh attestation verify riksdagsmonitor-v1.0.0.zip -R Hack23/riksdagsmonitor
 - [🔧 Workflows](WORKFLOWS.md) - CI/CD workflows and automation
 - [🔐 Security Policy](SECURITY.md) - Vulnerability reporting and disclosure
 
+### ISMS Policy Alignment
+- [🛡️ Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) — Architecture documentation requirements
+- [🔓 Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) — OSS governance, license compliance, security posture evidence
+- [🛡️ CRA Conformity Assessment Process](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CRA_Conformity_Assessment_Process.md) — CRA self-assessment template and methodology
+- [🎯 Threat Modeling Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) — STRIDE/MITRE ATT&CK methodology
+- [🏷️ Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) — CIA triad, RTO/RPO, business impact
+
 ### GitHub Copilot Integration
 - [AGENTS.md](AGENTS.md) - Custom Copilot agents for specialized tasks (14 agents)
 - [SKILLS.md](SKILLS.md) - Agent skills for strategic guidance (87 skills)
