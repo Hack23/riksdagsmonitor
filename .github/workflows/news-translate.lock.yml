@@ -22,7 +22,7 @@
 #
 # Dedicated translation workflow for news articles. Generates high-quality translations for all non-core languages. Dispatched by content workflows or run manually/on schedule to translate untranslated articles.
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"4b08eec03131583fcef619ed26057e4cce70f22357c3398ae565de2780fee94f","compiler_version":"v0.62.0"}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"48c6bcf84c9efa6c1de4072759a927c7062b83b0fcaa3655b9a86c7eb714128c","compiler_version":"v0.62.0"}
 
 name: "News: Translate Articles"
 "on":
@@ -682,7 +682,7 @@ jobs:
       - name: Execute GitHub Copilot CLI
         id: agentic_execution
         # Copilot CLI tool arguments (sorted):
-        timeout-minutes: 45
+        timeout-minutes: 60
         run: |
           set -o pipefail
           touch /tmp/gh-aw/agent-step-summary.md
@@ -1052,7 +1052,7 @@ jobs:
           GH_AW_LOCKDOWN_CHECK_FAILED: ${{ needs.activation.outputs.lockdown_check_failed }}
           GH_AW_GROUP_REPORTS: "false"
           GH_AW_FAILURE_REPORT_AS_ISSUE: "true"
-          GH_AW_TIMEOUT_MINUTES: "45"
+          GH_AW_TIMEOUT_MINUTES: "60"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |
