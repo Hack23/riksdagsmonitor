@@ -148,9 +148,9 @@ bash({ command: "..." }) // ← WRONG: missing description
 
 **Articles MUST be generated using `npx tsx scripts/generate-news-enhanced.ts` — NEVER manually.**
 
-The repository provides a complete article generation pipeline. You MUST use it:
+The repository provides a complete article generation pipeline. You MUST use it (see Generation Steps below for the full `LANG_ARG` derivation from the `languages` dispatch input; default is `en,sv`):
 ```bash
-source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts --types=committee-reports --languages="en,sv" --skip-existing
+source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts --types=committee-reports --languages="$LANG_ARG" --skip-existing
 ```
 
 **❌ NEVER do any of the following:**
