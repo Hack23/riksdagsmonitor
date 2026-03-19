@@ -198,6 +198,233 @@ flowchart TB
 
 ---
 
+## 🎖️ Attacker-Centric Threat Modeling — Future Attack Vectors
+
+### **👥 Future Threat Agent Classification**
+
+| Threat Agent | Motivation | Capability | Future Target | Risk Trend |
+|-------------|-----------|-----------|--------------|-----------|
+| **Nation-State APT** | Political influence, intelligence gathering | Very High (zero-day, AI-enhanced) | Real-time voting data, politician profiles | ⬆️ Increasing |
+| **AI-Enabled Adversary** | Automated exploitation, disinformation | High (LLM-driven attacks) | Translation pipeline, multi-workflow orchestration | ⬆️ Rapidly increasing |
+| **Hacktivist** | Political disruption, ideology | Medium (commodity tools + AI) | Public dashboards, election forecasts | ➡️ Stable |
+| **Insider Threat** | Data manipulation, sabotage | High (pipeline access) | CIA data pipeline, content generation | ⬆️ Increasing with more contributors |
+| **Competitor** | Market intelligence, replication | Medium (OSINT, scraping) | Dashboard algorithms, analysis methodology | ➡️ Stable |
+| **Cybercriminal** | Ransomware, cryptomining | Medium (supply chain focus) | CI/CD pipeline, dependency chain | ⬆️ Increasing |
+
+### **🌳 Future Attack Tree — Real-Time Vote Manipulation**
+
+```mermaid
+flowchart TD
+    ROOT["🎯 Manipulate Real-Time Vote Display"]
+    
+    A1["⚔️ A1: Compromise Data Feed<br/>Probability: 15%"]
+    A2["⚔️ A2: Man-in-the-Middle<br/>Probability: 10%"]
+    A3["⚔️ A3: Client-Side Injection<br/>Probability: 20%"]
+    A4["⚔️ A4: Cache Poisoning<br/>Probability: 12%"]
+    
+    A1_1["🔧 A1.1: Compromise Riksdag API proxy"]
+    A1_2["🔧 A1.2: DNS hijacking of data source"]
+    A2_1["🔧 A2.1: TLS downgrade attack"]
+    A2_2["🔧 A2.2: WebSocket hijacking"]
+    A3_1["🔧 A3.1: XSS via dashboard parameter"]
+    A3_2["🔧 A3.2: Browser extension manipulation"]
+    A4_1["🔧 A4.1: CDN cache poisoning"]
+    A4_2["🔧 A4.2: LocalStorage corruption"]
+    
+    ROOT --> A1
+    ROOT --> A2
+    ROOT --> A3
+    ROOT --> A4
+    A1 --> A1_1
+    A1 --> A1_2
+    A2 --> A2_1
+    A2 --> A2_2
+    A3 --> A3_1
+    A3 --> A3_2
+    A4 --> A4_1
+    A4 --> A4_2
+    
+    style ROOT fill:#ffcdd2,stroke:#d32f2f,color:#000
+    style A1 fill:#fff3e0,stroke:#ff9800,color:#000
+    style A2 fill:#fff3e0,stroke:#ff9800,color:#000
+    style A3 fill:#e3f2fd,stroke:#2196f3,color:#000
+    style A4 fill:#fff3e0,stroke:#ff9800,color:#000
+```
+
+### **🌳 Future Attack Tree — CIA Pipeline Compromise**
+
+```mermaid
+flowchart TD
+    ROOT2["🎯 Compromise CIA Intelligence Data"]
+    
+    B1["⚔️ B1: Pipeline Source Compromise<br/>Probability: 8%"]
+    B2["⚔️ B2: Cache/Storage Manipulation<br/>Probability: 12%"]
+    B3["⚔️ B3: Schema Bypass<br/>Probability: 5%"]
+    B4["⚔️ B4: AI Content Poisoning<br/>Probability: 15%"]
+    
+    B1_1["🔧 B1.1: CIA platform API manipulation"]
+    B1_2["🔧 B1.2: Nightly fetch interception"]
+    B2_1["🔧 B2.1: GitHub CDN cache poisoning"]
+    B2_2["🔧 B2.2: S3 bucket manipulation"]
+    B3_1["🔧 B3.1: Schema version mismatch exploit"]
+    B3_2["🔧 B3.2: JSON Schema validation bypass"]
+    B4_1["🔧 B4.1: Prompt injection via CIA data fields"]
+    B4_2["🔧 B4.2: Cross-workflow data flow contamination"]
+    
+    ROOT2 --> B1
+    ROOT2 --> B2
+    ROOT2 --> B3
+    ROOT2 --> B4
+    B1 --> B1_1
+    B1 --> B1_2
+    B2 --> B2_1
+    B2 --> B2_2
+    B3 --> B3_1
+    B3 --> B3_2
+    B4 --> B4_1
+    B4 --> B4_2
+    
+    style ROOT2 fill:#ffcdd2,stroke:#d32f2f,color:#000
+    style B1 fill:#fff3e0,stroke:#ff9800,color:#000
+    style B2 fill:#fff3e0,stroke:#ff9800,color:#000
+    style B3 fill:#e8f5e9,stroke:#4caf50,color:#000
+    style B4 fill:#fff3e0,stroke:#ff9800,color:#000
+```
+
+### **🔗 Future Kill Chain Disruption Analysis**
+
+| Kill Chain Phase | Future Attack Capability | Disruption Control | Detection Mechanism |
+|-----------------|------------------------|-------------------|---------------------|
+| **Reconnaissance** | AI-powered API enumeration of new endpoints | Rate limiting, API key rotation (FUT-008) | API access pattern monitoring |
+| **Weaponization** | LLM-crafted prompt injection payloads | Input validation, prompt sanitization (FUT-004) | Prompt content analysis logs |
+| **Delivery** | Compromised data in CIA pipeline/WebSocket feeds | TLS 1.3 pinning, source verification (FUT-001, FUT-002) | Network traffic anomaly detection |
+| **Exploitation** | Schema bypass, translation model manipulation | JSON Schema strict validation (FUT-002), model input filtering | Validation failure alerts, output consistency checking |
+| **Installation** | Persistent cache poisoning, LocalStorage manipulation | Cache TTL enforcement, integrity hashing (FUT-003) | Cache integrity monitoring |
+| **C2** | AI-orchestrated multi-workflow coordination | Cross-workflow consistency checks (FUT-004), volume limiting (FUT-010) | Workflow correlation analysis |
+| **Actions on Objectives** | Public disinformation via manipulated dashboards/news | Human review gate, source cross-validation, fact-checking | Content integrity alerts, user reporting |
+
+---
+
+## 🏗️ Future Asset Attack Surface Analysis
+
+### **🗺️ New Attack Surface Inventory**
+
+| Future Feature | New Endpoints | Data Sensitivity | External Dependencies | Attack Surface Rating |
+|---------------|--------------|-----------------|----------------------|----------------------|
+| **Real-Time Voting Dashboard** | WebSocket endpoint, SSE stream | Critical (live democratic data) | Riksdag API, CDN | 🔴 High |
+| **CIA Data Pipeline** | Nightly fetch endpoint, cache API | High (19 intelligence products) | CIA Platform API, S3 | 🔴 High |
+| **Politician Profile Pages** | Per-MP URL routes (349+ pages) | High (career/voting history) | CIA data, Riksdag API | 🟡 Medium |
+| **Automated Translation** | LLM API calls (14 languages) | Medium (content integrity) | LLM Provider API | 🟡 Medium |
+| **EU Parliament Cross-Ref** | EP MCP Server API, GraphQL | Medium (EU political data) | EP Open Data API | 🟢 Low |
+| **5 New Dashboards** | Chart data endpoints, D3 renders | Medium (aggregated analytics) | CIA data, Chart.js CDN | 🟡 Medium |
+
+### **📊 Future Data Flow Threat Analysis**
+
+```mermaid
+flowchart LR
+    subgraph EXTERNAL["🌐 External Sources"]
+        RIKSDAG_API["Riksdag API"]
+        CIA_API["CIA Platform"]
+        EP_API["EU Parliament API"]
+        LLM_API["LLM Provider"]
+    end
+    
+    subgraph PIPELINE["⚙️ Data Pipeline"]
+        FETCH["Nightly Fetch"]
+        VALIDATE["Schema Validation"]
+        TRANSFORM["Data Transform"]
+        CACHE["Cache Layer"]
+    end
+    
+    subgraph DELIVERY["📦 Content Delivery"]
+        CDN["CloudFront CDN"]
+        S3["S3 Static Assets"]
+        PAGES["GitHub Pages"]
+    end
+    
+    subgraph CLIENT["🖥️ Browser Client"]
+        DASHBOARD["Interactive Dashboards"]
+        REALTIME["Real-Time Feeds"]
+        PROFILES["Politician Profiles"]
+    end
+    
+    RIKSDAG_API -->|"🔴 T: Data interception"| FETCH
+    CIA_API -->|"🔴 T: Source compromise"| FETCH
+    EP_API -->|"🟡 S: API spoofing"| FETCH
+    LLM_API -->|"🔴 T: Response manipulation"| TRANSFORM
+    
+    FETCH -->|"🟡 T: Pipeline tampering"| VALIDATE
+    VALIDATE -->|"🟡 I: Validation bypass"| TRANSFORM
+    TRANSFORM -->|"🟡 T: Cache poisoning"| CACHE
+    
+    CACHE -->|"🟡 T: CDN poisoning"| CDN
+    CACHE --> S3
+    CACHE --> PAGES
+    
+    CDN --> DASHBOARD
+    CDN --> REALTIME
+    CDN --> PROFILES
+    
+    style EXTERNAL fill:#e3f2fd,stroke:#2196f3,color:#000
+    style PIPELINE fill:#fff3e0,stroke:#ff9800,color:#000
+    style DELIVERY fill:#e8f5e9,stroke:#4caf50,color:#000
+    style CLIENT fill:#f3e5f5,stroke:#9c27b0,color:#000
+```
+
+---
+
+## 🤖 AI/LLM Future Threat Analysis (OWASP LLM Top 10)
+
+### **Future AI Workflow Expansion Threats**
+
+| OWASP LLM ID | Threat | Future Relevance | Planned Mitigation |
+|-------------|--------|-----------------|-------------------|
+| **LLM01** | Prompt Injection | 🔴 Critical — More workflows = larger injection surface | Per-workflow input sanitization, prompt boundary enforcement |
+| **LLM02** | Insecure Output Handling | 🔴 Critical — Auto-generated content directly published | HTML sanitization, output schema validation, human review gate |
+| **LLM03** | Training Data Poisoning | 🟡 Medium — Indirect via MCP data sources | Source integrity verification, data provenance tracking |
+| **LLM04** | Model Denial of Service | 🟡 Medium — Multiple concurrent workflow runs | Workflow concurrency limits, timeout enforcement, rate limiting |
+| **LLM05** | Supply Chain Vulnerabilities | 🟡 Medium — LLM model updates may introduce regressions | Model version pinning, output regression testing |
+| **LLM06** | Sensitive Information Disclosure | 🟢 Low — Public data only, no PII | Data classification enforcement, output filtering |
+| **LLM07** | Insecure Plugin Design | 🔴 Critical — MCP server tools are "plugins" | MCP tool allowlisting, capability-based access control |
+| **LLM08** | Excessive Agency | 🔴 Critical — Agents can create/edit content + trigger workflows | Write operation approval gates, output volume limits |
+| **LLM09** | Overreliance | 🟡 Medium — Over-trusting AI-generated political analysis | Mandatory human editorial review, confidence scoring |
+| **LLM10** | Model Theft | 🟢 Low — Using commercial API, not custom model | API key rotation, access logging |
+
+### **Future Multi-Workflow Orchestration Threat Matrix**
+
+| Workflow Combination | Attack Scenario | Impact | Detection Difficulty | Planned Control |
+|---------------------|----------------|--------|---------------------|----------------|
+| article-generator + evening-analysis | Coordinated disinformation: article + supporting analysis | Critical | Hard — requires cross-workflow correlation | FUT-004: Cross-workflow consistency |
+| translate + article-generator | Inject bias in translation of generated content | High | Hard — translation errors look like hallucinations | FUT-005: Back-translation verification |
+| realtime-monitor + committee-reports | Time-sensitive misinformation during live events | Critical | Medium — timing anomalies detectable | FUT-009: Real-time anomaly detection |
+| propositions + motions + weekly-review | Long-running narrative manipulation across weekly content | High | Very Hard — gradual drift is subtle | Longitudinal content consistency analysis |
+
+---
+
+## 🔄 Continuous Future Threat Assessment
+
+### **Assessment Lifecycle for Future Features**
+
+| Phase | Trigger | Activities | Output |
+|-------|---------|-----------|--------|
+| **Pre-Implementation** | Feature design finalized | STRIDE analysis, attack tree construction, control design | Feature-specific threat addendum |
+| **During Implementation** | Code review, PR merge | Security testing, SAST/DAST scanning, dependency audit | Security test results, remediation items |
+| **Post-Deployment** | Feature goes live | Penetration testing, monitoring activation, alert tuning | Deployment security report |
+| **Ongoing** | Quarterly review | Threat landscape update, control effectiveness assessment | Updated risk scores, new mitigations |
+
+### **Future Threat Monitoring KPIs**
+
+| KPI | Target | Measurement Method |
+|-----|--------|-------------------|
+| New feature threat coverage | 100% STRIDE per component | Feature threat model completeness |
+| Time to detect data manipulation | < 15 minutes | Integrity check monitoring |
+| Cross-workflow anomaly detection rate | > 95% | Consistency check pass rate |
+| Translation integrity score | > 98% accuracy | Back-translation verification rate |
+| Pipeline data freshness SLA | < 24 hours | Cache timestamp monitoring |
+| WebSocket connection security | 100% TLS 1.3 | Connection protocol audit |
+
+---
+
 ## ⚖️ Future Risk Assessment
 
 ### **Quantitative Risk Matrix — Future Threats**
@@ -224,6 +451,11 @@ flowchart TB
 - [🔐 Security Architecture](./SECURITY_ARCHITECTURE.md) — Current security controls
 - [🔮 Future Security Architecture](./FUTURE_SECURITY_ARCHITECTURE.md) — Planned security enhancements
 - [📊 Data Model](./DATA_MODEL.md) — Political data entities and relationships
+- [📊 Future Data Model](./FUTURE_DATA_MODEL.md) — Enhanced data architecture plans
+- [🔄 Flowchart](./FLOWCHART.md) — Business process and data flows
+- [📈 State Diagram](./STATEDIAGRAM.md) — System state transitions
+- [🧠 Mindmap](./MINDMAP.md) — System conceptual relationships
+- [💼 SWOT](./SWOT.md) — Strategic analysis and positioning
 - [🔄 Workflows](./WORKFLOWS.md) — CI/CD security workflows
 
 ### **Hack23 ISMS Policies (Public)**
@@ -244,11 +476,11 @@ flowchart TB
 ## 📋 Document Control
 
 **📋 Document Owner:** James Pether Sörling, CEO & CISO  
-**📄 Version:** 1.0  
-**📅 Last Updated:** 2026-02-26 (UTC)  
+**📄 Version:** 1.1  
+**📅 Last Updated:** 2026-03-19 (UTC)  
 **✅ Approved by:** James Pether Sörling, CEO  
 **🔄 Review Cycle:** Quarterly (Feb, May, Aug, Nov)  
-**⏰ Next Review:** 2026-05-26  
+**⏰ Next Review:** 2026-06-19  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807)  
 **📤 Distribution:** Public  
 **🏷️ Classification:** [![Confidentiality: Public](https://img.shields.io/badge/C-Public-lightgrey?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#confidentiality-levels) [![Integrity: High](https://img.shields.io/badge/I-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#integrity-levels) [![Availability: High](https://img.shields.io/badge/A-High-orange?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md#availability-levels)

@@ -1725,19 +1725,53 @@ graph TB
 
 ---
 
+## 📚 Related Documents
+
+### Riksdagsmonitor Architecture Portfolio
+
+| Document | Focus | Description |
+|----------|-------|-------------|
+| **[🏛️ Architecture](ARCHITECTURE.md)** | **🏗️ C4 Models** | **System context, containers, components (this document)** |
+| [📊 Data Model](DATA_MODEL.md) | 📊 Data | Entity relationships and data dictionary |
+| [🔄 Flowchart](FLOWCHART.md) | 🔄 Processes | Business and data flow diagrams |
+| [📈 State Diagram](STATEDIAGRAM.md) | 📈 States | System state transitions and lifecycles |
+| [🧠 Mindmap](MINDMAP.md) | 🧠 Concepts | System conceptual relationships |
+| [💼 SWOT](SWOT.md) | 💼 Strategy | Strategic analysis and positioning |
+| [🛡️ Security Architecture](SECURITY_ARCHITECTURE.md) | 🔒 Security | Current security controls and design |
+| [🎯 Threat Model](THREAT_MODEL.md) | 🎯 Threats | STRIDE/MITRE ATT&CK analysis |
+| [🚀 Future Architecture](FUTURE_ARCHITECTURE.md) | 🔮 Evolution | Architectural evolution roadmap |
+| [🔮 Future Security](FUTURE_SECURITY_ARCHITECTURE.md) | 🔮 Security | Planned security improvements |
+
+### Hack23 ISMS Policies
+
+| Policy | Relevance |
+|--------|-----------|
+| [🛡️ Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) | Architecture documentation requirements |
+| [🎯 Threat Modeling Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) | Threat analysis methodology |
+| [🏷️ Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | CIA triad classification |
+| [📉 Risk Register](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Register.md) | Enterprise risk management |
+
+### Reference Implementations
+
+- [🏛️ CIA Architecture](https://github.com/Hack23/cia/blob/master/ARCHITECTURE.md) — Java/Spring Boot enterprise architecture
+- [🎮 Black Trigram Architecture](https://github.com/Hack23/blacktrigram/blob/main/ARCHITECTURE.md) — React/Firebase gaming platform
+- [📊 CIA Compliance Manager](https://github.com/Hack23/cia-compliance-manager/blob/main/docs/architecture/ARCHITECTURE.md) — React/TypeScript compliance platform
+
+---
+
 ## 📄 Document Control
 
 | Field | Value |
 |-------|-------|
 | **Document ID** | ARCH-001 |
-| **Version** | 2.0 |
+| **Version** | 2.1 |
 | **Classification** | Public |
 | **Owner** | CEO, Hack23 AB |
 | **Repository** | https://github.com/Hack23/riksdagsmonitor |
 | **Path** | /ARCHITECTURE.md |
 | **Format** | Markdown with Mermaid C4 Diagrams |
-| **Last Updated** | 2026-02-28 (UTC) |
-| **Next Review** | 2026-05-20 |
+| **Last Updated** | 2026-03-19 (UTC) |
+| **Next Review** | 2026-06-19 |
 | **Review Cycle** | Quarterly |
 
 <p align="center">

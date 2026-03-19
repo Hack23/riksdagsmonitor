@@ -7,7 +7,7 @@
   "entryPointStrategy": "expand",
   "tsconfig": "tsconfig.typedoc.json",
   "out": "api",
-  "name": "Riksdagsmonitor Intelligence Platform",
+  "name": "Riksdagsmonitor Intelligence Platform — API Documentation",
   "readme": "docs/API_README.md",
   "plugin": [
     "typedoc-plugin-mdn-links"
@@ -52,7 +52,6 @@
     "@typedef",
     "@typeParam",
     "@version",
-    "@intelligence",
     "@business",
     "@marketing",
     "@market",
@@ -61,32 +60,49 @@
     "@audience",
     "@competitive",
     "@stakeholder",
-    "@kpi"
+    "@kpi",
+    "@performance",
+    "@compliance",
+    "@pipeline",
+    "@dashboard",
+    "@visualization",
+    "@datasource",
+    "@parliament",
+    "@political"
   ],
   "categorizeByGroup": true,
   "searchInComments": true,
   "searchInDocuments": true,
   "navigationLinks": {
-    "Home": "https://riksdagsmonitor.com",
-    "GitHub": "https://github.com/Hack23/riksdagsmonitor",
-    "ISMS": "https://github.com/Hack23/ISMS-PUBLIC"
+    "🏠 Home": "https://riksdagsmonitor.com",
+    "📦 GitHub": "https://github.com/Hack23/riksdagsmonitor",
+    "🛡️ ISMS": "https://github.com/Hack23/ISMS-PUBLIC",
+    "🏛️ CIA Platform": "https://github.com/Hack23/cia"
   },
   "sidebarLinks": {
-    "Architecture": "https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md",
-    "Security": "https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md",
-    "Threat Model": "https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md",
-    "Data Model": "https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md",
-    "SWOT": "https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md",
-    "Business Model": "https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md"
+    "🏛️ Architecture": "https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md",
+    "🔒 Security Architecture": "https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md",
+    "🛡️ Threat Model": "https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md",
+    "📊 Data Model": "https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md",
+    "🔄 Flowchart": "https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md",
+    "📈 State Diagram": "https://github.com/Hack23/riksdagsmonitor/blob/main/STATEDIAGRAM.md",
+    "🧠 Mindmap": "https://github.com/Hack23/riksdagsmonitor/blob/main/MINDMAP.md",
+    "💼 SWOT Analysis": "https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md",
+    "🚀 Future Architecture": "https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md",
+    "🔮 Future Security": "https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SECURITY_ARCHITECTURE.md",
+    "📋 Secure Dev Policy": "https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md"
   },
-  "excludePrivate": true,
+  "excludePrivate": false,
   "excludeProtected": false,
-  "excludeInternal": true,
-  "excludeReferences": true,
+  "excludeInternal": false,
+  "excludeReferences": false,
   "includeVersion": true,
   "hideGenerator": false,
   "cleanOutputDir": true,
-  "sort": ["source-order"],
+  "sort": [
+    "source-order",
+    "alphabetical"
+  ],
   "kindSortOrder": [
     "Module",
     "Namespace",
@@ -98,8 +114,8 @@
     "Variable"
   ],
   "visibilityFilters": {
-    "protected": false,
-    "private": false,
+    "protected": true,
+    "private": true,
     "inherited": true,
     "@alpha": false,
     "@beta": false

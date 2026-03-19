@@ -186,11 +186,27 @@ All documentation follows **intelligence analysis conventions** with three strat
 
 ## Compliance & Security
 
-This platform aligns with:
-- **[SECURITY_ARCHITECTURE.md](https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md)** — ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1
-- **[THREAT_MODEL.md](https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md)** — STRIDE threat analysis
-- **[ARCHITECTURE.md](https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md)** — C4 model system architecture
-- **[DATA_MODEL.md](https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md)** — CIA platform data schemas
+This platform aligns with **Hack23 AB ISMS** requirements per the [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md):
+
+### Security & Compliance Documentation
+
+| Document | Description | Compliance Framework |
+|----------|-------------|---------------------|
+| [SECURITY_ARCHITECTURE.md](https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md) | Current security controls and defense-in-depth | ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1 |
+| [THREAT_MODEL.md](https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md) | STRIDE threat analysis and MITRE ATT&CK mapping | STRIDE, MITRE ATT&CK, OWASP LLM Top 10 |
+| [FUTURE_SECURITY_ARCHITECTURE.md](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SECURITY_ARCHITECTURE.md) | Security evolution roadmap | Post-quantum, Zero-trust, AI-augmented |
+| [FUTURE_THREAT_MODEL.md](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_THREAT_MODEL.md) | Forward-looking threat analysis | Future crown jewels and attack vectors |
+
+### Architecture Documentation Portfolio
+
+| Current State | Future State | Focus Area |
+|--------------|-------------|------------|
+| [ARCHITECTURE.md](https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md) | [FUTURE_ARCHITECTURE.md](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md) | C4 models (Context, Container, Component) |
+| [DATA_MODEL.md](https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md) | [FUTURE_DATA_MODEL.md](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_DATA_MODEL.md) | Data structures and relationships |
+| [FLOWCHART.md](https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md) | [FUTURE_FLOWCHART.md](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_FLOWCHART.md) | Business process and data flows |
+| [STATEDIAGRAM.md](https://github.com/Hack23/riksdagsmonitor/blob/main/STATEDIAGRAM.md) | [FUTURE_STATEDIAGRAM.md](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_STATEDIAGRAM.md) | System state transitions |
+| [MINDMAP.md](https://github.com/Hack23/riksdagsmonitor/blob/main/MINDMAP.md) | [FUTURE_MINDMAP.md](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_MINDMAP.md) | Conceptual relationships |
+| [SWOT.md](https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md) | [FUTURE_SWOT.md](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SWOT.md) | Strategic analysis |
 
 ---
 
@@ -200,9 +216,12 @@ This platform aligns with:
 - **Repository**: [github.com/Hack23/riksdagsmonitor](https://github.com/Hack23/riksdagsmonitor)
 - **CIA Data Platform**: [github.com/Hack23/cia](https://github.com/Hack23/cia)
 - **ISMS Documentation**: [github.com/Hack23/ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
+- **Secure Development Policy**: [Secure_Development_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
+- **Threat Modeling Policy**: [Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md)
 
 ---
 
 **Mission**: Systematic political transparency through rigorous intelligence analysis  
 **License**: Apache-2.0  
-**Maintained by**: [Hack23 AB](https://hack23.com)
+**Organization**: [Hack23 AB](https://hack23.com)  
+**ISMS Compliance**: ISO 27001:2022 | NIST CSF 2.0 | CIS Controls v8.1

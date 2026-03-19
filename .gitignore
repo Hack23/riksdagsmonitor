@@ -65,3 +65,4 @@ scripts/__pycache__/
 /rss.xml
 /sitemap*
 dashboard-initial.png
+api/
