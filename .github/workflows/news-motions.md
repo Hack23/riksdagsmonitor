@@ -111,9 +111,10 @@ If **force_generation** is `true`, generate articles even if recent ones exist. 
 ## ⏱️ Time Budget (45 minutes)
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
 - **Minutes 3–10**: Query MCP tools for motions data
-- **Minutes 10–40**: Generate articles for all 14 languages
-- **Minutes 40–43**: Validate and commit
-- **Minutes 43–45**: Create PR with `safeoutputs___create_pull_request`
+- **Minutes 10–25**: Generate articles for core languages (EN, SV) using `npx tsx scripts/generate-news-enhanced.ts`
+- **Minutes 25–35**: Validate and fix any quality issues
+- **Minutes 35–40**: Commit and create PR with `safeoutputs___create_pull_request`
+- **Minutes 40–45**: Dispatch translation workflow
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
 
@@ -138,6 +139,27 @@ bash({ command: "..." }) // ← WRONG: missing description
 ```
 
 > When you see fenced bash code blocks below (three backticks followed by bash), they show the **command content** to execute. You MUST wrap each in a proper bash tool call with both `command` and `description` parameters. For multi-line scripts, join commands with `&&` or `;` into a single `command` string.
+
+## 🚫 CRITICAL: Article Generation Safety
+
+**Articles MUST be generated using `npx tsx scripts/generate-news-enhanced.ts` — NEVER manually.**
+
+The repository provides a complete article generation pipeline. You MUST use it (see Generation Steps below for the full `LANG_ARG` derivation from the `languages` dispatch input; default is `en,sv`):
+```bash
+source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts --types=motions --languages="$LANG_ARG" --skip-existing
+```
+
+**❌ NEVER do any of the following:**
+- NEVER use `python3` or `python3 -c` to build HTML article files
+- NEVER create `.py` scripts to generate articles
+- NEVER use bash heredoc (`cat > file << 'EOF'`) to write HTML files — it silently truncates large content
+- NEVER manually construct HTML articles line-by-line with `echo`, `printf`, or any other method
+- NEVER spend more than 5 minutes attempting to manually build article HTML
+
+**If `generate-news-enhanced.ts` fails or returns 0 articles:**
+1. Check if MCP data was returned (retry MCP calls if needed)
+2. If still no data, use `safeoutputs___noop` with a descriptive message
+3. Do NOT attempt to manually create articles as a fallback
 
 ## Required Skills
 

@@ -806,3 +806,48 @@ describe('Manual Article Generation Safety', () => {
     }
   });
 });
+
+describe('Script-Based Article Generation Safety', () => {
+  const SCRIPT_GENERATION_WORKFLOWS = [
+    'news-interpellations.md',
+    'news-propositions.md',
+    'news-motions.md',
+    'news-committee-reports.md',
+  ];
+
+  it('script-based workflows should prohibit python3 article generation', () => {
+    for (const workflowFile of SCRIPT_GENERATION_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('NEVER use `python3`'),
+        `Workflow ${workflowFile} should prohibit python3 for article generation`
+      ).toBe(true);
+    }
+  });
+
+  it('script-based workflows should prohibit manual HTML construction', () => {
+    for (const workflowFile of SCRIPT_GENERATION_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('NEVER manually construct HTML'),
+        `Workflow ${workflowFile} should prohibit manual HTML article construction`
+      ).toBe(true);
+    }
+  });
+
+  it('script-based workflows should require generate-news-enhanced.ts', () => {
+    for (const workflowFile of SCRIPT_GENERATION_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('generate-news-enhanced.ts') && content.includes('Article Generation Safety'),
+        `Workflow ${workflowFile} should require generate-news-enhanced.ts in Article Generation Safety section`
+      ).toBe(true);
+    }
+  });
+});
