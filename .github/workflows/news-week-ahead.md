@@ -272,6 +272,7 @@ get_calendar_events({ from: today, tom: nextWeek, limit: 100 })
 // If calendar API returns error/HTML:
 // 1. Flag explicitly: "Calendar data unavailable (API returned HTML instead of JSON)"
 // 2. Optional proxy signal only — query recently published documents (lookback, NOT forward):
+//    const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
 //    search_dokument({ from_date: yesterday, to_date: today, limit: 50, doktyp: "bet" })
 // 3. NEVER treat "no documents found" as "no upcoming events"
 ```
