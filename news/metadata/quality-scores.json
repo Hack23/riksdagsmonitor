@@ -1,8 +1,8 @@
 {
-  "2026-03-20-week-ahead-en.html": {
-    "filename": "2026-03-20-week-ahead-en.html",
+  "2026-03-20-interpellation-debates-en.html": {
+    "filename": "2026-03-20-interpellation-debates-en.html",
     "lang": "en",
-    "articleType": "week-ahead",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -19,12 +19,12 @@
       },
       "issueCount": 2
     },
-    "timestamp": "2026-03-20T07:20:25.388Z"
+    "timestamp": "2026-03-20T07:20:08.235Z"
   },
-  "2026-03-20-week-ahead-sv.html": {
-    "filename": "2026-03-20-week-ahead-sv.html",
+  "2026-03-20-interpellation-debates-sv.html": {
+    "filename": "2026-03-20-interpellation-debates-sv.html",
     "lang": "sv",
-    "articleType": "week-ahead",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -41,6 +41,6 @@
       },
       "issueCount": 2
     },
-    "timestamp": "2026-03-20T07:20:25.455Z"
+    "timestamp": "2026-03-20T07:20:08.262Z"
   }
 }
