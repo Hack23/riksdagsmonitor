@@ -601,13 +601,8 @@ html {
 }
 
 /* Smooth theme transitions when toggling light/dark mode */
-html[data-theme] body,
-html[data-theme] header,
-html[data-theme] footer,
 html[data-theme] .card,
 html[data-theme] .breadcrumb,
-html[data-theme] .sticky-nav,
-html[data-theme] section,
 html[data-theme] .btn {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -11132,7 +11127,7 @@ html[data-theme="dark"] a:hover {
 
 html[data-theme="dark"] header {
   border-bottom: 1px solid rgba(0, 204, 102, 0.3);
-  background: linear-gradient(135deg, rgba(0, 26, 26, 0.95), rgba(0, 28, 37, 0.95));
+  background: rgba(0, 26, 26, 0.95);
 }
 
 html[data-theme="dark"] .sticky-nav {
@@ -11188,7 +11183,7 @@ html[data-theme="dark"] .news-navigation {
 }
 
 html[data-theme="dark"] footer {
-  background: linear-gradient(135deg, rgba(0, 26, 26, 0.95), rgba(0, 28, 37, 0.95));
+  background: rgba(0, 26, 26, 0.95);
   border-top: 2px solid var(--primary-color);
 }
 
