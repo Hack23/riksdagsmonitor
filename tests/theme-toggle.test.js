@@ -350,18 +350,14 @@ describe('Theme Toggle', () => {
   // ── theme-transition class (add/remove on toggle) ────────────────────────────
 
   describe('theme-transition class', () => {
-    function toggle(stor) {
-      const current = document.documentElement.getAttribute('data-theme') || LIGHT;
-      const next    = current === DARK ? LIGHT : DARK;
-      document.documentElement.classList.add('theme-transition');
-      applyTheme(next, undefined, stor);
-      updateButton(next);
-    }
-
     it('adds theme-transition class on toggle', () => {
       buildButton();
       applyTheme('light', false, storage);
-      toggle(storage);
+      const current = document.documentElement.getAttribute('data-theme') || LIGHT;
+      const next    = current === DARK ? LIGHT : DARK;
+      document.documentElement.classList.add('theme-transition');
+      applyTheme(next, undefined, storage);
+      updateButton(next);
       expect(document.documentElement.classList.contains('theme-transition')).toBe(true);
     });
 
@@ -386,7 +382,7 @@ describe('Theme Toggle', () => {
       applyTheme('light', false, storage);
 
       // Simulate rapid toggle with clearTimeout guard
-      var timer = null;
+      let timer = null;
 
       // First toggle
       document.documentElement.classList.add('theme-transition');
