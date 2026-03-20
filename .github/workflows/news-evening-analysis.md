@@ -275,11 +275,12 @@ const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 
 The Riksdag calendar API (`get_calendar_events`) intermittently returns HTML instead of JSON. If the calendar call returns an error, empty results with an `error` field, or HTML content:
 
 1. **Do NOT treat calendar failure as "no events"** — continue evaluating all other data sources normally.
-2. **Use `search_dokument` as fallback** to find scheduled debates and upcoming votes:
+2. **Use `search_dokument` as a document-based proxy** to detect recently published committee reports and propositions (these indicate active parliamentary work even when the calendar is unavailable):
    ```
    search_dokument({ from_date: "<fromDate>", to_date: "<today>", limit: 50, doktyp: "bet" })
    search_dokument({ from_date: "<fromDate>", to_date: "<today>", limit: 30, doktyp: "prop" })
    ```
+   > Note: This does NOT replace the calendar's session-timing data. It provides publication signals as context for whether parliament is active.
 3. **Flag the API error** in any noop message or article metadata so it can be investigated.
 4. The calendar is supplementary context — its failure should never block article generation from other sources.
 

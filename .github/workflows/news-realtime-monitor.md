@@ -232,11 +232,12 @@ get_betankanden({ rm: "<rm>", limit: 20 })
 The Riksdag calendar API (`get_calendar_events`) is known to intermittently return HTML instead of JSON. If the calendar call returns an error, empty results with an `error` field, or HTML content:
 
 1. **Do NOT treat the calendar failure as "no events"** — other data sources may still have significant content.
-2. **Use `search_dokument` as a fallback** to find scheduled debates and upcoming votes:
+2. **Use `search_dokument` as a document-based proxy** to detect recently published committee reports and propositions (these indicate active parliamentary work even when the calendar is unavailable):
    ```
    search_dokument({ from_date: "<today>", to_date: "<today>", limit: 50, doktyp: "bet" })
    search_dokument({ from_date: "<today>", to_date: "<today>", limit: 30, doktyp: "prop" })
    ```
+   > Note: This does NOT replace the calendar's session-timing data. It provides publication signals as context for whether parliament is active.
 3. **Flag the API error** in any noop message so it can be investigated:
    ```
    safeoutputs___noop({ "message": "... calendar (API error: returned HTML instead of JSON) ..." })
@@ -286,11 +287,16 @@ Map raw score to tier: **≥ 7 = HIGH** | **4–6 = MEDIUM** | **≤ 3 = LOW**
 
 ### No-Events Early Exit (MOST COMMON OUTCOME)
 
-If no HIGH or MEDIUM events found, substitute actual values into this template:
+If no HIGH or MEDIUM events found, substitute actual runtime values into this template:
 ```
-safeoutputs___noop({ "message": "No significant parliamentary events on 2026-03-20. Checked: votes (latest March 4), debates, propositions (2 found, max severity=5), committee reports (3), government documents (0), calendar (API error: HTML instead of JSON). No events reached HIGH threshold (≥7). Next check in 2-4h." })
+safeoutputs___noop({ "message": "No significant parliamentary events on <today>. Checked: votes (latest <lastVoteDate>), debates, propositions (<propCount> found, max severity=<maxScore>), committee reports (<betCount>), government documents (<govCount>), calendar (<calendarStatus>). No events reached HIGH threshold (≥7). Next check in 2-4h." })
 ```
-Include specifics in the noop message: counts of items checked per category, the highest severity score found, and the status of each data source (especially flag any API errors like "calendar API error: HTML instead of JSON").
+Replace each `<placeholder>` with the actual value from your queries:
+- `<today>` — current date (YYYY-MM-DD)
+- `<lastVoteDate>` — datum of most recent vote found
+- `<propCount>`, `<betCount>`, `<govCount>` — number of items returned per source
+- `<maxScore>` — highest severity score assigned to any event
+- `<calendarStatus>` — "ok" or "API error: HTML instead of JSON"
 
 **Stop here.** Parliament is often inactive — noop is the expected outcome.
 
