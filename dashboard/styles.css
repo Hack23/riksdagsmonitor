@@ -64,7 +64,7 @@
 .rankings-section,
 .heatmap-section,
 .network-section {
-  margin: var(--spacing-3xl) 0;
+  margin: var(--spacing-xl) 0;
   padding: var(--spacing-xl);
   background: var(--card-bg);
   border-radius: var(--border-radius-lg);
@@ -74,20 +74,20 @@
 .section-heading {
   font-size: var(--h2-size);
   color: var(--primary-color);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
   border-bottom: 2px solid var(--border-color);
   padding-bottom: var(--spacing-sm);
 }
 
 .section-description {
   color: var(--text-secondary);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
   font-size: var(--font-size-base);
 }
 
 /* Metrics Grid */
 .metrics-grid {
-  margin: var(--spacing-2xl) 0;
+  margin: var(--spacing-lg) 0;
   padding: var(--spacing-xl);
   background: var(--card-bg);
   border-radius: var(--border-radius-lg);
