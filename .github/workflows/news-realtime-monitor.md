@@ -213,7 +213,7 @@ Tools with date params: `get_calendar_events` (from/tom — **⚠️ known inter
 
 Query for recent parliamentary activity — use **direct MCP tool calls** (the framework routes them automatically).
 
-Replace `<today>` with today's date in `YYYY-MM-DD` format (from `date +%Y-%m-%d`). Replace `<yesterday>` with the previous day's date. Replace `<rm>` with the riksmöte value calculated above.
+Replace `<today>` with today's date in `YYYY-MM-DD` format (from `date +%Y-%m-%d`). Replace `<yesterday>` with the previous day's date in `YYYY-MM-DD` format (from `date -d "yesterday" +%Y-%m-%d`). Replace `<rm>` with the riksmöte value calculated above.
 
 **Use a lookback window** — query from `<yesterday>` to catch late-day publications from the previous day that may have been missed by the last run:
 
@@ -286,9 +286,9 @@ Map raw score to tier: **≥ 7 = HIGH** | **4–6 = MEDIUM** | **≤ 3 = LOW**
 
 ### No-Events Early Exit (MOST COMMON OUTCOME)
 
-If no HIGH or MEDIUM events found:
+If no HIGH or MEDIUM events found, substitute actual values into this template:
 ```
-safeoutputs___noop({ "message": "No significant parliamentary events on <today>. Checked: votes (latest <date>), debates, propositions (<count> found, max severity=<score>), committee reports (<count>), government documents (<count>), calendar (<status>). No events reached threshold. Next check in 2-4h." })
+safeoutputs___noop({ "message": "No significant parliamentary events on 2026-03-20. Checked: votes (latest March 4), debates, propositions (2 found, max severity=5), committee reports (3), government documents (0), calendar (API error: HTML instead of JSON). No events reached HIGH threshold (≥7). Next check in 2-4h." })
 ```
 Include specifics in the noop message: counts of items checked per category, the highest severity score found, and the status of each data source (especially flag any API errors like "calendar API error: HTML instead of JSON").
 
