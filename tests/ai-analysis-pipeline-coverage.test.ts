@@ -24,7 +24,7 @@
 import { describe, it, expect } from 'vitest';
 import { aiAnalysisPipeline, runAnalysisPipeline } from '../scripts/ai-analysis/pipeline.js';
 import type { RawDocument } from '../scripts/data-transformers/types.js';
-import type { AnalysisResult, AnalysisDepth, ValidationResult } from '../scripts/ai-analysis/types.js';
+import type { AnalysisDepth } from '../scripts/ai-analysis/types.js';
 
 // ---------------------------------------------------------------------------
 // Test document factory
