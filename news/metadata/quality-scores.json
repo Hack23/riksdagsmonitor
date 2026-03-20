@@ -1,46 +1,46 @@
 {
-  "2026-03-20-opposition-motions-en.html": {
-    "filename": "2026-03-20-opposition-motions-en.html",
+  "2026-03-20-week-ahead-en.html": {
+    "filename": "2026-03-20-week-ahead-en.html",
     "lang": "en",
-    "articleType": "motions",
+    "articleType": "week-ahead",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 76,
-      "passesThreshold": true,
+      "overallScore": 50,
+      "passesThreshold": false,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 67,
+        "factualAccuracy": 0,
+        "stakeholderCoverage": 100,
         "analyticalDepth": 12,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
+        "editorialConsistency": 80,
+        "evidenceQuality": 60,
         "languageQuality": 100
       },
-      "issueCount": 1
+      "issueCount": 2
     },
-    "timestamp": "2026-03-20T06:23:41.061Z"
+    "timestamp": "2026-03-20T07:20:25.388Z"
   },
-  "2026-03-20-opposition-motions-sv.html": {
-    "filename": "2026-03-20-opposition-motions-sv.html",
+  "2026-03-20-week-ahead-sv.html": {
+    "filename": "2026-03-20-week-ahead-sv.html",
     "lang": "sv",
-    "articleType": "motions",
+    "articleType": "week-ahead",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 71,
-      "passesThreshold": true,
+      "overallScore": 47,
+      "passesThreshold": false,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 67,
+        "factualAccuracy": 0,
+        "stakeholderCoverage": 100,
         "analyticalDepth": 4,
-        "editorialConsistency": 80,
-        "evidenceQuality": 100,
+        "editorialConsistency": 65,
+        "evidenceQuality": 60,
         "languageQuality": 100
       },
-      "issueCount": 1
+      "issueCount": 2
     },
-    "timestamp": "2026-03-20T06:23:41.083Z"
+    "timestamp": "2026-03-20T07:20:25.455Z"
   }
 }
