@@ -123,11 +123,11 @@
         "factualAccuracy": 100,
         "stakeholderCoverage": 83,
         "analyticalDepth": 12,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
+        "editorialConsistency": 80,
+        "evidenceQuality": 60,
         "languageQuality": 100
       },
-      "issueCount": 1
+      "issueCount": 2
     },
     "timestamp": "2026-03-20T07:27:52.957Z"
   },
@@ -259,7 +259,7 @@
         "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 1
+      "issueCount": 2
     },
     "timestamp": "2026-03-20T07:27:53.083Z"
   }
