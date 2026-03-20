@@ -259,7 +259,7 @@ This triggers the dedicated `news-translate` workflow which generates high-quali
 
 **ALWAYS call `get_sync_status()` FIRST.**
 
-**Primary tool:** `get_calendar_events` — fetches upcoming 7-day calendar
+**Primary tool:** `get_calendar_events` — fetches upcoming 7-day calendar (**⚠️ Known issue: may return HTML instead of JSON — use `search_dokument` as fallback**)
 **Cross-reference:** `search_dokument`, `get_fragor`, `get_interpellationer`
 **Statistical enrichment:** SCB/World Bank — for scheduled economic debates, pre-fetch relevant indicators. Use committee-mapped tables from `scripts/scb-context.ts` based on which committees have scheduled meetings (e.g., FiU agenda→fiscal TAB1291 + World Bank GDP/inflation indicators).
 
@@ -269,6 +269,8 @@ get_sync_status({})
 const today = new Date().toISOString().split('T')[0];
 const nextWeek = new Date(Date.now() + 7*86400000).toISOString().split('T')[0];
 get_calendar_events({ from: today, tom: nextWeek, limit: 100 })
+// If calendar API returns error/HTML, use search_dokument as fallback:
+// search_dokument({ from_date: today, to_date: nextWeek, limit: 50 })
 ```
 
 ## Generation Steps

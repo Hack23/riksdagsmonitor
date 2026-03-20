@@ -263,7 +263,7 @@ This triggers the dedicated `news-translate` workflow which generates high-quali
 
 **ALWAYS call `get_sync_status()` FIRST.**
 
-**Primary tool:** `get_calendar_events` — 30-day forward calendar
+**Primary tool:** `get_calendar_events` — 30-day forward calendar (**⚠️ Known issue: may return HTML instead of JSON; use `search_dokument` as fallback**)
 **Cross-reference:** `get_propositioner`, `search_dokument`, `search_regering`
 **Statistical enrichment:** SCB/World Bank — for major economic milestones (budget debates, economic policy events), pre-fetch trend data from committee-mapped indicators. See `scripts/scb-context.ts` for 15 domain→committee mappings and `scripts/world-bank-context.ts` for 14 WB indicator→committee mappings.
 

@@ -266,9 +266,22 @@ const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 
 ```
 
 **Tools with native date params** (supports from/tom or dateFrom/dateTo):
-- `get_calendar_events` — supports `from`/`tom` parameters
+- `get_calendar_events` — supports `from`/`tom` parameters (**⚠️ Known issue: may return HTML instead of JSON — see Calendar API Fallback below**)
 - `search_regering` — supports `dateFrom`/`dateTo` parameters
 - `analyze_g0v_by_department` — supports `dateFrom`/`dateTo` parameters
+
+### ⚠️ Calendar API Fallback
+
+The Riksdag calendar API (`get_calendar_events`) intermittently returns HTML instead of JSON. If the calendar call returns an error, empty results with an `error` field, or HTML content:
+
+1. **Do NOT treat calendar failure as "no events"** — continue evaluating all other data sources normally.
+2. **Use `search_dokument` as fallback** to find scheduled debates and upcoming votes:
+   ```
+   search_dokument({ from_date: "<fromDate>", to_date: "<today>", limit: 50, doktyp: "bet" })
+   search_dokument({ from_date: "<fromDate>", to_date: "<today>", limit: 30, doktyp: "prop" })
+   ```
+3. **Flag the API error** in any noop message or article metadata so it can be investigated.
+4. The calendar is supplementary context — its failure should never block article generation from other sources.
 
 **Tools requiring post-query filter by datum/publicerad/inlämnad:**
 - `search_voteringar` — filter by `datum` field
