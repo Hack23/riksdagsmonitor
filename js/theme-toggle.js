@@ -12,6 +12,7 @@
   var STORAGE_KEY = 'riksdagsmonitor-theme';
   var DARK = 'dark';
   var LIGHT = 'light';
+  var _transitionTimer = null;
 
   var button = document.getElementById('theme-toggle');
   if (!button) {
@@ -74,9 +75,12 @@
     } catch (_e) {
       // Ignore storage errors
     }
-    // Remove transition class after animations complete
-    setTimeout(function () {
+    // Remove transition class after animations complete; clear any pending timer
+    // to avoid races when the user clicks rapidly.
+    if (_transitionTimer) { clearTimeout(_transitionTimer); }
+    _transitionTimer = setTimeout(function () {
       document.documentElement.classList.remove('theme-transition');
+      _transitionTimer = null;
     }, 350);
   });
 }());
