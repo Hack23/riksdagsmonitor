@@ -875,3 +875,96 @@ describe('SWOT document classification', () => {
     expect(priv.swot.strengths.some(e => e.sourceDocIds.includes('EXT1'))).toBe(true);
   });
 });
+
+// ===========================================================================
+// Interpellation document classification tests
+// ===========================================================================
+
+describe('interpellation document classification', () => {
+  const IP1 = makeDoc({ dok_id: 'IP1', titel: 'Interpellation om äldreomsorgen', doktyp: 'ip' });
+  const IP2 = makeDoc({ dok_id: 'IP2', titel: 'Interpellation om försvaret', doktyp: 'ip' });
+  const IP3 = makeDoc({ dok_id: 'IP3', titel: 'Interpellation om energipolitik', doktyp: 'ip' });
+
+  it('classifies interpellations as government weaknesses', async () => {
+    const result = await aiAnalysisPipeline.analyzeDocuments([IP1, IP2], {
+      depth: 'quick',
+      lang: 'en',
+      focusTopic: null,
+    });
+
+    const gov = result.stakeholderSwot.find(s => s.role === 'government')!;
+    expect(gov.swot.weaknesses.some(e => e.sourceDocIds.includes('IP1'))).toBe(true);
+  });
+
+  it('classifies interpellations as parliament strengths', async () => {
+    const result = await aiAnalysisPipeline.analyzeDocuments([IP1, IP2], {
+      depth: 'quick',
+      lang: 'en',
+      focusTopic: null,
+    });
+
+    const parl = result.stakeholderSwot.find(s => s.role === 'parliament')!;
+    expect(parl.swot.strengths.some(e => e.sourceDocIds.includes('IP1'))).toBe(true);
+  });
+
+  it('generates interpellation watch points', async () => {
+    const result = await aiAnalysisPipeline.analyzeDocuments([IP1, IP2, IP3], {
+      depth: 'quick',
+      lang: 'en',
+      focusTopic: null,
+    });
+
+    const ipWatch = result.watchPoints.find(wp =>
+      wp.title.toLowerCase().includes('interpellation')
+    );
+    expect(ipWatch).toBeDefined();
+    expect(ipWatch!.sourceDocIds.length).toBe(3);
+  });
+
+  it('marks interpellation watch point as high urgency when >= 5 interpellations', async () => {
+    const manyIps = Array.from({ length: 6 }, (_, i) =>
+      makeDoc({ dok_id: `IP${i}`, titel: `Interpellation ${i}`, doktyp: 'ip' })
+    );
+
+    const result = await aiAnalysisPipeline.analyzeDocuments(manyIps, {
+      depth: 'quick',
+      lang: 'en',
+      focusTopic: null,
+    });
+
+    const ipWatch = result.watchPoints.find(wp =>
+      wp.title.toLowerCase().includes('interpellation')
+    );
+    expect(ipWatch).toBeDefined();
+    expect(ipWatch!.urgency).toBe('high');
+  });
+
+  it('generates interpellation watch point labels in Swedish', async () => {
+    const result = await aiAnalysisPipeline.analyzeDocuments([IP1], {
+      depth: 'quick',
+      lang: 'sv',
+      focusTopic: null,
+    });
+
+    const ipWatch = result.watchPoints.find(wp =>
+      wp.title.includes('Interpellation')
+    );
+    expect(ipWatch).toBeDefined();
+    expect(ipWatch!.title).toContain('Ministeransvar');
+  });
+
+  it('gives interpellations medium impact rating', async () => {
+    const result = await aiAnalysisPipeline.analyzeDocuments([IP1], {
+      depth: 'quick',
+      lang: 'en',
+      focusTopic: null,
+    });
+
+    const gov = result.stakeholderSwot.find(s => s.role === 'government')!;
+    const ipEntry = gov.swot.weaknesses.find(e =>
+      e.sourceDocIds.includes('IP1')
+    );
+    expect(ipEntry).toBeDefined();
+    expect(ipEntry!.impact).toBe('medium');
+  });
+});

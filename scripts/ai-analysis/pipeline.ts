@@ -262,6 +262,34 @@ const WP_EU_DESC: Partial<Record<Language, (n: number) => string>> = {
   zh: (n) => `${n}份EU立场文件揭示欧洲维度 — EU法律可能限制国内政策选择`,
 };
 
+/** "Interpellations — Ministerial Accountability" */
+const WP_IP: LangRecord = {
+  en: 'Interpellations — Ministerial Accountability', sv: 'Interpellationer — Ministeransvar',
+  da: 'Interpellationer — Ministeransvar', no: 'Interpellasjoner — Ministeransvar',
+  fi: 'Interpellaatiot — Ministerivastuu', de: 'Interpellationen — Ministerielle Verantwortung',
+  fr: 'Interpellations — Responsabilité ministérielle', es: 'Interpelaciones — Responsabilidad ministerial',
+  nl: 'Interpellaties — Ministeriële verantwoordelijkheid', ar: 'استجوابات — المساءلة الوزارية',
+  he: 'אינטרפלציות — אחריות שרים', ja: '質問主意書 — 大臣の説明責任', ko: '대정부질문 — 장관 책임', zh: '质询 — 部长问责',
+};
+
+/** "interpellation(s) signal opposition scrutiny of ministerial performance" */
+const WP_IP_DESC: Partial<Record<Language, (n: number) => string>> = {
+  en: (n) => `${n} interpellation${n !== 1 ? 's' : ''} signal opposition scrutiny of ministerial performance — direct accountability pressure on government`,
+  sv: (n) => `${n} interpellation${n !== 1 ? 'er' : ''} signalerar oppositionens granskning av ministrarnas arbete — direkt ansvarsutkrävande gentemot regeringen`,
+  da: (n) => `${n} interpellation${n !== 1 ? 'er' : ''} signalerer oppositions granskning af ministeriel præstation`,
+  no: (n) => `${n} interpellasjon${n !== 1 ? 'er' : ''} signaliserer opposisjonens granskning av ministeriell ytelse`,
+  fi: (n) => `${n} välikysymys${n !== 1 ? 'tä' : ''} viestii opposition valvonnasta ministerien suorituskyvyn suhteen`,
+  de: (n) => `${n} Interpellation${n !== 1 ? 'en' : ''} signalisieren die oppositionelle Kontrolle der ministeriellen Leistung`,
+  fr: (n) => `${n} interpellation${n !== 1 ? 's' : ''} signalent l'examen de l'opposition sur la performance ministérielle`,
+  es: (n) => `${n} interpelación${n !== 1 ? 'es' : ''} señalan el escrutinio de la oposición sobre el desempeño ministerial`,
+  nl: (n) => `${n} interpellatie${n !== 1 ? 's' : ''} signaleren oppositietoezicht op ministeriële prestaties`,
+  ar: (n) => `${n} استجواب${n !== 1 ? 'ات' : ''} تشير إلى رقابة المعارضة على الأداء الوزاري`,
+  he: (n) => `${n} אינטרפלציות מסמנות ביקורת אופוזיציה על ביצועי השרים`,
+  ja: (n) => `${n}件の質問主意書が大臣の業績に対する野党の監視を示唆`,
+  ko: (n) => `${n}건의 대정부질문이 장관 성과에 대한 야당 감시를 시사`,
+  zh: (n) => `${n}项质询显示反对派对部长绩效的监督`,
+};
+
 /** "Narrative Frames to Monitor" */
 const WP_NARRATIVE: LangRecord = {
   en: 'Narrative Frames to Monitor', sv: 'Narrativa ramar att övervaka',
@@ -491,10 +519,10 @@ function relevantLabel(lang: Language): string {
   return map[lang] ?? 'relevant to';
 }
 
-/** Derive impact from document type: propositions/laws/committee reports/EU positions are high, motions/government comms/press medium, rest low. */
+/** Derive impact from document type: propositions/laws/committee reports/EU positions are high, motions/interpellations/government comms/press medium, rest low. */
 function impactFromDocType(dt: string): 'high' | 'medium' | 'low' {
   if (['prop', 'sfs', 'bet', 'fpm', 'eu'].includes(dt)) return 'high';
-  if (['mot', 'skr', 'pressm'].includes(dt)) return 'medium';
+  if (['mot', 'skr', 'pressm', 'ip'].includes(dt)) return 'medium';
   return 'low';
 }
 
@@ -1067,6 +1095,18 @@ function buildWatchPoints(
     });
   }
 
+  // Interpellations — ministerial accountability pressure
+  const ipDocs = docs.filter(d => docType(d) === 'ip');
+  if (ipDocs.length > 0) {
+    const descFn = WP_IP_DESC[lang] ?? WP_IP_DESC.en!;
+    points.push({
+      title: `${WP_IP[lang] ?? WP_IP.en!}${topicSuffix}`,
+      description: descFn(ipDocs.length),
+      urgency: ipDocs.length >= 5 ? 'high' : 'medium',
+      sourceDocIds: ipDocs.map(docId).filter(Boolean),
+    });
+  }
+
   // Detect narrative frames for additional watch points
   const allFrames = new Set<string>();
   docs.slice(0, 10).forEach(d => detectNarrativeFrames(d).forEach(f => allFrames.add(f)));
@@ -1252,6 +1292,7 @@ async function analyzeDocuments(
   const euDocs      = docs.filter(d => docType(d) === 'fpm' || docType(d) === 'eu');
   const pressmDocs  = docs.filter(d => docType(d) === 'pressm');
   const extDocs     = docs.filter(d => docType(d) === 'ext');
+  const ipDocs      = docs.filter(d => docType(d) === 'ip');
 
   // ── Government stakeholder SWOT ─────────────────────────────────────────────
   const govStrengths: AnalysisSwotEntry[] = [
@@ -1262,6 +1303,8 @@ async function analyzeDocuments(
   ];
   const govWeaknesses: AnalysisSwotEntry[] = [
     ...betDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, 200)),
+    // Interpellations expose government accountability gaps
+    ...ipDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, 200)),
   ];
   const govOpportunities: AnalysisSwotEntry[] = [
     ...euDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, 200)),
@@ -1269,6 +1312,8 @@ async function analyzeDocuments(
   ];
   const govThreats: AnalysisSwotEntry[] = [
     ...motDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, 200)),
+    // Interpellations represent direct opposition pressure on government
+    ...ipDocs.slice(2, 4).map(d => buildEnrichedEntry(d, topic, lang, 200)),
   ];
 
   if (govStrengths.length === 0)    govStrengths.push(placeholderEntry('government', 'strengths', topic, lang, domains));
@@ -1280,9 +1325,14 @@ async function analyzeDocuments(
   const oppStrengths: AnalysisSwotEntry[] = [
     ...betDocs.slice(0, 3).map(d => buildEnrichedEntry(d, topic, lang, 200)),
     ...motDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, 200)),
+    // Interpellations are Parliament's primary accountability tool
+    ...ipDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, 200)),
   ];
   const oppWeaknesses: AnalysisSwotEntry[] = [];
-  const oppOpportunities: AnalysisSwotEntry[] = [];
+  const oppOpportunities: AnalysisSwotEntry[] = [
+    // Interpellations create debate opportunities for opposition
+    ...ipDocs.slice(2, 3).map(d => buildEnrichedEntry(d, topic, lang, 200)),
+  ];
   const oppThreats: AnalysisSwotEntry[] = [
     ...propDocs.slice(0, 1).map(d => buildEnrichedEntry(d, topic, lang, 200)),
   ];
@@ -1387,6 +1437,7 @@ async function refineAnalysis(
   const pressmDocs = fullTextDocs.filter(d => docType(d) === 'pressm');
   const extDocs    = fullTextDocs.filter(d => docType(d) === 'ext');
   const skrDocs    = fullTextDocs.filter(d => docType(d) === 'skr');
+  const ipDocs     = fullTextDocs.filter(d => docType(d) === 'ip');
 
   // Upgrade government SWOT entries where we now have full text
   refined.stakeholderSwot = refined.stakeholderSwot.map(sh => {
@@ -1397,12 +1448,18 @@ async function refineAnalysis(
         ...skrDocs.slice(0, 1).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
         ...pressmDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
       ];
-      const enrichedWeaknesses: AnalysisSwotEntry[] = betDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, passageMax));
+      const enrichedWeaknesses: AnalysisSwotEntry[] = [
+        ...betDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
+        ...ipDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
+      ];
       const enrichedOpportunities: AnalysisSwotEntry[] = [
         ...euDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
         ...skrDocs.slice(1, 2).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
       ];
-      const enrichedThreats: AnalysisSwotEntry[] = motDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, passageMax));
+      const enrichedThreats: AnalysisSwotEntry[] = [
+        ...motDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
+        ...ipDocs.slice(2, 4).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
+      ];
 
       // Merge: prefer enriched entries, fall back to initial placeholders
       return {
@@ -1419,6 +1476,7 @@ async function refineAnalysis(
       const enrichedStrengths: AnalysisSwotEntry[] = [
         ...betDocs.slice(0, 3).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
         ...motDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
+        ...ipDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
       ];
       const enrichedThreats: AnalysisSwotEntry[] = propDocs.slice(0, 1).map(d => buildEnrichedEntry(d, topic, lang, passageMax));
       return {
