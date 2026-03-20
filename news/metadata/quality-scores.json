@@ -1,46 +1,46 @@
 {
-  "2026-03-20-government-propositions-en.html": {
-    "filename": "2026-03-20-government-propositions-en.html",
+  "2026-03-20-opposition-motions-en.html": {
+    "filename": "2026-03-20-opposition-motions-en.html",
     "lang": "en",
-    "articleType": "propositions",
+    "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 64,
+      "overallScore": 76,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 17,
-        "analyticalDepth": 16,
-        "editorialConsistency": 80,
+        "stakeholderCoverage": 67,
+        "analyticalDepth": 12,
+        "editorialConsistency": 100,
         "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-20T05:25:53.229Z"
+    "timestamp": "2026-03-20T06:23:41.061Z"
   },
-  "2026-03-20-government-propositions-sv.html": {
-    "filename": "2026-03-20-government-propositions-sv.html",
+  "2026-03-20-opposition-motions-sv.html": {
+    "filename": "2026-03-20-opposition-motions-sv.html",
     "lang": "sv",
-    "articleType": "propositions",
+    "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 61,
+      "overallScore": 71,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 17,
+        "stakeholderCoverage": 67,
         "analyticalDepth": 4,
         "editorialConsistency": 80,
         "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-20T05:25:53.252Z"
+    "timestamp": "2026-03-20T06:23:41.083Z"
   }
 }
