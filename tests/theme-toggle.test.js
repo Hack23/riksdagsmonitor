@@ -347,6 +347,79 @@ describe('Theme Toggle', () => {
     });
   });
 
+  // ── theme-transition class (add/remove on toggle) ────────────────────────────
+
+  describe('theme-transition class', () => {
+    afterEach(() => {
+      vi.runOnlyPendingTimers();
+      vi.clearAllTimers();
+      vi.useRealTimers();
+      document.documentElement.classList.remove('theme-transition');
+    });
+
+    function createToggleHandler() {
+      let transitionTimer = null;
+      return function toggle() {
+        const current = document.documentElement.getAttribute('data-theme') || LIGHT;
+        const next = current === DARK ? LIGHT : DARK;
+        document.documentElement.classList.add('theme-transition');
+        applyTheme(next, undefined, storage);
+        updateButton(next);
+        if (transitionTimer) { clearTimeout(transitionTimer); }
+        transitionTimer = setTimeout(function () {
+          document.documentElement.classList.remove('theme-transition');
+          transitionTimer = null;
+        }, 350);
+      };
+    }
+
+    it('adds theme-transition class on toggle', () => {
+      vi.useFakeTimers();
+      buildButton();
+      applyTheme('light', false, storage);
+      const toggle = createToggleHandler();
+
+      expect(document.documentElement.classList.contains('theme-transition')).toBe(false);
+      toggle();
+      expect(document.documentElement.classList.contains('theme-transition')).toBe(true);
+    });
+
+    it('removes theme-transition class after timeout', () => {
+      vi.useFakeTimers();
+      buildButton();
+      applyTheme('light', false, storage);
+      const toggle = createToggleHandler();
+
+      toggle();
+      expect(document.documentElement.classList.contains('theme-transition')).toBe(true);
+      vi.advanceTimersByTime(350);
+      expect(document.documentElement.classList.contains('theme-transition')).toBe(false);
+    });
+
+    it('handles rapid toggles without premature class removal', () => {
+      vi.useFakeTimers();
+      buildButton();
+      applyTheme('light', false, storage);
+      const toggle = createToggleHandler();
+
+      // First toggle
+      toggle();
+      vi.advanceTimersByTime(100);
+      expect(document.documentElement.classList.contains('theme-transition')).toBe(true);
+
+      // Second rapid toggle — clears the first timer
+      toggle();
+
+      // After 350ms from first toggle (250ms after second), class should still be present
+      vi.advanceTimersByTime(250);
+      expect(document.documentElement.classList.contains('theme-transition')).toBe(true);
+
+      // After 350ms from second toggle, class should be removed
+      vi.advanceTimersByTime(100);
+      expect(document.documentElement.classList.contains('theme-transition')).toBe(false);
+    });
+  });
+
   // ── anti-flash snippet localStorage validation ──────────────────────────────
 
   describe('anti-flash snippet localStorage validation logic', () => {
