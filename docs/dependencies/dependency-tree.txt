@@ -1,4 +1,4 @@
-riksdagsmonitor@0.8.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@0.8.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @emnapi/core@1.8.1 extraneous
 │ ├── @emnapi/wasi-threads@1.1.0 deduped
 │ └── tslib@2.8.1
@@ -561,7 +561,7 @@ riksdagsmonitor@0.8.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── minimist@1.2.8 deduped
 │ ├── prettier@3.8.1
 │ └── tinyglobby@0.2.15 deduped
-├─┬ knip@5.88.0
+├─┬ knip@6.0.0
 │ ├─┬ @nodelib/fs.walk@1.2.8
 │ │ ├─┬ @nodelib/fs.scandir@2.1.5
 │ │ │ ├── @nodelib/fs.stat@2.0.5 deduped
@@ -569,7 +569,6 @@ riksdagsmonitor@0.8.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │   └── queue-microtask@1.2.3
 │ │ └─┬ fastq@1.20.1
 │ │   └── reusify@1.1.0
-│ ├── @types/node@25.5.0 deduped
 │ ├─┬ fast-glob@3.3.3
 │ │ ├── @nodelib/fs.stat@2.0.5
 │ │ ├── @nodelib/fs.walk@1.2.8 deduped
@@ -585,8 +584,32 @@ riksdagsmonitor@0.8.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├─┬ formatly@0.3.0
 │ │ └─┬ fd-package-json@2.0.0
 │ │   └── walk-up-path@4.0.0
+│ ├─┬ get-tsconfig@4.13.6
+│ │ └── resolve-pkg-maps@1.0.0
 │ ├── jiti@2.6.1 deduped
 │ ├── minimist@1.2.8 deduped
+│ ├─┬ oxc-parser@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm-eabi@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm64@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-arm64@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-x64@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-freebsd-x64@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-gnueabihf@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-musleabihf@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-gnu@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-musl@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-ppc64-gnu@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-gnu@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-musl@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-s390x-gnu@0.120.0
+│ │ ├── @oxc-parser/binding-linux-x64-gnu@0.120.0
+│ │ ├── @oxc-parser/binding-linux-x64-musl@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-openharmony-arm64@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-wasm32-wasi@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-arm64-msvc@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-ia32-msvc@0.120.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-x64-msvc@0.120.0
+│ │ └── @oxc-project/types@0.120.0
 │ ├─┬ oxc-resolver@11.19.1
 │ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm-eabi@11.19.1
 │ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm64@11.19.1
@@ -612,7 +635,6 @@ riksdagsmonitor@0.8.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── picomatch@4.0.3
 │ ├── smol-toml@1.6.0
 │ ├── strip-json-comments@5.0.3
-│ ├── typescript@5.9.3 deduped
 │ ├── unbash@2.2.0
 │ ├── yaml@2.8.2
 │ └── zod@4.3.6
@@ -689,8 +711,7 @@ riksdagsmonitor@0.8.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── UNMET OPTIONAL DEPENDENCY @esbuild/win32-ia32@0.27.3
 │ │ └── UNMET OPTIONAL DEPENDENCY @esbuild/win32-x64@0.27.3
 │ ├── UNMET OPTIONAL DEPENDENCY fsevents@~2.3.3
-│ └─┬ get-tsconfig@4.13.6
-│   └── resolve-pkg-maps@1.0.0
+│ └── get-tsconfig@4.13.6 deduped
 ├─┬ typedoc-plugin-mdn-links@5.1.1
 │ └── typedoc@0.28.17 deduped
 ├─┬ typedoc@0.28.17
@@ -810,7 +831,7 @@ riksdagsmonitor@0.8.0 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── picocolors@1.1.1 deduped
 │ │ └── source-map-js@1.2.1 deduped
 │ ├─┬ rolldown@1.0.0-rc.10
-│ │ ├── @oxc-project/types@0.120.0
+│ │ ├── @oxc-project/types@0.120.0 deduped
 │ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-android-arm64@1.0.0-rc.10
 │ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-arm64@1.0.0-rc.10
 │ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-x64@1.0.0-rc.10
