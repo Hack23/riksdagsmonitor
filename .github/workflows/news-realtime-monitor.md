@@ -202,7 +202,7 @@ If it fails after 3 retries, call `safeoutputs___noop` with message "MCP server 
 
 If data is stale (> 48 hours), add disclaimer. Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc queries, use `scripts/mcp-query-cli.ts` — NEVER implement custom MCP client code (PROHIBITION).
 
-Tools with date params: `get_calendar_events` (from/tom), `search_dokument` (from_date/to_date), `search_regering` (dateFrom/dateTo). Other tools (`search_voteringar`, `get_betankanden`, `get_motioner`, `get_propositioner`, `search_anforanden`) require post-query filter by datum.
+Tools with date params: `get_calendar_events` (from/tom — **⚠️ known intermittent issue: may return HTML instead of JSON; use `search_dokument` as fallback**), `search_dokument` (from_date/to_date), `search_regering` (dateFrom/dateTo). Other tools (`search_voteringar`, `get_betankanden`, `get_motioner`, `get_propositioner`, `search_anforanden`) require post-query filter by datum.
 
 ## 📅 Riksmöte (Parliamentary Session) Calculation
 
@@ -211,19 +211,38 @@ Tools with date params: `get_calendar_events` (from/tom), `search_dokument` (fro
 
 ## Step 2: Detect Significant Events
 
-Query for today's activity — use **direct MCP tool calls** (the framework routes them automatically).
+Query for recent parliamentary activity — use **direct MCP tool calls** (the framework routes them automatically).
 
-Replace `<today>` with today's date in `YYYY-MM-DD` format (from `date +%Y-%m-%d`). Replace `<rm>` with the riksmöte value calculated above.
+Replace `<today>` with today's date in `YYYY-MM-DD` format (from `date +%Y-%m-%d`). Replace `<yesterday>` with the previous day's date in `YYYY-MM-DD` format (from `date -d "yesterday" +%Y-%m-%d`). Replace `<rm>` with the riksmöte value calculated above.
+
+**Use a lookback window** — query from `<yesterday>` to catch late-day publications from the previous day that may have been missed by the last run:
 
 ```
 get_calendar_events({ from: "<today>", tom: "<today>", limit: 50 })
-search_dokument({ from_date: "<today>", limit: 30 })
+search_dokument({ from_date: "<yesterday>", to_date: "<today>", limit: 30 })
 search_voteringar({ rm: "<rm>", limit: 20 })
 search_anforanden({ rm: "<rm>", limit: 20 })
-search_regering({ dateFrom: "<today>", dateTo: "<today>", limit: 30 })
+search_regering({ dateFrom: "<yesterday>", dateTo: "<today>", limit: 30 })
 get_propositioner({ rm: "<rm>", limit: 20 })
 get_betankanden({ rm: "<rm>", limit: 20 })
 ```
+
+### ⚠️ Calendar API Fallback
+
+The Riksdag calendar API (`get_calendar_events`) is known to intermittently return HTML instead of JSON. If the calendar call returns an error, empty results with an `error` field, or HTML content:
+
+1. **Do NOT treat the calendar failure as "no events"** — other data sources may still have significant content.
+2. **Use `search_dokument` as a document-based proxy** to detect recently published committee reports and propositions (these indicate active parliamentary work even when the calendar is unavailable):
+   ```
+   search_dokument({ from_date: "<today>", to_date: "<today>", limit: 50, doktyp: "bet" })
+   search_dokument({ from_date: "<today>", to_date: "<today>", limit: 30, doktyp: "prop" })
+   ```
+   > Note: This does NOT replace the calendar's session-timing data. It provides publication signals as context for whether parliament is active.
+3. **Flag the API error** in any noop message so it can be investigated:
+   ```
+   safeoutputs___noop({ "message": "... calendar (API error: returned HTML instead of JSON) ..." })
+   ```
+4. Continue evaluating all other data sources normally — the calendar is supplementary, not blocking.
 
 ### Significance Assessment — AI-Driven Severity Classification
 
@@ -232,21 +251,24 @@ Apply three-tier severity classification to ALL detected events. This classifica
 **HIGH** (generate breaking article with deep analysis):
 - Close votes (margin ≤ 5 seats) or unexpected vote outcomes
 - Cross-party coalitions forming (parties voting against their usual block)
-- New government propositions on high-priority topics (defense, migration, economy)
-- Major committee reports with significant policy changes
+- New government propositions on high-priority topics (defense, migration, economy, justice, social policy)
+- Major committee reports with significant policy changes (especially those approving government proposals)
 - Government crisis indicators (VU, confidence motion, minister resignation)
 - SOU reports on major policy areas
 - Budget amendments or extraordinary fiscal measures
+- Legislation strengthening criminal law, social services, or national security
 
 **MEDIUM** (generate update article with standard analysis):
-- Regular committee reports (betänkanden)
+- Regular committee reports (betänkanden) rejecting motions
+- Committee reports approving government proposals (even if routine procedure)
+- New government propositions on any policy area
 - Opposition motions on significant policy areas
 - Scheduled debates with notable party positions
 - Ministerial interpellations from multiple parties
 - Cross-party cooperation announcements
 
 **LOW** (skip, use noop):
-- Routine procedural votes
+- Routine procedural votes with no policy substance
 - Standard meetings with no new developments
 - Previously covered topics within last 6 hours (check workflow-state.json)
 - Scheduling announcements without policy substance
@@ -256,17 +278,26 @@ Apply three-tier severity classification to ALL detected events. This classifica
 - +2 if > 3 parties involved
 - +2 if budget/fiscal implications
 - +2 if defense/security policy
+- +2 if criminal justice or social welfare reform
 - +1 if involves named minister
+- +1 if committee report approves (not just rejects) a government proposal
 - -2 if similar topic covered in last 6 hours
 
 Map raw score to tier: **≥ 7 = HIGH** | **4–6 = MEDIUM** | **≤ 3 = LOW**
 
 ### No-Events Early Exit (MOST COMMON OUTCOME)
 
-If no HIGH or MEDIUM events found:
+If no HIGH or MEDIUM events found, substitute actual runtime values into this template:
 ```
-safeoutputs___noop({ "message": "No significant parliamentary events. Checked: votes, debates, questions, documents, calendar, government. Next check in 2-4h." })
+safeoutputs___noop({ "message": "No significant parliamentary events on <today>. Checked: votes (latest <lastVoteDate>), debates, propositions (<propCount> found, max severity=<maxScore>), committee reports (<betCount>), government documents (<govCount>), calendar (<calendarStatus>). No events reached HIGH threshold (≥7). Next check in 2-4h." })
 ```
+Replace each `<placeholder>` with the actual value from your queries:
+- `<today>` — current date (YYYY-MM-DD)
+- `<lastVoteDate>` — datum of most recent vote found
+- `<propCount>`, `<betCount>`, `<govCount>` — number of items returned per source
+- `<maxScore>` — highest severity score assigned to any event
+- `<calendarStatus>` — "ok" or "API error: HTML instead of JSON"
+
 **Stop here.** Parliament is often inactive — noop is the expected outcome.
 
 ## Step 3: Generate Articles Using Purpose-Built Script
@@ -500,6 +531,7 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 |----------|-------|-----|
 | Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL}"` — source and npx MUST be chained with `&&` on one line; expected output: `MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering` |
 | Empty results | No significant events detected in monitoring window | Skip generation with `safeoutputs___noop` |
+| Calendar API error | Riksdag calendar API returns HTML instead of JSON (known intermittent issue) | Use `search_dokument` with date params as fallback; flag error in noop message; do NOT treat as "no events" — evaluate all other sources |
 | Timeout | MCP server response exceeds `timeout-minutes` | Reduce query scope or increase timeout |
 | Script timeout | Generation script exceeds 20-minute limit | Proceed with whatever was generated; the `timeout 1200` wrapper kills the script |
 | Stale data | `hoursSinceSync > 48` from `get_sync_status()` | Add disclaimer noting data staleness; proceed with cached data |
