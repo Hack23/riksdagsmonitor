@@ -4,7 +4,7 @@
 
 /* Dashboard Container */
 .cia-dashboard {
-  max-width: 1400px;
+  max-width: 100%;
   margin: 0 auto;
   padding: var(--spacing-md);
 }
@@ -791,6 +791,7 @@ html[data-theme="dark"] .metrics-grid {
   background: var(--card-bg);
   border: 1px solid var(--card-border, var(--border-color));
   box-shadow: 0 0 12px rgba(0, 204, 102, 0.15);
+  border-radius: var(--border-radius-lg, 12px);
 }
 
 html[data-theme="dark"] .section-heading {
@@ -799,13 +800,20 @@ html[data-theme="dark"] .section-heading {
 }
 
 html[data-theme="dark"] .metric-card {
-  background: linear-gradient(135deg, rgba(0, 204, 102, 0.2) 0%, rgba(0, 187, 119, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(0, 204, 102, 0.15) 0%, rgba(0, 187, 119, 0.15) 100%);
   border: 1px solid rgba(0, 204, 102, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 204, 102, 0.1);
+}
+
+html[data-theme="dark"] .metric-card:hover {
+  border-color: rgba(0, 204, 102, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 204, 102, 0.2);
 }
 
 html[data-theme="dark"] .chart-container {
   background: rgba(0, 26, 26, 0.6);
   border: 1px solid rgba(0, 204, 102, 0.15);
+  border-radius: var(--border-radius, 8px);
 }
 
 html[data-theme="dark"] .risk-alerts {
@@ -821,13 +829,25 @@ html[data-theme="light"] .network-section,
 html[data-theme="light"] .metrics-grid {
   background: var(--card-bg);
   box-shadow: var(--card-shadow-resting);
-  border: 1px solid var(--card-border, #dee2e6);
+  border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  border-radius: var(--border-radius-lg, 12px);
 }
 
 html[data-theme="light"] .chart-container {
   background: var(--bg-color);
+  border-radius: var(--border-radius, 8px);
 }
 
 html[data-theme="light"] .metric-card {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  box-shadow: 0 2px 8px rgba(0, 102, 51, 0.15);
+}
+
+html[data-theme="light"] .metric-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 102, 51, 0.25);
+  transform: translateY(-2px);
+}
+
+html[data-theme="light"] .section-heading {
+  color: var(--primary-color);
 }
