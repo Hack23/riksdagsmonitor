@@ -5,7 +5,7 @@
  * Tests cover:
  * - aiAnalysisPipeline exported singleton (analyzeDocuments, refineAnalysis, validateCompleteness)
  * - runAnalysisPipeline orchestrator (quick, standard, deep depths)
- * - SWOT generation from document classification (prop, bet, mot, sfs, fpm, skr, pressm, ext)
+ * - SWOT generation from document classification (prop, bet, mot, sfs, fpm/eu, skr, pressm, ext, ip)
  * - Policy assessment builder (domains, narrative, confidence)
  * - Watch point generation per document type
  * - Mindmap branch generation
@@ -905,6 +905,33 @@ describe('interpellation document classification', () => {
 
     const parl = result.stakeholderSwot.find(s => s.role === 'parliament')!;
     expect(parl.swot.strengths.some(e => e.sourceDocIds.includes('IP1'))).toBe(true);
+  });
+
+  it('classifies a single interpellation as government threat and parliament/opposition opportunity', async () => {
+    const result = await aiAnalysisPipeline.analyzeDocuments([IP1], {
+      depth: 'quick',
+      lang: 'en',
+      focusTopic: null,
+    });
+
+    const gov = result.stakeholderSwot.find(s => s.role === 'government')!;
+    const parl = result.stakeholderSwot.find(s => s.role === 'parliament')!;
+
+    expect(gov.swot.threats.some(e => e.sourceDocIds.includes('IP1'))).toBe(true);
+    expect(parl.swot.opportunities.some(e => e.sourceDocIds.includes('IP1'))).toBe(true);
+  });
+
+  it('classifies two interpellations with one in government weaknesses and one in government threats', async () => {
+    const result = await aiAnalysisPipeline.analyzeDocuments([IP1, IP2], {
+      depth: 'quick',
+      lang: 'en',
+      focusTopic: null,
+    });
+
+    const gov = result.stakeholderSwot.find(s => s.role === 'government')!;
+
+    expect(gov.swot.weaknesses.some(e => e.sourceDocIds.includes('IP1'))).toBe(true);
+    expect(gov.swot.threats.some(e => e.sourceDocIds.includes('IP2'))).toBe(true);
   });
 
   it('generates interpellation watch points', async () => {

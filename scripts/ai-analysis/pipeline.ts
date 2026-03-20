@@ -1293,6 +1293,12 @@ async function analyzeDocuments(
   const pressmDocs  = docs.filter(d => docType(d) === 'pressm');
   const extDocs     = docs.filter(d => docType(d) === 'ext');
   const ipDocs      = docs.filter(d => docType(d) === 'ip');
+  let govThreatIpDocs = ipDocs.slice(2, 4);
+  let oppOpportunityIpDocs = ipDocs.slice(2, 3);
+  if (ipDocs.length < 3) {
+    govThreatIpDocs = ipDocs.length === 2 ? ipDocs.slice(1, 2) : ipDocs.slice(0, 1);
+    oppOpportunityIpDocs = ipDocs.slice(0, 1);
+  }
 
   // ── Government stakeholder SWOT ─────────────────────────────────────────────
   const govStrengths: AnalysisSwotEntry[] = [
@@ -1313,7 +1319,7 @@ async function analyzeDocuments(
   const govThreats: AnalysisSwotEntry[] = [
     ...motDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, 200)),
     // Interpellations represent direct opposition pressure on government
-    ...ipDocs.slice(2, 4).map(d => buildEnrichedEntry(d, topic, lang, 200)),
+    ...govThreatIpDocs.map(d => buildEnrichedEntry(d, topic, lang, 200)),
   ];
 
   if (govStrengths.length === 0)    govStrengths.push(placeholderEntry('government', 'strengths', topic, lang, domains));
@@ -1331,7 +1337,7 @@ async function analyzeDocuments(
   const oppWeaknesses: AnalysisSwotEntry[] = [];
   const oppOpportunities: AnalysisSwotEntry[] = [
     // Interpellations create debate opportunities for opposition
-    ...ipDocs.slice(2, 3).map(d => buildEnrichedEntry(d, topic, lang, 200)),
+    ...oppOpportunityIpDocs.map(d => buildEnrichedEntry(d, topic, lang, 200)),
   ];
   const oppThreats: AnalysisSwotEntry[] = [
     ...propDocs.slice(0, 1).map(d => buildEnrichedEntry(d, topic, lang, 200)),
