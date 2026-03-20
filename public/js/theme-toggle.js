@@ -77,8 +77,13 @@
   function toggle() {
     const current = document.documentElement.getAttribute('data-theme') || LIGHT;
     const next    = current === DARK ? LIGHT : DARK;
+    document.documentElement.classList.add('theme-transition');
     applyTheme(next);
     updateButton(next);
+    // Remove transition class after animations complete
+    setTimeout(function () {
+      document.documentElement.classList.remove('theme-transition');
+    }, 350);
   }
 
   /* ── Boot ─────────────────────────────────────────────────────────────── */

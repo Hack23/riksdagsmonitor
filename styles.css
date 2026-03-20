@@ -602,15 +602,12 @@ html {
 
 /* Smooth theme transitions when toggling light/dark mode */
 @media (prefers-reduced-motion: no-preference) {
-  html[data-theme] .card,
-  html[data-theme] .breadcrumb,
-  html[data-theme] .btn {
-    transition: background-color 0.3s ease,
-                background 0.3s ease,
-                color 0.3s ease,
-                border-color 0.3s ease,
-                box-shadow 0.3s ease,
-                transform 0.3s ease;
+  html.theme-transition[data-theme] .card,
+  html.theme-transition[data-theme] .breadcrumb,
+  html.theme-transition[data-theme] .btn {
+    transition-property: background-color, background, color, border-color, box-shadow;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
   }
 }
 
@@ -620,7 +617,7 @@ body {
   color: var(--text-color);
   background-color: var(--bg-color);
   max-width: 100%;
-  margin: 0 auto;
+  margin: 0;
   padding: var(--spacing-md) var(--spacing-xl);
   position: relative;
   overflow-x: hidden;

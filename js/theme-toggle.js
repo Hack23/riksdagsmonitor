@@ -67,11 +67,16 @@
 
   button.addEventListener('click', function () {
     currentTheme = currentTheme === DARK ? LIGHT : DARK;
+    document.documentElement.classList.add('theme-transition');
     applyTheme(currentTheme, button);
     try {
       window.localStorage.setItem(STORAGE_KEY, currentTheme);
     } catch (_e) {
       // Ignore storage errors
     }
+    // Remove transition class after animations complete
+    setTimeout(function () {
+      document.documentElement.classList.remove('theme-transition');
+    }, 350);
   });
 }());
