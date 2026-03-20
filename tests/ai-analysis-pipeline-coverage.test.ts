@@ -1,7 +1,7 @@
 /**
  * Comprehensive tests for scripts/ai-analysis/pipeline.ts
  *
- * This module is the core AI-first analysis pipeline with 5.35% coverage.
+ * Pre-PR baseline: 5.35% coverage (29/542 stmts). Target: ≥80%.
  * Tests cover:
  * - aiAnalysisPipeline exported singleton (analyzeDocuments, refineAnalysis, validateCompleteness)
  * - runAnalysisPipeline orchestrator (quick, standard, deep depths)

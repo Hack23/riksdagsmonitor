@@ -1305,7 +1305,10 @@ class TitleGenerator:
         """Process all language versions of an article.
         
         Generates content-based title, description, keywords, tags, and
-        article:section from the English version, then applies to all languages.
+        article:section from the English version. In english_only mode (default),
+        only the English article is updated; non-English localized articles retain
+        their original metadata. When english_only is disabled, metadata is
+        translated and applied to all language variants.
         """
         
         # Parse base filename (e.g., "2026-02-18-committee-reports")
@@ -1400,10 +1403,9 @@ class TitleGenerator:
                     'description': lang_description
                 }
                 
-                # Update article with translated metadata
+                # Update article with translated metadata (skip English article_section for non-English)
                 if self.update_article_metadata(lang_file, lang_title, lang_description, dry_run,
-                                                keywords=lang_keywords, tags=lang_tags,
-                                                article_section=article_section):
+                                                keywords=lang_keywords, tags=lang_tags):
                     updated_count += 1
         
         return updated_count
