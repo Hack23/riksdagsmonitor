@@ -19,7 +19,7 @@
       },
       "issueCount": 1
     },
-    "timestamp": "2026-03-20T07:27:52.831Z"
+    "timestamp": "2026-03-20T07:32:48.486Z"
   },
   "2026-03-20-opposition-motions-no.html": {
     "filename": "2026-03-20-opposition-motions-no.html",
@@ -41,7 +41,7 @@
       },
       "issueCount": 1
     },
-    "timestamp": "2026-03-20T07:27:52.870Z"
+    "timestamp": "2026-03-20T07:32:48.515Z"
   },
   "2026-03-20-opposition-motions-fi.html": {
     "filename": "2026-03-20-opposition-motions-fi.html",
@@ -63,7 +63,7 @@
       },
       "issueCount": 1
     },
-    "timestamp": "2026-03-20T07:27:52.896Z"
+    "timestamp": "2026-03-20T07:32:48.542Z"
   },
   "2026-03-20-opposition-motions-de.html": {
     "filename": "2026-03-20-opposition-motions-de.html",
@@ -85,7 +85,7 @@
       },
       "issueCount": 1
     },
-    "timestamp": "2026-03-20T07:27:52.915Z"
+    "timestamp": "2026-03-20T07:32:48.561Z"
   },
   "2026-03-20-opposition-motions-fr.html": {
     "filename": "2026-03-20-opposition-motions-fr.html",
@@ -107,7 +107,7 @@
       },
       "issueCount": 1
     },
-    "timestamp": "2026-03-20T07:27:52.933Z"
+    "timestamp": "2026-03-20T07:32:48.579Z"
   },
   "2026-03-20-opposition-motions-es.html": {
     "filename": "2026-03-20-opposition-motions-es.html",
@@ -123,13 +123,13 @@
         "factualAccuracy": 100,
         "stakeholderCoverage": 83,
         "analyticalDepth": 12,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
+        "editorialConsistency": 100,
+        "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-20T07:27:52.957Z"
+    "timestamp": "2026-03-20T07:32:48.602Z"
   },
   "2026-03-20-opposition-motions-nl.html": {
     "filename": "2026-03-20-opposition-motions-nl.html",
@@ -151,7 +151,7 @@
       },
       "issueCount": 1
     },
-    "timestamp": "2026-03-20T07:27:52.976Z"
+    "timestamp": "2026-03-20T07:32:48.620Z"
   },
   "2026-03-20-opposition-motions-ar.html": {
     "filename": "2026-03-20-opposition-motions-ar.html",
@@ -173,7 +173,7 @@
       },
       "issueCount": 1
     },
-    "timestamp": "2026-03-20T07:27:52.993Z"
+    "timestamp": "2026-03-20T07:32:48.638Z"
   },
   "2026-03-20-opposition-motions-he.html": {
     "filename": "2026-03-20-opposition-motions-he.html",
@@ -195,7 +195,7 @@
       },
       "issueCount": 1
     },
-    "timestamp": "2026-03-20T07:27:53.017Z"
+    "timestamp": "2026-03-20T07:32:48.661Z"
   },
   "2026-03-20-opposition-motions-ja.html": {
     "filename": "2026-03-20-opposition-motions-ja.html",
@@ -217,7 +217,7 @@
       },
       "issueCount": 1
     },
-    "timestamp": "2026-03-20T07:27:53.041Z"
+    "timestamp": "2026-03-20T07:32:48.684Z"
   },
   "2026-03-20-opposition-motions-ko.html": {
     "filename": "2026-03-20-opposition-motions-ko.html",
@@ -239,7 +239,7 @@
       },
       "issueCount": 1
     },
-    "timestamp": "2026-03-20T07:27:53.066Z"
+    "timestamp": "2026-03-20T07:32:48.708Z"
   },
   "2026-03-20-opposition-motions-zh.html": {
     "filename": "2026-03-20-opposition-motions-zh.html",
@@ -259,8 +259,8 @@
         "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-20T07:27:53.083Z"
+    "timestamp": "2026-03-20T07:32:48.724Z"
   }
 }
