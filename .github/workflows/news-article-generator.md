@@ -270,7 +270,7 @@ STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm
 
 Parse sync status: if data is stale (> 48 hours since last sync), add disclaimer. Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc queries, use `scripts/mcp-query-cli.ts` — NEVER implement custom MCP client code (PROHIBITION).
 
-Tools with date params: `get_calendar_events` (from/tom — **⚠️ may return HTML instead of JSON; use `search_dokument` as fallback**), `search_dokument` (from_date/to_date), `search_regering` (dateFrom/dateTo). Other tools (`search_voteringar`, `get_betankanden`, `get_motioner`, `get_propositioner`, `search_anforanden`) require post-query filter by datum.
+Tools with date params: `get_calendar_events` (from/tom — **authoritative for scheduled/forward-looking events; may sometimes return HTML instead of JSON — if this happens, treat it as a calendar data error, NOT as "no events"**), `search_dokument` (from_date/to_date — **only use as a recent-activity proxy for retrospective/near‑real‑time monitoring when calendar data is temporarily unusable; NEVER substitute it for week/month‑ahead or debate schedule data**), `search_regering` (dateFrom/dateTo). Other tools (`search_voteringar`, `get_betankanden`, `get_motioner`, `get_propositioner`, `search_anforanden`) require post-query filter by datum.
 
 ## Step 2: Determine Article Types & Languages
 

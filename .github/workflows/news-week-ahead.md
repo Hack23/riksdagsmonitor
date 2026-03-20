@@ -259,7 +259,7 @@ This triggers the dedicated `news-translate` workflow which generates high-quali
 
 **ALWAYS call `get_sync_status()` FIRST.**
 
-**Primary tool:** `get_calendar_events` — fetches upcoming 7-day calendar (**⚠️ Known issue: may return HTML instead of JSON — use `search_dokument` as fallback**)
+**Primary tool:** `get_calendar_events` — fetches upcoming 7-day calendar (**⚠️ Known issue: may return HTML instead of JSON; if this happens, treat it as a calendar retrieval failure and state that explicitly in the analysis. You may query `search_dokument` with a recent lookback window only as a proxy signal of parliamentary activity (e.g., recently published committee reports/propositions), but must never treat "no documents found" as "no upcoming events."**)
 **Cross-reference:** `search_dokument`, `get_fragor`, `get_interpellationer`
 **Statistical enrichment:** SCB/World Bank — for scheduled economic debates, pre-fetch relevant indicators. Use committee-mapped tables from `scripts/scb-context.ts` based on which committees have scheduled meetings (e.g., FiU agenda→fiscal TAB1291 + World Bank GDP/inflation indicators).
 
@@ -269,8 +269,11 @@ get_sync_status({})
 const today = new Date().toISOString().split('T')[0];
 const nextWeek = new Date(Date.now() + 7*86400000).toISOString().split('T')[0];
 get_calendar_events({ from: today, tom: nextWeek, limit: 100 })
-// If calendar API returns error/HTML, use search_dokument as fallback:
-// search_dokument({ from_date: today, to_date: nextWeek, limit: 50 })
+// If calendar API returns error/HTML:
+// 1. Flag explicitly: "Calendar data unavailable (API returned HTML instead of JSON)"
+// 2. Optional proxy signal only — query recently published documents (lookback, NOT forward):
+//    search_dokument({ from_date: yesterday, to_date: today, limit: 50, doktyp: "bet" })
+// 3. NEVER treat "no documents found" as "no upcoming events"
 ```
 
 ## Generation Steps
