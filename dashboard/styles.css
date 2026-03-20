@@ -808,6 +808,7 @@ html[data-theme="dark"] .metric-card {
 html[data-theme="dark"] .metric-card:hover {
   border-color: rgba(0, 204, 102, 0.5);
   box-shadow: 0 4px 16px rgba(0, 204, 102, 0.2);
+  transform: translateY(-2px);
 }
 
 html[data-theme="dark"] .chart-container {

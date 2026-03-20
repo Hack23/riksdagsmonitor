@@ -607,7 +607,7 @@ body {
   background-color: var(--bg-color);
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 var(--spacing-xl);
+  padding: var(--spacing-md) var(--spacing-xl);
   position: relative;
   overflow-x: hidden;
   font-size: 16px;
@@ -1646,7 +1646,8 @@ html[data-theme="dark"] .article-site-logo {
 @supports (display: grid) {
   .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 480px));
+    justify-content: center;
   }
   
   .cards > * {
@@ -3199,7 +3200,7 @@ footer {
 /* Value Metrics Display */
 .value-metrics {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 420px));
   gap: var(--spacing-lg);
   margin: 2rem auto;
   justify-content: center;
