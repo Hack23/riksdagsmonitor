@@ -398,9 +398,8 @@ describe('Theme Toggle', () => {
       // Second rapid toggle — clears the first timer
       document.documentElement.classList.add('theme-transition');
       if (timer) { clearTimeout(timer); }
-      timer = setTimeout(function () {
+      setTimeout(function () {
         document.documentElement.classList.remove('theme-transition');
-        timer = null;
       }, 350);
 
       // After 350ms from second toggle, class should be removed
