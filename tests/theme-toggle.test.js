@@ -350,6 +350,13 @@ describe('Theme Toggle', () => {
   // ── theme-transition class (add/remove on toggle) ────────────────────────────
 
   describe('theme-transition class', () => {
+    afterEach(() => {
+      vi.runOnlyPendingTimers();
+      vi.clearAllTimers();
+      vi.useRealTimers();
+      document.documentElement.classList.remove('theme-transition');
+    });
+
     function createToggleHandler() {
       let transitionTimer = null;
       return function toggle() {
@@ -367,6 +374,7 @@ describe('Theme Toggle', () => {
     }
 
     it('adds theme-transition class on toggle', () => {
+      vi.useFakeTimers();
       buildButton();
       applyTheme('light', false, storage);
       const toggle = createToggleHandler();
@@ -386,7 +394,6 @@ describe('Theme Toggle', () => {
       expect(document.documentElement.classList.contains('theme-transition')).toBe(true);
       vi.advanceTimersByTime(350);
       expect(document.documentElement.classList.contains('theme-transition')).toBe(false);
-      vi.useRealTimers();
     });
 
     it('handles rapid toggles without premature class removal', () => {
@@ -410,7 +417,6 @@ describe('Theme Toggle', () => {
       // After 350ms from second toggle, class should be removed
       vi.advanceTimersByTime(100);
       expect(document.documentElement.classList.contains('theme-transition')).toBe(false);
-      vi.useRealTimers();
     });
   });
 
