@@ -346,8 +346,8 @@ class TitleGenerator:
                 # Skip titles that are proposition/motion references
                 if re.match(r'^prop\.?\s+\d', title_lower) or re.match(r'^mot\.?\s+\d', title_lower):
                     continue
-                # Skip titles that look like reference numbers
-                if re.match(r'^[A-Z]+\d+', title):
+                # Skip titles that look like reference numbers (e.g., HD023959, SoU20)
+                if re.match(r'^[a-z]+\d+', title_lower):
                     continue
                 words = []
                 
@@ -759,9 +759,10 @@ class TitleGenerator:
             )
             
             # 7. Update Schema.org NewsArticle headline
-            # Use ensure_ascii=False to preserve Unicode (ä, ö, ü, etc.) and
-            # avoid \uXXXX escapes that conflict with regex backreference parsing.
-            safe_title = json.dumps(new_title, ensure_ascii=False)[1:-1]
+            # Use ensure_ascii=False to preserve Unicode (ä, ö, ü, etc.).
+            # Use lambda replacements to avoid regex replacement string interpretation
+            # issues with backreferences (\1) and escape sequences (\uXXXX).
+            safe_title = json.dumps(new_title, ensure_ascii=False).strip('"')
             content = re.sub(
                 r'"headline":\s*"[^"]*"',
                 lambda m: f'"headline": "{safe_title}"',
@@ -770,7 +771,7 @@ class TitleGenerator:
             )
             
             # 8. Update Schema.org alternativeHeadline
-            safe_description = json.dumps(new_description, ensure_ascii=False)[1:-1]
+            safe_description = json.dumps(new_description, ensure_ascii=False).strip('"')
             content = re.sub(
                 r'"alternativeHeadline":\s*"[^"]*"',
                 lambda m: f'"alternativeHeadline": "{safe_description}"',
@@ -813,7 +814,7 @@ class TitleGenerator:
                     count=1
                 )
                 # Also update JSON-LD keywords
-                safe_kw = json.dumps(keywords_str, ensure_ascii=False)[1:-1]
+                safe_kw = json.dumps(keywords_str, ensure_ascii=False).strip('"')
                 content = re.sub(
                     r'"keywords":\s*"[^"]*"',
                     lambda m: f'"keywords": "{safe_kw}"',
@@ -830,7 +831,7 @@ class TitleGenerator:
                     count=1
                 )
                 # Also update JSON-LD articleSection
-                safe_sec = json.dumps(article_section, ensure_ascii=False)[1:-1]
+                safe_sec = json.dumps(article_section, ensure_ascii=False).strip('"')
                 content = re.sub(
                     r'"articleSection":\s*"[^"]*"',
                     lambda m: f'"articleSection": "{safe_sec}"',
@@ -866,10 +867,11 @@ class TitleGenerator:
                 )
                 # Also update JSON-LD mentions array
                 if tags:
-                    mentions_json = ','.join(
-                        f'\n      {{"@type": "Thing", "name": "{json.dumps(t, ensure_ascii=False)[1:-1]}"}}'
-                        for t in tags[:8]
-                    )
+                    tag_entries = []
+                    for t in tags[:8]:
+                        escaped_name = json.dumps(t, ensure_ascii=False).strip('"')
+                        tag_entries.append(f'\n      {{"@type": "Thing", "name": "{escaped_name}"}}')
+                    mentions_json = ','.join(tag_entries)
                     replacement = f'"mentions": [{mentions_json}\n    ]'
                     # Replace existing mentions array (use lambda to avoid escape issues)
                     content = re.sub(
