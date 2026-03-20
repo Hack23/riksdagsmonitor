@@ -40,43 +40,128 @@ class TitleGenerator:
     ARTICLE_TYPES = {
         'committee-reports': {
             'en': 'Committee Reports',
+            'section': 'Committee Reports',
             'format': '{themes} Dominate Committee Agenda'
         },
         'government-propositions': {
             'en': 'Government Propositions',
+            'section': 'Government Propositions',
             'format': '{themes} Lead Government Legislative Push'
         },
         'opposition-motions': {
             'en': 'Opposition Motions',
+            'section': 'Opposition Motions',
             'format': 'Opposition {action} on {themes}'
+        },
+        'week-ahead': {
+            'en': 'Week Ahead',
+            'section': 'The Week Ahead',
+            'format': '{themes} Headline Parliamentary Week Ahead'
+        },
+        'interpellation-debates': {
+            'en': 'Interpellation Debates',
+            'section': 'Interpellation Debates',
+            'format': '{themes} Under Fire in Interpellation Debates'
         }
     }
     
-    # Common policy keywords to extract
+    # Common policy keywords to extract (ordered: longer phrases first to avoid partial matching)
     POLICY_KEYWORDS = [
+        # Energy & Nuclear
+        'nuclear energy', 'nuclear power', 'offshore wind', 'renewable energy',
+        'radiation protection', 'kärnkraft', 'energy policy',
+        
         # Security & Law Enforcement
-        'weapons', 'border', 'security', 'defense', 'detention', 'cash controls',
-        'schengen', 'customs', 'enforcement', 'civil liberties',
+        'honor violence', 'honour violence', 'domestic violence', 'criminal justice',
+        'criminal recidivism', 'weapons', 'border', 'security', 'defense', 'detention',
+        'cash controls', 'schengen', 'customs', 'enforcement', 'civil liberties',
         
         # Financial & Economic
         'tax', 'vat', 'fraud', 'financial', 'audit', 'crisis management',
-        'transparency', 'ownership', 'beneficial ownership',
+        'transparency', 'ownership', 'beneficial ownership', 'budget',
         
         # Social Welfare
-        'housing', 'welfare', 'parental', 'parental benefit', 'benefit', 
-        'pension', 'elderly care', 'employment', 'labor',
+        'elderly care', 'elder care', 'social services', 'housing', 'welfare',
+        'parental benefit', 'parental', 'pension', 'employment', 'labor',
         
         # Government & Administration
         'data protection', 'privacy', 'registry', 'cooperative',
         'appropriations', 'supplementary', 'government personnel',
         
-        # Sector-Specific
-        'education', 'health', 'trade', 'animal', 'animal protection',
-        'road traffic', 'vehicle', 'renewable energy', 'macroprudential',
+        # Justice & Rights
+        'sami', 'indigenous rights', 'hunting regulation', 'immigration',
+        'migration', 'asylum', 'integration',
         
-        # Language variations
+        # Health
+        'healthcare', 'health', 'rare diseases', 'patient safety',
+        
+        # Infrastructure & Transport
+        'infrastructure', 'transport', 'road traffic', 'vehicle', 'aviation',
+        'railway', 'air link',
+        
+        # Education & Culture
+        'education', 'schools', 'university', 'cultural affairs', 'culture',
+        
+        # Sector-Specific
+        'trade', 'industry', 'animal protection', 'animal', 'agriculture',
+        'macroprudential', 'rural policy', 'rural',
+        
+        # EU & International
+        'eu council', 'european union', 'eu directive', 'international',
+        
+        # Language & Integration
         'language requirement', 'language'
     ]
+    
+    # Committee names for extraction
+    COMMITTEE_NAMES = {
+        'social affairs': 'Social Affairs',
+        'taxation': 'Taxation',
+        'finance': 'Finance',
+        'cultural affairs': 'Cultural Affairs',
+        'social insurance': 'Social Insurance',
+        'justice': 'Justice',
+        'constitution': 'Constitution',
+        'defence': 'Defence',
+        'industry and trades': 'Industry and Trades',
+        'industry and trade': 'Industry and Trade',
+        'civil affairs': 'Civil Affairs',
+        'education': 'Education',
+        'environment': 'Environment',
+        'foreign affairs': 'Foreign Affairs',
+        'health and welfare': 'Health and Welfare',
+        'labour market': 'Labour Market',
+        'transport': 'Transport',
+    }
+    
+    # Swedish department names for extraction
+    DEPARTMENT_NAMES = {
+        'justitiedepartementet': 'Justice',
+        'socialdepartementet': 'Social Affairs',
+        'finansdepartementet': 'Finance',
+        'utbildningsdepartementet': 'Education',
+        'försvarsdepartementet': 'Defence',
+        'utrikesdepartementet': 'Foreign Affairs',
+        'näringsdepartementet': 'Industry',
+        'kulturdepartementet': 'Culture',
+        'miljödepartementet': 'Environment',
+        'arbetsmarknadsdepartementet': 'Labour Market',
+        'landsbygds- och infrastrukturdepartementet': 'Rural & Infrastructure',
+        'klimat- och näringslivsdepartementet': 'Climate & Business',
+        'energi- och näringslivsdepartementet': 'Energy & Business',
+    }
+    
+    # Swedish party abbreviations
+    PARTY_NAMES = {
+        '(S)': 'Social Democrats',
+        '(M)': 'Moderates',
+        '(SD)': 'Sweden Democrats',
+        '(C)': 'Centre Party',
+        '(V)': 'Left Party',
+        '(KD)': 'Christian Democrats',
+        '(L)': 'Liberals',
+        '(MP)': 'Green Party',
+    }
     
     def __init__(self, news_dir: str = None):
         """Initialize TitleGenerator with news directory path.
@@ -93,21 +178,43 @@ class TitleGenerator:
         self.english_only: bool = True  # Safe default: only update English articles
     
     def extract_document_titles(self, html_content: str) -> List[str]:
-        """Extract all h3 document titles from article"""
+        """Extract all h3 document titles from article.
+        
+        Filters out generic structural h3s (analysis sections, footer headings)
+        and retains content-specific h3s (committee names, policy areas, departments).
+        """
         # Find all h3 tags (document titles)
         h3_pattern = r'<h3>(.*?)</h3>'
         matches = re.findall(h3_pattern, html_content, re.IGNORECASE)
         
-        # Filter out non-document h3s (like "Sources and Data")
+        # Filter out generic structural h3s
         filtered = []
-        exclude = ['sources and data', 'watch list', 'political context', 
-                   'assessment', 'key takeaways', 'källor och data', 'key points',
-                   'data sources and references']
+        exclude = [
+            'sources and data', 'watch list', 'political context',
+            'key takeaways', 'källor och data', 'key points',
+            'data sources and references', 'what happened',
+            'timeline', 'why this matters', 'winners', 'losers',
+            'political impact', 'actions', 'consequences',
+            'critical assessment', 'pestle analysis',
+            'stakeholder impact', 'risk assessment',
+            'implementation assessment', 'multiple perspectives',
+            'about riksdagsmonitor', 'quick links',
+            'built by hack23', 'languages', 'why this week matters',
+            'key actors', 'ministerial accountability',
+        ]
         
         for match in matches:
-            title_lower = match.lower()
-            if not any(excl in title_lower for excl in exclude):
-                filtered.append(match.strip())
+            # Strip inner HTML tags (e.g., <span lang="sv">text</span>)
+            clean = re.sub(r'<[^>]+>', '', match).strip()
+            clean = html.unescape(clean)
+            title_lower = clean.lower()
+            # Skip generic headings
+            if any(excl in title_lower for excl in exclude):
+                continue
+            # Skip very short generic headings
+            if len(title_lower) < 3:
+                continue
+            filtered.append(clean)
         
         return filtered
     
@@ -131,7 +238,17 @@ class TitleGenerator:
             count_patterns = [
                 (r'\b[Ss]ix\s+propositions?\b', 6),  # Match "Six propositions"
                 (r'\b(\d+)\s+propositions?\s+submitted', 'digit'),
-                (r'<strong>(\d+)\s+(?:government\s+)?propositions?</strong>', 'digit')
+                (r'<strong>(\d+)\s+(?:government\s+)?propositions?</strong>', 'digit'),
+                (r'\b(\d+)\s+(?:new\s+)?propositions?\b', 'digit')
+            ]
+        elif 'interpellation-debates' in article_type:
+            count_patterns = [
+                (r'\b(\d+)\s+interpellations?\b', 'digit'),
+            ]
+        elif 'week-ahead' in article_type:
+            count_patterns = [
+                (r'\b(\d+)\s+(?:scheduled\s+)?events?\b', 'digit'),
+                (r'\b(\d+)\s+(?:committee\s+)?meetings?\b', 'digit'),
             ]
         else:
             return 0
@@ -155,28 +272,59 @@ class TitleGenerator:
         return 0
     
     def extract_policy_themes(self, document_titles: List[str], max_themes: int = 3) -> List[str]:
-        """Extract top policy themes from document titles"""
+        """Extract top policy themes from document titles.
+        
+        Checks against POLICY_KEYWORDS, COMMITTEE_NAMES, and DEPARTMENT_NAMES
+        to find the most relevant themes. Uses English translations for
+        Swedish terms.
+        """
         if not document_titles:
             return []
         
         # Extract keywords from titles
         themes = []
-        matched_keywords = set()  # Track which keywords we've already used
+        matched_keywords = set()
         
         for title in document_titles:
-            title_lower = title.lower()
+            # Strip HTML tags and entities from title
+            clean_title = re.sub(r'<[^>]+>', '', title)
+            clean_title = html.unescape(clean_title)
+            title_lower = clean_title.lower()
             
-            # Try to find keyword matches
+            # Check department names first (translate to English)
+            dept_matched = False
+            for dept_key, dept_name in self.DEPARTMENT_NAMES.items():
+                if dept_key in title_lower and dept_name not in themes:
+                    themes.append(dept_name)
+                    matched_keywords.add(dept_key)
+                    dept_matched = True
+                    break
+            if dept_matched:
+                continue
+            
+            # Check committee names
+            committee_matched = False
+            for comm_key, comm_name in self.COMMITTEE_NAMES.items():
+                if f'committee on {comm_key}' in title_lower or f'committee on the {comm_key}' in title_lower:
+                    if comm_name not in themes:
+                        themes.append(comm_name)
+                        matched_keywords.add(comm_key)
+                        committee_matched = True
+                    break
+            if committee_matched:
+                continue
+            
+            # Try to find policy keyword matches
             for keyword in self.POLICY_KEYWORDS:
                 if keyword in title_lower and keyword not in matched_keywords:
-                    # Capitalize first letter of each word
                     theme = ' '.join(word.capitalize() for word in keyword.split())
-                    # Fix special cases
                     if theme == 'Vat':
                         theme = 'VAT'
+                    elif theme == 'Eu Council':
+                        theme = 'EU Council'
                     themes.append(theme)
                     matched_keywords.add(keyword)
-                    break  # Only one keyword per title to avoid over-counting
+                    break
         
         # Count frequency and get top themes
         theme_counts = Counter(themes)
@@ -193,8 +341,14 @@ class TitleGenerator:
                 if any(kw in title_lower for kw in matched_keywords):
                     continue
                 
-                # Extract meaningful phrases (avoid generic words)
+                # Extract meaningful phrases (avoid generic words and document refs)
                 skip_words = {'the', 'a', 'an', 'of', 'for', 'on', 'in', 'at', 'to', 'and', 'or'}
+                # Skip titles that are proposition/motion references
+                if re.match(r'^prop\.?\s+\d', title_lower) or re.match(r'^mot\.?\s+\d', title_lower):
+                    continue
+                # Skip titles that look like reference numbers
+                if re.match(r'^[A-Z]+\d+', title):
+                    continue
                 words = []
                 
                 for word in title.split()[:4]:  # Look at first 4 words
@@ -214,10 +368,66 @@ class TitleGenerator:
         return top_themes[:max_themes]
     
     def generate_title(self, article_type: str, document_titles: List[str], 
-                      date: str, lang: str = 'en') -> str:
-        """Generate unique, SEO-optimized title"""
+                      date: str, lang: str = 'en',
+                      html_content: str = '') -> str:
+        """Generate unique, SEO-optimized title.
+        
+        Uses document titles for theme extraction. Falls back to scanning
+        html_content body for themes when no document titles are available.
+        """
         
         themes = self.extract_policy_themes(document_titles, max_themes=3)
+        
+        # Determine if themes are good quality (English, no reference numbers)
+        def is_good_theme(t: str) -> bool:
+            """Check if a theme is suitable for English article titles."""
+            # Reject proposition/motion reference numbers
+            if re.match(r'^(Prop|Mot|HD)\b', t):
+                return False
+            # Reject very short unclear themes
+            if len(t) < 3:
+                return False
+            return True
+        
+        good_themes = [t for t in themes if is_good_theme(t)]
+        
+        # If insufficient good themes from h3 titles, augment from body content
+        if len(good_themes) < 2 and html_content:
+            body_lower = html_content.lower()
+            seen = {t.lower() for t in good_themes}
+            # Check committee names in body
+            for pattern, name in self.COMMITTEE_NAMES.items():
+                if (f'committee on {pattern}' in body_lower or
+                    f'committee on the {pattern}' in body_lower):
+                    if name.lower() not in seen:
+                        good_themes.append(name)
+                        seen.add(name.lower())
+                    if len(good_themes) >= 3:
+                        break
+            # Check department names in body
+            if len(good_themes) < 3:
+                for pattern, name in self.DEPARTMENT_NAMES.items():
+                    if pattern in body_lower and name.lower() not in seen:
+                        good_themes.append(name)
+                        seen.add(name.lower())
+                    if len(good_themes) >= 3:
+                        break
+            # Check policy keywords in body
+            if len(good_themes) < 3:
+                for keyword in self.POLICY_KEYWORDS:
+                    if keyword in body_lower:
+                        theme = ' '.join(w.capitalize() for w in keyword.split())
+                        if theme == 'Vat':
+                            theme = 'VAT'
+                        elif theme == 'Eu Council':
+                            theme = 'EU Council'
+                        if theme.lower() not in seen:
+                            good_themes.append(theme)
+                            seen.add(theme.lower())
+                    if len(good_themes) >= 3:
+                        break
+        
+        themes = good_themes
         
         if not themes:
             # Fallback to date-based unique title
@@ -253,6 +463,20 @@ class TitleGenerator:
             else:
                 title = f"Opposition Challenges Government on {themes[0]}"
         
+        elif article_type == 'week-ahead':
+            # Format: "{Theme1} and {Theme2} Headline Parliamentary Week Ahead"
+            if len(themes) >= 2:
+                title = f"{themes[0]} and {themes[1]} Headline Week Ahead"
+            else:
+                title = f"{themes[0]} Headlines Parliamentary Week"
+        
+        elif article_type == 'interpellation-debates':
+            # Format: "{Theme1} and {Theme2} Under Fire in Interpellations"
+            if len(themes) >= 2:
+                title = f"{themes[0]} and {themes[1]} Under Fire in Interpellations"
+            else:
+                title = f"{themes[0]} Under Scrutiny in Interpellation Debates"
+        
         else:
             # Generic fallback
             if len(themes) >= 2:
@@ -281,10 +505,31 @@ class TitleGenerator:
         return title
     
     def generate_description(self, document_titles: List[str], 
-                            article_type: str, count: int) -> str:
-        """Generate SEO-optimized description (150-160 characters)"""
+                            article_type: str, count: int,
+                            html_content: str = '') -> str:
+        """Generate SEO-optimized description (150-160 characters).
+        
+        Falls back to scanning html_content when no themes found from titles.
+        """
         
         themes = self.extract_policy_themes(document_titles, max_themes=4)
+        
+        # If no themes from titles, extract from body content
+        if not themes and html_content:
+            body_lower = html_content.lower()
+            for pattern, name in self.COMMITTEE_NAMES.items():
+                if (f'committee on {pattern}' in body_lower or
+                    f'committee on the {pattern}' in body_lower):
+                    if name not in themes:
+                        themes.append(name)
+                    if len(themes) >= 4:
+                        break
+            if len(themes) < 4:
+                for pattern, name in self.DEPARTMENT_NAMES.items():
+                    if pattern in body_lower and name not in themes:
+                        themes.append(name)
+                    if len(themes) >= 4:
+                        break
         
         if not themes:
             # Fallback description
@@ -299,8 +544,12 @@ class TitleGenerator:
         
         type_name = self.ARTICLE_TYPES[article_type]['en'].lower()
         
-        # Generate description
-        desc = f"Analysis of {count} {type_name} covering {theme_list.lower()}"
+        # Generate description based on article type
+        if article_type == 'week-ahead':
+            # Week-ahead doesn't have a "count" of documents — describe the parliamentary agenda
+            desc = f"Riksdag parliamentary agenda covering {theme_list.lower()} committee meetings and debates"
+        else:
+            desc = f"Analysis of {count} {type_name} covering {theme_list.lower()}"
         
         # Add context based on article type
         if article_type == 'committee-reports':
@@ -309,6 +558,10 @@ class TitleGenerator:
             desc += " shaping legislative agenda"
         elif article_type == 'opposition-motions':
             desc += " challenging government policy"
+        elif article_type == 'week-ahead':
+            desc += " for the coming week"
+        elif article_type == 'interpellation-debates':
+            desc += " holding ministers to account"
         
         # Truncate if too long (160 char max)
         if len(desc) > 160:
@@ -316,8 +569,134 @@ class TitleGenerator:
         
         return desc
     
+    def extract_content_keywords(self, html_content: str, article_type: str) -> List[str]:
+        """Extract content-specific keywords from article body text.
+        
+        Scans the full article HTML for policy topics, committee names,
+        department names, party references, and policy-specific terms.
+        Returns a deduplicated list of relevant keywords.
+        """
+        body_lower = html_content.lower()
+        keywords = []
+        seen = set()
+        
+        def add_kw(kw: str) -> None:
+            key = kw.lower()
+            if key not in seen:
+                seen.add(key)
+                keywords.append(kw)
+        
+        # Extract committee names
+        for pattern, name in self.COMMITTEE_NAMES.items():
+            if f'committee on {pattern}' in body_lower or f'committee on the {pattern}' in body_lower:
+                add_kw(name)
+        
+        # Extract department names
+        for pattern, name in self.DEPARTMENT_NAMES.items():
+            if pattern in body_lower:
+                add_kw(name)
+        
+        # Extract party references
+        for abbrev, name in self.PARTY_NAMES.items():
+            if abbrev.lower() in body_lower or name.lower() in body_lower:
+                add_kw(name)
+        
+        # Extract policy keywords (longer phrases first since they are ordered that way)
+        for keyword in self.POLICY_KEYWORDS:
+            if keyword in body_lower:
+                # Capitalize first letter of each word
+                theme = ' '.join(word.capitalize() for word in keyword.split())
+                if theme == 'Vat':
+                    theme = 'VAT'
+                if theme == 'Eu Council':
+                    theme = 'EU Council'
+                if theme == 'Eu Directive':
+                    theme = 'EU Directive'
+                add_kw(theme)
+        
+        # Extract minister names (pattern: "FirstName LastName (Party)")
+        minister_pattern = r'([A-ZÅÄÖ][a-zåäö]+ [A-ZÅÄÖ][a-zåäö]+) \([MSDCVKLP]+\)'
+        for match in re.findall(minister_pattern, html_content):
+            if len(match) > 5:
+                add_kw(match)
+        
+        # Add article-type-specific keywords
+        type_kws = {
+            'committee-reports': ['Riksdag Committees', 'betänkanden', 'parliamentary review'],
+            'government-propositions': ['government bills', 'propositioner', 'legislative agenda'],
+            'opposition-motions': ['opposition', 'parliamentary motions', 'motioner'],
+            'week-ahead': ['parliamentary calendar', 'Riksdag schedule', 'upcoming debates'],
+            'interpellation-debates': ['interpellations', 'ministerial accountability', 'parliamentary oversight'],
+        }
+        for kw in type_kws.get(article_type, []):
+            add_kw(kw)
+        
+        # Always add base keywords
+        for kw in ['Swedish Parliament', 'Riksdag', 'Sweden']:
+            add_kw(kw)
+        
+        return keywords[:20]  # Cap at 20 keywords
+    
+    def generate_content_tags(self, html_content: str, article_type: str,
+                              themes: List[str]) -> List[str]:
+        """Generate multiple content-specific article tags from article body.
+        
+        Creates tags from themes, committee/department names, and policy areas.
+        Returns a list of 3-8 specific tags for article:tag metadata.
+        """
+        body_lower = html_content.lower()
+        tags = []
+        seen = set()
+        
+        def add_tag(tag: str) -> None:
+            key = tag.lower()
+            if key not in seen:
+                # Skip proposition/motion references as tags
+                if re.match(r'^prop[\. ]', tag, re.IGNORECASE):
+                    return
+                if re.match(r'^mot[\. ]', tag, re.IGNORECASE):
+                    return
+                # Ensure proper title case
+                if tag[0].islower():
+                    tag = tag[0].upper() + tag[1:]
+                seen.add(key)
+                tags.append(tag)
+        
+        # Add themes as tags
+        for theme in themes:
+            add_tag(theme)
+        
+        # Add committee names found in content
+        for pattern, name in self.COMMITTEE_NAMES.items():
+            if f'committee on {pattern}' in body_lower or f'committee on the {pattern}' in body_lower:
+                add_tag(name)
+        
+        # Add department names found in content
+        for pattern, name in self.DEPARTMENT_NAMES.items():
+            if pattern in body_lower:
+                add_tag(name)
+        
+        # Add parties found in content
+        for abbrev, name in self.PARTY_NAMES.items():
+            if abbrev.lower() in body_lower:
+                add_tag(name)
+        
+        # Add article type as tag
+        type_label = self.ARTICLE_TYPES.get(article_type, {}).get('en', '')
+        if type_label:
+            add_tag(type_label)
+        
+        return tags[:10]  # Cap at 10 tags
+    
+    def get_article_section(self, article_type: str) -> str:
+        """Return the correct article:section value for a given article type."""
+        return self.ARTICLE_TYPES.get(article_type, {}).get('section', 'News')
+
     def update_article_metadata(self, filepath: Path, new_title: str, 
-                               new_description: str, dry_run: bool = False) -> bool:
+                               new_description: str, dry_run: bool = False,
+                               keywords: List[str] = None,
+                               tags: List[str] = None,
+                               article_section: str = None) -> bool:
         """Update all metadata fields in an article"""
         
         try:
@@ -379,37 +758,39 @@ class TitleGenerator:
                 count=1
             )
             
-            # 7. Update Schema.org NewsArticle headline (use json.dumps for safe escaping)
-            safe_title = json.dumps(new_title)[1:-1]  # Remove quotes from json.dumps output
+            # 7. Update Schema.org NewsArticle headline
+            # Use ensure_ascii=False to preserve Unicode (ä, ö, ü, etc.) and
+            # avoid \uXXXX escapes that conflict with regex backreference parsing.
+            safe_title = json.dumps(new_title, ensure_ascii=False)[1:-1]
             content = re.sub(
                 r'"headline":\s*"[^"]*"',
-                f'"headline": "{safe_title}"',
+                lambda m: f'"headline": "{safe_title}"',
                 content,
                 count=1
             )
             
             # 8. Update Schema.org alternativeHeadline
-            safe_description = json.dumps(new_description)[1:-1]
+            safe_description = json.dumps(new_description, ensure_ascii=False)[1:-1]
             content = re.sub(
                 r'"alternativeHeadline":\s*"[^"]*"',
-                f'"alternativeHeadline": "{safe_description}"',
+                lambda m: f'"alternativeHeadline": "{safe_description}"',
                 content,
                 count=1
             )
             
-            # 9. Update Schema.org description
+            # 9. Update Schema.org description (use lambda to avoid backreference escape issues)
             content = re.sub(
                 r'("@type":\s*"NewsArticle".*?"description":\s*)"[^"]*"',
-                f'\\1"{safe_description}"',
+                lambda m: m.group(1) + f'"{safe_description}"',
                 content,
                 count=1,
                 flags=re.DOTALL
             )
             
-            # 10. Update BreadcrumbList position 3 name (use full title for consistency)
+            # 10. Update BreadcrumbList position 3 name (use lambda to avoid escape issues)
             content = re.sub(
                 r'("position":\s*3,\s*"name":\s*)"[^"]*"',
-                f'\\1"{safe_title}"',
+                lambda m: m.group(1) + f'"{safe_title}"',
                 content,
                 count=1
             )
@@ -422,6 +803,82 @@ class TitleGenerator:
                 count=1
             )
             
+            # 12. Update meta keywords (deduplicated, content-based)
+            if keywords:
+                keywords_str = ', '.join(keywords)
+                content = re.sub(
+                    r'<meta name="keywords" content="[^"]*">',
+                    f'<meta name="keywords" content="{html.escape(keywords_str)}">',
+                    content,
+                    count=1
+                )
+                # Also update JSON-LD keywords
+                safe_kw = json.dumps(keywords_str, ensure_ascii=False)[1:-1]
+                content = re.sub(
+                    r'"keywords":\s*"[^"]*"',
+                    lambda m: f'"keywords": "{safe_kw}"',
+                    content,
+                    count=1
+                )
+            
+            # 13. Update article:section
+            if article_section:
+                content = re.sub(
+                    r'<meta property="article:section" content="[^"]*">',
+                    f'<meta property="article:section" content="{html.escape(article_section)}">',
+                    content,
+                    count=1
+                )
+                # Also update JSON-LD articleSection
+                safe_sec = json.dumps(article_section, ensure_ascii=False)[1:-1]
+                content = re.sub(
+                    r'"articleSection":\s*"[^"]*"',
+                    lambda m: f'"articleSection": "{safe_sec}"',
+                    content,
+                    count=1
+                )
+                # Update twitter:data2 (article type label)
+                content = re.sub(
+                    r'<meta name="twitter:data2" content="[^"]*">',
+                    f'<meta name="twitter:data2" content="{html.escape(article_section)}">',
+                    content,
+                    count=1
+                )
+            
+            # 14. Update article:tag meta elements (replace existing with content-based tags)
+            if tags:
+                # Remove all existing article:tag lines
+                content = re.sub(
+                    r'  <meta property="article:tag" content="[^"]*">\n',
+                    '',
+                    content
+                )
+                # Insert new tags after article:section
+                tag_html = '\n'.join(
+                    f'  <meta property="article:tag" content="{html.escape(t)}">'
+                    for t in tags
+                )
+                content = re.sub(
+                    r'(<meta property="article:section" content="[^"]*">)',
+                    f'\\1\n{tag_html}',
+                    content,
+                    count=1
+                )
+                # Also update JSON-LD mentions array
+                if tags:
+                    mentions_json = ','.join(
+                        f'\n      {{"@type": "Thing", "name": "{json.dumps(t, ensure_ascii=False)[1:-1]}"}}'
+                        for t in tags[:8]
+                    )
+                    replacement = f'"mentions": [{mentions_json}\n    ]'
+                    # Replace existing mentions array (use lambda to avoid escape issues)
+                    content = re.sub(
+                        r'"mentions":\s*\[[\s\S]*?\]',
+                        lambda m: replacement,
+                        content,
+                        count=1
+                    )
+            
             # Check if changes were made
             if content == original_content:
                 print(f"  ⚠️  No changes made to {filepath.name}")
@@ -432,6 +889,12 @@ class TitleGenerator:
                 print(f"    Old title: {old_title}")
                 print(f"    New title: {new_title}")
                 print(f"    New desc:  {new_description}")
+                if keywords:
+                    print(f"    Keywords:  {', '.join(keywords[:8])}...")
+                if tags:
+                    print(f"    Tags:      {', '.join(tags)}")
+                if article_section:
+                    print(f"    Section:   {article_section}")
                 return True
             
             # Write updated content
@@ -441,6 +904,12 @@ class TitleGenerator:
             print(f"  ✅ Updated: {filepath.name}")
             print(f"    Title: {new_title} ({len(new_title)} chars)")
             print(f"    Desc:  {new_description} ({len(new_description)} chars)")
+            if keywords:
+                print(f"    Keywords: {len(keywords)} content-based keywords")
+            if tags:
+                print(f"    Tags: {', '.join(tags)}")
+            if article_section:
+                print(f"    Section: {article_section}")
             
             return True
             
@@ -831,7 +1300,11 @@ class TitleGenerator:
         return text
     
     def process_article_set(self, base_filename: str, dry_run: bool = False) -> int:
-        """Process all language versions of an article"""
+        """Process all language versions of an article.
+        
+        Generates content-based title, description, keywords, tags, and
+        article:section from the English version, then applies to all languages.
+        """
         
         # Parse base filename (e.g., "2026-02-18-committee-reports")
         parts = base_filename.rsplit('-', 2)
@@ -871,8 +1344,20 @@ class TitleGenerator:
             print(f"  Top documents: {', '.join(document_titles[:3])}")
         
         # Generate title and description for English
-        en_title = self.generate_title(article_type, document_titles, date_str, 'en')
-        en_description = self.generate_description(document_titles, article_type, doc_count)
+        en_title = self.generate_title(article_type, document_titles, date_str, 'en',
+                                       html_content=en_content)
+        en_description = self.generate_description(document_titles, article_type, doc_count,
+                                                   html_content=en_content)
+        
+        # Generate content-based keywords and tags from English article body
+        en_keywords = self.extract_content_keywords(en_content, article_type)
+        themes = self.extract_policy_themes(document_titles, max_themes=4)
+        en_tags = self.generate_content_tags(en_content, article_type, themes)
+        article_section = self.get_article_section(article_type)
+        
+        print(f"  Keywords: {len(en_keywords)} content-based")
+        print(f"  Tags: {', '.join(en_tags[:5])}")
+        print(f"  Section: {article_section}")
         
         # Store for translation reference
         self.title_mapping[base_filename] = {
@@ -881,7 +1366,9 @@ class TitleGenerator:
         
         # Update English article
         updated_count = 0
-        if self.update_article_metadata(en_file, en_title, en_description, dry_run):
+        if self.update_article_metadata(en_file, en_title, en_description, dry_run,
+                                        keywords=en_keywords, tags=en_tags,
+                                        article_section=article_section):
             updated_count += 1
         
         # Skip non-English translations if english_only mode is enabled
@@ -899,6 +1386,12 @@ class TitleGenerator:
                 lang_title = self.translate_text(en_title, lang, context="title")
                 lang_description = self.translate_text(en_description, lang, context="description")
                 
+                # Read lang-specific content for keyword extraction
+                with open(lang_file, 'r', encoding='utf-8') as f:
+                    lang_content = f.read()
+                lang_keywords = self.extract_content_keywords(lang_content, article_type)
+                lang_tags = self.generate_content_tags(lang_content, article_type, themes)
+                
                 # Store translated version
                 self.title_mapping[base_filename][lang] = {
                     'title': lang_title,
@@ -906,7 +1399,9 @@ class TitleGenerator:
                 }
                 
                 # Update article with translated metadata
-                if self.update_article_metadata(lang_file, lang_title, lang_description, dry_run):
+                if self.update_article_metadata(lang_file, lang_title, lang_description, dry_run,
+                                                keywords=lang_keywords, tags=lang_tags,
+                                                article_section=article_section):
                     updated_count += 1
         
         return updated_count
@@ -914,12 +1409,8 @@ class TitleGenerator:
     def process_all_articles(self, dry_run: bool = False) -> Dict[str, int]:
         """Process all article types"""
         
-        stats = {
-            'committee-reports': 0,
-            'government-propositions': 0,
-            'opposition-motions': 0,
-            'total': 0
-        }
+        stats = {at: 0 for at in self.ARTICLE_TYPES.keys()}
+        stats['total'] = 0
         
         # Find all unique article base names (without language suffix)
         article_files = list(self.news_dir.glob('*-en.html'))
@@ -1011,12 +1502,13 @@ WARNING: This script can overwrite existing titles/metadata!
     print("\n" + "=" * 70)
     print("  Summary")
     print("=" * 70)
-    print(f"  Committee Reports:        {stats['committee-reports']} articles")
-    print(f"  Government Propositions:  {stats['government-propositions']} articles")
-    print(f"  Opposition Motions:       {stats['opposition-motions']} articles")
-    print(f"  Total files updated:      {stats['total']} files")
-    print(f"  Unique titles generated:  {len(generator.used_titles)}")
-    print(f"  Mode:                     {'English only' if args.english_only else 'All languages'}")
+    for article_type in generator.ARTICLE_TYPES.keys():
+        label = generator.ARTICLE_TYPES[article_type]['en']
+        count = stats.get(article_type, 0)
+        print(f"  {label + ':':30s} {count} articles")
+    print(f"  {'Total files updated:':30s} {stats['total']} files")
+    print(f"  {'Unique titles generated:':30s} {len(generator.used_titles)}")
+    print(f"  {'Mode:':30s} {'English only' if args.english_only else 'All languages'}")
     
     # Check for duplicates (should be zero)
     if len(generator.used_titles) != len(set(generator.used_titles)):
