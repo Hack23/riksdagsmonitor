@@ -23,7 +23,7 @@
   const STORAGE_KEY = 'riksdagsmonitor-theme';
   const DARK  = 'dark';
   const LIGHT = 'light';
-  var _transitionTimer = null;
+  let _transitionTimer = null;
 
   /* ── Helpers ──────────────────────────────────────────────────────────── */
 

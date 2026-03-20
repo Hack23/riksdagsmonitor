@@ -350,14 +350,29 @@ describe('Theme Toggle', () => {
   // ── theme-transition class (add/remove on toggle) ────────────────────────────
 
   describe('theme-transition class', () => {
+    function createToggleHandler() {
+      let transitionTimer = null;
+      return function toggle() {
+        const current = document.documentElement.getAttribute('data-theme') || LIGHT;
+        const next = current === DARK ? LIGHT : DARK;
+        document.documentElement.classList.add('theme-transition');
+        applyTheme(next, undefined, storage);
+        updateButton(next);
+        if (transitionTimer) { clearTimeout(transitionTimer); }
+        transitionTimer = setTimeout(function () {
+          document.documentElement.classList.remove('theme-transition');
+          transitionTimer = null;
+        }, 350);
+      };
+    }
+
     it('adds theme-transition class on toggle', () => {
       buildButton();
       applyTheme('light', false, storage);
-      const current = document.documentElement.getAttribute('data-theme') || LIGHT;
-      const next    = current === DARK ? LIGHT : DARK;
-      document.documentElement.classList.add('theme-transition');
-      applyTheme(next, undefined, storage);
-      updateButton(next);
+      const toggle = createToggleHandler();
+
+      expect(document.documentElement.classList.contains('theme-transition')).toBe(false);
+      toggle();
       expect(document.documentElement.classList.contains('theme-transition')).toBe(true);
     });
 
@@ -365,11 +380,9 @@ describe('Theme Toggle', () => {
       vi.useFakeTimers();
       buildButton();
       applyTheme('light', false, storage);
-      document.documentElement.classList.add('theme-transition');
-      // Simulate the setTimeout cleanup from the toggle handler
-      setTimeout(function () {
-        document.documentElement.classList.remove('theme-transition');
-      }, 350);
+      const toggle = createToggleHandler();
+
+      toggle();
       expect(document.documentElement.classList.contains('theme-transition')).toBe(true);
       vi.advanceTimersByTime(350);
       expect(document.documentElement.classList.contains('theme-transition')).toBe(false);
@@ -380,30 +393,22 @@ describe('Theme Toggle', () => {
       vi.useFakeTimers();
       buildButton();
       applyTheme('light', false, storage);
-
-      // Simulate rapid toggle with clearTimeout guard
-      let timer = null;
+      const toggle = createToggleHandler();
 
       // First toggle
-      document.documentElement.classList.add('theme-transition');
-      if (timer) { clearTimeout(timer); }
-      timer = setTimeout(function () {
-        document.documentElement.classList.remove('theme-transition');
-        timer = null;
-      }, 350);
-
+      toggle();
       vi.advanceTimersByTime(100);
       expect(document.documentElement.classList.contains('theme-transition')).toBe(true);
 
       // Second rapid toggle — clears the first timer
-      document.documentElement.classList.add('theme-transition');
-      if (timer) { clearTimeout(timer); }
-      setTimeout(function () {
-        document.documentElement.classList.remove('theme-transition');
-      }, 350);
+      toggle();
+
+      // After 350ms from first toggle (250ms after second), class should still be present
+      vi.advanceTimersByTime(250);
+      expect(document.documentElement.classList.contains('theme-transition')).toBe(true);
 
       // After 350ms from second toggle, class should be removed
-      vi.advanceTimersByTime(350);
+      vi.advanceTimersByTime(100);
       expect(document.documentElement.classList.contains('theme-transition')).toBe(false);
       vi.useRealTimers();
     });
