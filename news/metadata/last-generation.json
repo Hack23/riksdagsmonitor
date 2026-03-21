@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-20T07:32:44.764Z",
+  "timestamp": "2026-03-21T14:21:17.099Z",
   "types": [
-    "interpellations"
+    "weekly-review"
   ],
   "languagesGenerated": [
     "da",
@@ -32,23 +32,10 @@
     "zh"
   ],
   "batchSize": "all",
-  "skipExisting": false,
-  "generated": 12,
+  "skipExisting": true,
+  "generated": 0,
   "errors": 0,
-  "articles": [
-    "2026-03-20-opposition-motions-da.html",
-    "2026-03-20-opposition-motions-no.html",
-    "2026-03-20-opposition-motions-fi.html",
-    "2026-03-20-opposition-motions-de.html",
-    "2026-03-20-opposition-motions-fr.html",
-    "2026-03-20-opposition-motions-es.html",
-    "2026-03-20-opposition-motions-nl.html",
-    "2026-03-20-opposition-motions-ar.html",
-    "2026-03-20-opposition-motions-he.html",
-    "2026-03-20-opposition-motions-ja.html",
-    "2026-03-20-opposition-motions-ko.html",
-    "2026-03-20-opposition-motions-zh.html"
-  ],
+  "articles": [],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
 }
