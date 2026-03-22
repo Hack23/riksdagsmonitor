@@ -31,16 +31,16 @@ const TYPE_PALETTE: readonly string[] = [
  * unknown types fall through to the palette by sorted-key index.
  */
 const STABLE_TYPE_COLORS: Record<string, string> = {
-  prop: '#00d9ff',
-  mot: '#ff006e',
-  bet: '#ffbe0b',
-  sfs: '#7b2fff',
-  ip: '#00c58e',
-  fpm: '#ff6b35',
-  skr: '#4dd0e1',
-  ds: '#f48fb1',
-  sou: '#a5d6a7',
-  dir: '#ce93d8',
+  prop: '#00d9ff',   // propositions (government bills)
+  mot: '#ff006e',    // motions (opposition proposals)
+  bet: '#ffbe0b',    // betänkanden (committee reports)
+  sfs: '#7b2fff',    // enacted laws/statutes
+  ip: '#00c58e',     // interpellations
+  fpm: '#ff6b35',    // EU position papers (faktapromemorior)
+  skr: '#4dd0e1',    // government written communications
+  ds: '#f48fb1',     // departmental memoranda
+  sou: '#a5d6a7',    // government inquiry reports
+  dir: '#ce93d8',    // commission directives
 };
 
 // ---------------------------------------------------------------------------

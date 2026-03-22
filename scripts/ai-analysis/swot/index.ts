@@ -309,6 +309,9 @@ export function refineStakeholderSwot(
         ...euDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
         ...skrDocs.slice(1, 2).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
       ];
+      // IPs 0–1 go to weaknesses above; IPs 2–3 go to threats.
+      // When fewer than 3 IPs exist, reuse the last available IP for threats
+      // so threat enrichment still fires for small IP counts.
       const ipDocsForThreats =
         ipDocs.length >= 3
           ? ipDocs.slice(2, 4)
