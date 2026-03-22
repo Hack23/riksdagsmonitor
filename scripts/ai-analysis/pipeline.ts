@@ -48,6 +48,8 @@ import type {
   PolicyAssessment,
   DashboardData,
   ValidationResult,
+  KnownStakeholderRole,
+  SwotQuadrant,
 } from './types.js';
 
 // ---------------------------------------------------------------------------
@@ -562,8 +564,8 @@ function buildEnrichedEntry(
 
 /** Build a structural placeholder entry when no documents exist for a quadrant. */
 function placeholderEntry(
-  role: string,
-  quadrant: string,
+  role: KnownStakeholderRole,
+  quadrant: SwotQuadrant,
   topic: string | null,
   lang: Language,
   domains: string[],

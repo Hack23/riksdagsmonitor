@@ -60,6 +60,9 @@ export interface AnalysisSwotEntry {
 /** The three well-known stakeholder roles used by the analysis pipeline. */
 export type KnownStakeholderRole = 'government' | 'parliament' | 'private-sector';
 
+/** The four SWOT quadrant keys. */
+export type SwotQuadrant = 'strengths' | 'weaknesses' | 'opportunities' | 'threats';
+
 /**
  * A SWOT matrix for a single stakeholder perspective.
  * All text fields are AI-derived from document content analysis.
@@ -345,8 +348,8 @@ export interface SwotEntryGenerator {
 
   /** Build a structural placeholder when no documents exist for a quadrant. */
   buildPlaceholder(
-    role: string,
-    quadrant: string,
+    role: KnownStakeholderRole,
+    quadrant: SwotQuadrant,
     topic: string | null,
     lang: Language,
     domains: string[],

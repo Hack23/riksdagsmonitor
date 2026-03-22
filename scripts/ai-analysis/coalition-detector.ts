@@ -26,9 +26,10 @@ import type {
 // Document classification helpers
 // ---------------------------------------------------------------------------
 
-/** Normalise document type string for comparison. */
+/** Normalise document type string for comparison (falls back to documentType). */
 function docType(d: RawDocument): string {
-  return (d.doktyp ?? '').toLowerCase().trim();
+  const raw = d.doktyp ?? d.documentType ?? '';
+  return raw.toLowerCase().trim();
 }
 
 /** Extract document ID. */
@@ -36,8 +37,8 @@ function docId(d: RawDocument): string {
   return d.dok_id ?? '';
 }
 
-/** Government-aligned document types (propositions, laws, govt comms, press releases). */
-const GOVERNMENT_DOC_TYPES = new Set(['prop', 'sfs', 'skr', 'pressm']);
+/** Government-aligned document types (propositions, laws, govt comms, press releases, SOU, departmental series, directives). */
+const GOVERNMENT_DOC_TYPES = new Set(['prop', 'sfs', 'skr', 'pressm', 'ds', 'sou', 'dir']);
 
 /** Opposition challenge document types (motions, interpellations). */
 const OPPOSITION_DOC_TYPES = new Set(['mot', 'ip']);

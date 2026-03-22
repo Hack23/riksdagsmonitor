@@ -189,4 +189,29 @@ describe('coalitionDetector.detect', () => {
     expect(result.challengeRatio).toBe(0);
     expect(result.sourceDocIds).toHaveLength(2);
   });
+
+  it('falls back to documentType when doktyp is missing', () => {
+    const docWithDocumentType = makeDoc({
+      dok_id: 'DT1',
+      doktyp: undefined as unknown as string,
+      documentType: 'mot',
+    });
+    const docs = [PROP, docWithDocumentType];
+    const result = coalitionDetector.detect(docs, 'en');
+    expect(result.governmentDocCount).toBe(1);
+    expect(result.oppositionDocCount).toBe(1);
+    expect(result.challengeRatio).toBe(0.5);
+  });
+
+  it('classifies ds, sou, and dir as government-aligned', () => {
+    const ds = makeDoc({ dok_id: 'DS1', doktyp: 'ds' });
+    const sou = makeDoc({ dok_id: 'SOU1', doktyp: 'sou' });
+    const dir = makeDoc({ dok_id: 'DIR1', doktyp: 'dir' });
+    const docs = [ds, sou, dir, MOT];
+    const result = coalitionDetector.detect(docs, 'en');
+    expect(result.governmentDocCount).toBe(3);
+    expect(result.oppositionDocCount).toBe(1);
+    expect(result.challengeRatio).toBe(0.25);
+    expect(result.stressLevel).toBe('low');
+  });
 });
