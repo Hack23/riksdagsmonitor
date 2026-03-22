@@ -1043,11 +1043,10 @@ function buildEuNordicComparative(domains: string[], lang: Language): string | n
   for (const domain of domains) {
     // Reverse-lookup from localised domain name to canonical key
     const key = DOMAIN_NAME_TO_KEY[domain] ?? DOMAIN_NAME_TO_KEY[domain.toLowerCase()];
-    if (key) {
-      const entry = EU_NORDIC_CONTEXT[key];
-      if (entry) {
-        return entry[lang] ?? entry.en ?? null;
-      }
+    if (!key) continue;
+    const entry = EU_NORDIC_CONTEXT[key];
+    if (entry) {
+      return entry[lang] ?? entry.en ?? null;
     }
   }
   return null;

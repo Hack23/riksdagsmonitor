@@ -1019,10 +1019,11 @@ describe('calibrated confidence scoring', () => {
     );
 
     // Rich: many docs, many enriched, variety
-    const rich = await aiAnalysisPipeline.analyzeDocuments(RICH_SET.map(d => ({
+    const enrichedRichSet = RICH_SET.map(d => makeDoc({
       ...d,
       contentFetched: true,
-    } as RawDocument)), { depth: 'quick', lang: 'en', focusTopic: null });
+    }));
+    const rich = await aiAnalysisPipeline.analyzeDocuments(enrichedRichSet, { depth: 'quick', lang: 'en', focusTopic: null });
 
     expect(medium.confidenceScore).toBeGreaterThan(minimal.confidenceScore);
     expect(rich.confidenceScore).toBeGreaterThan(medium.confidenceScore);

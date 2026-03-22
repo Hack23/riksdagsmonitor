@@ -114,10 +114,10 @@ const STRESS_HIGH: LangRecord = {
  */
 function classifyStress(challengeRatio: number, ipCount: number): CoalitionStressLevel {
   // Interpellations ≥ 5 bump stress by one level (ministerial accountability pressure)
-  const ipBoost = ipCount >= 5 ? 1 : 0;
+  const ipBoost = ipCount >= 5;
 
   if (challengeRatio >= 0.6) return 'high';
-  if (challengeRatio >= 0.3 || ipBoost > 0) return challengeRatio >= 0.3 ? 'medium' : (ipBoost > 0 ? 'medium' : 'low');
+  if (challengeRatio >= 0.3 || ipBoost) return 'medium';
   return 'low';
 }
 
