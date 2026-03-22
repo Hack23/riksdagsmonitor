@@ -6,12 +6,14 @@ name: Grant Copilot Agent Bypass Permissions
 # by the copilot_code_review (or other) branch ruleset rules.
 #
 # Trigger: Actions tab → "Grant Copilot Agent Bypass Permissions" → Run workflow
+#
+# Note: Uses COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN (PAT) because the
+# GitHub Actions GITHUB_TOKEN cannot be granted 'administration' scope.
+# The PAT must have admin:repo or repo scope (classic PAT).
 on:
   workflow_dispatch:
 
-# administration:write is required to update repository rulesets.
 permissions:
-  administration: write
   contents: read
 
 jobs:
@@ -27,20 +29,23 @@ jobs:
 
       - name: Grant bypass permissions on all branch rulesets
         env:
-          GH_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}
+          REPO: ${{ github.repository }}
+          COPILOT_SWE_APP_ID: "1143301"
         run: |
           set -euo pipefail
-          REPO="${{ github.repository }}"
-          COPILOT_SWE_APP_ID=1143301
 
           echo "🔒 Fetching repository rulesets for $REPO..."
           RULESETS=$(curl -sf \
             -H "Authorization: Bearer $GH_TOKEN" \
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            "https://api.github.com/repos/$REPO/rulesets")
+            "https://api.github.com/repos/$REPO/rulesets") || {
+              echo "⚠️  Could not fetch rulesets — check COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN has repo/admin scope"
+              exit 1
+            }
 
-          RULESET_COUNT=$(echo "$RULESETS" | python3 -c "import json,sys; r=json.load(sys.stdin); print(len(r) if isinstance(r, list) else 0)")
+          RULESET_COUNT=$(echo "$RULESETS" | jq 'length')
           echo "Found $RULESET_COUNT ruleset(s)"
 
           if [ "$RULESET_COUNT" -eq 0 ]; then
@@ -48,99 +53,76 @@ jobs:
             exit 0
           fi
 
-          echo "$RULESETS" | python3 - <<'PYEOF'
-          import json, sys, urllib.request, os, urllib.error
+          UPDATED=0
+          ALREADY_OK=0
+          ERRORS=0
 
-          token = os.environ['GH_TOKEN']
-          repo = os.environ['REPO']
-          copilot_swe_app_id = int(os.environ['COPILOT_SWE_APP_ID'])
+          while IFS= read -r RS_ID; do
+            RS_NAME=$(echo "$RULESETS" | jq -r --argjson id "$RS_ID" '.[] | select(.id == $id) | .name')
+            echo ""
+            echo "📋 Ruleset: '$RS_NAME' (ID: $RS_ID)"
 
-          rulesets_data = json.load(sys.stdin)
-          if not isinstance(rulesets_data, list):
-              print("❌ Unexpected rulesets response format")
-              sys.exit(1)
+            # Fetch full ruleset details
+            FULL_RS=$(curl -sf \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "https://api.github.com/repos/$REPO/rulesets/$RS_ID") || {
+                echo "  ⚠️  Could not fetch ruleset $RS_ID — skipping"
+                ERRORS=$((ERRORS + 1))
+                continue
+              }
 
-          api_base = f"https://api.github.com/repos/{repo}/rulesets"
-          headers = {
-              "Authorization": f"Bearer {token}",
-              "Accept": "application/vnd.github+json",
-              "X-GitHub-Api-Version": "2022-11-28",
-              "Content-Type": "application/json",
-          }
+            # Check if bypass actor already present
+            HAS_BYPASS=$(echo "$FULL_RS" | jq \
+              --argjson app_id "$COPILOT_SWE_APP_ID" \
+              '[.bypass_actors[] | select(.actor_id == $app_id and .actor_type == "Integration")] | length > 0')
 
-          updated = 0
-          already_ok = 0
-          errors = 0
+            if [ "$HAS_BYPASS" = "true" ]; then
+              echo "  ✅ Copilot SWE agent bypass already configured"
+              ALREADY_OK=$((ALREADY_OK + 1))
+              continue
+            fi
 
-          for rs in rulesets_data:
-              rs_id = rs["id"]
-              rs_name = rs.get("name", "unknown")
-              print(f"\n📋 Ruleset: '{rs_name}' (ID: {rs_id})")
+            echo "  🔧 Adding Copilot SWE agent bypass..."
 
-              # Fetch full ruleset details
-              try:
-                  req = urllib.request.Request(f"{api_base}/{rs_id}", headers=headers)
-                  with urllib.request.urlopen(req) as resp:
-                      full_rs = json.loads(resp.read())
-              except urllib.error.HTTPError as e:
-                  print(f"  ⚠️  Could not fetch ruleset: {e.code} {e.reason}")
-                  errors += 1
-                  continue
+            # Build updated payload: strip read-only fields, add bypass actor
+            PAYLOAD=$(echo "$FULL_RS" | jq \
+              --argjson app_id "$COPILOT_SWE_APP_ID" \
+              'del(.id, .source_type, .source, .node_id, .created_at, .updated_at, ._links, .current_user_can_bypass)
+               | .bypass_actors += [{"actor_id": $app_id, "actor_type": "Integration", "bypass_mode": "pull_request"}]')
 
-              # Check if bypass already present
-              actors = full_rs.get("bypass_actors", [])
-              has_bypass = any(
-                  a.get("actor_id") == copilot_swe_app_id and a.get("actor_type") == "Integration"
-                  for a in actors
-              )
+            HTTP_STATUS=$(curl -s -o /tmp/rs_update_response.json -w "%{http_code}" -X PUT \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              -H "Content-Type: application/json" \
+              "https://api.github.com/repos/$REPO/rulesets/$RS_ID" \
+              -d "$PAYLOAD")
 
-              if has_bypass:
-                  print(f"  ✅ Copilot SWE agent bypass already configured")
-                  already_ok += 1
-                  continue
+            if [ "$HTTP_STATUS" -eq 200 ]; then
+              NEW_COUNT=$(cat /tmp/rs_update_response.json | jq '.bypass_actors | length')
+              echo "  ✅ Bypass granted (total bypass actors: $NEW_COUNT)"
+              UPDATED=$((UPDATED + 1))
+            else
+              echo "  ❌ Failed to update ruleset (HTTP $HTTP_STATUS)"
+              cat /tmp/rs_update_response.json | jq -r '.message // .'
+              echo "     → Manual fix: https://github.com/$REPO/rules/$RS_ID"
+              echo "       Add 'GitHub Apps > copilot-swe-agent' with 'Pull request' bypass mode"
+              ERRORS=$((ERRORS + 1))
+            fi
 
-              # Build payload (remove read-only fields)
-              payload = {k: v for k, v in full_rs.items() if k not in (
-                  "id", "source_type", "source", "node_id",
-                  "created_at", "updated_at", "_links", "current_user_can_bypass"
-              )}
-              payload["bypass_actors"] = actors + [{
-                  "actor_id": copilot_swe_app_id,
-                  "actor_type": "Integration",
-                  "bypass_mode": "pull_request"
-              }]
+          done < <(echo "$RULESETS" | jq -r '.[].id')
 
-              # PUT updated ruleset
-              try:
-                  body = json.dumps(payload).encode()
-                  req = urllib.request.Request(
-                      f"{api_base}/{rs_id}", data=body, headers=headers, method="PUT"
-                  )
-                  with urllib.request.urlopen(req) as resp:
-                      result = json.loads(resp.read())
-                  new_count = len(result.get("bypass_actors", []))
-                  print(f"  ✅ Bypass granted (total bypass actors: {new_count})")
-                  updated += 1
-              except urllib.error.HTTPError as e:
-                  err_body = e.read().decode()
-                  print(f"  ❌ Failed to update ruleset: {e.code} {e.reason}")
-                  print(f"     {err_body}")
-                  print(f"     → Manual fix: https://github.com/{repo}/rules/{rs_id}")
-                  print(f"       Add 'GitHub Apps > copilot-swe-agent' with 'Pull request' bypass mode")
-                  errors += 1
-
-          print(f"\n{'='*60}")
-          print(f"✅ Updated:     {updated} ruleset(s)")
-          print(f"✅ Already OK:  {already_ok} ruleset(s)")
-          if errors:
-              print(f"❌ Errors:      {errors} ruleset(s)")
-              sys.exit(1)
-          else:
-              print(f"🎉 All rulesets configured successfully!")
-          PYEOF
-        env:
-          REPO: ${{ github.repository }}
-          COPILOT_SWE_APP_ID: "1143301"
+          echo ""
+          echo "================================"
+          echo "✅ Updated:    $UPDATED ruleset(s)"
+          echo "✅ Already OK: $ALREADY_OK ruleset(s)"
+          if [ "$ERRORS" -gt 0 ]; then
+            echo "❌ Errors:     $ERRORS ruleset(s)"
+            exit 1
+          fi
+          echo "🎉 All rulesets configured!"
 
       - name: Summary
         if: always()
@@ -150,9 +132,5 @@ jobs:
           echo "The Copilot SWE agent (App ID 1143301) has been added to the bypass list" >> "$GITHUB_STEP_SUMMARY"
           echo "on all repository rulesets with \`pull_request\` bypass mode." >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "This allows the Copilot coding agent to create pull requests without" >> "$GITHUB_STEP_SUMMARY"
-          echo "being blocked by the \`copilot_code_review\` branch ruleset rule." >> "$GITHUB_STEP_SUMMARY"
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "### Next Steps" >> "$GITHUB_STEP_SUMMARY"
-          echo "Re-assign the Copilot agent to each issue that previously failed with" >> "$GITHUB_STEP_SUMMARY"
-          echo "the ruleset violation error. The agent should now be able to start working." >> "$GITHUB_STEP_SUMMARY"
+          echo "**Next Steps**: Re-assign the Copilot agent to each issue that previously" >> "$GITHUB_STEP_SUMMARY"
+          echo "failed with the ruleset violation error." >> "$GITHUB_STEP_SUMMARY"

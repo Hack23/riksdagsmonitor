@@ -21,10 +21,11 @@ jobs:
   copilot-setup-steps:
     runs-on: ubuntu-latest
 
-    # Permissions for the setup-steps job.
-    # `administration: write` is required to update repository rulesets so that
-    # the Copilot SWE agent can be granted bypass permissions on branch rules.
-    # Copilot will be given its own separate token for its coding operations.
+    # Set the permissions to the lowest permissions possible needed for your steps.
+    # Copilot will be given its own token for its operations.
+    # Note: The ruleset bypass step below uses COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN
+    # (PAT) directly — not the GITHUB_TOKEN — because the GITHUB_TOKEN cannot be granted
+    # 'administration' scope via the permissions block in GitHub Actions.
     permissions:
       contents: read
       actions: read
@@ -38,7 +39,6 @@ jobs:
       pull-requests: write
       security-events: read
       statuses: read
-      administration: write
 
     # Steps run before the agent starts working
     steps:
