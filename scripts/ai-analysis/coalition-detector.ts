@@ -3,9 +3,9 @@
  * @description Heuristic-based coalition tension detector for the AI analysis pipeline.
  *
  * Analyses a document set to identify convergence/divergence patterns between
- * government and opposition parties.  Tension is derived from the ratio of
- * opposition challenge documents (motions, interpellations) to government
- * output (propositions, statutory instruments, government communications).
+ * government and opposition parties. Tension is derived from the ratio of
+ * opposition challenge documents (motions, interpellations) to all political
+ * documents (government + opposition; committee reports excluded).
  *
  * Implements the `CoalitionTensionDetector` interface so it can be swapped
  * for an LLM-backed implementation in the future.
@@ -57,7 +57,7 @@ const STRESS_LOW: LangRecord = {
   de: 'Geringe Koalitionsspannung — die Regierungsproduktion dominiert bei begrenzter Oppositionsherausforderung.',
   fr: 'Faible tension de coalition — la production gouvernementale domine avec un défi d\'opposition limité.',
   es: 'Baja tensión de coalición — la producción gubernamental domina con desafío opositor limitado.',
-  nl: 'Lage coalitie­spanning — de regeringsproductie domineert met beperkte oppositie-uitdaging.',
+  nl: 'Lage coalitiespanning — de regeringsproductie domineert met beperkte oppositie-uitdaging.',
   ar: 'توتر ائتلافي منخفض — إنتاج الحكومة يهيمن مع تحدٍ محدود من المعارضة.',
   he: 'מתח קואליציוני נמוך — תפוקת הממשלה שולטת עם אתגר אופוזיציוני מוגבל.',
   ja: '連立の緊張度 低 — 政府の生産が支配的で、野党の挑戦は限定的。',
@@ -74,7 +74,7 @@ const STRESS_MEDIUM: LangRecord = {
   de: 'Mäßige Koalitionsspannung — bedeutende Oppositionsaktivität durch Anträge und Interpellationen.',
   fr: 'Tension de coalition modérée — activité d\'opposition significative par motions et interpellations.',
   es: 'Tensión de coalición moderada — actividad opositora significativa mediante mociones e interpelaciones.',
-  nl: 'Matige coalitie­spanning — aanzienlijke oppositieactiviteit door moties en interpellaties.',
+  nl: 'Matige coalitiespanning — aanzienlijke oppositieactiviteit door moties en interpellaties.',
   ar: 'توتر ائتلافي معتدل — نشاط معارض كبير من خلال الاقتراحات والاستجوابات.',
   he: 'מתח קואליציוני בינוני — פעילות אופוזיציונית משמעותית באמצעות הצעות ושאילתות.',
   ja: '連立の緊張度 中 — 動議と質問を通じた野党の顕著な活動。',
@@ -91,7 +91,7 @@ const STRESS_HIGH: LangRecord = {
   de: 'Hohe Koalitionsspannung — die Herausforderungen der Opposition übersteigen die Regierungsproduktion und signalisieren politische Konfrontation.',
   fr: 'Haute tension de coalition — les défis de l\'opposition dépassent la production gouvernementale, signalant une contestation politique.',
   es: 'Alta tensión de coalición — los desafíos de la oposición superan la producción gubernamental, señalando contestación política.',
-  nl: 'Hoge coalitie­spanning — oppositie-uitdagingen overtreffen de regeringsproductie, wat wijst op politieke confrontatie.',
+  nl: 'Hoge coalitiespanning — oppositie-uitdagingen overtreffen de regeringsproductie, wat wijst op politieke confrontatie.',
   ar: 'توتر ائتلافي مرتفع — تحديات المعارضة تفوق إنتاج الحكومة، مما يشير إلى مواجهة سياسية.',
   he: 'מתח קואליציוני גבוה — אתגרי האופוזיציה עולים על תפוקת הממשלה, מה שמסמן עימות מדיני.',
   ja: '連立の緊張度 高 — 野党の挑戦が政府の生産を上回り、政策上の争いを示唆。',

@@ -1351,6 +1351,9 @@ function buildDashboardData(
  *   ∙ type variety (saturates at 5) × 15
  * - SWOT quality (30%):
  *   ∙ proportion of non-placeholder SWOT entries × 30
+ *   ∙ when stakeholderSwot is not yet available (early pipeline stage),
+ *     a fixed 15-point midpoint default is used so the score remains
+ *     meaningful before SWOT generation completes
  *
  * The SWOT quality dimension ensures that confidence monotonically increases
  * when more enriched documents are available (replacing placeholders).
