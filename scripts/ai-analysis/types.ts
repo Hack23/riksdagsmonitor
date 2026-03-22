@@ -316,9 +316,11 @@ export type CoalitionStressLevel = 'low' | 'medium' | 'high';
  * the balance between government- and opposition-aligned documents.
  *
  * The current detector infers potential coalition tension by looking at the balance
- * between government-initiated documents (e.g. propositions, SFS, committee reports)
- * and challenge-type documents (e.g. motions, interpellations). A higher share of
- * challenge documents is treated as a proxy for increased political stress.
+ * between government-initiated documents (e.g. propositions, SFS, government
+ * communications) and challenge-type documents (e.g. motions, interpellations).
+ * Committee reports are treated as neutral and excluded from both counts.
+ * A higher share of challenge documents is treated as a proxy for increased
+ * political stress.
  *
  * Note: this analysis does NOT use party metadata or model detailed convergence /
  * divergence patterns between individual parties; it is purely document-type-based.
@@ -330,7 +332,8 @@ export interface CoalitionTensionResult {
   narrative: string;
   /**
    * Number of government-initiated documents in the set
-   * (e.g. propositions, SFS, committee reports).
+   * (e.g. propositions, SFS, government communications, ds, sou, dir).
+   * Committee reports (bet) are excluded as neutral.
    */
   governmentDocCount: number;
   /**

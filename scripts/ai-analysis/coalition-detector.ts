@@ -1,14 +1,20 @@
 /**
  * @module ai-analysis/coalition-detector
- * @description Heuristic-based coalition tension detector for the AI analysis pipeline.
+ * @description Heuristic-based coalition tension estimator using document-type mix for the AI analysis pipeline.
  *
- * Analyses a document set to identify convergence/divergence patterns between
- * government and opposition parties. Tension is derived from the ratio of
- * opposition challenge documents (motions, interpellations) to all political
- * documents (government + opposition; committee reports excluded).
+ * Analyses the composition of a document set by classifying documents into
+ * government-aligned types (e.g. propositions, laws, government communications)
+ * and opposition challenge types (e.g. motions, interpellations) based solely
+ * on their document type codes. Tension is derived from the ratio of
+ * opposition challenge documents to all political documents (government +
+ * opposition; committee reports excluded).
+ *
+ * This is a coarse document-type-based heuristic and does not use party or
+ * member-level metadata to model individual parties, coalitions, or detailed
+ * convergence/divergence patterns.
  *
  * Implements the `CoalitionTensionDetector` interface so it can be swapped
- * for an LLM-backed implementation in the future.
+ * for a higher-fidelity, possibly LLM-backed implementation in the future.
  *
  * @author Hack23 AB
  * @license Apache-2.0
