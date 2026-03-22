@@ -60,6 +60,9 @@ export interface AnalysisSwotEntry {
 /** The three well-known stakeholder roles used by the analysis pipeline. */
 export type KnownStakeholderRole = 'government' | 'parliament' | 'private-sector';
 
+/** The four SWOT quadrant keys. */
+export type SwotQuadrant = 'strengths' | 'weaknesses' | 'opportunities' | 'threats';
+
 /**
  * A SWOT matrix for a single stakeholder perspective.
  * All text fields are AI-derived from document content analysis.
@@ -298,4 +301,112 @@ export interface AnalysisIterationMetadata {
   focusTopic: string | null;
   /** ISO timestamp when analysis completed */
   completedAt: string;
+}
+
+// ---------------------------------------------------------------------------
+// Coalition tension detection
+// ---------------------------------------------------------------------------
+
+/** Stress level derived from document-type patterns within the analysed set. */
+export type CoalitionStressLevel = 'low' | 'medium' | 'high';
+
+/**
+ * Result of coalition tension detection from a document set.
+ * Summarises coalition pressure based on challenge-document ratios and
+ * the balance between government- and opposition-aligned documents.
+ *
+ * The current detector infers potential coalition tension by looking at the balance
+ * between government-initiated documents (e.g. propositions, SFS, government
+ * communications) and challenge-type documents (e.g. motions, interpellations).
+ * Committee reports are treated as neutral and excluded from both counts.
+ * A higher share of challenge documents is treated as a proxy for increased
+ * political stress.
+ *
+ * Note: this analysis does NOT use party metadata or model detailed convergence /
+ * divergence patterns between individual parties; it is purely document-type-based.
+ */
+export interface CoalitionTensionResult {
+  /** Overall coalition stress level derived from the document-type mix. */
+  stressLevel: CoalitionStressLevel;
+  /** Human-readable narrative explaining the detected tension heuristic. */
+  narrative: string;
+  /**
+   * Number of government-initiated documents in the set
+   * (e.g. propositions, SFS, government communications, ds, sou, dir).
+   * Committee reports (bet) are excluded as neutral.
+   */
+  governmentDocCount: number;
+  /**
+   * Number of challenge-type documents in the set
+   * (e.g. motions, interpellations), used as a proxy for opposition pressure.
+   */
+  oppositionDocCount: number;
+  /**
+   * Ratio of challenge-type documents to all classified documents
+   * (government + opposition; committee reports excluded from denominator).
+   */
+  challengeRatio: number;
+  /** Document IDs supporting the tension assessment. */
+  sourceDocIds: string[];
+}
+
+// ---------------------------------------------------------------------------
+// LLM-ready analysis interfaces
+// ---------------------------------------------------------------------------
+
+/**
+ * Interface for SWOT entry generation — heuristic or LLM-backed.
+ * Swap the implementation to integrate an LLM without changing callers.
+ */
+export interface SwotEntryGenerator {
+  /** Build an evidence-backed SWOT entry from a single document. */
+  buildEntry(
+    doc: RawDocument,
+    topic: string | null,
+    lang: Language,
+    passageMaxChars: number,
+  ): AnalysisSwotEntry;
+
+  /** Build a structural placeholder when no documents exist for a quadrant. */
+  buildPlaceholder(
+    role: KnownStakeholderRole,
+    quadrant: SwotQuadrant,
+    topic: string | null,
+    lang: Language,
+    domains: string[],
+  ): AnalysisSwotEntry;
+}
+
+/**
+ * Interface for confidence scoring — heuristic or LLM-calibrated.
+ */
+export interface ConfidenceScorer {
+  /** Calculate overall confidence from document evidence and SWOT quality. */
+  calculateScore(
+    docs: RawDocument[],
+    stakeholderSwot: AnalysisStakeholderSwot[],
+  ): number;
+}
+
+/**
+ * Interface for coalition tension detection — heuristic or LLM-backed.
+ */
+export interface CoalitionTensionDetector {
+  /** Detect coalition tension from a document set. */
+  detect(
+    docs: RawDocument[],
+    lang: Language,
+  ): CoalitionTensionResult;
+}
+
+/**
+ * Interface for watch-point urgency classification — heuristic or LLM-backed.
+ */
+export interface UrgencyClassifier {
+  /** Classify urgency from document type and context. */
+  classify(
+    docType: string,
+    docCount: number,
+    context: { hasFullText: boolean; hasPendingVote: boolean },
+  ): 'critical' | 'high' | 'medium' | 'low';
 }
