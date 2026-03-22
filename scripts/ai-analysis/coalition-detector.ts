@@ -34,26 +34,34 @@ import type {
 
 /**
  * Normalise document type string for comparison.
- * Falls back to `documentType` when `doktyp` is missing.
- * When both are absent, infers SFS from `dokumentnamn`/`title` prefix
- * (mirroring pipeline.normalizedDocType) so SFS-only or mixed sets
- * are counted correctly as government-aligned.
+ *
+ * Precedence (aligned with pipeline.normalizedDocType / pipeline.docType):
+ *  1. `doktyp` — the primary Riksdag document-type code
+ *  2. `documentType` — alternative type string used in some data sources
+ *  3. SFS-by-name — inferred from `dokumentnamn`, `titel`, or `title`
+ *     prefix when both type fields are empty
+ *
+ * Keeping the same order avoids classification divergence between the
+ * coalition detector and the main pipeline.
  */
 function docType(d: RawDocument): string {
-  // Prefer explicit doktyp when present
+  // 1. Prefer explicit doktyp when present
   if (d.doktyp && d.doktyp.trim() !== '') {
     return d.doktyp.toLowerCase().trim();
   }
 
-  // Infer SFS from document name when doktyp is missing, mirroring pipeline.isSfsDoc
-  const nameFallback = d.dokumentnamn ?? d.title ?? '';
+  // 2. Fall back to documentType (mirrors pipeline.docType precedence)
+  if (d.documentType && d.documentType.trim() !== '') {
+    return d.documentType.toLowerCase().trim();
+  }
+
+  // 3. Infer SFS from document name fields (mirrors pipeline.isSfsDoc)
+  const nameFallback = d.dokumentnamn ?? d.titel ?? d.title ?? '';
   if (nameFallback.toUpperCase().startsWith('SFS')) {
     return 'sfs';
   }
 
-  // Final fallback: use documentType if available
-  const fallback = d.documentType ?? '';
-  return fallback.toLowerCase().trim();
+  return '';
 }
 
 /** Extract document ID, falling back to URL for documents without dok_id. */

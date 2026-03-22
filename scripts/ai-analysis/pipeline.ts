@@ -1361,9 +1361,9 @@ function buildDashboardData(
  *   ∙ type variety (saturates at 5) × 15
  * - SWOT quality (30%):
  *   ∙ proportion of non-placeholder SWOT entries × 30
- *   ∙ when stakeholderSwot is not yet available (early pipeline stage),
- *     a fixed 15-point midpoint default is used so the score remains
- *     meaningful before SWOT generation completes
+ *   ∙ when stakeholderSwot is omitted (`undefined`), a fixed 15-point
+ *     midpoint default is used so the score remains meaningful before
+ *     SWOT generation completes; an explicit empty array yields 0
  *
  * Evidence depth increases with richer metadata/full-text enrichment and
  * broader document/type coverage, while the SWOT-quality dimension
@@ -1389,7 +1389,8 @@ function calculateConfidenceScore(
   const evidenceDepth = enrichmentScore + countScore + varietyScore;
 
   // SWOT quality component (up to 30 points): non-placeholder ratio
-  let swotQuality = 15; // default when no SWOT data is available yet
+  // undefined → midpoint default (SWOT not yet generated); [] → 0
+  let swotQuality = stakeholderSwot === undefined ? 15 : 0;
   if (stakeholderSwot && stakeholderSwot.length > 0) {
     let totalEntries = 0;
     let nonPlaceholderEntries = 0;

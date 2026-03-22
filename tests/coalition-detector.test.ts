@@ -128,7 +128,7 @@ describe('coalitionDetector.detect', () => {
   });
 
   it('excludes committee reports from government/opposition counts', () => {
-    const docs = [PROP, BET, BET, MOT];
+    const docs = [PROP, BET, makeDoc({ dok_id: 'BET2', doktyp: 'bet' }), MOT];
     const result = coalitionDetector.detect(docs, 'en');
     expect(result.governmentDocCount).toBe(1);
     expect(result.oppositionDocCount).toBe(1);
@@ -251,5 +251,18 @@ describe('coalitionDetector.detect', () => {
     expect(result.sourceDocIds).toContain('MOT1');
     expect(result.governmentDocCount).toBe(1);
     expect(result.oppositionDocCount).toBe(1);
+  });
+
+  it('infers SFS from titel when doktyp and dokumentnamn are missing', () => {
+    const sfsByTitel = makeDoc({
+      dok_id: 'SFS_TITEL1',
+      doktyp: undefined,
+      titel: 'SFS 2026:456 om ändring i skattelagen',
+    });
+    const docs = [sfsByTitel, MOT];
+    const result = coalitionDetector.detect(docs, 'en');
+    expect(result.governmentDocCount).toBe(1);
+    expect(result.oppositionDocCount).toBe(1);
+    expect(result.challengeRatio).toBe(0.5);
   });
 });
