@@ -90,11 +90,21 @@ describe('coalitionDetector.detect', () => {
   });
 
   it('boosts stress to medium when ≥5 interpellations present', () => {
-    // Government output dominates but many interpellations present
-    const docs = [PROP, PROP2, SFS, SKR, PRESSM, IP1, IP2, IP3, IP4, IP5];
+    // Government output strongly dominates but many interpellations present
+    const docs = [
+      // 12 government-aligned documents
+      PROP, PROP2, SFS, SKR, PRESSM,
+      PROP, PROP2, SFS, SKR, PRESSM,
+      PROP, PROP2,
+      // 5 interpellations (opposition challenges)
+      IP1, IP2, IP3, IP4, IP5,
+    ];
     const result = coalitionDetector.detect(docs, 'en');
-    // 5 opposition docs (IP) vs 5 government docs → challengeRatio = 0.5 → medium
+    // 5 opposition docs (IP) vs 12 government docs → challengeRatio = 5 / 17 ≈ 0.29 (< 0.3)
+    // Baseline would be "low" stress, so "medium" here verifies the ≥5 IP boost rule.
     expect(result.stressLevel).toBe('medium');
+    expect(result.oppositionDocCount).toBe(5);
+    expect(result.challengeRatio).toBeLessThan(0.3);
   });
 
   it('excludes committee reports from government/opposition counts', () => {

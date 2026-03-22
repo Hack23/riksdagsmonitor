@@ -1106,19 +1106,18 @@ describe('enhanced urgency classification', () => {
   });
 
   it('classifies narrative frames as low urgency', async () => {
-    // Narrative frames are detected from document content
+    // Narrative frames are detected from document content; include known trigger keywords
     const docWithNarrativeKeyword = makeDoc({
-      dok_id: 'NAR1', doktyp: 'prop',
-      titel: 'Reform of welfare system and security measures',
+      dok_id: 'NAR1',
+      doktyp: 'prop',
+      titel: 'Government budget reform and EU directive on welfare system',
     });
     const result = await aiAnalysisPipeline.analyzeDocuments([docWithNarrativeKeyword], {
       depth: 'quick', lang: 'en', focusTopic: null,
     });
     const narrativeWp = result.watchPoints.find(wp => wp.urgency === 'low');
-    // May or may not have narrative frames depending on title content
-    if (narrativeWp) {
-      expect(narrativeWp.urgency).toBe('low');
-    }
+    expect(narrativeWp).toBeDefined();
+    expect(narrativeWp!.urgency).toBe('low');
   });
 
   it('covers all four urgency levels across document types', async () => {

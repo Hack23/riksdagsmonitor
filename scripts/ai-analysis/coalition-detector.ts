@@ -42,9 +42,6 @@ const GOVERNMENT_DOC_TYPES = new Set(['prop', 'sfs', 'skr', 'pressm']);
 /** Opposition challenge document types (motions, interpellations). */
 const OPPOSITION_DOC_TYPES = new Set(['mot', 'ip']);
 
-/** Committee report type — neutral, but high count signals active scrutiny. */
-const COMMITTEE_TYPE = 'bet';
-
 // ---------------------------------------------------------------------------
 // Localised narrative templates
 // ---------------------------------------------------------------------------
@@ -153,7 +150,6 @@ function detectCoalitionTension(
 
   let governmentDocCount = 0;
   let oppositionDocCount = 0;
-  let committeeCount = 0;
   let ipCount = 0;
   const sourceDocIds: string[] = [];
 
@@ -167,9 +163,8 @@ function detectCoalitionTension(
     } else if (OPPOSITION_DOC_TYPES.has(dt)) {
       oppositionDocCount++;
       if (dt === 'ip') ipCount++;
-    } else if (dt === COMMITTEE_TYPE) {
-      committeeCount++;
     }
+    // Committee reports (bet) are neutral and excluded from gov/opp counts
   }
 
   // Challenge ratio: opposition challenge documents divided by
