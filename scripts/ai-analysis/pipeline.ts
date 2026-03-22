@@ -1144,7 +1144,7 @@ function buildWatchPoints(
 
   if (betDocs.length > 0) {
     const descFn = WP_COMMITTEE_DESC[lang] ?? WP_COMMITTEE_DESC.en!;
-    // Committee reports with high volume signal pending plenary votes → critical
+    // Heuristic: treat three or more committee reports as a critical-volume signal
     const betUrgency = betDocs.length >= 3 ? 'critical' as const : 'high' as const;
     points.push({
       title: `${WP_COMMITTEE[lang] ?? WP_COMMITTEE.en!}${topicSuffix}`,

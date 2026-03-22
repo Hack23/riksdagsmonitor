@@ -1106,7 +1106,7 @@ describe('enhanced urgency classification', () => {
   });
 
   it('classifies narrative frames as low urgency', async () => {
-    // Narrative frames are detected from document content; include known trigger keywords
+    // Narrative frames are detected from document titles/metadata; include known trigger keywords in the title
     const docWithNarrativeKeyword = makeDoc({
       dok_id: 'NAR1',
       doktyp: 'prop',
