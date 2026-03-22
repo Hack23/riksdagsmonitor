@@ -299,3 +299,90 @@ export interface AnalysisIterationMetadata {
   /** ISO timestamp when analysis completed */
   completedAt: string;
 }
+
+// ---------------------------------------------------------------------------
+// Coalition tension detection
+// ---------------------------------------------------------------------------
+
+/** Stress level derived from multi-party document analysis. */
+export type CoalitionStressLevel = 'low' | 'medium' | 'high';
+
+/**
+ * Result of coalition tension detection from a document set.
+ * Identifies convergence/divergence patterns across party-affiliated documents.
+ */
+export interface CoalitionTensionResult {
+  /** Overall coalition stress level. */
+  stressLevel: CoalitionStressLevel;
+  /** Human-readable narrative explaining the detected tension. */
+  narrative: string;
+  /** Number of government-aligned documents in the set. */
+  governmentDocCount: number;
+  /** Number of opposition-aligned documents in the set. */
+  oppositionDocCount: number;
+  /** Ratio of opposition challenge documents (motions, interpellations) to total. */
+  challengeRatio: number;
+  /** Document IDs supporting the tension assessment. */
+  sourceDocIds: string[];
+}
+
+// ---------------------------------------------------------------------------
+// LLM-ready analysis interfaces
+// ---------------------------------------------------------------------------
+
+/**
+ * Interface for SWOT entry generation — heuristic or LLM-backed.
+ * Swap the implementation to integrate an LLM without changing callers.
+ */
+export interface SwotEntryGenerator {
+  /** Build an evidence-backed SWOT entry from a single document. */
+  buildEntry(
+    doc: RawDocument,
+    topic: string | null,
+    lang: Language,
+    passageMaxChars: number,
+  ): AnalysisSwotEntry;
+
+  /** Build a structural placeholder when no documents exist for a quadrant. */
+  buildPlaceholder(
+    role: string,
+    quadrant: string,
+    topic: string | null,
+    lang: Language,
+    domains: string[],
+  ): AnalysisSwotEntry;
+}
+
+/**
+ * Interface for confidence scoring — heuristic or LLM-calibrated.
+ */
+export interface ConfidenceScorer {
+  /** Calculate overall confidence from document evidence and SWOT quality. */
+  calculateScore(
+    docs: RawDocument[],
+    stakeholderSwot: AnalysisStakeholderSwot[],
+  ): number;
+}
+
+/**
+ * Interface for coalition tension detection — heuristic or LLM-backed.
+ */
+export interface CoalitionTensionDetector {
+  /** Detect coalition tension from a document set. */
+  detect(
+    docs: RawDocument[],
+    lang: Language,
+  ): CoalitionTensionResult;
+}
+
+/**
+ * Interface for watch-point urgency classification — heuristic or LLM-backed.
+ */
+export interface UrgencyClassifier {
+  /** Classify urgency from document type and context. */
+  classify(
+    docType: string,
+    docCount: number,
+    context: { hasFullText: boolean; hasPendingVote: boolean },
+  ): 'critical' | 'high' | 'medium' | 'low';
+}

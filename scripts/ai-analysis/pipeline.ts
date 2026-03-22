@@ -31,6 +31,7 @@ import {
   getDomainSpecificAnalysis,
   detectNarrativeFrames,
   assessConfidenceLevel,
+  DOMAIN_NAME_TO_KEY,
 } from '../data-transformers/policy-analysis.js';
 import { extractKeyPassage, cleanMotionText, isPersonProfileText } from '../data-transformers/helpers.js';
 import { localizeDocType } from '../data-transformers/content-generators/index.js';
@@ -976,6 +977,83 @@ function applyLanguageFraming(
 }
 
 // ---------------------------------------------------------------------------
+// EU/Nordic comparative dimension — enriches policy narratives for deep depth
+// ---------------------------------------------------------------------------
+
+/**
+ * Domain-level EU directive and Nordic parliament cross-references.
+ * Maps policy domains to relevant EU/Nordic context for comparative framing.
+ */
+const EU_NORDIC_CONTEXT: Record<string, Partial<Record<Language, string>>> = {
+  fiscal: {
+    en: 'In the EU context, fiscal policy aligns with the Stability and Growth Pact framework. Nordic peers (Denmark, Norway, Finland) pursue similar fiscal consolidation strategies.',
+    sv: 'I EU-sammanhang ansluter finanspolitiken till stabilitets- och tillväxtpakten. Nordiska grannar (Danmark, Norge, Finland) bedriver liknande finanspolitisk konsolidering.',
+  },
+  defence: {
+    en: 'Defence policy intersects with EU Common Security and Defence Policy (CSDP) and NATO commitments. Nordic neighbours Denmark, Norway, and Finland share similar defence posture adjustments.',
+    sv: 'Försvarspolitiken korsar EU:s gemensamma säkerhets- och försvarspolitik (GSFP) och NATO-åtaganden. Nordiska grannar Danmark, Norge och Finland genomför liknande försvarsanpassningar.',
+  },
+  environment: {
+    en: 'Environmental policy aligns with EU Green Deal targets and Fit for 55 legislative package. Nordic parliaments in Denmark, Norway, and Finland pursue comparable climate legislation.',
+    sv: 'Miljöpolitiken ansluter till EU:s gröna giv och Fit for 55-lagstiftningspaketet. Nordiska parlament i Danmark, Norge och Finland bedriver jämförbar klimatlagstiftning.',
+  },
+  education: {
+    en: 'Education policy develops within the European Education Area framework. Nordic peers (Denmark, Norway, Finland) share similar education quality and equity goals.',
+    sv: 'Utbildningspolitiken utvecklas inom det europeiska utbildningsområdets ramverk. Nordiska grannar (Danmark, Norge, Finland) delar liknande mål för utbildningskvalitet och jämlikhet.',
+  },
+  healthcare: {
+    en: 'Healthcare policy intersects with EU Health Union initiatives and European Health Data Space. Nordic systems (Denmark, Norway, Finland) share universal coverage models.',
+    sv: 'Hälso- och sjukvårdspolitiken korsar EU:s hälsounion och det europeiska hälsodataområdet. Nordiska system (Danmark, Norge, Finland) delar universella täckningsmodeller.',
+  },
+  migration: {
+    en: 'Migration policy aligns with the EU Pact on Migration and Asylum. Nordic neighbours (Denmark, Norway, Finland) pursue coordinated border and asylum approaches.',
+    sv: 'Migrationspolitiken ansluter till EU:s migrations- och asylpakt. Nordiska grannar (Danmark, Norge, Finland) bedriver samordnade gräns- och asylansatser.',
+  },
+  'eu-foreign': {
+    en: 'EU foreign affairs policy connects to Common Foreign and Security Policy (CFSP). Nordic partners coordinate through Nordic Council and EU Council positions.',
+    sv: 'EU:s utrikespolitik kopplar till den gemensamma utrikes- och säkerhetspolitiken (GUSP). Nordiska partners samordnar genom Nordiska rådet och EU-rådets positioner.',
+  },
+  justice: {
+    en: 'Justice policy aligns with EU Area of Freedom, Security and Justice. Nordic cooperation through the Nordic Council ensures harmonised legal frameworks.',
+    sv: 'Rättspolitiken ansluter till EU:s område för frihet, säkerhet och rättvisa. Nordiskt samarbete genom Nordiska rådet säkerställer harmoniserade rättsliga ramverk.',
+  },
+  labour: {
+    en: 'Labour policy intersects with the European Pillar of Social Rights. Nordic labour markets (Denmark, Norway, Finland) share flexicurity model characteristics.',
+    sv: 'Arbetsmarknadspolitiken korsar den europeiska pelaren för sociala rättigheter. Nordiska arbetsmarknader (Danmark, Norge, Finland) delar flexicurity-modellens egenskaper.',
+  },
+  housing: {
+    en: 'Housing policy develops in the context of EU cohesion funding and Affordable Housing Initiative. Nordic peers face similar urbanisation and housing affordability challenges.',
+    sv: 'Bostadspolitiken utvecklas i sammanhanget av EU:s sammanhållningsfonder och initiativet för överkomligt boende. Nordiska grannar möter liknande urbaniserings- och bostadskostnadsutmaningar.',
+  },
+  transport: {
+    en: 'Transport policy aligns with TEN-T network and EU Sustainable and Smart Mobility Strategy. Nordic countries coordinate through Nordic Transport Ministers.',
+    sv: 'Transportpolitiken ansluter till TEN-T-nätverket och EU:s strategi för hållbar och smart mobilitet. Nordiska länder samordnar genom nordiska transportministrar.',
+  },
+  trade: {
+    en: 'Trade policy falls under EU common commercial policy. Nordic economies share open-trade orientations and similar exposure to global supply chain dynamics.',
+    sv: 'Handelspolitiken faller under EU:s gemensamma handelspolitik. Nordiska ekonomier delar frihandelsorienteringar och liknande exponering mot globala leveranskedjedynamiker.',
+  },
+};
+
+/**
+ * Build an EU/Nordic comparative sentence for the top policy domains.
+ * Returns null when no domain has a comparative entry.
+ */
+function buildEuNordicComparative(domains: string[], lang: Language): string | null {
+  for (const domain of domains) {
+    // Reverse-lookup from localised domain name to canonical key
+    const key = DOMAIN_NAME_TO_KEY[domain] ?? DOMAIN_NAME_TO_KEY[domain.toLowerCase()];
+    if (key) {
+      const entry = EU_NORDIC_CONTEXT[key];
+      if (entry) {
+        return entry[lang] ?? entry.en ?? null;
+      }
+    }
+  }
+  return null;
+}
+
+// ---------------------------------------------------------------------------
 // Policy assessment builder
 // ---------------------------------------------------------------------------
 
@@ -983,6 +1061,7 @@ function buildPolicyAssessment(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,
+  depth: import('./types.js').AnalysisDepth = 'quick',
 ): PolicyAssessment {
   const allDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
@@ -1020,7 +1099,15 @@ function buildPolicyAssessment(
     ? `${policyActivity} ${domainList}`
     : parlActivity;
   const topicPhrase = topic ? ` ${focusLabel} ${topic}` : '';
-  const narrative = `${analysisOf} ${evidenceDesc} ${reveals} ${activityPhrase}${topicPhrase}.`;
+  let narrative = `${analysisOf} ${evidenceDesc} ${reveals} ${activityPhrase}${topicPhrase}.`;
+
+  // EU/Nordic comparative dimension for deep analysis
+  if (depth === 'deep' && domains.length > 0) {
+    const euNordicSuffix = buildEuNordicComparative(domains.slice(0, 3), lang);
+    if (euNordicSuffix) {
+      narrative += ` ${euNordicSuffix}`;
+    }
+  }
 
   return { domains, primaryDomain, narrative, confidence };
 }
@@ -1057,10 +1144,12 @@ function buildWatchPoints(
 
   if (betDocs.length > 0) {
     const descFn = WP_COMMITTEE_DESC[lang] ?? WP_COMMITTEE_DESC.en!;
+    // Committee reports with high volume signal pending plenary votes → critical
+    const betUrgency = betDocs.length >= 3 ? 'critical' as const : 'high' as const;
     points.push({
       title: `${WP_COMMITTEE[lang] ?? WP_COMMITTEE.en!}${topicSuffix}`,
       description: `${descFn(betDocs.length)}${topicSuffix}`,
-      urgency: 'high',
+      urgency: betUrgency,
       sourceDocIds: betDocs.map(docId).filter(Boolean),
     });
   }
@@ -1250,21 +1339,55 @@ function buildDashboardData(
 // Confidence score calculator
 // ---------------------------------------------------------------------------
 
-function calculateConfidenceScore(docs: RawDocument[]): number {
+/**
+ * Calculate confidence score (0-100) calibrated on both document evidence
+ * quality **and** SWOT entry evidence backing.
+ *
+ * Score breakdown (total 100):
+ * - Evidence depth (70%):
+ *   ∙ metadata enrichment ratio × 20
+ *   ∙ full-text ratio × 20
+ *   ∙ document count (saturates at 10) × 15
+ *   ∙ type variety (saturates at 5) × 15
+ * - SWOT quality (30%):
+ *   ∙ proportion of non-placeholder SWOT entries × 30
+ *
+ * The SWOT quality dimension ensures that confidence monotonically increases
+ * when more enriched documents are available (replacing placeholders).
+ */
+function calculateConfidenceScore(
+  docs: RawDocument[],
+  stakeholderSwot?: import('./types.js').AnalysisStakeholderSwot[],
+): number {
   if (docs.length === 0) return 0;
   const metadataEnriched = docs.filter(isMetadataEnriched).length;
   const fullText = docs.filter(hasFullTextContent).length;
   const typeVariety = new Set(docs.map(normalizedDocType)).size;
-  // Score: 0-100, split across three dimensions:
-  // - Enrichment (total 50%): metadata-enriched (30%) + full-text (20%)
-  // - Document count (up to 10): 30%
-  // - Type variety (up to 5): 20%
+
+  // Evidence depth component (up to 70 points)
   const metadataRatio = metadataEnriched / docs.length;
   const fullTextRatio = fullText / docs.length;
-  const enrichmentScore = metadataRatio * 30 + fullTextRatio * 20;
-  const countScore = Math.min(docs.length / 10, 1) * 30;
-  const varietyScore = Math.min(typeVariety / 5, 1) * 20;
-  return Math.round(enrichmentScore + countScore + varietyScore);
+  const enrichmentScore = metadataRatio * 20 + fullTextRatio * 20;
+  const countScore = Math.min(docs.length / 10, 1) * 15;
+  const varietyScore = Math.min(typeVariety / 5, 1) * 15;
+  const evidenceDepth = enrichmentScore + countScore + varietyScore;
+
+  // SWOT quality component (up to 30 points): non-placeholder ratio
+  let swotQuality = 15; // default when no SWOT data is available yet
+  if (stakeholderSwot && stakeholderSwot.length > 0) {
+    let totalEntries = 0;
+    let nonPlaceholderEntries = 0;
+    for (const sh of stakeholderSwot) {
+      const all = [...sh.swot.strengths, ...sh.swot.weaknesses, ...sh.swot.opportunities, ...sh.swot.threats];
+      totalEntries += all.length;
+      nonPlaceholderEntries += all.filter(e => e.sourceDocIds.length > 0).length;
+    }
+    swotQuality = totalEntries > 0
+      ? (nonPlaceholderEntries / totalEntries) * 30
+      : 0;
+  }
+
+  return Math.round(evidenceDepth + swotQuality);
 }
 
 // ---------------------------------------------------------------------------
@@ -1383,11 +1506,11 @@ async function analyzeDocuments(
     },
   ];
 
-  const policyAssessment = buildPolicyAssessment(docs, topic, lang);
+  const policyAssessment = buildPolicyAssessment(docs, topic, lang, options.depth);
   const watchPoints = buildWatchPoints(docs, topic, lang);
   const mindmapBranches = buildMindmapBranches(docs, topic, policyAssessment.domains, lang);
   const dashboardData = buildDashboardData(docs, topic, lang);
-  const confidenceScore = calculateConfidenceScore(docs);
+  const confidenceScore = calculateConfidenceScore(docs, stakeholderSwot);
 
   return {
     stakeholderSwot,
@@ -1515,12 +1638,12 @@ async function refineAnalysis(
   // Rebuild watch points with enriched context
   refined.watchPoints = buildWatchPoints(docs, topic, lang);
 
-  // Recalculate confidence score with enriched data
-  refined.confidenceScore = calculateConfidenceScore(docs);
+  // Recalculate confidence score with enriched data and updated SWOT
+  refined.confidenceScore = calculateConfidenceScore(docs, refined.stakeholderSwot);
   refined.enrichedCount = metadataCount;
 
   // Refresh policy assessment narrative with enriched evidence
-  refined.policyAssessment = buildPolicyAssessment(docs, topic, lang);
+  refined.policyAssessment = buildPolicyAssessment(docs, topic, lang, options.depth);
 
   // Collect narrative frames from full-text docs and (optionally) add a mindmap branch
   const allFrames = new Set<string>();
