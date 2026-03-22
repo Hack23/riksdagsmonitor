@@ -309,9 +309,13 @@ export function refineStakeholderSwot(
         ...euDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
         ...skrDocs.slice(1, 2).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
       ];
+      const ipDocsForThreats =
+        ipDocs.length >= 3
+          ? ipDocs.slice(2, 4)
+          : ipDocs.slice(Math.max(ipDocs.length - 1, 0));
       const enrichedThreats: AnalysisSwotEntry[] = [
         ...motDocs.slice(0, 2).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
-        ...ipDocs.slice(2, 4).map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
+        ...ipDocsForThreats.map(d => buildEnrichedEntry(d, topic, lang, passageMax)),
       ];
       return {
         ...sh,

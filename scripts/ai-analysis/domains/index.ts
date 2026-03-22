@@ -47,7 +47,7 @@ const WP_ACTIVE_PROPS: LangRecord = {
 
 /** "proposition(s) require parliamentary action" */
 const WP_PROPS_DESC: Partial<Record<Language, (n: number) => string>> = {
-  en: (n) => `${n} proposition${n !== 1 ? 's' : ''} require parliamentary action`,
+  en: (n) => `${n} proposition${n !== 1 ? 's' : ''} ${n === 1 ? 'requires' : 'require'} parliamentary action`,
   sv: (n) => `${n} proposition${n !== 1 ? 'er' : ''} kräver parlamentarisk behandling`,
   da: (n) => `${n} forslag kræver parlamentarisk behandling`,
   no: (n) => `${n} proposisjon${n !== 1 ? 'er' : ''} krever parlamentarisk behandling`,
@@ -103,7 +103,7 @@ const WP_SFS: LangRecord = {
 
 /** "enacted law(s) establish the legal framework — stakeholders must conduct compliance review" */
 const WP_SFS_DESC: Partial<Record<Language, (n: number) => string>> = {
-  en: (n) => `${n} enacted law${n !== 1 ? 's' : ''} establish the legal framework — stakeholders must conduct compliance review`,
+  en: (n) => `${n} enacted law${n !== 1 ? 's' : ''} ${n === 1 ? 'establishes' : 'establish'} the legal framework — stakeholders must conduct compliance review`,
   sv: (n) => `${n} lag/förordning${n !== 1 ? 'ar' : ''} etablerar rättslig ram — intressenter behöver genomföra efterlevnadsgranskning`,
   da: (n) => `${n} lov${n !== 1 ? 'e' : ''} etablerer den juridiske ramme — interessenter skal foretage overholdelsesvurdering`,
   no: (n) => `${n} lov${n !== 1 ? 'er' : ''} etablerer det juridiske rammeverket — interessenter må gjennomføre samsvarsvurdering`,
@@ -131,7 +131,7 @@ const WP_MOTIONS: LangRecord = {
 
 /** "motion(s) signal alternative policy directions" */
 const WP_MOTIONS_DESC: Partial<Record<Language, (n: number) => string>> = {
-  en: (n) => `${n} motion${n !== 1 ? 's' : ''} signal alternative policy directions`,
+  en: (n) => `${n} motion${n !== 1 ? 's' : ''} ${n === 1 ? 'signals' : 'signal'} alternative policy directions`,
   sv: (n) => `${n} motion${n !== 1 ? 'er' : ''} signalerar alternativa politiska inriktningar`,
   da: (n) => `${n} forslag signalerer alternative politiske retninger`,
   no: (n) => `${n} motjon${n !== 1 ? 'er' : ''} signaliserer alternative politiske retninger`,
@@ -159,7 +159,7 @@ const WP_EU: LangRecord = {
 
 /** "EU position paper(s) reveal European dimension — EU law may constrain national policy options" */
 const WP_EU_DESC: Partial<Record<Language, (n: number) => string>> = {
-  en: (n) => `${n} EU position paper${n !== 1 ? 's' : ''} reveal European dimension — EU law may constrain national policy options`,
+  en: (n) => `${n} EU position paper${n !== 1 ? 's' : ''} ${n === 1 ? 'reveals' : 'reveal'} European dimension — EU law may constrain national policy options`,
   sv: (n) => `${n} EU-faktapromemoria avslöjar Europaperspektiv — EU-regelverket kan begränsa nationell handlingsfrihet`,
   da: (n) => `${n} EU-positionspapir${n !== 1 ? 'er' : ''} afslører europæisk dimension — EU-lovgivning kan begrænse nationale politiske muligheder`,
   no: (n) => `${n} EU-posisjonspapir${n !== 1 ? 'er' : ''} avslører europeisk dimensjon — EU-lovgivning kan begrense nasjonale politiske alternativer`,
@@ -187,7 +187,7 @@ const WP_IP: LangRecord = {
 
 /** "interpellation(s) signal opposition scrutiny of ministerial performance" */
 const WP_IP_DESC: Partial<Record<Language, (n: number) => string>> = {
-  en: (n) => `${n} interpellation${n !== 1 ? 's' : ''} signal opposition scrutiny of ministerial performance — direct accountability pressure on government`,
+  en: (n) => `${n} interpellation${n !== 1 ? 's' : ''} ${n === 1 ? 'signals' : 'signal'} opposition scrutiny of ministerial performance — direct accountability pressure on government`,
   sv: (n) => `${n} interpellation${n !== 1 ? 'er' : ''} signalerar oppositionens granskning av ministrarnas arbete — direkt ansvarsutkrävande gentemot regeringen`,
   da: (n) => `${n} interpellation${n !== 1 ? 'er' : ''} signalerer oppositions granskning af ministeriel præstation`,
   no: (n) => `${n} interpellasjon${n !== 1 ? 'er' : ''} signaliserer opposisjonens granskning av ministeriell ytelse`,

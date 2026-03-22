@@ -25,6 +25,24 @@ const TYPE_PALETTE: readonly string[] = [
   '#ff6b35', '#4dd0e1', '#f48fb1', '#a5d6a7', '#ce93d8',
 ];
 
+/**
+ * Stable type→color mapping so the same doc type always gets the same color
+ * regardless of document encounter order. Known types get fixed assignments;
+ * unknown types fall through to the palette by sorted-key index.
+ */
+const STABLE_TYPE_COLORS: Record<string, string> = {
+  prop: '#00d9ff',
+  mot: '#ff006e',
+  bet: '#ffbe0b',
+  sfs: '#7b2fff',
+  ip: '#00c58e',
+  fpm: '#ff6b35',
+  skr: '#4dd0e1',
+  ds: '#f48fb1',
+  sou: '#a5d6a7',
+  dir: '#ce93d8',
+};
+
 // ---------------------------------------------------------------------------
 // Data source labels (14 languages)
 // ---------------------------------------------------------------------------
@@ -177,11 +195,11 @@ export function buildDashboardData(
     typeCounts[t] = (typeCounts[t] || 0) + 1;
   });
 
-  const typeKeys = Object.keys(typeCounts);
+  const typeKeys = Object.keys(typeCounts).sort();
   const typeDistribution = typeKeys.map((t, i) => ({
     label: localizeDocType(t, lang, typeCounts[t] ?? 0),
     value: typeCounts[t] ?? 0,
-    color: TYPE_PALETTE[i % TYPE_PALETTE.length] ?? '#00d9ff',
+    color: STABLE_TYPE_COLORS[t] ?? TYPE_PALETTE[i % TYPE_PALETTE.length] ?? '#00d9ff',
   }));
 
   const docIntelLabel = DASHBOARD_TITLE[lang] ?? DASHBOARD_TITLE.en!;

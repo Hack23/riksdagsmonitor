@@ -37,7 +37,14 @@ export function docTitle(doc: RawDocument): string {
 
 /** Extract a stable document identifier. */
 export function docId(doc: RawDocument): string {
-  return doc.dok_id || doc.url || doc.titel || doc.title || doc.dokumentnamn || 'unknown';
+  const primaryId = doc.dok_id || doc.url || doc.titel || doc.title || doc.dokumentnamn;
+  if (primaryId) {
+    return primaryId;
+  }
+  // Deterministic composite fallback to avoid collisions on literal 'unknown'
+  const fallbackType = normalizedDocType(doc) || 'other';
+  const fallbackTitle = docTitle(doc) || doc.datum || 'unknown';
+  return `${fallbackType}:${fallbackTitle}`;
 }
 
 /**
