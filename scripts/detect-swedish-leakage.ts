@@ -71,22 +71,31 @@ export interface LeakageReport {
 
 /**
  * Strip HTML tags and decode common entities to get plain text.
+ * This is used only for analysis/detection purposes, NOT for sanitisation.
  * @param html - Raw HTML string
  * @returns Plain text content
  */
 export function stripHtml(html: string): string {
-  return html
-    .replace(/<script[\s\S]*?<\/script>/gi, '')
-    .replace(/<style[\s\S]*?<\/style>/gi, '')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/&amp;/g, '&')
+  // Remove script and style blocks iteratively until none remain
+  let text = html;
+  let prev = '';
+  while (prev !== text) {
+    prev = text;
+    text = text.replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi, ' ');
+    text = text.replace(/<style\b[^>]*>[\s\S]*?<\/style[^>]*>/gi, ' ');
+  }
+  // Remove remaining tags
+  text = text.replace(/<[^>]+>/g, ' ');
+  // Decode common entities (order matters: &amp; last to avoid double-decode)
+  text = text
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
     .replace(/&nbsp;/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
+    .replace(/&amp;/g, '&');
+  // Normalise whitespace
+  return text.replace(/\s+/g, ' ').trim();
 }
 
 // ---------------------------------------------------------------------------
@@ -143,11 +152,13 @@ export function detectSwedishLeakage(html: string, targetLang: Language): Leakag
 
 /** Words shared between Swedish and specific other languages. */
 const SHARED_WORDS: Partial<Record<Language, ReadonlySet<string>>> = {
-  da: new Set(['och', 'det', 'att', 'for', 'med', 'har', 'den', 'ett', 'var', 'kan', 'efter', 'vid', 'eller', 'från', 'bland', 'under', 'utan', 'mot', 'mellan']),
-  no: new Set(['och', 'det', 'att', 'for', 'med', 'har', 'den', 'ett', 'var', 'kan', 'efter', 'ved', 'eller', 'fra', 'blant', 'under', 'uten', 'mot', 'mellom']),
-  de: new Set(['det', 'var', 'nach']),
-  nl: new Set(['det', 'van', 'met']),
-  fr: new Set(['est']),
+  // Danish shares some common words with Swedish but not 'och', 'att', 'från' etc.
+  da: new Set(['det', 'den', 'var', 'kan', 'efter', 'eller', 'under', 'mot']),
+  // Norwegian shares some common words with Swedish
+  no: new Set(['det', 'den', 'var', 'kan', 'eller', 'under', 'mot']),
+  de: new Set(['det', 'var']),
+  nl: new Set(['det', 'met']),
+  fr: new Set([]),
   es: new Set([]),
   fi: new Set([]),
   en: new Set([]),
@@ -222,7 +233,7 @@ async function main(): Promise<void> {
 }
 
 // Run CLI when invoked directly
-const isMainModule = typeof process !== 'undefined' && process.argv[1]?.endsWith('detect-swedish-leakage.ts');
+const isMainModule = typeof process !== 'undefined' && process.argv[1]?.match(/detect-swedish-leakage\.(ts|js)$/);
 if (isMainModule) {
   main().catch((err) => {
     console.error(err);
