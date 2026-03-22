@@ -1561,7 +1561,16 @@ async function refineAnalysis(
     // metadata only (include_full_text=false).  We still bump
     // iterationsCompleted to 2 so the pipeline contract is honoured, and
     // update enrichedCount to reflect the metadata-enriched population.
-    return { ...initial, iterationsCompleted: 2, completedAt: new Date().toISOString(), enrichedCount: metadataCount };
+    // Recalculate confidenceScore and policyAssessment so they reflect any
+    // metadata enrichment that occurred between iteration 1 and 2.
+    return {
+      ...initial,
+      iterationsCompleted: 2,
+      completedAt: new Date().toISOString(),
+      enrichedCount: metadataCount,
+      confidenceScore: calculateConfidenceScore(docs, initial.stakeholderSwot),
+      policyAssessment: buildPolicyAssessment(docs, topic, lang, options.depth),
+    };
   }
 
   // Re-derive SWOT entries with longer passages for enriched documents
