@@ -987,6 +987,11 @@ function applyLanguageFraming(
 /**
  * Domain-level EU directive and Nordic parliament cross-references.
  * Maps policy domains to relevant EU/Nordic context for comparative framing.
+ *
+ * Currently provides translations for `en` and `sv` only.  For other languages
+ * the comparative suffix is intentionally omitted (buildEuNordicComparative
+ * returns null) rather than falling back to English, to avoid mixed-language
+ * output.  Additional language variants can be added here as needed.
  */
 const EU_NORDIC_CONTEXT: Partial<Record<DomainKey, Partial<Record<Language, string>>>> = {
   fiscal: {

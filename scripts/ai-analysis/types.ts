@@ -307,23 +307,41 @@ export interface AnalysisIterationMetadata {
 // Coalition tension detection
 // ---------------------------------------------------------------------------
 
-/** Stress level derived from multi-party document analysis. */
+/** Stress level derived from document-type patterns within the analysed set. */
 export type CoalitionStressLevel = 'low' | 'medium' | 'high';
 
 /**
  * Result of coalition tension detection from a document set.
- * Identifies convergence/divergence patterns across party-affiliated documents.
+ * Summarises coalition pressure based on challenge-document ratios and
+ * the balance between government- and opposition-aligned documents.
+ *
+ * The current detector infers potential coalition tension by looking at the balance
+ * between government-initiated documents (e.g. propositions, SFS, committee reports)
+ * and challenge-type documents (e.g. motions, interpellations). A higher share of
+ * challenge documents is treated as a proxy for increased political stress.
+ *
+ * Note: this analysis does NOT use party metadata or model detailed convergence /
+ * divergence patterns between individual parties; it is purely document-type-based.
  */
 export interface CoalitionTensionResult {
-  /** Overall coalition stress level. */
+  /** Overall coalition stress level derived from the document-type mix. */
   stressLevel: CoalitionStressLevel;
-  /** Human-readable narrative explaining the detected tension. */
+  /** Human-readable narrative explaining the detected tension heuristic. */
   narrative: string;
-  /** Number of government-aligned documents in the set. */
+  /**
+   * Number of government-initiated documents in the set
+   * (e.g. propositions, SFS, committee reports).
+   */
   governmentDocCount: number;
-  /** Number of opposition-aligned documents in the set. */
+  /**
+   * Number of challenge-type documents in the set
+   * (e.g. motions, interpellations), used as a proxy for opposition pressure.
+   */
   oppositionDocCount: number;
-  /** Ratio of opposition challenge documents (motions, interpellations) to total. */
+  /**
+   * Ratio of challenge-type documents to all classified documents
+   * (government + opposition; committee reports excluded from denominator).
+   */
   challengeRatio: number;
   /** Document IDs supporting the tension assessment. */
   sourceDocIds: string[];
