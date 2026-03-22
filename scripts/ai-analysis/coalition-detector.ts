@@ -108,14 +108,29 @@ const STRESS_HIGH: LangRecord = {
  * - low:    challengeRatio < 0.3
  * - medium: 0.3 ≤ challengeRatio < 0.6
  * - high:   challengeRatio ≥ 0.6
+ *
+ * When ≥5 interpellations are present, stress is bumped by one level
+ * (low→medium, medium→high) to reflect ministerial accountability pressure.
  */
 function classifyStress(challengeRatio: number, ipCount: number): CoalitionStressLevel {
-  // Interpellations ≥ 5 bump stress by one level (ministerial accountability pressure)
   const ipBoost = ipCount >= 5;
 
-  if (challengeRatio >= 0.6) return 'high';
-  if (challengeRatio >= 0.3 || ipBoost) return 'medium';
-  return 'low';
+  // Base level from challenge ratio alone
+  let level: CoalitionStressLevel;
+  if (challengeRatio >= 0.6) {
+    level = 'high';
+  } else if (challengeRatio >= 0.3) {
+    level = 'medium';
+  } else {
+    level = 'low';
+  }
+
+  // Apply one-level bump if interpellations are high and we are below 'high'
+  if (ipBoost && level !== 'high') {
+    level = level === 'low' ? 'medium' : 'high';
+  }
+
+  return level;
 }
 
 function narrativeForStress(level: CoalitionStressLevel, lang: Language): string {
@@ -169,8 +184,12 @@ function detectCoalitionTension(
 
   // Challenge ratio: opposition challenge documents divided by
   // (government + opposition), with committee reports excluded from the denominator.
+  // Round to 2 decimals before classification so the returned ratio is always
+  // consistent with the stress level (avoids threshold ambiguity near 0.3/0.6).
   const denominator = governmentDocCount + oppositionDocCount;
-  const challengeRatio = denominator > 0 ? oppositionDocCount / denominator : 0;
+  const challengeRatio = denominator > 0
+    ? Math.round((oppositionDocCount / denominator) * 100) / 100
+    : 0;
 
   const stressLevel = classifyStress(challengeRatio, ipCount);
   const narrative = narrativeForStress(stressLevel, lang);
@@ -180,7 +199,7 @@ function detectCoalitionTension(
     narrative,
     governmentDocCount,
     oppositionDocCount,
-    challengeRatio: Math.round(challengeRatio * 100) / 100,
+    challengeRatio,
     sourceDocIds,
   };
 }

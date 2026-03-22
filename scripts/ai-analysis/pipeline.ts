@@ -32,6 +32,7 @@ import {
   detectNarrativeFrames,
   assessConfidenceLevel,
   DOMAIN_NAME_TO_KEY,
+  type DomainKey,
 } from '../data-transformers/policy-analysis.js';
 import { extractKeyPassage, cleanMotionText, isPersonProfileText } from '../data-transformers/helpers.js';
 import { localizeDocType } from '../data-transformers/content-generators/index.js';
@@ -984,7 +985,7 @@ function applyLanguageFraming(
  * Domain-level EU directive and Nordic parliament cross-references.
  * Maps policy domains to relevant EU/Nordic context for comparative framing.
  */
-const EU_NORDIC_CONTEXT: Record<string, Partial<Record<Language, string>>> = {
+const EU_NORDIC_CONTEXT: Partial<Record<DomainKey, Partial<Record<Language, string>>>> = {
   fiscal: {
     en: 'In the EU context, fiscal policy aligns with the Stability and Growth Pact framework. Nordic peers (Denmark, Norway, Finland) pursue similar fiscal consolidation strategies.',
     sv: 'I EU-sammanhang ansluter finanspolitiken till stabilitets- och tillväxtpakten. Nordiska grannar (Danmark, Norge, Finland) bedriver liknande finanspolitisk konsolidering.',

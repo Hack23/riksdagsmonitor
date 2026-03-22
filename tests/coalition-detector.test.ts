@@ -107,6 +107,19 @@ describe('coalitionDetector.detect', () => {
     expect(result.challengeRatio).toBeLessThan(0.3);
   });
 
+  it('boosts stress from medium to high when ≥5 interpellations present', () => {
+    // 7 government docs + 5 IPs → ratio = 5/12 ≈ 0.42 → medium baseline
+    // IP boost (≥5) pushes medium → high
+    const docs = [
+      PROP, PROP2, SFS, SKR, PRESSM, PROP, PROP2,
+      IP1, IP2, IP3, IP4, IP5,
+    ];
+    const result = coalitionDetector.detect(docs, 'en');
+    expect(result.challengeRatio).toBeGreaterThanOrEqual(0.3);
+    expect(result.challengeRatio).toBeLessThan(0.6);
+    expect(result.stressLevel).toBe('high');
+  });
+
   it('excludes committee reports from government/opposition counts', () => {
     const docs = [PROP, BET, BET, MOT];
     const result = coalitionDetector.detect(docs, 'en');

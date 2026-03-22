@@ -1123,7 +1123,7 @@ describe('enhanced urgency classification', () => {
   it('covers all four urgency levels across document types', async () => {
     const docs = [
       makeDoc({ dok_id: 'SFS1', doktyp: 'sfs', titel: 'SFS 2026:1' }),
-      makeDoc({ dok_id: 'PROP1', doktyp: 'prop', titel: 'Government bill on reform and security' }),
+      makeDoc({ dok_id: 'PROP1', doktyp: 'prop', titel: 'Government bill on budget reform and security' }),
       makeDoc({ dok_id: 'MOT1', doktyp: 'mot', titel: 'Opposition motion' }),
       makeDoc({ dok_id: 'BET1', doktyp: 'bet', titel: 'Committee report' }),
     ];
@@ -1135,7 +1135,7 @@ describe('enhanced urgency classification', () => {
     expect(urgencies.has('critical')).toBe(true);  // SFS
     expect(urgencies.has('high')).toBe(true);        // prop or bet (< 3)
     expect(urgencies.has('medium')).toBe(true);      // mot
-    // 'low' is only for narrative frames — may or may not be detected
+    expect(urgencies.has('low')).toBe(true);          // narrative frames from 'budget' keyword
   });
 });
 
