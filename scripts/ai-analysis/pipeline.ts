@@ -17,7 +17,6 @@
  * @license Apache-2.0
  */
 
-import type { Language } from '../types/language.js';
 import type { RawDocument } from '../data-transformers/types.js';
 import { detectPolicyDomains, detectNarrativeFrames } from '../data-transformers/policy-analysis.js';
 

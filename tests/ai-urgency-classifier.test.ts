@@ -41,7 +41,6 @@ const BET3 = makeDoc({ dok_id: 'BET3', titel: 'Betänkande om miljö', doktyp: '
 const MOT = makeDoc({ dok_id: 'MOT1', titel: 'Motion om klimat', doktyp: 'mot' });
 const MOT2 = makeDoc({ dok_id: 'MOT2', titel: 'Motion om arbetslöshet', doktyp: 'mot' });
 const SFS = makeDoc({ dok_id: 'SFS1', titel: 'SFS 2026:1 Lag om digitalisering', doktyp: 'sfs' });
-const FPM = makeDoc({ dok_id: 'FPM1', titel: 'EU-position om handel', doktyp: 'fpm' });
 
 const ALL_LANGUAGES = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'] as const;
 

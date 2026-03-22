@@ -11,7 +11,6 @@ import type { Language } from '../../types/language.js';
 import type { RawDocument } from '../../data-transformers/types.js';
 import {
   detectPolicyDomains,
-  getDomainSpecificAnalysis,
   detectNarrativeFrames,
   assessConfidenceLevel,
   DOMAIN_NAME_TO_KEY,
@@ -31,34 +30,6 @@ import type {
   AnalysisWatchPoint,
   PolicyAssessment,
 } from '../types.js';
-
-// ---------------------------------------------------------------------------
-// Data source labels (14 languages)
-// ---------------------------------------------------------------------------
-
-const DATA_SOURCE_LABELS: LangRecord = {
-  en: 'Data Sources', sv: 'Datakällor', da: 'Datakilder', no: 'Datakilder',
-  fi: 'Tietolähteet', de: 'Datenquellen', fr: 'Sources de données', es: 'Fuentes de datos',
-  nl: 'Gegevensbronnen', ar: 'مصادر البيانات', he: 'מקורות נתונים',
-  ja: 'データソース', ko: '데이터 출처', zh: '数据来源',
-};
-
-const DATA_SOURCE_ITEMS: Partial<Record<Language, string[]>> = {
-  en: ['Riksdag MCP (laws, motions, propositions)', 'World Bank (economic indicators)', 'SCB Statistics Sweden'],
-  sv: ['Riksdagens MCP (lagar, motioner, propositioner)', 'Världsbanken (ekonomiska indikatorer)', 'SCB Statistikmyndigheten'],
-  da: ['Riksdag MCP (love, motioner, forslag)', 'Verdensbanken (økonomiske indikatorer)', 'SCB Statistikmyndigheten'],
-  no: ['Riksdag MCP (lover, motioner, proposisjoner)', 'Verdensbanken (økonomiske indikatorer)', 'SCB Statistikmyndigheten'],
-  fi: ['Riksdagin MCP (lait, kirjelmät, esitykset)', 'Maailmanpankki (taloudelliset indikaattorit)', 'SCB Tilastoviranomainen'],
-  de: ['Riksdag MCP (Gesetze, Anträge, Vorlagen)', 'Weltbank (Wirtschaftsindikatoren)', 'SCB Statistikmyndigheten'],
-  fr: ['Riksdag MCP (lois, motions, propositions)', 'Banque mondiale (indicateurs économiques)', 'SCB Statistikmyndigheten'],
-  es: ['Riksdag MCP (leyes, mociones, proposiciones)', 'Banco Mundial (indicadores económicos)', 'SCB Statistikmyndigheten'],
-  nl: ['Riksdag MCP (wetten, moties, voorstellen)', 'Wereldbank (economische indicatoren)', 'SCB Statistikmyndigheten'],
-  ar: ['ريكسداغ MCP (قوانين، اقتراحات)', 'البنك الدولي (مؤشرات اقتصادية)', 'SCB إحصاء السويد'],
-  he: ['ריקסדאג MCP (חוקים, הצעות)', 'הבנק העולמי (אינדיקטורים כלכליים)', 'SCB הלשכה המרכזית לסטטיסטיקה'],
-  ja: ['Riksdag MCP (法律・動議・提案)', '世界銀行（経済指標）', 'SCB スウェーデン統計局'],
-  ko: ['Riksdag MCP (법률, 동의, 제안)', '세계은행 (경제 지표)', 'SCB 스웨덴 통계청'],
-  zh: ['议会 MCP（法律、动议、提案）', '世界银行（经济指标）', 'SCB 瑞典统计局'],
-};
 
 // ---------------------------------------------------------------------------
 // Watch point labels (14 languages)
@@ -250,19 +221,6 @@ const WP_NARRATIVE_DESC: LangRecord = {
   fr: 'Cadres rhétoriques politiques identifiés : ', es: 'Marcos retóricos políticos identificados: ',
   nl: 'Politieke retorische kaders geïdentificeerd: ', ar: 'تم تحديد أطر بلاغية سياسية: ',
   he: 'מסגרות רטוריות פוליטיות שזוהו: ', ja: '政治的修辞フレーム特定: ', ko: '정치적 수사 프레임 확인: ', zh: '已识别的政治修辞框架: ',
-};
-
-// ---------------------------------------------------------------------------
-// Dashboard labels (14 languages)
-// ---------------------------------------------------------------------------
-
-const DASHBOARD_TITLE: LangRecord = {
-  en: 'Document Intelligence', sv: 'Dokumentintelligens',
-  da: 'Dokumentefterretning', no: 'Dokumentetterretning',
-  fi: 'Asiakirjatiedustelu', de: 'Dokumentenintelligenz',
-  fr: 'Renseignement documentaire', es: 'Inteligencia documental',
-  nl: 'Documentintelligentie', ar: 'استخبارات الوثائق',
-  he: 'מודיעין מסמכים', ja: '文書インテリジェンス', ko: '문서 인텔리전스', zh: '文件情报',
 };
 
 export const DASHBOARD_DOCS_ANALYSED: Partial<Record<Language, (n: number) => string>> = {

@@ -29,7 +29,6 @@ import type { Language } from '../types/language.js';
 import type { SwotEntry } from '../types/article.js';
 
 import {
-  type Lang14,
   pickLang,
   interp,
   plural,
