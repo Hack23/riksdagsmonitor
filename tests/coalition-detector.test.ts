@@ -224,4 +224,32 @@ describe('coalitionDetector.detect', () => {
     expect(result.challengeRatio).toBe(0.25);
     expect(result.stressLevel).toBe('low');
   });
+
+  it('infers SFS from dokumentnamn when doktyp is missing', () => {
+    const sfsByName = makeDoc({
+      dok_id: 'SFS_NAME1',
+      doktyp: undefined,
+      dokumentnamn: 'SFS 2026:123',
+    });
+    const docs = [sfsByName, MOT];
+    const result = coalitionDetector.detect(docs, 'en');
+    // SFS-by-name should be counted as government-aligned
+    expect(result.governmentDocCount).toBe(1);
+    expect(result.oppositionDocCount).toBe(1);
+    expect(result.challengeRatio).toBe(0.5);
+  });
+
+  it('falls back to url when dok_id is missing for sourceDocIds', () => {
+    const urlOnlyDoc = makeDoc({
+      dok_id: undefined,
+      url: 'https://riksdagen.se/doc/12345',
+      doktyp: 'prop',
+    });
+    const docs = [urlOnlyDoc, MOT];
+    const result = coalitionDetector.detect(docs, 'en');
+    expect(result.sourceDocIds).toContain('https://riksdagen.se/doc/12345');
+    expect(result.sourceDocIds).toContain('MOT1');
+    expect(result.governmentDocCount).toBe(1);
+    expect(result.oppositionDocCount).toBe(1);
+  });
 });

@@ -32,15 +32,33 @@ import type {
 // Document classification helpers
 // ---------------------------------------------------------------------------
 
-/** Normalise document type string for comparison (falls back to documentType). */
+/**
+ * Normalise document type string for comparison.
+ * Falls back to `documentType` when `doktyp` is missing.
+ * When both are absent, infers SFS from `dokumentnamn`/`title` prefix
+ * (mirroring pipeline.normalizedDocType) so SFS-only or mixed sets
+ * are counted correctly as government-aligned.
+ */
 function docType(d: RawDocument): string {
-  const raw = d.doktyp ?? d.documentType ?? '';
-  return raw.toLowerCase().trim();
+  // Prefer explicit doktyp when present
+  if (d.doktyp && d.doktyp.trim() !== '') {
+    return d.doktyp.toLowerCase().trim();
+  }
+
+  // Infer SFS from document name when doktyp is missing, mirroring pipeline.isSfsDoc
+  const nameFallback = d.dokumentnamn ?? d.title ?? '';
+  if (nameFallback.toUpperCase().startsWith('SFS')) {
+    return 'sfs';
+  }
+
+  // Final fallback: use documentType if available
+  const fallback = d.documentType ?? '';
+  return fallback.toLowerCase().trim();
 }
 
-/** Extract document ID. */
+/** Extract document ID, falling back to URL for documents without dok_id. */
 function docId(d: RawDocument): string {
-  return d.dok_id ?? '';
+  return d.dok_id ?? d.url ?? '';
 }
 
 /** Government-aligned document types (propositions, laws, govt comms, press releases, SOU, departmental series, directives). */
