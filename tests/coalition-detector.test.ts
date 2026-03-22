@@ -92,10 +92,15 @@ describe('coalitionDetector.detect', () => {
   it('boosts stress to medium when ≥5 interpellations present', () => {
     // Government output strongly dominates but many interpellations present
     const docs = [
-      // 12 government-aligned documents
+      // 12 government-aligned documents (unique dok_ids)
       PROP, PROP2, SFS, SKR, PRESSM,
-      PROP, PROP2, SFS, SKR, PRESSM,
-      PROP, PROP2,
+      makeDoc({ dok_id: 'PROP3', doktyp: 'prop' }),
+      makeDoc({ dok_id: 'PROP4', doktyp: 'prop' }),
+      makeDoc({ dok_id: 'SFS2', doktyp: 'sfs' }),
+      makeDoc({ dok_id: 'SKR2', doktyp: 'skr' }),
+      makeDoc({ dok_id: 'PR2', doktyp: 'pressm' }),
+      makeDoc({ dok_id: 'PROP5', doktyp: 'prop' }),
+      makeDoc({ dok_id: 'PROP6', doktyp: 'prop' }),
       // 5 interpellations (opposition challenges)
       IP1, IP2, IP3, IP4, IP5,
     ];
@@ -111,7 +116,9 @@ describe('coalitionDetector.detect', () => {
     // 7 government docs + 5 IPs → ratio = 5/12 ≈ 0.42 → medium baseline
     // IP boost (≥5) pushes medium → high
     const docs = [
-      PROP, PROP2, SFS, SKR, PRESSM, PROP, PROP2,
+      PROP, PROP2, SFS, SKR, PRESSM,
+      makeDoc({ dok_id: 'PROP3', doktyp: 'prop' }),
+      makeDoc({ dok_id: 'PROP4', doktyp: 'prop' }),
       IP1, IP2, IP3, IP4, IP5,
     ];
     const result = coalitionDetector.detect(docs, 'en');
@@ -188,6 +195,9 @@ describe('coalitionDetector.detect', () => {
     expect(result.oppositionDocCount).toBe(0);
     expect(result.challengeRatio).toBe(0);
     expect(result.sourceDocIds).toHaveLength(2);
+    // Neutral set should use the dedicated neutral narrative, not "government output dominates"
+    expect(result.narrative).toContain('neutral');
+    expect(result.narrative).not.toContain('government output dominates');
   });
 
   it('falls back to documentType when doktyp is missing', () => {

@@ -55,6 +55,23 @@ const OPPOSITION_DOC_TYPES = new Set(['mot', 'ip']);
 
 type LangRecord = Partial<Record<Language, string>>;
 
+const STRESS_NEUTRAL: LangRecord = {
+  en: 'The document set contains only neutral items (e.g. committee reports) — coalition tension cannot be assessed from this evidence.',
+  sv: 'Dokumentuppsättningen innehåller endast neutrala handlingar (t.ex. utskottsbetänkanden) — koalitionsspänning kan inte bedömas utifrån detta underlag.',
+  da: 'Dokumentsættet indeholder kun neutrale dokumenter (f.eks. udvalgsbetænkninger) — koalitionsspænding kan ikke vurderes ud fra dette materiale.',
+  no: 'Dokumentsettet inneholder bare nøytrale dokumenter (f.eks. komitéinnstillinger) — koalisjonsspenning kan ikke vurderes ut fra dette materialet.',
+  fi: 'Asiakirjajoukko sisältää vain neutraaleja asiakirjoja (esim. valiokuntamietintöjä) — koalition jännitteitä ei voida arvioida tämän aineiston perusteella.',
+  de: 'Der Dokumentensatz enthält nur neutrale Unterlagen (z.\u00A0B. Ausschussberichte) — die Koalitionsspannung lässt sich anhand dieses Materials nicht beurteilen.',
+  fr: 'L\'ensemble de documents ne contient que des documents neutres (par ex. rapports de commission) — la tension de coalition ne peut pas être évaluée à partir de ces éléments.',
+  es: 'El conjunto de documentos solo contiene elementos neutrales (p.\u00A0ej. informes de comisión) — la tensión de coalición no puede evaluarse a partir de esta evidencia.',
+  nl: 'De documentset bevat alleen neutrale stukken (bijv. commissierapporten) — coalitiespanning kan op basis hiervan niet worden beoordeeld.',
+  ar: 'تحتوي مجموعة الوثائق على عناصر محايدة فقط (مثل تقارير اللجان) — لا يمكن تقييم التوتر الائتلافي بناءً على هذا الدليل.',
+  he: 'קבוצת המסמכים מכילה פריטים ניטרליים בלבד (למשל דוחות ועדה) — לא ניתן להעריך מתח קואליציוני על סמך ראיות אלה.',
+  ja: '文書セットには中立的な項目（委員会報告書など）のみが含まれています — この証拠からは連立の緊張度を評価できません。',
+  ko: '문서 세트에 중립 항목(위원회 보고서 등)만 포함되어 있습니다 — 이 증거로는 연립 긴장도를 평가할 수 없습니다.',
+  zh: '文件集仅包含中立项目（如委员会报告）— 无法根据此证据评估联盟紧张度。',
+};
+
 const STRESS_LOW: LangRecord = {
   en: 'Low coalition tension — government output dominates with limited opposition challenge.',
   sv: 'Låg koalitionsspänning — regeringens produktion dominerar med begränsad oppositionsutmaning.',
@@ -197,6 +214,20 @@ function detectCoalitionTension(
   const challengeRatio = denominator > 0
     ? Math.round((oppositionDocCount / denominator) * 100) / 100
     : 0;
+
+  // When no government/opposition documents are present (e.g. only committee
+  // reports), the set is neutral — use a dedicated narrative rather than the
+  // generic "government output dominates" low-stress text.
+  if (denominator === 0) {
+    return {
+      stressLevel: 'low',
+      narrative: STRESS_NEUTRAL[lang] ?? STRESS_NEUTRAL.en!,
+      governmentDocCount,
+      oppositionDocCount,
+      challengeRatio,
+      sourceDocIds,
+    };
+  }
 
   const stressLevel = classifyStress(challengeRatio, ipCount);
   const narrative = narrativeForStress(stressLevel, lang);
