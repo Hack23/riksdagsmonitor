@@ -2887,6 +2887,795 @@ function buildMap(lang: Language): TranslationMap {
         nl: 'verdrag', ar: 'اتفاقية', he: 'הסכם', ja: '協定', ko: '협정', zh: '协议',
       },
     ],
+    // ---- Additional common Swedish parliamentary and government terms ----
+    [
+      'investeringar',
+      {
+        sv: 'investeringar', en: 'investments', da: 'investeringer', no: 'investeringer',
+        fi: 'investoinnit', de: 'Investitionen', fr: 'investissements', es: 'inversiones',
+        nl: 'investeringen', ar: 'استثمارات', he: 'השקעות', ja: '投資', ko: '투자', zh: '投资',
+      },
+    ],
+    [
+      'privatisering',
+      {
+        sv: 'privatisering', en: 'privatisation', da: 'privatisering', no: 'privatisering',
+        fi: 'yksityistäminen', de: 'Privatisierung', fr: 'privatisation', es: 'privatización',
+        nl: 'privatisering', ar: 'خصخصة', he: 'הפרטה', ja: '民営化', ko: '민영화', zh: '私有化',
+      },
+    ],
+    [
+      'decentralisering',
+      {
+        sv: 'decentralisering', en: 'decentralisation', da: 'decentralisering', no: 'desentralisering',
+        fi: 'hajauttaminen', de: 'Dezentralisierung', fr: 'décentralisation', es: 'descentralización',
+        nl: 'decentralisatie', ar: 'لامركزية', he: 'ביזור', ja: '分権化', ko: '분권화', zh: '分权化',
+      },
+    ],
+    [
+      'skattelättnad',
+      {
+        sv: 'skattelättnad', en: 'tax relief', da: 'skattelettelse', no: 'skattelettelse',
+        fi: 'veronkevennys', de: 'Steuererleichterung', fr: 'allègement fiscal', es: 'desgravación fiscal',
+        nl: 'belastingverlichting', ar: 'إعفاء ضريبي', he: 'הקלת מס', ja: '減税', ko: '세금감면', zh: '税收减免',
+      },
+    ],
+    [
+      'arbetsgivaravgifter',
+      {
+        sv: 'arbetsgivaravgifter', en: 'employer contributions', da: 'arbejdsgiverbidrag',
+        no: 'arbeidsgiveravgift', fi: 'työnantajamaksut', de: 'Arbeitgeberabgaben',
+        fr: 'cotisations patronales', es: 'contribuciones patronales', nl: 'werkgeversbijdragen',
+        ar: 'مساهمات صاحب العمل', he: 'דמי מעביד', ja: '雇用主負担金', ko: '고용주부담금', zh: '雇主缴费',
+      },
+    ],
+    [
+      'moms',
+      {
+        sv: 'moms', en: 'VAT', da: 'moms', no: 'moms',
+        fi: 'arvonlisävero', de: 'Mehrwertsteuer', fr: 'TVA', es: 'IVA',
+        nl: 'btw', ar: 'ضريبة القيمة المضافة', he: 'מע"מ', ja: '付加価値税', ko: '부가가치세', zh: '增值税',
+      },
+    ],
+    [
+      'tullavgift',
+      {
+        sv: 'tullavgift', en: 'customs duty', da: 'told', no: 'tollavgift',
+        fi: 'tulli', de: 'Zollgebühr', fr: 'droit de douane', es: 'arancel',
+        nl: 'douanerecht', ar: 'رسوم جمركية', he: 'מכס', ja: '関税', ko: '관세', zh: '关税',
+      },
+    ],
+    [
+      'upphandling',
+      {
+        sv: 'upphandling', en: 'procurement', da: 'indkøb', no: 'innkjøp',
+        fi: 'julkiset hankinnat', de: 'Beschaffung', fr: 'marché public', es: 'contratación pública',
+        nl: 'aanbesteding', ar: 'مشتريات', he: 'רכש', ja: '調達', ko: '조달', zh: '采购',
+      },
+    ],
+    [
+      'konkurrens',
+      {
+        sv: 'konkurrens', en: 'competition', da: 'konkurrence', no: 'konkurranse',
+        fi: 'kilpailu', de: 'Wettbewerb', fr: 'concurrence', es: 'competencia',
+        nl: 'concurrentie', ar: 'منافسة', he: 'תחרות', ja: '競争', ko: '경쟁', zh: '竞争',
+      },
+    ],
+    [
+      'monopol',
+      {
+        sv: 'monopol', en: 'monopoly', da: 'monopol', no: 'monopol',
+        fi: 'monopoli', de: 'Monopol', fr: 'monopole', es: 'monopolio',
+        nl: 'monopolie', ar: 'احتكار', he: 'מונופול', ja: '独占', ko: '독점', zh: '垄断',
+      },
+    ],
+    [
+      'folkhälsa',
+      {
+        sv: 'folkhälsa', en: 'public health', da: 'folkesundhed', no: 'folkehelse',
+        fi: 'kansanterveys', de: 'Volksgesundheit', fr: 'santé publique', es: 'salud pública',
+        nl: 'volksgezondheid', ar: 'صحة عامة', he: 'בריאות הציבור', ja: '公衆衛生', ko: '공중보건', zh: '公共卫生',
+      },
+    ],
+    [
+      'pandemi',
+      {
+        sv: 'pandemi', en: 'pandemic', da: 'pandemi', no: 'pandemi',
+        fi: 'pandemia', de: 'Pandemie', fr: 'pandémie', es: 'pandemia',
+        nl: 'pandemie', ar: 'وباء', he: 'מגפה', ja: 'パンデミック', ko: '팬데믹', zh: '大流行',
+      },
+    ],
+    [
+      'vaccinering',
+      {
+        sv: 'vaccinering', en: 'vaccination', da: 'vaccination', no: 'vaksinering',
+        fi: 'rokotus', de: 'Impfung', fr: 'vaccination', es: 'vacunación',
+        nl: 'vaccinatie', ar: 'تطعيم', he: 'חיסון', ja: 'ワクチン接種', ko: '예방접종', zh: '接种疫苗',
+      },
+    ],
+    [
+      'frihandel',
+      {
+        sv: 'frihandel', en: 'free trade', da: 'frihandel', no: 'frihandel',
+        fi: 'vapaakauppa', de: 'Freihandel', fr: 'libre-échange', es: 'libre comercio',
+        nl: 'vrijhandel', ar: 'تجارة حرة', he: 'סחר חופשי', ja: '自由貿易', ko: '자유무역', zh: '自由贸易',
+      },
+    ],
+    [
+      'sanktion',
+      {
+        sv: 'sanktion', en: 'sanction', da: 'sanktion', no: 'sanksjon',
+        fi: 'pakote', de: 'Sanktion', fr: 'sanction', es: 'sanción',
+        nl: 'sanctie', ar: 'عقوبة', he: 'סנקציה', ja: '制裁', ko: '제재', zh: '制裁',
+      },
+    ],
+    [
+      'fredsprocess',
+      {
+        sv: 'fredsprocess', en: 'peace process', da: 'fredsproces', no: 'fredsprosess',
+        fi: 'rauhanprosessi', de: 'Friedensprozess', fr: 'processus de paix', es: 'proceso de paz',
+        nl: 'vredesproces', ar: 'عملية السلام', he: 'תהליך שלום', ja: '和平プロセス', ko: '평화 과정', zh: '和平进程',
+      },
+    ],
+    [
+      'nedrustning',
+      {
+        sv: 'nedrustning', en: 'disarmament', da: 'nedrustning', no: 'nedrustning',
+        fi: 'aseistariisunta', de: 'Abrüstung', fr: 'désarmement', es: 'desarme',
+        nl: 'ontwapening', ar: 'نزع السلاح', he: 'פירוק נשק', ja: '軍縮', ko: '군축', zh: '裁军',
+      },
+    ],
+    [
+      'terrorism',
+      {
+        sv: 'terrorism', en: 'terrorism', da: 'terrorisme', no: 'terrorisme',
+        fi: 'terrorismi', de: 'Terrorismus', fr: 'terrorisme', es: 'terrorismo',
+        nl: 'terrorisme', ar: 'إرهاب', he: 'טרור', ja: 'テロリズム', ko: '테러리즘', zh: '恐怖主义',
+      },
+    ],
+    [
+      'cybersäkerhet',
+      {
+        sv: 'cybersäkerhet', en: 'cybersecurity', da: 'cybersikkerhed', no: 'cybersikkerhet',
+        fi: 'kyberturvallisuus', de: 'Cybersicherheit', fr: 'cybersécurité', es: 'ciberseguridad',
+        nl: 'cyberveiligheid', ar: 'أمن سيبراني', he: 'אבטחת סייבר', ja: 'サイバーセキュリティ', ko: '사이버보안', zh: '网络安全',
+      },
+    ],
+    [
+      'dataskydd',
+      {
+        sv: 'dataskydd', en: 'data protection', da: 'databeskyttelse', no: 'databeskyttelse',
+        fi: 'tietosuoja', de: 'Datenschutz', fr: 'protection des données', es: 'protección de datos',
+        nl: 'gegevensbescherming', ar: 'حماية البيانات', he: 'הגנת מידע', ja: 'データ保護', ko: '데이터보호', zh: '数据保护',
+      },
+    ],
+    [
+      'integritet',
+      {
+        sv: 'integritet', en: 'privacy', da: 'privathed', no: 'personvern',
+        fi: 'yksityisyys', de: 'Privatsphäre', fr: 'vie privée', es: 'privacidad',
+        nl: 'privacy', ar: 'خصوصية', he: 'פרטיות', ja: 'プライバシー', ko: '개인정보보호', zh: '隐私',
+      },
+    ],
+    [
+      'vapenexport',
+      {
+        sv: 'vapenexport', en: 'arms export', da: 'våbeneksport', no: 'våpeneksport',
+        fi: 'asevienti', de: 'Waffenexport', fr: 'exportation d\'armes', es: 'exportación de armas',
+        nl: 'wapenexport', ar: 'تصدير أسلحة', he: 'יצוא נשק', ja: '武器輸出', ko: '무기수출', zh: '武器出口',
+      },
+    ],
+    [
+      'utlänning',
+      {
+        sv: 'utlänning', en: 'foreign national', da: 'udlænding', no: 'utlending',
+        fi: 'ulkomaalainen', de: 'Ausländer', fr: 'étranger', es: 'extranjero',
+        nl: 'vreemdeling', ar: 'أجنبي', he: 'זר', ja: '外国人', ko: '외국인', zh: '外国人',
+      },
+    ],
+    [
+      'flykting',
+      {
+        sv: 'flykting', en: 'refugee', da: 'flygtning', no: 'flyktning',
+        fi: 'pakolainen', de: 'Flüchtling', fr: 'réfugié', es: 'refugiado',
+        nl: 'vluchteling', ar: 'لاجئ', he: 'פליט', ja: '難民', ko: '난민', zh: '难民',
+      },
+    ],
+    [
+      'gränskontroll',
+      {
+        sv: 'gränskontroll', en: 'border control', da: 'grænsekontrol', no: 'grensekontroll',
+        fi: 'rajatarkastus', de: 'Grenzkontrolle', fr: 'contrôle aux frontières', es: 'control fronterizo',
+        nl: 'grenscontrole', ar: 'مراقبة الحدود', he: 'בקרת גבולות', ja: '国境管理', ko: '국경통제', zh: '边境管控',
+      },
+    ],
+    [
+      'minoritet',
+      {
+        sv: 'minoritet', en: 'minority', da: 'minoritet', no: 'minoritet',
+        fi: 'vähemmistö', de: 'Minderheit', fr: 'minorité', es: 'minoría',
+        nl: 'minderheid', ar: 'أقلية', he: 'מיעוט', ja: '少数者', ko: '소수자', zh: '少数族群',
+      },
+    ],
+    [
+      'urfolk',
+      {
+        sv: 'urfolk', en: 'indigenous peoples', da: 'urfolk', no: 'urfolk',
+        fi: 'alkuperäiskansat', de: 'Ureinwohner', fr: 'peuples autochtones', es: 'pueblos indígenas',
+        nl: 'inheemse volkeren', ar: 'شعوب أصلية', he: 'עמים ילידים', ja: '先住民族', ko: '원주민', zh: '原住民',
+      },
+    ],
+    [
+      'offentlig sektor',
+      {
+        sv: 'offentlig sektor', en: 'public sector', da: 'offentlig sektor', no: 'offentlig sektor',
+        fi: 'julkinen sektori', de: 'öffentlicher Sektor', fr: 'secteur public', es: 'sector público',
+        nl: 'publieke sector', ar: 'القطاع العام', he: 'המגזר הציבורי', ja: '公共部門', ko: '공공부문', zh: '公共部门',
+      },
+    ],
+    [
+      'privat sektor',
+      {
+        sv: 'privat sektor', en: 'private sector', da: 'privat sektor', no: 'privat sektor',
+        fi: 'yksityinen sektori', de: 'privater Sektor', fr: 'secteur privé', es: 'sector privado',
+        nl: 'private sector', ar: 'القطاع الخاص', he: 'המגזר הפרטי', ja: '民間部門', ko: '민간부문', zh: '私营部门',
+      },
+    ],
+    [
+      'kommunikation',
+      {
+        sv: 'kommunikation', en: 'communication', da: 'kommunikation', no: 'kommunikasjon',
+        fi: 'viestintä', de: 'Kommunikation', fr: 'communication', es: 'comunicación',
+        nl: 'communicatie', ar: 'اتصال', he: 'תקשורת', ja: '通信', ko: '통신', zh: '通讯',
+      },
+    ],
+    [
+      'tillgänglighet',
+      {
+        sv: 'tillgänglighet', en: 'accessibility', da: 'tilgængelighed', no: 'tilgjengelighet',
+        fi: 'saavutettavuus', de: 'Barrierefreiheit', fr: 'accessibilité', es: 'accesibilidad',
+        nl: 'toegankelijkheid', ar: 'إمكانية الوصول', he: 'נגישות', ja: 'アクセシビリティ', ko: '접근성', zh: '无障碍',
+      },
+    ],
+    [
+      'innovation',
+      {
+        sv: 'innovation', en: 'innovation', da: 'innovation', no: 'innovasjon',
+        fi: 'innovaatio', de: 'Innovation', fr: 'innovation', es: 'innovación',
+        nl: 'innovatie', ar: 'ابتكار', he: 'חדשנות', ja: 'イノベーション', ko: '혁신', zh: '创新',
+      },
+    ],
+    [
+      'hållbar utveckling',
+      {
+        sv: 'hållbar utveckling', en: 'sustainable development', da: 'bæredygtig udvikling',
+        no: 'bærekraftig utvikling', fi: 'kestävä kehitys', de: 'nachhaltige Entwicklung',
+        fr: 'développement durable', es: 'desarrollo sostenible', nl: 'duurzame ontwikkeling',
+        ar: 'تنمية مستدامة', he: 'פיתוח בר-קיימא', ja: '持続可能な開発', ko: '지속가능한 개발', zh: '可持续发展',
+      },
+    ],
+    [
+      'likabehandling',
+      {
+        sv: 'likabehandling', en: 'equal treatment', da: 'ligebehandling', no: 'likebehandling',
+        fi: 'tasa-arvoinen kohtelu', de: 'Gleichbehandlung', fr: 'égalité de traitement',
+        es: 'igualdad de trato', nl: 'gelijke behandeling',
+        ar: 'معاملة متساوية', he: 'יחס שוויוני', ja: '平等待遇', ko: '동등 대우', zh: '平等待遇',
+      },
+    ],
+    [
+      'barnomsorg',
+      {
+        sv: 'barnomsorg', en: 'childcare', da: 'børnepasning', no: 'barnepass',
+        fi: 'lastenhoito', de: 'Kinderbetreuung', fr: 'garde d\'enfants', es: 'cuidado infantil',
+        nl: 'kinderopvang', ar: 'رعاية الأطفال', he: 'טיפול בילדים', ja: '保育', ko: '보육', zh: '儿童保育',
+      },
+    ],
+    [
+      'äldreomsorg',
+      {
+        sv: 'äldreomsorg', en: 'elderly care', da: 'ældrepleje', no: 'eldreomsorg',
+        fi: 'vanhustenhoito', de: 'Altenpflege', fr: 'soins aux personnes âgées',
+        es: 'atención a personas mayores', nl: 'ouderenzorg',
+        ar: 'رعاية المسنين', he: 'טיפול בקשישים', ja: '高齢者介護', ko: '노인돌봄', zh: '养老护理',
+      },
+    ],
+    [
+      'löntagare',
+      {
+        sv: 'löntagare', en: 'employee', da: 'lønmodtager', no: 'lønnstaker',
+        fi: 'palkansaaja', de: 'Arbeitnehmer', fr: 'salarié', es: 'asalariado',
+        nl: 'werknemer', ar: 'عامل بأجر', he: 'שכיר', ja: '被雇用者', ko: '임금근로자', zh: '雇员',
+      },
+    ],
+    [
+      'arbetsgivare',
+      {
+        sv: 'arbetsgivare', en: 'employer', da: 'arbejdsgiver', no: 'arbeidsgiver',
+        fi: 'työnantaja', de: 'Arbeitgeber', fr: 'employeur', es: 'empleador',
+        nl: 'werkgever', ar: 'صاحب عمل', he: 'מעסיק', ja: '雇用主', ko: '고용주', zh: '雇主',
+      },
+    ],
+    [
+      'fackförening',
+      {
+        sv: 'fackförening', en: 'trade union', da: 'fagforening', no: 'fagforening',
+        fi: 'ammattiliitto', de: 'Gewerkschaft', fr: 'syndicat', es: 'sindicato',
+        nl: 'vakbond', ar: 'نقابة عمال', he: 'איגוד מקצועי', ja: '労働組合', ko: '노동조합', zh: '工会',
+      },
+    ],
+    [
+      'kollektivavtal',
+      {
+        sv: 'kollektivavtal', en: 'collective agreement', da: 'overenskomst', no: 'tariffavtale',
+        fi: 'työehtosopimus', de: 'Tarifvertrag', fr: 'convention collective', es: 'convenio colectivo',
+        nl: 'collectieve overeenkomst', ar: 'اتفاقية جماعية', he: 'הסכם קיבוצי',
+        ja: '労働協約', ko: '단체협약', zh: '集体协议',
+      },
+    ],
+    [
+      'strejk',
+      {
+        sv: 'strejk', en: 'strike', da: 'strejke', no: 'streik',
+        fi: 'lakko', de: 'Streik', fr: 'grève', es: 'huelga',
+        nl: 'staking', ar: 'إضراب', he: 'שביתה', ja: 'ストライキ', ko: '파업', zh: '罢工',
+      },
+    ],
+    [
+      'medling',
+      {
+        sv: 'medling', en: 'mediation', da: 'mægling', no: 'megling',
+        fi: 'sovittelu', de: 'Schlichtung', fr: 'médiation', es: 'mediación',
+        nl: 'bemiddeling', ar: 'وساطة', he: 'גישור', ja: '調停', ko: '중재', zh: '调解',
+      },
+    ],
+    [
+      'marknad',
+      {
+        sv: 'marknad', en: 'market', da: 'marked', no: 'marked',
+        fi: 'markkina', de: 'Markt', fr: 'marché', es: 'mercado',
+        nl: 'markt', ar: 'سوق', he: 'שוק', ja: '市場', ko: '시장', zh: '市场',
+      },
+    ],
+    [
+      'ekonomi',
+      {
+        sv: 'ekonomi', en: 'economy', da: 'økonomi', no: 'økonomi',
+        fi: 'talous', de: 'Wirtschaft', fr: 'économie', es: 'economía',
+        nl: 'economie', ar: 'اقتصاد', he: 'כלכלה', ja: '経済', ko: '경제', zh: '经济',
+      },
+    ],
+    [
+      'konsument',
+      {
+        sv: 'konsument', en: 'consumer', da: 'forbruger', no: 'forbruker',
+        fi: 'kuluttaja', de: 'Verbraucher', fr: 'consommateur', es: 'consumidor',
+        nl: 'consument', ar: 'مستهلك', he: 'צרכן', ja: '消費者', ko: '소비자', zh: '消费者',
+      },
+    ],
+    [
+      'livsmedelssäkerhet',
+      {
+        sv: 'livsmedelssäkerhet', en: 'food safety', da: 'fødevaresikkerhed', no: 'matsikkerhet',
+        fi: 'elintarviketurvallisuus', de: 'Lebensmittelsicherheit', fr: 'sécurité alimentaire',
+        es: 'seguridad alimentaria', nl: 'voedselveiligheid',
+        ar: 'سلامة الغذاء', he: 'בטיחות מזון', ja: '食品安全', ko: '식품안전', zh: '食品安全',
+      },
+    ],
+    [
+      'djurskydd',
+      {
+        sv: 'djurskydd', en: 'animal welfare', da: 'dyrevelfærd', no: 'dyrevelferd',
+        fi: 'eläinsuojelu', de: 'Tierschutz', fr: 'protection animale', es: 'bienestar animal',
+        nl: 'dierenwelzijn', ar: 'حماية الحيوان', he: 'רווחת בעלי חיים', ja: '動物愛護', ko: '동물복지', zh: '动物福利',
+      },
+    ],
+    [
+      'samhällsskydd',
+      {
+        sv: 'samhällsskydd', en: 'civil protection', da: 'samfundssikkerhed', no: 'samfunnssikkerhet',
+        fi: 'yhteiskunnan suojelu', de: 'Zivilschutz', fr: 'protection civile', es: 'protección civil',
+        nl: 'maatschappijbescherming', ar: 'حماية المجتمع', he: 'הגנת האזרחים',
+        ja: '市民保護', ko: '시민보호', zh: '民事保护',
+      },
+    ],
+    [
+      'jämlikhet',
+      {
+        sv: 'jämlikhet', en: 'equality', da: 'lighed', no: 'likhet',
+        fi: 'tasa-arvo', de: 'Gleichheit', fr: 'égalité', es: 'igualdad',
+        nl: 'gelijkheid', ar: 'مساواة', he: 'שוויון', ja: '平等', ko: '평등', zh: '平等',
+      },
+    ],
+    [
+      'internationellt samarbete',
+      {
+        sv: 'internationellt samarbete', en: 'international cooperation',
+        da: 'internationalt samarbejde', no: 'internasjonalt samarbeid',
+        fi: 'kansainvälinen yhteistyö', de: 'internationale Zusammenarbeit',
+        fr: 'coopération internationale', es: 'cooperación internacional',
+        nl: 'internationale samenwerking', ar: 'تعاون دولي', he: 'שיתוף פעולה בינלאומי',
+        ja: '国際協力', ko: '국제협력', zh: '国际合作',
+      },
+    ],
+    [
+      'rättssäkerhet',
+      {
+        sv: 'rättssäkerhet', en: 'legal certainty', da: 'retssikkerhed', no: 'rettssikkerhet',
+        fi: 'oikeusturva', de: 'Rechtssicherheit', fr: 'sécurité juridique', es: 'seguridad jurídica',
+        nl: 'rechtszekerheid', ar: 'يقين قانوني', he: 'ודאות משפטית', ja: '法的安定性', ko: '법적 안정성', zh: '法律确定性',
+      },
+    ],
+    [
+      'valfrihet',
+      {
+        sv: 'valfrihet', en: 'freedom of choice', da: 'valgfrihed', no: 'valgfrihet',
+        fi: 'valinnanvapaus', de: 'Wahlfreiheit', fr: 'liberté de choix', es: 'libertad de elección',
+        nl: 'keuzevrijheid', ar: 'حرية الاختيار', he: 'חופש בחירה', ja: '選択の自由', ko: '선택의 자유', zh: '选择自由',
+      },
+    ],
+    [
+      'opinionsundersökning',
+      {
+        sv: 'opinionsundersökning', en: 'opinion poll', da: 'meningsmåling', no: 'meningsmåling',
+        fi: 'mielipidetutkimus', de: 'Meinungsumfrage', fr: 'sondage d\'opinion', es: 'encuesta de opinión',
+        nl: 'opiniepeiling', ar: 'استطلاع رأي', he: 'סקר דעת קהל', ja: '世論調査', ko: '여론조사', zh: '民意调查',
+      },
+    ],
+    [
+      'väljarundersökning',
+      {
+        sv: 'väljarundersökning', en: 'voter survey', da: 'vælgerundersøgelse',
+        no: 'velgerundersøkelse', fi: 'äänestäjätutkimus', de: 'Wählerumfrage',
+        fr: 'enquête auprès des électeurs', es: 'encuesta de votantes', nl: 'kiezersonderzoek',
+        ar: 'استطلاع ناخبين', he: 'סקר בוחרים', ja: '有権者調査', ko: '유권자 조사', zh: '选民调查',
+      },
+    ],
+    [
+      'regering',
+      {
+        sv: 'regering', en: 'government', da: 'regering', no: 'regjering',
+        fi: 'hallitus', de: 'Regierung', fr: 'gouvernement', es: 'gobierno',
+        nl: 'regering', ar: 'حكومة', he: 'ממשלה', ja: '政府', ko: '정부', zh: '政府',
+      },
+    ],
+    [
+      'departement',
+      {
+        sv: 'departement', en: 'ministry', da: 'ministerium', no: 'departement',
+        fi: 'ministeriö', de: 'Ministerium', fr: 'ministère', es: 'ministerio',
+        nl: 'ministerie', ar: 'وزارة', he: 'משרד', ja: '省', ko: '부', zh: '部',
+      },
+    ],
+    [
+      'statssekreterare',
+      {
+        sv: 'statssekreterare', en: 'state secretary', da: 'statssekretær', no: 'statssekretær',
+        fi: 'valtiosihteeri', de: 'Staatssekretär', fr: 'secrétaire d\'État', es: 'secretario de estado',
+        nl: 'staatssecretaris', ar: 'أمين الدولة', he: 'מזכיר המדינה', ja: '国務長官', ko: '차관', zh: '国务秘书',
+      },
+    ],
+    [
+      'generaldirektör',
+      {
+        sv: 'generaldirektör', en: 'director-general', da: 'generaldirektør', no: 'generaldirektør',
+        fi: 'pääjohtaja', de: 'Generaldirektor', fr: 'directeur général', es: 'director general',
+        nl: 'directeur-generaal', ar: 'مدير عام', he: 'מנכ"ל', ja: '長官', ko: '국장', zh: '总干事',
+      },
+    ],
+    [
+      'landsbygdspolitik',
+      {
+        sv: 'landsbygdspolitik', en: 'rural policy', da: 'landdistriktspolitik',
+        no: 'landbrukspolitikk', fi: 'maaseutupolitiikka', de: 'Ländliche Entwicklungspolitik',
+        fr: 'politique rurale', es: 'política rural', nl: 'plattelandsbeleid',
+        ar: 'سياسة ريفية', he: 'מדיניות כפרית', ja: '農村政策', ko: '농촌정책', zh: '乡村政策',
+      },
+    ],
+    [
+      'regionalpolitik',
+      {
+        sv: 'regionalpolitik', en: 'regional policy', da: 'regionalpolitik',
+        no: 'regionalpolitikk', fi: 'aluepolitiikka', de: 'Regionalpolitik',
+        fr: 'politique régionale', es: 'política regional', nl: 'regionaal beleid',
+        ar: 'سياسة إقليمية', he: 'מדיניות אזורית', ja: '地域政策', ko: '지역정책', zh: '区域政策',
+      },
+    ],
+    [
+      'äganderätt',
+      {
+        sv: 'äganderätt', en: 'property rights', da: 'ejendomsret', no: 'eiendomsrett',
+        fi: 'omistusoikeus', de: 'Eigentumsrecht', fr: 'droit de propriété', es: 'derecho de propiedad',
+        nl: 'eigendomsrecht', ar: 'حق الملكية', he: 'זכות קניין', ja: '財産権', ko: '재산권', zh: '产权',
+      },
+    ],
+    [
+      'näringsfrihet',
+      {
+        sv: 'näringsfrihet', en: 'freedom of enterprise', da: 'næringsfrihed',
+        no: 'næringsfrihet', fi: 'elinkeinovapaus', de: 'Gewerbefreiheit',
+        fr: 'liberté d\'entreprise', es: 'libertad de empresa', nl: 'ondernemingsvrijheid',
+        ar: 'حرية التجارة', he: 'חופש עיסוק', ja: '営業の自由', ko: '영업의 자유', zh: '营业自由',
+      },
+    ],
+    [
+      'avtalsrätt',
+      {
+        sv: 'avtalsrätt', en: 'contract law', da: 'aftaleret', no: 'avtalerett',
+        fi: 'sopimusoikeus', de: 'Vertragsrecht', fr: 'droit des contrats', es: 'derecho contractual',
+        nl: 'contractenrecht', ar: 'قانون العقود', he: 'דיני חוזים', ja: '契約法', ko: '계약법', zh: '合同法',
+      },
+    ],
+    [
+      'skadestånd',
+      {
+        sv: 'skadestånd', en: 'damages', da: 'erstatning', no: 'erstatning',
+        fi: 'vahingonkorvaus', de: 'Schadenersatz', fr: 'dommages et intérêts', es: 'indemnización',
+        nl: 'schadevergoeding', ar: 'تعويض', he: 'פיצויים', ja: '損害賠償', ko: '손해배상', zh: '损害赔偿',
+      },
+    ],
+    [
+      'upphovsrätt',
+      {
+        sv: 'upphovsrätt', en: 'copyright', da: 'ophavsret', no: 'opphavsrett',
+        fi: 'tekijänoikeus', de: 'Urheberrecht', fr: 'droit d\'auteur', es: 'derechos de autor',
+        nl: 'auteursrecht', ar: 'حقوق التأليف', he: 'זכויות יוצרים', ja: '著作権', ko: '저작권', zh: '版权',
+      },
+    ],
+    [
+      'patent',
+      {
+        sv: 'patent', en: 'patent', da: 'patent', no: 'patent',
+        fi: 'patentti', de: 'Patent', fr: 'brevet', es: 'patente',
+        nl: 'patent', ar: 'براءة اختراع', he: 'פטנט', ja: '特許', ko: '특허', zh: '专利',
+      },
+    ],
+    // ---- Final batch: additional common terms ----
+    [
+      'samhällsekonomi',
+      {
+        sv: 'samhällsekonomi', en: 'national economy', da: 'samfundsøkonomi', no: 'samfunnsøkonomi',
+        fi: 'kansantalous', de: 'Volkswirtschaft', fr: 'économie nationale', es: 'economía nacional',
+        nl: 'volkshuishouding', ar: 'اقتصاد وطني', he: 'כלכלה לאומית', ja: '国民経済', ko: '국민경제', zh: '国民经济',
+      },
+    ],
+    [
+      'ungdomspolitik',
+      {
+        sv: 'ungdomspolitik', en: 'youth policy', da: 'ungdomspolitik', no: 'ungdomspolitikk',
+        fi: 'nuorisopolitiikka', de: 'Jugendpolitik', fr: 'politique de la jeunesse',
+        es: 'política de juventud', nl: 'jongerenbeleid',
+        ar: 'سياسة الشباب', he: 'מדיניות נוער', ja: '青少年政策', ko: '청소년정책', zh: '青年政策',
+      },
+    ],
+    [
+      'konsumentskydd',
+      {
+        sv: 'konsumentskydd', en: 'consumer protection', da: 'forbrugerbeskyttelse',
+        no: 'forbrukerbeskyttelse', fi: 'kuluttajansuoja', de: 'Verbraucherschutz',
+        fr: 'protection des consommateurs', es: 'protección al consumidor', nl: 'consumentenbescherming',
+        ar: 'حماية المستهلك', he: 'הגנת הצרכן', ja: '消費者保護', ko: '소비자보호', zh: '消费者保护',
+      },
+    ],
+    [
+      'järnväg',
+      {
+        sv: 'järnväg', en: 'railway', da: 'jernbane', no: 'jernbane',
+        fi: 'rautatie', de: 'Eisenbahn', fr: 'chemin de fer', es: 'ferrocarril',
+        nl: 'spoorwegen', ar: 'سكة حديدية', he: 'רכבת', ja: '鉄道', ko: '철도', zh: '铁路',
+      },
+    ],
+    [
+      'bredband',
+      {
+        sv: 'bredband', en: 'broadband', da: 'bredbånd', no: 'bredbånd',
+        fi: 'laajakaista', de: 'Breitband', fr: 'haut débit', es: 'banda ancha',
+        nl: 'breedband', ar: 'نطاق عريض', he: 'פס רחב', ja: 'ブロードバンド', ko: '광대역', zh: '宽带',
+      },
+    ],
+    [
+      'statsminister',
+      {
+        sv: 'statsminister', en: 'Prime Minister', da: 'statsminister', no: 'statsminister',
+        fi: 'pääministeri', de: 'Ministerpräsident', fr: 'Premier ministre', es: 'Primer ministro',
+        nl: 'minister-president', ar: 'رئيس الوزراء', he: 'ראש ממשלה',
+        ja: '首相', ko: '총리', zh: '首相',
+      },
+    ],
+    [
+      'statsministern',
+      {
+        sv: 'statsministern', en: 'the Prime Minister', da: 'statsministeren', no: 'statsministeren',
+        fi: 'pääministeri', de: 'der Ministerpräsident', fr: 'le Premier ministre', es: 'el Primer ministro',
+        nl: 'de minister-president', ar: 'رئيس الوزراء', he: 'ראש הממשלה',
+        ja: '首相', ko: '총리', zh: '首相',
+      },
+    ],
+    [
+      'koalition',
+      {
+        sv: 'koalition', en: 'coalition', da: 'koalition', no: 'koalisjon',
+        fi: 'koalitio', de: 'Koalition', fr: 'coalition', es: 'coalición',
+        nl: 'coalitie', ar: 'تحالف', he: 'קואליציה', ja: '連立', ko: '연립', zh: '联盟',
+      },
+    ],
+    [
+      'opposition',
+      {
+        sv: 'opposition', en: 'opposition', da: 'opposition', no: 'opposisjon',
+        fi: 'oppositio', de: 'Opposition', fr: 'opposition', es: 'oposición',
+        nl: 'oppositie', ar: 'معارضة', he: 'אופוזיציה', ja: '野党', ko: '야당', zh: '反对党',
+      },
+    ],
+    [
+      'majoritet',
+      {
+        sv: 'majoritet', en: 'majority', da: 'flertal', no: 'flertall',
+        fi: 'enemmistö', de: 'Mehrheit', fr: 'majorité', es: 'mayoría',
+        nl: 'meerderheid', ar: 'أغلبية', he: 'רוב', ja: '多数', ko: '다수', zh: '多数',
+      },
+    ],
+    [
+      'minoritetsregering',
+      {
+        sv: 'minoritetsregering', en: 'minority government', da: 'mindretalsregering',
+        no: 'mindretallsregjering', fi: 'vähemmistöhallitus', de: 'Minderheitsregierung',
+        fr: 'gouvernement minoritaire', es: 'gobierno en minoría', nl: 'minderheidsregering',
+        ar: 'حكومة أقلية', he: 'ממשלת מיעוט', ja: '少数政府', ko: '소수정부', zh: '少数派政府',
+      },
+    ],
+    [
+      'välfärd',
+      {
+        sv: 'välfärd', en: 'welfare', da: 'velfærd', no: 'velferd',
+        fi: 'hyvinvointi', de: 'Wohlfahrt', fr: 'bien-être', es: 'bienestar',
+        nl: 'welzijn', ar: 'رفاهية', he: 'רווחה', ja: '福祉', ko: '복지', zh: '福利',
+      },
+    ],
+    [
+      'rösträtt',
+      {
+        sv: 'rösträtt', en: 'right to vote', da: 'stemmeret', no: 'stemmerett',
+        fi: 'äänioikeus', de: 'Wahlrecht', fr: 'droit de vote', es: 'derecho al voto',
+        nl: 'stemrecht', ar: 'حق التصويت', he: 'זכות הצבעה', ja: '選挙権', ko: '선거권', zh: '投票权',
+      },
+    ],
+    [
+      'valdeltagande',
+      {
+        sv: 'valdeltagande', en: 'voter turnout', da: 'valgdeltagelse', no: 'valgdeltagelse',
+        fi: 'äänestysaktiivisuus', de: 'Wahlbeteiligung', fr: 'participation électorale',
+        es: 'participación electoral', nl: 'opkomst',
+        ar: 'نسبة المشاركة', he: 'שיעור הצבעה', ja: '投票率', ko: '투표율', zh: '投票率',
+      },
+    ],
+    [
+      'valsedel',
+      {
+        sv: 'valsedel', en: 'ballot', da: 'stemmeseddel', no: 'stemmeseddel',
+        fi: 'äänestyslippu', de: 'Stimmzettel', fr: 'bulletin de vote', es: 'papeleta',
+        nl: 'stembiljet', ar: 'ورقة اقتراع', he: 'פתק הצבעה', ja: '投票用紙', ko: '투표용지', zh: '选票',
+      },
+    ],
+    [
+      'moms',
+      {
+        sv: 'moms', en: 'VAT', da: 'moms', no: 'moms',
+        fi: 'arvonlisävero', de: 'Mehrwertsteuer', fr: 'TVA', es: 'IVA',
+        nl: 'btw', ar: 'ضريبة القيمة المضافة', he: 'מע"מ', ja: '付加価値税', ko: '부가가치세', zh: '增值税',
+      },
+    ],
+    [
+      'upphandling',
+      {
+        sv: 'upphandling', en: 'procurement', da: 'indkøb', no: 'innkjøp',
+        fi: 'julkiset hankinnat', de: 'Beschaffung', fr: 'marché public', es: 'contratación pública',
+        nl: 'aanbesteding', ar: 'مشتريات', he: 'רכש', ja: '調達', ko: '조달', zh: '采购',
+      },
+    ],
+    [
+      'folkhälsa',
+      {
+        sv: 'folkhälsa', en: 'public health', da: 'folkesundhed', no: 'folkehelse',
+        fi: 'kansanterveys', de: 'Volksgesundheit', fr: 'santé publique', es: 'salud pública',
+        nl: 'volksgezondheid', ar: 'صحة عامة', he: 'בריאות הציבור', ja: '公衆衛生', ko: '공중보건', zh: '公共卫生',
+      },
+    ],
+    [
+      'frihandel',
+      {
+        sv: 'frihandel', en: 'free trade', da: 'frihandel', no: 'frihandel',
+        fi: 'vapaakauppa', de: 'Freihandel', fr: 'libre-échange', es: 'libre comercio',
+        nl: 'vrijhandel', ar: 'تجارة حرة', he: 'סחר חופשי', ja: '自由貿易', ko: '자유무역', zh: '自由贸易',
+      },
+    ],
+    [
+      'sanktion',
+      {
+        sv: 'sanktion', en: 'sanction', da: 'sanktion', no: 'sanksjon',
+        fi: 'pakote', de: 'Sanktion', fr: 'sanction', es: 'sanción',
+        nl: 'sanctie', ar: 'عقوبة', he: 'סנקציה', ja: '制裁', ko: '제재', zh: '制裁',
+      },
+    ],
+    [
+      'cybersäkerhet',
+      {
+        sv: 'cybersäkerhet', en: 'cybersecurity', da: 'cybersikkerhed', no: 'cybersikkerhet',
+        fi: 'kyberturvallisuus', de: 'Cybersicherheit', fr: 'cybersécurité', es: 'ciberseguridad',
+        nl: 'cyberveiligheid', ar: 'أمن سيبراني', he: 'אבטחת סייבר', ja: 'サイバーセキュリティ', ko: '사이버보안', zh: '网络安全',
+      },
+    ],
+    [
+      'dataskydd',
+      {
+        sv: 'dataskydd', en: 'data protection', da: 'databeskyttelse', no: 'databeskyttelse',
+        fi: 'tietosuoja', de: 'Datenschutz', fr: 'protection des données', es: 'protección de datos',
+        nl: 'gegevensbescherming', ar: 'حماية البيانات', he: 'הגנת מידע', ja: 'データ保護', ko: '데이터보호', zh: '数据保护',
+      },
+    ],
+    [
+      'flykting',
+      {
+        sv: 'flykting', en: 'refugee', da: 'flygtning', no: 'flyktning',
+        fi: 'pakolainen', de: 'Flüchtling', fr: 'réfugié', es: 'refugiado',
+        nl: 'vluchteling', ar: 'لاجئ', he: 'פליט', ja: '難民', ko: '난민', zh: '难民',
+      },
+    ],
+    [
+      'gränskontroll',
+      {
+        sv: 'gränskontroll', en: 'border control', da: 'grænsekontrol', no: 'grensekontroll',
+        fi: 'rajatarkastus', de: 'Grenzkontrolle', fr: 'contrôle aux frontières', es: 'control fronterizo',
+        nl: 'grenscontrole', ar: 'مراقبة الحدود', he: 'בקרת גבולות', ja: '国境管理', ko: '국경통제', zh: '边境管控',
+      },
+    ],
+    [
+      'offentlig sektor',
+      {
+        sv: 'offentlig sektor', en: 'public sector', da: 'offentlig sektor', no: 'offentlig sektor',
+        fi: 'julkinen sektori', de: 'öffentlicher Sektor', fr: 'secteur public', es: 'sector público',
+        nl: 'publieke sector', ar: 'القطاع العام', he: 'המגזר הציבורי', ja: '公共部門', ko: '공공부문', zh: '公共部门',
+      },
+    ],
+    [
+      'hållbar utveckling',
+      {
+        sv: 'hållbar utveckling', en: 'sustainable development', da: 'bæredygtig udvikling',
+        no: 'bærekraftig utvikling', fi: 'kestävä kehitys', de: 'nachhaltige Entwicklung',
+        fr: 'développement durable', es: 'desarrollo sostenible', nl: 'duurzame ontwikkeling',
+        ar: 'تنمية مستدامة', he: 'פיתוח בר-קיימא', ja: '持続可能な開発', ko: '지속가능한 개발', zh: '可持续发展',
+      },
+    ],
+    [
+      'fackförening',
+      {
+        sv: 'fackförening', en: 'trade union', da: 'fagforening', no: 'fagforening',
+        fi: 'ammattiliitto', de: 'Gewerkschaft', fr: 'syndicat', es: 'sindicato',
+        nl: 'vakbond', ar: 'نقابة عمال', he: 'איגוד מקצועי', ja: '労働組合', ko: '노동조합', zh: '工会',
+      },
+    ],
+    [
+      'konstitutionsutskottet',
+      {
+        sv: 'konstitutionsutskottet', en: 'Committee on the Constitution',
+        da: 'forfatningsudvalget', no: 'konstitusjonskomiteen',
+        fi: 'perustuslakivaliokunta', de: 'Verfassungsausschuss',
+        fr: 'Comité de la Constitution', es: 'Comité de la Constitución',
+        nl: 'Grondwetscommissie', ar: 'لجنة الدستور', he: 'ועדת החוקה',
+        ja: '憲法委員会', ko: '헌법위원회', zh: '宪法委员会',
+      },
+    ],
+    [
+      'proportionellt valsystem',
+      {
+        sv: 'proportionellt valsystem', en: 'proportional representation',
+        da: 'forholdstalsvalg', no: 'forholdstallsvalg',
+        fi: 'suhteellinen vaalitapa', de: 'Verhältniswahlrecht',
+        fr: 'représentation proportionnelle', es: 'representación proporcional',
+        nl: 'evenredige vertegenwoordiging', ar: 'التمثيل النسبي', he: 'ייצוג יחסי',
+        ja: '比例代表制', ko: '비례대표제', zh: '比例代表制',
+      },
+    ],
   ];
 
   const map: TranslationMap = {};

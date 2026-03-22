@@ -7,6 +7,8 @@ on:
       - 'index*.html'
       - 'news/*.html'
       - 'scripts/validate-translations.js'
+      - 'scripts/translation-dictionary.ts'
+      - 'scripts/detect-swedish-leakage.ts'
       - '.github/workflows/translation-validation.yml'
       - 'TRANSLATION_GUIDE.md'
   pull_request:
@@ -15,6 +17,8 @@ on:
       - 'index*.html'
       - 'news/*.html'
       - 'scripts/validate-translations.js'
+      - 'scripts/translation-dictionary.ts'
+      - 'scripts/detect-swedish-leakage.ts'
       - '.github/workflows/translation-validation.yml'
       - 'TRANSLATION_GUIDE.md'
 
@@ -142,6 +146,16 @@ jobs:
             echo "  ✅ Language purity: All articles clean"
           fi
 
+      - name: Run Swedish leakage detector
+        id: leakage_detector
+        if: hashFiles('news/*.html') != ''
+        run: |
+          echo ""
+          echo "🔍 Running Swedish leakage detector on translated articles..."
+          echo ""
+          npm install
+          npx tsx scripts/detect-swedish-leakage.ts --dir news/ --threshold 5 || echo "⚠️  Swedish leakage detected (warning only for now)"
+
       - name: Translation validation summary
         if: always()
         run: |
@@ -180,6 +194,14 @@ jobs:
             echo "✅ News article language purity: PASSED"
           else
             echo "⚠️  News article language purity: WARNINGS"
+          fi
+          
+          if [ "${{ steps.leakage_detector.outcome }}" = "success" ]; then
+            echo "✅ Swedish leakage detector: PASSED"
+          elif [ "${{ steps.leakage_detector.outcome }}" = "skipped" ]; then
+            echo "⏭️  Swedish leakage detector: SKIPPED (no news articles)"
+          else
+            echo "⚠️  Swedish leakage detector: WARNINGS"
           fi
           
           echo ""
