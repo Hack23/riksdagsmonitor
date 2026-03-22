@@ -38,6 +38,7 @@ import { extractKeyPassage, cleanMotionText, isPersonProfileText } from '../data
 import { localizeDocType } from '../data-transformers/content-generators/index.js';
 
 import type {
+  AnalysisDepth,
   AnalysisPipeline,
   AnalysisPipelineOptions,
   AnalysisResult,
@@ -1039,8 +1040,10 @@ const EU_NORDIC_CONTEXT: Partial<Record<DomainKey, Partial<Record<Language, stri
 };
 
 /**
- * Build an EU/Nordic comparative sentence for the top policy domains.
- * Returns null when no domain has a comparative entry.
+ * Build an EU/Nordic comparative sentence for the first detected policy domains.
+ * Domains are iterated in detection order (not ranked by frequency).
+ * Returns null when no domain has a comparative entry for the requested
+ * language — does not fall back to English to avoid mixed-language output.
  */
 function buildEuNordicComparative(domains: string[], lang: Language): string | null {
   for (const domain of domains) {
@@ -1048,8 +1051,8 @@ function buildEuNordicComparative(domains: string[], lang: Language): string | n
     const key = DOMAIN_NAME_TO_KEY[domain] ?? DOMAIN_NAME_TO_KEY[domain.toLowerCase()];
     if (!key) continue;
     const entry = EU_NORDIC_CONTEXT[key];
-    if (entry) {
-      return entry[lang] ?? entry.en ?? null;
+    if (entry?.[lang]) {
+      return entry[lang]!;
     }
   }
   return null;
@@ -1063,7 +1066,7 @@ function buildPolicyAssessment(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,
-  depth: import('./types.js').AnalysisDepth = 'quick',
+  depth: AnalysisDepth = 'quick',
 ): PolicyAssessment {
   const allDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
@@ -1357,12 +1360,15 @@ function buildDashboardData(
  *     a fixed 15-point midpoint default is used so the score remains
  *     meaningful before SWOT generation completes
  *
- * The SWOT quality dimension ensures that confidence monotonically increases
- * when more enriched documents are available (replacing placeholders).
+ * Evidence depth increases with richer metadata/full-text enrichment and
+ * broader document/type coverage, while the SWOT-quality dimension
+ * monotonically increases as placeholder SWOT entries are replaced by
+ * evidence-backed entries due to broader document coverage across
+ * stakeholder × quadrant.
  */
 function calculateConfidenceScore(
   docs: RawDocument[],
-  stakeholderSwot?: import('./types.js').AnalysisStakeholderSwot[],
+  stakeholderSwot?: AnalysisStakeholderSwot[],
 ): number {
   if (docs.length === 0) return 0;
   const metadataEnriched = docs.filter(isMetadataEnriched).length;

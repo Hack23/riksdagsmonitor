@@ -193,7 +193,7 @@ describe('coalitionDetector.detect', () => {
   it('falls back to documentType when doktyp is missing', () => {
     const docWithDocumentType = makeDoc({
       dok_id: 'DT1',
-      doktyp: undefined as unknown as string,
+      doktyp: undefined,
       documentType: 'mot',
     });
     const docs = [PROP, docWithDocumentType];
