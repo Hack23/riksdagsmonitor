@@ -196,6 +196,12 @@ const TOPIC_JACCARD_THRESHOLD: number = 0.50; // 50% topic overlap triggers dedu
 const LOCK_TIMEOUT_MS: number = 45 * 60 * 1000; // 45 minutes
 const ACTIVE_GENERATION_TTL_MS: number = 45 * 60 * 1000; // 45 minutes
 const RETRIABLE_RENAME_CODES: ReadonlySet<string> = new Set(['EEXIST', 'EPERM', 'EACCES', 'EXDEV']);
+
+/** Returns true when `v` is a non-null, non-array plain object. */
+function isPlainObject(v: unknown): v is Record<string, unknown> {
+  return typeof v === 'object' && v !== null && !Array.isArray(v);
+}
+
 const STOCKHOLM_HOUR_FORMATTER: Intl.DateTimeFormat = new Intl.DateTimeFormat('en-GB', {
   timeZone: 'Europe/Stockholm',
   hour: '2-digit',
@@ -474,11 +480,23 @@ export class WorkflowStateCoordinator {
     try {
       if (fs.existsSync(this.stateFilePath)) {
         const content: string = fs.readFileSync(this.stateFilePath, 'utf-8');
-        this.state = JSON.parse(content) as WorkflowState;
-        // Ensure activeGenerations array exists for backward compat
-        if (!this.state.activeGenerations) {
-          this.state.activeGenerations = [];
-        }
+        const parsed: unknown = JSON.parse(content);
+        const raw: Partial<WorkflowState> =
+          isPlainObject(parsed) ? (parsed as Partial<WorkflowState>) : {};
+
+        // Normalize all required fields so legacy/partial state files
+        // don't cause runtime errors when accessed later.
+        this.state = {
+          lastUpdate: typeof raw.lastUpdate === 'string' ? raw.lastUpdate : null,
+          recentArticles: Array.isArray(raw.recentArticles) ? raw.recentArticles : [],
+          mcpQueryCache: isPlainObject(raw.mcpQueryCache)
+            ? (raw.mcpQueryCache as Record<string, MCPCacheEntry>)
+            : {},
+          workflows: isPlainObject(raw.workflows)
+            ? (raw.workflows as Record<string, WorkflowRecord>)
+            : {},
+          activeGenerations: Array.isArray(raw.activeGenerations) ? raw.activeGenerations : [],
+        };
         this.cleanupExpiredEntries();
       } else {
         // Initialize empty state

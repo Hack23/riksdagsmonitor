@@ -91,6 +91,29 @@ describe('Workflow State Coordinator', () => {
       expect((coordinator2 as any).state.recentArticles[0].slug).toBe('test-article-en.html');
     });
 
+    it('should normalize legacy/partial state files on load', async () => {
+      // Write a minimal legacy state file missing workflows, mcpQueryCache, recentArticles
+      fs.writeFileSync(
+        TEST_STATE_FILE,
+        JSON.stringify({ lastUpdate: '2025-01-01T00:00:00.000Z' }),
+      );
+
+      const legacyCoordinator = new WorkflowStateCoordinator(TEST_STATE_FILE);
+      await legacyCoordinator.load();
+
+      const state = (legacyCoordinator as any).state;
+      expect(state.lastUpdate).toBe('2025-01-01T00:00:00.000Z');
+      expect(Array.isArray(state.recentArticles)).toBe(true);
+      expect(state.recentArticles).toHaveLength(0);
+      expect(typeof state.mcpQueryCache).toBe('object');
+      expect(Array.isArray(state.mcpQueryCache)).toBe(false);
+      expect(Object.keys(state.mcpQueryCache)).toHaveLength(0);
+      expect(typeof state.workflows).toBe('object');
+      expect(Array.isArray(state.workflows)).toBe(false);
+      expect(Object.keys(state.workflows)).toHaveLength(0);
+      expect(Array.isArray(state.activeGenerations)).toBe(true);
+    });
+
     it('should create metadata directory if missing', async () => {
       const dir = path.dirname(TEST_STATE_FILE);
       
