@@ -111,6 +111,7 @@ steps:
       fi
       CONTENT_BRANCH_PREFIX="news/content/${ARTICLE_DATE}/"
       GH_ERROR_LOG=$(mktemp)
+      trap 'rm -f "$GH_ERROR_LOG"' EXIT
       PR_LIST_JSON=$(gh pr list --repo "${{ github.repository }}" --base main --json headRefName 2>"$GH_ERROR_LOG")
       GH_EXIT_CODE=$?
       if [ "$GH_EXIT_CODE" -ne 0 ] || [ -z "$PR_LIST_JSON" ]; then
@@ -120,10 +121,8 @@ steps:
           sed 's/^/  /' "$GH_ERROR_LOG"
         fi
         echo "   Deferring translation to avoid potential merge conflicts."
-        rm -f "$GH_ERROR_LOG"
         exit 0
       fi
-      rm -f "$GH_ERROR_LOG"
       OPEN_CONTENT_PRS=$(printf '%s' "$PR_LIST_JSON" | jq -r --arg prefix "$CONTENT_BRANCH_PREFIX" '[.[] | select(.headRefName | startswith($prefix))] | length')
       if [ "$OPEN_CONTENT_PRS" -gt 0 ]; then
         echo "⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — deferring translation"
