@@ -1,23 +1,53 @@
 {
-  "timestamp": "2026-03-23T07:29:08.247Z",
+  "timestamp": "2026-03-23T11:25:10.248Z",
   "types": [
-    "interpellations"
+    "propositions"
   ],
   "languagesGenerated": [
-    "en",
-    "sv"
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
   ],
   "allRequestedLanguages": [
-    "en",
-    "sv"
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
   ],
   "batchSize": "all",
   "skipExisting": false,
-  "generated": 2,
+  "generated": 12,
   "errors": 0,
   "articles": [
-    "2026-03-23-interpellation-debates-en.html",
-    "2026-03-23-interpellation-debates-sv.html"
+    "2026-03-23-government-propositions-da.html",
+    "2026-03-23-government-propositions-no.html",
+    "2026-03-23-government-propositions-fi.html",
+    "2026-03-23-government-propositions-de.html",
+    "2026-03-23-government-propositions-fr.html",
+    "2026-03-23-government-propositions-es.html",
+    "2026-03-23-government-propositions-nl.html",
+    "2026-03-23-government-propositions-ar.html",
+    "2026-03-23-government-propositions-he.html",
+    "2026-03-23-government-propositions-ja.html",
+    "2026-03-23-government-propositions-ko.html",
+    "2026-03-23-government-propositions-zh.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
