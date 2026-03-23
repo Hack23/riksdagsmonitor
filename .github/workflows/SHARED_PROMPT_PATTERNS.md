@@ -33,7 +33,7 @@ Before generating articles, consult these skills:
 
 ## MANDATORY Playwright Validation (copy into every content workflow)
 
-```markdown
+````markdown
 ### Playwright Visual Validation
 Run Playwright validation before creating the PR:
 ```bash
@@ -46,7 +46,7 @@ npx playwright test scripts/validate-articles-playwright.ts --grep "{type}"
 # Validate JSON-LD cross-references
 npx tsx scripts/validate-cross-references.ts news/*-{type}-*.html
 ```
-```
+````
 
 ## Standardised Deduplication Check (copy into every content workflow)
 
@@ -54,7 +54,7 @@ npx tsx scripts/validate-cross-references.ts news/*-{type}-*.html
 # Check if articles for today already exist
 EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}-en.html 2>/dev/null | wc -l)
 if [ "$EXISTING" -gt 0 ] && [ "${FORCE_GENERATION}" != "true" ]; then
-  echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — skipping (use force_generation=true to override)"
+  echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — skipping (use FORCE_GENERATION=true to override)"
   exit 0
 fi
 ```

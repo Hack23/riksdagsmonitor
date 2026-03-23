@@ -530,7 +530,7 @@ describe('Unified Required Skills', () => {
   it('all news workflows should reference the 6 required skills', () => {
     for (const workflowFile of ALL_NEWS_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       for (const skill of REQUIRED_SKILLS) {
         expect(
@@ -544,7 +544,7 @@ describe('Unified Required Skills', () => {
   it('all news workflows should list skills in the same order', () => {
     for (const workflowFile of ALL_NEWS_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       // Find the positions of each skill in the file
       const positions = REQUIRED_SKILLS.map(skill => content.indexOf(skill));
@@ -568,7 +568,7 @@ describe('Unified Required Skills', () => {
   it('all news workflows should have standardised analysis depth table', () => {
     for (const workflowFile of ALL_NEWS_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes('Standardised Analysis Depth Gate'),
@@ -595,7 +595,7 @@ describe('Playwright Validation in Content Workflows', () => {
 
     for (const workflowFile of CONTENT_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes(`playwright test ${PLAYWRIGHT_VALIDATOR_PATH}`),
@@ -607,7 +607,7 @@ describe('Playwright Validation in Content Workflows', () => {
   it('all article type workflows should have cross-reference validation step', () => {
     for (const workflowFile of CONTENT_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes('validate-cross-references'),
@@ -681,7 +681,7 @@ describe('Analysis Depth Input', () => {
   it('all news workflows should have analysis_depth under workflow_dispatch inputs', () => {
     for (const workflowFile of ALL_NEWS_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       // Reuse the existing parseFrontmatter helper
       const frontmatter = parseFrontmatter(filepath);
       // Verify analysis_depth appears after workflow_dispatch: → inputs: (proper nesting)
@@ -696,7 +696,7 @@ describe('Analysis Depth Input', () => {
   it('dedicated article type workflows should default analysis_depth to a valid depth (standard, deep, or comprehensive) in frontmatter', () => {
     for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       // Reuse the existing parseFrontmatter helper
       const frontmatter = parseFrontmatter(filepath);
       const depthBlock = frontmatter.match(/analysis_depth:[\s\S]*?default:\s*(standard|deep|comprehensive)/);
@@ -788,7 +788,7 @@ describe('Iterative Analysis Protocol', () => {
   it('all dedicated workflows should have multi-step AI analysis framework section', () => {
     for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes('Multi-Step AI Analysis Framework'),
@@ -812,7 +812,7 @@ describe('Iterative Analysis Protocol', () => {
   it('all dedicated workflows should list analysis_depth in dispatch parameters section', () => {
     for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes('analysis_depth') && content.includes('github.event.inputs.analysis_depth'),
