@@ -7188,6 +7188,25 @@ html[lang="he"] {
   font-family: 'Noto Sans Hebrew', 'Arial Hebrew', 'David', 'Arial', sans-serif;
 }
 
+/* ========================================
+   CJK (Chinese, Japanese, Korean) Font Support
+   ======================================== */
+
+/* Japanese Font Family */
+html[lang="ja"] {
+  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+}
+
+/* Korean Font Family */
+html[lang="ko"] {
+  font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+}
+
+/* Chinese (Simplified) Font Family */
+html[lang="zh"] {
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'SimHei', sans-serif;
+}
+
 /* RTL Body Adjustments */
 [lang="ar"] body,
 [lang="he"] body {

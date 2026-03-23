@@ -100,6 +100,20 @@ steps:
     run: |
       npm ci --prefer-offline --no-audit
 
+  - name: Pre-flight source article check
+    run: |
+      ARTICLE_DATE="${{ github.event.inputs.article_date || '' }}"
+      if [ -z "$ARTICLE_DATE" ]; then
+        ARTICLE_DATE=$(date -u '+%Y-%m-%d')
+      fi
+      MISSING_EN=$(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null | wc -l)
+      if [ "$MISSING_EN" -eq 0 ]; then
+        echo "⛔ No EN source articles found for $ARTICLE_DATE — aborting to avoid race condition"
+        echo "   Next scheduled run will retry once content workflow PR is merged."
+        exit 0
+      fi
+      echo "✅ Found $MISSING_EN EN source article(s) for $ARTICLE_DATE — proceeding with translation"
+
 engine:
   id: copilot
   model: claude-opus-4.6

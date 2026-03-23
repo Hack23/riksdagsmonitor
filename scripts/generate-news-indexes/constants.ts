@@ -76,7 +76,7 @@ export const LANGUAGES: Record<LanguageCode, LanguageConfig> = {
     schemaDescription: 'Svensk parlamentsovervågning - Overvåg politisk aktivitet med systematisk gennemsigtighed'
   },
   no: {
-    name: 'Norsk', code: 'no', locale: 'no_NO',
+    name: 'Norsk', code: 'nb', locale: 'nb_NO',
     title: 'Nyheter',
     subtitle: 'Siste nyheter og analyser fra Sveriges Riksdag. AI-generert politisk etterretningsjournalistikk basert på OSINT/INTOP-data.',
     keywords: 'riksdag nyheter, svensk parlament, regjeringsforslag, komitéinnstillinger, voteringer, politisk analyse, svenske partier, åpenhet, demokrati',
