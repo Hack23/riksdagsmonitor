@@ -246,19 +246,22 @@ echo "============================"
 
 ### MANDATORY Deduplication Check
 
-Before generating articles, verify no duplicate articles exist for today:
+Before generating articles, verify no duplicate articles exist for the target date:
 ```bash
-# Check if articles for today already exist
-ARTICLE_DATE=$(date -u +%Y-%m-%d)
+# Resolve article date: use workflow_dispatch input when provided, fallback to UTC today
+ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+if [ -z "$ARTICLE_DATE" ]; then
+  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
 ARTICLE_TYPE="evening-analysis"
 EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}-en.html 2>/dev/null | wc -l)
-if [ "$EXISTING" -gt 0 ] && [ "${FORCE_GENERATION}" != "true" ]; then
-  echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — skipping (use force_generation=true to override)"
+if [ "$EXISTING" -gt 0 ]; then
+  echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — skipping"
   exit 0
 fi
 ```
 
-If articles already exist and `force_generation` is not `true`, call `safeoutputs___noop` with a message explaining that articles already exist for today's date.
+If articles already exist, call `safeoutputs___noop` with a message explaining that articles already exist for the target date.
 
 ### MCP Health Gate
 

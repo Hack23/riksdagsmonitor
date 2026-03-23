@@ -32,6 +32,12 @@ const ARTICLE_TYPE_WORKFLOWS: Record<string, string> = {
   'monthly-review': 'news-monthly-review.md'
 };
 
+/** Content workflows = article type workflows + evening analysis */
+const CONTENT_WORKFLOWS = [
+  ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+  'news-evening-analysis.md',
+];
+
 /** Parse cron schedule from workflow frontmatter */
 function extractCronSchedule(content: string): string | null {
   const cronMatch = content.match(/cron:\s*"([^"]+)"/);
@@ -583,10 +589,6 @@ describe('Unified Required Skills', () => {
 });
 
 describe('Playwright Validation in Content Workflows', () => {
-  const CONTENT_WORKFLOWS = [
-    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
-    'news-evening-analysis.md',
-  ];
   const PLAYWRIGHT_VALIDATOR_PATH = 'scripts/validate-articles-playwright.ts';
 
   it('all content workflows should have Playwright validation step', () => {
@@ -621,11 +623,6 @@ describe('Playwright Validation in Content Workflows', () => {
 });
 
 describe('Deduplication Check in Content Workflows', () => {
-  const CONTENT_WORKFLOWS = [
-    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
-    'news-evening-analysis.md',
-  ];
-
   it('all content workflows should have MANDATORY Deduplication Check section', () => {
     for (const workflowFile of CONTENT_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
@@ -644,12 +641,36 @@ describe('Deduplication Check in Content Workflows', () => {
       expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
-        content.includes('FORCE_GENERATION'),
-        `Workflow ${workflowFile} should reference FORCE_GENERATION in deduplication check`
-      ).toBe(true);
-      expect(
         content.includes('already exist'),
         `Workflow ${workflowFile} should check if articles already exist`
+      ).toBe(true);
+    }
+  });
+
+  it('all content workflows should derive ARTICLE_DATE from dispatch input with fallback', () => {
+    for (const workflowFile of CONTENT_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('github.event.inputs.article_date'),
+        `Workflow ${workflowFile} should derive ARTICLE_DATE from workflow_dispatch article_date input`
+      ).toBe(true);
+      expect(
+        content.includes('date -u +%Y-%m-%d'),
+        `Workflow ${workflowFile} should have UTC today fallback for ARTICLE_DATE`
+      ).toBe(true);
+    }
+  });
+
+  it('article type workflows should derive FORCE_GENERATION from dispatch input', () => {
+    for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('github.event.inputs.force_generation'),
+        `Workflow ${workflowFile} should derive FORCE_GENERATION from workflow_dispatch force_generation input`
       ).toBe(true);
     }
   });
