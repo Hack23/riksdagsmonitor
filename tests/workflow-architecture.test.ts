@@ -851,3 +851,101 @@ describe('Script-Based Article Generation Safety', () => {
     }
   });
 });
+
+// ---------------------------------------------------------------------------
+// Additional structural checks (Issue #1335)
+// ---------------------------------------------------------------------------
+
+describe('Workflow timeout limits', () => {
+  const ALL_NEWS_WORKFLOWS = [
+    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+    'news-evening-analysis.md',
+    'news-realtime-monitor.md',
+    'news-article-generator.md',
+    'news-translate.md',
+  ];
+
+  it('no workflow should exceed 60-minute timeout', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const content = fs.readFileSync(filepath, 'utf-8');
+      const timeoutMatch = content.match(/timeout-minutes:\s*(\d+)/);
+      if (timeoutMatch) {
+        const timeout = parseInt(timeoutMatch[1]!, 10);
+        expect(
+          timeout,
+          `Workflow ${workflowFile} has timeout-minutes: ${timeout} which exceeds 60 minutes`
+        ).toBeLessThanOrEqual(60);
+      }
+    }
+  });
+
+  it('all workflows should have timeout-minutes specified', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('timeout-minutes'),
+        `Workflow ${workflowFile} should have timeout-minutes specified`
+      ).toBe(true);
+    }
+  });
+});
+
+describe('Workflow permissions enforcement', () => {
+  const ALL_NEWS_WORKFLOWS = [
+    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+    'news-evening-analysis.md',
+    'news-realtime-monitor.md',
+    'news-article-generator.md',
+  ];
+
+  it('all content workflows should have permissions block', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('permissions:'),
+        `Workflow ${workflowFile} should have a permissions block`
+      ).toBe(true);
+    }
+  });
+
+  it('all content workflows should have contents: read (least privilege)', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('contents: read'),
+        `Workflow ${workflowFile} should specify contents: read permission`
+      ).toBe(true);
+    }
+  });
+});
+
+describe('Workflow dispatch-workflow safeguards', () => {
+  const CONTENT_WORKFLOWS = Object.values(ARTICLE_TYPE_WORKFLOWS);
+
+  it('content workflows that use dispatch-workflow reference news-translate', () => {
+    for (const workflowFile of CONTENT_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const content = fs.readFileSync(filepath, 'utf-8');
+      if (content.includes('dispatch-workflow')) {
+        expect(
+          content.includes('news-translate'),
+          `Workflow ${workflowFile} uses dispatch-workflow but does not reference news-translate`
+        ).toBe(true);
+      }
+    }
+  });
+});

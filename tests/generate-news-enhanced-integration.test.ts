@@ -9,9 +9,23 @@
  * @license Apache-2.0
  */
 
-import { describe, it, expect, vi, beforeAll } from 'vitest';
-import type { RawDocument } from '../scripts/data-transformers/types.js';
-import { sampleDocuments } from './fixtures/mock-mcp-client.js';
+import { describe, it, expect } from 'vitest';
+
+/** Inline sample documents (avoids cross-test import issues with mocked fs) */
+const sampleDocuments = [
+  { dok_id: 'H901FiU1', titel: 'Utgiftsramar och beräkning av statsinkomsterna', title: 'Expenditure frameworks and calculation of state revenues', doktyp: 'bet', organ: 'FiU', datum: '2026-03-15', parti: '' },
+  { dok_id: 'H9011', titel: 'Proposition om stärkt nationell säkerhet', title: 'Proposition on strengthened national security', doktyp: 'prop', datum: '2026-03-14' },
+  { dok_id: 'H901Ju22', titel: 'Betänkande om rättsväsendets digitalisering', title: 'Committee report on digitalization', doktyp: 'bet', organ: 'JuU', datum: '2026-03-13' },
+  { dok_id: 'H9023456', titel: 'Motion om klimatanpassning', title: 'Motion on climate adaptation', doktyp: 'mot', datum: '2026-03-12', parti: 'MP' },
+  { dok_id: 'H9034567', titel: 'Interpellation om sjukvårdens resurser', title: 'Interpellation on healthcare resources', doktyp: 'ip', datum: '2026-03-11', parti: 'V' },
+  { dok_id: 'H9045678', titel: 'Skriftlig fråga om infrastrukturinvesteringar', title: 'Written question on infrastructure investments', doktyp: 'fr', datum: '2026-03-10', parti: 'S' },
+  { dok_id: 'H9012', titel: 'Proposition om ny skollag', title: 'Proposition on new education act', doktyp: 'prop', datum: '2026-03-09' },
+  { dok_id: 'H9056789', titel: 'Motion om försvarsbudgeten', title: 'Motion on the defense budget', doktyp: 'mot', datum: '2026-03-08', parti: 'M' },
+  { dok_id: 'H901FöU5', titel: 'Betänkande om cybersäkerhet', title: 'Committee report on cybersecurity', doktyp: 'bet', datum: '2026-03-07' },
+  { dok_id: 'H9067890', titel: 'Motion om energipolitik och grön omställning', title: 'Motion on energy policy and green transition', doktyp: 'mot', datum: '2026-03-06', parti: 'C' },
+  { dok_id: 'H9078901', titel: 'Motion om pensionsreform', title: 'Motion on pension reform', doktyp: 'mot', datum: '2026-03-05', parti: 'SD' },
+  { dok_id: 'H901FiU12', titel: 'Betänkande om finanspolitiska ramverket', title: 'Committee report on fiscal policy framework', doktyp: 'bet', datum: '2026-03-04' },
+];
 
 // ---------------------------------------------------------------------------
 // Integration-level helpers (imported directly, not mocked)

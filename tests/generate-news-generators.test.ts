@@ -5,42 +5,55 @@
  * generateMotions, and generateInterpellations with mocked MCP client and
  * config dependencies.
  *
- * The generators are complex orchestration functions. These tests verify:
- * - Each generator returns a valid GenerationResult shape
- * - Error handling wraps errors gracefully
- * - Generators call the shared MCP client
- * - Article writing helpers are invoked correctly
- *
  * @author Hack23 AB
  * @license Apache-2.0
  */
 
 import { describe, it, expect, vi, beforeAll, beforeEach } from 'vitest';
 import type { GenerationResult } from '../scripts/types/article.js';
-import { MockMCPClient, sampleDocuments, sampleCalendarEvents } from './fixtures/mock-mcp-client.js';
 
 // ---------------------------------------------------------------------------
-// Module-level mocks
+// Inline mock MCP client (avoids cross-test contamination with fixture imports)
 // ---------------------------------------------------------------------------
 
-const mockClient = new MockMCPClient()
-  .withFixture('fetchCalendarEvents', sampleCalendarEvents)
-  .withFixture('searchDocuments', sampleDocuments)
-  .withFixture('fetchCommitteeReports', sampleDocuments.filter(d => d.doktyp === 'bet'))
-  .withFixture('fetchPropositions', sampleDocuments.filter(d => d.doktyp === 'prop'))
-  .withFixture('fetchMotions', sampleDocuments.filter(d => d.doktyp === 'mot'))
-  .withFixture('fetchInterpellations', sampleDocuments.filter(d => d.doktyp === 'ip'))
-  .withFixture('fetchWrittenQuestions', sampleDocuments.filter(d => d.doktyp === 'fr'));
+const sampleDocs = [
+  { dok_id: 'H901FiU1', titel: 'Utgiftsramar', doktyp: 'bet', organ: 'FiU', datum: '2026-03-15' },
+  { dok_id: 'H9011', titel: 'Proposition om säkerhet', doktyp: 'prop', datum: '2026-03-14' },
+  { dok_id: 'H9023456', titel: 'Motion om klimat', doktyp: 'mot', parti: 'MP', datum: '2026-03-12' },
+  { dok_id: 'H9034567', titel: 'Interpellation om sjukvård', doktyp: 'ip', parti: 'V', datum: '2026-03-11' },
+  { dok_id: 'H9045678', titel: 'Fråga om infrastruktur', doktyp: 'fr', parti: 'S', datum: '2026-03-10' },
+];
+
+const sampleEvents = [
+  { datum: '2026-03-16', tid: '09:00', rubrik: 'FiU sammanträde', organ: 'FiU' },
+  { datum: '2026-03-17', tid: '13:00', rubrik: 'Frågestund', organ: 'Kammaren' },
+];
+
+const inlineMockClient = {
+  baseURL: 'http://mock:3000',
+  timeout: 30000,
+  fetchCalendarEvents: vi.fn().mockResolvedValue(sampleEvents),
+  searchDocuments: vi.fn().mockResolvedValue(sampleDocs),
+  fetchCommitteeReports: vi.fn().mockResolvedValue(sampleDocs.filter(d => d.doktyp === 'bet')),
+  fetchPropositions: vi.fn().mockResolvedValue(sampleDocs.filter(d => d.doktyp === 'prop')),
+  fetchMotions: vi.fn().mockResolvedValue(sampleDocs.filter(d => d.doktyp === 'mot')),
+  fetchInterpellations: vi.fn().mockResolvedValue(sampleDocs.filter(d => d.doktyp === 'ip')),
+  fetchWrittenQuestions: vi.fn().mockResolvedValue(sampleDocs.filter(d => d.doktyp === 'fr')),
+  enrichDocumentsWithContent: vi.fn().mockImplementation((docs: unknown[]) => Promise.resolve(
+    docs.map((d: Record<string, unknown>) => ({ ...d, contentFetched: true }))
+  )),
+  request: vi.fn().mockResolvedValue({ last_sync: new Date().toISOString() }),
+};
 
 vi.mock('../scripts/mcp-client.js', () => ({
-  MCPClient: vi.fn().mockImplementation(() => mockClient),
+  MCPClient: vi.fn().mockImplementation(() => inlineMockClient),
 }));
 
 // Mock config with controlled values
 vi.mock('../scripts/generate-news-enhanced/config.js', () => ({
   languages: ['en', 'sv'],
   stats: { generated: 0, errors: 0, articles: [], timestamp: new Date().toISOString(), qualityScores: [] },
-  getSharedClient: vi.fn().mockResolvedValue(mockClient),
+  getSharedClient: vi.fn().mockResolvedValue(inlineMockClient),
   requireMcp: false,
   toISODate: (d: Date) => d.toISOString().slice(0, 10),
   dryRunArg: true,
@@ -66,13 +79,10 @@ vi.mock('../scripts/generate-news-enhanced/config.js', () => ({
   },
 }));
 
-// Mock helpers to avoid filesystem writes
+// Mock helpers
 const writeSingleArticleMock = vi.fn().mockResolvedValue('test-article.html');
 vi.mock('../scripts/generate-news-enhanced/helpers.js', () => ({
-  getWeekAheadDateRange: () => ({
-    start: '2026-03-16',
-    end: '2026-03-23',
-  }),
+  getWeekAheadDateRange: () => ({ start: '2026-03-16', end: '2026-03-23' }),
   formatDateForSlug: (d?: Date) => (d ?? new Date()).toISOString().slice(0, 10),
   writeSingleArticle: writeSingleArticleMock,
   writeArticlePair: vi.fn().mockResolvedValue(undefined),
@@ -102,16 +112,10 @@ vi.mock('../scripts/ai-analysis/pipeline.js', () => ({
   },
 }));
 
-// Mock analysis cache
 vi.mock('../scripts/generate-news-enhanced/analysis-cache.js', () => ({
-  sharedAnalysisCache: {
-    get: vi.fn().mockReturnValue(undefined),
-    set: vi.fn(),
-    clear: vi.fn(),
-  },
+  sharedAnalysisCache: { get: vi.fn().mockReturnValue(undefined), set: vi.fn(), clear: vi.fn() },
 }));
 
-// Mock AI analysis pipeline class
 vi.mock('../scripts/generate-news-enhanced/ai-analysis-pipeline.js', () => ({
   AIAnalysisPipeline: vi.fn().mockImplementation(() => ({
     run: vi.fn().mockResolvedValue({
@@ -168,7 +172,6 @@ describe('generateWeekAhead', () => {
     if (result.success && result.slug) {
       expect(result.slug).toContain('week-ahead');
     } else {
-      // If it failed (due to mock limitations), just verify error shape
       expect(result.error).toBeDefined();
     }
   });
@@ -180,12 +183,11 @@ describe('generateWeekAhead', () => {
     }
   });
 
-  it('on failure, increments stats.errors', async () => {
-    const { stats } = await import('../scripts/generate-news-enhanced/config.js');
-    const errorsBefore = stats.errors;
-    await generators.generateWeekAhead();
-    // Either success or error was tracked
-    expect(typeof stats.errors).toBe('number');
+  it('on failure, error field is a string', async () => {
+    const result = await generators.generateWeekAhead();
+    if (!result.success) {
+      expect(typeof result.error).toBe('string');
+    }
   });
 });
 
@@ -316,14 +318,13 @@ describe('Generator cross-cutting concerns', () => {
   });
 
   it('all generators handle errors without throwing', async () => {
-    const fns = [
+    for (const fn of [
       generators.generateWeekAhead,
       generators.generateCommitteeReports,
       generators.generatePropositions,
       generators.generateMotions,
       generators.generateInterpellations,
-    ];
-    for (const fn of fns) {
+    ]) {
       await expect(fn()).resolves.toBeDefined();
     }
   });
@@ -348,56 +349,11 @@ describe('Generator cross-cutting concerns', () => {
   it('getSharedClient is called for each generator invocation', async () => {
     const { getSharedClient } = await import('../scripts/generate-news-enhanced/config.js');
     vi.mocked(getSharedClient).mockClear();
-
     await generators.generateWeekAhead();
     await generators.generateCommitteeReports();
     await generators.generatePropositions();
     await generators.generateMotions();
     await generators.generateInterpellations();
-
     expect(getSharedClient).toHaveBeenCalledTimes(5);
-  });
-});
-
-// ---------------------------------------------------------------------------
-// MockMCPClient fixture tests
-// ---------------------------------------------------------------------------
-
-describe('MockMCPClient fixture', () => {
-  it('withFixture returns this for chaining', () => {
-    const client = new MockMCPClient();
-    const result = client.withFixture('test', []);
-    expect(result).toBe(client);
-  });
-
-  it('searchDocuments returns configured fixture', async () => {
-    const client = new MockMCPClient().withFixture('searchDocuments', sampleDocuments);
-    const docs = await client.searchDocuments();
-    expect(docs).toEqual(sampleDocuments);
-  });
-
-  it('returns empty array for unconfigured methods', async () => {
-    const client = new MockMCPClient();
-    const result = await client.fetchCalendarEvents();
-    expect(result).toEqual([]);
-  });
-
-  it('enrichDocumentsWithContent adds contentFetched flag', async () => {
-    const client = new MockMCPClient();
-    const docs = [{ dok_id: 'TEST1', titel: 'Test' }];
-    const enriched = await client.enrichDocumentsWithContent(docs);
-    expect(enriched[0]!.contentFetched).toBe(true);
-  });
-
-  it('request returns sync status for get_sync_status', async () => {
-    const client = new MockMCPClient();
-    const result = await client.request('get_sync_status');
-    expect(result.last_sync).toBeDefined();
-  });
-
-  it('has baseURL and timeout properties', () => {
-    const client = new MockMCPClient();
-    expect(client.baseURL).toBe('http://mock-mcp:3000');
-    expect(client.timeout).toBe(30000);
   });
 });
