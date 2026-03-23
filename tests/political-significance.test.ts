@@ -10,7 +10,6 @@ import {
   BREAKING_NEWS_THRESHOLD,
 } from '../scripts/ai-analysis/political-significance.js';
 import type {
-  SignificanceScore,
   UrgencyLabel,
 } from '../scripts/ai-analysis/political-significance.js';
 import type { RawDocument } from '../scripts/data-transformers/types.js';
