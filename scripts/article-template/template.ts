@@ -132,8 +132,8 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   <meta name="twitter:data2" content="${typeLabel}">
   ${typeof significance === 'number' ? `
   <!-- Political Significance -->
-  <meta name="article:significance" content="${significance}">
-  <meta name="article:urgency" content="${urgency || ''}">` : ''}
+  <meta name="article:significance" content="${significance}">${urgency ? `
+  <meta name="article:urgency" content="${urgency}">` : ''}` : ''}
   
   <!-- Hreflang for language alternatives -->
 ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}
@@ -229,12 +229,12 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
         "@type": "PropertyValue",
         "name": "politicalSignificance",
         "value": ${significance}
-      },
+      }${urgency ? `,
       {
         "@type": "PropertyValue",
         "name": "editorialUrgency",
-        "value": "${urgency || ''}"
-      }
+        "value": "${urgency}"
+      }` : ''}
     ]` : ''}
   }
   </script>

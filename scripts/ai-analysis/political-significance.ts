@@ -167,6 +167,10 @@ function scoreTopicRarity(docs: RawDocument[], recentTopics: string[]): number {
 
   const recentLower = new Set(recentTopics.map(t => t.toLowerCase()));
 
+  // Minimum length for a recent topic to be considered for substring matching.
+  // Very short strings (≤ 3 chars) cause false positives (e.g. "tax" matching "syntax").
+  const MIN_TOPIC_LENGTH_FOR_MATCH = 4;
+
   let novelCount = 0;
   for (const doc of docs) {
     const title = (doc.titel || doc.title || '').toLowerCase();
@@ -174,7 +178,7 @@ function scoreTopicRarity(docs: RawDocument[], recentTopics: string[]): number {
     // If none of the recent topics appear as a substring, it's novel
     let isNovel = true;
     for (const recent of recentLower) {
-      if (recent.length > 3 && title.includes(recent)) {
+      if (recent.length >= MIN_TOPIC_LENGTH_FOR_MATCH && title.includes(recent)) {
         isNovel = false;
         break;
       }
@@ -182,7 +186,6 @@ function scoreTopicRarity(docs: RawDocument[], recentTopics: string[]): number {
     if (isNovel) novelCount++;
   }
 
-  if (docs.length === 0) return 0;
   const novelRatio = novelCount / docs.length;
   return Math.round(novelRatio * 100);
 }

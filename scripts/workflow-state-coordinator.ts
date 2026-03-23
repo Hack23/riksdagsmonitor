@@ -399,7 +399,8 @@ export class WorkflowStateCoordinator {
 
     // High-significance override: if the new article has significance ≥ 80
     // and the matched article has lower significance, allow the new article
-    // to replace the lower-significance coverage.
+    // to be published alongside the existing one (isDuplicate = false).
+    // The downstream article-writing logic will add both to the recent articles list.
     if (
       isDuplicate &&
       typeof significance === 'number' &&
