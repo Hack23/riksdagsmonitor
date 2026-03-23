@@ -246,7 +246,8 @@ if [ -z "$ARTICLE_DATE" ]; then
   ARTICLE_DATE=$(date -u '+%Y-%m-%d')
 fi
 CONTENT_BRANCH_PREFIX="news/content/${ARTICLE_DATE}/"
-GH_ERROR_LOG=$(mktemp); JQ_ERROR_LOG=$(mktemp)
+GH_ERROR_LOG=$(mktemp)
+JQ_ERROR_LOG=$(mktemp)
 chmod 600 "$GH_ERROR_LOG" "$JQ_ERROR_LOG"
 trap 'rm -f "$GH_ERROR_LOG" "$JQ_ERROR_LOG"' EXIT
 
@@ -255,7 +256,7 @@ PR_LIST_JSON=$(gh pr list --repo "$GH_REPOSITORY" --base main --state open --lim
 GH_EXIT_CODE=$?
 set -e
 if [ "$GH_EXIT_CODE" -ne 0 ] || [ -z "$PR_LIST_JSON" ]; then
-  echo "⚠ Unable to query open content PRs (gh exit code: $GH_EXIT_CODE). Deferring."
+  echo "⚠ Unable to query open content PRs for $ARTICLE_DATE (gh exit code: $GH_EXIT_CODE). Deferring."
   echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
   exit 0
 fi
@@ -265,7 +266,7 @@ OPEN_CONTENT_PRS=$(printf '%s' "$PR_LIST_JSON" | jq -r --arg prefix "$CONTENT_BR
 JQ_EXIT_CODE=$?
 set -e
 if [ "$JQ_EXIT_CODE" -ne 0 ] || ! [[ "$OPEN_CONTENT_PRS" =~ ^[0-9]+$ ]]; then
-  echo "⚠ Unable to parse content PR count (jq exit code: $JQ_EXIT_CODE). Deferring."
+  echo "⚠ Unable to parse content PR count for $ARTICLE_DATE (jq exit code: $JQ_EXIT_CODE). Deferring."
   echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
   exit 0
 fi
