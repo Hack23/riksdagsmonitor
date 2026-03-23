@@ -34,19 +34,55 @@ export const SWEDISH_STOP_WORDS: ReadonlySet<string> = new Set([
 /**
  * Swedish parliamentary terms that should always be translated.
  * These are domain-specific Swedish words that should never appear in e.g. English articles.
+ * Includes common inflected forms (definite, plural, genitive) to catch actual leaked tokens.
  */
 export const SWEDISH_PARLIAMENTARY_TERMS: ReadonlySet<string> = new Set([
-  'betänkande', 'proposition', 'utskottet', 'utskott', 'riksdagen',
-  'regeringen', 'motionen', 'interpellation',
-  'anförande', 'votering', 'omröstning', 'bordläggning',
-  'remiss', 'yttrande', 'statsråd', 'ledamot', 'riksdagsledamot',
-  'utgiftsområde', 'budgetpropositionen', 'vårpropositionen',
+  // Betänkande (committee report) – base + common inflections
+  'betänkande', 'betänkanden', 'betänkandet', 'betänkandena',
+  // Proposition (government bill)
+  'proposition', 'propositionen', 'propositioner', 'propositionerna',
+  // Utskott (committee)
+  'utskott', 'utskottet', 'utskotten', 'utskottets', 'utskottens',
+  // Riksdag (parliament)
+  'riksdag', 'riksdagen', 'riksdagens',
+  // Regering (government)
+  'regering', 'regeringen', 'regeringens',
+  // Motion (member's bill)
+  'motion', 'motionen', 'motioner', 'motionerna', 'motionens',
+  // Interpellation (formal question)
+  'interpellation', 'interpellationen', 'interpellationer', 'interpellationerna',
+  // Anförande (speech)
+  'anförande', 'anförandet', 'anföranden', 'anförandena',
+  // Votering / omröstning (vote)
+  'votering', 'voteringen', 'voteringar', 'voteringarna',
+  'omröstning', 'omröstningen', 'omröstningar', 'omröstningarna',
+  // Bordläggning (tabling)
+  'bordläggning', 'bordläggningen',
+  // Remiss / yttrande (referral / opinion)
+  'remiss', 'remissen', 'remisser', 'remisserna',
+  'yttrande', 'yttrandet', 'yttranden', 'yttrandena',
+  // Statsråd / ledamot / riksdagsledamot (minister / member of parliament)
+  'statsråd', 'statsrådet', 'statsråden',
+  'ledamot', 'ledamoten', 'ledamöter', 'ledamöterna',
+  'riksdagsledamot', 'riksdagsledamoten', 'riksdagsledamöter', 'riksdagsledamöterna',
+  // Budget terms
+  'utgiftsområde', 'utgiftsområdet', 'utgiftsområden',
+  'budgetpropositionen', 'vårpropositionen',
+  // Committee names (already definite form)
   'finansutskottet', 'justitieutskottet', 'försvarsutskottet',
   'socialutskottet', 'utbildningsutskottet', 'utrikesutskottet',
   'skatteutskottet', 'trafikutskottet', 'kulturutskottet',
-  'tillkännagivande', 'lagförslag', 'lagstiftning',
-  'sammanträde', 'anmälan', 'granskning', 'beredning',
-  'anslag', 'utgiftstak', 'statsbudgeten',
+  // Other procedure terms
+  'tillkännagivande', 'tillkännagivanden', 'tillkännagivandet',
+  'lagförslag', 'lagförslaget', 'lagförslagen',
+  'lagstiftning', 'lagstiftningen',
+  'sammanträde', 'sammanträdet', 'sammanträden',
+  'anmälan', 'anmälningar', 'anmälningarna',
+  'granskning', 'granskningen', 'granskningar',
+  'beredning', 'beredningen', 'beredningar',
+  'anslag', 'anslaget', 'anslagen',
+  'utgiftstak', 'utgiftstaket',
+  'statsbudgeten',
 ]);
 
 /** Result for a single detected leaked term. */
@@ -61,9 +97,9 @@ export interface LeakedTerm {
 
 /** Aggregated leakage report for a single article. */
 export interface LeakageReport {
-  /** Array of leaked Swedish terms found. */
+  /** Array of leaked Swedish terms found (deduplicated, with per-term counts). */
   readonly leakedTerms: ReadonlyArray<LeakedTerm>;
-  /** Number of leaked terms (convenience). */
+  /** Total number of Swedish token occurrences detected across all leaked terms. */
   readonly score: number;
 }
 
@@ -181,7 +217,10 @@ export function detectSwedishLeakage(html: string, targetLang: Language): Leakag
     leaked.push({ term, line, count: counts.get(term) ?? 1 });
   }
 
-  return { leakedTerms: leaked, score: leaked.length };
+  // Score: total number of Swedish token occurrences detected across all leaked terms
+  const totalOccurrences = Array.from(counts.values()).reduce((sum, value) => sum + value, 0);
+
+  return { leakedTerms: leaked, score: totalOccurrences };
 }
 
 // ---------------------------------------------------------------------------
@@ -219,12 +258,22 @@ function isSharedWord(word: string, targetLang: Language): boolean {
 /**
  * Parliamentary terms that are valid/identical in specific Scandinavian target
  * languages and should not be flagged as Swedish leakage for those languages.
+ * Includes inflected forms to match the expanded SWEDISH_PARLIAMENTARY_TERMS set.
  */
 const SHARED_PARLIAMENTARY_TERMS: Partial<Record<Language, ReadonlySet<string>>> = {
   // Norwegian uses many of the same parliamentary terms as Swedish
-  no: new Set(['proposition', 'interpellation', 'regeringen', 'statsråd']),
+  no: new Set([
+    'proposition', 'propositionen', 'propositioner', 'propositionerna',
+    'interpellation', 'interpellationen', 'interpellationer', 'interpellationerna',
+    'regeringen', 'regeringens',
+    'statsråd', 'statsrådet', 'statsråden',
+  ]),
   // Danish shares some parliamentary vocabulary
-  da: new Set(['proposition', 'interpellation', 'regeringen']),
+  da: new Set([
+    'proposition', 'propositionen', 'propositioner', 'propositionerna',
+    'interpellation', 'interpellationen', 'interpellationer', 'interpellationerna',
+    'regeringen', 'regeringens',
+  ]),
 };
 
 /**

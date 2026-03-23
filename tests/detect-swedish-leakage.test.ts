@@ -61,9 +61,11 @@ describe('Swedish Leakage Detector', () => {
     });
 
     it('should have Swedish parliamentary terms defined', () => {
-      expect(SWEDISH_PARLIAMENTARY_TERMS.size).toBeGreaterThan(20);
+      expect(SWEDISH_PARLIAMENTARY_TERMS.size).toBeGreaterThan(60);
       expect(SWEDISH_PARLIAMENTARY_TERMS.has('betänkande')).toBe(true);
+      expect(SWEDISH_PARLIAMENTARY_TERMS.has('betänkanden')).toBe(true);
       expect(SWEDISH_PARLIAMENTARY_TERMS.has('proposition')).toBe(true);
+      expect(SWEDISH_PARLIAMENTARY_TERMS.has('propositionen')).toBe(true);
       expect(SWEDISH_PARLIAMENTARY_TERMS.has('utskottet')).toBe(true);
     });
   });
@@ -135,6 +137,8 @@ describe('Swedish Leakage Detector', () => {
       const matches = report.leakedTerms.filter((t) => t.term === 'betänkande');
       expect(matches).toHaveLength(1);
       expect(matches[0].count).toBe(3);
+      // score = total occurrences, not unique terms
+      expect(report.score).toBe(3);
     });
 
     it('should handle empty input', () => {
@@ -170,6 +174,22 @@ describe('Swedish Leakage Detector', () => {
       const html = '<p>Die betänkande wurde im utskottet besprochen.</p>';
       const report = detectSwedishLeakage(html, 'de');
       expect(report.score).toBeGreaterThan(0);
+    });
+
+    it('should detect inflected Swedish parliamentary terms', () => {
+      const html = '<p>The betänkanden were discussed alongside several propositioner.</p>';
+      const report = detectSwedishLeakage(html, 'en');
+      const terms = report.leakedTerms.map((t) => t.term);
+      expect(terms).toContain('betänkanden');
+      expect(terms).toContain('propositioner');
+    });
+
+    it('should not flag inflected shared parliamentary terms in Norwegian', () => {
+      const html = '<p>Propositionerna ble diskutert etter interpellationen i parlamentet.</p>';
+      const report = detectSwedishLeakage(html, 'no');
+      const terms = report.leakedTerms.map((t) => t.term);
+      expect(terms).not.toContain('propositionerna');
+      expect(terms).not.toContain('interpellationen');
     });
 
     it('should work with Japanese target language', () => {
