@@ -398,9 +398,9 @@ export class WorkflowStateCoordinator {
     const isDuplicate: boolean = maxSimilarity >= SIMILARITY_THRESHOLD;
 
     // High-significance override: if the new article has significance ≥ 80
-    // and the matched article has lower significance, allow the new article
-    // to be published alongside the existing one (isDuplicate = false).
-    // The downstream article-writing logic will add both to the recent articles list.
+    // and the matched article either has no numeric significance or a score < 80,
+    // treat the matched article as lower/unknown significance and allow the new
+    // article to be published alongside the existing one (isDuplicate = false).
     if (
       isDuplicate &&
       typeof significance === 'number' &&

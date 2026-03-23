@@ -290,7 +290,8 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
       if (significance.score < BREAKING_NEWS_THRESHOLD) {
         console.log(`  ⏭️  Significance ${significance.score} < ${BREAKING_NEWS_THRESHOLD} — skipping generation (not newsworthy)`);
         return {
-          success: false,
+          success: true,
+          files: 0,
           error: `significance ${significance.score} below threshold ${BREAKING_NEWS_THRESHOLD}`,
           mcpCalls,
         };

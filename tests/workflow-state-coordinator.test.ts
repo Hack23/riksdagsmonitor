@@ -411,7 +411,7 @@ describe('Workflow State Coordinator', () => {
         significance: 75,
       });
 
-      const articles = (coordinator as any).state.recentArticles;
+      const articles = coordinator.getRecentArticles();
       expect(articles).toHaveLength(1);
       expect(articles[0].significance).toBe(75);
     });
