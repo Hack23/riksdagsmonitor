@@ -5,8 +5,9 @@
  * Scans HTML content for Swedish-specific tokens that should have been
  * translated. Reports leaked terms with their positions and a leakage score.
  *
- * Used as a CI gate: if any non-SV article contains ≥ threshold untranslated
- * Swedish tokens the check fails.
+ * Typically used as an advisory CI check: the script exits non-zero if any
+ * non-SV article contains ≥ threshold untranslated Swedish tokens, but CI
+ * workflows may choose to run it with `continue-on-error`.
  *
  * Usage:
  *   npx tsx scripts/detect-swedish-leakage.ts --dir news/ --threshold 3
@@ -212,14 +213,14 @@ function stripTagBlocks(html: string, tagNames: ReadonlyArray<string>, preserveN
 
 /** Remove all remaining HTML tags using an index-based state machine. */
 function stripAllTags(html: string): string {
-  let stripped = '';
+  const chunks: string[] = [];
   let inTag = false;
 
   for (let i = 0; i < html.length; i++) {
     const ch = html[i];
     if (ch === '<') {
       if (!inTag) {
-        stripped += ' ';
+        chunks.push(' ');
       }
       inTag = true;
       continue;
@@ -229,11 +230,11 @@ function stripAllTags(html: string): string {
       continue;
     }
     if (!inTag) {
-      stripped += ch;
+      chunks.push(ch);
     }
   }
 
-  return stripped;
+  return chunks.join('');
 }
 
 /**

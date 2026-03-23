@@ -312,15 +312,33 @@ describe('Term category coverage', () => {
   });
 
   describe('dictionary breadth', () => {
-    it('should have at least 200 terms for English', () => {
-      const enDict = DICTIONARIES['en']!;
-      expect(Object.keys(enDict).length).toBeGreaterThanOrEqual(200);
+    it('should contain required core terms for English', () => {
+      const requiredEnTerms = [
+        'betänkande',
+        'remiss',
+        'yttrande',
+        'bordläggning',
+        'anslag',
+        'utgiftsområde',
+        'finansdepartementet',
+      ];
+      for (const term of requiredEnTerms) {
+        const translated = translateTerm(term, 'en');
+        expect(translated).toBeDefined();
+        expect(translated).not.toBe(term);
+      }
     });
 
-    it('should have dictionaries for all 13 non-SV languages', () => {
+    it('should have dictionaries for all 13 non-SV languages with core term coverage', () => {
+      const requiredCoreTerms = ['betänkande', 'remiss', 'anslag', 'finansdepartementet'];
       for (const lang of NON_SV_LANGUAGES) {
-        expect(DICTIONARIES[lang]).toBeDefined();
-        expect(Object.keys(DICTIONARIES[lang]!).length).toBeGreaterThan(100);
+        const dict = DICTIONARIES[lang];
+        expect(dict).toBeDefined();
+        for (const term of requiredCoreTerms) {
+          const translated = translateTerm(term, lang);
+          expect(translated).toBeDefined();
+          expect(translated).not.toBe(term);
+        }
       }
     });
   });

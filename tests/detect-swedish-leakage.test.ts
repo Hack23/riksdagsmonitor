@@ -229,7 +229,7 @@ describe('Swedish Leakage Detector', () => {
     });
 
     it('should preserve line numbers when stripping multi-line script blocks', () => {
-      // Script block spans lines 2-4; leaked term on line 5 should report line 5
+      // Script block spans lines 2-5; leaked term on line 6 should report line 6
       const html = '<p>Normal</p>\n<script>\nvar x = 1;\nvar y = 2;\n</script>\n<p>betänkande here</p>';
       const report = detectSwedishLeakage(html, 'en');
       const betankande = report.leakedTerms.find((t) => t.term === 'betänkande');
