@@ -78,8 +78,8 @@ describe('PipelineOrchestrator — concurrent execution', () => {
     expect(result.allSucceeded).toBe(true);
     expect(result.totalFiles).toBe(6);
     // Parallel: total time should be roughly max(10, 50, 30) ≈ 50ms, not sum ≈ 90ms
-    // Allow generous margin for CI environment
-    expect(elapsed).toBeLessThan(500);
+    // CI environments have high variance; 200ms is a practical upper bound
+    expect(elapsed).toBeLessThan(200);
   });
 
   it('isolates concurrent failures from concurrent successes', async () => {

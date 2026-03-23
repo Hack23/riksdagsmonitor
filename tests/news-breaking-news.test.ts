@@ -277,6 +277,7 @@ describe('Breaking News — validateBreakingNews', () => {
     });
     // Single source is insufficient for full pass
     expect(v.hasMinimumSources).toBe(false);
+    expect(v.passed).toBe(false);
   });
 });
 

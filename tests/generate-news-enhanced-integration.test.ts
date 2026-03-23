@@ -82,10 +82,8 @@ function detectSwedishLeakage(html: string, lang: string): string[] {
   if (lang === 'sv') return [];
 
   // Strip HTML tags to check only text content
-  const text = html
-    .replace(/<script[\s>][\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style[\s>][\s\S]*?<\/style>/gi, ' ')
-    .replace(/<[^>]+>/g, ' ');
+  // Use simple tag removal since content is test-generated (not untrusted input)
+  const text = html.replace(/<[^>]*>/g, ' ');
 
   // Distinctly Swedish parliamentary terms that should be translated
   // Excludes international cognates like 'proposition' which appear in many languages
@@ -116,10 +114,8 @@ function assessArticleQuality(html: string, _lang: string): {
   passesThreshold: boolean;
   dimensions: Record<string, number>;
 } {
-  const stripped = html
-    .replace(/<script[\s>][\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style[\s>][\s\S]*?<\/style>/gi, ' ')
-    .replace(/<[^>]+>/g, ' ');
+  // Strip HTML tags to get text content for word counting
+  const stripped = html.replace(/<[^>]*>/g, ' ');
   const wordCount = stripped.split(/\s+/).filter(w => w.length > 0).length;
   const h2Count = (html.match(/<h2[\s>]/gi) ?? []).length;
 
@@ -318,7 +314,9 @@ describe('Article quality assessment integration', () => {
       date: '2026-03-16',
     });
     const quality = assessArticleQuality(html, 'en');
-    expect(quality.overallScore).toBeLessThan(100);
+    // Empty content should fail the 40-point quality threshold
+    expect(quality.passesThreshold).toBe(false);
+    expect(quality.overallScore).toBeLessThan(40);
   });
 
   it('all non-SV language variants pass Swedish leakage check', () => {
