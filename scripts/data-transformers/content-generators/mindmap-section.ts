@@ -377,6 +377,7 @@ function buildD3MindmapConfig(
   const nodes: D3MindmapNode[] = [];
   const links: D3MindmapLink[] = [];
   const usedIds = new Set<string>();
+  const branchIdMap = new Map<string, string>(); // sanitized label → actual branchId
 
   /** Return a unique id by appending an index suffix when needed. */
   function uniqueId(base: string): string {
@@ -392,7 +393,9 @@ function buildD3MindmapConfig(
   nodes.push({ id: centerId, label: topic, group: 'center', weight: 5, color: '#00d9ff' });
 
   for (const branch of branches) {
-    const branchId = uniqueId(`branch-${sanitizeNodeId(branch.label)}`);
+    const sanitizedLabel = sanitizeNodeId(branch.label);
+    const branchId = uniqueId(`branch-${sanitizedLabel}`);
+    branchIdMap.set(sanitizedLabel, branchId);
     const palette = BRANCH_COLORS[branch.color] ?? BRANCH_COLORS.cyan;
     nodes.push({ id: branchId, label: branch.label, group: branch.color, weight: 3, color: palette.border });
     links.push({ source: centerId, target: branchId });
@@ -415,11 +418,13 @@ function buildD3MindmapConfig(
     }
   }
 
-  // Cross-branch connections
+  // Cross-branch connections — look up actual branch ids from the map
   for (const conn of connections) {
-    const fromId = `branch-${sanitizeNodeId(conn.fromBranch)}`;
-    const toId = `branch-${sanitizeNodeId(conn.toBranch)}`;
-    links.push({ source: fromId, target: toId, label: conn.relationship });
+    const fromId = branchIdMap.get(sanitizeNodeId(conn.fromBranch));
+    const toId = branchIdMap.get(sanitizeNodeId(conn.toBranch));
+    if (fromId && toId) {
+      links.push({ source: fromId, target: toId, label: conn.relationship });
+    }
   }
 
   return { nodes, links };
