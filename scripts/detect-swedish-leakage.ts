@@ -53,8 +53,10 @@ export const SWEDISH_PARLIAMENTARY_TERMS: ReadonlySet<string> = new Set([
 export interface LeakedTerm {
   /** The Swedish token detected. */
   readonly term: string;
-  /** 1-based line number where the term was found. */
+  /** 1-based line number where the term was first found. */
   readonly line: number;
+  /** Number of occurrences of this term in the article. */
+  readonly count: number;
 }
 
 /** Aggregated leakage report for a single article. */
@@ -139,7 +141,10 @@ export function detectSwedishLeakage(html: string, targetLang: Language): Leakag
 
   const lines = cleaned.split('\n');
   const leaked: LeakedTerm[] = [];
-  const seen = new Set<string>();
+  /** First-seen line for each term. */
+  const firstLine = new Map<string, number>();
+  /** Per-term occurrence count. */
+  const counts = new Map<string, number>();
 
   for (let i = 0; i < lines.length; i++) {
     const plainLine = stripHtml(lines[i]);
@@ -149,22 +154,31 @@ export function detectSwedishLeakage(html: string, targetLang: Language): Leakag
       const lower = word.toLowerCase();
 
       // Check against Swedish stop words (require ≥2 chars to avoid false positives)
-      if (lower.length >= 2 && SWEDISH_STOP_WORDS.has(lower) && !seen.has(lower)) {
+      if (lower.length >= 2 && SWEDISH_STOP_WORDS.has(lower)) {
         if (!isSharedWord(lower, targetLang)) {
-          seen.add(lower);
-          leaked.push({ term: lower, line: i + 1 });
+          counts.set(lower, (counts.get(lower) ?? 0) + 1);
+          if (!firstLine.has(lower)) {
+            firstLine.set(lower, i + 1);
+          }
         }
       }
 
       // Check against Swedish parliamentary terms, also applying shared-word filter
       // to avoid false positives in Scandinavian languages (e.g. "departementet" in Norwegian)
-      if (SWEDISH_PARLIAMENTARY_TERMS.has(lower) && !seen.has(lower)) {
+      if (SWEDISH_PARLIAMENTARY_TERMS.has(lower)) {
         if (!isSharedParliamentaryTerm(lower, targetLang)) {
-          seen.add(lower);
-          leaked.push({ term: lower, line: i + 1 });
+          counts.set(lower, (counts.get(lower) ?? 0) + 1);
+          if (!firstLine.has(lower)) {
+            firstLine.set(lower, i + 1);
+          }
         }
       }
     }
+  }
+
+  // Build deduplicated results with counts
+  for (const [term, line] of firstLine) {
+    leaked.push({ term, line, count: counts.get(term) ?? 1 });
   }
 
   return { leakedTerms: leaked, score: leaked.length };
@@ -177,9 +191,9 @@ export function detectSwedishLeakage(html: string, targetLang: Language): Leakag
 /** Words shared between Swedish and specific other languages. */
 const SHARED_WORDS: Partial<Record<Language, ReadonlySet<string>>> = {
   // Danish shares some common words with Swedish but not 'och', 'att', 'från' etc.
-  da: new Set(['det', 'den', 'var', 'kan', 'efter', 'eller', 'under', 'mot']),
+  da: new Set(['det', 'den', 'var', 'kan', 'efter', 'eller', 'under', 'mot', 'med', 'som', 'har']),
   // Norwegian shares some common words with Swedish
-  no: new Set(['det', 'den', 'var', 'kan', 'eller', 'under', 'mot']),
+  no: new Set(['det', 'den', 'var', 'kan', 'eller', 'under', 'mot', 'med', 'som', 'har']),
   de: new Set(['det', 'var']),
   nl: new Set(['det', 'met']),
   fr: new Set([]),
@@ -265,7 +279,7 @@ async function main(): Promise<void> {
       if (report.score >= threshold) {
         console.error(`❌ ${file}: ${report.score} Swedish tokens detected (threshold: ${threshold})`);
         for (const t of report.leakedTerms.slice(0, 5)) {
-          console.error(`   Line ${t.line}: "${t.term}"`);
+          console.error(`   Line ${t.line}: "${t.term}" (×${t.count})`);
         }
         totalFailures++;
       }
@@ -281,7 +295,10 @@ async function main(): Promise<void> {
 }
 
 // Run CLI when invoked directly
-const isMainModule = typeof process !== 'undefined' && process.argv[1]?.match(/detect-swedish-leakage\.(ts|js)$/);
+const isMainModule =
+  typeof process !== 'undefined' &&
+  typeof process.argv?.[1] === 'string' &&
+  import.meta.url === `file://${process.argv[1]}`;
 if (isMainModule) {
   main().catch((err) => {
     console.error(err);

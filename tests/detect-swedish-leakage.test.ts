@@ -129,11 +129,12 @@ describe('Swedish Leakage Detector', () => {
       expect(betankande!.line).toBe(2);
     });
 
-    it('should not double-count the same term', () => {
+    it('should not double-count the same term but track occurrences', () => {
       const html = '<p>betänkande betänkande betänkande</p>';
       const report = detectSwedishLeakage(html, 'en');
-      const count = report.leakedTerms.filter((t) => t.term === 'betänkande').length;
-      expect(count).toBe(1);
+      const matches = report.leakedTerms.filter((t) => t.term === 'betänkande');
+      expect(matches).toHaveLength(1);
+      expect(matches[0].count).toBe(3);
     });
 
     it('should handle empty input', () => {

@@ -8,7 +8,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { translateTerm, translatePhrase, translateSwedishContent } from '../scripts/translation-dictionary.js';
+import { translateTerm, translatePhrase, translateSwedishContent, DICTIONARIES } from '../scripts/translation-dictionary.js';
 
 // ---------------------------------------------------------------------------
 // translateTerm
@@ -234,8 +234,6 @@ describe('translateSwedishContent', () => {
 // ---------------------------------------------------------------------------
 // New term category coverage tests
 // ---------------------------------------------------------------------------
-
-import { DICTIONARIES } from '../scripts/translation-dictionary.js';
 
 const NON_SV_LANGUAGES = [
   'en', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh',
