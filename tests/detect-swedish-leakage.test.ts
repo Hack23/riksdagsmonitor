@@ -42,6 +42,23 @@ describe('Swedish Leakage Detector', () => {
       expect(stripHtml('&#xE4;ven')).toBe('även');
     });
 
+    it('should decode case-insensitive hex entities with leading zeros', () => {
+      // Lowercase hex
+      expect(stripHtml('&#xe4;ven')).toBe('även');
+      // Uppercase hex prefix
+      expect(stripHtml('&#Xe4;ven')).toBe('även');
+      // Leading zeros
+      expect(stripHtml('&#x00E4;ven')).toBe('även');
+      expect(stripHtml('&#x0e4;ven')).toBe('även');
+      // ö with various hex formats
+      expect(stripHtml('&#xf6;r')).toBe('ör');
+      expect(stripHtml('&#xF6;r')).toBe('ör');
+      expect(stripHtml('&#X00f6;r')).toBe('ör');
+      // å with hex
+      expect(stripHtml('&#xe5;r')).toBe('år');
+      expect(stripHtml('&#x00E5;r')).toBe('år');
+    });
+
     it('should decode quote and dash entities', () => {
       expect(stripHtml('a &ndash; b')).toBe('a - b');
       expect(stripHtml('a &mdash; b')).toBe('a - b');
@@ -61,12 +78,15 @@ describe('Swedish Leakage Detector', () => {
     });
 
     it('should have Swedish parliamentary terms defined', () => {
-      expect(SWEDISH_PARLIAMENTARY_TERMS.size).toBeGreaterThan(60);
+      expect(SWEDISH_PARLIAMENTARY_TERMS.size).toBeGreaterThan(90);
       expect(SWEDISH_PARLIAMENTARY_TERMS.has('betänkande')).toBe(true);
       expect(SWEDISH_PARLIAMENTARY_TERMS.has('betänkanden')).toBe(true);
       expect(SWEDISH_PARLIAMENTARY_TERMS.has('proposition')).toBe(true);
       expect(SWEDISH_PARLIAMENTARY_TERMS.has('propositionen')).toBe(true);
       expect(SWEDISH_PARLIAMENTARY_TERMS.has('utskottet')).toBe(true);
+      // Ministry names should be in the set
+      expect(SWEDISH_PARLIAMENTARY_TERMS.has('finansdepartementet')).toBe(true);
+      expect(SWEDISH_PARLIAMENTARY_TERMS.has('justitiedepartementet')).toBe(true);
     });
   });
 
@@ -190,6 +210,30 @@ describe('Swedish Leakage Detector', () => {
       const terms = report.leakedTerms.map((t) => t.term);
       expect(terms).not.toContain('propositionerna');
       expect(terms).not.toContain('interpellationen');
+    });
+
+    it('should preserve line numbers when stripping multi-line script blocks', () => {
+      // Script block spans lines 2-4; leaked term on line 5 should report line 5
+      const html = '<p>Normal</p>\n<script>\nvar x = 1;\nvar y = 2;\n</script>\n<p>betänkande here</p>';
+      const report = detectSwedishLeakage(html, 'en');
+      const betankande = report.leakedTerms.find((t) => t.term === 'betänkande');
+      expect(betankande).toBeDefined();
+      expect(betankande!.line).toBe(6);
+    });
+
+    it('should detect Swedish ministry names as leaked terms', () => {
+      const html = '<p>The finansdepartementet announced new regulations.</p>';
+      const report = detectSwedishLeakage(html, 'en');
+      const terms = report.leakedTerms.map((t) => t.term);
+      expect(terms).toContain('finansdepartementet');
+    });
+
+    it('should detect multiple ministry names', () => {
+      const html = '<p>Both justitiedepartementet and utrikesdepartementet were involved.</p>';
+      const report = detectSwedishLeakage(html, 'en');
+      const terms = report.leakedTerms.map((t) => t.term);
+      expect(terms).toContain('justitiedepartementet');
+      expect(terms).toContain('utrikesdepartementet');
     });
 
     it('should work with Japanese target language', () => {

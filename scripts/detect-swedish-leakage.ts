@@ -83,6 +83,19 @@ export const SWEDISH_PARLIAMENTARY_TERMS: ReadonlySet<string> = new Set([
   'anslag', 'anslaget', 'anslagen',
   'utgiftstak', 'utgiftstaket',
   'statsbudgeten',
+  // Swedish government ministries (departement) – should always be translated
+  'finansdepartementet',
+  'utrikesdepartementet',
+  'justitiedepartementet',
+  'försvarsdepartementet',
+  'utbildningsdepartementet',
+  'socialdepartementet',
+  'kulturdepartementet',
+  'miljödepartementet',
+  'infrastrukturdepartementet',
+  'arbetsmarknadsdepartementet',
+  'näringsdepartementet',
+  'klimatdepartementet',
 ]);
 
 /** Result for a single detected leaked term. */
@@ -131,18 +144,18 @@ export function stripHtml(html: string): string {
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
     .replace(/&nbsp;/g, ' ')
-    // Swedish characters (HTML named and numeric entities)
-    .replace(/&auml;|&#228;|&#xE4;/g, 'ä')
-    .replace(/&Auml;|&#196;|&#xC4;/g, 'Ä')
-    .replace(/&ouml;|&#246;|&#xF6;/g, 'ö')
-    .replace(/&Ouml;|&#214;|&#xD6;/g, 'Ö')
-    .replace(/&aring;|&#229;|&#xE5;/g, 'å')
-    .replace(/&Aring;|&#197;|&#xC5;/g, 'Å')
-    // Common quote and dash entities
-    .replace(/&ndash;|&#8211;|&#x2013;/g, '-')
-    .replace(/&mdash;|&#8212;|&#x2014;/g, '-')
-    .replace(/&ldquo;|&rdquo;|&#8220;|&#8221;|&#x201C;|&#x201D;/g, '"')
-    .replace(/&lsquo;|&rsquo;|&#8216;|&#8217;|&#x2018;|&#x2019;|&apos;/g, "'")
+    // Swedish characters (HTML named and numeric entities, case-insensitive hex)
+    .replace(/&auml;|&#228;|&#[xX]0*[eE]4;/g, 'ä')
+    .replace(/&Auml;|&#196;|&#[xX]0*[cC]4;/g, 'Ä')
+    .replace(/&ouml;|&#246;|&#[xX]0*[fF]6;/g, 'ö')
+    .replace(/&Ouml;|&#214;|&#[xX]0*[dD]6;/g, 'Ö')
+    .replace(/&aring;|&#229;|&#[xX]0*[eE]5;/g, 'å')
+    .replace(/&Aring;|&#197;|&#[xX]0*[cC]5;/g, 'Å')
+    // Common quote and dash entities (case-insensitive hex, optional leading zeros)
+    .replace(/&ndash;|&#8211;|&#[xX]0*2013;/g, '-')
+    .replace(/&mdash;|&#8212;|&#[xX]0*2014;/g, '-')
+    .replace(/&ldquo;|&rdquo;|&#8220;|&#8221;|&#[xX]0*201[Cc];|&#[xX]0*201[Dd];/g, '"')
+    .replace(/&lsquo;|&rsquo;|&#8216;|&#8217;|&#[xX]0*2018;|&#[xX]0*2019;|&apos;/g, "'")
     .replace(/&amp;/g, '&');
   // Normalise whitespace
   return text.replace(/\s+/g, ' ').trim();
@@ -166,13 +179,19 @@ export function detectSwedishLeakage(html: string, targetLang: Language): Leakag
   }
 
   // Strip script/style blocks on the full HTML first so multi-line blocks are
-  // removed correctly (the regex needs to see both open and close tags).
+  // removed correctly. Preserve newline count so reported line numbers remain accurate.
   let cleaned = html;
   let prev = '';
   while (prev !== cleaned) {
     prev = cleaned;
-    cleaned = cleaned.replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi, ' ');
-    cleaned = cleaned.replace(/<style\b[^>]*>[\s\S]*?<\/style[^>]*>/gi, ' ');
+    cleaned = cleaned.replace(
+      /<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi,
+      (match) => match.replace(/[^\n]/g, ' ')
+    );
+    cleaned = cleaned.replace(
+      /<style\b[^>]*>[\s\S]*?<\/style[^>]*>/gi,
+      (match) => match.replace(/[^\n]/g, ' ')
+    );
   }
 
   const lines = cleaned.split('\n');
@@ -299,9 +318,15 @@ async function main(): Promise<void> {
       i++;
     }
     if (args[i] === '--threshold' && args[i + 1]) {
-      const parsed = parseInt(args[i + 1], 10);
-      if (Number.isNaN(parsed) || parsed <= 0 || !Number.isInteger(parsed)) {
-        console.error(`Invalid --threshold value "${args[i + 1]}". Threshold must be a positive integer.`);
+      const rawThreshold = args[i + 1];
+      // Validate that the entire argument is a positive integer
+      if (!/^0*[1-9]\d*$/.test(rawThreshold)) {
+        console.error(`Invalid --threshold value "${rawThreshold}". Threshold must be a positive integer.`);
+        process.exit(1);
+      }
+      const parsed = Number(rawThreshold);
+      if (!Number.isInteger(parsed) || parsed <= 0) {
+        console.error(`Invalid --threshold value "${rawThreshold}". Threshold must be a positive integer.`);
         process.exit(1);
       }
       threshold = parsed;

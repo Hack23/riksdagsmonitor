@@ -71,8 +71,22 @@ const motionResponseSkrPrefix: Record<Language, string> = {
  * Builds a flat translation map from Swedish → target language for one language.
  * Swedish source keys are stored lower-case to enable case-insensitive replacement.
  */
-function buildMap(lang: Language): TranslationMap {
-  const terms: Array<[string, Record<Language, string>]> = [
+function buildMap(lang: Language, terms: ReadonlyArray<readonly [string, Record<Language, string>]>): TranslationMap {
+  const map: TranslationMap = {};
+  for (const [swedish, translations] of terms) {
+    const translation = translations[lang];
+    if (translation && translation !== swedish) {
+      map[swedish.toLowerCase()] = translation;
+    }
+  }
+  return map;
+}
+
+/**
+ * Module-level term data — hoisted out of buildMap so it is allocated only once
+ * instead of once per language (13×) during module initialisation.
+ */
+const TERMS: ReadonlyArray<readonly [string, Record<Language, string>]> = [
     // ---- Document type prefixes ----
     ['med anledning av prop.', motionResponsePropPrefix],
     ['med anledning av skr.', motionResponseSkrPrefix],
@@ -3537,16 +3551,6 @@ function buildMap(lang: Language): TranslationMap {
     ],
   ];
 
-  const map: TranslationMap = {};
-  for (const [swedish, translations] of terms) {
-    const translation = translations[lang];
-    if (translation && translation !== swedish) {
-      map[swedish.toLowerCase()] = translation;
-    }
-  }
-  return map;
-}
-
 /** Pre-built dictionaries for all supported non-Swedish languages. */
 const DICTIONARIES: LanguageDictionary = {};
 
@@ -3554,8 +3558,9 @@ const NON_SWEDISH_LANGUAGES: ReadonlyArray<Language> = [
   'en', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh',
 ];
 
+// Build all language maps in a single pass over the shared TERMS data.
 for (const lang of NON_SWEDISH_LANGUAGES) {
-  DICTIONARIES[lang] = buildMap(lang);
+  DICTIONARIES[lang] = buildMap(lang, TERMS);
 }
 
 /**
