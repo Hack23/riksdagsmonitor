@@ -641,8 +641,12 @@ describe('Deduplication Check in Content Workflows', () => {
       expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
+        content.includes('EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}'),
+        `Workflow ${workflowFile} should assign EXISTING using the standard news/\${ARTICLE_DATE}-\${ARTICLE_TYPE} pattern`
+      ).toBe(true);
+      expect(
         content.includes('already exist'),
-        `Workflow ${workflowFile} should check if articles already exist`
+        `Workflow ${workflowFile} should have a skip message when articles already exist`
       ).toBe(true);
     }
   });
@@ -1365,10 +1369,10 @@ describe('Branch Naming Convention', () => {
 });
 
 describe('Workflow dispatch-workflow safeguards', () => {
-  const CONTENT_WORKFLOWS = Object.values(ARTICLE_TYPE_WORKFLOWS);
+  const ARTICLE_WORKFLOWS = Object.values(ARTICLE_TYPE_WORKFLOWS);
 
   it('content workflows that use dispatch-workflow reference news-translate', () => {
-    for (const workflowFile of CONTENT_WORKFLOWS) {
+    for (const workflowFile of ARTICLE_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       if (!fs.existsSync(filepath)) continue;
 
