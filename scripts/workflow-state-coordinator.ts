@@ -400,9 +400,23 @@ export class WorkflowLockManager {
         try {
           if (fs.existsSync(infoPath)) {
             const info: LockInfo = JSON.parse(fs.readFileSync(infoPath, 'utf-8')) as LockInfo;
-            const acquiredAt: number = new Date(info.acquiredAt).getTime();
-            const expiry: number = info.expiresAfterMs ?? this.timeoutMs;
-            if (Date.now() - acquiredAt > expiry) {
+            const acquiredAtMs: number = new Date(info.acquiredAt).getTime();
+            const explicitExpiry: unknown = info.expiresAfterMs;
+            const hasExplicitExpiry: boolean = explicitExpiry !== undefined;
+            const expiryMs: number =
+              hasExplicitExpiry && typeof explicitExpiry === 'number'
+                ? explicitExpiry
+                : this.timeoutMs;
+            const isAcquiredAtFinite: boolean = Number.isFinite(acquiredAtMs);
+            const hasInvalidExplicitExpiry: boolean =
+              hasExplicitExpiry &&
+              !(typeof explicitExpiry === 'number' && Number.isFinite(explicitExpiry) && explicitExpiry > 0);
+            // Treat invalid timestamp/expiry as corrupt and reclaimable.
+            if (
+              !isAcquiredAtFinite ||
+              hasInvalidExplicitExpiry ||
+              Date.now() - acquiredAtMs > expiryMs
+            ) {
               fs.rmSync(lockPath, { recursive: true, force: true });
               cleaned++;
             }
@@ -488,17 +502,35 @@ export class WorkflowStateCoordinator {
         fs.renameSync(tmpPath, this.stateFilePath);
       } catch (renameErr: unknown) {
         // On Windows, renameSync can fail when the destination already exists.
-        // Attempt unlink-then-rename for known retriable error codes, matching
-        // the pattern used in generate-news-enhanced/helpers.ts.
+        // For known retriable codes, use backup-then-rename so last good state
+        // remains recoverable if retry fails.
         const code: string | undefined = (renameErr as NodeJS.ErrnoException).code;
         if (code && RETRIABLE_RENAME_CODES.has(code)) {
+          const backupPath: string = `${this.stateFilePath}.bak`;
+          let hadExisting: boolean = false;
           try {
             if (fs.existsSync(this.stateFilePath)) {
-              fs.unlinkSync(this.stateFilePath);
+              hadExisting = true;
+              if (fs.existsSync(backupPath)) {
+                fs.unlinkSync(backupPath);
+              }
+              fs.renameSync(this.stateFilePath, backupPath);
             }
             fs.renameSync(tmpPath, this.stateFilePath);
+            if (hadExisting) {
+              try { fs.unlinkSync(backupPath); } catch { /* ignore backup cleanup error */ }
+            }
             return;
           } catch (retryErr: unknown) {
+            // Restore previous state if we moved it to backup but failed to write new state.
+            try {
+              if (hadExisting && !fs.existsSync(this.stateFilePath) && fs.existsSync(backupPath)) {
+                fs.renameSync(backupPath, this.stateFilePath);
+              }
+            } catch (restoreErr: unknown) {
+              const restoreMessage: string = restoreErr instanceof Error ? restoreErr.message : String(restoreErr);
+              console.warn(`Warning: Failed to restore workflow state backup at ${backupPath}: ${restoreMessage}`);
+            }
             // Best-effort cleanup of tmp file after failed retry
             try { fs.unlinkSync(tmpPath); } catch { /* ignore cleanup error */ }
             throw retryErr;
@@ -697,7 +729,7 @@ export class WorkflowStateCoordinator {
         matchedArticle = recentArticle;
       }
 
-      if (combinedSimilarity >= SIMILARITY_THRESHOLD) {
+      if (currentIsDuplicate) {
         similarMatches.push(recentArticle);
       }
 

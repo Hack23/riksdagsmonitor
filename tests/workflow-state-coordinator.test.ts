@@ -868,6 +868,45 @@ describe('Workflow Lock Manager', () => {
       expect(fs.existsSync(lockPath)).toBe(false);
     });
 
+    it('should clean up lock directories with invalid acquiredAt timestamp', () => {
+      const lockPath = path.join(TEST_LOCK_DIR, 'invalid-time-2026-03-23.lock');
+      fs.mkdirSync(lockPath, { recursive: true });
+      fs.writeFileSync(path.join(lockPath, 'info.json'), JSON.stringify({
+        workflowId: 'bad-time-wf',
+        acquiredAt: 'not-a-valid-date',
+        expiresAfterMs: LOCK_TIMEOUT_MS,
+      }), 'utf-8');
+
+      const cleaned = lockManager.cleanupStaleLocks();
+      expect(cleaned).toBe(1);
+      expect(fs.existsSync(lockPath)).toBe(false);
+    });
+
+    it('should clean up lock directories with non-positive or non-finite expiry', () => {
+      const zeroExpiryLock = path.join(TEST_LOCK_DIR, 'zero-expiry-2026-03-23.lock');
+      fs.mkdirSync(zeroExpiryLock, { recursive: true });
+      fs.writeFileSync(path.join(zeroExpiryLock, 'info.json'), JSON.stringify({
+        workflowId: 'zero-expiry-wf',
+        acquiredAt: new Date().toISOString(),
+        expiresAfterMs: 0,
+      }), 'utf-8');
+
+      const nanExpiryLock = path.join(TEST_LOCK_DIR, 'nan-expiry-2026-03-23.lock');
+      fs.mkdirSync(nanExpiryLock, { recursive: true });
+      fs.writeFileSync(path.join(nanExpiryLock, 'info.json'), JSON.stringify({
+        workflowId: 'nan-expiry-wf',
+        acquiredAt: new Date().toISOString(),
+        // Persisted JSON cannot represent NaN (it serializes to null), so use
+        // a non-numeric explicit value to verify invalid-expiry cleanup.
+        expiresAfterMs: 'NaN',
+      }), 'utf-8');
+
+      const cleaned = lockManager.cleanupStaleLocks();
+      expect(cleaned).toBe(2);
+      expect(fs.existsSync(zeroExpiryLock)).toBe(false);
+      expect(fs.existsSync(nanExpiryLock)).toBe(false);
+    });
+
     it('should return 0 when no locks exist', () => {
       expect(lockManager.cleanupStaleLocks()).toBe(0);
     });
@@ -1027,6 +1066,28 @@ describe('Workflow State Coordinator - Significance Features', () => {
         85,
       );
 
+      expect(result.isDuplicate).toBe(true);
+    });
+
+    it('should still flag duplicate when high-significance duplicate is detected via topic Jaccard only', async () => {
+      await coordinator.addRecentArticle({
+        slug: 'topic-only-high-en.html',
+        workflow: 'realtime',
+        title: 'Parliament housing affordability outcomes',
+        topics: ['housing', 'committee', 'analysis'],
+        mcpQueries: ['search_housing_reports'],
+        significance: 90,
+      });
+
+      const result: DuplicateCheckResult = await coordinator.checkDuplicateArticle(
+        'Riksdag housing committee briefing today',
+        ['housing', 'committee', 'briefing'],
+        ['unrelated_query_key'],
+        85,
+      );
+
+      // Duplicate by topic-Jaccard (2/4=0.5) should still block high-significance override
+      // when an existing similar article already has significance >= 80.
       expect(result.isDuplicate).toBe(true);
     });
   });
