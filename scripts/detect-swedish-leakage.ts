@@ -10,7 +10,7 @@
  * workflows may choose to run it with `continue-on-error`.
  *
  * Usage:
- *   npx tsx scripts/detect-swedish-leakage.ts --dir news/ --threshold 3
+ *   npx tsx scripts/detect-swedish-leakage.ts --dir news/ --threshold 5
  */
 
 import { join, resolve } from 'path';
@@ -133,82 +133,81 @@ interface StripHtmlOptions {
   readonly skipBlockStripping?: boolean;
 }
 
-const OPEN_TAG_PREFIX_LENGTH = 1; // "<"
-const CLOSE_TAG_PREFIX_LENGTH = 2; // "</"
-// Safety ceiling for malformed/adversarial HTML that could otherwise keep toggling "changed".
-const MAX_TAG_STRIP_ITERATIONS = 10000;
-
 /** Valid boundary after an HTML tag name. */
 function isTagNameBoundary(ch: string | undefined): boolean {
   return ch === undefined || ch === '>' || ch === '/' || /\s/.test(ch);
 }
 
 /**
- * Strip specific HTML tag blocks using index-based parsing (avoids regex tag filters).
+ * Strip specific HTML tag blocks using a single-pass index-based scan
+ * (avoids regex tag filters and repeated toLowerCase).
  *
  * For preserveNewlines=true, removed content is replaced with spaces while keeping '\n'
  * positions intact so line numbering remains stable.
  */
 function stripTagBlocks(html: string, tagNames: ReadonlyArray<string>, preserveNewlines: boolean): string {
-  let text = html;
-  let changed = true;
-  // Safety bound to avoid pathological loops on malformed/adversarial input.
-  const maxIterations = Math.max(1, Math.min(MAX_TAG_STRIP_ITERATIONS, text.length));
-  let iterations = 0;
+  const lower = html.toLowerCase();
+  const length = html.length;
+  const resultParts: string[] = [];
+  let copyFrom = 0;
+  let i = 0;
 
-  while (changed && iterations < maxIterations) {
-    iterations++;
-    changed = false;
-    const lower = text.toLowerCase();
+  while (i < length) {
+    if (lower[i] !== '<') {
+      i++;
+      continue;
+    }
 
+    let matchedBlock = false;
     for (const tagName of tagNames) {
-      let searchFrom = 0;
-      while (searchFrom < lower.length) {
-        const openStart = lower.indexOf(`<${tagName}`, searchFrom);
-        if (openStart === -1) {
-          break;
-        }
-        const openNameBoundaryIndex = openStart + OPEN_TAG_PREFIX_LENGTH + tagName.length;
-        if (!isTagNameBoundary(lower[openNameBoundaryIndex])) {
-          searchFrom = openStart + 1;
-          continue;
-        }
+      const openPrefix = `<${tagName}`;
+      if (!lower.startsWith(openPrefix, i)) continue;
 
-        const openEnd = lower.indexOf('>', openStart + OPEN_TAG_PREFIX_LENGTH);
-        if (openEnd === -1) {
-          break;
-        }
+      const openNameBoundaryIndex = i + 1 + tagName.length;
+      if (!isTagNameBoundary(lower[openNameBoundaryIndex])) continue;
 
-        const closeStart = lower.indexOf(`</${tagName}`, openEnd + 1);
-        if (closeStart === -1) {
-          break;
-        }
-        const closeNameBoundaryIndex = closeStart + CLOSE_TAG_PREFIX_LENGTH + tagName.length;
-        if (!isTagNameBoundary(lower[closeNameBoundaryIndex])) {
-          searchFrom = closeStart + 1;
-          continue;
-        }
+      const openEnd = lower.indexOf('>', openNameBoundaryIndex);
+      if (openEnd === -1) continue;
 
-        const closeEnd = lower.indexOf('>', closeStart + CLOSE_TAG_PREFIX_LENGTH);
-        if (closeEnd === -1) {
-          break;
-        }
+      const closePrefix = `</${tagName}`;
+      const closeStart = lower.indexOf(closePrefix, openEnd + 1);
+      if (closeStart === -1) continue;
 
-        const replacement = preserveNewlines
-          ? text.slice(openStart, closeEnd + 1).replace(/[^\n]/g, ' ')
-          : ' ';
-        text = text.slice(0, openStart) + replacement + text.slice(closeEnd + 1);
-        changed = true;
-        break;
+      const closeNameBoundaryIndex = closeStart + 2 + tagName.length;
+      if (!isTagNameBoundary(lower[closeNameBoundaryIndex])) continue;
+
+      const closeEnd = lower.indexOf('>', closeNameBoundaryIndex);
+      if (closeEnd === -1) continue;
+
+      // Push text before this block
+      if (i > copyFrom) {
+        resultParts.push(html.slice(copyFrom, i));
       }
 
-      if (changed) {
-        break;
-      }
+      // Push replacement for the matched block
+      const block = html.slice(i, closeEnd + 1);
+      const replacement = preserveNewlines
+        ? block.replace(/[^\n]/g, ' ')
+        : ' ';
+      resultParts.push(replacement);
+
+      i = closeEnd + 1;
+      copyFrom = i;
+      matchedBlock = true;
+      break;
+    }
+
+    if (!matchedBlock) {
+      i++;
     }
   }
 
-  return text;
+  // Push remaining text after the last matched block
+  if (copyFrom < length) {
+    resultParts.push(html.slice(copyFrom));
+  }
+
+  return resultParts.join('');
 }
 
 /** Remove all remaining HTML tags using an index-based state machine. */
@@ -261,7 +260,7 @@ export function stripHtml(html: string, options: StripHtmlOptions = {}): string 
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
+    .replace(/&#0*39;|&#[xX]0*27;/g, "'")
     .replace(/&nbsp;/g, ' ')
     // Swedish characters (HTML named and numeric entities, case-insensitive hex)
     .replace(/&auml;|&#228;|&#[xX]0*[eE]4;/g, 'ä')
@@ -359,8 +358,8 @@ const SHARED_WORDS: Partial<Record<Language, ReadonlySet<string>>> = {
   da: new Set(['det', 'den', 'var', 'kan', 'efter', 'eller', 'under', 'mot', 'med', 'som', 'har']),
   // Norwegian shares some common words with Swedish
   no: new Set(['det', 'den', 'var', 'kan', 'eller', 'under', 'mot', 'med', 'som', 'har']),
-  // German: do not treat "det" as shared, to avoid hiding Swedish leakage
-  de: new Set(['var']),
+  // German: do not treat "det" or "var" as shared, to avoid hiding Swedish leakage
+  de: new Set([]),
   // Dutch: do not treat "det" as shared, only include actually shared words
   nl: new Set(['met']),
   fr: new Set([]),
