@@ -40,7 +40,7 @@ const inlineMockClient = {
   fetchInterpellations: vi.fn().mockResolvedValue(sampleDocs.filter(d => d.doktyp === 'ip')),
   fetchWrittenQuestions: vi.fn().mockResolvedValue(sampleDocs.filter(d => d.doktyp === 'fr')),
   enrichDocumentsWithContent: vi.fn().mockImplementation((docs: unknown[]) => Promise.resolve(
-    docs.map((d: Record<string, unknown>) => ({ ...d, contentFetched: true }))
+    (docs as Record<string, unknown>[]).map(d => ({ ...d, contentFetched: true }))
   )),
   request: vi.fn().mockResolvedValue({ last_sync: new Date().toISOString() }),
 };

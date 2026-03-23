@@ -9,7 +9,7 @@
  * @license Apache-2.0
  */
 
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { PipelineOrchestrator } from '../../scripts/pipeline/orchestrator.js';
 import type { ContentPipeline, PipelineOptions, PipelineResult } from '../../scripts/pipeline/types.js';
 
@@ -165,13 +165,13 @@ describe('PipelineOrchestrator — concurrent execution', () => {
       parallel: true,
       defaultOptions: { languages: ['en', 'sv'] },
     });
-    await orchestrator.run({ dryRun: true });
+    await orchestrator.run({ allowDegradedContent: true });
 
     for (const name of ['r1', 'r2', 'r3']) {
       const opts = recorder.get(name);
       expect(opts).toBeDefined();
       expect(opts!.languages).toEqual(['en', 'sv']);
-      expect(opts!.dryRun).toBe(true);
+      expect(opts!.allowDegradedContent).toBe(true);
     }
   });
 
