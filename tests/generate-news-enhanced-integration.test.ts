@@ -91,7 +91,7 @@ const LANGUAGE_ARTICLES: Record<string, { title: string; subtitle: string; conte
 function buildArticleData(lang: Language): ArticleData {
   const content = LANGUAGE_ARTICLES[lang] ?? LANGUAGE_ARTICLES['en']!;
   return {
-    slug: 'week-ahead-2026-03-16',
+    slug: `week-ahead-2026-03-16-${lang}.html`,
     title: content.title,
     subtitle: content.subtitle,
     date: '2026-03-16',

@@ -290,10 +290,10 @@ describe('generateInterpellations', () => {
     await expect(generators.generateInterpellations()).resolves.toBeDefined();
   });
 
-  it('on success, slug contains "interpellations"', async () => {
+  it('on success, slug contains "interpellation-debates"', async () => {
     const result = await generators.generateInterpellations();
     if (result.success && result.slug) {
-      expect(result.slug).toContain('interpellations');
+      expect(result.slug).toContain('interpellation-debates');
     }
   });
 });

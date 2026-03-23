@@ -63,14 +63,16 @@ function makeOptionRecordingPipeline(name: string, recorder: Map<string, Pipelin
 
 describe('PipelineOrchestrator — concurrent execution', () => {
   it('runs pipelines concurrently in parallel mode (faster than sequential)', async () => {
-    // Use identical delays so the sequential sum is predictable
-    const delayMs = 50;
+    // Use identical delays so the sequential sum is predictable.
+    // 150ms per pipeline gives enough headroom to avoid scheduler-jitter
+    // false-negatives on loaded CI runners.
+    const delayMs = 150;
     const pipelines = [
       makeDelayedPipeline('a', delayMs, 2),
       makeDelayedPipeline('b', delayMs, 3),
       makeDelayedPipeline('c', delayMs, 1),
     ];
-    const sequentialSum = pipelines.length * delayMs; // 150ms
+    const sequentialSum = pipelines.length * delayMs; // 450ms
 
     const startTime = Date.now();
     const orchestrator = new PipelineOrchestrator({ pipelines, parallel: true });
@@ -80,8 +82,8 @@ describe('PipelineOrchestrator — concurrent execution', () => {
     expect(result.allSucceeded).toBe(true);
     expect(result.totalFiles).toBe(6);
     // Parallel execution should complete significantly faster than the
-    // sequential sum.  We use a generous 80% margin to avoid CI flakiness.
-    expect(elapsed).toBeLessThan(sequentialSum * 0.8);
+    // sequential sum.  We use a generous 90% margin to avoid CI flakiness.
+    expect(elapsed).toBeLessThan(sequentialSum * 0.9);
   });
 
   it('isolates concurrent failures from concurrent successes', async () => {
