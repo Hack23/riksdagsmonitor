@@ -583,10 +583,13 @@ describe('Unified Required Skills', () => {
 });
 
 describe('Playwright Validation in Content Workflows', () => {
-  const CONTENT_WORKFLOWS = Object.values(ARTICLE_TYPE_WORKFLOWS);
+  const CONTENT_WORKFLOWS = [
+    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+    'news-evening-analysis.md',
+  ];
   const PLAYWRIGHT_VALIDATOR_PATH = 'scripts/validate-articles-playwright.ts';
 
-  it('all article type workflows should have Playwright validation step', () => {
+  it('all content workflows should have Playwright validation step', () => {
     const validatorPath = path.join(__dirname, '..', PLAYWRIGHT_VALIDATOR_PATH);
     expect(
       fs.existsSync(validatorPath),
@@ -604,7 +607,7 @@ describe('Playwright Validation in Content Workflows', () => {
     }
   });
 
-  it('all article type workflows should have cross-reference validation step', () => {
+  it('all content workflows should have cross-reference validation step', () => {
     for (const workflowFile of CONTENT_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
@@ -612,6 +615,41 @@ describe('Playwright Validation in Content Workflows', () => {
       expect(
         content.includes('validate-cross-references'),
         `Workflow ${workflowFile} should reference validate-cross-references for JSON-LD validation`
+      ).toBe(true);
+    }
+  });
+});
+
+describe('Deduplication Check in Content Workflows', () => {
+  const CONTENT_WORKFLOWS = [
+    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+    'news-evening-analysis.md',
+  ];
+
+  it('all content workflows should have MANDATORY Deduplication Check section', () => {
+    for (const workflowFile of CONTENT_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('MANDATORY Deduplication Check'),
+        `Workflow ${workflowFile} should have MANDATORY Deduplication Check section`
+      ).toBe(true);
+    }
+  });
+
+  it('all content workflows should have standardised deduplication bash snippet', () => {
+    for (const workflowFile of CONTENT_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('FORCE_GENERATION'),
+        `Workflow ${workflowFile} should reference FORCE_GENERATION in deduplication check`
+      ).toBe(true);
+      expect(
+        content.includes('already exist'),
+        `Workflow ${workflowFile} should check if articles already exist`
       ).toBe(true);
     }
   });
