@@ -22,7 +22,7 @@
 #
 # Generates week-ahead prospective articles in core languages (EN, SV). Translations handled by news-translate workflow. Runs Fridays to preview the upcoming parliamentary week.
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"79b29e2591e43bf78f282c8e7dec53422017ed2ddc76b19b7b87d32e8d9f24d3","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"95157dda162b6fa841f1fab442bfe1a5c66d8e9ee028dd8e787c342cd35ed0f5","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
 
 name: "News: Week Ahead"
 "on":
@@ -47,7 +47,8 @@ name: "News: Week Ahead"
 permissions: {}
 
 concurrency:
-  group: "gh-aw-${{ github.workflow }}"
+  cancel-in-progress: false
+  group: gh-aw-news-week-ahead-${{ inputs.article_date || 'today' }}
 
 run-name: "News: Week Ahead"
 

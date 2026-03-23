@@ -220,23 +220,44 @@ Validate file ownership (checks staged, unstaged, and untracked changes):
 npx tsx scripts/validate-file-ownership.ts translation
 ```
 
-If the validator reports violations, **remove** the offending files with `git checkout -- news/*-en.html news/*-sv.html` before committing.
+If the validator reports violations, reset tracked EN/SV files with `git restore --staged --worktree -- news/*-en.html news/*-sv.html` (or `git checkout -- news/*-en.html news/*-sv.html` on older Git), and remove untracked EN/SV files with `rm news/*-en.html news/*-sv.html` (or `git clean -f -- news/*-en.html news/*-sv.html`) before committing.
 
 ### 🔒 Content-PR Dependency Check
 
 Before starting translations, check if any content workflow PRs are still open for the target date. If they are, defer to avoid merge conflicts:
 ```bash
-ARTICLE_DATE="${{ github.event.inputs.article_date || '' }}"
-if [ -z "$ARTICLE_DATE" ]; then ARTICLE_DATE=$(date -u '+%Y-%m-%d'); fi
+ARTICLE_DATE_INPUT="${{ github.event.inputs.article_date }}"
+GH_REPOSITORY="${{ github.repository }}"
+ARTICLE_DATE="${ARTICLE_DATE_INPUT:-}"
+if [ -z "$ARTICLE_DATE" ]; then
+  ARTICLE_DATE=$(date -u '+%Y-%m-%d')
+fi
 CONTENT_BRANCH_PREFIX="news/content/${ARTICLE_DATE}/"
-if ! PR_LIST_JSON=$(gh pr list --base main --state open --limit 200 --json headRefName 2>/dev/null); then
-  echo "⚠ Unable to query open content PRs for $ARTICLE_DATE — deferring translation"
+GH_ERROR_LOG=$(mktemp)
+JQ_ERROR_LOG=$(mktemp)
+chmod 600 "$GH_ERROR_LOG" "$JQ_ERROR_LOG"
+trap 'rm -f "$GH_ERROR_LOG" "$JQ_ERROR_LOG"' EXIT
+
+set +e
+PR_LIST_JSON=$(gh pr list --repo "$GH_REPOSITORY" --base main --state open --limit 200 --json headRefName 2>"$GH_ERROR_LOG")
+GH_EXIT_CODE=$?
+set -e
+if [ "$GH_EXIT_CODE" -ne 0 ] || [ -z "$PR_LIST_JSON" ]; then
+  echo "⚠ Unable to query open content PRs for $ARTICLE_DATE (gh exit code: $GH_EXIT_CODE)."
+  echo "   Deferring translation to avoid potential merge conflicts."
   exit 0
 fi
-if ! OPEN_CONTENT_PRS=$(printf '%s' "$PR_LIST_JSON" | jq -r --arg prefix "$CONTENT_BRANCH_PREFIX" '[.[] | select(.headRefName | startswith($prefix))] | length' 2>/dev/null); then
-  echo "⚠ Unable to parse content PR count for $ARTICLE_DATE — deferring translation"
+
+set +e
+OPEN_CONTENT_PRS=$(printf '%s' "$PR_LIST_JSON" | jq -r --arg prefix "$CONTENT_BRANCH_PREFIX" '[.[] | select(.headRefName | startswith($prefix))] | length' 2>"$JQ_ERROR_LOG")
+JQ_EXIT_CODE=$?
+set -e
+if [ "$JQ_EXIT_CODE" -ne 0 ] || ! [[ "$OPEN_CONTENT_PRS" =~ ^[0-9]+$ ]]; then
+  echo "⚠ Unable to parse content PR count for $ARTICLE_DATE (jq exit code: $JQ_EXIT_CODE)."
+  echo "   Deferring translation to avoid potential merge conflicts."
   exit 0
 fi
+
 if [ "$OPEN_CONTENT_PRS" -gt 0 ]; then
   echo "⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — deferring translation"
   echo "   Next scheduled run will retry once content workflow PRs are merged."

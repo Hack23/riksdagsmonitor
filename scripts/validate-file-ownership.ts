@@ -12,6 +12,8 @@
  */
 
 import { execSync } from 'node:child_process';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 /** Languages owned by content generation workflows */
 export const CONTENT_LANGS = ['en', 'sv'] as const;
@@ -156,7 +158,7 @@ export function validateFileList(
 }
 
 /* istanbul ignore next -- CLI entry point */
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1] ?? '')) {
   const category = process.argv[2] as WorkflowCategory | undefined;
 
   if (!category || !['content', 'translation'].includes(category)) {

@@ -22,7 +22,7 @@
 #
 # Generates committee reports analysis articles in core languages (EN, SV). Translations for remaining 12 languages are handled by the dedicated news-translate workflow via dispatch-workflow. Single article type per run.
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"8f629904e7ea13c2137523afc864de3161a1aed76292f2e784c0b6ea6b410be6","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"8a5121f7d353cc1ffd89ae74341a2687f1f140cba3a96e2725303b05c60973f5","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
 
 name: "News: Committee Reports"
 "on":
@@ -47,7 +47,8 @@ name: "News: Committee Reports"
 permissions: {}
 
 concurrency:
-  group: "gh-aw-${{ github.workflow }}"
+  cancel-in-progress: false
+  group: gh-aw-news-committee-reports-${{ inputs.article_date || 'today' }}
 
 run-name: "News: Committee Reports"
 

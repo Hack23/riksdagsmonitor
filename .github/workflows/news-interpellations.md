@@ -264,7 +264,7 @@ Validate file ownership (checks staged, unstaged, and untracked changes):
 npx tsx scripts/validate-file-ownership.ts content
 ```
 
-If the validator reports violations, **remove** the offending files with `git checkout -- <file>` before committing.
+If the validator reports violations, remove tracked changes with `git restore --staged --worktree -- <file>` (or `git checkout -- <file>` on older Git), and remove untracked files with `rm <file>` (or `git clean -f -- <file>`) before committing.
 
 ### Branch Naming Convention
 

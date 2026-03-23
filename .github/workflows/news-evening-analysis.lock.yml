@@ -22,7 +22,7 @@
 #
 # Generates comprehensive evening analysis articles in core languages (EN, SV) with Playwright validation. Translations handled by news-translate workflow. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week.
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"b095f6c507b89c06faa6c8efbce32d3951e28b2b54f1d1bf8d1c0684cca70b04","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"0852aab8d3395968c5396a75fab6416aa4c3520dd13a61b7f362d3442b2d791c","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
 
 name: "News Evening Analysis"
 "on":
@@ -51,7 +51,8 @@ name: "News Evening Analysis"
 permissions: {}
 
 concurrency:
-  group: "gh-aw-${{ github.workflow }}"
+  cancel-in-progress: false
+  group: gh-aw-news-evening-analysis-${{ inputs.article_date || 'today' }}
 
 run-name: "News Evening Analysis"
 

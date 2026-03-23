@@ -22,7 +22,7 @@
 #
 # Generates opposition motions analysis articles in core languages (EN, SV). Translations for remaining 12 languages are handled by the dedicated news-translate workflow via dispatch-workflow. Single article type per run.
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"f17f99fd46e82ab50d02d1cc2c4ad657f2f467e3e0f5851c3ff6c8983c4cd27d","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"84c3e40b24335d83b34acf0ca9c365c253c11290cc5cd52acfe6aab716e94d24","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
 
 name: "News: Opposition Motions"
 "on":
@@ -47,7 +47,8 @@ name: "News: Opposition Motions"
 permissions: {}
 
 concurrency:
-  group: "gh-aw-${{ github.workflow }}"
+  cancel-in-progress: false
+  group: gh-aw-news-motions-${{ inputs.article_date || 'today' }}
 
 run-name: "News: Opposition Motions"
 

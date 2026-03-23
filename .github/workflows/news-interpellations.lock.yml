@@ -22,7 +22,7 @@
 #
 # Generates interpellation debates analysis articles in core languages (EN, SV). Translations for remaining 12 languages are handled by the dedicated news-translate workflow via dispatch-workflow. Single article type per run.
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"0f650709215bd1f59ae88b88afbd98f5975dc1dfbd898d481a1f3104321dd143","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"7bb22485599761c1095ffd12058fcbd95b3988b53eab8bf041e25dbd7b71b9c1","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
 
 name: "News: Interpellation Debates"
 "on":
@@ -47,7 +47,8 @@ name: "News: Interpellation Debates"
 permissions: {}
 
 concurrency:
-  group: "gh-aw-${{ github.workflow }}"
+  cancel-in-progress: false
+  group: gh-aw-news-interpellations-${{ inputs.article_date || 'today' }}
 
 run-name: "News: Interpellation Debates"
 

@@ -1137,26 +1137,22 @@ describe('Workflow timeout limits', () => {
 
 describe('Concurrency Strategy', () => {
   it('all content workflows should have concurrency blocks with deterministic group keys', () => {
-    const dateDrivenGroupWorkflows = [
-      'news-committee-reports.md',
-      'news-propositions.md',
-      'news-motions.md',
-      'news-interpellations.md',
-      'news-week-ahead.md',
-      'news-month-ahead.md',
-      'news-weekly-review.md',
-      'news-monthly-review.md',
+    const contentWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
       'news-evening-analysis.md',
       'news-realtime-monitor.md',
+      'news-article-generator.md',
     ] as const;
 
     const expectedGroups: Record<string, string> = Object.fromEntries(
-      dateDrivenGroupWorkflows.map((workflowFile) => {
+      contentWorkflows.map((workflowFile) => {
+        if (workflowFile === 'news-article-generator.md') {
+          return [workflowFile, "group: gh-aw-news-article-generator-${{ inputs.article_types || 'manual' }}"];
+        }
         const workflowType = workflowFile.replace(/^news-/, '').replace(/\.md$/, '');
         return [workflowFile, `group: gh-aw-news-${workflowType}-\${{ inputs.article_date || 'today' }}`];
       })
     );
-    expectedGroups['news-article-generator.md'] = "group: gh-aw-news-article-generator-${{ inputs.article_types || 'manual' }}";
 
     for (const [workflowFile, expectedGroupLine] of Object.entries(expectedGroups)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);

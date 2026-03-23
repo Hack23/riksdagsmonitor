@@ -22,7 +22,7 @@
 #
 # Monitors Riksdag and Government for real-time updates and generates breaking news articles in core languages (EN, SV) with Playwright validation. Translations handled by news-translate workflow. Runs twice daily on weekdays, once on weekends.
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"bf94bc0ec21bc661b9c0151c5a82e2189706d9cae06e51e6177a679f5e378f54","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"31b81f674fb33d2fa52c9227b4a42e5725c1f3ccc2017f8971da950a4376a983","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
 
 name: "News Realtime Monitor"
 "on":
@@ -52,7 +52,8 @@ name: "News Realtime Monitor"
 permissions: {}
 
 concurrency:
-  group: "gh-aw-${{ github.workflow }}"
+  cancel-in-progress: false
+  group: gh-aw-news-realtime-monitor-${{ inputs.article_date || 'today' }}
 
 run-name: "News Realtime Monitor"
 
