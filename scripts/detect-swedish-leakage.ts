@@ -218,7 +218,7 @@ export function detectSwedishLeakage(html: string, targetLang: Language): Leakag
       }
 
       // Check against Swedish parliamentary terms, also applying shared-word filter
-      // to avoid false positives in Scandinavian languages (e.g. "departementet" in Norwegian)
+      // to avoid false positives in Scandinavian languages (e.g. "proposition" shared across languages)
       if (SWEDISH_PARLIAMENTARY_TERMS.has(lower)) {
         if (!isSharedParliamentaryTerm(lower, targetLang)) {
           counts.set(lower, (counts.get(lower) ?? 0) + 1);
