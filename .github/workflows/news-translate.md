@@ -104,8 +104,10 @@ steps:
     env:
       GH_TOKEN: ${{ github.token }}
       GITHUB_TOKEN: ${{ github.token }}
+      ARTICLE_DATE_INPUT: ${{ github.event.inputs.article_date }}
+      GH_REPOSITORY: ${{ github.repository }}
     run: |
-      ARTICLE_DATE="${{ github.event.inputs.article_date || '' }}"
+      ARTICLE_DATE="${ARTICLE_DATE_INPUT:-}"
       if [ -z "$ARTICLE_DATE" ]; then
         ARTICLE_DATE=$(date -u '+%Y-%m-%d')
       fi
@@ -117,7 +119,7 @@ steps:
       OPEN_CONTENT_PRS=0
 
       set +e
-      PR_LIST_JSON=$(gh pr list --repo "${{ github.repository }}" --base main --state open --limit 200 --json headRefName 2>"$GH_ERROR_LOG")
+      PR_LIST_JSON=$(gh pr list --repo "$GH_REPOSITORY" --base main --state open --limit 200 --json headRefName 2>"$GH_ERROR_LOG")
       GH_EXIT_CODE=$?
       set -e
       if [ "$GH_EXIT_CODE" -ne 0 ] || [ -z "$PR_LIST_JSON" ]; then
@@ -153,8 +155,10 @@ steps:
       echo "✅ No open content PRs for $ARTICLE_DATE — proceeding with translation"
 
   - name: Pre-flight source article check
+    env:
+      ARTICLE_DATE_INPUT: ${{ github.event.inputs.article_date }}
     run: |
-      ARTICLE_DATE="${{ github.event.inputs.article_date || '' }}"
+      ARTICLE_DATE="${ARTICLE_DATE_INPUT:-}"
       if [ -z "$ARTICLE_DATE" ]; then
         ARTICLE_DATE=$(date -u '+%Y-%m-%d')
       fi

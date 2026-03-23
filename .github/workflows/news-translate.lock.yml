@@ -22,7 +22,7 @@
 #
 # Dedicated translation workflow for news articles. Generates high-quality translations for all non-core languages. Dispatched by content workflows or run manually/on schedule to translate untranslated articles.
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"48c6bcf84c9efa6c1de4072759a927c7062b83b0fcaa3655b9a86c7eb714128c","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"678e5d10d09166a733c8ff0cabf7ff1baae8222e7bf2c008ebfb849c5ddcdd41","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
 
 name: "News: Translate Articles"
 "on":
@@ -129,6 +129,7 @@ jobs:
         env:
           GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
           GH_AW_SAFE_OUTPUTS: ${{ env.GH_AW_SAFE_OUTPUTS }}
+          GH_AW_EXPR_2E345A93: ${{ github.event.inputs.article_date || '' }}
           GH_AW_GITHUB_ACTOR: ${{ github.actor }}
           GH_AW_GITHUB_EVENT_COMMENT_ID: ${{ github.event.comment.id }}
           GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
@@ -201,6 +202,7 @@ jobs:
         env:
           GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
           GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH: ${{ github.event.inputs.analysis_depth }}
+          GH_AW_EXPR_2E345A93: ${{ github.event.inputs.article_date || '' }}
           GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: ${{ github.event.inputs.article_date }}
           GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPE: ${{ github.event.inputs.article_type }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
@@ -215,6 +217,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
+          GH_AW_EXPR_2E345A93: ${{ github.event.inputs.article_date || '' }}
           GH_AW_GITHUB_ACTOR: ${{ github.actor }}
           GH_AW_GITHUB_EVENT_COMMENT_ID: ${{ github.event.comment.id }}
           GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
@@ -239,6 +242,7 @@ jobs:
             return await substitutePlaceholders({
               file: process.env.GH_AW_PROMPT,
               substitutions: {
+                GH_AW_EXPR_2E345A93: process.env.GH_AW_EXPR_2E345A93,
                 GH_AW_GITHUB_ACTOR: process.env.GH_AW_GITHUB_ACTOR,
                 GH_AW_GITHUB_EVENT_COMMENT_ID: process.env.GH_AW_GITHUB_EVENT_COMMENT_ID,
                 GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: process.env.GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER,
@@ -325,7 +329,30 @@ jobs:
         with:
           node-version: "25"
       - name: Install dependencies
-        run: npm ci --prefer-offline --no-audit
+        run: |
+          npm ci --prefer-offline --no-audit
+      - env:
+          ARTICLE_DATE_INPUT: ${{ github.event.inputs.article_date }}
+          GH_REPOSITORY: ${{ github.repository }}
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+        name: Pre-flight content PR dependency check
+        run: "ARTICLE_DATE=\"${ARTICLE_DATE_INPUT:-}\"\nif [ -z \"$ARTICLE_DATE\" ]; then\n  ARTICLE_DATE=$(date -u '+%Y-%m-%d')\nfi\nCONTENT_BRANCH_PREFIX=\"news/content/${ARTICLE_DATE}/\"\nGH_ERROR_LOG=$(mktemp)\nJQ_ERROR_LOG=$(mktemp)\nchmod 600 \"$GH_ERROR_LOG\" \"$JQ_ERROR_LOG\"\ntrap 'rm -f \"$GH_ERROR_LOG\" \"$JQ_ERROR_LOG\"' EXIT\nOPEN_CONTENT_PRS=0\n\nset +e\nPR_LIST_JSON=$(gh pr list --repo \"$GH_REPOSITORY\" --base main --state open --limit 200 --json headRefName 2>\"$GH_ERROR_LOG\")\nGH_EXIT_CODE=$?\nset -e\nif [ \"$GH_EXIT_CODE\" -ne 0 ] || [ -z \"$PR_LIST_JSON\" ]; then\n  echo \"⚠ Unable to query open content PRs for $ARTICLE_DATE (gh exit code: $GH_EXIT_CODE).\"\n  if [ -s \"$GH_ERROR_LOG\" ]; then\n    echo \"gh error:\"\n    sed 's/^/  /' \"$GH_ERROR_LOG\"\n  fi\n  echo \"   Deferring translation to avoid potential merge conflicts.\"\n  exit 0\nfi\n\nset +e\nOPEN_CONTENT_PRS=$(printf '%s' \"$PR_LIST_JSON\" | jq -r --arg prefix \"$CONTENT_BRANCH_PREFIX\" '[.[] | select(.headRefName | startswith($prefix))] | length' 2>\"$JQ_ERROR_LOG\")\nJQ_EXIT_CODE=$?\nset -e\nif [ \"$JQ_EXIT_CODE\" -ne 0 ] || ! [[ \"$OPEN_CONTENT_PRS\" =~ ^[0-9]+$ ]]; then\n  echo \"⚠ Unable to parse content PR count for $ARTICLE_DATE (jq exit code: $JQ_EXIT_CODE).\"\n  if [ -s \"$JQ_ERROR_LOG\" ]; then\n    echo \"jq error:\"\n    sed 's/^/  /' \"$JQ_ERROR_LOG\"\n  fi\n  OPEN_CONTENT_PRS=0\n  echo \"   Deferring translation to avoid potential merge conflicts.\"\n  exit 0\nfi\n\nif [ \"$OPEN_CONTENT_PRS\" -gt 0 ]; then\n  echo \"⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — deferring translation\"\n  echo \"   Next scheduled run will retry once content workflow PRs are merged.\"\n  exit 0\nfi\necho \"✅ No open content PRs for $ARTICLE_DATE — proceeding with translation\"\n"
+      - env:
+          ARTICLE_DATE_INPUT: ${{ github.event.inputs.article_date }}
+        name: Pre-flight source article check
+        run: |-
+          ARTICLE_DATE="${ARTICLE_DATE_INPUT:-}"
+          if [ -z "$ARTICLE_DATE" ]; then
+            ARTICLE_DATE=$(date -u '+%Y-%m-%d')
+          fi
+          MISSING_EN=$(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null | wc -l)
+          if [ "$MISSING_EN" -eq 0 ]; then
+            echo "⛔ No EN source articles found for $ARTICLE_DATE — aborting to avoid race condition"
+            echo "   Next scheduled run will retry once content workflow PR is merged."
+            exit 0
+          fi
+          echo "✅ Found $MISSING_EN EN source article(s) for $ARTICLE_DATE — proceeding with translation"
 
       - name: Configure Git credentials
         env:

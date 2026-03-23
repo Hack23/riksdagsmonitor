@@ -1207,6 +1207,20 @@ describe('Concurrency Strategy', () => {
     expect(frontmatter).toContain('job-discriminator');
     expect(frontmatter).toContain('cancel-in-progress: true');
   });
+
+  it('compiled lock workflows should preserve deterministic concurrency groups', () => {
+    const weeklyReviewLockPath = path.join(WORKFLOWS_DIR, 'news-weekly-review.lock.yml');
+    expect(fs.existsSync(weeklyReviewLockPath), `Workflow file ${weeklyReviewLockPath} should exist`).toBe(true);
+    const weeklyReviewLock = fs.readFileSync(weeklyReviewLockPath, 'utf-8');
+    expect(weeklyReviewLock).toContain("group: gh-aw-news-weekly-review-${{ inputs.article_date || 'today' }}");
+    expect(weeklyReviewLock).toContain('cancel-in-progress: false');
+
+    const translateLockPath = path.join(WORKFLOWS_DIR, 'news-translate.lock.yml');
+    expect(fs.existsSync(translateLockPath), `Workflow file ${translateLockPath} should exist`).toBe(true);
+    const translateLock = fs.readFileSync(translateLockPath, 'utf-8');
+    expect(translateLock).toContain("group: gh-aw-news-translate-${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}");
+    expect(translateLock).toContain('cancel-in-progress: true');
+  });
 });
 
 describe('Workflow permissions enforcement', () => {
@@ -1291,5 +1305,15 @@ describe('Workflow dispatch-workflow safeguards', () => {
         ).toBe(true);
       }
     }
+  });
+});
+
+describe('Compiled lock workflow synchronization', () => {
+  it('news-translate.lock.yml should include pre-flight content PR dependency gate', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'news-translate.lock.yml');
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(content).toContain('name: Pre-flight content PR dependency check');
+    expect(content).toContain('gh pr list --repo \\"$GH_REPOSITORY\\" --base main --state open --limit 200 --json headRefName');
   });
 });
