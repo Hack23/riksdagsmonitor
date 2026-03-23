@@ -1079,18 +1079,16 @@ describe('File Ownership Contract', () => {
     ).toBe(true);
   });
 
-  it('validate-file-ownership.ts should export CONTENT_LANGS and TRANSLATION_LANGS', () => {
-    const scriptPath = path.join(__dirname, '..', 'scripts', 'validate-file-ownership.ts');
-    const content = fs.readFileSync(scriptPath, 'utf-8');
-    expect(content).toContain('export const CONTENT_LANGS');
-    expect(content).toContain('export const TRANSLATION_LANGS');
+  it('validate-file-ownership.ts should export CONTENT_LANGS and TRANSLATION_LANGS', async () => {
+    const mod = await import('../scripts/validate-file-ownership.js');
+    expect('CONTENT_LANGS' in mod).toBe(true);
+    expect('TRANSLATION_LANGS' in mod).toBe(true);
   });
 
-  it('validate-file-ownership.ts should export validateFileList and validatePendingFileOwnership', () => {
-    const scriptPath = path.join(__dirname, '..', 'scripts', 'validate-file-ownership.ts');
-    const content = fs.readFileSync(scriptPath, 'utf-8');
-    expect(content).toContain('export function validateFileList');
-    expect(content).toContain('export function validatePendingFileOwnership');
+  it('validate-file-ownership.ts should export validateFileList and validatePendingFileOwnership', async () => {
+    const mod = await import('../scripts/validate-file-ownership.js');
+    expect('validateFileList' in mod).toBe(true);
+    expect('validatePendingFileOwnership' in mod).toBe(true);
   });
 });
 
@@ -1332,7 +1330,13 @@ describe('Compiled lock workflow synchronization', () => {
     expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
     const content = fs.readFileSync(filepath, 'utf-8');
     expect(content).toContain('name: Pre-flight content PR dependency check');
-    expect(content).toContain('gh pr list --repo \\"$GH_REPOSITORY\\" --base main --state open --limit 200 --json headRefName');
+    // Assert on stable substrings of the pre-flight gh command rather than exact YAML-escaped formatting
+    expect(content).toContain('gh pr list');
+    expect(content).toContain('$GH_REPOSITORY');
+    expect(content).toContain('--base main');
+    expect(content).toContain('--state open');
+    expect(content).toContain('--limit 200');
+    expect(content).toContain('--json headRefName');
   });
 
   it('news-translate.lock.yml preflight gate should set SKIP_TRANSLATION flag and halt on defer', () => {
