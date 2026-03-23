@@ -69,8 +69,9 @@ export function isFileOwnedByCategory(
   }
 
   const isContentLang = (CONTENT_LANGS as readonly string[]).includes(lang);
+  const isTranslationLang = (TRANSLATION_LANGS as readonly string[]).includes(lang);
 
-  return category === 'content' ? isContentLang : !isContentLang;
+  return category === 'content' ? isContentLang : isTranslationLang;
 }
 
 /**

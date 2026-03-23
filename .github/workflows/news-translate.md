@@ -100,6 +100,23 @@ steps:
     run: |
       npm ci --prefer-offline --no-audit
 
+  - name: Pre-flight content PR dependency check
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GITHUB_TOKEN: ${{ github.token }}
+    run: |
+      ARTICLE_DATE="${{ github.event.inputs.article_date || '' }}"
+      if [ -z "$ARTICLE_DATE" ]; then
+        ARTICLE_DATE=$(date -u '+%Y-%m-%d')
+      fi
+      OPEN_CONTENT_PRS=$(gh pr list --repo "${{ github.repository }}" --base main --json headRefName --jq "[.[] | select(.headRefName | startswith(\"news/content/${ARTICLE_DATE}/\"))] | length" 2>/dev/null || echo "0")
+      if [ "$OPEN_CONTENT_PRS" -gt 0 ]; then
+        echo "⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — deferring translation"
+        echo "   Next scheduled run will retry once content workflow PRs are merged."
+        exit 0
+      fi
+      echo "✅ No open content PRs for $ARTICLE_DATE — proceeding with translation"
+
   - name: Pre-flight source article check
     run: |
       ARTICLE_DATE="${{ github.event.inputs.article_date || '' }}"

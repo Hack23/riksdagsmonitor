@@ -204,5 +204,17 @@ describe('validate-file-ownership', () => {
       expect(translationResult.passed).toBe(true);
       expect(translationResult.violations).toHaveLength(0);
     });
+
+    it('should reject unsupported translation language suffixes in news paths', () => {
+      const unsupportedFiles = ['news/2026-03-23-test-pt.html'];
+
+      const translationResult = validateFileList(unsupportedFiles, 'translation');
+      expect(translationResult.passed).toBe(false);
+      expect(translationResult.violations).toEqual(unsupportedFiles);
+
+      const contentResult = validateFileList(unsupportedFiles, 'content');
+      expect(contentResult.passed).toBe(false);
+      expect(contentResult.violations).toEqual(unsupportedFiles);
+    });
   });
 });
