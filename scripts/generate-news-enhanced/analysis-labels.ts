@@ -146,7 +146,7 @@ export const GOV_STRENGTH_LABELS: Record<string, Lang14> = {
     'Aktive Gesetzgebungs-Pipeline: %n Regierungsvorlagen treiben %t-Politik voran',
     'Pipeline législative active: %n propositions gouvernementales propulsent la politique %t',
     'Pipeline legislativa activa: %n propuestas de gobierno impulsan la política %t',
-    'Actieve wetgevingspijplijn: %n overheidstvoorstellen sturen %t-beleid',
+    'Actieve wetgevingspijplijn: %n overheidsvoorstellen sturen %t-beleid',
     'خط أنابيب تشريعي نشط: %n مقترح حكومي يدفع سياسة %t',
     'צינור חקיקה פעיל: %n הצעות ממשלה מניעות מדיניות %t',
     'アクティブな立法パイプライン: %n件の政府提案が%t政策を推進',

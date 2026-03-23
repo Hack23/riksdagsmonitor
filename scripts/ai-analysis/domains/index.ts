@@ -56,7 +56,7 @@ const WP_PROPS_DESC: Partial<Record<Language, (n: number) => string>> = {
   fr: (n) => `${n} proposition${n !== 1 ? 's' : ''} ${n === 1 ? 'nécessite' : 'nécessitent'} un examen parlementaire`,
   es: (n) => `${n} proposición${n !== 1 ? 'es' : ''} ${n === 1 ? 'requiere' : 'requieren'} acción parlamentaria`,
   nl: (n) => `${n} voorstel${n !== 1 ? 'len' : ''} ${n === 1 ? 'vereist' : 'vereisen'} parlementaire behandeling`,
-  ar: (n) => `${n} مقترح${n !== 1 ? 'ات' : ''} تتطلب إجراء برلمانيا`,
+  ar: (n) => `${n} مقترح${n !== 1 ? 'ات' : ''} ${n === 1 ? 'يتطلب' : 'تتطلب'} إجراء برلمانيا`,
   he: (n) => `${n} הצעות דורשות טיפול פרלמנטרי`,
   ja: (n) => `${n}件の提案が国会審議を必要とする`,
   ko: (n) => `${n}건의 제안이 의회 심의를 필요로 함`,

@@ -76,7 +76,7 @@ function relevantLabel(lang: Language): string {
 
 /** Derive impact from document type. */
 export function impactFromDocType(dt: string): 'high' | 'medium' | 'low' {
-  if (['prop', 'sfs', 'bet', 'fpm', 'eu'].includes(dt)) return 'high';
+  if (['prop', 'sfs', 'bet', 'fpm'].includes(dt)) return 'high';
   if (['mot', 'skr', 'pressm', 'ip'].includes(dt)) return 'medium';
   return 'low';
 }
