@@ -34,6 +34,9 @@ import {
   plural,
   betVerbForm,
   motVerbForm,
+  propNounForm,
+  betNounForm,
+  motNounForm,
   LEGISLATIVE_SIGNAL,
   SCRUTINY_SIGNAL,
   EU_ALIGNMENT_SIGNAL,
@@ -743,16 +746,18 @@ export class AIAnalysisPipeline {
     const items: string[] = [];
 
     if (propDocs.length > 0) {
-      items.push(interp(pickLang(TAKEAWAY_PROP, lang), { n: propDocs.length, s: plural(propDocs.length, lang), t: topic }));
+      items.push(interp(pickLang(TAKEAWAY_PROP, lang), {
+        n: propDocs.length, s: plural(propDocs.length, lang), t: topic, pnoun: propNounForm(propDocs.length, lang),
+      }));
     }
     if (betDocs.length > 0) {
       items.push(interp(pickLang(TAKEAWAY_BET, lang), {
-        n: betDocs.length, s: plural(betDocs.length, lang), t: topic, verb: betVerbForm(betDocs.length, lang),
+        n: betDocs.length, s: plural(betDocs.length, lang), t: topic, verb: betVerbForm(betDocs.length, lang), bnoun: betNounForm(betDocs.length, lang),
       }));
     }
     if (motDocs.length > 0) {
       items.push(interp(pickLang(TAKEAWAY_MOT, lang), {
-        n: motDocs.length, s: plural(motDocs.length, lang), t: topic, verb: motVerbForm(motDocs.length, lang),
+        n: motDocs.length, s: plural(motDocs.length, lang), t: topic, verb: motVerbForm(motDocs.length, lang), mnoun: motNounForm(motDocs.length, lang),
       }));
     }
     if (euDocs.length > 0) {

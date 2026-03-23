@@ -41,6 +41,9 @@ const STABLE_TYPE_COLORS: Record<string, string> = {
   ds: '#f48fb1',     // departmental memoranda
   sou: '#a5d6a7',    // government inquiry reports
   dir: '#ce93d8',    // commission directives
+  pressm: '#ff8a65', // pressmeddelanden (press releases)
+  ext: '#81d4fa',    // external documents / references
+  other: '#cfd8dc',  // miscellaneous / uncategorised documents
 };
 
 // ---------------------------------------------------------------------------
@@ -123,7 +126,7 @@ export function buildMindmapBranches(
     const t = normalizedDocType(d);
     typeCounts[t] = (typeCounts[t] || 0) + 1;
   });
-  const typeKeys = Object.keys(typeCounts);
+  const typeKeys = Object.keys(typeCounts).sort();
   if (typeKeys.length > 0) {
     branches.push({
       label: docTypesLabel(lang),

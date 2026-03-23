@@ -59,6 +59,30 @@ export function motVerbForm(n: number, lang: Language): string {
   return ''; // Other languages use fixed verb forms in templates
 }
 
+/** Noun form for TAKEAWAY_PROP templates — languages where simple %s suffix fails. */
+export function propNounForm(n: number, lang: Language): string {
+  if (lang === 'fr') return n === 1 ? 'proposition législative' : 'propositions législatives';
+  if (lang === 'es') return n === 1 ? 'propuesta legislativa' : 'propuestas legislativas';
+  if (lang === 'nl') return n === 1 ? 'wetsvoorstel' : 'wetsvoorstellen';
+  return '';
+}
+
+/** Noun form for TAKEAWAY_BET templates — languages where simple %s suffix fails. */
+export function betNounForm(n: number, lang: Language): string {
+  if (lang === 'fr') return n === 1 ? 'rapport de commission' : 'rapports de commission';
+  if (lang === 'es') return n === 1 ? 'informe de comité' : 'informes de comité';
+  if (lang === 'nl') return n === 1 ? 'commissierapport' : 'commissierapporten';
+  return '';
+}
+
+/** Noun form for TAKEAWAY_MOT templates — languages where simple %s suffix fails. */
+export function motNounForm(n: number, lang: Language): string {
+  if (lang === 'fr') return n === 1 ? 'motion d\'opposition' : 'motions d\'opposition';
+  if (lang === 'es') return n === 1 ? 'moción de oposición' : 'mociones de oposición';
+  if (lang === 'nl') return n === 1 ? 'oppositiemotie' : 'oppositiemoties';
+  return '';
+}
+
 // ── Legislative impact labels ────────────────────────────────────────────────
 export const LEGISLATIVE_SIGNAL: Lang14 = L14(
   'Active legislative agenda:',
@@ -571,9 +595,9 @@ export const TAKEAWAY_PROP: Lang14 = L14(
   'Regjeringen har fremmet %n lovforslag om %t — aktivt politisk engasjement',
   'Hallitus on antanut %n lakiesitystä %t:stä — aktiivinen poliittinen sitoutuminen',
   'Die Regierung hat %n Gesetzgebungsvorschläge zu %t eingebracht — aktives politisches Engagement',
-  'Le gouvernement a soumis %n propositions législatives sur %t — engagement politique actif',
-  'El gobierno ha presentado %n propuestas legislativas sobre %t — compromiso político activo',
-  'De regering heeft %n wetsvoorstellen ingediend over %t — actief politiek engagement',
+  'Le gouvernement a soumis %n %pnoun sur %t — engagement politique actif',
+  'El gobierno ha presentado %n %pnoun sobre %t — compromiso político activo',
+  'De regering heeft %n %pnoun ingediend over %t — actief politiek engagement',
   'قدّمت الحكومة %n اقتراحات تشريعية بشأن %t — التزام سياسي نشط',
   'הממשלה הגישה %n הצעות חוק בנושא %t — מחויבות פוליטית פעילה',
   '政府は%t について%n件の法案を提出 — 積極的な政策コミットメント',
@@ -588,9 +612,9 @@ export const TAKEAWAY_BET: Lang14 = L14(
   '%n komitérapporter undersøker %t — parlamentarisk kontroll engasjert',
   '%n valiokuntamietintöä tarkastelee %t:tä — parlamentaarinen valvonta aktivoitu',
   '%n Ausschussberichte prüfen %t — parlamentarische Kontrolle aktiv',
-  '%n rapports de commission %verb %t — contrôle parlementaire engagé',
-  '%n informes de comité %verb %t — supervisión parlamentaria activada',
-  '%n commissierapporten %verb %t — parlementaire controle actief',
+  '%n %bnoun %verb %t — contrôle parlementaire engagé',
+  '%n %bnoun %verb %t — supervisión parlamentaria activada',
+  '%n %bnoun %verb %t — parlementaire controle actief',
   '%n تقارير لجان تفحص %t — الرقابة البرلمانية مفعّلة',
   '%n דוחות ועדה בוחנים %t — פיקוח פרלמנטרי פעיל',
   '%n件の委員会報告書が%tを審査 — 議会監視が活性化',
@@ -605,9 +629,9 @@ export const TAKEAWAY_MOT: Lang14 = L14(
   '%n opposisjonsmotioner utfordrer %t — tverr-partipolitisk debatt aktiv',
   '%n oppositiokirjelmää haastaa %t — puolueidenvälinen debatti aktiivinen',
   '%n Oppositionsanträge fechten %t an — parteiübergreifende Debatte aktiv',
-  '%n motions d\'opposition %verb %t — débat interpartis actif',
-  '%n mociones de oposición %verb %t — debate entre partidos activo',
-  '%n oppositiemoties %verb %t — overpartijdebat actief',
+  '%n %mnoun %verb %t — débat interpartis actif',
+  '%n %mnoun %verb %t — debate entre partidos activo',
+  '%n %mnoun %verb %t — overpartijdebat actief',
   '%n اقتراحات معارضة تطعن في %t — النقاش عبر الأحزاب نشط',
   '%n הצעות אופוזיציה מתמודדות עם %t — דיון בין-מפלגתי פעיל',
   '%n件の野党動議が%tに異議申し立て — 超党派討論が活発',
