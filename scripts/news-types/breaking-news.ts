@@ -154,6 +154,9 @@ import {
   generateSources
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
+import { scoreDocuments, BREAKING_NEWS_THRESHOLD } from '../ai-analysis/political-significance.js';
+import type { SignificanceScore } from '../ai-analysis/political-significance.js';
+import type { RawDocument } from '../data-transformers/types.js';
 import type { Language } from '../types/language.js';
 import type {
   ArticleCategory,
@@ -273,6 +276,27 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
       mcpCalls.push({ tool: 'search_ledamoter', result: [] });
     }
     
+    // Compute political significance score when event documents are available.
+    // When no documents are provided (e.g., manually triggered breaking news),
+    // the significance gate is skipped — the caller is assumed to have already
+    // made the editorial decision to generate.
+    const eventDocs: RawDocument[] = eventData.documents ?? [];
+    let significance: SignificanceScore | null = null;
+    if (eventDocs.length > 0) {
+      significance = scoreDocuments(eventDocs);
+      console.log(`  📊 Political significance: ${significance.score}/100 (${significance.urgency})`);
+
+      // Gate: skip generation if significance is below threshold
+      if (significance.score < BREAKING_NEWS_THRESHOLD) {
+        console.log(`  ⏭️  Significance ${significance.score} < ${BREAKING_NEWS_THRESHOLD} — skipping generation (not newsworthy)`);
+        return {
+          success: true,
+          files: 0,
+          mcpCalls,
+        };
+      }
+    }
+
     const today = new Date();
     const slug = `${formatDateForSlug(today)}-breaking-${eventData.slug || 'news'}`;
     const articles: GeneratedArticle[] = [];
@@ -307,7 +331,9 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
         sources,
         keywords: metadata.keywords,
         topics: metadata.topics,
-        tags: metadata.tags
+        tags: metadata.tags,
+        significance: significance?.score,
+        urgency: significance?.urgency,
       });
       
       articles.push({
