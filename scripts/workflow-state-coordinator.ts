@@ -195,6 +195,7 @@ const SIMILARITY_THRESHOLD: number = 0.70; // 70% similarity triggers deduplicat
 const TOPIC_JACCARD_THRESHOLD: number = 0.50; // 50% topic overlap triggers deduplication
 const LOCK_TIMEOUT_MS: number = 45 * 60 * 1000; // 45 minutes
 const ACTIVE_GENERATION_TTL_MS: number = 45 * 60 * 1000; // 45 minutes
+const RETRIABLE_RENAME_CODES: ReadonlySet<string> = new Set(['EEXIST', 'EPERM', 'EACCES', 'EXDEV']);
 const STOCKHOLM_HOUR_FORMATTER: Intl.DateTimeFormat = new Intl.DateTimeFormat('en-GB', {
   timeZone: 'Europe/Stockholm',
   hour: '2-digit',
@@ -456,8 +457,7 @@ export class WorkflowStateCoordinator {
         // Attempt unlink-then-rename for known retriable error codes, matching
         // the pattern used in generate-news-enhanced/helpers.ts.
         const code: string | undefined = (renameErr as NodeJS.ErrnoException).code;
-        const retriableCodes: ReadonlySet<string> = new Set(['EEXIST', 'EPERM', 'EACCES', 'EXDEV']);
-        if (code && retriableCodes.has(code)) {
+        if (code && RETRIABLE_RENAME_CODES.has(code)) {
           try {
             if (fs.existsSync(this.stateFilePath)) {
               fs.unlinkSync(this.stateFilePath);
