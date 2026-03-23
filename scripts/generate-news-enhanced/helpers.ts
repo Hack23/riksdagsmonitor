@@ -343,3 +343,104 @@ export async function writeArticlePair(htmlEN: string, htmlSV: string, slug: str
   await writeSingleArticle(htmlEN, slug, 'en');
   await writeSingleArticle(htmlSV, slug, 'sv');
 }
+
+// ---------------------------------------------------------------------------
+// Dynamic title/description generation from content highlights
+// ---------------------------------------------------------------------------
+
+/** Extract top N most relevant highlight phrases from article content */
+function extractHighlights(content: string, maxHighlights: number = 3): string[] {
+  // Strip HTML tags
+  const text = content.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+  // Look for strong/emphasized patterns that were in the HTML
+  const strongMatches = content.match(/<strong>([^<]{5,60})<\/strong>/gi) ?? [];
+  const highlights = strongMatches
+    .map(m => m.replace(/<\/?strong>/gi, '').trim())
+    .filter(h => h.length >= 5 && h.length <= 60);
+
+  // Also look for h3 headings as highlights
+  const h3Matches = content.match(/<h3[^>]*>([^<]{5,80})<\/h3>/gi) ?? [];
+  const h3Highlights = h3Matches
+    .map(m => m.replace(/<\/?h3[^>]*>/gi, '').trim())
+    .filter(h => h.length >= 5 && h.length <= 80);
+
+  const combined = [...new Set([...highlights, ...h3Highlights])];
+  return combined.slice(0, maxHighlights);
+}
+
+/** Extract key policy domain or committee name from content */
+function extractDominantTheme(content: string): string | null {
+  const text = content.replace(/<[^>]+>/g, ' ');
+  // Known Swedish committee patterns
+  const committees = [
+    'Finansutskottet', 'Försvarsutskottet', 'Justitieutskottet', 'Socialutskottet',
+    'Utrikesutskottet', 'Civilutskottet', 'Näringsutskottet', 'Kulturutskottet',
+    'Miljöutskottet', 'Arbetsmarknadsutskottet', 'Konstitutionsutskottet',
+    'Socialförsäkringsutskottet', 'Trafikutskottet', 'Utbildningsutskottet',
+  ];
+  for (const c of committees) {
+    if (text.includes(c)) return c;
+  }
+  // Policy domain patterns
+  const domains = [
+    { pattern: /\b(defense|defence|försvar|NATO|military)\b/i, theme: 'Defense' },
+    { pattern: /\b(budget|fiscal|skattepo|ekonomi|finance)\b/i, theme: 'Economy' },
+    { pattern: /\b(migration|invandring|asylum|refugee)\b/i, theme: 'Migration' },
+    { pattern: /\b(climate|miljö|environment|hållbar|sustainability)\b/i, theme: 'Climate' },
+    { pattern: /\b(education|utbildning|school|skola)\b/i, theme: 'Education' },
+    { pattern: /\b(health|hälso|vård|sjukvård|healthcare)\b/i, theme: 'Health' },
+    { pattern: /\b(EU|European Union|Europeiska)\b/i, theme: 'EU Affairs' },
+    { pattern: /\b(justice|rätts|crime|brott|law enforcement)\b/i, theme: 'Justice' },
+    { pattern: /\b(labour|arbetsmarknad|employment|unemployment)\b/i, theme: 'Labour' },
+  ];
+  for (const d of domains) {
+    if (d.pattern.test(text)) return d.theme;
+  }
+  return null;
+}
+
+/**
+ * Generate a dynamic, content-based title that highlights key findings.
+ *
+ * Uses extractable highlights from article content to produce titles that
+ * reflect the specific topics covered rather than generic templates.
+ *
+ * @param baseTitle - The generic article type title prefix
+ * @param content   - The HTML content of the article
+ * @param docCount  - Number of source documents analyzed
+ * @returns         A `TitleSet` with content-enriched title and description
+ */
+export function generateDynamicTitle(
+  baseTitle: string,
+  content: string,
+  docCount: number,
+): { title: string; subtitle: string } {
+  const highlights = extractHighlights(content);
+  const theme = extractDominantTheme(content);
+
+  // Build dynamic title incorporating the dominant theme
+  let title = baseTitle;
+  if (theme && !baseTitle.toLowerCase().includes(theme.toLowerCase())) {
+    title = `${baseTitle}: ${theme} in Focus`;
+  } else if (highlights.length > 0) {
+    const topHighlight = highlights[0];
+    // Only append if it adds meaningful context and isn't too long
+    if (topHighlight.length <= 40 && !baseTitle.includes(topHighlight)) {
+      title = `${baseTitle}: ${topHighlight}`;
+    }
+  }
+
+  // Build dynamic subtitle from highlights
+  let subtitle: string;
+  if (highlights.length >= 2) {
+    subtitle = `Analysis of ${docCount} documents covering ${highlights.slice(0, 2).join(', ')}`;
+  } else if (highlights.length === 1) {
+    subtitle = `Analysis of ${docCount} documents focusing on ${highlights[0]}`;
+  } else if (theme) {
+    subtitle = `Analysis of ${docCount} parliamentary documents on ${theme}`;
+  } else {
+    subtitle = `Analysis of ${docCount} parliamentary documents revealing key political developments`;
+  }
+
+  return { title, subtitle };
+}

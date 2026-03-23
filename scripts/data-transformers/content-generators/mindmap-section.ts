@@ -306,9 +306,13 @@ export function generateMindmapSection(opts: MindmapSectionOptions): TemplateSec
   const connectionsHtml =
     connections && connections.length > 0 ? renderConnections(connections, opts.lang) : '';
 
+  // Build D3 force-directed graph config for client-side interactive rendering
+  const d3Config = buildD3MindmapConfig(topic, branches, connections ?? []);
+  const d3Attr = ` data-d3-mindmap="${escapeHtml(JSON.stringify(d3Config))}"`;
+
   const html = `<section class="mindmap-section" aria-label="${escapeHtml(titleText)}">
   <h2>${escapeHtml(titleText)}</h2>
-${summaryBlock}  <div class="mindmap-container" data-branch-count="${branchCount}">
+${summaryBlock}  <div class="mindmap-container" data-branch-count="${branchCount}"${d3Attr}>
     <div class="mindmap-center-wrapper">
       <div class="mindmap-center" role="heading" aria-level="3">${escapeHtml(topic)}</div>${thesisHtml}
     </div>
@@ -323,4 +327,80 @@ ${connectionsHtml}</section>`;
     html,
     className: 'mindmap-section-wrapper',
   };
+}
+
+// ---------------------------------------------------------------------------
+// D3 force-directed graph config builder
+// ---------------------------------------------------------------------------
+
+/** Node type for D3 force graph */
+interface D3MindmapNode {
+  id: string;
+  label: string;
+  group: string;
+  weight?: number;
+  color: string;
+}
+
+/** Link type for D3 force graph */
+interface D3MindmapLink {
+  source: string;
+  target: string;
+  label?: string;
+}
+
+/** Weight multiplier for D3 node sizing */
+const WEIGHT_SIZE: Readonly<Record<AIMindmapItemWeight, number>> = {
+  critical: 4,
+  significant: 3,
+  moderate: 2,
+  minor: 1,
+};
+
+/**
+ * Build a D3 force-directed graph configuration from mindmap data.
+ * The config is serialised as JSON in a data attribute for client-side rendering.
+ */
+function buildD3MindmapConfig(
+  topic: string,
+  branches: MindmapBranch[],
+  connections: MindmapConnection[],
+): { nodes: D3MindmapNode[]; links: D3MindmapLink[] } {
+  const nodes: D3MindmapNode[] = [];
+  const links: D3MindmapLink[] = [];
+
+  // Central node
+  const centerId = 'center';
+  nodes.push({ id: centerId, label: topic, group: 'center', weight: 5, color: '#00d9ff' });
+
+  for (const branch of branches) {
+    const branchId = `branch-${branch.label.replace(/\s+/g, '-').toLowerCase()}`;
+    const palette = BRANCH_COLORS[branch.color] ?? BRANCH_COLORS.cyan;
+    nodes.push({ id: branchId, label: branch.label, group: branch.color, weight: 3, color: palette.border });
+    links.push({ source: centerId, target: branchId });
+
+    // Add AI items as child nodes
+    if (branch.aiItems) {
+      for (const item of branch.aiItems) {
+        const itemId = `${branchId}-${item.text.slice(0, 20).replace(/\s+/g, '-').toLowerCase()}`;
+        nodes.push({ id: itemId, label: item.text, group: branch.color, weight: WEIGHT_SIZE[item.weight] ?? 2, color: palette.border });
+        links.push({ source: branchId, target: itemId });
+      }
+    } else if (branch.items) {
+      for (const item of branch.items) {
+        const itemId = `${branchId}-${item.slice(0, 20).replace(/\s+/g, '-').toLowerCase()}`;
+        nodes.push({ id: itemId, label: item, group: branch.color, weight: 2, color: palette.border });
+        links.push({ source: branchId, target: itemId });
+      }
+    }
+  }
+
+  // Cross-branch connections
+  for (const conn of connections) {
+    const fromId = `branch-${conn.fromBranch.replace(/\s+/g, '-').toLowerCase()}`;
+    const toId = `branch-${conn.toBranch.replace(/\s+/g, '-').toLowerCase()}`;
+    links.push({ source: fromId, target: toId, label: conn.relationship });
+  }
+
+  return { nodes, links };
 }

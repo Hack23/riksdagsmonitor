@@ -46,6 +46,7 @@ import {
   getWeekAheadDateRange,
   formatDateForSlug,
   writeSingleArticle,
+  generateDynamicTitle,
 } from './helpers.js';
 import { AIAnalysisPipeline } from './ai-analysis-pipeline.js';
 import { sharedAnalysisCache } from './analysis-cache.js';
@@ -223,11 +224,13 @@ export async function generateCommitteeReports(): Promise<GenerationResult> {
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
+      // Enrich English title/subtitle with content-based highlights
+      const enriched = lang === 'en' ? generateDynamicTitle(langTitles.title, content, reports.length) : langTitles;
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
-        title: langTitles.title,
-        subtitle: langTitles.subtitle,
+        title: enriched.title,
+        subtitle: enriched.subtitle,
         date: toISODate(today),
         type: 'analysis' as ArticleCategory,
         readTime,
@@ -307,11 +310,13 @@ export async function generatePropositions(): Promise<GenerationResult> {
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
+      // Enrich English title/subtitle with content-based highlights
+      const enriched = lang === 'en' ? generateDynamicTitle(langTitles.title, content, propositions.length) : langTitles;
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
-        title: langTitles.title,
-        subtitle: langTitles.subtitle,
+        title: enriched.title,
+        subtitle: enriched.subtitle,
         date: toISODate(today),
         type: 'analysis' as ArticleCategory,
         readTime,
@@ -391,11 +396,13 @@ export async function generateMotions(): Promise<GenerationResult> {
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
+      // Enrich English title/subtitle with content-based highlights
+      const enriched = lang === 'en' ? generateDynamicTitle(langTitles.title, content, motions.length) : langTitles;
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
-        title: langTitles.title,
-        subtitle: langTitles.subtitle,
+        title: enriched.title,
+        subtitle: enriched.subtitle,
         date: toISODate(today),
         type: 'analysis' as ArticleCategory,
         readTime,
@@ -475,11 +482,13 @@ export async function generateInterpellations(): Promise<GenerationResult> {
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
+      // Enrich English title/subtitle with content-based highlights
+      const enriched = lang === 'en' ? generateDynamicTitle(langTitles.title, content, interpellations.length) : langTitles;
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
-        title: langTitles.title,
-        subtitle: langTitles.subtitle,
+        title: enriched.title,
+        subtitle: enriched.subtitle,
         date: toISODate(today),
         type: 'analysis' as ArticleCategory,
         readTime,
@@ -2175,11 +2184,13 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       const sections = buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang, aiResult);
 
       const langTitles: TitleSet = titles[lang] || titles.en;
+      // Enrich English title/subtitle with content-based highlights
+      const enriched = lang === 'en' ? generateDynamicTitle(langTitles.title, content, enrichedDocs.length) : langTitles;
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
-        title: langTitles.title,
-        subtitle: langTitles.subtitle,
+        title: enriched.title,
+        subtitle: enriched.subtitle,
         date: toISODate(today),
         type: 'analysis' as ArticleCategory,
         readTime,
