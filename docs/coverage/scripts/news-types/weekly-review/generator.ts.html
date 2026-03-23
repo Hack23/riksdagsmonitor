@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.74% </span>
+                <span class="strong">85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>100/118</span>
+                <span class='fraction'>102/120</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">64.28% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>25/40</span>
+                <span class='fraction'>27/42</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.39% </span>
+                <span class="strong">93.51% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>99/106</span>
+                <span class='fraction'>101/108</span>
             </div>
         
             
@@ -382,7 +382,19 @@
 <a name='L317'></a><a href='#L317'>317</a>
 <a name='L318'></a><a href='#L318'>318</a>
 <a name='L319'></a><a href='#L319'>319</a>
-<a name='L320'></a><a href='#L320'>320</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -584,6 +596,11 @@
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -701,6 +718,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * @module news-types/weekly-review/generator
  * @description Main generateWeeklyReview function and title generation helper.
@@ -733,6 +753,8 @@ import {
   generateWeeklyActivitySection,
 } from './analysis.js';
 import { generateCiaOverviewSection } from '../../data-transformers/content-generators/cia-overview-section.js';
+import { generateDynamicTitle } from '../../generate-news-enhanced/helpers.js';
+import { buildArticleVisualizationSections } from '../../generate-news-enhanced/generators.js';
 &nbsp;
 export async function generateWeeklyReview(options: GenerationOptions = {}): Promise&lt;GenerationResult&gt; {
   const { languages = ['en', 'sv'], lookbackDays = 7, writeArticle = null } = options;
@@ -897,13 +919,18 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
       const sources: string[] = generateSources([...REQUIRED_TOOLS]);
 &nbsp;
       const titles: TitleSet = getTitles(lang, documents.length);
+      // Enrich English title/subtitle with content-based highlights
+      const enriched = lang === 'en' ? generateDynamicTitle(titles.title, fullContent, documents.length) : titles;
 &nbsp;
       const ciaSection = generateCiaOverviewSection({ cia: ciaContext, lang });
 &nbsp;
+      // Build additional visualization sections (SWOT, dashboard, economic)
+      const extraSections = buildArticleVisualizationSections(documents, null, lang);
+&nbsp;
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
-        title: titles.title,
-        subtitle: titles.subtitle,
+        title: enriched.title,
+        subtitle: enriched.subtitle,
         date: today.toISOString().split('T')[0] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         type: 'retrospective' as ArticleCategory,
         readTime,
@@ -914,7 +941,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
-        sections: [ciaSection],
+        sections: [ciaSection, ...extraSections],
       });
 &nbsp;
       articles.push({
@@ -1018,6 +1045,9 @@ function getTitles(lang: Language, documentCount: number): TitleSet {
 }
 &nbsp;
 /**
+ * Build visualization sections (SWOT, dashboard, economic) for weekly review articles.
+ */
+/**
  * Validate weekly review article structure
  */
 &nbsp;</pre></td></tr></table></pre>
@@ -1027,7 +1057,7 @@ function getTitles(lang: Language, documentCount: number): TitleSet {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-20T13:35:53.387Z
+                at 2026-03-23T15:46:42.000Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

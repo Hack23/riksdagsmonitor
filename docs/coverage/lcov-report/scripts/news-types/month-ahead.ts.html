@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.36% </span>
+                <span class="strong">86.6% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>95/110</span>
+                <span class='fraction'>97/112</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.42% </span>
+                <span class="strong">81.94% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>57/70</span>
+                <span class='fraction'>59/72</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.94% </span>
+                <span class="strong">95.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>94/99</span>
+                <span class='fraction'>96/101</span>
             </div>
         
             
@@ -517,7 +517,19 @@
 <a name='L452'></a><a href='#L452'>452</a>
 <a name='L453'></a><a href='#L453'>453</a>
 <a name='L454'></a><a href='#L454'>454</a>
-<a name='L455'></a><a href='#L455'>455</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L455'></a><a href='#L455'>455</a>
+<a name='L456'></a><a href='#L456'>456</a>
+<a name='L457'></a><a href='#L457'>457</a>
+<a name='L458'></a><a href='#L458'>458</a>
+<a name='L459'></a><a href='#L459'>459</a>
+<a name='L460'></a><a href='#L460'>460</a>
+<a name='L461'></a><a href='#L461'>461</a>
+<a name='L462'></a><a href='#L462'>462</a>
+<a name='L463'></a><a href='#L463'>463</a>
+<a name='L464'></a><a href='#L464'>464</a>
+<a name='L465'></a><a href='#L465'>465</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -738,6 +750,12 @@
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -971,6 +989,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">43x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * @module ContentGeneration/MonthAheadAnalysis
  * @category ContentGeneration
@@ -1011,6 +1031,8 @@ import {
 import { generateArticleHTML } from '../article-template.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
+import { generateDynamicTitle } from '../generate-news-enhanced/helpers.js';
+import { buildArticleVisualizationSections } from '../generate-news-enhanced/generators.js';
 &nbsp;
 /**
  * Required MCP tools for month-ahead articles.
@@ -1190,11 +1212,16 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
 &nbsp;
       const itemCount = events.length &gt; 0 ? events.length : documents.length;
       const titles: TitleSet = getTitles(lang, itemCount);
+      // Enrich English title/subtitle with content-based highlights
+      const enriched = lang === 'en' ? generateDynamicTitle(titles.title, content, itemCount) : titles;
+&nbsp;
+      // Build visualization sections (SWOT, dashboard, economic)
+      const sections = buildArticleVisualizationSections(documents, null, lang);
 &nbsp;
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
-        title: titles.title,
-        subtitle: titles.subtitle,
+        title: enriched.title,
+        subtitle: enriched.subtitle,
         date: today.toISOString().split('T')[0] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         type: 'prospective' as ArticleCategory,
         readTime,
@@ -1205,6 +1232,7 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
+        sections,
       });
 &nbsp;
       articles.push({
@@ -1425,6 +1453,8 @@ function checkLegislativePipeline(article: ArticleInput): boolean {
   const content = (article.content as string).toLowerCase();
   return pipelineSectionMarkers.some(marker =&gt; content.includes(marker));
 }
+&nbsp;
+&nbsp;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -1432,7 +1462,7 @@ function checkLegislativePipeline(article: ArticleInput): boolean {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-20T13:35:53.594Z
+                at 2026-03-23T15:46:42.232Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

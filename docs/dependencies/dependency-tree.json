@@ -1,5 +1,5 @@
 {
-  "version": "0.8.1",
+  "version": "0.8.2",
   "name": "riksdagsmonitor",
   "problems": [
     "extraneous: @emnapi/core@1.8.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor/node_modules/@emnapi/core",
@@ -62,7 +62,7 @@
       "overridden": false,
       "dependencies": {
         "eslint": {
-          "version": "10.0.3"
+          "version": "10.1.0"
         }
       }
     },
@@ -2170,8 +2170,8 @@
       }
     },
     "eslint": {
-      "version": "10.0.3",
-      "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.0.3.tgz",
+      "version": "10.1.0",
+      "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.1.0.tgz",
       "overridden": false,
       "dependencies": {
         "@eslint-community/eslint-utils": {
@@ -2185,7 +2185,7 @@
               "overridden": false
             },
             "eslint": {
-              "version": "10.0.3"
+              "version": "10.1.0"
             }
           }
         },
@@ -2213,8 +2213,8 @@
           }
         },
         "@eslint/config-helpers": {
-          "version": "0.5.2",
-          "resolved": "https://registry.npmjs.org/@eslint/config-helpers/-/config-helpers-0.5.2.tgz",
+          "version": "0.5.3",
+          "resolved": "https://registry.npmjs.org/@eslint/config-helpers/-/config-helpers-0.5.3.tgz",
           "overridden": false,
           "dependencies": {
             "@eslint/core": {
@@ -2397,8 +2397,8 @@
           "overridden": false
         },
         "espree": {
-          "version": "11.1.1",
-          "resolved": "https://registry.npmjs.org/espree/-/espree-11.1.1.tgz",
+          "version": "11.2.0",
+          "resolved": "https://registry.npmjs.org/espree/-/espree-11.2.0.tgz",
           "overridden": false,
           "dependencies": {
             "acorn-jsx": {
@@ -2822,8 +2822,8 @@
       }
     },
     "knip": {
-      "version": "6.0.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.0.0.tgz",
+      "version": "6.0.3",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.0.3.tgz",
       "overridden": false,
       "dependencies": {
         "@nodelib/fs.walk": {
@@ -2955,8 +2955,8 @@
           }
         },
         "get-tsconfig": {
-          "version": "4.13.6",
-          "resolved": "https://registry.npmjs.org/get-tsconfig/-/get-tsconfig-4.13.6.tgz",
+          "version": "4.13.7",
+          "resolved": "https://registry.npmjs.org/get-tsconfig/-/get-tsconfig-4.13.7.tgz",
           "overridden": false,
           "dependencies": {
             "resolve-pkg-maps": {
@@ -3088,6 +3088,19 @@
       "version": "5.5.3",
       "resolved": "https://registry.npmjs.org/papaparse/-/papaparse-5.5.3.tgz",
       "overridden": false
+    },
+    "playwright": {
+      "version": "1.58.2",
+      "resolved": "https://registry.npmjs.org/playwright/-/playwright-1.58.2.tgz",
+      "overridden": false,
+      "dependencies": {
+        "fsevents": {},
+        "playwright-core": {
+          "version": "1.58.2",
+          "resolved": "https://registry.npmjs.org/playwright-core/-/playwright-core-1.58.2.tgz",
+          "overridden": false
+        }
+      }
     },
     "start-server-and-test": {
       "version": "2.1.5",
@@ -3330,7 +3343,7 @@
         },
         "fsevents": {},
         "get-tsconfig": {
-          "version": "4.13.6"
+          "version": "4.13.7"
         }
       }
     },
@@ -3340,27 +3353,27 @@
       "overridden": false,
       "dependencies": {
         "typedoc": {
-          "version": "0.28.17"
+          "version": "0.28.18"
         }
       }
     },
     "typedoc": {
-      "version": "0.28.17",
-      "resolved": "https://registry.npmjs.org/typedoc/-/typedoc-0.28.17.tgz",
+      "version": "0.28.18",
+      "resolved": "https://registry.npmjs.org/typedoc/-/typedoc-0.28.18.tgz",
       "overridden": false,
       "dependencies": {
         "@gerrit0/mini-shiki": {
-          "version": "3.22.0",
-          "resolved": "https://registry.npmjs.org/@gerrit0/mini-shiki/-/mini-shiki-3.22.0.tgz",
+          "version": "3.23.0",
+          "resolved": "https://registry.npmjs.org/@gerrit0/mini-shiki/-/mini-shiki-3.23.0.tgz",
           "overridden": false,
           "dependencies": {
             "@shikijs/engine-oniguruma": {
-              "version": "3.22.0",
-              "resolved": "https://registry.npmjs.org/@shikijs/engine-oniguruma/-/engine-oniguruma-3.22.0.tgz",
+              "version": "3.23.0",
+              "resolved": "https://registry.npmjs.org/@shikijs/engine-oniguruma/-/engine-oniguruma-3.23.0.tgz",
               "overridden": false,
               "dependencies": {
                 "@shikijs/types": {
-                  "version": "3.22.0"
+                  "version": "3.23.0"
                 },
                 "@shikijs/vscode-textmate": {
                   "version": "10.0.2"
@@ -3368,28 +3381,28 @@
               }
             },
             "@shikijs/langs": {
-              "version": "3.22.0",
-              "resolved": "https://registry.npmjs.org/@shikijs/langs/-/langs-3.22.0.tgz",
+              "version": "3.23.0",
+              "resolved": "https://registry.npmjs.org/@shikijs/langs/-/langs-3.23.0.tgz",
               "overridden": false,
               "dependencies": {
                 "@shikijs/types": {
-                  "version": "3.22.0"
+                  "version": "3.23.0"
                 }
               }
             },
             "@shikijs/themes": {
-              "version": "3.22.0",
-              "resolved": "https://registry.npmjs.org/@shikijs/themes/-/themes-3.22.0.tgz",
+              "version": "3.23.0",
+              "resolved": "https://registry.npmjs.org/@shikijs/themes/-/themes-3.23.0.tgz",
               "overridden": false,
               "dependencies": {
                 "@shikijs/types": {
-                  "version": "3.22.0"
+                  "version": "3.23.0"
                 }
               }
             },
             "@shikijs/types": {
-              "version": "3.22.0",
-              "resolved": "https://registry.npmjs.org/@shikijs/types/-/types-3.22.0.tgz",
+              "version": "3.23.0",
+              "resolved": "https://registry.npmjs.org/@shikijs/types/-/types-3.23.0.tgz",
               "overridden": false,
               "dependencies": {
                 "@shikijs/vscode-textmate": {
@@ -3462,23 +3475,7 @@
           }
         },
         "minimatch": {
-          "version": "9.0.9",
-          "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-9.0.9.tgz",
-          "overridden": false,
-          "dependencies": {
-            "brace-expansion": {
-              "version": "2.0.2",
-              "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.2.tgz",
-              "overridden": false,
-              "dependencies": {
-                "balanced-match": {
-                  "version": "1.0.2",
-                  "resolved": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz",
-                  "overridden": false
-                }
-              }
-            }
-          }
+          "version": "10.2.4"
         },
         "typescript": {
           "version": "5.9.3"
@@ -3535,7 +3532,7 @@
                   "version": "4.4.3"
                 },
                 "eslint": {
-                  "version": "10.0.3"
+                  "version": "10.1.0"
                 },
                 "ts-api-utils": {
                   "version": "2.4.0"
@@ -3562,7 +3559,7 @@
               }
             },
             "eslint": {
-              "version": "10.0.3"
+              "version": "10.1.0"
             },
             "ignore": {
               "version": "7.0.5",
@@ -3610,7 +3607,7 @@
               "version": "4.4.3"
             },
             "eslint": {
-              "version": "10.0.3"
+              "version": "10.1.0"
             },
             "typescript": {
               "version": "5.9.3"
@@ -3697,7 +3694,7 @@
               "version": "8.57.1"
             },
             "eslint": {
-              "version": "10.0.3"
+              "version": "10.1.0"
             },
             "typescript": {
               "version": "5.9.3"
@@ -3705,7 +3702,7 @@
           }
         },
         "eslint": {
-          "version": "10.0.3"
+          "version": "10.1.0"
         },
         "typescript": {
           "version": "5.9.3"
