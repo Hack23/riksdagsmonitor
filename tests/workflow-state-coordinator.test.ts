@@ -712,12 +712,12 @@ describe('Workflow Lock Manager', () => {
     });
 
     it('should reject invalid lock type and prevent path traversal', () => {
-      expect(() => lockManager.acquireLock('../evil', '2026-03-23', 'wf-1')).toThrow();
+      expect(() => lockManager.acquireLock('../evil', '2026-03-23', 'wf-1')).toThrow('Invalid lock type');
     });
 
     it('should reject invalid lock date and prevent path traversal', () => {
-      expect(() => lockManager.acquireLock('propositions', '../2026-03-23', 'wf-1')).toThrow();
-      expect(() => lockManager.acquireLock('propositions', '2026/03/23', 'wf-1')).toThrow();
+      expect(() => lockManager.acquireLock('propositions', '../2026-03-23', 'wf-1')).toThrow('Invalid lock date');
+      expect(() => lockManager.acquireLock('propositions', '2026/03/23', 'wf-1')).toThrow('Invalid lock date');
     });
   });
 

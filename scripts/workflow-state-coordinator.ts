@@ -195,6 +195,11 @@ const SIMILARITY_THRESHOLD: number = 0.70; // 70% similarity triggers deduplicat
 const TOPIC_JACCARD_THRESHOLD: number = 0.50; // 50% topic overlap triggers deduplication
 const LOCK_TIMEOUT_MS: number = 45 * 60 * 1000; // 45 minutes
 const ACTIVE_GENERATION_TTL_MS: number = 45 * 60 * 1000; // 45 minutes
+const STOCKHOLM_HOUR_FORMATTER: Intl.DateTimeFormat = new Intl.DateTimeFormat('en-GB', {
+  timeZone: 'Europe/Stockholm',
+  hour: '2-digit',
+  hourCycle: 'h23',
+});
 
 /**
  * Compute Jaccard similarity between two topic arrays.
@@ -222,14 +227,7 @@ export function jaccardTopicSimilarity(a: string[], b: string[]): number {
  */
 export function getAdaptiveCacheTTL(now?: Date): number {
   const d: Date = now ?? new Date();
-  const stockholmHour: number = Number.parseInt(
-    new Intl.DateTimeFormat('en-GB', {
-      timeZone: 'Europe/Stockholm',
-      hour: '2-digit',
-      hourCycle: 'h23',
-    }).format(d),
-    10,
-  );
+  const stockholmHour: number = Number.parseInt(STOCKHOLM_HOUR_FORMATTER.format(d), 10);
   const isPlenaryHour: boolean = stockholmHour >= 8 && stockholmHour <= 16;
   return isPlenaryHour ? MCP_CACHE_TTL_SECONDS : MCP_CACHE_TTL_NON_PLENARY_SECONDS;
 }
@@ -271,7 +269,7 @@ export class WorkflowLockManager {
    */
   acquireLock(type: string, date: string, workflowId: string): boolean {
     const lockPath: string = this.getLockPath(type, date);
-    const maxReclaims: number = 1;
+    const maxReclaims: number = 1; // keep configurable if policy changes
     let reclaimAttempts: number = 0;
 
     // eslint-disable-next-line no-constant-condition
@@ -311,7 +309,7 @@ export class WorkflowLockManager {
             const existing: LockInfo = JSON.parse(fs.readFileSync(infoPath, 'utf-8')) as LockInfo;
             const acquiredAt: number = new Date(existing.acquiredAt).getTime();
             const expiry: number = existing.expiresAfterMs ?? this.timeoutMs;
-            if (Date.now() - acquiredAt > expiry && reclaimAttempts < maxReclaims) {
+            if (Date.now() - acquiredAt > expiry && reclaimAttempts === 0 && maxReclaims > 0) {
               reclaimAttempts += 1;
               fs.rmSync(lockPath, { recursive: true, force: true });
               reclaimed = true;
