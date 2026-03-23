@@ -12,6 +12,7 @@
  *   npx tsx scripts/detect-swedish-leakage.ts --dir news/ --threshold 3
  */
 
+import { join } from 'path';
 import type { Language } from './types/language.js';
 
 // ---------------------------------------------------------------------------
@@ -285,6 +286,18 @@ const SHARED_PARLIAMENTARY_TERMS: Partial<Record<Language, ReadonlySet<string>>>
     'interpellation', 'interpellationen', 'interpellationer', 'interpellationerna',
     'regeringen', 'regeringens',
     'statsråd', 'statsrådet', 'statsråden',
+    // Norwegian ministry names use the same "departementet" form as Swedish
+    'finansdepartementet',
+    'utrikesdepartementet',
+    'justitiedepartementet',
+    'forsvarsdepartementet', 'försvarsdepartementet',
+    'utbildningsdepartementet',
+    'socialdepartementet',
+    'kulturdepartementet',
+    'miljödepartementet',
+    'infrastrukturdepartementet',
+    'arbetsmarknadsdepartementet',
+    'næringsdepartementet', 'näringsdepartementet',
   ]),
   // Danish shares some parliamentary vocabulary
   da: new Set([
@@ -346,7 +359,7 @@ async function main(): Promise<void> {
     const langFiles = files.filter((f: string) => f.endsWith(`-${langCode}.html`));
 
     for (const file of langFiles) {
-      const html = readFileSync(`${dir}/${file}`, 'utf-8');
+      const html = readFileSync(join(dir, file), 'utf-8');
       const report = detectSwedishLeakage(html, langCode);
 
       if (report.score >= threshold) {

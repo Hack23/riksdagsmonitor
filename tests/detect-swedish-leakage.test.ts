@@ -241,5 +241,14 @@ describe('Swedish Leakage Detector', () => {
       const report = detectSwedishLeakage(html, 'ja');
       expect(report.score).toBeGreaterThan(0);
     });
+
+    it('should not flag Swedish ministry names in Norwegian articles', () => {
+      // Norwegian uses the same "departementet" naming convention as Swedish
+      const html = '<p>Finansdepartementet announced new policy together with Kulturdepartementet.</p>';
+      const report = detectSwedishLeakage(html, 'no');
+      const terms = report.leakedTerms.map((t) => t.term);
+      expect(terms).not.toContain('finansdepartementet');
+      expect(terms).not.toContain('kulturdepartementet');
+    });
   });
 });
