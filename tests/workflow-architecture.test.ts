@@ -933,19 +933,26 @@ describe('File Ownership Contract', () => {
 
 describe('Concurrency Strategy', () => {
   it('all content workflows should have concurrency blocks with deterministic group keys', () => {
-    const expectedGroups: Record<string, string> = {
-      'news-committee-reports.md': "group: gh-aw-news-committee-reports-${{ inputs.article_date || 'today' }}",
-      'news-propositions.md': "group: gh-aw-news-propositions-${{ inputs.article_date || 'today' }}",
-      'news-motions.md': "group: gh-aw-news-motions-${{ inputs.article_date || 'today' }}",
-      'news-interpellations.md': "group: gh-aw-news-interpellations-${{ inputs.article_date || 'today' }}",
-      'news-week-ahead.md': "group: gh-aw-news-week-ahead-${{ inputs.article_date || 'today' }}",
-      'news-month-ahead.md': "group: gh-aw-news-month-ahead-${{ inputs.article_date || 'today' }}",
-      'news-weekly-review.md': "group: gh-aw-news-weekly-review-${{ inputs.article_date || 'today' }}",
-      'news-monthly-review.md': "group: gh-aw-news-monthly-review-${{ inputs.article_date || 'today' }}",
-      'news-evening-analysis.md': "group: gh-aw-news-evening-analysis-${{ inputs.article_date || 'today' }}",
-      'news-realtime-monitor.md': "group: gh-aw-news-realtime-monitor-${{ inputs.article_date || 'today' }}",
-      'news-article-generator.md': "group: gh-aw-news-article-generator-${{ inputs.article_types || 'manual' }}",
-    };
+    const dateDrivenGroupWorkflows = [
+      'news-committee-reports.md',
+      'news-propositions.md',
+      'news-motions.md',
+      'news-interpellations.md',
+      'news-week-ahead.md',
+      'news-month-ahead.md',
+      'news-weekly-review.md',
+      'news-monthly-review.md',
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md',
+    ] as const;
+
+    const expectedGroups: Record<string, string> = Object.fromEntries(
+      dateDrivenGroupWorkflows.map((workflowFile) => {
+        const workflowType = workflowFile.replace(/^news-/, '').replace(/\.md$/, '');
+        return [workflowFile, `group: gh-aw-news-${workflowType}-\${{ inputs.article_date || 'today' }}`];
+      })
+    );
+    expectedGroups['news-article-generator.md'] = "group: gh-aw-news-article-generator-${{ inputs.article_types || 'manual' }}";
 
     for (const [workflowFile, expectedGroupLine] of Object.entries(expectedGroups)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);

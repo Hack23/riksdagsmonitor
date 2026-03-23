@@ -112,6 +112,7 @@ steps:
       CONTENT_BRANCH_PREFIX="news/content/${ARTICLE_DATE}/"
       GH_ERROR_LOG=$(mktemp)
       JQ_ERROR_LOG=$(mktemp)
+      chmod 600 "$GH_ERROR_LOG" "$JQ_ERROR_LOG"
       trap 'rm -f "$GH_ERROR_LOG" "$JQ_ERROR_LOG"' EXIT
       OPEN_CONTENT_PRS=0
 
