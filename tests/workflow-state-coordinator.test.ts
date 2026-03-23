@@ -368,16 +368,18 @@ describe('Workflow State Coordinator', () => {
       }
     });
 
-    it('should detect duplicate via Jaccard topic similarity even with different title', async () => {
-      // Same topics but completely different title — Jaccard ≥ 0.5 triggers
+    it('should detect duplicate when combined similarity < 0.70 but topic Jaccard >= 0.5', async () => {
       const result = await coordinator.checkDuplicateArticle(
-        'Riksdag Housing Committee Analysis',
-        ['budget', 'finance', 'parliament'],
+        'Committee Report: Housing',
+        ['budget', 'finance', 'housing'],
         []
       ) as DuplicateCheckResult;
 
-      // Topic Jaccard = 3/3 = 1.0 (≥ 0.5 threshold), which exceeds combined similarity
+      // Jaccard topics against ['budget','finance','parliament'] = 2/4 = 0.5
+      // and combined similarity remains below 0.70 due to very different title/MCP queries.
       expect(result.similarityScore).toBeGreaterThanOrEqual(TOPIC_JACCARD_THRESHOLD as number);
+      expect(result.similarityScore).toBeLessThan(SIMILARITY_THRESHOLD as number);
+      expect(result.isDuplicate).toBe(true);
     });
 
     it('should not trigger Jaccard duplicate when topic overlap is low', async () => {
@@ -486,14 +488,12 @@ describe('Workflow State Coordinator', () => {
   });
 
   describe('Adaptive Cache TTL', () => {
-    it('should return 2-hour TTL during plenary hours (UTC 07-15)', () => {
-      // 10:00 UTC = 11:00 CET — plenary session
+    it('should return 2-hour TTL during Stockholm plenary hours (08-16 local)', () => {
       const plenaryDate = new Date('2026-03-23T10:00:00Z');
       expect(getAdaptiveCacheTTL(plenaryDate)).toBe(MCP_CACHE_TTL_SECONDS);
     });
 
-    it('should return 4-hour TTL outside plenary hours', () => {
-      // 20:00 UTC = 21:00 CET — evening
+    it('should return 4-hour TTL outside Stockholm plenary hours', () => {
       const eveningDate = new Date('2026-03-23T20:00:00Z');
       expect(getAdaptiveCacheTTL(eveningDate)).toBe(MCP_CACHE_TTL_NON_PLENARY_SECONDS);
     });
@@ -504,14 +504,26 @@ describe('Workflow State Coordinator', () => {
       expect(getAdaptiveCacheTTL(earlyDate)).toBe(MCP_CACHE_TTL_NON_PLENARY_SECONDS);
     });
 
-    it('should return 2-hour TTL at boundary hour 7 UTC', () => {
-      const boundaryDate = new Date('2026-03-23T07:30:00Z');
+    it('should return 2-hour TTL at Stockholm opening boundary (08:00 local)', () => {
+      const boundaryDate = new Date('2026-03-23T07:00:00Z');
       expect(getAdaptiveCacheTTL(boundaryDate)).toBe(MCP_CACHE_TTL_SECONDS);
     });
 
-    it('should return 2-hour TTL at boundary hour 15 UTC', () => {
-      const boundaryDate = new Date('2026-03-23T15:30:00Z');
+    it('should return 2-hour TTL at Stockholm closing boundary (16:00 local)', () => {
+      const boundaryDate = new Date('2026-03-23T15:00:00Z');
       expect(getAdaptiveCacheTTL(boundaryDate)).toBe(MCP_CACHE_TTL_SECONDS);
+    });
+
+    it('should honor DST by using Stockholm local hour (summer time)', () => {
+      // 06:30 UTC on summer date => 08:30 CEST in Stockholm (plenary window)
+      const summerDate = new Date('2026-06-15T06:30:00Z');
+      expect(getAdaptiveCacheTTL(summerDate)).toBe(MCP_CACHE_TTL_SECONDS);
+    });
+
+    it('should honor DST by using Stockholm local hour (winter time)', () => {
+      // 07:30 UTC on winter date => 08:30 CET in Stockholm (plenary window)
+      const winterDate = new Date('2026-01-15T07:30:00Z');
+      expect(getAdaptiveCacheTTL(winterDate)).toBe(MCP_CACHE_TTL_SECONDS);
     });
   });
 
@@ -594,6 +606,30 @@ describe('Workflow State Coordinator', () => {
       expect(active).toHaveLength(1);
       expect(active[0].workflowId).toBe('wf-2');
     });
+
+    it('should not duplicate identical active generation registration', async () => {
+      await coordinator.registerActiveGeneration('wf-1', 'propositions', '2026-03-23');
+      await coordinator.registerActiveGeneration('wf-1', 'propositions', '2026-03-23');
+
+      const active = coordinator.getActiveGenerations();
+      expect(active).toHaveLength(1);
+    });
+
+    it('should cleanup stale active generations on registration', async () => {
+      (coordinator as any).state.activeGenerations = [
+        {
+          workflowId: 'old',
+          type: 'propositions',
+          date: '2026-03-23',
+          startedAt: new Date(Date.now() - (46 * 60 * 1000)).toISOString(),
+        },
+      ];
+      await coordinator.registerActiveGeneration('wf-2', 'motions', '2026-03-23');
+
+      const active = coordinator.getActiveGenerations();
+      expect(active).toHaveLength(1);
+      expect(active[0].workflowId).toBe('wf-2');
+    });
   });
 });
 
@@ -662,6 +698,26 @@ describe('Workflow Lock Manager', () => {
 
       const info = lockManager.getLockInfo('propositions', '2026-03-23');
       expect(info!.workflowId).toBe('new-wf');
+    });
+
+    it('should throw for non-EEXIST fs errors during acquire', () => {
+      const mkdirSpy = vi.spyOn(fs, 'mkdirSync').mockImplementationOnce(() => {
+        const error = new Error('permission denied') as NodeJS.ErrnoException;
+        error.code = 'EACCES';
+        throw error;
+      });
+
+      expect(() => lockManager.acquireLock('propositions', '2026-03-23', 'wf-1')).toThrow();
+      mkdirSpy.mockRestore();
+    });
+
+    it('should reject invalid lock type and prevent path traversal', () => {
+      expect(() => lockManager.acquireLock('../evil', '2026-03-23', 'wf-1')).toThrow();
+    });
+
+    it('should reject invalid lock date and prevent path traversal', () => {
+      expect(() => lockManager.acquireLock('propositions', '../2026-03-23', 'wf-1')).toThrow();
+      expect(() => lockManager.acquireLock('propositions', '2026/03/23', 'wf-1')).toThrow();
     });
   });
 

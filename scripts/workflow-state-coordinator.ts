@@ -194,6 +194,7 @@ const RECENT_ARTICLE_TTL_SECONDS: number = 6 * 60 * 60; // 6 hours
 const SIMILARITY_THRESHOLD: number = 0.70; // 70% similarity triggers deduplication
 const TOPIC_JACCARD_THRESHOLD: number = 0.50; // 50% topic overlap triggers deduplication
 const LOCK_TIMEOUT_MS: number = 45 * 60 * 1000; // 45 minutes
+const ACTIVE_GENERATION_TTL_MS: number = 45 * 60 * 1000; // 45 minutes
 
 /**
  * Compute Jaccard similarity between two topic arrays.
@@ -221,8 +222,15 @@ export function jaccardTopicSimilarity(a: string[], b: string[]): number {
  */
 export function getAdaptiveCacheTTL(now?: Date): number {
   const d: Date = now ?? new Date();
-  const hour: number = d.getUTCHours();
-  const isPlenaryHour: boolean = hour >= 7 && hour <= 15;
+  const stockholmHour: number = Number.parseInt(
+    new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Europe/Stockholm',
+      hour: '2-digit',
+      hourCycle: 'h23',
+    }).format(d),
+    10,
+  );
+  const isPlenaryHour: boolean = stockholmHour >= 8 && stockholmHour <= 16;
   return isPlenaryHour ? MCP_CACHE_TTL_SECONDS : MCP_CACHE_TTL_NON_PLENARY_SECONDS;
 }
 
@@ -241,6 +249,20 @@ export class WorkflowLockManager {
     this.timeoutMs = timeoutMs;
   }
 
+  private validateLockInputs(type: string, date: string): void {
+    if (!/^[a-z0-9-]+$/.test(type)) {
+      throw new Error(`Invalid lock type "${type}"`);
+    }
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+      throw new Error(`Invalid lock date "${date}"`);
+    }
+  }
+
+  private getLockPath(type: string, date: string): string {
+    this.validateLockInputs(type, date);
+    return path.join(this.lockDir, `${type}-${date}.lock`);
+  }
+
   /**
    * Acquire a soft lock for the given type + date.
    * Uses `mkdirSync({ recursive: false })` for atomic creation on POSIX.
@@ -248,42 +270,62 @@ export class WorkflowLockManager {
    * @returns true if lock acquired, false if already held
    */
   acquireLock(type: string, date: string, workflowId: string): boolean {
-    const lockPath: string = path.join(this.lockDir, `${type}-${date}.lock`);
-    try {
-      // Ensure parent directory exists
-      if (!fs.existsSync(this.lockDir)) {
-        fs.mkdirSync(this.lockDir, { recursive: true });
-      }
-      // Atomic directory creation — fails if already exists.
-      // Note: atomic on local POSIX filesystems; not guaranteed on NFS/distributed FS.
-      fs.mkdirSync(lockPath, { recursive: false });
-      const info: LockInfo = {
-        workflowId,
-        acquiredAt: new Date().toISOString(),
-        expiresAfterMs: this.timeoutMs,
-      };
-      fs.writeFileSync(path.join(lockPath, 'info.json'), JSON.stringify(info, null, 2), 'utf-8');
-      return true;
-    } catch (err: unknown) {
-      // EEXIST means another process holds the lock — check if stale
-      // Other errors (permissions, disk full) are also caught here;
-      // we fall through to return false which is safe (conservative).
+    const lockPath: string = this.getLockPath(type, date);
+    const maxReclaims: number = 1;
+    let reclaimAttempts: number = 0;
+
+    // eslint-disable-next-line no-constant-condition
+    while (true) {
       try {
-        const infoPath: string = path.join(lockPath, 'info.json');
-        if (fs.existsSync(infoPath)) {
-          const existing: LockInfo = JSON.parse(fs.readFileSync(infoPath, 'utf-8')) as LockInfo;
-          const acquiredAt: number = new Date(existing.acquiredAt).getTime();
-          const expiry: number = existing.expiresAfterMs ?? this.timeoutMs;
-          if (Date.now() - acquiredAt > expiry) {
-            // Stale — reclaim
-            this.releaseLock(type, date);
-            return this.acquireLock(type, date, workflowId);
-          }
+        // Ensure parent directory exists
+        if (!fs.existsSync(this.lockDir)) {
+          fs.mkdirSync(this.lockDir, { recursive: true });
         }
-      } catch {
-        // If we can't read the lock info, treat as held
+        // Atomic directory creation — fails if already exists.
+        // Note: atomic on local POSIX filesystems; not guaranteed on NFS/distributed FS.
+        fs.mkdirSync(lockPath, { recursive: false });
+        const info: LockInfo = {
+          workflowId,
+          acquiredAt: new Date().toISOString(),
+          expiresAfterMs: this.timeoutMs,
+        };
+        fs.writeFileSync(path.join(lockPath, 'info.json'), JSON.stringify(info, null, 2), 'utf-8');
+        return true;
+      } catch (err: unknown) {
+        const error: NodeJS.ErrnoException = err as NodeJS.ErrnoException;
+        if (error?.code !== 'EEXIST') {
+          const details: string[] = [
+            '[WorkflowLockManager] Failed to acquire workflow lock',
+            `lockPath=${lockPath}`,
+          ];
+          if (typeof error?.code === 'string') details.push(`code=${error.code}`);
+          if (typeof error?.message === 'string') details.push(`message=${error.message}`);
+          console.error(details.join(' | '));
+          throw err;
+        }
+
+        let reclaimed: boolean = false;
+        try {
+          const infoPath: string = path.join(lockPath, 'info.json');
+          if (fs.existsSync(infoPath)) {
+            const existing: LockInfo = JSON.parse(fs.readFileSync(infoPath, 'utf-8')) as LockInfo;
+            const acquiredAt: number = new Date(existing.acquiredAt).getTime();
+            const expiry: number = existing.expiresAfterMs ?? this.timeoutMs;
+            if (Date.now() - acquiredAt > expiry && reclaimAttempts < maxReclaims) {
+              reclaimAttempts += 1;
+              fs.rmSync(lockPath, { recursive: true, force: true });
+              reclaimed = true;
+            }
+          }
+        } catch {
+          // If we can't inspect/remove stale lock, treat as held.
+        }
+
+        if (reclaimed) {
+          continue;
+        }
+        return false;
       }
-      return false;
     }
   }
 
@@ -291,7 +333,7 @@ export class WorkflowLockManager {
    * Release a held lock.
    */
   releaseLock(type: string, date: string): void {
-    const lockPath: string = path.join(this.lockDir, `${type}-${date}.lock`);
+    const lockPath: string = this.getLockPath(type, date);
     try {
       fs.rmSync(lockPath, { recursive: true, force: true });
     } catch {
@@ -303,7 +345,7 @@ export class WorkflowLockManager {
    * Check if a lock is currently held.
    */
   isLocked(type: string, date: string): boolean {
-    const lockPath: string = path.join(this.lockDir, `${type}-${date}.lock`);
+    const lockPath: string = this.getLockPath(type, date);
     return fs.existsSync(lockPath);
   }
 
@@ -311,7 +353,7 @@ export class WorkflowLockManager {
    * Read lock information if the lock exists.
    */
   getLockInfo(type: string, date: string): LockInfo | null {
-    const infoPath: string = path.join(this.lockDir, `${type}-${date}.lock`, 'info.json');
+    const infoPath: string = path.join(this.getLockPath(type, date), 'info.json');
     try {
       if (fs.existsSync(infoPath)) {
         return JSON.parse(fs.readFileSync(infoPath, 'utf-8')) as LockInfo;
@@ -470,6 +512,17 @@ export class WorkflowStateCoordinator {
 
       return (now - articleTime) <= RECENT_ARTICLE_TTL_SECONDS * 1000;
     });
+
+    // Clean stale active generations
+    if (this.state.activeGenerations) {
+      this.state.activeGenerations = this.state.activeGenerations.filter((generation: ActiveGeneration) => {
+        const startedAt: number = new Date(generation.startedAt).getTime();
+        if (isNaN(startedAt)) {
+          return false;
+        }
+        return (now - startedAt) <= ACTIVE_GENERATION_TTL_MS;
+      });
+    }
   }
 
   /**
@@ -562,6 +615,9 @@ export class WorkflowStateCoordinator {
 
     let maxSimilarity: number = 0;
     let matchedArticle: RecentArticleEntry | null = null;
+    let bestDuplicateScore: number = -1;
+    let duplicateMatchedArticle: RecentArticleEntry | null = null;
+    let isDuplicate: boolean = false;
 
     for (const recentArticle of this.state.recentArticles) {
       // Weighted combined similarity (title 50%, topics 30%, sources 20%)
@@ -577,26 +633,26 @@ export class WorkflowStateCoordinator {
       // Jaccard topic-only similarity for semantic deduplication
       const topicJaccard: number = jaccardTopicSimilarity(topics, recentArticle.topics);
 
-      // When topic Jaccard alone exceeds 0.5, promote effective similarity
-      // to at least the Jaccard value — this catches same-topic articles
-      // that have completely different titles (e.g. "Committee Report: Housing"
-      // vs "Riksdag Housing Committee Analysis").
-      const effectiveSimilarity: number =
-        topicJaccard >= TOPIC_JACCARD_THRESHOLD
-          ? Math.max(combinedSimilarity, topicJaccard)
-          : combinedSimilarity;
+      const effectiveSimilarity: number = Math.max(combinedSimilarity, topicJaccard);
+      const duplicateByCombined: boolean = combinedSimilarity >= SIMILARITY_THRESHOLD;
+      const duplicateByTopic: boolean = topicJaccard >= TOPIC_JACCARD_THRESHOLD;
+      const currentIsDuplicate: boolean = duplicateByCombined || duplicateByTopic;
 
       if (effectiveSimilarity > maxSimilarity) {
         maxSimilarity = effectiveSimilarity;
         matchedArticle = recentArticle;
       }
-    }
 
-    const isDuplicate: boolean = maxSimilarity >= SIMILARITY_THRESHOLD;
+      if (currentIsDuplicate && effectiveSimilarity > bestDuplicateScore) {
+        bestDuplicateScore = effectiveSimilarity;
+        duplicateMatchedArticle = recentArticle;
+        isDuplicate = true;
+      }
+    }
 
     return {
       isDuplicate,
-      matchedArticle: isDuplicate ? matchedArticle : null,
+      matchedArticle: isDuplicate ? (duplicateMatchedArticle ?? matchedArticle) : null,
       similarityScore: maxSimilarity,
     };
   }
@@ -713,8 +769,15 @@ export class WorkflowStateCoordinator {
    * Register an active generation for cross-workflow visibility.
    */
   async registerActiveGeneration(workflowId: string, type: string, date: string): Promise<void> {
+    this.cleanupExpiredEntries();
     if (!this.state.activeGenerations) {
       this.state.activeGenerations = [];
+    }
+    const exists: boolean = this.state.activeGenerations.some(
+      (g: ActiveGeneration) => g.workflowId === workflowId && g.type === type && g.date === date,
+    );
+    if (exists) {
+      return;
     }
     this.state.activeGenerations.push({
       workflowId,
@@ -781,4 +844,5 @@ export {
   SIMILARITY_THRESHOLD,
   TOPIC_JACCARD_THRESHOLD,
   LOCK_TIMEOUT_MS,
+  ACTIVE_GENERATION_TTL_MS,
 };
