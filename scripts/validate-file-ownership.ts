@@ -98,10 +98,10 @@ export function validateStagedFileOwnership(
 
   const allFiles = new Set<string>();
   if (stagedOutput) {
-    for (const f of stagedOutput.split('\n')) allFiles.add(f);
+    for (const f of stagedOutput.split('\n')) if (f) allFiles.add(f);
   }
   if (unstagedOutput) {
-    for (const f of unstagedOutput.split('\n')) allFiles.add(f);
+    for (const f of unstagedOutput.split('\n')) if (f) allFiles.add(f);
   }
 
   if (allFiles.size === 0) {
