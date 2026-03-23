@@ -350,6 +350,7 @@ export class WorkflowStateCoordinator {
       title: article.title,
       topics: article.topics ? [...article.topics] : [],
       mcpQueries: article.mcpQueries ? [...article.mcpQueries] : [],
+      significance: article.significance,
     };
 
     this.state.recentArticles.push(articleEntry);
@@ -362,12 +363,16 @@ export class WorkflowStateCoordinator {
    * @param title - Article title
    * @param topics - Article topics
    * @param mcpQueries - MCP query keys used for this article
+   * @param significance - Optional political significance score (0-100).
+   *   When provided and ≥ 80, a same-topic article with lower significance
+   *   is NOT treated as a duplicate — the high-significance version overrides.
    * @returns Duplicate check result with similarity score
    */
   async checkDuplicateArticle(
     title: string,
     topics: string[] = [],
     mcpQueries: string[] = [],
+    significance?: number,
   ): Promise<DuplicateCheckResult> {
     this.cleanupExpiredEntries();
 
@@ -391,6 +396,23 @@ export class WorkflowStateCoordinator {
     }
 
     const isDuplicate: boolean = maxSimilarity >= SIMILARITY_THRESHOLD;
+
+    // High-significance override: if the new article has significance ≥ 80
+    // and the matched article has lower significance, allow the new article
+    // to replace the lower-significance coverage.
+    if (
+      isDuplicate &&
+      typeof significance === 'number' &&
+      significance >= 80 &&
+      matchedArticle &&
+      (typeof matchedArticle.significance !== 'number' || matchedArticle.significance < 80)
+    ) {
+      return {
+        isDuplicate: false,
+        matchedArticle: null,
+        similarityScore: maxSimilarity,
+      };
+    }
 
     return {
       isDuplicate,

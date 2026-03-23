@@ -53,6 +53,8 @@ export function generateArticleHTML(data: ArticleData): string {
     keywords = [],
     tags = [],
     sections = [],
+    significance,
+    urgency,
   } = data;
 
   // Use proper OG locale for the language
@@ -128,6 +130,10 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   <meta name="twitter:data1" content="${readTime}">
   <meta name="twitter:label2" content="${CONTENT_LABELS[lang]?.twitterLabel2 ?? CONTENT_LABELS.en.twitterLabel2}">
   <meta name="twitter:data2" content="${typeLabel}">
+  ${typeof significance === 'number' ? `
+  <!-- Political Significance -->
+  <meta name="article:significance" content="${significance}">
+  <meta name="article:urgency" content="${urgency || ''}">` : ''}
   
   <!-- Hreflang for language alternatives -->
 ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}
@@ -217,6 +223,18 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
         "@type": "Thing",
         "name": "${escapeHtml(tag)}"
       }`).join(',')}
+    ]` : ''}${typeof significance === 'number' ? `,
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "politicalSignificance",
+        "value": ${significance}
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "editorialUrgency",
+        "value": "${urgency || ''}"
+      }
     ]` : ''}
   }
   </script>
