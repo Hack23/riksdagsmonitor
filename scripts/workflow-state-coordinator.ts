@@ -254,7 +254,8 @@ export class WorkflowLockManager {
       if (!fs.existsSync(this.lockDir)) {
         fs.mkdirSync(this.lockDir, { recursive: true });
       }
-      // Atomic directory creation — fails if already exists
+      // Atomic directory creation — fails if already exists.
+      // Note: atomic on local POSIX filesystems; not guaranteed on NFS/distributed FS.
       fs.mkdirSync(lockPath, { recursive: false });
       const info: LockInfo = {
         workflowId,
@@ -263,8 +264,10 @@ export class WorkflowLockManager {
       };
       fs.writeFileSync(path.join(lockPath, 'info.json'), JSON.stringify(info, null, 2), 'utf-8');
       return true;
-    } catch {
-      // Check if existing lock is stale — if so, reclaim
+    } catch (err: unknown) {
+      // EEXIST means another process holds the lock — check if stale
+      // Other errors (permissions, disk full) are also caught here;
+      // we fall through to return false which is safe (conservative).
       try {
         const infoPath: string = path.join(lockPath, 'info.json');
         if (fs.existsSync(infoPath)) {
@@ -412,7 +415,13 @@ export class WorkflowStateCoordinator {
       this.state.lastUpdate = new Date().toISOString();
       const tmpPath: string = `${this.stateFilePath}.tmp.${process.pid}`;
       fs.writeFileSync(tmpPath, JSON.stringify(this.state, null, 2), 'utf-8');
-      fs.renameSync(tmpPath, this.stateFilePath);
+      try {
+        fs.renameSync(tmpPath, this.stateFilePath);
+      } catch (renameErr: unknown) {
+        // Clean up tmp file on rename failure
+        try { fs.unlinkSync(tmpPath); } catch { /* ignore cleanup error */ }
+        throw renameErr;
+      }
     } catch (error: unknown) {
       const message: string = error instanceof Error ? error.message : String(error);
       console.error('Error saving workflow state:', message);
@@ -568,7 +577,10 @@ export class WorkflowStateCoordinator {
       // Jaccard topic-only similarity for semantic deduplication
       const topicJaccard: number = jaccardTopicSimilarity(topics, recentArticle.topics);
 
-      // Take the higher of: combined similarity or topic Jaccard (if above its threshold)
+      // When topic Jaccard alone exceeds 0.5, promote effective similarity
+      // to at least the Jaccard value — this catches same-topic articles
+      // that have completely different titles (e.g. "Committee Report: Housing"
+      // vs "Riksdag Housing Committee Analysis").
       const effectiveSimilarity: number =
         topicJaccard >= TOPIC_JACCARD_THRESHOLD
           ? Math.max(combinedSimilarity, topicJaccard)
