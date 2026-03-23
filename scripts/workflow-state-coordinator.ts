@@ -452,7 +452,25 @@ export class WorkflowStateCoordinator {
       try {
         fs.renameSync(tmpPath, this.stateFilePath);
       } catch (renameErr: unknown) {
-        // Clean up tmp file on rename failure
+        // On Windows, renameSync can fail when the destination already exists.
+        // Attempt unlink-then-rename for known retriable error codes, matching
+        // the pattern used in generate-news-enhanced/helpers.ts.
+        const code: string | undefined = (renameErr as NodeJS.ErrnoException).code;
+        const retriableCodes: ReadonlySet<string> = new Set(['EEXIST', 'EPERM', 'EACCES', 'EXDEV']);
+        if (code && retriableCodes.has(code)) {
+          try {
+            if (fs.existsSync(this.stateFilePath)) {
+              fs.unlinkSync(this.stateFilePath);
+            }
+            fs.renameSync(tmpPath, this.stateFilePath);
+            return;
+          } catch (retryErr: unknown) {
+            // Best-effort cleanup of tmp file after failed retry
+            try { fs.unlinkSync(tmpPath); } catch { /* ignore cleanup error */ }
+            throw retryErr;
+          }
+        }
+        // Non-retriable rename failure: clean up tmp file and rethrow
         try { fs.unlinkSync(tmpPath); } catch { /* ignore cleanup error */ }
         throw renameErr;
       }
@@ -469,7 +487,7 @@ export class WorkflowStateCoordinator {
   cleanupExpiredEntries(): void {
     const now: number = Date.now();
 
-    // Clean MCP cache using per-entry TTL (default: adaptive)
+    // Clean MCP cache using per-entry TTL (default: MCP_CACHE_TTL_SECONDS, 2 hours)
     Object.keys(this.state.mcpQueryCache).forEach((key: string) => {
       const entry: MCPCacheEntry | undefined = this.state.mcpQueryCache[key];
       if (!entry) {
@@ -649,7 +667,7 @@ export class WorkflowStateCoordinator {
     return {
       isDuplicate,
       matchedArticle: isDuplicate ? (duplicateMatchedArticle ?? matchedArticle) : null,
-      similarityScore: maxSimilarity,
+      similarityScore: isDuplicate ? bestDuplicateScore : maxSimilarity,
     };
   }
 
