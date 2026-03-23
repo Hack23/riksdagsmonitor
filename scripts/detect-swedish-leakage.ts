@@ -256,8 +256,10 @@ const SHARED_WORDS: Partial<Record<Language, ReadonlySet<string>>> = {
   da: new Set(['det', 'den', 'var', 'kan', 'efter', 'eller', 'under', 'mot', 'med', 'som', 'har']),
   // Norwegian shares some common words with Swedish
   no: new Set(['det', 'den', 'var', 'kan', 'eller', 'under', 'mot', 'med', 'som', 'har']),
-  de: new Set(['det', 'var']),
-  nl: new Set(['det', 'met']),
+  // German: do not treat "det" as shared, to avoid hiding Swedish leakage
+  de: new Set(['var']),
+  // Dutch: do not treat "det" as shared, only include actually shared words
+  nl: new Set(['met']),
   fr: new Set([]),
   es: new Set([]),
   fi: new Set([]),
@@ -290,17 +292,13 @@ const SHARED_PARLIAMENTARY_TERMS: Partial<Record<Language, ReadonlySet<string>>>
     'interpellation', 'interpellationen', 'interpellationer', 'interpellationerna',
     'regeringen', 'regeringens',
     'statsråd', 'statsrådet', 'statsråden',
-    // Norwegian ministry names that use the same form as Swedish (shared)
-    // Note: justitiedepartementet (NO: Justisdepartementet) and
-    // utrikesdepartementet (NO: Utenriksdepartementet) are NOT shared —
-    // their Norwegian forms differ, so Swedish spellings should be flagged.
+    // Only keep ministry names whose spelling is truly identical in Swedish and Norwegian.
+    // Swedish-only spellings (försvarsdepartementet, miljödepartementet,
+    // arbetsmarknadsdepartementet, näringsdepartementet) are NOT shared —
+    // Norwegian uses distinct forms, so Swedish spellings should be flagged.
     'finansdepartementet',
-    'forsvarsdepartementet', 'försvarsdepartementet',
     'kulturdepartementet',
-    'miljödepartementet',
     'infrastrukturdepartementet',
-    'arbetsmarknadsdepartementet',
-    'næringsdepartementet', 'näringsdepartementet',
   ]),
   // Danish shares some parliamentary vocabulary
   da: new Set([

@@ -267,5 +267,19 @@ describe('Swedish Leakage Detector', () => {
       expect(terms).toContain('justitiedepartementet');
       expect(terms).toContain('utrikesdepartementet');
     });
+
+    it('should detect additional Swedish-only ministry spellings in Norwegian output', () => {
+      // These Swedish spellings differ from Norwegian forms:
+      // försvarsdepartementet (NO: Forsvarsdepartementet), miljödepartementet (NO: Klima- og miljødepartementet),
+      // arbetsmarknadsdepartementet (NO: Arbeids- og inkluderingsdepartementet),
+      // näringsdepartementet (NO: Nærings- og fiskeridepartementet)
+      const html = '<p>försvarsdepartementet og miljödepartementet samt arbetsmarknadsdepartementet og näringsdepartementet.</p>';
+      const report = detectSwedishLeakage(html, 'no');
+      const terms = report.leakedTerms.map((t) => t.term);
+      expect(terms).toContain('försvarsdepartementet');
+      expect(terms).toContain('miljödepartementet');
+      expect(terms).toContain('arbetsmarknadsdepartementet');
+      expect(terms).toContain('näringsdepartementet');
+    });
   });
 });
