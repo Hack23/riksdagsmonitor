@@ -350,22 +350,22 @@ export async function writeArticlePair(htmlEN: string, htmlSV: string, slug: str
 
 /** Extract top N most relevant highlight phrases from article content */
 function extractHighlights(content: string, maxHighlights: number = 3): string[] {
-  // Strip HTML tags
-  const text = content.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
-  // Look for strong/emphasized patterns that were in the HTML
+  // Look for strong/emphasized patterns in the HTML
   const strongMatches = content.match(/<strong>([^<]{5,60})<\/strong>/gi) ?? [];
-  const highlights = strongMatches
-    .map(m => m.replace(/<\/?strong>/gi, '').trim())
-    .filter(h => h.length >= 5 && h.length <= 60);
-
   // Also look for h3 headings as highlights
   const h3Matches = content.match(/<h3[^>]*>([^<]{5,80})<\/h3>/gi) ?? [];
-  const h3Highlights = h3Matches
-    .map(m => m.replace(/<\/?h3[^>]*>/gi, '').trim())
-    .filter(h => h.length >= 5 && h.length <= 80);
 
-  const combined = [...new Set([...highlights, ...h3Highlights])];
-  return combined.slice(0, maxHighlights);
+  const seen = new Set<string>();
+  const result: string[] = [];
+  for (const m of [...strongMatches, ...h3Matches]) {
+    const text = m.replace(/<\/?(?:strong|h3)[^>]*>/gi, '').trim();
+    if (text.length >= 5 && text.length <= 80 && !seen.has(text)) {
+      seen.add(text);
+      result.push(text);
+      if (result.length >= maxHighlights) break;
+    }
+  }
+  return result;
 }
 
 /** Extract key policy domain or committee name from content */

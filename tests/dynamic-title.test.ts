@@ -73,4 +73,24 @@ describe('generateDynamicTitle', () => {
     const count = (result.subtitle.match(/Same Topic/g) ?? []).length;
     expect(count).toBeLessThanOrEqual(1);
   });
+
+  // Swedish content detection
+
+  it('detects Swedish committee name (Finansutskottet) from content', () => {
+    const content = '<p>Finansutskottet har behandlat budgetpropositionen.</p>';
+    const result = generateDynamicTitle('Committee Reports', content, 3);
+    expect(result.title).toContain('Finansutskottet');
+  });
+
+  it('detects Swedish committee name (Försvarsutskottet) from content', () => {
+    const content = '<p>Försvarsutskottet diskuterade NATO-samarbete.</p>';
+    const result = generateDynamicTitle('Committee Reports', content, 2);
+    expect(result.title).toContain('Försvarsutskottet');
+  });
+
+  it('detects climate theme from Swedish content', () => {
+    const content = '<p>Miljöfrågor och hållbar utveckling diskuterades i kammaren.</p>';
+    const result = generateDynamicTitle('Government Propositions', content, 4);
+    expect(result.title).toContain('Climate');
+  });
 });
