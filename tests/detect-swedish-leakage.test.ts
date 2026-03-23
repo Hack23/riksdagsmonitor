@@ -65,6 +65,14 @@ describe('Swedish Leakage Detector', () => {
       expect(stripHtml('&ldquo;hello&rdquo;')).toBe('"hello"');
       expect(stripHtml('&lsquo;hello&rsquo;')).toBe("'hello'");
     });
+
+    it('should decode doubly-encoded entities (&amp;#Xe4; → ä)', () => {
+      expect(stripHtml('bet&amp;#xe4;nkande')).toBe('betänkande');
+      expect(stripHtml('bet&amp;#Xe4;nkande')).toBe('betänkande');
+      expect(stripHtml('bet&amp;#228;nkande')).toBe('betänkande');
+      expect(stripHtml('f&amp;#xf6;r')).toBe('för');
+      expect(stripHtml('&amp;#xe5;r')).toBe('år');
+    });
   });
 
   // ---- Word lists ----

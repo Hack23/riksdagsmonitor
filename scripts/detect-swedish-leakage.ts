@@ -12,7 +12,8 @@
  *   npx tsx scripts/detect-swedish-leakage.ts --dir news/ --threshold 3
  */
 
-import { join } from 'path';
+import { join, resolve } from 'path';
+import { fileURLToPath } from 'url';
 import type { Language } from './types/language.js';
 
 // ---------------------------------------------------------------------------
@@ -137,7 +138,10 @@ export function stripHtml(html: string): string {
   }
   // Remove remaining tags
   text = text.replace(/<[^>]+>/g, ' ');
-  // Decode common entities (order matters: &amp; last to avoid double-decode)
+  // Decode common entities.
+  // First, decode doubly-encoded entity references (&amp;#xE4; → &#xE4;) so that
+  // the subsequent hex/numeric patterns can match them in a single pass.
+  text = text.replace(/&amp;(#\w+;)/g, '&$1');
   text = text
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
@@ -384,7 +388,7 @@ async function main(): Promise<void> {
 const isMainModule =
   typeof process !== 'undefined' &&
   typeof process.argv?.[1] === 'string' &&
-  import.meta.url === `file://${process.argv[1]}`;
+  resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1]);
 if (isMainModule) {
   main().catch((err) => {
     console.error(err);
