@@ -132,6 +132,110 @@ interface StripHtmlOptions {
   readonly skipBlockStripping?: boolean;
 }
 
+const OPEN_TAG_PREFIX_LENGTH = 1; // "<"
+const CLOSE_TAG_PREFIX_LENGTH = 2; // "</"
+// Safety ceiling for malformed/adversarial HTML that could otherwise keep toggling "changed".
+const MAX_TAG_STRIP_ITERATIONS = 10000;
+
+/** Valid boundary after an HTML tag name. */
+function isTagNameBoundary(ch: string | undefined): boolean {
+  return ch === undefined || ch === '>' || ch === '/' || /\s/.test(ch);
+}
+
+/**
+ * Strip specific HTML tag blocks using index-based parsing (avoids regex tag filters).
+ *
+ * For preserveNewlines=true, removed content is replaced with spaces while keeping '\n'
+ * positions intact so line numbering remains stable.
+ */
+function stripTagBlocks(html: string, tagNames: ReadonlyArray<string>, preserveNewlines: boolean): string {
+  let text = html;
+  let changed = true;
+  // Safety bound to avoid pathological loops on malformed/adversarial input.
+  const maxIterations = Math.max(1, Math.min(MAX_TAG_STRIP_ITERATIONS, text.length));
+  let iterations = 0;
+
+  while (changed && iterations < maxIterations) {
+    iterations++;
+    changed = false;
+    const lower = text.toLowerCase();
+
+    for (const tagName of tagNames) {
+      let searchFrom = 0;
+      while (searchFrom < lower.length) {
+        const openStart = lower.indexOf(`<${tagName}`, searchFrom);
+        if (openStart === -1) {
+          break;
+        }
+        const openNameBoundaryIndex = openStart + OPEN_TAG_PREFIX_LENGTH + tagName.length;
+        if (!isTagNameBoundary(lower[openNameBoundaryIndex])) {
+          searchFrom = openStart + 1;
+          continue;
+        }
+
+        const openEnd = lower.indexOf('>', openStart + OPEN_TAG_PREFIX_LENGTH);
+        if (openEnd === -1) {
+          break;
+        }
+
+        const closeStart = lower.indexOf(`</${tagName}`, openEnd + 1);
+        if (closeStart === -1) {
+          break;
+        }
+        const closeNameBoundaryIndex = closeStart + CLOSE_TAG_PREFIX_LENGTH + tagName.length;
+        if (!isTagNameBoundary(lower[closeNameBoundaryIndex])) {
+          searchFrom = closeStart + 1;
+          continue;
+        }
+
+        const closeEnd = lower.indexOf('>', closeStart + CLOSE_TAG_PREFIX_LENGTH);
+        if (closeEnd === -1) {
+          break;
+        }
+
+        const replacement = preserveNewlines
+          ? text.slice(openStart, closeEnd + 1).replace(/[^\n]/g, ' ')
+          : ' ';
+        text = text.slice(0, openStart) + replacement + text.slice(closeEnd + 1);
+        changed = true;
+        break;
+      }
+
+      if (changed) {
+        break;
+      }
+    }
+  }
+
+  return text;
+}
+
+/** Remove all remaining HTML tags using an index-based state machine. */
+function stripAllTags(html: string): string {
+  let stripped = '';
+  let inTag = false;
+
+  for (let i = 0; i < html.length; i++) {
+    const ch = html[i];
+    if (ch === '<') {
+      if (!inTag) {
+        stripped += ' ';
+      }
+      inTag = true;
+      continue;
+    }
+    if (ch === '>' && inTag) {
+      inTag = false;
+      continue;
+    }
+    if (!inTag) {
+      stripped += ch;
+    }
+  }
+
+  return stripped;
+}
+
 /**
  * Strip HTML tags and decode common entities to get plain text.
  * This is used only for analysis/detection purposes, NOT for sanitisation.
@@ -142,17 +246,12 @@ export function stripHtml(html: string, options: StripHtmlOptions = {}): string 
   let text = html;
 
   if (!options.skipBlockStripping) {
-    // Remove script and style blocks iteratively until none remain
-    let prev = '';
-    while (prev !== text) {
-      prev = text;
-      text = text.replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi, ' ');
-      text = text.replace(/<style\b[^>]*>[\s\S]*?<\/style[^>]*>/gi, ' ');
-    }
+    // Remove script/style blocks first to avoid matching inner tag-like content.
+    text = stripTagBlocks(text, ['script', 'style'], false);
   }
 
   // Remove remaining tags
-  text = text.replace(/<[^>]+>/g, ' ');
+  text = stripAllTags(text);
   // Decode common entities.
   // First, decode doubly-encoded entity references (&amp;#xE4; → &#xE4;) so that
   // the subsequent hex/numeric patterns can match them in a single pass.
@@ -199,19 +298,7 @@ export function detectSwedishLeakage(html: string, targetLang: Language): Leakag
 
   // Strip script/style blocks on the full HTML first so multi-line blocks are
   // removed correctly. Preserve newline count so reported line numbers remain accurate.
-  let cleaned = html;
-  let prev = '';
-  while (prev !== cleaned) {
-    prev = cleaned;
-    cleaned = cleaned.replace(
-      /<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi,
-      (match) => match.replace(/[^\n]/g, ' ')
-    );
-    cleaned = cleaned.replace(
-      /<style\b[^>]*>[\s\S]*?<\/style[^>]*>/gi,
-      (match) => match.replace(/[^\n]/g, ' ')
-    );
-  }
+  const cleaned = stripTagBlocks(html, ['script', 'style'], true);
 
   const lines = cleaned.split('\n');
   const leaked: LeakedTerm[] = [];
