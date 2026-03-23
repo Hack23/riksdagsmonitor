@@ -111,7 +111,8 @@ steps:
       fi
       CONTENT_BRANCH_PREFIX="news/content/${ARTICLE_DATE}/"
       GH_ERROR_LOG=$(mktemp)
-      trap 'rm -f "$GH_ERROR_LOG"' EXIT
+      JQ_ERROR_LOG=$(mktemp)
+      trap 'rm -f "$GH_ERROR_LOG" "$JQ_ERROR_LOG"' EXIT
       OPEN_CONTENT_PRS=0
 
       set +e
@@ -129,14 +130,14 @@ steps:
       fi
 
       set +e
-      OPEN_CONTENT_PRS=$(printf '%s' "$PR_LIST_JSON" | jq -r --arg prefix "$CONTENT_BRANCH_PREFIX" '[.[] | select(.headRefName | startswith($prefix))] | length' 2>"$GH_ERROR_LOG")
+      OPEN_CONTENT_PRS=$(printf '%s' "$PR_LIST_JSON" | jq -r --arg prefix "$CONTENT_BRANCH_PREFIX" '[.[] | select(.headRefName | startswith($prefix))] | length' 2>"$JQ_ERROR_LOG")
       JQ_EXIT_CODE=$?
       set -e
       if [ "$JQ_EXIT_CODE" -ne 0 ] || ! [[ "$OPEN_CONTENT_PRS" =~ ^[0-9]+$ ]]; then
         echo "⚠ Unable to parse content PR count for $ARTICLE_DATE (jq exit code: $JQ_EXIT_CODE)."
-        if [ -s "$GH_ERROR_LOG" ]; then
+        if [ -s "$JQ_ERROR_LOG" ]; then
           echo "jq error:"
-          sed 's/^/  /' "$GH_ERROR_LOG"
+          sed 's/^/  /' "$JQ_ERROR_LOG"
         fi
         OPEN_CONTENT_PRS=0
         echo "   Deferring translation to avoid potential merge conflicts."
@@ -222,7 +223,15 @@ Before starting translations, check if any content workflow PRs are still open f
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date || '' }}"
 if [ -z "$ARTICLE_DATE" ]; then ARTICLE_DATE=$(date -u '+%Y-%m-%d'); fi
-OPEN_CONTENT_PRS=$(gh pr list --base main --json headRefName --jq "[.[] | select(.headRefName | startswith(\"news/content/${ARTICLE_DATE}\"))] | length" 2>/dev/null || echo "0")
+CONTENT_BRANCH_PREFIX="news/content/${ARTICLE_DATE}/"
+if ! PR_LIST_JSON=$(gh pr list --base main --json headRefName 2>/dev/null); then
+  echo "⚠ Unable to query open content PRs for $ARTICLE_DATE — deferring translation"
+  exit 0
+fi
+if ! OPEN_CONTENT_PRS=$(printf '%s' "$PR_LIST_JSON" | jq -r --arg prefix "$CONTENT_BRANCH_PREFIX" '[.[] | select(.headRefName | startswith($prefix))] | length' 2>/dev/null); then
+  echo "⚠ Unable to parse content PR count for $ARTICLE_DATE — deferring translation"
+  exit 0
+fi
 if [ "$OPEN_CONTENT_PRS" -gt 0 ]; then
   echo "⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — deferring translation"
   echo "   Next scheduled run will retry once content workflow PRs are merged."

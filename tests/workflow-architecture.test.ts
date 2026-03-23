@@ -933,20 +933,31 @@ describe('File Ownership Contract', () => {
 
 describe('Concurrency Strategy', () => {
   it('all content workflows should have concurrency blocks with deterministic group keys', () => {
-    const contentWorkflows = [
-      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
-      'news-evening-analysis.md',
-      'news-realtime-monitor.md',
-      'news-article-generator.md',
-    ];
+    const expectedGroups: Record<string, string> = {
+      'news-committee-reports.md': "group: gh-aw-news-committee-reports-${{ inputs.article_date || 'today' }}",
+      'news-propositions.md': "group: gh-aw-news-propositions-${{ inputs.article_date || 'today' }}",
+      'news-motions.md': "group: gh-aw-news-motions-${{ inputs.article_date || 'today' }}",
+      'news-interpellations.md': "group: gh-aw-news-interpellations-${{ inputs.article_date || 'today' }}",
+      'news-week-ahead.md': "group: gh-aw-news-week-ahead-${{ inputs.article_date || 'today' }}",
+      'news-month-ahead.md': "group: gh-aw-news-month-ahead-${{ inputs.article_date || 'today' }}",
+      'news-weekly-review.md': "group: gh-aw-news-weekly-review-${{ inputs.article_date || 'today' }}",
+      'news-monthly-review.md': "group: gh-aw-news-monthly-review-${{ inputs.article_date || 'today' }}",
+      'news-evening-analysis.md': "group: gh-aw-news-evening-analysis-${{ inputs.article_date || 'today' }}",
+      'news-realtime-monitor.md': "group: gh-aw-news-realtime-monitor-${{ inputs.article_date || 'today' }}",
+      'news-article-generator.md': "group: gh-aw-news-article-generator-${{ inputs.article_types || 'manual' }}",
+    };
 
-    for (const workflowFile of contentWorkflows) {
+    for (const [workflowFile, expectedGroupLine] of Object.entries(expectedGroups)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const frontmatter = parseFrontmatter(filepath);
       expect(
         frontmatter.includes('concurrency:'),
         `Workflow ${workflowFile} should have a concurrency block in frontmatter`
+      ).toBe(true);
+      expect(
+        frontmatter.includes(expectedGroupLine),
+        `Workflow ${workflowFile} should have deterministic concurrency group line: ${expectedGroupLine}`
       ).toBe(true);
       expect(
         frontmatter.includes('cancel-in-progress: false'),
