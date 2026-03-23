@@ -80,7 +80,7 @@ export interface WorkflowRecord {
 export interface LockInfo {
   workflowId: string;
   acquiredAt: string;
-  expiresAfterMs: number;
+  expiresAfterMs?: number;
 }
 
 /** An in-progress generation tracked for cross-workflow visibility */

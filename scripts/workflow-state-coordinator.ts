@@ -317,7 +317,7 @@ export class WorkflowLockManager {
               typeof existing.expiresAfterMs === 'number' &&
               Number.isFinite(existing.expiresAfterMs) &&
               existing.expiresAfterMs > 0;
-            const expiryMs: number = hasValidExpiresAfterMs ? existing.expiresAfterMs : this.timeoutMs;
+            const expiryMs: number = (hasValidExpiresAfterMs && typeof existing.expiresAfterMs === 'number') ? existing.expiresAfterMs : this.timeoutMs;
             const isExpired: boolean = hasValidAcquiredAt && Date.now() - acquiredAtMs > expiryMs;
             const treatAsCorrupt: boolean = !hasValidAcquiredAt || (hasExpiresAfterMs && !hasValidExpiresAfterMs);
 
