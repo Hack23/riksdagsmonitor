@@ -360,8 +360,8 @@ const SHARED_WORDS: Partial<Record<Language, ReadonlySet<string>>> = {
   no: new Set(['det', 'den', 'var', 'kan', 'eller', 'under', 'mot', 'med', 'som', 'har']),
   // German: do not treat "det" or "var" as shared, to avoid hiding Swedish leakage
   de: new Set([]),
-  // Dutch: do not treat "det" as shared, only include actually shared words
-  nl: new Set(['met']),
+  // Dutch: currently no Swedish stop words are treated as shared
+  nl: new Set([]),
   fr: new Set([]),
   es: new Set([]),
   fi: new Set([]),
@@ -425,7 +425,7 @@ function isSharedParliamentaryTerm(term: string, targetLang: Language): boolean 
 async function main(): Promise<void> {
   const args = process.argv.slice(2);
   let dir = 'news/';
-  let threshold = 3;
+  let threshold = 5;
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--dir' && args[i + 1]) {
