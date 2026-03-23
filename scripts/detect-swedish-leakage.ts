@@ -122,20 +122,35 @@ export interface LeakageReport {
 // ---------------------------------------------------------------------------
 
 /**
+ * Options for stripHtml processing.
+ *
+ * skipBlockStripping: Set to true when script/style blocks have already been
+ * removed by a prior pass (e.g. line-preserving preprocessing in detectSwedishLeakage)
+ * to avoid redundant block stripping work.
+ */
+interface StripHtmlOptions {
+  readonly skipBlockStripping?: boolean;
+}
+
+/**
  * Strip HTML tags and decode common entities to get plain text.
  * This is used only for analysis/detection purposes, NOT for sanitisation.
  * @param html - Raw HTML string
  * @returns Plain text content
  */
-export function stripHtml(html: string): string {
-  // Remove script and style blocks iteratively until none remain
+export function stripHtml(html: string, options: StripHtmlOptions = {}): string {
   let text = html;
-  let prev = '';
-  while (prev !== text) {
-    prev = text;
-    text = text.replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi, ' ');
-    text = text.replace(/<style\b[^>]*>[\s\S]*?<\/style[^>]*>/gi, ' ');
+
+  if (!options.skipBlockStripping) {
+    // Remove script and style blocks iteratively until none remain
+    let prev = '';
+    while (prev !== text) {
+      prev = text;
+      text = text.replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi, ' ');
+      text = text.replace(/<style\b[^>]*>[\s\S]*?<\/style[^>]*>/gi, ' ');
+    }
   }
+
   // Remove remaining tags
   text = text.replace(/<[^>]+>/g, ' ');
   // Decode common entities.
@@ -206,8 +221,8 @@ export function detectSwedishLeakage(html: string, targetLang: Language): Leakag
   const counts = new Map<string, number>();
 
   for (let i = 0; i < lines.length; i++) {
-    const plainLine = stripHtml(lines[i]);
-    const words = plainLine.split(/[\s,.:;!?()[\]{}'"]+/).filter(Boolean);
+    const plainLine = stripHtml(lines[i], { skipBlockStripping: true });
+    const words = plainLine.split(/[-\s,.:;!?()[\]{}'"]+/).filter(Boolean);
 
     for (const word of words) {
       const lower = word.toLowerCase();

@@ -116,6 +116,14 @@ describe('Swedish Leakage Detector', () => {
       expect(terms).toContain('betänkande');
       expect(terms).toContain('utskottet');
     });
+    it('should detect leaked terms adjacent to hyphen/dash punctuation', () => {
+      const html = '<p>The betänkande- was debated and proposition&ndash; was referenced.</p>';
+      const report = detectSwedishLeakage(html, 'en');
+      const terms = report.leakedTerms.map((t) => t.term);
+      expect(terms).toContain('betänkande');
+      expect(terms).toContain('proposition');
+    });
+
 
     it('should detect Swedish stop words in English articles', () => {
       const html = '<p>The government och the parliament har discussed this.</p>';
