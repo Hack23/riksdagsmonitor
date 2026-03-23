@@ -62,24 +62,26 @@ function makeOptionRecordingPipeline(name: string, recorder: Map<string, Pipelin
 // ---------------------------------------------------------------------------
 
 describe('PipelineOrchestrator — concurrent execution', () => {
-  it('runs pipelines concurrently in parallel mode', async () => {
+  it('runs pipelines concurrently in parallel mode (faster than sequential)', async () => {
+    // Use identical delays so the sequential sum is predictable
+    const delayMs = 50;
+    const pipelines = [
+      makeDelayedPipeline('a', delayMs, 2),
+      makeDelayedPipeline('b', delayMs, 3),
+      makeDelayedPipeline('c', delayMs, 1),
+    ];
+    const sequentialSum = pipelines.length * delayMs; // 150ms
+
     const startTime = Date.now();
-    const orchestrator = new PipelineOrchestrator({
-      pipelines: [
-        makeDelayedPipeline('fast', 10, 2),
-        makeDelayedPipeline('slow', 50, 3),
-        makeDelayedPipeline('medium', 30, 1),
-      ],
-      parallel: true,
-    });
+    const orchestrator = new PipelineOrchestrator({ pipelines, parallel: true });
     const result = await orchestrator.run();
     const elapsed = Date.now() - startTime;
 
     expect(result.allSucceeded).toBe(true);
     expect(result.totalFiles).toBe(6);
-    // Parallel: total time should be roughly max(10, 50, 30) ≈ 50ms, not sum ≈ 90ms
-    // CI environments have high variance; 200ms is a practical upper bound
-    expect(elapsed).toBeLessThan(200);
+    // Parallel execution should complete significantly faster than the
+    // sequential sum.  We use a generous 80% margin to avoid CI flakiness.
+    expect(elapsed).toBeLessThan(sequentialSum * 0.8);
   });
 
   it('isolates concurrent failures from concurrent successes', async () => {
