@@ -319,7 +319,7 @@ async function main(): Promise<void> {
     }
     if (args[i] === '--threshold' && args[i + 1]) {
       const rawThreshold = args[i + 1];
-      // Validate that the entire argument is a positive integer
+      // Validate: must be a positive integer (optional leading zeros allowed, e.g. "03")
       if (!/^0*[1-9]\d*$/.test(rawThreshold)) {
         console.error(`Invalid --threshold value "${rawThreshold}". Threshold must be a positive integer.`);
         process.exit(1);
