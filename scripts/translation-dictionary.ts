@@ -3558,7 +3558,7 @@ const NON_SWEDISH_LANGUAGES: ReadonlyArray<Language> = [
   'en', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh',
 ];
 
-// Build all language maps in a single pass over the shared TERMS data.
+// Build per-language maps by reusing the shared TERMS data for each language.
 for (const lang of NON_SWEDISH_LANGUAGES) {
   DICTIONARIES[lang] = buildMap(lang, TERMS);
 }

@@ -95,7 +95,6 @@ export const SWEDISH_PARLIAMENTARY_TERMS: ReadonlySet<string> = new Set([
   'infrastrukturdepartementet',
   'arbetsmarknadsdepartementet',
   'näringsdepartementet',
-  'klimatdepartementet',
 ]);
 
 /** Result for a single detected leaked term. */
