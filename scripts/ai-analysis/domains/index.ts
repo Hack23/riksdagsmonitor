@@ -52,7 +52,7 @@ const WP_PROPS_DESC: Partial<Record<Language, (n: number) => string>> = {
   da: (n) => `${n} forslag kræver parlamentarisk behandling`,
   no: (n) => `${n} proposisjon${n !== 1 ? 'er' : ''} krever parlamentarisk behandling`,
   fi: (n) => `${n} esitys${n !== 1 ? 'tä' : ''} vaatii parlamentaarista käsittelyä`,
-  de: (n) => `${n} Regierungsvorlage${n !== 1 ? 'n' : ''} erfordern parlamentarische Bearbeitung`,
+  de: (n) => `${n} Regierungsvorlage${n !== 1 ? 'n' : ''} ${n === 1 ? 'erfordert' : 'erfordern'} parlamentarische Bearbeitung`,
   fr: (n) => `${n} proposition${n !== 1 ? 's' : ''} nécessitent un examen parlementaire`,
   es: (n) => `${n} proposición${n !== 1 ? 'es' : ''} requiere${n !== 1 ? 'n' : ''} acción parlamentaria`,
   nl: (n) => `${n} voorstel${n !== 1 ? 'len' : ''} vereisen parlementaire behandeling`,
@@ -80,7 +80,7 @@ const WP_COMMITTEE_DESC: Partial<Record<Language, (n: number) => string>> = {
   da: (n) => `${n} udvalgsrapport${n !== 1 ? 'er' : ''} former den parlamentariske holdning`,
   no: (n) => `${n} komitérapport${n !== 1 ? 'er' : ''} former den parlamentariske posisjonen`,
   fi: (n) => `${n} mietintö${n !== 1 ? 'ä' : ''} muokkaa parlamentaarista kantaa`,
-  de: (n) => `${n} Ausschussbericht${n !== 1 ? 'e' : ''} prägen die parlamentarische Position`,
+  de: (n) => `${n} Ausschussbericht${n !== 1 ? 'e' : ''} ${n === 1 ? 'prägt' : 'prägen'} die parlamentarische Position`,
   fr: (n) => `${n} rapport${n !== 1 ? 's' : ''} de commission façonnent la position parlementaire`,
   es: (n) => `${n} informe${n !== 1 ? 's' : ''} de comisión moldean la posición parlamentaria`,
   nl: (n) => `${n} commissierapport${n !== 1 ? 'en' : ''} vormen de parlementaire positie`,
@@ -108,7 +108,9 @@ const WP_SFS_DESC: Partial<Record<Language, (n: number) => string>> = {
   da: (n) => `${n} lov${n !== 1 ? 'e' : ''} etablerer den juridiske ramme — interessenter skal foretage overholdelsesvurdering`,
   no: (n) => `${n} lov${n !== 1 ? 'er' : ''} etablerer det juridiske rammeverket — interessenter må gjennomføre samsvarsvurdering`,
   fi: (n) => `${n} laki${n !== 1 ? 'a' : ''} muodostaa oikeudellisen kehyksen — sidosryhmien on suoritettava vaatimustenmukaisuustarkistus`,
-  de: (n) => `${n} Gesetz${n !== 1 ? 'e' : ''} bilden den Rechtsrahmen — Stakeholder müssen Compliance-Prüfung durchführen`,
+  de: (n) => n === 1
+    ? `${n} Gesetz bildet den Rechtsrahmen — Stakeholder müssen Compliance-Prüfung durchführen`
+    : `${n} Gesetze bilden den Rechtsrahmen — Stakeholder müssen Compliance-Prüfung durchführen`,
   fr: (n) => `${n} loi${n !== 1 ? 's' : ''} établissent le cadre juridique — les parties prenantes doivent procéder à un examen de conformité`,
   es: (n) => `${n} ley${n !== 1 ? 'es' : ''} establecen el marco legal — las partes interesadas deben realizar una revisión de cumplimiento`,
   nl: (n) => `${n} wet${n !== 1 ? 'ten' : ''} vormen het juridische kader — belanghebbenden moeten een nalevingsonderzoek uitvoeren`,

@@ -740,16 +740,16 @@ export class AIAnalysisPipeline {
     const items: string[] = [];
 
     if (propDocs.length > 0) {
-      items.push(interp(pickLang(TAKEAWAY_PROP, lang), { n: propDocs.length, t: topic }));
+      items.push(interp(pickLang(TAKEAWAY_PROP, lang), { n: propDocs.length, s: plural(propDocs.length, lang), t: topic }));
     }
     if (betDocs.length > 0) {
       items.push(interp(pickLang(TAKEAWAY_BET, lang), {
-        n: betDocs.length, t: topic, verb: betVerbForm(betDocs.length, lang),
+        n: betDocs.length, s: plural(betDocs.length, lang), t: topic, verb: betVerbForm(betDocs.length, lang),
       }));
     }
     if (motDocs.length > 0) {
       items.push(interp(pickLang(TAKEAWAY_MOT, lang), {
-        n: motDocs.length, t: topic, verb: motVerbForm(motDocs.length, lang),
+        n: motDocs.length, s: plural(motDocs.length, lang), t: topic, verb: motVerbForm(motDocs.length, lang),
       }));
     }
     if (euDocs.length > 0) {

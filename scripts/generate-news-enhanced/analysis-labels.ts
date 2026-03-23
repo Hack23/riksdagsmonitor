@@ -565,7 +565,7 @@ export const SIGNAL_SNAPSHOT: Lang14 = L14(
 // ── Key takeaway templates ────────────────────────────────────────────────────
 
 export const TAKEAWAY_PROP: Lang14 = L14(
-  'Government has submitted %n legislative proposals on %t — active policy commitment',
+  'Government has submitted %n legislative proposal%s on %t — active policy commitment',
   'Regeringen har lämnat %n lagstiftningsförslag om %t — aktivt politiskt engagemang',
   'Regeringen har fremsat %n lovforslag om %t — aktivt politisk engagement',
   'Regjeringen har fremmet %n lovforslag om %t — aktivt politisk engasjement',
@@ -582,7 +582,7 @@ export const TAKEAWAY_PROP: Lang14 = L14(
 );
 
 export const TAKEAWAY_BET: Lang14 = L14(
-  '%n committee reports %verb %t — parliamentary oversight engaged',
+  '%n committee report%s %verb %t — parliamentary oversight engaged',
   '%n betänkanden granskar %t — parlamentarisk tillsyn aktiverad',
   '%n udvalgsrapporter undersøger %t — parlamentarisk kontrol aktiveret',
   '%n komitérapporter undersøker %t — parlamentarisk kontroll engasjert',
@@ -599,7 +599,7 @@ export const TAKEAWAY_BET: Lang14 = L14(
 );
 
 export const TAKEAWAY_MOT: Lang14 = L14(
-  '%n opposition motions %verb %t — cross-party debate active',
+  '%n opposition motion%s %verb %t — cross-party debate active',
   '%n oppositionsmotioner utmanar %t — debatt över partigränser pågår',
   '%n oppositionsmotioner udfordrer %t — tværpartipolitisk debat aktiv',
   '%n opposisjonsmotioner utfordrer %t — tverr-partipolitisk debatt aktiv',
