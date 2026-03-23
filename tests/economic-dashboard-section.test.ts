@@ -219,4 +219,16 @@ describe('generateEconomicDashboardSection', () => {
     expect(section!.html).toContain('economic-indicators-list');
     expect(section!.html).toContain('<li>');
   });
+
+  it('includes average annotation on bar charts', () => {
+    const section = generateEconomicDashboardSection({
+      policyDomains: ['fiscal policy'],
+      dataPoints: makeDataPoints(),
+      lang: 'en',
+    });
+    expect(section).not.toBeNull();
+    expect(section!.html).toContain('data-chart-config');
+    // The annotation should be in the chart config
+    expect(section!.html).toContain('Avg');
+  });
 });

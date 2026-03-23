@@ -272,4 +272,55 @@ describe('generateDashboardSection', () => {
     // plugins.title.display should be false when title is empty (HTML-escaped in data attribute)
     expect(section.html).toContain('&quot;display&quot;:false');
   });
+
+  // ----- Enhanced Chart.js Config Tests -----
+
+  it('includes responsive and maintainAspectRatio in chart config', () => {
+    const chart = makeChart({ title: 'Test Chart' });
+    const data = makeDashboard({ charts: [chart] });
+    const section = generateDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('&quot;responsive&quot;:true');
+    expect(section.html).toContain('&quot;maintainAspectRatio&quot;:true');
+  });
+
+  it('includes dark theme tooltip styling in chart config', () => {
+    const chart = makeChart({ title: 'Styled Chart' });
+    const data = makeDashboard({ charts: [chart] });
+    const section = generateDashboardSection({ data, lang: 'en' });
+    // Tooltip background should be dark
+    expect(section.html).toContain('rgba(10,14,39,0.95)');
+    // Title color should be cyan
+    expect(section.html).toContain('#00d9ff');
+  });
+
+  it('includes legend styling with point style', () => {
+    const chart = makeChart({ title: 'Legend Test' });
+    const data = makeDashboard({ charts: [chart] });
+    const section = generateDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('&quot;usePointStyle&quot;:true');
+  });
+
+  it('includes line chart enhancements (tension, fill)', () => {
+    const lineChart = makeChart({
+      id: 'line-test',
+      type: 'line' as import('../scripts/types/article.js').DashboardChartType,
+      title: 'Line Test',
+    });
+    const data = makeDashboard({ charts: [lineChart] });
+    const section = generateDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('&quot;tension&quot;:0.3');
+    expect(section.html).toContain('&quot;fill&quot;:true');
+  });
+
+  it('includes radar chart scale config', () => {
+    const radarChart = makeChart({
+      id: 'radar-test',
+      type: 'radar' as import('../scripts/types/article.js').DashboardChartType,
+      title: 'Radar Test',
+    });
+    const data = makeDashboard({ charts: [radarChart] });
+    const section = generateDashboardSection({ data, lang: 'en' });
+    expect(section.html).toContain('&quot;r&quot;');
+    expect(section.html).toContain('&quot;pointLabels&quot;');
+  });
 });

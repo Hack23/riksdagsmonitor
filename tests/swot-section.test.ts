@@ -153,4 +153,47 @@ describe('generateSwotSection', () => {
     const section = generateSwotSection({ data: makeSwot(), lang: 'en' });
     expect(section.html).toContain('aria-label="SWOT Analysis"');
   });
+
+  // ----- SWOT Radar Chart Tests -----
+
+  it('renders radar chart canvas when multiple quadrants have entries', () => {
+    const section = generateSwotSection({ data: makeSwot(), lang: 'en' });
+    expect(section.html).toContain('swot-radar-wrapper');
+    expect(section.html).toContain('data-chart-config');
+    expect(section.html).toContain('canvas');
+  });
+
+  it('radar chart config has correct type and datasets', () => {
+    const section = generateSwotSection({ data: makeSwot(), lang: 'en' });
+    const match = section.html.match(/data-chart-config="([^"]*)"/);
+    expect(match).not.toBeNull();
+    const config = JSON.parse(match![1].replace(/&quot;/g, '"').replace(/&amp;/g, '&'));
+    expect(config.type).toBe('radar');
+    expect(config.data.labels).toHaveLength(4);
+    expect(config.data.datasets).toHaveLength(1);
+    expect(config.data.datasets[0].data).toHaveLength(4);
+  });
+
+  it('radar chart scores are weighted by impact level', () => {
+    const section = generateSwotSection({ data: makeSwot(), lang: 'en' });
+    const match = section.html.match(/data-chart-config="([^"]*)"/);
+    const config = JSON.parse(match![1].replace(/&quot;/g, '"').replace(/&amp;/g, '&'));
+    const scores = config.data.datasets[0].data;
+    // high impact (3) > medium (2) > low (1)
+    expect(scores[0]).toBe(3); // strengths: high
+    expect(scores[1]).toBe(2); // weaknesses: medium
+    expect(scores[2]).toBe(3); // opportunities: high
+    expect(scores[3]).toBe(1); // threats: low
+  });
+
+  it('omits radar chart when fewer than 2 quadrants have entries', () => {
+    const data: SwotData = {
+      strengths: [{ text: 'Only one', impact: 'high' }],
+      weaknesses: [],
+      opportunities: [],
+      threats: [],
+    };
+    const section = generateSwotSection({ data, lang: 'en' });
+    expect(section.html).not.toContain('swot-radar-wrapper');
+  });
 });

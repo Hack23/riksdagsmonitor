@@ -403,4 +403,86 @@ describe('generateMindmapSection', () => {
     const section = generateMindmapSection({ topic: 'T', branches: [], lang: 'ja', connections });
     expect(section.html).toContain('aria-label="ブランチ間の接続"');
   });
+
+  // ----- D3 Force-Directed Graph Config Tests -----
+
+  it('includes data-d3-mindmap attribute with JSON config', () => {
+    const section = generateMindmapSection({
+      topic: 'Test Topic',
+      branches: makeBranches(),
+      lang: 'en',
+    });
+    expect(section.html).toContain('data-d3-mindmap=');
+  });
+
+  it('D3 config has center node and branch nodes', () => {
+    const section = generateMindmapSection({
+      topic: 'Test Topic',
+      branches: makeBranches(),
+      lang: 'en',
+    });
+    const match = section.html.match(/data-d3-mindmap="([^"]*)"/);
+    expect(match).not.toBeNull();
+    const config = JSON.parse(match![1].replace(/&quot;/g, '"').replace(/&amp;/g, '&'));
+    expect(config.nodes).toBeDefined();
+    expect(config.links).toBeDefined();
+    // Center node + 3 branch nodes + leaf items
+    const centerNode = config.nodes.find((n: { id: string }) => n.id === 'center');
+    expect(centerNode).toBeDefined();
+    expect(centerNode.label).toBe('Test Topic');
+    expect(centerNode.color).toBe('#00d9ff');
+  });
+
+  it('D3 config includes leaf nodes for branch items', () => {
+    const section = generateMindmapSection({
+      topic: 'Test',
+      branches: [
+        { label: 'Actors', color: 'cyan', items: ['Actor A', 'Actor B'] },
+      ],
+      lang: 'en',
+    });
+    const match = section.html.match(/data-d3-mindmap="([^"]*)"/);
+    const config = JSON.parse(match![1].replace(/&quot;/g, '"').replace(/&amp;/g, '&'));
+    // center + branch + 2 items = 4 nodes
+    expect(config.nodes.length).toBe(4);
+    // center→branch + branch→item1 + branch→item2 = 3 links
+    expect(config.links.length).toBe(3);
+  });
+
+  it('D3 config includes AI-weighted items with correct weight values', () => {
+    const aiItems: AIMindmapItem[] = [
+      { text: 'Critical item', weight: 'critical' },
+      { text: 'Minor item', weight: 'minor' },
+    ];
+    const section = generateMindmapSection({
+      topic: 'Test',
+      branches: [{ label: 'Branch', color: 'magenta', aiItems }],
+      lang: 'en',
+    });
+    const match = section.html.match(/data-d3-mindmap="([^"]*)"/);
+    const config = JSON.parse(match![1].replace(/&quot;/g, '"').replace(/&amp;/g, '&'));
+    const criticalNode = config.nodes.find((n: { label: string }) => n.label === 'Critical item');
+    const minorNode = config.nodes.find((n: { label: string }) => n.label === 'Minor item');
+    expect(criticalNode.weight).toBe(4); // critical = 4
+    expect(minorNode.weight).toBe(1);    // minor = 1
+  });
+
+  it('D3 config includes cross-branch connection links', () => {
+    const connections: MindmapConnection[] = [
+      { fromBranch: 'Alpha', toBranch: 'Beta', relationship: 'influences' },
+    ];
+    const section = generateMindmapSection({
+      topic: 'Test',
+      branches: [
+        { label: 'Alpha', color: 'cyan' },
+        { label: 'Beta', color: 'green' },
+      ],
+      lang: 'en',
+      connections,
+    });
+    const match = section.html.match(/data-d3-mindmap="([^"]*)"/);
+    const config = JSON.parse(match![1].replace(/&quot;/g, '"').replace(/&amp;/g, '&'));
+    const crossLink = config.links.find((l: { label?: string }) => l.label === 'influences');
+    expect(crossLink).toBeDefined();
+  });
 });
