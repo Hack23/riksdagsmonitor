@@ -250,13 +250,22 @@ describe('Swedish Leakage Detector', () => {
       expect(report.score).toBeGreaterThan(0);
     });
 
-    it('should not flag Swedish ministry names in Norwegian articles', () => {
-      // Norwegian uses the same "departementet" naming convention as Swedish
+    it('should not flag shared ministry name forms in Norwegian articles', () => {
+      // Norwegian uses the same "departementet" naming convention as Swedish for some ministries
       const html = '<p>Finansdepartementet announced new policy together with Kulturdepartementet.</p>';
       const report = detectSwedishLeakage(html, 'no');
       const terms = report.leakedTerms.map((t) => t.term);
       expect(terms).not.toContain('finansdepartementet');
       expect(terms).not.toContain('kulturdepartementet');
+    });
+
+    it('should detect Swedish-only ministry names in Norwegian output', () => {
+      // These have distinct Norwegian translations (Justisdepartementet, Utenriksdepartementet)
+      const html = '<p>Både justitiedepartementet og utrikesdepartementet ble nevnt.</p>';
+      const report = detectSwedishLeakage(html, 'no');
+      const terms = report.leakedTerms.map((t) => t.term);
+      expect(terms).toContain('justitiedepartementet');
+      expect(terms).toContain('utrikesdepartementet');
     });
   });
 });

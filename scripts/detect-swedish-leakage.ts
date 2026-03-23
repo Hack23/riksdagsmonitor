@@ -290,13 +290,12 @@ const SHARED_PARLIAMENTARY_TERMS: Partial<Record<Language, ReadonlySet<string>>>
     'interpellation', 'interpellationen', 'interpellationer', 'interpellationerna',
     'regeringen', 'regeringens',
     'statsråd', 'statsrådet', 'statsråden',
-    // Norwegian ministry names use the same "departementet" form as Swedish
+    // Norwegian ministry names that use the same form as Swedish (shared)
+    // Note: justitiedepartementet (NO: Justisdepartementet) and
+    // utrikesdepartementet (NO: Utenriksdepartementet) are NOT shared —
+    // their Norwegian forms differ, so Swedish spellings should be flagged.
     'finansdepartementet',
-    'utrikesdepartementet',
-    'justitiedepartementet',
     'forsvarsdepartementet', 'försvarsdepartementet',
-    'utbildningsdepartementet',
-    'socialdepartementet',
     'kulturdepartementet',
     'miljödepartementet',
     'infrastrukturdepartementet',
