@@ -305,9 +305,12 @@ function buildEuNordicComparison(
 
 function buildAnalysisDocId(doc: RawDocument): string {
   if (doc.dok_id) return doc.dok_id;
-  const titleFallback = docTitle(doc).slice(0, 20);
-  if (titleFallback) return titleFallback;
-  return `${docType(doc)}:${(doc.datum ?? '').slice(0, 10)}`;
+  const title = docTitle(doc);
+  const datePart = (doc.datum ?? '').slice(0, 10);
+  if (title) {
+    return datePart ? `${docType(doc)}:${title}:${datePart}` : `${docType(doc)}:${title}`;
+  }
+  return datePart ? `${docType(doc)}:${datePart}` : docType(doc);
 }
 
 function createMinimalDocumentAnalysis(d: RawDocument): AIDocumentAnalysis {
