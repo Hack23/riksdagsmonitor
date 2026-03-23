@@ -123,7 +123,7 @@ describe('News Articles', () => {
       { path: '/news/2026-02-13-evening-analysis-en.html', lang: 'en', name: 'English' },
       { path: '/news/2026-02-13-evening-analysis-sv.html', lang: 'sv', name: 'Swedish' },
       { path: '/news/2026-02-13-evening-analysis-da.html', lang: 'da', name: 'Danish' },
-      { path: '/news/2026-02-13-evening-analysis-no.html', lang: 'no', name: 'Norwegian' },
+      { path: '/news/2026-02-13-evening-analysis-no.html', lang: 'nb', name: 'Norwegian' },
       { path: '/news/2026-02-13-evening-analysis-fi.html', lang: 'fi', name: 'Finnish' }
     ];
 
