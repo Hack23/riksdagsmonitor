@@ -5,7 +5,8 @@
  * analysis depth parsing, and shared state exports.
  *
  * Since config.ts has side effects at import time (reads process.argv, creates
- * directories), we mock dependencies and import once per describe block.
+ * directories), we mock dependencies and import the module once in a top-level
+ * beforeAll so all tests share the same config instance.
  *
  * @author Hack23 AB
  * @license Apache-2.0

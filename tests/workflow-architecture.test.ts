@@ -1030,8 +1030,8 @@ describe('Workflow timeout limits', () => {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       if (!fs.existsSync(filepath)) continue;
 
-      const content = fs.readFileSync(filepath, 'utf-8');
-      const timeoutMatch = content.match(/timeout-minutes:\s*(\d+)/);
+      const frontmatter = parseFrontmatter(filepath);
+      const timeoutMatch = frontmatter.match(/timeout-minutes:\s*(\d+)/);
       if (timeoutMatch) {
         const timeout = parseInt(timeoutMatch[1]!, 10);
         expect(
@@ -1042,15 +1042,15 @@ describe('Workflow timeout limits', () => {
     }
   });
 
-  it('all workflows should have timeout-minutes specified', () => {
+  it('all workflows should have timeout-minutes specified in frontmatter', () => {
     for (const workflowFile of ALL_NEWS_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       if (!fs.existsSync(filepath)) continue;
 
-      const content = fs.readFileSync(filepath, 'utf-8');
+      const frontmatter = parseFrontmatter(filepath);
       expect(
-        content.includes('timeout-minutes'),
-        `Workflow ${workflowFile} should have timeout-minutes specified`
+        frontmatter.includes('timeout-minutes'),
+        `Workflow ${workflowFile} should have timeout-minutes specified in frontmatter`
       ).toBe(true);
     }
   });
