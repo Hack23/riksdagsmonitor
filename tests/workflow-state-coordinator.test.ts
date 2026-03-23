@@ -835,7 +835,7 @@ describe('Workflow Lock Manager', () => {
   });
 });
 
-describe('Workflow State Coordinator', () => {
+describe('Workflow State Coordinator - Significance Features', () => {
   const TEST_SIG_STATE_FILE = path.join(__dirname, 'fixtures', 'test-sig-workflow-state.json');
   let coordinator: WorkflowStateCoordinator;
 
