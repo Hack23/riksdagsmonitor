@@ -5,6 +5,7 @@
 
 import type { Language } from './language.js';
 import type { MultiDimensionalQualityAssessment } from '../ai-analysis/quality-assessor.js';
+import type { UrgencyLabel } from '../ai-analysis/political-significance.js';
 
 /** Category label shown in article headers */
 export type ArticleCategory = 'prospective' | 'retrospective' | 'analysis' | 'breaking';
@@ -104,6 +105,10 @@ export interface ArticleData {
    * types to be injected without changing the template core.
    */
   sections?: TemplateSection[];
+  /** Political significance score (0-100) from the significance scorer */
+  significance?: number;
+  /** Editorial urgency label derived from the significance score */
+  urgency?: UrgencyLabel;
 }
 
 /** A single generated article (language variant) */
@@ -192,6 +197,8 @@ export interface BreakingEventData {
   voteId?: string;
   topic?: string;
   slug?: string;
+  /** Documents associated with the breaking event, used for significance scoring */
+  documents?: import('../data-transformers/types.js').RawDocument[];
   [key: string]: unknown;
 }
 

@@ -27,6 +27,8 @@ export interface RecentArticleEntry {
   title: string;
   topics: string[];
   mcpQueries: string[];
+  /** Political significance score (0-100) when available */
+  significance?: number;
 }
 
 /** Input shape for adding an article to recent-article tracking */
@@ -37,6 +39,8 @@ export interface RecentArticleInput {
   topics?: string[];
   mcpQueries?: string[];
   timestamp?: string;
+  /** Political significance score (0-100) when available */
+  significance?: number;
 }
 
 // ---------------------------------------------------------------------------

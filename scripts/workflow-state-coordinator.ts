@@ -598,6 +598,7 @@ export class WorkflowStateCoordinator {
       title: article.title,
       topics: article.topics ? [...article.topics] : [],
       mcpQueries: article.mcpQueries ? [...article.mcpQueries] : [],
+      significance: article.significance,
     };
 
     this.state.recentArticles.push(articleEntry);
@@ -614,12 +615,16 @@ export class WorkflowStateCoordinator {
    * @param title - Article title
    * @param topics - Article topics
    * @param mcpQueries - MCP query keys used for this article
+   * @param significance - Optional political significance score (0-100).
+   *   When provided and ≥ 80, a same-topic article with lower significance
+   *   is NOT treated as a duplicate — the high-significance version overrides.
    * @returns Duplicate check result with similarity score
    */
   async checkDuplicateArticle(
     title: string,
     topics: string[] = [],
     mcpQueries: string[] = [],
+    significance?: number,
   ): Promise<DuplicateCheckResult> {
     this.cleanupExpiredEntries();
 
@@ -632,6 +637,7 @@ export class WorkflowStateCoordinator {
     let bestDuplicateScore: number = -1;
     let duplicateMatchedArticle: RecentArticleEntry | null = null;
     let isDuplicate: boolean = false;
+    const similarMatches: RecentArticleEntry[] = [];
 
     for (const recentArticle of this.state.recentArticles) {
       // Weighted combined similarity (title 50%, topics 30%, sources 20%)
@@ -657,11 +663,34 @@ export class WorkflowStateCoordinator {
         matchedArticle = recentArticle;
       }
 
+      if (similarity >= SIMILARITY_THRESHOLD) {
+        similarMatches.push(recentArticle);
+      }
+
       if (currentIsDuplicate && effectiveSimilarity > bestDuplicateScore) {
         bestDuplicateScore = effectiveSimilarity;
         duplicateMatchedArticle = recentArticle;
         isDuplicate = true;
       }
+    }
+
+    // High-significance override: if the new article has significance ≥ 80
+    // and the matched article either has no numeric significance or a score < 80,
+    // treat the matched article as lower/unknown significance and allow the new
+    // article to be published alongside the existing one (isDuplicate = false).
+    if (
+      isDuplicate &&
+      typeof significance === 'number' &&
+      significance >= 80 &&
+      !similarMatches.some((article: RecentArticleEntry) =>
+        typeof article.significance === 'number' && article.significance >= 80
+      )
+    ) {
+      return {
+        isDuplicate: false,
+        matchedArticle: null,
+        similarityScore: maxSimilarity,
+      };
     }
 
     return {

@@ -796,6 +796,139 @@ describe('Workflow Lock Manager', () => {
     it('should return 0 when lock directory does not exist', () => {
       const freshManager = new WorkflowLockManager(path.join(TEST_LOCK_DIR, 'nonexistent'));
       expect(freshManager.cleanupStaleLocks()).toBe(0);
+  describe('Significance-Aware Deduplication', () => {
+    it('should store significance when adding article', async () => {
+      await coordinator.addRecentArticle({
+        slug: 'test-en.html',
+        workflow: 'realtime',
+        title: 'Test Article',
+        topics: ['budget'],
+        mcpQueries: [],
+        significance: 75,
+      });
+
+      const articles = coordinator.getRecentArticles();
+      expect(articles).toHaveLength(1);
+      expect(articles[0].significance).toBe(75);
+    });
+
+    it('should allow high-significance article to override low-significance duplicate', async () => {
+      // Add a low-significance article first
+      await coordinator.addRecentArticle({
+        slug: 'budget-low-en.html',
+        workflow: 'realtime',
+        title: 'Budget discussion in parliament today',
+        topics: ['budget', 'finance'],
+        mcpQueries: ['search_voteringar'],
+        significance: 40,
+      });
+
+      // Check same-topic article with high significance (≥80)
+      const result: DuplicateCheckResult = await coordinator.checkDuplicateArticle(
+        'Budget discussion in parliament today',
+        ['budget', 'finance'],
+        ['search_voteringar'],
+        85, // high significance
+      );
+
+      // Should NOT be flagged as duplicate — high significance overrides
+      expect(result.isDuplicate).toBe(false);
+    });
+
+    it('should still flag duplicate when both have high significance', async () => {
+      // Add a high-significance article
+      await coordinator.addRecentArticle({
+        slug: 'budget-high-en.html',
+        workflow: 'realtime',
+        title: 'Budget vote today in parliament',
+        topics: ['budget', 'vote'],
+        mcpQueries: ['search_voteringar'],
+        significance: 90,
+      });
+
+      // Check same-topic article also with high significance
+      const result: DuplicateCheckResult = await coordinator.checkDuplicateArticle(
+        'Budget vote today in parliament',
+        ['budget', 'vote'],
+        ['search_voteringar'],
+        85,
+      );
+
+      // Should be flagged — both are high significance, normal dedup applies
+      expect(result.isDuplicate).toBe(true);
+    });
+
+    it('should still flag duplicate when new article has low significance', async () => {
+      // Add a low-significance article
+      await coordinator.addRecentArticle({
+        slug: 'routine-en.html',
+        workflow: 'article-gen',
+        title: 'Routine parliamentary session review',
+        topics: ['session'],
+        mcpQueries: [],
+        significance: 30,
+      });
+
+      // Check same-topic with low significance — no override
+      const result: DuplicateCheckResult = await coordinator.checkDuplicateArticle(
+        'Routine parliamentary session review',
+        ['session'],
+        [],
+        35,
+      );
+
+      expect(result.isDuplicate).toBe(true);
+    });
+
+    it('should handle missing significance on existing article (undefined)', async () => {
+      // Add article without significance (legacy entry)
+      await coordinator.addRecentArticle({
+        slug: 'legacy-en.html',
+        workflow: 'realtime',
+        title: 'Legacy article about economic policy',
+        topics: ['economy'],
+        mcpQueries: [],
+        // no significance
+      });
+
+      // High-significance new article should override
+      const result: DuplicateCheckResult = await coordinator.checkDuplicateArticle(
+        'Legacy article about economic policy',
+        ['economy'],
+        [],
+        85,
+      );
+
+      expect(result.isDuplicate).toBe(false);
+    });
+
+    it('should still flag duplicate when another similar high-significance article exists', async () => {
+      await coordinator.addRecentArticle({
+        slug: 'budget-low-detail-en.html',
+        workflow: 'realtime',
+        title: 'Budget discussion in parliament details',
+        topics: ['budget', 'finance'],
+        mcpQueries: ['search_voteringar'],
+        significance: 35,
+      });
+
+      await coordinator.addRecentArticle({
+        slug: 'budget-high-keyvote-en.html',
+        workflow: 'realtime',
+        title: 'Budget discussion in parliament key vote',
+        topics: ['budget', 'finance'],
+        mcpQueries: ['search_voteringar'],
+        significance: 92,
+      });
+
+      const result: DuplicateCheckResult = await coordinator.checkDuplicateArticle(
+        'Budget discussion in parliament today',
+        ['budget', 'finance'],
+        ['search_voteringar'],
+        85,
+      );
+
+      expect(result.isDuplicate).toBe(true);
     });
   });
 });
