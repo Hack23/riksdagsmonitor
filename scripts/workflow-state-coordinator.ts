@@ -308,12 +308,18 @@ export class WorkflowLockManager {
             const existing: LockInfo = JSON.parse(raw) as LockInfo;
             const acquiredAtMs: number = new Date(existing.acquiredAt).getTime();
             const hasValidAcquiredAt: boolean = Number.isFinite(acquiredAtMs);
-            const expiryMs: number =
-              typeof existing.expiresAfterMs === 'number' && existing.expiresAfterMs > 0
-                ? existing.expiresAfterMs
-                : this.timeoutMs;
+            const hasExpiresAfterMs: boolean = Object.prototype.hasOwnProperty.call(
+              existing,
+              'expiresAfterMs',
+            );
+            const hasValidExpiresAfterMs: boolean =
+              hasExpiresAfterMs &&
+              typeof existing.expiresAfterMs === 'number' &&
+              Number.isFinite(existing.expiresAfterMs) &&
+              existing.expiresAfterMs > 0;
+            const expiryMs: number = hasValidExpiresAfterMs ? existing.expiresAfterMs : this.timeoutMs;
             const isExpired: boolean = hasValidAcquiredAt && Date.now() - acquiredAtMs > expiryMs;
-            const treatAsCorrupt: boolean = !hasValidAcquiredAt;
+            const treatAsCorrupt: boolean = !hasValidAcquiredAt || (hasExpiresAfterMs && !hasValidExpiresAfterMs);
 
             if ((isExpired || treatAsCorrupt) && reclaimAttempts < maxReclaims) {
               // Stale or corrupt lock — reclaim so workflows aren't blocked indefinitely.

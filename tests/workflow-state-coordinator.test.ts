@@ -769,6 +769,25 @@ describe('Workflow Lock Manager', () => {
       expect(info!.workflowId).toBe('wf-new');
     });
 
+    it('should reclaim lock with explicitly invalid expiresAfterMs', () => {
+      // Create lock with valid acquiredAt but explicitly invalid expiresAfterMs
+      const lockPath = path.join(TEST_LOCK_DIR, 'propositions-2026-03-23.lock');
+      fs.mkdirSync(lockPath, { recursive: true });
+      fs.writeFileSync(path.join(lockPath, 'info.json'), JSON.stringify({
+        workflowId: 'old-wf',
+        acquiredAt: new Date().toISOString(),
+        expiresAfterMs: 0,
+      }), 'utf-8');
+
+      // acquireLock should treat zero expiresAfterMs as corrupt and reclaim immediately
+      const result = lockManager.acquireLock('propositions', '2026-03-23', 'wf-new');
+      expect(result).toBe(true);
+
+      const info = lockManager.getLockInfo('propositions', '2026-03-23');
+      expect(info).not.toBeNull();
+      expect(info!.workflowId).toBe('wf-new');
+    });
+
     it('should throw for non-EEXIST fs errors during acquire', () => {
       const mkdirSpy = vi.spyOn(fs, 'mkdirSync').mockImplementationOnce(() => {
         const error = new Error('permission denied') as NodeJS.ErrnoException;
