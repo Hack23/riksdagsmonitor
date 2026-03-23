@@ -179,15 +179,183 @@ import type {
   WorkflowExecutionMetadata,
   WorkflowRecord,
   WorkflowStatistics,
+  LockInfo,
+  ActiveGeneration,
 } from './types/workflow.js';
 
 const __filename: string = fileURLToPath(import.meta.url);
 const __dirname: string = path.dirname(__filename);
 
 const STATE_FILE: string = path.join(__dirname, '..', 'news', 'metadata', 'workflow-state.json');
+const LOCK_DIR: string = path.join(__dirname, '..', 'news', 'metadata', 'locks');
 const MCP_CACHE_TTL_SECONDS: number = 2 * 60 * 60; // 2 hours
+const MCP_CACHE_TTL_NON_PLENARY_SECONDS: number = 4 * 60 * 60; // 4 hours
 const RECENT_ARTICLE_TTL_SECONDS: number = 6 * 60 * 60; // 6 hours
 const SIMILARITY_THRESHOLD: number = 0.70; // 70% similarity triggers deduplication
+const TOPIC_JACCARD_THRESHOLD: number = 0.50; // 50% topic overlap triggers deduplication
+const LOCK_TIMEOUT_MS: number = 45 * 60 * 1000; // 45 minutes
+
+/**
+ * Compute Jaccard similarity between two topic arrays.
+ *
+ * @param a - First topic array
+ * @param b - Second topic array
+ * @returns Jaccard similarity 0.0-1.0
+ */
+export function jaccardTopicSimilarity(a: string[], b: string[]): number {
+  const setA: Set<string> = new Set(a.map((t: string) => t.toLowerCase()));
+  const setB: Set<string> = new Set(b.map((t: string) => t.toLowerCase()));
+  const intersection: number = [...setA].filter((t: string) => setB.has(t)).length;
+  const union: number = new Set([...setA, ...setB]).size;
+  return union === 0 ? 0 : intersection / union;
+}
+
+/**
+ * Return adaptive MCP cache TTL based on Riksdag plenary hours.
+ *
+ * Plenary hours: 08:00-16:00 CET = 07:00-15:00 UTC → 2-hour TTL.
+ * Non-plenary hours → 4-hour TTL (data changes less frequently).
+ *
+ * @param now - Optional Date for testing
+ * @returns TTL in seconds
+ */
+export function getAdaptiveCacheTTL(now?: Date): number {
+  const d: Date = now ?? new Date();
+  const hour: number = d.getUTCHours();
+  const isPlenaryHour: boolean = hour >= 7 && hour <= 15;
+  return isPlenaryHour ? MCP_CACHE_TTL_SECONDS : MCP_CACHE_TTL_NON_PLENARY_SECONDS;
+}
+
+/**
+ * Workflow Lock Manager — file-based soft locks for cross-workflow coordination.
+ *
+ * Locks are directories under `news/metadata/locks/{type}-{date}.lock/`
+ * containing an `info.json` file with lease metadata.
+ */
+export class WorkflowLockManager {
+  private readonly lockDir: string;
+  private readonly timeoutMs: number;
+
+  constructor(lockDir: string = LOCK_DIR, timeoutMs: number = LOCK_TIMEOUT_MS) {
+    this.lockDir = lockDir;
+    this.timeoutMs = timeoutMs;
+  }
+
+  /**
+   * Acquire a soft lock for the given type + date.
+   * Uses `mkdirSync({ recursive: false })` for atomic creation on POSIX.
+   *
+   * @returns true if lock acquired, false if already held
+   */
+  acquireLock(type: string, date: string, workflowId: string): boolean {
+    const lockPath: string = path.join(this.lockDir, `${type}-${date}.lock`);
+    try {
+      // Ensure parent directory exists
+      if (!fs.existsSync(this.lockDir)) {
+        fs.mkdirSync(this.lockDir, { recursive: true });
+      }
+      // Atomic directory creation — fails if already exists
+      fs.mkdirSync(lockPath, { recursive: false });
+      const info: LockInfo = {
+        workflowId,
+        acquiredAt: new Date().toISOString(),
+        expiresAfterMs: this.timeoutMs,
+      };
+      fs.writeFileSync(path.join(lockPath, 'info.json'), JSON.stringify(info, null, 2), 'utf-8');
+      return true;
+    } catch {
+      // Check if existing lock is stale — if so, reclaim
+      try {
+        const infoPath: string = path.join(lockPath, 'info.json');
+        if (fs.existsSync(infoPath)) {
+          const existing: LockInfo = JSON.parse(fs.readFileSync(infoPath, 'utf-8')) as LockInfo;
+          const acquiredAt: number = new Date(existing.acquiredAt).getTime();
+          const expiry: number = existing.expiresAfterMs ?? this.timeoutMs;
+          if (Date.now() - acquiredAt > expiry) {
+            // Stale — reclaim
+            this.releaseLock(type, date);
+            return this.acquireLock(type, date, workflowId);
+          }
+        }
+      } catch {
+        // If we can't read the lock info, treat as held
+      }
+      return false;
+    }
+  }
+
+  /**
+   * Release a held lock.
+   */
+  releaseLock(type: string, date: string): void {
+    const lockPath: string = path.join(this.lockDir, `${type}-${date}.lock`);
+    try {
+      fs.rmSync(lockPath, { recursive: true, force: true });
+    } catch {
+      // Ignore errors during cleanup
+    }
+  }
+
+  /**
+   * Check if a lock is currently held.
+   */
+  isLocked(type: string, date: string): boolean {
+    const lockPath: string = path.join(this.lockDir, `${type}-${date}.lock`);
+    return fs.existsSync(lockPath);
+  }
+
+  /**
+   * Read lock information if the lock exists.
+   */
+  getLockInfo(type: string, date: string): LockInfo | null {
+    const infoPath: string = path.join(this.lockDir, `${type}-${date}.lock`, 'info.json');
+    try {
+      if (fs.existsSync(infoPath)) {
+        return JSON.parse(fs.readFileSync(infoPath, 'utf-8')) as LockInfo;
+      }
+    } catch {
+      // Ignore read errors
+    }
+    return null;
+  }
+
+  /**
+   * Remove all locks older than the configured timeout.
+   *
+   * @returns Number of stale locks cleaned up
+   */
+  cleanupStaleLocks(): number {
+    let cleaned: number = 0;
+    try {
+      if (!fs.existsSync(this.lockDir)) return 0;
+      const entries: string[] = fs.readdirSync(this.lockDir);
+      for (const entry of entries) {
+        if (!entry.endsWith('.lock')) continue;
+        const infoPath: string = path.join(this.lockDir, entry, 'info.json');
+        try {
+          if (fs.existsSync(infoPath)) {
+            const info: LockInfo = JSON.parse(fs.readFileSync(infoPath, 'utf-8')) as LockInfo;
+            const acquiredAt: number = new Date(info.acquiredAt).getTime();
+            const expiry: number = info.expiresAfterMs ?? this.timeoutMs;
+            if (Date.now() - acquiredAt > expiry) {
+              fs.rmSync(path.join(this.lockDir, entry), { recursive: true, force: true });
+              cleaned++;
+            }
+          } else {
+            // No info.json — remove orphaned lock directory
+            fs.rmSync(path.join(this.lockDir, entry), { recursive: true, force: true });
+            cleaned++;
+          }
+        } catch {
+          // Ignore individual lock cleanup errors
+        }
+      }
+    } catch {
+      // Ignore overall cleanup errors
+    }
+    return cleaned;
+  }
+}
 
 /**
  * Workflow State Coordinator
@@ -203,6 +371,7 @@ export class WorkflowStateCoordinator {
       recentArticles: [],
       mcpQueryCache: {},
       workflows: {},
+      activeGenerations: [],
     };
   }
 
@@ -214,6 +383,10 @@ export class WorkflowStateCoordinator {
       if (fs.existsSync(this.stateFilePath)) {
         const content: string = fs.readFileSync(this.stateFilePath, 'utf-8');
         this.state = JSON.parse(content) as WorkflowState;
+        // Ensure activeGenerations array exists for backward compat
+        if (!this.state.activeGenerations) {
+          this.state.activeGenerations = [];
+        }
         this.cleanupExpiredEntries();
       } else {
         // Initialize empty state
@@ -227,7 +400,7 @@ export class WorkflowStateCoordinator {
   }
 
   /**
-   * Save state to disk
+   * Save state to disk using atomic write (write-to-tmp + rename).
    */
   async save(): Promise<void> {
     try {
@@ -237,7 +410,9 @@ export class WorkflowStateCoordinator {
       }
 
       this.state.lastUpdate = new Date().toISOString();
-      fs.writeFileSync(this.stateFilePath, JSON.stringify(this.state, null, 2), 'utf-8');
+      const tmpPath: string = `${this.stateFilePath}.tmp.${process.pid}`;
+      fs.writeFileSync(tmpPath, JSON.stringify(this.state, null, 2), 'utf-8');
+      fs.renameSync(tmpPath, this.stateFilePath);
     } catch (error: unknown) {
       const message: string = error instanceof Error ? error.message : String(error);
       console.error('Error saving workflow state:', message);
@@ -251,7 +426,7 @@ export class WorkflowStateCoordinator {
   cleanupExpiredEntries(): void {
     const now: number = Date.now();
 
-    // Clean MCP cache using per-entry TTL (default: 2 hours)
+    // Clean MCP cache using per-entry TTL (default: adaptive)
     Object.keys(this.state.mcpQueryCache).forEach((key: string) => {
       const entry: MCPCacheEntry | undefined = this.state.mcpQueryCache[key];
       if (!entry) {
@@ -289,18 +464,19 @@ export class WorkflowStateCoordinator {
   }
 
   /**
-   * Cache MCP query result
+   * Cache MCP query result with adaptive TTL.
    *
    * @param queryKey - Unique identifier for the query
    * @param result - Query result to cache
-   * @param ttl - Time to live in seconds (default: 2 hours)
+   * @param ttl - Time to live in seconds (default: adaptive based on plenary hours)
    */
-  async cacheMCPQuery(queryKey: string, result: unknown, ttl: number = MCP_CACHE_TTL_SECONDS): Promise<void> {
+  async cacheMCPQuery(queryKey: string, result: unknown, ttl?: number): Promise<void> {
+    const effectiveTtl: number = ttl ?? getAdaptiveCacheTTL();
     const resultHash: string = this.hashObject(result);
 
     this.state.mcpQueryCache[queryKey] = {
       timestamp: new Date().toISOString(),
-      ttl,
+      ttl: effectiveTtl,
       resultHash,
       result,
     };
@@ -357,7 +533,11 @@ export class WorkflowStateCoordinator {
   }
 
   /**
-   * Check if article is duplicate based on similarity
+   * Check if article is duplicate based on similarity.
+   *
+   * Uses both weighted title/topic/source similarity (≥ 0.70 threshold)
+   * and Jaccard topic-only similarity (≥ 0.50 threshold) to catch
+   * same-topic articles with different titles.
    *
    * @param title - Article title
    * @param topics - Article topics
@@ -375,7 +555,8 @@ export class WorkflowStateCoordinator {
     let matchedArticle: RecentArticleEntry | null = null;
 
     for (const recentArticle of this.state.recentArticles) {
-      const similarity: number = this.calculateSimilarity(
+      // Weighted combined similarity (title 50%, topics 30%, sources 20%)
+      const combinedSimilarity: number = this.calculateSimilarity(
         title,
         topics,
         mcpQueries,
@@ -384,8 +565,17 @@ export class WorkflowStateCoordinator {
         [...recentArticle.mcpQueries],
       );
 
-      if (similarity > maxSimilarity) {
-        maxSimilarity = similarity;
+      // Jaccard topic-only similarity for semantic deduplication
+      const topicJaccard: number = jaccardTopicSimilarity(topics, recentArticle.topics);
+
+      // Take the higher of: combined similarity or topic Jaccard (if above its threshold)
+      const effectiveSimilarity: number =
+        topicJaccard >= TOPIC_JACCARD_THRESHOLD
+          ? Math.max(combinedSimilarity, topicJaccard)
+          : combinedSimilarity;
+
+      if (effectiveSimilarity > maxSimilarity) {
+        maxSimilarity = effectiveSimilarity;
         matchedArticle = recentArticle;
       }
     }
@@ -508,6 +698,40 @@ export class WorkflowStateCoordinator {
   }
 
   /**
+   * Register an active generation for cross-workflow visibility.
+   */
+  async registerActiveGeneration(workflowId: string, type: string, date: string): Promise<void> {
+    if (!this.state.activeGenerations) {
+      this.state.activeGenerations = [];
+    }
+    this.state.activeGenerations.push({
+      workflowId,
+      type,
+      date,
+      startedAt: new Date().toISOString(),
+    });
+    await this.save();
+  }
+
+  /**
+   * Unregister an active generation when done.
+   */
+  async unregisterActiveGeneration(workflowId: string, type: string, date: string): Promise<void> {
+    if (!this.state.activeGenerations) return;
+    this.state.activeGenerations = this.state.activeGenerations.filter(
+      (g: ActiveGeneration) => !(g.workflowId === workflowId && g.type === type && g.date === date),
+    );
+    await this.save();
+  }
+
+  /**
+   * Get active generations for cross-workflow visibility.
+   */
+  getActiveGenerations(): ActiveGeneration[] {
+    return this.state.activeGenerations ?? [];
+  }
+
+  /**
    * Get recent articles from last N hours
    *
    * @param hours - Hours to look back
@@ -540,6 +764,9 @@ export class WorkflowStateCoordinator {
 // Export for direct usage
 export {
   MCP_CACHE_TTL_SECONDS,
+  MCP_CACHE_TTL_NON_PLENARY_SECONDS,
   RECENT_ARTICLE_TTL_SECONDS,
   SIMILARITY_THRESHOLD,
+  TOPIC_JACCARD_THRESHOLD,
+  LOCK_TIMEOUT_MS,
 };

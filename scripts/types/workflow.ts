@@ -69,6 +69,25 @@ export interface WorkflowRecord {
 }
 
 // ---------------------------------------------------------------------------
+// Workflow locks
+// ---------------------------------------------------------------------------
+
+/** Information stored in a lock's info.json */
+export interface LockInfo {
+  workflowId: string;
+  acquiredAt: string;
+  expiresAfterMs: number;
+}
+
+/** An in-progress generation tracked for cross-workflow visibility */
+export interface ActiveGeneration {
+  workflowId: string;
+  type: string;
+  date: string;
+  startedAt: string;
+}
+
+// ---------------------------------------------------------------------------
 // Top-level state
 // ---------------------------------------------------------------------------
 
@@ -78,6 +97,7 @@ export interface WorkflowState {
   recentArticles: RecentArticleEntry[];
   mcpQueryCache: Record<string, MCPCacheEntry>;
   workflows: Record<string, WorkflowRecord>;
+  activeGenerations?: ActiveGeneration[];
 }
 
 /** Aggregated statistics returned by getWorkflowStatistics() */
