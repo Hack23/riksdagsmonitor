@@ -276,19 +276,25 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
       mcpCalls.push({ tool: 'search_ledamoter', result: [] });
     }
     
-    // Compute political significance score for the event documents
+    // Compute political significance score when event documents are available.
+    // When no documents are provided (e.g., manually triggered breaking news),
+    // the significance gate is skipped — the caller is assumed to have already
+    // made the editorial decision to generate.
     const eventDocs: RawDocument[] = eventData.documents ?? [];
-    const significance: SignificanceScore = scoreDocuments(eventDocs);
-    console.log(`  📊 Political significance: ${significance.score}/100 (${significance.urgency})`);
+    let significance: SignificanceScore | null = null;
+    if (eventDocs.length > 0) {
+      significance = scoreDocuments(eventDocs);
+      console.log(`  📊 Political significance: ${significance.score}/100 (${significance.urgency})`);
 
-    // Gate: skip generation if significance is below threshold
-    if (significance.score < BREAKING_NEWS_THRESHOLD) {
-      console.log(`  ⏭️  Significance ${significance.score} < ${BREAKING_NEWS_THRESHOLD} — skipping generation (not newsworthy)`);
-      return {
-        success: false,
-        error: `significance ${significance.score} below threshold ${BREAKING_NEWS_THRESHOLD}`,
-        mcpCalls,
-      };
+      // Gate: skip generation if significance is below threshold
+      if (significance.score < BREAKING_NEWS_THRESHOLD) {
+        console.log(`  ⏭️  Significance ${significance.score} < ${BREAKING_NEWS_THRESHOLD} — skipping generation (not newsworthy)`);
+        return {
+          success: false,
+          error: `significance ${significance.score} below threshold ${BREAKING_NEWS_THRESHOLD}`,
+          mcpCalls,
+        };
+      }
     }
 
     const today = new Date();
@@ -326,8 +332,8 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
-        significance: significance.score,
-        urgency: significance.urgency,
+        significance: significance?.score,
+        urgency: significance?.urgency,
       });
       
       articles.push({
