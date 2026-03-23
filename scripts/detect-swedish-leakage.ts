@@ -93,6 +93,18 @@ export function stripHtml(html: string): string {
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
     .replace(/&nbsp;/g, ' ')
+    // Swedish characters (HTML named and numeric entities)
+    .replace(/&auml;|&#228;|&#xE4;/g, 'ä')
+    .replace(/&Auml;|&#196;|&#xC4;/g, 'Ä')
+    .replace(/&ouml;|&#246;|&#xF6;/g, 'ö')
+    .replace(/&Ouml;|&#214;|&#xD6;/g, 'Ö')
+    .replace(/&aring;|&#229;|&#xE5;/g, 'å')
+    .replace(/&Aring;|&#197;|&#xC5;/g, 'Å')
+    // Common quote and dash entities
+    .replace(/&ndash;|&#8211;|&#x2013;/g, '-')
+    .replace(/&mdash;|&#8212;|&#x2014;/g, '-')
+    .replace(/&ldquo;|&rdquo;|&#8220;|&#8221;|&#x201C;|&#x201D;/g, '"')
+    .replace(/&lsquo;|&rsquo;|&#8216;|&#8217;|&#x2018;|&#x2019;|&apos;/g, "'")
     .replace(/&amp;/g, '&');
   // Normalise whitespace
   return text.replace(/\s+/g, ' ').trim();

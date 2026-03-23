@@ -32,6 +32,22 @@ describe('Swedish Leakage Detector', () => {
     it('should normalise whitespace', () => {
       expect(stripHtml('  Hello   World  ')).toBe('Hello World');
     });
+
+    it('should decode Swedish character entities (å, ä, ö)', () => {
+      expect(stripHtml('bet&auml;nkande')).toBe('betänkande');
+      expect(stripHtml('f&ouml;r')).toBe('för');
+      expect(stripHtml('&aring;r')).toBe('år');
+      expect(stripHtml('&Auml;ldre')).toBe('Äldre');
+      expect(stripHtml('&#228;ven')).toBe('även');
+      expect(stripHtml('&#xE4;ven')).toBe('även');
+    });
+
+    it('should decode quote and dash entities', () => {
+      expect(stripHtml('a &ndash; b')).toBe('a - b');
+      expect(stripHtml('a &mdash; b')).toBe('a - b');
+      expect(stripHtml('&ldquo;hello&rdquo;')).toBe('"hello"');
+      expect(stripHtml('&lsquo;hello&rsquo;')).toBe("'hello'");
+    });
   });
 
   // ---- Word lists ----
@@ -115,6 +131,13 @@ describe('Swedish Leakage Detector', () => {
       const terms = report.leakedTerms.map((t) => t.term);
       expect(terms).toContain('finansutskottet');
       expect(terms).toContain('departementet');
+    });
+
+    it('should detect Swedish terms encoded as HTML entities', () => {
+      const html = '<p>The bet&auml;nkande was discussed in the f&ouml;rsvarsutskottet.</p>';
+      const report = detectSwedishLeakage(html, 'en');
+      const terms = report.leakedTerms.map((t) => t.term);
+      expect(terms).toContain('betänkande');
     });
 
     it('should handle HTML content with nested tags', () => {
