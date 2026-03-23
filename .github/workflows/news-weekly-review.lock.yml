@@ -22,7 +22,7 @@
 #
 # Generates weekly review retrospective articles in core languages (EN, SV). Translations handled by news-translate workflow. Runs Saturdays to review the past week.
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"ca3c255b308db5c1ebb9228173ac8188f170665cbf369ee325b731395f4dc63c","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"60845a00d28a7ad5849bd9384584ec7450576d5b20c4e656dad60c7f3e4931db","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
 
 name: "News: Weekly Review"
 "on":
@@ -30,13 +30,12 @@ name: "News: Weekly Review"
   - cron: "0 9 * * 6"
   workflow_dispatch:
     inputs:
-      article_date:
-        description: Article date (YYYY-MM-DD) for manual backfills. Defaults to today when
-          omitted or scheduled.
-        required: false
       analysis_depth:
         default: standard
         description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.
+        required: false
+      article_date:
+        description: Article date (YYYY-MM-DD) for manual backfills. Defaults to today when omitted or scheduled.
         required: false
       force_generation:
         default: false
@@ -126,10 +125,12 @@ jobs:
         env:
           GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
           GH_AW_SAFE_OUTPUTS: ${{ env.GH_AW_SAFE_OUTPUTS }}
+          GH_AW_EXPR_731DE217: ${{ github.event.inputs.force_generation || 'false' }}
           GH_AW_GITHUB_ACTOR: ${{ github.actor }}
           GH_AW_GITHUB_EVENT_COMMENT_ID: ${{ github.event.comment.id }}
           GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
           GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH: ${{ github.event.inputs.analysis_depth }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: ${{ github.event.inputs.article_date }}
           GH_AW_GITHUB_EVENT_INPUTS_FORCE_GENERATION: ${{ github.event.inputs.force_generation }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
           GH_AW_GITHUB_EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
@@ -196,6 +197,8 @@ jobs:
         env:
           GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
           GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH: ${{ github.event.inputs.analysis_depth }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: ${{ github.event.inputs.article_date }}
+          GH_AW_EXPR_731DE217: ${{ github.event.inputs.force_generation || 'false' }}
           GH_AW_GITHUB_EVENT_INPUTS_FORCE_GENERATION: ${{ github.event.inputs.force_generation }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
         with:
@@ -208,10 +211,12 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
+          GH_AW_EXPR_731DE217: ${{ github.event.inputs.force_generation || 'false' }}
           GH_AW_GITHUB_ACTOR: ${{ github.actor }}
           GH_AW_GITHUB_EVENT_COMMENT_ID: ${{ github.event.comment.id }}
           GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
           GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH: ${{ github.event.inputs.analysis_depth }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: ${{ github.event.inputs.article_date }}
           GH_AW_GITHUB_EVENT_INPUTS_FORCE_GENERATION: ${{ github.event.inputs.force_generation }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
           GH_AW_GITHUB_EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
@@ -230,10 +235,12 @@ jobs:
             return await substitutePlaceholders({
               file: process.env.GH_AW_PROMPT,
               substitutions: {
+                GH_AW_EXPR_731DE217: process.env.GH_AW_EXPR_731DE217,
                 GH_AW_GITHUB_ACTOR: process.env.GH_AW_GITHUB_ACTOR,
                 GH_AW_GITHUB_EVENT_COMMENT_ID: process.env.GH_AW_GITHUB_EVENT_COMMENT_ID,
                 GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: process.env.GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER,
                 GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH: process.env.GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH,
+                GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: process.env.GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE,
                 GH_AW_GITHUB_EVENT_INPUTS_FORCE_GENERATION: process.env.GH_AW_GITHUB_EVENT_INPUTS_FORCE_GENERATION,
                 GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: process.env.GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES,
                 GH_AW_GITHUB_EVENT_ISSUE_NUMBER: process.env.GH_AW_GITHUB_EVENT_ISSUE_NUMBER,

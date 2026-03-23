@@ -22,7 +22,7 @@
 #
 # Generates comprehensive evening analysis articles in core languages (EN, SV) with Playwright validation. Translations handled by news-translate workflow. On Saturdays, produces a weekly wrap-up reviewing the full parliamentary week.
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"0852aab8d3395968c5396a75fab6416aa4c3520dd13a61b7f362d3442b2d791c","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"24f920d001faa5f18e264cdcba06a7de15c7d75ff638ca5ea2c02ef01c33230f","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
 
 name: "News Evening Analysis"
 "on":
@@ -31,13 +31,12 @@ name: "News Evening Analysis"
   - cron: "0 16 * * 6"
   workflow_dispatch:
     inputs:
-      article_date:
-        description: Article date (YYYY-MM-DD) for manual backfills. Defaults to today when
-          omitted or scheduled.
-        required: false
       analysis_depth:
         default: standard
         description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.
+        required: false
+      article_date:
+        description: Article date (YYYY-MM-DD) for manual backfills. Defaults to today when omitted or scheduled.
         required: false
       coverage_depth:
         default: standard
@@ -134,6 +133,7 @@ jobs:
           GH_AW_GITHUB_EVENT_COMMENT_ID: ${{ github.event.comment.id }}
           GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
           GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH: ${{ github.event.inputs.analysis_depth }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: ${{ github.event.inputs.article_date }}
           GH_AW_GITHUB_EVENT_INPUTS_COVERAGE_DEPTH: ${{ github.event.inputs.coverage_depth }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
           GH_AW_GITHUB_EVENT_INPUTS_LOOKBACK_HOURS: ${{ github.event.inputs.lookback_hours }}
@@ -201,6 +201,7 @@ jobs:
         env:
           GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
           GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH: ${{ github.event.inputs.analysis_depth }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: ${{ github.event.inputs.article_date }}
           GH_AW_GITHUB_EVENT_INPUTS_COVERAGE_DEPTH: ${{ github.event.inputs.coverage_depth }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
           GH_AW_GITHUB_EVENT_INPUTS_LOOKBACK_HOURS: ${{ github.event.inputs.lookback_hours }}
@@ -218,6 +219,7 @@ jobs:
           GH_AW_GITHUB_EVENT_COMMENT_ID: ${{ github.event.comment.id }}
           GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
           GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH: ${{ github.event.inputs.analysis_depth }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: ${{ github.event.inputs.article_date }}
           GH_AW_GITHUB_EVENT_INPUTS_COVERAGE_DEPTH: ${{ github.event.inputs.coverage_depth }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
           GH_AW_GITHUB_EVENT_INPUTS_LOOKBACK_HOURS: ${{ github.event.inputs.lookback_hours }}
@@ -241,6 +243,7 @@ jobs:
                 GH_AW_GITHUB_EVENT_COMMENT_ID: process.env.GH_AW_GITHUB_EVENT_COMMENT_ID,
                 GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: process.env.GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER,
                 GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH: process.env.GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH,
+                GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: process.env.GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE,
                 GH_AW_GITHUB_EVENT_INPUTS_COVERAGE_DEPTH: process.env.GH_AW_GITHUB_EVENT_INPUTS_COVERAGE_DEPTH,
                 GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: process.env.GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES,
                 GH_AW_GITHUB_EVENT_INPUTS_LOOKBACK_HOURS: process.env.GH_AW_GITHUB_EVENT_INPUTS_LOOKBACK_HOURS,
