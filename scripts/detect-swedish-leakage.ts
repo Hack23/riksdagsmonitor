@@ -37,7 +37,7 @@ export const SWEDISH_STOP_WORDS: ReadonlySet<string> = new Set([
  */
 export const SWEDISH_PARLIAMENTARY_TERMS: ReadonlySet<string> = new Set([
   'betänkande', 'proposition', 'utskottet', 'utskott', 'riksdagen',
-  'regeringen', 'departementet', 'motionen', 'interpellation',
+  'regeringen', 'motionen', 'interpellation',
   'anförande', 'votering', 'omröstning', 'bordläggning',
   'remiss', 'yttrande', 'statsråd', 'ledamot', 'riksdagsledamot',
   'utgiftsområde', 'budgetpropositionen', 'vårpropositionen',
@@ -127,7 +127,17 @@ export function detectSwedishLeakage(html: string, targetLang: Language): Leakag
     return { leakedTerms: [], score: 0 };
   }
 
-  const lines = html.split('\n');
+  // Strip script/style blocks on the full HTML first so multi-line blocks are
+  // removed correctly (the regex needs to see both open and close tags).
+  let cleaned = html;
+  let prev = '';
+  while (prev !== cleaned) {
+    prev = cleaned;
+    cleaned = cleaned.replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi, ' ');
+    cleaned = cleaned.replace(/<style\b[^>]*>[\s\S]*?<\/style[^>]*>/gi, ' ');
+  }
+
+  const lines = cleaned.split('\n');
   const leaked: LeakedTerm[] = [];
   const seen = new Set<string>();
 
@@ -140,17 +150,19 @@ export function detectSwedishLeakage(html: string, targetLang: Language): Leakag
 
       // Check against Swedish stop words (require ≥2 chars to avoid false positives)
       if (lower.length >= 2 && SWEDISH_STOP_WORDS.has(lower) && !seen.has(lower)) {
-        // Only flag Swedish stop words if they're clearly not shared with the target language
         if (!isSharedWord(lower, targetLang)) {
           seen.add(lower);
           leaked.push({ term: lower, line: i + 1 });
         }
       }
 
-      // Check against Swedish parliamentary terms (always flag)
+      // Check against Swedish parliamentary terms, also applying shared-word filter
+      // to avoid false positives in Scandinavian languages (e.g. "departementet" in Norwegian)
       if (SWEDISH_PARLIAMENTARY_TERMS.has(lower) && !seen.has(lower)) {
-        seen.add(lower);
-        leaked.push({ term: lower, line: i + 1 });
+        if (!isSharedParliamentaryTerm(lower, targetLang)) {
+          seen.add(lower);
+          leaked.push({ term: lower, line: i + 1 });
+        }
       }
     }
   }
@@ -190,6 +202,25 @@ function isSharedWord(word: string, targetLang: Language): boolean {
   return shared ? shared.has(word) : false;
 }
 
+/**
+ * Parliamentary terms that are valid/identical in specific Scandinavian target
+ * languages and should not be flagged as Swedish leakage for those languages.
+ */
+const SHARED_PARLIAMENTARY_TERMS: Partial<Record<Language, ReadonlySet<string>>> = {
+  // Norwegian uses many of the same parliamentary terms as Swedish
+  no: new Set(['proposition', 'interpellation', 'regeringen', 'statsråd']),
+  // Danish shares some parliamentary vocabulary
+  da: new Set(['proposition', 'interpellation', 'regeringen']),
+};
+
+/**
+ * Check if a Swedish parliamentary term is also valid in the target language.
+ */
+function isSharedParliamentaryTerm(term: string, targetLang: Language): boolean {
+  const shared = SHARED_PARLIAMENTARY_TERMS[targetLang];
+  return shared ? shared.has(term) : false;
+}
+
 // ---------------------------------------------------------------------------
 // CLI entry point
 // ---------------------------------------------------------------------------
@@ -205,7 +236,12 @@ async function main(): Promise<void> {
       i++;
     }
     if (args[i] === '--threshold' && args[i + 1]) {
-      threshold = parseInt(args[i + 1], 10);
+      const parsed = parseInt(args[i + 1], 10);
+      if (Number.isNaN(parsed) || parsed <= 0 || !Number.isInteger(parsed)) {
+        console.error(`Invalid --threshold value "${args[i + 1]}". Threshold must be a positive integer.`);
+        process.exit(1);
+      }
+      threshold = parsed;
       i++;
     }
   }

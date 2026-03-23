@@ -3474,37 +3474,12 @@ function buildMap(lang: Language): TranslationMap {
       },
     ],
     [
-      'statsminister',
-      {
-        sv: 'statsminister', en: 'Prime Minister', da: 'statsminister', no: 'statsminister',
-        fi: 'pääministeri', de: 'Ministerpräsident', fr: 'Premier ministre', es: 'Primer ministro',
-        nl: 'minister-president', ar: 'رئيس الوزراء', he: 'ראש ממשלה',
-        ja: '首相', ko: '총리', zh: '首相',
-      },
-    ],
-    [
       'statsministern',
       {
         sv: 'statsministern', en: 'the Prime Minister', da: 'statsministeren', no: 'statsministeren',
         fi: 'pääministeri', de: 'der Ministerpräsident', fr: 'le Premier ministre', es: 'el Primer ministro',
         nl: 'de minister-president', ar: 'رئيس الوزراء', he: 'ראש הממשלה',
         ja: '首相', ko: '총리', zh: '首相',
-      },
-    ],
-    [
-      'koalition',
-      {
-        sv: 'koalition', en: 'coalition', da: 'koalition', no: 'koalisjon',
-        fi: 'koalitio', de: 'Koalition', fr: 'coalition', es: 'coalición',
-        nl: 'coalitie', ar: 'تحالف', he: 'קואליציה', ja: '連立', ko: '연립', zh: '联盟',
-      },
-    ],
-    [
-      'opposition',
-      {
-        sv: 'opposition', en: 'opposition', da: 'opposition', no: 'opposisjon',
-        fi: 'oppositio', de: 'Opposition', fr: 'opposition', es: 'oposición',
-        nl: 'oppositie', ar: 'معارضة', he: 'אופוזיציה', ja: '野党', ko: '야당', zh: '反对党',
       },
     ],
     [
@@ -3522,14 +3497,6 @@ function buildMap(lang: Language): TranslationMap {
         no: 'mindretallsregjering', fi: 'vähemmistöhallitus', de: 'Minderheitsregierung',
         fr: 'gouvernement minoritaire', es: 'gobierno en minoría', nl: 'minderheidsregering',
         ar: 'حكومة أقلية', he: 'ממשלת מיעוט', ja: '少数政府', ko: '소수정부', zh: '少数派政府',
-      },
-    ],
-    [
-      'välfärd',
-      {
-        sv: 'välfärd', en: 'welfare', da: 'velfærd', no: 'velferd',
-        fi: 'hyvinvointi', de: 'Wohlfahrt', fr: 'bien-être', es: 'bienestar',
-        nl: 'welzijn', ar: 'رفاهية', he: 'רווחה', ja: '福祉', ko: '복지', zh: '福利',
       },
     ],
     [
@@ -3555,114 +3522,6 @@ function buildMap(lang: Language): TranslationMap {
         sv: 'valsedel', en: 'ballot', da: 'stemmeseddel', no: 'stemmeseddel',
         fi: 'äänestyslippu', de: 'Stimmzettel', fr: 'bulletin de vote', es: 'papeleta',
         nl: 'stembiljet', ar: 'ورقة اقتراع', he: 'פתק הצבעה', ja: '投票用紙', ko: '투표용지', zh: '选票',
-      },
-    ],
-    [
-      'moms',
-      {
-        sv: 'moms', en: 'VAT', da: 'moms', no: 'moms',
-        fi: 'arvonlisävero', de: 'Mehrwertsteuer', fr: 'TVA', es: 'IVA',
-        nl: 'btw', ar: 'ضريبة القيمة المضافة', he: 'מע"מ', ja: '付加価値税', ko: '부가가치세', zh: '增值税',
-      },
-    ],
-    [
-      'upphandling',
-      {
-        sv: 'upphandling', en: 'procurement', da: 'indkøb', no: 'innkjøp',
-        fi: 'julkiset hankinnat', de: 'Beschaffung', fr: 'marché public', es: 'contratación pública',
-        nl: 'aanbesteding', ar: 'مشتريات', he: 'רכש', ja: '調達', ko: '조달', zh: '采购',
-      },
-    ],
-    [
-      'folkhälsa',
-      {
-        sv: 'folkhälsa', en: 'public health', da: 'folkesundhed', no: 'folkehelse',
-        fi: 'kansanterveys', de: 'Volksgesundheit', fr: 'santé publique', es: 'salud pública',
-        nl: 'volksgezondheid', ar: 'صحة عامة', he: 'בריאות הציבור', ja: '公衆衛生', ko: '공중보건', zh: '公共卫生',
-      },
-    ],
-    [
-      'frihandel',
-      {
-        sv: 'frihandel', en: 'free trade', da: 'frihandel', no: 'frihandel',
-        fi: 'vapaakauppa', de: 'Freihandel', fr: 'libre-échange', es: 'libre comercio',
-        nl: 'vrijhandel', ar: 'تجارة حرة', he: 'סחר חופשי', ja: '自由貿易', ko: '자유무역', zh: '自由贸易',
-      },
-    ],
-    [
-      'sanktion',
-      {
-        sv: 'sanktion', en: 'sanction', da: 'sanktion', no: 'sanksjon',
-        fi: 'pakote', de: 'Sanktion', fr: 'sanction', es: 'sanción',
-        nl: 'sanctie', ar: 'عقوبة', he: 'סנקציה', ja: '制裁', ko: '제재', zh: '制裁',
-      },
-    ],
-    [
-      'cybersäkerhet',
-      {
-        sv: 'cybersäkerhet', en: 'cybersecurity', da: 'cybersikkerhed', no: 'cybersikkerhet',
-        fi: 'kyberturvallisuus', de: 'Cybersicherheit', fr: 'cybersécurité', es: 'ciberseguridad',
-        nl: 'cyberveiligheid', ar: 'أمن سيبراني', he: 'אבטחת סייבר', ja: 'サイバーセキュリティ', ko: '사이버보안', zh: '网络安全',
-      },
-    ],
-    [
-      'dataskydd',
-      {
-        sv: 'dataskydd', en: 'data protection', da: 'databeskyttelse', no: 'databeskyttelse',
-        fi: 'tietosuoja', de: 'Datenschutz', fr: 'protection des données', es: 'protección de datos',
-        nl: 'gegevensbescherming', ar: 'حماية البيانات', he: 'הגנת מידע', ja: 'データ保護', ko: '데이터보호', zh: '数据保护',
-      },
-    ],
-    [
-      'flykting',
-      {
-        sv: 'flykting', en: 'refugee', da: 'flygtning', no: 'flyktning',
-        fi: 'pakolainen', de: 'Flüchtling', fr: 'réfugié', es: 'refugiado',
-        nl: 'vluchteling', ar: 'لاجئ', he: 'פליט', ja: '難民', ko: '난민', zh: '难民',
-      },
-    ],
-    [
-      'gränskontroll',
-      {
-        sv: 'gränskontroll', en: 'border control', da: 'grænsekontrol', no: 'grensekontroll',
-        fi: 'rajatarkastus', de: 'Grenzkontrolle', fr: 'contrôle aux frontières', es: 'control fronterizo',
-        nl: 'grenscontrole', ar: 'مراقبة الحدود', he: 'בקרת גבולות', ja: '国境管理', ko: '국경통제', zh: '边境管控',
-      },
-    ],
-    [
-      'offentlig sektor',
-      {
-        sv: 'offentlig sektor', en: 'public sector', da: 'offentlig sektor', no: 'offentlig sektor',
-        fi: 'julkinen sektori', de: 'öffentlicher Sektor', fr: 'secteur public', es: 'sector público',
-        nl: 'publieke sector', ar: 'القطاع العام', he: 'המגזר הציבורי', ja: '公共部門', ko: '공공부문', zh: '公共部门',
-      },
-    ],
-    [
-      'hållbar utveckling',
-      {
-        sv: 'hållbar utveckling', en: 'sustainable development', da: 'bæredygtig udvikling',
-        no: 'bærekraftig utvikling', fi: 'kestävä kehitys', de: 'nachhaltige Entwicklung',
-        fr: 'développement durable', es: 'desarrollo sostenible', nl: 'duurzame ontwikkeling',
-        ar: 'تنمية مستدامة', he: 'פיתוח בר-קיימא', ja: '持続可能な開発', ko: '지속가능한 개발', zh: '可持续发展',
-      },
-    ],
-    [
-      'fackförening',
-      {
-        sv: 'fackförening', en: 'trade union', da: 'fagforening', no: 'fagforening',
-        fi: 'ammattiliitto', de: 'Gewerkschaft', fr: 'syndicat', es: 'sindicato',
-        nl: 'vakbond', ar: 'نقابة عمال', he: 'איגוד מקצועי', ja: '労働組合', ko: '노동조합', zh: '工会',
-      },
-    ],
-    [
-      'konstitutionsutskottet',
-      {
-        sv: 'konstitutionsutskottet', en: 'Committee on the Constitution',
-        da: 'forfatningsudvalget', no: 'konstitusjonskomiteen',
-        fi: 'perustuslakivaliokunta', de: 'Verfassungsausschuss',
-        fr: 'Comité de la Constitution', es: 'Comité de la Constitución',
-        nl: 'Grondwetscommissie', ar: 'لجنة الدستور', he: 'ועדת החוקה',
-        ja: '憲法委員会', ko: '헌법위원회', zh: '宪法委员会',
       },
     ],
     [

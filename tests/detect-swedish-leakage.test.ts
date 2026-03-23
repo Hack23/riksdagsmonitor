@@ -104,6 +104,23 @@ describe('Swedish Leakage Detector', () => {
       expect(terms).not.toContain('det');
     });
 
+    it('should not flag shared parliamentary terms in Norwegian', () => {
+      // "proposition" and "interpellation" are valid Norwegian parliamentary terms
+      const html = '<p>The proposition was debated after an interpellation in parliament.</p>';
+      const report = detectSwedishLeakage(html, 'no');
+      const terms = report.leakedTerms.map((t) => t.term);
+      expect(terms).not.toContain('proposition');
+      expect(terms).not.toContain('interpellation');
+    });
+
+    it('should strip multi-line script blocks before scanning', () => {
+      const html = '<script>\nvar riksdagen = "test";\nvar betänkande = true;\n</script>\n<p>Clean text</p>';
+      const report = detectSwedishLeakage(html, 'en');
+      const terms = report.leakedTerms.map((t) => t.term);
+      expect(terms).not.toContain('riksdagen');
+      expect(terms).not.toContain('betänkande');
+    });
+
     it('should report correct line numbers', () => {
       const html = '<p>Normal text</p>\n<p>betänkande is here</p>\n<p>More text</p>';
       const report = detectSwedishLeakage(html, 'en');
@@ -125,12 +142,12 @@ describe('Swedish Leakage Detector', () => {
       expect(report.leakedTerms).toHaveLength(0);
     });
 
-    it('should detect ministry-related department names', () => {
-      const html = '<p>The finansutskottet discussed the departementet decision.</p>';
+    it('should detect ministry-related committee names', () => {
+      const html = '<p>The finansutskottet discussed the lagförslag in detail.</p>';
       const report = detectSwedishLeakage(html, 'en');
       const terms = report.leakedTerms.map((t) => t.term);
       expect(terms).toContain('finansutskottet');
-      expect(terms).toContain('departementet');
+      expect(terms).toContain('lagförslag');
     });
 
     it('should detect Swedish terms encoded as HTML entities', () => {

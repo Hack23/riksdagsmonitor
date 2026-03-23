@@ -149,12 +149,10 @@ jobs:
       - name: Run Swedish leakage detector
         id: leakage_detector
         if: hashFiles('news/*.html') != ''
-        continue-on-error: true
         run: |
           echo ""
           echo "🔍 Running Swedish leakage detector on translated articles..."
           echo ""
-          npm install
           npx tsx scripts/detect-swedish-leakage.ts --dir news/ --threshold 5
 
       - name: Translation validation summary
