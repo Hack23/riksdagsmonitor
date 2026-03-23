@@ -179,6 +179,8 @@ interface LanguageConfig {
   file: string;
   name: string;
   rtl: boolean;
+  /** BCP-47 lang attribute override (e.g. 'nb' for Norwegian Bokmål) */
+  langAttr?: string;
 }
 
 /** Successful validation result for a language file */
@@ -234,7 +236,7 @@ const languages: LanguageConfig[] = [
   { code: 'en', file: 'index.html', name: 'English', rtl: false },
   { code: 'sv', file: 'index_sv.html', name: 'Swedish', rtl: false },
   { code: 'da', file: 'index_da.html', name: 'Danish', rtl: false },
-  { code: 'no', file: 'index_no.html', name: 'Norwegian', rtl: false },
+  { code: 'no', file: 'index_no.html', name: 'Norwegian', rtl: false, langAttr: 'nb' },
   { code: 'fi', file: 'index_fi.html', name: 'Finnish', rtl: false },
   { code: 'de', file: 'index_de.html', name: 'German', rtl: false },
   { code: 'fr', file: 'index_fr.html', name: 'French', rtl: false },
@@ -250,7 +252,8 @@ const languages: LanguageConfig[] = [
 // Validation checks
 const checks: ValidationChecks = {
   langAttribute: (content: string, lang: LanguageConfig): boolean => {
-    const regex = new RegExp(`<html\\s+lang="${lang.code}"`);
+    const effectiveLang = lang.langAttr ?? lang.code;
+    const regex = new RegExp(`<html\\s+lang="${effectiveLang}"`);
     return regex.test(content);
   },
   

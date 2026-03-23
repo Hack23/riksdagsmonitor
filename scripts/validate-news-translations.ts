@@ -79,6 +79,81 @@ interface FailedFileRecord {
   readonly samples: string[];
 }
 
+/** BCP-47 validation error record */
+export interface BCP47Error {
+  readonly field: string;
+  readonly expected: string;
+  readonly actual: string;
+}
+
+/**
+ * Map from filename language suffix to the expected BCP-47 tag used in
+ * `html[lang]`, `og:locale`, and JSON-LD `inLanguage`.
+ *
+ * Norwegian files use the filename suffix 'no' but must be advertised as 'nb'.
+ */
+const BCP47_TAG: Record<string, string> = {
+  en: 'en', sv: 'sv', da: 'da', no: 'nb', fi: 'fi',
+  de: 'de', fr: 'fr', es: 'es', nl: 'nl',
+  ar: 'ar', he: 'he', ja: 'ja', ko: 'ko', zh: 'zh',
+};
+
+const OG_LOCALE_EXPECTED: Record<string, string> = {
+  en: 'en_US', sv: 'sv_SE', da: 'da_DK', no: 'nb_NO', fi: 'fi_FI',
+  de: 'de_DE', fr: 'fr_FR', es: 'es_ES', nl: 'nl_NL',
+  ar: 'ar_SA', he: 'he_IL', ja: 'ja_JP', ko: 'ko_KR', zh: 'zh_CN',
+};
+
+/**
+ * Validate BCP-47 consistency within an article file.
+ * Checks that `html[lang]`, `og:locale`, and JSON-LD `inLanguage` are
+ * consistent with the expected values for the file's language suffix.
+ */
+export function validateBCP47Consistency(filePath: string, fileLang: string): BCP47Error[] {
+  const errors: BCP47Error[] = [];
+  const content = readFileSync(filePath, 'utf-8');
+  const expectedTag = BCP47_TAG[fileLang] ?? fileLang;
+  const expectedLocale = OG_LOCALE_EXPECTED[fileLang];
+
+  // Check html lang attribute
+  const htmlLangMatch = content.match(/<html\s[^>]*lang="([^"]+)"/);
+  if (htmlLangMatch) {
+    const actual = htmlLangMatch[1] ?? '';
+    if (actual !== expectedTag) {
+      errors.push({ field: 'html[lang]', expected: expectedTag, actual });
+    }
+  }
+
+  // Check og:locale
+  if (expectedLocale) {
+    const ogMatch = content.match(/property="og:locale"\s+content="([^"]+)"/);
+    if (ogMatch) {
+      const actual = ogMatch[1] ?? '';
+      if (actual !== expectedLocale) {
+        errors.push({ field: 'og:locale', expected: expectedLocale, actual });
+      }
+    }
+  }
+
+  // Check JSON-LD inLanguage
+  const inLangMatch = content.match(/"inLanguage":\s*"([^"]+)"/);
+  if (inLangMatch) {
+    const actual = inLangMatch[1] ?? '';
+    if (actual !== expectedTag) {
+      errors.push({ field: 'inLanguage', expected: expectedTag, actual });
+    }
+  }
+
+  // Check dir="rtl" for RTL languages
+  if (fileLang === 'ar' || fileLang === 'he') {
+    if (!content.includes('dir="rtl"')) {
+      errors.push({ field: 'dir', expected: 'rtl', actual: 'missing' });
+    }
+  }
+
+  return errors;
+}
+
 // ---------------------------------------------------------------------------
 // Functions
 // ---------------------------------------------------------------------------
@@ -176,12 +251,23 @@ function validateNewsTranslations(directory: string = 'news'): number {
   let totalPassed = 0;
   let totalFailed = 0;
   let totalErrors = 0;
+  let totalBCP47Errors = 0;
   const failedFiles: FailedFileRecord[] = [];
 
   for (const filepath of nonSwedishFiles) {
     const filename = basename(filepath);
     const lang = getLanguageCode(filename);
     const result = checkFileForUntranslatedContent(filepath);
+
+    // BCP-47 consistency check
+    const bcp47Errors = lang ? validateBCP47Consistency(filepath, lang) : [];
+    if (bcp47Errors.length > 0) {
+      totalBCP47Errors += bcp47Errors.length;
+      console.log(`${colors.yellow}⚠ BCP-47: ${filename}${colors.reset}`);
+      for (const err of bcp47Errors) {
+        console.log(`  ${colors.yellow}${err.field}: expected "${err.expected}", got "${err.actual}"${colors.reset}`);
+      }
+    }
 
     if (result.error !== undefined) {
       console.log(`${colors.red}ERROR: ${filename}${colors.reset}`);
@@ -228,22 +314,34 @@ function validateNewsTranslations(directory: string = 'news'): number {
     console.log(`${colors.red}✗ Errors: ${totalErrors}${colors.reset}`);
   }
 
-  if (totalFailed > 0) {
+  if (totalBCP47Errors > 0) {
+    console.log(`${colors.red}✗ BCP-47 inconsistencies: ${totalBCP47Errors}${colors.reset}`);
+  }
+
+  if (totalFailed > 0 || totalBCP47Errors > 0) {
     console.log(`\n${colors.bold}${colors.red}❌ VALIDATION FAILED${colors.reset}`);
-    console.log(`\nFiles needing translation:\n`);
 
-    failedFiles.forEach(({ filename, count }) => {
-      console.log(`  ${colors.red}✗${colors.reset} ${filename} - ${count} markers`);
-    });
+    if (failedFiles.length > 0) {
+      console.log(`\nFiles needing translation:\n`);
+      failedFiles.forEach(({ filename, count }) => {
+        console.log(`  ${colors.red}✗${colors.reset} ${filename} - ${count} markers`);
+      });
 
-    console.log(`\n${colors.yellow}Action Required:${colors.reset}`);
-    console.log(`1. Open each file listed above`);
-    console.log(
-      `2. Find all <span data-translate="true" lang="sv">Swedish text</span> elements`,
-    );
-    console.log(`3. Translate the Swedish text to the article's target language`);
-    console.log(`4. Replace the span with plain translated text`);
-    console.log(`5. Consult TRANSLATION_GUIDE.md for terminology\n`);
+      console.log(`\n${colors.yellow}Action Required:${colors.reset}`);
+      console.log(`1. Open each file listed above`);
+      console.log(
+        `2. Find all <span data-translate="true" lang="sv">Swedish text</span> elements`,
+      );
+      console.log(`3. Translate the Swedish text to the article's target language`);
+      console.log(`4. Replace the span with plain translated text`);
+      console.log(`5. Consult TRANSLATION_GUIDE.md for terminology\n`);
+    }
+
+    if (totalBCP47Errors > 0) {
+      console.log(`\n${colors.yellow}BCP-47 Action Required:${colors.reset}`);
+      console.log(`Ensure html[lang], og:locale, and inLanguage are consistent per article.`);
+      console.log(`Norwegian articles must use lang="nb", og:locale="nb_NO", inLanguage="nb".\n`);
+    }
 
     return 1;
   } else {

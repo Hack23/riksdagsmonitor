@@ -269,4 +269,165 @@ describe('validate-news-translations.ts', () => {
       expect(result).toContain('✅ ALL ARTICLES FULLY TRANSLATED');
     });
   });
+
+  describe('BCP-47 consistency validation', () => {
+    it('should pass for Norwegian articles with correct lang="nb"', () => {
+      const content = `<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta property="og:locale" content="nb_NO">
+  <script type="application/ld+json">{"inLanguage": "nb"}</script>
+</head>
+<body>Test</body>
+</html>`;
+      writeFileSync(`${testDir}/test-no.html`, content);
+
+      const result = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+        encoding: 'utf-8'
+      });
+
+      expect(result).toContain('✅ ALL ARTICLES FULLY TRANSLATED');
+      expect(result).not.toContain('BCP-47');
+    });
+
+    it('should fail for Norwegian articles with wrong lang="no"', () => {
+      const content = `<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta property="og:locale" content="nb_NO">
+  <script type="application/ld+json">{"inLanguage": "nb"}</script>
+</head>
+<body>Test</body>
+</html>`;
+      writeFileSync(`${testDir}/test-no.html`, content);
+
+      let output = '';
+      try {
+        execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+          encoding: 'utf-8'
+        });
+      } catch (error: unknown) {
+        output = (error as ExecSyncError).stdout;
+      }
+
+      expect(output).toContain('BCP-47');
+      expect(output).toContain('html[lang]');
+      expect(output).toContain('expected "nb"');
+    });
+
+    it('should fail for Norwegian articles with wrong inLanguage', () => {
+      const content = `<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta property="og:locale" content="nb_NO">
+  <script type="application/ld+json">{"inLanguage": "no"}</script>
+</head>
+<body>Test</body>
+</html>`;
+      writeFileSync(`${testDir}/test-no.html`, content);
+
+      let output = '';
+      try {
+        execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+          encoding: 'utf-8'
+        });
+      } catch (error: unknown) {
+        output = (error as ExecSyncError).stdout;
+      }
+
+      expect(output).toContain('BCP-47');
+      expect(output).toContain('inLanguage');
+    });
+
+    it('should fail for Arabic articles missing dir="rtl"', () => {
+      const content = `<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta property="og:locale" content="ar_SA">
+  <script type="application/ld+json">{"inLanguage": "ar"}</script>
+</head>
+<body>اختبار</body>
+</html>`;
+      writeFileSync(`${testDir}/test-ar.html`, content);
+
+      let output = '';
+      try {
+        execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+          encoding: 'utf-8'
+        });
+      } catch (error: unknown) {
+        output = (error as ExecSyncError).stdout;
+      }
+
+      expect(output).toContain('BCP-47');
+      expect(output).toContain('dir');
+      expect(output).toContain('rtl');
+    });
+
+    it('should fail for Hebrew articles missing dir="rtl"', () => {
+      const content = `<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta property="og:locale" content="he_IL">
+  <script type="application/ld+json">{"inLanguage": "he"}</script>
+</head>
+<body>בדיקה</body>
+</html>`;
+      writeFileSync(`${testDir}/test-he.html`, content);
+
+      let output = '';
+      try {
+        execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+          encoding: 'utf-8'
+        });
+      } catch (error: unknown) {
+        output = (error as ExecSyncError).stdout;
+      }
+
+      expect(output).toContain('BCP-47');
+      expect(output).toContain('dir');
+    });
+
+    it('should pass for consistent English articles', () => {
+      const content = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta property="og:locale" content="en_US">
+  <script type="application/ld+json">{"inLanguage": "en"}</script>
+</head>
+<body>Test</body>
+</html>`;
+      writeFileSync(`${testDir}/test-en.html`, content);
+
+      const result = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+        encoding: 'utf-8'
+      });
+
+      expect(result).toContain('✅ ALL ARTICLES FULLY TRANSLATED');
+    });
+
+    it('should fail for wrong og:locale on Norwegian articles', () => {
+      const content = `<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta property="og:locale" content="no_NO">
+  <script type="application/ld+json">{"inLanguage": "nb"}</script>
+</head>
+<body>Test</body>
+</html>`;
+      writeFileSync(`${testDir}/test-no.html`, content);
+
+      let output = '';
+      try {
+        execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+          encoding: 'utf-8'
+        });
+      } catch (error: unknown) {
+        output = (error as ExecSyncError).stdout;
+      }
+
+      expect(output).toContain('BCP-47');
+      expect(output).toContain('og:locale');
+    });
+  });
 });
