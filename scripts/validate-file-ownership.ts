@@ -26,11 +26,11 @@ export type WorkflowCategory = 'content' | 'translation';
 
 /** Result of a file ownership validation check */
 export interface ValidationResult {
-  /** Whether all staged files pass ownership validation */
+  /** Whether all pending files (staged + unstaged + untracked) pass ownership validation */
   passed: boolean;
   /** Files that violate the ownership contract */
   violations: string[];
-  /** Total staged news HTML files checked */
+  /** Total pending news HTML files checked */
   checkedCount: number;
 }
 
@@ -75,17 +75,20 @@ export function isFileOwnedByCategory(
 }
 
 /**
- * Validate that all pending files (staged + unstaged working-tree changes)
+ * Validate that all pending files (staged + unstaged + untracked working-tree changes)
  * conform to the file-ownership contract for the given workflow category.
  *
- * Checks the union of `git diff --cached --name-only` (staged) and
- * `git diff --name-only` (unstaged) so violations are caught regardless
- * of whether `git add` has been run yet.
+ * Checks the union of:
+ * - `git diff --cached --name-only` (staged)
+ * - `git diff --name-only` (unstaged modifications)
+ * - `git ls-files --others --exclude-standard` (untracked new files)
+ *
+ * This ensures violations are caught regardless of whether `git add` has been run.
  *
  * @param category - The workflow category ('content' or 'translation')
  * @returns Validation result with pass/fail status and any violations
  */
-export function validateStagedFileOwnership(
+export function validatePendingFileOwnership(
   category: WorkflowCategory,
 ): ValidationResult {
   const stagedOutput = execSync('git diff --cached --name-only', {
@@ -96,12 +99,20 @@ export function validateStagedFileOwnership(
     encoding: 'utf-8',
   }).trim();
 
+  const untrackedOutput = execSync(
+    'git ls-files --others --exclude-standard',
+    { encoding: 'utf-8' },
+  ).trim();
+
   const allFiles = new Set<string>();
   if (stagedOutput) {
     for (const f of stagedOutput.split('\n')) if (f) allFiles.add(f);
   }
   if (unstagedOutput) {
     for (const f of unstagedOutput.split('\n')) if (f) allFiles.add(f);
+  }
+  if (untrackedOutput) {
+    for (const f of untrackedOutput.split('\n')) if (f) allFiles.add(f);
   }
 
   if (allFiles.size === 0) {
@@ -110,6 +121,12 @@ export function validateStagedFileOwnership(
 
   return validateFileList([...allFiles], category);
 }
+
+/**
+ * @deprecated Use `validatePendingFileOwnership` instead.
+ * Alias kept for backward compatibility.
+ */
+export const validateStagedFileOwnership = validatePendingFileOwnership;
 
 /**
  * Validate a list of file paths against the ownership contract.
@@ -145,12 +162,12 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   if (!category || !['content', 'translation'].includes(category)) {
     console.error(
       'Usage: npx tsx scripts/validate-file-ownership.ts <content|translation>\n' +
-      '  Validates both staged and unstaged changes against the file-ownership contract.',
+      '  Validates staged, unstaged, and untracked changes against the file-ownership contract.',
     );
     process.exit(2);
   }
 
-  const result = validateStagedFileOwnership(category);
+  const result = validatePendingFileOwnership(category);
 
   if (result.passed) {
     console.log(

@@ -211,7 +211,7 @@ This workflow is a **translation** workflow and MUST only create/modify files fo
 - ✅ **Allowed:** `news/YYYY-MM-DD-*-{da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html`
 - ❌ **Forbidden:** `news/YYYY-MM-DD-*-en.html`, `news/YYYY-MM-DD-*-sv.html`
 
-Validate file ownership (checks both staged and unstaged changes):
+Validate file ownership (checks staged, unstaged, and untracked changes):
 ```bash
 npx tsx scripts/validate-file-ownership.ts translation
 ```

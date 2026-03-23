@@ -1014,12 +1014,6 @@ describe('Script-Based Article Generation Safety', () => {
 
 describe('File Ownership Contract', () => {
   const ALL_CONTENT_WORKFLOWS = [
-// ---------------------------------------------------------------------------
-// Additional structural checks (Issue #1335)
-// ---------------------------------------------------------------------------
-
-describe('Workflow timeout limits', () => {
-  const ALL_NEWS_WORKFLOWS = [
     ...Object.values(ARTICLE_TYPE_WORKFLOWS),
     'news-evening-analysis.md',
     'news-realtime-monitor.md',
@@ -1089,11 +1083,55 @@ describe('Workflow timeout limits', () => {
     expect(content).toContain('export const TRANSLATION_LANGS');
   });
 
-  it('validate-file-ownership.ts should export validateFileList and validateStagedFileOwnership', () => {
+  it('validate-file-ownership.ts should export validateFileList and validatePendingFileOwnership', () => {
     const scriptPath = path.join(__dirname, '..', 'scripts', 'validate-file-ownership.ts');
     const content = fs.readFileSync(scriptPath, 'utf-8');
     expect(content).toContain('export function validateFileList');
-    expect(content).toContain('export function validateStagedFileOwnership');
+    expect(content).toContain('export function validatePendingFileOwnership');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Additional structural checks (Issue #1335)
+// ---------------------------------------------------------------------------
+
+describe('Workflow timeout limits', () => {
+  const ALL_NEWS_WORKFLOWS = [
+    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+    'news-evening-analysis.md',
+    'news-realtime-monitor.md',
+    'news-article-generator.md',
+    'news-translate.md',
+  ];
+
+  it('no workflow should exceed 60-minute timeout', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const frontmatter = parseFrontmatter(filepath);
+      const timeoutMatch = frontmatter.match(/timeout-minutes:\s*(\d+)/);
+      if (timeoutMatch) {
+        const timeout = parseInt(timeoutMatch[1]!, 10);
+        expect(
+          timeout,
+          `Workflow ${workflowFile} has timeout-minutes: ${timeout} which exceeds 60 minutes`
+        ).toBeLessThanOrEqual(60);
+      }
+    }
+  });
+
+  it('all workflows should have timeout-minutes specified in frontmatter', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const frontmatter = parseFrontmatter(filepath);
+      expect(
+        frontmatter.includes('timeout-minutes'),
+        `Workflow ${workflowFile} should have timeout-minutes specified in frontmatter`
+      ).toBe(true);
+    }
   });
 });
 
@@ -1135,57 +1173,6 @@ describe('Concurrency Strategy', () => {
       expect(
         frontmatter.includes('cancel-in-progress: false'),
         `Workflow ${workflowFile} should have cancel-in-progress: false (queue, don't cancel)`
-    'news-translate.md',
-  ];
-
-  it('no workflow should exceed 60-minute timeout', () => {
-    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
-      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
-
-      const frontmatter = parseFrontmatter(filepath);
-      const timeoutMatch = frontmatter.match(/timeout-minutes:\s*(\d+)/);
-      if (timeoutMatch) {
-        const timeout = parseInt(timeoutMatch[1]!, 10);
-        expect(
-          timeout,
-          `Workflow ${workflowFile} has timeout-minutes: ${timeout} which exceeds 60 minutes`
-        ).toBeLessThanOrEqual(60);
-      }
-    }
-  });
-
-  it('all workflows should have timeout-minutes specified in frontmatter', () => {
-    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
-      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
-
-      const frontmatter = parseFrontmatter(filepath);
-      expect(
-        frontmatter.includes('timeout-minutes'),
-        `Workflow ${workflowFile} should have timeout-minutes specified in frontmatter`
-      ).toBe(true);
-    }
-  });
-});
-
-describe('Workflow permissions enforcement', () => {
-  const ALL_NEWS_WORKFLOWS = [
-    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
-    'news-evening-analysis.md',
-    'news-realtime-monitor.md',
-    'news-article-generator.md',
-  ];
-
-  it('all content workflows should have permissions block', () => {
-    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
-      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
-
-      const content = fs.readFileSync(filepath, 'utf-8');
-      expect(
-        content.includes('permissions:'),
-        `Workflow ${workflowFile} should have a permissions block`
       ).toBe(true);
     }
   });
@@ -1222,6 +1209,41 @@ describe('Workflow permissions enforcement', () => {
   });
 });
 
+describe('Workflow permissions enforcement', () => {
+  const ALL_NEWS_WORKFLOWS = [
+    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+    'news-evening-analysis.md',
+    'news-realtime-monitor.md',
+    'news-article-generator.md',
+  ];
+
+  it('all content workflows should have permissions block', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('permissions:'),
+        `Workflow ${workflowFile} should have a permissions block`
+      ).toBe(true);
+    }
+  });
+
+  it('all content workflows should have contents: read (least privilege)', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('contents: read'),
+        `Workflow ${workflowFile} should specify contents: read permission`
+      ).toBe(true);
+    }
+  });
+});
+
 describe('Branch Naming Convention', () => {
   it('content workflows should document deterministic branch naming', () => {
     const contentWorkflows = [
@@ -1250,18 +1272,6 @@ describe('Branch Naming Convention', () => {
       content.includes('news/translate/'),
       'Translation workflow should document news/translate/ branch naming convention'
     ).toBe(true);
-  });
-  it('all content workflows should have contents: read (least privilege)', () => {
-    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
-      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
-
-      const content = fs.readFileSync(filepath, 'utf-8');
-      expect(
-        content.includes('contents: read'),
-        `Workflow ${workflowFile} should specify contents: read permission`
-      ).toBe(true);
-    }
   });
 });
 
