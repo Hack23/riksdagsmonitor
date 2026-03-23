@@ -212,16 +212,26 @@ START_TIME=$(date +%s)
 
 ## Required Skills
 
-1. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology
-2. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
-3. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
+Before generating articles, consult these skills:
+1. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
+2. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology
+3. **`.github/skills/legislative-monitoring/SKILL.md`** — Voting patterns, committee tracking, bill progress
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
-5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
-6. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
-7. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
-8. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
+5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
+6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
+7. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
+8. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
+9. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
+
+### Standardised Analysis Depth Gate
+
+| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap |
+|-------|--------------|-------------------|--------|---------|
+| standard | 1-2 | ≥3 | ≥1 | optional |
+| deep | 2-3 | ≥5 | ≥2 | required |
+| comprehensive | 3+ | ≥7 | ≥3 | required |
 
 > **Read `analysis_depth` input first** (default: `standard`). This controls how many AI iterations to apply per article type.
 
