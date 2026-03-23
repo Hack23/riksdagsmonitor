@@ -117,16 +117,25 @@ function stripTagBlocks(html: string, tagName: string): string {
   let result = html;
   const openTag = `<${tagName}`;
   const closeTag = `</${tagName}`;
-  // eslint-disable-next-line no-constant-condition
-  while (true) {
-    const lower = result.toLowerCase();
-    const start = lower.indexOf(openTag);
-    if (start === -1) break;
+  let lower = result.toLowerCase();
+  let start = lower.indexOf(openTag);
+  while (start !== -1) {
+    // Ensure we matched a real tag boundary (next char must be '>', ' ', or newline)
+    const charAfterTag = lower[start + openTag.length];
+    if (charAfterTag !== '>' && charAfterTag !== ' ' && charAfterTag !== '\n' && charAfterTag !== '\t') {
+      // Not a real tag match — skip past this position
+      const nextSearch = start + openTag.length;
+      lower = result.toLowerCase();
+      start = lower.indexOf(openTag, nextSearch);
+      continue;
+    }
     const end = lower.indexOf(closeTag, start);
     if (end === -1) break;
     const closeEnd = lower.indexOf('>', end);
     if (closeEnd === -1) break;
     result = result.slice(0, start) + ' ' + result.slice(closeEnd + 1);
+    lower = result.toLowerCase();
+    start = lower.indexOf(openTag);
   }
   return result;
 }
