@@ -108,15 +108,39 @@ function buildArticleData(lang: Language): ArticleData {
   };
 }
 
+/**
+ * Strip all content between matching open/close tags (case-insensitive).
+ * Uses iterative indexOf-based extraction instead of regex to avoid
+ * CodeQL js/bad-tag-filter alerts.
+ */
+function stripTagBlocks(html: string, tagName: string): string {
+  let result = html;
+  const openTag = `<${tagName}`;
+  const closeTag = `</${tagName}`;
+  // eslint-disable-next-line no-constant-condition
+  while (true) {
+    const lower = result.toLowerCase();
+    const start = lower.indexOf(openTag);
+    if (start === -1) break;
+    const end = lower.indexOf(closeTag, start);
+    if (end === -1) break;
+    const closeEnd = lower.indexOf('>', end);
+    if (closeEnd === -1) break;
+    result = result.slice(0, start) + ' ' + result.slice(closeEnd + 1);
+  }
+  return result;
+}
+
 /** Detect obvious Swedish tokens in non-Swedish HTML text content */
 function detectSwedishLeakage(html: string, lang: string): string[] {
   if (lang === 'sv') return [];
-  // Strip script, style, and JSON-LD blocks (they contain brand names like "Riksdag")
-  const stripped = html
-    .replace(/<script[\s>][\s\S]*?<\/script\s*>/gi, ' ')
-    .replace(/<style[\s>][\s\S]*?<\/style\s*>/gi, ' ')
-    .replace(/<footer[\s>][\s\S]*?<\/footer\s*>/gi, ' ')
-    .replace(/<[^>]*>/g, ' ');
+  // Strip script, style, and footer blocks (they contain brand names like "Riksdag")
+  // Uses iterative indexOf extraction instead of regex to satisfy CodeQL js/bad-tag-filter
+  let stripped = stripTagBlocks(html, 'script');
+  stripped = stripTagBlocks(stripped, 'style');
+  stripped = stripTagBlocks(stripped, 'footer');
+  // Remove remaining HTML tags
+  stripped = stripped.replace(/<[^>]*>/g, ' ');
   // Distinctly Swedish parliamentary terms that should be translated.
   // Excludes "riksdagen" — the real template embeds this as a proper
   // noun / brand name in all language variants (meta descriptions, JSON-LD).
