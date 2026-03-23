@@ -10,6 +10,9 @@ on:
     - cron: '0 16 * * 6'
   workflow_dispatch:
     inputs:
+      article_date:
+        description: 'Article date (YYYY-MM-DD) for manual backfills. Defaults to today when omitted or scheduled.'
+        required: false
       coverage_depth:
         description: 'Coverage depth: standard, deep, comprehensive'
         required: false

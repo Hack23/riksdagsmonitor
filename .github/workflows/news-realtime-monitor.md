@@ -13,6 +13,9 @@ on:
     - cron: '0 12 * * 0,6'
   workflow_dispatch:
     inputs:
+      article_date:
+        description: 'Article date (YYYY-MM-DD) for manual backfills. Defaults to today when omitted or scheduled.'
+        required: false
       article_types:
         description: 'Comma-separated article types to generate (breaking,committee-reports,propositions,motions,interpellations,week-ahead,month-ahead,weekly-review,monthly-review,deep-inspection). Default: breaking'
         required: false

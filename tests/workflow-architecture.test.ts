@@ -1204,12 +1204,31 @@ describe('Concurrency Strategy', () => {
     expect(frontmatter).toContain('cancel-in-progress: true');
   });
 
+  it('content workflows using article_date in concurrency group should define article_date input', () => {
+    const dateScopedWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md',
+    ] as const;
+
+    for (const workflowFile of dateScopedWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const frontmatter = parseFrontmatter(filepath);
+      expect(
+        frontmatter.includes('article_date:'),
+        `Workflow ${workflowFile} should define article_date input so the concurrency group is actually scoped per date on manual dispatch`
+      ).toBe(true);
+    }
+  });
+
   it('compiled lock workflows should preserve deterministic concurrency groups', () => {
     const weeklyReviewLockPath = path.join(WORKFLOWS_DIR, 'news-weekly-review.lock.yml');
     expect(fs.existsSync(weeklyReviewLockPath), `Workflow file ${weeklyReviewLockPath} should exist`).toBe(true);
     const weeklyReviewLock = fs.readFileSync(weeklyReviewLockPath, 'utf-8');
     expect(weeklyReviewLock).toContain("group: gh-aw-news-weekly-review-${{ inputs.article_date || 'today' }}");
     expect(weeklyReviewLock).toContain('cancel-in-progress: false');
+    expect(weeklyReviewLock).toContain('article_date:');
 
     const translateLockPath = path.join(WORKFLOWS_DIR, 'news-translate.lock.yml');
     expect(fs.existsSync(translateLockPath), `Workflow file ${translateLockPath} should exist`).toBe(true);

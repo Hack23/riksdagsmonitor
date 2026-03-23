@@ -30,6 +30,10 @@ name: "News: Month Ahead"
   - cron: "0 8 1 * *"
   workflow_dispatch:
     inputs:
+      article_date:
+        description: Article date (YYYY-MM-DD) for manual backfills. Defaults to today when
+          omitted or scheduled.
+        required: false
       analysis_depth:
         default: standard
         description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.

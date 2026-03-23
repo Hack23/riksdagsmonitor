@@ -7,6 +7,9 @@ on:
     - cron: "0 7 * * 1-5"
   workflow_dispatch:
     inputs:
+      article_date:
+        description: 'Article date (YYYY-MM-DD) for manual backfills. Defaults to today when omitted or scheduled.'
+        required: false
       force_generation:
         description: Force generation even if recent articles exist
         type: boolean
