@@ -851,3 +851,169 @@ describe('Script-Based Article Generation Safety', () => {
     }
   });
 });
+
+describe('File Ownership Contract', () => {
+  const ALL_CONTENT_WORKFLOWS = [
+    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+    'news-evening-analysis.md',
+    'news-realtime-monitor.md',
+    'news-article-generator.md',
+  ];
+
+  it('all content workflows should have file ownership contract section', () => {
+    for (const workflowFile of ALL_CONTENT_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('File Ownership Contract'),
+        `Workflow ${workflowFile} should have a File Ownership Contract section`
+      ).toBe(true);
+    }
+  });
+
+  it('content workflows should reference validate-file-ownership.ts', () => {
+    for (const workflowFile of ALL_CONTENT_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('validate-file-ownership.ts content'),
+        `Workflow ${workflowFile} should reference validate-file-ownership.ts with content category`
+      ).toBe(true);
+    }
+  });
+
+  it('translation workflow should reference validate-file-ownership.ts with translation category', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'news-translate.md');
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(
+      content.includes('validate-file-ownership.ts translation'),
+      'Translation workflow should reference validate-file-ownership.ts with translation category'
+    ).toBe(true);
+  });
+
+  it('translation workflow should have content-PR dependency check', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'news-translate.md');
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(
+      content.includes('Content-PR Dependency Check'),
+      'Translation workflow should have a Content-PR Dependency Check section'
+    ).toBe(true);
+    expect(
+      content.includes('OPEN_CONTENT_PRS'),
+      'Translation workflow should check for open content PRs'
+    ).toBe(true);
+  });
+
+  it('validate-file-ownership.ts script should exist', () => {
+    const scriptPath = path.join(__dirname, '..', 'scripts', 'validate-file-ownership.ts');
+    expect(
+      fs.existsSync(scriptPath),
+      'scripts/validate-file-ownership.ts should exist'
+    ).toBe(true);
+  });
+
+  it('validate-file-ownership.ts should export CONTENT_LANGS and TRANSLATION_LANGS', () => {
+    const scriptPath = path.join(__dirname, '..', 'scripts', 'validate-file-ownership.ts');
+    const content = fs.readFileSync(scriptPath, 'utf-8');
+    expect(content).toContain('export const CONTENT_LANGS');
+    expect(content).toContain('export const TRANSLATION_LANGS');
+  });
+
+  it('validate-file-ownership.ts should export validateFileList and validateStagedFileOwnership', () => {
+    const scriptPath = path.join(__dirname, '..', 'scripts', 'validate-file-ownership.ts');
+    const content = fs.readFileSync(scriptPath, 'utf-8');
+    expect(content).toContain('export function validateFileList');
+    expect(content).toContain('export function validateStagedFileOwnership');
+  });
+});
+
+describe('Concurrency Strategy', () => {
+  it('all content workflows should have concurrency blocks with deterministic group keys', () => {
+    const contentWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md',
+      'news-article-generator.md',
+    ];
+
+    for (const workflowFile of contentWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const frontmatter = parseFrontmatter(filepath);
+      expect(
+        frontmatter.includes('concurrency:'),
+        `Workflow ${workflowFile} should have a concurrency block in frontmatter`
+      ).toBe(true);
+      expect(
+        frontmatter.includes('cancel-in-progress: false'),
+        `Workflow ${workflowFile} should have cancel-in-progress: false (queue, don't cancel)`
+      ).toBe(true);
+    }
+  });
+
+  it('content workflow concurrency groups should include workflow name', () => {
+    const workflowGroups: Record<string, string> = {
+      'news-committee-reports.md': 'gh-aw-news-committee-reports',
+      'news-propositions.md': 'gh-aw-news-propositions',
+      'news-motions.md': 'gh-aw-news-motions',
+      'news-interpellations.md': 'gh-aw-news-interpellations',
+      'news-week-ahead.md': 'gh-aw-news-week-ahead',
+      'news-month-ahead.md': 'gh-aw-news-month-ahead',
+      'news-weekly-review.md': 'gh-aw-news-weekly-review',
+      'news-monthly-review.md': 'gh-aw-news-monthly-review',
+    };
+
+    for (const [workflowFile, expectedGroupPrefix] of Object.entries(workflowGroups)) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const frontmatter = parseFrontmatter(filepath);
+      expect(
+        frontmatter.includes(expectedGroupPrefix),
+        `Workflow ${workflowFile} should have concurrency group starting with ${expectedGroupPrefix}`
+      ).toBe(true);
+    }
+  });
+
+  it('translation workflow concurrency should use job-discriminator for parallel execution', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'news-translate.md');
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+    const frontmatter = parseFrontmatter(filepath);
+    expect(frontmatter).toContain('job-discriminator');
+    expect(frontmatter).toContain('cancel-in-progress: true');
+  });
+});
+
+describe('Branch Naming Convention', () => {
+  it('content workflows should document deterministic branch naming', () => {
+    const contentWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md',
+      'news-article-generator.md',
+    ];
+
+    for (const workflowFile of contentWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('news/content/'),
+        `Workflow ${workflowFile} should document news/content/ branch naming convention`
+      ).toBe(true);
+    }
+  });
+
+  it('translation workflow should document deterministic branch naming', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'news-translate.md');
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(
+      content.includes('news/translate/'),
+      'Translation workflow should document news/translate/ branch naming convention'
+    ).toBe(true);
+  });
+});

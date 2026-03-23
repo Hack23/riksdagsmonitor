@@ -152,6 +152,44 @@ If EN source articles do not exist on disk when this workflow runs, it means the
 
 **Violation of this rule causes merge conflicts and overwrites higher-quality reviewed articles.**
 
+### 🛡️ File Ownership Contract (Translation)
+
+This workflow is a **translation** workflow and MUST only create/modify files for the 12 non-core languages.
+
+- ✅ **Allowed:** `news/YYYY-MM-DD-*-{da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html`
+- ❌ **Forbidden:** `news/YYYY-MM-DD-*-en.html`, `news/YYYY-MM-DD-*-sv.html`
+
+Before committing, validate file ownership:
+```bash
+npx tsx scripts/validate-file-ownership.ts translation
+```
+
+If the validator reports violations, **remove** the offending files with `git checkout -- news/*-en.html news/*-sv.html` before committing.
+
+### 🔒 Content-PR Dependency Check
+
+Before starting translations, check if any content workflow PRs are still open for the target date. If they are, defer to avoid merge conflicts:
+```bash
+ARTICLE_DATE="${{ github.event.inputs.article_date || '' }}"
+if [ -z "$ARTICLE_DATE" ]; then ARTICLE_DATE=$(date -u '+%Y-%m-%d'); fi
+OPEN_CONTENT_PRS=$(gh pr list --base main --json headRefName --jq "[.[] | select(.headRefName | startswith(\"news/content/${ARTICLE_DATE}\"))] | length" 2>/dev/null || echo "0")
+if [ "$OPEN_CONTENT_PRS" -gt 0 ]; then
+  echo "⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — deferring translation"
+  echo "   Next scheduled run will retry once content workflow PRs are merged."
+  exit 0
+fi
+```
+
+### Branch Naming Convention
+
+Use deterministic branch names for translation PRs:
+```
+news/translate/{YYYY-MM-DD}/{article-type}
+```
+Example: `news/translate/2026-03-23/committee-reports`
+
+> **Note:** `safeoutputs___create_pull_request` handles branch creation automatically; this naming convention is documented for traceability and conflict avoidance.
+
 ## ⏱️ Time Budget (60 minutes)
 
 - **Minutes 0–3**: Scan for untranslated articles, determine work scope

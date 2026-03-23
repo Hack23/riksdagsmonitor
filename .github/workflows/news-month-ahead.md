@@ -31,6 +31,10 @@ permissions:
 
 timeout-minutes: 30
 
+concurrency:
+  group: gh-aw-news-month-ahead-${{ inputs.article_date || 'today' }}
+  cancel-in-progress: false
+
 network:
   allowed:
     - node
@@ -216,6 +220,30 @@ Before generating ANY articles, verify MCP connectivity:
 - Existing articles in the news/ directory
 - Cached or stale data
 - AI-generated content without MCP source data
+
+## 🛡️ File Ownership Contract
+
+This workflow is a **content** workflow and MUST only create/modify files for **EN and SV** languages.
+
+- ✅ **Allowed:** `news/YYYY-MM-DD-*-en.html`, `news/YYYY-MM-DD-*-sv.html`
+- ❌ **Forbidden:** `news/YYYY-MM-DD-*-da.html`, `news/YYYY-MM-DD-*-no.html`, or any other translation language
+
+Before committing, validate file ownership:
+```bash
+npx tsx scripts/validate-file-ownership.ts content
+```
+
+If the validator reports violations, **remove** the offending files with `git checkout -- <file>` before committing.
+
+### Branch Naming Convention
+
+Use deterministic branch names for content PRs:
+```
+news/content/{YYYY-MM-DD}/{article-type}
+```
+Example: `news/content/2026-03-23/month-ahead`
+
+> **Note:** `safeoutputs___create_pull_request` handles branch creation automatically; this naming convention is documented for traceability and conflict avoidance.
 
 ## MANDATORY PR Creation
 
