@@ -113,9 +113,9 @@ function detectSwedishLeakage(html: string, lang: string): string[] {
   if (lang === 'sv') return [];
   // Strip script, style, and JSON-LD blocks (they contain brand names like "Riksdag")
   const stripped = html
-    .replace(/<script[\s>][\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style[\s>][\s\S]*?<\/style>/gi, ' ')
-    .replace(/<footer[\s>][\s\S]*?<\/footer>/gi, ' ')
+    .replace(/<script[\s>][\s\S]*?<\/script\s*>/gi, ' ')
+    .replace(/<style[\s>][\s\S]*?<\/style\s*>/gi, ' ')
+    .replace(/<footer[\s>][\s\S]*?<\/footer\s*>/gi, ' ')
     .replace(/<[^>]*>/g, ' ');
   // Distinctly Swedish parliamentary terms that should be translated.
   // Excludes "riksdagen" — the real template embeds this as a proper
