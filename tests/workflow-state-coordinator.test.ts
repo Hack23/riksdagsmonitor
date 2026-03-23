@@ -735,6 +735,40 @@ describe('Workflow Lock Manager', () => {
       expect(info!.workflowId).toBe('wf-new');
     });
 
+    it('should reclaim lock with corrupt info.json', () => {
+      // Create lock directory with corrupt (unparseable) info.json
+      const lockPath = path.join(TEST_LOCK_DIR, 'propositions-2026-03-23.lock');
+      fs.mkdirSync(lockPath, { recursive: true });
+      fs.writeFileSync(path.join(lockPath, 'info.json'), 'NOT VALID JSON{{{', 'utf-8');
+
+      // acquireLock should treat corrupt info.json as reclaimable
+      const result = lockManager.acquireLock('propositions', '2026-03-23', 'wf-new');
+      expect(result).toBe(true);
+
+      const info = lockManager.getLockInfo('propositions', '2026-03-23');
+      expect(info).not.toBeNull();
+      expect(info!.workflowId).toBe('wf-new');
+    });
+
+    it('should reclaim lock with invalid acquiredAt timestamp', () => {
+      // Create lock directory with info.json that has an invalid acquiredAt
+      const lockPath = path.join(TEST_LOCK_DIR, 'propositions-2026-03-23.lock');
+      fs.mkdirSync(lockPath, { recursive: true });
+      fs.writeFileSync(path.join(lockPath, 'info.json'), JSON.stringify({
+        workflowId: 'old-wf',
+        acquiredAt: 'not-a-date',
+        expiresAfterMs: LOCK_TIMEOUT_MS,
+      }), 'utf-8');
+
+      // acquireLock should treat NaN acquiredAt as corrupt and reclaim
+      const result = lockManager.acquireLock('propositions', '2026-03-23', 'wf-new');
+      expect(result).toBe(true);
+
+      const info = lockManager.getLockInfo('propositions', '2026-03-23');
+      expect(info).not.toBeNull();
+      expect(info!.workflowId).toBe('wf-new');
+    });
+
     it('should throw for non-EEXIST fs errors during acquire', () => {
       const mkdirSpy = vi.spyOn(fs, 'mkdirSync').mockImplementationOnce(() => {
         const error = new Error('permission denied') as NodeJS.ErrnoException;
@@ -822,6 +856,16 @@ describe('Workflow Lock Manager', () => {
 
       const cleaned = lockManager.cleanupStaleLocks();
       expect(cleaned).toBe(1);
+    });
+
+    it('should clean up lock directories with corrupt info.json', () => {
+      const lockPath = path.join(TEST_LOCK_DIR, 'corrupt-2026-03-23.lock');
+      fs.mkdirSync(lockPath, { recursive: true });
+      fs.writeFileSync(path.join(lockPath, 'info.json'), 'CORRUPT JSON{{{', 'utf-8');
+
+      const cleaned = lockManager.cleanupStaleLocks();
+      expect(cleaned).toBe(1);
+      expect(fs.existsSync(lockPath)).toBe(false);
     });
 
     it('should return 0 when no locks exist', () => {

@@ -220,7 +220,7 @@ export function jaccardTopicSimilarity(a: string[], b: string[]): number {
 /**
  * Return adaptive MCP cache TTL based on Riksdag plenary hours.
  *
- * Plenary hours: 08:00-16:00 CET = 07:00-15:00 UTC → 2-hour TTL.
+ * Plenary hours: 08:00–16:00 Europe/Stockholm local time (DST-aware) → 2-hour TTL.
  * Non-plenary hours → 4-hour TTL (data changes less frequently).
  *
  * @param now - Optional Date for testing
@@ -301,24 +301,45 @@ export class WorkflowLockManager {
         }
 
         let reclaimed: boolean = false;
-        try {
-          const infoPath: string = path.join(lockPath, 'info.json');
-          if (fs.existsSync(infoPath)) {
-            const existing: LockInfo = JSON.parse(fs.readFileSync(infoPath, 'utf-8')) as LockInfo;
-            const acquiredAt: number = new Date(existing.acquiredAt).getTime();
-            const expiry: number = existing.expiresAfterMs ?? this.timeoutMs;
-            if (Date.now() - acquiredAt > expiry && reclaimAttempts < maxReclaims) {
+        const infoPath: string = path.join(lockPath, 'info.json');
+        if (fs.existsSync(infoPath)) {
+          try {
+            const raw: string = fs.readFileSync(infoPath, 'utf-8');
+            const existing: LockInfo = JSON.parse(raw) as LockInfo;
+            const acquiredAtMs: number = new Date(existing.acquiredAt).getTime();
+            const hasValidAcquiredAt: boolean = Number.isFinite(acquiredAtMs);
+            const expiryMs: number =
+              typeof existing.expiresAfterMs === 'number' && existing.expiresAfterMs > 0
+                ? existing.expiresAfterMs
+                : this.timeoutMs;
+            const isExpired: boolean = hasValidAcquiredAt && Date.now() - acquiredAtMs > expiryMs;
+            const treatAsCorrupt: boolean = !hasValidAcquiredAt;
+
+            if ((isExpired || treatAsCorrupt) && reclaimAttempts < maxReclaims) {
+              // Stale or corrupt lock — reclaim so workflows aren't blocked indefinitely.
               fs.rmSync(lockPath, { recursive: true, force: true });
               reclaimed = true;
             }
-          } else if (reclaimAttempts < maxReclaims) {
-            // Lock directory exists but info.json is missing — orphaned lock.
-            // Reclaim it so workflows aren't blocked indefinitely.
+          } catch {
+            // Corrupt or unreadable info.json — treat as reclaimable when within maxReclaims.
+            if (reclaimAttempts < maxReclaims) {
+              try {
+                fs.rmSync(lockPath, { recursive: true, force: true });
+                reclaimed = true;
+              } catch {
+                // If we cannot remove the corrupt lock, treat as held.
+              }
+            }
+          }
+        } else if (reclaimAttempts < maxReclaims) {
+          // Lock directory exists but info.json is missing — orphaned lock.
+          // Reclaim it so workflows aren't blocked indefinitely.
+          try {
             fs.rmSync(lockPath, { recursive: true, force: true });
             reclaimed = true;
+          } catch {
+            // If we cannot remove the orphaned lock, treat as held.
           }
-        } catch {
-          // If we can't inspect/remove stale lock, treat as held.
         }
 
         if (!reclaimed) return false;
@@ -374,23 +395,31 @@ export class WorkflowLockManager {
       const entries: string[] = fs.readdirSync(this.lockDir);
       for (const entry of entries) {
         if (!entry.endsWith('.lock')) continue;
-        const infoPath: string = path.join(this.lockDir, entry, 'info.json');
+        const lockPath: string = path.join(this.lockDir, entry);
+        const infoPath: string = path.join(lockPath, 'info.json');
         try {
           if (fs.existsSync(infoPath)) {
             const info: LockInfo = JSON.parse(fs.readFileSync(infoPath, 'utf-8')) as LockInfo;
             const acquiredAt: number = new Date(info.acquiredAt).getTime();
             const expiry: number = info.expiresAfterMs ?? this.timeoutMs;
             if (Date.now() - acquiredAt > expiry) {
-              fs.rmSync(path.join(this.lockDir, entry), { recursive: true, force: true });
+              fs.rmSync(lockPath, { recursive: true, force: true });
               cleaned++;
             }
           } else {
             // No info.json — remove orphaned lock directory
-            fs.rmSync(path.join(this.lockDir, entry), { recursive: true, force: true });
+            fs.rmSync(lockPath, { recursive: true, force: true });
             cleaned++;
           }
         } catch {
-          // Ignore individual lock cleanup errors
+          // Treat unreadable/corrupt info.json or other per-lock errors as invalid lock;
+          // attempt best-effort removal so stale/corrupt locks do not block new workflows.
+          try {
+            fs.rmSync(lockPath, { recursive: true, force: true });
+            cleaned++;
+          } catch {
+            // Ignore errors during lock directory removal
+          }
         }
       }
     } catch {
