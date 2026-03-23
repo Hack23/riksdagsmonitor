@@ -166,14 +166,14 @@ steps:
       if [ -z "$ARTICLE_DATE" ]; then
         ARTICLE_DATE=$(date -u '+%Y-%m-%d')
       fi
-      MISSING_EN=$(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null | wc -l)
-      if [ "$MISSING_EN" -eq 0 ]; then
+      EN_SOURCE_COUNT=$(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null | wc -l)
+      if [ "$EN_SOURCE_COUNT" -eq 0 ]; then
         echo "⛔ No EN source articles found for $ARTICLE_DATE — aborting to avoid race condition"
         echo "   Next scheduled run will retry once content workflow PR is merged."
         echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
         exit 0
       fi
-      echo "✅ Found $MISSING_EN EN source article(s) for $ARTICLE_DATE — proceeding with translation"
+      echo "✅ Found $EN_SOURCE_COUNT EN source article(s) for $ARTICLE_DATE — proceeding with translation"
 
   - name: Preflight gate
     if: env.SKIP_TRANSLATION == 'true'

@@ -1032,25 +1032,28 @@ describe('File Ownership Contract', () => {
     }
   });
 
-  it('content workflows should reference validate-file-ownership.ts', () => {
+  it('content workflows should reference validate-file-ownership.ts with runnable invocation', () => {
+    // Note: The validator is invoked via agent instructions in the markdown body,
+    // not as a compiled YAML step — so we verify the full runnable command in the
+    // markdown source rather than the .lock.yml output.
     for (const workflowFile of ALL_CONTENT_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
-        content.includes('validate-file-ownership.ts content'),
-        `Workflow ${workflowFile} should reference validate-file-ownership.ts with content category`
+        content.includes('npx tsx scripts/validate-file-ownership.ts content'),
+        `Workflow ${workflowFile} should include runnable invocation: npx tsx scripts/validate-file-ownership.ts content`
       ).toBe(true);
     }
   });
 
-  it('translation workflow should reference validate-file-ownership.ts with translation category', () => {
+  it('translation workflow should reference validate-file-ownership.ts with runnable translation invocation', () => {
     const filepath = path.join(WORKFLOWS_DIR, 'news-translate.md');
     expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
     const content = fs.readFileSync(filepath, 'utf-8');
     expect(
-      content.includes('validate-file-ownership.ts translation'),
-      'Translation workflow should reference validate-file-ownership.ts with translation category'
+      content.includes('npx tsx scripts/validate-file-ownership.ts translation'),
+      'Translation workflow should include runnable invocation: npx tsx scripts/validate-file-ownership.ts translation'
     ).toBe(true);
   });
 
