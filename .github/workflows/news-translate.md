@@ -129,6 +129,7 @@ steps:
           sed 's/^/  /' "$GH_ERROR_LOG"
         fi
         echo "   Deferring translation to avoid potential merge conflicts."
+        echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
         exit 0
       fi
 
@@ -144,17 +145,20 @@ steps:
         fi
         OPEN_CONTENT_PRS=0
         echo "   Deferring translation to avoid potential merge conflicts."
+        echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
         exit 0
       fi
 
       if [ "$OPEN_CONTENT_PRS" -gt 0 ]; then
         echo "⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — deferring translation"
         echo "   Next scheduled run will retry once content workflow PRs are merged."
+        echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
         exit 0
       fi
       echo "✅ No open content PRs for $ARTICLE_DATE — proceeding with translation"
 
   - name: Pre-flight source article check
+    if: env.SKIP_TRANSLATION != 'true'
     env:
       ARTICLE_DATE_INPUT: ${{ github.event.inputs.article_date }}
     run: |
@@ -166,9 +170,17 @@ steps:
       if [ "$MISSING_EN" -eq 0 ]; then
         echo "⛔ No EN source articles found for $ARTICLE_DATE — aborting to avoid race condition"
         echo "   Next scheduled run will retry once content workflow PR is merged."
+        echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
         exit 0
       fi
       echo "✅ Found $MISSING_EN EN source article(s) for $ARTICLE_DATE — proceeding with translation"
+
+  - name: Preflight gate
+    if: env.SKIP_TRANSLATION == 'true'
+    run: |
+      echo "::notice::Translation deferred by pre-flight checks — halting workflow to avoid unnecessary agent execution."
+      echo "The next scheduled run will retry automatically."
+      exit 1
 
 engine:
   id: copilot
@@ -224,17 +236,17 @@ If the validator reports violations, reset tracked EN/SV files with `git restore
 
 ### 🔒 Content-PR Dependency Check
 
-Before starting translations, check if any content workflow PRs are still open for the target date. If they are, defer to avoid merge conflicts:
+Before starting translations, check if any content workflow PRs are still open for the target date. If they are, set the `SKIP_TRANSLATION` environment flag and defer to avoid merge conflicts. A subsequent "Preflight gate" step checks this flag and halts the workflow (via `exit 1`) to prevent unnecessary agent execution:
 ```bash
-ARTICLE_DATE_INPUT="${{ github.event.inputs.article_date }}"
-GH_REPOSITORY="${{ github.repository }}"
+# Pre-flight content PR dependency check step:
+# - Sets SKIP_TRANSLATION=true in $GITHUB_ENV on defer conditions
+# - exit 0 completes the step; the gate step below enforces the halt
 ARTICLE_DATE="${ARTICLE_DATE_INPUT:-}"
 if [ -z "$ARTICLE_DATE" ]; then
   ARTICLE_DATE=$(date -u '+%Y-%m-%d')
 fi
 CONTENT_BRANCH_PREFIX="news/content/${ARTICLE_DATE}/"
-GH_ERROR_LOG=$(mktemp)
-JQ_ERROR_LOG=$(mktemp)
+GH_ERROR_LOG=$(mktemp); JQ_ERROR_LOG=$(mktemp)
 chmod 600 "$GH_ERROR_LOG" "$JQ_ERROR_LOG"
 trap 'rm -f "$GH_ERROR_LOG" "$JQ_ERROR_LOG"' EXIT
 
@@ -243,8 +255,8 @@ PR_LIST_JSON=$(gh pr list --repo "$GH_REPOSITORY" --base main --state open --lim
 GH_EXIT_CODE=$?
 set -e
 if [ "$GH_EXIT_CODE" -ne 0 ] || [ -z "$PR_LIST_JSON" ]; then
-  echo "⚠ Unable to query open content PRs for $ARTICLE_DATE (gh exit code: $GH_EXIT_CODE)."
-  echo "   Deferring translation to avoid potential merge conflicts."
+  echo "⚠ Unable to query open content PRs (gh exit code: $GH_EXIT_CODE). Deferring."
+  echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
   exit 0
 fi
 
@@ -253,16 +265,23 @@ OPEN_CONTENT_PRS=$(printf '%s' "$PR_LIST_JSON" | jq -r --arg prefix "$CONTENT_BR
 JQ_EXIT_CODE=$?
 set -e
 if [ "$JQ_EXIT_CODE" -ne 0 ] || ! [[ "$OPEN_CONTENT_PRS" =~ ^[0-9]+$ ]]; then
-  echo "⚠ Unable to parse content PR count for $ARTICLE_DATE (jq exit code: $JQ_EXIT_CODE)."
-  echo "   Deferring translation to avoid potential merge conflicts."
+  echo "⚠ Unable to parse content PR count (jq exit code: $JQ_EXIT_CODE). Deferring."
+  echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
   exit 0
 fi
 
 if [ "$OPEN_CONTENT_PRS" -gt 0 ]; then
   echo "⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — deferring translation"
-  echo "   Next scheduled run will retry once content workflow PRs are merged."
+  echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
   exit 0
 fi
+
+# Pre-flight source article check step (guarded with if: env.SKIP_TRANSLATION != 'true'):
+# Also sets SKIP_TRANSLATION=true if no EN source articles exist.
+
+# Preflight gate step (if: env.SKIP_TRANSLATION == 'true'):
+#   echo "::notice::Translation deferred by pre-flight checks."
+#   exit 1  # Halts the workflow — the next scheduled run retries automatically.
 ```
 
 ### Branch Naming Convention

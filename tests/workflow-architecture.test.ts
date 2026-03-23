@@ -1331,4 +1331,19 @@ describe('Compiled lock workflow synchronization', () => {
     expect(content).toContain('name: Pre-flight content PR dependency check');
     expect(content).toContain('gh pr list --repo \\"$GH_REPOSITORY\\" --base main --state open --limit 200 --json headRefName');
   });
+
+  it('news-translate.lock.yml preflight gate should set SKIP_TRANSLATION flag and halt on defer', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'news-translate.lock.yml');
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+    const content = fs.readFileSync(filepath, 'utf-8');
+    // Preflight steps should set env flag instead of silently exiting 0
+    expect(content).toContain('SKIP_TRANSLATION=true');
+    expect(content).toContain('GITHUB_ENV');
+    // Source article check should be guarded by the skip flag
+    expect(content).toContain("env.SKIP_TRANSLATION != 'true'");
+    // Gate step should halt the job when SKIP_TRANSLATION is set
+    expect(content).toContain('name: Preflight gate');
+    expect(content).toContain("env.SKIP_TRANSLATION == 'true'");
+    expect(content).toContain('exit 1');
+  });
 });

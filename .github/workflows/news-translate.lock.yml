@@ -22,7 +22,7 @@
 #
 # Dedicated translation workflow for news articles. Generates high-quality translations for all non-core languages. Dispatched by content workflows or run manually/on schedule to translate untranslated articles.
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"678e5d10d09166a733c8ff0cabf7ff1baae8222e7bf2c008ebfb849c5ddcdd41","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"f6e96611b5215d9f7bf219d0f6cd93d58230366ce182632bb239228d1cb25ab4","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
 
 name: "News: Translate Articles"
 "on":
@@ -205,7 +205,6 @@ jobs:
           GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPE: ${{ github.event.inputs.article_type }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
           GH_AW_GITHUB_EVENT_INPUTS_SOURCE_LANGUAGE: ${{ github.event.inputs.source_language }}
-          GH_AW_GITHUB_REPOSITORY: ${{ github.repository }}
         with:
           script: |
             const { setupGlobals } = require('${{ runner.temp }}/gh-aw/actions/setup_globals.cjs');
@@ -334,11 +333,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
         name: Pre-flight content PR dependency check
-        run: "ARTICLE_DATE=\"${ARTICLE_DATE_INPUT:-}\"\nif [ -z \"$ARTICLE_DATE\" ]; then\n  ARTICLE_DATE=$(date -u '+%Y-%m-%d')\nfi\nCONTENT_BRANCH_PREFIX=\"news/content/${ARTICLE_DATE}/\"\nGH_ERROR_LOG=$(mktemp)\nJQ_ERROR_LOG=$(mktemp)\nchmod 600 \"$GH_ERROR_LOG\" \"$JQ_ERROR_LOG\"\ntrap 'rm -f \"$GH_ERROR_LOG\" \"$JQ_ERROR_LOG\"' EXIT\nOPEN_CONTENT_PRS=0\n\nset +e\nPR_LIST_JSON=$(gh pr list --repo \"$GH_REPOSITORY\" --base main --state open --limit 200 --json headRefName 2>\"$GH_ERROR_LOG\")\nGH_EXIT_CODE=$?\nset -e\nif [ \"$GH_EXIT_CODE\" -ne 0 ] || [ -z \"$PR_LIST_JSON\" ]; then\n  echo \"⚠ Unable to query open content PRs for $ARTICLE_DATE (gh exit code: $GH_EXIT_CODE).\"\n  if [ -s \"$GH_ERROR_LOG\" ]; then\n    echo \"gh error:\"\n    sed 's/^/  /' \"$GH_ERROR_LOG\"\n  fi\n  echo \"   Deferring translation to avoid potential merge conflicts.\"\n  exit 0\nfi\n\nset +e\nOPEN_CONTENT_PRS=$(printf '%s' \"$PR_LIST_JSON\" | jq -r --arg prefix \"$CONTENT_BRANCH_PREFIX\" '[.[] | select(.headRefName | startswith($prefix))] | length' 2>\"$JQ_ERROR_LOG\")\nJQ_EXIT_CODE=$?\nset -e\nif [ \"$JQ_EXIT_CODE\" -ne 0 ] || ! [[ \"$OPEN_CONTENT_PRS\" =~ ^[0-9]+$ ]]; then\n  echo \"⚠ Unable to parse content PR count for $ARTICLE_DATE (jq exit code: $JQ_EXIT_CODE).\"\n  if [ -s \"$JQ_ERROR_LOG\" ]; then\n    echo \"jq error:\"\n    sed 's/^/  /' \"$JQ_ERROR_LOG\"\n  fi\n  OPEN_CONTENT_PRS=0\n  echo \"   Deferring translation to avoid potential merge conflicts.\"\n  exit 0\nfi\n\nif [ \"$OPEN_CONTENT_PRS\" -gt 0 ]; then\n  echo \"⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — deferring translation\"\n  echo \"   Next scheduled run will retry once content workflow PRs are merged.\"\n  exit 0\nfi\necho \"✅ No open content PRs for $ARTICLE_DATE — proceeding with translation\"\n"
+        run: "ARTICLE_DATE=\"${ARTICLE_DATE_INPUT:-}\"\nif [ -z \"$ARTICLE_DATE\" ]; then\n  ARTICLE_DATE=$(date -u '+%Y-%m-%d')\nfi\nCONTENT_BRANCH_PREFIX=\"news/content/${ARTICLE_DATE}/\"\nGH_ERROR_LOG=$(mktemp)\nJQ_ERROR_LOG=$(mktemp)\nchmod 600 \"$GH_ERROR_LOG\" \"$JQ_ERROR_LOG\"\ntrap 'rm -f \"$GH_ERROR_LOG\" \"$JQ_ERROR_LOG\"' EXIT\nOPEN_CONTENT_PRS=0\n\nset +e\nPR_LIST_JSON=$(gh pr list --repo \"$GH_REPOSITORY\" --base main --state open --limit 200 --json headRefName 2>\"$GH_ERROR_LOG\")\nGH_EXIT_CODE=$?\nset -e\nif [ \"$GH_EXIT_CODE\" -ne 0 ] || [ -z \"$PR_LIST_JSON\" ]; then\n  echo \"⚠ Unable to query open content PRs for $ARTICLE_DATE (gh exit code: $GH_EXIT_CODE).\"\n  if [ -s \"$GH_ERROR_LOG\" ]; then\n    echo \"gh error:\"\n    sed 's/^/  /' \"$GH_ERROR_LOG\"\n  fi\n  echo \"   Deferring translation to avoid potential merge conflicts.\"\n  echo \"SKIP_TRANSLATION=true\" >> \"$GITHUB_ENV\"\n  exit 0\nfi\n\nset +e\nOPEN_CONTENT_PRS=$(printf '%s' \"$PR_LIST_JSON\" | jq -r --arg prefix \"$CONTENT_BRANCH_PREFIX\" '[.[] | select(.headRefName | startswith($prefix))] | length' 2>\"$JQ_ERROR_LOG\")\nJQ_EXIT_CODE=$?\nset -e\nif [ \"$JQ_EXIT_CODE\" -ne 0 ] || ! [[ \"$OPEN_CONTENT_PRS\" =~ ^[0-9]+$ ]]; then\n  echo \"⚠ Unable to parse content PR count for $ARTICLE_DATE (jq exit code: $JQ_EXIT_CODE).\"\n  if [ -s \"$JQ_ERROR_LOG\" ]; then\n    echo \"jq error:\"\n    sed 's/^/  /' \"$JQ_ERROR_LOG\"\n  fi\n  OPEN_CONTENT_PRS=0\n  echo \"   Deferring translation to avoid potential merge conflicts.\"\n  echo \"SKIP_TRANSLATION=true\" >> \"$GITHUB_ENV\"\n  exit 0\nfi\n\nif [ \"$OPEN_CONTENT_PRS\" -gt 0 ]; then\n  echo \"⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — deferring translation\"\n  echo \"   Next scheduled run will retry once content workflow PRs are merged.\"\n  echo \"SKIP_TRANSLATION=true\" >> \"$GITHUB_ENV\"\n  exit 0\nfi\necho \"✅ No open content PRs for $ARTICLE_DATE — proceeding with translation\"\n"
       - env:
           ARTICLE_DATE_INPUT: ${{ github.event.inputs.article_date }}
+        if: env.SKIP_TRANSLATION != 'true'
         name: Pre-flight source article check
-        run: |-
+        run: |
           ARTICLE_DATE="${ARTICLE_DATE_INPUT:-}"
           if [ -z "$ARTICLE_DATE" ]; then
             ARTICLE_DATE=$(date -u '+%Y-%m-%d')
@@ -347,9 +347,16 @@ jobs:
           if [ "$MISSING_EN" -eq 0 ]; then
             echo "⛔ No EN source articles found for $ARTICLE_DATE — aborting to avoid race condition"
             echo "   Next scheduled run will retry once content workflow PR is merged."
+            echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
             exit 0
           fi
           echo "✅ Found $MISSING_EN EN source article(s) for $ARTICLE_DATE — proceeding with translation"
+      - if: env.SKIP_TRANSLATION == 'true'
+        name: Preflight gate
+        run: |-
+          echo "::notice::Translation deferred by pre-flight checks — halting workflow to avoid unnecessary agent execution."
+          echo "The next scheduled run will retry automatically."
+          exit 1
 
       - name: Configure Git credentials
         env:
