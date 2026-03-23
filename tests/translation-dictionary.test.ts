@@ -8,7 +8,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { translateTerm, translatePhrase, translateSwedishContent } from '../scripts/translation-dictionary.js';
+import { translateTerm, translatePhrase, translateSwedishContent, DICTIONARIES } from '../scripts/translation-dictionary.js';
 
 // ---------------------------------------------------------------------------
 // translateTerm
@@ -228,5 +228,118 @@ describe('translateSwedishContent', () => {
     const result = translateSwedishContent(html, 'en');
     expect(result).toContain('committee');
     expect(result).not.toContain('data-translate');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// New term category coverage tests
+// ---------------------------------------------------------------------------
+
+const NON_SV_LANGUAGES = [
+  'en', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh',
+] as const;
+
+describe('Term category coverage', () => {
+  describe('ministry names (11 ministries)', () => {
+    const ministries = [
+      'finansdepartementet', 'justitiedepartementet', 'utrikesdepartementet',
+      'försvarsdepartementet', 'socialdepartementet', 'utbildningsdepartementet',
+      'miljödepartementet', 'näringsdepartementet', 'kulturdepartementet',
+      'infrastrukturdepartementet', 'arbetsmarknadsdepartementet',
+    ];
+
+    it('should translate all 11 ministries to English', () => {
+      for (const m of ministries) {
+        expect(translateTerm(m, 'en')).not.toBe(m);
+      }
+    });
+
+    it('should translate all 11 ministries to all non-SV languages', () => {
+      for (const lang of NON_SV_LANGUAGES) {
+        for (const m of ministries) {
+          expect(translateTerm(m, lang)).not.toBe(m);
+        }
+      }
+    });
+  });
+
+  describe('party group names (8 parties)', () => {
+    const parties = [
+      'socialdemokraterna', 'moderaterna', 'sverigedemokraterna', 'centerpartiet',
+      'vänsterpartiet', 'kristdemokraterna', 'liberalerna', 'miljöpartiet',
+    ];
+
+    it('should translate all 8 party names to English', () => {
+      for (const p of parties) {
+        expect(translateTerm(p, 'en')).not.toBe(p);
+      }
+    });
+  });
+
+  describe('parliamentary procedure terms', () => {
+    it('should translate key procedure terms', () => {
+      expect(translateTerm('betänkande', 'en')).toBe('committee report');
+      expect(translateTerm('remiss', 'en')).toBe('referral');
+      expect(translateTerm('yttrande', 'en')).toBe('opinion');
+      expect(translateTerm('bordläggning', 'en')).toBe('tabling');
+      expect(translateTerm('anmälan', 'en')).toBe('notification');
+    });
+  });
+
+  describe('budget and fiscal terms', () => {
+    it('should translate budget terms', () => {
+      expect(translateTerm('anslag', 'en')).toBe('appropriation');
+      expect(translateTerm('utgiftsområde', 'en')).toBe('expenditure area');
+      expect(translateTerm('utgiftstak', 'en')).toBe('expenditure ceiling');
+      expect(translateTerm('budgetpropositionen', 'en')).toBe('the Budget Bill');
+    });
+  });
+
+  describe('EU/international terms', () => {
+    it('should translate EU terms', () => {
+      expect(translateTerm('ordförandeskap', 'en')).toBe('presidency');
+      expect(translateTerm('subsidiaritetsgranskning', 'en')).toBe('subsidiarity review');
+      expect(translateTerm('europeiska unionen', 'en')).toBe('European Union');
+    });
+  });
+
+  describe('geographic/regional terms', () => {
+    it('should translate geographic terms', () => {
+      expect(translateTerm('landsting', 'en')).toBe('county council');
+      expect(translateTerm('kommunalförbund', 'en')).toBe('municipal federation');
+      expect(translateTerm('kommun', 'en')).toBe('municipality');
+    });
+  });
+
+  describe('dictionary breadth', () => {
+    it('should contain required core terms for English', () => {
+      const requiredEnTerms = [
+        'betänkande',
+        'remiss',
+        'yttrande',
+        'bordläggning',
+        'anslag',
+        'utgiftsområde',
+        'finansdepartementet',
+      ];
+      for (const term of requiredEnTerms) {
+        const translated = translateTerm(term, 'en');
+        expect(translated).toBeDefined();
+        expect(translated).not.toBe(term);
+      }
+    });
+
+    it('should have dictionaries for all 13 non-SV languages with core term coverage', () => {
+      const requiredCoreTerms = ['betänkande', 'remiss', 'anslag', 'finansdepartementet'];
+      for (const lang of NON_SV_LANGUAGES) {
+        const dict = DICTIONARIES[lang];
+        expect(dict).toBeDefined();
+        for (const term of requiredCoreTerms) {
+          const translated = translateTerm(term, lang);
+          expect(translated).toBeDefined();
+          expect(translated).not.toBe(term);
+        }
+      }
+    });
   });
 });
