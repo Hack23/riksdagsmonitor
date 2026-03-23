@@ -292,7 +292,6 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
         return {
           success: true,
           files: 0,
-          error: `significance ${significance.score} below threshold ${BREAKING_NEWS_THRESHOLD}`,
           mcpCalls,
         };
       }

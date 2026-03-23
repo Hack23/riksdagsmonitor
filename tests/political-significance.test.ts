@@ -103,6 +103,18 @@ describe('Political Significance Scorer', () => {
       const frOnly = scoreDocuments([makeDoc({ doktyp: 'fr' })]);
       expect(mixed.score).toBeGreaterThan(frOnly.score);
     });
+
+    it('should map normalized document type aliases (documentType=proposition) to proposition weight', () => {
+      const fromAlias = scoreDocuments([makeDoc({ documentType: 'proposition', doktyp: undefined })]);
+      const canonical = scoreDocuments([makeDoc({ doktyp: 'prop' })]);
+      expect(fromAlias.score).toBe(canonical.score);
+    });
+
+    it('should map Swedish alias betankande to committee report weight', () => {
+      const fromAlias = scoreDocuments([makeDoc({ doktyp: 'betankande' })]);
+      const canonical = scoreDocuments([makeDoc({ doktyp: 'bet' })]);
+      expect(fromAlias.score).toBe(canonical.score);
+    });
   });
 
   // -----------------------------------------------------------------------
@@ -149,6 +161,16 @@ describe('Political Significance Scorer', () => {
 
     it('should return 0 opposition pressure when no interpellations exist', () => {
       const result = scoreDocuments([makeDoc({ doktyp: 'prop' })]);
+      const pressureSignal = result.signals.find(s => s.signal === 'oppositionPressure');
+      expect(pressureSignal?.value).toBe(0);
+    });
+
+    it('should not inflate pressure from interpellations with missing mottagare', () => {
+      const result = scoreDocuments([
+        makeDoc({ doktyp: 'ip', mottagare: '' }),
+        makeDoc({ doktyp: 'ip', mottagare: undefined }),
+        makeDoc({ doktyp: 'ip' }),
+      ]);
       const pressureSignal = result.signals.find(s => s.signal === 'oppositionPressure');
       expect(pressureSignal?.value).toBe(0);
     });

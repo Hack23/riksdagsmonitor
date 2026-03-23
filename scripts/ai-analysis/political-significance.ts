@@ -83,6 +83,32 @@ const DOC_TYPE_WEIGHTS: Readonly<Record<string, number>> = {
 
 const DEFAULT_DOC_TYPE_WEIGHT = 30;
 
+const DOC_TYPE_ALIASES: Readonly<Record<string, string>> = {
+  proposition: 'prop',
+  propositioner: 'prop',
+  betankande: 'bet',
+  betankanden: 'bet',
+  kommittebetankande: 'bet',
+  protokoll: 'prot',
+  interpellation: 'ip',
+  interpellationer: 'ip',
+  motion: 'mot',
+  motioner: 'mot',
+  skrivelse: 'skr',
+  fragor: 'fr',
+  fraga: 'fr',
+  fraga_svar: 'frs',
+  question: 'fr',
+  committee_report: 'bet',
+  government_bill: 'prop',
+};
+
+function normalizeDocType(doc: RawDocument): string {
+  const fallbackType = (doc as RawDocument & { type?: string }).type;
+  const rawDocType: string = String(doc.doktyp ?? doc.documentType ?? fallbackType ?? '').trim().toLowerCase();
+  return DOC_TYPE_ALIASES[rawDocType] ?? rawDocType;
+}
+
 // ---------------------------------------------------------------------------
 // Signal scorers (each returns 0-100)
 // ---------------------------------------------------------------------------
@@ -95,7 +121,7 @@ function scoreDocumentType(docs: RawDocument[]): number {
   if (docs.length === 0) return 0;
   let maxWeight = 0;
   for (const doc of docs) {
-    const docType = (doc.doktyp || doc.documentType || '').toLowerCase();
+    const docType = normalizeDocType(doc);
     const weight = DOC_TYPE_WEIGHTS[docType] ?? DEFAULT_DOC_TYPE_WEIGHT;
     if (weight > maxWeight) maxWeight = weight;
   }
@@ -131,16 +157,19 @@ function scoreVolume(docs: RawDocument[]): number {
  */
 function scoreOppositionPressure(docs: RawDocument[]): number {
   const interpellations = docs.filter(d =>
-    (d.doktyp || d.documentType || '').toLowerCase() === 'ip'
+    normalizeDocType(d) === 'ip'
   );
   if (interpellations.length === 0) return 0;
 
   // Count IPs per minister (mottagare)
   const ministerCounts = new Map<string, number>();
   for (const ip of interpellations) {
-    const minister = ip.mottagare || 'unknown';
+    const minister = (ip.mottagare ?? '').trim();
+    if (!minister) continue;
     ministerCounts.set(minister, (ministerCounts.get(minister) || 0) + 1);
   }
+
+  if (ministerCounts.size === 0) return 0;
 
   // Max pressure on any single minister
   let maxPressure = 0;

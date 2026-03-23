@@ -378,6 +378,7 @@ export class WorkflowStateCoordinator {
 
     let maxSimilarity: number = 0;
     let matchedArticle: RecentArticleEntry | null = null;
+    const similarMatches: RecentArticleEntry[] = [];
 
     for (const recentArticle of this.state.recentArticles) {
       const similarity: number = this.calculateSimilarity(
@@ -393,6 +394,10 @@ export class WorkflowStateCoordinator {
         maxSimilarity = similarity;
         matchedArticle = recentArticle;
       }
+
+      if (similarity >= SIMILARITY_THRESHOLD) {
+        similarMatches.push(recentArticle);
+      }
     }
 
     const isDuplicate: boolean = maxSimilarity >= SIMILARITY_THRESHOLD;
@@ -405,8 +410,9 @@ export class WorkflowStateCoordinator {
       isDuplicate &&
       typeof significance === 'number' &&
       significance >= 80 &&
-      matchedArticle &&
-      (typeof matchedArticle.significance !== 'number' || matchedArticle.significance < 80)
+      !similarMatches.some((article: RecentArticleEntry) =>
+        typeof article.significance === 'number' && article.significance >= 80
+      )
     ) {
       return {
         isDuplicate: false,

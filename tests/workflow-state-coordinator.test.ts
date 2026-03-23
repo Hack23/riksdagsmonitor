@@ -505,5 +505,34 @@ describe('Workflow State Coordinator', () => {
 
       expect(result.isDuplicate).toBe(false);
     });
+
+    it('should still flag duplicate when another similar high-significance article exists', async () => {
+      await coordinator.addRecentArticle({
+        slug: 'budget-low-detail-en.html',
+        workflow: 'realtime',
+        title: 'Budget discussion in parliament details',
+        topics: ['budget', 'finance'],
+        mcpQueries: ['search_voteringar'],
+        significance: 35,
+      });
+
+      await coordinator.addRecentArticle({
+        slug: 'budget-high-keyvote-en.html',
+        workflow: 'realtime',
+        title: 'Budget discussion in parliament key vote',
+        topics: ['budget', 'finance'],
+        mcpQueries: ['search_voteringar'],
+        significance: 92,
+      });
+
+      const result: DuplicateCheckResult = await coordinator.checkDuplicateArticle(
+        'Budget discussion in parliament today',
+        ['budget', 'finance'],
+        ['search_voteringar'],
+        85,
+      );
+
+      expect(result.isDuplicate).toBe(true);
+    });
   });
 });
