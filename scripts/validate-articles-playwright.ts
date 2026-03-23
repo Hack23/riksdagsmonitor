@@ -612,6 +612,17 @@ if (resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1] ?? '')) 
     articlePaths = globSync(pattern);
   }
 
+  // Normalize paths: convert absolute paths to relative news/<file>.html
+  // validateSingleArticle() only strips a leading news/ segment, so absolute paths
+  // would produce invalid URLs like ${baseUrl}/news//abs/path/...
+  articlePaths = articlePaths.map((p) => {
+    const newsIdx = p.lastIndexOf('/news/');
+    if (newsIdx !== -1) {
+      return p.slice(newsIdx + 1); // returns "news/<file>.html"
+    }
+    return p;
+  });
+
   if (articlePaths.length === 0) {
     console.error(
       'Usage: npx tsx scripts/validate-articles-playwright.ts [--filter <type>] [file ...]\n' +

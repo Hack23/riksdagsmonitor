@@ -244,7 +244,7 @@ echo "============================"
 - Before September: `rm = "{previousYear}/{currentYear's last 2 digits}"`
 - Example: February 2026 → `rm = "2025/26"`
 
-### MANDATORY Deduplication Check
+## MANDATORY Deduplication Check
 
 Before generating articles, verify no duplicate articles exist for the target date:
 ```bash
