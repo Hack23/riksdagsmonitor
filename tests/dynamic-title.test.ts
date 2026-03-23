@@ -94,3 +94,81 @@ describe('generateDynamicTitle', () => {
     expect(result.title).toContain('Climate');
   });
 });
+
+describe('generateDynamicTitle integration', () => {
+  it('is imported in ALL article generators', async () => {
+    // Verify that all generator files import generateDynamicTitle
+    const fs = await import('node:fs');
+    const generatorFiles = [
+      'scripts/generate-news-enhanced/generators.ts',
+      'scripts/news-types/month-ahead.ts',
+      'scripts/news-types/monthly-review.ts',
+      'scripts/news-types/weekly-review/generator.ts',
+      'scripts/news-types/breaking-news.ts',
+    ];
+
+    for (const file of generatorFiles) {
+      const content = fs.readFileSync(file, 'utf-8');
+      expect(content, `${file} should import generateDynamicTitle`).toContain('generateDynamicTitle');
+    }
+  });
+
+  it('is called for English articles in all generator files', async () => {
+    const fs = await import('node:fs');
+    const generatorFiles = [
+      'scripts/generate-news-enhanced/generators.ts',
+      'scripts/news-types/month-ahead.ts',
+      'scripts/news-types/monthly-review.ts',
+      'scripts/news-types/weekly-review/generator.ts',
+      'scripts/news-types/breaking-news.ts',
+    ];
+
+    for (const file of generatorFiles) {
+      const content = fs.readFileSync(file, 'utf-8');
+      expect(content, `${file} should use generateDynamicTitle for English enrichment`)
+        .toContain("lang === 'en' ? generateDynamicTitle(");
+    }
+  });
+
+  it('visualization section builders exist in all generator files', async () => {
+    const fs = await import('node:fs');
+    // The main generators.ts has buildArticleVisualizationSections
+    const mainGen = fs.readFileSync('scripts/generate-news-enhanced/generators.ts', 'utf-8');
+    expect(mainGen).toContain('buildArticleVisualizationSections');
+    expect(mainGen).toContain('generateStakeholderSwotSection');
+    expect(mainGen).toContain('analyzeDashboardData');
+    expect(mainGen).toContain('generateEconomicDashboardSection');
+
+    // news-types generators have their own section builders
+    const breakingNews = fs.readFileSync('scripts/news-types/breaking-news.ts', 'utf-8');
+    expect(breakingNews).toContain('buildBreakingSections');
+
+    const weeklyReview = fs.readFileSync('scripts/news-types/weekly-review/generator.ts', 'utf-8');
+    expect(weeklyReview).toContain('buildWeeklyReviewSections');
+
+    const monthlyReview = fs.readFileSync('scripts/news-types/monthly-review.ts', 'utf-8');
+    expect(monthlyReview).toContain('buildReviewSections');
+
+    const monthAhead = fs.readFileSync('scripts/news-types/month-ahead.ts', 'utf-8');
+    expect(monthAhead).toContain('buildMonthAheadSections');
+  });
+
+  it('all section builders use graceful degradation', async () => {
+    const fs = await import('node:fs');
+    const files = [
+      'scripts/generate-news-enhanced/generators.ts',
+      'scripts/news-types/breaking-news.ts',
+      'scripts/news-types/weekly-review/generator.ts',
+      'scripts/news-types/monthly-review.ts',
+      'scripts/news-types/month-ahead.ts',
+    ];
+
+    for (const file of files) {
+      const content = fs.readFileSync(file, 'utf-8');
+      // Each section builder should have try/catch for graceful degradation
+      const tryCatchCount = (content.match(/} catch \{/g) ?? []).length;
+      expect(tryCatchCount, `${file} should have try/catch blocks for graceful degradation`)
+        .toBeGreaterThanOrEqual(2);
+    }
+  });
+});
