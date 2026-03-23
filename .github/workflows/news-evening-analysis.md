@@ -244,6 +244,25 @@ echo "============================"
 - Before September: `rm = "{previousYear}/{currentYear's last 2 digits}"`
 - Example: February 2026 → `rm = "2025/26"`
 
+## MANDATORY Deduplication Check
+
+Before generating articles, verify no duplicate articles exist for the target date:
+```bash
+# Resolve article date: use workflow_dispatch input when provided, fallback to UTC today
+ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+if [ -z "$ARTICLE_DATE" ]; then
+  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
+ARTICLE_TYPE="evening-analysis"
+EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}-en.html 2>/dev/null | wc -l)
+if [ "$EXISTING" -gt 0 ]; then
+  echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — skipping"
+  exit 0
+fi
+```
+
+If articles already exist, call `safeoutputs___noop` with a message explaining that articles already exist for the target date.
+
 ### MCP Health Gate
 
 STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm up MCP and check stale data.
@@ -672,6 +691,24 @@ if [ "$NEWS_FILES" -gt 0 ]; then
     npx htmlhint "news/*-*.html" 2>/dev/null || echo "⚠️ Some HTML issues remain"
   fi
 fi
+```
+
+## MANDATORY Quality Validation
+
+After article generation, verify EACH article meets these minimum standards before committing.
+Apply the quality rubric from **`scripts/prompts/v1/quality-criteria.md`** (minimum score: 7/10).
+
+### Playwright Visual Validation
+Run Playwright validation before creating the PR:
+```bash
+# HTMLHint validation
+npx htmlhint "news/*-evening-analysis-*.html"
+
+# Playwright visual validation (accessibility, RTL, responsive)
+npx tsx scripts/validate-articles-playwright.ts --filter "evening-analysis"
+
+# Validate JSON-LD cross-references
+npx tsx scripts/validate-cross-references.ts news/*-evening-analysis-*.html
 ```
 
 ## 🛡️ File Ownership Contract

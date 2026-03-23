@@ -32,6 +32,12 @@ const ARTICLE_TYPE_WORKFLOWS: Record<string, string> = {
   'monthly-review': 'news-monthly-review.md'
 };
 
+/** Content workflows = article type workflows + evening analysis */
+const CONTENT_WORKFLOWS = [
+  ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+  'news-evening-analysis.md',
+];
+
 /** Parse cron schedule from workflow frontmatter */
 function extractCronSchedule(content: string): string | null {
   const cronMatch = content.match(/cron:\s*"([^"]+)"/);
@@ -583,10 +589,9 @@ describe('Unified Required Skills', () => {
 });
 
 describe('Playwright Validation in Content Workflows', () => {
-  const CONTENT_WORKFLOWS = Object.values(ARTICLE_TYPE_WORKFLOWS);
   const PLAYWRIGHT_VALIDATOR_PATH = 'scripts/validate-articles-playwright.ts';
 
-  it('all article type workflows should have Playwright validation step', () => {
+  it('all content workflows should have Playwright validation step', () => {
     const validatorPath = path.join(__dirname, '..', PLAYWRIGHT_VALIDATOR_PATH);
     expect(
       fs.existsSync(validatorPath),
@@ -598,13 +603,13 @@ describe('Playwright Validation in Content Workflows', () => {
       expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
-        content.includes(`playwright test ${PLAYWRIGHT_VALIDATOR_PATH}`),
-        `Workflow ${workflowFile} should reference the Playwright validator path: ${PLAYWRIGHT_VALIDATOR_PATH}`
+        content.includes(`npx tsx ${PLAYWRIGHT_VALIDATOR_PATH}`),
+        `Workflow ${workflowFile} should reference the Playwright validator via npx tsx: ${PLAYWRIGHT_VALIDATOR_PATH}`
       ).toBe(true);
     }
   });
 
-  it('all article type workflows should have cross-reference validation step', () => {
+  it('all content workflows should have cross-reference validation step', () => {
     for (const workflowFile of CONTENT_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
@@ -612,6 +617,64 @@ describe('Playwright Validation in Content Workflows', () => {
       expect(
         content.includes('validate-cross-references'),
         `Workflow ${workflowFile} should reference validate-cross-references for JSON-LD validation`
+      ).toBe(true);
+    }
+  });
+});
+
+describe('Deduplication Check in Content Workflows', () => {
+  it('all content workflows should have MANDATORY Deduplication Check section', () => {
+    for (const workflowFile of CONTENT_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('MANDATORY Deduplication Check'),
+        `Workflow ${workflowFile} should have MANDATORY Deduplication Check section`
+      ).toBe(true);
+    }
+  });
+
+  it('all content workflows should have standardised deduplication bash snippet', () => {
+    for (const workflowFile of CONTENT_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}'),
+        `Workflow ${workflowFile} should assign EXISTING using the standard news/\${ARTICLE_DATE}-\${ARTICLE_TYPE} pattern`
+      ).toBe(true);
+      expect(
+        content.includes('already exist'),
+        `Workflow ${workflowFile} should have a skip message when articles already exist`
+      ).toBe(true);
+    }
+  });
+
+  it('all content workflows should derive ARTICLE_DATE from dispatch input with fallback', () => {
+    for (const workflowFile of CONTENT_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('github.event.inputs.article_date'),
+        `Workflow ${workflowFile} should derive ARTICLE_DATE from workflow_dispatch article_date input`
+      ).toBe(true);
+      expect(
+        content.includes('date -u +%Y-%m-%d'),
+        `Workflow ${workflowFile} should have UTC today fallback for ARTICLE_DATE`
+      ).toBe(true);
+    }
+  });
+
+  it('article type workflows should derive FORCE_GENERATION from dispatch input', () => {
+    for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('github.event.inputs.force_generation'),
+        `Workflow ${workflowFile} should derive FORCE_GENERATION from workflow_dispatch force_generation input`
       ).toBe(true);
     }
   });
@@ -1306,10 +1369,10 @@ describe('Branch Naming Convention', () => {
 });
 
 describe('Workflow dispatch-workflow safeguards', () => {
-  const CONTENT_WORKFLOWS = Object.values(ARTICLE_TYPE_WORKFLOWS);
+  const ARTICLE_WORKFLOWS = Object.values(ARTICLE_TYPE_WORKFLOWS);
 
   it('content workflows that use dispatch-workflow reference news-translate', () => {
-    for (const workflowFile of CONTENT_WORKFLOWS) {
+    for (const workflowFile of ARTICLE_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       if (!fs.existsSync(filepath)) continue;
 
