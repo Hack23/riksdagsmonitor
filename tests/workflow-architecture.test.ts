@@ -509,6 +509,166 @@ describe('Shared Prompts Library Integration', () => {
   });
 });
 
+describe('Unified Required Skills', () => {
+  const ALL_NEWS_WORKFLOWS = [
+    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+    'news-evening-analysis.md',
+    'news-realtime-monitor.md',
+    'news-article-generator.md',
+    'news-translate.md'
+  ];
+
+  const REQUIRED_SKILLS = [
+    'editorial-standards/SKILL.md',
+    'swedish-political-system/SKILL.md',
+    'legislative-monitoring/SKILL.md',
+    'riksdag-regering-mcp/SKILL.md',
+    'language-expertise/SKILL.md',
+    'gh-aw-safe-outputs/SKILL.md',
+  ];
+
+  it('all news workflows should reference the 6 required skills', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      for (const skill of REQUIRED_SKILLS) {
+        expect(
+          content.includes(skill),
+          `Workflow ${workflowFile} should reference required skill: ${skill}`
+        ).toBe(true);
+      }
+    }
+  });
+
+  it('all news workflows should list skills in the same order', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      // Find the positions of each skill in the file
+      const positions = REQUIRED_SKILLS.map(skill => content.indexOf(skill));
+      // All skills must be found (position >= 0)
+      for (let i = 0; i < REQUIRED_SKILLS.length; i++) {
+        expect(
+          positions[i],
+          `Workflow ${workflowFile} should contain skill: ${REQUIRED_SKILLS[i]}`
+        ).toBeGreaterThanOrEqual(0);
+      }
+      // Skills should appear in ascending order (same order across all files)
+      for (let i = 1; i < positions.length; i++) {
+        expect(
+          positions[i]! > positions[i - 1]!,
+          `Workflow ${workflowFile}: skill "${REQUIRED_SKILLS[i]}" should appear after "${REQUIRED_SKILLS[i - 1]}"`
+        ).toBe(true);
+      }
+    }
+  });
+
+  it('all news workflows should have standardised analysis depth table', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('Standardised Analysis Depth Gate'),
+        `Workflow ${workflowFile} should have Standardised Analysis Depth Gate table`
+      ).toBe(true);
+      expect(
+        content.includes('| standard | 1-2') && content.includes('| deep | 2-3') && content.includes('| comprehensive | 3+'),
+        `Workflow ${workflowFile} should have identical analysis depth rows (standard, deep, comprehensive)`
+      ).toBe(true);
+    }
+  });
+});
+
+describe('Playwright Validation in Content Workflows', () => {
+  const CONTENT_WORKFLOWS = Object.values(ARTICLE_TYPE_WORKFLOWS);
+  const PLAYWRIGHT_VALIDATOR_PATH = 'scripts/validate-articles-playwright.ts';
+
+  it('all article type workflows should have Playwright validation step', () => {
+    const validatorPath = path.join(__dirname, '..', PLAYWRIGHT_VALIDATOR_PATH);
+    expect(
+      fs.existsSync(validatorPath),
+      `Playwright validator should exist at ${PLAYWRIGHT_VALIDATOR_PATH}`
+    ).toBe(true);
+
+    for (const workflowFile of CONTENT_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes(`playwright test ${PLAYWRIGHT_VALIDATOR_PATH}`),
+        `Workflow ${workflowFile} should reference the Playwright validator path: ${PLAYWRIGHT_VALIDATOR_PATH}`
+      ).toBe(true);
+    }
+  });
+
+  it('all article type workflows should have cross-reference validation step', () => {
+    for (const workflowFile of CONTENT_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('validate-cross-references'),
+        `Workflow ${workflowFile} should reference validate-cross-references for JSON-LD validation`
+      ).toBe(true);
+    }
+  });
+});
+
+describe('Interpellations Minister-Response Cross-Reference', () => {
+  it('should have minister-response cross-reference logic with at least 4 analysis steps', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'news-interpellations.md');
+    expect(fs.existsSync(filepath), 'news-interpellations.md should exist').toBe(true);
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(
+      content.includes('Cross-Reference Minister Responses'),
+      'news-interpellations.md should have minister-response cross-reference section'
+    ).toBe(true);
+    // Verify at least 4 numbered analysis steps
+    const crossRefSection = content.slice(content.indexOf('Cross-Reference Minister Responses'));
+    const numberedSteps = crossRefSection.match(/^\d+\.\s+\*\*/gm);
+    expect(
+      numberedSteps && numberedSteps.length >= 4,
+      `news-interpellations.md should have ≥4 minister-response analysis steps (found ${numberedSteps?.length ?? 0})`
+    ).toBe(true);
+  });
+
+  it('should reference search_anforanden for minister response lookup', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'news-interpellations.md');
+    expect(fs.existsSync(filepath), 'news-interpellations.md should exist').toBe(true);
+    const content = fs.readFileSync(filepath, 'utf-8');
+    const crossRefSection = content.slice(content.indexOf('Cross-Reference Minister Responses'));
+    expect(
+      crossRefSection.includes('search_anforanden'),
+      'Minister-response cross-reference should use search_anforanden for fetching responses'
+    ).toBe(true);
+  });
+});
+
+describe('Shared Prompt Patterns Reference', () => {
+  it('should have SHARED_PROMPT_PATTERNS.md reference document', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'SHARED_PROMPT_PATTERNS.md');
+    expect(
+      fs.existsSync(filepath),
+      'Missing .github/workflows/SHARED_PROMPT_PATTERNS.md reference document'
+    ).toBe(true);
+  });
+
+  it('SHARED_PROMPT_PATTERNS.md should list all 6 required skills', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'SHARED_PROMPT_PATTERNS.md');
+    if (!fs.existsSync(filepath)) return;
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(content).toContain('editorial-standards');
+    expect(content).toContain('swedish-political-system');
+    expect(content).toContain('legislative-monitoring');
+    expect(content).toContain('riksdag-regering-mcp');
+    expect(content).toContain('language-expertise');
+    expect(content).toContain('gh-aw-safe-outputs');
+  });
+});
+
 describe('Analysis Depth Input', () => {
   const ALL_NEWS_WORKFLOWS = [
     ...Object.values(ARTICLE_TYPE_WORKFLOWS),
@@ -521,7 +681,7 @@ describe('Analysis Depth Input', () => {
   it('all news workflows should have analysis_depth under workflow_dispatch inputs', () => {
     for (const workflowFile of ALL_NEWS_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       // Reuse the existing parseFrontmatter helper
       const frontmatter = parseFrontmatter(filepath);
       // Verify analysis_depth appears after workflow_dispatch: → inputs: (proper nesting)
@@ -536,7 +696,7 @@ describe('Analysis Depth Input', () => {
   it('dedicated article type workflows should default analysis_depth to a valid depth (standard, deep, or comprehensive) in frontmatter', () => {
     for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       // Reuse the existing parseFrontmatter helper
       const frontmatter = parseFrontmatter(filepath);
       const depthBlock = frontmatter.match(/analysis_depth:[\s\S]*?default:\s*(standard|deep|comprehensive)/);
@@ -628,7 +788,7 @@ describe('Iterative Analysis Protocol', () => {
   it('all dedicated workflows should have multi-step AI analysis framework section', () => {
     for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes('Multi-Step AI Analysis Framework'),
@@ -652,7 +812,7 @@ describe('Iterative Analysis Protocol', () => {
   it('all dedicated workflows should list analysis_depth in dispatch parameters section', () => {
     for (const workflowFile of Object.values(ARTICLE_TYPE_WORKFLOWS)) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
-      if (!fs.existsSync(filepath)) continue;
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes('analysis_depth') && content.includes('github.event.inputs.analysis_depth'),
@@ -848,6 +1008,104 @@ describe('Script-Based Article Generation Safety', () => {
         content.includes('generate-news-enhanced.ts') && content.includes('Article Generation Safety'),
         `Workflow ${workflowFile} should require generate-news-enhanced.ts in Article Generation Safety section`
       ).toBe(true);
+    }
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Additional structural checks (Issue #1335)
+// ---------------------------------------------------------------------------
+
+describe('Workflow timeout limits', () => {
+  const ALL_NEWS_WORKFLOWS = [
+    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+    'news-evening-analysis.md',
+    'news-realtime-monitor.md',
+    'news-article-generator.md',
+    'news-translate.md',
+  ];
+
+  it('no workflow should exceed 60-minute timeout', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const frontmatter = parseFrontmatter(filepath);
+      const timeoutMatch = frontmatter.match(/timeout-minutes:\s*(\d+)/);
+      if (timeoutMatch) {
+        const timeout = parseInt(timeoutMatch[1]!, 10);
+        expect(
+          timeout,
+          `Workflow ${workflowFile} has timeout-minutes: ${timeout} which exceeds 60 minutes`
+        ).toBeLessThanOrEqual(60);
+      }
+    }
+  });
+
+  it('all workflows should have timeout-minutes specified in frontmatter', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const frontmatter = parseFrontmatter(filepath);
+      expect(
+        frontmatter.includes('timeout-minutes'),
+        `Workflow ${workflowFile} should have timeout-minutes specified in frontmatter`
+      ).toBe(true);
+    }
+  });
+});
+
+describe('Workflow permissions enforcement', () => {
+  const ALL_NEWS_WORKFLOWS = [
+    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+    'news-evening-analysis.md',
+    'news-realtime-monitor.md',
+    'news-article-generator.md',
+  ];
+
+  it('all content workflows should have permissions block', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('permissions:'),
+        `Workflow ${workflowFile} should have a permissions block`
+      ).toBe(true);
+    }
+  });
+
+  it('all content workflows should have contents: read (least privilege)', () => {
+    for (const workflowFile of ALL_NEWS_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('contents: read'),
+        `Workflow ${workflowFile} should specify contents: read permission`
+      ).toBe(true);
+    }
+  });
+});
+
+describe('Workflow dispatch-workflow safeguards', () => {
+  const CONTENT_WORKFLOWS = Object.values(ARTICLE_TYPE_WORKFLOWS);
+
+  it('content workflows that use dispatch-workflow reference news-translate', () => {
+    for (const workflowFile of CONTENT_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      if (!fs.existsSync(filepath)) continue;
+
+      const content = fs.readFileSync(filepath, 'utf-8');
+      if (content.includes('dispatch-workflow')) {
+        expect(
+          content.includes('news-translate'),
+          `Workflow ${workflowFile} uses dispatch-workflow but does not reference news-translate`
+        ).toBe(true);
+      }
     }
   });
 });

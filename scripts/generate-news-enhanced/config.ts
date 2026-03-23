@@ -150,6 +150,12 @@ export const QUALITY_THRESHOLD: number = parsedQualityThreshold;
  */
 export const MULTIDIM_QUALITY_THRESHOLD = 60;
 
+/**
+ * Re-export breaking-news significance threshold from the political-significance
+ * module so that consuming code can import it from either location.
+ */
+export { BREAKING_NEWS_THRESHOLD } from '../ai-analysis/political-significance.js';
+
 // --require-mcp flag: when true (default), abort if MCP server is unreachable after all retries.
 // Set --require-mcp=false for local development/testing without a live MCP server.
 const requireMcpArg: string | undefined = args.find(arg => arg.startsWith('--require-mcp'));

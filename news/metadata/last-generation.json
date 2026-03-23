@@ -1,41 +1,24 @@
 {
-  "timestamp": "2026-03-21T14:21:17.099Z",
+  "timestamp": "2026-03-23T07:29:08.247Z",
   "types": [
-    "weekly-review"
+    "interpellations"
   ],
   "languagesGenerated": [
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "en",
+    "sv"
   ],
   "allRequestedLanguages": [
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "en",
+    "sv"
   ],
   "batchSize": "all",
-  "skipExisting": true,
-  "generated": 0,
+  "skipExisting": false,
+  "generated": 2,
   "errors": 0,
-  "articles": [],
+  "articles": [
+    "2026-03-23-interpellation-debates-en.html",
+    "2026-03-23-interpellation-debates-sv.html"
+  ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
 }

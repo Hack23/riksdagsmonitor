@@ -7,6 +7,8 @@ on:
       - 'index*.html'
       - 'news/*.html'
       - 'scripts/validate-translations.js'
+      - 'scripts/translation-dictionary.ts'
+      - 'scripts/detect-swedish-leakage.ts'
       - '.github/workflows/translation-validation.yml'
       - 'TRANSLATION_GUIDE.md'
   pull_request:
@@ -15,6 +17,8 @@ on:
       - 'index*.html'
       - 'news/*.html'
       - 'scripts/validate-translations.js'
+      - 'scripts/translation-dictionary.ts'
+      - 'scripts/detect-swedish-leakage.ts'
       - '.github/workflows/translation-validation.yml'
       - 'TRANSLATION_GUIDE.md'
 
@@ -142,6 +146,61 @@ jobs:
             echo "  ✅ Language purity: All articles clean"
           fi
 
+      - name: Run Swedish leakage detector
+        id: leakage_detector
+        if: hashFiles('news/*.html') != ''
+        continue-on-error: true  # Advisory until existing article leakage is fixed
+        run: |
+          echo ""
+          echo "🔍 Running Swedish leakage detector on translated articles..."
+          echo ""
+          npx tsx scripts/detect-swedish-leakage.ts --dir news/ --threshold 5
+      - name: Validate BCP-47 consistency
+        id: bcp47
+        run: |
+          echo ""
+          echo "🏷️  Validating BCP-47 language tag consistency..."
+          echo ""
+          
+          BCP47_ERRORS=0
+          
+          # Norwegian articles must use lang="nb" (not "no")
+          for article in news/*-no.html; do
+            if [ ! -f "$article" ]; then continue; fi
+            if grep -q '<html lang="no"' "$article"; then
+              echo "  ❌ $(basename $article): html lang=\"no\" should be lang=\"nb\""
+              BCP47_ERRORS=$((BCP47_ERRORS + 1))
+            fi
+            if grep -q '"inLanguage": "no"' "$article"; then
+              echo "  ❌ $(basename $article): inLanguage \"no\" should be \"nb\""
+              BCP47_ERRORS=$((BCP47_ERRORS + 1))
+            fi
+          done
+          
+          # RTL articles must have dir="rtl"
+          for article in news/*-ar.html; do
+            if [ ! -f "$article" ]; then continue; fi
+            if ! grep -q 'dir="rtl"' "$article"; then
+              echo "  ❌ $(basename $article): missing dir=\"rtl\""
+              BCP47_ERRORS=$((BCP47_ERRORS + 1))
+            fi
+          done
+          for article in news/*-he.html; do
+            if [ ! -f "$article" ]; then continue; fi
+            if ! grep -q 'dir="rtl"' "$article"; then
+              echo "  ❌ $(basename $article): missing dir=\"rtl\""
+              BCP47_ERRORS=$((BCP47_ERRORS + 1))
+            fi
+          done
+          
+          if [ $BCP47_ERRORS -gt 0 ]; then
+            echo ""
+            echo "  ❌ BCP-47 consistency: $BCP47_ERRORS error(s)"
+            exit 1
+          else
+            echo "  ✅ BCP-47 consistency: All articles consistent"
+          fi
+
       - name: Translation validation summary
         if: always()
         run: |
@@ -180,6 +239,20 @@ jobs:
             echo "✅ News article language purity: PASSED"
           else
             echo "⚠️  News article language purity: WARNINGS"
+          fi
+          
+          if [ "${{ steps.leakage_detector.outcome }}" = "success" ]; then
+            echo "✅ Swedish leakage detector: PASSED"
+          elif [ "${{ steps.leakage_detector.outcome }}" = "skipped" ]; then
+            echo "⏭️  Swedish leakage detector: SKIPPED (no news articles)"
+          else
+            echo "⚠️  Swedish leakage detector: WARNINGS"
+          fi
+          
+          if [ "${{ steps.bcp47.outcome }}" = "success" ]; then
+            echo "✅ BCP-47 consistency: PASSED"
+          else
+            echo "❌ BCP-47 consistency: FAILED"
           fi
           
           echo ""

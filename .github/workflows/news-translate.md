@@ -100,6 +100,20 @@ steps:
     run: |
       npm ci --prefer-offline --no-audit
 
+  - name: Pre-flight source article check
+    run: |
+      ARTICLE_DATE="${{ github.event.inputs.article_date || '' }}"
+      if [ -z "$ARTICLE_DATE" ]; then
+        ARTICLE_DATE=$(date -u '+%Y-%m-%d')
+      fi
+      MISSING_EN=$(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null | wc -l)
+      if [ "$MISSING_EN" -eq 0 ]; then
+        echo "⛔ No EN source articles found for $ARTICLE_DATE — aborting to avoid race condition"
+        echo "   Next scheduled run will retry once content workflow PR is merged."
+        exit 0
+      fi
+      echo "✅ Found $MISSING_EN EN source article(s) for $ARTICLE_DATE — proceeding with translation"
+
 engine:
   id: copilot
   model: claude-opus-4.6
@@ -187,13 +201,23 @@ bash({ command: "..." }) // ← WRONG: missing description
 
 ## Required Skills
 
-1. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines (CRITICAL — read this first)
-2. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
-3. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology
+Before translating articles, consult these skills:
+1. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
+2. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology
+3. **`.github/skills/legislative-monitoring/SKILL.md`** — Voting patterns, committee tracking, bill progress
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
-5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
+5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines (required for translation quality)
+6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
 
 ## 📊 Translation Analysis Depth
+
+### Standardised Analysis Depth Gate
+
+| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap |
+|-------|--------------|-------------------|--------|---------|
+| standard | 1-2 | ≥3 | ≥1 | optional |
+| deep | 2-3 | ≥5 | ≥2 | required |
+| comprehensive | 3+ | ≥7 | ≥3 | required |
 
 > **Read `analysis_depth` input** (default: `standard`). This mirrors the source article depth and controls how rigorously translated sections are validated.
 

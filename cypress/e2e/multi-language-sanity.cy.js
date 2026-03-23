@@ -13,7 +13,7 @@ describe('Multi-Language Sanity Tests', () => {
   const languages = [
     { code: 'sv', name: 'Swedish', nativeName: 'Svenska', dir: 'ltr', langCode: 'sv' },
     { code: 'da', name: 'Danish', nativeName: 'Dansk', dir: 'ltr', langCode: 'da' },
-    { code: 'no', name: 'Norwegian', nativeName: 'Norsk', dir: 'ltr', langCode: 'no' },
+    { code: 'no', name: 'Norwegian', nativeName: 'Norsk', dir: 'ltr', langCode: 'nb' },
     { code: 'fi', name: 'Finnish', nativeName: 'Suomi', dir: 'ltr', langCode: 'fi' },
     { code: 'de', name: 'German', nativeName: 'Deutsch', dir: 'ltr', langCode: 'de' },
     { code: 'fr', name: 'French', nativeName: 'Français', dir: 'ltr', langCode: 'fr' },

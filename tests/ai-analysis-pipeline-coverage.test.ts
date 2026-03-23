@@ -995,3 +995,232 @@ describe('interpellation document classification', () => {
     expect(ipEntry!.impact).toBe('medium');
   });
 });
+
+// ===========================================================================
+// Calibrated confidence scoring
+// ===========================================================================
+
+describe('calibrated confidence scoring', () => {
+  it('confidenceScore monotonically increases with more enriched docs', async () => {
+    // Minimal: 1 raw document
+    const minimal = await aiAnalysisPipeline.analyzeDocuments(
+      [makeDoc({ dok_id: 'MIN1', doktyp: 'prop' })],
+      { depth: 'quick', lang: 'en', focusTopic: null },
+    );
+
+    // Medium: multiple types, some enriched
+    const medium = await aiAnalysisPipeline.analyzeDocuments(
+      [
+        makeDoc({ dok_id: 'M1', doktyp: 'prop', contentFetched: true, organ: 'FiU' }),
+        makeDoc({ dok_id: 'M2', doktyp: 'bet', contentFetched: true }),
+        makeDoc({ dok_id: 'M3', doktyp: 'mot' }),
+      ],
+      { depth: 'quick', lang: 'en', focusTopic: null },
+    );
+
+    // Rich: many docs, many enriched, variety
+    const enrichedRichSet = RICH_SET.map(d => makeDoc({
+      ...d,
+      contentFetched: true,
+    }));
+    const rich = await aiAnalysisPipeline.analyzeDocuments(enrichedRichSet, { depth: 'quick', lang: 'en', focusTopic: null });
+
+    expect(medium.confidenceScore).toBeGreaterThan(minimal.confidenceScore);
+    expect(rich.confidenceScore).toBeGreaterThan(medium.confidenceScore);
+  });
+
+  it('penalises confidence when all SWOT entries are placeholders', async () => {
+    // Empty doc set → all placeholders
+    const empty = await aiAnalysisPipeline.analyzeDocuments([], {
+      depth: 'quick', lang: 'en', focusTopic: null,
+    });
+    expect(empty.confidenceScore).toBe(0);
+  });
+
+  it('rewards confidence for non-placeholder SWOT entries', async () => {
+    const withDocs = await aiAnalysisPipeline.analyzeDocuments(ALL_DOCS, {
+      depth: 'quick', lang: 'en', focusTopic: null,
+    });
+    // With 8 real docs covering many types, most SWOT entries have sourceDocIds
+    expect(withDocs.confidenceScore).toBeGreaterThan(30);
+  });
+});
+
+// ===========================================================================
+// Enhanced urgency classification
+// ===========================================================================
+
+describe('enhanced urgency classification', () => {
+  it('classifies SFS watch point as critical', async () => {
+    const result = await aiAnalysisPipeline.analyzeDocuments(
+      [makeDoc({ dok_id: 'SFS1', doktyp: 'sfs', titel: 'SFS 2026:1' })],
+      { depth: 'quick', lang: 'en', focusTopic: null },
+    );
+    const sfsWp = result.watchPoints.find(wp => wp.sourceDocIds.includes('SFS1'));
+    expect(sfsWp).toBeDefined();
+    expect(sfsWp!.urgency).toBe('critical');
+  });
+
+  it('classifies committee reports as critical when ≥3', async () => {
+    const bets = Array.from({ length: 3 }, (_, i) =>
+      makeDoc({ dok_id: `BET${i}`, titel: `Betänkande ${i}`, doktyp: 'bet' })
+    );
+    const result = await aiAnalysisPipeline.analyzeDocuments(bets, {
+      depth: 'quick', lang: 'en', focusTopic: null,
+    });
+    const betWp = result.watchPoints.find(wp =>
+      wp.sourceDocIds.some(id => id.startsWith('BET'))
+    );
+    expect(betWp).toBeDefined();
+    expect(betWp!.urgency).toBe('critical');
+  });
+
+  it('classifies committee reports as high when < 3', async () => {
+    const result = await aiAnalysisPipeline.analyzeDocuments(
+      [makeDoc({ dok_id: 'BET1', doktyp: 'bet', titel: 'Betänkande' })],
+      { depth: 'quick', lang: 'en', focusTopic: null },
+    );
+    const betWp = result.watchPoints.find(wp => wp.sourceDocIds.includes('BET1'));
+    expect(betWp).toBeDefined();
+    expect(betWp!.urgency).toBe('high');
+  });
+
+  it('classifies propositions as high urgency', async () => {
+    const result = await aiAnalysisPipeline.analyzeDocuments(
+      [makeDoc({ dok_id: 'PROP1', doktyp: 'prop', titel: 'Government bill' })],
+      { depth: 'quick', lang: 'en', focusTopic: null },
+    );
+    const propWp = result.watchPoints.find(wp => wp.sourceDocIds.includes('PROP1'));
+    expect(propWp).toBeDefined();
+    expect(propWp!.urgency).toBe('high');
+  });
+
+  it('classifies motions as medium urgency', async () => {
+    const result = await aiAnalysisPipeline.analyzeDocuments(
+      [makeDoc({ dok_id: 'MOT1', doktyp: 'mot', titel: 'Opposition motion' })],
+      { depth: 'quick', lang: 'en', focusTopic: null },
+    );
+    const motWp = result.watchPoints.find(wp => wp.sourceDocIds.includes('MOT1'));
+    expect(motWp).toBeDefined();
+    expect(motWp!.urgency).toBe('medium');
+  });
+
+  it('classifies narrative frames as low urgency', async () => {
+    // Narrative frames are detected from document titles/metadata; include known trigger keywords in the title
+    const docWithNarrativeKeyword = makeDoc({
+      dok_id: 'NAR1',
+      doktyp: 'prop',
+      titel: 'Government budget reform and EU directive on welfare system',
+    });
+    const result = await aiAnalysisPipeline.analyzeDocuments([docWithNarrativeKeyword], {
+      depth: 'quick', lang: 'en', focusTopic: null,
+    });
+    const narrativeWp = result.watchPoints.find(wp => wp.urgency === 'low');
+    expect(narrativeWp).toBeDefined();
+    expect(narrativeWp!.urgency).toBe('low');
+  });
+
+  it('covers all four urgency levels across document types', async () => {
+    const docs = [
+      makeDoc({ dok_id: 'SFS1', doktyp: 'sfs', titel: 'SFS 2026:1' }),
+      makeDoc({ dok_id: 'PROP1', doktyp: 'prop', titel: 'Government bill on budget reform and security' }),
+      makeDoc({ dok_id: 'MOT1', doktyp: 'mot', titel: 'Opposition motion' }),
+      makeDoc({ dok_id: 'BET1', doktyp: 'bet', titel: 'Committee report' }),
+    ];
+    const result = await aiAnalysisPipeline.analyzeDocuments(docs, {
+      depth: 'quick', lang: 'en', focusTopic: null,
+    });
+
+    const urgencies = new Set(result.watchPoints.map(wp => wp.urgency));
+    expect(urgencies.has('critical')).toBe(true);  // SFS
+    expect(urgencies.has('high')).toBe(true);        // prop or bet (< 3)
+    expect(urgencies.has('medium')).toBe(true);      // mot
+    expect(urgencies.has('low')).toBe(true);          // narrative frames from 'budget' keyword
+  });
+});
+
+// ===========================================================================
+// Evidence-first SWOT — sourceDocIds enforcement
+// ===========================================================================
+
+describe('evidence-first SWOT', () => {
+  it('SWOT entries with doc backing have non-empty sourceDocIds', async () => {
+    const { analysis: result } = await runAnalysisPipeline(RICH_SET, {
+      depth: 'standard',
+      lang: 'en',
+      focusTopic: null,
+    });
+
+    // In standard depth, most entries should be evidence-backed
+    let totalEntries = 0;
+    let evidenceBacked = 0;
+    for (const sh of result.stakeholderSwot) {
+      const all = [...sh.swot.strengths, ...sh.swot.weaknesses, ...sh.swot.opportunities, ...sh.swot.threats];
+      totalEntries += all.length;
+      evidenceBacked += all.filter(e => e.sourceDocIds.length > 0).length;
+    }
+
+    // With RICH_SET (12 diverse docs), ≥80% should have evidence backing.
+    // Placeholder-only quadrants are expected for private-sector weaknesses/threats.
+    expect(evidenceBacked / totalEntries).toBeGreaterThanOrEqual(0.8);
+  });
+
+  it('placeholder entries have empty sourceDocIds', async () => {
+    // With minimal docs, some quadrants will have placeholders
+    const result = await aiAnalysisPipeline.analyzeDocuments(
+      [makeDoc({ dok_id: 'P1', doktyp: 'prop', titel: 'A proposition' })],
+      { depth: 'quick', lang: 'en', focusTopic: null },
+    );
+
+    // Private sector weaknesses should be placeholder (no docs mapped there)
+    const priv = result.stakeholderSwot.find(s => s.role === 'private-sector')!;
+    expect(priv.swot.weaknesses.some(e => e.sourceDocIds.length === 0)).toBe(true);
+  });
+});
+
+// ===========================================================================
+// EU/Nordic comparative dimension in policy narratives
+// ===========================================================================
+
+describe('EU/Nordic comparative dimension', () => {
+  it('includes EU/Nordic context in deep analysis policy narrative', async () => {
+    const { analysis } = await runAnalysisPipeline(
+      [
+        makeDoc({ dok_id: 'P1', doktyp: 'prop', titel: 'Proposition om försvar och säkerhet' }),
+        makeDoc({ dok_id: 'B1', doktyp: 'bet', titel: 'Betänkande om budget och finanspolitik' }),
+      ],
+      { depth: 'deep', lang: 'en', focusTopic: null },
+    );
+
+    // Deep analysis should contain EU/Nordic references in narrative
+    const narrative = analysis.policyAssessment.narrative;
+    // The narrative should contain EU or Nordic comparative context
+    const hasComparative = /\b(EU|Nordic|Denmark|Norway|Finland)\b/.test(narrative);
+    expect(hasComparative).toBe(true);
+  });
+
+  it('does not include EU/Nordic context in quick analysis', async () => {
+    const result = await aiAnalysisPipeline.analyzeDocuments(
+      [makeDoc({ dok_id: 'P1', doktyp: 'prop', titel: 'Proposition om försvar' })],
+      { depth: 'quick', lang: 'en', focusTopic: null },
+    );
+
+    const narrative = result.policyAssessment.narrative;
+    // Quick analysis should NOT contain full EU/Nordic comparative context
+    // (it may contain "EU" in domain names but not the long comparative sentence)
+    const hasLongComparative = /Nordic peers|Nordic neighbours|Nordic parliaments/.test(narrative);
+    expect(hasLongComparative).toBe(false);
+  });
+
+  it('generates EU/Nordic context in Swedish for deep sv analysis', async () => {
+    const { analysis } = await runAnalysisPipeline(
+      [makeDoc({ dok_id: 'P1', doktyp: 'prop', titel: 'Proposition om miljöpolitik och klimat' })],
+      { depth: 'deep', lang: 'sv', focusTopic: null },
+    );
+
+    const narrative = analysis.policyAssessment.narrative;
+    // Swedish narrative should contain Nordic reference
+    const hasNordic = /Nordiska|EU/.test(narrative);
+    expect(hasNordic).toBe(true);
+  });
+});
