@@ -347,7 +347,7 @@ function buildWeeklyReviewSections(docs: RawDocument[], lang: Language): Templat
       const analysis = analyzeDashboardData(docs, null, lang);
       if (analysis.charts.length > 0 || analysis.tables.length > 0) {
         sections.push(generateDashboardSection({
-          data: { title: analysis.title, summary: analysis.summary, charts: analysis.charts, tables: analysis.tables },
+          data: { title: 'Policy Analysis Dashboard', summary: analysis.summary, charts: analysis.charts, tables: analysis.tables },
           lang,
         }));
       }

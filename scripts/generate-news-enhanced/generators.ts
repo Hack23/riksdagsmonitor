@@ -90,7 +90,7 @@ function buildArticleVisualizationSections(
       if (dashboardAnalysis.charts.length > 0 || dashboardAnalysis.tables.length > 0) {
         const dashboardSection = generateDashboardSection({
           data: {
-            title: dashboardAnalysis.title,
+            title: 'Policy Analysis Dashboard',
             summary: dashboardAnalysis.summary,
             charts: dashboardAnalysis.charts,
             tables: dashboardAnalysis.tables,
