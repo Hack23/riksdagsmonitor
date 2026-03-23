@@ -263,7 +263,7 @@ This workflow is a **content** workflow and MUST only create/modify files for **
 - ✅ **Allowed:** `news/YYYY-MM-DD-*-en.html`, `news/YYYY-MM-DD-*-sv.html`
 - ❌ **Forbidden:** `news/YYYY-MM-DD-*-da.html`, `news/YYYY-MM-DD-*-no.html`, or any other translation language
 
-Before committing, validate file ownership:
+Validate file ownership (checks both staged and unstaged changes):
 ```bash
 npx tsx scripts/validate-file-ownership.ts content
 ```

@@ -75,8 +75,12 @@ export function isFileOwnedByCategory(
 }
 
 /**
- * Validate that all staged files (git index) conform to the file-ownership contract
- * for the given workflow category.
+ * Validate that all pending files (staged + unstaged working-tree changes)
+ * conform to the file-ownership contract for the given workflow category.
+ *
+ * Checks the union of `git diff --cached --name-only` (staged) and
+ * `git diff --name-only` (unstaged) so violations are caught regardless
+ * of whether `git add` has been run yet.
  *
  * @param category - The workflow category ('content' or 'translation')
  * @returns Validation result with pass/fail status and any violations
@@ -88,11 +92,23 @@ export function validateStagedFileOwnership(
     encoding: 'utf-8',
   }).trim();
 
-  if (!stagedOutput) {
+  const unstagedOutput = execSync('git diff --name-only', {
+    encoding: 'utf-8',
+  }).trim();
+
+  const allFiles = new Set<string>();
+  if (stagedOutput) {
+    for (const f of stagedOutput.split('\n')) allFiles.add(f);
+  }
+  if (unstagedOutput) {
+    for (const f of unstagedOutput.split('\n')) allFiles.add(f);
+  }
+
+  if (allFiles.size === 0) {
     return { passed: true, violations: [], checkedCount: 0 };
   }
 
-  return validateFileList(stagedOutput.split('\n'), category);
+  return validateFileList([...allFiles], category);
 }
 
 /**
@@ -128,7 +144,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 
   if (!category || !['content', 'translation'].includes(category)) {
     console.error(
-      'Usage: npx tsx scripts/validate-file-ownership.ts <content|translation>',
+      'Usage: npx tsx scripts/validate-file-ownership.ts <content|translation>\n' +
+      '  Validates both staged and unstaged changes against the file-ownership contract.',
     );
     process.exit(2);
   }

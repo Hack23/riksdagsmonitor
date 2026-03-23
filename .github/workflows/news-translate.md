@@ -117,7 +117,7 @@ steps:
       OPEN_CONTENT_PRS=0
 
       set +e
-      PR_LIST_JSON=$(gh pr list --repo "${{ github.repository }}" --base main --json headRefName 2>"$GH_ERROR_LOG")
+      PR_LIST_JSON=$(gh pr list --repo "${{ github.repository }}" --base main --state open --limit 200 --json headRefName 2>"$GH_ERROR_LOG")
       GH_EXIT_CODE=$?
       set -e
       if [ "$GH_EXIT_CODE" -ne 0 ] || [ -z "$PR_LIST_JSON" ]; then
@@ -211,7 +211,7 @@ This workflow is a **translation** workflow and MUST only create/modify files fo
 - ✅ **Allowed:** `news/YYYY-MM-DD-*-{da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html`
 - ❌ **Forbidden:** `news/YYYY-MM-DD-*-en.html`, `news/YYYY-MM-DD-*-sv.html`
 
-Before committing, validate file ownership:
+Validate file ownership (checks both staged and unstaged changes):
 ```bash
 npx tsx scripts/validate-file-ownership.ts translation
 ```
@@ -225,7 +225,7 @@ Before starting translations, check if any content workflow PRs are still open f
 ARTICLE_DATE="${{ github.event.inputs.article_date || '' }}"
 if [ -z "$ARTICLE_DATE" ]; then ARTICLE_DATE=$(date -u '+%Y-%m-%d'); fi
 CONTENT_BRANCH_PREFIX="news/content/${ARTICLE_DATE}/"
-if ! PR_LIST_JSON=$(gh pr list --base main --json headRefName 2>/dev/null); then
+if ! PR_LIST_JSON=$(gh pr list --base main --state open --limit 200 --json headRefName 2>/dev/null); then
   echo "⚠ Unable to query open content PRs for $ARTICLE_DATE — deferring translation"
   exit 0
 fi
