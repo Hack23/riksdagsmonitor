@@ -5,6 +5,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
+import fs from 'node:fs';
 import { generateDynamicTitle } from '../scripts/generate-news-enhanced/helpers.js';
 
 describe('generateDynamicTitle', () => {
@@ -98,7 +99,7 @@ describe('generateDynamicTitle', () => {
 describe('generateDynamicTitle integration', () => {
   it('is imported in ALL article generators', async () => {
     // Verify that all generator files import generateDynamicTitle
-    const fs = await import('node:fs');
+    
     const generatorFiles = [
       'scripts/generate-news-enhanced/generators.ts',
       'scripts/news-types/month-ahead.ts',
@@ -114,7 +115,7 @@ describe('generateDynamicTitle integration', () => {
   });
 
   it('is called for English articles in all generator files', async () => {
-    const fs = await import('node:fs');
+    
     const generatorFiles = [
       'scripts/generate-news-enhanced/generators.ts',
       'scripts/news-types/month-ahead.ts',
@@ -131,7 +132,7 @@ describe('generateDynamicTitle integration', () => {
   });
 
   it('visualization section builders exist in all generator files', async () => {
-    const fs = await import('node:fs');
+    
     // The main generators.ts has buildArticleVisualizationSections
     const mainGen = fs.readFileSync('scripts/generate-news-enhanced/generators.ts', 'utf-8');
     expect(mainGen).toContain('buildArticleVisualizationSections');
@@ -154,7 +155,7 @@ describe('generateDynamicTitle integration', () => {
   });
 
   it('all section builders use graceful degradation', async () => {
-    const fs = await import('node:fs');
+    
     const files = [
       'scripts/generate-news-enhanced/generators.ts',
       'scripts/news-types/breaking-news.ts',
