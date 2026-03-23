@@ -52,6 +52,77 @@ import { AIAnalysisPipeline } from './ai-analysis-pipeline.js';
 import { sharedAnalysisCache } from './analysis-cache.js';
 
 // ---------------------------------------------------------------------------
+// Shared article visualization builder
+// ---------------------------------------------------------------------------
+
+/**
+ * Build SWOT, dashboard, and mindmap TemplateSections for standard article
+ * types (not deep-inspection, which has its own richer builder).
+ *
+ * Produces 1–3 sections depending on available data:
+ *  - SWOT stakeholder analysis (always, when docs.length >= 2)
+ *  - Chart.js dashboard with document type breakdown (when docs.length >= 3)
+ *  - Economic dashboard (when policyDomains match World Bank indicators)
+ *
+ * Each section is safe to append to `generateArticleHTML({ sections })`.
+ */
+function buildArticleVisualizationSections(
+  docs: RawDocument[],
+  topic: string | null,
+  lang: Language,
+): TemplateSection[] {
+  const sections: TemplateSection[] = [];
+  if (docs.length < 2) return sections;
+
+  try {
+    // ── 1. SWOT stakeholder analysis ──────────────────────────────────────
+    const stakeholders = buildAISwotStakeholders(docs, topic, lang);
+    if (stakeholders.length > 0) {
+      const swotSection = generateStakeholderSwotSection({ stakeholders, lang });
+      sections.push(swotSection);
+    }
+  } catch { /* graceful degradation */ }
+
+  try {
+    // ── 2. Chart.js dashboard (doc-type breakdown + AI analysis) ──────────
+    if (docs.length >= 3) {
+      const dashboardAnalysis = analyzeDashboardData(docs, topic, lang);
+      if (dashboardAnalysis.charts.length > 0 || dashboardAnalysis.tables.length > 0) {
+        const dashboardSection = generateDashboardSection({
+          data: {
+            title: dashboardAnalysis.title,
+            summary: dashboardAnalysis.summary,
+            charts: dashboardAnalysis.charts,
+            tables: dashboardAnalysis.tables,
+          },
+          lang,
+        });
+        sections.push(dashboardSection);
+      }
+    }
+  } catch { /* graceful degradation */ }
+
+  try {
+    // ── 3. Economic dashboard (World Bank indicators for detected domains) ─
+    const allDomains = new Set<string>();
+    for (const d of docs) {
+      for (const dom of detectPolicyDomains(d, lang)) {
+        allDomains.add(dom);
+      }
+    }
+    if (allDomains.size > 0) {
+      const econSection = generateEconomicDashboardSection({
+        policyDomains: [...allDomains],
+        lang,
+      });
+      if (econSection) sections.push(econSection);
+    }
+  } catch { /* graceful degradation */ }
+
+  return sections;
+}
+
+// ---------------------------------------------------------------------------
 // Generator functions
 // ---------------------------------------------------------------------------
 
@@ -134,12 +205,17 @@ export async function generateWeekAhead(): Promise<GenerationResult> {
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
+      // Enrich English title/subtitle with content-based highlights
+      const enriched = lang === 'en' ? generateDynamicTitle(langTitles.title, content, documents.length + events.length) : langTitles;
+
+      // Build visualization sections (SWOT, dashboard, economic)
+      const sections = buildArticleVisualizationSections(documents, null, lang);
 
       // Generate HTML for this language
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
-        title: langTitles.title,
-        subtitle: langTitles.subtitle,
+        title: enriched.title,
+        subtitle: enriched.subtitle,
         date: toISODate(today),
         type: 'prospective' as ArticleCategory,
         readTime,
@@ -150,7 +226,8 @@ export async function generateWeekAhead(): Promise<GenerationResult> {
         sources,
         keywords: metadata.keywords,
         topics: metadata.topics,
-        tags: metadata.tags
+        tags: metadata.tags,
+        sections,
       });
 
       // Write article
@@ -227,6 +304,9 @@ export async function generateCommitteeReports(): Promise<GenerationResult> {
       // Enrich English title/subtitle with content-based highlights
       const enriched = lang === 'en' ? generateDynamicTitle(langTitles.title, content, reports.length) : langTitles;
 
+      // Build visualization sections (SWOT, dashboard, economic)
+      const sections = buildArticleVisualizationSections(reports as RawDocument[], null, lang);
+
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: enriched.title,
@@ -240,7 +320,8 @@ export async function generateCommitteeReports(): Promise<GenerationResult> {
         sources,
         keywords: metadata.keywords,
         topics: metadata.topics,
-        tags: metadata.tags
+        tags: metadata.tags,
+        sections,
       });
 
       await writeSingleArticle(html, slug, lang, 'committee-reports');
@@ -313,6 +394,9 @@ export async function generatePropositions(): Promise<GenerationResult> {
       // Enrich English title/subtitle with content-based highlights
       const enriched = lang === 'en' ? generateDynamicTitle(langTitles.title, content, propositions.length) : langTitles;
 
+      // Build visualization sections (SWOT, dashboard, economic)
+      const sections = buildArticleVisualizationSections(propositions as RawDocument[], null, lang);
+
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: enriched.title,
@@ -326,7 +410,8 @@ export async function generatePropositions(): Promise<GenerationResult> {
         sources,
         keywords: metadata.keywords,
         topics: metadata.topics,
-        tags: metadata.tags
+        tags: metadata.tags,
+        sections,
       });
 
       await writeSingleArticle(html, slug, lang, 'propositions');
@@ -399,6 +484,9 @@ export async function generateMotions(): Promise<GenerationResult> {
       // Enrich English title/subtitle with content-based highlights
       const enriched = lang === 'en' ? generateDynamicTitle(langTitles.title, content, motions.length) : langTitles;
 
+      // Build visualization sections (SWOT, dashboard, economic)
+      const sections = buildArticleVisualizationSections(motions as RawDocument[], null, lang);
+
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: enriched.title,
@@ -412,7 +500,8 @@ export async function generateMotions(): Promise<GenerationResult> {
         sources,
         keywords: metadata.keywords,
         topics: metadata.topics,
-        tags: metadata.tags
+        tags: metadata.tags,
+        sections,
       });
 
       await writeSingleArticle(html, slug, lang, 'motions');
@@ -485,6 +574,9 @@ export async function generateInterpellations(): Promise<GenerationResult> {
       // Enrich English title/subtitle with content-based highlights
       const enriched = lang === 'en' ? generateDynamicTitle(langTitles.title, content, interpellations.length) : langTitles;
 
+      // Build visualization sections (SWOT, dashboard, economic)
+      const sections = buildArticleVisualizationSections(interpellations as RawDocument[], null, lang);
+
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: enriched.title,
@@ -498,7 +590,8 @@ export async function generateInterpellations(): Promise<GenerationResult> {
         sources,
         keywords: metadata.keywords,
         topics: metadata.topics,
-        tags: metadata.tags
+        tags: metadata.tags,
+        sections,
       });
 
       await writeSingleArticle(html, slug, lang, 'interpellations');
