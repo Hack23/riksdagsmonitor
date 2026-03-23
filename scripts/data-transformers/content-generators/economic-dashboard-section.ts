@@ -135,7 +135,6 @@ export function buildEconomicCharts(
   // Track indicators with latest-year bar data for potential radar chart
   const radarLabels: string[] = [];
   const radarDataByCountry = new Map<string, number[]>();
-  const radarCountryNames: string[] = [];
 
   for (const indicator of indicators) {
     const points = dataPoints.filter(p => p.indicatorId === indicator.indicatorId);
@@ -191,7 +190,6 @@ export function buildEconomicCharts(
       for (const p of sorted) {
         if (!radarDataByCountry.has(p.countryCode)) {
           radarDataByCountry.set(p.countryCode, []);
-          radarCountryNames.push(NORDIC_COMPARISON.countryNames[p.countryCode] ?? p.countryName);
         }
         radarDataByCountry.get(p.countryCode)!.push(p.value);
       }

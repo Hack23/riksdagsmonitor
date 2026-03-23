@@ -165,15 +165,9 @@ import type {
   MCPCallRecord,
   BreakingNewsValidation,
   BreakingNewsOptions,
-  TemplateSection,
 } from '../types/article.js';
-import {
-  generateStakeholderSwotSection,
-  generateDashboardSection,
-} from '../data-transformers/index.js';
-import { buildAISwotStakeholders } from '../data-transformers/content-generators/index.js';
-import { analyzeDashboardData } from '../ai-analysis/dashboard-analyzer.js';
 import { generateDynamicTitle } from '../generate-news-enhanced/helpers.js';
+import { buildArticleVisualizationSections } from '../generate-news-enhanced/generators.js';
 
 /**
  * Required MCP tools for breaking news articles
@@ -329,7 +323,7 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
       const enriched = lang === 'en' ? generateDynamicTitle(titles.title, content, eventDocs.length) : titles;
 
       // Build visualization sections (SWOT, dashboard)
-      const sections = buildBreakingSections(eventDocs, lang);
+      const sections = buildArticleVisualizationSections(eventDocs, null, lang);
       
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
@@ -488,34 +482,4 @@ function checkImpactAnalysis(article: ArticleInput): boolean {
   return impactKeywords.some(keyword =>
     (article.content as string).toLowerCase().includes(keyword)
   );
-}
-
-// ---------------------------------------------------------------------------
-// Visualization sections for breaking news articles
-// ---------------------------------------------------------------------------
-
-function buildBreakingSections(docs: RawDocument[], lang: Language): TemplateSection[] {
-  const sections: TemplateSection[] = [];
-  if (docs.length < 2) return sections;
-
-  try {
-    const stakeholders = buildAISwotStakeholders(docs, null, lang);
-    if (stakeholders.length > 0) {
-      sections.push(generateStakeholderSwotSection({ stakeholders, lang }));
-    }
-  } catch { /* graceful degradation */ }
-
-  try {
-    if (docs.length >= 3) {
-      const analysis = analyzeDashboardData(docs, null, lang);
-      if (analysis.charts.length > 0 || analysis.tables.length > 0) {
-        sections.push(generateDashboardSection({
-          data: { title: 'Policy Analysis Dashboard', summary: analysis.summary, charts: analysis.charts, tables: analysis.tables },
-          lang,
-        }));
-      }
-    }
-  } catch { /* graceful degradation */ }
-
-  return sections;
 }

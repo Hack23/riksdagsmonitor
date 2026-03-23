@@ -56,7 +56,7 @@ import { sharedAnalysisCache } from './analysis-cache.js';
 // ---------------------------------------------------------------------------
 
 /**
- * Build SWOT, dashboard, and mindmap TemplateSections for standard article
+ * Build SWOT, dashboard, and economic TemplateSections for standard article
  * types (not deep-inspection, which has its own richer builder).
  *
  * Produces 1–3 sections depending on available data:
@@ -66,7 +66,7 @@ import { sharedAnalysisCache } from './analysis-cache.js';
  *
  * Each section is safe to append to `generateArticleHTML({ sections })`.
  */
-function buildArticleVisualizationSections(
+export function buildArticleVisualizationSections(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,

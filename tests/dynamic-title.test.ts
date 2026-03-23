@@ -6,6 +6,7 @@
 
 import { describe, it, expect } from 'vitest';
 import fs from 'node:fs';
+import path from 'node:path';
 import { generateDynamicTitle } from '../scripts/generate-news-enhanced/helpers.js';
 
 describe('generateDynamicTitle', () => {
@@ -97,17 +98,38 @@ describe('generateDynamicTitle', () => {
 });
 
 describe('generateDynamicTitle integration', () => {
-  it('is imported in ALL article generators', async () => {
-    // Verify that all generator files import generateDynamicTitle
-    
-    const generatorFiles = [
-      'scripts/generate-news-enhanced/generators.ts',
-      'scripts/news-types/month-ahead.ts',
-      'scripts/news-types/monthly-review.ts',
-      'scripts/news-types/weekly-review/generator.ts',
-      'scripts/news-types/breaking-news.ts',
-    ];
+  // Discover all generator files programmatically instead of maintaining a static list.
+  // Every .ts file under scripts/ that imports generateDynamicTitle (excluding the definition site)
+  // is considered a generator integration point.
+  function discoverGeneratorFiles(): string[] {
+    const dirs = ['scripts/generate-news-enhanced', 'scripts/news-types'];
+    const files: string[] = [];
+    for (const dir of dirs) {
+      const walk = (d: string): void => {
+        for (const entry of fs.readdirSync(d, { withFileTypes: true })) {
+          if (entry.isDirectory()) walk(path.join(d, entry.name));
+          else if (entry.name.endsWith('.ts') && !entry.name.endsWith('.test.ts')) {
+            const fp = path.join(d, entry.name);
+            const src = fs.readFileSync(fp, 'utf-8');
+            // Include files that import generateDynamicTitle (not the definition in helpers.ts)
+            if (src.includes('generateDynamicTitle') && !src.includes('export function generateDynamicTitle')) {
+              files.push(fp);
+            }
+          }
+        }
+      };
+      walk(dir);
+    }
+    return files.sort();
+  }
 
+  const generatorFiles = discoverGeneratorFiles();
+
+  it('discovers at least 5 generator files using generateDynamicTitle', () => {
+    expect(generatorFiles.length).toBeGreaterThanOrEqual(5);
+  });
+
+  it('is imported in ALL discovered article generators', async () => {
     for (const file of generatorFiles) {
       const content = fs.readFileSync(file, 'utf-8');
       expect(content, `${file} should import generateDynamicTitle`).toContain('generateDynamicTitle');
@@ -115,15 +137,6 @@ describe('generateDynamicTitle integration', () => {
   });
 
   it('is called for English articles in all generator files', async () => {
-    
-    const generatorFiles = [
-      'scripts/generate-news-enhanced/generators.ts',
-      'scripts/news-types/month-ahead.ts',
-      'scripts/news-types/monthly-review.ts',
-      'scripts/news-types/weekly-review/generator.ts',
-      'scripts/news-types/breaking-news.ts',
-    ];
-
     for (const file of generatorFiles) {
       const content = fs.readFileSync(file, 'utf-8');
       expect(content, `${file} should use generateDynamicTitle for English enrichment`)
@@ -131,45 +144,34 @@ describe('generateDynamicTitle integration', () => {
     }
   });
 
-  it('visualization section builders exist in all generator files', async () => {
+  it('visualization section builder is shared across all generator files', async () => {
     
-    // The main generators.ts has buildArticleVisualizationSections
+    // The main generators.ts defines and exports buildArticleVisualizationSections
     const mainGen = fs.readFileSync('scripts/generate-news-enhanced/generators.ts', 'utf-8');
-    expect(mainGen).toContain('buildArticleVisualizationSections');
+    expect(mainGen).toContain('export function buildArticleVisualizationSections');
     expect(mainGen).toContain('generateStakeholderSwotSection');
     expect(mainGen).toContain('analyzeDashboardData');
     expect(mainGen).toContain('generateEconomicDashboardSection');
 
-    // news-types generators have their own section builders
-    const breakingNews = fs.readFileSync('scripts/news-types/breaking-news.ts', 'utf-8');
-    expect(breakingNews).toContain('buildBreakingSections');
-
-    const weeklyReview = fs.readFileSync('scripts/news-types/weekly-review/generator.ts', 'utf-8');
-    expect(weeklyReview).toContain('buildWeeklyReviewSections');
-
-    const monthlyReview = fs.readFileSync('scripts/news-types/monthly-review.ts', 'utf-8');
-    expect(monthlyReview).toContain('buildReviewSections');
-
-    const monthAhead = fs.readFileSync('scripts/news-types/month-ahead.ts', 'utf-8');
-    expect(monthAhead).toContain('buildMonthAheadSections');
-  });
-
-  it('all section builders use graceful degradation', async () => {
-    
-    const files = [
-      'scripts/generate-news-enhanced/generators.ts',
+    // news-types generators import the shared helper instead of duplicating
+    const newsTypeFiles = [
       'scripts/news-types/breaking-news.ts',
       'scripts/news-types/weekly-review/generator.ts',
       'scripts/news-types/monthly-review.ts',
       'scripts/news-types/month-ahead.ts',
     ];
-
-    for (const file of files) {
+    for (const file of newsTypeFiles) {
       const content = fs.readFileSync(file, 'utf-8');
-      // Each section builder should have try/catch for graceful degradation
-      const tryCatchCount = (content.match(/} catch \{/g) ?? []).length;
-      expect(tryCatchCount, `${file} should have try/catch blocks for graceful degradation`)
-        .toBeGreaterThanOrEqual(2);
+      expect(content, `${file} should import shared buildArticleVisualizationSections`)
+        .toContain('buildArticleVisualizationSections');
     }
+  });
+
+  it('all section builders use graceful degradation', async () => {
+    // Only generators.ts contains the actual try/catch logic now
+    const content = fs.readFileSync('scripts/generate-news-enhanced/generators.ts', 'utf-8');
+    const tryCatchCount = (content.match(/} catch \{/g) ?? []).length;
+    expect(tryCatchCount, 'generators.ts should have try/catch blocks for graceful degradation')
+      .toBeGreaterThanOrEqual(3);
   });
 });

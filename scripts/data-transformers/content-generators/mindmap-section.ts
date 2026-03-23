@@ -358,6 +358,14 @@ const WEIGHT_SIZE: Readonly<Record<AIMindmapItemWeight, number>> = {
 };
 
 /**
+ * Sanitise a string for use as a D3 node id.
+ * Strips non-alphanumeric characters (except hyphens) and collapses runs of hyphens.
+ */
+function sanitizeNodeId(raw: string): string {
+  return raw.replace(/[^a-z0-9-]+/gi, '-').replace(/-{2,}/g, '-').replace(/^-|-$/g, '').toLowerCase();
+}
+
+/**
  * Build a D3 force-directed graph configuration from mindmap data.
  * The config is serialised as JSON in a data attribute for client-side rendering.
  */
@@ -368,27 +376,39 @@ function buildD3MindmapConfig(
 ): { nodes: D3MindmapNode[]; links: D3MindmapLink[] } {
   const nodes: D3MindmapNode[] = [];
   const links: D3MindmapLink[] = [];
+  const usedIds = new Set<string>();
+
+  /** Return a unique id by appending an index suffix when needed. */
+  function uniqueId(base: string): string {
+    let id = base;
+    let idx = 2;
+    while (usedIds.has(id)) { id = `${base}-${idx++}`; }
+    usedIds.add(id);
+    return id;
+  }
 
   // Central node
-  const centerId = 'center';
+  const centerId = uniqueId('center');
   nodes.push({ id: centerId, label: topic, group: 'center', weight: 5, color: '#00d9ff' });
 
   for (const branch of branches) {
-    const branchId = `branch-${branch.label.replace(/\s+/g, '-').toLowerCase()}`;
+    const branchId = uniqueId(`branch-${sanitizeNodeId(branch.label)}`);
     const palette = BRANCH_COLORS[branch.color] ?? BRANCH_COLORS.cyan;
     nodes.push({ id: branchId, label: branch.label, group: branch.color, weight: 3, color: palette.border });
     links.push({ source: centerId, target: branchId });
 
     // Add AI items as child nodes
     if (branch.aiItems) {
-      for (const item of branch.aiItems) {
-        const itemId = `${branchId}-${item.text.slice(0, 20).replace(/\s+/g, '-').toLowerCase()}`;
+      for (let i = 0; i < branch.aiItems.length; i++) {
+        const item = branch.aiItems[i]!;
+        const itemId = uniqueId(`${branchId}-${sanitizeNodeId(item.text.slice(0, 20))}-${i}`);
         nodes.push({ id: itemId, label: item.text, group: branch.color, weight: WEIGHT_SIZE[item.weight] ?? 2, color: palette.border });
         links.push({ source: branchId, target: itemId });
       }
     } else if (branch.items) {
-      for (const item of branch.items) {
-        const itemId = `${branchId}-${item.slice(0, 20).replace(/\s+/g, '-').toLowerCase()}`;
+      for (let i = 0; i < branch.items.length; i++) {
+        const item = branch.items[i]!;
+        const itemId = uniqueId(`${branchId}-${sanitizeNodeId(item.slice(0, 20))}-${i}`);
         nodes.push({ id: itemId, label: item, group: branch.color, weight: 2, color: palette.border });
         links.push({ source: branchId, target: itemId });
       }
@@ -397,8 +417,8 @@ function buildD3MindmapConfig(
 
   // Cross-branch connections
   for (const conn of connections) {
-    const fromId = `branch-${conn.fromBranch.replace(/\s+/g, '-').toLowerCase()}`;
-    const toId = `branch-${conn.toBranch.replace(/\s+/g, '-').toLowerCase()}`;
+    const fromId = `branch-${sanitizeNodeId(conn.fromBranch)}`;
+    const toId = `branch-${sanitizeNodeId(conn.toBranch)}`;
     links.push({ source: fromId, target: toId, label: conn.relationship });
   }
 

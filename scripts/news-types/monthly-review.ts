@@ -36,17 +36,10 @@ import {
 import { getCurrentRiksmote } from './motions.js';
 import { generateArticleHTML } from '../article-template.js';
 import { generateCiaOverviewSection } from '../data-transformers/content-generators/cia-overview-section.js';
-import {
-  generateStakeholderSwotSection,
-  generateDashboardSection,
-  generateEconomicDashboardSection,
-} from '../data-transformers/index.js';
-import { buildAISwotStakeholders } from '../data-transformers/content-generators/index.js';
-import { detectPolicyDomains } from '../data-transformers/policy-analysis.js';
-import { analyzeDashboardData } from '../ai-analysis/dashboard-analyzer.js';
 import type { Language } from '../types/language.js';
-import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord, TemplateSection } from '../types/article.js';
+import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
 import { generateDynamicTitle } from '../generate-news-enhanced/helpers.js';
+import { buildArticleVisualizationSections } from '../generate-news-enhanced/generators.js';
 
 /**
  * Required MCP tools for monthly-review articles
@@ -315,7 +308,7 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
       const ciaSection = generateCiaOverviewSection({ cia: ciaContext, lang });
 
       // Build additional visualization sections (SWOT, dashboard, economic)
-      const extraSections = buildReviewSections(documents as RawDocument[], lang);
+      const extraSections = buildArticleVisualizationSections(documents as RawDocument[], null, lang);
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
@@ -513,43 +506,4 @@ function checkMonthInNumbers(article: ArticleInput): boolean {
   return article.content.includes('Month in Numbers') ||
          article.content.includes('Månaden i siffror') ||
          article.content.includes('📊');
-}
-
-// ---------------------------------------------------------------------------
-// Visualization sections for monthly review articles
-// ---------------------------------------------------------------------------
-
-function buildReviewSections(docs: RawDocument[], lang: Language): TemplateSection[] {
-  const sections: TemplateSection[] = [];
-  if (docs.length < 2) return sections;
-
-  try {
-    const stakeholders = buildAISwotStakeholders(docs, null, lang);
-    if (stakeholders.length > 0) {
-      sections.push(generateStakeholderSwotSection({ stakeholders, lang }));
-    }
-  } catch { /* graceful degradation */ }
-
-  try {
-    if (docs.length >= 3) {
-      const analysis = analyzeDashboardData(docs, null, lang);
-      if (analysis.charts.length > 0 || analysis.tables.length > 0) {
-        sections.push(generateDashboardSection({
-          data: { title: 'Policy Analysis Dashboard', summary: analysis.summary, charts: analysis.charts, tables: analysis.tables },
-          lang,
-        }));
-      }
-    }
-  } catch { /* graceful degradation */ }
-
-  try {
-    const domains = new Set<string>();
-    for (const d of docs) for (const dom of detectPolicyDomains(d, lang)) domains.add(dom);
-    if (domains.size > 0) {
-      const econ = generateEconomicDashboardSection({ policyDomains: [...domains], lang });
-      if (econ) sections.push(econ);
-    }
-  } catch { /* graceful degradation */ }
-
-  return sections;
 }

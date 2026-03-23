@@ -125,7 +125,7 @@ export function generateSwotSection(opts: SwotSectionOptions): TemplateSection {
   // Generate SWOT radar chart config for impact visualization
   const radarConfig = buildSwotRadarConfig(data, lbl);
   const radarBlock = radarConfig
-    ? `\n    <div class="swot-radar-wrapper">\n      <canvas id="swot-radar" role="img" aria-label="${escapeHtml(titleText)}" data-chart-config="${escapeHtml(JSON.stringify(radarConfig))}"></canvas>\n    </div>`
+    ? `\n    <div class="swot-radar-wrapper">\n      <canvas class="swot-radar" role="img" aria-label="${escapeHtml(titleText)}" data-chart-config="${escapeHtml(JSON.stringify(radarConfig))}"></canvas>\n    </div>`
     : '';
 
   const html = `<section class="swot-analysis" aria-label="${escapeHtml(titleText)}">
