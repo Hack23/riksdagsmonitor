@@ -163,17 +163,26 @@ source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts --types
 
 ## Required Skills
 
-1. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology
-2. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
-3. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
+Before generating articles, consult these skills:
+1. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
+2. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology
+3. **`.github/skills/legislative-monitoring/SKILL.md`** — Voting patterns, committee tracking, bill progress
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
-5. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
-6. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
-7. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
-8. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
-
+5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
+6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
+7. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
+8. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
+9. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
+
+### Standardised Analysis Depth Gate
+
+| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap |
+|-------|--------------|-------------------|--------|---------|
+| standard | 1-2 | ≥3 | ≥1 | optional |
+| deep | 2-3 | ≥5 | ≥2 | required |
+| comprehensive | 3+ | ≥7 | ≥3 | required |
 
 > **Read `analysis_depth` input first** (default: `standard`). This controls iteration count and section requirements.
 
@@ -343,6 +352,22 @@ These elements are validated by `bash scripts/validate-news-generation.sh` (Chec
 npx tsx scripts/fix-article-navigation.ts
 ```
 
+### Step 3b — Cross-Reference Minister Responses
+
+For each interpellation found, cross-reference the minister's response to identify accountability gaps:
+
+1. **Fetch minister response speech**: Use `search_anforanden(talare=<minister-name>, rm=<riksmöte>)` to locate the minister's formal response to the interpellation
+2. **Compare question vs response**: Analyse the interpellation question against the minister's response to classify:
+   - **Unanswered questions** — accountability gap → government SWOT weakness (minister failed to address core concern)
+   - **Evasive answers** — deflection detected → opposition SWOT opportunity (pressure point for follow-up)
+   - **Policy commitments** — concrete pledges made → government SWOT strength (trackable promise)
+   - **Statistical claims** — verify against SCB/World Bank data → accuracy check for article
+3. **Assess response timeliness**: Check if the minister responded within the statutory 4-week deadline; flag overdue responses as accountability concerns
+4. **Include minister response summary in article body**: For each interpellation entry, add a "Minister's Response" subsection summarising the response (or noting absence if unanswered)
+5. **Generate accountability scorecard**: Tally response rates per minister and include in the Accountability Dashboard chart
+
+> **Fallback**: If `search_anforanden` returns no results for a specific minister, note "No formal response recorded" in the article and flag this as an accountability gap in the SWOT analysis.
+
 ### Step 4: Translate, Validate & Verify Analysis Quality
 
 Run validation and HTMLHint before creating PR:
@@ -406,6 +431,19 @@ For each generated article, apply up to 3 iterations:
 - ❌ Identical "Why It Matters" text for all entries — DIFFERENTIATE analysis per interpellation
 - ❌ Flat list of interpellations without grouping — GROUP by policy theme and submitting party
 - ❌ Article under 500 words — EXPAND with analytical sections
+
+### Playwright Visual Validation
+Run Playwright validation before creating the PR:
+```bash
+# HTMLHint validation
+npx htmlhint "news/*-interpellation-debates-*.html"
+
+# Playwright visual validation (accessibility, RTL, responsive)
+npx playwright test tests/validate-articles-playwright.ts --grep "interpellation-debates"
+
+# Validate JSON-LD cross-references
+npx tsx scripts/validate-cross-references.ts news/*-interpellation-debates-*.html
+```
 
 ### Bash Validation Commands:
 ```bash
