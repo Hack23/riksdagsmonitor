@@ -603,8 +603,8 @@ describe('Playwright Validation in Content Workflows', () => {
       expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
-        content.includes(`playwright test ${PLAYWRIGHT_VALIDATOR_PATH}`),
-        `Workflow ${workflowFile} should reference the Playwright validator path: ${PLAYWRIGHT_VALIDATOR_PATH}`
+        content.includes(`npx tsx ${PLAYWRIGHT_VALIDATOR_PATH}`),
+        `Workflow ${workflowFile} should reference the Playwright validator via npx tsx: ${PLAYWRIGHT_VALIDATOR_PATH}`
       ).toBe(true);
     }
   });

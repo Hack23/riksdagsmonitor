@@ -705,7 +705,7 @@ Run Playwright validation before creating the PR:
 npx htmlhint "news/*-evening-analysis-*.html"
 
 # Playwright visual validation (accessibility, RTL, responsive)
-npx playwright test scripts/validate-articles-playwright.ts --grep "evening-analysis"
+npx tsx scripts/validate-articles-playwright.ts --filter "evening-analysis"
 
 # Validate JSON-LD cross-references
 npx tsx scripts/validate-cross-references.ts news/*-evening-analysis-*.html

@@ -408,7 +408,7 @@ if [ "$NEWS_FILES" -gt 0 ]; then
   fi
 fi
 # Playwright visual validation (accessibility, RTL, responsive)
-npx playwright test scripts/validate-articles-playwright.ts --grep "weekly-review"
+npx tsx scripts/validate-articles-playwright.ts --filter "weekly-review"
 
 # Validate JSON-LD cross-references
 npx tsx scripts/validate-cross-references.ts news/*-weekly-review-*.html

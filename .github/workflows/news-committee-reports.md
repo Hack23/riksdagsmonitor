@@ -453,7 +453,7 @@ Run Playwright validation before creating the PR:
 npx htmlhint "news/*-committee-reports-*.html"
 
 # Playwright visual validation (accessibility, RTL, responsive)
-npx playwright test scripts/validate-articles-playwright.ts --grep "committee-reports"
+npx tsx scripts/validate-articles-playwright.ts --filter "committee-reports"
 
 # Validate JSON-LD cross-references
 npx tsx scripts/validate-cross-references.ts news/*-committee-reports-*.html

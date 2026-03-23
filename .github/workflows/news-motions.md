@@ -473,7 +473,7 @@ Run Playwright validation before creating the PR:
 npx htmlhint "news/*-opposition-motions-*.html"
 
 # Playwright visual validation (accessibility, RTL, responsive)
-npx playwright test scripts/validate-articles-playwright.ts --grep "opposition-motions"
+npx tsx scripts/validate-articles-playwright.ts --filter "opposition-motions"
 
 # Validate JSON-LD cross-references
 npx tsx scripts/validate-cross-references.ts news/*-opposition-motions-*.html
