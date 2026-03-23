@@ -30,6 +30,8 @@ import {
   generateWeeklyActivitySection,
 } from './analysis.js';
 import { generateCiaOverviewSection } from '../../data-transformers/content-generators/cia-overview-section.js';
+import { generateDynamicTitle } from '../../generate-news-enhanced/helpers.js';
+import { buildArticleVisualizationSections } from '../../generate-news-enhanced/generators.js';
 
 export async function generateWeeklyReview(options: GenerationOptions = {}): Promise<GenerationResult> {
   const { languages = ['en', 'sv'], lookbackDays = 7, writeArticle = null } = options;
@@ -194,13 +196,18 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
       const sources: string[] = generateSources([...REQUIRED_TOOLS]);
 
       const titles: TitleSet = getTitles(lang, documents.length);
+      // Enrich English title/subtitle with content-based highlights
+      const enriched = lang === 'en' ? generateDynamicTitle(titles.title, fullContent, documents.length) : titles;
 
       const ciaSection = generateCiaOverviewSection({ cia: ciaContext, lang });
 
+      // Build additional visualization sections (SWOT, dashboard, economic)
+      const extraSections = buildArticleVisualizationSections(documents, null, lang);
+
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
-        title: titles.title,
-        subtitle: titles.subtitle,
+        title: enriched.title,
+        subtitle: enriched.subtitle,
         date: today.toISOString().split('T')[0] ?? '',
         type: 'retrospective' as ArticleCategory,
         readTime,
@@ -211,7 +218,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
-        sections: [ciaSection],
+        sections: [ciaSection, ...extraSections],
       });
 
       articles.push({
@@ -314,6 +321,9 @@ function getTitles(lang: Language, documentCount: number): TitleSet {
   return titles[lang] || titles.en;
 }
 
+/**
+ * Build visualization sections (SWOT, dashboard, economic) for weekly review articles.
+ */
 /**
  * Validate weekly review article structure
  */

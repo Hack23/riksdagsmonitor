@@ -123,13 +123,18 @@ export function findIndicatorsForDomains(domains: string[]): EconomicIndicatorCo
 
 /**
  * Build Chart.js chart configurations from economic data points.
- * Groups data by indicator and creates bar charts comparing Nordic countries.
+ * Groups data by indicator and creates bar charts comparing Nordic countries,
+ * radar charts for multi-indicator overviews, and line charts for trends.
  */
 export function buildEconomicCharts(
   indicators: EconomicIndicatorContext[],
   dataPoints: EconomicDataPoint[],
 ): DashboardChartConfig[] {
   const charts: DashboardChartConfig[] = [];
+
+  // Track indicators with latest-year bar data for potential radar chart
+  const radarLabels: string[] = [];
+  const radarDataByCountry = new Map<string, number[]>();
 
   for (const indicator of indicators) {
     const points = dataPoints.filter(p => p.indicatorId === indicator.indicatorId);
@@ -156,6 +161,10 @@ export function buildEconomicCharts(
       const borderColors = sorted.map(p => COUNTRY_BORDER_COLORS[p.countryCode] ?? '#666');
 
       const idBase = sanitizeChartId(indicator.indicatorId);
+
+      // Compute average for annotation
+      const avg = data.reduce((s, v) => s + v, 0) / data.length;
+
       charts.push({
         id: `econ-${idBase}`,
         type: 'bar',
@@ -168,7 +177,22 @@ export function buildEconomicCharts(
           borderColor: borderColors,
           borderWidth: 1,
         }],
+        annotations: [{
+          type: 'line',
+          value: Math.round(avg * 100) / 100,
+          label: `Avg: ${avg.toFixed(1)}`,
+          borderColor: 'rgba(255,190,11,0.6)',
+        }],
       });
+
+      // Collect data for radar chart
+      radarLabels.push(indicator.name);
+      for (const p of sorted) {
+        if (!radarDataByCountry.has(p.countryCode)) {
+          radarDataByCountry.set(p.countryCode, []);
+        }
+        radarDataByCountry.get(p.countryCode)!.push(p.value);
+      }
     }
 
     // If we have multi-year data, add a trend line chart
@@ -193,7 +217,75 @@ export function buildEconomicCharts(
     }
   }
 
+  // Add radar overview chart when we have 3+ indicators with cross-country data
+  if (radarLabels.length >= 3 && radarDataByCountry.size >= 2) {
+    // Normalize values per indicator to 0–100 scale for radar comparability
+    const normed = normalizeRadarData(radarLabels, radarDataByCountry);
+    const radarDatasets: DashboardChartConfig['datasets'] = [];
+    const countryOrder = NORDIC_COMPARISON.countries;
+
+    for (const code of countryOrder) {
+      if (!normed.has(code)) continue;
+      const color = COUNTRY_COLORS[code] ?? '#888';
+      radarDatasets.push({
+        label: NORDIC_COMPARISON.countryNames[code] ?? code,
+        data: normed.get(code)!,
+        backgroundColor: `${color}33`, // 20% opacity
+        borderColor: color,
+        borderWidth: 2,
+      });
+    }
+
+    if (radarDatasets.length >= 2) {
+      charts.push({
+        id: 'econ-radar-overview',
+        type: 'radar',
+        title: 'Nordic Economic Comparison',
+        labels: radarLabels,
+        datasets: radarDatasets,
+      });
+    }
+  }
+
   return charts;
+}
+
+/**
+ * Normalize radar data so each indicator is scaled to 0–100 for visual comparability.
+ * Higher is "better" for all indicators after normalization.
+ */
+function normalizeRadarData(
+  labels: string[],
+  dataByCountry: Map<string, number[]>,
+): Map<string, number[]> {
+  const result = new Map<string, number[]>();
+
+  // Compute min/max per indicator column
+  const mins: number[] = [];
+  const maxs: number[] = [];
+  for (let i = 0; i < labels.length; i++) {
+    let min = Infinity;
+    let max = -Infinity;
+    for (const values of dataByCountry.values()) {
+      const v = values[i] ?? 0;
+      if (v < min) min = v;
+      if (v > max) max = v;
+    }
+    mins.push(min);
+    maxs.push(max);
+  }
+
+  for (const [code, values] of dataByCountry.entries()) {
+    const normed: number[] = [];
+    for (let i = 0; i < labels.length; i++) {
+      const range = maxs[i] - mins[i];
+      const v = values[i] ?? 0;
+      normed.push(range > 0 ? Math.round(((v - mins[i]) / range) * 100) : 50);
+    }
+    result.set(code, normed);
+  }
+
+  return result;
 }
 
 /**

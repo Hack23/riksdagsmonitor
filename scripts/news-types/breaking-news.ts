@@ -166,6 +166,8 @@ import type {
   BreakingNewsValidation,
   BreakingNewsOptions,
 } from '../types/article.js';
+import { generateDynamicTitle } from '../generate-news-enhanced/helpers.js';
+import { buildArticleVisualizationSections } from '../generate-news-enhanced/generators.js';
 
 /**
  * Required MCP tools for breaking news articles
@@ -317,11 +319,16 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
       const sources: string[] = generateSources(mcpCalls.map((call: MCPCallRecord) => call.tool));
       
       const titles: TitleSet = getTitles(lang, eventContext);
+      // Enrich English title/subtitle with content-based highlights
+      const enriched = lang === 'en' ? generateDynamicTitle(titles.title, content, eventDocs.length) : titles;
+
+      // Build visualization sections (SWOT, dashboard)
+      const sections = buildArticleVisualizationSections(eventDocs, null, lang);
       
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
-        title: titles.title,
-        subtitle: titles.subtitle,
+        title: enriched.title,
+        subtitle: enriched.subtitle,
         date: today.toISOString().split('T')[0] ?? '',
         type: 'breaking' as ArticleCategory,
         readTime,
@@ -334,6 +341,7 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
         tags: metadata.tags,
         significance: significance?.score,
         urgency: significance?.urgency,
+        sections,
       });
       
       articles.push({

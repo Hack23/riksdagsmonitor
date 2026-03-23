@@ -53,17 +53,49 @@ import { L } from '../helpers.js';
  * We emit only the data & options that Chart.js actually needs.
  */
 function serialiseChartConfig(chart: DashboardChartConfig): string {
+  const isRadarOrPolar = chart.type === 'radar';
+  const isLine = chart.type === 'line';
+
   const datasets = chart.datasets.map(ds => ({
     label: ds.label,
     data: ds.data,
     ...(ds.backgroundColor ? { backgroundColor: ds.backgroundColor } : {}),
     ...(ds.borderColor ? { borderColor: ds.borderColor } : {}),
     ...(ds.borderWidth != null ? { borderWidth: ds.borderWidth } : {}),
+    // Enhance line charts with smooth curves and point styling
+    ...(isLine ? { tension: 0.3, pointRadius: 4, pointHoverRadius: 6, fill: true } : {}),
+    // Enhance radar charts with transparency and wider borders
+    ...(isRadarOrPolar ? { borderWidth: ds.borderWidth ?? 2, pointRadius: 3 } : {}),
   }));
 
   const annotationPluginBlock = buildAnnotations(chart.annotations);
 
   const hasTitle = chart.title != null && chart.title.trim() !== '';
+
+  // Shared dark-theme styling constants
+  const GRID_COLOR = 'rgba(255,255,255,0.06)';
+  const RADAR_GRID_COLOR = 'rgba(255,255,255,0.1)';
+  const TICK_COLOR = '#b0b0b0';
+  const TEXT_COLOR = '#e0e0e0';
+
+  // Build responsive, styled options for each chart type
+  const scaleOptions: Record<string, unknown> = {};
+  if (!isRadarOrPolar && chart.type !== 'pie' && chart.type !== 'doughnut') {
+    scaleOptions.x = { grid: { color: GRID_COLOR }, ticks: { color: TICK_COLOR } };
+    scaleOptions.y = {
+      grid: { color: GRID_COLOR },
+      ticks: { color: TICK_COLOR },
+      beginAtZero: chart.type === 'bar',
+    };
+  }
+  if (isRadarOrPolar) {
+    scaleOptions.r = {
+      grid: { color: RADAR_GRID_COLOR },
+      angleLines: { color: RADAR_GRID_COLOR },
+      ticks: { color: TICK_COLOR, backdropColor: 'transparent' },
+      pointLabels: { color: TEXT_COLOR, font: { size: 11 } },
+    };
+  }
 
   const config = {
     type: chart.type,
@@ -72,10 +104,30 @@ function serialiseChartConfig(chart: DashboardChartConfig): string {
       datasets,
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: true,
       plugins: {
-        title: { display: hasTitle, text: chart.title },
+        title: {
+          display: hasTitle,
+          text: chart.title,
+          color: TEXT_COLOR,
+          font: { size: 14, weight: 'bold' as const },
+        },
+        legend: {
+          labels: { color: TEXT_COLOR, usePointStyle: true, padding: 12 },
+        },
+        tooltip: {
+          backgroundColor: 'rgba(10,14,39,0.95)',
+          titleColor: '#00d9ff',
+          bodyColor: TEXT_COLOR,
+          borderColor: '#00d9ff',
+          borderWidth: 1,
+          cornerRadius: 6,
+          padding: 10,
+        },
         ...(annotationPluginBlock ? { annotation: annotationPluginBlock } : {}),
       },
+      ...(Object.keys(scaleOptions).length > 0 ? { scales: scaleOptions } : {}),
     },
   };
 

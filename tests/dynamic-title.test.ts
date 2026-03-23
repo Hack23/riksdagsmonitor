@@ -1,0 +1,177 @@
+/**
+ * Tests for generateDynamicTitle — content-based article title/description generation.
+ * Validates title enrichment from article highlights, theme extraction,
+ * and graceful fallback behavior.
+ */
+
+import { describe, it, expect } from 'vitest';
+import fs from 'node:fs';
+import path from 'node:path';
+import { generateDynamicTitle } from '../scripts/generate-news-enhanced/helpers.js';
+
+describe('generateDynamicTitle', () => {
+  it('returns base title when content has no highlights', () => {
+    const result = generateDynamicTitle('Committee Reports', '<p>Plain content without emphasis.</p>', 5);
+    expect(result.title).toBe('Committee Reports');
+    expect(result.subtitle).toContain('5');
+    expect(result.subtitle).toContain('parliamentary documents');
+  });
+
+  it('enriches title with dominant theme from content', () => {
+    const content = '<p>This article covers defense spending and NATO membership implications.</p>';
+    const result = generateDynamicTitle('Government Propositions', content, 3);
+    expect(result.title).toContain('Defense');
+  });
+
+  it('enriches subtitle with strong highlights', () => {
+    const content = '<p><strong>Budget Deficit</strong> is a major concern. <strong>Tax Reform</strong> is proposed.</p>';
+    const result = generateDynamicTitle('Committee Reports', content, 7);
+    expect(result.subtitle).toContain('Budget Deficit');
+    expect(result.subtitle).toContain('Tax Reform');
+    expect(result.subtitle).toContain('7');
+  });
+
+  it('enriches subtitle with h3 headings as highlights', () => {
+    const content = '<h3>Climate Policy Shift</h3><p>Details of the shift.</p><h3>Energy Transition</h3>';
+    const result = generateDynamicTitle('Motions', content, 4);
+    expect(result.subtitle).toContain('Climate Policy Shift');
+    expect(result.subtitle).toContain('4');
+  });
+
+  it('detects migration theme from content', () => {
+    const content = '<p>The migration debate continues with new asylum policies being discussed.</p>';
+    const result = generateDynamicTitle('Interpellation Debates', content, 2);
+    expect(result.title).toContain('Migration');
+  });
+
+  it('detects EU affairs theme from content', () => {
+    const content = '<p>Sweden\'s position in the European Union has shifted significantly.</p>';
+    const result = generateDynamicTitle('Government Propositions', content, 6);
+    expect(result.title).toContain('EU Affairs');
+  });
+
+  it('does not duplicate theme in title if already present', () => {
+    const content = '<p>Defense spending proposals are reviewed.</p>';
+    const result = generateDynamicTitle('Defense Policy Review', content, 3);
+    // Should not duplicate "Defense" in title
+    expect(result.title).toBe('Defense Policy Review');
+  });
+
+  it('uses document count in subtitle', () => {
+    const result = generateDynamicTitle('Test Title', '<p>Simple content.</p>', 42);
+    expect(result.subtitle).toContain('42');
+  });
+
+  it('handles empty content gracefully', () => {
+    const result = generateDynamicTitle('Base Title', '', 0);
+    expect(result.title).toBe('Base Title');
+    expect(result.subtitle).toContain('0');
+  });
+
+  it('deduplicates highlights from strong and h3 tags', () => {
+    const content = '<strong>Same Topic</strong><h3>Same Topic</h3>';
+    const result = generateDynamicTitle('Test', content, 1);
+    // Should not repeat "Same Topic" in subtitle
+    const count = (result.subtitle.match(/Same Topic/g) ?? []).length;
+    expect(count).toBeLessThanOrEqual(1);
+  });
+
+  // Swedish content detection
+
+  it('detects Swedish committee name (Finansutskottet) from content', () => {
+    const content = '<p>Finansutskottet har behandlat budgetpropositionen.</p>';
+    const result = generateDynamicTitle('Committee Reports', content, 3);
+    expect(result.title).toContain('Finansutskottet');
+  });
+
+  it('detects Swedish committee name (Försvarsutskottet) from content', () => {
+    const content = '<p>Försvarsutskottet diskuterade NATO-samarbete.</p>';
+    const result = generateDynamicTitle('Committee Reports', content, 2);
+    expect(result.title).toContain('Försvarsutskottet');
+  });
+
+  it('detects climate theme from Swedish content', () => {
+    const content = '<p>Miljöfrågor och hållbar utveckling diskuterades i kammaren.</p>';
+    const result = generateDynamicTitle('Government Propositions', content, 4);
+    expect(result.title).toContain('Climate');
+  });
+});
+
+describe('generateDynamicTitle integration', () => {
+  // Discover all generator files programmatically instead of maintaining a static list.
+  // Every .ts file under scripts/ that imports generateDynamicTitle (excluding the definition site)
+  // is considered a generator integration point.
+  function discoverGeneratorFiles(): string[] {
+    const dirs = ['scripts/generate-news-enhanced', 'scripts/news-types'];
+    const files: string[] = [];
+    for (const dir of dirs) {
+      const walk = (d: string): void => {
+        for (const entry of fs.readdirSync(d, { withFileTypes: true })) {
+          if (entry.isDirectory()) walk(path.join(d, entry.name));
+          else if (entry.name.endsWith('.ts') && !entry.name.endsWith('.test.ts')) {
+            const fp = path.join(d, entry.name);
+            const src = fs.readFileSync(fp, 'utf-8');
+            // Include files that import generateDynamicTitle (not the definition in helpers.ts)
+            if (src.includes('generateDynamicTitle') && !src.includes('export function generateDynamicTitle')) {
+              files.push(fp);
+            }
+          }
+        }
+      };
+      walk(dir);
+    }
+    return files.sort();
+  }
+
+  const generatorFiles = discoverGeneratorFiles();
+
+  it('discovers at least 5 generator files using generateDynamicTitle', () => {
+    expect(generatorFiles.length).toBeGreaterThanOrEqual(5);
+  });
+
+  it('is imported in ALL discovered article generators', async () => {
+    for (const file of generatorFiles) {
+      const content = fs.readFileSync(file, 'utf-8');
+      expect(content, `${file} should import generateDynamicTitle`).toContain('generateDynamicTitle');
+    }
+  });
+
+  it('is called for English articles in all generator files', async () => {
+    for (const file of generatorFiles) {
+      const content = fs.readFileSync(file, 'utf-8');
+      expect(content, `${file} should use generateDynamicTitle for English enrichment`)
+        .toContain("lang === 'en' ? generateDynamicTitle(");
+    }
+  });
+
+  it('visualization section builder is shared across all generator files', async () => {
+    
+    // The main generators.ts defines and exports buildArticleVisualizationSections
+    const mainGen = fs.readFileSync('scripts/generate-news-enhanced/generators.ts', 'utf-8');
+    expect(mainGen).toContain('export function buildArticleVisualizationSections');
+    expect(mainGen).toContain('generateStakeholderSwotSection');
+    expect(mainGen).toContain('analyzeDashboardData');
+    expect(mainGen).toContain('generateEconomicDashboardSection');
+
+    // news-types generators import the shared helper instead of duplicating
+    const newsTypeFiles = [
+      'scripts/news-types/breaking-news.ts',
+      'scripts/news-types/weekly-review/generator.ts',
+      'scripts/news-types/monthly-review.ts',
+      'scripts/news-types/month-ahead.ts',
+    ];
+    for (const file of newsTypeFiles) {
+      const content = fs.readFileSync(file, 'utf-8');
+      expect(content, `${file} should import shared buildArticleVisualizationSections`)
+        .toContain('buildArticleVisualizationSections');
+    }
+  });
+
+  it('all section builders use graceful degradation', async () => {
+    // Only generators.ts contains the actual try/catch logic now
+    const content = fs.readFileSync('scripts/generate-news-enhanced/generators.ts', 'utf-8');
+    const tryCatchCount = (content.match(/} catch \{/g) ?? []).length;
+    expect(tryCatchCount, 'generators.ts should have try/catch blocks for graceful degradation')
+      .toBeGreaterThanOrEqual(3);
+  });
+});

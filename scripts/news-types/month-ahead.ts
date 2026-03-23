@@ -38,6 +38,8 @@ import {
 import { generateArticleHTML } from '../article-template.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
+import { generateDynamicTitle } from '../generate-news-enhanced/helpers.js';
+import { buildArticleVisualizationSections } from '../generate-news-enhanced/generators.js';
 
 /**
  * Required MCP tools for month-ahead articles.
@@ -217,11 +219,16 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
 
       const itemCount = events.length > 0 ? events.length : documents.length;
       const titles: TitleSet = getTitles(lang, itemCount);
+      // Enrich English title/subtitle with content-based highlights
+      const enriched = lang === 'en' ? generateDynamicTitle(titles.title, content, itemCount) : titles;
+
+      // Build visualization sections (SWOT, dashboard, economic)
+      const sections = buildArticleVisualizationSections(documents, null, lang);
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
-        title: titles.title,
-        subtitle: titles.subtitle,
+        title: enriched.title,
+        subtitle: enriched.subtitle,
         date: today.toISOString().split('T')[0] ?? '',
         type: 'prospective' as ArticleCategory,
         readTime,
@@ -232,6 +239,7 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
+        sections,
       });
 
       articles.push({
@@ -452,3 +460,5 @@ function checkLegislativePipeline(article: ArticleInput): boolean {
   const content = (article.content as string).toLowerCase();
   return pipelineSectionMarkers.some(marker => content.includes(marker));
 }
+
+

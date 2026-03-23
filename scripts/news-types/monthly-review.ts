@@ -38,6 +38,8 @@ import { generateArticleHTML } from '../article-template.js';
 import { generateCiaOverviewSection } from '../data-transformers/content-generators/cia-overview-section.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
+import { generateDynamicTitle } from '../generate-news-enhanced/helpers.js';
+import { buildArticleVisualizationSections } from '../generate-news-enhanced/generators.js';
 
 /**
  * Required MCP tools for monthly-review articles
@@ -300,13 +302,18 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
       ]);
 
       const titles: TitleSet = getTitles(lang, documents.length);
+      // Enrich English title/subtitle with content-based highlights
+      const enriched = lang === 'en' ? generateDynamicTitle(titles.title, content, documents.length) : titles;
 
       const ciaSection = generateCiaOverviewSection({ cia: ciaContext, lang });
 
+      // Build additional visualization sections (SWOT, dashboard, economic)
+      const extraSections = buildArticleVisualizationSections(documents as RawDocument[], null, lang);
+
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
-        title: titles.title,
-        subtitle: titles.subtitle,
+        title: enriched.title,
+        subtitle: enriched.subtitle,
         date: today.toISOString().split('T')[0] ?? '',
         type: 'retrospective' as ArticleCategory,
         readTime,
@@ -317,7 +324,7 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
-        sections: [ciaSection],
+        sections: [ciaSection, ...extraSections],
       });
 
       articles.push({
