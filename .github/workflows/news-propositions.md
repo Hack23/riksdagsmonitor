@@ -423,7 +423,7 @@ Run Playwright validation before creating the PR:
 npx htmlhint "news/*-government-propositions-*.html"
 
 # Playwright visual validation (accessibility, RTL, responsive)
-npx playwright test tests/validate-articles-playwright.ts --grep "government-propositions"
+npx playwright test scripts/validate-articles-playwright.ts --grep "government-propositions"
 
 # Validate JSON-LD cross-references
 npx tsx scripts/validate-cross-references.ts news/*-government-propositions-*.html

@@ -584,15 +584,22 @@ describe('Unified Required Skills', () => {
 
 describe('Playwright Validation in Content Workflows', () => {
   const CONTENT_WORKFLOWS = Object.values(ARTICLE_TYPE_WORKFLOWS);
+  const PLAYWRIGHT_VALIDATOR_PATH = 'scripts/validate-articles-playwright.ts';
 
   it('all article type workflows should have Playwright validation step', () => {
+    const validatorPath = path.join(__dirname, '..', PLAYWRIGHT_VALIDATOR_PATH);
+    expect(
+      fs.existsSync(validatorPath),
+      `Playwright validator should exist at ${PLAYWRIGHT_VALIDATOR_PATH}`
+    ).toBe(true);
+
     for (const workflowFile of CONTENT_WORKFLOWS) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       if (!fs.existsSync(filepath)) continue;
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
-        content.includes('validate-articles-playwright'),
-        `Workflow ${workflowFile} should reference validate-articles-playwright for Playwright validation`
+        content.includes(`playwright test ${PLAYWRIGHT_VALIDATOR_PATH}`),
+        `Workflow ${workflowFile} should reference the Playwright validator path: ${PLAYWRIGHT_VALIDATOR_PATH}`
       ).toBe(true);
     }
   });

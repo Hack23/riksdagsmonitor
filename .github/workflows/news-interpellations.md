@@ -439,7 +439,7 @@ Run Playwright validation before creating the PR:
 npx htmlhint "news/*-interpellation-debates-*.html"
 
 # Playwright visual validation (accessibility, RTL, responsive)
-npx playwright test tests/validate-articles-playwright.ts --grep "interpellation-debates"
+npx playwright test scripts/validate-articles-playwright.ts --grep "interpellation-debates"
 
 # Validate JSON-LD cross-references
 npx tsx scripts/validate-cross-references.ts news/*-interpellation-debates-*.html

@@ -356,10 +356,10 @@ if [ "$NEWS_FILES" -gt 0 ]; then
   fi
 fi
 # Playwright visual validation (accessibility, RTL, responsive)
-npx playwright test tests/validate-articles-playwright.ts --grep "weekly-review" 2>/dev/null || echo "⚠️ Playwright validation skipped (not installed)"
+npx playwright test scripts/validate-articles-playwright.ts --grep "weekly-review"
 
 # Validate JSON-LD cross-references
-npx tsx scripts/validate-cross-references.ts news/*-weekly-review-*.html 2>/dev/null || echo "⚠️ Cross-reference validation skipped"
+npx tsx scripts/validate-cross-references.ts news/*-weekly-review-*.html
 ```
 
 **CRITICAL: Each article MUST contain real analysis, not just a list of translated document links.**

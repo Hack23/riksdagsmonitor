@@ -206,7 +206,7 @@ Before translating articles, consult these skills:
 2. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology
 3. **`.github/skills/legislative-monitoring/SKILL.md`** — Voting patterns, committee tracking, bill progress
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
-5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines (CRITICAL — read this first)
+5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines (required for translation quality)
 6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
 
 ## 📊 Translation Analysis Depth

@@ -36,16 +36,16 @@ Before generating articles, consult these skills:
 ```markdown
 ### Playwright Visual Validation
 Run Playwright validation before creating the PR:
-\`\`\`bash
+```bash
 # HTMLHint validation
 npx htmlhint "news/*-{type}-*.html"
 
 # Playwright visual validation (accessibility, RTL, responsive)
-npx playwright test tests/validate-articles-playwright.ts --grep "{type}"
+npx playwright test scripts/validate-articles-playwright.ts --grep "{type}"
 
 # Validate JSON-LD cross-references
 npx tsx scripts/validate-cross-references.ts news/*-{type}-*.html
-\`\`\`
+```
 ```
 
 ## Standardised Deduplication Check (copy into every content workflow)
