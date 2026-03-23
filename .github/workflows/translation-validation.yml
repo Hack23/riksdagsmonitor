@@ -247,6 +247,8 @@ jobs:
             echo "⏭️  Swedish leakage detector: SKIPPED (no news articles)"
           else
             echo "⚠️  Swedish leakage detector: WARNINGS"
+          fi
+          
           if [ "${{ steps.bcp47.outcome }}" = "success" ]; then
             echo "✅ BCP-47 consistency: PASSED"
           else
