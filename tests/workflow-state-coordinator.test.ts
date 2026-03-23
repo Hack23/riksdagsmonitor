@@ -124,9 +124,26 @@ describe('Workflow State Coordinator', () => {
     });
 
     it('should use atomic write (write-to-tmp + rename)', async () => {
+      const writeFileSyncSpy = vi.spyOn(fs, 'writeFileSync');
+      const renameSyncSpy = vi.spyOn(fs, 'renameSync');
+
       await coordinator.save();
 
-      // Verify state file is valid JSON (would be corrupt if non-atomic)
+      // Verify writeFileSync was called with a tmp path
+      const tmpWriteCall = writeFileSyncSpy.mock.calls.find(
+        (call) => typeof call[0] === 'string' && (call[0] as string).includes('.tmp.'),
+      );
+      expect(tmpWriteCall).toBeDefined();
+      const tmpPath = tmpWriteCall![0] as string;
+      expect(tmpPath).toMatch(/\.tmp\.\d+$/);
+
+      // Verify renameSync was called to move tmp → final state path
+      const renameCall = renameSyncSpy.mock.calls.find(
+        (call) => call[0] === tmpPath && call[1] === TEST_STATE_FILE,
+      );
+      expect(renameCall).toBeDefined();
+
+      // Verify final state file is valid JSON
       const content = fs.readFileSync(TEST_STATE_FILE, 'utf-8');
       expect(() => JSON.parse(content)).not.toThrow();
 
@@ -134,6 +151,9 @@ describe('Workflow State Coordinator', () => {
       const dir = path.dirname(TEST_STATE_FILE);
       const tmpFiles = fs.readdirSync(dir).filter(f => f.startsWith('test-workflow-state.json.tmp.'));
       expect(tmpFiles).toHaveLength(0);
+
+      writeFileSyncSpy.mockRestore();
+      renameSyncSpy.mockRestore();
     });
 
     it('should initialize activeGenerations array on load', async () => {
@@ -700,6 +720,21 @@ describe('Workflow Lock Manager', () => {
       expect(info!.workflowId).toBe('new-wf');
     });
 
+    it('should reclaim orphaned lock directory without info.json', () => {
+      // Create lock directory without info.json (orphaned lock)
+      const lockPath = path.join(TEST_LOCK_DIR, 'propositions-2026-03-23.lock');
+      fs.mkdirSync(lockPath, { recursive: true });
+      // No info.json written — simulates crash after mkdir but before writeFile
+
+      // acquireLock should reclaim the orphaned directory and acquire successfully
+      const result = lockManager.acquireLock('propositions', '2026-03-23', 'wf-new');
+      expect(result).toBe(true);
+
+      const info = lockManager.getLockInfo('propositions', '2026-03-23');
+      expect(info).not.toBeNull();
+      expect(info!.workflowId).toBe('wf-new');
+    });
+
     it('should throw for non-EEXIST fs errors during acquire', () => {
       const mkdirSpy = vi.spyOn(fs, 'mkdirSync').mockImplementationOnce(() => {
         const error = new Error('permission denied') as NodeJS.ErrnoException;
@@ -796,6 +831,26 @@ describe('Workflow Lock Manager', () => {
     it('should return 0 when lock directory does not exist', () => {
       const freshManager = new WorkflowLockManager(path.join(TEST_LOCK_DIR, 'nonexistent'));
       expect(freshManager.cleanupStaleLocks()).toBe(0);
+    });
+  });
+});
+
+describe('Workflow State Coordinator', () => {
+  const TEST_SIG_STATE_FILE = path.join(__dirname, 'fixtures', 'test-sig-workflow-state.json');
+  let coordinator: WorkflowStateCoordinator;
+
+  beforeEach(() => {
+    coordinator = new WorkflowStateCoordinator(TEST_SIG_STATE_FILE);
+    // Ensure clean state
+    const dir = path.dirname(TEST_SIG_STATE_FILE);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    if (fs.existsSync(TEST_SIG_STATE_FILE)) fs.unlinkSync(TEST_SIG_STATE_FILE);
+  });
+
+  afterEach(() => {
+    if (fs.existsSync(TEST_SIG_STATE_FILE)) fs.unlinkSync(TEST_SIG_STATE_FILE);
+  });
+
   describe('Significance-Aware Deduplication', () => {
     it('should store significance when adding article', async () => {
       await coordinator.addRecentArticle({

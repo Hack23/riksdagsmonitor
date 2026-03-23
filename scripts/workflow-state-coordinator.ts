@@ -311,6 +311,11 @@ export class WorkflowLockManager {
               fs.rmSync(lockPath, { recursive: true, force: true });
               reclaimed = true;
             }
+          } else if (reclaimAttempts < maxReclaims) {
+            // Lock directory exists but info.json is missing — orphaned lock.
+            // Reclaim it so workflows aren't blocked indefinitely.
+            fs.rmSync(lockPath, { recursive: true, force: true });
+            reclaimed = true;
           }
         } catch {
           // If we can't inspect/remove stale lock, treat as held.
@@ -663,7 +668,7 @@ export class WorkflowStateCoordinator {
         matchedArticle = recentArticle;
       }
 
-      if (similarity >= SIMILARITY_THRESHOLD) {
+      if (combinedSimilarity >= SIMILARITY_THRESHOLD) {
         similarMatches.push(recentArticle);
       }
 
