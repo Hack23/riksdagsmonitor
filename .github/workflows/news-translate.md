@@ -112,8 +112,12 @@ steps:
       CONTENT_BRANCH_PREFIX="news/content/${ARTICLE_DATE}/"
       GH_ERROR_LOG=$(mktemp)
       trap 'rm -f "$GH_ERROR_LOG"' EXIT
+      OPEN_CONTENT_PRS=0
+
+      set +e
       PR_LIST_JSON=$(gh pr list --repo "${{ github.repository }}" --base main --json headRefName 2>"$GH_ERROR_LOG")
       GH_EXIT_CODE=$?
+      set -e
       if [ "$GH_EXIT_CODE" -ne 0 ] || [ -z "$PR_LIST_JSON" ]; then
         echo "⚠ Unable to query open content PRs for $ARTICLE_DATE (gh exit code: $GH_EXIT_CODE)."
         if [ -s "$GH_ERROR_LOG" ]; then
@@ -123,7 +127,22 @@ steps:
         echo "   Deferring translation to avoid potential merge conflicts."
         exit 0
       fi
-      OPEN_CONTENT_PRS=$(printf '%s' "$PR_LIST_JSON" | jq -r --arg prefix "$CONTENT_BRANCH_PREFIX" '[.[] | select(.headRefName | startswith($prefix))] | length')
+
+      set +e
+      OPEN_CONTENT_PRS=$(printf '%s' "$PR_LIST_JSON" | jq -r --arg prefix "$CONTENT_BRANCH_PREFIX" '[.[] | select(.headRefName | startswith($prefix))] | length' 2>"$GH_ERROR_LOG")
+      JQ_EXIT_CODE=$?
+      set -e
+      if [ "$JQ_EXIT_CODE" -ne 0 ] || ! [[ "$OPEN_CONTENT_PRS" =~ ^[0-9]+$ ]]; then
+        echo "⚠ Unable to parse content PR count for $ARTICLE_DATE (jq exit code: $JQ_EXIT_CODE)."
+        if [ -s "$GH_ERROR_LOG" ]; then
+          echo "jq error:"
+          sed 's/^/  /' "$GH_ERROR_LOG"
+        fi
+        OPEN_CONTENT_PRS=0
+        echo "   Deferring translation to avoid potential merge conflicts."
+        exit 0
+      fi
+
       if [ "$OPEN_CONTENT_PRS" -gt 0 ]; then
         echo "⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — deferring translation"
         echo "   Next scheduled run will retry once content workflow PRs are merged."
