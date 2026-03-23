@@ -1,46 +1,46 @@
 {
-  "2026-03-23-government-propositions-en.html": {
-    "filename": "2026-03-23-government-propositions-en.html",
+  "2026-03-23-interpellation-debates-en.html": {
+    "filename": "2026-03-23-interpellation-debates-en.html",
     "lang": "en",
-    "articleType": "propositions",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 64,
-      "passesThreshold": true,
+      "overallScore": 50,
+      "passesThreshold": false,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 17,
-        "analyticalDepth": 16,
+        "factualAccuracy": 0,
+        "stakeholderCoverage": 100,
+        "analyticalDepth": 12,
         "editorialConsistency": 80,
-        "evidenceQuality": 100,
+        "evidenceQuality": 60,
         "languageQuality": 100
       },
       "issueCount": 2
     },
-    "timestamp": "2026-03-23T05:34:20.341Z"
+    "timestamp": "2026-03-23T07:29:11.864Z"
   },
-  "2026-03-23-government-propositions-sv.html": {
-    "filename": "2026-03-23-government-propositions-sv.html",
+  "2026-03-23-interpellation-debates-sv.html": {
+    "filename": "2026-03-23-interpellation-debates-sv.html",
     "lang": "sv",
-    "articleType": "propositions",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 61,
-      "passesThreshold": true,
+      "overallScore": 47,
+      "passesThreshold": false,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 17,
+        "factualAccuracy": 0,
+        "stakeholderCoverage": 100,
         "analyticalDepth": 4,
-        "editorialConsistency": 80,
-        "evidenceQuality": 100,
+        "editorialConsistency": 65,
+        "evidenceQuality": 60,
         "languageQuality": 100
       },
       "issueCount": 2
     },
-    "timestamp": "2026-03-23T05:34:20.364Z"
+    "timestamp": "2026-03-23T07:29:11.891Z"
   }
 }
