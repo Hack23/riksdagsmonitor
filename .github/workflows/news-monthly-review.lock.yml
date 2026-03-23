@@ -22,7 +22,7 @@
 #
 # Generates monthly review retrospective articles in core languages (EN, SV). Translations handled by news-translate workflow. Runs on 28th of each month.
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"f9b848b19955661b9585e5367d266893b15f387b890f45330e66fdb92155958c","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"039ea0fa4d02178276c5844c8763bcc592aecba79932f7bec23e7c2ccd807f37","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
 
 name: "News: Monthly Review"
 "on":
@@ -30,6 +30,10 @@ name: "News: Monthly Review"
   - cron: "0 10 28 * *"
   workflow_dispatch:
     inputs:
+      article_date:
+        description: Article date (YYYY-MM-DD) for manual backfills. Defaults to today when
+          omitted or scheduled.
+        required: false
       analysis_depth:
         default: deep
         description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.
@@ -47,7 +51,8 @@ name: "News: Monthly Review"
 permissions: {}
 
 concurrency:
-  group: "gh-aw-${{ github.workflow }}"
+  cancel-in-progress: false
+  group: gh-aw-news-monthly-review-${{ inputs.article_date || 'today' }}
 
 run-name: "News: Monthly Review"
 

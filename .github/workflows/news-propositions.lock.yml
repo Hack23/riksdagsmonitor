@@ -22,7 +22,7 @@
 #
 # Generates government propositions analysis articles in core languages (EN, SV). Translations for remaining 12 languages are handled by the dedicated news-translate workflow via dispatch-workflow. Single article type per run.
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"9649ab691ad109299f2bc4145e90f4a6cbbbf963d11258c77f47a63f35175221","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"53521645263e98bf6963055921e054b086f191b9a44c87164e2e6f5948640720","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
 
 name: "News: Government Propositions"
 "on":
@@ -30,6 +30,10 @@ name: "News: Government Propositions"
   - cron: "0 5 * * 1-5"
   workflow_dispatch:
     inputs:
+      article_date:
+        description: Article date (YYYY-MM-DD) for manual backfills. Defaults to today when
+          omitted or scheduled.
+        required: false
       analysis_depth:
         default: standard
         description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.
@@ -47,7 +51,8 @@ name: "News: Government Propositions"
 permissions: {}
 
 concurrency:
-  group: "gh-aw-${{ github.workflow }}"
+  cancel-in-progress: false
+  group: gh-aw-news-propositions-${{ inputs.article_date || 'today' }}
 
 run-name: "News: Government Propositions"
 

@@ -100,19 +100,87 @@ steps:
     run: |
       npm ci --prefer-offline --no-audit
 
-  - name: Pre-flight source article check
+  - name: Pre-flight content PR dependency check
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GITHUB_TOKEN: ${{ github.token }}
+      ARTICLE_DATE_INPUT: ${{ github.event.inputs.article_date }}
+      GH_REPOSITORY: ${{ github.repository }}
     run: |
-      ARTICLE_DATE="${{ github.event.inputs.article_date || '' }}"
+      ARTICLE_DATE="${ARTICLE_DATE_INPUT:-}"
       if [ -z "$ARTICLE_DATE" ]; then
         ARTICLE_DATE=$(date -u '+%Y-%m-%d')
       fi
-      MISSING_EN=$(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null | wc -l)
-      if [ "$MISSING_EN" -eq 0 ]; then
-        echo "⛔ No EN source articles found for $ARTICLE_DATE — aborting to avoid race condition"
-        echo "   Next scheduled run will retry once content workflow PR is merged."
+      CONTENT_BRANCH_PREFIX="news/content/${ARTICLE_DATE}/"
+      GH_ERROR_LOG=$(mktemp)
+      JQ_ERROR_LOG=$(mktemp)
+      chmod 600 "$GH_ERROR_LOG" "$JQ_ERROR_LOG"
+      trap 'rm -f "$GH_ERROR_LOG" "$JQ_ERROR_LOG"' EXIT
+      OPEN_CONTENT_PRS=0
+
+      set +e
+      PR_LIST_JSON=$(gh pr list --repo "$GH_REPOSITORY" --base main --state open --limit 200 --json headRefName 2>"$GH_ERROR_LOG")
+      GH_EXIT_CODE=$?
+      set -e
+      if [ "$GH_EXIT_CODE" -ne 0 ] || [ -z "$PR_LIST_JSON" ]; then
+        echo "⚠ Unable to query open content PRs for $ARTICLE_DATE (gh exit code: $GH_EXIT_CODE)."
+        if [ -s "$GH_ERROR_LOG" ]; then
+          echo "gh error:"
+          sed 's/^/  /' "$GH_ERROR_LOG"
+        fi
+        echo "   Deferring translation to avoid potential merge conflicts."
+        echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
         exit 0
       fi
-      echo "✅ Found $MISSING_EN EN source article(s) for $ARTICLE_DATE — proceeding with translation"
+
+      set +e
+      OPEN_CONTENT_PRS=$(printf '%s' "$PR_LIST_JSON" | jq -r --arg prefix "$CONTENT_BRANCH_PREFIX" '[.[] | select(.headRefName | startswith($prefix))] | length' 2>"$JQ_ERROR_LOG")
+      JQ_EXIT_CODE=$?
+      set -e
+      if [ "$JQ_EXIT_CODE" -ne 0 ] || ! [[ "$OPEN_CONTENT_PRS" =~ ^[0-9]+$ ]]; then
+        echo "⚠ Unable to parse content PR count for $ARTICLE_DATE (jq exit code: $JQ_EXIT_CODE)."
+        if [ -s "$JQ_ERROR_LOG" ]; then
+          echo "jq error:"
+          sed 's/^/  /' "$JQ_ERROR_LOG"
+        fi
+        OPEN_CONTENT_PRS=0
+        echo "   Deferring translation to avoid potential merge conflicts."
+        echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
+        exit 0
+      fi
+
+      if [ "$OPEN_CONTENT_PRS" -gt 0 ]; then
+        echo "⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — deferring translation"
+        echo "   Next scheduled run will retry once content workflow PRs are merged."
+        echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
+        exit 0
+      fi
+      echo "✅ No open content PRs for $ARTICLE_DATE — proceeding with translation"
+
+  - name: Pre-flight source article check
+    if: env.SKIP_TRANSLATION != 'true'
+    env:
+      ARTICLE_DATE_INPUT: ${{ github.event.inputs.article_date }}
+    run: |
+      ARTICLE_DATE="${ARTICLE_DATE_INPUT:-}"
+      if [ -z "$ARTICLE_DATE" ]; then
+        ARTICLE_DATE=$(date -u '+%Y-%m-%d')
+      fi
+      EN_SOURCE_COUNT=$(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null | wc -l)
+      if [ "$EN_SOURCE_COUNT" -eq 0 ]; then
+        echo "⛔ No EN source articles found for $ARTICLE_DATE — aborting to avoid race condition"
+        echo "   Next scheduled run will retry once content workflow PR is merged."
+        echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
+        exit 0
+      fi
+      echo "✅ Found $EN_SOURCE_COUNT EN source article(s) for $ARTICLE_DATE — proceeding with translation"
+
+  - name: Preflight gate
+    if: env.SKIP_TRANSLATION == 'true'
+    run: |
+      echo "::notice::Translation deferred by pre-flight checks — halting workflow to avoid unnecessary agent execution."
+      echo "The next scheduled run will retry automatically."
+      exit 1
 
 engine:
   id: copilot
@@ -151,6 +219,81 @@ If EN source articles do not exist on disk when this workflow runs, it means the
 - **Call `safeoutputs___noop`** with message: "EN source articles not yet available on main. Content workflow PR must be merged first."
 
 **Violation of this rule causes merge conflicts and overwrites higher-quality reviewed articles.**
+
+### 🛡️ File Ownership Contract (Translation)
+
+This workflow is a **translation** workflow and MUST only create/modify files for the 12 non-core languages.
+
+- ✅ **Allowed:** `news/YYYY-MM-DD-*-{da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html`
+- ❌ **Forbidden:** `news/YYYY-MM-DD-*-en.html`, `news/YYYY-MM-DD-*-sv.html`
+
+Validate file ownership (checks staged, unstaged, and untracked changes):
+```bash
+npx tsx scripts/validate-file-ownership.ts translation
+```
+
+If the validator reports violations, reset tracked EN/SV files with `git restore --staged --worktree -- news/*-en.html news/*-sv.html` (or `git checkout -- news/*-en.html news/*-sv.html` on older Git), and remove untracked EN/SV files with `rm news/*-en.html news/*-sv.html` (or `git clean -f -- news/*-en.html news/*-sv.html`) before committing.
+
+### 🔒 Content-PR Dependency Check
+
+Before starting translations, check if any content workflow PRs are still open for the target date. If they are, set the `SKIP_TRANSLATION` environment flag and defer to avoid merge conflicts. A subsequent "Preflight gate" step checks this flag and halts the workflow (via `exit 1`) to prevent unnecessary agent execution:
+```bash
+# Pre-flight content PR dependency check step:
+# - Sets SKIP_TRANSLATION=true in $GITHUB_ENV on defer conditions
+# - exit 0 completes the step; the gate step below enforces the halt
+ARTICLE_DATE="${ARTICLE_DATE_INPUT:-}"
+if [ -z "$ARTICLE_DATE" ]; then
+  ARTICLE_DATE=$(date -u '+%Y-%m-%d')
+fi
+CONTENT_BRANCH_PREFIX="news/content/${ARTICLE_DATE}/"
+GH_ERROR_LOG=$(mktemp)
+JQ_ERROR_LOG=$(mktemp)
+chmod 600 "$GH_ERROR_LOG" "$JQ_ERROR_LOG"
+trap 'rm -f "$GH_ERROR_LOG" "$JQ_ERROR_LOG"' EXIT
+
+set +e
+PR_LIST_JSON=$(gh pr list --repo "$GH_REPOSITORY" --base main --state open --limit 200 --json headRefName 2>"$GH_ERROR_LOG")
+GH_EXIT_CODE=$?
+set -e
+if [ "$GH_EXIT_CODE" -ne 0 ] || [ -z "$PR_LIST_JSON" ]; then
+  echo "⚠ Unable to query open content PRs for $ARTICLE_DATE (gh exit code: $GH_EXIT_CODE). Deferring."
+  echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
+  exit 0
+fi
+
+set +e
+OPEN_CONTENT_PRS=$(printf '%s' "$PR_LIST_JSON" | jq -r --arg prefix "$CONTENT_BRANCH_PREFIX" '[.[] | select(.headRefName | startswith($prefix))] | length' 2>"$JQ_ERROR_LOG")
+JQ_EXIT_CODE=$?
+set -e
+if [ "$JQ_EXIT_CODE" -ne 0 ] || ! [[ "$OPEN_CONTENT_PRS" =~ ^[0-9]+$ ]]; then
+  echo "⚠ Unable to parse content PR count for $ARTICLE_DATE (jq exit code: $JQ_EXIT_CODE). Deferring."
+  echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
+  exit 0
+fi
+
+if [ "$OPEN_CONTENT_PRS" -gt 0 ]; then
+  echo "⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — deferring translation"
+  echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
+  exit 0
+fi
+
+# Pre-flight source article check step (guarded with if: env.SKIP_TRANSLATION != 'true'):
+# Also sets SKIP_TRANSLATION=true if no EN source articles exist.
+
+# Preflight gate step (if: env.SKIP_TRANSLATION == 'true'):
+#   echo "::notice::Translation deferred by pre-flight checks."
+#   exit 1  # Halts the workflow — the next scheduled run retries automatically.
+```
+
+### Branch Naming Convention
+
+Use deterministic branch names for translation PRs:
+```
+news/translate/{YYYY-MM-DD}/{article-type}
+```
+Example: `news/translate/2026-03-23/committee-reports`
+
+> **Note:** `safeoutputs___create_pull_request` handles branch creation automatically; this naming convention is documented for traceability and conflict avoidance.
 
 ## ⏱️ Time Budget (60 minutes)
 

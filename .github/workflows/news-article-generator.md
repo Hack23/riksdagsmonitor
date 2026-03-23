@@ -41,6 +41,10 @@ permissions:
   
 timeout-minutes: 45
 
+concurrency:
+  group: gh-aw-news-article-generator-${{ inputs.article_types || 'manual' }}
+  cancel-in-progress: false
+
 network:
   allowed:
     - node
@@ -459,6 +463,29 @@ if [ "$NEWS_FILES" -gt 0 ]; then
   fi
 fi
 ```
+
+## 🛡️ File Ownership Contract
+
+This workflow is a **content** workflow and MUST only create/modify files for **EN and SV** languages.
+
+- ✅ **Allowed:** `news/YYYY-MM-DD-*-en.html`, `news/YYYY-MM-DD-*-sv.html`
+- ❌ **Forbidden:** `news/YYYY-MM-DD-*-da.html`, `news/YYYY-MM-DD-*-no.html`, or any other translation language
+
+Validate file ownership (checks staged, unstaged, and untracked changes):
+```bash
+npx tsx scripts/validate-file-ownership.ts content
+```
+
+If the validator reports violations, remove tracked changes with `git restore --staged --worktree -- <file>` (or `git checkout -- <file>` on older Git), and remove untracked files with `rm <file>` (or `git clean -f -- <file>`) before committing.
+
+### Branch Naming Convention
+
+Use deterministic branch names for content PRs:
+```
+news/content/{YYYY-MM-DD}/{article-types}
+```
+
+> **Note:** `safeoutputs___create_pull_request` handles branch creation automatically; this naming convention is documented for traceability and conflict avoidance.
 
 ## Step 5: Commit & Create PR
 

@@ -22,7 +22,7 @@
 #
 # Generates weekly review retrospective articles in core languages (EN, SV). Translations handled by news-translate workflow. Runs Saturdays to review the past week.
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"edaa0e95d0bd05f684aee0642e4e3f9fa3cc0c936a9af2b2d3d88d90b4bb0ad2","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"ca3c255b308db5c1ebb9228173ac8188f170665cbf369ee325b731395f4dc63c","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
 
 name: "News: Weekly Review"
 "on":
@@ -30,6 +30,10 @@ name: "News: Weekly Review"
   - cron: "0 9 * * 6"
   workflow_dispatch:
     inputs:
+      article_date:
+        description: Article date (YYYY-MM-DD) for manual backfills. Defaults to today when
+          omitted or scheduled.
+        required: false
       analysis_depth:
         default: standard
         description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.
@@ -47,7 +51,8 @@ name: "News: Weekly Review"
 permissions: {}
 
 concurrency:
-  group: "gh-aw-${{ github.workflow }}"
+  cancel-in-progress: false
+  group: gh-aw-news-weekly-review-${{ inputs.article_date || 'today' }}
 
 run-name: "News: Weekly Review"
 

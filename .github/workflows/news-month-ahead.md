@@ -7,6 +7,9 @@ on:
     - cron: "0 8 1 * *"
   workflow_dispatch:
     inputs:
+      article_date:
+        description: 'Article date (YYYY-MM-DD) for manual backfills. Defaults to today when omitted or scheduled.'
+        required: false
       force_generation:
         description: Force generation even if recent articles exist
         type: boolean
@@ -30,6 +33,10 @@ permissions:
   security-events: read
 
 timeout-minutes: 30
+
+concurrency:
+  group: gh-aw-news-month-ahead-${{ inputs.article_date || 'today' }}
+  cancel-in-progress: false
 
 network:
   allowed:
@@ -225,6 +232,30 @@ Before generating ANY articles, verify MCP connectivity:
 - Existing articles in the news/ directory
 - Cached or stale data
 - AI-generated content without MCP source data
+
+## 🛡️ File Ownership Contract
+
+This workflow is a **content** workflow and MUST only create/modify files for **EN and SV** languages.
+
+- ✅ **Allowed:** `news/YYYY-MM-DD-*-en.html`, `news/YYYY-MM-DD-*-sv.html`
+- ❌ **Forbidden:** `news/YYYY-MM-DD-*-da.html`, `news/YYYY-MM-DD-*-no.html`, or any other translation language
+
+Validate file ownership (checks staged, unstaged, and untracked changes):
+```bash
+npx tsx scripts/validate-file-ownership.ts content
+```
+
+If the validator reports violations, remove tracked changes with `git restore --staged --worktree -- <file>` (or `git checkout -- <file>` on older Git), and remove untracked files with `rm <file>` (or `git clean -f -- <file>`) before committing.
+
+### Branch Naming Convention
+
+Use deterministic branch names for content PRs:
+```
+news/content/{YYYY-MM-DD}/{article-type}
+```
+Example: `news/content/2026-03-23/month-ahead`
+
+> **Note:** `safeoutputs___create_pull_request` handles branch creation automatically; this naming convention is documented for traceability and conflict avoidance.
 
 ## MANDATORY PR Creation
 

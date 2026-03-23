@@ -1012,6 +1012,86 @@ describe('Script-Based Article Generation Safety', () => {
   });
 });
 
+describe('File Ownership Contract', () => {
+  const ALL_CONTENT_WORKFLOWS = [
+    ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+    'news-evening-analysis.md',
+    'news-realtime-monitor.md',
+    'news-article-generator.md',
+  ];
+
+  it('all content workflows should have file ownership contract section', () => {
+    for (const workflowFile of ALL_CONTENT_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('File Ownership Contract'),
+        `Workflow ${workflowFile} should have a File Ownership Contract section`
+      ).toBe(true);
+    }
+  });
+
+  it('content workflows should reference validate-file-ownership.ts with runnable invocation', () => {
+    // Note: The validator is invoked via agent instructions in the markdown body,
+    // not as a compiled YAML step — so we verify the full runnable command in the
+    // markdown source rather than the .lock.yml output.
+    for (const workflowFile of ALL_CONTENT_WORKFLOWS) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('npx tsx scripts/validate-file-ownership.ts content'),
+        `Workflow ${workflowFile} should include runnable invocation: npx tsx scripts/validate-file-ownership.ts content`
+      ).toBe(true);
+    }
+  });
+
+  it('translation workflow should reference validate-file-ownership.ts with runnable translation invocation', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'news-translate.md');
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(
+      content.includes('npx tsx scripts/validate-file-ownership.ts translation'),
+      'Translation workflow should include runnable invocation: npx tsx scripts/validate-file-ownership.ts translation'
+    ).toBe(true);
+  });
+
+  it('translation workflow should have content-PR dependency check', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'news-translate.md');
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(
+      content.includes('Content-PR Dependency Check'),
+      'Translation workflow should have a Content-PR Dependency Check section'
+    ).toBe(true);
+    expect(
+      content.includes('OPEN_CONTENT_PRS'),
+      'Translation workflow should check for open content PRs'
+    ).toBe(true);
+  });
+
+  it('validate-file-ownership.ts script should exist', () => {
+    const scriptPath = path.join(__dirname, '..', 'scripts', 'validate-file-ownership.ts');
+    expect(
+      fs.existsSync(scriptPath),
+      'scripts/validate-file-ownership.ts should exist'
+    ).toBe(true);
+  });
+
+  it('validate-file-ownership.ts should export CONTENT_LANGS and TRANSLATION_LANGS', async () => {
+    const mod = await import('../scripts/validate-file-ownership.js');
+    expect('CONTENT_LANGS' in mod).toBe(true);
+    expect('TRANSLATION_LANGS' in mod).toBe(true);
+  });
+
+  it('validate-file-ownership.ts should export validateFileList and validatePendingFileOwnership', async () => {
+    const mod = await import('../scripts/validate-file-ownership.js');
+    expect('validateFileList' in mod).toBe(true);
+    expect('validatePendingFileOwnership' in mod).toBe(true);
+  });
+});
+
 // ---------------------------------------------------------------------------
 // Additional structural checks (Issue #1335)
 // ---------------------------------------------------------------------------
@@ -1056,6 +1136,109 @@ describe('Workflow timeout limits', () => {
   });
 });
 
+describe('Concurrency Strategy', () => {
+  it('all content workflows should have concurrency blocks with deterministic group keys', () => {
+    const contentWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md',
+      'news-article-generator.md',
+    ] as const;
+
+    const expectedGroups: Record<string, string> = Object.fromEntries(
+      contentWorkflows.map((workflowFile) => {
+        if (workflowFile === 'news-article-generator.md') {
+          return [workflowFile, "group: gh-aw-news-article-generator-${{ inputs.article_types || 'manual' }}"];
+        }
+        const workflowType = workflowFile.replace(/^news-/, '').replace(/\.md$/, '');
+        return [workflowFile, `group: gh-aw-news-${workflowType}-\${{ inputs.article_date || 'today' }}`];
+      })
+    );
+
+    for (const [workflowFile, expectedGroupLine] of Object.entries(expectedGroups)) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const frontmatter = parseFrontmatter(filepath);
+      expect(
+        frontmatter.includes('concurrency:'),
+        `Workflow ${workflowFile} should have a concurrency block in frontmatter`
+      ).toBe(true);
+      expect(
+        frontmatter.includes(expectedGroupLine),
+        `Workflow ${workflowFile} should have deterministic concurrency group line: ${expectedGroupLine}`
+      ).toBe(true);
+      expect(
+        frontmatter.includes('cancel-in-progress: false'),
+        `Workflow ${workflowFile} should have cancel-in-progress: false (queue, don't cancel)`
+      ).toBe(true);
+    }
+  });
+
+  it('content workflow concurrency groups should include workflow name', () => {
+    const workflowGroups: Record<string, string> = {
+      'news-committee-reports.md': 'gh-aw-news-committee-reports',
+      'news-propositions.md': 'gh-aw-news-propositions',
+      'news-motions.md': 'gh-aw-news-motions',
+      'news-interpellations.md': 'gh-aw-news-interpellations',
+      'news-week-ahead.md': 'gh-aw-news-week-ahead',
+      'news-month-ahead.md': 'gh-aw-news-month-ahead',
+      'news-weekly-review.md': 'gh-aw-news-weekly-review',
+      'news-monthly-review.md': 'gh-aw-news-monthly-review',
+    };
+
+    for (const [workflowFile, expectedGroupPrefix] of Object.entries(workflowGroups)) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const frontmatter = parseFrontmatter(filepath);
+      expect(
+        frontmatter.includes(expectedGroupPrefix),
+        `Workflow ${workflowFile} should have concurrency group starting with ${expectedGroupPrefix}`
+      ).toBe(true);
+    }
+  });
+
+  it('translation workflow concurrency should use job-discriminator for parallel execution', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'news-translate.md');
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+    const frontmatter = parseFrontmatter(filepath);
+    expect(frontmatter).toContain('job-discriminator');
+    expect(frontmatter).toContain('cancel-in-progress: true');
+  });
+
+  it('content workflows using article_date in concurrency group should define article_date input', () => {
+    const dateScopedWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md',
+    ] as const;
+
+    for (const workflowFile of dateScopedWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const frontmatter = parseFrontmatter(filepath);
+      expect(
+        frontmatter.includes('article_date:'),
+        `Workflow ${workflowFile} should define article_date input so the concurrency group is actually scoped per date on manual dispatch`
+      ).toBe(true);
+    }
+  });
+
+  it('compiled lock workflows should preserve deterministic concurrency groups', () => {
+    const weeklyReviewLockPath = path.join(WORKFLOWS_DIR, 'news-weekly-review.lock.yml');
+    expect(fs.existsSync(weeklyReviewLockPath), `Workflow file ${weeklyReviewLockPath} should exist`).toBe(true);
+    const weeklyReviewLock = fs.readFileSync(weeklyReviewLockPath, 'utf-8');
+    expect(weeklyReviewLock).toContain("group: gh-aw-news-weekly-review-${{ inputs.article_date || 'today' }}");
+    expect(weeklyReviewLock).toContain('cancel-in-progress: false');
+    expect(weeklyReviewLock).toContain('article_date:');
+
+    const translateLockPath = path.join(WORKFLOWS_DIR, 'news-translate.lock.yml');
+    expect(fs.existsSync(translateLockPath), `Workflow file ${translateLockPath} should exist`).toBe(true);
+    const translateLock = fs.readFileSync(translateLockPath, 'utf-8');
+    expect(translateLock).toContain("group: gh-aw-news-translate-${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}");
+    expect(translateLock).toContain('cancel-in-progress: true');
+  });
+});
+
 describe('Workflow permissions enforcement', () => {
   const ALL_NEWS_WORKFLOWS = [
     ...Object.values(ARTICLE_TYPE_WORKFLOWS),
@@ -1091,6 +1274,37 @@ describe('Workflow permissions enforcement', () => {
   });
 });
 
+describe('Branch Naming Convention', () => {
+  it('content workflows should document deterministic branch naming', () => {
+    const contentWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md',
+      'news-article-generator.md',
+    ];
+
+    for (const workflowFile of contentWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('news/content/'),
+        `Workflow ${workflowFile} should document news/content/ branch naming convention`
+      ).toBe(true);
+    }
+  });
+
+  it('translation workflow should document deterministic branch naming', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'news-translate.md');
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(
+      content.includes('news/translate/'),
+      'Translation workflow should document news/translate/ branch naming convention'
+    ).toBe(true);
+  });
+});
+
 describe('Workflow dispatch-workflow safeguards', () => {
   const CONTENT_WORKFLOWS = Object.values(ARTICLE_TYPE_WORKFLOWS);
 
@@ -1107,5 +1321,36 @@ describe('Workflow dispatch-workflow safeguards', () => {
         ).toBe(true);
       }
     }
+  });
+});
+
+describe('Compiled lock workflow synchronization', () => {
+  it('news-translate.lock.yml should include pre-flight content PR dependency gate', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'news-translate.lock.yml');
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(content).toContain('name: Pre-flight content PR dependency check');
+    // Assert on stable substrings of the pre-flight gh command rather than exact YAML-escaped formatting
+    expect(content).toContain('gh pr list');
+    expect(content).toContain('$GH_REPOSITORY');
+    expect(content).toContain('--base main');
+    expect(content).toContain('--state open');
+    expect(content).toContain('--limit 200');
+    expect(content).toContain('--json headRefName');
+  });
+
+  it('news-translate.lock.yml preflight gate should set SKIP_TRANSLATION flag and halt on defer', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'news-translate.lock.yml');
+    expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+    const content = fs.readFileSync(filepath, 'utf-8');
+    // Preflight steps should set env flag instead of silently exiting 0
+    expect(content).toContain('SKIP_TRANSLATION=true');
+    expect(content).toContain('GITHUB_ENV');
+    // Source article check should be guarded by the skip flag
+    expect(content).toContain("env.SKIP_TRANSLATION != 'true'");
+    // Gate step should halt the job when SKIP_TRANSLATION is set
+    expect(content).toContain('name: Preflight gate');
+    expect(content).toContain("env.SKIP_TRANSLATION == 'true'");
+    expect(content).toContain('exit 1');
   });
 });

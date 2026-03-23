@@ -22,7 +22,7 @@
 #
 # Generates month-ahead strategic outlook articles in core languages (EN, SV). Translations handled by news-translate workflow. Runs on 1st of each month.
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"79c28443f3773b482f4338298f3d0d3a474151d1bdc555203a4001f75495def7","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"3f261f6d9a481e4add85044f0a39055b39e0c02f9b052640d70d4caa43be7513","compiler_version":"v0.62.5","agent_id":"copilot","agent_model":"claude-opus-4.6"}
 
 name: "News: Month Ahead"
 "on":
@@ -30,6 +30,10 @@ name: "News: Month Ahead"
   - cron: "0 8 1 * *"
   workflow_dispatch:
     inputs:
+      article_date:
+        description: Article date (YYYY-MM-DD) for manual backfills. Defaults to today when
+          omitted or scheduled.
+        required: false
       analysis_depth:
         default: standard
         description: Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.
@@ -47,7 +51,8 @@ name: "News: Month Ahead"
 permissions: {}
 
 concurrency:
-  group: "gh-aw-${{ github.workflow }}"
+  cancel-in-progress: false
+  group: gh-aw-news-month-ahead-${{ inputs.article_date || 'today' }}
 
 run-name: "News: Month Ahead"
 

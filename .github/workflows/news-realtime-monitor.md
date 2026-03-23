@@ -13,6 +13,9 @@ on:
     - cron: '0 12 * * 0,6'
   workflow_dispatch:
     inputs:
+      article_date:
+        description: 'Article date (YYYY-MM-DD) for manual backfills. Defaults to today when omitted or scheduled.'
+        required: false
       article_types:
         description: 'Comma-separated article types to generate (breaking,committee-reports,propositions,motions,interpellations,week-ahead,month-ahead,weekly-review,monthly-review,deep-inspection). Default: breaking'
         required: false
@@ -39,6 +42,10 @@ permissions:
   security-events: read
   
 timeout-minutes: 45
+
+concurrency:
+  group: gh-aw-news-realtime-monitor-${{ inputs.article_date || 'today' }}
+  cancel-in-progress: false
 
 network:
   allowed:
@@ -436,6 +443,29 @@ else
   fi
 fi
 ```
+
+## 🛡️ File Ownership Contract
+
+This workflow is a **content** workflow and MUST only create/modify files for **EN and SV** languages.
+
+- ✅ **Allowed:** `news/YYYY-MM-DD-*-en.html`, `news/YYYY-MM-DD-*-sv.html`
+- ❌ **Forbidden:** `news/YYYY-MM-DD-*-da.html`, `news/YYYY-MM-DD-*-no.html`, or any other translation language
+
+Validate file ownership (checks staged, unstaged, and untracked changes):
+```bash
+npx tsx scripts/validate-file-ownership.ts content
+```
+
+If the validator reports violations, remove tracked changes with `git restore --staged --worktree -- <file>` (or `git checkout -- <file>` on older Git), and remove untracked files with `rm <file>` (or `git clean -f -- <file>`) before committing.
+
+### Branch Naming Convention
+
+Use deterministic branch names for content PRs:
+```
+news/content/{YYYY-MM-DD}/breaking
+```
+
+> **Note:** `safeoutputs___create_pull_request` handles branch creation automatically; this naming convention is documented for traceability and conflict avoidance.
 
 ## Step 5: Commit & Create PR
 
