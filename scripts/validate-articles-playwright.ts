@@ -95,8 +95,8 @@
  */
 
 import { chromium, type Browser, type Page } from 'playwright';
-import fs from 'node:fs';
-import path from 'node:path';
+import fs, { globSync } from 'node:fs';
+import path, { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __filename: string = fileURLToPath(import.meta.url);
@@ -573,4 +573,81 @@ export async function validateAndSave(
   console.log(`\n📄 Results saved to: ${outputPath}`);
   
   return results;
+}
+
+// ---------------------------------------------------------------------------
+// CLI entry point
+// ---------------------------------------------------------------------------
+
+/* istanbul ignore next -- CLI entry point */
+if (resolve(fileURLToPath(import.meta.url)) === resolve(process.argv[1] ?? '')) {
+  const args = process.argv.slice(2);
+  let filter: string | undefined;
+  const filePaths: string[] = [];
+
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--filter' && args[i + 1]) {
+      filter = args[i + 1];
+      i++;
+    } else if (!args[i].startsWith('--')) {
+      filePaths.push(args[i]);
+    }
+  }
+
+  // Resolve article paths: explicit args, glob-expanded args, or auto-discover via --filter
+  let articlePaths: string[] = [];
+
+  if (filePaths.length > 0) {
+    // Expand globs in provided file paths
+    for (const p of filePaths) {
+      if (p.includes('*')) {
+        articlePaths.push(...globSync(p));
+      } else if (fs.existsSync(p)) {
+        articlePaths.push(p);
+      }
+    }
+  } else if (filter) {
+    // Auto-discover articles matching the filter in news/
+    const pattern = `news/*-${filter}-*.html`;
+    articlePaths = globSync(pattern);
+  }
+
+  // Normalize paths: convert absolute paths to relative news/<file>.html
+  // validateSingleArticle() only strips a leading news/ segment, so absolute paths
+  // would produce invalid URLs like ${baseUrl}/news//abs/path/...
+  articlePaths = articlePaths.map((p) => {
+    const newsIdx = p.lastIndexOf('/news/');
+    if (newsIdx !== -1) {
+      return p.slice(newsIdx + 1); // returns "news/<file>.html"
+    }
+    return p;
+  });
+
+  if (articlePaths.length === 0) {
+    console.error(
+      'Usage: npx tsx scripts/validate-articles-playwright.ts [--filter <type>] [file ...]\n' +
+      '  --filter <type>  Auto-discover news/*-<type>-*.html articles\n' +
+      '  file ...         Explicit article file paths (supports globs; overrides --filter)\n' +
+      '\n' +
+      'Examples:\n' +
+      '  npx tsx scripts/validate-articles-playwright.ts --filter "committee-reports"\n' +
+      '  npx tsx scripts/validate-articles-playwright.ts news/*-committee-reports-*.html',
+    );
+    process.exit(2);
+  }
+
+  console.log(`🎭 Validating ${articlePaths.length} article(s)...`);
+  validateArticlesWithPlaywright(articlePaths)
+    .then((results) => {
+      if (results.summary.failed > 0) {
+        console.error(`\n❌ ${results.summary.failed} article(s) failed validation.`);
+        process.exit(1);
+      } else {
+        console.log(`\n✅ All ${results.summary.total} article(s) passed validation.`);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      process.exit(1);
+    });
 }

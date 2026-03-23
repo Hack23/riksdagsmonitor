@@ -237,6 +237,27 @@ The Swedish parliamentary session runs September–August. Calculate the current
 
 Use this calculated `rm` value in ALL MCP queries requiring the `rm` parameter.
 
+## MANDATORY Deduplication Check
+
+Before generating articles, verify no duplicate articles exist for the target date:
+```bash
+# Resolve article date: use workflow_dispatch input when provided, fallback to UTC today
+ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+if [ -z "$ARTICLE_DATE" ]; then
+  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
+ARTICLE_TYPE="opposition-motions"
+# Derive FORCE_GENERATION from the workflow_dispatch input
+FORCE_GENERATION="${{ github.event.inputs.force_generation || 'false' }}"
+EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}-en.html 2>/dev/null | wc -l)
+if [ "$EXISTING" -gt 0 ] && [ "${FORCE_GENERATION}" != "true" ]; then
+  echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — skipping (set force_generation=true to override)"
+  exit 0
+fi
+```
+
+If articles already exist and `force_generation` is not `true`, call `safeoutputs___noop` with a message explaining that articles already exist for the target date.
+
 ## MANDATORY MCP Health Gate
 
 Before generating ANY articles, verify MCP connectivity:
@@ -452,7 +473,7 @@ Run Playwright validation before creating the PR:
 npx htmlhint "news/*-opposition-motions-*.html"
 
 # Playwright visual validation (accessibility, RTL, responsive)
-npx playwright test scripts/validate-articles-playwright.ts --grep "opposition-motions"
+npx tsx scripts/validate-articles-playwright.ts --filter "opposition-motions"
 
 # Validate JSON-LD cross-references
 npx tsx scripts/validate-cross-references.ts news/*-opposition-motions-*.html
