@@ -270,10 +270,7 @@ export class WorkflowLockManager {
   acquireLock(type: string, date: string, workflowId: string): boolean {
     const lockPath: string = this.getLockPath(type, date);
     const maxReclaims: number = 1; // keep configurable if policy changes
-    let reclaimAttempts: number = 0;
-
-    // eslint-disable-next-line no-constant-condition
-    while (true) {
+    for (let reclaimAttempts: number = 0; reclaimAttempts <= maxReclaims; reclaimAttempts += 1) {
       try {
         // Ensure parent directory exists
         if (!fs.existsSync(this.lockDir)) {
@@ -309,8 +306,7 @@ export class WorkflowLockManager {
             const existing: LockInfo = JSON.parse(fs.readFileSync(infoPath, 'utf-8')) as LockInfo;
             const acquiredAt: number = new Date(existing.acquiredAt).getTime();
             const expiry: number = existing.expiresAfterMs ?? this.timeoutMs;
-            if (Date.now() - acquiredAt > expiry && reclaimAttempts === 0 && maxReclaims > 0) {
-              reclaimAttempts += 1;
+            if (Date.now() - acquiredAt > expiry && reclaimAttempts < maxReclaims) {
               fs.rmSync(lockPath, { recursive: true, force: true });
               reclaimed = true;
             }
@@ -319,12 +315,10 @@ export class WorkflowLockManager {
           // If we can't inspect/remove stale lock, treat as held.
         }
 
-        if (reclaimed) {
-          continue;
-        }
-        return false;
+        if (!reclaimed) return false;
       }
     }
+    return false;
   }
 
   /**
@@ -611,6 +605,10 @@ export class WorkflowStateCoordinator {
   ): Promise<DuplicateCheckResult> {
     this.cleanupExpiredEntries();
 
+    // Track both:
+    // 1) maxSimilarity/matchedArticle: highest similarity overall (for reporting)
+    // 2) bestDuplicateScore/duplicateMatchedArticle: highest score among entries
+    //    that actually satisfy duplicate criteria (combined>=0.70 OR topic>=0.50)
     let maxSimilarity: number = 0;
     let matchedArticle: RecentArticleEntry | null = null;
     let bestDuplicateScore: number = -1;
