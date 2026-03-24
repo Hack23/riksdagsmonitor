@@ -1,30 +1,30 @@
 {
-  "2026-03-23-interpellation-debates-da.html": {
-    "filename": "2026-03-23-interpellation-debates-da.html",
-    "lang": "da",
-    "articleType": "interpellations",
+  "2026-03-24-committee-reports-en.html": {
+    "filename": "2026-03-24-committee-reports-en.html",
+    "lang": "en",
+    "articleType": "committee-reports",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 51,
+      "overallScore": 53,
       "passesThreshold": false,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 0,
         "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
+        "analyticalDepth": 24,
         "editorialConsistency": 80,
         "evidenceQuality": 60,
         "languageQuality": 100
       },
       "issueCount": 2
     },
-    "timestamp": "2026-03-23T17:21:59.333Z"
+    "timestamp": "2026-03-24T04:38:09.111Z"
   },
-  "2026-03-23-interpellation-debates-no.html": {
-    "filename": "2026-03-23-interpellation-debates-no.html",
-    "lang": "no",
-    "articleType": "interpellations",
+  "2026-03-24-committee-reports-sv.html": {
+    "filename": "2026-03-24-committee-reports-sv.html",
+    "lang": "sv",
+    "articleType": "committee-reports",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -41,226 +41,6 @@
       },
       "issueCount": 2
     },
-    "timestamp": "2026-03-23T17:21:59.365Z"
-  },
-  "2026-03-23-interpellation-debates-fi.html": {
-    "filename": "2026-03-23-interpellation-debates-fi.html",
-    "lang": "fi",
-    "articleType": "interpellations",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 0,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
-        "languageQuality": 100
-      },
-      "issueCount": 2
-    },
-    "timestamp": "2026-03-23T17:21:59.395Z"
-  },
-  "2026-03-23-interpellation-debates-de.html": {
-    "filename": "2026-03-23-interpellation-debates-de.html",
-    "lang": "de",
-    "articleType": "interpellations",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 0,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
-        "languageQuality": 100
-      },
-      "issueCount": 2
-    },
-    "timestamp": "2026-03-23T17:21:59.423Z"
-  },
-  "2026-03-23-interpellation-debates-fr.html": {
-    "filename": "2026-03-23-interpellation-debates-fr.html",
-    "lang": "fr",
-    "articleType": "interpellations",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 0,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
-        "languageQuality": 100
-      },
-      "issueCount": 2
-    },
-    "timestamp": "2026-03-23T17:21:59.452Z"
-  },
-  "2026-03-23-interpellation-debates-es.html": {
-    "filename": "2026-03-23-interpellation-debates-es.html",
-    "lang": "es",
-    "articleType": "interpellations",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 0,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
-        "languageQuality": 100
-      },
-      "issueCount": 2
-    },
-    "timestamp": "2026-03-23T17:21:59.478Z"
-  },
-  "2026-03-23-interpellation-debates-nl.html": {
-    "filename": "2026-03-23-interpellation-debates-nl.html",
-    "lang": "nl",
-    "articleType": "interpellations",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 0,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
-        "languageQuality": 100
-      },
-      "issueCount": 2
-    },
-    "timestamp": "2026-03-23T17:21:59.504Z"
-  },
-  "2026-03-23-interpellation-debates-ar.html": {
-    "filename": "2026-03-23-interpellation-debates-ar.html",
-    "lang": "ar",
-    "articleType": "interpellations",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 0,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
-        "languageQuality": 100
-      },
-      "issueCount": 2
-    },
-    "timestamp": "2026-03-23T17:21:59.529Z"
-  },
-  "2026-03-23-interpellation-debates-he.html": {
-    "filename": "2026-03-23-interpellation-debates-he.html",
-    "lang": "he",
-    "articleType": "interpellations",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 0,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
-        "languageQuality": 100
-      },
-      "issueCount": 2
-    },
-    "timestamp": "2026-03-23T17:21:59.556Z"
-  },
-  "2026-03-23-interpellation-debates-ja.html": {
-    "filename": "2026-03-23-interpellation-debates-ja.html",
-    "lang": "ja",
-    "articleType": "interpellations",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 0,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
-        "languageQuality": 100
-      },
-      "issueCount": 2
-    },
-    "timestamp": "2026-03-23T17:21:59.580Z"
-  },
-  "2026-03-23-interpellation-debates-ko.html": {
-    "filename": "2026-03-23-interpellation-debates-ko.html",
-    "lang": "ko",
-    "articleType": "interpellations",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 0,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
-        "languageQuality": 100
-      },
-      "issueCount": 2
-    },
-    "timestamp": "2026-03-23T17:21:59.605Z"
-  },
-  "2026-03-23-interpellation-debates-zh.html": {
-    "filename": "2026-03-23-interpellation-debates-zh.html",
-    "lang": "zh",
-    "articleType": "interpellations",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 0,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
-        "languageQuality": 100
-      },
-      "issueCount": 2
-    },
-    "timestamp": "2026-03-23T17:21:59.632Z"
+    "timestamp": "2026-03-24T04:38:09.142Z"
   }
 }
