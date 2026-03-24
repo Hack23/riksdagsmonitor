@@ -115,7 +115,7 @@
     "htmlhint": "^1.9.2",
     "js-yaml": "^4.1.1",
     "json-schema-to-typescript": "^15.0.4",
-    "knip": "^6.0.4",
+    "knip": "^6.0.5",
     "playwright": "^1.58.2",
     "start-server-and-test": "^2.1.5",
     "tsx": "^4.21.0",
