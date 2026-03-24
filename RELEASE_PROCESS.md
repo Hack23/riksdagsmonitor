@@ -28,6 +28,7 @@ Riksdagsmonitor follows a comprehensive release process that includes:
 - ✅ SLSA Build Provenance attestations
 - ✅ SBOM (Software Bill of Materials) generation
 - ✅ Dual deployment (S3/CloudFront + GitHub Pages)
+- ✅ npm package publishing with provenance
 - ✅ Automated release notes
 
 ## Release Workflow
@@ -71,16 +72,17 @@ The release workflow consists of 3 jobs:
 
 ### 3. Release Job
 
-**Purpose**: Create GitHub release and deploy to production
+**Purpose**: Create GitHub release, publish npm package, and deploy to production
 
 **Steps**:
 1. Download build and security artifacts
 2. Generate release notes with Release Drafter
 3. Create GitHub Release with all artifacts
-4. Extract build to repository root
-5. Deploy to S3/CloudFront with cache headers
-6. Invalidate CloudFront cache
-7. Display deployment summary
+4. Build and publish npm package with provenance
+5. Extract build to repository root
+6. Deploy to S3/CloudFront with cache headers
+7. Invalidate CloudFront cache
+8. Display deployment summary
 
 **Duration**: ~5-10 minutes
 
@@ -131,6 +133,31 @@ Each release includes the following artifacts:
 
 - **`riksdagsmonitor-vX.Y.Z.zip.sha256`** - Checksum
   - SHA-256 hash for integrity verification
+
+### npm Package
+
+- **`riksdagsmonitor@X.Y.Z`** - Shared types and utilities
+  - Published to npm with provenance attestation
+  - TypeScript type definitions for theme, chart, and dashboard types
+  - Theme system (dark/light cyberpunk theme, party colors, chart palettes)
+  - Chart.js factory and responsive utilities
+  - Data loading with fallback, caching, and retry
+  - DOM utilities, error boundaries, and fallback UI
+
+  ```bash
+  npm install riksdagsmonitor
+  ```
+
+  ```typescript
+  import {
+    DARK_THEME_COLORS,
+    LIGHT_THEME_COLORS,
+    getActiveThemeColors,
+    getPartyColor,
+    CHART_PALETTE,
+    BREAKPOINTS,
+  } from 'riksdagsmonitor';
+  ```
 
 ### Security Artifacts
 
