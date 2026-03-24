@@ -580,6 +580,7 @@ jobs:
         with:
           ref: ${{ needs.prepare.outputs.version }}
           fetch-depth: 0
+          clean: false
 
       - name: Setup Node.js for npm publish
         uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
@@ -649,6 +650,12 @@ jobs:
           # Create version marker
           echo "Version ${{ needs.prepare.outputs.version }} deployed at $(date)" > version.txt
           echo "✅ Build extracted and ready for deployment"
+
+      - name: Clean up npm build artifacts before deploy
+        run: |
+          echo "🧹 Removing dist/lib to prevent library build output from being deployed to S3..."
+          rm -rf dist/lib
+          echo "✅ Cleaned up npm library build artifacts"
 
       - name: Deploy to S3 with cache headers
         run: bash scripts/deploy-s3.sh . "s3://riksdagsmonitor-frontend-us-east-1-172017021075"
