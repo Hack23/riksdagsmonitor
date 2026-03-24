@@ -73,6 +73,24 @@ template: |
 
   $CHANGES
 
+  ## 📦 npm Package
+
+  Shared types, theme system, and dashboard utilities are available as an npm package with provenance:
+
+  ```bash
+  npm install riksdagsmonitor
+  ```
+
+  ```typescript
+  import {
+    DARK_THEME_COLORS, LIGHT_THEME_COLORS,
+    getActiveThemeColors, getPartyColor,
+    CHART_PALETTE, BREAKPOINTS,
+  } from 'riksdagsmonitor';
+  ```
+
+  [![npm](https://img.shields.io/npm/v/riksdagsmonitor?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/riksdagsmonitor)
+
   ## 📊 Release Metrics & Evidence
   
   [![Test Coverage](https://img.shields.io/badge/Coverage-Reports-green?logo=vitest&style=for-the-badge)](https://riksdagsmonitor.com/docs/coverage/)
@@ -91,12 +109,14 @@ template: |
   - ✅ **SLSA Build Provenance Attestations** - Cryptographically signed build provenance
   - ✅ **Software Bill of Materials (SBOM)** - Complete dependency inventory in SPDX format
   - ✅ **SHA-256 Checksums** - All artifacts include checksums for integrity verification
+  - ✅ **npm Provenance** - npm package published with verified provenance attestation
   - ✅ **CodeQL Security Scanning** - Automated vulnerability detection
   - ✅ **Dependency Scanning** - Continuous vulnerability monitoring with Dependabot
   
   **Verify attestations:**
   ```bash
   gh attestation verify riksdagsmonitor-$RESOLVED_VERSION.zip -R Hack23/riksdagsmonitor
+  npm audit signatures
   ```
   
   **Browse attestations:** [View all attestations](https://github.com/Hack23/riksdagsmonitor/attestations/)
@@ -115,7 +135,20 @@ template: |
   [![CIS Controls v8.1](https://img.shields.io/badge/CIS-Controls_v8.1-red?logo=cisecurity&style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
   
   Riksdagsmonitor follows [Hack23 AB's comprehensive ISMS](https://github.com/Hack23/ISMS-PUBLIC) with defense-in-depth architecture and documented security controls.
-  
+
+  ## 🏗️ Architecture Documentation
+
+  | Current State | Future State |
+  |--------------|-------------|
+  | [Architecture](https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md) | [Future Architecture](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md) |
+  | [Security Architecture](https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md) | [Future Security](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SECURITY_ARCHITECTURE.md) |
+  | [Threat Model](https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md) | [Future Threat Model](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_THREAT_MODEL.md) |
+  | [Data Model](https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md) | [Future Data Model](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_DATA_MODEL.md) |
+  | [Flowchart](https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md) | [Future Flowchart](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_FLOWCHART.md) |
+  | [State Diagram](https://github.com/Hack23/riksdagsmonitor/blob/main/STATEDIAGRAM.md) | [Future State Diagram](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_STATEDIAGRAM.md) |
+  | [Mindmap](https://github.com/Hack23/riksdagsmonitor/blob/main/MINDMAP.md) | [Future Mindmap](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_MINDMAP.md) |
+  | [SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md) | [Future SWOT](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_SWOT.md) |
+
   ## 📦 Release Artifacts
   
   | Artifact | Description | Verification |
@@ -124,22 +157,37 @@ template: |
   | `riksdagsmonitor-$RESOLVED_VERSION.zip.sha256` | SHA-256 checksum | Compare with `sha256sum` |
   | `riksdagsmonitor-$RESOLVED_VERSION.spdx.json` | SBOM (SPDX format) | SBOM attestation |
   | `*.intoto.jsonl` | SLSA attestations | `gh attestation verify` |
+  | `riksdagsmonitor` (npm) | npm package | `npm audit signatures` |
   
   ## 🚀 Deployment
   
   - **Primary**: https://riksdagsmonitor.com (AWS S3/CloudFront)
   - **Backup**: GitHub Pages
   - **Documentation**: https://riksdagsmonitor.com/docs/
+  - **API Docs**: https://riksdagsmonitor.com/docs/api/
+  - **npm Package**: https://www.npmjs.com/package/riksdagsmonitor
   - **Status**: [![Uptime](https://img.shields.io/badge/Uptime-99.9%25-success)](https://riksdagsmonitor.com)
+
+  ## 🌐 Hack23 Ecosystem
   
+  | Platform | Live Site | API Docs | Repository |
+  |----------|-----------|----------|------------|
+  | Riksdagsmonitor | [riksdagsmonitor.com](https://riksdagsmonitor.com) | [API](https://riksdagsmonitor.com/docs/api/) | [GitHub](https://github.com/Hack23/riksdagsmonitor) |
+  | EU Parliament MCP | [euparliamentmonitor.com](https://euparliamentmonitor.com) | [API](https://euparliamentmonitor.com/docs/api/) | [GitHub](https://github.com/Hack23/European-Parliament-MCP-Server) |
+  | CIA Compliance Manager | [ciacompliancemanager.com](https://ciacompliancemanager.com) | [API](https://ciacompliancemanager.com/api/) | [GitHub](https://github.com/Hack23/cia-compliance-manager) |
+  | Black Trigram | [blacktrigram.com](https://blacktrigram.com) | [API](https://blacktrigram.com/api/) | [GitHub](https://github.com/Hack23/blacktrigram) |
+  | CIA Platform | — | — | [GitHub](https://github.com/Hack23/cia) |
+  | ISMS Public | — | — | [GitHub](https://github.com/Hack23/ISMS-PUBLIC) |
+
   ## 🏗️ Built With
   
-  - **Node.js**: 24.x
-  - **Vite**: 7.x
+  - **Node.js**: 25.x
+  - **Vite**: 8.x
   - **Chart.js**: 4.5.x
   - **D3.js**: 7.9.x
   - **Vitest**: 4.x
   - **Cypress**: 15.x
+  - **TypeScript**: 5.9.x
   
   ## 👥 Contributors
   

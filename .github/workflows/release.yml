@@ -27,6 +27,7 @@ jobs:
       contents: write # Required for git auto-commit
     outputs:
       version: ${{ steps.get-version.outputs.version }}
+      npm_version: ${{ steps.get-version.outputs.npm_version }}
       is_prerelease: ${{ github.event.inputs.prerelease || 'false' }}
     steps:
       - name: Harden Runner
@@ -48,7 +49,11 @@ jobs:
             VERSION=${{ github.event.inputs.version }}
           fi
           echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          # npm version without 'v' prefix
+          NPM_VERSION="${VERSION#v}"
+          echo "npm_version=${NPM_VERSION}" >> $GITHUB_OUTPUT
           echo "Version: ${VERSION}"
+          echo "npm version: ${NPM_VERSION}"
 
       - name: Setup Web Test Environment (Chrome + Xvfb + Dependencies)
         run: |
@@ -539,6 +544,14 @@ jobs:
             - `riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json` - SBOM (Software Bill of Materials)
             - `*.intoto.jsonl` - SLSA Build Provenance Attestations
             
+            ## 📦 npm Package
+            
+            Shared types, theme system, and utilities are available as an npm package:
+            
+            ```bash
+            npm install riksdagsmonitor
+            ```
+            
             ## 📚 Documentation
             
             - [API Documentation](https://riksdagsmonitor.com/docs/api/)
@@ -566,7 +579,10 @@ jobs:
             artifacts/security/riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json.intoto.jsonl
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # Deploy to S3/CloudFront (primary deployment)
+      # ── Deploy to S3/CloudFront (primary deployment) ──────────────────
+      # NOTE: S3 deployment uses the main branch checkout (already done above)
+      # and downloaded build artifacts. This runs BEFORE the npm publish
+      # checkout to ensure deployment isn't blocked by npm-related failures.
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@8df5847569e6427dd6c4fb1cf565c83acfa8afa7 # v6.0.0
         with:
@@ -630,6 +646,54 @@ jobs:
             --paths "/*"
           
           echo "✅ CloudFront cache invalidation completed"
+
+      # ── npm Package Publish ──────────────────────────────────────────────
+      - name: Checkout release tag for npm publish
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ needs.prepare.outputs.version }}
+
+      - name: Setup Node.js for npm publish
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version: "25"
+          cache: "npm"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint library source
+        run: npm run lint
+
+      - name: Build library package
+        run: npm run build:lib
+
+      - name: Run tests
+        run: npm test
+
+      - name: Verify package contents
+        run: |
+          echo "📦 Package contents preview:"
+          npm pack --dry-run
+
+      - name: Publish to npm with provenance
+        run: npm publish --ignore-scripts --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
+
+      - name: Verify npm package
+        run: |
+          echo "✅ Package published successfully!"
+          echo "📦 Package: riksdagsmonitor@${{ needs.prepare.outputs.npm_version }}"
+          echo "🔗 npm URL: https://www.npmjs.com/package/riksdagsmonitor"
+          echo ""
+          echo "To install:"
+          echo "  npm install riksdagsmonitor@${{ needs.prepare.outputs.npm_version }}"
+          echo ""
+          echo "To verify provenance:"
+          echo "  npm audit signatures"
 
       - name: Deployment Summary
         run: |

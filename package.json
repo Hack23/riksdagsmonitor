@@ -1,13 +1,32 @@
 {
   "name": "riksdagsmonitor",
-  "version": "0.8.2",
+  "version": "0.8.5",
   "type": "module",
   "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
-  "main": "index.html",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/lib/index.js",
+      "types": "./dist/lib/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/lib",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "dev": "vite",
     "prebuild": "npx tsx scripts/generate-news-indexes/index.ts && npx tsx scripts/extract-news-metadata.ts && npx tsx scripts/generate-sitemap-html.ts && npx tsx scripts/generate-rss.ts && npx tsx scripts/generate-sitemap.ts",
     "build": "vite build",
+    "build:lib": "tsc -p tsconfig.lib.json",
     "postbuild": "cp rss.xml dist/rss.xml && cp sitemap.xml dist/sitemap.xml",
     "preview": "vite preview",
     "test": "NODE_OPTIONS='--max-old-space-size=2048' vitest run",
@@ -46,7 +65,9 @@
     "build:test-reports": "mkdir -p docs/test-results docs/cypress docs/coverage && ([ -d builds/coverage ] && [ -n \"$(ls -A builds/coverage 2>/dev/null)\" ] && cp -r builds/coverage/* docs/coverage/ || echo 'No coverage directory to copy') && ([ -d builds/test-results ] && [ -n \"$(ls -A builds/test-results 2>/dev/null)\" ] && cp -r builds/test-results/* docs/test-results/ || echo 'No test-results directory to copy') && ([ -d builds/cypress ] && [ -n \"$(ls -A builds/cypress 2>/dev/null)\" ] && cp -r builds/cypress/* docs/cypress/ || echo 'No cypress directory to copy') && echo 'Test reports copied to docs/'",
     "docs:sitemap": "node scripts/generate-sitemap.ts",
     "serve": "python3 -m http.server 8080",
-    "linkcheck": "linkinator http://localhost:8080/ --recurse"
+    "linkcheck": "linkinator http://localhost:8080/ --recurse",
+    "prepublishOnly": "npm run lint && npm run build:lib && npm test",
+    "prepack": "echo 'Prepack: build artifacts should already be generated (see prepublishOnly/CI)'"
   },
   "repository": {
     "type": "git",
@@ -60,11 +81,12 @@
     "osint",
     "transparency",
     "intelligence",
-    "vite",
-    "vitest",
-    "cypress",
     "chart.js",
-    "d3"
+    "d3",
+    "dashboard",
+    "theme",
+    "typescript",
+    "political-data"
   ],
   "author": "Hack23 AB",
   "license": "Apache-2.0",
