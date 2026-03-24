@@ -157,7 +157,7 @@ template: |
   | `riksdagsmonitor-$RESOLVED_VERSION.zip.sha256` | SHA-256 checksum | Compare with `sha256sum` |
   | `riksdagsmonitor-$RESOLVED_VERSION.spdx.json` | SBOM (SPDX format) | SBOM attestation |
   | `*.intoto.jsonl` | SLSA attestations | `gh attestation verify` |
-  | `riksdagsmonitor@$RESOLVED_VERSION` | npm package | `npm audit signatures` |
+  | `riksdagsmonitor` (npm) | npm package | `npm audit signatures` |
   
   ## 🚀 Deployment
   
