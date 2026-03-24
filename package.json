@@ -67,7 +67,7 @@
     "serve": "python3 -m http.server 8080",
     "linkcheck": "linkinator http://localhost:8080/ --recurse",
     "prepublishOnly": "npm run lint && npm run build:lib && npm test",
-    "prepack": "npm run build:lib"
+    "prepack": "echo 'Prepack: build artifacts should already be generated (see prepublishOnly/CI)'"
   },
   "repository": {
     "type": "git",

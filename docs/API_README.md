@@ -30,10 +30,9 @@ import {
   // Responsive breakpoints
   BREAKPOINTS,
   // Data loading
-  loadData,
+  loadJSON, loadCSV, loadText, createDataSource,
   // Types
   type ThemeColors, type Breakpoints,
-  type ChartOptions, type DataSource,
 } from 'riksdagsmonitor';
 ```
 
