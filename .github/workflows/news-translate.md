@@ -78,6 +78,7 @@ tools:
   bash: true
 
 safe-outputs:
+  report-failure-as-issue: false
   allowed-domains:
     - riksdag-regering-ai.onrender.com
     - api.scb.se
