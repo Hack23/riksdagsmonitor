@@ -3,7 +3,40 @@
 > **Political Intelligence Analysis & OSINT Platform for Swedish Parliament Monitoring**
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](https://github.com/Hack23/riksdagsmonitor/blob/main/LICENSE)
-[![TypeDoc](https://img.shields.io/badge/docs-TypeDoc-blue.svg)](https://riksdagsmonitor.com/api/)
+[![TypeDoc](https://img.shields.io/badge/docs-TypeDoc-blue.svg)](https://riksdagsmonitor.com/docs/api/)
+[![npm](https://img.shields.io/npm/v/riksdagsmonitor?logo=npm)](https://www.npmjs.com/package/riksdagsmonitor)
+[![Hack23 ISMS](https://img.shields.io/badge/Hack23-ISMS-blue?logo=shield)](https://github.com/Hack23/ISMS-PUBLIC)
+
+---
+
+## npm Package
+
+Shared types, theme system, and dashboard utilities are published as an npm package with provenance:
+
+```bash
+npm install riksdagsmonitor
+```
+
+```typescript
+import {
+  // Theme system
+  DARK_THEME_COLORS, LIGHT_THEME_COLORS,
+  getActiveThemeColors, onThemeChange,
+  // Chart utilities
+  CHART_PALETTE, getChartPalette,
+  getResponsiveOptions, createChart,
+  // Party colors (Swedish Riksdag)
+  getPartyColor,
+  // Responsive breakpoints
+  BREAKPOINTS,
+  // Data loading
+  loadJSON, loadCSV, loadText, createDataSource,
+  // Types
+  type ThemeColors, type Breakpoints,
+} from 'riksdagsmonitor';
+```
+
+The package exports the `src/browser/shared/` modules — types, theme constants, chart factory, data loader, DOM utilities, and error boundaries. See the [npm package page](https://www.npmjs.com/package/riksdagsmonitor) for full details.
 
 ---
 
@@ -214,10 +247,20 @@ This platform aligns with **Hack23 AB ISMS** requirements per the [Secure Develo
 
 - **Live Platform**: [riksdagsmonitor.com](https://riksdagsmonitor.com)
 - **Repository**: [github.com/Hack23/riksdagsmonitor](https://github.com/Hack23/riksdagsmonitor)
+- **npm Package**: [npmjs.com/package/riksdagsmonitor](https://www.npmjs.com/package/riksdagsmonitor)
 - **CIA Data Platform**: [github.com/Hack23/cia](https://github.com/Hack23/cia)
 - **ISMS Documentation**: [github.com/Hack23/ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
 - **Secure Development Policy**: [Secure_Development_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
 - **Threat Modeling Policy**: [Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md)
+
+### Hack23 Ecosystem API Documentation
+
+| Platform | API Documentation | Repository |
+|----------|-------------------|------------|
+| **Riksdagsmonitor** | [riksdagsmonitor.com/docs/api/](https://riksdagsmonitor.com/docs/api/) | [Hack23/riksdagsmonitor](https://github.com/Hack23/riksdagsmonitor) |
+| **EU Parliament MCP Server** | [euparliamentmonitor.com/docs/api/](https://euparliamentmonitor.com/docs/api/) | [Hack23/European-Parliament-MCP-Server](https://github.com/Hack23/European-Parliament-MCP-Server) |
+| **CIA Compliance Manager** | [ciacompliancemanager.com/api/](https://ciacompliancemanager.com/api/) | [Hack23/cia-compliance-manager](https://github.com/Hack23/cia-compliance-manager) |
+| **Black Trigram** | [blacktrigram.com/api/](https://blacktrigram.com/api/) | [Hack23/blacktrigram](https://github.com/Hack23/blacktrigram) |
 
 ---
 

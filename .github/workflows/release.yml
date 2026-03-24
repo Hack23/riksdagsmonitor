@@ -539,6 +539,14 @@ jobs:
             - `riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json` - SBOM (Software Bill of Materials)
             - `*.intoto.jsonl` - SLSA Build Provenance Attestations
             
+            ## 📦 npm Package
+            
+            Shared types, theme system, and utilities are available as an npm package:
+            
+            ```bash
+            npm install riksdagsmonitor
+            ```
+            
             ## 📚 Documentation
             
             - [API Documentation](https://riksdagsmonitor.com/docs/api/)
@@ -565,6 +573,58 @@ jobs:
             artifacts/security/riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip.intoto.jsonl
             artifacts/security/riksdagsmonitor-${{ needs.prepare.outputs.version }}.spdx.json.intoto.jsonl
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── npm Package Publish ──────────────────────────────────────────────
+      - name: Checkout release tag for npm publish
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ needs.prepare.outputs.version }}
+          fetch-depth: 0
+          clean: false
+
+      - name: Setup Node.js for npm publish
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version: "25"
+          cache: "npm"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint library source
+        run: npm run lint
+
+      - name: Build library package
+        run: npm run build:lib
+
+      - name: Run tests
+        run: npm test
+
+      - name: Verify package contents
+        run: |
+          echo "📦 Package contents preview:"
+          npm pack --dry-run
+
+      - name: Publish to npm with provenance
+        run: npm publish --ignore-scripts --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
+
+      - name: Verify npm package
+        run: |
+          echo "✅ Package published successfully!"
+          NPM_VERSION="${{ needs.prepare.outputs.version }}"
+          NPM_VERSION="${NPM_VERSION#v}"
+          echo "📦 Package: riksdagsmonitor@${NPM_VERSION}"
+          echo "🔗 npm URL: https://www.npmjs.com/package/riksdagsmonitor"
+          echo ""
+          echo "To install:"
+          echo "  npm install riksdagsmonitor"
+          echo ""
+          echo "To verify provenance:"
+          echo "  npm audit signatures"
 
       # Deploy to S3/CloudFront (primary deployment)
       - name: Configure AWS credentials
@@ -596,6 +656,12 @@ jobs:
           # Create version marker
           echo "Version ${{ needs.prepare.outputs.version }} deployed at $(date)" > version.txt
           echo "✅ Build extracted and ready for deployment"
+
+      - name: Clean up npm build artifacts before deploy
+        run: |
+          echo "🧹 Removing dist/lib to prevent library build output from being deployed to S3..."
+          rm -rf dist/lib
+          echo "✅ Cleaned up npm library build artifacts"
 
       - name: Deploy to S3 with cache headers
         run: bash scripts/deploy-s3.sh . "s3://riksdagsmonitor-frontend-us-east-1-172017021075"
