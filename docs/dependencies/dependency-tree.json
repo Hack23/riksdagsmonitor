@@ -1,5 +1,5 @@
 {
-  "version": "0.8.4",
+  "version": "0.8.5",
   "name": "riksdagsmonitor",
   "problems": [
     "extraneous: @emnapi/core@1.8.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor/node_modules/@emnapi/core",
