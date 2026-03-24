@@ -592,8 +592,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Lint library source
+        run: npm run lint
+
       - name: Build library package
         run: npm run build:lib
+
+      - name: Run tests
+        run: npm test
 
       - name: Verify package contents
         run: |
