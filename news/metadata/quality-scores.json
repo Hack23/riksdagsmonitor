@@ -1,266 +1,266 @@
 {
-  "2026-03-24-interpellation-debates-da.html": {
-    "filename": "2026-03-24-interpellation-debates-da.html",
+  "2026-03-24-opposition-motions-da.html": {
+    "filename": "2026-03-24-opposition-motions-da.html",
     "lang": "da",
-    "articleType": "interpellations",
+    "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
+      "overallScore": 83,
+      "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 0,
+        "factualAccuracy": 100,
         "stakeholderCoverage": 100,
         "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
+        "editorialConsistency": 100,
+        "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-24T11:35:19.444Z"
+    "timestamp": "2026-03-24T17:25:07.798Z"
   },
-  "2026-03-24-interpellation-debates-no.html": {
-    "filename": "2026-03-24-interpellation-debates-no.html",
+  "2026-03-24-opposition-motions-no.html": {
+    "filename": "2026-03-24-opposition-motions-no.html",
     "lang": "no",
-    "articleType": "interpellations",
+    "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
+      "overallScore": 83,
+      "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 0,
+        "factualAccuracy": 100,
         "stakeholderCoverage": 100,
         "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
+        "editorialConsistency": 100,
+        "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-24T11:35:19.481Z"
+    "timestamp": "2026-03-24T17:25:07.827Z"
   },
-  "2026-03-24-interpellation-debates-fi.html": {
-    "filename": "2026-03-24-interpellation-debates-fi.html",
+  "2026-03-24-opposition-motions-fi.html": {
+    "filename": "2026-03-24-opposition-motions-fi.html",
     "lang": "fi",
-    "articleType": "interpellations",
+    "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
+      "overallScore": 83,
+      "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 0,
+        "factualAccuracy": 100,
         "stakeholderCoverage": 100,
         "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
+        "editorialConsistency": 100,
+        "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-24T11:35:19.513Z"
+    "timestamp": "2026-03-24T17:25:07.850Z"
   },
-  "2026-03-24-interpellation-debates-de.html": {
-    "filename": "2026-03-24-interpellation-debates-de.html",
+  "2026-03-24-opposition-motions-de.html": {
+    "filename": "2026-03-24-opposition-motions-de.html",
     "lang": "de",
-    "articleType": "interpellations",
+    "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
+      "overallScore": 83,
+      "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 0,
+        "factualAccuracy": 100,
         "stakeholderCoverage": 100,
         "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
+        "editorialConsistency": 100,
+        "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-24T11:35:19.545Z"
+    "timestamp": "2026-03-24T17:25:07.874Z"
   },
-  "2026-03-24-interpellation-debates-fr.html": {
-    "filename": "2026-03-24-interpellation-debates-fr.html",
+  "2026-03-24-opposition-motions-fr.html": {
+    "filename": "2026-03-24-opposition-motions-fr.html",
     "lang": "fr",
-    "articleType": "interpellations",
+    "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
+      "overallScore": 83,
+      "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 0,
+        "factualAccuracy": 100,
         "stakeholderCoverage": 100,
         "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
+        "editorialConsistency": 100,
+        "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-24T11:35:19.577Z"
+    "timestamp": "2026-03-24T17:25:07.897Z"
   },
-  "2026-03-24-interpellation-debates-es.html": {
-    "filename": "2026-03-24-interpellation-debates-es.html",
+  "2026-03-24-opposition-motions-es.html": {
+    "filename": "2026-03-24-opposition-motions-es.html",
     "lang": "es",
-    "articleType": "interpellations",
+    "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
+      "overallScore": 84,
+      "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 0,
+        "factualAccuracy": 100,
         "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
+        "analyticalDepth": 20,
+        "editorialConsistency": 100,
+        "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-24T11:35:19.610Z"
+    "timestamp": "2026-03-24T17:25:07.920Z"
   },
-  "2026-03-24-interpellation-debates-nl.html": {
-    "filename": "2026-03-24-interpellation-debates-nl.html",
+  "2026-03-24-opposition-motions-nl.html": {
+    "filename": "2026-03-24-opposition-motions-nl.html",
     "lang": "nl",
-    "articleType": "interpellations",
+    "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
+      "overallScore": 83,
+      "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 0,
+        "factualAccuracy": 100,
         "stakeholderCoverage": 100,
         "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
+        "editorialConsistency": 100,
+        "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-24T11:35:19.646Z"
+    "timestamp": "2026-03-24T17:25:07.942Z"
   },
-  "2026-03-24-interpellation-debates-ar.html": {
-    "filename": "2026-03-24-interpellation-debates-ar.html",
+  "2026-03-24-opposition-motions-ar.html": {
+    "filename": "2026-03-24-opposition-motions-ar.html",
     "lang": "ar",
-    "articleType": "interpellations",
+    "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
+      "overallScore": 83,
+      "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 0,
+        "factualAccuracy": 100,
         "stakeholderCoverage": 100,
         "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
+        "editorialConsistency": 100,
+        "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-24T11:35:19.674Z"
+    "timestamp": "2026-03-24T17:25:07.966Z"
   },
-  "2026-03-24-interpellation-debates-he.html": {
-    "filename": "2026-03-24-interpellation-debates-he.html",
+  "2026-03-24-opposition-motions-he.html": {
+    "filename": "2026-03-24-opposition-motions-he.html",
     "lang": "he",
-    "articleType": "interpellations",
+    "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
+      "overallScore": 83,
+      "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 0,
+        "factualAccuracy": 100,
         "stakeholderCoverage": 100,
         "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
+        "editorialConsistency": 100,
+        "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-24T11:35:19.704Z"
+    "timestamp": "2026-03-24T17:25:07.986Z"
   },
-  "2026-03-24-interpellation-debates-ja.html": {
-    "filename": "2026-03-24-interpellation-debates-ja.html",
+  "2026-03-24-opposition-motions-ja.html": {
+    "filename": "2026-03-24-opposition-motions-ja.html",
     "lang": "ja",
-    "articleType": "interpellations",
+    "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
+      "overallScore": 83,
+      "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 0,
+        "factualAccuracy": 100,
         "stakeholderCoverage": 100,
         "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
+        "editorialConsistency": 100,
+        "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-24T11:35:19.733Z"
+    "timestamp": "2026-03-24T17:25:08.010Z"
   },
-  "2026-03-24-interpellation-debates-ko.html": {
-    "filename": "2026-03-24-interpellation-debates-ko.html",
+  "2026-03-24-opposition-motions-ko.html": {
+    "filename": "2026-03-24-opposition-motions-ko.html",
     "lang": "ko",
-    "articleType": "interpellations",
+    "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
+      "overallScore": 83,
+      "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 0,
+        "factualAccuracy": 100,
         "stakeholderCoverage": 100,
         "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
+        "editorialConsistency": 100,
+        "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-24T11:35:19.762Z"
+    "timestamp": "2026-03-24T17:25:08.030Z"
   },
-  "2026-03-24-interpellation-debates-zh.html": {
-    "filename": "2026-03-24-interpellation-debates-zh.html",
+  "2026-03-24-opposition-motions-zh.html": {
+    "filename": "2026-03-24-opposition-motions-zh.html",
     "lang": "zh",
-    "articleType": "interpellations",
+    "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 51,
-      "passesThreshold": false,
+      "overallScore": 83,
+      "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 0,
+        "factualAccuracy": 100,
         "stakeholderCoverage": 100,
         "analyticalDepth": 16,
-        "editorialConsistency": 80,
-        "evidenceQuality": 60,
+        "editorialConsistency": 100,
+        "evidenceQuality": 100,
         "languageQuality": 100
       },
-      "issueCount": 2
+      "issueCount": 1
     },
-    "timestamp": "2026-03-24T11:35:19.789Z"
+    "timestamp": "2026-03-24T17:25:08.050Z"
   }
 }

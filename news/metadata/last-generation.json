@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-24T11:35:15.327Z",
+  "timestamp": "2026-03-24T17:25:04.406Z",
   "types": [
-    "interpellations"
+    "motions"
   ],
   "languagesGenerated": [
     "da",
@@ -36,18 +36,18 @@
   "generated": 12,
   "errors": 0,
   "articles": [
-    "2026-03-24-interpellation-debates-da.html",
-    "2026-03-24-interpellation-debates-no.html",
-    "2026-03-24-interpellation-debates-fi.html",
-    "2026-03-24-interpellation-debates-de.html",
-    "2026-03-24-interpellation-debates-fr.html",
-    "2026-03-24-interpellation-debates-es.html",
-    "2026-03-24-interpellation-debates-nl.html",
-    "2026-03-24-interpellation-debates-ar.html",
-    "2026-03-24-interpellation-debates-he.html",
-    "2026-03-24-interpellation-debates-ja.html",
-    "2026-03-24-interpellation-debates-ko.html",
-    "2026-03-24-interpellation-debates-zh.html"
+    "2026-03-24-opposition-motions-da.html",
+    "2026-03-24-opposition-motions-no.html",
+    "2026-03-24-opposition-motions-fi.html",
+    "2026-03-24-opposition-motions-de.html",
+    "2026-03-24-opposition-motions-fr.html",
+    "2026-03-24-opposition-motions-es.html",
+    "2026-03-24-opposition-motions-nl.html",
+    "2026-03-24-opposition-motions-ar.html",
+    "2026-03-24-opposition-motions-he.html",
+    "2026-03-24-opposition-motions-ja.html",
+    "2026-03-24-opposition-motions-ko.html",
+    "2026-03-24-opposition-motions-zh.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
