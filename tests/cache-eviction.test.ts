@@ -54,17 +54,34 @@ function createMockLocalStorage(
   } as unknown as Storage;
 }
 
+/**
+ * Wraps a mock localStorage's setItem so the first call throws
+ * QuotaExceededError and subsequent calls delegate to the original.
+ */
+function wrapSetItemWithQuotaError(mock: Storage, storage: Map<string, string>): void {
+  let callCount = 0;
+  (mock as Record<string, unknown>).setItem = vi.fn((key: string, value: string) => {
+    callCount++;
+    if (callCount === 1) {
+      throw new DOMException('quota exceeded', 'QuotaExceededError');
+    }
+    storage.set(key, value);
+  });
+}
+
 /* ================================================================== */
-/*  Shared data-loader: exercises production loadText -> setCache path */
+/*  Shared data-loader: exercises production loadText → setCache path */
 /* ================================================================== */
 
 describe('Shared data-loader cache eviction (production paths)', () => {
   let storage: Map<string, string>;
   let savedLocalStorage: Storage;
+  let savedFetch: typeof globalThis.fetch;
 
   beforeEach(() => {
     storage = new Map();
     savedLocalStorage = globalThis.localStorage;
+    savedFetch = globalThis.fetch;
   });
 
   afterEach(() => {
@@ -73,6 +90,7 @@ describe('Shared data-loader cache eviction (production paths)', () => {
       writable: true,
       configurable: true,
     });
+    globalThis.fetch = savedFetch;
     vi.restoreAllMocks();
   });
 
@@ -84,7 +102,6 @@ describe('Shared data-loader cache eviction (production paths)', () => {
       configurable: true,
     });
 
-    // Stub fetch to return known text
     globalThis.fetch = vi.fn().mockResolvedValue({
       ok: true,
       text: async () => 'hello world',
@@ -99,7 +116,6 @@ describe('Shared data-loader cache eviction (production paths)', () => {
       { cacheKey: 'test_key' },
     );
 
-    // Data should be stored under the prefixed key
     const prefixedKey = CACHE_KEY_PREFIX + 'test_key';
     expect(storage.has(prefixedKey)).toBe(true);
     const parsed = JSON.parse(storage.get(prefixedKey)!);
@@ -108,7 +124,6 @@ describe('Shared data-loader cache eviction (production paths)', () => {
   });
 
   it('should evict only prefixed entries on QuotaExceededError and retry', async () => {
-    // Pre-fill storage with both module-owned and foreign entries
     const { CACHE_KEY_PREFIX } = await import(
       '../src/browser/shared/data-loader.js'
     );
@@ -120,18 +135,8 @@ describe('Shared data-loader cache eviction (production paths)', () => {
     storage.set('foreign_app_key', JSON.stringify({ value: 42 }));
     storage.set('theme', 'dark');
 
-    // Create a mock that throws QuotaExceededError on first setItem,
-    // then succeeds after eviction frees space.
-    let callCount = 0;
     const mock = createMockLocalStorage(storage);
-    const originalSetItem = mock.setItem as ReturnType<typeof vi.fn>;
-    mock.setItem = vi.fn((key: string, value: string) => {
-      callCount++;
-      if (callCount === 1) {
-        throw new DOMException('quota exceeded', 'QuotaExceededError');
-      }
-      originalSetItem(key, value);
-    }) as unknown as Storage['setItem'];
+    wrapSetItemWithQuotaError(mock, storage);
     Object.defineProperty(globalThis, 'localStorage', {
       value: mock,
       writable: true,
@@ -152,15 +157,12 @@ describe('Shared data-loader cache eviction (production paths)', () => {
       { cacheKey: 'new_key' },
     );
 
-    // The old module-owned entry should have been evicted
     expect(storage.has(`${CACHE_KEY_PREFIX}old_key`)).toBe(false);
-    // Foreign entries must survive
     expect(storage.get('foreign_app_key')).toBe(JSON.stringify({ value: 42 }));
     expect(storage.get('theme')).toBe('dark');
   });
 
   it('should NOT evict on SecurityError (storage disabled)', async () => {
-    // Pre-fill with a module entry that must not be evicted
     const { CACHE_KEY_PREFIX } = await import(
       '../src/browser/shared/data-loader.js'
     );
@@ -186,20 +188,18 @@ describe('Shared data-loader cache eviction (production paths)', () => {
       '../src/browser/shared/data-loader.js'
     );
 
-    // loadText should still succeed (it just won't cache)
     const result = await loadText(
       { primary: 'https://example.com/data.csv' },
       { cacheKey: 'sec_test' },
     );
     expect(result).toBe('whatever');
 
-    // Existing entry must NOT have been evicted
     expect(storage.has(prefixedKey)).toBe(true);
   });
 });
 
 /* ================================================================== */
-/*  Election-cycle: quota-gated eviction with prefix scoping          */
+/*  Election-cycle: exercises production setCache() on the real class */
 /* ================================================================== */
 
 describe('Election-cycle cache eviction', () => {
@@ -220,10 +220,9 @@ describe('Election-cycle cache eviction', () => {
     vi.restoreAllMocks();
   });
 
-  it('should evict only election-cycle entries on QuotaExceededError', () => {
+  it('should evict only election-cycle entries on QuotaExceededError', async () => {
     const cachePrefix = 'riksdag_election_cycle_';
 
-    // Pre-fill with election-cycle + foreign entries
     storage.set(
       `${cachePrefix}comparative`,
       JSON.stringify({ data: [], timestamp: Date.now() - 100_000 }),
@@ -235,51 +234,31 @@ describe('Election-cycle cache eviction', () => {
     storage.set('theme', 'dark');
     storage.set('other_app_data', 'important');
 
-    let callCount = 0;
     const mock = createMockLocalStorage(storage);
-    const origSet = mock.setItem as ReturnType<typeof vi.fn>;
-    mock.setItem = vi.fn((key: string, value: string) => {
-      callCount++;
-      if (callCount === 1) {
-        throw new DOMException('quota exceeded', 'QuotaExceededError');
-      }
-      origSet(key, value);
-    }) as unknown as Storage['setItem'];
+    wrapSetItemWithQuotaError(mock, storage);
     Object.defineProperty(globalThis, 'localStorage', {
       value: mock,
       writable: true,
       configurable: true,
     });
 
-    // Reproduce production setCache logic
-    const key = `${cachePrefix}temporal`;
-    const payload = JSON.stringify({ data: [{ id: 1 }], timestamp: Date.now() });
+    // Import and instantiate production class
+    const { ElectionCycleDataManager } = await import(
+      '../src/browser/dashboards/election-cycle.js'
+    );
+    const manager = new ElectionCycleDataManager();
 
-    try {
-      localStorage.setItem(key, payload);
-    } catch (e: unknown) {
-      if (e instanceof DOMException && e.name === 'QuotaExceededError') {
-        const keysToRemove: string[] = [];
-        for (let i = 0; i < localStorage.length; i++) {
-          const k = localStorage.key(i);
-          if (k?.startsWith(cachePrefix)) keysToRemove.push(k);
-        }
-        keysToRemove.forEach(k => localStorage.removeItem(k));
-        localStorage.setItem(key, payload);
-      }
-    }
+    // Call production setCache — should trigger eviction + retry
+    manager.setCache(`${cachePrefix}temporal`, [{ id: 1 }]);
 
-    // New entry was stored
-    expect(storage.has(key)).toBe(true);
-    // Old election-cycle entries were evicted
+    expect(storage.has(`${cachePrefix}temporal`)).toBe(true);
     expect(storage.has(`${cachePrefix}comparative`)).toBe(false);
     expect(storage.has(`${cachePrefix}decision`)).toBe(false);
-    // Foreign entries must survive
     expect(storage.get('theme')).toBe('dark');
     expect(storage.get('other_app_data')).toBe('important');
   });
 
-  it('should NOT evict on SecurityError (storage disabled)', () => {
+  it('should NOT evict on SecurityError (storage disabled)', async () => {
     const cachePrefix = 'riksdag_election_cycle_';
 
     storage.set(
@@ -294,26 +273,14 @@ describe('Election-cycle cache eviction', () => {
       configurable: true,
     });
 
-    const key = `${cachePrefix}temporal`;
-    const payload = JSON.stringify({ data: [{ id: 1 }], timestamp: Date.now() });
+    const { ElectionCycleDataManager } = await import(
+      '../src/browser/dashboards/election-cycle.js'
+    );
+    const manager = new ElectionCycleDataManager();
 
-    // Reproduce production setCache logic — should not evict on SecurityError
-    try {
-      localStorage.setItem(key, payload);
-    } catch (e: unknown) {
-      if (e instanceof DOMException && e.name === 'QuotaExceededError') {
-        const keysToRemove: string[] = [];
-        for (let i = 0; i < localStorage.length; i++) {
-          const k = localStorage.key(i);
-          if (k?.startsWith(cachePrefix)) keysToRemove.push(k);
-        }
-        keysToRemove.forEach(k => localStorage.removeItem(k));
-        localStorage.setItem(key, payload);
-      }
-      // Other errors: log and skip (no eviction)
-    }
+    // SecurityError — setCache should log and skip; no eviction
+    manager.setCache(`${cachePrefix}temporal`, [{ id: 1 }]);
 
-    // SecurityError — existing entries must NOT be evicted
     expect(storage.has(`${cachePrefix}comparative`)).toBe(true);
   });
 });
@@ -328,12 +295,10 @@ describe('Shared data-loader eviction strategy', () => {
     const storage = new Map<string, string>();
     const now = Date.now();
 
-    // Module-owned entries
     storage.set(`${PREFIX}old1`, JSON.stringify({ data: 'a', timestamp: now - 7 * 86_400_000 }));
     storage.set(`${PREFIX}old2`, JSON.stringify({ data: 'b', timestamp: now - 5 * 86_400_000 }));
     storage.set(`${PREFIX}new1`, JSON.stringify({ data: 'c', timestamp: now - 86_400_000 }));
     storage.set(`${PREFIX}new2`, JSON.stringify({ data: 'd', timestamp: now - 3_600_000 }));
-    // Foreign entry that must not be touched
     storage.set('foreign', JSON.stringify({ data: 'x', timestamp: now - 999_999_999 }));
 
     interface CE { data: string; timestamp: number }
@@ -352,13 +317,10 @@ describe('Shared data-loader eviction strategy', () => {
     const removeCount = Math.max(1, Math.ceil(entries.length / 2));
     entries.slice(0, removeCount).forEach(e => storage.delete(e.key));
 
-    // Oldest 2 module entries should be evicted
     expect(storage.has(`${PREFIX}old1`)).toBe(false);
     expect(storage.has(`${PREFIX}old2`)).toBe(false);
-    // Newest 2 module entries should remain
     expect(storage.has(`${PREFIX}new1`)).toBe(true);
     expect(storage.has(`${PREFIX}new2`)).toBe(true);
-    // Foreign entry must survive even though its timestamp is very old
     expect(storage.has('foreign')).toBe(true);
   });
 

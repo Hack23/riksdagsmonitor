@@ -187,7 +187,8 @@ const TRANSLATIONS: Record<string, ElectionTranslations> = {
 // DATA MANAGER
 // ============================================================================
 
-class ElectionCycleDataManager {
+/** @internal Exported for testing. */
+export class ElectionCycleDataManager {
   data: {
     comparative: CSVRow[] | null;
     decision: CSVRow[] | null;
