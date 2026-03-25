@@ -187,7 +187,8 @@ const TRANSLATIONS: Record<string, ElectionTranslations> = {
 // DATA MANAGER
 // ============================================================================
 
-class ElectionCycleDataManager {
+/** @internal Exported for testing. */
+export class ElectionCycleDataManager {
   data: {
     comparative: CSVRow[] | null;
     decision: CSVRow[] | null;
@@ -246,8 +247,27 @@ class ElectionCycleDataManager {
   }
 
   setCache(key: string, data: unknown): void {
-    try { localStorage.setItem(key, JSON.stringify({ data, timestamp: Date.now() })); }
-    catch (e) { logger.error('Cache storage error:', e); }
+    const payload = JSON.stringify({ data, timestamp: Date.now() });
+    try {
+      localStorage.setItem(key, payload);
+    } catch (e: unknown) {
+      if (!(e instanceof DOMException && e.name === 'QuotaExceededError')) {
+        logger.error('Cache storage error:', e);
+        return;
+      }
+      // QuotaExceededError — evict all election-cycle cache entries and retry
+      try {
+        const keysToRemove: string[] = [];
+        for (let i = 0; i < localStorage.length; i++) {
+          const k = localStorage.key(i);
+          if (k?.startsWith(CONFIG.cachePrefix)) keysToRemove.push(k);
+        }
+        keysToRemove.forEach(k => localStorage.removeItem(k));
+        localStorage.setItem(key, payload);
+      } catch (retryErr) {
+        logger.error('Cache storage error after eviction:', retryErr);
+      }
+    }
   }
 
   getElectionCycles(): string[] {

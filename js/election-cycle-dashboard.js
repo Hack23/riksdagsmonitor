@@ -882,14 +882,29 @@
      * Store data in cache with timestamp
      */
     setCache(key, data) {
+      const payload = JSON.stringify({
+        data: data,
+        timestamp: Date.now()
+      });
       try {
-        const cacheData = {
-          data: data,
-          timestamp: Date.now()
-        };
-        localStorage.setItem(key, JSON.stringify(cacheData));
+        localStorage.setItem(key, payload);
       } catch (error) {
-        console.error('Cache storage error:', error);
+        if (!(error instanceof DOMException && error.name === 'QuotaExceededError')) {
+          console.error('Cache storage error:', error);
+          return;
+        }
+        // QuotaExceededError — evict election-cycle cache entries and retry
+        try {
+          const keysToRemove = [];
+          for (let i = 0; i < localStorage.length; i++) {
+            const k = localStorage.key(i);
+            if (k && k.startsWith(CONFIG.cachePrefix)) keysToRemove.push(k);
+          }
+          keysToRemove.forEach(k => localStorage.removeItem(k));
+          localStorage.setItem(key, payload);
+        } catch (retryError) {
+          console.error('Cache storage error after eviction:', retryError);
+        }
       }
     }
 
