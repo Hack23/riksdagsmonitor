@@ -1333,7 +1333,7 @@ header {
   position: relative;
   width: 100%;
   /* Single smooth clamp avoids layout jumps at breakpoints */
-  height: clamp(130px, 28vw, 380px);
+  height: clamp(100px, 22vw, 280px);
   overflow: hidden;
 }
 
@@ -1396,8 +1396,8 @@ header {
 }
 
 .logo {
-  width: 80px;
-  height: 80px;
+  width: 56px;
+  height: 56px;
   border-radius: var(--border-radius-lg);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1423,8 +1423,8 @@ header {
 /* Site Logo in Header */
 .site-logo {
   display: block;
-  max-width: clamp(80px, 12vw, 120px);
-  max-height: 120px;
+  max-width: clamp(56px, 8vw, 80px);
+  max-height: 80px;
   width: auto;
   height: auto;
   margin: 0 auto;
@@ -1459,14 +1459,14 @@ html[data-theme="dark"] .site-logo:hover {
 /* Responsive site logo sizing */
 @media (max-width: 768px) {
   .site-logo {
-    max-height: 90px;
+    max-height: 64px;
   }
 }
 
 @media (max-width: 480px) {
   .site-logo {
-    max-height: 70px;
-    max-width: clamp(48px, 12vw, 70px);
+    max-height: 48px;
+    max-width: clamp(36px, 10vw, 48px);
   }
 }
 
@@ -1487,7 +1487,7 @@ html[data-theme="dark"] .site-logo:hover {
 /* News Article Site Logo */
 .article-site-logo {
   display: block;
-  max-width: clamp(60px, 12vw, 100px);
+  max-width: clamp(40px, 8vw, 64px);
   height: auto;
   margin: 0 auto var(--spacing-sm);
   border-radius: var(--border-radius-md);
@@ -9464,10 +9464,12 @@ body.news-page {
 
 /* News Article Container */
 .news-article {
-  max-width: 800px;
+  max-width: 960px;
   margin: 2rem auto;
   padding: 0 1.5rem;
   background: var(--bg-color, #f8f9fa);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Article Header */
@@ -10222,6 +10224,7 @@ body.news-page {
 @media (max-width: 768px) {
   .news-article {
     padding: 0 1rem;
+    max-width: 100%;
   }
   
   .news-article .article-header h1 {
@@ -10238,6 +10241,14 @@ body.news-page {
   
   .news-article .watch-section {
     padding: 1.5rem;
+  }
+
+  .article-content,
+  .news-article .article-content,
+  .news-article .lede,
+  .article-body,
+  .prose {
+    max-width: 100%;
   }
 }
 
@@ -10826,19 +10837,20 @@ a:not(.btn):not(.btn-primary-large):not(.btn-secondary):not(.nav-link):not([clas
   text-underline-offset: 2px;
 }
 
-/* ── 5. Article Text Readability (75 ch optimal measure) ──────────────────── */
-/* Applied to article body containers so prose columns stay readable */
+/* ── 5. Article Text Readability (optimal measure) ──────────────────── */
+/* Applied to article body containers so prose columns stay readable
+   while using more screen width on larger viewports */
 .article-content,
 .news-article .article-content,
 .news-article .lede,
 .article-body,
 .prose {
-  max-width: 75ch;
+  max-width: 85ch;
 }
 
 /* Keep the containing element centred when narrower than its parent */
 .news-article {
-  max-width: 800px;
+  max-width: 960px;
   margin-inline: auto;
 }
 
