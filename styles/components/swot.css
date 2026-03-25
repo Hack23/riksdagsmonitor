@@ -12,8 +12,10 @@
   background: var(--badge-bg, #f0f4f8);
   border: 2px solid var(--primary-color, #006633);
   border-radius: var(--border-radius-lg, 12px);
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .swot-analysis h2 {
@@ -27,18 +29,25 @@
 .news-article .swot-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin: 1rem 0;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
 }
 
 @media (max-width: 768px) {
   .news-article .swot-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .news-article .swot-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 .news-article .swot-quadrant {
-  padding: 1rem;
+  padding: 1.25rem;
   border-radius: var(--border-radius, 8px);
   border: 1px solid var(--border-color, #ddd);
 }
@@ -46,7 +55,7 @@
 .news-article .swot-quadrant h3,
 .news-article .swot-quadrant h4 {
   margin: 0 0 0.75rem 0;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
 }
 
@@ -165,8 +174,10 @@
   background: var(--badge-bg, #f0f4f8);
   border: 2px solid var(--primary-color, #006633);
   border-radius: var(--border-radius-lg, 12px);
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .stakeholder-swot-analysis h2 {
@@ -179,15 +190,15 @@
 
 .news-article .stakeholder-swot-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
   margin-top: 1rem;
 }
 
 .news-article .stakeholder-swot-card {
   border: 1px solid var(--border-color, #ddd);
   border-radius: var(--border-radius-sm, 8px);
-  padding: 1rem;
+  padding: 1.25rem;
   background: var(--card-bg, #fff);
 }
 

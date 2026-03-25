@@ -9462,11 +9462,11 @@ body.news-page {
    parliament, government, and agencies with systematic transparency.
    ============================================= */
 
-/* News Article Container */
+/* News Article Container — full-width layout */
 .news-article {
-  max-width: 960px;
-  margin: 2rem auto;
-  padding: 0 1.5rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 3rem);
   background: var(--bg-color, #f8f9fa);
   width: 100%;
   box-sizing: border-box;
@@ -9577,8 +9577,10 @@ body.news-page {
   background: var(--badge-bg, #f0f4f8);
   border: 2px solid var(--primary-color, #006633);
   border-radius: var(--border-radius-lg, 12px);
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .deep-analysis h2 {
@@ -9615,8 +9617,10 @@ body.news-page {
   background: #0a0e27;
   border: 2px solid #9d4edd;
   border-radius: 12px;
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .sankey-section h2 {
@@ -9644,7 +9648,7 @@ body.news-page {
   display: block;
   width: 100%;
   height: auto;
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -9665,8 +9669,10 @@ body.news-page {
   background: #0a0e27;
   border: 2px solid #00d9ff;
   border-radius: 12px;
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .cia-overview-section h2 {
@@ -9686,9 +9692,10 @@ body.news-page {
 
 .news-article .cia-panels-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 1rem;
+  width: 100%;
 }
 
 /* Coalition panel */
@@ -10018,7 +10025,13 @@ body.news-page {
 
 @media (min-width: 768px) {
   .news-article .cia-panels-grid {
-    grid-template-columns: minmax(220px, 1fr) minmax(280px, 1.5fr) minmax(220px, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .news-article .cia-panels-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -10225,8 +10238,7 @@ body.news-page {
 /* Responsive Design for News Articles */
 @media (max-width: 768px) {
   .news-article {
-    padding: 0 1rem;
-    max-width: 100%;
+    padding: 0 0.75rem;
   }
   
   .news-article .article-header h1 {
@@ -10243,14 +10255,6 @@ body.news-page {
   
   .news-article .watch-section {
     padding: 1.5rem;
-  }
-
-  .article-content,
-  .news-article .article-content,
-  .news-article .lede,
-  .article-body,
-  .prose {
-    max-width: 100%;
   }
 }
 
@@ -10374,9 +10378,9 @@ body.news-page {
 
 /* Article top navigation bar (Back to News at top) */
 .article-top-nav {
-  max-width: 960px;
+  max-width: 100%;
   margin: 0.75rem auto 0;
-  padding: 0 1.5rem;
+  padding: 0 clamp(1rem, 3vw, 3rem);
 }
 
 .article-top-nav .back-to-news {
@@ -10839,20 +10843,19 @@ a:not(.btn):not(.btn-primary-large):not(.btn-secondary):not(.nav-link):not([clas
   text-underline-offset: 2px;
 }
 
-/* ── 5. Article Text Readability (optimal measure) ──────────────────── */
-/* Applied to article body containers so prose columns stay readable
-   while using more screen width on larger viewports */
+/* ── 5. Article Text Readability ──────────────────────────────────────── */
+/* Full-width article content — no artificial narrow column */
 .article-content,
 .news-article .article-content,
 .news-article .lede,
 .article-body,
 .prose {
-  max-width: 85ch;
+  max-width: 100%;
 }
 
-/* Keep the containing element centred when narrower than its parent */
+/* Full-width article container */
 .news-article {
-  max-width: 960px;
+  max-width: 100%;
   margin-inline: auto;
 }
 
@@ -11839,7 +11842,7 @@ html[data-theme="light"] .news-article .event-calendar {
 }
 
 .ai-newsroom-section .container {
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
 }
 

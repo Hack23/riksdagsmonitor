@@ -17,8 +17,10 @@
   background: #0a0e27;
   border: 2px solid var(--type-accent, #00d9ff);
   border-radius: 12px;
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .mindmap-section h2 {
@@ -47,14 +49,14 @@
   background: linear-gradient(135deg, #0a2a33, #003344);
   border: 3px solid var(--type-accent, #00d9ff);
   border-radius: 12px;
-  padding: 1rem 2rem;
+  padding: 1.25rem 2.5rem;
   color: var(--type-accent, #00d9ff);
   font-weight: 700;
-  font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.15rem);
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
   font-family: var(--font-heading, 'Orbitron', sans-serif);
   text-align: center;
   box-shadow: 0 0 20px rgba(var(--type-accent-rgb, 0, 217, 255), 0.25);
-  max-width: 280px;
+  max-width: 400px;
 }
 
 .news-article .mindmap-branches {
@@ -69,10 +71,10 @@
   background: var(--branch-bg, #0a2a33);
   border: 2px solid var(--branch-border, #00d9ff);
   border-radius: 8px;
-  padding: 0.75rem 1rem;
-  min-width: 180px;
-  max-width: 240px;
-  flex: 1 1 180px;
+  padding: 1rem 1.25rem;
+  min-width: 220px;
+  max-width: 360px;
+  flex: 1 1 220px;
 }
 
 .news-article .mindmap-branch-label {
@@ -130,13 +132,13 @@
 }
 
 .news-article .mindmap-thesis {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: var(--type-accent, #00d9ff);
   font-style: italic;
   text-align: center;
-  max-width: 300px;
+  max-width: 400px;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* AI Mindmap — weighted items */
@@ -219,7 +221,7 @@
     align-self: center;
   }
   .news-article .mindmap-thesis {
-    max-width: 260px;
+    max-width: 360px;
   }
 }
 

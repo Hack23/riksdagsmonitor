@@ -12,8 +12,10 @@
   background: var(--badge-bg, #f0f4f8);
   border: 2px solid var(--primary-color, #006633);
   border-radius: var(--border-radius-lg, 12px);
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .article-dashboard h2 {
@@ -89,16 +91,20 @@
   background: var(--badge-bg, #f0f4f8);
   border: 2px solid #4895ef;
   border-radius: var(--border-radius-lg, 12px);
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .economic-dashboard-placeholder {
   background: var(--badge-bg, #f0f4f8);
   border: 2px dashed #4895ef;
   border-radius: var(--border-radius-lg, 12px);
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .economic-dashboard-section h2,
@@ -136,8 +142,10 @@
   background: var(--badge-bg, #f0f4f8);
   border: 2px solid var(--primary-color, #006633);
   border-radius: var(--border-radius-lg, 12px);
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .multi-panel-dashboard h2 {
@@ -158,6 +166,7 @@
   display: grid;
   gap: 1.5rem;
   margin: 1rem 0;
+  width: 100%;
 }
 
 .news-article .multi-panel-grid.grid-2x2 {
@@ -174,6 +183,17 @@
 
 .news-article .multi-panel-grid.sidebar {
   grid-template-columns: 2fr 1fr;
+}
+
+@media (min-width: 1200px) {
+  .news-article .multi-panel-grid.grid-2x2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .news-article .multi-panel-grid.grid-3x2 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 }
 
 @media (max-width: 767px) {
