@@ -207,12 +207,19 @@
 /* Dashboard panel */
 .news-article .dashboard-panel {
   background: var(--card-bg, #ffffff);
-  border: 1px solid var(--border-color, #ddd);
+  border: 2px solid var(--border-color, #ddd);
   border-radius: var(--border-radius-lg, 12px);
-  padding: 1.25rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.news-article .dashboard-panel:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
 }
 
 .news-article .dashboard-panel h3 {
@@ -249,10 +256,10 @@
 
 .news-article .heatmap-cell {
   flex: 1 1 0;
-  padding: 0.4rem 0.5rem;
+  padding: 0.5rem 0.6rem;
   text-align: center;
   font-size: 0.85rem;
-  min-width: 3rem;
+  min-width: 3.5rem;
 }
 
 .news-article .heatmap-corner {
@@ -317,10 +324,10 @@
 
 .news-article .gauge-track {
   position: relative;
-  width: 120px;
-  height: 60px;
+  width: clamp(120px, 15vw, 180px);
+  height: clamp(60px, 7.5vw, 90px);
   overflow: hidden;
-  border-radius: 120px 120px 0 0;
+  border-radius: 200px 200px 0 0;
   background: var(--border-color, #ddd);
 }
 
@@ -340,10 +347,10 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 40px;
+  width: 66%;
+  height: 50%;
   background: var(--card-bg, #ffffff);
-  border-radius: 80px 80px 0 0;
+  border-radius: 200px 200px 0 0;
 }
 
 .news-article .gauge-value {
@@ -361,7 +368,7 @@
 .news-article .gauge-range {
   display: flex;
   justify-content: space-between;
-  width: 120px;
+  width: clamp(120px, 15vw, 180px);
   font-size: 0.75rem;
   color: var(--text-secondary, #4a4a4a);
 }
@@ -449,12 +456,18 @@
 }
 
 .news-article .ai-insight-item {
-  padding: 0.6rem 0.75rem;
-  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.6;
   border-left: 4px solid var(--border-color, #ddd);
   background: var(--card-bg, #ffffff);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
+}
+
+.news-article .ai-insight-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .news-article .ai-insight-item.insight-high {

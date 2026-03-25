@@ -75,6 +75,12 @@
   min-width: 220px;
   max-width: 360px;
   flex: 1 1 220px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.news-article .mindmap-branch:hover {
+  box-shadow: 0 0 16px rgba(var(--type-accent-rgb, 0, 217, 255), 0.3);
+  transform: translateY(-2px);
 }
 
 .news-article .mindmap-branch-label {
@@ -110,6 +116,17 @@
   .news-article .mindmap-branches {
     width: auto;
     flex: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .news-article .mindmap-branch {
+    min-width: 260px;
+    max-width: 420px;
+    flex: 1 1 260px;
+  }
+  .news-article .mindmap-branches {
+    gap: 1.25rem;
   }
 }
 

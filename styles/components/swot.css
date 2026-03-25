@@ -49,7 +49,14 @@
 .news-article .swot-quadrant {
   padding: 1.25rem;
   border-radius: var(--border-radius, 8px);
-  border: 1px solid var(--border-color, #ddd);
+  border: 2px solid var(--border-color, #ddd);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.news-article .swot-quadrant:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
 }
 
 .news-article .swot-quadrant h3,
@@ -196,10 +203,17 @@
 }
 
 .news-article .stakeholder-swot-card {
-  border: 1px solid var(--border-color, #ddd);
+  border: 2px solid var(--border-color, #ddd);
   border-radius: var(--border-radius-sm, 8px);
   padding: 1.25rem;
   background: var(--card-bg, #fff);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.news-article .stakeholder-swot-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
 }
 
 .news-article .stakeholder-swot-card h3 {

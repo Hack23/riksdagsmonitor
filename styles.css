@@ -2143,7 +2143,7 @@ table[role="presentation"] p {
 
 /* Header Introduction Styles */
 .header-intro {
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto var(--spacing-xl);
 }
 
@@ -2217,7 +2217,7 @@ table[role="presentation"] p {
 .value-prop-intro {
   font-size: 1.05rem;
   line-height: 1.7;
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto var(--spacing-xl);
   color: var(--text-secondary);
 }
@@ -2960,7 +2960,7 @@ footer {
 .fullscreen-caption {
   color: white;
   margin-top: 1.5rem;
-  max-width: 800px;
+  max-width: 100%;
   text-align: center;
   font-size: 1rem;
   line-height: 1.6;
@@ -3958,7 +3958,7 @@ footer {
 
 /* FAQ Content Container */
 .faq-content {
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -9703,9 +9703,17 @@ body.news-page {
 .news-article .cia-party-panel,
 .news-article .cia-voting-panel {
   background: rgba(0, 217, 255, 0.04);
-  border: 1px solid rgba(0, 217, 255, 0.25);
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
+  border: 2px solid rgba(0, 217, 255, 0.25);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.news-article .cia-coalition-panel:hover,
+.news-article .cia-party-panel:hover,
+.news-article .cia-voting-panel:hover {
+  box-shadow: 0 0 16px rgba(0, 217, 255, 0.15);
+  border-color: rgba(0, 217, 255, 0.5);
 }
 
 .news-article .cia-panel-heading {
@@ -10049,8 +10057,10 @@ body.news-page {
   background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
   color: white;
   border-radius: var(--border-radius-lg, 12px);
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .watch-section h2 {
@@ -10090,9 +10100,11 @@ body.news-page {
   background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
   color: white;
   border-radius: var(--border-radius-lg, 12px);
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
   box-shadow: 0 4px 6px var(--card-shadow, rgba(0, 102, 51, 0.08));
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .event-calendar h2 {
@@ -10104,8 +10116,8 @@ body.news-page {
 
 .news-article .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
   margin-top: 1rem;
 }
 
