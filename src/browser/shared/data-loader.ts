@@ -25,6 +25,9 @@ const DEFAULT_CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // 7 days
 const DEFAULT_RETRIES = 3;
 const DEFAULT_RETRY_BACKOFF = 2000;
 
+/** Prefix used for all cache keys written by this module. */
+export const CACHE_KEY_PREFIX = 'rdm_dl_';
+
 interface CacheEntry {
   data: string;
   timestamp: number;
@@ -58,11 +61,12 @@ async function fetchWithRetry(
  */
 function getFromCache(key: string, ttl: number): string | null {
   try {
-    const raw = localStorage.getItem(key);
+    const prefixedKey = CACHE_KEY_PREFIX + key;
+    const raw = localStorage.getItem(prefixedKey);
     if (!raw) return null;
     const entry: CacheEntry = JSON.parse(raw);
     if (Date.now() - entry.timestamp > ttl) {
-      localStorage.removeItem(key);
+      localStorage.removeItem(prefixedKey);
       return null;
     }
     return entry.data;
@@ -75,16 +79,21 @@ function getFromCache(key: string, ttl: number): string | null {
  * Store data in localStorage cache.
  */
 function setCache(key: string, data: string): void {
+  const prefixedKey = CACHE_KEY_PREFIX + key;
   const payload = JSON.stringify({ data, timestamp: Date.now() } as CacheEntry);
   try {
-    localStorage.setItem(key, payload);
-  } catch {
-    // QuotaExceededError — evict oldest cache entries and retry
+    localStorage.setItem(prefixedKey, payload);
+  } catch (e: unknown) {
+    if (!(e instanceof DOMException && e.name === 'QuotaExceededError')) {
+      logger.warn('Cache storage error (non-quota):', e);
+      return;
+    }
+    // QuotaExceededError — evict oldest entries from this module's namespace and retry
     try {
       const entries: { key: string; timestamp: number }[] = [];
       for (let i = 0; i < localStorage.length; i++) {
         const k = localStorage.key(i);
-        if (!k) continue;
+        if (!k || !k.startsWith(CACHE_KEY_PREFIX)) continue;
         try {
           const parsed: CacheEntry = JSON.parse(localStorage.getItem(k) ?? '');
           if (typeof parsed.timestamp === 'number') {
@@ -92,11 +101,11 @@ function setCache(key: string, data: string): void {
           }
         } catch { /* skip non-cache entries */ }
       }
-      // Remove oldest half of cache entries
+      // Remove oldest half of this module's cache entries
       entries.sort((a, b) => a.timestamp - b.timestamp);
       const removeCount = Math.max(1, Math.ceil(entries.length / 2));
       entries.slice(0, removeCount).forEach(e => localStorage.removeItem(e.key));
-      localStorage.setItem(key, payload);
+      localStorage.setItem(prefixedKey, payload);
     } catch {
       logger.warn('Failed to cache data — localStorage may be full');
     }

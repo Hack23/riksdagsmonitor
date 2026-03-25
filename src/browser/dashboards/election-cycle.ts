@@ -249,7 +249,11 @@ class ElectionCycleDataManager {
     const payload = JSON.stringify({ data, timestamp: Date.now() });
     try {
       localStorage.setItem(key, payload);
-    } catch {
+    } catch (e: unknown) {
+      if (!(e instanceof DOMException && e.name === 'QuotaExceededError')) {
+        logger.error('Cache storage error:', e);
+        return;
+      }
       // QuotaExceededError — evict all election-cycle cache entries and retry
       try {
         const keysToRemove: string[] = [];

@@ -889,6 +889,10 @@
       try {
         localStorage.setItem(key, payload);
       } catch (error) {
+        if (!(error instanceof DOMException && error.name === 'QuotaExceededError')) {
+          console.error('Cache storage error:', error);
+          return;
+        }
         // QuotaExceededError — evict election-cycle cache entries and retry
         try {
           const keysToRemove = [];
