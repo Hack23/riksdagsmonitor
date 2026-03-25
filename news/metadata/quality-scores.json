@@ -1,266 +1,46 @@
 {
-  "2026-03-24-opposition-motions-da.html": {
-    "filename": "2026-03-24-opposition-motions-da.html",
-    "lang": "da",
-    "articleType": "motions",
+  "2026-03-25-government-propositions-en.html": {
+    "filename": "2026-03-25-government-propositions-en.html",
+    "lang": "en",
+    "articleType": "propositions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 83,
+      "overallScore": 77,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 100,
+        "factualAccuracy": 80,
         "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 100,
+        "analyticalDepth": 24,
+        "editorialConsistency": 80,
         "evidenceQuality": 100,
         "languageQuality": 100
       },
       "issueCount": 1
     },
-    "timestamp": "2026-03-24T17:25:07.798Z"
+    "timestamp": "2026-03-25T05:31:35.364Z"
   },
-  "2026-03-24-opposition-motions-no.html": {
-    "filename": "2026-03-24-opposition-motions-no.html",
-    "lang": "no",
-    "articleType": "motions",
+  "2026-03-25-government-propositions-sv.html": {
+    "filename": "2026-03-25-government-propositions-sv.html",
+    "lang": "sv",
+    "articleType": "propositions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 83,
+      "overallScore": 74,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 100,
+        "factualAccuracy": 80,
         "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 100,
+        "analyticalDepth": 12,
+        "editorialConsistency": 80,
         "evidenceQuality": 100,
         "languageQuality": 100
       },
       "issueCount": 1
     },
-    "timestamp": "2026-03-24T17:25:07.827Z"
-  },
-  "2026-03-24-opposition-motions-fi.html": {
-    "filename": "2026-03-24-opposition-motions-fi.html",
-    "lang": "fi",
-    "articleType": "motions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 83,
-      "passesThreshold": true,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 1
-    },
-    "timestamp": "2026-03-24T17:25:07.850Z"
-  },
-  "2026-03-24-opposition-motions-de.html": {
-    "filename": "2026-03-24-opposition-motions-de.html",
-    "lang": "de",
-    "articleType": "motions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 83,
-      "passesThreshold": true,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 1
-    },
-    "timestamp": "2026-03-24T17:25:07.874Z"
-  },
-  "2026-03-24-opposition-motions-fr.html": {
-    "filename": "2026-03-24-opposition-motions-fr.html",
-    "lang": "fr",
-    "articleType": "motions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 83,
-      "passesThreshold": true,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 1
-    },
-    "timestamp": "2026-03-24T17:25:07.897Z"
-  },
-  "2026-03-24-opposition-motions-es.html": {
-    "filename": "2026-03-24-opposition-motions-es.html",
-    "lang": "es",
-    "articleType": "motions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 84,
-      "passesThreshold": true,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 20,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 1
-    },
-    "timestamp": "2026-03-24T17:25:07.920Z"
-  },
-  "2026-03-24-opposition-motions-nl.html": {
-    "filename": "2026-03-24-opposition-motions-nl.html",
-    "lang": "nl",
-    "articleType": "motions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 83,
-      "passesThreshold": true,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 1
-    },
-    "timestamp": "2026-03-24T17:25:07.942Z"
-  },
-  "2026-03-24-opposition-motions-ar.html": {
-    "filename": "2026-03-24-opposition-motions-ar.html",
-    "lang": "ar",
-    "articleType": "motions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 83,
-      "passesThreshold": true,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 1
-    },
-    "timestamp": "2026-03-24T17:25:07.966Z"
-  },
-  "2026-03-24-opposition-motions-he.html": {
-    "filename": "2026-03-24-opposition-motions-he.html",
-    "lang": "he",
-    "articleType": "motions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 83,
-      "passesThreshold": true,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 1
-    },
-    "timestamp": "2026-03-24T17:25:07.986Z"
-  },
-  "2026-03-24-opposition-motions-ja.html": {
-    "filename": "2026-03-24-opposition-motions-ja.html",
-    "lang": "ja",
-    "articleType": "motions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 83,
-      "passesThreshold": true,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 1
-    },
-    "timestamp": "2026-03-24T17:25:08.010Z"
-  },
-  "2026-03-24-opposition-motions-ko.html": {
-    "filename": "2026-03-24-opposition-motions-ko.html",
-    "lang": "ko",
-    "articleType": "motions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 83,
-      "passesThreshold": true,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 1
-    },
-    "timestamp": "2026-03-24T17:25:08.030Z"
-  },
-  "2026-03-24-opposition-motions-zh.html": {
-    "filename": "2026-03-24-opposition-motions-zh.html",
-    "lang": "zh",
-    "articleType": "motions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 83,
-      "passesThreshold": true,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 16,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 1
-    },
-    "timestamp": "2026-03-24T17:25:08.050Z"
+    "timestamp": "2026-03-25T05:31:35.389Z"
   }
 }
