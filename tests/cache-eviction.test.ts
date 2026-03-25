@@ -85,22 +85,14 @@ describe('Shared data-loader cache eviction (production paths)', () => {
   });
 
   afterEach(() => {
-    Object.defineProperty(globalThis, 'localStorage', {
-      value: savedLocalStorage,
-      writable: true,
-      configurable: true,
-    });
+    globalThis.localStorage = savedLocalStorage;
     globalThis.fetch = savedFetch;
     vi.restoreAllMocks();
   });
 
   it('should store data via loadText and cache under the module prefix', async () => {
     const mock = createMockLocalStorage(storage);
-    Object.defineProperty(globalThis, 'localStorage', {
-      value: mock,
-      writable: true,
-      configurable: true,
-    });
+    globalThis.localStorage = mock as unknown as Storage;
 
     globalThis.fetch = vi.fn().mockResolvedValue({
       ok: true,
@@ -137,11 +129,7 @@ describe('Shared data-loader cache eviction (production paths)', () => {
 
     const mock = createMockLocalStorage(storage);
     wrapSetItemWithQuotaError(mock, storage);
-    Object.defineProperty(globalThis, 'localStorage', {
-      value: mock,
-      writable: true,
-      configurable: true,
-    });
+    globalThis.localStorage = mock as unknown as Storage;
 
     globalThis.fetch = vi.fn().mockResolvedValue({
       ok: true,
@@ -173,11 +161,7 @@ describe('Shared data-loader cache eviction (production paths)', () => {
     );
 
     const mock = createMockLocalStorage(storage, { storageDisabled: true });
-    Object.defineProperty(globalThis, 'localStorage', {
-      value: mock,
-      writable: true,
-      configurable: true,
-    });
+    globalThis.localStorage = mock as unknown as Storage;
 
     globalThis.fetch = vi.fn().mockResolvedValue({
       ok: true,
@@ -212,11 +196,7 @@ describe('Election-cycle cache eviction', () => {
   });
 
   afterEach(() => {
-    Object.defineProperty(globalThis, 'localStorage', {
-      value: savedLocalStorage,
-      writable: true,
-      configurable: true,
-    });
+    globalThis.localStorage = savedLocalStorage;
     vi.restoreAllMocks();
   });
 
@@ -236,11 +216,7 @@ describe('Election-cycle cache eviction', () => {
 
     const mock = createMockLocalStorage(storage);
     wrapSetItemWithQuotaError(mock, storage);
-    Object.defineProperty(globalThis, 'localStorage', {
-      value: mock,
-      writable: true,
-      configurable: true,
-    });
+    globalThis.localStorage = mock as unknown as Storage;
 
     // Import and instantiate production class
     const { ElectionCycleDataManager } = await import(
@@ -267,11 +243,7 @@ describe('Election-cycle cache eviction', () => {
     );
 
     const mock = createMockLocalStorage(storage, { storageDisabled: true });
-    Object.defineProperty(globalThis, 'localStorage', {
-      value: mock,
-      writable: true,
-      configurable: true,
-    });
+    globalThis.localStorage = mock as unknown as Storage;
 
     const { ElectionCycleDataManager } = await import(
       '../src/browser/dashboards/election-cycle.js'
