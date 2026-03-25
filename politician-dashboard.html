@@ -182,15 +182,26 @@
 <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
+
+<!-- Anti-flash: apply saved theme before first paint -->
+<script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
+<button id="theme-toggle" class="theme-toggle-btn" type="button"
+        aria-pressed="false"
+        aria-label="Switch to dark theme"
+        title="Switch to dark theme"
+        data-label-dark="Switch to light theme"
+        data-label-light="Switch to dark theme">
+  <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
 
 <header>
 <nav>
 <div class="logo">
 <a href="index.html" aria-label="Riksdagsmonitor Home">
-  <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="120" height="120" loading="eager">
+  <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="80" height="80" loading="eager">
 </a>
 </div>
 <ul>
@@ -303,5 +314,6 @@
 
     <!-- Politician Dashboard entry point -->
     <script type="module" src="/src/browser/main.ts"></script>
+    <script src="/js/theme-toggle.js"></script>
 </body>
 </html>

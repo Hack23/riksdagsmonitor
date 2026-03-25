@@ -1333,7 +1333,7 @@ header {
   position: relative;
   width: 100%;
   /* Single smooth clamp avoids layout jumps at breakpoints */
-  height: clamp(130px, 28vw, 380px);
+  height: clamp(100px, 22vw, 280px);
   overflow: hidden;
 }
 
@@ -1396,8 +1396,8 @@ header {
 }
 
 .logo {
-  width: 80px;
-  height: 80px;
+  width: 56px;
+  height: 56px;
   border-radius: var(--border-radius-lg);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1423,8 +1423,8 @@ header {
 /* Site Logo in Header */
 .site-logo {
   display: block;
-  max-width: clamp(80px, 12vw, 120px);
-  max-height: 120px;
+  max-width: clamp(56px, 8vw, 80px);
+  max-height: 80px;
   width: auto;
   height: auto;
   margin: 0 auto;
@@ -1459,14 +1459,14 @@ html[data-theme="dark"] .site-logo:hover {
 /* Responsive site logo sizing */
 @media (max-width: 768px) {
   .site-logo {
-    max-height: 90px;
+    max-height: 64px;
   }
 }
 
 @media (max-width: 480px) {
   .site-logo {
-    max-height: 70px;
-    max-width: clamp(48px, 12vw, 70px);
+    max-height: 48px;
+    max-width: clamp(36px, 10vw, 48px);
   }
 }
 
@@ -1487,7 +1487,7 @@ html[data-theme="dark"] .site-logo:hover {
 /* News Article Site Logo */
 .article-site-logo {
   display: block;
-  max-width: clamp(60px, 12vw, 100px);
+  max-width: clamp(40px, 8vw, 64px);
   height: auto;
   margin: 0 auto var(--spacing-sm);
   border-radius: var(--border-radius-md);
@@ -2143,7 +2143,7 @@ table[role="presentation"] p {
 
 /* Header Introduction Styles */
 .header-intro {
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto var(--spacing-xl);
 }
 
@@ -2217,7 +2217,7 @@ table[role="presentation"] p {
 .value-prop-intro {
   font-size: 1.05rem;
   line-height: 1.7;
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto var(--spacing-xl);
   color: var(--text-secondary);
 }
@@ -2960,7 +2960,7 @@ footer {
 .fullscreen-caption {
   color: white;
   margin-top: 1.5rem;
-  max-width: 800px;
+  max-width: 100%;
   text-align: center;
   font-size: 1rem;
   line-height: 1.6;
@@ -3958,7 +3958,7 @@ footer {
 
 /* FAQ Content Container */
 .faq-content {
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -9462,12 +9462,14 @@ body.news-page {
    parliament, government, and agencies with systematic transparency.
    ============================================= */
 
-/* News Article Container */
+/* News Article Container — full-width layout */
 .news-article {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1.5rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 3rem);
   background: var(--bg-color, #f8f9fa);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Article Header */
@@ -9515,12 +9517,12 @@ body.news-page {
 
 /* Lead Paragraph */
 .news-article .lede {
-  font-size: 1.15rem;
-  line-height: 1.7;
+  font-size: 1.2rem;
+  line-height: 1.8;
   font-weight: 500;
   color: var(--text-color, #1a1a1a);
   margin-bottom: 2rem;
-  padding-left: 1rem;
+  padding-left: 1.25rem;
   border-left: 4px solid var(--primary-color, #006633);
 }
 
@@ -9530,6 +9532,7 @@ body.news-page {
   margin: 2.5rem 0 1rem 0;
   color: var(--header-color, #006633);
   font-weight: 600;
+  line-height: 1.3;
 }
 
 .news-article .article-content h3 {
@@ -9537,11 +9540,12 @@ body.news-page {
   margin: 2rem 0 0.75rem 0;
   color: var(--primary-color, #006633);
   font-weight: 600;
+  line-height: 1.4;
 }
 
 .news-article .article-content p {
-  margin: 0 0 1.25rem 0;
-  line-height: 1.7;
+  margin: 0 0 1.35rem 0;
+  line-height: 1.8;
 }
 
 /* Context Box */
@@ -9573,8 +9577,10 @@ body.news-page {
   background: var(--badge-bg, #f0f4f8);
   border: 2px solid var(--primary-color, #006633);
   border-radius: var(--border-radius-lg, 12px);
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .deep-analysis h2 {
@@ -9611,8 +9617,10 @@ body.news-page {
   background: #0a0e27;
   border: 2px solid #9d4edd;
   border-radius: 12px;
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .sankey-section h2 {
@@ -9640,7 +9648,7 @@ body.news-page {
   display: block;
   width: 100%;
   height: auto;
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -9661,8 +9669,10 @@ body.news-page {
   background: #0a0e27;
   border: 2px solid #00d9ff;
   border-radius: 12px;
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .cia-overview-section h2 {
@@ -9682,9 +9692,10 @@ body.news-page {
 
 .news-article .cia-panels-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 1rem;
+  width: 100%;
 }
 
 /* Coalition panel */
@@ -9692,9 +9703,17 @@ body.news-page {
 .news-article .cia-party-panel,
 .news-article .cia-voting-panel {
   background: rgba(0, 217, 255, 0.04);
-  border: 1px solid rgba(0, 217, 255, 0.25);
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
+  border: 2px solid rgba(0, 217, 255, 0.25);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.news-article .cia-coalition-panel:hover,
+.news-article .cia-party-panel:hover,
+.news-article .cia-voting-panel:hover {
+  box-shadow: 0 0 16px rgba(0, 217, 255, 0.15);
+  border-color: rgba(0, 217, 255, 0.5);
 }
 
 .news-article .cia-panel-heading {
@@ -10014,7 +10033,13 @@ body.news-page {
 
 @media (min-width: 768px) {
   .news-article .cia-panels-grid {
-    grid-template-columns: minmax(220px, 1fr) minmax(280px, 1.5fr) minmax(220px, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .news-article .cia-panels-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -10032,8 +10057,10 @@ body.news-page {
   background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
   color: white;
   border-radius: var(--border-radius-lg, 12px);
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .watch-section h2 {
@@ -10073,9 +10100,11 @@ body.news-page {
   background: linear-gradient(135deg, var(--primary-color, #006633) 0%, var(--primary-light, #007744) 100%);
   color: white;
   border-radius: var(--border-radius-lg, 12px);
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   margin: 2rem 0;
   box-shadow: 0 4px 6px var(--card-shadow, rgba(0, 102, 51, 0.08));
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .news-article .event-calendar h2 {
@@ -10087,8 +10116,8 @@ body.news-page {
 
 .news-article .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
   margin-top: 1rem;
 }
 
@@ -10221,7 +10250,7 @@ body.news-page {
 /* Responsive Design for News Articles */
 @media (max-width: 768px) {
   .news-article {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
   }
   
   .news-article .article-header h1 {
@@ -10361,9 +10390,9 @@ body.news-page {
 
 /* Article top navigation bar (Back to News at top) */
 .article-top-nav {
-  max-width: 800px;
+  max-width: 100%;
   margin: 0.75rem auto 0;
-  padding: 0 1.5rem;
+  padding: 0 clamp(1rem, 3vw, 3rem);
 }
 
 .article-top-nav .back-to-news {
@@ -10826,19 +10855,19 @@ a:not(.btn):not(.btn-primary-large):not(.btn-secondary):not(.nav-link):not([clas
   text-underline-offset: 2px;
 }
 
-/* ── 5. Article Text Readability (75 ch optimal measure) ──────────────────── */
-/* Applied to article body containers so prose columns stay readable */
+/* ── 5. Article Text Readability ──────────────────────────────────────── */
+/* Full-width article content — no artificial narrow column */
 .article-content,
 .news-article .article-content,
 .news-article .lede,
 .article-body,
 .prose {
-  max-width: 75ch;
+  max-width: 100%;
 }
 
-/* Keep the containing element centred when narrower than its parent */
+/* Full-width article container */
 .news-article {
-  max-width: 800px;
+  max-width: 100%;
   margin-inline: auto;
 }
 
@@ -11825,7 +11854,7 @@ html[data-theme="light"] .news-article .event-calendar {
 }
 
 .ai-newsroom-section .container {
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
