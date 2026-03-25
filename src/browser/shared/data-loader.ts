@@ -75,11 +75,31 @@ function getFromCache(key: string, ttl: number): string | null {
  * Store data in localStorage cache.
  */
 function setCache(key: string, data: string): void {
+  const payload = JSON.stringify({ data, timestamp: Date.now() } as CacheEntry);
   try {
-    const entry: CacheEntry = { data, timestamp: Date.now() };
-    localStorage.setItem(key, JSON.stringify(entry));
+    localStorage.setItem(key, payload);
   } catch {
-    logger.warn('Failed to cache data — localStorage may be full');
+    // QuotaExceededError — evict oldest cache entries and retry
+    try {
+      const entries: { key: string; timestamp: number }[] = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (!k) continue;
+        try {
+          const parsed: CacheEntry = JSON.parse(localStorage.getItem(k) ?? '');
+          if (typeof parsed.timestamp === 'number') {
+            entries.push({ key: k, timestamp: parsed.timestamp });
+          }
+        } catch { /* skip non-cache entries */ }
+      }
+      // Remove oldest half of cache entries
+      entries.sort((a, b) => a.timestamp - b.timestamp);
+      const removeCount = Math.max(1, Math.ceil(entries.length / 2));
+      entries.slice(0, removeCount).forEach(e => localStorage.removeItem(e.key));
+      localStorage.setItem(key, payload);
+    } catch {
+      logger.warn('Failed to cache data — localStorage may be full');
+    }
   }
 }
 
