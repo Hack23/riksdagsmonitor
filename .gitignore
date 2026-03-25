@@ -70,3 +70,6 @@ current-*.png
 
 # Workflow lock files (runtime artifacts, not committed)
 news/metadata/locks/*.lock/
+
+# Analysis raw data (large JSON files, regeneratable)
+analysis/daily/*/raw/

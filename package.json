@@ -40,6 +40,7 @@
     "e2e": "npm run build && start-server-and-test preview http://localhost:4173 cypress:run",
     "e2e:fast": "npm run build && start-server-and-test preview http://localhost:4173 cypress:run:fast",
     "sync-schemas": "npx tsx scripts/sync-cia-schemas.ts",
+    "download-isms-references": "npx tsx scripts/download-isms-references.ts",
     "validate-data": "npx tsx scripts/validate-against-cia-schemas.ts",
     "check-updates": "npx tsx scripts/check-cia-schema-updates.ts",
     "generate-types": "npx tsx scripts/generate-types-from-cia-schemas.ts",
