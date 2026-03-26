@@ -41,6 +41,14 @@ function getClassificationIcon(level: string): string {
 }
 
 /**
+ * Sanitize dynamic values used in CSS class suffixes.
+ * Keeps only safe class-token characters.
+ */
+function toSafeClassToken(value: string): string {
+  return value.toLowerCase().replace(/[^a-z0-9_-]/g, '-');
+}
+
+/**
  * Generate complete article HTML document.
  *
  * @param data - Article data including title, subtitle, content, events, watchPoints, etc.
@@ -147,11 +155,11 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   ${typeof significance === 'number' ? `
   <!-- Political Significance -->
   <meta name="article:significance" content="${significance}">${urgency ? `
-  <meta name="article:urgency" content="${urgency}">` : ''}` : ''}${classificationLevel ? `
+  <meta name="article:urgency" content="${escapeHtml(urgency)}">` : ''}` : ''}${classificationLevel ? `
   <!-- Political Intelligence Classification -->
-  <meta name="article:classification" content="${classificationLevel}">${riskLevel ? `
-  <meta name="article:risk-level" content="${riskLevel}">` : ''}${confidenceLabel ? `
-  <meta name="article:confidence" content="${confidenceLabel}">` : ''}` : ''}
+  <meta name="article:classification" content="${escapeHtml(classificationLevel)}">${riskLevel ? `
+  <meta name="article:risk-level" content="${escapeHtml(riskLevel)}">` : ''}${confidenceLabel ? `
+  <meta name="article:confidence" content="${escapeHtml(confidenceLabel)}">` : ''}` : ''}
   
   <!-- Hreflang for language alternatives -->
 ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}
@@ -348,9 +356,9 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
       <span class="separator">•</span>
       <span>${readTime}</span>${classificationLevel ? `
       <span class="separator">•</span>
-      <span class="classification-badge classification-${classificationLevel.toLowerCase()}" aria-label="Classification: ${classificationLevel}">${getClassificationIcon(classificationLevel)} ${classificationLevel}</span>` : ''}${riskLevel ? `
+      <span class="classification-badge classification-${toSafeClassToken(classificationLevel)}" aria-label="Classification: ${escapeHtml(classificationLevel)}">${getClassificationIcon(classificationLevel)} ${escapeHtml(classificationLevel)}</span>` : ''}${riskLevel ? `
       <span class="separator">•</span>
-      <span class="risk-badge risk-${riskLevel}" aria-label="Risk: ${riskLevel.toUpperCase()}">⚠️ ${riskLevel.toUpperCase()} RISK</span>` : ''}
+      <span class="risk-badge risk-${toSafeClassToken(riskLevel)}" aria-label="Risk: ${escapeHtml(riskLevel.toUpperCase())}">⚠️ ${escapeHtml(riskLevel.toUpperCase())} RISK</span>` : ''}
     </div>
   </header>
 

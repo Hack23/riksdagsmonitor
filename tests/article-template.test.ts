@@ -7,6 +7,7 @@ import { describe, it, expect, afterEach, vi } from 'vitest';
 import { generateArticleHTML, generateArticleLanguageSwitcher, generateSiteFooter, fixHtmlNesting } from '../scripts/article-template.js';
 import articleTemplateDefault from '../scripts/article-template.js';
 import type { Language } from '../scripts/types/language.js';
+import type { ClassificationLevel, RiskLevel, ConfidenceLabel } from '../scripts/analysis-reader.js';
 import type { ArticleData, ArticleCategory } from '../scripts/types/article.js';
 
 /** Mock article data shape matching ArticleData but with mutable properties for test manipulation */
@@ -32,9 +33,9 @@ interface MockArticleData {
   keywords?: string[];
   topics?: string[];
   tags?: string[];
-  classificationLevel?: string;
-  riskLevel?: string;
-  confidenceLabel?: string;
+  classificationLevel?: ClassificationLevel;
+  riskLevel?: RiskLevel;
+  confidenceLabel?: ConfidenceLabel;
 }
 
 describe('Article Template', () => {

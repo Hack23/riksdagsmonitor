@@ -13,7 +13,7 @@
  * import { readDailyAnalysis } from './analysis-reader.js';
  *
  * const analysis = await readDailyAnalysis('2026-03-26');
- * if (analysis) {
+ * if (analysis.hasAnalysis) {
  *   const { classification, riskAssessment, significance } = analysis;
  *   // Enrich article generation with pre-computed intelligence
  * }
@@ -26,6 +26,7 @@
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { existsSync } from 'node:fs';
+import type { UrgencyLabel } from './ai-analysis/political-significance.js';
 
 // ---------------------------------------------------------------------------
 // Classification types
@@ -136,7 +137,7 @@ export interface SignificanceScoringResult {
   /** Significance score (0–100) */
   score: number;
   /** Urgency label */
-  urgency: string;
+  urgency: UrgencyLabel;
   /** Ranked list of most significant documents */
   topDocuments: Array<{ docId: string; score: number; reason: string }>;
   /** Overall confidence in significance scoring */
@@ -298,6 +299,18 @@ function toPriorityLevel(value: string): PriorityLevel {
 }
 
 /**
+ * Normalize urgency labels to the known UrgencyLabel union.
+ * Returns 'standard' as safe default for unrecognized values.
+ */
+function toUrgencyLabel(value: string): UrgencyLabel {
+  const lower = value.toLowerCase().trim();
+  if (lower === 'breaking') return 'breaking';
+  if (lower === 'major') return 'major';
+  if (lower === 'background') return 'background';
+  return 'standard';
+}
+
+/**
  * Parse SWOT entries from a markdown quadrant section.
  */
 function parseSwotEntries(sectionText: string): AnalysisSwotEntry[] {
@@ -442,7 +455,7 @@ export function parseStakeholderPerspectives(markdown: string): StakeholderPersp
 export function parseSignificanceScoring(markdown: string): SignificanceScoringResult {
   const scoreStr = extractValue(markdown, 'Overall Score') || extractValue(markdown, 'Score');
   const score = scoreStr ? Math.min(100, Math.max(0, parseInt(scoreStr, 10) || DEFAULT_SIGNIFICANCE_SCORE)) : DEFAULT_SIGNIFICANCE_SCORE;
-  const urgency = extractValue(markdown, 'Urgency') || 'standard';
+  const urgency = toUrgencyLabel(extractValue(markdown, 'Urgency') || 'standard');
   const confidence = toConfidenceLabel(extractValue(markdown, 'Confidence'));
 
   // Extract top documents from a list
@@ -652,7 +665,7 @@ export function deriveArticleClassificationMeta(analysis: DailyAnalysis): {
   riskLevel: RiskLevel;
   confidenceLabel: ConfidenceLabel;
   significanceScore: number | undefined;
-  urgency: string | undefined;
+  urgency: UrgencyLabel | undefined;
 } {
   return {
     classificationLevel: analysis.classification?.level ?? 'MEDIUM',
