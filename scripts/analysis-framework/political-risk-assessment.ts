@@ -95,6 +95,9 @@ const INTERNATIONAL_RISK_KEYWORDS: readonly string[] = [
 // Likelihood assessment helpers
 // ---------------------------------------------------------------------------
 
+/** Committees with elevated social cohesion risk relevance */
+const SOCIAL_COHESION_COMMITTEES = new Set(['SoU', 'SfU', 'AU']);
+
 function getDocText(doc: RawDocument): string {
   return [
     doc.titel, doc.rubrik, doc.undertitel, doc.title,
@@ -214,7 +217,7 @@ function assessSocialCohesionLikelihood(doc: RawDocument): LikelihoodLevel {
   const keywordMatches = countMatches(text, SOCIAL_RISK_KEYWORDS);
   const committee = doc.organ ?? '';
 
-  if (new Set(['SoU', 'SfU', 'AU']).has(committee) && keywordMatches >= 2) return 'likely';
+  if (SOCIAL_COHESION_COMMITTEES.has(committee) && keywordMatches >= 2) return 'likely';
   if (keywordMatches >= 3) return 'likely';
   if (keywordMatches >= 2) return 'possible';
   if (keywordMatches >= 1) return 'unlikely';

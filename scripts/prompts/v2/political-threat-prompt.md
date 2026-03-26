@@ -8,7 +8,7 @@ Apply the **PRIDES Political Threat Framework** (ISMS STRIDE adapted for politic
 
 ## Context
 
-PRIDES is a political adaptation of the ISMS STRIDE threat model from `Threat_Modeling.md`. Instead of cybersecurity threats, PRIDES identifies threats to **democratic function, civic rights, and political integrity** from parliamentary activity and political actors.
+PRIDES is a political adaptation of the ISMS STRIDE threat model from `THREAT_MODEL.md`. Instead of cybersecurity threats, PRIDES identifies threats to **democratic function, civic rights, and political integrity** from parliamentary activity and political actors.
 
 ## THE PRIDES FRAMEWORK
 

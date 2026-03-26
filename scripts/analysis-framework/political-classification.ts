@@ -90,6 +90,9 @@ const ECONOMIC_HIGH_KEYWORDS: readonly string[] = [
 /** Committees with systemic governance impact */
 const SYSTEMIC_GOVERNANCE_COMMITTEES = new Set(['FiU', 'KU', 'FöU', 'UU']);
 
+/** Document types that are at least standard public-interest sensitivity */
+const STANDARD_SENSITIVITY_TYPES = new Set(['prop', 'bet', 'sou', 'prot']);
+
 /** Committees with significant governance impact */
 const SIGNIFICANT_GOVERNANCE_COMMITTEES = new Set(['JuU', 'SoU', 'SfU', 'AU', 'MJU', 'UbU', 'SkU']);
 
@@ -167,7 +170,7 @@ function classifyPublicInterestSensitivity(doc: RawDocument, cia: CIAContext | u
   }
   if (containsAny(text, SENSITIVE_KEYWORDS)) return 'sensitive';
   // Government propositions and committee reports are always at least standard
-  if (new Set(['prop', 'bet', 'sou', 'prot']).has(doc.doktyp ?? '')) return 'standard';
+  if (STANDARD_SENSITIVITY_TYPES.has(doc.doktyp ?? '')) return 'standard';
   return 'routine';
 }
 

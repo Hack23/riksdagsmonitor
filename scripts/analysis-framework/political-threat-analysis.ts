@@ -2,7 +2,7 @@
  * @module analysis-framework/political-threat-analysis
  * @description PRIDES political threat analysis engine for parliamentary documents.
  *
- * Inspired by ISMS Threat_Modeling.md (STRIDE framework, threat agent classification),
+ * Inspired by ISMS THREAT_MODEL.md (STRIDE framework, threat agent classification),
  * adapted for political intelligence analysis of Swedish parliamentary context.
  *
  * ## PRIDES Framework (Political STRIDE Adaptation)
@@ -260,10 +260,12 @@ function assessEconomicDisruptionSeverity(doc: RawDocument, text: string, cia: C
   return 'low';
 }
 
+const SOCIETAL_IMPACT_COMMITTEES = new Set(['SoU', 'SfU', 'AU']);
+
 function assessSocietalImpactSeverity(doc: RawDocument, text: string): ThreatSeverity {
   const matches = countMatches(text, SOCIETAL_IMPACT_KEYWORDS);
   const committee = doc.organ ?? '';
-  if (new Set(['SoU', 'SfU', 'AU']).has(committee) && matches >= 2) return 'high';
+  if (SOCIETAL_IMPACT_COMMITTEES.has(committee) && matches >= 2) return 'high';
   if (matches >= 3) return 'high';
   if (matches >= 2) return 'medium';
   if (matches >= 1) return 'low';
@@ -274,7 +276,7 @@ function assessSocietalImpactSeverity(doc: RawDocument, text: string): ThreatSev
 // Observable indicator extraction
 // ---------------------------------------------------------------------------
 
-function extractIndicators(doc: RawDocument, category: PridesCategory): string[] {
+function extractIndicators(doc: RawDocument, category: PridesCategory, text: string): string[] {
   const indicators: string[] = [];
   const docId = doc.dok_id;
 
@@ -290,28 +292,48 @@ function extractIndicators(doc: RawDocument, category: PridesCategory): string[]
   }
 
   switch (category) {
-    case 'polarization':
-      indicators.push('Polarising language or divisive framing detected in document text');
-      break;
-    case 'regulatory-overreach':
-      indicators.push('Legislative content suggests concentration of regulatory authority');
-      break;
-    case 'institutional-erosion':
-      if (doc.organ === 'KU') {
-        indicators.push('Constitutional Committee (KU) scrutiny indicates accountability concern');
-      } else {
-        indicators.push('Institutional accountability gaps detected in document analysis');
+    case 'polarization': {
+      if (countMatches(text, POLARIZATION_KEYWORDS) > 0) {
+        indicators.push('Language and framing may contribute to political polarization in this context');
       }
       break;
-    case 'democratic-deficit':
-      indicators.push('Transparency or public access concerns identified in document content');
+    }
+    case 'regulatory-overreach': {
+      if (countMatches(text, REGULATORY_OVERREACH_KEYWORDS) > 0) {
+        indicators.push('Analysis suggests potential concentration of regulatory authority');
+      }
       break;
-    case 'economic-disruption':
-      indicators.push('Economic policy signals with potential fiscal disruption identified');
+    }
+    case 'institutional-erosion': {
+      const matches = countMatches(text, INSTITUTIONAL_EROSION_KEYWORDS);
+      if (doc.organ === 'KU' && matches === 0) {
+        indicators.push('Constitutional Committee (KU) context suggests potential accountability concern');
+      } else if (matches > 0) {
+        indicators.push('Analysis suggests potential gaps in institutional accountability');
+      }
       break;
-    case 'societal-impact':
-      indicators.push('Content affecting vulnerable groups or fundamental rights detected');
+    }
+    case 'democratic-deficit': {
+      if (countMatches(text, DEMOCRATIC_DEFICIT_KEYWORDS) > 0) {
+        indicators.push('Analysis suggests potential transparency or public access concerns');
+      }
       break;
+    }
+    case 'economic-disruption': {
+      const matches = countMatches(text, ECONOMIC_DISRUPTION_KEYWORDS);
+      if (matches > 0) {
+        indicators.push('Analysis suggests potential economic or fiscal disruption risk factors');
+      } else if (doc.organ === 'FiU') {
+        indicators.push('Finance Committee context suggests potential economic or fiscal disruption risk factors');
+      }
+      break;
+    }
+    case 'societal-impact': {
+      if (countMatches(text, SOCIETAL_IMPACT_KEYWORDS) > 0) {
+        indicators.push('Analysis suggests potential impact on vulnerable groups or fundamental rights');
+      }
+      break;
+    }
   }
 
   return indicators;
@@ -393,7 +415,15 @@ function buildThreatRationale(
 
   const description = categoryDescriptions[category];
 
-  const hasContent = (doc.fullText || doc.fullContent || doc.summary) ? 'Full document content available.' : 'Based on metadata signals only.';
+  const hasContent = (() => {
+    if (doc.fullText || doc.fullContent) {
+      return 'Full document content available.';
+    }
+    if (doc.summary) {
+      return 'Summary-level content available; full text not available.';
+    }
+    return 'Based on metadata signals only; full text not available.';
+  })();
 
   return `${severityLabel} PRIDES threat: ${description} detected in ${docType} document from committee ${committee}. ${hasContent} Document ${doc.dok_id ?? 'unknown'} presents observable signals matching this threat category based on ${text.length > 200 ? 'comprehensive' : 'limited'} text analysis.`;
 }
@@ -458,7 +488,7 @@ function analyseSingleCategory(
     pridesCategory: category,
     threatAgents,
     severity,
-    indicators: extractIndicators(doc, category),
+    indicators: extractIndicators(doc, category, text),
     countermeasures: getCountermeasures(category),
     rationale: buildThreatRationale(doc, category, severity, text),
   };
