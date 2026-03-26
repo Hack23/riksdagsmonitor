@@ -19,7 +19,7 @@
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-26 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/` or `analysis/weekly/YYYY-WNN/`. Rename to `YYYY-MM-DD-risk-assessment.md`. Scores use Likelihood × Impact methodology from [methodologies/political-risk-methodology.md](../methodologies/political-risk-methodology.md).
+> **📌 Template Instructions:** Copy to the appropriate directory under `analysis/daily/` or `analysis/weekly/` and name the file according to the conventions in the corresponding `README.md` (e.g. `morning-risk-snapshot.md`, `realtime-HHMM-risk-delta.md`, `week-ahead-risk-register.md`). Scores use Likelihood × Impact methodology from [methodologies/political-risk-methodology.md](../methodologies/political-risk-methodology.md).
 
 ---
 

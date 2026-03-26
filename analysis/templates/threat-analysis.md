@@ -19,7 +19,7 @@
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-26 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template Instructions:** This template adapts the STRIDE threat modeling framework from cybersecurity to political intelligence analysis. Each STRIDE category maps to a class of democratic process threats. See [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md) for full methodology. Copy to dated directory, rename `YYYY-MM-DD-threat-analysis.md`.
+> **📌 Template Instructions:** This template adapts the STRIDE threat modeling framework from cybersecurity to political intelligence analysis. Each STRIDE category maps to a class of democratic process threats. See [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md) for full methodology. For the daily workflow, save as `evening-threat-snapshot.md` in `analysis/daily/YYYY-MM-DD/`. For monthly strategic aggregation, save as `monthly-threat-landscape.md` in `analysis/monthly/YYYY-MM/`. For ad-hoc analyses, a date-scoped filename like `YYYY-MM-DD-threat-analysis.md` MAY be used.
 
 ---
 

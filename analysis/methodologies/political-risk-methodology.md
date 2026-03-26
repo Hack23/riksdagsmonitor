@@ -51,7 +51,7 @@ All political risks are scored using a **5×5 matrix**. Risk Score = Likelihood 
 | 1 | **Negligible** | Routine disruption; normal operations continue | Minor committee delay |
 | 2 | **Minor** | Moderate disruption; corrective action straightforward | Single bill rejected; government re-submits |
 | 3 | **Moderate** | Significant disruption; coalition relationship strained | Major budget amendment forced by opposition |
-| 4 | **Major** | Severe disruption; coalition integrity threatened | Statsminister forced to resign ministry post |
+| 4 | **Major** | Severe disruption; coalition integrity threatened | Minister forced to resign |
 | 5 | **Severe** | Democratic crisis; constitutional mechanisms triggered | Government falls; extraordinary election called |
 
 ### Risk Matrix

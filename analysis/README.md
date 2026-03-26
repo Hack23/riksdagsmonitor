@@ -109,8 +109,8 @@ Produces:
 Reads from: live riksdag-regering-mcp data  
 Writes to: `analysis/daily/YYYY-MM-DD/`  
 Produces:
-- `realtime-{HH}{MM}-classification.md` — timestamped event classifications
-- `realtime-{HH}{MM}-risk-delta.md` — risk changes since last run
+- `realtime-HHMM-classification.md` — timestamped event classifications
+- `realtime-HHMM-risk-delta.md` — risk changes since last run
 
 ### 📅 `news-week-ahead` (Weekly, Sunday evening)
 Reads from: `analysis/daily/YYYY-MM-DD/` for the past 7 days  
@@ -118,6 +118,7 @@ Writes to: `analysis/weekly/YYYY-WNN/`
 Produces:
 - `week-summary-swot.md` — aggregated weekly SWOT
 - `week-ahead-risk-register.md` — projected risks for next week
+- `week-ahead-calendar.md` — upcoming legislative and political calendar
 - `week-significance-trends.md` — significance score trends
 
 ---
@@ -127,7 +128,7 @@ Produces:
 ### Using a Template
 
 1. **Copy** the template from `analysis/templates/` to the appropriate dated subdirectory
-2. **Rename** with the date prefix: `YYYY-MM-DD-{template-name}.md`
+2. **Rename** using scope/workflow conventions from the target directory `README.md` (e.g. daily: `morning-risk-snapshot.md` / `evening-swot-update.md` / `realtime-HHMM-risk-delta.md`, weekly: `week-summary-swot.md`, monthly: `monthly-risk-register.md`)
 3. **Fill** all required fields (marked `[REQUIRED]`)
 4. **Complete** optional fields where evidence is available
 5. **Validate** against the methodology guide before consuming downstream

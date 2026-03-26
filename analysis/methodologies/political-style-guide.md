@@ -67,7 +67,7 @@ Three permitted depth levels define what analysis is appropriate for each conten
 **When to use:** Weekly strategic briefings, monthly intelligence reports, breaking analysis of crisis events.
 
 **Example (Intelligence ✅):**  
-> "Based on the 176–173 defence vote margin (dok_id: XXXX) and L party leader Lina Axelsson Kihlblom's parliamentary statement (anförande 2026-03-25), we assess **MEDIUM probability (25–40%)** that L will abstain rather than vote Nej on the immigration regulation amendment scheduled for April 2026. This would reduce the effective coalition majority to 172, creating a governance crisis scenario with **HIGH impact** (score 12/25) per political-risk-methodology.md calibration."
+> "Based on the 176–173 defence vote margin (dok_id: XXXX) and the L party leader's parliamentary statement (anförande 2026-03-25), we assess **MEDIUM probability (25–40%)** that L will abstain rather than vote Nej on the immigration regulation amendment scheduled for April 2026. This would reduce the effective coalition majority to 172, creating a governance crisis scenario with **HIGH impact** (score 12/25) per political-risk-methodology.md calibration."
 
 ---
 
