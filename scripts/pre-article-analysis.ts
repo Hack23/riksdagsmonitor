@@ -474,9 +474,11 @@ async function runPreArticleAnalysis(opts: {
 // Entry point
 // ---------------------------------------------------------------------------
 
-const args = parseArgs(process.argv);
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const args = parseArgs(process.argv);
 
-runPreArticleAnalysis(args).catch((err: unknown) => {
-  console.error('[pre-article-analysis] Fatal error:', err instanceof Error ? err.message : String(err));
-  process.exit(1);
-});
+  runPreArticleAnalysis(args).catch((err: unknown) => {
+    console.error('[pre-article-analysis] Fatal error:', err instanceof Error ? err.message : String(err));
+    process.exit(1);
+  });
+}
