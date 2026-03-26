@@ -10,6 +10,7 @@
  */
 
 import type { RawDocument } from '../data-transformers/types.js';
+import type { MethodologyAnalysis } from './methodology-types.js';
 
 // ---------------------------------------------------------------------------
 // Analysis Lenses
@@ -171,6 +172,12 @@ export interface DocumentAnalysisResult {
    * Computed as the arithmetic mean of per-perspective confidence scores.
    */
   confidenceScore: number;
+  /**
+   * ISMS-inspired political analysis methodology results.
+   * Contains classification, risk profile, and PRIDES threat profile.
+   * Present when the document has been processed through the methodology engines.
+   */
+  methodologyAnalysis?: MethodologyAnalysis;
 }
 
 // ---------------------------------------------------------------------------
