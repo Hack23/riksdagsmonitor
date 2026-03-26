@@ -6,6 +6,7 @@
 import type { Language } from './language.js';
 import type { MultiDimensionalQualityAssessment } from '../ai-analysis/quality-assessor.js';
 import type { UrgencyLabel } from '../ai-analysis/political-significance.js';
+import type { ClassificationLevel, RiskLevel, ConfidenceLabel } from '../analysis-reader.js';
 
 /** Category label shown in article headers */
 export type ArticleCategory = 'prospective' | 'retrospective' | 'analysis' | 'breaking';
@@ -109,6 +110,21 @@ export interface ArticleData {
   significance?: number;
   /** Editorial urgency label derived from the significance score */
   urgency?: UrgencyLabel;
+  /**
+   * Political intelligence classification level (CRITICAL/HIGH/MEDIUM/LOW).
+   * Derived from pre-computed analysis files when available.
+   */
+  classificationLevel?: ClassificationLevel;
+  /**
+   * Political risk level (high/elevated/moderate/low).
+   * Derived from pre-computed risk assessment analysis.
+   */
+  riskLevel?: RiskLevel;
+  /**
+   * Confidence label for the article's analytical claims (HIGH/MEDIUM/LOW).
+   * Reflects the evidence quality of the pre-computed analysis.
+   */
+  confidenceLabel?: ConfidenceLabel;
 }
 
 /** A single generated article (language variant) */
