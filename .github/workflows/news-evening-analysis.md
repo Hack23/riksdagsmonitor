@@ -538,7 +538,7 @@ const byParty = motions.reduce((acc, m) => {
 ```bash
 ARTICLE_DATE=$(date -u +%Y-%m-%d)
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
 echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
 ```
@@ -759,7 +759,7 @@ news/content/{YYYY-MM-DD}/evening-analysis
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally: `git add news/ analysis/daily/ && git commit -m "🌆 Evening Analysis - $(date +%Y-%m-%d)"`
+> 2. Stage and commit locally: `git add news/ analysis/daily/ analysis/weekly/ && git commit -m "🌆 Evening Analysis - $(date +%Y-%m-%d)"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -772,7 +772,7 @@ news/content/{YYYY-MM-DD}/evening-analysis
 > **🚨 NEVER search for safe output tools via bash.** After `git commit`, call `safeoutputs___create_pull_request` directly as your VERY NEXT action.
 
 ```bash
-git add news/ analysis/daily/
+git add news/ analysis/daily/ analysis/weekly/
 git commit -m "🌆 Evening Analysis - $(date +%Y-%m-%d)"
 ```
 

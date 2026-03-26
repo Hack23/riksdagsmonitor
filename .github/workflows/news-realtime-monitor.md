@@ -225,7 +225,7 @@ Tools with date params: `get_calendar_events` (from/tom — **⚠️ known inter
 ARTICLE_DATE=$(date -u +%Y-%m-%d)
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 # --limit 50 is appropriate for same-day realtime monitoring (pipeline date-filters to today only)
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
 echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
 ```
@@ -490,7 +490,7 @@ news/content/{YYYY-MM-DD}/breaking
 ⚠️ DO NOT use `git push` — the safe output tool handles publishing. Commit locally, then use the tool.
 
 ```bash
-git add news/ analysis/daily/
+git add news/ analysis/daily/ analysis/weekly/
 git commit -m "🔴 Breaking: {headline} - $(date +%Y-%m-%d)"
 ```
 

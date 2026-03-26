@@ -309,7 +309,7 @@ Example: `news/content/2026-03-23/propositions`
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally: `git add news/ analysis/daily/ && git commit -m "Add propositions articles and analysis artifacts"`
+> 2. Stage and commit locally: `git add news/ analysis/daily/ analysis/weekly/ && git commit -m "Add propositions articles and analysis artifacts"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -382,7 +382,7 @@ if [ -z "$ARTICLE_DATE" ]; then
   ARTICLE_DATE=$(date -u +%Y-%m-%d)
 fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
 echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
 ```
