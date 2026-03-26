@@ -25,7 +25,7 @@ import {
   generateSources,
 } from './data-transformers.js';
 import { generateArticleHTML } from './article-template.js';
-
+import { getAnalysisEnrichment } from './generate-news-enhanced/helpers.js';
 import type { Language } from './types/language.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -285,6 +285,7 @@ async function generateForDate(targetDate: Date, type: string, client: MCPClient
   console.log(`    🌐 Generating ${missingLangs.length} missing language versions...`);
 
   let generated = 0;
+  const enrichment = await getAnalysisEnrichment();
   for (const lang of missingLangs) {
     try {
       const content = generateArticleContent(data, dataKey, lang);
@@ -320,6 +321,7 @@ async function generateForDate(targetDate: Date, type: string, client: MCPClient
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
+        ...(enrichment ?? {}),
       });
 
       if (dryRun) {
