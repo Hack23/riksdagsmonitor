@@ -125,18 +125,21 @@ Likelihood Scale: 1=Rare       2=Unlikely 3=Possible 4=Likely 5=Almost Certain
 
 **Composite Risk Score:** `[REQUIRED: max of the above scores]`
 
-```mermaid
-quadrantChart
-    title Impact Analysis Matrix
-    x-axis Low Likelihood --> High Likelihood
-    y-axis Low Impact --> High Impact
-    quadrant-1 Monitor Closely
-    quadrant-2 Immediate Action
-    quadrant-3 Low Priority
-    quadrant-4 Watch
-    "[Event Name]": [0.X, 0.X]
-```
-> *Replace `[Event Name]` and coordinates `[0.X, 0.X]` with actual values (scale: 0.0–1.0 mapped from 1–5).*
+**Impact Analysis Matrix (Likelihood × Impact)**
+
+| Likelihood \ Impact | 1 – Low Impact | 2 – Minor Impact | 3 – Moderate Impact | 4 – Major Impact | 5 – Severe Impact |
+|----------------------|----------------|-------------------|----------------------|-------------------|--------------------|
+| 1 – Rare             | `[ ]`          | `[ ]`             | `[ ]`                | `[ ]`             | `[ ]`              |
+| 2 – Unlikely         | `[ ]`          | `[ ]`             | `[ ]`                | `[ ]`             | `[ ]`              |
+| 3 – Possible         | `[ ]`          | `[ ]`             | `[ ]`                | `[ ]`             | `[ ]`              |
+| 4 – Likely           | `[ ]`          | `[ ]`             | `[ ]`                | `[ ]`             | `[ ]`              |
+| 5 – Almost Certain   | `[ ]`          | `[ ]`             | `[ ]`                | `[ ]`             | `[ ]`              |
+
+> Mark the single cell that best represents the event’s **Likelihood × Impact** combination.
+
+| Event Name     | Likelihood (1–5) | Impact (1–5) | Quadrant Label (for example "Immediate Action", "Monitor Closely", "Low Priority", "Watch") |
+|----------------|------------------|--------------|-----------------------------------------------------------------------------------------------------|
+| `[Event Name]` | `[L]`            | `[I]`        | `[QUADRANT LABEL]`                                                                                  |
 
 ---
 

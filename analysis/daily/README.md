@@ -77,8 +77,8 @@ Both naming schemes are intentional and complementary.
 
 | File | Format | Purpose | Template |
 |------|--------|---------|----------|
-| `realtime-{HHMM}-classification.md` | Markdown | Point-in-time event classifications | `political-classification.md` |
-| `realtime-{HHMM}-risk-delta.md` | Markdown | Risk score changes since previous realtime run | `risk-assessment.md` delta format |
+| `realtime-HHMM-classification.md` | Markdown | Point-in-time event classifications | `political-classification.md` |
+| `realtime-HHMM-risk-delta.md` | Markdown | Risk score changes since previous realtime run | `risk-assessment.md` delta format |
 
 ---
 

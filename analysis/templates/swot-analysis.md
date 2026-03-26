@@ -157,19 +157,16 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact.
 
 ---
 
-## 📊 SWOT Quadrant Visualisation
+## 📊 SWOT Quadrant Mapping (Renderer-Safe)
 
-```mermaid
-quadrantChart
-    title Political Landscape SWOT — [Analysis Scope]
-    x-axis Internal --> External
-    y-axis Negative --> Positive
-    quadrant-1 Opportunities
-    quadrant-2 Strengths
-    quadrant-3 Weaknesses
-    quadrant-4 Threats
-```
-> *Add entries using `"Label": [x, y]` notation where x=0.0–1.0 (internal→external) and y=0.0–1.0 (negative→positive).*
+Use the matrix below to map each SWOT item by whether it is **internal vs. external** and **negative vs. positive** in its effect on the political actor or domain.
+
+|                              | Internal (Actor / Organisation)         | External (Environment / System)       |
+|------------------------------|-----------------------------------------|---------------------------------------|
+| **Positive impact**          | **Strengths** — internal advantages     | **Opportunities** — external enablers |
+| **Negative impact**          | **Weaknesses** — internal limitations   | **Threats** — external risks          |
+
+> For each item (S/W/O/T), briefly note **why** it is internal/external and negative/positive, and reference supporting evidence (for example `dok_id`) in the tables above.
 
 ---
 

@@ -101,62 +101,58 @@ graph TD
 
 Sweden's 13 parliamentary domain codes, aligned with Riksdag committee structure:
 
-```mermaid
-mindmap
-    root((Swedish Policy<br/>Domains))
-        ECO[Economics & Finance<br/>FiU oversight]
-            Budget process
-            Taxation
-            Monetary policy
-        DEF[Defence & Security<br/>FöU oversight]
-            Military capability
-            NATO commitments
-            Civil defence
-        JUS[Justice & Law<br/>JuU oversight]
-            Criminal law
-            Courts
-            Police reform
-        SOC[Social Policy<br/>SoU oversight]
-            Welfare benefits
-            Pension system
-            Disability rights
-        HEA[Health<br/>SoU/HEaU]
-            Healthcare funding
-            Public health
-            Pharmaceuticals
-        EDU[Education<br/>UbU oversight]
-            School reform
-            University funding
-            Research policy
-        ENV[Environment<br/>MJU oversight]
-            Climate targets
-            Biodiversity
-            Water quality
-        AGR[Agriculture<br/>MJU/NäU]
-            Farm subsidies
-            Food security
-            Fishing rights
-        INF[Infrastructure<br/>TU oversight]
-            Transport
-            Housing
-            Digital infrastructure
-        ENE[Energy<br/>NäU oversight]
-            Nuclear policy
-            Renewable targets
-            Grid capacity
-        FOR[Foreign Affairs<br/>UU oversight]
-            EU relations
-            Bilateral treaties
-            NATO coordination
-        MIG[Migration<br/>SfU oversight]
-            Asylum policy
-            Integration
-            Border control
-        CON[Constitution<br/>KU oversight]
-            Electoral law
-            Government formation
-            Parliamentary procedure
-```
+- **ECO – Economics & Finance** (FiU oversight)
+  - Budget process
+  - Taxation
+  - Monetary policy
+- **DEF – Defence & Security** (FöU oversight)
+  - Military capability
+  - NATO commitments
+  - Civil defence
+- **JUS – Justice & Law** (JuU oversight)
+  - Criminal law
+  - Courts
+  - Police reform
+- **SOC – Social Policy** (SoU oversight)
+  - Welfare benefits
+  - Pension system
+  - Disability rights
+- **HEA – Health** (SoU/HEaU oversight)
+  - Healthcare funding
+  - Public health
+  - Pharmaceuticals
+- **EDU – Education** (UbU oversight)
+  - School reform
+  - University funding
+  - Research policy
+- **ENV – Environment** (MJU oversight)
+  - Climate targets
+  - Biodiversity
+  - Water quality
+- **AGR – Agriculture** (MJU/NäU oversight)
+  - Farm subsidies
+  - Food security
+  - Fishing rights
+- **INF – Infrastructure** (TU oversight)
+  - Transport
+  - Housing
+  - Digital infrastructure
+- **ENE – Energy** (NäU oversight)
+  - Nuclear policy
+  - Renewable targets
+  - Grid capacity
+- **FOR – Foreign Affairs** (UU oversight)
+  - EU relations
+  - Bilateral treaties
+  - NATO coordination
+- **MIG – Migration** (SfU oversight)
+  - Asylum policy
+  - Integration
+  - Border control
+- **CON – Constitution** (KU oversight)
+  - Electoral law
+  - Government formation
+  - Parliamentary procedure
 
 ### Domain Assignment Rules
 
