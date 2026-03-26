@@ -70,3 +70,7 @@ current-*.png
 
 # Workflow lock files (runtime artifacts, not committed)
 news/metadata/locks/*.lock/
+
+# Generated analysis output (runtime artifacts from pre-article-analysis pipeline)
+analysis/daily/20*/
+analysis/weekly/20*/
