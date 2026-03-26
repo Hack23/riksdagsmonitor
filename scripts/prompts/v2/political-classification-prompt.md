@@ -106,7 +106,7 @@ Produce a structured JSON classification:
   "politicalCapitalImpact": "notable",
   "legislativeImpact": "legislative",
   "overallClassification": "high",
-  "classificationScore": 72,
+  "classificationScore": 68,
   "rationale": [
     "Economic Impact: TRANSFORMATIVE — Document is a government budget proposition from FiU with explicit references to statsbudget and BNP targets",
     "Governance Impact: SYSTEMIC — FiU committee drives cross-government fiscal framework affecting all ministries",

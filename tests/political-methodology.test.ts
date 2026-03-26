@@ -608,6 +608,39 @@ describe('Political Risk Assessment — assessPoliticalRisk', () => {
       expect(unstableCoalition!.riskScore).toBeGreaterThanOrEqual(stableCoalition!.riskScore);
     });
 
+    it('normalizes percent-style coalition defectionProbability to match fractional input', () => {
+      const doc = makeDoc({ doktyp: 'prop', titel: 'Koalition defektionsrisk' });
+
+      // Fractional defection probability (e.g. 0.35)
+      const fractionalCIA: CIAContext = {
+        ...makeUnstableCIA(),
+        coalitionStability: { ...makeUnstableCIA().coalitionStability!, defectionProbability: 0.35 },
+      };
+
+      // Percent-style defection probability (e.g. 35)
+      const percentCIA: CIAContext = {
+        ...makeUnstableCIA(),
+        coalitionStability: { ...makeUnstableCIA().coalitionStability!, defectionProbability: 35 },
+      };
+
+      const fractionalProfile = assessPoliticalRisk(doc, fractionalCIA);
+      const percentProfile = assessPoliticalRisk(doc, percentCIA);
+
+      const fractionalCoalition = fractionalProfile.riskAssessments.find(
+        a => a.riskCategory === 'coalition-stability',
+      );
+      const percentCoalition = percentProfile.riskAssessments.find(
+        a => a.riskCategory === 'coalition-stability',
+      );
+
+      expect(fractionalCoalition).toBeDefined();
+      expect(percentCoalition).toBeDefined();
+      expect(percentCoalition!.riskScore).toBe(fractionalCoalition!.riskScore);
+      expect(percentCoalition!.escalatingFactors).toEqual(
+        fractionalCoalition!.escalatingFactors,
+      );
+    });
+
     it('Foreign Affairs Committee (UU) document triggers international-standing risk', () => {
       const doc = makeDoc({ organ: 'UU', doktyp: 'bet', titel: 'EU NATO utrikespolitik handelsavtal' });
       const profile = assessPoliticalRisk(doc);

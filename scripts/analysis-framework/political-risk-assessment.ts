@@ -15,7 +15,9 @@
  * - International Standing — Sweden's international position risk
  *
  * ## Scoring Formula
- * Risk Score = likelihood_probability × impact_weight × 10, clamped to 0–100
+ * Risk Score = likelihood_probability × impact_weight × 10
+ * With current scales (almost-certain=0.90, transformative=10), the
+ * practical maximum is 90.  Values are clamped to [0, 100] for safety.
  *
  * The engine is **pure** — deterministic for the same input, no side effects.
  *
@@ -95,6 +97,14 @@ const INTERNATIONAL_RISK_KEYWORDS: readonly string[] = [
 // Likelihood assessment helpers
 // ---------------------------------------------------------------------------
 
+/**
+ * Normalize defection probability to 0–1 range.
+ * Accepts both fractional (0.35) and percent-style (35) values.
+ */
+function normalizeDefectionProbability(raw: number): number {
+  return raw > 1 ? raw / 100 : raw;
+}
+
 /** Committees with elevated social cohesion risk relevance */
 const SOCIAL_COHESION_COMMITTEES = new Set(['SoU', 'SfU', 'AU']);
 
@@ -167,11 +177,15 @@ function assessPolicyImplementationLikelihood(doc: RawDocument, cia: CIAContext 
 
   // Committee reports are high-signal implementation inputs by default
   if (docType === 'bet') return keywordMatches >= 1 ? 'almost-certain' : 'likely';
-  // Government propositions — high likelihood of implementation risk assessment needed
+  // Government propositions — assess implementation risk based on obstruction level
   if (docType === 'prop') {
     const motionDenialRate = cia?.overallMotionDenialRate ?? 50;
-    // When most opposition motions are denied, government policy faces less obstruction
-    if (motionDenialRate > 90) return 'likely';
+    // High denial rate means opposition is being blocked → government faces less obstruction
+    // → lower risk of policy failure. Low denial rate means opposition motions succeed
+    // more often → higher risk that government policies stall.
+    if (motionDenialRate > 90) return 'rare';
+    if (motionDenialRate < 50) return 'likely';
+    // Denial rate in [50, 90] — moderate obstruction level → possible risk
     return 'possible';
   }
   // Interpellations signal policy criticism
@@ -337,7 +351,9 @@ function extractEvidence(doc: RawDocument, category: PoliticalRiskCategory, cia:
         evidence.push(`CIA majority margin: ${cia.coalitionStability.majorityMargin}`);
       }
       if (cia?.coalitionStability?.defectionProbability !== undefined) {
-        evidence.push(`CIA defection probability: ${cia.coalitionStability.defectionProbability}`);
+        const rawDP = cia.coalitionStability.defectionProbability;
+        const normDP = normalizeDefectionProbability(rawDP);
+        evidence.push(`CIA defection probability: ${normDP} (raw=${rawDP})`);
       }
       break;
     case 'democratic-process':
@@ -355,7 +371,9 @@ function extractEvidence(doc: RawDocument, category: PoliticalRiskCategory, cia:
   }
 
   if (category !== 'coalition-stability' && cia?.coalitionStability?.stabilityScore !== undefined) {
-    evidence.push(`CIA coalition context: stability=${cia.coalitionStability.stabilityScore}, majorityMargin=${cia.coalitionStability.majorityMargin}, defectionProbability=${cia.coalitionStability.defectionProbability}`);
+    const rawDP = cia.coalitionStability.defectionProbability;
+    const normDP = rawDP !== undefined ? normalizeDefectionProbability(rawDP) : undefined;
+    evidence.push(`CIA coalition context: stability=${cia.coalitionStability.stabilityScore}, majorityMargin=${cia.coalitionStability.majorityMargin}, defectionProbability=${normDP ?? 'N/A'}`);
   }
 
   return evidence;
@@ -421,7 +439,7 @@ function getEscalatingFactors(category: PoliticalRiskCategory, cia: CIAContext |
         const rawDefectionProbability = cia?.coalitionStability?.defectionProbability;
         const normalizedDefectionProbability =
           rawDefectionProbability !== undefined
-            ? (rawDefectionProbability > 1 ? rawDefectionProbability / 100 : rawDefectionProbability)
+            ? normalizeDefectionProbability(rawDefectionProbability)
             : undefined;
 
         if (normalizedDefectionProbability !== undefined && normalizedDefectionProbability > 0.2) {
@@ -478,10 +496,11 @@ function assessConfidence(doc: RawDocument, cia: CIAContext | undefined): 'high'
 // ---------------------------------------------------------------------------
 
 /**
- * Compute a risk score (0–100) from likelihood and impact.
+ * Compute a risk score from likelihood and impact.
  *
  * Formula: likelihood_probability × impact_weight × 10
- * Clamped to [0, 100].
+ * With current scales (almost-certain=0.90, transformative=10), the
+ * practical maximum is 90.  Values are clamped to [0, 100] for safety.
  */
 export function computeRiskScore(
   likelihood: LikelihoodLevel,
