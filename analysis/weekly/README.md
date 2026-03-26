@@ -105,6 +105,9 @@ Weekly artifacts are aggregated into monthly strategic briefs. The monthly aggre
 
 - `analysis/monthly/YYYY-MM/monthly-intelligence-brief.md`
 - `analysis/monthly/YYYY-MM/monthly-swot-consolidated.md`
+- `analysis/monthly/YYYY-MM/monthly-risk-register.md`
+- `analysis/monthly/YYYY-MM/monthly-significance-report.md`
+- `analysis/monthly/YYYY-MM/monthly-threat-landscape.md`
 
 See [analysis/monthly/README.md](../monthly/README.md) for full monthly aggregation documentation.
 

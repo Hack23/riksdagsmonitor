@@ -69,7 +69,7 @@ All monthly files are created by the end-of-month aggregation pipeline (runs on 
 | `monthly-swot-consolidated.md` | Markdown | Full SWOT synthesis for the month; all quadrants with confidence decay applied | All weekly `week-summary-swot.md` files; expired entries removed |
 | `monthly-risk-register.md` | Markdown | Complete risk register for the month; risk trajectories (rising/stable/falling) | All weekly `week-ahead-risk-register.md` files with trend analysis |
 | `monthly-significance-report.md` | Markdown | Top 10 most significant political events of the month; significance score time series | All daily `morning-significance-scores.json` files for the month |
-| `monthly-threat-landscape.md` | Markdown | Consolidated STRIDE-categorised threat inventory for the month | All weekly `evening-threat-snapshot.md` files |
+| `monthly-threat-landscape.md` | Markdown | Consolidated STRIDE-categorised threat inventory for the month | All daily `analysis/daily/YYYY-MM-DD/evening-threat-snapshot.md` files for the month |
 
 ---
 
