@@ -30,7 +30,7 @@ import {
   generateWeeklyActivitySection,
 } from './analysis.js';
 import { generateCiaOverviewSection } from '../../data-transformers/content-generators/cia-overview-section.js';
-import { generateDynamicTitle } from '../../generate-news-enhanced/helpers.js';
+import { generateDynamicTitle, getAnalysisEnrichment } from '../../generate-news-enhanced/helpers.js';
 import { buildArticleVisualizationSections } from '../../generate-news-enhanced/generators.js';
 
 export async function generateWeeklyReview(options: GenerationOptions = {}): Promise<GenerationResult> {
@@ -182,6 +182,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
     // ── Generate articles ──────────────────────────────────────────────────
     const slug = `${formatDateForSlug(today)}-weekly-review`;
     const articles: GeneratedArticle[] = [];
+    const enrichment = await getAnalysisEnrichment();
 
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
@@ -219,6 +220,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
         topics: metadata.topics,
         tags: metadata.tags,
         sections: [ciaSection, ...extraSections],
+        ...(enrichment ?? {}),
       });
 
       articles.push({

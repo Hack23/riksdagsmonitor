@@ -38,7 +38,7 @@ import {
 import { generateArticleHTML } from '../article-template.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
-import { generateDynamicTitle } from '../generate-news-enhanced/helpers.js';
+import { generateDynamicTitle, getAnalysisEnrichment } from '../generate-news-enhanced/helpers.js';
 import { buildArticleVisualizationSections } from '../generate-news-enhanced/generators.js';
 
 /**
@@ -189,6 +189,7 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
 
     const slug = `${formatDateForSlug(today)}-month-ahead`;
     const articles: GeneratedArticle[] = [];
+    const enrichment = await getAnalysisEnrichment();
 
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
@@ -240,6 +241,7 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
         topics: metadata.topics,
         tags: metadata.tags,
         sections,
+        ...(enrichment ?? {}),
       });
 
       articles.push({

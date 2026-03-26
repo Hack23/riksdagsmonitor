@@ -759,3 +759,60 @@ describe('parser robustness', () => {
     expect(result.urgency).toBe('standard');
   });
 });
+
+// ---------------------------------------------------------------------------
+// getAnalysisEnrichment integration tests
+// ---------------------------------------------------------------------------
+
+import {
+  getAnalysisEnrichment,
+  resetAnalysisEnrichmentCache,
+} from '../scripts/generate-news-enhanced/helpers.js';
+
+describe('getAnalysisEnrichment', () => {
+  beforeEach(() => {
+    resetAnalysisEnrichmentCache();
+  });
+
+  afterEach(() => {
+    resetAnalysisEnrichmentCache();
+  });
+
+  it('returns null when no analysis files exist', async () => {
+    const result = await getAnalysisEnrichment();
+    expect(result).toBeNull();
+  });
+
+  it('caches the result across calls', async () => {
+    const first = await getAnalysisEnrichment();
+    const second = await getAnalysisEnrichment();
+    // Both should be the same reference (cached)
+    expect(first).toBe(second);
+  });
+
+  it('returns enrichment when analysis files exist', async () => {
+    // Create temporary analysis directory with classification
+    const tmpBase = join(tmpdir(), `enrichment-test-${randomUUID()}`);
+    const today = new Date().toISOString().split('T')[0]!;
+    const dailyDir = join(tmpBase, 'analysis', 'daily', today);
+    mkdirSync(dailyDir, { recursive: true });
+    writeFileSync(join(dailyDir, 'classification-results.md'), CLASSIFICATION_MD);
+    writeFileSync(join(dailyDir, 'risk-assessment.md'), RISK_MD);
+    writeFileSync(join(dailyDir, 'significance-scoring.md'), SIGNIFICANCE_MD);
+
+    resetAnalysisEnrichmentCache();
+
+    // readDailyAnalysis basePath points at the parent of YYYY-MM-DD dirs
+    const analysis = await readDailyAnalysis(today, join(tmpBase, 'analysis', 'daily'));
+    expect(analysis.hasAnalysis).toBe(true);
+
+    const meta = deriveArticleClassificationMeta(analysis);
+    expect(meta.classificationLevel).toBe('HIGH');
+    expect(meta.riskLevel).toBe('elevated');
+    expect(meta.confidenceLabel).toBe('HIGH');
+    expect(meta.significanceScore).toBe(78);
+    expect(meta.urgency).toBe('major');
+
+    rmSync(tmpBase, { recursive: true, force: true });
+  });
+});

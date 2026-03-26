@@ -38,6 +38,7 @@ import {
   writeArticlePair,
   validateArticleQuality,
   installFlushHandlers,
+  getAnalysisEnrichment,
 } from './helpers.js';
 import {
   generateWeekAhead,
@@ -65,6 +66,7 @@ export {
   writeSingleArticle,
   writeArticlePair,
   validateArticleQuality,
+  getAnalysisEnrichment,
   generateWeekAhead,
   generateCommitteeReports,
   generatePropositions,
