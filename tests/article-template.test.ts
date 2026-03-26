@@ -32,6 +32,9 @@ interface MockArticleData {
   keywords?: string[];
   topics?: string[];
   tags?: string[];
+  classificationLevel?: string;
+  riskLevel?: string;
+  confidenceLabel?: string;
 }
 
 describe('Article Template', () => {
@@ -958,6 +961,112 @@ describe('Article Template', () => {
       expect(jsonLdMatch).not.toBeNull();
       // The escaped form of </ul></p> should not appear in JSON-LD articleBody
       expect(jsonLdMatch![1]).not.toContain('&lt;/ul&gt;&lt;/p&gt;');
+    });
+  });
+
+  // ---------------------------------------------------------------------------
+  // Classification badge and risk indicator rendering
+  // ---------------------------------------------------------------------------
+
+  describe('Classification badges and risk indicators', () => {
+    it('renders classification badge in article-meta when classificationLevel is set', () => {
+      const data: MockArticleData = {
+        ...mockArticleData,
+        classificationLevel: 'HIGH',
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).toContain('classification-badge');
+      expect(html).toContain('classification-high');
+      expect(html).toContain('🟠 HIGH');
+    });
+
+    it('renders CRITICAL classification badge with red icon', () => {
+      const data: MockArticleData = {
+        ...mockArticleData,
+        classificationLevel: 'CRITICAL',
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).toContain('classification-critical');
+      expect(html).toContain('🔴 CRITICAL');
+    });
+
+    it('renders LOW classification badge with green icon', () => {
+      const data: MockArticleData = {
+        ...mockArticleData,
+        classificationLevel: 'LOW',
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).toContain('classification-low');
+      expect(html).toContain('🟢 LOW');
+    });
+
+    it('renders MEDIUM classification badge with yellow icon', () => {
+      const data: MockArticleData = {
+        ...mockArticleData,
+        classificationLevel: 'MEDIUM',
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).toContain('classification-medium');
+      expect(html).toContain('🟡 MEDIUM');
+    });
+
+    it('renders risk badge in article-meta when riskLevel is set', () => {
+      const data: MockArticleData = {
+        ...mockArticleData,
+        riskLevel: 'elevated',
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).toContain('risk-badge');
+      expect(html).toContain('risk-elevated');
+      expect(html).toContain('⚠️ ELEVATED RISK');
+    });
+
+    it('renders classification meta tag when classificationLevel is set', () => {
+      const data: MockArticleData = {
+        ...mockArticleData,
+        classificationLevel: 'HIGH',
+        riskLevel: 'elevated',
+        confidenceLabel: 'HIGH',
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).toContain('<meta name="article:classification" content="HIGH">');
+      expect(html).toContain('<meta name="article:risk-level" content="elevated">');
+      expect(html).toContain('<meta name="article:confidence" content="HIGH">');
+    });
+
+    it('omits classification meta tags when classificationLevel is not set', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).not.toContain('article:classification');
+      expect(html).not.toContain('classification-badge');
+    });
+
+    it('renders risk badge with aria-label for accessibility', () => {
+      const data: MockArticleData = {
+        ...mockArticleData,
+        riskLevel: 'high',
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).toContain('aria-label="Risk: HIGH"');
+    });
+
+    it('renders classification badge with aria-label for accessibility', () => {
+      const data: MockArticleData = {
+        ...mockArticleData,
+        classificationLevel: 'CRITICAL',
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).toContain('aria-label="Classification: CRITICAL"');
+    });
+
+    it('does not render risk badge without riskLevel', () => {
+      const data: MockArticleData = {
+        ...mockArticleData,
+        classificationLevel: 'HIGH',
+        // riskLevel intentionally omitted
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).toContain('classification-badge');
+      expect(html).not.toContain('risk-badge');
     });
   });
 });

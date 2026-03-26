@@ -30,6 +30,17 @@ import {
 } from './helpers.js';
 
 /**
+ * Map a political intelligence classification level to its corresponding icon emoji.
+ * Returns the appropriate colour-coded circle for use in classification badges.
+ */
+function getClassificationIcon(level: string): string {
+  if (level === 'CRITICAL') return '🔴';
+  if (level === 'HIGH') return '🟠';
+  if (level === 'LOW') return '🟢';
+  return '🟡'; // MEDIUM
+}
+
+/**
  * Generate complete article HTML document.
  *
  * @param data - Article data including title, subtitle, content, events, watchPoints, etc.
@@ -55,6 +66,9 @@ export function generateArticleHTML(data: ArticleData): string {
     sections = [],
     significance,
     urgency,
+    classificationLevel,
+    riskLevel,
+    confidenceLabel,
   } = data;
 
   // Use proper OG locale for the language
@@ -133,7 +147,11 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   ${typeof significance === 'number' ? `
   <!-- Political Significance -->
   <meta name="article:significance" content="${significance}">${urgency ? `
-  <meta name="article:urgency" content="${urgency}">` : ''}` : ''}
+  <meta name="article:urgency" content="${urgency}">` : ''}` : ''}${classificationLevel ? `
+  <!-- Political Intelligence Classification -->
+  <meta name="article:classification" content="${classificationLevel}">${riskLevel ? `
+  <meta name="article:risk-level" content="${riskLevel}">` : ''}${confidenceLabel ? `
+  <meta name="article:confidence" content="${confidenceLabel}">` : ''}` : ''}
   
   <!-- Hreflang for language alternatives -->
 ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}
@@ -328,7 +346,11 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
       <span class="separator">•</span>
       <span class="type-badge">${typeLabel}</span>
       <span class="separator">•</span>
-      <span>${readTime}</span>
+      <span>${readTime}</span>${classificationLevel ? `
+      <span class="separator">•</span>
+      <span class="classification-badge classification-${classificationLevel.toLowerCase()}" aria-label="Classification: ${classificationLevel}">${getClassificationIcon(classificationLevel)} ${classificationLevel}</span>` : ''}${riskLevel ? `
+      <span class="separator">•</span>
+      <span class="risk-badge risk-${riskLevel}" aria-label="Risk: ${riskLevel.toUpperCase()}">⚠️ ${riskLevel.toUpperCase()} RISK</span>` : ''}
     </div>
   </header>
 
