@@ -511,6 +511,40 @@ describe('flattenDocuments', () => {
     const flat = flattenDocuments(data);
     expect(flat).toHaveLength(1);
   });
+
+  it('deduplicates by title when titel is absent', () => {
+    const sharedFallback = { dok_id: undefined, titel: undefined, title: 'Shared fallback title' } as unknown as Partial<RawDocument>;
+    const doc1 = makeRawDoc(sharedFallback);
+    const doc2 = makeRawDoc(sharedFallback);
+    const data: DownloadedData = {
+      propositions: [doc1, doc2],
+      motions: [],
+      committeeReports: [],
+      votes: [],
+      speeches: [],
+      questions: [],
+      interpellations: [],
+    };
+    const flat = flattenDocuments(data);
+    expect(flat).toHaveLength(1);
+  });
+
+  it('uses dok_url as fallback identifier when dok_id is absent', () => {
+    const sharedFallback = { dok_id: undefined, titel: undefined, dok_url: 'https://data.riksdagen.se/dokument/ABC123' } as unknown as Partial<RawDocument>;
+    const doc1 = makeRawDoc(sharedFallback);
+    const doc2 = makeRawDoc(sharedFallback);
+    const data: DownloadedData = {
+      propositions: [doc1],
+      motions: [doc2],
+      committeeReports: [],
+      votes: [],
+      speeches: [],
+      questions: [],
+      interpellations: [],
+    };
+    const flat = flattenDocuments(data);
+    expect(flat).toHaveLength(1);
+  });
 });
 
 // ---------------------------------------------------------------------------

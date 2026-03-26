@@ -32,6 +32,7 @@ import { analyzeDocuments } from './analysis-framework/index.js';
 import { calculateCoalitionRiskIndex, detectAnomalousPatterns } from './data-transformers/risk-analysis.js';
 import type { RawDocument, CIAContext } from './data-transformers/types.js';
 import { loadCIAContext } from './news-types/weekly-review/index.js';
+import { normalizedCIAContext } from './news-types/weekly-review/data-loader.js';
 
 import {
   downloadAllDocuments,
@@ -231,9 +232,10 @@ function buildSignificanceEntries(results: ReturnType<typeof analyzeDocuments>['
 // ---------------------------------------------------------------------------
 
 function buildRiskAssessment(docs: RawDocument[], ciaContext: CIAContext): RiskAssessmentResult {
+  const normalizedContext = normalizedCIAContext(ciaContext);
   // Attempt to derive basic coalition signals from document data
-  const riskIndex = calculateCoalitionRiskIndex(ciaContext);
-  const anomalies = detectAnomalousPatterns(ciaContext);
+  const riskIndex = calculateCoalitionRiskIndex(normalizedContext);
+  const anomalies = detectAnomalousPatterns(normalizedContext);
 
   // Derive implications from document significance
   const highSignificance = docs.filter(d => {

@@ -67,8 +67,8 @@ function normalise(raw: unknown[]): RawDocument[] {
  */
 function currentRm(): string {
   const now = new Date();
-  const year = now.getFullYear();
-  const month = now.getMonth() + 1; // 1-based
+  const year = now.getUTCFullYear();
+  const month = now.getUTCMonth() + 1; // 1-based
   // Swedish parliamentary year runs roughly October–September
   if (month >= 10) {
     return `${year}/${String(year + 1).slice(-2)}`;
@@ -210,7 +210,20 @@ export function flattenDocuments(data: DownloadedData): RawDocument[] {
   const seen = new Set<string>();
   return all.filter(doc => {
     if (!doc) return false;
-    const id = doc.dok_id ?? doc.url ?? doc.titel ?? '';
+    const record = doc as Record<string, unknown>;
+    const idCandidates = [
+      record['dok_id'],
+      record['dokument_id'],
+      record['id'],
+      record['dok_url'],
+      record['url'],
+      record['rel_dok_id'],
+      record['titel'],
+      record['title'],
+    ];
+    const id = idCandidates.find((candidate): candidate is string =>
+      typeof candidate === 'string' && candidate.trim().length > 0,
+    )?.trim() ?? '';
     if (!id || seen.has(id)) return false;
     seen.add(id);
     return true;
