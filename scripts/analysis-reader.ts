@@ -332,7 +332,7 @@ function parseSwotEntries(sectionText: string): AnalysisSwotEntry[] {
   const entries: AnalysisSwotEntry[] = [];
   const blocks = sectionText.split(/\n(?=[-*]|\d+\.)/);
   for (const block of blocks) {
-    const text = block.replace(/^[\s\-*\d.]+/, '').trim();
+    const text = block.replace(/^\s*(?:[-*]|\d+\.)\s+/, '').trim();
     if (!text || text.startsWith('#')) continue;
 
     // Detect confidence: HIGH, MEDIUM, LOW in square brackets or inline
@@ -453,7 +453,11 @@ export function parseThreatAnalysis(markdown: string): ThreatAnalysisResult {
 export function parseStakeholderPerspectives(markdown: string): StakeholderPerspectivesResult {
   const government = extractSection(markdown, '🏛️ Government') || extractSection(markdown, 'Government') || '';
   const opposition = extractSection(markdown, '⚖️ Opposition') || extractSection(markdown, 'Opposition') || '';
-  const citizen = extractSection(markdown, '👥 Citizen') || extractSection(markdown, 'Citizens') || '';
+  const citizen =
+    extractSection(markdown, '👥 Citizen') ||
+    extractSection(markdown, 'Citizen') ||
+    extractSection(markdown, 'Citizens') ||
+    '';
   const economic = extractSection(markdown, '💰 Economic') || extractSection(markdown, 'Economic') || '';
   const international = extractSection(markdown, '🌍 International') || extractSection(markdown, 'International') || '';
   const media = extractSection(markdown, '📰 Media') || extractSection(markdown, 'Media') || '';
