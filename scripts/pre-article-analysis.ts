@@ -82,7 +82,14 @@ export function parseArgs(argv: string[]): {
   const args = argv.slice(2);
   const get = (flag: string): string | null => {
     const idx = args.indexOf(flag);
-    return idx !== -1 && args[idx + 1] ? args[idx + 1]! : null;
+    if (idx === -1) {
+      return null;
+    }
+    const next = args[idx + 1];
+    if (!next || next.startsWith('--')) {
+      throw new Error(`Missing value for ${flag}.`);
+    }
+    return next;
   };
 
   const dateArg = get('--date');
@@ -394,16 +401,20 @@ async function runPreArticleAnalysis(opts: {
   const resolvedRm = rm ?? riksMoteFromDate(date);
 
   const { data, manifest } = await downloadAllDocuments(client, { limit, rm: resolvedRm });
-  const allDocs = flattenDocuments(data).filter((doc: RawDocument) => {
-    // If the document has a datum field, require its date portion to match the requested date.
-    // Documents without a datum are kept to avoid accidentally dropping metadata/auxiliary entries.
+  const flattenedDocs = flattenDocuments(data);
+  const allDocs = flattenedDocs.filter((doc: RawDocument) => {
+    // Only keep documents whose datum matches the requested analysis date (YYYY-MM-DD).
     if (doc.datum && typeof doc.datum === 'string') {
       return doc.datum.slice(0, 10) === date;
     }
-    return true;
+    return false;
   });
+  const excludedDocsCount = flattenedDocs.length - allDocs.length;
 
-  console.log(`   Downloaded ${allDocs.length} unique documents from ${manifest.dataSources.length} MCP tools`);
+  console.log(`   Downloaded ${flattenedDocs.length} unique documents from ${manifest.dataSources.length} MCP tools`);
+  console.log(
+    `   Selected ${allDocs.length} documents for analysis for ${date} (${excludedDocsCount} with missing or non-matching dates excluded)`,
+  );
   console.log(`   Duration: ${manifest.durationMs}ms`);
   console.log(`   Riksmöte: ${resolvedRm}`);
 

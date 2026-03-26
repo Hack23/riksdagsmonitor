@@ -662,4 +662,20 @@ describe('parseArgs', () => {
     const result = parseArgs(['node', 'script', '--rm', '2025/26']);
     expect(result.rm).toBe('2025/26');
   });
+
+  it('throws when --date flag is present without a value', () => {
+    expect(() => parseArgs(['node', 'script', '--date'])).toThrow('Missing value for --date');
+  });
+
+  it('throws when --date is followed by another flag instead of a value', () => {
+    expect(() => parseArgs(['node', 'script', '--date', '--limit', '10'])).toThrow('Missing value for --date');
+  });
+
+  it('throws when --limit flag is present without a value', () => {
+    expect(() => parseArgs(['node', 'script', '--limit'])).toThrow('Missing value for --limit');
+  });
+
+  it('throws when --rm flag is present without a value', () => {
+    expect(() => parseArgs(['node', 'script', '--rm'])).toThrow('Missing value for --rm');
+  });
 });

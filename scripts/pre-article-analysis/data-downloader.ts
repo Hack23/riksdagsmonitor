@@ -113,68 +113,77 @@ export async function downloadAllDocuments(
     interpellations: [],
   };
 
-  // ── Propositions ──────────────────────────────────────────────────────────
-  try {
-    const raw = await client.fetchPropositions(limit, rm);
-    data.propositions = normalise(raw);
-    dataSources.push('get_propositioner');
-  } catch (err) {
-    console.warn('[pre-analysis] fetchPropositions failed:', err instanceof Error ? err.message : String(err));
-  }
+  // Run independent MCP fetches in parallel to reduce total latency while
+  // still collecting partial results on failure.
+  const fetchTasks = [
+    {
+      name: 'fetchPropositions',
+      source: 'get_propositioner',
+      fetch: () => client.fetchPropositions(limit, rm),
+      assign: (raw: RawDocument[]) => { data.propositions = raw; },
+    },
+    {
+      name: 'fetchMotions',
+      source: 'get_motioner',
+      fetch: () => client.fetchMotions(limit, rm),
+      assign: (raw: RawDocument[]) => { data.motions = raw; },
+    },
+    {
+      name: 'fetchCommitteeReports',
+      source: 'get_betankanden',
+      fetch: () => client.fetchCommitteeReports(limit, rm),
+      assign: (raw: RawDocument[]) => { data.committeeReports = raw; },
+    },
+    {
+      name: 'fetchVotingRecords',
+      source: 'search_voteringar',
+      fetch: () => client.fetchVotingRecords({ limit, rm }),
+      assign: (raw: RawDocument[]) => { data.votes = raw; },
+    },
+    {
+      name: 'searchSpeeches',
+      source: 'search_anforanden',
+      fetch: () => client.searchSpeeches({ limit, rm }),
+      assign: (raw: RawDocument[]) => { data.speeches = raw; },
+    },
+    {
+      name: 'fetchWrittenQuestions',
+      source: 'get_fragor',
+      fetch: () => client.fetchWrittenQuestions({ limit, rm }),
+      assign: (raw: RawDocument[]) => { data.questions = raw; },
+    },
+    {
+      name: 'fetchInterpellations',
+      source: 'get_interpellationer',
+      fetch: () => client.fetchInterpellations({ limit, rm }),
+      assign: (raw: RawDocument[]) => { data.interpellations = raw; },
+    },
+  ] as const;
 
-  // ── Motions ───────────────────────────────────────────────────────────────
-  try {
-    const raw = await client.fetchMotions(limit, rm);
-    data.motions = normalise(raw);
-    dataSources.push('get_motioner');
-  } catch (err) {
-    console.warn('[pre-analysis] fetchMotions failed:', err instanceof Error ? err.message : String(err));
-  }
+  const fetchResults = await Promise.allSettled(
+    fetchTasks.map(task => task.fetch()),
+  );
 
-  // ── Committee reports ─────────────────────────────────────────────────────
-  try {
-    const raw = await client.fetchCommitteeReports(limit, rm);
-    data.committeeReports = normalise(raw);
-    dataSources.push('get_betankanden');
-  } catch (err) {
-    console.warn('[pre-analysis] fetchCommitteeReports failed:', err instanceof Error ? err.message : String(err));
-  }
+  fetchResults.forEach((result, index) => {
+    const task = fetchTasks[index]!;
 
-  // ── Votes ─────────────────────────────────────────────────────────────────
-  try {
-    const raw = await client.fetchVotingRecords({ limit, rm });
-    data.votes = normalise(raw);
-    dataSources.push('search_voteringar');
-  } catch (err) {
-    console.warn('[pre-analysis] fetchVotingRecords failed:', err instanceof Error ? err.message : String(err));
-  }
-
-  // ── Speeches ──────────────────────────────────────────────────────────────
-  try {
-    const raw = await client.searchSpeeches({ limit, rm });
-    data.speeches = normalise(raw);
-    dataSources.push('search_anforanden');
-  } catch (err) {
-    console.warn('[pre-analysis] searchSpeeches failed:', err instanceof Error ? err.message : String(err));
-  }
-
-  // ── Written questions ─────────────────────────────────────────────────────
-  try {
-    const raw = await client.fetchWrittenQuestions({ limit, rm });
-    data.questions = normalise(raw);
-    dataSources.push('get_fragor');
-  } catch (err) {
-    console.warn('[pre-analysis] fetchWrittenQuestions failed:', err instanceof Error ? err.message : String(err));
-  }
-
-  // ── Interpellations ───────────────────────────────────────────────────────
-  try {
-    const raw = await client.fetchInterpellations({ limit, rm });
-    data.interpellations = normalise(raw);
-    dataSources.push('get_interpellationer');
-  } catch (err) {
-    console.warn('[pre-analysis] fetchInterpellations failed:', err instanceof Error ? err.message : String(err));
-  }
+    if (result.status === 'fulfilled') {
+      try {
+        task.assign(normalise(result.value as unknown[]));
+        dataSources.push(task.source);
+      } catch (err) {
+        console.warn(
+          `[pre-analysis] ${task.name} post-processing failed:`,
+          err instanceof Error ? err.message : String(err),
+        );
+      }
+    } else {
+      console.warn(
+        `[pre-analysis] ${task.name} failed:`,
+        result.reason instanceof Error ? result.reason.message : String(result.reason),
+      );
+    }
+  });
 
   const docCounts: Record<string, number> = {
     propositions: data.propositions.length,
