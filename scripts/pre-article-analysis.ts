@@ -395,10 +395,10 @@ async function runPreArticleAnalysis(opts: {
 
   const { data, manifest } = await downloadAllDocuments(client, { limit, rm: resolvedRm });
   const allDocs = flattenDocuments(data).filter((doc: RawDocument) => {
-    // If the document has a datum field, require it to match the requested date (YYYY-MM-DD prefix).
+    // If the document has a datum field, require its date portion to match the requested date.
     // Documents without a datum are kept to avoid accidentally dropping metadata/auxiliary entries.
     if (doc.datum && typeof doc.datum === 'string') {
-      return doc.datum.startsWith(date);
+      return doc.datum.slice(0, 10) === date;
     }
     return true;
   });
