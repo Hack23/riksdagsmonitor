@@ -1,8 +1,12 @@
 /**
  * @module pre-article-analysis/data-downloader
  * @description Downloads all relevant parliamentary documents from riksdag-regering-mcp
- * for a given date. Returns typed `RawDocument[]` collections plus a manifest of
- * which MCP tools were called and how many documents each returned.
+ * for the current Swedish parliamentary session (riksmöte). Returns typed `RawDocument[]`
+ * collections plus a manifest of which MCP tools were called and how many documents each returned.
+ *
+ * Note: The download methods fetch session-wide latest documents (bounded by `limit`
+ * and `rm`). Date-specific filtering should be applied by the caller after download
+ * (e.g., filtering by the `datum` field on each `RawDocument`).
  *
  * This module is intentionally side-effect-free with respect to the filesystem;
  * callers are responsible for writing any output.

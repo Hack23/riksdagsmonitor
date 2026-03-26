@@ -29,6 +29,8 @@ import {
   flattenDocuments,
 } from '../scripts/pre-article-analysis/data-downloader.js';
 
+import { parseArgs } from '../scripts/pre-article-analysis.js';
+
 import type {
   SerializationContext,
   SignificanceEntry,
@@ -576,5 +578,71 @@ describe('synthesis confidence labels', () => {
     };
     const md = serializeSynthesisSummary(CTX, synthesis);
     expect(md).toContain('LOW');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// parseArgs — CLI validation
+// ---------------------------------------------------------------------------
+
+describe('parseArgs', () => {
+  it('accepts a valid YYYY-MM-DD date', () => {
+    const result = parseArgs(['node', 'script', '--date', '2026-03-26']);
+    expect(result.date).toBe('2026-03-26');
+  });
+
+  it('resolves "today" to a valid ISO date', () => {
+    const result = parseArgs(['node', 'script', '--date', 'today']);
+    expect(result.date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  });
+
+  it('defaults date to today when --date is omitted', () => {
+    const result = parseArgs(['node', 'script']);
+    expect(result.date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  });
+
+  it('throws on an invalid --date value', () => {
+    expect(() => parseArgs(['node', 'script', '--date', 'not-a-date'])).toThrow('Invalid --date');
+  });
+
+  it('throws on a malformed date like 2026-02-30', () => {
+    expect(() => parseArgs(['node', 'script', '--date', '2026-02-30'])).toThrow('Invalid --date');
+  });
+
+  it('accepts a valid --limit', () => {
+    const result = parseArgs(['node', 'script', '--limit', '50']);
+    expect(result.limit).toBe(50);
+  });
+
+  it('defaults limit to 20 when --limit is omitted', () => {
+    const result = parseArgs(['node', 'script']);
+    expect(result.limit).toBe(20);
+  });
+
+  it('throws on a non-numeric --limit', () => {
+    expect(() => parseArgs(['node', 'script', '--limit', 'abc'])).toThrow('Invalid --limit');
+  });
+
+  it('throws on a negative --limit', () => {
+    expect(() => parseArgs(['node', 'script', '--limit', '-5'])).toThrow('Invalid --limit');
+  });
+
+  it('throws on --limit of zero', () => {
+    expect(() => parseArgs(['node', 'script', '--limit', '0'])).toThrow('Invalid --limit');
+  });
+
+  it('accepts --aggregate weekly with a valid week label', () => {
+    const result = parseArgs(['node', 'script', '--aggregate', 'weekly', '--date', '2026-W13']);
+    expect(result.aggregate).toBe(true);
+    expect(result.weekLabel).toBe('2026-W13');
+  });
+
+  it('throws on an invalid weekly --date label', () => {
+    expect(() => parseArgs(['node', 'script', '--aggregate', 'weekly', '--date', 'bad-week'])).toThrow('Invalid weekly --date');
+  });
+
+  it('accepts --rm override', () => {
+    const result = parseArgs(['node', 'script', '--rm', '2025/26']);
+    expect(result.rm).toBe('2025/26');
   });
 });

@@ -72,7 +72,7 @@ const ANALYSIS_DIR = path.join(REPO_ROOT, 'analysis');
 // CLI helpers
 // ---------------------------------------------------------------------------
 
-function parseArgs(argv: string[]): {
+export function parseArgs(argv: string[]): {
   date: string;
   aggregate: boolean;
   limit: number;
@@ -394,7 +394,14 @@ async function runPreArticleAnalysis(opts: {
   const resolvedRm = rm ?? riksMoteFromDate(date);
 
   const { data, manifest } = await downloadAllDocuments(client, { limit, rm: resolvedRm });
-  const allDocs = flattenDocuments(data);
+  const allDocs = flattenDocuments(data).filter((doc: RawDocument) => {
+    // If the document has a datum field, require it to match the requested date (YYYY-MM-DD prefix).
+    // Documents without a datum are kept to avoid accidentally dropping metadata/auxiliary entries.
+    if (doc.datum && typeof doc.datum === 'string') {
+      return doc.datum.startsWith(date);
+    }
+    return true;
+  });
 
   console.log(`   Downloaded ${allDocs.length} unique documents from ${manifest.dataSources.length} MCP tools`);
   console.log(`   Duration: ${manifest.durationMs}ms`);
