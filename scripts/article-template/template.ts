@@ -12,6 +12,7 @@ import { escapeHtml } from '../html-utils.js';
 import { CONTENT_LABELS } from '../data-transformers.js';
 import type { Language } from '../types/language.js';
 import type { ArticleData, EventGridItem, WatchPoint, TemplateSection } from '../types/article.js';
+import type { ClassificationLevel } from '../analysis-reader.js';
 import { SITE_TAGLINE, OG_LOCALE_MAP, TYPE_LABELS, ALL_LANG_CODES } from './constants.js';
 import { getStyleClass } from './registry.js';
 import { ARTICLE_TYPE_NAMES } from './types.js';
@@ -33,11 +34,13 @@ import {
  * Map a political intelligence classification level to its corresponding icon emoji.
  * Returns the appropriate colour-coded circle for use in classification badges.
  */
-function getClassificationIcon(level: string): string {
-  if (level === 'CRITICAL') return '🔴';
-  if (level === 'HIGH') return '🟠';
-  if (level === 'LOW') return '🟢';
-  return '🟡'; // MEDIUM
+function getClassificationIcon(level: ClassificationLevel): string {
+  switch (level) {
+    case 'CRITICAL': return '🔴';
+    case 'HIGH': return '🟠';
+    case 'LOW': return '🟢';
+    case 'MEDIUM': return '🟡';
+  }
 }
 
 /**

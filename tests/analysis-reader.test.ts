@@ -24,6 +24,7 @@ import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { mkdirSync, writeFileSync, rmSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
+import { randomUUID } from 'node:crypto';
 import {
   parseClassificationResults,
   parseRiskAssessment,
@@ -455,7 +456,7 @@ describe('readDailyAnalysis', () => {
   let tempBase: string;
 
   beforeEach(() => {
-    tempBase = join(tmpdir(), `rdm-test-${Date.now()}`);
+    tempBase = join(tmpdir(), `rdm-test-${randomUUID()}`);
     mkdirSync(join(tempBase, TEST_DATE), { recursive: true });
   });
 
@@ -568,7 +569,7 @@ describe('findLatestAnalysisDate', () => {
   let tempBase: string;
 
   beforeEach(() => {
-    tempBase = join(tmpdir(), `rdm-latest-${Date.now()}`);
+    tempBase = join(tmpdir(), `rdm-latest-${randomUUID()}`);
     mkdirSync(tempBase, { recursive: true });
   });
 
@@ -610,7 +611,7 @@ describe('readLatestAnalysis', () => {
   let tempBase: string;
 
   beforeEach(() => {
-    tempBase = join(tmpdir(), `rdm-rl-${Date.now()}`);
+    tempBase = join(tmpdir(), `rdm-rl-${randomUUID()}`);
     mkdirSync(tempBase, { recursive: true });
   });
 

@@ -102,12 +102,15 @@ export interface SwotAnalysisResult {
   context?: string;
 }
 
+/** Democratic health assessment label */
+export type DemocraticHealthLabel = 'HIGH' | 'MEDIUM' | 'LOW' | 'AT_RISK';
+
 /** Parsed threat analysis from `threat-analysis.md` */
 export interface ThreatAnalysisResult {
   /** Named threat indicators (🎯 tagged items) */
   indicators: string[];
   /** Democratic health assessment (HIGH/MEDIUM/LOW/AT_RISK) */
-  democraticHealth: string;
+  democraticHealth: DemocraticHealthLabel;
   /** Key threat actors */
   actors: string[];
   /** Overall confidence in the threat analysis */
@@ -287,6 +290,18 @@ function toRiskLevel(value: string): RiskLevel {
 }
 
 /**
+ * Normalize a string to a DemocraticHealthLabel.
+ * Returns 'MEDIUM' as default when unrecognized.
+ */
+function toDemocraticHealthLabel(value: string): DemocraticHealthLabel {
+  const upper = value.toUpperCase().trim().replace(/[\s_-]+/g, '_');
+  if (upper === 'HIGH') return 'HIGH';
+  if (upper === 'LOW') return 'LOW';
+  if (upper === 'AT_RISK' || upper === 'ATRISK' || upper === 'AT RISK') return 'AT_RISK';
+  return 'MEDIUM';
+}
+
+/**
  * Normalize a string to a PriorityLevel.
  * Returns 'standard' as default when unrecognized.
  */
@@ -364,9 +379,13 @@ export function parseClassificationResults(markdown: string): ClassificationResu
     ? extractBulletList(domainsSection)
     : extractBulletList(extractSection(markdown, 'Classification') || '');
 
-  // Summary: first non-heading paragraph
-  const summaryMatch = /^(?!#)(.{30,})/m.exec(markdown);
-  const summary = summaryMatch?.[1]?.trim() ?? markdown.split('\n').find(l => l.trim().length > 30)?.trim() ?? '';
+  // Summary: prefer explicit `## Summary` section, fallback to first non-heading paragraph
+  const summarySection = extractSection(markdown, 'Summary');
+  const summary =
+    (summarySection && summarySection.trim()) ||
+    /^(?!#)(.{30,})/m.exec(markdown)?.[1]?.trim() ||
+    markdown.split('\n').find(l => l.trim().length > 30)?.trim() ||
+    '';
 
   return { level, priority, confidence, summary, documentIds, domains: domains.slice(0, 10) };
 }
@@ -416,7 +435,7 @@ export function parseSwotAnalysis(markdown: string): SwotAnalysisResult {
  */
 export function parseThreatAnalysis(markdown: string): ThreatAnalysisResult {
   const indicators = extractIconTagged(markdown, '🎯');
-  const democraticHealth = extractValue(markdown, 'Democratic Health') || extractValue(markdown, 'Health Status') || 'MEDIUM';
+  const democraticHealth = toDemocraticHealthLabel(extractValue(markdown, 'Democratic Health') || extractValue(markdown, 'Health Status') || 'MEDIUM');
   const confidence = toConfidenceLabel(extractValue(markdown, 'Confidence'));
 
   const actorsSection = extractSection(markdown, 'Key Actors') || extractSection(markdown, 'Actors');
