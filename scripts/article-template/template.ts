@@ -155,11 +155,11 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   ${typeof significance === 'number' ? `
   <!-- Political Significance -->
   <meta name="article:significance" content="${significance}">${urgency ? `
-  <meta name="article:urgency" content="${escapeHtml(urgency)}">` : ''}` : ''}${classificationLevel ? `
-  <!-- Political Intelligence Classification -->
-  <meta name="article:classification" content="${escapeHtml(classificationLevel)}">${riskLevel ? `
+  <meta name="article:urgency" content="${escapeHtml(urgency)}">` : ''}` : ''}${classificationLevel || riskLevel || confidenceLabel ? `
+  <!-- Political Intelligence Classification -->` : ''}${classificationLevel ? `
+  <meta name="article:classification" content="${escapeHtml(classificationLevel)}">` : ''}${riskLevel ? `
   <meta name="article:risk-level" content="${escapeHtml(riskLevel)}">` : ''}${confidenceLabel ? `
-  <meta name="article:confidence" content="${escapeHtml(confidenceLabel)}">` : ''}` : ''}
+  <meta name="article:confidence" content="${escapeHtml(confidenceLabel)}">` : ''}
   
   <!-- Hreflang for language alternatives -->
 ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}

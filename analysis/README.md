@@ -29,9 +29,11 @@ The `scripts/analysis-reader.ts` module reads these files and provides a structu
 import { readDailyAnalysis } from '../scripts/analysis-reader.js';
 
 const analysis = await readDailyAnalysis('2026-03-26');
-if (analysis) {
+if (analysis.hasAnalysis) {
   const { classification, riskAssessment, swot, significance } = analysis;
   // Use pre-computed data to enrich article generation
+} else {
+  // Fallback: perform inline analysis using ai-analysis and analysis-framework modules
 }
 ```
 

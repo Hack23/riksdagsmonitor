@@ -1041,6 +1041,18 @@ describe('Article Template', () => {
       expect(html).not.toContain('classification-badge');
     });
 
+    it('renders risk and confidence meta tags without classificationLevel', () => {
+      const data: MockArticleData = {
+        ...mockArticleData,
+        riskLevel: 'high',
+        confidenceLabel: 'LOW',
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).not.toContain('article:classification');
+      expect(html).toContain('<meta name="article:risk-level" content="high">');
+      expect(html).toContain('<meta name="article:confidence" content="LOW">');
+    });
+
     it('renders risk badge with aria-label for accessibility', () => {
       const data: MockArticleData = {
         ...mockArticleData,
