@@ -181,3 +181,36 @@ export { analyzeCitizenPerspective } from './lenses/citizen.js';
 export { analyzeEconomicPerspective } from './lenses/economic.js';
 export { analyzeInternationalPerspective } from './lenses/international.js';
 export { analyzeMediaPerspective } from './lenses/media.js';
+
+// ---------------------------------------------------------------------------
+// Methodology exports (ISMS-inspired political analysis)
+// ---------------------------------------------------------------------------
+
+export type {
+  PoliticalClassification,
+  PublicInterestSensitivity,
+  DemocraticIntegrityImpact,
+  PolicyUrgency,
+  EconomicImpact,
+  GovernanceImpact,
+  PoliticalCapitalImpact,
+  LegislativeImpact,
+  OverallClassification,
+  PoliticalRiskCategory,
+  LikelihoodLevel,
+  RiskImpactLevel,
+  PoliticalRiskAssessment,
+  PoliticalRiskProfile,
+  PridesCategory,
+  ThreatAgent,
+  ThreatSeverity,
+  PoliticalThreatAnalysis,
+  PoliticalThreatProfile,
+  MethodologyAnalysis,
+} from './methodology-types.js';
+
+export { LIKELIHOOD_PROBABILITY, IMPACT_WEIGHT } from './methodology-types.js';
+
+export { classifyPoliticalDocument, classifyPoliticalDocuments } from './political-classification.js';
+export { assessPoliticalRisk, assessSingleRiskCategory, computeRiskScore, deriveRiskPriority } from './political-risk-assessment.js';
+export { analysePoliticalThreats, analyseSinglePridesCategory } from './political-threat-analysis.js';
