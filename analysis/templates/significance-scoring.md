@@ -19,7 +19,7 @@
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-26 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/`. Rename `YYYY-MM-DD-{event-slug}-significance.md`. For batch scoring of multiple events, use the Batch Scoring Table in Section 2. The significance scorer TypeScript implementation is at `scripts/analysis-framework/significance-scorer.ts`. See `scripts/analysis-framework/political-significance.ts` for automated scoring logic.
+> **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/`. Rename `YYYY-MM-DD-{event-slug}-significance.md`. For batch scoring of multiple events, use the Batch Scoring Table in Section 2. The significance scorer TypeScript implementation is at `scripts/analysis-framework/significance-scorer.ts`. See `scripts/analysis-framework/index.ts` and `scripts/analysis-framework/lenses/*` for automated scoring logic.
 
 ---
 
@@ -178,6 +178,6 @@ These examples provide anchor points for consistent scoring across workflows:
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/significance-scoring.md`  
-- **Scorer Implementation:** `scripts/analysis-framework/significance-scorer.ts`, `scripts/analysis-framework/political-significance.ts`  
+- **Scorer Implementation:** `scripts/analysis-framework/significance-scorer.ts`  
 - **Classification:** Public  
 - **Next Review:** 2026-06-26

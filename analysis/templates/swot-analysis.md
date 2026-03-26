@@ -186,6 +186,6 @@ quadrantChart
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/swot-analysis.md`  
-- **Framework Reference:** [SWOT.md](../SWOT.md), [methodologies/political-swot-framework.md](../methodologies/political-swot-framework.md)  
+- **Framework Reference:** [SWOT.md](../../SWOT.md), [methodologies/political-swot-framework.md](../methodologies/political-swot-framework.md)  
 - **Classification:** Public  
 - **Next Review:** 2026-06-26

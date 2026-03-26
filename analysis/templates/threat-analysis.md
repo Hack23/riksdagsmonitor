@@ -165,6 +165,6 @@ radar
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/threat-analysis.md`  
-- **Framework Reference:** [THREAT_MODEL.md](../THREAT_MODEL.md), [FUTURE_THREAT_MODEL.md](../FUTURE_THREAT_MODEL.md)  
+- **Framework Reference:** [THREAT_MODEL.md](../../THREAT_MODEL.md), [FUTURE_THREAT_MODEL.md](../../FUTURE_THREAT_MODEL.md)  
 - **Classification:** Public  
 - **Next Review:** 2026-06-26
