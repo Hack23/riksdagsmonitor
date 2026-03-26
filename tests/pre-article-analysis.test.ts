@@ -27,6 +27,7 @@ import {
 
 import {
   flattenDocuments,
+  downloadAllDocuments,
 } from '../scripts/pre-article-analysis/data-downloader.js';
 
 import { parseArgs } from '../scripts/pre-article-analysis.js';
@@ -652,6 +653,8 @@ describe('parseArgs', () => {
     const result = parseArgs(['node', 'script', '--aggregate', 'weekly', '--date', '2026-W13']);
     expect(result.aggregate).toBe(true);
     expect(result.weekLabel).toBe('2026-W13');
+    // date must always be a YYYY-MM-DD value, even in aggregate mode
+    expect(result.date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
   });
 
   it('throws on an invalid weekly --date label', () => {
@@ -677,5 +680,92 @@ describe('parseArgs', () => {
 
   it('throws when --rm flag is present without a value', () => {
     expect(() => parseArgs(['node', 'script', '--rm'])).toThrow('Missing value for --rm');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// downloadAllDocuments — parallel fetch behaviour
+// ---------------------------------------------------------------------------
+
+describe('downloadAllDocuments', () => {
+  /** Minimal MCPClient stub factory. Each method resolves to `override[name]`
+   *  if provided, or an empty array otherwise. A `reject` key causes that
+   *  method to throw. */
+  function stubClient(overrides: Record<string, unknown[] | Error> = {}): any {
+    const make = (name: string) => {
+      return async () => {
+        const val = overrides[name];
+        if (val instanceof Error) throw val;
+        return val ?? [];
+      };
+    };
+    return {
+      fetchPropositions: make('fetchPropositions'),
+      fetchMotions: make('fetchMotions'),
+      fetchCommitteeReports: make('fetchCommitteeReports'),
+      fetchVotingRecords: make('fetchVotingRecords'),
+      searchSpeeches: make('searchSpeeches'),
+      fetchWrittenQuestions: make('fetchWrittenQuestions'),
+      fetchInterpellations: make('fetchInterpellations'),
+    };
+  }
+
+  it('returns empty collections when all fetches return nothing', async () => {
+    const { data, manifest } = await downloadAllDocuments(stubClient());
+    expect(data.propositions).toHaveLength(0);
+    expect(data.motions).toHaveLength(0);
+    expect(data.committeeReports).toHaveLength(0);
+    expect(data.votes).toHaveLength(0);
+    expect(data.speeches).toHaveLength(0);
+    expect(data.questions).toHaveLength(0);
+    expect(data.interpellations).toHaveLength(0);
+    expect(manifest.dataSources).toHaveLength(7);
+    expect(manifest.durationMs).toBeGreaterThanOrEqual(0);
+  });
+
+  it('populates document counts from successful fetches', async () => {
+    const client = stubClient({
+      fetchPropositions: [{ dok_id: 'p1' }, { dok_id: 'p2' }],
+      fetchMotions: [{ dok_id: 'm1' }],
+    });
+    const { data, manifest } = await downloadAllDocuments(client);
+    expect(data.propositions).toHaveLength(2);
+    expect(data.motions).toHaveLength(1);
+    expect(manifest.docCounts.propositions).toBe(2);
+    expect(manifest.docCounts.motions).toBe(1);
+    expect(manifest.docCounts.interpellations).toBe(0);
+  });
+
+  it('collects partial results when one fetch rejects', async () => {
+    const client = stubClient({
+      fetchPropositions: [{ dok_id: 'p1' }],
+      fetchMotions: new Error('MCP unavailable'),
+    });
+    const { data, manifest } = await downloadAllDocuments(client);
+    // propositions should still be present
+    expect(data.propositions).toHaveLength(1);
+    // motions should be empty (failed)
+    expect(data.motions).toHaveLength(0);
+    // dataSources should not include the failed source
+    expect(manifest.dataSources).not.toContain('get_motioner');
+    expect(manifest.dataSources).toContain('get_propositioner');
+  });
+
+  it('includes all 7 document types in docCounts', async () => {
+    const { manifest } = await downloadAllDocuments(stubClient());
+    const keys = Object.keys(manifest.docCounts);
+    expect(keys).toContain('propositions');
+    expect(keys).toContain('motions');
+    expect(keys).toContain('committeeReports');
+    expect(keys).toContain('votes');
+    expect(keys).toContain('speeches');
+    expect(keys).toContain('questions');
+    expect(keys).toContain('interpellations');
+  });
+
+  it('records durationMs as a non-negative number', async () => {
+    const { manifest } = await downloadAllDocuments(stubClient());
+    expect(typeof manifest.durationMs).toBe('number');
+    expect(manifest.durationMs).toBeGreaterThanOrEqual(0);
   });
 });

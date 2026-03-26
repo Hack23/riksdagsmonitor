@@ -96,18 +96,25 @@ export function parseArgs(argv: string[]): {
   const aggregate = get('--aggregate') === 'weekly';
 
   const now = new Date();
-  if (dateArg && dateArg !== 'today' && !aggregate && !parseAndValidateIsoDate(dateArg)) {
-    throw new Error(`Invalid --date value: ${dateArg}. Expected YYYY-MM-DD or 'today'.`);
-  }
+  const todayIso = now.toISOString().slice(0, 10);
 
-  const isoDate = dateArg === 'today' || !dateArg ? now.toISOString().slice(0, 10) : dateArg;
-
+  // When aggregate weekly, --date supplies the week label (YYYY-WNN), not a
+  // calendar date.  `date` is always a YYYY-MM-DD value (defaults to today).
   const weekLabel = aggregate
-    ? (get('--date') || `${now.getUTCFullYear()}-W${isoWeekNumber(now).toString().padStart(2, '0')}`)
+    ? (dateArg || `${now.getUTCFullYear()}-W${isoWeekNumber(now).toString().padStart(2, '0')}`)
     : null;
   if (aggregate && weekLabel && !parseIsoWeekLabel(weekLabel)) {
     throw new Error(`Invalid weekly --date value: ${weekLabel}. Expected YYYY-WNN.`);
   }
+
+  if (dateArg && dateArg !== 'today' && !aggregate && !parseAndValidateIsoDate(dateArg)) {
+    throw new Error(`Invalid --date value: ${dateArg}. Expected YYYY-MM-DD or 'today'.`);
+  }
+
+  // In aggregate mode, date is always today; the week-specific field is weekLabel.
+  const isoDate = aggregate
+    ? todayIso
+    : (dateArg === 'today' || !dateArg ? todayIso : dateArg);
 
   const limitArg = get('--limit');
   const DEFAULT_LIMIT = 20;
@@ -485,7 +492,7 @@ async function runPreArticleAnalysis(opts: {
 // Entry point
 // ---------------------------------------------------------------------------
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1] ?? '')) {
   const args = parseArgs(process.argv);
 
   runPreArticleAnalysis(args).catch((err: unknown) => {
