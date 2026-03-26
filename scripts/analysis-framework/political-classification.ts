@@ -166,6 +166,14 @@ function getDocText(doc: RawDocument): string {
   ].filter(Boolean).join(' ');
 }
 
+/**
+ * Derive normalized document type from RawDocument.
+ * Falls back from `doktyp` to `documentType`, lowercased and trimmed.
+ */
+function getDocType(doc: RawDocument): string {
+  return String(doc.doktyp ?? doc.documentType ?? '').toLowerCase().trim();
+}
+
 function classifyPublicInterestSensitivity(doc: RawDocument, cia: CIAContext | undefined): PublicInterestSensitivity {
   const text = getDocText(doc);
   if (containsAny(text, EXPLOSIVE_KEYWORDS)) return 'explosive';
@@ -175,7 +183,7 @@ function classifyPublicInterestSensitivity(doc: RawDocument, cia: CIAContext | u
   }
   if (containsAny(text, SENSITIVE_KEYWORDS)) return 'sensitive';
   // Government propositions and committee reports are always at least standard
-  if (STANDARD_SENSITIVITY_TYPES.has(doc.doktyp ?? '')) return 'standard';
+  if (STANDARD_SENSITIVITY_TYPES.has(getDocType(doc))) return 'standard';
   return 'routine';
 }
 
@@ -185,12 +193,13 @@ function classifyDemocraticIntegrityImpact(doc: RawDocument): DemocraticIntegrit
   // Constitutional/oversight committee involvement is significant
   if (doc.organ === 'KU' || doc.organ === 'FiU') return 'significant';
   // Propositions always have at least moderate democratic integrity impact
-  if (doc.doktyp === 'prop' || doc.doktyp === 'bet') return 'moderate';
+  const docType = getDocType(doc);
+  if (docType === 'prop' || docType === 'bet') return 'moderate';
   return 'minor';
 }
 
 function classifyPolicyUrgency(doc: RawDocument): PolicyUrgency {
-  const docType = doc.doktyp ?? '';
+  const docType = getDocType(doc);
   if (IMMEDIATE_URGENCY_TYPES.has(docType)) return 'immediate';
   if (SHORT_TERM_URGENCY_TYPES.has(docType)) return 'short-term';
   if (MEDIUM_TERM_URGENCY_TYPES.has(docType)) return 'medium-term';
@@ -201,14 +210,14 @@ function classifyEconomicImpact(doc: RawDocument, cia: CIAContext | undefined): 
   const text = getDocText(doc);
   if (containsAny(text, ECONOMIC_HIGH_KEYWORDS)) {
     // Budget propositions or finance committee documents are transformative
-    if (doc.organ === 'FiU' || doc.doktyp === 'prop') return 'transformative';
+    if (doc.organ === 'FiU' || getDocType(doc) === 'prop') return 'transformative';
     return 'major';
   }
   // Fiscal instability amplifies economic impact
   if (cia?.coalitionStability?.stabilityScore !== undefined && cia.coalitionStability.stabilityScore < 40) {
     return 'major';
   }
-  if (doc.doktyp === 'prop' || doc.doktyp === 'bet') return 'moderate';
+  if (getDocType(doc) === 'prop' || getDocType(doc) === 'bet') return 'moderate';
   return 'minimal';
 }
 
@@ -216,7 +225,7 @@ function classifyGovernanceImpact(doc: RawDocument): GovernanceImpact {
   const committee = doc.organ ?? doc.committee ?? '';
   if (SYSTEMIC_GOVERNANCE_COMMITTEES.has(committee)) return 'systemic';
   if (SIGNIFICANT_GOVERNANCE_COMMITTEES.has(committee)) return 'significant';
-  if (doc.doktyp === 'prop' || doc.doktyp === 'bet') return 'procedural';
+  if (getDocType(doc) === 'prop' || getDocType(doc) === 'bet') return 'procedural';
   return 'routine';
 }
 
@@ -225,7 +234,8 @@ function classifyPoliticalCapitalImpact(doc: RawDocument, cia: CIAContext | unde
   // Crisis keywords or coalition instability → career-defining
   if (containsAny(text, EXPLOSIVE_KEYWORDS)) return 'career-defining';
   // Interpellations targeting ministers are notable at minimum
-  if (doc.doktyp === 'ip' || doc.doktyp === 'fr') {
+  const docType = getDocType(doc);
+  if (docType === 'ip' || docType === 'fr') {
     if (doc.mottagare && doc.mottagare.length > 0) return 'significant';
     return 'notable';
   }
@@ -233,7 +243,7 @@ function classifyPoliticalCapitalImpact(doc: RawDocument, cia: CIAContext | unde
   if (cia?.coalitionStability?.stabilityScore !== undefined && cia.coalitionStability.stabilityScore < 50) {
     return 'significant';
   }
-  if (doc.doktyp === 'prop' || doc.doktyp === 'bet') return 'notable';
+  if (docType === 'prop' || docType === 'bet') return 'notable';
   return 'negligible';
 }
 
@@ -243,7 +253,7 @@ function classifyLegislativeImpact(doc: RawDocument): LegislativeImpact {
   if (containsAny(text, LEGISLATIVE_KEYWORDS)) return 'legislative';
   if (containsAny(text, REGULATORY_KEYWORDS)) return 'regulatory';
   // Committee reports and propositions change legislation by default
-  if (doc.doktyp === 'bet' || doc.doktyp === 'prop') return 'legislative';
+  if (getDocType(doc) === 'bet' || getDocType(doc) === 'prop') return 'legislative';
   return 'administrative';
 }
 
@@ -304,7 +314,7 @@ function buildRationale(
   dimensions: Omit<PoliticalClassification, 'overallClassification' | 'classificationScore' | 'rationale'>,
 ): string[] {
   const rationale: string[] = [];
-  const docType = doc.doktyp ?? 'unknown';
+  const docType = getDocType(doc) || 'unknown';
   const committee = doc.organ ?? doc.committee ?? 'unknown';
 
   if (dimensions.publicInterestSensitivity === 'explosive') {

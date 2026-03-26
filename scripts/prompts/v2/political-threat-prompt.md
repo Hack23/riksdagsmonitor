@@ -164,12 +164,12 @@ Countermeasures: Diskrimineringsombudsmannen (DO), welfare state baseline, ECHR 
 - Assign `high` for serious but manageable threats with clear institutional response pathways
 - Assign `medium` for emerging threats with observable but not yet systemic indicators
 - Many routine documents will show at least one PRIDES category at `medium` or `low` when they contain even minor democratic-risk signals
-- If a document contains no discernible PRIDES signals, return **no threats detected**: set `overallThreatLevel` to `none`, `primaryThreat` to `undefined`, and `threatAnalyses` to an empty list (`[]`)
+- If a document contains no discernible PRIDES signals, return **no threats detected**: set `overallThreatLevel` to `none`, `primaryThreat` to `null`, and `threatAnalyses` to an empty list (`[]`)
 
 ## PROHIBITED PATTERNS
 
 ❌ Do not assign "critical" severity without citing constitutional or fundamental rights signals  
-❌ Do not claim a non-`none` threat level without referencing observable parliamentary signals — if no signals are present, explicitly use the no-threat case (`overallThreatLevel: 'none'`, `primaryThreat: undefined`, `threatAnalyses: []`)  
+❌ Do not claim a non-`none` threat level without referencing observable parliamentary signals — if no signals are present, explicitly use the no-threat case (`overallThreatLevel: 'none'`, `primaryThreat: null`, `threatAnalyses: []`)  
 ❌ Do not omit countermeasures — Swedish democracy has strong institutional resilience  
 ❌ Do not assign a single threat agent when multiple actors are involved  
 ❌ Do not conflate PRIDES categories (e.g., economic-disruption ≠ societal-impact)  

@@ -162,6 +162,14 @@ function getDocText(doc: RawDocument): string {
   ].filter(Boolean).join(' ');
 }
 
+/**
+ * Derive normalized document type from RawDocument.
+ * Falls back from `doktyp` to `documentType`, lowercased and trimmed.
+ */
+function getDocType(doc: RawDocument): string {
+  return String(doc.doktyp ?? doc.documentType ?? '').toLowerCase().trim();
+}
+
 function containsAny(text: string, keywords: readonly string[]): boolean {
   const lower = text.toLowerCase();
   return keywords.some(kw => lower.includes(kw.toLowerCase()));
@@ -180,7 +188,7 @@ function detectThreatAgents(doc: RawDocument, text: string): ThreatAgent[] {
   const agents: ThreatAgent[] = [];
 
   // Always include the most relevant institutional actor(s) based on document type
-  const docType = doc.doktyp ?? '';
+  const docType = getDocType(doc);
   const committee = doc.organ ?? '';
 
   if (containsAny(text, RULING_COALITION_INDICATORS) || ['prop', 'skr', 'sou'].includes(docType)) {
@@ -285,7 +293,7 @@ function extractIndicators(doc: RawDocument, category: PridesCategory, text: str
   const docId = doc.dok_id;
 
   if (docId) {
-    indicators.push(`Parliamentary document ${docId} (${doc.doktyp ?? 'unknown'}) identified as signal`);
+    indicators.push(`Parliamentary document ${docId} (${getDocType(doc) || 'unknown'}) identified as signal`);
   }
   if (doc.speeches && doc.speeches.length > 0) {
     const count = doc.speeches.length;
@@ -404,7 +412,7 @@ function buildThreatRationale(
   severity: ThreatSeverity,
   text: string,
 ): string {
-  const docType = doc.doktyp ?? 'document';
+  const docType = getDocType(doc) || 'document';
   const committee = doc.organ ?? 'unknown';
   const severityLabel = severity.toUpperCase();
 

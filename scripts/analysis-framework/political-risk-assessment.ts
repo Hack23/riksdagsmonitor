@@ -100,9 +100,21 @@ const INTERNATIONAL_RISK_KEYWORDS: readonly string[] = [
 /**
  * Normalize defection probability to 0–1 range.
  * Accepts both fractional (0.35) and percent-style (35) values.
+ * Defensively handles non-finite and negative inputs.
  */
 function normalizeDefectionProbability(raw: number): number {
-  return raw > 1 ? raw / 100 : raw;
+  if (!Number.isFinite(raw) || raw <= 0) return 0;
+  if (raw <= 1) return raw;
+  const percent = raw / 100;
+  return percent > 1 ? 1 : percent;
+}
+
+/**
+ * Derive normalized document type from RawDocument.
+ * Falls back from `doktyp` to `documentType`, lowercased and trimmed.
+ */
+function getDocType(doc: RawDocument): string {
+  return String(doc.doktyp ?? doc.documentType ?? '').toLowerCase().trim();
 }
 
 /** Committees with elevated social cohesion risk relevance */
@@ -173,7 +185,7 @@ function assessCoalitionLikelihood(doc: RawDocument, cia: CIAContext | undefined
 function assessPolicyImplementationLikelihood(doc: RawDocument, cia: CIAContext | undefined): LikelihoodLevel {
   const text = getDocText(doc);
   const keywordMatches = countMatches(text, POLICY_RISK_KEYWORDS);
-  const docType = doc.doktyp ?? '';
+  const docType = getDocType(doc);
 
   // Committee reports are high-signal implementation inputs by default
   if (docType === 'bet') return keywordMatches >= 1 ? 'almost-certain' : 'likely';
@@ -279,7 +291,7 @@ function assessCoalitionImpact(doc: RawDocument, cia: CIAContext | undefined): R
 }
 
 function assessPolicyImpact(doc: RawDocument): RiskImpactLevel {
-  const docType = doc.doktyp ?? '';
+  const docType = getDocType(doc);
   if (docType === 'prop' || docType === 'bet') return 'high';
   if (docType === 'sou' || docType === 'skr') return 'moderate';
   return 'low';
@@ -295,7 +307,8 @@ function assessDemocraticImpact(doc: RawDocument): RiskImpactLevel {
 }
 
 function assessEconomicImpact(doc: RawDocument): RiskImpactLevel {
-  if (doc.organ === 'FiU' && (doc.doktyp === 'bet' || doc.doktyp === 'prop')) return 'transformative';
+  const docType = getDocType(doc);
+  if (doc.organ === 'FiU' && (docType === 'bet' || docType === 'prop')) return 'transformative';
   const text = getDocText(doc);
   if (containsAny(text, ['statsbudget', 'budgetproposition', 'BNP', 'GDP'])) return 'critical';
   if (containsAny(text, ECONOMIC_RISK_KEYWORDS)) return 'high';
@@ -304,7 +317,7 @@ function assessEconomicImpact(doc: RawDocument): RiskImpactLevel {
 
 function assessSocialImpact(doc: RawDocument): RiskImpactLevel {
   const committee = doc.organ ?? '';
-  if (SOCIAL_IMPACT_COMMITTEES.has(committee) && doc.doktyp === 'prop') return 'high';
+  if (SOCIAL_IMPACT_COMMITTEES.has(committee) && getDocType(doc) === 'prop') return 'high';
   const text = getDocText(doc);
   if (containsAny(text, ['segregation', 'diskriminering', 'discrimination', 'poverty', 'fattigdom'])) return 'high';
   return 'moderate';
@@ -326,7 +339,7 @@ function extractEvidence(doc: RawDocument, category: PoliticalRiskCategory, cia:
   const docId = doc.dok_id;
 
   if (docId) {
-    evidence.push(`Document: ${docId} (${doc.doktyp ?? 'unknown'} in ${doc.organ ?? 'unknown'})`);
+    evidence.push(`Document: ${docId} (${getDocType(doc) || 'unknown'} in ${doc.organ ?? 'unknown'})`);
   }
 
   if (doc.speeches && doc.speeches.length > 0) {
