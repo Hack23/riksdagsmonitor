@@ -121,7 +121,7 @@ Produces:
 - `realtime-HHMM-risk-delta.md` — risk changes since last run
 
 ### 📅 `news-week-ahead` (Weekly, Fridays 07:00 UTC)
-Reads from: `analysis/daily/YYYY-MM-DD/` for the past 7 days  
+Reads from: `analysis/daily/YYYY-MM-DD/` for the current ISO week-to-date (Mon–Thu + any Fri artifacts before 07:00 UTC)  
 Writes to: `analysis/weekly/YYYY-WNN/`  
 Produces:
 - `week-summary-swot.md` — aggregated weekly SWOT

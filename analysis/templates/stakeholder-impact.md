@@ -152,14 +152,7 @@
 
 ## 📊 Impact Summary Matrix
 
-```mermaid
-xychart-beta
-    title "Stakeholder Impact vs Timeline"
-    x-axis ["Citizens", "Gov Coalition", "Opposition", "Business", "Civil Society", "International"]
-    y-axis "Impact Level" 0 --> 3
-    bar [0, 0, 0, 0, 0, 0]
-```
-> *Replace zeros with: NONE=0, LOW=1, MEDIUM=2, HIGH=3*
+> *Numeric encoding for internal analysis: NONE = 0, LOW = 1, MEDIUM = 2, HIGH = 3 (map to the Impact Level column).*
 
 | Stakeholder Group | Impact Level | Timeline | Confidence | Net Political Effect |
 |-------------------|:------------:|:--------:|:----------:|---------------------|
