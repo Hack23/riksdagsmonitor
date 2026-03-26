@@ -81,6 +81,13 @@ vi.mock('../scripts/generate-news-enhanced/config.js', () => ({
 
 // Mock helpers
 const writeSingleArticleMock = vi.fn().mockResolvedValue('test-article.html');
+const getAnalysisEnrichmentMock = vi.fn().mockResolvedValue({
+  classificationLevel: 'HIGH',
+  riskLevel: 'elevated',
+  confidenceLabel: 'HIGH',
+  significance: 78,
+  urgency: 'major',
+});
 vi.mock('../scripts/generate-news-enhanced/helpers.js', () => ({
   getWeekAheadDateRange: () => ({ start: '2026-03-16', end: '2026-03-23' }),
   formatDateForSlug: (d?: Date) => (d ?? new Date()).toISOString().slice(0, 10),
@@ -89,6 +96,8 @@ vi.mock('../scripts/generate-news-enhanced/helpers.js', () => ({
   validateArticleQuality: vi.fn().mockReturnValue({ score: 80, passed: true }),
   flushQualityScores: vi.fn(),
   installFlushHandlers: vi.fn(),
+  getAnalysisEnrichment: getAnalysisEnrichmentMock,
+  resetAnalysisEnrichmentCache: vi.fn(),
 }));
 
 // Mock analysis pipeline
@@ -355,5 +364,16 @@ describe('Generator cross-cutting concerns', () => {
     await generators.generateMotions();
     await generators.generateInterpellations();
     expect(getSharedClient).toHaveBeenCalledTimes(5);
+  });
+
+  it('getAnalysisEnrichment is included in helpers mock', async () => {
+    const helpers = await import('../scripts/generate-news-enhanced/helpers.js');
+    expect(typeof helpers.getAnalysisEnrichment).toBe('function');
+  });
+
+  it('generators handle null enrichment gracefully', async () => {
+    const result = await generators.generateWeekAhead();
+    expect(result).toBeDefined();
+    expect(typeof result.success).toBe('boolean');
   });
 });
