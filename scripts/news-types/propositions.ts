@@ -180,6 +180,7 @@ import {
   type RawDocument
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
+import { getAnalysisEnrichment } from '../generate-news-enhanced/helpers.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
 
@@ -293,6 +294,7 @@ export async function generatePropositions(options: GenerationOptions = {}): Pro
     const today = new Date();
     const slug = `${formatDateForSlug(today)}-government-propositions`;
     const articles: GeneratedArticle[] = [];
+    const enrichment = await getAnalysisEnrichment();
     
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
@@ -318,7 +320,8 @@ export async function generatePropositions(options: GenerationOptions = {}): Pro
         sources,
         keywords: metadata.keywords,
         topics: metadata.topics,
-        tags: metadata.tags
+        tags: metadata.tags,
+        ...(enrichment ?? {}),
       });
       
       articles.push({

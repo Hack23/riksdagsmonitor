@@ -38,7 +38,7 @@ import { generateArticleHTML } from '../article-template.js';
 import { generateCiaOverviewSection } from '../data-transformers/content-generators/cia-overview-section.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
-import { generateDynamicTitle } from '../generate-news-enhanced/helpers.js';
+import { generateDynamicTitle, getAnalysisEnrichment } from '../generate-news-enhanced/helpers.js';
 import { buildArticleVisualizationSections } from '../generate-news-enhanced/generators.js';
 
 /**
@@ -284,6 +284,7 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
 
     const slug = `${formatDateForSlug(today)}-monthly-review`;
     const articles: GeneratedArticle[] = [];
+    const enrichment = await getAnalysisEnrichment();
 
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
@@ -325,6 +326,7 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
         topics: metadata.topics,
         tags: metadata.tags,
         sections: [ciaSection, ...extraSections],
+        ...(enrichment ?? {}),
       });
 
       articles.push({

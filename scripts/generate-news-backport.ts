@@ -25,7 +25,8 @@ import {
   generateSources,
 } from './data-transformers.js';
 import { generateArticleHTML } from './article-template.js';
-
+import type { AnalysisEnrichment } from './generate-news-enhanced/helpers.js';
+import { readDailyAnalysis, deriveArticleClassificationMeta } from './analysis-reader.js';
 import type { Language } from './types/language.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -285,6 +286,29 @@ async function generateForDate(targetDate: Date, type: string, client: MCPClient
   console.log(`    🌐 Generating ${missingLangs.length} missing language versions...`);
 
   let generated = 0;
+
+  // Prefer date-specific analysis for the backport target date.
+  // Fall back to null rather than latest (which would be historically inaccurate).
+  let enrichment: AnalysisEnrichment | null = null;
+  try {
+    const dateAnalysis = await readDailyAnalysis(dateStr);
+    if (dateAnalysis.hasAnalysis) {
+      const meta = deriveArticleClassificationMeta(dateAnalysis);
+      enrichment = {
+        classificationLevel: meta.classificationLevel,
+        riskLevel: meta.riskLevel,
+        confidenceLabel: meta.confidenceLabel,
+        significance: meta.significanceScore,
+        urgency: meta.urgency,
+      };
+    }
+  } catch (error: unknown) {
+    // No date-specific analysis available — proceed without enrichment
+    if (process.env.DEBUG || process.env.LOG_LEVEL === 'debug') {
+      console.error(`⚠️  Failed to load date-specific analysis for ${dateStr}:`, error);
+    }
+  }
+
   for (const lang of missingLangs) {
     try {
       const content = generateArticleContent(data, dataKey, lang);
@@ -320,6 +344,7 @@ async function generateForDate(targetDate: Date, type: string, client: MCPClient
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
+        ...(enrichment ?? {}),
       });
 
       if (dryRun) {

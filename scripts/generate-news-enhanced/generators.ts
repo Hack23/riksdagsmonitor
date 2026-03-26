@@ -47,6 +47,7 @@ import {
   formatDateForSlug,
   writeSingleArticle,
   generateDynamicTitle,
+  getAnalysisEnrichment,
 } from './helpers.js';
 import { AIAnalysisPipeline } from './ai-analysis-pipeline.js';
 import { sharedAnalysisCache } from './analysis-cache.js';
@@ -166,7 +167,10 @@ export async function generateWeekAhead(): Promise<GenerationResult> {
     const today: Date = new Date();
     const slug: string = `${formatDateForSlug(today)}-week-ahead`;
 
-    // 5. Generate for each requested language
+    // 5. Load pre-computed analysis enrichment (classification, risk, confidence)
+    const enrichment = await getAnalysisEnrichment();
+
+    // 6. Generate for each requested language
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
@@ -228,9 +232,8 @@ export async function generateWeekAhead(): Promise<GenerationResult> {
         topics: metadata.topics,
         tags: metadata.tags,
         sections,
+        ...(enrichment ?? {}),
       });
-
-      // Write article
       await writeSingleArticle(html, slug, lang, 'week-ahead');
       console.log(`  ✅ ${lang.toUpperCase()} version generated`);
     }
@@ -272,6 +275,7 @@ export async function generateCommitteeReports(): Promise<GenerationResult> {
 
     const today: Date = new Date();
     const slug: string = `${formatDateForSlug(today)}-committee-reports`;
+    const enrichment = await getAnalysisEnrichment();
 
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
@@ -322,6 +326,7 @@ export async function generateCommitteeReports(): Promise<GenerationResult> {
         topics: metadata.topics,
         tags: metadata.tags,
         sections,
+        ...(enrichment ?? {}),
       });
 
       await writeSingleArticle(html, slug, lang, 'committee-reports');
@@ -362,6 +367,7 @@ export async function generatePropositions(): Promise<GenerationResult> {
 
     const today: Date = new Date();
     const slug: string = `${formatDateForSlug(today)}-government-propositions`;
+    const enrichment = await getAnalysisEnrichment();
 
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
@@ -412,6 +418,7 @@ export async function generatePropositions(): Promise<GenerationResult> {
         topics: metadata.topics,
         tags: metadata.tags,
         sections,
+        ...(enrichment ?? {}),
       });
 
       await writeSingleArticle(html, slug, lang, 'propositions');
@@ -452,6 +459,7 @@ export async function generateMotions(): Promise<GenerationResult> {
 
     const today: Date = new Date();
     const slug: string = `${formatDateForSlug(today)}-opposition-motions`;
+    const enrichment = await getAnalysisEnrichment();
 
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
@@ -502,6 +510,7 @@ export async function generateMotions(): Promise<GenerationResult> {
         topics: metadata.topics,
         tags: metadata.tags,
         sections,
+        ...(enrichment ?? {}),
       });
 
       await writeSingleArticle(html, slug, lang, 'motions');
@@ -542,6 +551,7 @@ export async function generateInterpellations(): Promise<GenerationResult> {
 
     const today: Date = new Date();
     const slug: string = `${formatDateForSlug(today)}-interpellation-debates`;
+    const enrichment = await getAnalysisEnrichment();
 
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
@@ -592,6 +602,7 @@ export async function generateInterpellations(): Promise<GenerationResult> {
         topics: metadata.topics,
         tags: metadata.tags,
         sections,
+        ...(enrichment ?? {}),
       });
 
       await writeSingleArticle(html, slug, lang, 'interpellations');
@@ -2222,6 +2233,8 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       zh: { title: `深度分析：${sanitizedTopic || defaultTopicLabels.zh}`, subtitle: `${enrichedDocs.length}份议会文件深度分析` },
     };
 
+    const enrichment = await getAnalysisEnrichment();
+
     for (const lang of languages) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version (analysis-depth: ${analysisDepth})...`);
       const pipelineDepth: AnalysisDepth = mapReportDepthToPipelineDepth(analysisDepth);
@@ -2295,6 +2308,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
         topics: metadata.topics,
         tags: metadata.tags,
         sections,
+        ...(enrichment ?? {}),
       });
 
       await writeSingleArticle(html, slug, lang, 'deep-inspection');

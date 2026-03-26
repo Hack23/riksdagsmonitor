@@ -166,7 +166,7 @@ import type {
   BreakingNewsValidation,
   BreakingNewsOptions,
 } from '../types/article.js';
-import { generateDynamicTitle } from '../generate-news-enhanced/helpers.js';
+import { generateDynamicTitle, getAnalysisEnrichment } from '../generate-news-enhanced/helpers.js';
 import { buildArticleVisualizationSections } from '../generate-news-enhanced/generators.js';
 
 /**
@@ -302,7 +302,8 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
     const today = new Date();
     const slug = `${formatDateForSlug(today)}-breaking-${eventData.slug || 'news'}`;
     const articles: GeneratedArticle[] = [];
-    
+    const enrichment = await getAnalysisEnrichment();
+
     for (const lang of languages as Language[]) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
       
@@ -339,8 +340,15 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
-        significance: significance?.score,
-        urgency: significance?.urgency,
+        // Spread analysis enrichment first, then override significance/urgency
+        // with breaking-news-specific scores only when actually computed.
+        ...(enrichment ?? {}),
+        ...(significance != null
+          ? {
+              significance: significance.score,
+              urgency: significance.urgency,
+            }
+          : {}),
         sections,
       });
       

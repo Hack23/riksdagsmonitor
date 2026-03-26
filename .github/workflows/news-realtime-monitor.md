@@ -169,8 +169,9 @@ START_TIME=$(date +%s)
 | Phase | Minutes | Action |
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()` warm-up |
-| Detect | 3–8 | Query MCP tools for today's activity |
-| Generate | 8–30 | Run `generate-news-enhanced.ts` script (core languages by default; supports all 14 languages via `languages=all`) |
+| Analysis | 3–8 | Run pre-article-analysis pipeline for today's data |
+| Detect | 8–13 | Query MCP tools for today's activity |
+| Generate | 13–30 | Run `generate-news-enhanced.ts` script (core languages by default; supports all 14 languages via `languages=all`) |
 | Validate | 30–35 | Run `validate-news-generation.sh` |
 | Commit+PR | 35–40 | `git add && git commit`, then `safeoutputs___create_pull_request` |
 
@@ -215,6 +216,21 @@ Tools with date params: `get_calendar_events` (from/tom — **⚠️ known inter
 
 - Month ≥ September: `rm = "{year}/{nextYear's last 2 digits}"` (e.g., Oct 2026 → "2026/27")
 - Month < September: `rm = "{prevYear}/{year's last 2 digits}"` (e.g., Feb 2026 → "2025/26")
+
+## Step 1.5: Run Pre-Article Analysis Pipeline
+
+**CRITICAL: Run the analysis pipeline BEFORE detecting events and generating articles.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps, and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`.
+
+```bash
+ARTICLE_DATE=$(date -u +%Y-%m-%d)
+echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
+# --limit 50 is appropriate for same-day realtime monitoring (pipeline date-filters to today only)
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
+echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
+ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
+```
+
+These analysis files are committed alongside articles for human review and continuous improvement.
 
 ## Step 2: Detect Significant Events
 
@@ -474,7 +490,7 @@ news/content/{YYYY-MM-DD}/breaking
 ⚠️ DO NOT use `git push` — the safe output tool handles publishing. Commit locally, then use the tool.
 
 ```bash
-git add news/
+git add news/ analysis/daily/ analysis/weekly/
 git commit -m "🔴 Breaking: {headline} - $(date +%Y-%m-%d)"
 ```
 

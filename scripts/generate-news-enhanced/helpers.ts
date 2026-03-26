@@ -11,6 +11,9 @@ import path from 'path';
 import { translateSwedishContent } from '../translation-dictionary.js';
 import type { Language } from '../types/language.js';
 import type { DateRange, ArticleQualityScore } from '../types/article.js';
+import type { ClassificationLevel, RiskLevel, ConfidenceLabel } from '../analysis-reader.js';
+import type { UrgencyLabel } from '../ai-analysis/political-significance.js';
+import { readLatestAnalysis, deriveArticleClassificationMeta } from '../analysis-reader.js';
 import {
   assessArticleQuality,
   printQualityReport,
@@ -25,6 +28,97 @@ import {
   MULTIDIM_QUALITY_THRESHOLD,
   toISODate,
 } from './config.js';
+
+// ---------------------------------------------------------------------------
+// Analysis enrichment — cached daily analysis for article metadata
+// ---------------------------------------------------------------------------
+
+/** Pre-computed classification metadata derived from the daily analysis pipeline. */
+export interface AnalysisEnrichment {
+  classificationLevel: ClassificationLevel;
+  riskLevel: RiskLevel;
+  confidenceLabel: ConfidenceLabel;
+  significance?: number;
+  urgency?: UrgencyLabel;
+}
+
+/**
+ * Options controlling which analysis snapshot to load.
+ *
+ * - `maxDaysBack` controls how far back in time we search for an analysis file.
+ *   Defaults to `3` days (preserves existing behavior).
+ * - `basePath` allows callers/tests to select an alternative analysis base
+ *   directory. When omitted, the default path used by `readLatestAnalysis`
+ *   applies.
+ */
+export interface AnalysisEnrichmentOptions {
+  maxDaysBack?: number;
+  basePath?: string;
+}
+
+/**
+ * Module-level cache so analysis is loaded at most once per process for a
+ * given option set (maxDaysBack/basePath).
+ */
+const analysisEnrichmentCache = new Map<string, AnalysisEnrichment | null>();
+
+/**
+ * Attempt to load the latest pre-computed daily analysis and derive article
+ * classification metadata.
+ *
+ * The result is cached for the lifetime of the process so that all article
+ * generators that request the same (maxDaysBack, basePath) share the same
+ * snapshot.
+ *
+ * Returns `null` when no analysis files are available (backward-compatible —
+ * generators can omit classification fields).
+ */
+export async function getAnalysisEnrichment(
+  options: AnalysisEnrichmentOptions = {},
+): Promise<AnalysisEnrichment | null> {
+  const maxDaysBack = options.maxDaysBack ?? 3;
+  const basePath = options.basePath;
+  const cacheKey = `${maxDaysBack}:${basePath ?? 'default'}`;
+
+  if (analysisEnrichmentCache.has(cacheKey)) {
+    return analysisEnrichmentCache.get(cacheKey) ?? null;
+  }
+
+  try {
+    const analysis = await readLatestAnalysis(maxDaysBack, basePath);
+    if (!analysis.hasAnalysis) {
+      analysisEnrichmentCache.set(cacheKey, null);
+      return null;
+    }
+    const meta = deriveArticleClassificationMeta(analysis);
+    const enrichment: AnalysisEnrichment = {
+      classificationLevel: meta.classificationLevel,
+      riskLevel: meta.riskLevel,
+      confidenceLabel: meta.confidenceLabel,
+      significance: meta.significanceScore,
+      urgency: meta.urgency,
+    };
+    analysisEnrichmentCache.set(cacheKey, enrichment);
+    console.log(`  📊 Analysis enrichment loaded: classification=${meta.classificationLevel}, risk=${meta.riskLevel}, confidence=${meta.confidenceLabel}`);
+    return enrichment;
+  } catch (error: unknown) {
+    if (process.env.DEBUG || process.env.LOG_LEVEL === 'debug') {
+      console.error(
+        '⚠️  Failed to load analysis enrichment (falling back to null):',
+        error,
+      );
+    }
+    analysisEnrichmentCache.set(cacheKey, null);
+    return null;
+  }
+}
+
+/**
+ * Reset the analysis enrichment cache.  Useful in tests.
+ */
+export function resetAnalysisEnrichmentCache(): void {
+  analysisEnrichmentCache.clear();
+}
 
 /**
  * Get date range for Week Ahead (next 7 days)

@@ -117,10 +117,11 @@ If **force_generation** is `true`, generate articles even if recent ones exist. 
 
 ## ⏱️ Time Budget (45 minutes)
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
-- **Minutes 3–10**: Query MCP tools for propositions data
-- **Minutes 10–25**: Generate articles for core languages (EN, SV) using `npx tsx scripts/generate-news-enhanced.ts`
-- **Minutes 25–35**: Validate and fix any quality issues
-- **Minutes 35–40**: Commit and create PR with `safeoutputs___create_pull_request`
+- **Minutes 3–8**: Run pre-article-analysis pipeline (download data + generate analysis artifacts)
+- **Minutes 8–15**: Query MCP tools for propositions data
+- **Minutes 15–28**: Generate articles for core languages (EN, SV) using `npx tsx scripts/generate-news-enhanced.ts`
+- **Minutes 28–35**: Validate and fix any quality issues
+- **Minutes 35–40**: Commit analysis artifacts + articles, create PR with `safeoutputs___create_pull_request`
 - **Minutes 40–45**: Dispatch translation workflow
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
@@ -308,7 +309,7 @@ Example: `news/content/2026-03-23/propositions`
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally: `git add news/ && git commit -m "Add propositions articles"`
+> 2. Stage and commit locally: `git add news/ analysis/daily/ analysis/weekly/ && git commit -m "Add propositions articles and analysis artifacts"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -370,6 +371,34 @@ Check if propositions articles exist from the last 11 hours.
 get_sync_status({})
 get_propositioner({ rm: <calculated riksmöte>, limit: 20 })
 ```
+
+### Step 2.5: Run Pre-Article Analysis Pipeline
+
+**CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`. Article generators will then consume these artifacts for enrichment.
+
+```bash
+ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+if [ -z "$ARTICLE_DATE" ]; then
+  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
+echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
+echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
+ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
+```
+
+The analysis pipeline outputs 9 files per day:
+- `data-download-manifest.md` — Download metadata and document counts
+- `classification-results.md` — Document classification and priority levels
+- `risk-assessment.md` — Political risk assessment (coalition stability, anomaly detection)
+- `swot-analysis.md` — SWOT analysis (pre-computed for article enrichment)
+- `threat-analysis.md` — Threat indicators and democratic health
+- `stakeholder-perspectives.md` — Multi-perspective analysis (6 lenses)
+- `significance-scoring.md` — Significance scores and urgency levels
+- `cross-reference-mapping.md` — Cross-document reference links
+- `synthesis-summary.md` — Combined analysis summary with confidence level
+
+These files are committed alongside articles for human review and continuous improvement.
 
 ### Step 3: Generate Articles
 

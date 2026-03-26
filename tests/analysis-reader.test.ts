@@ -759,3 +759,87 @@ describe('parser robustness', () => {
     expect(result.urgency).toBe('standard');
   });
 });
+
+// ---------------------------------------------------------------------------
+// getAnalysisEnrichment integration tests
+// ---------------------------------------------------------------------------
+
+import {
+  getAnalysisEnrichment,
+  resetAnalysisEnrichmentCache,
+} from '../scripts/generate-news-enhanced/helpers.js';
+
+describe('getAnalysisEnrichment', () => {
+  beforeEach(() => {
+    resetAnalysisEnrichmentCache();
+  });
+
+  afterEach(() => {
+    resetAnalysisEnrichmentCache();
+  });
+
+  it('returns null when no analysis files exist', async () => {
+    // Use a unique non-existent temp path to make the test hermetic
+    const basePath = join(tmpdir(), `nonexistent-analysis-dir-${randomUUID()}`);
+    const result = await getAnalysisEnrichment({ basePath });
+    expect(result).toBeNull();
+  });
+
+  it('caches the result across calls', async () => {
+    // Create temporary analysis directory with files so enrichment is non-null
+    const tmpBase = join(tmpdir(), `enrichment-cache-test-${randomUUID()}`);
+    const today = new Date().toISOString().split('T')[0]!;
+    const dailyDir = join(tmpBase, 'analysis', 'daily', today);
+    mkdirSync(dailyDir, { recursive: true });
+    writeFileSync(join(dailyDir, 'classification-results.md'), CLASSIFICATION_MD);
+    writeFileSync(join(dailyDir, 'risk-assessment.md'), RISK_MD);
+    writeFileSync(join(dailyDir, 'significance-scoring.md'), SIGNIFICANCE_MD);
+
+    try {
+      resetAnalysisEnrichmentCache();
+      const opts = { basePath: join(tmpBase, 'analysis', 'daily') };
+
+      const first = await getAnalysisEnrichment(opts);
+      const second = await getAnalysisEnrichment(opts);
+
+      // Ensure we actually got an enrichment object
+      expect(first).not.toBeNull();
+      // Both should be the same reference (cached)
+      expect(first).toBe(second);
+    } finally {
+      if (existsSync(tmpBase)) {
+        rmSync(tmpBase, { recursive: true, force: true });
+      }
+    }
+  });
+
+  it('returns enrichment when analysis files exist', async () => {
+    // Create temporary analysis directory with classification
+    const tmpBase = join(tmpdir(), `enrichment-test-${randomUUID()}`);
+    const today = new Date().toISOString().split('T')[0]!;
+    const dailyDir = join(tmpBase, 'analysis', 'daily', today);
+    mkdirSync(dailyDir, { recursive: true });
+    writeFileSync(join(dailyDir, 'classification-results.md'), CLASSIFICATION_MD);
+    writeFileSync(join(dailyDir, 'risk-assessment.md'), RISK_MD);
+    writeFileSync(join(dailyDir, 'significance-scoring.md'), SIGNIFICANCE_MD);
+
+    try {
+      resetAnalysisEnrichmentCache();
+
+      // Use basePath to make the test hermetic
+      const enrichment = await getAnalysisEnrichment({
+        basePath: join(tmpBase, 'analysis', 'daily'),
+      });
+      expect(enrichment).not.toBeNull();
+      expect(enrichment!.classificationLevel).toBe('HIGH');
+      expect(enrichment!.riskLevel).toBe('elevated');
+      expect(enrichment!.confidenceLabel).toBe('HIGH');
+      expect(enrichment!.significance).toBe(78);
+      expect(enrichment!.urgency).toBe('major');
+    } finally {
+      if (existsSync(tmpBase)) {
+        rmSync(tmpBase, { recursive: true, force: true });
+      }
+    }
+  });
+});

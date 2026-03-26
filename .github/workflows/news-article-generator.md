@@ -205,8 +205,9 @@ START_TIME=$(date +%s)
 | Phase | Minutes | Action |
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()` warm-up, check recent generation |
-| Data | 3–8 | Query MCP tools for article types |
-| Generate | 8–30 | Run `generate-news-enhanced.ts` in batches |
+| Analysis | 3–8 | Run pre-article-analysis pipeline for today's data |
+| Data | 8–13 | Query MCP tools for article types |
+| Generate | 13–30 | Run `generate-news-enhanced.ts` in batches |
 | Validate | 30–38 | Translate, validate, commit |
 | PR | 38–43 | `safeoutputs___create_pull_request` |
 
@@ -285,6 +286,23 @@ STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm
 Parse sync status: if data is stale (> 48 hours since last sync), add disclaimer. Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc queries, use `scripts/mcp-query-cli.ts` — NEVER implement custom MCP client code (PROHIBITION).
 
 Tools with date params: `get_calendar_events` (from/tom — **authoritative for scheduled/forward-looking events; may sometimes return HTML instead of JSON — if this happens, treat it as a calendar data error, NOT as "no events"**), `search_dokument` (from_date/to_date — **only use as a recent-activity proxy for retrospective/near‑real‑time monitoring when calendar data is temporarily unusable; NEVER substitute it for week/month‑ahead or debate schedule data**), `search_regering` (dateFrom/dateTo). Other tools (`search_voteringar`, `get_betankanden`, `get_motioner`, `get_propositioner`, `search_anforanden`) require post-query filter by datum.
+
+## Step 1.5: Run Pre-Article Analysis Pipeline
+
+**CRITICAL: Run the analysis pipeline BEFORE generating articles.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`.
+
+```bash
+ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+if [ -z "$ARTICLE_DATE" ]; then
+  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
+echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
+echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
+ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
+```
+
+These analysis files are committed alongside articles for human review and continuous improvement.
 
 ## Step 2: Determine Article Types & Languages
 
@@ -494,7 +512,7 @@ news/content/{YYYY-MM-DD}/{article-types}
 ⚠️ DO NOT use `git push` — the safe output tool handles publishing. Commit locally, then use the tool.
 
 ```bash
-git add news/
+git add news/ analysis/daily/ analysis/weekly/
 git commit -m "📰 Automated News Generation - $(date +%Y-%m-%d)"
 ```
 
