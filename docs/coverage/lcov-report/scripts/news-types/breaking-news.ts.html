@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.24% </span>
+                <span class="strong">89.36% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>83/93</span>
+                <span class='fraction'>84/94</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.66% </span>
+                <span class="strong">81.25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>49/60</span>
+                <span class='fraction'>52/64</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.77% </span>
+                <span class="strong">89.88% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>79/88</span>
+                <span class='fraction'>80/89</span>
             </div>
         
             
@@ -548,7 +548,15 @@
 <a name='L483'></a><a href='#L483'>483</a>
 <a name='L484'></a><a href='#L484'>484</a>
 <a name='L485'></a><a href='#L485'>485</a>
-<a name='L486'></a><a href='#L486'>486</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L486'></a><a href='#L486'>486</a>
+<a name='L487'></a><a href='#L487'>487</a>
+<a name='L488'></a><a href='#L488'>488</a>
+<a name='L489'></a><a href='#L489'>489</a>
+<a name='L490'></a><a href='#L490'>490</a>
+<a name='L491'></a><a href='#L491'>491</a>
+<a name='L492'></a><a href='#L492'>492</a>
+<a name='L493'></a><a href='#L493'>493</a>
+<a name='L494'></a><a href='#L494'>494</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -852,8 +860,9 @@
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">34x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">31x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">31x</span>
@@ -876,6 +885,13 @@
 <span class="cline-any cline-yes">31x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1201,7 +1217,7 @@ import type {
   BreakingNewsValidation,
   BreakingNewsOptions,
 } from '../types/article.js';
-import { generateDynamicTitle } from '../generate-news-enhanced/helpers.js';
+import { generateDynamicTitle, getAnalysisEnrichment } from '../generate-news-enhanced/helpers.js';
 import { buildArticleVisualizationSections } from '../generate-news-enhanced/generators.js';
 &nbsp;
 /**
@@ -1337,7 +1353,8 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
     const today = new Date();
     const slug = `${formatDateForSlug(today)}-breaking-${eventData.slug || <span class="branch-1 cbranch-no" title="branch not covered" >'news'}`;</span>
     const articles: GeneratedArticle[] = [];
-    
+    const enrichment = await getAnalysisEnrichment();
+&nbsp;
     for (const lang of languages as Language[]) {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
       
@@ -1374,8 +1391,15 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
-        significance: significance?.score,
-        urgency: significance?.urgency,
+        // Spread analysis enrichment first, then override significance/urgency
+        // with breaking-news-specific scores only when actually computed.
+        ...(enrichment ?? {}),
+        ...(significance != null
+          ? <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+              significance: significance.score,
+              urgency: significance.urgency,
+            }
+          : {}),
         sections,
       });
       
@@ -1525,7 +1549,7 @@ function checkImpactAnalysis(article: ArticleInput): boolean {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-03-25T13:23:52.849Z
+                at 2026-03-26T23:40:40.767Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
