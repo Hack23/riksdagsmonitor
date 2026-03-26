@@ -327,6 +327,18 @@ describe('serializeSignificanceScoring', () => {
     const md = serializeSignificanceScoring(CTX, []);
     expect(md).toContain('0');
   });
+
+  it('escapes markdown table control characters in cell values', () => {
+    const md = serializeSignificanceScoring(CTX, [
+      { dok_id: 'A|1\\x', title: 'Budget\n2026 | revised \\test', score: 9, doctype: 'pr|op\\x' },
+    ]);
+    expect(md).toContain('A\\|1');
+    expect(md).toContain('pr\\|op');
+    expect(md).toContain('A\\|1\\\\x');
+    expect(md).toContain('pr\\|op\\\\x');
+    expect(md).toContain('Budget 2026 \\| revised');
+    expect(md).toContain('Budget 2026 \\| revised \\\\test');
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -403,6 +415,22 @@ describe('serializeSynthesisSummary', () => {
   it('shows aggregate risk level', () => {
     const md = serializeSynthesisSummary(CTX, synthesis);
     expect(md).toContain('HIGH');
+  });
+
+  it('escapes markdown table control characters in top document cells', () => {
+    const escaped: SynthesisSummary = {
+      ...synthesis,
+      topDocuments: [
+        { dok_id: 'X|42\\z', title: 'Title\nwith | separators \\x', score: 8, doctype: 'ty|pe\\z' },
+      ],
+    };
+    const md = serializeSynthesisSummary(CTX, escaped);
+    expect(md).toContain('X\\|42');
+    expect(md).toContain('ty\\|pe');
+    expect(md).toContain('X\\|42\\\\z');
+    expect(md).toContain('ty\\|pe\\\\z');
+    expect(md).toContain('Title with \\| separators');
+    expect(md).toContain('Title with \\| separators \\\\x');
   });
 });
 

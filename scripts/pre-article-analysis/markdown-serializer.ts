@@ -100,6 +100,14 @@ function significanceLabel(score: number): string {
   return '🟢 Low';
 }
 
+function escapeMarkdownTableCell(value: string): string {
+  return value
+    .replace(/\\/g, '\\\\')
+    .replace(/\r?\n/g, ' ')
+    .replace(/\|/g, '\\|')
+    .trim();
+}
+
 function frontmatter(ctx: SerializationContext, title: string, docCount: number, confidenceScore: number): string {
   return [
     `# ${title} — ${ctx.date}`,
@@ -453,9 +461,12 @@ export function serializeSignificanceScoring(
 
   const sorted = [...entries].sort((a, b) => b.score - a.score);
   for (const entry of sorted.slice(0, 30)) {
-    const level = significanceLabel(entry.score).replace(/🔴|🟠|🟡|🟢/g, '').trim();
-    const title = entry.title.length > 50 ? entry.title.slice(0, 47) + '...' : entry.title;
-    lines.push(`| ${entry.score}/10 | ${level} | ${entry.doctype} | ${entry.dok_id} | ${title} |`);
+    const level = escapeMarkdownTableCell(significanceLabel(entry.score).replace(/🔴|🟠|🟡|🟢/g, '').trim());
+    const titleValue = entry.title.length > 50 ? entry.title.slice(0, 47) + '...' : entry.title;
+    const doctype = escapeMarkdownTableCell(entry.doctype);
+    const dokId = escapeMarkdownTableCell(entry.dok_id);
+    const title = escapeMarkdownTableCell(titleValue);
+    lines.push(`| ${entry.score}/10 | ${level} | ${doctype} | ${dokId} | ${title} |`);
   }
 
   lines.push('', '## Key Findings', '');
@@ -547,8 +558,11 @@ export function serializeSynthesisSummary(
 
   lines.push('', '## Top Documents by Significance', '', '| Score | Type | dok_id | Title |', '|-------|------|--------|-------|');
   for (const doc of synthesis.topDocuments.slice(0, 10)) {
-    const title = doc.title.length > 50 ? doc.title.slice(0, 47) + '...' : doc.title;
-    lines.push(`| ${doc.score}/10 | ${doc.doctype} | ${doc.dok_id} | ${title} |`);
+    const titleValue = doc.title.length > 50 ? doc.title.slice(0, 47) + '...' : doc.title;
+    const doctype = escapeMarkdownTableCell(doc.doctype);
+    const dokId = escapeMarkdownTableCell(doc.dok_id);
+    const title = escapeMarkdownTableCell(titleValue);
+    lines.push(`| ${doc.score}/10 | ${doctype} | ${dokId} | ${title} |`);
   }
 
   lines.push('', '## Implications', '');

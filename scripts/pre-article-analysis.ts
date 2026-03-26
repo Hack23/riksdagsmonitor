@@ -88,23 +88,33 @@ function parseArgs(argv: string[]): {
   const aggregate = get('--aggregate') === 'weekly';
 
   const now = new Date();
-  const isoDate = dateArg === 'today' || !dateArg
-    ? now.toISOString().slice(0, 10)
-    : dateArg;
+  if (dateArg && dateArg !== 'today' && !aggregate && !parseAndValidateIsoDate(dateArg)) {
+    throw new Error(`Invalid --date value: ${dateArg}. Expected YYYY-MM-DD or 'today'.`);
+  }
+
+  const isoDate = dateArg === 'today' || !dateArg ? now.toISOString().slice(0, 10) : dateArg;
 
   const weekLabel = aggregate
-    ? (get('--date') || `${now.getFullYear()}-W${isoWeekNumber(now).toString().padStart(2, '0')}`)
+    ? (get('--date') || `${now.getUTCFullYear()}-W${isoWeekNumber(now).toString().padStart(2, '0')}`)
     : null;
+  if (aggregate && weekLabel && !parseIsoWeekLabel(weekLabel)) {
+    throw new Error(`Invalid weekly --date value: ${weekLabel}. Expected YYYY-WNN.`);
+  }
 
   const limitArg = get('--limit');
-  const limit = limitArg ? parseInt(limitArg, 10) : 20;
+  const DEFAULT_LIMIT = 20;
+  const parsedLimit = limitArg ? parseInt(limitArg, 10) : DEFAULT_LIMIT;
+  if (!Number.isFinite(parsedLimit) || parsedLimit <= 0) {
+    throw new Error(`Invalid --limit value: ${limitArg}. Expected a positive integer.`);
+  }
+  const limit = parsedLimit;
   const rm = get('--rm');
 
   return { date: isoDate, aggregate, limit, weekLabel, rm };
 }
 
 function isoWeekNumber(date: Date): number {
-  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  const d = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
   const dayNum = d.getUTCDay() || 7;
   d.setUTCDate(d.getUTCDate() + 4 - dayNum);
   const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
@@ -114,8 +124,13 @@ function isoWeekNumber(date: Date): number {
 function parseAndValidateIsoDate(dateStr: string): Date | null {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr);
   if (!m) return null;
-  const d = new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3])));
-  return Number.isNaN(d.getTime()) ? null : d;
+  const year = Number(m[1]);
+  const month = Number(m[2]);
+  const day = Number(m[3]);
+  const d = new Date(Date.UTC(year, month - 1, day));
+  if (Number.isNaN(d.getTime())) return null;
+  if (d.getUTCFullYear() !== year || d.getUTCMonth() + 1 !== month || d.getUTCDate() !== day) return null;
+  return d;
 }
 
 function riksMoteFromDate(dateStr: string): string {
