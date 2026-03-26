@@ -2,7 +2,8 @@
  * @module pre-article-analysis/data-downloader
  * @description Downloads all relevant parliamentary documents from riksdag-regering-mcp
  * for the current Swedish parliamentary session (riksmöte). Returns typed `RawDocument[]`
- * collections plus a manifest of which MCP tools were called and how many documents each returned.
+ * collections plus a manifest of which MCP tools returned successful results and how many
+ * documents each returned.
  *
  * Note: The download methods fetch session-wide latest documents (bounded by `limit`
  * and `rm`). Date-specific filtering should be applied by the caller after download
@@ -16,7 +17,7 @@
  */
 
 import type { RawDocument } from '../data-transformers/types.js';
-import { MCPClient } from '../mcp-client/client.js';
+import type { MCPClient } from '../mcp-client/client.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -40,7 +41,7 @@ export interface DownloadedData {
 }
 
 export interface DownloadManifest {
-  /** Names of MCP tools called during download */
+  /** Names of MCP tools with successful fetch + post-processing during download */
   dataSources: string[];
   /** Document counts per type */
   docCounts: Record<string, number>;

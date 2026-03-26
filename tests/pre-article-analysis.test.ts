@@ -31,6 +31,7 @@ import {
 } from '../scripts/pre-article-analysis/data-downloader.js';
 
 import { parseArgs } from '../scripts/pre-article-analysis.js';
+import { buildWeeklySynthesisMarkdown } from '../scripts/pre-article-analysis.js';
 
 import type {
   SerializationContext,
@@ -829,5 +830,26 @@ describe('downloadAllDocuments', () => {
     expect(data.speeches).toHaveLength(0);
     expect(data.questions).toHaveLength(0);
     expect(data.interpellations).toHaveLength(0);
+  });
+});
+
+describe('weekly aggregation output', () => {
+  it('uses standardized frontmatter fields in weekly-synthesis output', () => {
+    const output = buildWeeklySynthesisMarkdown({
+      weekLabel: '2026-W13',
+      generatedAt: '2026-03-26 17:00 UTC',
+      documentsAnalyzed: 12,
+      daysIncluded: 1,
+      allSyntheses: '\n\n---\n\n## Day: 2026-03-23\n\nSample synthesis.',
+    });
+
+    expect(output).toContain('**Generated**: 2026-03-26 17:00 UTC');
+    expect(output).toMatch(/\*\*Generated\*\*:\s\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}\sUTC/);
+    expect(output).toContain('**Data Sources**: Aggregated from daily synthesis summaries');
+    expect(output).toContain('**Documents Analyzed**: 12');
+    expect(output).toContain('**Confidence**: MEDIUM');
+    expect(output).toContain('**Days Included**: 1');
+    expect(output).toContain('## Day: 2026-03-23');
+    expect(output).toContain('Sample synthesis.');
   });
 });

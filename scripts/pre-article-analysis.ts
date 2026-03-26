@@ -68,6 +68,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
 const ANALYSIS_DIR = path.join(REPO_ROOT, 'analysis');
 
+function formatTimestampForMarkdown(date: Date = new Date()): string {
+  return date.toISOString().slice(0, 16).replace('T', ' ') + ' UTC';
+}
+
 // ---------------------------------------------------------------------------
 // CLI helpers
 // ---------------------------------------------------------------------------
@@ -349,6 +353,8 @@ function runWeeklyAggregation(weekLabel: string): void {
 
   const dailyRoot = path.join(ANALYSIS_DIR, 'daily');
   let allSyntheses = '';
+  let includedDays = 0;
+  let aggregatedDocumentsAnalyzed = 0;
 
   const parsedWeek = parseIsoWeekLabel(weekLabel);
   if (!parsedWeek) {
@@ -361,26 +367,59 @@ function runWeeklyAggregation(weekLabel: string): void {
       if (!isDateInIsoWeek(dir, weekLabel)) continue;
       const synthPath = path.join(dailyRoot, dir, 'synthesis-summary.md');
       if (fs.existsSync(synthPath)) {
-        allSyntheses += `\n\n---\n\n## Day: ${dir}\n\n` + fs.readFileSync(synthPath, 'utf8');
+        const dailySynthesis = fs.readFileSync(synthPath, 'utf8');
+        allSyntheses += `\n\n---\n\n## Day: ${dir}\n\n${dailySynthesis}`;
+        includedDays += 1;
+
+        const docsMatch = /(?:^|\n)\*\*Documents Analyzed\*\*:\s*(\d+)/.exec(dailySynthesis);
+        if (docsMatch?.[1]) {
+          aggregatedDocumentsAnalyzed += Number(docsMatch[1]);
+        } else {
+          console.warn(`[pre-analysis] Could not parse Documents Analyzed from ${synthPath}`);
+        }
       }
     }
   }
 
-  const weeklyContent = [
-    `# Weekly Analysis Aggregation — ${weekLabel}`,
+  const weeklyContent = buildWeeklySynthesisMarkdown({
+    weekLabel,
+    generatedAt: formatTimestampForMarkdown(),
+    documentsAnalyzed: aggregatedDocumentsAnalyzed,
+    daysIncluded: includedDays,
+    allSyntheses,
+  });
+
+  writeAnalysis(weekDir, 'weekly-synthesis.md', weeklyContent);
+  console.log(`\n✅ Weekly aggregation written to analysis/weekly/${weekLabel}/`);
+}
+
+export function buildWeeklySynthesisMarkdown(opts: {
+  weekLabel: string;
+  generatedAt: string;
+  documentsAnalyzed: number;
+  daysIncluded: number;
+  allSyntheses: string;
+}): string {
+  const confidence = opts.documentsAnalyzed >= 20
+    ? 'HIGH'
+    : (opts.documentsAnalyzed >= 8 ? 'MEDIUM' : 'LOW');
+
+  return [
+    `# Weekly Analysis Aggregation — ${opts.weekLabel}`,
     '',
-    `**Generated**: ${new Date().toISOString()}`,
-    `**Period**: ${weekLabel}`,
+    `**Generated**: ${opts.generatedAt}`,
+    '**Data Sources**: Aggregated from daily synthesis summaries',
+    `**Documents Analyzed**: ${opts.documentsAnalyzed}`,
+    `**Confidence**: ${confidence}`,
+    `**Period**: ${opts.weekLabel}`,
+    `**Days Included**: ${opts.daysIncluded}`,
     '',
     '## Summary',
     '',
     'Aggregation of daily analysis synthesis results for the week.',
     '',
-    allSyntheses || '_No daily analysis results found for this week._',
+    opts.allSyntheses || '_No daily analysis results found for this week._',
   ].join('\n');
-
-  writeAnalysis(weekDir, 'weekly-synthesis.md', weeklyContent);
-  console.log(`\n✅ Weekly aggregation written to analysis/weekly/${weekLabel}/`);
 }
 
 // ---------------------------------------------------------------------------
@@ -409,7 +448,7 @@ async function runPreArticleAnalysis(opts: {
   const outputDir = path.join(ANALYSIS_DIR, 'daily', date);
   ensureDir(outputDir);
 
-  const generatedAt = new Date().toISOString().slice(0, 16).replace('T', ' ') + ' UTC';
+  const generatedAt = formatTimestampForMarkdown();
 
   // ── Step 1: Download data ─────────────────────────────────────────────────
   console.log('\n📥 Step 1: Downloading documents from riksdag-regering-mcp...');
