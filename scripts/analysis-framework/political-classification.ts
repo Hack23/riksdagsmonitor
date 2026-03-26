@@ -317,36 +317,79 @@ function buildRationale(
   const docType = getDocType(doc) || 'unknown';
   const committee = doc.organ ?? doc.committee ?? 'unknown';
 
+  // Public interest sensitivity
   if (dimensions.publicInterestSensitivity === 'explosive') {
     rationale.push('Explosive public interest: Keywords indicate scandal, crisis, or coalition threat');
   } else if (dimensions.publicInterestSensitivity === 'sensitive') {
     rationale.push('Sensitive topic: immigration, defence, climate, or tax policy detected');
+  } else {
+    rationale.push(
+      `Public interest sensitivity rated as "${dimensions.publicInterestSensitivity}": no explosive or highly sensitive triggers detected`,
+    );
   }
 
+  // Democratic integrity impact
   if (dimensions.democraticIntegrityImpact === 'critical') {
     rationale.push('Critical democratic integrity: Constitutional law or fundamental rights involved');
   } else if (dimensions.democraticIntegrityImpact === 'significant') {
     rationale.push(`Significant democratic impact: Committee ${committee} has oversight/constitutional role`);
+  } else {
+    rationale.push(
+      `Democratic integrity impact rated as "${dimensions.democraticIntegrityImpact}": limited or routine implications for democratic processes`,
+    );
   }
 
+  // Economic impact
   if (dimensions.economicImpact === 'transformative') {
     rationale.push('Transformative economic impact: Budget or macro-level fiscal content detected');
   } else if (dimensions.economicImpact === 'major') {
     rationale.push('Major economic impact: Significant fiscal or monetary policy implications');
+  } else {
+    rationale.push(
+      `Economic impact rated as "${dimensions.economicImpact}": no major fiscal or monetary signals detected`,
+    );
   }
 
+  // Governance impact
   if (dimensions.governanceImpact === 'systemic') {
     rationale.push(`Systemic governance impact: Committee ${committee} drives cross-government policy`);
+  } else {
+    rationale.push(
+      `Governance impact rated as "${dimensions.governanceImpact}": ${committee} committee scope`,
+    );
   }
 
+  // Legislative impact
   if (dimensions.legislativeImpact === 'constitutional') {
     rationale.push('Constitutional legislative impact: Affects fundamental law or constitutional order');
   } else if (dimensions.legislativeImpact === 'legislative') {
     rationale.push(`Legislative impact: Document type ${docType} typically creates or amends statutes`);
+  } else {
+    rationale.push(
+      `Legislative impact rated as "${dimensions.legislativeImpact}": no statutory or constitutional changes detected`,
+    );
   }
 
-  if (rationale.length === 0) {
-    rationale.push(`Routine parliamentary activity (${docType} in committee ${committee})`);
+  // Policy urgency
+  if (dimensions.policyUrgency === 'immediate') {
+    rationale.push('Immediate policy urgency: Time-critical document requiring prompt attention');
+  } else if (dimensions.policyUrgency === 'short-term') {
+    rationale.push('Short-term policy urgency: Active legislative or committee timeline');
+  } else {
+    rationale.push(
+      `Policy urgency rated as "${dimensions.policyUrgency}": standard parliamentary timeline`,
+    );
+  }
+
+  // Political capital impact
+  if (dimensions.politicalCapitalImpact === 'career-defining') {
+    rationale.push('Career-defining political capital impact: Major reputational stakes for actors involved');
+  } else if (dimensions.politicalCapitalImpact === 'significant') {
+    rationale.push('Significant political capital impact: Notable reputational consequences');
+  } else {
+    rationale.push(
+      `Political capital impact rated as "${dimensions.politicalCapitalImpact}": limited reputational stakes`,
+    );
   }
 
   return rationale;

@@ -191,7 +191,12 @@ function assessPolicyImplementationLikelihood(doc: RawDocument, cia: CIAContext 
   if (docType === 'bet') return keywordMatches >= 1 ? 'almost-certain' : 'likely';
   // Government propositions — assess implementation risk based on obstruction level
   if (docType === 'prop') {
-    const motionDenialRate = cia?.overallMotionDenialRate ?? 50;
+    // When CIA context is absent, fall back to keyword-based assessment
+    // instead of hard-coding a default denial rate that could bias scores.
+    if (cia?.overallMotionDenialRate === undefined) {
+      return keywordMatches >= 1 ? 'possible' : 'unlikely';
+    }
+    const motionDenialRate = cia.overallMotionDenialRate;
     // High denial rate means opposition is being blocked → government faces less obstruction
     // → lower risk of policy failure. Low denial rate means opposition motions succeed
     // more often → higher risk that government policies stall.
@@ -386,7 +391,9 @@ function extractEvidence(doc: RawDocument, category: PoliticalRiskCategory, cia:
   if (category !== 'coalition-stability' && cia?.coalitionStability?.stabilityScore !== undefined) {
     const rawDP = cia.coalitionStability.defectionProbability;
     const normDP = rawDP !== undefined ? normalizeDefectionProbability(rawDP) : undefined;
-    evidence.push(`CIA coalition context: stability=${cia.coalitionStability.stabilityScore}, majorityMargin=${cia.coalitionStability.majorityMargin}, defectionProbability=${normDP ?? 'N/A'}`);
+    const stabilityDisplay = cia.coalitionStability.stabilityScore ?? 'N/A';
+    const majorityMarginDisplay = cia.coalitionStability.majorityMargin ?? 'N/A';
+    evidence.push(`CIA coalition context: stability=${stabilityDisplay}, majorityMargin=${majorityMarginDisplay}, defectionProbability=${normDP ?? 'N/A'}`);
   }
 
   return evidence;
