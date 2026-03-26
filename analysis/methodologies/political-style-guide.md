@@ -32,7 +32,7 @@ This style guide establishes standards for political intelligence reporting acro
 
 ### Classification Badge Format
 
-Every article header must include a visible classification badge. Priority is captured in workflow metadata/urgency and is not rendered as a separate header badge in the current template:
+Every article header must include a visible classification badge when `classificationLevel` is assigned. Priority is captured in workflow metadata/urgency and is not rendered as a separate header badge in the current template:
 
 ```html
 <span class="classification-badge classification-high" aria-label="Classification: HIGH">
@@ -54,7 +54,7 @@ Every article must follow this structure regardless of article type:
 1. Article Metadata Header
    - Classification badge (🔴/🟠/🟡/🟢)
    - Date, author attribution, sources count
-   - Confidence level indicator
+   - Confidence level metadata (`<meta name="article:confidence">`) in the current template
    - Risk indicator badge when `riskLevel` is present
 
 2. Analytical Lede (NOT a summary)

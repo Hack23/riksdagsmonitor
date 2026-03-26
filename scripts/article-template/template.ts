@@ -356,9 +356,9 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
       <span class="separator">•</span>
       <span>${readTime}</span>${classificationLevel ? `
       <span class="separator">•</span>
-      <span class="classification-badge classification-${toSafeClassToken(classificationLevel)}" aria-label="Classification: ${escapeHtml(classificationLevel)}">${getClassificationIcon(classificationLevel)} ${escapeHtml(classificationLevel)}</span>` : ''}${riskLevel ? `
+      <span class="type-badge classification-badge classification-${toSafeClassToken(classificationLevel)}" aria-label="Classification: ${escapeHtml(classificationLevel)}">${getClassificationIcon(classificationLevel)} ${escapeHtml(classificationLevel)}</span>` : ''}${riskLevel ? `
       <span class="separator">•</span>
-      <span class="risk-badge risk-${toSafeClassToken(riskLevel)}" aria-label="Risk: ${escapeHtml(riskLevel.toUpperCase())}">⚠️ ${escapeHtml(riskLevel.toUpperCase())} RISK</span>` : ''}
+      <span class="type-badge risk-badge risk-${toSafeClassToken(riskLevel)}" aria-label="Risk: ${escapeHtml(riskLevel.toUpperCase())}">⚠️ ${escapeHtml(riskLevel.toUpperCase())} RISK</span>` : ''}
     </div>
   </header>
 
