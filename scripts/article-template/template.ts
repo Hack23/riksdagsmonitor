@@ -42,8 +42,7 @@ function getClassificationIcon(level: ClassificationLevel): string {
     case 'MEDIUM': return '🟡';
   }
   // Exhaustiveness guard – runtime fallback for deserialized data
-  const _exhaustiveCheck: never = level;
-  return '⚪';
+  return (((_: never): string => '⚪')(level));
 }
 
 /**

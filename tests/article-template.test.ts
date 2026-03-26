@@ -36,6 +36,8 @@ interface MockArticleData {
   classificationLevel?: ClassificationLevel;
   riskLevel?: RiskLevel;
   confidenceLabel?: ConfidenceLabel;
+  significance?: number;
+  urgency?: string;
 }
 
 describe('Article Template', () => {
