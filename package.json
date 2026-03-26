@@ -67,7 +67,10 @@
     "serve": "python3 -m http.server 8080",
     "linkcheck": "linkinator http://localhost:8080/ --recurse",
     "prepublishOnly": "npm run lint && npm run build:lib && npm test",
-    "prepack": "echo 'Prepack: build artifacts should already be generated (see prepublishOnly/CI)'"
+    "prepack": "echo 'Prepack: build artifacts should already be generated (see prepublishOnly/CI)'",
+    "pre-analysis": "npx tsx scripts/pre-article-analysis.ts",
+    "pre-analysis:today": "npx tsx scripts/pre-article-analysis.ts --date today",
+    "pre-analysis:weekly": "npx tsx scripts/pre-article-analysis.ts --aggregate weekly"
   },
   "repository": {
     "type": "git",
