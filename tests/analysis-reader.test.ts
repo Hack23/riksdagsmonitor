@@ -779,17 +779,38 @@ describe('getAnalysisEnrichment', () => {
   });
 
   it('returns null when no analysis files exist', async () => {
-    // Use a non-existent temp path to make the test hermetic
-    const result = await getAnalysisEnrichment({ basePath: '/tmp/nonexistent-analysis-dir' });
+    // Use a unique non-existent temp path to make the test hermetic
+    const basePath = join(tmpdir(), `nonexistent-analysis-dir-${randomUUID()}`);
+    const result = await getAnalysisEnrichment({ basePath });
     expect(result).toBeNull();
   });
 
   it('caches the result across calls', async () => {
-    const opts = { basePath: '/tmp/nonexistent-cache-test-dir' };
-    const first = await getAnalysisEnrichment(opts);
-    const second = await getAnalysisEnrichment(opts);
-    // Both should be the same reference (cached)
-    expect(first).toBe(second);
+    // Create temporary analysis directory with files so enrichment is non-null
+    const tmpBase = join(tmpdir(), `enrichment-cache-test-${randomUUID()}`);
+    const today = new Date().toISOString().split('T')[0]!;
+    const dailyDir = join(tmpBase, 'analysis', 'daily', today);
+    mkdirSync(dailyDir, { recursive: true });
+    writeFileSync(join(dailyDir, 'classification-results.md'), CLASSIFICATION_MD);
+    writeFileSync(join(dailyDir, 'risk-assessment.md'), RISK_MD);
+    writeFileSync(join(dailyDir, 'significance-scoring.md'), SIGNIFICANCE_MD);
+
+    try {
+      resetAnalysisEnrichmentCache();
+      const opts = { basePath: join(tmpBase, 'analysis', 'daily') };
+
+      const first = await getAnalysisEnrichment(opts);
+      const second = await getAnalysisEnrichment(opts);
+
+      // Ensure we actually got an enrichment object
+      expect(first).not.toBeNull();
+      // Both should be the same reference (cached)
+      expect(first).toBe(second);
+    } finally {
+      if (existsSync(tmpBase)) {
+        rmSync(tmpBase, { recursive: true, force: true });
+      }
+    }
   });
 
   it('returns enrichment when analysis files exist', async () => {
