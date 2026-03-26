@@ -152,9 +152,13 @@ const INSTITUTIONAL_INDICATORS: readonly string[] = [
 // ---------------------------------------------------------------------------
 
 function getDocText(doc: RawDocument): string {
+  const fullContentText = doc.fullContent
+    ? doc.fullContent.replace(/<[^>]+>/g, ' ')
+    : undefined;
+
   return [
     doc.titel, doc.rubrik, doc.undertitel, doc.title,
-    doc.summary, doc.notis, doc.fullText,
+    doc.summary, doc.notis, doc.fullText, fullContentText,
   ].filter(Boolean).join(' ');
 }
 

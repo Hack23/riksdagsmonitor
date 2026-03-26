@@ -155,9 +155,14 @@ function containsAny(text: string, keywords: readonly string[]): boolean {
 }
 
 function getDocText(doc: RawDocument): string {
+  const fullContentText = doc.fullContent
+    ? doc.fullContent.replace(/<[^>]+>/g, ' ')
+    : undefined;
+  const primaryText = doc.fullText ?? fullContentText;
+
   return [
     doc.titel, doc.rubrik, doc.undertitel, doc.title,
-    doc.summary, doc.notis, doc.fullText,
+    doc.summary, doc.notis, primaryText,
   ].filter(Boolean).join(' ');
 }
 

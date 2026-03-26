@@ -98,15 +98,13 @@ Produce a structured JSON classification:
 ```json
 {
   "documentId": "H901FiU1",
-  "dimensions": {
-    "publicInterestSensitivity": "sensitive",
-    "democraticIntegrityImpact": "significant",
-    "policyUrgency": "short-term",
-    "economicImpact": "transformative",
-    "governanceImpact": "systemic",
-    "politicalCapitalImpact": "notable",
-    "legislativeImpact": "legislative"
-  },
+  "publicInterestSensitivity": "sensitive",
+  "democraticIntegrityImpact": "significant",
+  "policyUrgency": "short-term",
+  "economicImpact": "transformative",
+  "governanceImpact": "systemic",
+  "politicalCapitalImpact": "notable",
+  "legislativeImpact": "legislative",
   "overallClassification": "high",
   "classificationScore": 72,
   "rationale": [

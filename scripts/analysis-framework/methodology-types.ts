@@ -8,7 +8,7 @@
  * 2. **PoliticalRiskAssessment** — Likelihood × Impact risk scoring
  *    (inspired by ISMS Risk_Assessment_Methodology.md)
  * 3. **PoliticalThreatAnalysis** — PRIDES threat framework
- *    (inspired by ISMS Threat_Modeling.md — STRIDE → PRIDES adaptation)
+ *    (inspired by ISMS THREAT_MODEL.md — STRIDE → PRIDES adaptation)
  *
  * These types are consumed by:
  * - `political-classification.ts`
@@ -296,7 +296,7 @@ export interface PoliticalRiskProfile {
 
 // ===========================================================================
 // 3. POLITICAL THREAT ANALYSIS — PRIDES FRAMEWORK
-//    (inspired by ISMS Threat_Modeling.md — STRIDE → PRIDES)
+//    (inspired by ISMS THREAT_MODEL.md — STRIDE → PRIDES)
 // ===========================================================================
 
 // ---------------------------------------------------------------------------

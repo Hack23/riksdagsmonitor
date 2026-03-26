@@ -98,10 +98,17 @@ const INTERNATIONAL_RISK_KEYWORDS: readonly string[] = [
 /** Committees with elevated social cohesion risk relevance */
 const SOCIAL_COHESION_COMMITTEES = new Set(['SoU', 'SfU', 'AU']);
 
+/** Committees with elevated social impact relevance */
+const SOCIAL_IMPACT_COMMITTEES = new Set(['SoU', 'SfU']);
+
 function getDocText(doc: RawDocument): string {
+  const fullContentText = doc.fullContent
+    ? doc.fullContent.replace(/<[^>]+>/g, ' ')
+    : undefined;
+
   return [
     doc.titel, doc.rubrik, doc.undertitel, doc.title,
-    doc.summary, doc.notis, doc.fullText,
+    doc.summary, doc.notis, doc.fullText, fullContentText,
   ].filter(Boolean).join(' ');
 }
 
@@ -283,7 +290,7 @@ function assessEconomicImpact(doc: RawDocument): RiskImpactLevel {
 
 function assessSocialImpact(doc: RawDocument): RiskImpactLevel {
   const committee = doc.organ ?? '';
-  if (new Set(['SoU', 'SfU']).has(committee) && doc.doktyp === 'prop') return 'high';
+  if (SOCIAL_IMPACT_COMMITTEES.has(committee) && doc.doktyp === 'prop') return 'high';
   const text = getDocText(doc);
   if (containsAny(text, ['segregation', 'diskriminering', 'discrimination', 'poverty', 'fattigdom'])) return 'high';
   return 'moderate';
@@ -410,8 +417,16 @@ function getEscalatingFactors(category: PoliticalRiskCategory, cia: CIAContext |
       if (stability !== undefined && stability < 40) {
         factors.push('Coalition stability score is low — elevated defection and collapse risk');
       }
-      if (cia?.coalitionStability?.defectionProbability !== undefined && cia.coalitionStability.defectionProbability > 0.2) {
-        factors.push('High defection probability detected in CIA coalition data');
+      {
+        const rawDefectionProbability = cia?.coalitionStability?.defectionProbability;
+        const normalizedDefectionProbability =
+          rawDefectionProbability !== undefined
+            ? (rawDefectionProbability > 1 ? rawDefectionProbability / 100 : rawDefectionProbability)
+            : undefined;
+
+        if (normalizedDefectionProbability !== undefined && normalizedDefectionProbability > 0.2) {
+          factors.push('High defection probability detected in CIA coalition data');
+        }
       }
       // Always include a baseline escalating factor
       factors.push('Tight parliamentary majority increases vulnerability to individual defections');

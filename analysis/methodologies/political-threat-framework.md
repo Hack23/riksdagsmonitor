@@ -5,7 +5,7 @@
 
 ## 1. Purpose
 
-This document describes the **PRIDES Political Threat Analysis Framework** used by Riksdagsmonitor to identify and characterise threats to democratic governance from Swedish parliamentary activity. PRIDES is adapted from the [ISMS Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) STRIDE framework, reimagined for **political intelligence** rather than cybersecurity.
+This document describes the **PRIDES Political Threat Analysis Framework** used by Riksdagsmonitor to identify and characterise threats to democratic governance from Swedish parliamentary activity. PRIDES is adapted from the [ISMS THREAT_MODEL.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/THREAT_MODEL.md) STRIDE framework, reimagined for **political intelligence** rather than cybersecurity.
 
 ## 2. The PRIDES Framework — Conceptual Foundation
 
