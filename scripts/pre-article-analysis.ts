@@ -93,7 +93,16 @@ export function parseArgs(argv: string[]): {
   };
 
   const dateArg = get('--date');
-  const aggregate = get('--aggregate') === 'weekly';
+  const aggregateArg = get('--aggregate');
+  const aggregate = (() => {
+    if (aggregateArg === null) {
+      return false;
+    }
+    if (aggregateArg === 'weekly') {
+      return true;
+    }
+    throw new Error(`Invalid --aggregate value: ${aggregateArg}. Supported value: 'weekly'.`);
+  })();
 
   const now = new Date();
   const todayIso = now.toISOString().slice(0, 10);
@@ -118,8 +127,8 @@ export function parseArgs(argv: string[]): {
 
   const limitArg = get('--limit');
   const DEFAULT_LIMIT = 20;
-  const parsedLimit = limitArg ? parseInt(limitArg, 10) : DEFAULT_LIMIT;
-  if (!Number.isFinite(parsedLimit) || parsedLimit <= 0) {
+  const parsedLimit = limitArg ? Number(limitArg) : DEFAULT_LIMIT;
+  if (!Number.isInteger(parsedLimit) || parsedLimit <= 0) {
     throw new Error(`Invalid --limit value: ${limitArg}. Expected a positive integer.`);
   }
   const limit = parsedLimit;

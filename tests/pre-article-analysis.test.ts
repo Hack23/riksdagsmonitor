@@ -641,6 +641,14 @@ describe('parseArgs', () => {
     expect(() => parseArgs(['node', 'script', '--limit', 'abc'])).toThrow('Invalid --limit');
   });
 
+  it('throws on a decimal --limit', () => {
+    expect(() => parseArgs(['node', 'script', '--limit', '10.5'])).toThrow('Invalid --limit');
+  });
+
+  it('throws on an alphanumeric --limit', () => {
+    expect(() => parseArgs(['node', 'script', '--limit', '10abc'])).toThrow('Invalid --limit');
+  });
+
   it('throws on a negative --limit', () => {
     expect(() => parseArgs(['node', 'script', '--limit', '-5'])).toThrow('Invalid --limit');
   });
@@ -659,6 +667,10 @@ describe('parseArgs', () => {
 
   it('throws on an invalid weekly --date label', () => {
     expect(() => parseArgs(['node', 'script', '--aggregate', 'weekly', '--date', 'bad-week'])).toThrow('Invalid weekly --date');
+  });
+
+  it('throws on unsupported --aggregate value', () => {
+    expect(() => parseArgs(['node', 'script', '--aggregate', 'monthly'])).toThrow('Invalid --aggregate value');
   });
 
   it('accepts --rm override', () => {
@@ -767,5 +779,55 @@ describe('downloadAllDocuments', () => {
     const { manifest } = await downloadAllDocuments(stubClient());
     expect(typeof manifest.durationMs).toBe('number');
     expect(manifest.durationMs).toBeGreaterThanOrEqual(0);
+  });
+
+  it('continues when post-processing assign throws for one source', async () => {
+    const badPayload = [null];
+    const client = stubClient({
+      fetchPropositions: [{ dok_id: 'p1' }],
+      fetchMotions: badPayload,
+    });
+
+    const { data, manifest } = await downloadAllDocuments(client);
+    expect(data.propositions).toHaveLength(1);
+    // normalise([null]) -> [] so assignment still works; source remains included
+    expect(data.motions).toHaveLength(0);
+    expect(manifest.dataSources).toContain('get_motioner');
+  });
+
+  it('handles non-array payloads as post-processing failures and keeps partial results', async () => {
+    const client = stubClient({
+      fetchPropositions: [{ dok_id: 'p1' }],
+      fetchMotions: 'not-an-array' as unknown as unknown[],
+    });
+
+    const { data, manifest } = await downloadAllDocuments(client);
+    expect(data.propositions).toHaveLength(1);
+    expect(data.motions).toHaveLength(0);
+    expect(manifest.dataSources).toContain('get_propositioner');
+    expect(manifest.dataSources).not.toContain('get_motioner');
+  });
+
+  it('returns empty dataSources when all fetches reject', async () => {
+    const err = new Error('all failed');
+    const client = stubClient({
+      fetchPropositions: err,
+      fetchMotions: err,
+      fetchCommitteeReports: err,
+      fetchVotingRecords: err,
+      searchSpeeches: err,
+      fetchWrittenQuestions: err,
+      fetchInterpellations: err,
+    });
+
+    const { data, manifest } = await downloadAllDocuments(client);
+    expect(manifest.dataSources).toEqual([]);
+    expect(data.propositions).toHaveLength(0);
+    expect(data.motions).toHaveLength(0);
+    expect(data.committeeReports).toHaveLength(0);
+    expect(data.votes).toHaveLength(0);
+    expect(data.speeches).toHaveLength(0);
+    expect(data.questions).toHaveLength(0);
+    expect(data.interpellations).toHaveLength(0);
   });
 });
