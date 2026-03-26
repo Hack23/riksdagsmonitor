@@ -779,13 +779,15 @@ describe('getAnalysisEnrichment', () => {
   });
 
   it('returns null when no analysis files exist', async () => {
-    const result = await getAnalysisEnrichment();
+    // Use a non-existent temp path to make the test hermetic
+    const result = await getAnalysisEnrichment({ basePath: '/tmp/nonexistent-analysis-dir' });
     expect(result).toBeNull();
   });
 
   it('caches the result across calls', async () => {
-    const first = await getAnalysisEnrichment();
-    const second = await getAnalysisEnrichment();
+    const opts = { basePath: '/tmp/nonexistent-cache-test-dir' };
+    const first = await getAnalysisEnrichment(opts);
+    const second = await getAnalysisEnrichment(opts);
     // Both should be the same reference (cached)
     expect(first).toBe(second);
   });
@@ -800,19 +802,23 @@ describe('getAnalysisEnrichment', () => {
     writeFileSync(join(dailyDir, 'risk-assessment.md'), RISK_MD);
     writeFileSync(join(dailyDir, 'significance-scoring.md'), SIGNIFICANCE_MD);
 
-    resetAnalysisEnrichmentCache();
+    try {
+      resetAnalysisEnrichmentCache();
 
-    // readDailyAnalysis basePath points at the parent of YYYY-MM-DD dirs
-    const analysis = await readDailyAnalysis(today, join(tmpBase, 'analysis', 'daily'));
-    expect(analysis.hasAnalysis).toBe(true);
-
-    const meta = deriveArticleClassificationMeta(analysis);
-    expect(meta.classificationLevel).toBe('HIGH');
-    expect(meta.riskLevel).toBe('elevated');
-    expect(meta.confidenceLabel).toBe('HIGH');
-    expect(meta.significanceScore).toBe(78);
-    expect(meta.urgency).toBe('major');
-
-    rmSync(tmpBase, { recursive: true, force: true });
+      // Use basePath to make the test hermetic
+      const enrichment = await getAnalysisEnrichment({
+        basePath: join(tmpBase, 'analysis', 'daily'),
+      });
+      expect(enrichment).not.toBeNull();
+      expect(enrichment!.classificationLevel).toBe('HIGH');
+      expect(enrichment!.riskLevel).toBe('elevated');
+      expect(enrichment!.confidenceLabel).toBe('HIGH');
+      expect(enrichment!.significance).toBe(78);
+      expect(enrichment!.urgency).toBe('major');
+    } finally {
+      if (existsSync(tmpBase)) {
+        rmSync(tmpBase, { recursive: true, force: true });
+      }
+    }
   });
 });

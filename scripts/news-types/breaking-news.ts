@@ -341,10 +341,12 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
         topics: metadata.topics,
         tags: metadata.tags,
         // Spread analysis enrichment first, then override significance/urgency
-        // with breaking-news-specific scores computed from the event documents.
+        // with breaking-news-specific scores only when actually computed.
         ...(enrichment ?? {}),
-        significance: significance?.score,
-        urgency: significance?.urgency,
+        ...(significance != null && {
+          significance: significance.score,
+          urgency: significance.urgency,
+        }),
         sections,
       });
       

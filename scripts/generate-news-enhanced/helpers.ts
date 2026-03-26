@@ -42,38 +42,73 @@ export interface AnalysisEnrichment {
   urgency?: UrgencyLabel;
 }
 
-/** Module-level cache so analysis is loaded at most once per process. */
-let cachedEnrichment: AnalysisEnrichment | null | undefined;
+/**
+ * Options controlling which analysis snapshot to load.
+ *
+ * - `maxDaysBack` controls how far back in time we search for an analysis file.
+ *   Defaults to `3` days (preserves existing behavior).
+ * - `basePath` allows callers/tests to select an alternative analysis base
+ *   directory. When omitted, the default path used by `readLatestAnalysis`
+ *   applies.
+ */
+export interface AnalysisEnrichmentOptions {
+  maxDaysBack?: number;
+  basePath?: string;
+}
+
+/**
+ * Module-level cache so analysis is loaded at most once per process for a
+ * given option set (maxDaysBack/basePath).
+ */
+const analysisEnrichmentCache = new Map<string, AnalysisEnrichment | null>();
 
 /**
  * Attempt to load the latest pre-computed daily analysis and derive article
- * classification metadata.  The result is cached for the lifetime of the
- * process so that all article generators share the same snapshot.
+ * classification metadata.
+ *
+ * The result is cached for the lifetime of the process so that all article
+ * generators that request the same (maxDaysBack, basePath) share the same
+ * snapshot.
  *
  * Returns `null` when no analysis files are available (backward-compatible —
  * generators can omit classification fields).
  */
-export async function getAnalysisEnrichment(): Promise<AnalysisEnrichment | null> {
-  if (cachedEnrichment !== undefined) return cachedEnrichment;
+export async function getAnalysisEnrichment(
+  options: AnalysisEnrichmentOptions = {},
+): Promise<AnalysisEnrichment | null> {
+  const maxDaysBack = options.maxDaysBack ?? 3;
+  const basePath = options.basePath;
+  const cacheKey = JSON.stringify({ maxDaysBack, basePath: basePath ?? null });
+
+  if (analysisEnrichmentCache.has(cacheKey)) {
+    return analysisEnrichmentCache.get(cacheKey) ?? null;
+  }
 
   try {
-    const analysis = await readLatestAnalysis(3);
+    const analysis = await readLatestAnalysis(maxDaysBack, basePath);
     if (!analysis.hasAnalysis) {
-      cachedEnrichment = null;
+      analysisEnrichmentCache.set(cacheKey, null);
       return null;
     }
     const meta = deriveArticleClassificationMeta(analysis);
-    cachedEnrichment = {
+    const enrichment: AnalysisEnrichment = {
       classificationLevel: meta.classificationLevel,
       riskLevel: meta.riskLevel,
       confidenceLabel: meta.confidenceLabel,
       significance: meta.significanceScore,
       urgency: meta.urgency,
     };
+    analysisEnrichmentCache.set(cacheKey, enrichment);
     console.log(`  📊 Analysis enrichment loaded: classification=${meta.classificationLevel}, risk=${meta.riskLevel}, confidence=${meta.confidenceLabel}`);
-    return cachedEnrichment;
-  } catch {
-    cachedEnrichment = null;
+    return enrichment;
+  } catch (error: unknown) {
+    if (process.env.DEBUG || process.env.LOG_LEVEL === 'debug') {
+      console.error(
+        '⚠️  Failed to load analysis enrichment (falling back to null):',
+        error,
+      );
+    }
+    analysisEnrichmentCache.set(cacheKey, null);
     return null;
   }
 }
@@ -82,7 +117,7 @@ export async function getAnalysisEnrichment(): Promise<AnalysisEnrichment | null
  * Reset the analysis enrichment cache.  Useful in tests.
  */
 export function resetAnalysisEnrichmentCache(): void {
-  cachedEnrichment = undefined;
+  analysisEnrichmentCache.clear();
 }
 
 /**

@@ -372,6 +372,8 @@ describe('Generator cross-cutting concerns', () => {
   });
 
   it('generators handle null enrichment gracefully', async () => {
+    // Override the mock to return null (no analysis available)
+    getAnalysisEnrichmentMock.mockResolvedValueOnce(null);
     const result = await generators.generateWeekAhead();
     expect(result).toBeDefined();
     expect(typeof result.success).toBe('boolean');
