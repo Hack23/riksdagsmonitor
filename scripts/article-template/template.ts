@@ -40,8 +40,10 @@ function getClassificationIcon(level: ClassificationLevel): string {
     case 'HIGH': return '🟠';
     case 'LOW': return '🟢';
     case 'MEDIUM': return '🟡';
-    default: return '⚪';
   }
+  // Exhaustiveness guard – runtime fallback for deserialized data
+  const _exhaustiveCheck: never = level;
+  return '⚪';
 }
 
 /**

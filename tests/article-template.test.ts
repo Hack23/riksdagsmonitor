@@ -1059,6 +1059,8 @@ describe('Article Template', () => {
         classificationLevel: 'HIGH',
         riskLevel: 'elevated',
         confidenceLabel: 'MEDIUM',
+        significance: undefined,
+        urgency: undefined,
       };
       const html = generateArticleHTML(data as unknown as ArticleData) as string;
       expect(html).not.toContain('article:significance');

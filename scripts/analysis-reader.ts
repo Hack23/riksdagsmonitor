@@ -297,7 +297,7 @@ function toDemocraticHealthLabel(value: string): DemocraticHealthLabel {
   const upper = value.toUpperCase().trim().replace(/[\s_-]+/g, '_');
   if (upper === 'HIGH') return 'HIGH';
   if (upper === 'LOW') return 'LOW';
-  if (upper === 'AT_RISK' || upper === 'ATRISK' || upper === 'AT RISK') return 'AT_RISK';
+  if (upper === 'AT_RISK' || upper === 'ATRISK') return 'AT_RISK';
   return 'MEDIUM';
 }
 
@@ -487,9 +487,10 @@ export function parseSignificanceScoring(markdown: string): SignificanceScoringR
   for (const line of topDocumentsSection.split('\n')) {
     const match = /([A-Z]\d{3,7}[A-Z]?).*?(\d{1,3})(?:%|\s+points?|\s+score)?[:\s—-]+(.+)/i.exec(line.trim());
     if (match) {
+      const rawScore = parseInt(match[2]!, 10);
       topDocuments.push({
         docId: match[1]!,
-        score: parseInt(match[2]!, 10),
+        score: Math.min(100, Math.max(0, Number.isFinite(rawScore) ? rawScore : 0)),
         reason: match[3]!.trim(),
       });
     }
@@ -549,7 +550,6 @@ async function readAnalysisFile(date: string, filename: string, basePath?: strin
   if (!DATE_FORMAT_RE.test(date)) return null;
   const resolvedBase = basePath ?? ANALYSIS_BASE_PATH;
   const filePath = join(resolvedBase, date, filename);
-  if (!existsSync(filePath)) return null;
   try {
     return await readFile(filePath, 'utf-8');
   } catch {
