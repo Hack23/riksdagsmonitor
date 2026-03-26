@@ -87,7 +87,7 @@ analysis/
 
 ## 🤖 Workflow Integration
 
-The following agentic workflows write analysis artifacts to this directory **before** article generation:
+The following agentic workflows are intended to write analysis artifacts to this directory **before** article generation. This persistence layer is being established incrementally — workflows listed below will write to `analysis/` as each is updated to support the analysis output pipeline:
 
 ### 🌅 Daily Morning Workflows (scheduled Mon–Fri)
 

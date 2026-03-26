@@ -23,7 +23,7 @@
 
 ## 🎯 Purpose
 
-The `analysis/weekly/` directory stores weekly aggregated analysis artifacts. Each week that the `news-week-ahead` workflow runs, a new subdirectory is created using the ISO 8601 week number format `YYYY-WNN`. Weekly artifacts aggregate all daily analyses from the preceding Monday–Sunday into strategic intelligence products.
+The `analysis/weekly/` directory stores weekly aggregated analysis artifacts. Each week that the `news-week-ahead` workflow runs (Fridays 07:00 UTC), a new subdirectory is created using the ISO 8601 week number format `YYYY-WNN`. Weekly artifacts use the latest available daily analyses (typically Monday–Thursday and any early Friday runs) to produce week-ahead strategic intelligence for the upcoming ISO week.
 
 ---
 
@@ -93,13 +93,13 @@ flowchart TD
 - **SWOT aggregation:** New entries from daily SWOTs are added; duplicate entries are deduplicated by topic; confidence levels are re-assessed using the full week's evidence
 - **Risk aggregation:** Daily risk scores are tracked as time series; the week's maximum score for each risk ID is used in the weekly register; resolved risks are marked CLOSED
 - **Significance trends:** Events appearing in significance scores across multiple days are flagged as "sustained significance"; one-day spikes are noted but weighted lower
-- **Calendar sources:** Next week's calendar is fetched fresh from `get_calendar_events` on Sunday — not aggregated from daily data
+- **Calendar sources:** Next week's calendar is fetched fresh from `get_calendar_events` during the Friday 07:00 UTC `news-week-ahead` run — not aggregated from daily data
 
 ---
 
 ## 📊 Monthly Aggregation Cross-Reference
 
-Weekly artifacts are aggregated into monthly strategic briefs. The monthly aggregation (run on the last calendar day of each month) reads all weekly files for the month and produces:
+Weekly artifacts are intended to be aggregated into monthly strategic briefs. The monthly aggregation pipeline is **planned but not yet implemented** (see [analysis/monthly/README.md](../monthly/README.md)). When implemented, it will run on the last calendar day of each month, read all weekly files for the month, and produce:
 
 - `analysis/monthly/YYYY-MM/monthly-intelligence-brief.md`
 - `analysis/monthly/YYYY-MM/monthly-swot-consolidated.md`
