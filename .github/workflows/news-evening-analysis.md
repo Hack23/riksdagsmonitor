@@ -169,8 +169,9 @@ START_TIME=$(date +%s)
 | Phase | Minutes | Action |
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()`, determine day type |
-| Data | 3–10 | Query MCP tools for parliamentary activity |
-| Generate | 10–30 | Run generation script OR manual synthesis (see Step 3) |
+| Analysis | 3–8 | Run pre-article-analysis pipeline for today's data |
+| Data | 8–15 | Query MCP tools for parliamentary activity |
+| Generate | 15–30 | Run generation script OR manual synthesis (see Step 3) |
 | Validate | 30–38 | Translate, validate, commit |
 | PR | 38–43 | `safeoutputs___create_pull_request` |
 
@@ -530,6 +531,20 @@ const byParty = motions.reduce((acc, m) => {
 - **deep** — Extended analysis with historical context (1500-2500 words)
 - **comprehensive** — Full coverage including minor events (2500-4000 words)
 
+## Step 1.5: Run Pre-Article Analysis Pipeline
+
+**CRITICAL: Run the analysis pipeline BEFORE gathering data and generating articles.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`.
+
+```bash
+ARTICLE_DATE=$(date -u +%Y-%m-%d)
+echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50
+echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
+ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
+```
+
+These analysis files are committed alongside articles for human review and continuous improvement.
+
 ## Step 2: Gather Parliamentary Data
 
 **Check elapsed time before proceeding:**
@@ -744,7 +759,7 @@ news/content/{YYYY-MM-DD}/evening-analysis
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally: `git add news/ && git commit -m "🌆 Evening Analysis - $(date +%Y-%m-%d)"`
+> 2. Stage and commit locally: `git add news/ analysis/daily/ && git commit -m "🌆 Evening Analysis - $(date +%Y-%m-%d)"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -757,7 +772,7 @@ news/content/{YYYY-MM-DD}/evening-analysis
 > **🚨 NEVER search for safe output tools via bash.** After `git commit`, call `safeoutputs___create_pull_request` directly as your VERY NEXT action.
 
 ```bash
-git add news/
+git add news/ analysis/daily/
 git commit -m "🌆 Evening Analysis - $(date +%Y-%m-%d)"
 ```
 

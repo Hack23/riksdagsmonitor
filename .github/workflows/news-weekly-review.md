@@ -119,9 +119,10 @@ This is a **retrospective** article analyzing the past 7 days of parliamentary a
 
 ## ⏱️ Time Budget (45 minutes)
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
-- **Minutes 3–10**: Query documents and votes from past 7 days
-- **Minutes 10–32**: Generate articles for all 14 languages
-- **Minutes 32–40**: Validate and commit
+- **Minutes 3–8**: Run pre-article-analysis pipeline (download data + generate analysis artifacts)
+- **Minutes 8–15**: Query documents and votes from past 7 days
+- **Minutes 15–32**: Generate articles for all 14 languages
+- **Minutes 32–40**: Validate and commit analysis + articles
 - **Minutes 40–45**: Create PR with `safeoutputs___create_pull_request`
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
@@ -287,7 +288,7 @@ Example: `news/content/2026-03-23/weekly-review`
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally: `git add news/ && git commit -m "Add weekly-review articles"`
+> 2. Stage and commit locally: `git add news/ analysis/daily/ && git commit -m "Add weekly-review articles and analysis artifacts"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -352,6 +353,20 @@ Check if weekly-review articles exist from the last 48 hours (weekly cadence).
 get_sync_status({})
 search_dokument({ from_date: lastWeek, to_date: today, limit: 30 })
 ```
+
+### Step 2.5: Run Pre-Article Analysis Pipeline
+
+**CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data, runs all 9 analysis steps, and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`. Article generators will consume these for enrichment.
+
+```bash
+ARTICLE_DATE=$(date -u +%Y-%m-%d)
+echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50
+echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
+ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output"
+```
+
+These files are committed alongside articles for human review and continuous improvement.
 
 ### Step 3: Generate Articles
 
