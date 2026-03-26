@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-25T17:27:43.400Z",
+  "timestamp": "2026-03-26T11:27:50.456Z",
   "types": [
     "propositions"
   ],
@@ -36,18 +36,18 @@
   "generated": 12,
   "errors": 0,
   "articles": [
-    "2026-03-25-government-propositions-da.html",
-    "2026-03-25-government-propositions-no.html",
-    "2026-03-25-government-propositions-fi.html",
-    "2026-03-25-government-propositions-de.html",
-    "2026-03-25-government-propositions-fr.html",
-    "2026-03-25-government-propositions-es.html",
-    "2026-03-25-government-propositions-nl.html",
-    "2026-03-25-government-propositions-ar.html",
-    "2026-03-25-government-propositions-he.html",
-    "2026-03-25-government-propositions-ja.html",
-    "2026-03-25-government-propositions-ko.html",
-    "2026-03-25-government-propositions-zh.html"
+    "2026-03-26-government-propositions-da.html",
+    "2026-03-26-government-propositions-no.html",
+    "2026-03-26-government-propositions-fi.html",
+    "2026-03-26-government-propositions-de.html",
+    "2026-03-26-government-propositions-fr.html",
+    "2026-03-26-government-propositions-es.html",
+    "2026-03-26-government-propositions-nl.html",
+    "2026-03-26-government-propositions-ar.html",
+    "2026-03-26-government-propositions-he.html",
+    "2026-03-26-government-propositions-ja.html",
+    "2026-03-26-government-propositions-ko.html",
+    "2026-03-26-government-propositions-zh.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"

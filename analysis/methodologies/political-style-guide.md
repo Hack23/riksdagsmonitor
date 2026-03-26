@@ -1,0 +1,714 @@
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
+
+<h1 align="center">✍️ Political Intelligence Style Guide</h1>
+
+<p align="center">
+  <strong>📊 Writing Standards for Swedish Political Analysis</strong><br>
+  <em>🎯 Depth · Attribution · Confidence · Prohibition · Emoji · Multi-language</em>
+</p>
+
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--26-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
+</p>
+
+**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-26 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-26  
+**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+---
+
+## 🎯 Purpose
+
+This style guide establishes writing standards for all political intelligence produced by Riksdagsmonitor's agentic workflows and human editors. It adapts [Hack23 ISMS STYLE_GUIDE.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md) for political journalism contexts. All content — analysis artifacts, news articles, and dashboard labels — must conform to these standards.
+
+See [reference/isms-style-guide-adaptation.md](../reference/isms-style-guide-adaptation.md) for the full ISMS mapping.
+
+---
+
+## 📊 Analytical Depth Standards
+
+Three permitted depth levels define what analysis is appropriate for each content type:
+
+### Level 1: Surface Analysis
+
+**Definition:** Factual reporting of what happened, who was involved, and when. No inference, no interpretation, no prediction.
+
+**When to use:** Breaking news, routine parliamentary reporting, event summaries.
+
+**Example (Surface ✅):**  
+> "The Riksdag voted 176–173 on 2026-03-25 to pass Budget Proposition 2025/26:1 (punkt 5.3 — defence appropriation). SD, M, KD, and L voted in favour; S, V, and MP voted against."
+
+**Prohibited at Surface level:** Statements like "this signals..." or "experts believe..." or any forward-looking claim.
+
+---
+
+### Level 2: Strategic Analysis
+
+**Definition:** Interpretation of what the event means in its political context. Identifies patterns, explains motivations with evidence, and draws connections to related events.
+
+**When to use:** Daily news articles, weekly briefings, stakeholder assessments.
+
+**Example (Strategic ✅):**  
+> "The 176–173 margin on the defence appropriation — the smallest possible majority — reveals that the Tidökoalition's parliamentary base has thinned since the September 2022 election. SD's conditional support, documented in Tidöavtalet (dok_id: XXXX), remains the single binding constraint on M's ability to govern. A three-seat shift would collapse the government's budget majority."
+
+**Prohibited at Strategic level:** Unsourced claims about motivations ("SD secretly wants to..."), predictions without probability notation.
+
+---
+
+### Level 3: Intelligence Analysis
+
+**Definition:** Forward-looking assessment with explicit probability notation, scenario modelling, and risk quantification. Requires the full analytical framework (classification + risk + SWOT + threat).
+
+**When to use:** Weekly strategic briefings, monthly intelligence reports, breaking analysis of crisis events.
+
+**Example (Intelligence ✅):**  
+> "Based on the 176–173 defence vote margin (dok_id: XXXX) and the L party leader's parliamentary statement (anförande 2026-03-25), we assess **MEDIUM probability (25–40%)** that L will abstain rather than vote Nej on the immigration regulation amendment scheduled for April 2026. This would reduce the effective coalition majority to 172, creating a governance crisis scenario with **HIGH impact** (score 12/25) per political-risk-methodology.md calibration."
+
+---
+
+## 👤 Attribution Standards
+
+### Politician Attribution Rules
+
+| Context | Format | Example |
+|---------|--------|---------|
+| First mention | Full name + role | "Statsminister Ulf Kristersson (M)" |
+| Subsequent mentions | Last name or role | "Kristersson" or "Statsministern" |
+| Formal documents | Full name + party | "Ulf Kristersson (M)" |
+| Group reference | Party abbreviation | "M-ledningen", "SD-gruppen" |
+
+### Document Attribution Rules
+
+All factual claims about parliamentary actions **must** cite a `dok_id`:
+
+| Claim Type | Required Citation |
+|-----------|------------------|
+| Legislation passed/failed | `dok_id` of proposition + vote date |
+| Committee recommendation | `dok_id` of betänkande |
+| Minister's statement | Anförande reference (date + debate) |
+| Government policy | `dok_id` of proposition or `skr` |
+| Budget figure | `dok_id` of budget proposition + paragraph |
+
+**Format:** `(dok_id: H9012345)` or `(prop 2025/26:123, p. 45)`
+
+### What Must Never Be Attributed Without Evidence
+
+- Party "plans" or "intends" (unless from official document)
+- Politician "believes" or "feels" (unless from direct quote in anförande)
+- Coalition "will" do X (unless from Tidöavtal or formal agreement)
+- Poll-based claims without pollster name + date
+
+---
+
+## 🎯 Confidence Level Notation
+
+Confidence levels must be explicitly stated when making analytical claims:
+
+| Level | Notation | When to Use |
+|-------|----------|-------------|
+| **HIGH** | `[HIGH confidence]` or 🟢 | Multiple corroborating primary sources; official documents |
+| **MEDIUM** | `[MEDIUM confidence]` or 🟡 | Single primary source or multiple secondary sources |
+| **LOW** | `[LOW confidence]` or 🔴 | Single unverified source or inference from indirect evidence |
+
+**Example:**  
+> "SD is likely [MEDIUM confidence] to oppose the proposed healthcare reform if the final text retains the family reunification provisions, based on SD's stated position in anförande 2026-02-14 (single source)."
+
+---
+
+## 🚫 Prohibited Patterns
+
+The following writing patterns are prohibited in all Riksdagsmonitor content:
+
+| ❌ Prohibited | ✅ Required Alternative |
+|-------------|------------------------|
+| "Sources say..." | Name the source or cite dok_id |
+| "Experts believe..." | Quote named expert with affiliation |
+| "It is believed that..." | "According to [source]..." |
+| "The public is concerned..." | "Polls show X% concern about Y [pollster, date]" |
+| "This is a disaster for..." | Analytical scoring: "Risk score: 15/25 (Critical)" |
+| "Obviously..." | State the evidence without editorialising |
+| "Surprisingly..." | Report the deviation from expectation with data |
+| Unnamed party members | Always name or use "anonymous source" with explicit LOW confidence |
+| Future certainty ("will") without evidence | "is likely to" + confidence level |
+| Hyperbolic adjectives | Specific measurable descriptions |
+
+---
+
+## 🎨 Icon & Emoji Conventions
+
+Consistent emoji usage matches the repository's existing documentation pattern:
+
+### Policy Domain Icons
+
+| Domain | Icon | Usage |
+|--------|------|-------|
+| Economics & Finance | 💰 | Budget, taxes, economic indicators |
+| Defence & Security | 🛡️ | Military, SÄPO, NATO |
+| Justice & Law | ⚖️ | Courts, police, criminal law |
+| Social Policy | 🤝 | Welfare, pensions, disability |
+| Health | 🏥 | Healthcare funding, public health |
+| Education | 📚 | Schools, universities, research |
+| Environment | 🌿 | Climate, biodiversity, water |
+| Agriculture | 🌾 | Farming, food security |
+| Infrastructure | 🏗️ | Transport, housing, digital |
+| Energy | ⚡ | Nuclear, renewable, grid |
+| Foreign Affairs | 🌍 | EU, NATO, bilateral |
+| Migration | 🔀 | Asylum, integration, border |
+| Constitution | 🏛️ | Democracy, elections, procedure |
+
+### Status & Assessment Icons
+
+| Concept | Icon | Usage |
+|---------|------|-------|
+| Strength | ✅ | SWOT strengths |
+| Weakness | ⚠️ | SWOT weaknesses |
+| Opportunity | 🚀 | SWOT opportunities |
+| Threat | 🔴 | SWOT threats |
+| Breaking news | ⚡ | Significance ≥ 9.0 |
+| Monitor | 📋 | Watch-only, no publish |
+| Archive | 🗄️ | Low significance |
+| High confidence | 🟢 | Evidence quality |
+| Medium confidence | 🟡 | Evidence quality |
+| Low confidence | 🔴 | Evidence quality |
+| Coalition | 🤝 | Coalition dynamics |
+| Opposition | 🗳️ | Opposition analysis |
+
+---
+
+## 🌐 Multi-Language Consistency (14 Languages)
+
+All 14 supported languages (SV, EN, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH) must maintain:
+
+### Consistency Requirements
+
+1. **Proper nouns stay in Swedish** (source language) for official names:
+   - Party names: "Moderaterna", "Sverigedemokraterna" — **not** "The Moderates"
+   - Institutions: "Riksdag", "Finansutskottet" — **not** "the Finance Committee"
+   - Roles: "Statsminister" — translate to "Prime Minister" in English only when needed for clarity
+
+2. **dok_ids are universal** — never translated; always cited in original format
+
+3. **Confidence levels** are translated but must convey equivalent epistemic weight:
+   - HIGH → Hög (SV) / High (EN) / Hoch (DE) / Alto (ES/FR)
+   - MEDIUM → Medel / Medium / Mittel / Moyen
+   - LOW → Låg / Low / Niedrig / Bas
+
+4. **Date formats** use ISO 8601 (YYYY-MM-DD) universally — never localised
+
+5. **Numerical values** use the language's natural decimal separator:
+   - Swedish/German/French: comma (176,5 miljoner)
+   - English: period (176.5 million)
+
+### Translation Quality Bar
+
+Translations must preserve:
+- Analytical confidence level (not soften or harden the claim)
+- All dok_id citations
+- Party names in Swedish with translation in parentheses on first use
+- Numerical precision
+
+**Reference:** `scripts/prompts/v1/political-analysis.md` for LLM translation prompts.
+
+---
+
+## 🔗 Related Documents
+
+- [reference/isms-style-guide-adaptation.md](../reference/isms-style-guide-adaptation.md) — ISMS mapping
+- [scripts/prompts/v1/political-analysis.md](../../scripts/prompts/v1/political-analysis.md) — LLM prompts
+- [political-classification-guide.md](political-classification-guide.md) — Classification (determines depth level)
+- [TRANSLATION_GUIDE.md](../../TRANSLATION_GUIDE.md) — Multi-language translation guide
+
+---
+
+**Document Control:**  
+- **Path:** `/analysis/methodologies/political-style-guide.md`  
+- **ISMS Reference:** [STYLE_GUIDE.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md)  
+- **Classification:** Public  
+- **Next Review:** 2026-06-26
+# Political Intelligence Style Guide
+
+<!-- version: 1.0.0 | updated: 2026-03-26 | author: Hack23 AB -->
+
+## Purpose
+
+This style guide establishes standards for political intelligence reporting across all article types published by Riksdagsmonitor. Inspired by the [ISMS Style Guide](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md), it adapts documentation and communication standards to the domain of parliamentary intelligence reporting.
+
+**Goal**: Every article must reach the Intelligence level of analysis — not surface-level reporting, not standard reporting, but strategic intelligence that exposes power dynamics, policy trajectories, and democratic risks.
+
+---
+
+## Classification System
+
+### Classification Levels
+
+| Level | Icon | Meaning | Use Case |
+|---|---|---|---|
+| **CRITICAL** | 🔴 | Constitutional threat / structural democratic risk | Government collapse, fundamental rights violations, major coalition rupture |
+| **HIGH** | 🟠 | Major political development with wide impact | Budget decisions, significant legislation, coalition stress |
+| **MEDIUM** | 🟡 | Notable policy development | Committee reports, interpellations, motions with clear policy stakes |
+| **LOW** | 🟢 | Background / monitoring item | Routine procedural documents, low-stakes motions |
+
+### Priority System
+
+| Priority | Icon | Use Case |
+|---|---|---|
+| **Breaking** | 🔴 | Same-day publication required |
+| **Major** | 🟠 | Publish within 24 hours |
+| **Standard** | 🟡 | Normal publication cycle |
+| **Background** | 🟢 | Evergreen / reference content |
+
+### Classification Badge Format
+
+Every article header must include a visible classification badge when `classificationLevel` is assigned. Priority is captured in workflow metadata/urgency and is not rendered as a separate header badge in the current template:
+
+```html
+<span class="classification-badge classification-high" aria-label="Classification: HIGH">
+  🟠 HIGH
+</span>
+```
+
+**RTL Note**: For Arabic (`ar`) and Hebrew (`he`) articles, badges must use `dir="rtl"` and be positioned on the right side of the header.
+
+---
+
+## Article Structure Standards
+
+### Universal Article Structure
+
+Every article must follow this structure regardless of article type:
+
+```
+1. Article Metadata Header
+   - Classification badge (🔴/🟠/🟡/🟢)
+   - Date, author attribution, sources count
+   - Confidence level metadata (`<meta name="article:confidence">`) in the current template
+   - Risk indicator badge when `riskLevel` is present
+
+2. Analytical Lede (NOT a summary)
+   - Frames political significance, not events
+   - Names actors and stakes immediately
+   - 50–80 words maximum
+
+3. Factual Backbone
+   - MCP-sourced evidence (minimum 3 data points)
+   - Document IDs cited inline (e.g., dok_id: H901FiU1)
+   - Vote tallies, speech references, dates
+
+4. Strategic Analysis Body
+   - At minimum: Government + Opposition perspectives
+   - Evidence-tagged claims with confidence levels
+   - Sub-headings required (h2 → h3 → h4 hierarchy)
+
+5. Stakeholder Impact Assessment
+   - Who wins / who loses / what changes
+   - At minimum 2 parties cited
+
+6. SWOT Section (where applicable)
+   - Uses pre-computed analysis when available
+   - Each entry: specific, evidence-based, confidence-tagged
+
+7. Forward Indicator (mandatory)
+   - "What to Watch Next" based on risk/threat analysis
+   - 2–4 specific, time-bound indicators
+
+8. Data Attribution Footer
+   - Source methodology note
+   - Confidence disclaimer
+   - Analysis date and version
+```
+
+### Article Type-Specific Requirements
+
+#### Breaking News 🔴
+
+| Requirement | Standard |
+|---|---|
+| Classification | MUST include classification badge |
+| Analysis depth | Quick classification + top risk + significance score |
+| Word count | 300–500 words |
+| Perspectives | Government + Citizen (minimum) |
+| Style | Concise, fact-focused, forward indicator mandatory |
+| SWOT | Not required (time constraint) |
+| Evidence minimum | 2 MCP data points |
+| Confidence labeling | Lead claim must be labeled HIGH/MEDIUM/LOW |
+| Forward indicator | 1–2 specific next steps |
+
+#### Daily Analysis 🟠
+
+| Requirement | Standard |
+|---|---|
+| Classification | Full classification section |
+| Analysis depth | Full classification + risk + SWOT + 6 perspectives |
+| Word count | 600–900 words |
+| Perspectives | All 6 required |
+| Style | Balanced depth, evidence-rich |
+| SWOT | Required — use pre-computed data when available |
+| Evidence minimum | 3 MCP data points per main section |
+| Confidence labeling | Every analytical claim labeled |
+| Forward indicator | 3–4 specific next steps |
+
+#### Evening / Deep Inspection Analysis 🟠
+
+| Requirement | Standard |
+|---|---|
+| Classification | Full with trend indicators |
+| Analysis depth | Deep SWOT + threat analysis + cross-references |
+| Word count | 800–1,200 words |
+| Perspectives | All 6 required, full depth |
+| Style | Strategic depth, pattern recognition |
+| SWOT | Mandatory — pre-computed data preferred |
+| Evidence minimum | 4+ MCP data points per section |
+| Confidence labeling | All claims labeled with reasoning |
+| Forward indicator | 4–5 time-bound indicators + risk trajectory |
+
+#### Weekly Review 🟡
+
+| Requirement | Standard |
+|---|---|
+| Classification | Weekly classification summary |
+| Analysis depth | Aggregated weekly trends + risk evolution + SWOT changes |
+| Word count | 800–1,200 words |
+| Perspectives | Government + Opposition + Economic (minimum) |
+| Style | Trend-focused, strategic |
+| SWOT | Comparative SWOT: this week vs. last week |
+| Evidence minimum | Summary statistics with document counts |
+| Confidence labeling | Trend claims must be labeled |
+| Forward indicator | Week-ahead implications |
+
+#### Monthly Review 🟡
+
+| Requirement | Standard |
+|---|---|
+| Classification | Monthly intelligence classification |
+| Analysis depth | Full threat model + strategic SWOT + risk register |
+| Word count | 1,000–1,800 words |
+| Perspectives | All 6 with historical depth |
+| Style | Strategic assessment, long-term patterns |
+| SWOT | Full strategic SWOT with evolution tracking |
+| Evidence minimum | Monthly aggregate statistics |
+| Confidence labeling | All strategic claims labeled |
+| Forward indicator | Month-ahead strategic watch + 3-month horizon |
+
+#### Committee Reports 🟡
+
+| Requirement | Standard |
+|---|---|
+| Classification | Committee-specific classification + policy risk |
+| Analysis depth | Domain-specific classification + policy risk |
+| Word count | 500–800 words |
+| Perspectives | Government + Citizen + Economic |
+| Style | Technical depth, policy-focused |
+| SWOT | Policy domain SWOT |
+| Evidence minimum | Committee document citations |
+| Confidence labeling | Technical claims must be labeled |
+| Forward indicator | Legislative timeline indicators |
+
+#### Propositions 🟠
+
+| Requirement | Standard |
+|---|---|
+| Classification | Legislative impact classification + economic risk |
+| Analysis depth | Legislative impact classification + economic risk |
+| Word count | 600–900 words |
+| Perspectives | All 6 |
+| Style | Impact analysis, implementation assessment |
+| SWOT | Legislative SWOT (coalition support vs. opposition) |
+| Evidence minimum | Proposition document + committee response |
+| Confidence labeling | All implementation claims labeled |
+| Forward indicator | Passage probability + implementation timeline |
+
+---
+
+## Writing Quality Standards
+
+### Analytical Depth Ladder
+
+All articles MUST reach the **Intelligence Level**:
+
+| Level | Description | Example |
+|---|---|---|
+| **Surface Level** ❌ | Describes events | "The Riksdag voted on proposition H901." |
+| **Strategic Level** ⚠️ | Explains motivations | "The coalition voted for H901 to secure SD support." |
+| **Intelligence Level** ✅ | Reveals power dynamics | "The 13-vote margin on H901 exposes KD defection risk: if two KD members align with opposition, the coalition loses its majority." |
+
+### Evidence Density Requirements
+
+| Article Type | Minimum Evidence Points per Section |
+|---|---|
+| Breaking news | 2 |
+| Daily analysis | 3 |
+| Deep inspection | 4 |
+| Weekly/Monthly review | Statistical summaries |
+| Committee/Propositions | 3 + document citations |
+
+**Evidence must include**:
+- Document ID (dok_id: `H901FiU1`)
+- Date of document
+- Named politician or party (full name + party abbreviation)
+- Specific data point (vote tally, SEK amount, percentage)
+
+### Attribution Standards
+
+| Requirement | Standard |
+|---|---|
+| Politicians | Full name + party abbreviation: "Ulf Kristersson (M)" |
+| Documents | dok_id in parentheses: "proposition 2025/26:1 (H9011)" |
+| Vote records | Tally format: "198 Ja / 148 Nej / 3 Avstår" |
+| Statistics | Source + date: "SCB Q4 2025 data" |
+| Speeches | Speaker + date + chamber reference |
+
+### Confidence Labeling
+
+Every analytical claim (not factual statements) must carry a confidence label:
+
+| Label | Criteria | Format |
+|---|---|---|
+| **HIGH** | Direct evidence from MCP data | `[HIGH]` or inline tag |
+| **MEDIUM** | Reasonable inference from multiple sources | `[MEDIUM]` |
+| **LOW** | Informed speculation, limited evidence | `[LOW]` |
+
+**Claim format**:
+```
+The coalition will likely advance the housing reform proposal 
+before the summer recess [MEDIUM — based on coalition 
+agreement language in 2026 budget bill, H9011].
+```
+
+### Balanced Coverage Requirements
+
+| Requirement | Minimum Standard |
+|---|---|
+| Parties cited | Minimum 2 (both coalition and opposition) |
+| Coalition position | Government/coalition perspective required |
+| Opposition position | At least one opposition party perspective required |
+| Citizens impact | Required for domestic policy articles |
+
+---
+
+## Icon Conventions
+
+### Classification and Risk Icons
+
+| Icon | Use Case |
+|---|---|
+| 🔴 | Critical classification / Breaking priority / HIGH RISK |
+| 🟠 | High classification / Major priority / ELEVATED RISK |
+| 🟡 | Medium classification / Standard priority / MODERATE RISK |
+| 🟢 | Low classification / Background priority / LOW RISK |
+| ⚠️ | Risk indicator (used inline in text) |
+| 🎯 | Threat indicator (used in threat analysis sections) |
+
+### Stakeholder Icons
+
+| Icon | Stakeholder |
+|---|---|
+| 🏛️ | Government / Coalition |
+| ⚖️ | Opposition |
+| 👥 | Citizens / Civil society |
+| 💰 | Economic actors / Business |
+| 🌍 | International / EU |
+| 📰 | Media / Public discourse |
+
+### SWOT Icons
+
+| Icon | Quadrant |
+|---|---|
+| 💪 | Strengths |
+| ⚡ | Weaknesses |
+| 🚀 | Opportunities |
+| ☁️ | Threats |
+
+### Analysis Section Icons
+
+| Icon | Use Case |
+|---|---|
+| 📊 | Data/Statistics section |
+| 🔍 | Deep analysis section |
+| 📋 | Document reference |
+| 🗳️ | Voting record |
+| 📅 | Timeline/Forward indicator |
+| 🔗 | Cross-reference to related documents |
+
+---
+
+## Forward Indicator Requirements
+
+Every article must end with a "What to Watch Next" section based on risk and threat analysis. This is mandatory and not optional.
+
+### Forward Indicator Format
+
+```markdown
+## 📅 What to Watch Next
+
+**[Timeframe]**: [Specific, measurable indicator]
+**[Timeframe]**: [Specific, measurable indicator]
+**[Timeframe]**: [Specific, measurable indicator]
+```
+
+**Example**:
+```markdown
+## 📅 What to Watch Next
+
+**This week**: Vote on SoU20 committee report — 
+SD's position determines coalition majority (watch 
+for SD Riksdag group statement by Thursday)
+
+**Next 2 weeks**: EU Commission review of Swedish 
+housing market regulation — may trigger Article 7 
+process if H901 is passed unchanged
+
+**3-month horizon**: M leadership elections in April — 
+outcome will reshape coalition negotiation dynamics 
+on welfare reform timeline
+```
+
+### Indicator Quality Standards
+
+- **Specific**: Name the document, party, or institution to watch
+- **Time-bound**: Give a concrete timeframe (this week, next 2 weeks, etc.)
+- **Actionable**: A reader should know exactly what to monitor
+- **Risk-linked**: Connect to pre-computed risk or threat analysis when available
+
+---
+
+## Translation Quality Standards
+
+### Multi-Language Adaptation
+
+All 14 languages must maintain analytical depth. Translations must not:
+
+- ❌ Lose confidence labels (HIGH/MEDIUM/LOW must be translated or retained)
+- ❌ Drop attribution (politician names must remain in original Swedish form)
+- ❌ Reduce evidence density (all dok_id references must remain)
+- ❌ Omit forward indicators
+
+### Language-Specific Rules
+
+| Language | RTL | Special Requirements |
+|---|---|---|
+| `ar` (Arabic) | Yes | Classification badges right-aligned; numerical direction preserved |
+| `he` (Hebrew) | Yes | Classification badges right-aligned; date format adapted |
+| `ja` (Japanese) | No | Parliamentary terms explained in Japanese; Western-style dates retained |
+| `ko` (Korean) | No | Party names transliterated (M → 보통당); document IDs retained |
+| `zh` (Chinese) | No | Party names translated with pinyin; vote tallies in Arabic numerals |
+| `sv` (Swedish) | No | Use native parliamentary terminology (interpellation, betänkande, proposition) |
+
+### Translation Context Requirements
+
+When translating, always provide:
+1. Pre-computed classification level (so translator AI understands significance)
+2. Key political terminology glossary for the target language
+3. Analysis context summary (classification, risk level, key actors)
+
+---
+
+## Article Metadata Standards
+
+### Required HTML Meta Tags
+
+```html
+<!-- Classification (required when classification is assigned) -->
+<meta name="article:classification" content="HIGH|MEDIUM|LOW|CRITICAL">
+
+<!-- Risk (required when risk is assigned) -->
+<meta name="article:risk-level" content="high|elevated|moderate|low">
+
+<!-- Confidence (required when confidence is assigned) -->
+<meta name="article:confidence" content="HIGH|MEDIUM|LOW">
+
+<!-- Analysis context (optional) -->
+<meta name="article:significance" content="[0-100]">
+```
+
+### Schema.org Metadata
+
+Articles must include `NewsArticle` structured data with:
+- `datePublished` and `dateModified`
+- `author` (James Pether Sörling)
+- `keywords` from classification analysis
+- `articleSection` matching the classification level
+
+---
+
+## Data Source Attribution
+
+### Attribution Footer
+
+Every article must include an attribution footer:
+
+```html
+<footer class="article-attribution">
+  <p>Analysis based on live data from Swedish Riksdag Open Data API 
+     (riksdag.se) via riksdag-regering-mcp server. 
+     Pre-computed analysis: <time datetime="[date]">[date]</time>.
+     Methodology: <a href="/analysis/methodologies/political-style-guide.md">
+     Political Intelligence Style Guide v1.0</a>.
+  </p>
+  <p class="confidence-disclaimer">
+    Confidence levels (HIGH/MEDIUM/LOW) reflect evidence quality and 
+    analytical certainty at time of publication. Political situations 
+    may evolve rapidly.
+  </p>
+</footer>
+```
+
+---
+
+## Pre-Computed Analysis Integration
+
+When `analysis/daily/YYYY-MM-DD/` files are available, article generators MUST consume them:
+
+| Analysis File | Article Usage |
+|---|---|
+| `classification-results.md` | Article classification badge + meta tags |
+| `risk-assessment.md` | Risk indicators inline + risk badge in header |
+| `swot-analysis.md` | SWOT section (pre-computed preferred over inline generation) |
+| `threat-analysis.md` | Forward indicator section + threat badges |
+| `stakeholder-perspectives.md` | Multi-perspective sections |
+| `significance-scoring.md` | Article significance meta tag + prioritization |
+| `synthesis-summary.md` | Overall narrative direction for the lede |
+
+When analysis files are absent, article generators must fall back to inline analysis using the existing SWOT and risk analysis modules.
+
+---
+
+## Prohibited Patterns
+
+### Content Anti-Patterns
+
+❌ **Vague attribution**: "Politicians discussed..." → Must name specific politicians
+❌ **Unattributed opinions**: "Many believe..." → Must cite a named source
+❌ **Circular reasoning**: "This is important because it matters..." → Must explain strategic significance
+❌ **Generic SWOT entries**: "Strong leadership" → Must cite specific evidence
+❌ **Missing opposition**: An article about government policy without opposition response
+❌ **Missing forward indicator**: An article that ends with analysis but no "What to Watch Next"
+❌ **Unlabeled analytical claims**: "The coalition will likely..." without confidence label
+❌ **Fabricated content**: Any claim not traceable to MCP data or named sources
+
+### Technical Anti-Patterns
+
+❌ Inline JavaScript in article body
+❌ Missing language switcher navigation
+❌ `data-translate="true"` in non-Swedish articles
+❌ Article word count below minimum for the article type
+❌ Missing classification badge in article header
+❌ Missing `article:classification` meta tag
+
+---
+
+## Document Control
+
+| Field | Value |
+|---|---|
+| Version | 1.0.0 |
+| Status | Active |
+| Owner | Hack23 AB |
+| Review Cycle | Quarterly |
+| Next Review | 2026-06-26 |
+| Related | `scripts/prompts/v1/political-analysis.md`, `scripts/analysis-reader.ts` |
+| ISMS Reference | Secure_Development_Policy.md §4.2 |
