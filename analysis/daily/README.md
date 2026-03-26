@@ -57,7 +57,7 @@ Both naming schemes are intentional and complementary.
 
 ## 📁 Files Created Per Day
 
-### 🌅 Morning Files (created by `news-article-generator`, 05:51 UTC)
+### 🌅 Morning Files (created by scheduled daily workflows: `news-committee-reports` 04:00, `news-propositions` 05:00, `news-motions` 06:00, `news-interpellations` 07:00 UTC Mon–Fri)
 
 | File | Format | Purpose | Template |
 |------|--------|---------|----------|
@@ -99,7 +99,7 @@ ls -la "analysis/daily/${TODAY}"
 
 ## 📊 Weekly Aggregation Cross-Reference
 
-Daily artifacts are aggregated into weekly summaries by the `news-week-ahead` workflow (runs Sunday evening). The aggregation process:
+Daily artifacts are aggregated into weekly summaries by the `news-week-ahead` workflow (runs **Fridays 07:00 UTC**). The aggregation process:
 
 1. Reads all `morning-significance-scores.json` files for the past 7 days
 2. Identifies top-scoring events and trending topics
@@ -107,7 +107,7 @@ Daily artifacts are aggregated into weekly summaries by the `news-week-ahead` wo
 4. Consolidates risk deltas into a projected risk register
 5. Writes aggregated output to `analysis/weekly/YYYY-WNN/`
 
-**Week boundary:** ISO 8601 weeks run **Monday through Sunday**. Sunday's daily artifacts are included in the week that just ended, then the weekly aggregation runs.
+**Week boundary:** ISO 8601 weeks run **Monday through Sunday**. The weekly aggregation runs on Friday morning to preview the upcoming parliamentary week, using the current week's daily artifacts accumulated so far (Mon–Thu).
 
 ---
 

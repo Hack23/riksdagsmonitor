@@ -56,11 +56,11 @@ analysis/weekly/
 
 ## 📁 Files Created Per Week
 
-All weekly files are created by the `news-week-ahead` workflow (runs Sunday evening after the week's last daily workflows complete):
+All weekly files are created by the `news-week-ahead` workflow (runs **Fridays 07:00 UTC** to preview the upcoming parliamentary week):
 
 | File | Format | Purpose | Source Data |
 |------|--------|---------|-------------|
-| `week-summary-swot.md` | Markdown | Aggregated SWOT from the week's daily SWOT artifacts | Mon–Sat `evening-swot-update.md` + Sun morning SWOT inputs, merged and deduplicated |
+| `week-summary-swot.md` | Markdown | Aggregated SWOT from the week's daily SWOT artifacts | Mon–Thu `evening-swot-update.md` + available morning SWOT inputs from the current week, merged and deduplicated |
 | `week-ahead-risk-register.md` | Markdown | Forward-looking risk register for the coming week based on legislative calendar | Daily risk snapshots + upcoming Riksdag calendar |
 | `week-significance-trends.md` | Markdown | Trending political topics by significance score across the week | Daily `morning-significance-scores.json` aggregated |
 | `week-ahead-calendar.md` | Markdown | Key parliamentary events, votes, and committee meetings for the coming week | riksdag-regering-mcp `get_calendar_events` |
@@ -75,11 +75,9 @@ flowchart TD
     D2[Tue: morning + evening<br/>daily artifacts] --> AGG
     D3[Wed: morning + evening<br/>daily artifacts] --> AGG
     D4[Thu: morning + evening<br/>daily artifacts] --> AGG
-    D5[Fri: morning + evening<br/>daily artifacts] --> AGG
-    D6[Sat: morning + evening<br/>daily artifacts] --> AGG
-    D7[Sun: morning<br/>daily artifacts] --> AGG
+    D5[Fri: morning artifacts<br/>available before 07:00] --> AGG
     
-    AGG[news-week-ahead<br/>Sunday evening] --> W1[week-summary-swot.md]
+    AGG[news-week-ahead<br/>Friday 07:00 UTC] --> W1[week-summary-swot.md]
     AGG --> W2[week-ahead-risk-register.md]
     AGG --> W3[week-significance-trends.md]
     AGG --> W4[week-ahead-calendar.md]

@@ -89,10 +89,18 @@ analysis/
 
 The following agentic workflows write analysis artifacts to this directory **before** article generation:
 
-### 🌅 `news-article-generator` (Daily 05:51 UTC)
-Reads from: `riksdag-regering-mcp` (32 tools) + `analysis/daily/YYYY-MM-DD/`  
-Writes to: `analysis/daily/YYYY-MM-DD/`  
-Produces:
+### 🌅 Daily Morning Workflows (scheduled Mon–Fri)
+
+The following per-type workflows produce morning analysis artifacts. `news-article-generator` is **manual-only** (`workflow_dispatch`) and is not scheduled:
+
+| Workflow | Schedule | Primary Output |
+|----------|----------|----------------|
+| `news-committee-reports` | 04:00 UTC Mon–Fri | Committee report articles |
+| `news-propositions` | 05:00 UTC Mon–Fri | Proposition articles |
+| `news-motions` | 06:00 UTC Mon–Fri | Motion articles |
+| `news-interpellations` | 07:00 UTC Mon–Fri | Interpellation articles |
+
+These workflows read from `riksdag-regering-mcp` (32 tools) and write analysis artifacts to `analysis/daily/YYYY-MM-DD/`:
 - `morning-significance-scores.json` — ranked political events
 - `morning-classification.md` — event classification results
 - `morning-risk-snapshot.md` — current risk landscape
@@ -112,7 +120,7 @@ Produces:
 - `realtime-HHMM-classification.md` — timestamped event classifications
 - `realtime-HHMM-risk-delta.md` — risk changes since last run
 
-### 📅 `news-week-ahead` (Weekly, Sunday evening)
+### 📅 `news-week-ahead` (Weekly, Fridays 07:00 UTC)
 Reads from: `analysis/daily/YYYY-MM-DD/` for the past 7 days  
 Writes to: `analysis/weekly/YYYY-WNN/`  
 Produces:

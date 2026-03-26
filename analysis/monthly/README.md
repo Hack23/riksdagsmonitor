@@ -61,7 +61,7 @@ analysis/monthly/
 
 ## 📁 Files Created Per Month
 
-All monthly files are created by the end-of-month aggregation pipeline (runs on the last calendar day of each month at 22:00 UTC):
+All monthly files are intended to be created by a planned end-of-month aggregation pipeline (to run on the last calendar day of each month at 22:00 UTC). This pipeline is **not yet implemented** in this repository; until it is, these files may be generated manually or by external automation:
 
 | File | Format | Purpose | Source Data |
 |------|--------|---------|-------------|
