@@ -926,7 +926,7 @@ describe('Political Threat Analysis — analysePoliticalThreats', () => {
   describe('primaryThreat and overallThreatLevel consistency', () => {
     it('primaryThreat is the category of the highest-severity analysis', () => {
       const profile = analysePoliticalThreats(makeCrisisDocument(), makeUnstableCIA());
-      if (profile.primaryThreat !== undefined) {
+      if (profile.primaryThreat != null) {
         const primary = profile.threatAnalyses.find(
           a => a.pridesCategory === profile.primaryThreat
         );

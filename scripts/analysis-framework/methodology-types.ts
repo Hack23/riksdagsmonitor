@@ -388,9 +388,9 @@ export interface PoliticalThreatProfile {
   threatAnalyses: PoliticalThreatAnalysis[];
   /**
    * Primary threat category (highest severity, or most evidence-dense).
-   * undefined when no significant threats are detected.
+   * `null` when no significant threats are detected (valid JSON output).
    */
-  primaryThreat: PridesCategory | undefined;
+  primaryThreat: PridesCategory | null;
   /**
    * Overall threat level across all PRIDES categories.
    * Derived from the highest-severity individual threat.

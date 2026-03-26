@@ -47,7 +47,7 @@ const POLARIZATION_KEYWORDS: readonly string[] = [
   'polarisering', 'splittring', 'oss och dem', 'extremism',
   'hatretorik', 'desinformation', 'propaganda', 'populism',
   'migrationsretorik', 'nationalistisk', 'sverigevänner', 'globalister',
-  'polarization', 'division', 'extremism', 'disinformation', 'hate rhetoric',
+  'polarization', 'division', 'disinformation', 'hate rhetoric',
   'us vs them', 'populist', 'nationalist rhetoric',
 ];
 
@@ -65,7 +65,7 @@ const INSTITUTIONAL_EROSION_KEYWORDS: readonly string[] = [
   'urholkning', 'försvagning', 'KU-granskning', 'konstitutionsbrott',
   'bristande ansvar', 'accountability gap', 'institutional capture',
   'ansvarslöshet', 'bristande transparens', 'domstolspackning',
-  'court packing', 'institutional capture', 'accountability deficit',
+  'court packing', 'accountability deficit',
   'erosion of institutions', 'democratic backsliding', 'judicial independence',
 ];
 
@@ -170,14 +170,32 @@ function getDocType(doc: RawDocument): string {
   return String(doc.doktyp ?? doc.documentType ?? '').toLowerCase().trim();
 }
 
+function escapeRegExp(input: string): string {
+  return input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Word-boundary-aware keyword matching (ported from risk-assessment engine).
+ * Short/uppercase abbreviations (e.g. "EU", "NATO") use word-boundary
+ * matching to avoid false positives inside unrelated words.
+ */
+function keywordMatches(textLower: string, keyword: string): boolean {
+  const isShortAbbreviation = /^[A-ZÅÄÖ]{2,4}$/.test(keyword);
+  if (isShortAbbreviation) {
+    const pattern = new RegExp(`\\b${escapeRegExp(keyword.toLowerCase())}\\b`, 'i');
+    return pattern.test(textLower);
+  }
+  return textLower.includes(keyword.toLowerCase());
+}
+
 function containsAny(text: string, keywords: readonly string[]): boolean {
   const lower = text.toLowerCase();
-  return keywords.some(kw => lower.includes(kw.toLowerCase()));
+  return keywords.some(kw => keywordMatches(lower, kw));
 }
 
 function countMatches(text: string, keywords: readonly string[]): number {
   const lower = text.toLowerCase();
-  return keywords.filter(kw => lower.includes(kw.toLowerCase())).length;
+  return keywords.filter(kw => keywordMatches(lower, kw)).length;
 }
 
 // ---------------------------------------------------------------------------
@@ -559,7 +577,7 @@ export function analysePoliticalThreats(
   if (threatAnalyses.length === 0) {
     return {
       threatAnalyses: [],
-      primaryThreat: undefined,
+      primaryThreat: null,
       overallThreatLevel: 'none',
       activeThreatAgents: [],
     };
@@ -570,7 +588,7 @@ export function analysePoliticalThreats(
     (a, b) => (SEVERITY_ORDER[b.severity] ?? 0) - (SEVERITY_ORDER[a.severity] ?? 0)
   );
 
-  const primaryThreat = sorted[0]?.pridesCategory;
+  const primaryThreat = sorted[0]?.pridesCategory ?? null;
   const overallThreatLevel = sorted[0]?.severity ?? 'none';
 
   // Deduplicate threat agents across all analyses
