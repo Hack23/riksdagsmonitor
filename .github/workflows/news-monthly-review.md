@@ -368,7 +368,7 @@ search_dokument({ from_date: lastMonth, to_date: today, limit: 50 })
 ```bash
 ARTICLE_DATE=$(date -u +%Y-%m-%d)
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 200
 echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output"
 ```

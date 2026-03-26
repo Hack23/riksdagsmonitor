@@ -169,7 +169,7 @@ START_TIME=$(date +%s)
 | Phase | Minutes | Action |
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()`, determine day type |
-| Analysis | 3–8 | Run pre-article-analysis pipeline for today's data |
+| Analysis | 3–8 | Run pre-article-analysis pipeline (downloads data + generates analysis artifacts) |
 | Data | 8–15 | Query MCP tools for parliamentary activity |
 | Generate | 15–30 | Run generation script OR manual synthesis (see Step 3) |
 | Validate | 30–38 | Translate, validate, commit |
