@@ -127,17 +127,23 @@ function frontmatter(ctx: SerializationContext, title: string, docCount: number,
 export function serializeDataManifest(
   ctx: SerializationContext,
   docCounts: Record<string, number>,
+  dateFilteredTotal?: number,
 ): string {
   const totalDocs = Object.values(docCounts).reduce((a, b) => a + b, 0);
+  const analyzedCount = dateFilteredTotal ?? totalDocs;
   const lines: string[] = [
-    frontmatter(ctx, 'Data Download Manifest', totalDocs, 100),
+    frontmatter(ctx, 'Data Download Manifest', analyzedCount, 100),
     '## Summary',
     '',
-    `Downloaded **${totalDocs}** documents from ${ctx.dataSources.length} MCP data sources.`,
-    '',
-    '## Document Counts by Type',
+    `Downloaded **${totalDocs}** documents (session-wide) from ${ctx.dataSources.length} MCP data sources.`,
     '',
   ];
+
+  if (dateFilteredTotal !== undefined) {
+    lines.push(`After date filtering to **${ctx.date}**: **${dateFilteredTotal}** documents selected for analysis.`, '');
+  }
+
+  lines.push('## Document Counts by Type', '');
 
   for (const [type, count] of Object.entries(docCounts)) {
     lines.push(`- **${type}**: ${count} documents`);

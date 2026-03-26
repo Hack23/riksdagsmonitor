@@ -413,7 +413,7 @@ async function runPreArticleAnalysis(opts: {
     dataSources: manifest.dataSources,
   };
 
-  writeAnalysis(outputDir, 'data-download-manifest.md', serializeDataManifest(ctx, manifest.docCounts));
+  writeAnalysis(outputDir, 'data-download-manifest.md', serializeDataManifest(ctx, manifest.docCounts, allDocs.length));
 
   if (allDocs.length === 0) {
     console.warn('\n⚠️  No documents downloaded. Analysis will be minimal.');

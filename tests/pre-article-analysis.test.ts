@@ -128,6 +128,23 @@ describe('serializeDataManifest', () => {
     const md = serializeDataManifest(CTX, {});
     expect(md.length).toBeGreaterThan(10);
   });
+
+  it('shows date-filtered total when provided', () => {
+    const md = serializeDataManifest(CTX, { propositions: 10, motions: 5 }, 8);
+    expect(md).toContain('**8** documents selected for analysis');
+    expect(md).toContain('**15** documents (session-wide)');
+  });
+
+  it('uses date-filtered count in frontmatter Documents Analyzed when provided', () => {
+    const md = serializeDataManifest(CTX, { propositions: 10, motions: 5 }, 8);
+    expect(md).toContain('**Documents Analyzed**: 8');
+  });
+
+  it('falls back to session-wide total when dateFilteredTotal is omitted', () => {
+    const md = serializeDataManifest(CTX, { propositions: 10, motions: 5 });
+    expect(md).toContain('**Documents Analyzed**: 15');
+    expect(md).not.toContain('documents selected for analysis');
+  });
 });
 
 // ---------------------------------------------------------------------------
