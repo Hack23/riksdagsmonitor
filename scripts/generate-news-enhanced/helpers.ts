@@ -78,7 +78,7 @@ export async function getAnalysisEnrichment(
 ): Promise<AnalysisEnrichment | null> {
   const maxDaysBack = options.maxDaysBack ?? 3;
   const basePath = options.basePath;
-  const cacheKey = JSON.stringify({ maxDaysBack, basePath: basePath ?? null });
+  const cacheKey = `${maxDaysBack}:${basePath ?? 'default'}`;
 
   if (analysisEnrichmentCache.has(cacheKey)) {
     return analysisEnrichmentCache.get(cacheKey) ?? null;

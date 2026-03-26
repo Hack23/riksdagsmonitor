@@ -302,8 +302,11 @@ async function generateForDate(targetDate: Date, type: string, client: MCPClient
         urgency: meta.urgency,
       };
     }
-  } catch {
+  } catch (error: unknown) {
     // No date-specific analysis available — proceed without enrichment
+    if (process.env.DEBUG || process.env.LOG_LEVEL === 'debug') {
+      console.error(`⚠️  Failed to load date-specific analysis for ${dateStr}:`, error);
+    }
   }
 
   for (const lang of missingLangs) {
