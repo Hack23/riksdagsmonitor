@@ -116,11 +116,15 @@ Score each dimension from **0 to 10**. See calibration examples below.
 
 ### 📐 Composite Score Calculation (Manual Analyst Rubric)
 
-```
-Composite Score = (Parliamentary × 0.25) + (Policy × 0.25) + (Public Interest × 0.20) 
-                + (Urgency × 0.15) + (Cross-party × 0.15)
+> **⚠️ This manual rubric uses a DIFFERENT scoring model from the automated TypeScript scorer.**
+> The automated `morning-significance-scores.json` is computed by `scripts/analysis-framework/significance-scorer.ts` using **6 dimensions** with weights 0.25/0.20/0.15/0.20/0.10/0.10 (Document type, Committee tier, Policy domain breadth, Coalition context, Content richness, Perspective impact) and returns an **integer 1–10**.
+> The manual rubric below uses **5 analyst-facing dimensions** with different weights (0.25/0.25/0.20/0.15/0.15). Scores from this template are **not directly comparable** to automated scores and should not be used to override them.
 
-Maximum possible: 10.0
+```
+Manual Composite = (Parliamentary × 0.25) + (Policy × 0.25) + (Public Interest × 0.20) 
+                 + (Urgency × 0.15) + (Cross-party × 0.15)
+
+Maximum possible: 10.0   (integer rounding recommended for consistency with automated scores)
 ```
 
 | Dimension | Raw Score | Weight | Weighted Score |
@@ -130,7 +134,7 @@ Maximum possible: 10.0
 | Public Interest | `[#]` | 0.20 | `[#×0.20]` |
 | Urgency | `[#]` | 0.15 | `[#×0.15]` |
 | Cross-party Relevance | `[#]` | 0.15 | `[#×0.15]` |
-| **COMPOSITE SCORE** | — | — | **`[sum]` / 10** |
+| **MANUAL COMPOSITE SCORE** | — | — | **`[sum]` / 10** |
 
 ---
 

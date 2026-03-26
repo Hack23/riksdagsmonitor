@@ -42,6 +42,11 @@ analysis/daily/
 │   └── realtime-HHMM-risk-delta.md
 ```
 
+The filenames above are **aggregated time-of-day artifacts** for a given date (morning, evening, realtime).
+Per-event political classification artifacts follow the separate convention defined in
+`analysis/templates/political-classification.md`: `YYYY-MM-DD-{event-slug}-classification.md` (one file per political event).
+Both naming schemes are intentional and complementary.
+
 **Rules:**
 - Always use `YYYY-MM-DD` — never `DD-MM-YYYY`, `MM/DD/YYYY`, or named months
 - Zero-pad day and month: `2026-03-05` not `2026-3-5`

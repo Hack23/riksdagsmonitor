@@ -60,7 +60,7 @@ All weekly files are created by the `news-week-ahead` workflow (runs Sunday even
 
 | File | Format | Purpose | Source Data |
 |------|--------|---------|-------------|
-| `week-summary-swot.md` | Markdown | Aggregated SWOT from all 7 days' `evening-swot-update.md` files | Daily SWOT deltas merged and deduplicated |
+| `week-summary-swot.md` | Markdown | Aggregated SWOT from the week's daily SWOT artifacts | Mon–Sat `evening-swot-update.md` + Sun morning SWOT inputs, merged and deduplicated |
 | `week-ahead-risk-register.md` | Markdown | Forward-looking risk register for the coming week based on legislative calendar | Daily risk snapshots + upcoming Riksdag calendar |
 | `week-significance-trends.md` | Markdown | Trending political topics by significance score across the week | Daily `morning-significance-scores.json` aggregated |
 | `week-ahead-calendar.md` | Markdown | Key parliamentary events, votes, and committee meetings for the coming week | riksdag-regering-mcp `get_calendar_events` |
