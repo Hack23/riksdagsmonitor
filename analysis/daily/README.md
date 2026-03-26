@@ -101,13 +101,13 @@ ls -la "analysis/daily/${TODAY}"
 
 Daily artifacts are aggregated into weekly summaries by the `news-week-ahead` workflow (runs **Fridays 07:00 UTC**). The aggregation process:
 
-1. Reads all `morning-significance-scores.json` files for the past 7 days
+1. Reads `morning-significance-scores.json` files for the current ISO week-to-date (Mon–Thu) plus any Fri artifacts available before 07:00 UTC
 2. Identifies top-scoring events and trending topics
-3. Merges `evening-swot-update.md` files into a weekly SWOT
+3. Merges daily SWOT artifacts (Mon–Thu evening + any early Fri morning) into a weekly SWOT
 4. Consolidates risk deltas into a projected risk register
 5. Writes aggregated output to `analysis/weekly/YYYY-WNN/`
 
-**Week boundary:** ISO 8601 weeks run **Monday through Sunday**. The weekly aggregation runs on Friday morning to preview the upcoming parliamentary week, using the current week's daily artifacts accumulated so far (Mon–Thu).
+**Week boundary:** ISO 8601 weeks run **Monday through Sunday**. The `news-week-ahead` workflow runs Friday 07:00 UTC and aggregates the current week's daily artifacts accumulated so far (Mon–Thu, plus any early Fri artifacts) to preview the upcoming parliamentary week.
 
 ---
 

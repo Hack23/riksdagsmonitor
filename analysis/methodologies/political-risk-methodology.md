@@ -94,7 +94,7 @@ flowchart TD
     A --> D[Electoral Pressure]
     A --> E[External Constraints]
     
-    B --> B1[Majority threshold: 175/349]
+    B --> B1[Formal majority: ≥175 of 349]
     B --> B2[Support party reliability]
     B --> B3[By-election results]
     
@@ -115,9 +115,11 @@ flowchart TD
 
 | Likelihood of Collapse | Seat Margin | Policy Cohesion | Electoral Pressure | Combined Score |
 |------------------------|:-----------:|:---------------:|:-----------------:|:--------------:|
-| **LOW (<15%)** | ≥176 stable seats | High (all parties aligned) | Low (polls stable) | L≤2, I≤3 |
-| **MEDIUM (15–35%)** | 175–177 marginal | Medium (one party strained) | Medium (5+ point poll shift) | L=3, I=3–4 |
-| **HIGH (>35%)** | <175 or dependent | Low (multi-party tension) | High (SD threats withdrawal) | L≥4, I≥4 |
+| **LOW (<15%)** | ≥176 operational buffer | High (all parties aligned) | Low (polls stable) | L≤2, I≤3 |
+| **MEDIUM (15–35%)** | 175 bare majority (no buffer) | Medium (one party strained) | Medium (5+ point poll shift) | L=3, I=3–4 |
+| **HIGH (>35%)** | <175 no majority | Low (multi-party tension) | High (SD threats withdrawal) | L≥4, I≥4 |
+
+> **Note on majority arithmetic:** A formal Riksdag majority requires **≥175 of 349 seats**. However, absences and abstentions mean that ≥176 seats provide an "operational buffer" — the practical threshold for reliable legislative passage. The table above uses this distinction: ≥176 = comfortable (LOW), exactly 175 = bare majority (MEDIUM), <175 = no majority (HIGH).
 
 ---
 

@@ -53,14 +53,17 @@ Risk Tiers:  1–4 = Low 🟢  |  5–9 = Medium 🟡  |  10–14 = High 🟠  |
 | `RSK-004` | `[OPTIONAL]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[OPTIONAL]` |
 | `RSK-005` | `[OPTIONAL]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[OPTIONAL]` |
 
-```mermaid
-xychart-beta
-    title "Risk Heat Map (Likelihood × Impact)"
-    x-axis ["RSK-001", "RSK-002", "RSK-003", "RSK-004", "RSK-005"]
-    y-axis "Risk Score" 0 --> 25
-    bar [0, 0, 0, 0, 0]
-```
-> *Replace the `[0, 0, 0, 0, 0]` with actual risk scores before saving.*
+**Risk Score Summary** (copy scores from table above):
+
+| Risk ID | Risk Score | Tier |
+|---------|:----------:|------|
+| RSK-001 | `[L×I]` | `[🟢/🟡/🟠/🔴]` |
+| RSK-002 | `[L×I]` | `[🟢/🟡/🟠/🔴]` |
+| RSK-003 | `[L×I]` | `[🟢/🟡/🟠/🔴]` |
+| RSK-004 | `[L×I]` | `[🟢/🟡/🟠/🔴]` |
+| RSK-005 | `[L×I]` | `[🟢/🟡/🟠/🔴]` |
+
+> *Fill in actual risk scores from the register above. This table replaces a Mermaid `xychart-beta` chart for maximum Markdown renderer compatibility.*
 
 ---
 

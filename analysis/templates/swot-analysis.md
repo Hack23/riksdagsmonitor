@@ -47,7 +47,7 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact.
 
 | # | Strength Statement | Evidence (dok_id) | Confidence | Impact |
 |---|-------------------|-------------------|:----------:|:------:|
-| S1 | `[REQUIRED: specific, verifiable strength — e.g. "Coalition maintains working Riksdag majority of 176 seats through SD support agreement"]` | `[REQUIRED: dok_id or vote record]` | `HIGH / MED / LOW` | `HIGH / MED / LOW` |
+| S1 | `[REQUIRED: specific, verifiable strength — e.g. "Coalition maintains working Riksdag majority of 176 seats through SD support agreement"]` | `[REQUIRED: dok_id or vote record]` | `H/M/L` | `H/M/L` |
 | S2 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` |
 | S3 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` |
 | S4 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` |

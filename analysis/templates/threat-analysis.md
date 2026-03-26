@@ -118,17 +118,7 @@
 
 ## 📊 Threat Summary Matrix
 
-```mermaid
-radar
-    title STRIDE Threat Severity Radar
-    "Spoofing (S)" : [0]
-    "Tampering (T)" : [0]
-    "Repudiation (R)" : [0]
-    "Disclosure (I)" : [0]
-    "Denial (D)" : [0]
-    "Elevation (E)" : [0]
-```
-> *Replace `[0]` values with actual severity scores (1–5) from each category's highest-rated threat.*
+> Use this matrix to summarize, for each STRIDE category, the single highest-severity threat and its assessed severity score (1–5).
 
 | STRIDE Category | Highest Threat | Severity | Threat Level |
 |----------------|---------------|:--------:|--------------|

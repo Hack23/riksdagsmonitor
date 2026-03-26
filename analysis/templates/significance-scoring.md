@@ -106,7 +106,7 @@ Score each dimension from **0 to 10**. See calibration examples below.
 
 | Sub-criterion | Score (0–3) | Rationale |
 |--------------|:-----------:|-----------|
-| Parties directly involved (1=2, 2–4=2, 5+=3) | `[#]` | `[REQUIRED]` |
+| Parties directly involved (1=1, 2–4=2, 5+=3) | `[#]` | `[REQUIRED]` |
 | Coalition implication (none=0, tests alliance=2, fractures=3) | `[#]` | `[REQUIRED]` |
 | Opposition response strength (silence=0, statement=1, formal motion=3) | `[#]` | `[REQUIRED]` |
 
