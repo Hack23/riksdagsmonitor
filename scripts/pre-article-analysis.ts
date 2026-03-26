@@ -29,9 +29,9 @@ import { fileURLToPath } from 'node:url';
 
 import { MCPClient } from './mcp-client/client.js';
 import { analyzeDocuments } from './analysis-framework/index.js';
-import { detectCrossDocumentLinks } from './analysis-framework/cross-reference.js';
 import { calculateCoalitionRiskIndex, detectAnomalousPatterns } from './data-transformers/risk-analysis.js';
-import type { RawDocument } from './data-transformers/types.js';
+import type { RawDocument, CIAContext } from './data-transformers/types.js';
+import { loadCIAContext } from './news-types/weekly-review/index.js';
 
 import {
   downloadAllDocuments,
@@ -76,6 +76,7 @@ function parseArgs(argv: string[]): {
   aggregate: boolean;
   limit: number;
   weekLabel: string | null;
+  rm: string | null;
 } {
   const args = argv.slice(2);
   const get = (flag: string): string | null => {
@@ -97,8 +98,9 @@ function parseArgs(argv: string[]): {
 
   const limitArg = get('--limit');
   const limit = limitArg ? parseInt(limitArg, 10) : 20;
+  const rm = get('--rm');
 
-  return { date: isoDate, aggregate, limit, weekLabel };
+  return { date: isoDate, aggregate, limit, weekLabel, rm };
 }
 
 function isoWeekNumber(date: Date): number {
@@ -107,6 +109,44 @@ function isoWeekNumber(date: Date): number {
   d.setUTCDate(d.getUTCDate() + 4 - dayNum);
   const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
   return Math.ceil((((d.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
+}
+
+function parseAndValidateIsoDate(dateStr: string): Date | null {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr);
+  if (!m) return null;
+  const d = new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3])));
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+
+function riksMoteFromDate(dateStr: string): string {
+  const parsed = parseAndValidateIsoDate(dateStr) ?? new Date();
+  const year = parsed.getUTCFullYear();
+  const month = parsed.getUTCMonth() + 1;
+  if (month >= 10) return `${year}/${String(year + 1).slice(-2)}`;
+  return `${year - 1}/${String(year).slice(-2)}`;
+}
+
+function parseIsoWeekLabel(label: string): { year: number; week: number } | null {
+  const match = /^(\d{4})-W(\d{2})$/.exec(label);
+  if (!match) return null;
+  const year = Number(match[1]);
+  const week = Number(match[2]);
+  if (week < 1 || week > 53) return null;
+  return { year, week };
+}
+
+function isDateInIsoWeek(dateStr: string, weekLabel: string): boolean {
+  const parsedDate = parseAndValidateIsoDate(dateStr);
+  const parsedWeek = parseIsoWeekLabel(weekLabel);
+  if (!parsedDate || !parsedWeek) return false;
+
+  const isoThursday = new Date(parsedDate);
+  const dayNum = isoThursday.getUTCDay() || 7;
+  isoThursday.setUTCDate(isoThursday.getUTCDate() + 4 - dayNum);
+  const isoYear = isoThursday.getUTCFullYear();
+  const isoWeek = isoWeekNumber(parsedDate);
+
+  return isoYear === parsedWeek.year && isoWeek === parsedWeek.week;
 }
 
 // ---------------------------------------------------------------------------
@@ -127,13 +167,10 @@ function writeAnalysis(dir: string, filename: string, content: string): void {
 // SWOT extraction from analysis results
 // ---------------------------------------------------------------------------
 
-function extractSwotSummaries(docs: RawDocument[]): SwotSummary[] {
+function extractSwotSummaries(results: ReturnType<typeof analyzeDocuments>['results']): SwotSummary[] {
   const map = new Map<string, SwotSummary>();
 
-  // Use framework results to gather SWOT contributions per stakeholder
-  const results = analyzeDocuments(docs, undefined, 'en');
-
-  for (const result of results.results) {
+  for (const result of results) {
     for (const p of result.perspectives) {
       for (const swotC of p.swotContribution) {
         const key = swotC.forStakeholder;
@@ -165,9 +202,8 @@ function extractSwotSummaries(docs: RawDocument[]): SwotSummary[] {
 // Significance entries
 // ---------------------------------------------------------------------------
 
-function buildSignificanceEntries(docs: RawDocument[]): SignificanceEntry[] {
-  const results = analyzeDocuments(docs, undefined, 'en');
-  return results.results.map(r => ({
+function buildSignificanceEntries(results: ReturnType<typeof analyzeDocuments>['results']): SignificanceEntry[] {
+  return results.map(r => ({
     dok_id: r.document.dok_id || 'N/A',
     title: r.document.titel || r.document.title || r.document.dok_id || 'Unknown',
     score: r.overallSignificance,
@@ -179,10 +215,10 @@ function buildSignificanceEntries(docs: RawDocument[]): SignificanceEntry[] {
 // Risk assessment
 // ---------------------------------------------------------------------------
 
-function buildRiskAssessment(docs: RawDocument[]): RiskAssessmentResult {
+function buildRiskAssessment(docs: RawDocument[], ciaContext: CIAContext): RiskAssessmentResult {
   // Attempt to derive basic coalition signals from document data
-  const riskIndex = calculateCoalitionRiskIndex(undefined);
-  const anomalies = detectAnomalousPatterns(undefined);
+  const riskIndex = calculateCoalitionRiskIndex(ciaContext);
+  const anomalies = detectAnomalousPatterns(ciaContext);
 
   // Derive implications from document significance
   const highSignificance = docs.filter(d => {
@@ -254,6 +290,7 @@ function buildSynthesis(
   ].join(' ');
 
   return {
+    totalDocs,
     executiveSummary,
     keyFindings,
     topDocuments: topDocs,
@@ -273,9 +310,15 @@ function runWeeklyAggregation(weekLabel: string): void {
   const dailyRoot = path.join(ANALYSIS_DIR, 'daily');
   let allSyntheses = '';
 
+  const parsedWeek = parseIsoWeekLabel(weekLabel);
+  if (!parsedWeek) {
+    throw new Error(`Invalid ISO week label: ${weekLabel}. Expected format YYYY-WNN`);
+  }
+
   if (fs.existsSync(dailyRoot)) {
     const dailyDirs = fs.readdirSync(dailyRoot).sort();
     for (const dir of dailyDirs) {
+      if (!isDateInIsoWeek(dir, weekLabel)) continue;
       const synthPath = path.join(dailyRoot, dir, 'synthesis-summary.md');
       if (fs.existsSync(synthPath)) {
         allSyntheses += `\n\n---\n\n## Day: ${dir}\n\n` + fs.readFileSync(synthPath, 'utf8');
@@ -309,8 +352,9 @@ async function runPreArticleAnalysis(opts: {
   limit: number;
   aggregate: boolean;
   weekLabel: string | null;
+  rm: string | null;
 }): Promise<void> {
-  const { date, limit, aggregate, weekLabel } = opts;
+  const { date, limit, aggregate, weekLabel, rm } = opts;
 
   if (aggregate && weekLabel) {
     console.log(`\n📅 Running weekly aggregation for: ${weekLabel}`);
@@ -330,12 +374,14 @@ async function runPreArticleAnalysis(opts: {
   // ── Step 1: Download data ─────────────────────────────────────────────────
   console.log('\n📥 Step 1: Downloading documents from riksdag-regering-mcp...');
   const client = new MCPClient();
+  const resolvedRm = rm ?? riksMoteFromDate(date);
 
-  const { data, manifest } = await downloadAllDocuments(client, { limit });
+  const { data, manifest } = await downloadAllDocuments(client, { limit, rm: resolvedRm });
   const allDocs = flattenDocuments(data);
 
   console.log(`   Downloaded ${allDocs.length} unique documents from ${manifest.dataSources.length} MCP tools`);
   console.log(`   Duration: ${manifest.durationMs}ms`);
+  console.log(`   Riksmöte: ${resolvedRm}`);
 
   const ctx: SerializationContext = {
     date,
@@ -351,17 +397,18 @@ async function runPreArticleAnalysis(opts: {
 
   // ── Step 2: Classification ────────────────────────────────────────────────
   console.log('\n🏷️  Step 2: Classifying documents...');
-  const batchResult = analyzeDocuments(allDocs, undefined, 'en');
+  const ciaContext = loadCIAContext();
+  const batchResult = analyzeDocuments(allDocs, ciaContext, 'en');
   writeAnalysis(outputDir, 'classification-results.md', serializeClassificationResults(ctx, batchResult.results));
 
   // ── Step 3: Risk assessment ───────────────────────────────────────────────
   console.log('\n⚠️  Step 3: Assessing political risks...');
-  const riskResult = buildRiskAssessment(allDocs);
+  const riskResult = buildRiskAssessment(allDocs, ciaContext);
   writeAnalysis(outputDir, 'risk-assessment.md', serializeRiskAssessment(ctx, allDocs.length, riskResult));
 
   // ── Step 4: SWOT analysis ─────────────────────────────────────────────────
   console.log('\n📊 Step 4: Generating SWOT analysis...');
-  const swots = extractSwotSummaries(allDocs);
+  const swots = extractSwotSummaries(batchResult.results);
   writeAnalysis(outputDir, 'swot-analysis.md', serializeSwotAnalysis(ctx, allDocs.length, swots));
 
   // ── Step 5: Threat analysis ───────────────────────────────────────────────
@@ -374,12 +421,13 @@ async function runPreArticleAnalysis(opts: {
 
   // ── Step 7: Significance scoring ─────────────────────────────────────────
   console.log('\n📈 Step 7: Scoring document significance...');
-  const significanceEntries = buildSignificanceEntries(allDocs);
+  const significanceEntries = buildSignificanceEntries(batchResult.results);
   writeAnalysis(outputDir, 'significance-scoring.md', serializeSignificanceScoring(ctx, significanceEntries));
 
   // ── Step 8: Cross-reference mapping ──────────────────────────────────────
   console.log('\n🔗 Step 8: Mapping cross-document references...');
   const crossRefSummary: CrossReferenceSummary = {
+    docCount: allDocs.length,
     totalLinks: batchResult.crossDocumentLinks.length,
     links: batchResult.crossDocumentLinks,
   };

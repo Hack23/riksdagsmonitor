@@ -5,11 +5,10 @@
  * - pipeline integration: argument parsing, synthesis building
  */
 
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import type { RawDocument } from '../scripts/data-transformers/types.js';
 import type {
   DocumentAnalysisResult,
-  BatchAnalysisResult,
   PerspectiveAnalysis,
   DocumentLink,
 } from '../scripts/analysis-framework/types.js';
@@ -35,7 +34,6 @@ import type {
   SignificanceEntry,
   RiskAssessmentResult,
   SwotSummary,
-  CrossReferenceSummary,
   SynthesisSummary,
 } from '../scripts/pre-article-analysis/markdown-serializer.js';
 
@@ -342,24 +340,24 @@ describe('serializeCrossReferenceMap', () => {
   ];
 
   it('shows total link count', () => {
-    const md = serializeCrossReferenceMap(CTX, { totalLinks: 2, links });
+    const md = serializeCrossReferenceMap(CTX, { docCount: 12, totalLinks: 2, links });
     expect(md).toContain('2');
   });
 
   it('groups links by relationship type', () => {
-    const md = serializeCrossReferenceMap(CTX, { totalLinks: 2, links });
+    const md = serializeCrossReferenceMap(CTX, { docCount: 12, totalLinks: 2, links });
     expect(md).toContain('responds-to');
     expect(md).toContain('related-topic');
   });
 
   it('shows source and target doc IDs', () => {
-    const md = serializeCrossReferenceMap(CTX, { totalLinks: 2, links });
+    const md = serializeCrossReferenceMap(CTX, { docCount: 12, totalLinks: 2, links });
     expect(md).toContain('DOC1');
     expect(md).toContain('DOC2');
   });
 
   it('handles zero links', () => {
-    const md = serializeCrossReferenceMap(CTX, { totalLinks: 0, links: [] });
+    const md = serializeCrossReferenceMap(CTX, { docCount: 12, totalLinks: 0, links: [] });
     expect(md).toContain('No cross-document relationships detected');
   });
 });
@@ -370,6 +368,7 @@ describe('serializeCrossReferenceMap', () => {
 
 describe('serializeSynthesisSummary', () => {
   const synthesis: SynthesisSummary = {
+    totalDocs: 25,
     executiveSummary: 'Analysis complete for 25 documents. Risk level: HIGH.',
     keyFindings: ['High significance budget documents found', 'Coalition risk elevated'],
     topDocuments: [
@@ -493,6 +492,7 @@ describe('flattenDocuments', () => {
 describe('synthesis confidence labels', () => {
   it('HIGH confidence shown when 20+ docs analyzed', () => {
     const synthesis: SynthesisSummary = {
+      totalDocs: 25,
       executiveSummary: 'test',
       keyFindings: [],
       topDocuments: [],
@@ -505,6 +505,7 @@ describe('synthesis confidence labels', () => {
 
   it('LOW confidence shown when few docs analyzed', () => {
     const synthesis: SynthesisSummary = {
+      totalDocs: 5,
       executiveSummary: 'test',
       keyFindings: [],
       topDocuments: [],

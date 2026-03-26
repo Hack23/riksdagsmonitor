@@ -129,7 +129,7 @@ export async function downloadAllDocuments(
 
   // ── Committee reports ─────────────────────────────────────────────────────
   try {
-    const raw = await client.fetchCommitteeReports({ limit });
+    const raw = await client.fetchCommitteeReports(limit, rm);
     data.committeeReports = normalise(raw);
     dataSources.push('get_betankanden');
   } catch (err) {

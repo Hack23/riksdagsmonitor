@@ -19,7 +19,6 @@
 
 import type {
   DocumentAnalysisResult,
-  BatchAnalysisResult,
   PerspectiveAnalysis,
   DocumentLink,
 } from '../analysis-framework/types.js';
@@ -61,11 +60,13 @@ export interface SwotSummary {
 }
 
 export interface CrossReferenceSummary {
+  docCount: number;
   totalLinks: number;
   links: DocumentLink[];
 }
 
 export interface SynthesisSummary {
+  totalDocs: number;
   executiveSummary: string;
   keyFindings: string[];
   topDocuments: SignificanceEntry[];
@@ -481,7 +482,7 @@ export function serializeCrossReferenceMap(
   summary: CrossReferenceSummary,
 ): string {
   const lines: string[] = [
-    frontmatter(ctx, 'Cross-Reference Map', summary.totalLinks, 75),
+    frontmatter(ctx, 'Cross-Reference Map', summary.docCount, 75),
     '## Summary',
     '',
     `Detected **${summary.totalLinks}** cross-document relationships.`,
@@ -533,7 +534,7 @@ export function serializeSynthesisSummary(
   const confScore = synthesis.overallConfidence === 'HIGH' ? 80 : synthesis.overallConfidence === 'MEDIUM' ? 55 : 30;
 
   const lines: string[] = [
-    frontmatter(ctx, 'Analysis Synthesis Summary', synthesis.topDocuments.length, confScore),
+    frontmatter(ctx, 'Analysis Synthesis Summary', synthesis.totalDocs, confScore),
     '## Summary',
     '',
     synthesis.executiveSummary,
