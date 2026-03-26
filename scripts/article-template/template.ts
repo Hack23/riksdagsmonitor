@@ -40,6 +40,7 @@ function getClassificationIcon(level: ClassificationLevel): string {
     case 'HIGH': return '🟠';
     case 'LOW': return '🟢';
     case 'MEDIUM': return '🟡';
+    default: return '⚪';
   }
 }
 

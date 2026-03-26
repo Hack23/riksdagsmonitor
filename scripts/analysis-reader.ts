@@ -533,11 +533,16 @@ const ANALYSIS_FILES = {
   synthesis: 'synthesis-summary.md',
 } as const;
 
+/** Strict YYYY-MM-DD format guard to prevent path traversal via `date`. */
+const DATE_FORMAT_RE = /^\d{4}-\d{2}-\d{2}$/;
+
 /**
  * Attempt to read a markdown file from the analysis directory.
- * Returns `null` if the file does not exist or cannot be read.
+ * Returns `null` if the file does not exist, cannot be read, or `date` is
+ * not a valid YYYY-MM-DD string (guards against path traversal).
  */
 async function readAnalysisFile(date: string, filename: string, basePath?: string): Promise<string | null> {
+  if (!DATE_FORMAT_RE.test(date)) return null;
   const resolvedBase = basePath ?? ANALYSIS_BASE_PATH;
   const filePath = join(resolvedBase, date, filename);
   if (!existsSync(filePath)) return null;
