@@ -12,6 +12,7 @@ import { escapeHtml } from '../html-utils.js';
 import { CONTENT_LABELS } from '../data-transformers.js';
 import type { Language } from '../types/language.js';
 import type { ArticleData, EventGridItem, WatchPoint, TemplateSection } from '../types/article.js';
+import type { ClassificationLevel } from '../analysis-reader.js';
 import { SITE_TAGLINE, OG_LOCALE_MAP, TYPE_LABELS, ALL_LANG_CODES } from './constants.js';
 import { getStyleClass } from './registry.js';
 import { ARTICLE_TYPE_NAMES } from './types.js';
@@ -28,6 +29,29 @@ import {
   generateSiteFooter,
   hreflangCode,
 } from './helpers.js';
+
+/**
+ * Map a political intelligence classification level to its corresponding icon emoji.
+ * Returns the appropriate colour-coded circle for use in classification badges.
+ */
+function getClassificationIcon(level: ClassificationLevel): string {
+  switch (level) {
+    case 'CRITICAL': return '🔴';
+    case 'HIGH': return '🟠';
+    case 'LOW': return '🟢';
+    case 'MEDIUM': return '🟡';
+  }
+  // Exhaustiveness guard – runtime fallback for deserialized data
+  return (((_: never): string => '⚪')(level));
+}
+
+/**
+ * Sanitize dynamic values used in CSS class suffixes.
+ * Keeps only safe class-token characters.
+ */
+function toSafeClassToken(value: string): string {
+  return value.toLowerCase().replace(/[^a-z0-9_-]/g, '-');
+}
 
 /**
  * Generate complete article HTML document.
@@ -55,6 +79,9 @@ export function generateArticleHTML(data: ArticleData): string {
     sections = [],
     significance,
     urgency,
+    classificationLevel,
+    riskLevel,
+    confidenceLabel,
   } = data;
 
   // Use proper OG locale for the language
@@ -133,7 +160,11 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   ${typeof significance === 'number' ? `
   <!-- Political Significance -->
   <meta name="article:significance" content="${significance}">${urgency ? `
-  <meta name="article:urgency" content="${urgency}">` : ''}` : ''}
+  <meta name="article:urgency" content="${escapeHtml(urgency)}">` : ''}` : ''}
+  ${classificationLevel || riskLevel || confidenceLabel ? `<!-- Political Intelligence Classification -->` : ''}${classificationLevel ? `
+  <meta name="article:classification" content="${escapeHtml(classificationLevel)}">` : ''}${riskLevel ? `
+  <meta name="article:risk-level" content="${escapeHtml(riskLevel)}">` : ''}${confidenceLabel ? `
+  <meta name="article:confidence" content="${escapeHtml(confidenceLabel)}">` : ''}
   
   <!-- Hreflang for language alternatives -->
 ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}" href="https://riksdagsmonitor.com/news/${baseSlug}-${l}.html">`).join('\n')}
@@ -328,7 +359,11 @@ ${generateArticleLanguageSwitcher(baseSlug, lang)}
       <span class="separator">•</span>
       <span class="type-badge">${typeLabel}</span>
       <span class="separator">•</span>
-      <span>${readTime}</span>
+      <span>${readTime}</span>${classificationLevel ? `
+      <span class="separator">•</span>
+      <span class="type-badge classification-badge classification-${toSafeClassToken(classificationLevel)}" aria-label="Classification: ${escapeHtml(classificationLevel)}">${getClassificationIcon(classificationLevel)} ${escapeHtml(classificationLevel)}</span>` : ''}${riskLevel ? `
+      <span class="separator">•</span>
+      <span class="type-badge risk-badge risk-${toSafeClassToken(riskLevel)}" aria-label="Risk: ${escapeHtml(riskLevel.toUpperCase())}">⚠️ ${escapeHtml(riskLevel.toUpperCase())} RISK</span>` : ''}
     </div>
   </header>
 
