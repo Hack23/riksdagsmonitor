@@ -84,7 +84,7 @@ const SOCIAL_RISK_KEYWORDS: readonly string[] = [
 
 /** Keywords signalling international standing risk */
 const INTERNATIONAL_RISK_KEYWORDS: readonly string[] = [
-  'EU', 'NATO', 'FN', 'nordiskt samarbete', 'utrikespolitik',
+  'NATO', 'FN', 'nordiskt samarbete', 'utrikespolitik',
   'handelsavtal', 'sanktioner', 'diplomatisk', 'ambassad',
   'internationella åtaganden', 'EU-direktiv', 'EU-förordning',
   'treaty', 'international obligations', 'foreign policy', 'sanctions',
@@ -102,14 +102,29 @@ function getDocText(doc: RawDocument): string {
   ].filter(Boolean).join(' ');
 }
 
+function escapeRegExp(input: string): string {
+  return input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function keywordMatches(textLower: string, keyword: string): boolean {
+  // Use word-boundary matching for short/uppercase abbreviations to avoid
+  // false positives (e.g. 'EU' matching inside unrelated words).
+  const isShortAbbreviation = /^[A-ZÅÄÖ]{2,4}$/.test(keyword);
+  if (isShortAbbreviation) {
+    const pattern = new RegExp(`\\b${escapeRegExp(keyword.toLowerCase())}\\b`, 'i');
+    return pattern.test(textLower);
+  }
+  return textLower.includes(keyword.toLowerCase());
+}
+
 function containsAny(text: string, keywords: readonly string[]): boolean {
   const lower = text.toLowerCase();
-  return keywords.some(kw => lower.includes(kw.toLowerCase()));
+  return keywords.some(kw => keywordMatches(lower, kw));
 }
 
 function countMatches(text: string, keywords: readonly string[]): number {
   const lower = text.toLowerCase();
-  return keywords.filter(kw => lower.includes(kw.toLowerCase())).length;
+  return keywords.filter(kw => keywordMatches(lower, kw)).length;
 }
 
 /**
@@ -140,8 +155,8 @@ function assessPolicyImplementationLikelihood(doc: RawDocument, cia: CIAContext 
   const keywordMatches = countMatches(text, POLICY_RISK_KEYWORDS);
   const docType = doc.doktyp ?? '';
 
-  // Committee reports that have already gone through process
-  if (docType === 'bet' && keywordMatches >= 1) return 'almost-certain';
+  // Committee reports are high-signal implementation inputs by default
+  if (docType === 'bet') return keywordMatches >= 1 ? 'almost-certain' : 'likely';
   // Government propositions — high likelihood of implementation risk assessment needed
   if (docType === 'prop') {
     const motionDenialRate = cia?.overallMotionDenialRate ?? 50;
@@ -282,7 +297,7 @@ function assessInternationalImpact(doc: RawDocument): RiskImpactLevel {
 // Evidence extraction
 // ---------------------------------------------------------------------------
 
-function extractEvidence(doc: RawDocument, category: PoliticalRiskCategory): string[] {
+function extractEvidence(doc: RawDocument, category: PoliticalRiskCategory, cia: CIAContext | undefined): string[] {
   const evidence: string[] = [];
   const docId = doc.dok_id;
 
@@ -305,6 +320,15 @@ function extractEvidence(doc: RawDocument, category: PoliticalRiskCategory): str
   switch (category) {
     case 'coalition-stability':
       if (doc.parti) evidence.push(`Party affiliation: ${doc.parti}`);
+      if (cia?.coalitionStability?.stabilityScore !== undefined) {
+        evidence.push(`CIA coalition stability score: ${cia.coalitionStability.stabilityScore}`);
+      }
+      if (cia?.coalitionStability?.majorityMargin !== undefined) {
+        evidence.push(`CIA majority margin: ${cia.coalitionStability.majorityMargin}`);
+      }
+      if (cia?.coalitionStability?.defectionProbability !== undefined) {
+        evidence.push(`CIA defection probability: ${cia.coalitionStability.defectionProbability}`);
+      }
       break;
     case 'democratic-process':
       if (doc.organ === 'KU') evidence.push('Constitutional Committee (KU) involvement');
@@ -318,6 +342,10 @@ function extractEvidence(doc: RawDocument, category: PoliticalRiskCategory): str
       break;
     default:
       break;
+  }
+
+  if (category !== 'coalition-stability' && cia?.coalitionStability?.stabilityScore !== undefined) {
+    evidence.push(`CIA coalition context: stability=${cia.coalitionStability.stabilityScore}, majorityMargin=${cia.coalitionStability.majorityMargin}, defectionProbability=${cia.coalitionStability.defectionProbability}`);
   }
 
   return evidence;
@@ -505,7 +533,7 @@ function assessSingleCategory(
     impact,
     riskScore,
     priority,
-    evidence: extractEvidence(doc, category),
+    evidence: extractEvidence(doc, category, cia),
     confidence,
     mitigatingFactors: getMitigatingFactors(category, cia),
     escalatingFactors: getEscalatingFactors(category, cia),

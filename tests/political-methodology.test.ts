@@ -341,7 +341,7 @@ describe('Political Classification — classifyPoliticalDocument', () => {
       const withUnstable = classifyPoliticalDocument(doc, makeUnstableCIA());
       const withStable = classifyPoliticalDocument(doc, makeStableCIA());
       // Unstable CIA should produce >= stable score
-      expect(withUnstable.classificationScore).toBeGreaterThanOrEqual(withStable.classificationScore - 5);
+      expect(withUnstable.classificationScore).toBeGreaterThanOrEqual(withStable.classificationScore);
     });
   });
 
@@ -827,22 +827,22 @@ describe('Political Threat Analysis — analysePoliticalThreats', () => {
 
   describe('threat agent detection', () => {
     it('government proposition activates ruling-coalition agent', () => {
-      const profile = analysePoliticalThreats(makeDoc({ doktyp: 'prop' }));
+      const profile = analysePoliticalThreats(makeDoc({ doktyp: 'prop', titel: 'Sekretess och transparens i regeringsbeslut' }));
       expect(profile.activeThreatAgents).toContain('ruling-coalition');
     });
 
     it('parliamentary motion activates opposition-parties agent', () => {
-      const profile = analysePoliticalThreats(makeDoc({ doktyp: 'mot' }));
+      const profile = analysePoliticalThreats(makeDoc({ doktyp: 'mot', titel: 'Polarisering och desinformation i debatten' }));
       expect(profile.activeThreatAgents).toContain('opposition-parties');
     });
 
     it('Foreign Affairs Committee document activates external-actors agent', () => {
-      const profile = analysePoliticalThreats(makeDoc({ organ: 'UU', doktyp: 'bet' }));
+      const profile = analysePoliticalThreats(makeDoc({ organ: 'UU', doktyp: 'bet', titel: 'NATO och EU-direktiv i utrikespolitiken med institutional capture risk' }));
       expect(profile.activeThreatAgents).toContain('external-actors');
     });
 
     it('committee report activates institutional agent', () => {
-      const profile = analysePoliticalThreats(makeDoc({ doktyp: 'bet' }));
+      const profile = analysePoliticalThreats(makeDoc({ doktyp: 'bet', titel: 'Institutional capture och accountability gap' }));
       expect(profile.activeThreatAgents).toContain('institutional');
     });
   });
@@ -852,8 +852,11 @@ describe('Political Threat Analysis — analysePoliticalThreats', () => {
   // -------------------------------------------------------------------------
 
   describe('analyseSinglePridesCategory', () => {
-    it('returns analysis for the specified category', () => {
-      const analysis = analyseSinglePridesCategory(makeDoc(), 'polarization');
+    it('returns analysis for the specified category when indicators are present', () => {
+      const analysis = analyseSinglePridesCategory(
+        makeDoc({ titel: 'Polarisering och hatretorik i debatten' }),
+        'polarization'
+      );
       expect(analysis).not.toBeNull();
       expect(analysis!.pridesCategory).toBe('polarization');
     });
@@ -865,13 +868,17 @@ describe('Political Threat Analysis — analysePoliticalThreats', () => {
       expect(a?.severity).toBe(b?.severity);
     });
 
-    it('returns valid countermeasures for all PRIDES categories', () => {
-      const categories: PridesCategory[] = [
-        'polarization', 'regulatory-overreach', 'institutional-erosion',
-        'democratic-deficit', 'economic-disruption', 'societal-impact',
-      ];
-      const doc = makeDoc();
-      for (const category of categories) {
+    it('returns valid countermeasures for all PRIDES categories when category signals are present', () => {
+      const categoryDocs: Record<PridesCategory, RawDocument> = {
+        'polarization': makeDoc({ titel: 'Polarisering och desinformation' }),
+        'regulatory-overreach': makeDoc({ titel: 'Maktkoncentration och undantag från lagstiftning' }),
+        'institutional-erosion': makeDoc({ organ: 'KU', titel: 'KU-granskning av institutional capture' }),
+        'democratic-deficit': makeDoc({ titel: 'Sekretess och begränsad insyn i myndighetsbeslut' }),
+        'economic-disruption': makeDoc({ organ: 'FiU', titel: 'Budgetkris och ekonomisk destabilisering' }),
+        'societal-impact': makeDoc({ titel: 'Diskriminering och rättighetsförlust för utsatta grupper' }),
+      };
+
+      for (const [category, doc] of Object.entries(categoryDocs) as Array<[PridesCategory, RawDocument]>) {
         const analysis = analyseSinglePridesCategory(doc, category);
         expect(analysis).not.toBeNull();
         expect(analysis!.countermeasures.length).toBeGreaterThan(0);

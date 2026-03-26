@@ -228,10 +228,15 @@ function assessRegulatoryOverreachSeverity(text: string): ThreatSeverity {
 }
 
 function assessInstitutionalErosionSeverity(doc: RawDocument, text: string): ThreatSeverity {
-  if (doc.organ === 'KU') return 'high'; // KU is the institutional accountability body
   const matches = countMatches(text, INSTITUTIONAL_EROSION_KEYWORDS);
-  if (matches >= 3) return 'critical';
-  if (matches >= 2) return 'high';
+  const isKU = doc.organ === 'KU'; // KU is the institutional accountability body
+
+  // Base thresholds: 3+ = critical, 2 = high, 1 = medium.
+  // KU documents receive a severity boost so that critical remains reachable:
+  // - KU with >= 2 matches -> critical
+  // - KU with >= 1 match  -> high
+  if (matches >= 3 || (isKU && matches >= 2)) return 'critical';
+  if (matches >= 2 || (isKU && matches >= 1)) return 'high';
   if (matches >= 1) return 'medium';
   return 'low';
 }
@@ -397,12 +402,33 @@ function buildThreatRationale(
 // Single category analysis
 // ---------------------------------------------------------------------------
 
+function hasCategorySignals(category: PridesCategory, text: string, doc: RawDocument): boolean {
+  switch (category) {
+    case 'polarization':
+      return countMatches(text, POLARIZATION_KEYWORDS) > 0;
+    case 'regulatory-overreach':
+      return countMatches(text, REGULATORY_OVERREACH_KEYWORDS) > 0;
+    case 'institutional-erosion':
+      return countMatches(text, INSTITUTIONAL_EROSION_KEYWORDS) > 0 || doc.organ === 'KU';
+    case 'democratic-deficit':
+      return countMatches(text, DEMOCRATIC_DEFICIT_KEYWORDS) > 0;
+    case 'economic-disruption':
+      return countMatches(text, ECONOMIC_DISRUPTION_KEYWORDS) > 0 || doc.organ === 'FiU';
+    case 'societal-impact':
+      return countMatches(text, SOCIETAL_IMPACT_KEYWORDS) > 0;
+  }
+}
+
 function analyseSingleCategory(
   doc: RawDocument,
   cia: CIAContext | undefined,
   category: PridesCategory,
   text: string,
 ): PoliticalThreatAnalysis | null {
+  if (!hasCategorySignals(category, text, doc)) {
+    return null;
+  }
+
   let severity: ThreatSeverity;
 
   switch (category) {
@@ -426,9 +452,6 @@ function analyseSingleCategory(
       break;
   }
 
-  // Only return analysis for threats with at least 'low' detection signal
-  // In practice, every category is at minimum 'low' since we detect from doc structure
-  // We always return an analysis object (even for 'low') so callers can filter
   const threatAgents = detectThreatAgents(doc, text);
 
   return {

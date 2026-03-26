@@ -73,11 +73,22 @@ You must assess the document on exactly **7 political dimensions**, each mapped 
 1. **Read the full document** including title, summary, full text, and attached speeches
 2. **Assess each of the 7 dimensions independently** — do not let one dimension bias another
 3. **Identify evidence** for each classification — quote or reference specific text signals
-4. **Compute overall classification**:
-   - If 3+ dimensions are at the highest level → **critical**
-   - If 2+ dimensions are at high/critical level → **high**
-   - If mixed medium/high → **medium**
-   - If mostly routine/administrative → **low**
+4. **Compute composite score and overall classification**:
+   - First, derive a **numeric `classificationScore` (0–100)** that reflects the weighted seriousness of all 7 dimensions taken together.
+   - Use weighted scoring consistent with the deterministic engine:
+     - Public Interest Sensitivity × 0.20
+     - Democratic Integrity Impact × 0.20
+     - Policy Urgency × 0.10
+     - Economic Impact × 0.15
+     - Governance Impact × 0.15
+     - Political Capital Impact × 0.10
+     - Legislative Impact × 0.10
+   - Then derive `overallClassification` using thresholds:
+     - **critical**: score ≥ 70
+     - **high**: score ≥ 50
+     - **medium**: score ≥ 30
+     - **low**: score < 30
+   - Ensure the chosen `overallClassification` is consistent with both the numeric score and the dimension levels.
 5. **Write rationale** — 2-3 sentences per dimension explaining the classification
 
 ## OUTPUT FORMAT

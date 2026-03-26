@@ -213,4 +213,9 @@ export { LIKELIHOOD_PROBABILITY, IMPACT_WEIGHT } from './methodology-types.js';
 
 export { classifyPoliticalDocument, classifyPoliticalDocuments } from './political-classification.js';
 export { assessPoliticalRisk, assessSingleRiskCategory, computeRiskScore, deriveRiskPriority } from './political-risk-assessment.js';
-export { analysePoliticalThreats, analyseSinglePridesCategory } from './political-threat-analysis.js';
+export {
+  analysePoliticalThreats,
+  analysePoliticalThreats as analyzePoliticalThreats,
+  analyseSinglePridesCategory,
+  analyseSinglePridesCategory as analyzeSinglePridesCategory,
+} from './political-threat-analysis.js';
