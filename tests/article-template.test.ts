@@ -1053,6 +1053,20 @@ describe('Article Template', () => {
       expect(html).toContain('<meta name="article:confidence" content="LOW">');
     });
 
+    it('renders classification meta tags without significance', () => {
+      const data: MockArticleData = {
+        ...mockArticleData,
+        classificationLevel: 'HIGH',
+        riskLevel: 'elevated',
+        confidenceLabel: 'MEDIUM',
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).not.toContain('article:significance');
+      expect(html).toContain('<meta name="article:classification" content="HIGH">');
+      expect(html).toContain('<meta name="article:risk-level" content="elevated">');
+      expect(html).toContain('<meta name="article:confidence" content="MEDIUM">');
+    });
+
     it('renders risk badge with aria-label for accessibility', () => {
       const data: MockArticleData = {
         ...mockArticleData,
