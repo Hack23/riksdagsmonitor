@@ -56,7 +56,7 @@ analysis/daily/
 
 | File | Format | Purpose | Template |
 |------|--------|---------|----------|
-| `morning-significance-scores.json` | JSON | Ranked list of all political events with composite significance scores | `significance-scoring.md` logic |
+| `morning-significance-scores.json` | JSON | Ranked list of all political events with composite significance scores | TypeScript significance scorer (`scripts/analysis-framework/significance-scorer.ts`) |
 | `morning-classification.md` | Markdown | Event classification results for all scored events | `political-classification.md` |
 | `morning-risk-snapshot.md` | Markdown | Current risk landscape based on morning MCP data | `risk-assessment.md` |
 

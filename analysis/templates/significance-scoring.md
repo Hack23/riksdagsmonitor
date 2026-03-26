@@ -20,6 +20,10 @@
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/`. Rename `YYYY-MM-DD-{event-slug}-significance.md`. For batch scoring of multiple events, use the Batch Scoring Table in Section 2. The significance scorer TypeScript implementation is at `scripts/analysis-framework/significance-scorer.ts`. See `scripts/analysis-framework/index.ts` and `scripts/analysis-framework/lenses/*` for automated scoring logic.
+>
+> **⚠️ Manual Rubric Note:** This template is a human analyst support rubric for narrative reasoning and editorial prioritisation. Automated JSON scoring (`morning-significance-scores.json`) is computed exclusively by `scripts/analysis-framework/significance-scorer.ts`.
+>
+> **Implementation Reference:** The TypeScript scorer uses a 6-dimension weighted model (0.25/0.20/0.15/0.20/0.10/0.10) and returns an integer score (1–10) via rounding. Treat this template as a separate manual rubric for editorial context, not as the source of truth for automated scoring outputs.
 
 ---
 
@@ -110,7 +114,7 @@ Score each dimension from **0 to 10**. See calibration examples below.
 
 ---
 
-### 📐 Composite Score Calculation
+### 📐 Composite Score Calculation (Manual Analyst Rubric)
 
 ```
 Composite Score = (Parliamentary × 0.25) + (Policy × 0.25) + (Public Interest × 0.20) 
