@@ -387,7 +387,17 @@ export interface PoliticalThreatProfile {
   /** Individual PRIDES threat analyses detected */
   threatAnalyses: PoliticalThreatAnalysis[];
   /**
-   * Primary threat category (highest severity, or most evidence-dense).
+   * Primary threat category, selected from `threatAnalyses`.
+   *
+   * Determined by the highest `severity` among detected threats. When multiple
+   * threats share the same highest severity, a deterministic PRIDES category
+   * ordering is used as a tie-breaker:
+   * polarization → regulatory-overreach → institutional-erosion →
+   * democratic-deficit → economic-disruption → societal-impact.
+   *
+   * Evidence density (for example, number of `indicators`) is not used for
+   * selection.
+   *
    * `null` when no significant threats are detected (valid JSON output).
    */
   primaryThreat: PridesCategory | null;

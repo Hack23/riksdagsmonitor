@@ -388,11 +388,20 @@ function extractEvidence(doc: RawDocument, category: PoliticalRiskCategory, cia:
       break;
   }
 
-  if (category !== 'coalition-stability' && cia?.coalitionStability?.stabilityScore !== undefined) {
-    const rawDP = cia.coalitionStability.defectionProbability;
+  const coalitionStability = cia?.coalitionStability;
+  const hasCoalitionContext =
+    coalitionStability !== undefined &&
+    (
+      coalitionStability.stabilityScore !== undefined ||
+      coalitionStability.majorityMargin !== undefined ||
+      coalitionStability.defectionProbability !== undefined
+    );
+
+  if (category !== 'coalition-stability' && hasCoalitionContext) {
+    const rawDP = coalitionStability.defectionProbability;
     const normDP = rawDP !== undefined ? normalizeDefectionProbability(rawDP) : undefined;
-    const stabilityDisplay = cia.coalitionStability.stabilityScore ?? 'N/A';
-    const majorityMarginDisplay = cia.coalitionStability.majorityMargin ?? 'N/A';
+    const stabilityDisplay = coalitionStability.stabilityScore ?? 'N/A';
+    const majorityMarginDisplay = coalitionStability.majorityMargin ?? 'N/A';
     evidence.push(`CIA coalition context: stability=${stabilityDisplay}, majorityMargin=${majorityMarginDisplay}, defectionProbability=${normDP ?? 'N/A'}`);
   }
 
@@ -467,7 +476,7 @@ function getEscalatingFactors(category: PoliticalRiskCategory, cia: CIAContext |
         }
       }
       // Always include a baseline escalating factor
-      factors.push('Tight parliamentary majority increases vulnerability to individual defections');
+      factors.push('Parliamentary majority remains structurally vulnerable to individual defections over time');
       break;
     case 'policy-implementation':
       if (stability !== undefined && stability < 50) {
