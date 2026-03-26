@@ -194,7 +194,13 @@ export async function downloadAllDocuments(
 
 /**
  * Flatten all downloaded document collections into a single array,
- * deduplicated by `dok_id`.
+ * deduplicated by a best-effort document identifier.
+ *
+ * The primary deduplication key is `dok_id` when present. If `dok_id` is
+ * missing or empty, the function falls back in order to:
+ * `dokument_id`, `id`, `dok_url`, `url`, `rel_dok_id`, `titel`, and `title`.
+ * The first non-empty string among these fields is used as the dedup key,
+ * and documents resolving to the same key are treated as duplicates.
  */
 export function flattenDocuments(data: DownloadedData): RawDocument[] {
   const all: RawDocument[] = [
