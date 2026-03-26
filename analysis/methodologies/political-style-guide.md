@@ -32,15 +32,12 @@ This style guide establishes standards for political intelligence reporting acro
 
 ### Classification Badge Format
 
-Every article header must include classification and priority badges:
+Every article header must include a visible classification badge. Priority is captured in workflow metadata/urgency and is not rendered as a separate header badge in the current template:
 
 ```html
-<div class="classification-badge classification-high" aria-label="Classification: HIGH">
+<span class="classification-badge classification-high" aria-label="Classification: HIGH">
   🟠 HIGH
-</div>
-<div class="priority-badge priority-major" aria-label="Priority: MAJOR">
-  🟠 MAJOR PRIORITY
-</div>
+</span>
 ```
 
 **RTL Note**: For Arabic (`ar`) and Hebrew (`he`) articles, badges must use `dir="rtl"` and be positioned on the right side of the header.
@@ -56,9 +53,9 @@ Every article must follow this structure regardless of article type:
 ```
 1. Article Metadata Header
    - Classification badge (🔴/🟠/🟡/🟢)
-   - Priority badge
    - Date, author attribution, sources count
    - Confidence level indicator
+   - Risk indicator badge when `riskLevel` is present
 
 2. Analytical Lede (NOT a summary)
    - Frames political significance, not events
@@ -383,19 +380,17 @@ When translating, always provide:
 ### Required HTML Meta Tags
 
 ```html
-<!-- Classification -->
+<!-- Classification (required when classification is assigned) -->
 <meta name="article:classification" content="HIGH|MEDIUM|LOW|CRITICAL">
-<meta name="article:priority" content="breaking|major|standard|background">
 
-<!-- Risk -->
+<!-- Risk (required when risk is assigned) -->
 <meta name="article:risk-level" content="high|elevated|moderate|low">
 
-<!-- Confidence -->
+<!-- Confidence (required when confidence is assigned) -->
 <meta name="article:confidence" content="HIGH|MEDIUM|LOW">
 
-<!-- Analysis context -->
+<!-- Analysis context (optional) -->
 <meta name="article:significance" content="[0-100]">
-<meta name="article:analysis-date" content="[ISO date of analysis files used]">
 ```
 
 ### Schema.org Metadata

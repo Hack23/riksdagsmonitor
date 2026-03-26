@@ -72,7 +72,7 @@ Always analyze parliamentary data through these six perspectives. When pre-compu
 ### Step 1: Read Pre-Computed Analysis
 
 ```typescript
-import { readDailyAnalysis, deriveArticleClassificationMeta } from '../analysis-reader.js';
+import { readDailyAnalysis, deriveArticleClassificationMeta } from '../../analysis-reader.js';
 
 const analysis = await readDailyAnalysis(today);
 const meta = deriveArticleClassificationMeta(analysis);
@@ -99,7 +99,7 @@ const html = generateArticleHTML({
 When `analysis.swot` is available, pass it directly to `generateSwotSection()`:
 
 ```typescript
-import { generateSwotSection } from '../data-transformers/content-generators/swot-section.js';
+import { generateSwotSection } from '../../data-transformers/content-generators/swot-section.js';
 
 const swotHtml = analysis.swot
   ? generateSwotSection({ data: analysis.swot, lang })

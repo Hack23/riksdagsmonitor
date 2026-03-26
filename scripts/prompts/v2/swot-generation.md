@@ -10,7 +10,7 @@
 
 ```typescript
 import { readDailyAnalysis } from '../../analysis-reader.js';
-import { generateSwotSection } from '../data-transformers/content-generators/swot-section.js';
+import { generateSwotSection } from '../../data-transformers/content-generators/swot-section.js';
 
 const analysis = await readDailyAnalysis(today);
 
