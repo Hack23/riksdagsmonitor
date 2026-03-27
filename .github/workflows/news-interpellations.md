@@ -421,9 +421,9 @@ ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
 if [ -d "$ANALYSIS_DIR" ] && [ "$(ls -A "$ANALYSIS_DIR" 2>/dev/null)" ]; then
   ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
-  echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed"
+  echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed (do NOT use safeoutputs___noop)"
 else
-  echo "⚠️ No analysis artifacts found — pipeline may have found no documents"
+  echo "📊 Found 0 analysis artifacts — safeoutputs___noop is allowed (no files to commit)"
 fi
 ```
 

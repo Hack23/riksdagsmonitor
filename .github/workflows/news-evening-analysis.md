@@ -558,9 +558,9 @@ ARTICLE_DATE=$(date -u +%Y-%m-%d)
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
 if [ -d "$ANALYSIS_DIR" ] && [ "$(ls -A "$ANALYSIS_DIR" 2>/dev/null)" ]; then
   ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
-  echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed"
+  echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed (do NOT use safeoutputs___noop)"
 else
-  echo "⚠️ No analysis artifacts found — pipeline may have found no documents"
+  echo "📊 Found 0 analysis artifacts — safeoutputs___noop is allowed (no files to commit)"
 fi
 ```
 
@@ -616,7 +616,7 @@ get_calendar_events({ from: "<tomorrow>", tom: "<tomorrow>", limit: 50 })
 
 **If ALL queries return empty results** (no votes, no speeches, no reports, no government activity):
 1. **First check if analysis artifacts exist** in `analysis/daily/YYYY-MM-DD/`
-2. If analysis artifacts exist: commit them with `git add analysis/daily/ && git commit -m "📊 Analysis artifacts - Evening Analysis - $(date +%Y-%m-%d)"` and call `safeoutputs___create_pull_request` with title `📊 Analysis Only - Evening Analysis - {date}`, labels `["analysis-only", "evening-analysis"]`
+2. If analysis artifacts exist: commit them with `git add "analysis/daily/$ARTICLE_DATE/" && git commit -m "📊 Analysis artifacts - Evening Analysis - $(date -u +%Y-%m-%d)"` and call `safeoutputs___create_pull_request` with title `📊 Analysis Only - Evening Analysis - {date}`, labels `["analysis-only", "evening-analysis"]`
 3. If NO analysis artifacts exist: call `safeoutputs___noop({"message": "No significant parliamentary activity found for today's evening analysis. Pre-article analysis pipeline also produced no output."})` and stop.
 
 ## Step 3: Generate Articles
@@ -859,10 +859,10 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 
 **YOU MUST call exactly one safe output tool before exiting.** This is the single most important rule of this workflow.
 
-**Analysis artifacts MUST always be committed.** Before calling any safe output tool, check if `analysis/daily/YYYY-MM-DD/` contains files. If it does, commit them with `git add analysis/daily/` and include them in the PR or create an analysis-only PR.
+**Analysis artifacts MUST always be committed.** Before calling any safe output tool, check if `analysis/daily/YYYY-MM-DD/` (for the current `ARTICLE_DATE`) contains files. If it does, commit only that directory with `git add "analysis/daily/${ARTICLE_DATE}/"` and include it in the PR or create an analysis-only PR.
 
 - If you generated articles → `safeoutputs___create_pull_request({...})` (includes analysis artifacts)
-- If no articles but analysis artifacts exist → `git add analysis/daily/ && git commit -m "📊 Analysis artifacts - $(date +%Y-%m-%d)"` then `safeoutputs___create_pull_request({"title": "📊 Analysis Only - Evening Analysis - {date}", "body": "## Analysis Only\n\nNo articles generated but analysis artifacts committed for review.\n\nDocuments analyzed: {count}\nKey findings: {summary from synthesis-summary.md}", "labels": ["analysis-only", "evening-analysis"]})`
+- If no articles but analysis artifacts exist → `git add "analysis/daily/${ARTICLE_DATE}/" && git commit -m "📊 Analysis artifacts - $(date -u +%Y-%m-%d)"` then `safeoutputs___create_pull_request({"title": "📊 Analysis Only - Evening Analysis - {date}", "body": "## Analysis Only\n\nNo articles generated but analysis artifacts committed for review.\n\nDocuments analyzed: {count}\nKey findings: {summary from synthesis-summary.md}", "labels": ["analysis-only", "evening-analysis"]})`
 - If MCP server unreachable (no analysis produced) → `safeoutputs___noop({"message": "MCP server unavailable. No articles or analysis generated."})`
 - If MCP data unavailable → `safeoutputs___missing_data({"reason": "MCP returned no usable data for evening analysis."})`
 - If any error occurs → commit any analysis artifacts first, then `safeoutputs___noop({"message": "Error during evening analysis: <brief description>"})`

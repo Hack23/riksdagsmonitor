@@ -400,7 +400,11 @@ if [ -d "$WEEKLY_DIR" ] && [ "$(ls -A "$WEEKLY_DIR" 2>/dev/null)" ]; then
   WEEKLY_COUNT=$(find "$WEEKLY_DIR" -type f | wc -l)
   ANALYSIS_COUNT=$((ANALYSIS_COUNT + WEEKLY_COUNT))
 fi
-echo "📊 Found $ANALYSIS_COUNT total analysis artifacts — these MUST be committed"
+if [ "$ANALYSIS_COUNT" -gt 0 ]; then
+  echo "📊 Found $ANALYSIS_COUNT total analysis artifacts — these MUST be committed (do NOT use safeoutputs___noop)"
+else
+  echo "📊 Found 0 analysis artifacts — safeoutputs___noop is allowed (no files to commit)"
+fi
 ```
 
 > **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Weekly Review - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).

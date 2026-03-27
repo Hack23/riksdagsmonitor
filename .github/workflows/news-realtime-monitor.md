@@ -245,9 +245,9 @@ ARTICLE_DATE=$(date -u +%Y-%m-%d)
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
 if [ -d "$ANALYSIS_DIR" ] && [ "$(ls -A "$ANALYSIS_DIR" 2>/dev/null)" ]; then
   ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
-  echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed"
+  echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed (do NOT use safeoutputs___noop)"
 else
-  echo "⚠️ No analysis artifacts found — pipeline may have found no documents"
+  echo "📊 Found 0 analysis artifacts — safeoutputs___noop is allowed (no files to commit)"
 fi
 ```
 
@@ -343,8 +343,8 @@ echo "Analysis artifacts: $ANALYSIS_COUNT files"
 
 2. **If analysis artifacts exist** (ANALYSIS_COUNT > 0): Commit them and create an analysis-only PR:
 ```bash
-git add analysis/daily/
-git commit -m "📊 Analysis artifacts - Realtime Monitor - $(date +%Y-%m-%d)"
+git add "$ANALYSIS_DIR"/
+git commit -m "📊 Analysis artifacts - Realtime Monitor - $(date -u +%Y-%m-%d)"
 ```
 Then call `safeoutputs___create_pull_request` with title `📊 Analysis Only - Realtime Monitor - {date}`, body including actual query stats, and labels `["analysis-only", "realtime-monitor"]`.
 
