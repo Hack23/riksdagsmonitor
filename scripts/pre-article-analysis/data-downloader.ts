@@ -23,6 +23,33 @@ import type { MCPClient } from '../mcp-client/client.js';
 // Types
 // ---------------------------------------------------------------------------
 
+/**
+ * Supported document type filters for scoped downloads.
+ *
+ * Each workflow should pass its own doctype to avoid analysis conflicts when
+ * multiple workflows run on the same date.
+ */
+export type DocType =
+  | 'propositions'
+  | 'motions'
+  | 'committee-reports'
+  | 'votes'
+  | 'speeches'
+  | 'questions'
+  | 'interpellations'
+  | 'all';
+
+export const VALID_DOC_TYPES: readonly DocType[] = [
+  'propositions',
+  'motions',
+  'committee-reports',
+  'votes',
+  'speeches',
+  'questions',
+  'interpellations',
+  'all',
+] as const;
+
 export interface DownloadedData {
   /** Government propositions */
   propositions: RawDocument[];
@@ -92,16 +119,21 @@ function currentRm(): string {
  * Failures in individual calls are caught so a partial result is returned
  * rather than failing the entire pipeline.
  *
+ * When `doctype` is set to a specific type (e.g. 'propositions'), only that
+ * type is fetched. This prevents analysis conflicts when multiple workflows
+ * run on the same day and write to overlapping output directories.
+ *
  * @param client   - MCPClient instance (caller-supplied for testability)
- * @param options  - Optional overrides for limits and riksmöte
+ * @param options  - Optional overrides for limits, riksmöte, and doctype
  */
 export async function downloadAllDocuments(
   client: MCPClient,
-  options: { limit?: number; rm?: string } = {},
+  options: { limit?: number; rm?: string; doctype?: DocType } = {},
 ): Promise<DownloadResult> {
   const start = Date.now();
   const limit = options.limit ?? 20;
   const rm = options.rm ?? currentRm();
+  const doctype = options.doctype ?? 'all';
 
   const dataSources: string[] = [];
   const data: DownloadedData = {
@@ -114,52 +146,75 @@ export async function downloadAllDocuments(
     interpellations: [],
   };
 
+  /** Map from doctype key to the fetch task descriptor. */
+  const doctypeKeyMap: Record<string, string> = {
+    propositions: 'propositions',
+    motions: 'motions',
+    'committee-reports': 'committeeReports',
+    votes: 'votes',
+    speeches: 'speeches',
+    questions: 'questions',
+    interpellations: 'interpellations',
+  };
+
   // Run independent MCP fetches in parallel to reduce total latency while
   // still collecting partial results on failure.
-  const fetchTasks = [
+  const allFetchTasks = [
     {
       name: 'fetchPropositions',
       source: 'get_propositioner',
+      key: 'propositions',
       fetch: () => client.fetchPropositions(limit, rm),
       assign: (raw: RawDocument[]) => { data.propositions = raw; },
     },
     {
       name: 'fetchMotions',
       source: 'get_motioner',
+      key: 'motions',
       fetch: () => client.fetchMotions(limit, rm),
       assign: (raw: RawDocument[]) => { data.motions = raw; },
     },
     {
       name: 'fetchCommitteeReports',
       source: 'get_betankanden',
+      key: 'committeeReports',
       fetch: () => client.fetchCommitteeReports(limit, rm),
       assign: (raw: RawDocument[]) => { data.committeeReports = raw; },
     },
     {
       name: 'fetchVotingRecords',
       source: 'search_voteringar',
+      key: 'votes',
       fetch: () => client.fetchVotingRecords({ limit, rm }),
       assign: (raw: RawDocument[]) => { data.votes = raw; },
     },
     {
       name: 'searchSpeeches',
       source: 'search_anforanden',
+      key: 'speeches',
       fetch: () => client.searchSpeeches({ limit, rm }),
       assign: (raw: RawDocument[]) => { data.speeches = raw; },
     },
     {
       name: 'fetchWrittenQuestions',
       source: 'get_fragor',
+      key: 'questions',
       fetch: () => client.fetchWrittenQuestions({ limit, rm }),
       assign: (raw: RawDocument[]) => { data.questions = raw; },
     },
     {
       name: 'fetchInterpellations',
       source: 'get_interpellationer',
+      key: 'interpellations',
       fetch: () => client.fetchInterpellations({ limit, rm }),
       assign: (raw: RawDocument[]) => { data.interpellations = raw; },
     },
   ] as const;
+
+  // Filter tasks based on doctype selection
+  const fetchTasks = doctype === 'all'
+    ? allFetchTasks
+    : allFetchTasks.filter(task => task.key === doctypeKeyMap[doctype]);
 
   const fetchResults = await Promise.allSettled(
     fetchTasks.map(task => task.fetch()),
