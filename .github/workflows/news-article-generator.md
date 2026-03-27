@@ -316,8 +316,11 @@ These analysis files are committed alongside articles for human review and conti
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
-if [ -d "$ANALYSIS_DIR" ] && [ "$(ls -A "$ANALYSIS_DIR" 2>/dev/null)" ]; then
+ANALYSIS_COUNT=0
+if [ -d "$ANALYSIS_DIR" ]; then
   ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
+fi
+if [ "$ANALYSIS_COUNT" -gt 0 ]; then
   echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed (do NOT use safeoutputs___noop)"
 else
   echo "📊 Found 0 analysis artifacts — safeoutputs___noop is allowed (no files to commit)"

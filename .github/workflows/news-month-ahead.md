@@ -298,7 +298,7 @@ Example: `news/content/2026-03-23/month-ahead`
 - ✅ `safeoutputs___create_pull_request` with analysis-only PR when no articles but analysis artifacts exist — title: `📊 Analysis Only - Month Ahead - {date}`, labels: `["analysis-only", "month-ahead"]`
 - ✅ `safeoutputs___noop` ONLY if genuinely no upcoming events in next 30 days AND no analysis artifacts
 - ❌ NEVER use `safeoutputs___noop` as fallback for PR creation failures
-- ❌ NEVER use `safeoutputs___noop` if analysis artifacts exist in `analysis/daily/` or `analysis/weekly/`
+- ❌ NEVER use `safeoutputs___noop` if analysis artifacts for the current run exist (e.g. under `analysis/daily/${ARTICLE_DATE}/` or `analysis/weekly/${WEEK_LABEL}/`)
 
 > **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them. After `git commit`, call the tool directly as your VERY NEXT action.
 
@@ -387,12 +387,12 @@ These files are committed alongside articles for human review and continuous imp
 ARTICLE_DATE=$(date -u +%Y-%m-%d)
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
 ANALYSIS_COUNT=0
-if [ -d "$ANALYSIS_DIR" ] && [ "$(ls -A "$ANALYSIS_DIR" 2>/dev/null)" ]; then
+if [ -d "$ANALYSIS_DIR" ]; then
   ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
 fi
 WEEK_LABEL=$(date -u +%G-W%V)
 WEEKLY_DIR="analysis/weekly/$WEEK_LABEL"
-if [ -d "$WEEKLY_DIR" ] && [ "$(ls -A "$WEEKLY_DIR" 2>/dev/null)" ]; then
+if [ -d "$WEEKLY_DIR" ]; then
   WEEKLY_COUNT=$(find "$WEEKLY_DIR" -type f | wc -l)
   ANALYSIS_COUNT=$((ANALYSIS_COUNT + WEEKLY_COUNT))
 fi

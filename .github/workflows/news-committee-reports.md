@@ -325,7 +325,7 @@ Example: `news/content/2026-03-23/committee-reports`
 - ✅ **REQUIRED:** `safeoutputs___create_pull_request` with analysis-only PR when no articles but analysis artifacts exist — title: `📊 Analysis Only - Committee Reports - {date}`, labels: `["analysis-only", "committee-reports"]`
 - ✅ **ONLY USE `safeoutputs___noop` if genuinely no new committee reports AND no analysis artifacts** from riksdag-regering-mcp
 - ❌ **NEVER use `safeoutputs___noop` as fallback for PR creation failures**
-- ❌ **NEVER use `safeoutputs___noop` if analysis artifacts exist in `analysis/daily/`**
+- ❌ **NEVER use `safeoutputs___noop` if analysis artifacts exist in `analysis/daily/$ARTICLE_DATE/` for this run**
 
 > **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them. After `git commit`, call the tool directly as your VERY NEXT action.
 
@@ -417,8 +417,11 @@ These files are committed alongside articles for human review and continuous imp
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
-if [ -d "$ANALYSIS_DIR" ] && [ "$(ls -A "$ANALYSIS_DIR" 2>/dev/null)" ]; then
+ANALYSIS_COUNT=0
+if [ -d "$ANALYSIS_DIR" ]; then
   ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
+fi
+if [ "$ANALYSIS_COUNT" -gt 0 ]; then
   echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed (do NOT use safeoutputs___noop)"
 else
   echo "📊 Found 0 analysis artifacts — safeoutputs___noop is allowed (no files to commit)"

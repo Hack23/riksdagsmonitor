@@ -556,8 +556,11 @@ These analysis files are committed alongside articles for human review and conti
 ```bash
 ARTICLE_DATE=$(date -u +%Y-%m-%d)
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
-if [ -d "$ANALYSIS_DIR" ] && [ "$(ls -A "$ANALYSIS_DIR" 2>/dev/null)" ]; then
+ANALYSIS_COUNT=0
+if [ -d "$ANALYSIS_DIR" ]; then
   ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
+fi
+if [ "$ANALYSIS_COUNT" -gt 0 ]; then
   echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed (do NOT use safeoutputs___noop)"
 else
   echo "📊 Found 0 analysis artifacts — safeoutputs___noop is allowed (no files to commit)"
@@ -793,7 +796,7 @@ news/content/{YYYY-MM-DD}/evening-analysis
 - ✅ **REQUIRED:** `safeoutputs___create_pull_request` with analysis-only PR when no articles but analysis artifacts exist — title: `📊 Analysis Only - Evening Analysis - {date}`, labels: `["analysis-only", "evening-analysis"]`
 - ✅ **ONLY USE `safeoutputs___noop` if genuinely no parliamentary activity AND no analysis artifacts** in the queried date range
 - ❌ **NEVER use `safeoutputs___noop` as fallback for PR creation failures**
-- ❌ **NEVER use `safeoutputs___noop` if analysis artifacts exist in `analysis/daily/`**
+- ❌ **NEVER use `safeoutputs___noop` if analysis artifacts exist for the current `ARTICLE_DATE` under `analysis/daily/` (for example, `analysis/daily/2025-03-04/`)**
 
 > **🚨 NEVER search for safe output tools via bash.** After `git commit`, call `safeoutputs___create_pull_request` directly as your VERY NEXT action.
 
