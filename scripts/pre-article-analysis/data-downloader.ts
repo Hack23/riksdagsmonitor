@@ -23,6 +23,16 @@ import type { MCPClient } from '../mcp-client/client.js';
 // Types
 // ---------------------------------------------------------------------------
 
+/** Supported document type keys for scoped downloads. */
+export type DocumentTypeKey =
+  | 'propositions'
+  | 'motions'
+  | 'committeeReports'
+  | 'votes'
+  | 'speeches'
+  | 'questions'
+  | 'interpellations';
+
 export interface DownloadedData {
   /** Government propositions */
   propositions: RawDocument[];
@@ -62,6 +72,35 @@ function normalise(raw: unknown[]): RawDocument[] {
   return (raw as RawDocument[]).filter(Boolean);
 }
 
+/** All internal fetch task names, kept in sync with the `fetchTasks` array
+ *  inside `downloadAllDocuments()`.  Used to derive the `FetchTaskName` type
+ *  and to validate the `FETCH_TASK_TYPE_MAP` at compile time. */
+const FETCH_TASK_NAMES = [
+  'fetchPropositions',
+  'fetchMotions',
+  'fetchCommitteeReports',
+  'fetchVotingRecords',
+  'searchSpeeches',
+  'fetchWrittenQuestions',
+  'fetchInterpellations',
+] as const;
+
+type FetchTaskName = typeof FETCH_TASK_NAMES[number];
+
+/** Maps internal fetch task names to their corresponding DocumentTypeKey.
+ *  `satisfies` ensures every FetchTaskName maps to a valid DocumentTypeKey
+ *  at compile time — adding/renaming a task without updating the map is a
+ *  compile error. */
+const FETCH_TASK_TYPE_MAP: Record<FetchTaskName, DocumentTypeKey> = {
+  fetchPropositions: 'propositions',
+  fetchMotions: 'motions',
+  fetchCommitteeReports: 'committeeReports',
+  fetchVotingRecords: 'votes',
+  searchSpeeches: 'speeches',
+  fetchWrittenQuestions: 'questions',
+  fetchInterpellations: 'interpellations',
+} as const satisfies Record<FetchTaskName, DocumentTypeKey>;
+
 /**
  * Returns the current Swedish parliamentary session (riksmöte) in `YYYY/YY` format.
  * The Swedish parliamentary year runs from October to September:
@@ -92,16 +131,21 @@ function currentRm(): string {
  * Failures in individual calls are caught so a partial result is returned
  * rather than failing the entire pipeline.
  *
+ * When `docTypes` is provided, only the listed document types are fetched.
+ * This prevents multiple workflows (e.g. propositions and committee-reports)
+ * from downloading the same documents and writing conflicting analysis.
+ *
  * @param client   - MCPClient instance (caller-supplied for testability)
- * @param options  - Optional overrides for limits and riksmöte
+ * @param options  - Optional overrides for limits, riksmöte, and document type scoping
  */
 export async function downloadAllDocuments(
   client: MCPClient,
-  options: { limit?: number; rm?: string } = {},
+  options: { limit?: number; rm?: string; docTypes?: DocumentTypeKey[] } = {},
 ): Promise<DownloadResult> {
   const start = Date.now();
   const limit = options.limit ?? 20;
   const rm = options.rm ?? currentRm();
+  const docTypes = options.docTypes ?? null; // null means fetch all types
 
   const dataSources: string[] = [];
   const data: DownloadedData = {
@@ -161,12 +205,22 @@ export async function downloadAllDocuments(
     },
   ] as const;
 
+  // When docTypes is specified, only fetch the listed document types.
+  // task.name is typed as FetchTaskName via the `as const` assertion on
+  // fetchTasks, so the lookup is safe without a cast.
+  const activeTasks = docTypes
+    ? fetchTasks.filter(task => {
+        const mapped = FETCH_TASK_TYPE_MAP[task.name];
+        return docTypes.includes(mapped);
+      })
+    : fetchTasks;
+
   const fetchResults = await Promise.allSettled(
-    fetchTasks.map(task => task.fetch()),
+    activeTasks.map(task => task.fetch()),
   );
 
   fetchResults.forEach((result, index) => {
-    const task = fetchTasks[index]!;
+    const task = activeTasks[index]!;
 
     if (result.status === 'fulfilled') {
       try {

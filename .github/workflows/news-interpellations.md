@@ -376,7 +376,7 @@ get_interpellationer({ rm: <calculated riksmöte>, limit: 20 })
 
 ### Step 2.5: Run Pre-Article Analysis Pipeline
 
-**CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`. Article generators will then consume these artifacts for enrichment.
+**CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/interpellations/`. The 9 batch artifacts are also copied to the unscoped `analysis/daily/YYYY-MM-DD/` directory so existing enrichment readers (`readDailyAnalysis`, `getAnalysisEnrichment`) find them at the default path. Per-document files (`documents/*.json`, `documents/*-analysis.md`) remain only under the scoped directory.
 
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
@@ -384,12 +384,12 @@ if [ -z "$ARTICLE_DATE" ]; then
   ARTICLE_DATE=$(date -u +%Y-%m-%d)
 fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
-echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
-ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 --doc-type interpellations || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
+echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/interpellations/"
+ls -la "analysis/daily/$ARTICLE_DATE/interpellations/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
 ```
 
-The analysis pipeline outputs 9 files per day:
+The analysis pipeline outputs the following artifacts per doc-type run:
 - `data-download-manifest.md` — Download metadata and document counts
 - `classification-results.md` — Document classification and priority levels
 - `risk-assessment.md` — Political risk assessment (coalition stability, anomaly detection)
@@ -397,8 +397,10 @@ The analysis pipeline outputs 9 files per day:
 - `threat-analysis.md` — Threat indicators and democratic health
 - `stakeholder-perspectives.md` — Multi-perspective analysis (6 lenses)
 - `significance-scoring.md` — Significance scores and urgency levels
-- `cross-reference-mapping.md` — Cross-document reference links
+- `cross-reference-map.md` — Cross-document reference links
 - `synthesis-summary.md` — Combined analysis summary with confidence level
+- `documents/*.json` — Raw downloaded documents (one per document)
+- `documents/*-analysis.md` — Per-document analysis with SWOT, stakeholder perspectives, and significance scoring
 
 These files are committed alongside articles for human review and continuous improvement.
 

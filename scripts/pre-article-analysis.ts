@@ -38,6 +38,7 @@ import {
   downloadAllDocuments,
   flattenDocuments,
 } from './pre-article-analysis/data-downloader.js';
+import type { DocumentTypeKey } from './pre-article-analysis/data-downloader.js';
 
 import type {
   SerializationContext,
@@ -58,6 +59,8 @@ import {
   serializeSignificanceScoring,
   serializeCrossReferenceMap,
   serializeSynthesisSummary,
+  serializeDocumentAnalysis,
+  sanitizeDokId,
 } from './pre-article-analysis/markdown-serializer.js';
 
 // ---------------------------------------------------------------------------
@@ -82,6 +85,7 @@ export function parseArgs(argv: string[]): {
   limit: number;
   weekLabel: string | null;
   rm: string | null;
+  docType: DocumentTypeKey | null;
 } {
   const args = argv.slice(2);
   const get = (flag: string): string | null => {
@@ -138,7 +142,21 @@ export function parseArgs(argv: string[]): {
   const limit = parsedLimit;
   const rm = get('--rm');
 
-  return { date: isoDate, aggregate, limit, weekLabel, rm };
+  const docTypeArg = get('--doc-type');
+  const VALID_DOC_TYPES: readonly DocumentTypeKey[] = ['propositions', 'motions', 'committeeReports', 'votes', 'speeches', 'questions', 'interpellations'];
+  const isDocumentTypeKey = (value: string): value is DocumentTypeKey =>
+    VALID_DOC_TYPES.includes(value as DocumentTypeKey);
+  let docType: DocumentTypeKey | null = null;
+  if (docTypeArg !== null) {
+    if (!isDocumentTypeKey(docTypeArg)) {
+      throw new Error(
+        `Invalid --doc-type value: ${docTypeArg}. Supported values: ${VALID_DOC_TYPES.join(', ')}.`,
+      );
+    }
+    docType = docTypeArg;
+  }
+
+  return { date: isoDate, aggregate, limit, weekLabel, rm, docType };
 }
 
 function isoWeekNumber(date: Date): number {
@@ -363,13 +381,46 @@ function runWeeklyAggregation(weekLabel: string): void {
 
   if (fs.existsSync(dailyRoot)) {
     const dailyDirs = fs.readdirSync(dailyRoot).sort();
+    const KNOWN_DOC_TYPES = new Set<string>([
+      'propositions', 'motions', 'committeeReports', 'votes',
+      'speeches', 'questions', 'interpellations',
+    ]);
     for (const dir of dailyDirs) {
       if (!isDateInIsoWeek(dir, weekLabel)) continue;
-      const synthPath = path.join(dailyRoot, dir, 'synthesis-summary.md');
-      if (fs.existsSync(synthPath)) {
+      // Look for synthesis in unscoped path first, then in known doc-type subdirectories
+      const unscopedSynth = path.join(dailyRoot, dir, 'synthesis-summary.md');
+      const dayDir = path.join(dailyRoot, dir);
+      const scopedSynthPaths: string[] = [];
+      if (fs.existsSync(dayDir) && fs.statSync(dayDir).isDirectory()) {
+        // Sort subdirectories for deterministic output across filesystems
+        for (const sub of fs.readdirSync(dayDir).sort()) {
+          if (!KNOWN_DOC_TYPES.has(sub)) continue;
+          const subSynth = path.join(dayDir, sub, 'synthesis-summary.md');
+          if (fs.existsSync(subSynth)) {
+            scopedSynthPaths.push(subSynth);
+          }
+        }
+      }
+
+      // Prefer the unscoped synthesis when it exists (canonical copy created by
+      // the copy-to-unscoped step).  Otherwise include all scoped syntheses so
+      // no doc-type run is silently omitted.
+      const hasUnscoped = fs.existsSync(unscopedSynth);
+      const pathsToProcess = hasUnscoped ? [unscopedSynth] : scopedSynthPaths;
+      let dayHasSynthesis = false;
+
+      for (const synthPath of pathsToProcess) {
+        if (!fs.existsSync(synthPath)) continue;
+
         const dailySynthesis = fs.readFileSync(synthPath, 'utf8');
-        allSyntheses += `\n\n---\n\n## Day: ${dir}\n\n${dailySynthesis}`;
-        includedDays += 1;
+        const subDir = path.basename(path.dirname(synthPath));
+        const label = hasUnscoped ? dir : `${dir} (${subDir})`;
+        allSyntheses += `\n\n---\n\n## Day: ${label}\n\n${dailySynthesis}`;
+
+        if (!dayHasSynthesis) {
+          includedDays += 1;
+          dayHasSynthesis = true;
+        }
 
         const docsMatch = /(?:^|\n)\*\*Documents Analyzed\*\*:\s*(\d+)/.exec(dailySynthesis);
         if (docsMatch?.[1]) {
@@ -432,8 +483,9 @@ async function runPreArticleAnalysis(opts: {
   aggregate: boolean;
   weekLabel: string | null;
   rm: string | null;
+  docType: DocumentTypeKey | null;
 }): Promise<void> {
-  const { date, limit, aggregate, weekLabel, rm } = opts;
+  const { date, limit, aggregate, weekLabel, rm, docType } = opts;
 
   if (aggregate && weekLabel) {
     console.log(`\n📅 Running weekly aggregation for: ${weekLabel}`);
@@ -444,18 +496,29 @@ async function runPreArticleAnalysis(opts: {
   console.log(`\n🚀 Pre-Article Analysis Pipeline — ${date}`);
   console.log('='.repeat(50));
 
-  // Output directory
-  const outputDir = path.join(ANALYSIS_DIR, 'daily', date);
+  // When --doc-type is specified, scope output to a subdirectory to avoid
+  // conflicts between parallel workflow runs (e.g. propositions vs committee-reports).
+  const outputDir = docType
+    ? path.join(ANALYSIS_DIR, 'daily', date, docType)
+    : path.join(ANALYSIS_DIR, 'daily', date);
   ensureDir(outputDir);
 
   const generatedAt = formatTimestampForMarkdown();
 
   // ── Step 1: Download data ─────────────────────────────────────────────────
   console.log('\n📥 Step 1: Downloading documents from riksdag-regering-mcp...');
+  if (docType) {
+    console.log(`   📋 Scoped to document type: ${docType}`);
+  }
   const client = new MCPClient();
   const resolvedRm = rm ?? riksMoteFromDate(date);
 
-  const { data, manifest } = await downloadAllDocuments(client, { limit, rm: resolvedRm });
+  const downloadOpts: { limit: number; rm: string; docTypes?: DocumentTypeKey[] } = { limit, rm: resolvedRm };
+  if (docType) {
+    downloadOpts.docTypes = [docType];
+  }
+
+  const { data, manifest } = await downloadAllDocuments(client, downloadOpts);
   const flattenedDocs = flattenDocuments(data);
   const allDocs = flattenedDocs.filter((doc: RawDocument) => {
     // Only keep documents whose datum matches the requested analysis date (YYYY-MM-DD).
@@ -480,6 +543,28 @@ async function runPreArticleAnalysis(opts: {
   };
 
   writeAnalysis(outputDir, 'data-download-manifest.md', serializeDataManifest(ctx, manifest.docCounts, allDocs.length));
+
+  // ── Step 1b: Store each downloaded document as JSON ─────────────────────
+  console.log('\n💾 Step 1b: Storing downloaded documents...');
+  const documentsDir = path.join(outputDir, 'documents');
+  ensureDir(documentsDir);
+  let storedCount = 0;
+  for (let i = 0; i < allDocs.length; i++) {
+    const doc = allDocs[i];
+    const dokId = doc.dok_id || doc.titel || doc.title || `unknown-doc-${i + 1}`;
+    const baseName = sanitizeDokId(dokId) || `unknown-doc-${i + 1}`;
+    let fileName = baseName;
+    let attempt = 0;
+    // Ensure no overwrite if two docs resolve to the same sanitised name.
+    while (fs.existsSync(path.join(documentsDir, `${fileName}.json`))) {
+      attempt++;
+      fileName = `${baseName}-${attempt}`;
+    }
+    const docJson = JSON.stringify(doc, null, 2);
+    fs.writeFileSync(path.join(documentsDir, `${fileName}.json`), docJson, 'utf8');
+    storedCount++;
+  }
+  console.log(`   💾 Stored ${storedCount} documents as JSON in ${path.relative(REPO_ROOT, documentsDir)}/`);
 
   if (allDocs.length === 0) {
     console.warn('\n⚠️  No documents downloaded. Analysis will be minimal.');
@@ -528,12 +613,74 @@ async function runPreArticleAnalysis(opts: {
   const synthesis = buildSynthesis(allDocs, significanceEntries, riskResult);
   writeAnalysis(outputDir, 'synthesis-summary.md', serializeSynthesisSummary(ctx, synthesis));
 
+  // ── Step 10: Per-document analysis files ─────────────────────────────────
+  console.log('\n📝 Step 10: Generating per-document analysis files...');
+  let perDocCount = 0;
+  for (let i = 0; i < batchResult.results.length; i++) {
+    const result = batchResult.results[i];
+    const dokId = result.document.dok_id || result.document.titel || result.document.title || `unknown-analysis-${i + 1}`;
+    const baseName = sanitizeDokId(dokId) || `unknown-analysis-${i + 1}`;
+    let fileName = `${baseName}-analysis.md`;
+    let attempt = 0;
+    // Ensure no overwrite if two docs resolve to the same sanitised name.
+    while (fs.existsSync(path.join(documentsDir, fileName))) {
+      attempt++;
+      fileName = `${baseName}-${attempt}-analysis.md`;
+    }
+    writeAnalysis(documentsDir, fileName, serializeDocumentAnalysis(ctx, result));
+    perDocCount++;
+  }
+  console.log(`   📝 Generated ${perDocCount} per-document analysis files`);
+
   // ── Summary ───────────────────────────────────────────────────────────────
-  console.log(`\n✅ Analysis complete! Results in: analysis/daily/${date}/`);
-  console.log(`   📄 9 analysis files written`);
+  // When --doc-type is used, batch artifacts live under a subdirectory but
+  // existing consumers (analysis-reader.ts, getAnalysisEnrichment) read from
+  // the unscoped analysis/daily/<date>/ path.  Copy the 9 batch artefacts to
+  // that location so downstream generators still find them.  Per-document
+  // files intentionally stay only in the scoped directory.
+  if (docType) {
+    const unscopedDir = path.join(ANALYSIS_DIR, 'daily', date);
+    ensureDir(unscopedDir);
+    const batchFiles = [
+      'data-download-manifest.md',
+      'classification-results.md',
+      'risk-assessment.md',
+      'swot-analysis.md',
+      'threat-analysis.md',
+      'stakeholder-perspectives.md',
+      'significance-scoring.md',
+      'cross-reference-map.md',
+      'synthesis-summary.md',
+    ];
+    for (const file of batchFiles) {
+      const src = path.join(outputDir, file);
+      const dest = path.join(unscopedDir, file);
+      if (fs.existsSync(src)) {
+        try {
+          // Use atomic create to avoid check-then-copy race under concurrency.
+          fs.copyFileSync(src, dest, fs.constants.COPYFILE_EXCL);
+        } catch (error) {
+          const err = error as NodeJS.ErrnoException;
+          if (err.code !== 'EEXIST') {
+            throw err;
+          }
+          // If the file already exists, another workflow created it first.
+          // This is expected in parallel runs; keep the existing unscoped copy.
+        }
+      }
+    }
+    console.log(`   📋 Copied batch artifacts to ${path.relative(REPO_ROOT, unscopedDir)}/ for enrichment readers`);
+  }
+
+  const totalFiles = 9 + perDocCount + storedCount;
+  console.log(`\n✅ Analysis complete! Results in: ${path.relative(REPO_ROOT, outputDir)}/`);
+  console.log(`   📄 ${totalFiles} total files written (9 batch + ${perDocCount} analyses + ${storedCount} documents)`);
   console.log(`   📊 ${allDocs.length} documents analyzed`);
   console.log(`   🎯 Overall confidence: ${synthesis.overallConfidence}`);
   console.log(`   ⚠️  Risk level: ${synthesis.aggregateRiskLevel}`);
+  if (docType) {
+    console.log(`   📋 Scoped to: ${docType}`);
+  }
 }
 
 // ---------------------------------------------------------------------------
