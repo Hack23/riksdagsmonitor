@@ -112,7 +112,7 @@ function escapeMarkdownTableCell(value: string): string {
 function escapeMarkdownInline(value: string): string {
   return value
     .replace(/\r?\n/g, ' ')
-    .replace(/[#*_`\[\]<>|\\~]/g, '\\$&')
+    .replace(/[#*_`[\]<>|\\~]/g, '\\$&')
     .trim();
 }
 
