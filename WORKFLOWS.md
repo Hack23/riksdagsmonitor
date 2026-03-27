@@ -135,7 +135,7 @@ graph LR
 
 | Stage | Tool/Service | Trigger | Quality Gate | Duration |
 | --- | --- | --- | --- | --- |
-| **🏗️ Build & Test** | Vite, Vitest, Cypress | Push/PR | Tests pass, coverage thresholds enforced (lines 25%, branches 25%) | ~15s build, ~30s test |
+| **🏗️ Build & Test** | Vite, Vitest, Cypress | Push/PR | Tests pass, coverage thresholds enforced (lines 25%, branches 25%) | ~3.4s build, ~15s test |
 | **📦 SCA** | Dependabot, Dependency Review | Daily / PR | No critical vulnerabilities | ~2 min |
 | **🔍 CodeQL** | GitHub CodeQL | PR, Push, Weekly | No critical/high issues | ~10 min |
 | **✅ Quality Gate** | ESLint, HTMLHint, linkinator | Every commit | Zero errors, valid HTML | ~3 min |
@@ -364,7 +364,7 @@ Every workflow in the Riksdagsmonitor project implements least-privilege securit
 3. **🛡️ Runner Hardening**: StepSecurity harden-runner for egress auditing
    ```yaml
    - name: Harden Runner
-     uses: step-security/harden-runner@...
+     uses: step-security/harden-runner@fa2e9d605c4eeb9fcad4c99c224cee0c6c7f3594 # v2.16.0
      with:
        egress-policy: audit
    ```
