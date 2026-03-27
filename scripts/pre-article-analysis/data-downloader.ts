@@ -72,6 +72,17 @@ function normalise(raw: unknown[]): RawDocument[] {
   return (raw as RawDocument[]).filter(Boolean);
 }
 
+/** Maps internal fetch task names to their corresponding DocumentTypeKey. */
+const FETCH_TASK_TYPE_MAP: Record<string, DocumentTypeKey> = {
+  fetchPropositions: 'propositions',
+  fetchMotions: 'motions',
+  fetchCommitteeReports: 'committeeReports',
+  fetchVotingRecords: 'votes',
+  searchSpeeches: 'speeches',
+  fetchWrittenQuestions: 'questions',
+  fetchInterpellations: 'interpellations',
+};
+
 /**
  * Returns the current Swedish parliamentary session (riksmöte) in `YYYY/YY` format.
  * The Swedish parliamentary year runs from October to September:
@@ -179,16 +190,7 @@ export async function downloadAllDocuments(
   // When docTypes is specified, only fetch the listed document types.
   const activeTasks = docTypes
     ? fetchTasks.filter(task => {
-        const typeMap: Record<string, DocumentTypeKey> = {
-          fetchPropositions: 'propositions',
-          fetchMotions: 'motions',
-          fetchCommitteeReports: 'committeeReports',
-          fetchVotingRecords: 'votes',
-          searchSpeeches: 'speeches',
-          fetchWrittenQuestions: 'questions',
-          fetchInterpellations: 'interpellations',
-        };
-        return docTypes.includes(typeMap[task.name]!);
+        return docTypes.includes(FETCH_TASK_TYPE_MAP[task.name]!);
       })
     : fetchTasks;
 

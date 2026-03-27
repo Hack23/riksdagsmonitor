@@ -812,9 +812,9 @@ export function serializeDocumentAnalysis(
  */
 export function sanitizeDokId(dokId: string): string {
   return dokId
-    .replace(/[^a-zA-Z0-9åäöÅÄÖ-]/g, '-')
+    .toLowerCase()
+    .replace(/[^a-z0-9åäö-]/g, '-')
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '')
-    .toLowerCase()
     .slice(0, 100);
 }

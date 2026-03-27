@@ -512,12 +512,12 @@ async function runPreArticleAnalysis(opts: {
   ensureDir(documentsDir);
   let storedCount = 0;
   for (const doc of allDocs) {
-    const dokId = doc.dok_id || doc.titel || doc.title || `unknown-${storedCount}`;
+    storedCount++;
+    const dokId = doc.dok_id || doc.titel || doc.title || `unknown-doc-${storedCount}`;
     const safeName = sanitizeDokId(dokId);
     if (safeName) {
       const docJson = JSON.stringify(doc, null, 2);
       fs.writeFileSync(path.join(documentsDir, `${safeName}.json`), docJson, 'utf8');
-      storedCount++;
     }
   }
   console.log(`   💾 Stored ${storedCount} documents as JSON in ${path.relative(REPO_ROOT, documentsDir)}/`);
@@ -573,11 +573,11 @@ async function runPreArticleAnalysis(opts: {
   console.log('\n📝 Step 10: Generating per-document analysis files...');
   let perDocCount = 0;
   for (const result of batchResult.results) {
-    const dokId = result.document.dok_id || result.document.titel || result.document.title || `unknown-${perDocCount}`;
+    perDocCount++;
+    const dokId = result.document.dok_id || result.document.titel || result.document.title || `unknown-analysis-${perDocCount}`;
     const safeName = sanitizeDokId(dokId);
     if (safeName) {
       writeAnalysis(documentsDir, `${safeName}-analysis.md`, serializeDocumentAnalysis(ctx, result));
-      perDocCount++;
     }
   }
   console.log(`   📝 Generated ${perDocCount} per-document analysis files`);
