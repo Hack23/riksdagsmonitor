@@ -125,7 +125,8 @@ graph LR
     class A trigger
     class B build
     class C,D security
-    class E,F quality
+    class E quality
+    class F security
     class G,H attestation
     class I,J deploy
 ```
@@ -134,11 +135,11 @@ graph LR
 
 | Stage | Tool/Service | Trigger | Quality Gate | Duration |
 | --- | --- | --- | --- | --- |
-| **🏗️ Build & Test** | Vite, Vitest, Cypress | Push/PR | Tests pass, Coverage ≥80% | ~15s build, ~30s test |
+| **🏗️ Build & Test** | Vite, Vitest, Cypress | Push/PR | Tests pass, coverage thresholds enforced (lines 25%, branches 25%) | ~15s build, ~30s test |
 | **📦 SCA** | Dependabot, Dependency Review | Daily / PR | No critical vulnerabilities | ~2 min |
 | **🔍 CodeQL** | GitHub CodeQL | PR, Push, Weekly | No critical/high issues | ~10 min |
 | **✅ Quality Gate** | ESLint, HTMLHint, linkinator | Every commit | Zero errors, valid HTML | ~3 min |
-| **🔒 Security Gate** | Scorecard, harden-runner | Every commit | Zero critical vulnerabilities | Auto |
+| **🔒 Security Gate** | harden-runner (enforced), Scorecard (advisory) | Every commit | Zero critical vulnerabilities in enforced checks; Scorecard advisory only | Auto |
 | **📋 SBOM** | Release attestation | Release | Complete SBOM generated | ~2 min |
 | **🔏 Attestations** | GitHub Attestations | Release | SLSA provenance created | ~2 min |
 | **🚀 Dual Deploy** | AWS S3/CloudFront + GitHub Pages | Release / Push | Successful build artifact | ~3 min |
@@ -370,9 +371,9 @@ Every workflow in the Riksdagsmonitor project implements:
 
 4. **📄 SBOM Generation**: Software Bill of Materials for supply chain transparency
 
-5. **🔏 Build Attestations**: SLSA Level 3 cryptographic provenance
+5. **🔏 Build Attestations**: SLSA build provenance attestations (via GitHub Attestations)
 
-6. **⏱️ Timeout Limits**: All jobs have resource exhaustion prevention
+6. **⏱️ Timeout Limits**: Jobs use timeout limits where applicable to prevent resource exhaustion
 
 7. **🔑 OIDC Tokens**: Ephemeral authentication for AWS deployments
 
@@ -791,13 +792,12 @@ flowchart TB
 
 ### Secrets Management
 
-| Secret | Used By | Purpose |
+| Secret / Credential | Used By | Purpose |
 | --- | --- | --- |
 | `GITHUB_TOKEN` | Most workflows | Standard GitHub API access |
 | `COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN` | Copilot setup, agentic workflows | MCP server authentication |
-| `AWS_ACCESS_KEY_ID` | deploy-s3, release | S3 deployment |
-| `AWS_SECRET_ACCESS_KEY` | deploy-s3, release | S3 deployment |
-| `CLOUDFRONT_DISTRIBUTION_ID` | deploy-s3, release | CloudFront invalidation |
+| AWS OIDC Role (`GithubWorkFlowRole`) | deploy-s3, release | Ephemeral credentials via `id-token: write` + `role-to-assume` |
+| CloudFront Distribution ID | deploy-s3, release | Discovered dynamically from CloudFormation stack or origin lookup |
 
 ---
 
@@ -857,7 +857,7 @@ flowchart TB
 | 🔴 Data pipeline skipping fetch | Data freshness < 23 hours | Use `force_refresh: true` input for manual dispatch |
 | 🔴 Agentic lock files outdated | `.md` source edited but not compiled | Run `gh aw compile .github/workflows/<name>.md` and commit `.lock.yml` |
 | 🔴 Translation validation failing | Missing hreflang or language purity | Run `npm run validate-translations` locally |
-| 🔴 Deploy-S3 CloudFront invalidation | AWS credentials expired | Verify `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `CLOUDFRONT_DISTRIBUTION_ID` secrets |
+| 🔴 Deploy-S3 CloudFront invalidation | OIDC role trust or IAM permissions misconfigured, or CloudFront distribution ID lookup from CloudFormation failed | Verify GitHub OIDC provider + role trust policy, ensure the assumed role has required CloudFront/S3/CloudFormation permissions, and confirm the workflow step that discovers the distribution ID from the CloudFormation stack/origin is succeeding |
 
 ---
 

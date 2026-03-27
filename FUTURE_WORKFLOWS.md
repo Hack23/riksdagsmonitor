@@ -24,7 +24,7 @@
 
 ## 🎯 Purpose & Scope
 
-This document projects the evolution of Riksdagsmonitor's CI/CD and automation workflows over the next eleven years (2026–2037). Building on the current foundation of 47 workflows, the vision encompasses AI-native pipelines, real-time political intelligence, predictive analytics, and fully autonomous content generation — all while maintaining ISO 27001/NIST CSF/CIS Controls compliance.
+This document projects the evolution of Riksdagsmonitor's CI/CD and automation workflows over the next eleven years (2026–2037). Building on the current foundation of 47 workflow files / 35 distinct workflows, the vision encompasses AI-native pipelines, real-time political intelligence, predictive analytics, and fully autonomous content generation — all while maintaining ISO 27001/NIST CSF/CIS Controls compliance.
 
 **Strategic Alignment:**
 - **ISO 27001 (A.5.1)**: Information security policy evolution
@@ -573,14 +573,14 @@ gantt
     + Self-Healing        :2028-Q2, 2028-Q4
 ```
 
-| Year | Projected Total | New Capabilities |
+| Year | Projected Distinct Workflows | New Capabilities |
 | --- | --- | --- |
-| 2026 Q1 | **47 files / 35 workflows** | TypeScript foundation, 12 agentic workflows, Node.js 25 ✅ |
-| 2026 Q2 | **48** | **Node.js 26 LTS upgrade** (immediately after ~Apr 1 release) |
-| 2026 Q4 | **54** | CIA pipeline v2, preview deploys, visual regression |
-| 2027 Q4 | **59** | Node.js 27 LTS, OSINT pipeline, ML predictions, real-time streams |
-| 2028 Q4 | **69** | Node.js 28 LTS, self-healing, canary deploy, AI editorial board |
-| 2029 Q4 | **79+** | Node.js 29 LTS, intelligence API, multi-parliament, federation |
+| 2026 Q1 | **35** (47 files) | TypeScript foundation, 12 agentic workflows, Node.js 25 ✅ |
+| 2026 Q2 | **36** (48 files) | **Node.js 26 LTS upgrade** (immediately after ~Apr 1 release) |
+| 2026 Q4 | **42** (54 files) | CIA pipeline v2, preview deploys, visual regression |
+| 2027 Q4 | **47** (59 files) | Node.js 27 LTS, OSINT pipeline, ML predictions, real-time streams |
+| 2028 Q4 | **57** (69 files) | Node.js 28 LTS, self-healing, canary deploy, AI editorial board |
+| 2029 Q4 | **67+** (79+ files) | Node.js 29 LTS, intelligence API, multi-parliament, federation |
 
 ---
 
