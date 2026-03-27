@@ -554,7 +554,8 @@ These analysis files are committed alongside articles for human review and conti
 3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
 
 ```bash
-ARTICLE_DATE=$(date -u +%Y-%m-%d)
+ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then
