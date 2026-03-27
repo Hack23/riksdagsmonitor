@@ -1,4 +1,4 @@
-riksdagsmonitor@0.8.7 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@0.8.8 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @emnapi/core@1.8.1 extraneous
 │ ├── @emnapi/wasi-threads@1.1.0 deduped
 │ └── tslib@2.8.1
@@ -517,7 +517,7 @@ riksdagsmonitor@0.8.7 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │   │ └── prelude-ls@1.2.1 deduped
 │   └── word-wrap@1.2.5
 ├── globals@17.4.0
-├─┬ happy-dom@20.8.8
+├─┬ happy-dom@20.8.9
 │ ├── @types/node@25.5.0 deduped
 │ ├── @types/whatwg-mimetype@3.0.2
 │ ├─┬ @types/ws@8.18.1
@@ -531,12 +531,12 @@ riksdagsmonitor@0.8.7 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── async@3.2.6
 │ ├── chalk@4.1.2 deduped
 │ ├── commander@11.1.0
-│ ├─┬ glob@13.0.5
+│ ├─┬ glob@13.0.6 overridden
 │ │ ├── minimatch@10.2.4 deduped
-│ │ ├── minipass@7.1.2
-│ │ └─┬ path-scurry@2.0.1
-│ │   ├── lru-cache@11.2.6
-│ │   └── minipass@7.1.2 deduped
+│ │ ├── minipass@7.1.3
+│ │ └─┬ path-scurry@2.0.2
+│ │   ├── lru-cache@11.2.7
+│ │   └── minipass@7.1.3 deduped
 │ ├── is-glob@4.0.3 deduped
 │ ├─┬ node-sarif-builder@3.2.0
 │ │ ├── @types/sarif@2.1.7
@@ -883,7 +883,7 @@ riksdagsmonitor@0.8.7 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── @vitest/utils@4.1.2 deduped
 │ ├── es-module-lexer@2.0.0
 │ ├── expect-type@1.3.0
-│ ├── happy-dom@20.8.8 deduped
+│ ├── happy-dom@20.8.9 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY jsdom@*
 │ ├─┬ magic-string@0.30.21
 │ │ └── @jridgewell/sourcemap-codec@1.5.5
