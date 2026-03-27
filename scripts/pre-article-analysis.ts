@@ -514,9 +514,14 @@ async function runPreArticleAnalysis(opts: {
   for (let i = 0; i < allDocs.length; i++) {
     const doc = allDocs[i];
     const dokId = doc.dok_id || doc.titel || doc.title || `unknown-doc-${i + 1}`;
-    const safeName = sanitizeDokId(dokId) || `unknown-doc-${i + 1}`;
+    const baseName = sanitizeDokId(dokId) || `unknown-doc-${i + 1}`;
+    let fileName = baseName;
+    // Ensure no overwrite if two docs resolve to the same sanitised name.
+    if (fs.existsSync(path.join(documentsDir, `${fileName}.json`))) {
+      fileName = `${baseName}-${i + 1}`;
+    }
     const docJson = JSON.stringify(doc, null, 2);
-    fs.writeFileSync(path.join(documentsDir, `${safeName}.json`), docJson, 'utf8');
+    fs.writeFileSync(path.join(documentsDir, `${fileName}.json`), docJson, 'utf8');
     storedCount++;
   }
   console.log(`   💾 Stored ${storedCount} documents as JSON in ${path.relative(REPO_ROOT, documentsDir)}/`);
@@ -574,8 +579,13 @@ async function runPreArticleAnalysis(opts: {
   for (let i = 0; i < batchResult.results.length; i++) {
     const result = batchResult.results[i];
     const dokId = result.document.dok_id || result.document.titel || result.document.title || `unknown-analysis-${i + 1}`;
-    const safeName = sanitizeDokId(dokId) || `unknown-analysis-${i + 1}`;
-    writeAnalysis(documentsDir, `${safeName}-analysis.md`, serializeDocumentAnalysis(ctx, result));
+    const baseName = sanitizeDokId(dokId) || `unknown-analysis-${i + 1}`;
+    let fileName = `${baseName}-analysis.md`;
+    // Ensure no overwrite if two docs resolve to the same sanitised name.
+    if (fs.existsSync(path.join(documentsDir, fileName))) {
+      fileName = `${baseName}-${i + 1}-analysis.md`;
+    }
+    writeAnalysis(documentsDir, fileName, serializeDocumentAnalysis(ctx, result));
     perDocCount++;
   }
   console.log(`   📝 Generated ${perDocCount} per-document analysis files`);

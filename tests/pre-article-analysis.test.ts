@@ -984,6 +984,29 @@ describe('serializeDocumentAnalysis', () => {
     expect(md).toContain('## Data Quality Notes');
     expect(md).toContain('6-lens stakeholder analysis with SWOT extraction');
   });
+
+  it('escapes markdown-special characters in user-sourced and AI-generated text', () => {
+    const dangerous = 'Text with # heading, *stars*, [link] and <tag>';
+    const doc = makeRawDoc({ summary: dangerous });
+    const result = makeAnalysisResult(doc);
+    result.keyInsights = [dangerous];
+
+    // Override a SWOT contribution text
+    result.perspectives[0].swotContribution[0].text = dangerous;
+    result.perspectives[0].summary = dangerous;
+
+    const md = serializeDocumentAnalysis(CTX, result);
+
+    // The raw dangerous string should NOT appear unescaped
+    expect(md).not.toContain(`- ${dangerous}`);
+    expect(md).not.toContain(`**Summary**: ${dangerous}`);
+
+    // Escaped versions should be present
+    expect(md).toContain('\\#');
+    expect(md).toContain('\\*');
+    expect(md).toContain('\\[');
+    expect(md).toContain('\\<');
+  });
 });
 
 // ---------------------------------------------------------------------------

@@ -72,8 +72,18 @@ function normalise(raw: unknown[]): RawDocument[] {
   return (raw as RawDocument[]).filter(Boolean);
 }
 
+/** Known fetch task names — must stay in sync with fetchTasks array. */
+type FetchTaskName =
+  | 'fetchPropositions'
+  | 'fetchMotions'
+  | 'fetchCommitteeReports'
+  | 'fetchVotingRecords'
+  | 'searchSpeeches'
+  | 'fetchWrittenQuestions'
+  | 'fetchInterpellations';
+
 /** Maps internal fetch task names to their corresponding DocumentTypeKey. */
-const FETCH_TASK_TYPE_MAP: Record<string, DocumentTypeKey> = {
+const FETCH_TASK_TYPE_MAP: Record<FetchTaskName, DocumentTypeKey> = {
   fetchPropositions: 'propositions',
   fetchMotions: 'motions',
   fetchCommitteeReports: 'committeeReports',
@@ -190,7 +200,8 @@ export async function downloadAllDocuments(
   // When docTypes is specified, only fetch the listed document types.
   const activeTasks = docTypes
     ? fetchTasks.filter(task => {
-        return docTypes.includes(FETCH_TASK_TYPE_MAP[task.name]!);
+        const mapped = FETCH_TASK_TYPE_MAP[task.name as FetchTaskName];
+        return mapped != null && docTypes.includes(mapped);
       })
     : fetchTasks;
 

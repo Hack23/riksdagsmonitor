@@ -643,7 +643,7 @@ export function serializeDocumentAnalysis(
   lines.push('## Executive Summary', '');
   if (result.keyInsights.length > 0) {
     for (const insight of result.keyInsights) {
-      lines.push(`- ${insight}`);
+      lines.push(`- ${escapeMarkdownInline(insight)}`);
     }
   } else {
     lines.push('No key insights extracted — document may be metadata-only.');
@@ -653,23 +653,23 @@ export function serializeDocumentAnalysis(
   // ── Document Content Summary ───────────────────────────────────────────
   lines.push('## Document Content', '');
   if (doc.summary) {
-    lines.push(`**Summary**: ${doc.summary}`);
+    lines.push(`**Summary**: ${escapeMarkdownInline(doc.summary)}`);
     lines.push('');
   }
   if (doc.rubrik) {
-    lines.push(`**Rubrik**: ${doc.rubrik}`);
+    lines.push(`**Rubrik**: ${escapeMarkdownInline(doc.rubrik)}`);
     lines.push('');
   }
   if (doc.undertitel) {
-    lines.push(`**Undertitel**: ${doc.undertitel}`);
+    lines.push(`**Undertitel**: ${escapeMarkdownInline(doc.undertitel)}`);
     lines.push('');
   }
   if (doc.notis) {
-    lines.push(`**Notis**: ${doc.notis}`);
+    lines.push(`**Notis**: ${escapeMarkdownInline(doc.notis)}`);
     lines.push('');
   }
   if (doc.mottagare) {
-    lines.push(`**Mottagare (Recipient)**: ${doc.mottagare}`);
+    lines.push(`**Mottagare (Recipient)**: ${escapeMarkdownInline(doc.mottagare)}`);
     lines.push('');
   }
   const hasFullText = !!(doc.fullText || doc.fullContent);
@@ -700,11 +700,11 @@ export function serializeDocumentAnalysis(
   }
 
   for (const [stakeholder, swot] of swotMap) {
-    lines.push(`### SWOT: ${stakeholder}`, '');
+    lines.push(`### SWOT: ${escapeMarkdownInline(stakeholder)}`, '');
 
     lines.push('#### Strengths 💪');
     if (swot.strengths.length > 0) {
-      [...new Set(swot.strengths)].forEach(s => lines.push(`- ${s}`));
+      [...new Set(swot.strengths)].forEach(s => lines.push(`- ${escapeMarkdownInline(s)}`));
     } else {
       lines.push('- _No strengths identified_');
     }
@@ -712,7 +712,7 @@ export function serializeDocumentAnalysis(
 
     lines.push('#### Weaknesses ⚠️');
     if (swot.weaknesses.length > 0) {
-      [...new Set(swot.weaknesses)].forEach(s => lines.push(`- ${s}`));
+      [...new Set(swot.weaknesses)].forEach(s => lines.push(`- ${escapeMarkdownInline(s)}`));
     } else {
       lines.push('- _No weaknesses identified_');
     }
@@ -720,7 +720,7 @@ export function serializeDocumentAnalysis(
 
     lines.push('#### Opportunities 🌟');
     if (swot.opportunities.length > 0) {
-      [...new Set(swot.opportunities)].forEach(s => lines.push(`- ${s}`));
+      [...new Set(swot.opportunities)].forEach(s => lines.push(`- ${escapeMarkdownInline(s)}`));
     } else {
       lines.push('- _No opportunities identified_');
     }
@@ -728,7 +728,7 @@ export function serializeDocumentAnalysis(
 
     lines.push('#### Threats 🔴');
     if (swot.threats.length > 0) {
-      [...new Set(swot.threats)].forEach(s => lines.push(`- ${s}`));
+      [...new Set(swot.threats)].forEach(s => lines.push(`- ${escapeMarkdownInline(s)}`));
     } else {
       lines.push('- _No threats identified_');
     }
@@ -750,14 +750,14 @@ export function serializeDocumentAnalysis(
   for (const p of result.perspectives) {
     const emoji = lensEmoji[p.lens] || '🔍';
     lines.push(`### ${emoji} ${p.lens.charAt(0).toUpperCase() + p.lens.slice(1)} Perspective`, '');
-    lines.push(`- **Impact**: ${p.impact}`);
-    lines.push(`- **Sentiment**: ${p.sentiment}`);
+    lines.push(`- **Impact**: ${escapeMarkdownInline(p.impact)}`);
+    lines.push(`- **Sentiment**: ${escapeMarkdownInline(p.sentiment)}`);
     lines.push(`- **Confidence**: ${Math.round(p.confidence)}%`);
-    lines.push(`- **Key Actors**: ${p.keyActors.join(', ') || 'N/A'}`);
-    lines.push(`- **Related Policies**: ${p.relatedPolicies.join(', ') || 'N/A'}`);
+    lines.push(`- **Key Actors**: ${p.keyActors.map(a => escapeMarkdownInline(a)).join(', ') || 'N/A'}`);
+    lines.push(`- **Related Policies**: ${p.relatedPolicies.map(r => escapeMarkdownInline(r)).join(', ') || 'N/A'}`);
     lines.push('');
     if (p.summary) {
-      lines.push(`> ${p.summary}`);
+      lines.push(`> ${escapeMarkdownInline(p.summary)}`);
       lines.push('');
     }
 
@@ -765,7 +765,7 @@ export function serializeDocumentAnalysis(
     if (p.dashboardMetrics.length > 0) {
       lines.push('**Dashboard Metrics**:');
       for (const m of p.dashboardMetrics) {
-        lines.push(`- ${m.metricName}: ${m.value}${m.unit ? ' ' + m.unit : ''}`);
+        lines.push(`- ${escapeMarkdownInline(m.metricName)}: ${m.value}${m.unit ? ' ' + escapeMarkdownInline(m.unit) : ''}`);
       }
       lines.push('');
     }
@@ -799,7 +799,7 @@ export function serializeDocumentAnalysis(
   // ── Key Insights ───────────────────────────────────────────────────────
   lines.push('## Key Insights', '');
   if (result.keyInsights.length > 0) {
-    result.keyInsights.forEach((insight, i) => lines.push(`${i + 1}. ${insight}`));
+    result.keyInsights.forEach((insight, i) => lines.push(`${i + 1}. ${escapeMarkdownInline(insight)}`));
   } else {
     lines.push('_No key insights extracted._');
   }
