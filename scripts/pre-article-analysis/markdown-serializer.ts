@@ -580,3 +580,241 @@ export function serializeSynthesisSummary(
 
   return lines.join('\n');
 }
+
+// ---------------------------------------------------------------------------
+// Per-document analysis (full AI-quality SWOT + intelligence per document)
+// ---------------------------------------------------------------------------
+
+/**
+ * Serialize a comprehensive per-document analysis markdown file.
+ *
+ * Each document gets its own analysis file with:
+ * - Full document metadata
+ * - Detailed SWOT analysis
+ * - 6-lens stakeholder perspective analysis
+ * - Risk indicators
+ * - Significance scoring with justification
+ * - Cross-document references
+ * - Key insights and implications
+ *
+ * Quality target: Comparable to SWOT.md and THREAT_MODEL.md depth.
+ */
+export function serializeDocumentAnalysis(
+  ctx: SerializationContext,
+  result: DocumentAnalysisResult,
+): string {
+  const doc = result.document;
+  const title = doc.titel || doc.title || doc.dok_id || 'Unknown Document';
+  const dokId = doc.dok_id || 'N/A';
+  const docType = doc.doktyp || 'unknown';
+  const committee = doc.organ || doc.committee || 'N/A';
+  const date = doc.datum || ctx.date;
+  const author = doc.intressent_namn || doc.author || 'N/A';
+  const party = doc.parti || 'N/A';
+  const rm = doc.rm || 'N/A';
+
+  const lines: string[] = [
+    `# Document Analysis: ${title}`,
+    '',
+    `**Generated**: ${ctx.generatedAt}`,
+    `**dok_id**: ${dokId}`,
+    `**Document Type**: ${docType}`,
+    `**Committee**: ${committee}`,
+    `**Date**: ${date}`,
+    `**Author**: ${author}`,
+    `**Party**: ${party}`,
+    `**Riksmöte**: ${rm}`,
+    `**Significance**: ${significanceLabel(result.overallSignificance)} (${result.overallSignificance}/10)`,
+    `**Confidence**: ${confidenceLabel(result.confidenceScore)} (${Math.round(result.confidenceScore)}%)`,
+    '',
+    '---',
+    '',
+  ];
+
+  // ── Executive Summary ──────────────────────────────────────────────────
+  lines.push('## Executive Summary', '');
+  if (result.keyInsights.length > 0) {
+    lines.push(result.keyInsights.join('. ') + '.');
+  } else {
+    lines.push('No key insights extracted — document may be metadata-only.');
+  }
+  lines.push('');
+
+  // ── Document Content Summary ───────────────────────────────────────────
+  lines.push('## Document Content', '');
+  if (doc.summary) {
+    lines.push(`**Summary**: ${doc.summary}`);
+    lines.push('');
+  }
+  if (doc.rubrik) {
+    lines.push(`**Rubrik**: ${doc.rubrik}`);
+    lines.push('');
+  }
+  if (doc.undertitel) {
+    lines.push(`**Undertitel**: ${doc.undertitel}`);
+    lines.push('');
+  }
+  if (doc.notis) {
+    lines.push(`**Notis**: ${doc.notis}`);
+    lines.push('');
+  }
+  if (doc.mottagare) {
+    lines.push(`**Mottagare (Recipient)**: ${doc.mottagare}`);
+    lines.push('');
+  }
+  const hasFullText = !!(doc.fullText || doc.fullContent);
+  lines.push(`**Full-text available**: ${hasFullText ? 'Yes ✅' : 'No — metadata-only ⚠️'}`);
+  lines.push('');
+
+  // ── SWOT Analysis ──────────────────────────────────────────────────────
+  lines.push('## SWOT Analysis', '');
+  const swotMap = new Map<string, { strengths: string[]; weaknesses: string[]; opportunities: string[]; threats: string[] }>();
+  for (const p of result.perspectives) {
+    for (const c of p.swotContribution) {
+      if (!swotMap.has(c.forStakeholder)) {
+        swotMap.set(c.forStakeholder, { strengths: [], weaknesses: [], opportunities: [], threats: [] });
+      }
+      const entry = swotMap.get(c.forStakeholder)!;
+      switch (c.quadrant) {
+        case 'strength': entry.strengths.push(c.text); break;
+        case 'weakness': entry.weaknesses.push(c.text); break;
+        case 'opportunity': entry.opportunities.push(c.text); break;
+        case 'threat': entry.threats.push(c.text); break;
+      }
+    }
+  }
+
+  if (swotMap.size === 0) {
+    lines.push('_No SWOT contributions extracted. Document may lack sufficient content for structured analysis._');
+    lines.push('');
+  }
+
+  for (const [stakeholder, swot] of swotMap) {
+    lines.push(`### SWOT: ${stakeholder}`, '');
+
+    lines.push('#### Strengths 💪');
+    if (swot.strengths.length > 0) {
+      [...new Set(swot.strengths)].forEach(s => lines.push(`- ${s}`));
+    } else {
+      lines.push('- _No strengths identified_');
+    }
+    lines.push('');
+
+    lines.push('#### Weaknesses ⚠️');
+    if (swot.weaknesses.length > 0) {
+      [...new Set(swot.weaknesses)].forEach(s => lines.push(`- ${s}`));
+    } else {
+      lines.push('- _No weaknesses identified_');
+    }
+    lines.push('');
+
+    lines.push('#### Opportunities 🌟');
+    if (swot.opportunities.length > 0) {
+      [...new Set(swot.opportunities)].forEach(s => lines.push(`- ${s}`));
+    } else {
+      lines.push('- _No opportunities identified_');
+    }
+    lines.push('');
+
+    lines.push('#### Threats 🔴');
+    if (swot.threats.length > 0) {
+      [...new Set(swot.threats)].forEach(s => lines.push(`- ${s}`));
+    } else {
+      lines.push('- _No threats identified_');
+    }
+    lines.push('');
+  }
+
+  // ── Stakeholder Perspective Analysis ───────────────────────────────────
+  lines.push('## Stakeholder Perspective Analysis', '');
+
+  const lensEmoji: Record<string, string> = {
+    government: '🏛️',
+    opposition: '⚖️',
+    citizen: '👥',
+    economic: '💰',
+    international: '🌍',
+    media: '📰',
+  };
+
+  for (const p of result.perspectives) {
+    const emoji = lensEmoji[p.lens] || '🔍';
+    lines.push(`### ${emoji} ${p.lens.charAt(0).toUpperCase() + p.lens.slice(1)} Perspective`, '');
+    lines.push(`- **Impact**: ${p.impact}`);
+    lines.push(`- **Sentiment**: ${p.sentiment}`);
+    lines.push(`- **Confidence**: ${Math.round(p.confidence)}%`);
+    lines.push(`- **Key Actors**: ${p.keyActors.join(', ') || 'N/A'}`);
+    lines.push(`- **Related Policies**: ${p.relatedPolicies.join(', ') || 'N/A'}`);
+    lines.push('');
+    if (p.summary) {
+      lines.push(`> ${p.summary}`);
+      lines.push('');
+    }
+
+    // Dashboard metrics
+    if (p.dashboardMetrics.length > 0) {
+      lines.push('**Dashboard Metrics**:');
+      for (const m of p.dashboardMetrics) {
+        lines.push(`- ${m.metricName}: ${m.value}${m.unit ? ' ' + m.unit : ''}`);
+      }
+      lines.push('');
+    }
+  }
+
+  // ── Cross-Document References ──────────────────────────────────────────
+  lines.push('## Cross-Document References', '');
+  if (result.crossDocumentLinks.length > 0) {
+    for (const link of result.crossDocumentLinks) {
+      lines.push(`- **${link.type}**: ${link.sourceId} → ${link.targetId} (confidence: ${link.confidence}%)`);
+      lines.push(`  _${link.reason}_`);
+    }
+  } else {
+    lines.push('_No cross-document references detected for this document._');
+  }
+  lines.push('');
+
+  // ── Significance Assessment ────────────────────────────────────────────
+  lines.push('## Significance Assessment', '');
+  lines.push(`**Overall Score**: ${result.overallSignificance}/10 — ${significanceLabel(result.overallSignificance)}`);
+  lines.push('');
+  lines.push('**Scoring Factors**:');
+  lines.push(`- Document type tier (${docType})`);
+  lines.push(`- Committee tier (${committee})`);
+  const domains = [...new Set(result.perspectives.flatMap(p => p.relatedPolicies))].slice(0, 5);
+  lines.push(`- Policy domain breadth: ${domains.length} domain(s) — ${domains.join(', ') || 'N/A'}`);
+  lines.push(`- Content richness: ${hasFullText ? 'Full-text available' : 'Metadata-only'}`);
+  lines.push(`- Perspective impact: ${result.perspectives.filter(p => p.impact === 'high').length}/6 high-impact perspectives`);
+  lines.push('');
+
+  // ── Key Insights ───────────────────────────────────────────────────────
+  lines.push('## Key Insights', '');
+  if (result.keyInsights.length > 0) {
+    result.keyInsights.forEach((insight, i) => lines.push(`${i + 1}. ${insight}`));
+  } else {
+    lines.push('_No key insights extracted._');
+  }
+  lines.push('');
+
+  // ── Data Quality Notes ─────────────────────────────────────────────────
+  lines.push('## Data Quality Notes', '');
+  lines.push(`- **Analysis confidence**: ${confidenceLabel(result.confidenceScore)} (${Math.round(result.confidenceScore)}%)`);
+  lines.push(`- **Full-text content**: ${hasFullText ? 'Available — high confidence' : 'Unavailable — analysis based on metadata only'}`);
+  lines.push(`- **Data sources**: ${ctx.dataSources.join(', ')}`);
+  lines.push(`- **Analysis method**: 6-lens stakeholder analysis with SWOT extraction`);
+  lines.push('');
+
+  return lines.join('\n');
+}
+
+/**
+ * Sanitize a document identifier for use as a safe filename.
+ * Replaces non-alphanumeric characters with hyphens and lowercases.
+ */
+export function sanitizeDokId(dokId: string): string {
+  return dokId
+    .replace(/[^a-zA-Z0-9åäöÅÄÖ-]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+    .toLowerCase()
+    .slice(0, 100);
+}

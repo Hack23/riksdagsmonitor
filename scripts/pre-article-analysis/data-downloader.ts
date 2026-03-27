@@ -23,6 +23,16 @@ import type { MCPClient } from '../mcp-client/client.js';
 // Types
 // ---------------------------------------------------------------------------
 
+/** Supported document type keys for scoped downloads. */
+export type DocumentTypeKey =
+  | 'propositions'
+  | 'motions'
+  | 'committeeReports'
+  | 'votes'
+  | 'speeches'
+  | 'questions'
+  | 'interpellations';
+
 export interface DownloadedData {
   /** Government propositions */
   propositions: RawDocument[];
@@ -92,16 +102,21 @@ function currentRm(): string {
  * Failures in individual calls are caught so a partial result is returned
  * rather than failing the entire pipeline.
  *
+ * When `docTypes` is provided, only the listed document types are fetched.
+ * This prevents multiple workflows (e.g. propositions and committee-reports)
+ * from downloading the same documents and writing conflicting analysis.
+ *
  * @param client   - MCPClient instance (caller-supplied for testability)
- * @param options  - Optional overrides for limits and riksmöte
+ * @param options  - Optional overrides for limits, riksmöte, and document type scoping
  */
 export async function downloadAllDocuments(
   client: MCPClient,
-  options: { limit?: number; rm?: string } = {},
+  options: { limit?: number; rm?: string; docTypes?: DocumentTypeKey[] } = {},
 ): Promise<DownloadResult> {
   const start = Date.now();
   const limit = options.limit ?? 20;
   const rm = options.rm ?? currentRm();
+  const docTypes = options.docTypes ?? null; // null means fetch all types
 
   const dataSources: string[] = [];
   const data: DownloadedData = {
@@ -161,12 +176,28 @@ export async function downloadAllDocuments(
     },
   ] as const;
 
+  // When docTypes is specified, only fetch the listed document types.
+  const activeTasks = docTypes
+    ? fetchTasks.filter(task => {
+        const typeMap: Record<string, DocumentTypeKey> = {
+          fetchPropositions: 'propositions',
+          fetchMotions: 'motions',
+          fetchCommitteeReports: 'committeeReports',
+          fetchVotingRecords: 'votes',
+          searchSpeeches: 'speeches',
+          fetchWrittenQuestions: 'questions',
+          fetchInterpellations: 'interpellations',
+        };
+        return docTypes.includes(typeMap[task.name]!);
+      })
+    : fetchTasks;
+
   const fetchResults = await Promise.allSettled(
-    fetchTasks.map(task => task.fetch()),
+    activeTasks.map(task => task.fetch()),
   );
 
   fetchResults.forEach((result, index) => {
-    const task = fetchTasks[index]!;
+    const task = activeTasks[index]!;
 
     if (result.status === 'fulfilled') {
       try {

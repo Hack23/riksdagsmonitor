@@ -38,6 +38,7 @@ import {
   downloadAllDocuments,
   flattenDocuments,
 } from './pre-article-analysis/data-downloader.js';
+import type { DocumentTypeKey } from './pre-article-analysis/data-downloader.js';
 
 import type {
   SerializationContext,
@@ -58,6 +59,8 @@ import {
   serializeSignificanceScoring,
   serializeCrossReferenceMap,
   serializeSynthesisSummary,
+  serializeDocumentAnalysis,
+  sanitizeDokId,
 } from './pre-article-analysis/markdown-serializer.js';
 
 // ---------------------------------------------------------------------------
@@ -82,6 +85,7 @@ export function parseArgs(argv: string[]): {
   limit: number;
   weekLabel: string | null;
   rm: string | null;
+  docType: string | null;
 } {
   const args = argv.slice(2);
   const get = (flag: string): string | null => {
@@ -138,7 +142,16 @@ export function parseArgs(argv: string[]): {
   const limit = parsedLimit;
   const rm = get('--rm');
 
-  return { date: isoDate, aggregate, limit, weekLabel, rm };
+  const docTypeArg = get('--doc-type');
+  const VALID_DOC_TYPES = ['propositions', 'motions', 'committeeReports', 'votes', 'speeches', 'questions', 'interpellations'];
+  if (docTypeArg && !VALID_DOC_TYPES.includes(docTypeArg)) {
+    throw new Error(
+      `Invalid --doc-type value: ${docTypeArg}. Supported values: ${VALID_DOC_TYPES.join(', ')}.`,
+    );
+  }
+  const docType = docTypeArg ?? null;
+
+  return { date: isoDate, aggregate, limit, weekLabel, rm, docType };
 }
 
 function isoWeekNumber(date: Date): number {
@@ -432,8 +445,9 @@ async function runPreArticleAnalysis(opts: {
   aggregate: boolean;
   weekLabel: string | null;
   rm: string | null;
+  docType: string | null;
 }): Promise<void> {
-  const { date, limit, aggregate, weekLabel, rm } = opts;
+  const { date, limit, aggregate, weekLabel, rm, docType } = opts;
 
   if (aggregate && weekLabel) {
     console.log(`\n📅 Running weekly aggregation for: ${weekLabel}`);
@@ -444,18 +458,29 @@ async function runPreArticleAnalysis(opts: {
   console.log(`\n🚀 Pre-Article Analysis Pipeline — ${date}`);
   console.log('='.repeat(50));
 
-  // Output directory
-  const outputDir = path.join(ANALYSIS_DIR, 'daily', date);
+  // When --doc-type is specified, scope output to a subdirectory to avoid
+  // conflicts between parallel workflow runs (e.g. propositions vs committee-reports).
+  const outputDir = docType
+    ? path.join(ANALYSIS_DIR, 'daily', date, docType)
+    : path.join(ANALYSIS_DIR, 'daily', date);
   ensureDir(outputDir);
 
   const generatedAt = formatTimestampForMarkdown();
 
   // ── Step 1: Download data ─────────────────────────────────────────────────
   console.log('\n📥 Step 1: Downloading documents from riksdag-regering-mcp...');
+  if (docType) {
+    console.log(`   📋 Scoped to document type: ${docType}`);
+  }
   const client = new MCPClient();
   const resolvedRm = rm ?? riksMoteFromDate(date);
 
-  const { data, manifest } = await downloadAllDocuments(client, { limit, rm: resolvedRm });
+  const downloadOpts: { limit: number; rm: string; docTypes?: DocumentTypeKey[] } = { limit, rm: resolvedRm };
+  if (docType) {
+    downloadOpts.docTypes = [docType as DocumentTypeKey];
+  }
+
+  const { data, manifest } = await downloadAllDocuments(client, downloadOpts);
   const flattenedDocs = flattenDocuments(data);
   const allDocs = flattenedDocs.filter((doc: RawDocument) => {
     // Only keep documents whose datum matches the requested analysis date (YYYY-MM-DD).
@@ -480,6 +505,22 @@ async function runPreArticleAnalysis(opts: {
   };
 
   writeAnalysis(outputDir, 'data-download-manifest.md', serializeDataManifest(ctx, manifest.docCounts, allDocs.length));
+
+  // ── Step 1b: Store each downloaded document as JSON ─────────────────────
+  console.log('\n💾 Step 1b: Storing downloaded documents...');
+  const documentsDir = path.join(outputDir, 'documents');
+  ensureDir(documentsDir);
+  let storedCount = 0;
+  for (const doc of allDocs) {
+    const dokId = doc.dok_id || doc.titel || doc.title || `unknown-${storedCount}`;
+    const safeName = sanitizeDokId(dokId);
+    if (safeName) {
+      const docJson = JSON.stringify(doc, null, 2);
+      fs.writeFileSync(path.join(documentsDir, `${safeName}.json`), docJson, 'utf8');
+      storedCount++;
+    }
+  }
+  console.log(`   💾 Stored ${storedCount} documents as JSON in ${path.relative(REPO_ROOT, documentsDir)}/`);
 
   if (allDocs.length === 0) {
     console.warn('\n⚠️  No documents downloaded. Analysis will be minimal.');
@@ -528,12 +569,29 @@ async function runPreArticleAnalysis(opts: {
   const synthesis = buildSynthesis(allDocs, significanceEntries, riskResult);
   writeAnalysis(outputDir, 'synthesis-summary.md', serializeSynthesisSummary(ctx, synthesis));
 
+  // ── Step 10: Per-document analysis files ─────────────────────────────────
+  console.log('\n📝 Step 10: Generating per-document analysis files...');
+  let perDocCount = 0;
+  for (const result of batchResult.results) {
+    const dokId = result.document.dok_id || result.document.titel || result.document.title || `unknown-${perDocCount}`;
+    const safeName = sanitizeDokId(dokId);
+    if (safeName) {
+      writeAnalysis(documentsDir, `${safeName}-analysis.md`, serializeDocumentAnalysis(ctx, result));
+      perDocCount++;
+    }
+  }
+  console.log(`   📝 Generated ${perDocCount} per-document analysis files`);
+
   // ── Summary ───────────────────────────────────────────────────────────────
-  console.log(`\n✅ Analysis complete! Results in: analysis/daily/${date}/`);
-  console.log(`   📄 9 analysis files written`);
+  const totalFiles = 9 + perDocCount + storedCount;
+  console.log(`\n✅ Analysis complete! Results in: ${path.relative(REPO_ROOT, outputDir)}/`);
+  console.log(`   📄 ${totalFiles} total files written (9 batch + ${perDocCount} analyses + ${storedCount} documents)`);
   console.log(`   📊 ${allDocs.length} documents analyzed`);
   console.log(`   🎯 Overall confidence: ${synthesis.overallConfidence}`);
   console.log(`   ⚠️  Risk level: ${synthesis.aggregateRiskLevel}`);
+  if (docType) {
+    console.log(`   📋 Scoped to: ${docType}`);
+  }
 }
 
 // ---------------------------------------------------------------------------

@@ -23,6 +23,8 @@ import {
   serializeSignificanceScoring,
   serializeCrossReferenceMap,
   serializeSynthesisSummary,
+  serializeDocumentAnalysis,
+  sanitizeDokId,
 } from '../scripts/pre-article-analysis/markdown-serializer.js';
 
 import {
@@ -851,5 +853,282 @@ describe('weekly aggregation output', () => {
     expect(output).toContain('**Days Included**: 1');
     expect(output).toContain('## Day: 2026-03-23');
     expect(output).toContain('Sample synthesis.');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// serializeDocumentAnalysis — per-document analysis files
+// ---------------------------------------------------------------------------
+
+describe('serializeDocumentAnalysis', () => {
+  it('includes full document metadata in frontmatter', () => {
+    const doc = makeRawDoc({
+      dok_id: 'H901FiU10',
+      titel: 'Ekonomisk politik',
+      doktyp: 'bet',
+      organ: 'FiU',
+      datum: '2026-03-26',
+      intressent_namn: 'Anna Svensson',
+      parti: 'S',
+      rm: '2025/26',
+    });
+    const result = makeAnalysisResult(doc);
+    const md = serializeDocumentAnalysis(CTX, result);
+
+    expect(md).toContain('# Document Analysis: Ekonomisk politik');
+    expect(md).toContain('**dok_id**: H901FiU10');
+    expect(md).toContain('**Document Type**: bet');
+    expect(md).toContain('**Committee**: FiU');
+    expect(md).toContain('**Author**: Anna Svensson');
+    expect(md).toContain('**Party**: S');
+    expect(md).toContain('**Riksmöte**: 2025/26');
+    expect(md).toContain('**Significance**: 🟠 High (7/10)');
+    expect(md).toContain('**Confidence**: HIGH (72%)');
+  });
+
+  it('includes executive summary with key insights', () => {
+    const doc = makeRawDoc();
+    const result = makeAnalysisResult(doc);
+    const md = serializeDocumentAnalysis(CTX, result);
+
+    expect(md).toContain('## Executive Summary');
+    expect(md).toContain('Insight 1. Insight 2.');
+  });
+
+  it('generates SWOT analysis per stakeholder', () => {
+    const doc = makeRawDoc();
+    const result = makeAnalysisResult(doc);
+    const md = serializeDocumentAnalysis(CTX, result);
+
+    expect(md).toContain('## SWOT Analysis');
+    expect(md).toContain('### SWOT: Government');
+    expect(md).toContain('#### Strengths 💪');
+    expect(md).toContain('Strong mandate');
+    expect(md).toContain('#### Threats 🔴');
+    expect(md).toContain('Budget risk');
+  });
+
+  it('includes all 6 stakeholder perspectives', () => {
+    const doc = makeRawDoc();
+    const result = makeAnalysisResult(doc);
+    const md = serializeDocumentAnalysis(CTX, result);
+
+    expect(md).toContain('## Stakeholder Perspective Analysis');
+    expect(md).toContain('### 🏛️ Government Perspective');
+    expect(md).toContain('### ⚖️ Opposition Perspective');
+    expect(md).toContain('### 👥 Citizen Perspective');
+    expect(md).toContain('### 💰 Economic Perspective');
+    expect(md).toContain('### 🌍 International Perspective');
+    expect(md).toContain('### 📰 Media Perspective');
+  });
+
+  it('includes dashboard metrics for each perspective', () => {
+    const doc = makeRawDoc();
+    const result = makeAnalysisResult(doc);
+    const md = serializeDocumentAnalysis(CTX, result);
+
+    expect(md).toContain('**Dashboard Metrics**:');
+    expect(md).toContain('seats: 50 seats');
+  });
+
+  it('includes significance assessment with scoring factors', () => {
+    const doc = makeRawDoc();
+    const result = makeAnalysisResult(doc);
+    const md = serializeDocumentAnalysis(CTX, result);
+
+    expect(md).toContain('## Significance Assessment');
+    expect(md).toContain('**Overall Score**: 7/10');
+    expect(md).toContain('Document type tier (prop)');
+    expect(md).toContain('Committee tier (FiU)');
+    expect(md).toContain('Policy domain breadth');
+  });
+
+  it('includes cross-document references when present', () => {
+    const doc = makeRawDoc();
+    const result = makeAnalysisResult(doc);
+    result.crossDocumentLinks = [
+      { sourceId: 'DOC1', targetId: 'DOC2', type: 'responds-to', reason: 'Opposition motion', confidence: 85 },
+    ];
+    const md = serializeDocumentAnalysis(CTX, result);
+
+    expect(md).toContain('## Cross-Document References');
+    expect(md).toContain('responds-to');
+    expect(md).toContain('DOC1 → DOC2');
+    expect(md).toContain('confidence: 85%');
+  });
+
+  it('handles documents without full-text content', () => {
+    const doc = makeRawDoc({ fullText: undefined, fullContent: undefined });
+    const result = makeAnalysisResult(doc);
+    const md = serializeDocumentAnalysis(CTX, result);
+
+    expect(md).toContain('No — metadata-only ⚠️');
+    expect(md).toContain('Metadata-only');
+  });
+
+  it('handles documents with full-text content', () => {
+    const doc = makeRawDoc({ fullText: 'Some full text content here' });
+    const result = makeAnalysisResult(doc);
+    const md = serializeDocumentAnalysis(CTX, result);
+
+    expect(md).toContain('Yes ✅');
+    expect(md).toContain('Full-text available');
+  });
+
+  it('includes data quality notes section', () => {
+    const doc = makeRawDoc();
+    const result = makeAnalysisResult(doc);
+    const md = serializeDocumentAnalysis(CTX, result);
+
+    expect(md).toContain('## Data Quality Notes');
+    expect(md).toContain('6-lens stakeholder analysis with SWOT extraction');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// sanitizeDokId — filename sanitization
+// ---------------------------------------------------------------------------
+
+describe('sanitizeDokId', () => {
+  it('lowercases and replaces special characters', () => {
+    expect(sanitizeDokId('H901FiU10')).toBe('h901fiu10');
+  });
+
+  it('replaces spaces and slashes with hyphens', () => {
+    expect(sanitizeDokId('Some Doc/ID 2025')).toBe('some-doc-id-2025');
+  });
+
+  it('collapses multiple hyphens', () => {
+    expect(sanitizeDokId('DOC--ID---123')).toBe('doc-id-123');
+  });
+
+  it('truncates to 100 characters', () => {
+    const longId = 'A'.repeat(200);
+    expect(sanitizeDokId(longId).length).toBeLessThanOrEqual(100);
+  });
+
+  it('removes leading and trailing hyphens', () => {
+    expect(sanitizeDokId('--test-id--')).toBe('test-id');
+  });
+
+  it('handles empty string', () => {
+    expect(sanitizeDokId('')).toBe('');
+  });
+
+  it('preserves Swedish characters', () => {
+    const result = sanitizeDokId('Årsredovisning-Ämne');
+    expect(result).toContain('årsredovisning');
+    expect(result).toContain('ämne');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// parseArgs — --doc-type parameter
+// ---------------------------------------------------------------------------
+
+describe('parseArgs --doc-type', () => {
+  it('returns null docType when --doc-type is omitted', () => {
+    const result = parseArgs(['node', 'script', '--date', '2026-03-26']);
+    expect(result.docType).toBeNull();
+  });
+
+  it('accepts a valid --doc-type value', () => {
+    const result = parseArgs(['node', 'script', '--date', '2026-03-26', '--doc-type', 'propositions']);
+    expect(result.docType).toBe('propositions');
+  });
+
+  it('accepts committeeReports as --doc-type', () => {
+    const result = parseArgs(['node', 'script', '--date', '2026-03-26', '--doc-type', 'committeeReports']);
+    expect(result.docType).toBe('committeeReports');
+  });
+
+  it('accepts all valid doc-type values', () => {
+    const validTypes = ['propositions', 'motions', 'committeeReports', 'votes', 'speeches', 'questions', 'interpellations'];
+    for (const dt of validTypes) {
+      const result = parseArgs(['node', 'script', '--doc-type', dt]);
+      expect(result.docType).toBe(dt);
+    }
+  });
+
+  it('throws on an invalid --doc-type value', () => {
+    expect(() => parseArgs(['node', 'script', '--doc-type', 'invalid']))
+      .toThrow('Invalid --doc-type value');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// downloadAllDocuments — docTypes filtering
+// ---------------------------------------------------------------------------
+
+describe('downloadAllDocuments with docTypes filter', () => {
+  function stubClient(overrides: Record<string, unknown[] | Error> = {}): any {
+    const make = (name: string) => {
+      return async () => {
+        const val = overrides[name];
+        if (val instanceof Error) throw val;
+        return val ?? [];
+      };
+    };
+    return {
+      fetchPropositions: make('fetchPropositions'),
+      fetchMotions: make('fetchMotions'),
+      fetchCommitteeReports: make('fetchCommitteeReports'),
+      fetchVotingRecords: make('fetchVotingRecords'),
+      searchSpeeches: make('searchSpeeches'),
+      fetchWrittenQuestions: make('fetchWrittenQuestions'),
+      fetchInterpellations: make('fetchInterpellations'),
+    };
+  }
+
+  it('only fetches propositions when docTypes is ["propositions"]', async () => {
+    const client = stubClient({
+      fetchPropositions: [{ dok_id: 'p1' }, { dok_id: 'p2' }],
+      fetchMotions: [{ dok_id: 'm1' }],
+      fetchCommitteeReports: [{ dok_id: 'c1' }],
+    });
+    const { data, manifest } = await downloadAllDocuments(client, {
+      docTypes: ['propositions'],
+    });
+    expect(data.propositions).toHaveLength(2);
+    expect(data.motions).toHaveLength(0);
+    expect(data.committeeReports).toHaveLength(0);
+    expect(manifest.dataSources).toContain('get_propositioner');
+    expect(manifest.dataSources).not.toContain('get_motioner');
+  });
+
+  it('only fetches committeeReports when scoped', async () => {
+    const client = stubClient({
+      fetchPropositions: [{ dok_id: 'p1' }],
+      fetchCommitteeReports: [{ dok_id: 'c1' }, { dok_id: 'c2' }],
+    });
+    const { data, manifest } = await downloadAllDocuments(client, {
+      docTypes: ['committeeReports'],
+    });
+    expect(data.propositions).toHaveLength(0);
+    expect(data.committeeReports).toHaveLength(2);
+    expect(manifest.dataSources).toContain('get_betankanden');
+    expect(manifest.dataSources).not.toContain('get_propositioner');
+  });
+
+  it('fetches multiple types when docTypes has multiple entries', async () => {
+    const client = stubClient({
+      fetchPropositions: [{ dok_id: 'p1' }],
+      fetchMotions: [{ dok_id: 'm1' }],
+    });
+    const { data } = await downloadAllDocuments(client, {
+      docTypes: ['propositions', 'motions'],
+    });
+    expect(data.propositions).toHaveLength(1);
+    expect(data.motions).toHaveLength(1);
+    expect(data.committeeReports).toHaveLength(0);
+  });
+
+  it('fetches all types when docTypes is not provided', async () => {
+    const client = stubClient({
+      fetchPropositions: [{ dok_id: 'p1' }],
+      fetchMotions: [{ dok_id: 'm1' }],
+    });
+    const { manifest } = await downloadAllDocuments(client);
+    expect(manifest.dataSources.length).toBeGreaterThanOrEqual(2);
   });
 });

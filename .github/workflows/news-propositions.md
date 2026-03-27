@@ -382,7 +382,7 @@ if [ -z "$ARTICLE_DATE" ]; then
   ARTICLE_DATE=$(date -u +%Y-%m-%d)
 fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 --doc-type propositions || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
 echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
 ```
