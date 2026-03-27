@@ -518,8 +518,8 @@ flowchart TD
 
 | Year | Node.js | TypeScript | Bundler | Test Runner |
 | --- | --- | --- | --- | --- |
-| 2026 Q1 | 25 (Current) | 5.9 | Vite 7 | Vitest 4 |
-| 2026 Q2 | **26 LTS** (upgrade ~Apr 1) | 5.9 | Vite 7 | Vitest 4 |
+| 2026 Q1 | 25 (Current) | 5.9 | Vite 8 | Vitest 4 |
+| 2026 Q2 | 26 (Current, target upgrade ~Apr 1; LTS later 2026) | 5.9 | Vite 8 | Vitest 4 |
 | 2027 | 27 LTS | 6.x | Vite 8 | Vitest 5 |
 | 2028 | 28 LTS | 7.x | Vite 9 / Turbopack | Vitest 6 |
 | 2029 | 29 LTS | 8.x | Next-gen bundler | Native test runner |

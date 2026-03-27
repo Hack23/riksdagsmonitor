@@ -150,10 +150,10 @@ graph LR
 | --- | --- | --- |
 | Node.js | 25 | Runtime (native TypeScript strip-types) |
 | TypeScript | 5.9.3 | Type system |
-| Vite | 7.3.1 | Build toolchain (esbuild) |
-| Vitest | 4.0.18 | Unit testing (2890 tests) |
-| Cypress | 14 | E2E testing |
-| TypeDoc | 0.28.17 | API documentation |
+| Vite | 8.0.3 | Build toolchain (esbuild) |
+| Vitest | 4.1.2 | Unit testing (2890 tests) |
+| Cypress | 15.13.0 | E2E testing |
+| TypeDoc | 0.28.18 | API documentation |
 | ESLint | 10.x | Linting (flat config) |
 
 ---
@@ -347,13 +347,13 @@ flowchart LR
 
 ### Specific Hardening Measures
 
-Every workflow in the Riksdagsmonitor project implements:
+Every workflow in the Riksdagsmonitor project implements least-privilege security. The baseline minimum permission is `contents: read`; individual workflows add only the extra scopes they need (e.g., `id-token: write` for OIDC, `pages: write` for deployments, `pull-requests: write` for PR comments):
 
 1. **🔒 Permissions Restriction**: Explicit least-privilege permissions per workflow
    ```yaml
+   # Baseline minimum — additional scopes added per-workflow as needed
    permissions:
      contents: read
-     actions: read
    ```
 
 2. **📌 SHA Pinning**: All external actions pinned to specific SHA hashes for immutability
