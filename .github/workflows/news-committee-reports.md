@@ -170,8 +170,9 @@ source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts --types
 
 **If `generate-news-enhanced.ts` fails or returns 0 articles:**
 1. Check if MCP data was returned (retry MCP calls if needed)
-2. If still no data, use `safeoutputs___noop` with a descriptive message
-3. Do NOT attempt to manually create articles as a fallback
+2. Check if analysis artifacts exist in `analysis/daily/YYYY-MM-DD/` — if yes, commit them and create an analysis-only PR
+3. If no data AND no analysis artifacts, use `safeoutputs___noop` with a descriptive message
+4. Do NOT attempt to manually create articles as a fallback
 
 ## Required Skills
 
@@ -321,8 +322,10 @@ Example: `news/content/2026-03-23/committee-reports`
 > **❌ DO NOT** call `safeoutputs___noop` if articles were generated but PR creation failed — let the workflow FAIL instead.
 
 - ✅ **REQUIRED:** `safeoutputs___create_pull_request` when articles generated
-- ✅ **ONLY USE `safeoutputs___noop` if genuinely no new committee reports** from riksdag-regering-mcp
+- ✅ **REQUIRED:** `safeoutputs___create_pull_request` with analysis-only PR when no articles but analysis artifacts exist — title: `📊 Analysis Only - Committee Reports - {date}`, labels: `["analysis-only", "committee-reports"]`
+- ✅ **ONLY USE `safeoutputs___noop` if genuinely no new committee reports AND no analysis artifacts** from riksdag-regering-mcp
 - ❌ **NEVER use `safeoutputs___noop` as fallback for PR creation failures**
+- ❌ **NEVER use `safeoutputs___noop` if analysis artifacts exist in `analysis/daily/`**
 
 > **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them. After `git commit`, call the tool directly as your VERY NEXT action.
 
@@ -402,7 +405,27 @@ The analysis pipeline outputs the following artifacts per doc-type run:
 
 These files are committed alongside articles for human review and continuous improvement.
 
-### Step 3: Generate Articles
+### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
+
+**Before deciding whether to generate articles or call noop, you MUST:**
+
+1. **Review the analysis artifacts** in `analysis/daily/YYYY-MM-DD/committeeReports/` — read `synthesis-summary.md` and `significance-scoring.md` to understand what was found
+2. **Summarize the analysis findings** — note how many documents were downloaded, their significance scores, key themes, and risk levels
+3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
+
+```bash
+ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+if [ -d "$ANALYSIS_DIR" ] && [ "$(ls -A "$ANALYSIS_DIR" 2>/dev/null)" ]; then
+  ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
+  echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed"
+else
+  echo "⚠️ No analysis artifacts found — pipeline may have found no documents"
+fi
+```
+
+> **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Committee Reports - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).
 
 Parse the `languages` input and generate using the automated script:
 

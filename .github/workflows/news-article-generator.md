@@ -304,6 +304,28 @@ ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis o
 
 These analysis files are committed alongside articles for human review and continuous improvement.
 
+### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
+
+**Before deciding whether to generate articles or call noop, you MUST:**
+
+1. **Review the analysis artifacts** in `analysis/daily/YYYY-MM-DD/` — read `synthesis-summary.md` and `significance-scoring.md` to understand what was found
+2. **Summarize the analysis findings** — note how many documents were downloaded, their significance scores, key themes, and risk levels
+3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
+
+```bash
+ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+if [ -d "$ANALYSIS_DIR" ] && [ "$(ls -A "$ANALYSIS_DIR" 2>/dev/null)" ]; then
+  ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
+  echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed"
+else
+  echo "⚠️ No analysis artifacts found — pipeline may have found no documents"
+fi
+```
+
+> **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files in `analysis/daily/YYYY-MM-DD/`, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Article Generator - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).
+
 ## Step 2: Determine Article Types & Languages
 
 ```bash
@@ -557,8 +579,8 @@ safeoutputs___dispatch_workflow({
 | Scenario | Cause | Fix |
 |----------|-------|-----|
 | Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL}"` — source and script MUST be chained with `&&` on one line; never pipe source to tail |
-| Empty results | No new documents for the queried article type | Skip generation with `safeoutputs___noop` |
-| Timeout | MCP server response exceeds `timeout-minutes` | Reduce article types or increase timeout |
+| Empty results | No new documents for the queried article type | Check if analysis artifacts exist — if yes, commit them and create analysis-only PR; if no, call `safeoutputs___noop` |
+| Timeout | MCP server response exceeds `timeout-minutes` | Commit any analysis artifacts produced so far, then call safe output |
 | Stale data | `hoursSinceSync > 48` from `get_sync_status()` | Add disclaimer noting data staleness; proceed with cached data |
 
-🎯 **Now begin: Check date, warm up MCP with `get_sync_status()`, determine article types, generate with the script, validate, and call a safe output tool.**
+🎯 **Now begin: Check date, warm up MCP with `get_sync_status()`, run pre-article analysis pipeline, review analysis results, determine article types, generate with the script, validate, and call a safe output tool.**

@@ -232,6 +232,27 @@ ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis o
 
 These analysis files are committed alongside articles for human review and continuous improvement.
 
+### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
+
+**Before deciding whether to generate articles or call noop, you MUST:**
+
+1. **Review the analysis artifacts** in `analysis/daily/YYYY-MM-DD/` — read `synthesis-summary.md` and `significance-scoring.md` to understand what was found
+2. **Summarize the analysis findings** — note how many documents were downloaded, their significance scores, key themes, and risk levels
+3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
+
+```bash
+ARTICLE_DATE=$(date -u +%Y-%m-%d)
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+if [ -d "$ANALYSIS_DIR" ] && [ "$(ls -A "$ANALYSIS_DIR" 2>/dev/null)" ]; then
+  ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
+  echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed"
+else
+  echo "⚠️ No analysis artifacts found — pipeline may have found no documents"
+fi
+```
+
+> **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files in `analysis/daily/YYYY-MM-DD/`, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Realtime Monitor - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).
+
 ## Step 2: Detect Significant Events
 
 Query for recent parliamentary activity — use **direct MCP tool calls** (the framework routes them automatically).
@@ -308,11 +329,28 @@ Apply three-tier severity classification to ALL detected events. This classifica
 
 Map raw score to tier: **≥ 7 = HIGH** | **4–6 = MEDIUM** | **≤ 3 = LOW**
 
-### No-Events Early Exit (MOST COMMON OUTCOME)
+### No-Events Early Exit
 
-If no HIGH or MEDIUM events found, substitute actual runtime values into this template:
+If no HIGH or MEDIUM events found:
+
+1. **First check if analysis artifacts exist** in `analysis/daily/YYYY-MM-DD/`:
+```bash
+ARTICLE_DATE=$(date -u +%Y-%m-%d)
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l)
+echo "Analysis artifacts: $ANALYSIS_COUNT files"
 ```
-safeoutputs___noop({ "message": "No significant parliamentary events on <today>. Checked: votes (latest <lastVoteDate>), debates, propositions (<propCount> found, max severity=<maxScore>), committee reports (<betCount>), government documents (<govCount>), calendar (<calendarStatus>). No events reached HIGH threshold (≥7). Next check in 2-4h." })
+
+2. **If analysis artifacts exist** (ANALYSIS_COUNT > 0): Commit them and create an analysis-only PR:
+```bash
+git add analysis/daily/
+git commit -m "📊 Analysis artifacts - Realtime Monitor - $(date +%Y-%m-%d)"
+```
+Then call `safeoutputs___create_pull_request` with title `📊 Analysis Only - Realtime Monitor - {date}`, body including actual query stats, and labels `["analysis-only", "realtime-monitor"]`.
+
+3. **If NO analysis artifacts exist**: Substitute actual runtime values into this template:
+```
+safeoutputs___noop({ "message": "No significant parliamentary events on <today>. Checked: votes (latest <lastVoteDate>), debates, propositions (<propCount> found, max severity=<maxScore>), committee reports (<betCount>), government documents (<govCount>), calendar (<calendarStatus>). No events reached HIGH threshold (≥7). Pre-article analysis also produced no output. Next check in 2-4h." })
 ```
 Replace each `<placeholder>` with the actual value from your queries:
 - `<today>` — current date (YYYY-MM-DD)
@@ -321,7 +359,7 @@ Replace each `<placeholder>` with the actual value from your queries:
 - `<maxScore>` — highest severity score assigned to any event
 - `<calendarStatus>` — "ok" or "API error: HTML instead of JSON"
 
-**Stop here.** Parliament is often inactive — noop is the expected outcome.
+**Stop here only if no analysis artifacts exist.** Parliament is often inactive — but analysis artifacts should still be committed for review.
 
 ## Step 3: Generate Articles Using Purpose-Built Script
 
@@ -586,7 +624,7 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 | Scenario | Cause | Fix |
 |----------|-------|-----|
 | Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL}"` — source and npx MUST be chained with `&&` on one line; expected output: `MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering` |
-| Empty results | No significant events detected in monitoring window | Skip generation with `safeoutputs___noop` |
+| Empty results | No significant events detected in monitoring window | Check if analysis artifacts exist — if yes, commit them and create analysis-only PR; if no, call `safeoutputs___noop` |
 | Calendar API error | Riksdag calendar API returns HTML instead of JSON (known intermittent issue) | Use `search_dokument` with date params as fallback; flag error in noop message; do NOT treat as "no events" — evaluate all other sources |
 | Timeout | MCP server response exceeds `timeout-minutes` | Reduce query scope or increase timeout |
 | Script timeout | Generation script exceeds 20-minute limit | Proceed with whatever was generated; the `timeout 1200` wrapper kills the script |
