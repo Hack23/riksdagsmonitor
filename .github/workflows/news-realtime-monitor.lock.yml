@@ -139,6 +139,7 @@ jobs:
           GH_AW_GITHUB_EVENT_COMMENT_ID: ${{ github.event.comment.id }}
           GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
           GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH: ${{ github.event.inputs.analysis_depth }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: ${{ github.event.inputs.article_date }}
           GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPES: ${{ github.event.inputs.article_types }}
           GH_AW_GITHUB_EVENT_INPUTS_FOCUS: ${{ github.event.inputs.focus }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
@@ -207,6 +208,7 @@ jobs:
         env:
           GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
           GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH: ${{ github.event.inputs.analysis_depth }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: ${{ github.event.inputs.article_date }}
           GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPES: ${{ github.event.inputs.article_types }}
           GH_AW_GITHUB_EVENT_INPUTS_FOCUS: ${{ github.event.inputs.focus }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
@@ -224,6 +226,7 @@ jobs:
           GH_AW_GITHUB_EVENT_COMMENT_ID: ${{ github.event.comment.id }}
           GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: ${{ github.event.discussion.number }}
           GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH: ${{ github.event.inputs.analysis_depth }}
+          GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: ${{ github.event.inputs.article_date }}
           GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPES: ${{ github.event.inputs.article_types }}
           GH_AW_GITHUB_EVENT_INPUTS_FOCUS: ${{ github.event.inputs.focus }}
           GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: ${{ github.event.inputs.languages }}
@@ -247,6 +250,7 @@ jobs:
                 GH_AW_GITHUB_EVENT_COMMENT_ID: process.env.GH_AW_GITHUB_EVENT_COMMENT_ID,
                 GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER: process.env.GH_AW_GITHUB_EVENT_DISCUSSION_NUMBER,
                 GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH: process.env.GH_AW_GITHUB_EVENT_INPUTS_ANALYSIS_DEPTH,
+                GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE: process.env.GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_DATE,
                 GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPES: process.env.GH_AW_GITHUB_EVENT_INPUTS_ARTICLE_TYPES,
                 GH_AW_GITHUB_EVENT_INPUTS_FOCUS: process.env.GH_AW_GITHUB_EVENT_INPUTS_FOCUS,
                 GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES: process.env.GH_AW_GITHUB_EVENT_INPUTS_LANGUAGES,
