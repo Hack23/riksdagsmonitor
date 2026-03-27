@@ -153,7 +153,7 @@ flowchart TB
 
 | Metric | Value |
 | --- | --- |
-| Total Workflows | 47 (23 YAML + 12 agentic sources + 12 compiled locks) |
+| Total Workflow Files | 47 (23 YAML + 12 agentic `.md` + 12 `.lock.yml`) = **35 distinct workflows** |
 | TypeScript Modules | 31 (in `src/browser/`) |
 | Unit Tests | 2890 (Vitest) |
 | Language Support | 14 languages (incl. RTL) |
@@ -575,7 +575,7 @@ gantt
 
 | Year | Projected Total | New Capabilities |
 | --- | --- | --- |
-| 2026 Q1 | **47** | TypeScript foundation, 12 agentic workflows, Node.js 25 ✅ |
+| 2026 Q1 | **47 files / 35 workflows** | TypeScript foundation, 12 agentic workflows, Node.js 25 ✅ |
 | 2026 Q2 | **48** | **Node.js 26 LTS upgrade** (immediately after ~Apr 1 release) |
 | 2026 Q4 | **54** | CIA pipeline v2, preview deploys, visual regression |
 | 2027 Q4 | **59** | Node.js 27 LTS, OSINT pipeline, ML predictions, real-time streams |

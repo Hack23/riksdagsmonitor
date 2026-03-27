@@ -57,7 +57,7 @@ This document provides comprehensive documentation of the CI/CD workflows implem
 
 The project has been migrated from JavaScript to **TypeScript** (31 modules in `src/browser/`) with all workflows updated accordingly. TypeScript compilation is handled by Vite (esbuild) for browser bundles and Node 25's native type-stripping for scripts.
 
-**Total Workflows: 47** (23 standard YAML + 12 agentic markdown sources + 12 compiled lock files)
+**Total Workflow Files: 47** (23 standard YAML + 12 agentic `.md` sources + 12 compiled `.lock.yml`). Each agentic workflow consists of a source `.md` file and its compiled `.lock.yml` counterpart, yielding **35 distinct workflows** (23 standard + 12 agentic).
 **Security Compliance: 100%** (all actions SHA-pinned, harden-runner enabled)
 
 ## 🔐 ISMS Policy Alignment
@@ -199,7 +199,7 @@ The Riksdagsmonitor project uses GitHub Actions for automation with the followin
 22. **🔧 Compile Agentic Workflows** (`.github/workflows/compile-agentic-workflows.yml`) — Compile .md → .lock.yml
 23. **🤖 Copilot Setup Steps** (`.github/workflows/copilot-setup-steps.yml`) — GitHub Copilot environment
 
-### 🤖 Agentic News Workflows (12 sources + 12 locks)
+### 🤖 Agentic News Workflows (12 workflows: each has a `.md` source + `.lock.yml` compiled output)
 
 24. **📰 News Article Generator** — Daily news generation
 25. **🌅 News Evening Analysis** — Evening analysis reports
@@ -720,7 +720,7 @@ flowchart LR
 | 4.2 | ☁️ Deploy to S3 | `deploy-s3.yml` | Push to main | AWS S3/CloudFront |
 | 4.3 | 🔆 Lighthouse CI | `lighthouse-ci.yml` | Push/PR, weekly | Performance audit |
 
-### 🤖 Agentic Workflows (25 files: 12 sources + 12 locks + 1 compiler)
+### 🤖 Agentic Workflows (12 workflows × 2 files each + 1 compiler = 25 files)
 
 | # | Workflow | Source | Lock | Purpose |
 | --- | --- | --- | --- | --- |
