@@ -298,8 +298,10 @@ Example: `news/content/2026-03-23/monthly-review`
 > **❌ DO NOT** call `safeoutputs___noop` if articles were generated but PR creation failed — let the workflow FAIL instead.
 
 - ✅ `safeoutputs___create_pull_request` when articles generated
-- ✅ `safeoutputs___noop` ONLY if genuinely no parliamentary activity in past month
+- ✅ `safeoutputs___create_pull_request` with analysis-only PR when no articles but analysis artifacts exist — title: `📊 Analysis Only - Monthly Review - {date}`, labels: `["analysis-only", "monthly-review"]`
+- ✅ `safeoutputs___noop` ONLY if genuinely no parliamentary activity in past month AND no analysis artifacts
 - ❌ NEVER use `safeoutputs___noop` as fallback for PR creation failures
+- ❌ NEVER use `safeoutputs___noop` if analysis artifacts exist for the current run (e.g., in `analysis/daily/${ARTICLE_DATE}` or `analysis/weekly/${WEEK_LABEL}`)
 
 > **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them. After `git commit`, call the tool directly as your VERY NEXT action.
 
@@ -383,6 +385,36 @@ ls -la "analysis/weekly/$WEEK_LABEL/" 2>/dev/null || echo "⚠️ No weekly aggr
 ```
 
 These files are committed alongside articles for human review and continuous improvement.
+
+### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
+
+**Before deciding whether to generate articles or call noop, you MUST:**
+
+1. **Review the analysis artifacts** in `analysis/daily/YYYY-MM-DD/` and `analysis/weekly/` — read `synthesis-summary.md` and `significance-scoring.md` to understand what was found
+2. **Summarize the analysis findings** — note how many documents were downloaded, their significance scores, key themes, and risk levels
+3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
+
+```bash
+ARTICLE_DATE=$(date -u +%Y-%m-%d)
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+ANALYSIS_COUNT=0
+if [ -d "$ANALYSIS_DIR" ]; then
+  ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
+fi
+WEEK_LABEL=$(date -u +%G-W%V)
+WEEKLY_DIR="analysis/weekly/$WEEK_LABEL"
+if [ -d "$WEEKLY_DIR" ]; then
+  WEEKLY_COUNT=$(find "$WEEKLY_DIR" -type f | wc -l)
+  ANALYSIS_COUNT=$((ANALYSIS_COUNT + WEEKLY_COUNT))
+fi
+if [ "$ANALYSIS_COUNT" -gt 0 ]; then
+  echo "📊 Found $ANALYSIS_COUNT total analysis artifacts — these MUST be committed (do NOT use safeoutputs___noop)"
+else
+  echo "📊 Found 0 analysis artifacts — safeoutputs___noop is allowed (no files to commit)"
+fi
+```
+
+> **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Monthly Review - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).
 
 ### Step 3: Generate Articles
 
