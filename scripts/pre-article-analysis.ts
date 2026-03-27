@@ -516,9 +516,11 @@ async function runPreArticleAnalysis(opts: {
     const dokId = doc.dok_id || doc.titel || doc.title || `unknown-doc-${i + 1}`;
     const baseName = sanitizeDokId(dokId) || `unknown-doc-${i + 1}`;
     let fileName = baseName;
+    let attempt = 0;
     // Ensure no overwrite if two docs resolve to the same sanitised name.
-    if (fs.existsSync(path.join(documentsDir, `${fileName}.json`))) {
-      fileName = `${baseName}-${i + 1}`;
+    while (fs.existsSync(path.join(documentsDir, `${fileName}.json`))) {
+      attempt++;
+      fileName = `${baseName}-${attempt}`;
     }
     const docJson = JSON.stringify(doc, null, 2);
     fs.writeFileSync(path.join(documentsDir, `${fileName}.json`), docJson, 'utf8');
@@ -581,9 +583,11 @@ async function runPreArticleAnalysis(opts: {
     const dokId = result.document.dok_id || result.document.titel || result.document.title || `unknown-analysis-${i + 1}`;
     const baseName = sanitizeDokId(dokId) || `unknown-analysis-${i + 1}`;
     let fileName = `${baseName}-analysis.md`;
+    let attempt = 0;
     // Ensure no overwrite if two docs resolve to the same sanitised name.
-    if (fs.existsSync(path.join(documentsDir, fileName))) {
-      fileName = `${baseName}-${i + 1}-analysis.md`;
+    while (fs.existsSync(path.join(documentsDir, fileName))) {
+      attempt++;
+      fileName = `${baseName}-${attempt}-analysis.md`;
     }
     writeAnalysis(documentsDir, fileName, serializeDocumentAnalysis(ctx, result));
     perDocCount++;
