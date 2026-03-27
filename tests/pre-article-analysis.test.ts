@@ -892,7 +892,8 @@ describe('serializeDocumentAnalysis', () => {
     const md = serializeDocumentAnalysis(CTX, result);
 
     expect(md).toContain('## Executive Summary');
-    expect(md).toContain('Insight 1. Insight 2.');
+    expect(md).toContain('- Insight 1');
+    expect(md).toContain('- Insight 2');
   });
 
   it('generates SWOT analysis per stakeholder', () => {

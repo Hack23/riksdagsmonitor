@@ -85,7 +85,7 @@ export function parseArgs(argv: string[]): {
   limit: number;
   weekLabel: string | null;
   rm: string | null;
-  docType: string | null;
+  docType: DocumentTypeKey | null;
 } {
   const args = argv.slice(2);
   const get = (flag: string): string | null => {
@@ -143,13 +143,13 @@ export function parseArgs(argv: string[]): {
   const rm = get('--rm');
 
   const docTypeArg = get('--doc-type');
-  const VALID_DOC_TYPES = ['propositions', 'motions', 'committeeReports', 'votes', 'speeches', 'questions', 'interpellations'];
-  if (docTypeArg && !VALID_DOC_TYPES.includes(docTypeArg)) {
+  const VALID_DOC_TYPES: readonly DocumentTypeKey[] = ['propositions', 'motions', 'committeeReports', 'votes', 'speeches', 'questions', 'interpellations'];
+  if (docTypeArg && !VALID_DOC_TYPES.includes(docTypeArg as DocumentTypeKey)) {
     throw new Error(
       `Invalid --doc-type value: ${docTypeArg}. Supported values: ${VALID_DOC_TYPES.join(', ')}.`,
     );
   }
-  const docType = docTypeArg ?? null;
+  const docType: DocumentTypeKey | null = (docTypeArg as DocumentTypeKey) ?? null;
 
   return { date: isoDate, aggregate, limit, weekLabel, rm, docType };
 }
@@ -445,7 +445,7 @@ async function runPreArticleAnalysis(opts: {
   aggregate: boolean;
   weekLabel: string | null;
   rm: string | null;
-  docType: string | null;
+  docType: DocumentTypeKey | null;
 }): Promise<void> {
   const { date, limit, aggregate, weekLabel, rm, docType } = opts;
 
@@ -477,7 +477,7 @@ async function runPreArticleAnalysis(opts: {
 
   const downloadOpts: { limit: number; rm: string; docTypes?: DocumentTypeKey[] } = { limit, rm: resolvedRm };
   if (docType) {
-    downloadOpts.docTypes = [docType as DocumentTypeKey];
+    downloadOpts.docTypes = [docType];
   }
 
   const { data, manifest } = await downloadAllDocuments(client, downloadOpts);
@@ -511,14 +511,13 @@ async function runPreArticleAnalysis(opts: {
   const documentsDir = path.join(outputDir, 'documents');
   ensureDir(documentsDir);
   let storedCount = 0;
-  for (const doc of allDocs) {
+  for (let i = 0; i < allDocs.length; i++) {
+    const doc = allDocs[i];
+    const dokId = doc.dok_id || doc.titel || doc.title || `unknown-doc-${i + 1}`;
+    const safeName = sanitizeDokId(dokId) || `unknown-doc-${i + 1}`;
+    const docJson = JSON.stringify(doc, null, 2);
+    fs.writeFileSync(path.join(documentsDir, `${safeName}.json`), docJson, 'utf8');
     storedCount++;
-    const dokId = doc.dok_id || doc.titel || doc.title || `unknown-doc-${storedCount}`;
-    const safeName = sanitizeDokId(dokId);
-    if (safeName) {
-      const docJson = JSON.stringify(doc, null, 2);
-      fs.writeFileSync(path.join(documentsDir, `${safeName}.json`), docJson, 'utf8');
-    }
   }
   console.log(`   💾 Stored ${storedCount} documents as JSON in ${path.relative(REPO_ROOT, documentsDir)}/`);
 
@@ -572,13 +571,12 @@ async function runPreArticleAnalysis(opts: {
   // ── Step 10: Per-document analysis files ─────────────────────────────────
   console.log('\n📝 Step 10: Generating per-document analysis files...');
   let perDocCount = 0;
-  for (const result of batchResult.results) {
+  for (let i = 0; i < batchResult.results.length; i++) {
+    const result = batchResult.results[i];
+    const dokId = result.document.dok_id || result.document.titel || result.document.title || `unknown-analysis-${i + 1}`;
+    const safeName = sanitizeDokId(dokId) || `unknown-analysis-${i + 1}`;
+    writeAnalysis(documentsDir, `${safeName}-analysis.md`, serializeDocumentAnalysis(ctx, result));
     perDocCount++;
-    const dokId = result.document.dok_id || result.document.titel || result.document.title || `unknown-analysis-${perDocCount}`;
-    const safeName = sanitizeDokId(dokId);
-    if (safeName) {
-      writeAnalysis(documentsDir, `${safeName}-analysis.md`, serializeDocumentAnalysis(ctx, result));
-    }
   }
   console.log(`   📝 Generated ${perDocCount} per-document analysis files`);
 

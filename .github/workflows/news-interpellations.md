@@ -385,11 +385,11 @@ if [ -z "$ARTICLE_DATE" ]; then
 fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 --doc-type interpellations || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
-echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
-ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
+echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/interpellations/"
+ls -la "analysis/daily/$ARTICLE_DATE/interpellations/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
 ```
 
-The analysis pipeline outputs 9 files per day:
+The analysis pipeline outputs the following artifacts per doc-type run:
 - `data-download-manifest.md` — Download metadata and document counts
 - `classification-results.md` — Document classification and priority levels
 - `risk-assessment.md` — Political risk assessment (coalition stability, anomaly detection)
@@ -399,6 +399,8 @@ The analysis pipeline outputs 9 files per day:
 - `significance-scoring.md` — Significance scores and urgency levels
 - `cross-reference-mapping.md` — Cross-document reference links
 - `synthesis-summary.md` — Combined analysis summary with confidence level
+- `documents/*.json` — Raw downloaded documents (one per document)
+- `documents/*-analysis.md` — Per-document analysis with SWOT, stakeholder perspectives, and significance scoring
 
 These files are committed alongside articles for human review and continuous improvement.
 

@@ -108,6 +108,14 @@ function escapeMarkdownTableCell(value: string): string {
     .trim();
 }
 
+/** Escape user-sourced text for safe inline Markdown rendering. */
+function escapeMarkdownInline(value: string): string {
+  return value
+    .replace(/\r?\n/g, ' ')
+    .replace(/[#*_`\[\]<>|\\~]/g, '\\$&')
+    .trim();
+}
+
 function frontmatter(ctx: SerializationContext, title: string, docCount: number, confidenceScore: number): string {
   return [
     `# ${title} — ${ctx.date}`,
@@ -604,14 +612,14 @@ export function serializeDocumentAnalysis(
   result: DocumentAnalysisResult,
 ): string {
   const doc = result.document;
-  const title = doc.titel || doc.title || doc.dok_id || 'Unknown Document';
-  const dokId = doc.dok_id || 'N/A';
-  const docType = doc.doktyp || 'unknown';
-  const committee = doc.organ || doc.committee || 'N/A';
-  const date = doc.datum || ctx.date;
-  const author = doc.intressent_namn || doc.author || 'N/A';
-  const party = doc.parti || 'N/A';
-  const rm = doc.rm || 'N/A';
+  const title = escapeMarkdownInline(doc.titel || doc.title || doc.dok_id || 'Unknown Document');
+  const dokId = escapeMarkdownInline(doc.dok_id || 'N/A');
+  const docType = escapeMarkdownInline(doc.doktyp || 'unknown');
+  const committee = escapeMarkdownInline(doc.organ || doc.committee || 'N/A');
+  const date = escapeMarkdownInline(doc.datum || ctx.date);
+  const author = escapeMarkdownInline(doc.intressent_namn || doc.author || 'N/A');
+  const party = escapeMarkdownInline(doc.parti || 'N/A');
+  const rm = escapeMarkdownInline(doc.rm || 'N/A');
 
   const lines: string[] = [
     `# Document Analysis: ${title}`,
@@ -634,7 +642,9 @@ export function serializeDocumentAnalysis(
   // ── Executive Summary ──────────────────────────────────────────────────
   lines.push('## Executive Summary', '');
   if (result.keyInsights.length > 0) {
-    lines.push(result.keyInsights.join('. ') + '.');
+    for (const insight of result.keyInsights) {
+      lines.push(`- ${insight}`);
+    }
   } else {
     lines.push('No key insights extracted — document may be metadata-only.');
   }
@@ -765,8 +775,8 @@ export function serializeDocumentAnalysis(
   lines.push('## Cross-Document References', '');
   if (result.crossDocumentLinks.length > 0) {
     for (const link of result.crossDocumentLinks) {
-      lines.push(`- **${link.type}**: ${link.sourceId} → ${link.targetId} (confidence: ${link.confidence}%)`);
-      lines.push(`  _${link.reason}_`);
+      lines.push(`- **${escapeMarkdownInline(link.type)}**: ${escapeMarkdownInline(link.sourceId)} → ${escapeMarkdownInline(link.targetId)} (confidence: ${link.confidence}%)`);
+      lines.push(`  _${escapeMarkdownInline(link.reason)}_`);
     }
   } else {
     lines.push('_No cross-document references detected for this document._');
