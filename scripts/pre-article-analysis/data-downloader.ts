@@ -72,18 +72,10 @@ function normalise(raw: unknown[]): RawDocument[] {
   return (raw as RawDocument[]).filter(Boolean);
 }
 
-/** Known fetch task names — must stay in sync with fetchTasks array. */
-type FetchTaskName =
-  | 'fetchPropositions'
-  | 'fetchMotions'
-  | 'fetchCommitteeReports'
-  | 'fetchVotingRecords'
-  | 'searchSpeeches'
-  | 'fetchWrittenQuestions'
-  | 'fetchInterpellations';
-
-/** Maps internal fetch task names to their corresponding DocumentTypeKey. */
-const FETCH_TASK_TYPE_MAP: Record<FetchTaskName, DocumentTypeKey> = {
+/** Maps internal fetch task names to their corresponding DocumentTypeKey.
+ *  `satisfies` ensures every key maps to a valid DocumentTypeKey at compile time.
+ *  The keys correspond to the `name` field of each entry in the `fetchTasks` array. */
+const FETCH_TASK_TYPE_MAP = {
   fetchPropositions: 'propositions',
   fetchMotions: 'motions',
   fetchCommitteeReports: 'committeeReports',
@@ -91,7 +83,7 @@ const FETCH_TASK_TYPE_MAP: Record<FetchTaskName, DocumentTypeKey> = {
   searchSpeeches: 'speeches',
   fetchWrittenQuestions: 'questions',
   fetchInterpellations: 'interpellations',
-};
+} as const satisfies Record<string, DocumentTypeKey>;
 
 /**
  * Returns the current Swedish parliamentary session (riksmöte) in `YYYY/YY` format.
@@ -200,7 +192,7 @@ export async function downloadAllDocuments(
   // When docTypes is specified, only fetch the listed document types.
   const activeTasks = docTypes
     ? fetchTasks.filter(task => {
-        const mapped = FETCH_TASK_TYPE_MAP[task.name as FetchTaskName];
+        const mapped = FETCH_TASK_TYPE_MAP[task.name as keyof typeof FETCH_TASK_TYPE_MAP];
         return mapped != null && docTypes.includes(mapped);
       })
     : fetchTasks;

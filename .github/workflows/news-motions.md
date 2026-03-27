@@ -374,7 +374,7 @@ get_motioner({ rm: <calculated riksmöte>, limit: 20 })
 
 ### Step 2.5: Run Pre-Article Analysis Pipeline
 
-**CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`. Article generators will then consume these artifacts for enrichment.
+**CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/motions/`. Article generators will then consume these artifacts for enrichment.
 
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
@@ -395,7 +395,7 @@ The analysis pipeline outputs the following artifacts per doc-type run:
 - `threat-analysis.md` — Threat indicators and democratic health
 - `stakeholder-perspectives.md` — Multi-perspective analysis (6 lenses)
 - `significance-scoring.md` — Significance scores and urgency levels
-- `cross-reference-mapping.md` — Cross-document reference links
+- `cross-reference-map.md` — Cross-document reference links
 - `synthesis-summary.md` — Combined analysis summary with confidence level
 - `documents/*.json` — Raw downloaded documents (one per document)
 - `documents/*-analysis.md` — Per-document analysis with SWOT, stakeholder perspectives, and significance scoring

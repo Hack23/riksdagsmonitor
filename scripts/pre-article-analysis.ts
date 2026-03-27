@@ -378,17 +378,33 @@ function runWeeklyAggregation(weekLabel: string): void {
     const dailyDirs = fs.readdirSync(dailyRoot).sort();
     for (const dir of dailyDirs) {
       if (!isDateInIsoWeek(dir, weekLabel)) continue;
-      const synthPath = path.join(dailyRoot, dir, 'synthesis-summary.md');
-      if (fs.existsSync(synthPath)) {
-        const dailySynthesis = fs.readFileSync(synthPath, 'utf8');
-        allSyntheses += `\n\n---\n\n## Day: ${dir}\n\n${dailySynthesis}`;
-        includedDays += 1;
+      // Look for synthesis in unscoped path first, then in doc-type subdirectories
+      const synthPaths = [path.join(dailyRoot, dir, 'synthesis-summary.md')];
+      const dayDir = path.join(dailyRoot, dir);
+      if (fs.existsSync(dayDir) && fs.statSync(dayDir).isDirectory()) {
+        for (const sub of fs.readdirSync(dayDir)) {
+          const subSynth = path.join(dayDir, sub, 'synthesis-summary.md');
+          if (fs.existsSync(subSynth)) {
+            synthPaths.push(subSynth);
+          }
+        }
+      }
+      for (const synthPath of synthPaths) {
+        if (fs.existsSync(synthPath)) {
+          const dailySynthesis = fs.readFileSync(synthPath, 'utf8');
+          const label = synthPath === synthPaths[0] ? dir : `${dir} (${path.basename(path.dirname(synthPath))})`;
+          allSyntheses += `\n\n---\n\n## Day: ${label}\n\n${dailySynthesis}`;
+          includedDays += 1;
 
-        const docsMatch = /(?:^|\n)\*\*Documents Analyzed\*\*:\s*(\d+)/.exec(dailySynthesis);
-        if (docsMatch?.[1]) {
-          aggregatedDocumentsAnalyzed += Number(docsMatch[1]);
-        } else {
-          console.warn(`[pre-analysis] Could not parse Documents Analyzed from ${synthPath}`);
+          const docsMatch = /(?:^|\n)\*\*Documents Analyzed\*\*:\s*(\d+)/.exec(dailySynthesis);
+          if (docsMatch?.[1]) {
+            aggregatedDocumentsAnalyzed += Number(docsMatch[1]);
+          } else {
+            console.warn(`[pre-analysis] Could not parse Documents Analyzed from ${synthPath}`);
+          }
+          // Only count the first match per day to avoid double-counting when
+          // the unscoped copy and scoped original both exist.
+          break;
         }
       }
     }
@@ -595,6 +611,35 @@ async function runPreArticleAnalysis(opts: {
   console.log(`   📝 Generated ${perDocCount} per-document analysis files`);
 
   // ── Summary ───────────────────────────────────────────────────────────────
+  // When --doc-type is used, batch artifacts live under a subdirectory but
+  // existing consumers (analysis-reader.ts, getAnalysisEnrichment) read from
+  // the unscoped analysis/daily/<date>/ path.  Copy the 9 batch artefacts to
+  // that location so downstream generators still find them.  Per-document
+  // files intentionally stay only in the scoped directory.
+  if (docType) {
+    const unscopedDir = path.join(ANALYSIS_DIR, 'daily', date);
+    ensureDir(unscopedDir);
+    const batchFiles = [
+      'data-download-manifest.md',
+      'classification-results.md',
+      'risk-assessment.md',
+      'swot-analysis.md',
+      'threat-analysis.md',
+      'stakeholder-perspectives.md',
+      'significance-scoring.md',
+      'cross-reference-map.md',
+      'synthesis-summary.md',
+    ];
+    for (const file of batchFiles) {
+      const src = path.join(outputDir, file);
+      const dest = path.join(unscopedDir, file);
+      if (fs.existsSync(src) && !fs.existsSync(dest)) {
+        fs.copyFileSync(src, dest);
+      }
+    }
+    console.log(`   📋 Copied batch artifacts to ${path.relative(REPO_ROOT, unscopedDir)}/ for enrichment readers`);
+  }
+
   const totalFiles = 9 + perDocCount + storedCount;
   console.log(`\n✅ Analysis complete! Results in: ${path.relative(REPO_ROOT, outputDir)}/`);
   console.log(`   📄 ${totalFiles} total files written (9 batch + ${perDocCount} analyses + ${storedCount} documents)`);

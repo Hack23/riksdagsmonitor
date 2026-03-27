@@ -594,18 +594,19 @@ export function serializeSynthesisSummary(
 // ---------------------------------------------------------------------------
 
 /**
- * Serialize a comprehensive per-document analysis markdown file.
+ * Serialize a per-document analysis markdown file.
  *
  * Each document gets its own analysis file with:
  * - Full document metadata
  * - Detailed SWOT analysis
- * - 6-lens stakeholder perspective analysis
- * - Risk indicators
- * - Significance scoring with justification
- * - Cross-document references
- * - Key insights and implications
+ * - Multi-lens stakeholder perspective analysis
+ * - Significance scoring factors
+ * - Cross-document references (where available)
+ * - Key insights
+ * - Data quality / methodology notes
  *
- * Quality target: Comparable to SWOT.md and THREAT_MODEL.md depth.
+ * Note: Explicit risk indicator extraction and implications sections are
+ * produced at the synthesis level rather than by this per-document serializer.
  */
 export function serializeDocumentAnalysis(
   ctx: SerializationContext,
