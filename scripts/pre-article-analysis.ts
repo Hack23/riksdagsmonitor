@@ -376,13 +376,18 @@ function runWeeklyAggregation(weekLabel: string): void {
 
   if (fs.existsSync(dailyRoot)) {
     const dailyDirs = fs.readdirSync(dailyRoot).sort();
+    const KNOWN_DOC_TYPES = new Set<string>([
+      'propositions', 'motions', 'committeeReports', 'votes',
+      'speeches', 'questions', 'interpellations',
+    ]);
     for (const dir of dailyDirs) {
       if (!isDateInIsoWeek(dir, weekLabel)) continue;
-      // Look for synthesis in unscoped path first, then in doc-type subdirectories
+      // Look for synthesis in unscoped path first, then in known doc-type subdirectories
       const synthPaths = [path.join(dailyRoot, dir, 'synthesis-summary.md')];
       const dayDir = path.join(dailyRoot, dir);
       if (fs.existsSync(dayDir) && fs.statSync(dayDir).isDirectory()) {
         for (const sub of fs.readdirSync(dayDir)) {
+          if (!KNOWN_DOC_TYPES.has(sub)) continue;
           const subSynth = path.join(dayDir, sub, 'synthesis-summary.md');
           if (fs.existsSync(subSynth)) {
             synthPaths.push(subSynth);
@@ -392,7 +397,8 @@ function runWeeklyAggregation(weekLabel: string): void {
       for (const synthPath of synthPaths) {
         if (fs.existsSync(synthPath)) {
           const dailySynthesis = fs.readFileSync(synthPath, 'utf8');
-          const label = synthPath === synthPaths[0] ? dir : `${dir} (${path.basename(path.dirname(synthPath))})`;
+          const subDir = path.basename(path.dirname(synthPath));
+          const label = synthPath === synthPaths[0] ? dir : `${dir} (${subDir})`;
           allSyntheses += `\n\n---\n\n## Day: ${label}\n\n${dailySynthesis}`;
           includedDays += 1;
 
@@ -633,6 +639,10 @@ async function runPreArticleAnalysis(opts: {
     for (const file of batchFiles) {
       const src = path.join(outputDir, file);
       const dest = path.join(unscopedDir, file);
+      // Skip if the unscoped file already exists: when multiple doc-type
+      // workflows run in parallel, the first to finish creates the unscoped
+      // copy.  Subsequent runs keep their own scoped originals and don't
+      // overwrite the earlier copy, avoiding race-condition data corruption.
       if (fs.existsSync(src) && !fs.existsSync(dest)) {
         fs.copyFileSync(src, dest);
       }
