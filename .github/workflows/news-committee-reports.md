@@ -374,7 +374,7 @@ get_betankanden({ rm: <calculated riksmöte>, limit: 20 })
 
 ### Step 2.5: Run Pre-Article Analysis Pipeline
 
-**CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/committeeReports/`. Article generators will then consume these artifacts for enrichment.
+**CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/committeeReports/`. The 9 batch artifacts are also copied to the unscoped `analysis/daily/YYYY-MM-DD/` directory so existing enrichment readers (`readDailyAnalysis`, `getAnalysisEnrichment`) find them at the default path. Per-document files (`documents/*.json`, `documents/*-analysis.md`) remain only under the scoped directory.
 
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"

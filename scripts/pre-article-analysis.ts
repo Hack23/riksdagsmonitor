@@ -144,12 +144,17 @@ export function parseArgs(argv: string[]): {
 
   const docTypeArg = get('--doc-type');
   const VALID_DOC_TYPES: readonly DocumentTypeKey[] = ['propositions', 'motions', 'committeeReports', 'votes', 'speeches', 'questions', 'interpellations'];
-  if (docTypeArg && !VALID_DOC_TYPES.includes(docTypeArg as DocumentTypeKey)) {
-    throw new Error(
-      `Invalid --doc-type value: ${docTypeArg}. Supported values: ${VALID_DOC_TYPES.join(', ')}.`,
-    );
+  const isDocumentTypeKey = (value: string): value is DocumentTypeKey =>
+    VALID_DOC_TYPES.includes(value as DocumentTypeKey);
+  let docType: DocumentTypeKey | null = null;
+  if (docTypeArg !== null) {
+    if (!isDocumentTypeKey(docTypeArg)) {
+      throw new Error(
+        `Invalid --doc-type value: ${docTypeArg}. Supported values: ${VALID_DOC_TYPES.join(', ')}.`,
+      );
+    }
+    docType = docTypeArg;
   }
-  const docType: DocumentTypeKey | null = (docTypeArg as DocumentTypeKey) ?? null;
 
   return { date: isoDate, aggregate, limit, weekLabel, rm, docType };
 }
@@ -383,34 +388,45 @@ function runWeeklyAggregation(weekLabel: string): void {
     for (const dir of dailyDirs) {
       if (!isDateInIsoWeek(dir, weekLabel)) continue;
       // Look for synthesis in unscoped path first, then in known doc-type subdirectories
-      const synthPaths = [path.join(dailyRoot, dir, 'synthesis-summary.md')];
+      const unscopedSynth = path.join(dailyRoot, dir, 'synthesis-summary.md');
       const dayDir = path.join(dailyRoot, dir);
+      const scopedSynthPaths: string[] = [];
       if (fs.existsSync(dayDir) && fs.statSync(dayDir).isDirectory()) {
-        for (const sub of fs.readdirSync(dayDir)) {
+        // Sort subdirectories for deterministic output across filesystems
+        for (const sub of fs.readdirSync(dayDir).sort()) {
           if (!KNOWN_DOC_TYPES.has(sub)) continue;
           const subSynth = path.join(dayDir, sub, 'synthesis-summary.md');
           if (fs.existsSync(subSynth)) {
-            synthPaths.push(subSynth);
+            scopedSynthPaths.push(subSynth);
           }
         }
       }
-      for (const synthPath of synthPaths) {
-        if (fs.existsSync(synthPath)) {
-          const dailySynthesis = fs.readFileSync(synthPath, 'utf8');
-          const subDir = path.basename(path.dirname(synthPath));
-          const label = synthPath === synthPaths[0] ? dir : `${dir} (${subDir})`;
-          allSyntheses += `\n\n---\n\n## Day: ${label}\n\n${dailySynthesis}`;
-          includedDays += 1;
 
-          const docsMatch = /(?:^|\n)\*\*Documents Analyzed\*\*:\s*(\d+)/.exec(dailySynthesis);
-          if (docsMatch?.[1]) {
-            aggregatedDocumentsAnalyzed += Number(docsMatch[1]);
-          } else {
-            console.warn(`[pre-analysis] Could not parse Documents Analyzed from ${synthPath}`);
-          }
-          // Only count the first match per day to avoid double-counting when
-          // the unscoped copy and scoped original both exist.
-          break;
+      // Prefer the unscoped synthesis when it exists (canonical copy created by
+      // the copy-to-unscoped step).  Otherwise include all scoped syntheses so
+      // no doc-type run is silently omitted.
+      const hasUnscoped = fs.existsSync(unscopedSynth);
+      const pathsToProcess = hasUnscoped ? [unscopedSynth] : scopedSynthPaths;
+      let dayHasSynthesis = false;
+
+      for (const synthPath of pathsToProcess) {
+        if (!fs.existsSync(synthPath)) continue;
+
+        const dailySynthesis = fs.readFileSync(synthPath, 'utf8');
+        const subDir = path.basename(path.dirname(synthPath));
+        const label = hasUnscoped ? dir : `${dir} (${subDir})`;
+        allSyntheses += `\n\n---\n\n## Day: ${label}\n\n${dailySynthesis}`;
+
+        if (!dayHasSynthesis) {
+          includedDays += 1;
+          dayHasSynthesis = true;
+        }
+
+        const docsMatch = /(?:^|\n)\*\*Documents Analyzed\*\*:\s*(\d+)/.exec(dailySynthesis);
+        if (docsMatch?.[1]) {
+          aggregatedDocumentsAnalyzed += Number(docsMatch[1]);
+        } else {
+          console.warn(`[pre-analysis] Could not parse Documents Analyzed from ${synthPath}`);
         }
       }
     }
@@ -639,12 +655,18 @@ async function runPreArticleAnalysis(opts: {
     for (const file of batchFiles) {
       const src = path.join(outputDir, file);
       const dest = path.join(unscopedDir, file);
-      // Skip if the unscoped file already exists: when multiple doc-type
-      // workflows run in parallel, the first to finish creates the unscoped
-      // copy.  Subsequent runs keep their own scoped originals and don't
-      // overwrite the earlier copy, avoiding race-condition data corruption.
-      if (fs.existsSync(src) && !fs.existsSync(dest)) {
-        fs.copyFileSync(src, dest);
+      if (fs.existsSync(src)) {
+        try {
+          // Use atomic create to avoid check-then-copy race under concurrency.
+          fs.copyFileSync(src, dest, fs.constants.COPYFILE_EXCL);
+        } catch (error) {
+          const err = error as NodeJS.ErrnoException;
+          if (err.code !== 'EEXIST') {
+            throw err;
+          }
+          // If the file already exists, another workflow created it first.
+          // This is expected in parallel runs; keep the existing unscoped copy.
+        }
       }
     }
     console.log(`   📋 Copied batch artifacts to ${path.relative(REPO_ROOT, unscopedDir)}/ for enrichment readers`);

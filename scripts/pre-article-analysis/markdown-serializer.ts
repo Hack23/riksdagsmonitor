@@ -116,6 +116,7 @@ function escapeMarkdownInline(value: string): string {
     .trim();
 }
 
+
 function frontmatter(ctx: SerializationContext, title: string, docCount: number, confidenceScore: number): string {
   return [
     `# ${title} — ${ctx.date}`,
@@ -810,7 +811,7 @@ export function serializeDocumentAnalysis(
   lines.push('## Data Quality Notes', '');
   lines.push(`- **Analysis confidence**: ${confidenceLabel(result.confidenceScore)} (${Math.round(result.confidenceScore)}%)`);
   lines.push(`- **Full-text content**: ${hasFullText ? 'Available — high confidence' : 'Unavailable — analysis based on metadata only'}`);
-  lines.push(`- **Data sources**: ${ctx.dataSources.join(', ')}`);
+  lines.push(`- **Data sources**: ${ctx.dataSources.map(escapeMarkdownInline).join(', ')}`);
   lines.push(`- **Analysis method**: 6-lens stakeholder analysis with SWOT extraction`);
   lines.push('');
 

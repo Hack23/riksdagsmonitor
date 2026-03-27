@@ -72,10 +72,26 @@ function normalise(raw: unknown[]): RawDocument[] {
   return (raw as RawDocument[]).filter(Boolean);
 }
 
+/** All internal fetch task names, kept in sync with the `fetchTasks` array
+ *  inside `downloadAllDocuments()`.  Used to derive the `FetchTaskName` type
+ *  and to validate the `FETCH_TASK_TYPE_MAP` at compile time. */
+const FETCH_TASK_NAMES = [
+  'fetchPropositions',
+  'fetchMotions',
+  'fetchCommitteeReports',
+  'fetchVotingRecords',
+  'searchSpeeches',
+  'fetchWrittenQuestions',
+  'fetchInterpellations',
+] as const;
+
+type FetchTaskName = typeof FETCH_TASK_NAMES[number];
+
 /** Maps internal fetch task names to their corresponding DocumentTypeKey.
- *  `satisfies` ensures every key maps to a valid DocumentTypeKey at compile time.
- *  The keys correspond to the `name` field of each entry in the `fetchTasks` array. */
-const FETCH_TASK_TYPE_MAP = {
+ *  `satisfies` ensures every FetchTaskName maps to a valid DocumentTypeKey
+ *  at compile time — adding/renaming a task without updating the map is a
+ *  compile error. */
+const FETCH_TASK_TYPE_MAP: Record<FetchTaskName, DocumentTypeKey> = {
   fetchPropositions: 'propositions',
   fetchMotions: 'motions',
   fetchCommitteeReports: 'committeeReports',
@@ -83,7 +99,7 @@ const FETCH_TASK_TYPE_MAP = {
   searchSpeeches: 'speeches',
   fetchWrittenQuestions: 'questions',
   fetchInterpellations: 'interpellations',
-} as const satisfies Record<string, DocumentTypeKey>;
+} as const satisfies Record<FetchTaskName, DocumentTypeKey>;
 
 /**
  * Returns the current Swedish parliamentary session (riksmöte) in `YYYY/YY` format.
@@ -190,10 +206,12 @@ export async function downloadAllDocuments(
   ] as const;
 
   // When docTypes is specified, only fetch the listed document types.
+  // task.name is typed as FetchTaskName via the `as const` assertion on
+  // fetchTasks, so the lookup is safe without a cast.
   const activeTasks = docTypes
     ? fetchTasks.filter(task => {
-        const mapped = FETCH_TASK_TYPE_MAP[task.name as keyof typeof FETCH_TASK_TYPE_MAP];
-        return mapped != null && docTypes.includes(mapped);
+        const mapped = FETCH_TASK_TYPE_MAP[task.name];
+        return docTypes.includes(mapped);
       })
     : fetchTasks;
 
