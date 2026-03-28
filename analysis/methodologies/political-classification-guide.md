@@ -259,4 +259,4 @@ When a document falls between two classification levels:
 - **Path:** `/analysis/methodologies/political-classification-guide.md`  
 - **ISMS Reference:** [CLASSIFICATION.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)  
 - **Classification:** Public  
-- **Next Review:** 2026-06-28
+- **Next Review:** 2026-06-26

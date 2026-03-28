@@ -8,7 +8,7 @@
 
 You are performing **per-file political intelligence analysis** for Riksdagsmonitor. For each downloaded MCP data file, you will produce a comprehensive analysis markdown file stored alongside the data. This replaces the old batch daily analysis with deeper, evidence-based, per-document intelligence.
 
-**Quality Standard:** Every analysis file must match the formatting quality of [SWOT.md](../../SWOT.md) and [THREAT_MODEL.md](../../THREAT_MODEL.md) — rich headers, color-coded Mermaid diagrams, evidence tables, and confidence labels.
+**Quality Standard:** Every analysis file must match the formatting quality of [SWOT.md](../../../SWOT.md) and [THREAT_MODEL.md](../../../THREAT_MODEL.md) — rich headers, color-coded Mermaid diagrams, evidence tables, and confidence labels.
 
 > ⚠️ **CRITICAL:** You must **read the actual JSON data** in each file and base your analysis on what you find there. Do NOT write generic template text. Every claim must reference specific data from the file. If the file contains a vote record, cite the actual vote counts. If it's a proposition, cite the actual title and proposer. Empty or boilerplate analysis is a failure.
 

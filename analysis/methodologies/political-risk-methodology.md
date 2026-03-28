@@ -238,4 +238,4 @@ Risk assessment results feed directly into SWOT analysis:
 - **Path:** `/analysis/methodologies/political-risk-methodology.md`  
 - **ISMS Reference:** [Risk_Assessment_Methodology.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md)  
 - **Classification:** Public  
-- **Next Review:** 2026-06-28
+- **Next Review:** 2026-06-26

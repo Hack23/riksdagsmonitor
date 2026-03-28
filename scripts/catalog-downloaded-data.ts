@@ -6,14 +6,24 @@
  * by the AI agent during agentic workflows so it can perform per-file
  * political intelligence analysis.
  *
- * The output is a JSON array where each entry describes one data file:
+ * The output is a JSON object ("data catalog") with overall metadata and an
+ * `entries` array describing each data file.
+ *
+ * Top-level catalog fields:
+ * - `generatedAt`        – ISO 8601 timestamp when the catalog was generated
+ * - `dataRoot`           – root directory that was scanned (e.g. "analysis/data")
+ * - `totalFiles`         – total number of discovered data files
+ * - `pendingAnalysis`    – number of files without analysis
+ * - `completedAnalysis`  – number of files with existing analysis
+ * - `entries`            – array of per-file catalog entries
+ *
+ * Each item in `entries` has:
  * - `id`            – document / record identifier (filename without `.json`)
  * - `type`          – persistence document type (e.g. "propositions", "mps")
  * - `path`          – path to the data file relative to repo root
  * - `analysisPath`  – expected path for the per-file analysis markdown
  * - `hasAnalysis`   – whether the analysis markdown already exists
- * - `sizeBytes`     – file size
- * - `meta`          – contents of the sidecar `.meta.json` (if present)
+ * - `sizeBytes`     – file size in bytes
  *
  * Usage:
  *   npx tsx scripts/catalog-downloaded-data.ts [--data-root <path>] [--type <type>] [--pending-only]
@@ -208,20 +218,20 @@ function main() {
   const { dataRoot, filterType, pendingOnly } = parseArgs(process.argv);
   const catalog = buildCatalog(dataRoot, filterType, pendingOnly);
 
-  console.log(
+  console.error(
     `╔══════════════════════════════════════════════════════════════╗`,
   );
-  console.log(
+  console.error(
     `║   📋 Analysis Data Catalog                                  ║`,
   );
-  console.log(
+  console.error(
     `╚══════════════════════════════════════════════════════════════╝`,
   );
-  console.log(`   📂 Data root: ${catalog.dataRoot}`);
-  console.log(`   📄 Total files: ${catalog.totalFiles}`);
-  console.log(`   ✅ Analyzed: ${catalog.completedAnalysis}`);
-  console.log(`   ⏳ Pending: ${catalog.pendingAnalysis}`);
-  console.log();
+  console.error(`   📂 Data root: ${catalog.dataRoot}`);
+  console.error(`   📄 Total files: ${catalog.totalFiles}`);
+  console.error(`   ✅ Analyzed: ${catalog.completedAnalysis}`);
+  console.error(`   ⏳ Pending: ${catalog.pendingAnalysis}`);
+  console.error();
 
   // Write catalog JSON to stdout for piping
   console.log(JSON.stringify(catalog, null, 2));
