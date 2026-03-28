@@ -134,7 +134,9 @@ Provenance is tracked in separate `.meta.json` sidecar files:
 
 ## 🔗 Integration with Analysis Pipeline
 
-The data persistence layer is invoked by `scripts/pre-article-analysis.ts`:
+The data persistence layer is invoked by two entry points:
+
+### `scripts/pre-article-analysis.ts` (Analysis Pipeline)
 
 ```
 MCP Server → data-downloader.ts → data-persistence.ts → analysis/data/
@@ -142,9 +144,29 @@ MCP Server → data-downloader.ts → data-persistence.ts → analysis/data/
                                    analysis/daily/YYYY-MM-DD/documents/  (per-run copies)
 ```
 
+### `scripts/populate-analysis-data.ts` (Standalone Data Fetcher)
+
+Fetches **all** data types and populates `analysis/data/` with recent data:
+
+```bash
+# Fetch all data types (documents, events, MPs) with defaults
+npx tsx scripts/populate-analysis-data.ts
+
+# Custom limit and date
+npx tsx scripts/populate-analysis-data.ts --limit 50 --date 2026-03-28
+```
+
+**Data types fetched:**
+1. 📄 **Documents** (7 types): propositions, motions, committeeReports, votes, speeches, questions, interpellations
+2. 📅 **Calendar events**: upcoming 14-day parliamentary schedule
+3. 👤 **MP profiles**: current member data
+
+### Key Modules
+
 - **`data-persistence.ts`**: Saves raw data to `analysis/data/` with consistent IDs (no metadata in data files)
 - **`data-downloader.ts`**: Downloads from MCP, returns typed collections
 - **`pre-article-analysis.ts`**: Orchestrates download → persist → analyse → serialize
+- **`populate-analysis-data.ts`**: Standalone script to populate all data types
 
 ---
 
