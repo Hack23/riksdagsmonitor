@@ -41,7 +41,7 @@
 
 ### Stakeholder Impact Overview
 
-> **AI Instructions:** After completing each stakeholder assessment, update this diagram with actual impact levels (HIGH/MEDIUM/LOW/NONE) and color-code accordingly.
+> **AI Instructions:** After completing each stakeholder assessment, update this diagram with actual impact levels (HIGH/MEDIUM/LOW/NONE). Node colors represent **stakeholder group types** (not impact tiers): purple = citizens, green = government/civil society, red = opposition, orange = business, blue = international/policy.
 
 ```mermaid
 graph TD

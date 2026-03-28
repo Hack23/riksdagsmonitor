@@ -636,16 +636,11 @@ After per-file analyses, compose `analysis/daily/$ARTICLE_DATE/synthesis-summary
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
-DATA_ANALYSIS_COUNT=$(find analysis/data -name '*.analysis.md' 2>/dev/null | wc -l)
-DAILY_ANALYSIS_COUNT=0
-if [ -d "$ANALYSIS_DIR" ]; then
-  DAILY_ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
-fi
-TOTAL_ANALYSIS=$((DATA_ANALYSIS_COUNT + DAILY_ANALYSIS_COUNT))
-if [ "$TOTAL_ANALYSIS" -gt 0 ]; then
-  echo "📊 Found $TOTAL_ANALYSIS analysis artifacts ($DATA_ANALYSIS_COUNT per-file + $DAILY_ANALYSIS_COUNT daily) — these MUST be committed (do NOT use safeoutputs___noop)"
+NEW_ANALYSIS_COUNT=$(git status --porcelain -- analysis/data/ "$ANALYSIS_DIR" 2>/dev/null | wc -l)
+if [ "$NEW_ANALYSIS_COUNT" -gt 0 ]; then
+  echo "📊 Found $NEW_ANALYSIS_COUNT new/modified analysis artifacts — these MUST be committed (do NOT use safeoutputs___noop)"
 else
-  echo "📊 Found 0 analysis artifacts — safeoutputs___noop is allowed (no files to commit)"
+  echo "📊 No new/modified analysis artifacts detected — safeoutputs___noop is allowed (no files to commit)"
 fi
 ```
 

@@ -171,7 +171,7 @@ export function buildCatalog(
 
   return {
     generatedAt: new Date().toISOString(),
-    dataRoot: path.relative(process.cwd(), dataRoot),
+    dataRoot: path.relative(process.cwd(), dataRoot).split(path.sep).join('/'),
     totalFiles: allEntries.length,
     pendingAnalysis: totalPending,
     completedAnalysis: totalCompleted,
