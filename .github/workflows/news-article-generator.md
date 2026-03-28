@@ -91,7 +91,10 @@ safe-outputs:
     - www.riksdagen.se
     - www.regeringen.se
     - github.com
-  create-pull-request: {}
+  create-pull-request:
+    labels: [agentic-news, analysis-data]
+    draft: false
+    expires: 14
   add-comment: {}
   dispatch-workflow:
     workflows: [news-translate]

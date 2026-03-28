@@ -41,6 +41,20 @@ Analysis artifacts are **not** final content — they are structured intermediat
 ```
 analysis/
 ├── README.md                          ← This file
+├── data/                              ← Persistent MCP data repository
+│   ├── README.md                      ← Data repository documentation
+│   ├── documents/                     ← Parliamentary documents by type
+│   │   ├── propositions/              ← Government propositions (dok_id.json)
+│   │   ├── motions/                   ← Parliamentary motions
+│   │   ├── committeeReports/          ← Committee reports
+│   │   ├── votes/                     ← Voting records
+│   │   ├── speeches/                  ← Parliamentary speeches
+│   │   ├── questions/                 ← Written questions
+│   │   ├── interpellations/           ← Interpellations
+│   │   └── government/                ← Government documents (SOU, Ds)
+│   ├── votes/                         ← Date-stamped vote ballots (YYYY-MM-DD/)
+│   ├── events/                        ← Date-stamped calendar events (YYYY-MM-DD/)
+│   └── mps/                           ← MP profiles (intressent_id.json)
 ├── templates/                         ← Reusable analysis templates
 │   ├── political-classification.md    ← Event classification template
 │   ├── risk-assessment.md             ← Political risk template
@@ -162,6 +176,9 @@ Produces:
 | `scripts/analysis-framework/lenses/` | Per-perspective classifiers (citizen, economic, government, international, media, opposition) |
 | `scripts/analysis-framework/significance-scorer.ts` | Significance score computation |
 | `scripts/analysis-framework/cross-reference.ts` | Cross-document reference linking |
+| `scripts/pre-article-analysis/data-persistence.ts` | MCP data persistence to `analysis/data/` |
+| `scripts/pre-article-analysis/data-downloader.ts` | Document download from riksdag-regering-mcp |
+| `scripts/pre-article-analysis/pdf-converter.ts` | PDF-to-text/markdown conversion utility |
 | `scripts/ai-analysis/` | AI-assisted analysis generation |
 | `scripts/ai-analysis/swot/` | SWOT generation pipeline |
 | `scripts/prompts/v1/political-analysis.md` | LLM prompt templates for analysis |

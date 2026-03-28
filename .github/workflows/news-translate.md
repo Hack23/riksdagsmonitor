@@ -88,7 +88,10 @@ safe-outputs:
     - www.regeringen.se
     - github.com
   max-patch-size: 2048
-  create-pull-request: {}
+  create-pull-request:
+    labels: [agentic-news, translation]
+    draft: false
+    expires: 14
   add-comment: {}
 
 steps:
