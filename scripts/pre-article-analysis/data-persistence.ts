@@ -36,6 +36,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '../..');
 const DATA_ROOT = path.join(REPO_ROOT, 'analysis', 'data');
 
+/** ISO 8601 date pattern (YYYY-MM-DD). Used to validate date strings before creating directories. */
+const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -182,7 +185,7 @@ export function persistDownloadedData(
         const voteDate = typeof doc.datum === 'string'
           ? doc.datum.slice(0, 10)
           : '';
-        if (/^\d{4}-\d{2}-\d{2}$/.test(voteDate)) {
+        if (ISO_DATE_RE.test(voteDate)) {
           const voteDateDir = path.join(DATA_ROOT, 'votes', voteDate);
           writeDocument(voteDateDir, filename, doc, {
             ...metadata,
@@ -221,7 +224,7 @@ export function persistEvents(
         ? (record['from'] as string).slice(0, 10)
         : '';
 
-    const eventDate = /^\d{4}-\d{2}-\d{2}$/.test(dateStr) ? dateStr : 'undated';
+    const eventDate = ISO_DATE_RE.test(dateStr) ? dateStr : 'undated';
     const eventDir = path.join(DATA_ROOT, 'events', eventDate);
 
     const eventId = resolveDocId(event, i);

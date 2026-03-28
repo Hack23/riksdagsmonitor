@@ -113,7 +113,10 @@ describe('data-persistence', () => {
     });
 
     it('should handle documents without dok_id gracefully', () => {
-      const doc = makeRawDoc({ dok_id: undefined as unknown as string, titel: 'Fallback Title' });
+      // Test the fallback ID resolution chain — dok_id missing, use titel
+      const doc = makeRawDoc({ titel: 'Fallback Title' });
+      // Simulate missing dok_id by deleting it from the record
+      delete (doc as Record<string, unknown>)['dok_id'];
       const record = doc as Record<string, unknown>;
       const candidates = [
         record['dok_id'],

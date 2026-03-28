@@ -120,6 +120,11 @@ export function convertPdfBufferToText(
   }
 }
 
+/** Minimum character length for a line to be considered a heading candidate. */
+const MIN_HEADING_LENGTH = 3;
+/** Maximum character length for a heading line (longer lines are likely paragraphs). */
+const MAX_HEADING_LENGTH = 120;
+
 /**
  * Convert PDF text output to a simple markdown format.
  * Applies basic heuristics:
@@ -144,10 +149,10 @@ export function textToMarkdown(text: string): string {
       continue;
     }
 
-    // Heuristic: short ALL CAPS lines are likely headings
+    // Heuristic: short ALL CAPS lines are likely headings in Swedish parliamentary PDFs
     if (
-      trimmed.length > 3 &&
-      trimmed.length < 120 &&
+      trimmed.length > MIN_HEADING_LENGTH &&
+      trimmed.length < MAX_HEADING_LENGTH &&
       trimmed === trimmed.toUpperCase() &&
       /[A-ZÅÄÖ]/.test(trimmed)
     ) {
