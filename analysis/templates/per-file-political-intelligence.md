@@ -144,7 +144,7 @@ graph TD
     style R4 fill:#28a745,color:#fff
 ```
 
-> **Scoring Reference:** Use [political-risk-methodology.md](../methodologies/political-risk-methodology.md) for calibration. Score tiers: 1–4 🟢 Low, 5–9 🟡 Medium, 10–14 🟠 High, 15–25 🔴 Critical.
+> **Scoring Reference:** Risk Score = Likelihood × Impact (product, not sum). Both are scored 1–5, giving a range of 1–25. Score tiers: 1–4 🟢 Low, 5–9 🟡 Medium, 10–14 🟠 High, 15–25 🔴 Critical. See [political-risk-methodology.md](../methodologies/political-risk-methodology.md) for calibration examples.
 
 | Risk Type | Likelihood (1–5) | Impact (1–5) | Score | Assessment |
 |-----------|:-----------------:|:------------:|:-----:|------------|

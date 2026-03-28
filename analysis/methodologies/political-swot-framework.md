@@ -137,6 +137,8 @@ SWOT entries age and their confidence level **automatically degrades** over time
 
 **EXPIRED entries must be re-verified or removed before inclusion in new SWOT analyses.**
 
+> **Clarification:** EXPIRED is a **lifecycle status**, not a confidence level. The confidence hierarchy is HIGH → MEDIUM → LOW (active). When temporal decay moves a LOW-confidence entry past 90 days, it becomes EXPIRED — meaning it is no longer active and must be handled per the rules below. An active SWOT analysis contains ONLY entries with confidence HIGH, MEDIUM, or LOW.
+
 ### Handling EXPIRED Entries
 
 When an entry reaches EXPIRED status:
