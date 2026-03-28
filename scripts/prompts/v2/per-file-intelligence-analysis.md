@@ -198,7 +198,7 @@ Before finalizing each analysis file, verify:
 - **Data download**: `scripts/populate-analysis-data.ts` (unchanged — scripts for downloading OK)
 - **Template**: `analysis/templates/per-file-political-intelligence.md`
 - **Methodology**: `analysis/methodologies/ai-driven-analysis-guide.md`
-- **Output location**: `analysis/data/{type}/{id}.analysis.md` (next to `{id}.json`)
+- **Output location**: Use the `analysisPath` from the catalog entry (write the `.analysis.md` file alongside the JSON file).
 - **Daily synthesis**: `analysis/daily/YYYY-MM-DD/synthesis-summary.md` (composed from per-file analyses)
 
 ---

@@ -73,7 +73,6 @@ const DATA_SUBDIRS = [
   'documents/propositions',
   'documents/motions',
   'documents/committeeReports',
-  'documents/votes',
   'documents/speeches',
   'documents/questions',
   'documents/interpellations',
@@ -106,7 +105,7 @@ export function buildCatalog(
   filterType?: string,
   pendingOnly = false,
 ): DataCatalog {
-  const entries: CatalogEntry[] = [];
+  const allEntries: CatalogEntry[] = [];
 
   for (const subdir of DATA_SUBDIRS) {
     const docType = typeFromSubdir(subdir);
@@ -136,11 +135,10 @@ export function buildCatalog(
       }
 
       const hasAnalysis = fs.existsSync(analysisPath);
-      if (pendingOnly && hasAnalysis) continue;
 
       const stat = fs.statSync(filePath);
 
-      entries.push({
+      allEntries.push({
         id: basename,
         type: docType,
         path: path.relative(process.cwd(), filePath),
@@ -152,14 +150,28 @@ export function buildCatalog(
     }
   }
 
-  const completedAnalysis = entries.filter((e) => e.hasAnalysis).length;
+  // Compute totals from the full scan (before pendingOnly filter)
+  const totalCompleted = allEntries.filter((e) => e.hasAnalysis).length;
+  const totalPending = allEntries.length - totalCompleted;
+
+  // Apply pendingOnly filter after computing totals
+  const entries = pendingOnly
+    ? allEntries.filter((e) => !e.hasAnalysis)
+    : allEntries;
+
+  // Ensure deterministic ordering across platforms/filesystems
+  entries.sort((a, b) => {
+    const typeCompare = a.type.localeCompare(b.type);
+    if (typeCompare !== 0) return typeCompare;
+    return a.id.localeCompare(b.id);
+  });
 
   return {
     generatedAt: new Date().toISOString(),
     dataRoot: path.relative(process.cwd(), dataRoot),
-    totalFiles: entries.length,
-    pendingAnalysis: entries.length - completedAnalysis,
-    completedAnalysis,
+    totalFiles: allEntries.length,
+    pendingAnalysis: totalPending,
+    completedAnalysis: totalCompleted,
     entries,
   };
 }
