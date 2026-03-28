@@ -1,6 +1,6 @@
 # Weekly Analysis Aggregation — 2026-W13
 
-**Generated**: 2026-03-28 09:13 UTC
+**Generated**: 2026-03-28 10:08 UTC
 **Data Sources**: Aggregated from daily synthesis summaries
 **Documents Analyzed**: 0
 **Confidence**: LOW
@@ -55,7 +55,7 @@ Overall confidence: **LOW**. All analysis results are available in sibling files
 
 # Analysis Synthesis Summary — 2026-03-28
 
-**Generated**: 2026-03-28 09:12 UTC
+**Generated**: 2026-03-28 10:07 UTC
 **Data Sources**: 
 **Documents Analyzed**: 0
 **Confidence**: LOW
