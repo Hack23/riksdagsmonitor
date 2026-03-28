@@ -160,7 +160,13 @@ When the workflow time budget is limited (e.g., 12 minutes for AI analysis in ev
 3. **Quick-classify remaining files** — At minimum, assign classification level and significance score
 4. **Stop at time limit** — Whatever is analyzed is committed; remaining files are flagged as "pending" for next run
 
-> **Interaction between per-file and workflow budgets:** The per-file time budgets (1–5 min) are maximums for a single file; in practice, most files will take less. When a workflow has 12 minutes and 30 pending files, analyze the top ~5 propositions/votes at full depth (3-5 min each = ~20 min) — which exceeds the budget. So in practice: analyze 3–4 high-priority files at full depth, quick-classify the rest (10 sec each). The prioritization order (Step 1) ensures the most significant files always get full analysis.
+> **How per-file budgets interact with workflow time limits:**
+> - Per-file budgets (1–5 min) are **maximums** for a single file; most files take less
+> - When a workflow has 12 minutes and 30 pending files:
+>   - Analyze 3–4 high-priority files at full depth (3–5 min each)
+>   - Quick-classify remaining files (10 sec each = ~5 min total)
+>   - Prioritization order (Step 1) ensures the most significant files always get full analysis
+> - **Example:** 12 min budget, 30 files → 3 propositions at full depth (12 min) + 27 quick-classified (4.5 min) = ~17 min. Adjust file count down if over budget.
 
 ### Maximum Files Per Workflow Run
 

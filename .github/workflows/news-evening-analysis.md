@@ -560,7 +560,7 @@ echo "✅ Data downloaded to analysis/data/"
 
 **This is the core analysis phase.** The AI agent (you) performs deep analysis of every downloaded file, creating publication-quality intelligence markdown files.
 
-> 🚨 **CRITICAL RULE:** You must **actually read the JSON data** in each file and base all analysis on real data found there. Every SWOT entry, risk score, and stakeholder assessment must cite specific data from the file (dok_id, vote counts, party names, reservation details). Generic or boilerplate analysis is a failure mode — see the bad/good examples in `analysis/methodologies/ai-driven-analysis-guide.md`.
+> 🚨 **CRITICAL RULE:** You must **actually read the JSON data** in each file and base all analysis on real data found there. Every SWOT entry, risk score, and stakeholder assessment must cite specific data from the file (dok_id, vote counts, party names, reservation details). Generic or boilerplate analysis is a failure mode — see the "Concrete Example: What Good Analysis Looks Like" section in `analysis/methodologies/ai-driven-analysis-guide.md` for bad vs. good comparison.
 
 #### B1. Read Methodology Documents
 

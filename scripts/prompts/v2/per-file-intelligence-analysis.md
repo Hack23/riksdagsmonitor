@@ -54,6 +54,8 @@ This returns a JSON catalog. Each entry has:
 
 ### Step 2: For Each Pending File
 
+> ⚠️ **REMINDER:** You must read the ACTUAL JSON data and base analysis on what you find. No boilerplate.
+
 **Read the actual JSON data file** using `view` or `cat`, then apply the full analysis framework based on what you find:
 
 #### 2a. Extract Key Information
