@@ -163,10 +163,11 @@ When the workflow time budget is limited (e.g., 12 minutes for AI analysis in ev
 > **How per-file budgets interact with workflow time limits:**
 > - Per-file budgets (1–5 min) are **maximums** for a single file; most files take less
 > - When a workflow has 12 minutes and 30 pending files:
->   - Analyze 3–4 high-priority files at full depth (3–5 min each)
->   - Quick-classify remaining files (10 sec each = ~5 min total)
->   - Prioritization order (Step 1) ensures the most significant files always get full analysis
-> - **Example:** 12 min budget, 30 files → 3 propositions at full depth (12 min) + 27 quick-classified (4.5 min) = ~17 min. Adjust file count down if over budget.
+>   - Analyze 2 high-priority files at full depth (5 min each = 10 min)
+>   - Quick-classify remaining 28 files (5 sec each = ~2 min total)
+>   - Total: ~12 min — within budget
+> - Prioritization order (Step 1) ensures the most significant files always get full analysis
+> - **Example:** 12 min budget, 30 files → 2 propositions at full depth (10 min) + 28 quick-classified (2 min) = 12 min. If only 5 files exist, analyze all at full depth (≤15 min).
 
 ### Maximum Files Per Workflow Run
 
