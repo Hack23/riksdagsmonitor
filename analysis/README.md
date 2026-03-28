@@ -41,10 +41,10 @@ Analysis artifacts are **not** final content — they are structured intermediat
 ```
 analysis/
 ├── README.md                          ← This file
-├── data/                              ← Persistent MCP data repository
+├── data/                              ← Persistent MCP data repository (collision-free)
 │   ├── README.md                      ← Data repository documentation
 │   ├── documents/                     ← Parliamentary documents by type
-│   │   ├── propositions/              ← Government propositions (dok_id.json)
+│   │   ├── propositions/              ← Government propositions ({dok_id}.json + .meta.json)
 │   │   ├── motions/                   ← Parliamentary motions
 │   │   ├── committeeReports/          ← Committee reports
 │   │   ├── votes/                     ← Voting records
@@ -54,7 +54,10 @@ analysis/
 │   │   └── government/                ← Government documents (SOU, Ds)
 │   ├── votes/                         ← Date-stamped vote ballots (YYYY-MM-DD/)
 │   ├── events/                        ← Date-stamped calendar events (YYYY-MM-DD/)
-│   └── mps/                           ← MP profiles (intressent_id.json)
+│   ├── mps/                           ← MP profiles (intressent_id.json)
+│   ├── worldbank/                     ← World Bank economic indicators
+│   ├── scb/                           ← Statistics Sweden (SCB) table data
+│   └── mcp-responses/                 ← Generic MCP tool response archive
 ├── templates/                         ← Reusable analysis templates
 │   ├── political-classification.md    ← Event classification template
 │   ├── risk-assessment.md             ← Political risk template

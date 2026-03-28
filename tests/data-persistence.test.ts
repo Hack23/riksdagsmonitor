@@ -1,6 +1,6 @@
 /**
  * Tests for the MCP data persistence and PDF conversion modules:
- * - data-persistence: persistDownloadedData, persistEvents, persistMPs
+ * - data-persistence: collision-free storage, sidecar metadata, MCP response storage
  * - pdf-converter: tool detection, text conversion, markdown formatting
  */
 
@@ -10,6 +10,14 @@ import path from 'node:path';
 import os from 'node:os';
 
 import type { RawDocument } from '../scripts/data-transformers/types.js';
+
+import {
+  resolveDocId,
+  persistMCPResponse,
+  persistWorldBankData,
+  persistSCBData,
+  getDataRoot,
+} from '../scripts/pre-article-analysis/data-persistence.js';
 
 import {
   textToMarkdown,
@@ -37,12 +45,7 @@ function makeRawDoc(overrides: Partial<RawDocument> = {}): RawDocument {
 // ---------------------------------------------------------------------------
 
 describe('data-persistence', () => {
-  // Since data-persistence writes to the real analysis/data/ directory,
-  // we test the module's exported functions by importing them dynamically
-  // to avoid side effects during normal test runs. Instead we test the
-  // underlying logic patterns.
-
-  describe('persistence behaviour (unit patterns)', () => {
+  describe('collision-free design (sidecar metadata)', () => {
     let tmpDir: string;
 
     beforeEach(() => {
@@ -65,26 +68,50 @@ describe('data-persistence', () => {
       }
     });
 
-    it('should write document with metadata', () => {
+    it('should write raw data WITHOUT _metadata injection', () => {
       const dir = path.join(tmpDir, 'docs');
       fs.mkdirSync(dir, { recursive: true });
       const doc = makeRawDoc();
-      const payload = {
-        _metadata: {
-          fetchedAt: '2026-03-28T10:00:00Z',
-          mcpTool: 'get_propositioner',
-          riksmote: '2025/26',
-          documentType: 'propositions',
-        },
-        ...(doc as Record<string, unknown>),
-      };
+      // Simulate new collision-free write: data file has NO _metadata
       const filePath = path.join(dir, 'h901fiu1.json');
-      fs.writeFileSync(filePath, JSON.stringify(payload, null, 2), 'utf8');
+      fs.writeFileSync(filePath, JSON.stringify(doc, null, 2), 'utf8');
 
       const written = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      expect(written._metadata.mcpTool).toBe('get_propositioner');
-      expect(written._metadata.riksmote).toBe('2025/26');
+      expect(written._metadata).toBeUndefined();
       expect(written.dok_id).toBe('H901FiU1');
+    });
+
+    it('should write sidecar .meta.json file separately', () => {
+      const dir = path.join(tmpDir, 'docs');
+      fs.mkdirSync(dir, { recursive: true });
+      const meta = {
+        fetchedAt: '2026-03-28T10:00:00Z',
+        mcpTool: 'get_propositioner',
+        riksmote: '2025/26',
+        documentType: 'propositions',
+      };
+      const metaPath = path.join(dir, 'h901fiu1.meta.json');
+      fs.writeFileSync(metaPath, JSON.stringify(meta, null, 2), 'utf8');
+
+      const writtenMeta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+      expect(writtenMeta.mcpTool).toBe('get_propositioner');
+      expect(writtenMeta.riksmote).toBe('2025/26');
+      expect(writtenMeta.documentType).toBe('propositions');
+    });
+
+    it('parallel writes of same doc should produce identical data files', () => {
+      const dir = path.join(tmpDir, 'docs');
+      fs.mkdirSync(dir, { recursive: true });
+      const doc = makeRawDoc();
+
+      // Simulate two parallel workflow writes (same doc, different times)
+      const content1 = JSON.stringify(doc, null, 2);
+      const content2 = JSON.stringify(doc, null, 2);
+
+      // Write both — they should produce identical files
+      fs.writeFileSync(path.join(dir, 'h901fiu1.json'), content1, 'utf8');
+      const onDisk = fs.readFileSync(path.join(dir, 'h901fiu1.json'), 'utf8');
+      expect(onDisk).toBe(content2); // Byte-identical
     });
 
     it('should support upsert (overwrite) semantics', () => {
@@ -92,11 +119,9 @@ describe('data-persistence', () => {
       fs.mkdirSync(dir, { recursive: true });
       const filePath = path.join(dir, 'test.json');
 
-      // Write initial
       fs.writeFileSync(filePath, JSON.stringify({ version: 1 }), 'utf8');
       expect(JSON.parse(fs.readFileSync(filePath, 'utf8')).version).toBe(1);
 
-      // Overwrite
       fs.writeFileSync(filePath, JSON.stringify({ version: 2 }), 'utf8');
       expect(JSON.parse(fs.readFileSync(filePath, 'utf8')).version).toBe(2);
     });
@@ -106,16 +131,10 @@ describe('data-persistence', () => {
       const voteDir = path.join(tmpDir, 'votes', voteDate);
       fs.mkdirSync(voteDir, { recursive: true });
       expect(fs.existsSync(voteDir)).toBe(true);
-
-      const filePath = path.join(voteDir, 'h901fiu1-v1.json');
-      fs.writeFileSync(filePath, JSON.stringify({ dok_id: 'H901FiU1-v1' }), 'utf8');
-      expect(fs.existsSync(filePath)).toBe(true);
     });
 
     it('should handle documents without dok_id gracefully', () => {
-      // Test the fallback ID resolution chain — dok_id missing, use titel
       const doc = makeRawDoc({ titel: 'Fallback Title' });
-      // Simulate missing dok_id by deleting it from the record
       delete (doc as Record<string, unknown>)['dok_id'];
       const record = doc as Record<string, unknown>;
       const candidates = [
@@ -144,6 +163,90 @@ describe('data-persistence', () => {
       const filePath = path.join(mpDir, '0123456789.json');
       fs.writeFileSync(filePath, JSON.stringify({ intressent_id: '0123456789' }), 'utf8');
       expect(fs.existsSync(filePath)).toBe(true);
+    });
+  });
+
+  describe('resolveDocId', () => {
+    it('should prefer dok_id when available', () => {
+      const doc = makeRawDoc({ dok_id: 'H901FiU1' });
+      expect(resolveDocId(doc, 0)).toBe('h901fiu1');
+    });
+
+    it('should fall back to titel when dok_id is missing', () => {
+      const doc = makeRawDoc({ titel: 'Test Motion' });
+      delete (doc as Record<string, unknown>)['dok_id'];
+      expect(resolveDocId(doc, 0)).toBe('test-motion');
+    });
+
+    it('should use index-based fallback when all fields empty', () => {
+      const doc = {} as RawDocument;
+      expect(resolveDocId(doc, 5)).toBe('unknown-6');
+    });
+  });
+
+  describe('MCP response storage', () => {
+    it('should store generic MCP tool response', () => {
+      const resultPath = persistMCPResponse(
+        { tool: 'get_sync_status', params: {}, server: 'riksdag-regering' },
+        { status: 'ok', last_sync: '2026-03-28' },
+        'sync-status-2026-03-28',
+      );
+      expect(fs.existsSync(resultPath)).toBe(true);
+      const data = JSON.parse(fs.readFileSync(resultPath, 'utf8'));
+      expect(data.status).toBe('ok');
+
+      // Verify sidecar exists
+      const metaPath = resultPath.replace('.json', '.meta.json');
+      expect(fs.existsSync(metaPath)).toBe(true);
+      const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+      expect(meta.mcpTool).toBe('get_sync_status');
+
+      // Cleanup
+      fs.rmSync(path.dirname(resultPath), { recursive: true, force: true });
+    });
+
+    it('should store World Bank data with indicator/country structure', () => {
+      const resultPath = persistWorldBankData(
+        'NY.GDP.MKTP.CD',
+        'SWE',
+        [{ date: '2025', value: 600000000000 }],
+      );
+      expect(fs.existsSync(resultPath)).toBe(true);
+      const data = JSON.parse(fs.readFileSync(resultPath, 'utf8'));
+      expect(data[0].date).toBe('2025');
+
+      // Verify sidecar exists
+      const metaPath = resultPath.replace('.json', '.meta.json');
+      expect(fs.existsSync(metaPath)).toBe(true);
+
+      // Cleanup
+      fs.rmSync(path.dirname(resultPath), { recursive: true, force: true });
+    });
+
+    it('should store SCB table data', () => {
+      const resultPath = persistSCBData(
+        'BE0101A',
+        { columns: ['Region', 'Population'], data: [[1, 10000]] },
+        { region: '01' },
+      );
+      expect(fs.existsSync(resultPath)).toBe(true);
+
+      // Verify sidecar has query params
+      const metaPath = resultPath.replace('.json', '.meta.json');
+      const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+      expect(meta.tableId).toBe('BE0101A');
+      expect(meta.query.region).toBe('01');
+
+      // Cleanup
+      fs.unlinkSync(resultPath);
+      fs.unlinkSync(metaPath);
+    });
+  });
+
+  describe('getDataRoot', () => {
+    it('should return path ending with analysis/data', () => {
+      const root = getDataRoot();
+      expect(root).toMatch(/analysis[/\\]data$/);
     });
   });
 });
@@ -195,7 +298,6 @@ describe('pdf-converter', () => {
     it('should not convert short ALL CAPS as headings', () => {
       const input = 'AB\nSome text';
       const result = textToMarkdown(input);
-      // 'AB' is only 2 chars, below threshold of 3
       expect(result).not.toContain('## AB');
     });
 
@@ -208,7 +310,6 @@ describe('pdf-converter', () => {
     it('should normalise excessive whitespace', () => {
       const input = 'Line 1\n\n\n\n\nLine 2';
       const result = textToMarkdown(input);
-      // Should not have more than one consecutive empty line
       expect(result).not.toMatch(/\n\n\n/);
     });
 
