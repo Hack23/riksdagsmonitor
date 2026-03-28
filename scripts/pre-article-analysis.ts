@@ -40,6 +40,8 @@ import {
 } from './pre-article-analysis/data-downloader.js';
 import type { DocumentTypeKey } from './pre-article-analysis/data-downloader.js';
 
+import { persistDownloadedData } from './pre-article-analysis/data-persistence.js';
+
 import type {
   SerializationContext,
   SignificanceEntry,
@@ -535,6 +537,11 @@ async function runPreArticleAnalysis(opts: {
   );
   console.log(`   Duration: ${manifest.durationMs}ms`);
   console.log(`   Riksmöte: ${resolvedRm}`);
+
+  // ── Step 1a: Persist raw data to analysis/data/ for verification & reuse ──
+  console.log('\n🗄️  Step 1a: Persisting raw MCP data to analysis/data/...');
+  const persistResult = persistDownloadedData(data, resolvedRm);
+  console.log(`   🗄️  Persisted data for ${persistResult.written} documents to ${path.relative(REPO_ROOT, persistResult.dataRoot)}/ (${persistResult.skipped} skipped)`);
 
   const ctx: SerializationContext = {
     date,
