@@ -42,6 +42,7 @@ import {
   persistWorldBankData,
   persistSCBData,
   getDataRoot,
+  resolveDocId,
 } from './pre-article-analysis/data-persistence.js';
 import type { RawDocument } from './data-transformers/types.js';
 import {
@@ -58,8 +59,15 @@ import {
 // Helpers
 // ---------------------------------------------------------------------------
 
-/** Compute riksmöte from a date string (YYYY-MM-DD).
- *  Swedish parliamentary year runs Oct–Sep. October onwards is the new session. */
+/**
+ * Compute riksmöte (parliamentary session year) from an ISO date string.
+ * Swedish parliamentary year runs Oct → Sep:
+ *   - 2025-10-01 to 2026-09-30 → "2025/26"
+ *   - 2026-10-01 to 2027-09-30 → "2026/27"
+ *
+ * @param dateStr - ISO date string (YYYY-MM-DD)
+ * @returns Riksmöte identifier (e.g. "2025/26")
+ */
 export function riksMoteFromDate(dateStr: string): string {
   const d = new Date(dateStr + 'T00:00:00Z');
   const year = d.getUTCFullYear();
@@ -76,22 +84,6 @@ function formatDate(d: Date): string {
 /** Safely extract error message from unknown thrown value. */
 function errorMessage(err: unknown): string {
   return err instanceof Error ? err.message : String(err);
-}
-
-/** Resolve an identifier for a government document. */
-function resolveGovDocId(doc: RawDocument, index: number): string {
-  const record = doc as Record<string, unknown>;
-  const candidates = [
-    record['id'],
-    record['dok_id'],
-    record['title'],
-    record['titel'],
-  ];
-  const raw = candidates.find(
-    (c): c is string => typeof c === 'string' && c.trim().length > 0,
-  )?.trim() ?? `gov-${index + 1}`;
-  // Simple sanitisation: lowercase, replace non-alphanum with hyphens, collapse
-  return raw.toLowerCase().replace(/[^a-z0-9åäö]+/g, '-').replace(/^-|-$/g, '').slice(0, 80) || `gov-${index + 1}`;
 }
 
 function parseArgs(): { limit: number; date: string } {
@@ -201,7 +193,7 @@ async function main(): Promise<void> {
       persistMCPResponse(
         { tool: 'search_regering', params: { limit }, server: 'riksdag-regering' },
         doc,
-        resolveGovDocId(doc, i),
+        resolveDocId(doc, i),
       );
       govWritten++;
     }
