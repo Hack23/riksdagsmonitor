@@ -339,7 +339,7 @@ function sanitizePathSegment(segment: string): string {
   // Collapse dots-only segments (e.g. "..", ".")
   if (/^\.+$/.test(safe)) safe = '_dots_';
   // Remove characters that are unsafe in paths but preserve underscores
-  safe = safe.replace(/[^a-zA-Z0-9_\-åäöÅÄÖ.]/g, '_')
+  safe = safe.replace(/[^a-zA-Z0-9_\-åäöÅÄÖ]/g, '_')
     .replace(/_+/g, '_')
     .replace(/^_|_$/g, '')
     .slice(0, 100);
