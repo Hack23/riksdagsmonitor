@@ -2,6 +2,13 @@
  * Tests for the MCP data persistence and PDF conversion modules:
  * - data-persistence: collision-free storage, sidecar metadata, MCP response storage
  * - pdf-converter: tool detection, text conversion, markdown formatting
+ *
+ * Tests verify:
+ * - Data files contain ONLY raw data (no _metadata injection)
+ * - Sidecar .meta.json files track provenance separately
+ * - Parallel writes produce byte-identical data files
+ * - All persist functions work with configurable dataRoot for isolation
+ * - Edge cases: empty data, missing fields, special characters
  */
 
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
@@ -10,9 +17,13 @@ import path from 'node:path';
 import os from 'node:os';
 
 import type { RawDocument } from '../scripts/data-transformers/types.js';
+import type { DownloadedData } from '../scripts/pre-article-analysis/data-downloader.js';
 
 import {
   resolveDocId,
+  persistDownloadedData,
+  persistEvents,
+  persistMPs,
   persistMCPResponse,
   persistWorldBankData,
   persistSCBData,
@@ -40,131 +51,34 @@ function makeRawDoc(overrides: Partial<RawDocument> = {}): RawDocument {
   };
 }
 
+function emptyDownloadedData(): DownloadedData {
+  return {
+    propositions: [],
+    motions: [],
+    committeeReports: [],
+    votes: [],
+    speeches: [],
+    questions: [],
+    interpellations: [],
+  };
+}
+
 // ---------------------------------------------------------------------------
 // data-persistence tests
 // ---------------------------------------------------------------------------
 
 describe('data-persistence', () => {
-  describe('collision-free design (sidecar metadata)', () => {
-    let tmpDir: string;
+  let tmpDir: string;
 
-    beforeEach(() => {
-      tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'riksdag-persist-test-'));
-    });
-
-    afterEach(() => {
-      fs.rmSync(tmpDir, { recursive: true, force: true });
-    });
-
-    it('should create directory structure for document types', () => {
-      const types = [
-        'propositions', 'motions', 'committeeReports', 'votes',
-        'speeches', 'questions', 'interpellations',
-      ];
-      for (const t of types) {
-        const dir = path.join(tmpDir, 'documents', t);
-        fs.mkdirSync(dir, { recursive: true });
-        expect(fs.existsSync(dir)).toBe(true);
-      }
-    });
-
-    it('should write raw data WITHOUT _metadata injection', () => {
-      const dir = path.join(tmpDir, 'docs');
-      fs.mkdirSync(dir, { recursive: true });
-      const doc = makeRawDoc();
-      // Simulate new collision-free write: data file has NO _metadata
-      const filePath = path.join(dir, 'h901fiu1.json');
-      fs.writeFileSync(filePath, JSON.stringify(doc, null, 2), 'utf8');
-
-      const written = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      expect(written._metadata).toBeUndefined();
-      expect(written.dok_id).toBe('H901FiU1');
-    });
-
-    it('should write sidecar .meta.json file separately', () => {
-      const dir = path.join(tmpDir, 'docs');
-      fs.mkdirSync(dir, { recursive: true });
-      const meta = {
-        fetchedAt: '2026-03-28T10:00:00Z',
-        mcpTool: 'get_propositioner',
-        riksmote: '2025/26',
-        documentType: 'propositions',
-      };
-      const metaPath = path.join(dir, 'h901fiu1.meta.json');
-      fs.writeFileSync(metaPath, JSON.stringify(meta, null, 2), 'utf8');
-
-      const writtenMeta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
-      expect(writtenMeta.mcpTool).toBe('get_propositioner');
-      expect(writtenMeta.riksmote).toBe('2025/26');
-      expect(writtenMeta.documentType).toBe('propositions');
-    });
-
-    it('parallel writes of same doc should produce identical data files', () => {
-      const dir = path.join(tmpDir, 'docs');
-      fs.mkdirSync(dir, { recursive: true });
-      const doc = makeRawDoc();
-
-      // Simulate two parallel workflow writes (same doc, different times)
-      const content1 = JSON.stringify(doc, null, 2);
-      const content2 = JSON.stringify(doc, null, 2);
-
-      // Write both — they should produce identical files
-      fs.writeFileSync(path.join(dir, 'h901fiu1.json'), content1, 'utf8');
-      const onDisk = fs.readFileSync(path.join(dir, 'h901fiu1.json'), 'utf8');
-      expect(onDisk).toBe(content2); // Byte-identical
-    });
-
-    it('should support upsert (overwrite) semantics', () => {
-      const dir = path.join(tmpDir, 'docs');
-      fs.mkdirSync(dir, { recursive: true });
-      const filePath = path.join(dir, 'test.json');
-
-      fs.writeFileSync(filePath, JSON.stringify({ version: 1 }), 'utf8');
-      expect(JSON.parse(fs.readFileSync(filePath, 'utf8')).version).toBe(1);
-
-      fs.writeFileSync(filePath, JSON.stringify({ version: 2 }), 'utf8');
-      expect(JSON.parse(fs.readFileSync(filePath, 'utf8')).version).toBe(2);
-    });
-
-    it('should create date-stamped directories for votes', () => {
-      const voteDate = '2026-03-28';
-      const voteDir = path.join(tmpDir, 'votes', voteDate);
-      fs.mkdirSync(voteDir, { recursive: true });
-      expect(fs.existsSync(voteDir)).toBe(true);
-    });
-
-    it('should handle documents without dok_id gracefully', () => {
-      const doc = makeRawDoc({ titel: 'Fallback Title' });
-      delete (doc as Record<string, unknown>)['dok_id'];
-      const record = doc as Record<string, unknown>;
-      const candidates = [
-        record['dok_id'],
-        record['dokument_id'],
-        record['id'],
-        record['titel'],
-        record['title'],
-      ];
-      const id = candidates.find(
-        (c): c is string => typeof c === 'string' && c.trim().length > 0,
-      );
-      expect(id).toBe('Fallback Title');
-    });
-
-    it('should create event directories by date', () => {
-      const eventDate = '2026-03-28';
-      const eventDir = path.join(tmpDir, 'events', eventDate);
-      fs.mkdirSync(eventDir, { recursive: true });
-      expect(fs.existsSync(eventDir)).toBe(true);
-    });
-
-    it('should create MP profile files', () => {
-      const mpDir = path.join(tmpDir, 'mps');
-      fs.mkdirSync(mpDir, { recursive: true });
-      const filePath = path.join(mpDir, '0123456789.json');
-      fs.writeFileSync(filePath, JSON.stringify({ intressent_id: '0123456789' }), 'utf8');
-      expect(fs.existsSync(filePath)).toBe(true);
-    });
+  beforeEach(() => {
+    tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'riksdag-persist-test-'));
   });
+
+  afterEach(() => {
+    fs.rmSync(tmpDir, { recursive: true, force: true });
+  });
+
+  // ── resolveDocId ─────────────────────────────────────────────────────────
 
   describe('resolveDocId', () => {
     it('should prefer dok_id when available', () => {
@@ -178,73 +92,346 @@ describe('data-persistence', () => {
       expect(resolveDocId(doc, 0)).toBe('test-motion');
     });
 
+    it('should fall back through dokument_id, id, rel_dok_id, titel, title', () => {
+      const doc = { dokument_id: 'DOK123' } as unknown as RawDocument;
+      expect(resolveDocId(doc, 0)).toBe('dok123');
+
+      const doc2 = { id: 'ID456' } as unknown as RawDocument;
+      expect(resolveDocId(doc2, 0)).toBe('id456');
+    });
+
     it('should use index-based fallback when all fields empty', () => {
       const doc = {} as RawDocument;
       expect(resolveDocId(doc, 5)).toBe('unknown-6');
     });
+
+    it('should trim whitespace from identifiers', () => {
+      const doc = { dok_id: '  H901FiU1  ' } as unknown as RawDocument;
+      expect(resolveDocId(doc, 0)).toBe('h901fiu1');
+    });
+
+    it('should skip empty string fields', () => {
+      const doc = { dok_id: '', titel: 'Fallback' } as unknown as RawDocument;
+      expect(resolveDocId(doc, 0)).toBe('fallback');
+    });
   });
 
-  describe('MCP response storage', () => {
-    it('should store generic MCP tool response', () => {
-      const testId = `test-sync-${Date.now()}`;
+  // ── persistDownloadedData ────────────────────────────────────────────────
+
+  describe('persistDownloadedData', () => {
+    it('should write data files without _metadata injection', () => {
+      const data: DownloadedData = {
+        ...emptyDownloadedData(),
+        propositions: [makeRawDoc({ dok_id: 'H901FiU1', titel: 'Budget' })],
+      };
+      const result = persistDownloadedData(data, '2025/26', undefined, tmpDir);
+
+      expect(result.written).toBe(1);
+      expect(result.skipped).toBe(0);
+
+      const dataFile = path.join(tmpDir, 'documents', 'propositions', 'h901fiu1.json');
+      expect(fs.existsSync(dataFile)).toBe(true);
+
+      const parsed = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+      // Must NOT have _metadata in data file (collision-free design)
+      expect(parsed._metadata).toBeUndefined();
+      expect(parsed.dok_id).toBe('H901FiU1');
+      expect(parsed.titel).toBe('Budget');
+    });
+
+    it('should write sidecar .meta.json alongside data file', () => {
+      const data: DownloadedData = {
+        ...emptyDownloadedData(),
+        propositions: [makeRawDoc()],
+      };
+      persistDownloadedData(data, '2025/26', undefined, tmpDir);
+
+      const metaFile = path.join(tmpDir, 'documents', 'propositions', 'h901fiu1.meta.json');
+      expect(fs.existsSync(metaFile)).toBe(true);
+
+      const meta = JSON.parse(fs.readFileSync(metaFile, 'utf8'));
+      expect(meta.mcpTool).toBe('get_propositioner');
+      expect(meta.riksmote).toBe('2025/26');
+      expect(meta.documentType).toBe('propositions');
+      expect(meta.fetchedAt).toBeDefined();
+    });
+
+    it('should handle all document types', () => {
+      const data: DownloadedData = {
+        propositions: [makeRawDoc({ dok_id: 'PROP1' })],
+        motions: [makeRawDoc({ dok_id: 'MOT1' })],
+        committeeReports: [makeRawDoc({ dok_id: 'BET1' })],
+        votes: [makeRawDoc({ dok_id: 'VOT1', datum: '2026-03-28' })],
+        speeches: [makeRawDoc({ dok_id: 'SPE1' })],
+        questions: [makeRawDoc({ dok_id: 'QUE1' })],
+        interpellations: [makeRawDoc({ dok_id: 'INT1' })],
+      };
+      const result = persistDownloadedData(data, '2025/26', undefined, tmpDir);
+      expect(result.written).toBe(7);
+
+      for (const t of ['propositions', 'motions', 'committeeReports', 'votes', 'speeches', 'questions', 'interpellations']) {
+        expect(fs.existsSync(path.join(tmpDir, 'documents', t))).toBe(true);
+      }
+    });
+
+    it('should create date-stamped vote directories', () => {
+      const data: DownloadedData = {
+        ...emptyDownloadedData(),
+        votes: [makeRawDoc({ dok_id: 'VOT1', datum: '2026-03-28' })],
+      };
+      persistDownloadedData(data, '2025/26', undefined, tmpDir);
+
+      expect(fs.existsSync(path.join(tmpDir, 'documents', 'votes', 'vot1.json'))).toBe(true);
+      expect(fs.existsSync(path.join(tmpDir, 'votes', '2026-03-28', 'vot1.json'))).toBe(true);
+    });
+
+    it('should skip null documents', () => {
+      const data: DownloadedData = {
+        ...emptyDownloadedData(),
+        propositions: [null as unknown as RawDocument, makeRawDoc({ dok_id: 'VALID' })],
+      };
+      const result = persistDownloadedData(data, '2025/26', undefined, tmpDir);
+      expect(result.written).toBe(1);
+      expect(result.skipped).toBe(1);
+    });
+
+    it('should handle empty data gracefully', () => {
+      const result = persistDownloadedData(emptyDownloadedData(), '2025/26', undefined, tmpDir);
+      expect(result.written).toBe(0);
+      expect(result.skipped).toBe(0);
+    });
+
+    it('should produce byte-identical data files for parallel writes (collision-free)', () => {
+      const doc = makeRawDoc({ dok_id: 'COLLISION-TEST' });
+      const data: DownloadedData = {
+        ...emptyDownloadedData(),
+        propositions: [doc],
+      };
+
+      // First write
+      persistDownloadedData(data, '2025/26', undefined, tmpDir);
+      const content1 = fs.readFileSync(
+        path.join(tmpDir, 'documents', 'propositions', 'collision-test.json'), 'utf8',
+      );
+
+      // Second write (simulating parallel workflow)
+      const tmpDir2 = fs.mkdtempSync(path.join(os.tmpdir(), 'riksdag-persist-test2-'));
+      persistDownloadedData(data, '2025/26', undefined, tmpDir2);
+      const content2 = fs.readFileSync(
+        path.join(tmpDir2, 'documents', 'propositions', 'collision-test.json'), 'utf8',
+      );
+      fs.rmSync(tmpDir2, { recursive: true, force: true });
+
+      // Data files must be byte-identical — no embedded timestamp
+      expect(content1).toBe(content2);
+    });
+
+    it('should allow custom mcpToolMap overrides', () => {
+      const data: DownloadedData = {
+        ...emptyDownloadedData(),
+        propositions: [makeRawDoc()],
+      };
+      persistDownloadedData(data, '2025/26', { propositions: 'custom_tool' }, tmpDir);
+
+      const meta = JSON.parse(fs.readFileSync(
+        path.join(tmpDir, 'documents', 'propositions', 'h901fiu1.meta.json'), 'utf8',
+      ));
+      expect(meta.mcpTool).toBe('custom_tool');
+    });
+
+    it('should return correct dataRoot in result', () => {
+      const result = persistDownloadedData(emptyDownloadedData(), '2025/26', undefined, tmpDir);
+      expect(result.dataRoot).toBe(tmpDir);
+    });
+  });
+
+  // ── persistEvents ────────────────────────────────────────────────────────
+
+  describe('persistEvents', () => {
+    it('should persist events to date-stamped directories', () => {
+      const events: RawDocument[] = [
+        makeRawDoc({ dok_id: 'EVT1', datum: '2026-03-28' }),
+      ];
+      const result = persistEvents(events, '2025/26', tmpDir);
+
+      expect(result.written).toBe(1);
+      expect(fs.existsSync(path.join(tmpDir, 'events', '2026-03-28', 'evt1.json'))).toBe(true);
+      expect(fs.existsSync(path.join(tmpDir, 'events', '2026-03-28', 'evt1.meta.json'))).toBe(true);
+    });
+
+    it('should use "undated" for events without valid date', () => {
+      const events: RawDocument[] = [
+        { dok_id: 'EVT-NODATE' } as unknown as RawDocument,
+      ];
+      const result = persistEvents(events, '2025/26', tmpDir);
+
+      expect(result.written).toBe(1);
+      expect(fs.existsSync(path.join(tmpDir, 'events', 'undated', 'evt-nodate.json'))).toBe(true);
+    });
+
+    it('should skip null events', () => {
+      const events = [null as unknown as RawDocument];
+      const result = persistEvents(events, '2025/26', tmpDir);
+      expect(result.written).toBe(0);
+      expect(result.skipped).toBe(1);
+    });
+
+    it('should write metadata with correct tool name', () => {
+      const events: RawDocument[] = [
+        makeRawDoc({ dok_id: 'EVT2', datum: '2026-03-28' }),
+      ];
+      persistEvents(events, '2025/26', tmpDir);
+
+      const meta = JSON.parse(fs.readFileSync(
+        path.join(tmpDir, 'events', '2026-03-28', 'evt2.meta.json'), 'utf8',
+      ));
+      expect(meta.mcpTool).toBe('get_calendar_events');
+      expect(meta.documentType).toBe('events');
+    });
+
+    it('should handle "from" field as date fallback', () => {
+      const events: RawDocument[] = [
+        { dok_id: 'EVT-FROM', from: '2026-04-01T10:00:00' } as unknown as RawDocument,
+      ];
+      persistEvents(events, '2025/26', tmpDir);
+      expect(fs.existsSync(path.join(tmpDir, 'events', '2026-04-01', 'evt-from.json'))).toBe(true);
+    });
+  });
+
+  // ── persistMPs ───────────────────────────────────────────────────────────
+
+  describe('persistMPs', () => {
+    it('should persist MP profiles using intressent_id', () => {
+      const mps: RawDocument[] = [
+        { intressent_id: '0123456789', tilltalsnamn: 'Test' } as unknown as RawDocument,
+      ];
+      const result = persistMPs(mps, '2025/26', tmpDir);
+
+      expect(result.written).toBe(1);
+      expect(fs.existsSync(path.join(tmpDir, 'mps', '0123456789.json'))).toBe(true);
+      expect(fs.existsSync(path.join(tmpDir, 'mps', '0123456789.meta.json'))).toBe(true);
+    });
+
+    it('should skip null MP entries', () => {
+      const mps = [null as unknown as RawDocument];
+      const result = persistMPs(mps, '2025/26', tmpDir);
+      expect(result.written).toBe(0);
+      expect(result.skipped).toBe(1);
+    });
+
+    it('should fall back to resolveDocId when intressent_id missing', () => {
+      const mps: RawDocument[] = [
+        { titel: 'Some MP' } as unknown as RawDocument,
+      ];
+      const result = persistMPs(mps, '2025/26', tmpDir);
+      expect(result.written).toBe(1);
+      expect(fs.existsSync(path.join(tmpDir, 'mps', 'some-mp.json'))).toBe(true);
+    });
+
+    it('should write metadata with correct tool name', () => {
+      const mps: RawDocument[] = [
+        { intressent_id: 'MP001' } as unknown as RawDocument,
+      ];
+      persistMPs(mps, '2025/26', tmpDir);
+
+      const meta = JSON.parse(fs.readFileSync(
+        path.join(tmpDir, 'mps', 'mp001.meta.json'), 'utf8',
+      ));
+      expect(meta.mcpTool).toBe('search_ledamoter');
+      expect(meta.documentType).toBe('mps');
+    });
+  });
+
+  // ── MCP response storage ────────────────────────────────────────────────
+
+  describe('persistMCPResponse', () => {
+    it('should store generic MCP tool response in server/tool subdirs', () => {
       const resultPath = persistMCPResponse(
-        { tool: 'get_sync_status', params: {}, server: 'test-riksdag' },
+        { tool: 'get_sync_status', params: { key: 'val' }, server: 'riksdag-regering' },
         { status: 'ok', last_sync: '2026-03-28' },
-        testId,
+        'sync-check',
+        tmpDir,
       );
       expect(fs.existsSync(resultPath)).toBe(true);
       const data = JSON.parse(fs.readFileSync(resultPath, 'utf8'));
       expect(data.status).toBe('ok');
 
-      // Verify sidecar exists
+      // Verify sidecar
       const metaPath = resultPath.replace('.json', '.meta.json');
       expect(fs.existsSync(metaPath)).toBe(true);
       const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
       expect(meta.mcpTool).toBe('get_sync_status');
-
-      // Cleanup: remove only the test-specific server dir
-      fs.rmSync(path.join(path.dirname(path.dirname(resultPath))), { recursive: true, force: true });
+      expect(meta.params.key).toBe('val');
     });
 
-    it('should store World Bank data with indicator/country structure', () => {
-      const testIndicator = `TEST.INDICATOR.${Date.now()}`;
-      const resultPath = persistWorldBankData(
-        testIndicator,
-        'SWE',
-        [{ date: '2025', value: 600000000000 }],
+    it('should use timestamp-based fallback for empty id', () => {
+      const resultPath = persistMCPResponse(
+        { tool: 'test_tool', params: {}, server: 'test' },
+        { data: true },
+        '', // empty id
+        tmpDir,
       );
       expect(fs.existsSync(resultPath)).toBe(true);
+      expect(path.basename(resultPath)).toMatch(/^response-\d+\.json$/);
+    });
+  });
+
+  describe('persistWorldBankData', () => {
+    it('should store data with indicator/country structure', () => {
+      const resultPath = persistWorldBankData(
+        'NY.GDP.MKTP.CD',
+        'SWE',
+        [{ date: '2025', value: 600000000000 }],
+        tmpDir,
+      );
+      expect(fs.existsSync(resultPath)).toBe(true);
+
       const data = JSON.parse(fs.readFileSync(resultPath, 'utf8'));
       expect(data[0].date).toBe('2025');
 
-      // Verify sidecar exists
+      expect(resultPath).toContain(path.join('worldbank', 'ny-gdp-mktp-cd', 'swe.json'));
+
       const metaPath = resultPath.replace('.json', '.meta.json');
       expect(fs.existsSync(metaPath)).toBe(true);
-
-      // Cleanup: remove only the test-specific indicator dir
-      fs.rmSync(path.dirname(resultPath), { recursive: true, force: true });
+      const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+      expect(meta.indicator).toBe('NY.GDP.MKTP.CD');
+      expect(meta.country).toBe('SWE');
     });
+  });
 
-    it('should store SCB table data', () => {
-      const testTableId = `TEST${Date.now()}`;
+  describe('persistSCBData', () => {
+    it('should store SCB table data with sidecar', () => {
       const resultPath = persistSCBData(
-        testTableId,
+        'BE0101A',
         { columns: ['Region', 'Population'], data: [[1, 10000]] },
         { region: '01' },
+        tmpDir,
+      );
+      expect(fs.existsSync(resultPath)).toBe(true);
+      expect(resultPath).toContain(path.join('scb', 'be0101a.json'));
+
+      const metaPath = resultPath.replace('.json', '.meta.json');
+      const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+      expect(meta.tableId).toBe('BE0101A');
+      expect(meta.query.region).toBe('01');
+    });
+
+    it('should work without query parameter', () => {
+      const resultPath = persistSCBData(
+        'TEST_TABLE',
+        { data: [] },
+        undefined,
+        tmpDir,
       );
       expect(fs.existsSync(resultPath)).toBe(true);
 
-      // Verify sidecar has query params
       const metaPath = resultPath.replace('.json', '.meta.json');
       const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
-      expect(meta.tableId).toBe(testTableId);
-      expect(meta.query.region).toBe('01');
-
-      // Cleanup
-      fs.unlinkSync(resultPath);
-      fs.unlinkSync(metaPath);
+      expect(meta.query).toBeUndefined();
     });
   });
+
+  // ── getDataRoot ──────────────────────────────────────────────────────────
 
   describe('getDataRoot', () => {
     it('should return path ending with analysis/data', () => {

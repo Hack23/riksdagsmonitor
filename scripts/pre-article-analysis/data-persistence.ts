@@ -52,12 +52,22 @@ const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 // Types
 // ---------------------------------------------------------------------------
 
+/** All known document/data types that appear in sidecar metadata. */
+export type PersistenceDocumentType =
+  | DocumentTypeKey
+  | 'events'
+  | 'mps'
+  | 'government'
+  | 'worldbank'
+  | 'scb'
+  | string; // extensible for generic MCP servers
+
 /** Sidecar metadata written alongside data files. */
 export interface PersistenceMetadata {
   fetchedAt: string;
   mcpTool: string;
   riksmote: string;
-  documentType: string;
+  documentType: PersistenceDocumentType;
 }
 
 /** Summary returned after a persistence run. */
@@ -152,12 +162,14 @@ function writeDocumentAndMeta(
  * @param data        - Downloaded data collections from `downloadAllDocuments()`
  * @param riksmote    - Current riksmöte identifier (e.g. "2025/26")
  * @param mcpToolMap  - Map of document type → MCP tool name for provenance
+ * @param dataRoot    - Override for the data root directory (for testing)
  * @returns Summary of files written and skipped.
  */
 export function persistDownloadedData(
   data: DownloadedData,
   riksmote: string,
   mcpToolMap?: Partial<Record<DocumentTypeKey, string>>,
+  dataRoot: string = DATA_ROOT,
 ): PersistenceResult {
   const defaultToolMap: Record<DocumentTypeKey, string> = {
     propositions: 'get_propositioner',
@@ -190,7 +202,7 @@ export function persistDownloadedData(
       continue;
     }
 
-    const typeDir = path.join(DATA_ROOT, 'documents', docType);
+    const typeDir = path.join(dataRoot, 'documents', docType);
     const metadata: PersistenceMetadata = {
       fetchedAt,
       mcpTool: toolMap[docType],
@@ -214,7 +226,7 @@ export function persistDownloadedData(
           ? doc.datum.slice(0, 10)
           : '';
         if (ISO_DATE_RE.test(voteDate)) {
-          const voteDateDir = path.join(DATA_ROOT, 'votes', voteDate);
+          const voteDateDir = path.join(dataRoot, 'votes', voteDate);
           writeDocumentAndMeta(voteDateDir, filename, doc, {
             ...metadata,
             documentType: 'votes',
@@ -227,15 +239,17 @@ export function persistDownloadedData(
     }
   }
 
-  return { written, skipped, dataRoot: DATA_ROOT };
+  return { written, skipped, dataRoot: dataRoot };
 }
 
 /**
  * Persist a set of calendar events to `analysis/data/events/{date}/`.
+ * @param dataRoot - Override for the data root directory (for testing)
  */
 export function persistEvents(
   events: RawDocument[],
   riksmote: string,
+  dataRoot: string = DATA_ROOT,
 ): PersistenceResult {
   const fetchedAt = new Date().toISOString();
   let written = 0;
@@ -253,7 +267,7 @@ export function persistEvents(
         : '';
 
     const eventDate = ISO_DATE_RE.test(dateStr) ? dateStr : 'undated';
-    const eventDir = path.join(DATA_ROOT, 'events', eventDate);
+    const eventDir = path.join(dataRoot, 'events', eventDate);
 
     const eventId = resolveDocId(event, i);
     writeDocumentAndMeta(eventDir, `${eventId}.json`, event, {
@@ -265,15 +279,17 @@ export function persistEvents(
     written++;
   }
 
-  return { written, skipped, dataRoot: DATA_ROOT };
+  return { written, skipped, dataRoot: dataRoot };
 }
 
 /**
  * Persist MP profiles to `analysis/data/mps/`.
+ * @param dataRoot - Override for the data root directory (for testing)
  */
 export function persistMPs(
   mps: RawDocument[],
   riksmote: string,
+  dataRoot: string = DATA_ROOT,
 ): PersistenceResult {
   const fetchedAt = new Date().toISOString();
   let written = 0;
@@ -288,7 +304,7 @@ export function persistMPs(
       || resolveDocId(mp, i);
     const sanitized = sanitizeDokId(id) || `mp-${i + 1}`;
 
-    writeDocumentAndMeta(path.join(DATA_ROOT, 'mps'), `${sanitized}.json`, mp, {
+    writeDocumentAndMeta(path.join(dataRoot, 'mps'), `${sanitized}.json`, mp, {
       fetchedAt,
       mcpTool: 'search_ledamoter',
       riksmote,
@@ -297,7 +313,7 @@ export function persistMPs(
     written++;
   }
 
-  return { written, skipped, dataRoot: DATA_ROOT };
+  return { written, skipped, dataRoot: dataRoot };
 }
 
 // ---------------------------------------------------------------------------
@@ -315,15 +331,17 @@ export function persistMPs(
  * @param call     - Description of the MCP tool call
  * @param response - Raw response data from the MCP tool
  * @param id       - Unique identifier for this response (e.g. dok_id, table_id, country code)
+ * @param dataRoot - Override for the data root directory (for testing)
  * @returns The absolute path where the response was written.
  */
 export function persistMCPResponse(
   call: MCPToolCall,
   response: unknown,
   id: string,
+  dataRoot: string = DATA_ROOT,
 ): string {
   const sanitized = sanitizeDokId(id) || `response-${Date.now()}`;
-  const dir = path.join(DATA_ROOT, 'mcp-responses', call.server, call.tool);
+  const dir = path.join(dataRoot, 'mcp-responses', call.server, call.tool);
   ensureDir(dir);
 
   const filename = `${sanitized}.json`;
@@ -357,13 +375,15 @@ export function persistMCPResponse(
  * @param indicator  - World Bank indicator ID (e.g. 'NY.GDP.MKTP.CD')
  * @param country    - Country code (e.g. 'SWE')
  * @param response   - Raw API response data
+ * @param dataRoot   - Override for the data root directory (for testing)
  */
 export function persistWorldBankData(
   indicator: string,
   country: string,
   response: unknown,
+  dataRoot: string = DATA_ROOT,
 ): string {
-  const dir = path.join(DATA_ROOT, 'worldbank', sanitizeDokId(indicator));
+  const dir = path.join(dataRoot, 'worldbank', sanitizeDokId(indicator));
   ensureDir(dir);
 
   const filename = `${sanitizeDokId(country)}.json`;
@@ -395,13 +415,15 @@ export function persistWorldBankData(
  * @param tableId   - SCB table identifier (e.g. 'BE0101A')
  * @param response  - Raw SCB API response data
  * @param query     - Optional query parameters used for provenance
+ * @param dataRoot  - Override for the data root directory (for testing)
  */
 export function persistSCBData(
   tableId: string,
   response: unknown,
   query?: Record<string, unknown>,
+  dataRoot: string = DATA_ROOT,
 ): string {
-  const dir = path.join(DATA_ROOT, 'scb');
+  const dir = path.join(dataRoot, 'scb');
   ensureDir(dir);
 
   const sanitized = sanitizeDokId(tableId);
