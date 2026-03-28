@@ -146,20 +146,24 @@ MCP Server → data-downloader.ts → data-persistence.ts → analysis/data/
 
 ### `scripts/populate-analysis-data.ts` (Standalone Data Fetcher)
 
-Fetches **all** data types and populates `analysis/data/` with recent data:
+Fetches **all** data types from **all** MCP sources and populates `analysis/data/` with recent data:
 
 ```bash
-# Fetch all data types (documents, events, MPs) with defaults
+# Fetch all data types with defaults (20 per type, today's date)
 npx tsx scripts/populate-analysis-data.ts
 
 # Custom limit and date
 npx tsx scripts/populate-analysis-data.ts --limit 50 --date 2026-03-28
 ```
 
-**Data types fetched:**
-1. 📄 **Documents** (7 types): propositions, motions, committeeReports, votes, speeches, questions, interpellations
-2. 📅 **Calendar events**: upcoming 14-day parliamentary schedule
-3. 👤 **MP profiles**: current member data
+**Data types fetched (7 steps):**
+1. 📄 **Documents** (7 types): propositions, motions, committeeReports, votes, speeches, questions, interpellations → `documents/{type}/`
+2. 📅 **Calendar events**: upcoming 14-day parliamentary schedule → `events/{date}/`
+3. 👤 **MP profiles**: current member data → `mps/`
+4. 🏛️ **Government documents**: recent publications from regeringen.se → `mcp-responses/riksdag-regering/search_regering/`
+5. 🗳️ **Voting groups**: party-level voting patterns → `mcp-responses/riksdag-regering/get_voting_group/`
+6. 🌍 **World Bank indicators**: 16 economic indicators for Sweden (GDP, unemployment, inflation, etc.) → `worldbank/{indicator}/`
+7. 📊 **SCB statistics**: key Swedish statistics across 15 policy domains (labour, fiscal, education, etc.) → `scb/`
 
 ### Key Modules
 

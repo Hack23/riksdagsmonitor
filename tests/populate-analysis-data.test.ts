@@ -5,9 +5,11 @@
  * - riksMoteFromDate calculation
  * - Integration with persistence functions (via mock MCP client)
  * - Correct handling of empty/error responses
+ * - All data types: documents, events, MPs, government, voting groups,
+ *   World Bank indicators, SCB statistics
  */
 
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
@@ -18,6 +20,9 @@ import {
   persistDownloadedData,
   persistEvents,
   persistMPs,
+  persistMCPResponse,
+  persistWorldBankData,
+  persistSCBData,
 } from '../scripts/pre-article-analysis/data-persistence.js';
 import { riksMoteFromDate } from '../scripts/populate-analysis-data.js';
 
@@ -223,6 +228,187 @@ describe('populate-analysis-data integration', () => {
       expect(docResult.written).toBe(2);
       expect(evtResult.written).toBe(1);
       expect(mpResult.written).toBe(1);
+    });
+  });
+
+  describe('persistMCPResponse for government documents', () => {
+    it('should persist government document to mcp-responses/riksdag-regering/search_regering/', () => {
+      const govDoc = { id: 'GOV-DOC-1', title: 'Test Government Document', type: 'pressmeddelande' };
+      const filePath = persistMCPResponse(
+        { tool: 'search_regering', params: { limit: 10 }, server: 'riksdag-regering' },
+        govDoc,
+        'gov-doc-1',
+        tmpDir,
+      );
+
+      expect(fs.existsSync(filePath)).toBe(true);
+      const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      expect(content.id).toBe('GOV-DOC-1');
+
+      // Sidecar metadata
+      const metaPath = filePath.replace('.json', '.meta.json');
+      expect(fs.existsSync(metaPath)).toBe(true);
+      const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+      expect(meta.mcpTool).toBe('search_regering');
+      expect(meta.documentType).toBe('riksdag-regering');
+    });
+
+    it('should persist voting groups to mcp-responses/riksdag-regering/get_voting_group/', () => {
+      const group = { parti: 'S', ja: 100, nej: 20, avstar: 5 };
+      const filePath = persistMCPResponse(
+        { tool: 'get_voting_group', params: { rm: '2025/26', groupBy: 'parti' }, server: 'riksdag-regering' },
+        group,
+        '2025-26-s',
+        tmpDir,
+      );
+
+      expect(fs.existsSync(filePath)).toBe(true);
+      expect(filePath).toContain('mcp-responses');
+      expect(filePath).toContain('riksdag-regering');
+      expect(filePath).toContain('get_voting_group');
+
+      const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      expect(content.parti).toBe('S');
+    });
+  });
+
+  describe('persistWorldBankData for economic indicators', () => {
+    it('should persist World Bank data under worldbank/{indicator}/', () => {
+      const dataPoints = [
+        { countryId: 'SWE', countryName: 'Sweden', indicatorId: 'NY.GDP.MKTP.KD.ZG', indicatorName: 'GDP growth', date: '2024', value: 1.2 },
+        { countryId: 'SWE', countryName: 'Sweden', indicatorId: 'NY.GDP.MKTP.KD.ZG', indicatorName: 'GDP growth', date: '2023', value: 0.8 },
+      ];
+
+      const filePath = persistWorldBankData(
+        'NY.GDP.MKTP.KD.ZG',
+        'SWE',
+        dataPoints,
+        tmpDir,
+      );
+
+      expect(fs.existsSync(filePath)).toBe(true);
+
+      // Verify directory structure: worldbank/{indicator}/{country}.json
+      expect(filePath).toContain(path.join('worldbank', 'ny-gdp-mktp-kd-zg', 'swe.json'));
+
+      const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      expect(content).toHaveLength(2);
+      expect(content[0].value).toBe(1.2);
+
+      // Sidecar metadata
+      const metaPath = filePath.replace('.json', '.meta.json');
+      expect(fs.existsSync(metaPath)).toBe(true);
+      const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+      expect(meta.mcpTool).toBe('world-bank-api');
+      expect(meta.indicator).toBe('NY.GDP.MKTP.KD.ZG');
+      expect(meta.country).toBe('SWE');
+    });
+
+    it('should handle multiple indicators for Sweden', () => {
+      const indicators = ['NY.GDP.MKTP.KD.ZG', 'SL.UEM.TOTL.ZS', 'FP.CPI.TOTL.ZG'];
+
+      for (const ind of indicators) {
+        persistWorldBankData(ind, 'SWE', [{ value: 1.5, date: '2024' }], tmpDir);
+      }
+
+      // All three indicator directories should exist
+      for (const ind of indicators) {
+        const dirName = ind.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        expect(fs.existsSync(path.join(tmpDir, 'worldbank', dirName))).toBe(true);
+      }
+    });
+  });
+
+  describe('persistSCBData for Swedish statistics', () => {
+    it('should persist SCB table data under scb/', () => {
+      const tableData = [
+        { tableId: 'TAB5765', label: 'Unemployment rate', value: 7.5, unit: '%', period: '2025M01' },
+        { tableId: 'TAB5765', label: 'Unemployment rate', value: 7.2, unit: '%', period: '2025M02' },
+      ];
+
+      const filePath = persistSCBData(
+        'TAB5765',
+        tableData,
+        { domain: 'labour', query: 'sysselsättning arbetslöshet' },
+        tmpDir,
+      );
+
+      expect(fs.existsSync(filePath)).toBe(true);
+      expect(filePath).toContain(path.join('scb', 'tab5765.json'));
+
+      const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      expect(content).toHaveLength(2);
+      expect(content[0].label).toBe('Unemployment rate');
+
+      // Sidecar metadata with query provenance
+      const metaPath = filePath.replace('.json', '.meta.json');
+      expect(fs.existsSync(metaPath)).toBe(true);
+      const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+      expect(meta.mcpTool).toBe('scb-pxweb');
+      expect(meta.tableId).toBe('TAB5765');
+      expect(meta.query.domain).toBe('labour');
+    });
+
+    it('should persist without query parameter', () => {
+      const filePath = persistSCBData('TAB1291', [{ value: 42 }], undefined, tmpDir);
+      expect(fs.existsSync(filePath)).toBe(true);
+
+      const meta = JSON.parse(fs.readFileSync(filePath.replace('.json', '.meta.json'), 'utf8'));
+      expect(meta.tableId).toBe('TAB1291');
+      expect(meta.query).toBeUndefined();
+    });
+  });
+
+  describe('full end-to-end with all data types', () => {
+    it('should populate all data type directories from a single root', () => {
+      // 1. Documents
+      const data: DownloadedData = {
+        propositions: [makeRawDoc({ dok_id: 'PROP-FULL' })],
+        motions: [],
+        committeeReports: [],
+        votes: [],
+        speeches: [],
+        questions: [],
+        interpellations: [],
+      };
+      persistDownloadedData(data, '2025/26', undefined, tmpDir);
+
+      // 2. Events
+      persistEvents([makeRawDoc({ dok_id: 'EVT-FULL', datum: '2026-03-28' })], '2025/26', tmpDir);
+
+      // 3. MPs
+      persistMPs([{ intressent_id: 'MP-FULL' } as unknown as RawDocument], '2025/26', tmpDir);
+
+      // 4. Government documents (via MCP response)
+      persistMCPResponse(
+        { tool: 'search_regering', params: {}, server: 'riksdag-regering' },
+        { id: 'GOV-FULL', title: 'Test' },
+        'gov-full',
+        tmpDir,
+      );
+
+      // 5. Voting groups (via MCP response)
+      persistMCPResponse(
+        { tool: 'get_voting_group', params: { groupBy: 'parti' }, server: 'riksdag-regering' },
+        { parti: 'M', ja: 50 },
+        '2025-26-m',
+        tmpDir,
+      );
+
+      // 6. World Bank
+      persistWorldBankData('NY.GDP.MKTP.KD.ZG', 'SWE', [{ value: 1.5 }], tmpDir);
+
+      // 7. SCB
+      persistSCBData('TAB5765', [{ value: 7.5 }], { domain: 'labour' }, tmpDir);
+
+      // Verify ALL directory types exist
+      expect(fs.existsSync(path.join(tmpDir, 'documents', 'propositions'))).toBe(true);
+      expect(fs.existsSync(path.join(tmpDir, 'events', '2026-03-28'))).toBe(true);
+      expect(fs.existsSync(path.join(tmpDir, 'mps'))).toBe(true);
+      expect(fs.existsSync(path.join(tmpDir, 'mcp-responses', 'riksdag-regering', 'search_regering'))).toBe(true);
+      expect(fs.existsSync(path.join(tmpDir, 'mcp-responses', 'riksdag-regering', 'get_voting_group'))).toBe(true);
+      expect(fs.existsSync(path.join(tmpDir, 'worldbank'))).toBe(true);
+      expect(fs.existsSync(path.join(tmpDir, 'scb'))).toBe(true);
     });
   });
 });

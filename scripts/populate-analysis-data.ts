@@ -1,14 +1,18 @@
 #!/usr/bin/env npx tsx
 /**
  * @module populate-analysis-data
- * @description Standalone script that fetches recent data from all MCP sources
+ * @description Standalone script that fetches recent data from **all** MCP sources
  * (riksdag-regering, SCB, World Bank) and persists it to `analysis/data/`.
  *
- * This populates the analysis folder with all supported data types:
+ * This populates the analysis folder with **all** supported data types:
  * - **Documents**: propositions, motions, committeeReports, votes, speeches,
  *   questions, interpellations
  * - **Calendar events**: upcoming parliamentary events
  * - **MPs**: current member profiles
+ * - **Government documents**: recent government publications (regeringen.se)
+ * - **Voting groups**: party-level voting patterns
+ * - **World Bank indicators**: Swedish economic context (GDP, unemployment, etc.)
+ * - **SCB statistics**: Swedish official statistics for key policy domains
  *
  * The script reuses the existing MCP client and data-persistence modules,
  * ensuring the collision-free sidecar design (data + .meta.json) is
@@ -34,9 +38,21 @@ import {
   persistDownloadedData,
   persistEvents,
   persistMPs,
+  persistMCPResponse,
+  persistWorldBankData,
+  persistSCBData,
   getDataRoot,
 } from './pre-article-analysis/data-persistence.js';
 import type { RawDocument } from './data-transformers/types.js';
+import {
+  WorldBankClient,
+  INDICATOR_IDS,
+  COUNTRY_CODES,
+} from './world-bank-client.js';
+import {
+  SCBClient,
+  SCB_DOMAINS,
+} from './scb-client.js';
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -60,6 +76,22 @@ function formatDate(d: Date): string {
 /** Safely extract error message from unknown thrown value. */
 function errorMessage(err: unknown): string {
   return err instanceof Error ? err.message : String(err);
+}
+
+/** Resolve an identifier for a government document. */
+function resolveGovDocId(doc: RawDocument, index: number): string {
+  const record = doc as Record<string, unknown>;
+  const candidates = [
+    record['id'],
+    record['dok_id'],
+    record['title'],
+    record['titel'],
+  ];
+  const raw = candidates.find(
+    (c): c is string => typeof c === 'string' && c.trim().length > 0,
+  )?.trim() ?? `gov-${index + 1}`;
+  // Simple sanitisation: lowercase, replace non-alphanum with hyphens, collapse
+  return raw.toLowerCase().replace(/[^a-z0-9åäö]+/g, '-').replace(/^-|-$/g, '').slice(0, 80) || `gov-${index + 1}`;
 }
 
 function parseArgs(): { limit: number; date: string } {
@@ -99,7 +131,7 @@ async function main(): Promise<void> {
   const client = new MCPClient();
 
   // ── Step 1: Download all document types ─────────────────────────────────
-  console.log('📄 Step 1/3: Downloading parliamentary documents...');
+  console.log('📄 Step 1/7: Downloading parliamentary documents...');
   try {
     const { data, manifest } = await downloadAllDocuments(client, { limit, rm });
     const allDocs = flattenDocuments(data);
@@ -112,7 +144,7 @@ async function main(): Promise<void> {
   }
 
   // ── Step 2: Download calendar events ────────────────────────────────────
-  console.log('\n📅 Step 2/3: Downloading calendar events...');
+  console.log('\n📅 Step 2/7: Downloading calendar events...');
   try {
     const today = new Date(date + 'T00:00:00Z');
     const twoWeeksAhead = new Date(today);
@@ -134,7 +166,7 @@ async function main(): Promise<void> {
   }
 
   // ── Step 3: Download MP profiles ────────────────────────────────────────
-  console.log('\n👤 Step 3/3: Downloading MP profiles...');
+  console.log('\n👤 Step 3/7: Downloading MP profiles...');
   try {
     const rawMPs = await client.fetchMPs({ limit });
     const mps: RawDocument[] = (Array.isArray(rawMPs) ? rawMPs : []) as RawDocument[];
@@ -146,6 +178,112 @@ async function main(): Promise<void> {
     }
   } catch (err) {
     console.error('   ❌ MP download failed:', errorMessage(err));
+  }
+
+  // ── Step 4: Download government documents ───────────────────────────────
+  console.log('\n🏛️  Step 4/7: Downloading government documents...');
+  try {
+    const thirtyDaysAgo = new Date(date + 'T00:00:00Z');
+    thirtyDaysAgo.setUTCDate(thirtyDaysAgo.getUTCDate() - 30);
+
+    const rawGovDocs = await client.fetchGovernmentDocuments({
+      dateFrom: formatDate(thirtyDaysAgo),
+      dateTo: date,
+      limit,
+    });
+    const govDocs: RawDocument[] = (Array.isArray(rawGovDocs) ? rawGovDocs : []) as RawDocument[];
+    console.log(`   ✅ Downloaded ${govDocs.length} government documents`);
+
+    let govWritten = 0;
+    for (let i = 0; i < govDocs.length; i++) {
+      const doc = govDocs[i];
+      if (!doc) continue;
+      persistMCPResponse(
+        { tool: 'search_regering', params: { limit }, server: 'riksdag-regering' },
+        doc,
+        resolveGovDocId(doc, i),
+      );
+      govWritten++;
+    }
+    console.log(`   🗄️  Persisted ${govWritten} government document files`);
+  } catch (err) {
+    console.error('   ❌ Government document download failed:', errorMessage(err));
+  }
+
+  // ── Step 5: Download voting groups by party ─────────────────────────────
+  console.log('\n🗳️  Step 5/7: Downloading voting groups by party...');
+  try {
+    const rawGroups = await client.fetchVotingGroup({ rm, groupBy: 'parti', limit });
+    const groups: RawDocument[] = (Array.isArray(rawGroups) ? rawGroups : []) as RawDocument[];
+    console.log(`   ✅ Downloaded ${groups.length} voting group records`);
+
+    let voteGroupWritten = 0;
+    for (let i = 0; i < groups.length; i++) {
+      const group = groups[i];
+      if (!group) continue;
+      const record = group as Record<string, unknown>;
+      const id = (typeof record['parti'] === 'string' && record['parti'])
+        || `group-${i + 1}`;
+      persistMCPResponse(
+        { tool: 'get_voting_group', params: { rm, groupBy: 'parti' }, server: 'riksdag-regering' },
+        group,
+        `${rm.replace('/', '-')}-${id}`,
+      );
+      voteGroupWritten++;
+    }
+    console.log(`   🗄️  Persisted ${voteGroupWritten} voting group files`);
+  } catch (err) {
+    console.error('   ❌ Voting group download failed:', errorMessage(err));
+  }
+
+  // ── Step 6: Download World Bank indicators for Sweden ───────────────────
+  console.log('\n🌍 Step 6/7: Downloading World Bank indicators for Sweden...');
+  try {
+    const wb = new WorldBankClient();
+    const indicatorEntries = Object.entries(INDICATOR_IDS);
+    let wbWritten = 0;
+    let wbFailed = 0;
+
+    for (const [_name, indicatorId] of indicatorEntries) {
+      try {
+        const dataPoints = await wb.getIndicator(COUNTRY_CODES.sweden, indicatorId, 10);
+        if (dataPoints.length > 0) {
+          persistWorldBankData(indicatorId, COUNTRY_CODES.sweden, dataPoints);
+          wbWritten++;
+        }
+      } catch {
+        wbFailed++;
+      }
+    }
+    console.log(`   ✅ Persisted ${wbWritten}/${indicatorEntries.length} World Bank indicators (${wbFailed} failed)`);
+  } catch (err) {
+    console.error('   ❌ World Bank data download failed:', errorMessage(err));
+  }
+
+  // ── Step 7: Download SCB statistics for key domains ─────────────────────
+  console.log('\n📊 Step 7/7: Downloading SCB statistics...');
+  try {
+    const scb = new SCBClient();
+    const domainsWithTables = SCB_DOMAINS.filter(d => d.tables.length > 0);
+    let scbWritten = 0;
+    let scbFailed = 0;
+
+    for (const domain of domainsWithTables) {
+      for (const tableId of domain.tables) {
+        try {
+          const data = await scb.getTableData(tableId);
+          if (data && (Array.isArray(data) ? data.length > 0 : true)) {
+            persistSCBData(tableId, data, { domain: domain.domain, query: domain.query });
+            scbWritten++;
+          }
+        } catch {
+          scbFailed++;
+        }
+      }
+    }
+    console.log(`   ✅ Persisted ${scbWritten} SCB tables (${scbFailed} failed)`);
+  } catch (err) {
+    console.error('   ❌ SCB data download failed:', errorMessage(err));
   }
 
   console.log('\n✅ Analysis data population complete.');
