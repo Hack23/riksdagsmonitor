@@ -14,6 +14,7 @@
  */
 
 import { execFileSync } from 'node:child_process';
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -28,7 +29,7 @@ export interface ConversionResult {
   /** Converted text content (empty on failure). */
   text: string;
   /** Tool used for conversion. */
-  tool: 'pdftotext' | 'fallback' | 'none';
+  tool: 'pdftotext' | 'none';
   /** Error message if conversion failed. */
   error?: string;
 }
@@ -112,12 +113,12 @@ export function convertPdfBufferToText(
   pdfBuffer: Buffer,
   tempDir: string = os.tmpdir(),
 ): ConversionResult {
-  const tempFile = path.join(tempDir, `riksdag-pdf-${Date.now()}.pdf`);
+  const tempFile = path.join(tempDir, `riksdag-pdf-${crypto.randomUUID()}.pdf`);
   try {
     fs.writeFileSync(tempFile, pdfBuffer);
     return convertPdfToText(tempFile);
   } finally {
-    try { fs.unlinkSync(tempFile); } catch (err) { console.debug('Temp file cleanup failed:', err); }
+    try { fs.unlinkSync(tempFile); } catch { /* temp file cleanup is best-effort */ }
   }
 }
 

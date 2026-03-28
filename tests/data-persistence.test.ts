@@ -364,7 +364,7 @@ describe('data-persistence', () => {
       expect(meta.params.key).toBe('val');
     });
 
-    it('should use timestamp-based fallback for empty id', () => {
+    it('should use UUID-based fallback for empty id', () => {
       const resultPath = persistMCPResponse(
         { tool: 'test_tool', params: {}, server: 'test' },
         { data: true },
@@ -372,7 +372,32 @@ describe('data-persistence', () => {
         tmpDir,
       );
       expect(fs.existsSync(resultPath)).toBe(true);
-      expect(path.basename(resultPath)).toMatch(/^response-\d+\.json$/);
+      expect(path.basename(resultPath)).toMatch(/^response-[0-9a-f-]{36}\.json$/);
+    });
+
+    it('should derive riksmote from call.params.rm when not explicitly provided', () => {
+      const resultPath = persistMCPResponse(
+        { tool: 'get_propositioner', params: { rm: '2025/26' }, server: 'riksdag-regering' },
+        { dokument_lista: [] },
+        'rm-test',
+        tmpDir,
+      );
+      const metaPath = resultPath.replace('.json', '.meta.json');
+      const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+      expect(meta.riksmote).toBe('2025/26');
+    });
+
+    it('should use explicit riksmote param over call.params.rm', () => {
+      const resultPath = persistMCPResponse(
+        { tool: 'get_propositioner', params: { rm: '2024/25' }, server: 'riksdag-regering' },
+        { dokument_lista: [] },
+        'rm-override-test',
+        tmpDir,
+        '2025/26',
+      );
+      const metaPath = resultPath.replace('.json', '.meta.json');
+      const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+      expect(meta.riksmote).toBe('2025/26');
     });
   });
 

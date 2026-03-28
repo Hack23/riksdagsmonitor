@@ -29,6 +29,7 @@
  * @license Apache-2.0
  */
 
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -72,7 +73,13 @@ export interface PersistenceMetadata {
 
 /** Summary returned after a persistence run. */
 export interface PersistenceResult {
-  /** Total records persisted (each record produces a data + sidecar file pair). */
+  /**
+   * Total logical records persisted.
+   *
+   * Note: a single logical record may produce multiple physical files or
+   * data/sidecar pairs (for example, votes written under both
+   * `documents/votes/` and `votes/{date}/`), but it is counted once here.
+   */
   written: number;
   /** Total null/empty entries skipped. */
   skipped: number;
@@ -365,8 +372,9 @@ export function persistMCPResponse(
   response: unknown,
   id: string,
   dataRoot: string = DATA_ROOT,
+  riksmote?: string,
 ): string {
-  const sanitized = sanitizeDokId(id) || `response-${Date.now()}`;
+  const sanitized = sanitizeDokId(id) || `response-${crypto.randomUUID()}`;
   const safeServer = sanitizePathSegment(call.server);
   const safeTool = sanitizePathSegment(call.tool);
   const dir = path.join(dataRoot, 'mcp-responses', safeServer, safeTool);
@@ -379,11 +387,15 @@ export function persistMCPResponse(
     'utf8',
   );
 
+  // Derive riksmöte: explicit param > call.params.rm > empty
+  const resolvedRiksmote = riksmote
+    ?? (typeof call.params.rm === 'string' ? call.params.rm : '');
+
   const metaFilename = `${sanitized}.meta.json`;
   const metadata: PersistenceMetadata & { params: Record<string, unknown> } = {
     fetchedAt: new Date().toISOString(),
     mcpTool: call.tool,
-    riksmote: '',
+    riksmote: resolvedRiksmote,
     documentType: call.server,
     params: call.params,
   };
