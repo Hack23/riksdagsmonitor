@@ -157,9 +157,50 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact + Entry
 
 ---
 
-## 📊 SWOT Quadrant Mapping (Renderer-Safe)
+## 📊 SWOT Quadrant Mapping
 
-Use the matrix below to map each SWOT item by whether it is **internal vs. external** and **negative vs. positive** in its effect on the political actor or domain.
+### Visual SWOT Impact Diagram
+
+> **AI Instructions:** Replace placeholder text below with actual SWOT findings from the tables above. Each node label should reference the corresponding S/W/O/T entry number.
+
+```mermaid
+graph TD
+    subgraph "📊 Political SWOT Landscape"
+        direction TB
+        subgraph "✅ Strengths (Internal Positive)"
+            S1N["💪 S1: [Coalition majority]"]
+            S2N["💪 S2: [Policy delivery]"]
+        end
+        subgraph "⚠️ Weaknesses (Internal Negative)"
+            W1N["⚡ W1: [Internal disagreements]"]
+            W2N["⚡ W2: [Policy coherence gap]"]
+        end
+        subgraph "🚀 Opportunities (External Positive)"
+            O1N["🌟 O1: [Economic tailwinds]"]
+            O2N["🌟 O2: [EU alignment]"]
+        end
+        subgraph "🔴 Threats (External Negative)"
+            T1N["☁️ T1: [No-confidence risk]"]
+            T2N["☁️ T2: [Electoral pressure]"]
+        end
+    end
+
+    S1N -.->|"exploits"| O1N
+    W1N -.->|"amplifies"| T1N
+    O2N -.->|"mitigates"| W2N
+    T2N -.->|"targets"| W1N
+
+    style S1N fill:#28a745,color:#fff
+    style S2N fill:#28a745,color:#fff
+    style W1N fill:#fd7e14,color:#fff
+    style W2N fill:#fd7e14,color:#fff
+    style O1N fill:#0d6efd,color:#fff
+    style O2N fill:#0d6efd,color:#fff
+    style T1N fill:#dc3545,color:#fff
+    style T2N fill:#dc3545,color:#fff
+```
+
+### SWOT Interaction Matrix
 
 |                              | Internal (Actor / Organisation)         | External (Environment / System)       |
 |------------------------------|-----------------------------------------|---------------------------------------|

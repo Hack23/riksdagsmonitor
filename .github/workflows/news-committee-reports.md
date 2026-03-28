@@ -398,16 +398,29 @@ ls -la "analysis/daily/$ARTICLE_DATE/committeeReports/" 2>/dev/null || echo "⚠
 
 ### Per-File AI Analysis Enhancement
 
+> 🚨 **CRITICAL RULE:** You must **actually read the JSON data** in each file and base all analysis on real data found there. Every SWOT entry, risk score, and stakeholder assessment must cite specific data from the file (dok_id, vote counts, party names, reservation details). Generic or boilerplate analysis is a failure mode — see the "Concrete Example: What Good Analysis Looks Like" section in `analysis/methodologies/ai-driven-analysis-guide.md` for bad vs. good comparison.
+
 After the script-based analysis, perform **AI-driven per-file analysis** for deeper intelligence:
 
 1. Run `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to list files needing analysis
-2. Read the methodology guides:
-   - `analysis/methodologies/ai-driven-analysis-guide.md`
-   - `analysis/methodologies/political-swot-framework.md`
-   - `analysis/templates/per-file-political-intelligence.md`
-3. For each pending file: classify, SWOT, risk assess, STRIDE, stakeholder impact, write `.analysis.md`
-4. Each analysis file must include color-coded Mermaid diagrams and evidence tables
-5. Quality gate: ≥3 evidence points, confidence labels, no template placeholders
+2. **Read the methodology guides** (use `view` or `cat` to read each fully):
+   - `analysis/methodologies/ai-driven-analysis-guide.md` — Master per-file analysis guide (includes bad/good examples)
+   - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT with confidence hierarchy
+   - `analysis/methodologies/political-risk-methodology.md` — 5×5 Likelihood×Impact risk matrix
+   - `analysis/methodologies/political-threat-framework.md` — STRIDE-adapted threat model, severity calibration
+   - `analysis/templates/per-file-political-intelligence.md` — Per-file output template
+3. For each pending file:
+   a. **Read** the JSON data file — use `view` or `cat` to read the actual content
+   b. **Extract** key fields (dok_id, titel, datum, organ, reservationer, etc.)
+   c. **Classify** — Sensitivity level, domain, urgency, significance (0–10)
+   d. **SWOT** — Government + Opposition impact with evidence (cite specific dok_id, vote margins)
+   e. **Risk** — 5×5 Likelihood×Impact matrix with numeric scores
+   f. **STRIDE** — Political threat analysis (only where applicable — cite evidence)
+   g. **Stakeholders** — 6-lens impact matrix
+   h. **Forward indicators** — Specific watch items with concrete timelines
+   i. **Mermaid diagrams** — At least 1 diagram with REAL data from the file (not placeholder text)
+   j. **Write** `{id}.analysis.md` alongside the data file
+4. Quality gate: ≥3 evidence points, confidence labels, no `[REQUIRED]` placeholders remaining
 
 The analysis pipeline outputs the following artifacts per doc-type run:
 - `data-download-manifest.md` — Download metadata and document counts

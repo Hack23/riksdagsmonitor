@@ -44,6 +44,45 @@
 
 ## 📊 Section 1: Individual Event Scoring
 
+### Significance Scoring Radar
+
+> **AI Instructions:** After scoring each dimension, this diagram visualizes the scoring profile. Replace `[#]` values with actual scores.
+
+```mermaid
+graph TD
+    subgraph "📈 Significance Score Profile"
+        PARL["🏛️ Parliamentary<br/>Score: [#]/10"]
+        POL["📋 Policy Impact<br/>Score: [#]/10"]
+        PUB["👥 Public Interest<br/>Score: [#]/10"]
+        URG["⏰ Urgency<br/>Score: [#]/10"]
+        XPTY["🤝 Cross-party<br/>Score: [#]/10"]
+    end
+
+    subgraph "🚦 Decision Gate"
+        COMP["📊 Composite Score<br/>[#.#] / 10"]
+        DEC{Decision}
+        DEC -->|"≥ 9.0"| BRK["⚡ BREAKING"]
+        DEC -->|"7.5–8.9"| PRI["📰 PRIORITY"]
+        DEC -->|"6.0–7.4"| PUB2["📰 PUBLISH"]
+        DEC -->|"4.0–5.9"| MON["📋 MONITOR"]
+        DEC -->|"< 4.0"| ARC["🗄️ ARCHIVE"]
+    end
+
+    PARL --> COMP
+    POL --> COMP
+    PUB --> COMP
+    URG --> COMP
+    XPTY --> COMP
+    COMP --> DEC
+
+    style BRK fill:#dc3545,color:#fff
+    style PRI fill:#fd7e14,color:#fff
+    style PUB2 fill:#28a745,color:#fff
+    style MON fill:#ffc107,color:#000
+    style ARC fill:#6c757d,color:#fff
+    style COMP fill:#0d6efd,color:#fff
+```
+
 Score each dimension from **0 to 10**. See calibration examples below.
 
 ### Dimension 1: Parliamentary Significance (0–10)

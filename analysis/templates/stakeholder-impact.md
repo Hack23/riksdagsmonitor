@@ -39,6 +39,44 @@
 
 ## 👥 Stakeholder Group Assessments
 
+### Stakeholder Impact Overview
+
+> **AI Instructions:** After completing each stakeholder assessment, update this diagram with actual impact levels (HIGH/MEDIUM/LOW/NONE) and color-code accordingly.
+
+```mermaid
+graph TD
+    subgraph "📄 Policy Impact Assessment"
+        DOC["📄 Policy/Event"]
+    end
+
+    subgraph "🏛️ Political Actors"
+        CIT["🏘️ Citizens<br/>Impact: [H/M/L/N]"]
+        GOV["🏛️ Government<br/>Impact: [H/M/L/N]"]
+        OPP["🗳️ Opposition<br/>Impact: [H/M/L/N]"]
+    end
+
+    subgraph "💼 Societal Actors"
+        BIZ["🏭 Business<br/>Impact: [H/M/L/N]"]
+        CIV["🤝 Civil Society<br/>Impact: [H/M/L/N]"]
+        INT["🌍 International<br/>Impact: [H/M/L/N]"]
+    end
+
+    DOC --> CIT
+    DOC --> GOV
+    DOC --> OPP
+    DOC --> BIZ
+    DOC --> CIV
+    DOC --> INT
+
+    style DOC fill:#0d6efd,color:#fff
+    style CIT fill:#6f42c1,color:#fff
+    style GOV fill:#198754,color:#fff
+    style OPP fill:#dc3545,color:#fff
+    style BIZ fill:#fd7e14,color:#fff
+    style CIV fill:#20c997,color:#fff
+    style INT fill:#0dcaf0,color:#000
+```
+
 ### 🏘️ Group 1: Citizens (Direct Impact)
 
 *How directly does this policy affect Swedish citizens' daily lives, rights, welfare, or finances?*

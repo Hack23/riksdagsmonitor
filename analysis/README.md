@@ -57,13 +57,15 @@ analysis/
 │   ├── worldbank/                     ← World Bank economic indicators
 │   ├── scb/                           ← Statistics Sweden (SCB) table data
 │   └── mcp-responses/                 ← Generic MCP tool response archive
-├── templates/                         ← Reusable analysis templates
+├── templates/                         ← Reusable analysis templates (all with color-coded Mermaid)
 │   ├── political-classification.md    ← Event classification template
 │   ├── risk-assessment.md             ← Political risk template
 │   ├── threat-analysis.md             ← STRIDE-inspired threat template
 │   ├── swot-analysis.md               ← SWOT quadrant template
 │   ├── stakeholder-impact.md          ← Stakeholder impact template
-│   └── significance-scoring.md        ← Significance scoring template
+│   ├── significance-scoring.md        ← Significance scoring template
+│   ├── synthesis-summary.md           ← Daily synthesis template (aggregates all above)
+│   └── per-file-political-intelligence.md ← Per-file AI analysis template
 ├── methodologies/                     ← Detailed methodology guides
 │   ├── political-classification-guide.md
 │   ├── political-risk-methodology.md
@@ -157,6 +159,8 @@ Real-time monitoring of parliamentary activity with per-file analysis on new dat
 | `swot-analysis.md` | Weekly/strategic SWOT pass | Quadrant entries with evidence |
 | `stakeholder-impact.md` | Policy decision announced | Impact by stakeholder group |
 | `significance-scoring.md` | Deciding what to publish | Composite score → publish/skip |
+| `synthesis-summary.md` | Daily synthesis (aggregation) | Combined intelligence dashboard |
+| `per-file-political-intelligence.md` | Per-file AI analysis | Full deep analysis per document |
 
 ---
 

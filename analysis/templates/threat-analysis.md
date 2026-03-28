@@ -40,6 +40,42 @@
 
 > **Severity Scale Reference:** 1=Negligible (routine), 2=Minor (self-correcting), 3=Moderate (intervention needed), 4=Major (formal response required), 5=Severe (constitutional crisis). See [methodologies/political-threat-framework.md §9](../methodologies/political-threat-framework.md) for full calibration table.
 
+### STRIDE Threat Landscape
+
+> **AI Instructions:** Replace placeholder text with actual threats identified. Color nodes by severity.
+
+```mermaid
+graph LR
+    subgraph "🎭 Political STRIDE Threat Model"
+        S["🎭 S: Spoofing<br/>False Narratives"]
+        T["🔧 T: Tampering<br/>Policy Corruption"]
+        R["📝 R: Repudiation<br/>Accountability Evasion"]
+        I["🔓 I: Information<br/>Transparency Failures"]
+        D["🚫 D: Denial<br/>Democratic Obstruction"]
+        E["⬆️ E: Elevation<br/>Power Concentration"]
+    end
+
+    S --> S1["[Highest S threat]"]
+    T --> T1["[Highest T threat]"]
+    R --> R1["[Highest R threat]"]
+    I --> I1["[Highest I threat]"]
+    D --> D1["[Highest D threat]"]
+    E --> E1["[Highest E threat]"]
+
+    style S fill:#6f42c1,color:#fff
+    style T fill:#dc3545,color:#fff
+    style R fill:#fd7e14,color:#fff
+    style I fill:#ffc107,color:#000
+    style D fill:#20c997,color:#fff
+    style E fill:#0d6efd,color:#fff
+    style S1 fill:#6f42c1,color:#fff,stroke-dasharray: 5 5
+    style T1 fill:#dc3545,color:#fff,stroke-dasharray: 5 5
+    style R1 fill:#fd7e14,color:#fff,stroke-dasharray: 5 5
+    style I1 fill:#ffc107,color:#000,stroke-dasharray: 5 5
+    style D1 fill:#20c997,color:#fff,stroke-dasharray: 5 5
+    style E1 fill:#0d6efd,color:#fff,stroke-dasharray: 5 5
+```
+
 ### S — Spoofing: False Narratives & Misinformation Threats
 
 *Threats involving actors misrepresenting facts, identities, or political positions to manipulate public discourse or parliamentary outcomes.*

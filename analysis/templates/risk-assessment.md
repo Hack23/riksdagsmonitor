@@ -41,6 +41,44 @@
 
 Risk Score = Likelihood (1–5) × Impact (1–5). See scoring guide in [political-risk-methodology.md](../methodologies/political-risk-methodology.md).
 
+### Risk Heat Map
+
+> **AI Instructions:** Replace node labels with actual risk descriptions from the register below. Color each node by tier.
+
+```mermaid
+graph TD
+    subgraph "⚖️ Political Risk Landscape — Likelihood × Impact"
+        R1["🔴 RSK-001: [Budget vote risk]<br/>L:? × I:? = ?"]
+        R2["🟠 RSK-002: [Coalition strain]<br/>L:? × I:? = ?"]
+        R3["🟡 RSK-003: [Policy delay]<br/>L:? × I:? = ?"]
+        R4["🟢 RSK-004: [Routine motion]<br/>L:? × I:? = ?"]
+        R5["🟢 RSK-005: [Minor amendment]<br/>L:? × I:? = ?"]
+    end
+
+    subgraph "📊 Risk Score Tiers"
+        TC["🔴 CRITICAL<br/>Score 15–25"]
+        TH["🟠 HIGH<br/>Score 10–14"]
+        TM["🟡 MEDIUM<br/>Score 5–9"]
+        TL["🟢 LOW<br/>Score 1–4"]
+    end
+
+    R1 -.-> TC
+    R2 -.-> TH
+    R3 -.-> TM
+    R4 -.-> TL
+    R5 -.-> TL
+
+    style R1 fill:#dc3545,color:#fff
+    style R2 fill:#fd7e14,color:#fff
+    style R3 fill:#ffc107,color:#000
+    style R4 fill:#28a745,color:#fff
+    style R5 fill:#28a745,color:#fff
+    style TC fill:#dc3545,color:#fff
+    style TH fill:#fd7e14,color:#fff
+    style TM fill:#ffc107,color:#000
+    style TL fill:#28a745,color:#fff
+```
+
 ```
 Risk Tiers:  1–4 = Low 🟢  |  5–9 = Medium 🟡  |  10–14 = High 🟠  |  15–25 = Critical 🔴
 ```
