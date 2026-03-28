@@ -372,7 +372,7 @@ describe('data-persistence', () => {
         tmpDir,
       );
       expect(fs.existsSync(resultPath)).toBe(true);
-      expect(path.basename(resultPath)).toMatch(/^response-[0-9a-f-]{36}\.json$/);
+      expect(path.basename(resultPath)).toMatch(/^response-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.json$/);
     });
 
     it('should derive riksmote from call.params.rm when not explicitly provided', () => {
