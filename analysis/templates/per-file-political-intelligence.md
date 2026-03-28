@@ -208,7 +208,7 @@ graph LR
     style T fill:#dc3545,color:#fff
     style R fill:#fd7e14,color:#fff
     style I fill:#ffc107,color:#000
-    style D fill:#20c997,color:#fff
+    style D fill:#28a745,color:#fff
     style E fill:#0d6efd,color:#fff
 ```
 
@@ -308,7 +308,7 @@ graph TD
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/per-file-political-intelligence.md`  
-- **Output Path:** `analysis/data/{type}/{id}.analysis.md`  
+- **Output Path:** Same directory as the JSON source file, named `{id}.analysis.md` (e.g. `analysis/data/documents/propositions/H901.analysis.md`)  
 - **Framework References:** [SWOT.md](../../SWOT.md), [THREAT_MODEL.md](../../THREAT_MODEL.md)  
 - **Methodology:** [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md)  
 - **Classification:** Public  

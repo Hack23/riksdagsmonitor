@@ -141,8 +141,8 @@ export function buildCatalog(
       allEntries.push({
         id: basename,
         type: docType,
-        path: path.relative(process.cwd(), filePath),
-        analysisPath: path.relative(process.cwd(), analysisPath),
+        path: path.relative(process.cwd(), filePath).split(path.sep).join('/'),
+        analysisPath: path.relative(process.cwd(), analysisPath).split(path.sep).join('/'),
         hasAnalysis,
         sizeBytes: stat.size,
         meta,
@@ -159,11 +159,14 @@ export function buildCatalog(
     ? allEntries.filter((e) => !e.hasAnalysis)
     : allEntries;
 
-  // Ensure deterministic ordering across platforms/filesystems
+  // Ensure deterministic ordering across platforms/filesystems.
+  // Use simple < / > string compare (locale-independent) for stable collation.
   entries.sort((a, b) => {
-    const typeCompare = a.type.localeCompare(b.type);
-    if (typeCompare !== 0) return typeCompare;
-    return a.id.localeCompare(b.id);
+    if (a.type < b.type) return -1;
+    if (a.type > b.type) return 1;
+    if (a.id < b.id) return -1;
+    if (a.id > b.id) return 1;
+    return 0;
   });
 
   return {

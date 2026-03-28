@@ -143,6 +143,7 @@ Write the completed analysis to `{analysisPath}` using the per-file-political-in
   style X fill:#ffc107,color:#000   /* Yellow — medium */
   style X fill:#28a745,color:#fff   /* Green — low/good */
   style X fill:#0d6efd,color:#fff   /* Blue — info */
+  style X fill:#6c757d,color:#fff   /* Grey — neutral / archive / routine */
   style X fill:#6f42c1,color:#fff   /* Purple — special */
   ```
 
