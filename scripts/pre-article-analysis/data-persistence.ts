@@ -72,9 +72,9 @@ export interface PersistenceMetadata {
 
 /** Summary returned after a persistence run. */
 export interface PersistenceResult {
-  /** Total files written (created or updated). */
+  /** Total records persisted (each record produces a data + sidecar file pair). */
   written: number;
-  /** Total files skipped (already up-to-date or empty). */
+  /** Total null/empty entries skipped. */
   skipped: number;
   /** Root directory the data was written to. */
   dataRoot: string;
@@ -210,6 +210,7 @@ export function persistDownloadedData(
       documentType: docType,
     };
 
+    const seenIds = new Set<string>();
     for (let i = 0; i < docs.length; i++) {
       const doc = docs[i];
       if (!doc) {
@@ -217,7 +218,14 @@ export function persistDownloadedData(
         continue;
       }
 
-      const docId = resolveDocId(doc, i);
+      let docId = resolveDocId(doc, i);
+      // Collision avoidance: append suffix if ID already used in this batch
+      if (seenIds.has(docId)) {
+        let suffix = 1;
+        while (seenIds.has(`${docId}-${suffix}`)) suffix++;
+        docId = `${docId}-${suffix}`;
+      }
+      seenIds.add(docId);
       const filename = `${docId}.json`;
 
       // For date-stamped vote ballots, also persist under votes/{date}/
@@ -321,6 +329,24 @@ export function persistMPs(
 // ---------------------------------------------------------------------------
 
 /**
+ * Sanitize a path segment to prevent path traversal.
+ * Preserves underscores (common in MCP tool names like get_voting_group)
+ * but removes slashes, null bytes, and dots-only sequences.
+ */
+function sanitizePathSegment(segment: string): string {
+  // Remove path separators and null bytes
+  let safe = segment.replace(/[/\\:\0]/g, '_');
+  // Collapse dots-only segments (e.g. "..", ".")
+  if (/^\.+$/.test(safe)) safe = '_dots_';
+  // Remove characters that are unsafe in paths but preserve underscores
+  safe = safe.replace(/[^a-zA-Z0-9_\-åäöÅÄÖ.]/g, '_')
+    .replace(/_+/g, '_')
+    .replace(/^_|_$/g, '')
+    .slice(0, 100);
+  return safe || 'unknown';
+}
+
+/**
  * Persist a generic MCP tool response.  Supports any MCP server (riksdag,
  * SCB, World Bank, etc.).  Responses are stored under:
  *   `analysis/data/mcp-responses/{server}/{tool}/{id}.json`
@@ -341,7 +367,9 @@ export function persistMCPResponse(
   dataRoot: string = DATA_ROOT,
 ): string {
   const sanitized = sanitizeDokId(id) || `response-${Date.now()}`;
-  const dir = path.join(dataRoot, 'mcp-responses', call.server, call.tool);
+  const safeServer = sanitizePathSegment(call.server);
+  const safeTool = sanitizePathSegment(call.tool);
+  const dir = path.join(dataRoot, 'mcp-responses', safeServer, safeTool);
   ensureDir(dir);
 
   const filename = `${sanitized}.json`;

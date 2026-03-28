@@ -431,6 +431,68 @@ describe('data-persistence', () => {
     });
   });
 
+  // ── Collision avoidance ───────────────────────────────────────────────────
+
+  describe('collision avoidance', () => {
+    it('should suffix duplicate doc IDs within a batch', () => {
+      // Create docs with NO dok_id so resolveDocId falls back to titel
+      const docWithTitleOnly = (title: string): RawDocument => ({
+        titel: title,
+        doktyp: 'prop',
+        organ: 'FiU',
+        datum: '2026-03-28',
+      }) as unknown as RawDocument;
+
+      const data: DownloadedData = {
+        ...emptyDownloadedData(),
+        propositions: [
+          docWithTitleOnly('Same Title'),
+          docWithTitleOnly('Same Title'),
+          docWithTitleOnly('Same Title'),
+        ],
+      };
+      const result = persistDownloadedData(data, '2025/26', undefined, tmpDir);
+      expect(result.written).toBe(3);
+
+      const propDir = path.join(tmpDir, 'documents', 'propositions');
+      const files = fs.readdirSync(propDir).filter(f => f.endsWith('.json') && !f.endsWith('.meta.json'));
+      expect(files.length).toBe(3);
+      // Should have base, -1, and -2 suffixed variants
+      expect(files.some(f => f === 'same-title.json')).toBe(true);
+      expect(files.some(f => f === 'same-title-1.json')).toBe(true);
+      expect(files.some(f => f === 'same-title-2.json')).toBe(true);
+    });
+  });
+
+  // ── Path traversal prevention ─────────────────────────────────────────────
+
+  describe('path traversal prevention', () => {
+    it('should sanitize server and tool names with path traversal characters', () => {
+      const resultPath = persistMCPResponse(
+        { tool: '../../../etc', params: {}, server: '../secret' },
+        { safe: true },
+        'test-doc',
+        tmpDir,
+      );
+      expect(fs.existsSync(resultPath)).toBe(true);
+      // Path should NOT escape tmpDir
+      expect(resultPath.startsWith(tmpDir)).toBe(true);
+      // Should not contain raw ../
+      expect(resultPath).not.toContain('../');
+    });
+
+    it('should handle dots-only server names', () => {
+      const resultPath = persistMCPResponse(
+        { tool: 'test', params: {}, server: '..' },
+        { safe: true },
+        'test-doc',
+        tmpDir,
+      );
+      expect(fs.existsSync(resultPath)).toBe(true);
+      expect(resultPath.startsWith(tmpDir)).toBe(true);
+    });
+  });
+
   // ── getDataRoot ──────────────────────────────────────────────────────────
 
   describe('getDataRoot', () => {

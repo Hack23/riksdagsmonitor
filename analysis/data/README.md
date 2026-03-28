@@ -59,8 +59,7 @@ analysis/data/
 │   ├── votes/                             ← Voting records (votering)
 │   ├── speeches/                          ← Parliamentary speeches (anföranden)
 │   ├── questions/                         ← Written questions (fr)
-│   ├── interpellations/                   ← Interpellations (ip)
-│   └── government/                        ← Government documents (SOU, Ds, etc.)
+│   └── interpellations/                   ← Interpellations (ip)
 ├── votes/                                 ← Date-stamped vote ballots
 │   └── {YYYY-MM-DD}/                      ← Vote date directory
 │       ├── {dok_id}.json                  ← Raw data

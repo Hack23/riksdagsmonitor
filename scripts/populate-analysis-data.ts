@@ -1,4 +1,4 @@
-#!/usr/bin/env npx tsx
+#!/usr/bin/env tsx
 /**
  * @module populate-analysis-data
  * @description Standalone script that fetches recent data from **all** MCP sources
@@ -96,7 +96,12 @@ function parseArgs(): { limit: number; date: string } {
       limit = Math.max(1, parseInt(args[i + 1], 10) || 20);
       i++;
     } else if (args[i] === '--date' && args[i + 1]) {
-      date = args[i + 1];
+      const candidate = args[i + 1];
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(candidate) || isNaN(new Date(candidate + 'T00:00:00Z').getTime())) {
+        console.error(`❌ Invalid date: "${candidate}". Expected YYYY-MM-DD format.`);
+        process.exit(1);
+      }
+      date = candidate;
       i++;
     }
   }

@@ -4,7 +4,7 @@
  *
  * Uses system tools when available:
  *   1. `pdftotext` (poppler-utils) — preferred, preserves layout
- *   2. Falls back to raw text extraction via Node.js when system tools are missing
+ *   2. Returns an error with install instructions when no system tools are found
  *
  * Converted content is stored alongside the original JSON metadata with a
  * `.txt` or `.md` extension.
@@ -15,6 +15,7 @@
 
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 
 // ---------------------------------------------------------------------------
@@ -109,7 +110,7 @@ export function convertPdfToText(pdfPath: string): ConversionResult {
  */
 export function convertPdfBufferToText(
   pdfBuffer: Buffer,
-  tempDir: string = '/tmp',
+  tempDir: string = os.tmpdir(),
 ): ConversionResult {
   const tempFile = path.join(tempDir, `riksdag-pdf-${Date.now()}.pdf`);
   try {

@@ -50,8 +50,7 @@ analysis/
 │   │   ├── votes/                     ← Voting records
 │   │   ├── speeches/                  ← Parliamentary speeches
 │   │   ├── questions/                 ← Written questions
-│   │   ├── interpellations/           ← Interpellations
-│   │   └── government/                ← Government documents (SOU, Ds)
+│   │   └── interpellations/           ← Interpellations
 │   ├── votes/                         ← Date-stamped vote ballots (YYYY-MM-DD/)
 │   ├── events/                        ← Date-stamped calendar events (YYYY-MM-DD/)
 │   ├── mps/                           ← MP profiles (intressent_id.json)

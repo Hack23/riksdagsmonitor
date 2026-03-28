@@ -541,7 +541,7 @@ async function runPreArticleAnalysis(opts: {
   // ── Step 1a: Persist raw data to analysis/data/ for verification & reuse ──
   console.log('\n🗄️  Step 1a: Persisting raw MCP data to analysis/data/...');
   const persistResult = persistDownloadedData(data, resolvedRm);
-  console.log(`   🗄️  Persisted ${persistResult.written} files to ${path.relative(REPO_ROOT, persistResult.dataRoot)}/ (${persistResult.skipped} skipped)`);
+  console.log(`   🗄️  Persisted data for ${persistResult.written} documents to ${path.relative(REPO_ROOT, persistResult.dataRoot)}/ (${persistResult.skipped} skipped)`);
 
   const ctx: SerializationContext = {
     date,
