@@ -153,36 +153,32 @@ export function buildCatalog(
 
   // De-duplicate vote entries: when the same id appears from both
   // documents/votes and votes/YYYY-MM-DD, prefer the date-stamped path.
-  const seen = new Map<string, number>();
-  for (let i = 0; i < allEntries.length; i++) {
-    const e = allEntries[i];
+  const bestByKey = new Map<string, (typeof allEntries)[number]>();
+  for (const e of allEntries) {
     const key = `${e.type}::${e.id}`;
-    if (seen.has(key)) {
-      const prevIdx = seen.get(key)!;
-      const prevPath = allEntries[prevIdx].path;
-      // Keep the entry whose path contains a date directory (votes/YYYY-MM-DD)
-      if (/votes\/\d{4}-\d{2}-\d{2}\//.test(e.path) && !/votes\/\d{4}-\d{2}-\d{2}\//.test(prevPath)) {
-        allEntries.splice(prevIdx, 1);
-        // Adjust index since we removed an earlier element
-        i--;
-        seen.set(key, i);
-      } else {
-        allEntries.splice(i, 1);
-        i--;
-      }
+    const existing = bestByKey.get(key);
+    if (!existing) {
+      bestByKey.set(key, e);
     } else {
-      seen.set(key, i);
+      // Prefer the entry whose path contains a date directory (votes/YYYY-MM-DD)
+      const existingHasDate = /votes\/\d{4}-\d{2}-\d{2}\//.test(existing.path);
+      const currentHasDate = /votes\/\d{4}-\d{2}-\d{2}\//.test(e.path);
+      if (currentHasDate && !existingHasDate) {
+        bestByKey.set(key, e);
+      }
+      // Otherwise keep existing (first-seen or already date-stamped)
     }
   }
+  const dedupedEntries = [...bestByKey.values()];
 
   // Compute totals from the full scan (before pendingOnly filter)
-  const totalCompleted = allEntries.filter((e) => e.hasAnalysis).length;
-  const totalPending = allEntries.length - totalCompleted;
+  const totalCompleted = dedupedEntries.filter((e) => e.hasAnalysis).length;
+  const totalPending = dedupedEntries.length - totalCompleted;
 
   // Apply pendingOnly filter after computing totals
   const entries = pendingOnly
-    ? allEntries.filter((e) => !e.hasAnalysis)
-    : allEntries;
+    ? dedupedEntries.filter((e) => !e.hasAnalysis)
+    : dedupedEntries;
 
   // Ensure deterministic ordering across platforms/filesystems.
   // Use simple < / > string compare (locale-independent) for stable collation.
@@ -197,7 +193,7 @@ export function buildCatalog(
   return {
     generatedAt: new Date().toISOString(),
     dataRoot: path.relative(process.cwd(), dataRoot).split(path.sep).join('/'),
-    totalFiles: allEntries.length,
+    totalFiles: dedupedEntries.length,
     pendingAnalysis: totalPending,
     completedAnalysis: totalCompleted,
     entries,
