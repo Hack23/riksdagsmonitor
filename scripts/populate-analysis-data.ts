@@ -97,8 +97,16 @@ function parseArgs(): { limit: number; date: string } {
       i++;
     } else if (args[i] === '--date' && args[i + 1]) {
       const candidate = args[i + 1];
-      if (!/^\d{4}-\d{2}-\d{2}$/.test(candidate) || isNaN(new Date(candidate + 'T00:00:00Z').getTime())) {
+      const dm = /^(\d{4})-(\d{2})-(\d{2})$/.exec(candidate);
+      if (!dm) {
         console.error(`❌ Invalid date: "${candidate}". Expected YYYY-MM-DD format.`);
+        process.exit(1);
+      }
+      const [, yStr, mStr, dStr] = dm;
+      const y = Number(yStr), mo = Number(mStr), da = Number(dStr);
+      const parsed = new Date(Date.UTC(y, mo - 1, da));
+      if (Number.isNaN(parsed.getTime()) || parsed.getUTCFullYear() !== y || parsed.getUTCMonth() + 1 !== mo || parsed.getUTCDate() !== da) {
+        console.error(`❌ Invalid date: "${candidate}". Expected a valid YYYY-MM-DD date.`);
         process.exit(1);
       }
       date = candidate;

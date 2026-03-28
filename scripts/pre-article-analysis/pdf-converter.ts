@@ -6,8 +6,8 @@
  *   1. `pdftotext` (poppler-utils) — preferred, preserves layout
  *   2. Returns an error with install instructions when no system tools are found
  *
- * Converted content is stored alongside the original JSON metadata with a
- * `.txt` or `.md` extension.
+ * This module only returns converted text — callers are responsible for
+ * persisting the output (e.g. as `.txt` or `.md` files).
  *
  * @author Hack23 AB
  * @license Apache-2.0

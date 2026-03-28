@@ -10,9 +10,12 @@
  *   - **Data files** (`{id}.json`) contain ONLY the raw source data — no
  *     injected metadata.  Two parallel workflows writing the same document
  *     produce byte-identical output, eliminating git merge conflicts.
- *   - **Sidecar metadata** (`{id}.meta.json`) tracks provenance (fetch
- *     timestamp, MCP tool name, riksmöte, document type) in a separate file
- *     that is safely overwritten on each run.
+ *   - **Sidecar metadata** (`{id}.meta.json`) tracks provenance (at minimum
+ *     fetch timestamp and MCP tool name) in a separate file that is safely
+ *     overwritten on each run. Riksdag/Riksdag-regeringen documents also
+ *     include `riksmöte` and `documentType`, while external MCP tools
+ *     (World Bank, SCB, etc.) use tool-specific fields (e.g. indicator /
+ *     country, tableId / query) instead.
  *   - **All MCP tools**: riksdag-regering, World Bank, SCB, and any other
  *     MCP tool responses are stored under `analysis/data/`.
  *
