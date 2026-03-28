@@ -169,7 +169,30 @@ timeline
 
 ---
 
+## ⚡ Escalation & Freshness
+
+### Freshness Requirements
+
+| Risk Tier | Maximum Age Before Re-evaluation |
+|:---------:|:-------------------------------:|
+| 🔴 Critical (15–25) | **24 hours** — must be re-assessed daily |
+| 🟠 High (10–14) | **72 hours** — re-assess within 3 days |
+| 🟡 Medium (5–9) | **7 days** — re-assess weekly |
+| 🟢 Low (1–4) | **30 days** — re-assess monthly |
+
+### When to Escalate from Risk Register to Breaking Analysis
+
+| Condition | Action |
+|-----------|--------|
+| Any risk score increases from ≤14 to ≥15 (crosses into Critical) | Trigger breaking risk assessment; notify editorial |
+| ≥ 3 risks simultaneously in High tier | Elevate overall risk level; flag in daily synthesis |
+| Coalition collapse probability moves from LOW to MEDIUM or HIGH | Immediate re-assessment of all coalition-related risks |
+| Budget vote approaches with unresolved High risk | Pre-position breaking analysis template |
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/risk-assessment.md`  
+- **Framework Reference:** [methodologies/political-risk-methodology.md](../methodologies/political-risk-methodology.md)  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Next Review:** 2026-06-28

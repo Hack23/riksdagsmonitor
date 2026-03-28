@@ -493,3 +493,81 @@ console.log(polarizationThreat?.countermeasures); // string[]
 - **Headline selection**: `overallThreatLevel = 'critical'` → democracy-focused framing
 - **Editorial safeguards**: Always present `countermeasures` alongside threat identification
 - **SWOT integration**: Threat analyses feed into SWOT threat quadrant
+
+---
+
+## 9. Severity Calibration Table
+
+Map the 1–5 severity scale to specific Swedish political indicators for consistent scoring:
+
+| Severity | Label | Definition | Swedish Political Example | Threat Level |
+|:--------:|-------|-----------|--------------------------|:------------:|
+| **1** | Negligible | Routine political activity; no democratic process impact | Routine written question about local transport | 🟢 LOW |
+| **2** | Minor | Minor procedural concern; self-correcting through normal channels | Committee delays a report by 1 week | 🟢 LOW |
+| **3** | Moderate | Democratic process strained; intervention may be needed | Coalition party votes against government on non-budget issue | 🟡 MODERATE |
+| **4** | Major | Significant democratic process threat; formal response required | KU investigation opened into government minister; SD threatens to withdraw support | 🟠 HIGH |
+| **5** | Severe | Constitutional crisis; democratic norms threatened | Government falls via no-confidence vote; extraordinary election called; parliamentary rules suspended | 🔴 SEVERE |
+
+### Escalation Criteria
+
+A threat analysis triggers escalation to **breaking news** status when:
+
+| Condition | Action | Severity Threshold |
+|-----------|--------|--------------------|
+| Any STRIDE category reaches severity 5 | Immediate breaking analysis | SEVERE |
+| ≥ 2 STRIDE categories reach severity 4 | Priority analysis; article within 2 hours | HIGH |
+| Overall threat level = SEVERE | All-language deployment; editor notification | SEVERE |
+| KU formal investigation announced | Priority threat assessment update | ≥ 3 (MODERATE) |
+| No-confidence motion filed | Immediate full threat model update | 5 (SEVERE) |
+
+### Threat-to-Risk Integration
+
+Connect threat severity to the risk methodology's 5×5 matrix:
+
+| Threat Severity | → Risk Likelihood Equivalent | → Risk Impact Equivalent |
+|:--------------:|:---------------------------:|:------------------------:|
+| 1 (Negligible) | L=1 (Rare) | I=1 (Negligible) |
+| 2 (Minor) | L=2 (Unlikely) | I=2 (Minor) |
+| 3 (Moderate) | L=3 (Possible) | I=3 (Moderate) |
+| 4 (Major) | L=4 (Likely) | I=4 (Major) |
+| 5 (Severe) | L=5 (Almost Certain) | I=5 (Severe) |
+
+> **Note:** Threat severity maps to BOTH likelihood and impact because a severe democratic threat is both more likely to materialize AND more impactful. For specific risk scoring, assess likelihood and impact independently using the risk methodology.
+
+---
+
+## 10. AI Analysis Protocol for Threat Assessment
+
+The AI agent **MUST** follow this protocol when performing threat analysis:
+
+1. **Read this framework** — understand STRIDE-to-political mapping, severity calibration, threat actors
+2. **Read the templates** — `analysis/templates/threat-analysis.md` and per-file template's threat section
+3. **Query MCP tools** for evidence:
+   - `search_dokument` with `organ=KU` — constitutional committee investigations (Repudiation, Elevation)
+   - `search_voteringar` — coalition voting patterns (Tampering via legislative manipulation)
+   - `search_anforanden` — debate rhetoric (Spoofing via misrepresentation)
+   - `search_dokument` with `doktyp=miss` — no-confidence motions (Denial of Service)
+   - `get_interpellationer` — accountability probes (Information Disclosure failures)
+4. **Score each STRIDE category** using the severity calibration table above
+5. **Map threat actors** — identify who benefits from each threat
+6. **Connect to risk scoring** using the Threat-to-Risk integration table
+7. **Include countermeasures** for every identified threat (editorial safeguard: never present threats without mitigations)
+
+---
+
+## 🔗 Related Documents
+
+- [templates/threat-analysis.md](../templates/threat-analysis.md) — Threat analysis template
+- [templates/per-file-political-intelligence.md](../templates/per-file-political-intelligence.md) — Per-file analysis template with STRIDE section
+- [political-risk-methodology.md](political-risk-methodology.md) — Risk scoring (threats feed into risk)
+- [political-swot-framework.md](political-swot-framework.md) — Threats feed into SWOT threat quadrant
+- [ai-driven-analysis-guide.md](ai-driven-analysis-guide.md) — Per-file AI analysis protocol
+- [reference/isms-threat-modeling-adaptation.md](../reference/isms-threat-modeling-adaptation.md) — ISMS mapping
+
+---
+
+**Document Control:**  
+- **Path:** `/analysis/methodologies/political-threat-framework.md`  
+- **ISMS Reference:** [Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md)  
+- **Classification:** Public  
+- **Next Review:** 2026-06-28

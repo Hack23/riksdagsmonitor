@@ -169,6 +169,18 @@
 
 `[REQUIRED: 3–5 sentences identifying the most significant stakeholder dynamics. Which groups are in tension? Where are unexpected winners/losers? What are the second-order political effects? Reference specific stakeholder interactions.]`
 
+### Conflicting Impact Resolution
+
+When stakeholder impacts conflict (e.g., Citizens benefit but Business bears costs):
+
+| Pattern | Overall Assessment | Editorial Framing |
+|---------|-------------------|-------------------|
+| Citizens positive + Business negative | **Politically significant** — redistribution dynamic | Lead with citizen impact; note business costs |
+| Government positive + Opposition negative | **Standard partisan** — expected dynamics | Present both perspectives equally |
+| Citizens negative + Government positive | **Accountability concern** — policy vs. people | Lead with citizen impact; scrutinize government rationale |
+| All stakeholders negative | **System-level problem** — policy failure signal | Frame as shared challenge requiring cross-party response |
+| All stakeholders positive | **Rare consensus** — highlight cross-party achievement | Note rarity; check for hidden costs or losers |
+
 **Publish Recommendation:** `[REQUIRED: YES — HIGH public interest / YES — MEDIUM interest / MONITOR — low standalone value]`
 
 ---
@@ -176,5 +188,6 @@
 **Document Control:**  
 - **Template Path:** `/analysis/templates/stakeholder-impact.md`  
 - **Lens References:** `scripts/analysis-framework/lenses/` (citizen, economic, government, international, media, opposition)  
+- **Framework Reference:** [methodologies/political-style-guide.md](../methodologies/political-style-guide.md)  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Next Review:** 2026-06-28

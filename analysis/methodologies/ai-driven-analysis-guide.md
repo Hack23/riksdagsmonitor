@@ -129,6 +129,45 @@ Before writing the analysis file, verify:
 | Forward indicators | At least 1 specific watch item | ☐ |
 | No boilerplate | All `[REQUIRED]` placeholders replaced | ☐ |
 | Attribution | All politicians named with party (e.g. "Ulf Kristersson (M)") | ☐ |
+| Risk-SWOT integration | Risk scores ≥15 appear as SWOT Threat entries | ☐ |
+| Threat severity calibrated | Severity scores match calibration table in threat framework | ☐ |
+
+---
+
+## ⏱️ Time Budget & Prioritization Protocol
+
+### Time Budget Per File
+
+Not all documents need the same analysis depth. Prioritize by document type:
+
+| Document Type | Analysis Time Budget | Analysis Depth | Sections Required |
+|--------------|:--------------------:|:--------------:|------------------|
+| **Propositions** | 3–5 minutes | Full (all sections) | Classification + SWOT + Risk + Threat + Stakeholder + Forward |
+| **Votes** | 2–4 minutes | Full (all sections) | Classification + SWOT + Risk + Stakeholder + Forward |
+| **Committee Reports** | 2–3 minutes | Standard | Classification + SWOT + Risk + Forward |
+| **Speeches** | 1–2 minutes | Quick | Classification + Stakeholder + Forward |
+| **Motions** | 1–2 minutes | Quick | Classification + SWOT (opposition focus) + Forward |
+| **Questions/Interpellations** | 1–2 minutes | Quick | Classification + Stakeholder + Forward |
+| **Government Documents** | 2–3 minutes | Standard | Classification + Risk + Stakeholder + Forward |
+| **World Bank/SCB Data** | 1–2 minutes | Context | Classification + Economic context note |
+
+### Prioritization When Time-Constrained
+
+When the workflow time budget is limited (e.g., 12 minutes for AI analysis in evening workflow):
+
+1. **Sort pending files by expected significance** — Propositions and votes first, then committee reports, then everything else
+2. **Analyze highest-priority files first** — Complete full analysis for top-priority documents
+3. **Quick-classify remaining files** — At minimum, assign classification level and significance score
+4. **Stop at time limit** — Whatever is analyzed is committed; remaining files are flagged as "pending" for next run
+
+### Maximum Files Per Workflow Run
+
+| Workflow | Typical Download | Analysis Target | Time Budget |
+|----------|:----------------:|:---------------:|:-----------:|
+| Evening analysis | 20–50 files | 10–15 full + rest quick-classified | 12 minutes |
+| Morning per-type | 5–20 files | All files (single type) | 8 minutes |
+| Realtime monitor | 1–5 files | All files (full depth) | 5 minutes |
+| Weekly review | 50–200 files | Top 20 full + rest aggregated | 15 minutes |
 
 ---
 

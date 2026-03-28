@@ -137,6 +137,17 @@ SWOT entries age and their confidence level **automatically degrades** over time
 
 **EXPIRED entries must be re-verified or removed before inclusion in new SWOT analyses.**
 
+### Handling EXPIRED Entries
+
+When an entry reaches EXPIRED status:
+
+1. **Re-verify**: Check if updated evidence exists via MCP tools (e.g., new vote record, updated SCB data)
+2. **Refresh**: If new evidence found, create a NEW entry with fresh confidence and updated evidence
+3. **Archive**: If no new evidence, move entry to "Historical Context" section (informational, not active SWOT)
+4. **Remove**: If the situation has fundamentally changed (e.g., new coalition formed), delete the entry entirely
+
+> **Rule:** An active SWOT analysis must contain ZERO expired entries. Every entry must have a confidence of HIGH, MEDIUM, or LOW with a clear evidence trail.
+
 ---
 
 ## 🔗 Aggregating Party/Coalition SWOTs into Landscape SWOT
@@ -174,18 +185,49 @@ flowchart TD
 - **Shared Opportunity** (both sides see it) = Major policy window; cross-party deal possible
 - **Shared Threat** (both sides face it) = System-level risk; constitutional/economic dimension
 
+### Weighting Rules for Landscape SWOT
+
+When aggregating individual party/coalition SWOTs into a landscape SWOT:
+
+| Source SWOT | Weight | Rationale |
+|:----------:|:------:|-----------|
+| Government Coalition | **0.40** | Governing parties set policy agenda; their position has highest system impact |
+| Main Opposition (S) | **0.25** | Largest opposition party; primary alternative government |
+| SD (supply-and-confidence) | **0.20** | Kingmaker role; coalition depends on SD support |
+| Minor parties (V, MP, C, L) | **0.15** | Combined weight; influence through committee and budget negotiations |
+
+**Conflict resolution:** When government SWOT entry contradicts opposition SWOT entry on the same topic, include BOTH in the landscape SWOT as "contested terrain" with a note identifying the conflict. Do NOT average or remove conflicting entries.
+
+**Minimum landscape SWOT requirements:**
+- ≥ 3 Strengths (at least 1 from government, 1 from opposition perspective)
+- ≥ 3 Weaknesses (at least 1 from each side)
+- ≥ 2 Opportunities (at least 1 shared across perspectives)
+- ≥ 3 Threats (at least 1 system-level)
+
 ---
 
 ## 📚 SWOT Generation Pipeline Reference
 
-The automated SWOT generation pipeline is implemented in:
+The SWOT generation pipeline is driven by AI agents reading methodology documents and producing per-file analysis:
 
 | File | Purpose |
 |------|---------|
+| `scripts/prompts/v2/swot-generation.md` | LLM prompts for SWOT generation (v2) |
+| `scripts/prompts/v2/per-file-intelligence-analysis.md` | Per-file analysis protocol |
+| `analysis/templates/per-file-political-intelligence.md` | Per-file output template with SWOT section |
+| `analysis/templates/swot-analysis.md` | Standalone SWOT template for daily/weekly synthesis |
 | `scripts/ai-analysis/swot/` | SWOT-specific AI analysis scripts |
-| `scripts/prompts/v1/swot-generation.md` | LLM prompts for SWOT generation |
-| `scripts/prompts/v1/stakeholder-perspectives.md` | Stakeholder perspective prompts used in SWOT |
 | `scripts/analysis-framework/lenses/` | Per-perspective evidence gathering |
+
+### AI Analysis Protocol for SWOT
+
+The AI agent **MUST** follow this protocol when generating SWOT analysis:
+
+1. **Read this framework** — understand evidence hierarchy, confidence levels, decay rules
+2. **Query MCP tools** — use the tool/query strategies from the tables above for each quadrant
+3. **Fill SWOT template** — every entry needs: Statement + Evidence (dok_id) + Confidence + Impact
+4. **Apply intersection analysis** — identify contested terrain, opposition opportunities, shared risks
+5. **Validate quality gate** — ≥ 2 entries per quadrant, zero opinion-only entries, zero EXPIRED entries
 
 ---
 

@@ -43,11 +43,11 @@
 
 ### ✅ Strengths — Government Coalition
 
-Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact.
+Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact + Entry Date (for temporal decay tracking).
 
-| # | Strength Statement | Evidence (dok_id) | Confidence | Impact |
-|---|-------------------|-------------------|:----------:|:------:|
-| S1 | `[REQUIRED: specific, verifiable strength — e.g. "Coalition maintains working Riksdag majority of 176 seats through SD support agreement"]` | `[REQUIRED: dok_id or vote record]` | `H/M/L` | `H/M/L` |
+| # | Strength Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-------------------|-------------------|:----------:|:------:|:----------:|
+| S1 | `[REQUIRED: specific, verifiable strength — e.g. "Coalition maintains working Riksdag majority of 176 seats through SD support agreement"]` | `[REQUIRED: dok_id or vote record]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
 | S2 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` |
 | S3 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` |
 | S4 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` |

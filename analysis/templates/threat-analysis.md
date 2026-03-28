@@ -38,6 +38,8 @@
 
 ## 🎭 STRIDE-Adapted Threat Inventory
 
+> **Severity Scale Reference:** 1=Negligible (routine), 2=Minor (self-correcting), 3=Moderate (intervention needed), 4=Major (formal response required), 5=Severe (constitutional crisis). See [methodologies/political-threat-framework.md §9](../methodologies/political-threat-framework.md) for full calibration table.
+
 ### S — Spoofing: False Narratives & Misinformation Threats
 
 *Threats involving actors misrepresenting facts, identities, or political positions to manipulate public discourse or parliamentary outcomes.*
@@ -153,8 +155,20 @@
 
 ---
 
+## ⚡ Escalation Decision
+
+| Condition | Escalate? | Action |
+|-----------|:---------:|--------|
+| Any STRIDE category severity ≥ 5 | **YES** | Immediate breaking analysis; all-language deployment |
+| ≥ 2 STRIDE categories severity ≥ 4 | **YES** | Priority analysis; article within 2 hours |
+| Overall threat level = SEVERE | **YES** | Editor notification + all-language deployment |
+| Overall threat level = HIGH | **MONITOR** | Flag in daily synthesis; include in evening analysis |
+| Overall threat level ≤ MODERATE | **NO** | Include in regular daily/weekly reporting |
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/threat-analysis.md`  
-- **Framework Reference:** [THREAT_MODEL.md](../../THREAT_MODEL.md), [FUTURE_THREAT_MODEL.md](../../FUTURE_THREAT_MODEL.md)  
+- **Framework Reference:** [THREAT_MODEL.md](../../THREAT_MODEL.md), [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md)  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Next Review:** 2026-06-28

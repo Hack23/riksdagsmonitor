@@ -144,14 +144,19 @@ graph TD
     style R4 fill:#28a745,color:#fff
 ```
 
+> **Scoring Reference:** Use [political-risk-methodology.md](../methodologies/political-risk-methodology.md) for calibration. Score tiers: 1–4 🟢 Low, 5–9 🟡 Medium, 10–14 🟠 High, 15–25 🔴 Critical.
+
 | Risk Type | Likelihood (1–5) | Impact (1–5) | Score | Assessment |
 |-----------|:-----------------:|:------------:|:-----:|------------|
 | Coalition Stability | `[1-5]` | `[1-5]` | `[L×I]` | `[REQUIRED: specific risk statement]` |
 | Policy Implementation | `[1-5]` | `[1-5]` | `[L×I]` | `[REQUIRED: specific risk statement]` |
+| Budget / Fiscal | `[1-5]` | `[1-5]` | `[L×I]` | `[REQUIRED: specific risk statement]` |
 | Electoral Impact | `[1-5]` | `[1-5]` | `[L×I]` | `[REQUIRED: specific risk statement]` |
 | Democratic Process | `[1-5]` | `[1-5]` | `[L×I]` | `[REQUIRED: specific risk statement]` |
+| External / International | `[1-5]` | `[1-5]` | `[L×I]` | `[OPTIONAL: EU, NATO, Nordic impact]` |
 
-**Overall Risk Level:** `[REQUIRED: CRITICAL / HIGH / MEDIUM / LOW]`
+**Overall Risk Level:** `[REQUIRED: CRITICAL / HIGH / MEDIUM / LOW]`  
+**Risk-to-SWOT:** Any score ≥15 → add as SWOT Threat entry. Any score 10–14 → add as SWOT Weakness or Threat.
 
 ### Anomaly Flags
 
@@ -161,7 +166,7 @@ graph TD
 
 ## 🎭 Threat Analysis (STRIDE-Adapted)
 
-> *Political threats mapped to the STRIDE framework adapted for democratic processes.*
+> *Political threats mapped to the STRIDE framework adapted for democratic processes. Severity: 1=Negligible, 2=Minor, 3=Moderate, 4=Major, 5=Severe. See [political-threat-framework.md §9](../methodologies/political-threat-framework.md) for calibration.*
 
 ```mermaid
 graph LR

@@ -24,6 +24,8 @@
 > **⚠️ Manual Rubric Note:** This template is a human analyst support rubric for narrative reasoning and editorial prioritisation. Automated JSON scoring (`morning-significance-scores.json`) is computed exclusively by `scripts/analysis-framework/significance-scorer.ts`.
 >
 > **Implementation Reference:** The TypeScript scorer uses a 6-dimension weighted model (0.25/0.20/0.15/0.20/0.10/0.10) and returns an integer score (1–10) via rounding. Treat this template as a separate manual rubric for editorial context, not as the source of truth for automated scoring outputs.
+>
+> **Score Reconciliation:** When manual and automated scores diverge by more than 3 points (e.g., manual=3, automated=7), the AI analyst must: (1) use the HIGHER score for editorial routing, (2) note the divergence in the scoring rationale, (3) flag for human editorial review. This ensures no significant event is under-classified.
 
 ---
 

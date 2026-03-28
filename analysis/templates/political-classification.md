@@ -177,7 +177,36 @@ Significance Score: [REQUIRED: see significance-scoring.md, 0–10 composite]
 
 ---
 
+## 📊 Calibration Example (Filled)
+
+> *This example demonstrates how to complete the template for a real Swedish political event. Use it as a scoring anchor.*
+
+**Event:** Budget proposition 2025/26:1 tabled by Finansminister Elisabeth Svantesson (M)
+
+| Field | Value |
+|-------|-------|
+| **Classification ID** | `CLS-2025-09-20-001` |
+| **Event Type** | Proposition |
+| **Event Date** | `2025-09-20` |
+| **Primary dok_id** | `H9011` |
+| **Source MCP Tool** | `search_dokument(doktyp=prop)` |
+| **Classified By** | `news-evening-analysis` |
+
+| Dimension | Score | Justification |
+|-----------|:-----:|---------------|
+| **Sensitivity** | 🟡 SENSITIVE | Budget involves coalition negotiation with SD; migration allocation contested |
+| **Primary Domain** | ECO (Economy) | Government fiscal policy; secondary: SOC, MIG |
+| **Urgency** | 🟠 URGENT | Budget vote deadline in November; FiU review starting |
+| **Impact Scope** | NATIONAL | Affects all citizens via tax and spending |
+| **Likelihood × Impact** | L=4 × I=4 = 16 🔴 | Budget likely passes (coalition agreement) but impact is severe (entire fiscal year) |
+| **Significance Score** | 8.2/10 | High parliamentary + policy + urgency |
+
+**Recommended Action:** ⚡ **Breaking** (significance 8.2 ≥ 8, urgency URGENT)
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/political-classification.md`  
+- **Framework Reference:** [methodologies/political-classification-guide.md](../methodologies/political-classification-guide.md)  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Next Review:** 2026-06-28
