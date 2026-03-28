@@ -580,7 +580,9 @@ npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | head -5
 
 #### B3. Analyze Each Downloaded File
 
-For each pending file from the catalog:
+**⏱️ Time safeguard:** Check elapsed time before each file. If elapsed ≥ 18 min, stop per-file analysis and proceed to article generation with whatever analyses are complete. Prioritize highest-significance files first.
+
+For each pending file from the catalog (ordered by significance — propositions and votes first):
 
 1. **Read** the JSON data file
 2. **Classify** — Sensitivity level, domain, urgency, significance (0–10)

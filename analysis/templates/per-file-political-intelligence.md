@@ -20,6 +20,8 @@
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** This template is for **per-file** analysis. For each data file downloaded via MCP (e.g., a proposition, motion, vote record), the AI agent produces one analysis markdown file stored as `{id}.analysis.md` alongside the data file. This avoids merge conflicts and ensures every piece of downloaded content receives deep analysis.
+>
+> **Example path:** `analysis/data/documents/propositions/H901.json` → `analysis/data/documents/propositions/H901.analysis.md`
 
 ---
 
