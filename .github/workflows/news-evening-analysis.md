@@ -577,7 +577,7 @@ echo "✅ Data downloaded to analysis/data/"
 
 ```bash
 echo "📋 Cataloging files pending analysis..."
-npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | head -5
+npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.entries[:5]'
 ```
 
 #### B3. Analyze Each Downloaded File

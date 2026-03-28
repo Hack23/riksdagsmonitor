@@ -76,9 +76,9 @@ This returns a JSON catalog. Each entry has:
 #### 2b. Apply Political Classification
 
 Determine:
-- **Sensitivity Level**: CRITICAL / HIGH / MEDIUM / LOW
+- **Sensitivity Level**: PUBLIC / SENSITIVE / RESTRICTED
 - **Primary Domain**: MIG, DEF, ECO, ENV, JUS, HEA, EDU, FOR, etc.
-- **Urgency**: IMMEDIATE / SHORT-TERM / MEDIUM-TERM / LONG-TERM
+- **Urgency**: ROUTINE / ELEVATED / URGENT / CRITICAL
 - **Significance Score**: 0–10
 
 Use the classification decision tree from `political-classification-guide.md`.

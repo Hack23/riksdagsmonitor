@@ -208,9 +208,9 @@ START_TIME=$(date +%s)
 | Phase | Minutes | Action |
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()` warm-up, check recent generation |
-| Download & Analysis | 3–15 | Run data download + AI per-file analysis (methodology-guided, SWOT.md quality) |
-| Data | 8–13 | Query MCP tools for article types |
-| Generate | 13–30 | Run `generate-news-enhanced.ts` in batches |
+| Download & Analysis | 3–13 | Run data download + AI per-file analysis (methodology-guided, SWOT.md quality) |
+| Data | 13–18 | Query MCP tools for article types |
+| Generate | 18–30 | Run `generate-news-enhanced.ts` in batches |
 | Validate | 30–38 | Translate, validate, commit |
 | PR | 38–43 | `safeoutputs___create_pull_request` |
 

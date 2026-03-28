@@ -73,9 +73,9 @@ graph LR
 
 | Field | Assessment |
 |-------|-----------|
-| **Sensitivity Level** | `[REQUIRED: CRITICAL / HIGH / MEDIUM / LOW]` |
+| **Sensitivity Level** | `[REQUIRED: PUBLIC / SENSITIVE / RESTRICTED]` |
 | **Primary Domain** | `[REQUIRED: e.g. Migration (MIG), Defence (DEF), Economy (ECO), Climate (ENV), Justice (JUS), Health (HEA), Education (EDU), Foreign Affairs (FOR)]` |
-| **Urgency** | `[REQUIRED: IMMEDIATE / SHORT-TERM / MEDIUM-TERM / LONG-TERM]` |
+| **Urgency** | `[REQUIRED: ROUTINE / ELEVATED / URGENT / CRITICAL]` |
 | **Significance Score** | `[REQUIRED: 0–10]` |
 | **Confidence** | `[REQUIRED: HIGH / MEDIUM / LOW]` |
 

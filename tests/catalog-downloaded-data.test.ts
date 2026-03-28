@@ -127,6 +127,35 @@ describe('catalog-downloaded-data', () => {
     expect(catalog.entries[0].type).toBe('votes');
   });
 
+  it('catalogs documents/votes/ for votes without valid datum', () => {
+    writeJSON(
+      path.join(tmpRoot, 'documents/votes/vote-nodatum.json'),
+      { id: 'vote-nodatum', typ: 'votering' },
+    );
+
+    const catalog = buildCatalog(tmpRoot);
+    expect(catalog.totalFiles).toBe(1);
+    expect(catalog.entries[0].id).toBe('vote-nodatum');
+    expect(catalog.entries[0].type).toBe('votes');
+  });
+
+  it('deduplicates votes appearing in both documents/votes and votes/YYYY-MM-DD', () => {
+    writeJSON(
+      path.join(tmpRoot, 'documents/votes/vote-dup.json'),
+      { id: 'vote-dup' },
+    );
+    writeJSON(
+      path.join(tmpRoot, 'votes/2026-03-28/vote-dup.json'),
+      { id: 'vote-dup', datum: '2026-03-28' },
+    );
+
+    const catalog = buildCatalog(tmpRoot);
+    // Should only appear once, preferring the date-stamped path
+    expect(catalog.totalFiles).toBe(1);
+    expect(catalog.entries[0].id).toBe('vote-dup');
+    expect(catalog.entries[0].path).toContain('votes/2026-03-28/');
+  });
+
   it('handles malformed meta.json gracefully', () => {
     writeJSON(path.join(tmpRoot, 'scb/table1.json'), { data: [] });
     fs.writeFileSync(

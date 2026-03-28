@@ -44,9 +44,9 @@
 
 ## 📊 Section 1: Individual Event Scoring
 
-### Significance Scoring Radar
+### Scoring Profile & Decision Gate
 
-> **AI Instructions:** After scoring each dimension, this diagram visualizes the scoring profile. Replace `[#]` values with actual scores.
+> **AI Instructions:** After scoring each dimension, this diagram visualizes the scoring profile and routing decision. Replace `[#]` values with actual scores.
 
 ```mermaid
 graph TD

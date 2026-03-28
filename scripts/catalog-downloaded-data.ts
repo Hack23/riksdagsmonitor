@@ -76,6 +76,7 @@ const DATA_SUBDIRS = [
   'documents/speeches',
   'documents/questions',
   'documents/interpellations',
+  'documents/votes',
   'votes',
   'events',
   'mps',
@@ -147,6 +148,30 @@ export function buildCatalog(
         sizeBytes: stat.size,
         meta,
       });
+    }
+  }
+
+  // De-duplicate vote entries: when the same id appears from both
+  // documents/votes and votes/YYYY-MM-DD, prefer the date-stamped path.
+  const seen = new Map<string, number>();
+  for (let i = 0; i < allEntries.length; i++) {
+    const e = allEntries[i];
+    const key = `${e.type}::${e.id}`;
+    if (seen.has(key)) {
+      const prevIdx = seen.get(key)!;
+      const prevPath = allEntries[prevIdx].path;
+      // Keep the entry whose path contains a date directory (votes/YYYY-MM-DD)
+      if (/votes\/\d{4}-\d{2}-\d{2}\//.test(e.path) && !/votes\/\d{4}-\d{2}-\d{2}\//.test(prevPath)) {
+        allEntries.splice(prevIdx, 1);
+        // Adjust index since we removed an earlier element
+        i--;
+        seen.set(key, i);
+      } else {
+        allEntries.splice(i, 1);
+        i--;
+      }
+    } else {
+      seen.set(key, i);
     }
   }
 

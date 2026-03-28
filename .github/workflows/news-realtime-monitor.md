@@ -172,9 +172,9 @@ START_TIME=$(date +%s)
 | Phase | Minutes | Action |
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()` warm-up |
-| Download & Analysis | 3–15 | Run data download + AI per-file analysis (methodology-guided, SWOT.md quality) |
-| Detect | 8–13 | Query MCP tools for today's activity |
-| Generate | 13–30 | Run `generate-news-enhanced.ts` script (core languages by default; supports all 14 languages via `languages=all`) |
+| Download & Analysis | 3–13 | Run data download + AI per-file analysis (methodology-guided, SWOT.md quality) |
+| Detect | 13–18 | Query MCP tools for today's activity |
+| Generate | 18–30 | Run `generate-news-enhanced.ts` script (core languages by default; supports all 14 languages via `languages=all`) |
 | Validate | 30–35 | Run `validate-news-generation.sh` |
 | Commit+PR | 35–40 | `git add && git commit`, then `safeoutputs___create_pull_request` |
 

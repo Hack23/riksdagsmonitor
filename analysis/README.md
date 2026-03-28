@@ -168,18 +168,19 @@ Real-time monitoring of parliamentary activity with per-file analysis on new dat
 
 | Path | Purpose |
 |------|---------|
+| `scripts/catalog-downloaded-data.ts` | Catalog downloaded files, list pending analysis |
+| `scripts/populate-analysis-data.ts` | Standalone MCP data fetcher (7 data types) |
+| `scripts/pre-article-analysis.ts` | Orchestrates 10-step analysis pipeline |
 | `scripts/analysis-framework/` | Core analysis pipeline (TypeScript) |
 | `scripts/analysis-framework/lenses/` | Per-perspective classifiers (citizen, economic, government, international, media, opposition) |
 | `scripts/analysis-framework/significance-scorer.ts` | Significance score computation |
 | `scripts/analysis-framework/cross-reference.ts` | Cross-document reference linking |
 | `scripts/pre-article-analysis/data-persistence.ts` | MCP data persistence to `analysis/data/` |
 | `scripts/pre-article-analysis/data-downloader.ts` | Document download from riksdag-regering-mcp |
-| `scripts/pre-article-analysis/pdf-converter.ts` | PDF-to-text/markdown conversion utility |
 | `scripts/ai-analysis/` | AI-assisted analysis generation |
 | `scripts/ai-analysis/swot/` | SWOT generation pipeline |
-| `scripts/prompts/v1/political-analysis.md` | LLM prompt templates for analysis |
-| `scripts/prompts/v1/swot-generation.md` | SWOT-specific LLM prompts |
-| `scripts/prompts/v1/stakeholder-perspectives.md` | Stakeholder lens prompts |
+| `scripts/analysis-reader.ts` | Read daily analysis files with fallback |
+| `scripts/prompts/v2/` | LLM prompt templates for analysis (v2) |
 
 ---
 
@@ -188,8 +189,8 @@ Real-time monitoring of parliamentary activity with per-file analysis on new dat
 - [📐 ARCHITECTURE.md](../ARCHITECTURE.md) — System architecture overview
 - [🧠 MINDMAP.md](../MINDMAP.md) — Conceptual relationship map
 - [🔄 FLOWCHART.md](../FLOWCHART.md) — Data flow diagrams
-- [🛡️ THREAT_MODEL.md](../THREAT_MODEL.md) — Platform threat analysis
-- [💼 SWOT.md](../SWOT.md) — Platform strategic analysis
+- [🛡️ THREAT_MODEL.md](../THREAT_MODEL.md) — Platform threat analysis (**formatting exemplar**)
+- [💼 SWOT.md](../SWOT.md) — Platform strategic analysis (**formatting exemplar**)
 - [🔐 SECURITY_ARCHITECTURE.md](../SECURITY_ARCHITECTURE.md) — Security controls
 
 ---
@@ -252,37 +253,6 @@ When multiple workflows run concurrently:
 - **Per-file analyses** (`{id}.analysis.md`) are inherently conflict-free — each file analyzed independently
 - **Daily synthesis** files should use append-or-replace strategy: later runs overwrite earlier synthesis
 - **Weekly aggregations** compose from per-file analyses, not from daily synthesis
-
----
-
-## 📚 Related Scripts
-
-| Path | Purpose |
-|------|---------|
-| `scripts/catalog-downloaded-data.ts` | Catalog downloaded files, list pending analysis |
-| `scripts/populate-analysis-data.ts` | Standalone MCP data fetcher (7 data types) |
-| `scripts/pre-article-analysis.ts` | Orchestrates 10-step analysis pipeline |
-| `scripts/analysis-framework/` | Core analysis pipeline (TypeScript) |
-| `scripts/analysis-framework/lenses/` | Per-perspective classifiers (citizen, economic, government, international, media, opposition) |
-| `scripts/analysis-framework/significance-scorer.ts` | Significance score computation |
-| `scripts/analysis-framework/cross-reference.ts` | Cross-document reference linking |
-| `scripts/pre-article-analysis/data-persistence.ts` | MCP data persistence to `analysis/data/` |
-| `scripts/pre-article-analysis/data-downloader.ts` | Document download from riksdag-regering-mcp |
-| `scripts/ai-analysis/` | AI-assisted analysis generation |
-| `scripts/ai-analysis/swot/` | SWOT generation pipeline |
-| `scripts/analysis-reader.ts` | Read daily analysis files with fallback |
-| `scripts/prompts/v2/` | LLM prompt templates for analysis (v2) |
-
----
-
-## 🔗 Related Documentation
-
-- [📐 ARCHITECTURE.md](../ARCHITECTURE.md) — System architecture overview
-- [🧠 MINDMAP.md](../MINDMAP.md) — Conceptual relationship map
-- [🔄 FLOWCHART.md](../FLOWCHART.md) — Data flow diagrams
-- [🛡️ THREAT_MODEL.md](../THREAT_MODEL.md) — Platform threat analysis (**formatting exemplar**)
-- [💼 SWOT.md](../SWOT.md) — Platform strategic analysis (**formatting exemplar**)
-- [🔐 SECURITY_ARCHITECTURE.md](../SECURITY_ARCHITECTURE.md) — Security controls
 
 ---
 
