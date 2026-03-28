@@ -196,7 +196,7 @@ async function main(): Promise<void> {
       const doc = govDocs[i];
       if (!doc) continue;
       persistMCPResponse(
-        { tool: 'search_regering', params: { limit }, server: 'riksdag-regering' },
+        { tool: 'search_regering', params: { dateFrom: formatDate(thirtyDaysAgo), dateTo: date, limit }, server: 'riksdag-regering' },
         doc,
         resolveDocId(doc, i),
       );
@@ -222,7 +222,7 @@ async function main(): Promise<void> {
       const id = (typeof record['parti'] === 'string' && record['parti'])
         || `group-${i + 1}`;
       persistMCPResponse(
-        { tool: 'get_voting_group', params: { rm, groupBy: 'parti' }, server: 'riksdag-regering' },
+        { tool: 'get_voting_group', params: { rm, groupBy: 'parti', limit }, server: 'riksdag-regering' },
         group,
         `${rm.replace('/', '-')}-${id}`,
       );
