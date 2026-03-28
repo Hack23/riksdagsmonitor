@@ -290,25 +290,116 @@ Every agentic news workflow should include this analysis step **after** data dow
 ## Step N: Per-File AI Analysis
 
 1. Run catalog: `npx tsx scripts/catalog-downloaded-data.ts --pending-only`
-2. Read methodology documents (see AI-Driven Analysis Guide)
+2. Read ALL methodology documents (this file + 5 frameworks + 1 template)
 3. For each pending file in the catalog:
-   a. Read the data JSON file
-   b. Apply the per-file-political-intelligence template
-   c. Fill ALL required fields with evidence-based analysis
-   d. Include at least 1 color-coded Mermaid diagram
-   e. Write {id}.analysis.md alongside the data file
+   a. Read the data JSON file with `view` or `cat` — understand what data it contains
+   b. Use MCP tools to gather additional context (related votes, speeches, committee reports)
+   c. Apply the per-file-political-intelligence template
+   d. Fill ALL required fields with evidence-based analysis from the actual data
+   e. Include at least 1 color-coded Mermaid diagram with REAL data from the file
+   f. Write {id}.analysis.md alongside the data file
 4. Compose daily/weekly synthesis from per-file analyses
+```
+
+### MCP Data Enrichment
+
+When analyzing a parliamentary document, use MCP tools to gather context:
+
+```mermaid
+graph TD
+    FILE["📄 Data File<br/>{id}.json"] --> READ["🔍 Read & Extract<br/>Key fields"]
+    READ --> MCP1["🗳️ search_voteringar<br/>Related vote records"]
+    READ --> MCP2["📋 search_dokument<br/>Related documents"]
+    READ --> MCP3["🎤 search_anforanden<br/>Related speeches"]
+    READ --> MCP4["📊 World Bank / SCB<br/>Economic context"]
+    
+    MCP1 --> ANALYSIS["🧠 Full Analysis<br/>SWOT + Risk + Threat + Stakeholder"]
+    MCP2 --> ANALYSIS
+    MCP3 --> ANALYSIS
+    MCP4 --> ANALYSIS
+    
+    ANALYSIS --> OUTPUT["💾 {id}.analysis.md<br/>Publication-quality intelligence"]
+    
+    style FILE fill:#0d6efd,color:#fff
+    style ANALYSIS fill:#6f42c1,color:#fff
+    style OUTPUT fill:#28a745,color:#fff
 ```
 
 ### Synthesis Composition
 
-After all per-file analyses are complete, the AI agent composes the daily synthesis by:
+After all per-file analyses are complete, compose the daily synthesis:
 
-1. Reading all `.analysis.md` files for the analysis period
-2. Identifying highest-significance documents
-3. Aggregating SWOT entries using the [political-swot-framework.md](political-swot-framework.md) aggregation rules
-4. Computing overall risk landscape from individual risk assessments
-5. Writing the synthesis to `analysis/daily/YYYY-MM-DD/synthesis-summary.md`
+```mermaid
+flowchart LR
+    A["📄 File 1<br/>.analysis.md"] --> SYN["📊 Daily Synthesis"]
+    B["📄 File 2<br/>.analysis.md"] --> SYN
+    C["📄 File N<br/>.analysis.md"] --> SYN
+    
+    SYN --> R1["📈 Significance Ranking"]
+    SYN --> R2["💪 Aggregated SWOT"]
+    SYN --> R3["⚠️ Risk Landscape"]
+    SYN --> R4["🔮 Combined Forward Indicators"]
+    
+    R1 --> OUT["📝 synthesis-summary.md"]
+    R2 --> OUT
+    R3 --> OUT
+    R4 --> OUT
+    
+    style SYN fill:#6f42c1,color:#fff
+    style OUT fill:#28a745,color:#fff
+```
+
+Steps:
+1. Read all `.analysis.md` files for the analysis period
+2. Rank documents by significance score
+3. Aggregate SWOT entries using the [political-swot-framework.md](political-swot-framework.md) intersection rules (Gov S + Opp T = contested terrain, Gov W + Opp O = opposition opportunity)
+4. Compute overall risk landscape from individual risk assessments
+5. Write to `analysis/daily/YYYY-MM-DD/synthesis-summary.md`
+
+---
+
+## ✅ Concrete Example: What Good Analysis Looks Like
+
+Below is a **mini example** showing the difference between bad and good analysis output:
+
+### ❌ BAD — Generic boilerplate (FAILS quality gate)
+
+```markdown
+## 🎯 Executive Summary
+This document is significant because it relates to fiscal policy. 
+The government's position is strengthened. [MEDIUM confidence]
+
+## 💪 SWOT Impact
+| Quadrant | Statement | Evidence | Confidence |
+|----------|-----------|----------|:----------:|
+| ✅ Strength | Government position strengthened | [REQUIRED] | M |
+| 🔴 Threat | Opposition may criticize | [REQUIRED] | L |
+```
+
+**Problems:** No dok_id references, generic text, `[REQUIRED]` still present, no specific data.
+
+### ✅ GOOD — Evidence-based intelligence (PASSES quality gate)
+
+```markdown
+## 🎯 Executive Summary
+The Finance Committee report FiU10 (dok_id: H901FiU10) sets budget framework
+guidelines targeting 0.33% GDP surplus for 2027–2029. Passed 176–173 with full
+coalition + SD support. Three reservations filed: S proposes +15B SEK welfare 
+allocation (reservation 1), V demands housing investment fund (reservation 2), 
+MP proposes green transition budget line (reservation 3). **[HIGH confidence]**
+The narrow margin (3 votes) and pre-election timing make this a critical test 
+of coalition fiscal discipline.
+
+## 💪 SWOT Impact
+| Quadrant | Statement | Evidence | Confidence |
+|----------|-----------|----------|:----------:|
+| ✅ Strength | Coalition + SD aligned on core fiscal framework | FiU10 vote: 176 Ja, 173 Nej (dok_id: H901FiU10) | **H** |
+| ⚠️ Weakness | Welfare spending gap creates electoral vulnerability | S reservation: +15B SEK welfare (H901FiU10 res.1) | **H** |
+| 🚀 Opp. Opportunity | S welfare alternative provides clear campaign platform | S alternative budget motion 2025/26:Fi300 | **M** |
+| 🔴 Threat | Consumer confidence declining per SCB Q1 data | SCB indicator: HCI -3.2 pts | **M** |
+```
+
+**Why this passes:** Every claim cites a specific dok_id, vote count, or data source. Confidence labels are evidence-based. No generic text.
 
 ---
 
@@ -317,6 +408,7 @@ After all per-file analyses are complete, the AI agent composes the daily synthe
 | Document | Purpose |
 |----------|---------|
 | [per-file-political-intelligence.md](../templates/per-file-political-intelligence.md) | Per-file analysis output template |
+| [per-file-intelligence-analysis.md](../../scripts/prompts/v2/per-file-intelligence-analysis.md) | AI prompt with full protocol and filled example |
 | [political-swot-framework.md](political-swot-framework.md) | SWOT methodology with evidence hierarchy |
 | [political-risk-methodology.md](political-risk-methodology.md) | Risk assessment methodology |
 | [political-threat-framework.md](political-threat-framework.md) | STRIDE-adapted threat framework |

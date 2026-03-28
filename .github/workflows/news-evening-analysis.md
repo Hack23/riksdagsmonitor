@@ -558,18 +558,20 @@ echo "✅ Data downloaded to analysis/data/"
 
 ### Phase B — Per-File AI Political Intelligence Analysis (AI-Driven)
 
-**This is the core analysis phase.** The AI agent (you) now performs deep analysis of every downloaded file, replacing the shallow script-based analysis with intelligence-level insights.
+**This is the core analysis phase.** The AI agent (you) performs deep analysis of every downloaded file, creating publication-quality intelligence markdown files.
+
+> 🚨 **CRITICAL RULE:** You must **actually read the JSON data** in each file and base all analysis on real data found there. Every SWOT entry, risk score, and stakeholder assessment must cite specific data from the file (dok_id, vote counts, party names, reservation details). Generic or boilerplate analysis is a failure mode — see the bad/good examples in `analysis/methodologies/ai-driven-analysis-guide.md`.
 
 #### B1. Read Methodology Documents
 
-**Before analyzing any file, read these methodology guides:**
-1. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Master per-file analysis guide
+**Before analyzing any file, use `view` or `cat` to read these methodology guides:**
+1. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Master per-file analysis guide (includes bad/good examples)
 2. **`analysis/methodologies/political-swot-framework.md`** — Evidence-based SWOT with confidence hierarchy
-3. **`analysis/methodologies/political-risk-methodology.md`** — 5×5 Likelihood×Impact risk matrix
-4. **`analysis/methodologies/political-threat-framework.md`** — STRIDE-adapted democratic threat model
+3. **`analysis/methodologies/political-risk-methodology.md`** — 5×5 Likelihood×Impact risk matrix, calibration examples
+4. **`analysis/methodologies/political-threat-framework.md`** — STRIDE-adapted threat model, severity calibration
 5. **`analysis/methodologies/political-classification-guide.md`** — Sensitivity and domain taxonomy
 6. **`analysis/templates/per-file-political-intelligence.md`** — Per-file output template (SWOT.md quality)
-7. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Detailed analysis protocol
+7. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Detailed protocol with filled example
 
 #### B2. Get File Catalog
 
@@ -584,14 +586,16 @@ npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | head -5
 
 For each pending file from the catalog (ordered by significance — propositions and votes first):
 
-1. **Read** the JSON data file
-2. **Classify** — Sensitivity level, domain, urgency, significance (0–10)
-3. **SWOT** — Government + Opposition impact with evidence (dok_id required)
-4. **Risk** — 5×5 Likelihood×Impact matrix (coalition, policy, electoral, democratic)
-5. **STRIDE** — Political threat analysis (where applicable)
-6. **Stakeholders** — 6-lens impact matrix (government, opposition, citizen, economic, international, media)
-7. **Forward indicators** — Specific watch items with timelines
-8. **Write** `{id}.analysis.md` alongside the data file
+1. **Read** the JSON data file — use `view` or `cat` to read the actual content
+2. **Extract** key fields (dok_id, titel, datum, parti, vote counts, reservations, etc.)
+3. **Classify** — Sensitivity level, domain, urgency, significance (0–10)
+4. **SWOT** — Government + Opposition impact with evidence (cite specific dok_id, vote margins, party positions)
+5. **Risk** — 5×5 Likelihood×Impact matrix with numeric scores (coalition, policy, budget, electoral, democratic, external)
+6. **STRIDE** — Political threat analysis (only where applicable — cite evidence)
+7. **Stakeholders** — 6-lens impact matrix (government, opposition, citizen, economic, international, media)
+8. **Forward indicators** — Specific watch items with concrete timelines and triggers
+9. **Mermaid diagrams** — At least 1 diagram with REAL data from the file (not placeholder text)
+10. **Write** `{id}.analysis.md` alongside the data file
 
 **Quality standard:** Each analysis file must match [SWOT.md](../../SWOT.md) / [THREAT_MODEL.md](../../THREAT_MODEL.md) quality — Hack23 header badges, color-coded Mermaid diagrams, evidence tables with confidence labels, and actionable intelligence.
 

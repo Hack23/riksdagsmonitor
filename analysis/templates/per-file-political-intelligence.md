@@ -125,26 +125,44 @@ quadrantChart
 
 ```mermaid
 graph TD
-    subgraph "Risk Matrix"
-        direction TB
-        R1["🔴 Coalition Stability Risk"]
-        R2["🟠 Policy Implementation Risk"]
-        R3["🟡 Electoral Risk"]
-        R4["🟢 Institutional Risk"]
+    subgraph "⚖️ Political Risk Matrix — Likelihood × Impact"
+        R1["🔴 Coalition Stability<br/>L:[?] × I:[?] = [?]"]
+        R2["🟠 Policy Implementation<br/>L:[?] × I:[?] = [?]"]
+        R3["🟡 Budget / Fiscal<br/>L:[?] × I:[?] = [?]"]
+        R4["📊 Electoral Impact<br/>L:[?] × I:[?] = [?]"]
+        R5["🏛️ Democratic Process<br/>L:[?] × I:[?] = [?]"]
+        R6["🌍 External / International<br/>L:[?] × I:[?] = [?]"]
     end
     
-    R1 --> |"Likelihood × Impact"| S1["Score: [N/25]"]
-    R2 --> |"Likelihood × Impact"| S2["Score: [N/25]"]
-    R3 --> |"Likelihood × Impact"| S3["Score: [N/25]"]
-    R4 --> |"Likelihood × Impact"| S4["Score: [N/25]"]
+    subgraph "📊 Risk Score Tiers"
+        T1["🔴 CRITICAL<br/>Score 15–25"]
+        T2["🟠 HIGH<br/>Score 10–14"]
+        T3["🟡 MEDIUM<br/>Score 5–9"]
+        T4["🟢 LOW<br/>Score 1–4"]
+    end
+    
+    R1 -.-> T1
+    R2 -.-> T2
+    R3 -.-> T3
+    R4 -.-> T2
+    R5 -.-> T4
+    R6 -.-> T4
     
     style R1 fill:#dc3545,color:#fff
     style R2 fill:#fd7e14,color:#fff
     style R3 fill:#ffc107,color:#000
-    style R4 fill:#28a745,color:#fff
+    style R4 fill:#fd7e14,color:#fff
+    style R5 fill:#28a745,color:#fff
+    style R6 fill:#28a745,color:#fff
+    style T1 fill:#dc3545,color:#fff
+    style T2 fill:#fd7e14,color:#fff
+    style T3 fill:#ffc107,color:#000
+    style T4 fill:#28a745,color:#fff
 ```
 
 > **Scoring Reference:** Risk Score = Likelihood × Impact (product, not sum). Both are scored 1–5, giving a range of 1–25. Score tiers: 1–4 🟢 Low, 5–9 🟡 Medium, 10–14 🟠 High, 15–25 🔴 Critical. See [political-risk-methodology.md](../methodologies/political-risk-methodology.md) for calibration examples.
+> 
+> **⚠️ AI Instructions:** Replace ALL `[?]` placeholders with actual numbers derived from the document data. The Mermaid diagram above is a TEMPLATE — when you fill it in, the node labels should show real scores like `"🔴 Coalition Stability<br/>L:2 × I:3 = 6"` and the dotted arrows should point to the correct tier.
 
 | Risk Type | Likelihood (1–5) | Impact (1–5) | Score | Assessment |
 |-----------|:-----------------:|:------------:|:-----:|------------|
@@ -207,23 +225,35 @@ graph LR
 
 ## 👥 Stakeholder Impact Matrix
 
-> *Six analytical lenses applied to this document.*
+> *Six analytical lenses applied to this document. The AI must assess each stakeholder based on actual document content.*
 
 ```mermaid
 graph TD
-    DOC["📄 This Document"] --> GOV["🏛️ Government"]
-    DOC --> OPP["⚖️ Opposition"]
-    DOC --> CIT["👥 Citizens"]
-    DOC --> ECO["💰 Economic Actors"]
-    DOC --> INT["🌍 International"]
-    DOC --> MED["📰 Media"]
+    subgraph "📄 Document Impact Assessment"
+        DOC["📄 This Document"]
+    end
     
-    GOV --> G1["[Impact summary]"]
-    OPP --> O1["[Impact summary]"]
-    CIT --> C1["[Impact summary]"]
-    ECO --> E1["[Impact summary]"]
-    INT --> I1["[Impact summary]"]
-    MED --> M1["[Impact summary]"]
+    subgraph "🏛️ Political Actors"
+        GOV["🏛️ Government Coalition<br/>M + KD + L (+ SD)"]
+        OPP["⚖️ Opposition<br/>S, V, MP, C"]
+    end
+    
+    subgraph "👥 Society & Economy"
+        CIT["👥 Citizens<br/>Public services, rights"]
+        ECO["💰 Economic Actors<br/>Business, labour, fiscal"]
+    end
+    
+    subgraph "🌍 External & Media"
+        INT["🌍 International<br/>EU, Nordic, NATO"]
+        MED["📰 Media<br/>Narrative, newsworthiness"]
+    end
+    
+    DOC --> GOV
+    DOC --> OPP
+    DOC --> CIT
+    DOC --> ECO
+    DOC --> INT
+    DOC --> MED
     
     style DOC fill:#0d6efd,color:#fff
     style GOV fill:#198754,color:#fff
