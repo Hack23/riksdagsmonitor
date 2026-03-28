@@ -182,9 +182,12 @@ Before generating articles, consult these skills:
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
 6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
-7. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
+7. **`scripts/prompts/v2/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
 8. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
 9. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
+10. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Per-file AI analysis protocol
+11. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Methodology for deep per-file analysis
+12. **`analysis/templates/per-file-political-intelligence.md`** — Per-file analysis output template
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
 
@@ -393,6 +396,19 @@ echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/proposition
 ls -la "analysis/daily/$ARTICLE_DATE/propositions/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
 ```
 
+### Per-File AI Analysis Enhancement
+
+After the script-based analysis, perform **AI-driven per-file analysis** for deeper intelligence:
+
+1. Run `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to list files needing analysis
+2. Read the methodology guides:
+   - `analysis/methodologies/ai-driven-analysis-guide.md`
+   - `analysis/methodologies/political-swot-framework.md`
+   - `analysis/templates/per-file-political-intelligence.md`
+3. For each pending file: classify, SWOT, risk assess, STRIDE, stakeholder impact, write `.analysis.md`
+4. Each analysis file must include color-coded Mermaid diagrams and evidence tables
+5. Quality gate: ≥3 evidence points, confidence labels, no template placeholders
+
 The analysis pipeline outputs the following artifacts per doc-type run:
 - `data-download-manifest.md` — Download metadata and document counts
 - `classification-results.md` — Document classification and priority levels
@@ -505,6 +521,9 @@ If the generated article lacks these analytical sections, manually add contextua
 
 After article generation, verify EACH article meets these minimum standards before committing.
 Apply the quality rubric from **`scripts/prompts/v1/quality-criteria.md`** (minimum score: 7/10).
+10. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Per-file AI analysis protocol
+11. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Methodology for deep per-file analysis
+12. **`analysis/templates/per-file-political-intelligence.md`** — Per-file analysis output template
 
 ### Iterative Analysis Protocol
 
