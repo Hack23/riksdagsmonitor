@@ -186,10 +186,11 @@ describe('data-persistence', () => {
 
   describe('MCP response storage', () => {
     it('should store generic MCP tool response', () => {
+      const testId = `test-sync-${Date.now()}`;
       const resultPath = persistMCPResponse(
-        { tool: 'get_sync_status', params: {}, server: 'riksdag-regering' },
+        { tool: 'get_sync_status', params: {}, server: 'test-riksdag' },
         { status: 'ok', last_sync: '2026-03-28' },
-        'sync-status-2026-03-28',
+        testId,
       );
       expect(fs.existsSync(resultPath)).toBe(true);
       const data = JSON.parse(fs.readFileSync(resultPath, 'utf8'));
@@ -201,13 +202,14 @@ describe('data-persistence', () => {
       const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
       expect(meta.mcpTool).toBe('get_sync_status');
 
-      // Cleanup
-      fs.rmSync(path.dirname(resultPath), { recursive: true, force: true });
+      // Cleanup: remove only the test-specific server dir
+      fs.rmSync(path.join(path.dirname(path.dirname(resultPath))), { recursive: true, force: true });
     });
 
     it('should store World Bank data with indicator/country structure', () => {
+      const testIndicator = `TEST.INDICATOR.${Date.now()}`;
       const resultPath = persistWorldBankData(
-        'NY.GDP.MKTP.CD',
+        testIndicator,
         'SWE',
         [{ date: '2025', value: 600000000000 }],
       );
@@ -219,13 +221,14 @@ describe('data-persistence', () => {
       const metaPath = resultPath.replace('.json', '.meta.json');
       expect(fs.existsSync(metaPath)).toBe(true);
 
-      // Cleanup
+      // Cleanup: remove only the test-specific indicator dir
       fs.rmSync(path.dirname(resultPath), { recursive: true, force: true });
     });
 
     it('should store SCB table data', () => {
+      const testTableId = `TEST${Date.now()}`;
       const resultPath = persistSCBData(
-        'BE0101A',
+        testTableId,
         { columns: ['Region', 'Population'], data: [[1, 10000]] },
         { region: '01' },
       );
@@ -234,7 +237,7 @@ describe('data-persistence', () => {
       // Verify sidecar has query params
       const metaPath = resultPath.replace('.json', '.meta.json');
       const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
-      expect(meta.tableId).toBe('BE0101A');
+      expect(meta.tableId).toBe(testTableId);
       expect(meta.query.region).toBe('01');
 
       // Cleanup

@@ -45,7 +45,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '../..');
 const DATA_ROOT = path.join(REPO_ROOT, 'analysis', 'data');
 
-/** ISO 8601 date pattern (YYYY-MM-DD). Used to validate date strings before creating directories. */
+/** ISO 8601 date format pattern (YYYY-MM-DD). Checks format only, not date validity. */
 const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 // ---------------------------------------------------------------------------

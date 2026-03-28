@@ -116,7 +116,7 @@ export function convertPdfBufferToText(
     fs.writeFileSync(tempFile, pdfBuffer);
     return convertPdfToText(tempFile);
   } finally {
-    try { fs.unlinkSync(tempFile); } catch { /* best effort cleanup */ }
+    try { fs.unlinkSync(tempFile); } catch (err) { console.debug('Temp file cleanup failed:', err); }
   }
 }
 
