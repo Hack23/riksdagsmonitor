@@ -24,6 +24,8 @@
 > **⚠️ Manual Rubric Note:** This template is a human analyst support rubric for narrative reasoning and editorial prioritisation. Automated JSON scoring (`morning-significance-scores.json`) is computed exclusively by `scripts/analysis-framework/significance-scorer.ts`.
 >
 > **Implementation Reference:** The TypeScript scorer uses a 6-dimension weighted model (0.25/0.20/0.15/0.20/0.10/0.10) and returns an integer score (1–10) via rounding. Treat this template as a separate manual rubric for editorial context, not as the source of truth for automated scoring outputs.
+>
+> **Score Reconciliation:** When manual and automated scores diverge by more than 3 points (e.g., manual=3, automated=7), the AI analyst must: (1) use the HIGHER score for editorial routing, (2) note the divergence in the scoring rationale, (3) flag for human editorial review. This ensures no significant event is under-classified.
 
 ---
 
@@ -41,6 +43,45 @@
 ---
 
 ## 📊 Section 1: Individual Event Scoring
+
+### Scoring Profile & Decision Gate
+
+> **AI Instructions:** After scoring each dimension, this diagram visualizes the scoring profile and routing decision. Replace `[#]` values with actual scores.
+
+```mermaid
+graph TD
+    subgraph "📈 Significance Score Profile"
+        PARL["🏛️ Parliamentary<br/>Score: [#]/10"]
+        POL["📋 Policy Impact<br/>Score: [#]/10"]
+        PUB["👥 Public Interest<br/>Score: [#]/10"]
+        URG["⏰ Urgency<br/>Score: [#]/10"]
+        XPTY["🤝 Cross-party<br/>Score: [#]/10"]
+    end
+
+    subgraph "🚦 Decision Gate"
+        COMP["📊 Composite Score<br/>[#.#] / 10"]
+        DEC{Decision}
+        DEC -->|"≥ 9.0"| BRK["⚡ BREAKING"]
+        DEC -->|"7.5–8.9"| PRI["📰 PRIORITY"]
+        DEC -->|"6.0–7.4"| PUB2["📰 PUBLISH"]
+        DEC -->|"4.0–5.9"| MON["📋 MONITOR"]
+        DEC -->|"< 4.0"| ARC["🗄️ ARCHIVE"]
+    end
+
+    PARL --> COMP
+    POL --> COMP
+    PUB --> COMP
+    URG --> COMP
+    XPTY --> COMP
+    COMP --> DEC
+
+    style BRK fill:#dc3545,color:#fff
+    style PRI fill:#fd7e14,color:#fff
+    style PUB2 fill:#28a745,color:#fff
+    style MON fill:#ffc107,color:#000
+    style ARC fill:#6c757d,color:#fff
+    style COMP fill:#0d6efd,color:#fff
+```
 
 Score each dimension from **0 to 10**. See calibration examples below.
 

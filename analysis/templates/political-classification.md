@@ -40,6 +40,42 @@
 
 ## 🏷️ Classification Dimensions
 
+### Classification Decision Tree
+
+> **AI Instructions:** After classifying the event, highlight the active path through this diagram by noting which sensitivity, urgency, and scope were selected.
+
+```mermaid
+graph LR
+    DOC["📄 Document"] --> SENS{Sensitivity}
+    SENS -->|"🟢 PUBLIC"| PUB[Routine Activity]
+    SENS -->|"🟡 SENSITIVE"| SEN[Careful Framing]
+    SENS -->|"🔴 RESTRICTED"| RES[Editorial Review]
+
+    DOC --> URG{Urgency}
+    URG -->|"⚪ ROUTINE"| ROUT[Standard Process]
+    URG -->|"🔵 ELEVATED"| ELEV[Active Review]
+    URG -->|"🟠 URGENT"| URGE[48h Window]
+    URG -->|"🔴 CRITICAL"| CRIT[Immediate Response]
+
+    DOC --> SCOPE{Impact Scope}
+    SCOPE -->|"🏘️ LOCAL"| LOC[Municipality/Region]
+    SCOPE -->|"🇸🇪 NATIONAL"| NAT[All Citizens]
+    SCOPE -->|"🇪🇺 EU"| EU[EU Regulatory]
+    SCOPE -->|"🌍 INTERNATIONAL"| INT[Multilateral]
+
+    style PUB fill:#28a745,color:#fff
+    style SEN fill:#ffc107,color:#000
+    style RES fill:#dc3545,color:#fff
+    style ROUT fill:#6c757d,color:#fff
+    style ELEV fill:#0d6efd,color:#fff
+    style URGE fill:#fd7e14,color:#fff
+    style CRIT fill:#dc3545,color:#fff
+    style LOC fill:#28a745,color:#fff
+    style NAT fill:#0d6efd,color:#fff
+    style EU fill:#6f42c1,color:#fff
+    style INT fill:#fd7e14,color:#fff
+```
+
 ### 1. Sensitivity Level
 
 Select exactly **one** sensitivity level. See [methodologies/political-classification-guide.md](../methodologies/political-classification-guide.md) for criteria.
@@ -177,7 +213,36 @@ Significance Score: [REQUIRED: see significance-scoring.md, 0–10 composite]
 
 ---
 
+## 📊 Calibration Example (Filled)
+
+> *This example demonstrates how to complete the template for a real Swedish political event. Use it as a scoring anchor.*
+
+**Event:** Budget proposition 2025/26:1 tabled by Finansminister Elisabeth Svantesson (M)
+
+| Field | Value |
+|-------|-------|
+| **Classification ID** | `CLS-2025-09-20-001` |
+| **Event Type** | Proposition |
+| **Event Date** | `2025-09-20` |
+| **Primary dok_id** | `H9011` |
+| **Source MCP Tool** | `search_dokument(doktyp=prop)` |
+| **Classified By** | `news-evening-analysis` |
+
+| Dimension | Score | Justification |
+|-----------|:-----:|---------------|
+| **Sensitivity** | 🟡 SENSITIVE | Budget involves coalition negotiation with SD; migration allocation contested |
+| **Primary Domain** | ECO (Economy) | Government fiscal policy; secondary: SOC, MIG |
+| **Urgency** | 🟠 URGENT | Budget vote deadline in November; FiU review starting |
+| **Impact Scope** | NATIONAL | Affects all citizens via tax and spending |
+| **Likelihood × Impact** | L=4 × I=4 = 16 🔴 | Budget likely passes (coalition agreement) but impact is severe (entire fiscal year) |
+| **Significance Score** | 8.2/10 | High parliamentary + policy + urgency |
+
+**Recommended Action:** ⚡ **Breaking** (significance 8.2 ≥ 8, urgency URGENT)
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/political-classification.md`  
+- **Framework Reference:** [methodologies/political-classification-guide.md](../methodologies/political-classification-guide.md)  
 - **Classification:** Public  
 - **Next Review:** 2026-06-26

@@ -208,9 +208,9 @@ START_TIME=$(date +%s)
 | Phase | Minutes | Action |
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()` warm-up, check recent generation |
-| Analysis | 3–8 | Run pre-article-analysis pipeline for today's data |
-| Data | 8–13 | Query MCP tools for article types |
-| Generate | 13–30 | Run `generate-news-enhanced.ts` in batches |
+| Download & Analysis | 3–13 | Run data download + AI per-file analysis (methodology-guided, SWOT.md quality) |
+| Data | 13–18 | Query MCP tools for article types |
+| Generate | 18–30 | Run `generate-news-enhanced.ts` in batches |
 | Validate | 30–38 | Translate, validate, commit |
 | PR | 38–43 | `safeoutputs___create_pull_request` |
 
@@ -227,9 +227,12 @@ Before generating articles, consult these skills:
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
 6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
-7. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
+7. **`scripts/prompts/v2/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
 8. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
-9. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
+9. **`scripts/prompts/v2/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
+10. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Per-file AI analysis protocol
+11. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Methodology for deep per-file analysis
+12. **`analysis/templates/per-file-political-intelligence.md`** — Per-file analysis output template
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
 
@@ -304,6 +307,19 @@ npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || ech
 echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
 ```
+
+### Per-File AI Analysis Enhancement
+
+After the script-based analysis, perform **AI-driven per-file analysis** for deeper intelligence:
+
+1. Run `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to list files needing analysis
+2. Read the methodology guides:
+   - `analysis/methodologies/ai-driven-analysis-guide.md`
+   - `analysis/methodologies/political-swot-framework.md`
+   - `analysis/templates/per-file-political-intelligence.md`
+3. For each pending file: classify, SWOT, risk assess, STRIDE, stakeholder impact, write `.analysis.md`
+4. Each analysis file must include color-coded Mermaid diagrams and evidence tables
+5. Quality gate: ≥3 evidence points, confidence labels, no template placeholders
 
 These analysis files are committed alongside articles for human review and continuous improvement.
 

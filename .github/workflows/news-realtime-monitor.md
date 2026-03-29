@@ -172,9 +172,9 @@ START_TIME=$(date +%s)
 | Phase | Minutes | Action |
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()` warm-up |
-| Analysis | 3–8 | Run pre-article-analysis pipeline for today's data |
-| Detect | 8–13 | Query MCP tools for today's activity |
-| Generate | 13–30 | Run `generate-news-enhanced.ts` script (core languages by default; supports all 14 languages via `languages=all`) |
+| Download & Analysis | 3–13 | Run data download + AI per-file analysis (methodology-guided, SWOT.md quality) |
+| Detect | 13–18 | Query MCP tools for today's activity |
+| Generate | 18–30 | Run `generate-news-enhanced.ts` script (core languages by default; supports all 14 languages via `languages=all`) |
 | Validate | 30–35 | Run `validate-news-generation.sh` |
 | Commit+PR | 35–40 | `git add && git commit`, then `safeoutputs___create_pull_request` |
 
@@ -232,6 +232,32 @@ npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || ech
 echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
 ```
+
+### Per-File AI Analysis Enhancement
+
+> 🚨 **CRITICAL RULE:** You must **actually read the JSON data** in each file and base all analysis on real data found there. Every SWOT entry, risk score, and stakeholder assessment must cite specific data from the file (dok_id, vote counts, party names, reservation details). Generic or boilerplate analysis is a failure mode — see the "Concrete Example: What Good Analysis Looks Like" section in `analysis/methodologies/ai-driven-analysis-guide.md` for bad vs. good comparison.
+
+After the script-based analysis, perform **AI-driven per-file analysis** for deeper intelligence:
+
+1. Run `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to list files needing analysis
+2. **Read the methodology guides** (use `view` or `cat` to read each fully):
+   - `analysis/methodologies/ai-driven-analysis-guide.md` — Master per-file analysis guide (includes bad/good examples)
+   - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT with confidence hierarchy
+   - `analysis/methodologies/political-risk-methodology.md` — 5×5 Likelihood×Impact risk matrix
+   - `analysis/methodologies/political-threat-framework.md` — STRIDE-adapted threat model, severity calibration
+   - `analysis/templates/per-file-political-intelligence.md` — Per-file output template
+3. For each pending file:
+   a. **Read** the JSON data file — use `view` or `cat` to read the actual content
+   b. **Extract** key fields (dok_id, titel, datum, etc.)
+   c. **Classify** — Sensitivity level, domain, urgency, significance (0–10)
+   d. **SWOT** — Government + Opposition impact with evidence (cite specific dok_id)
+   e. **Risk** — 5×5 Likelihood×Impact matrix with numeric scores
+   f. **STRIDE** — Political threat analysis (only where applicable — cite evidence)
+   g. **Stakeholders** — 6-lens impact matrix
+   h. **Forward indicators** — Specific watch items with concrete timelines
+   i. **Mermaid diagrams** — At least 1 diagram with REAL data from the file (not placeholder text)
+   j. **Write** `{id}.analysis.md` alongside the data file
+4. Quality gate: ≥3 evidence points, confidence labels, no `[REQUIRED]` placeholders remaining
 
 These analysis files are committed alongside articles for human review and continuous improvement.
 
@@ -557,9 +583,12 @@ Before generating articles, consult these skills:
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
 6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
-7. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
+7. **`scripts/prompts/v2/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
 8. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
-9. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
+9. **`scripts/prompts/v2/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
+10. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Per-file AI analysis protocol
+11. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Methodology for deep per-file analysis
+12. **`analysis/templates/per-file-political-intelligence.md`** — Per-file analysis output template
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
 

@@ -43,14 +43,14 @@
 
 ### ✅ Strengths — Government Coalition
 
-Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact.
+Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact + Entry Date (for temporal decay tracking).
 
-| # | Strength Statement | Evidence (dok_id) | Confidence | Impact |
-|---|-------------------|-------------------|:----------:|:------:|
-| S1 | `[REQUIRED: specific, verifiable strength — e.g. "Coalition maintains working Riksdag majority of 176 seats through SD support agreement"]` | `[REQUIRED: dok_id or vote record]` | `H/M/L` | `H/M/L` |
-| S2 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` |
-| S3 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` |
-| S4 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` |
+| # | Strength Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-------------------|-------------------|:----------:|:------:|:----------:|
+| S1 | `[REQUIRED: specific, verifiable strength — e.g. "Coalition maintains working Riksdag majority of 176 seats through SD support agreement"]` | `[REQUIRED: dok_id or vote record]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| S2 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| S3 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| S4 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
 
 **Coalition Strength Summary:** `[REQUIRED: 1–2 sentences]`
 
@@ -58,11 +58,11 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact.
 
 ### ⚠️ Weaknesses — Government Coalition
 
-| # | Weakness Statement | Evidence (dok_id) | Confidence | Impact |
-|---|-------------------|-------------------|:----------:|:------:|
-| W1 | `[REQUIRED: e.g. "Internal disagreement on migration targets between M and L weakens policy coherence"]` | `[REQUIRED: dok_id or debate reference]` | `H/M/L` | `H/M/L` |
-| W2 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` |
-| W3 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` |
+| # | Weakness Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-------------------|-------------------|:----------:|:------:|:----------:|
+| W1 | `[REQUIRED: e.g. "Internal disagreement on migration targets between M and L weakens policy coherence"]` | `[REQUIRED: dok_id or debate reference]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| W2 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| W3 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
 
 **Coalition Weakness Summary:** `[REQUIRED: 1–2 sentences]`
 
@@ -70,11 +70,11 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact.
 
 ### 🚀 Opportunities — Government Coalition
 
-| # | Opportunity Statement | Evidence (dok_id) | Confidence | Impact |
-|---|----------------------|-------------------|:----------:|:------:|
-| O1 | `[REQUIRED: e.g. "Improving macroeconomic indicators provide window for tax reform legislation"]` | `[REQUIRED: SCB data or budget dok_id]` | `H/M/L` | `H/M/L` |
-| O2 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` |
-| O3 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` |
+| # | Opportunity Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|----------------------|-------------------|:----------:|:------:|:----------:|
+| O1 | `[REQUIRED: e.g. "Improving macroeconomic indicators provide window for tax reform legislation"]` | `[REQUIRED: SCB data or budget dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| O2 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| O3 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
 
 **Coalition Opportunity Summary:** `[REQUIRED: 1–2 sentences]`
 
@@ -82,11 +82,11 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact.
 
 ### 🔴 Threats — Government Coalition
 
-| # | Threat Statement | Evidence (dok_id) | Confidence | Impact |
-|---|-----------------|-------------------|:----------:|:------:|
-| T1 | `[REQUIRED: e.g. "No-confidence motion risk if SD withdraws budget support over crime legislation stall"]` | `[REQUIRED: interpellation or debate ref]` | `H/M/L` | `H/M/L` |
-| T2 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` |
-| T3 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` |
+| # | Threat Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-----------------|-------------------|:----------:|:------:|:----------:|
+| T1 | `[REQUIRED: e.g. "No-confidence motion risk if SD withdraws budget support over crime legislation stall"]` | `[REQUIRED: interpellation or debate ref]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| T2 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| T3 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
 
 **Coalition Threat Summary:** `[REQUIRED: 1–2 sentences]`
 
@@ -100,29 +100,29 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact.
 
 ### ✅ Strengths — Opposition
 
-| # | Strength Statement | Evidence (dok_id) | Confidence | Impact |
-|---|-------------------|-------------------|:----------:|:------:|
-| S1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` |
-| S2 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` |
+| # | Strength Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-------------------|-------------------|:----------:|:------:|:----------:|
+| S1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| S2 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
 
 ### ⚠️ Weaknesses — Opposition
 
-| # | Weakness Statement | Evidence (dok_id) | Confidence | Impact |
-|---|-------------------|-------------------|:----------:|:------:|
-| W1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` |
-| W2 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` |
+| # | Weakness Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-------------------|-------------------|:----------:|:------:|:----------:|
+| W1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| W2 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
 
 ### 🚀 Opportunities — Opposition
 
-| # | Opportunity Statement | Evidence (dok_id) | Confidence | Impact |
-|---|----------------------|-------------------|:----------:|:------:|
-| O1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` |
+| # | Opportunity Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|----------------------|-------------------|:----------:|:------:|:----------:|
+| O1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
 
 ### 🔴 Threats — Opposition
 
-| # | Threat Statement | Evidence (dok_id) | Confidence | Impact |
-|---|-----------------|-------------------|:----------:|:------:|
-| T1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` |
+| # | Threat Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-----------------|-------------------|:----------:|:------:|:----------:|
+| T1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
 
 ---
 
@@ -132,34 +132,75 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact.
 
 ### ✅ Strengths in Domain
 
-| # | Strength Statement | Evidence (dok_id) | Confidence | Impact |
-|---|-------------------|-------------------|:----------:|:------:|
-| S1 | `[REQUIRED: e.g. "Sweden meets 2025 renewable energy target; supporting legislation fully enacted (prop 2024/25:XX)"]` | `[dok_id]` | `H/M/L` | `H/M/L` |
-| S2 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` |
+| # | Strength Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-------------------|-------------------|:----------:|:------:|:----------:|
+| S1 | `[REQUIRED: e.g. "Sweden meets 2025 renewable energy target; supporting legislation fully enacted (prop 2024/25:XX)"]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| S2 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
 
 ### ⚠️ Weaknesses in Domain
 
-| # | Weakness Statement | Evidence (dok_id) | Confidence | Impact |
-|---|-------------------|-------------------|:----------:|:------:|
-| W1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` |
+| # | Weakness Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-------------------|-------------------|:----------:|:------:|:----------:|
+| W1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
 
 ### 🚀 Opportunities in Domain
 
-| # | Opportunity Statement | Evidence (dok_id) | Confidence | Impact |
-|---|----------------------|-------------------|:----------:|:------:|
-| O1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` |
+| # | Opportunity Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|----------------------|-------------------|:----------:|:------:|:----------:|
+| O1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
 
 ### 🔴 Threats to Domain
 
-| # | Threat Statement | Evidence (dok_id) | Confidence | Impact |
-|---|-----------------|-------------------|:----------:|:------:|
-| T1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` |
+| # | Threat Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-----------------|-------------------|:----------:|:------:|:----------:|
+| T1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
 
 ---
 
-## 📊 SWOT Quadrant Mapping (Renderer-Safe)
+## 📊 SWOT Quadrant Mapping
 
-Use the matrix below to map each SWOT item by whether it is **internal vs. external** and **negative vs. positive** in its effect on the political actor or domain.
+### Visual SWOT Impact Diagram
+
+> **AI Instructions:** Replace placeholder text below with actual SWOT findings from the tables above. Each node label should reference the corresponding S/W/O/T entry number.
+
+```mermaid
+graph TD
+    subgraph "📊 Political SWOT Landscape"
+        direction TB
+        subgraph "✅ Strengths (Internal Positive)"
+            S1N["💪 S1: [Coalition majority]"]
+            S2N["💪 S2: [Policy delivery]"]
+        end
+        subgraph "⚠️ Weaknesses (Internal Negative)"
+            W1N["⚡ W1: [Internal disagreements]"]
+            W2N["⚡ W2: [Policy coherence gap]"]
+        end
+        subgraph "🚀 Opportunities (External Positive)"
+            O1N["🌟 O1: [Economic tailwinds]"]
+            O2N["🌟 O2: [EU alignment]"]
+        end
+        subgraph "🔴 Threats (External Negative)"
+            T1N["☁️ T1: [No-confidence risk]"]
+            T2N["☁️ T2: [Electoral pressure]"]
+        end
+    end
+
+    S1N -.->|"exploits"| O1N
+    W1N -.->|"amplifies"| T1N
+    O2N -.->|"mitigates"| W2N
+    T2N -.->|"targets"| W1N
+
+    style S1N fill:#28a745,color:#fff
+    style S2N fill:#28a745,color:#fff
+    style W1N fill:#fd7e14,color:#fff
+    style W2N fill:#fd7e14,color:#fff
+    style O1N fill:#0d6efd,color:#fff
+    style O2N fill:#0d6efd,color:#fff
+    style T1N fill:#dc3545,color:#fff
+    style T2N fill:#dc3545,color:#fff
+```
+
+### SWOT Interaction Matrix
 
 |                              | Internal (Actor / Organisation)         | External (Environment / System)       |
 |------------------------------|-----------------------------------------|---------------------------------------|

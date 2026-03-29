@@ -39,6 +39,44 @@
 
 ## 👥 Stakeholder Group Assessments
 
+### Stakeholder Impact Overview
+
+> **AI Instructions:** After completing each stakeholder assessment, update this diagram with actual impact levels (HIGH/MEDIUM/LOW/NONE). Node colors represent **stakeholder group types** (not impact tiers): purple = citizens, green = government/civil society, red = opposition, orange = business, blue = international/policy.
+
+```mermaid
+graph TD
+    subgraph "📄 Policy Impact Assessment"
+        DOC["📄 Policy/Event"]
+    end
+
+    subgraph "🏛️ Political Actors"
+        CIT["🏘️ Citizens<br/>Impact: [H/M/L/N]"]
+        GOV["🏛️ Government<br/>Impact: [H/M/L/N]"]
+        OPP["🗳️ Opposition<br/>Impact: [H/M/L/N]"]
+    end
+
+    subgraph "💼 Societal Actors"
+        BIZ["🏭 Business<br/>Impact: [H/M/L/N]"]
+        CIV["🤝 Civil Society<br/>Impact: [H/M/L/N]"]
+        INT["🌍 International<br/>Impact: [H/M/L/N]"]
+    end
+
+    DOC --> CIT
+    DOC --> GOV
+    DOC --> OPP
+    DOC --> BIZ
+    DOC --> CIV
+    DOC --> INT
+
+    style DOC fill:#0d6efd,color:#fff
+    style CIT fill:#6f42c1,color:#fff
+    style GOV fill:#28a745,color:#fff
+    style OPP fill:#dc3545,color:#fff
+    style BIZ fill:#fd7e14,color:#fff
+    style CIV fill:#28a745,color:#fff
+    style INT fill:#0d6efd,color:#fff
+```
+
 ### 🏘️ Group 1: Citizens (Direct Impact)
 
 *How directly does this policy affect Swedish citizens' daily lives, rights, welfare, or finances?*
@@ -169,6 +207,18 @@
 
 `[REQUIRED: 3–5 sentences identifying the most significant stakeholder dynamics. Which groups are in tension? Where are unexpected winners/losers? What are the second-order political effects? Reference specific stakeholder interactions.]`
 
+### Conflicting Impact Resolution
+
+When stakeholder impacts conflict (e.g., Citizens benefit but Business bears costs):
+
+| Pattern | Overall Assessment | Editorial Framing |
+|---------|-------------------|-------------------|
+| Citizens positive + Business negative | **Politically significant** — redistribution dynamic | Lead with citizen impact; note business costs |
+| Government positive + Opposition negative | **Standard partisan** — expected dynamics | Present both perspectives equally |
+| Citizens negative + Government positive | **Accountability concern** — policy vs. people | Lead with citizen impact; scrutinize government rationale |
+| All stakeholders negative | **System-level problem** — policy failure signal | Frame as shared challenge requiring cross-party response |
+| All stakeholders positive | **Rare consensus** — highlight cross-party achievement | Note rarity; check for hidden costs or losers |
+
 **Publish Recommendation:** `[REQUIRED: YES — HIGH public interest / YES — MEDIUM interest / MONITOR — low standalone value]`
 
 ---
@@ -176,5 +226,6 @@
 **Document Control:**  
 - **Template Path:** `/analysis/templates/stakeholder-impact.md`  
 - **Lens References:** `scripts/analysis-framework/lenses/` (citizen, economic, government, international, media, opposition)  
+- **Framework Reference:** [methodologies/political-style-guide.md](../methodologies/political-style-guide.md)  
 - **Classification:** Public  
 - **Next Review:** 2026-06-26

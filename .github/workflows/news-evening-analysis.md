@@ -172,10 +172,11 @@ START_TIME=$(date +%s)
 | Phase | Minutes | Action |
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()`, determine day type |
-| Analysis | 3–8 | Run pre-article-analysis pipeline (downloads data + generates analysis artifacts) |
-| Data | 8–15 | Query MCP tools for parliamentary activity |
-| Generate | 15–30 | Run generation script OR manual synthesis (see Step 3) |
-| Validate | 30–38 | Translate, validate, commit |
+| Download | 3–6 | Run `populate-analysis-data.ts` + `pre-article-analysis.ts` (script-driven data download) |
+| AI Analysis | 6–18 | Per-file AI analysis: read methodology docs, analyze each downloaded file, write `.analysis.md` files |
+| Data | 18–22 | Query additional MCP tools for parliamentary activity |
+| Generate | 22–32 | Run generation script OR manual synthesis (see Step 3) |
+| Validate | 32–38 | Translate, validate, commit |
 | PR | 38–43 | `safeoutputs___create_pull_request` |
 
 **Hard cutoffs** — check elapsed time before each phase:
@@ -191,9 +192,12 @@ Before generating articles, consult these skills:
 4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
 5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
 6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
-7. **`scripts/prompts/v1/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
+7. **`scripts/prompts/v2/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
 8. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
-9. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
+9. **`scripts/prompts/v2/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
+10. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Per-file AI analysis protocol
+11. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Methodology for deep per-file analysis
+12. **`analysis/templates/per-file-political-intelligence.md`** — Per-file analysis output template
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
 
@@ -534,25 +538,97 @@ const byParty = motions.reduce((acc, m) => {
 - **deep** — Extended analysis with historical context (1500-2500 words)
 - **comprehensive** — Full coverage including minor events (2500-4000 words)
 
-## Step 1.5: Run Pre-Article Analysis Pipeline
+## Step 1.5: Data Download & Per-File AI Analysis
 
-**CRITICAL: Run the analysis pipeline BEFORE gathering data and generating articles.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`.
+**CRITICAL: This step downloads data AND performs deep AI analysis BEFORE article generation.**
+
+### Phase A — Data Download (Script-Driven)
+
+Download all available parliamentary data using the populate script. Scripts handle data download efficiently:
 
 ```bash
-ARTICLE_DATE=$(date -u +%Y-%m-%d)
-echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
-echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
-ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
+ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+echo "📥 Downloading MCP data for $ARTICLE_DATE..."
+npx tsx scripts/populate-analysis-data.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Data download had issues (non-blocking)"
+echo "📥 Running pre-article analysis pipeline..."
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Script analysis failed (non-blocking — AI analysis will proceed)"
+echo "✅ Data downloaded to analysis/data/"
 ```
 
-These analysis files are committed alongside articles for human review and continuous improvement.
+### Phase B — Per-File AI Political Intelligence Analysis (AI-Driven)
+
+**This is the core analysis phase.** The AI agent (you) performs deep analysis of every downloaded file, creating publication-quality intelligence markdown files.
+
+> 🚨 **CRITICAL RULE:** You must **actually read the JSON data** in each file and base all analysis on real data found there. Every SWOT entry, risk score, and stakeholder assessment must cite specific data from the file (dok_id, vote counts, party names, reservation details). Generic or boilerplate analysis is a failure mode — see the "Concrete Example: What Good Analysis Looks Like" section in `analysis/methodologies/ai-driven-analysis-guide.md` for bad vs. good comparison.
+
+#### B1. Read Methodology Documents
+
+**Before analyzing any file, use `view` or `cat` to read these methodology guides:**
+1. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Master per-file analysis guide (includes bad/good examples)
+2. **`analysis/methodologies/political-swot-framework.md`** — Evidence-based SWOT with confidence hierarchy
+3. **`analysis/methodologies/political-risk-methodology.md`** — 5×5 Likelihood×Impact risk matrix, calibration examples
+4. **`analysis/methodologies/political-threat-framework.md`** — STRIDE-adapted threat model, severity calibration
+5. **`analysis/methodologies/political-classification-guide.md`** — Sensitivity and domain taxonomy
+6. **`analysis/templates/per-file-political-intelligence.md`** — Per-file output template (SWOT.md quality)
+7. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Detailed protocol with filled example
+
+#### B2. Get File Catalog
+
+```bash
+echo "📋 Cataloging files pending analysis..."
+npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.entries[:5]'
+```
+
+#### B3. Analyze Each Downloaded File
+
+**⏱️ Time safeguard:** Check elapsed time before each file. If elapsed ≥ 18 min, stop per-file analysis and proceed to article generation with whatever analyses are complete. Prioritize highest-significance files first.
+
+For each pending file from the catalog (ordered by significance — propositions and votes first):
+
+1. **Read** the JSON data file — use `view` or `cat` to read the actual content
+2. **Extract** key fields (dok_id, titel, datum, parti, vote counts, reservations, etc.)
+3. **Classify** — Sensitivity level, domain, urgency, significance (0–10)
+4. **SWOT** — Government + Opposition impact with evidence (cite specific dok_id, vote margins, party positions)
+5. **Risk** — 5×5 Likelihood×Impact matrix with numeric scores (coalition, policy, budget, electoral, democratic, external)
+6. **STRIDE** — Political threat analysis (only where applicable — cite evidence)
+7. **Stakeholders** — 6-lens impact matrix (government, opposition, citizen, economic, international, media)
+8. **Forward indicators** — Specific watch items with concrete timelines and triggers
+9. **Mermaid diagrams** — At least 1 diagram with REAL data from the file (not placeholder text)
+10. **Write** `{id}.analysis.md` alongside the data file
+
+**Quality standard:** Each analysis file must match [SWOT.md](../../SWOT.md) / [THREAT_MODEL.md](../../THREAT_MODEL.md) quality — Hack23 header badges, color-coded Mermaid diagrams, evidence tables with confidence labels, and actionable intelligence.
+
+**Mermaid color convention:**
+```
+style X fill:#dc3545,color:#fff   /* 🔴 Red — CRITICAL / Threat */
+style X fill:#fd7e14,color:#fff   /* 🟠 Orange — HIGH risk */
+style X fill:#ffc107,color:#000   /* 🟡 Yellow — MEDIUM */
+style X fill:#28a745,color:#fff   /* 🟢 Green — LOW / Strength */
+style X fill:#0d6efd,color:#fff   /* 🔵 Blue — Informational */
+style X fill:#6f42c1,color:#fff   /* 🟣 Purple — Special category */
+```
+
+**Minimum quality gate (8/10):**
+- ≥ 3 evidence points with dok_id per file
+- Confidence labels on all analytical claims
+- At least 1 Mermaid diagram with document-specific data
+- SWOT has ≥ 2 filled quadrants with evidence
+- No `[REQUIRED]` placeholders remaining
+
+#### B4. Compose Daily Synthesis
+
+After per-file analyses, compose `analysis/daily/$ARTICLE_DATE/synthesis-summary.md` by:
+1. Ranking documents by significance score
+2. Aggregating SWOT entries (per `political-swot-framework.md` intersection rules)
+3. Computing overall risk landscape
+4. Listing top forward indicators
 
 ### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
 
 **Before deciding whether to generate articles or call noop, you MUST:**
 
-1. **Review the analysis artifacts** in `analysis/daily/YYYY-MM-DD/` — read `synthesis-summary.md` and `significance-scoring.md` to understand what was found
+1. **Review the analysis artifacts** in `analysis/daily/YYYY-MM-DD/` and per-file `.analysis.md` files — read `synthesis-summary.md` and significance scores to understand what was found
 2. **Summarize the analysis findings** — note how many documents were downloaded, their significance scores, key themes, and risk levels
 3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
 
@@ -560,18 +636,15 @@ These analysis files are committed alongside articles for human review and conti
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
-ANALYSIS_COUNT=0
-if [ -d "$ANALYSIS_DIR" ]; then
-  ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
-fi
-if [ "$ANALYSIS_COUNT" -gt 0 ]; then
-  echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed (do NOT use safeoutputs___noop)"
+NEW_ANALYSIS_COUNT=$(git status --porcelain -- analysis/data/ "$ANALYSIS_DIR" 2>/dev/null | wc -l)
+if [ "$NEW_ANALYSIS_COUNT" -gt 0 ]; then
+  echo "📊 Found $NEW_ANALYSIS_COUNT new/modified analysis artifacts — these MUST be committed (do NOT use safeoutputs___noop)"
 else
-  echo "📊 Found 0 analysis artifacts — safeoutputs___noop is allowed (no files to commit)"
+  echo "📊 No new/modified analysis artifacts detected — safeoutputs___noop is allowed (no files to commit)"
 fi
 ```
 
-> **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files in `analysis/daily/YYYY-MM-DD/`, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Evening Analysis - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).
+> **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the analysis produced ANY output files (per-file `.analysis.md` or daily synthesis), you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Evening Analysis - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if NO analysis output was generated.
 
 ## Step 2: Gather Parliamentary Data
 
@@ -742,7 +815,7 @@ fi
 ## MANDATORY Quality Validation
 
 After article generation, verify EACH article meets these minimum standards before committing.
-Apply the quality rubric from **`scripts/prompts/v1/quality-criteria.md`** (minimum score: 7/10).
+Apply the quality rubric from **`scripts/prompts/v2/quality-criteria.md`** (minimum score: 7/10).
 
 ### Playwright Visual Validation
 Run Playwright validation before creating the PR:

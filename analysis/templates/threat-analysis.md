@@ -38,6 +38,46 @@
 
 ## 🎭 STRIDE-Adapted Threat Inventory
 
+> **Severity Scale Reference:** 1=Negligible (routine), 2=Minor (self-correcting), 3=Moderate (intervention needed), 4=Major (formal response required), 5=Severe (constitutional crisis). See [methodologies/political-threat-framework.md §9](../methodologies/political-threat-framework.md) for full calibration table.
+
+### STRIDE Threat Landscape
+
+> **AI Instructions:** Replace placeholder text with actual threats identified. Category nodes are color-coded by STRIDE type; threat instance nodes should be color-coded by severity using the standard palette (🔴 critical → 🟢 low).
+
+```mermaid
+graph LR
+    subgraph "🎭 Political STRIDE Threat Model"
+        S["🎭 S: Spoofing<br/>False Narratives"]
+        T["🔧 T: Tampering<br/>Policy Corruption"]
+        R["📝 R: Repudiation<br/>Accountability Evasion"]
+        I["🔓 I: Information<br/>Transparency Failures"]
+        D["🚫 D: Denial<br/>Democratic Obstruction"]
+        E["⬆️ E: Elevation<br/>Power Concentration"]
+    end
+
+    S --> S1["[Highest S threat]"]
+    T --> T1["[Highest T threat]"]
+    R --> R1["[Highest R threat]"]
+    I --> I1["[Highest I threat]"]
+    D --> D1["[Highest D threat]"]
+    E --> E1["[Highest E threat]"]
+
+    style S fill:#6f42c1,color:#fff
+    style T fill:#dc3545,color:#fff
+    style R fill:#fd7e14,color:#fff
+    style I fill:#ffc107,color:#000
+    style D fill:#28a745,color:#fff
+    style E fill:#0d6efd,color:#fff
+    %% Threat instance nodes: set fill color by severity (framework §9, 1–5 scale)
+    %% 1 = 🟢 #28a745 (Negligible/Low), 2 = 🟡 #ffc107 (Minor), 3 = 🟠 #fd7e14 (Moderate), 4 = 🟠 #fd7e14 (High), 5 = 🔴 #dc3545 (Severe)
+    style S1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style T1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style R1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style I1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style D1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style E1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+```
+
 ### S — Spoofing: False Narratives & Misinformation Threats
 
 *Threats involving actors misrepresenting facts, identities, or political positions to manipulate public discourse or parliamentary outcomes.*
@@ -153,8 +193,20 @@
 
 ---
 
+## ⚡ Escalation Decision
+
+| Condition | Escalate? | Action |
+|-----------|:---------:|--------|
+| Any STRIDE category severity ≥ 5 | **YES** | Immediate breaking analysis; all-language deployment |
+| ≥ 2 STRIDE categories severity ≥ 4 | **YES** | Priority analysis; article within 2 hours |
+| Overall threat level = SEVERE | **YES** | Editor notification + all-language deployment |
+| Overall threat level = HIGH | **MONITOR** | Flag in daily synthesis; include in evening analysis |
+| Overall threat level ≤ MODERATE | **NO** | Include in regular daily/weekly reporting |
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/threat-analysis.md`  
-- **Framework Reference:** [THREAT_MODEL.md](../../THREAT_MODEL.md), [FUTURE_THREAT_MODEL.md](../../FUTURE_THREAT_MODEL.md)  
+- **Framework Reference:** [THREAT_MODEL.md](../../THREAT_MODEL.md), [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md)  
 - **Classification:** Public  
 - **Next Review:** 2026-06-26
