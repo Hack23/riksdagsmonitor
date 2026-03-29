@@ -438,6 +438,10 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     fi
   done
   echo "🗓️ Using analysis date: $ARTICLE_DATE"
+  # Persist ARTICLE_DATE after lookback selection for downstream steps
+  if [ -n "$GITHUB_ENV" ]; then
+    echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"
+  fi
 fi
 
 # Report pending per-file analysis count for monitoring

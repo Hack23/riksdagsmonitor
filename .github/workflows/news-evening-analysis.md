@@ -595,6 +595,11 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     fi
   done
   echo "🗓️ Using analysis date: $ARTICLE_DATE"
+
+  # Persist selected ARTICLE_DATE for downstream steps
+  if [ -n "$GITHUB_ENV" ]; then
+    echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"
+  fi
 fi
 
 # Report pending per-file analysis count for monitoring
@@ -686,12 +691,18 @@ After per-file analyses, rewrite ALL daily files in `analysis/daily/$ARTICLE_DAT
 | `stakeholder-perspectives.md` | `analysis/templates/stakeholder-impact.md` | STA-ID, Impact Radar (Mermaid), 6 groups assessed, Impact Summary Matrix |
 | `significance-scoring.md` | `analysis/templates/significance-scoring.md` | SIG-ID, 5-dimension scoring (0-10 each), Composite Score, Publication Decision |
 
+**Important filename & template adaptation rules:**
+- The mapped templates were originally authored as **single-event assessments** and may reference `event-slug` or `evening-*` filenames and a single primary `dok_id`.
+- For this workflow, you MUST adapt those templates for **batch daily summaries** (potentially multiple `dok_id` values per file) while keeping the existing daily filenames under `analysis/daily/$ARTICLE_DATE/`.
+- NEVER create new markdown files (e.g. `event-slug`, `evening-*`) based on suggestions inside the templates. Always rewrite the existing stub file (the exact daily filename in the table above).
+
 **Protocol for each daily file:**
 1. **Read the template** — `cat analysis/templates/{template-name}.md`
 2. **Preserve script data** — keep factual data from the script output
-3. **Add ALL template sections** — metadata header, Mermaid diagrams, evidence tables, confidence labels
-4. **Fill with real data** — use per-file analysis results to populate
-5. **No empty sections** — if no data, explain WHY with confidence label
+3. **Keep existing filenames** — do NOT rename or create new files; always rewrite in-place
+4. **Add ALL template sections** — metadata header, Mermaid diagrams, evidence tables, confidence labels
+5. **Fill with real data** — use per-file analysis results to populate
+6. **No empty sections** — if no data, explain WHY with confidence label
 
 **Template compliance checklist:**
 - [ ] Every daily file has its template's metadata header (ID, date, riksmöte, confidence)

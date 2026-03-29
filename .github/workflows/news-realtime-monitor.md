@@ -270,6 +270,10 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     fi
   done
   echo "🗓️ Using analysis date: $ARTICLE_DATE"
+  # Persist the chosen ARTICLE_DATE so later workflow snippets use the same analysis directory
+  if [ -n "${GITHUB_ENV:-}" ]; then
+    echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"
+  fi
 fi
 
 # Report pending per-file analysis count for monitoring

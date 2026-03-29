@@ -107,6 +107,12 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     fi
   done
   echo "🗓️ Using analysis date: $ARTICLE_DATE"
+
+  # Persist selected ARTICLE_DATE for downstream steps
+  if [ -n "${GITHUB_ENV:-}" ]; then
+    echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"
+    echo "📌 Persisted ARTICLE_DATE=$ARTICLE_DATE to GITHUB_ENV for downstream steps"
+  fi
 fi
 
 # Step 3: Report pending per-file analysis count for monitoring
@@ -142,9 +148,10 @@ echo "📊 Total pending per-file analysis files (all dates): $PENDING"
 
 1. **Read each template** — use `view` or `cat` to read the full template file before rewriting the daily file
 2. **Preserve script data** — keep any factual data (document counts, risk scores, anomalies) from the script output
-3. **Add template structure** — add all required metadata fields, Mermaid diagrams, evidence tables, and confidence labels
-4. **Fill with real data** — use downloaded documents, MCP data, and analysis results to fill every `[REQUIRED]` placeholder
-5. **No empty sections** — if a section has no data, explain WHY (e.g., "No propositions found for this date — Parliament in recess") with confidence label
+3. **Keep existing filenames** — do **NOT** rename or create new files based on template filename suggestions; always rewrite the existing daily artifacts produced by `pre-article-analysis.ts` in-place (e.g., keep `classification-results.md`, `stakeholder-perspectives.md`)
+4. **Add template structure** — add all required metadata fields, Mermaid diagrams, evidence tables, and confidence labels
+5. **Fill with real data** — use downloaded documents, MCP data, and analysis results to fill every `[REQUIRED]` placeholder
+6. **No empty sections** — if a section has no data, explain WHY (e.g., "No propositions found for this date — Parliament in recess") with confidence label
 
 #### Minimum Compliance Check
 - [ ] Every daily file has its template's metadata header (ID, date, riksmöte, confidence)
