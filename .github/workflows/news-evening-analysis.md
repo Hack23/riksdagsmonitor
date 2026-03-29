@@ -547,8 +547,11 @@ const byParty = motions.reduce((acc, m) => {
 Download all available parliamentary data using the populate script. Scripts handle data download efficiently:
 
 ```bash
-ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+# Idempotent: only set if not already resolved by lookback
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
 echo "📥 Downloading MCP data for $ARTICLE_DATE..."
 npx tsx scripts/populate-analysis-data.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Data download had issues (non-blocking)"
 echo "📥 Running pre-article analysis pipeline..."
@@ -561,8 +564,11 @@ echo "✅ Data downloaded to analysis/data/"
 > 🚨 **CRITICAL RULE**: Never produce empty/stub analysis. If no data for today, look back to find unanalyzed data. Empty analysis = wasted workflow run.
 
 ```bash
-ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+# Idempotent: only set if not already resolved by lookback
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
 
 # Check if the requested date has any analyzed documents (per-date manifest, not session-wide catalog)
 MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/data-download-manifest.md"
@@ -733,8 +739,11 @@ After per-file analyses, rewrite ALL daily files in `analysis/daily/$ARTICLE_DAT
 3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
 
 ```bash
-ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+# Idempotent: only set if not already resolved by lookback
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
 NEW_ANALYSIS_COUNT=$(git status --porcelain -- analysis/data/ "$ANALYSIS_DIR" 2>/dev/null | wc -l)
 if [ "$NEW_ANALYSIS_COUNT" -gt 0 ]; then

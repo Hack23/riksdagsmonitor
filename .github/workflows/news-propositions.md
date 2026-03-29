@@ -386,9 +386,12 @@ get_propositioner({ rm: <calculated riksmöte>, limit: 20 })
 **CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/propositions/`. The 9 batch artifacts are also copied to the unscoped `analysis/daily/YYYY-MM-DD/` directory so existing enrichment readers (`readDailyAnalysis`, `getAnalysisEnrichment`) find them at the default path. Per-document files (`documents/*.json`, `documents/*-analysis.md`) remain only under the scoped directory.
 
 ```bash
-ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-if [ -z "$ARTICLE_DATE" ]; then
-  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+# Idempotent: only set if not already resolved by lookback
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  if [ -z "$ARTICLE_DATE" ]; then
+    ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  fi
 fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 --doc-type propositions || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
@@ -401,8 +404,11 @@ ls -la "analysis/daily/$ARTICLE_DATE/propositions/" 2>/dev/null || echo "⚠️ 
 > 🚨 **CRITICAL RULE**: Never produce empty/stub analysis. If no data for today, look back to find unanalyzed data.
 
 ```bash
-ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+# Idempotent: only set if not already resolved by lookback
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
 
 # Check if the requested date has any analyzed documents (per-date manifest, not session-wide catalog)
 MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/propositions/data-download-manifest.md"
@@ -476,6 +482,7 @@ After the script-based analysis, perform **AI-driven per-file analysis** for dee
    - `analysis/methodologies/political-risk-methodology.md` — 5×5 Likelihood×Impact risk matrix
    - `analysis/methodologies/political-threat-framework.md` — STRIDE-adapted threat model, severity calibration
    - `analysis/methodologies/political-classification-guide.md` — Sensitivity and domain taxonomy
+   - `analysis/methodologies/political-style-guide.md` — Writing standards and evidence density
    - `analysis/templates/per-file-political-intelligence.md` — Per-file output template
    - `analysis/templates/synthesis-summary.md` — Daily synthesis template
    - `analysis/templates/risk-assessment.md` — Risk assessment template
@@ -525,8 +532,11 @@ These files are committed alongside articles for human review and continuous imp
 3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
 
 ```bash
-ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+# Idempotent: only set if not already resolved by lookback
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then

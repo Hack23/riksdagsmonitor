@@ -225,7 +225,10 @@ Tools with date params: `get_calendar_events` (from/tom — **⚠️ known inter
 **CRITICAL: Run the analysis pipeline BEFORE detecting events and generating articles.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps, and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`.
 
 ```bash
-ARTICLE_DATE=$(date -u +%Y-%m-%d)
+# Idempotent: only set if not already resolved by lookback
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 # --limit 50 is appropriate for same-day realtime monitoring (pipeline date-filters to today only)
 npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
@@ -238,7 +241,10 @@ ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis o
 > 🚨 **CRITICAL RULE**: Never produce empty/stub analysis. If no data for today, look back to find unanalyzed data.
 
 ```bash
-ARTICLE_DATE=$(date -u +%Y-%m-%d)
+# Idempotent: only set if not already resolved by lookback
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
 
 # Check if the requested date has any analyzed documents (per-date manifest, not session-wide catalog)
 MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/data-download-manifest.md"
@@ -360,8 +366,11 @@ These analysis files are committed alongside articles for human review and conti
 3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
 
 ```bash
-ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+# Idempotent: only set if not already resolved by lookback
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then
@@ -458,7 +467,10 @@ If no HIGH or MEDIUM events found:
 
 1. **First check if analysis artifacts exist** in `analysis/daily/YYYY-MM-DD/`:
 ```bash
-ARTICLE_DATE=$(date -u +%Y-%m-%d)
+# Idempotent: only set if not already resolved by lookback
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
 ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l)
 echo "Analysis artifacts: $ANALYSIS_COUNT files"
