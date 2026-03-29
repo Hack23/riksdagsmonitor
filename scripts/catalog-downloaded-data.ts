@@ -41,6 +41,10 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+/** Stable repo root derived from script location (matches pre-article-analysis.ts). */
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = path.resolve(__dirname, '..');
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
 /* ------------------------------------------------------------------ */
@@ -143,8 +147,8 @@ export function buildCatalog(
       allEntries.push({
         id: basename,
         type: docType,
-        path: path.relative(process.cwd(), filePath).split(path.sep).join('/'),
-        analysisPath: path.relative(process.cwd(), analysisPath).split(path.sep).join('/'),
+        path: path.relative(REPO_ROOT, filePath).split(path.sep).join('/'),
+        analysisPath: path.relative(REPO_ROOT, analysisPath).split(path.sep).join('/'),
         hasAnalysis,
         sizeBytes: stat.size,
         meta,
@@ -195,7 +199,7 @@ export function buildCatalog(
 
   return {
     generatedAt: new Date().toISOString(),
-    dataRoot: path.relative(process.cwd(), dataRoot).split(path.sep).join('/'),
+    dataRoot: path.relative(REPO_ROOT, dataRoot).split(path.sep).join('/'),
     totalFiles: dedupedEntries.length,
     pendingAnalysis: totalPending,
     completedAnalysis: totalCompleted,
@@ -236,7 +240,7 @@ function collectJsonFiles(dir: string): string[] {
 /* ------------------------------------------------------------------ */
 
 function parseArgs(argv: string[]) {
-  let dataRoot = path.resolve('analysis/data');
+  let dataRoot = path.join(REPO_ROOT, 'analysis/data');
   let filterType: string | undefined;
   let pendingOnly = false;
 

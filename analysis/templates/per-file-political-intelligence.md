@@ -30,7 +30,7 @@
 | Field | Value |
 |-------|-------|
 | **Document ID** | `[REQUIRED: dok_id or file identifier]` |
-| **Document Type** | `[REQUIRED: proposition / motion / committeeReport / vote / speech / question / interpellation / government / worldbank / scb]` |
+| **Document Type** | `[REQUIRED: propositions / motions / committeeReports / votes / speeches / questions / interpellations / government / worldbank / scb]` |
 | **Title** | `[REQUIRED: document title or descriptor]` |
 | **Date** | `[REQUIRED: document date or fetch date]` |
 | **Riksmöte** | `[REQUIRED if parliamentary: e.g. 2025/26]` |

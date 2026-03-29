@@ -188,7 +188,7 @@ Before generating articles, consult these skills:
 6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
 7. **`scripts/prompts/v2/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
 8. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
-9. **`scripts/prompts/v1/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
+9. **`scripts/prompts/v2/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
 10. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Per-file AI analysis protocol
 11. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Methodology for deep per-file analysis
 12. **`analysis/templates/per-file-political-intelligence.md`** — Per-file analysis output template
@@ -509,7 +509,7 @@ If the generated article lacks these analytical sections, manually add contextua
 ## MANDATORY Quality Validation
 
 After article generation, verify EACH article meets these minimum standards before committing.
-Apply the quality rubric from **`scripts/prompts/v1/quality-criteria.md`** (minimum score: 7/10).
+Apply the quality rubric from **`scripts/prompts/v2/quality-criteria.md`** (minimum score: 7/10).
 - **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Per-file AI analysis protocol
 - **`analysis/methodologies/ai-driven-analysis-guide.md`** — Methodology for deep per-file analysis
 - **`analysis/templates/per-file-political-intelligence.md`** — Per-file analysis output template
