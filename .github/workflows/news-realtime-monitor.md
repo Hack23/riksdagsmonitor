@@ -220,11 +220,13 @@ Tools with date params: `get_calendar_events` (from/tom — **⚠️ known inter
 - Month ≥ September: `rm = "{year}/{nextYear's last 2 digits}"` (e.g., Oct 2026 → "2026/27")
 - Month < September: `rm = "{prevYear}/{year's last 2 digits}"` (e.g., Feb 2026 → "2025/26")
 
-## Step 1.5: Run Pre-Article Analysis Pipeline
+## Step 1.5: Download Data Using Scripts
 
-**CRITICAL: Run the analysis pipeline BEFORE detecting events and generating articles.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps, and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`.
+**Scripts are used ONLY for downloading data. ALL analysis is done by the AI (you) using methodologies and templates.**
 
-> 🚨 **NON-NEGOTIABLE**: The pipeline MUST actually download data. If it fails, you MUST diagnose and fix the script — NEVER silently skip and fabricate analysis manually.
+> 🚨 **Scripts must be set up correctly to work in the agentic workflow.** Always source `mcp-setup.sh` first.
+> If scripts fail to download data, you MUST diagnose and fix the scripts so they work.
+> If you cannot fix the scripts, use direct MCP tool calls as fallback to download data.
 
 ```bash
 # Idempotent: only set if not already resolved by lookback
@@ -236,86 +238,73 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
     ARTICLE_DATE=$(date -u +%Y-%m-%d)
   fi
 fi
-echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
-# CRITICAL: Source mcp-setup.sh FIRST to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
-# Without this, the pipeline cannot reach the MCP server through the AWF sandbox
+echo "📥 Downloading data for $ARTICLE_DATE..."
+# CRITICAL: Source mcp-setup.sh FIRST to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the AWF gateway
 source scripts/mcp-setup.sh
 echo "MCP_SERVER_URL=${MCP_SERVER_URL:-NOT SET}"
-# --limit 50 is appropriate for same-day realtime monitoring (pipeline date-filters to the resolved ARTICLE_DATE only)
+# Scripts download data only — analysis is done by AI afterwards
 source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
 PIPE_EXIT=${PIPESTATUS[0]}
 if [ "$PIPE_EXIT" -ne 0 ]; then
-  echo "❌ Pipeline failed with exit code $PIPE_EXIT — diagnosing..."
+  echo "❌ Data download script failed with exit code $PIPE_EXIT — agent MUST diagnose and fix"
   tail -30 /tmp/pipeline-output.log
-  # Check common failure causes
   npx tsc --noEmit scripts/pre-article-analysis.ts 2>&1 | head -20 || true
-  echo "⚠️ Attempting to fix and re-run pipeline..."
-  # Re-run after potential fix (agent should diagnose and fix the issue before re-running)
 fi
-echo "📊 Analysis artifacts for $ARTICLE_DATE:"
-ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output directory"
-# Verify actual data was downloaded
-MANIFEST_DOCS=0
-if [ -f "analysis/daily/$ARTICLE_DATE/data-download-manifest.md" ]; then
-  MANIFEST_DOCS=$(grep -E '^\*\*Documents Analyzed\*\*' "analysis/daily/$ARTICLE_DATE/data-download-manifest.md" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
-fi
-[ -z "$MANIFEST_DOCS" ] && MANIFEST_DOCS=0
-echo "📊 Documents downloaded by pipeline: $MANIFEST_DOCS"
-# Verify actual JSON data files were persisted
+# Verify data was actually downloaded
 DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
-echo "📊 JSON data files in analysis/data/: $DATA_JSON_COUNT"
-if [ "$MANIFEST_DOCS" -eq 0 ] && [ "$DATA_JSON_COUNT" -eq 0 ]; then
-  echo "🚨 CRITICAL: Pipeline downloaded ZERO data. MCP_SERVER_URL=${MCP_SERVER_URL:-NOT SET}"
-  echo "🚨 Agent MUST diagnose and fix this before proceeding — do NOT fabricate analysis."
+echo "📊 JSON data files downloaded: $DATA_JSON_COUNT"
+ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No output directory"
+if [ "$DATA_JSON_COUNT" -eq 0 ]; then
+  echo "🚨 ZERO data downloaded. Agent MUST fix scripts or use direct MCP tool calls."
 fi
 ```
 
-### 🔧 MANDATORY: Script Debugging & Fixing (if pipeline downloaded 0 documents)
+### 🔧 If Scripts Downloaded 0 Data
 
-> 🚨 **NON-NEGOTIABLE**: If `MANIFEST_DOCS=0` AND `DATA_JSON_COUNT=0` after the pipeline runs, the agent **MUST** diagnose and fix the issue. Silent fallback or fabricating analysis is PROHIBITED.
+> The agent MUST fix the scripts so they work, or fall back to direct MCP tool calls. Never proceed without data.
 
-#### Diagnosis steps (execute ALL):
+1. **Read error log**: `cat /tmp/pipeline-output.log | tail -30`
+2. **Check MCP setup**: `echo "MCP_SERVER_URL=$MCP_SERVER_URL"` — must be `http://host.docker.internal:80/mcp/riksdag-regering`
+3. **Fix script issues**: read source with `view`, fix with `edit`, re-run
+4. **If script fix fails**: use direct MCP tool calls (`search_dokument`, `get_propositioner`, etc.) to download data, save each response as JSON to `analysis/data/documents/{type}/`
 
-1. **Check MCP connectivity**:
-   ```bash
-   source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL" && echo "MCP_AUTH_TOKEN length: ${#MCP_AUTH_TOKEN}"
-   ```
-   If `MCP_SERVER_URL` is empty or still the default `https://riksdag-regering-ai.onrender.com/mcp`, the gateway setup failed. Fix: ensure `GH_AW_MCP_CONFIG` points to the MCP config file.
+### 🚨🚨🚨 MANDATORY: AI Must Analyse ALL Data Using Methods & Templates
 
-2. **Read the pipeline error log**:
-   ```bash
-   cat /tmp/pipeline-output.log
-   ```
-   Look for: connection refused, auth errors, timeout, TypeScript compilation errors, missing modules.
+> **THIS IS YOUR PRIMARY JOB.** For every piece of data or document downloaded from MCP, you MUST read ALL methodology guides and ALL templates, then create analysis following those templates. This is NOT optional. MUST do it.
 
-3. **Check TypeScript compilation**:
-   ```bash
-   npx tsc --noEmit scripts/pre-article-analysis.ts 2>&1 | head -30
-   ```
-   Fix any type errors, missing imports, or module resolution failures.
+#### What you MUST do (no exceptions):
 
-4. **Test MCP client directly**:
-   ```bash
-   source scripts/mcp-setup.sh && node -e "
-     const { MCPClient } = require('./scripts/mcp-client/client.js');
-     const c = new MCPClient();
-     console.log('URL:', c.baseURL);
-     c.getSyncStatus().then(s => console.log('Sync:', JSON.stringify(s))).catch(e => console.error('Error:', e.message));
-   "
-   ```
+1. **Read ALL 6 methodology guides** (use `view` to read each one fully):
+   - `analysis/methodologies/ai-driven-analysis-guide.md` — Master guide (bad vs. good examples)
+   - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT
+   - `analysis/methodologies/political-risk-methodology.md` — 5×5 risk matrix
+   - `analysis/methodologies/political-threat-framework.md` — STRIDE threat model
+   - `analysis/methodologies/political-classification-guide.md` — Classification taxonomy
+   - `analysis/methodologies/political-style-guide.md` — Writing standards
 
-5. **Fix the issue** — read script source (`view scripts/pre-article-analysis.ts`, `view scripts/mcp-client/client.ts`, `view scripts/pre-article-analysis/data-downloader.ts`), fix the bug using `edit`, then **re-run the pipeline**:
-   ```bash
-   source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-retry.log
-   ```
+2. **Read ALL 8 analysis templates** (use `view` to read each one fully):
+   - `analysis/templates/per-file-political-intelligence.md`
+   - `analysis/templates/synthesis-summary.md`
+   - `analysis/templates/risk-assessment.md`
+   - `analysis/templates/political-classification.md`
+   - `analysis/templates/threat-analysis.md`
+   - `analysis/templates/swot-analysis.md`
+   - `analysis/templates/stakeholder-impact.md`
+   - `analysis/templates/significance-scoring.md`
 
-6. **Verify data was downloaded on retry**:
-   ```bash
-   find analysis/data/ -name "*.json" -type f | head -20
-   grep -E '^\*\*Documents Analyzed\*\*' "analysis/daily/$ARTICLE_DATE/data-download-manifest.md"
-   ```
+3. **For EVERY downloaded document/data file**: apply ALL 6 analytical lenses and create `{dok_id}.analysis.md` following the per-file template. Cite specific data (dok_id, vote counts, party names). Include Mermaid diagrams with real data.
 
-> **Only after ≥2 fix attempts fail** may you proceed with whatever the pipeline produced. You MUST note the failure prominently in the PR body. You still MUST NOT fabricate analysis — only commit what the pipeline actually generated.
+4. **Create/rewrite ALL 7 daily synthesis files** in `analysis/daily/$ARTICLE_DATE/` — each MUST follow its template EXACTLY (metadata header, Mermaid diagrams, evidence tables, confidence labels, no `[REQUIRED]` placeholders).
+
+5. **Commit data AND analysis together** — `git add analysis/data/ analysis/daily/`
+
+> ❌ **FAILURE MODES** (any of these = workflow failure):
+> - Skipping analysis creation
+> - Writing analysis that doesn't follow templates
+> - Committing stubs without replacing them with real analysis
+> - Analysis files with 0 evidence citations
+> - Missing Mermaid diagrams
+> - `[REQUIRED]` placeholders remaining
 
 ### 🔄 Data Lookback Fallback
 
@@ -387,74 +376,24 @@ PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null 
 echo "📊 Total pending per-file analysis files (all dates): $PENDING"
 ```
 
-### Per-File AI Analysis Enhancement
+### Per-File Analysis & Daily Synthesis (done by AI, not scripts)
 
-> 🚨 **CRITICAL RULE:** You must **actually read the JSON data** in each file and base all analysis on real data found there. Every SWOT entry, risk score, and stakeholder assessment must cite specific data from the file (dok_id, vote counts, party names, reservation details). Generic or boilerplate analysis is a failure mode — see the "Concrete Example: What Good Analysis Looks Like" section in `analysis/methodologies/ai-driven-analysis-guide.md` for bad vs. good comparison.
+> Scripts download data and produce stub files. The AI agent MUST replace ALL stubs with real analysis following methods and templates. See the "MANDATORY: AI Must Analyse ALL Data" section above — that is your primary job.
 
-After the script-based analysis, perform **AI-driven per-file analysis** for deeper intelligence:
+After data is downloaded:
+1. List data files: `find analysis/data/ -name "*.json" -type f`
+2. For EACH file: read it, apply all 6 analytical lenses (classification, SWOT, risk, STRIDE, stakeholders, forward indicators), write `{dok_id}.analysis.md`
+3. Rewrite ALL 7 daily synthesis files to match their templates (see template mapping in SHARED_PROMPT_PATTERNS.md)
+4. Every claim must cite real data (dok_id, vote counts, party names)
 
-1. Run `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to list files needing analysis
-2. **Read ALL methodology guides AND templates** (use `view` or `cat` to read each fully):
-   - `analysis/methodologies/ai-driven-analysis-guide.md` — Master per-file analysis guide (includes bad/good examples)
-   - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT with confidence hierarchy
-   - `analysis/methodologies/political-risk-methodology.md` — 5×5 Likelihood×Impact risk matrix
-   - `analysis/methodologies/political-threat-framework.md` — STRIDE-adapted threat model, severity calibration
-   - `analysis/methodologies/political-classification-guide.md` — Sensitivity and domain taxonomy
-   - `analysis/methodologies/political-style-guide.md` — Writing standards and evidence density
-   - `analysis/templates/per-file-political-intelligence.md` — Per-file output template
-   - `analysis/templates/synthesis-summary.md` — Daily synthesis template (SYN-ID, dashboard, artifacts inventory)
-   - `analysis/templates/risk-assessment.md` — Risk assessment template (RSK-ID, heat map, L×I scores)
-   - `analysis/templates/political-classification.md` — Classification template (CLS-ID, decision tree)
-   - `analysis/templates/threat-analysis.md` — Threat template (THR-ID, STRIDE network, escalation)
-   - `analysis/templates/swot-analysis.md` — SWOT template (SWT-ID, quadrant mapping, evidence)
-   - `analysis/templates/stakeholder-impact.md` — Stakeholder template (STA-ID, 6 groups, impact radar)
-   - `analysis/templates/significance-scoring.md` — Significance template (SIG-ID, 5 dimensions, publication decision)
-3. For each pending file:
-   a. **Read** the JSON data file — use `view` or `cat` to read the actual content
-   b. **Extract** key fields (dok_id, titel, datum, etc.)
-   c. **Classify** — Sensitivity level, domain, urgency, significance (0–10)
-   d. **SWOT** — Government + Opposition impact with evidence (cite specific dok_id)
-   e. **Risk** — 5×5 Likelihood×Impact matrix with numeric scores
-   f. **STRIDE** — Political threat analysis (only where applicable — cite evidence)
-   g. **Stakeholders** — 6-lens impact matrix
-   h. **Forward indicators** — Specific watch items with concrete timelines
-   i. **Mermaid diagrams** — At least 1 diagram with REAL data from the file (not placeholder text)
-   j. **Write** `{id}.analysis.md` alongside the data file
-4. Quality gate: ≥3 evidence points, confidence labels, no `[REQUIRED]` placeholders remaining
-
-### 📋 Rewrite Daily Synthesis Files to Follow Templates
-
-> 🚨 **CRITICAL**: The `pre-article-analysis.ts` script generates **stub files** that do NOT follow the full template structure. After per-file analysis, you MUST rewrite each daily synthesis file to match its template.
-> 
-> ❌ **PROHIBITED**: Rewriting stubs with fabricated content from MCP query responses in Step 2. All analysis content MUST reference actual downloaded JSON data files in `analysis/data/`. If the pipeline downloaded 0 documents, the stubs should remain as-is (showing 0 documents) — do NOT fill them with invented analysis.
-
-For each file in `analysis/daily/$ARTICLE_DATE/`:
-1. **Read the corresponding template** from `analysis/templates/` (see template-to-file mapping in `SHARED_PROMPT_PATTERNS.md`)
-2. **Preserve script data** — keep factual data (document counts, risk scores, anomalies)
-3. **Add template structure** — add ALL required metadata fields, Mermaid diagrams, evidence tables, confidence labels
-4. **Fill with real data from downloaded files ONLY** — use per-file analysis results from actual JSON data files to populate every section. Every claim must cite a specific file path (e.g., `analysis/data/documents/propositions/H901227.json`)
-5. **No empty sections** — if no data, explain WHY with confidence label (not just "0 documents")
-
-**Template compliance checklist:**
-- Every daily file has its template's metadata header (ID, date, riksmöte, confidence)
-- Every daily file has ≥1 Mermaid diagram with color-coded nodes
-- Risk assessment has ≥2 risks with L×I numeric scores
-- SWOT has ≥2 filled quadrants with evidence citations
-- Threat analysis covers all 6 STRIDE categories
-- Synthesis references all sibling files with ✅/⚠️/❌ status
-
-These analysis files are committed alongside articles for human review and continuous improvement.
-
-### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
-
-> ❌ **ABSOLUTE PROHIBITION**: NEVER manually create or overwrite analysis files (synthesis-summary.md, risk-assessment.md, swot-analysis.md, etc.) with content fabricated from MCP queries in Step 2. Analysis artifacts MUST only contain data produced by the `pre-article-analysis.ts` pipeline and enhanced with data from actual downloaded JSON files in `analysis/data/`.
+### 🚨 MANDATORY: Commit Data AND Analysis
 
 **Before deciding whether to generate articles or call noop, you MUST:**
 
-1. **Verify data was actually downloaded** — check that `analysis/data/` contains JSON files and `data-download-manifest.md` shows > 0 documents
-2. **Review the analysis artifacts** in `analysis/daily/YYYY-MM-DD/` — read `synthesis-summary.md` and `significance-scoring.md` to understand what was found
-3. **Summarize the analysis findings** — note how many documents were downloaded, their significance scores, key themes, and risk levels
-4. **ALWAYS commit analysis artifacts AND data files** regardless of whether articles will be generated:
+1. **Verify data was downloaded** — `find analysis/data/ -name "*.json" -type f | wc -l` must be > 0
+2. **Verify analysis was created** — every downloaded document has a `.analysis.md` file
+3. **Verify daily synthesis files follow templates** — no `[REQUIRED]` placeholders, Mermaid diagrams with real data
+4. **ALWAYS commit data AND analysis together**:
 
 ```bash
 # Idempotent: only set if not already resolved by lookback
