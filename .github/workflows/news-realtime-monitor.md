@@ -245,6 +245,7 @@ TOTAL=$(npx tsx scripts/catalog-downloaded-data.ts 2>/dev/null | jq '.totalFiles
 if [ "$PENDING" -eq 0 ] && [ "$TOTAL" -eq 0 ]; then
   echo "⚠️ No data for $ARTICLE_DATE — activating lookback fallback (up to 7 days)"
   for DAYS_BACK in 1 2 3 4 5 6 7; do
+    # Cross-platform date arithmetic: GNU date (-d) on Linux/GitHub Actions, BSD date (-v) on macOS
     LOOKBACK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
     [ -z "$LOOKBACK_DATE" ] && continue
     echo "🔍 Checking $LOOKBACK_DATE for unanalyzed data..."
