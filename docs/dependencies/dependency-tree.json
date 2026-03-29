@@ -1,5 +1,5 @@
 {
-  "version": "0.8.8",
+  "version": "0.8.9",
   "name": "riksdagsmonitor",
   "problems": [
     "extraneous: @emnapi/core@1.8.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor/node_modules/@emnapi/core",
@@ -2822,8 +2822,8 @@
       }
     },
     "knip": {
-      "version": "6.0.6",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.0.6.tgz",
+      "version": "6.1.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.1.0.tgz",
       "overridden": false,
       "dependencies": {
         "@nodelib/fs.walk": {
@@ -2973,8 +2973,8 @@
           "version": "1.2.8"
         },
         "oxc-parser": {
-          "version": "0.120.0",
-          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.120.0.tgz",
+          "version": "0.121.0",
+          "resolved": "https://registry.npmjs.org/oxc-parser/-/oxc-parser-0.121.0.tgz",
           "overridden": false,
           "dependencies": {
             "@oxc-parser/binding-android-arm-eabi": {},
@@ -2991,13 +2991,13 @@
             "@oxc-parser/binding-linux-riscv64-musl": {},
             "@oxc-parser/binding-linux-s390x-gnu": {},
             "@oxc-parser/binding-linux-x64-gnu": {
-              "version": "0.120.0",
-              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.120.0.tgz",
+              "version": "0.121.0",
+              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-gnu/-/binding-linux-x64-gnu-0.121.0.tgz",
               "overridden": false
             },
             "@oxc-parser/binding-linux-x64-musl": {
-              "version": "0.120.0",
-              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-musl/-/binding-linux-x64-musl-0.120.0.tgz",
+              "version": "0.121.0",
+              "resolved": "https://registry.npmjs.org/@oxc-parser/binding-linux-x64-musl/-/binding-linux-x64-musl-0.121.0.tgz",
               "overridden": false
             },
             "@oxc-parser/binding-openharmony-arm64": {},
@@ -3006,8 +3006,8 @@
             "@oxc-parser/binding-win32-ia32-msvc": {},
             "@oxc-parser/binding-win32-x64-msvc": {},
             "@oxc-project/types": {
-              "version": "0.120.0",
-              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.120.0.tgz",
+              "version": "0.121.0",
+              "resolved": "https://registry.npmjs.org/@oxc-project/types/-/types-0.121.0.tgz",
               "overridden": false
             }
           }
@@ -3058,8 +3058,8 @@
           "overridden": false
         },
         "smol-toml": {
-          "version": "1.6.0",
-          "resolved": "https://registry.npmjs.org/smol-toml/-/smol-toml-1.6.0.tgz",
+          "version": "1.6.1",
+          "resolved": "https://registry.npmjs.org/smol-toml/-/smol-toml-1.6.1.tgz",
           "overridden": false
         },
         "strip-json-comments": {

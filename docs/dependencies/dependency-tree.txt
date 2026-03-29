@@ -1,4 +1,4 @@
-riksdagsmonitor@0.8.8 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+riksdagsmonitor@0.8.9 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ @emnapi/core@1.8.1 extraneous
 │ ├── @emnapi/wasi-threads@1.1.0 deduped
 │ └── tslib@2.8.1
@@ -561,7 +561,7 @@ riksdagsmonitor@0.8.8 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── minimist@1.2.8 deduped
 │ ├── prettier@3.8.1
 │ └── tinyglobby@0.2.15 deduped
-├─┬ knip@6.0.6
+├─┬ knip@6.1.0
 │ ├─┬ @nodelib/fs.walk@1.2.8
 │ │ ├─┬ @nodelib/fs.scandir@2.1.5
 │ │ │ ├── @nodelib/fs.stat@2.0.5 deduped
@@ -588,28 +588,28 @@ riksdagsmonitor@0.8.8 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── resolve-pkg-maps@1.0.0
 │ ├── jiti@2.6.1 deduped
 │ ├── minimist@1.2.8 deduped
-│ ├─┬ oxc-parser@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm-eabi@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm64@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-arm64@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-x64@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-freebsd-x64@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-gnueabihf@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-musleabihf@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-gnu@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-musl@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-ppc64-gnu@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-gnu@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-musl@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-s390x-gnu@0.120.0
-│ │ ├── @oxc-parser/binding-linux-x64-gnu@0.120.0
-│ │ ├── @oxc-parser/binding-linux-x64-musl@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-openharmony-arm64@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-wasm32-wasi@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-arm64-msvc@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-ia32-msvc@0.120.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-x64-msvc@0.120.0
-│ │ └── @oxc-project/types@0.120.0
+│ ├─┬ oxc-parser@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm-eabi@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-android-arm64@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-arm64@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-darwin-x64@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-freebsd-x64@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-gnueabihf@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm-musleabihf@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-gnu@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-arm64-musl@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-ppc64-gnu@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-gnu@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-riscv64-musl@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-linux-s390x-gnu@0.121.0
+│ │ ├── @oxc-parser/binding-linux-x64-gnu@0.121.0
+│ │ ├── @oxc-parser/binding-linux-x64-musl@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-openharmony-arm64@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-wasm32-wasi@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-arm64-msvc@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-ia32-msvc@0.121.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-parser/binding-win32-x64-msvc@0.121.0
+│ │ └── @oxc-project/types@0.121.0
 │ ├─┬ oxc-resolver@11.19.1
 │ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm-eabi@11.19.1
 │ │ ├── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-android-arm64@11.19.1
@@ -633,7 +633,7 @@ riksdagsmonitor@0.8.8 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ └── UNMET OPTIONAL DEPENDENCY @oxc-resolver/binding-win32-x64-msvc@11.19.1
 │ ├── picocolors@1.1.1
 │ ├── picomatch@4.0.4
-│ ├── smol-toml@1.6.0
+│ ├── smol-toml@1.6.1
 │ ├── strip-json-comments@5.0.3
 │ ├── unbash@2.2.0
 │ ├── yaml@2.8.2
