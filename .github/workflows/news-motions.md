@@ -410,9 +410,8 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
   [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
 fi
 
-# Check if the requested date has any analyzed documents (per-date manifest, not session-wide catalog)
+# Check if the requested date has any analyzed documents (per-date, doc-type-scoped manifest only)
 MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/motions/data-download-manifest.md"
-[ ! -f "$MANIFEST_PATH" ] && MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/data-download-manifest.md"
 DATE_DOCS_ANALYZED=0
 if [ -f "$MANIFEST_PATH" ]; then
   DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
@@ -429,7 +428,6 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     echo "🔍 Checking $LOOKBACK_DATE for analyzed motions..."
     # First, check if a manifest already exists with non-zero Documents Analyzed
     MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/motions/data-download-manifest.md"
-    [ ! -f "$MANIFEST_PATH" ] && MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/data-download-manifest.md"
     DATE_DOCS_ANALYZED=0
     if [ -f "$MANIFEST_PATH" ]; then
       DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
@@ -445,7 +443,6 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 --doc-type motions 2>/dev/null || true
     # Re-check manifest after running analysis
     MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/motions/data-download-manifest.md"
-    [ ! -f "$MANIFEST_PATH" ] && MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/data-download-manifest.md"
     DATE_DOCS_ANALYZED=0
     if [ -f "$MANIFEST_PATH" ]; then
       DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
@@ -466,6 +463,7 @@ fi
 
 # Report pending per-file analysis count for monitoring
 PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only --type motions 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
+[ -z "$PENDING" ] && PENDING=0
 echo "📊 Total pending motion analysis files (all dates): $PENDING"
 ```
 

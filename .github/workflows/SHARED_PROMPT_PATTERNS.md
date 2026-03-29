@@ -133,6 +133,7 @@ fi
 
 # Step 3: Report pending per-file analysis count for monitoring
 PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
+PENDING=${PENDING:-0}
 echo "📊 Total pending per-file analysis files (all dates): $PENDING"
 ```
 
