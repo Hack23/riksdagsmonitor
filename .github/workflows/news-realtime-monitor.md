@@ -239,28 +239,42 @@ ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis o
 
 ```bash
 ARTICLE_DATE=$(date -u +%Y-%m-%d)
-PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
-TOTAL=$(npx tsx scripts/catalog-downloaded-data.ts 2>/dev/null | jq '.totalFiles // 0' 2>/dev/null || echo "0")
 
-if [ "$PENDING" -eq 0 ] && [ "$TOTAL" -eq 0 ]; then
-  echo "⚠️ No data for $ARTICLE_DATE — activating lookback fallback (up to 7 days)"
+# Check if the requested date has any analyzed documents (per-date manifest, not session-wide catalog)
+MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/data-download-manifest.md"
+DATE_DOCS_ANALYZED=0
+if [ -f "$MANIFEST_PATH" ]; then
+  DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+fi
+[ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
+echo "📄 Documents analyzed for $ARTICLE_DATE: $DATE_DOCS_ANALYZED"
+
+if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
+  echo "⚠️ No per-date data for $ARTICLE_DATE — activating lookback fallback (up to 7 days)"
   for DAYS_BACK in 1 2 3 4 5 6 7; do
     # Cross-platform date arithmetic: GNU date (-d) on Linux/GitHub Actions, BSD date (-v) on macOS
     LOOKBACK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
     [ -z "$LOOKBACK_DATE" ] && continue
-    echo "🔍 Checking $LOOKBACK_DATE for unanalyzed data..."
+    echo "🔍 Checking $LOOKBACK_DATE for analyzed data..."
     npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
-    PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
-    if [ "$PENDING" -gt 0 ]; then
-      echo "✅ Found $PENDING files needing analysis from $LOOKBACK_DATE"
+    MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/data-download-manifest.md"
+    DATE_DOCS_ANALYZED=0
+    if [ -f "$MANIFEST_PATH" ]; then
+      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+    fi
+    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
+    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
+      echo "✅ Found $DATE_DOCS_ANALYZED documents analyzed for $LOOKBACK_DATE — using this date"
+      ARTICLE_DATE="$LOOKBACK_DATE"
       break
     fi
   done
+  echo "🗓️ Using analysis date: $ARTICLE_DATE"
 fi
 
-# Check for ANY pending analysis across all dates (not just today)
+# Report pending per-file analysis count for monitoring
 PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
-echo "📊 Total pending analysis files across all dates: $PENDING"
+echo "📊 Total pending per-file analysis files (all dates): $PENDING"
 ```
 
 ### Per-File AI Analysis Enhancement
@@ -303,7 +317,7 @@ After the script-based analysis, perform **AI-driven per-file analysis** for dee
 > 🚨 **CRITICAL**: The `pre-article-analysis.ts` script generates **stub files** that do NOT follow the full template structure. After per-file analysis, you MUST rewrite each daily synthesis file to match its template.
 
 For each file in `analysis/daily/$ARTICLE_DATE/`:
-1. **Read the corresponding template** from `analysis/templates/` (see mapping above)
+1. **Read the corresponding template** from `analysis/templates/` (see template-to-file mapping in `SHARED_PROMPT_PATTERNS.md`)
 2. **Preserve script data** — keep factual data (document counts, risk scores, anomalies)
 3. **Add template structure** — add ALL required metadata fields, Mermaid diagrams, evidence tables, confidence labels
 4. **Fill with real data** — use per-file analysis results to populate every section

@@ -76,33 +76,45 @@ After the initial data download attempt for `$ARTICLE_DATE`:
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
 
-# Step 1: Check if today's download yielded documents
-PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0')
-TOTAL=$(npx tsx scripts/catalog-downloaded-data.ts 2>/dev/null | jq '.totalFiles // 0')
+# Step 1: Check if the requested article date has any analyzed documents (per-date, not session-wide)
+MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/data-download-manifest.md"
+DATE_DOCS_ANALYZED=0
+if [ -f "$MANIFEST_PATH" ]; then
+  DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+fi
+[ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
+echo "📄 Documents analyzed for $ARTICLE_DATE: $DATE_DOCS_ANALYZED"
 
-if [ "$PENDING" -eq 0 ] && [ "$TOTAL" -eq 0 ]; then
-  echo "⚠️ No data for $ARTICLE_DATE — activating lookback fallback"
-  # Step 2: Try downloading data for previous dates (up to 7 days back)
+if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
+  echo "⚠️ No per-date data for $ARTICLE_DATE — activating lookback fallback"
+  # Step 2: Try previous dates (up to 7 days back) until we find one with analyzed documents
   for DAYS_BACK in 1 2 3 4 5 6 7; do
     # Cross-platform date arithmetic: GNU date (-d) on Linux/GitHub Actions, BSD date (-v) on macOS
     LOOKBACK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
     [ -z "$LOOKBACK_DATE" ] && continue
-    echo "🔍 Checking $LOOKBACK_DATE for unanalyzed data..."
+    echo "🔍 Checking $LOOKBACK_DATE for analyzed data..."
     npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
-    PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0')
-    if [ "$PENDING" -gt 0 ]; then
-      echo "✅ Found $PENDING files needing analysis from $LOOKBACK_DATE"
+    MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/data-download-manifest.md"
+    DATE_DOCS_ANALYZED=0
+    if [ -f "$MANIFEST_PATH" ]; then
+      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+    fi
+    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
+    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
+      echo "✅ Found $DATE_DOCS_ANALYZED documents analyzed for $LOOKBACK_DATE"
+      ARTICLE_DATE="$LOOKBACK_DATE"
       break
     fi
   done
+  echo "🗓️ Using analysis date: $ARTICLE_DATE"
 fi
 
-# Step 3: Even if no new downloads, check for ANY pending analysis across all dates
-PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0')
-echo "📊 Total pending analysis files: $PENDING"
+# Step 3: Report pending per-file analysis count for monitoring
+PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
+echo "📊 Total pending per-file analysis files (all dates): $PENDING"
 ```
 
-**Key principle**: The catalog tracks ALL data files across ALL dates. Even if today yields zero new downloads, there may be previously downloaded files that still lack `.analysis.md` sidecar files. The workflow must analyze those.
+**Key principle**: The lookback trigger uses the **per-date** "Documents Analyzed" count from `data-download-manifest.md`, NOT session-wide catalog totals. When a lookback date is selected, `$ARTICLE_DATE` is updated so downstream steps (daily synthesis rewrite, commit) target the correct directory.
 ````
 
 ## 📋 Daily Synthesis Template Compliance (copy into every analysis workflow)
