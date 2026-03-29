@@ -233,4 +233,4 @@ timeline
 - **Template Path:** `/analysis/templates/risk-assessment.md`  
 - **Framework Reference:** [methodologies/political-risk-methodology.md](../methodologies/political-risk-methodology.md)  
 - **Classification:** Public  
-- **Next Review:** 2026-06-28
+- **Next Review:** 2026-06-26

@@ -214,4 +214,4 @@ graph LR
 - **Template Path:** `/analysis/templates/synthesis-summary.md`  
 - **Consumed By:** All news article generator workflows  
 - **Classification:** Public  
-- **Next Review:** 2026-06-28
+- **Next Review:** 2026-06-26

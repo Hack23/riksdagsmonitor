@@ -275,10 +275,8 @@ function main() {
   console.log(JSON.stringify(catalog, null, 2));
 }
 
-// Run CLI when invoked directly
-const isDirectRun =
-  process.argv[1]?.endsWith('catalog-downloaded-data.ts') ||
-  process.argv[1]?.endsWith('catalog-downloaded-data.js');
-if (isDirectRun) {
+// Run CLI when invoked directly (matches repo convention in pre-article-analysis.ts)
+import { fileURLToPath } from 'node:url';
+if (path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1] ?? '')) {
   main();
 }

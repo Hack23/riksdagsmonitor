@@ -17,7 +17,7 @@
 </p>
 
 **📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-28 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-28  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-26  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -429,4 +429,4 @@ of coalition fiscal discipline.
 **Document Control:**  
 - **Path:** `/analysis/methodologies/ai-driven-analysis-guide.md`  
 - **Classification:** Public  
-- **Next Review:** 2026-06-28
+- **Next Review:** 2026-06-26

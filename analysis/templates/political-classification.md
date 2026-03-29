@@ -245,4 +245,4 @@ Significance Score: [REQUIRED: see significance-scoring.md, 0–10 composite]
 - **Template Path:** `/analysis/templates/political-classification.md`  
 - **Framework Reference:** [methodologies/political-classification-guide.md](../methodologies/political-classification-guide.md)  
 - **Classification:** Public  
-- **Next Review:** 2026-06-28
+- **Next Review:** 2026-06-26

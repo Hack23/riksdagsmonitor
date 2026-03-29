@@ -228,4 +228,4 @@ When stakeholder impacts conflict (e.g., Citizens benefit but Business bears cos
 - **Lens References:** `scripts/analysis-framework/lenses/` (citizen, economic, government, international, media, opposition)  
 - **Framework Reference:** [methodologies/political-style-guide.md](../methodologies/political-style-guide.md)  
 - **Classification:** Public  
-- **Next Review:** 2026-06-28
+- **Next Review:** 2026-06-26
