@@ -224,6 +224,8 @@ Tools with date params: `get_calendar_events` (from/tom — **⚠️ known inter
 
 **CRITICAL: Run the analysis pipeline BEFORE detecting events and generating articles.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps, and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`.
 
+> 🚨 **NON-NEGOTIABLE**: The pipeline MUST actually download data. If it fails, you MUST diagnose and fix the script — NEVER silently skip and fabricate analysis manually.
+
 ```bash
 # Idempotent: only set if not already resolved by lookback
 if [ -z "${ARTICLE_DATE:-}" ]; then
@@ -236,10 +238,35 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
 fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 # --limit 50 is appropriate for same-day realtime monitoring (pipeline date-filters to the resolved ARTICLE_DATE only)
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
-echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
-ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
+PIPE_EXIT=${PIPESTATUS[0]}
+if [ "$PIPE_EXIT" -ne 0 ]; then
+  echo "❌ Pipeline failed with exit code $PIPE_EXIT — diagnosing..."
+  tail -30 /tmp/pipeline-output.log
+  # Check common failure causes
+  npx tsc --noEmit scripts/pre-article-analysis.ts 2>&1 | head -20 || true
+  echo "⚠️ Attempting to fix and re-run pipeline..."
+  # Re-run after potential fix (agent should diagnose and fix the issue before re-running)
+fi
+echo "📊 Analysis artifacts for $ARTICLE_DATE:"
+ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output directory"
+# Verify actual data was downloaded
+MANIFEST_DOCS=0
+if [ -f "analysis/daily/$ARTICLE_DATE/data-download-manifest.md" ]; then
+  MANIFEST_DOCS=$(grep -E '^\*\*Documents Analyzed\*\*' "analysis/daily/$ARTICLE_DATE/data-download-manifest.md" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+fi
+[ -z "$MANIFEST_DOCS" ] && MANIFEST_DOCS=0
+echo "📊 Documents downloaded by pipeline: $MANIFEST_DOCS"
 ```
+
+### 🔧 Script Debugging Protocol (if pipeline fails)
+
+> If the pipeline exited with non-zero status or downloaded 0 documents, you MUST:
+> 1. **Read the error output** from `/tmp/pipeline-output.log`
+> 2. **Read the script source** (`view scripts/pre-article-analysis.ts`) to understand the failure
+> 3. **Fix the issue** (import errors, missing deps, type errors, connection issues)
+> 4. **Re-run the pipeline** after fixing
+> 5. **NEVER skip the pipeline and write analysis files manually**
 
 ### 🔄 Data Lookback Fallback
 
