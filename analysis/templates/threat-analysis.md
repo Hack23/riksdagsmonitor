@@ -68,8 +68,8 @@ graph LR
     style I fill:#ffc107,color:#000
     style D fill:#28a745,color:#fff
     style E fill:#0d6efd,color:#fff
-    %% Threat instance nodes: set fill color by severity (see palette above)
-    %% 🔴 #dc3545 = Severe/Major, 🟠 #fd7e14 = Moderate, 🟡 #ffc107 = Minor, 🟢 #28a745 = Negligible
+    %% Threat instance nodes: set fill color by severity (framework §9, 1–5 scale)
+    %% 1 = 🟢 #28a745 (Negligible/Low), 2 = 🟡 #ffc107 (Minor), 3 = 🟠 #fd7e14 (Moderate), 4 = 🟠 #fd7e14 (High), 5 = 🔴 #dc3545 (Severe)
     style S1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
     style T1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
     style R1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5

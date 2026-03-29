@@ -220,7 +220,7 @@ Below is a **concrete example** of what a completed per-file analysis should loo
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Significance-8.2%2F10-dc3545?style=flat-square" alt="Significance"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Sensitivity-HIGH-fd7e14?style=flat-square" alt="Sensitivity"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Sensitivity-RESTRICTED-fd7e14?style=flat-square" alt="Sensitivity"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Domain-ECO-0d6efd?style=flat-square" alt="Domain"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Confidence-HIGH-28a745?style=flat-square" alt="Confidence"/></a>
 </p>
@@ -247,15 +247,15 @@ The Finance Committee's budget framework report (FiU10) sets fiscal guidelines f
 
 ```mermaid
 graph LR
-    DOC["📄 H901FiU10<br/>Budget Framework"] --> SENS["🟠 HIGH Sensitivity<br/>Coalition stability test"]
+    DOC["📄 H901FiU10<br/>Budget Framework"] --> SENS["🔴 RESTRICTED<br/>Coalition stability test"]
     DOC --> DOM["💰 ECO<br/>Fiscal Policy"]
-    DOC --> URG["📅 SHORT-TERM<br/>Budget vote imminent"]
+    DOC --> URG["🟠 URGENT<br/>Budget vote imminent"]
     DOC --> SIG["⭐ 8.2/10<br/>Major fiscal direction"]
     
     style DOC fill:#0d6efd,color:#fff
-    style SENS fill:#fd7e14,color:#fff
+    style SENS fill:#dc3545,color:#fff
     style DOM fill:#0d6efd,color:#fff
-    style URG fill:#ffc107,color:#000
+    style URG fill:#fd7e14,color:#fff
     style SIG fill:#dc3545,color:#fff
 ```
 
