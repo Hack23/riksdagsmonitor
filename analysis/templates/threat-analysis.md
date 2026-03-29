@@ -68,12 +68,14 @@ graph LR
     style I fill:#ffc107,color:#000
     style D fill:#28a745,color:#fff
     style E fill:#0d6efd,color:#fff
-    style S1 fill:#6f42c1,color:#fff,stroke-dasharray: 5 5
-    style T1 fill:#dc3545,color:#fff,stroke-dasharray: 5 5
-    style R1 fill:#fd7e14,color:#fff,stroke-dasharray: 5 5
-    style I1 fill:#ffc107,color:#000,stroke-dasharray: 5 5
-    style D1 fill:#28a745,color:#fff,stroke-dasharray: 5 5
-    style E1 fill:#0d6efd,color:#fff,stroke-dasharray: 5 5
+    %% Threat instance nodes: set fill color by severity (see palette above)
+    %% 🔴 #dc3545 = Severe/Major, 🟠 #fd7e14 = Moderate, 🟡 #ffc107 = Minor, 🟢 #28a745 = Negligible
+    style S1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style T1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style R1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style I1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style D1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style E1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
 ```
 
 ### S — Spoofing: False Narratives & Misinformation Threats

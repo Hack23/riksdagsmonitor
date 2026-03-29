@@ -153,13 +153,14 @@ export function buildCatalog(
 
   // De-duplicate vote entries: when the same id appears from both
   // documents/votes and votes/YYYY-MM-DD, prefer the date-stamped path.
+  // Only votes are scoped for dedup (the only type with two scan dirs).
   const bestByKey = new Map<string, (typeof allEntries)[number]>();
   for (const e of allEntries) {
     const key = `${e.type}::${e.id}`;
     const existing = bestByKey.get(key);
     if (!existing) {
       bestByKey.set(key, e);
-    } else {
+    } else if (e.type === 'votes') {
       // Prefer the entry whose path contains a date directory (votes/YYYY-MM-DD)
       const existingHasDate = /votes\/\d{4}-\d{2}-\d{2}\//.test(existing.path);
       const currentHasDate = /votes\/\d{4}-\d{2}-\d{2}\//.test(e.path);
@@ -168,6 +169,7 @@ export function buildCatalog(
       }
       // Otherwise keep existing (first-seen or already date-stamped)
     }
+    // Non-vote duplicates: keep first-seen (shouldn't occur with current DATA_SUBDIRS)
   }
   const dedupedEntries = [...bestByKey.values()];
 

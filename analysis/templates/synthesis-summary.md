@@ -46,8 +46,8 @@
 graph TD
     subgraph "📊 Daily Political Intelligence Dashboard"
         direction TB
-        subgraph "🏷️ Classification"
-            CLS["Classification Level<br/>[CRITICAL/HIGH/MEDIUM/LOW]"]
+        subgraph "🔒 Sensitivity"
+            CLS["Sensitivity<br/>[PUBLIC/SENSITIVE/RESTRICTED]"]
         end
         subgraph "⚖️ Risk"
             RSK["Overall Risk<br/>[CRITICAL/HIGH/MEDIUM/LOW]<br/>Top: [RSK-NNN description]"]

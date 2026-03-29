@@ -51,24 +51,26 @@
 ```mermaid
 graph LR
     A[Document] --> B{Sensitivity}
-    B -->|"🔴 CRITICAL"| C[Constitutional Impact]
-    B -->|"🟠 HIGH"| D[Policy Delivery Risk]
-    B -->|"🟡 MEDIUM"| E[Standard Parliamentary]
-    B -->|"🟢 LOW"| F[Routine / Background]
+    B -->|"🔴 RESTRICTED"| C[Constitutional / National Security]
+    B -->|"🟠 SENSITIVE"| D[Policy Delivery Risk]
+    B -->|"🟢 PUBLIC"| E[Standard Parliamentary]
     
     A --> G{Domain}
     G --> H["[REQUIRED: Primary policy domain]"]
     
     A --> I{Urgency}
-    I -->|"⚡ IMMEDIATE"| J[Breaking — hours]
-    I -->|"📅 SHORT-TERM"| K[This week]
-    I -->|"📆 MEDIUM-TERM"| L[This month]
-    I -->|"🗓️ LONG-TERM"| M[This session]
+    I -->|"🔴 CRITICAL"| J[Constitutional crisis — hours]
+    I -->|"🟠 URGENT"| K[Formal response — days]
+    I -->|"🟡 ELEVATED"| L[Monitoring — this week]
+    I -->|"🟢 ROUTINE"| M[Standard processing]
     
     style C fill:#dc3545,color:#fff
     style D fill:#fd7e14,color:#fff
-    style E fill:#ffc107,color:#000
-    style F fill:#28a745,color:#fff
+    style E fill:#28a745,color:#fff
+    style J fill:#dc3545,color:#fff
+    style K fill:#fd7e14,color:#fff
+    style L fill:#ffc107,color:#000
+    style M fill:#28a745,color:#fff
 ```
 
 | Field | Assessment |
