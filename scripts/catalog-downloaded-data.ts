@@ -129,8 +129,7 @@ export function buildCatalog(
     for (const filePath of jsonFiles) {
       // Use path relative to the type directory (sans .json) as id.
       // For flat dirs: "P1".  For nested dirs: "ind1/SE".
-      const relToDir = path.relative(dirPath, filePath).replace(/\.json$/, '');
-      const id = relToDir.split(path.sep).join('/');
+      const id = path.relative(dirPath, filePath).replace(/\.json$/, '').split(path.sep).join('/');
       const metaPath = filePath.replace(/\.json$/, '.meta.json');
       const analysisPath = filePath.replace(/\.json$/, '.analysis.md');
 

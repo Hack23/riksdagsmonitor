@@ -218,7 +218,7 @@ describe('catalog-downloaded-data', () => {
     expect(catalog.entries).toHaveLength(2);
     // Both entries should be worldbank type
     expect(catalog.entries.every((e) => e.type === 'worldbank')).toBe(true);
-    // Both have basename-derived id 'SE' but distinct paths
+    // Both have path-derived ids (ind1/SE, ind2/SE) with same basename but distinct paths
     const paths = catalog.entries.map((e) => e.path);
     expect(paths.some((p) => p.includes('ind1/SE.json'))).toBe(true);
     expect(paths.some((p) => p.includes('ind2/SE.json'))).toBe(true);
