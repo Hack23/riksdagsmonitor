@@ -239,11 +239,9 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
   fi
 fi
 echo "📥 Downloading data for $ARTICLE_DATE..."
-# CRITICAL: Source mcp-setup.sh FIRST to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the AWF gateway
-source scripts/mcp-setup.sh
-echo "MCP_SERVER_URL=${MCP_SERVER_URL:-NOT SET}"
+# CRITICAL: Source mcp-setup.sh to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the AWF gateway
 # Scripts download data only — analysis is done by AI afterwards
-source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
+source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL:-NOT SET}" && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
 PIPE_EXIT=${PIPESTATUS[0]}
 if [ "$PIPE_EXIT" -ne 0 ]; then
   echo "❌ Data download script failed with exit code $PIPE_EXIT — agent MUST diagnose and fix"
