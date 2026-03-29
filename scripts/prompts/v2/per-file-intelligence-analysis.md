@@ -210,13 +210,13 @@ Below is a **concrete example** of what a completed per-file analysis should loo
 
 ---
 
-### Example: Budget Proposition Analysis (H901FiU10)
+### Example: Budget Committee Report Analysis (H901FiU10)
 
 <p align="center">
   <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="64" height="64">
 </p>
 
-<h3 align="center">🔍 Political Intelligence Analysis: Budget Framework Proposition</h3>
+<h3 align="center">🔍 Political Intelligence Analysis: Budget Framework Committee Report</h3>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Significance-8.2%2F10-dc3545?style=flat-square" alt="Significance"/></a>

@@ -40,7 +40,7 @@
 
 ### Daily Political Landscape
 
-> **AI Instructions:** Replace all placeholder values with actual analysis results. Color each node by its assessment level.
+> **AI Instructions:** Replace all placeholder values with actual analysis results. Update each node's `style` line from grey placeholder to the appropriate level color (e.g., Sensitivity: 🟢 PUBLIC #28a745, 🟡 SENSITIVE #ffc107, 🔴 RESTRICTED #dc3545; Risk/Threat: use standard palette).
 
 ```mermaid
 graph TD
@@ -72,10 +72,10 @@ graph TD
     THR --> DEC
     SIG --> DEC
 
-    style CLS fill:#ffc107,color:#000
-    style RSK fill:#fd7e14,color:#fff
-    style THR fill:#28a745,color:#fff
-    style SIG fill:#0d6efd,color:#fff
+    style CLS fill:#6c757d,stroke:#333,stroke-width:2px,stroke-dasharray:5 5,color:#fff
+    style RSK fill:#6c757d,stroke:#333,stroke-width:2px,stroke-dasharray:5 5,color:#fff
+    style THR fill:#6c757d,stroke:#333,stroke-width:2px,stroke-dasharray:5 5,color:#fff
+    style SIG fill:#6c757d,stroke:#333,stroke-width:2px,stroke-dasharray:5 5,color:#fff
     style BRK fill:#dc3545,color:#fff
     style STD fill:#28a745,color:#fff
     style MON fill:#6c757d,color:#fff

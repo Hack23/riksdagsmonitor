@@ -261,4 +261,4 @@ When multiple workflows run concurrently:
 - **Path:** `/analysis/README.md`  
 - **Format:** Markdown  
 - **Classification:** Public  
-- **Next Review:** 2026-06-28
+- **Next Review:** 2026-06-26
