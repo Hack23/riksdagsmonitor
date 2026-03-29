@@ -476,9 +476,13 @@ If no HIGH or MEDIUM events found:
 
 1. **First check if analysis artifacts exist** in `analysis/daily/YYYY-MM-DD/`:
 ```bash
-# Idempotent: only set if not already resolved by lookback
+# Idempotent: prefer resolved/input date, then fall back to today
 if [ -z "${ARTICLE_DATE:-}" ]; then
-  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  if [ -n "${{ github.event.inputs.article_date }}" ]; then
+    ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  else
+    ARTICLE_DATE="$(date -u +%Y-%m-%d)"
+  fi
 fi
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
 ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l)
