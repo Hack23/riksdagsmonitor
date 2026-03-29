@@ -386,14 +386,85 @@ get_propositioner({ rm: <calculated riksmöte>, limit: 20 })
 **CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/propositions/`. The 9 batch artifacts are also copied to the unscoped `analysis/daily/YYYY-MM-DD/` directory so existing enrichment readers (`readDailyAnalysis`, `getAnalysisEnrichment`) find them at the default path. Per-document files (`documents/*.json`, `documents/*-analysis.md`) remain only under the scoped directory.
 
 ```bash
-ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-if [ -z "$ARTICLE_DATE" ]; then
-  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+# Idempotent: only set if not already resolved by lookback
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  if [ -z "$ARTICLE_DATE" ]; then
+    ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  fi
 fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 --doc-type propositions || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
 echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/propositions/"
 ls -la "analysis/daily/$ARTICLE_DATE/propositions/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
+```
+
+### 🔄 Data Lookback Fallback
+
+> 🚨 **CRITICAL RULE**: Never produce empty/stub analysis. If no data for today, look back to find unanalyzed data.
+
+```bash
+# Idempotent: only set if not already resolved by lookback
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
+
+# Check if the requested date has any analyzed documents (per-date, doc-type-scoped manifest only)
+MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/propositions/data-download-manifest.md"
+DATE_DOCS_ANALYZED=0
+if [ -f "$MANIFEST_PATH" ]; then
+  DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+fi
+[ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
+echo "📄 Propositions analyzed for $ARTICLE_DATE: $DATE_DOCS_ANALYZED"
+
+if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
+  echo "⚠️ No proposition data for $ARTICLE_DATE — activating lookback fallback (up to 7 days)"
+  for DAYS_BACK in 1 2 3 4 5 6 7; do
+    # Cross-platform date arithmetic: GNU date (-d) on Linux/GitHub Actions, BSD date (-v) on macOS
+    LOOKBACK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
+    [ -z "$LOOKBACK_DATE" ] && continue
+    echo "🔍 Checking $LOOKBACK_DATE for analyzed propositions..."
+    # First, check if a manifest already exists with non-zero Documents Analyzed
+    MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/propositions/data-download-manifest.md"
+    DATE_DOCS_ANALYZED=0
+    if [ -f "$MANIFEST_PATH" ]; then
+      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+    fi
+    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
+    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
+      echo "✅ Found $DATE_DOCS_ANALYZED propositions already analyzed for $LOOKBACK_DATE — using this date without re-running analysis"
+      ARTICLE_DATE="$LOOKBACK_DATE"
+      break
+    fi
+    # No existing data — run pre-article analysis for this lookback date
+    echo "ℹ️ No existing manifest data for $LOOKBACK_DATE — running pre-article analysis"
+    npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 --doc-type propositions 2>/dev/null || true
+    # Re-check manifest after running analysis
+    MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/propositions/data-download-manifest.md"
+    DATE_DOCS_ANALYZED=0
+    if [ -f "$MANIFEST_PATH" ]; then
+      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+    fi
+    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
+    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
+      echo "✅ Successfully analyzed $DATE_DOCS_ANALYZED propositions for $LOOKBACK_DATE — using this date"
+      ARTICLE_DATE="$LOOKBACK_DATE"
+      break
+    fi
+  done
+  echo "🗓️ Using analysis date: $ARTICLE_DATE"
+  # Persist resolved ARTICLE_DATE for downstream steps
+  if [ -n "${GITHUB_ENV:-}" ]; then
+    echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"
+  fi
+fi
+
+# Report pending per-file analysis count for monitoring
+PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only --type propositions 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
+[ -z "$PENDING" ] && PENDING=0
+echo "📊 Total pending proposition analysis files (all dates): $PENDING"
 ```
 
 ### Per-File AI Analysis Enhancement
@@ -403,12 +474,21 @@ ls -la "analysis/daily/$ARTICLE_DATE/propositions/" 2>/dev/null || echo "⚠️ 
 After the script-based analysis, perform **AI-driven per-file analysis** for deeper intelligence:
 
 1. Run `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to list files needing analysis
-2. **Read the methodology guides** (use `view` or `cat` to read each fully):
+2. **Read ALL methodology guides AND templates** (use `view` or `cat` to read each fully):
    - `analysis/methodologies/ai-driven-analysis-guide.md` — Master per-file analysis guide (includes bad/good examples)
    - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT with confidence hierarchy
    - `analysis/methodologies/political-risk-methodology.md` — 5×5 Likelihood×Impact risk matrix
    - `analysis/methodologies/political-threat-framework.md` — STRIDE-adapted threat model, severity calibration
+   - `analysis/methodologies/political-classification-guide.md` — Sensitivity and domain taxonomy
+   - `analysis/methodologies/political-style-guide.md` — Writing standards and evidence density
    - `analysis/templates/per-file-political-intelligence.md` — Per-file output template
+   - `analysis/templates/synthesis-summary.md` — Daily synthesis template
+   - `analysis/templates/risk-assessment.md` — Risk assessment template
+   - `analysis/templates/political-classification.md` — Classification template
+   - `analysis/templates/threat-analysis.md` — Threat template
+   - `analysis/templates/swot-analysis.md` — SWOT template
+   - `analysis/templates/stakeholder-impact.md` — Stakeholder template
+   - `analysis/templates/significance-scoring.md` — Significance template
 3. For each pending file:
    a. **Read** the JSON data file — use `view` or `cat` to read the actual content
    b. **Extract** key fields (dok_id, titel, datum, organ, rm, undertitel, etc.)
@@ -437,6 +517,10 @@ The analysis pipeline outputs the following artifacts per doc-type run:
 
 These files are committed alongside articles for human review and continuous improvement.
 
+### 📋 Rewrite Daily Synthesis Files to Follow Templates
+
+> 🚨 **CRITICAL**: Script-generated stubs do NOT follow template structure. Rewrite each daily file to match its `analysis/templates/` counterpart. Read each template with `cat` before rewriting. Every file needs: metadata header (ID, date, riksmöte, confidence), ≥1 color-coded Mermaid diagram, evidence tables with dok_id citations, and no `[REQUIRED]` placeholders.
+
 ### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
 
 **Before deciding whether to generate articles or call noop, you MUST:**
@@ -446,8 +530,11 @@ These files are committed alongside articles for human review and continuous imp
 3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
 
 ```bash
-ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+# Idempotent: only set if not already resolved by lookback
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then

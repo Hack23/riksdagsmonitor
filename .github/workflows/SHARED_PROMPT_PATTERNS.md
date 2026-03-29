@@ -59,6 +59,141 @@ if [ "$EXISTING" -gt 0 ] && [ "${FORCE_GENERATION}" != "true" ]; then
 fi
 ```
 
+## 🔄 Data Lookback Fallback Strategy (copy into every analysis workflow)
+
+> **MANDATORY**: Never produce empty analysis. If no data exists for today, look back up to 7 days to find data that still needs analysis. Weekend/holiday runs MUST still produce useful output.
+
+````markdown
+### Data Lookback Fallback Strategy
+
+> 🚨 **CRITICAL RULE**: An agentic workflow must NEVER produce empty/stub analysis files. If no documents are found for today's date, the workflow MUST look back through previous dates to find data that still needs analysis. Empty analysis = wasted workflow run.
+
+#### Fallback Protocol
+
+After the initial data download attempt for `$ARTICLE_DATE`:
+
+```bash
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  [ -z "${ARTICLE_DATE:-}" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
+
+# Step 1: Check if the requested article date has any analyzed documents (per-date, not session-wide)
+MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/data-download-manifest.md"
+DATE_DOCS_ANALYZED=0
+if [ -f "$MANIFEST_PATH" ]; then
+  DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+fi
+[ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
+echo "📄 Documents analyzed for $ARTICLE_DATE: $DATE_DOCS_ANALYZED"
+
+if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
+  echo "⚠️ No per-date data for $ARTICLE_DATE — activating lookback fallback"
+  # Step 2: Try previous dates (up to 7 days back) until we find one with analyzed documents
+  for DAYS_BACK in 1 2 3 4 5 6 7; do
+    # Cross-platform date arithmetic: GNU date (-d) on Linux/GitHub Actions, BSD date (-v) on macOS
+    LOOKBACK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
+    [ -z "$LOOKBACK_DATE" ] && continue
+    echo "🔍 Checking $LOOKBACK_DATE for analyzed data..."
+    # First, check if a manifest already exists with non-zero Documents Analyzed
+    MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/data-download-manifest.md"
+    DATE_DOCS_ANALYZED=0
+    if [ -f "$MANIFEST_PATH" ]; then
+      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+    fi
+    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
+    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
+      echo "✅ Found $DATE_DOCS_ANALYZED documents already analyzed for $LOOKBACK_DATE — using this date without re-running analysis"
+      ARTICLE_DATE="$LOOKBACK_DATE"
+      break
+    fi
+    # No existing data — run pre-article analysis for this lookback date
+    echo "ℹ️ No existing manifest data for $LOOKBACK_DATE — running pre-article analysis"
+    npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
+    # Re-check manifest after running analysis
+    DATE_DOCS_ANALYZED=0
+    if [ -f "$MANIFEST_PATH" ]; then
+      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+    fi
+    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
+    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
+      echo "✅ Successfully analyzed $DATE_DOCS_ANALYZED documents for $LOOKBACK_DATE — using this date"
+      ARTICLE_DATE="$LOOKBACK_DATE"
+      break
+    fi
+  done
+  echo "🗓️ Using analysis date: $ARTICLE_DATE"
+
+  # Persist selected ARTICLE_DATE for downstream steps
+  if [ -n "${GITHUB_ENV:-}" ]; then
+    echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"
+    echo "📌 Persisted ARTICLE_DATE=$ARTICLE_DATE to GITHUB_ENV for downstream steps"
+  fi
+fi
+
+# Step 3: Report pending per-file analysis count for monitoring
+PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
+PENDING=${PENDING:-0}
+echo "📊 Total pending per-file analysis files (all dates): $PENDING"
+```
+
+**Key principle**: The lookback trigger uses the **per-date** "Documents Analyzed" count from `data-download-manifest.md`, NOT session-wide catalog totals. When a lookback date is selected, `$ARTICLE_DATE` is updated so downstream steps (daily synthesis rewrite, commit) target the correct directory.
+
+**ARTICLE_DATE overwrite protection**: The resolved `ARTICLE_DATE` is persisted to `$GITHUB_ENV` after lookback selection. **Important**: any downstream bash snippet that initializes `ARTICLE_DATE` from inputs or `date -u` MUST use an idempotent guard to avoid overwriting the lookback-selected date. Place this snippet at the start of any step that runs AFTER the lookback loop:
+
+```bash
+# Idempotent ARTICLE_DATE initialization — only set if not already resolved by lookback
+# Place at the top of any downstream bash step that would otherwise re-initialize ARTICLE_DATE
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
+```
+
+This ensures that once lookback persists `ARTICLE_DATE` to `$GITHUB_ENV`, subsequent steps reuse the resolved value rather than resetting to today's date.
+````
+
+## 📋 Daily Synthesis Template Compliance (copy into every analysis workflow)
+
+> **MANDATORY**: Every daily analysis file in `analysis/daily/YYYY-MM-DD/` MUST follow its corresponding template from `analysis/templates/`. The script-generated stubs are starting points — the AI agent MUST rewrite them to full template compliance.
+
+````markdown
+### Daily Synthesis Template Compliance
+
+> 🚨 **CRITICAL RULE**: The `pre-article-analysis.ts` script generates **stub files** as a starting point. These stubs do NOT follow the full template structure. You MUST read each template and rewrite the corresponding daily file to match the template's required sections, metadata fields, Mermaid diagrams, and evidence tables.
+
+#### Template-to-File Mapping
+
+| Daily File | Template to Follow | Required Sections |
+|------------|-------------------|-------------------|
+| `synthesis-summary.md` | **`analysis/templates/synthesis-summary.md`** | Synthesis Context (SYN-ID, date, confidence), Intelligence Dashboard (Mermaid), Top Findings table, Aggregated SWOT, Risk Landscape, Threat Summary, Stakeholder Impact, Narrative Direction, Forward Indicators, Artifacts Inventory |
+| `risk-assessment.md` | **`analysis/templates/risk-assessment.md`** | Risk Context (RSK-ID, riksmöte, political context), Risk Heat Map (Mermaid), Risk Inventory table (L×I scores), Coalition Stability, Policy Implementation Risk, Budget Risk, Electoral Risk, Escalation Rules |
+| `classification-results.md` | **`analysis/templates/political-classification.md`** | Classification Context (CLS-ID), Sensitivity Decision Tree (Mermaid), Per-document classification table (sensitivity, domain, urgency, scope, significance 0-10), Likelihood × Impact matrix |
+| `threat-analysis.md` | **`analysis/templates/threat-analysis.md`** | Threat Context (THR-ID), STRIDE Network (Mermaid), 6 STRIDE categories (S/T/R/I/D/E) with ≥1 threat each (severity 1-5), Threat Actor Mapping, Priority Mitigations, Escalation Decision |
+| `swot-analysis.md` | **`analysis/templates/swot-analysis.md`** | SWOT Context (SWT-ID), Quadrant Mapping (Mermaid), Coalition SWOT, Opposition SWOT, Policy Domain SWOT — all entries with dok_id evidence, confidence, impact, entry date |
+| `stakeholder-perspectives.md` | **`analysis/templates/stakeholder-impact.md`** | Stakeholder Context (STA-ID), Impact Radar (Mermaid), 6 stakeholder groups assessed (Citizens, Government, Opposition, Business, Civil Society, International), Impact Summary Matrix, Conflicting Impact Resolution |
+| `significance-scoring.md` | **`analysis/templates/significance-scoring.md`** | Scoring Context (SIG-ID), 5-dimension scoring (Parliamentary, Policy Impact, Public Interest, Urgency, Cross-party) each 0-10, Composite Score, Publication Decision threshold |
+
+#### Protocol
+
+1. **Read each template** — use `view` or `cat` to read the full template file before rewriting the daily file
+2. **Preserve script data** — keep any factual data (document counts, risk scores, anomalies) from the script output
+3. **Keep existing filenames** — do **NOT** rename or create new files based on template filename suggestions; always rewrite the existing daily artifacts produced by `pre-article-analysis.ts` in-place (e.g., keep `classification-results.md`, `stakeholder-perspectives.md`)
+4. **Add template structure** — add all required metadata fields, Mermaid diagrams, evidence tables, and confidence labels
+5. **Fill with real data** — use downloaded documents, MCP data, and analysis results to fill every `[REQUIRED]` placeholder
+6. **No empty sections** — if a section has no data, explain WHY (e.g., "No propositions found for this date — Parliament in recess") with confidence label
+
+#### Minimum Compliance Check
+- [ ] Every daily file has its template's metadata header (ID, date, riksmöte, confidence)
+- [ ] Every daily file has ≥1 Mermaid diagram with color-coded nodes (not grey placeholders)
+- [ ] Risk assessment has ≥2 risks with L×I numeric scores
+- [ ] SWOT has ≥2 filled quadrants with evidence citations
+- [ ] Threat analysis covers all 6 STRIDE categories
+- [ ] Significance scoring uses 5-dimension model
+- [ ] Synthesis references all sibling files with ✅/⚠️/❌ status
+- [ ] No `[REQUIRED]` placeholders remain in any file
+````
+
 ## Per-File AI Analysis Block (copy into every analysis workflow)
 
 > **Replaces script-based batch analysis.** The AI agent reads methodology documents and produces SWOT.md-quality per-file analysis for every downloaded MCP data file.
@@ -75,7 +210,16 @@ Read these methodology documents to guide your analysis:
 - **`analysis/methodologies/political-swot-framework.md`** — Evidence-based SWOT
 - **`analysis/methodologies/political-risk-methodology.md`** — 5×5 risk matrix
 - **`analysis/methodologies/political-threat-framework.md`** — STRIDE political mapping
-- **`analysis/templates/per-file-political-intelligence.md`** — Output template
+- **`analysis/methodologies/political-classification-guide.md`** — Sensitivity and domain taxonomy
+- **`analysis/methodologies/political-style-guide.md`** — Writing standards and evidence density
+- **`analysis/templates/per-file-political-intelligence.md`** — Per-file output template
+- **`analysis/templates/synthesis-summary.md`** — Daily synthesis template
+- **`analysis/templates/risk-assessment.md`** — Risk assessment template
+- **`analysis/templates/political-classification.md`** — Classification template
+- **`analysis/templates/threat-analysis.md`** — Threat analysis template
+- **`analysis/templates/swot-analysis.md`** — SWOT analysis template
+- **`analysis/templates/stakeholder-impact.md`** — Stakeholder impact template
+- **`analysis/templates/significance-scoring.md`** — Significance scoring template
 - **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Detailed analysis prompt
 
 #### Protocol
@@ -94,7 +238,7 @@ Read these methodology documents to guide your analysis:
    style X fill:#28a745,color:#fff   /* Green — low risk */
    style X fill:#0d6efd,color:#fff   /* Blue — informational */
    ```
-5. **Compose synthesis:** Aggregate per-file analyses into daily synthesis
+5. **Rewrite daily synthesis files** — After per-file analysis, rewrite ALL daily files in `analysis/daily/YYYY-MM-DD/` to follow their corresponding templates (see "Daily Synthesis Template Compliance" section above)
 
 #### Quality Gate (minimum 8/10)
 - [ ] ≥ 3 evidence points with dok_id
@@ -107,6 +251,8 @@ Read these methodology documents to guide your analysis:
 - [ ] Politicians named with party abbreviation
 - [ ] Intelligence-level analysis (not surface)
 - [ ] No boilerplate or generic text
+- [ ] Daily synthesis files follow their corresponding `analysis/templates/` structure
+- [ ] Every daily file has template metadata header (ID, date, riksmöte, confidence)
 ````
 
 ## Minister-Response Cross-Reference (interpellations workflow only)
