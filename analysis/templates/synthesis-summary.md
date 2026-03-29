@@ -40,7 +40,9 @@
 
 ### Daily Political Landscape
 
-> **AI Instructions:** Replace all placeholder values with actual analysis results. Update each node's `style` line from grey placeholder to the appropriate level color (e.g., Sensitivity: 🟢 PUBLIC #28a745, 🟡 SENSITIVE #ffc107, 🔴 RESTRICTED #dc3545; Risk/Threat: use standard palette).
+> **AI Instructions:** Replace all placeholder values with actual analysis results. Update each node's `style` line from grey dashed placeholder to the appropriate level color:
+> - **Sensitivity:** 🟢 PUBLIC `#28a745` · 🟡 SENSITIVE `#ffc107` · 🔴 RESTRICTED `#dc3545`
+> - **Risk / Threat / Significance:** use the standard palette (`#dc3545` / `#fd7e14` / `#ffc107` / `#28a745`)
 
 ```mermaid
 graph TD
