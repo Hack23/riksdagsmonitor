@@ -235,7 +235,7 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
   fi
 fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
-# --limit 50 is appropriate for same-day realtime monitoring (pipeline date-filters to today only)
+# --limit 50 is appropriate for same-day realtime monitoring (pipeline date-filters to the resolved ARTICLE_DATE only)
 npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
 echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
