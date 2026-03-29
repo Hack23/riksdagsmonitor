@@ -73,8 +73,10 @@ fi
 After the initial data download attempt for `$ARTICLE_DATE`:
 
 ```bash
-ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+if [ -z "$ARTICLE_DATE" ]; then
+  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
 
 # Step 1: Check if the requested article date has any analyzed documents (per-date, not session-wide)
 MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/data-download-manifest.md"
