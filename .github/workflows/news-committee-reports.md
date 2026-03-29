@@ -394,9 +394,29 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
   fi
 fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 --doc-type committeeReports || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
-echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/committeeReports/"
-ls -la "analysis/daily/$ARTICLE_DATE/committeeReports/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
+# CRITICAL: Source mcp-setup.sh FIRST to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
+source scripts/mcp-setup.sh
+echo "MCP_SERVER_URL=${MCP_SERVER_URL:-NOT SET}"
+source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 --doc-type committeeReports 2>&1 | tee /tmp/pipeline-output.log
+PIPE_EXIT=${PIPESTATUS[0]}
+if [ "$PIPE_EXIT" -ne 0 ]; then
+  echo "❌ Pipeline failed with exit code $PIPE_EXIT — agent MUST diagnose and fix (see Script Debugging Protocol)"
+  tail -30 /tmp/pipeline-output.log
+fi
+echo "📊 Analysis artifacts for $ARTICLE_DATE/committeeReports:"
+ls -la "analysis/daily/$ARTICLE_DATE/committeeReports/" 2>/dev/null || echo "⚠️ No analysis output"
+# Verify actual data was downloaded
+MANIFEST_DOCS=0
+MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/committeeReports/data-download-manifest.md"
+if [ -f "$MANIFEST_PATH" ]; then
+  MANIFEST_DOCS=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+fi
+[ -z "$MANIFEST_DOCS" ] && MANIFEST_DOCS=0
+DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
+echo "📊 Documents in manifest: $MANIFEST_DOCS, JSON data files: $DATA_JSON_COUNT"
+if [ "$MANIFEST_DOCS" -eq 0 ] && [ "$DATA_JSON_COUNT" -eq 0 ]; then
+  echo "🚨 CRITICAL: Pipeline downloaded ZERO data. Agent MUST diagnose and fix — do NOT fabricate analysis."
+fi
 ```
 
 ### 🔄 Data Lookback Fallback
@@ -440,7 +460,7 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     fi
     # No existing data — run pre-article analysis for this lookback date
     echo "ℹ️ No existing manifest data for $LOOKBACK_DATE — running pre-article analysis"
-    npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 --doc-type committeeReports 2>/dev/null || true
+    source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 --doc-type committeeReports 2>/dev/null || true
     # Re-check manifest after running analysis
     MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/committeeReports/data-download-manifest.md"
     DATE_DOCS_ANALYZED=0

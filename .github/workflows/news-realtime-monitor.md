@@ -237,8 +237,12 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
   fi
 fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
+# CRITICAL: Source mcp-setup.sh FIRST to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
+# Without this, the pipeline cannot reach the MCP server through the AWF sandbox
+source scripts/mcp-setup.sh
+echo "MCP_SERVER_URL=${MCP_SERVER_URL:-NOT SET}"
 # --limit 50 is appropriate for same-day realtime monitoring (pipeline date-filters to the resolved ARTICLE_DATE only)
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
+source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
 PIPE_EXIT=${PIPESTATUS[0]}
 if [ "$PIPE_EXIT" -ne 0 ]; then
   echo "❌ Pipeline failed with exit code $PIPE_EXIT — diagnosing..."
@@ -257,16 +261,61 @@ if [ -f "analysis/daily/$ARTICLE_DATE/data-download-manifest.md" ]; then
 fi
 [ -z "$MANIFEST_DOCS" ] && MANIFEST_DOCS=0
 echo "📊 Documents downloaded by pipeline: $MANIFEST_DOCS"
+# Verify actual JSON data files were persisted
+DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
+echo "📊 JSON data files in analysis/data/: $DATA_JSON_COUNT"
+if [ "$MANIFEST_DOCS" -eq 0 ] && [ "$DATA_JSON_COUNT" -eq 0 ]; then
+  echo "🚨 CRITICAL: Pipeline downloaded ZERO data. MCP_SERVER_URL=${MCP_SERVER_URL:-NOT SET}"
+  echo "🚨 Agent MUST diagnose and fix this before proceeding — do NOT fabricate analysis."
+fi
 ```
 
-### 🔧 Script Debugging Protocol (if pipeline fails)
+### 🔧 MANDATORY: Script Debugging & Fixing (if pipeline downloaded 0 documents)
 
-> If the pipeline exited with non-zero status or downloaded 0 documents, you MUST:
-> 1. **Read the error output** from `/tmp/pipeline-output.log`
-> 2. **Read the script source** (`view scripts/pre-article-analysis.ts`) to understand the failure
-> 3. **Fix the issue** (import errors, missing deps, type errors, connection issues)
-> 4. **Re-run the pipeline** after fixing
-> 5. **NEVER skip the pipeline and write analysis files manually**
+> 🚨 **NON-NEGOTIABLE**: If `MANIFEST_DOCS=0` AND `DATA_JSON_COUNT=0` after the pipeline runs, the agent **MUST** diagnose and fix the issue. Silent fallback or fabricating analysis is PROHIBITED.
+
+#### Diagnosis steps (execute ALL):
+
+1. **Check MCP connectivity**:
+   ```bash
+   source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL" && echo "MCP_AUTH_TOKEN length: ${#MCP_AUTH_TOKEN}"
+   ```
+   If `MCP_SERVER_URL` is empty or still the default `https://riksdag-regering-ai.onrender.com/mcp`, the gateway setup failed. Fix: ensure `GH_AW_MCP_CONFIG` points to the MCP config file.
+
+2. **Read the pipeline error log**:
+   ```bash
+   cat /tmp/pipeline-output.log
+   ```
+   Look for: connection refused, auth errors, timeout, TypeScript compilation errors, missing modules.
+
+3. **Check TypeScript compilation**:
+   ```bash
+   npx tsc --noEmit scripts/pre-article-analysis.ts 2>&1 | head -30
+   ```
+   Fix any type errors, missing imports, or module resolution failures.
+
+4. **Test MCP client directly**:
+   ```bash
+   source scripts/mcp-setup.sh && node -e "
+     const { MCPClient } = require('./scripts/mcp-client/client.js');
+     const c = new MCPClient();
+     console.log('URL:', c.baseURL);
+     c.getSyncStatus().then(s => console.log('Sync:', JSON.stringify(s))).catch(e => console.error('Error:', e.message));
+   "
+   ```
+
+5. **Fix the issue** — read script source (`view scripts/pre-article-analysis.ts`, `view scripts/mcp-client/client.ts`, `view scripts/pre-article-analysis/data-downloader.ts`), fix the bug using `edit`, then **re-run the pipeline**:
+   ```bash
+   source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-retry.log
+   ```
+
+6. **Verify data was downloaded on retry**:
+   ```bash
+   find analysis/data/ -name "*.json" -type f | head -20
+   grep -E '^\*\*Documents Analyzed\*\*' "analysis/daily/$ARTICLE_DATE/data-download-manifest.md"
+   ```
+
+> **Only after ≥2 fix attempts fail** may you proceed with whatever the pipeline produced. You MUST note the failure prominently in the PR body. You still MUST NOT fabricate analysis — only commit what the pipeline actually generated.
 
 ### 🔄 Data Lookback Fallback
 
@@ -312,7 +361,7 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     fi
     # No existing data — run pre-article analysis for this lookback date
     echo "ℹ️ No existing manifest data for $LOOKBACK_DATE — running pre-article analysis"
-    npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
+    source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
     # Re-check manifest after running analysis
     DATE_DOCS_ANALYZED=0
     if [ -f "$MANIFEST_PATH" ]; then
@@ -376,12 +425,14 @@ After the script-based analysis, perform **AI-driven per-file analysis** for dee
 ### 📋 Rewrite Daily Synthesis Files to Follow Templates
 
 > 🚨 **CRITICAL**: The `pre-article-analysis.ts` script generates **stub files** that do NOT follow the full template structure. After per-file analysis, you MUST rewrite each daily synthesis file to match its template.
+> 
+> ❌ **PROHIBITED**: Rewriting stubs with fabricated content from MCP query responses in Step 2. All analysis content MUST reference actual downloaded JSON data files in `analysis/data/`. If the pipeline downloaded 0 documents, the stubs should remain as-is (showing 0 documents) — do NOT fill them with invented analysis.
 
 For each file in `analysis/daily/$ARTICLE_DATE/`:
 1. **Read the corresponding template** from `analysis/templates/` (see template-to-file mapping in `SHARED_PROMPT_PATTERNS.md`)
 2. **Preserve script data** — keep factual data (document counts, risk scores, anomalies)
 3. **Add template structure** — add ALL required metadata fields, Mermaid diagrams, evidence tables, confidence labels
-4. **Fill with real data** — use per-file analysis results to populate every section
+4. **Fill with real data from downloaded files ONLY** — use per-file analysis results from actual JSON data files to populate every section. Every claim must cite a specific file path (e.g., `analysis/data/documents/propositions/H901227.json`)
 5. **No empty sections** — if no data, explain WHY with confidence label (not just "0 documents")
 
 **Template compliance checklist:**
@@ -396,11 +447,14 @@ These analysis files are committed alongside articles for human review and conti
 
 ### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
 
+> ❌ **ABSOLUTE PROHIBITION**: NEVER manually create or overwrite analysis files (synthesis-summary.md, risk-assessment.md, swot-analysis.md, etc.) with content fabricated from MCP queries in Step 2. Analysis artifacts MUST only contain data produced by the `pre-article-analysis.ts` pipeline and enhanced with data from actual downloaded JSON files in `analysis/data/`.
+
 **Before deciding whether to generate articles or call noop, you MUST:**
 
-1. **Review the analysis artifacts** in `analysis/daily/YYYY-MM-DD/` — read `synthesis-summary.md` and `significance-scoring.md` to understand what was found
-2. **Summarize the analysis findings** — note how many documents were downloaded, their significance scores, key themes, and risk levels
-3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
+1. **Verify data was actually downloaded** — check that `analysis/data/` contains JSON files and `data-download-manifest.md` shows > 0 documents
+2. **Review the analysis artifacts** in `analysis/daily/YYYY-MM-DD/` — read `synthesis-summary.md` and `significance-scoring.md` to understand what was found
+3. **Summarize the analysis findings** — note how many documents were downloaded, their significance scores, key themes, and risk levels
+4. **ALWAYS commit analysis artifacts AND data files** regardless of whether articles will be generated:
 
 ```bash
 # Idempotent: only set if not already resolved by lookback
@@ -704,7 +758,7 @@ news/content/{YYYY-MM-DD}/breaking
 ⚠️ DO NOT use `git push` — the safe output tool handles publishing. Commit locally, then use the tool.
 
 ```bash
-git add news/ analysis/daily/ analysis/weekly/
+git add news/ analysis/daily/ analysis/weekly/ analysis/data/
 git commit -m "🔴 Breaking: {headline} - $(date +%Y-%m-%d)"
 ```
 

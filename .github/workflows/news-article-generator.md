@@ -303,9 +303,20 @@ if [ -z "$ARTICLE_DATE" ]; then
   ARTICLE_DATE=$(date -u +%Y-%m-%d)
 fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Analysis failed (non-blocking) — article generation will proceed without enrichment"
-echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
-ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
+# CRITICAL: Source mcp-setup.sh FIRST to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
+source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
+PIPE_EXIT=${PIPESTATUS[0]}
+if [ "$PIPE_EXIT" -ne 0 ]; then
+  echo "❌ Pipeline failed — agent MUST diagnose and fix (read /tmp/pipeline-output.log)"
+  tail -20 /tmp/pipeline-output.log
+fi
+echo "📊 Analysis artifacts for $ARTICLE_DATE:"
+ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output"
+DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
+echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
+if [ "$DATA_JSON_COUNT" -eq 0 ]; then
+  echo "🚨 CRITICAL: Pipeline downloaded ZERO data. Agent MUST diagnose and fix — do NOT fabricate analysis."
+fi
 ```
 
 ### Per-File AI Analysis Enhancement

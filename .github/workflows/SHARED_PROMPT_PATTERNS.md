@@ -70,7 +70,7 @@ fi
 
 #### What "downloading data" means
 
-1. **Run the pipeline**: `npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50`
+1. **Run the pipeline**: `source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50`
 2. **Pipeline downloads JSON files** from MCP to `analysis/data/documents/`, `analysis/data/votes/`, etc.
 3. **Pipeline generates analysis artifacts** in `analysis/daily/YYYY-MM-DD/` based on the downloaded data
 4. **Pipeline writes `data-download-manifest.md`** with the actual count of downloaded documents
@@ -120,7 +120,7 @@ fi
 
 1. **Capture the error output** — re-run with verbose logging:
    ```bash
-   npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-error.log
+   source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-error.log
    PIPE_EXIT=$?
    if [ "$PIPE_EXIT" -ne 0 ]; then
      echo "❌ Pipeline failed with exit code $PIPE_EXIT"
@@ -223,7 +223,8 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     fi
     # No existing data — run pre-article analysis for this lookback date
     echo "ℹ️ No existing manifest data for $LOOKBACK_DATE — running pre-article analysis"
-    npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
+    # CRITICAL: Source mcp-setup.sh to set MCP_SERVER_URL for the gateway
+    source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
     # Re-check manifest after running analysis
     DATE_DOCS_ANALYZED=0
     if [ -f "$MANIFEST_PATH" ]; then

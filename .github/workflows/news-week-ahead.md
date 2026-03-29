@@ -367,9 +367,20 @@ get_fragor({ rm: <calculated riksmöte>, limit: 20 })
 ```bash
 ARTICLE_DATE=$(date -u +%Y-%m-%d)
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Daily analysis failed (non-blocking) — article generation will proceed without enrichment"
-echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
+# CRITICAL: Source mcp-setup.sh FIRST to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
+source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
+PIPE_EXIT=${PIPESTATUS[0]}
+if [ "$PIPE_EXIT" -ne 0 ]; then
+  echo "❌ Pipeline failed — agent MUST diagnose and fix (read /tmp/pipeline-output.log)"
+  tail -20 /tmp/pipeline-output.log
+fi
+echo "📊 Analysis artifacts for $ARTICLE_DATE:"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output"
+DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
+echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
+if [ "$DATA_JSON_COUNT" -eq 0 ]; then
+  echo "🚨 CRITICAL: Pipeline downloaded ZERO data. Agent MUST diagnose and fix — do NOT fabricate analysis."
+fi
 ```
 
 **Weekly aggregation**: Since this is a weekly-scope workflow (runs Fridays), aggregate the week's daily analyses:
@@ -377,7 +388,7 @@ ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis o
 ```bash
 WEEK_LABEL=$(date -u +%G-W%V)
 echo "📅 Running weekly aggregation for $WEEK_LABEL..."
-npx tsx scripts/pre-article-analysis.ts --aggregate weekly --date "$WEEK_LABEL" || echo "⚠️ Weekly aggregation failed (non-blocking)"
+source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --aggregate weekly --date "$WEEK_LABEL" || echo "⚠️ Weekly aggregation failed (non-blocking)"
 ls -la "analysis/weekly/$WEEK_LABEL/" 2>/dev/null || echo "⚠️ No weekly aggregation output"
 ```
 
