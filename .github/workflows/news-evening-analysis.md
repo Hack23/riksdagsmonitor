@@ -617,7 +617,7 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
   echo "🗓️ Using analysis date: $ARTICLE_DATE"
 
   # Persist selected ARTICLE_DATE for downstream steps
-  if [ -n "$GITHUB_ENV" ]; then
+  if [ -n "${GITHUB_ENV:-}" ]; then
     echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"
   fi
 fi

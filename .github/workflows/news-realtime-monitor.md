@@ -227,7 +227,12 @@ Tools with date params: `get_calendar_events` (from/tom — **⚠️ known inter
 ```bash
 # Idempotent: only set if not already resolved by lookback
 if [ -z "${ARTICLE_DATE:-}" ]; then
-  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  # Prefer manual workflow_dispatch input when provided, otherwise default to today (UTC)
+  if [ -n "${{ github.event.inputs.article_date }}" ]; then
+    ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  else
+    ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  fi
 fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 # --limit 50 is appropriate for same-day realtime monitoring (pipeline date-filters to today only)
@@ -243,7 +248,11 @@ ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis o
 ```bash
 # Idempotent: only set if not already resolved by lookback
 if [ -z "${ARTICLE_DATE:-}" ]; then
-  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  if [ -n "${{ github.event.inputs.article_date }}" ]; then
+    ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  else
+    ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  fi
 fi
 
 # Check if the requested date has any analyzed documents (per-date manifest, not session-wide catalog)
