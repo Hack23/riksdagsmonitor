@@ -127,7 +127,10 @@ export function buildCatalog(
     const jsonFiles = collectJsonFiles(dirPath);
 
     for (const filePath of jsonFiles) {
-      const basename = path.basename(filePath, '.json');
+      // Use path relative to the type directory (sans .json) as id.
+      // For flat dirs: "P1".  For nested dirs: "ind1/SE".
+      const relToDir = path.relative(dirPath, filePath).replace(/\.json$/, '');
+      const id = relToDir.split(path.sep).join('/');
       const metaPath = filePath.replace(/\.json$/, '.meta.json');
       const analysisPath = filePath.replace(/\.json$/, '.analysis.md');
 
@@ -145,7 +148,7 @@ export function buildCatalog(
       const stat = fs.statSync(filePath);
 
       allEntries.push({
-        id: basename,
+        id: id,
         type: docType,
         path: path.relative(REPO_ROOT, filePath).split(path.sep).join('/'),
         analysisPath: path.relative(REPO_ROOT, analysisPath).split(path.sep).join('/'),
@@ -156,12 +159,16 @@ export function buildCatalog(
     }
   }
 
-  // De-duplicate vote entries: when the same id appears from both
+  // De-duplicate vote entries: when the same vote file appears in both
   // documents/votes and votes/YYYY-MM-DD, prefer the date-stamped path.
   // Only votes are scoped for dedup (the only type with two scan dirs).
+  // Vote ids use the basename portion for matching since documents/votes/
+  // stores files flat while votes/YYYY-MM-DD/ nests under date dirs.
   const bestByKey = new Map<string, (typeof allEntries)[number]>();
   for (const e of allEntries) {
-    const key = `${e.type}::${e.id}`;
+    // For votes, use basename as dedup key (ignores date-dir nesting)
+    const idPart = e.type === 'votes' ? e.id.split('/').pop()! : e.id;
+    const key = `${e.type}::${idPart}`;
     const existing = bestByKey.get(key);
     if (!existing) {
       bestByKey.set(key, e);

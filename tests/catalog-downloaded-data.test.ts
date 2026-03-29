@@ -123,7 +123,7 @@ describe('catalog-downloaded-data', () => {
 
     const catalog = buildCatalog(tmpRoot);
     expect(catalog.totalFiles).toBe(1);
-    expect(catalog.entries[0].id).toBe('vote-001');
+    expect(catalog.entries[0].id).toBe('2026-03-28/vote-001');
     expect(catalog.entries[0].type).toBe('votes');
   });
 
@@ -152,7 +152,7 @@ describe('catalog-downloaded-data', () => {
     const catalog = buildCatalog(tmpRoot);
     // Should only appear once, preferring the date-stamped path
     expect(catalog.totalFiles).toBe(1);
-    expect(catalog.entries[0].id).toBe('vote-dup');
+    expect(catalog.entries[0].id).toBe('2026-03-28/vote-dup');
     expect(catalog.entries[0].path).toContain('votes/2026-03-28/');
   });
 
@@ -207,5 +207,20 @@ describe('catalog-downloaded-data', () => {
     expect(catalog.entries[0].analysisPath).toMatch(
       /documents\/speeches\/S1\.analysis\.md$/,
     );
+  });
+
+  it('handles nested type subdirectories with duplicate basenames', () => {
+    writeJSON(path.join(tmpRoot, 'worldbank/ind1/SE.json'), { value: 1 });
+    writeJSON(path.join(tmpRoot, 'worldbank/ind2/SE.json'), { value: 2 });
+
+    const catalog = buildCatalog(tmpRoot);
+    expect(catalog.totalFiles).toBe(2);
+    expect(catalog.entries).toHaveLength(2);
+    // Both entries should be worldbank type
+    expect(catalog.entries.every((e) => e.type === 'worldbank')).toBe(true);
+    // Both have basename-derived id 'SE' but distinct paths
+    const paths = catalog.entries.map((e) => e.path);
+    expect(paths.some((p) => p.includes('ind1/SE.json'))).toBe(true);
+    expect(paths.some((p) => p.includes('ind2/SE.json'))).toBe(true);
   });
 });

@@ -70,8 +70,11 @@ This returns a JSON catalog. Each entry has:
 | **Questions** | `dok_id`, `titel`, `parti`, `mottagare`, `svar` |
 | **Interpellations** | `dok_id`, `titel`, `parti`, `mottagare`, `status` |
 | **Government Docs** | `title`, `type`, `department`, `date`, `url` |
-| **World Bank** | `indicator`, `country`, `date`, `value` |
+| **Events** | `kalpidn`, `datum`, `rubrik`, `typ`, `organ`, `plats` |
+| **MPs** | `intressent_id`, `tilltalsnamn`, `efternamn`, `parti`, `valkrets`, `status` |
+| **World Bank** | nested `worldbank/{indicator}/{country}.json` — `indicator.id`, `indicator.value`, `country.id`, `date`, `value` |
 | **SCB** | `table_id`, `variables`, `values` |
+| **MCP Responses** | nested `mcp-responses/{server}/{tool}/{id}.json` — `tool`, `params`, `result`, `timestamp` |
 
 #### 2b. Apply Political Classification
 
