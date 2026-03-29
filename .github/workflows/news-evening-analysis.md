@@ -815,7 +815,7 @@ fi
 ## MANDATORY Quality Validation
 
 After article generation, verify EACH article meets these minimum standards before committing.
-Apply the quality rubric from **`scripts/prompts/v1/quality-criteria.md`** (minimum score: 7/10).
+Apply the quality rubric from **`scripts/prompts/v2/quality-criteria.md`** (minimum score: 7/10).
 
 ### Playwright Visual Validation
 Run Playwright validation before creating the PR:
