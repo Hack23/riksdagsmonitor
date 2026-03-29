@@ -256,7 +256,7 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     LOOKBACK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
     [ -z "$LOOKBACK_DATE" ] && continue
     echo "🔍 Checking $LOOKBACK_DATE for analyzed data..."
-    npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
+    # First, check if a manifest already exists with non-zero Documents Analyzed
     MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/data-download-manifest.md"
     DATE_DOCS_ANALYZED=0
     if [ -f "$MANIFEST_PATH" ]; then
@@ -264,7 +264,21 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     fi
     [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
     if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
-      echo "✅ Found $DATE_DOCS_ANALYZED documents analyzed for $LOOKBACK_DATE — using this date"
+      echo "✅ Found $DATE_DOCS_ANALYZED documents already analyzed for $LOOKBACK_DATE — using this date without re-running analysis"
+      ARTICLE_DATE="$LOOKBACK_DATE"
+      break
+    fi
+    # No existing data — run pre-article analysis for this lookback date
+    echo "ℹ️ No existing manifest data for $LOOKBACK_DATE — running pre-article analysis"
+    npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
+    # Re-check manifest after running analysis
+    DATE_DOCS_ANALYZED=0
+    if [ -f "$MANIFEST_PATH" ]; then
+      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+    fi
+    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
+    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
+      echo "✅ Successfully analyzed $DATE_DOCS_ANALYZED documents for $LOOKBACK_DATE — using this date"
       ARTICLE_DATE="$LOOKBACK_DATE"
       break
     fi

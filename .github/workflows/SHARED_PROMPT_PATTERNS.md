@@ -93,7 +93,7 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     LOOKBACK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
     [ -z "$LOOKBACK_DATE" ] && continue
     echo "🔍 Checking $LOOKBACK_DATE for analyzed data..."
-    npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
+    # First, check if a manifest already exists with non-zero Documents Analyzed
     MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/data-download-manifest.md"
     DATE_DOCS_ANALYZED=0
     if [ -f "$MANIFEST_PATH" ]; then
@@ -101,7 +101,21 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     fi
     [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
     if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
-      echo "✅ Found $DATE_DOCS_ANALYZED documents analyzed for $LOOKBACK_DATE"
+      echo "✅ Found $DATE_DOCS_ANALYZED documents already analyzed for $LOOKBACK_DATE — using this date without re-running analysis"
+      ARTICLE_DATE="$LOOKBACK_DATE"
+      break
+    fi
+    # No existing data — run pre-article analysis for this lookback date
+    echo "ℹ️ No existing manifest data for $LOOKBACK_DATE — running pre-article analysis"
+    npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
+    # Re-check manifest after running analysis
+    DATE_DOCS_ANALYZED=0
+    if [ -f "$MANIFEST_PATH" ]; then
+      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+    fi
+    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
+    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
+      echo "✅ Successfully analyzed $DATE_DOCS_ANALYZED documents for $LOOKBACK_DATE — using this date"
       ARTICLE_DATE="$LOOKBACK_DATE"
       break
     fi
@@ -121,6 +135,19 @@ echo "📊 Total pending per-file analysis files (all dates): $PENDING"
 ```
 
 **Key principle**: The lookback trigger uses the **per-date** "Documents Analyzed" count from `data-download-manifest.md`, NOT session-wide catalog totals. When a lookback date is selected, `$ARTICLE_DATE` is updated so downstream steps (daily synthesis rewrite, commit) target the correct directory.
+
+**ARTICLE_DATE overwrite protection**: The resolved `ARTICLE_DATE` is persisted to `$GITHUB_ENV` after lookback selection. **Important**: any downstream bash snippet that initializes `ARTICLE_DATE` from inputs or `date -u` MUST use an idempotent guard to avoid overwriting the lookback-selected date. Place this snippet at the start of any step that runs AFTER the lookback loop:
+
+```bash
+# Idempotent ARTICLE_DATE initialization — only set if not already resolved by lookback
+# Place at the top of any downstream bash step that would otherwise re-initialize ARTICLE_DATE
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+fi
+```
+
+This ensures that once lookback persists `ARTICLE_DATE` to `$GITHUB_ENV`, subsequent steps reuse the resolved value rather than resetting to today's date.
 ````
 
 ## 📋 Daily Synthesis Template Compliance (copy into every analysis workflow)
