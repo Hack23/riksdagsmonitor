@@ -59,6 +59,138 @@ if [ "$EXISTING" -gt 0 ] && [ "${FORCE_GENERATION}" != "true" ]; then
 fi
 ```
 
+## 🚨 MANDATORY: AI-Driven Analysis Using Methods & Templates (copy into every analysis workflow)
+
+> **NON-NEGOTIABLE**: The AI agent's PRIMARY job is to create real analysis for every piece of data or document downloaded from MCP. Scripts generate stubs — the AI MUST replace them with full template-compliant analysis. This is NOT optional.
+
+````markdown
+### AI-Driven Analysis Protocol
+
+> 🚨 **ABSOLUTE RULE**: Every agentic workflow MUST:
+> 1. **Download data** from MCP (scripts try first; if they fail or download 0, agent uses direct MCP tool calls and fixes scripts)
+> 2. **Read ALL 6 methodology guides** before doing any analysis
+> 3. **Read ALL 8 analysis templates** before writing any analysis files
+> 4. **Create analysis for EVERY document/data piece** following the templates exactly
+> 5. **Commit both data AND analysis** — never one without the other
+
+#### Step 1: Download Data (scripts + fallback to direct MCP calls)
+
+Try the script pipeline first:
+```bash
+source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
+```
+
+Check results:
+```bash
+DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
+echo "📊 JSON data files: $DATA_JSON_COUNT"
+```
+
+If `DATA_JSON_COUNT=0`: **the agent MUST diagnose script failures (read error logs, fix code issues, re-run) OR use direct MCP tool calls as fallback.** Save each MCP response as JSON to `analysis/data/documents/{type}/{dok_id}.json`. Never give up on downloading data unless MCP itself is down.
+
+#### Step 2: Read ALL Methodology Guides (MANDATORY — do this BEFORE any analysis)
+
+The agent MUST read (using `view` or `cat`) every one of these files before writing any analysis. These define HOW to analyze:
+
+1. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Master guide with bad vs. good examples
+2. **`analysis/methodologies/political-swot-framework.md`** — Evidence-based SWOT with confidence hierarchy
+3. **`analysis/methodologies/political-risk-methodology.md`** — 5×5 Likelihood × Impact risk matrix
+4. **`analysis/methodologies/political-threat-framework.md`** — STRIDE-adapted political threat model
+5. **`analysis/methodologies/political-classification-guide.md`** — Sensitivity, domain, urgency taxonomy
+6. **`analysis/methodologies/political-style-guide.md`** — Writing standards and evidence density
+
+#### Step 3: Read ALL Analysis Templates (MANDATORY — do this BEFORE writing any files)
+
+The agent MUST read every template. These define WHAT the output must look like:
+
+1. **`analysis/templates/per-file-political-intelligence.md`** — Per-document analysis output format
+2. **`analysis/templates/synthesis-summary.md`** — Daily synthesis (SYN-ID, Intelligence Dashboard)
+3. **`analysis/templates/risk-assessment.md`** — Risk assessment (RSK-ID, Heat Map, L×I scores)
+4. **`analysis/templates/political-classification.md`** — Classification (CLS-ID, Decision Tree)
+5. **`analysis/templates/threat-analysis.md`** — Threat analysis (THR-ID, STRIDE Network)
+6. **`analysis/templates/swot-analysis.md`** — SWOT analysis (SWT-ID, Quadrant Mapping)
+7. **`analysis/templates/stakeholder-impact.md`** — Stakeholder impact (STA-ID, 6 Groups, Impact Radar)
+8. **`analysis/templates/significance-scoring.md`** — Significance scoring (SIG-ID, 5 Dimensions)
+
+#### Step 4: Create Per-File Analysis for EVERY Downloaded Document
+
+For EACH document in `analysis/data/`:
+
+1. **Read the JSON data** — extract dok_id, titel, datum, parti, organ, etc.
+2. **Apply ALL 6 analytical lenses** using the methodologies:
+   - **Classification** — Sensitivity (PUBLIC/SENSITIVE/RESTRICTED), Domain (13 codes), Urgency, Significance (0–10)
+   - **SWOT** — Government + Opposition impact with evidence (cite dok_id, vote counts, party names)
+   - **Risk** — 5×5 Likelihood × Impact matrix with numeric scores
+   - **STRIDE** — Political threat analysis (Spoofing, Tampering, Repudiation, Information Disclosure, Denial, Elevation)
+   - **Stakeholders** — 6 groups (Citizens, Government, Opposition, Business, Civil Society, International)
+   - **Forward Indicators** — Specific watch items with concrete timelines and triggers
+3. **Write `{dok_id}.analysis.md`** alongside the data file, following `per-file-political-intelligence.md` template EXACTLY
+4. **Include ≥1 Mermaid diagram** with REAL data from the document (not placeholder)
+5. **Quality gate**: ≥3 evidence citations with dok_id, confidence labels on all claims, zero `[REQUIRED]` placeholders
+
+#### Step 5: Create/Rewrite ALL Daily Synthesis Files Following Templates
+
+For each file in `analysis/daily/$ARTICLE_DATE/`, the agent MUST rewrite it to match its template EXACTLY:
+
+| Daily File | Template to Follow | Minimum Requirements |
+|------------|-------------------|---------------------|
+| `synthesis-summary.md` | `analysis/templates/synthesis-summary.md` | SYN-ID, Intelligence Dashboard (Mermaid), Top Findings table, Aggregated SWOT, Risk Landscape, Threat Summary, Stakeholder Impact, Narrative Direction, Forward Indicators, Artifacts Inventory with ✅/⚠️/❌ status |
+| `risk-assessment.md` | `analysis/templates/risk-assessment.md` | RSK-ID, Risk Heat Map (Mermaid quadrant chart), ≥2 risks with L×I numeric scores, Coalition Stability Risk, Escalation Rules |
+| `classification-results.md` | `analysis/templates/political-classification.md` | CLS-ID, Sensitivity Decision Tree (Mermaid), per-document table with sensitivity/domain/urgency/significance |
+| `threat-analysis.md` | `analysis/templates/threat-analysis.md` | THR-ID, STRIDE Network (Mermaid), ALL 6 STRIDE categories with ≥1 threat each (severity 1-5), Threat Actor Mapping |
+| `swot-analysis.md` | `analysis/templates/swot-analysis.md` | SWT-ID, Quadrant Mapping (Mermaid mindmap), ≥2 filled quadrants with dok_id evidence, Coalition + Opposition SWOT |
+| `stakeholder-perspectives.md` | `analysis/templates/stakeholder-impact.md` | STA-ID, Impact Radar (Mermaid), ALL 6 stakeholder groups assessed with impact level and timeline |
+| `significance-scoring.md` | `analysis/templates/significance-scoring.md` | SIG-ID, 5-dimension scoring (Parliamentary, Policy Impact, Public Interest, Urgency, Cross-party), Composite Score, Publication Decision |
+
+**Template compliance checklist (ALL must be true):**
+- [ ] Every file has its template's metadata header (ID, date, riksmöte, confidence)
+- [ ] Every file has ≥1 Mermaid diagram with color-coded nodes and REAL data
+- [ ] Risk assessment has ≥2 risks with L×I numeric scores
+- [ ] SWOT has ≥2 filled quadrants with evidence citations (dok_id)
+- [ ] Threat analysis covers ALL 6 STRIDE categories
+- [ ] Significance scoring uses 5-dimension model with publication decision
+- [ ] Synthesis references ALL sibling files with ✅/⚠️/❌ status
+- [ ] No `[REQUIRED]` placeholders remaining in any file
+- [ ] Every claim cites specific data (dok_id, vote counts, party names, dates)
+
+#### Step 6: Commit Data AND Analysis Together
+
+```bash
+git add analysis/data/ analysis/daily/ analysis/weekly/
+git commit -m "📊 Data + Analysis - $ARTICLE_DATE"
+```
+
+> ❌ **PROHIBITED**: Committing analysis without downloaded data files
+> ❌ **PROHIBITED**: Committing stub/empty analysis when data exists
+> ❌ **PROHIBITED**: Skipping analysis creation — every document MUST have analysis
+> ❌ **PROHIBITED**: Writing analysis that doesn't follow the template structure
+````
+
+## 🔧 MANDATORY: Script Debugging & Fixing (copy into every analysis workflow)
+
+> **NON-NEGOTIABLE**: When scripts fail, the agent MUST diagnose and fix the code/script issues. If fixing fails, fall back to direct MCP tool calls for data download. Analysis is ALWAYS done by the AI using templates — not by scripts.
+
+````markdown
+### Script Debugging & Fixing Protocol
+
+> 🚨 **ABSOLUTE RULE**: All agentic workflows must analyse and fix any code/script issues to be able to perform their task. When a script fails, the agent MUST NOT silently skip it.
+
+#### When scripts fail or download 0 data:
+
+1. **Read the error output**: `cat /tmp/pipeline-output.log | tail -30`
+2. **Diagnose**: MCP_SERVER_URL not set? TypeScript errors? Missing deps? Connection refused?
+3. **Fix the script**: read source with `view`, fix with `edit`, re-run
+4. **If script fix fails after 2 attempts** → use direct MCP tool calls to download data, save as JSON
+5. **If ALL MCP tools also fail** (server truly down) → call `safeoutputs___noop` with error details
+
+#### Remember: Scripts download data, but the AI does the analysis
+
+- Scripts (`pre-article-analysis.ts`) generate **stub files** — these are starting points only
+- The AI agent MUST read all methods and templates, then **replace stubs with real analysis**
+- This analysis work is the agent's PRIMARY job and must NEVER be skipped
+- Even if scripts work perfectly, the agent still must enhance stubs to full template compliance
+````
+
 ## 🔄 Data Lookback Fallback Strategy (copy into every analysis workflow)
 
 > **MANDATORY**: Never produce empty analysis. If no data exists for today, look back up to 7 days to find data that still needs analysis. Weekend/holiday runs MUST still produce useful output.
@@ -109,7 +241,8 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     fi
     # No existing data — run pre-article analysis for this lookback date
     echo "ℹ️ No existing manifest data for $LOOKBACK_DATE — running pre-article analysis"
-    npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
+    # CRITICAL: Source mcp-setup.sh to set MCP_SERVER_URL for the gateway
+    source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
     # Re-check manifest after running analysis
     DATE_DOCS_ANALYZED=0
     if [ -f "$MANIFEST_PATH" ]; then
