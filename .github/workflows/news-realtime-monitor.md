@@ -233,6 +233,35 @@ echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
 ```
 
+### 🔄 Data Lookback Fallback
+
+> 🚨 **CRITICAL RULE**: Never produce empty/stub analysis. If no data for today, look back to find unanalyzed data.
+
+```bash
+ARTICLE_DATE=$(date -u +%Y-%m-%d)
+PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
+TOTAL=$(npx tsx scripts/catalog-downloaded-data.ts 2>/dev/null | jq '.totalFiles // 0' 2>/dev/null || echo "0")
+
+if [ "$PENDING" -eq 0 ] && [ "$TOTAL" -eq 0 ]; then
+  echo "⚠️ No data for $ARTICLE_DATE — activating lookback fallback (up to 7 days)"
+  for DAYS_BACK in 1 2 3 4 5 6 7; do
+    LOOKBACK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
+    [ -z "$LOOKBACK_DATE" ] && continue
+    echo "🔍 Checking $LOOKBACK_DATE for unanalyzed data..."
+    npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
+    PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
+    if [ "$PENDING" -gt 0 ]; then
+      echo "✅ Found $PENDING files needing analysis from $LOOKBACK_DATE"
+      break
+    fi
+  done
+fi
+
+# Check for ANY pending analysis across all dates (not just today)
+PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
+echo "📊 Total pending analysis files across all dates: $PENDING"
+```
+
 ### Per-File AI Analysis Enhancement
 
 > 🚨 **CRITICAL RULE:** You must **actually read the JSON data** in each file and base all analysis on real data found there. Every SWOT entry, risk score, and stakeholder assessment must cite specific data from the file (dok_id, vote counts, party names, reservation details). Generic or boilerplate analysis is a failure mode — see the "Concrete Example: What Good Analysis Looks Like" section in `analysis/methodologies/ai-driven-analysis-guide.md` for bad vs. good comparison.
@@ -240,12 +269,21 @@ ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis o
 After the script-based analysis, perform **AI-driven per-file analysis** for deeper intelligence:
 
 1. Run `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to list files needing analysis
-2. **Read the methodology guides** (use `view` or `cat` to read each fully):
+2. **Read ALL methodology guides AND templates** (use `view` or `cat` to read each fully):
    - `analysis/methodologies/ai-driven-analysis-guide.md` — Master per-file analysis guide (includes bad/good examples)
    - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT with confidence hierarchy
    - `analysis/methodologies/political-risk-methodology.md` — 5×5 Likelihood×Impact risk matrix
    - `analysis/methodologies/political-threat-framework.md` — STRIDE-adapted threat model, severity calibration
+   - `analysis/methodologies/political-classification-guide.md` — Sensitivity and domain taxonomy
+   - `analysis/methodologies/political-style-guide.md` — Writing standards and evidence density
    - `analysis/templates/per-file-political-intelligence.md` — Per-file output template
+   - `analysis/templates/synthesis-summary.md` — Daily synthesis template (SYN-ID, dashboard, artifacts inventory)
+   - `analysis/templates/risk-assessment.md` — Risk assessment template (RSK-ID, heat map, L×I scores)
+   - `analysis/templates/political-classification.md` — Classification template (CLS-ID, decision tree)
+   - `analysis/templates/threat-analysis.md` — Threat template (THR-ID, STRIDE network, escalation)
+   - `analysis/templates/swot-analysis.md` — SWOT template (SWT-ID, quadrant mapping, evidence)
+   - `analysis/templates/stakeholder-impact.md` — Stakeholder template (STA-ID, 6 groups, impact radar)
+   - `analysis/templates/significance-scoring.md` — Significance template (SIG-ID, 5 dimensions, publication decision)
 3. For each pending file:
    a. **Read** the JSON data file — use `view` or `cat` to read the actual content
    b. **Extract** key fields (dok_id, titel, datum, etc.)
@@ -258,6 +296,25 @@ After the script-based analysis, perform **AI-driven per-file analysis** for dee
    i. **Mermaid diagrams** — At least 1 diagram with REAL data from the file (not placeholder text)
    j. **Write** `{id}.analysis.md` alongside the data file
 4. Quality gate: ≥3 evidence points, confidence labels, no `[REQUIRED]` placeholders remaining
+
+### 📋 Rewrite Daily Synthesis Files to Follow Templates
+
+> 🚨 **CRITICAL**: The `pre-article-analysis.ts` script generates **stub files** that do NOT follow the full template structure. After per-file analysis, you MUST rewrite each daily synthesis file to match its template.
+
+For each file in `analysis/daily/$ARTICLE_DATE/`:
+1. **Read the corresponding template** from `analysis/templates/` (see mapping above)
+2. **Preserve script data** — keep factual data (document counts, risk scores, anomalies)
+3. **Add template structure** — add ALL required metadata fields, Mermaid diagrams, evidence tables, confidence labels
+4. **Fill with real data** — use per-file analysis results to populate every section
+5. **No empty sections** — if no data, explain WHY with confidence label (not just "0 documents")
+
+**Template compliance checklist:**
+- Every daily file has its template's metadata header (ID, date, riksmöte, confidence)
+- Every daily file has ≥1 Mermaid diagram with color-coded nodes
+- Risk assessment has ≥2 risks with L×I numeric scores
+- SWOT has ≥2 filled quadrants with evidence citations
+- Threat analysis covers all 6 STRIDE categories
+- Synthesis references all sibling files with ✅/⚠️/❌ status
 
 These analysis files are committed alongside articles for human review and continuous improvement.
 

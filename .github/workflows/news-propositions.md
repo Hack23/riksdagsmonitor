@@ -396,6 +396,32 @@ echo "✅ Analysis artifacts written to analysis/daily/$ARTICLE_DATE/proposition
 ls -la "analysis/daily/$ARTICLE_DATE/propositions/" 2>/dev/null || echo "⚠️ No analysis output (pipeline may have found no documents for this date)"
 ```
 
+### 🔄 Data Lookback Fallback
+
+> 🚨 **CRITICAL RULE**: Never produce empty/stub analysis. If no data for today, look back to find unanalyzed data.
+
+```bash
+ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only --type propositions 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
+
+if [ "$PENDING" -eq 0 ]; then
+  echo "⚠️ No proposition data for $ARTICLE_DATE — activating lookback fallback (up to 7 days)"
+  for DAYS_BACK in 1 2 3 4 5 6 7; do
+    LOOKBACK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
+    [ -z "$LOOKBACK_DATE" ] && continue
+    echo "🔍 Checking $LOOKBACK_DATE for unanalyzed propositions..."
+    npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 --doc-type propositions 2>/dev/null || true
+    PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only --type propositions 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
+    if [ "$PENDING" -gt 0 ]; then
+      echo "✅ Found $PENDING propositions needing analysis from $LOOKBACK_DATE"
+      break
+    fi
+  done
+fi
+echo "📊 Total pending proposition analysis files: $PENDING"
+```
+
 ### Per-File AI Analysis Enhancement
 
 > 🚨 **CRITICAL RULE:** You must **actually read the JSON data** in each file and base all analysis on real data found there. Every SWOT entry, risk score, and stakeholder assessment must cite specific data from the file (dok_id, vote counts, party names, reservation details). Generic or boilerplate analysis is a failure mode — see the "Concrete Example: What Good Analysis Looks Like" section in `analysis/methodologies/ai-driven-analysis-guide.md` for bad vs. good comparison.
@@ -403,12 +429,20 @@ ls -la "analysis/daily/$ARTICLE_DATE/propositions/" 2>/dev/null || echo "⚠️ 
 After the script-based analysis, perform **AI-driven per-file analysis** for deeper intelligence:
 
 1. Run `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to list files needing analysis
-2. **Read the methodology guides** (use `view` or `cat` to read each fully):
+2. **Read ALL methodology guides AND templates** (use `view` or `cat` to read each fully):
    - `analysis/methodologies/ai-driven-analysis-guide.md` — Master per-file analysis guide (includes bad/good examples)
    - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT with confidence hierarchy
    - `analysis/methodologies/political-risk-methodology.md` — 5×5 Likelihood×Impact risk matrix
    - `analysis/methodologies/political-threat-framework.md` — STRIDE-adapted threat model, severity calibration
+   - `analysis/methodologies/political-classification-guide.md` — Sensitivity and domain taxonomy
    - `analysis/templates/per-file-political-intelligence.md` — Per-file output template
+   - `analysis/templates/synthesis-summary.md` — Daily synthesis template
+   - `analysis/templates/risk-assessment.md` — Risk assessment template
+   - `analysis/templates/political-classification.md` — Classification template
+   - `analysis/templates/threat-analysis.md` — Threat template
+   - `analysis/templates/swot-analysis.md` — SWOT template
+   - `analysis/templates/stakeholder-impact.md` — Stakeholder template
+   - `analysis/templates/significance-scoring.md` — Significance template
 3. For each pending file:
    a. **Read** the JSON data file — use `view` or `cat` to read the actual content
    b. **Extract** key fields (dok_id, titel, datum, organ, rm, undertitel, etc.)
@@ -436,6 +470,10 @@ The analysis pipeline outputs the following artifacts per doc-type run:
 - `documents/*-analysis.md` — Per-document analysis with SWOT, stakeholder perspectives, and significance scoring
 
 These files are committed alongside articles for human review and continuous improvement.
+
+### 📋 Rewrite Daily Synthesis Files to Follow Templates
+
+> 🚨 **CRITICAL**: Script-generated stubs do NOT follow template structure. Rewrite each daily file to match its `analysis/templates/` counterpart. Read each template with `cat` before rewriting. Every file needs: metadata header (ID, date, riksmöte, confidence), ≥1 color-coded Mermaid diagram, evidence tables with dok_id citations, and no `[REQUIRED]` placeholders.
 
 ### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
 
