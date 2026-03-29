@@ -39,6 +39,7 @@
 
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -276,7 +277,6 @@ function main() {
 }
 
 // Run CLI when invoked directly (matches repo convention in pre-article-analysis.ts)
-import { fileURLToPath } from 'node:url';
 if (path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1] ?? '')) {
   main();
 }
