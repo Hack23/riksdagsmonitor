@@ -295,7 +295,7 @@ fi
    - `analysis/templates/stakeholder-impact.md`
    - `analysis/templates/significance-scoring.md`
 
-3. **For EVERY downloaded document/data file**: apply ALL 6 analytical lenses and create `{dok_id}.analysis.md` following the per-file template. Cite specific data (dok_id, vote counts, party names). Include ≥1 color-coded Mermaid diagram with `style` directives.
+3. **For EVERY downloaded document/data file**: apply ALL 6 analytical lenses and create `{dok_id}-analysis.md` following the per-file template. Cite specific data (dok_id, vote counts, party names). Include ≥1 color-coded Mermaid diagram with `style` directives.
 
 4. **Create/rewrite ALL 7 daily synthesis files** in `analysis/daily/$ARTICLE_DATE/` — each MUST follow its template EXACTLY (metadata header, Mermaid diagrams with color-coded style directives, structured evidence tables, confidence labels, no `[REQUIRED]` placeholders).
 
@@ -392,16 +392,18 @@ echo "📊 Total pending per-file analysis files (all dates): $PENDING"
 After data is downloaded, you MUST complete ALL of these steps before proceeding to event detection:
 
 **Step A — Read templates and methodologies** (FIRST, before writing anything):
-1. `view analysis/templates/per-file-political-intelligence.md` — read FULLY, note the required structure
-2. `view analysis/methodologies/ai-driven-analysis-guide.md` — read the "BAD vs GOOD" examples
-3. `view analysis/methodologies/political-swot-framework.md` — understand evidence tables
+1. Follow the organization-wide **SHARED_PROMPT_PATTERNS Step 2 + Step 3** exactly: read **all 6 methodology guides** and **all 8 analysis templates** defined there (in `analysis/methodologies/` and `analysis/templates/`) **before writing any analysis**. Do NOT subset or skip any required document.
+2. After completing SHARED_PROMPT_PATTERNS Steps 2–3, (re)read these **news-monitor-specific assets**:
+   - `view analysis/templates/per-file-political-intelligence.md` — read FULLY, note the required structure
+   - `view analysis/methodologies/ai-driven-analysis-guide.md` — read the "BAD vs GOOD" examples
+   - `view analysis/methodologies/political-swot-framework.md` — understand evidence tables
 
 **Step B — Create real per-file analyses** (for EVERY document):
 1. List all downloaded documents: `find analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/documents/ -name "*.json" -type f`
 2. For EACH JSON file:
    a. Read it with `view` — extract dok_id, titel, datum, parti, organ
    b. Apply ALL 6 analytical lenses (classification, SWOT, risk, STRIDE, stakeholders, forward indicators)
-   c. Write or rewrite `{dok_id}-analysis.md` following the per-file template EXACTLY
+   c. Write or rewrite the per-file analysis markdown so that its filename matches the `*-analysis.md` convention (for example `{dok_id}-analysis.md`) and follows the per-file template EXACTLY
    d. Include ≥1 color-coded Mermaid diagram with `style` directives and REAL data
    e. Include structured evidence tables with dok_id, confidence, impact columns
    f. SWOT quadrants must have REAL entries — NOT "_No strengths identified_"
@@ -529,7 +531,7 @@ fi
 **Before deciding whether to generate articles or call noop, you MUST:**
 
 1. **Verify data was downloaded** — `find analysis/data/ -name "*.json" -type f | wc -l` must be > 0
-2. **Verify analysis was created** — every downloaded document has a `.analysis.md` file
+2. **Verify analysis was created** — every downloaded document has a `-analysis.md` file
 3. **Verify daily synthesis files follow templates** — no `[REQUIRED]` placeholders, Mermaid diagrams with real data
 4. **ALWAYS commit data AND analysis together**:
 

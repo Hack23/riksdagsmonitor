@@ -630,7 +630,7 @@ Read these methodology documents to guide your analysis:
    - STRIDE threat analysis (where applicable)
    - Stakeholder impact matrix (6 lenses)
    - Forward indicators (specific watch items)
-3. **Write analysis:** Save as `{id}.analysis.md` alongside the data file
+3. **Write analysis:** Save as `{dok_id}-analysis.md` alongside the data file
 4. **Include Mermaid diagrams** — at least 1 per file, color-coded:
    ```
    style X fill:#dc3545,color:#fff   /* Red — critical */
