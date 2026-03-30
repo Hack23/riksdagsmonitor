@@ -1,9 +1,8 @@
 /**
  * @module data-transformers
- * @description Barrel re-export for backward compatibility.
+ * @description Public API barrel for the data transformer modules.
  *
- * This file was previously a 3400+ line monolith. It has been decomposed
- * into focused, bounded-context modules under `./data-transformers/`:
+ * Implementation split into focused modules under `./data-transformers/`:
  *
  * | Module               | Responsibility                              | Lines |
  * |----------------------|---------------------------------------------|-------|
@@ -16,8 +15,6 @@
  * | document-analysis.ts | Motion grouping, opposition strategy, intel   |  ~260 |
  * | metadata.ts          | SEO, read-time, content-title, sources        |  ~340 |
  * | index.ts             | Public API barrel                             |  ~100 |
- *
- * All public exports are preserved — existing consumers require no changes.
  *
  * @author Hack23 AB
  * @license Apache-2.0

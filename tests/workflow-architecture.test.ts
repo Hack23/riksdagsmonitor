@@ -467,20 +467,23 @@ describe('Editorial Framework', () => {
 });
 
 describe('Shared Prompts Library Integration', () => {
-  const PROMPTS_DIR = path.join(__dirname, '..', 'scripts', 'prompts', 'v1');
+  const PROMPTS_DIR = path.join(__dirname, '..', 'scripts', 'prompts', 'v2');
 
   it('should have all required prompt files', () => {
     const requiredFiles = [
       'political-analysis.md',
       'swot-generation.md',
-      'dashboard-generation.md',
       'stakeholder-perspectives.md',
       'quality-criteria.md',
+      'per-file-intelligence-analysis.md',
+      'political-threat-prompt.md',
+      'political-risk-prompt.md',
+      'political-classification-prompt.md',
     ];
     for (const file of requiredFiles) {
       expect(
         fs.existsSync(path.join(PROMPTS_DIR, file)),
-        `Missing required prompt: scripts/prompts/v1/${file}`
+        `Missing required prompt: scripts/prompts/v2/${file}`
       ).toBe(true);
     }
   });

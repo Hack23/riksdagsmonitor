@@ -23,7 +23,7 @@ import type { Language } from '../scripts/types/language.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const PROMPTS_DIR = path.join(__dirname, '..', 'scripts', 'prompts', 'v1');
+const PROMPTS_DIR = path.join(__dirname, '..', 'scripts', 'prompts', 'v2');
 
 const LANGUAGES: Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
 
@@ -361,18 +361,21 @@ describe('Interpellations Content Generator', () => {
 });
 
 describe('Shared Prompts Library', () => {
-  it('should have all required prompt files in v1/', () => {
+  it('should have all required prompt files in v2/', () => {
     const requiredFiles = [
       'political-analysis.md',
       'swot-generation.md',
-      'dashboard-generation.md',
       'stakeholder-perspectives.md',
       'quality-criteria.md',
+      'per-file-intelligence-analysis.md',
+      'political-threat-prompt.md',
+      'political-risk-prompt.md',
+      'political-classification-prompt.md',
     ];
     for (const file of requiredFiles) {
       expect(
         fs.existsSync(path.join(PROMPTS_DIR, file)),
-        `Missing prompt file: v1/${file}`
+        `Missing prompt file: v2/${file}`
       ).toBe(true);
     }
   });
