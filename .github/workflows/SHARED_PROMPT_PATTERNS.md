@@ -143,9 +143,23 @@ For EACH document in `analysis/data/`:
    - **STRIDE** — Political threat analysis (Spoofing, Tampering, Repudiation, Information Disclosure, Denial, Elevation)
    - **Stakeholders** — 6 groups (Citizens, Government, Opposition, Business, Civil Society, International)
    - **Forward Indicators** — Specific watch items with concrete timelines and triggers
-3. **Write `{dok_id}.analysis.md`** alongside the data file, following `per-file-political-intelligence.md` template EXACTLY
+3. **Write `{dok_id}-analysis.md`** alongside the data file, following `per-file-political-intelligence.md` template EXACTLY
 4. **Include ≥1 Mermaid diagram** with REAL data from the document (not placeholder)
 5. **Quality gate**: ≥3 evidence citations with dok_id, confidence labels on all claims, zero `[REQUIRED]` placeholders
+
+> ⛔ **ANTI-PATTERN WARNING — REJECTED OUTPUT PATTERNS:**
+> The following patterns indicate **unreplaced script stubs** and will FAIL the quality gate:
+> - `"_No strengths identified_"` / `"_No weaknesses identified_"` — empty SWOT quadrants
+> - `"this document requires assessment of policy execution"` — generic boilerplate perspective text
+> - `"this document warrants scrutiny for alignment with citizen welfare"` — template filler, not analysis
+> - `"this document may affect business environment"` — generic economic perspective
+> - `"this document has low newsworthiness (score: XX/100)"` — script-generated placeholder
+> - `"this document must be assessed for EU regulatory alignment"` — generic international perspective
+> - SWOT quadrants with only `_No X identified_` entries — indicates AI skipped analysis
+> - Stakeholder perspectives without SPECIFIC document data (dok_id, vote counts, party names)
+> - Analysis with 0 Mermaid diagrams and 0 evidence table rows
+>
+> **CORRECT APPROACH**: Read the actual JSON data file, extract SPECIFIC facts (dok_id, committee, policy area, parties involved), then write REAL analysis citing those facts. Every SWOT entry must reference actual document content.
 
 #### Step 5: Create/Rewrite ALL Daily Synthesis Files Following Templates
 
@@ -179,34 +193,50 @@ For each file in `analysis/daily/$ARTICLE_DATE/`, the agent MUST rewrite it to m
 
 > 🚨 **BLOCKING**: Do NOT proceed to commit until this quality gate passes. If it fails, go back and improve the analysis files.
 
-Run this bash check on every analysis file before committing:
+Run this bash check on ALL analysis files (daily synthesis AND per-file analyses in `documents/`) before committing:
 
 ```bash
 ANALYSIS_DIR="analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}"
 QUALITY_PASS=true
+FAIL_COUNT=0
+WARN_COUNT=0
 
 echo "=== 🔍 Analysis Quality Gate Check ==="
 
-# Check 1: Every analysis file must contain at least 1 Mermaid diagram
-for f in "$ANALYSIS_DIR"/*.md; do
+# Collect ALL analysis markdown files (daily synthesis + per-file in documents/)
+ALL_MD_FILES=$(find "$ANALYSIS_DIR" -name "*.md" -type f 2>/dev/null)
+DAILY_MD_FILES=$(find "$ANALYSIS_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null)
+PERFILE_MD_FILES=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null)
+PERFILE_COUNT=$(echo "$PERFILE_MD_FILES" | grep -c '.' 2>/dev/null || echo 0)
+echo "📊 Daily synthesis files: $(echo "$DAILY_MD_FILES" | grep -c '.' 2>/dev/null || echo 0)"
+echo "📊 Per-file analysis files: $PERFILE_COUNT"
+
+# Check 1: Every daily synthesis file must contain at least 1 Mermaid diagram
+echo ""
+echo "--- Check 1: Mermaid diagrams in daily synthesis files ---"
+for f in $DAILY_MD_FILES; do
   [ ! -f "$f" ] && continue
   MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null || echo 0)
   if [ "$MERMAID_COUNT" -eq 0 ]; then
     echo "❌ FAIL: $f has NO Mermaid diagrams (minimum: 1)"
     QUALITY_PASS=false
+    FAIL_COUNT=$((FAIL_COUNT + 1))
   else
     echo "✅ PASS: $f has $MERMAID_COUNT Mermaid diagram(s)"
   fi
 done
 
 # Check 2: Mermaid diagrams must have color-coded style directives
-for f in "$ANALYSIS_DIR"/*.md; do
+echo ""
+echo "--- Check 2: Color-coded style directives in Mermaid diagrams ---"
+for f in $DAILY_MD_FILES; do
   [ ! -f "$f" ] && continue
   if grep -q '```mermaid' "$f" 2>/dev/null; then
     STYLE_COUNT=$(grep -c 'style.*fill:#' "$f" 2>/dev/null || echo 0)
     if [ "$STYLE_COUNT" -eq 0 ]; then
       echo "❌ FAIL: $f has Mermaid diagram(s) but NO color-coded style directives"
       QUALITY_PASS=false
+      FAIL_COUNT=$((FAIL_COUNT + 1))
     else
       echo "✅ PASS: $f has $STYLE_COUNT color-coded style directive(s)"
     fi
@@ -214,47 +244,127 @@ for f in "$ANALYSIS_DIR"/*.md; do
 done
 
 # Check 3: No [REQUIRED] placeholders remaining
-for f in "$ANALYSIS_DIR"/*.md; do
+echo ""
+echo "--- Check 3: No [REQUIRED] placeholders ---"
+for f in $ALL_MD_FILES; do
   [ ! -f "$f" ] && continue
   REQ_COUNT=$(grep -c '\[REQUIRED\]' "$f" 2>/dev/null || echo 0)
   if [ "$REQ_COUNT" -gt 0 ]; then
     echo "❌ FAIL: $f has $REQ_COUNT unfilled [REQUIRED] placeholders"
     QUALITY_PASS=false
+    FAIL_COUNT=$((FAIL_COUNT + 1))
   fi
 done
 
 # Check 4: SWOT analysis must have evidence tables with dok_id
+echo ""
+echo "--- Check 4: SWOT evidence tables ---"
 SWOT_FILE="$ANALYSIS_DIR/swot-analysis.md"
 if [ -f "$SWOT_FILE" ]; then
   TABLE_COUNT=$(grep -c '|.*dok_id\||.*Evidence' "$SWOT_FILE" 2>/dev/null || echo 0)
   if [ "$TABLE_COUNT" -eq 0 ]; then
     echo "❌ FAIL: swot-analysis.md has NO evidence tables with dok_id columns"
     QUALITY_PASS=false
+    FAIL_COUNT=$((FAIL_COUNT + 1))
   else
     echo "✅ PASS: swot-analysis.md has evidence tables"
   fi
 fi
 
 # Check 5: Analysis files must have structured tables (not just plain prose)
-for f in "$ANALYSIS_DIR"/*.md; do
+echo ""
+echo "--- Check 5: Structured tables in daily synthesis ---"
+for f in $DAILY_MD_FILES; do
   [ ! -f "$f" ] && continue
   TABLE_COUNT=$(grep -c '^|' "$f" 2>/dev/null || echo 0)
   if [ "$TABLE_COUNT" -lt 3 ]; then
     echo "⚠️ WARNING: $f has only $TABLE_COUNT table rows — templates require structured tables"
+    WARN_COUNT=$((WARN_COUNT + 1))
   fi
 done
 
+# Check 6: Per-file analyses in documents/ must NOT be stubs/boilerplate
+echo ""
+echo "--- Check 6: Per-file analyses are NOT stubs (documents/ subdirectory) ---"
+STUB_PERFILE=0
+for f in $PERFILE_MD_FILES; do
+  [ ! -f "$f" ] && continue
+  BASENAME=$(basename "$f")
+  # Detect known stub/boilerplate patterns that scripts generate as placeholders
+  STUB_SCORE=0
+  # Pattern 1: Empty SWOT quadrants ("_No strengths identified_", "_No weaknesses identified_")
+  EMPTY_SWOT=$(grep -c '_No .* identified_' "$f" 2>/dev/null || echo 0)
+  if [ "$EMPTY_SWOT" -ge 2 ]; then
+    STUB_SCORE=$((STUB_SCORE + 2))
+  fi
+  # Pattern 2: Generic boilerplate perspective text (script-generated template text)
+  BOILERPLATE=$(grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business\|this document has low newsworthiness\|this document must be assessed for' "$f" 2>/dev/null || echo 0)
+  if [ "$BOILERPLATE" -ge 2 ]; then
+    STUB_SCORE=$((STUB_SCORE + 2))
+  fi
+  # Pattern 3: No Mermaid diagrams in per-file analysis
+  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null || echo 0)
+  if [ "$MERMAID_COUNT" -eq 0 ]; then
+    STUB_SCORE=$((STUB_SCORE + 1))
+  fi
+  # Pattern 4: No evidence table rows (per-file must have structured tables)
+  TABLE_COUNT=$(grep -c '^|' "$f" 2>/dev/null || echo 0)
+  if [ "$TABLE_COUNT" -lt 2 ]; then
+    STUB_SCORE=$((STUB_SCORE + 1))
+  fi
+  # FAIL if stub score >= 3 (multiple stub indicators = unreplaced boilerplate)
+  if [ "$STUB_SCORE" -ge 3 ]; then
+    echo "❌ FAIL: $BASENAME is a stub/boilerplate (score=$STUB_SCORE) — AI MUST replace with real template-compliant analysis"
+    STUB_PERFILE=$((STUB_PERFILE + 1))
+    QUALITY_PASS=false
+    FAIL_COUNT=$((FAIL_COUNT + 1))
+  elif [ "$STUB_SCORE" -ge 2 ]; then
+    echo "⚠️ WARNING: $BASENAME has stub-like patterns (score=$STUB_SCORE) — verify analysis is real, not boilerplate"
+    WARN_COUNT=$((WARN_COUNT + 1))
+  else
+    echo "✅ PASS: $BASENAME appears to be real analysis"
+  fi
+done
+if [ "$STUB_PERFILE" -gt 0 ]; then
+  echo ""
+  echo "🚨 $STUB_PERFILE per-file analyses are stubs. AI MUST read per-file-political-intelligence.md template and REWRITE each stub file with:"
+  echo "   - ≥1 Mermaid diagram with color-coded style directives"
+  echo "   - Structured evidence tables with dok_id, confidence, impact columns"
+  echo "   - Real SWOT analysis (not empty quadrants)"
+  echo "   - Specific citations from the document data (not generic text)"
+fi
+
+# Check 7: Per-file analyses must exist for downloaded documents
+echo ""
+echo "--- Check 7: Per-file analysis coverage ---"
+if [ -d "$ANALYSIS_DIR/documents" ]; then
+  JSON_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*.json" -type f 2>/dev/null | wc -l)
+  ANALYSIS_MD_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l)
+  if [ "$JSON_COUNT" -gt 0 ] && [ "$ANALYSIS_MD_COUNT" -lt "$JSON_COUNT" ]; then
+    echo "❌ FAIL: Only $ANALYSIS_MD_COUNT analysis files for $JSON_COUNT data files — every document needs an analysis"
+    QUALITY_PASS=false
+    FAIL_COUNT=$((FAIL_COUNT + 1))
+  elif [ "$JSON_COUNT" -gt 0 ]; then
+    echo "✅ PASS: $ANALYSIS_MD_COUNT analysis files for $JSON_COUNT data files"
+  fi
+fi
+
+echo ""
+echo "=== Quality Gate Summary ==="
+echo "Failures: $FAIL_COUNT | Warnings: $WARN_COUNT"
 if [ "$QUALITY_PASS" = "true" ]; then
   echo "✅ Quality gate PASSED — analysis is ready to commit"
 else
   echo ""
-  echo "❌ Quality gate FAILED — you MUST improve analysis files before committing"
+  echo "❌ Quality gate FAILED ($FAIL_COUNT failures) — you MUST improve analysis files before committing"
   echo "📋 Re-read the templates and methodology guides, then rewrite failing files"
+  echo "📌 For per-file analyses: read analysis/templates/per-file-political-intelligence.md"
+  echo "📌 For daily synthesis: read the corresponding template in analysis/templates/"
   echo "📌 Reference good examples: SWOT.md, THREAT_MODEL.md"
 fi
 ```
 
-> **If the quality gate FAILS**: Go back to Step 5 and rewrite the failing files. Read the template again (`view analysis/templates/<template>.md`), then rewrite the daily file to match it. Do NOT commit until all checks pass.
+> **If the quality gate FAILS**: Go back and rewrite the failing files. For per-file analyses in `documents/`, read `analysis/templates/per-file-political-intelligence.md` and replace stubs with real template-compliant analysis. For daily synthesis files, read the corresponding template in `analysis/templates/`. Do NOT commit until all checks pass.
 
 #### Step 6: Commit Data AND Analysis Together
 

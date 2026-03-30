@@ -754,6 +754,74 @@ After per-file analyses, rewrite ALL daily files in `analysis/daily/$ARTICLE_DAT
 - [ ] Every daily file has ≥1 color-coded Mermaid diagram (not grey placeholders)
 - [ ] No `[REQUIRED]` placeholders remain in any file
 - [ ] Synthesis references all sibling files with ✅/⚠️/❌ status
+- [ ] Per-file analyses are NOT stubs (no empty SWOT quadrants, no generic boilerplate)
+
+#### B5. MANDATORY Quality Gate — Run Before Proceeding
+
+> 🚨 **BLOCKING**: Do NOT proceed to article generation or commit until this quality gate passes. If it fails, go back and fix analysis files.
+
+```bash
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  if [ -n "${{ github.event.inputs.article_date }}" ]; then
+    ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  else
+    ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  fi
+fi
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+QUALITY_PASS=true
+FAIL_COUNT=0
+
+echo "=== 🔍 Analysis Quality Gate Check ==="
+
+DAILY_MD_FILES=$(find "$ANALYSIS_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null)
+PERFILE_MD_FILES=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null)
+ALL_MD_FILES=$(find "$ANALYSIS_DIR" -name "*.md" -type f 2>/dev/null)
+echo "📊 Daily: $(echo "$DAILY_MD_FILES" | grep -c '.' 2>/dev/null || echo 0) | Per-file: $(echo "$PERFILE_MD_FILES" | grep -c '.' 2>/dev/null || echo 0)"
+
+# Check 1: Daily synthesis Mermaid diagrams
+for f in $DAILY_MD_FILES; do
+  [ ! -f "$f" ] && continue
+  if [ "$(grep -c '```mermaid' "$f" 2>/dev/null || echo 0)" -eq 0 ]; then
+    echo "❌ FAIL: $(basename "$f") has NO Mermaid diagrams"
+    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
+  fi
+done
+
+# Check 2: No [REQUIRED] placeholders
+for f in $ALL_MD_FILES; do
+  [ ! -f "$f" ] && continue
+  if [ "$(grep -c '\[REQUIRED\]' "$f" 2>/dev/null || echo 0)" -gt 0 ]; then
+    echo "❌ FAIL: $(basename "$f") has unfilled [REQUIRED] placeholders"
+    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
+  fi
+done
+
+# Check 3: Per-file analyses must NOT be stubs
+STUB_COUNT=0
+for f in $PERFILE_MD_FILES; do
+  [ ! -f "$f" ] && continue
+  STUB_SCORE=0
+  [ "$(grep -c '_No .* identified_' "$f" 2>/dev/null || echo 0)" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
+  [ "$(grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business' "$f" 2>/dev/null || echo 0)" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
+  [ "$(grep -c '```mermaid' "$f" 2>/dev/null || echo 0)" -eq 0 ] && STUB_SCORE=$((STUB_SCORE + 1))
+  [ "$(grep -c '^|' "$f" 2>/dev/null || echo 0)" -lt 2 ] && STUB_SCORE=$((STUB_SCORE + 1))
+  if [ "$STUB_SCORE" -ge 3 ]; then
+    echo "❌ FAIL: $(basename "$f") is a stub (score=$STUB_SCORE) — MUST be replaced with real analysis"
+    STUB_COUNT=$((STUB_COUNT + 1)); QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
+  fi
+done
+
+echo ""
+if [ "$QUALITY_PASS" = "true" ]; then
+  echo "✅ Quality gate PASSED — proceed to article generation"
+else
+  echo "❌ Quality gate FAILED ($FAIL_COUNT failures) — fix analysis files before proceeding"
+  [ "$STUB_COUNT" -gt 0 ] && echo "🚨 $STUB_COUNT per-file analyses are stubs — read analysis/templates/per-file-political-intelligence.md and rewrite"
+fi
+```
+
+> **If the quality gate FAILS**: Go back and rewrite the failing files. Read the template again (`view analysis/templates/<template>.md`), then rewrite the file to match it. Do NOT proceed until all checks pass.
 
 ### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
 
