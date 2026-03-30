@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -102,6 +102,113 @@ Analysis artifacts are **genuine intelligence products** — not summaries or re
 - 📊 **Temporal aggregation**: Daily → Weekly → Monthly intelligence roll-ups
 - 🧠 **Evidence-based intelligence**: Every claim cites dok_id, vote records, or official statistics
 - 🎯 **Multi-framework analysis**: SWOT, Risk matrices, Attack Trees, Kill Chains, Stakeholder mapping
+
+---
+
+## 🏗️ Analysis System Architecture
+
+```mermaid
+graph TB
+    subgraph "🌐 Data Sources"
+        RD["🏛️ Riksdag API<br/><i>Parliamentary data</i>"]
+        REG["🏢 Regeringen.se<br/><i>Government data</i>"]
+        CIA["📊 CIA Platform<br/><i>Hack23 intelligence</i>"]
+    end
+
+    subgraph "📥 Data Ingestion Layer"
+        MCP["🔌 riksdag-regering-mcp<br/><i>MCP Server</i>"]
+        PRE["📥 pre-article-analysis.ts<br/><i>Data download + catalog</i>"]
+    end
+
+    subgraph "📚 Methodology Framework (v3.0)"
+        direction TB
+        GUIDE["🤖 AI-Driven Guide<br/><i>Master Protocol</i>"]
+        M1["🏷️ Classification"]
+        M2["⚠️ Risk"]
+        M3["💼 SWOT"]
+        M4["🎭 Threat"]
+        M5["✍️ Style"]
+    end
+
+    subgraph "📋 Template Library (8 Templates)"
+        T1["🔍 Per-File Intel"]
+        T2["🏷️ Classification"]
+        T3["⚠️ Risk"]
+        T4["💼 SWOT"]
+        T5["🎭 Threat"]
+        T6["📈 Significance"]
+        T7["👥 Stakeholder"]
+        T8["🧩 Synthesis"]
+    end
+
+    subgraph "🤖 AI Analysis Engine"
+        AI["🧠 GitHub Copilot<br/>Coding Agent<br/><i>All analysis performed here</i>"]
+    end
+
+    subgraph "✅ Quality Assurance"
+        QG["✅ Quality Gate<br/><i>7-check validation</i>"]
+    end
+
+    subgraph "📰 Output"
+        ART["📰 News Articles<br/><i>14 languages</i>"]
+        DASH["📊 Dashboards<br/><i>Political intelligence</i>"]
+    end
+
+    RD & REG & CIA --> MCP
+    MCP --> PRE
+    PRE -->|"raw data only"| AI
+    GUIDE & M1 & M2 & M3 & M4 & M5 -->|"frameworks"| AI
+    T1 & T2 & T3 & T4 & T5 & T6 & T7 & T8 -->|"templates"| AI
+    AI -->|"analysis artifacts"| QG
+    QG -->|"approved"| ART & DASH
+
+    style RD fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
+    style REG fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
+    style CIA fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
+    style MCP fill:#6610f2,color:#fff,stroke:#520dc2,stroke-width:2px
+    style PRE fill:#6610f2,color:#fff,stroke:#520dc2,stroke-width:2px
+    style GUIDE fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
+    style AI fill:#198754,color:#fff,stroke:#146c43,stroke-width:3px
+    style QG fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
+    style ART fill:#ffc107,color:#000,stroke:#cc9a06,stroke-width:2px
+    style DASH fill:#ffc107,color:#000,stroke:#cc9a06,stroke-width:2px
+    style M1 fill:#e9ecef,color:#212529,stroke:#adb5bd
+    style M2 fill:#e9ecef,color:#212529,stroke:#adb5bd
+    style M3 fill:#e9ecef,color:#212529,stroke:#adb5bd
+    style M4 fill:#e9ecef,color:#212529,stroke:#adb5bd
+    style M5 fill:#e9ecef,color:#212529,stroke:#adb5bd
+    style T1 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
+    style T2 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
+    style T3 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
+    style T4 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
+    style T5 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
+    style T6 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
+    style T7 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
+    style T8 fill:#cfe2ff,color:#084298,stroke:#9ec5fe
+```
+
+---
+
+## 📚 Documentation Map
+
+<div class="documentation-map">
+
+| Document | Type | Focus | Link |
+|----------|------|-------|------|
+| **[Methodologies README](methodologies/README.md)** | 📚 Index | Complete methodology catalog with architecture diagrams | [View](methodologies/README.md) |
+| **[Templates README](templates/README.md)** | 📋 Index | Template catalog with usage flow and quality standards | [View](templates/README.md) |
+| **[AI-Driven Guide](methodologies/ai-driven-analysis-guide.md)** | 🤖 Protocol | Master protocol for all AI analysis | [View](methodologies/ai-driven-analysis-guide.md) |
+| **[Classification Guide](methodologies/political-classification-guide.md)** | 🏷️ Method | 7-dimension political taxonomy | [View](methodologies/political-classification-guide.md) |
+| **[Risk Methodology](methodologies/political-risk-methodology.md)** | ⚠️ Method | Cascading risk assessment model | [View](methodologies/political-risk-methodology.md) |
+| **[SWOT Framework](methodologies/political-swot-framework.md)** | 💼 Method | TOWS + Cross-SWOT analysis | [View](methodologies/political-swot-framework.md) |
+| **[Threat Framework](methodologies/political-threat-framework.md)** | 🎭 Method | 4-framework threat modeling (v3.0) | [View](methodologies/political-threat-framework.md) |
+| **[Style Guide](methodologies/political-style-guide.md)** | ✍️ Standards | Evidence citation and writing standards | [View](methodologies/political-style-guide.md) |
+| **[ISMS Classification](reference/isms-classification-adaptation.md)** | 📖 Reference | ISO 27001 → Political classification mapping | [View](reference/isms-classification-adaptation.md) |
+| **[ISMS Risk](reference/isms-risk-assessment-adaptation.md)** | 📖 Reference | ISO 27001 → Political risk mapping | [View](reference/isms-risk-assessment-adaptation.md) |
+| **[ISMS Style](reference/isms-style-guide-adaptation.md)** | 📖 Reference | ISO 27001 → Political writing mapping | [View](reference/isms-style-guide-adaptation.md) |
+| **[ISMS Threat](reference/isms-threat-modeling-adaptation.md)** | 📖 Reference | ISO 27001 → Political threat mapping | [View](reference/isms-threat-modeling-adaptation.md) |
+
+</div>
 
 ---
 
@@ -384,5 +491,46 @@ Because each workflow writes to its own isolated folder:
 - **Path:** `/analysis/README.md`  
 - **Format:** Markdown  
 - **Classification:** Public  
-- **Version:** 2.0  
+- **Version:** 3.0  
 - **Next Review:** 2026-06-30
+
+---
+
+## 📊 Temporal Aggregation Architecture
+
+```mermaid
+graph LR
+    subgraph "📅 Daily Analysis"
+        D1["📄 Per-Document<br/>Analyses"]
+        D2["🧩 Daily<br/>Synthesis"]
+    end
+
+    subgraph "📆 Weekly Intelligence"
+        W1["📰 Weekly<br/>Review"]
+        W2["🔮 Week<br/>Ahead"]
+    end
+
+    subgraph "📅 Monthly Intelligence"
+        M1["📊 Monthly<br/>Review"]
+        M2["🔮 Month<br/>Ahead"]
+    end
+
+    D1 -->|"aggregate"| D2
+    D2 -->|"7-day roll-up"| W1
+    D2 -->|"prospective"| W2
+    W1 -->|"4-week roll-up"| M1
+    W2 -->|"monthly forecast"| M2
+
+    style D1 fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
+    style D2 fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
+    style W1 fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
+    style W2 fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
+    style M1 fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
+    style M2 fill:#d63384,color:#fff,stroke:#ab296a,stroke-width:2px
+```
+
+---
+
+<p align="center">
+  <em>📊 Hack23 AB — Political Intelligence Through Systematic Analysis</em>
+</p>
