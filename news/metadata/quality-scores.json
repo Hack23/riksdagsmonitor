@@ -1,46 +1,46 @@
 {
-  "2026-03-27-government-propositions-en.html": {
-    "filename": "2026-03-27-government-propositions-en.html",
+  "2026-03-30-interpellation-debates-en.html": {
+    "filename": "2026-03-30-interpellation-debates-en.html",
     "lang": "en",
-    "articleType": "propositions",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 72,
-      "passesThreshold": true,
+      "overallScore": 55,
+      "passesThreshold": false,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 60,
+        "factualAccuracy": 0,
         "stakeholderCoverage": 100,
-        "analyticalDepth": 24,
-        "editorialConsistency": 80,
-        "evidenceQuality": 100,
+        "analyticalDepth": 20,
+        "editorialConsistency": 100,
+        "evidenceQuality": 60,
         "languageQuality": 100
       },
-      "issueCount": 1
+      "issueCount": 2
     },
-    "timestamp": "2026-03-27T05:35:33.126Z"
+    "timestamp": "2026-03-30T07:37:08.850Z"
   },
-  "2026-03-27-government-propositions-sv.html": {
-    "filename": "2026-03-27-government-propositions-sv.html",
+  "2026-03-30-interpellation-debates-sv.html": {
+    "filename": "2026-03-30-interpellation-debates-sv.html",
     "lang": "sv",
-    "articleType": "propositions",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 69,
-      "passesThreshold": true,
+      "overallScore": 54,
+      "passesThreshold": false,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 60,
+        "factualAccuracy": 0,
         "stakeholderCoverage": 100,
-        "analyticalDepth": 12,
-        "editorialConsistency": 80,
-        "evidenceQuality": 100,
+        "analyticalDepth": 16,
+        "editorialConsistency": 100,
+        "evidenceQuality": 60,
         "languageQuality": 100
       },
-      "issueCount": 1
+      "issueCount": 2
     },
-    "timestamp": "2026-03-27T05:35:33.153Z"
+    "timestamp": "2026-03-30T07:37:08.879Z"
   }
 }
