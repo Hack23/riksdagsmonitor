@@ -5,26 +5,33 @@
 <h1 align="center">⚠️ Political Risk Assessment Methodology</h1>
 
 <p align="center">
-  <strong>📊 Likelihood × Impact Scoring for Swedish Parliamentary Risk</strong><br>
-  <em>🎯 Coalition · Policy · Budget · Electoral Risk Quantification</em>
+  <strong>📊 Multi-Dimensional Risk Scoring for Swedish Parliamentary Intelligence</strong><br>
+  <em>🎯 Cascading Risk · Bayesian Updating · Risk Interconnection · Scenario Trees</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--26-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-26 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-26  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
 
 ## 🎯 Purpose
 
-This methodology provides the authoritative framework for political risk assessment in Riksdagsmonitor's analytical workflows. It adapts the quantitative Likelihood × Impact approach from [Hack23 ISMS Risk_Assessment_Methodology.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md) to the unique dynamics of Swedish parliamentary politics.
+This methodology provides the authoritative framework for political risk assessment in Riksdagsmonitor's analytical workflows. Beyond the basic 5×5 Likelihood × Impact matrix, this methodology includes:
+
+- **Cascading risk analysis** — how one risk event triggers a chain of subsequent risks
+- **Bayesian updating** — how to revise risk scores as new evidence arrives
+- **Risk interconnection mapping** — visualizing dependencies between risk types
+- **Scenario tree analysis** — probabilistic branching for complex political situations
+
+This adapts the quantitative approach from [Hack23 ISMS Risk_Assessment_Methodology.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md) to Swedish parliamentary politics.
 
 See [reference/isms-risk-assessment-adaptation.md](../reference/isms-risk-assessment-adaptation.md) for the complete ISMS-to-political mapping.
 
@@ -213,7 +220,7 @@ Real Swedish political scenarios as scoring anchors:
 
 The AI agent **MUST** follow this protocol when performing risk assessment:
 
-1. **Read this methodology** — understand the 5×5 matrix, calibration examples, and coalition stability factors
+1. **Read this methodology** — understand the 5×5 matrix, calibration examples, coalition stability factors, AND the advanced techniques below
 2. **Query MCP tools** for evidence:
    - `search_voteringar` — recent vote margins to assess coalition stability
    - `search_dokument` with `organ=FiU` — budget committee status
@@ -222,7 +229,10 @@ The AI agent **MUST** follow this protocol when performing risk assessment:
    - World Bank / SCB data — economic context for budget and electoral risk
 3. **Score each risk dimension** using the 5×5 matrix with evidence
 4. **Apply calibration** — compare against the calibration examples above
-5. **Assign overall risk level** — weighted by dimension (Coalition 0.30, Policy 0.25, Budget 0.20, Electoral 0.15, External 0.10)
+5. **Perform cascading risk analysis** — identify risk chains and second-order effects
+6. **Map risk interconnections** — which risks amplify each other?
+7. **Apply Bayesian updating** — adjust base rates with new evidence
+8. **Assign overall risk level** — weighted by dimension (Coalition 0.30, Policy 0.25, Budget 0.20, Electoral 0.15, External 0.10)
 
 ### Risk-to-SWOT Integration
 
@@ -234,8 +244,158 @@ Risk assessment results feed directly into SWOT analysis:
 
 ---
 
+## 🔗 Advanced Technique 1: Cascading Risk Analysis
+
+Political risks rarely occur in isolation. A **cascading risk chain** models how one risk event triggers subsequent risks:
+
+```mermaid
+flowchart TD
+    R1["⚠️ TRIGGER RISK:<br/>SD demands migration<br/>policy concession<br/>L=4, I=3, Score=12 🟠"]
+    R1 --> R2["⚠️ SECOND-ORDER:<br/>Government refuses;<br/>coalition tension rises<br/>L=3, I=4, Score=12 🟠"]
+    R2 --> R3A["⚠️ BRANCH A:<br/>SD withdraws budget<br/>support<br/>L=2, I=5, Score=10 🟠"]
+    R2 --> R3B["⚠️ BRANCH B:<br/>Government compromises;<br/>L loses face<br/>L=3, I=3, Score=9 🟡"]
+    R3A --> R4A["🔴 CASCADING CRISIS:<br/>No-confidence vote<br/>L=2, I=5, Score=10 🟠"]
+    R3B --> R4B["🟡 MANAGED STRESS:<br/>Internal L party dissent<br/>L=3, I=2, Score=6 🟡"]
+
+    style R1 fill:#fd7e14,color:#fff
+    style R2 fill:#fd7e14,color:#fff
+    style R3A fill:#dc3545,color:#fff
+    style R3B fill:#ffc107,color:#000
+    style R4A fill:#dc3545,color:#fff
+    style R4B fill:#ffc107,color:#000
+```
+
+### Cascading Risk Construction Protocol
+
+1. **Identify trigger risk** — the initial event that starts the chain
+2. **Map first-order consequences** — what happens immediately if the trigger occurs?
+3. **Map second-order consequences** — what happens as a result of the first-order effects?
+4. **Identify branching points** — where does the chain split into alternative paths?
+5. **Score each node** independently using the 5×5 matrix
+6. **Calculate cumulative chain probability** — multiply probabilities along each path
+7. **Identify circuit breakers** — what intervention could stop the chain at each stage?
+
+### Cascading Risk Table
+
+| Chain Stage | Risk Event | Likelihood | Impact | Score | Circuit Breaker |
+|:-----------:|-----------|:----------:|:------:|:-----:|----------------|
+| Trigger | `[Initial event]` | `[1-5]` | `[1-5]` | `[L×I]` | `[What stops it here?]` |
+| 1st Order | `[Immediate consequence]` | `[1-5]` | `[1-5]` | `[L×I]` | `[Intervention point]` |
+| 2nd Order | `[Follow-on effect]` | `[1-5]` | `[1-5]` | `[L×I]` | `[Intervention point]` |
+| Terminal | `[Final outcome]` | `[1-5]` | `[1-5]` | `[L×I]` | `[Recovery action]` |
+
+---
+
+## 📊 Advanced Technique 2: Bayesian Updating for Risk Scores
+
+Political risk scores should be **updated** as new evidence arrives, not just recalculated from scratch. Bayesian updating provides a disciplined framework:
+
+### Update Protocol
+
+| Step | Action | Example |
+|:----:|--------|---------|
+| 1 | **Start with prior** — the current risk score based on existing evidence | "Coalition collapse risk: L=2, I=5, Score=10 (prior)" |
+| 2 | **New evidence arrives** — an MCP-observable event changes the picture | "SD publicly demands migration concession (MCP: interpellation 2025/26:789)" |
+| 3 | **Assess evidence strength** — how much should this shift the score? | Strong evidence (official statement) → adjust by +1 on likelihood |
+| 4 | **Update score** — adjust likelihood and/or impact based on evidence | "Coalition collapse risk: L=3, I=5, Score=15 (posterior)" |
+| 5 | **Document the update** — record prior, evidence, and posterior | "Prior 10 → Evidence: SD interpellation → Posterior 15 (+5)" |
+
+### Evidence Strength Table
+
+| Evidence Type | Likelihood Adjustment | Example |
+|-------------|:---------------------:|---------|
+| Official Riksdag document (proposition, vote) | ±1 to ±2 | Vote passes/fails |
+| Named politician public statement | ±1 | SD leader demands concession |
+| Verified media report with named sources | ±0.5 to ±1 | DN reports coalition talks stalled |
+| Single unnamed source | ±0.5 | "Sources say minister may resign" |
+| Statistical data (SCB, World Bank) | ±0.5 to ±1 | GDP growth data, unemployment change |
+
+---
+
+## 🔗 Advanced Technique 3: Risk Interconnection Mapping
+
+Political risks are **interconnected** — coalition risk affects budget risk, which affects electoral risk. Map these connections to understand system-level vulnerability:
+
+```mermaid
+graph TD
+    CR["🤝 Coalition Risk<br/>Score: [X]"]
+    PR["📋 Policy Risk<br/>Score: [X]"]
+    BR["💰 Budget Risk<br/>Score: [X]"]
+    ER["🗳️ Electoral Risk<br/>Score: [X]"]
+    XR["🌍 External Risk<br/>Score: [X]"]
+
+    CR -->|"Coalition instability delays<br/>policy implementation"| PR
+    CR -->|"Budget depends on<br/>coalition agreement"| BR
+    PR -->|"Policy failures erode<br/>electoral support"| ER
+    BR -->|"Budget cuts affect<br/>policy capacity"| PR
+    XR -->|"EU pressure forces<br/>unwanted policy"| PR
+    XR -->|"Economic headwinds<br/>squeeze budget"| BR
+    ER -->|"Election proximity increases<br/>coalition posturing"| CR
+
+    style CR fill:#dc3545,color:#fff
+    style PR fill:#fd7e14,color:#fff
+    style BR fill:#ffc107,color:#000
+    style ER fill:#0d6efd,color:#fff
+    style XR fill:#6f42c1,color:#fff
+```
+
+### Interconnection Strength Assessment
+
+| From → To | Connection Strength | Mechanism | Evidence |
+|:---------:|:-------------------:|-----------|---------|
+| Coalition → Budget | **Strong** | Budget requires coalition majority | `[vote records]` |
+| Coalition → Policy | **Strong** | Policy delivery requires coalition unity | `[committee reports]` |
+| Policy → Electoral | **Medium** | Policy success/failure affects polls | `[polling data]` |
+| External → Budget | **Medium** | EU/economic pressures constrain budget | `[SCB/World Bank data]` |
+| Electoral → Coalition | **Medium** | Election proximity strains coalition | `[calendar, debate rhetoric]` |
+
+**System-Level Risk Assessment:** When ≥3 risk categories score ≥10 (High), the system is in a **fragile state** where any single trigger event could cascade across multiple risk dimensions simultaneously.
+
+---
+
+## 🌳 Advanced Technique 4: Scenario Tree Analysis
+
+For complex risk situations with multiple branching points, construct a **scenario tree** showing probability-weighted outcomes:
+
+```mermaid
+flowchart TD
+    START["📊 Current Situation<br/>Coalition majority holds"]
+    START -->|"60%"| A["🟢 Stability<br/>Coalition remains intact"]
+    START -->|"30%"| B["🟡 Stress<br/>Coalition strained but holds"]
+    START -->|"10%"| C["🔴 Crisis<br/>Coalition breaks"]
+
+    A -->|"80%"| A1["Budget passes normally"]
+    A -->|"20%"| A2["Budget amended but passes"]
+
+    B -->|"50%"| B1["Compromise found, stability restored"]
+    B -->|"30%"| B2["Ongoing tension, weakened governance"]
+    B -->|"20%"| B3["Delayed collapse"]
+
+    C -->|"60%"| C1["New coalition formed"]
+    C -->|"40%"| C2["Extraordinary election"]
+
+    style START fill:#0d6efd,color:#fff
+    style A fill:#28a745,color:#fff
+    style B fill:#ffc107,color:#000
+    style C fill:#dc3545,color:#fff
+```
+
+### Scenario Tree Table
+
+| Path | Probability | Outcome | Key Trigger | Watch Indicator |
+|------|:----------:|---------|------------|----------------|
+| Stability → Budget passes | 48% (60%×80%) | Normal governance continues | SD confirms budget support | SD budget stance statement |
+| Stability → Budget amended | 12% (60%×20%) | Minor adjustments, governance continues | Partial SD objections | Committee amendment volume |
+| Stress → Compromise | 15% (30%×50%) | Short-term disruption resolved | Public negotiation succeeds | Joint coalition statement |
+| Crisis → New coalition | 6% (10%×60%) | Government changes, democracy functions | Coalition collapse triggers realignment | No-confidence vote result |
+| Crisis → Election | 4% (10%×40%) | Extraordinary election called | No alternative coalition possible | Riksdag vote on dissolution |
+
+---
+
 **Document Control:**  
 - **Path:** `/analysis/methodologies/political-risk-methodology.md`  
 - **ISMS Reference:** [Risk_Assessment_Methodology.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md)  
+- **Version:** 2.0  
+- **Advanced Techniques:** Cascading Risk, Bayesian Updating, Risk Interconnection, Scenario Trees  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Next Review:** 2026-06-30

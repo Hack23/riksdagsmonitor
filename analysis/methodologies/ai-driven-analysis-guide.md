@@ -5,19 +5,19 @@
 <h1 align="center">🤖 AI-Driven Per-File Analysis Guide</h1>
 
 <p align="center">
-  <strong>📊 Comprehensive Methodology for Agentic Political Intelligence Analysis</strong><br>
-  <em>🎯 Per-File · Evidence-Based · Mermaid Diagrams · SWOT.md Quality</em>
+  <strong>📊 Master Protocol for Agentic Political Intelligence Analysis</strong><br>
+  <em>🎯 Folder Isolation · AI-Only Content · Multi-Framework Depth · Quality Gates</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-03-30 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-26  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -27,6 +27,55 @@
 This methodology guide defines how AI agents perform **per-file political intelligence analysis** in Riksdagsmonitor's agentic workflows. Instead of batch daily analysis that produces shallow, generic results, this approach ensures **every downloaded MCP data file** receives deep, evidence-based analysis producing publication-quality markdown with color-coded Mermaid diagrams.
 
 > *"The quality standard for every analysis file is [SWOT.md](../../SWOT.md) and [THREAT_MODEL.md](../../THREAT_MODEL.md) — rich formatting, evidence-based claims, actionable intelligence, and visual clarity through Mermaid diagrams."*
+
+---
+
+## 🔴 ABSOLUTE RULES (Violations = Rejected Output)
+
+### Rule 1: Folder Isolation — NEVER Overwrite Another Workflow's Analysis
+
+Each agentic workflow writes ONLY to its own isolated folder:
+
+```
+analysis/daily/YYYY-MM-DD/{articleType}/
+```
+
+**Enforcement checklist:**
+- [ ] My workflow writes ONLY to `analysis/daily/$ARTICLE_DATE/$DOC_TYPE/`
+- [ ] My `git add` is scoped: `git add "analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/"`
+- [ ] I do NOT touch files in any other workflow's folder
+- [ ] Realtime workflows use timestamped folders: `analysis/daily/$ARTICLE_DATE/realtime-HHMM/`
+
+### Rule 2: AI Performs ALL Analysis — Scripts ONLY Download Data
+
+| ✅ Scripts MAY | 🚫 Scripts MUST NEVER |
+|---------------|----------------------|
+| Download MCP data files | Generate analysis prose, SWOT entries, risk scores |
+| Catalog pending files | Fill template sections with content |
+| Run quality gate validation | Create "placeholder" text that looks like real analysis |
+| Create directory structure | Produce significance scores or classifications |
+
+**Test:** If you can replace the "analysis" content with Lorem Ipsum and nobody notices, it's scripted crap — not genuine analysis.
+
+### Rule 3: Read ALL Methodologies Before Analyzing
+
+Before analyzing ANY document, the AI MUST read:
+1. `analysis/methodologies/political-swot-framework.md` — Cross-SWOT interference, TOWS matrix, scenario generation
+2. `analysis/methodologies/political-risk-methodology.md` — Cascading risk, Bayesian updating, risk interconnection
+3. `analysis/methodologies/political-threat-framework.md` — Attack Trees, Kill Chain, Diamond Model (not just STRIDE)
+4. `analysis/methodologies/political-classification-guide.md` — Political Temperature, strategic significance
+5. `analysis/methodologies/political-style-guide.md` — Evidence density, attribution, intelligence writing
+6. ALL 8 templates in `analysis/templates/`
+
+### Rule 4: Multi-Framework Depth Required
+
+Every analysis file MUST demonstrate:
+- **≥ 3 evidence-backed claims** per analytical section (with dok_id citations)
+- **≥ 1 color-coded Mermaid diagram** with real data (not placeholders)
+- **Multi-perspective analysis** (government, opposition, citizen, media, international)
+- **Cross-document pattern identification** (how this relates to other recent activity)
+- **Forward-looking indicators** (what to watch next, with specific triggers)
+- **At least 2 analytical frameworks** applied (e.g., SWOT + Risk, or Attack Tree + Kill Chain)
 
 ---
 
@@ -532,5 +581,7 @@ graph TD
 
 **Document Control:**  
 - **Path:** `/analysis/methodologies/ai-driven-analysis-guide.md`  
+- **Version:** 2.0  
+- **Key Changes v2.0:** Folder isolation rules, AI-only content mandate, multi-framework depth requirements, advanced anti-pattern detection  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Next Review:** 2026-06-30
