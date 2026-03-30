@@ -1,71 +1,71 @@
-# ⚠️ Political Risk Assessment — 2026-03-30
+# Political Risk Assessment — 2026-03-30
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-30 (UTC)
-**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+**ID**: RSK-20260330
+**Generated**: 2026-03-30 18:19 UTC
+**Riksmöte**: 2025/26
+**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer
+**Documents Analyzed**: 14
+**Confidence**: HIGH
 
----
-
-## 📋 Risk Context
-
-| Field | Value |
-|-------|-------|
-| **Risk Assessment ID** | `RSK-2026-03-30-001` |
-| **Assessment Date** | `2026-03-30 10:33 UTC` |
-| **Assessment Period** | 2026-03-30 to 2026-04-06 |
-| **Produced By** | `news-realtime-monitor` |
-| **Political Context** | Tidöblocket (M+KD+L with SD supply) governs with working majority. KU scrutiny hearings today on Northvolt/AP and Lantmäteriet security. One M MP has left the party group. |
-| **Riksmöte** | 2025/26 |
-| **Overall Risk Level** | **MEDIUM** |
-
----
-
-## 🗂️ Risk Inventory
-
-### Risk Heat Map
+## Risk Heat Map
 
 ```mermaid
 graph TD
-    subgraph "⚖️ Political Risk Landscape — 2026-03-30"
-        R1["🟠 RSK-001: KU scrutiny of<br/>Lantmäteriet security<br/>L:3 × I:4 = 12"]
-        R2["🟠 RSK-002: Northvolt/AP fund<br/>governance probe<br/>L:3 × I:4 = 12"]
-        R3["🟡 RSK-003: M party group<br/>defection trend<br/>L:2 × I:3 = 6"]
-        R4["🟡 RSK-004: EU child protection<br/>regulation gap (Apr 3)<br/>L:4 × I:2 = 8"]
-        R5["🟢 RSK-005: Opposition question<br/>cluster pressure<br/>L:3 × I:2 = 6"]
+    subgraph "Risk Heat Map — 2026-03-30"
+        A[Coalition<br/>4/100 LOW] 
+        B[Policy<br/>2/10 LOW]
+        C[Budget<br/>1/10 LOW]
+        D[Electoral<br/>2/10 LOW]
+        E[Democratic<br/>3/10 LOW]
+        F[External<br/>2/10 LOW]
     end
-
-    style R1 fill:#fd7e14,stroke:#333,color:#fff
-    style R2 fill:#fd7e14,stroke:#333,color:#fff
-    style R3 fill:#ffc107,stroke:#333,color:#000
-    style R4 fill:#ffc107,stroke:#333,color:#000
-    style R5 fill:#28a745,stroke:#333,color:#fff
+    style A fill:#28a745,color:#fff
+    style B fill:#28a745,color:#fff
+    style C fill:#28a745,color:#fff
+    style D fill:#28a745,color:#fff
+    style E fill:#ffc107,color:#000
+    style F fill:#28a745,color:#fff
 ```
 
-### Detailed Risk Register
+## Summary
 
-| Risk ID | Risk Description | Likelihood (1-5) | Impact (1-5) | Score | Tier | Evidence (dok_id) | Mitigation | Confidence |
-|---------|-----------------|:-----------------:|:------------:|:-----:|:----:|-------------------|-----------|:----------:|
-| RSK-001 | KU hearing on Lantmäteriet security may reveal ministerial negligence, damaging government credibility on national security | 3 | 4 | **12** | 🟠 HIGH | HDC220260330ou1, HDA7KU38 | Minister Carlson prepared testimony; government can argue process improvements underway | `[HIGH]` |
-| RSK-002 | Northvolt/AP fund probe may establish that state investment governance was inadequate, with potential fiscal policy implications | 3 | 4 | **12** | 🟠 HIGH | HDC220260330ou2 | Previous government bears primary responsibility; current government can distance | `[MEDIUM]` |
-| RSK-003 | M party group defection may signal internal tensions ahead of 2026 election; could embolden other dissatisfied MPs | 2 | 3 | **6** | 🟡 MEDIUM | HD0I100 | Isolated event unless pattern emerges; M party leadership can reassert discipline | `[HIGH]` |
-| RSK-004 | EU temporary legislation on child abuse detection expires April 3; government under pressure to present position before Easter | 4 | 2 | **8** | 🟡 MEDIUM | HD11664 | Government can defer to ongoing EU Council negotiations; S question increases domestic pressure | `[MEDIUM]` |
-| RSK-005 | Sustained multi-domain opposition questioning creates cumulative pressure across policy areas | 3 | 2 | **6** | 🟡 MEDIUM | HD11661-HD11666 | Normal parliamentary scrutiny; answering ministers can use positive legislative track record | `[HIGH]` |
+Coalition demonstrates low risk. Voting discipline is strong and majority margin is adequate. No high-significance documents detected today.
 
----
+## Risk Scores
 
-## 📊 Risk Trend Assessment
+| Risk Category | Score | Level | Evidence | dok_id |
+|---------------|-------|-------|----------|--------|
+| Coalition Stability | 4/100 | LOW | SD support agreement stable; cross-party alignment >80% | search_voteringar |
+| Policy Risk | 2/10 | LOW | Climate target adaptation is EU-mandated, low domestic controversy | HD01MJU30 |
+| Budget Risk | 1/10 | LOW | No budget-impacting documents today | — |
+| Electoral Risk | 2/10 | LOW | 96% motion denial may fuel opposition narrative pre-2026 election | HD01KU38 |
+| Democratic Accountability | 3/10 | LOW | Parliamentary process reform (KU38) addresses democratic quality | HD01KU38 |
+| External Risk | 2/10 | LOW | EU climate alignment reduces compliance risk | HD01MJU30 |
 
-| Period | Coalition Risk Score | Trend | Key Driver |
-|--------|:-------------------:|:-----:|-----------|
-| 2026-W12 | 4/100 | → | Routine legislative period |
-| 2026-W13 | 8/100 | ↗ | KU hearing schedule confirmed |
-| **2026-W14** | **15/100** | **↗** | KU hearings + M defection |
+## Anomaly Flags
 
----
+| Severity | Type | Description | Evidence |
+|----------|------|-------------|----------|
+| HIGH | CROSS_PARTY_VOTE | KD-M alignment at 88.5% — above historical norm | search_voteringar |
+| HIGH | CROSS_PARTY_VOTE | L-M alignment at 87.9% — strong coalition cohesion | search_voteringar |
+| HIGH | CROSS_PARTY_VOTE | KD-L alignment at 87.9% — trilateral government unity | search_voteringar |
+| HIGH | CROSS_PARTY_VOTE | C-L alignment at 81.3% — notable cross-bloc alignment | search_voteringar |
+| HIGH | CROSS_PARTY_VOTE | C-KD alignment at 80.3% — Centre-right convergence | search_voteringar |
 
-## 📋 Document Control
+## Key Findings
 
-| Field | Value |
-|-------|-------|
-| **Classification** | Public |
-| **Retention** | 90 days |
-| **Next Update** | 2026-03-30 evening risk update |
+1. Coalition stability at risk score **4** (LOW) — lowest in current session
+2. **5** cross-party voting anomalies detected — all involve high government coalition cohesion
+3. Centre Party (C) shows >80% alignment with all three coalition parties — potential bloc realignment signal
+4. No budget, electoral, or external risks materially elevated today
+
+## Implications
+
+- 14 documents analyzed for risk indicators
+- 0 high-significance documents identified (all scored ≤ 3/10)
+- Coalition stability appears stable based on available voting data
+- Centre Party alignment patterns warrant monitoring for potential coalition dynamics shift
+
+## Data Quality Notes
+
+Risk assessment derived from CIA coalition metrics and document significance scores. Anomaly percentages may reflect API measurement artifacts — cross-reference with historical baselines.
