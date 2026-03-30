@@ -786,7 +786,7 @@ describe('Analysis Depth Input', () => {
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes('quality-criteria.md'),
-        `Workflow ${workflowFile} should reference scripts/prompts/v1/quality-criteria.md`
+        `Workflow ${workflowFile} should reference scripts/prompts/v2/quality-criteria.md`
       ).toBe(true);
     }
   });
@@ -804,7 +804,7 @@ describe('Analysis Depth Input', () => {
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes('political-analysis.md'),
-        `Workflow ${workflowFile} should reference scripts/prompts/v1/political-analysis.md`
+        `Workflow ${workflowFile} should reference scripts/prompts/v2/political-analysis.md`
       ).toBe(true);
     }
   });
@@ -822,7 +822,7 @@ describe('Analysis Depth Input', () => {
       const content = fs.readFileSync(filepath, 'utf-8');
       expect(
         content.includes('stakeholder-perspectives.md'),
-        `Workflow ${workflowFile} should reference scripts/prompts/v1/stakeholder-perspectives.md`
+        `Workflow ${workflowFile} should reference scripts/prompts/v2/stakeholder-perspectives.md`
       ).toBe(true);
     }
   });

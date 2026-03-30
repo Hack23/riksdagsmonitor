@@ -125,27 +125,6 @@ export function validatePendingFileOwnership(
 }
 
 /**
- * Validate ownership for staged files only (backwards-compatible legacy API).
- *
- * @deprecated Use `validatePendingFileOwnership` instead, which validates
- * pending changes including staged, unstaged, and untracked files.
- */
-export function validateStagedFileOwnership(
-  category: WorkflowCategory,
-): ValidationResult {
-  const stagedOutput = execSync('git diff --cached --name-only', {
-    encoding: 'utf-8',
-  }).trim();
-
-  if (!stagedOutput) {
-    return { passed: true, violations: [], checkedCount: 0 };
-  }
-
-  const files = stagedOutput.split('\n').filter((f) => f);
-  return validateFileList(files, category);
-}
-
-/**
  * Validate a list of file paths against the ownership contract.
  * This is the pure-logic core, usable without git.
  *
