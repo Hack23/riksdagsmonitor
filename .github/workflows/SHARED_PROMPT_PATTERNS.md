@@ -24,11 +24,15 @@ Before generating articles, consult these skills:
 ```markdown
 ### Standardised Analysis Depth Gate
 
-| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap |
-|-------|--------------|-------------------|--------|---------|
-| standard | 1-2 | ≥3 | ≥1 | optional |
-| deep | 2-3 | ≥5 | ≥2 | required |
-| comprehensive | 3+ | ≥7 | ≥3 | required |
+> ⚠️ **Default is `deep`** — not `standard`. Analysis must always produce publication-quality output with Mermaid diagrams and evidence tables.
+
+| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Min. analysis time |
+|-------|--------------|-------------------|--------|---------|-------------------|
+| standard | 1-2 | ≥3 | ≥1 | optional | 10 minutes |
+| deep | 2-3 | ≥5 | ≥2 | required | 15 minutes |
+| comprehensive | 3+ | ≥7 | ≥3 | required | 20 minutes |
+
+**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
 ```
 
 ## MANDATORY Playwright Validation (copy into every content workflow)
@@ -70,8 +74,23 @@ fi
 > 1. **Download data** from MCP (scripts try first; if they fail or download 0, agent uses direct MCP tool calls and fixes scripts)
 > 2. **Read ALL 6 methodology guides** before doing any analysis
 > 3. **Read ALL 8 analysis templates** before writing any analysis files
-> 4. **Create analysis for EVERY document/data piece** following the templates exactly
-> 5. **Commit both data AND analysis** — never one without the other
+> 4. **Spend AT LEAST 15 MINUTES on analysis** — this is a hard minimum, not a suggestion. Analysis that takes less than 15 minutes is REJECTED.
+> 5. **Create analysis for EVERY document/data piece** following the templates exactly
+> 6. **Pass the quality gate** (see below) — every analysis file must contain Mermaid diagrams, evidence tables, and dok_id citations
+> 7. **Commit both data AND analysis** — never one without the other
+
+#### ⏱️ Mandatory Minimum Analysis Time: 15 Minutes
+
+> 🚨 **HARD RULE**: The AI agent MUST spend **at least 15 minutes** on analysis work. This means:
+> - Reading ALL 6 methodology guides (not skimming — reading fully)
+> - Reading ALL 8 analysis templates (not skimming — reading fully)
+> - Creating analysis for EVERY document following templates EXACTLY
+> - Including color-coded Mermaid diagrams with REAL data in every analysis file
+> - Filling ALL evidence tables with dok_id, confidence, impact columns
+>
+> **Why 15 minutes?** The templates require structured tables, Mermaid diagrams, evidence citations, and multi-section analysis. This cannot be done properly in less than 15 minutes. PR #1452 demonstrated that rushing analysis (< 10 min) produces unacceptable results: plain text without tables, no Mermaid diagrams, no dok_id citations, no template structure.
+>
+> **Enforcement**: Before committing, run the quality gate check below. If it fails, you MUST spend more time improving the analysis until it passes.
 
 #### Step 1: Download Data (scripts + fallback to direct MCP calls)
 
@@ -145,13 +164,97 @@ For each file in `analysis/daily/$ARTICLE_DATE/`, the agent MUST rewrite it to m
 **Template compliance checklist (ALL must be true):**
 - [ ] Every file has its template's metadata header (ID, date, riksmöte, confidence)
 - [ ] Every file has ≥1 Mermaid diagram with color-coded nodes and REAL data
+- [ ] Every Mermaid diagram uses color-coded `style` directives (e.g., `fill:#dc3545,color:#fff` for red, `fill:#28a745,color:#fff` for green)
 - [ ] Risk assessment has ≥2 risks with L×I numeric scores
+- [ ] SWOT has structured evidence tables with columns: `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact`, `Entry Date`
 - [ ] SWOT has ≥2 filled quadrants with evidence citations (dok_id)
 - [ ] Threat analysis covers ALL 6 STRIDE categories
 - [ ] Significance scoring uses 5-dimension model with publication decision
 - [ ] Synthesis references ALL sibling files with ✅/⚠️/❌ status
 - [ ] No `[REQUIRED]` placeholders remaining in any file
 - [ ] Every claim cites specific data (dok_id, vote counts, party names, dates)
+- [ ] Markdown is human-readable with proper formatting (tables, emoji headers, structured sections)
+
+#### Step 5b: MANDATORY Quality Gate — Run Before Committing
+
+> 🚨 **BLOCKING**: Do NOT proceed to commit until this quality gate passes. If it fails, go back and improve the analysis files.
+
+Run this bash check on every analysis file before committing:
+
+```bash
+ANALYSIS_DIR="analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}"
+QUALITY_PASS=true
+
+echo "=== 🔍 Analysis Quality Gate Check ==="
+
+# Check 1: Every analysis file must contain at least 1 Mermaid diagram
+for f in "$ANALYSIS_DIR"/*.md; do
+  [ ! -f "$f" ] && continue
+  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null || echo 0)
+  if [ "$MERMAID_COUNT" -eq 0 ]; then
+    echo "❌ FAIL: $f has NO Mermaid diagrams (minimum: 1)"
+    QUALITY_PASS=false
+  else
+    echo "✅ PASS: $f has $MERMAID_COUNT Mermaid diagram(s)"
+  fi
+done
+
+# Check 2: Mermaid diagrams must have color-coded style directives
+for f in "$ANALYSIS_DIR"/*.md; do
+  [ ! -f "$f" ] && continue
+  if grep -q '```mermaid' "$f" 2>/dev/null; then
+    STYLE_COUNT=$(grep -c 'style.*fill:#' "$f" 2>/dev/null || echo 0)
+    if [ "$STYLE_COUNT" -eq 0 ]; then
+      echo "❌ FAIL: $f has Mermaid diagram(s) but NO color-coded style directives"
+      QUALITY_PASS=false
+    else
+      echo "✅ PASS: $f has $STYLE_COUNT color-coded style directive(s)"
+    fi
+  fi
+done
+
+# Check 3: No [REQUIRED] placeholders remaining
+for f in "$ANALYSIS_DIR"/*.md; do
+  [ ! -f "$f" ] && continue
+  REQ_COUNT=$(grep -c '\[REQUIRED\]' "$f" 2>/dev/null || echo 0)
+  if [ "$REQ_COUNT" -gt 0 ]; then
+    echo "❌ FAIL: $f has $REQ_COUNT unfilled [REQUIRED] placeholders"
+    QUALITY_PASS=false
+  fi
+done
+
+# Check 4: SWOT analysis must have evidence tables with dok_id
+SWOT_FILE="$ANALYSIS_DIR/swot-analysis.md"
+if [ -f "$SWOT_FILE" ]; then
+  TABLE_COUNT=$(grep -c '|.*dok_id\||.*Evidence' "$SWOT_FILE" 2>/dev/null || echo 0)
+  if [ "$TABLE_COUNT" -eq 0 ]; then
+    echo "❌ FAIL: swot-analysis.md has NO evidence tables with dok_id columns"
+    QUALITY_PASS=false
+  else
+    echo "✅ PASS: swot-analysis.md has evidence tables"
+  fi
+fi
+
+# Check 5: Analysis files must have structured tables (not just plain prose)
+for f in "$ANALYSIS_DIR"/*.md; do
+  [ ! -f "$f" ] && continue
+  TABLE_COUNT=$(grep -c '^|' "$f" 2>/dev/null || echo 0)
+  if [ "$TABLE_COUNT" -lt 3 ]; then
+    echo "⚠️ WARNING: $f has only $TABLE_COUNT table rows — templates require structured tables"
+  fi
+done
+
+if [ "$QUALITY_PASS" = "true" ]; then
+  echo "✅ Quality gate PASSED — analysis is ready to commit"
+else
+  echo ""
+  echo "❌ Quality gate FAILED — you MUST improve analysis files before committing"
+  echo "📋 Re-read the templates and methodology guides, then rewrite failing files"
+  echo "📌 Reference good examples: SWOT.md, THREAT_MODEL.md"
+fi
+```
+
+> **If the quality gate FAILS**: Go back to Step 5 and rewrite the failing files. Read the template again (`view analysis/templates/<template>.md`), then rewrite the daily file to match it. Do NOT commit until all checks pass.
 
 #### Step 6: Commit Data AND Analysis Together
 
@@ -366,13 +469,18 @@ This ensures that once lookback persists `ARTICLE_DATE` to `$GITHUB_ENV`, subseq
 
 #### Minimum Compliance Check
 - [ ] Every daily file has its template's metadata header (ID, date, riksmöte, confidence)
-- [ ] Every daily file has ≥1 Mermaid diagram with color-coded nodes (not grey placeholders)
-- [ ] Risk assessment has ≥2 risks with L×I numeric scores
-- [ ] SWOT has ≥2 filled quadrants with evidence citations
-- [ ] Threat analysis covers all 6 STRIDE categories
-- [ ] Significance scoring uses 5-dimension model
+- [ ] Every daily file has ≥1 Mermaid diagram with color-coded nodes (using `style X fill:#hex,color:#fff` — not grey or unstyled)
+- [ ] Risk assessment has ≥2 risks with L×I numeric scores in structured table
+- [ ] SWOT has ≥2 filled quadrants with evidence citations (dok_id, vote counts) in structured tables
+- [ ] SWOT follows template structure: Section 1 (Government Coalition), Section 2 (Opposition), Section 3 (Policy Domain)
+- [ ] Threat analysis covers all 6 STRIDE categories with severity scores
+- [ ] Significance scoring uses 5-dimension model with numeric scores and publication decision
 - [ ] Synthesis references all sibling files with ✅/⚠️/❌ status
 - [ ] No `[REQUIRED]` placeholders remain in any file
+- [ ] Run the quality gate bash check from Step 5b — do NOT commit until it passes
+
+> **❌ Anti-pattern (PR #1452)**: Plain prose SWOT with no tables, no Mermaid diagrams, no dok_id evidence, no template structure. This is REJECTED.
+> **✅ Good example**: See [SWOT.md](../../SWOT.md) for the formatting standard — badges, evidence tables, color-coded Mermaid charts, structured sections.
 ````
 
 ## Per-File AI Analysis Block (copy into every analysis workflow)
@@ -421,18 +529,21 @@ Read these methodology documents to guide your analysis:
    ```
 5. **Rewrite daily synthesis files** — After per-file analysis, rewrite ALL daily files in `analysis/daily/YYYY-MM-DD/` to follow their corresponding templates (see "Daily Synthesis Template Compliance" section above)
 
-#### Quality Gate (minimum 8/10)
-- [ ] ≥ 3 evidence points with dok_id
-- [ ] Confidence labels on all claims
-- [ ] At least 1 Mermaid diagram with real data
-- [ ] SWOT has ≥ 2 filled quadrants
-- [ ] Risk matrix has numeric scores
-- [ ] Forward indicators are specific
-- [ ] No `[REQUIRED]` placeholders remaining
-- [ ] Politicians named with party abbreviation
-- [ ] Intelligence-level analysis (not surface)
-- [ ] No boilerplate or generic text
-- [ ] Daily synthesis files follow their corresponding `analysis/templates/` structure
+#### Quality Gate — MANDATORY (must pass 10/12 minimum)
+
+> 🚨 **BLOCKING**: Run the quality gate bash check from SHARED_PROMPT_PATTERNS Step 5b. Do NOT commit until it passes.
+
+- [ ] ≥ 3 evidence points with dok_id (not generic references)
+- [ ] Confidence labels (`[HIGH]`/`[MEDIUM]`/`[LOW]`) on every analytical claim
+- [ ] At least 1 **color-coded** Mermaid diagram per file with `style` directives using real data
+- [ ] SWOT has structured **evidence tables** (not plain prose) with `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact` columns
+- [ ] SWOT has ≥ 2 filled quadrants (not empty `[REQUIRED]` placeholders)
+- [ ] Risk matrix has numeric L×I scores in structured table
+- [ ] Forward indicators are specific with concrete timelines and triggers
+- [ ] No `[REQUIRED]` placeholders remaining in any file
+- [ ] Politicians named with party abbreviation (e.g., "Ulf Kristersson (M)")
+- [ ] Intelligence-level analysis (not surface-level summaries or generic text)
+- [ ] Daily synthesis files follow their corresponding `analysis/templates/` structure exactly
 - [ ] Every daily file has template metadata header (ID, date, riksmöte, confidence)
 ````
 
