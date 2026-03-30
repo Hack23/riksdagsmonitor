@@ -1,67 +1,79 @@
-# Political Threat Analysis (STRIDE) — 2026-03-30
+# 🎭 Political Threat Analysis — 2026-03-30
 
-## 📋 Threat Context
-
-| Field | Value |
-|-------|-------|
-| **Assessment ID** | `THR-2026-03-30-001` |
-| **Analysis Date** | `2026-03-30 14:35 UTC` |
-| **Model** | STRIDE (adapted for political threat analysis) |
-| **Documents Analyzed** | 14 + KU hearing events |
-| **Produced By** | `news-realtime-monitor` (AI-enhanced) |
-| **Confidence** | **MEDIUM** |
+**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-30 (UTC)
+**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
 
-## 🔴 STRIDE Threat Matrix
+## 📋 Threat Analysis Context
+
+| Field | Value |
+|-------|-------|
+| **Threat Analysis ID** | `THR-2026-03-30-001` |
+| **Analysis Date** | `2026-03-30 10:33 UTC` |
+| **Analysis Period** | 2026-03-30 (daily snapshot) |
+| **Produced By** | `news-realtime-monitor` |
+| **Political Context** | KU scrutiny hearings on ministerial conduct; one M MP defection; 8 opposition written questions; climate committee report published. |
+| **Overall Threat Level** | **MODERATE** |
+
+---
+
+## 🎭 STRIDE-Adapted Threat Inventory
+
+### STRIDE Threat Landscape
 
 ```mermaid
-graph TB
-    subgraph "STRIDE Political Threat Model — 2026-03-30"
-        S["🔴 Spoofing<br/>Institutional identity<br/>Lantmäteriet security"]
-        T["🟡 Tampering<br/>AP fund investment<br/>decisions"]
-        R["🔴 Repudiation<br/>Government denying<br/>accountability"]
-        I["🟡 Information Disclosure<br/>Lantmäteriet archives<br/>security breach"]
-        D["🟢 Denial of Service<br/>No active threats"]
-        E["🟡 Elevation of Privilege<br/>Minister bypassing<br/>oversight processes"]
+graph LR
+    subgraph "🎭 Political STRIDE Threat Model — 2026-03-30"
+        S["🎭 S: Spoofing<br/>False Narratives"]
+        T["🔧 T: Tampering<br/>Policy Corruption"]
+        R["📝 R: Repudiation<br/>Accountability Evasion"]
+        I["🔓 I: Information<br/>Transparency Failures"]
+        D["🚫 D: Denial<br/>Democratic Obstruction"]
+        E["⬆️ E: Elevation<br/>Power Concentration"]
+
+        S --- S1["Low: No active<br/>misinformation detected"]
+        R --- R1["Moderate: KU hearing tests<br/>ministerial accountability<br/>on Lantmäteriet + Northvolt"]
+        I --- I1["Moderate: Lantmäteriet<br/>archive security gaps<br/>dok_id: HDC220260330ou1"]
+        D --- D1["Low: 96% motion denial<br/>rate is standard procedure"]
     end
-    
-    style S fill:#dc3545,stroke:#333,color:#fff
-    style T fill:#ffc107,stroke:#333,color:#000
-    style R fill:#dc3545,stroke:#333,color:#fff
+
+    style S fill:#6c757d,stroke:#333,color:#fff
+    style T fill:#6c757d,stroke:#333,color:#fff
+    style R fill:#ffc107,stroke:#333,color:#000
     style I fill:#ffc107,stroke:#333,color:#000
     style D fill:#28a745,stroke:#333,color:#fff
-    style E fill:#ffc107,stroke:#333,color:#000
+    style E fill:#6c757d,stroke:#333,color:#fff
+    style S1 fill:#28a745,stroke:#333,color:#fff
+    style R1 fill:#ffc107,stroke:#333,color:#000
+    style I1 fill:#ffc107,stroke:#333,color:#000
+    style D1 fill:#28a745,stroke:#333,color:#fff
 ```
 
----
+### Threat Register
 
-## 📊 Detailed Threat Assessment
-
-| # | STRIDE | Threat | Severity | Evidence (dok_id) | Confidence | Mitigation |
-|---|--------|--------|----------|-------------------|------------|------------|
-| T1 | **Information Disclosure** | Lantmäteriet archives security breaches — sensitive geographic/property data exposed | 🔴 HIGH | `HDC220260330ou1`, `HDA7KU38` (G7-8, G37) | **HIGH** | KU hearing mandating accountability |
-| T2 | **Tampering** | State AP fund investment decisions in Northvolt — improper influence on public pension funds | 🟡 MEDIUM | `HDC220260330ou2` (G4, G9) | **HIGH** | KU hearing investigating former government role |
-| T3 | **Repudiation** | Government denying responsibility for security failures / investment losses | 🔴 HIGH | `HDC220260330ou1`, `HDC220260330ou2` | **MEDIUM** | Public KU hearings create accountability record |
-| T4 | **Spoofing** | Institutional credibility: Skatteverket DG departure amid criminal probe | 🟡 MEDIUM | `HD11666` | **MEDIUM** | Parliamentary questions demanding answers |
-| T5 | **Elevation** | State enterprise LKAB circumventing workplace safety reporting | 🟡 MEDIUM | `HD11661` | **MEDIUM** | S party scrutiny via written question |
-| T6 | **Information Disclosure** | Social cohesion: sensitive migration/Palestine topics in public debate | 🟢 LOW | `HD11662`, `HD11663` | **LOW** | Standard parliamentary questioning |
+| Threat ID | STRIDE Category | Description | Severity (1-5) | Evidence (dok_id) | Affected Actor | Confidence |
+|-----------|:--------------:|-------------|:--------------:|-------------------|---------------|:----------:|
+| THR-001 | **R** (Repudiation) | KU hearings test whether Minister Carlson (KD) can be held accountable for Lantmäteriet security failures; risk of evasive testimony | 3 | HDC220260330ou1, HDA7KU38 | Government | `[HIGH]` |
+| THR-002 | **R** (Repudiation) | Northvolt/AP fund probe tests accountability for state investment decisions; cross-government responsibility complicates attribution | 3 | HDC220260330ou2 | Government + Opposition (former gov) | `[MEDIUM]` |
+| THR-003 | **I** (Information) | Lantmäteriet archive security breaches represent transparency failure in critical national infrastructure data | 3 | HDC220260330ou1 | Citizens | `[HIGH]` |
+| THR-004 | **D** (Denial) | High motion denial rate (96%) systematically limits opposition legislative impact; normal but raises democratic quality questions | 2 | search_voteringar data | Opposition | `[HIGH]` |
+| THR-005 | **I** (Information) | Migration enforcement gap for stateless Palestinians (HD11663) — lack of transparency on implementation barriers | 2 | HD11663 | Citizens, Migrants | `[MEDIUM]` |
 
 ---
 
-## 🔑 Key Findings
+## 📌 Key Findings
 
-1. **6 active threats** identified, 2 HIGH severity (Lantmäteriet security + government accountability denial). [HIGH confidence]
-2. **STRIDE focus**: Information Disclosure and Repudiation dominate. [HIGH confidence]
-3. **Constitutional oversight** via KU hearings provides primary mitigation mechanism. [HIGH confidence]
-4. **Opposition leverage**: 8 written questions amplify threat landscape. [MEDIUM confidence]
+1. **[HIGH confidence]** The primary threat vector today is **Repudiation** (accountability evasion) — KU's dual hearings directly test ministerial accountability mechanisms. The outcome will signal whether the parliamentary scrutiny system effectively constrains executive power.
+2. **[MEDIUM confidence]** **Information Disclosure** threats are elevated due to the Lantmäteriet security breach context — classified national infrastructure data may have been compromised.
+3. **[HIGH confidence]** No active **Spoofing** (false narrative) or **Elevation** (power concentration) threats detected in today's parliamentary activity.
 
 ---
 
-## 📝 Document Control
+## 📋 Document Control
 
 | Field | Value |
 |-------|-------|
-| **Created** | 2026-03-30 14:31 UTC |
-| **Last Modified** | 2026-03-30 14:35 UTC |
 | **Classification** | Public |
+| **Retention** | 90 days |
+| **Next Update** | 2026-03-30 evening threat update |
