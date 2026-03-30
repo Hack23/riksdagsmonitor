@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--28-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-28 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-26  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -27,6 +27,36 @@
 This methodology guide defines how AI agents perform **per-file political intelligence analysis** in Riksdagsmonitor's agentic workflows. Instead of batch daily analysis that produces shallow, generic results, this approach ensures **every downloaded MCP data file** receives deep, evidence-based analysis producing publication-quality markdown with color-coded Mermaid diagrams.
 
 > *"The quality standard for every analysis file is [SWOT.md](../../SWOT.md) and [THREAT_MODEL.md](../../THREAT_MODEL.md) — rich formatting, evidence-based claims, actionable intelligence, and visual clarity through Mermaid diagrams."*
+
+---
+
+## 🚨 Mandatory Quality Requirements (Non-Negotiable)
+
+> **Context**: PR #1452 (2026-03-30) demonstrated that rushing analysis produces unacceptable results — plain prose without tables, no Mermaid diagrams, no dok_id evidence citations, and no template structure compliance. These requirements exist to prevent that.
+
+### ⏱️ Minimum Analysis Time: 15 Minutes
+
+Every agentic workflow MUST spend **at least 15 minutes** on analysis. This includes:
+- Reading ALL 6 methodology guides fully (not skimming)
+- Reading ALL 8 analysis templates fully (not skimming)
+- Creating analysis for every document following templates EXACTLY
+- Including color-coded Mermaid diagrams with REAL data
+- Filling ALL evidence tables with dok_id, confidence, impact columns
+
+### 📊 Output Format Requirements (ALL are mandatory)
+
+| Requirement | Description | Anti-pattern |
+|-------------|-------------|-------------|
+| **Structured tables** | Every analysis file uses markdown tables with headers | Plain prose paragraphs |
+| **Evidence citations** | Every claim cites dok_id, vote counts, or named sources | Generic statements without evidence |
+| **Color-coded Mermaid** | ≥1 diagram per file with `style` directives | No diagrams, or grey/unstyled diagrams |
+| **Confidence labels** | `[HIGH]`/`[MEDIUM]`/`[LOW]` on every analytical claim | Missing confidence labels |
+| **Template structure** | Files follow their template's sections and metadata | Custom structure or missing sections |
+| **No placeholders** | Zero `[REQUIRED]` or `[OPTIONAL]` placeholders remain | Unfilled template placeholders |
+
+### 🔍 Quality Gate (Blocking)
+
+Before committing, run the quality gate bash check from `SHARED_PROMPT_PATTERNS.md` Step 5b. If the check fails, go back and improve analysis files until it passes. Do NOT commit failing analysis.
 
 ---
 
@@ -371,6 +401,8 @@ Below is a **mini example** showing the difference between bad and good analysis
 
 ### ❌ BAD — Generic boilerplate (FAILS quality gate)
 
+> **Real-world example**: PR #1452 (2026-03-30) produced this style of output — plain prose, no tables, no Mermaid diagrams. This is NEVER acceptable.
+
 ```markdown
 ## 🎯 Executive Summary
 This document is significant because it relates to fiscal policy. 
@@ -383,30 +415,102 @@ The government's position is strengthened. [MEDIUM confidence]
 | 🔴 Threat | Opposition may criticize | [REQUIRED] | L |
 ```
 
-**Problems:** No dok_id references, generic text, `[REQUIRED]` still present, no specific data.
+**Problems:** No dok_id references, generic text, `[REQUIRED]` still present, no specific data, no Mermaid diagram.
 
-### ✅ GOOD — Evidence-based intelligence (PASSES quality gate)
+### ❌ ALSO BAD — Plain prose without template structure (FAILS quality gate)
+
+> **Real-world example**: PR #1452 SWOT analysis was plain prose paragraphs with bullet points but NO structured tables, NO Mermaid diagrams, NO dok_id columns, and NO template metadata header. This is equally unacceptable.
 
 ```markdown
-## 🎯 Executive Summary
-The Finance Committee report FiU10 (dok_id: H901FiU10) sets budget framework
-guidelines targeting 0.33% GDP surplus for 2027–2029. Passed 176–173 with full
-coalition + SD support. Three reservations filed: S proposes +15B SEK welfare 
-allocation (reservation 1), V demands housing investment fund (reservation 2), 
-MP proposes green transition budget line (reservation 3). **[HIGH confidence]**
-The narrow margin (3 votes) and pre-election timing make this a critical test 
-of coalition fiscal discipline.
+## Detailed Analysis
 
-## 💪 SWOT Impact
-| Quadrant | Statement | Evidence | Confidence |
-|----------|-----------|----------|:----------:|
-| ✅ Strength | Coalition + SD aligned on core fiscal framework | FiU10 vote: 176 Ja, 173 Nej (dok_id: H901FiU10) | **H** |
-| ⚠️ Weakness | Welfare spending gap creates electoral vulnerability | S reservation: +15B SEK welfare (H901FiU10 res.1) | **H** |
-| 🚀 Opp. Opportunity | S welfare alternative provides clear campaign platform | S alternative budget motion 2025/26:Fi300 | **M** |
-| 🔴 Threat | Consumer confidence declining per SCB Q1 data | SCB indicator: HCI -3.2 pts | **M** |
+### Government Coalition (M+KD+L with SD support)
+
+**Strengths**:
+- Strong legislative output: 20+ propositions in March
+- Voting discipline remains strong
+
+**Weaknesses**:
+- MP leaving M party group signals internal dissent
+- Minister under KU scrutiny
+
+**Opportunities**:
+- Criminal justice propositions could strengthen messaging
 ```
 
-**Why this passes:** Every claim cites a specific dok_id, vote count, or data source. Confidence labels are evidence-based. No generic text.
+**Problems:** No template structure (missing SWOT ID, SWOT Context table, metadata header). No evidence tables with `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact` columns. No Mermaid SWOT Quadrant Mapping diagram. No color coding. No document control footer. Plain prose instead of structured intelligence.
+
+### ✅ GOOD — Evidence-based intelligence with template structure (PASSES quality gate)
+
+> **Reference exemplar**: [SWOT.md](../../SWOT.md) — this is the formatting quality standard.
+
+```markdown
+## 📋 SWOT Context
+
+| Field | Value |
+|-------|-------|
+| **SWOT ID** | SWT-2026-03-30-001 |
+| **Analysis Date** | 2026-03-30 00:40 UTC |
+| **Analysis Scope** | Government coalition (M+KD+L with SD support) |
+| **Reference Period** | 2025/26 |
+| **Produced By** | news-realtime-monitor |
+| **Primary MCP Sources** | search_dokument, get_propositioner, search_voteringar |
+| **Validity Window** | Valid until 2026-04-06 |
+
+## 🏛️ Section 1: Government Coalition SWOT
+
+### ✅ Strengths — Government Coalition
+
+| # | Strength Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-------------------|-------------------|:----------:|:------:|:----------:|
+| S1 | Coalition maintains working majority — AU10 vote showed standard party alignment with SD support | AU10 vote record (dok_id: H901AU10) | H | H | 2026-03-30 |
+| S2 | Strong legislative output — 20+ propositions in March covering criminal justice and defense | Prop 2025/26:227, 213, 210 (criminal justice), Prop 2025/26:205 (food stockpile) | H | M | 2026-03-30 |
+
+### ⚠️ Weaknesses — Government Coalition
+
+| # | Weakness Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-------------------|-------------------|:----------:|:------:|:----------:|
+| W1 | MP Marléne Lund Kopparklint leaving M party group signals internal dissent — narrows parliamentary arithmetic | Riksdag MP registry, party group change notice | H | M | 2026-03-30 |
+| W2 | Minister Andreas Carlson (KD) under KU scrutiny for Lantmäteriet security failures — G7-8 complaint dockets | KU hearing agenda, dockets G7, G8 | H | H | 2026-03-30 |
+
+## 📊 SWOT Quadrant Mapping
+
+​```mermaid
+graph TD
+    subgraph "📊 Political SWOT Landscape — 2026-03-30"
+        direction TB
+        subgraph "✅ Strengths (Internal Positive)"
+            S1N["💪 S1: Coalition majority holds (AU10)"]
+            S2N["💪 S2: 20+ propositions in March"]
+        end
+        subgraph "⚠️ Weaknesses (Internal Negative)"
+            W1N["⚡ W1: MP defection from M"]
+            W2N["⚡ W2: KU scrutiny of Carlson (KD)"]
+        end
+        subgraph "🚀 Opportunities (External Positive)"
+            O1N["🌟 O1: Criminal justice messaging"]
+        end
+        subgraph "🔴 Threats (External Negative)"
+            T1N["☁️ T1: KU exposes security failures"]
+            T2N["☁️ T2: Northvolt fiscal scrutiny"]
+        end
+    end
+
+    S1N -.->|"exploits"| O1N
+    W2N -.->|"amplifies"| T1N
+    T2N -.->|"targets"| W2N
+
+    style S1N fill:#28a745,color:#fff
+    style S2N fill:#28a745,color:#fff
+    style W1N fill:#fd7e14,color:#fff
+    style W2N fill:#fd7e14,color:#fff
+    style O1N fill:#0d6efd,color:#fff
+    style T1N fill:#dc3545,color:#fff
+    style T2N fill:#dc3545,color:#fff
+​```
+```
+
+**Why this passes:** Template structure with SWOT Context metadata table. Evidence tables with `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact`, `Entry Date` columns. Color-coded Mermaid SWOT Quadrant Mapping with `style` directives. Specific dok_id citations. All claims labeled with confidence. Human-readable markdown.
 
 ---
 

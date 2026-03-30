@@ -21,6 +21,9 @@
 
 > **📌 Template Instructions:** Copy to the appropriate directory under `analysis/daily/` or `analysis/weekly/` and name the file according to the conventions in the corresponding `README.md` (e.g. `morning-risk-snapshot.md`, `realtime-HHMM-risk-delta.md`, `week-ahead-risk-register.md`). Scores use Likelihood × Impact methodology from [methodologies/political-risk-methodology.md](../methodologies/political-risk-methodology.md).
 
+> **🚨 Anti-Pattern Warning:** Plain prose without structured tables, Mermaid diagrams, or evidence citations is REJECTED. Every analysis file MUST follow this template exactly: metadata header, structured tables with evidence columns, ≥1 color-coded Mermaid diagram, confidence labels on all claims. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
+
+
 ---
 
 ## 📋 Risk Context

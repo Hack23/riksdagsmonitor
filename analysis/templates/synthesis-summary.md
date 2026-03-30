@@ -21,6 +21,9 @@
 
 > **📌 Template Instructions:** This template synthesizes the outputs of all other analysis templates into a single intelligence summary. Copy to `analysis/daily/YYYY-MM-DD/` and save as `synthesis-summary.md`. This file is consumed by the news article generators to determine narrative direction.
 
+> **🚨 Anti-Pattern Warning:** Plain prose without structured tables, Mermaid diagrams, or evidence citations is REJECTED. Every analysis file MUST follow this template exactly: metadata header, structured tables with evidence columns, ≥1 color-coded Mermaid diagram, confidence labels on all claims. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
+
+
 ---
 
 ## 📋 Synthesis Context

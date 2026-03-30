@@ -29,9 +29,9 @@ on:
         required: false
         default: en,sv
       analysis_depth:
-        description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.'
+        description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts. Default: deep (minimum 15 min analysis, Mermaid diagrams required).'
         required: false
-        default: standard
+        default: deep
 
 permissions:
   contents: read
@@ -172,11 +172,14 @@ START_TIME=$(date +%s)
 | Phase | Minutes | Action |
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()` warm-up |
-| Download & Analysis | 3–13 | Run data download + AI per-file analysis (methodology-guided, SWOT.md quality) |
-| Detect | 13–18 | Query MCP tools for today's activity |
-| Generate | 18–30 | Run `generate-news-enhanced.ts` script (core languages by default; supports all 14 languages via `languages=all`) |
-| Validate | 30–35 | Run `validate-news-generation.sh` |
-| Commit+PR | 35–40 | `git add && git commit`, then `safeoutputs___create_pull_request` |
+| Download | 3–6 | Run data download scripts (MCP data fetch) |
+| **AI Analysis** | **6–21** | **🚨 MANDATORY 15 min minimum**: Read ALL methodology guides + ALL templates, create per-file analysis with Mermaid diagrams and evidence tables. Run quality gate bash check. |
+| Detect | 21–25 | Query MCP tools for today's activity |
+| Generate | 25–33 | Run `generate-news-enhanced.ts` script (core languages by default; supports all 14 languages via `languages=all`) |
+| Validate | 33–38 | Run `validate-news-generation.sh` |
+| Commit+PR | 38–43 | `git add && git commit`, then `safeoutputs___create_pull_request` |
+
+> ⚠️ **Analysis phase is 15 minutes minimum** — this is NOT negotiable. PR #1452 demonstrated that < 10 min produces unacceptable analysis (plain prose, no Mermaid diagrams, no evidence tables). The AI MUST read all methodology/template documents and produce publication-quality output matching [SWOT.md](../../SWOT.md) formatting standard.
 
 **Hard cutoffs** — check elapsed time before EVERY phase:
 ```bash
@@ -266,43 +269,49 @@ fi
 3. **Fix script issues**: read source with `view`, fix with `edit`, re-run
 4. **If script fix fails**: use direct MCP tool calls (`search_dokument`, `get_propositioner`, etc.) to download data, save each response as JSON to `analysis/data/documents/{type}/`
 
-### 🚨🚨🚨 MANDATORY: AI Must Analyse ALL Data Using Methods & Templates
+### 🚨🚨🚨 MANDATORY: AI Must Analyse ALL Data Using Methods & Templates (15 min minimum)
 
-> **THIS IS YOUR PRIMARY JOB.** For every piece of data or document downloaded from MCP, you MUST read ALL methodology guides and ALL templates, then create analysis following those templates. This is NOT optional. MUST do it.
+> **THIS IS YOUR PRIMARY JOB.** You MUST spend **at least 15 minutes** on analysis. For every piece of data or document downloaded from MCP, you MUST read ALL methodology guides and ALL templates, then create analysis following those templates exactly. This is NOT optional.
+>
+> **Why 15 minutes?** PR #1452 demonstrated that rushing analysis (< 10 min) produces: plain prose without tables, no Mermaid diagrams, no dok_id evidence citations, no template structure. This is REJECTED. The templates require structured tables, color-coded Mermaid diagrams, evidence citations, and multi-section analysis that cannot be done properly in less than 15 minutes.
 
 #### What you MUST do (no exceptions):
 
-1. **Read ALL 6 methodology guides** (use `view` to read each one fully):
-   - `analysis/methodologies/ai-driven-analysis-guide.md` — Master guide (bad vs. good examples)
-   - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT
+1. **Read ALL 6 methodology guides** (use `view` to read each one fully — not skim):
+   - `analysis/methodologies/ai-driven-analysis-guide.md` — Master guide (bad vs. good examples, quality gate)
+   - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT with confidence hierarchy
    - `analysis/methodologies/political-risk-methodology.md` — 5×5 risk matrix
    - `analysis/methodologies/political-threat-framework.md` — STRIDE threat model
    - `analysis/methodologies/political-classification-guide.md` — Classification taxonomy
    - `analysis/methodologies/political-style-guide.md` — Writing standards
 
-2. **Read ALL 8 analysis templates** (use `view` to read each one fully):
+2. **Read ALL 8 analysis templates** (use `view` to read each one fully — these define the output format):
    - `analysis/templates/per-file-political-intelligence.md`
    - `analysis/templates/synthesis-summary.md`
    - `analysis/templates/risk-assessment.md`
    - `analysis/templates/political-classification.md`
    - `analysis/templates/threat-analysis.md`
-   - `analysis/templates/swot-analysis.md`
+   - `analysis/templates/swot-analysis.md` — SWOT MUST have: Context table, evidence tables with dok_id/confidence/impact columns, Mermaid SWOT Quadrant Mapping
    - `analysis/templates/stakeholder-impact.md`
    - `analysis/templates/significance-scoring.md`
 
-3. **For EVERY downloaded document/data file**: apply ALL 6 analytical lenses and create `{dok_id}.analysis.md` following the per-file template. Cite specific data (dok_id, vote counts, party names). Include Mermaid diagrams with real data.
+3. **For EVERY downloaded document/data file**: apply ALL 6 analytical lenses and create `{dok_id}.analysis.md` following the per-file template. Cite specific data (dok_id, vote counts, party names). Include ≥1 color-coded Mermaid diagram with `style` directives.
 
-4. **Create/rewrite ALL 7 daily synthesis files** in `analysis/daily/$ARTICLE_DATE/` — each MUST follow its template EXACTLY (metadata header, Mermaid diagrams, evidence tables, confidence labels, no `[REQUIRED]` placeholders).
+4. **Create/rewrite ALL 7 daily synthesis files** in `analysis/daily/$ARTICLE_DATE/` — each MUST follow its template EXACTLY (metadata header, Mermaid diagrams with color-coded style directives, structured evidence tables, confidence labels, no `[REQUIRED]` placeholders).
 
-5. **Commit data AND analysis together** — stage scoped to current date: `git add analysis/data/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/"` (see Step 5 for full file-count safety pattern)
+5. **Run the quality gate bash check** from SHARED_PROMPT_PATTERNS Step 5b. If it fails, go back and fix analysis files until it passes.
+
+6. **Commit data AND analysis together** — stage scoped to current date: `git add analysis/data/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/"` (see Step 5 for full file-count safety pattern)
 
 > ❌ **FAILURE MODES** (any of these = workflow failure):
 > - Skipping analysis creation
-> - Writing analysis that doesn't follow templates
+> - Writing analysis that doesn't follow templates (plain prose without tables/diagrams)
 > - Committing stubs without replacing them with real analysis
-> - Analysis files with 0 evidence citations
-> - Missing Mermaid diagrams
+> - Analysis files with 0 evidence citations or missing dok_id references
+> - Missing color-coded Mermaid diagrams (every analysis file needs ≥1)
 > - `[REQUIRED]` placeholders remaining
+> - SWOT analysis without structured evidence tables (see template for required columns)
+> - Spending less than 15 minutes on analysis
 
 ### 🔄 Data Lookback Fallback
 
@@ -745,13 +754,17 @@ Before generating articles, consult these skills:
 
 ### Standardised Analysis Depth Gate
 
-| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap |
-|-------|--------------|-------------------|--------|---------|
-| standard | 1-2 | ≥3 | ≥1 | optional |
-| deep | 2-3 | ≥5 | ≥2 | required |
-| comprehensive | 3+ | ≥7 | ≥3 | required |
+> ⚠️ **Default is `deep`** — not `standard`. Analysis must always produce publication-quality output with Mermaid diagrams and evidence tables.
 
-> **Read `analysis_depth` input first** (default: `standard`). This controls iteration count and section requirements.
+| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Min. analysis time |
+|-------|--------------|-------------------|--------|---------|-------------------|
+| standard | 1-2 | ≥3 | ≥1 | optional | 10 minutes |
+| deep | 2-3 | ≥5 | ≥2 | required | 15 minutes |
+| comprehensive | 3+ | ≥7 | ≥3 | required | 20 minutes |
+
+**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
+
+> **Read `analysis_depth` input first** (default: `deep`). This controls iteration count and section requirements.
 
 For breaking news, this workflow uses the `breaking` profile (from `scripts/editorial-framework.ts`):
 - **SWOT**: quick (1-paragraph overview when article_types includes non-breaking types)

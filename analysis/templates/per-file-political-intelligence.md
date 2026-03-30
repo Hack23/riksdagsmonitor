@@ -23,6 +23,9 @@
 >
 > **Example path:** `analysis/data/documents/propositions/H901.json` → `analysis/data/documents/propositions/H901.analysis.md`
 
+> **🚨 Anti-Pattern Warning:** Plain prose without structured tables, Mermaid diagrams, or evidence citations is REJECTED. Every analysis file MUST follow this template exactly: metadata header, structured tables with evidence columns, ≥1 color-coded Mermaid diagram, confidence labels on all claims. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
+
+
 ---
 
 ## 📋 Document Identity

@@ -21,6 +21,9 @@
 
 > **📌 Template Instructions:** Copy this file to `analysis/daily/YYYY-MM-DD/` and rename to `YYYY-MM-DD-{event-slug}-classification.md`. Replace all `[REQUIRED]` and `[OPTIONAL]` placeholders with actual values. Delete instruction blocks before saving.
 
+> **🚨 Anti-Pattern Warning:** Plain prose without structured tables, Mermaid diagrams, or evidence citations is REJECTED. Every analysis file MUST follow this template exactly: metadata header, structured tables with evidence columns, ≥1 color-coded Mermaid diagram, confidence labels on all claims. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
+
+
 ---
 
 ## 📋 Document Metadata

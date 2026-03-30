@@ -21,6 +21,15 @@
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/` or `analysis/weekly/YYYY-WNN/`. For daily use, save as `evening-swot-update.md`. For weekly use, save as `week-summary-swot.md`. Each SWOT entry requires a dok_id or named evidence source — opinion-only entries are prohibited. See [methodologies/political-swot-framework.md](../methodologies/political-swot-framework.md).
 
+> **🚨 Anti-Pattern Warning (PR #1452):** Plain prose SWOT analysis with bullet points but NO evidence tables, NO Mermaid diagrams, NO SWOT Context metadata, and NO template structure is REJECTED. Every SWOT analysis MUST include:
+> 1. **SWOT Context table** (metadata header with SWOT ID, date, scope, MCP sources)
+> 2. **Structured evidence tables** with columns: `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact`, `Entry Date`
+> 3. **Color-coded Mermaid SWOT Quadrant Mapping** with `style` directives (green for strengths, orange for weaknesses, blue for opportunities, red for threats)
+> 4. **Strategic Implications** section with Key Watch Items
+> 5. **Document Control** footer
+>
+> **Good example:** [SWOT.md](../../SWOT.md) — this is the formatting quality standard.
+
 ---
 
 ## 📋 SWOT Context

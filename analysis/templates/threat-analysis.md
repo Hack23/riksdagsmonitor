@@ -21,6 +21,9 @@
 
 > **📌 Template Instructions:** This template adapts the STRIDE threat modeling framework from cybersecurity to political intelligence analysis. Each STRIDE category maps to a class of democratic process threats. See [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md) for full methodology. For the daily workflow, save as `evening-threat-snapshot.md` in `analysis/daily/YYYY-MM-DD/`. For monthly strategic aggregation, save as `monthly-threat-landscape.md` in `analysis/monthly/YYYY-MM/`. For ad-hoc analyses, a date-scoped filename like `YYYY-MM-DD-threat-analysis.md` MAY be used.
 
+> **🚨 Anti-Pattern Warning:** Plain prose without structured tables, Mermaid diagrams, or evidence citations is REJECTED. Every analysis file MUST follow this template exactly: metadata header, structured tables with evidence columns, ≥1 color-coded Mermaid diagram, confidence labels on all claims. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
+
+
 ---
 
 ## 📋 Threat Analysis Context

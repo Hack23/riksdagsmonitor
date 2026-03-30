@@ -21,6 +21,9 @@
 
 > **📌 Template Instructions:** For daily analyses, copy to `analysis/daily/YYYY-MM-DD/` and name the file `evening-stakeholder-impact.md`. For weekly analyses, copy to `analysis/weekly/YYYY-WNN/` and name the file `stakeholder-impact.md`. Complete the context block first, then assess each stakeholder group. Groups with NONE impact level still require a one-line rationale. See lens files in `scripts/analysis-framework/lenses/` for automated perspective generation.
 
+> **🚨 Anti-Pattern Warning:** Plain prose without structured tables, Mermaid diagrams, or evidence citations is REJECTED. Every analysis file MUST follow this template exactly: metadata header, structured tables with evidence columns, ≥1 color-coded Mermaid diagram, confidence labels on all claims. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
+
+
 ---
 
 ## 📋 Assessment Context
