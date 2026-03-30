@@ -155,10 +155,30 @@ For each file in `analysis/daily/$ARTICLE_DATE/`, the agent MUST rewrite it to m
 
 #### Step 6: Commit Data AND Analysis Together
 
-⚠️ **safe-outputs enforces a 100-file limit per PR.** Always scope `git add` to the current date and include a file-count safety check.
+⚠️ **safe-outputs enforces a 100-file limit per PR.** Always scope `git add` to avoid conflicts between concurrent workflows and stay under the limit.
 
+**Doc-type workflows** (committee-reports, motions, propositions, interpellations) MUST scope to their article-type subdirectory — NOT the parent date directory. Multiple doc-type workflows run on the same date and would conflict if they all stage `analysis/daily/$DATE/`.
+
+**For doc-type workflows** (use `DOC_TYPE` matching the `--doc-type` flag: `committeeReports`, `motions`, `propositions`, `interpellations`):
 ```bash
-# Stage analysis scoped to current date — avoids accumulating old files
+# Stage analysis scoped to article type — avoids conflicts with other doc-type workflows on the same date
+DOC_TYPE="committeeReports"  # Replace with actual doc-type for this workflow
+git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/${DOC_TYPE}/" || true
+git add analysis/weekly/ || true
+# Enforce safe-outputs 100-file PR limit
+STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+if [ "$STAGED_COUNT" -gt 90 ]; then
+  echo "⚠️ Staged $STAGED_COUNT files exceeds 100-file PR limit. Removing weekly analysis."
+  git reset HEAD -- analysis/weekly/ 2>/dev/null || true
+  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+fi
+echo "📊 Final staged file count: $STAGED_COUNT"
+git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
+```
+
+**For general workflows** (realtime-monitor, evening-analysis, article-generator — no `--doc-type`):
+```bash
+# Stage analysis scoped to current date
 git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/" || true
 git add analysis/weekly/ || true
 git add analysis/data/ || true
@@ -182,7 +202,8 @@ git commit -m "📊 Data + Analysis - $ARTICLE_DATE"
 > ❌ **PROHIBITED**: Committing stub/empty analysis when data exists
 > ❌ **PROHIBITED**: Skipping analysis creation — every document MUST have analysis
 > ❌ **PROHIBITED**: Writing analysis that doesn't follow the template structure
-> ❌ **PROHIBITED**: Using broad `git add analysis/data/ analysis/daily/ analysis/weekly/` without date scoping — this accumulates old files and exceeds the 100-file PR limit
+> ❌ **PROHIBITED**: Using broad `git add analysis/data/ analysis/daily/ analysis/weekly/` without scoping — this accumulates old files and exceeds the 100-file PR limit
+> ❌ **PROHIBITED**: Doc-type workflows staging parent date directory `analysis/daily/$DATE/` — this causes conflicts when committee-reports, motions, propositions, and interpellations run on the same date. Always scope to `analysis/daily/$DATE/{docType}/`
 ````
 
 ## 🔧 MANDATORY: Script Debugging & Fixing (copy into every analysis workflow)
