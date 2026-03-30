@@ -5,34 +5,98 @@
 <h1 align="center">🔬 Riksdagsmonitor — Analysis Directory</h1>
 
 <p align="center">
-  <strong>📊 Intermediate Analysis Artifacts for Agentic Political Intelligence Workflows</strong><br>
-  <em>🎯 Daily · Weekly · Monthly · Templates · Methodologies · Reference</em>
+  <strong>📊 Political Intelligence Analysis Artifacts for Agentic Workflows</strong><br>
+  <em>🎯 AI-Driven · Evidence-Based · Methodology-Guided · Never Scripted</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--26-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-26 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-26  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+---
+
+## 🚨 CRITICAL RULES — Read Before Any Analysis Work
+
+### Rule 1: Folder Isolation — Every Workflow Gets Its Own Folder
+
+```
+analysis/daily/YYYY-MM-DD/{articleType}/
+```
+
+**Every agentic workflow MUST write ONLY to its own article-type subfolder.** Workflows MUST NEVER write to another workflow's folder. This prevents overwriting.
+
+| Workflow | Output Folder | Example |
+|----------|--------------|---------|
+| `news-committee-reports` | `analysis/daily/YYYY-MM-DD/committeeReports/` | `analysis/daily/2026-03-30/committeeReports/` |
+| `news-propositions` | `analysis/daily/YYYY-MM-DD/propositions/` | `analysis/daily/2026-03-30/propositions/` |
+| `news-motions` | `analysis/daily/YYYY-MM-DD/motions/` | `analysis/daily/2026-03-30/motions/` |
+| `news-interpellations` | `analysis/daily/YYYY-MM-DD/interpellations/` | `analysis/daily/2026-03-30/interpellations/` |
+| `news-evening-analysis` | `analysis/daily/YYYY-MM-DD/evening/` | `analysis/daily/2026-03-30/evening/` |
+| `news-realtime-monitor` | `analysis/daily/YYYY-MM-DD/realtime-HHMM/` | `analysis/daily/2026-03-30/realtime-1400/` |
+| `news-weekly-review` | `analysis/weekly/YYYY-WNN/` | `analysis/weekly/2026-W13/` |
+| `news-monthly-review` | `analysis/monthly/YYYY-MM/` | `analysis/monthly/2026-03/` |
+
+### Rule 2: Never Overwrite Existing Analysis
+
+**An agentic workflow MUST NEVER overwrite analysis produced by another workflow.** Each workflow run creates new files in its own scope. If a file already exists, the workflow MUST skip it or create an addendum, never replace.
+
+```mermaid
+flowchart LR
+    A["Workflow starts"] --> B{"Does target folder<br/>already contain<br/>analysis files?"}
+    B -->|"No"| C["✅ Create analysis<br/>in own folder"]
+    B -->|"Yes — from SAME workflow"| D["✅ Update/append<br/>to own files only"]
+    B -->|"Yes — from DIFFERENT workflow"| E["🚫 NEVER touch<br/>other workflow's files"]
+
+    style C fill:#28a745,color:#fff
+    style D fill:#ffc107,color:#000
+    style E fill:#dc3545,color:#fff
+```
+
+### Rule 3: AI Performs ALL Analysis — Never Scripted Content
+
+**Scripts download data. AI performs ALL analysis.** This is a fundamental architectural principle.
+
+| ✅ Scripts MAY | 🚫 Scripts MUST NEVER |
+|---------------|----------------------|
+| Download MCP data to `analysis/data/` | Generate analysis prose, tables, or conclusions |
+| Catalog pending files | Create SWOT entries, risk scores, or threat assessments |
+| Validate output format (quality gate) | Fill template sections with generated content |
+| Move/rename files | Produce "placeholder" analysis that looks real |
+
+**The AI agent reads all 6 methodology guides, reads all 8 templates, reads the actual data, and produces genuine analytical content based on evidence found in the documents.**
+
+### Rule 4: Deep Analysis — Not Shallow Summaries
+
+Every analysis file must demonstrate **genuine political intelligence depth**. The quality standard is [SWOT.md](../SWOT.md) (965 lines of strategic analysis) and [THREAT_MODEL.md](../THREAT_MODEL.md) (2,938 lines of multi-framework threat modeling).
+
+**Minimum depth indicators:**
+- ≥ 3 evidence-backed claims per SWOT quadrant (with dok_id citations)
+- ≥ 1 color-coded Mermaid diagram per analysis file (with real data, not placeholders)
+- Multi-perspective analysis (government, opposition, citizen, media, international)
+- Explicit confidence labels on every analytical claim
+- Forward-looking indicators (what to watch next, with specific triggers)
+- Cross-document pattern identification (how this document relates to other recent activity)
 
 ---
 
 ## 🎯 Purpose
 
-The `analysis/` directory stores **intermediate analysis artifacts** produced and consumed by Riksdagsmonitor's agentic workflows. These artifacts bridge raw Swedish parliamentary data (sourced via the riksdag-regering-mcp server) and the final published political intelligence articles, news summaries, and dashboards.
+The `analysis/` directory stores **political intelligence analysis artifacts** produced by Riksdagsmonitor's agentic workflows. These artifacts bridge raw Swedish parliamentary data (sourced via the riksdag-regering-mcp server) and the final published political intelligence articles, news summaries, and dashboards.
 
-Analysis artifacts are **not** final content — they are structured intermediate products that enable:
+Analysis artifacts are **genuine intelligence products** — not summaries or reformatted data — that enable:
 
-- 🔄 **Workflow composition**: Upstream agents deposit analysis; downstream agents consume it
-- 📐 **Consistent methodology**: Templates enforce analytical rigor across 14 languages
+- 🔄 **Workflow isolation**: Each workflow writes to its own folder; no overwrites
+- 📐 **Methodology-driven rigor**: AI reads all frameworks before analyzing; templates enforce structure
 - 📊 **Temporal aggregation**: Daily → Weekly → Monthly intelligence roll-ups
-- 🧠 **Reusable intelligence**: Cross-workflow pattern sharing and knowledge accumulation
-- 🎯 **Quality assurance**: Structured templates enable validation before article generation
+- 🧠 **Evidence-based intelligence**: Every claim cites dok_id, vote records, or official statistics
+- 🎯 **Multi-framework analysis**: SWOT, Risk matrices, Attack Trees, Kill Chains, Stakeholder mapping
 
 ---
 
@@ -40,7 +104,7 @@ Analysis artifacts are **not** final content — they are structured intermediat
 
 ```
 analysis/
-├── README.md                          ← This file
+├── README.md                          ← This file (CRITICAL RULES — read first)
 ├── data/                              ← Persistent MCP data repository (collision-free)
 │   ├── README.md                      ← Data repository documentation
 │   ├── documents/                     ← Parliamentary documents by type
@@ -57,32 +121,68 @@ analysis/
 │   ├── worldbank/                     ← World Bank economic indicators
 │   ├── scb/                           ← Statistics Sweden (SCB) table data
 │   └── mcp-responses/                 ← Generic MCP tool response archive
-├── templates/                         ← Reusable analysis templates (all with color-coded Mermaid)
+├── templates/                         ← Analysis templates (AI fills these — NEVER scripts)
 │   ├── political-classification.md    ← Event classification template
-│   ├── risk-assessment.md             ← Political risk template
-│   ├── threat-analysis.md             ← STRIDE-inspired threat template
-│   ├── swot-analysis.md               ← SWOT quadrant template
-│   ├── stakeholder-impact.md          ← Stakeholder impact template
-│   ├── significance-scoring.md        ← Significance scoring template
+│   ├── risk-assessment.md             ← Political risk template (5×5 matrix + cascading risk)
+│   ├── threat-analysis.md             ← Multi-framework threat template (Attack Trees + Kill Chain)
+│   ├── swot-analysis.md               ← SWOT quadrant template (evidence-based, intersection analysis)
+│   ├── stakeholder-impact.md          ← Stakeholder impact template (6 analytical lenses)
+│   ├── significance-scoring.md        ← Significance scoring template (5-dimension rubric)
 │   ├── synthesis-summary.md           ← Daily synthesis template (aggregates all above)
 │   └── per-file-political-intelligence.md ← Per-file AI analysis template
-├── methodologies/                     ← Detailed methodology guides
-│   ├── political-classification-guide.md
-│   ├── political-risk-methodology.md
-│   ├── political-threat-framework.md
-│   ├── political-swot-framework.md
-│   └── political-style-guide.md
+├── methodologies/                     ← Detailed methodology guides (AI MUST read ALL before analyzing)
+│   ├── ai-driven-analysis-guide.md    ← Master protocol: folder isolation, AI-only analysis, quality gates
+│   ├── political-classification-guide.md ← Multi-dimensional classification, political temperature
+│   ├── political-risk-methodology.md  ← 5×5 matrix, cascading risk, Bayesian updating
+│   ├── political-threat-framework.md  ← Attack Trees, Kill Chain, Diamond Model (beyond STRIDE)
+│   ├── political-swot-framework.md    ← Evidence hierarchy, cross-SWOT interference, scenario generation
+│   └── political-style-guide.md       ← Intelligence writing standards, evidence density, attribution
 ├── reference/                         ← ISMS adaptation mappings
 │   ├── isms-classification-adaptation.md
 │   ├── isms-risk-assessment-adaptation.md
 │   ├── isms-threat-modeling-adaptation.md
 │   └── isms-style-guide-adaptation.md
-├── daily/                             ← Per-day analysis artifacts (YYYY-MM-DD/)
+├── daily/                             ← Per-day analysis (YYYY-MM-DD/{articleType}/ — ISOLATED per workflow)
 │   └── README.md
 ├── weekly/                            ← Per-week aggregations (YYYY-WNN/)
 │   └── README.md
 └── monthly/                           ← Per-month strategic briefs (YYYY-MM/)
     └── README.md
+```
+
+### 🔒 Folder Isolation Model (Critical)
+
+```
+analysis/daily/2026-03-30/              ← Date folder
+├── committeeReports/                   ← news-committee-reports ONLY writes here
+│   ├── documents/                      ← Per-file analyses
+│   │   ├── H901AU10-analysis.md
+│   │   └── H901JuU25-analysis.md
+│   ├── synthesis-summary.md
+│   └── data-download-manifest.md
+├── propositions/                       ← news-propositions ONLY writes here
+│   ├── documents/
+│   │   ├── H901prop227-analysis.md
+│   │   └── H901prop213-analysis.md
+│   ├── synthesis-summary.md
+│   └── data-download-manifest.md
+├── motions/                            ← news-motions ONLY writes here
+│   └── ...
+├── interpellations/                    ← news-interpellations ONLY writes here
+│   └── ...
+├── evening/                            ← news-evening-analysis ONLY writes here
+│   └── ...
+└── realtime-1400/                      ← news-realtime-monitor ONLY writes here (timestamped)
+    └── ...
+```
+
+**Enforcement:** Each workflow's `git add` scope MUST be limited to its own subfolder:
+```bash
+# ✅ CORRECT — scoped to article type
+git add "analysis/daily/${ARTICLE_DATE}/${DOC_TYPE}/"
+
+# 🚫 WRONG — broad scope can overwrite other workflows
+git add "analysis/daily/${ARTICLE_DATE}/"
 ```
 
 ---
@@ -105,37 +205,46 @@ analysis/
 
 ## 🤖 Workflow Integration
 
-The following agentic workflows produce analysis artifacts. All workflows **MUST** follow the per-file AI analysis protocol — read methodology documents, then analyze each downloaded file individually:
+The following agentic workflows produce analysis artifacts. All workflows **MUST**:
+1. Write ONLY to their own article-type subfolder (folder isolation)
+2. Never overwrite analysis produced by another workflow
+3. Follow the AI-driven analysis protocol (read methodologies, then analyze)
+4. Never use scripts to generate analytical content
 
 ### 🌅 Daily Morning Workflows (scheduled Mon–Fri)
 
-| Workflow | Schedule | Primary Output |
-|----------|----------|----------------|
-| `news-committee-reports` | 04:00 UTC Mon–Fri | Committee report articles |
-| `news-propositions` | 05:00 UTC Mon–Fri | Proposition articles |
-| `news-motions` | 06:00 UTC Mon–Fri | Motion articles |
-| `news-interpellations` | 07:00 UTC Mon–Fri | Interpellation articles |
+| Workflow | Schedule | Output Folder | Primary Output |
+|----------|----------|---------------|----------------|
+| `news-committee-reports` | 04:00 UTC | `daily/YYYY-MM-DD/committeeReports/` | Committee report analysis |
+| `news-propositions` | 05:00 UTC | `daily/YYYY-MM-DD/propositions/` | Proposition analysis |
+| `news-motions` | 06:00 UTC | `daily/YYYY-MM-DD/motions/` | Motion analysis |
+| `news-interpellations` | 07:00 UTC | `daily/YYYY-MM-DD/interpellations/` | Interpellation analysis |
 
 ### 🌆 `news-evening-analysis` (18:00 UTC Mon–Fri, 16:00 UTC Sat)
 
+Output folder: `daily/YYYY-MM-DD/evening/`
+
 The evening analysis workflow is the most comprehensive. It:
-1. Downloads data via `populate-analysis-data.ts` + `pre-article-analysis.ts`
-2. Runs per-file AI analysis on all pending files (reading methodology docs first)
-3. Composes daily synthesis from per-file analyses
-4. Generates evening analysis articles
+1. Downloads data via `populate-analysis-data.ts` + `pre-article-analysis.ts` (scripts for DATA only)
+2. AI reads ALL 6 methodology guides + ALL 8 templates
+3. AI performs per-file analysis on all pending files using genuine analytical reasoning
+4. AI composes daily synthesis from per-file analyses
+5. AI generates evening analysis articles — all content is AI-produced intelligence
 
 ### 📡 `news-realtime-monitor` (10:00+14:00 UTC Mon–Fri, 12:00 UTC weekends)
 
-Real-time monitoring of parliamentary activity with per-file analysis on new data.
+Output folder: `daily/YYYY-MM-DD/realtime-HHMM/` (timestamped to prevent overwrites)
+
+Real-time monitoring of parliamentary activity with per-file analysis on new data. Each run gets a unique timestamped folder so successive runs never overwrite each other.
 
 ### 📅 Weekly & Monthly Workflows
 
-| Workflow | Schedule | Output |
-|----------|----------|--------|
-| `news-week-ahead` | Fridays 07:00 UTC | Weekly forecast + aggregated SWOT |
-| `news-weekly-review` | Scheduled | Weekly parliamentary wrap-up |
-| `news-month-ahead` | Scheduled | Monthly forecast |
-| `news-monthly-review` | Scheduled | Monthly strategic brief |
+| Workflow | Schedule | Output Folder | Output |
+|----------|----------|---------------|--------|
+| `news-week-ahead` | Fridays 07:00 UTC | `weekly/YYYY-WNN/week-ahead/` | Weekly forecast + aggregated SWOT |
+| `news-weekly-review` | Scheduled | `weekly/YYYY-WNN/review/` | Weekly parliamentary wrap-up |
+| `news-month-ahead` | Scheduled | `monthly/YYYY-MM/month-ahead/` | Monthly forecast |
+| `news-monthly-review` | Scheduled | `monthly/YYYY-MM/review/` | Monthly strategic brief |
 
 ---
 
@@ -197,44 +306,50 @@ Real-time monitoring of parliamentary activity with per-file analysis on new dat
 
 ## 🤖 Per-File AI Analysis (Primary Analysis Mode)
 
-The primary analysis mode is **per-file AI analysis**: for every downloaded MCP data file, the AI agent produces a deep analysis markdown file stored alongside it. This replaces the older batch daily analysis approach.
+The primary analysis mode is **per-file AI-driven analysis**: for every downloaded MCP data file, the AI agent produces a deep analysis markdown file. The AI reads all methodology guides, reads the actual data, and produces genuine political intelligence — **not** script-generated summaries.
 
 ### How It Works
 
 ```mermaid
 flowchart LR
-    A["📥 MCP Download<br/>(scripts)"] --> B["📋 Catalog<br/>pending files"]
-    B --> C["📖 AI reads<br/>methodology docs"]
-    C --> D["🔍 Per-file analysis<br/>following template"]
-    D --> E["💾 {id}.analysis.md<br/>alongside data"]
-    E --> F["📊 Compose<br/>daily synthesis"]
+    A["📥 MCP Download<br/>(scripts — DATA only)"] --> B["📋 Catalog<br/>pending files"]
+    B --> C["📖 AI reads ALL<br/>6 methodology guides<br/>+ 8 templates"]
+    C --> D["🔍 AI performs<br/>genuine analysis<br/>per document"]
+    D --> E["💾 {id}-analysis.md<br/>in workflow's folder"]
+    E --> F["📊 AI composes<br/>daily synthesis"]
 
     style A fill:#0d6efd,color:#fff
+    style C fill:#6f42c1,color:#fff
     style D fill:#28a745,color:#fff
     style F fill:#6f42c1,color:#fff
 ```
 
-| Step | Action | Tool / Reference |
-|------|--------|-----------------|
-| 1. Download | Scripts fetch MCP data to `analysis/data/` | `scripts/populate-analysis-data.ts` |
-| 2. Catalog | List files needing analysis | `scripts/catalog-downloaded-data.ts --pending-only` |
-| 3. Read methods | AI reads ALL methodology docs before analyzing | `analysis/methodologies/*.md` |
-| 4. Analyze | AI fills per-file template for each data file | `analysis/templates/per-file-political-intelligence.md` |
-| 5. Write | Save `{id}.analysis.md` next to `{id}.json` | e.g. `analysis/data/documents/propositions/H901.analysis.md` |
-| 6. Synthesize | Compose daily synthesis from per-file analyses | `analysis/daily/YYYY-MM-DD/synthesis-summary.md` |
+| Step | Action | Responsible | Tool / Reference |
+|------|--------|-------------|-----------------|
+| 1. Download | Scripts fetch MCP data to `analysis/data/` | **Scripts** | `scripts/populate-analysis-data.ts` |
+| 2. Catalog | List files needing analysis | **Scripts** | `scripts/catalog-downloaded-data.ts --pending-only` |
+| 3. Read methods | AI reads ALL 6 methodology docs + 8 templates | **AI** | `analysis/methodologies/*.md` + `analysis/templates/*.md` |
+| 4. Analyze | AI applies multi-framework analysis to each file | **AI** | Evidence-based reasoning, not scripts |
+| 5. Write | Save `{id}-analysis.md` in workflow's isolated folder | **AI** | e.g. `analysis/daily/YYYY-MM-DD/propositions/documents/H901prop227-analysis.md` |
+| 6. Synthesize | AI composes synthesis from per-file analyses | **AI** | `analysis/daily/YYYY-MM-DD/{articleType}/synthesis-summary.md` |
 
-> **Quality Standard:** Every per-file analysis must match [SWOT.md](../SWOT.md) and [THREAT_MODEL.md](../THREAT_MODEL.md) formatting quality — Hack23 header badges, color-coded Mermaid diagrams, evidence tables with confidence labels, and actionable intelligence.
+### What "Genuine AI Analysis" Means (vs. Scripted Content)
+
+| ✅ Genuine AI Analysis | 🚫 Scripted/Shallow Content |
+|------------------------|---------------------------|
+| "Proposition 2025/26:227 strengthens criminal penalties for gang crime, extending minimum sentences from 4→6 years. Coalition partner L has historically resisted harsh sentencing (see L motion 2024/25:1234), creating potential friction. SD has publicly demanded even stricter measures (interpellation 2025/26:456). **Risk:** L could break ranks on floor vote, though KD mediation has historically bridged such gaps (vote record H901JuU15). [MEDIUM confidence]" | "This proposition relates to justice policy. The government's position is strengthened. [MEDIUM confidence]" |
+| Cross-references 3+ documents, names specific actors with party, identifies tension dynamics, provides forward risk assessment | Generic summary with no specific data, no cross-references, no named actors |
 
 ### Methodology Documents (AI Must Read Before Analyzing)
 
-| Priority | Document | Key Content |
-|:--------:|----------|-------------|
-| 🔴 1 | [political-swot-framework.md](methodologies/political-swot-framework.md) | Evidence hierarchy, confidence levels, temporal decay, aggregation |
-| 🔴 2 | [political-risk-methodology.md](methodologies/political-risk-methodology.md) | 5×5 Likelihood×Impact matrix, coalition risk index |
-| 🔴 3 | [political-threat-framework.md](methodologies/political-threat-framework.md) | STRIDE-to-political mapping, threat actor matrix |
-| 🟠 4 | [political-classification-guide.md](methodologies/political-classification-guide.md) | Sensitivity levels, domain taxonomy, urgency matrix |
-| 🟠 5 | [political-style-guide.md](methodologies/political-style-guide.md) | Writing standards, evidence density, attribution |
-| 🟠 6 | [ai-driven-analysis-guide.md](methodologies/ai-driven-analysis-guide.md) | Per-file protocol, quality gates, document-type focus |
+| Priority | Document | Key Analytical Frameworks |
+|:--------:|----------|--------------------------|
+| 🔴 1 | [political-swot-framework.md](methodologies/political-swot-framework.md) | Evidence hierarchy, confidence levels, temporal decay, cross-SWOT interference, strategic scenario generation |
+| 🔴 2 | [political-risk-methodology.md](methodologies/political-risk-methodology.md) | 5×5 Likelihood×Impact, cascading risk analysis, Bayesian updating, risk interconnection mapping |
+| 🔴 3 | [political-threat-framework.md](methodologies/political-threat-framework.md) | Attack Trees, Political Kill Chain, Diamond Model, STRIDE adaptation, threat actor profiling |
+| 🟠 4 | [political-classification-guide.md](methodologies/political-classification-guide.md) | Multi-dimensional classification, political temperature index, strategic significance |
+| 🟠 5 | [political-style-guide.md](methodologies/political-style-guide.md) | Intelligence writing standards, evidence density requirements, attribution rules |
+| 🟠 6 | [ai-driven-analysis-guide.md](methodologies/ai-driven-analysis-guide.md) | Master protocol: folder isolation, AI-only analysis, quality gates, time budget |
 
 ### Analysis Prompts (v2)
 
@@ -249,10 +364,13 @@ flowchart LR
 
 ### Conflict Resolution
 
-When multiple workflows run concurrently:
-- **Per-file analyses** (`{id}.analysis.md`) are inherently conflict-free — each file analyzed independently
-- **Daily synthesis** files should use append-or-replace strategy: later runs overwrite earlier synthesis
-- **Weekly aggregations** compose from per-file analyses, not from daily synthesis
+Because each workflow writes to its own isolated folder:
+- **Per-file analyses** (`{id}-analysis.md`) are conflict-free — each file analyzed independently in its workflow's folder
+- **Daily synthesis** files are scoped to each workflow's folder — no cross-workflow conflicts
+- **Weekly aggregations** read from all daily folders (read-only) to compose weekly intelligence
+- **Realtime monitor** uses timestamped folders (`realtime-HHMM/`) so successive runs never overwrite
+
+> **Quality Standard:** Every per-file analysis must match [SWOT.md](../SWOT.md) and [THREAT_MODEL.md](../THREAT_MODEL.md) formatting quality — Hack23 header badges, color-coded Mermaid diagrams, evidence tables with confidence labels, multi-framework analysis, and actionable intelligence.
 
 ---
 
@@ -261,4 +379,5 @@ When multiple workflows run concurrently:
 - **Path:** `/analysis/README.md`  
 - **Format:** Markdown  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Version:** 2.0  
+- **Next Review:** 2026-06-30

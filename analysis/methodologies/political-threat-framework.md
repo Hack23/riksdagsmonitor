@@ -5,32 +5,235 @@
 <h1 align="center">🎭 Political Threat Analysis Framework</h1>
 
 <p align="center">
-  <strong>📊 STRIDE-Adapted Framework for Democratic Process Threats</strong><br>
-  <em>🎯 Democratic Integrity · Governance · Disinformation · Opposition · EU Constraints</em>
+  <strong>📊 Multi-Framework Methodology for Democratic Process Threat Analysis</strong><br>
+  <em>🎯 Attack Trees · Political Kill Chain · Diamond Model · STRIDE Adaptation · Threat Actor Profiling</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--26-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-26 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-26  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
 
 ## 🎯 Purpose
 
-This framework establishes the authoritative methodology for political threat analysis in Riksdagsmonitor. It adapts the STRIDE cybersecurity threat modeling framework — as implemented in [Hack23 ISMS Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) — to the systematic analysis of threats to democratic processes, governance integrity, and political accountability in the Swedish parliamentary system.
+This framework establishes the authoritative **multi-framework methodology** for political threat analysis in Riksdagsmonitor. Rather than relying on STRIDE alone (which was designed for software security and has significant limitations when applied to political analysis), this framework integrates **five complementary threat modeling approaches** — each illuminating different aspects of political threats that the others miss.
 
-See [reference/isms-threat-modeling-adaptation.md](../reference/isms-threat-modeling-adaptation.md) for the complete ISMS-to-political mapping.
+> **Why multiple frameworks?** STRIDE categorizes threats by type but doesn't model attack sequences, actor motivations, or cascading effects. Political threats are complex adaptive phenomena requiring multiple analytical lenses. See [THREAT_MODEL.md](../../THREAT_MODEL.md) for the exemplar showing how multi-framework analysis (STRIDE + MITRE ATT&CK + Attack Trees + OWASP) produces far deeper threat understanding than any single framework.
+
+See [reference/isms-threat-modeling-adaptation.md](../reference/isms-threat-modeling-adaptation.md) for the ISMS-to-political mapping.
 
 ---
 
-## 🗺️ STRIDE-to-Political Mapping Overview
+## 🗺️ Framework Selection Guide
+
+```mermaid
+flowchart TD
+    Q["🤔 What aspect of the<br/>political threat needs analysis?"]
+    Q --> A["🌳 Attack Trees<br/><em>How could this threat<br/>succeed step-by-step?</em>"]
+    Q --> B["⛓️ Political Kill Chain<br/><em>What stages must the<br/>threat actor complete?</em>"]
+    Q --> C["💎 Diamond Model<br/><em>Who is the adversary,<br/>what infrastructure and<br/>capabilities do they use?</em>"]
+    Q --> D["🎭 STRIDE Adaptation<br/><em>What category of threat<br/>is this?</em>"]
+    Q --> E["👤 Threat Actor Profiling<br/><em>What motivates and<br/>constrains this actor?</em>"]
+
+    A --> F["📊 Output: Attack tree diagram<br/>showing all paths to threat goal"]
+    B --> G["📊 Output: Kill chain stages<br/>showing progression & intervention points"]
+    C --> H["📊 Output: Diamond relationship<br/>mapping adversary-capability-infrastructure-victim"]
+    D --> I["📊 Output: Threat categorization<br/>for systematic coverage"]
+    E --> J["📊 Output: Actor profile<br/>with intent/capability/opportunity assessment"]
+
+    style A fill:#dc3545,color:#fff
+    style B fill:#fd7e14,color:#fff
+    style C fill:#6f42c1,color:#fff
+    style D fill:#0d6efd,color:#fff
+    style E fill:#ffc107,color:#000
+```
+
+| Framework | Best For | Depth | Political Intelligence Value |
+|-----------|---------|:-----:|------------------------------|
+| **🌳 Attack Trees** | Decomposing HOW a threat succeeds | ★★★★★ | Shows all paths to a political goal; identifies cheapest/easiest attack paths |
+| **⛓️ Political Kill Chain** | Modelling threat PROGRESSION | ★★★★☆ | Reveals intervention points; early warning indicators at each stage |
+| **💎 Diamond Model** | Understanding ADVERSARY relationships | ★★★★☆ | Maps who, how, what infrastructure, and who's affected |
+| **🎭 STRIDE (adapted)** | Ensuring COVERAGE of threat types | ★★★☆☆ | Systematic checklist prevents blind spots; weaker on depth |
+| **👤 Threat Actor Profiling** | Assessing WHO and WHY | ★★★★★ | Intent-capability-opportunity analysis; predicts likely actions |
+
+**Mandatory minimum:** Every threat analysis MUST use at least **Attack Trees + one other framework**. STRIDE alone is insufficient for publication-quality political intelligence.
+
+---
+
+## 🌳 Framework 1: Political Attack Trees
+
+Attack trees are the **primary threat modeling tool** for political intelligence because they answer the critical question: "How could this political goal be achieved?"
+
+### Attack Tree Structure
+
+```mermaid
+graph TD
+    ROOT["🎯 GOAL: Collapse Coalition<br/>(OR — any child suffices)"]
+    ROOT --> A["Path A: SD Withdraws Support<br/>(AND — all children required)"]
+    ROOT --> B["Path B: L Exits Coalition<br/>(AND — all children required)"]
+    ROOT --> C["Path C: No-Confidence Vote<br/>(AND — all children required)"]
+
+    A --> A1["A1: SD publicly demands<br/>policy concession"]
+    A --> A2["A2: Government refuses<br/>or delays response"]
+    A --> A3["A3: SD announces<br/>withdrawal of budget support"]
+
+    B --> B1["B1: Intra-coalition policy<br/>disagreement escalates"]
+    B --> B2["B2: L internal party<br/>pressure intensifies"]
+    B --> B3["B3: L leadership decides<br/>exit is electorally beneficial"]
+
+    C --> C1["C1: Opposition files<br/>misstroendeförklaring"]
+    C --> C2["C2: SD joins opposition<br/>or abstains"]
+    C --> C3["C3: Vote passes<br/>≥175 Nej votes"]
+
+    style ROOT fill:#dc3545,color:#fff
+    style A fill:#fd7e14,color:#fff
+    style B fill:#fd7e14,color:#fff
+    style C fill:#fd7e14,color:#fff
+    style A1 fill:#ffc107,color:#000
+    style A2 fill:#ffc107,color:#000
+    style A3 fill:#ffc107,color:#000
+    style B1 fill:#ffc107,color:#000
+    style B2 fill:#ffc107,color:#000
+    style B3 fill:#ffc107,color:#000
+    style C1 fill:#ffc107,color:#000
+    style C2 fill:#ffc107,color:#000
+    style C3 fill:#ffc107,color:#000
+```
+
+### Attack Tree Construction Protocol
+
+1. **Define the goal** (root node): What political outcome is the threat aiming for?
+2. **Decompose with OR/AND gates:**
+   - **OR**: Any child path can achieve the goal independently
+   - **AND**: All child conditions must be met simultaneously
+3. **Assign leaf node attributes:**
+
+| Attribute | Description | Example |
+|-----------|-------------|---------|
+| **Feasibility** | How easily can this step occur? (1–5, 5=trivial) | SD public demand: 4 (frequent pattern) |
+| **Detectability** | How early can we detect this step? (1–5, 5=obvious) | Floor vote: 5 (public record) |
+| **Cost to actor** | Political cost of this action (1–5, 5=free) | L exit: 2 (high electoral risk) |
+| **Evidence** | MCP data supporting assessment | dok_id, vote record, speech reference |
+
+4. **Identify cheapest attack path**: The path with highest feasibility, highest detectability, and lowest cost is the most likely threat vector
+5. **Map early warning indicators**: For each leaf node, what MCP-detectable signal precedes it?
+
+### When to Use Attack Trees
+
+- **Always** for coalition stability threats (the most common and consequential threat type)
+- **Always** for budget/fiscal threats during Sep–Nov budget season
+- For any threat where you need to explain HOW something could happen, not just WHAT could happen
+- When analysing opposition strategy and possible escalation paths
+
+---
+
+## ⛓️ Framework 2: Political Kill Chain
+
+Adapted from Lockheed Martin's Cyber Kill Chain, the Political Kill Chain models the **stages** an adversary must complete to achieve a political objective. Each stage represents an intervention opportunity.
+
+### Political Kill Chain Stages
+
+```mermaid
+flowchart LR
+    R["1️⃣ Reconnaissance<br/>Issue identification<br/>& intelligence gathering"]
+    W["2️⃣ Weaponization<br/>Framing narratives<br/>& coalition building"]
+    D["3️⃣ Delivery<br/>Parliamentary instruments<br/>(motions, interpellations)"]
+    X["4️⃣ Exploitation<br/>Media amplification<br/>& public pressure"]
+    I["5️⃣ Installation<br/>Formal proceedings<br/>(KU, votes, debates)"]
+    C["6️⃣ Command & Control<br/>Coordinated political<br/>action across parties"]
+    A["7️⃣ Actions on Objective<br/>Policy change, resignation,<br/>no-confidence, election"]
+
+    R --> W --> D --> X --> I --> C --> A
+
+    style R fill:#28a745,color:#fff
+    style W fill:#ffc107,color:#000
+    style D fill:#fd7e14,color:#fff
+    style X fill:#fd7e14,color:#fff
+    style I fill:#dc3545,color:#fff
+    style C fill:#dc3545,color:#fff
+    style A fill:#6f42c1,color:#fff
+```
+
+### Kill Chain Stage Details
+
+| Stage | Political Manifestation | MCP Detection Tools | Early Warning Indicators |
+|:-----:|------------------------|--------------------|--------------------------| 
+| **1. Reconnaissance** | Opposition identifies government vulnerability (policy gap, scandal, economic data) | `search_dokument_fulltext`, `search_anforanden` | Uptick in written questions on specific topic |
+| **2. Weaponization** | Narrative framing, coalition-building for counter-position | `search_motioner` (clustered motions), `search_anforanden` (coordinated speeches) | Multiple opposition parties adopting same language |
+| **3. Delivery** | Formal parliamentary instruments filed (interpellations, motions, KU complaints) | `get_interpellationer`, `get_motioner`, `search_dokument` (organ=KU) | Coordinated filing on same day/week |
+| **4. Exploitation** | Media coverage, public opinion shift, pressure intensifies | `search_dokument_fulltext` (press references), MCP calendar events | Media narrative shift, polling changes |
+| **5. Installation** | Formal proceedings (KU hearing, committee vote, floor debate scheduled) | `get_calendar_events`, `search_voteringar` | Calendar items scheduled, debate notice |
+| **6. Command & Control** | Cross-party coordination for decisive action | `search_voteringar` (test votes), `search_anforanden` (coordinated floor statements) | Opposition bloc voting pattern changes |
+| **7. Actions on Objective** | Policy reversal, ministerial resignation, no-confidence vote, early election | `search_voteringar` (misstroendevotum), `search_dokument` | Constitutional procedures triggered |
+
+### Kill Chain Disruption Analysis
+
+For each threat, identify where the chain can be **disrupted** (defence) or where it has **already progressed** (assessment):
+
+| Chain Stage | Current Status | Disruption Opportunity |
+|:-----------:|:--------------:|----------------------|
+| 1. Reconnaissance | `[Active/Complete/Not started]` | `[e.g. "Proactive policy correction before opposition identifies gap"]` |
+| 2. Weaponization | `[Active/Complete/Not started]` | `[e.g. "Pre-emptive coalition alignment on narrative"]` |
+| ... | ... | ... |
+
+---
+
+## 💎 Framework 3: Diamond Model (Political Adaptation)
+
+The Diamond Model maps the **relationships** between adversary, capability, infrastructure, and victim — revealing the structural dynamics of political threats.
+
+```mermaid
+graph TD
+    ADV["👤 ADVERSARY<br/>(Political actor with intent)"]
+    CAP["⚡ CAPABILITY<br/>(Parliamentary instruments<br/>& political resources)"]
+    INF["🏗️ INFRASTRUCTURE<br/>(Media, alliances,<br/>institutional access)"]
+    VIC["🎯 VICTIM<br/>(Government, minister,<br/>policy, coalition)"]
+
+    ADV --> CAP
+    ADV --> INF
+    CAP --> VIC
+    INF --> VIC
+
+    style ADV fill:#dc3545,color:#fff
+    style CAP fill:#fd7e14,color:#fff
+    style INF fill:#ffc107,color:#000
+    style VIC fill:#0d6efd,color:#fff
+```
+
+### Diamond Model Analysis Table
+
+| Diamond Element | Description | Evidence |
+|----------------|-------------|---------|
+| **Adversary** | `[REQUIRED: Who is the threat actor? Name + party + role]` | `[dok_id / speech / motion reference]` |
+| **Capability** | `[REQUIRED: What parliamentary/political tools do they wield?]` | `[e.g. "175-seat opposition bloc, KU complaint mechanism, media access"]` |
+| **Infrastructure** | `[REQUIRED: What alliances, media channels, institutional access do they use?]` | `[e.g. "S-V-MP bloc coordination, SVT editorial access, EU Commission relationship"]` |
+| **Victim** | `[REQUIRED: Who/what is targeted? Minister, policy, coalition stability?]` | `[e.g. "Statsminister Kristersson (M), migration policy, Tidöavtal coalition agreement"]` |
+
+### Meta-Features (Context)
+
+| Meta-Feature | Assessment |
+|-------------|-----------|
+| **Timestamp** | `[When did threat activity begin?]` |
+| **Phase** | `[Kill chain stage 1-7]` |
+| **Direction** | `[Targeted or opportunistic?]` |
+| **Methodology** | `[Parliamentary (formal) or extra-parliamentary (media/public)?]` |
+| **Resources** | `[What political capital is being spent?]` |
+
+---
+
+## 🎭 Framework 4: STRIDE Adaptation (Systematic Coverage Checklist)
+
+> **Role of STRIDE:** STRIDE serves as a **systematic coverage checklist** — ensuring no threat category is overlooked. For depth and actionability, combine STRIDE categorization with Attack Trees (HOW), Kill Chain (PROGRESSION), and Diamond Model (WHO/WHAT).
+
+### STRIDE-to-Political Mapping Overview
 
 ```mermaid
 graph LR
@@ -243,11 +446,12 @@ All identified threat actors are classified on two axes: **Intent** and **Capabi
 **Document Control:**  
 - **Path:** `/analysis/methodologies/political-threat-framework.md`  
 - **ISMS Reference:** [Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md)  
+- **Version:** 2.0  
+- **Frameworks:** Attack Trees, Political Kill Chain, Diamond Model, STRIDE (adapted), Threat Actor Profiling  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
-# Political Threat Framework — PRIDES
+- **Next Review:** 2026-06-30
 
-<!-- version: 1.0.0 | updated: 2026-03-26 | author: Hack23 AB -->
+<!-- version: 2.0.0 | updated: 2026-03-30 | author: Hack23 AB -->
 <!-- document-control: political-analysis-methodology | classification: public -->
 
 ## 1. Purpose
@@ -555,11 +759,120 @@ The AI agent **MUST** follow this protocol when performing threat analysis:
 
 ---
 
+## 👤 Framework 5: Threat Actor Profiling
+
+Threat actor profiling provides the deepest understanding of **who** poses threats and **why**. This framework is essential for predicting future actions and assessing threat credibility.
+
+### Intent-Capability-Opportunity (ICO) Model
+
+Every threat actor is assessed across three dimensions:
+
+```mermaid
+graph TD
+    ACTOR["👤 Threat Actor"]
+    I["🎯 INTENT<br/>Motivation & goals"]
+    C["⚡ CAPABILITY<br/>Resources & tools"]
+    O["🚪 OPPORTUNITY<br/>Access & timing"]
+    THREAT["⚠️ THREAT LEVEL<br/>= f(I, C, O)"]
+
+    ACTOR --> I
+    ACTOR --> C
+    ACTOR --> O
+    I --> THREAT
+    C --> THREAT
+    O --> THREAT
+
+    style ACTOR fill:#dc3545,color:#fff
+    style THREAT fill:#ffc107,color:#000
+```
+
+### Swedish Political Threat Actor Taxonomy
+
+| Actor Category | Examples | Typical Intent | Typical Capability | Typical Opportunity |
+|---------------|---------|---------------|-------------------|-------------------|
+| **Government coalition** | M, KD, L + SD (supply) | Policy agenda advancement, coalition stability | Legislative majority, government apparatus, budget control | Continuous — holds power |
+| **Main opposition** | S, V, MP, C | Government accountability, alternative governance | Parliamentary instruments, media access, polling advantage | Committee hearings, budget debates, KU reviews |
+| **Kingmaker party (SD)** | SD leadership | Policy concessions, migration agenda, budget influence | Swing vote (≥175 threshold), public opinion leverage | Budget votes, no-confidence moments, election proximity |
+| **Foreign state actors** | Russia, China (intelligence threat) | Democratic destabilisation, policy influence | Disinformation infrastructure, cyber capabilities, economic leverage | Information vacuum, election periods, crisis events |
+| **Media actors** | SVT, SR, DN, SvD, Aftonbladet | Agenda setting, accountability, audience capture | Editorial platforms, investigative resources, public trust | Scandals, policy failures, election cycles |
+| **Interest groups** | Industry lobbies, NGOs, unions | Policy influence, regulatory capture, agenda promotion | Economic resources, expertise, member mobilization | Committee consultations, remisser, SOU processes |
+| **EU institutions** | Commission, ECJ, Parliament | Regulatory harmonisation, compliance enforcement | Legal authority, infringement procedures, funding | Directive deadlines, rule-of-law reviews |
+
+### Actor Profiling Template
+
+For each significant threat actor identified:
+
+| Attribute | Assessment | Evidence |
+|-----------|-----------|---------|
+| **Identity** | `[Name, party, role]` | `[MCP reference]` |
+| **Intent** | `[What do they want? Public statements + inferred goals]` | `[dok_id: speeches, motions]` |
+| **Capability** | `[What resources and tools can they deploy?]` | `[Seat count, committee positions, media access]` |
+| **Opportunity** | `[What upcoming events create windows for action?]` | `[Calendar events, legislative deadlines]` |
+| **Track Record** | `[Have they acted on similar threats before?]` | `[Historical vote records, past actions]` |
+| **Constraints** | `[What limits their action? Electoral risk, coalition agreements, legal barriers]` | `[Tidöavtal terms, party platform, polling data]` |
+| **ICO Assessment** | `[HIGH/MEDIUM/LOW threat level]` | `[Combined assessment]` |
+
+---
+
+## 🔗 Multi-Framework Integration Protocol
+
+When performing threat analysis, combine frameworks for maximum depth:
+
+```mermaid
+flowchart TD
+    START["📄 Political event<br/>or document to analyse"]
+    START --> S["🎭 STRIDE Check<br/>Categorise threat type<br/>(coverage)"]
+    S --> AT["🌳 Attack Tree<br/>Decompose HOW threat<br/>could succeed"]
+    AT --> KC["⛓️ Kill Chain<br/>Assess progression stage<br/>& intervention points"]
+    KC --> DM["💎 Diamond Model<br/>Map adversary, capability,<br/>infrastructure, victim"]
+    DM --> AP["👤 Actor Profile<br/>Assess intent, capability,<br/>opportunity"]
+    AP --> OUTPUT["📊 Integrated Threat Assessment<br/>with all frameworks combined"]
+
+    style START fill:#0d6efd,color:#fff
+    style OUTPUT fill:#28a745,color:#fff
+```
+
+### Integration Table
+
+| Step | Framework | Output | Feeds Into |
+|:----:|-----------|--------|-----------|
+| 1 | STRIDE | Threat categorisation (S/T/R/I/D/E) | Ensures no category is missed |
+| 2 | Attack Trees | Decomposed attack paths with feasibility | Risk methodology (likelihood assessment) |
+| 3 | Kill Chain | Stage progression assessment | Forward indicators (what to watch) |
+| 4 | Diamond Model | Adversary-victim-capability mapping | SWOT analysis (threats quadrant) |
+| 5 | Actor Profiling | ICO assessment per actor | Stakeholder impact analysis |
+
+---
+
+## 🤖 AI Analysis Protocol for Threat Assessment
+
+The AI agent **MUST** follow this protocol when performing threat analysis:
+
+1. **Read this framework** — understand ALL five frameworks, not just STRIDE
+2. **Start with STRIDE** as a coverage checklist — identify which categories are relevant
+3. **Build Attack Trees** for the top 2–3 threats — decompose how they could succeed
+4. **Map Kill Chain stages** — where has the threat progressed? Where can it be disrupted?
+5. **Apply Diamond Model** for the most significant threat actor
+6. **Profile key actors** using ICO model — what constrains and motivates them?
+7. **Query MCP tools** for evidence:
+   - `search_dokument` with `organ=KU` — constitutional committee investigations
+   - `search_voteringar` — coalition voting patterns
+   - `search_anforanden` — debate rhetoric and signaling
+   - `search_dokument` with `doktyp=miss` — no-confidence motions
+   - `get_interpellationer` — accountability probes
+   - `get_calendar_events` — upcoming legislative milestones
+8. **Score severity** using the calibration table
+9. **Connect to risk scoring** using the Threat-to-Risk integration table
+10. **Identify forward indicators** — what MCP-observable signals would indicate threat escalation?
+
+---
+
 ## 🔗 Related Documents
 
-- [templates/threat-analysis.md](../templates/threat-analysis.md) — Threat analysis template
-- [templates/per-file-political-intelligence.md](../templates/per-file-political-intelligence.md) — Per-file analysis template with STRIDE section
+- [templates/threat-analysis.md](../templates/threat-analysis.md) — Threat analysis template (multi-framework)
+- [templates/per-file-political-intelligence.md](../templates/per-file-political-intelligence.md) — Per-file analysis template with threat section
 - [political-risk-methodology.md](political-risk-methodology.md) — Risk scoring (threats feed into risk)
 - [political-swot-framework.md](political-swot-framework.md) — Threats feed into SWOT threat quadrant
-- [ai-driven-analysis-guide.md](ai-driven-analysis-guide.md) — Per-file AI analysis protocol
+- [ai-driven-analysis-guide.md](ai-driven-analysis-guide.md) — Master analysis protocol
 - [reference/isms-threat-modeling-adaptation.md](../reference/isms-threat-modeling-adaptation.md) — ISMS mapping
+- [THREAT_MODEL.md](../../THREAT_MODEL.md) — **Formatting exemplar** (platform threat model)
