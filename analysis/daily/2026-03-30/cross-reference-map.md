@@ -1,8 +1,8 @@
 # Cross-Reference Map — 2026-03-30
 
-**Generated**: 2026-03-30 10:33 UTC
+**Generated**: 2026-03-30 18:19 UTC
 **Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer
-**Documents Analyzed**: 10
+**Documents Analyzed**: 14
 **Confidence**: HIGH
 
 ## Summary

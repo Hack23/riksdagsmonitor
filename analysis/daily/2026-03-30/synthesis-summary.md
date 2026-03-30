@@ -1,130 +1,89 @@
-# 🧩 Political Intelligence Synthesis — 2026-03-30
+# Analysis Synthesis Summary — 2026-03-30
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-30 (UTC)
-**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+**ID**: SYN-20260330
+**Generated**: 2026-03-30 18:19 UTC
+**Riksmöte**: 2025/26
+**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer
+**Documents Analyzed**: 14
+**Confidence**: MEDIUM
 
----
-
-## 📋 Synthesis Context
-
-| Field | Value |
-|-------|-------|
-| **Synthesis ID** | `SYN-2026-03-30-001` |
-| **Analysis Date** | `2026-03-30 10:33 UTC` |
-| **Documents Analyzed** | 10 parliamentary documents + 2 KU hearing agendas |
-| **Analysis Period** | 2026-03-29 00:00 – 2026-03-30 12:00 UTC |
-| **Produced By** | `news-realtime-monitor` agentic workflow |
-| **Overall Confidence** | **MEDIUM** |
-
----
-
-## 📊 Intelligence Dashboard
-
-### Daily Political Landscape
-
-```mermaid
-graph TD
-    subgraph "📊 Daily Political Intelligence Dashboard — 2026-03-30"
-        direction TB
-        subgraph "🔒 Sensitivity"
-            CLS["Sensitivity<br/>🟡 SENSITIVE<br/>KU hearings involve ministerial accountability"]
-            style CLS fill:#ffc107,stroke:#333,color:#000
-        end
-        subgraph "⚖️ Risk"
-            RSK["Overall Risk<br/>🟡 MEDIUM<br/>MP defection from M party group<br/>KU hearings on Northvolt + Lantmäteriet"]
-            style RSK fill:#ffc107,stroke:#333,color:#000
-        end
-        subgraph "🎭 Threat"
-            THR["Threat Level<br/>🟡 MODERATE<br/>Accountability evasion risk<br/>in KU Northvolt probe"]
-            style THR fill:#ffc107,stroke:#333,color:#000
-        end
-        subgraph "📈 Significance"
-            SIG["Top Event<br/>🟠 HIGH (7/10)<br/>KU public hearings on<br/>Northvolt + Lantmäteriet"]
-            style SIG fill:#fd7e14,stroke:#333,color:#fff
-        end
-    end
-```
-
----
-
-## 🏛️ Section 1: Top Events Ranked by Significance
-
-| Rank | Event | dok_id | Score | Tier | Rationale | Confidence |
-|:----:|-------|--------|:-----:|:----:|-----------|:----------:|
-| 1 | KU public hearing: Minister Carlson (KD) on Lantmäteriet security breaches | HDC220260330ou1, HDA7KU38 | **7/10** | 🟠 HIGH | Minister accountability + national security policy (+2 security, +1 named minister, +2 multi-party KU) | `[HIGH]` |
-| 2 | KU public hearing: Former State Secretary Ulf Holm on Northvolt/AP funds | HDC220260330ou2 | **7/10** | 🟠 HIGH | Billion-SEK state investment scandal, AP fund governance (+2 fiscal, +2 multi-party KU, +1 named official) | `[HIGH]` |
-| 3 | MP Marléne Lund Kopparklint leaves Moderaterna party group | HD0I100 | **5/10** | 🟡 MEDIUM | Party defection affects coalition arithmetic; M loses one seat in party group | `[HIGH]` |
-| 4 | Committee report: Sweden's Climate Goals — EU-adapted 2030 targets | HD01MJU30 | **5/10** | 🟡 MEDIUM | Climate policy direction, EU alignment, environmental committee position | `[MEDIUM]` |
-| 5 | Committee report: Parliamentary process reform (KU38) | HD01KU38 | **4/10** | 🟡 MEDIUM | Constitutional reform of parliamentary procedures | `[MEDIUM]` |
-| 6 | Written question: Director-generals under criminal investigation (SD) | HD11666 | **4/10** | 🟡 MEDIUM | Skatteverket leadership accountability, justice policy | `[MEDIUM]` |
-| 7 | Written question: Child abuse detection online — EU law expiring Apr 3 | HD11664 | **4/10** | 🟡 MEDIUM | Time-sensitive EU regulation affecting child protection | `[MEDIUM]` |
-| 8 | Written question: Ban goods from occupied Palestine | HD11662 | **3/10** | 🟢 LOW | Foreign policy, trade sanctions — follows EU-wide trend | `[MEDIUM]` |
-| 9 | Written question: LKAB workplace safety violations | HD11661 | **3/10** | 🟢 LOW | State-owned enterprise accountability | `[MEDIUM]` |
-| 10 | Written question: Stateless Palestinians from Iraq | HD11663 | **3/10** | 🟢 LOW | Migration enforcement gap | `[MEDIUM]` |
-
----
-
-## 🔗 Section 2: Cross-Document Theme Map
+## Intelligence Dashboard
 
 ```mermaid
 graph LR
-    subgraph "🔗 Thematic Connections — 2026-03-30"
-        KU1["🏛️ KU Hearing:<br/>Lantmäteriet Security<br/>dok_id: HDC220260330ou1"]
-        KU2["🏛️ KU Hearing:<br/>Northvolt/AP Funds<br/>dok_id: HDC220260330ou2"]
-        DEFECT["⚠️ MP Defection:<br/>Lund Kopparklint<br/>leaves M"]
-        CLIMATE["🌍 Climate Goals:<br/>MJU30<br/>dok_id: HD01MJU30"]
-        JUSTICE["⚖️ Justice Cluster:<br/>HD11666, HD11664"]
-        FOREIGN["🌐 Foreign Policy:<br/>HD11662, HD11663"]
-
-        KU1 -->|"Government accountability"| KU2
-        KU1 -->|"Security policy"| JUSTICE
-        KU2 -->|"Financial governance"| DEFECT
-        DEFECT -->|"Coalition stability"| CLIMATE
-        JUSTICE -->|"Rule of law"| FOREIGN
+    subgraph "Daily Intelligence — 2026-03-30"
+        A[14 Documents] --> B[2 Committee Reports]
+        A --> C[12 Motions]
+        B --> D[MJU30: Climate Targets]
+        B --> E[KU38: Parliamentary Process]
+        C --> F[Housing & Social Policy]
+        C --> G[Justice & Security]
+        C --> H[International & Trade]
     end
-
-    style KU1 fill:#dc3545,stroke:#333,color:#fff
-    style KU2 fill:#dc3545,stroke:#333,color:#fff
-    style DEFECT fill:#fd7e14,stroke:#333,color:#fff
-    style CLIMATE fill:#ffc107,stroke:#333,color:#000
-    style JUSTICE fill:#ffc107,stroke:#333,color:#000
-    style FOREIGN fill:#28a745,stroke:#333,color:#fff
+    subgraph "Risk Profile"
+        I[Coalition Risk: 4/100 LOW]
+        J[Threat Count: 16]
+        K[Avg Significance: 2.2/10]
+    end
+    style D fill:#28a745,color:#fff
+    style E fill:#28a745,color:#fff
+    style I fill:#28a745,color:#fff
+    style J fill:#ffc107,color:#000
+    style K fill:#ffc107,color:#000
 ```
 
----
+## Summary
 
-## 📌 Section 3: Key Intelligence Findings
+Pre-article analysis completed for 14 documents on 2026-03-30. Two committee reports published today: **MJU30** (Sweden's climate targets — EU-adapted interim targets to 2030) and **KU38** (parliamentary process with the MP in focus). Twelve motions cover housing, justice, climate, migration, and trade policy. Overall political risk: **LOW**. Average document significance: 2.2/10.
 
-1. **[HIGH confidence]** The Constitutional Committee (KU) holds two public hearings today examining government accountability — Minister Carlson (KD) faces questioning on Lantmäteriet security breaches (dok_id: HDC220260330ou1), and former State Secretary Ulf Holm is questioned about the Northvolt/AP fund investment decisions (dok_id: HDC220260330ou2). These hearings are part of KU's annual scrutiny of ministerial conduct.
+## Key Findings
 
-2. **[HIGH confidence]** MP Marléne Lund Kopparklint has formally left the Moderate party group (dok_id: HD0I100, item 2). This reduces M's parliamentary group size and could signal internal party tensions ahead of the 2026 election campaign period.
+1. **Climate targets** (MJU30): Environment Committee report on EU-adapted 2030 interim climate targets — significance 3/10
+2. **Parliamentary reform** (KU38): Constitutional Committee report on parliamentary process improvements — significance 3/10
+3. **Coalition stability**: Risk score 4/100 (LOW) — SD support agreement holds steady
+4. **Opposition challenge**: 96% motion denial rate across all policy domains
+5. **5 anomaly flags** detected: unusually high cross-party alignment scores (KD-M, L-M, KD-L, C-L, C-KD)
 
-3. **[MEDIUM confidence]** The Environmental Committee (MJU) has published its report on Sweden's climate goals (dok_id: HD01MJU30), addressing EU-adapted interim targets for 2030. This positions Sweden's climate policy within the EU framework and may trigger debate on environmental ambition levels.
+## Top Documents by Significance
 
-4. **[MEDIUM confidence]** A cluster of 8 written questions filed today spans justice, migration, foreign policy, housing, and consumer protection domains — indicating broad opposition engagement across policy areas on this Monday sitting day.
+| Score | Type | dok_id | Title | Committee |
+|-------|------|--------|-------|-----------|
+| 3/10 | bet | HD01MJU30 | Sveriges klimatmål – EU-anpassade och ändamålsenliga etappmål till 2030 | MJU |
+| 3/10 | bet | HD01KU38 | Den parlamentariska processen med ledamoten i fokus | KU |
+| 3/10 | mot | HD11661 | Brott mot arbetsmiljölagen | — |
+| 2/10 | mot | HD11659 | Förslag om blockhyra | — |
+| 2/10 | mot | HD11663 | Statslösa palestinier från Irak | — |
+| 2/10 | mot | HD11664 | Fortsatt möjlighet att upptäcka, rapportera och stoppa sexuella övergrepp mot barn på nätet | — |
+| 2/10 | mot | HD11665 | Förebyggande arbete avseende konsumtionsmekanism... | — |
+| 2/10 | mot | HD11662 | Förbud mot varor producerade på ockuperad mark | — |
+| 2/10 | mot | HD11666 | Generaldirektörer under brottsutredning | — |
+| 2/10 | mot | HD11660 | Höjda gödselpriser för halländska lantbrukare | — |
 
----
+## Aggregated SWOT Summary
 
-## 📊 Section 4: Data Quality & Coverage
+| Quadrant | Count | Key Theme |
+|----------|-------|-----------|
+| Strengths | 4 | Coalition stability, EU alignment, public agenda resonance |
+| Weaknesses | 3 | Motion denial rate, regulatory burden, cost-of-living |
+| Opportunities | 7 | Climate policy, housing reform, EU battery cooperation |
+| Threats | 4 | Legislative blockage, controversy risk, trade exposure |
 
-| Source | Status | Items Found | Coverage |
-|--------|:------:|:-----------:|:--------:|
-| Riksdagsdokument (search_dokument) | ✅ Live | 30 | Full |
-| Voteringar (search_voteringar) | ✅ Live | 20 (latest: 2026-03-04) | Historical |
-| Anföranden (search_anforanden) | ✅ Live | 20 | Recent debates |
-| Propositioner (get_propositioner) | ✅ Live | 20 | Current session |
-| Betänkanden (get_betankanden) | ✅ Live | 20 | Current session |
-| Regeringen (search_regering) | ✅ Live | 0 (no weekend publications) | Expected |
-| Kalender (get_calendar_events) | ❌ API Error | HTML returned | Known issue |
+## Artifacts Inventory
 
-**Calendar API Note:** The Riksdag calendar API returned HTML instead of JSON (known intermittent issue). Calendar data was supplemented by `search_dokument` results showing scheduled KU meetings (HDA7KU38, HDA3KU39) and chamber agenda (HD0I100).
+| File | Status | Key Finding |
+|------|--------|-------------|
+| swot-analysis.md | ✅ Complete | 6-actor SWOT with evidence tables |
+| risk-assessment.md | ✅ Complete | Coalition risk 4/100 LOW |
+| threat-analysis.md | ✅ Complete | 16 indicators, STRIDE network |
+| stakeholder-perspectives.md | ✅ Complete | 6 lenses, 14 documents |
+| significance-scoring.md | ✅ Complete | 0 critical, 0 high-significance |
+| classification-results.md | ✅ Complete | 14 documents classified |
+| cross-reference-map.md | ✅ Complete | Document relationships mapped |
 
----
+## Implications
 
-## 📋 Document Control
+Overall political risk level: **LOW**. No critical documents today. Evening analysis should focus on the two committee reports (MJU30 climate, KU38 parliamentary process) and the broader context of recent government propositions (youth crime, serving permits, seizure rules).
 
-| Field | Value |
-|-------|-------|
-| **Classification** | Public |
-| **Retention** | 90 days |
-| **Next Update** | 2026-03-30 evening analysis cycle |
+## Data Quality Notes
+
+Overall confidence: **MEDIUM**. Metadata-only analysis for most documents. Full-text retrieval would increase evidence specificity. Coalition alignment anomalies (>8000% cross-party voting) likely reflect API measurement artifacts — flag for editorial review.
