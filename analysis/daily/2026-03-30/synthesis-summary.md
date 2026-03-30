@@ -1,14 +1,19 @@
-# Analysis Synthesis Summary — 2026-03-30
+# 🧩 Political Intelligence Synthesis — 2026-03-30
+
+**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-30 (UTC)
+**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+---
 
 ## 📋 Synthesis Context
 
 | Field | Value |
 |-------|-------|
 | **Synthesis ID** | `SYN-2026-03-30-001` |
-| **Analysis Date** | `2026-03-30 01:14 UTC` |
-| **Documents Analyzed** | 8 key events from MCP queries |
-| **Analysis Period** | 2026-03-29 – 2026-03-30 |
-| **Produced By** | news-realtime-monitor workflow |
+| **Analysis Date** | `2026-03-30 10:33 UTC` |
+| **Documents Analyzed** | 10 parliamentary documents + 2 KU hearing agendas |
+| **Analysis Period** | 2026-03-29 00:00 – 2026-03-30 12:00 UTC |
+| **Produced By** | `news-realtime-monitor` agentic workflow |
 | **Overall Confidence** | **MEDIUM** |
 
 ---
@@ -19,171 +24,107 @@
 
 ```mermaid
 graph TD
-    subgraph "📊 Daily Political Intelligence Dashboard"
+    subgraph "📊 Daily Political Intelligence Dashboard — 2026-03-30"
         direction TB
         subgraph "🔒 Sensitivity"
-            CLS["Sensitivity<br/>PUBLIC"]
+            CLS["Sensitivity<br/>🟡 SENSITIVE<br/>KU hearings involve ministerial accountability"]
+            style CLS fill:#ffc107,stroke:#333,color:#000
         end
         subgraph "⚖️ Risk"
-            RSK["Overall Risk<br/>HIGH<br/>Top: RSK-001 Coalition seat loss"]
+            RSK["Overall Risk<br/>🟡 MEDIUM<br/>MP defection from M party group<br/>KU hearings on Northvolt + Lantmäteriet"]
+            style RSK fill:#ffc107,stroke:#333,color:#000
         end
         subgraph "🎭 Threat"
-            THR["Threat Level<br/>MODERATE<br/>Top STRIDE: E (Elevation)"]
+            THR["Threat Level<br/>🟡 MODERATE<br/>Accountability evasion risk<br/>in KU Northvolt probe"]
+            style THR fill:#ffc107,stroke:#333,color:#000
         end
         subgraph "📈 Significance"
-            SIG["Top Significance<br/>8.5/10<br/>Breaking"]
+            SIG["Top Event<br/>🟠 HIGH (7/10)<br/>KU public hearings on<br/>Northvolt + Lantmäteriet"]
+            style SIG fill:#fd7e14,stroke:#333,color:#fff
         end
     end
-
-    subgraph "🎯 Editorial Decision"
-        DEC{Article Decision}
-        DEC -->|"High urgency"| BRK["⚡ Breaking Article"]
-        DEC -->|"Significant"| STD["📰 Standard Article"]
-        DEC -->|"Low significance"| MON["📋 Analysis Only"]
-    end
-
-    CLS --> DEC
-    RSK --> DEC
-    THR --> DEC
-    SIG --> DEC
-
-    style CLS fill:#28a745,color:#fff
-    style RSK fill:#dc3545,color:#fff
-    style THR fill:#ffc107,color:#000
-    style SIG fill:#dc3545,color:#fff
-    style BRK fill:#dc3545,color:#fff
-    style STD fill:#28a745,color:#fff
-    style MON fill:#6c757d,color:#fff
 ```
 
 ---
 
-## 🏆 Top Findings by Significance
+## 🏛️ Section 1: Top Events Ranked by Significance
 
-| Rank | dok_id | Title | Significance | Risk Tier | SWOT Impact | Recommendation |
-|:----:|--------|-------|:-----------:|:---------:|:-----------:|----------------|
-| 1 | HD0I100 | MP Marléne Lund Kopparklint leaves M party group | 8.5 | 🟠 | W dominant | Breaking |
-| 2 | HDC220260330ou1 | KU hearing: Minister Carlson on Lantmäteriet security | 7.0 | 🟠 | T dominant | Breaking |
-| 3 | HDC220260330ou2 | KU hearing: Ulf Holm on Northvolt/AP funds | 7.0 | 🟠 | W dominant | Breaking |
-| 4 | HD03227 | Prop: Better investigation of youth crime | 6.0 | 🟡 | O dominant | Priority |
-| 5 | HD01JuU29 | Committee: Security protection for real estate | 6.5 | 🟡 | S dominant | Priority |
+| Rank | Event | dok_id | Score | Tier | Rationale | Confidence |
+|:----:|-------|--------|:-----:|:----:|-----------|:----------:|
+| 1 | KU public hearing: Minister Carlson (KD) on Lantmäteriet security breaches | HDC220260330ou1, HDA7KU38 | **7/10** | 🟠 HIGH | Minister accountability + national security policy (+2 security, +1 named minister, +2 multi-party KU) | `[HIGH]` |
+| 2 | KU public hearing: Former State Secretary Ulf Holm on Northvolt/AP funds | HDC220260330ou2 | **7/10** | 🟠 HIGH | Billion-SEK state investment scandal, AP fund governance (+2 fiscal, +2 multi-party KU, +1 named official) | `[HIGH]` |
+| 3 | MP Marléne Lund Kopparklint leaves Moderaterna party group | HD0I100 | **5/10** | 🟡 MEDIUM | Party defection affects coalition arithmetic; M loses one seat in party group | `[HIGH]` |
+| 4 | Committee report: Sweden's Climate Goals — EU-adapted 2030 targets | HD01MJU30 | **5/10** | 🟡 MEDIUM | Climate policy direction, EU alignment, environmental committee position | `[MEDIUM]` |
+| 5 | Committee report: Parliamentary process reform (KU38) | HD01KU38 | **4/10** | 🟡 MEDIUM | Constitutional reform of parliamentary procedures | `[MEDIUM]` |
+| 6 | Written question: Director-generals under criminal investigation (SD) | HD11666 | **4/10** | 🟡 MEDIUM | Skatteverket leadership accountability, justice policy | `[MEDIUM]` |
+| 7 | Written question: Child abuse detection online — EU law expiring Apr 3 | HD11664 | **4/10** | 🟡 MEDIUM | Time-sensitive EU regulation affecting child protection | `[MEDIUM]` |
+| 8 | Written question: Ban goods from occupied Palestine | HD11662 | **3/10** | 🟢 LOW | Foreign policy, trade sanctions — follows EU-wide trend | `[MEDIUM]` |
+| 9 | Written question: LKAB workplace safety violations | HD11661 | **3/10** | 🟢 LOW | State-owned enterprise accountability | `[MEDIUM]` |
+| 10 | Written question: Stateless Palestinians from Iraq | HD11663 | **3/10** | 🟢 LOW | Migration enforcement gap | `[MEDIUM]` |
 
 ---
 
-## 💪 Aggregated SWOT Summary
-
-### Coalition Balance
+## 🔗 Section 2: Cross-Document Theme Map
 
 ```mermaid
 graph LR
-    subgraph "🏛️ Government Coalition Assessment"
-        GS["✅ Strengths<br/>3 entries<br/>Active legislative agenda"]
-        GW["⚠️ Weaknesses<br/>3 entries<br/>MP defection, KU scrutiny"]
-        GO["🚀 Opportunities<br/>2 entries<br/>Security legislation momentum"]
-        GT["🔴 Threats<br/>3 entries<br/>Seat margin erosion"]
+    subgraph "🔗 Thematic Connections — 2026-03-30"
+        KU1["🏛️ KU Hearing:<br/>Lantmäteriet Security<br/>dok_id: HDC220260330ou1"]
+        KU2["🏛️ KU Hearing:<br/>Northvolt/AP Funds<br/>dok_id: HDC220260330ou2"]
+        DEFECT["⚠️ MP Defection:<br/>Lund Kopparklint<br/>leaves M"]
+        CLIMATE["🌍 Climate Goals:<br/>MJU30<br/>dok_id: HD01MJU30"]
+        JUSTICE["⚖️ Justice Cluster:<br/>HD11666, HD11664"]
+        FOREIGN["🌐 Foreign Policy:<br/>HD11662, HD11663"]
+
+        KU1 -->|"Government accountability"| KU2
+        KU1 -->|"Security policy"| JUSTICE
+        KU2 -->|"Financial governance"| DEFECT
+        DEFECT -->|"Coalition stability"| CLIMATE
+        JUSTICE -->|"Rule of law"| FOREIGN
     end
 
-    GS -.->|"exploits"| GO
-    GW -.->|"amplifies"| GT
-    GO -.->|"mitigates"| GW
-
-    style GS fill:#28a745,color:#fff
-    style GW fill:#fd7e14,color:#fff
-    style GO fill:#0d6efd,color:#fff
-    style GT fill:#dc3545,color:#fff
+    style KU1 fill:#dc3545,stroke:#333,color:#fff
+    style KU2 fill:#dc3545,stroke:#333,color:#fff
+    style DEFECT fill:#fd7e14,stroke:#333,color:#fff
+    style CLIMATE fill:#ffc107,stroke:#333,color:#000
+    style JUSTICE fill:#ffc107,stroke:#333,color:#000
+    style FOREIGN fill:#28a745,stroke:#333,color:#fff
 ```
 
-| Quadrant | Count | Highest-Impact Entry | Evidence |
-|----------|:-----:|---------------------|----------|
-| ✅ Strengths | 3 | Active legislative agenda with 239 propositions this session | HD03227, HD03213, HD03210 |
-| ⚠️ Weaknesses | 3 | MP Lund Kopparklint leaves M — reduces government block seats | HD0I100 (f-lista 2025/26:100) |
-| 🚀 Opportunities | 2 | JuU29 strengthened security protection passes committee | HD01JuU29 |
-| 🔴 Threats | 3 | KU constitutional scrutiny of ministers on Northvolt + Lantmäteriet | HDC220260330ou1, HDC220260330ou2 |
+---
 
-**SWOT Balance Assessment:** `[HIGH]` The coalition faces significant pressure today: an MP formally leaving M's party group narrows the governing bloc's parliamentary margin, while simultaneous KU hearings expose ministerial vulnerabilities. However, the government's active legislative agenda (security, criminal justice, social reform) demonstrates policy delivery capacity.
+## 📌 Section 3: Key Intelligence Findings
+
+1. **[HIGH confidence]** The Constitutional Committee (KU) holds two public hearings today examining government accountability — Minister Carlson (KD) faces questioning on Lantmäteriet security breaches (dok_id: HDC220260330ou1), and former State Secretary Ulf Holm is questioned about the Northvolt/AP fund investment decisions (dok_id: HDC220260330ou2). These hearings are part of KU's annual scrutiny of ministerial conduct.
+
+2. **[HIGH confidence]** MP Marléne Lund Kopparklint has formally left the Moderate party group (dok_id: HD0I100, item 2). This reduces M's parliamentary group size and could signal internal party tensions ahead of the 2026 election campaign period.
+
+3. **[MEDIUM confidence]** The Environmental Committee (MJU) has published its report on Sweden's climate goals (dok_id: HD01MJU30), addressing EU-adapted interim targets for 2030. This positions Sweden's climate policy within the EU framework and may trigger debate on environmental ambition levels.
+
+4. **[MEDIUM confidence]** A cluster of 8 written questions filed today spans justice, migration, foreign policy, housing, and consumer protection domains — indicating broad opposition engagement across policy areas on this Monday sitting day.
 
 ---
 
-## ⚖️ Risk Landscape Summary
+## 📊 Section 4: Data Quality & Coverage
 
-| Risk Category | Score Range | Highest Risk | Trend vs. Previous |
-|--------------|:----------:|-------------|:------------------:|
-| Coalition Stability | 8–12 | RSK-001: M MP defection narrows majority | ↑ |
-| Policy Implementation | 4–6 | RSK-003: KU scrutiny delays infrastructure policy | → |
-| Budget / Fiscal | 5–8 | RSK-004: Northvolt/AP fund losses under scrutiny | → |
-| Electoral | 6–8 | RSK-005: Pre-election M internal cohesion risk | ↑ |
-| Democratic Process | 3–4 | RSK-006: Constitutional accountability functioning | → |
-| External / International | 4–5 | Skr 2025/26:162 Ukraine military support ongoing | → |
+| Source | Status | Items Found | Coverage |
+|--------|:------:|:-----------:|:--------:|
+| Riksdagsdokument (search_dokument) | ✅ Live | 30 | Full |
+| Voteringar (search_voteringar) | ✅ Live | 20 (latest: 2026-03-04) | Historical |
+| Anföranden (search_anforanden) | ✅ Live | 20 | Recent debates |
+| Propositioner (get_propositioner) | ✅ Live | 20 | Current session |
+| Betänkanden (get_betankanden) | ✅ Live | 20 | Current session |
+| Regeringen (search_regering) | ✅ Live | 0 (no weekend publications) | Expected |
+| Kalender (get_calendar_events) | ❌ API Error | HTML returned | Known issue |
 
-**Overall Risk Level:** **HIGH**
-
----
-
-## 🎭 Threat Summary
-
-| STRIDE Category | Threat Level | Key Finding |
-|----------------|:------------:|-------------|
-| S — Spoofing | LOW | No identified disinformation threats today |
-| T — Tampering | LOW | Normal legislative process integrity |
-| R — Repudiation | MODERATE | KU hearings test ministerial accountability (Carlson, Holm) |
-| I — Disclosure | MODERATE | Lantmäteriet security archive breaches under constitutional review |
-| D — Denial | LOW | Parliament functioning normally with interpellation debates |
-| E — Elevation | HIGH | MP defection from governing party elevates opposition influence |
-
-**Overall Threat Level:** **MODERATE**
+**Calendar API Note:** The Riksdag calendar API returned HTML instead of JSON (known intermittent issue). Calendar data was supplemented by `search_dokument` results showing scheduled KU meetings (HDA7KU38, HDA3KU39) and chamber agenda (HD0I100).
 
 ---
 
-## 👥 Stakeholder Impact Overview
+## 📋 Document Control
 
-| Stakeholder | Impact | Direction | Key Driver |
-|------------|:------:|:---------:|------------|
-| 🏘️ Citizens | M | neutral | Criminal justice reforms (Prop 227, 213) strengthen law enforcement |
-| 🏛️ Government | H | negative | MP defection + KU scrutiny weakens governing position |
-| 🗳️ Opposition | H | positive | M defection + constitutional hearings provide ammunition |
-| 🏭 Business | M | neutral | Regulatory reforms (serveringstillstånd, hyresmarknad) continue |
-| 🤝 Civil Society | M | positive | Honour violence legislation (Prop 213) strengthens protections |
-| 🌍 International | L | neutral | Ukraine support (Skr 162) reaffirmed; no new foreign policy events |
-
----
-
-## 🎯 Narrative Direction
-
-`[HIGH]` Today marks a significant day for Swedish politics: MP Marléne Lund Kopparklint has formally announced she no longer belongs to the Moderates' (M) parliamentary group, reducing the governing bloc's representation. This coincides with the Constitutional Committee (KU) conducting two high-profile public hearings — one questioning Infrastructure Minister Andreas Carlson (KD) about security breaches at Lantmäteriet, and another examining former state secretary Ulf Holm regarding government investment decisions around Northvolt. The convergence of internal party fractures and external constitutional scrutiny creates a politically volatile day.
-
-**Primary Narrative Angle:** Moderate MP's departure from party group signals growing internal tensions as government faces constitutional scrutiny on security and fiscal governance.
-**Secondary Angles:** KU hearings as democratic accountability mechanism; criminal justice reform momentum despite political turbulence.
-**Confidence:** **HIGH**
-
----
-
-## 🔮 Forward Indicators
-
-| # | Indicator | Timeline | Source | Watch Priority |
-|---|-----------|----------|--------|:--------------:|
-| 1 | Will Lund Kopparklint join another party group or remain independent? | Days | Riksdag party registrations | 🔴 |
-| 2 | KU hearing outcomes — any formal criticism of Minister Carlson? | 1–2 weeks | KU granskningsbetänkande | 🟠 |
-| 3 | Northvolt/AP-fund hearing results and government response | 1–2 weeks | KU, FiU | 🟠 |
-| 4 | Scheduled Riksdag votes on March 31 (UbU10 gymnasieskolan, JuU29 security) | 1 day | HD0I100, H6D1plan | 🟡 |
-
----
-
-## 📋 Analysis Artifacts Inventory
-
-| File | Status | Key Output |
-|------|:------:|-----------|
-| `classification-results.md` | ✅ | PUBLIC sensitivity; domestic politics focus |
-| `risk-assessment.md` | ✅ | Overall risk HIGH; coalition stability primary concern |
-| `swot-analysis.md` | ✅ | Weakness-dominant; MP defection + KU scrutiny |
-| `threat-analysis.md` | ✅ | MODERATE overall; Elevation category HIGH |
-| `stakeholder-perspectives.md` | ✅ | Government negatively impacted; opposition gains |
-| `significance-scoring.md` | ✅ | Top score 8.5/10 (MP defection) |
-| Per-file `.analysis.md` files | 0 created | MCP event-based analysis (no per-file docs for today) |
-
----
-
-**Document Control:**
-- **Template Path:** `/analysis/templates/synthesis-summary.md`
-- **Consumed By:** All news article generator workflows
-- **Classification:** Public
-- **Next Review:** 2026-06-26
+| Field | Value |
+|-------|-------|
+| **Classification** | Public |
+| **Retention** | 90 days |
+| **Next Update** | 2026-03-30 evening analysis cycle |
