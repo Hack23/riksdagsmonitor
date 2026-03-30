@@ -295,7 +295,7 @@ fi
    - `analysis/templates/stakeholder-impact.md`
    - `analysis/templates/significance-scoring.md`
 
-3. **For EVERY downloaded document/data file**: apply ALL 6 analytical lenses and create `{dok_id}.analysis.md` following the per-file template. Cite specific data (dok_id, vote counts, party names). Include ≥1 color-coded Mermaid diagram with `style` directives.
+3. **For EVERY downloaded document/data file**: apply ALL 6 analytical lenses and create `{dok_id}-analysis.md` following the per-file template. Cite specific data (dok_id, vote counts, party names). Include ≥1 color-coded Mermaid diagram with `style` directives.
 
 4. **Create/rewrite ALL 7 daily synthesis files** in `analysis/daily/$ARTICLE_DATE/` — each MUST follow its template EXACTLY (metadata header, Mermaid diagrams with color-coded style directives, structured evidence tables, confidence labels, no `[REQUIRED]` placeholders).
 
@@ -385,20 +385,153 @@ echo "📊 Total pending per-file analysis files (all dates): $PENDING"
 
 ### Per-File Analysis & Daily Synthesis (done by AI, not scripts)
 
-> Scripts download data and produce stub files. The AI agent MUST replace ALL stubs with real analysis following methods and templates. See the "MANDATORY: AI Must Analyse ALL Data" section above — that is your primary job.
+> Scripts download data and produce **stub files only**. The AI agent MUST **replace ALL stubs** with real analysis following methods and templates. This is your PRIMARY job — do NOT skip it.
 
-After data is downloaded:
-1. List data files: `find analysis/data/ -name "*.json" -type f`
-2. For EACH file: read it, apply all 6 analytical lenses (classification, SWOT, risk, STRIDE, stakeholders, forward indicators), write `{dok_id}.analysis.md`
-3. Rewrite ALL 7 daily synthesis files to match their templates (see template mapping in SHARED_PROMPT_PATTERNS.md)
-4. Every claim must cite real data (dok_id, vote counts, party names)
+#### 🚨 Per-File Analysis Protocol (BLOCKING — must complete before Step 2)
+
+After data is downloaded, you MUST complete ALL of these steps before proceeding to event detection:
+
+**Step A — Read templates and methodologies** (FIRST, before writing anything):
+1. Follow the organization-wide **SHARED_PROMPT_PATTERNS Step 2 + Step 3** exactly: read **all 6 methodology guides** and **all 8 analysis templates** defined there (in `analysis/methodologies/` and `analysis/templates/`) **before writing any analysis**. Do NOT subset or skip any required document.
+2. After completing SHARED_PROMPT_PATTERNS Steps 2–3, (re)read these **news-monitor-specific assets**:
+   - `view analysis/templates/per-file-political-intelligence.md` — read FULLY, note the required structure
+   - `view analysis/methodologies/ai-driven-analysis-guide.md` — read the "BAD vs GOOD" examples
+   - `view analysis/methodologies/political-swot-framework.md` — understand evidence tables
+
+**Step B — Create real per-file analyses** (for EVERY document):
+1. List all downloaded documents: `find analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/documents/ -name "*.json" -type f`
+2. For EACH JSON file:
+   a. Read it with `view` — extract dok_id, titel, datum, parti, organ
+   b. Apply ALL 6 analytical lenses (classification, SWOT, risk, STRIDE, stakeholders, forward indicators)
+   c. Write or rewrite the per-file analysis markdown so that its filename matches the `*-analysis.md` convention (for example `{dok_id}-analysis.md`) and follows the per-file template EXACTLY
+   d. Include ≥1 color-coded Mermaid diagram with `style` directives and REAL data
+   e. Include structured evidence tables with dok_id, confidence, impact columns
+   f. SWOT quadrants must have REAL entries — NOT "_No strengths identified_"
+   g. Stakeholder perspectives must cite SPECIFIC data — NOT generic boilerplate like "this document requires assessment"
+
+**Step C — Rewrite daily synthesis files** (ALL 7 files must match templates):
+1. Read each template: `view analysis/templates/{template}.md`
+2. Rewrite each daily file to match its template EXACTLY
+3. Every claim must cite real data (dok_id, vote counts, party names)
+
+**Step D — Run quality gate** (BLOCKING — must pass before proceeding):
+
+```bash
+# Idempotent: only set if not already resolved by lookback
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  if [ -n "${{ github.event.inputs.article_date }}" ]; then
+    ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  else
+    ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  fi
+fi
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+QUALITY_PASS=true
+FAIL_COUNT=0
+
+echo "=== 🔍 Analysis Quality Gate Check ==="
+
+# Collect ALL analysis markdown files (daily synthesis + per-file in documents/)
+ALL_MD_FILES=$(find "$ANALYSIS_DIR" -name "*.md" -type f 2>/dev/null)
+DAILY_MD_FILES=$(find "$ANALYSIS_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null)
+PERFILE_MD_FILES=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null)
+echo "📊 Daily synthesis files: $(echo "$DAILY_MD_FILES" | grep -c '.' 2>/dev/null || true)"
+echo "📊 Per-file analysis files: $(echo "$PERFILE_MD_FILES" | grep -c '.' 2>/dev/null || true)"
+
+# Check 1: Daily synthesis Mermaid diagrams
+for f in $DAILY_MD_FILES; do
+  [ ! -f "$f" ] && continue
+  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null || true)
+  if [ "${MERMAID_COUNT:-0}" -eq 0 ]; then
+    echo "❌ FAIL: $(basename "$f") has NO Mermaid diagrams"
+    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
+  fi
+done
+
+# Check 2: Color-coded style directives
+for f in $DAILY_MD_FILES; do
+  [ ! -f "$f" ] && continue
+  if grep -q '```mermaid' "$f" 2>/dev/null; then
+    STYLE_COUNT=$(grep -c 'style.*fill:#' "$f" 2>/dev/null || true)
+    if [ "${STYLE_COUNT:-0}" -eq 0 ]; then
+      echo "❌ FAIL: $(basename "$f") Mermaid has NO color-coded style directives"
+      QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
+    fi
+  fi
+done
+
+# Check 3: No [REQUIRED] placeholders
+for f in $ALL_MD_FILES; do
+  [ ! -f "$f" ] && continue
+  REQ_COUNT=$(grep -c '\[REQUIRED\]' "$f" 2>/dev/null || true)
+  if [ "${REQ_COUNT:-0}" -gt 0 ]; then
+    echo "❌ FAIL: $(basename "$f") has $REQ_COUNT [REQUIRED] placeholders"
+    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
+  fi
+done
+
+# Check 4: SWOT evidence tables
+SWOT_FILE="$ANALYSIS_DIR/swot-analysis.md"
+if [ -f "$SWOT_FILE" ]; then
+  TABLE_COUNT=$(grep -c '|.*dok_id\||.*Evidence' "$SWOT_FILE" 2>/dev/null || true)
+  if [ "${TABLE_COUNT:-0}" -eq 0 ]; then
+    echo "❌ FAIL: swot-analysis.md has NO evidence tables with dok_id"
+    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
+  fi
+fi
+
+# Check 5: Per-file analyses must NOT be stubs/boilerplate
+STUB_COUNT=0
+for f in $PERFILE_MD_FILES; do
+  [ ! -f "$f" ] && continue
+  STUB_SCORE=0
+  EMPTY_SWOT=$(grep -cE '_No (strengths|weaknesses|opportunities|threats) identified_' "$f" 2>/dev/null || true)
+  [ "${EMPTY_SWOT:-0}" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
+  BOILERPLATE=$(grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business\|this document has low newsworthiness\|this document must be assessed for' "$f" 2>/dev/null || true)
+  [ "${BOILERPLATE:-0}" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
+  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null || true)
+  [ "${MERMAID_COUNT:-0}" -eq 0 ] && STUB_SCORE=$((STUB_SCORE + 1))
+  TABLE_COUNT=$(grep -c '^|' "$f" 2>/dev/null || true)
+  [ "${TABLE_COUNT:-0}" -lt 2 ] && STUB_SCORE=$((STUB_SCORE + 1))
+  if [ "${STUB_SCORE:-0}" -ge 3 ]; then
+    echo "❌ FAIL: $(basename "$f") is a stub (score=$STUB_SCORE) — MUST be replaced with real analysis"
+    STUB_COUNT=$((STUB_COUNT + 1))
+    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
+  fi
+done
+
+# Check 6: Coverage — every JSON must have an analysis
+if [ -d "$ANALYSIS_DIR/documents" ]; then
+  JSON_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*.json" -type f 2>/dev/null | wc -l)
+  ANALYSIS_MD_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l)
+  if [ "${JSON_COUNT:-0}" -gt 0 ] && [ "${ANALYSIS_MD_COUNT:-0}" -lt "${JSON_COUNT:-0}" ]; then
+    echo "❌ FAIL: Only $ANALYSIS_MD_COUNT analysis files for $JSON_COUNT data files"
+    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
+  fi
+fi
+
+echo ""
+if [ "$QUALITY_PASS" = "true" ]; then
+  echo "✅ Quality gate PASSED — proceed to Step 2"
+else
+  echo "❌ Quality gate FAILED ($FAIL_COUNT failures)"
+  echo "🚨 You MUST go back and fix analysis files. Read templates again, then rewrite failing files."
+  echo "📌 Per-file template: analysis/templates/per-file-political-intelligence.md"
+  echo "📌 SWOT template: analysis/templates/swot-analysis.md"
+  if [ "${STUB_COUNT:-0}" -gt 0 ]; then
+    echo "🚨 $STUB_COUNT per-file analyses are stubs — replace boilerplate with real evidence-based analysis"
+  fi
+fi
+```
+
+> 🚨 **BLOCKING**: If the quality gate FAILS, you MUST go back and fix the failing files. Read the template (`view analysis/templates/<template>.md`), then rewrite the file to match it. Do NOT proceed to Step 2 until ALL checks pass. Do NOT commit stub/boilerplate per-file analyses.
 
 ### 🚨 MANDATORY: Commit Data AND Analysis
 
 **Before deciding whether to generate articles or call noop, you MUST:**
 
 1. **Verify data was downloaded** — `find analysis/data/ -name "*.json" -type f | wc -l` must be > 0
-2. **Verify analysis was created** — every downloaded document has a `.analysis.md` file
+2. **Verify analysis was created** — every downloaded document has a `-analysis.md` file
 3. **Verify daily synthesis files follow templates** — no `[REQUIRED]` placeholders, Mermaid diagrams with real data
 4. **ALWAYS commit data AND analysis together**:
 

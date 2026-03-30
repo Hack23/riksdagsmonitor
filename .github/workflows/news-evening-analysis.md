@@ -699,7 +699,7 @@ For each pending file from the catalog (ordered by significance — propositions
 7. **Stakeholders** — 6-lens impact matrix (government, opposition, citizen, economic, international, media)
 8. **Forward indicators** — Specific watch items with concrete timelines and triggers
 9. **Mermaid diagrams** — At least 1 diagram with REAL data from the file (not placeholder text)
-10. **Write** `{id}.analysis.md` alongside the data file
+10. **Write** `{dok_id}-analysis.md` alongside the data file
 
 **Quality standard:** Each analysis file must match [SWOT.md](../../SWOT.md) / [THREAT_MODEL.md](../../THREAT_MODEL.md) quality — Hack23 header badges, color-coded Mermaid diagrams, evidence tables with confidence labels, and actionable intelligence.
 
@@ -754,12 +754,132 @@ After per-file analyses, rewrite ALL daily files in `analysis/daily/$ARTICLE_DAT
 - [ ] Every daily file has ≥1 color-coded Mermaid diagram (not grey placeholders)
 - [ ] No `[REQUIRED]` placeholders remain in any file
 - [ ] Synthesis references all sibling files with ✅/⚠️/❌ status
+- [ ] Per-file analyses are NOT stubs (no empty SWOT quadrants, no generic boilerplate)
+
+#### B5. MANDATORY Quality Gate — Run Before Proceeding
+
+> 🚨 **BLOCKING**: Do NOT proceed to article generation or commit until this quality gate passes. If it fails, go back and fix analysis files.
+
+```bash
+if [ -z "${ARTICLE_DATE:-}" ]; then
+  if [ -n "${{ github.event.inputs.article_date }}" ]; then
+    ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+  else
+    ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  fi
+fi
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+QUALITY_PASS=true
+FAIL_COUNT=0
+WARN_COUNT=0
+
+echo "=== 🔍 Analysis Quality Gate Check ==="
+
+DAILY_MD_FILES=$(find "$ANALYSIS_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null)
+PERFILE_MD_FILES=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null)
+ALL_MD_FILES=$(find "$ANALYSIS_DIR" -name "*.md" -type f 2>/dev/null)
+echo "📊 Daily: $(echo "$DAILY_MD_FILES" | grep -c '.' 2>/dev/null || true) | Per-file: $(echo "$PERFILE_MD_FILES" | grep -c '.' 2>/dev/null || true)"
+
+# Check 1: Daily synthesis Mermaid diagrams
+for f in $DAILY_MD_FILES; do
+  [ ! -f "$f" ] && continue
+  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null || true)
+  if [ "${MERMAID_COUNT:-0}" -eq 0 ]; then
+    echo "❌ FAIL: $(basename "$f") has NO Mermaid diagrams"
+    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
+  fi
+done
+
+# Check 2: Color-coded style directives in Mermaid diagrams
+for f in $DAILY_MD_FILES; do
+  [ ! -f "$f" ] && continue
+  if grep -q '```mermaid' "$f" 2>/dev/null; then
+    STYLE_COUNT=$(grep -c 'style.*fill:#' "$f" 2>/dev/null || true)
+    if [ "${STYLE_COUNT:-0}" -eq 0 ]; then
+      echo "❌ FAIL: $(basename "$f") Mermaid has NO color-coded style directives"
+      QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
+    fi
+  fi
+done
+
+# Check 3: No [REQUIRED] placeholders
+for f in $ALL_MD_FILES; do
+  [ ! -f "$f" ] && continue
+  REQ_COUNT=$(grep -c '\[REQUIRED\]' "$f" 2>/dev/null || true)
+  if [ "${REQ_COUNT:-0}" -gt 0 ]; then
+    echo "❌ FAIL: $(basename "$f") has $REQ_COUNT unfilled [REQUIRED] placeholders"
+    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
+  fi
+done
+
+# Check 4: SWOT evidence tables with dok_id
+SWOT_FILE="$ANALYSIS_DIR/swot-analysis.md"
+if [ -f "$SWOT_FILE" ]; then
+  TABLE_COUNT=$(grep -c '|.*dok_id\||.*Evidence' "$SWOT_FILE" 2>/dev/null || true)
+  if [ "${TABLE_COUNT:-0}" -eq 0 ]; then
+    echo "❌ FAIL: swot-analysis.md has NO evidence tables with dok_id"
+    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
+  fi
+fi
+
+# Check 5: Structured tables in daily synthesis (not just plain prose)
+for f in $DAILY_MD_FILES; do
+  [ ! -f "$f" ] && continue
+  TABLE_COUNT=$(grep -c '^|' "$f" 2>/dev/null || true)
+  if [ "${TABLE_COUNT:-0}" -lt 3 ]; then
+    echo "⚠️ WARNING: $(basename "$f") has only $TABLE_COUNT table rows — templates require structured tables"
+    WARN_COUNT=$((WARN_COUNT + 1))
+  fi
+done
+
+# Check 6: Per-file analyses must NOT be stubs
+STUB_COUNT=0
+for f in $PERFILE_MD_FILES; do
+  [ ! -f "$f" ] && continue
+  STUB_SCORE=0
+  [ "$(grep -cE '_No (strengths|weaknesses|opportunities|threats) identified_' "$f" 2>/dev/null || true)" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
+  [ "$(grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business\|this document has low newsworthiness\|this document must be assessed for' "$f" 2>/dev/null || true)" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
+  [ "$(grep -c '```mermaid' "$f" 2>/dev/null || true)" -eq 0 ] && STUB_SCORE=$((STUB_SCORE + 1))
+  [ "$(grep -c '^|' "$f" 2>/dev/null || true)" -lt 2 ] && STUB_SCORE=$((STUB_SCORE + 1))
+  if [ "${STUB_SCORE:-0}" -ge 3 ]; then
+    echo "❌ FAIL: $(basename "$f") is a stub (score=$STUB_SCORE) — MUST be replaced with real analysis"
+    STUB_COUNT=$((STUB_COUNT + 1)); QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
+  fi
+done
+
+# Check 7: Coverage — every JSON must have an analysis
+if [ -d "$ANALYSIS_DIR/documents" ]; then
+  JSON_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*.json" -type f 2>/dev/null | wc -l)
+  ANALYSIS_MD_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l)
+  if [ "${JSON_COUNT:-0}" -gt 0 ] && [ "${ANALYSIS_MD_COUNT:-0}" -lt "${JSON_COUNT:-0}" ]; then
+    echo "❌ FAIL: Only $ANALYSIS_MD_COUNT analysis files for $JSON_COUNT data files"
+    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
+  elif [ "${JSON_COUNT:-0}" -gt 0 ]; then
+    echo "✅ PASS: $ANALYSIS_MD_COUNT analysis files for $JSON_COUNT data files"
+  fi
+fi
+
+echo ""
+echo "=== Quality Gate Summary ==="
+echo "Failures: $FAIL_COUNT | Warnings: $WARN_COUNT"
+if [ "$QUALITY_PASS" = "true" ]; then
+  echo "✅ Quality gate PASSED — proceed to article generation"
+else
+  echo "❌ Quality gate FAILED ($FAIL_COUNT failures) — fix analysis files before proceeding"
+  [ "${STUB_COUNT:-0}" -gt 0 ] && echo "🚨 $STUB_COUNT per-file analyses are stubs — read analysis/templates/per-file-political-intelligence.md and rewrite"
+  echo "📌 For per-file analyses: read analysis/templates/per-file-political-intelligence.md"
+  echo "📌 For daily synthesis: read the corresponding template in analysis/templates/"
+  echo "📌 Reference good examples: SWOT.md, THREAT_MODEL.md"
+fi
+```
+
+> **If the quality gate FAILS**: Go back and rewrite the failing files. Read the template again (`view analysis/templates/<template>.md`), then rewrite the file to match it. Do NOT proceed until all checks pass.
 
 ### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
 
 **Before deciding whether to generate articles or call noop, you MUST:**
 
-1. **Review the analysis artifacts** in `analysis/daily/YYYY-MM-DD/` and per-file `.analysis.md` files — read `synthesis-summary.md` and significance scores to understand what was found
+1. **Review the analysis artifacts** in `analysis/daily/YYYY-MM-DD/` and per-file `-analysis.md` files — read `synthesis-summary.md` and significance scores to understand what was found
 2. **Summarize the analysis findings** — note how many documents were downloaded, their significance scores, key themes, and risk levels
 3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
 
@@ -778,7 +898,7 @@ else
 fi
 ```
 
-> **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the analysis produced ANY output files (per-file `.analysis.md` or daily synthesis), you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Evening Analysis - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if NO analysis output was generated.
+> **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the analysis produced ANY output files (per-file `-analysis.md` or daily synthesis), you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Evening Analysis - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if NO analysis output was generated.
 
 ## Step 2: Gather Parliamentary Data
 
