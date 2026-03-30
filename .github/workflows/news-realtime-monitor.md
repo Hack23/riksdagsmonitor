@@ -433,14 +433,14 @@ echo "=== 🔍 Analysis Quality Gate Check ==="
 ALL_MD_FILES=$(find "$ANALYSIS_DIR" -name "*.md" -type f 2>/dev/null)
 DAILY_MD_FILES=$(find "$ANALYSIS_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null)
 PERFILE_MD_FILES=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null)
-echo "📊 Daily synthesis files: $(echo "$DAILY_MD_FILES" | grep -c '.' 2>/dev/null || echo 0)"
-echo "📊 Per-file analysis files: $(echo "$PERFILE_MD_FILES" | grep -c '.' 2>/dev/null || echo 0)"
+echo "📊 Daily synthesis files: $(echo "$DAILY_MD_FILES" | grep -c '.' 2>/dev/null || true)"
+echo "📊 Per-file analysis files: $(echo "$PERFILE_MD_FILES" | grep -c '.' 2>/dev/null || true)"
 
 # Check 1: Daily synthesis Mermaid diagrams
 for f in $DAILY_MD_FILES; do
   [ ! -f "$f" ] && continue
-  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null || echo 0)
-  if [ "$MERMAID_COUNT" -eq 0 ]; then
+  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null || true)
+  if [ "${MERMAID_COUNT:-0}" -eq 0 ]; then
     echo "❌ FAIL: $(basename "$f") has NO Mermaid diagrams"
     QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
   fi
@@ -450,8 +450,8 @@ done
 for f in $DAILY_MD_FILES; do
   [ ! -f "$f" ] && continue
   if grep -q '```mermaid' "$f" 2>/dev/null; then
-    STYLE_COUNT=$(grep -c 'style.*fill:#' "$f" 2>/dev/null || echo 0)
-    if [ "$STYLE_COUNT" -eq 0 ]; then
+    STYLE_COUNT=$(grep -c 'style.*fill:#' "$f" 2>/dev/null || true)
+    if [ "${STYLE_COUNT:-0}" -eq 0 ]; then
       echo "❌ FAIL: $(basename "$f") Mermaid has NO color-coded style directives"
       QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
     fi
@@ -461,8 +461,8 @@ done
 # Check 3: No [REQUIRED] placeholders
 for f in $ALL_MD_FILES; do
   [ ! -f "$f" ] && continue
-  REQ_COUNT=$(grep -c '\[REQUIRED\]' "$f" 2>/dev/null || echo 0)
-  if [ "$REQ_COUNT" -gt 0 ]; then
+  REQ_COUNT=$(grep -c '\[REQUIRED\]' "$f" 2>/dev/null || true)
+  if [ "${REQ_COUNT:-0}" -gt 0 ]; then
     echo "❌ FAIL: $(basename "$f") has $REQ_COUNT [REQUIRED] placeholders"
     QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
   fi
@@ -471,8 +471,8 @@ done
 # Check 4: SWOT evidence tables
 SWOT_FILE="$ANALYSIS_DIR/swot-analysis.md"
 if [ -f "$SWOT_FILE" ]; then
-  TABLE_COUNT=$(grep -c '|.*dok_id\||.*Evidence' "$SWOT_FILE" 2>/dev/null || echo 0)
-  if [ "$TABLE_COUNT" -eq 0 ]; then
+  TABLE_COUNT=$(grep -c '|.*dok_id\||.*Evidence' "$SWOT_FILE" 2>/dev/null || true)
+  if [ "${TABLE_COUNT:-0}" -eq 0 ]; then
     echo "❌ FAIL: swot-analysis.md has NO evidence tables with dok_id"
     QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
   fi
@@ -483,15 +483,15 @@ STUB_COUNT=0
 for f in $PERFILE_MD_FILES; do
   [ ! -f "$f" ] && continue
   STUB_SCORE=0
-  EMPTY_SWOT=$(grep -c '_No .* identified_' "$f" 2>/dev/null || echo 0)
-  [ "$EMPTY_SWOT" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
-  BOILERPLATE=$(grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business\|this document has low newsworthiness\|this document must be assessed for' "$f" 2>/dev/null || echo 0)
-  [ "$BOILERPLATE" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
-  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null || echo 0)
-  [ "$MERMAID_COUNT" -eq 0 ] && STUB_SCORE=$((STUB_SCORE + 1))
-  TABLE_COUNT=$(grep -c '^|' "$f" 2>/dev/null || echo 0)
-  [ "$TABLE_COUNT" -lt 2 ] && STUB_SCORE=$((STUB_SCORE + 1))
-  if [ "$STUB_SCORE" -ge 3 ]; then
+  EMPTY_SWOT=$(grep -cE '_No (strengths|weaknesses|opportunities|threats) identified_' "$f" 2>/dev/null || true)
+  [ "${EMPTY_SWOT:-0}" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
+  BOILERPLATE=$(grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business\|this document has low newsworthiness\|this document must be assessed for' "$f" 2>/dev/null || true)
+  [ "${BOILERPLATE:-0}" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
+  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null || true)
+  [ "${MERMAID_COUNT:-0}" -eq 0 ] && STUB_SCORE=$((STUB_SCORE + 1))
+  TABLE_COUNT=$(grep -c '^|' "$f" 2>/dev/null || true)
+  [ "${TABLE_COUNT:-0}" -lt 2 ] && STUB_SCORE=$((STUB_SCORE + 1))
+  if [ "${STUB_SCORE:-0}" -ge 3 ]; then
     echo "❌ FAIL: $(basename "$f") is a stub (score=$STUB_SCORE) — MUST be replaced with real analysis"
     STUB_COUNT=$((STUB_COUNT + 1))
     QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
@@ -502,7 +502,7 @@ done
 if [ -d "$ANALYSIS_DIR/documents" ]; then
   JSON_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*.json" -type f 2>/dev/null | wc -l)
   ANALYSIS_MD_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l)
-  if [ "$JSON_COUNT" -gt 0 ] && [ "$ANALYSIS_MD_COUNT" -lt "$JSON_COUNT" ]; then
+  if [ "${JSON_COUNT:-0}" -gt 0 ] && [ "${ANALYSIS_MD_COUNT:-0}" -lt "${JSON_COUNT:-0}" ]; then
     echo "❌ FAIL: Only $ANALYSIS_MD_COUNT analysis files for $JSON_COUNT data files"
     QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
   fi
@@ -516,7 +516,7 @@ else
   echo "🚨 You MUST go back and fix analysis files. Read templates again, then rewrite failing files."
   echo "📌 Per-file template: analysis/templates/per-file-political-intelligence.md"
   echo "📌 SWOT template: analysis/templates/swot-analysis.md"
-  if [ "$STUB_COUNT" -gt 0 ]; then
+  if [ "${STUB_COUNT:-0}" -gt 0 ]; then
     echo "🚨 $STUB_COUNT per-file analyses are stubs — replace boilerplate with real evidence-based analysis"
   fi
 fi

@@ -777,12 +777,12 @@ echo "=== 🔍 Analysis Quality Gate Check ==="
 DAILY_MD_FILES=$(find "$ANALYSIS_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null)
 PERFILE_MD_FILES=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null)
 ALL_MD_FILES=$(find "$ANALYSIS_DIR" -name "*.md" -type f 2>/dev/null)
-echo "📊 Daily: $(echo "$DAILY_MD_FILES" | grep -c '.' 2>/dev/null || echo 0) | Per-file: $(echo "$PERFILE_MD_FILES" | grep -c '.' 2>/dev/null || echo 0)"
+echo "📊 Daily: $(echo "$DAILY_MD_FILES" | grep -c '.' 2>/dev/null || true) | Per-file: $(echo "$PERFILE_MD_FILES" | grep -c '.' 2>/dev/null || true)"
 
 # Check 1: Daily synthesis Mermaid diagrams
 for f in $DAILY_MD_FILES; do
   [ ! -f "$f" ] && continue
-  if [ "$(grep -c '```mermaid' "$f" 2>/dev/null || echo 0)" -eq 0 ]; then
+  if [ "$(grep -c '```mermaid' "$f" 2>/dev/null || true)" -eq 0 ]; then
     echo "❌ FAIL: $(basename "$f") has NO Mermaid diagrams"
     QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
   fi
@@ -791,7 +791,7 @@ done
 # Check 2: No [REQUIRED] placeholders
 for f in $ALL_MD_FILES; do
   [ ! -f "$f" ] && continue
-  if [ "$(grep -c '\[REQUIRED\]' "$f" 2>/dev/null || echo 0)" -gt 0 ]; then
+  if [ "$(grep -c '\[REQUIRED\]' "$f" 2>/dev/null || true)" -gt 0 ]; then
     echo "❌ FAIL: $(basename "$f") has unfilled [REQUIRED] placeholders"
     QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
   fi
@@ -802,11 +802,11 @@ STUB_COUNT=0
 for f in $PERFILE_MD_FILES; do
   [ ! -f "$f" ] && continue
   STUB_SCORE=0
-  [ "$(grep -c '_No .* identified_' "$f" 2>/dev/null || echo 0)" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
-  [ "$(grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business' "$f" 2>/dev/null || echo 0)" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
-  [ "$(grep -c '```mermaid' "$f" 2>/dev/null || echo 0)" -eq 0 ] && STUB_SCORE=$((STUB_SCORE + 1))
-  [ "$(grep -c '^|' "$f" 2>/dev/null || echo 0)" -lt 2 ] && STUB_SCORE=$((STUB_SCORE + 1))
-  if [ "$STUB_SCORE" -ge 3 ]; then
+  [ "$(grep -cE '_No (strengths|weaknesses|opportunities|threats) identified_' "$f" 2>/dev/null || true)" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
+  [ "$(grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business' "$f" 2>/dev/null || true)" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
+  [ "$(grep -c '```mermaid' "$f" 2>/dev/null || true)" -eq 0 ] && STUB_SCORE=$((STUB_SCORE + 1))
+  [ "$(grep -c '^|' "$f" 2>/dev/null || true)" -lt 2 ] && STUB_SCORE=$((STUB_SCORE + 1))
+  if [ "${STUB_SCORE:-0}" -ge 3 ]; then
     echo "❌ FAIL: $(basename "$f") is a stub (score=$STUB_SCORE) — MUST be replaced with real analysis"
     STUB_COUNT=$((STUB_COUNT + 1)); QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
   fi
@@ -817,7 +817,7 @@ if [ "$QUALITY_PASS" = "true" ]; then
   echo "✅ Quality gate PASSED — proceed to article generation"
 else
   echo "❌ Quality gate FAILED ($FAIL_COUNT failures) — fix analysis files before proceeding"
-  [ "$STUB_COUNT" -gt 0 ] && echo "🚨 $STUB_COUNT per-file analyses are stubs — read analysis/templates/per-file-political-intelligence.md and rewrite"
+  [ "${STUB_COUNT:-0}" -gt 0 ] && echo "🚨 $STUB_COUNT per-file analyses are stubs — read analysis/templates/per-file-political-intelligence.md and rewrite"
 fi
 ```
 

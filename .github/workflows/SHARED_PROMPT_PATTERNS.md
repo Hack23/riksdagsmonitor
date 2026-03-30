@@ -207,8 +207,8 @@ echo "=== 🔍 Analysis Quality Gate Check ==="
 ALL_MD_FILES=$(find "$ANALYSIS_DIR" -name "*.md" -type f 2>/dev/null)
 DAILY_MD_FILES=$(find "$ANALYSIS_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null)
 PERFILE_MD_FILES=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null)
-PERFILE_COUNT=$(echo "$PERFILE_MD_FILES" | grep -c '.' 2>/dev/null || echo 0)
-echo "📊 Daily synthesis files: $(echo "$DAILY_MD_FILES" | grep -c '.' 2>/dev/null || echo 0)"
+PERFILE_COUNT=$(echo "$PERFILE_MD_FILES" | grep -c '.' 2>/dev/null || true)
+echo "📊 Daily synthesis files: $(echo "$DAILY_MD_FILES" | grep -c '.' 2>/dev/null || true)"
 echo "📊 Per-file analysis files: $PERFILE_COUNT"
 
 # Check 1: Every daily synthesis file must contain at least 1 Mermaid diagram
@@ -216,8 +216,8 @@ echo ""
 echo "--- Check 1: Mermaid diagrams in daily synthesis files ---"
 for f in $DAILY_MD_FILES; do
   [ ! -f "$f" ] && continue
-  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null || echo 0)
-  if [ "$MERMAID_COUNT" -eq 0 ]; then
+  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null) || true
+  if [ "${MERMAID_COUNT:-0}" -eq 0 ]; then
     echo "❌ FAIL: $f has NO Mermaid diagrams (minimum: 1)"
     QUALITY_PASS=false
     FAIL_COUNT=$((FAIL_COUNT + 1))
@@ -232,8 +232,8 @@ echo "--- Check 2: Color-coded style directives in Mermaid diagrams ---"
 for f in $DAILY_MD_FILES; do
   [ ! -f "$f" ] && continue
   if grep -q '```mermaid' "$f" 2>/dev/null; then
-    STYLE_COUNT=$(grep -c 'style.*fill:#' "$f" 2>/dev/null || echo 0)
-    if [ "$STYLE_COUNT" -eq 0 ]; then
+    STYLE_COUNT=$(grep -c 'style.*fill:#' "$f" 2>/dev/null) || true
+    if [ "${STYLE_COUNT:-0}" -eq 0 ]; then
       echo "❌ FAIL: $f has Mermaid diagram(s) but NO color-coded style directives"
       QUALITY_PASS=false
       FAIL_COUNT=$((FAIL_COUNT + 1))
@@ -248,8 +248,8 @@ echo ""
 echo "--- Check 3: No [REQUIRED] placeholders ---"
 for f in $ALL_MD_FILES; do
   [ ! -f "$f" ] && continue
-  REQ_COUNT=$(grep -c '\[REQUIRED\]' "$f" 2>/dev/null || echo 0)
-  if [ "$REQ_COUNT" -gt 0 ]; then
+  REQ_COUNT=$(grep -c '\[REQUIRED\]' "$f" 2>/dev/null) || true
+  if [ "${REQ_COUNT:-0}" -gt 0 ]; then
     echo "❌ FAIL: $f has $REQ_COUNT unfilled [REQUIRED] placeholders"
     QUALITY_PASS=false
     FAIL_COUNT=$((FAIL_COUNT + 1))
@@ -261,8 +261,8 @@ echo ""
 echo "--- Check 4: SWOT evidence tables ---"
 SWOT_FILE="$ANALYSIS_DIR/swot-analysis.md"
 if [ -f "$SWOT_FILE" ]; then
-  TABLE_COUNT=$(grep -c '|.*dok_id\||.*Evidence' "$SWOT_FILE" 2>/dev/null || echo 0)
-  if [ "$TABLE_COUNT" -eq 0 ]; then
+  TABLE_COUNT=$(grep -c '|.*dok_id\||.*Evidence' "$SWOT_FILE" 2>/dev/null) || true
+  if [ "${TABLE_COUNT:-0}" -eq 0 ]; then
     echo "❌ FAIL: swot-analysis.md has NO evidence tables with dok_id columns"
     QUALITY_PASS=false
     FAIL_COUNT=$((FAIL_COUNT + 1))
@@ -276,8 +276,8 @@ echo ""
 echo "--- Check 5: Structured tables in daily synthesis ---"
 for f in $DAILY_MD_FILES; do
   [ ! -f "$f" ] && continue
-  TABLE_COUNT=$(grep -c '^|' "$f" 2>/dev/null || echo 0)
-  if [ "$TABLE_COUNT" -lt 3 ]; then
+  TABLE_COUNT=$(grep -c '^|' "$f" 2>/dev/null) || true
+  if [ "${TABLE_COUNT:-0}" -lt 3 ]; then
     echo "⚠️ WARNING: $f has only $TABLE_COUNT table rows — templates require structured tables"
     WARN_COUNT=$((WARN_COUNT + 1))
   fi
@@ -292,33 +292,33 @@ for f in $PERFILE_MD_FILES; do
   BASENAME=$(basename "$f")
   # Detect known stub/boilerplate patterns that scripts generate as placeholders
   STUB_SCORE=0
-  # Pattern 1: Empty SWOT quadrants ("_No strengths identified_", "_No weaknesses identified_")
-  EMPTY_SWOT=$(grep -c '_No .* identified_' "$f" 2>/dev/null || echo 0)
-  if [ "$EMPTY_SWOT" -ge 2 ]; then
+  # Pattern 1: Empty SWOT quadrants ("_No strengths identified_", "_No weaknesses identified_", etc.)
+  EMPTY_SWOT=$(grep -cE '_No (strengths|weaknesses|opportunities|threats) identified_' "$f" 2>/dev/null || true)
+  if [ "${EMPTY_SWOT:-0}" -ge 2 ]; then
     STUB_SCORE=$((STUB_SCORE + 2))
   fi
   # Pattern 2: Generic boilerplate perspective text (script-generated template text)
-  BOILERPLATE=$(grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business\|this document has low newsworthiness\|this document must be assessed for' "$f" 2>/dev/null || echo 0)
-  if [ "$BOILERPLATE" -ge 2 ]; then
+  BOILERPLATE=$(grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business\|this document has low newsworthiness\|this document must be assessed for' "$f" 2>/dev/null) || true
+  if [ "${BOILERPLATE:-0}" -ge 2 ]; then
     STUB_SCORE=$((STUB_SCORE + 2))
   fi
   # Pattern 3: No Mermaid diagrams in per-file analysis
-  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null || echo 0)
-  if [ "$MERMAID_COUNT" -eq 0 ]; then
+  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null) || true
+  if [ "${MERMAID_COUNT:-0}" -eq 0 ]; then
     STUB_SCORE=$((STUB_SCORE + 1))
   fi
   # Pattern 4: No evidence table rows (per-file must have structured tables)
-  TABLE_COUNT=$(grep -c '^|' "$f" 2>/dev/null || echo 0)
-  if [ "$TABLE_COUNT" -lt 2 ]; then
+  TABLE_COUNT=$(grep -c '^|' "$f" 2>/dev/null) || true
+  if [ "${TABLE_COUNT:-0}" -lt 2 ]; then
     STUB_SCORE=$((STUB_SCORE + 1))
   fi
   # FAIL if stub score >= 3 (multiple stub indicators = unreplaced boilerplate)
-  if [ "$STUB_SCORE" -ge 3 ]; then
+  if [ "${STUB_SCORE:-0}" -ge 3 ]; then
     echo "❌ FAIL: $BASENAME is a stub/boilerplate (score=$STUB_SCORE) — AI MUST replace with real template-compliant analysis"
     STUB_PERFILE=$((STUB_PERFILE + 1))
     QUALITY_PASS=false
     FAIL_COUNT=$((FAIL_COUNT + 1))
-  elif [ "$STUB_SCORE" -ge 2 ]; then
+  elif [ "${STUB_SCORE:-0}" -ge 2 ]; then
     echo "⚠️ WARNING: $BASENAME has stub-like patterns (score=$STUB_SCORE) — verify analysis is real, not boilerplate"
     WARN_COUNT=$((WARN_COUNT + 1))
   else
@@ -340,11 +340,11 @@ echo "--- Check 7: Per-file analysis coverage ---"
 if [ -d "$ANALYSIS_DIR/documents" ]; then
   JSON_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*.json" -type f 2>/dev/null | wc -l)
   ANALYSIS_MD_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l)
-  if [ "$JSON_COUNT" -gt 0 ] && [ "$ANALYSIS_MD_COUNT" -lt "$JSON_COUNT" ]; then
+  if [ "${JSON_COUNT:-0}" -gt 0 ] && [ "${ANALYSIS_MD_COUNT:-0}" -lt "${JSON_COUNT:-0}" ]; then
     echo "❌ FAIL: Only $ANALYSIS_MD_COUNT analysis files for $JSON_COUNT data files — every document needs an analysis"
     QUALITY_PASS=false
     FAIL_COUNT=$((FAIL_COUNT + 1))
-  elif [ "$JSON_COUNT" -gt 0 ]; then
+  elif [ "${JSON_COUNT:-0}" -gt 0 ]; then
     echo "✅ PASS: $ANALYSIS_MD_COUNT analysis files for $JSON_COUNT data files"
   fi
 fi
