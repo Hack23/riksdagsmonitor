@@ -335,7 +335,7 @@ After the script-based analysis, perform **AI-driven per-file analysis** for dee
    - `analysis/methodologies/ai-driven-analysis-guide.md`
    - `analysis/methodologies/political-swot-framework.md`
    - `analysis/templates/per-file-political-intelligence.md`
-3. For each pending file: classify, SWOT, risk assess, STRIDE, stakeholder impact, write `.analysis.md`
+3. For each pending file: classify, SWOT, risk assess, Political Threat Taxonomy, stakeholder impact, write `.analysis.md`
 4. Each analysis file must include color-coded Mermaid diagrams and evidence tables
 5. Quality gate: ≥3 evidence points, confidence labels, no template placeholders
 

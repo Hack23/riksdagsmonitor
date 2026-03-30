@@ -114,7 +114,7 @@ The agent MUST read (using `view` or `cat`) every one of these files before writ
 1. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Master guide with bad vs. good examples
 2. **`analysis/methodologies/political-swot-framework.md`** — Evidence-based SWOT with confidence hierarchy
 3. **`analysis/methodologies/political-risk-methodology.md`** — 5×5 Likelihood × Impact risk matrix
-4. **`analysis/methodologies/political-threat-framework.md`** — STRIDE-adapted political threat model
+4. **`analysis/methodologies/political-threat-framework.md`** — Political Threat Taxonomy (Attack Trees, Kill Chain, Diamond Model)
 5. **`analysis/methodologies/political-classification-guide.md`** — Sensitivity, domain, urgency taxonomy
 6. **`analysis/methodologies/political-style-guide.md`** — Writing standards and evidence density
 
@@ -126,7 +126,7 @@ The agent MUST read every template. These define WHAT the output must look like:
 2. **`analysis/templates/synthesis-summary.md`** — Daily synthesis (SYN-ID, Intelligence Dashboard)
 3. **`analysis/templates/risk-assessment.md`** — Risk assessment (RSK-ID, Heat Map, L×I scores)
 4. **`analysis/templates/political-classification.md`** — Classification (CLS-ID, Decision Tree)
-5. **`analysis/templates/threat-analysis.md`** — Threat analysis (THR-ID, STRIDE Network)
+5. **`analysis/templates/threat-analysis.md`** — Threat analysis (THR-ID, Threat Taxonomy Network)
 6. **`analysis/templates/swot-analysis.md`** — SWOT analysis (SWT-ID, Quadrant Mapping)
 7. **`analysis/templates/stakeholder-impact.md`** — Stakeholder impact (STA-ID, 6 Groups, Impact Radar)
 8. **`analysis/templates/significance-scoring.md`** — Significance scoring (SIG-ID, 5 Dimensions)
@@ -140,7 +140,7 @@ For EACH document in `analysis/data/`:
    - **Classification** — Sensitivity (PUBLIC/SENSITIVE/RESTRICTED), Domain (13 codes), Urgency, Significance (0–10)
    - **SWOT** — Government + Opposition impact with evidence (cite dok_id, vote counts, party names)
    - **Risk** — 5×5 Likelihood × Impact matrix with numeric scores
-   - **STRIDE** — Political threat analysis (Spoofing, Tampering, Repudiation, Information Disclosure, Denial, Elevation)
+   - **Political Threat Taxonomy** — 6 democratic function categories (Narrative Integrity, Legislative Integrity, Accountability, Transparency, Democratic Process, Power Balance)
    - **Stakeholders** — 6 groups (Citizens, Government, Opposition, Business, Civil Society, International)
    - **Forward Indicators** — Specific watch items with concrete timelines and triggers
 3. **Write `{dok_id}-analysis.md`** alongside the data file, following `per-file-political-intelligence.md` template EXACTLY
@@ -170,7 +170,7 @@ For each file in `analysis/daily/$ARTICLE_DATE/`, the agent MUST rewrite it to m
 | `synthesis-summary.md` | `analysis/templates/synthesis-summary.md` | SYN-ID, Intelligence Dashboard (Mermaid), Top Findings table, Aggregated SWOT, Risk Landscape, Threat Summary, Stakeholder Impact, Narrative Direction, Forward Indicators, Artifacts Inventory with ✅/⚠️/❌ status |
 | `risk-assessment.md` | `analysis/templates/risk-assessment.md` | RSK-ID, Risk Heat Map (Mermaid quadrant chart), ≥2 risks with L×I numeric scores, Coalition Stability Risk, Escalation Rules |
 | `classification-results.md` | `analysis/templates/political-classification.md` | CLS-ID, Sensitivity Decision Tree (Mermaid), per-document table with sensitivity/domain/urgency/significance |
-| `threat-analysis.md` | `analysis/templates/threat-analysis.md` | THR-ID, STRIDE Network (Mermaid), ALL 6 STRIDE categories with ≥1 threat each (severity 1-5), Threat Actor Mapping |
+| `threat-analysis.md` | `analysis/templates/threat-analysis.md` | THR-ID, Threat Taxonomy Network (Mermaid), ALL 6 threat categories with ≥1 threat each (severity 1-5), Threat Actor Mapping |
 | `swot-analysis.md` | `analysis/templates/swot-analysis.md` | SWT-ID, Quadrant Mapping (Mermaid mindmap), ≥2 filled quadrants with dok_id evidence, Coalition + Opposition SWOT |
 | `stakeholder-perspectives.md` | `analysis/templates/stakeholder-impact.md` | STA-ID, Impact Radar (Mermaid), ALL 6 stakeholder groups assessed with impact level and timeline |
 | `significance-scoring.md` | `analysis/templates/significance-scoring.md` | SIG-ID, 5-dimension scoring (Parliamentary, Policy Impact, Public Interest, Urgency, Cross-party), Composite Score, Publication Decision |
@@ -182,7 +182,7 @@ For each file in `analysis/daily/$ARTICLE_DATE/`, the agent MUST rewrite it to m
 - [ ] Risk assessment has ≥2 risks with L×I numeric scores
 - [ ] SWOT has structured evidence tables with columns: `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact`, `Entry Date`
 - [ ] SWOT has ≥2 filled quadrants with evidence citations (dok_id)
-- [ ] Threat analysis covers ALL 6 STRIDE categories
+- [ ] Threat analysis covers ALL 6 Political Threat Taxonomy categories
 - [ ] Significance scoring uses 5-dimension model with publication decision
 - [ ] Synthesis references ALL sibling files with ✅/⚠️/❌ status
 - [ ] No `[REQUIRED]` placeholders remaining in any file
@@ -563,7 +563,7 @@ This ensures that once lookback persists `ARTICLE_DATE` to `$GITHUB_ENV`, subseq
 | `synthesis-summary.md` | **`analysis/templates/synthesis-summary.md`** | Synthesis Context (SYN-ID, date, confidence), Intelligence Dashboard (Mermaid), Top Findings table, Aggregated SWOT, Risk Landscape, Threat Summary, Stakeholder Impact, Narrative Direction, Forward Indicators, Artifacts Inventory |
 | `risk-assessment.md` | **`analysis/templates/risk-assessment.md`** | Risk Context (RSK-ID, riksmöte, political context), Risk Heat Map (Mermaid), Risk Inventory table (L×I scores), Coalition Stability, Policy Implementation Risk, Budget Risk, Electoral Risk, Escalation Rules |
 | `classification-results.md` | **`analysis/templates/political-classification.md`** | Classification Context (CLS-ID), Sensitivity Decision Tree (Mermaid), Per-document classification table (sensitivity, domain, urgency, scope, significance 0-10), Likelihood × Impact matrix |
-| `threat-analysis.md` | **`analysis/templates/threat-analysis.md`** | Threat Context (THR-ID), STRIDE Network (Mermaid), 6 STRIDE categories (S/T/R/I/D/E) with ≥1 threat each (severity 1-5), Threat Actor Mapping, Priority Mitigations, Escalation Decision |
+| `threat-analysis.md` | **`analysis/templates/threat-analysis.md`** | Threat Context (THR-ID), Threat Taxonomy Network (Mermaid), 6 threat categories (NI/LI/AC/TR/DP/PB) with ≥1 threat each (severity 1-5), Threat Actor Mapping, Priority Mitigations, Escalation Decision |
 | `swot-analysis.md` | **`analysis/templates/swot-analysis.md`** | SWOT Context (SWT-ID), Quadrant Mapping (Mermaid), Coalition SWOT, Opposition SWOT, Policy Domain SWOT — all entries with dok_id evidence, confidence, impact, entry date |
 | `stakeholder-perspectives.md` | **`analysis/templates/stakeholder-impact.md`** | Stakeholder Context (STA-ID), Impact Radar (Mermaid), 6 stakeholder groups assessed (Citizens, Government, Opposition, Business, Civil Society, International), Impact Summary Matrix, Conflicting Impact Resolution |
 | `significance-scoring.md` | **`analysis/templates/significance-scoring.md`** | Scoring Context (SIG-ID), 5-dimension scoring (Parliamentary, Policy Impact, Public Interest, Urgency, Cross-party) each 0-10, Composite Score, Publication Decision threshold |
@@ -583,7 +583,7 @@ This ensures that once lookback persists `ARTICLE_DATE` to `$GITHUB_ENV`, subseq
 - [ ] Risk assessment has ≥2 risks with L×I numeric scores in structured table
 - [ ] SWOT has ≥2 filled quadrants with evidence citations (dok_id, vote counts) in structured tables
 - [ ] SWOT follows template structure: Section 1 (Government Coalition), Section 2 (Opposition), Section 3 (Policy Domain)
-- [ ] Threat analysis covers all 6 STRIDE categories with severity scores
+- [ ] Threat analysis covers all 6 Political Threat Taxonomy categories with severity scores
 - [ ] Significance scoring uses 5-dimension model with numeric scores and publication decision
 - [ ] Synthesis references all sibling files with ✅/⚠️/❌ status
 - [ ] No `[REQUIRED]` placeholders remain in any file
@@ -608,7 +608,7 @@ Read these methodology documents to guide your analysis:
 - **`analysis/methodologies/ai-driven-analysis-guide.md`** — Master per-file analysis guide
 - **`analysis/methodologies/political-swot-framework.md`** — Evidence-based SWOT
 - **`analysis/methodologies/political-risk-methodology.md`** — 5×5 risk matrix
-- **`analysis/methodologies/political-threat-framework.md`** — STRIDE political mapping
+- **`analysis/methodologies/political-threat-framework.md`** — Political Threat Taxonomy
 - **`analysis/methodologies/political-classification-guide.md`** — Sensitivity and domain taxonomy
 - **`analysis/methodologies/political-style-guide.md`** — Writing standards and evidence density
 - **`analysis/templates/per-file-political-intelligence.md`** — Per-file output template
@@ -627,7 +627,7 @@ Read these methodology documents to guide your analysis:
    - Political classification (sensitivity, domain, urgency)
    - SWOT impact (government + opposition, with evidence)
    - Risk assessment (5×5 matrix)
-   - STRIDE threat analysis (where applicable)
+   - Political threat taxonomy assessment (where applicable)
    - Stakeholder impact matrix (6 lenses)
    - Forward indicators (specific watch items)
 3. **Write analysis:** Save as `{dok_id}-analysis.md` alongside the data file

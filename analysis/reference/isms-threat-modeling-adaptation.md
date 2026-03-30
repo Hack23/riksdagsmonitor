@@ -22,6 +22,8 @@
 
 ---
 
+> **⚠️ HISTORICAL REFERENCE ONLY:** This document records the original adaptation from ISMS frameworks. The active methodology has moved to the **Political Threat Taxonomy** (v3.0) which replaces STRIDE categories with politically-native threat categories. See [political-threat-framework.md](../methodologies/political-threat-framework.md) for the current framework.
+
 ## 🎯 Purpose
 
 This reference document maps [Hack23 ISMS Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) frameworks — STRIDE, MITRE ATT&CK, Attack Trees, and Threat Agents — to Riksdagsmonitor's political threat analysis methodology. The adaptation enables systematic, framework-consistent political threat analysis using the same analytical rigour applied to cybersecurity threats.

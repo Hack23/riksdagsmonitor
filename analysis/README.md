@@ -139,7 +139,7 @@ analysis/
 │   ├── ai-driven-analysis-guide.md    ← Master protocol: folder isolation, AI-only analysis, quality gates
 │   ├── political-classification-guide.md ← Multi-dimensional classification, political temperature
 │   ├── political-risk-methodology.md  ← 5×5 matrix, cascading risk, Bayesian updating
-│   ├── political-threat-framework.md  ← Attack Trees, Kill Chain, Diamond Model (beyond STRIDE)
+│   ├── political-threat-framework.md  ← Attack Trees, Kill Chain, Diamond Model, Political Threat Taxonomy
 │   ├── political-swot-framework.md    ← Evidence hierarchy, cross-SWOT interference, scenario generation
 │   └── political-style-guide.md       ← Intelligence writing standards, evidence density, attribution
 ├── reference/                         ← ISMS adaptation mappings
@@ -269,7 +269,7 @@ Real-time monitoring of parliamentary activity with per-file analysis on new dat
 |----------|-------------|------------|
 | `political-classification.md` | New political event arrives | Sensitivity + urgency classification |
 | `risk-assessment.md` | Coalition/policy risk spike | Risk scores + mitigation map |
-| `threat-analysis.md` | STRIDE-format threat review | Threat inventory + actor mapping |
+| `threat-analysis.md` | Political Threat Taxonomy review | Threat inventory + actor mapping |
 | `swot-analysis.md` | Weekly/strategic SWOT pass | Quadrant entries with evidence |
 | `stakeholder-impact.md` | Policy decision announced | Impact by stakeholder group |
 | `significance-scoring.md` | Deciding what to publish | Composite score → publish/skip |
@@ -351,7 +351,7 @@ flowchart LR
 |:--------:|----------|--------------------------|
 | 🔴 1 | [political-swot-framework.md](methodologies/political-swot-framework.md) | Evidence hierarchy, confidence levels, temporal decay, cross-SWOT interference, strategic scenario generation |
 | 🔴 2 | [political-risk-methodology.md](methodologies/political-risk-methodology.md) | 5×5 Likelihood×Impact, cascading risk analysis, Bayesian updating, risk interconnection mapping |
-| 🔴 3 | [political-threat-framework.md](methodologies/political-threat-framework.md) | Attack Trees, Political Kill Chain, Diamond Model, STRIDE adaptation, threat actor profiling |
+| 🔴 3 | [political-threat-framework.md](methodologies/political-threat-framework.md) | Attack Trees, Political Kill Chain, Diamond Model, Political Threat Taxonomy, threat actor profiling |
 | 🟠 4 | [political-classification-guide.md](methodologies/political-classification-guide.md) | Multi-dimensional classification, political temperature index, strategic significance |
 | 🟠 5 | [political-style-guide.md](methodologies/political-style-guide.md) | Intelligence writing standards, evidence density requirements, attribution rules |
 | 🟠 6 | [ai-driven-analysis-guide.md](methodologies/ai-driven-analysis-guide.md) | Master protocol: folder isolation, AI-only analysis, quality gates, time budget |

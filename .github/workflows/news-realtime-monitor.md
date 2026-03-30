@@ -281,7 +281,7 @@ fi
    - `analysis/methodologies/ai-driven-analysis-guide.md` — Master guide (bad vs. good examples, quality gate)
    - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT with confidence hierarchy
    - `analysis/methodologies/political-risk-methodology.md` — 5×5 risk matrix
-   - `analysis/methodologies/political-threat-framework.md` — STRIDE threat model
+   - `analysis/methodologies/political-threat-framework.md` — Political Threat Taxonomy
    - `analysis/methodologies/political-classification-guide.md` — Classification taxonomy
    - `analysis/methodologies/political-style-guide.md` — Writing standards
 
@@ -402,7 +402,7 @@ After data is downloaded, you MUST complete ALL of these steps before proceeding
 1. List all downloaded documents: `find analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/documents/ -name "*.json" -type f`
 2. For EACH JSON file:
    a. Read it with `view` — extract dok_id, titel, datum, parti, organ
-   b. Apply ALL 6 analytical lenses (classification, SWOT, risk, STRIDE, stakeholders, forward indicators)
+   b. Apply ALL 6 analytical lenses (classification, SWOT, risk, Political Threat Taxonomy, stakeholders, forward indicators)
    c. Write or rewrite the per-file analysis markdown so that its filename matches the `*-analysis.md` convention (for example `{dok_id}-analysis.md`) and follows the per-file template EXACTLY
    d. Include ≥1 color-coded Mermaid diagram with `style` directives and REAL data
    e. Include structured evidence tables with dok_id, confidence, impact columns

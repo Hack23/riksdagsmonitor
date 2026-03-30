@@ -503,7 +503,7 @@ After the script-based analysis, perform **AI-driven per-file analysis** for dee
    - `analysis/methodologies/ai-driven-analysis-guide.md` — Master per-file analysis guide (includes bad/good examples)
    - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT with confidence hierarchy
    - `analysis/methodologies/political-risk-methodology.md` — 5×5 Likelihood×Impact risk matrix
-   - `analysis/methodologies/political-threat-framework.md` — STRIDE-adapted threat model, severity calibration
+   - `analysis/methodologies/political-threat-framework.md` — Political Threat Taxonomy, Attack Trees, severity calibration
    - `analysis/methodologies/political-classification-guide.md` — Sensitivity and domain taxonomy
    - `analysis/methodologies/political-style-guide.md` — Writing standards and evidence density
    - `analysis/templates/per-file-political-intelligence.md` — Per-file output template
@@ -520,7 +520,7 @@ After the script-based analysis, perform **AI-driven per-file analysis** for dee
    c. **Classify** — Sensitivity level, domain, urgency, significance (0–10)
    d. **SWOT** — Government + Opposition impact with evidence (cite specific dok_id)
    e. **Risk** — 5×5 Likelihood×Impact matrix with numeric scores
-   f. **STRIDE** — Political threat analysis (only where applicable — cite evidence)
+   f. **Political Threat Taxonomy** — 6 democratic function threat categories (only where applicable — cite evidence)
    g. **Stakeholders** — 6-lens impact matrix
    h. **Forward indicators** — Specific watch items with concrete timelines
    i. **Mermaid diagrams** — At least 1 diagram with REAL data from the file (not placeholder text)

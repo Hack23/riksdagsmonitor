@@ -69,7 +69,7 @@ All monthly files are intended to be created by a planned end-of-month aggregati
 | `monthly-swot-consolidated.md` | Markdown | Full SWOT synthesis for the month; all quadrants with confidence decay applied | All weekly `week-summary-swot.md` files; expired entries removed |
 | `monthly-risk-register.md` | Markdown | Complete risk register for the month; risk trajectories (rising/stable/falling) | All weekly `week-ahead-risk-register.md` files with trend analysis |
 | `monthly-significance-report.md` | Markdown | Top 10 most significant political events of the month; significance score time series | All daily `morning-significance-scores.json` files for the month |
-| `monthly-threat-landscape.md` | Markdown | Consolidated STRIDE-categorised threat inventory for the month | All daily `analysis/daily/YYYY-MM-DD/evening-threat-snapshot.md` files for the month |
+| `monthly-threat-landscape.md` | Markdown | Consolidated threat inventory categorised by Political Threat Taxonomy for the month | All daily `analysis/daily/YYYY-MM-DD/evening-threat-snapshot.md` files for the month |
 
 ---
 
@@ -98,7 +98,7 @@ flowchart TD
 - **SWOT consolidation**: All weekly SWOT entries merged; entries that received HIGH confidence in 3+ weekly assessments are promoted to HIGH monthly confidence; expired entries (>30 days from last update) are removed
 - **Risk register**: Tracks risk ID continuity across weeks; assigns trend arrows (📈 rising / ➡️ stable / 📉 falling); risk IDs that appear for 4+ consecutive weeks become "persistent risks"
 - **Significance report**: Ranks all events by composite significance score; identifies the month's "defining event" (highest scorer); tracks which events generated published articles
-- **Threat landscape**: Groups threats by STRIDE category; identifies new threat actors; tracks resolved vs. ongoing threats
+- **Threat landscape**: Groups threats by Political Threat Taxonomy category; identifies new threat actors; tracks resolved vs. ongoing threats
 
 ---
 

@@ -91,8 +91,8 @@ The ISMS uses consistent emoji to mark document sections and content types. The 
 | ⚖️ | Justice & Law domain |
 | 🤝 | Coalition dynamics; civil society |
 | 🗳️ | Electoral; opposition |
-| 👑 | Power concentration (STRIDE-E) |
-| 🎭 | Disinformation (STRIDE-S) |
+| 👑 | Power concentration (Power Balance) |
+| 🎭 | Disinformation (Narrative Integrity) |
 | 📡 | Real-time monitoring |
 | 🧭 | Strategic analysis |
 
