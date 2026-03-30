@@ -22,7 +22,7 @@ on:
       analysis_depth:
         description: 'Analysis depth for AI iterations (standard=1-2 iterations, deep=2-3 iterations, comprehensive=3+ iterations). Controls SWOT complexity, stakeholder count, and dashboard charts.'
         required: false
-        default: standard
+        default: deep
 
 permissions:
   contents: read
@@ -120,11 +120,14 @@ If **force_generation** is `true`, generate articles even if recent ones exist. 
 
 ## ⏱️ Time Budget (30 minutes)
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
-- **Minutes 3–7**: Run pre-article-analysis pipeline (download data + generate analysis artifacts)
-- **Minutes 7–12**: Query calendar events for next 7 days
-- **Minutes 12–22**: Generate articles for all 14 languages
-- **Minutes 22–27**: Validate and commit analysis + articles
-- **Minutes 27–30**: Create PR with `safeoutputs___create_pull_request`
+- **Minutes 3–5**: Run pre-article-analysis pipeline (download data)
+- **Minutes 5–15**: 🚨 **AI Analysis (10 min minimum)**: Read methodology guides + templates. Create analysis with color-coded Mermaid diagrams and evidence tables. Run quality gate bash check.
+- **Minutes 15–18**: Query calendar events for next 7 days
+- **Minutes 18–25**: Generate articles for all 14 languages
+- **Minutes 25–28**: Validate and commit analysis + articles
+- **Minutes 28–30**: Create PR with `safeoutputs___create_pull_request`
+
+> ⚠️ **Analysis must include color-coded Mermaid diagrams, evidence tables, and template structure compliance** — plain prose is NEVER acceptable.
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
 
@@ -170,13 +173,17 @@ Before generating articles, consult these skills:
 
 ### Standardised Analysis Depth Gate
 
-| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap |
-|-------|--------------|-------------------|--------|---------|
-| standard | 1-2 | ≥3 | ≥1 | optional |
-| deep | 2-3 | ≥5 | ≥2 | required |
-| comprehensive | 3+ | ≥7 | ≥3 | required |
+> ⚠️ **Default is `deep`** — not `standard`. Analysis must always produce publication-quality output with Mermaid diagrams and evidence tables.
 
-> **Read `analysis_depth` input first** (default: `standard`). This controls iteration count and section requirements.
+| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Min. analysis time |
+|-------|--------------|-------------------|--------|---------|-------------------|
+| standard | 1-2 | ≥3 | ≥1 | optional | 10 minutes |
+| deep | 2-3 | ≥5 | ≥2 | required | 15 minutes |
+| comprehensive | 3+ | ≥7 | ≥3 | required | 20 minutes |
+
+**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
+
+> **Read `analysis_depth` input first** (default: `deep`). This controls iteration count and section requirements.
 
 Based on the editorial profile for `week-ahead` (from `scripts/editorial-framework.ts`):
 - **SWOT**: quick (1-paragraph overview only)
