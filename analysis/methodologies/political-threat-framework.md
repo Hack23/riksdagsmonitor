@@ -617,7 +617,7 @@ All identified threat actors are classified on two axes: **Intent** and **Capabi
 
 ### 6.1 Quick API Reference
 ```typescript
-import { analysePoliticalThreats, analyseSinglePridesCategory } from './political-threat-analysis.js';
+import { analysePoliticalThreats, analyseSingleThreatCategory } from './political-threat-analysis.js';
 
 // Full threat profile (legacy API — uses internal threat categories)
 const profile = analysePoliticalThreats(doc, ciaContext);
@@ -626,7 +626,7 @@ console.log(profile.primaryThreat);       // dominant threat category
 console.log(profile.activeThreatAgents); // ThreatAgent[]
 
 // Targeted single-category analysis
-const narrativeThreat = analyseSinglePridesCategory(doc, 'polarization', ciaContext);
+const narrativeThreat = analyseSingleThreatCategory(doc, 'polarization', ciaContext);
 console.log(narrativeThreat?.severity);        // 'critical' | 'high' | 'medium' | 'low'
 console.log(narrativeThreat?.countermeasures); // string[]
 ```
