@@ -50,7 +50,6 @@ export {
   parseArticleMetadata,
   scanNewsArticles,
   buildSlugToLanguagesMap,
-  getAllArticlesWithLanguageInfo,
 } from './helpers.js';
 
 export {

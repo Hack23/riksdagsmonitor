@@ -28,17 +28,8 @@ interface ArticleEntry {
   readonly tags: readonly string[];
 }
 
-/** Article entry enriched with language availability info */
-interface ArticleWithLanguageInfo extends ArticleEntry {
-  readonly availableLanguages: readonly Language[];
-}
-
-/** Articles grouped by language */
-type ArticlesByLanguage = Partial<Record<Language, ArticleEntry[]>>;
-
 /** Shape of the generate-news-indexes module */
 interface GenerateNewsIndexesModule {
-  readonly getAllArticlesWithLanguageInfo: (articlesByLang: ArticlesByLanguage) => ArticleWithLanguageInfo[];
   readonly generateLanguageBadge: (lang: Language, isRTL?: boolean) => string;
   readonly generateAvailableLanguages: (languages: readonly Language[], currentLang: Language) => string;
 }
@@ -66,89 +57,6 @@ describe('News Realtime Monitor - Multi-Language Synchronization', () => {
 
   afterEach(() => {
     vi.clearAllMocks();
-  });
-
-  describe('getAllArticlesWithLanguageInfo', () => {
-    it('should collect all articles from all languages', () => {
-      const articlesByLang: ArticlesByLanguage = {
-        en: [
-          { slug: '2026-01-01-test-en.html', title: 'Test EN', lang: 'en', date: '2026-01-01', description: 'Test', type: 'analysis', topics: [], tags: [] }
-        ],
-        sv: [
-          { slug: '2026-01-01-test-sv.html', title: 'Test SV', lang: 'sv', date: '2026-01-01', description: 'Test', type: 'analysis', topics: [], tags: [] }
-        ],
-        fr: [
-          { slug: '2026-01-02-other-fr.html', title: 'Other FR', lang: 'fr', date: '2026-01-02', description: 'Test', type: 'analysis', topics: [], tags: [] }
-        ]
-      };
-
-      const allArticles = module.getAllArticlesWithLanguageInfo(articlesByLang);
-
-      // Should have 3 articles total (not language-filtered)
-      expect(allArticles).toHaveLength(3);
-
-      // Should have lang field
-      expect(allArticles[0]).toHaveProperty('lang');
-
-      // Should have availableLanguages field
-      expect(allArticles[0]).toHaveProperty('availableLanguages');
-      expect(Array.isArray(allArticles[0]!.availableLanguages)).toBe(true);
-    });
-
-    it('should detect available languages for same slug across languages', () => {
-      const articlesByLang: ArticlesByLanguage = {
-        en: [
-          { slug: '2026-01-01-test-en.html', title: 'Test EN', lang: 'en', date: '2026-01-01', description: 'Test', type: 'analysis', topics: [], tags: [] }
-        ],
-        sv: [
-          { slug: '2026-01-01-test-sv.html', title: 'Test SV', lang: 'sv', date: '2026-01-01', description: 'Test', type: 'analysis', topics: [], tags: [] }
-        ],
-        fr: [
-          { slug: '2026-01-01-test-fr.html', title: 'Test FR', lang: 'fr', date: '2026-01-01', description: 'Test', type: 'analysis', topics: [], tags: [] }
-        ]
-      };
-
-      const allArticles = module.getAllArticlesWithLanguageInfo(articlesByLang);
-
-      // All three articles should have the same availableLanguages: ['en', 'fr', 'sv']
-      const enArticle = allArticles.find(a => a.lang === 'en');
-      const svArticle = allArticles.find(a => a.lang === 'sv');
-      const frArticle = allArticles.find(a => a.lang === 'fr');
-
-      expect([...(enArticle!.availableLanguages as Language[])].sort()).toEqual(['en', 'fr', 'sv']);
-      expect([...(svArticle!.availableLanguages as Language[])].sort()).toEqual(['en', 'fr', 'sv']);
-      expect([...(frArticle!.availableLanguages as Language[])].sort()).toEqual(['en', 'fr', 'sv']);
-    });
-
-    it('should have availableLanguages with single language for unique article', () => {
-      const articlesByLang: ArticlesByLanguage = {
-        en: [
-          { slug: '2026-01-01-unique-en.html', title: 'Unique EN', lang: 'en', date: '2026-01-01', description: 'Test', type: 'analysis', topics: [], tags: [] }
-        ],
-        sv: []
-      };
-
-      const allArticles = module.getAllArticlesWithLanguageInfo(articlesByLang);
-
-      expect(allArticles).toHaveLength(1);
-      expect(allArticles[0]!.availableLanguages).toEqual(['en']);
-    });
-
-    it('should sort articles by date descending (newest first)', () => {
-      const articlesByLang: ArticlesByLanguage = {
-        en: [
-          { slug: '2026-01-01-old-en.html', title: 'Old', lang: 'en', date: '2026-01-01', description: 'Test', type: 'analysis', topics: [], tags: [] },
-          { slug: '2026-01-03-new-en.html', title: 'New', lang: 'en', date: '2026-01-03', description: 'Test', type: 'analysis', topics: [], tags: [] },
-          { slug: '2026-01-02-mid-en.html', title: 'Mid', lang: 'en', date: '2026-01-02', description: 'Test', type: 'analysis', topics: [], tags: [] }
-        ]
-      };
-
-      const allArticles = module.getAllArticlesWithLanguageInfo(articlesByLang);
-
-      expect(allArticles[0]!.title).toBe('New'); // 2026-01-03
-      expect(allArticles[1]!.title).toBe('Mid'); // 2026-01-02
-      expect(allArticles[2]!.title).toBe('Old'); // 2026-01-01
-    });
   });
 
   describe('generateLanguageBadge', () => {
