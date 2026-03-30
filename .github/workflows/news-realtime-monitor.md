@@ -877,7 +877,7 @@ Before generating articles, consult these skills:
 5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
 6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
 7. **`scripts/prompts/v2/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
-8. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
+8. **`scripts/prompts/v2/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
 9. **`scripts/prompts/v2/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
 10. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Per-file AI analysis protocol
 11. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Methodology for deep per-file analysis

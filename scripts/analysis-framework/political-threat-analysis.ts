@@ -1,19 +1,19 @@
 /**
  * @module analysis-framework/political-threat-analysis
- * @description PRIDES political threat analysis engine for parliamentary documents.
+ * @description Political Threat Taxonomy analysis engine for parliamentary documents.
  *
- * Inspired by ISMS THREAT_MODEL.md (STRIDE framework, threat agent classification),
- * adapted for political intelligence analysis of Swedish parliamentary context.
+ * Uses six democratic-function threat categories for political intelligence analysis
+ * of Swedish parliamentary context.
  *
- * ## PRIDES Framework (Political STRIDE Adaptation)
- * | ISMS STRIDE              | Political PRIDES              |
- * |--------------------------|-------------------------------|
- * | Spoofing                 | Polarization                  |
- * | Tampering                | Regulatory Overreach          |
- * | Repudiation              | Institutional Erosion         |
- * | Information Disclosure   | Democratic Deficit            |
- * | Denial of Service        | Economic Disruption           |
- * | Elevation of Privilege   | Societal Impact               |
+ * ## Political Threat Taxonomy Categories
+ * | Category               | Democratic Function Threatened       |
+ * |------------------------|--------------------------------------|
+ * | Polarization           | Narrative Integrity                  |
+ * | Regulatory Overreach   | Legislative Integrity                |
+ * | Institutional Erosion  | Accountability                       |
+ * | Democratic Deficit     | Transparency                         |
+ * | Economic Disruption    | Democratic Process                   |
+ * | Societal Impact        | Power Balance                        |
  *
  * ## Threat Agents
  * - Ruling coalition — Policy agenda risks, power concentration
@@ -33,13 +33,13 @@ import type { RawDocument, CIAContext } from '../data-transformers/types.js';
 import type {
   PoliticalThreatAnalysis,
   PoliticalThreatProfile,
-  PridesCategory,
+  ThreatCategory,
   ThreatAgent,
   ThreatSeverity,
 } from './methodology-types.js';
 
 // ---------------------------------------------------------------------------
-// Keyword banks per PRIDES category
+// Keyword banks per threat category
 // ---------------------------------------------------------------------------
 
 /** P — Polarization: Intentional division, misleading rhetoric */
@@ -237,7 +237,7 @@ function detectThreatAgents(doc: RawDocument, text: string): ThreatAgent[] {
 }
 
 // ---------------------------------------------------------------------------
-// Per-PRIDES-category severity assessment
+// Per-category severity assessment
 // ---------------------------------------------------------------------------
 
 function assessPolarizationSeverity(text: string, cia: CIAContext | undefined): ThreatSeverity {
@@ -306,7 +306,7 @@ function assessSocietalImpactSeverity(doc: RawDocument, text: string): ThreatSev
 // Observable indicator extraction
 // ---------------------------------------------------------------------------
 
-function extractIndicators(doc: RawDocument, category: PridesCategory, text: string): string[] {
+function extractIndicators(doc: RawDocument, category: ThreatCategory, text: string): string[] {
   const indicators: string[] = [];
   const docId = doc.dok_id;
 
@@ -373,7 +373,7 @@ function extractIndicators(doc: RawDocument, category: PridesCategory, text: str
 // Democratic countermeasures
 // ---------------------------------------------------------------------------
 
-function getCountermeasures(category: PridesCategory): string[] {
+function getCountermeasures(category: ThreatCategory): string[] {
   switch (category) {
     case 'polarization':
       return [
@@ -426,7 +426,7 @@ function getCountermeasures(category: PridesCategory): string[] {
 
 function buildThreatRationale(
   doc: RawDocument,
-  category: PridesCategory,
+  category: ThreatCategory,
   severity: ThreatSeverity,
   text: string,
 ): string {
@@ -434,7 +434,7 @@ function buildThreatRationale(
   const committee = doc.organ ?? 'unknown';
   const severityLabel = severity.toUpperCase();
 
-  const categoryDescriptions: Readonly<Record<PridesCategory, string>> = {
+  const categoryDescriptions: Readonly<Record<ThreatCategory, string>> = {
     'polarization': 'polarising rhetoric and divisive political framing',
     'regulatory-overreach': 'potential abuse of legislative or executive power',
     'institutional-erosion': 'signals of weakening democratic institutions or accountability gaps',
@@ -455,14 +455,14 @@ function buildThreatRationale(
     return 'Based on metadata signals only; full text not available.';
   })();
 
-  return `${severityLabel} PRIDES threat: ${description} detected in ${docType} document from committee ${committee}. ${hasContent} Document ${doc.dok_id ?? 'unknown'} presents observable signals matching this threat category based on ${text.length > 200 ? 'comprehensive' : 'limited'} text analysis.`;
+  return `${severityLabel} political threat: ${description} detected in ${docType} document from committee ${committee}. ${hasContent} Document ${doc.dok_id ?? 'unknown'} presents observable signals matching this threat category based on ${text.length > 200 ? 'comprehensive' : 'limited'} text analysis.`;
 }
 
 // ---------------------------------------------------------------------------
 // Single category analysis
 // ---------------------------------------------------------------------------
 
-function hasCategorySignals(category: PridesCategory, text: string, doc: RawDocument): boolean {
+function hasCategorySignals(category: ThreatCategory, text: string, doc: RawDocument): boolean {
   switch (category) {
     case 'polarization':
       return countMatches(text, POLARIZATION_KEYWORDS) > 0;
@@ -482,7 +482,7 @@ function hasCategorySignals(category: PridesCategory, text: string, doc: RawDocu
 function analyseSingleCategory(
   doc: RawDocument,
   cia: CIAContext | undefined,
-  category: PridesCategory,
+  category: ThreatCategory,
   text: string,
 ): PoliticalThreatAnalysis | null {
   if (!hasCategorySignals(category, text, doc)) {
@@ -515,7 +515,7 @@ function analyseSingleCategory(
   const threatAgents = detectThreatAgents(doc, text);
 
   return {
-    pridesCategory: category,
+    threatCategory: category,
     threatAgents,
     severity,
     indicators: extractIndicators(doc, category, text),
@@ -525,10 +525,10 @@ function analyseSingleCategory(
 }
 
 // ---------------------------------------------------------------------------
-// All PRIDES categories
+// All Political Threat Taxonomy categories
 // ---------------------------------------------------------------------------
 
-const ALL_PRIDES_CATEGORIES: readonly PridesCategory[] = [
+const ALL_THREAT_CATEGORIES: readonly ThreatCategory[] = [
   'polarization',
   'regulatory-overreach',
   'institutional-erosion',
@@ -546,22 +546,22 @@ const SEVERITY_ORDER: Readonly<Record<ThreatSeverity, number>> = {
 // ---------------------------------------------------------------------------
 
 /**
- * Analyse a parliamentary document using the PRIDES political threat framework.
+ * Analyse a parliamentary document using the Political Threat Taxonomy.
  *
- * Applies the ISMS-inspired PRIDES methodology (Political STRIDE adaptation)
+ * Applies the Political Threat Taxonomy
  * to identify and characterise threats to democratic governance from the document.
  *
  * The function is **pure** — deterministic for the same input, no side effects.
  *
  * @param doc  - The parliamentary document to analyse
  * @param cia  - Optional CIA context (coalition data improves threat calibration)
- * @returns    Complete PRIDES threat profile
+ * @returns    Complete political threat profile
  *
  * @example
  * ```typescript
  * const profile = analysePoliticalThreats(doc, ciaContext);
  * console.log(profile.overallThreatLevel); // 'critical' | 'high' | 'medium' | 'low' | 'none'
- * console.log(profile.primaryThreat);      // dominant PRIDES category
+ * console.log(profile.primaryThreat);      // dominant threat category
  * ```
  */
 export function analysePoliticalThreats(
@@ -570,7 +570,7 @@ export function analysePoliticalThreats(
 ): PoliticalThreatProfile {
   const text = getDocText(doc);
 
-  const threatAnalyses: PoliticalThreatAnalysis[] = ALL_PRIDES_CATEGORIES.map(category =>
+  const threatAnalyses: PoliticalThreatAnalysis[] = ALL_THREAT_CATEGORIES.map(category =>
     analyseSingleCategory(doc, cia, category, text)
   ).filter((a): a is PoliticalThreatAnalysis => a !== null);
 
@@ -588,7 +588,7 @@ export function analysePoliticalThreats(
     (a, b) => (SEVERITY_ORDER[b.severity] ?? 0) - (SEVERITY_ORDER[a.severity] ?? 0)
   );
 
-  const primaryThreat = sorted[0]?.pridesCategory ?? null;
+  const primaryThreat = sorted[0]?.threatCategory ?? null;
   const overallThreatLevel = sorted[0]?.severity ?? 'none';
 
   // Deduplicate threat agents across all analyses
@@ -608,19 +608,19 @@ export function analysePoliticalThreats(
 }
 
 /**
- * Analyse threats for a specific PRIDES category only.
+ * Analyse threats for a specific threat category only.
  *
  * Use when you need a targeted threat analysis for a single category
- * rather than the full PRIDES profile.
+ * rather than the full political threat profile.
  *
  * @param doc      - The parliamentary document to analyse
- * @param category - The specific PRIDES category to analyse
+ * @param category - The specific threat category to analyse
  * @param cia      - Optional CIA context
  * @returns        Threat analysis for the specified category, or null if not detectable
  */
-export function analyseSinglePridesCategory(
+export function analyseSingleThreatCategory(
   doc: RawDocument,
-  category: PridesCategory,
+  category: ThreatCategory,
   cia?: CIAContext,
 ): PoliticalThreatAnalysis | null {
   const text = getDocText(doc);
