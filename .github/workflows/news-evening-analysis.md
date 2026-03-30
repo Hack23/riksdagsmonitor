@@ -991,7 +991,7 @@ news/content/{YYYY-MM-DD}/evening-analysis
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally: `git add news/ analysis/daily/ analysis/weekly/ && git commit -m "🌆 Evening Analysis - $(date +%Y-%m-%d)"`
+> 2. Stage and commit locally (scoped to current date — see Step 5 for full file-count safety pattern): `git add news/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/" analysis/weekly/ && git commit -m "🌆 Evening Analysis - $(date +%Y-%m-%d)"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -1006,7 +1006,18 @@ news/content/{YYYY-MM-DD}/evening-analysis
 > **🚨 NEVER search for safe output tools via bash.** After `git commit`, call `safeoutputs___create_pull_request` directly as your VERY NEXT action.
 
 ```bash
-git add news/ analysis/daily/ analysis/weekly/
+# Stage articles and analysis — scoped to current date to stay within 100-file PR limit
+git add news/ || true
+git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/" || true
+git add analysis/weekly/ || true
+# Enforce safe-outputs 100-file PR limit
+STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+if [ "$STAGED_COUNT" -gt 90 ]; then
+  echo "⚠️ Staged $STAGED_COUNT files exceeds 100-file PR limit. Removing weekly analysis."
+  git reset HEAD -- analysis/weekly/ 2>/dev/null || true
+  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+fi
+echo "📊 Final staged file count: $STAGED_COUNT"
 git commit -m "🌆 Evening Analysis - $(date +%Y-%m-%d)"
 ```
 

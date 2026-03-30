@@ -320,7 +320,7 @@ Example: `news/content/2026-03-23/committee-reports`
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally: `git add news/ analysis/daily/ analysis/weekly/ && git commit -m "Add committee-reports articles and analysis artifacts"`
+> 2. Stage and commit locally (scoped to article type to avoid conflicts with other doc-type workflows): `git add news/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/committeeReports/" && git commit -m "Add committee-reports articles and analysis artifacts"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -331,7 +331,7 @@ Example: `news/content/2026-03-23/committee-reports`
 - ✅ **REQUIRED:** `safeoutputs___create_pull_request` with analysis-only PR when no articles but analysis artifacts exist — title: `📊 Analysis Only - Committee Reports - {date}`, labels: `["analysis-only", "committee-reports"]`
 - ✅ **ONLY USE `safeoutputs___noop` if genuinely no new committee reports AND no analysis artifacts** from riksdag-regering-mcp
 - ❌ **NEVER use `safeoutputs___noop` as fallback for PR creation failures**
-- ❌ **NEVER use `safeoutputs___noop` if analysis artifacts exist in `analysis/daily/$ARTICLE_DATE/` for this run**
+- ❌ **NEVER use `safeoutputs___noop` if analysis artifacts exist in `analysis/daily/$ARTICLE_DATE/committeeReports/` for this run**
 
 > **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them. After `git commit`, call the tool directly as your VERY NEXT action.
 

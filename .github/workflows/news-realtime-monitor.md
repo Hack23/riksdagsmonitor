@@ -294,7 +294,7 @@ fi
 
 4. **Create/rewrite ALL 7 daily synthesis files** in `analysis/daily/$ARTICLE_DATE/` — each MUST follow its template EXACTLY (metadata header, Mermaid diagrams, evidence tables, confidence labels, no `[REQUIRED]` placeholders).
 
-5. **Commit data AND analysis together** — `git add analysis/data/ analysis/daily/`
+5. **Commit data AND analysis together** — stage scoped to current date: `git add analysis/data/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/"` (see Step 5 for full file-count safety pattern)
 
 > ❌ **FAILURE MODES** (any of these = workflow failure):
 > - Skipping analysis creation
@@ -695,7 +695,24 @@ news/content/{YYYY-MM-DD}/breaking
 ⚠️ DO NOT use `git push` — the safe output tool handles publishing. Commit locally, then use the tool.
 
 ```bash
-git add news/ analysis/daily/ analysis/weekly/ analysis/data/
+# Stage articles and analysis — scoped to current date to stay within 100-file PR limit
+git add news/ || true
+git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/" || true
+git add analysis/weekly/ || true
+git add analysis/data/ || true
+# Enforce safe-outputs 100-file PR limit
+STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+if [ "$STAGED_COUNT" -gt 90 ]; then
+  echo "⚠️ Staged $STAGED_COUNT files exceeds 100-file PR limit. Removing bulk data."
+  git reset HEAD -- analysis/data/ 2>/dev/null || true
+  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+fi
+if [ "$STAGED_COUNT" -gt 90 ]; then
+  echo "⚠️ Still $STAGED_COUNT files. Removing weekly analysis."
+  git reset HEAD -- analysis/weekly/ 2>/dev/null || true
+  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+fi
+echo "📊 Final staged file count: $STAGED_COUNT"
 git commit -m "🔴 Breaking: {headline} - $(date +%Y-%m-%d)"
 ```
 
