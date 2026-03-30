@@ -62,7 +62,7 @@ analysis/daily/YYYY-MM-DD/{articleType}/
 Before analyzing ANY document, the AI MUST read:
 1. `analysis/methodologies/political-swot-framework.md` — Cross-SWOT interference, TOWS matrix, scenario generation
 2. `analysis/methodologies/political-risk-methodology.md` — Cascading risk, Bayesian updating, risk interconnection
-3. `analysis/methodologies/political-threat-framework.md` — Attack Trees, Kill Chain, Diamond Model (not just STRIDE)
+3. `analysis/methodologies/political-threat-framework.md` — Attack Trees, Kill Chain, Diamond Model, Political Threat Taxonomy
 4. `analysis/methodologies/political-classification-guide.md` — Political Temperature, strategic significance
 5. `analysis/methodologies/political-style-guide.md` — Evidence density, attribution, intelligence writing
 6. ALL 8 templates in `analysis/templates/`
@@ -164,11 +164,11 @@ Before analyzing any file, the AI agent **MUST** read and internalize these meth
 |:--------:|----------|-------------|
 | 🔴 1 | [political-swot-framework.md](political-swot-framework.md) | Evidence hierarchy, confidence levels, temporal decay, aggregation |
 | 🔴 2 | [political-risk-methodology.md](political-risk-methodology.md) | 5×5 Likelihood×Impact matrix, coalition risk index, anomaly detection |
-| 🔴 3 | [political-threat-framework.md](political-threat-framework.md) | STRIDE-to-political mapping, threat actor matrix, severity |
+| 🔴 3 | [political-threat-framework.md](political-threat-framework.md) | Political Threat Taxonomy, Attack Trees, Kill Chain, threat actor matrix, severity |
 | 🟠 4 | [political-classification-guide.md](political-classification-guide.md) | Sensitivity levels, domain taxonomy, urgency matrix |
 | 🟠 5 | [political-style-guide.md](political-style-guide.md) | Writing standards, evidence density, attribution, icons |
 | 🟡 6 | [SWOT.md](../../SWOT.md) | **Formatting exemplar** — badges, Mermaid charts, section structure |
-| 🟡 7 | [THREAT_MODEL.md](../../THREAT_MODEL.md) | **Formatting exemplar** — STRIDE tables, risk scoring, executive summary |
+| 🟡 7 | [THREAT_MODEL.md](../../THREAT_MODEL.md) | **Formatting exemplar** — threat tables, risk scoring, executive summary |
 
 ### Step 3: Analyze Each File
 
@@ -180,7 +180,7 @@ flowchart TD
     B --> C["🔍 Apply Political Classification<br/>Sensitivity · Domain · Urgency"]
     C --> D["💪 Generate SWOT Impact<br/>Government · Opposition effects"]
     D --> E["⚖️ Assess Risk<br/>5×5 Likelihood×Impact matrix"]
-    E --> F["🎭 STRIDE Threat Analysis<br/>Democratic process threats"]
+    E --> F["🎭 Political Threat Taxonomy<br/>Democratic process threats"]
     F --> G["👥 Stakeholder Impact Matrix<br/>6 analytical lenses"]
     G --> H["🔮 Forward Indicators<br/>What to watch next"]
     H --> I["📊 Quality Self-Assessment<br/>Evidence density check"]
@@ -571,7 +571,7 @@ graph TD
 | [per-file-intelligence-analysis.md](../../scripts/prompts/v2/per-file-intelligence-analysis.md) | AI prompt with full protocol and filled example |
 | [political-swot-framework.md](political-swot-framework.md) | SWOT methodology with evidence hierarchy |
 | [political-risk-methodology.md](political-risk-methodology.md) | Risk assessment methodology |
-| [political-threat-framework.md](political-threat-framework.md) | STRIDE-adapted threat framework |
+| [political-threat-framework.md](political-threat-framework.md) | Multi-framework threat analysis (Attack Trees, Kill Chain, Diamond Model) |
 | [political-classification-guide.md](political-classification-guide.md) | Classification taxonomy |
 | [political-style-guide.md](political-style-guide.md) | Writing and formatting standards |
 | [SWOT.md](../../SWOT.md) | **Formatting exemplar** (platform SWOT) |

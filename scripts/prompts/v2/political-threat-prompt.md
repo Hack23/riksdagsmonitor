@@ -1,25 +1,25 @@
-# Political Threat Analysis Prompt v2 — PRIDES Framework
+# Political Threat Analysis Prompt v3 — Political Threat Taxonomy
 
-<!-- version: 2.0.0 | updated: 2026-03-26 | author: Hack23 AB -->
+<!-- version: 3.0.0 | updated: 2026-03-30 | author: Hack23 AB -->
 
 ## Purpose
 
-Apply the **PRIDES Political Threat Framework** (ISMS STRIDE adapted for political intelligence) to analyse threats to democratic governance from parliamentary documents. This prompt guides AI models to produce structured, evidence-based threat profiles.
+Apply the **Political Threat Taxonomy** to analyse threats to democratic governance from parliamentary documents. This prompt guides AI models to produce structured, evidence-based threat profiles using politically-native categories (NOT cybersecurity-origin frameworks like STRIDE).
 
 ## Context
 
-PRIDES is a political adaptation of the ISMS STRIDE threat model from `THREAT_MODEL.md`. Instead of cybersecurity threats, PRIDES identifies threats to **democratic function, civic rights, and political integrity** from parliamentary activity and political actors.
+The Political Threat Taxonomy identifies threats to **democratic function, civic rights, and political integrity** from parliamentary activity and political actors. It categorises threats by the **democratic function threatened**, not by cybersecurity attack type.
 
-## THE PRIDES FRAMEWORK
+## THE POLITICAL THREAT TAXONOMY
 
-| ISMS STRIDE | Political PRIDES | Description |
-|---|---|---|
-| **S**poofing → | **P**olarization | Intentional division of public opinion; misleading rhetoric; disinformation; populist framing |
-| **T**ampering → | **R**egulatory Overreach | Abuse of legislative or executive power; democratic norm erosion; bypassing parliamentary process |
-| **R**epudiation → | **I**nstitutional Erosion | Weakening democratic institutions; accountability gaps; judicial or constitutional capture |
-| **I**nformation Disclosure → | **D**emocratic Deficit | Lack of transparency; restricted public access; secrecy; press freedom violation |
-| **D**enial of Service → | **E**conomic Disruption | Policy-driven economic harm; fiscal irresponsibility; crisis-inducing economic policy |
-| **E**levation of Privilege → | **S**ocietal Impact | Disproportionate harm to vulnerable groups; rights erosion; discriminatory policy |
+| Threat Category | Description |
+|---|---|
+| **Narrative Integrity** | Disinformation, false framing, misleading rhetoric, propaganda, polarisation |
+| **Legislative Integrity** | Policy corruption, undisclosed lobbying, legislative manipulation, process bypassing |
+| **Accountability** | Oversight evasion, KU obstruction, blame-shifting, record falsification |
+| **Transparency** | Information suppression, FOI obstruction, secrecy expansion, classification abuse |
+| **Democratic Process** | Procedural obstruction, filibustering, quorum manipulation, budget deadlock |
+| **Power Balance** | Executive overreach, constitutional boundary violations, power concentration |
 
 ## THREAT AGENTS
 
@@ -45,15 +45,15 @@ Identify which actor(s) are the source or amplifier of each threat:
 
 ## THREAT ANALYSIS PROCEDURE
 
-For each PRIDES category:
+For each Threat Category:
 
 1. **Identify observable indicators** from the document text, speeches, and committee context
 2. **Assess severity** based on the scale above — be calibrated, not alarmist
 3. **Identify threat agents** responsible for this threat vector
 4. **Document countermeasures** — Swedish institutional safeguards that mitigate this threat
-5. **Write evidence-based rationale** — link signals to the PRIDES category specifically
+5. **Write evidence-based rationale** — link signals to the specific threat category
 
-## POLARIZATION ASSESSMENT (P)
+## NARRATIVE INTEGRITY ASSESSMENT
 
 Look for:
 - Division rhetoric: "oss och dem" (us and them), nationalistisk, populistisk
@@ -63,27 +63,27 @@ Look for:
 
 Countermeasures to mention: SVT/SR public broadcasting, Tryckfrihetsförordningen, civil society fact-checking
 
-## REGULATORY OVERREACH ASSESSMENT (R)
+## LEGISLATIVE INTEGRITY ASSESSMENT
 
 Look for:
 - Bypassing parliament signals: undantagsbefogenheter, nödbefogenheter
-- Power concentration: maktkoncentration, undantag från lagstiftning
+- Undisclosed lobbying: remiss response vs. final proposition delta
 - Weakening oversight: kringgå regler, undantas granskning
-- Extraordinary executive action without parliamentary mandate
+- Fast-tracking legislation without proper remiss process
 
-Countermeasures: Lagrådet review, KU oversight, misstroendevotum mechanism, JO/JK ombudsman
+Countermeasures: Lagrådet review, KU oversight, misstroendevotum mechanism, remiss process
 
-## INSTITUTIONAL EROSION ASSESSMENT (I)
+## ACCOUNTABILITY ASSESSMENT
 
 Look for:
 - KU investigation context — always signals institutional accountability concern
 - Accountability gap signals: ansvarslöshet, bristande transparens
-- Democratic backsliding indicators: court packing, institutional capture
+- Democratic backsliding indicators: institutional capture
 - Constitutional compliance failures: konstitutionsbrott
 
 Countermeasures: Independent judiciary (Högsta domstolen, HFD), JO investigation, ECHR, KU scrutiny
 
-## DEMOCRATIC DEFICIT ASSESSMENT (D)
+## TRANSPARENCY ASSESSMENT
 
 Look for:
 - Transparency restrictions: sekretess, hemligstämplad, begränsad insyn
@@ -93,25 +93,26 @@ Look for:
 
 Countermeasures: Offentlighetsprincipen, TF/YGL constitutional protections, IMY/GDPR, EU press freedom
 
-## ECONOMIC DISRUPTION ASSESSMENT (E)
+## DEMOCRATIC PROCESS ASSESSMENT
 
 Look for:
 - Fiscal crisis signals: budgetkris, statsbankrutt, skuldkris, finanskris
 - FiU involvement with economic disruption keywords
 - Unstable coalition combined with economic policy deadlock
 - Budget failure or rejection scenarios
+- Filibustering, quorum manipulation, procedural abuse
 
 Countermeasures: Independent Riksbank, Finanspolitiska rådet, EU SGP, cross-party budget framework
 
-## SOCIETAL IMPACT ASSESSMENT (S)
+## POWER BALANCE ASSESSMENT
 
 Look for:
-- Vulnerable group signals: marginaliserade, utsatta grupper, diskriminering
-- Rights erosion: rättighetsförlust, ojämlikhet, mänskliga rättigheter
+- Executive overreach: maktkoncentration, undantag från lagstiftning
+- Constitutional boundary tests: bypassing Riksdag vote
 - Disproportionate burden distribution signals
 - SoU, SfU, AU committee involvement with social welfare content
 
-Countermeasures: Diskrimineringsombudsmannen (DO), welfare state baseline, ECHR Article 14, EU equality law
+Countermeasures: Diskrimineringsombudsmannen (DO), welfare state baseline, ECHR Article 14, JO/JK
 
 ## OUTPUT FORMAT
 
@@ -121,7 +122,7 @@ Countermeasures: Diskrimineringsombudsmannen (DO), welfare state baseline, ECHR 
   "threatProfile": {
     "threatAnalyses": [
       {
-        "pridesCategory": "institutional-erosion",
+        "threatCategory": "accountability",
         "threatAgents": ["ruling-coalition", "institutional"],
         "severity": "high",
         "indicators": [
@@ -135,10 +136,10 @@ Countermeasures: Diskrimineringsombudsmannen (DO), welfare state baseline, ECHR 
           "Riksdag constitutional review through KU provides political accountability",
           "ECHR and EU Charter of Fundamental Rights provide supranational protection"
         ],
-        "rationale": "HIGH PRIDES threat: signals of weakening democratic institutions or accountability gaps detected in bet document from committee KU. Full document content available. Document H901KU99 presents observable signals matching this threat category."
+        "rationale": "HIGH threat: signals of weakening democratic accountability detected in bet document from committee KU. Full document content available. Document H901KU99 presents observable signals matching this threat category."
       }
     ],
-    "primaryThreat": "institutional-erosion",
+    "primaryThreat": "accountability",
     "overallThreatLevel": "high",
     "activeThreatAgents": ["ruling-coalition", "institutional"]
   }
@@ -147,15 +148,15 @@ Countermeasures: Diskrimineringsombudsmannen (DO), welfare state baseline, ECHR 
 
 ## CALIBRATION EXAMPLES
 
-| Scenario | Primary PRIDES | Severity | Primary Threat Agent |
+| Scenario | Primary Threat Category | Severity | Primary Threat Agent |
 |---|---|---|---|
-| KU investigation of constitutional breach | institutional-erosion | critical | ruling-coalition |
-| Budget policy harming welfare recipients | societal-impact | high | ruling-coalition |
-| Government restricts press access | democratic-deficit | critical | ruling-coalition |
-| Populist migration rhetoric in parliamentary debate | polarization | high | opposition-parties |
-| Interpellation on budget fiscal irresponsibility | economic-disruption | medium | ruling-coalition |
-| Foreign influence in legislative process | institutional-erosion | high | external-actors |
-| Routine administrative committee report | societal-impact | low | institutional |
+| KU investigation of constitutional breach | accountability | critical | ruling-coalition |
+| Budget policy harming welfare recipients | power-balance | high | ruling-coalition |
+| Government restricts press access | transparency | critical | ruling-coalition |
+| Populist migration rhetoric in parliamentary debate | narrative-integrity | high | opposition-parties |
+| Interpellation on budget fiscal irresponsibility | democratic-process | medium | ruling-coalition |
+| Foreign influence in legislative process | legislative-integrity | high | external-actors |
+| Routine administrative committee report | narrative-integrity | low | institutional |
 
 ## SEVERITY CALIBRATION PRINCIPLES
 
@@ -163,8 +164,8 @@ Countermeasures: Diskrimineringsombudsmannen (DO), welfare state baseline, ECHR 
 - Reserve `critical` for genuine constitutional or democratic emergencies (KU investigations, misstroendevotum, fundamental rights breaches)
 - Assign `high` for serious but manageable threats with clear institutional response pathways
 - Assign `medium` for emerging threats with observable but not yet systemic indicators
-- Many routine documents will show at least one PRIDES category at `medium` or `low` when they contain even minor democratic-risk signals
-- If a document contains no discernible PRIDES signals, return **no threats detected**: set `overallThreatLevel` to `none`, `primaryThreat` to `null`, and `threatAnalyses` to an empty list (`[]`)
+- Many routine documents will show at least one threat category at `medium` or `low` when they contain even minor democratic-risk signals
+- If a document contains no discernible threat signals, return **no threats detected**: set `overallThreatLevel` to `none`, `primaryThreat` to `null`, and `threatAnalyses` to an empty list (`[]`)
 
 ## PROHIBITED PATTERNS
 
@@ -172,6 +173,7 @@ Countermeasures: Diskrimineringsombudsmannen (DO), welfare state baseline, ECHR 
 ❌ Do not claim a non-`none` threat level without referencing observable parliamentary signals — if no signals are present, explicitly use the no-threat case (`overallThreatLevel: 'none'`, `primaryThreat: null`, `threatAnalyses: []`)  
 ❌ Do not omit countermeasures — Swedish democracy has strong institutional resilience  
 ❌ Do not assign a single threat agent when multiple actors are involved  
-❌ Do not conflate PRIDES categories (e.g., economic-disruption ≠ societal-impact)  
+❌ Do not conflate threat categories (e.g., democratic-process ≠ power-balance)  
 ❌ Do not use generic rationale — always tie reasoning to specific document signals  
-❌ Do not ignore committee context — KU = institutional-erosion, FiU = economic-disruption signals  
+❌ Do not ignore committee context — KU = accountability, FiU = democratic-process signals  
+❌ Do not use STRIDE categories (S/T/R/I/D/E) — use Political Threat Taxonomy categories  

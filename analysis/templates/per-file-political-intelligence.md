@@ -198,44 +198,44 @@ graph TD
 
 ---
 
-## 🎭 Threat Analysis (STRIDE-Adapted)
+## 🎭 Threat Analysis (Political Threat Taxonomy)
 
-> *Political threats mapped to the STRIDE framework adapted for democratic processes. Severity: 1=Negligible, 2=Minor, 3=Moderate, 4=Major, 5=Severe. See [political-threat-framework.md §9](../methodologies/political-threat-framework.md) for calibration.*
+> *Political threats mapped to the 6 democratic function categories. Severity: 1=Negligible, 2=Minor, 3=Moderate, 4=Major, 5=Severe. See [political-threat-framework.md](../methodologies/political-threat-framework.md) for full calibration table.*
 
 ```mermaid
 graph LR
-    subgraph "Political STRIDE Threats"
-        S["🎭 Spoofing<br/>Misrepresentation"]
-        T["🔧 Tampering<br/>Process Manipulation"]
-        R["📝 Repudiation<br/>Accountability Evasion"]
-        I["🔓 Info Disclosure<br/>Intelligence Leaks"]
-        D["🚫 Denial of Service<br/>Democratic Obstruction"]
-        E["⬆️ Elevation<br/>Power Overreach"]
+    subgraph "Political Threat Taxonomy"
+        NI["🎭 Narrative Integrity<br/>Disinformation"]
+        LI["📝 Legislative Integrity<br/>Manipulation"]
+        AC["🚫 Accountability<br/>Evasion"]
+        TR["🔇 Transparency<br/>Suppression"]
+        DP["⛔ Democratic Process<br/>Obstruction"]
+        PB["👑 Power Balance<br/>Overreach"]
     end
     
-    S --> S1["[If applicable: specific threat]"]
-    T --> T1["[If applicable: specific threat]"]
-    R --> R1["[If applicable: specific threat]"]
-    I --> I1["[If applicable: specific threat]"]
-    D --> D1["[If applicable: specific threat]"]
-    E --> E1["[If applicable: specific threat]"]
+    NI --> NI1["[If applicable: specific threat]"]
+    LI --> LI1["[If applicable: specific threat]"]
+    AC --> AC1["[If applicable: specific threat]"]
+    TR --> TR1["[If applicable: specific threat]"]
+    DP --> DP1["[If applicable: specific threat]"]
+    PB --> PB1["[If applicable: specific threat]"]
     
-    style S fill:#6f42c1,color:#fff
-    style T fill:#dc3545,color:#fff
-    style R fill:#fd7e14,color:#fff
-    style I fill:#ffc107,color:#000
-    style D fill:#28a745,color:#fff
-    style E fill:#0d6efd,color:#fff
+    style NI fill:#6f42c1,color:#fff
+    style LI fill:#dc3545,color:#fff
+    style AC fill:#fd7e14,color:#fff
+    style TR fill:#ffc107,color:#000
+    style DP fill:#28a745,color:#fff
+    style PB fill:#0d6efd,color:#fff
 ```
 
-| STRIDE Category | Applicable? | Threat Description | Severity (1–5) | Evidence |
+| Threat Category | Applicable? | Threat Description | Severity (1–5) | Evidence |
 |----------------|:-----------:|-------------------|:--------------:|----------|
-| 🎭 Spoofing | `[Y/N]` | `[Misrepresentation of positions, false attributions]` | `[1-5]` | `[dok_id]` |
-| 🔧 Tampering | `[Y/N]` | `[Process manipulation, rule bending]` | `[1-5]` | `[dok_id]` |
-| 📝 Repudiation | `[Y/N]` | `[Accountability evasion, position reversal]` | `[1-5]` | `[dok_id]` |
-| 🔓 Info Disclosure | `[Y/N]` | `[Premature leaks, intelligence compromise]` | `[1-5]` | `[dok_id]` |
-| 🚫 Denial of Service | `[Y/N]` | `[Parliamentary obstruction, filibuster]` | `[1-5]` | `[dok_id]` |
-| ⬆️ Elevation | `[Y/N]` | `[Executive overreach, bypassing parliament]` | `[1-5]` | `[dok_id]` |
+| 🎭 Narrative Integrity | `[Y/N]` | `[Disinformation, false framing, misleading rhetoric]` | `[1-5]` | `[dok_id]` |
+| 📝 Legislative Integrity | `[Y/N]` | `[Policy corruption, undisclosed lobbying, manipulation]` | `[1-5]` | `[dok_id]` |
+| 🚫 Accountability | `[Y/N]` | `[Oversight evasion, KU obstruction, blame-shifting]` | `[1-5]` | `[dok_id]` |
+| 🔇 Transparency | `[Y/N]` | `[Information suppression, FOI obstruction, secrecy]` | `[1-5]` | `[dok_id]` |
+| ⛔ Democratic Process | `[Y/N]` | `[Parliamentary obstruction, filibuster, quorum games]` | `[1-5]` | `[dok_id]` |
+| 👑 Power Balance | `[Y/N]` | `[Executive overreach, bypassing parliament, concentration]` | `[1-5]` | `[dok_id]` |
 
 ---
 

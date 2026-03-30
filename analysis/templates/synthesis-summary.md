@@ -64,7 +64,7 @@ graph TD
             RSK["Overall Risk<br/>[CRITICAL/HIGH/MEDIUM/LOW]<br/>Top: [RSK-NNN description]"]
         end
         subgraph "🎭 Threat"
-            THR["Threat Level<br/>[SEVERE/HIGH/MODERATE/LOW]<br/>Top STRIDE: [S/T/R/I/D/E]"]
+            THR["Threat Level<br/>[SEVERE/HIGH/MODERATE/LOW]<br/>Top Category: [NI/LI/AC/TR/DP/PB]"]
         end
         subgraph "📈 Significance"
             SIG["Top Significance<br/>[#.#]/10<br/>[Breaking/Priority/Publish/Monitor]"]
@@ -159,7 +159,7 @@ graph LR
 
 ## 🎭 Threat Summary
 
-| STRIDE Category | Threat Level | Key Finding |
+| Threat Category | Threat Level | Key Finding |
 |----------------|:------------:|-------------|
 | S — Spoofing | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
 | T — Tampering | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |

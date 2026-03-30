@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>📊 Multi-Framework Methodology for Democratic Process Threat Analysis</strong><br>
-  <em>🎯 Attack Trees · Political Kill Chain · Diamond Model · STRIDE Adaptation · Threat Actor Profiling</em>
+  <em>🎯 Attack Trees · Political Kill Chain · Diamond Model · Political Threat Taxonomy · Threat Actor Profiling</em>
 </p>
 
 <p align="center">
@@ -16,7 +16,7 @@
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -24,9 +24,11 @@
 
 ## 🎯 Purpose
 
-This framework establishes the authoritative **multi-framework methodology** for political threat analysis in Riksdagsmonitor. Rather than relying on STRIDE alone, this framework integrates **five complementary threat modeling approaches** — each illuminating different aspects of political threats that the others miss.
+This framework establishes the authoritative **multi-framework methodology** for political threat analysis in Riksdagsmonitor. It integrates **four complementary threat modeling approaches** — each illuminating different aspects of political threats that the others miss.
 
-> **Why multiple frameworks?** STRIDE was designed for software security and categorizes threats by *type* (what the threat IS). However, political intelligence requires understanding threat *mechanics* (HOW the threat succeeds — Attack Trees), threat *progression* (WHERE the threat IS in its lifecycle — Kill Chain), threat *relationships* (WHO is involved and what resources they use — Diamond Model), and threat *actor motivation* (WHY the actor is acting — ICO Profiling). STRIDE alone provides categorization but not the depth needed for actionable political intelligence. Combining frameworks compensates for each framework's individual blind spots.
+> **Why multiple frameworks?** Political intelligence requires understanding threat *mechanics* (HOW the threat succeeds — Attack Trees), threat *progression* (WHERE the threat IS in its lifecycle — Kill Chain), threat *relationships* (WHO is involved and what resources they use — Diamond Model), and threat *actor motivation* (WHY the actor is acting — ICO Profiling). Combining frameworks compensates for each framework's individual blind spots and produces actionable intelligence rather than superficial categorisation.
+>
+> **Note:** This framework deliberately avoids STRIDE and similar cybersecurity-origin categorisation models. STRIDE was designed for software security threat taxonomy and does not meaningfully transfer to political analysis. Political threats require understanding power dynamics, institutional leverage, coalition mathematics, and democratic process mechanics — none of which map to Spoofing/Tampering/Repudiation/Information Disclosure/Denial of Service/Elevation of Privilege.
 
 See [reference/isms-threat-modeling-adaptation.md](../reference/isms-threat-modeling-adaptation.md) for the ISMS-to-political mapping.
 
@@ -40,19 +42,16 @@ flowchart TD
     Q --> A["🌳 Attack Trees<br/><em>How could this threat<br/>succeed step-by-step?</em>"]
     Q --> B["⛓️ Political Kill Chain<br/><em>What stages must the<br/>threat actor complete?</em>"]
     Q --> C["💎 Diamond Model<br/><em>Who is the adversary,<br/>what infrastructure and<br/>capabilities do they use?</em>"]
-    Q --> D["🎭 STRIDE Adaptation<br/><em>What category of threat<br/>is this?</em>"]
     Q --> E["👤 Threat Actor Profiling<br/><em>What motivates and<br/>constrains this actor?</em>"]
 
     A --> F["📊 Output: Attack tree diagram<br/>showing all paths to threat goal"]
     B --> G["📊 Output: Kill chain stages<br/>showing progression & intervention points"]
     C --> H["📊 Output: Diamond relationship<br/>mapping adversary-capability-infrastructure-victim"]
-    D --> I["📊 Output: Threat categorization<br/>for systematic coverage"]
     E --> J["📊 Output: Actor profile<br/>with intent/capability/opportunity assessment"]
 
     style A fill:#dc3545,color:#fff
     style B fill:#fd7e14,color:#fff
     style C fill:#6f42c1,color:#fff
-    style D fill:#0d6efd,color:#fff
     style E fill:#ffc107,color:#000
 ```
 
@@ -61,10 +60,9 @@ flowchart TD
 | **🌳 Attack Trees** | Decomposing HOW a threat succeeds | ★★★★★ | Shows all paths to a political goal; identifies cheapest/easiest attack paths |
 | **⛓️ Political Kill Chain** | Modelling threat PROGRESSION | ★★★★☆ | Reveals intervention points; early warning indicators at each stage |
 | **💎 Diamond Model** | Understanding ADVERSARY relationships | ★★★★☆ | Maps who, how, what infrastructure, and who's affected |
-| **🎭 STRIDE (adapted)** | Ensuring COVERAGE of threat types | ★★★☆☆ | Systematic checklist prevents blind spots; weaker on depth |
 | **👤 Threat Actor Profiling** | Assessing WHO and WHY | ★★★★★ | Intent-capability-opportunity analysis; predicts likely actions |
 
-**Mandatory minimum:** Every threat analysis MUST use at least **Attack Trees + one other framework**. Attack Trees are the mandatory primary tool because they answer the question most critical for political intelligence: "Through what specific sequence of steps could this threat succeed?" — enabling both early warning and strategic intervention. STRIDE alone provides categorization but not actionable path analysis.
+**Mandatory minimum:** Every threat analysis MUST use at least **Attack Trees + one other framework**. Attack Trees are the mandatory primary tool because they answer the question most critical for political intelligence: "Through what specific sequence of steps could this threat succeed?" — enabling both early warning and strategic intervention.
 
 ---
 
@@ -229,46 +227,48 @@ graph TD
 
 ---
 
-## 🎭 Framework 4: STRIDE Adaptation (Systematic Coverage Checklist)
+## 🏷️ Framework 4: Political Threat Taxonomy (Systematic Coverage)
 
-> **Role of STRIDE:** STRIDE serves as a **systematic coverage checklist** — ensuring no threat category is overlooked. For depth and actionability, combine STRIDE categorization with Attack Trees (HOW), Kill Chain (PROGRESSION), and Diamond Model (WHO/WHAT).
+> **Purpose:** The Political Threat Taxonomy ensures systematic coverage of all threat categories relevant to democratic governance. Unlike cybersecurity-origin models (which categorise by attack *type*), this taxonomy categorises by **democratic function threatened** — directly mapping to institutions, processes, and rights that AI analysts should examine.
 
-### STRIDE-to-Political Mapping Overview
+### Political Threat Category Overview
 
 ```mermaid
 graph LR
-    subgraph "STRIDE Category"
-        S[S: Spoofing]
-        T[T: Tampering]
-        R[R: Repudiation]
-        I[I: Information Disclosure]
-        D[D: Denial]
-        E[E: Elevation of Privilege]
+    subgraph "Democratic Function Threatened"
+        P1[🎭 Narrative Integrity<br/>Disinformation & False Framing]
+        P2[📝 Legislative Integrity<br/>Policy Corruption & Manipulation]
+        P3[🚫 Accountability<br/>Oversight Evasion & Obstruction]
+        P4[🔇 Transparency<br/>Information Suppression]
+        P5[⛔ Democratic Process<br/>Procedural Obstruction]
+        P6[👑 Power Balance<br/>Concentration & Overreach]
     end
-    
-    subgraph "Political Threat Category"
-        P1[🎭 Disinformation &<br/>False Narratives]
-        P2[📝 Policy Corruption &<br/>Legislative Manipulation]
-        P3[🚫 Accountability Evasion &<br/>Record Falsification]
-        P4[🔇 Transparency Failures &<br/>Information Suppression]
-        P5[⛔ Democratic Process<br/>Obstruction]
-        P6[👑 Power Concentration &<br/>Constitutional Overreach]
-    end
-    
-    S --> P1
-    T --> P2
-    R --> P3
-    I --> P4
-    D --> P5
-    E --> P6
-    
-    style S fill:#e3f2fd
-    style T fill:#fce4ec
-    style R fill:#fff3e0
-    style I fill:#f3e5f5
-    style D fill:#e8f5e9
-    style E fill:#fff8e1
+
+    P1 --> D1["Detect via: anföranden cross-reference"]
+    P2 --> D2["Detect via: remiss vs. proposition delta"]
+    P3 --> D3["Detect via: KU investigations"]
+    P4 --> D4["Detect via: classified document volumes"]
+    P5 --> D5["Detect via: quorum patterns, filibuster duration"]
+    P6 --> D6["Detect via: constitutional boundary tests"]
+
+    style P1 fill:#e3f2fd
+    style P2 fill:#fce4ec
+    style P3 fill:#fff3e0
+    style P4 fill:#f3e5f5
+    style P5 fill:#e8f5e9
+    style P6 fill:#fff8e1
 ```
+
+### Threat Category Definitions
+
+| Category | Democratic Function | Threat Manifestation | Key MCP Detection Tool |
+|----------|:------------------:|---------------------|----------------------|
+| **Narrative Integrity** | Truthful public discourse | Disinformation, misleading framing, propaganda | `search_anforanden` + fact cross-reference |
+| **Legislative Integrity** | Fair lawmaking | Undisclosed lobbying, process manipulation, fast-tracking | `search_dokument` prop vs. remiss delta |
+| **Accountability** | Government answerability | KU evasion, record falsification, blame-shifting | `search_dokument` organ=KU |
+| **Transparency** | Public access to information | Classification abuse, delayed disclosure, FOI obstruction | Document release timing analysis |
+| **Democratic Process** | Fair parliamentary procedure | Filibustering, quorum manipulation, committee packing | `search_voteringar` patterns |
+| **Power Balance** | Constitutional separation | Executive overreach, judiciary pressure, opposition suppression | Constitutional boundary tests |
 
 ---
 
@@ -316,13 +316,13 @@ mindmap
 
 ### Threat Taxonomy
 
-| Threat Type | STRIDE Mapping | Key Actors | Observable Evidence |
-|-------------|---------------|------------|---------------------|
-| Policy corruption (undisclosed lobbying) | T — Tampering | Industry sector, foreign governments | SOU remiss response vs. final proposition delta |
-| Accountability evasion | R — Repudiation | Government ministers, party leadership | Anföranden contradicting voting record |
-| Regulatory capture | E — Elevation | Regulatory agencies, sector incumbents | Appointment patterns + policy reversals |
-| Budget manipulation | T — Tampering | Finance ministry, budget committee | FiU reservationer vs. final budget text |
-| Oversight blocking | D — Denial | Government secretariat | KU request delays, classified document volumes |
+| Threat Type | Threat Category | Key Actors | Observable Evidence |
+|-------------|:---------------:|------------|---------------------|
+| Policy corruption (undisclosed lobbying) | Legislative Integrity | Industry sector, foreign governments | SOU remiss response vs. final proposition delta |
+| Accountability evasion | Accountability | Government ministers, party leadership | Anföranden contradicting voting record |
+| Regulatory capture | Power Balance | Regulatory agencies, sector incumbents | Appointment patterns + policy reversals |
+| Budget manipulation | Legislative Integrity | Finance ministry, budget committee | FiU reservationer vs. final budget text |
+| Oversight blocking | Transparency | Government secretariat | KU request delays, classified document volumes |
 
 ### KU Granskning (Constitutional Committee Scrutiny) Monitoring
 
@@ -380,14 +380,14 @@ Before publishing any claim that contradicts official parliamentary records:
 
 ### Opposition Threat Instruments
 
-| Instrument | STRIDE | Threat to Government | Detection via MCP |
-|-----------|--------|----------------------|------------------|
-| No-confidence motion (misstroendeförklaring) | D — Denial | CRITICAL — can topple government | `search_dokument` doktyp=miss |
-| Interpellation | I — Disclosure | MEDIUM — forces ministerial response | `get_interpellationer` |
-| Skriftlig fråga | I — Disclosure | LOW — public accountability record | `get_fragor` |
-| Budget amendment (ändringsyrkanden) | T — Tampering | HIGH — can redirect government spending | `search_voteringar` + FiU documents |
-| Committee dissent (reservation) | R — Repudiation | MEDIUM — undermines government narrative | `get_betankanden` |
-| KU complaint | E — Elevation (counter) | HIGH — triggers constitutional review | `search_dokument` organ=KU |
+| Instrument | Threat Category | Threat to Government | Detection via MCP |
+|-----------|:---------------:|----------------------|------------------|
+| No-confidence motion (misstroendeförklaring) | Democratic Process | CRITICAL — can topple government | `search_dokument` doktyp=miss |
+| Interpellation | Transparency | MEDIUM — forces ministerial response | `get_interpellationer` |
+| Skriftlig fråga | Transparency | LOW — public accountability record | `get_fragor` |
+| Budget amendment (ändringsyrkanden) | Legislative Integrity | HIGH — can redirect government spending | `search_voteringar` + FiU documents |
+| Committee dissent (reservation) | Accountability | MEDIUM — undermines government narrative | `get_betankanden` |
+| KU complaint | Power Balance | HIGH — triggers constitutional review | `search_dokument` organ=KU |
 
 ---
 
@@ -420,16 +420,16 @@ Before publishing any claim that contradicts official parliamentary records:
 
 All identified threat actors are classified on two axes: **Intent** and **Capability**.
 
-| Threat Agent | Type | Intent | Capability | Primary STRIDE Category |
+| Threat Agent | Type | Intent | Capability | Primary Threat Category |
 |-------------|------|--------|------------|------------------------|
-| Governing coalition | Domestic political | Mixed (policy + power) | HIGH | T, R, D, E |
-| Main opposition bloc | Domestic political | Clear (power acquisition) | MEDIUM-HIGH | D, I, R |
-| Individual opposition MP | Domestic political | Varies | LOW-MEDIUM | I, R |
-| Riksdag committee minority | Institutional | Policy-focused | MEDIUM | T, R |
-| Swedish media | Fourth estate | Disclosure-focused | MEDIUM | I |
-| Foreign state (Russia, China) | External | Destabilisation | HIGH | S, T |
-| Lobby/industry | Economic | Policy-focused | MEDIUM | T |
-| EU Commission | Institutional | Compliance | HIGH | D, E |
+| Governing coalition | Domestic political | Mixed (policy + power) | HIGH | Legislative Integrity, Accountability |
+| Main opposition bloc | Domestic political | Clear (power acquisition) | MEDIUM-HIGH | Democratic Process, Transparency |
+| Individual opposition MP | Domestic political | Varies | LOW-MEDIUM | Transparency, Accountability |
+| Riksdag committee minority | Institutional | Policy-focused | MEDIUM | Legislative Integrity |
+| Swedish media | Fourth estate | Disclosure-focused | MEDIUM | Narrative Integrity |
+| Foreign state (Russia, China) | External | Destabilisation | HIGH | Narrative Integrity, Power Balance |
+| Lobby/industry | Economic | Policy-focused | MEDIUM | Legislative Integrity |
+| EU Commission | Institutional | Compliance | HIGH | Democratic Process, Power Balance |
 
 ---
 
@@ -447,33 +447,16 @@ All identified threat actors are classified on two axes: **Intent** and **Capabi
 - **Path:** `/analysis/methodologies/political-threat-framework.md`  
 - **ISMS Reference:** [Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md)  
 - **Version:** 2.0  
-- **Frameworks:** Attack Trees, Political Kill Chain, Diamond Model, STRIDE (adapted), Threat Actor Profiling  
+- **Frameworks:** Attack Trees, Political Kill Chain, Diamond Model, Political Threat Taxonomy, Threat Actor Profiling  
 - **Classification:** Public  
 - **Next Review:** 2026-06-30
 
-<!-- version: 2.0.0 | updated: 2026-03-30 | author: Hack23 AB -->
+<!-- version: 3.0.0 | updated: 2026-03-30 | author: Hack23 AB -->
 <!-- document-control: political-analysis-methodology | classification: public -->
 
-## 1. Purpose
+## Appendix A: Political Threat Category Detailed Definitions
 
-This document describes the **PRIDES Political Threat Analysis Framework** used by Riksdagsmonitor to identify and characterise threats to democratic governance from Swedish parliamentary activity. PRIDES is adapted from the [ISMS THREAT_MODEL.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/THREAT_MODEL.md) STRIDE framework, reimagined for **political intelligence** rather than cybersecurity.
-
-## 2. The PRIDES Framework — Conceptual Foundation
-
-STRIDE is a systematic threat model used in information security to categorise threats across 6 dimensions (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege). We apply the **same structural rigour** to political threats:
-
-| ISMS STRIDE | Threat Type | Political PRIDES | Political Manifestation |
-|---|---|---|---|
-| **S**poofing | False identity/claims | **P**olarization | False narratives, divisive rhetoric, misleading framing |
-| **T**ampering | Unauthorised modification | **R**egulatory Overreach | Abuse of legislative power, bypassing democratic norms |
-| **R**epudiation | Denying actions | **I**nstitutional Erosion | Undermining accountability, weakening democratic institutions |
-| **I**nformation Disclosure | Unauthorised exposure | **D**emocratic Deficit | Opacity, restricted public access, press freedom violations |
-| **D**enial of Service | Blocking legitimate use | **E**conomic Disruption | Policy-driven economic harm, fiscal irresponsibility |
-| **E**levation of Privilege | Gaining unauthorised access | **S**ocietal Impact | Rights erosion, disproportionate harm to vulnerable groups |
-
-## 3. PRIDES Category Definitions
-
-### P — Polarization
+### Narrative Integrity Threats (Polarization & Disinformation)
 **What it is**: Intentional or systematic division of public opinion along political, social, or identity-based lines, through misleading rhetoric, disinformation, or populist framing.
 
 **Observable indicators in Swedish parliamentary context**:
@@ -493,7 +476,7 @@ STRIDE is a systematic threat model used in information security to categorise t
 
 ---
 
-### R — Regulatory Overreach
+### Power Balance Threats (Regulatory Overreach & Concentration)
 **What it is**: Abuse of legislative or executive power; bypassing parliamentary process; concentrating regulatory authority beyond democratic mandate.
 
 **Observable indicators**:
@@ -512,7 +495,7 @@ STRIDE is a systematic threat model used in information security to categorise t
 
 ---
 
-### I — Institutional Erosion
+### Accountability Threats (Institutional Erosion)
 **What it is**: Systematic weakening of democratic institutions, accountability mechanisms, or constitutional oversight. Includes accountability gaps, judicial capture, and democratic backsliding.
 
 **Observable indicators**:
@@ -532,7 +515,7 @@ STRIDE is a systematic threat model used in information security to categorise t
 
 ---
 
-### D — Democratic Deficit
+### Transparency Threats (Democratic Deficit)
 **What it is**: Restriction of public access to information, press freedom violations, transparency failures, or deliberate opacity in government decision-making.
 
 **Observable indicators**:
@@ -552,7 +535,7 @@ STRIDE is a systematic threat model used in information security to categorise t
 
 ---
 
-### E — Economic Disruption
+### Democratic Process Threats (Economic Disruption)
 **What it is**: Policy-driven economic harm; fiscal irresponsibility; policy failures that cause macroeconomic instability or economic harm to citizens.
 
 **Observable indicators**:
@@ -572,7 +555,7 @@ STRIDE is a systematic threat model used in information security to categorise t
 
 ---
 
-### S — Societal Impact
+### Societal Impact Threats (Rights & Vulnerable Groups)
 **What it is**: Disproportionate harm to vulnerable groups, erosion of fundamental rights, discriminatory policy effects, or systematic social exclusion through political decisions.
 
 **Observable indicators**:
@@ -636,63 +619,65 @@ STRIDE is a systematic threat model used in information security to categorise t
 ```typescript
 import { analysePoliticalThreats, analyseSinglePridesCategory } from './political-threat-analysis.js';
 
-// Full PRIDES profile
+// Full threat profile (legacy API — uses internal threat categories)
 const profile = analysePoliticalThreats(doc, ciaContext);
 console.log(profile.overallThreatLevel);  // 'critical' | 'high' | 'medium' | 'low' | 'none'
-console.log(profile.primaryThreat);       // dominant PridesCategory
+console.log(profile.primaryThreat);       // dominant threat category
 console.log(profile.activeThreatAgents); // ThreatAgent[]
 
 // Targeted single-category analysis
-const polarizationThreat = analyseSinglePridesCategory(doc, 'polarization', ciaContext);
-console.log(polarizationThreat?.severity);        // 'critical' | 'high' | 'medium' | 'low'
-console.log(polarizationThreat?.countermeasures); // string[]
+const narrativeThreat = analyseSinglePridesCategory(doc, 'polarization', ciaContext);
+console.log(narrativeThreat?.severity);        // 'critical' | 'high' | 'medium' | 'low'
+console.log(narrativeThreat?.countermeasures); // string[]
 ```
+
+> **⚠️ Note:** The TypeScript API uses legacy category names (`polarization`, `regulatory-overreach`, etc.) internally. AI analysis should use the Political Threat Taxonomy categories (Narrative Integrity, Legislative Integrity, Accountability, Transparency, Democratic Process, Power Balance) in all markdown outputs.
 
 ## 7. Worked Examples
 
-### Example 1: KU Constitutional Investigation (Institutional Erosion)
+### Example 1: KU Constitutional Investigation (Accountability Threat)
 **Document**: KU-granskning av grundlagsändring  
 **Committee**: KU  
 
-| PRIDES | Threat Agents | Severity |
+| Threat Category | Threat Agents | Severity |
 |---|---|---|
-| polarization | opposition-parties, media | low |
-| regulatory-overreach | ruling-coalition | medium |
-| **institutional-erosion** | **ruling-coalition, institutional** | **high** |
-| democratic-deficit | ruling-coalition | medium |
-| economic-disruption | institutional | low |
-| societal-impact | institutional | low |
-| **Primary Threat: institutional-erosion** | | **Overall: HIGH** |
+| Narrative Integrity | opposition-parties, media | low |
+| Power Balance | ruling-coalition | medium |
+| **Accountability** | **ruling-coalition, institutional** | **high** |
+| Transparency | ruling-coalition | medium |
+| Democratic Process | institutional | low |
+| Societal Impact | institutional | low |
+| **Primary Threat: Accountability** | | **Overall: HIGH** |
 
 ### Example 2: Polarising Migration Interpellation
 **Document**: Interpellation about migration and integration, SD party  
 
-| PRIDES | Threat Agents | Severity |
+| Threat Category | Threat Agents | Severity |
 |---|---|---|
-| **polarization** | **opposition-parties, media** | **high** |
-| regulatory-overreach | ruling-coalition | low |
-| institutional-erosion | institutional | low |
-| democratic-deficit | ruling-coalition | low |
-| economic-disruption | ruling-coalition | low |
-| societal-impact | opposition-parties | medium |
-| **Primary Threat: polarization** | | **Overall: HIGH** |
+| **Narrative Integrity** | **opposition-parties, media** | **high** |
+| Power Balance | ruling-coalition | low |
+| Accountability | institutional | low |
+| Transparency | ruling-coalition | low |
+| Democratic Process | ruling-coalition | low |
+| Societal Impact | opposition-parties | medium |
+| **Primary Threat: Narrative Integrity** | | **Overall: HIGH** |
 
 ### Example 3: Routine Written Question
 **Document**: Written question about local transport  
 
-| PRIDES | Threat Agents | Severity |
+| Threat Category | Threat Agents | Severity |
 |---|---|---|
-| polarization | ruling-coalition | low |
-| regulatory-overreach | ruling-coalition | low |
-| institutional-erosion | institutional | low |
-| democratic-deficit | ruling-coalition | low |
-| economic-disruption | ruling-coalition | low |
-| societal-impact | ruling-coalition | low |
-| **Primary Threat: polarization** | | **Overall: LOW** |
+| Narrative Integrity | ruling-coalition | low |
+| Power Balance | ruling-coalition | low |
+| Accountability | institutional | low |
+| Transparency | ruling-coalition | low |
+| Democratic Process | ruling-coalition | low |
+| Societal Impact | ruling-coalition | low |
+| **Primary Threat: Narrative Integrity** | | **Overall: LOW** |
 
 ## 8. Integration Points
 
-- **`DocumentAnalysisResult.methodologyAnalysis.threatProfile`**: Full PRIDES profile
+- **`DocumentAnalysisResult.methodologyAnalysis.threatProfile`**: Full threat profile (legacy API)
 - **Article framing**: `primaryThreat` guides which democratic risk to highlight
 - **Headline selection**: `overallThreatLevel = 'critical'` → democracy-focused framing
 - **Editorial safeguards**: Always present `countermeasures` alongside threat identification
@@ -718,8 +703,8 @@ A threat analysis triggers escalation to **breaking news** status when:
 
 | Condition | Action | Severity Threshold |
 |-----------|--------|--------------------|
-| Any STRIDE category reaches severity 5 | Immediate breaking analysis | SEVERE |
-| ≥ 2 STRIDE categories reach severity 4 | Priority analysis; article within 2 hours | HIGH |
+| Any threat category reaches severity 5 | Immediate breaking analysis | SEVERE |
+| ≥ 2 threat categories reach severity 4 | Priority analysis; article within 2 hours | HIGH |
 | Overall threat level = SEVERE | All-language deployment; editor notification | SEVERE |
 | KU formal investigation announced | Priority threat assessment update | ≥ 3 (MODERATE) |
 | No-confidence motion filed | Immediate full threat model update | 5 (SEVERE) |
@@ -740,22 +725,25 @@ Connect threat severity to the risk methodology's 5×5 matrix:
 
 ---
 
-## 10. AI Analysis Protocol for Threat Assessment
+## 10. AI Analysis Protocol for Threat Assessment (Legacy v1.0 — Superseded)
+
+> **⚠️ This section is superseded by the Multi-Framework Integration Protocol above.** The protocol below is retained for backward compatibility with existing workflows that reference "Section 10". New workflows should use the Multi-Framework Integration Protocol.
 
 The AI agent **MUST** follow this protocol when performing threat analysis:
 
-1. **Read this framework** — understand STRIDE-to-political mapping, severity calibration, threat actors
+1. **Read this framework** — understand the Political Threat Taxonomy, Attack Trees, Kill Chain, Diamond Model, and Actor Profiling
 2. **Read the templates** — `analysis/templates/threat-analysis.md` and per-file template's threat section
 3. **Query MCP tools** for evidence:
-   - `search_dokument` with `organ=KU` — constitutional committee investigations (Repudiation, Elevation)
-   - `search_voteringar` — coalition voting patterns (Tampering via legislative manipulation)
-   - `search_anforanden` — debate rhetoric (Spoofing via misrepresentation)
-   - `search_dokument` with `doktyp=miss` — no-confidence motions (Denial of Service)
-   - `get_interpellationer` — accountability probes (Information Disclosure failures)
-4. **Score each STRIDE category** using the severity calibration table above
-5. **Map threat actors** — identify who benefits from each threat
-6. **Connect to risk scoring** using the Threat-to-Risk integration table
-7. **Include countermeasures** for every identified threat (editorial safeguard: never present threats without mitigations)
+   - `search_dokument` with `organ=KU` — constitutional committee investigations (Accountability threats)
+   - `search_voteringar` — coalition voting patterns (Legislative Integrity threats)
+   - `search_anforanden` — debate rhetoric (Narrative Integrity threats)
+   - `search_dokument` with `doktyp=miss` — no-confidence motions (Democratic Process threats)
+   - `get_interpellationer` — accountability probes (Transparency threats)
+4. **Assess each threat category** using the severity calibration table above
+5. **Build Attack Trees** for the top 2-3 threats
+6. **Map threat actors** — identify who benefits from each threat using ICO model
+7. **Connect to risk scoring** using the Threat-to-Risk integration table
+8. **Include countermeasures** for every identified threat
 
 ---
 
@@ -821,8 +809,8 @@ When performing threat analysis, combine frameworks for maximum depth:
 ```mermaid
 flowchart TD
     START["📄 Political event<br/>or document to analyse"]
-    START --> S["🎭 STRIDE Check<br/>Categorise threat type<br/>(coverage)"]
-    S --> AT["🌳 Attack Tree<br/>Decompose HOW threat<br/>could succeed"]
+    START --> TC["🏷️ Threat Taxonomy<br/>Identify which categories<br/>are relevant"]
+    TC --> AT["🌳 Attack Tree<br/>Decompose HOW threat<br/>could succeed"]
     AT --> KC["⛓️ Kill Chain<br/>Assess progression stage<br/>& intervention points"]
     KC --> DM["💎 Diamond Model<br/>Map adversary, capability,<br/>infrastructure, victim"]
     DM --> AP["👤 Actor Profile<br/>Assess intent, capability,<br/>opportunity"]
@@ -836,7 +824,7 @@ flowchart TD
 
 | Step | Framework | Output | Feeds Into |
 |:----:|-----------|--------|-----------|
-| 1 | STRIDE | Threat categorisation (S/T/R/I/D/E) | Ensures no category is missed |
+| 1 | Threat Taxonomy | Affected democratic functions identified | Ensures systematic coverage |
 | 2 | Attack Trees | Decomposed attack paths with feasibility | Risk methodology (likelihood assessment) |
 | 3 | Kill Chain | Stage progression assessment | Forward indicators (what to watch) |
 | 4 | Diamond Model | Adversary-victim-capability mapping | SWOT analysis (threats quadrant) |
@@ -844,12 +832,12 @@ flowchart TD
 
 ---
 
-## 🤖 AI Analysis Protocol for Threat Assessment
+## 🤖 AI Analysis Protocol for Threat Assessment (v3.0)
 
 The AI agent **MUST** follow this protocol when performing threat analysis:
 
-1. **Read this framework** — understand ALL five frameworks, not just STRIDE
-2. **Start with STRIDE** as a coverage checklist — identify which categories are relevant
+1. **Read this framework** — understand ALL four frameworks: Attack Trees, Kill Chain, Diamond Model, Actor Profiling
+2. **Use Political Threat Taxonomy** as a coverage checklist — identify which democratic functions are threatened
 3. **Build Attack Trees** for the top 2–3 threats — decompose how they could succeed
 4. **Map Kill Chain stages** — where has the threat progressed? Where can it be disrupted?
 5. **Apply Diamond Model** for the most significant threat actor

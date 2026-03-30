@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>📊 Multi-Framework Template for Democratic Process Threat Analysis</strong><br>
-  <em>🎯 Attack Trees · Kill Chain · Diamond Model · STRIDE Coverage · Actor Profiling</em>
+  <em>🎯 Attack Trees · Kill Chain · Diamond Model · Political Threat Taxonomy · Actor Profiling</em>
 </p>
 
 <p align="center">
@@ -21,15 +21,18 @@
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `threat-analysis.md` in the workflow's own folder (never overwrite another workflow's files). Each threat requires evidence citations and multi-framework analysis. See [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md).
 
-> **🚨 Anti-Pattern Warning:** STRIDE-only analysis with generic threat descriptions and no attack trees is REJECTED. Every threat analysis MUST include:
+> **🚨 Anti-Pattern Warning:** Generic threat descriptions without attack trees are REJECTED. Every threat analysis MUST include:
 > 1. **Threat Analysis Context** (metadata header with ID, date, scope)
-> 2. **Attack Tree** for the top threat (Mermaid diagram showing how the threat could succeed)
-> 3. **Kill Chain assessment** (what stage has the threat progressed to?)
-> 4. **STRIDE coverage check** (all 6 categories assessed)
+> 2. **Political Threat Taxonomy** coverage check (all 6 democratic function categories assessed)
+> 3. **Attack Tree** for the top threat (Mermaid diagram showing how the threat could succeed)
+> 4. **Kill Chain assessment** (what stage has the threat progressed to?)
 > 5. **Diamond Model** for the primary threat actor
 > 6. **Threat Actor Profile** with ICO (Intent-Capability-Opportunity) assessment
 > 7. **Evidence tables** with dok_id citations, severity scores, and confidence labels
 > 8. **Forward indicators** — what MCP-detectable signals indicate escalation?
+>
+> **DO NOT use STRIDE categories (S/T/R/I/D/E).** Use the Political Threat Taxonomy categories:
+> Narrative Integrity, Legislative Integrity, Accountability, Transparency, Democratic Process, Power Balance.
 >
 > **Good example:** [THREAT_MODEL.md](../../THREAT_MODEL.md) — this is the formatting quality standard.
 
@@ -49,123 +52,122 @@
 
 ---
 
-## 🎭 Section 1: STRIDE Coverage Check
+## 🏷️ Section 1: Political Threat Taxonomy Assessment
 
 > **Severity Scale Reference:** 1=Negligible (routine), 2=Minor (self-correcting), 3=Moderate (intervention needed), 4=Major (formal response required), 5=Severe (constitutional crisis). See [methodologies/political-threat-framework.md §9](../methodologies/political-threat-framework.md) for full calibration table.
 
-### STRIDE Threat Landscape
+### Political Threat Landscape
 
-> **AI Instructions:** Replace placeholder text with actual threats identified. Category nodes are color-coded by STRIDE type; threat instance nodes should be color-coded by severity using the standard palette (🔴 critical → 🟢 low).
+> **AI Instructions:** Replace placeholder text with actual threats identified from document analysis. Category nodes should be color-coded by severity using the standard palette (🔴 severe → 🟢 negligible).
 
 ```mermaid
 graph LR
-    subgraph "🎭 Political STRIDE Threat Model"
-        S["🎭 S: Spoofing<br/>False Narratives"]
-        T["🔧 T: Tampering<br/>Policy Corruption"]
-        R["📝 R: Repudiation<br/>Accountability Evasion"]
-        I["🔓 I: Information<br/>Transparency Failures"]
-        D["🚫 D: Denial<br/>Democratic Obstruction"]
-        E["⬆️ E: Elevation<br/>Power Concentration"]
+    subgraph "🏷️ Political Threat Taxonomy"
+        NI["🎭 Narrative Integrity<br/>Disinformation & False Framing"]
+        LI["📝 Legislative Integrity<br/>Policy Corruption & Manipulation"]
+        AC["🚫 Accountability<br/>Oversight Evasion & Obstruction"]
+        TR["🔇 Transparency<br/>Information Suppression"]
+        DP["⛔ Democratic Process<br/>Procedural Obstruction"]
+        PB["👑 Power Balance<br/>Concentration & Overreach"]
     end
 
-    S --> S1["[Highest S threat]"]
-    T --> T1["[Highest T threat]"]
-    R --> R1["[Highest R threat]"]
-    I --> I1["[Highest I threat]"]
-    D --> D1["[Highest D threat]"]
-    E --> E1["[Highest E threat]"]
+    NI --> NI1["[Highest Narrative Integrity threat]"]
+    LI --> LI1["[Highest Legislative Integrity threat]"]
+    AC --> AC1["[Highest Accountability threat]"]
+    TR --> TR1["[Highest Transparency threat]"]
+    DP --> DP1["[Highest Democratic Process threat]"]
+    PB --> PB1["[Highest Power Balance threat]"]
 
-    style S fill:#6f42c1,color:#fff
-    style T fill:#dc3545,color:#fff
-    style R fill:#fd7e14,color:#fff
-    style I fill:#ffc107,color:#000
-    style D fill:#28a745,color:#fff
-    style E fill:#0d6efd,color:#fff
-    %% Threat instance nodes: set fill color by severity (framework §9, 1–5 scale)
-    %% 1 = 🟢 #28a745 (Negligible/Low), 2 = 🟡 #ffc107 (Minor), 3 = 🟠 #fd7e14 (Moderate), 4 = 🟠 #fd7e14 (High), 5 = 🔴 #dc3545 (Severe)
-    style S1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
-    style T1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
-    style R1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
-    style I1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
-    style D1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
-    style E1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style NI fill:#6f42c1,color:#fff
+    style LI fill:#dc3545,color:#fff
+    style AC fill:#fd7e14,color:#fff
+    style TR fill:#ffc107,color:#000
+    style DP fill:#28a745,color:#fff
+    style PB fill:#0d6efd,color:#fff
+    %% Threat instance nodes: color by severity (1–5 scale)
+    style NI1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style LI1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style AC1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style TR1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style DP1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style PB1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
 ```
 
-### S — Spoofing: False Narratives & Misinformation Threats
+### Narrative Integrity — Disinformation & False Framing
 
 *Threats involving actors misrepresenting facts, identities, or political positions to manipulate public discourse or parliamentary outcomes.*
 
 | Threat ID | Threat Description | Threat Actor | Evidence Sources | Severity (1–5) | Mitigation |
 |-----------|-------------------|--------------|------------------|:--------------:|------------|
-| `S-001` | `[REQUIRED: e.g. "Coordinated disinformation campaign misattributing policy position to coalition party"]` | `[REQUIRED: e.g. "Foreign state actor / domestic opposition / media outlet"]` | `[REQUIRED: dok_id or URL]` | `[#]` | `[REQUIRED: 1 sentence]` |
-| `S-002` | `[OPTIONAL]` | `[OPTIONAL]` | `[OPTIONAL]` | `[#]` | `[OPTIONAL]` |
+| `NI-001` | `[REQUIRED: e.g. "Coordinated disinformation campaign misattributing policy position to coalition party"]` | `[REQUIRED: e.g. "Foreign state actor / domestic opposition / media outlet"]` | `[REQUIRED: dok_id or URL]` | `[#]` | `[REQUIRED: 1 sentence]` |
+| `NI-002` | `[OPTIONAL]` | `[OPTIONAL]` | `[OPTIONAL]` | `[#]` | `[OPTIONAL]` |
 
-**S-Category Threat Level:** `[LOW / MODERATE / HIGH / SEVERE]`
+**Narrative Integrity Threat Level:** `[LOW / MODERATE / HIGH / SEVERE]`
 
 ---
 
-### T — Tampering: Policy Corruption Risks
+### Legislative Integrity — Policy Corruption & Manipulation
 
 *Threats involving manipulation of legislative texts, parliamentary records, budget figures, or official statistics to corrupt policy outcomes.*
 
 | Threat ID | Threat Description | Threat Actor | Evidence Sources | Severity (1–5) | Mitigation |
 |-----------|-------------------|--------------|------------------|:--------------:|------------|
-| `T-001` | `[REQUIRED: e.g. "Undisclosed lobbying altering committee report recommendations"]` | `[REQUIRED: e.g. "Industry lobby / coalition ally ministry"]` | `[REQUIRED: dok_id]` | `[#]` | `[REQUIRED]` |
-| `T-002` | `[OPTIONAL]` | `[OPTIONAL]` | `[OPTIONAL]` | `[#]` | `[OPTIONAL]` |
+| `LI-001` | `[REQUIRED: e.g. "Undisclosed lobbying altering committee report recommendations"]` | `[REQUIRED: e.g. "Industry lobby / coalition ally ministry"]` | `[REQUIRED: dok_id]` | `[#]` | `[REQUIRED]` |
+| `LI-002` | `[OPTIONAL]` | `[OPTIONAL]` | `[OPTIONAL]` | `[#]` | `[OPTIONAL]` |
 
-**T-Category Threat Level:** `[LOW / MODERATE / HIGH / SEVERE]`
+**Legislative Integrity Threat Level:** `[LOW / MODERATE / HIGH / SEVERE]`
 
 ---
 
-### R — Repudiation: Accountability Evasion
+### Accountability — Oversight Evasion & Obstruction
 
 *Threats involving actors denying statements, votes, commitments, or policy positions to evade accountability — especially relevant in Swedish parliamentary context where voting records are public.*
 
 | Threat ID | Threat Description | Threat Actor | Evidence Sources | Severity (1–5) | Mitigation |
 |-----------|-------------------|--------------|------------------|:--------------:|------------|
-| `R-001` | `[REQUIRED: e.g. "Government minister contradicts Riksdag voting record on climate policy"]` | `[REQUIRED: e.g. "Statsråd / party spokesperson"]` | `[REQUIRED: voterings-id or dok_id]` | `[#]` | `[REQUIRED: e.g. "Publish voting record cross-reference"]` |
-| `R-002` | `[OPTIONAL]` | `[OPTIONAL]` | `[OPTIONAL]` | `[#]` | `[OPTIONAL]` |
+| `AC-001` | `[REQUIRED: e.g. "Government minister contradicts Riksdag voting record on climate policy"]` | `[REQUIRED: e.g. "Statsråd / party spokesperson"]` | `[REQUIRED: voterings-id or dok_id]` | `[#]` | `[REQUIRED: e.g. "Publish voting record cross-reference"]` |
+| `AC-002` | `[OPTIONAL]` | `[OPTIONAL]` | `[OPTIONAL]` | `[#]` | `[OPTIONAL]` |
 
-**R-Category Threat Level:** `[LOW / MODERATE / HIGH / SEVERE]`
+**Accountability Threat Level:** `[LOW / MODERATE / HIGH / SEVERE]`
 
 ---
 
-### I — Information Disclosure: Transparency Failures
+### Transparency — Information Suppression
 
 *Threats involving suppression, delay, or selective disclosure of politically significant information that citizens have a right to know.*
 
 | Threat ID | Threat Description | Threat Actor | Evidence Sources | Severity (1–5) | Mitigation |
 |-----------|-------------------|--------------|------------------|:--------------:|------------|
-| `I-001` | `[REQUIRED: e.g. "Classified government inquiry suppresses key findings from SOU report"]` | `[REQUIRED: e.g. "Departement / committee chair"]` | `[REQUIRED: dok_id or reference]` | `[#]` | `[REQUIRED: e.g. "FOI request tracking, MCP monitoring"]` |
-| `I-002` | `[OPTIONAL]` | `[OPTIONAL]` | `[OPTIONAL]` | `[#]` | `[OPTIONAL]` |
+| `TR-001` | `[REQUIRED: e.g. "Classified government inquiry suppresses key findings from SOU report"]` | `[REQUIRED: e.g. "Departement / committee chair"]` | `[REQUIRED: dok_id or reference]` | `[#]` | `[REQUIRED: e.g. "FOI request tracking, MCP monitoring"]` |
+| `TR-002` | `[OPTIONAL]` | `[OPTIONAL]` | `[OPTIONAL]` | `[#]` | `[OPTIONAL]` |
 
-**I-Category Threat Level:** `[LOW / MODERATE / HIGH / SEVERE]`
+**Transparency Threat Level:** `[LOW / MODERATE / HIGH / SEVERE]`
 
 ---
 
-### D — Denial: Democratic Process Obstruction
+### Democratic Process — Procedural Obstruction
 
 *Threats involving obstruction, delay, or blockage of normal democratic processes — votes, committee work, public consultations, or legislative timelines.*
 
 | Threat ID | Threat Description | Threat Actor | Evidence Sources | Severity (1–5) | Mitigation |
 |-----------|-------------------|--------------|------------------|:--------------:|------------|
-| `D-001` | `[REQUIRED: e.g. "Systematic filibustering of budget committee deliberations to delay vote"]` | `[REQUIRED: e.g. "Opposition bloc / specific party"]` | `[REQUIRED: calendar ref or dok_id]` | `[#]` | `[REQUIRED: e.g. "Track committee session attendance and delay patterns"]` |
-| `D-002` | `[OPTIONAL]` | `[OPTIONAL]` | `[OPTIONAL]` | `[#]` | `[OPTIONAL]` |
+| `DP-001` | `[REQUIRED: e.g. "Systematic filibustering of budget committee deliberations to delay vote"]` | `[REQUIRED: e.g. "Opposition bloc / specific party"]` | `[REQUIRED: calendar ref or dok_id]` | `[#]` | `[REQUIRED: e.g. "Track committee session attendance and delay patterns"]` |
+| `DP-002` | `[OPTIONAL]` | `[OPTIONAL]` | `[OPTIONAL]` | `[#]` | `[OPTIONAL]` |
 
-**D-Category Threat Level:** `[LOW / MODERATE / HIGH / SEVERE]`
+**Democratic Process Threat Level:** `[LOW / MODERATE / HIGH / SEVERE]`
 
 ---
 
-### E — Elevation of Privilege: Power Concentration
+### Power Balance — Concentration & Overreach
 
 *Threats involving actors accumulating disproportionate political power beyond their constitutional mandate — e.g. bypassing Riksdag oversight, concentrating ministerial authority, or circumventing checks and balances.*
 
 | Threat ID | Threat Description | Threat Actor | Evidence Sources | Severity (1–5) | Mitigation |
 |-----------|-------------------|--------------|------------------|:--------------:|------------|
-| `E-001` | `[REQUIRED: e.g. "Government uses regulatory decree to bypass Riksdag legislative vote on migration policy"]` | `[REQUIRED: e.g. "Statsminister / Justitiedepartementet"]` | `[REQUIRED: dok_id or proposition ref]` | `[#]` | `[REQUIRED: e.g. "Track Konstitutionsutskottet (KU) granskning proceedings"]` |
-| `E-002` | `[OPTIONAL]` | `[OPTIONAL]` | `[OPTIONAL]` | `[#]` | `[OPTIONAL]` |
+| `PB-001` | `[REQUIRED: e.g. "Government uses regulatory decree to bypass Riksdag legislative vote on migration policy"]` | `[REQUIRED: e.g. "Statsminister / Justitiedepartementet"]` | `[REQUIRED: dok_id or proposition ref]` | `[#]` | `[REQUIRED: e.g. "Track Konstitutionsutskottet (KU) granskning proceedings"]` |
+| `PB-002` | `[OPTIONAL]` | `[OPTIONAL]` | `[OPTIONAL]` | `[#]` | `[OPTIONAL]` |
 
-**E-Category Threat Level:** `[LOW / MODERATE / HIGH / SEVERE]`
+**Power Balance Threat Level:** `[LOW / MODERATE / HIGH / SEVERE]`
 
 ---
 
@@ -251,16 +253,16 @@ graph TD
 
 ---
 
-> Use this matrix to summarize, for each STRIDE category, the single highest-severity threat and its assessed severity score (1–5).
+> Use this matrix to summarize, for each threat category, the single highest-severity threat and its assessed severity score (1–5).
 
-| STRIDE Category | Highest Threat | Severity | Threat Level |
+| Threat Category | Highest Threat | Severity | Threat Level |
 |----------------|---------------|:--------:|--------------|
-| S — Spoofing | `[highest S threat ID]` | `[#]` | `[LOW/MOD/HIGH/SEVERE]` |
-| T — Tampering | `[highest T threat ID]` | `[#]` | `[LOW/MOD/HIGH/SEVERE]` |
-| R — Repudiation | `[highest R threat ID]` | `[#]` | `[LOW/MOD/HIGH/SEVERE]` |
-| I — Disclosure | `[highest I threat ID]` | `[#]` | `[LOW/MOD/HIGH/SEVERE]` |
-| D — Denial | `[highest D threat ID]` | `[#]` | `[LOW/MOD/HIGH/SEVERE]` |
-| E — Elevation | `[highest E threat ID]` | `[#]` | `[LOW/MOD/HIGH/SEVERE]` |
+| Narrative Integrity | `[highest NI threat ID]` | `[#]` | `[LOW/MOD/HIGH/SEVERE]` |
+| Legislative Integrity | `[highest LI threat ID]` | `[#]` | `[LOW/MOD/HIGH/SEVERE]` |
+| Accountability | `[highest AC threat ID]` | `[#]` | `[LOW/MOD/HIGH/SEVERE]` |
+| Transparency | `[highest TR threat ID]` | `[#]` | `[LOW/MOD/HIGH/SEVERE]` |
+| Democratic Process | `[highest DP threat ID]` | `[#]` | `[LOW/MOD/HIGH/SEVERE]` |
+| Power Balance | `[highest PB threat ID]` | `[#]` | `[LOW/MOD/HIGH/SEVERE]` |
 
 ---
 
@@ -268,10 +270,10 @@ graph TD
 
 | Actor Type | Specific Actor | Primary Threat Category | Intent | Capability |
 |------------|---------------|------------------------|--------|------------|
-| Government | `[e.g. Statsminister]` | `[S/T/R/I/D/E]` | `[known/suspected/unknown]` | `[HIGH/MED/LOW]` |
-| Opposition | `[e.g. S party leadership]` | `[S/T/R/I/D/E]` | `[known/suspected/unknown]` | `[HIGH/MED/LOW]` |
-| Media | `[e.g. specific outlet]` | `[S/T/R/I/D/E]` | `[known/suspected/unknown]` | `[HIGH/MED/LOW]` |
-| External | `[e.g. EU Commission]` | `[S/T/R/I/D/E]` | `[known/suspected/unknown]` | `[HIGH/MED/LOW]` |
+| Government | `[e.g. Statsminister]` | `[Threat Category]` | `[known/suspected/unknown]` | `[HIGH/MED/LOW]` |
+| Opposition | `[e.g. S party leadership]` | `[Threat Category]` | `[known/suspected/unknown]` | `[HIGH/MED/LOW]` |
+| Media | `[e.g. specific outlet]` | `[Threat Category]` | `[known/suspected/unknown]` | `[HIGH/MED/LOW]` |
+| External | `[e.g. EU Commission]` | `[Threat Category]` | `[known/suspected/unknown]` | `[HIGH/MED/LOW]` |
 
 ---
 
@@ -290,8 +292,8 @@ graph TD
 
 | Condition | Escalate? | Action |
 |-----------|:---------:|--------|
-| Any STRIDE category severity ≥ 5 | **YES** | Immediate breaking analysis; all-language deployment |
-| ≥ 2 STRIDE categories severity ≥ 4 | **YES** | Priority analysis; article within 2 hours |
+| Any threat category severity ≥ 5 | **YES** | Immediate breaking analysis; all-language deployment |
+| ≥ 2 threat categories severity ≥ 4 | **YES** | Priority analysis; article within 2 hours |
 | Overall threat level = SEVERE | **YES** | Editor notification + all-language deployment |
 | Overall threat level = HIGH | **MONITOR** | Flag in daily synthesis; include in evening analysis |
 | Overall threat level ≤ MODERATE | **NO** | Include in regular daily/weekly reporting |
@@ -301,7 +303,7 @@ graph TD
 **Document Control:**  
 - **Template Path:** `/analysis/templates/threat-analysis.md`  
 - **Framework Reference:** [THREAT_MODEL.md](../../THREAT_MODEL.md), [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md)  
-- **Version:** 2.0  
-- **Frameworks:** Attack Trees, Kill Chain, Diamond Model, STRIDE, Threat Actor Profiling  
+- **Version:** 3.0  
+- **Frameworks:** Attack Trees, Kill Chain, Diamond Model, Political Threat Taxonomy, Threat Actor Profiling  
 - **Classification:** Public  
 - **Next Review:** 2026-06-30
