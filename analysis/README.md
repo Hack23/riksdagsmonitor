@@ -72,6 +72,11 @@ flowchart LR
 
 **The AI agent reads all 6 methodology guides, reads all 8 templates, reads the actual data, and produces genuine analytical content based on evidence found in the documents.**
 
+**Fallback mechanism:** If AI analysis fails or produces unusable output (detected by the quality gate bash check in `SHARED_PROMPT_PATTERNS.md`), the workflow should:
+1. Commit a minimal `data-download-manifest.md` documenting what was downloaded
+2. Flag the analysis as `pending` for the next workflow run
+3. Never commit placeholder or stub content that masquerades as genuine analysis
+
 ### Rule 4: Deep Analysis — Not Shallow Summaries
 
 Every analysis file must demonstrate **genuine political intelligence depth**. The quality standard is [SWOT.md](../SWOT.md) (965 lines of strategic analysis) and [THREAT_MODEL.md](../THREAT_MODEL.md) (2,938 lines of multi-framework threat modeling).

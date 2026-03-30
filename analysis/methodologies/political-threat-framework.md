@@ -24,9 +24,9 @@
 
 ## 🎯 Purpose
 
-This framework establishes the authoritative **multi-framework methodology** for political threat analysis in Riksdagsmonitor. Rather than relying on STRIDE alone (which was designed for software security and has significant limitations when applied to political analysis), this framework integrates **five complementary threat modeling approaches** — each illuminating different aspects of political threats that the others miss.
+This framework establishes the authoritative **multi-framework methodology** for political threat analysis in Riksdagsmonitor. Rather than relying on STRIDE alone, this framework integrates **five complementary threat modeling approaches** — each illuminating different aspects of political threats that the others miss.
 
-> **Why multiple frameworks?** STRIDE categorizes threats by type but doesn't model attack sequences, actor motivations, or cascading effects. Political threats are complex adaptive phenomena requiring multiple analytical lenses. See [THREAT_MODEL.md](../../THREAT_MODEL.md) for the exemplar showing how multi-framework analysis (STRIDE + MITRE ATT&CK + Attack Trees + OWASP) produces far deeper threat understanding than any single framework.
+> **Why multiple frameworks?** STRIDE was designed for software security and categorizes threats by *type* (what the threat IS). However, political intelligence requires understanding threat *mechanics* (HOW the threat succeeds — Attack Trees), threat *progression* (WHERE the threat IS in its lifecycle — Kill Chain), threat *relationships* (WHO is involved and what resources they use — Diamond Model), and threat *actor motivation* (WHY the actor is acting — ICO Profiling). STRIDE alone provides categorization but not the depth needed for actionable political intelligence. Combining frameworks compensates for each framework's individual blind spots.
 
 See [reference/isms-threat-modeling-adaptation.md](../reference/isms-threat-modeling-adaptation.md) for the ISMS-to-political mapping.
 
@@ -64,7 +64,7 @@ flowchart TD
 | **🎭 STRIDE (adapted)** | Ensuring COVERAGE of threat types | ★★★☆☆ | Systematic checklist prevents blind spots; weaker on depth |
 | **👤 Threat Actor Profiling** | Assessing WHO and WHY | ★★★★★ | Intent-capability-opportunity analysis; predicts likely actions |
 
-**Mandatory minimum:** Every threat analysis MUST use at least **Attack Trees + one other framework**. STRIDE alone is insufficient for publication-quality political intelligence.
+**Mandatory minimum:** Every threat analysis MUST use at least **Attack Trees + one other framework**. Attack Trees are the mandatory primary tool because they answer the question most critical for political intelligence: "Through what specific sequence of steps could this threat succeed?" — enabling both early warning and strategic intervention. STRIDE alone provides categorization but not actionable path analysis.
 
 ---
 
