@@ -21,7 +21,7 @@ Before starting analysis, you **MUST** read and internalize these methodology do
 1. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Master per-file analysis guide
 2. **`analysis/methodologies/political-swot-framework.md`** — Evidence hierarchy, confidence levels, temporal decay
 3. **`analysis/methodologies/political-risk-methodology.md`** — 5×5 risk matrix, calibration examples
-4. **`analysis/methodologies/political-threat-framework.md`** — STRIDE political adaptation, severity calibration
+4. **`analysis/methodologies/political-threat-framework.md`** — Political Threat Taxonomy (Attack Trees, Kill Chain, Diamond Model), severity calibration
 5. **`analysis/methodologies/political-classification-guide.md`** — Sensitivity and domain taxonomy
 6. **`analysis/methodologies/political-style-guide.md`** — Writing standards, prohibited patterns
 7. **`analysis/templates/per-file-political-intelligence.md`** — Output template (fill ALL fields)
@@ -107,9 +107,9 @@ Apply the 5×5 Likelihood × Impact matrix:
 - **Electoral Risk** — how does this affect 2026 election positioning?
 - **Democratic Process Risk** — any institutional or procedural concerns?
 
-#### 2e. STRIDE Threat Analysis
+#### 2e. Political Threat Taxonomy Assessment
 
-Map to political STRIDE categories (only where applicable — not every document has threats):
+Map to Political Threat Taxonomy categories (only where applicable — not every document has threats):
 - 🎭 **Spoofing** → Misrepresentation of political positions
 - 🔧 **Tampering** → Process manipulation, rule bending
 - 📝 **Repudiation** → Accountability evasion, position reversal
