@@ -5,23 +5,33 @@
 <h1 align="center">🎭 Political Threat Analysis Template</h1>
 
 <p align="center">
-  <strong>📊 STRIDE-Inspired Framework for Democratic Process Threat Analysis</strong><br>
-  <em>🎯 Spoofing · Tampering · Repudiation · Disclosure · Denial · Elevation</em>
+  <strong>📊 Multi-Framework Template for Democratic Process Threat Analysis</strong><br>
+  <em>🎯 Attack Trees · Kill Chain · Diamond Model · STRIDE Coverage · Actor Profiling</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--26-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-26 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template Instructions:** This template adapts the STRIDE threat modeling framework from cybersecurity to political intelligence analysis. Each STRIDE category maps to a class of democratic process threats. See [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md) for full methodology. For the daily workflow, save as `evening-threat-snapshot.md` in `analysis/daily/YYYY-MM-DD/`. For monthly strategic aggregation, save as `monthly-threat-landscape.md` in `analysis/monthly/YYYY-MM/`. For ad-hoc analyses, a date-scoped filename like `YYYY-MM-DD-threat-analysis.md` MAY be used.
+> **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `threat-analysis.md` in the workflow's own folder (never overwrite another workflow's files). Each threat requires evidence citations and multi-framework analysis. See [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md).
 
-> **🚨 Anti-Pattern Warning:** Plain prose without structured tables, Mermaid diagrams, or evidence citations is REJECTED. Every analysis file MUST follow this template exactly: metadata header, structured tables with evidence columns, ≥1 color-coded Mermaid diagram, confidence labels on all claims. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
+> **🚨 Anti-Pattern Warning:** STRIDE-only analysis with generic threat descriptions and no attack trees is REJECTED. Every threat analysis MUST include:
+> 1. **Threat Analysis Context** (metadata header with ID, date, scope)
+> 2. **Attack Tree** for the top threat (Mermaid diagram showing how the threat could succeed)
+> 3. **Kill Chain assessment** (what stage has the threat progressed to?)
+> 4. **STRIDE coverage check** (all 6 categories assessed)
+> 5. **Diamond Model** for the primary threat actor
+> 6. **Threat Actor Profile** with ICO (Intent-Capability-Opportunity) assessment
+> 7. **Evidence tables** with dok_id citations, severity scores, and confidence labels
+> 8. **Forward indicators** — what MCP-detectable signals indicate escalation?
+>
+> **Good example:** [THREAT_MODEL.md](../../THREAT_MODEL.md) — this is the formatting quality standard.
 
 
 ---
@@ -39,7 +49,7 @@
 
 ---
 
-## 🎭 STRIDE-Adapted Threat Inventory
+## 🎭 Section 1: STRIDE Coverage Check
 
 > **Severity Scale Reference:** 1=Negligible (routine), 2=Minor (self-correcting), 3=Moderate (intervention needed), 4=Major (formal response required), 5=Severe (constitutional crisis). See [methodologies/political-threat-framework.md §9](../methodologies/political-threat-framework.md) for full calibration table.
 
@@ -159,7 +169,87 @@ graph LR
 
 ---
 
-## 📊 Threat Summary Matrix
+## 🌳 Section 2: Attack Tree — Primary Threat Decomposition
+
+> **AI Instructions:** Build an attack tree for the single most significant threat identified in Section 1. The root is the threat goal; decompose using AND/OR gates down to leaf-level actions. Color-code by feasibility.
+
+```mermaid
+graph TD
+    ROOT["🎯 GOAL: [REQUIRED: Primary threat goal<br/>e.g. 'Force ministerial resignation']<br/>(OR — any child path suffices)"]
+    ROOT --> PA["Path A: [REQUIRED: First attack path]<br/>(AND — all children required)"]
+    ROOT --> PB["Path B: [REQUIRED: Second attack path]<br/>(AND — all children required)"]
+
+    PA --> PA1["A1: [REQUIRED: First step]"]
+    PA --> PA2["A2: [REQUIRED: Second step]"]
+    PA --> PA3["A3: [REQUIRED: Third step]"]
+
+    PB --> PB1["B1: [REQUIRED: First step]"]
+    PB --> PB2["B2: [REQUIRED: Second step]"]
+
+    style ROOT fill:#dc3545,color:#fff
+    style PA fill:#fd7e14,color:#fff
+    style PB fill:#fd7e14,color:#fff
+    %% Color leaf nodes by feasibility: green=easy, yellow=moderate, red=difficult
+    style PA1 fill:#ffc107,color:#000
+    style PA2 fill:#ffc107,color:#000
+    style PA3 fill:#28a745,color:#fff
+    style PB1 fill:#dc3545,color:#fff
+    style PB2 fill:#ffc107,color:#000
+```
+
+### Attack Path Assessment
+
+| Path | Steps Required | Feasibility (1–5) | Detectability (1–5) | Political Cost | Most Likely? |
+|------|:--------------:|:-----------------:|:-------------------:|:--------------:|:------------:|
+| Path A | `[#]` | `[1-5]` | `[1-5]` | `[H/M/L]` | `[Y/N]` |
+| Path B | `[#]` | `[1-5]` | `[1-5]` | `[H/M/L]` | `[Y/N]` |
+
+**Cheapest attack path:** `[REQUIRED: Which path has highest feasibility and lowest cost?]`
+
+**Early warning indicators:** `[REQUIRED: What MCP-detectable signals precede each path?]`
+
+---
+
+## ⛓️ Section 3: Kill Chain Assessment
+
+> **AI Instructions:** Assess how far the primary threat has progressed along the Political Kill Chain. Mark each stage as Not Started / Active / Complete.
+
+| Kill Chain Stage | Status | Evidence | Disruption Opportunity |
+|:----------------:|:------:|---------|----------------------|
+| 1️⃣ Reconnaissance | `[Not Started / Active / Complete]` | `[dok_id or reference]` | `[How to stop here]` |
+| 2️⃣ Weaponization | `[Not Started / Active / Complete]` | `[dok_id or reference]` | `[How to stop here]` |
+| 3️⃣ Delivery | `[Not Started / Active / Complete]` | `[dok_id or reference]` | `[How to stop here]` |
+| 4️⃣ Exploitation | `[Not Started / Active / Complete]` | `[dok_id or reference]` | `[How to stop here]` |
+| 5️⃣ Installation | `[Not Started / Active / Complete]` | `[dok_id or reference]` | `[How to stop here]` |
+| 6️⃣ Command & Control | `[Not Started / Active / Complete]` | `[dok_id or reference]` | `[How to stop here]` |
+| 7️⃣ Actions on Objective | `[Not Started / Active / Complete]` | `[dok_id or reference]` | `[Recovery action]` |
+
+**Current kill chain stage:** `[REQUIRED: 1-7]`  
+**Next expected stage:** `[REQUIRED: What happens next if unchecked?]`
+
+---
+
+## 💎 Section 4: Diamond Model — Primary Threat Actor
+
+| Diamond Element | Assessment | Evidence |
+|----------------|-----------|---------|
+| **Adversary** | `[REQUIRED: Who? Name + party + role]` | `[dok_id / reference]` |
+| **Capability** | `[REQUIRED: What parliamentary/political tools do they wield?]` | `[Seat count, committee positions, etc.]` |
+| **Infrastructure** | `[REQUIRED: Alliances, media channels, institutional access]` | `[Coalition structure, media relationships]` |
+| **Victim** | `[REQUIRED: Who/what is targeted?]` | `[Minister, policy, coalition stability]` |
+
+### Threat Actor ICO Profile
+
+| Attribute | Assessment | Confidence |
+|-----------|-----------|:----------:|
+| **Intent** | `[REQUIRED: What do they want?]` | `[H/M/L]` |
+| **Capability** | `[REQUIRED: What can they actually do?]` | `[H/M/L]` |
+| **Opportunity** | `[REQUIRED: What upcoming events create windows?]` | `[H/M/L]` |
+| **Track Record** | `[REQUIRED: Have they acted on similar threats before?]` | `[H/M/L]` |
+| **Constraints** | `[REQUIRED: What limits their action?]` | `[H/M/L]` |
+| **Overall ICO Level** | `[REQUIRED: HIGH / MEDIUM / LOW]` | `[H/M/L]` |
+
+---
 
 > Use this matrix to summarize, for each STRIDE category, the single highest-severity threat and its assessed severity score (1–5).
 
@@ -211,5 +301,7 @@ graph LR
 **Document Control:**  
 - **Template Path:** `/analysis/templates/threat-analysis.md`  
 - **Framework Reference:** [THREAT_MODEL.md](../../THREAT_MODEL.md), [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md)  
+- **Version:** 2.0  
+- **Frameworks:** Attack Trees, Kill Chain, Diamond Model, STRIDE, Threat Actor Profiling  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Next Review:** 2026-06-30

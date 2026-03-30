@@ -11,17 +11,15 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--26-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-26 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/`. Rename `YYYY-MM-DD-{event-slug}-significance.md`. For batch scoring of multiple events, use the Batch Scoring Table in Section 2. The significance scorer TypeScript implementation is at `scripts/analysis-framework/significance-scorer.ts`. See `scripts/analysis-framework/index.ts` and `scripts/analysis-framework/lenses/*` for automated scoring logic.
->
-> **⚠️ Manual Rubric Note:** This template is a human analyst support rubric for narrative reasoning and editorial prioritisation. Automated JSON scoring (`morning-significance-scores.json`) is computed exclusively by `scripts/analysis-framework/significance-scorer.ts`.
+> **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `significance-scoring.md` in the workflow's own folder (never overwrite another workflow's files). The significance scorer TypeScript implementation is at `scripts/analysis-framework/significance-scorer.ts` — this provides automated numeric scores only. AI must provide the **analytical rationale** explaining why documents score as they do.
 >
 > **Implementation Reference:** The TypeScript scorer uses a 6-dimension weighted model (0.25/0.20/0.15/0.20/0.10/0.10) and returns an integer score (1–10) via rounding. Treat this template as a separate manual rubric for editorial context, not as the source of truth for automated scoring outputs.
 >
@@ -230,6 +228,7 @@ These examples provide anchor points for consistent scoring across workflows:
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/significance-scoring.md`  
+- **Version:** 2.0  
 - **Scorer Implementation:** `scripts/analysis-framework/significance-scorer.ts`  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Next Review:** 2026-06-30

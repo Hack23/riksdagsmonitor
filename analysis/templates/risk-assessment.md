@@ -5,23 +5,30 @@
 <h1 align="center">⚠️ Political Risk Assessment Template</h1>
 
 <p align="center">
-  <strong>📊 Structured Risk Analysis for Swedish Parliamentary Dynamics</strong><br>
-  <em>🎯 Coalition · Policy · Budget · Electoral Risk Mapping</em>
+  <strong>📊 Multi-Dimensional Risk Analysis with Cascading Risk & Scenario Trees</strong><br>
+  <em>🎯 Coalition · Policy · Budget · Electoral · Cascading Risk Chains · Bayesian Updates</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--26-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-26 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template Instructions:** Copy to the appropriate directory under `analysis/daily/` or `analysis/weekly/` and name the file according to the conventions in the corresponding `README.md` (e.g. `morning-risk-snapshot.md`, `realtime-HHMM-risk-delta.md`, `week-ahead-risk-register.md`). Scores use Likelihood × Impact methodology from [methodologies/political-risk-methodology.md](../methodologies/political-risk-methodology.md).
+> **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `risk-assessment.md` in the workflow's own folder (never overwrite another workflow's files). Scores use Likelihood × Impact methodology from [methodologies/political-risk-methodology.md](../methodologies/political-risk-methodology.md).
 
-> **🚨 Anti-Pattern Warning:** Plain prose without structured tables, Mermaid diagrams, or evidence citations is REJECTED. Every analysis file MUST follow this template exactly: metadata header, structured tables with evidence columns, ≥1 color-coded Mermaid diagram, confidence labels on all claims. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
+> **🚨 Anti-Pattern Warning:** Simple risk tables without cascading risk analysis, risk interconnection, or forward-looking scenarios are REJECTED. Every risk assessment MUST include:
+> 1. **Risk Context** metadata header
+> 2. **Risk Heat Map** (Mermaid diagram with color-coded risk scores)
+> 3. **5-Dimension Risk Scoring** (Coalition, Policy, Budget, Electoral, External)
+> 4. **Cascading Risk Chain** for the highest-risk event (Mermaid flowchart)
+> 5. **Risk Interconnection Map** showing how risks amplify each other
+> 6. **Evidence tables** with L×I scores, dok_id citations, confidence labels
+> 7. **Forward indicators** and scenario outlook
 
 
 ---
@@ -232,8 +239,58 @@ timeline
 
 ---
 
+## 🔗 Section 5: Cascading Risk Chain
+
+> **AI Instructions:** For the highest-scoring risk, trace the cascade of second-order and third-order effects.
+
+```mermaid
+flowchart TD
+    TRIGGER["⚠️ TRIGGER:<br/>[REQUIRED: Primary risk event]<br/>Score: [L×I]"]
+    TRIGGER --> FIRST["⚠️ 1ST ORDER:<br/>[REQUIRED: Immediate consequence]<br/>Score: [L×I]"]
+    FIRST --> SECOND_A["⚠️ 2ND ORDER (A):<br/>[REQUIRED: Follow-on effect]<br/>Score: [L×I]"]
+    FIRST --> SECOND_B["⚠️ 2ND ORDER (B):<br/>[OPTIONAL: Alternative path]<br/>Score: [L×I]"]
+
+    style TRIGGER fill:#dc3545,color:#fff
+    style FIRST fill:#fd7e14,color:#fff
+    style SECOND_A fill:#ffc107,color:#000
+    style SECOND_B fill:#ffc107,color:#000
+```
+
+| Chain Stage | Risk Event | L | I | Score | Circuit Breaker |
+|:-----------:|-----------|:-:|:-:|:-----:|----------------|
+| Trigger | `[REQUIRED]` | `[#]` | `[#]` | `[#]` | `[What stops it here?]` |
+| 1st Order | `[REQUIRED]` | `[#]` | `[#]` | `[#]` | `[Intervention point]` |
+| 2nd Order | `[REQUIRED]` | `[#]` | `[#]` | `[#]` | `[Recovery action]` |
+
+---
+
+## 🌐 Section 6: Risk Interconnection Map
+
+> **AI Instructions:** Show how the 5 risk dimensions affect each other.
+
+| From → To | Connection Strength | Mechanism | Evidence |
+|:---------:|:-------------------:|-----------|---------|
+| Coalition → Budget | `[Strong/Medium/Weak]` | `[REQUIRED: How this connection works]` | `[dok_id]` |
+| Coalition → Policy | `[Strong/Medium/Weak]` | `[REQUIRED]` | `[dok_id]` |
+| Policy → Electoral | `[Strong/Medium/Weak]` | `[REQUIRED]` | `[dok_id]` |
+
+**System fragility assessment:** `[REQUIRED: Are ≥3 risk dimensions at High level? If so, system is fragile — describe why.]`
+
+---
+
+## 🔮 Section 7: Forward Indicators & Scenario Outlook
+
+| Scenario | Probability | Key Trigger | Risk Dimensions Affected |
+|----------|:----------:|------------|-------------------------|
+| `[REQUIRED: Most likely outcome]` | `[%]` | `[Specific trigger]` | `[Coalition + Policy + ...]` |
+| `[REQUIRED: Alternative outcome]` | `[%]` | `[Specific trigger]` | `[Risk dimensions]` |
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/risk-assessment.md`  
 - **Framework Reference:** [methodologies/political-risk-methodology.md](../methodologies/political-risk-methodology.md)  
+- **Version:** 2.0  
+- **Advanced Sections:** Cascading Risk, Risk Interconnection, Scenario Outlook  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Next Review:** 2026-06-30

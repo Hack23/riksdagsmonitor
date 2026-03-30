@@ -6,22 +6,28 @@
 
 <p align="center">
   <strong>📊 Integrated Analysis Summary Combining All Intelligence Streams</strong><br>
-  <em>🎯 Classification · SWOT · Risk · Threat · Stakeholder · Significance</em>
+  <em>🎯 Classification · SWOT · Risk · Threat · Stakeholder · Forward Outlook</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--28-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-28 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template Instructions:** This template synthesizes the outputs of all other analysis templates into a single intelligence summary. Copy to `analysis/daily/YYYY-MM-DD/` and save as `synthesis-summary.md`. This file is consumed by the news article generators to determine narrative direction.
+> **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `synthesis-summary.md` in the workflow's own folder. This file synthesizes per-file analyses into an integrated intelligence picture. AI reads all per-file analyses and produces genuine synthesis — not a mechanical concatenation of summaries.
 
-> **🚨 Anti-Pattern Warning:** Plain prose without structured tables, Mermaid diagrams, or evidence citations is REJECTED. Every analysis file MUST follow this template exactly: metadata header, structured tables with evidence columns, ≥1 color-coded Mermaid diagram, confidence labels on all claims. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
+> **🚨 Anti-Pattern Warning:** A synthesis that merely lists document titles without analytical connections is REJECTED. Every synthesis MUST:
+> 1. Identify **cross-document patterns** (what themes emerge across multiple documents?)
+> 2. Assess **aggregate SWOT** (combining individual SWOT findings using intersection rules)
+> 3. Map **risk interconnections** (how do individual risk findings compound?)
+> 4. Provide **forward intelligence** (what should we watch for next? Specific triggers.)
+> 5. Include ≥2 color-coded Mermaid diagrams (intelligence dashboard + one other)
+> 6. Rank documents by significance and explain the ranking rationale
 
 
 ---
@@ -215,6 +221,7 @@ graph LR
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/synthesis-summary.md`  
+- **Version:** 2.0  
 - **Consumed By:** All news article generator workflows  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Next Review:** 2026-06-30

@@ -11,17 +11,17 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--26-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-26 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template Instructions:** For daily analyses, copy to `analysis/daily/YYYY-MM-DD/` and name the file `evening-stakeholder-impact.md`. For weekly analyses, copy to `analysis/weekly/YYYY-WNN/` and name the file `stakeholder-impact.md`. Complete the context block first, then assess each stakeholder group. Groups with NONE impact level still require a one-line rationale. See lens files in `scripts/analysis-framework/lenses/` for automated perspective generation.
+> **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `stakeholder-impact.md` in the workflow's own folder (never overwrite another workflow's files). Complete the context block first, then assess each stakeholder group with specific evidence. AI must provide genuine impact analysis with named actors and dok_id citations — not generic "may affect business" prose.
 
-> **🚨 Anti-Pattern Warning:** Plain prose without structured tables, Mermaid diagrams, or evidence citations is REJECTED. Every analysis file MUST follow this template exactly: metadata header, structured tables with evidence columns, ≥1 color-coded Mermaid diagram, confidence labels on all claims. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
+> **🚨 Anti-Pattern Warning:** Generic stakeholder statements like "this may affect business environment" or "citizens may be impacted" without specific evidence are REJECTED. Every stakeholder assessment MUST name specific actors, cite specific documents, and provide specific impact mechanisms. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
 
 
 ---
@@ -228,7 +228,8 @@ When stakeholder impacts conflict (e.g., Citizens benefit but Business bears cos
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/stakeholder-impact.md`  
+- **Version:** 2.0  
 - **Lens References:** `scripts/analysis-framework/lenses/` (citizen, economic, government, international, media, opposition)  
 - **Framework Reference:** [methodologies/political-style-guide.md](../methodologies/political-style-guide.md)  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Next Review:** 2026-06-30

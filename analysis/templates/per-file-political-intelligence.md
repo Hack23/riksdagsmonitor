@@ -5,25 +5,36 @@
 <h1 align="center">🔍 Per-File Political Intelligence Analysis Template</h1>
 
 <p align="center">
-  <strong>📊 Deep AI-Driven Analysis for Individual Parliamentary Documents</strong><br>
-  <em>🎯 SWOT · Risk · Threat · Stakeholder Impact · Strategic Implications</em>
+  <strong>📊 Deep AI-Driven Multi-Framework Analysis for Individual Parliamentary Documents</strong><br>
+  <em>🎯 SWOT · Risk · Attack Trees · Kill Chain · Stakeholder · Strategic Implications</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--28-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-28 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template Instructions:** This template is for **per-file** analysis. For each data file downloaded via MCP (e.g., a proposition, motion, vote record), the AI agent produces one analysis markdown file stored as `{id}.analysis.md` alongside the data file. This avoids merge conflicts and ensures every piece of downloaded content receives deep analysis.
+> **📌 Template Instructions:** This template is for **per-file** analysis. For each data file downloaded via MCP, the AI agent produces one analysis markdown file stored as `{id}-analysis.md` in the workflow's isolated folder. AI MUST read ALL 6 methodology guides before analyzing.
 >
-> **Example path:** `analysis/data/documents/propositions/H901.json` → `analysis/data/documents/propositions/H901.analysis.md`
+> **Output path:** `analysis/daily/YYYY-MM-DD/{articleType}/documents/{dok_id}-analysis.md`
+>
+> **The AI agent performs ALL analysis.** Scripts download data; AI reads methodologies; AI produces genuine intelligence analysis based on the actual content of each document.
 
-> **🚨 Anti-Pattern Warning:** Plain prose without structured tables, Mermaid diagrams, or evidence citations is REJECTED. Every analysis file MUST follow this template exactly: metadata header, structured tables with evidence columns, ≥1 color-coded Mermaid diagram, confidence labels on all claims. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
+> **🚨 Anti-Pattern Warning:** The following patterns indicate scripted/shallow content and are REJECTED:
+> - `"_No strengths identified_"` or `"_No weaknesses identified_"` — empty SWOT quadrants
+> - `"this document requires assessment of policy execution"` — generic boilerplate
+> - `"this document warrants scrutiny for alignment with citizen welfare"` — template filler
+> - Any analysis that could be written WITHOUT reading the actual document data
+> - Analysis with 0 cross-references to other documents or MCP data
+> - Analysis with 0 named politicians/parties
+> - Analysis that merely restates the document title as a "finding"
+>
+> **MUST include:** ≥3 evidence points with dok_id, ≥1 color-coded Mermaid diagram, multi-framework analysis (SWOT + at least one of: Risk, Attack Tree, Kill Chain), named actors with party affiliations, forward indicators.
 
 
 ---
@@ -313,8 +324,10 @@ graph TD
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/per-file-political-intelligence.md`  
-- **Output Path:** Same directory as the JSON source file, named `{id}.analysis.md` (e.g. `analysis/data/documents/propositions/H901.analysis.md`)  
+- **Output Path:** `analysis/daily/YYYY-MM-DD/{articleType}/documents/{dok_id}-analysis.md`  
+- **Version:** 2.0  
+- **Frameworks:** SWOT, Risk, Attack Trees, Kill Chain, Diamond Model, Stakeholder  
 - **Framework References:** [SWOT.md](../../SWOT.md), [THREAT_MODEL.md](../../THREAT_MODEL.md)  
 - **Methodology:** [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md)  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Next Review:** 2026-06-30
