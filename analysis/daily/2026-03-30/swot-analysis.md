@@ -1,96 +1,120 @@
-# 💼 Political SWOT Analysis — 2026-03-30
-
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-30 (UTC)
-**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
-
----
+# Political SWOT Analysis — 2026-03-30
 
 ## 📋 SWOT Context
 
 | Field | Value |
 |-------|-------|
 | **SWOT ID** | `SWT-2026-03-30-001` |
-| **Analysis Date** | `2026-03-30 10:33 UTC` |
-| **Analysis Scope** | Government coalition (M, KD, L + SD supply) |
-| **Reference Period** | 2026-W14 (2026-03-30) |
-| **Produced By** | `news-realtime-monitor` |
-| **Primary MCP Sources** | search_dokument, get_betankanden, get_propositioner, search_voteringar |
-| **Validity Window** | Valid until 2026-04-06 |
+| **Analysis Date** | `2026-03-30 14:31 UTC` |
+| **Analysis Scope** | Government coalition, Opposition, Constitutional oversight |
+| **Reference Period** | 2026-W14 (Mon 30 March) |
+| **Produced By** | `news-realtime-monitor` (AI-enhanced) |
+| **Primary MCP Sources** | `search_dokument`, `get_betankanden`, `get_propositioner`, `search_voteringar`, `search_anforanden` |
+| **Validity Window** | Entries valid until 2026-04-06 |
 
 ---
 
 ## 🏛️ Section 1: Government Coalition SWOT
 
-### ✅ Strengths — Government Coalition
+### 💪 Strengths
 
-| # | Strength Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
-|---|-------------------|-------------------|:----------:|:------:|:----------:|
-| S1 | Coalition maintains Riksdag majority through SD supply-and-confidence agreement; voting discipline remains strong (cross-party alignment >87% between M-KD-L per voteringar data) | search_voteringar AU10 | `H` | `H` | 2026-03-30 |
-| S2 | Active legislative agenda — 20+ government propositions delivered in March 2026 (criminal justice, housing, food security, welfare reform) | HD03227, HD03221, HD03210, HD03213 | `H` | `H` | 2026-03-30 |
-| S3 | Strong performance on security and justice agenda — props on youth crime investigation (HD03227), honour-based violence (HD03213), security protection (HD01JuU29) | HD03227, HD03213, HD01JuU29 | `H` | `M` | 2026-03-30 |
+| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|-------------------|------------|--------|------------|
+| S1 | Active legislative agenda: 239 propositions filed this riksmöte | `get_propositioner` rm=2025/26, count=239 | **HIGH** | Medium | 2026-03-30 |
+| S2 | Coalition holding: government seats 176/349, stability score 83/100 | CIA CSV context data | **HIGH** | High | 2026-03-30 |
+| S3 | Cross-domain policy delivery: justice (Prop 227), housing (Prop 188, 212), food supply (Prop 205, 206) | `HD03227`, `HD03188`, `HD03212`, `HD03205`, `HD03206` | **MEDIUM** | Medium | 2026-03-30 |
 
-### ❌ Weaknesses — Government Coalition
+### ⚠️ Weaknesses
 
-| # | Weakness Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
-|---|-------------------|-------------------|:----------:|:------:|:----------:|
-| W1 | KU scrutiny hearings on Lantmäteriet security breaches expose infrastructure and bostadsminister Carlson (KD) to accountability questioning | HDC220260330ou1, HDA7KU38 | `H` | `M` | 2026-03-30 |
-| W2 | Northvolt/AP fund investigation implicates previous government decisions but may extend to current government's handling of state investment governance | HDC220260330ou2 | `M` | `H` | 2026-03-30 |
-| W3 | MP Marléne Lund Kopparklint leaves M party group — signals potential internal party friction ahead of 2026 election | HD0I100 (agenda item 2) | `H` | `M` | 2026-03-30 |
+| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|-------------------|------------|--------|------------|
+| W1 | Party defection: Marléne Lund Kopparklint leaves M party group, reducing coalition bench | `HD0I100` (f-lista 2025/26:100) | **HIGH** | Medium | 2026-03-30 |
+| W2 | Under KU constitutional scrutiny: Minister Carlson on Lantmäteriet security failures | `HDC220260330ou1`, `HDA7KU38` | **HIGH** | High | 2026-03-30 |
+| W3 | State enterprise accountability: Skatteverket DG departure amid criminal investigation | `HD11666` (SD question) | **MEDIUM** | Medium | 2026-03-30 |
+| W4 | State mining company LKAB failing to report serious workplace accidents | `HD11661` (S question) | **MEDIUM** | Medium | 2026-03-30 |
 
-### 🔵 Opportunities — Government Coalition
+### 🌟 Opportunities
 
-| # | Opportunity Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
-|---|----------------------|-------------------|:----------:|:------:|:----------:|
-| O1 | Climate goals committee report (MJU30) allows government to demonstrate EU alignment while maintaining pragmatic economic policy | HD01MJU30 | `M` | `M` | 2026-03-30 |
-| O2 | Strong legislative pipeline on housing reform (HD03187, HD03188, HD03212) positions coalition as delivering on cost-of-living concerns | HD03187, HD03188, HD03212 | `H` | `H` | 2026-03-30 |
-| O3 | Welfare fraud crackdown (HD03210 bidragsspärr, HD03161 felaktiga utbetalningar) aligns with voter priorities | HD03210, HD03161 | `H` | `M` | 2026-03-30 |
+| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|-------------------|------------|--------|------------|
+| O1 | Climate policy modernization: MJU30 EU-adapted targets provide reform mandate | `HD01MJU30` | **MEDIUM** | High | 2026-03-30 |
+| O2 | Parliamentary process reform: KU38 improving MP working conditions | `HD01KU38` | **MEDIUM** | Medium | 2026-03-30 |
+| O3 | Justice sector: youth crime investigation (Prop 227), honor violence (Prop 213) show initiative | `HD03227`, `HD03213` | **HIGH** | High | 2026-03-30 |
 
-### 🔴 Threats — Government Coalition
+### 🔴 Threats
 
-| # | Threat Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
-|---|-----------------|-------------------|:----------:|:------:|:----------:|
-| T1 | KU findings on Lantmäteriet security breaches could escalate if ministerial negligence is established; affects government credibility on national security | HDC220260330ou1 | `M` | `H` | 2026-03-30 |
-| T2 | Multiple opposition written questions on diverse policy areas (migration, Palestine, LKAB) maintain sustained pressure across flanks | HD11662, HD11663, HD11661 | `H` | `M` | 2026-03-30 |
-| T3 | EU child protection regulation expires April 3 (HD11664) — government response under scrutiny from S | HD11664 | `M` | `M` | 2026-03-30 |
+| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|-------------------|------------|--------|------------|
+| T1 | Northvolt fallout: KU hearing investigating AP fund investments in bankrupt company — billions at risk | `HDC220260330ou2` (KU hearing G4, G9) | **HIGH** | Critical | 2026-03-30 |
+| T2 | National security exposure: Lantmäteriet archives security breaches under KU investigation | `HDC220260330ou1` (KU hearing G7-8, G37) | **HIGH** | Critical | 2026-03-30 |
+| T3 | Opposition scrutiny intensifying: 8 written questions filed today across SD, S, MP, C | `HD11659`–`HD11666` | **HIGH** | Medium | 2026-03-30 |
 
 ---
 
-## 📊 SWOT Quadrant Mapping
+## 📣 Section 2: Opposition SWOT
+
+### 💪 Strengths
+
+| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|-------------------|------------|--------|------------|
+| S1 | Cross-party accountability push: S, SD, MP, C all filing questions on same day | `HD11659`–`HD11666` | **HIGH** | Medium | 2026-03-30 |
+| S2 | KU constitutional review as oversight lever: public hearings with ministers | `HDC220260330ou1`, `HDC220260330ou2` | **HIGH** | High | 2026-03-30 |
+
+### ⚠️ Weaknesses
+
+| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|-------------------|------------|--------|------------|
+| W1 | High motion denial rate (96%) limits legislative impact | CIA CSV context data | **HIGH** | High | 2026-03-30 |
+
+### 🌟 Opportunities
+
+| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|-------------------|------------|--------|------------|
+| O1 | Northvolt hearing may expose fiscal mismanagement by previous government (S) — but also risks boomerang | `HDC220260330ou2` | **MEDIUM** | High | 2026-03-30 |
+
+### 🔴 Threats
+
+| # | Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-----------|-------------------|------------|--------|------------|
+| T1 | Northvolt hearing also scrutinizes former S government's role in AP fund decisions | `HDC220260330ou2` (G4, G9) | **HIGH** | High | 2026-03-30 |
+
+---
+
+## 🗺️ SWOT Quadrant Mapping
 
 ```mermaid
-graph TD
-    subgraph "💼 Government Coalition SWOT — 2026-03-30"
-        subgraph "✅ Strengths"
-            S1["S1: Strong coalition<br/>voting discipline >87%"]
-            S2["S2: 20+ propositions<br/>delivered in March"]
-            S3["S3: Security/justice<br/>agenda momentum"]
+graph TB
+    subgraph "SWOT Quadrant — 2026-03-30"
+        direction TB
+        subgraph "Strengths 💪"
+            S1["S1: 239 propositions<br/>Active legislative agenda"]
+            S2["S2: Coalition stability 83/100"]
+            S3["S3: Cross-party scrutiny<br/>(Opposition strength)"]
         end
-        subgraph "❌ Weaknesses"
-            W1["W1: KU scrutiny of<br/>Minister Carlson (KD)"]
-            W2["W2: Northvolt/AP fund<br/>governance exposure"]
-            W3["W3: M party group<br/>defection signal"]
+        subgraph "Weaknesses ⚠️"
+            W1["W1: Lund Kopparklint<br/>leaves M party group"]
+            W2["W2: KU scrutiny on<br/>Lantmäteriet security"]
+            W3["W3: Skatteverket DG<br/>criminal investigation"]
         end
-        subgraph "🔵 Opportunities"
-            O1["O1: EU climate<br/>alignment (MJU30)"]
-            O2["O2: Housing reform<br/>delivery pipeline"]
-            O3["O3: Welfare fraud<br/>crackdown mandate"]
+        subgraph "Opportunities 🌟"
+            O1["O1: MJU30 Climate<br/>modernization mandate"]
+            O2["O2: Justice reform<br/>Prop 227, 213"]
         end
-        subgraph "🔴 Threats"
-            T1["T1: Lantmäteriet<br/>security fallout"]
-            T2["T2: Multi-flank<br/>opposition pressure"]
-            T3["T3: EU child protection<br/>law expiring Apr 3"]
+        subgraph "Threats 🔴"
+            T1["T1: Northvolt/AP fund<br/>billions at risk"]
+            T2["T2: Lantmäteriet<br/>security breaches"]
+            T3["T3: 8 opposition<br/>questions today"]
         end
     end
-
+    
     style S1 fill:#28a745,stroke:#333,color:#fff
     style S2 fill:#28a745,stroke:#333,color:#fff
     style S3 fill:#28a745,stroke:#333,color:#fff
     style W1 fill:#fd7e14,stroke:#333,color:#fff
     style W2 fill:#fd7e14,stroke:#333,color:#fff
     style W3 fill:#fd7e14,stroke:#333,color:#fff
-    style O1 fill:#007bff,stroke:#333,color:#fff
-    style O2 fill:#007bff,stroke:#333,color:#fff
-    style O3 fill:#007bff,stroke:#333,color:#fff
+    style O1 fill:#17a2b8,stroke:#333,color:#fff
+    style O2 fill:#17a2b8,stroke:#333,color:#fff
     style T1 fill:#dc3545,stroke:#333,color:#fff
     style T2 fill:#dc3545,stroke:#333,color:#fff
     style T3 fill:#dc3545,stroke:#333,color:#fff
@@ -98,21 +122,21 @@ graph TD
 
 ---
 
-## 📌 Strategic Implications
+## 🔑 Strategic Implications
 
 ### Key Watch Items
 
-1. **KU hearing outcomes** — Monitor for formal criticism or ministerial censure recommendations from today's hearings (dok_id: HDC220260330ou1, HDC220260330ou2)
-2. **M party stability** — Track whether Lund Kopparklint's departure triggers further defections or internal discipline measures
-3. **Climate policy debate** — MJU30 report will likely trigger plenary debate this week; watch for coalition-opposition dynamics on EU alignment
-4. **EU child protection gap** — Deadline April 3 creates urgency; government response before Easter recess is critical
+1. **KU hearings outcome** (2026-03-30–31): Will Minister Carlson face political consequences for Lantmäteriet security failures? Will Northvolt hearing reveal new AP fund decision details?
+2. **Coalition discipline**: Monitor for further M party defections following Lund Kopparklint's departure.
+3. **Climate targets vote**: MJU30 proceeding to Riksdag debate — watch for cross-party dynamics.
 
 ---
 
-## 📋 Document Control
+## 📝 Document Control
 
 | Field | Value |
 |-------|-------|
+| **Created** | 2026-03-30 14:31 UTC |
+| **Last Modified** | 2026-03-30 14:35 UTC |
 | **Classification** | Public |
-| **Retention** | 90 days |
-| **Next Update** | 2026-03-30 evening SWOT update |
+| **Produced By** | news-realtime-monitor (AI-enhanced) |

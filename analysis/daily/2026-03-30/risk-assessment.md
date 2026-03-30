@@ -1,71 +1,87 @@
-# ⚠️ Political Risk Assessment — 2026-03-30
-
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-30 (UTC)
-**🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
-
----
+# Political Risk Assessment — 2026-03-30
 
 ## 📋 Risk Context
 
 | Field | Value |
 |-------|-------|
-| **Risk Assessment ID** | `RSK-2026-03-30-001` |
-| **Assessment Date** | `2026-03-30 10:33 UTC` |
-| **Assessment Period** | 2026-03-30 to 2026-04-06 |
-| **Produced By** | `news-realtime-monitor` |
-| **Political Context** | Tidöblocket (M+KD+L with SD supply) governs with working majority. KU scrutiny hearings today on Northvolt/AP and Lantmäteriet security. One M MP has left the party group. |
-| **Riksmöte** | 2025/26 |
-| **Overall Risk Level** | **MEDIUM** |
+| **Assessment ID** | `RSK-2026-03-30-001` |
+| **Analysis Date** | `2026-03-30 14:35 UTC` |
+| **Model** | 5×5 Risk Matrix |
+| **Documents Analyzed** | 14 + KU hearing events |
+| **Produced By** | `news-realtime-monitor` (AI-enhanced) |
+| **Overall Risk Level** | **MEDIUM** (elevated from LOW due to KU hearings) |
+| **Confidence** | **MEDIUM** |
 
 ---
 
-## 🗂️ Risk Inventory
-
-### Risk Heat Map
+## 🗺️ Risk Heat Map
 
 ```mermaid
-graph TD
-    subgraph "⚖️ Political Risk Landscape — 2026-03-30"
-        R1["🟠 RSK-001: KU scrutiny of<br/>Lantmäteriet security<br/>L:3 × I:4 = 12"]
-        R2["🟠 RSK-002: Northvolt/AP fund<br/>governance probe<br/>L:3 × I:4 = 12"]
-        R3["🟡 RSK-003: M party group<br/>defection trend<br/>L:2 × I:3 = 6"]
-        R4["🟡 RSK-004: EU child protection<br/>regulation gap (Apr 3)<br/>L:4 × I:2 = 8"]
-        R5["🟢 RSK-005: Opposition question<br/>cluster pressure<br/>L:3 × I:2 = 6"]
+graph TB
+    subgraph "Risk Matrix — 2026-03-30"
+        direction TB
+        subgraph "HIGH Impact"
+            R1["🔴 R1: Northvolt/AP Fund<br/>Fiscal accountability<br/>Likelihood: HIGH<br/>Impact: CRITICAL"]
+            R2["🔴 R2: Lantmäteriet<br/>National security<br/>Likelihood: HIGH<br/>Impact: HIGH"]
+        end
+        subgraph "MEDIUM Impact"
+            R3["🟡 R3: Coalition erosion<br/>M party defection<br/>Likelihood: MEDIUM<br/>Impact: MEDIUM"]
+            R4["🟡 R4: Public trust<br/>DG investigations<br/>Likelihood: MEDIUM<br/>Impact: MEDIUM"]
+        end
+        subgraph "LOW Impact"
+            R5["🟢 R5: Policy delay<br/>Climate targets<br/>Likelihood: LOW<br/>Impact: MEDIUM"]
+        end
     end
-
-    style R1 fill:#fd7e14,stroke:#333,color:#fff
-    style R2 fill:#fd7e14,stroke:#333,color:#fff
+    
+    style R1 fill:#dc3545,stroke:#333,color:#fff
+    style R2 fill:#dc3545,stroke:#333,color:#fff
     style R3 fill:#ffc107,stroke:#333,color:#000
     style R4 fill:#ffc107,stroke:#333,color:#000
     style R5 fill:#28a745,stroke:#333,color:#fff
 ```
 
-### Detailed Risk Register
+---
 
-| Risk ID | Risk Description | Likelihood (1-5) | Impact (1-5) | Score | Tier | Evidence (dok_id) | Mitigation | Confidence |
-|---------|-----------------|:-----------------:|:------------:|:-----:|:----:|-------------------|-----------|:----------:|
-| RSK-001 | KU hearing on Lantmäteriet security may reveal ministerial negligence, damaging government credibility on national security | 3 | 4 | **12** | 🟠 HIGH | HDC220260330ou1, HDA7KU38 | Minister Carlson prepared testimony; government can argue process improvements underway | `[HIGH]` |
-| RSK-002 | Northvolt/AP fund probe may establish that state investment governance was inadequate, with potential fiscal policy implications | 3 | 4 | **12** | 🟠 HIGH | HDC220260330ou2 | Previous government bears primary responsibility; current government can distance | `[MEDIUM]` |
-| RSK-003 | M party group defection may signal internal tensions ahead of 2026 election; could embolden other dissatisfied MPs | 2 | 3 | **6** | 🟡 MEDIUM | HD0I100 | Isolated event unless pattern emerges; M party leadership can reassert discipline | `[HIGH]` |
-| RSK-004 | EU temporary legislation on child abuse detection expires April 3; government under pressure to present position before Easter | 4 | 2 | **8** | 🟡 MEDIUM | HD11664 | Government can defer to ongoing EU Council negotiations; S question increases domestic pressure | `[MEDIUM]` |
-| RSK-005 | Sustained multi-domain opposition questioning creates cumulative pressure across policy areas | 3 | 2 | **6** | 🟡 MEDIUM | HD11661-HD11666 | Normal parliamentary scrutiny; answering ministers can use positive legislative track record | `[HIGH]` |
+## 📊 Top Risk Categories
+
+| Score | Likelihood | Impact | Category | Evidence (dok_id) | Details |
+|-------|-----------|--------|----------|-------------------|---------|
+| **35/100** | HIGH | CRITICAL | Government fiscal accountability — Northvolt/AP funds | `HDC220260330ou2` (KU G4, G9) | KU investigating former government role in AP fund investments in bankrupt Northvolt. Billions in public pension funds at risk. [HIGH] |
+| **30/100** | HIGH | HIGH | National security exposure — Lantmäteriet archives | `HDC220260330ou1`, `HDA7KU38` (KU G7-8, G37) | Security breaches in Lantmäteriet archives under KU review. Minister Carlson (KD) being questioned. [HIGH] |
+| **20/100** | MEDIUM | MEDIUM | Coalition stability — party defection | `HD0I100` | Marléne Lund Kopparklint leaves M. Could signal broader internal dissatisfaction. [MEDIUM] |
+| **18/100** | MEDIUM | MEDIUM | Public trust erosion — institutional failures | `HD11666`, `HD11661` | Skatteverket DG under criminal probe + LKAB safety violations. Pattern of state enterprise failures. [MEDIUM] |
+| **12/100** | LOW | MEDIUM | Policy implementation risk — climate targets | `HD01MJU30` | EU-adapted targets may face opposition or implementation challenges. [LOW] |
+
+### Coalition Risk
+
+**Coalition Risk Score**: 4/100 → **LOW** (per CIA CSV data)
+- Government seats: 176/349, stability score 83/100
+- Single defection (Lund Kopparklint) doesn't materially change balance
+- Cross-party voting alignment remains strong (coalition parties >80% alignment)
+
+### Anomaly Flags
+
+| # | Level | Type | Details | Confidence |
+|---|-------|------|---------|------------|
+| 1 | HIGH | CROSS_PARTY_VOTE | KD-M alignment 88.5% — strong coalition discipline | **HIGH** |
+| 2 | HIGH | CROSS_PARTY_VOTE | L-M alignment 87.9% — stable government block | **HIGH** |
+| 3 | MEDIUM | PARTY_DEFECTION | Lund Kopparklint leaves M party group | **HIGH** |
 
 ---
 
-## 📊 Risk Trend Assessment
+## 🔑 Key Findings
 
-| Period | Coalition Risk Score | Trend | Key Driver |
-|--------|:-------------------:|:-----:|-----------|
-| 2026-W12 | 4/100 | → | Routine legislative period |
-| 2026-W13 | 8/100 | ↗ | KU hearing schedule confirmed |
-| **2026-W14** | **15/100** | **↗** | KU hearings + M defection |
+1. **Overall risk: MEDIUM** — elevated from LOW due to KU constitutional hearings. [HIGH confidence]
+2. **Top risk**: Government fiscal accountability (Northvolt/AP funds, score 35/100). [HIGH confidence]
+3. **Coalition remains stable** despite single defection: stability score 83/100. [HIGH confidence]
+4. **Institutional trust pattern**: Multiple state enterprise failures (Skatteverket, LKAB). [MEDIUM confidence]
 
 ---
 
-## 📋 Document Control
+## 📝 Document Control
 
 | Field | Value |
 |-------|-------|
+| **Created** | 2026-03-30 14:31 UTC |
+| **Last Modified** | 2026-03-30 14:35 UTC |
 | **Classification** | Public |
-| **Retention** | 90 days |
-| **Next Update** | 2026-03-30 evening risk update |
