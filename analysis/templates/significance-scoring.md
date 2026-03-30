@@ -27,6 +27,9 @@
 >
 > **Score Reconciliation:** When manual and automated scores diverge by more than 3 points (e.g., manual=3, automated=7), the AI analyst must: (1) use the HIGHER score for editorial routing, (2) note the divergence in the scoring rationale, (3) flag for human editorial review. This ensures no significant event is under-classified.
 
+> **🚨 Anti-Pattern Warning:** Plain prose without structured tables, Mermaid diagrams, or evidence citations is REJECTED. Every analysis file MUST follow this template exactly: metadata header, structured tables with evidence columns, ≥1 color-coded Mermaid diagram, confidence labels on all claims. See [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md) for good vs. bad examples.
+
+
 ---
 
 ## 📋 Event Context
