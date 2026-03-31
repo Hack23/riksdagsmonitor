@@ -114,17 +114,17 @@ This allows early detection of breaking changes in Node.js alpha while keeping p
 | **Runtime** | [Node.js 25 Current](https://nodejs.org/) | 25.x | **April 2026** (EOL when Node.js 26 releases) | Node.js 26 LTS (**imminent**, ~April 2026) → Node.js 27 LTS |
 | **Package Manager** | [npm](https://www.npmjs.com/) | Bundled with Node.js | Follows Node.js | Follows Node.js upgrades |
 | **Language** | [TypeScript](https://www.typescriptlang.org/) | 6.0.2 | Active (quarterly releases) | Track latest stable |
-| **Build Tool** | [Vite](https://vite.dev/) | 7.3.1 | Active | Track latest major |
+| **Build Tool** | [Vite](https://vite.dev/) | 8.0.3 | Active | Track latest major |
 | **Transpiler** | [tsx](https://tsx.is/) | 4.21.0 | Active | Track latest stable |
 
 ### Testing Framework
 
 | Category | Technology | Current Version | EOL Date | Replacement Path |
 |----------|-----------|----------------|----------|-----------------|
-| **Unit Testing** | [Vitest](https://vitest.dev/) | 4.0.18 | Active (follows Vite) | Track with Vite major versions |
-| **E2E Testing** | [Cypress](https://www.cypress.io/) | 15.11.0 | Active | Track latest stable |
-| **Coverage** | [@vitest/coverage-v8](https://vitest.dev/) | 4.0.18 | Active | Track with Vitest |
-| **DOM Simulation** | [happy-dom](https://github.com/nicedayfor/happy-dom) | 20.8.3 | Active | Track latest stable |
+| **Unit Testing** | [Vitest](https://vitest.dev/) | 4.1.2 | Active (follows Vite) | Track with Vite major versions |
+| **E2E Testing** | [Cypress](https://www.cypress.io/) | 15.13.0 | Active | Track latest stable |
+| **Coverage** | [@vitest/coverage-v8](https://vitest.dev/) | 4.1.2 | Active | Track with Vitest |
+| **DOM Simulation** | [happy-dom](https://github.com/nicedayfor/happy-dom) | 20.8.9 | Active | Track latest stable |
 
 ### Runtime Dependencies (Browser)
 
@@ -141,10 +141,10 @@ This allows early detection of breaking changes in Node.js alpha while keeping p
 
 | Category | Technology | Current Version | EOL Date | Replacement Path |
 |----------|-----------|----------------|----------|-----------------|
-| **Linting** | [ESLint](https://eslint.org/) | 10.0.3 | Active | Track latest major |
+| **Linting** | [ESLint](https://eslint.org/) | 10.1.0 | Active | Track latest major |
 | **HTML Linting** | [HTMLHint](https://htmlhint.com/) | 1.9.2 | Active | Track latest stable |
-| **Dead Code** | [knip](https://knip.dev/) | 5.86.0 | Active | Track latest stable |
-| **API Docs** | [TypeDoc](https://typedoc.org/) | 0.28.17 | Active | Track latest stable |
+| **Dead Code** | [knip](https://knip.dev/) | 6.1.1 | Active | Track latest stable |
+| **API Docs** | [TypeDoc](https://typedoc.org/) | 0.28.18 | Active | Track latest stable |
 | **SRI Generation** | [vite-plugin-sri-gen](https://www.npmjs.com/package/vite-plugin-sri-gen) | 1.3.2 | Active | Track latest stable |
 
 ---
