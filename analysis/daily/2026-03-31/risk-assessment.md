@@ -1,52 +1,75 @@
-# ⚖️ Political Risk Assessment
+# Political Risk Assessment — 2026-03-31
 
-## 📋 Risk Context
-
-| Field | Value |
-|-------|-------|
-| **Risk ID** | `RSK-2026-03-31-001` |
-| **Analysis Date** | 2026-03-31 11:56 UTC |
-| **Scope** | Government legislative package — migration, justice, climate, security |
-| **Produced By** | news-realtime-monitor |
-| **Overall Risk Level** | HIGH |
+**Generated**: 2026-03-31 14:33 UTC
+**Data Sources**: riksdag-regering-mcp (search_voteringar, get_propositioner, get_betankanden)
+**Documents Analyzed**: 6
+**Confidence**: HIGH
 
 ---
 
-## 📊 Risk Heat Map
+## Summary
+
+Government demonstrates strong legislative momentum with coordinated migration reform package. Coalition risk remains LOW overall, but specific policy risks are MEDIUM-HIGH on migration ECHR compliance and implementation capacity.
+
+---
+
+## Risk Matrix
 
 ```mermaid
 graph TD
-    subgraph "🔴 Risk Heat Map — 2026-03-31"
-        R1["RSK-001<br/>Migration legal challenges<br/>L:3 × I:4 = 12"]
-        R2["RSK-002<br/>Municipal implementation failure<br/>L:3 × I:4 = 12"]
-        R3["RSK-003<br/>Coalition friction on climate<br/>L:2 × I:3 = 6"]
-        R4["RSK-004<br/>Settlement law resistance<br/>L:3 × I:4 = 12"]
-        R5["RSK-005<br/>Legislative quality gaps<br/>L:2 × I:3 = 6"]
+    subgraph "5x5 Risk Matrix"
+        R1["R1: ECHR Non-Compliance<br/>L:3 × I:5 = 15<br/>🔴 HIGH"]
+        R2["R2: Implementation Bottleneck<br/>L:4 × I:3 = 12<br/>🟡 MEDIUM"]
+        R3["R3: Opposition Mobilisation<br/>L:4 × I:2 = 8<br/>🟡 MEDIUM"]
+        R4["R4: Coalition Fracture<br/>L:1 × I:5 = 5<br/>🟢 LOW"]
+        R5["R5: Judicial Capacity<br/>L:3 × I:3 = 9<br/>🟡 MEDIUM"]
     end
-
-    style R1 fill:#fd7e14,stroke:#333,color:#000
-    style R2 fill:#fd7e14,stroke:#333,color:#000
-    style R3 fill:#28a745,stroke:#333,color:#fff
-    style R4 fill:#fd7e14,stroke:#333,color:#000
-    style R5 fill:#28a745,stroke:#333,color:#fff
+    style R1 fill:#dc3545,stroke:#333,color:#fff
+    style R2 fill:#ffc107,stroke:#333,color:#000
+    style R3 fill:#ffc107,stroke:#333,color:#000
+    style R4 fill:#28a745,stroke:#333,color:#fff
+    style R5 fill:#ffc107,stroke:#333,color:#000
 ```
-
-## 📋 Risk Register
-
-| Risk ID | Category | Description | Likelihood | Impact | Score | Trend | Mitigation |
-|---------|----------|-------------|:----------:|:------:|:-----:|:-----:|------------|
-| RSK-001 | regulatory-overreach | ECHR/EU legal challenges to new reception law | 3/5 | 4/5 | 12 | ↗️ | Lagrådet pre-review; EU directive alignment |
-| RSK-002 | institutional-erosion | Municipal capacity strain prevents implementation | 3/5 | 4/5 | 12 | → | Transition periods; SKR consultation |
-| RSK-003 | democratic-deficit | Climate target revision perceived as democratic backslide | 2/5 | 3/5 | 6 | ↗️ | EU alignment framing |
-| RSK-004 | societal-impact | Settlement law forces housing on unprepared municipalities | 3/5 | 4/5 | 12 | ↗️ | Federal housing support; phased rollout |
-| RSK-005 | institutional-erosion | Rushed 4-proposition week creates legislative quality gaps | 2/5 | 3/5 | 6 | → | Committee review process |
 
 ---
 
-## 📊 MCP Data Files Used
+## Detailed Risk Register
 
-| Tool | Parameters | Data Retrieved |
-|------|-----------|----------------|
-| `get_propositioner` | rm=2025/26 | Risk source documents |
-| `get_betankanden` | rm=2025/26 | Committee risk context |
-| `search_regering` | dateFrom=2026-03-30 | Government position data |
+| ID | Risk | Likelihood (1-5) | Impact (1-5) | Score | Level | dok_id |
+|----|------|:-----------------:|:------------:|:-----:|:-----:|--------|
+| R1 | ECHR Article 3 challenge to reception law benefit reductions | 3 | 5 | 15 | 🔴 HIGH | HD03229 |
+| R2 | Migrationsverket + municipal capacity insufficient for parallel migration reforms | 4 | 3 | 12 | 🟡 MEDIUM | HD03229, HD03215 |
+| R3 | Unified S+V+MP opposition amplifies public debate; constitutional concerns | 4 | 2 | 8 | 🟡 MEDIUM | HD03229, HD03215 |
+| R4 | SD withdraws supply support over migration package specifics | 1 | 5 | 5 | 🟢 LOW | HD03229 |
+| R5 | Court system capacity insufficient for crime victim compensation expansion | 3 | 3 | 9 | 🟡 MEDIUM | HD03222 |
+
+---
+
+## Coalition Stability Assessment
+
+| Indicator | Value | Trend |
+|-----------|-------|:-----:|
+| **Coalition Risk Score** | 12/100 | ↓ Improving |
+| **Majority Margin** | 176+73 vs 100 (SD supply) | Stable |
+| **Voting Discipline** | >95% in recent votes | Strong |
+| **SD Alignment** | High on migration package | ↑ |
+| **Cross-party Anomalies** | None significant today | — |
+
+---
+
+## Key Findings
+
+1. Coalition stability appears robust — migration package strengthens rather than tests SD supply relationship
+2. Highest risk (R1) is external: ECHR compliance challenge to new reception law
+3. Implementation risk (R2) spans multiple agencies and requires sustained coordination
+4. Opposition mobilisation (R3) is expected but unlikely to shift legislative outcomes given majority margins
+
+## Mitigation Recommendations
+
+- R1: Government should proactively seek Lagrådet review and address proportionality concerns
+- R2: Early capacity assessment of Migrationsverket staffing and municipal agreements
+- R5: Ensure Domstolsverket budget includes crime victim compensation processing resources
+
+## Data Quality Notes
+
+Risk assessment based on 6 primary documents from 2026-03-31, CIA coalition metrics (stability 83/100), and voting records. Confidence: HIGH for coalition metrics, MEDIUM for implementation capacity estimates.

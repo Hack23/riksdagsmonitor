@@ -1,67 +1,71 @@
-# 👥 Stakeholder Impact Analysis
+# Stakeholder Impact Analysis — 2026-03-31
 
-## 📋 Stakeholder Context
-
-| Field | Value |
-|-------|-------|
-| **Analysis ID** | `STK-2026-03-31-001` |
-| **Analysis Date** | 2026-03-31 12:02 UTC |
-| **Documents Assessed** | 6 |
-| **Stakeholder Groups** | 8 |
-| **Produced By** | news-realtime-monitor |
+**Generated**: 2026-03-31 14:34 UTC
+**Data Sources**: riksdag-regering-mcp (get_propositioner, get_betankanden, search_regering)
+**Documents Analyzed**: 6
+**Confidence**: HIGH
 
 ---
 
-## 📊 Stakeholder Impact Matrix
+## Summary
+
+Today's legislative activity impacts 8 key stakeholder groups. Migration reforms (Prop 229, 215) most directly affect asylum seekers and municipalities. Justice reforms benefit crime victims. Security policy consensus strengthens international positioning.
+
+---
+
+## Stakeholder Impact Matrix
 
 ```mermaid
-graph TD
-    subgraph "👥 Stakeholder Impact — 2026-03-31"
-        subgraph "HIGH Impact"
-            S1["Citizens<br/>Migration + Housing + Crime"]
-            S2["Government<br/>Legislative delivery"]
-            S3["Municipalities<br/>Settlement obligations"]
-        end
-        subgraph "MEDIUM Impact"
-            S4["Opposition<br/>Campaign material"]
-            S5["Business<br/>Consumer credit rules"]
-            S6["International<br/>ECHR + Climate reputation"]
-        end
-        subgraph "LOW Impact"
-            S7["Judiciary<br/>New procedures"]
-            S8["Media<br/>Reporting opportunities"]
-        end
+graph LR
+    subgraph "Directly Affected"
+        AS["Asylum Seekers<br/>🔴 Negative<br/>Prop 229"]
+        NI["Newly Arrived<br/>🔴 Negative<br/>Prop 215"]
+        CV["Crime Victims<br/>🟢 Positive<br/>Prop 222"]
+        CO["Consumers<br/>🟢 Positive<br/>Prop 223"]
     end
-
-    style S1 fill:#dc3545,stroke:#333,color:#fff
-    style S2 fill:#dc3545,stroke:#333,color:#fff
-    style S3 fill:#dc3545,stroke:#333,color:#fff
-    style S4 fill:#ffc107,stroke:#333,color:#000
-    style S5 fill:#ffc107,stroke:#333,color:#000
-    style S6 fill:#ffc107,stroke:#333,color:#000
-    style S7 fill:#28a745,stroke:#333,color:#fff
-    style S8 fill:#28a745,stroke:#333,color:#fff
+    subgraph "Institutional"
+        MU["Municipalities<br/>🟡 Mixed<br/>Prop 215, 229"]
+        MV["Migrationsverket<br/>�� Strained<br/>Prop 229"]
+    end
+    subgraph "Political"
+        GOV["Coalition<br/>🟢 Strengthened<br/>Delivery narrative"]
+        OPP["Opposition<br/>🟡 Mobilised<br/>Migration focus"]
+    end
+    style AS fill:#dc3545,stroke:#333,color:#fff
+    style NI fill:#dc3545,stroke:#333,color:#fff
+    style CV fill:#28a745,stroke:#333,color:#fff
+    style CO fill:#28a745,stroke:#333,color:#fff
+    style MU fill:#ffc107,stroke:#333,color:#000
+    style MV fill:#ffc107,stroke:#333,color:#000
+    style GOV fill:#28a745,stroke:#333,color:#fff
+    style OPP fill:#ffc107,stroke:#333,color:#000
 ```
-
-## 📋 Detailed Impact Assessment
-
-| Stakeholder Group | Impact Level | Key Concerns | Primary Documents |
-|-------------------|:------------:|--------------|-------------------|
-| **Citizens** | HIGH | Migration reception changes, housing allocation, crime victim rights | HD03229, HD03215, HD03222 |
-| **Government (M, KD, L)** | HIGH | Legislative delivery before election, Tidö Agreement fulfillment | HD03229, HD03215, HD03222, HD03223 |
-| **Opposition (S, V, MP, C)** | MEDIUM | Humanitarian criticism, climate goals, election positioning | HD03229, HD01MJU30 |
-| **Business/Industry** | MEDIUM | Consumer credit regulation, property security compliance | HD03223, HD01JuU29 |
-| **Civil Society** | MEDIUM | Rights challenges to migration law, climate advocacy | HD03229, HD01MJU30 |
-| **International** | MEDIUM | ECHR compatibility, climate reputation, NATO alignment | HD03229, HD01MJU30, HD01JuU29 |
-| **Judiciary** | LOW | New compensation procedures, security assessment processes | HD03222, HD01JuU29 |
-| **Media** | LOW | Major news cycle — multiple significant legislative stories | All documents |
 
 ---
 
-## 📊 MCP Data Files Used
+## Detailed Stakeholder Assessment
 
-| Tool | Parameters | Data Retrieved |
-|------|-----------|----------------|
-| `get_propositioner` | rm=2025/26 | Stakeholder-relevant propositions |
-| `get_betankanden` | rm=2025/26 | Committee perspective data |
-| `search_regering` | dateFrom=2026-03-30 | Government stakeholder positions |
+| Stakeholder Group | Impact | Direction | Primary dok_id | Confidence |
+|------------------|:------:|:---------:|---------------|:----------:|
+| Citizens (general) | MEDIUM | 🟡 Mixed | HD03222, HD03223 | HIGH |
+| Government (M+KD+L) | HIGH | 🟢 Positive | HD03229, HD01UU6 | HIGH |
+| Opposition (S+V+MP) | HIGH | 🟡 Mixed | HD03229, HD03215 | HIGH |
+| Business | LOW | 🟢 Positive | HD03223 | MEDIUM |
+| Civil Society | HIGH | 🔴 Negative | HD03229, HD03215 | HIGH |
+| International (EU/UN) | MEDIUM | 🟡 Mixed | HD03229, HD01UU6 | MEDIUM |
+| Judiciary | MEDIUM | 🟡 Mixed | HD03222, HD03223 | MEDIUM |
+| Media | HIGH | 🟢 Positive | All documents | HIGH |
+
+---
+
+## Key Findings
+
+1. **Asylum seekers** face most direct negative impact from Reception Act reform (Prop 229)
+2. **Municipalities** gain new settlement obligations but limited resource guarantees (Prop 215)
+3. **Crime victims** benefit from strengthened compensation framework (Prop 222)
+4. **Coalition parties** gain policy delivery narrative strength ahead of 2026 election
+5. **Civil society** organisations expected to mobilise around ECHR concerns
+
+## Data Quality Notes
+
+Stakeholder analysis based on 6 primary legislative documents, 13 government press releases, and riksdag-regering-mcp speech/interpellation data.
