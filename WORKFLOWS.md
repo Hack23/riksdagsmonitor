@@ -767,7 +767,8 @@ graph TB
         INTERP["get_interpellationer<br/><i>Parliamentary questions</i>"]
         VOTE["search_voteringar<br/><i>Voting records</i>"]
         ANF["search_anforanden<br/><i>Debate speeches</i>"]
-        DOK["search_dokument_fulltext<br/><i>All document types</i>"]
+        DOK["search_dokument<br/><i>Document search</i>"]
+        DOKFT["search_dokument_fulltext<br/><i>Full-text search</i>"]
         CAL["get_calendar_events<br/><i>Parliamentary calendar</i>"]
         SCB["SCB MCP<br/><i>Statistics Sweden</i>"]
         WB["World Bank MCP<br/><i>International data</i>"]
@@ -786,23 +787,38 @@ graph TB
 
     BET --> WF_CR
     VOTE --> WF_CR
+    ANF --> WF_CR
+    PROP --> WF_CR
     SCB --> WF_CR
     PROP --> WF_PR
-    DOK --> WF_PR
+    DOKFT --> WF_PR
+    ANF --> WF_PR
     MOT --> WF_MO
-    DOK --> WF_MO
+    DOKFT --> WF_MO
+    ANF --> WF_MO
     INTERP --> WF_IP
     ANF --> WF_IP
+    DOKFT --> WF_IP
+    CAL --> WF_IP
     VOTE --> WF_EV
     ANF --> WF_EV
     BET --> WF_EV
     CAL --> WF_EV
     DOK --> WF_RT
     CAL --> WF_RT
+    VOTE --> WF_RT
+    ANF --> WF_RT
+    BET --> WF_RT
     DOK --> WF_WR
+    ANF --> WF_WR
+    BET --> WF_WR
+    PROP --> WF_WR
+    MOT --> WF_WR
     VOTE --> WF_WR
     CAL --> WF_WA
     DOK --> WF_WA
+    ANF --> WF_WA
+    INTERP --> WF_WA
 
     style BET fill:#198754,color:#fff
     style PROP fill:#0d6efd,color:#fff
@@ -811,6 +827,7 @@ graph TB
     style VOTE fill:#6f42c1,color:#fff
     style ANF fill:#d63384,color:#fff
     style DOK fill:#20c997,color:#000
+    style DOKFT fill:#17a589,color:#fff
     style CAL fill:#0dcaf0,color:#000
     style SCB fill:#ffc107,color:#000
     style WB fill:#ff9800,color:#000
@@ -826,16 +843,16 @@ graph TB
 
 | # | Workflow | Schedule | Primary MCP Data | Unique Analytics Produced |
 |---|---------|----------|-----------------|--------------------------|
-| 1 | **Committee Reports** | Mon–Fri 04:00 UTC | `get_betankanden`, `search_voteringar` | Committee voting splits per party, reservation (dissent) analysis, committee-to-policy-domain mapping, SCB statistical enrichment per committee domain |
+| 1 | **Committee Reports** | Mon–Fri 04:00 UTC | `get_betankanden`, `search_voteringar`, `search_anforanden`, `get_propositioner` | Committee voting splits per party, reservation (dissent) analysis, committee-to-policy-domain mapping, SCB statistical enrichment per committee domain |
 | 2 | **Propositions** | Mon–Fri 05:00 UTC | `get_propositioner`, `search_dokument_fulltext`, `analyze_g0v_by_department`, `search_anforanden` | Legislative pipeline tracking (referral → committee → vote), government legislative ambition score, budget allocation impact analysis, policy domain cascading effects |
-| 3 | **Motions** | Mon–Fri 06:00 UTC | `get_motioner`, `search_dokument_fulltext` | Opposition strategy analysis, motion clustering by theme, cross-party co-sponsorship detection, signalverdi (is this positioning or a real bid?) |
-| 4 | **Interpellations** | Mon–Fri 07:00 UTC | `get_interpellationer`, `search_anforanden` | Ministerial accountability scoring (response rate/timeliness), evasion detection, question framing analysis, party oversight strategy mapping |
-| 5 | **Realtime Monitor** | Mon–Fri 10:00+14:00, Weekends 12:00 | `search_dokument`, `get_calendar_events` | Breaking event detection, urgency classification, real-time political temperature spikes |
-| 6 | **Evening Analysis** | Mon–Fri 18:00, Sat 16:00 | `search_voteringar`, `search_anforanden`, `get_betankanden` | Daily parliamentary pulse, party discipline metrics, coalition cohesion scoring, debate intensity index |
-| 7 | **Weekly Review** | Sat 09:00 UTC | `search_dokument` (7-day), `search_voteringar` | Week-over-week trend detection, cross-document-type pattern identification, legislative throughput metrics |
-| 8 | **Week Ahead** | Fri 07:00 UTC | `get_calendar_events` (+7d), `get_fragor` | Prospective calendar analysis, scheduled debate preview, expected vote outcomes |
-| 9 | **Monthly Review** | 28th 10:00 UTC | `search_dokument` (30-day) | Monthly legislative throughput, party productivity rankings, government vs opposition scorecard |
-| 10 | **Month Ahead** | 1st 08:00 UTC | `get_calendar_events` (+30d) | Strategic political calendar, legislative pipeline forecast, major policy decision timeline |
+| 3 | **Motions** | Mon–Fri 06:00 UTC | `get_motioner`, `search_dokument_fulltext`, `analyze_g0v_by_department`, `search_anforanden` | Opposition strategy analysis, motion clustering by theme, cross-party co-sponsorship detection, signalverdi (is this positioning or a real bid?) |
+| 4 | **Interpellations** | Mon–Fri 07:00 UTC | `get_interpellationer`, `search_anforanden`, `search_dokument_fulltext`, `get_calendar_events` | Ministerial accountability scoring (response rate/timeliness), evasion detection, question framing analysis, party oversight strategy mapping |
+| 5 | **Realtime Monitor** | Mon–Fri 10:00+14:00, Weekends 12:00 | `search_dokument`, `get_calendar_events`, `search_voteringar`, `search_anforanden`, `get_betankanden` | Breaking event detection, urgency classification, real-time political temperature spikes |
+| 6 | **Evening Analysis** | Mon–Fri 18:00, Sat 16:00 | `search_voteringar`, `search_anforanden`, `get_betankanden`, `get_calendar_events` | Daily parliamentary pulse, party discipline metrics, coalition cohesion scoring, debate intensity index |
+| 7 | **Weekly Review** | Sat 09:00 UTC | `search_dokument`, `search_anforanden`, `get_betankanden`, `get_propositioner`, `get_motioner`, `search_voteringar` | Week-over-week trend detection, cross-document-type pattern identification, legislative throughput metrics |
+| 8 | **Week Ahead** | Fri 07:00 UTC | `get_calendar_events`, `search_dokument`, `search_anforanden`, `get_fragor`, `get_interpellationer` | Prospective calendar analysis, scheduled debate preview, expected vote outcomes |
+| 9 | **Monthly Review** | 28th 10:00 UTC | `search_dokument`, `search_anforanden`, `get_betankanden`, `get_propositioner`, `get_motioner`, `search_voteringar` | Monthly legislative throughput, party productivity rankings, government vs opposition scorecard |
+| 10 | **Month Ahead** | 1st 08:00 UTC | `get_calendar_events`, `search_dokument`, `get_betankanden`, `get_propositioner`, `get_motioner` | Strategic political calendar, legislative pipeline forecast, major policy decision timeline |
 | 11 | **Article Generator** | Manual only | Per-type (configurable) | Manual backfill/regeneration for any article type |
 | 12 | **Translate** | Mon–Fri 11:00+17:00, Weekends 14:00 | N/A (text processing) | 14-language translation quality with cultural adaptation |
 

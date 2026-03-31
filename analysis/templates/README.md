@@ -212,9 +212,9 @@ graph TD
 | Attribute | Value |
 |-----------|-------|
 | **Purpose** | Quantitative significance assessment for prioritisation and article selection |
-| **Score Range** | 0–100 composite score |
+| **Score Range** | 1–10 integer composite score |
 | **Dimensions** | Political Weight · Public Impact · Legislative Consequence · Temporal Urgency · Cross-Reference Density |
-| **Thresholds** | ≥80 Breaking News · 60–79 Major Analysis · 40–59 Standard Coverage · <40 Monitoring Only |
+| **Thresholds** | ≥8 Breaking News · 6–7 Major Analysis · 4–5 Standard Coverage · <4 Monitoring Only |
 
 ---
 

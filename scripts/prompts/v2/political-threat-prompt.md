@@ -93,26 +93,27 @@ Look for:
 
 Countermeasures: Offentlighetsprincipen, TF/YGL constitutional protections, IMY/GDPR, EU press freedom
 
-## DEMOCRATIC PROCESS ASSESSMENT
+## ECONOMIC DISRUPTION ASSESSMENT
 
 Look for:
 - Fiscal crisis signals: budgetkris, statsbankrutt, skuldkris, finanskris
 - FiU involvement with economic disruption keywords
 - Unstable coalition combined with economic policy deadlock
 - Budget failure or rejection scenarios
-- Filibustering, quorum manipulation, procedural abuse
+- Disproportionate burden distribution signals
+- SoU, SfU, AU committee involvement with social welfare content
 
-Countermeasures: Independent Riksbank, Finanspolitiska rådet, EU SGP, cross-party budget framework
+Countermeasures: Independent Riksbank, Finanspolitiska rådet, EU SGP, cross-party budget framework, welfare state baseline, ECHR Article 14
 
-## POWER BALANCE ASSESSMENT
+## SOCIETAL IMPACT ASSESSMENT
 
 Look for:
 - Executive overreach: maktkoncentration, undantag från lagstiftning
 - Constitutional boundary tests: bypassing Riksdag vote
-- Disproportionate burden distribution signals
-- SoU, SfU, AU committee involvement with social welfare content
+- Filibustering, quorum manipulation, procedural abuse
+- Societal polarisation or marginalisation signals
 
-Countermeasures: Diskrimineringsombudsmannen (DO), welfare state baseline, ECHR Article 14, JO/JK
+Countermeasures: Diskrimineringsombudsmannen (DO), JO/JK, constitutional court review, cross-party norms
 
 ## OUTPUT FORMAT
 
