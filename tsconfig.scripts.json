@@ -19,6 +19,7 @@
     "sourceMap": true,
     "outDir": "./dist/scripts",
     "rootDir": ".",
+    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@scripts/*": ["scripts/*"],
