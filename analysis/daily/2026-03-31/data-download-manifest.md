@@ -1,26 +1,29 @@
-# Data Download Manifest — 2026-03-31
+# 📥 Data Download Manifest
 
-**Generated**: 2026-03-31 07:30 UTC
-**Data Sources**: get_interpellationer
-**Documents Analyzed**: 2
-**Confidence**: HIGH
+**Date:** 2026-03-31
+**Documents Analyzed**: 6
+**Analysis Pipeline:** news-realtime-monitor
+**MCP Status:** live (get_sync_status confirmed at 2026-03-31T11:35:26Z)
 
-## Summary
+## Downloaded Documents
 
-Downloaded **50** documents (session-wide) from 1 MCP data sources.
+| dok_id | Type | Title | Date | Significance |
+|--------|------|-------|------|:------------:|
+| HD03229 | prop | En ny mottagandelag | 2026-03-31 | HIGH (8/10) |
+| HD03215 | prop | Tidsbegränsat boende bosättningslag | 2026-03-31 | HIGH (7/10) |
+| HD03222 | prop | Ersättningsregler brottsoffret i fokus | 2026-03-31 | MEDIUM (6/10) |
+| HD03223 | prop | En ny konsumentkreditlag | 2026-03-31 | MEDIUM (5/10) |
+| HD01MJU30 | bet | Sveriges klimatmål 2030 | 2026-03-30 | MEDIUM (5/10) |
+| HD01JuU29 | bet | Stärkt säkerhetsskydd fastigheter | 2026-03-26 | MEDIUM (6/10) |
 
-After date filtering to **2026-03-31**: **2** documents selected for analysis.
+## MCP Tools Used
 
-## Document Counts by Type
-
-- **propositions**: 0 documents
-- **motions**: 0 documents
-- **committeeReports**: 0 documents
-- **votes**: 0 documents
-- **speeches**: 0 documents
-- **questions**: 0 documents
-- **interpellations**: 50 documents
-
-## Data Quality Notes
-
-All documents sourced from official riksdag-regering-mcp API.
+- get_sync_status (health check)
+- get_propositioner (rm=2025/26)
+- get_betankanden (rm=2025/26)
+- search_dokument (from_date=2026-03-30, to_date=2026-03-31)
+- search_voteringar (rm=2025/26)
+- search_anforanden (rm=2025/26)
+- search_regering (dateFrom=2026-03-30, dateTo=2026-03-31)
+- get_motioner (rm=2025/26)
+- get_dokument (6 individual lookups)
