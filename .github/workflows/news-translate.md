@@ -202,14 +202,16 @@ You are the **Translation Agent** for Riksdagsmonitor. Your primary focus is pro
 - **source_language** = `${{ github.event.inputs.source_language }}`
 - **analysis_depth** = `${{ github.event.inputs.analysis_depth }}`
 
-## 🚨 CRITICAL: Translation-Only Focus
+## 🚨 CRITICAL: Translation-Only Focus (News Articles)
 
-**This workflow ONLY translates existing articles. It does NOT generate original content.**
+**This workflow ONLY translates existing news articles. It does NOT generate original news content.**
 
 - Read the source language article (EN by default)
 - Translate faithfully to each target language
 - Preserve the same analytical depth, structure, and factual content
 - Ensure each translation reads naturally in the target language (not machine-translated)
+
+> **Note:** The "no original content" rule applies to **news articles only**. Per the universal "No Workflow Run Wasted" mandate, this workflow also reviews and improves existing **analysis artifacts** in `analysis/daily/` (see Step 3b). Analysis improvement is separate from news article translation.
 
 ## 🛑 ABSOLUTE PROHIBITION: Do NOT Create or Modify EN/SV Files
 
@@ -688,8 +690,6 @@ ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date -u +%Y-%m-%d)"
 
 echo "=== Mandatory Analysis Improvement Check ==="
-ANALYSIS_DIR="analysis/daily/${ARTICLE_DATE}"
-
 # Check current date first, then nearby dates
 ANALYSIS_TARGET=""
 for CHECK_OFFSET in 0 1 2 3; do
@@ -833,8 +833,8 @@ fi
 Then **immediately** call (as a direct tool call, NOT via bash):
 ```
 safeoutputs___create_pull_request({
-  "title": "🌐 Article Translations + 📊 Analysis - {date}",
-  "body": "## Article Translations\n\nLanguages: {list}\nArticles translated: {count}\nAnalysis files improved: see commit message for file count\nSource: news-translate workflow",
+  "title": "🌐 Article Translations - {date}",
+  "body": "## Article Translations\n\nLanguages: {list}\nArticles translated: {count}\nAnalysis updates (if any): see commit message for file count\nSource: news-translate workflow",
   "labels": ["automated-news", "translations", "needs-editorial-review"]
 })
 ```
