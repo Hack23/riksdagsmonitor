@@ -248,7 +248,7 @@ Significance Score: [REQUIRED: see significance-scoring.md, 0–10 composite]
 
 *Use this table when classifying multiple events from a single MCP download session. Record the `dok_id` from the Riksdag API response for full traceability.*
 
-> **AI Instructions:** After each MCP data fetch (e.g., `riksdag-regering-search_dokument`, `riksdag-regering-get_propositioner`), classify every returned document in this table before proceeding to detailed per-file analysis. The `dok_id` column MUST match the identifier from the Riksdag Open Data API response.
+> **AI Instructions:** After each MCP data fetch (e.g., using `search_dokument` or `get_propositioner` on the `riksdag-regering-mcp` server), classify every returned document in this table before proceeding to detailed per-file analysis. The `dok_id` column MUST match the identifier from the Riksdag Open Data API response.
 
 | # | dok_id | Event Type | Sensitivity | Primary Domain | Urgency | Impact Scope | L×I | Significance | Decision |
 |:-:|--------|-----------|:-----------:|:-------------:|:-------:|:------------:|:---:|:------------:|----------|
@@ -272,9 +272,9 @@ Significance Score: [REQUIRED: see significance-scoring.md, 0–10 composite]
 
 | # | File Path | Source MCP Tool | Data Type | Freshness |
 |:-:|-----------|----------------|-----------|:---------:|
-| 1 | `[REQUIRED: e.g. analysis/daily/2026-03-30/propositions/data/H901FiU1.json]` | `[e.g. riksdag-regering-search_dokument]` | `[e.g. proposition / motion / vote]` | `[Current / Cached]` |
-| 2 | `[REQUIRED: additional data file]` | `[MCP tool]` | `[data type]` | `[freshness]` |
-| 3 | `[OPTIONAL: additional data file]` | `[MCP tool]` | `[data type]` | `[freshness]` |
+| 1 | `[REQUIRED: e.g. analysis/daily/2026-03-30/propositions/data/H901FiU1.json]` | `[e.g. search_dokument]` | `[e.g. proposition / motion / vote]` | `[Current / Cached]` |
+| 2 | `[REQUIRED: additional data file]` | `[REQUIRED: MCP tool id, e.g. get_propositioner]` | `[data type]` | `[freshness]` |
+| 3 | `[OPTIONAL: additional data file]` | `[OPTIONAL: MCP tool id, e.g. get_votering]` | `[data type]` | `[freshness]` |
 
 > **📌 AI Instructions:** Populate this table with every MCP tool call and data file actually consulted during classification. This provides full data provenance for the classification decision. All files listed MUST exist at the stated paths; mark transient data as `(transient — not cached)`.
 

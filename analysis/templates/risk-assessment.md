@@ -306,11 +306,11 @@ flowchart TD
 
 | Risk Dimension | Primary MCP Tool | Key Parameters | Evidence Count |
 |---------------|-----------------|----------------|:--------------:|
-| Coalition Stability | `[e.g. riksdag-regering-search_voteringar]` | `[e.g. rm="2025/26"]` | `[#]` |
-| Policy Implementation | `[e.g. riksdag-regering-search_dokument]` | `[e.g. doktyp="bet"]` | `[#]` |
-| Budget | `[e.g. riksdag-regering-get_propositioner]` | `[e.g. rm="2025/26"]` | `[#]` |
-| Electoral | `[e.g. riksdag-regering-search_anforanden]` | `[e.g. parti="S"]` | `[#]` |
-| External | `[e.g. riksdag-regering-search_regering]` | `[e.g. type="pressmeddelanden"]` | `[#]` |
+| Coalition Stability | `[e.g. riksdag-regering-mcp search_voteringar]` | `[e.g. rm="2025/26"]` | `[#]` |
+| Policy Implementation | `[e.g. riksdag-regering-mcp search_dokument]` | `[e.g. doktyp="bet"]` | `[#]` |
+| Budget | `[e.g. riksdag-regering-mcp get_propositioner]` | `[e.g. rm="2025/26"]` | `[#]` |
+| Electoral | `[e.g. riksdag-regering-mcp search_anforanden]` | `[e.g. parti="S"]` | `[#]` |
+| External | `[e.g. riksdag-regering-mcp search_regering]` | `[e.g. type="pressmeddelanden"]` | `[#]` |
 
 > **📌 Note:** All files listed above MUST exist in the repository at the stated paths. If a file was fetched but not persisted, note `(transient — not cached)` in the File Path column.
 

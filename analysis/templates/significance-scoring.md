@@ -230,7 +230,7 @@ These examples provide anchor points for consistent scoring across workflows:
 
 *Use this table when scoring multiple events from a single MCP download session. Record the `dok_id` from the Riksdag API response for full traceability back to the source document.*
 
-> **AI Instructions:** After each MCP data fetch (e.g., `riksdag-regering-search_dokument`, `riksdag-regering-get_betankanden`), score every returned document here before deciding which events warrant full analysis. The `dok_id` column MUST match the identifier from the Riksdag Open Data API response.
+> **AI Instructions:** After each MCP data fetch (e.g., using `search_dokument` or `get_betankanden` on the `riksdag-regering-mcp` server), score every returned document here before deciding which events warrant full analysis. The `dok_id` column MUST match the identifier from the Riksdag Open Data API response.
 
 | Event | dok_id | Parl. | Policy | Public | Urgency | X-Party | **Composite** | Decision |
 |-------|--------|:-----:|:------:|:------:|:-------:|:-------:|:-------------:|----------|
@@ -264,7 +264,7 @@ These examples provide anchor points for consistent scoring across workflows:
 
 | # | File Path | Source MCP Tool | Fetch Timestamp (UTC) |
 |:-:|-----------|----------------|-----------------------|
-| 1 | `analysis/daily/YYYY-MM-DD/{articleType}/data/[filename].json` | `[e.g. riksdag-regering-search_dokument]` | `[YYYY-MM-DD HH:MM UTC]` |
+| 1 | `analysis/daily/YYYY-MM-DD/{articleType}/data/[filename].json` | `[e.g. search_dokument]` | `[YYYY-MM-DD HH:MM UTC]` |
 | 2 | `[path]` | `[tool]` | `[timestamp]` |
 | 3 | `[path]` | `[tool]` | `[timestamp]` |
 

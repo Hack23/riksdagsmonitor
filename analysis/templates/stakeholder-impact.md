@@ -226,7 +226,9 @@ When stakeholder impacts conflict (e.g., Citizens benefit but Business bears cos
 
 ---
 
-## ⚖️ Group 7: Judiciary (Domstolsväsendet)
+## ⚖️ Stakeholder Group: Judiciary (Domstolsväsendet)
+
+_Note: In the Extended Impact Summary Matrix, stakeholder groups may appear in a different row order. Always cross‑reference by stakeholder name (e.g. "Judiciary") rather than by numeric group or row number._
 
 *How does this policy affect judicial independence, court workload, legal precedent, or constitutional compliance?*
 
@@ -245,7 +247,7 @@ When stakeholder impacts conflict (e.g., Citizens benefit but Business bears cos
 
 ---
 
-## 📰 Group 8: Media & Public Discourse
+## 📰 Stakeholder Group: Media & Public Discourse
 
 *How does this policy affect media coverage dynamics, public debate framing, and information ecosystem?*
 
@@ -316,9 +318,9 @@ When stakeholder impacts conflict (e.g., Citizens benefit but Business bears cos
 
 | Tool | Purpose | Parameters |
 |------|---------|------------|
-| `[REQUIRED: e.g. riksdag-regering-search_dokument]` | `[e.g. "Fetched proposition H901FiU1"]` | `[key params used]` |
-| `[REQUIRED: e.g. riksdag-regering-search_voteringar]` | `[e.g. "Voting records for bet 2024/25:FiU1"]` | `[key params used]` |
-| `[REQUIRED: e.g. riksdag-regering-search_regering]` | `[e.g. "Government press releases on budget"]` | `[key params used]` |
+| `[REQUIRED: e.g. search_dokument]` | `[e.g. "Fetched proposition H901FiU1"]` | `[key params used]` |
+| `[REQUIRED: e.g. search_voteringar]` | `[e.g. "Voting records for bet 2024/25:FiU1"]` | `[key params used]` |
+| `[REQUIRED: e.g. search_regering]` | `[e.g. "Government press releases on budget"]` | `[key params used]` |
 
 > **Traceability Note:** Every factual claim in the stakeholder assessments above MUST be traceable to a file or MCP tool invocation listed in this section. Unsubstantiated claims are REJECTED during editorial review.
 

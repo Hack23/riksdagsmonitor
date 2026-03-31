@@ -24,22 +24,78 @@
 
 ## 📚 Architecture Documentation Map
 
-<div class="documentation-map">
-
-| Document | Focus | Description | Documentation Link |
-| --- | --- | --- | --- |
-| **[Architecture](../../ARCHITECTURE.md)** | 🏛️ Architecture | C4 model showing current system structure | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md) |
-| **[Future Architecture](../../FUTURE_ARCHITECTURE.md)** | 🏛️ Architecture | C4 model showing future system structure | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md) |
-| **[Security Architecture](../../SECURITY_ARCHITECTURE.md)** | 🛡️ Security | Current security implementation | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md) |
-| **[Threat Model](../../THREAT_MODEL.md)** | 🎯 Security | Threat analysis | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md) |
-| **[Data Model](../../DATA_MODEL.md)** | 📊 Data | Current data structures and relationships | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md) |
-| **[Flowcharts](../../FLOWCHART.md)** | 🔄 Process | Current data processing workflows | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md) |
-| **[SWOT Analysis](../../SWOT.md)** | 💼 Business | Current strategic assessment | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md) |
-| **[Workflows](../../WORKFLOWS.md)** | ⚙️ DevOps | CI/CD documentation | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md) |
-| **[Analysis Directory](../README.md)** | 🔬 Analysis | Analysis directory overview and structure | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/README.md) |
-| **[Analysis Templates](../templates/README.md)** | 📋 Templates | 8 structured analysis output templates | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/README.md) |
-
-</div>
+<table class="documentation-map">
+  <thead>
+    <tr>
+      <th>Document</th>
+      <th>Focus</th>
+      <th>Description</th>
+      <th>Documentation Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="../../ARCHITECTURE.md">Architecture</a></strong></td>
+      <td>🏛️ Architecture</td>
+      <td>C4 model showing current system structure</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../../FUTURE_ARCHITECTURE.md">Future Architecture</a></strong></td>
+      <td>🏛️ Architecture</td>
+      <td>C4 model showing future system structure</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FUTURE_ARCHITECTURE.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../../SECURITY_ARCHITECTURE.md">Security Architecture</a></strong></td>
+      <td>🛡️ Security</td>
+      <td>Current security implementation</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../../THREAT_MODEL.md">Threat Model</a></strong></td>
+      <td>🎯 Security</td>
+      <td>Threat analysis</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../../DATA_MODEL.md">Data Model</a></strong></td>
+      <td>📊 Data</td>
+      <td>Current data structures and relationships</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../../FLOWCHART.md">Flowcharts</a></strong></td>
+      <td>🔄 Process</td>
+      <td>Current data processing workflows</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../../SWOT.md">SWOT Analysis</a></strong></td>
+      <td>💼 Business</td>
+      <td>Current strategic assessment</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../../WORKFLOWS.md">Workflows</a></strong></td>
+      <td>⚙️ DevOps</td>
+      <td>CI/CD documentation</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../README.md">Analysis Directory</a></strong></td>
+      <td>🔬 Analysis</td>
+      <td>Analysis directory overview and structure</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/README.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../templates/README.md">Analysis Templates</a></strong></td>
+      <td>📋 Templates</td>
+      <td>8 structured analysis output templates</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/README.md">View Source</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 

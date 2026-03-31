@@ -24,22 +24,78 @@
 
 ## 📚 Architecture Documentation Map
 
-<div class="documentation-map">
-
-| Document | Focus | Description | Documentation Link |
-| --- | --- | --- | --- |
-| **[Architecture](../../ARCHITECTURE.md)** | 🏛️ Architecture | C4 model showing current system structure | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md) |
-| **[Security Architecture](../../SECURITY_ARCHITECTURE.md)** | 🛡️ Security | Security controls and compliance mapping | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md) |
-| **[Workflows](../../WORKFLOWS.md)** | ⚙️ DevOps | CI/CD pipeline documentation | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md) |
-| **[Analysis Directory](../README.md)** | 🔬 Analysis | Analysis directory overview and structure | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/README.md) |
-| **[AI Analysis Guide](../methodologies/ai-driven-analysis-guide.md)** | 🤖 Methodology | Per-file analysis protocol and quality gates | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md) |
-| **[Threat Framework](../methodologies/political-threat-framework.md)** | 🎭 Methodology | Political Threat Taxonomy (6 dimensions) | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-threat-framework.md) |
-| **[Risk Methodology](../methodologies/political-risk-methodology.md)** | ⚠️ Methodology | Likelihood × Impact scoring for Riksdag events | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-risk-methodology.md) |
-| **[SWOT Framework](../methodologies/political-swot-framework.md)** | 💼 Methodology | Evidence-based political SWOT quadrants | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-swot-framework.md) |
-| **[Classification Guide](../methodologies/political-classification-guide.md)** | 🏷️ Methodology | 7-dimension political event classification | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-classification-guide.md) |
-| **[Style Guide](../methodologies/political-style-guide.md)** | ✍️ Methodology | Editorial and analytical style standards | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-style-guide.md) |
-
-</div>
+<table class="documentation-map">
+  <thead>
+    <tr>
+      <th>Document</th>
+      <th>Focus</th>
+      <th>Description</th>
+      <th>Documentation Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="../../ARCHITECTURE.md">Architecture</a></strong></td>
+      <td>🏛️ Architecture</td>
+      <td>C4 model showing current system structure</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../../SECURITY_ARCHITECTURE.md">Security Architecture</a></strong></td>
+      <td>🛡️ Security</td>
+      <td>Security controls and compliance mapping</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../../WORKFLOWS.md">Workflows</a></strong></td>
+      <td>⚙️ DevOps</td>
+      <td>CI/CD pipeline documentation</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../README.md">Analysis Directory</a></strong></td>
+      <td>🔬 Analysis</td>
+      <td>Analysis directory overview and structure</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/README.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../methodologies/ai-driven-analysis-guide.md">AI Analysis Guide</a></strong></td>
+      <td>🤖 Methodology</td>
+      <td>Per-file analysis protocol and quality gates</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../methodologies/political-threat-framework.md">Threat Framework</a></strong></td>
+      <td>🎭 Methodology</td>
+      <td>Political Threat Taxonomy (6 dimensions)</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-threat-framework.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../methodologies/political-risk-methodology.md">Risk Methodology</a></strong></td>
+      <td>⚠️ Methodology</td>
+      <td>Likelihood × Impact scoring for Riksdag events</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-risk-methodology.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../methodologies/political-swot-framework.md">SWOT Framework</a></strong></td>
+      <td>💼 Methodology</td>
+      <td>Evidence-based political SWOT quadrants</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-swot-framework.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../methodologies/political-classification-guide.md">Classification Guide</a></strong></td>
+      <td>🏷️ Methodology</td>
+      <td>7-dimension political event classification</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-classification-guide.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../methodologies/political-style-guide.md">Style Guide</a></strong></td>
+      <td>✍️ Methodology</td>
+      <td>Editorial and analytical style standards</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-style-guide.md">View Source</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 

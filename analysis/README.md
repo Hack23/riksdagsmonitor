@@ -24,21 +24,72 @@
 
 ## 📚 Architecture Documentation Map
 
-<div class="documentation-map">
-
-| Document | Focus | Description | Documentation Link |
-| --- | --- | --- | --- |
-| **[Architecture](../ARCHITECTURE.md)** | 🏛️ Architecture | C4 model showing current system structure | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md) |
-| **[Security Architecture](../SECURITY_ARCHITECTURE.md)** | 🛡️ Security | Security controls and compliance mapping | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md) |
-| **[Threat Model](../THREAT_MODEL.md)** | 🎯 Security | Political Threat Landscape analysis | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md) |
-| **[SWOT Analysis](../SWOT.md)** | 💼 Business | Strategic assessment (**formatting exemplar**) | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md) |
-| **[Data Model](../DATA_MODEL.md)** | 📊 Data | Current data structures and relationships | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md) |
-| **[Flowcharts](../FLOWCHART.md)** | 🔄 Process | Current data processing workflows | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md) |
-| **[Workflows](../WORKFLOWS.md)** | ⚙️ DevOps | CI/CD and agentic workflow documentation | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md) |
-| **[Analysis Methodologies](methodologies/README.md)** | 📐 Methodology | 6 political intelligence analysis frameworks | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/README.md) |
-| **[Analysis Templates](templates/README.md)** | 📋 Templates | 8 structured analysis output templates | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/README.md) |
-
-</div>
+<table class="documentation-map">
+  <thead>
+    <tr>
+      <th>Document</th>
+      <th>Focus</th>
+      <th>Description</th>
+      <th>Documentation Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="../ARCHITECTURE.md">Architecture</a></strong></td>
+      <td>🏛️ Architecture</td>
+      <td>C4 model showing current system structure</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../SECURITY_ARCHITECTURE.md">Security Architecture</a></strong></td>
+      <td>🛡️ Security</td>
+      <td>Security controls and compliance mapping</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../THREAT_MODEL.md">Threat Model</a></strong></td>
+      <td>🎯 Security</td>
+      <td>Political Threat Landscape analysis</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../SWOT.md">SWOT Analysis</a></strong></td>
+      <td>💼 Business</td>
+      <td>Strategic assessment (<strong>formatting exemplar</strong>)</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../DATA_MODEL.md">Data Model</a></strong></td>
+      <td>📊 Data</td>
+      <td>Current data structures and relationships</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../FLOWCHART.md">Flowcharts</a></strong></td>
+      <td>🔄 Process</td>
+      <td>Current data processing workflows</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../WORKFLOWS.md">Workflows</a></strong></td>
+      <td>⚙️ DevOps</td>
+      <td>CI/CD and agentic workflow documentation</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="methodologies/README.md">Analysis Methodologies</a></strong></td>
+      <td>📐 Methodology</td>
+      <td>6 political intelligence analysis frameworks</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/README.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="templates/README.md">Analysis Templates</a></strong></td>
+      <td>📋 Templates</td>
+      <td>8 structured analysis output templates</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/README.md">View Source</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
@@ -288,24 +339,90 @@ graph TB
 
 ## 📚 Documentation Map
 
-<div class="documentation-map">
-
-| Document | Type | Focus | Link |
-|----------|------|-------|------|
-| **[Methodologies README](methodologies/README.md)** | 📚 Index | Complete methodology catalog with architecture diagrams | [View](methodologies/README.md) |
-| **[Templates README](templates/README.md)** | 📋 Index | Template catalog with usage flow and quality standards | [View](templates/README.md) |
-| **[AI-Driven Guide](methodologies/ai-driven-analysis-guide.md)** | 🤖 Protocol | Master protocol for all AI analysis | [View](methodologies/ai-driven-analysis-guide.md) |
-| **[Classification Guide](methodologies/political-classification-guide.md)** | 🏷️ Method | 7-dimension political taxonomy | [View](methodologies/political-classification-guide.md) |
-| **[Risk Methodology](methodologies/political-risk-methodology.md)** | ⚠️ Method | Cascading risk assessment model | [View](methodologies/political-risk-methodology.md) |
-| **[SWOT Framework](methodologies/political-swot-framework.md)** | 💼 Method | TOWS + Cross-SWOT analysis | [View](methodologies/political-swot-framework.md) |
-| **[Threat Framework](methodologies/political-threat-framework.md)** | 🎭 Method | 4-framework threat modeling (v3.0) | [View](methodologies/political-threat-framework.md) |
-| **[Style Guide](methodologies/political-style-guide.md)** | ✍️ Standards | Evidence citation and writing standards | [View](methodologies/political-style-guide.md) |
-| **[ISMS Classification](reference/isms-classification-adaptation.md)** | 📖 Reference | ISO 27001 → Political classification mapping | [View](reference/isms-classification-adaptation.md) |
-| **[ISMS Risk](reference/isms-risk-assessment-adaptation.md)** | 📖 Reference | ISO 27001 → Political risk mapping | [View](reference/isms-risk-assessment-adaptation.md) |
-| **[ISMS Style](reference/isms-style-guide-adaptation.md)** | 📖 Reference | ISO 27001 → Political writing mapping | [View](reference/isms-style-guide-adaptation.md) |
-| **[ISMS Threat](reference/isms-threat-modeling-adaptation.md)** | 📖 Reference | ISO 27001 → Political threat mapping | [View](reference/isms-threat-modeling-adaptation.md) |
-
-</div>
+<table class="documentation-map">
+  <thead>
+    <tr>
+      <th>Document</th>
+      <th>Type</th>
+      <th>Focus</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="methodologies/README.md">Methodologies README</a></strong></td>
+      <td>📚 Index</td>
+      <td>Complete methodology catalog with architecture diagrams</td>
+      <td><a href="methodologies/README.md">View</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="templates/README.md">Templates README</a></strong></td>
+      <td>📋 Index</td>
+      <td>Template catalog with usage flow and quality standards</td>
+      <td><a href="templates/README.md">View</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="methodologies/ai-driven-analysis-guide.md">AI-Driven Guide</a></strong></td>
+      <td>🤖 Protocol</td>
+      <td>Master protocol for all AI analysis</td>
+      <td><a href="methodologies/ai-driven-analysis-guide.md">View</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="methodologies/political-classification-guide.md">Classification Guide</a></strong></td>
+      <td>🏷️ Method</td>
+      <td>7-dimension political taxonomy</td>
+      <td><a href="methodologies/political-classification-guide.md">View</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="methodologies/political-risk-methodology.md">Risk Methodology</a></strong></td>
+      <td>⚠️ Method</td>
+      <td>Cascading risk assessment model</td>
+      <td><a href="methodologies/political-risk-methodology.md">View</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="methodologies/political-swot-framework.md">SWOT Framework</a></strong></td>
+      <td>💼 Method</td>
+      <td>TOWS + Cross-SWOT analysis</td>
+      <td><a href="methodologies/political-swot-framework.md">View</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="methodologies/political-threat-framework.md">Threat Framework</a></strong></td>
+      <td>🎭 Method</td>
+      <td>4-framework threat modeling (v3.0)</td>
+      <td><a href="methodologies/political-threat-framework.md">View</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="methodologies/political-style-guide.md">Style Guide</a></strong></td>
+      <td>✍️ Standards</td>
+      <td>Evidence citation and writing standards</td>
+      <td><a href="methodologies/political-style-guide.md">View</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="reference/isms-classification-adaptation.md">ISMS Classification</a></strong></td>
+      <td>📖 Reference</td>
+      <td>ISO 27001 → Political classification mapping</td>
+      <td><a href="reference/isms-classification-adaptation.md">View</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="reference/isms-risk-assessment-adaptation.md">ISMS Risk</a></strong></td>
+      <td>📖 Reference</td>
+      <td>ISO 27001 → Political risk mapping</td>
+      <td><a href="reference/isms-risk-assessment-adaptation.md">View</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="reference/isms-style-guide-adaptation.md">ISMS Style</a></strong></td>
+      <td>📖 Reference</td>
+      <td>ISO 27001 → Political writing mapping</td>
+      <td><a href="reference/isms-style-guide-adaptation.md">View</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="reference/isms-threat-modeling-adaptation.md">ISMS Threat</a></strong></td>
+      <td>📖 Reference</td>
+      <td>ISO 27001 → Political threat mapping</td>
+      <td><a href="reference/isms-threat-modeling-adaptation.md">View</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
