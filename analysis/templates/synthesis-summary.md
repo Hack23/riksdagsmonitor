@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `synthesis-summary.md` in the workflow's own folder. This file synthesizes per-file analyses into an integrated intelligence picture. AI reads all per-file analyses and produces genuine synthesis — not a mechanical concatenation of summaries.
@@ -219,9 +219,25 @@ graph LR
 
 ---
 
+## 📂 MCP Data Files Used
+
+`[REQUIRED: List all MCP data file paths consulted for this synthesis. Include riksdag-regering-mcp tool outputs, CIA data exports, and any cached data files used during analysis.]`
+
+| # | Data Source | File / Tool Path | Retrieved |
+|---|-----------|-----------------|-----------|
+| 1 | `[e.g. riksdag-regering-mcp]` | `[e.g. search_dokument(doktyp="prop", rm="2025/26")]` | `[YYYY-MM-DD HH:MM UTC]` |
+| 2 | `[e.g. CIA export]` | `[e.g. cia-data/exports/risk-summary.json]` | `[YYYY-MM-DD HH:MM UTC]` |
+| 3 | `[e.g. riksdag-regering-mcp]` | `[e.g. search_voteringar(rm="2025/26")]` | `[YYYY-MM-DD HH:MM UTC]` |
+| 4 | `[OPTIONAL]` | `[path or tool call]` | `[timestamp]` |
+| 5 | `[OPTIONAL]` | `[path or tool call]` | `[timestamp]` |
+
+> **📌 AI Instructions:** Populate this table with every MCP tool call and data file actually consulted during the synthesis workflow. This provides full data provenance and audit trail for the intelligence product.
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/synthesis-summary.md`  
-- **Version:** 2.0  
+- **Version:** 2.1  
 - **Consumed By:** All news article generator workflows  
 - **Classification:** Public  
 - **Next Review:** 2026-06-30
