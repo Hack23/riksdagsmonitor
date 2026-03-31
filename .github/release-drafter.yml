@@ -187,7 +187,7 @@ template: |
   - **D3.js**: 7.9.x
   - **Vitest**: 4.x
   - **Cypress**: 15.x
-  - **TypeScript**: 5.9.x
+  - **TypeScript**: 6.x
   
   ## 👥 Contributors
   

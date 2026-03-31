@@ -318,7 +318,7 @@ C4Container
 
 **Styling Requirements:**
 - Group related containers in `System_Boundary()` blocks
-- Use technology stack descriptions (e.g., "React 19.x, TypeScript 5.9")
+- Use technology stack descriptions (e.g., "React 19.x, TypeScript 6.0")
 - Include internal vs external protocol distinctions
 - Use descriptive relationship labels
 
