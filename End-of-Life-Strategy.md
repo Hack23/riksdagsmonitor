@@ -11,13 +11,13 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.2-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--18-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.1 | **📅 Last Updated:** 2026-03-18 (UTC)  
-**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-03-18
+**📋 Document Owner:** CEO | **📄 Version:** 1.2 | **📅 Last Updated:** 2026-03-31 (UTC)  
+**🔄 Review Cycle:** Annual | **⏰ Next Review:** 2027-03-31
 
 ---
 
@@ -113,18 +113,18 @@ This allows early detection of breaking changes in Node.js alpha while keeping p
 |----------|-----------|----------------|----------|-----------------|
 | **Runtime** | [Node.js 25 Current](https://nodejs.org/) | 25.x | **April 2026** (EOL when Node.js 26 releases) | Node.js 26 LTS (**imminent**, ~April 2026) → Node.js 27 LTS |
 | **Package Manager** | [npm](https://www.npmjs.com/) | Bundled with Node.js | Follows Node.js | Follows Node.js upgrades |
-| **Language** | [TypeScript](https://www.typescriptlang.org/) | 5.9.3 | Active (monthly releases) | Track latest stable |
-| **Build Tool** | [Vite](https://vite.dev/) | 7.3.1 | Active | Track latest major |
+| **Language** | [TypeScript](https://www.typescriptlang.org/) | 6.0.2 | Active (quarterly releases) | Track latest stable |
+| **Build Tool** | [Vite](https://vite.dev/) | 8.0.3 | Active | Track latest major |
 | **Transpiler** | [tsx](https://tsx.is/) | 4.21.0 | Active | Track latest stable |
 
 ### Testing Framework
 
 | Category | Technology | Current Version | EOL Date | Replacement Path |
 |----------|-----------|----------------|----------|-----------------|
-| **Unit Testing** | [Vitest](https://vitest.dev/) | 4.0.18 | Active (follows Vite) | Track with Vite major versions |
-| **E2E Testing** | [Cypress](https://www.cypress.io/) | 15.11.0 | Active | Track latest stable |
-| **Coverage** | [@vitest/coverage-v8](https://vitest.dev/) | 4.0.18 | Active | Track with Vitest |
-| **DOM Simulation** | [happy-dom](https://github.com/nicedayfor/happy-dom) | 20.8.3 | Active | Track latest stable |
+| **Unit Testing** | [Vitest](https://vitest.dev/) | 4.1.2 | Active (follows Vite) | Track with Vite major versions |
+| **E2E Testing** | [Cypress](https://www.cypress.io/) | 15.13.0 | Active | Track latest stable |
+| **Coverage** | [@vitest/coverage-v8](https://vitest.dev/) | 4.1.2 | Active | Track with Vitest |
+| **DOM Simulation** | [happy-dom](https://github.com/nicedayfor/happy-dom) | 20.8.9 | Active | Track latest stable |
 
 ### Runtime Dependencies (Browser)
 
@@ -141,11 +141,39 @@ This allows early detection of breaking changes in Node.js alpha while keeping p
 
 | Category | Technology | Current Version | EOL Date | Replacement Path |
 |----------|-----------|----------------|----------|-----------------|
-| **Linting** | [ESLint](https://eslint.org/) | 10.0.3 | Active | Track latest major |
+| **Linting** | [ESLint](https://eslint.org/) | 10.1.0 | Active | Track latest major |
 | **HTML Linting** | [HTMLHint](https://htmlhint.com/) | 1.9.2 | Active | Track latest stable |
-| **Dead Code** | [knip](https://knip.dev/) | 5.86.0 | Active | Track latest stable |
-| **API Docs** | [TypeDoc](https://typedoc.org/) | 0.28.17 | Active | Track latest stable |
+| **Dead Code** | [knip](https://knip.dev/) | 6.1.1 | Active | Track latest stable |
+| **API Docs** | [TypeDoc](https://typedoc.org/) | 0.28.18 | Active | Track latest stable |
 | **SRI Generation** | [vite-plugin-sri-gen](https://www.npmjs.com/package/vite-plugin-sri-gen) | 1.3.2 | Active | Track latest stable |
+
+---
+
+### TypeScript Lifecycle
+
+| TypeScript | Release Date | Status | Support Until |
+|-----------|-------------|--------|---------------|
+| **6.0.2** | Mar 2026 | ✅ **Active — in use** | Until 7.0 release (~12 months) |
+| 5.9.x | Feb 2026 | Previous stable | Limited — security patches only |
+| 5.8.x | Dec 2025 | End of life | ❌ No support |
+
+> **Note:** TypeScript 6.0 is a major release with breaking changes including deprecated `baseUrl` option (still functional, silenced via `ignoreDeprecations: "6.0"`), stricter module resolution in bundler mode, and removal of implicit `global` namespace. The project uses `@typescript-eslint 8.58.0` which supports `typescript >=4.8.4 <6.1.0`.
+
+### TypeScript Upgrade Policy
+
+1. **Upgrade to new patch versions immediately** — bug fixes only, no breaking changes.
+2. **Upgrade to new minor versions within 2 weeks** — validate `tsc --noEmit`, ESLint, and all tests pass.
+3. **Upgrade to new major versions within 1 month** — major versions may require code changes and `@typescript-eslint` compatibility updates.
+4. **Never use TypeScript versions unsupported by `@typescript-eslint`** — this would disable type-aware linting.
+
+### TypeScript Upgrade Triggers
+
+| Trigger | Action | Timeline |
+|---------|--------|----------|
+| New patch release (e.g., 6.0.3) | Update `package.json`, run full CI | Within 1 week |
+| New minor release (e.g., 6.1.0) | Verify `@typescript-eslint` compatibility first | Within 2 weeks |
+| New major release (e.g., 7.0.0) | Full compatibility assessment, dedicated PR | Within 1 month |
+| `@typescript-eslint` drops support | Upgrade `@typescript-eslint` or pin TypeScript | Within 24 hours |
 
 ---
 
@@ -310,6 +338,8 @@ Riksdagsmonitor outputs **static HTML5, CSS3, and ES2020+ JavaScript**. Browser 
 | Cypress major breaking changes | Medium | Low | E2E tests are supplementary; can temporarily skip |
 | npm ecosystem supply chain attack | Low | High | SHA-pinned actions, SRI hashes, Dependabot alerts |
 | Browser API deprecation affecting static output | Very Low | Low | ES2020+ features are stable and widely supported |
+| TypeScript major upgrade breaks build | Low | Medium | Test with `tsc --noEmit`, lint, and full test suite before merging |
+| @typescript-eslint drops TypeScript version support | Medium | High | Monitor peer dependency ranges; pin TypeScript if needed |
 
 ### Migration Complexity Assessment
 
@@ -319,7 +349,8 @@ Riksdagsmonitor outputs **static HTML5, CSS3, and ES2020+ JavaScript**. Browser 
 | Node.js 25 → 26 (**imminent**) | Very Low | < 1 day | 🟢 Very Low |
 | Node.js 26 → 27 (new schedule) | Low | 1–2 days | 🟢 Low |
 | Vite 7 → next major | Medium | 2–5 days | 🟡 Medium |
-| TypeScript 5 → 6 | Low–Medium | 1–3 days | 🟢 Low |
+| TypeScript 5 → 6 | Low | < 1 day | 🟢 Very Low (completed) |
+| TypeScript 6 → 7 | Low–Medium | 1–3 days | 🟢 Low |
 | Chart.js 4 → 5 | Medium | 3–5 days | 🟡 Medium |
 | D3.js 7 → 8 | Medium | 3–7 days | 🟡 Medium |
 

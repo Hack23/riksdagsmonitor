@@ -3419,7 +3419,7 @@
           "version": "10.2.4"
         },
         "typescript": {
-          "version": "5.9.3"
+          "version": "6.0.2"
         },
         "yaml": {
           "version": "2.8.2"
@@ -3479,7 +3479,7 @@
                   "version": "2.5.0"
                 },
                 "typescript": {
-                  "version": "5.9.3"
+                  "version": "6.0.2"
                 }
               }
             },
@@ -3516,12 +3516,12 @@
               "overridden": false,
               "dependencies": {
                 "typescript": {
-                  "version": "5.9.3"
+                  "version": "6.0.2"
                 }
               }
             },
             "typescript": {
-              "version": "5.9.3"
+              "version": "6.0.2"
             }
           }
         },
@@ -3551,7 +3551,7 @@
               "version": "10.1.0"
             },
             "typescript": {
-              "version": "5.9.3"
+              "version": "6.0.2"
             }
           }
         },
@@ -3575,7 +3575,7 @@
                   "version": "4.4.3"
                 },
                 "typescript": {
-                  "version": "5.9.3"
+                  "version": "6.0.2"
                 }
               }
             },
@@ -3585,7 +3585,7 @@
               "overridden": false,
               "dependencies": {
                 "typescript": {
-                  "version": "5.9.3"
+                  "version": "6.0.2"
                 }
               }
             },
@@ -3613,7 +3613,7 @@
               "version": "2.5.0"
             },
             "typescript": {
-              "version": "5.9.3"
+              "version": "6.0.2"
             }
           }
         },
@@ -3638,7 +3638,7 @@
               "version": "10.1.0"
             },
             "typescript": {
-              "version": "5.9.3"
+              "version": "6.0.2"
             }
           }
         },
@@ -3646,13 +3646,13 @@
           "version": "10.1.0"
         },
         "typescript": {
-          "version": "5.9.3"
+          "version": "6.0.2"
         }
       }
     },
     "typescript": {
-      "version": "5.9.3",
-      "resolved": "https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz",
+      "version": "6.0.2",
+      "resolved": "https://registry.npmjs.org/typescript/-/typescript-6.0.2.tgz",
       "overridden": false
     },
     "vite-plugin-sri-gen": {
