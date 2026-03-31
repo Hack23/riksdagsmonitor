@@ -1,57 +1,49 @@
-# 🏷️ Political Classification Results
+# Political Classification Results — 2026-03-31
 
-## 📋 Classification Context
-
-| Field | Value |
-|-------|-------|
-| **Classification ID** | `CLS-2026-03-31-001` |
-| **Analysis Date** | 2026-03-31 12:00 UTC |
-| **Documents Classified** | 6 |
-| **Produced By** | news-realtime-monitor |
+**Generated**: 2026-03-31 14:34 UTC
+**Data Sources**: riksdag-regering-mcp
+**Documents Analyzed**: 6
+**Confidence**: HIGH
 
 ---
 
-## 📊 Classification Dashboard
+## Summary
+
+Six documents classified by policy domain, sensitivity level, and political urgency. Migration policy dominates (2 of 6 documents), followed by justice/criminal law (2), security/defense (1), and EU regulatory (1).
+
+---
+
+## Classification Overview
 
 ```mermaid
 graph TD
-    subgraph "🏷️ Document Classification — 2026-03-31"
-        subgraph "🔴 HIGH Significance"
-            D1["HD03229<br/>New Reception Law<br/>Score: 8/10"]
-            D2["HD03215<br/>Settlement Law<br/>Score: 7/10"]
-        end
-        subgraph "🟡 MEDIUM Significance"
-            D3["HD01JuU29<br/>Security Protection<br/>Score: 6/10"]
-            D4["HD03222<br/>Crime Victim Comp.<br/>Score: 6/10"]
-            D5["HD01MJU30<br/>Climate Goals<br/>Score: 5/10"]
-            D6["HD03223<br/>Consumer Credit<br/>Score: 5/10"]
-        end
+    subgraph "Policy Domain Distribution"
+        MIG["Migration & Integration<br/>2 documents<br/>�� SENSITIVE"]
+        JUS["Justice & Criminal Law<br/>2 documents<br/>🟡 MODERATE"]
+        SEC["Security & Defense<br/>1 document<br/>🔴 SENSITIVE"]
+        EU["EU Regulatory<br/>1 document<br/>🟢 ROUTINE"]
     end
-
-    style D1 fill:#dc3545,stroke:#333,color:#fff
-    style D2 fill:#dc3545,stroke:#333,color:#fff
-    style D3 fill:#ffc107,stroke:#333,color:#000
-    style D4 fill:#ffc107,stroke:#333,color:#000
-    style D5 fill:#ffc107,stroke:#333,color:#000
-    style D6 fill:#ffc107,stroke:#333,color:#000
+    style MIG fill:#dc3545,stroke:#333,color:#fff
+    style JUS fill:#ffc107,stroke:#333,color:#000
+    style SEC fill:#dc3545,stroke:#333,color:#fff
+    style EU fill:#28a745,stroke:#333,color:#fff
 ```
-
-## 📋 Batch Classification Table
-
-| dok_id | Title | Type | Domain | Sensitivity | Significance | Score |
-|--------|-------|------|--------|:-----------:|:------------:|:-----:|
-| HD03229 | En ny mottagandelag | prop | Migration | SENSITIVE | HIGH | 8/10 |
-| HD03215 | Tidsbegränsat boende — bosättningslag | prop | Migration/Housing | SENSITIVE | HIGH | 7/10 |
-| HD01JuU29 | Stärkt säkerhetsskydd fastigheter | bet | Security/Defense | RESTRICTED | MEDIUM | 6/10 |
-| HD03222 | Ersättningsregler brottsoffret i fokus | prop | Criminal Justice | PUBLIC | MEDIUM | 6/10 |
-| HD01MJU30 | Sveriges klimatmål 2030 | bet | Environment | SENSITIVE | MEDIUM | 5/10 |
-| HD03223 | En ny konsumentkreditlag | prop | Consumer Protection | PUBLIC | MEDIUM | 5/10 |
 
 ---
 
-## 📊 MCP Data Files Used
+## Batch Classification Table
 
-| Tool | Parameters | Data Retrieved |
-|------|-----------|----------------|
-| `get_propositioner` | rm=2025/26 | Proposition classification data |
-| `get_betankanden` | rm=2025/26 | Committee report classification data |
+| dok_id | Title | Domain | Sensitivity | Urgency | Party Alignment |
+|--------|-------|--------|:-----------:|:-------:|:---------------:|
+| HD03229 | En ny mottagandelag | Migration | 🔴 SENSITIVE | 🟠 URGENT | M+KD+L+SD vs S+V+MP |
+| HD03215 | Tidsbegränsat boende | Migration | 🔴 SENSITIVE | 🟠 URGENT | M+KD+L+SD vs S+V+MP |
+| HD03222 | Ersättningsregler brottsoffret | Criminal Justice | 🟡 MODERATE | 🟡 STANDARD | Broad support expected |
+| HD03223 | En ny konsumentkreditlag | Consumer | 🟢 ROUTINE | 🟡 STANDARD | Cross-party potential |
+| HD01UU6 | Säkerhetspolitik | Defense/Security | 🔴 SENSITIVE | 🟡 STANDARD | 7/8 parties consensus |
+| HD01MJU18 | UTP-direktivet | EU Regulatory | 🟢 ROUTINE | 🟢 LOW | Non-contentious |
+
+---
+
+## Data Quality Notes
+
+Classification based on document metadata, policy domain mapping, and historical party positioning. Confidence: HIGH.
