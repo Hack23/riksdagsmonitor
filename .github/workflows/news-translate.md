@@ -803,7 +803,13 @@ if [ "$STAGED_COUNT" -gt 90 ]; then
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
 
-git commit -m "🌐 Translated articles + 📊 Analysis improvements - $(date +%Y-%m-%d)"
+# Use descriptive commit message reflecting actual work
+ANALYSIS_STAGED=$(git diff --cached --name-only -- 'analysis/' 2>/dev/null | wc -l)
+if [ "$ANALYSIS_STAGED" -gt 0 ]; then
+  git commit -m "🌐 Translated articles + 📊 Analysis improvements ($ANALYSIS_STAGED files) - $(date +%Y-%m-%d)"
+else
+  git commit -m "🌐 Translated articles - $(date +%Y-%m-%d)"
+fi
 ```
 
 Then **immediately** call (as a direct tool call, NOT via bash):
@@ -886,4 +892,13 @@ npx tsx scripts/validate-news-translations.ts
 | Too many article types | Batch limiting applied | Only first 2 types processed per run; remaining types deferred to next scheduled run |
 | HTMLHint errors | Malformed translation HTML | Run `npx tsx scripts/article-quality-enhancer.ts --fix` |
 
-🎯 **Now begin: Check EN source articles exist on disk first. If they don't, call `safeoutputs___noop`. Otherwise, scan for untranslated articles (applying batch limit of 2 types max), warm up MCP with `get_sync_status()`, generate translations with the script, then MANDATORY: read `analysis/methodologies/ai-driven-analysis-guide.md` and review/improve existing analysis artifacts (Step 3b — no workflow run is ever wasted), validate, and call a safe output tool. Monitor elapsed time throughout — if 40+ minutes pass, skip remaining translation work but STILL perform at least minimal analysis improvement before creating PR with partial translations.**
+🎯 **Now begin — follow this sequence:**
+1. **Check EN source articles** exist on disk. If they don't → call `safeoutputs___noop`
+2. **Scan for untranslated articles** (apply batch limit of 2 types max)
+3. **Warm up MCP** with `get_sync_status()`
+4. **Generate translations** with the TypeScript script
+5. **🚨 MANDATORY: Read `analysis/methodologies/ai-driven-analysis-guide.md`** and review/improve existing analysis artifacts (Step 3b) — no workflow run is ever wasted
+6. **Validate** translations and analysis quality
+7. **Create PR** via `safeoutputs___create_pull_request`
+
+**Time management**: If 40+ minutes have elapsed, skip remaining translation work but STILL perform at least minimal analysis improvement (one file) before creating PR.
