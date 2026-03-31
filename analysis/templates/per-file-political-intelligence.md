@@ -322,6 +322,20 @@ graph TD
 
 ---
 
+## 📂 MCP Data Files Used
+
+> *List all data files from the analysis pipeline that were consulted to produce this analysis. This enables reproducibility and audit trails.*
+
+`[REQUIRED: List all analysis/daily/YYYY-MM-DD/{articleType}/data/ files consulted for this analysis]`
+
+| # | File Path | Source MCP Tool | Data Type | Freshness |
+|---|-----------|----------------|-----------|:---------:|
+| 1 | `[REQUIRED: e.g. analysis/daily/2026-03-30/propositions/data/H901FiU1.json]` | `[e.g. get_dokument]` | `[e.g. proposition / motion / vote]` | `[Current / Cached]` |
+| 2 | `[REQUIRED: additional data file]` | `[MCP tool]` | `[data type]` | `[freshness]` |
+| 3 | `[OPTIONAL: additional data file]` | `[MCP tool]` | `[data type]` | `[freshness]` |
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/per-file-political-intelligence.md`  
 - **Output Path:** `analysis/daily/YYYY-MM-DD/{articleType}/documents/{dok_id}-analysis.md`  
