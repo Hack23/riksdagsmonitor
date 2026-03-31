@@ -11,14 +11,46 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--31-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 4.0 | **📅 Last Updated:** 2026-03-31 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+---
+
+## 📚 Architecture Documentation Map
+
+<div class="documentation-map">
+
+| Document | Focus | Description | Documentation Link |
+| --- | --- | --- | --- |
+| **[Architecture](../ARCHITECTURE.md)** | 🏛️ Architecture | C4 model showing current system structure | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md) |
+| **[Security Architecture](../SECURITY_ARCHITECTURE.md)** | 🛡️ Security | Security controls and compliance mapping | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md) |
+| **[Threat Model](../THREAT_MODEL.md)** | 🎯 Security | Political Threat Landscape analysis | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/THREAT_MODEL.md) |
+| **[SWOT Analysis](../SWOT.md)** | 💼 Business | Strategic assessment (**formatting exemplar**) | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/SWOT.md) |
+| **[Data Model](../DATA_MODEL.md)** | 📊 Data | Current data structures and relationships | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/DATA_MODEL.md) |
+| **[Flowcharts](../FLOWCHART.md)** | 🔄 Process | Current data processing workflows | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/FLOWCHART.md) |
+| **[Workflows](../WORKFLOWS.md)** | ⚙️ DevOps | CI/CD and agentic workflow documentation | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md) |
+| **[Analysis Methodologies](methodologies/README.md)** | 📐 Methodology | 6 political intelligence analysis frameworks | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/README.md) |
+| **[Analysis Templates](templates/README.md)** | 📋 Templates | 8 structured analysis output templates | [View Source](https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/templates/README.md) |
+
+</div>
+
+---
+
+## 🔐 ISMS Policy Alignment
+
+| **ISMS Policy** | **Analysis Implementation** |
+| --- | --- |
+| [🛠️ Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) | Quality gates enforce evidence-based analysis; anti-pattern rejection prevents low-quality output |
+| [🤖 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) | AI agents MUST read methodology docs before analysis; per-file protocol ensures reproducibility |
+| [📝 Classification Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Classification_Policy.md) | 7-dimension classification adapted from ISMS for Swedish political events (see [reference/](reference/)) |
+| [🔍 Vulnerability Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) | Political threat analysis uses 6 purpose-built dimensions, NOT software-centric models |
+| [🔓 Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) | All methodology documents published under project license for transparency |
 
 ---
 
@@ -89,19 +121,84 @@ Every analysis file must demonstrate **genuine political intelligence depth**. T
 - Forward-looking indicators (what to watch next, with specific triggers)
 - Cross-document pattern identification (how this document relates to other recent activity)
 
+### Rule 5: Mandatory Data Download — ALWAYS Before Analysis
+
+**Every agentic workflow MUST download Riksdag data before deciding whether to produce an article.** Data collection is NEVER optional:
+
+```mermaid
+flowchart TD
+    Start(["🚀 Workflow Triggered"]) --> Health["🏥 MCP Health Gate\nget_calendar_events"]
+    Health -->|"✅ Healthy"| Feeds["📡 Download ALL\nFeed Endpoints"]
+    Health -->|"❌ Failed 3x"| Abort(["⛔ Abort Run"])
+    Feeds --> Advisory["📋 Download Advisory\nFeeds MANDATORY"]
+    Advisory --> Analytics["🔬 Run Analytical\nContext Tools"]
+    Analytics --> Gate{"📰 Newsworthy\nItems Found?"}
+    Gate -->|"✅ Yes"| Analyze["🤖 Per-File Analysis\n+ Article Generation"]
+    Gate -->|"❌ No"| Noop["📝 noop\nwith analysis summary"]
+
+    style Start fill:#0d6efd,stroke:#0a58ca,color:#fff
+    style Health fill:#6c757d,stroke:#565e64,color:#fff
+    style Feeds fill:#198754,stroke:#146c43,color:#fff
+    style Advisory fill:#20c997,stroke:#1aa179,color:#fff
+    style Analytics fill:#6f42c1,stroke:#59359a,color:#fff
+    style Gate fill:#ffc107,stroke:#cc9a06,color:#000
+    style Analyze fill:#fd7e14,stroke:#ca6510,color:#fff
+    style Noop fill:#adb5bd,stroke:#6c757d,color:#000
+    style Abort fill:#dc3545,stroke:#b02a37,color:#fff
+```
+
+**Key rules:**
+- `timeframe: "today"` first, fallback to `"one-week"` for empty/error/timeout feeds
+- Riksdag API can take 30–90+ seconds per call — NEVER abort slow responses
+- Partial data is better than no data — continue with other feeds on individual failures
+- Even on `noop`, all data collection and analysis MUST complete first
+
+### Rule 6: Evidence-Based Only
+
+Every factual claim must have a source citation. Every non-factual assessment must have a confidence level (HIGH/MEDIUM/LOW). Opinion-only entries are REJECTED.
+
 ---
 
 ## 🎯 Purpose
 
-The `analysis/` directory stores **political intelligence analysis artifacts** produced by Riksdagsmonitor's agentic workflows. These artifacts bridge raw Swedish parliamentary data (sourced via the riksdag-regering-mcp server) and the final published political intelligence articles, news summaries, and dashboards.
+The `analysis/` directory stores **political intelligence analysis artifacts** produced by Riksdagsmonitor's agentic workflows. These artifacts bridge raw Swedish parliamentary data (sourced via the **riksdag-regering-mcp** server) and the final published political intelligence articles, news summaries, and dashboards across 14 languages.
+
+```mermaid
+flowchart LR
+    subgraph "📡 Data Collection"
+        RD["🏛️ Riksdag MCP\nServer"]
+    end
+
+    subgraph "🔬 Analysis Pipeline"
+        DL["📥 Download\nFeed Data"]
+        AI["🤖 Per-File\nAI Analysis"]
+        QG["✅ Quality\nGate ≥7.0"]
+    end
+
+    subgraph "📰 Article Generation"
+        GEN["📝 Generate\nSV/EN Article"]
+        TR["🌐 Translate\n12 Languages"]
+    end
+
+    RD --> DL --> AI --> QG --> GEN --> TR
+
+    style RD fill:#003399,stroke:#002266,color:#fff
+    style DL fill:#0d6efd,stroke:#0a58ca,color:#fff
+    style AI fill:#6f42c1,stroke:#59359a,color:#fff
+    style QG fill:#198754,stroke:#146c43,color:#fff
+    style GEN fill:#fd7e14,stroke:#ca6510,color:#fff
+    style TR fill:#dc3545,stroke:#b02a37,color:#fff
+```
 
 Analysis artifacts are **genuine intelligence products** — not summaries or reformatted data — that enable:
 
-- 🔄 **Workflow isolation**: Each workflow writes to its own folder; no overwrites
-- 📐 **Methodology-driven rigor**: AI reads all frameworks before analyzing; templates enforce structure
-- 📊 **Temporal aggregation**: Daily → Weekly → Monthly intelligence roll-ups
-- 🧠 **Evidence-based intelligence**: Every claim cites dok_id, vote records, or official statistics
-- 🎯 **Multi-framework analysis**: SWOT, Risk matrices, Attack Trees, Kill Chains, Stakeholder mapping
+- 🔄 **Workflow composition**: Upstream agents deposit analysis; downstream agents consume it
+- 📐 **Consistent methodology**: 6 frameworks + 8 templates enforce analytical rigor
+- 📊 **Full data analysis**: Every downloaded MCP file receives per-file deep analysis
+- 🧠 **Reusable intelligence**: Cross-workflow pattern sharing and knowledge accumulation
+- 🎯 **Quality assurance**: Minimum 7.0/10 quality gate before article generation
+- 🔀 **Collision-free design**: Per-workflow directories prevent merge conflicts
+- 📅 **Temporal aggregation**: Daily → Weekly → Monthly intelligence roll-ups
 
 ---
 
@@ -479,6 +576,68 @@ Real-time monitoring of parliamentary activity with per-file analysis on new dat
 
 ---
 
+## 📊 Per-File AI Analysis Quality Gate
+
+Every per-file analysis must score **≥ 7.0/10** across 5 weighted dimensions:
+
+| Dimension | Weight | Minimum | Description |
+|-----------|--------|---------|-------------|
+| **Evidence density** | 30% | 6/10 | Citations per claim, source variety, dok_id references |
+| **Analytical depth** | 25% | 6/10 | Multi-framework application, insight quality, cross-reference density |
+| **Structural completeness** | 20% | 7/10 | All template sections filled, Mermaid diagrams present |
+| **Political relevance** | 15% | 6/10 | Riksdag-specific insights, stakeholder identification, Swedish context |
+| **Writing quality** | 10% | 7/10 | Style guide compliance, clarity, no boilerplate |
+
+---
+
+## 🔒 ISMS Compliance Framework Mapping
+
+### ISO 27001:2022 Controls
+
+| Control | Title | Analysis Implementation |
+|---------|-------|------------------------|
+| **A.5.1** | Policies for information security | All analysis methodologies align with Hack23 ISMS policy framework |
+| **A.5.10** | Acceptable use of information | Classification guide defines sensitivity-based data handling |
+| **A.5.33** | Protection of records | Style guide enforces evidence citation and audit trail |
+| **A.8.3** | Information access restriction | Sensitivity levels (PUBLIC/SENSITIVE/RESTRICTED) gate access |
+| **A.8.10** | Information deletion | 180-day SWOT decay rule ensures stale data is removed |
+| **A.8.28** | Secure coding | AI analysis guide enforces structured, reviewable output with quality gates |
+
+### NIST CSF 2.0 Functions
+
+| Function | Analysis Relevance |
+|----------|-------------------|
+| **Identify (ID)** | Classification guide identifies and categorizes Riksdag events by sensitivity and impact |
+| **Protect (PR)** | Style guide protects analytical quality through evidence requirements and anti-patterns |
+| **Detect (DE)** | Threat framework detects political threats across 6 dimensions using multiple analytical models |
+| **Respond (RS)** | Risk methodology provides quantified risk scores enabling proportionate response |
+| **Recover (RC)** | SWOT framework supports strategic recovery planning through forward-looking opportunity analysis |
+
+### CIS Controls v8.1
+
+| Control | Title | Analysis Relevance |
+|---------|-------|-------------------|
+| **Control 1** | Inventory and Control of Enterprise Assets | Classification guide inventories and categorizes all Riksdag data assets |
+| **Control 3** | Data Protection | Sensitivity levels enforce appropriate handling for each data classification |
+| **Control 8** | Audit Log Management | AI analysis guide requires documented quality gate assessments (audit trail) |
+| **Control 14** | Security Awareness and Skills Training | Methodology documents serve as training material for AI agents and analysts |
+| **Control 16** | Application Software Security | Quality gates enforce structured, validated analytical output |
+
+---
+
+## 🔒 ISMS Adaptation Reference
+
+The `reference/` directory maps ISMS security frameworks to political intelligence:
+
+| Reference Document | Source ISMS Document | Political Adaptation |
+|-------------------|---------------------|---------------------|
+| [isms-classification-adaptation.md](reference/isms-classification-adaptation.md) | ISO 27001 A.5.12–A.5.13, [Classification Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Classification_Policy.md) | Confidentiality → Sensitivity, Integrity → Accuracy, Availability → Urgency |
+| [isms-risk-assessment-adaptation.md](reference/isms-risk-assessment-adaptation.md) | ISO 27001 A.8.8, [Risk Assessment Methodology](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md) | CIA Triad → Political Triad (Accountability, Policy Fidelity, Democratic Continuity) |
+| [isms-threat-modeling-adaptation.md](reference/isms-threat-modeling-adaptation.md) | ISO 27001 A.5.7, NIST CSF ID.RA-3 | Political Threat Landscape + Attack Trees + Diamond Model |
+| [isms-style-guide-adaptation.md](reference/isms-style-guide-adaptation.md) | [STYLE_GUIDE](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md) | ISMS writing standards → Political intelligence writing standards |
+
+---
+
 ## 🔗 Related Documentation
 
 - [📐 ARCHITECTURE.md](../ARCHITECTURE.md) — System architecture overview
@@ -565,7 +724,7 @@ Because each workflow writes to its own isolated folder:
 - **Path:** `/analysis/README.md`  
 - **Format:** Markdown  
 - **Classification:** Public  
-- **Version:** 3.0  
+- **Version:** 4.0  
 - **Next Review:** 2026-06-30
 
 ---
