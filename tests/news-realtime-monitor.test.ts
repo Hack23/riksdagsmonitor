@@ -9,24 +9,11 @@ import path from 'path';
 import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
 import type { Language } from '../scripts/types/language.js';
-import type { ArticleCategory } from '../scripts/types/article.js';
 import type { QualityMetrics, QualityResult, QualityThresholds } from '../scripts/types/validation.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const NEWS_DIR = path.join(__dirname, '..', 'news');
-
-/** Article entry with language info */
-interface ArticleEntry {
-  readonly slug: string;
-  readonly title: string;
-  readonly lang: Language;
-  readonly date: string;
-  readonly description: string;
-  readonly type: ArticleCategory;
-  readonly topics: readonly string[];
-  readonly tags: readonly string[];
-}
 
 /** Shape of the generate-news-indexes module */
 interface GenerateNewsIndexesModule {

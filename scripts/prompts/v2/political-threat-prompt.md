@@ -122,12 +122,12 @@ Countermeasures: Diskrimineringsombudsmannen (DO), welfare state baseline, ECHR 
   "threatProfile": {
     "threatAnalyses": [
       {
-        "threatCategory": "accountability",
+        "threatCategory": "institutional-erosion",
         "threatAgents": ["ruling-coalition", "institutional"],
         "severity": "high",
         "indicators": [
           "Parliamentary document H901KU99 (bet) identified as signal",
-          "Constitutional Committee (KU) scrutiny indicates accountability concern",
+          "Constitutional Committee (KU) scrutiny indicates institutional-erosion concern (threatens Accountability)",
           "Committee involvement: KU"
         ],
         "countermeasures": [
@@ -136,10 +136,10 @@ Countermeasures: Diskrimineringsombudsmannen (DO), welfare state baseline, ECHR 
           "Riksdag constitutional review through KU provides political accountability",
           "ECHR and EU Charter of Fundamental Rights provide supranational protection"
         ],
-        "rationale": "HIGH threat: signals of weakening democratic accountability detected in bet document from committee KU. Full document content available. Document H901KU99 presents observable signals matching this threat category."
+        "rationale": "HIGH threat: signals of weakening democratic accountability detected in bet document from committee KU. Full document content available. Document H901KU99 presents observable signals matching institutional-erosion threat category."
       }
     ],
-    "primaryThreat": "accountability",
+    "primaryThreat": "institutional-erosion",
     "overallThreatLevel": "high",
     "activeThreatAgents": ["ruling-coalition", "institutional"]
   }
@@ -150,13 +150,13 @@ Countermeasures: Diskrimineringsombudsmannen (DO), welfare state baseline, ECHR 
 
 | Scenario | Primary Threat Category | Severity | Primary Threat Agent |
 |---|---|---|---|
-| KU investigation of constitutional breach | accountability | critical | ruling-coalition |
-| Budget policy harming welfare recipients | power-balance | high | ruling-coalition |
-| Government restricts press access | transparency | critical | ruling-coalition |
-| Populist migration rhetoric in parliamentary debate | narrative-integrity | high | opposition-parties |
-| Interpellation on budget fiscal irresponsibility | democratic-process | medium | ruling-coalition |
-| Foreign influence in legislative process | legislative-integrity | high | external-actors |
-| Routine administrative committee report | narrative-integrity | low | institutional |
+| KU investigation of constitutional breach | institutional-erosion | critical | ruling-coalition |
+| Budget policy harming welfare recipients | societal-impact | high | ruling-coalition |
+| Government restricts press access | democratic-deficit | critical | ruling-coalition |
+| Populist migration rhetoric in parliamentary debate | polarization | high | opposition-parties |
+| Interpellation on budget fiscal irresponsibility | economic-disruption | medium | ruling-coalition |
+| Foreign influence in legislative process | regulatory-overreach | high | external-actors |
+| Routine administrative committee report | polarization | low | institutional |
 
 ## SEVERITY CALIBRATION PRINCIPLES
 
@@ -175,5 +175,5 @@ Countermeasures: Diskrimineringsombudsmannen (DO), welfare state baseline, ECHR 
 ❌ Do not assign a single threat agent when multiple actors are involved  
 ❌ Do not conflate threat categories (e.g., democratic-process ≠ power-balance)  
 ❌ Do not use generic rationale — always tie reasoning to specific document signals  
-❌ Do not ignore committee context — KU = accountability, FiU = democratic-process signals  
+❌ Do not ignore committee context — KU = institutional-erosion, FiU = economic-disruption signals  
 ❌ Do not use STRIDE categories (S/T/R/I/D/E) — use Political Threat Taxonomy categories  

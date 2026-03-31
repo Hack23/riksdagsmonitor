@@ -110,12 +110,12 @@ Apply the 5×5 Likelihood × Impact matrix:
 #### 2e. Political Threat Taxonomy Assessment
 
 Map to Political Threat Taxonomy categories (only where applicable — not every document has threats):
-- 🎭 **Spoofing** → Misrepresentation of political positions
-- 🔧 **Tampering** → Process manipulation, rule bending
-- 📝 **Repudiation** → Accountability evasion, position reversal
-- 🔓 **Info Disclosure** → Premature intelligence leaks
-- 🚫 **Denial of Service** → Parliamentary obstruction
-- ⬆️ **Elevation** → Executive overreach
+- 🎭 **Polarization** → Intentional division, misleading rhetoric — threatens Narrative Integrity (NI)
+- 🔧 **Regulatory Overreach** → Abuse of legislative power, norm erosion — threatens Legislative Integrity (LI)
+- 📝 **Institutional Erosion** → Weakening of democratic institutions — threatens Accountability (AC)
+- 🔓 **Democratic Deficit** → Lack of transparency, restricted public access — threatens Transparency (TR)
+- 🚫 **Economic Disruption** → Policy-driven economic harm, fiscal irresponsibility — threatens Democratic Process (DP)
+- ⬆️ **Societal Impact** → Disproportionate impact on vulnerable groups — threatens Power Balance (PB)
 
 #### 2f. Stakeholder Impact Matrix
 

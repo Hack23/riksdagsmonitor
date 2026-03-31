@@ -248,14 +248,14 @@ Translations must preserve:
 - Party names in Swedish with translation in parentheses on first use
 - Numerical precision
 
-**Reference:** `scripts/prompts/v1/political-analysis.md` for LLM translation prompts.
+**Reference:** `scripts/prompts/v2/political-analysis.md` for LLM translation prompts.
 
 ---
 
 ## 🔗 Related Documents
 
 - [reference/isms-style-guide-adaptation.md](../reference/isms-style-guide-adaptation.md) — ISMS mapping
-- [scripts/prompts/v1/political-analysis.md](../../scripts/prompts/v1/political-analysis.md) — LLM prompts
+- [scripts/prompts/v2/political-analysis.md](../../scripts/prompts/v2/political-analysis.md) — LLM prompts
 - [political-classification-guide.md](political-classification-guide.md) — Classification (determines depth level)
 - [TRANSLATION_GUIDE.md](../../TRANSLATION_GUIDE.md) — Multi-language translation guide
 
@@ -747,5 +747,5 @@ When analysis files are absent, article generators must fall back to inline anal
 | Review Cycle | Quarterly |
 | Next Review | 2026-06-30 |
 | Key Changes v2.0 | Intelligence depth standards, evidence density requirements, analytical depth indicators |
-| Related | `scripts/prompts/v1/political-analysis.md`, `scripts/analysis-reader.ts` |
+| Related | `scripts/prompts/v2/political-analysis.md`, `scripts/analysis-reader.ts` |
 | ISMS Reference | Secure_Development_Policy.md §4.2 |
