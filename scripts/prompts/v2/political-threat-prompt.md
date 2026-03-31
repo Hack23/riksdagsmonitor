@@ -12,14 +12,14 @@ The Political Threat Taxonomy identifies threats to **democratic function, civic
 
 ## THE POLITICAL THREAT TAXONOMY
 
-| Threat Category | Description |
-|---|---|
-| **Narrative Integrity** | Disinformation, false framing, misleading rhetoric, propaganda, polarisation |
-| **Legislative Integrity** | Policy corruption, undisclosed lobbying, legislative manipulation, process bypassing |
-| **Accountability** | Oversight evasion, KU obstruction, blame-shifting, record falsification |
-| **Transparency** | Information suppression, FOI obstruction, secrecy expansion, classification abuse |
-| **Democratic Process** | Procedural obstruction, filibustering, quorum manipulation, budget deadlock |
-| **Power Balance** | Executive overreach, constitutional boundary violations, power concentration |
+| Canonical Identifier (`threatCategory`) | Democratic Function Threatened | Description |
+|---|---|---|
+| `polarization` | Narrative Integrity | Disinformation, false framing, misleading rhetoric, propaganda, polarisation |
+| `regulatory-overreach` | Legislative Integrity | Policy corruption, undisclosed lobbying, legislative manipulation, process bypassing |
+| `institutional-erosion` | Accountability | Oversight evasion, KU obstruction, blame-shifting, record falsification |
+| `democratic-deficit` | Transparency | Information suppression, FOI obstruction, secrecy expansion, classification abuse |
+| `economic-disruption` | Democratic Process | Procedural obstruction, filibustering, quorum manipulation, budget deadlock |
+| `societal-impact` | Power Balance | Executive overreach, constitutional boundary violations, power concentration |
 
 ## THREAT AGENTS
 

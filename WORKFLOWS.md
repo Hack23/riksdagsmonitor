@@ -767,7 +767,7 @@ graph TB
         INTERP["get_interpellationer<br/><i>Parliamentary questions</i>"]
         VOTE["search_voteringar<br/><i>Voting records</i>"]
         ANF["search_anforanden<br/><i>Debate speeches</i>"]
-        DOK["search_dokument<br/><i>All document types</i>"]
+        DOK["search_dokument_fulltext<br/><i>All document types</i>"]
         CAL["get_calendar_events<br/><i>Parliamentary calendar</i>"]
         SCB["SCB MCP<br/><i>Statistics Sweden</i>"]
         WB["World Bank MCP<br/><i>International data</i>"]
@@ -826,7 +826,7 @@ graph TB
 | # | Workflow | Schedule | Primary MCP Data | Unique Analytics Produced |
 |---|---------|----------|-----------------|--------------------------|
 | 1 | **Committee Reports** | Mon–Fri 04:00 UTC | `get_betankanden`, `search_voteringar` | Committee voting splits per party, reservation (dissent) analysis, committee-to-policy-domain mapping, SCB statistical enrichment per committee domain |
-| 2 | **Propositions** | Mon–Fri 05:00 UTC | `get_propositioner`, `search_dokument` | Legislative pipeline tracking (referral → committee → vote), government legislative ambition score, budget allocation impact analysis, policy domain cascading effects |
+| 2 | **Propositions** | Mon–Fri 05:00 UTC | `get_propositioner`, `search_dokument_fulltext`, `analyze_g0v_by_department`, `search_anforanden` | Legislative pipeline tracking (referral → committee → vote), government legislative ambition score, budget allocation impact analysis, policy domain cascading effects |
 | 3 | **Motions** | Mon–Fri 06:00 UTC | `get_motioner`, `search_dokument_fulltext` | Opposition strategy analysis, motion clustering by theme, cross-party co-sponsorship detection, signalverdi (is this positioning or a real bid?) |
 | 4 | **Interpellations** | Mon–Fri 07:00 UTC | `get_interpellationer`, `search_anforanden` | Ministerial accountability scoring (response rate/timeliness), evasion detection, question framing analysis, party oversight strategy mapping |
 | 5 | **Realtime Monitor** | Mon–Fri 10:00+14:00, Weekends 12:00 | `search_dokument`, `get_calendar_events` | Breaking event detection, urgency classification, real-time political temperature spikes |
