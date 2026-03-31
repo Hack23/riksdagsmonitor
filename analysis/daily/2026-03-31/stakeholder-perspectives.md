@@ -1,71 +1,97 @@
-# Stakeholder Impact Analysis — 2026-03-31
+# Stakeholder Perspective Analysis — 2026-03-31
 
-**Generated**: 2026-03-31 14:34 UTC
-**Data Sources**: riksdag-regering-mcp (get_propositioner, get_betankanden, search_regering)
-**Documents Analyzed**: 6
-**Confidence**: HIGH
-
----
+**Generated**: 2026-03-31 16:15 UTC
+**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer
+**Documents Analyzed**: 25
+**Confidence**: MEDIUM
 
 ## Summary
 
-Today's legislative activity impacts 8 key stakeholder groups. Migration reforms (Prop 229, 215) most directly affect asylum seekers and municipalities. Justice reforms benefit crime victims. Security policy consensus strengthens international positioning.
+Applied **6 analysis lenses** to **25** documents.
 
----
+## Detailed Analysis
 
-## Stakeholder Impact Matrix
+### 🏛️ Government Perspective
 
-```mermaid
-graph LR
-    subgraph "Directly Affected"
-        AS["Asylum Seekers<br/>🔴 Negative<br/>Prop 229"]
-        NI["Newly Arrived<br/>🔴 Negative<br/>Prop 215"]
-        CV["Crime Victims<br/>🟢 Positive<br/>Prop 222"]
-        CO["Consumers<br/>🟢 Positive<br/>Prop 223"]
-    end
-    subgraph "Institutional"
-        MU["Municipalities<br/>🟡 Mixed<br/>Prop 215, 229"]
-        MV["Migrationsverket<br/>�� Strained<br/>Prop 229"]
-    end
-    subgraph "Political"
-        GOV["Coalition<br/>🟢 Strengthened<br/>Delivery narrative"]
-        OPP["Opposition<br/>🟡 Mobilised<br/>Migration focus"]
-    end
-    style AS fill:#dc3545,stroke:#333,color:#fff
-    style NI fill:#dc3545,stroke:#333,color:#fff
-    style CV fill:#28a745,stroke:#333,color:#fff
-    style CO fill:#28a745,stroke:#333,color:#fff
-    style MU fill:#ffc107,stroke:#333,color:#000
-    style MV fill:#ffc107,stroke:#333,color:#000
-    style GOV fill:#28a745,stroke:#333,color:#fff
-    style OPP fill:#ffc107,stroke:#333,color:#000
-```
+- **Documents with High Impact**: 0/25
+- **Avg Confidence**: 68%
+- **Key Actors**: Prime Minister, Cabinet, Kristdemokraterna, Centerpartiet, Liberalerna
 
----
+> From the government perspective, this document requires assessment of policy execution capacity and resource allocation.
 
-## Detailed Stakeholder Assessment
+> From the government perspective, this document requires assessment of policy execution capacity and resource allocation.
 
-| Stakeholder Group | Impact | Direction | Primary dok_id | Confidence |
-|------------------|:------:|:---------:|---------------|:----------:|
-| Citizens (general) | MEDIUM | 🟡 Mixed | HD03222, HD03223 | HIGH |
-| Government (M+KD+L) | HIGH | 🟢 Positive | HD03229, HD01UU6 | HIGH |
-| Opposition (S+V+MP) | HIGH | 🟡 Mixed | HD03229, HD03215 | HIGH |
-| Business | LOW | 🟢 Positive | HD03223 | MEDIUM |
-| Civil Society | HIGH | 🔴 Negative | HD03229, HD03215 | HIGH |
-| International (EU/UN) | MEDIUM | 🟡 Mixed | HD03229, HD01UU6 | MEDIUM |
-| Judiciary | MEDIUM | 🟡 Mixed | HD03222, HD03223 | MEDIUM |
-| Media | HIGH | 🟢 Positive | All documents | HIGH |
+> From the government perspective, this document touching justice policy requires assessment of policy execution capacity and resource allocation.
 
----
+### ⚖️ Opposition Perspective
+
+- **Documents with High Impact**: 0/25
+- **Avg Confidence**: 68%
+- **Key Actors**: Opposition Leader, Shadow Cabinet, Kristdemokraterna, Centerpartiet, Liberalerna
+
+> From the opposition perspective, this document warrants scrutiny for alignment with citizen welfare and democratic accountability.
+
+> From the opposition perspective, this document warrants scrutiny for alignment with citizen welfare and democratic accountability.
+
+> From the opposition perspective, this document in justice policy warrants scrutiny for alignment with citizen welfare and democratic accountability.
+
+### 👥 Citizen Perspective
+
+- **Documents with High Impact**: 3/25
+- **Avg Confidence**: 53%
+- **Key Actors**: Civil Society, Trade Unions, Consumer Groups, Ombudsmen
+
+> From the citizen perspective, this document has direct implications for service delivery and everyday life.
+
+> From the citizen perspective, this document has direct implications for service delivery and everyday life.
+
+> From the citizen perspective, this document affecting justice policy has direct implications for service delivery and everyday life.
+
+### 💰 Economic Perspective
+
+- **Documents with High Impact**: 0/25
+- **Avg Confidence**: 68%
+- **Key Actors**: Finance Ministry, Riksbank, Employers Federation, Trade Unions, Chamber of Commerce
+
+> From the economic perspective, this document may affect business environment, employment levels, and investment climate.
+
+> From the economic perspective, this document may affect business environment, employment levels, and investment climate.
+
+> From the economic perspective, this document may affect business environment, employment levels, and investment climate.
+
+### 🌍 International Perspective
+
+- **Documents with High Impact**: 1/25
+- **Avg Confidence**: 63%
+- **Key Actors**: EU Commission, Foreign Ministry, NATO, Nordic Council, UN
+
+> From the international perspective, this document must be assessed for EU regulatory alignment and treaty obligations. International context dimensions are limited for this document.
+
+> From the international perspective, this document must be assessed for EU regulatory alignment and treaty obligations. International context dimensions are limited for this document.
+
+> From the international perspective, this document must be assessed for EU regulatory alignment and treaty obligations. International context dimensions are limited for this document.
+
+### 📰 Media Perspective
+
+- **Documents with High Impact**: 0/25
+- **Avg Confidence**: 68%
+- **Key Actors**: Swedish Media, SVT, DN, Aftonbladet, SR
+
+> From the media perspective, this document has low newsworthiness (score: 26/100).
+
+> From the media perspective, this document has low newsworthiness (score: 26/100).
+
+> From the media perspective, this document has low newsworthiness (score: 26/100). Narrative frames detected: law-and-order.
 
 ## Key Findings
 
-1. **Asylum seekers** face most direct negative impact from Reception Act reform (Prop 229)
-2. **Municipalities** gain new settlement obligations but limited resource guarantees (Prop 215)
-3. **Crime victims** benefit from strengthened compensation framework (Prop 222)
-4. **Coalition parties** gain policy delivery narrative strength ahead of 2026 election
-5. **Civil society** organisations expected to mobilise around ECHR concerns
+1. All six stakeholder perspectives applied consistently across the document batch.
+2. Cross-perspective conflicts indicate politically contentious documents.
+
+## Implications
+
+Perspective analysis feeds directly into article stakeholder framing and balance.
 
 ## Data Quality Notes
 
-Stakeholder analysis based on 6 primary legislative documents, 13 government press releases, and riksdag-regering-mcp speech/interpellation data.
+Aggregate confidence: MEDIUM.

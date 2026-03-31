@@ -1,114 +1,95 @@
 # Political SWOT Analysis — 2026-03-31
 
-**Generated**: 2026-03-31 14:33 UTC
-**Data Sources**: riksdag-regering-mcp (get_propositioner, get_betankanden, search_voteringar, search_regering)
-**Documents Analyzed**: 6 (HD03229, HD03215, HD03222, HD03223, HD01UU6, HD01MJU18)
+**SWT-ID**: SWT-2026-03-31-001
+**Generated**: 2026-03-31T16:15:00Z
+**Riksmöte**: 2025/26
+**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_anforanden
+**Documents Analyzed**: 25
 **Confidence**: HIGH
 
----
-
-## Context
-
-| Field | Value |
-|-------|-------|
-| **Date** | 2026-03-31 |
-| **Riksmöte** | 2025/26 |
-| **Coalition** | M+KD+L (176 seats), SD supply (73 seats) |
-| **Key Events** | 4 new propositions, 2 committee reports, KU hearing |
-| **Dominant Theme** | Migration overhaul + justice reform + security policy |
-
----
-
-## SWOT Quadrant Mapping
+## SWOT Quadrant Map
 
 ```mermaid
 graph TD
-    subgraph Strengths
-        S1["S1: Coalition delivers migration<br/>reform package on schedule"]
-        S2["S2: Cross-party consensus on<br/>security policy (UU6)"]
-        S3["S3: Justice reform momentum<br/>(3 Justitiedepartementet props)"]
+    subgraph "🟢 Strengths"
+        S1["High legislative output<br/>4 propositions in 1 day"]
+        S2["Coalition discipline intact<br/>No internal dissent signals"]
+        S3["Security policy consensus<br/>UU6 broad support expected"]
     end
-    subgraph Weaknesses
-        W1["W1: Opposition unified<br/>against migration reforms"]
-        W2["W2: Multiple departments<br/>stretched thin simultaneously"]
-        W3["W3: EU/ECHR compliance<br/>risks on reception law"]
+    subgraph "🟡 Weaknesses"
+        W1["Opposition reactive only<br/>12 V motions, 96% denial rate"]
+        W2["Housing deregulation contested<br/>V rejects Prop 187, 188"]
+        W3["No floor votes scheduled<br/>Limited accountability signals"]
     end
-    subgraph Opportunities
-        O1["O1: Pre-election legislative<br/>wins boost coalition narrative"]
-        O2["O2: Consumer credit reform<br/>may attract cross-party support"]
-        O3["O3: Security consensus<br/>strengthens NATO positioning"]
+    subgraph "🔵 Opportunities"
+        O1["Cross-party security alignment<br/>UU6 consensus potential"]
+        O2["Consumer protection appeal<br/>Prop 223 broadly supported"]
+        O3["Crime victim focus<br/>Prop 222 low opposition risk"]
     end
-    subgraph Threats
-        T1["T1: Constitutional scrutiny<br/>of migration package"]
-        T2["T2: Implementation risk<br/>across multiple reforms"]
-        T3["T3: Judicial capacity<br/>bottleneck for criminal law"]
+    subgraph "🔴 Threats"
+        T1["Immigration backlash risk<br/>Prop 229, 215 divisive"]
+        T2["Left Party mobilization<br/>12 coordinated motions"]
+        T3["Electoral positioning<br/>Pre-2026 opposition strategy"]
     end
-    style S1 fill:#28a745,stroke:#333,color:#fff
-    style S2 fill:#28a745,stroke:#333,color:#fff
-    style S3 fill:#28a745,stroke:#333,color:#fff
-    style W1 fill:#dc3545,stroke:#333,color:#fff
-    style W2 fill:#fd7e14,stroke:#333,color:#000
-    style W3 fill:#dc3545,stroke:#333,color:#fff
-    style O1 fill:#0d6efd,stroke:#333,color:#fff
-    style O2 fill:#0d6efd,stroke:#333,color:#fff
-    style O3 fill:#0d6efd,stroke:#333,color:#fff
-    style T1 fill:#ffc107,stroke:#333,color:#000
-    style T2 fill:#ffc107,stroke:#333,color:#000
-    style T3 fill:#ffc107,stroke:#333,color:#000
+    style S1 fill:#28a745,color:#fff
+    style S2 fill:#28a745,color:#fff
+    style S3 fill:#28a745,color:#fff
+    style W1 fill:#ffc107,color:#000
+    style W2 fill:#ffc107,color:#000
+    style W3 fill:#ffc107,color:#000
+    style O1 fill:#0d6efd,color:#fff
+    style O2 fill:#0d6efd,color:#fff
+    style O3 fill:#0d6efd,color:#fff
+    style T1 fill:#dc3545,color:#fff
+    style T2 fill:#dc3545,color:#fff
+    style T3 fill:#dc3545,color:#fff
 ```
 
----
+## Detailed SWOT Analysis
 
-## Detailed Evidence Tables
+### Government Coalition (M, KD, L + SD support)
 
-### ✅ Strengths
+| Quadrant | Entry | Evidence | Confidence |
+|----------|-------|----------|------------|
+| **Strength** | Legislative productivity — 4 propositions presented in a single day across justice and immigration | dok_id: HD03229, HD03223, HD03222, HD03215 | HIGH |
+| **Strength** | Coalition cohesion — interpellation debates show unified ministerial responses (Carlson KD, Svantesson M, Kullgren KD, Slottner KD) | search_anforanden: 5 minister debates | MEDIUM |
+| **Weakness** | Immigration reform vulnerability — new reception law (HD03229) and temporary housing (HD03215) face opposition from V and potentially MP | dok_id: HD03229, HD03215 | MEDIUM |
+| **Opportunity** | Consumer credit reform (HD03223) likely to gain broad support — addresses over-indebtedness concerns shared across spectrum | dok_id: HD03223 | MEDIUM |
+| **Threat** | Housing deregulation backlash — V filed 3 housing-related motions rejecting Prop 187, 188, 202 | dok_id: HD023995, HD024004, HD023999 | MEDIUM |
 
-| # | Statement | dok_id | Confidence | Impact |
-|---|-----------|--------|:----------:|:------:|
-| S1 | Government delivers coordinated migration reform: Prop 229 (Reception Act) + Prop 215 (Settlement Law) tabled same day, fulfilling Tidö Agreement commitments | HD03229, HD03215 | HIGH | HIGH |
-| S2 | Utrikesutskottet UU6 security policy report shows broad 7/8-party consensus on NATO, defense spending | HD01UU6 | HIGH | HIGH |
-| S3 | Three Justitiedepartementet propositions (Prop 222, 223, 229) demonstrate justice reform momentum under Minister Strömmer (M) | HD03222, HD03223, HD03229 | HIGH | MEDIUM |
+### Opposition (S, V, MP, C)
 
-### ⚠️ Weaknesses
+| Quadrant | Entry | Evidence | Confidence |
+|----------|-------|----------|------------|
+| **Strength** | V demonstrates coordinated legislative response — 12 motions filed in one day across 7 policy domains | 12 motions: HD024006 through HD023994 | HIGH |
+| **Strength** | S active in interpellation debates — challenging ministers on economy, transport, airlines | search_anforanden: multiple S MPs | MEDIUM |
+| **Weakness** | Historical 96% motion denial rate limits legislative effectiveness | Cross-session statistics | HIGH |
+| **Weakness** | Opposition fragmented — V filing alone, no joint S/V/MP motions observed | Motion metadata | MEDIUM |
+| **Opportunity** | Immigration propositions provide mobilization opportunity on equity and rights grounds | HD03229, HD03215 vs HD023995, HD023997 | MEDIUM |
+| **Threat** | Government's productivity pace leaves opposition in reactive posture ahead of 2026 election | 4 propositions vs 12 reactive motions | MEDIUM |
 
-| # | Statement | dok_id | Confidence | Impact |
-|---|-----------|--------|:----------:|:------:|
-| W1 | S, V, MP expected to unite in opposition to migration package — could amplify constitutional concerns | HD03229, HD03215 | HIGH | HIGH |
-| W2 | Government simultaneously managing migration, justice, consumer, and security legislation across 4 departments | HD03229, HD03222, HD03223, HD01UU6 | MEDIUM | MEDIUM |
-| W3 | New Reception Act (Prop 229) faces ECHR Article 3 scrutiny on benefit reduction for asylum seekers | HD03229 | MEDIUM | HIGH |
+### Citizens
 
-### 🚀 Opportunities
-
-| # | Statement | dok_id | Confidence | Impact |
-|---|-----------|--------|:----------:|:------:|
-| O1 | Legislative burst creates pre-election narrative of government delivery and competence | HD03229, HD03215, HD03222, HD03223 | MEDIUM | HIGH |
-| O2 | Consumer Credit Act (Prop 223) targets household debt — potential cross-party support from S, C | HD03223 | MEDIUM | MEDIUM |
-| O3 | Security policy consensus (UU6) strengthens Sweden's NATO positioning in first full membership year | HD01UU6 | HIGH | HIGH |
-
-### 🔴 Threats
-
-| # | Statement | dok_id | Confidence | Impact |
-|---|-----------|--------|:----------:|:------:|
-| T1 | Constitutional review risk — Lagrådet may flag proportionality issues in reception law restrictions | HD03229 | MEDIUM | HIGH |
-| T2 | Implementation bottleneck — Migrationsverket, municipal capacity strained by parallel migration reforms | HD03229, HD03215 | MEDIUM | HIGH |
-| T3 | Criminal justice reforms (Prop 222, 223) require court system capacity that is already under pressure | HD03222, HD03223 | LOW | MEDIUM |
-
----
+| Quadrant | Entry | Evidence | Confidence |
+|----------|-------|----------|------------|
+| **Strength** | Crime victim compensation improved (HD03222) — direct citizen benefit | dok_id: HD03222 | HIGH |
+| **Strength** | Consumer credit protection strengthened (HD03223) — addresses over-indebtedness | dok_id: HD03223 | HIGH |
+| **Weakness** | Immigration housing changes (HD03215) may affect vulnerable newcomers | dok_id: HD03215 | MEDIUM |
+| **Opportunity** | Equality and anti-discrimination report (AU11) signals commitment to rights protection | dok_id: HD01AU11 | MEDIUM |
+| **Threat** | Housing market deregulation (Prop 187) may increase rental costs for tenants | dok_id: HD023995 (V opposition motion) | LOW |
 
 ## Key Findings
 
-1. **Migration dominance**: The coordinated tabling of Prop 229 (Reception Act) and Prop 215 (Settlement Law) on the same day represents the government's most concentrated migration policy push of the term
-2. **Justice reform pipeline**: Three propositions from Justitiedepartementet signal accelerated pre-election delivery under Minister Strömmer
-3. **Security consensus**: UU6 confirms broad parliamentary agreement on NATO integration, isolating V as sole dissenter
-4. **Opposition strategy**: S, V, MP likely to focus opposition fire on migration package rather than security or consumer issues
+1. Government maintains legislative initiative with 4 propositions — strongest single-day output this session
+2. Left Party (V) is the most active opposition party today with 12 motions — signals pre-election positioning
+3. Security policy (UU6) represents potential consensus area between government and opposition
+4. Immigration reform (HD03229, HD03215) is the most politically divisive topic
 
-## Implications
+## MCP Data Sources Used
 
-- Coalition stability appears strong heading into spring session
-- Migration package will dominate parliamentary debate for April-May 2026
-- ECHR compliance concerns may attract Lagrådet scrutiny
-- Pre-election legislative productivity could benefit government parties in 2026 election narrative
-
-## Data Quality Notes
-
-SWOT derived from 6 primary documents analyzed via riksdag-regering-mcp on 2026-03-31. Evidence density: HIGH for migration items, MEDIUM for security (full UU6 text pending). Confidence decay: current data, no decay applied.
+| Tool | Parameters | Result Count |
+|------|-----------|--------------|
+| get_propositioner | rm=2025/26, limit=10 | 4 today |
+| get_motioner | rm=2025/26, limit=20 | 12 today (all V) |
+| get_betankanden | rm=2025/26, limit=30 | 4 today |
+| search_anforanden | rm=2025/26, limit=50 | 50 (multiple debates) |

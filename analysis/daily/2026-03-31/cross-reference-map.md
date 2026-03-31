@@ -1,49 +1,47 @@
 # Cross-Reference Map — 2026-03-31
 
-**Generated**: 2026-03-31 14:34 UTC
-**Data Sources**: riksdag-regering-mcp
-**Documents Analyzed**: 6
+**Generated**: 2026-03-31 16:15 UTC
+**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer
+**Documents Analyzed**: 25
 **Confidence**: HIGH
-
----
 
 ## Summary
 
-Key cross-document relationships identified. The migration reform package (Prop 229 + 215) shows strongest internal linkage. Justice reforms (Prop 222, 223) share ministerial origin. Security policy (UU6) is thematically independent.
+Detected **20** cross-document relationships.
 
----
+## Detailed Analysis
 
-## Cross-Reference Network
+### amends
 
-```mermaid
-graph TD
-    P229["HD03229<br/>Reception Act"] <-->|"Migration Package"| P215["HD03215<br/>Settlement Law"]
-    P222["HD03222<br/>Crime Victim Rules"] <-->|"Justice Cluster"| P223["HD03223<br/>Consumer Credit"]
-    P229 -->|"Ebba Busch<br/>(signatory)"| P222
-    P229 -->|"Ebba Busch<br/>(signatory)"| P223
-    P229 -->|"Ebba Busch<br/>(signatory)"| P215
-    UU6["HD01UU6<br/>Security Policy"] -.->|"Thematic<br/>independence"| P229
-    MJU18["HD01MJU18<br/>UTP Directive"] -.->|"EU regulatory"| P223
-    style P229 fill:#dc3545,stroke:#333,color:#fff
-    style P215 fill:#dc3545,stroke:#333,color:#fff
-    style P222 fill:#ffc107,stroke:#333,color:#000
-    style P223 fill:#28a745,stroke:#333,color:#fff
-    style UU6 fill:#0d6efd,stroke:#333,color:#fff
-    style MJU18 fill:#28a745,stroke:#333,color:#fff
-```
+- **HD023995** → **HD023994** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD023995** → **HD024000** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD023995** → **HD023999** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD023995** → **HD023998** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD023995** → **HD023997** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD023995** → **HD023996** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD023995** → **HD024005** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD023995** → **HD024004** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD023995** → **HD024002** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD023995** → **HD024001** (confidence: 55%)
+  _Amending document title overlaps with target document title_
 
----
+## Key Findings
 
-## Relationship Details
+1. **20** inter-document relationships mapped
 
-| Source | Target | Relationship Type | Strength |
-|--------|--------|-------------------|:--------:|
-| HD03229 | HD03215 | Legislative package (migration reform) | 🔴 Strong |
-| HD03222 | HD03223 | Shared ministry (Justitiedepartementet) | 🟡 Medium |
-| HD03229 | HD03222 | Shared signatory (Ebba Busch) | 🟡 Medium |
-| HD03229 | HD03223 | Shared signatory (Ebba Busch) | 🟡 Medium |
-| HD01UU6 | All | Independent committee initiative | 🟢 Weak |
+## Implications
+
+Cross-references enrich article narratives by linking related legislative developments.
 
 ## Data Quality Notes
 
-Cross-references based on document metadata linkages (shared signatories, ministry, policy domain). Full-text cross-referencing pending.
+Cross-reference confidence is driven by shared policy domains and textual similarity.
