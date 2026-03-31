@@ -721,7 +721,7 @@ fi
 echo "================================"
 ```
 
-**⏰ TIME GUARD**: Check elapsed time before starting analysis improvement. If more than 45 minutes have passed, limit improvements to the single most impactful file (the one with the most `[REQUIRED]` placeholders).
+**⏰ TIME GUARD**: Check elapsed time before starting analysis improvement. If more than 40 minutes have passed, limit improvements to the single most impactful file (the one with the most `[REQUIRED]` placeholders).
 
 When existing analysis is found, the agent MUST:
 
@@ -810,8 +810,14 @@ if [ "$STAGED_COUNT" -gt 90 ]; then
   echo "⚠️ Staged $STAGED_COUNT files is approaching the 100-file PR limit (preemptive guard at >90). Reducing analysis scope to a minimal priority subset to stay within the limit."
   # First unstage all analysis artifacts
   git reset HEAD -- analysis/ 2>/dev/null || true
-  # Re-stage minimal high-priority analysis for the current article date (to keep mandatory analysis improvements)
+  # Re-stage minimal high-priority analysis for the current article date and nearby dates
+  # (mirror the earlier ARTICLE_DATE + DAYS_BACK staging so genuine improvements aren't silently dropped)
   git add "analysis/daily/${ARTICLE_DATE}/" 2>/dev/null || true
+  for DAYS_BACK in 1 2 3; do
+    CHECK_DATE="$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -j -f "%Y-%m-%d" "$ARTICLE_DATE" -v-"$DAYS_BACK"d +%Y-%m-%d 2>/dev/null || true)"
+    [ -z "$CHECK_DATE" ] && continue
+    git add "analysis/daily/${CHECK_DATE}/" 2>/dev/null || true
+  done
   STAGED_COUNT=$(git diff --cached --name-only | wc -l)
 fi
 
