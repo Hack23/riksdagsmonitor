@@ -2,6 +2,91 @@
 
 > **Internal reference document** — Not a live workflow. Copy-paste these standardised blocks into every `news-*.md` workflow to ensure consistency.
 
+## 🚨 UNIVERSAL RULE: No Workflow Run Wasted — Always Perform Analysis (applies to ALL workflows)
+
+> **NON-NEGOTIABLE FIRST PRINCIPLE**: Every agentic workflow run MUST produce improved analysis artifacts. No workflow run should ever complete without at least reviewing and improving existing analysis. This applies to ALL workflows — content generation, translation, monitoring, review, and any future workflow type.
+
+````markdown
+### Mandatory Analysis Improvement Protocol
+
+> 🚨 **ABSOLUTE RULE**: ALL agentic workflows MUST follow `analysis/methodologies/ai-driven-analysis-guide.md` and produce or improve analysis artifacts on EVERY run. No exceptions. No workflow run is ever "wasted" — at minimum, existing analysis MUST be reviewed and improved.
+
+#### Why This Rule Exists
+
+Every workflow run consumes compute resources and has access to MCP tools, methodology documents, and analysis templates. Failing to produce analysis output from any workflow run is an unacceptable waste. Even workflows whose primary purpose is not analysis (e.g., translation, validation) MUST use their runtime to improve the analysis corpus.
+
+#### Universal Requirements (ALL Workflows)
+
+1. **Read `analysis/methodologies/ai-driven-analysis-guide.md`** — the master guide governing all analysis
+2. **Read ALL 6 methodology guides** and **ALL 8 analysis templates** (see Step 2 and Step 3 below)
+3. **Check for existing analysis** in `analysis/daily/` for the current date or relevant dates
+4. **If existing analysis exists**: Improve, extend, correct, or complete it:
+   - Add missing Mermaid diagrams
+   - Fill empty SWOT quadrants with evidence-based entries
+   - Add dok_id citations where missing
+   - Improve risk scores with additional context from MCP data
+   - Extend stakeholder analysis with newly available data
+   - Correct any factual errors or outdated information
+   - Complete any `[REQUIRED]` placeholders
+5. **If no existing analysis exists**: Create new analysis following the full protocol (Steps 1–6 in the AI-Driven Analysis section below)
+6. **Commit analysis artifacts** to the `analysis/` folder — analysis MUST always be committed alongside any other workflow output, subject to the GitHub Actions `safe-outputs` 100-file limit. When approaching this limit, prioritize committing a minimal, high-impact subset of analysis (e.g., daily summaries and key findings) and prune lower-priority or bulk artifacts first (e.g., `analysis/weekly/`, `analysis/data/`).
+
+#### For Non-Analysis Workflows (translation, validation, etc.)
+
+Even workflows whose primary task is NOT analysis MUST:
+1. **Before primary task**: Read the analysis guide and check for existing analysis needing improvement
+2. **During primary task**: Note any new insights from MCP data or document processing
+3. **After primary task**: Review and improve at least one existing analysis file (if any exist for the relevant date)
+4. **At commit time**: Include improved analysis alongside primary workflow output
+
+```bash
+# Universal analysis check — run at the start of EVERY workflow
+ARTICLE_DATE="${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}"
+echo "=== Mandatory Analysis Check ==="
+
+# Check for existing analysis needing improvement
+EXISTING_ANALYSIS=$(find "analysis/daily/${ARTICLE_DATE}/" -name "*.md" -type f 2>/dev/null | wc -l)
+PENDING_ANALYSIS=$(find "analysis/daily/${ARTICLE_DATE}/" -name "*-analysis.md" -type f 2>/dev/null | wc -l)
+REQUIRED_PLACEHOLDERS=$(grep -rl '\[REQUIRED\]' "analysis/daily/${ARTICLE_DATE}/" 2>/dev/null | wc -l)
+MISSING_MERMAID=$(find "analysis/daily/${ARTICLE_DATE}/" -name "*.md" -type f -exec grep -L "```mermaid" {} \; 2>/dev/null | wc -l)
+
+echo "📊 Existing analysis files: $EXISTING_ANALYSIS"
+echo "📊 Per-file analyses: $PENDING_ANALYSIS"
+echo "⚠️ Files with [REQUIRED] placeholders: $REQUIRED_PLACEHOLDERS"
+echo "⚠️ Files missing Mermaid diagrams: $MISSING_MERMAID"
+
+if [ "$EXISTING_ANALYSIS" -gt 0 ]; then
+  echo "📋 Existing analysis found — MUST review and improve during this workflow run"
+else
+  echo "📋 No existing analysis for $ARTICLE_DATE — check nearby dates for improvement opportunities"
+  for DAYS_BACK in 1 2 3; do
+    CHECK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
+    [ -z "$CHECK_DATE" ] && continue
+    NEARBY_ANALYSIS=$(find "analysis/daily/${CHECK_DATE}/" -name "*.md" -type f 2>/dev/null | wc -l)
+    if [ "$NEARBY_ANALYSIS" -gt 0 ]; then
+      echo "  📍 Found $NEARBY_ANALYSIS analysis files for $CHECK_DATE — improve these"
+      break
+    fi
+  done
+fi
+echo "================================"
+```
+
+#### Analysis Improvement Checklist (for existing analysis files)
+
+When improving existing analysis, apply these checks:
+- [ ] Every file has ≥1 color-coded Mermaid diagram (add if missing)
+- [ ] No `[REQUIRED]` placeholders remain (fill with evidence-based content)
+- [ ] SWOT entries cite specific dok_id, vote counts, party names (not generic text)
+- [ ] Risk matrix has numeric L×I scores (not placeholder values)
+- [ ] Stakeholder analysis covers all 8 groups (Citizens, Government, Opposition, Business, Civil Society, International, Judiciary, Media) with evidence (not generic perspectives)
+- [ ] Forward indicators have specific timelines and triggers (not vague predictions)
+- [ ] Confidence labels (`[HIGH]`/`[MEDIUM]`/`[LOW]`) present on all analytical claims
+- [ ] Writing follows `analysis/methodologies/political-style-guide.md` standards
+
+> **Key principle**: If a workflow cannot create NEW analysis (e.g., no new data), it MUST still improve EXISTING analysis. The analysis corpus should get better with every workflow run, never stay the same or degrade.
+````
+
 ## Shared Skill Block (copy into every workflow)
 
 ```markdown
