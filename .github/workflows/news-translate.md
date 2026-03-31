@@ -807,8 +807,11 @@ done
 # Preemptively enforce safe-outputs 100-file PR limit (buffer at >90 staged files)
 STAGED_COUNT=$(git diff --cached --name-only | wc -l)
 if [ "$STAGED_COUNT" -gt 90 ]; then
-  echo "⚠️ Staged $STAGED_COUNT files is approaching the 100-file PR limit (preemptive guard at >90). Removing analysis to stay within the limit."
+  echo "⚠️ Staged $STAGED_COUNT files is approaching the 100-file PR limit (preemptive guard at >90). Reducing analysis scope to a minimal priority subset to stay within the limit."
+  # First unstage all analysis artifacts
   git reset HEAD -- analysis/ 2>/dev/null || true
+  # Re-stage minimal high-priority analysis for the current article date (to keep mandatory analysis improvements)
+  git add "analysis/daily/${ARTICLE_DATE}/" 2>/dev/null || true
   STAGED_COUNT=$(git diff --cached --name-only | wc -l)
 fi
 

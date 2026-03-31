@@ -29,7 +29,7 @@ Every workflow run consumes compute resources and has access to MCP tools, metho
    - Correct any factual errors or outdated information
    - Complete any `[REQUIRED]` placeholders
 5. **If no existing analysis exists**: Create new analysis following the full protocol (Steps 1–6 in the AI-Driven Analysis section below)
-6. **Commit analysis artifacts** to the `analysis/` folder — analysis MUST always be committed alongside any other workflow output
+6. **Commit analysis artifacts** to the `analysis/` folder — analysis MUST always be committed alongside any other workflow output, subject to the GitHub Actions `safe-outputs` 100-file limit. When approaching this limit, prioritize committing a minimal, high-impact subset of analysis (e.g., daily summaries and key findings) and prune lower-priority or bulk artifacts first (e.g., `analysis/weekly/`, `analysis/data/`).
 
 #### For Non-Analysis Workflows (translation, validation, etc.)
 
