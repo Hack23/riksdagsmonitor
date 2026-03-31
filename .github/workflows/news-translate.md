@@ -389,7 +389,7 @@ date -u "+Current UTC: %A %Y-%m-%d %H:%M:%S"
 
 # Determine article date
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date +%Y-%m-%d)"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date -u +%Y-%m-%d)"
 echo "Article Date: $ARTICLE_DATE"
 
 # Determine article type
@@ -419,7 +419,7 @@ If no specific `article_type` is provided, scan for EN articles that lack transl
 
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date +%Y-%m-%d)"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date -u +%Y-%m-%d)"
 ARTICLE_TYPE="${{ github.event.inputs.article_type }}"
 
 if [ -z "$ARTICLE_TYPE" ]; then
@@ -472,7 +472,7 @@ Before proceeding, verify that EN source articles actually exist on disk. If the
 
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date +%Y-%m-%d)"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date -u +%Y-%m-%d)"
 
 EN_COUNT=$(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null | wc -l)
 if [ "$EN_COUNT" -eq 0 ]; then
@@ -514,7 +514,7 @@ Before generating anything, **read the source EN article** to understand its ful
 
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date +%Y-%m-%d)"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date -u +%Y-%m-%d)"
 ARTICLE_TYPE="${{ github.event.inputs.article_type }}"
 
 # If a specific type is given, find the EN source; otherwise list all EN articles for the date
@@ -547,7 +547,7 @@ Read the full EN source article content with the `view` or `bash cat` tool. Unde
 
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date +%Y-%m-%d)"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date -u +%Y-%m-%d)"
 ARTICLE_TYPE="${{ github.event.inputs.article_type }}"
 LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
 [ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="all-extra"
@@ -593,7 +593,7 @@ if [ "$ELAPSED" -gt "$TIME_GUARD_SECONDS" ]; then
 fi
 
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date +%Y-%m-%d)"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date -u +%Y-%m-%d)"
 LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
 [ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="all-extra"
 
@@ -823,7 +823,10 @@ fi
 
 # Hard guard: never proceed with more than 100 staged files
 if [ "$STAGED_COUNT" -gt 100 ]; then
-  echo "❌ Still have $STAGED_COUNT staged files after dropping analysis/, exceeding the 100-file safe-outputs limit."
+  echo "❌ Still have $STAGED_COUNT staged files after pruning analysis to a minimal subset, exceeding the 100-file safe-outputs limit."
+  NEWS_STAGED_HARDGUARD=$(git diff --cached --name-only -- 'news/' 2>/dev/null | wc -l)
+  ANALYSIS_STAGED_HARDGUARD=$(git diff --cached --name-only -- 'analysis/' 2>/dev/null | wc -l)
+  echo "   Staged breakdown: $NEWS_STAGED_HARDGUARD news/ files, $ANALYSIS_STAGED_HARDGUARD analysis/ files."
   echo "   Aborting commit and PR creation to avoid workflow failure. Please reduce the number of changed files and rerun."
   git status --short || true
   exit 1
