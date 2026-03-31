@@ -321,8 +321,28 @@ Example: `news/content/2026-03-23/motions`
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally (scoped to article type to avoid conflicts with other doc-type workflows): `git add news/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/motions/" && git commit -m "Add opposition-motions articles and analysis artifacts"`
+> 2. Stage and commit locally using the enforcement block below
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
+
+```bash
+# Stage articles and analysis — scoped to article type to stay within 100-file PR limit
+git add news/ || true
+git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/motions/" || true
+# Enforce safe-outputs 100-file PR limit
+STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+if [ "$STAGED_COUNT" -gt 90 ]; then
+  echo "⚠️ Staged $STAGED_COUNT files exceeds 100-file PR limit. Removing per-document analysis files."
+  git reset HEAD -- "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/motions/documents/" 2>/dev/null || true
+  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+fi
+if [ "$STAGED_COUNT" -gt 90 ]; then
+  echo "⚠️ Still $STAGED_COUNT files. Removing all analysis artifacts."
+  git reset HEAD -- "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/motions/" 2>/dev/null || true
+  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+fi
+echo "📊 Final staged file count: $STAGED_COUNT"
+git commit -m "Add opposition-motions articles and analysis artifacts"
+```
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
 > **❌ DO NOT** try alternative approaches if the tool call works — one call is all you need.
