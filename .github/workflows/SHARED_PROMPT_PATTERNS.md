@@ -79,7 +79,7 @@ When improving existing analysis, apply these checks:
 - [ ] No `[REQUIRED]` placeholders remain (fill with evidence-based content)
 - [ ] SWOT entries cite specific dok_id, vote counts, party names (not generic text)
 - [ ] Risk matrix has numeric L×I scores (not placeholder values)
-- [ ] Stakeholder analysis covers all 6 groups with evidence (not generic perspectives)
+- [ ] Stakeholder analysis covers all 8 groups (Citizens, Government, Opposition, Business, Civil Society, International, Judiciary, Media) with evidence (not generic perspectives)
 - [ ] Forward indicators have specific timelines and triggers (not vague predictions)
 - [ ] Confidence labels (`[HIGH]`/`[MEDIUM]`/`[LOW]`) present on all analytical claims
 - [ ] Writing follows `analysis/methodologies/political-style-guide.md` standards

@@ -685,7 +685,7 @@ And these analysis templates:
 ```bash
 # Check for existing analysis needing improvement
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date +%Y-%m-%d)"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date -u +%Y-%m-%d)"
 
 echo "=== Mandatory Analysis Improvement Check ==="
 ANALYSIS_DIR="analysis/daily/${ARTICLE_DATE}"
@@ -712,7 +712,11 @@ if [ -n "$ANALYSIS_TARGET" ]; then
   echo "⚠️ Files missing Mermaid diagrams: $MISSING_MERMAID"
   echo "📍 Analysis target directory: $ANALYSIS_TARGET"
 else
-  echo "📋 No existing analysis found for nearby dates — skip improvement (translation-only run)"
+  echo "📋 No existing analysis found for nearby dates — create NEW baseline analysis following ai-driven-analysis-guide.md"
+  echo "   Use MCP tools to gather data and create per-file analysis for available documents."
+  echo "   Even a minimal analysis artifact (1 synthesis file with Mermaid diagram) is better than none."
+  mkdir -p "analysis/daily/${ARTICLE_DATE}"
+  ANALYSIS_TARGET="analysis/daily/${ARTICLE_DATE}"
 fi
 echo "================================"
 ```
@@ -785,7 +789,7 @@ git add news/*-da.html news/*-no.html news/*-fi.html news/*-de.html news/*-fr.ht
 
 # Stage improved analysis artifacts (mandatory — no workflow run wasted)
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date +%Y-%m-%d)"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date -u +%Y-%m-%d)"
 git add "analysis/daily/${ARTICLE_DATE}/" 2>/dev/null || true
 # Also check nearby dates if analysis was improved there
 for DAYS_BACK in 1 2 3; do
@@ -800,6 +804,14 @@ if [ "$STAGED_COUNT" -gt 90 ]; then
   echo "⚠️ Staged $STAGED_COUNT files exceeds 100-file PR limit. Removing analysis to fit."
   git reset HEAD -- analysis/ 2>/dev/null || true
   STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+fi
+
+# Hard guard: never proceed with more than 100 staged files
+if [ "$STAGED_COUNT" -gt 100 ]; then
+  echo "❌ Still have $STAGED_COUNT staged files after dropping analysis/, exceeding the 100-file safe-outputs limit."
+  echo "   Aborting commit and PR creation to avoid workflow failure. Please reduce the number of changed files and rerun."
+  git status --short || true
+  exit 1
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
 
@@ -816,7 +828,7 @@ Then **immediately** call (as a direct tool call, NOT via bash):
 ```
 safeoutputs___create_pull_request({
   "title": "🌐 Article Translations + 📊 Analysis - {date}",
-  "body": "## Article Translations\n\nLanguages: {list}\nArticles translated: {count}\nAnalysis files improved: {analysis_count}\nSource: news-translate workflow",
+  "body": "## Article Translations\n\nLanguages: {list}\nArticles translated: {count}\nAnalysis files improved: see commit message for file count\nSource: news-translate workflow",
   "labels": ["automated-news", "translations", "needs-editorial-review"]
 })
 ```
