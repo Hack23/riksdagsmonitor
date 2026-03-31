@@ -1,9 +1,8 @@
 /**
  * @module article-template
- * @description Barrel re-export for backward compatibility.
+ * @description Public API barrel for the article template modules.
  *
- * This file was previously a 666-line monolith. It has been decomposed
- * into focused modules under `./article-template/`:
+ * Implementation split into focused modules under `./article-template/`:
  *
  * | Module       | Lines | Responsibility                                    |
  * |------------- |-------|---------------------------------------------------|
@@ -11,8 +10,6 @@
  * | helpers.ts   | ~145  | date formatting, sanitisation, HTML sections        |
  * | template.ts  | ~270  | main generateArticleHTML function                   |
  * | index.ts     |  ~28  | barrel re-export                                    |
- *
- * All public exports are preserved — existing consumers require no changes.
  *
  * @author Hack23 AB
  * @license Apache-2.0

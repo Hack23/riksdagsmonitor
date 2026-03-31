@@ -431,7 +431,7 @@ export function installFlushHandlers(): void {
 }
 
 /**
- * Write EN/SV article pair (legacy function for backward compatibility)
+ * Write EN/SV article pair — convenience wrapper over writeSingleArticle
  */
 export async function writeArticlePair(htmlEN: string, htmlSV: string, slug: string): Promise<void> {
   await writeSingleArticle(htmlEN, slug, 'en');

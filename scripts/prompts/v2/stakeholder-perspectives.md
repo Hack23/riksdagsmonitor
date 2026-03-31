@@ -1,6 +1,7 @@
-# Stakeholder Perspectives Template v1
+# Stakeholder Perspectives Template v2
 
-<!-- version: 1.0.0 | updated: 2026-03-14 | author: Hack23 AB -->
+<!-- version: 2.0.0 | updated: 2026-03-30 | author: Hack23 AB -->
+<!-- Migrated from: v1/stakeholder-perspectives.md -->
 
 ## Multi-Perspective Analysis Framework
 

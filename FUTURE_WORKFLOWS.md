@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-5.0-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Updated-2026--03--27-success?style=for-the-badge" alt="Last Updated"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
@@ -60,6 +60,41 @@ This document projects the evolution of Riksdagsmonitor's CI/CD and automation w
 | **2029** | Autonomous AI agents | Self-healing CI pipelines; autonomous dependency management |
 | **2030–2033** | Proto-AGI capabilities | Autonomous development workflows; AI-managed release planning |
 | **2034–2037** | AGI / near-AGI | Self-evolving CI/CD; autonomous software engineering lifecycle |
+
+---
+
+## 📊 Political Intelligence Maturity Model
+
+```mermaid
+graph LR
+    subgraph "🟢 Level 1: Automated Reporting (2026)"
+        L1["📰 Scheduled article generation<br/>📊 Data-driven dashboards<br/>🌐 14-language translation<br/>✅ Quality gate enforcement"]
+    end
+
+    subgraph "🔵 Level 2: Predictive Intelligence (2027)"
+        L2["🔮 Voting outcome prediction<br/>📈 Coalition stability forecasting<br/>🧠 Pattern recognition<br/>📡 Real-time event detection"]
+    end
+
+    subgraph "🟣 Level 3: Autonomous Analysis (2028)"
+        L3["🤖 Self-directed investigation<br/>🎯 Anomaly-driven inquiry<br/>📊 Causal inference<br/>🔗 Cross-parliament correlation"]
+    end
+
+    subgraph "🟠 Level 4: Ecosystem Intelligence (2029)"
+        L4["🌍 Multi-country monitoring<br/>🤝 Federated intelligence<br/>📡 OSINT integration<br/>🏛️ EU Parliament coverage"]
+    end
+
+    subgraph "🔴 Level 5: Transformative Democracy (2030+)"
+        L5["🧬 AGI-assisted governance analysis<br/>📊 Real-time democratic health scoring<br/>🌐 Global political intelligence<br/>🔮 Strategic scenario simulation"]
+    end
+
+    L1 --> L2 --> L3 --> L4 --> L5
+
+    style L1 fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
+    style L2 fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
+    style L3 fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
+    style L4 fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
+    style L5 fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
+```
 
 ---
 
@@ -160,6 +195,78 @@ flowchart TB
 | Deployment | Dual: AWS S3/CloudFront + GitHub Pages |
 | AI Content | 12 agentic workflows (Claude Opus 4.6) |
 | Security Compliance | ISO 27001, NIST CSF 2.0, CIS Controls v8.1 |
+
+---
+
+## 🔬 Visionary: Per-Workflow Unique Analytics Evolution
+
+The future of Riksdagsmonitor's agentic workflows is **deep specialisation** — each workflow producing analytics that are impossible with any other data source or analysis path.
+
+```mermaid
+graph TB
+    subgraph "🟢 Current (2026 Q1)"
+        C1["📋 Committee Reports<br/>Basic voting splits"]
+        C2["📜 Propositions<br/>Legislative pipeline"]
+        C3["✊ Motions<br/>Opposition tracking"]
+        C4["❓ Interpellations<br/>Accountability scoring"]
+    end
+
+    subgraph "🔵 Phase 1 (2026 Q2–Q4)"
+        P1_1["📋 Committee Reports<br/>+ ML vote prediction<br/>+ historical comparison"]
+        P1_2["📜 Propositions<br/>+ budget impact modeling<br/>+ regulatory burden scoring"]
+        P1_3["✊ Motions<br/>+ co-sponsorship network graphs<br/>+ topic clustering (NLP)"]
+        P1_4["❓ Interpellations<br/>+ evasion NLP scoring<br/>+ minister response tracking DB"]
+    end
+
+    subgraph "🟣 Phase 2 (2027)"
+        P2_1["📋 Committee Reports<br/>+ predictive vote outcome<br/>+ committee influence scoring"]
+        P2_2["📜 Propositions<br/>+ multi-country policy comparison<br/>+ EU law transposition tracking"]
+        P2_3["✊ Motions<br/>+ Overton window mapping<br/>+ media uptake correlation"]
+        P2_4["❓ Interpellations<br/>+ sentiment trajectory<br/>+ government stress index"]
+    end
+
+    subgraph "🟠 Phase 3 (2028+)"
+        P3_1["📋 Committee Reports<br/>+ real-time vote prediction<br/>+ coalition risk dashboard"]
+        P3_2["📜 Propositions<br/>+ causal impact modeling<br/>+ citizen impact simulation"]
+        P3_3["✊ Motions<br/>+ agenda-setting power index<br/>+ policy adoption probability"]
+        P3_4["❓ Interpellations<br/>+ democratic health index<br/>+ autonomous follow-up detection"]
+    end
+
+    C1 --> P1_1 --> P2_1 --> P3_1
+    C2 --> P1_2 --> P2_2 --> P3_2
+    C3 --> P1_3 --> P2_3 --> P3_3
+    C4 --> P1_4 --> P2_4 --> P3_4
+
+    style C1 fill:#198754,color:#fff
+    style C2 fill:#0d6efd,color:#fff
+    style C3 fill:#fd7e14,color:#fff
+    style C4 fill:#dc3545,color:#fff
+    style P1_1 fill:#198754,color:#fff,stroke:#fff,stroke-width:2px
+    style P1_2 fill:#0d6efd,color:#fff,stroke:#fff,stroke-width:2px
+    style P1_3 fill:#fd7e14,color:#fff,stroke:#fff,stroke-width:2px
+    style P1_4 fill:#dc3545,color:#fff,stroke:#fff,stroke-width:2px
+    style P2_1 fill:#6f42c1,color:#fff,stroke:#fff,stroke-width:2px
+    style P2_2 fill:#6f42c1,color:#fff,stroke:#fff,stroke-width:2px
+    style P2_3 fill:#6f42c1,color:#fff,stroke:#fff,stroke-width:2px
+    style P2_4 fill:#6f42c1,color:#fff,stroke:#fff,stroke-width:2px
+    style P3_1 fill:#e91e63,color:#fff,stroke:#fff,stroke-width:2px
+    style P3_2 fill:#e91e63,color:#fff,stroke:#fff,stroke-width:2px
+    style P3_3 fill:#e91e63,color:#fff,stroke:#fff,stroke-width:2px
+    style P3_4 fill:#e91e63,color:#fff,stroke:#fff,stroke-width:2px
+```
+
+### Future Unique Analytics per Article Type
+
+| Workflow | Current Unique Analytics | Phase 1 Enhancement | Phase 2 Vision | Phase 3 Autonomous |
+|----------|------------------------|--------------------|--------------|--------------------|
+| **Committee Reports** | Voting splits, reservation analysis | ML vote prediction from committee composition + historical voting patterns | Committee influence scoring: which committees shape policy most effectively? | Real-time vote prediction dashboard during live plenary sessions |
+| **Propositions** | Legislative pipeline tracking | Budget impact modeling using SCB economic data + World Bank benchmarks | Multi-country policy comparison (Nordic council + EU) | Causal impact simulation: "if this bill passes, what happens to X?" |
+| **Motions** | Opposition strategy analysis | NLP-based topic clustering + co-sponsorship network visualisation | Overton window mapping: how opposition motions shift the political debate | Policy adoption probability: ML model predicting which motions become policy |
+| **Interpellations** | Accountability scoring | NLP evasion scoring (did the minister actually answer?) + response tracking DB | Government stress index: aggregated ministerial pressure metric | Autonomous follow-up detection: AI identifies when promised action hasn't occurred |
+| **Evening Analysis** | Daily parliamentary pulse | Multi-source synthesis (Riksdag + Regeringen + SCB same-day) | Automated "story of the day" narrative generation | Self-prioritising: AI identifies the most important event and leads with it |
+| **Realtime Monitor** | Breaking event detection | Predictive urgency scoring (ML-trained on past breaking events) | Cross-source verification (Riksdag + news wire + social media) | Autonomous alert system with configurable severity thresholds |
+| **Weekly Review** | Week-over-week trends | Trend significance testing (is this week different or noise?) | Predictive weekly preview: "next week we expect X because Y" | Self-correcting: compares last week's predictions with actual outcomes |
+| **Month Ahead** | Strategic calendar | Calendar risk modeling (which events have historically caused volatility?) | EU legislative calendar integration for Swedish implementation deadlines | Autonomous scenario planning: generates 3 political futures per key event |
 
 ---
 
@@ -680,6 +787,66 @@ flowchart LR
 - [ ] < 5% human review required for standard political articles
 - [ ] Global real-time democracy health index covering 195 parliaments
 - [ ] AGI-ready architecture with maintained human oversight and democratic safeguards
+
+---
+
+## 🌐 Future Workflow Ecosystem Vision
+
+```mermaid
+graph TB
+    subgraph "🌍 Data Sources (2027+)"
+        RD["🏛️ Riksdag"]
+        EU["🇪🇺 EU Parliament"]
+        NORDIC["🏔️ Nordic Parliaments"]
+        OSINT["📡 Open Source Intel"]
+        SOCIAL["📱 Social Media"]
+        MEDIA["📺 News Feeds"]
+    end
+
+    subgraph "🧠 AI Intelligence Core (2028+)"
+        NLP["🔤 Advanced NLP<br/><i>Multi-language understanding</i>"]
+        ML["📊 ML Prediction<br/><i>Voting & coalition models</i>"]
+        CAUSAL["🔗 Causal Inference<br/><i>Policy impact chains</i>"]
+        ANOMALY["🚨 Anomaly Detection<br/><i>Democratic deviation alerts</i>"]
+    end
+
+    subgraph "📰 Content Generation (2029+)"
+        REALTIME["⚡ Real-Time Articles<br/><i>< 5 min latency</i>"]
+        DEEP["🔬 Deep Analysis<br/><i>Multi-parliament</i>"]
+        PREDICT["🔮 Predictive Reports<br/><i>Scenario modeling</i>"]
+        INDEX["📊 Democracy Index<br/><i>Health scoring</i>"]
+    end
+
+    subgraph "🌐 Distribution (2029+)"
+        WEB["🌐 Web Platform"]
+        API["🔌 Public API"]
+        FEED["📡 Data Feeds"]
+        PARTNER["🤝 Partner Network"]
+    end
+
+    RD & EU & NORDIC & OSINT & SOCIAL & MEDIA --> NLP & ML & CAUSAL & ANOMALY
+    NLP & ML & CAUSAL & ANOMALY --> REALTIME & DEEP & PREDICT & INDEX
+    REALTIME & DEEP & PREDICT & INDEX --> WEB & API & FEED & PARTNER
+
+    style RD fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
+    style EU fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
+    style NORDIC fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
+    style OSINT fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
+    style SOCIAL fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
+    style MEDIA fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
+    style NLP fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
+    style ML fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
+    style CAUSAL fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
+    style ANOMALY fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
+    style REALTIME fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
+    style DEEP fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
+    style PREDICT fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
+    style INDEX fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
+    style WEB fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
+    style API fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
+    style FEED fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
+    style PARTNER fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
+```
 
 ---
 

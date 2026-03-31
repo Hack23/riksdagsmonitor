@@ -231,7 +231,7 @@ Before generating articles, consult these skills:
 5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
 6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
 7. **`scripts/prompts/v2/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
-8. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
+8. **`scripts/prompts/v2/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
 9. **`scripts/prompts/v2/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
 10. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Per-file AI analysis protocol
 11. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Methodology for deep per-file analysis
@@ -335,7 +335,7 @@ After the script-based analysis, perform **AI-driven per-file analysis** for dee
    - `analysis/methodologies/ai-driven-analysis-guide.md`
    - `analysis/methodologies/political-swot-framework.md`
    - `analysis/templates/per-file-political-intelligence.md`
-3. For each pending file: classify, SWOT, risk assess, STRIDE, stakeholder impact, write `.analysis.md`
+3. For each pending file: classify, SWOT, risk assess, Political Threat Taxonomy, stakeholder impact, write `.analysis.md`
 4. Each analysis file must include color-coded Mermaid diagrams and evidence tables
 5. Quality gate: ≥3 evidence points, confidence labels, no template placeholders
 

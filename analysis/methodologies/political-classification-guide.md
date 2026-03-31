@@ -5,28 +5,33 @@
 <h1 align="center">🏷️ Political Classification Guide</h1>
 
 <p align="center">
-  <strong>📊 Detailed Methodology for Classifying Swedish Parliamentary Events</strong><br>
-  <em>🎯 Sensitivity · Domain Taxonomy · Urgency Matrix · Impact Assessment</em>
+  <strong>📊 Multi-Dimensional Classification for Swedish Parliamentary Events</strong><br>
+  <em>🎯 Sensitivity · Domain · Urgency · Political Temperature · Strategic Significance</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--26-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-26 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-26  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
 
 ## 🎯 Purpose
 
-This guide provides the authoritative classification methodology for Swedish parliamentary events processed by Riksdagsmonitor's agentic workflows. Classification is the **first analytical step** — all subsequent risk assessment, threat analysis, and significance scoring depend on accurate initial classification.
+This guide provides the authoritative **multi-dimensional classification methodology** for Swedish parliamentary events processed by Riksdagsmonitor's agentic workflows. Classification is the **first analytical step** — all subsequent risk assessment, threat analysis, and significance scoring depend on accurate initial classification.
 
-This methodology is directly inspired by [Hack23 ISMS CLASSIFICATION.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md), adapted for political intelligence contexts. See [reference/isms-classification-adaptation.md](../reference/isms-classification-adaptation.md) for the full mapping.
+Beyond basic sensitivity/domain/urgency, this methodology includes:
+- **Political Temperature Index** — a composite score measuring how politically heated an event is
+- **Strategic Significance Assessment** — evaluating long-term importance vs. short-term news value
+- **Coalition Impact Vector** — which direction does this push coalition dynamics?
+
+This methodology is inspired by [Hack23 ISMS CLASSIFICATION.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md). See [reference/isms-classification-adaptation.md](../reference/isms-classification-adaptation.md) for the full mapping.
 
 ---
 
@@ -235,12 +240,15 @@ The following scripts provide automated first-pass classification:
 
 The AI agent **MUST** follow this protocol when classifying political documents:
 
-1. **Read this guide** — understand sensitivity levels, domain taxonomy, urgency matrix
+1. **Read this guide** — understand sensitivity levels, domain taxonomy, urgency matrix, AND the advanced dimensions below
 2. **Extract key fields** from the document (title, type, committee, parties involved, date)
 3. **Determine sensitivity** — PUBLIC (default), SENSITIVE (triggers apply), RESTRICTED (editorial review)
 4. **Assign primary domain** + up to 2 secondary domains from the 13-domain taxonomy
 5. **Assess urgency** using the calendar-aware urgency matrix
-6. **Score significance** per the 5-dimension rubric in `significance-scoring.md`
+6. **Calculate Political Temperature Index** — composite score from 5 temperature indicators
+7. **Assess Strategic Significance** — distinguish short-term news value from long-term importance
+8. **Determine Coalition Impact Vector** — which direction does this push coalition dynamics?
+9. **Score significance** per the 5-dimension rubric in `significance-scoring.md`
 
 ### Borderline Classification Guidance
 
@@ -255,8 +263,84 @@ When a document falls between two classification levels:
 
 ---
 
+## 🌡️ Advanced Dimension 1: Political Temperature Index
+
+The Political Temperature Index (PTI) is a **composite score (0–100)** measuring how politically heated an event is — beyond simple sensitivity classification:
+
+```mermaid
+graph LR
+    PTI["🌡️ Political<br/>Temperature Index<br/>(0-100)"]
+    PTI --> P1["📊 Partisan Charge<br/>(0-20)"]
+    PTI --> P2["🏛️ Institutional Impact<br/>(0-20)"]
+    PTI --> P3["📰 Media Amplification<br/>(0-20)"]
+    PTI --> P4["👥 Public Salience<br/>(0-20)"]
+    PTI --> P5["⏰ Temporal Pressure<br/>(0-20)"]
+
+    style PTI fill:#dc3545,color:#fff
+```
+
+| Temperature Component | Score Range | Assessment Criteria |
+|----------------------|:----------:|---------------------|
+| **Partisan Charge** | 0–20 | How divided are parties? (0=consensus, 20=deep partisan division) |
+| **Institutional Impact** | 0–20 | Does this affect democratic institutions? (0=routine, 20=constitutional crisis) |
+| **Media Amplification** | 0–20 | Is media likely to amplify? (0=below radar, 20=front-page scandal) |
+| **Public Salience** | 0–20 | Does the public care? (0=technical, 20=pocketbook/safety issue) |
+| **Temporal Pressure** | 0–20 | How urgent is action? (0=no deadline, 20=imminent crisis) |
+
+### Temperature Classification
+
+| PTI Score | Temperature | Colour | Implication |
+|:---------:|:----------:|:------:|------------|
+| 0–20 | ❄️ Cold | 🔵 Blue | Routine; standard monitoring |
+| 21–40 | 🌤️ Warm | 🟢 Green | Active interest; regular reporting |
+| 41–60 | 🔥 Hot | 🟡 Yellow | Politically significant; priority analysis |
+| 61–80 | 🔥🔥 Very Hot | 🟠 Orange | Crisis-adjacent; intensive monitoring |
+| 81–100 | 🌋 Explosive | 🔴 Red | Constitutional/political crisis; immediate response |
+
+---
+
+## 🎯 Advanced Dimension 2: Strategic Significance Assessment
+
+Not all politically heated events have long-term significance, and some seemingly routine events have major strategic importance. Distinguish **news value** (short-term) from **strategic significance** (long-term):
+
+| Dimension | News Value (Short-Term) | Strategic Significance (Long-Term) |
+|-----------|------------------------|-----------------------------------|
+| **Time horizon** | Today's headlines | Next 6–24 months |
+| **Question** | "Will this make the news?" | "Will this change the political landscape?" |
+| **Indicators** | Media interest, public reaction | Institutional change, precedent setting |
+| **Example (high news, low strategic)** | Minister's gaffe goes viral | "Temporary embarrassment, no policy change" |
+| **Example (low news, high strategic)** | Technical SOU on pension reform | "Quietly reshapes retirement policy for 10M Swedes" |
+
+### Strategic Significance Score (1–5)
+
+| Score | Level | Criteria |
+|:-----:|-------|---------|
+| 1 | **Ephemeral** | No lasting impact; forgotten within a week |
+| 2 | **Routine** | Standard political activity; minor adjustments |
+| 3 | **Significant** | Affects a policy domain meaningfully for 6+ months |
+| 4 | **Major** | Reshapes political dynamics; affects coalition/opposition positioning |
+| 5 | **Transformative** | Changes Swedish governance, institutions, or democratic norms |
+
+---
+
+## 🧭 Advanced Dimension 3: Coalition Impact Vector
+
+For every classified event, assess its impact on coalition dynamics using a **directional vector**:
+
+| Vector | Description | Example |
+|--------|------------|---------|
+| **→ Stabilising** | Strengthens coalition cohesion or majority | Budget passes with full coalition + SD support |
+| **← Destabilising** | Weakens coalition cohesion or threatens majority | SD publicly criticises government on migration |
+| **↕ Neutral** | No significant impact on coalition dynamics | Routine committee report on agriculture |
+| **↗ Opportunity** | Creates an opening for coalition to strengthen position | Popular policy initiative with cross-party support |
+| **↘ Vulnerability** | Exposes coalition weakness that opposition may exploit | KU investigation reveals government negligence |
+
+---
+
 **Document Control:**  
 - **Path:** `/analysis/methodologies/political-classification-guide.md`  
 - **ISMS Reference:** [CLASSIFICATION.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)  
+- **Version:** 2.0  
+- **Advanced Dimensions:** Political Temperature Index, Strategic Significance, Coalition Impact Vector  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Next Review:** 2026-06-30

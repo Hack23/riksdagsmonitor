@@ -1,6 +1,6 @@
 /**
  * @module Intelligence Operations/Automated News Generation
- * @description Barrel re-export for backward compatibility.
+ * @description Public API barrel for the news generation modules.
  *
  * This file was previously a 1183-line monolith. It has been decomposed
  * into focused modules under `./generate-news-enhanced/`:
@@ -13,7 +13,6 @@
  * | generators.ts  | ~400  | Week-ahead, committee, propositions, motions         |
  * | index.ts       | ~265  | Barrel re-export + orchestrator (generateNews)       |
  *
- * All public exports are preserved — existing consumers require no changes.
  *
  * Valid article types (defined in config.ts):
  *   'week-ahead', 'month-ahead', 'weekly-review', 'monthly-review',

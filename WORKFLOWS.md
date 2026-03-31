@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-7.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-9.0-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Updated-2026--03--27-success?style=for-the-badge" alt="Last Updated"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
@@ -158,9 +158,129 @@ graph LR
 
 ---
 
+## 🕐 Agentic Workflow Daily Schedule
+
+The agentic news workflows run on a precisely orchestrated daily schedule (all times UTC):
+
+```mermaid
+flowchart TD
+    subgraph Morning["🌅 Morning Analysis"]
+        A["CIA Stats Update<br/>02:00 · 60 min"]
+        B["Committee Reports<br/>04:00 · 90 min"]
+        C["Government Propositions<br/>05:00 · 90 min"]
+        D["Opposition Motions<br/>06:00 · 90 min"]
+        E["Interpellation Debates<br/>07:00 · 90 min"]
+    end
+
+    subgraph Midday["📰 Midday Monitoring"]
+        F["Realtime Monitor AM<br/>10:00 · 120 min"]
+        G["Translation Batch AM<br/>11:00 · 90 min"]
+    end
+
+    subgraph Evening["🌆 Afternoon / Evening"]
+        H["Realtime Monitor PM<br/>14:00 · 120 min"]
+        I["Translation Batch PM<br/>17:00 · 90 min"]
+        J["Evening Analysis<br/>18:00 · 120 min"]
+    end
+
+    A --> B --> C --> D --> E --> F --> G --> H --> I --> J
+```
+
+### Weekend Schedule Variations
+
+| Day | Active Workflows | Schedule Difference |
+|-----|-----------------|---------------------|
+| **Saturday** | Weekly Review (09:00) · Realtime Monitor (12:00) · Evening/Weekly Wrap-up (16:00) · Translation (14:00) | Reduced frequency; weekly synthesis |
+| **Sunday** | Realtime Monitor (12:00) · Translation (14:00) | Minimal coverage |
+| **1st of Month** | Month Ahead (08:00) | Monthly strategic outlook |
+| **28th of Month** | Monthly Review (10:00) | Monthly retrospective |
+| **Friday** | Week Ahead (07:00) | Weekly prospective outlook |
+
+---
+
 ## 🔄 Workflow Overview
 
-The Riksdagsmonitor project uses GitHub Actions for automation with the following workflows:
+The Riksdagsmonitor project uses **48 workflow files** (23 standard `.yml` + 12 agentic `.lock.yml` + 13 agentic `.md` sources) organized into 5 functional categories:
+
+```mermaid
+graph TB
+    subgraph "🔐 Security & Compliance"
+        SEC1["🛡️ CodeQL<br/><i>SAST scanning</i>"]
+        SEC2["📦 Dependency Review<br/><i>Supply chain</i>"]
+        SEC3["📊 Scorecard<br/><i>OSSF scoring</i>"]
+        SEC4["🔍 Quality Checks<br/><i>TypeScript lint</i>"]
+        SEC5["🏷️ Setup Labels<br/><i>PR labeling</i>"]
+    end
+
+    subgraph "🧪 Testing"
+        TEST1["🏠 Test Homepage<br/><i>Cypress E2E</i>"]
+        TEST2["📊 Test Dashboard<br/><i>Cypress E2E</i>"]
+        TEST3["📰 Test News<br/><i>Cypress E2E</i>"]
+        TEST4["🔬 JS/TS Testing<br/><i>Vitest unit</i>"]
+    end
+
+    subgraph "🚀 Deployment"
+        DEP1["☁️ Deploy S3<br/><i>Production</i>"]
+        DEP2["🔖 Release<br/><i>Attestations</i>"]
+        DEP3["🌐 Uptime Monitor<br/><i>Every 15 min</i>"]
+    end
+
+    subgraph "📊 Data Pipeline"
+        DATA1["📥 CIA Data Pipeline<br/><i>Daily fetch</i>"]
+        DATA2["📈 Update CIA Stats<br/><i>Daily 02:00</i>"]
+        DATA3["🔄 Sync CIA Schemas"]
+        DATA4["✅ Validate CIA Data"]
+        DATA5["🔍 Check Schema Updates"]
+    end
+
+    subgraph "📰 Agentic News (12 workflows)"
+        NEWS1["📋 Committee Reports<br/><i>Mon-Fri 04:00</i>"]
+        NEWS2["📜 Propositions<br/><i>Mon-Fri 05:00</i>"]
+        NEWS3["✊ Motions<br/><i>Mon-Fri 06:00</i>"]
+        NEWS4["❓ Interpellations<br/><i>Mon-Fri 07:00</i>"]
+        NEWS5["⚡ Realtime Monitor<br/><i>2-3× daily</i>"]
+        NEWS6["🌙 Evening Analysis<br/><i>Mon-Fri 18:00</i>"]
+        NEWS7["📅 Week Ahead<br/><i>Friday 07:00</i>"]
+        NEWS8["📊 Weekly Review<br/><i>Saturday 09:00</i>"]
+        NEWS9["📅 Month Ahead<br/><i>1st 08:00</i>"]
+        NEWS10["📊 Monthly Review<br/><i>28th 10:00</i>"]
+        NEWS11["🌐 Translate<br/><i>2-3× daily</i>"]
+        NEWS12["✍️ Article Generator<br/><i>Manual only</i>"]
+    end
+
+    NEWS1 & NEWS2 & NEWS3 & NEWS4 & NEWS5 & NEWS6 -->|"dispatch"| NEWS11
+    NEWS7 & NEWS8 & NEWS9 & NEWS10 -->|"dispatch"| NEWS11
+
+    style SEC1 fill:#dc3545,color:#fff,stroke:#b02a37
+    style SEC2 fill:#dc3545,color:#fff,stroke:#b02a37
+    style SEC3 fill:#dc3545,color:#fff,stroke:#b02a37
+    style SEC4 fill:#dc3545,color:#fff,stroke:#b02a37
+    style SEC5 fill:#dc3545,color:#fff,stroke:#b02a37
+    style TEST1 fill:#0d6efd,color:#fff,stroke:#0a58ca
+    style TEST2 fill:#0d6efd,color:#fff,stroke:#0a58ca
+    style TEST3 fill:#0d6efd,color:#fff,stroke:#0a58ca
+    style TEST4 fill:#0d6efd,color:#fff,stroke:#0a58ca
+    style DEP1 fill:#198754,color:#fff,stroke:#146c43
+    style DEP2 fill:#198754,color:#fff,stroke:#146c43
+    style DEP3 fill:#198754,color:#fff,stroke:#146c43
+    style DATA1 fill:#6f42c1,color:#fff,stroke:#59359a
+    style DATA2 fill:#6f42c1,color:#fff,stroke:#59359a
+    style DATA3 fill:#6f42c1,color:#fff,stroke:#59359a
+    style DATA4 fill:#6f42c1,color:#fff,stroke:#59359a
+    style DATA5 fill:#6f42c1,color:#fff,stroke:#59359a
+    style NEWS1 fill:#fd7e14,color:#fff,stroke:#ca6510
+    style NEWS2 fill:#fd7e14,color:#fff,stroke:#ca6510
+    style NEWS3 fill:#fd7e14,color:#fff,stroke:#ca6510
+    style NEWS4 fill:#fd7e14,color:#fff,stroke:#ca6510
+    style NEWS5 fill:#ffc107,color:#000,stroke:#cc9a06
+    style NEWS6 fill:#d63384,color:#fff,stroke:#ab296a
+    style NEWS7 fill:#20c997,color:#000,stroke:#1aa179
+    style NEWS8 fill:#20c997,color:#000,stroke:#1aa179
+    style NEWS9 fill:#0dcaf0,color:#000,stroke:#0aa2c0
+    style NEWS10 fill:#0dcaf0,color:#000,stroke:#0aa2c0
+    style NEWS11 fill:#e9ecef,color:#212529,stroke:#adb5bd
+    style NEWS12 fill:#6c757d,color:#fff,stroke:#495057
+```
 
 ### Core CI/CD Workflows
 
@@ -635,6 +755,108 @@ flowchart TD
 
 **Compilation:** Source `.md` → `.lock.yml` via `compile-agentic-workflows.yml`
 
+#### Per-Workflow Data Download & Unique Analytics
+
+Each agentic workflow downloads data from specific MCP tools and produces unique political intelligence that only that document type can provide:
+
+```mermaid
+graph TB
+    subgraph "📥 MCP Data Sources"
+        BET["get_betankanden<br/><i>Committee reports</i>"]
+        PROP["get_propositioner<br/><i>Government bills</i>"]
+        MOT["get_motioner<br/><i>Opposition motions</i>"]
+        INTERP["get_interpellationer<br/><i>Parliamentary questions</i>"]
+        VOTE["search_voteringar<br/><i>Voting records</i>"]
+        ANF["search_anforanden<br/><i>Debate speeches</i>"]
+        DOK["search_dokument<br/><i>Document search</i>"]
+        DOKFT["search_dokument_fulltext<br/><i>Full-text search</i>"]
+        CAL["get_calendar_events<br/><i>Parliamentary calendar</i>"]
+        SCB["SCB MCP<br/><i>Statistics Sweden</i>"]
+        WB["World Bank MCP<br/><i>International data</i>"]
+    end
+
+    subgraph "📰 Agentic Workflows"
+        WF_CR["📋 Committee Reports"]
+        WF_PR["📜 Propositions"]
+        WF_MO["✊ Motions"]
+        WF_IP["❓ Interpellations"]
+        WF_EV["🌙 Evening Analysis"]
+        WF_RT["⚡ Realtime Monitor"]
+        WF_WR["📅 Weekly Review"]
+        WF_WA["🔮 Week Ahead"]
+    end
+
+    BET --> WF_CR
+    VOTE --> WF_CR
+    ANF --> WF_CR
+    PROP --> WF_CR
+    SCB --> WF_CR
+    PROP --> WF_PR
+    DOKFT --> WF_PR
+    ANF --> WF_PR
+    MOT --> WF_MO
+    DOKFT --> WF_MO
+    ANF --> WF_MO
+    INTERP --> WF_IP
+    ANF --> WF_IP
+    DOKFT --> WF_IP
+    CAL --> WF_IP
+    VOTE --> WF_EV
+    ANF --> WF_EV
+    BET --> WF_EV
+    CAL --> WF_EV
+    DOK --> WF_RT
+    CAL --> WF_RT
+    VOTE --> WF_RT
+    ANF --> WF_RT
+    BET --> WF_RT
+    DOK --> WF_WR
+    ANF --> WF_WR
+    BET --> WF_WR
+    PROP --> WF_WR
+    MOT --> WF_WR
+    VOTE --> WF_WR
+    CAL --> WF_WA
+    DOK --> WF_WA
+    ANF --> WF_WA
+    INTERP --> WF_WA
+
+    style BET fill:#198754,color:#fff
+    style PROP fill:#0d6efd,color:#fff
+    style MOT fill:#fd7e14,color:#fff
+    style INTERP fill:#dc3545,color:#fff
+    style VOTE fill:#6f42c1,color:#fff
+    style ANF fill:#d63384,color:#fff
+    style DOK fill:#20c997,color:#000
+    style DOKFT fill:#17a589,color:#fff
+    style CAL fill:#0dcaf0,color:#000
+    style SCB fill:#ffc107,color:#000
+    style WB fill:#ff9800,color:#000
+    style WF_CR fill:#198754,color:#fff,stroke-width:2px
+    style WF_PR fill:#0d6efd,color:#fff,stroke-width:2px
+    style WF_MO fill:#fd7e14,color:#fff,stroke-width:2px
+    style WF_IP fill:#dc3545,color:#fff,stroke-width:2px
+    style WF_EV fill:#6f42c1,color:#fff,stroke-width:2px
+    style WF_RT fill:#d63384,color:#fff,stroke-width:2px
+    style WF_WR fill:#20c997,color:#000,stroke-width:2px
+    style WF_WA fill:#0dcaf0,color:#000,stroke-width:2px
+```
+
+| # | Workflow | Schedule | Primary MCP Data | Unique Analytics Produced |
+|---|---------|----------|-----------------|--------------------------|
+| 1 | **Committee Reports** | Mon–Fri 04:00 UTC | `get_betankanden`, `search_voteringar`, `search_anforanden`, `get_propositioner` | Committee voting splits per party, reservation (dissent) analysis, committee-to-policy-domain mapping, SCB statistical enrichment per committee domain |
+| 2 | **Propositions** | Mon–Fri 05:00 UTC | `get_propositioner`, `search_dokument_fulltext`, `analyze_g0v_by_department`, `search_anforanden` | Legislative pipeline tracking (referral → committee → vote), government legislative ambition score, budget allocation impact analysis, policy domain cascading effects |
+| 3 | **Motions** | Mon–Fri 06:00 UTC | `get_motioner`, `search_dokument_fulltext`, `analyze_g0v_by_department`, `search_anforanden` | Opposition strategy analysis, motion clustering by theme, cross-party co-sponsorship detection, signalverdi (is this positioning or a real bid?) |
+| 4 | **Interpellations** | Mon–Fri 07:00 UTC | `get_interpellationer`, `search_anforanden`, `search_dokument_fulltext`, `get_calendar_events` | Ministerial accountability scoring (response rate/timeliness), evasion detection, question framing analysis, party oversight strategy mapping |
+| 5 | **Realtime Monitor** | Mon–Fri 10:00+14:00, Weekends 12:00 | `search_dokument`, `get_calendar_events`, `search_voteringar`, `search_anforanden`, `get_betankanden` | Breaking event detection, urgency classification, real-time political temperature spikes |
+| 6 | **Evening Analysis** | Mon–Fri 18:00, Sat 16:00 | `search_voteringar`, `search_anforanden`, `get_betankanden`, `get_calendar_events` | Daily parliamentary pulse, party discipline metrics, coalition cohesion scoring, debate intensity index |
+| 7 | **Weekly Review** | Sat 09:00 UTC | `search_dokument`, `search_anforanden`, `get_betankanden`, `get_propositioner`, `get_motioner`, `search_voteringar` | Week-over-week trend detection, cross-document-type pattern identification, legislative throughput metrics |
+| 8 | **Week Ahead** | Fri 07:00 UTC | `get_calendar_events`, `search_dokument`, `search_anforanden`, `get_fragor`, `get_interpellationer` | Prospective calendar analysis, scheduled debate preview, expected vote outcomes |
+| 9 | **Monthly Review** | 28th 10:00 UTC | `search_dokument`, `search_anforanden`, `get_betankanden`, `get_propositioner`, `get_motioner`, `search_voteringar` | Monthly legislative throughput, party productivity rankings, government vs opposition scorecard |
+| 10 | **Month Ahead** | 1st 08:00 UTC | `get_calendar_events`, `search_dokument`, `get_betankanden`, `get_propositioner`, `get_motioner` | Strategic political calendar, legislative pipeline forecast, major policy decision timeline |
+| 11 | **Article Generator** | Manual only | Per-type (configurable) | Manual backfill/regeneration for any article type |
+| 12 | **Translate** | Mon–Fri 11:00+17:00, Weekends 14:00 | N/A (text processing) | 14-language translation quality with cultural adaptation |
+
 ---
 
 ### 📡 Stage 7: Monitoring & Infrastructure
@@ -679,7 +901,7 @@ flowchart LR
 
 ---
 
-## 🔧 Complete Workflow Inventory (47 Files)
+## 🔧 Complete Workflow Inventory (48 Files)
 
 ### 🔐 Security & Compliance (5 workflows)
 

@@ -6,27 +6,33 @@
 
 <p align="center">
   <strong>📊 Evidence-Based SWOT Methodology for Political Intelligence</strong><br>
-  <em>🎯 MCP Sources · Confidence Levels · Aggregation · Temporal Decay</em>
+  <em>🎯 MCP Sources · Confidence Levels · Cross-SWOT Interference · Scenario Generation · Power-Interest Mapping</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--26-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-26 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-26  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
 
 ## 🎯 Purpose
 
-This framework establishes the evidence-based SWOT analysis methodology for Riksdagsmonitor. Unlike traditional opinion-based SWOT analyses, this methodology requires **verifiable evidence** for every entry — either a Riksdag document ID (`dok_id`), named primary source, or official statistical reference.
+This framework establishes the **deep, evidence-based SWOT analysis methodology** for Riksdagsmonitor. Unlike traditional opinion-based SWOT analyses, this methodology requires **verifiable evidence** for every entry — either a Riksdag document ID (`dok_id`), named primary source, or official statistical reference.
 
-This methodology is inspired by [CIA platform SWOT.md](https://github.com/Hack23/cia/blob/master/SWOT.md) and [Riksdagsmonitor SWOT.md](../../SWOT.md), adapted for automated agentic political intelligence generation.
+Beyond basic SWOT, this framework includes advanced analytical techniques:
+- **Cross-SWOT Interference Analysis** — how SWOT elements from different actors interact and amplify each other
+- **Strategic Scenario Generation** — using SWOT combinations to construct plausible political futures
+- **Power-Interest Mapping** — positioning stakeholders by influence and stake in outcomes
+- **TOWS Matrix** — converting SWOT findings into actionable strategic options
+
+Quality standard: [SWOT.md](../../SWOT.md) (965 lines of strategic analysis) and [CIA platform SWOT.md](https://github.com/Hack23/cia/blob/master/SWOT.md).
 
 ---
 
@@ -225,11 +231,156 @@ The SWOT generation pipeline is driven by AI agents reading methodology document
 
 The AI agent **MUST** follow this protocol when generating SWOT analysis:
 
-1. **Read this framework** — understand evidence hierarchy, confidence levels, decay rules
+1. **Read this framework** — understand evidence hierarchy, confidence levels, decay rules, AND the advanced techniques below
 2. **Query MCP tools** — use the tool/query strategies from the tables above for each quadrant
 3. **Fill SWOT template** — every entry needs: Statement + Evidence (dok_id) + Confidence + Impact
-4. **Apply intersection analysis** — identify contested terrain, opposition opportunities, shared risks
-5. **Validate quality gate** — ≥ 2 entries per quadrant, zero opinion-only entries, zero EXPIRED entries
+4. **Apply Cross-SWOT Interference** — identify how SWOT elements from different actors amplify each other
+5. **Apply intersection analysis** — identify contested terrain, opposition opportunities, shared risks
+6. **Generate TOWS strategic options** — convert findings to strategic implications
+7. **Validate quality gate** — ≥ 2 entries per quadrant, zero opinion-only entries, zero EXPIRED entries
+
+---
+
+## 🔄 Advanced Technique 1: Cross-SWOT Interference Analysis
+
+When the political landscape involves multiple actors (government, opposition, kingmaker SD), their SWOT elements don't exist in isolation — they **interfere** with each other, creating amplification effects:
+
+```mermaid
+graph TD
+    subgraph "Government SWOT"
+        GS["💪 Gov Strength:<br/>Legislative majority"]
+        GW["⚡ Gov Weakness:<br/>Internal coalition tension"]
+    end
+    subgraph "Opposition SWOT"
+        OS["💪 Opp Strength:<br/>United front on healthcare"]
+        OT["🔴 Opp Threat:<br/>SD migration agenda"]
+    end
+    subgraph "SD SWOT"
+        SS["💪 SD Strength:<br/>Kingmaker position"]
+        SW["⚡ SD Weakness:<br/>Policy delivery credibility"]
+    end
+
+    GW -->|"amplifies"| OS
+    SS -->|"enables"| GS
+    SW -->|"undermines"| GS
+    OT -->|"constrains"| OS
+
+    style GS fill:#28a745,color:#fff
+    style GW fill:#fd7e14,color:#fff
+    style OS fill:#28a745,color:#fff
+    style OT fill:#dc3545,color:#fff
+    style SS fill:#28a745,color:#fff
+    style SW fill:#fd7e14,color:#fff
+```
+
+### Interference Matrix
+
+| Gov SWOT Element | Opp SWOT Element | Interference Effect | Implication |
+|:----------------:|:----------------:|:------------------:|------------|
+| **Gov Strength** + Opp Weakness | — | Reinforcing advantage | Government position consolidates |
+| **Gov Weakness** + Opp Strength | — | Amplified vulnerability | Opposition likely to exploit |
+| **Gov Threat** + Opp Opportunity | — | Converging pressure | High-risk political moment |
+| **Gov Strength** + SD Weakness | — | Fragile dependency | Majority depends on unreliable support |
+
+### Interference Detection Protocol
+
+For each SWOT entry:
+1. Ask: "Does this element AMPLIFY or COUNTERACT any element from another actor's SWOT?"
+2. Map the interference (amplifies, enables, undermines, constrains)
+3. Rate the interference strength (strong/moderate/weak)
+4. Identify the **net political effect** — is the system moving toward stability or instability?
+
+---
+
+## 📊 Advanced Technique 2: TOWS Strategic Options Matrix
+
+TOWS converts SWOT findings into **strategic options** — answering "So what?" for each SWOT combination:
+
+```mermaid
+graph TD
+    SO["SO Strategies<br/>(Strengths × Opportunities)<br/><em>Leverage strengths to exploit opportunities</em>"]
+    WO["WO Strategies<br/>(Weaknesses × Opportunities)<br/><em>Use opportunities to address weaknesses</em>"]
+    ST["ST Strategies<br/>(Strengths × Threats)<br/><em>Use strengths to counter threats</em>"]
+    WT["WT Strategies<br/>(Weaknesses × Threats)<br/><em>Defensive: minimise vulnerabilities</em>"]
+
+    style SO fill:#28a745,color:#fff
+    style WO fill:#0d6efd,color:#fff
+    style ST fill:#ffc107,color:#000
+    style WT fill:#dc3545,color:#fff
+```
+
+| TOWS Cell | Political Context | Example |
+|:---------:|------------------|---------|
+| **SO** (Strength × Opportunity) | "Government uses legislative majority (S1) to pass popular criminal justice reform (O1) before election" | Proactive agenda-setting |
+| **WO** (Weakness × Opportunity) | "Coalition uses EU mandate (O2) to force internal alignment on migration (W1)" | External pressure as internal discipline |
+| **ST** (Strength × Threat) | "Government uses budget control (S2) to fund SD-priority policies, neutralising withdrawal threat (T1)" | Pre-emptive concession |
+| **WT** (Weakness × Threat) | "Internal dissent (W1) + SD withdrawal threat (T1) = highest-risk scenario requiring immediate coalition management" | Defensive damage control |
+
+**Every SWOT analysis MUST include at least 2 TOWS strategic options** with evidence-backed reasoning.
+
+---
+
+## 🔮 Advanced Technique 3: Strategic Scenario Generation
+
+Use SWOT combinations to construct **plausible political futures** (scenarios), each with a probability range and trigger conditions:
+
+### Scenario Construction Protocol
+
+1. **Identify 2–3 key uncertainties** from the SWOT analysis (e.g., "Will SD support the budget?" + "Will KU investigation escalate?")
+2. **Construct 2×2 scenario matrix** from the two most impactful uncertainties
+3. **Name each scenario** and describe its political characteristics
+4. **Assign probability ranges** based on evidence
+5. **Identify trigger indicators** that would signal movement toward each scenario
+
+### Example Scenario Matrix
+
+```mermaid
+quadrantChart
+    title Political Scenario Space (30-day horizon)
+    x-axis "SD Budget Support" --> "SD Budget Withdrawal"
+    y-axis "KU Investigation Contained" --> "KU Investigation Escalates"
+    quadrant-1 "🔴 CRISIS:<br/>Coalition collapse"
+    quadrant-2 "🟡 PRESSURE:<br/>Managed transition"
+    quadrant-3 "🟢 STATUS QUO:<br/>Stable governance"
+    quadrant-4 "🟠 STRESS TEST:<br/>Weakened but surviving"
+```
+
+| Scenario | SD Budget Support | KU Outcome | Probability | Key Trigger |
+|----------|:-----------------:|:----------:|:-----------:|------------|
+| 🟢 **Status Quo** | Supports | Contained | 40–55% | SD publicly confirms budget support |
+| 🟠 **Stress Test** | Supports | Escalates | 15–25% | KU hearing reveals new evidence |
+| 🟡 **Pressure** | Withdraws | Contained | 10–20% | SD demands unmet, partial withdrawal |
+| 🔴 **Crisis** | Withdraws | Escalates | 5–15% | Combined pressure triggers no-confidence |
+
+---
+
+## 📐 Advanced Technique 4: Power-Interest Mapping
+
+Position key stakeholders by their **power** (ability to influence outcomes) and **interest** (stake in specific issues) to identify who matters most:
+
+```mermaid
+quadrantChart
+    title Stakeholder Power-Interest Map
+    x-axis "Low Interest" --> "High Interest"
+    y-axis "Low Power" --> "High Power"
+    quadrant-1 "Manage Closely"
+    quadrant-2 "Keep Satisfied"
+    quadrant-3 "Monitor"
+    quadrant-4 "Keep Informed"
+    "Statsminister": [0.8, 0.9]
+    "SD Leadership": [0.7, 0.75]
+    "S Opposition": [0.65, 0.6]
+    "Media (SVT)": [0.5, 0.5]
+    "EU Commission": [0.3, 0.65]
+    "General Public": [0.7, 0.2]
+```
+
+| Quadrant | Strategy | Stakeholders |
+|----------|---------|-------------|
+| **Manage Closely** (high power, high interest) | Full analysis; primary intelligence consumer | Government leadership, coalition partners, SD |
+| **Keep Satisfied** (high power, low interest) | Monitor for engagement; alert on activation | EU Commission, NATO allies, central bank |
+| **Keep Informed** (low power, high interest) | Regular reporting; citizen engagement | Media, civil society, general public |
+| **Monitor** (low power, low interest) | Periodic check; no active engagement | Minor parties, regional actors |
 
 ---
 
@@ -245,5 +396,7 @@ The AI agent **MUST** follow this protocol when generating SWOT analysis:
 **Document Control:**  
 - **Path:** `/analysis/methodologies/political-swot-framework.md`  
 - **CIA Reference:** [CIA SWOT.md](https://github.com/Hack23/cia/blob/master/SWOT.md)  
+- **Version:** 2.0  
+- **Advanced Techniques:** Cross-SWOT Interference, TOWS Matrix, Scenario Generation, Power-Interest Mapping  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Next Review:** 2026-06-30

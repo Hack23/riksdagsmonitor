@@ -5,28 +5,64 @@
 <h1 align="center">✍️ Political Intelligence Style Guide</h1>
 
 <p align="center">
-  <strong>📊 Writing Standards for Swedish Political Analysis</strong><br>
-  <em>🎯 Depth · Attribution · Confidence · Prohibition · Emoji · Multi-language</em>
+  <strong>📊 Intelligence Writing Standards for Deep Political Analysis</strong><br>
+  <em>🎯 Evidence Density · Attribution · Analytical Depth · Multi-Framework Consistency</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--26-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-26 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-26  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
 
 ## 🎯 Purpose
 
-This style guide establishes writing standards for all political intelligence produced by Riksdagsmonitor's agentic workflows and human editors. It adapts [Hack23 ISMS STYLE_GUIDE.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md) for political journalism contexts. All content — analysis artifacts, news articles, and dashboard labels — must conform to these standards.
+This style guide establishes **intelligence-grade writing standards** for all political analysis produced by Riksdagsmonitor's agentic workflows. Every piece of analysis must demonstrate genuine analytical depth — not surface-level summaries or script-generated content. The quality standard is [SWOT.md](../../SWOT.md) and [THREAT_MODEL.md](../../THREAT_MODEL.md).
 
-See [reference/isms-style-guide-adaptation.md](../reference/isms-style-guide-adaptation.md) for the full ISMS mapping.
+This adapts [Hack23 ISMS STYLE_GUIDE.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md) for political intelligence contexts. See [reference/isms-style-guide-adaptation.md](../reference/isms-style-guide-adaptation.md) for the full ISMS mapping.
+
+---
+
+## 🚨 Intelligence Depth Standards (New in v2.0)
+
+### What Distinguishes Intelligence from Summary
+
+| ✅ Intelligence Analysis | 🚫 Summary/Shallow Content |
+|-------------------------|---------------------------|
+| Explains **why** something matters, not just what happened | Restates what happened without interpretation |
+| Identifies **who benefits and who loses** (cui bono) | Names no specific actors or interests |
+| Cross-references with **other documents, votes, and trends** | Treats each document in isolation |
+| Provides **forward-looking assessment** (what happens next?) | Only describes current state |
+| Explicitly states **confidence level** and cites evidence | Makes claims without attribution |
+| Identifies **tensions, contradictions, and hidden dynamics** | Only reports the official narrative |
+| Uses **multiple analytical frameworks** (SWOT, Risk, Attack Tree) | Uses no framework or only one |
+
+### Minimum Evidence Density Requirements
+
+| Analysis Type | Min. Evidence Points | Min. dok_id Citations | Min. Named Actors |
+|-------------|:--------------------:|:--------------------:|:-----------------:|
+| Per-file analysis | 3 | 2 | 2 |
+| Daily SWOT | 8 (≥2 per quadrant) | 4 | 4 |
+| Risk assessment | 5 | 3 | 3 |
+| Threat analysis | 6 | 3 | 3 |
+| Synthesis summary | 10 | 5 | 5 |
+
+### Analytical Depth Indicators
+
+Every analysis file should demonstrate at least 3 of these 5 depth indicators:
+
+1. **Cui Bono Analysis** — Who benefits from this development? Who is harmed?
+2. **Second-Order Effects** — What cascading consequences follow from this event?
+3. **Historical Parallels** — Has something similar happened before? What was the outcome?
+4. **Counter-Factual Reasoning** — What would happen if the opposite occurred?
+5. **Tension Identification** — What contradictions or competing interests does this reveal?
 
 ---
 
@@ -212,14 +248,14 @@ Translations must preserve:
 - Party names in Swedish with translation in parentheses on first use
 - Numerical precision
 
-**Reference:** `scripts/prompts/v1/political-analysis.md` for LLM translation prompts.
+**Reference:** `scripts/prompts/v2/political-analysis.md` for LLM translation prompts.
 
 ---
 
 ## 🔗 Related Documents
 
 - [reference/isms-style-guide-adaptation.md](../reference/isms-style-guide-adaptation.md) — ISMS mapping
-- [scripts/prompts/v1/political-analysis.md](../../scripts/prompts/v1/political-analysis.md) — LLM prompts
+- [scripts/prompts/v2/political-analysis.md](../../scripts/prompts/v2/political-analysis.md) — LLM prompts
 - [political-classification-guide.md](political-classification-guide.md) — Classification (determines depth level)
 - [TRANSLATION_GUIDE.md](../../TRANSLATION_GUIDE.md) — Multi-language translation guide
 
@@ -705,10 +741,11 @@ When analysis files are absent, article generators must fall back to inline anal
 
 | Field | Value |
 |---|---|
-| Version | 1.0.0 |
+| Version | 2.0.0 |
 | Status | Active |
 | Owner | Hack23 AB |
 | Review Cycle | Quarterly |
-| Next Review | 2026-06-26 |
-| Related | `scripts/prompts/v1/political-analysis.md`, `scripts/analysis-reader.ts` |
+| Next Review | 2026-06-30 |
+| Key Changes v2.0 | Intelligence depth standards, evidence density requirements, analytical depth indicators |
+| Related | `scripts/prompts/v2/political-analysis.md`, `scripts/analysis-reader.ts` |
 | ISMS Reference | Secure_Development_Policy.md §4.2 |

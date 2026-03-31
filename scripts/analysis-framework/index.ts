@@ -201,7 +201,7 @@ export type {
   RiskImpactLevel,
   PoliticalRiskAssessment,
   PoliticalRiskProfile,
-  PridesCategory,
+  ThreatCategory,
   ThreatAgent,
   ThreatSeverity,
   PoliticalThreatAnalysis,
@@ -216,6 +216,6 @@ export { assessPoliticalRisk, assessSingleRiskCategory, computeRiskScore, derive
 export {
   analysePoliticalThreats,
   analysePoliticalThreats as analyzePoliticalThreats,
-  analyseSinglePridesCategory,
-  analyseSinglePridesCategory as analyzeSinglePridesCategory,
+  analyseSingleThreatCategory,
+  analyseSingleThreatCategory as analyzeSingleThreatCategory,
 } from './political-threat-analysis.js';

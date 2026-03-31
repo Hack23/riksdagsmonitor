@@ -5,28 +5,30 @@
 <h1 align="center">💼 Political SWOT Analysis Template</h1>
 
 <p align="center">
-  <strong>📊 Evidence-Based Strategic Analysis for Swedish Political Landscape</strong><br>
-  <em>🎯 Government Coalition · Opposition · Policy Domain SWOTs</em>
+  <strong>📊 Evidence-Based Strategic Analysis with TOWS Matrix & Scenario Generation</strong><br>
+  <em>🎯 Government Coalition · Opposition · Cross-SWOT Interference · Strategic Options</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--26-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 1.0 | **📅 Last Updated:** 2026-03-26 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/` or `analysis/weekly/YYYY-WNN/`. For daily use, save as `evening-swot-update.md`. For weekly use, save as `week-summary-swot.md`. Each SWOT entry requires a dok_id or named evidence source — opinion-only entries are prohibited. See [methodologies/political-swot-framework.md](../methodologies/political-swot-framework.md).
+> **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `swot-analysis.md` in the workflow's own folder (never overwrite another workflow's files). Each SWOT entry requires a dok_id or named evidence source — opinion-only entries are prohibited. See [methodologies/political-swot-framework.md](../methodologies/political-swot-framework.md).
 
-> **🚨 Anti-Pattern Warning (PR #1452):** Plain prose SWOT analysis with bullet points but NO evidence tables, NO Mermaid diagrams, NO SWOT Context metadata, and NO template structure is REJECTED. Every SWOT analysis MUST include:
+> **🚨 Anti-Pattern Warning:** Plain prose SWOT analysis with bullet points but NO evidence tables, NO Mermaid diagrams, NO TOWS matrix, and NO cross-SWOT interference analysis is REJECTED. Every SWOT analysis MUST include:
 > 1. **SWOT Context table** (metadata header with SWOT ID, date, scope, MCP sources)
 > 2. **Structured evidence tables** with columns: `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact`, `Entry Date`
-> 3. **Color-coded Mermaid SWOT Quadrant Mapping** with `style` directives (green for strengths, orange for weaknesses, blue for opportunities, red for threats)
-> 4. **Strategic Implications** section with Key Watch Items
-> 5. **Document Control** footer
+> 3. **Color-coded Mermaid SWOT Quadrant Mapping** with `style` directives
+> 4. **TOWS Strategic Options** — at least 2 strategic options derived from SWOT combinations
+> 5. **Cross-SWOT Interference** — how elements from different actors amplify each other
+> 6. **Strategic Implications** section with Key Watch Items and forward indicators
+> 7. **Document Control** footer
 >
 > **Good example:** [SWOT.md](../../SWOT.md) — this is the formatting quality standard.
 
@@ -231,8 +233,47 @@ graph TD
 
 ---
 
+## 🔄 Section 5: Cross-SWOT Interference Analysis
+
+> *How do SWOT elements from different actors (government, opposition, SD) amplify or counteract each other?*
+
+| Gov/Opp SWOT Element | Interfering Element | Effect | Net Political Impact |
+|:--------------------:|:------------------:|:------:|---------------------|
+| `[e.g. Gov W1: Coalition tension]` | `[e.g. Opp S1: United front]` | Amplifies vulnerability | `[REQUIRED: Specific implication]` |
+| `[e.g. Gov S1: Legislative majority]` | `[e.g. SD W1: Policy delivery failure]` | Fragile dependency | `[REQUIRED: Specific implication]` |
+| `[REQUIRED: At least 2 interference pairs]` | `[...]` | `[...]` | `[...]` |
+
+---
+
+## 📊 Section 6: TOWS Strategic Options
+
+> *Convert SWOT findings into strategic options — answering "So what?"*
+
+| TOWS Cell | Strategy | Specific Action | Evidence |
+|:---------:|---------|-----------------|---------|
+| **SO** (Strength × Opportunity) | `[REQUIRED: How to use a strength to exploit an opportunity]` | `[Specific action with timeline]` | `[dok_id]` |
+| **WO** (Weakness × Opportunity) | `[REQUIRED: How to use an opportunity to address a weakness]` | `[Specific action]` | `[dok_id]` |
+| **ST** (Strength × Threat) | `[OPTIONAL: How to use a strength to counter a threat]` | `[Specific action]` | `[dok_id]` |
+| **WT** (Weakness × Threat) | `[OPTIONAL: How to minimise vulnerability]` | `[Specific action]` | `[dok_id]` |
+
+---
+
+## 🔮 Section 7: Forward Indicators & Scenario Outlook
+
+**30-Day Scenario Outlook:**
+
+| Scenario | Probability | Key Trigger | SWOT Elements Driving It |
+|----------|:----------:|------------|-------------------------|
+| `[REQUIRED: Most likely scenario]` | `[%]` | `[Specific trigger event]` | `[S1+O2, T1+W1, etc.]` |
+| `[REQUIRED: Alternative scenario]` | `[%]` | `[Specific trigger event]` | `[SWOT elements]` |
+| `[OPTIONAL: Worst case]` | `[%]` | `[Trigger]` | `[SWOT elements]` |
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/swot-analysis.md`  
 - **Framework Reference:** [SWOT.md](../../SWOT.md), [methodologies/political-swot-framework.md](../methodologies/political-swot-framework.md)  
+- **Version:** 2.0  
+- **Advanced Sections:** Cross-SWOT Interference, TOWS Matrix, Forward Indicators & Scenario Outlook  
 - **Classification:** Public  
-- **Next Review:** 2026-06-26
+- **Next Review:** 2026-06-30

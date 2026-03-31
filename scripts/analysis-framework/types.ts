@@ -174,7 +174,7 @@ export interface DocumentAnalysisResult {
   confidenceScore: number;
   /**
    * ISMS-inspired political analysis methodology results.
-   * Contains classification, risk profile, and PRIDES threat profile.
+   * Contains classification, risk profile, and political threat profile.
    * Present when the document has been processed through the methodology engines.
    */
   methodologyAnalysis?: MethodologyAnalysis;

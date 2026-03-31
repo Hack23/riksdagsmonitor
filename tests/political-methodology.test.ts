@@ -4,7 +4,7 @@
  * Tests all three methodology engines:
  * 1. Political Classification — 7-dimension classification scoring
  * 2. Political Risk Assessment — Likelihood × Impact risk scoring
- * 3. Political Threat Analysis — PRIDES framework
+ * 3. Political Threat Analysis — Political Threat Taxonomy
  *
  * All functions are pure/deterministic — same input always produces same output.
  */
@@ -22,7 +22,7 @@ import {
 } from '../scripts/analysis-framework/political-risk-assessment.js';
 import {
   analysePoliticalThreats,
-  analyseSinglePridesCategory,
+  analyseSingleThreatCategory,
 } from '../scripts/analysis-framework/political-threat-analysis.js';
 import {
   LIKELIHOOD_PROBABILITY,
@@ -35,7 +35,7 @@ import type {
   PoliticalThreatProfile,
   LikelihoodLevel,
   RiskImpactLevel,
-  PridesCategory,
+  ThreatCategory,
 } from '../scripts/analysis-framework/methodology-types.js';
 
 // ---------------------------------------------------------------------------
@@ -677,7 +677,7 @@ describe('Political Risk Assessment — assessPoliticalRisk', () => {
 });
 
 // ===========================================================================
-// 3. POLITICAL THREAT ANALYSIS TESTS (PRIDES)
+// 3. POLITICAL THREAT ANALYSIS TESTS (Political Threat Taxonomy)
 // ===========================================================================
 
 describe('Political Threat Analysis — analysePoliticalThreats', () => {
@@ -735,7 +735,7 @@ describe('Political Threat Analysis — analysePoliticalThreats', () => {
     it('each threat analysis has required fields', () => {
       const profile = analysePoliticalThreats(makeBudgetProposition());
       for (const analysis of profile.threatAnalyses) {
-        expect(analysis).toHaveProperty('pridesCategory');
+        expect(analysis).toHaveProperty('threatCategory');
         expect(analysis).toHaveProperty('threatAgents');
         expect(analysis).toHaveProperty('severity');
         expect(analysis).toHaveProperty('indicators');
@@ -744,14 +744,14 @@ describe('Political Threat Analysis — analysePoliticalThreats', () => {
       }
     });
 
-    it('each threat analysis has valid pridesCategory', () => {
+    it('each threat analysis has valid threatCategory', () => {
       const profile = analysePoliticalThreats(makeDoc());
-      const valid: PridesCategory[] = [
+      const valid: ThreatCategory[] = [
         'polarization', 'regulatory-overreach', 'institutional-erosion',
         'democratic-deficit', 'economic-disruption', 'societal-impact',
       ];
       for (const analysis of profile.threatAnalyses) {
-        expect(valid).toContain(analysis.pridesCategory);
+        expect(valid).toContain(analysis.threatCategory);
       }
     });
 
@@ -793,24 +793,24 @@ describe('Political Threat Analysis — analysePoliticalThreats', () => {
   });
 
   // -------------------------------------------------------------------------
-  // PRIDES-specific detection
+  // Threat category detection
   // -------------------------------------------------------------------------
 
-  describe('PRIDES category detection', () => {
+  describe('Threat category detection', () => {
     it('detects polarization threat in document with divisive language', () => {
       const doc = makeDoc({
         titel: 'Polarisering och hatretorik i migrationsdebatten',
         summary: 'Populistisk retorik och extremism. Desinformation och propaganda om invandring.',
       });
       const profile = analysePoliticalThreats(doc);
-      const polarization = profile.threatAnalyses.find(a => a.pridesCategory === 'polarization');
+      const polarization = profile.threatAnalyses.find(a => a.threatCategory === 'polarization');
       expect(polarization).toBeDefined();
       expect(['critical', 'high', 'medium']).toContain(polarization!.severity);
     });
 
     it('detects institutional-erosion threat in KU document', () => {
       const profile = analysePoliticalThreats(makeConstitutionalDocument());
-      const erosion = profile.threatAnalyses.find(a => a.pridesCategory === 'institutional-erosion');
+      const erosion = profile.threatAnalyses.find(a => a.threatCategory === 'institutional-erosion');
       expect(erosion).toBeDefined();
       expect(['critical', 'high']).toContain(erosion!.severity);
     });
@@ -822,7 +822,7 @@ describe('Political Threat Analysis — analysePoliticalThreats', () => {
         summary: 'Pressfriheten och yttrandefriheten begränsas. Hemligstämpling ökar.',
       });
       const profile = analysePoliticalThreats(doc);
-      const deficit = profile.threatAnalyses.find(a => a.pridesCategory === 'democratic-deficit');
+      const deficit = profile.threatAnalyses.find(a => a.threatCategory === 'democratic-deficit');
       expect(deficit).toBeDefined();
       expect(['critical', 'high', 'medium']).toContain(deficit!.severity);
     });
@@ -835,7 +835,7 @@ describe('Political Threat Analysis — analysePoliticalThreats', () => {
         summary: 'Skuldkris och inflation spiral. Finanskris och budgetunderskott allvarligt.',
       });
       const profile = analysePoliticalThreats(doc, makeUnstableCIA());
-      const disruption = profile.threatAnalyses.find(a => a.pridesCategory === 'economic-disruption');
+      const disruption = profile.threatAnalyses.find(a => a.threatCategory === 'economic-disruption');
       expect(disruption).toBeDefined();
       expect(['critical', 'high']).toContain(disruption!.severity);
     });
@@ -848,7 +848,7 @@ describe('Political Threat Analysis — analysePoliticalThreats', () => {
         summary: 'Utsatta grupper påverkas. Rättighetsförlust och social exkludering.',
       });
       const profile = analysePoliticalThreats(doc);
-      const societal = profile.threatAnalyses.find(a => a.pridesCategory === 'societal-impact');
+      const societal = profile.threatAnalyses.find(a => a.threatCategory === 'societal-impact');
       expect(societal).toBeDefined();
       expect(['critical', 'high', 'medium']).toContain(societal!.severity);
     });
@@ -881,28 +881,28 @@ describe('Political Threat Analysis — analysePoliticalThreats', () => {
   });
 
   // -------------------------------------------------------------------------
-  // analyseSinglePridesCategory
+  // analyseSingleThreatCategory
   // -------------------------------------------------------------------------
 
-  describe('analyseSinglePridesCategory', () => {
+  describe('analyseSingleThreatCategory', () => {
     it('returns analysis for the specified category when indicators are present', () => {
-      const analysis = analyseSinglePridesCategory(
+      const analysis = analyseSingleThreatCategory(
         makeDoc({ titel: 'Polarisering och hatretorik i debatten' }),
         'polarization'
       );
       expect(analysis).not.toBeNull();
-      expect(analysis!.pridesCategory).toBe('polarization');
+      expect(analysis!.threatCategory).toBe('polarization');
     });
 
     it('is deterministic for same input', () => {
       const doc = makeConstitutionalDocument();
-      const a = analyseSinglePridesCategory(doc, 'institutional-erosion');
-      const b = analyseSinglePridesCategory(doc, 'institutional-erosion');
+      const a = analyseSingleThreatCategory(doc, 'institutional-erosion');
+      const b = analyseSingleThreatCategory(doc, 'institutional-erosion');
       expect(a?.severity).toBe(b?.severity);
     });
 
-    it('returns valid countermeasures for all PRIDES categories when category signals are present', () => {
-      const categoryDocs: Record<PridesCategory, RawDocument> = {
+    it('returns valid countermeasures for all threat categories when category signals are present', () => {
+      const categoryDocs: Record<ThreatCategory, RawDocument> = {
         'polarization': makeDoc({ titel: 'Polarisering och desinformation' }),
         'regulatory-overreach': makeDoc({ titel: 'Maktkoncentration och undantag från lagstiftning' }),
         'institutional-erosion': makeDoc({ organ: 'KU', titel: 'KU-granskning av institutional capture' }),
@@ -911,8 +911,8 @@ describe('Political Threat Analysis — analysePoliticalThreats', () => {
         'societal-impact': makeDoc({ titel: 'Diskriminering och rättighetsförlust för utsatta grupper' }),
       };
 
-      for (const [category, doc] of Object.entries(categoryDocs) as Array<[PridesCategory, RawDocument]>) {
-        const analysis = analyseSinglePridesCategory(doc, category);
+      for (const [category, doc] of Object.entries(categoryDocs) as Array<[ThreatCategory, RawDocument]>) {
+        const analysis = analyseSingleThreatCategory(doc, category);
         expect(analysis).not.toBeNull();
         expect(analysis!.countermeasures.length).toBeGreaterThan(0);
       }
@@ -928,7 +928,7 @@ describe('Political Threat Analysis — analysePoliticalThreats', () => {
       const profile = analysePoliticalThreats(makeCrisisDocument(), makeUnstableCIA());
       if (profile.primaryThreat != null) {
         const primary = profile.threatAnalyses.find(
-          a => a.pridesCategory === profile.primaryThreat
+          a => a.threatCategory === profile.primaryThreat
         );
         expect(primary).toBeDefined();
         // Primary threat severity should match the overall level

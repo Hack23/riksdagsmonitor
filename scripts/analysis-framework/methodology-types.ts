@@ -1,14 +1,12 @@
 /**
  * @module analysis-framework/methodology-types
- * @description Shared TypeScript types for the three ISMS-inspired political
+ * @description Shared TypeScript types for the three political
  * analysis methodologies:
  *
  * 1. **PoliticalClassification** — 7-dimension event classification
- *    (inspired by ISMS CLASSIFICATION.md — Impact Analysis Matrix)
  * 2. **PoliticalRiskAssessment** — Likelihood × Impact risk scoring
- *    (inspired by ISMS Risk_Assessment_Methodology.md)
- * 3. **PoliticalThreatAnalysis** — PRIDES threat framework
- *    (inspired by ISMS THREAT_MODEL.md — STRIDE → PRIDES adaptation)
+ * 3. **PoliticalThreatAnalysis** — Political Threat Taxonomy
+ *    (six democratic-function threat categories)
  *
  * These types are consumed by:
  * - `political-classification.ts`
@@ -295,41 +293,41 @@ export interface PoliticalRiskProfile {
 }
 
 // ===========================================================================
-// 3. POLITICAL THREAT ANALYSIS — PRIDES FRAMEWORK
-//    (inspired by ISMS THREAT_MODEL.md — STRIDE → PRIDES)
+// 3. POLITICAL THREAT ANALYSIS — POLITICAL THREAT TAXONOMY
+//    Six democratic-function threat categories
 // ===========================================================================
 
 // ---------------------------------------------------------------------------
-// PRIDES threat categories
+// Political Threat Taxonomy categories
 // ---------------------------------------------------------------------------
 
 /**
- * PRIDES framework — Political adaptation of ISMS STRIDE threat model.
+ * Political Threat Taxonomy — six democratic-function threat categories
+ * for political intelligence analysis.
  *
- * | ISMS STRIDE           | Political PRIDES             |
- * |-----------------------|------------------------------|
- * | Spoofing              | Polarization                 |
- * | Tampering             | Regulatory Overreach         |
- * | Repudiation           | Institutional Erosion        |
- * | Information Disclosure| Democratic Deficit           |
- * | Denial of Service     | Economic Disruption          |
- * | Elevation of Privilege| Societal Impact              |
+ * | Category               | Democratic Function Threatened |
+ * |------------------------|-------------------------------|
+ * | Polarization           | Narrative Integrity           |
+ * | Regulatory Overreach   | Legislative Integrity         |
+ * | Institutional Erosion  | Accountability                |
+ * | Democratic Deficit     | Transparency                  |
+ * | Economic Disruption    | Democratic Process            |
+ * | Societal Impact        | Power Balance                 |
  */
-export type PridesCategory =
-  | 'polarization'           // P — Intentional division, misleading rhetoric
-  | 'regulatory-overreach'   // R — Abuse of legislative power, norm erosion
-  | 'institutional-erosion'  // I — Weakening of democratic institutions
-  | 'democratic-deficit'     // D — Lack of transparency, restricted public access
-  | 'economic-disruption'    // E — Policy-driven economic harm, fiscal irresponsibility
-  | 'societal-impact';       // S — Disproportionate impact on vulnerable groups
+export type ThreatCategory =
+  | 'polarization'           // Intentional division, misleading rhetoric — threatens Narrative Integrity
+  | 'regulatory-overreach'   // Abuse of legislative power, norm erosion — threatens Legislative Integrity
+  | 'institutional-erosion'  // Weakening of democratic institutions — threatens Accountability
+  | 'democratic-deficit'     // Lack of transparency, restricted public access — threatens Transparency
+  | 'economic-disruption'    // Policy-driven economic harm, fiscal irresponsibility — threatens Democratic Process
+  | 'societal-impact';       // Disproportionate impact on vulnerable groups — threatens Power Balance
 
 // ---------------------------------------------------------------------------
 // Threat agent classification
 // ---------------------------------------------------------------------------
 
 /**
- * Political threat agents — adapted from ISMS threat actor classification.
- * Identifies the actor whose actions create or amplify the threat.
+ * Political threat agents — identifies the actor whose actions create or amplify the threat.
  */
 export type ThreatAgent =
   | 'ruling-coalition'   // Policy agenda risks, power concentration
@@ -344,7 +342,7 @@ export type ThreatAgent =
 // ---------------------------------------------------------------------------
 
 /**
- * Severity levels for PRIDES threat analysis.
+ * Severity levels for political threat analysis.
  *
  * - critical: Immediate and fundamental threat to democratic function
  * - high: Serious and near-term threat requiring political response
@@ -357,10 +355,10 @@ export type ThreatSeverity = 'critical' | 'high' | 'medium' | 'low';
 // Threat analysis result type
 // ---------------------------------------------------------------------------
 
-/** PRIDES threat analysis for a single threat category */
+/** Political threat analysis for a single threat category */
 export interface PoliticalThreatAnalysis {
-  /** Which PRIDES category this threat belongs to */
-  pridesCategory: PridesCategory;
+  /** Which threat category this threat belongs to */
+  threatCategory: ThreatCategory;
   /** Actors whose actions manifest or amplify this threat */
   threatAgents: ThreatAgent[];
   /** Severity of this threat to democratic governance */
@@ -376,21 +374,21 @@ export interface PoliticalThreatAnalysis {
    */
   countermeasures: string[];
   /**
-   * Rationale linking the observable signals to the PRIDES category.
+   * Rationale linking the observable signals to the threat category.
    * Should be evidence-based, not generic.
    */
   rationale: string;
 }
 
-/** Aggregated PRIDES threat profile for a parliamentary document or event */
+/** Aggregated political threat profile for a parliamentary document or event */
 export interface PoliticalThreatProfile {
-  /** Individual PRIDES threat analyses detected */
+  /** Individual political threat analyses detected */
   threatAnalyses: PoliticalThreatAnalysis[];
   /**
    * Primary threat category, selected from `threatAnalyses`.
    *
    * Determined by the highest `severity` among detected threats. When multiple
-   * threats share the same highest severity, a deterministic PRIDES category
+   * threats share the same highest severity, a deterministic threat category
    * ordering is used as a tie-breaker:
    * polarization → regulatory-overreach → institutional-erosion →
    * democratic-deficit → economic-disruption → societal-impact.
@@ -400,9 +398,9 @@ export interface PoliticalThreatProfile {
    *
    * `null` when no significant threats are detected (valid JSON output).
    */
-  primaryThreat: PridesCategory | null;
+  primaryThreat: ThreatCategory | null;
   /**
-   * Overall threat level across all PRIDES categories.
+   * Overall threat level across all threat categories.
    * Derived from the highest-severity individual threat.
    */
   overallThreatLevel: ThreatSeverity | 'none';
@@ -428,6 +426,6 @@ export interface MethodologyAnalysis {
   classification: PoliticalClassification;
   /** Likelihood × Impact risk profile across 6 risk categories */
   riskProfile: PoliticalRiskProfile;
-  /** PRIDES threat analysis across detected threat categories */
+  /** Political threat analysis across detected threat categories */
   threatProfile: PoliticalThreatProfile;
 }

@@ -195,7 +195,7 @@ Before generating articles, consult these skills:
 5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
 6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
 7. **`scripts/prompts/v2/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
-8. **`scripts/prompts/v1/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
+8. **`scripts/prompts/v2/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
 9. **`scripts/prompts/v2/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
 10. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Per-file AI analysis protocol
 11. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Methodology for deep per-file analysis
@@ -664,14 +664,14 @@ echo "📊 Total pending per-file analysis files (all dates): $PENDING"
 1. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Master per-file analysis guide (includes bad/good examples)
 2. **`analysis/methodologies/political-swot-framework.md`** — Evidence-based SWOT with confidence hierarchy
 3. **`analysis/methodologies/political-risk-methodology.md`** — 5×5 Likelihood×Impact risk matrix, calibration examples
-4. **`analysis/methodologies/political-threat-framework.md`** — STRIDE-adapted threat model, severity calibration
+4. **`analysis/methodologies/political-threat-framework.md`** — Political Threat Taxonomy, Attack Trees, severity calibration
 5. **`analysis/methodologies/political-classification-guide.md`** — Sensitivity and domain taxonomy
 6. **`analysis/methodologies/political-style-guide.md`** — Writing standards and evidence density
 7. **`analysis/templates/per-file-political-intelligence.md`** — Per-file output template (SWOT.md quality)
 8. **`analysis/templates/synthesis-summary.md`** — Daily synthesis template (SYN-ID, dashboard, artifacts inventory)
 9. **`analysis/templates/risk-assessment.md`** — Risk assessment template (RSK-ID, heat map, L×I scores)
 10. **`analysis/templates/political-classification.md`** — Classification template (CLS-ID, decision tree)
-11. **`analysis/templates/threat-analysis.md`** — Threat template (THR-ID, STRIDE network, escalation)
+11. **`analysis/templates/threat-analysis.md`** — Threat template (THR-ID, Threat Taxonomy network, escalation)
 12. **`analysis/templates/swot-analysis.md`** — SWOT template (SWT-ID, quadrant mapping, evidence)
 13. **`analysis/templates/stakeholder-impact.md`** — Stakeholder template (STA-ID, 6 groups, impact radar)
 14. **`analysis/templates/significance-scoring.md`** — Significance template (SIG-ID, 5 dimensions, publication decision)
@@ -695,7 +695,7 @@ For each pending file from the catalog (ordered by significance — propositions
 3. **Classify** — Sensitivity level, domain, urgency, significance (0–10)
 4. **SWOT** — Government + Opposition impact with evidence (cite specific dok_id, vote margins, party positions)
 5. **Risk** — 5×5 Likelihood×Impact matrix with numeric scores (coalition, policy, budget, electoral, democratic, external)
-6. **STRIDE** — Political threat analysis (only where applicable — cite evidence)
+6. **Political Threat Taxonomy** — 6 democratic function threat categories (only where applicable — cite evidence)
 7. **Stakeholders** — 6-lens impact matrix (government, opposition, citizen, economic, international, media)
 8. **Forward indicators** — Specific watch items with concrete timelines and triggers
 9. **Mermaid diagrams** — At least 1 diagram with REAL data from the file (not placeholder text)
@@ -731,7 +731,7 @@ After per-file analyses, rewrite ALL daily files in `analysis/daily/$ARTICLE_DAT
 | `synthesis-summary.md` | `analysis/templates/synthesis-summary.md` | SYN-ID, Intelligence Dashboard (Mermaid), Top Findings table, Aggregated SWOT, Risk Landscape, Threat Summary, Artifacts Inventory (✅/⚠️/❌) |
 | `risk-assessment.md` | `analysis/templates/risk-assessment.md` | RSK-ID, Risk Heat Map (Mermaid), ≥2 risks with L×I scores, Coalition Stability, Policy/Budget/Electoral Risk |
 | `classification-results.md` | `analysis/templates/political-classification.md` | CLS-ID, Sensitivity Decision Tree (Mermaid), Per-document table (sensitivity, domain, urgency, significance 0-10) |
-| `threat-analysis.md` | `analysis/templates/threat-analysis.md` | THR-ID, STRIDE Network (Mermaid), 6 STRIDE categories with severity 1-5, Threat Actor Mapping, Escalation Decision |
+| `threat-analysis.md` | `analysis/templates/threat-analysis.md` | THR-ID, Threat Taxonomy Network (Mermaid), 6 threat categories with severity 1-5, Threat Actor Mapping, Escalation Decision |
 | `swot-analysis.md` | `analysis/templates/swot-analysis.md` | SWT-ID, Quadrant Mapping (Mermaid), Coalition + Opposition + Policy SWOT — all entries with dok_id evidence |
 | `stakeholder-perspectives.md` | `analysis/templates/stakeholder-impact.md` | STA-ID, Impact Radar (Mermaid), 6 groups assessed, Impact Summary Matrix |
 | `significance-scoring.md` | `analysis/templates/significance-scoring.md` | SIG-ID, 5-dimension scoring (0-10 each), Composite Score, Publication Decision |
