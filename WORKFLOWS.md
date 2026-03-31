@@ -163,26 +163,27 @@ graph LR
 The agentic news workflows run on a precisely orchestrated daily schedule (all times UTC):
 
 ```mermaid
-gantt
-    title Weekday Agentic Workflow Schedule (UTC)
-    dateFormat HH:mm
-    axisFormat %H:%M
+flowchart TD
+    subgraph Morning["🌅 Morning Analysis"]
+        A["CIA Stats Update<br/>02:00 · 60 min"]
+        B["Committee Reports<br/>04:00 · 90 min"]
+        C["Government Propositions<br/>05:00 · 90 min"]
+        D["Opposition Motions<br/>06:00 · 90 min"]
+        E["Interpellation Debates<br/>07:00 · 90 min"]
+    end
 
-    section 🌅 Morning Analysis
-    CIA Stats Update           :crit, 02:00, 60min
-    Committee Reports          :active, 04:00, 90min
-    Government Propositions    :active, 05:00, 90min
-    Opposition Motions         :active, 06:00, 90min
-    Interpellation Debates     :active, 07:00, 90min
+    subgraph Midday["📰 Midday Monitoring"]
+        F["Realtime Monitor AM<br/>10:00 · 120 min"]
+        G["Translation Batch AM<br/>11:00 · 90 min"]
+    end
 
-    section 📰 Midday Monitoring
-    Realtime Monitor (AM)      :done, 10:00, 120min
-    Translation Batch (AM)     :done, 11:00, 90min
+    subgraph Evening["🌆 Afternoon / Evening"]
+        H["Realtime Monitor PM<br/>14:00 · 120 min"]
+        I["Translation Batch PM<br/>17:00 · 90 min"]
+        J["Evening Analysis<br/>18:00 · 120 min"]
+    end
 
-    section 🌆 Afternoon/Evening
-    Realtime Monitor (PM)      :done, 14:00, 120min
-    Translation Batch (PM)     :done, 17:00, 90min
-    Evening Analysis           :crit, 18:00, 120min
+    A --> B --> C --> D --> E --> F --> G --> H --> I --> J
 ```
 
 ### Weekend Schedule Variations

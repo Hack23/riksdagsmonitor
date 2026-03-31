@@ -19,7 +19,7 @@ The Political Threat Taxonomy identifies threats to **democratic function, civic
 | `institutional-erosion` | Accountability | Oversight evasion, KU obstruction, blame-shifting, record falsification |
 | `democratic-deficit` | Transparency | Information suppression, FOI obstruction, secrecy expansion, classification abuse |
 | `economic-disruption` | Democratic Process | Procedural obstruction, filibustering, quorum manipulation, budget deadlock |
-| `societal-impact` | Power Balance | Executive overreach, constitutional boundary violations, power concentration |
+| `societal-impact` | Power Balance | Disproportionate harm to vulnerable groups, rights erosion, social marginalisation, welfare inequality |
 
 ## THREAT AGENTS
 
@@ -100,20 +100,20 @@ Look for:
 - FiU involvement with economic disruption keywords
 - Unstable coalition combined with economic policy deadlock
 - Budget failure or rejection scenarios
-- Disproportionate burden distribution signals
-- SoU, SfU, AU committee involvement with social welfare content
+- Procedural obstruction: filibustering, quorum manipulation
 
-Countermeasures: Independent Riksbank, Finanspolitiska rådet, EU SGP, cross-party budget framework, welfare state baseline, ECHR Article 14
+Countermeasures: Independent Riksbank, Finanspolitiska rådet, EU SGP, cross-party budget framework
 
 ## SOCIETAL IMPACT ASSESSMENT
 
 Look for:
-- Executive overreach: maktkoncentration, undantag från lagstiftning
-- Constitutional boundary tests: bypassing Riksdag vote
-- Filibustering, quorum manipulation, procedural abuse
-- Societal polarisation or marginalisation signals
+- Disproportionate burden on vulnerable groups: welfare cuts, social safety net erosion
+- SoU, SfU, AU committee involvement with social welfare content
+- Rights erosion signals: discrimination, marginalisation, inequality amplification
+- Societal polarisation effects on minority or disadvantaged communities
+- Constitutional boundary tests affecting individual rights
 
-Countermeasures: Diskrimineringsombudsmannen (DO), JO/JK, constitutional court review, cross-party norms
+Countermeasures: Diskrimineringsombudsmannen (DO), JO/JK, ECHR Article 14, welfare state baseline, cross-party norms
 
 ## OUTPUT FORMAT
 
@@ -174,7 +174,7 @@ Countermeasures: Diskrimineringsombudsmannen (DO), JO/JK, constitutional court r
 ❌ Do not claim a non-`none` threat level without referencing observable parliamentary signals — if no signals are present, explicitly use the no-threat case (`overallThreatLevel: 'none'`, `primaryThreat: null`, `threatAnalyses: []`)  
 ❌ Do not omit countermeasures — Swedish democracy has strong institutional resilience  
 ❌ Do not assign a single threat agent when multiple actors are involved  
-❌ Do not conflate threat categories (e.g., democratic-process ≠ power-balance)  
+❌ Do not conflate threat categories (e.g., `economic-disruption` ≠ `societal-impact`)  
 ❌ Do not use generic rationale — always tie reasoning to specific document signals  
 ❌ Do not ignore committee context — KU = institutional-erosion, FiU = economic-disruption signals  
 ❌ Do not use STRIDE categories (S/T/R/I/D/E) — use Political Threat Taxonomy categories  
