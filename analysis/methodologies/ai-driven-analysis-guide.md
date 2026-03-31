@@ -575,7 +575,7 @@ Every Riksdag document type maps to specific analysis templates and MCP data too
 | ❓ **Interpellationer** (interpellations) | `ip` — minister-directed debates | Threat + Stakeholder | `get_interpellationer`, `search_anforanden`, `get_ledamot` |
 | 📝 **Skriftliga frågor** (written questions) | `fr` — written questions to ministers | Classification + Significance | `get_fragor`, `search_dokument` |
 | 🗳️ **Voteringar** (votes) | `votering` — roll-call votes with party splits | Classification + SWOT + Threat | `search_voteringar`, `get_voting_group`, `get_betankanden` |
-| 🎤 **Anföranden** (speeches) | `anf` — chamber debate speeches | Stakeholder + Significance | `search_anforanden`, `fetch_paginated_anforanden`, `get_ledamot` |
+| 🎤 **Anföranden** (speeches) | `anf` — chamber debate speeches | Stakeholder + Significance | `search_anforanden`, `get_ledamot` |
 | 📅 **Kalender** (calendar events) | `kal` — scheduled debates, hearings, votes | Significance + Risk | `get_calendar_events`, `search_dokument` |
 
 ### 🔗 Cross-Reference Strategy
@@ -680,7 +680,7 @@ graph TD
 |----------|:---------------------:|:----------------------:|:-------------------------:|
 | **Word count** | 200–500 | 800–2,000 | 2,000–5,000 |
 | **Minimum citations** | ≥ 3 (dok_id) | ≥ 5 (dok_id + vote counts) | ≥ 10 (dok_id + cross-ref) |
-| **Mermaid diagrams** | 0–1 (optional) | ≥ 1 (required) | ≥ 2 (required, color-coded) |
+| **Mermaid diagrams** | ≥ 1 (required; may be simple) | ≥ 1 (required) | ≥ 2 (required, color-coded) |
 | **Frameworks applied** | Classification only | 1–2 (e.g., SWOT or Risk) | ≥ 2 (e.g., SWOT + Threat + Risk) |
 | **Confidence labels** | Optional | Required on key claims | Required on ALL claims |
 | **Forward indicators** | 1 "watch next" item | 2–3 triggers with dates | ≥ 5 triggers with thresholds |

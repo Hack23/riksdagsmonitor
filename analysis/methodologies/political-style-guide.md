@@ -750,7 +750,7 @@ All analysis must meet minimum evidence thresholds scaled by content scope. Thes
 | Coalition dynamics | 20 | 15 | 15 |
 | Party scorecard | 10 | 5 | 8 |
 
-**Enforcement:** Analysis files that fall below the minimum thresholds for their type must be flagged for revision before publication. Automated checks in `scripts/analysis-reader.ts` validate citation counts at build time.
+**Enforcement:** Analysis files that fall below the minimum thresholds for their type must be flagged for revision before publication. Editors and reviewers must manually verify citation counts and evidence density during review; existing tooling (including `scripts/analysis-reader.ts`) supports parsing and inspection of citations but does not yet enforce these thresholds automatically.
 
 ---
 

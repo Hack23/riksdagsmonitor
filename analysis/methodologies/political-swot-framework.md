@@ -429,7 +429,7 @@ Swedish government strengths reinforced by EU-level legislative achievements and
 |--------------|------------------|---------------------|-------------------------|
 | Legislative achievement with EU mandate | `get_betankanden`, `search_voteringar` | EP `/votes` (roll-call) | Match Riksdag betänkande to EU directive transposition |
 | Coalition cohesion on EU policy | `search_voteringar`, `get_propositioner` | EP `/meps` (Swedish MEP votes) | Compare coalition party discipline: Riksdag vs. EP group |
-| Strong EP group alignment | `fetch_report` (seat counts) | EP `/committees` | Swedish MEPs in key EP committee chair/rapporteur roles |
+| Strong EP group alignment | External/manual: EP seat count data (e.g. European-Parliament-MCP-Server) | EP `/committees` | Swedish MEPs in key EP committee chair/rapporteur roles |
 | EU funding secured | `search_dokument` (`organ=FiU`) | Eurostat, EU budget data | Cross-reference FiU assessment with EU allocation data |
 
 #### ⚠️ Weaknesses — EU Parliament Dimension

@@ -416,7 +416,7 @@ The following table maps each risk category to the primary MCP tools and query s
 
 | Risk Category | Primary MCP Tools | Query Strategy |
 |---------------|-------------------|----------------|
-| **Coalition stability** | `search_voteringar`, `analyze_voting_patterns` | Track M+KD+L+SD voting cohesion; detect defections and abstention spikes |
+| **Coalition stability** | `search_voteringar` + internal voting pattern analysis (non‑MCP) | Track M+KD+L+SD voting cohesion; detect defections and abstention spikes |
 | **Policy implementation** | `get_propositioner`, `search_dokument` | Monitor committee referrals, plenary vote outcomes, and reservation filings |
 | **Legislative integrity** | `search_voteringar`, `get_betankanden` | Track contested votes (margin <10 seats), reservation analysis per party |
 | **Economic governance** | `get_propositioner`, `search_dokument` | Budget bills (FiU), fiscal forecasts, spring amending budgets |

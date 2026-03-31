@@ -578,15 +578,15 @@ Real-time monitoring of parliamentary activity with per-file analysis on new dat
 
 ## 📊 Per-File AI Analysis Quality Gate
 
-Every per-file analysis must score **≥ 7.0/10** across 5 weighted dimensions:
+Every per-file analysis must score **≥ 7.0/10** across the 5 weighted dimensions defined in [`methodologies/ai-driven-analysis-guide.md`](methodologies/ai-driven-analysis-guide.md):
 
 | Dimension | Weight | Minimum | Description |
 |-----------|--------|---------|-------------|
-| **Evidence density** | 30% | 6/10 | Citations per claim, source variety, dok_id references |
-| **Analytical depth** | 25% | 6/10 | Multi-framework application, insight quality, cross-reference density |
-| **Structural completeness** | 20% | 7/10 | All template sections filled, Mermaid diagrams present |
-| **Political relevance** | 15% | 6/10 | Riksdag-specific insights, stakeholder identification, Swedish context |
-| **Writing quality** | 10% | 7/10 | Style guide compliance, clarity, no boilerplate |
+| **Evidence** | 25% | 6/10 | Evidence density, citations per claim, source variety, dok_id references |
+| **Depth** | 25% | 6/10 | Multi-framework application, analytical depth, cross-reference density, non-trivial insights |
+| **Structural** | 20% | 7/10 | All template sections filled, required Mermaid diagrams present, coherent flow |
+| **Actionable** | 15% | 6/10 | Clear implications, decision support, Riksdag-specific relevance, stakeholder identification |
+| **Neutrality** | 15% | 7/10 | Balanced tone, writing quality, style guide compliance, clarity, no boilerplate or bias |
 
 ---
 

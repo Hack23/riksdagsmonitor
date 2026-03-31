@@ -294,7 +294,7 @@ graph TD
 | **Opportunities** | `[e.g. search_regering, get_calendar_events]` | `[#]` | `[H/M/L]` |
 | **Threats** | `[e.g. search_voteringar, search_dokument_fulltext]` | `[#]` | `[H/M/L]` |
 
-> **📌 Note:** Confidence follows the temporal decay rule from [political-swot-framework.md](../methodologies/political-swot-framework.md): HIGH→MEDIUM (90d)→LOW (180d)→EXPIRED. All files listed MUST exist at the stated paths; mark transient data as `(transient — not cached)`.
+> **📌 Note:** Confidence follows the temporal decay rule from [political-swot-framework.md](../methodologies/political-swot-framework.md): HIGH (0–30d, remains HIGH at 30d)→MEDIUM (90d)→LOW (180d)→EXPIRED. All files listed MUST exist at the stated paths; mark transient data as `(transient — not cached)`.
 
 ---
 
