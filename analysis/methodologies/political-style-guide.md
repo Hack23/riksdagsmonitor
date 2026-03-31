@@ -737,6 +737,159 @@ When analysis files are absent, article generators must fall back to inline anal
 
 ---
 
+## 📏 Evidence Density Requirements
+
+All analysis must meet minimum evidence thresholds scaled by content scope. These requirements ensure every published piece is traceable to verifiable Riksdag data.
+
+| Analysis Type | Min. Citations | Min. dok_id References | Min. MCP Data Points |
+|---|:---:|:---:|:---:|
+| Per-file analysis | 3 | 1 (the file itself) | 2 cross-references |
+| Daily synthesis | 8 | 5 | 5 |
+| Weekly brief | 15 | 10 | 10 |
+| Monthly strategic brief | 30 | 20 | 20 |
+| Coalition dynamics | 20 | 15 | 15 |
+| Party scorecard | 10 | 5 | 8 |
+
+**Enforcement:** Analysis files that fall below the minimum thresholds for their type must be flagged for revision before publication. Editors and reviewers must manually verify citation counts and evidence density during review; existing tooling (including `scripts/analysis-reader.ts`) supports parsing and inspection of citations but does not yet enforce these thresholds automatically.
+
+---
+
+## 📎 Citation Format
+
+All citations must be machine-parseable and human-readable. Use the following three formats consistently across all analysis types.
+
+### Inline Citation
+
+Use when referencing MCP query results or computed metrics within running text:
+
+> "M-KD-L coalition voting cohesion dropped to 72% in March 2026 (riksdag-regering-mcp search_voteringar, rm=2025/26)."
+
+### Riksdag Document Reference
+
+Use when citing a specific betänkande, proposition, motion, or interpellation by its dok_id:
+
+> "Betänkande 2025/26:JuU15, voted 2026-03-15 with 176 Ja, 173 Nej."
+
+Format: `[riksmöte]:[utskott][nummer]` followed by votering outcome (Ja/Nej/Avstår/Frånvarande counts).
+
+### MCP Data Reference
+
+Use in data source attribution sections and methodology footnotes:
+
+> "Data source: riksdag-regering-mcp get_betankanden, rm=2025/26, organ=JuU"
+
+Always include the MCP tool name, the query parameters used, and the riksmöte scope.
+
+---
+
+## 🌍 Multi-Language Writing Standards
+
+Riksdagsmonitor publishes in 14 languages (SV, EN, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH). To ensure translation quality and consistency, all source analysis must follow these rules:
+
+### Rule 1: Avoid Idioms and Figurative Language
+
+Idiomatic expressions do not translate reliably and obscure meaning for non-native speakers.
+
+| ❌ Idiomatic | ✅ Plain Language |
+|---|---|
+| "The bill sailed through committee" | "The committee approved the bill by a large margin" |
+| "The opposition dug in their heels" | "The opposition maintained its position" |
+| "A political hot potato" | "A politically sensitive issue" |
+
+### Rule 2: Full Titles on First Reference
+
+Always spell out the full Swedish name with abbreviation in parentheses on first use:
+
+- "Sverigedemokraterna (SD) voted against the proposition."
+- "Socialdemokraterna (S) proposed an alternative motion."
+
+### Rule 3: Spell Out Abbreviations
+
+Utskott and other institutional abbreviations must be expanded on first reference:
+
+- "Justitieutskottet (JuU) published its betänkande on 2026-03-15."
+- "Finansutskottet (FiU) rejected the motion in its preliminary review."
+
+### Rule 4: Consistent Terminology Within a Document
+
+Never alternate between Swedish and English terms for the same concept within a single document.
+
+| ✅ Consistent | ❌ Inconsistent |
+|---|---|
+| "utskottet" used throughout | Switching between "utskottet" and "the committee" |
+| "betänkande" used throughout | Switching between "betänkande" and "committee report" |
+
+### Rule 5: Active Voice
+
+Prefer active voice for clarity and directness:
+
+| ❌ Passive | ✅ Active |
+|---|---|
+| "The proposition was rejected by the Riksdag" | "The Riksdag rejected the proposition" |
+| "A reservation was filed by V" | "V filed a reservation" |
+
+### Rule 6: Swedish Parliamentary Terms in Analytical Context
+
+When writing analysis (as opposed to translated news articles), always use the canonical Swedish parliamentary terms:
+
+| ✅ Analytical Context | ❌ Avoid in Analysis |
+|---|---|
+| betänkande | committee report |
+| reservation | dissenting opinion |
+| votering | vote |
+| anförande | speech / debate contribution |
+| utskott | committee |
+| proposition | government bill |
+| motion | parliamentary motion |
+| interpellation | interpellation (no translation needed) |
+
+English-language equivalents may appear in parentheses on first use for non-Swedish audiences but must not replace the Swedish term in analytical text.
+
+---
+
+## ✅ Good vs Bad Examples
+
+### ❌ BAD: Generic, No Evidence
+
+The following fails every quality standard — no citations, no dok_ids, no quantified metrics, no named actors:
+
+> "The political situation is complex. There are various risks including coalition instability and policy challenges. The overall risk level is medium."
+
+**Why this fails:**
+- Zero dok_id references
+- No named actors (which parties? which ledamöter?)
+- "Various risks" — unspecified and unquantified
+- "Medium" risk level — no scoring framework applied
+- No confidence level stated
+- No forward-looking assessment
+
+### ✅ GOOD: Evidence-Based, Structured, Quantified
+
+The following demonstrates proper intelligence-grade writing:
+
+> **Coalition Stability Risk Assessment — March 2026**
+>
+> | Risk Factor | L (1–5) | I (1–5) | Score | Trend | Key Evidence |
+> |---|:---:|:---:|:---:|:---:|---|
+> | Budget disagreement (defence spending) | 4 | 5 | 20 | ↑ | Betänkande 2025/26:FöU5, reservation by L (dok_id: HC01FöU5) |
+> | SD–M migration policy tension | 3 | 4 | 12 | → | Interpellation 2025/26:412, anförande by Jimmie Åkesson 2026-03-10 |
+> | L threshold risk (4% barrier) | 4 | 5 | 20 | ↑ | SCB partisympatiundersökning 2026-03, L at 4.2% (±1.1%) |
+>
+> **Assessment [HIGH confidence]:** The Tidö coalition faces critical stress on two axes — defence spending (Score: 20/25) and L's proximity to the parliamentary threshold (Score: 20/25). If L falls below 4% in the September 2026 election, the coalition loses its Riksdag majority regardless of other party performance (riksdag-regering-mcp get_voting_group, rm=2025/26).
+>
+> **What to Watch Next:** FöU scheduled votering on 2026-04-02 for betänkande 2025/26:FöU8; L's position on the final text will signal coalition cohesion.
+
+**Why this succeeds:**
+- 3 dok_id references with specific betänkande and interpellation citations
+- Named actors (L, SD, M, Jimmie Åkesson)
+- Quantified risk scores using L×I framework
+- Explicit confidence level `[HIGH confidence]`
+- Trend indicators (↑ →)
+- Forward-looking "What to Watch Next" with specific date and event
+- MCP data source attribution
+
+---
+
 ## Document Control
 
 | Field | Value |

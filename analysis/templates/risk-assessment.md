@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `risk-assessment.md` in the workflow's own folder (never overwrite another workflow's files). Scores use Likelihood × Impact methodology from [methodologies/political-risk-methodology.md](../methodologies/political-risk-methodology.md).
@@ -287,10 +287,39 @@ flowchart TD
 
 ---
 
+## 📂 MCP Data Files Used
+
+> *Record all data files and MCP tool calls consulted during this risk assessment for audit traceability and reproducibility.*
+
+`[REQUIRED: List all analysis/daily/YYYY-MM-DD/{articleType}/data/ files consulted]`
+
+| # | Data Source | File / Tool Path | Data Type | Retrieved |
+|:-:|-----------|-----------------|-----------|-----------|
+| 1 | `[e.g. riksdag-regering-mcp]` | `[e.g. search_voteringar(rm="2025/26", bet="FiU1")]` | `[e.g. Voting records]` | `[YYYY-MM-DD HH:MM UTC]` |
+| 2 | `[e.g. riksdag-regering-mcp]` | `[e.g. search_dokument(doktyp="prop", rm="2025/26")]` | `[e.g. Propositions]` | `[YYYY-MM-DD HH:MM UTC]` |
+| 3 | `[e.g. CIA export]` | `[e.g. cia-data/exports/risk-summary.json]` | `[e.g. Risk indicators]` | `[YYYY-MM-DD HH:MM UTC]` |
+| 4 | `[OPTIONAL]` | `[path or tool call]` | `[type]` | `[timestamp]` |
+
+### Risk-Specific MCP Tool Usage
+
+> **AI Instructions:** Map which MCP tools provided evidence for each risk dimension. This ensures every risk score has traceable data provenance.
+
+| Risk Dimension | Primary MCP Tool | Key Parameters | Evidence Count |
+|---------------|-----------------|----------------|:--------------:|
+| Coalition Stability | `[e.g. riksdag-regering-mcp search_voteringar]` | `[e.g. rm="2025/26"]` | `[#]` |
+| Policy Implementation | `[e.g. riksdag-regering-mcp search_dokument]` | `[e.g. doktyp="bet"]` | `[#]` |
+| Budget | `[e.g. riksdag-regering-mcp get_propositioner]` | `[e.g. rm="2025/26"]` | `[#]` |
+| Electoral | `[e.g. riksdag-regering-mcp search_anforanden]` | `[e.g. parti="S"]` | `[#]` |
+| External | `[e.g. riksdag-regering-mcp search_regering]` | `[e.g. type="pressmeddelanden"]` | `[#]` |
+
+> **📌 Note:** All files listed above MUST exist in the repository at the stated paths. If a file was fetched but not persisted, note `(transient — not cached)` in the File Path column.
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/risk-assessment.md`  
 - **Framework Reference:** [methodologies/political-risk-methodology.md](../methodologies/political-risk-methodology.md)  
-- **Version:** 2.0  
-- **Advanced Sections:** Cascading Risk, Risk Interconnection, Scenario Outlook  
+- **Version:** 2.1  
+- **Advanced Sections:** Cascading Risk, Risk Interconnection, Scenario Outlook, MCP Data Provenance  
 - **Classification:** Public  
 - **Next Review:** 2026-06-30

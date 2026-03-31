@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--31-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-31 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -337,10 +337,148 @@ For every classified event, assess its impact on coalition dynamics using a **di
 
 ---
 
+## 📡 MCP Data Sources for Classification
+
+The `riksdag-regering-mcp` server provides direct access to Swedish parliamentary data for classification. Each Riksdag document type maps to a specific MCP tool and carries a default classification baseline:
+
+| Riksdag Document Type | MCP Tool | Classification Baseline | Elevation Triggers |
+|----------------------|----------|------------------------|-------------------|
+| **Betänkande** (committee report) | `get_betankanden` | HIGH | Fiscal policy (FiU), constitutional matters (KU) |
+| **Proposition** (government bill) | `get_propositioner` | HIGH | All government bills carry legislative weight |
+| **Motion** (parliamentary motion) | `get_motioner` | MEDIUM | Cross-party co-sponsorship; opposition joint motions |
+| **Interpellation** | `get_interpellationer` | MEDIUM | Ministerial evasion; repeated follow-up questions |
+| **Skriftlig fråga** (written question) | `get_fragor` | ROUTINE | Elevated for oral questions (muntlig fråga) |
+| **Votering** (vote record) | `search_voteringar` | MEDIUM | Contested votes; coalition splits; narrow margins |
+| **Anförande** (speech/debate) | `search_anforanden` | ROUTINE | Elevated for party leader statements; budget debates |
+
+### Committee-Specific Baseline Elevations
+
+The 16 standing committees (utskott) influence classification baseline:
+
+| Committee | Code | Default Elevation | Rationale |
+|-----------|------|-------------------|-----------|
+| Finansutskottet | FiU | +1 level | Budget and fiscal policy |
+| Justitieutskottet | JuU | +1 level | Criminal law and courts |
+| Konstitutionsutskottet | KU | +1 level | Constitutional oversight (granskning) |
+| Socialförsäkringsutskottet | SfU | Context-dependent | Migration policy sensitivity |
+| Utrikesutskottet | UU | +1 level | Foreign policy, NATO, EU |
+| Försvarsutskottet | FöU | +1 level | Defence and national security |
+| Socialutskottet | SoU | Standard | Unless healthcare crisis |
+| Utbildningsutskottet | UbU | Standard | Unless school reform controversy |
+| Miljö- och jordbruksutskottet | MJU | Standard | Unless climate policy debate |
+| Näringsutskottet | NäU | Context-dependent | Energy and nuclear policy sensitivity |
+| Trafikutskottet | TU | Standard | Unless major infrastructure controversy |
+| Skatteutskottet | SkU | +1 level | Tax policy impacts all citizens |
+| Arbetsmarknadsutskottet | AU | Context-dependent | Labour market sensitivity |
+| Civilutskottet | CU | Standard | Unless housing crisis |
+| Kulturutskottet | KrU | Standard | Unless media/press freedom |
+| EU-nämnden | EUN | +1 level | EU mandate decisions |
+
+---
+
+## 🔄 MCP-Integrated Classification Workflow
+
+When using `riksdag-regering-mcp` tools for automated classification, follow this step-by-step protocol:
+
+1. **Read this guide** — understand sensitivity levels, domain taxonomy, urgency matrix, and all advanced dimensions
+2. **Extract key fields** using MCP tools — fetch document metadata (title, `dok_id`, `doktyp`, committee/`organ`, parties involved, date/`datum`)
+3. **Determine sensitivity level** — apply the decision tree: PUBLIC (default), SENSITIVE (any trigger from §2 applies), RESTRICTED (requires editorial review before publication)
+4. **Assign primary policy domain** from the Swedish 16-committee taxonomy (FiU→ECO, JuU→JUS, KU→CON, FöU→DEF, UU→FOR, SfU→MIG, etc.)
+5. **Assess urgency** using the parliamentary calendar — cross-reference `get_calendar_events` for upcoming votes and debates
+6. **Score significance** per the 5-dimension rubric: Partisan Charge, Institutional Impact, Media Amplification, Public Salience, Temporal Pressure
+
+### MCP Tool Selection by Document Type
+
+```mermaid
+graph TD
+    START["📋 Classification Task"] --> DOCTYPE{Document Type?}
+
+    DOCTYPE -->|Committee Report| BET["get_betankanden<br/>→ Baseline: HIGH"]
+    DOCTYPE -->|Government Bill| PROP["get_propositioner<br/>→ Baseline: HIGH"]
+    DOCTYPE -->|Motion| MOT["get_motioner<br/>→ Baseline: MEDIUM"]
+    DOCTYPE -->|Interpellation| INTER["get_interpellationer<br/>→ Baseline: MEDIUM"]
+    DOCTYPE -->|Written Question| FRAG["get_fragor<br/>→ Baseline: ROUTINE"]
+    DOCTYPE -->|Vote Record| VOT["search_voteringar<br/>→ Baseline: MEDIUM"]
+    DOCTYPE -->|Speech/Debate| ANF["search_anforanden<br/>→ Baseline: ROUTINE"]
+
+    BET --> ENRICH["Enrich with context:<br/>get_dokument_innehall<br/>search_voteringar<br/>search_anforanden"]
+    PROP --> ENRICH
+    MOT --> ENRICH
+    INTER --> ENRICH
+    FRAG --> ENRICH
+    VOT --> ENRICH
+    ANF --> ENRICH
+
+    ENRICH --> CLASSIFY["Apply classification<br/>methodology"]
+
+    style BET fill:#ffebee,stroke:#f44336
+    style PROP fill:#ffebee,stroke:#f44336
+    style MOT fill:#fffde7,stroke:#ffc107
+    style INTER fill:#fffde7,stroke:#ffc107
+    style FRAG fill:#e8f5e9,stroke:#4caf50
+    style VOT fill:#fffde7,stroke:#ffc107
+    style ANF fill:#e8f5e9,stroke:#4caf50
+    style CLASSIFY fill:#e3f2fd,stroke:#2196f3
+```
+
+---
+
+## 🔀 Sensitivity Level Decision Tree (MCP-Enhanced)
+
+Use this decision tree when processing documents fetched via `riksdag-regering-mcp`:
+
+```mermaid
+graph TD
+    A["📄 Incoming Riksdag Document<br/>(via riksdag-regering-mcp)"] --> B{Contains legally<br/>sensitive data?<br/><em>Personal data, SÄPO,<br/>ongoing court proceedings</em>}
+    B -->|Yes| C["🔴 RESTRICTED<br/>Editorial review mandatory"]
+    B -->|No| D{Politically charged?<br/><em>Coalition threat,<br/>ministerial crisis,<br/>KU granskning</em>}
+    D -->|Yes| E["🟡 SENSITIVE<br/>Careful framing required"]
+    D -->|No| F["🟢 PUBLIC<br/>Standard workflow"]
+
+    C --> G["⚠️ Route to senior editor<br/>Do NOT auto-publish"]
+    E --> H["📝 Apply attribution rules<br/>from political-style-guide.md"]
+    F --> I["✅ Classify and publish<br/>via standard pipeline"]
+
+    style A fill:#e3f2fd,stroke:#2196f3
+    style C fill:#ffebee,stroke:#f44336,color:#b71c1c
+    style E fill:#fffde7,stroke:#ffc107,color:#f57f17
+    style F fill:#e8f5e9,stroke:#4caf50,color:#1b5e20
+    style G fill:#ffcdd2,stroke:#e57373
+    style H fill:#fff9c4,stroke:#ffd54f
+    style I fill:#c8e6c9,stroke:#81c784
+```
+
+---
+
+## ⚖️ Borderline Classification Guidance (MCP Context)
+
+When automated classification via MCP tools produces ambiguous results:
+
+| Scenario | Resolution | MCP Verification |
+|----------|-----------|-----------------|
+| **SENSITIVE vs. RESTRICTED** | Err toward RESTRICTED (higher classification). If any single trigger exceeds threshold, classify RESTRICTED. | Cross-reference `search_voteringar` for contested votes; check `get_interpellationer` for ministerial evasion patterns |
+| **ROUTINE vs. ELEVATED urgency** | Check parliamentary calendar — within 2 weeks of major vote → ELEVATED | Use `get_calendar_events` to verify upcoming Riksdag schedule |
+| **Domain ambiguity** | Assign strongest-evidence domain as primary; use secondary domains for remaining relevance. CON and DEF always take precedence. | Verify committee assignment via `get_dokument` metadata (`organ` field) |
+| **Manual vs. automated divergence** | Use the higher score and flag for human editorial review with divergence note | Compare MCP-extracted data against manual analysis; document discrepancy |
+
+---
+
+## ⚠️ Classification Quality Gate
+
+> **🚫 Anti-Pattern Warning:** Classification output without **all three** of the following is **REJECTED** by the pipeline:
+> 1. **Explicit sensitivity level** (PUBLIC / SENSITIVE / RESTRICTED)
+> 2. **Domain code** from the 13-domain taxonomy (ECO, DEF, JUS, SOC, HEA, EDU, ENV, AGR, INF, ENE, FOR, MIG, CON)
+> 3. **Urgency level** (ROUTINE / ELEVATED / URGENT / CRITICAL)
+>
+> Incomplete classifications are returned to the originating agent for remediation. No downstream processing (risk scoring, significance assessment, publication) proceeds until all three fields are present.
+
+---
+
 **Document Control:**  
 - **Path:** `/analysis/methodologies/political-classification-guide.md`  
 - **ISMS Reference:** [CLASSIFICATION.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)  
-- **Version:** 2.0  
+- **Version:** 2.1  
 - **Advanced Dimensions:** Political Temperature Index, Strategic Significance, Coalition Impact Vector  
+- **MCP Integration:** riksdag-regering-mcp tool mapping, committee-specific baselines  
 - **Classification:** Public  
 - **Next Review:** 2026-06-30

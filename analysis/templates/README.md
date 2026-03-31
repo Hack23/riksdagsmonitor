@@ -11,14 +11,114 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--31-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 4.0 | **📅 Last Updated:** 2026-03-31 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+---
+
+## 📚 Architecture Documentation Map
+
+<table class="documentation-map">
+  <thead>
+    <tr>
+      <th>Document</th>
+      <th>Focus</th>
+      <th>Description</th>
+      <th>Documentation Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><a href="../../ARCHITECTURE.md">Architecture</a></strong></td>
+      <td>🏛️ Architecture</td>
+      <td>C4 model showing current system structure</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/ARCHITECTURE.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../../SECURITY_ARCHITECTURE.md">Security Architecture</a></strong></td>
+      <td>🛡️ Security</td>
+      <td>Security controls and compliance mapping</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/SECURITY_ARCHITECTURE.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../../WORKFLOWS.md">Workflows</a></strong></td>
+      <td>⚙️ DevOps</td>
+      <td>CI/CD pipeline documentation</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/WORKFLOWS.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../README.md">Analysis Directory</a></strong></td>
+      <td>🔬 Analysis</td>
+      <td>Analysis directory overview and structure</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/README.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../methodologies/ai-driven-analysis-guide.md">AI Analysis Guide</a></strong></td>
+      <td>🤖 Methodology</td>
+      <td>Per-file analysis protocol and quality gates</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../methodologies/political-threat-framework.md">Threat Framework</a></strong></td>
+      <td>🎭 Methodology</td>
+      <td>Political Threat Taxonomy (6 dimensions)</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-threat-framework.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../methodologies/political-risk-methodology.md">Risk Methodology</a></strong></td>
+      <td>⚠️ Methodology</td>
+      <td>Likelihood × Impact scoring for Riksdag events</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-risk-methodology.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../methodologies/political-swot-framework.md">SWOT Framework</a></strong></td>
+      <td>💼 Methodology</td>
+      <td>Evidence-based political SWOT quadrants</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-swot-framework.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../methodologies/political-classification-guide.md">Classification Guide</a></strong></td>
+      <td>🏷️ Methodology</td>
+      <td>7-dimension political event classification</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-classification-guide.md">View Source</a></td>
+    </tr>
+    <tr>
+      <td><strong><a href="../methodologies/political-style-guide.md">Style Guide</a></strong></td>
+      <td>✍️ Methodology</td>
+      <td>Editorial and analytical style standards</td>
+      <td><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/political-style-guide.md">View Source</a></td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## 🔐 ISMS Policy Alignment
+
+These analysis templates implement structured intelligence production mandated by Hack23 AB's ISMS framework:
+
+| **ISMS Policy** | **Template Implementation** |
+| --- | --- |
+| [🛠️ Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) | Structured templates enforce consistent analytical output; anti-pattern warnings prevent quality degradation |
+| [📝 Change Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md) | Template versioning, quarterly review cycle, document metadata tracking |
+| [🔐 Information Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) | Classification levels (PUBLIC/SENSITIVE/RESTRICTED) in every analysis output |
+| [🔓 Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) | SPDX license headers, REUSE compliance, transparent methodology documentation |
+| [🔍 Vulnerability Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) | Threat analysis template identifies political risks; risk assessment quantifies exposure |
+
+### Compliance Framework Mapping
+
+| **Framework** | **Version** | **Relevant Controls** | **Template Implementation** |
+| --- | --- | --- | --- |
+| **ISO 27001** | 2022 | A.5.10, A.8.3 | Information classification via political-classification template |
+| **NIST CSF** | 2.0 | ID.RA, ID.RM | Risk identification and management via risk-assessment template |
+| **CIS Controls** | v8.1 | 17.1 | Threat intelligence production via threat-analysis template |
+| **EU CRA** | 2024 | Art. 10, Art. 11 | Transparency and vulnerability disclosure via stakeholder-impact template |
 
 ---
 
@@ -27,6 +127,15 @@
 This directory contains **8 structured analysis templates** that define the exact output format for every political intelligence artifact produced by Riksdagsmonitor's AI agents. Templates ensure consistency, completeness, and quality across all analysis types — from per-file document intelligence to full synthesis summaries.
 
 > **Critical Rule:** AI agents MUST follow these templates. Templates define structure and required sections — the AI fills them with genuine, evidence-based analysis. Templates must NEVER be copied verbatim with placeholder text.
+
+Templates are **not** standalone outputs. They form a **composable intelligence pipeline** — individual templates feed into the daily synthesis, which aggregates into weekly and monthly intelligence reports. The per-file analysis template is the most frequently used: every downloaded Riksdag MCP data file receives a comprehensive analysis using this template.
+
+**Critical mandates:**
+
+- 🔍 AI agents must **READ actual Riksdag data** and produce original analysis — never scripted boilerplate
+- 📎 Every claim requires an **evidence citation** (dok_id, vote record, or MCP data file path)
+- 📊 All outputs require **structured tables + colour-coded Mermaid diagrams** — plain prose alone is rejected
+- 🎯 Every analysis must pass a **minimum 7.0/10 quality gate** before consumption by article generators
 
 ---
 
@@ -72,6 +181,64 @@ graph TB
     style T7 fill:#0dcaf0,color:#000,stroke:#0aa2c0,stroke-width:2px
     style T8 fill:#ffc107,color:#000,stroke:#cc9a06,stroke-width:3px
 ```
+
+---
+
+## 🗺️ Template Interconnection Map
+
+All eight templates form an integrated intelligence network. The per-file analysis template consumes outputs from the six specialist templates, and the synthesis template aggregates all per-file analyses:
+
+```mermaid
+graph LR
+    subgraph "📋 Specialist Templates"
+        CLS["🏷️ Political<br/>Classification"]
+        RSK["⚠️ Risk<br/>Assessment"]
+        THR["🎭 Threat<br/>Analysis"]
+        SWT["💼 SWOT<br/>Analysis"]
+        STK["👥 Stakeholder<br/>Impact"]
+        SIG["📈 Significance<br/>Scoring"]
+    end
+
+    subgraph "📦 Integrating Templates"
+        PFI["🔍 Per-File<br/>Intelligence"]
+        SYN["🧩 Daily<br/>Synthesis"]
+    end
+
+    CLS -->|"sensitivity + domain"| PFI
+    RSK -->|"L×I scores"| PFI
+    THR -->|"6-dimension threats"| PFI
+    SWT -->|"quadrant findings"| PFI
+    STK -->|"impact assessments"| PFI
+    SIG -->|"composite score"| PFI
+
+    PFI -->|"per-document analysis"| SYN
+    SYN -->|"editorial direction"| ART["📰 Article<br/>Generator"]
+
+    style CLS fill:#6f42c1,color:#fff,stroke:#59359a
+    style RSK fill:#dc3545,color:#fff,stroke:#bd2130
+    style THR fill:#343a40,color:#fff,stroke:#23272b
+    style SWT fill:#0d6efd,color:#fff,stroke:#0a58ca
+    style STK fill:#20c997,color:#fff,stroke:#199d76
+    style SIG fill:#ffc107,color:#000,stroke:#d39e00
+    style PFI fill:#28a745,color:#fff,stroke:#1e7e34
+    style SYN fill:#fd7e14,color:#fff,stroke:#c96009
+    style ART fill:#003399,color:#fff,stroke:#002266
+```
+
+---
+
+## 📑 Master Template Catalog
+
+| # | Template | Purpose | Key Sections | MCP Data Sources | Output Format | Priority |
+|:-:|----------|---------|-------------|------------------|---------------|:--------:|
+| 1 | [🏷️ Political Classification](political-classification.md) | 7-dimension event classification | Sensitivity Level, Policy Domain, Urgency Level, Classification Dimensions | `search_dokument`, `get_calendar_events`, `get_betankanden` | Metadata table + checkbox dimensions + Mermaid | 🔴 HIGH |
+| 2 | [⚠️ Risk Assessment](risk-assessment.md) | Quantified risk using 5×5 L×I matrix across 8 categories | Risk Context, Risk Register, Heat Map, Mitigation | `search_voteringar`, `get_betankanden`, `get_propositioner` | Risk register + L×I heat map Mermaid + trends | 🔴 HIGH |
+| 3 | [🎭 Threat Analysis](threat-analysis.md) | Multi-framework political threat assessment | 6 Threat Dimensions, Diamond Model, Attack Trees, Kill Chain | `search_voteringar`, `search_anforanden`, `get_interpellationer` | Dimension tables + severity Mermaid | 🔴 HIGH |
+| 4 | [💼 SWOT Analysis](swot-analysis.md) | Evidence-based SWOT with TOWS + Cross-SWOT | SWOT Context, Quadrants, Strategic Implications | `get_betankanden`, `search_voteringar`, `get_propositioner` | 4-quadrant tables + Mermaid chart | 🟡 MEDIUM |
+| 5 | [👥 Stakeholder Impact](stakeholder-impact.md) | Multi-lens stakeholder impact assessment | 8 Stakeholder Groups, Impact Matrix | `search_ledamoter`, `get_betankanden`, `search_anforanden` | Stakeholder tables + Mermaid diagram | 🟡 MEDIUM |
+| 6 | [📈 Significance Scoring](significance-scoring.md) | 5-dimension composite score (1–10) | 5 Scoring Dimensions, Composite Score, Decision | `search_dokument`, `get_calendar_events` | Scoring table + publish decision | 🔴 HIGH |
+| 7 | [🧩 Synthesis Summary](synthesis-summary.md) | Daily intelligence synthesis | Headlines, SWOT, Risk, Threat, Forward Indicators | All MCP tools (aggregated) | Dashboard + Mermaid overview | 🔴 HIGH |
+| 8 | [🔍 Per-File Intelligence](per-file-political-intelligence.md) | Deep per-document AI analysis (**most used**) | Executive Summary, Classification, SWOT, Risk, Threat, Stakeholder, Significance | Depends on document type | Comprehensive `{dok_id}-analysis.md` in `analysis/daily/.../documents/` | 🔴 CRITICAL |
 
 ---
 
@@ -396,6 +563,45 @@ Every template enforces the following mandatory requirements:
 | 4 | **dok_id Citations** | Parliamentary document IDs cited for every factual claim |
 | 5 | **Anti-Pattern Warnings** | Each template begins with common anti-patterns to AVOID |
 | 6 | **Frontmatter** | Standard metadata: Generated, Data Sources, Documents Analyzed, Confidence |
+
+---
+
+## 📄 Template Selection by Data Category
+
+| MCP Data Category | Primary Templates | Supporting Templates |
+|------------------|-------------------|---------------------|
+| `betankanden/` (committee reports) | Political Classification + SWOT Analysis | Stakeholder Impact, Significance Scoring |
+| `propositioner/` (propositions) | Risk Assessment + Stakeholder Impact | Political Classification, Significance Scoring |
+| `motioner/` (motions) | Political Classification + SWOT + Significance | Risk Assessment |
+| `interpellationer/` (interpellations) | Threat Analysis + Stakeholder Impact | Political Classification |
+| `voteringar/` (votes) | Political Classification + SWOT + Threat | Risk Assessment |
+| `anforanden/` (speeches) | Stakeholder Impact + Significance Scoring | Political Classification |
+| `calendar_events/` | Significance Scoring + Risk Assessment | Stakeholder Impact |
+| `fragor/` (written questions) | Political Classification + Significance | Stakeholder Impact |
+
+---
+
+## 📅 Temporal Aggregation
+
+```mermaid
+flowchart TD
+    D["📅 Daily per-workflow analysis\nanalysis/daily/YYYY-MM-DD/slug/"] --> W["📅 Weekly aggregation\nanalysis/weekly/YYYY-WNN/"]
+    W --> M["📅 Monthly strategic brief\nanalysis/monthly/YYYY-MM/"]
+    D --> AI["🤖 AI cross-article synthesis\nanalysis/daily/YYYY-MM-DD/synthesis-summary.md"]
+    AI --> W
+
+    style D fill:#198754,stroke:#146c43,color:#fff
+    style W fill:#0d6efd,stroke:#0a58ca,color:#fff
+    style M fill:#6f42c1,stroke:#59359a,color:#fff
+    style AI fill:#fd7e14,stroke:#ca6510,color:#fff
+```
+
+| Scope | Format | Example | Cadence |
+|-------|--------|---------|---------|
+| Daily | `YYYY-MM-DD` | `2026-03-31/` | Every workflow run |
+| Weekly | `YYYY-WNN` | `2026-W14/` | `news-weekly-review` aggregation |
+| Monthly | `YYYY-MM` | `2026-03/` | `news-monthly-review` aggregation |
+| Cross-article | `synthesis-summary.md` | Daily synthesis | Per-workflow synthesis |
 
 ---
 

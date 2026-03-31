@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -563,6 +563,333 @@ graph TD
 
 ---
 
+## 📑 Document-Type Analysis Focus
+
+Every Riksdag document type maps to specific analysis templates and MCP data tools. Use this table to select the correct analytical approach for each incoming data file:
+
+| Document Type | MCP Data Category | Primary Templates | Key MCP Cross-Reference Tools |
+|---------------|-------------------|-------------------|-------------------------------|
+| 🏛️ **Betänkanden** (committee reports) | `bet` — committee deliberation outcomes from FiU, JuU, SoU, UU, etc. | Classification + Risk + SWOT | `get_betankanden`, `search_voteringar`, `search_dokument_fulltext` |
+| 📜 **Propositioner** (government propositions) | `prop` — government bills (e.g., Prop. 2025/26:227) | Risk + Stakeholder | `get_propositioner`, `search_dokument_fulltext`, `search_dokument` |
+| ✊ **Motioner** (parliamentary motions) | `mot` — MP-authored proposals from S, M, SD, V, MP, C, L, KD | Classification + SWOT + Significance | `get_motioner`, `search_dokument_fulltext`, `search_ledamoter` |
+| ❓ **Interpellationer** (interpellations) | `ip` — minister-directed debates | Threat + Stakeholder | `get_interpellationer`, `search_anforanden`, `get_ledamot` |
+| 📝 **Skriftliga frågor** (written questions) | `fr` — written questions to ministers | Classification + Significance | `get_fragor`, `search_dokument` |
+| 🗳️ **Voteringar** (votes) | `votering` — roll-call votes with party splits | Classification + SWOT + Threat | `search_voteringar`, `get_voting_group`, `get_betankanden` |
+| 🎤 **Anföranden** (speeches) | `anf` — chamber debate speeches | Stakeholder + Significance | `search_anforanden`, `get_ledamot` |
+| 📅 **Kalender** (calendar events) | `kal` — scheduled debates, hearings, votes | Significance + Risk | `get_calendar_events`, `search_dokument` |
+
+### 🔗 Cross-Reference Strategy
+
+When analyzing any document, always cross-reference with related data to build richer intelligence:
+
+```mermaid
+graph TD
+    subgraph "📑 Document-Type Cross-Reference Map"
+        direction TB
+        BET["🏛️ Betänkanden<br/>(Committee Reports)"]
+        PROP["📜 Propositioner<br/>(Government Bills)"]
+        MOT["✊ Motioner<br/>(Motions)"]
+        IP["❓ Interpellationer"]
+        FR["📝 Skriftliga frågor"]
+        VOT["🗳️ Voteringar<br/>(Votes)"]
+        ANF["🎤 Anföranden<br/>(Speeches)"]
+        KAL["📅 Kalender<br/>(Calendar)"]
+    end
+
+    PROP -->|"generates"| BET
+    MOT -->|"referenced in"| BET
+    BET -->|"decided by"| VOT
+    IP -->|"debated in"| ANF
+    FR -->|"may escalate to"| IP
+    KAL -->|"schedules"| VOT
+    KAL -->|"schedules"| ANF
+    VOT -->|"reveals splits on"| PROP
+
+    style BET fill:#0d6efd,color:#fff
+    style PROP fill:#6f42c1,color:#fff
+    style MOT fill:#28a745,color:#fff
+    style IP fill:#fd7e14,color:#fff
+    style FR fill:#ffc107,color:#000
+    style VOT fill:#dc3545,color:#fff
+    style ANF fill:#28a745,color:#fff
+    style KAL fill:#0d6efd,color:#fff
+```
+
+> **Example:** When analyzing a betänkande from JuU (Justitieutskottet), cross-reference `search_voteringar` for the vote outcome, `search_anforanden` for committee debate speeches, and `get_propositioner` for the originating government bill.
+
+---
+
+## 📐 Document-Specific Analysis Depth
+
+Not every document warrants the same analysis depth. Use the following tiered model to allocate analytical effort proportional to political significance:
+
+```mermaid
+graph TD
+    subgraph "📐 Analysis Depth Levels"
+        direction TB
+        L3["🔴 Level 3 — Intelligence<br/>2000–5000 words · ≥10 citations<br/>Full multi-framework analysis"]
+        L2["🟠 Level 2 — Strategic<br/>800–2000 words · ≥5 citations<br/>Focused framework application"]
+        L1["🟢 Level 1 — Surface<br/>200–500 words · ≥3 citations<br/>Classification + key findings"]
+    end
+
+    subgraph "🏛️ Level 3 Documents"
+        L3A["Betänkanden with voting splits<br/>(e.g., JuU10 with SD dissent)"]
+        L3B["Propositioner with budget impact<br/>(e.g., Prop. 2025/26:100 vårbudget)"]
+        L3C["Voteringar with coalition fractures<br/>(e.g., M+KD vs L on migration)"]
+    end
+
+    subgraph "🔶 Level 2 Documents"
+        L2A["Motioner from party leaders<br/>(e.g., S shadow budget motion)"]
+        L2B["Interpellationer on policy crises<br/>(e.g., minister accountability)"]
+        L2C["Evening / weekly synthesis<br/>(cross-document analysis)"]
+    end
+
+    subgraph "🟢 Level 1 Documents"
+        L1A["Skriftliga frågor<br/>(routine written questions)"]
+        L1B["Kalender events<br/>(scheduled debates, hearings)"]
+        L1C["Routine anföranden<br/>(standard debate speeches)"]
+    end
+
+    L3 --> L3A
+    L3 --> L3B
+    L3 --> L3C
+    L2 --> L2A
+    L2 --> L2B
+    L2 --> L2C
+    L1 --> L1A
+    L1 --> L1B
+    L1 --> L1C
+
+    style L3 fill:#dc3545,color:#fff
+    style L2 fill:#fd7e14,color:#fff
+    style L1 fill:#28a745,color:#fff
+    style L3A fill:#dc3545,color:#fff
+    style L3B fill:#dc3545,color:#fff
+    style L3C fill:#dc3545,color:#fff
+    style L2A fill:#fd7e14,color:#fff
+    style L2B fill:#fd7e14,color:#fff
+    style L2C fill:#fd7e14,color:#fff
+    style L1A fill:#28a745,color:#fff
+    style L1B fill:#28a745,color:#fff
+    style L1C fill:#28a745,color:#fff
+```
+
+### 📏 Depth Level Requirements
+
+| Criteria | 🟢 Level 1 — Surface | 🟠 Level 2 — Strategic | 🔴 Level 3 — Intelligence |
+|----------|:---------------------:|:----------------------:|:-------------------------:|
+| **Word count** | 200–500 | 800–2,000 | 2,000–5,000 |
+| **Minimum citations** | ≥ 3 (dok_id) | ≥ 5 (dok_id + vote counts) | ≥ 10 (dok_id + cross-ref) |
+| **Mermaid diagrams** | ≥ 1 (required; may be simple) | ≥ 1 (required) | ≥ 2 (required, color-coded) |
+| **Frameworks applied** | Classification only | 1–2 (e.g., SWOT or Risk) | ≥ 2 (e.g., SWOT + Threat + Risk) |
+| **Confidence labels** | Optional | Required on key claims | Required on ALL claims |
+| **Forward indicators** | 1 "watch next" item | 2–3 triggers with dates | ≥ 5 triggers with thresholds |
+| **Cross-references** | Link to parent document | Link to 2–3 related docs | Network of ≥ 5 related docs |
+| **Typical turnaround** | 5–10 min | 15–25 min | 30–60 min |
+
+### 🔀 Escalation Rules
+
+A document may be **escalated** from a lower level to a higher level when:
+
+- **L1 → L2:** Written question reveals a pattern across multiple ministers, or calendar event precedes a high-stakes vote
+- **L2 → L3:** Motion gathers cross-party support (≥ 3 parties), or interpellation triggers minister resignation speculation
+- **L3 (automatic):** Any document involving a vote of confidence, budget bill, or constitutional amendment (grundlagsändring)
+
+---
+
+## ⚠️ Anti-Pattern Gallery
+
+These examples show common failures and their corrections. Use them as calibration references during quality gate review.
+
+### Anti-Pattern 1: Scripted Boilerplate
+
+> ❌ **BAD — Generic "this is important" text without evidence**
+
+```markdown
+## Analysis
+
+This proposition is important for Swedish politics. It will have significant
+implications for the government coalition. The opposition has expressed concerns.
+This development should be monitored closely as it may affect future policy.
+```
+
+**Why it fails:** No dok_id citations, no confidence labels, no specific actors or committees named, no quantified impact, could describe literally any document.
+
+> ✅ **GOOD — Evidence-based analysis with dok_id citations**
+
+```markdown
+## 📊 Analysis — Prop. 2025/26:227 (Skärpta straff vid brott mot journalister)
+
+| # | Finding | Evidence (dok_id) | Confidence | Impact |
+|---|---------|-------------------|:----------:|:------:|
+| F1 | JuU unanimously backed the proposition — rare cross-party consensus on press freedom | H901JuU15, vote record 2026-03-28 | HIGH | HIGH |
+| F2 | SD filed a reservation on penalty ranges (§4–6) — signals opposition to sentencing reform scope | H901JuU15 reservation (SD), dok_id H901JuU15r1 | HIGH | MEDIUM |
+| F3 | Prop references EU Directive 2024/1083 — external compliance driver limits parliamentary discretion | Prop. 2025/26:227, section 3.2 | MEDIUM | MEDIUM |
+```
+
+**Why it passes:** Every claim has a dok_id, confidence level, and impact rating. Specific committee (JuU), party (SD), and document references. Structured table format.
+
+---
+
+### Anti-Pattern 2: Summary Without Structure
+
+> ❌ **BAD — Prose-only narrative with no analytical framework**
+
+```markdown
+The budget debate continued today with several speeches from government and
+opposition MPs. The Finance Committee presented its report and voting followed
+party lines mostly. Some interesting points were raised about healthcare funding
+and defense spending. The coalition appears stable for now but there are some
+tensions beneath the surface.
+```
+
+**Why it fails:** No tables, no Mermaid diagrams, no confidence labels, no SWOT/Risk/Threat framework applied, reads like a newspaper summary rather than intelligence analysis.
+
+> ✅ **GOOD — Tables + Mermaid + confidence labels**
+
+```markdown
+## 🗳️ Voting Analysis — FiU20 (Vårbudget 2026)
+
+| Party | Ja | Nej | Avstår | Frånvarande | Alignment |
+|:-----:|:--:|:---:|:------:|:-----------:|:---------:|
+| S | 0 | 107 | 0 | 0 | Opposition bloc |
+| M | 68 | 0 | 0 | 2 | Government bloc |
+| SD | 0 | 0 | 73 | 0 | ⚠️ Abstained |
+| V | 0 | 24 | 0 | 0 | Opposition bloc |
+| C | 0 | 24 | 0 | 0 | Opposition bloc |
+| MP | 0 | 18 | 0 | 0 | Opposition bloc |
+| L | 16 | 0 | 0 | 0 | Government bloc |
+| KD | 19 | 0 | 0 | 0 | Government bloc |
+
+**Key finding [HIGH]:** SD abstention on vårbudget signals negotiation leverage — government passed with 103 Ja vs 173 Nej + 73 Avstår, relying on procedural rules.
+```
+
+```mermaid
+graph LR
+    subgraph "🗳️ FiU20 Vote Coalition Map"
+        GOV["🟢 Government Bloc<br/>M(68)+L(16)+KD(19)=103"]
+        OPP["🔴 Opposition Bloc<br/>S(107)+V(24)+C(24)+MP(18)=173"]
+        SWI["🟡 SD Abstained<br/>73 seats"]
+    end
+
+    GOV -->|"passed via<br/>procedural rules"| RESULT["📋 Budget Adopted"]
+    SWI -->|"enabled passage<br/>by not voting Nej"| RESULT
+
+    style GOV fill:#28a745,color:#fff
+    style OPP fill:#dc3545,color:#fff
+    style SWI fill:#ffc107,color:#000
+    style RESULT fill:#0d6efd,color:#fff
+```
+
+**Why it passes:** Vote table with party-level granularity, confidence-labeled key finding, Mermaid diagram showing coalition dynamics with color coding, specific seat counts.
+
+---
+
+### Anti-Pattern 3: Overwriting Previous Analysis
+
+> ❌ **BAD — Writing to a shared file that another workflow owns**
+
+```bash
+# Workflow A writes its analysis to the daily summary
+echo "$ANALYSIS" >> analysis/daily/2026-03-30/daily-summary.md
+
+# Workflow B ALSO writes to the same file — OVERWRITES Workflow A
+echo "$ANALYSIS" >> analysis/daily/2026-03-30/daily-summary.md
+```
+
+**Why it fails:** Both workflows compete for the same file path. Git merge conflicts are guaranteed. Workflow A's analysis may be lost entirely.
+
+> ✅ **GOOD — Folder isolation with workflow-specific paths**
+
+```bash
+# Workflow A: proposition analysis → isolated folder
+mkdir -p analysis/daily/2026-03-30/propositioner/
+cat > analysis/daily/2026-03-30/propositioner/prop-2025-26-227.analysis.md
+
+# Workflow B: vote analysis → separate isolated folder
+mkdir -p analysis/daily/2026-03-30/voteringar/
+cat > analysis/daily/2026-03-30/voteringar/fiu20-varbudget.analysis.md
+
+# Synthesis workflow: reads BOTH, writes to its OWN folder
+mkdir -p analysis/daily/2026-03-30/synthesis/
+cat > analysis/daily/2026-03-30/synthesis/evening-intelligence-summary.md
+```
+
+**Why it passes:** Each workflow writes exclusively to its own subfolder. No file path collisions. Synthesis workflow reads from all folders but writes only to `synthesis/`. Follows Rule 1 (Folder Isolation).
+
+---
+
+## ✅ Quality Gate Checklist
+
+Before committing any analysis file, verify it passes ALL four quality dimensions. A file that fails any single blocking check (marked 🔴) MUST be revised before commit.
+
+### 📋 Structural Quality
+
+| # | Check | Blocking | Details |
+|---|-------|:--------:|---------|
+| SQ-1 | Hack23 header block present | 🔴 | Logo, title, badges (Owner, Version, Date, Classification) |
+| SQ-2 | ≥ 1 Mermaid diagram with `style` directives | 🔴 | Color-coded per convention (#dc3545, #fd7e14, #ffc107, #28a745, #0d6efd, #6f42c1) |
+| SQ-3 | ≥ 1 structured evidence table | 🔴 | Must include `Evidence (dok_id)`, `Confidence`, `Impact` columns |
+| SQ-4 | No placeholder text remaining | 🔴 | Zero instances of `[REQUIRED]`, `[OPTIONAL]`, `TODO`, `TBD`, `placeholder` |
+| SQ-5 | Template section structure followed | 🟡 | Sections match the applicable template from `analysis/templates/` |
+| SQ-6 | Document control footer present | 🟡 | Path, version, classification, next review date |
+
+### 🔍 Analytical Quality
+
+| # | Check | Blocking | Details |
+|---|-------|:--------:|---------|
+| AQ-1 | Political classification assigned | 🔴 | Using taxonomy from `political-classification-guide.md` |
+| AQ-2 | SWOT analysis with ≥ 2 entries per quadrant | 🔴 | S, W, O, T each have at least 2 evidence-backed entries |
+| AQ-3 | Risk assessment uses 5×5 matrix | 🟡 | Likelihood (1–5) × Impact (1–5), color-coded in Mermaid |
+| AQ-4 | Threat analysis applies ≥ 1 framework | 🟡 | Attack Tree, Kill Chain, Diamond Model, or Political Threat Taxonomy |
+| AQ-5 | Significance score assigned (1–10 scale) | 🔴 | With justification referencing methodology criteria |
+| AQ-6 | Forward-looking indicators included | 🟡 | ≥ 1 "what to watch" trigger with specific conditions |
+
+### 📎 Evidence Quality
+
+| # | Check | Blocking | Details |
+|---|-------|:--------:|---------|
+| EQ-1 | Every analytical claim has a citation | 🔴 | dok_id, vote record, MP name, committee reference, or named source |
+| EQ-2 | Confidence levels on all key claims | 🔴 | `[HIGH]`, `[MEDIUM]`, or `[LOW]` — no unlabeled assertions |
+| EQ-3 | No opinion-only statements | 🔴 | Every evaluative sentence backed by evidence or labeled `[ASSESSMENT]` |
+| EQ-4 | Cross-references to related documents | 🟡 | Links to related betänkanden, propositioner, or voteringar |
+| EQ-5 | MCP data source attribution | 🟡 | State which `riksdag-regering-mcp` tools provided the source data |
+
+### ✍️ Writing Quality
+
+| # | Check | Blocking | Details |
+|---|-------|:--------:|---------|
+| WQ-1 | Depth level met (L1/L2/L3) | 🔴 | Word count and citation count meet the tier requirements |
+| WQ-2 | Active voice predominates | 🟡 | "FiU recommended…" not "It was recommended by FiU…" |
+| WQ-3 | Swedish political terminology used correctly | 🔴 | Riksdag, utskott, betänkande, votering, reservation — not anglicized equivalents |
+| WQ-4 | Multi-language friendly phrasing | 🟡 | Avoid idioms; define acronyms on first use (e.g., "KU (Konstitutionsutskottet)") |
+| WQ-5 | No subjective language without `[ASSESSMENT]` tag | 🟡 | "controversial" → `[ASSESSMENT: controversial given 60/40 vote split]` |
+
+### 📊 Quality Scoring Rubric
+
+Each analysis file receives a composite score across five dimensions:
+
+| Dimension | Weight | Score Range | Minimum Pass |
+|-----------|:------:|:-----------:|:------------:|
+| 📎 **Evidence** — citation density, dok_id specificity, cross-references | 25% | 0–10 | 7.0 |
+| 📐 **Depth** — word count, framework coverage, forward indicators | 25% | 0–10 | 7.0 |
+| 📋 **Structural** — templates, Mermaid, tables, headers, no placeholders | 20% | 0–10 | 7.0 |
+| 🎯 **Actionable** — triggers, thresholds, "watch next" items, decision support | 15% | 0–10 | 6.0 |
+| ⚖️ **Neutrality** — balanced perspectives, confidence labels, no opinion-only | 15% | 0–10 | 6.0 |
+
+**Composite score = Σ (dimension score × weight)**
+
+| Composite Score | Verdict | Action |
+|:---------------:|---------|--------|
+| **≥ 8.5** | 🟢 **Excellent** — publish immediately | No revision needed |
+| **7.0 – 8.4** | 🟡 **Acceptable** — publish with minor notes | Flag areas below 7.0 for next iteration |
+| **5.0 – 6.9** | 🟠 **Below threshold** — revise before commit | Improve weakest dimensions, re-run quality gate |
+| **< 5.0** | 🔴 **Rejected** — do not commit | Restart analysis following methodology guides |
+
+> **Minimum passing score: 7.0/10 composite.** Any individual dimension scoring below its minimum pass threshold triggers automatic revision regardless of composite score.
+
+---
+
 ## 📚 Related Documents
 
 | Document | Purpose |
@@ -581,7 +908,8 @@ graph TD
 
 **Document Control:**  
 - **Path:** `/analysis/methodologies/ai-driven-analysis-guide.md`  
-- **Version:** 2.0  
+- **Version:** 2.1  
+- **Key Changes v2.1:** Document-type analysis focus table, analysis depth levels (L1/L2/L3), anti-pattern gallery, quality gate checklist with scoring rubric  
 - **Key Changes v2.0:** Folder isolation rules, AI-only content mandate, multi-framework depth requirements, advanced anti-pattern detection  
 - **Classification:** Public  
 - **Next Review:** 2026-06-30

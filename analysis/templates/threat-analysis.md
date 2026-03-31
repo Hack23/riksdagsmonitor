@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-3.1-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 3.1 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `threat-analysis.md` in the workflow's own folder (never overwrite another workflow's files). Each threat requires evidence citations and multi-framework analysis. See [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md).
@@ -300,10 +300,40 @@ graph TD
 
 ---
 
+## 📂 MCP Data Files Used
+
+> *Record all MCP tool calls and data files consulted during this threat analysis for reproducibility and audit traceability.*
+
+`[REQUIRED: List all analysis/daily/YYYY-MM-DD/{articleType}/data/ files consulted]`
+
+| # | Data Source | File / Tool Path | Data Type | Retrieved |
+|:-:|-----------|-----------------|-----------|-----------|
+| 1 | `[e.g. riksdag-regering-mcp]` | `[e.g. search_dokument(doktyp="prop", rm="2025/26")]` | `[e.g. Propositions]` | `[YYYY-MM-DD HH:MM UTC]` |
+| 2 | `[e.g. riksdag-regering-mcp]` | `[e.g. search_voteringar(rm="2025/26")]` | `[e.g. Voting records]` | `[YYYY-MM-DD HH:MM UTC]` |
+| 3 | `[e.g. riksdag-regering-mcp]` | `[e.g. search_anforanden(parti="SD")]` | `[e.g. Speeches]` | `[YYYY-MM-DD HH:MM UTC]` |
+| 4 | `[OPTIONAL]` | `[path or tool call]` | `[type]` | `[timestamp]` |
+
+### Threat Category Data Sources
+
+> **AI Instructions:** Map which MCP tools provided evidence for each assessed threat category. This ensures every threat severity score has traceable data provenance aligned with the 6 canonical categories from [methodology-types.ts](../../scripts/analysis-framework/methodology-types.ts).
+
+| Threat Category | MCP Detection Tool | Key Parameters | Evidence Items | Detection Signal |
+|:---------------:|-------------------|----------------|:--------------:|-----------------|
+| `polarization` | `[e.g. search_anforanden]` | `[e.g. text="migration"]` | `[#]` | `[e.g. hostile debate language]` |
+| `regulatory-overreach` | `[e.g. search_dokument_fulltext]` | `[e.g. query="bemyndigande"]` | `[#]` | `[e.g. expanded delegated powers]` |
+| `institutional-erosion` | `[e.g. search_dokument]` | `[e.g. doktyp="bet", organ="KU"]` | `[#]` | `[e.g. KU criticism pattern]` |
+| `democratic-deficit` | `[e.g. search_voteringar]` | `[e.g. rm="2025/26"]` | `[#]` | `[e.g. procedural shortcuts]` |
+| `economic-disruption` | `[e.g. get_propositioner]` | `[e.g. rm="2025/26"]` | `[#]` | `[e.g. budget deadlock signals]` |
+| `societal-impact` | `[e.g. search_dokument_fulltext]` | `[e.g. query="välfärd"]` | `[#]` | `[e.g. welfare reduction patterns]` |
+
+> **📌 Note:** All files listed MUST exist at the stated paths. Mark transient data as `(transient — not cached)`. Threat category identifiers use canonical slugs matching `ThreatCategory` type in TypeScript.
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/threat-analysis.md`  
 - **Framework Reference:** [THREAT_MODEL.md](../../THREAT_MODEL.md), [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md)  
-- **Version:** 3.0  
+- **Version:** 3.1  
 - **Frameworks:** Attack Trees, Kill Chain, Diamond Model, Political Threat Taxonomy, Threat Actor Profiling  
 - **Classification:** Public  
 - **Next Review:** 2026-06-30

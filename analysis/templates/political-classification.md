@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `classification-results.md` in the workflow's own folder (never overwrite another workflow's files). Replace all `[REQUIRED]` and `[OPTIONAL]` placeholders with actual values. Include Political Temperature Index and Coalition Impact Vector assessments.
@@ -244,9 +244,45 @@ Significance Score: [REQUIRED: see significance-scoring.md, 0–10 composite]
 
 ---
 
+## 📊 Batch Classification Table
+
+*Use this table when classifying multiple events from a single MCP download session. Record the `dok_id` from the Riksdag API response for full traceability.*
+
+> **AI Instructions:** After each MCP data fetch (e.g., using `search_dokument` or `get_propositioner` on the `riksdag-regering-mcp` server), classify every returned document in this table before proceeding to detailed per-file analysis. The `dok_id` column MUST match the identifier from the Riksdag Open Data API response.
+
+| # | dok_id | Event Type | Sensitivity | Primary Domain | Urgency | Impact Scope | L×I | Significance | Decision |
+|:-:|--------|-----------|:-----------:|:-------------:|:-------:|:------------:|:---:|:------------:|----------|
+| 1 | `[dok_id]` | `[type]` | `[🟢/🟡/🟠/🔴]` | `[domain]` | `[level]` | `[scope]` | `[#]` | **`[score]`** | `[action]` |
+| 2 | `[dok_id]` | `[type]` | `[🟢/🟡/🟠/🔴]` | `[domain]` | `[level]` | `[scope]` | `[#]` | **`[score]`** | `[action]` |
+| 3 | `[dok_id]` | `[type]` | `[🟢/🟡/🟠/🔴]` | `[domain]` | `[level]` | `[scope]` | `[#]` | **`[score]`** | `[action]` |
+
+**Decision Legend:**
+- ⚡ **Breaking** — Significance ≥ 8, urgency CRITICAL/URGENT → immediate full analysis
+- 📰 **Priority** — Significance 6–7 → full per-file analysis within 2h
+- 📋 **Monitor** — Significance 4–5 → include in synthesis, no standalone article
+- 🗄️ **Archive** — Significance < 4 → log for trend tracking only
+
+---
+
+## 📂 MCP Data Files Used
+
+> *Record all data files and MCP tool calls consulted during this classification for audit traceability and reproducibility.*
+
+`[REQUIRED: List all analysis/daily/YYYY-MM-DD/{articleType}/data/ files consulted]`
+
+| # | File Path | Source MCP Tool | Data Type | Freshness |
+|:-:|-----------|----------------|-----------|:---------:|
+| 1 | `[REQUIRED: e.g. analysis/daily/2026-03-30/propositions/data/H901FiU1.json]` | `[e.g. search_dokument]` | `[e.g. proposition / motion / vote]` | `[Current / Cached]` |
+| 2 | `[REQUIRED: additional data file]` | `[REQUIRED: MCP tool id, e.g. get_propositioner]` | `[data type]` | `[freshness]` |
+| 3 | `[OPTIONAL: additional data file]` | `[OPTIONAL: MCP tool id, e.g. get_votering]` | `[data type]` | `[freshness]` |
+
+> **📌 AI Instructions:** Populate this table with every MCP tool call and data file actually consulted during classification. This provides full data provenance for the classification decision. All files listed MUST exist at the stated paths; mark transient data as `(transient — not cached)`.
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/political-classification.md`  
-- **Version:** 2.0  
+- **Version:** 2.1  
 - **Advanced Dimensions:** Political Temperature Index, Strategic Significance, Coalition Impact Vector  
 - **Framework Reference:** [methodologies/political-classification-guide.md](../methodologies/political-classification-guide.md)  
 - **Classification:** Public  

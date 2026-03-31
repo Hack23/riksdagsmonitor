@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -56,7 +56,7 @@ graph LR
 
 ### Evidence Hierarchy (by confidence level)
 
-| Confidence | Acceptable Sources | MCP Tool |
+| Confidence | Acceptable Sources | Tool / Data Source |
 |:----------:|-------------------|----------|
 | **HIGH** | Riksdag official document (proposition, betänkande, protokoll) | `get_dokument`, `search_dokument` |
 | **HIGH** | Verified voting record | `search_voteringar` |
@@ -384,19 +384,259 @@ quadrantChart
 
 ---
 
+## 🇪🇺 EU Parliament Monitor Integration
+
+### Cross-Parliament Evidence Hierarchy
+
+Riksdagsmonitor enriches its SWOT analysis with **EU Parliament data** via the [European Parliament MCP Server](https://github.com/Hack23/European-Parliament-MCP-Server). When Swedish domestic policy intersects EU legislation, **cross-parliament evidence** strengthens confidence assessments.
+
+| Confidence | Acceptable Sources | Tool / Data Source |
+|:----------:|-------------------|----------|
+| **HIGH** | Official Riksdag voted text, verified roll-call record | `search_voteringar`, `get_betankanden` |
+| **HIGH** | Government proposition text (approved or tabled) | `get_propositioner` |
+| **HIGH** | SCB / Eurostat official statistics | SCB API, World Bank, Eurostat |
+| **HIGH** | EP plenary roll-call vote (verified) | EP Open Data `/votes` |
+| **MEDIUM** | Named MP speech in Riksdag plenary record | `search_anforanden` |
+| **MEDIUM** | Committee / commission statement (Riksdag or EP) | `search_dokument`, EP `/committees` |
+| **MEDIUM** | Verified media outlet with named sources | External (flagged) |
+| **MEDIUM** | Swedish MEP activity in EP plenary or committee | EP `/meps`, EP `/activities` |
+| **LOW** | Single unnamed source | — (flag for verification) |
+| **REJECTED** | Analyst inference without evidence | — (not accepted) |
+
+> **Cross-Parliament Rule:** When a SWOT entry cites both a Riksdag source (`dok_id`) and an EP source (EP document reference), it receives a **+1 confidence boost** (e.g., MEDIUM → HIGH) because cross-parliament corroboration significantly increases reliability.
+
+### Cross-Parliament Confidence Decay
+
+SWOT entries using cross-parliament evidence follow **slower/extended decay** because EU legislative timelines are longer (co-decision procedures span 12–24 months):
+
+| Original Confidence | After 30 days | After 90 days | After 180 days |
+|:-------------------:|:-------------:|:-------------:|:--------------:|
+| **HIGH** | HIGH | HIGH | MEDIUM |
+| **MEDIUM** | MEDIUM | LOW | EXPIRED |
+| **LOW** | LOW | EXPIRED | EXPIRED |
+
+> **Note:** EU legislative procedure references (COD, CNS, APP) decay **slower** than domestic Riksdag references because EU procedures move on multi-year timescales. A pending EU directive cited in a SWOT entry retains HIGH confidence for 90 days (vs. 30 for domestic-only entries). **EXPIRED** entries must be re-verified via EP Open Data or removed from active analysis.
+
+---
+
+### 🇪🇺 EU Parliament MCP Data Sources for Each Quadrant
+
+#### ✅ Strengths — EU Parliament Dimension
+
+Swedish government strengths reinforced by EU-level legislative achievements and MEP influence:
+
+| Strength Type | Riksdag MCP Tool | EU Parliament Source | Cross-Reference Strategy |
+|--------------|------------------|---------------------|-------------------------|
+| Legislative achievement with EU mandate | `get_betankanden`, `search_voteringar` | EP `/votes` (roll-call) | Match Riksdag betänkande to EU directive transposition |
+| Coalition cohesion on EU policy | `search_voteringar`, `get_propositioner` | EP `/meps` (Swedish MEP votes) | Compare coalition party discipline: Riksdag vs. EP group |
+| Strong EP group alignment | External/manual: EP seat count data (e.g. European-Parliament-MCP-Server) | EP `/committees` | Swedish MEPs in key EP committee chair/rapporteur roles |
+| EU funding secured | `search_dokument` (`organ=FiU`) | Eurostat, EU budget data | Cross-reference FiU assessment with EU allocation data |
+
+#### ⚠️ Weaknesses — EU Parliament Dimension
+
+Party fragmentation and policy stalls visible through cross-parliament comparison:
+
+| Weakness Type | Riksdag MCP Tool | EU Parliament Source | Cross-Reference Strategy |
+|--------------|------------------|---------------------|-------------------------|
+| Riksdag–EP voting misalignment | `search_voteringar` (defection rates) | EP `/votes` (Swedish MEPs) | Party votes YES in Riksdag but Swedish MEPs vote NO in EP |
+| Unanswered interpellationer on EU policy | `get_interpellationer` | EP `/documents` | Government silent on EU issues raised by opposition |
+| EU infringement proceedings against Sweden | `search_dokument` (`organ=UU`) | EUR-Lex infringement data | Map pending infringements to legislative inaction |
+| Swedish MEP influence deficit | — | EP `/committees`, `/activities` | Few Swedish rapporteurships or committee chairs |
+
+#### 🚀 Opportunities — EU Parliament Dimension
+
+Pending EU legislation and cross-party consensus windows:
+
+| Opportunity Type | Riksdag MCP Tool | EU Parliament Source | Cross-Reference Strategy |
+|-----------------|------------------|---------------------|-------------------------|
+| Pending EU legislation favourable to Sweden | `get_propositioner`, `get_calendar_events` | EP `/documents` (COD procedures) | Match pending EP votes to Riksdag preparatory work |
+| Cross-party consensus in EP benefiting Sweden | `search_voteringar` | EP `/votes` (Swedish MEP unanimity) | All Swedish MEPs voting together = strong national position |
+| EU funding opportunities | `search_dokument` (`organ=FiU`) | EU budget / NextGenerationEU | Identify uncommitted EU funds for Swedish priorities |
+| Nordic bloc coordination in EP | `search_dokument` (`organ=UU`) | EP `/meps` (Nordic MEPs) | Joint Nordic positions in EP committees and votes |
+
+#### 🔴 Threats — EU Parliament Dimension
+
+SD leverage on EU policy, budget disputes, and opposition attacks with EU ammunition:
+
+| Threat Type | Riksdag MCP Tool | EU Parliament Source | Cross-Reference Strategy |
+|------------|------------------|---------------------|-------------------------|
+| SD leveraging EU migration policy | `search_voteringar`, `search_anforanden` | EP `/votes` (ECR group) | SD demands map to ECR group positions in EP |
+| Opposition using EU comparison data | `get_motioner`, `search_anforanden` | Eurostat, EP `/documents` | S/V/MP citing EU benchmarks Sweden fails to meet |
+| EU regulatory burden on Swedish industry | `search_dokument` | EP `/documents` (pending directives) | Upcoming EU regulation impact on Swedish competitiveness |
+| Budget disputes amplified by EU contributions | `search_voteringar` (budget votes) | EU budget data | Swedish EU contribution changes affecting domestic budget |
+
+---
+
+## 🔄 Cross-Parliament SWOT Aggregation
+
+### Riksdag ↔ EU Parliament Aggregation Pipeline
+
+When political analysis requires both domestic and EU-level intelligence, individual party SWOTs aggregate through **two parliamentary layers**:
+
+```mermaid
+flowchart TD
+    subgraph "Layer 1: Individual Party SWOTs"
+        M["🟦 M<br/>Moderaterna"]
+        KD["🟦 KD<br/>Kristdemokraterna"]
+        L["🟦 L<br/>Liberalerna"]
+        SD["🟨 SD<br/>Sverigedemokraterna"]
+        S["🟥 S<br/>Socialdemokraterna"]
+        V["🟥 V<br/>Vänsterpartiet"]
+        MP["🟩 MP<br/>Miljöpartiet"]
+        C["🟩 C<br/>Centerpartiet"]
+    end
+
+    subgraph "Layer 2: Bloc Aggregation"
+        GOV["💼 Government Bloc SWOT<br/>M + KD + L + SD<br/>(Tidöavtalet)"]
+        OPP["📢 Opposition Bloc SWOT<br/>S + V + MP + C"]
+    end
+
+    subgraph "Layer 3: Riksdag Landscape"
+        RIK["🇸🇪 Riksdag Landscape SWOT"]
+    end
+
+    subgraph "Layer 4: EU Parliament Dimension"
+        EPMEP["🇪🇺 Swedish MEP SWOT<br/>21 MEPs across EP groups"]
+        EPGRP["🇪🇺 EP Group Alignment SWOT<br/>EPP · S&D · RE · ECR · Greens/EFA · GUE/NGL"]
+    end
+
+    subgraph "Layer 5: Cross-Parliament Synthesis"
+        XSWOT["🌐 Cross-Parliament<br/>Landscape SWOT"]
+    end
+
+    M --> GOV
+    KD --> GOV
+    L --> GOV
+    SD --> GOV
+    S --> OPP
+    V --> OPP
+    MP --> OPP
+    C --> OPP
+
+    GOV --> RIK
+    OPP --> RIK
+
+    RIK --> XSWOT
+    EPMEP --> XSWOT
+    EPGRP --> XSWOT
+
+    XSWOT --> INT{{"🔍 Cross-Parliament<br/>Intersection Analysis"}}
+    INT --> CT["⚔️ Contested terrain:<br/>Gov Strength + Opp Threat<br/>+ EP divergence"]
+    INT --> PR["⚠️ Political risk:<br/>Gov Weakness + Opp Opportunity<br/>+ EU infringement"]
+    INT --> PW["🤝 Policy window:<br/>Shared Opportunity<br/>+ EP cross-group consensus"]
+    INT --> SR["🚨 System-level risk:<br/>Shared Threat<br/>+ EU compliance gap"]
+
+    style GOV fill:#1a5276,color:#fff,stroke:#2980b9
+    style OPP fill:#922b21,color:#fff,stroke:#e74c3c
+    style RIK fill:#1b4f72,color:#fff,stroke:#2e86c1
+    style EPMEP fill:#1a5276,color:#fff,stroke:#3498db
+    style EPGRP fill:#154360,color:#fff,stroke:#5dade2
+    style XSWOT fill:#0b5345,color:#fff,stroke:#1abc9c
+    style CT fill:#f39c12,color:#000,stroke:#e67e22
+    style PR fill:#e74c3c,color:#fff,stroke:#c0392b
+    style PW fill:#27ae60,color:#fff,stroke:#2ecc71
+    style SR fill:#8e44ad,color:#fff,stroke:#9b59b6
+```
+
+### Cross-Parliament Intersection Rules
+
+| Riksdag SWOT Element | EU Parliament Element | Intersection Type | Significance |
+|:--------------------:|:--------------------:|:-----------------:|:------------|
+| **Gov Strength** + EP group alignment | Swedish MEPs in majority EP group | **Reinforced strength** | Sweden's position amplified in EU negotiations |
+| **Gov Weakness** + EP infringement pressure | Pending EU infringement case | **Amplified vulnerability** | Domestic policy failure + EU enforcement = high risk |
+| **Gov Threat** (SD leverage) + ECR group dynamics | ECR group internal splits | **Mediated threat** | SD leverage may be constrained by EP group realities |
+| **Opp Opportunity** + EP cross-group majority | Broad EP consensus on policy | **Enhanced opportunity** | Opposition cites EU consensus to pressure government |
+| **Shared Opportunity** + EU legislative window | Pending COD procedure favourable to Sweden | **Strategic window** | Cross-bloc domestic deal possible under EU mandate |
+| **Shared Threat** + EU compliance deadline | Hard EU transposition deadline | **Elevated system risk** | Failure to act has legal consequences beyond domestic politics |
+
+### Swedish Party → EP Group Mapping
+
+Understanding which EP groups align with Swedish parties is essential for cross-parliament SWOT:
+
+| Swedish Party | EP Political Group | Alignment Strength | SWOT Implication |
+|:------------:|:-----------------:|:------------------:|:----------------|
+| **M** (Moderaterna) | EPP (European People's Party) | Strong | EPP majority positions reinforce M's domestic agenda |
+| **KD** (Kristdemokraterna) | EPP | Strong | KD benefits from EPP family policy positions |
+| **L** (Liberalerna) | Renew Europe (RE) | Moderate | RE liberal positions sometimes conflict with Tidöavtalet |
+| **SD** (Sverigedemokraterna) | ECR (European Conservatives) | Moderate | ECR migration stance aligns but EU-scepticism limits leverage |
+| **S** (Socialdemokraterna) | S&D (Socialists & Democrats) | Strong | S&D positions provide ammunition for opposition criticism |
+| **V** (Vänsterpartiet) | GUE/NGL (The Left) | Moderate | EU-critical stance limits V's use of EP evidence |
+| **MP** (Miljöpartiet) | Greens/EFA | Strong | Green Deal alignment gives MP strong EU-backed arguments |
+| **C** (Centerpartiet) | Renew Europe (RE) | Moderate | RE market-liberal positions support C's deregulation agenda |
+
+---
+
+## 🛡️ Evidence-Based vs. Opinion-Based SWOT — Full Decision Tree
+
+Every SWOT entry — whether from Riksdag, EU Parliament, or cross-parliament sources — must pass this gate:
+
+```mermaid
+flowchart TD
+    A["📝 SWOT Entry Submitted"] --> B{"Has verifiable<br/>evidence?"}
+
+    B -->|"✅ Yes"| C{"Source type?"}
+    B -->|"❌ No"| REJ["🚫 REJECTED<br/>Opinion-Based<br/>Return for evidence<br/>gathering or discard"]
+
+    C -->|"Riksdag dok_id<br/>or roll-call vote"| D["📊 Riksdag-Sourced<br/>HIGH confidence"]
+    C -->|"EP document ref<br/>or roll-call vote"| E["🇪🇺 EP-Sourced<br/>HIGH confidence"]
+    C -->|"Both Riksdag +<br/>EP sources"| F["🌐 Cross-Parliament<br/>HIGH+ confidence<br/>(boosted)"]
+    C -->|"Named speech or<br/>committee statement"| G["💬 Statement-Sourced<br/>MEDIUM confidence"]
+    C -->|"Verified media<br/>with named sources"| H["📰 Media-Sourced<br/>MEDIUM confidence"]
+    C -->|"Single unnamed<br/>source"| I["⚠️ Single-Source<br/>LOW confidence<br/>Flag for verification"]
+
+    D --> PUB["✅ PUBLISHABLE<br/>Include in active SWOT"]
+    E --> PUB
+    F --> PUB
+    G --> PUB
+    H --> PUB
+    I --> PUB
+
+    REJ --> REWORK["🔄 Rework: Gather evidence<br/>via MCP tools or<br/>discard entry"]
+
+    style A fill:#2c3e50,color:#fff,stroke:#34495e
+    style B fill:#8e44ad,color:#fff,stroke:#9b59b6
+    style C fill:#2980b9,color:#fff,stroke:#3498db
+    style D fill:#27ae60,color:#fff,stroke:#2ecc71
+    style E fill:#2980b9,color:#fff,stroke:#3498db
+    style F fill:#0b5345,color:#fff,stroke:#1abc9c
+    style G fill:#f39c12,color:#000,stroke:#e67e22
+    style H fill:#f39c12,color:#000,stroke:#e67e22
+    style I fill:#e67e22,color:#fff,stroke:#d35400
+    style PUB fill:#27ae60,color:#fff,stroke:#2ecc71
+    style REJ fill:#e74c3c,color:#fff,stroke:#c0392b
+    style REWORK fill:#95a5a6,color:#000,stroke:#7f8c8d
+```
+
+### ⛔ Anti-Pattern Warning
+
+> **🚨 SWOT entries without specific evidence citations (`dok_id`, MCP tool outputs, EP document references, or named sources) are REJECTED.**
+>
+> This is a **hard gate** — no exceptions. Analyst inference, general impressions, "common knowledge," and unsourced claims do not qualify as evidence. If an entry cannot cite at least one of:
+> - A Riksdag document ID (`dok_id`, e.g., `H901FiU1`)
+> - An MCP tool query result (e.g., `search_voteringar` output)
+> - An EP document reference (e.g., `A9-0123/2026`)
+> - A named primary source with date and context
+>
+> …then it **must not appear** in a published SWOT analysis. Return it for evidence gathering via the appropriate MCP tools, or discard it entirely.
+
+---
+
 ## 🔗 Related Documents
 
 - [templates/swot-analysis.md](../templates/swot-analysis.md) — SWOT template
 - [reference/isms-style-guide-adaptation.md](../reference/isms-style-guide-adaptation.md) — Writing standards
 - [SWOT.md](../../SWOT.md) — Platform strategic SWOT
 - [political-style-guide.md](political-style-guide.md) — Writing standards
+- [EU Parliament MCP Server](https://github.com/Hack23/European-Parliament-MCP-Server) — EP data integration
+- [EU Parliament Monitor](https://euparliamentmonitor.com) — Pan-European legislative intelligence
 
 ---
 
 **Document Control:**  
 - **Path:** `/analysis/methodologies/political-swot-framework.md`  
 - **CIA Reference:** [CIA SWOT.md](https://github.com/Hack23/cia/blob/master/SWOT.md)  
-- **Version:** 2.0  
-- **Advanced Techniques:** Cross-SWOT Interference, TOWS Matrix, Scenario Generation, Power-Interest Mapping  
+- **Version:** 2.1  
+- **Advanced Techniques:** Cross-SWOT Interference, TOWS Matrix, Scenario Generation, Power-Interest Mapping, EU Parliament Cross-Reference  
+- **EU Integration:** European Parliament MCP Server data sources, cross-parliament aggregation, Swedish MEP ↔ EP group mapping  
 - **Classification:** Public  
 - **Next Review:** 2026-06-30
