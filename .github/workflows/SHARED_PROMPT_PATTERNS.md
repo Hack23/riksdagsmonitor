@@ -48,7 +48,7 @@ echo "=== Mandatory Analysis Check ==="
 EXISTING_ANALYSIS=$(find "analysis/daily/${ARTICLE_DATE}/" -name "*.md" -type f 2>/dev/null | wc -l)
 PENDING_ANALYSIS=$(find "analysis/daily/${ARTICLE_DATE}/" -name "*-analysis.md" -type f 2>/dev/null | wc -l)
 REQUIRED_PLACEHOLDERS=$(grep -rl '\[REQUIRED\]' "analysis/daily/${ARTICLE_DATE}/" 2>/dev/null | wc -l)
-MISSING_MERMAID=$(find "analysis/daily/${ARTICLE_DATE}/" -name "*.md" -type f -exec sh -c 'grep -qL "```mermaid" "$1" && echo "$1"' _ {} \; 2>/dev/null | wc -l)
+MISSING_MERMAID=$(find "analysis/daily/${ARTICLE_DATE}/" -name "*.md" -type f -exec grep -L "```mermaid" {} \; 2>/dev/null | wc -l)
 
 echo "📊 Existing analysis files: $EXISTING_ANALYSIS"
 echo "📊 Per-file analyses: $PENDING_ANALYSIS"

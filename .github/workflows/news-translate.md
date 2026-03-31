@@ -707,7 +707,7 @@ done
 if [ -n "$ANALYSIS_TARGET" ]; then
   # Count files with improvement opportunities
   REQUIRED_PLACEHOLDERS=$(grep -rl '\[REQUIRED\]' "$ANALYSIS_TARGET" 2>/dev/null | wc -l)
-  MISSING_MERMAID=$(find "$ANALYSIS_TARGET" -name "*.md" -type f 2>/dev/null | while read f; do grep -qL '```mermaid' "$f" 2>/dev/null && echo "$f"; done | wc -l)
+  MISSING_MERMAID=$(find "$ANALYSIS_TARGET" -name "*.md" -type f 2>/dev/null | while read f; do ! grep -q '```mermaid' "$f" 2>/dev/null && echo "$f"; done | wc -l)
   echo "⚠️ Files with [REQUIRED] placeholders: $REQUIRED_PLACEHOLDERS"
   echo "⚠️ Files missing Mermaid diagrams: $MISSING_MERMAID"
   echo "📍 Analysis target directory: $ANALYSIS_TARGET"
@@ -785,7 +785,13 @@ for f in $(git diff --cached --name-only -- 'news/*-en.html' 'news/*-sv.html' 2>
   git checkout -- "$f" 2>/dev/null || true
 done
 # Final: stage non-EN/SV translation files, metadata, AND improved analysis
-git add news/*-da.html news/*-no.html news/*-fi.html news/*-de.html news/*-fr.html news/*-es.html news/*-nl.html news/*-ar.html news/*-he.html news/*-ja.html news/*-ko.html news/*-zh.html news/metadata/ 2>/dev/null
+for pattern in \
+  "news/*-da.html" "news/*-no.html" "news/*-fi.html" "news/*-de.html" \
+  "news/*-fr.html" "news/*-es.html" "news/*-nl.html" "news/*-ar.html" \
+  "news/*-he.html" "news/*-ja.html" "news/*-ko.html" "news/*-zh.html" \
+  "news/metadata/"; do
+  git add $pattern 2>/dev/null || true
+done
 
 # Stage improved analysis artifacts (mandatory — no workflow run wasted)
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
@@ -793,15 +799,15 @@ ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 git add "analysis/daily/${ARTICLE_DATE}/" 2>/dev/null || true
 # Also check nearby dates if analysis was improved there
 for DAYS_BACK in 1 2 3; do
-  CHECK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || true)
+  CHECK_DATE="$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -j -f "%Y-%m-%d" "$ARTICLE_DATE" -v-"$DAYS_BACK"d +%Y-%m-%d 2>/dev/null || true)"
   [ -z "$CHECK_DATE" ] && continue
   git add "analysis/daily/${CHECK_DATE}/" 2>/dev/null || true
 done
 
-# Enforce safe-outputs 100-file PR limit
+# Preemptively enforce safe-outputs 100-file PR limit (buffer at >90 staged files)
 STAGED_COUNT=$(git diff --cached --name-only | wc -l)
 if [ "$STAGED_COUNT" -gt 90 ]; then
-  echo "⚠️ Staged $STAGED_COUNT files exceeds 100-file PR limit. Removing analysis to fit."
+  echo "⚠️ Staged $STAGED_COUNT files is approaching the 100-file PR limit (preemptive guard at >90). Removing analysis to stay within the limit."
   git reset HEAD -- analysis/ 2>/dev/null || true
   STAGED_COUNT=$(git diff --cached --name-only | wc -l)
 fi
@@ -818,9 +824,9 @@ echo "📊 Final staged file count: $STAGED_COUNT"
 # Use descriptive commit message reflecting actual work
 ANALYSIS_STAGED=$(git diff --cached --name-only -- 'analysis/' 2>/dev/null | wc -l)
 if [ "$ANALYSIS_STAGED" -gt 0 ]; then
-  git commit -m "🌐 Translated articles + 📊 Analysis improvements ($ANALYSIS_STAGED files) - $(date +%Y-%m-%d)"
+  git commit -m "🌐 Translated articles + 📊 Analysis improvements ($ANALYSIS_STAGED files) - $(date -u +%Y-%m-%d)"
 else
-  git commit -m "🌐 Translated articles - $(date +%Y-%m-%d)"
+  git commit -m "🌐 Translated articles - $(date -u +%Y-%m-%d)"
 fi
 ```
 
