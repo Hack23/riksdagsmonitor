@@ -1,139 +1,59 @@
-<p align="center">
-  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
-</p>
+# 📈 Significance Scoring Results
 
-<h1 align="center">📊 Significance Scoring Analysis</h1>
-
-<p align="center">
-  <strong>📊 Multi-Dimensional Event Significance — 2026-03-31</strong><br>
-  <em>🎯 Parliamentary · Policy · Public Interest · Urgency · Cross-Party</em>
-</p>
-
-**Document Owner**: CEO | **Version**: 2.0 | **Last Updated**: 2026-03-31 | **Org.nr**: 559432-2196 | **Classification**: PUBLIC
-
----
-
-## 📋 Event Context
+## 📋 Scoring Context
 
 | Field | Value |
 |-------|-------|
 | **Scoring ID** | `SIG-2026-03-31-001` |
-| **Analysis Date** | `2026-03-31 06:00 UTC` |
-| **Riksmöte** | 2025/26 |
-| **Events Scored** | 9 documents |
-| **Scoring Dimensions** | 5 (Parliamentary, Policy Impact, Public Interest, Urgency, Cross-party Relevance) |
-| **Scale** | 1-10 per dimension, composite = weighted average |
-| **Produced By** | Copilot Political Intelligence Agent |
+| **Analysis Date** | 2026-03-31 12:04 UTC |
+| **Documents Scored** | 6 |
+| **Produced By** | news-realtime-monitor |
 
 ---
 
-## 📊 Scoring Profile
+## 📊 Significance Distribution
 
 ```mermaid
 graph LR
-    subgraph "📊 Significance Distribution — 2026-03-31"
-        HIGH["🔴 HIGH ≥8<br/>0 documents"]
-        ELEVATED["🟠 ELEVATED 6-7<br/>2 documents"]
-        MODERATE["🟡 MODERATE 4-5<br/>2 documents"]
-        LOW["🟢 LOW 1-3<br/>5 documents"]
+    subgraph "📈 Significance Scoring — 2026-03-31"
+        subgraph "≥8 Breaking News"
+            D1["HD03229: 8/10<br/>New Reception Law"]
+        end
+        subgraph "6-7 Major Analysis"
+            D2["HD03215: 7/10<br/>Settlement Law"]
+            D3["HD01JuU29: 6/10<br/>Security Protection"]
+            D4["HD03222: 6/10<br/>Crime Victims"]
+        end
+        subgraph "4-5 Standard"
+            D5["HD01MJU30: 5/10<br/>Climate Goals"]
+            D6["HD03223: 5/10<br/>Consumer Credit"]
+        end
     end
-    HIGH --> ELEVATED --> MODERATE --> LOW
-    style HIGH fill:#dc3545,stroke:#000,color:#fff
-    style ELEVATED fill:#fd7e14,stroke:#000,color:#fff
-    style MODERATE fill:#ffc107,stroke:#000,color:#000
-    style LOW fill:#28a745,stroke:#000,color:#fff
+
+    style D1 fill:#dc3545,stroke:#333,color:#fff
+    style D2 fill:#fd7e14,stroke:#333,color:#000
+    style D3 fill:#ffc107,stroke:#333,color:#000
+    style D4 fill:#ffc107,stroke:#333,color:#000
+    style D5 fill:#28a745,stroke:#333,color:#fff
+    style D6 fill:#28a745,stroke:#333,color:#fff
 ```
 
----
+## 📋 Scoring Details
 
-## 🏆 Batch Significance Scores
-
-| Rank | dok_id | Title | Parl. | Policy | Public | Urgency | X-Party | **Composite** | Tier |
-|:----:|--------|-------|:-----:|:------:|:------:|:-------:|:-------:|:-:|------|
-| 1 | `HD03229` | En ny mottagandelag | 8 | 8 | 8 | 6 | 5 | **7.0** | 🟠 ELEVATED |
-| 2 | `HD03215` | Tidsbegränsat boende för vissa nyanlända | 7 | 8 | 7 | 6 | 5 | **6.6** | 🟠 ELEVATED |
-| 3 | `HD03222` | Ersättningsregler med brottsoffret i fokus | 5 | 6 | 6 | 4 | 4 | **5.0** | 🟡 MODERATE |
-| 4 | `HD03223` | En ny konsumentkreditlag | 4 | 5 | 4 | 3 | 3 | **3.8** | 🟢 LOW |
-| 5 | `HD01MJU18` | UTP-direktivets förbud mot sena annulleringar | 3 | 3 | 2 | 3 | 3 | **2.8** | 🟢 LOW |
-| 6 | `HD11671` | Asbestexponering och brister i arbetsmiljöarbetet | 2 | 3 | 4 | 2 | 2 | **2.6** | 🟢 LOW |
-| 7 | `HD11670` | Fransk rapport om Muslimska brödraskapet | 2 | 2 | 3 | 2 | 3 | **2.4** | 🟢 LOW |
-| 8 | `HD10424` | Flyglinjen Torsby/Hagfors–Arlanda | 2 | 2 | 3 | 2 | 2 | **2.2** | 🟢 LOW |
-| 9 | `HD10425` | Fördelning av ansvar för infrastrukturkostnader | 2 | 2 | 2 | 2 | 2 | **2.0** | 🟢 LOW |
+| dok_id | Title | Raw Score | Tier | Factors |
+|--------|-------|:---------:|:----:|---------|
+| HD03229 | En ny mottagandelag | 8/10 | BREAKING | +2 migration policy, +2 budget impact, +2 3+ parties affected, +1 minister named, +1 dual-proposition coordination |
+| HD03215 | Tidsbegränsat boende bosättningslag | 7/10 | MAJOR | +2 migration policy, +2 housing impact, +1 minister named, +2 municipal autonomy |
+| HD01JuU29 | Stärkt säkerhetsskydd fastigheter | 6/10 | MAJOR | +2 defense/security, +2 national security, +2 cross-party |
+| HD03222 | Ersättningsregler brottsoffret | 6/10 | MAJOR | +2 criminal justice, +2 welfare reform, +1 minister named |
+| HD01MJU30 | Sveriges klimatmål 2030 | 5/10 | STANDARD | +2 climate policy, +2 3+ parties involved, +1 EU dimension |
+| HD03223 | En ny konsumentkreditlag | 5/10 | STANDARD | +2 consumer protection, +2 budget impact, +1 EU alignment |
 
 ---
 
-## 📝 Individual Scoring — Top 5 Documents
+## 📊 MCP Data Files Used
 
-### 1. HD03229 — En ny mottagandelag (Composite: 7.0/10) 🟠
-
-| Dimension | Score | Rationale |
-|-----------|:-----:|-----------|
-| Parliamentary | 8 | Government proposition (Prop 2025/26:144) — requires Riksdag vote; signed by PM Ebba Busch; processed via Justitiedepartementet |
-| Policy Impact | 8 | Comprehensive overhaul of Sweden's reception law for asylum seekers — structural migration reform with long-term implications |
-| Public Interest | 8 | Migration is the #1 public concern in Swedish polls; high media salience expected |
-| Urgency | 6 | Standard legislative timeline; arbetsplenum today provides debate opportunity |
-| Cross-party | 5 | Government + SD aligned on migration; S/V/MP expected to oppose; limited cross-bloc potential |
-
-### 2. HD03215 — Tidsbegränsat boende (Composite: 6.6/10) 🟠
-
-| Dimension | Score | Rationale |
-|-----------|:-----:|-----------|
-| Parliamentary | 7 | Government proposition (Prop 2025/26:146) via Arbetsmarknadsdepartementet; Minister Mohamsson (L) |
-| Policy Impact | 8 | Introduces time-limited housing for newly arrived immigrants — significant welfare-state change |
-| Public Interest | 7 | Directly affects integration debate; housing is a secondary but important public concern |
-| Urgency | 6 | Paired with HD03229 for coordinated migration push |
-| Cross-party | 5 | Same coalition dynamics as HD03229; L minister adds intra-coalition dimension |
-
-### 3. HD03222 — Ersättningsregler med brottsoffret i fokus (Composite: 5.0/10) 🟡
-
-| Dimension | Score | Rationale |
-|-----------|:-----:|-----------|
-| Parliamentary | 5 | Government proposition (Prop 2025/26:148); Justice committee referral expected |
-| Policy Impact | 6 | Reforms crime victim compensation rules — meaningful for affected population |
-| Public Interest | 6 | Crime and justice consistently rank in top-5 public concerns |
-| Urgency | 4 | Standard timeline; no emergency provisions |
-| Cross-party | 4 | Broad support likely for victim-focused reform; limited controversy |
-
-### 4. HD03223 — En ny konsumentkreditlag (Composite: 3.8/10) 🟢
-
-| Dimension | Score | Rationale |
-|-----------|:-----:|-----------|
-| Parliamentary | 4 | Government proposition (Prop 2025/26:149); technical regulatory update |
-| Policy Impact | 5 | Consumer credit regulation affects financial sector and household debt |
-| Public Interest | 4 | Moderate interest; consumer protection is secondary concern |
-| Urgency | 3 | Routine legislative timeline |
-| Cross-party | 3 | Technical nature limits political polarization |
-
-### 5. HD01MJU18 — UTP-direktivets förbud mot sena annulleringar (Composite: 2.8/10) 🟢
-
-| Dimension | Score | Rationale |
-|-----------|:-----:|-----------|
-| Parliamentary | 3 | Committee report (MJU18) — procedural EU compliance update |
-| Policy Impact | 3 | Narrow scope: EU trade directive implementation fix |
-| Public Interest | 2 | Low public salience; technical agricultural/trade matter |
-| Urgency | 3 | EU compliance deadline adds moderate time pressure |
-| Cross-party | 3 | EU compliance is generally non-controversial |
-
----
-
-## 🔑 Key Findings
-
-1. **Migration dominates significance** — HD03229 and HD03215 are the only ELEVATED documents, both in the migration domain.
-2. **No HIGH-significance events** — The day's legislative agenda is substantive but not extraordinary.
-3. **Justice reforms score moderately** — HD03222 (crime victims) reaches MODERATE; HD03223 (consumer credit) stays LOW.
-4. **Parliamentary questions are low-significance individually** — Written questions and interpellations score 2.0-2.6 as expected for non-binding instruments.
-5. **Arbetsplenum adds urgency** — Chamber debate scheduled today elevates urgency scores for propositions.
-
----
-
-## 📎 Document Control
-
-| Field | Value |
-|-------|-------|
-| **Template** | `analysis/templates/significance-scoring.md` |
-| **Version** | 2.0 |
-| **Analyst** | Copilot Political Intelligence Agent |
-| **Classification** | PUBLIC |
-| **Next Review** | 2026-06-30 |
-| **MCP Data Sources** | riksdag-regering-mcp (9 documents, 2 interpellations) |
-
+| Tool | Parameters | Data Retrieved |
+|------|-----------|----------------|
+| `get_propositioner` | rm=2025/26 | Document metadata for scoring |
+| `get_betankanden` | rm=2025/26 | Committee context for scoring |

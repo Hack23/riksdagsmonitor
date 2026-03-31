@@ -1,100 +1,123 @@
-# Political SWOT Analysis — 2026-03-31
+# 💼 Political SWOT Analysis
 
-**Generated**: 2026-03-31 07:40 UTC
-**Data Sources**: get_interpellationer, get_dokument_innehall, search_anforanden
-**Documents Analyzed**: 2 (HD10424, HD10425)
-**Riksmöte**: 2025/26
-**Confidence**: HIGH
+## 📋 SWOT Context
+
+| Field | Value |
+|-------|-------|
+| **SWOT ID** | `SWT-2026-03-31-001` |
+| **Analysis Date** | 2026-03-31 11:54 UTC |
+| **Analysis Scope** | Government coalition legislative push (migration, criminal justice, security) |
+| **Reference Period** | 2026-W13 (week ending 2026-03-31) |
+| **Produced By** | news-realtime-monitor |
+| **Primary MCP Sources** | get_propositioner, get_betankanden, search_regering, search_dokument |
+| **Validity Window** | Entries valid until 2026-04-30 |
 
 ---
 
-## Summary
+## 🏛️ Section 1: Government Coalition SWOT
 
-SWOT analysis synthesized from 2 interpellations, both targeting Infrastructure Minister Andreas Carlson (KD). Cross-cutting theme: government policy–agency implementation gap.
+### ✅ Strengths — Government Coalition
+
+| # | Strength Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-------------------|-------------------|:----------:|:------:|:----------:|
+| S1 | Coalition delivers coordinated migration reform package (2 propositions same day) demonstrating legislative capacity | HD03229, HD03215 | H | H | 2026-03-31 |
+| S2 | Justice Minister Strömmer (M) advances 3 criminal justice reforms simultaneously (HD03222, HD03223, HD03227) | HD03222, HD03223, HD03227 | H | M | 2026-03-31 |
+| S3 | Cross-party security consensus on property protection (HD01JuU29) strengthens national security brand | HD01JuU29 | H | H | 2026-03-31 |
+| S4 | SD cooperation remains stable — migration reform fulfills Tidö Agreement commitments | HD03229, HD03215 | M | H | 2026-03-31 |
+
+**Coalition Strength Summary:** The government demonstrates strong legislative capacity with a major coordinated migration reform package and parallel criminal justice advances, fulfilling key Tidö Agreement commitments as the election cycle approaches.
 
 ---
 
-## SWOT Overview
+### ⚠️ Weaknesses — Government Coalition
+
+| # | Weakness Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-------------------|-------------------|:----------:|:------:|:----------:|
+| W1 | Rushed legislative timeline risks quality gaps — 4 propositions from Justitiedepartementet in one week | HD03229, HD03222, HD03223, HD03222 | M | H | 2026-03-31 |
+| W2 | Climate goal revision (HD01MJU30) exposes environmental vulnerability ahead of election | HD01MJU30 | H | M | 2026-03-31 |
+| W3 | Municipal housing shortage undermines settlement law implementation feasibility | HD03215, HD01CU18 | H | H | 2026-03-31 |
+
+**Coalition Weakness Summary:** The breadth of legislative output creates implementation risk, while the climate goals revision provides opposition ammunition on environmental policy.
+
+---
+
+### 🌟 Opportunities — Government Coalition
+
+| # | Opportunity Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|----------------------|-------------------|:----------:|:------:|:----------:|
+| O1 | Migration reform package positions government as delivering on core voter promise before election | HD03229, HD03215 | H | H | 2026-03-31 |
+| O2 | Bipartisan security legislation (HD01JuU29) demonstrates governance beyond partisan politics | HD01JuU29 | H | M | 2026-03-31 |
+| O3 | Consumer credit reform may attract moderate voters concerned about household debt | HD03223 | M | M | 2026-03-31 |
+
+---
+
+### 🔴 Threats — Government Coalition
+
+| # | Threat Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
+|---|-----------------|-------------------|:----------:|:------:|:----------:|
+| T1 | ECHR/EU legal challenges to migration reform could embarrass government internationally | HD03229 | M | H | 2026-03-31 |
+| T2 | Municipal resistance to forced settlement placement undermines implementation | HD03215 | H | H | 2026-03-31 |
+| T3 | Climate policy criticism energizes green/youth voter mobilization for opposition | HD01MJU30 | H | M | 2026-03-31 |
+
+---
+
+## 📊 SWOT Quadrant Mapping
 
 ```mermaid
-quadrantChart
-    title Government Coalition Political Impact
-    x-axis Internal --> External
-    y-axis Risk --> Opportunity
-    quadrant-1 External Opportunities
-    quadrant-2 Internal Opportunities
-    quadrant-3 Internal Risks
-    quadrant-4 External Risks
+graph TD
+    subgraph "💼 Government Coalition SWOT — 2026-03-31"
+        subgraph "✅ Strengths"
+            S1["S1: Coordinated migration<br/>reform package"]
+            S2["S2: 3 justice reforms<br/>simultaneously"]
+            S3["S3: Cross-party<br/>security consensus"]
+        end
+        subgraph "⚠️ Weaknesses"
+            W1["W1: Rushed legislative<br/>timeline"]
+            W2["W2: Climate goal<br/>vulnerability"]
+            W3["W3: Housing shortage<br/>implementation risk"]
+        end
+        subgraph "🌟 Opportunities"
+            O1["O1: Election positioning<br/>on migration delivery"]
+            O2["O2: Bipartisan<br/>security appeal"]
+        end
+        subgraph "🔴 Threats"
+            T1["T1: ECHR legal<br/>challenges"]
+            T2["T2: Municipal<br/>resistance"]
+            T3["T3: Green voter<br/>mobilization"]
+        end
+    end
 
-    "Defence infrastructure gap (HD10425)": [0.3, 0.2]
-    "Regional route closures (HD10424)": [0.4, 0.3]
-    "Decisive infrastructure response": [0.3, 0.7]
-    "NATO readiness credibility": [0.8, 0.6]
-    "Trafikverket independence tension": [0.2, 0.15]
-    "2026 election rural voter loss": [0.7, 0.25]
+    style S1 fill:#28a745,stroke:#333,color:#fff
+    style S2 fill:#28a745,stroke:#333,color:#fff
+    style S3 fill:#28a745,stroke:#333,color:#fff
+    style W1 fill:#ffc107,stroke:#333,color:#000
+    style W2 fill:#ffc107,stroke:#333,color:#000
+    style W3 fill:#ffc107,stroke:#333,color:#000
+    style O1 fill:#17a2b8,stroke:#333,color:#fff
+    style O2 fill:#17a2b8,stroke:#333,color:#fff
+    style T1 fill:#dc3545,stroke:#333,color:#fff
+    style T2 fill:#dc3545,stroke:#333,color:#fff
+    style T3 fill:#dc3545,stroke:#333,color:#fff
 ```
 
 ---
 
-## Government Coalition
+## 🔀 TOWS Strategic Options
 
-### Strengths 💪
-| Statement | Evidence | Confidence |
-|-----------|----------|:----------:|
-| Bipartisan defence consensus provides political cover for increased spending | HD10425: S supports defence expansion, only criticises implementation | HIGH |
-| Coalition stability remains high (83/100) despite infrastructure pressure | CIA CSV context; no coalition fracture signals | HIGH |
-
-### Weaknesses ⚠️
-| Statement | Evidence | Confidence |
-|-----------|----------|:----------:|
-| "Hela Sverige" policy rhetoric contradicted by Trafikverket's route closure proposals | HD10424: Dahlqvist quotes government policy against Trafikverket action | HIGH |
-| Inter-agency coordination failure — Trafikverket demands municipalities pay for national defence infrastructure | HD10425: Östersund detaljplan appeal threat | HIGH |
-| Carlson is most interpellated minister (8/20 recent) — cumulative accountability burden | HD10424, HD10425, HD10417, HD10418, HD10413, HD10412, HD10410, HD10406 | HIGH |
-
-### Opportunities 🚀
-| Statement | Evidence | Confidence |
-|-----------|----------|:----------:|
-| Decisive administrative directive to Trafikverket could resolve both issues and demonstrate competence | Response deadline 2026-04-21 provides action window | MEDIUM |
-| Defence infrastructure clarification serves government's own security agenda | HD10425: aligning with stated priority on "inre och yttre säkerhet" | MEDIUM |
-
-### Threats 🔴
-| Statement | Evidence | Confidence |
-|-----------|----------|:----------:|
-| Defence base delays of "several years" if Trafikverket appeals proceed | HD10425: explicit timeline risk cited for Östersund | HIGH |
-| Emergency preparedness gap — ambulance flights and wildfire response threatened | HD10424: Torsby/Hagfors regional aviation critical for emergency services | HIGH |
-| 2026 election vulnerability — rural infrastructure cuts mobilise opposition voters | Regional connectivity a potent local campaign issue | MEDIUM |
+| Strategy | SWOT Combination | Action |
+|----------|-----------------|--------|
+| **SO: Leverage delivery for election** | S1+S4 × O1 | Government should emphasize migration reform delivery as proof of Tidö Agreement success |
+| **WO: Offset climate weakness** | W2 × O2 | Pivot to bipartisan security narrative to divert attention from climate criticism |
+| **ST: Pre-empt legal challenges** | S1 × T1 | Emphasize Lagrådet review compliance and EU reception directive alignment |
+| **WT: Municipal engagement** | W3 × T2 | Proactive SKR dialogue and transition support to prevent implementation failure |
 
 ---
 
-## Opposition (S)
+## 📊 MCP Data Files Used
 
-### Strengths 💪
-| Statement | Evidence | Confidence |
-|-----------|----------|:----------:|
-| Effective "pro-defence but anti-incompetence" framing — patriotic + critical simultaneously | HD10425: "Ett regemente är inte att jämställa med en handelslada" | HIGH |
-| Coordinated pressure — two MPs targeting same minister on same day | HD10424 (Dahlqvist) + HD10425 (Olsson), both filed 2026-03-31 | HIGH |
-
-### Weaknesses ⚠️
-| Statement | Evidence | Confidence |
-|-----------|----------|:----------:|
-| High motion denial rate (96%) limits S legislative impact beyond interpellations | CIA CSV context | HIGH |
-| Constituency-specific framing may limit national resonance | HD10424 focused on Värmland; HD10425 on Östersund | MEDIUM |
-
-### Opportunities 🚀
-| Statement | Evidence | Confidence |
-|-----------|----------|:----------:|
-| Russia security timeline adds urgency to defence infrastructure argument | HD10425: "fara i dröjsmål" framing | HIGH |
-| Link regional transport to totalförsvar broadens political appeal | HD10424 Q2: "beredskap och totalförsvar" | HIGH |
-
-### Threats 🔴
-| Statement | Evidence | Confidence |
-|-----------|----------|:----------:|
-| Government may resolve cost disputes before debate, neutralising the issue | Carlson has pattern of announcing policy actions in interpellation responses | MEDIUM |
-
----
-
-## Data Quality Notes
-
-- **SWOT confidence**: HIGH — full-text analysis with cross-document referencing
-- **Evidence density**: ≥3 citations per quadrant section
-- **Temporal validity**: Analysis valid for 30 days (HIGH confidence decay)
+| Tool | Parameters | Purpose |
+|------|-----------|---------|
+| `get_propositioner` | rm=2025/26 | Proposition identification |
+| `get_betankanden` | rm=2025/26 | Committee report analysis |
+| `search_regering` | dateFrom=2026-03-30 | Government communication context |
+| `search_voteringar` | rm=2025/26 | Voting pattern context |
