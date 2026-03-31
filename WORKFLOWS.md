@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-8.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-9.0-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Updated-2026--03--27-success?style=for-the-badge" alt="Last Updated"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Quarterly-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
@@ -753,6 +753,90 @@ flowchart TD
 - `@modelcontextprotocol/server-memory`
 
 **Compilation:** Source `.md` → `.lock.yml` via `compile-agentic-workflows.yml`
+
+#### Per-Workflow Data Download & Unique Analytics
+
+Each agentic workflow downloads data from specific MCP tools and produces unique political intelligence that only that document type can provide:
+
+```mermaid
+graph TB
+    subgraph "📥 MCP Data Sources"
+        BET["get_betankanden<br/><i>Committee reports</i>"]
+        PROP["get_propositioner<br/><i>Government bills</i>"]
+        MOT["get_motioner<br/><i>Opposition motions</i>"]
+        INTERP["get_interpellationer<br/><i>Parliamentary questions</i>"]
+        VOTE["search_voteringar<br/><i>Voting records</i>"]
+        ANF["search_anforanden<br/><i>Debate speeches</i>"]
+        DOK["search_dokument<br/><i>All document types</i>"]
+        CAL["get_calendar_events<br/><i>Parliamentary calendar</i>"]
+        SCB["SCB MCP<br/><i>Statistics Sweden</i>"]
+        WB["World Bank MCP<br/><i>International data</i>"]
+    end
+
+    subgraph "📰 Agentic Workflows"
+        WF_CR["📋 Committee Reports"]
+        WF_PR["📜 Propositions"]
+        WF_MO["✊ Motions"]
+        WF_IP["❓ Interpellations"]
+        WF_EV["🌙 Evening Analysis"]
+        WF_RT["⚡ Realtime Monitor"]
+        WF_WR["📅 Weekly Review"]
+        WF_WA["🔮 Week Ahead"]
+    end
+
+    BET --> WF_CR
+    VOTE --> WF_CR
+    SCB --> WF_CR
+    PROP --> WF_PR
+    DOK --> WF_PR
+    MOT --> WF_MO
+    DOK --> WF_MO
+    INTERP --> WF_IP
+    ANF --> WF_IP
+    VOTE --> WF_EV
+    ANF --> WF_EV
+    CAL --> WF_EV
+    DOK --> WF_RT
+    CAL --> WF_RT
+    DOK --> WF_WR
+    VOTE --> WF_WR
+    CAL --> WF_WA
+    DOK --> WF_WA
+
+    style BET fill:#198754,color:#fff
+    style PROP fill:#0d6efd,color:#fff
+    style MOT fill:#fd7e14,color:#fff
+    style INTERP fill:#dc3545,color:#fff
+    style VOTE fill:#6f42c1,color:#fff
+    style ANF fill:#d63384,color:#fff
+    style DOK fill:#20c997,color:#000
+    style CAL fill:#0dcaf0,color:#000
+    style SCB fill:#ffc107,color:#000
+    style WB fill:#ff9800,color:#000
+    style WF_CR fill:#198754,color:#fff,stroke-width:2px
+    style WF_PR fill:#0d6efd,color:#fff,stroke-width:2px
+    style WF_MO fill:#fd7e14,color:#fff,stroke-width:2px
+    style WF_IP fill:#dc3545,color:#fff,stroke-width:2px
+    style WF_EV fill:#6f42c1,color:#fff,stroke-width:2px
+    style WF_RT fill:#d63384,color:#fff,stroke-width:2px
+    style WF_WR fill:#20c997,color:#000,stroke-width:2px
+    style WF_WA fill:#0dcaf0,color:#000,stroke-width:2px
+```
+
+| # | Workflow | Schedule | Primary MCP Data | Unique Analytics Produced |
+|---|---------|----------|-----------------|--------------------------|
+| 1 | **Committee Reports** | Mon–Fri 04:00 UTC | `get_betankanden`, `search_voteringar` | Committee voting splits per party, reservation (dissent) analysis, committee-to-policy-domain mapping, SCB statistical enrichment per committee domain |
+| 2 | **Propositions** | Mon–Fri 05:00 UTC | `get_propositioner`, `search_dokument` | Legislative pipeline tracking (referral → committee → vote), government legislative ambition score, budget allocation impact analysis, policy domain cascading effects |
+| 3 | **Motions** | Mon–Fri 06:00 UTC | `get_motioner`, `search_dokument_fulltext` | Opposition strategy analysis, motion clustering by theme, cross-party co-sponsorship detection, signalverdi (is this positioning or a real bid?) |
+| 4 | **Interpellations** | Mon–Fri 07:00 UTC | `get_interpellationer`, `search_anforanden` | Ministerial accountability scoring (response rate/timeliness), evasion detection, question framing analysis, party oversight strategy mapping |
+| 5 | **Realtime Monitor** | Mon–Fri 10:00+14:00, Weekends 12:00 | `search_dokument`, `get_calendar_events` | Breaking event detection, urgency classification, real-time political temperature spikes |
+| 6 | **Evening Analysis** | Mon–Fri 18:00, Sat 16:00 | `search_voteringar`, `search_anforanden`, `get_betankanden` | Daily parliamentary pulse, party discipline metrics, coalition cohesion scoring, debate intensity index |
+| 7 | **Weekly Review** | Sat 09:00 UTC | `search_dokument` (7-day), `search_voteringar` | Week-over-week trend detection, cross-document-type pattern identification, legislative throughput metrics |
+| 8 | **Week Ahead** | Fri 07:00 UTC | `get_calendar_events` (+7d), `get_fragor` | Prospective calendar analysis, scheduled debate preview, expected vote outcomes |
+| 9 | **Monthly Review** | 28th 10:00 UTC | `search_dokument` (30-day) | Monthly legislative throughput, party productivity rankings, government vs opposition scorecard |
+| 10 | **Month Ahead** | 1st 08:00 UTC | `get_calendar_events` (+30d) | Strategic political calendar, legislative pipeline forecast, major policy decision timeline |
+| 11 | **Article Generator** | Manual only | Per-type (configurable) | Manual backfill/regeneration for any article type |
+| 12 | **Translate** | Mon–Fri 11:00+17:00, Weekends 14:00 | N/A (text processing) | 14-language translation quality with cultural adaptation |
 
 ---
 

@@ -308,6 +308,62 @@ sequenceDiagram
 
 ---
 
+## 🎯 Article-Type-Specific Methodology Selection
+
+Different parliamentary document types require **different analytical emphasis**. This matrix maps which methodologies are PRIMARY vs SUPPORTING for each workflow type:
+
+```mermaid
+graph LR
+    subgraph "🔴 Always Required"
+        CLASS["🏷️ Classification"]
+        RISK["⚠️ Risk Assessment"]
+    end
+
+    subgraph "🟠 Context-Dependent Primary"
+        SWOT["💼 SWOT"]
+        THREAT["🎭 Threat Analysis"]
+        SIG["📈 Significance"]
+        STAKE["👥 Stakeholder"]
+    end
+
+    CR["📋 Committee<br/>Reports"] -->|"PRIMARY"| SWOT
+    CR -->|"PRIMARY"| THREAT
+    PR["📜 Propositions"] -->|"PRIMARY"| RISK
+    PR -->|"PRIMARY"| STAKE
+    MO["✊ Motions"] -->|"PRIMARY"| SWOT
+    MO -->|"PRIMARY"| SIG
+    IP["❓ Interpellations"] -->|"PRIMARY"| THREAT
+    IP -->|"PRIMARY"| STAKE
+
+    style CR fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
+    style PR fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
+    style MO fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
+    style IP fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
+    style CLASS fill:#6c757d,color:#fff,stroke:#495057,stroke-width:2px
+    style RISK fill:#6c757d,color:#fff,stroke:#495057,stroke-width:2px
+    style SWOT fill:#ffc107,color:#000,stroke:#cc9a06,stroke-width:2px
+    style THREAT fill:#d63384,color:#fff,stroke:#ab296a,stroke-width:2px
+    style SIG fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
+    style STAKE fill:#0dcaf0,color:#000,stroke:#0aa2c0,stroke-width:2px
+```
+
+| Article Type | Classification | Risk | SWOT | Threat | Significance | Stakeholder | Unique Focus |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|---|
+| **Committee Reports** | ✅ | ✅ | 🔴 PRIMARY | 🔴 PRIMARY | ✅ | ✅ | Voting splits, reservation analysis, committee composition effects |
+| **Propositions** | ✅ | 🔴 PRIMARY | ✅ | ✅ | ✅ | 🔴 PRIMARY | Legislative pipeline stage, budget impact, policy domain cascading effects |
+| **Motions** | ✅ | ✅ | 🔴 PRIMARY | ✅ | 🔴 PRIMARY | ✅ | Opposition strategy patterns, signalverdi, cross-party co-sponsorship |
+| **Interpellations** | ✅ | ✅ | ✅ | 🔴 PRIMARY | ✅ | 🔴 PRIMARY | Minister accountability scoring, response quality, evasion detection |
+| **Evening Analysis** | ✅ | ✅ | 🔴 PRIMARY | ✅ | ✅ | ✅ | Daily political pulse, vote results, debate intensity metrics |
+| **Realtime Monitor** | ✅ | 🔴 PRIMARY | ✅ | ✅ | 🔴 PRIMARY | ✅ | Breaking event urgency, political temperature spike detection |
+| **Weekly Review** | ✅ | ✅ | 🔴 PRIMARY | ✅ | ✅ | ✅ | Cross-type trend detection, week-over-week pattern shifts |
+| **Week Ahead** | ✅ | 🔴 PRIMARY | ✅ | 🔴 PRIMARY | ✅ | ✅ | Prospective risk landscape, scheduled debates, expected vote outcomes |
+| **Monthly Review** | ✅ | ✅ | 🔴 PRIMARY | ✅ | ✅ | 🔴 PRIMARY | Legislative throughput, party productivity, government scorecard |
+| **Month Ahead** | ✅ | 🔴 PRIMARY | ✅ | 🔴 PRIMARY | ✅ | ✅ | Strategic political calendar, major policy decision forecast |
+
+> **Reading the matrix:** ✅ = always required for all types. 🔴 PRIMARY = the methodology that should receive the most analytical depth and word count for this article type. Each workflow must apply ALL methodologies but allocate **more time and depth** to PRIMARY ones.
+
+---
+
 ## 📏 Quality Standards
 
 Every analysis artifact produced using these methodologies MUST contain:

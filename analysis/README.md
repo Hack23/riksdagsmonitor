@@ -212,6 +212,80 @@ graph TB
 
 ---
 
+## 🎯 Article-Type-Specific Analytics Matrix
+
+Every agentic workflow produces **unique political intelligence** tailored to its document type. This is not generic analysis — each workflow downloads type-specific data via MCP and produces analytics that only that document type can provide.
+
+```mermaid
+graph TB
+    subgraph "📋 Document-Type Workflows"
+        CR["📋 Committee Reports<br/><code>get_betankanden</code>"]
+        PR["📜 Propositions<br/><code>get_propositioner</code>"]
+        MO["✊ Motions<br/><code>get_motioner</code>"]
+        IP["❓ Interpellations<br/><code>get_interpellationer</code>"]
+    end
+
+    subgraph "📰 Synthesis Workflows"
+        EV["🌙 Evening Analysis<br/><code>search_voteringar + search_anforanden</code>"]
+        RT["⚡ Realtime Monitor<br/><code>search_dokument + get_calendar_events</code>"]
+    end
+
+    subgraph "📊 Aggregation Workflows"
+        WR["📅 Weekly Review<br/><code>search_dokument (7-day)</code>"]
+        WA["🔮 Week Ahead<br/><code>get_calendar_events (7-day forward)</code>"]
+        MR["📊 Monthly Review<br/><code>search_dokument (30-day)</code>"]
+        MA["🔮 Month Ahead<br/><code>get_calendar_events (30-day forward)</code>"]
+    end
+
+    CR -->|"vote records"| EV
+    PR -->|"legislative pipeline"| EV
+    MO -->|"opposition patterns"| EV
+    IP -->|"accountability gaps"| EV
+    EV -->|"daily synthesis"| WR
+    RT -->|"breaking events"| WR
+    WR -->|"weekly patterns"| MR
+    WA -->|"calendar preview"| MA
+
+    style CR fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
+    style PR fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
+    style MO fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
+    style IP fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
+    style EV fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
+    style RT fill:#d63384,color:#fff,stroke:#ab296a,stroke-width:2px
+    style WR fill:#20c997,color:#000,stroke:#1aa179,stroke-width:2px
+    style WA fill:#0dcaf0,color:#000,stroke:#0aa2c0,stroke-width:2px
+    style MR fill:#e91e63,color:#fff,stroke:#c2185b,stroke-width:2px
+    style MA fill:#ff5722,color:#fff,stroke:#e64a19,stroke-width:2px
+```
+
+### Per-Workflow Unique Analytics
+
+| Workflow | Primary MCP Tool | Unique Analytics Only This Workflow Produces | Cross-Reference Tools |
+|----------|-----------------|----------------------------------------------|----------------------|
+| **Committee Reports** | `get_betankanden` | Committee voting splits, reservation analysis (dissenting opinions), committee-to-policy-domain mapping, fiscal/defence/healthcare committee specialisation metrics | `search_voteringar` (by beteckning), `search_anforanden`, `get_propositioner` |
+| **Propositions** | `get_propositioner` | Legislative pipeline tracking (committee referral → vote timeline), government legislative ambition scoring, policy domain impact analysis, budget allocation implications | `search_dokument`, `analyze_g0v_by_department` |
+| **Motions** | `get_motioner` | Opposition party strategy analysis (which parties push which issues), motion clustering by theme, cross-party alignment detection, signalverdi (signal value) for upcoming legislative battles | `search_dokument_fulltext`, `search_anforanden` |
+| **Interpellations** | `get_interpellationer` | Ministerial accountability scoring (response rate, timeliness, evasion detection), question-to-response quality analysis, party oversight strategy mapping | `search_anforanden` (minister speeches), `get_calendar_events` |
+| **Evening Analysis** | `search_voteringar` + `search_anforanden` | Daily parliamentary pulse (vote results + debate intensity), party discipline metrics, coalition cohesion scoring, MP-level voting deviation from party line | `get_betankanden`, `get_propositioner`, `get_calendar_events` |
+| **Realtime Monitor** | `search_dokument` + `get_calendar_events` | Breaking event detection, urgency classification, real-time political temperature index | All MCP tools as needed |
+| **Weekly Review** | `search_dokument` (7-day window) | Week-over-week trend detection, cross-document-type pattern identification, political narrative arc tracking | `search_voteringar`, `search_anforanden` |
+| **Week Ahead** | `get_calendar_events` (forward 7 days) | Prospective calendar analysis, scheduled debate preview, expected voting outcomes based on committee composition | `search_dokument`, `get_fragor`, `get_interpellationer` |
+| **Monthly Review** | `search_dokument` (30-day window) | Monthly legislative throughput metrics, party productivity rankings, government vs opposition scorecard | All MCP tools for comprehensive retrospective |
+| **Month Ahead** | `get_calendar_events` (forward 30 days) | Strategic political calendar, legislative pipeline forecast, major policy decision timeline | `search_dokument`, `get_betankanden`, `get_propositioner` |
+
+### Per-Document Unique Intelligence (Examples)
+
+For **high-significance documents** (significance score ≥ 70), workflows produce **document-specific deep dives**:
+
+| Document Type | Example dok_id | Unique Deep-Dive Analysis |
+|--------------|----------------|--------------------------|
+| **Committee Report** | `H901JuU15` | Voting split heatmap by party, reservation text analysis, comparison with original proposition intent, dissent pattern vs committee norms |
+| **Proposition** | `H9032025/26:227` | Policy impact chain (which laws change → who is affected), budget envelope impact, comparison with previous government bills in same domain |
+| **Motion** | `H902mot1234` | Opposition signalling analysis (is this a positioning motion or serious legislative bid?), cross-party co-sponsorship network, historical motion success rate for this topic |
+| **Interpellation** | `H902ip456` | Question framing analysis (adversarial vs inquiry), minister response timeliness, evasion score (did the minister actually answer?), policy commitment extraction |
+
+---
+
 ## 📁 Directory Structure
 
 ```

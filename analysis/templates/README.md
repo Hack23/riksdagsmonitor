@@ -320,6 +320,70 @@ sequenceDiagram
 
 ---
 
+## 🎯 Article-Type-Specific Template Customisation
+
+While all 8 templates apply to every document, certain templates produce **richer, more unique output** depending on the document type. The AI agent should allocate proportionally more depth to the highlighted templates:
+
+```mermaid
+graph TB
+    subgraph "📋 Committee Reports"
+        CR_T1["🔍 Per-File Intel<br/><b>Focus: voting splits</b>"]
+        CR_T2["💼 SWOT<br/><b>Focus: coalition dynamics</b>"]
+        CR_T3["🎭 Threat<br/><b>Focus: democratic process</b>"]
+    end
+
+    subgraph "📜 Propositions"
+        PR_T1["🔍 Per-File Intel<br/><b>Focus: legislative pipeline</b>"]
+        PR_T2["⚠️ Risk<br/><b>Focus: policy implementation</b>"]
+        PR_T3["👥 Stakeholder<br/><b>Focus: affected populations</b>"]
+    end
+
+    subgraph "✊ Motions"
+        MO_T1["🔍 Per-File Intel<br/><b>Focus: opposition strategy</b>"]
+        MO_T2["💼 SWOT<br/><b>Focus: issue framing</b>"]
+        MO_T3["📈 Significance<br/><b>Focus: signalverdi</b>"]
+    end
+
+    subgraph "❓ Interpellations"
+        IP_T1["🔍 Per-File Intel<br/><b>Focus: accountability</b>"]
+        IP_T2["🎭 Threat<br/><b>Focus: government scrutiny</b>"]
+        IP_T3["👥 Stakeholder<br/><b>Focus: minister responses</b>"]
+    end
+
+    style CR_T1 fill:#198754,color:#fff,stroke:#146c43
+    style CR_T2 fill:#198754,color:#fff,stroke:#146c43
+    style CR_T3 fill:#198754,color:#fff,stroke:#146c43
+    style PR_T1 fill:#0d6efd,color:#fff,stroke:#0a58ca
+    style PR_T2 fill:#0d6efd,color:#fff,stroke:#0a58ca
+    style PR_T3 fill:#0d6efd,color:#fff,stroke:#0a58ca
+    style MO_T1 fill:#fd7e14,color:#fff,stroke:#ca6510
+    style MO_T2 fill:#fd7e14,color:#fff,stroke:#ca6510
+    style MO_T3 fill:#fd7e14,color:#fff,stroke:#ca6510
+    style IP_T1 fill:#dc3545,color:#fff,stroke:#b02a37
+    style IP_T2 fill:#dc3545,color:#fff,stroke:#b02a37
+    style IP_T3 fill:#dc3545,color:#fff,stroke:#b02a37
+```
+
+### Unique Template Sections by Article Type
+
+Each article type should produce unique analytical sections in its synthesis that **no other workflow can produce**:
+
+| Article Type | Template | Unique Section Name | What Makes It Unique |
+|---|---|---|---|
+| **Committee Reports** | Synthesis | **Committee Vote Heatmap** | Party-by-party voting matrix with Ja/Nej/Avstår breakdown per beteckning |
+| **Committee Reports** | SWOT | **Reservation Analysis** | Opposition reservations (dissenting opinions) text analysis — only committee reports have reservations |
+| **Propositions** | Risk | **Legislative Pipeline Risk** | Where the bill sits in the process (remiss → utskott → plenum) and risk of delay/amendment |
+| **Propositions** | Stakeholder | **Budget Impact Matrix** | Which population segments gain/lose from proposed budget changes |
+| **Motions** | Significance | **Signalverdi Score** | Whether the motion is a genuine legislative bid or political positioning (only motions have this signal) |
+| **Motions** | SWOT | **Cross-Party Alignment Map** | Which opposition parties co-sponsor or signal support — unique to motion dynamics |
+| **Interpellations** | Per-File Intel | **Minister Response Scorecard** | Response timeliness (≤28 days statutory), evasion score, policy commitment extraction |
+| **Interpellations** | Threat | **Accountability Gap Analysis** | Unanswered questions, overdue responses, pattern of ministerial avoidance by portfolio |
+| **Evening Analysis** | Synthesis | **Daily Parliamentary Pulse** | Vote-weighted activity index combining all document types into a single daily metric |
+| **Weekly Review** | SWOT | **Week-over-Week Trend Delta** | How did this week's political temperature differ from last week? Only weekly scope enables this |
+| **Month Ahead** | Risk | **Strategic Calendar Risk Map** | Forward-looking risk landscape tied to specific scheduled events (budget debates, EU summits) |
+
+---
+
 ## 📏 Template Quality Standards
 
 Every template enforces the following mandatory requirements:

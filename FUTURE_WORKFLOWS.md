@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-4.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-5.0-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Updated-2026--03--27-success?style=for-the-badge" alt="Last Updated"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
@@ -195,6 +195,78 @@ flowchart TB
 | Deployment | Dual: AWS S3/CloudFront + GitHub Pages |
 | AI Content | 12 agentic workflows (Claude Opus 4.6) |
 | Security Compliance | ISO 27001, NIST CSF 2.0, CIS Controls v8.1 |
+
+---
+
+## 🔬 Visionary: Per-Workflow Unique Analytics Evolution
+
+The future of Riksdagsmonitor's agentic workflows is **deep specialisation** — each workflow producing analytics that are impossible with any other data source or analysis path.
+
+```mermaid
+graph TB
+    subgraph "🟢 Current (2026 Q1)"
+        C1["📋 Committee Reports<br/>Basic voting splits"]
+        C2["📜 Propositions<br/>Legislative pipeline"]
+        C3["✊ Motions<br/>Opposition tracking"]
+        C4["❓ Interpellations<br/>Accountability scoring"]
+    end
+
+    subgraph "🔵 Phase 1 (2026 Q2–Q4)"
+        P1_1["📋 Committee Reports<br/>+ ML vote prediction<br/>+ historical comparison"]
+        P1_2["📜 Propositions<br/>+ budget impact modeling<br/>+ regulatory burden scoring"]
+        P1_3["✊ Motions<br/>+ co-sponsorship network graphs<br/>+ topic clustering (NLP)"]
+        P1_4["❓ Interpellations<br/>+ evasion NLP scoring<br/>+ minister response tracking DB"]
+    end
+
+    subgraph "🟣 Phase 2 (2027)"
+        P2_1["📋 Committee Reports<br/>+ predictive vote outcome<br/>+ committee influence scoring"]
+        P2_2["📜 Propositions<br/>+ multi-country policy comparison<br/>+ EU law transposition tracking"]
+        P2_3["✊ Motions<br/>+ Overton window mapping<br/>+ media uptake correlation"]
+        P2_4["❓ Interpellations<br/>+ sentiment trajectory<br/>+ government stress index"]
+    end
+
+    subgraph "🟠 Phase 3 (2028+)"
+        P3_1["📋 Committee Reports<br/>+ real-time vote prediction<br/>+ coalition risk dashboard"]
+        P3_2["📜 Propositions<br/>+ causal impact modeling<br/>+ citizen impact simulation"]
+        P3_3["✊ Motions<br/>+ agenda-setting power index<br/>+ policy adoption probability"]
+        P3_4["❓ Interpellations<br/>+ democratic health index<br/>+ autonomous follow-up detection"]
+    end
+
+    C1 --> P1_1 --> P2_1 --> P3_1
+    C2 --> P1_2 --> P2_2 --> P3_2
+    C3 --> P1_3 --> P2_3 --> P3_3
+    C4 --> P1_4 --> P2_4 --> P3_4
+
+    style C1 fill:#198754,color:#fff
+    style C2 fill:#0d6efd,color:#fff
+    style C3 fill:#fd7e14,color:#fff
+    style C4 fill:#dc3545,color:#fff
+    style P1_1 fill:#198754,color:#fff,stroke:#fff,stroke-width:2px
+    style P1_2 fill:#0d6efd,color:#fff,stroke:#fff,stroke-width:2px
+    style P1_3 fill:#fd7e14,color:#fff,stroke:#fff,stroke-width:2px
+    style P1_4 fill:#dc3545,color:#fff,stroke:#fff,stroke-width:2px
+    style P2_1 fill:#6f42c1,color:#fff,stroke:#fff,stroke-width:2px
+    style P2_2 fill:#6f42c1,color:#fff,stroke:#fff,stroke-width:2px
+    style P2_3 fill:#6f42c1,color:#fff,stroke:#fff,stroke-width:2px
+    style P2_4 fill:#6f42c1,color:#fff,stroke:#fff,stroke-width:2px
+    style P3_1 fill:#e91e63,color:#fff,stroke:#fff,stroke-width:2px
+    style P3_2 fill:#e91e63,color:#fff,stroke:#fff,stroke-width:2px
+    style P3_3 fill:#e91e63,color:#fff,stroke:#fff,stroke-width:2px
+    style P3_4 fill:#e91e63,color:#fff,stroke:#fff,stroke-width:2px
+```
+
+### Future Unique Analytics per Article Type
+
+| Workflow | Current Unique Analytics | Phase 1 Enhancement | Phase 2 Vision | Phase 3 Autonomous |
+|----------|------------------------|--------------------|--------------|--------------------|
+| **Committee Reports** | Voting splits, reservation analysis | ML vote prediction from committee composition + historical voting patterns | Committee influence scoring: which committees shape policy most effectively? | Real-time vote prediction dashboard during live plenary sessions |
+| **Propositions** | Legislative pipeline tracking | Budget impact modeling using SCB economic data + World Bank benchmarks | Multi-country policy comparison (Nordic council + EU) | Causal impact simulation: "if this bill passes, what happens to X?" |
+| **Motions** | Opposition strategy analysis | NLP-based topic clustering + co-sponsorship network visualisation | Overton window mapping: how opposition motions shift the political debate | Policy adoption probability: ML model predicting which motions become policy |
+| **Interpellations** | Accountability scoring | NLP evasion scoring (did the minister actually answer?) + response tracking DB | Government stress index: aggregated ministerial pressure metric | Autonomous follow-up detection: AI identifies when promised action hasn't occurred |
+| **Evening Analysis** | Daily parliamentary pulse | Multi-source synthesis (Riksdag + Regeringen + SCB same-day) | Automated "story of the day" narrative generation | Self-prioritising: AI identifies the most important event and leads with it |
+| **Realtime Monitor** | Breaking event detection | Predictive urgency scoring (ML-trained on past breaking events) | Cross-source verification (Riksdag + news wire + social media) | Autonomous alert system with configurable severity thresholds |
+| **Weekly Review** | Week-over-week trends | Trend significance testing (is this week different or noise?) | Predictive weekly preview: "next week we expect X because Y" | Self-correcting: compares last week's predictions with actual outcomes |
+| **Month Ahead** | Strategic calendar | Calendar risk modeling (which events have historically caused volatility?) | EU legislative calendar integration for Swedish implementation deadlines | Autonomous scenario planning: generates 3 political futures per key event |
 
 ---
 
