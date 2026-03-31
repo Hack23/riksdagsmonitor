@@ -1,25 +1,25 @@
 # Data Download Manifest — 2026-03-31
 
-**Generated**: 2026-03-31 14:31 UTC
-**Data Sources**: 
-**Documents Analyzed**: 0
+**Generated**: 2026-03-31 16:15 UTC
+**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer
+**Documents Analyzed**: 25
 **Confidence**: HIGH
 
 ## Summary
 
-Downloaded **0** documents (session-wide) from 0 MCP data sources.
+Downloaded **300** documents (session-wide) from 7 MCP data sources.
 
-After date filtering to **2026-03-31**: **0** documents selected for analysis.
+After date filtering to **2026-03-31**: **25** documents selected for analysis.
 
 ## Document Counts by Type
 
-- **propositions**: 0 documents
-- **motions**: 0 documents
-- **committeeReports**: 0 documents
+- **propositions**: 50 documents
+- **motions**: 50 documents
+- **committeeReports**: 50 documents
 - **votes**: 0 documents
-- **speeches**: 0 documents
-- **questions**: 0 documents
-- **interpellations**: 0 documents
+- **speeches**: 50 documents
+- **questions**: 50 documents
+- **interpellations**: 50 documents
 
 ## Data Quality Notes
 

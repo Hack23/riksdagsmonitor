@@ -1,72 +1,65 @@
 # Political Threat Analysis — 2026-03-31
 
-**Generated**: 2026-03-31 14:34 UTC
-**Data Sources**: riksdag-regering-mcp (get_propositioner, get_betankanden, search_voteringar)
-**Documents Analyzed**: 6
-**Confidence**: HIGH
+**THR-ID**: THR-2026-03-31-001
+**Generated**: 2026-03-31T16:15:00Z
+**Riksmöte**: 2025/26
+**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_anforanden
+**Documents Analyzed**: 25
+**Confidence**: MEDIUM
 
----
-
-## Summary
-
-Primary threats center on constitutional/legal challenges to the migration reform package and implementation capacity constraints across multiple simultaneous reforms. External security threats assessed in UU6 remain elevated but managed through NATO framework.
-
----
-
-## Threat Landscape
+## Threat Taxonomy Network
 
 ```mermaid
 graph TD
-    subgraph "Legal/Constitutional Threats"
-        LC1["ECHR Article 3<br/>Challenge to Prop 229<br/>🔴 HIGH"]
-        LC2["Lagrådet Review<br/>Proportionality Concerns<br/>🟡 MEDIUM"]
+    subgraph "Democratic Function Threats"
+        A["Legislative Overload<br/>4 Props + 12 Motions<br/>Severity: 2/5"] --> B["Committee Capacity<br/>7+ committees active"]
+        C["Opposition Marginalization<br/>96% motion denial rate<br/>Severity: 3/5"] --> D["Democratic Accountability<br/>V limited to reactive role"]
+        E["Immigration Policy Risk<br/>HD03229, HD03215<br/>Severity: 2/5"] --> F["Social Cohesion<br/>Divisive reception policies"]
+        G["Housing Deregulation<br/>Prop 187, 188<br/>Severity: 2/5"] --> H["Societal Impact<br/>Rental market disruption"]
     end
-    subgraph "Implementation Threats"
-        IM1["Agency Capacity<br/>Migrationsverket Overload<br/>🟡 MEDIUM"]
-        IM2["Municipal Resistance<br/>Settlement Requirements<br/>🟡 MEDIUM"]
-    end
-    subgraph "Political Threats"
-        PT1["Opposition Unity<br/>S+V+MP Migration Block<br/>🟢 LOW"]
-        PT2["SD Supply Volatility<br/>Pre-Election Positioning<br/>🟢 LOW"]
-    end
-    subgraph "External Security"
-        ES1["Russian Aggression<br/>Baltic Theatre<br/>🔴 HIGH"]
-        ES2["Hybrid Threats<br/>Cyber/Disinformation<br/>🔴 HIGH"]
-    end
-    style LC1 fill:#dc3545,stroke:#333,color:#fff
-    style LC2 fill:#ffc107,stroke:#333,color:#000
-    style IM1 fill:#ffc107,stroke:#333,color:#000
-    style IM2 fill:#ffc107,stroke:#333,color:#000
-    style PT1 fill:#28a745,stroke:#333,color:#fff
-    style PT2 fill:#28a745,stroke:#333,color:#fff
-    style ES1 fill:#dc3545,stroke:#333,color:#fff
-    style ES2 fill:#dc3545,stroke:#333,color:#fff
+    style A fill:#ffc107,color:#000
+    style B fill:#ffc107,color:#000
+    style C fill:#fd7e14,color:#fff
+    style D fill:#fd7e14,color:#fff
+    style E fill:#ffc107,color:#000
+    style F fill:#ffc107,color:#000
+    style G fill:#ffc107,color:#000
+    style H fill:#ffc107,color:#000
 ```
 
----
+## Threat Assessment
 
-## Threat Register
+| Category | Threat | Severity (1-5) | Likelihood | Evidence |
+|----------|--------|----------------|------------|----------|
+| Democratic Process | Opposition marginalization via systematic motion denial | 3 | HIGH | 96% denial rate; 12 V motions likely rejected |
+| Societal Impact | Immigration reception changes affect vulnerable groups | 2 | MEDIUM | HD03229 (new reception law), HD03215 (temporary housing) |
+| Societal Impact | Housing deregulation increases tenant vulnerability | 2 | MEDIUM | V motions HD023995, HD024004 opposing Props 187, 188 |
+| Power Balance | Legislative concentration in government hands | 2 | MEDIUM | 4 propositions in one day; committee review pending |
+| Economic Disruption | Consumer credit reform transition costs | 1 | LOW | HD03223 — implementation period mitigates disruption |
+| External Security | Security policy environment requires continued adaptation | 2 | MEDIUM | HD01UU6, HD024006 (Ukraine military support) |
 
-| ID | Category | Threat | Likelihood | Impact | Score | dok_id |
-|----|----------|--------|:----------:|:------:|:-----:|--------|
-| LC1 | Legal | ECHR challenge to reception law benefit reductions | 3/5 | 5/5 | 15 | HD03229 |
-| LC2 | Legal | Lagrådet flags proportionality issues | 3/5 | 4/5 | 12 | HD03229 |
-| IM1 | Implementation | Migrationsverket capacity exhaustion | 4/5 | 3/5 | 12 | HD03229, HD03215 |
-| IM2 | Implementation | Municipal non-compliance with settlement mandates | 3/5 | 3/5 | 9 | HD03215 |
-| PT1 | Political | United opposition delays committee processing | 4/5 | 2/5 | 8 | HD03229 |
-| PT2 | Political | SD leverages migration for election positioning | 2/5 | 3/5 | 6 | HD03229 |
-| ES1 | External | Russian military escalation in Baltic | 2/5 | 5/5 | 10 | HD01UU6 |
-| ES2 | External | Hybrid attack on critical infrastructure | 3/5 | 4/5 | 12 | HD01UU6 |
+## Threat Actor Mapping
 
----
+| Actor | Motivation | Capability | Threat Level |
+|-------|-----------|------------|-------------|
+| Government Coalition | Policy implementation at pace | HIGH — legislative majority | 🟢 LOW (democratic norm) |
+| Left Party (V) | Electoral positioning via opposition | MEDIUM — 24 seats, coordinated motions | 🟡 MEDIUM |
+| External factors | Security environment pressure | Variable — dependent on geopolitics | 🟡 MEDIUM |
 
-## Key Findings
+## Escalation Decision
 
-1. Highest-probability threats are implementation-related (IM1, IM2) — government capacity to execute parallel reforms
-2. Highest-impact threat is ECHR non-compliance (LC1) — could invalidate core migration reform
-3. Political threats (PT1, PT2) manageable given coalition majority margins
-4. External security threats (ES1, ES2) managed through NATO framework per UU6 consensus
+**Current threat level**: 🟡 MEDIUM — elevated opposition activity but within democratic norms. No escalation required.
 
-## Data Quality Notes
+**Watch items**:
+- Committee responses to immigration propositions (HD03229, HD03215) — timeline: 4-8 weeks
+- V party conference motions — potential escalation of housing/education critique
+- Security policy debate outcomes (UU6) — cross-party alignment indicator
 
-Threat analysis derived from 6 primary documents and CIA coalition metrics. External security assessment based on UU6 committee report metadata (full text pending).
+## MCP Data Sources Used
+
+| Tool | Threat Category | Key Findings |
+|------|----------------|--------------|
+| get_propositioner | Policy risk | 4 new propositions — immigration and justice dominant |
+| get_motioner | Opposition mobilization | 12 V motions — coordinated response |
+| get_betankanden | Committee processing | 4 reports — normal pipeline function |
+| search_anforanden | Political tensions | Interpellation debates on economy, transport, hunting |

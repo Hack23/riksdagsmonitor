@@ -1,75 +1,71 @@
 # Political Risk Assessment — 2026-03-31
 
-**Generated**: 2026-03-31 14:33 UTC
-**Data Sources**: riksdag-regering-mcp (search_voteringar, get_propositioner, get_betankanden)
-**Documents Analyzed**: 6
+**RSK-ID**: RSK-2026-03-31-001
+**Generated**: 2026-03-31T16:15:00Z
+**Riksmöte**: 2025/26
+**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden
+**Documents Analyzed**: 25
 **Confidence**: HIGH
 
----
-
-## Summary
-
-Government demonstrates strong legislative momentum with coordinated migration reform package. Coalition risk remains LOW overall, but specific policy risks are MEDIUM-HIGH on migration ECHR compliance and implementation capacity.
-
----
-
-## Risk Matrix
+## Risk Heat Map
 
 ```mermaid
 graph TD
-    subgraph "5x5 Risk Matrix"
-        R1["R1: ECHR Non-Compliance<br/>L:3 × I:5 = 15<br/>🔴 HIGH"]
-        R2["R2: Implementation Bottleneck<br/>L:4 × I:3 = 12<br/>🟡 MEDIUM"]
-        R3["R3: Opposition Mobilisation<br/>L:4 × I:2 = 8<br/>🟡 MEDIUM"]
-        R4["R4: Coalition Fracture<br/>L:1 × I:5 = 5<br/>🟢 LOW"]
-        R5["R5: Judicial Capacity<br/>L:3 × I:3 = 9<br/>🟡 MEDIUM"]
+    subgraph "Risk Landscape — 2026-03-31"
+        CR["Coalition Risk<br/>Score: 4/100<br/>🟢 LOW"]
+        PR["Policy Risk<br/>Immigration Reform<br/>🟡 MEDIUM"]
+        ER["Electoral Risk<br/>V Mobilization<br/>🟡 MEDIUM"]
+        DR["Democratic Process<br/>Normal Operations<br/>🟢 LOW"]
+        BR["Budget Risk<br/>No Fiscal Signals<br/>🟢 LOW"]
+        XR["External Risk<br/>Security Policy<br/>🟢 LOW"]
     end
-    style R1 fill:#dc3545,stroke:#333,color:#fff
-    style R2 fill:#ffc107,stroke:#333,color:#000
-    style R3 fill:#ffc107,stroke:#333,color:#000
-    style R4 fill:#28a745,stroke:#333,color:#fff
-    style R5 fill:#ffc107,stroke:#333,color:#000
+    style CR fill:#28a745,color:#fff
+    style PR fill:#ffc107,color:#000
+    style ER fill:#ffc107,color:#000
+    style DR fill:#28a745,color:#fff
+    style BR fill:#28a745,color:#fff
+    style XR fill:#28a745,color:#fff
 ```
 
----
+## Risk Assessment Summary
 
-## Detailed Risk Register
+| Risk Dimension | Likelihood (1-5) | Impact (1-5) | L×I Score | Level | Evidence |
+|---------------|-------------------|--------------|-----------|-------|----------|
+| Coalition Stability | 1 | 2 | 2 | 🟢 LOW | No dissent in interpellation debates; unified ministerial responses |
+| Policy Implementation | 2 | 3 | 6 | 🟡 MEDIUM | Immigration props (HD03229, HD03215) face V opposition; housing deregulation contested |
+| Electoral | 2 | 3 | 6 | 🟡 MEDIUM | V's 12-motion strategy signals pre-2026 positioning |
+| Democratic Process | 1 | 1 | 1 | 🟢 LOW | Normal committee and plenary processes; no procedural anomalies |
+| Budget/Fiscal | 1 | 1 | 1 | 🟢 LOW | No fiscal propositions today |
+| External/Security | 1 | 2 | 2 | 🟢 LOW | UU6 security policy report likely consensus; Ukraine motion (HD024006) limited |
 
-| ID | Risk | Likelihood (1-5) | Impact (1-5) | Score | Level | dok_id |
-|----|------|:-----------------:|:------------:|:-----:|:-----:|--------|
-| R1 | ECHR Article 3 challenge to reception law benefit reductions | 3 | 5 | 15 | 🔴 HIGH | HD03229 |
-| R2 | Migrationsverket + municipal capacity insufficient for parallel migration reforms | 4 | 3 | 12 | 🟡 MEDIUM | HD03229, HD03215 |
-| R3 | Unified S+V+MP opposition amplifies public debate; constitutional concerns | 4 | 2 | 8 | 🟡 MEDIUM | HD03229, HD03215 |
-| R4 | SD withdraws supply support over migration package specifics | 1 | 5 | 5 | 🟢 LOW | HD03229 |
-| R5 | Court system capacity insufficient for crime victim compensation expansion | 3 | 3 | 9 | 🟡 MEDIUM | HD03222 |
+## Coalition Stability Analysis
 
----
+**Coalition Risk Score**: 4/100 — **LOW**
 
-## Coalition Stability Assessment
+The government coalition (M, KD, L with SD confidence-and-supply) shows no internal stress today. Key evidence:
+- All 4 propositions presented without reported coalition disagreement
+- Interpellation debates feature coordinated ministerial responses (Carlson KD, Svantesson M, Kullgren KD, Slottner KD)
+- No SD defections or public statements against government bills
 
-| Indicator | Value | Trend |
-|-----------|-------|:-----:|
-| **Coalition Risk Score** | 12/100 | ↓ Improving |
-| **Majority Margin** | 176+73 vs 100 (SD supply) | Stable |
-| **Voting Discipline** | >95% in recent votes | Strong |
-| **SD Alignment** | High on migration package | ↑ |
-| **Cross-party Anomalies** | None significant today | — |
+## Anomaly Flags
 
----
+| Severity | Type | Description | Source |
+|----------|------|-------------|--------|
+| ⚠️ MEDIUM | Opposition Coordination | V filed 12 motions in one day — unusual concentration | get_motioner |
+| ℹ️ LOW | Cross-party Voting | High alignment between coalition partners (expected) | search_voteringar (AU10, 2026-03-04) |
 
 ## Key Findings
 
-1. Coalition stability appears robust — migration package strengthens rather than tests SD supply relationship
-2. Highest risk (R1) is external: ECHR compliance challenge to new reception law
-3. Implementation risk (R2) spans multiple agencies and requires sustained coordination
-4. Opposition mobilisation (R3) is expected but unlikely to shift legislative outcomes given majority margins
+1. Coalition stability remains **LOW risk** (4/100)
+2. Immigration reform represents highest policy risk — 2 propositions with active V opposition
+3. V's 12-motion coordinated response signals strategic electoral positioning, not immediate coalition threat
+4. No floor votes today — next voting session expected after Easter recess
 
-## Mitigation Recommendations
+## MCP Data Sources Used
 
-- R1: Government should proactively seek Lagrådet review and address proportionality concerns
-- R2: Early capacity assessment of Migrationsverket staffing and municipal agreements
-- R5: Ensure Domstolsverket budget includes crime victim compensation processing resources
-
-## Data Quality Notes
-
-Risk assessment based on 6 primary documents from 2026-03-31, CIA coalition metrics (stability 83/100), and voting records. Confidence: HIGH for coalition metrics, MEDIUM for implementation capacity estimates.
+| Tool | Query | Risk Relevance |
+|------|-------|---------------|
+| search_voteringar | rm=2025/26 | Coalition discipline (most recent: AU10, 2026-03-04) |
+| get_propositioner | rm=2025/26 | Policy risk (4 new today) |
+| get_motioner | rm=2025/26 | Opposition risk (12 V motions today) |
+| search_anforanden | rm=2025/26 | Ministerial response patterns |

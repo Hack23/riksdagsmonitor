@@ -1,66 +1,53 @@
-# Significance Scoring — 2026-03-31
+# Document Significance Scoring — 2026-03-31
 
-**Generated**: 2026-03-31 14:34 UTC
-**Data Sources**: riksdag-regering-mcp
-**Documents Analyzed**: 6
+**Generated**: 2026-03-31 16:15 UTC
+**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer
+**Documents Analyzed**: 25
 **Confidence**: HIGH
-
----
 
 ## Summary
 
-Six documents scored for significance. Two reach HIGH threshold (≥7): the New Reception Act (Prop 229, score 8) and Settlement Law (Prop 215, score 7). Security Policy report (UU6) also scores 7. Three documents score MEDIUM (4-6).
+Scored **25** documents for political significance (0–10 scale).
 
----
+## Detailed Analysis
 
-## Scoring Overview
+| Score | Level | Type | dok_id | Title |
+|-------|-------|------|--------|-------|
+| 4/10 | Medium | unknown | HD024006 | med anledning av skr. 2025/26:162 Sveriges mili... |
+| 4/10 | Medium | unknown | HD024000 | med anledning av prop. 2025/26:177 Förenklad le... |
+| 4/10 | Medium | unknown | HD023997 | med anledning av prop. 2025/26:185 Tillfällig v... |
+| 4/10 | Medium | unknown | HD024003 | med anledning av skr. 2025/26:90 Nordiskt samar... |
+| 4/10 | Medium | unknown | HD01UU6 | Säkerhetspolitik |
+| 3/10 | Low | unknown | HD023995 | med anledning av prop. 2025/26:187 En mer flexi... |
+| 3/10 | Low | unknown | HD023994 | med anledning av prop. 2025/26:195 Förbättrat s... |
+| 3/10 | Low | unknown | HD023999 | med anledning av prop. 2025/26:202 Undantag frå... |
+| 3/10 | Low | unknown | HD023998 | med anledning av prop. 2025/26:194 Nya läroplan... |
+| 3/10 | Low | unknown | HD023996 | med anledning av prop. 2025/26:191 Offentlighet... |
+| 3/10 | Low | unknown | HD024005 | med anledning av prop. 2025/26:184 Privatkopier... |
+| 3/10 | Low | unknown | HD024004 | med anledning av prop. 2025/26:188 Lag om hyrkö... |
+| 3/10 | Low | unknown | HD024002 | med anledning av prop. 2025/26:193 Bättre förut... |
+| 3/10 | Low | unknown | HD024001 | med anledning av prop. 2025/26:197 Ett likvärdi... |
+| 3/10 | Low | unknown | HD01MJU18 | Förbättrat genomförande av UTP-direktivets förb... |
+| 3/10 | Low | unknown | HD01AU11 | Jämställdhet och åtgärder mot diskriminering |
+| 3/10 | Low | unknown | HD01AU12 | Arbetsmiljö |
+| 2/10 | Low | unknown | HD03229 | En ny mottagandelag |
+| 2/10 | Low | unknown | HD03223 | En ny konsumentkreditlag |
+| 2/10 | Low | unknown | HD03222 | Ersättningsregler med brottsoffret i fokus |
+| 2/10 | Low | unknown | HD03215 | Tidsbegränsat boende för vissa nyanlända invand... |
+| 2/10 | Low | unknown | HD11670 | Fransk rapport om Muslimska brödraskapet |
+| 2/10 | Low | unknown | HD11671 | Asbestexponering och brister i arbetsmiljöarbet... |
+| 2/10 | Low | unknown | HD10424 | Flyglinjen Torsby/Hagfors–Arlanda |
+| 2/10 | Low | unknown | HD10425 | Fördelning av ansvar för infrastrukturkostnader... |
 
-```mermaid
-graph LR
-    subgraph "HIGH (≥7)"
-        H1["HD03229<br/>Reception Act<br/>Score: 8"]
-        H2["HD03215<br/>Settlement Law<br/>Score: 7"]
-        H3["HD01UU6<br/>Security Policy<br/>Score: 7"]
-    end
-    subgraph "MEDIUM (4-6)"
-        M1["HD03222<br/>Crime Victims<br/>Score: 5"]
-        M2["HD03223<br/>Consumer Credit<br/>Score: 4"]
-    end
-    subgraph "LOW (≤3)"
-        L1["HD01MJU18<br/>UTP Directive<br/>Score: 3"]
-    end
-    style H1 fill:#dc3545,stroke:#333,color:#fff
-    style H2 fill:#dc3545,stroke:#333,color:#fff
-    style H3 fill:#fd7e14,stroke:#333,color:#000
-    style M1 fill:#ffc107,stroke:#333,color:#000
-    style M2 fill:#ffc107,stroke:#333,color:#000
-    style L1 fill:#28a745,stroke:#333,color:#fff
-```
+## Key Findings
 
----
+1. **0** document(s) rated Critical (score ≥ 8)
+2. **0** document(s) rated High (score 6–7)
 
-## Detailed Scoring
+## Implications
 
-| dok_id | Title | Score (1-10) | Threshold | Scoring Factors |
-|--------|-------|:------------:|:---------:|----------------|
-| HD03229 | En ny mottagandelag | **8** | 🔴 HIGH | +2 migration policy, +2 ECHR implications, +2 multi-party impact, +1 named minister (Forssell), +1 paired reform |
-| HD03215 | Tidsbegränsat boende | **7** | 🔴 HIGH | +2 migration policy, +2 multi-party impact, +1 named minister (Mohamsson), +1 paired with Prop 229, +1 municipal impact |
-| HD01UU6 | Säkerhetspolitik | **7** | 🔴 HIGH | +2 defense/security, +2 NATO implications, +2 cross-party consensus, +1 annual flagship report |
-| HD03222 | Ersättningsregler brottsoffret | **5** | 🟡 MEDIUM | +2 criminal justice, +1 named minister (Strömmer), +1 victim rights, +1 social welfare |
-| HD03223 | En ny konsumentkreditlag | **4** | 🟡 MEDIUM | +1 consumer protection, +1 household debt, +1 named minister (Strömmer), +1 cross-party potential |
-| HD01MJU18 | UTP-direktivet | **3** | 🟢 LOW | +1 EU transposition, +1 agriculture/food, +1 regulatory compliance |
-
----
-
-## Recommended Coverage
-
-| Tier | Action | Documents |
-|------|--------|-----------|
-| Breaking News | Full article with deep analysis | HD03229 (score 8) |
-| Major Analysis | Feature article | HD03215, HD01UU6 (score 7) |
-| Standard Coverage | Summary paragraph | HD03222, HD03223 (score 4-5) |
-| Monitoring Only | Archive, no article | HD01MJU18 (score 3) |
+High-significance documents should be prioritised for deep-inspection article generation.
 
 ## Data Quality Notes
 
-Scoring based on severity formula defined in workflow instructions. Confidence: HIGH (same-day data, primary sources).
+Significance scores use document type, committee tier, domain breadth, coalition context, and content richness.
