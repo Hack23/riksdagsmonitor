@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-30 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `swot-analysis.md` in the workflow's own folder (never overwrite another workflow's files). Each SWOT entry requires a dok_id or named evidence source — opinion-only entries are prohibited. See [methodologies/political-swot-framework.md](../methodologies/political-swot-framework.md).
@@ -270,10 +270,38 @@ graph TD
 
 ---
 
+## 📂 MCP Data Files Used
+
+> *Record all MCP tool calls and data files consulted during this SWOT analysis for reproducibility and audit traceability.*
+
+`[REQUIRED: List all analysis/daily/YYYY-MM-DD/{articleType}/data/ files consulted]`
+
+| # | Data Source | File / Tool Path | Data Type | Retrieved |
+|:-:|-----------|-----------------|-----------|-----------|
+| 1 | `[e.g. riksdag-regering-mcp]` | `[e.g. search_voteringar(rm="2025/26")]` | `[e.g. Voting records]` | `[YYYY-MM-DD HH:MM UTC]` |
+| 2 | `[e.g. riksdag-regering-mcp]` | `[e.g. search_dokument(doktyp="mot", rm="2025/26")]` | `[e.g. Motions]` | `[YYYY-MM-DD HH:MM UTC]` |
+| 3 | `[e.g. CIA export]` | `[e.g. cia-data/exports/party-analysis.json]` | `[e.g. Party metrics]` | `[YYYY-MM-DD HH:MM UTC]` |
+| 4 | `[OPTIONAL]` | `[path or tool call]` | `[type]` | `[timestamp]` |
+
+### SWOT Quadrant Data Provenance
+
+> **AI Instructions:** Map which MCP data sources provided evidence for each SWOT quadrant. This ensures every SWOT entry has traceable data backing, in line with the evidence hierarchy requirements from [political-swot-framework.md](../methodologies/political-swot-framework.md).
+
+| SWOT Quadrant | Primary MCP Tools | Evidence Items | Confidence |
+|:-------------:|------------------|:--------------:|:----------:|
+| **Strengths** | `[e.g. search_voteringar, get_betankanden]` | `[#]` | `[H/M/L]` |
+| **Weaknesses** | `[e.g. search_anforanden, search_dokument]` | `[#]` | `[H/M/L]` |
+| **Opportunities** | `[e.g. search_regering, get_calendar_events]` | `[#]` | `[H/M/L]` |
+| **Threats** | `[e.g. search_voteringar, search_dokument_fulltext]` | `[#]` | `[H/M/L]` |
+
+> **📌 Note:** Confidence follows the temporal decay rule from [political-swot-framework.md](../methodologies/political-swot-framework.md): HIGH→MEDIUM (90d)→LOW (180d)→EXPIRED. All files listed MUST exist at the stated paths; mark transient data as `(transient — not cached)`.
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/swot-analysis.md`  
 - **Framework Reference:** [SWOT.md](../../SWOT.md), [methodologies/political-swot-framework.md](../methodologies/political-swot-framework.md)  
-- **Version:** 2.0  
-- **Advanced Sections:** Cross-SWOT Interference, TOWS Matrix, Forward Indicators & Scenario Outlook  
+- **Version:** 2.1  
+- **Advanced Sections:** Cross-SWOT Interference, TOWS Matrix, Forward Indicators & Scenario Outlook, MCP Data Provenance  
 - **Classification:** Public  
 - **Next Review:** 2026-06-30
