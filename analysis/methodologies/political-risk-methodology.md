@@ -96,26 +96,38 @@ Coalition risk is the most politically distinctive risk type in Swedish parliame
 
 ```mermaid
 flowchart TD
-    A[Coalition Stability Assessment] --> B[Seat Arithmetic]
-    A --> C[Policy Cohesion]
-    A --> D[Electoral Pressure]
-    A --> E[External Constraints]
-    
-    B --> B1[Formal majority: ≥175 of 349]
-    B --> B2[Support party reliability]
-    B --> B3[By-election results]
-    
-    C --> C1[Budget agreement status]
-    C --> C2[Tidöavtal implementation pace]
-    C --> C3[Internal party pressures]
-    
-    D --> D1[Poll trajectory]
-    D --> D2[Pre-election positioning]
-    D --> D3[SD influence dynamics]
-    
-    E --> E1[EU compliance requirements]
-    E --> E2[NATO commitments]
-    E --> E3[Economic indicators]
+    A["🤝 Coalition Stability Assessment"] --> B["📊 Seat Arithmetic<br/>M+KD+L+SD = 176 seats"]
+    A --> C["📋 Policy Cohesion<br/>Legislative agreement rate"]
+    A --> D["📈 Electoral Pressure<br/>National polls & municipal spillovers"]
+    A --> E["📜 Tidöavtalet Compliance<br/>SD cooperation agreement adherence"]
+    A --> F["🌍 External Constraints"]
+
+    B --> B1["Formal majority: ≥175 of 349"]
+    B --> B2["Support party reliability<br/>SD vote-by-vote basis"]
+    B --> B3["By-election & defection risk"]
+
+    C --> C1["Budget agreement status"]
+    C --> C2["Migration policy splits<br/>L vs SD divergence"]
+    C --> C3["Energy policy cohesion<br/>Nuclear vs renewables"]
+
+    D --> D1["National poll trajectory<br/>Novus, Demoskop, SCB/PSU"]
+    D --> D2["Municipal election spillovers"]
+    D --> D3["Pre-election positioning pressure"]
+
+    E --> E1["Migration chapter compliance"]
+    E --> E2["Crime & justice chapter delivery"]
+    E --> E3["SD satisfaction signals<br/>Public statements, vote patterns"]
+
+    F --> F1["EU compliance requirements"]
+    F --> F2["NATO commitments"]
+    F --> F3["Economic indicators"]
+
+    style A fill:#dc3545,color:#fff
+    style B fill:#fd7e14,color:#fff
+    style C fill:#fd7e14,color:#fff
+    style D fill:#ffc107,color:#000
+    style E fill:#6f42c1,color:#fff
+    style F fill:#0d6efd,color:#fff
 ```
 
 ### Coalition Collapse Probability (90-day window)
@@ -196,12 +208,18 @@ Real Swedish political scenarios as scoring anchors:
 | Scenario | Likelihood | Impact | Score | Tier | Rationale |
 |----------|:----------:|:------:|:-----:|------|-----------|
 | SD conditionally supports budget | 4 | 4 | 16 | 🔴 Critical | Frequent pattern; major governance impact |
+| SD conditionally supports government on migration | 4 | 4 | 16 | 🔴 Critical | Tidöavtalet leverage; SD extracts concessions as price for continued support |
 | L exits coalition over migration | 2 | 5 | 10 | 🟠 High | Historically rare; would collapse government |
+| L exits government coalition | 2 | 5 | 10 | 🟠 High | L departure reduces M+KD to ~131 seats; SD support alone insufficient for majority |
 | Minor committee report delayed | 1 | 1 | 1 | 🟢 Low | Routine; no political consequence |
 | Budget vote passes with expected margin | 4 | 1 | 4 | 🟢 Low | Likely but low-impact routine event |
+| Plenary adopts budget with expected margin | 4 | 1 | 4 | 🟢 Low | Standard legislative process; M+KD+L+SD bloc votes cohesively |
 | KU investigation into government minister | 3 | 3 | 9 | 🟡 Medium | Possible; damages but rarely fatal |
+| Motion of no confidence (misstroendeförklaring) | 1 | 5 | 5 | 🟡 Medium | Requires 175 votes; very rare but triggers government fall if passed |
 | No-confidence motion passes | 1 | 5 | 5 | 🟡 Medium | Very rare; catastrophic if it occurs |
 | New SOU recommends major pension reform | 4 | 3 | 12 | 🟠 High | Likely publication; major policy implications |
+| Major government proposition on AI regulation | 4 | 3 | 12 | 🟠 High | Likely given EU AI Act transposition deadline; cross-cutting policy with industry impact |
+| Article 7/EU sanctions against Sweden | 1 | 5 | 5 | 🟡 Medium | Extremely rare EU mechanism; would signal severe rule-of-law concerns |
 
 ---
 
@@ -389,6 +407,51 @@ flowchart TD
 | Stress → Compromise | 15% (30%×50%) | Short-term disruption resolved | Public negotiation succeeds | Joint coalition statement |
 | Crisis → New coalition | 6% (10%×60%) | Government changes, democracy functions | Coalition collapse triggers realignment | No-confidence vote result |
 | Crisis → Election | 4% (10%×40%) | Extraordinary election called | No alternative coalition possible | Riksdag vote on dissolution |
+
+---
+
+## 📡 MCP Data Sources for Risk Assessment
+
+The following table maps each risk category to the primary MCP tools and query strategies used to gather evidence for scoring:
+
+| Risk Category | Primary MCP Tools | Query Strategy |
+|---------------|-------------------|----------------|
+| **Coalition stability** | `search_voteringar`, `analyze_voting_patterns` | Track M+KD+L+SD voting cohesion; detect defections and abstention spikes |
+| **Policy implementation** | `get_propositioner`, `search_dokument` | Monitor committee referrals, plenary vote outcomes, and reservation filings |
+| **Legislative integrity** | `search_voteringar`, `get_betankanden` | Track contested votes (margin <10 seats), reservation analysis per party |
+| **Economic governance** | `get_propositioner`, `search_dokument` | Budget bills (FiU), fiscal forecasts, spring amending budgets |
+| **Social cohesion** | `search_anforanden`, `get_interpellationer` | Migration/welfare debate intensity; interpellation frequency by topic |
+| **Democratic process** | `get_calendar_events`, `search_voteringar` | Participation rates, vote margins, plenary attendance patterns |
+
+### Query Examples
+
+```bash
+# Coalition cohesion: check if M+KD+L+SD voted together on recent budget
+search_voteringar(rm="2025/26", bet="FiU1", groupBy="parti")
+
+# Policy risk: track contested committee reports
+get_betankanden(rm="2025/26", organ="SfU")  # Social insurance committee
+
+# Democratic process: monitor plenary participation
+search_voteringar(rm="2025/26", rost="Frånvarande", groupBy="parti")
+
+# Social cohesion: migration debate intensity
+search_anforanden(text="migration", rm="2025/26")
+```
+
+---
+
+## ⚠️ Anti-Pattern Warning
+
+> **REJECTED:** Generic risk statements like _"medium risk"_ without specific L×I scores, evidence, or calibration examples are **REJECTED**. Every risk assessment MUST include:
+>
+> 1. **Explicit Likelihood (1–5) and Impact (1–5) scores** with justification
+> 2. **MCP evidence** — specific document IDs, vote records, or speech references
+> 3. **Calibration anchor** — which calibration example is this most similar to?
+> 4. **Confidence level** — HIGH (multiple MCP sources), MEDIUM (single source), LOW (inference only)
+>
+> ❌ _"Coalition risk is medium"_ → Not actionable, no evidence, no scores  
+> ✅ _"Coalition risk: L=3, I=4, Score=12 (HIGH). Evidence: SD voted against government on SfU14 punkt 3 (search_voteringar rm=2025/26). Calibrated against 'SD conditionally supports government on migration' scenario."_
 
 ---
 
