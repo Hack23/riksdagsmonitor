@@ -1,77 +1,194 @@
-# Analysis Synthesis Summary — 2026-03-31
+<p align="center">
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
+</p>
 
-**Generated**: 2026-03-31 07:40 UTC
-**Data Sources**: get_interpellationer, get_dokument_innehall, search_anforanden
-**Documents Analyzed**: 2 (HD10424, HD10425)
-**Riksmöte**: 2025/26
-**Confidence**: HIGH
+<h1 align="center">🧩 Political Intelligence Synthesis</h1>
+
+<p align="center">
+  <strong>📊 Daily Intelligence Summary — 2026-03-31</strong><br>
+  <em>🎯 Risk · Threat · Significance · SWOT · Stakeholder</em>
+</p>
+
+**Document Owner**: CEO | **Version**: 2.0 | **Last Updated**: 2026-03-31 | **Org.nr**: 559432-2196 | **Classification**: PUBLIC
 
 ---
 
-## Executive Summary
+## 📋 Synthesis Context
 
-Two new interpellations filed today (2026-03-31) by Social Democrat MPs target Infrastructure Minister Andreas Carlson (KD) on infrastructure accountability. Both concern the tension between government rhetoric on national priorities and implementation failures by subordinate agencies, particularly Trafikverket. The combined pattern reveals Carlson as the most interpellated minister — 8 of the 20 most recent interpellations target his portfolio — indicating systematic opposition pressure on infrastructure policy ahead of the 2026 election.
+| Field | Value |
+|-------|-------|
+| **Synthesis ID** | `SYN-2026-03-31-001` |
+| **Analysis Date** | `2026-03-31 06:00 UTC` |
+| **Riksmöte** | 2025/26 |
+| **Documents Analyzed** | 9 (4 propositions, 1 committee report, 2 written questions, 2 interpellations) |
+| **Analysis Period** | 2026-03-31 (single day) |
+| **Produced By** | Copilot Political Intelligence Agent |
+| **Overall Confidence** | HIGH |
 
 ---
 
-## Key Findings
+## 📊 Intelligence Dashboard
 
 ```mermaid
 graph TD
-    subgraph "📊 Today's Interpellations — 2026-03-31"
-        HD10424["HD10424<br/>🛩️ Flyglinjen Torsby/Hagfors–Arlanda<br/>Dahlqvist (S) → Carlson (KD)<br/>Significance: 5/10"]
-        HD10425["HD10425<br/>🏗️ Defence Infrastructure Costs<br/>Olsson (S) → Carlson (KD)<br/>Significance: 6/10"]
+    subgraph "📊 Daily Political Intelligence — 2026-03-31"
+        subgraph "🏷️ Sensitivity"
+            CLS["PUBLIC<br/>All 9 documents"]
+        end
+        subgraph "⚠️ Risk"
+            RSK["LOW<br/>Score: 83/100<br/>Coalition Stable"]
+        end
+        subgraph "🎭 Threat"
+            THR["LOW<br/>1 ELEVATED category<br/>Accountability"]
+        end
+        subgraph "📊 Significance"
+            SIG["7/10 Top<br/>2 ELEVATED<br/>2 MODERATE"]
+        end
     end
-
-    subgraph "�� Cross-Cutting Themes"
-        T1["⚠️ Trafikverket vs Government Policy<br/>Agency acting against stated priorities"]
-        T2["🛡️ Security & Preparedness<br/>Emergency services + defence readiness"]
-        T3["🗳️ Regional Equity<br/>'Hela Sverige' rhetoric vs reality"]
+    subgraph "🎯 Editorial Decision"
+        DEC{"Publish<br/>Standard"}
+        STD["✅ Standard<br/>Analysis"]
+        MON["👁️ Monitor<br/>Migration Bills"]
     end
-
-    HD10424 --> T1
-    HD10424 --> T2
-    HD10424 --> T3
-    HD10425 --> T1
-    HD10425 --> T2
-
-    style HD10424 fill:#ffc107,color:#000
-    style HD10425 fill:#fd7e14,color:#fff
-    style T1 fill:#dc3545,color:#fff
-    style T2 fill:#0d6efd,color:#fff
-    style T3 fill:#28a745,color:#fff
+    CLS --> DEC
+    RSK --> DEC
+    THR --> DEC
+    SIG --> DEC
+    DEC --> STD
+    DEC --> MON
+    style CLS fill:#28a745,stroke:#000,color:#fff
+    style RSK fill:#28a745,stroke:#000,color:#fff
+    style THR fill:#28a745,stroke:#000,color:#fff
+    style SIG fill:#fd7e14,stroke:#000,color:#fff
+    style DEC fill:#0d6efd,stroke:#000,color:#fff
+    style STD fill:#28a745,stroke:#000,color:#fff
+    style MON fill:#ffc107,stroke:#000,color:#000
 ```
 
-1. **Coordinated S Pressure**: Two S MPs filed interpellations to the same minister on the same day — Dahlqvist on airline route closures, Olsson on defence infrastructure costs. This suggests coordinated opposition strategy targeting Carlson's portfolio.
+---
 
-2. **Trafikverket as Policy Bottleneck**: Both interpellations identify Trafikverket as acting against government priorities — recommending route closures despite "hela Sverige" policy (HD10424) and demanding municipalities pay for defence infrastructure (HD10425).
+## 🏆 Top Findings by Significance
 
-3. **Defence-Security Nexus**: HD10425's risk score (Policy Implementation: 15/25 CRITICAL) reflects that Trafikverket cost disputes could delay military base construction "by several years" — a national security concern given Russia threat timeline.
-
-4. **Minister Accountability Pattern**: Carlson has responded to related airline route interpellations (ip:398, 401, 406) in recent chamber debates, establishing a track record that will inform his response to these new questions.
+| Rank | dok_id | Title | Significance | Risk Tier | SWOT Impact | Recommendation |
+|:----:|--------|-------|:-----------:|:---------:|-------------|----------------|
+| 1 | `HD03229` | En ny mottagandelag | 7.0/10 🟠 | MEDIUM (R1) | S: Legislative output; T: Public backlash risk | **Standard publish** — lead story for migration coverage |
+| 2 | `HD03215` | Tidsbegränsat boende för nyanlända | 6.6/10 🟠 | LOW (R3) | S: Coalition coordination; W: L-M tension | **Standard publish** — pair with HD03229 |
+| 3 | `HD03222` | Ersättningsregler — brottsoffret i fokus | 5.0/10 🟡 | LOW | S: Justice reform; O: Bipartisan support | **Standard publish** — justice reform angle |
+| 4 | `HD03223` | En ny konsumentkreditlag | 3.8/10 🟢 | LOW | O: Consumer protection | **Monitor** — technical regulation |
+| 5 | `HD01MJU18` | UTP-direktivets förbud | 2.8/10 🟢 | LOW (R4) | O: EU compliance | **Archive** — procedural update |
 
 ---
 
-## Top Documents by Significance
+## 💪 Aggregated SWOT Summary
 
-| Score | dok_id | Title | Author | Risk Level |
-|:-----:|--------|-------|--------|:----------:|
-| 6/10 | HD10425 | Infrastrukturkostnader vid försvarsetableringar | Kalle Olsson (S) | 🟠 HIGH |
-| 5/10 | HD10424 | Flyglinjen Torsby/Hagfors–Arlanda | Mikael Dahlqvist (S) | 🟡 MEDIUM |
+```mermaid
+graph LR
+    subgraph "💪 Coalition SWOT Balance — 2026-03-31"
+        GS["💪 Strengths<br/>• 4 propositions in 1 day<br/>• PM co-signature on migration<br/>• 176-seat majority<br/>• 83/100 stability"]
+        GW["⚡ Weaknesses<br/>• 96% motion denial<br/>• KU hearing pressure<br/>• L-M migration tension<br/>• Attention dilution risk"]
+        GO["🌟 Opportunities<br/>• Migration reform mandate<br/>• Bipartisan justice support<br/>• EU compliance signal<br/>• Regional engagement"]
+        GT["🔥 Threats<br/>• Public backlash on migration<br/>• Opposition frustration<br/>• Media scrutiny of KU<br/>• Regulatory burden"]
+    end
+    GS -.-> GO
+    GW -.-> GT
+    GO -.-> GW
+    style GS fill:#28a745,stroke:#000,color:#fff
+    style GW fill:#fd7e14,stroke:#000,color:#fff
+    style GO fill:#0d6efd,stroke:#000,color:#fff
+    style GT fill:#dc3545,stroke:#000,color:#fff
+```
+
+| Category | Count | Key Finding |
+|----------|:-----:|-------------|
+| **Strengths** | 4 | Government demonstrates high legislative output with 4 propositions; PM engagement on flagship issue |
+| **Weaknesses** | 4 | Motion denial rate and KU hearing create optics challenges; intra-coalition L-M dynamics on migration |
+| **Opportunities** | 4 | Migration reform has electoral mandate; crime victim reform may attract bipartisan support |
+| **Threats** | 4 | Migration backlash risk is the primary concern; opposition frustration channels may escalate |
+
+**SWOT Balance Assessment**: NET POSITIVE — Strengths and opportunities outweigh weaknesses and threats. The government's legislative agenda is advancing on schedule with coalition cohesion intact.
 
 ---
 
-## Implications
+## ⚖️ Risk Landscape Summary
 
-- **Overall political risk**: MEDIUM-HIGH — defence implementation risk (HD10425) elevates aggregate risk
-- **Electoral relevance**: Infrastructure cuts in rural/semi-urban areas are potent 2026 campaign issues
-- **Ministerial capacity**: Carlson's interpellation volume (8/20 recent) strains response capacity and creates cumulative accountability pressure
-- **Watch items**: Minister's response by 2026-04-21; Östersund detaljplan appeal; Trafikverket position on route closures
+| Risk Category | Score Range | Highest Risk | Trend |
+|---------------|:----------:|--------------|:-----:|
+| Coalition Stability | 83/100 | L-M migration tension | → Stable |
+| Policy Implementation | LOW | Dual migration bills | → Stable |
+| Budget/Fiscal | N/A | No fiscal items today | — |
+| Electoral | LOW | Migration polling risk | → Stable |
+| Democratic Process | LOW | 96% denial rate | → Stable |
+| External/International | LOW | EU compliance gap | ↓ Improving |
 
 ---
 
-## Data Quality Notes
+## 🎭 Threat Summary (STRIDE-adapted)
 
-- **Overall confidence**: HIGH — full-text available for both documents; cross-referenced with minister's speech patterns
-- **Limitations**: Calendar API returned HTML (known issue) — debate scheduling context unavailable
-- **Data sources**: get_interpellationer, get_dokument_innehall (HD10424, HD10425), search_anforanden (Carlson)
+| Category | Threat Level | Key Finding |
+|----------|:------------:|-------------|
+| **S** — Narrative Integrity | 🟢 LOW | Migration framing is multi-departmental, not narrative manipulation |
+| **T** — Legislative Integrity | 🟢 LOW | All propositions follow standard remiss process |
+| **R** — Accountability | 🟡 ELEVATED | KU hearing + justice propositions on same day |
+| **I** — Transparency | 🟢 LOW | Written questions ensure ministerial disclosure |
+| **D** — Democratic Process | 🟢 LOW | Interpellation rights preserved despite denial rate |
+| **E** — Power Balance | 🟢 LOW | 176-seat majority is structural, not manipulation |
+
+---
+
+## 👥 Stakeholder Impact Overview
+
+| Stakeholder | Impact | Direction | Key Driver |
+|-------------|:------:|:---------:|------------|
+| Government Coalition | 🟢 Positive | ↑ | 4 propositions demonstrate governing capacity |
+| Opposition | 🟡 Constrained | → | 96% denial limits action to signalling |
+| Citizens | 🟠 Significant | ↑ | Migration, crime victim, consumer reforms |
+| Business | 🟡 Moderate | → | Regulatory adjustment across sectors |
+| International | 🟢 Low | → | EU compliance maintained |
+
+---
+
+## 🎯 Narrative Direction
+
+**Primary Angle**: Government advances coordinated migration reform with PM-backed reception law overhaul and Liberal-led housing time limits — demonstrating coalition unity on Sweden's most salient political issue.
+
+**Secondary Angle**: Justice Minister Strömmer juggles KU accountability hearing while tabling two justice propositions, raising questions about timing and media-attention management.
+
+**Confidence**: HIGH — supported by 9 primary source documents and institutional calendar data.
+
+---
+
+## 🔮 Forward Intelligence
+
+| Indicator | Timeline | Source | Watch Priority |
+|-----------|----------|--------|:--------------:|
+| Riksdag vote on HD03229 + HD03215 (migration package) | Q2 2026 | Riksdag calendar | 🔴 HIGH |
+| KU hearing outcome and report publication | April 2026 | KU committee | 🟠 MEDIUM |
+| Opposition counter-proposals on migration | April-May 2026 | Motion registry | 🟡 LOW |
+
+---
+
+## 📋 Analysis Artifacts Inventory
+
+| File | Status | Key Output |
+|------|:------:|------------|
+| `classification-results.md` | ✅ Complete | 9 documents classified; all PUBLIC sensitivity |
+| `risk-assessment.md` | ✅ Complete | Overall LOW; 1 MEDIUM risk (R1: migration) |
+| `threat-analysis.md` | ✅ Complete | Overall LOW; 1 ELEVATED category (accountability) |
+| `significance-scoring.md` | ✅ Complete | Top: HD03229 (7.0/10); 2 ELEVATED, 2 MODERATE |
+| `stakeholder-perspectives.md` | ✅ Complete | 5 groups assessed; citizens most impacted |
+| `swot-analysis.md` | ✅ Complete | NET POSITIVE coalition balance |
+| `synthesis-summary.md` | ✅ Complete | This document |
+
+---
+
+## 📎 Document Control
+
+| Field | Value |
+|-------|-------|
+| **Template** | `analysis/templates/synthesis-summary.md` |
+| **Version** | 2.0 |
+| **Analyst** | Copilot Political Intelligence Agent |
+| **Classification** | PUBLIC |
+| **Next Review** | 2026-06-30 |
+| **MCP Data Sources** | riksdag-regering-mcp (9 documents, 2 interpellations) |
+
