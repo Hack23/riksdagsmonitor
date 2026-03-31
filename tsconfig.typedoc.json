@@ -19,7 +19,9 @@
   "include": [
     "src/browser/**/*.ts",
     "scripts/**/*.ts",
-    "scripts/**/*.js"
+    "scripts/**/*.js",
+    "js/**/*.js",
+    "dashboard/**/*.js"
   ],
   "exclude": [
     "node_modules",
