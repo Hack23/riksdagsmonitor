@@ -875,7 +875,7 @@ The following demonstrates proper intelligence-grade writing:
 > | SD–M migration policy tension | 3 | 4 | 12 | → | Interpellation 2025/26:412, anförande by Jimmie Åkesson 2026-03-10 |
 > | L threshold risk (4% barrier) | 4 | 5 | 20 | ↑ | SCB partisympatiundersökning 2026-03, L at 4.2% (±1.1%) |
 >
-> **Assessment [HIGH confidence]:** The Tidö coalition faces critical stress on two axes — defence spending (Score: 20/25) and L's proximity to the parliamentary threshold (Score: 20/25). If L falls below 4% in the September 2026 election, the coalition loses its Riksdag majority regardless of other party performance (riksdag-regering-mcp search_voteringar, rm=2025/26, groupBy=parti).
+> **Assessment [HIGH confidence]:** The Tidö coalition faces critical stress on two axes — defence spending (Score: 20/25) and L's proximity to the parliamentary threshold (Score: 20/25). If L falls below 4% in the September 2026 election, the coalition loses its Riksdag majority regardless of other party performance (riksdag-regering-mcp get_voting_group, rm=2025/26).
 >
 > **What to Watch Next:** FöU scheduled votering on 2026-04-02 for betänkande 2025/26:FöU8; L's position on the final text will signal coalition cohesion.
 

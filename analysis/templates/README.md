@@ -238,7 +238,7 @@ graph LR
 | 5 | [👥 Stakeholder Impact](stakeholder-impact.md) | Multi-lens stakeholder impact assessment | 8 Stakeholder Groups, Impact Matrix | `search_ledamoter`, `get_betankanden`, `search_anforanden` | Stakeholder tables + Mermaid diagram | 🟡 MEDIUM |
 | 6 | [📈 Significance Scoring](significance-scoring.md) | 5-dimension composite score (1–10) | 5 Scoring Dimensions, Composite Score, Decision | `search_dokument`, `get_calendar_events` | Scoring table + publish decision | 🔴 HIGH |
 | 7 | [🧩 Synthesis Summary](synthesis-summary.md) | Daily intelligence synthesis | Headlines, SWOT, Risk, Threat, Forward Indicators | All MCP tools (aggregated) | Dashboard + Mermaid overview | 🔴 HIGH |
-| 8 | [🔍 Per-File Intelligence](per-file-political-intelligence.md) | Deep per-document AI analysis (**most used**) | Executive Summary, Classification, SWOT, Risk, Threat, Stakeholder, Significance | Depends on document type | Comprehensive `.analysis.md` | 🔴 CRITICAL |
+| 8 | [🔍 Per-File Intelligence](per-file-political-intelligence.md) | Deep per-document AI analysis (**most used**) | Executive Summary, Classification, SWOT, Risk, Threat, Stakeholder, Significance | Depends on document type | Comprehensive `{dok_id}-analysis.md` in `analysis/daily/.../documents/` | 🔴 CRITICAL |
 
 ---
 
