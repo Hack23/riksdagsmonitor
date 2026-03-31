@@ -1,8 +1,13 @@
 {
   "complete": true,
-  "allDone": [
+  "completedLanguages": [
     "en",
     "sv"
   ],
-  "timestamp": "2026-03-30T10:37:59.038Z"
+  "remainingLanguages": [],
+  "allRequestedLanguages": [
+    "en",
+    "sv"
+  ],
+  "timestamp": "2026-03-31T05:41:23.855Z"
 }

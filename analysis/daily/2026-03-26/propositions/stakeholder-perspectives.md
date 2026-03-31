@@ -1,85 +1,90 @@
 # Stakeholder Perspective Analysis — 2026-03-26
 
-**Generated**: 2026-03-30 05:46 UTC
-**Data Sources**: get_propositioner
-**Documents Analyzed**: 2
-**Confidence**: MEDIUM
+**Generated**: 2026-03-31 05:37 UTC | **Analyst**: news-propositions workflow
+**Data Sources**: get_propositioner, get_dokument_innehall
+**Documents Analyzed**: 2 | **Riksmöte**: 2025/26
+**Confidence**: MEDIUM | **Lenses Applied**: 6
+
+---
 
 ## Summary
 
-Applied **6 analysis lenses** to **2** documents.
+Applied **6 analysis lenses** to **2** government propositions: HD03227 (youth crime investigation) and HD03221 (food requirement removal for serving permits).
 
-## Detailed Analysis
+```mermaid
+graph TD
+    subgraph "👥 Stakeholder Impact Map"
+        PROP1["HD03227<br/>Youth Crime Reform"] --> GOV1["🏛️ Government<br/>HIGH impact"]
+        PROP1 --> OPP1["⚖️ Opposition<br/>HIGH impact"]
+        PROP1 --> CIT1["👥 Citizens<br/>HIGH impact"]
+        PROP1 --> MED1["📰 Media<br/>HIGH impact"]
+        
+        PROP2["HD03221<br/>Serving Permits"] --> GOV2["🏛️ Government<br/>MEDIUM impact"]
+        PROP2 --> ECO2["💰 Economy<br/>MEDIUM impact"]
+        PROP2 --> CIT2["👥 Citizens<br/>LOW impact"]
+    end
+    
+    style PROP1 fill:#ffc107,color:#000
+    style PROP2 fill:#28a745,color:#fff
+    style GOV1 fill:#0d6efd,color:#fff
+    style OPP1 fill:#dc3545,color:#fff
+    style CIT1 fill:#6f42c1,color:#fff
+    style MED1 fill:#fd7e14,color:#fff
+    style GOV2 fill:#0d6efd,color:#fff
+    style ECO2 fill:#20c997,color:#fff
+    style CIT2 fill:#6f42c1,color:#fff
+```
 
-### 🏛️ Government Perspective
+## 🏛️ Government Perspective
 
-- **Documents with High Impact**: 0/2
-- **Avg Confidence**: 70%
-- **Key Actors**: Prime Minister, Cabinet, Kristdemokraterna, Centerpartiet, Liberalerna
+| Document | Impact | Key Actors | Assessment |
+|----------|:------:|-----------|-----------|
+| HD03227 | **HIGH** | PM Kristersson (M), Justice Minister Strömmer (M), Acting PM Busch (KD) | Core Tidö Agreement delivery on youth crime — the coalition's most visible policy promise. Demonstrates M's ownership of the justice portfolio. |
+| HD03221 | **MEDIUM** | Minister Lann (KD), Acting PM Busch (KD) | KD-led deregulation initiative showing party-specific policy capacity within the coalition. Lower political risk than crime measures. |
 
-> From the government perspective, this document requires assessment of policy execution capacity and resource allocation.
+## ⚖️ Opposition Perspective
 
-> From the government perspective, this document touching justice policy requires assessment of policy execution capacity and resource allocation.
+| Document | Impact | Key Actors | Assessment |
+|----------|:------:|-----------|-----------|
+| HD03227 | **HIGH** | S party leader, V justice spokesperson, MP spokesperson | Strategic dilemma for S: opposing popular crime measures risks electoral damage, but supporting validates government. V/MP can champion children's rights angle. |
+| HD03221 | **LOW** | S social affairs spokesperson | Moderate opposition opportunity to raise public health concerns, but difficult to oppose popular business deregulation. |
 
-### ⚖️ Opposition Perspective
+## 👥 Citizen Perspective
 
-- **Documents with High Impact**: 0/2
-- **Avg Confidence**: 70%
-- **Key Actors**: Opposition Leader, Shadow Cabinet, Kristdemokraterna, Centerpartiet, Liberalerna
+| Document | Impact | Key Actors | Assessment |
+|----------|:------:|-----------|-----------|
+| HD03227 | **HIGH** | Young offenders, crime victims, families, Barnombudsmannen | Direct impact on juvenile justice system — balances public safety against children's rights. Top voter concern (youth gang crime). |
+| HD03221 | **LOW** | Hospitality consumers, pub/bar visitors, nightlife communities | Lifestyle impact — more diverse venue options. Modest consumer benefit. |
 
-> From the opposition perspective, this document warrants scrutiny for alignment with citizen welfare and democratic accountability.
+## 💰 Economic Perspective
 
-> From the opposition perspective, this document in justice policy warrants scrutiny for alignment with citizen welfare and democratic accountability.
+| Document | Impact | Key Actors | Assessment |
+|----------|:------:|-----------|-----------|
+| HD03227 | **LOW** | Justice system budget, police resources, social services | Indirect cost: requires investment in justice system capacity for expanded investigative powers. |
+| HD03221 | **MEDIUM** | Hospitality entrepreneurs, restaurant owners, bar operators | Removes regulatory barrier — lowers entry costs for bar/pub operators. Potential for new venue creation and employment. |
 
-### 👥 Citizen Perspective
+## 🌍 International Perspective
 
-- **Documents with High Impact**: 0/2
-- **Avg Confidence**: 55%
-- **Key Actors**: Civil Society, Trade Unions, Consumer Groups, Ombudsmen
+| Document | Impact | Key Actors | Assessment |
+|----------|:------:|-----------|-----------|
+| HD03227 | **MEDIUM** | UNCRC Committee, Council of Europe, EU fundamental rights | UNCRC compliance scrutiny is the primary international dimension. Sweden's reputation as children's rights champion may face questioning. |
+| HD03221 | **LOW** | EU single market, Nordic neighbours | Aligns Sweden closer to European norms where food requirements for alcohol serving are less common. Minor harmonisation benefit. |
 
-> From the citizen perspective, this document has direct implications for service delivery and everyday life.
+## 📰 Media Perspective
 
-> From the citizen perspective, this document affecting justice policy has direct implications for service delivery and everyday life.
-
-### 💰 Economic Perspective
-
-- **Documents with High Impact**: 0/2
-- **Avg Confidence**: 70%
-- **Key Actors**: Finance Ministry, Riksbank, Employers Federation, Trade Unions, Chamber of Commerce
-
-> From the economic perspective, this document may affect business environment, employment levels, and investment climate. Specifically, regulatory compliance costs require business impact assessment.
-
-> From the economic perspective, this document may affect business environment, employment levels, and investment climate.
-
-### 🌍 International Perspective
-
-- **Documents with High Impact**: 0/2
-- **Avg Confidence**: 65%
-- **Key Actors**: EU Commission, Foreign Ministry, NATO, Nordic Council, UN
-
-> From the international perspective, this document must be assessed for EU regulatory alignment and treaty obligations. International context dimensions are limited for this document.
-
-> From the international perspective, this document must be assessed for EU regulatory alignment and treaty obligations. International context dimensions are limited for this document.
-
-### 📰 Media Perspective
-
-- **Documents with High Impact**: 0/2
-- **Avg Confidence**: 70%
-- **Key Actors**: Swedish Media, SVT, DN, Aftonbladet, SR
-
-> From the media perspective, this document has low newsworthiness (score: 26/100).
-
-> From the media perspective, this document has low newsworthiness (score: 26/100). Narrative frames detected: law-and-order.
+| Document | Impact | Key Actors | Assessment |
+|----------|:------:|-----------|-----------|
+| HD03227 | **HIGH** | SVT, DN, Aftonbladet, SR, Expressen | Dominant media narrative — youth gang crime is top news agenda item. High newsworthiness, extensive coverage expected. |
+| HD03221 | **MEDIUM** | Lifestyle media, business press, local media | Moderate lifestyle/business interest. Local media in hospitality-heavy areas (Stockholm nightlife) likely to cover. |
 
 ## Key Findings
 
-1. All six stakeholder perspectives applied consistently across the document batch.
-2. Cross-perspective conflicts indicate politically contentious documents.
-
-## Implications
-
-Perspective analysis feeds directly into article stakeholder framing and balance.
+1. HD03227 has HIGH impact across 4 of 6 stakeholder perspectives — most politically significant
+2. Opposition faces strategic dilemma on crime policy with 2026 election approaching
+3. Economic stakeholders most affected by HD03221 (hospitality deregulation)
+4. International scrutiny focused on UNCRC compliance for HD03227
+5. Media coverage expected to be dominated by youth crime reform narrative
 
 ## Data Quality Notes
 
-Aggregate confidence: MEDIUM.
+Aggregate confidence: **MEDIUM**. Stakeholder assessments validated against per-document analyses. Full-text content enrichment completed for both documents.
