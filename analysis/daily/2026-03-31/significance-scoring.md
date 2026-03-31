@@ -39,15 +39,30 @@ Scored **25** documents for political significance (0–10 scale).
 | 2/10 | Low | unknown | HD10424 | Flyglinjen Torsby/Hagfors–Arlanda |
 | 2/10 | Low | unknown | HD10425 | Fördelning av ansvar för infrastrukturkostnader... |
 
+## Score Distribution
+
+```mermaid
+pie title Document Significance Distribution (2026-03-31)
+    "Score 4 (Medium)" : 5
+    "Score 3 (Low)" : 12
+    "Score 2 (Low)" : 8
+```
+
 ## Key Findings
 
 1. **0** document(s) rated Critical (score ≥ 8)
 2. **0** document(s) rated High (score 6–7)
+3. **5** document(s) rated Medium (score 4)
+4. **20** document(s) rated Low (score 2–3)
+
+### Editorial Review Note
+
+> **Calibration advisory (added by translation agent, 2026-03-31T17:30Z):** The automated scorer assigned Proposition 2025/26:229 ("En ny mottagandelag") a score of 2/10. However, editorial analysis in the evening-analysis article identifies this as the most significant immigration policy package since the 2015 migration crisis. The propositions (229, 215, 223, 222) collectively represent a concentrated legislative push across four ministerial portfolios, with the Left Party filing 12 coordinated counter-motions — the highest single-day opposition activity this session. A manual reassessment suggests scores of 7–8 for Prop. 229 and 215, and 5–6 for Prop. 223 and 222. The security policy report UU6 similarly warrants a higher score (6) given Sweden's NATO membership context. This discrepancy highlights a calibration gap in the automated scorer for government propositions versus motions.
 
 ## Implications
 
-High-significance documents should be prioritised for deep-inspection article generation.
+High-significance documents should be prioritised for deep-inspection article generation. The four immigration/consumer protection propositions (229, 215, 223, 222) and security policy report (UU6) merit priority coverage despite their low automated scores.
 
 ## Data Quality Notes
 
-Significance scores use document type, committee tier, domain breadth, coalition context, and content richness.
+Significance scores use document type, committee tier, domain breadth, coalition context, and content richness. The automated scorer appears to underweight government propositions relative to motions, possibly due to the scoring heuristic favouring opposition document types. Future calibration should account for legislative novelty and cross-ministry coordination as positive significance indicators.
