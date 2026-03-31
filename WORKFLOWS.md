@@ -795,6 +795,7 @@ graph TB
     ANF --> WF_IP
     VOTE --> WF_EV
     ANF --> WF_EV
+    BET --> WF_EV
     CAL --> WF_EV
     DOK --> WF_RT
     CAL --> WF_RT

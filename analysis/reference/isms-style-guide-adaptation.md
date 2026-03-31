@@ -149,21 +149,21 @@ The ISMS style guide governs human-authored documentation. The political intelli
 
 | Style Guide Requirement | ISMS Implementation | LLM Implementation |
 |:-----------------------:|--------------------|--------------------|
-| Document structure | Human author follows template | Prompt template in `scripts/prompts/v1/political-analysis.md` |
+| Document structure | Human author follows template | Prompt template in `scripts/prompts/v2/political-analysis.md` |
 | Source citation | Author adds citations | LLM instructed to cite MCP tool outputs as dok_ids |
 | Confidence notation | Human judgement | LLM instructed to assign confidence per hierarchy |
 | Prohibited patterns | Style guide prohibition | Explicit negative examples in prompt |
 | Emoji conventions | Style guide table | Emoji mapping table in system prompt |
 | Multi-language | Translation guide | Per-language prompt configuration |
 
-**Reference:** `scripts/prompts/v1/political-analysis.md` implements all style requirements as LLM instructions.
+**Reference:** `scripts/prompts/v2/political-analysis.md` implements all style requirements as LLM instructions.
 
 ---
 
 ## 🔗 Related Documents
 
 - [methodologies/political-style-guide.md](../methodologies/political-style-guide.md) — Full style guide
-- [scripts/prompts/v1/political-analysis.md](../../scripts/prompts/v1/political-analysis.md) — LLM prompts
+- [scripts/prompts/v2/political-analysis.md](../../scripts/prompts/v2/political-analysis.md) — LLM prompts
 - [TRANSLATION_GUIDE.md](../../TRANSLATION_GUIDE.md) — Multi-language standards
 
 ---
