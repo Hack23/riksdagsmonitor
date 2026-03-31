@@ -226,6 +226,104 @@ When stakeholder impacts conflict (e.g., Citizens benefit but Business bears cos
 
 ---
 
+## ⚖️ Group 7: Judiciary (Domstolsväsendet)
+
+*How does this policy affect judicial independence, court workload, legal precedent, or constitutional compliance?*
+
+| Parameter | Value |
+|-----------|-------|
+| **Impact Level** | `[REQUIRED: HIGH / MEDIUM / LOW / NONE]` |
+| **Impact Timeline** | `[REQUIRED: IMMEDIATE / SHORT / MEDIUM / LONG]` |
+| **Affected Institutions** | `[REQUIRED: e.g. "Högsta domstolen", "Förvaltningsrätten", "Kammarrätten", "JO (Justitieombudsmannen)"]` |
+| **Constitutional Compliance** | `[REQUIRED: COMPLIANT / CONSTITUTIONAL RISK / UNDER REVIEW / UNCERTAIN]` |
+| **Legal Precedent Impact** | `[REQUIRED: NONE / MINOR ADJUSTMENT / SIGNIFICANT SHIFT / NEW PRECEDENT]` |
+| **Evidence Sources** | `[REQUIRED: Lagrådet remiss, SOU dok_id, or constitutional analysis]` |
+| **Confidence Level** | `[REQUIRED: HIGH / MEDIUM / LOW]` |
+
+**Judiciary Impact Narrative:**  
+`[REQUIRED: 2–3 sentences. Consider Lagrådet opinions, constitutional implications under Regeringsformen (RF), court capacity, and effects on rule-of-law guarantees. Note any EU Charter of Fundamental Rights interactions.]`
+
+---
+
+## 📰 Group 8: Media & Public Discourse
+
+*How does this policy affect media coverage dynamics, public debate framing, and information ecosystem?*
+
+| Parameter | Value |
+|-----------|-------|
+| **Impact Level** | `[REQUIRED: HIGH / MEDIUM / LOW / NONE]` |
+| **Impact Timeline** | `[REQUIRED: IMMEDIATE / SHORT / MEDIUM / LONG]` |
+| **Media Salience** | `[REQUIRED: DOMINANT STORY / SIGNIFICANT / MINOR / NEGLIGIBLE]` |
+| **Framing Dynamics** | `[REQUIRED: e.g. "Government frames as security; opposition as civil liberties threat"]` |
+| **Key Media Actors** | `[REQUIRED: e.g. "SVT Nyheter, DN ledare, Expressen, SR Ekot"]` |
+| **Evidence Sources** | `[REQUIRED: media monitoring refs, press conference dok_ids, or debate transcripts]` |
+| **Confidence Level** | `[REQUIRED: HIGH / MEDIUM / LOW]` |
+
+**Media Impact Narrative:**  
+`[REQUIRED: 2–3 sentences. Reference scripts/analysis-framework/lenses/media.ts. Describe the anticipated media cycle, competing narratives, and whether the issue will sustain public attention or be displaced.]`
+
+---
+
+## 📊 Extended Impact Summary Matrix
+
+> **AI Instructions:** This extended matrix consolidates all 8 stakeholder groups including Judiciary and Media — use it for the final editorial-quality overview. Populate after completing ALL individual assessments above.
+
+| # | Stakeholder Group | Impact Level | Timeline | Confidence | Net Effect | Key Risk / Opportunity |
+|:-:|-------------------|:------------:|:--------:|:----------:|:----------:|------------------------|
+| 1 | 🏛️ Government Coalition | `[H/M/L/N]` | `[I/S/M/L]` | `[H/M/L]` | `[positive/negative/neutral]` | `[REQUIRED: one-line risk or opportunity]` |
+| 2 | 🗳️ Opposition Bloc (S+V+MP+C) | `[H/M/L/N]` | `[I/S/M/L]` | `[H/M/L]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 3 | 👥 Citizens | `[H/M/L/N]` | `[I/S/M/L]` | `[H/M/L]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 4 | 💰 Business & Industry | `[H/M/L/N]` | `[I/S/M/L]` | `[H/M/L]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 5 | ⚖️ Judiciary | `[H/M/L/N]` | `[I/S/M/L]` | `[H/M/L]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 6 | 📰 Media | `[H/M/L/N]` | `[I/S/M/L]` | `[H/M/L]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 7 | 🤝 Civil Society | `[H/M/L/N]` | `[I/S/M/L]` | `[H/M/L]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 8 | 🌍 International Partners (EU, Nordic) | `[H/M/L/N]` | `[I/S/M/L]` | `[H/M/L]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+
+> *Legend — Impact: **H**igh/**M**edium/**L**ow/**N**one · Timeline: **I**mmediate/**S**hort/**M**edium/**L**ong · Confidence: **H**igh/**M**edium/**L**ow*
+
+---
+
+## 🔑 Extended Key Insights & Editorial Guidance
+
+`[REQUIRED: 3–5 sentences identifying the most significant stakeholder dynamics. Which groups are in tension? Where are unexpected winners/losers? What are the second-order political effects? Consider cross-cutting themes: does this policy create new coalition fault lines, shift the Overton window, or establish precedents that constrain future governments?]`
+
+### Inter-Stakeholder Tension Map
+
+> **AI Instructions:** Identify the two strongest stakeholder tensions and describe the political mechanism. This drives editorial angle selection.
+
+| Tension Pair | Direction | Mechanism | Editorial Relevance |
+|--------------|:---------:|-----------|---------------------|
+| `[e.g. Citizens ↔ Business]` | `[→ or ←]` | `[REQUIRED: e.g. "Higher employer taxes fund citizen benefit, reducing business competitiveness"]` | `[HIGH/MEDIUM/LOW]` |
+| `[e.g. Government ↔ Judiciary]` | `[→ or ←]` | `[REQUIRED: e.g. "Fast-tracked legislation bypasses Lagrådet, raising constitutional concerns"]` | `[HIGH/MEDIUM/LOW]` |
+
+**Publish Recommendation:** `[REQUIRED: YES — HIGH interest / YES — MEDIUM interest / MONITOR — low standalone value]`  
+**Recommended Article Type:** `[REQUIRED: BREAKING / ANALYSIS / DEEP-DIVE / MONITOR-ONLY]`  
+**Suggested Headline Angle:** `[REQUIRED: one sentence framing the most newsworthy stakeholder dynamic]`
+
+---
+
+## 📂 MCP Data Files Used
+
+> **AI Instructions:** List ALL `analysis/daily/YYYY-MM-DD/{articleType}/data/` files consulted during this assessment. This ensures traceability and reproducibility. Include both Riksdag and Regering data sources accessed via MCP tools.
+
+| # | File Path | Data Type | Freshness | Notes |
+|:-:|-----------|-----------|:---------:|-------|
+| 1 | `[REQUIRED: e.g. analysis/daily/2026-03-30/budget-analysis/data/proposition.json]` | `[e.g. Proposition]` | `[REQUIRED: date]` | `[brief relevance note]` |
+| 2 | `[REQUIRED: e.g. analysis/daily/2026-03-30/budget-analysis/data/votering.json]` | `[e.g. Voting record]` | `[REQUIRED: date]` | `[brief relevance note]` |
+| 3 | `[REQUIRED: additional data file]` | `[type]` | `[date]` | `[note]` |
+
+### MCP Tools Invoked
+
+| Tool | Purpose | Parameters |
+|------|---------|------------|
+| `[REQUIRED: e.g. riksdag-regering-search_dokument]` | `[e.g. "Fetched proposition H901FiU1"]` | `[key params used]` |
+| `[REQUIRED: e.g. riksdag-regering-search_voteringar]` | `[e.g. "Voting records for bet 2024/25:FiU1"]` | `[key params used]` |
+| `[REQUIRED: e.g. riksdag-regering-search_regering]` | `[e.g. "Government press releases on budget"]` | `[key params used]` |
+
+> **Traceability Note:** Every factual claim in the stakeholder assessments above MUST be traceable to a file or MCP tool invocation listed in this section. Unsubstantiated claims are REJECTED during editorial review.
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/stakeholder-impact.md`  
 - **Version:** 2.0  
