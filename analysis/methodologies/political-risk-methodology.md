@@ -426,14 +426,14 @@ The following table maps each risk category to the primary MCP tools and query s
 ### Query Examples
 
 ```bash
-# Coalition cohesion: check if M+KD+L+SD voted together on recent budget
-search_voteringar(rm="2025/26", bet="FiU1", groupBy="parti")
+# Coalition cohesion: party-level breakdown on recent budget (FiU1)
+get_voting_group(rm="2025/26", bet="FiU1")
 
 # Policy risk: track contested committee reports
 get_betankanden(rm="2025/26", organ="SfU")  # Social insurance committee
 
-# Democratic process: monitor plenary participation
-search_voteringar(rm="2025/26", rost="Frånvarande", groupBy="parti")
+# Democratic process: monitor plenary participation (party-level absences)
+get_voting_group(rm="2025/26", rost="Frånvarande")
 
 # Social cohesion: migration debate intensity
 search_anforanden(text="migration", rm="2025/26")

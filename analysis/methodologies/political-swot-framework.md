@@ -56,7 +56,7 @@ graph LR
 
 ### Evidence Hierarchy (by confidence level)
 
-| Confidence | Acceptable Sources | MCP Tool |
+| Confidence | Acceptable Sources | Tool / Data Source |
 |:----------:|-------------------|----------|
 | **HIGH** | Riksdag official document (proposition, betänkande, protokoll) | `get_dokument`, `search_dokument` |
 | **HIGH** | Verified voting record | `search_voteringar` |
@@ -390,7 +390,7 @@ quadrantChart
 
 Riksdagsmonitor enriches its SWOT analysis with **EU Parliament data** via the [European Parliament MCP Server](https://github.com/Hack23/European-Parliament-MCP-Server). When Swedish domestic policy intersects EU legislation, **cross-parliament evidence** strengthens confidence assessments.
 
-| Confidence | Acceptable Sources | MCP Tool |
+| Confidence | Acceptable Sources | Tool / Data Source |
 |:----------:|-------------------|----------|
 | **HIGH** | Official Riksdag voted text, verified roll-call record | `search_voteringar`, `get_betankanden` |
 | **HIGH** | Government proposition text (approved or tabled) | `get_propositioner` |
@@ -407,7 +407,7 @@ Riksdagsmonitor enriches its SWOT analysis with **EU Parliament data** via the [
 
 ### Cross-Parliament Confidence Decay
 
-SWOT entries using cross-parliament evidence follow **stricter decay** because EU legislative timelines are longer (co-decision procedures span 12–24 months):
+SWOT entries using cross-parliament evidence follow **slower/extended decay** because EU legislative timelines are longer (co-decision procedures span 12–24 months):
 
 | Original Confidence | After 30 days | After 90 days | After 180 days |
 |:-------------------:|:-------------:|:-------------:|:--------------:|

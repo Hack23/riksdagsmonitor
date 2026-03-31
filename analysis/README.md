@@ -178,7 +178,7 @@ Every analysis file must demonstrate **genuine political intelligence depth**. T
 
 ```mermaid
 flowchart TD
-    Start(["🚀 Workflow Triggered"]) --> Health["🏥 MCP Health Gate\nget_calendar_events"]
+    Start(["🚀 Workflow Triggered"]) --> Health["🏥 MCP Health Gate\nget_sync_status"]
     Health -->|"✅ Healthy"| Feeds["📡 Download ALL\nFeed Endpoints"]
     Health -->|"❌ Failed 3x"| Abort(["⛔ Abort Run"])
     Feeds --> Advisory["📋 Download Advisory\nFeeds MANDATORY"]
