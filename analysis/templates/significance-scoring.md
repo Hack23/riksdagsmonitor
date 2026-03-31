@@ -226,6 +226,52 @@ These examples provide anchor points for consistent scoring across workflows:
 
 ---
 
+## 📊 Section 4: MCP Download Batch Scoring Table
+
+*Use this table when scoring multiple events from a single MCP download session. Record the `dok_id` from the Riksdag API response for full traceability back to the source document.*
+
+> **AI Instructions:** After each MCP data fetch (e.g., `riksdag-regering-search_dokument`, `riksdag-regering-get_betankanden`), score every returned document here before deciding which events warrant full analysis. The `dok_id` column MUST match the identifier from the Riksdag Open Data API response.
+
+| Event | dok_id | Parl. | Policy | Public | Urgency | X-Party | **Composite** | Decision |
+|-------|--------|:-----:|:------:|:------:|:-------:|:-------:|:-------------:|----------|
+| `[event 1]` | `[dok_id]` | `[#]` | `[#]` | `[#]` | `[#]` | `[#]` | **`[score]`** | `[action]` |
+| `[event 2]` | `[dok_id]` | `[#]` | `[#]` | `[#]` | `[#]` | `[#]` | **`[score]`** | `[action]` |
+| `[event 3]` | `[dok_id]` | `[#]` | `[#]` | `[#]` | `[#]` | `[#]` | **`[score]`** | `[action]` |
+
+---
+
+## 📚 Section 5: Riksdag Calibration Examples
+
+*These pre-calculated anchor scenarios ensure consistent scoring across all workflows. Each example uses the manual 5-dimension weighted formula: `(Parl. × 0.25) + (Policy × 0.25) + (Public × 0.20) + (Urgency × 0.15) + (X-Party × 0.15)`.*
+
+| Event Type | Parl. | Policy | Public | Urgency | X-Party | Composite | Notes |
+|------------|:-----:|:------:|:------:|:-------:|:-------:|:---------:|-------|
+| Routine committee opinion (no controversy) | 3 | 2 | 2 | 1 | 2 | **2.5** | Archive — below noise floor |
+| Major government proposition on criminal justice | 5 | 7 | 7 | 3 | 6 | **5.8** | Monitor — track for follow-up |
+| Coalition agreement on migration pact | 8 | 9 | 8 | 6 | 9 | **8.2** | Priority — prominent placement |
+| Motion of no confidence (misstroendeförklaring) | 10 | 8 | 10 | 10 | 10 | **9.6** | Breaking — immediate all-language deploy |
+| Minor technical amendment to regulation | 2 | 2 | 1 | 1 | 1 | **1.5** | Archive — log for trend only |
+| SD withdrawal from Tidöavtalet | 9 | 8 | 9 | 8 | 10 | **8.8** | Priority — coalition fracture event |
+| Routine skriftlig fråga about bus routes | 1 | 1 | 1 | 1 | 1 | **1.0** | Archive — minimal significance |
+
+---
+
+## 📂 Section 6: MCP Data Files Used
+
+*Record every data file consulted during the scoring session for audit traceability and reproducibility.*
+
+`[REQUIRED: List all analysis/daily/YYYY-MM-DD/{articleType}/data/ files consulted]`
+
+| # | File Path | Source MCP Tool | Fetch Timestamp (UTC) |
+|:-:|-----------|----------------|-----------------------|
+| 1 | `analysis/daily/YYYY-MM-DD/{articleType}/data/[filename].json` | `[e.g. riksdag-regering-search_dokument]` | `[YYYY-MM-DD HH:MM UTC]` |
+| 2 | `[path]` | `[tool]` | `[timestamp]` |
+| 3 | `[path]` | `[tool]` | `[timestamp]` |
+
+> **📌 Note:** All files listed above MUST exist in the repository at the stated paths. If a file was fetched but not persisted, note `(transient — not cached)` in the File Path column.
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/significance-scoring.md`  
 - **Version:** 2.0  
