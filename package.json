@@ -3,16 +3,37 @@
   "version": "0.8.14",
   "type": "module",
   "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
-  "main": "dist/lib/index.js",
-  "types": "dist/lib/index.d.ts",
+  "main": "dist/lib/shared/index.js",
+  "types": "dist/lib/shared/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/lib/index.js",
-      "types": "./dist/lib/index.d.ts"
+      "import": "./dist/lib/shared/index.js",
+      "types": "./dist/lib/shared/index.d.ts"
+    },
+    "./shared": {
+      "import": "./dist/lib/shared/index.js",
+      "types": "./dist/lib/shared/index.d.ts"
+    },
+    "./cia/*": {
+      "import": "./dist/lib/cia/*.js",
+      "types": "./dist/lib/cia/*.d.ts"
+    },
+    "./dashboards/*": {
+      "import": "./dist/lib/dashboards/*.js",
+      "types": "./dist/lib/dashboards/*.d.ts"
+    },
+    "./ui/*": {
+      "import": "./dist/lib/ui/*.js",
+      "types": "./dist/lib/ui/*.d.ts"
+    },
+    "./scripts/*": {
+      "import": "./dist/scripts/*.js",
+      "types": "./dist/scripts/*.d.ts"
     }
   },
   "files": [
     "dist/lib",
+    "dist/scripts",
     "README.md",
     "LICENSE",
     "SECURITY.md"
@@ -26,7 +47,7 @@
     "dev": "vite",
     "prebuild": "npx tsx scripts/generate-news-indexes/index.ts && npx tsx scripts/extract-news-metadata.ts && npx tsx scripts/generate-sitemap-html.ts && npx tsx scripts/generate-rss.ts && npx tsx scripts/generate-sitemap.ts",
     "build": "vite build",
-    "build:lib": "tsc -p tsconfig.lib.json",
+    "build:lib": "tsc -p tsconfig.lib.json && tsc -p tsconfig.npm-scripts.json",
     "postbuild": "cp rss.xml dist/rss.xml && cp sitemap.xml dist/sitemap.xml && cp -r cia-data dist/cia-data",
     "preview": "vite preview",
     "test": "NODE_OPTIONS='--max-old-space-size=2048' vitest run",
