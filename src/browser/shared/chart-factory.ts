@@ -15,12 +15,12 @@
  * */
 
 import type { Chart as ChartType, ChartConfiguration, ChartTypeRegistry } from 'chart.js';
-import { THEME_COLORS, CHART_PALETTE, BREAKPOINTS, getActiveThemeColors, getChartPalette } from './theme.js';
+import { CHART_PALETTE, BREAKPOINTS, getActiveThemeColors, getChartPalette } from './theme.js';
 import { showLoadingState, showErrorState, hideStateOverlays } from './dom-utils.js';
 import { logger } from './logger.js';
 
 // Re-export for convenience
-export { THEME_COLORS, CHART_PALETTE, BREAKPOINTS, getActiveThemeColors, getChartPalette };
+export { CHART_PALETTE, BREAKPOINTS, getActiveThemeColors, getChartPalette };
 
 /**
  * Get the Chart constructor.

@@ -6,7 +6,7 @@
  * Theme architecture:
  *   – `DARK_THEME_COLORS`  → Ingress-inspired neon palette (matches html[data-theme="dark"])
  *   – `LIGHT_THEME_COLORS` → Professional green palette (matches html[data-theme="light"] / :root)
- *   – `THEME_COLORS`       → Deprecated constant alias of `DARK_THEME_COLORS` (kept for backwards compatibility; not runtime-resolved)
+ *   – `getActiveThemeColors()` → Runtime-resolved theme based on current `data-theme` attribute
  *
  * WCAG 2.1 AA compliance:
  *   Dark  #001a1a / #f0f0f0 → 18.1:1 ✅   Cyan  #00d9ff / #001a1a → 9.4:1 ✅
@@ -116,23 +116,6 @@ export function getActiveThemeColors(): ThemeColors {
   return LIGHT_THEME_COLORS;
 }
 
-/**
- * Cyberpunk (dark) theme color palette — kept as the default export for
- * backwards compatibility with existing Chart.js consumers.
- *
- * @deprecated Prefer `getActiveThemeColors()` which returns the correct palette for the
- *   current `data-theme` value.  Migration:
- *   ```ts
- *   // Before
- *   import { THEME_COLORS } from './theme.js';
- *   chart.data.datasets[0].borderColor = THEME_COLORS.cyan;
- *
- *   // After
- *   import { getActiveThemeColors } from './theme.js';
- *   chart.data.datasets[0].borderColor = getActiveThemeColors().cyan;
- *   ```
- */
-export const THEME_COLORS: ThemeColors = DARK_THEME_COLORS;
 
 /* ── Breakpoints ────────────────────────────────────────────────────────── */
 
