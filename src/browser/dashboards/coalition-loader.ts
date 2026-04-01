@@ -35,6 +35,8 @@ import {
   detectLanguage,
 } from '../shared/index.js';
 
+import { parseCSV } from '../shared/data-loader.js';
+
 import type { CSVRow } from '../shared/index.js';
 
 // ============================================================================
@@ -414,35 +416,6 @@ const TRANSLATIONS: Record<string, CoalitionTranslations> = {
 function getTranslations(): CoalitionTranslations {
   const lang = detectLanguage();
   return TRANSLATIONS[lang] || TRANSLATIONS.en;
-}
-
-function parseCSV(csvText: string): CSVRow[] {
-  const Papa = (globalThis as Record<string, unknown>).Papa as {
-    parse: (input: string, config: Record<string, unknown>) => { data: CSVRow[] };
-  } | undefined;
-
-  if (Papa) {
-    const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
-    return parsed.data;
-  }
-
-  // Fallback: naive split (does not handle RFC4180 quoted fields)
-  const lines = csvText.trim().split('\n');
-  if (lines.length < 2) return [];
-
-  const headers = lines[0].split(',').map((h) => h.trim());
-  const data: CSVRow[] = [];
-
-  for (let i = 1; i < lines.length; i++) {
-    const values = lines[i].split(',');
-    if (values.length !== headers.length) continue;
-    const row: CSVRow = {};
-    headers.forEach((header, idx) => {
-      row[header] = values[idx].trim();
-    });
-    data.push(row);
-  }
-  return data;
 }
 
 // ============================================================================
