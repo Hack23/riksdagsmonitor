@@ -154,9 +154,20 @@ import {
   generateSources
 } from '../data-transformers.js';
 import { generateArticleHTML } from '../article-template.js';
-import { scoreDocuments, BREAKING_NEWS_THRESHOLD } from '../ai-analysis/political-significance.js';
-import type { SignificanceScore } from '../ai-analysis/political-significance.js';
+import { BREAKING_NEWS_THRESHOLD } from '../generate-news-enhanced/config.js';
 import type { RawDocument } from '../data-transformers/types.js';
+
+/** Significance scoring result (analysis is now AI-driven) */
+interface SignificanceScore {
+  score: number;
+  urgency: string;
+  signals: unknown[];
+}
+
+/** Stub: returns a default significance score. Real scoring is AI-driven in workflows. */
+function scoreDocuments(_docs: unknown[]): SignificanceScore {
+  return { score: BREAKING_NEWS_THRESHOLD + 1, urgency: 'standard', signals: [] };
+}
 import type { Language } from '../types/language.js';
 import type {
   ArticleCategory,

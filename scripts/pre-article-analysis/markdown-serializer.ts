@@ -17,11 +17,50 @@
  * @license Apache-2.0
  */
 
-import type {
-  DocumentAnalysisResult,
-  PerspectiveAnalysis,
-  DocumentLink,
-} from '../analysis-framework/types.js';
+/* ── Inlined types (formerly from deleted analysis-framework/types module) ── */
+
+interface SwotContribution {
+  quadrant: string;
+  text: string;
+  forStakeholder: string;
+}
+
+interface DashboardMetric {
+  label: string;
+  value: number | string;
+  unit?: string;
+}
+
+interface MindmapNode {
+  label: string;
+  children?: MindmapNode[];
+}
+
+interface PerspectiveAnalysis {
+  lens: string;
+  summary: string;
+  impact: string;
+  sentiment: string;
+  swotContribution: SwotContribution[];
+  dashboardMetrics: DashboardMetric[];
+  mindmapNodes: MindmapNode[];
+}
+
+interface DocumentLink {
+  sourceId: string;
+  targetId: string;
+  type: string;
+  description: string;
+}
+
+interface DocumentAnalysisResult {
+  document: { dok_id?: string; titel?: string; title?: string; doktyp?: string; [key: string]: unknown };
+  overallSignificance: number;
+  perspectives: PerspectiveAnalysis[];
+  crossDocumentLinks: DocumentLink[];
+  keyInsights: string[];
+  confidenceScore: number;
+}
 
 // ---------------------------------------------------------------------------
 // Types

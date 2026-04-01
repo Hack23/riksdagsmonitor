@@ -12,8 +12,31 @@
 
 import type { Language } from '../types/language.js';
 import type { SwotEntry, SwotData } from '../types/article.js';
-import type { StakeholderSwot, StakeholderCategory } from '../data-transformers/content-generators/stakeholder-swot-section.js';
 import type { RawDocument } from '../data-transformers/types.js';
+
+/* ── Inlined types (formerly from deleted stakeholder-swot-section module) ── */
+
+/** Stakeholder category for analysis routing */
+export type StakeholderCategory =
+  | 'government'
+  | 'opposition'
+  | 'private'
+  | 'civil-society'
+  | 'municipal'
+  | 'international'
+  | 'academic'
+  | 'media'
+  | 'judiciary';
+
+/** Multi-stakeholder SWOT analysis entry */
+export interface StakeholderSwot {
+  name: string;
+  role?: string;
+  category?: StakeholderCategory;
+  swot: SwotData;
+  evidenceRefs?: string[];
+  confidenceLevel?: 'high' | 'medium' | 'low';
+}
 
 // ---------------------------------------------------------------------------
 // Internal helpers

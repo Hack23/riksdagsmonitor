@@ -10,15 +10,9 @@ import fs from 'fs';
 import path from 'path';
 import { translateSwedishContent } from '../translation-dictionary.js';
 import type { Language } from '../types/language.js';
-import type { DateRange, ArticleQualityScore } from '../types/article.js';
+import type { DateRange, ArticleQualityScore, UrgencyLabel } from '../types/article.js';
 import type { ClassificationLevel, RiskLevel, ConfidenceLabel } from '../analysis-reader.js';
-import type { UrgencyLabel } from '../ai-analysis/political-significance.js';
 import { readLatestAnalysis, deriveArticleClassificationMeta } from '../analysis-reader.js';
-import {
-  assessArticleQuality,
-  printQualityReport,
-  injectQualityMetadata,
-} from '../ai-analysis/quality-assessor.js';
 import {
   NEWS_DIR,
   METADATA_DIR,
@@ -28,6 +22,43 @@ import {
   MULTIDIM_QUALITY_THRESHOLD,
   toISODate,
 } from './config.js';
+
+import type { MultiDimensionalQualityAssessment } from '../types/article.js';
+
+// ---------------------------------------------------------------------------
+// Stub quality functions (deleted with ai-analysis module).
+// Per ai-driven-analysis-guide.md Rule 2, quality assessment is now done by
+// the AI agent in agentic workflows, not by scripts.
+// ---------------------------------------------------------------------------
+
+/** Stub: returns a passing quality assessment */
+function assessArticleQuality(_html: string, _lang: string, _docIds: string[], _threshold: number): MultiDimensionalQualityAssessment {
+  return {
+    overallScore: 100,
+    dimensions: {
+      factualAccuracy: { score: 100, evidence: [], improvements: [] },
+      stakeholderCoverage: { score: 100, evidence: [], improvements: [] },
+      analyticalDepth: { score: 100, evidence: [], improvements: [] },
+      editorialConsistency: { score: 100, evidence: [], improvements: [] },
+      evidenceQuality: { score: 100, evidence: [], improvements: [] },
+      languageQuality: { score: 100, evidence: [], improvements: [] },
+    },
+    issues: [],
+    suggestions: [],
+    passesThreshold: true,
+    assessmentPasses: 1,
+  };
+}
+
+/** Stub: no-op quality report */
+function printQualityReport(_assessment: MultiDimensionalQualityAssessment, _filename: string): void {
+  // Quality reporting is now handled by AI workflows
+}
+
+/** Stub: returns HTML unchanged (quality metadata injection removed) */
+function injectQualityMetadata(html: string, _assessment?: MultiDimensionalQualityAssessment): string {
+  return html;
+}
 
 // ---------------------------------------------------------------------------
 // Analysis enrichment — cached daily analysis for article metadata

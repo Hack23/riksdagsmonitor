@@ -13,18 +13,26 @@ import type { Language } from '../../types/language.js';
 import type { RawDocument, RawCalendarEvent, CIAContext } from '../types.js';
 import { L, normalizePartyKey } from '../helpers.js';
 import { detectPolicyDomains } from '../policy-analysis.js';
-import {
-  analyzeDocuments as analyzeDocumentsBatch,
-  type DocumentAnalysis,
-  type PESTLEAnalysis,
-  type StakeholderImpact,
-  type RiskAssessment,
-  type ImplementationAssessment,
-} from '../../ai-analysis/document-analyzer.js';
-import {
-  analyzeDocuments as analyzeDocumentsPerspectives,
-  type BatchAnalysisResult,
-} from '../../analysis-framework/index.js';
+
+/* ── Stub types/functions for deleted analysis modules ── */
+/* Per ai-driven-analysis-guide.md Rule 2: scripts must NOT generate analysis */
+
+interface DocumentAnalysis { [key: string]: unknown }
+interface PESTLEAnalysis { [key: string]: unknown }
+interface StakeholderImpact { [key: string]: unknown }
+interface RiskAssessment { [key: string]: unknown }
+interface ImplementationAssessment { [key: string]: unknown }
+interface BatchAnalysisResult { results: unknown[] }
+
+/** Stub: returns empty analysis. Real analysis is AI-driven in workflows. */
+function analyzeDocumentsBatch(_docs: unknown[], _cia?: unknown, _lang?: string): { documents: DocumentAnalysis[] } {
+  return { documents: [] };
+}
+
+/** Stub: returns empty perspectives. Real analysis is AI-driven in workflows. */
+function analyzeDocumentsPerspectives(_docs: unknown[], _cia?: unknown, _lang?: string): BatchAnalysisResult {
+  return { results: [] };
+}
 
 /** Localise raw Riksdag document type codes for display (singular/plural-aware, multi-language). */
 export type DocTypeLocalization = {

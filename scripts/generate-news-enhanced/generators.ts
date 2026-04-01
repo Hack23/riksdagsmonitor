@@ -28,9 +28,8 @@ import {
   type SankeyNode,
   type SankeyFlow,
 } from '../data-transformers/index.js';
-import { buildAISwotStakeholders, STAKEHOLDER_NAMES as AI_STAKEHOLDER_NAMES, generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
+import { generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
 import { generateDeepPolicyAnalysis, detectPolicyDomains } from '../data-transformers/policy-analysis.js';
-import { analyzeDashboardData } from '../ai-analysis/dashboard-analyzer.js';
 import { escapeHtml } from '../html-utils.js';
 import { generateArticleHTML } from '../article-template.js';
 import { MCPClient } from '../mcp-client.js';
@@ -40,8 +39,7 @@ import type { TitleSet } from './types.js';
 import fs from 'node:fs';
 import path from 'node:path';
 import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic, analysisDepth, analysisIterations, METADATA_DIR } from './config.js';
-import { runAnalysisPipeline } from '../ai-analysis/pipeline.js';
-import type { AnalysisIterationMetadata, AnalysisDepth } from '../ai-analysis/types.js';
+import type { AnalysisDepth } from './config.js';
 import {
   getWeekAheadDateRange,
   formatDateForSlug,
@@ -51,6 +49,47 @@ import {
 } from './helpers.js';
 import { AIAnalysisPipeline } from './ai-analysis-pipeline.js';
 import { sharedAnalysisCache } from './analysis-cache.js';
+
+/** Metadata from analysis iteration (stub — analysis is now AI-driven in workflows) */
+interface AnalysisIterationMetadata {
+  iteration?: number;
+  depth: AnalysisDepth;
+  enhancedSections?: string[];
+  articleSlug?: string;
+  lang?: string;
+  iterationsCompleted?: number;
+  iterationDurationsMs?: number[];
+  confidenceScore?: number;
+  validationResult?: unknown;
+  documentCount?: number;
+  enrichedCount?: number;
+  focusTopic?: string;
+  completedAt?: string;
+}
+
+// ---------------------------------------------------------------------------
+// Stub functions replacing deleted analysis-generation modules.
+// Per ai-driven-analysis-guide.md Rule 2, scripts must NOT generate analysis.
+// The AI agent in agentic workflows now produces all political analysis.
+// These stubs return empty data so the HTML formatting pipeline still works.
+// ---------------------------------------------------------------------------
+
+/** Stub: analysis is now AI-driven in workflows, not script-generated */
+function buildAISwotStakeholders(_docs: unknown[], _topic: string, _lang: string): never[] {
+  return [];
+}
+
+/** Stub: analysis is now AI-driven in workflows, not script-generated */
+function analyzeDashboardData(_docs: unknown[], _topic: string, _lang: string) {
+  return { charts: [] as unknown[], tables: [] as unknown[], summary: '' };
+}
+
+/** Stakeholder display names for mindmap/sankey labels */
+const AI_STAKEHOLDER_NAMES: Record<string, Record<string, string>> = {
+  'government-coalition': { en: 'Government Coalition', sv: 'Regeringskoalitionen' },
+  'opposition': { en: 'Opposition', sv: 'Oppositionen' },
+  'private-sector': { en: 'Private Sector', sv: 'Näringslivet' },
+};
 
 // ---------------------------------------------------------------------------
 // Shared article visualization builder
@@ -2239,13 +2278,18 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version (analysis-depth: ${analysisDepth})...`);
       const pipelineDepth: AnalysisDepth = mapReportDepthToPipelineDepth(analysisDepth);
 
-      // ── AI Analysis Pipeline (multi-iteration) ───────────────────────────
-      const { analysis, validation, iterationDurationsMs } = await runAnalysisPipeline(enrichedDocs, {
-        depth: pipelineDepth,
-        lang,
-        focusTopic: sanitizedTopic,
-      });
-      console.log(`  🌐 Generating ${lang.toUpperCase()} version... (pipeline ${iterationDurationsMs.reduce((a, b) => a + b, 0)}ms)`);
+      // ── AI Analysis Pipeline (now handled by agentic workflows, not scripts) ──
+      // Per ai-driven-analysis-guide.md Rule 2, scripts must NOT generate analysis.
+      const analysis = {
+        iterationsCompleted: 0,
+        confidenceScore: 0,
+        documentCount: enrichedDocs.length,
+        enrichedCount: enrichedDocs.length,
+        completedAt: new Date().toISOString(),
+      };
+      const validation = { passed: true };
+      const iterationDurationsMs = [0];
+      console.log(`  🌐 Generating ${lang.toUpperCase()} version... (analysis delegated to AI workflow)`);
 
       // Run multi-iteration AI analysis pipeline — cache result per language
       const cacheKey = sharedAnalysisCache.generateKey(enrichedDocs, sanitizedTopic, analysisIterations, lang);

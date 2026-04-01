@@ -28,7 +28,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { MCPClient } from './mcp-client/client.js';
-import { analyzeDocuments } from './analysis-framework/index.js';
 import { calculateCoalitionRiskIndex, detectAnomalousPatterns } from './data-transformers/risk-analysis.js';
 import type { RawDocument, CIAContext } from './data-transformers/types.js';
 import { loadCIAContext } from './news-types/weekly-review/index.js';
@@ -230,7 +229,33 @@ function writeAnalysis(dir: string, filename: string, content: string): void {
 // SWOT extraction from analysis results
 // ---------------------------------------------------------------------------
 
-function extractSwotSummaries(results: ReturnType<typeof analyzeDocuments>['results']): SwotSummary[] {
+// ---------------------------------------------------------------------------
+// Stub analysis types — real analysis is now done by AI agent in workflows
+// per ai-driven-analysis-guide.md Rule 2
+// ---------------------------------------------------------------------------
+
+/** Minimal batch result stub for compatibility */
+interface StubBatchResult {
+  results: StubDocumentResult[];
+}
+interface StubDocumentResult {
+  document: RawDocument;
+  overallSignificance: number;
+  perspectives: Array<{ swotContribution: Array<{ forStakeholder: string; quadrant: string; text: string }> }>;
+}
+
+/** Stub: returns empty analysis results. Real analysis is AI-driven in workflows. */
+function analyzeDocuments(docs: RawDocument[], _cia: unknown, _lang: string): StubBatchResult {
+  return {
+    results: docs.map(d => ({
+      document: d,
+      overallSignificance: 0,
+      perspectives: [],
+    })),
+  };
+}
+
+function extractSwotSummaries(results: StubBatchResult['results']): SwotSummary[] {
   const map = new Map<string, SwotSummary>();
 
   for (const result of results) {
@@ -265,7 +290,7 @@ function extractSwotSummaries(results: ReturnType<typeof analyzeDocuments>['resu
 // Significance entries
 // ---------------------------------------------------------------------------
 
-function buildSignificanceEntries(results: ReturnType<typeof analyzeDocuments>['results']): SignificanceEntry[] {
+function buildSignificanceEntries(results: StubBatchResult['results']): SignificanceEntry[] {
   return results.map(r => ({
     dok_id: r.document.dok_id || 'N/A',
     title: r.document.titel || r.document.title || r.document.dok_id || 'Unknown',

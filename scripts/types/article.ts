@@ -4,9 +4,47 @@
  */
 
 import type { Language } from './language.js';
-import type { MultiDimensionalQualityAssessment } from '../ai-analysis/quality-assessor.js';
-import type { UrgencyLabel } from '../ai-analysis/political-significance.js';
 import type { ClassificationLevel, RiskLevel, ConfidenceLabel } from '../analysis-reader.js';
+
+/* ── Inlined types (formerly from deleted ai-analysis modules) ── */
+
+/** Urgency label for political significance assessment */
+export type UrgencyLabel = 'breaking' | 'major' | 'standard' | 'background';
+
+/** Score for a single quality dimension */
+export interface DimensionScore {
+  score: number;
+  evidence: string[];
+  improvements: string[];
+}
+
+/** Severity of a quality issue */
+export type QualityIssueSeverity = 'critical' | 'major' | 'minor';
+
+/** A single quality problem found in the article */
+export interface QualityIssue {
+  severity: QualityIssueSeverity;
+  dimension: string;
+  description: string;
+  suggestedFix: string;
+}
+
+/** Full multi-dimensional quality assessment result */
+export interface MultiDimensionalQualityAssessment {
+  overallScore: number;
+  dimensions: {
+    factualAccuracy: DimensionScore;
+    stakeholderCoverage: DimensionScore;
+    analyticalDepth: DimensionScore;
+    editorialConsistency: DimensionScore;
+    evidenceQuality: DimensionScore;
+    languageQuality: DimensionScore;
+  };
+  issues: QualityIssue[];
+  suggestions: string[];
+  passesThreshold: boolean;
+  assessmentPasses: number;
+}
 
 /** Category label shown in article headers */
 export type ArticleCategory = 'prospective' | 'retrospective' | 'analysis' | 'breaking';
@@ -141,17 +179,8 @@ export interface DateRange {
   end: string;
 }
 
-// ---------------------------------------------------------------------------
-// Multi-dimensional quality assessment types — single source of truth in
-// scripts/ai-analysis/quality-assessor.ts, re-exported here for convenience.
-// ---------------------------------------------------------------------------
-
-export type {
-  DimensionScore,
-  QualityIssueSeverity,
-  QualityIssue,
-  MultiDimensionalQualityAssessment,
-} from '../ai-analysis/quality-assessor.js';
+// Multi-dimensional quality assessment types are now defined at the top of this file
+// (inlined from the deleted ai-analysis/quality-assessor module).
 
 /** Quality metrics for a single generated article */
 export interface ArticleQualityScore {
