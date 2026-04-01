@@ -26,6 +26,7 @@
   padding-bottom: 0.75rem;
 }
 
+/* Stand-alone SWOT grid (not inside stakeholder cards) */
 .news-article .swot-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -40,18 +41,16 @@
   }
 }
 
-@media (min-width: 1200px) {
-  .news-article .swot-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
 .news-article .swot-quadrant {
-  padding: 1.25rem;
+  padding: 1rem;
   border-radius: var(--border-radius, 8px);
   border: 2px solid var(--border-color, #ddd);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  min-width: 0;
 }
 
 .news-article .swot-quadrant:hover {
@@ -61,20 +60,23 @@
 
 .news-article .swot-quadrant h3,
 .news-article .swot-quadrant h4 {
-  margin: 0 0 0.75rem 0;
-  font-size: 1.05rem;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
   font-weight: 600;
 }
 
 .news-article .swot-quadrant ul {
   margin: 0;
-  padding-left: 1.25rem;
+  padding-left: 1.1rem;
   list-style: disc;
 }
 
 .news-article .swot-quadrant li {
   margin-bottom: 0.35rem;
   line-height: 1.5;
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .news-article .swot-strengths {
@@ -120,9 +122,10 @@
 }
 
 .news-article .swot-impact {
-  font-size: 0.8em;
+  font-size: 0.75em;
   text-transform: uppercase;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .news-article .swot-impact--high { color: #e74c3c; }
@@ -133,6 +136,7 @@
 .news-article .swot-trend {
   font-weight: 700;
   margin-left: 0.25em;
+  white-space: nowrap;
 }
 .news-article .swot-trend--improving { color: #27ae60; }
 .news-article .swot-trend--stable { color: #7f8c8d; }
@@ -140,10 +144,12 @@
 
 /* Quantitative evidence */
 .news-article .swot-evidence {
-  font-size: 0.85em;
+  font-size: 0.8em;
   color: #6c757d;
   font-style: italic;
   margin-left: 0.25em;
+  display: block;
+  margin-top: 0.2em;
 }
 
 /* Expandable justification */
@@ -169,19 +175,25 @@
 
 [dir="rtl"] .news-article .swot-quadrant ul {
   padding-left: 0;
-  padding-right: 1.25rem;
+  padding-right: 1.1rem;
 }
 
 [dir="rtl"] .news-article .swot-trend { margin-left: 0; margin-right: 0.25em; }
 [dir="rtl"] .news-article .swot-evidence { margin-left: 0; margin-right: 0.25em; }
 
 
-/* Stakeholder SWOT Analysis Section */
+/* =========================================================================
+   Stakeholder SWOT Analysis Section
+   FIX: Use single-column layout for stakeholder cards so that the nested
+   2×2 swot-grid inside each card has enough room. The old
+   `repeat(auto-fit, minmax(300px,1fr))` crammed 6 cards side-by-side,
+   causing severe text overlap.
+   ========================================================================= */
 .news-article .stakeholder-swot-analysis {
   background: var(--badge-bg, #f0f4f8);
   border: 2px solid var(--primary-color, #006633);
   border-radius: var(--border-radius-lg, 12px);
-  padding: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(1rem, 3vw, 2.5rem);
   margin: 2rem 0;
   width: 100%;
   box-sizing: border-box;
@@ -195,11 +207,19 @@
   padding-bottom: 0.75rem;
 }
 
+/* Single column by default so each card gets full width for its nested grid */
 .news-article .stakeholder-swot-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-top: 1rem;
+}
+
+/* Two columns on wide screens — each card still gets ~50% which is enough */
+@media (min-width: 1024px) {
+  .news-article .stakeholder-swot-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .news-article .stakeholder-swot-card {
@@ -209,6 +229,8 @@
   background: var(--card-bg, #fff);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+  overflow: hidden;
+  min-width: 0;
 }
 
 .news-article .stakeholder-swot-card:hover {
@@ -217,7 +239,7 @@
 }
 
 .news-article .stakeholder-swot-card h3 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   margin: 0 0 0.5rem 0;
   color: var(--primary-color, #006633);
@@ -227,6 +249,20 @@
   font-size: 0.85rem;
   color: var(--text-secondary, #666);
   margin: 0 0 0.75rem 0;
+}
+
+/* Inside stakeholder cards the swot-grid should always be 2 columns, 
+   dropping to 1 on small mobile screens */
+.news-article .stakeholder-swot-card .swot-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+@media (max-width: 500px) {
+  .news-article .stakeholder-swot-card .swot-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .news-article .strategic-context {
@@ -246,5 +282,72 @@
 [dir="rtl"] .news-article .stakeholder-swot-analysis {
   direction: rtl;
   text-align: right;
+}
+
+/* =========================================================================
+   Dark theme overrides for SWOT components
+   ========================================================================= */
+html[data-theme="dark"] .news-article .swot-analysis,
+html[data-theme="dark"] .news-article .stakeholder-swot-analysis {
+  background: rgba(0, 28, 37, 0.5);
+}
+
+html[data-theme="dark"] .news-article .stakeholder-swot-card {
+  background: rgba(10, 14, 39, 0.8);
+  border-color: rgba(0, 204, 102, 0.25);
+}
+
+html[data-theme="dark"] .news-article .swot-strengths {
+  background: rgba(39, 174, 96, 0.15);
+  border-color: #27ae60;
+}
+html[data-theme="dark"] .news-article .swot-strengths h3,
+html[data-theme="dark"] .news-article .swot-strengths h4 { color: #2ecc71; }
+
+html[data-theme="dark"] .news-article .swot-weaknesses {
+  background: rgba(231, 76, 60, 0.15);
+  border-color: #e74c3c;
+}
+html[data-theme="dark"] .news-article .swot-weaknesses h3,
+html[data-theme="dark"] .news-article .swot-weaknesses h4 { color: #ff6b6b; }
+
+html[data-theme="dark"] .news-article .swot-opportunities {
+  background: rgba(52, 152, 219, 0.15);
+  border-color: #3498db;
+}
+html[data-theme="dark"] .news-article .swot-opportunities h3,
+html[data-theme="dark"] .news-article .swot-opportunities h4 { color: #5dade2; }
+
+html[data-theme="dark"] .news-article .swot-threats {
+  background: rgba(243, 156, 18, 0.15);
+  border-color: #f39c12;
+}
+html[data-theme="dark"] .news-article .swot-threats h3,
+html[data-theme="dark"] .news-article .swot-threats h4 { color: #f5b041; }
+
+html[data-theme="dark"] .news-article .swot-justification {
+  color: #b0b0b0;
+}
+html[data-theme="dark"] .news-article .swot-justification summary {
+  color: #5dade2;
+}
+
+html[data-theme="dark"] .news-article .swot-evidence {
+  color: #999;
+}
+
+html[data-theme="dark"] .news-article .swot-context {
+  color: #b0b0b0;
+}
+
+/* Light theme overrides — ensure good contrast */
+html[data-theme="light"] .news-article .swot-analysis,
+html[data-theme="light"] .news-article .stakeholder-swot-analysis {
+  background: #f8faf9;
+}
+
+html[data-theme="light"] .news-article .stakeholder-swot-card {
+  background: #fff;
+  border-color: #ddd;
 }
 
