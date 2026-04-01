@@ -1,32 +1,26 @@
-# 📥 Data Download Manifest — 2026-04-01
+# Data Download Manifest — 2026-04-01
 
-## 📋 Download Context
+**Generated**: 2026-04-01 14:33 UTC
+**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer
+**Documents Analyzed**: 66
+**Confidence**: HIGH
 
-| Field | Value |
-|-------|-------|
-| **Date** | 2026-04-01 |
-| **Riksmöte** | 2025/26 |
-| **Download Method** | Direct MCP tool calls (script fallback: MCP URL not configured) |
-| **MCP Status** | Live (verified via get_sync_status) |
+## Summary
 
----
+Downloaded **300** documents (session-wide) from 7 MCP data sources.
 
-**Documents Analyzed**: 6
+After date filtering to **2026-04-01**: **66** documents selected for analysis.
 
-## 📊 Download Summary
+## Document Counts by Type
 
-| Source | Tool | Count | Key Items |
-|--------|------|:-----:|-----------|
-| Propositions | get_propositioner | 2 | HD03214 (Cybersecurity), HD03216 (Healthcare) |
-| Motions | search_dokument | 1 | HD024017 (S vs bidragstak) |
-| Committee Reports | get_betankanden | 1 | HD01FöU11 (Maritime rescue) |
-| Written Questions | search_dokument | 2 | HD12647 (Nuclear), HD12648 (Iran) |
-| Debates | search_anforanden | 20 | SoU19 (Children/social services) debate |
-| Government | search_regering | 15 | 12 press releases, 1 prop, 1 SOU, 1 remiss |
-| Votes | search_voteringar | 20 | Latest: AU10 (2026-03-04) |
+- **propositions**: 50 documents
+- **motions**: 50 documents
+- **committeeReports**: 50 documents
+- **votes**: 0 documents
+- **speeches**: 50 documents
+- **questions**: 50 documents
+- **interpellations**: 50 documents
 
----
+## Data Quality Notes
 
-## 📋 Document Control
-
-| **Created** | 2026-04-01 10:33 UTC |
+All documents sourced from official riksdag-regering-mcp API.
