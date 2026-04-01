@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-<title>Politician Career & Productivity Analytics | Riksdagsmonitor</title>
+<title>政治家职业与生产力分析 | Riksdagsmonitor</title>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="styles.css">
-<link rel="canonical" href="https://riksdagsmonitor.com/politician-dashboard.html">
+<link rel="canonical" href="https://riksdagsmonitor.com/politician-dashboard_zh.html">
 <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/politician-dashboard.html">
 <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/politician-dashboard_sv.html">
 <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/politician-dashboard_da.html">
@@ -22,16 +22,16 @@
 <link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/politician-dashboard_ko.html">
 <link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/politician-dashboard_zh.html">
 <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/politician-dashboard.html">
-<meta name="description" content="Comprehensive politician career and productivity dashboard: Top 10 rankings, career trajectories, productivity metrics, and experience analysis for Sweden's 349 MPs.">
+<meta name="description" content="瑞典349名国会议员的综合分析。">
 <meta name="keywords" content="politician analytics, MP productivity, career trajectory, riksdag politicians, Swedish parliament, legislative output, committee activity">
 <meta name="robots" content="index, follow">
 <meta name="author" content="James Pether Sörling, CISSP, CISM">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Politician Career & Productivity Analytics">
-<meta property="og:description" content="Interactive dashboard tracking career trajectories and productivity metrics for Sweden's 349 MPs">
+<meta property="og:title" content="政治家职业与生产力分析">
+<meta property="og:description" content="瑞典349名国会议员的综合分析。">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://riksdagsmonitor.com/politician-dashboard.html">
+<meta property="og:url" content="https://riksdagsmonitor.com/politician-dashboard_zh.html">
 <meta property="og:image" content="https://riksdagsmonitor.com/images/og-image.webp">
 
 <!-- Fonts -->
@@ -220,10 +220,10 @@
 </a>
 </div>
 <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="politician-dashboard.html" class="active">Politician Dashboard</a></li>
-<li><a href="index.html#data-sources">Data Sources</a></li>
-<li><a href="index.html#about">About</a></li>
+<li><a href="index_zh.html">首页</a></li>
+<li><a href="politician-dashboard_zh.html" class="active">政治家面板</a></li>
+<li><a href="index_zh.html#data-sources">数据来源</a></li>
+<li><a href="index_zh.html#about">关于</a></li>
 </ul>
 </nav>
 </header>
@@ -231,54 +231,54 @@
 <main id="main-content">
 <div class="dashboard-container" id="politician-dashboard">
 <div class="dashboard-header">
-<h1>👤 Politician Career & Productivity Analytics</h1>
-<p>Comprehensive analysis of Sweden's 349 Members of Parliament: career trajectories, productivity metrics, and influence rankings based on CIA intelligence data.</p>
+<h1>👤 政治家职业与生产力分析</h1>
+<p>瑞典349名国会议员的综合分析。</p>
 </div>
 
 <!-- WIP Banner -->
 <div class="wip-banner" role="alert">
-<h2>⚠️ Work In Progress - Demo Data</h2>
-<p>This dashboard is currently under development and displays <strong>placeholder/sample data</strong> for demonstration purposes.</p>
-<p>Real CIA CSV data integration is pending. Do not use these visualizations for decision-making.</p>
+<h2>⚠️ 开发中 – 演示数据</h2>
+<p>此仪表板正在开发中，显示<strong>演示数据</strong>。</p>
+<p>真实CIA CSV数据集成待定。请勿将这些可视化用于决策。</p>
 </div>
 
 <div class="dashboard-grid">
 <!-- Top 10 Most Productive -->
 <div class="chart-card">
-<h2>📊 Top 10 Most Productive</h2>
+<h2>📊 生产力最高的前10名</h2>
 <div id="top10-productive-container">
-<div class="loading-spinner">Loading data...</div>
+<div class="loading-spinner">正在加载数据...</div>
 </div>
 </div>
 
 <!-- Top 10 Most Influential -->
 <div class="chart-card">
-<h2>🌟 Top 10 Most Influential</h2>
+<h2>🌟 最具影响力的前10名</h2>
 <div id="top10-influential-container">
-<div class="loading-spinner">Loading data...</div>
+<div class="loading-spinner">正在加载数据...</div>
 </div>
 </div>
 
 <!-- Top 10 Rising Stars -->
 <div class="chart-card">
-<h2>⭐ Top 10 Rising Stars</h2>
+<h2>⭐ 冉冉升起的新星前10名</h2>
 <div id="top10-rising-stars-container">
-<div class="loading-spinner">Loading data...</div>
+<div class="loading-spinner">正在加载数据...</div>
 </div>
 </div>
 
 <!-- Top 10 Most Controversial -->
 <div class="chart-card">
-<h2>⚡ Top 10 Most Controversial</h2>
+<h2>⚡ 最具争议的前10名</h2>
 <div id="top10-controversial-container">
-<div class="loading-spinner">Loading data...</div>
+<div class="loading-spinner">正在加载数据...</div>
 </div>
 </div>
 </div>
 
 <!-- Career Trajectory Chart -->
 <div class="chart-card chart-card-spacing">
-<h2>📈 Career Trajectory Analysis</h2>
+<h2>📈 职业轨迹分析</h2>
 <div class="chart-wrapper">
 <canvas id="career-trajectory-chart" role="img" aria-label="Career trajectory timeline chart showing MP career progression"></canvas>
 </div>
@@ -286,7 +286,7 @@
 
 <!-- Productivity vs Influence -->
 <div class="chart-card chart-card-spacing">
-<h2>💼 Productivity vs. Influence</h2>
+<h2>💼 生产力 vs. 影响力</h2>
 <div class="chart-wrapper">
 <canvas id="productivity-influence-chart" role="img" aria-label="Scatter plot showing relationship between MP productivity and influence"></canvas>
 </div>
@@ -294,7 +294,7 @@
 
 <!-- Experience Distribution -->
 <div class="chart-card chart-card-spacing">
-<h2>🎓 Experience Distribution</h2>
+<h2>🎓 经验分布</h2>
 <div class="chart-wrapper">
 <canvas id="experience-distribution-chart" role="img" aria-label="Bar chart showing distribution of MP experience levels"></canvas>
 </div>
@@ -306,24 +306,24 @@
 <div class="footer-content">
 <div class="footer-section">
 <h3>Riksdagsmonitor</h3>
-<p>Systematic transparency through data intelligence.</p>
+<p>通过数据智能实现系统透明。</p>
 <p>Powered by <a href="https://www.hack23.com/cia/" target="_blank" rel="noopener noreferrer">CIA Platform</a></p>
 </div>
 <div class="footer-section">
-<h3>Data Sources</h3>
+<h3>数据来源</h3>
 <ul>
 <li><a href="https://data.riksdagen.se/" target="_blank" rel="noopener noreferrer">Riksdagen Open Data</a></li>
 <li><a href="https://www.regeringen.se/" target="_blank" rel="noopener noreferrer">Swedish Government</a></li>
 </ul>
 </div>
 <div class="footer-section">
-<h3>Contact</h3>
+<h3>联系我们</h3>
 <p>Email: <a href="mailto:contact@riksdagsmonitor.com">contact@riksdagsmonitor.com</a></p>
 <p>GitHub: <a href="https://github.com/Hack23/riksdagsmonitor" target="_blank" rel="noopener noreferrer">Hack23/riksdagsmonitor</a></p>
 </div>
 </div>
 <div class="footer-bottom">
-<p>&copy; 2026 Hack23 AB. Licensed under MIT. Built for transparency.</p>
+<p>&copy; 2026 Hack23 AB. MIT许可证. 为透明而构建.</p>
 </div>
 </footer>
 
