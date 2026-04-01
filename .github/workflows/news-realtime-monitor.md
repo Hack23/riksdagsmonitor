@@ -885,17 +885,23 @@ Before generating articles, consult these skills:
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
 
+### Article Type Isolation
+
+> 🚨 **This workflow writes analysis ONLY to `analysis/daily/${ARTICLE_DATE}/realtime-${HHMM}/`**. NEVER write to the parent date directory or another article type's folder. See SHARED_PROMPT_PATTERNS.md "Article Type Isolation" section.
+
 ### Standardised Analysis Depth Gate
 
 > ⚠️ **Default is `deep`** — not `standard`. Analysis must always produce publication-quality output with Mermaid diagrams and evidence tables.
 
-| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Min. analysis time |
-|-------|--------------|-------------------|--------|---------|-------------------|
-| standard | 1-2 | ≥3 | ≥1 | optional | 10 minutes |
-| deep | 2-3 | ≥5 | ≥2 | required | 15 minutes |
-| comprehensive | 3+ | ≥7 | ≥3 | required | 20 minutes |
+| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Mermaid diagrams | Risk matrix (L×I) | Forward indicators | Min. analysis time |
+|-------|--------------|-------------------|--------|---------|-----------------|-------------------|-------------------|-------------------|
+| standard | 1-2 | ≥5 (of 8 groups) | ≥1 | optional | ≥1 color-coded | ≥2 risks scored | ≥2 with triggers | 10 minutes |
+| deep | 2-3 | ≥7 (of 8 groups) | ≥2 | required | ≥2 color-coded | ≥4 risks scored | ≥3 with triggers | 15 minutes |
+| comprehensive | 3+ | all 8 groups | ≥3 | required | ≥3 color-coded | ≥6 risks scored | ≥5 with triggers | 20 minutes |
 
-**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
+**The 8 mandatory stakeholder groups are**: Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion. Every group MUST be analyzed with specific evidence (dok_id, vote counts, named politicians).
+
+**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, quantified risk matrix with numeric L×I scores, forward indicators with specific triggers/timelines, confidence labels on all analytical claims, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
 
 > **Read `analysis_depth` input first** (default: `deep`). This controls iteration count and section requirements.
 

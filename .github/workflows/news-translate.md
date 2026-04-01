@@ -363,11 +363,15 @@ Before translating articles, consult these skills:
 
 ### Standardised Analysis Depth Gate
 
-| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap |
-|-------|--------------|-------------------|--------|---------|
-| standard | 1-2 | ≥3 | ≥1 | optional |
-| deep | 2-3 | ≥5 | ≥2 | required |
-| comprehensive | 3+ | ≥7 | ≥3 | required |
+| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Mermaid diagrams |
+|-------|--------------|-------------------|--------|---------|-----------------|
+| standard | 1-2 | ≥5 (of 8 groups) | ≥1 | optional | ≥1 color-coded |
+| deep | 2-3 | ≥7 (of 8 groups) | ≥2 | required | ≥2 color-coded |
+| comprehensive | 3+ | all 8 groups | ≥3 | required | ≥3 color-coded |
+
+**The 8 mandatory stakeholder groups are**: Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion.
+
+> **Translation workflow**: When translating articles, preserve ALL analysis depth including Mermaid diagrams, SWOT evidence tables, risk matrices, forward indicators, and confidence labels. Translate content but NEVER remove analytical components.
 
 > **Read `analysis_depth` input** (default: `standard`). This mirrors the source article depth and controls how rigorously translated sections are validated.
 

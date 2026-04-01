@@ -193,26 +193,39 @@ Before generating articles, consult these skills:
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
 
+### Article Type Isolation
+
+> 🚨 **This workflow writes analysis ONLY to `analysis/daily/${ARTICLE_DATE}/motions/`**. NEVER write to the parent date directory or another article type's folder. See SHARED_PROMPT_PATTERNS.md "Article Type Isolation" section.
+
 ### Standardised Analysis Depth Gate
 
 > ⚠️ **Default is `deep`** — not `standard`. Analysis must always produce publication-quality output with Mermaid diagrams and evidence tables.
 
-| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Min. analysis time |
-|-------|--------------|-------------------|--------|---------|-------------------|
-| standard | 1-2 | ≥3 | ≥1 | optional | 10 minutes |
-| deep | 2-3 | ≥5 | ≥2 | required | 15 minutes |
-| comprehensive | 3+ | ≥7 | ≥3 | required | 20 minutes |
+| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Mermaid diagrams | Risk matrix (L×I) | Forward indicators | Min. analysis time |
+|-------|--------------|-------------------|--------|---------|-----------------|-------------------|-------------------|-------------------|
+| standard | 1-2 | ≥5 (of 8 groups) | ≥1 | optional | ≥1 color-coded | ≥2 risks scored | ≥2 with triggers | 10 minutes |
+| deep | 2-3 | ≥7 (of 8 groups) | ≥2 | required | ≥2 color-coded | ≥4 risks scored | ≥3 with triggers | 15 minutes |
+| comprehensive | 3+ | all 8 groups | ≥3 | required | ≥3 color-coded | ≥6 risks scored | ≥5 with triggers | 20 minutes |
 
-**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
+**The 8 mandatory stakeholder groups are**: Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion. Every group MUST be analyzed with specific evidence (dok_id, vote counts, named politicians).
+
+**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, quantified risk matrix with numeric L×I scores, forward indicators with specific triggers/timelines, confidence labels on all analytical claims, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
 
 > **Read `analysis_depth` input first** (default: `deep`). This controls iteration count and section requirements.
 
 Based on the editorial profile for `motions` (from `scripts/editorial-framework.ts`):
-- **SWOT**: condensed (3 stakeholder perspectives per quadrant)
+- **SWOT**: ALL 8 stakeholder groups analyzed with evidence tables (mot. IDs, party positions, committee referrals per entry)
 - **Dashboard**: required (min. 1 Chart.js chart)
 - **Mindmap**: not required
-- **Min. stakeholders**: 4 perspectives
+- **Min. stakeholders**: 8 perspectives (Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion)
+- **Risk Matrix**: required — numeric L×I scores for policy change risks, coalition stability risks per motion
+- **Forward Indicators**: required — committee scheduling dates, potential voting outcomes, counter-motion deadlines
+- **Confidence Labels**: `[HIGH]`/`[MEDIUM]`/`[LOW]` on ALL analytical claims
+- **Mermaid Diagrams**: ≥1 color-coded diagram showing opposition coordination patterns or policy impact flowchart
+- **Dok_id Citations**: MANDATORY — every motion MUST cite its mot. ID (e.g., "mot. 2025/26:1823")
 - **AI iterations**: 2 (standard), 2 (deep), or 3 (comprehensive)
+
+> 🚨 **ANTI-PATTERNS (REJECTED)**: SWOT with only 3 stakeholder groups, no mot. ID citations, generic opposition analysis without specific party positions, no Mermaid diagrams, no L×I risk scores
 
 ### Phase 1 — Data Collection & Initial Analysis
 1. Fetch MCP data (`get_motioner`, `get_sync_status`, cross-reference `search_anforanden`)
@@ -221,7 +234,7 @@ Based on the editorial profile for `motions` (from `scripts/editorial-framework.
 
 ### Phase 2 — Iterative Depth Enhancement (repeat per `analysis_depth`)
 For each AI iteration:
-1. **SWOT Analysis**: Generate `generateSwotSection()` with ≥3 stakeholder perspectives
+1. **SWOT Analysis**: Generate multi-stakeholder SWOT with ALL 8 groups (Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion). Use structured evidence tables with columns: `#`, `Statement`, `Evidence (mot. ID/dok_id)`, `Confidence`, `Impact`, `Entry Date`. Every entry MUST cite specific motion number, party origin, and policy area.
 2. **Coalition Dashboard**: Generate `generateDashboardSection()` with ≥1 chart (party motion count)
 3. **Quality Gate** (check before next iteration):
    - Verify opposition strategy section is substantive (not just party counts)
