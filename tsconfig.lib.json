@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2024",
+    "target": "ES2025",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "strict": true,
@@ -17,16 +17,18 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "outDir": "./dist/lib",
-    "rootDir": "./src/browser/shared",
-    "lib": ["ES2024", "DOM", "DOM.Iterable"],
+    "rootDir": "./src/browser",
+    "lib": ["ES2025", "DOM", "DOM.Iterable"],
     "types": []
   },
   "include": [
-    "src/browser/shared/**/*.ts"
+    "src/browser/**/*.ts"
   ],
   "exclude": [
     "node_modules",
     "dist",
-    "src/browser/shared/register-globals.ts"
+    "src/browser/main.ts",
+    "src/browser/lazy-loader.ts",
+    "src/browser/cia-entry.ts"
   ]
 }

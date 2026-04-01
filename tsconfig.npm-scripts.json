@@ -18,7 +18,7 @@
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "./dist/scripts",
-    "rootDir": ".",
+    "rootDir": "./scripts",
     "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
@@ -32,8 +32,7 @@
     "verbatimModuleSyntax": false
   },
   "include": [
-    "scripts/**/*.ts",
-    "tests/**/*.ts"
+    "scripts/**/*.ts"
   ],
   "exclude": [
     "node_modules",
@@ -44,7 +43,6 @@
     "scripts/committees-dashboard",
     "scripts/back-to-top.ts",
     "scripts/validate-articles-playwright.ts",
-    "scripts/**/*.js",
-    "tests/**/*.js"
+    "scripts/**/*.js"
   ]
 }

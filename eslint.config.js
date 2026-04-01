@@ -11,7 +11,7 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.node,
-        ...globals.es2021,
+        ...globals.es2025,
         // Third-party library globals (loaded via script tags)
         Chart: 'readonly',
         d3: 'readonly',
@@ -46,7 +46,7 @@ export default [
       },
       globals: {
         ...globals.node,
-        ...globals.es2021,
+        ...globals.es2025,
       },
     },
     rules: {
@@ -64,7 +64,7 @@ export default [
     languageOptions: {
       globals: {
         ...globals.node,
-        ...globals.es2021,
+        ...globals.es2025,
         describe: 'readonly',
         it: 'readonly',
         expect: 'readonly',

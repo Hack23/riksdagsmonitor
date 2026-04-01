@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2024",
+    "target": "ES2025",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "allowJs": true,
@@ -13,13 +13,15 @@
     "resolveJsonModule": true,
     "ignoreDeprecations": "6.0",
     "baseUrl": ".",
-    "lib": ["ES2024", "DOM", "DOM.Iterable"],
+    "lib": ["ES2025", "DOM", "DOM.Iterable"],
     "types": ["node"]
   },
   "include": [
     "src/browser/**/*.ts",
     "scripts/**/*.ts",
-    "scripts/**/*.js"
+    "scripts/**/*.js",
+    "js/**/*.js",
+    "dashboard/**/*.js"
   ],
   "exclude": [
     "node_modules",
