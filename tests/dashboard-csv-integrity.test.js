@@ -168,8 +168,9 @@ const DASHBOARD_CSV_DEPENDENCIES = {
  */
 function countDataRows(filePath) {
   const content = readFileSync(filePath, 'utf-8').trim();
-  const lines = content.split('\n');
-  return lines.length - 1; // Subtract header row
+  if (content.length === 0) return 0;
+  const lines = content.split('\n').filter(line => line.trim().length > 0);
+  return Math.max(0, lines.length - 1); // Subtract header row
 }
 
 describe('Dashboard-CSV Data Integrity', () => {
@@ -271,7 +272,8 @@ describe('Dashboard-CSV Data Integrity', () => {
           } else if (entry.name.endsWith('.csv')) {
             const rows = countDataRows(fullPath);
             if (rows === 0) {
-              emptyFiles.push(fullPath.replace(CIA_DATA_DIR + '/', ''));
+              const relative = fullPath.substring(CIA_DATA_DIR.length + 1);
+              emptyFiles.push(relative);
             }
           }
         }
