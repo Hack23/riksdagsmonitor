@@ -22,7 +22,7 @@ describe('Coalition Loader', () => {
 
   describe('CSV Parsing', () => {
     it('should parse valid CSV with headers and data rows', () => {
-      const csvText = `party,active,total_active_parliament
+      const csvText = `party,active,currently_active_members
 M,t,68
 SD,t,73
 S,t,106`;
@@ -42,9 +42,9 @@ S,t,106`;
       }
 
       expect(data).toHaveLength(3);
-      expect(data[0]).toEqual({ party: 'M', active: 't', total_active_parliament: '68' });
-      expect(data[1]).toEqual({ party: 'SD', active: 't', total_active_parliament: '73' });
-      expect(data[2]).toEqual({ party: 'S', active: 't', total_active_parliament: '106' });
+      expect(data[0]).toEqual({ party: 'M', active: 't', currently_active_members: '68' });
+      expect(data[1]).toEqual({ party: 'SD', active: 't', currently_active_members: '73' });
+      expect(data[2]).toEqual({ party: 'S', active: 't', currently_active_members: '106' });
     });
 
     it('should handle empty CSV', () => {
@@ -58,7 +58,7 @@ S,t,106`;
     });
 
     it('should handle CSV with only headers', () => {
-      const csvText = 'party,active,total_active_parliament';
+      const csvText = 'party,active,currently_active_members';
       const lines = csvText.trim().split('\n');
       
       const data = lines.length < 2 ? [] : lines.slice(1);
@@ -67,7 +67,7 @@ S,t,106`;
     });
 
     it('should skip malformed rows with mismatched column count', () => {
-      const csvText = `party,active,total_active_parliament
+      const csvText = `party,active,currently_active_members
 M,t,68
 SD,t
 S,t,106,extra`;
@@ -93,7 +93,7 @@ S,t,106,extra`;
     });
 
     it('should trim whitespace from values', () => {
-      const csvText = `party,active,total_active_parliament
+      const csvText = `party,active,currently_active_members
  M , t , 68 `;
 
       const lines = csvText.trim().split('\n');
@@ -109,7 +109,7 @@ S,t,106,extra`;
         data.push(row);
       }
 
-      expect(data[0]).toEqual({ party: 'M', active: 't', total_active_parliament: '68' });
+      expect(data[0]).toEqual({ party: 'M', active: 't', currently_active_members: '68' });
     });
 
     it('should handle CSV with multiple data rows', () => {
@@ -633,31 +633,31 @@ MP,t`;
   describe('Party Sorting', () => {
     it('should sort parties by parliament seats (descending)', () => {
       const parties = [
-        { party: 'M', total_active_parliament: '68' },
-        { party: 'SD', total_active_parliament: '73' },
-        { party: 'S', total_active_parliament: '106' },
-        { party: 'KD', total_active_parliament: '19' }
+        { party: 'M', currently_active_members: '68' },
+        { party: 'SD', currently_active_members: '73' },
+        { party: 'S', currently_active_members: '106' },
+        { party: 'KD', currently_active_members: '19' }
       ];
 
       const sorted = [...parties].sort((a, b) => {
-        const seatsA = parseInt(a.total_active_parliament) || 0;
-        const seatsB = parseInt(b.total_active_parliament) || 0;
+        const seatsA = parseInt(a.currently_active_members) || 0;
+        const seatsB = parseInt(b.currently_active_members) || 0;
         return seatsB - seatsA;
       });
 
       expect(sorted.map(p => p.party)).toEqual(['S', 'SD', 'M', 'KD']);
-      expect(sorted[0].total_active_parliament).toBe('106');
+      expect(sorted[0].currently_active_members).toBe('106');
     });
 
     it('should handle parties with 0 seats', () => {
       const parties = [
-        { party: 'M', total_active_parliament: '68' },
-        { party: 'TEST', total_active_parliament: '0' }
+        { party: 'M', currently_active_members: '68' },
+        { party: 'TEST', currently_active_members: '0' }
       ];
 
       const sorted = [...parties].sort((a, b) => {
-        const seatsA = parseInt(a.total_active_parliament) || 0;
-        const seatsB = parseInt(b.total_active_parliament) || 0;
+        const seatsA = parseInt(a.currently_active_members) || 0;
+        const seatsB = parseInt(b.currently_active_members) || 0;
         return seatsB - seatsA;
       });
 
@@ -667,13 +667,13 @@ MP,t`;
 
     it('should handle missing seat values', () => {
       const parties = [
-        { party: 'M', total_active_parliament: '68' },
-        { party: 'TEST', total_active_parliament: '' }
+        { party: 'M', currently_active_members: '68' },
+        { party: 'TEST', currently_active_members: '' }
       ];
 
       const sorted = [...parties].sort((a, b) => {
-        const seatsA = parseInt(a.total_active_parliament) || 0;
-        const seatsB = parseInt(b.total_active_parliament) || 0;
+        const seatsA = parseInt(a.currently_active_members) || 0;
+        const seatsB = parseInt(b.currently_active_members) || 0;
         return seatsB - seatsA;
       });
 
@@ -935,7 +935,7 @@ MP,t`;
     it('should load data from cache when fresh', () => {
       const cacheKey = 'coalition_data_party_summary';
       const cachedData = {
-        data: [{ party: 'M', active: 't', total_active_parliament: '68' }],
+        data: [{ party: 'M', active: 't', currently_active_members: '68' }],
         timestamp: Date.now()
       };
 
@@ -952,7 +952,7 @@ MP,t`;
 
     it('should complete full data flow: parse -> filter -> sort -> render', () => {
       // 1. Parse CSV
-      const csvText = `party,active,total_active_parliament
+      const csvText = `party,active,currently_active_members
 S,t,106
 M,t,68
 FP,f,0
@@ -978,8 +978,8 @@ SD,t,73`;
 
       // 3. Sort by seats
       const sorted = [...activeParties].sort((a, b) => {
-        const seatsA = parseInt(a.total_active_parliament) || 0;
-        const seatsB = parseInt(b.total_active_parliament) || 0;
+        const seatsA = parseInt(a.currently_active_members) || 0;
+        const seatsB = parseInt(b.currently_active_members) || 0;
         return seatsB - seatsA;
       });
 

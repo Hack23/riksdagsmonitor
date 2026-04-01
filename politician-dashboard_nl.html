@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-<title>Politician Career & Productivity Analytics | Riksdagsmonitor</title>
+<title>Politici carrière- en productiviteitsanalyse | Riksdagsmonitor</title>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="styles.css">
-<link rel="canonical" href="https://riksdagsmonitor.com/politician-dashboard.html">
+<link rel="canonical" href="https://riksdagsmonitor.com/politician-dashboard_nl.html">
 <link rel="alternate" hreflang="en" href="https://riksdagsmonitor.com/politician-dashboard.html">
 <link rel="alternate" hreflang="sv" href="https://riksdagsmonitor.com/politician-dashboard_sv.html">
 <link rel="alternate" hreflang="da" href="https://riksdagsmonitor.com/politician-dashboard_da.html">
@@ -22,16 +22,16 @@
 <link rel="alternate" hreflang="ko" href="https://riksdagsmonitor.com/politician-dashboard_ko.html">
 <link rel="alternate" hreflang="zh" href="https://riksdagsmonitor.com/politician-dashboard_zh.html">
 <link rel="alternate" hreflang="x-default" href="https://riksdagsmonitor.com/politician-dashboard.html">
-<meta name="description" content="Comprehensive politician career and productivity dashboard: Top 10 rankings, career trajectories, productivity metrics, and experience analysis for Sweden's 349 MPs.">
+<meta name="description" content="Uitgebreide analyse van de 349 Zweedse parlementsleden.">
 <meta name="keywords" content="politician analytics, MP productivity, career trajectory, riksdag politicians, Swedish parliament, legislative output, committee activity">
 <meta name="robots" content="index, follow">
 <meta name="author" content="James Pether Sörling, CISSP, CISM">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Politician Career & Productivity Analytics">
-<meta property="og:description" content="Interactive dashboard tracking career trajectories and productivity metrics for Sweden's 349 MPs">
+<meta property="og:title" content="Politici carrière- en productiviteitsanalyse">
+<meta property="og:description" content="Uitgebreide analyse van de 349 Zweedse parlementsleden.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://riksdagsmonitor.com/politician-dashboard.html">
+<meta property="og:url" content="https://riksdagsmonitor.com/politician-dashboard_nl.html">
 <meta property="og:image" content="https://riksdagsmonitor.com/images/og-image.webp">
 
 <!-- Fonts -->
@@ -202,28 +202,28 @@
 <script>(function(){var key='riksdagsmonitor-theme';var t=null;try{t=localStorage.getItem(key);}catch(e){}if(t!=='dark'&&t!=='light'){if(t!==null){try{localStorage.removeItem(key);}catch(e){}}t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}());</script>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link">Ga naar hoofdinhoud</a>
 <button id="theme-toggle" class="theme-toggle-btn" type="button"
         aria-pressed="false"
-        aria-label="Switch to dark theme"
-        title="Switch to dark theme"
-        data-label-dark="Switch to light theme"
-        data-label-light="Switch to dark theme">
+        aria-label="Schakel naar donker thema"
+        title="Schakel naar donker thema"
+        data-label-dark="Schakel naar licht thema"
+        data-label-light="Schakel naar donker thema">
   <span class="theme-icon" aria-hidden="true">🌙</span>
 </button>
 
 <header>
 <nav>
 <div class="logo">
-<a href="index.html" aria-label="Riksdagsmonitor Home">
+<a href="index_nl.html" aria-label="Riksdagsmonitor startpagina">
   <img src="images/riksdagsmonitor-logo.webp" alt="Riksdagsmonitor" class="site-logo" width="80" height="80" loading="eager">
 </a>
 </div>
 <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="politician-dashboard.html" class="active">Politician Dashboard</a></li>
-<li><a href="index.html#data-sources">Data Sources</a></li>
-<li><a href="index.html#about">About</a></li>
+<li><a href="index_nl.html">Home</a></li>
+<li><a href="politician-dashboard_nl.html" class="active">Politicipaneel</a></li>
+<li><a href="index_nl.html#data-sources">Gegevensbronnen</a></li>
+<li><a href="index_nl.html#about">Over</a></li>
 </ul>
 </nav>
 </header>
@@ -231,72 +231,72 @@
 <main id="main-content">
 <div class="dashboard-container" id="politician-dashboard">
 <div class="dashboard-header">
-<h1>👤 Politician Career & Productivity Analytics</h1>
-<p>Comprehensive analysis of Sweden's 349 Members of Parliament: career trajectories, productivity metrics, and influence rankings based on CIA intelligence data.</p>
+<h1>👤 Politici carrière- en productiviteitsanalyse</h1>
+<p>Uitgebreide analyse van de 349 Zweedse parlementsleden.</p>
 </div>
 
 <!-- WIP Banner -->
 <div class="wip-banner" role="alert">
-<h2>⚠️ Work In Progress - Demo Data</h2>
-<p>This dashboard is currently under development and displays <strong>placeholder/sample data</strong> for demonstration purposes.</p>
-<p>Real CIA CSV data integration is pending. Do not use these visualizations for decision-making.</p>
+<h2>⚠️ In ontwikkeling – Demogegevens</h2>
+<p>Dit dashboard is in ontwikkeling en toont <strong>voorbeeld-/plaatshoudergegevens</strong>.</p>
+<p>Integratie van echte CIA CSV-gegevens is in behandeling. Gebruik deze visualisaties niet voor besluitvorming.</p>
 </div>
 
 <div class="dashboard-grid">
 <!-- Top 10 Most Productive -->
 <div class="chart-card">
-<h2>📊 Top 10 Most Productive</h2>
+<h2>📊 Top 10 meest productief</h2>
 <div id="top10-productive-container">
-<div class="loading-spinner">Loading data...</div>
+<div class="loading-spinner">Gegevens laden...</div>
 </div>
 </div>
 
 <!-- Top 10 Most Influential -->
 <div class="chart-card">
-<h2>🌟 Top 10 Most Influential</h2>
+<h2>🌟 Top 10 meest invloedrijk</h2>
 <div id="top10-influential-container">
-<div class="loading-spinner">Loading data...</div>
+<div class="loading-spinner">Gegevens laden...</div>
 </div>
 </div>
 
 <!-- Top 10 Rising Stars -->
 <div class="chart-card">
-<h2>⭐ Top 10 Rising Stars</h2>
+<h2>⭐ Top 10 rijzende sterren</h2>
 <div id="top10-rising-stars-container">
-<div class="loading-spinner">Loading data...</div>
+<div class="loading-spinner">Gegevens laden...</div>
 </div>
 </div>
 
 <!-- Top 10 Most Controversial -->
 <div class="chart-card">
-<h2>⚡ Top 10 Most Controversial</h2>
+<h2>⚡ Top 10 meest controversieel</h2>
 <div id="top10-controversial-container">
-<div class="loading-spinner">Loading data...</div>
+<div class="loading-spinner">Gegevens laden...</div>
 </div>
 </div>
 </div>
 
 <!-- Career Trajectory Chart -->
 <div class="chart-card chart-card-spacing">
-<h2>📈 Career Trajectory Analysis</h2>
+<h2>📈 Carrièretrajectanalyse</h2>
 <div class="chart-wrapper">
-<canvas id="career-trajectory-chart" role="img" aria-label="Career trajectory timeline chart showing MP career progression"></canvas>
+<canvas id="career-trajectory-chart" role="img" aria-label="Tijdlijndiagram van de loopbaanontwikkeling van parlementariërs"></canvas>
 </div>
 </div>
 
 <!-- Productivity vs Influence -->
 <div class="chart-card chart-card-spacing">
-<h2>💼 Productivity vs. Influence</h2>
+<h2>💼 Productiviteit vs. Invloed</h2>
 <div class="chart-wrapper">
-<canvas id="productivity-influence-chart" role="img" aria-label="Scatter plot showing relationship between MP productivity and influence"></canvas>
+<canvas id="productivity-influence-chart" role="img" aria-label="Spreidingsdiagram van het verband tussen productiviteit en invloed van parlementariërs"></canvas>
 </div>
 </div>
 
 <!-- Experience Distribution -->
 <div class="chart-card chart-card-spacing">
-<h2>🎓 Experience Distribution</h2>
+<h2>🎓 Ervaringsverdeling</h2>
 <div class="chart-wrapper">
-<canvas id="experience-distribution-chart" role="img" aria-label="Bar chart showing distribution of MP experience levels"></canvas>
+<canvas id="experience-distribution-chart" role="img" aria-label="Staafdiagram van de verdeling van ervaringsniveaus van parlementariërs"></canvas>
 </div>
 </div>
 </div>
@@ -306,11 +306,11 @@
 <div class="footer-content">
 <div class="footer-section">
 <h3>Riksdagsmonitor</h3>
-<p>Systematic transparency through data intelligence.</p>
+<p>Systematische transparantie door data-intelligentie.</p>
 <p>Powered by <a href="https://www.hack23.com/cia/" target="_blank" rel="noopener noreferrer">CIA Platform</a></p>
 </div>
 <div class="footer-section">
-<h3>Data Sources</h3>
+<h3>Gegevensbronnen</h3>
 <ul>
 <li><a href="https://data.riksdagen.se/" target="_blank" rel="noopener noreferrer">Riksdagen Open Data</a></li>
 <li><a href="https://www.regeringen.se/" target="_blank" rel="noopener noreferrer">Swedish Government</a></li>
@@ -323,7 +323,7 @@
 </div>
 </div>
 <div class="footer-bottom">
-<p>&copy; 2026 Hack23 AB. Licensed under MIT. Built for transparency.</p>
+<p>&copy; 2026 Hack23 AB. Gelicenseerd onder MIT. Gebouwd voor transparantie.</p>
 </div>
 </footer>
 

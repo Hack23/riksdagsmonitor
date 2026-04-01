@@ -35,6 +35,8 @@ import {
   detectLanguage,
 } from '../shared/index.js';
 
+import { parseCSV } from '../shared/data-loader.js';
+
 import type { CSVRow } from '../shared/index.js';
 
 // ============================================================================
@@ -50,6 +52,8 @@ interface CoalitionConfig {
     politicianData: string;
     experienceData: string;
   }>;
+  readonly localDataBase: string;
+  readonly governmentRoles: string;
   readonly freshnessThreshold: number;
   readonly cachePrefix: string;
   readonly retryDelay: number;
@@ -113,6 +117,8 @@ const CONFIG: CoalitionConfig = {
     politicianData: 'view_riksdagen_politician_sample.csv',
     experienceData: 'view_riksdagen_politician_experience_summary_sample.csv',
   },
+  localDataBase: '/cia-data',
+  governmentRoles: 'view_riksdagen_goverment_role_member_sample.csv',
   freshnessThreshold: 7 * 24 * 60 * 60 * 1000, // 7 days
   cachePrefix: 'coalition_data_',
   retryDelay: 2000,
@@ -412,25 +418,6 @@ function getTranslations(): CoalitionTranslations {
   return TRANSLATIONS[lang] || TRANSLATIONS.en;
 }
 
-function parseCSV(csvText: string): CSVRow[] {
-  const lines = csvText.trim().split('\n');
-  if (lines.length < 2) return [];
-
-  const headers = lines[0].split(',').map((h) => h.trim());
-  const data: CSVRow[] = [];
-
-  for (let i = 1; i < lines.length; i++) {
-    const values = lines[i].split(',');
-    if (values.length !== headers.length) continue;
-    const row: CSVRow = {};
-    headers.forEach((header, idx) => {
-      row[header] = values[idx].trim();
-    });
-    data.push(row);
-  }
-  return data;
-}
-
 // ============================================================================
 // CACHE
 // ============================================================================
@@ -472,9 +459,25 @@ function setCachedData(key: string, data: CSVRow[]): void {
 // ============================================================================
 
 async function fetchCSVRetry(filename: string, retryCount = 0): Promise<string> {
-  const url = `${CONFIG.githubRawBase}/${filename}`;
+  // Try local cia-data first, then fall back to remote GitHub
+  const localUrl = `${CONFIG.localDataBase}/${filename}`;
+  const remoteUrl = `${CONFIG.githubRawBase}/${filename}`;
+
   try {
-    const response = await fetch(url);
+    const localResponse = await fetch(localUrl);
+    if (localResponse.ok) {
+      const text = await localResponse.text();
+      if (text.trim().length > 0) {
+        logger.debug(`Loaded ${filename} from local cia-data`);
+        return text;
+      }
+    }
+  } catch {
+    logger.debug(`Local fetch failed for ${filename}, trying remote`);
+  }
+
+  try {
+    const response = await fetch(remoteUrl);
     if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     return await response.text();
   } catch (error) {
@@ -530,6 +533,36 @@ async function loadExperienceData(): Promise<CSVRow[]> {
   const data = parseCSV(csvText);
   setCachedData('experience_data', data);
   return data;
+}
+
+async function loadGovernmentRoles(): Promise<Record<string, number>> {
+  const cached = getCachedData('government_roles_count');
+  if (cached) {
+    const counts: Record<string, number> = {};
+    cached.forEach((row) => {
+      counts[row.party as string] = parseInt(row.count as string, 10) || 0;
+    });
+    return counts;
+  }
+
+  try {
+    const csvText = await fetchCSVRetry(CONFIG.governmentRoles);
+    const data = parseCSV(csvText);
+    const counts: Record<string, number> = {};
+    data.forEach((row) => {
+      if (row.active === 't' && row.party) {
+        const party = row.party as string;
+        counts[party] = (counts[party] || 0) + 1;
+      }
+    });
+    // Cache as array of {party, count} for consistency
+    const cacheData = Object.entries(counts).map(([party, count]) => ({ party, count: String(count) }));
+    setCachedData('government_roles_count', cacheData);
+    return counts;
+  } catch (err) {
+    logger.warn('Could not load government roles:', err);
+    return {};
+  }
 }
 
 // ============================================================================
@@ -604,6 +637,7 @@ function renderCoalition(
   partyRoles: CSVRow[],
   politicianData: CSVRow[] = [],
   experienceData: CSVRow[] = [],
+  governmentCounts: Record<string, number> = {},
 ): void {
   const container = document.getElementById('coalition-status');
   if (!container) {
@@ -622,13 +656,13 @@ function renderCoalition(
 
   const knownParties = partySummary.filter((party) => PARTY_INFO[party.party as string]);
   const sortedParties = [...knownParties].sort((a, b) => {
-    const seatsA = parseInt(a.total_active_parliament as string, 10) || 0;
-    const seatsB = parseInt(b.total_active_parliament as string, 10) || 0;
+    const seatsA = parseInt(a.currently_active_members as string, 10) || 0;
+    const seatsB = parseInt(b.currently_active_members as string, 10) || 0;
     return seatsB - seatsA;
   });
 
   const totalSeats = sortedParties.reduce(
-    (sum, party) => sum + (parseInt(party.total_active_parliament as string, 10) || 0),
+    (sum, party) => sum + (parseInt(party.currently_active_members as string, 10) || 0),
     0,
   );
 
@@ -637,9 +671,9 @@ function renderCoalition(
     const partyInfo = PARTY_INFO[partyCode];
     if (!partyInfo) return;
 
-    const parliamentSeats = parseInt(party.total_active_parliament as string, 10) || 0;
-    const governmentMembers = parseInt(party.total_active_government as string, 10) || 0;
-    const partyAssignments = parseInt(party.current_party_assignments as string, 10) || 0;
+    const parliamentSeats = parseInt(party.currently_active_members as string, 10) || 0;
+    const governmentMembers = governmentCounts[partyCode] || 0;
+    const totalDocuments = parseInt(party.total_documents as string, 10) || 0;
 
     const basicLeader = getPartyLeader(partyRoles, partyCode);
     const leader = getEnhancedLeaderInfo(basicLeader, politicianData, experienceData);
@@ -671,9 +705,11 @@ function renderCoalition(
       partyStats.appendChild(govP);
     }
 
-    const assignmentsP = document.createElement('p');
-    assignmentsP.textContent = `${partyAssignments} ${t.partyAssignments}`;
-    partyStats.appendChild(assignmentsP);
+    if (totalDocuments > 0) {
+      const docsP = document.createElement('p');
+      docsP.textContent = `${totalDocuments.toLocaleString()} ${t.totalDocuments}`;
+      partyStats.appendChild(docsP);
+    }
     card.appendChild(partyStats);
 
     const leaderSection = document.createElement('div');
@@ -771,7 +807,7 @@ export async function init(): Promise<void> {
   }
 
   try {
-    const [partySummary, partyRoles, politicianData, experienceData] = await Promise.all([
+    const [partySummary, partyRoles, politicianData, experienceData, governmentCounts] = await Promise.all([
       loadPartySummary(),
       loadPartyRoles(),
       loadPoliticianData().catch((err) => {
@@ -782,6 +818,10 @@ export async function init(): Promise<void> {
         logger.warn('Could not load experience data:', err);
         return [] as CSVRow[];
       }),
+      loadGovernmentRoles().catch((err) => {
+        logger.warn('Could not load government roles:', err);
+        return {} as Record<string, number>;
+      }),
     ]);
 
     logger.debug('Loaded data:', {
@@ -789,9 +829,10 @@ export async function init(): Promise<void> {
       leaders: partyRoles.length,
       politicians: politicianData.length,
       experiences: experienceData.length,
+      govParties: Object.keys(governmentCounts).length,
     });
 
-    renderCoalition(partySummary, partyRoles, politicianData, experienceData);
+    renderCoalition(partySummary, partyRoles, politicianData, experienceData, governmentCounts);
 
     logger.debug('✅ Coalition loader initialized successfully');
   } catch (error) {
