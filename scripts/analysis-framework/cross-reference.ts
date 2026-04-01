@@ -13,6 +13,18 @@
  * @license Apache-2.0
  */
 
+/**
+ * @deprecated ANALYSIS GENERATION DEPRECATED — Per ai-driven-analysis-guide.md Rule 2,
+ * scripts MUST NOT generate political analysis content (classifications, risk scores,
+ * threat assessments, significance scores). The AI agent in workflow prompts now performs
+ * all political analysis using methodology guides and templates directly.
+ *
+ * This module's analysis output should be treated as STUBS that the AI agent MUST overwrite.
+ * The module may still be used for data structure types and utility functions.
+ * See: .github/workflows/SHARED_PROMPT_PATTERNS.md "Script Role Boundary" section.
+ */
+
+
 import type { RawDocument } from '../data-transformers/types.js';
 import type { DocumentLink } from './types.js';
 import { detectPolicyDomains } from '../data-transformers/policy-analysis.js';

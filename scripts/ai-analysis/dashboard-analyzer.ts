@@ -23,6 +23,20 @@
  * @license Apache-2.0
  */
 
+/**
+ * @deprecated ANALYSIS GENERATION DEPRECATED — Per ai-driven-analysis-guide.md Rule 2,
+ * scripts MUST NOT generate political analysis content. The AI agent in workflow prompts
+ * is now the exclusive source of SWOT, risk, threat, classification, and stakeholder analysis.
+ *
+ * This module's analysis output (significance scores, SWOT entries, risk assessments,
+ * stakeholder perspectives) should be treated as STUBS that the AI agent MUST overwrite
+ * with real, template-compliant analysis citing specific dok_id, vote counts, and politicians.
+ *
+ * Scripts retain their data downloading and HTML formatting functions.
+ * See: .github/workflows/SHARED_PROMPT_PATTERNS.md "Script Role Boundary" section.
+ */
+
+
 import type { Language } from '../types/language.js';
 import type {
   DashboardChartConfig,
