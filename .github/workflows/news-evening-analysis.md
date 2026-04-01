@@ -203,26 +203,38 @@ Before generating articles, consult these skills:
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
 
+### Article Type Isolation
+
+> 🚨 **This workflow writes analysis ONLY to `analysis/daily/${ARTICLE_DATE}/evening-analysis/`**. NEVER write to the parent date directory or another article type's folder. See SHARED_PROMPT_PATTERNS.md "Article Type Isolation" section.
+
 ### Standardised Analysis Depth Gate
 
 > ⚠️ **Default is `deep`** — not `standard`. Analysis must always produce publication-quality output with Mermaid diagrams and evidence tables.
 
-| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Min. analysis time |
-|-------|--------------|-------------------|--------|---------|-------------------|
-| standard | 1-2 | ≥3 | ≥1 | optional | 10 minutes |
-| deep | 2-3 | ≥5 | ≥2 | required | 15 minutes |
-| comprehensive | 3+ | ≥7 | ≥3 | required | 20 minutes |
+| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Mermaid diagrams | Risk matrix (L×I) | Forward indicators | Min. analysis time |
+|-------|--------------|-------------------|--------|---------|-----------------|-------------------|-------------------|-------------------|
+| standard | 1-2 | ≥5 (of 8 groups) | ≥1 | optional | ≥1 color-coded | ≥2 risks scored | ≥2 with triggers | 10 minutes |
+| deep | 2-3 | ≥7 (of 8 groups) | ≥2 | required | ≥2 color-coded | ≥4 risks scored | ≥3 with triggers | 15 minutes |
+| comprehensive | 3+ | all 8 groups | ≥3 | required | ≥3 color-coded | ≥6 risks scored | ≥5 with triggers | 20 minutes |
 
-**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
+**The 8 mandatory stakeholder groups are**: Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion. Every group MUST be analyzed with specific evidence (dok_id, vote counts, named politicians).
+
+**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, quantified risk matrix with numeric L×I scores, forward indicators with specific triggers/timelines, confidence labels on all analytical claims, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
 
 > **Read `analysis_depth` input first** (default: `deep`). This controls iteration count and section requirements.
 
 Based on the editorial profile for `evening-analysis` (from `scripts/editorial-framework.ts`):
-- **SWOT**: quick (1-paragraph overview)
-- **Dashboard**: required (min. 1 Chart.js chart)
-- **Mindmap**: not required
-- **Min. stakeholders**: 3 perspectives
+- **SWOT**: ALL 8 stakeholder groups analyzed with evidence from the day's parliamentary activity
+- **Dashboard**: required (min. 1 chart)
+- **Mindmap**: optional for standard; required for deep/comprehensive
+- **Min. stakeholders**: 8 perspectives (Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion)
+- **Risk Matrix**: required — numeric L×I scores for day's key developments
+- **Forward Indicators**: required — next-day/next-week watch items with specific triggers
+- **Confidence Labels**: `[HIGH]`/`[MEDIUM]`/`[LOW]` on ALL analytical claims
+- **Mermaid Diagrams**: ≥1 color-coded diagram summarizing day's legislative flow or key voting patterns
 - **AI iterations**: 1 (standard), 2 (deep), or 3 (comprehensive)
+
+> 🚨 **ANTI-PATTERNS (REJECTED)**: Surface-level daily summaries without analysis, SWOT with only 3 groups, no Mermaid diagrams, no risk scores, no forward indicators
 
 ### Phase 1 — Data Collection & Initial Analysis
 1. Fetch today's activity from MCP (`search_anforanden` — filter by `datum`, `get_betankanden` — filter by `publicerad`, `search_voteringar` — filter by `datum`, `get_sync_status`)

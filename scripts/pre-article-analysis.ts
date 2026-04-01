@@ -28,7 +28,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { MCPClient } from './mcp-client/client.js';
-import { analyzeDocuments } from './analysis-framework/index.js';
 import { calculateCoalitionRiskIndex, detectAnomalousPatterns } from './data-transformers/risk-analysis.js';
 import type { RawDocument, CIAContext } from './data-transformers/types.js';
 import { loadCIAContext } from './news-types/weekly-review/index.js';
@@ -230,7 +229,52 @@ function writeAnalysis(dir: string, filename: string, content: string): void {
 // SWOT extraction from analysis results
 // ---------------------------------------------------------------------------
 
-function extractSwotSummaries(results: ReturnType<typeof analyzeDocuments>['results']): SwotSummary[] {
+// ---------------------------------------------------------------------------
+// Stub analysis types — real analysis is now done by AI agent in workflows
+// per ai-driven-analysis-guide.md Rule 2
+// ---------------------------------------------------------------------------
+
+/** Minimal batch result stub for compatibility */
+interface StubBatchResult {
+  results: StubDocumentResult[];
+  crossDocumentLinks: Array<{ sourceId: string; targetId: string; type: string; description: string; confidence: number; reason: string }>;
+}
+interface StubDocumentResult {
+  document: RawDocument;
+  overallSignificance: number;
+  perspectives: Array<{
+    lens: string;
+    summary: string;
+    impact: string;
+    sentiment: string;
+    confidence: number;
+    keyActors: string[];
+    relatedPolicies: string[];
+    swotContribution: Array<{ forStakeholder: string; quadrant: string; text: string }>;
+    dashboardMetrics: Array<{ label: string; value: number | string; unit?: string; metricName: string }>;
+    mindmapNodes: Array<{ label: string; children?: Array<{ label: string }> }>;
+  }>;
+  crossDocumentLinks: Array<{ sourceId: string; targetId: string; type: string; description: string; confidence: number; reason: string }>;
+  keyInsights: string[];
+  confidenceScore: number;
+}
+
+/** Stub: returns empty analysis results. Real analysis is AI-driven in workflows. */
+function analyzeDocuments(docs: RawDocument[], _cia: unknown, _lang: string): StubBatchResult {
+  return {
+    results: docs.map(d => ({
+      document: d,
+      overallSignificance: 0,
+      perspectives: [],
+      crossDocumentLinks: [],
+      keyInsights: [],
+      confidenceScore: 0,
+    })),
+    crossDocumentLinks: [],
+  };
+}
+
+function extractSwotSummaries(results: StubBatchResult['results']): SwotSummary[] {
   const map = new Map<string, SwotSummary>();
 
   for (const result of results) {
@@ -265,7 +309,7 @@ function extractSwotSummaries(results: ReturnType<typeof analyzeDocuments>['resu
 // Significance entries
 // ---------------------------------------------------------------------------
 
-function buildSignificanceEntries(results: ReturnType<typeof analyzeDocuments>['results']): SignificanceEntry[] {
+function buildSignificanceEntries(results: StubBatchResult['results']): SignificanceEntry[] {
   return results.map(r => ({
     dok_id: r.document.dok_id || 'N/A',
     title: r.document.titel || r.document.title || r.document.dok_id || 'Unknown',
@@ -581,7 +625,10 @@ async function runPreArticleAnalysis(opts: {
   console.log('\n🏷️  Step 2: Classifying documents...');
   const ciaContext = loadCIAContext();
   const batchResult = analyzeDocuments(allDocs, ciaContext, 'en');
-  writeAnalysis(outputDir, 'classification-results.md', serializeClassificationResults(ctx, batchResult.results));
+  // Cast stub results to the serializer's expected type — structurally compatible
+  // but TypeScript can't verify RawDocument against the index-signature document shape.
+  const serializableResults = batchResult.results as unknown as Parameters<typeof serializeClassificationResults>[1];
+  writeAnalysis(outputDir, 'classification-results.md', serializeClassificationResults(ctx, serializableResults));
 
   // ── Step 3: Risk assessment ───────────────────────────────────────────────
   console.log('\n⚠️  Step 3: Assessing political risks...');
@@ -595,11 +642,11 @@ async function runPreArticleAnalysis(opts: {
 
   // ── Step 5: Threat analysis ───────────────────────────────────────────────
   console.log('\n🔴 Step 5: Analyzing threats...');
-  writeAnalysis(outputDir, 'threat-analysis.md', serializeThreatAnalysis(ctx, batchResult.results));
+  writeAnalysis(outputDir, 'threat-analysis.md', serializeThreatAnalysis(ctx, serializableResults));
 
   // ── Step 6: Stakeholder perspectives ─────────────────────────────────────
   console.log('\n👥 Step 6: Running stakeholder perspective analysis...');
-  writeAnalysis(outputDir, 'stakeholder-perspectives.md', serializeStakeholderPerspectives(ctx, batchResult.results));
+  writeAnalysis(outputDir, 'stakeholder-perspectives.md', serializeStakeholderPerspectives(ctx, serializableResults));
 
   // ── Step 7: Significance scoring ─────────────────────────────────────────
   console.log('\n📈 Step 7: Scoring document significance...');
@@ -634,7 +681,7 @@ async function runPreArticleAnalysis(opts: {
       attempt++;
       fileName = `${baseName}-${attempt}-analysis.md`;
     }
-    writeAnalysis(documentsDir, fileName, serializeDocumentAnalysis(ctx, result));
+    writeAnalysis(documentsDir, fileName, serializeDocumentAnalysis(ctx, result as unknown as Parameters<typeof serializeDocumentAnalysis>[1]));
     perDocCount++;
   }
   console.log(`   📝 Generated ${perDocCount} per-document analysis files`);

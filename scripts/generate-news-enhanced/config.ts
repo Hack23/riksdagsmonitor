@@ -14,7 +14,9 @@ import { MCPClient } from '../mcp-client.js';
 import type { Language } from '../types/language.js';
 import type { GenerationStats } from '../types/article.js';
 import type { BatchStatus } from './types.js';
-import type { AnalysisDepth } from '../ai-analysis/types.js';
+
+/** Analysis depth levels for article generation */
+export type AnalysisDepth = 'quick' | 'standard' | 'deep' | 'comprehensive';
 
 const __filename: string = fileURLToPath(import.meta.url);
 export const __dirname: string = path.dirname(__filename);
@@ -151,10 +153,10 @@ export const QUALITY_THRESHOLD: number = parsedQualityThreshold;
 export const MULTIDIM_QUALITY_THRESHOLD = 60;
 
 /**
- * Re-export breaking-news significance threshold from the political-significance
- * module so that consuming code can import it from either location.
+ * Breaking news significance threshold (0–100). Documents scoring at or above
+ * this value are considered breaking news.
  */
-export { BREAKING_NEWS_THRESHOLD } from '../ai-analysis/political-significance.js';
+export const BREAKING_NEWS_THRESHOLD = 60;
 
 // --require-mcp flag: when true (default), abort if MCP server is unreachable after all retries.
 // Set --require-mcp=false for local development/testing without a live MCP server.

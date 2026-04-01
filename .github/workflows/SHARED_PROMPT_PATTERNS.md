@@ -2,6 +2,315 @@
 
 > **Internal reference document** — Not a live workflow. Copy-paste these standardised blocks into every `news-*.md` workflow to ensure consistency.
 
+---
+
+## 🔒 ARTICLE TYPE ISOLATION — Absolute Enforcement
+
+> **NON-NEGOTIABLE**: Different article types MUST NEVER overwrite, merge, or conflict with each other's analysis artifacts. Each workflow owns its article type exclusively.
+
+````markdown
+### Article Type Isolation Rules
+
+> 🚨 **ABSOLUTE RULE**: Every workflow MUST write analysis artifacts ONLY to its article-type-specific subdirectory. Workflows MUST NEVER write to the parent date directory or to another article type's subdirectory.
+
+#### Mandatory Analysis Folder Structure
+
+Every workflow MUST use this path pattern for ALL analysis output:
+
+```
+analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/
+```
+
+| Workflow | `${ARTICLE_TYPE}` folder | Owned files |
+|----------|-------------------------|-------------|
+| news-committee-reports | `committeeReports/` | All analysis for betänkanden |
+| news-interpellations | `interpellations/` | All analysis for interpellationer/frågor |
+| news-motions | `motions/` | All analysis for motioner |
+| news-propositions | `propositions/` | All analysis for propositioner |
+| news-month-ahead | `month-ahead/` | Monthly strategic outlook analysis |
+| news-week-ahead | `week-ahead/` | Weekly parliamentary preview analysis |
+| news-evening-analysis | `evening-analysis/` | Daily evening synthesis analysis |
+| news-weekly-review | `weekly-review/` | Weekly retrospective analysis |
+| news-monthly-review | `monthly-review/` | Monthly retrospective analysis |
+| news-realtime-monitor | `realtime-${HHMM}/` | Breaking news time-stamped analysis |
+| news-article-generator | `${REQUESTED_TYPE}/` | Analysis for the requested article type |
+| news-translate | *(reads only, never writes analysis)* | Translation output only |
+
+#### Enforcement Rules
+
+1. **Each workflow sets `ARTICLE_TYPE` at step start** — this variable scopes ALL `git add` and file writes
+2. **`git add` MUST scope to `analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/`** — NEVER `analysis/daily/${ARTICLE_DATE}/`
+3. **No workflow may read-modify-write another type's files** — read is allowed for cross-reference, but modification is PROHIBITED
+4. **Concurrent workflow protection**: Multiple workflows (committee-reports, motions, propositions) may run on the same date — isolation prevents merge conflicts
+5. **news-article-generator MUST include article type in filenames**: Generated articles use `${DATE}-${ARTICLE_TYPE}-${LANG}.html` pattern — article type is ALWAYS part of the filename
+
+#### Anti-Patterns (REJECTED)
+
+- ❌ Writing to `analysis/daily/${ARTICLE_DATE}/` root (no article type subfolder)
+- ❌ `git add analysis/daily/${ARTICLE_DATE}/` without article type scope
+- ❌ One workflow modifying another workflow's synthesis-summary.md
+- ❌ Realtime monitor overwriting committee-reports analysis
+- ❌ Evening analysis replacing interpellations SWOT with its own
+- ❌ Article generator writing analysis without article type in path
+
+#### Git Add Pattern (MANDATORY for all workflows)
+
+```bash
+# CORRECT — scoped to article type
+ARTICLE_TYPE="committeeReports"  # Set per workflow
+git add "analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/" || true
+
+# INCORRECT — will conflict with other workflows
+# git add "analysis/daily/${ARTICLE_DATE}/" || true  # ← NEVER DO THIS
+```
+````
+
+---
+
+## 📰 ARTICLE TYPE MUST BE INCLUDED IN ALL OUTPUTS
+
+> **NON-NEGOTIABLE**: Every news article, analysis file, and commit message MUST include the article type identifier to prevent cross-type confusion.
+
+````markdown
+### Article Type Tagging
+
+Every output artifact MUST be tagged with its article type:
+
+1. **HTML filenames**: `news/${DATE}-${ARTICLE_TYPE}-${LANG}.html`
+2. **Analysis folders**: `analysis/daily/${DATE}/${ARTICLE_TYPE}/`
+3. **Commit messages**: `📰 ${ARTICLE_TYPE}: ${description} - ${DATE}`
+4. **Schema.org metadata**: `"articleSection": "${ARTICLE_TYPE}"`
+5. **Analysis file headers**: Include `Article Type: ${ARTICLE_TYPE}` in metadata
+
+#### Valid Article Types
+
+| Type ID | Display Name | Workflow |
+|---------|-------------|----------|
+| `breaking` | Breaking News | news-realtime-monitor |
+| `committee-reports` | Committee Reports | news-committee-reports |
+| `interpellation-debates` | Interpellation Debates | news-interpellations |
+| `opposition-motions` | Opposition Motions | news-motions |
+| `propositions` | Government Propositions | news-propositions |
+| `month-ahead` | Month Ahead | news-month-ahead |
+| `week-ahead` | Week Ahead | news-week-ahead |
+| `evening-analysis` | Evening Analysis | news-evening-analysis |
+| `weekly-review` | Weekly Review | news-weekly-review |
+| `monthly-review` | Monthly Review | news-monthly-review |
+| `deep-inspection` | Deep Inspection | news-article-generator |
+````
+
+---
+
+## 🧠 POLITICAL INTELLIGENCE DEPTH REQUIREMENTS (applies to ALL article workflows)
+
+> **NON-NEGOTIABLE**: All news articles must meet publication-quality political intelligence standards. Surface-level summaries, generic boilerplate, and shallow analysis are REJECTED.
+
+````markdown
+### Political Intelligence Depth Requirements
+
+> 🚨 **CRITICAL**: Every news article must demonstrate genuine political intelligence analysis — not information relay. The AI agent's job is to ANALYZE, not to SUMMARIZE. Articles that merely restate document titles or use generic language are REJECTED.
+
+#### Mandatory Analysis Components (ALL article types)
+
+Every news article MUST include ALL of the following:
+
+1. **Structured SWOT Analysis with Evidence Tables**
+   - Minimum 8 stakeholder perspectives (Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion)
+   - SWOT entries in structured HTML tables (not prose paragraphs)
+   - Every SWOT entry MUST cite specific dok_id, vote counts, or named politicians
+   - Example: `<td>Coalition discipline tested — 3 M MPs broke ranks on MJU18 (vote 2025/26:87)</td>`
+   - NOT: `<td>Government faces challenges in maintaining coalition unity</td>` ← REJECTED
+
+2. **Color-Coded Mermaid Diagrams (rendered in HTML)**
+   - Minimum 1 Mermaid diagram per article, rendered as inline SVG or using mermaid.js
+   - Diagrams MUST use color-coded nodes with real data:
+     ```html
+     <div class="mermaid">
+     graph TD
+       A[Prop 2025/26:214 - Cybersecurity] -->|Referred| B[FöU Committee]
+       B -->|Expected vote| C{Chamber Vote Q2 2026}
+       C -->|Pass| D[NCSC Reform Enacted]
+       C -->|Fail| E[Government Setback]
+       style A fill:#0d6efd,color:#fff
+       style D fill:#28a745,color:#fff
+       style E fill:#dc3545,color:#fff
+     </div>
+     ```
+   - NOT: Generic placeholder diagrams with no real document data
+
+3. **Quantified Risk Matrix (L×I Scores)**
+   - Every article MUST include a risk assessment section with numeric Likelihood (1-5) × Impact (1-5) scores
+   - Present as HTML table with color-coded risk cells
+   - Example:
+     ```html
+     <table class="risk-matrix">
+       <tr><th>Risk</th><th>L</th><th>I</th><th>Score</th><th>Mitigation</th></tr>
+       <tr class="risk-medium"><td>Coalition fracture on defense budget</td><td>2</td><td>5</td><td>10</td><td>M-KD NATO consensus</td></tr>
+     </table>
+     ```
+
+4. **Classification Rationale with Significance Scoring**
+   - Every article MUST explain WHY it has its classification (MEDIUM/HIGH/LOW)
+   - Include 5-dimension significance scoring: Parliamentary Impact, Policy Impact, Public Interest, Urgency, Cross-Party Significance
+   - Each dimension scored 0-10 with one-sentence rationale
+
+5. **Forward Indicators ("What to Watch")**
+   - Every article MUST include ≥3 forward indicators with:
+     - Specific trigger event
+     - Timeline (exact date or date range)
+     - Significance if triggered
+   - Example: "Watch: FöU committee scheduling of Prop. 2025/26:214 — if before April 15, signals government urgency [HIGH]"
+
+6. **Confidence Labels on ALL Analytical Claims**
+   - Every analytical statement MUST have `[HIGH]`, `[MEDIUM]`, or `[LOW]` confidence label
+   - Label criteria:
+     - `[HIGH]` — Directly supported by official document data (dok_id, vote record)
+     - `[MEDIUM]` — Inferred from multiple data points with reasonable certainty
+     - `[LOW]` — Speculative or based on limited/indirect evidence
+
+7. **CSS Mindmap (for deep/comprehensive articles)**
+   - For articles with analysis_depth=deep or comprehensive, include a CSS-rendered mindmap showing:
+     - Central topic with branching policy areas
+     - Stakeholder positions
+     - Timeline progression
+   - Use CSS classes: `.mindmap-container`, `.mindmap-node`, `.mindmap-branch`
+
+8. **Dok_id Evidence Citations**
+   - Every article MUST cite ≥5 specific document identifiers (e.g., `Prop. 2025/26:214`, `frs 2025/26:634`, `mot. 2025/26:1823`)
+   - Citations MUST link to data.riksdagen.se when possible
+   - Interpellation articles MUST cite frs IDs for every interpellation discussed
+
+#### Quality Scoring Rubric (Articles MUST score ≥ 7.0/10)
+
+| Dimension | Weight | Criteria | Score Range |
+|-----------|--------|----------|------------|
+| **Evidence Density** | 25% | dok_id citations, vote counts, named politicians per paragraph | 0-10 |
+| **Analytical Depth** | 25% | Multi-framework (SWOT + Risk + Threat), not surface summaries | 0-10 |
+| **Structural Completeness** | 20% | Mermaid diagrams, evidence tables, risk matrix, forward indicators | 0-10 |
+| **Stakeholder Coverage** | 15% | All 8 groups analyzed with specific evidence per group | 0-10 |
+| **Originality** | 15% | Unique per-document insights, no boilerplate, no repeated phrases | 0-10 |
+
+**Minimum passing score: 7.0/10 composite**
+
+#### Anti-Patterns (REJECTED — these indicate shallow analysis)
+
+| Pattern | Why It's Rejected | Correct Approach |
+|---------|-------------------|-----------------|
+| "Requires committee review and chamber debate" (repeated 20+ times) | Generic boilerplate, no analysis | Cite specific committee precedent on this topic |
+| "Sweden faces escalating X threats" | Repackaged headline, not intelligence | Cite Säkerhetspolisen briefing date, specific incident data |
+| SWOT with only 3 stakeholder groups | Incomplete framework coverage | Analyze all 8 groups with evidence per group |
+| Risk assessment with "MEDIUM" text only | No quantified L×I scores | Provide numeric L=3, I=4, Score=12 with rationale |
+| Articles with 0 Mermaid diagrams | Fails visual intelligence standard | Include ≥1 color-coded diagram with real data |
+| Forward indicators without dates | Vague predictions, not intelligence | "Watch: FöU scheduling by April 15" with trigger |
+| Confidence claims without labels | Unverifiable assertions | Add [HIGH]/[MEDIUM]/[LOW] to every claim |
+| No dok_id citations in article body | Information relay, not analysis | Cite ≥5 specific document references |
+````
+
+---
+
+## 🔧 SCRIPT ROLE BOUNDARY — Scripts Format, AI Analyzes
+
+> **NON-NEGOTIABLE**: Scripts handle data download, HTML formatting, chart rendering, and article template structure. The AI agent handles ALL political analysis, SWOT generation, risk assessment, classification, and intelligence production.
+
+````markdown
+### Script vs AI Role Boundary
+
+> 🚨 **ABSOLUTE RULE**: The division of labor between scripts and AI is strict and non-negotiable.
+
+#### What Scripts DO (Formatting & Data)
+
+Scripts (`generate-news-enhanced.ts`, `pre-article-analysis.ts`, etc.) are responsible for:
+
+| Script Role | Examples | Output |
+|------------|---------|--------|
+| **Download MCP data** | Fetch betänkanden, voteringar, motioner | JSON files in `analysis/data/` |
+| **Catalog data files** | List pending analysis files | Manifest in `analysis/daily/` |
+| **Render HTML template** | Apply article CSS, header, footer, nav | HTML article shell |
+| **Render charts** | Canvas.js/Mermaid chart containers | Chart HTML with data attributes |
+| **Render mindmaps** | CSS mindmap containers | Mindmap HTML structure |
+| **Validate HTML** | HTMLHint, linkinator, Playwright | Validation reports |
+| **Generate metadata** | Schema.org, OpenGraph, hreflang | HTML head metadata |
+| **Format tables** | Structured HTML table rendering | Semantic table elements |
+| **Create directory structure** | `analysis/daily/${DATE}/${TYPE}/` | Empty directory tree |
+
+#### What Scripts MUST NEVER DO (Analysis Content)
+
+Scripts MUST NEVER generate any of these — this is the AI agent's exclusive responsibility:
+
+| Prohibited Script Output | Why It's Prohibited | Who Does It |
+|-------------------------|--------------------|-|
+| SWOT analysis entries | Political judgment requires context | AI agent only |
+| Risk assessment scores | Likelihood/Impact assessment needs political understanding | AI agent only |
+| Significance scoring | Policy impact evaluation requires expertise | AI agent only |
+| Political classification | Sensitivity/urgency assessment is analytical | AI agent only |
+| Threat analysis | Democratic threat assessment requires judgment | AI agent only |
+| Stakeholder impact prose | Multi-perspective analysis requires reasoning | AI agent only |
+| Forward indicators | Predictive intelligence requires synthesis | AI agent only |
+| "Why It Matters" sections | Contextual significance requires understanding | AI agent only |
+| Opposition strategy analysis | Coalition dynamics assessment is analytical | AI agent only |
+| Article narrative/story | Political narrative construction requires intelligence | AI agent only |
+
+#### Test: "The Lorem Ipsum Test"
+
+> If you replace an analysis section's content with "Lorem Ipsum" and the article still renders correctly, then the script is doing its job (formatting) and the AI's analysis was properly injected.
+> If the article breaks when you replace content with Lorem Ipsum, the script is generating content (VIOLATION).
+
+#### Deprecated Analysis-Generating Scripts
+
+The following script directories previously generated analysis content and are now **DEPRECATED** — their analysis functions are replaced by AI agent analysis in workflow prompts:
+
+| Directory | Status | Replacement |
+|-----------|--------|-------------|
+| `scripts/ai-analysis/` | ⚠️ DEPRECATED for analysis generation | AI agent performs analysis per workflow prompts |
+| `scripts/analysis-framework/` | ⚠️ DEPRECATED for analysis generation | AI agent uses methodology guides directly |
+| `scripts/data-transformers/content-generators/ai-swot-analyzer.ts` | ⚠️ DEPRECATED | AI agent generates SWOT per political-swot-framework.md |
+| `scripts/data-transformers/content-generators/stakeholder-swot-section.ts` | ⚠️ DEPRECATED | AI agent generates stakeholder analysis per stakeholder-impact.md |
+
+**These scripts may still be called for data downloading and HTML formatting functions**, but their analysis output (SWOT entries, risk scores, classifications) MUST be treated as stubs that the AI agent MUST overwrite with real template-compliant analysis.
+````
+
+---
+
+## 📊 TOP 10 QUALITY ISSUES IN CURRENT ARTICLES (2026-04-01)
+
+> **Quality audit findings** — these issues MUST be addressed by improving all agentic workflow prompts.
+
+````markdown
+### Quality Issues Detected in 2026-04-01 Articles
+
+These issues were identified across all 61 articles generated on 2026-04-01. ALL workflow `.md` files must be updated to prevent these issues.
+
+| # | Issue | Severity | Affected Workflows | Root Cause |
+|---|-------|----------|-------------------|------------|
+| 1 | **ZERO Mermaid diagrams** in any article | CRITICAL | ALL | Workflows don't enforce Mermaid rendering in HTML output |
+| 2 | **SWOT tables use prose** instead of structured evidence tables with dok_id columns | HIGH | committee-reports, interpellations, motions, month-ahead | Prompt doesn't require evidence table format |
+| 3 | **Interpellation articles have ZERO dok_id/frs references** | HIGH | news-interpellations | Data fetch doesn't include frs document IDs |
+| 4 | **Only 3 of 8 stakeholder groups** analyzed (Government, Opposition, Civil Society) | HIGH | ALL | Prompt only asks for 3 perspectives |
+| 5 | **No numeric L×I risk scores** — risk assessment uses text labels only | MEDIUM | committee-reports, interpellations, month-ahead | No structured risk matrix in prompt |
+| 6 | **Breaking-votering missing English variant** | CRITICAL | news-article-generator | English votering article not generated |
+| 7 | **No "Forward Indicators" section** with triggers and timelines | MEDIUM | breaking, committee-reports, interpellations, motions | Prompt doesn't require forward indicators |
+| 8 | **Canvas.js charts used instead of Mermaid** | MEDIUM | ALL | Article template uses Canvas library, not Mermaid |
+| 9 | **No classification decision tree or significance scoring** visible in articles | MEDIUM | ALL | Classification metadata hidden in badges only |
+| 10 | **Generic boilerplate** repeated across articles ("Requires committee review...") | MEDIUM | committee-reports, month-ahead, interpellations | Template-driven generation without per-document customization |
+
+#### Workflow Fix Requirements
+
+Every `news-*.md` workflow MUST be updated to:
+
+1. **Require Mermaid diagrams**: Add explicit instruction to include ≥1 Mermaid diagram in every article HTML
+2. **Require structured SWOT tables**: Add HTML table template with `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact` columns
+3. **Require dok_id citations**: Add validation step checking `grep -c 'dok_id\|Prop\.\|frs\|mot\.\|bet\.' article.html`
+4. **Require 8 stakeholder groups**: Update prompt to list all 8 groups with instructions for evidence per group
+5. **Require numeric risk matrix**: Add L×I table template in prompt
+6. **Require forward indicators**: Add "What to Watch" section template with trigger/timeline/significance columns
+7. **Require classification rationale**: Add significance scoring section template
+8. **Ban boilerplate**: Add anti-pattern list of rejected phrases with enforcement check
+9. **Require confidence labels**: Add `[HIGH]`/`[MEDIUM]`/`[LOW]` on all analytical claims
+10. **Enforce article type in all outputs**: Tag analysis with article type to prevent cross-type overwriting
+````
+
+---
+
 ## 🚨 UNIVERSAL RULE: No Workflow Run Wasted — Always Perform Analysis (applies to ALL workflows)
 
 > **NON-NEGOTIABLE FIRST PRINCIPLE**: Every agentic workflow run MUST produce improved analysis artifacts. No workflow run should ever complete without at least reviewing and improving existing analysis. This applies to ALL workflows — content generation, translation, monitoring, review, and any future workflow type.
@@ -79,7 +388,7 @@ When improving existing analysis, apply these checks:
 - [ ] No `[REQUIRED]` placeholders remain (fill with evidence-based content)
 - [ ] SWOT entries cite specific dok_id, vote counts, party names (not generic text)
 - [ ] Risk matrix has numeric L×I scores (not placeholder values)
-- [ ] Stakeholder analysis covers all 8 groups (Citizens, Government, Opposition, Business, Civil Society, International, Judiciary, Media) with evidence (not generic perspectives)
+- [ ] Stakeholder analysis covers all 8 groups (Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion) with specific evidence per group (not generic perspectives)
 - [ ] Forward indicators have specific timelines and triggers (not vague predictions)
 - [ ] Confidence labels (`[HIGH]`/`[MEDIUM]`/`[LOW]`) present on all analytical claims
 - [ ] Writing follows `analysis/methodologies/political-style-guide.md` standards
@@ -111,13 +420,15 @@ Before generating articles, consult these skills:
 
 > ⚠️ **Default is `deep`** — not `standard`. Analysis must always produce publication-quality output with Mermaid diagrams and evidence tables.
 
-| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Min. analysis time |
-|-------|--------------|-------------------|--------|---------|-------------------|
-| standard | 1-2 | ≥3 | ≥1 | optional | 10 minutes |
-| deep | 2-3 | ≥5 | ≥2 | required | 15 minutes |
-| comprehensive | 3+ | ≥7 | ≥3 | required | 20 minutes |
+| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Mermaid diagrams | Risk matrix (L×I) | Forward indicators | Min. analysis time |
+|-------|--------------|-------------------|--------|---------|-----------------|-------------------|-------------------|-------------------|
+| standard | 1-2 | ≥5 (of 8 groups) | ≥1 | optional | ≥1 color-coded | ≥2 risks scored | ≥2 with triggers | 10 minutes |
+| deep | 2-3 | ≥7 (of 8 groups) | ≥2 | required | ≥2 color-coded | ≥4 risks scored | ≥3 with triggers | 15 minutes |
+| comprehensive | 3+ | all 8 groups | ≥3 | required | ≥3 color-coded | ≥6 risks scored | ≥5 with triggers | 20 minutes |
 
-**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
+**The 8 mandatory stakeholder groups are**: Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion. Analysis for each group MUST cite specific evidence (dok_id, vote counts, named politicians).
+
+**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, a quantified risk matrix with L×I scores, forward indicators with specific triggers/timelines, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level. Every SWOT entry must cite dok_id, vote counts, or named politicians — generic text is REJECTED.
 ```
 
 ## MANDATORY Playwright Validation (copy into every content workflow)

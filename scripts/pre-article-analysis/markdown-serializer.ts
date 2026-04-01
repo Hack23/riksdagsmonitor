@@ -17,11 +17,76 @@
  * @license Apache-2.0
  */
 
-import type {
-  DocumentAnalysisResult,
-  PerspectiveAnalysis,
-  DocumentLink,
-} from '../analysis-framework/types.js';
+/* ── Inlined types (formerly from deleted analysis-framework/types module) ── */
+
+interface SwotContribution {
+  quadrant: string;
+  text: string;
+  forStakeholder: string;
+}
+
+interface DashboardMetric {
+  label: string;
+  value: number | string;
+  unit?: string;
+  metricName: string;
+}
+
+interface MindmapNode {
+  label: string;
+  children?: MindmapNode[];
+}
+
+interface PerspectiveAnalysis {
+  lens: string;
+  summary: string;
+  impact: string;
+  sentiment: string;
+  swotContribution: SwotContribution[];
+  dashboardMetrics: DashboardMetric[];
+  mindmapNodes: MindmapNode[];
+  confidence: number;
+  keyActors: string[];
+  relatedPolicies: string[];
+}
+
+interface DocumentLink {
+  sourceId: string;
+  targetId: string;
+  type: string;
+  description: string;
+  confidence: number;
+  reason: string;
+}
+
+interface DocumentAnalysisResult {
+  document: {
+    dok_id?: string;
+    titel?: string;
+    title?: string;
+    doktyp?: string;
+    organ?: string;
+    committee?: string;
+    datum?: string;
+    intressent_namn?: string;
+    author?: string;
+    parti?: string;
+    rm?: string;
+    summary?: string;
+    rubrik?: string;
+    undertitel?: string;
+    notis?: string;
+    mottagare?: string;
+    fullText?: string;
+    fullContent?: string;
+    [key: string]: unknown;
+  };
+  overallSignificance: number;
+  perspectives: PerspectiveAnalysis[];
+  crossDocumentLinks: DocumentLink[];
+  keyInsights: string[];
+  confidenceScore: number;
+}
 
 // ---------------------------------------------------------------------------
 // Types

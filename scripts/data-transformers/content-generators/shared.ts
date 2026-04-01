@@ -13,18 +13,69 @@ import type { Language } from '../../types/language.js';
 import type { RawDocument, RawCalendarEvent, CIAContext } from '../types.js';
 import { L, normalizePartyKey } from '../helpers.js';
 import { detectPolicyDomains } from '../policy-analysis.js';
-import {
-  analyzeDocuments as analyzeDocumentsBatch,
-  type DocumentAnalysis,
-  type PESTLEAnalysis,
-  type StakeholderImpact,
-  type RiskAssessment,
-  type ImplementationAssessment,
-} from '../../ai-analysis/document-analyzer.js';
-import {
-  analyzeDocuments as analyzeDocumentsPerspectives,
-  type BatchAnalysisResult,
-} from '../../analysis-framework/index.js';
+
+/* ── Stub types/functions for deleted analysis modules ── */
+/* Per ai-driven-analysis-guide.md Rule 2: scripts must NOT generate analysis */
+
+interface PESTLEDimensions {
+  political: string[];
+  economic: string[];
+  social: string[];
+  technological: string[];
+  legal: string[];
+  environmental: string[];
+}
+
+interface StakeholderDirectImpact {
+  direction: 'positive' | 'negative' | 'mixed' | 'neutral';
+  magnitude: 'significant' | 'moderate' | 'minor';
+  summary: string;
+}
+
+interface StakeholderImpact {
+  stakeholder: string;
+  displayName: string;
+  directImpact: StakeholderDirectImpact;
+  confidence: string;
+  implementationBurden: 'high' | 'medium' | 'low';
+}
+
+interface ImplementationAssessment {
+  feasibility: 'high' | 'medium' | 'low';
+  keyObstacles: string[];
+  agenciesInvolved: string[];
+  timeline: string;
+  estimatedTimeline: string;
+  summary: string;
+}
+
+interface DocumentAnalysis {
+  pestleDimensions: PESTLEDimensions;
+  stakeholderImpacts: StakeholderImpact[];
+  implementationAssessment: ImplementationAssessment;
+  riskAssessment: RiskAssessment[];
+  [key: string]: unknown;
+}
+
+type PESTLEAnalysis = PESTLEDimensions;
+
+interface RiskAssessment {
+  type: 'political' | 'implementation' | 'public-acceptance' | 'legal' | 'financial';
+  severity: 'high' | 'medium' | 'low';
+  description: string;
+}
+
+interface BatchAnalysisResult { results: unknown[] }
+
+/** Stub: returns empty analysis. Real analysis is AI-driven in workflows. */
+function analyzeDocumentsBatch(_docs: unknown[], _lang?: Language | string, _cia?: CIAContext): Map<string, DocumentAnalysis> {
+  return new Map();
+}
+
+/** Stub: returns empty perspectives. Real analysis is AI-driven in workflows. */
+function analyzeDocumentsPerspectives(_docs: unknown[], _cia?: CIAContext, _lang?: Language | string): BatchAnalysisResult {
+  return { results: [] };
+}
 
 /** Localise raw Riksdag document type codes for display (singular/plural-aware, multi-language). */
 export type DocTypeLocalization = {
@@ -524,7 +575,7 @@ export function generateDeepAnalysisSection(opts: DeepAnalysisOptions): string {
   // When the analysis-framework has been run, inject key insights from the
   // government, opposition, citizen, economic, international, and media lenses.
   if (perspectiveAnalysis && perspectiveAnalysis.results.length > 0) {
-    const allInsights = perspectiveAnalysis.results.flatMap(r => r.keyInsights);
+    const allInsights = perspectiveAnalysis.results.flatMap((r: unknown) => ((r as { keyInsights?: string[] }).keyInsights ?? []));
     if (allInsights.length > 0) {
       const uniqueInsights = [...new Set(allInsights)].slice(0, MAX_PERSPECTIVE_INSIGHTS);
       parts.push(`    <div class="perspective-insights">`);

@@ -173,26 +173,39 @@ Before generating articles, consult these skills:
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
 
+### Article Type Isolation
+
+> 🚨 **This workflow writes analysis ONLY to `analysis/daily/${ARTICLE_DATE}/month-ahead/`**. NEVER write to the parent date directory or another article type's folder. See SHARED_PROMPT_PATTERNS.md "Article Type Isolation" section.
+
 ### Standardised Analysis Depth Gate
 
 > ⚠️ **Default is `deep`** — not `standard`. Analysis must always produce publication-quality output with Mermaid diagrams and evidence tables.
 
-| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Min. analysis time |
-|-------|--------------|-------------------|--------|---------|-------------------|
-| standard | 1-2 | ≥3 | ≥1 | optional | 10 minutes |
-| deep | 2-3 | ≥5 | ≥2 | required | 15 minutes |
-| comprehensive | 3+ | ≥7 | ≥3 | required | 20 minutes |
+| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Mermaid diagrams | Risk matrix (L×I) | Forward indicators | Min. analysis time |
+|-------|--------------|-------------------|--------|---------|-----------------|-------------------|-------------------|-------------------|
+| standard | 1-2 | ≥5 (of 8 groups) | ≥1 | optional | ≥1 color-coded | ≥2 risks scored | ≥2 with triggers | 10 minutes |
+| deep | 2-3 | ≥7 (of 8 groups) | ≥2 | required | ≥2 color-coded | ≥4 risks scored | ≥3 with triggers | 15 minutes |
+| comprehensive | 3+ | all 8 groups | ≥3 | required | ≥3 color-coded | ≥6 risks scored | ≥5 with triggers | 20 minutes |
 
-**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
+**The 8 mandatory stakeholder groups are**: Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion. Every group MUST be analyzed with specific evidence (dok_id, vote counts, named politicians).
+
+**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, quantified risk matrix with numeric L×I scores, forward indicators with specific triggers/timelines, confidence labels on all analytical claims, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
 
 > **Read `analysis_depth` input first** (default: `deep`). This controls iteration count and section requirements.
 
 Based on the editorial profile for `month-ahead` (from `scripts/editorial-framework.ts`):
-- **SWOT**: condensed (3 stakeholder perspectives per quadrant)
+- **SWOT**: ALL 8 stakeholder groups analyzed with forward-looking evidence (scheduled debates, committee meetings, expected votes)
 - **Dashboard**: required (min. 2 Chart.js charts)
 - **Mindmap**: required (CSS policy mindmap)
-- **Min. stakeholders**: 5 perspectives
+- **Min. stakeholders**: 8 perspectives (Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion)
+- **Risk Matrix**: required — numeric L×I scores for upcoming legislative risks, coalition stress points, policy implementation risks
+- **Forward Indicators**: required — specific dates for committee sessions, plenary debates, expected government decisions
+- **Confidence Labels**: `[HIGH]`/`[MEDIUM]`/`[LOW]` on ALL analytical claims
+- **Mermaid Diagrams**: ≥1 color-coded Gantt chart or legislative pipeline showing monthly agenda flow
+- **Cross-Document Pattern Analysis**: required — identify thematic clusters (e.g., "3 defense-related meetings indicate coordinated legislative push")
 - **AI iterations**: 2 (standard), 2 (deep), or 3 (comprehensive)
+
+> 🚨 **ANTI-PATTERNS (REJECTED)**: Generic "Requires committee review and chamber debate" (must be unique per entry), SWOT with only 3 groups, no forward date-specific indicators, no Mermaid diagrams, no cross-document synthesis
 
 ### Phase 1 — Data Collection & Initial Analysis
 1. Fetch MCP data (`get_calendar_events`, `get_propositioner`, `get_motioner`, `get_interpellationer`, `get_sync_status`)
@@ -201,7 +214,7 @@ Based on the editorial profile for `month-ahead` (from `scripts/editorial-framew
 
 ### Phase 2 — Iterative Depth Enhancement (repeat per `analysis_depth`)
 For each AI iteration:
-1. **Condensed SWOT**: Generate `generateSwotSection()` with ≥3 stakeholder perspectives focusing on upcoming legislative priorities
+1. **Full SWOT Analysis**: Generate multi-stakeholder SWOT with ALL 8 groups (Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion) focusing on upcoming legislative priorities. Use structured evidence tables with columns: `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact`, `Entry Date`. Every entry MUST cite specific scheduled debate, committee meeting, or expected vote.
 2. **Strategic Dashboard**: Generate `generateDashboardSection()` with ≥2 charts (documents by week, policy domain distribution)
 3. **Policy Mindmap**: Generate `generateMindmapSection()` showing inter-connected policy areas
 4. **Quality Gate** (check before next iteration):

@@ -26,7 +26,9 @@
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { existsSync } from 'node:fs';
-import type { UrgencyLabel } from './ai-analysis/political-significance.js';
+
+/** Urgency label for political significance assessment */
+export type UrgencyLabel = 'breaking' | 'major' | 'standard' | 'background';
 
 // ---------------------------------------------------------------------------
 // Classification types

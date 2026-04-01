@@ -15,12 +15,20 @@
  * */
 
 import type { Chart as ChartType, ChartConfiguration, ChartTypeRegistry } from 'chart.js';
-import { THEME_COLORS, CHART_PALETTE, BREAKPOINTS, getActiveThemeColors, getChartPalette } from './theme.js';
+import { DARK_THEME_COLORS, CHART_PALETTE, BREAKPOINTS, getActiveThemeColors, getChartPalette } from './theme.js';
 import { showLoadingState, showErrorState, hideStateOverlays } from './dom-utils.js';
 import { logger } from './logger.js';
 
 // Re-export for convenience
-export { THEME_COLORS, CHART_PALETTE, BREAKPOINTS, getActiveThemeColors, getChartPalette };
+export { CHART_PALETTE, BREAKPOINTS, getActiveThemeColors, getChartPalette };
+
+/**
+ * Legacy alias kept for backward-compatibility with callers that import
+ * `THEME_COLORS` from this convenience module. Resolves to the dark-theme
+ * palette (same value the old constant held). Migrate to
+ * `getActiveThemeColors()` for runtime theme awareness.
+ */
+export const THEME_COLORS = DARK_THEME_COLORS;
 
 /**
  * Get the Chart constructor.

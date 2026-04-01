@@ -197,26 +197,38 @@ Before generating articles, consult these skills:
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
 
+### Article Type Isolation
+
+> 🚨 **This workflow writes analysis ONLY to `analysis/daily/${ARTICLE_DATE}/committeeReports/`**. NEVER write to the parent date directory or another article type's folder. See SHARED_PROMPT_PATTERNS.md "Article Type Isolation" section.
+
 ### Standardised Analysis Depth Gate
 
-> ⚠️ **Default is `deep`** — not `standard`. Analysis must always produce publication-quality output with Mermaid diagrams and evidence tables.
+> ⚠️ **Default is `deep`** — not `standard`. Analysis must always produce publication-quality output with Mermaid diagrams, evidence tables, and quantified risk matrices.
 
-| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Min. analysis time |
-|-------|--------------|-------------------|--------|---------|-------------------|
-| standard | 1-2 | ≥3 | ≥1 | optional | 10 minutes |
-| deep | 2-3 | ≥5 | ≥2 | required | 15 minutes |
-| comprehensive | 3+ | ≥7 | ≥3 | required | 20 minutes |
+| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Mermaid diagrams | Risk matrix (L×I) | Forward indicators | Min. analysis time |
+|-------|--------------|-------------------|--------|---------|-----------------|-------------------|-------------------|-------------------|
+| standard | 1-2 | ≥5 (of 8 groups) | ≥1 | optional | ≥1 color-coded | ≥2 risks scored | ≥2 with triggers | 10 minutes |
+| deep | 2-3 | ≥7 (of 8 groups) | ≥2 | required | ≥2 color-coded | ≥4 risks scored | ≥3 with triggers | 15 minutes |
+| comprehensive | 3+ | all 8 groups | ≥3 | required | ≥3 color-coded | ≥6 risks scored | ≥5 with triggers | 20 minutes |
 
-**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
+**The 8 mandatory stakeholder groups are**: Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion. Every group MUST be analyzed with specific evidence (dok_id, vote counts, named politicians).
+
+**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, quantified risk matrix with numeric L×I scores, forward indicators with specific triggers/timelines, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
 
 > **Read `analysis_depth` input first** (default: `deep`). This controls iteration count and section requirements.
 
 Based on the editorial profile for `committee-reports` (from `scripts/editorial-framework.ts`):
-- **SWOT**: condensed (3 stakeholder perspectives per quadrant) for `standard`; full (5+) for `deep`/`comprehensive`
-- **Dashboard**: required (min. 1 Chart.js chart for `standard`; min. 2 for `deep`/`comprehensive`)
-- **Mindmap**: optional for `standard`; required for `deep`/`comprehensive`
-- **Min. stakeholders**: 3 perspectives (`standard`), 5 (`deep`/`comprehensive`)
+- **SWOT**: ALL 8 stakeholder groups analyzed with evidence tables (dok_id, vote counts, named politicians per entry)
+- **Dashboard**: required (min. 1 chart for `standard`; min. 2 for `deep`/`comprehensive`) — include Mermaid diagrams
+- **Mindmap**: optional for `standard`; required for `deep`/`comprehensive` — use CSS mindmap with committee jurisdiction branches
+- **Risk Matrix**: required — numeric L×I scores (1-5 each) for ≥2 risks (standard), ≥4 risks (deep), ≥6 risks (comprehensive)
+- **Forward Indicators**: required — ≥2 specific triggers with dates/timelines for `standard`, ≥3 for `deep`
+- **Confidence Labels**: `[HIGH]`/`[MEDIUM]`/`[LOW]` on ALL analytical claims — no unlabeled assertions
+- **Mermaid Diagrams**: ≥1 color-coded diagram per article showing committee referral flow, policy impact paths, or legislative pipeline
+- **Classification Rationale**: 5-dimension significance scoring visible in article with numeric scores
 - **AI iterations**: 1-2 (standard), 2-3 (deep), 3+ (comprehensive)
+
+> 🚨 **ANTI-PATTERNS (REJECTED)**: "Requires committee review and chamber debate" (generic boilerplate), SWOT with only Government/Opposition/Civil Society (need all 8 groups), risk as "MEDIUM" text without L×I numbers, articles with 0 Mermaid diagrams, no dok_id citations in article body.
 
 ### Phase 1 — Data Collection & Initial Analysis
 1. Fetch MCP data (`get_betankanden`, `get_sync_status`, cross-reference `search_voteringar`)
@@ -225,13 +237,21 @@ Based on the editorial profile for `committee-reports` (from `scripts/editorial-
 
 ### Phase 2 — Iterative Depth Enhancement (repeat per `analysis_depth`)
 For each AI iteration:
-1. **SWOT Analysis**: Generate `generateSwotSection()` with ≥3 stakeholder perspectives (≥5 when `analysis_depth` is `deep` or `comprehensive`)
-2. **Policy Dashboard**: Generate `generateDashboardSection()` with ≥1 chart (≥2 for `deep`/`comprehensive`)
-3. **Mindmap**: Generate `generateMindmapSection()` showing policy domain connections (only for `deep`/`comprehensive`)
-4. **Quality Gate** (check before next iteration):
+1. **SWOT Analysis**: Generate multi-stakeholder SWOT with ALL 8 groups (Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion). Use structured evidence tables with columns: `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact`, `Entry Date`. Every entry MUST cite specific betänkande number (e.g., "MJU18"), committee decision, or voting outcome.
+2. **Policy Dashboard**: Generate with ≥1 chart (≥2 for `deep`/`comprehensive`). Include ≥1 Mermaid diagram showing committee referral flow or legislative pipeline with color-coded nodes.
+3. **Risk Matrix**: Generate quantified L×I risk assessment with numeric scores (Likelihood 1-5, Impact 1-5) for each committee report. Present as structured HTML table with color-coded risk levels.
+4. **Forward Indicators**: Generate "What to Watch" section with ≥2 specific triggers (e.g., "FöU scheduling of Prop. 2025/26:214 by April 15 — if scheduled, signals government urgency [HIGH]").
+5. **Mindmap**: Generate CSS mindmap showing policy domain connections (only for `deep`/`comprehensive`)
+6. **Classification Rationale**: Include 5-dimension significance scoring (Parliamentary Impact, Policy Impact, Public Interest, Urgency, Cross-Party Significance) with numeric 0-10 scores per dimension.
+7. **Confidence Labels**: Ensure ALL analytical claims have `[HIGH]`/`[MEDIUM]`/`[LOW]` labels.
+8. **Quality Gate** (check before next iteration):
    - Verify no identical "Why It Matters" text across entries
    - Verify all Swedish API text is translated
    - Verify word count ≥ 800
+   - Verify ≥1 Mermaid diagram with color-coded style directives
+   - Verify ≥5 dok_id citations in article body
+   - Verify ALL 8 stakeholder groups have evidence-based entries
+   - Verify no generic boilerplate (grep for "Requires committee review and chamber debate" — must be 0)
    - If failing any check: re-generate the failing section before proceeding
 
 ### Phase 3 — Final Quality Gate Before PR

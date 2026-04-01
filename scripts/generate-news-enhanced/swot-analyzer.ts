@@ -12,8 +12,33 @@
 
 import type { Language } from '../types/language.js';
 import type { SwotEntry, SwotData } from '../types/article.js';
-import type { StakeholderSwot, StakeholderCategory } from '../data-transformers/content-generators/stakeholder-swot-section.js';
 import type { RawDocument } from '../data-transformers/types.js';
+
+/* ── Inlined types (formerly from deleted stakeholder-swot-section module) ── */
+
+/** Stakeholder category for analysis routing */
+export type StakeholderCategory =
+  | 'government'
+  | 'opposition'
+  | 'private'
+  | 'civil-society'
+  | 'municipal'
+  | 'international'
+  | 'academic'
+  | 'academia'
+  | 'media'
+  | 'judiciary'
+  | 'labor';
+
+/** Multi-stakeholder SWOT analysis entry */
+export interface StakeholderSwot {
+  name: string;
+  role?: string;
+  category?: StakeholderCategory;
+  swot: SwotData;
+  evidenceRefs?: string[];
+  confidenceLevel?: 'high' | 'medium' | 'low';
+}
 
 // ---------------------------------------------------------------------------
 // Internal helpers
@@ -740,6 +765,22 @@ export const STAKEHOLDER_NAMES: Readonly<Record<StakeholderCategory, Stakeholder
     nl: 'Vakbonden en werknemers', ar: 'النقابات والعمال',
     he: 'האיגודים המקצועיים והעובדים', ja: '労働組合・労働者', ko: '노동조합 및 근로자', zh: '工会与劳动者',
   },
+  academic: {
+    en: 'Academia & Research', sv: 'Akademi och forskning',
+    da: 'Akademi og forskning', no: 'Akademia og forskning',
+    fi: 'Akateeminen maailma ja tutkimus', de: 'Wissenschaft und Forschung',
+    fr: 'Milieu universitaire et recherche', es: 'Academia e investigación',
+    nl: 'Academische wereld en onderzoek', ar: 'الأكاديمية والبحوث',
+    he: 'אקדמיה ומחקר', ja: '学術界・研究機関', ko: '학계 및 연구', zh: '学界与研究',
+  },
+  judiciary: {
+    en: 'Judiciary & Constitutional Bodies', sv: 'Rättsväsende och konstitutionella organ',
+    da: 'Retsvæsen og forfatningsorganer', no: 'Rettsvesen og konstitusjonelle organer',
+    fi: 'Oikeuslaitos ja perustuslailliset elimet', de: 'Justiz und Verfassungsorgane',
+    fr: 'Pouvoir judiciaire et organes constitutionnels', es: 'Poder judicial y órganos constitucionales',
+    nl: 'Rechterlijke macht en constitutionele organen', ar: 'السلطة القضائية والهيئات الدستورية',
+    he: 'מערכת המשפט והגופים החוקתיים', ja: '司法・憲法機関', ko: '사법부 및 헌법 기관', zh: '司法与宪法机构',
+  },
 };
 
 // Stakeholder roles — localised for all 14 languages
@@ -887,6 +928,38 @@ const STAKEHOLDER_ROLES: Readonly<Record<StakeholderCategory, Record<Language, s
     ja: 'LO, TCO, Saco — 労働市場組織',
     ko: 'LO, TCO, Saco — 노동시장 조직',
     zh: 'LO, TCO, Saco — 劳动市场组织',
+  },
+  academic: {
+    en: 'Universities, think tanks, independent research',
+    sv: 'Universitet, tankesmedjor, oberoende forskning',
+    da: 'Universiteter, tænketanke, uafhængig forskning',
+    no: 'Universiteter, tankesmier, uavhengig forskning',
+    fi: 'Yliopistot, ajatushautomot, riippumaton tutkimus',
+    de: 'Universitäten, Denkfabriken, unabhängige Forschung',
+    fr: 'Universités, think tanks, recherche indépendante',
+    es: 'Universidades, centros de pensamiento, investigación independiente',
+    nl: 'Universiteiten, denktanks, onafhankelijk onderzoek',
+    ar: 'الجامعات، مراكز الفكر، البحوث المستقلة',
+    he: 'אוניברסיטאות, מכוני מחקר, מחקר עצמאי',
+    ja: '大学、シンクタンク、独立研究機関',
+    ko: '대학, 싱크탱크, 독립 연구',
+    zh: '大学、智库、独立研究',
+  },
+  judiciary: {
+    en: 'Courts, constitutional council, legal oversight',
+    sv: 'Domstolar, konstitutionsutskottet, rättslig tillsyn',
+    da: 'Domstole, forfatningsråd, retsligt tilsyn',
+    no: 'Domstoler, konstitusjonskomiteen, rettslig tilsyn',
+    fi: 'Tuomioistuimet, perustuslakivaliokunta, oikeudellinen valvonta',
+    de: 'Gerichte, Verfassungsrat, Rechtsaufsicht',
+    fr: 'Tribunaux, conseil constitutionnel, surveillance juridique',
+    es: 'Tribunales, consejo constitucional, supervisión legal',
+    nl: 'Rechtbanken, constitutionele raad, juridisch toezicht',
+    ar: 'المحاكم، المجلس الدستوري، الرقابة القانونية',
+    he: 'בתי משפט, מועצה חוקתית, פיקוח משפטי',
+    ja: '裁判所、憲法審議会、法的監視',
+    ko: '법원, 헌법위원회, 법적 감독',
+    zh: '法院、宪法委员会、法律监督',
   },
 };
 
