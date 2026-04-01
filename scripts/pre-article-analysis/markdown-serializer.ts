@@ -29,6 +29,7 @@ interface DashboardMetric {
   label: string;
   value: number | string;
   unit?: string;
+  metricName: string;
 }
 
 interface MindmapNode {
@@ -44,6 +45,9 @@ interface PerspectiveAnalysis {
   swotContribution: SwotContribution[];
   dashboardMetrics: DashboardMetric[];
   mindmapNodes: MindmapNode[];
+  confidence: number;
+  keyActors: string[];
+  relatedPolicies: string[];
 }
 
 interface DocumentLink {
@@ -51,10 +55,32 @@ interface DocumentLink {
   targetId: string;
   type: string;
   description: string;
+  confidence: number;
+  reason: string;
 }
 
 interface DocumentAnalysisResult {
-  document: { dok_id?: string; titel?: string; title?: string; doktyp?: string; [key: string]: unknown };
+  document: {
+    dok_id?: string;
+    titel?: string;
+    title?: string;
+    doktyp?: string;
+    organ?: string;
+    committee?: string;
+    datum?: string;
+    intressent_namn?: string;
+    author?: string;
+    parti?: string;
+    rm?: string;
+    summary?: string;
+    rubrik?: string;
+    undertitel?: string;
+    notis?: string;
+    mottagare?: string;
+    fullText?: string;
+    fullContent?: string;
+    [key: string]: unknown;
+  };
   overallSignificance: number;
   perspectives: PerspectiveAnalysis[];
   crossDocumentLinks: DocumentLink[];

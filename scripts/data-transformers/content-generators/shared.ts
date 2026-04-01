@@ -17,20 +17,63 @@ import { detectPolicyDomains } from '../policy-analysis.js';
 /* ── Stub types/functions for deleted analysis modules ── */
 /* Per ai-driven-analysis-guide.md Rule 2: scripts must NOT generate analysis */
 
-interface DocumentAnalysis { [key: string]: unknown }
-interface PESTLEAnalysis { [key: string]: unknown }
-interface StakeholderImpact { [key: string]: unknown }
-interface RiskAssessment { [key: string]: unknown }
-interface ImplementationAssessment { [key: string]: unknown }
+interface PESTLEDimensions {
+  political: string[];
+  economic: string[];
+  social: string[];
+  technological: string[];
+  legal: string[];
+  environmental: string[];
+}
+
+interface StakeholderDirectImpact {
+  direction: 'positive' | 'negative' | 'mixed' | 'neutral';
+  magnitude: 'significant' | 'moderate' | 'minor';
+  summary: string;
+}
+
+interface StakeholderImpact {
+  stakeholder: string;
+  displayName: string;
+  directImpact: StakeholderDirectImpact;
+  confidence: string;
+  implementationBurden: 'high' | 'medium' | 'low';
+}
+
+interface ImplementationAssessment {
+  feasibility: 'high' | 'medium' | 'low';
+  keyObstacles: string[];
+  agenciesInvolved: string[];
+  timeline: string;
+  estimatedTimeline: string;
+  summary: string;
+}
+
+interface DocumentAnalysis {
+  pestleDimensions: PESTLEDimensions;
+  stakeholderImpacts: StakeholderImpact[];
+  implementationAssessment: ImplementationAssessment;
+  riskAssessment: RiskAssessment[];
+  [key: string]: unknown;
+}
+
+type PESTLEAnalysis = PESTLEDimensions;
+
+interface RiskAssessment {
+  type: 'political' | 'implementation' | 'public-acceptance' | 'legal' | 'financial';
+  severity: 'high' | 'medium' | 'low';
+  description: string;
+}
+
 interface BatchAnalysisResult { results: unknown[] }
 
 /** Stub: returns empty analysis. Real analysis is AI-driven in workflows. */
-function analyzeDocumentsBatch(_docs: unknown[], _cia?: unknown, _lang?: string): { documents: DocumentAnalysis[] } {
-  return { documents: [] };
+function analyzeDocumentsBatch(_docs: unknown[], _lang?: Language | string, _cia?: CIAContext): Map<string, DocumentAnalysis> {
+  return new Map();
 }
 
 /** Stub: returns empty perspectives. Real analysis is AI-driven in workflows. */
-function analyzeDocumentsPerspectives(_docs: unknown[], _cia?: unknown, _lang?: string): BatchAnalysisResult {
+function analyzeDocumentsPerspectives(_docs: unknown[], _cia?: CIAContext, _lang?: Language | string): BatchAnalysisResult {
   return { results: [] };
 }
 
@@ -532,7 +575,7 @@ export function generateDeepAnalysisSection(opts: DeepAnalysisOptions): string {
   // When the analysis-framework has been run, inject key insights from the
   // government, opposition, citizen, economic, international, and media lenses.
   if (perspectiveAnalysis && perspectiveAnalysis.results.length > 0) {
-    const allInsights = perspectiveAnalysis.results.flatMap(r => r.keyInsights);
+    const allInsights = perspectiveAnalysis.results.flatMap((r: unknown) => ((r as { keyInsights?: string[] }).keyInsights ?? []));
     if (allInsights.length > 0) {
       const uniqueInsights = [...new Set(allInsights)].slice(0, MAX_PERSPECTIVE_INSIGHTS);
       parts.push(`    <div class="perspective-insights">`);

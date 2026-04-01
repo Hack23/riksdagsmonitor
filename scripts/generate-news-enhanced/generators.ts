@@ -34,7 +34,7 @@ import { escapeHtml } from '../html-utils.js';
 import { generateArticleHTML } from '../article-template.js';
 import { MCPClient } from '../mcp-client.js';
 import type { Language } from '../types/language.js';
-import type { GenerationResult, DateRange, ArticleCategory, TemplateSection } from '../types/article.js';
+import type { GenerationResult, DateRange, ArticleCategory, TemplateSection, DashboardChartConfig, DashboardTableConfig } from '../types/article.js';
 import type { TitleSet } from './types.js';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -81,7 +81,7 @@ function buildAISwotStakeholders(_docs: unknown[], _topic: string, _lang: string
 
 /** Stub: analysis is now AI-driven in workflows, not script-generated */
 function analyzeDashboardData(_docs: unknown[], _topic: string, _lang: string) {
-  return { charts: [] as unknown[], tables: [] as unknown[], summary: '' };
+  return { charts: [] as DashboardChartConfig[], tables: [] as DashboardTableConfig[], summary: '' };
 }
 
 /** Stakeholder display names for mindmap/sankey labels */
@@ -116,7 +116,7 @@ export function buildArticleVisualizationSections(
 
   try {
     // ── 1. SWOT stakeholder analysis ──────────────────────────────────────
-    const stakeholders = buildAISwotStakeholders(docs, topic, lang);
+    const stakeholders = buildAISwotStakeholders(docs, topic ?? '', lang);
     if (stakeholders.length > 0) {
       const swotSection = generateStakeholderSwotSection({ stakeholders, lang });
       sections.push(swotSection);
@@ -126,7 +126,7 @@ export function buildArticleVisualizationSections(
   try {
     // ── 2. Chart.js dashboard (doc-type breakdown + AI analysis) ──────────
     if (docs.length >= 3) {
-      const dashboardAnalysis = analyzeDashboardData(docs, topic, lang);
+      const dashboardAnalysis = analyzeDashboardData(docs, topic ?? '', lang);
       if (dashboardAnalysis.charts.length > 0 || dashboardAnalysis.tables.length > 0) {
         const dashboardSection = generateDashboardSection({
           data: {
@@ -1874,7 +1874,7 @@ function buildDeepInspectionSections(
     .flatMap(([, v]) => v);
 
   // ── AI-driven 6-stakeholder SWOT ─────────────────────────────────────────
-  const stakeholders = buildAISwotStakeholders(docs, topic, lang);
+  const stakeholders = buildAISwotStakeholders(docs, topic ?? '', lang);
 
   const strategicContext = topic
     ? `Analysis exclusively focused on: ${topic} — ${docs.length} parliamentary documents examined`
@@ -1888,7 +1888,7 @@ function buildDeepInspectionSections(
 
   // ── AI-analyzed multi-chart dashboard ─────────────────────────────────────
   // Produces 3 chart types (radar, scatter, bar) with accessible data tables.
-  const dashboardAnalysis = analyzeDashboardData(docs, topic, lang);
+  const dashboardAnalysis = analyzeDashboardData(docs, topic ?? '', lang);
 
   // Also build the classic document-type distribution bar chart as chart #4
   // so existing article consumers still see document counts.
@@ -1902,7 +1902,7 @@ function buildDeepInspectionSections(
   const chartLabels = rawTypeKeys.map(t => docTypeLabel(t, lang, typeCounts[t]));
   const chartValues = rawTypeKeys.map(t => typeCounts[t]);
 
-  const docTypeChart = {
+  const docTypeChart: DashboardChartConfig = {
     id: 'deep-inspection-doc-types',
     type: 'bar' as const,
     title: deepLabel('documentsByType', lang),
@@ -1913,7 +1913,7 @@ function buildDeepInspectionSections(
       backgroundColor: rawTypeKeys.map((_, i) => DEEP_CHART_PALETTE[i % DEEP_CHART_PALETTE.length]),
     }],
   };
-  const docTypeTable = {
+  const docTypeTable: DashboardTableConfig = {
     caption: deepLabel('documentsByType', lang),
     headers: [deepLabel('documentTypes', lang), deepLabel('documents', lang)],
     rows: rawTypeKeys.map((t, i) => [docTypeLabel(t, lang, chartValues[i]), String(chartValues[i])]),
@@ -2312,7 +2312,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
         validationResult: validation,
         documentCount: analysis.documentCount,
         enrichedCount: analysis.enrichedCount,
-        focusTopic: sanitizedTopic,
+        focusTopic: sanitizedTopic ?? undefined,
         completedAt: analysis.completedAt,
       };
       writeAnalysisMetadata(slug, iterationMetadata);

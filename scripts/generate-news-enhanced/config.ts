@@ -16,7 +16,7 @@ import type { GenerationStats } from '../types/article.js';
 import type { BatchStatus } from './types.js';
 
 /** Analysis depth levels for article generation */
-export type AnalysisDepth = 'standard' | 'deep' | 'comprehensive';
+export type AnalysisDepth = 'quick' | 'standard' | 'deep' | 'comprehensive';
 
 const __filename: string = fileURLToPath(import.meta.url);
 export const __dirname: string = path.dirname(__filename);

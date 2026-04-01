@@ -160,7 +160,7 @@ import type { RawDocument } from '../data-transformers/types.js';
 /** Significance scoring result (analysis is now AI-driven) */
 interface SignificanceScore {
   score: number;
-  urgency: string;
+  urgency: UrgencyLabel;
   signals: unknown[];
 }
 
@@ -176,6 +176,7 @@ import type {
   MCPCallRecord,
   BreakingNewsValidation,
   BreakingNewsOptions,
+  UrgencyLabel,
 } from '../types/article.js';
 import { generateDynamicTitle, getAnalysisEnrichment } from '../generate-news-enhanced/helpers.js';
 import { buildArticleVisualizationSections } from '../generate-news-enhanced/generators.js';

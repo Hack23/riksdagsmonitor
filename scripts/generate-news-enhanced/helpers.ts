@@ -32,7 +32,7 @@ import type { MultiDimensionalQualityAssessment } from '../types/article.js';
 // ---------------------------------------------------------------------------
 
 /** Stub: returns a passing quality assessment */
-function assessArticleQuality(_html: string, _lang: string, _docIds: string[], _threshold: number): MultiDimensionalQualityAssessment {
+function assessArticleQuality(_html: string, _lang: string, _docIds: readonly string[], _threshold: number): MultiDimensionalQualityAssessment {
   return {
     overallScore: 100,
     dimensions: {
