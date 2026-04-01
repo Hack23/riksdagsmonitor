@@ -205,7 +205,7 @@ async function fetchBehavioralData(): Promise<void> {
       Object.keys(partyData).forEach(party => {
         if (partyData[party].total > 0) {
           const consistency = (partyData[party].standardBehavior / partyData[party].total) * 100;
-          patterns[party] = Math.max(75, Math.min(100, consistency || 80));
+          patterns[party] = Math.round(consistency * 10) / 10;
         }
       });
       dataCache.behavioralPatterns = patterns;
@@ -229,19 +229,35 @@ async function fetchAnomalyData(): Promise<void> {
     const csvData = await fetchCSV(DATA_CONFIG.files['anomalyByParty']);
     if (csvData && csvData.length > 0) {
       const anomalies: AnomalyEntry[] = [];
+      // Group by party: compute a weighted average deviation score per party
+      const partyAnomalies: Record<string, { totalRebellions: number; totalCount: number; classifications: string[] }> = {};
       csvData.forEach(row => {
         const party = row['party'];
-        if (party === '-' || !party) return;
+        if (party === '-' || !party || !PARTIES[party]) return;
         const avgRebellions = parseFloat(row['avg_rebellions']) || 0;
-        const count = parseInt(row['politician_count']) || 1;
-        const classification = row['anomaly_classification'] || 'EXPECTED_BEHAVIOR';
-        if (avgRebellions > 0 && count > 0) {
-          const deviation = Math.min(6, avgRebellions);
-          anomalies.push({ party, date: '2024-06-15', deviation, severity: classification === 'HIGH_REBELLION_RATE' ? 'critical' : deviation > 2.5 ? 'major' : 'minor' });
+        const count = parseInt(row['politician_count']) || 0;
+        const classification = row['anomaly_classification'] || 'PARTY_ALIGNED';
+        if (!partyAnomalies[party]) partyAnomalies[party] = { totalRebellions: 0, totalCount: 0, classifications: [] };
+        partyAnomalies[party].totalRebellions += avgRebellions * count;
+        partyAnomalies[party].totalCount += count;
+        partyAnomalies[party].classifications.push(classification);
+      });
+      // Create one anomaly entry per party with weighted average
+      Object.entries(partyAnomalies).forEach(([party, data]) => {
+        if (data.totalCount > 0) {
+          const weightedAvg = data.totalRebellions / data.totalCount;
+          const deviation = Math.min(6, weightedAvg / 5); // Normalize to 0-6 scale
+          const hasHighRebels = data.classifications.some(c => c === 'FREQUENT_STRONG_REBEL' || c === 'CONSISTENT_REBEL');
+          anomalies.push({
+            party,
+            date: '2024-06-15',
+            deviation,
+            severity: hasHighRebels && deviation > 3 ? 'critical' : deviation > 2 ? 'major' : 'minor'
+          });
         }
       });
       dataCache.votingAnomalies = anomalies;
-      logger.info('Anomaly data loaded from CSV');
+      logger.info(`Anomaly data loaded from CSV (${anomalies.length} parties)`);
     } else { dataCache.votingAnomalies = generateMockAnomalyData(); coalitionDataSourceType = 'mock'; }
   } catch (error) { logger.error('Failed to fetch anomaly data:', error); dataCache.votingAnomalies = generateMockAnomalyData(); coalitionDataSourceType = 'mock'; }
 }
