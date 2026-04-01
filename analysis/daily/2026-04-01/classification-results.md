@@ -1,39 +1,54 @@
-# Political Classification Results — 2026-04-01
+# 🏷️ Political Classification Results — 2026-04-01
 
-**Generated**: 2026-04-01 08:30 UTC
-**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer
-**Documents Analyzed**: 2
-**Confidence**: MEDIUM
+## 📋 Classification Context
 
-## Summary
+| Field | Value |
+|-------|-------|
+| **Classification ID** | CLS-2026-04-01-001 |
+| **Date** | 2026-04-01 10:30 UTC |
+| **Documents Classified** | 6 |
+| **Produced By** | news-realtime-monitor |
 
-Classified **2** parliamentary documents by sensitivity, impact, urgency, and domain.
+---
 
-## Detailed Analysis
+## 📊 Classification Summary
 
-### med anledning av prop. 2025/26:184 Privatkopieringsersättning
-- **dok_id**: HD024007
-- **Type**: unknown
-- **Significance**: 🟢 Low (3/10)
-- **Domains**: trade and industry policy, Coalition Programme 2022-2026, Electoral Programme
-- **Confidence**: MEDIUM (69%)
+```mermaid
+graph TD
+    subgraph "🏷️ Document Classification — 2026-04-01"
+        subgraph "🟡 SENSITIVE"
+            D1["HD03214<br/>Cybersecurity Center<br/>Defense/Security"]
+            D5["HD12647<br/>Nuclear Guarantees<br/>Defense/Foreign"]
+        end
+        subgraph "🟢 PUBLIC"
+            D2["HD03216<br/>Healthcare<br/>Social Policy"]
+            D3["HD024017<br/>S Welfare Motion<br/>Budget/Social"]
+            D4["HD12648<br/>Iran Embassy<br/>Foreign Policy"]
+            D6["HD01FöU11<br/>Maritime Rescue<br/>Defense/Environment"]
+        end
+    end
 
-### Riksrevisionens rapport om miljöräddning vid stora olyckor till sjöss
-- **dok_id**: HD01FöU11
-- **Type**: unknown
-- **Significance**: 🟡 Medium (4/10)
-- **Domains**: defence and security policy, environmental and climate policy, Coalition Programme 2022-2026
-- **Confidence**: MEDIUM (55%)
+    style D1 fill:#ffc107,color:#000
+    style D5 fill:#ffc107,color:#000
+    style D2 fill:#28a745,color:#fff
+    style D3 fill:#28a745,color:#fff
+    style D4 fill:#28a745,color:#fff
+    style D6 fill:#28a745,color:#fff
+```
 
-## Key Findings
+### Batch Classification Table
 
-1. **Riksrevisionens rapport om miljöräddning vid stora olyckor till sjöss** (dok_id: HD01FöU11) — Significance: 4/10
-2. **med anledning av prop. 2025/26:184 Privatkopieringsersättning** (dok_id: HD024007) — Significance: 3/10
+| dok_id | Title | Type | Domain | Sensitivity | Urgency | Score |
+|--------|-------|------|--------|:-----------:|:-------:|:-----:|
+| HD03214 | Cybersecurity Center | prop | Defense | 🟡 SENSITIVE | 🟠 URGENT | 7/10 |
+| HD024017 | S motion vs bidragstak | mot | Social/Budget | 🟢 PUBLIC | 🔵 ELEVATED | 5/10 |
+| HD03216 | Municipal healthcare | prop | Healthcare | 🟢 PUBLIC | 🔵 ELEVATED | 4/10 |
+| HD12647 | Nuclear guarantees | frs | Defense/Foreign | 🟡 SENSITIVE | 🔵 ELEVATED | 4/10 |
+| HD12648 | Iran embassy cluster | frs | Foreign Policy | 🟢 PUBLIC | ⚪ ROUTINE | 3/10 |
+| HD01FöU11 | Maritime rescue audit | bet | Defense/Env | 🟢 PUBLIC | ⚪ ROUTINE | 3/10 |
 
-## Implications
+---
 
-Classification drives article prioritisation. High-significance documents should receive deep-inspection treatment.
+## 📋 Document Control
 
-## Data Quality Notes
-
-Classification confidence: MEDIUM. Higher confidence when full-text content is available.
+| **Created** | 2026-04-01 10:30 UTC | **Framework** | Classification v2.1 |
