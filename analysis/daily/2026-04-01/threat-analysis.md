@@ -1,29 +1,55 @@
-# Political Threat Analysis — 2026-04-01
+# 🔴 Political Threat Analysis — 2026-04-01
 
-**Generated**: 2026-04-01 08:30 UTC
-**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer
-**Documents Analyzed**: 2
-**Confidence**: MEDIUM
+## 📋 Threat Context
 
-## Summary
+| Field | Value |
+|-------|-------|
+| **Threat Assessment ID** | THR-2026-04-01-001 |
+| **Date** | 2026-04-01 10:31 UTC |
+| **Produced By** | news-realtime-monitor |
+| **Overall Threat Level** | MODERATE |
 
-Identified **2** threat indicators across 2 documents.
+---
 
-## Detailed Analysis
+## 📊 Threat Landscape
 
-### Threats for: Opposition
+```mermaid
+graph TD
+    subgraph "🎭 Political Threat Taxonomy — 2026-04-01"
+        subgraph "Narrative Interference"
+            NI["S welfare counter-narrative<br/>Impact: HIGH"]
+        end
+        subgraph "Legislative Interference"
+            LI["Opposition motions on<br/>welfare reform<br/>Impact: MEDIUM"]
+        end
+        subgraph "Diplomatic Pressure"
+            DP["SD Iran questions<br/>testing FM response<br/>Impact: LOW"]
+        end
+        subgraph "Accountability Challenge"
+            AC["PM press secretary question<br/>HD12651<br/>Impact: LOW"]
+        end
+    end
 
-- [med anledning av prop. 2025/26:184 Privatkopieringsersättning] High motion denial rate (96%) limits legislative impact of opposition proposals.
-- [Riksrevisionens rapport om miljöräddning vid stora olyckor till sjöss] High motion denial rate (96%) limits legislative impact of opposition proposals.
+    NI --> LI
+    DP -.-> NI
 
-## Key Findings
+    style NI fill:#dc3545,color:#fff
+    style LI fill:#ffc107,color:#000
+    style DP fill:#28a745,color:#fff
+    style AC fill:#28a745,color:#fff
+```
 
-1. **2** threat indicators identified targeting 1 stakeholder group(s)
+### Threat Register
 
-## Implications
+| ID | Category | Description | Likelihood | Impact | Evidence |
+|----|----------|-------------|:----------:|:------:|----------|
+| THR-001 | Narrative Interference | S welfare counter-narrative gaining traction | 3 | 4 | HD024017, HD024016 |
+| THR-002 | Legislative Interference | S motions delay welfare reform implementation | 2 | 3 | HD024017, HD024016 |
+| THR-003 | Diplomatic Pressure | SD pushing hawkish Iran line via frs mechanism | 2 | 2 | HD12648 cluster |
+| THR-004 | Accountability Challenge | S questioning PM press secretary conduct | 2 | 2 | HD12651 |
 
-Threat analysis should inform risk-focused article framing and editorial prioritisation.
+---
 
-## Data Quality Notes
+## 📋 Document Control
 
-Analysis confidence: MEDIUM.
+| **Created** | 2026-04-01 10:31 UTC | **Framework** | Threat Analysis v3.1 |
