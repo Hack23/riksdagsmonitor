@@ -105,7 +105,6 @@ const DATA_CONFIG: DataConfig = {
     coalition: ['cia-data/party/distribution_coalition_alignment.csv', REMOTE_BASE_URL + 'distribution_coalition_alignment.csv'],
     behavioral: ['cia-data/parties/distribution_behavioral_patterns_by_party.csv', REMOTE_BASE_URL + 'distribution_behavioral_patterns_by_party.csv'],
     decision: ['cia-data/parties/distribution_decision_patterns_by_party.csv', REMOTE_BASE_URL + 'distribution_decision_patterns_by_party.csv'],
-    anomalyClassification: ['cia-data/voting/distribution_voting_anomaly_classification.csv', REMOTE_BASE_URL + 'distribution_voting_anomaly_classification.csv'],
     anomalyByParty: ['cia-data/anomaly/distribution_anomaly_by_party.csv', REMOTE_BASE_URL + 'distribution_anomaly_by_party.csv'],
     annualVotes: ['cia-data/voting/distribution_annual_party_votes.csv', REMOTE_BASE_URL + 'distribution_annual_party_votes.csv'],
     decisionTrends: ['cia-data/voting/distribution_decision_trends.csv', REMOTE_BASE_URL + 'distribution_decision_trends.csv'],
