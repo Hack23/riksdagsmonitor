@@ -26,6 +26,9 @@
   ],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "src/browser/main.ts",
+    "src/browser/lazy-loader.ts",
+    "src/browser/cia-entry.ts"
   ]
 }

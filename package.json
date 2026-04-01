@@ -14,6 +14,10 @@
       "import": "./dist/lib/shared/index.js",
       "types": "./dist/lib/shared/index.d.ts"
     },
+    "./shared/register-globals": {
+      "import": "./dist/lib/shared/register-globals.js",
+      "types": "./dist/lib/shared/register-globals.d.ts"
+    },
     "./cia/*": {
       "import": "./dist/lib/cia/*.js",
       "types": "./dist/lib/cia/*.d.ts"
