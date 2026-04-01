@@ -1,0 +1,1019 @@
+- generic [active] [ref=e1]:
+  - link "Skip to dashboard content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-dashboard"
+  - navigation "Breadcrumb" [ref=e3]:
+    - list [ref=e4]:
+      - listitem [ref=e5]:
+        - link "Home" [ref=e6] [cursor=pointer]:
+          - /url: ../index.html
+      - listitem [ref=e7]: / Dashboard
+  - banner [ref=e8]:
+    - button "Switch to dark theme" [ref=e9] [cursor=pointer]:
+      - generic [ref=e10]: 🌙
+    - img [ref=e12]
+    - generic [ref=e13]:
+      - heading "Riksdagsmonitor Intelligence Dashboard" [level=1] [ref=e14]
+      - paragraph [ref=e15]: Interactive visualization of Swedish Riksdag intelligence data from Citizen Intelligence Agency
+    - navigation "Page navigation" [ref=e16]:
+      - link "← Home" [ref=e17] [cursor=pointer]:
+        - /url: ../index.html
+      - link "News →" [ref=e18] [cursor=pointer]:
+        - /url: ../news/index.html
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - region "Overview Metrics" [ref=e21]:
+        - heading "Overview Metrics" [level=2] [ref=e22]
+        - generic [ref=e23]:
+          - group "Total MPs" [ref=e24]:
+            - generic [ref=e25]: 👥
+            - generic [ref=e26]: "327"
+            - generic [ref=e27]: Members of Parliament
+          - group "Political Parties" [ref=e28]:
+            - generic [ref=e29]: 🏛️
+            - generic [ref=e30]: "8"
+            - generic [ref=e31]: Political Parties
+          - group "Risk Rules" [ref=e32]:
+            - generic [ref=e33]: ⚠️
+            - generic [ref=e34]: "402"
+            - generic [ref=e35]: Risk Rules Active
+          - group "Coalition Seats" [ref=e36]:
+            - generic [ref=e37]: 🤝
+            - generic [ref=e38]: "176"
+            - generic [ref=e39]: Coalition Seats
+        - region "Risk Alerts (Last 90 Days)" [ref=e40]:
+          - heading "Risk Alerts (Last 90 Days)" [level=3] [ref=e41]
+          - generic [ref=e42]:
+            - status [ref=e43]:
+              - generic [ref=e44]: "78"
+              - text: Critical
+            - status [ref=e45]:
+              - generic [ref=e46]: "278"
+              - text: Major
+            - status [ref=e47]:
+              - generic [ref=e48]: "46"
+              - text: Minor
+      - region "Party Performance Analysis" [ref=e49]:
+        - heading "Party Performance Analysis" [level=2] [ref=e50]
+        - img "Party seats distribution chart" [ref=e52]
+        - img "Party voting cohesion chart" [ref=e54]
+      - region "Swedish Election 2026 Predictions" [ref=e55]:
+        - heading "Swedish Election 2026 Predictions" [level=2] [ref=e56]
+        - paragraph [ref=e57]: CIA forecasting model based on historical data and current trends
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - heading "Social Democrats" [level=3] [ref=e60]
+            - generic [ref=e61]:
+              - generic [ref=e62]:
+                - generic [ref=e63]: Current
+                - strong [ref=e64]: "107"
+              - generic [ref=e65]: →
+              - generic [ref=e66]:
+                - generic [ref=e67]: Predicted
+                - strong [ref=e68]: "95"
+            - generic [ref=e69]: "-12 seats (26.8%)"
+            - generic [ref=e70]: "95% CI: 88-102 seats"
+          - generic [ref=e71]:
+            - heading "Sweden Democrats" [level=3] [ref=e72]
+            - generic [ref=e73]:
+              - generic [ref=e74]:
+                - generic [ref=e75]: Current
+                - strong [ref=e76]: "73"
+              - generic [ref=e77]: →
+              - generic [ref=e78]:
+                - generic [ref=e79]: Predicted
+                - strong [ref=e80]: "82"
+            - generic [ref=e81]: +9 seats (23.1%)
+            - generic [ref=e82]: "95% CI: 76-88 seats"
+          - generic [ref=e83]:
+            - heading "Moderates" [level=3] [ref=e84]
+            - generic [ref=e85]:
+              - generic [ref=e86]:
+                - generic [ref=e87]: Current
+                - strong [ref=e88]: "68"
+              - generic [ref=e89]: →
+              - generic [ref=e90]:
+                - generic [ref=e91]: Predicted
+                - strong [ref=e92]: "72"
+            - generic [ref=e93]: +4 seats (20.3%)
+            - generic [ref=e94]: "95% CI: 67-77 seats"
+          - generic [ref=e95]:
+            - heading "Left Party" [level=3] [ref=e96]
+            - generic [ref=e97]:
+              - generic [ref=e98]:
+                - generic [ref=e99]: Current
+                - strong [ref=e100]: "24"
+              - generic [ref=e101]: →
+              - generic [ref=e102]:
+                - generic [ref=e103]: Predicted
+                - strong [ref=e104]: "28"
+            - generic [ref=e105]: +4 seats (7.9%)
+            - generic [ref=e106]: "95% CI: 24-32 seats"
+          - generic [ref=e107]:
+            - heading "Centre Party" [level=3] [ref=e108]
+            - generic [ref=e109]:
+              - generic [ref=e110]:
+                - generic [ref=e111]: Current
+                - strong [ref=e112]: "24"
+              - generic [ref=e113]: →
+              - generic [ref=e114]:
+                - generic [ref=e115]: Predicted
+                - strong [ref=e116]: "22"
+            - generic [ref=e117]: "-2 seats (6.2%)"
+            - generic [ref=e118]: "95% CI: 18-26 seats"
+          - generic [ref=e119]:
+            - heading "Christian Democrats" [level=3] [ref=e120]
+            - generic [ref=e121]:
+              - generic [ref=e122]:
+                - generic [ref=e123]: Current
+                - strong [ref=e124]: "19"
+              - generic [ref=e125]: →
+              - generic [ref=e126]:
+                - generic [ref=e127]: Predicted
+                - strong [ref=e128]: "21"
+            - generic [ref=e129]: +2 seats (5.9%)
+            - generic [ref=e130]: "95% CI: 17-25 seats"
+          - generic [ref=e131]:
+            - heading "Green Party" [level=3] [ref=e132]
+            - generic [ref=e133]:
+              - generic [ref=e134]:
+                - generic [ref=e135]: Current
+                - strong [ref=e136]: "18"
+              - generic [ref=e137]: →
+              - generic [ref=e138]:
+                - generic [ref=e139]: Predicted
+                - strong [ref=e140]: "19"
+            - generic [ref=e141]: +1 seats (5.4%)
+            - generic [ref=e142]: "95% CI: 15-23 seats"
+          - generic [ref=e143]:
+            - heading "Liberals" [level=3] [ref=e144]
+            - generic [ref=e145]:
+              - generic [ref=e146]:
+                - generic [ref=e147]: Current
+                - strong [ref=e148]: "16"
+              - generic [ref=e149]: →
+              - generic [ref=e150]:
+                - generic [ref=e151]: Predicted
+                - strong [ref=e152]: "10"
+            - generic [ref=e153]: "-6 seats (4.4%)"
+            - generic [ref=e154]: "95% CI: 0-15 seats"
+        - heading "Coalition Scenarios" [level=3] [ref=e155]
+        - generic [ref=e156]:
+          - generic [ref=e157]:
+            - generic [ref=e158]: 35%
+            - heading "Tidö Coalition (Renewed)" [level=3] [ref=e159]
+            - generic [ref=e160]:
+              - generic [ref=e161]: M
+              - generic [ref=e162]: KD
+              - generic [ref=e163]: SD
+              - generic [ref=e164]: L
+            - generic [ref=e165]:
+              - strong [ref=e166]: "185"
+              - text: seats (175 required for majority)
+            - generic [ref=e167]: Majority ✓
+            - generic [ref=e168]:
+              - text: "Risk Level:"
+              - strong [ref=e169]: moderate
+          - generic [ref=e170]:
+            - generic [ref=e171]: 28%
+            - heading "Left-Green Coalition" [level=3] [ref=e172]
+            - generic [ref=e173]:
+              - generic [ref=e174]: S
+              - generic [ref=e175]: V
+              - generic [ref=e176]: MP
+              - generic [ref=e177]: C
+            - generic [ref=e178]:
+              - strong [ref=e179]: "164"
+              - text: seats (175 required for majority)
+            - generic [ref=e180]: No Majority
+            - generic [ref=e181]:
+              - text: "Risk Level:"
+              - strong [ref=e182]: high
+          - generic [ref=e183]:
+            - generic [ref=e184]: 22%
+            - heading "Grand Coalition" [level=3] [ref=e185]
+            - generic [ref=e186]:
+              - generic [ref=e187]: S
+              - generic [ref=e188]: M
+              - generic [ref=e189]: C
+            - generic [ref=e190]:
+              - strong [ref=e191]: "189"
+              - text: seats (175 required for majority)
+            - generic [ref=e192]: Majority ✓
+            - generic [ref=e193]:
+              - text: "Risk Level:"
+              - strong [ref=e194]: low
+          - generic [ref=e195]:
+            - generic [ref=e196]: 15%
+            - heading "SD-Led Coalition" [level=3] [ref=e197]
+            - generic [ref=e198]:
+              - generic [ref=e199]: SD
+              - generic [ref=e200]: M
+              - generic [ref=e201]: KD
+            - generic [ref=e202]:
+              - strong [ref=e203]: "175"
+              - text: seats (175 required for majority)
+            - generic [ref=e204]: Majority ✓
+            - generic [ref=e205]:
+              - text: "Risk Level:"
+              - strong [ref=e206]: high
+        - heading "Key Election Factors" [level=3] [ref=e207]
+        - generic [ref=e209]:
+          - heading "Key Election Factors" [level=3] [ref=e210]
+          - list [ref=e211]:
+            - listitem [ref=e212]: • Economic conditions
+            - listitem [ref=e213]: • Immigration policy
+            - listitem [ref=e214]: • Climate change priorities
+            - listitem [ref=e215]: • Healthcare reform
+            - listitem [ref=e216]: • NATO membership impact
+      - region "Top 10 Most Influential MPs" [ref=e217]:
+        - heading "Top 10 Most Influential MPs" [level=2] [ref=e218]
+        - paragraph [ref=e219]: Network analysis and influence scoring (CIA algorithm)
+        - generic [ref=e220]:
+          - generic [ref=e221]:
+            - generic [ref=e222]: "1"
+            - generic [ref=e223]:
+              - generic [ref=e224]: Amir Jawad
+              - generic [ref=e225]: L
+              - generic [ref=e226]: Highly Influential
+            - generic [ref=e227]:
+              - generic [ref=e228]: "277.0"
+              - generic [ref=e229]: Influence
+          - generic [ref=e230]:
+            - generic [ref=e231]: "2"
+            - generic [ref=e232]:
+              - generic [ref=e233]: Alexandra Anstrell
+              - generic [ref=e234]: M
+              - generic [ref=e235]: Highly Influential
+            - generic [ref=e236]:
+              - generic [ref=e237]: "209.0"
+              - generic [ref=e238]: Influence
+          - generic [ref=e239]:
+            - generic [ref=e240]: "3"
+            - generic [ref=e241]:
+              - generic [ref=e242]: Torsten Elofsson
+              - generic [ref=e243]: KD
+              - generic [ref=e244]: Highly Influential
+            - generic [ref=e245]:
+              - generic [ref=e246]: "208.0"
+              - generic [ref=e247]: Influence
+          - generic [ref=e248]:
+            - generic [ref=e249]: "4"
+            - generic [ref=e250]:
+              - generic [ref=e251]: Ann-Sofie Lifvenhage
+              - generic [ref=e252]: M
+              - generic [ref=e253]: Highly Influential
+            - generic [ref=e254]:
+              - generic [ref=e255]: "208.0"
+              - generic [ref=e256]: Influence
+          - generic [ref=e257]:
+            - generic [ref=e258]: "5"
+            - generic [ref=e259]:
+              - generic [ref=e260]: Gustaf Göthberg
+              - generic [ref=e261]: M
+              - generic [ref=e262]: Highly Influential
+            - generic [ref=e263]:
+              - generic [ref=e264]: "208.0"
+              - generic [ref=e265]: Influence
+          - generic [ref=e266]:
+            - generic [ref=e267]: "6"
+            - generic [ref=e268]:
+              - generic [ref=e269]: Boriana Åberg
+              - generic [ref=e270]: M
+              - generic [ref=e271]: Highly Influential
+            - generic [ref=e272]:
+              - generic [ref=e273]: "208.0"
+              - generic [ref=e274]: Influence
+          - generic [ref=e275]:
+            - generic [ref=e276]: "7"
+            - generic [ref=e277]:
+              - generic [ref=e278]: Viktor Wärnick
+              - generic [ref=e279]: M
+              - generic [ref=e280]: Highly Influential
+            - generic [ref=e281]:
+              - generic [ref=e282]: "208.0"
+              - generic [ref=e283]: Influence
+          - generic [ref=e284]:
+            - generic [ref=e285]: "8"
+            - generic [ref=e286]:
+              - generic [ref=e287]: Camilla Brodin
+              - generic [ref=e288]: KD
+              - generic [ref=e289]: Highly Influential
+            - generic [ref=e290]:
+              - generic [ref=e291]: "208.0"
+              - generic [ref=e292]: Influence
+          - generic [ref=e293]:
+            - generic [ref=e294]: "9"
+            - generic [ref=e295]:
+              - generic [ref=e296]: Oskar Svärd
+              - generic [ref=e297]: M
+              - generic [ref=e298]: Highly Influential
+            - generic [ref=e299]:
+              - generic [ref=e300]: "208.0"
+              - generic [ref=e301]: Influence
+          - generic [ref=e302]:
+            - generic [ref=e303]: "10"
+            - generic [ref=e304]:
+              - generic [ref=e305]: Johanna Rantsi
+              - generic [ref=e306]: M
+              - generic [ref=e307]: Highly Influential
+            - generic [ref=e308]:
+              - generic [ref=e309]: "208.0"
+              - generic [ref=e310]: Influence
+      - region "Voting Patterns Heatmap" [ref=e311]:
+        - heading "Voting Patterns Heatmap" [level=2] [ref=e312]
+        - paragraph [ref=e313]: Party agreement matrix (2022-2026)
+        - img "Voting patterns heatmap" [ref=e315]
+      - region "Committee Network Analysis" [ref=e316]:
+        - heading "Committee Network Analysis" [level=2] [ref=e317]
+        - paragraph [ref=e318]: Parliamentary committee influence mapping
+        - generic [ref=e320]:
+          - paragraph [ref=e321]:
+            - strong [ref=e322]: "Network Graph:"
+            - text: Interactive committee network visualization would be rendered here using D3.js or similar library.
+          - paragraph [ref=e323]: Current data shows 15 committees with 10 interconnections.
+        - generic [ref=e324]:
+          - generic [ref=e325]:
+            - heading "Socialutskottet" [level=3] [ref=e326]
+            - generic [ref=e327]:
+              - generic [ref=e328]:
+                - generic [ref=e329]: "Members:"
+                - generic [ref=e330]: "44"
+              - generic [ref=e331]:
+                - generic [ref=e332]: "Influence:"
+                - generic [ref=e333]: "0.0"
+              - generic [ref=e334]:
+                - generic [ref=e335]: "Meetings/Year:"
+                - generic [ref=e336]: "473"
+              - generic [ref=e337]:
+                - generic [ref=e338]: "Documents:"
+                - generic [ref=e339]: "11826"
+            - generic [ref=e340]:
+              - heading "Key Issues" [level=4] [ref=e341]
+              - generic [ref=e342]: INACTIVE
+          - generic [ref=e343]:
+            - heading "Trafikutskottet" [level=3] [ref=e344]
+            - generic [ref=e345]:
+              - generic [ref=e346]:
+                - generic [ref=e347]: "Members:"
+                - generic [ref=e348]: "46"
+              - generic [ref=e349]:
+                - generic [ref=e350]: "Influence:"
+                - generic [ref=e351]: "52.0"
+              - generic [ref=e352]:
+                - generic [ref=e353]: "Meetings/Year:"
+                - generic [ref=e354]: "400"
+              - generic [ref=e355]:
+                - generic [ref=e356]: "Documents:"
+                - generic [ref=e357]: "10011"
+            - generic [ref=e358]:
+              - heading "Key Issues" [level=4] [ref=e359]
+              - generic [ref=e360]: HIGHLY_PRODUCTIVE
+          - generic [ref=e361]:
+            - heading "Miljö- och jordbruksutskottet" [level=3] [ref=e362]
+            - generic [ref=e363]:
+              - generic [ref=e364]:
+                - generic [ref=e365]: "Members:"
+                - generic [ref=e366]: "47"
+              - generic [ref=e367]:
+                - generic [ref=e368]: "Influence:"
+                - generic [ref=e369]: "68.0"
+              - generic [ref=e370]:
+                - generic [ref=e371]: "Meetings/Year:"
+                - generic [ref=e372]: "369"
+              - generic [ref=e373]:
+                - generic [ref=e374]: "Documents:"
+                - generic [ref=e375]: "9231"
+            - generic [ref=e376]:
+              - heading "Key Issues" [level=4] [ref=e377]
+              - generic [ref=e378]: HIGHLY_PRODUCTIVE
+          - generic [ref=e379]:
+            - heading "Utbildningsutskottet" [level=3] [ref=e380]
+            - generic [ref=e381]:
+              - generic [ref=e382]:
+                - generic [ref=e383]: "Members:"
+                - generic [ref=e384]: "44"
+              - generic [ref=e385]:
+                - generic [ref=e386]: "Influence:"
+                - generic [ref=e387]: "0.0"
+              - generic [ref=e388]:
+                - generic [ref=e389]: "Meetings/Year:"
+                - generic [ref=e390]: "353"
+              - generic [ref=e391]:
+                - generic [ref=e392]: "Documents:"
+                - generic [ref=e393]: "8825"
+            - generic [ref=e394]:
+              - heading "Key Issues" [level=4] [ref=e395]
+              - generic [ref=e396]: INACTIVE
+          - generic [ref=e397]:
+            - heading "Justitieutskottet" [level=3] [ref=e398]
+            - generic [ref=e399]:
+              - generic [ref=e400]:
+                - generic [ref=e401]: "Members:"
+                - generic [ref=e402]: "45"
+              - generic [ref=e403]:
+                - generic [ref=e404]: "Influence:"
+                - generic [ref=e405]: "0.0"
+              - generic [ref=e406]:
+                - generic [ref=e407]: "Meetings/Year:"
+                - generic [ref=e408]: "333"
+              - generic [ref=e409]:
+                - generic [ref=e410]: "Documents:"
+                - generic [ref=e411]: "8335"
+            - generic [ref=e412]:
+              - heading "Key Issues" [level=4] [ref=e413]
+              - generic [ref=e414]: INACTIVE
+          - generic [ref=e415]:
+            - heading "Skatteutskottet" [level=3] [ref=e416]
+            - generic [ref=e417]:
+              - generic [ref=e418]:
+                - generic [ref=e419]: "Members:"
+                - generic [ref=e420]: "45"
+              - generic [ref=e421]:
+                - generic [ref=e422]: "Influence:"
+                - generic [ref=e423]: "0.0"
+              - generic [ref=e424]:
+                - generic [ref=e425]: "Meetings/Year:"
+                - generic [ref=e426]: "302"
+              - generic [ref=e427]:
+                - generic [ref=e428]: "Documents:"
+                - generic [ref=e429]: "7556"
+            - generic [ref=e430]:
+              - heading "Key Issues" [level=4] [ref=e431]
+              - generic [ref=e432]: INACTIVE
+          - generic [ref=e433]:
+            - heading "Konstitutionsutskottet" [level=3] [ref=e434]
+            - generic [ref=e435]:
+              - generic [ref=e436]:
+                - generic [ref=e437]: "Members:"
+                - generic [ref=e438]: "47"
+              - generic [ref=e439]:
+                - generic [ref=e440]: "Influence:"
+                - generic [ref=e441]: "87.0"
+              - generic [ref=e442]:
+                - generic [ref=e443]: "Meetings/Year:"
+                - generic [ref=e444]: "271"
+              - generic [ref=e445]:
+                - generic [ref=e446]: "Documents:"
+                - generic [ref=e447]: "6783"
+            - generic [ref=e448]:
+              - heading "Key Issues" [level=4] [ref=e449]
+              - generic [ref=e450]: HIGHLY_PRODUCTIVE
+          - generic [ref=e451]:
+            - heading "Näringsutskottet" [level=3] [ref=e452]
+            - generic [ref=e453]:
+              - generic [ref=e454]:
+                - generic [ref=e455]: "Members:"
+                - generic [ref=e456]: "45"
+              - generic [ref=e457]:
+                - generic [ref=e458]: "Influence:"
+                - generic [ref=e459]: "60.0"
+              - generic [ref=e460]:
+                - generic [ref=e461]: "Meetings/Year:"
+                - generic [ref=e462]: "261"
+              - generic [ref=e463]:
+                - generic [ref=e464]: "Documents:"
+                - generic [ref=e465]: "6531"
+            - generic [ref=e466]:
+              - heading "Key Issues" [level=4] [ref=e467]
+              - generic [ref=e468]: HIGHLY_PRODUCTIVE
+          - generic [ref=e469]:
+            - heading "Socialförsäkringsutskottet" [level=3] [ref=e470]
+            - generic [ref=e471]:
+              - generic [ref=e472]:
+                - generic [ref=e473]: "Members:"
+                - generic [ref=e474]: "44"
+              - generic [ref=e475]:
+                - generic [ref=e476]: "Influence:"
+                - generic [ref=e477]: "0.0"
+              - generic [ref=e478]:
+                - generic [ref=e479]: "Meetings/Year:"
+                - generic [ref=e480]: "222"
+              - generic [ref=e481]:
+                - generic [ref=e482]: "Documents:"
+                - generic [ref=e483]: "5540"
+            - generic [ref=e484]:
+              - heading "Key Issues" [level=4] [ref=e485]
+              - generic [ref=e486]: INACTIVE
+          - generic [ref=e487]:
+            - heading "Civilutskottet" [level=3] [ref=e488]
+            - generic [ref=e489]:
+              - generic [ref=e490]:
+                - generic [ref=e491]: "Members:"
+                - generic [ref=e492]: "45"
+              - generic [ref=e493]:
+                - generic [ref=e494]: "Influence:"
+                - generic [ref=e495]: "91.0"
+              - generic [ref=e496]:
+                - generic [ref=e497]: "Meetings/Year:"
+                - generic [ref=e498]: "211"
+              - generic [ref=e499]:
+                - generic [ref=e500]: "Documents:"
+                - generic [ref=e501]: "5277"
+            - generic [ref=e502]:
+              - heading "Key Issues" [level=4] [ref=e503]
+              - generic [ref=e504]: HIGHLY_PRODUCTIVE
+          - generic [ref=e505]:
+            - heading "Arbetsmarknadsutskottet" [level=3] [ref=e506]
+            - generic [ref=e507]:
+              - generic [ref=e508]:
+                - generic [ref=e509]: "Members:"
+                - generic [ref=e510]: "44"
+              - generic [ref=e511]:
+                - generic [ref=e512]: "Influence:"
+                - generic [ref=e513]: "32.0"
+              - generic [ref=e514]:
+                - generic [ref=e515]: "Meetings/Year:"
+                - generic [ref=e516]: "191"
+              - generic [ref=e517]:
+                - generic [ref=e518]: "Documents:"
+                - generic [ref=e519]: "4769"
+            - generic [ref=e520]:
+              - heading "Key Issues" [level=4] [ref=e521]
+              - generic [ref=e522]: BELOW_AVERAGE
+          - generic [ref=e523]:
+            - heading "Utrikesutskottet" [level=3] [ref=e524]
+            - generic [ref=e525]:
+              - generic [ref=e526]:
+                - generic [ref=e527]: "Members:"
+                - generic [ref=e528]: "50"
+              - generic [ref=e529]:
+                - generic [ref=e530]: "Influence:"
+                - generic [ref=e531]: "36.0"
+              - generic [ref=e532]:
+                - generic [ref=e533]: "Meetings/Year:"
+                - generic [ref=e534]: "180"
+              - generic [ref=e535]:
+                - generic [ref=e536]: "Documents:"
+                - generic [ref=e537]: "4510"
+            - generic [ref=e538]:
+              - heading "Key Issues" [level=4] [ref=e539]
+              - generic [ref=e540]: PRODUCTIVE
+          - generic [ref=e541]:
+            - heading "Kulturutskottet" [level=3] [ref=e542]
+            - generic [ref=e543]:
+              - generic [ref=e544]:
+                - generic [ref=e545]: "Members:"
+                - generic [ref=e546]: "45"
+              - generic [ref=e547]:
+                - generic [ref=e548]: "Influence:"
+                - generic [ref=e549]: "0.0"
+              - generic [ref=e550]:
+                - generic [ref=e551]: "Meetings/Year:"
+                - generic [ref=e552]: "180"
+              - generic [ref=e553]:
+                - generic [ref=e554]: "Documents:"
+                - generic [ref=e555]: "4498"
+            - generic [ref=e556]:
+              - heading "Key Issues" [level=4] [ref=e557]
+              - generic [ref=e558]: INACTIVE
+          - generic [ref=e559]:
+            - heading "Finansutskottet" [level=3] [ref=e560]
+            - generic [ref=e561]:
+              - generic [ref=e562]:
+                - generic [ref=e563]: "Members:"
+                - generic [ref=e564]: "47"
+              - generic [ref=e565]:
+                - generic [ref=e566]: "Influence:"
+                - generic [ref=e567]: "0.0"
+              - generic [ref=e568]:
+                - generic [ref=e569]: "Meetings/Year:"
+                - generic [ref=e570]: "165"
+              - generic [ref=e571]:
+                - generic [ref=e572]: "Documents:"
+                - generic [ref=e573]: "4122"
+            - generic [ref=e574]:
+              - heading "Key Issues" [level=4] [ref=e575]
+              - generic [ref=e576]: INACTIVE
+          - generic [ref=e577]:
+            - heading "Försvarsutskottet" [level=3] [ref=e578]
+            - generic [ref=e579]:
+              - generic [ref=e580]:
+                - generic [ref=e581]: "Members:"
+                - generic [ref=e582]: "48"
+              - generic [ref=e583]:
+                - generic [ref=e584]: "Influence:"
+                - generic [ref=e585]: "0.0"
+              - generic [ref=e586]:
+                - generic [ref=e587]: "Meetings/Year:"
+                - generic [ref=e588]: "91"
+              - generic [ref=e589]:
+                - generic [ref=e590]: "Documents:"
+                - generic [ref=e591]: "2276"
+            - generic [ref=e592]:
+              - heading "Key Issues" [level=4] [ref=e593]
+              - generic [ref=e594]: INACTIVE
+      - region "Ministry Performance" [ref=e595]:
+        - heading "Ministry Performance" [level=2] [ref=e596]
+        - paragraph [ref=e597]: Government ministry effectiveness assessments from CIA database
+        - generic [ref=e598]:
+          - generic [ref=e599]:
+            - heading "Kulturdepartementet" [level=3] [ref=e600]
+            - generic [ref=e601]:
+              - generic [ref=e602]:
+                - generic [ref=e603]: "Documents:"
+                - generic [ref=e604]: "216"
+              - generic [ref=e605]:
+                - generic [ref=e606]: "Bills:"
+                - generic [ref=e607]: "16"
+              - generic [ref=e608]:
+                - generic [ref=e609]: "Period:"
+                - generic [ref=e610]: 2025 Q4
+            - generic [ref=e611]:
+              - heading "Assessment" [level=4] [ref=e612]
+              - generic [ref=e613]: Exceptional ministry performance - high output and capacity
+          - generic [ref=e614]:
+            - heading "Kulturdepartementet" [level=3] [ref=e615]
+            - generic [ref=e616]:
+              - generic [ref=e617]:
+                - generic [ref=e618]: "Documents:"
+                - generic [ref=e619]: "133"
+              - generic [ref=e620]:
+                - generic [ref=e621]: "Bills:"
+                - generic [ref=e622]: "12"
+              - generic [ref=e623]:
+                - generic [ref=e624]: "Period:"
+                - generic [ref=e625]: 2024 Q4
+            - generic [ref=e626]:
+              - heading "Assessment" [level=4] [ref=e627]
+              - generic [ref=e628]: Exceptional ministry performance - high output and capacity
+          - generic [ref=e629]:
+            - heading "Kulturdepartementet" [level=3] [ref=e630]
+            - generic [ref=e631]:
+              - generic [ref=e632]:
+                - generic [ref=e633]: "Documents:"
+                - generic [ref=e634]: "125"
+              - generic [ref=e635]:
+                - generic [ref=e636]: "Bills:"
+                - generic [ref=e637]: "3"
+              - generic [ref=e638]:
+                - generic [ref=e639]: "Period:"
+                - generic [ref=e640]: 2023 Q4
+            - generic [ref=e641]:
+              - heading "Assessment" [level=4] [ref=e642]
+              - generic [ref=e643]: Strong ministry effectiveness
+          - generic [ref=e644]:
+            - heading "Kulturdepartementet" [level=3] [ref=e645]
+            - generic [ref=e646]:
+              - generic [ref=e647]:
+                - generic [ref=e648]: "Documents:"
+                - generic [ref=e649]: "93"
+              - generic [ref=e650]:
+                - generic [ref=e651]: "Bills:"
+                - generic [ref=e652]: "1"
+              - generic [ref=e653]:
+                - generic [ref=e654]: "Period:"
+                - generic [ref=e655]: 2024 Q3
+            - generic [ref=e656]:
+              - heading "Assessment" [level=4] [ref=e657]
+              - generic [ref=e658]: Strong ministry effectiveness
+          - generic [ref=e659]:
+            - heading "Kulturdepartementet" [level=3] [ref=e660]
+            - generic [ref=e661]:
+              - generic [ref=e662]:
+                - generic [ref=e663]: "Documents:"
+                - generic [ref=e664]: "76"
+              - generic [ref=e665]:
+                - generic [ref=e666]: "Bills:"
+                - generic [ref=e667]: "7"
+              - generic [ref=e668]:
+                - generic [ref=e669]: "Period:"
+                - generic [ref=e670]: 2025 Q3
+            - generic [ref=e671]:
+              - heading "Assessment" [level=4] [ref=e672]
+              - generic [ref=e673]: Strong ministry effectiveness
+          - generic [ref=e674]:
+            - heading "Kulturdepartementet" [level=3] [ref=e675]
+            - generic [ref=e676]:
+              - generic [ref=e677]:
+                - generic [ref=e678]: "Documents:"
+                - generic [ref=e679]: "47"
+              - generic [ref=e680]:
+                - generic [ref=e681]: "Bills:"
+                - generic [ref=e682]: "3"
+              - generic [ref=e683]:
+                - generic [ref=e684]: "Period:"
+                - generic [ref=e685]: 2023 Q3
+            - generic [ref=e686]:
+              - heading "Assessment" [level=4] [ref=e687]
+              - generic [ref=e688]: Strong ministry effectiveness
+          - generic [ref=e689]:
+            - heading "Kulturdepartementet" [level=3] [ref=e690]
+            - generic [ref=e691]:
+              - generic [ref=e692]:
+                - generic [ref=e693]: "Documents:"
+                - generic [ref=e694]: "24"
+              - generic [ref=e695]:
+                - generic [ref=e696]: "Bills:"
+                - generic [ref=e697]: "21"
+              - generic [ref=e698]:
+                - generic [ref=e699]: "Period:"
+                - generic [ref=e700]: 2024 Q1
+            - generic [ref=e701]:
+              - heading "Assessment" [level=4] [ref=e702]
+              - generic [ref=e703]: Standard ministry operations
+          - generic [ref=e704]:
+            - heading "Kulturdepartementet" [level=3] [ref=e705]
+            - generic [ref=e706]:
+              - generic [ref=e707]:
+                - generic [ref=e708]: "Documents:"
+                - generic [ref=e709]: "17"
+              - generic [ref=e710]:
+                - generic [ref=e711]: "Bills:"
+                - generic [ref=e712]: "15"
+              - generic [ref=e713]:
+                - generic [ref=e714]: "Period:"
+                - generic [ref=e715]: 2025 Q1
+            - generic [ref=e716]:
+              - heading "Assessment" [level=4] [ref=e717]
+              - generic [ref=e718]: Standard ministry operations
+          - generic [ref=e719]:
+            - heading "Kulturdepartementet" [level=3] [ref=e720]
+            - generic [ref=e721]:
+              - generic [ref=e722]:
+                - generic [ref=e723]: "Documents:"
+                - generic [ref=e724]: "17"
+              - generic [ref=e725]:
+                - generic [ref=e726]: "Bills:"
+                - generic [ref=e727]: "10"
+              - generic [ref=e728]:
+                - generic [ref=e729]: "Period:"
+                - generic [ref=e730]: 2026 Q1
+            - generic [ref=e731]:
+              - heading "Assessment" [level=4] [ref=e732]
+              - generic [ref=e733]: Standard ministry operations
+          - generic [ref=e734]:
+            - heading "Kulturdepartementet" [level=3] [ref=e735]
+            - generic [ref=e736]:
+              - generic [ref=e737]:
+                - generic [ref=e738]: "Documents:"
+                - generic [ref=e739]: "12"
+              - generic [ref=e740]:
+                - generic [ref=e741]: "Bills:"
+                - generic [ref=e742]: "8"
+              - generic [ref=e743]:
+                - generic [ref=e744]: "Period:"
+                - generic [ref=e745]: 2025 Q2
+            - generic [ref=e746]:
+              - heading "Assessment" [level=4] [ref=e747]
+              - generic [ref=e748]: Ministry performance concerns - investigation recommended
+          - generic [ref=e749]:
+            - heading "Kulturdepartementet" [level=3] [ref=e750]
+            - generic [ref=e751]:
+              - generic [ref=e752]:
+                - generic [ref=e753]: "Documents:"
+                - generic [ref=e754]: "10"
+              - generic [ref=e755]:
+                - generic [ref=e756]: "Bills:"
+                - generic [ref=e757]: "6"
+              - generic [ref=e758]:
+                - generic [ref=e759]: "Period:"
+                - generic [ref=e760]: 2023 Q2
+            - generic [ref=e761]:
+              - heading "Assessment" [level=4] [ref=e762]
+              - generic [ref=e763]: Ministry performance concerns - investigation recommended
+          - generic [ref=e764]:
+            - heading "Kulturdepartementet" [level=3] [ref=e765]
+            - generic [ref=e766]:
+              - generic [ref=e767]:
+                - generic [ref=e768]: "Documents:"
+                - generic [ref=e769]: "1"
+              - generic [ref=e770]:
+                - generic [ref=e771]: "Bills:"
+                - generic [ref=e772]: "0"
+              - generic [ref=e773]:
+                - generic [ref=e774]: "Period:"
+                - generic [ref=e775]: 2024 Q2
+            - generic [ref=e776]:
+              - heading "Assessment" [level=4] [ref=e777]
+              - generic [ref=e778]: Ministry performance concerns - investigation recommended
+      - region "Parliamentary Demographics" [ref=e779]:
+        - heading "Parliamentary Demographics" [level=2] [ref=e780]
+        - paragraph [ref=e781]: Gender and experience distribution across parties
+        - img "Parliamentary Demographics" [ref=e783]
+        - img "Parliamentary Demographics" [ref=e785]
+      - region "Parliamentary Document Activity" [ref=e786]:
+        - heading "Parliamentary Document Activity" [level=2] [ref=e787]
+        - paragraph [ref=e788]: Document production and legislative activity trends
+        - img "Parliamentary Document Activity" [ref=e790]
+      - region "Risk Score Evolution" [ref=e791]:
+        - heading "Risk Score Evolution" [level=2] [ref=e792]
+        - paragraph [ref=e793]: Temporal risk assessment changes from CIA monitoring
+        - generic [ref=e794]:
+          - generic [ref=e795]:
+            - heading "2026-02" [level=3] [ref=e796]
+            - generic [ref=e797]:
+              - generic [ref=e798]:
+                - generic [ref=e799]: "LOW:"
+                - generic [ref=e800]: "249 (avg: 20.0)"
+              - generic [ref=e801]:
+                - generic [ref=e802]: "MINIMAL:"
+                - generic [ref=e803]: "5 (avg: 13.6)"
+              - generic [ref=e804]:
+                - generic [ref=e805]: "MODERATE:"
+                - generic [ref=e806]: "78 (avg: 28.9)"
+          - generic [ref=e807]:
+            - heading "2026-01" [level=3] [ref=e808]
+            - generic [ref=e810]:
+              - generic [ref=e811]: "MINIMAL:"
+              - generic [ref=e812]: "331 (avg: 10.0)"
+          - generic [ref=e813]:
+            - heading "2025-12" [level=3] [ref=e814]
+            - generic [ref=e816]:
+              - generic [ref=e817]: "MINIMAL:"
+              - generic [ref=e818]: "331 (avg: 10.0)"
+          - generic [ref=e819]:
+            - heading "2025-11" [level=3] [ref=e820]
+            - generic [ref=e822]:
+              - generic [ref=e823]: "MINIMAL:"
+              - generic [ref=e824]: "332 (avg: 10.0)"
+          - generic [ref=e825]:
+            - heading "2025-10" [level=3] [ref=e826]
+            - generic [ref=e828]:
+              - generic [ref=e829]: "MINIMAL:"
+              - generic [ref=e830]: "327 (avg: 10.0)"
+          - generic [ref=e831]:
+            - heading "2025-06" [level=3] [ref=e832]
+            - generic [ref=e834]:
+              - generic [ref=e835]: "MINIMAL:"
+              - generic [ref=e836]: "323 (avg: 10.0)"
+          - generic [ref=e837]:
+            - heading "2025-05" [level=3] [ref=e838]
+            - generic [ref=e840]:
+              - generic [ref=e841]: "MINIMAL:"
+              - generic [ref=e842]: "326 (avg: 10.0)"
+          - generic [ref=e843]:
+            - heading "2025-04" [level=3] [ref=e844]
+            - generic [ref=e846]:
+              - generic [ref=e847]: "MINIMAL:"
+              - generic [ref=e848]: "324 (avg: 10.0)"
+          - generic [ref=e849]:
+            - heading "2025-03" [level=3] [ref=e850]
+            - generic [ref=e852]:
+              - generic [ref=e853]: "MINIMAL:"
+              - generic [ref=e854]: "322 (avg: 10.0)"
+          - generic [ref=e855]:
+            - heading "2025-02" [level=3] [ref=e856]
+            - generic [ref=e858]:
+              - generic [ref=e859]: "MINIMAL:"
+              - generic [ref=e860]: "319 (avg: 10.0)"
+          - generic [ref=e861]:
+            - heading "2025-01" [level=3] [ref=e862]
+            - generic [ref=e864]:
+              - generic [ref=e865]: "MINIMAL:"
+              - generic [ref=e866]: "316 (avg: 10.0)"
+          - generic [ref=e867]:
+            - heading "2024-12" [level=3] [ref=e868]
+            - generic [ref=e870]:
+              - generic [ref=e871]: "MINIMAL:"
+              - generic [ref=e872]: "317 (avg: 10.0)"
+          - generic [ref=e873]:
+            - heading "2024-11" [level=3] [ref=e874]
+            - generic [ref=e876]:
+              - generic [ref=e877]: "MINIMAL:"
+              - generic [ref=e878]: "316 (avg: 10.0)"
+          - generic [ref=e879]:
+            - heading "2024-10" [level=3] [ref=e880]
+            - generic [ref=e882]:
+              - generic [ref=e883]: "MINIMAL:"
+              - generic [ref=e884]: "317 (avg: 10.0)"
+          - generic [ref=e885]:
+            - heading "2024-06" [level=3] [ref=e886]
+            - generic [ref=e888]:
+              - generic [ref=e889]: "MINIMAL:"
+              - generic [ref=e890]: "311 (avg: 10.0)"
+          - generic [ref=e891]:
+            - heading "2024-05" [level=3] [ref=e892]
+            - generic [ref=e894]:
+              - generic [ref=e895]: "MINIMAL:"
+              - generic [ref=e896]: "311 (avg: 10.0)"
+          - generic [ref=e897]:
+            - heading "2024-04" [level=3] [ref=e898]
+            - generic [ref=e900]:
+              - generic [ref=e901]: "MINIMAL:"
+              - generic [ref=e902]: "313 (avg: 10.0)"
+          - generic [ref=e903]:
+            - heading "2024-03" [level=3] [ref=e904]
+            - generic [ref=e906]:
+              - generic [ref=e907]: "MINIMAL:"
+              - generic [ref=e908]: "311 (avg: 10.0)"
+          - generic [ref=e909]:
+            - heading "2024-02" [level=3] [ref=e910]
+            - generic [ref=e912]:
+              - generic [ref=e913]: "MINIMAL:"
+              - generic [ref=e914]: "312 (avg: 10.0)"
+          - generic [ref=e915]:
+            - heading "2024-01" [level=3] [ref=e916]
+            - generic [ref=e918]:
+              - generic [ref=e919]: "MINIMAL:"
+              - generic [ref=e920]: "313 (avg: 10.0)"
+          - generic [ref=e921]:
+            - heading "2023-12" [level=3] [ref=e922]
+            - generic [ref=e924]:
+              - generic [ref=e925]: "MINIMAL:"
+              - generic [ref=e926]: "307 (avg: 10.0)"
+          - generic [ref=e927]:
+            - heading "2023-11" [level=3] [ref=e928]
+            - generic [ref=e930]:
+              - generic [ref=e931]: "MINIMAL:"
+              - generic [ref=e932]: "308 (avg: 10.0)"
+          - generic [ref=e933]:
+            - heading "2023-06" [level=3] [ref=e934]
+            - generic [ref=e936]:
+              - generic [ref=e937]: "MINIMAL:"
+              - generic [ref=e938]: "305 (avg: 10.0)"
+          - generic [ref=e939]:
+            - heading "2023-05" [level=3] [ref=e940]
+            - generic [ref=e942]:
+              - generic [ref=e943]: "MINIMAL:"
+              - generic [ref=e944]: "311 (avg: 10.0)"
+          - generic [ref=e945]:
+            - heading "2023-04" [level=3] [ref=e946]
+            - generic [ref=e948]:
+              - generic [ref=e949]: "MINIMAL:"
+              - generic [ref=e950]: "306 (avg: 10.0)"
+          - generic [ref=e951]:
+            - heading "2023-03" [level=3] [ref=e952]
+            - generic [ref=e954]:
+              - generic [ref=e955]: "MINIMAL:"
+              - generic [ref=e956]: "305 (avg: 10.0)"
+          - generic [ref=e957]:
+            - heading "2023-02" [level=3] [ref=e958]
+            - generic [ref=e960]:
+              - generic [ref=e961]: "MINIMAL:"
+              - generic [ref=e962]: "305 (avg: 10.0)"
+  - contentinfo [ref=e963]:
+    - generic [ref=e964]:
+      - generic [ref=e965]:
+        - heading "Quick Links" [level=3] [ref=e966]
+        - list [ref=e967]:
+          - listitem [ref=e968]:
+            - text: •
+            - link "Home" [ref=e969] [cursor=pointer]:
+              - /url: ../index.html
+          - listitem [ref=e970]:
+            - text: •
+            - link "News" [ref=e971] [cursor=pointer]:
+              - /url: ../news/index.html
+          - listitem [ref=e972]:
+            - text: •
+            - link "Dashboard" [ref=e973] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e974]:
+            - text: •
+            - link "CIA Platform ↗" [ref=e975] [cursor=pointer]:
+              - /url: https://www.hack23.com/cia
+          - listitem [ref=e976]:
+            - text: •
+            - link "GitHub Repository ↗" [ref=e977] [cursor=pointer]:
+              - /url: https://github.com/Hack23/riksdagsmonitor
+      - generic [ref=e978]:
+        - heading "Languages" [level=3] [ref=e979]
+        - generic [ref=e980]:
+          - link "Switch to English" [ref=e981] [cursor=pointer]:
+            - /url: index.html
+            - text: 🇬🇧 EN
+          - link "Byt till Svenska" [ref=e982] [cursor=pointer]:
+            - /url: index_sv.html
+            - text: 🇸🇪 SV
+          - link "Skift til Dansk" [ref=e983] [cursor=pointer]:
+            - /url: index_da.html
+            - text: 🇩🇰 DA
+          - link "Bytt til Norsk" [ref=e984] [cursor=pointer]:
+            - /url: index_no.html
+            - text: 🇳🇴 NO
+          - link "Vaihda Suomeksi" [ref=e985] [cursor=pointer]:
+            - /url: index_fi.html
+            - text: 🇫🇮 FI
+          - link "Wechseln zu Deutsch" [ref=e986] [cursor=pointer]:
+            - /url: index_de.html
+            - text: 🇩🇪 DE
+          - link "Passer au Français" [ref=e987] [cursor=pointer]:
+            - /url: index_fr.html
+            - text: 🇫🇷 FR
+          - link "Cambiar a Español" [ref=e988] [cursor=pointer]:
+            - /url: index_es.html
+            - text: 🇪🇸 ES
+          - link "Schakel naar Nederlands" [ref=e989] [cursor=pointer]:
+            - /url: index_nl.html
+            - text: 🇳🇱 NL
+          - link "التبديل إلى العربية" [ref=e990] [cursor=pointer]:
+            - /url: index_ar.html
+            - text: 🇸🇦 AR
+          - link "עבור לעברית" [ref=e991] [cursor=pointer]:
+            - /url: index_he.html
+            - text: 🇮🇱 HE
+          - link "日本語に切り替え" [ref=e992] [cursor=pointer]:
+            - /url: index_ja.html
+            - text: 🇯🇵 JA
+          - link "한국어로 전환" [ref=e993] [cursor=pointer]:
+            - /url: index_ko.html
+            - text: 🇰🇷 KO
+          - link "切换到中文" [ref=e994] [cursor=pointer]:
+            - /url: index_zh.html
+            - text: 🇨🇳 ZH
+    - paragraph [ref=e996]:
+      - text: © 2008-
+      - time [ref=e997]: "2026"
+      - link "Hack23 AB ↗" [ref=e998] [cursor=pointer]:
+        - /url: https://www.hack23.com
+      - text: (Org.nr 5595347807) | Gothenburg, Sweden

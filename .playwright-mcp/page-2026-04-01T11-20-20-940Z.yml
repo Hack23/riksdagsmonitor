@@ -1,0 +1,677 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation "Breadcrumb" [ref=e3]:
+    - list [ref=e4]:
+      - listitem [ref=e5]:
+        - link "Home" [ref=e6] [cursor=pointer]:
+          - /url: index.html
+      - listitem [ref=e7]: / Swedish Election 2026
+  - banner [ref=e8]:
+    - button "Switch to dark theme" [ref=e9] [cursor=pointer]:
+      - generic [ref=e10]: 🌙
+    - img [ref=e12]
+    - generic [ref=e13]:
+      - heading "Riksdagsmonitor Swedish Election 2026 Intelligence Platform" [level=1] [ref=e14]:
+        - text: Riksdagsmonitor
+        - text: Swedish Election 2026 Intelligence Platform
+      - paragraph [ref=e15]: Real-time parliamentary monitoring · Coalition predictions · 45 risk rules · 50+ years of data
+    - generic [ref=e16]:
+      - 'heading "Election in: 13 September 2026" [level=2] [ref=e17]'
+      - paragraph [ref=e18]: 13 September 2026 (Second Sunday in September)
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]: 2,494
+        - generic [ref=e22]: Politicians Tracked
+      - generic [ref=e23]:
+        - generic [ref=e24]: 10,606
+        - generic [ref=e25]: Parliamentary Ballots
+      - generic [ref=e26]:
+        - generic [ref=e27]: 109,480
+        - generic [ref=e28]: Documents Processed
+      - generic [ref=e29]:
+        - generic [ref=e30]: 5,815
+        - generic [ref=e31]: Government Bills
+      - generic [ref=e32]:
+        - generic [ref=e33]: 59,126
+        - generic [ref=e34]: Committee Decisions
+  - navigation "News" [ref=e35]:
+    - paragraph [ref=e36]: 📰 AI-Disrupted Political Journalism
+    - paragraph [ref=e37]: AI-generated political intelligence coverage of Sweden's Riksdag produced daily by AI agents using Citizen Intelligence Agency OSINT data. Automated analysis of government propositions, committee reports, opposition motions, parliamentary questions, and evening deep-dives — published in 14 languages.
+    - list "News coverage types" [ref=e38]:
+      - listitem [ref=e39]: • 📋 Committee Reports
+      - listitem [ref=e40]: • 📜 Government Propositions
+      - listitem [ref=e41]: • ✊ Opposition Motions
+      - listitem [ref=e42]: • ❓ Parliamentary Questions
+      - listitem [ref=e43]: • 🌙 Evening Analysis
+      - listitem [ref=e44]: • 🌍 14 Languages
+    - link "Read the latest news" [ref=e45] [cursor=pointer]:
+      - /url: news/index.html
+      - generic [ref=e46]: 📰
+      - generic [ref=e47]: Read Latest News
+  - navigation "Intelligence Dashboard" [ref=e48]:
+    - heading "Intelligence Dashboard" [level=2] [ref=e49]: 📊 Intelligence Dashboard
+    - paragraph [ref=e50]: Explore interactive visualizations powered by Citizen Intelligence Agency — election 2026 forecasts, party performance analytics, 45-rule risk assessment across 349 MPs, coalition stability tracking, and committee network analysis.
+    - list "Dashboard highlights" [ref=e51]:
+      - listitem [ref=e52]: • 🗳️ Election 2026 Predictions
+      - listitem [ref=e53]: • 📈 Party Performance
+      - listitem [ref=e54]: • ⚠️ Risk Assessment
+      - listitem [ref=e55]: • 🤝 Coalition Analysis
+      - listitem [ref=e56]: • 🏛️ Committee Networks
+      - listitem [ref=e57]: • 👥 MP Rankings
+    - link "Open Intelligence Dashboard" [ref=e58] [cursor=pointer]:
+      - /url: dashboard/index.html
+      - generic [ref=e59]: 📊
+      - generic [ref=e60]: Open Dashboard
+  - main [ref=e61]:
+    - generic [ref=e62]:
+      - 'heading "Current Coalition: Tidö Agreement" [level=2] [ref=e63]'
+      - paragraph [ref=e64]: "Formation: October 2022 | Status: Active | Majority: 176 seats (of 349 total)"
+      - paragraph [ref=e66]
+      - generic [ref=e67]:
+        - heading "Coalition Stability Assessment" [level=3] [ref=e68]
+        - generic [ref=e69]:
+          - paragraph [ref=e70]:
+            - strong [ref=e71]: "Majority Margin:"
+            - text: 1 seat (narrow)
+          - paragraph [ref=e72]:
+            - strong [ref=e73]: "CIA Risk Assessment:"
+            - text: 12 MAJOR alerts, 5 CRITICAL alerts detected (last 90 days)
+          - paragraph [ref=e74]:
+            - strong [ref=e75]: "Fragility Indicators:"
+            - text: Ideological tensions between SD and L, vulnerable to defections
+          - paragraph [ref=e76]:
+            - strong [ref=e77]: "Stability Score:"
+            - text: Moderate Risk (72%)
+    - generic [ref=e78]:
+      - heading "🗳️ Election Cycle Intelligence (1994-2034)" [level=2] [ref=e79]
+      - paragraph [ref=e80]: Comprehensive analysis of 40 years of Swedish Parliament election cycles with party performance evolution, decision-making effectiveness, predictive risk forecasting, and temporal voting patterns across 9+ election cycles.
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - generic [ref=e83]: "Election Cycle:"
+          - combobox "Election Cycle:" [ref=e84] [cursor=pointer]:
+            - option "All Cycles" [selected]
+        - generic [ref=e85]:
+          - generic [ref=e86]: "Party:"
+          - combobox "Party:" [ref=e87] [cursor=pointer]:
+            - option "All Parties" [selected]
+        - generic [ref=e88]:
+          - generic [ref=e89]: "Metric:"
+          - combobox "Metric:" [ref=e90] [cursor=pointer]:
+            - option "Performance" [selected]
+            - option "Decisions"
+            - option "Risk"
+            - option "Attendance"
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - heading "Election Cycle Performance Timeline" [level=3] [ref=e93]
+          - paragraph [ref=e96]: Party performance evolution across 9 election cycles (1994-2034)
+        - generic [ref=e97]:
+          - heading "Decision Effectiveness Heatmap" [level=3] [ref=e98]
+          - paragraph [ref=e100]: Legislative approval rates by party and cycle
+        - generic [ref=e101]:
+          - heading "Predictive Risk Forecasting" [level=3] [ref=e102]
+          - paragraph [ref=e105]: Risk trajectory and confidence levels (2022-2034)
+        - generic [ref=e106]:
+          - heading "Temporal Voting Patterns" [level=3] [ref=e107]
+          - paragraph [ref=e110]: Attendance, ballots, and volatility trends
+        - generic [ref=e111]:
+          - heading "Party Tier Distribution" [level=3] [ref=e112]
+          - paragraph [ref=e115]: "Performance tiers (ntile_party_tier: 1-4)"
+      - paragraph [ref=e116]:
+        - strong [ref=e117]: Data by Citizen Intelligence Agency Platform
+        - text: "| Updated from GitHub sample data | 24-hour caching"
+    - generic [ref=e118]:
+      - heading "Party Performance & Effectiveness" [level=2] [ref=e119]: 🗳️ Party Performance & Effectiveness
+      - paragraph [ref=e120]: Comprehensive analysis of Swedish political parties using 50+ years of CIA platform data. Track effectiveness trends, coalition dynamics, and momentum indicators across 8 parties.
+      - generic [ref=e121]:
+        - generic [ref=e122]:
+          - heading "Effectiveness Trends (1990-2026)" [level=3] [ref=e123]
+          - paragraph [ref=e124]: Historical party effectiveness scores showing legislative productivity, voting consistency, and policy impact over time.
+          - img "Party effectiveness line chart showing trends from 1990 to 2026 for all 8 Swedish political parties" [ref=e125]
+          - generic [ref=e126]: Line chart displaying effectiveness scores for Social Democrats, Moderates, Sweden Democrats, Centre Party, Left Party, Christian Democrats, Liberals, and Green Party from 1990 to 2026.
+        - generic [ref=e127]:
+          - heading "Party Comparison (Current Period)" [level=3] [ref=e128]
+          - paragraph [ref=e129]: Comparative analysis of party performance metrics for the current legislative period.
+          - img "Bar chart comparing current performance scores across all 8 Swedish political parties" [ref=e130]
+          - generic [ref=e131]: Horizontal bar chart showing comparative performance scores for all parties in the current legislative period, sorted by score.
+        - generic [ref=e132]:
+          - heading "Coalition Alignment" [level=3] [ref=e133]
+          - paragraph [ref=e134]: Coalition patterns and inter-party collaboration networks.
+          - region "Coalition alignment visualization showing collaboration strength between political parties"
+          - generic [ref=e135]: Visual representation of coalition patterns showing collaboration strength percentages between different party combinations.
+        - generic [ref=e136]:
+          - heading "Momentum Indicators" [level=3] [ref=e137]
+          - paragraph [ref=e138]: Party momentum scores with percentile benchmarks (P50, P90) indicating electoral trajectory.
+          - img "Doughnut chart showing momentum scores for all 8 Swedish political parties" [ref=e139]
+          - generic [ref=e140]: Doughnut chart displaying momentum indicator scores for each party with percentile benchmarks.
+    - generic [ref=e141]:
+      - heading "🏛️ Committee Performance & Network Analytics" [level=2] [ref=e142]
+      - generic [ref=e143]:
+        - generic [ref=e144]:
+          - heading "Committee Network Diagram" [level=3] [ref=e145]
+          - paragraph [ref=e146]: Interactive visualization of committee relationships and productivity. Drag nodes to explore connections.
+          - img "Committee network connections diagram showing relationships between 15 Swedish Riksdag committees"
+          - table "Committee network connections data table" [ref=e147]
+        - generic [ref=e148]:
+          - heading "Productivity Matrix (2020-2026)" [level=3] [ref=e149]
+          - paragraph [ref=e150]: Heat map showing committee productivity scores over time. Hover over cells for detailed information.
+          - img "Committee productivity matrix showing performance over time from 2020 to 2026"
+          - table "Committee productivity matrix data table" [ref=e151]
+        - generic [ref=e152]:
+          - heading "Committee Comparison" [level=3] [ref=e153]
+          - paragraph [ref=e154]: Compare productivity scores across all 15 committees.
+          - img "Bar chart comparing productivity scores across committees" [ref=e155]
+        - generic [ref=e156]:
+          - heading "Decision Effectiveness" [level=3] [ref=e157]
+          - paragraph [ref=e158]: Track decision outcomes (approved, rejected, pending) over time.
+          - img "Stacked bar chart showing decision effectiveness over years" [ref=e159]
+        - generic [ref=e160]:
+          - heading "Seasonal Activity Patterns" [level=3] [ref=e161]
+          - paragraph [ref=e162]: Quarterly activity trends showing how committee work varies across the year.
+          - img "Line chart displaying seasonal activity patterns by quarter" [ref=e163]
+      - paragraph [ref=e165]:
+        - generic [ref=e166]:
+          - text: 📊 Data powered by
+          - link "CIA Platform ↗" [ref=e167] [cursor=pointer]:
+            - /url: https://www.hack23.com/cia
+          - text: "| Updated: Loading..."
+    - generic [ref=e168]:
+      - heading "🤝 Coalition & Voting Pattern Analysis" [level=2] [ref=e169]
+      - paragraph [ref=e170]: Interactive analysis of coalition dynamics, party alignments, and voting behavior patterns in the Swedish Riksdag.
+      - generic [ref=e171]:
+        - generic [ref=e172]:
+          - heading "Coalition Network (Interactive)" [level=3] [ref=e173]
+          - paragraph [ref=e174]: Force-directed graph showing coalition strength between Swedish political parties. Drag nodes, zoom, and click for details.
+          - img "Coalition network diagram showing relationships between 8 Swedish political parties" [ref=e175]
+          - table [ref=e176]
+        - generic [ref=e177]:
+          - heading "Voting Anomalies (Last 5 Years)" [level=3] [ref=e178]
+          - paragraph [ref=e179]: Scatter plot highlighting unusual voting patterns and party defections from expected behavior.
+          - img "Voting anomaly scatter plot showing deviation scores for all parties" [ref=e180]
+        - generic [ref=e181]:
+          - heading "Party Alignment Heat Map" [level=3] [ref=e182]
+          - paragraph [ref=e183]: Matrix visualization showing cross-party voting agreement levels based on historical voting records.
+          - img "Party alignment heat map showing voting agreement percentages between all party pairs" [ref=e184]
+        - generic [ref=e185]:
+          - heading "Behavioral Patterns" [level=3] [ref=e186]
+          - paragraph [ref=e187]: Party voting consistency scores measuring adherence to party line across all votes.
+          - img "Behavioral patterns bar chart showing voting consistency percentages for all parties" [ref=e188]
+        - generic [ref=e189]:
+          - heading "Decision Trends (1990-2026)" [level=3] [ref=e190]
+          - paragraph [ref=e191]: Historical timeline showing annual voting activity trends for all parties over 36 years.
+          - img "Decision trends timeline showing annual voting volumes from 1990 to 2026" [ref=e192]
+      - paragraph [ref=e193]:
+        - strong [ref=e194]: "Data Attribution:"
+        - text: Visualizations powered by CIA Platform intelligence exports. Data updates weekly from Swedish Parliament open data APIs.
+    - generic [ref=e195]:
+      - heading "📅 Seasonal Activity Patterns (2002-2025)" [level=2] [ref=e196]
+      - paragraph [ref=e197]: Quarterly Analysis with Z-Score Anomaly Detection
+      - generic [ref=e198]:
+        - combobox "Filter by year" [ref=e199] [cursor=pointer]:
+          - option "All Years" [selected]
+        - combobox "Filter by quarter" [ref=e200] [cursor=pointer]:
+          - option "All Quarters" [selected]
+          - option "Q1 - Winter Session"
+          - option "Q2 - Spring Session"
+          - option "Q3 - Summer Recess"
+          - option "Q4 - Autumn Session"
+        - combobox "Filter by election status" [ref=e201] [cursor=pointer]:
+          - option "All" [selected]
+          - option "Election Years"
+          - option "Non-Election Years"
+        - combobox "Filter by activity classification" [ref=e202] [cursor=pointer]:
+          - option "All Classifications" [selected]
+      - generic [ref=e203]:
+        - generic [ref=e204]:
+          - heading "Quarterly Activity Heat Map (2002-2025)" [level=3] [ref=e205]
+          - paragraph [ref=e207]: Ballot volume by year and quarter with Z-score overlay. Red circles indicate statistical anomalies (|Z| ≥ 2.0).
+        - generic [ref=e208]:
+          - heading "Z-Score Anomaly Detection" [level=3] [ref=e209]
+          - img "Line chart showing Z-score timeline for ballot, document, and attendance metrics" [ref=e210]
+          - paragraph [ref=e211]: Statistical outliers (|Z| ≥ 2.0) are flagged in red based on anomaly thresholds.
+        - generic [ref=e212]:
+          - heading "Average Activity by Quarter (All Years)" [level=3] [ref=e213]
+          - img "Bar chart showing average ballots by quarter across all years" [ref=e214]
+          - paragraph [ref=e215]: Q1–Q4 baselines across all years. Shows typical activity patterns across seasons.
+        - generic [ref=e216]:
+          - heading "Seasonal Pattern Classification" [level=3] [ref=e217]
+          - img "Stacked bar chart showing distribution of activity classifications by year" [ref=e218]
+          - paragraph [ref=e219]: Distribution of NORMAL, ELEVATED, REDUCED, and ANOMALY patterns across years.
+        - generic [ref=e220]:
+          - heading "Quarter-over-Quarter Changes" [level=3] [ref=e221]
+          - img "Bar chart showing quarter-over-quarter ballot changes as percentages" [ref=e222]
+          - paragraph [ref=e223]: Sequential ballot changes (% and absolute). Green indicates increase, red indicates decrease.
+      - paragraph [ref=e224]: 📊 Data by CIA Platform | Updated Daily
+    - generic [ref=e225]:
+      - heading "Pre-Election Monitoring Dashboard (Q4 2023-2025)" [level=2] [ref=e226]: 🗳️ Pre-Election Monitoring Dashboard (Q4 2023-2025)
+      - paragraph [ref=e227]: Track Q4 parliamentary activity in the critical 12-15 months before the 2026 election. Compare current activity against historical baselines and election-year patterns.
+      - generic [ref=e228]:
+        - generic [ref=e229]:
+          - heading "Ballot Activity" [level=3] [ref=e230]: 📊 Ballot Activity
+          - paragraph [ref=e231]: 16,750
+          - paragraph [ref=e232]: +4.34% vs baseline
+          - generic [ref=e233]: NORMAL
+        - generic [ref=e234]:
+          - heading "Document Production" [level=3] [ref=e235]: 📄 Document Production
+          - paragraph [ref=e236]: 3,451
+          - paragraph [ref=e237]: +25.55% vs baseline
+          - generic [ref=e238]: NORMAL
+        - generic [ref=e239]:
+          - heading "Attendance Rate" [level=3] [ref=e240]: ✅ Attendance Rate
+          - paragraph [ref=e241]: 85.75%
+          - paragraph [ref=e242]: +0.75% vs baseline
+          - generic [ref=e243]: STABLE
+        - generic [ref=e244]:
+          - heading "Party Win Rate" [level=3] [ref=e245]: 🎯 Party Win Rate
+          - paragraph [ref=e246]: 59.72%
+          - paragraph [ref=e247]: +3.55% YoY
+          - generic [ref=e248]: IMPROVING
+      - generic [ref=e249]:
+        - generic [ref=e250]:
+          - heading "Q4 Activity Timeline (2023-2025)" [level=3] [ref=e251]
+          - generic "Q4 Activity Timeline showing ballots, documents, and attendance trends from 2023 to 2025" [ref=e253]
+          - paragraph [ref=e254]: Ballots, documents, attendance trends with baseline overlay
+        - generic [ref=e255]:
+          - heading "Election vs. Non-Election Q4 Patterns" [level=3] [ref=e256]
+          - generic "Comparison of Q4 ballot activity in election years versus non-election years from 2002 to 2025" [ref=e258]
+          - paragraph [ref=e259]: "Historical Q4 activity (2002-2025): Election years vs. Non-election years"
+        - generic [ref=e260]:
+          - heading "Deviation from Baseline (2025 Q4)" [level=3] [ref=e261]
+          - generic "Radar chart showing 2025 Q4 metrics compared to historical baselines" [ref=e263]
+          - paragraph [ref=e264]: Multi-metric deviation analysis
+        - generic [ref=e265]:
+          - heading "Party Performance Trends (2023-2025)" [level=3] [ref=e266]
+          - generic "Line chart showing party win rate, absence rate, and document production from 2023 to 2025" [ref=e268]
+          - paragraph [ref=e269]: Win rate, absence rate, document production by year
+        - generic [ref=e270]:
+          - heading "Year-over-Year Changes" [level=3] [ref=e271]
+          - generic "Waterfall chart showing year-over-year ballot activity changes from 2023 to 2025" [ref=e273]
+          - paragraph [ref=e274]: "Ballot activity changes: 2023 → 2024 → 2025"
+        - generic [ref=e275]:
+          - heading "Early Warning Indicator Matrix" [level=3] [ref=e276]
+          - 'region "Early warning indicator matrix showing status of 4 monitored metrics: ballots, documents, attendance, and year-over-year change"'
+          - paragraph [ref=e277]: Real-time status of 4 monitored metrics (ballots, documents, attendance, YoY change)
+      - paragraph [ref=e278]: 📊 Data by CIA Platform | Updated Daily
+    - generic [ref=e279]:
+      - heading "🚨 Anomaly Detection & Early Warning System" [level=2] [ref=e280]
+      - paragraph [ref=e281]: Statistical outlier identification in Swedish Parliament activity (2002-2026) using Z-score analysis
+      - generic [ref=e282]:
+        - combobox "Filter by severity" [ref=e283] [cursor=pointer]:
+          - option "All Severities" [selected]
+          - option "🔴 Critical"
+          - option "🟠 High"
+          - option "🟡 Moderate"
+          - option "🟢 Low"
+        - combobox "Filter by anomaly type" [ref=e284] [cursor=pointer]:
+          - option "All Types" [selected]
+          - option "Ballot Anomaly"
+          - option "Document Anomaly"
+          - option "Attendance Anomaly"
+          - option "No Anomaly"
+        - combobox "Filter by direction" [ref=e285] [cursor=pointer]:
+          - option "All Directions" [selected]
+          - option "Unusually High"
+          - option "Unusually Low"
+          - option "Within Normal Range"
+        - combobox "Filter by year" [ref=e286] [cursor=pointer]:
+          - option "All Years" [selected]
+      - generic [ref=e287]:
+        - generic [ref=e288]:
+          - heading "Anomaly Timeline (2002-2026)" [level=3] [ref=e289]
+          - img "Scatter plot showing anomalies over time" [ref=e290]
+          - paragraph [ref=e291]: Chronological view of detected anomalies with severity coding
+        - generic [ref=e292]:
+          - heading "Z-Score Distribution" [level=3] [ref=e293]
+          - img "Histogram of Z-score distribution" [ref=e294]
+          - paragraph [ref=e295]: Normal curve with outlier markers (|Z| ≥ 2.0)
+        - generic [ref=e296]:
+          - heading "Anomaly Type Distribution" [level=3] [ref=e297]
+          - img "Doughnut chart showing anomaly types" [ref=e298]
+          - paragraph [ref=e299]: Ballot vs. Document anomaly distribution
+        - generic [ref=e300]:
+          - heading "Severity Heat Map (Year × Quarter)" [level=3] [ref=e301]
+          - img "Heat map showing severity by year and quarter" [ref=e302]
+          - paragraph [ref=e303]: Grid showing anomaly severity by year and quarter
+        - generic [ref=e304]:
+          - heading "Anomaly Frequency by Quarter" [level=3] [ref=e305]
+          - img "Bar chart showing anomaly frequency by quarter" [ref=e306]
+          - paragraph [ref=e307]: Q1-Q4 anomaly counts across all years
+        - generic [ref=e308]:
+          - heading "Recent Anomalies (Last 5)" [level=3] [ref=e309]
+          - feed "Feed of recent anomalies"
+          - paragraph [ref=e310]: Most recent anomalies with details
+    - generic [ref=e311]:
+      - heading "🎖️ Government Minister Risk & Influence" [level=2] [ref=e312]
+      - generic [ref=e313]:
+        - generic [ref=e314]:
+          - heading "Ministry Risk Heat Map" [level=3] [ref=e315]
+          - img "Ministry Risk Heat Map showing risk levels across government departments"
+        - generic [ref=e316]:
+          - heading "Top 10 Most Influential Ministers" [level=3] [ref=e317]
+          - img "Bar chart showing top 10 most influential ministers" [ref=e318]
+        - generic [ref=e319]:
+          - heading "Ministry Productivity Matrix" [level=3] [ref=e320]
+          - img "Bar chart comparing ministry productivity across quarters" [ref=e321]
+        - generic [ref=e322]:
+          - heading "Decision Impact Trends" [level=3] [ref=e323]
+          - img "Line chart showing decision impact trends over time" [ref=e324]
+      - group [ref=e325]:
+        - generic "View data as accessible table" [ref=e326]
+    - generic [ref=e327]:
+      - heading "Risk Assessment & Anomaly Detection" [level=2] [ref=e328]: ⚠️ Risk Assessment & Anomaly Detection
+      - paragraph [ref=e329]: Comprehensive intelligence analysis using 45 risk rules across 349 MPs with statistical anomaly detection (P90/P99 thresholds). Historical analysis includes 2494 politicians (1971-2024).
+      - alert [ref=e330]
+      - generic [ref=e331]:
+        - generic [ref=e332]:
+          - heading "Risk Level Heat Map (45 Rules × 349 MPs)" [level=3] [ref=e333]
+          - paragraph [ref=e334]: Interactive heat map showing risk scores for each MP across all 45 transparency rules. Click cells for details.
+          - generic [ref=e335]:
+            - generic [ref=e336] [cursor=pointer]:
+              - checkbox "Show only high-risk MPs (score ≥6.0)" [ref=e337]
+              - generic [ref=e338]: Show only high-risk (≥6.0)
+            - generic [ref=e339] [cursor=pointer]:
+              - generic [ref=e340]: "Filter by rule:"
+              - combobox "Filter by risk rule" [ref=e341]:
+                - option "All Rules" [selected]
+            - button "Reset zoom" [ref=e342] [cursor=pointer]: Reset Zoom
+          - img "Risk assessment heat map showing 45 rules by 349 MPs" [ref=e343]
+          - img "Heat map color legend" [ref=e344]
+        - generic [ref=e345]:
+          - heading "Risk Distribution" [level=3] [ref=e346]
+          - paragraph [ref=e347]: Distribution of risk scores across all MPs
+          - img "Bar chart showing risk score distribution" [ref=e348]
+        - generic [ref=e349]:
+          - heading "Anomaly Detection (P90/P99)" [level=3] [ref=e350]
+          - paragraph [ref=e351]: Voting anomalies with statistical thresholds at 90th and 99th percentiles
+          - img "Scatter plot showing voting anomalies" [ref=e352]
+        - generic [ref=e353]:
+          - heading "Crisis Resilience Indicators" [level=3] [ref=e354]
+          - paragraph [ref=e355]: Resilience scores by party and government stability metrics
+          - img "Radar chart showing crisis resilience indicators" [ref=e356]
+        - generic [ref=e357]:
+          - heading "Risk Evolution Timeline (2020-2026)" [level=3] [ref=e358]
+          - paragraph [ref=e359]: Historical trends of risk categories over time
+          - img "Line chart showing risk evolution over time" [ref=e360]
+        - generic [ref=e361]:
+          - heading "Top 10 Ethics Concerns" [level=3] [ref=e362]
+          - paragraph [ref=e363]: MPs with highest ethics risk scores
+          - list "Top 10 ethics concerns list"
+        - generic [ref=e364]:
+          - heading "Electoral Risk (MPs at Risk)" [level=3] [ref=e365]
+          - paragraph [ref=e366]: MPs with highest electoral vulnerability for 2026 election
+          - list "Top 10 MPs at electoral risk"
+      - generic [ref=e367]:
+        - paragraph [ref=e368]:
+          - strong [ref=e369]: "Data Source:"
+          - link "Citizen Intelligence Agency ↗" [ref=e370] [cursor=pointer]:
+            - /url: https://www.hack23.com/cia
+          - text: "|"
+          - strong [ref=e371]: "Last Updated:"
+          - text: Loading...
+        - paragraph [ref=e372]:
+          - emphasis [ref=e373]: Risk scores calculated using 45 transparency rules across 4 domains (politician, party, committee, ministry). Anomaly detection uses P90 (warning) and P99 (critical) statistical thresholds.
+    - generic [ref=e374]:
+      - heading "Comprehensive Intelligence Platform" [level=2] [ref=e375]
+      - paragraph [ref=e376]: CIA delivers systematic political transparency through 45 risk rules across 4 domains and 5 analytical frameworks.
+      - generic [ref=e377]:
+        - generic [ref=e378]:
+          - heading "🔍 Real-Time Monitoring" [level=3] [ref=e379]
+          - list [ref=e380]:
+            - listitem [ref=e381]: • 349 MPs tracked (2,494 historical) automatically
+            - listitem [ref=e382]: • 3,704,189 individual ballot records analyzed
+            - listitem [ref=e383]: • 109,480 documents processed
+            - listitem [ref=e384]: • 1,751 member proposals tracked
+            - listitem [ref=e385]: • 5,815 government proposals monitored
+            - listitem [ref=e386]: • Committee work quantified (4,524 documents)
+        - generic [ref=e387]:
+          - heading "📊 Coalition Prediction" [level=3] [ref=e388]
+          - list [ref=e389]:
+            - listitem [ref=e390]: • 4 election scenarios modeled
+            - listitem [ref=e391]: • Historical pattern analysis (1971-2024)
+            - listitem [ref=e392]: • Party discipline tracking
+            - listitem [ref=e393]: • Defection probability estimation
+            - listitem [ref=e394]: • Government formation simulation
+        - generic [ref=e395]:
+          - heading "✅ Fact-Checking Infrastructure" [level=3] [ref=e396]
+          - list [ref=e397]:
+            - listitem [ref=e398]: • Politician claims vs. voting records
+            - listitem [ref=e399]: • Party platform consistency analysis
+            - listitem [ref=e400]: • Campaign promise tracking
+            - listitem [ref=e401]: • Real-time debate verification
+            - listitem [ref=e402]: • Historical accountability metrics
+        - generic [ref=e403]:
+          - heading "⚠️ Risk Assessment" [level=3] [ref=e404]
+          - list [ref=e405]:
+            - listitem [ref=e406]: • 45 behavioral risk rules active
+            - listitem [ref=e407]: • MINOR/MAJOR/CRITICAL severity levels
+            - listitem [ref=e408]: • Automated alert system
+            - listitem [ref=e409]: • Trend analysis for context
+            - listitem [ref=e410]: • Transparent methodology
+      - generic [ref=e411]:
+        - heading "45 Risk Rules Across 4 Domains" [level=3] [ref=e412]
+        - list [ref=e413]:
+          - listitem [ref=e414]:
+            - text: •
+            - strong [ref=e415]: "Politician-Level (20 rules):"
+            - text: Attendance, voting consistency, role conflicts, productivity
+          - listitem [ref=e416]:
+            - text: •
+            - strong [ref=e417]: "Party-Level (12 rules):"
+            - text: Coalition discipline, ideological drift, internal conflicts
+          - listitem [ref=e418]:
+            - text: •
+            - strong [ref=e419]: "Committee-Level (8 rules):"
+            - text: Legislative productivity, partisan deadlock, expert testimony
+          - listitem [ref=e420]:
+            - text: •
+            - strong [ref=e421]: "Ministry-Level (5 rules):"
+            - text: Budget overruns, policy failures, accountability lapses
+        - heading "5 Analytical Frameworks" [level=3] [ref=e422]
+        - list [ref=e423]:
+          - listitem [ref=e424]:
+            - text: •
+            - strong [ref=e425]: "Temporal Analysis:"
+            - text: Trend detection across time periods
+          - listitem [ref=e426]:
+            - text: •
+            - strong [ref=e427]: "Comparative Analysis:"
+            - text: Cross-party/MP benchmarking
+          - listitem [ref=e428]:
+            - text: •
+            - strong [ref=e429]: "Pattern Recognition:"
+            - text: Behavioral anomaly detection
+          - listitem [ref=e430]:
+            - text: •
+            - strong [ref=e431]: "Predictive Intelligence:"
+            - text: Election outcome forecasting, coalition modeling
+          - listitem [ref=e432]:
+            - text: •
+            - strong [ref=e433]: "Network Analysis:"
+            - text: Influence mapping, collaboration patterns
+    - generic [ref=e434]:
+      - heading "Citizen Intelligence Agency Data Products" [level=2] [ref=e435]: 📊 Citizen Intelligence Agency Data Products
+      - paragraph [ref=e436]:
+        - text: Riksdagsmonitor is powered by the
+        - link "Citizen Intelligence Agency (CIA) ↗" [ref=e437] [cursor=pointer]:
+          - /url: https://www.hack23.com/cia
+        - text: — an open-source OSINT platform that processes Swedish parliamentary data into actionable intelligence products.
+      - generic [ref=e438]:
+        - generic [ref=e439]:
+          - heading "Risk Assessment Reports" [level=3] [ref=e440]: 📈 Risk Assessment Reports
+          - paragraph [ref=e441]: 45 risk rules across 4 domains analyze politician behavior, party discipline, committee effectiveness, and ministry accountability in real-time.
+        - generic [ref=e442]:
+          - heading "Seasonal Activity Analysis" [level=3] [ref=e443]: 📅 Seasonal Activity Analysis
+          - paragraph [ref=e444]: Z-score anomaly detection identifies unusual parliamentary activity patterns by quarter, with historical baselines from 2002 to present.
+        - generic [ref=e445]:
+          - heading "Election Cycle Intelligence" [level=3] [ref=e446]: 🎯 Election Cycle Intelligence
+          - paragraph [ref=e447]: Performance tracking across 9+ election cycles (1994–2034) with predictive risk forecasting, party tier analysis, and coalition probability modeling.
+        - generic [ref=e448]:
+          - heading "Open Data Integration" [level=3] [ref=e449]: 🔗 Open Data Integration
+          - paragraph [ref=e450]: All intelligence products are derived from official open data sources. Visualizations update automatically via nightly data pipelines with 24-hour caching.
+      - paragraph [ref=e451]: All data products available through the Citizen Intelligence Agency platform with real-time updates from Swedish Parliament open data APIs.
+    - generic [ref=e452]:
+      - heading "Data Sources & Integration" [level=2] [ref=e453]: 🔗 Data Sources & Integration
+      - paragraph [ref=e454]: "Riksdagsmonitor integrates multiple authoritative Swedish and international data sources:"
+      - generic [ref=e455]:
+        - generic [ref=e456]:
+          - heading "Swedish Parliament (Riksdagen)" [level=3] [ref=e457]
+          - paragraph [ref=e458]: Official parliamentary data including votes, documents, committee work, and MP information.
+          - link "data.riksdagen.se ↗" [ref=e459] [cursor=pointer]:
+            - /url: https://data.riksdagen.se/
+        - generic [ref=e460]:
+          - heading "Swedish Election Authority" [level=3] [ref=e461]
+          - paragraph [ref=e462]: Historical election results, voter turnout, and electoral statistics for all national elections.
+          - link "val.se ↗" [ref=e463] [cursor=pointer]:
+            - /url: https://www.val.se/
+        - generic [ref=e464]:
+          - heading "Financial Management Authority (ESV)" [level=3] [ref=e465]
+          - paragraph [ref=e466]: Government budget data, public spending analysis, and financial accountability reporting.
+          - link "esv.se/psidata ↗" [ref=e467] [cursor=pointer]:
+            - /url: https://www.esv.se/psidata/
+        - generic [ref=e468]:
+          - heading "World Bank Open Data" [level=3] [ref=e469]
+          - paragraph [ref=e470]: Country-level economic and development indicators for international comparative analysis.
+          - link "data.worldbank.org ↗" [ref=e471] [cursor=pointer]:
+            - /url: https://data.worldbank.org/
+    - region "AI-Disrupted News Generation" [ref=e472]:
+      - generic [ref=e473]:
+        - heading "AI-Disrupted News Generation" [level=2] [ref=e474]: 🤖 AI-Disrupted News Generation
+        - paragraph [ref=e475]: Riksdagsmonitor's agentic news generation pipeline is the world's first fully AI-driven political intelligence newsroom for parliamentary monitoring. Powered by Claude Opus via GitHub Copilot Coding Agent, our 10 specialized workflows (9 scheduled + 1 on-demand) autonomously produce deep political analysis — not shallow summaries, but structured intelligence products with source verification, multi-party balance, and GDPR-compliant OSINT methodology.
+  - contentinfo [ref=e476]:
+    - generic [ref=e477]:
+      - generic [ref=e478]:
+        - link "Riksdagsmonitor Home" [ref=e479] [cursor=pointer]:
+          - /url: index.html
+          - img "Riksdagsmonitor" [ref=e480]
+        - heading "About Riksdagsmonitor" [level=3] [ref=e481]
+        - paragraph [ref=e482]: Live intelligence platform for Swedish Parliament monitoring using CIA OSINT capabilities.
+        - list [ref=e483]:
+          - listitem [ref=e484]:
+            - text: •
+            - strong [ref=e485]: 349 MPs
+            - text: tracked
+          - listitem [ref=e486]:
+            - text: •
+            - strong [ref=e487]: 45 risk rules
+            - text: active
+          - listitem [ref=e488]:
+            - text: •
+            - strong [ref=e489]: 14 languages
+            - text: supported
+          - listitem [ref=e490]:
+            - text: •
+            - strong [ref=e491]: 50+ years
+            - text: historical data
+      - generic [ref=e492]:
+        - heading "Quick Links" [level=3] [ref=e493]
+        - list [ref=e494]:
+          - listitem [ref=e495]:
+            - text: •
+            - link "Home" [ref=e496] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e497]:
+            - text: •
+            - link "News" [ref=e498] [cursor=pointer]:
+              - /url: news/index.html
+          - listitem [ref=e499]:
+            - text: •
+            - link "Dashboard" [ref=e500] [cursor=pointer]:
+              - /url: dashboard/index.html
+          - listitem [ref=e501]:
+            - text: •
+            - link "CIA Platform ↗" [ref=e502] [cursor=pointer]:
+              - /url: https://www.hack23.com/cia
+          - listitem [ref=e503]:
+            - text: •
+            - link "GitHub Repository ↗" [ref=e504] [cursor=pointer]:
+              - /url: https://github.com/Hack23/riksdagsmonitor
+          - listitem [ref=e505]:
+            - text: •
+            - link "Sveriges Riksdag ↗" [ref=e506] [cursor=pointer]:
+              - /url: https://www.riksdagen.se
+      - generic [ref=e507]:
+        - heading "Built by Hack23 AB" [level=3] [ref=e508]
+        - paragraph [ref=e509]: Swedish cybersecurity consultancy specializing in political transparency and open-source intelligence.
+        - list [ref=e510]:
+          - listitem [ref=e511]:
+            - text: •
+            - link "Hack23.com ↗" [ref=e512] [cursor=pointer]:
+              - /url: https://www.hack23.com
+          - listitem [ref=e513]:
+            - text: •
+            - link "Company LinkedIn ↗" [ref=e514] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/hack23/
+          - listitem [ref=e515]:
+            - text: •
+            - link "Public ISMS ↗" [ref=e516] [cursor=pointer]:
+              - /url: https://github.com/Hack23/ISMS-PUBLIC
+          - listitem [ref=e517]:
+            - text: •
+            - link "Security Policy ↗" [ref=e518] [cursor=pointer]:
+              - /url: https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md
+          - listitem [ref=e519]:
+            - text: •
+            - link "Privacy Policy ↗" [ref=e520] [cursor=pointer]:
+              - /url: https://github.com/Hack23/ISMS-PUBLIC/blob/main/Privacy_Policy.md
+          - listitem [ref=e521]:
+            - text: •
+            - link "Contact Us" [ref=e522] [cursor=pointer]:
+              - /url: mailto:info@hack23.com
+      - generic [ref=e523]:
+        - heading "Languages" [level=3] [ref=e524]
+        - generic [ref=e525]:
+          - link "Switch to English" [ref=e526] [cursor=pointer]:
+            - /url: index.html
+            - text: 🇬🇧 EN
+          - link "Byt till Svenska" [ref=e527] [cursor=pointer]:
+            - /url: index_sv.html
+            - text: 🇸🇪 SV
+          - link "Skift til Dansk" [ref=e528] [cursor=pointer]:
+            - /url: index_da.html
+            - text: 🇩🇰 DA
+          - link "Bytt til Norsk" [ref=e529] [cursor=pointer]:
+            - /url: index_no.html
+            - text: 🇳🇴 NO
+          - link "Vaihda Suomeksi" [ref=e530] [cursor=pointer]:
+            - /url: index_fi.html
+            - text: 🇫🇮 FI
+          - link "Wechseln zu Deutsch" [ref=e531] [cursor=pointer]:
+            - /url: index_de.html
+            - text: 🇩🇪 DE
+          - link "Passer au Français" [ref=e532] [cursor=pointer]:
+            - /url: index_fr.html
+            - text: 🇫🇷 FR
+          - link "Cambiar a Español" [ref=e533] [cursor=pointer]:
+            - /url: index_es.html
+            - text: 🇪🇸 ES
+          - link "Schakel naar Nederlands" [ref=e534] [cursor=pointer]:
+            - /url: index_nl.html
+            - text: 🇳🇱 NL
+          - link "التبديل إلى العربية" [ref=e535] [cursor=pointer]:
+            - /url: index_ar.html
+            - text: 🇸🇦 AR
+          - link "עבור לעברית" [ref=e536] [cursor=pointer]:
+            - /url: index_he.html
+            - text: 🇮🇱 HE
+          - link "日本語に切り替え" [ref=e537] [cursor=pointer]:
+            - /url: index_ja.html
+            - text: 🇯🇵 JA
+          - link "한국어로 전환" [ref=e538] [cursor=pointer]:
+            - /url: index_ko.html
+            - text: 🇰🇷 KO
+          - link "切换到中文" [ref=e539] [cursor=pointer]:
+            - /url: index_zh.html
+            - text: 🇨🇳 ZH
+    - generic [ref=e540]:
+      - paragraph [ref=e541]:
+        - text: © 2008-
+        - time [ref=e542]: "2026"
+        - link "Hack23 AB ↗" [ref=e543] [cursor=pointer]:
+          - /url: https://www.hack23.com
+        - text: (Org.nr 5595347807) | Gothenburg, Sweden
+      - paragraph [ref=e544]:
+        - text: ⚠️ Ongoing improvements — please
+        - link "report any issues on GitHub ↗" [ref=e545] [cursor=pointer]:
+          - /url: https://github.com/Hack23/riksdagsmonitor/issues
+        - text: .

@@ -1,0 +1,99 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - button "Switch to dark theme" [ref=e3] [cursor=pointer]:
+    - generic [ref=e4]: 🌙
+  - banner [ref=e5]:
+    - navigation [ref=e6]:
+      - link "Riksdagsmonitor Home" [ref=e8] [cursor=pointer]:
+        - /url: index.html
+        - img "Riksdagsmonitor" [ref=e9]
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - text: •
+          - link "Home" [ref=e12] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=e13]:
+          - text: •
+          - link "Politician Dashboard" [ref=e14] [cursor=pointer]:
+            - /url: politician-dashboard.html
+        - listitem [ref=e15]:
+          - text: •
+          - link "Data Sources" [ref=e16] [cursor=pointer]:
+            - /url: index.html#data-sources
+        - listitem [ref=e17]:
+          - text: •
+          - link "About" [ref=e18] [cursor=pointer]:
+            - /url: index.html#about
+  - main [ref=e19]:
+    - generic:
+      - generic:
+        - heading "👤 Politician Career & Productivity Analytics" [level=1]
+        - paragraph: "Comprehensive analysis of Sweden's 349 Members of Parliament: career trajectories, productivity metrics, and influence rankings based on CIA intelligence data."
+      - alert:
+        - heading "⚠️ Work In Progress - Demo Data" [level=2]
+        - paragraph:
+          - text: This dashboard is currently under development and displays
+          - strong: placeholder/sample data
+          - text: for demonstration purposes.
+        - paragraph: Real CIA CSV data integration is pending. Do not use these visualizations for decision-making.
+      - generic:
+        - generic:
+          - heading "📊 Top 10 Most Productive" [level=2]
+          - generic:
+            - generic: Loading data...
+        - generic:
+          - heading "🌟 Top 10 Most Influential" [level=2]
+          - generic:
+            - generic: Loading data...
+        - generic:
+          - heading "⭐ Top 10 Rising Stars" [level=2]
+          - generic:
+            - generic: Loading data...
+        - generic:
+          - heading "⚡ Top 10 Most Controversial" [level=2]
+          - generic:
+            - generic: Loading data...
+      - generic:
+        - heading "📈 Career Trajectory Analysis" [level=2]
+        - generic:
+          - img "Career trajectory timeline chart showing MP career progression"
+      - generic:
+        - heading "💼 Productivity vs. Influence" [level=2]
+        - generic:
+          - img "Scatter plot showing relationship between MP productivity and influence"
+      - generic:
+        - heading "🎓 Experience Distribution" [level=2]
+        - generic:
+          - img "Bar chart showing distribution of MP experience levels"
+  - contentinfo [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - heading "Riksdagsmonitor" [level=3] [ref=e23]
+        - paragraph [ref=e24]: Systematic transparency through data intelligence.
+        - paragraph [ref=e25]:
+          - text: Powered by
+          - link "CIA Platform ↗" [ref=e26] [cursor=pointer]:
+            - /url: https://www.hack23.com/cia/
+      - generic [ref=e27]:
+        - heading "Data Sources" [level=3] [ref=e28]
+        - list [ref=e29]:
+          - listitem [ref=e30]:
+            - text: •
+            - link "Riksdagen Open Data ↗" [ref=e31] [cursor=pointer]:
+              - /url: https://data.riksdagen.se/
+          - listitem [ref=e32]:
+            - text: •
+            - link "Swedish Government ↗" [ref=e33] [cursor=pointer]:
+              - /url: https://www.regeringen.se/
+      - generic [ref=e34]:
+        - heading "Contact" [level=3] [ref=e35]
+        - paragraph [ref=e36]:
+          - text: "Email:"
+          - link "contact@riksdagsmonitor.com" [ref=e37] [cursor=pointer]:
+            - /url: mailto:contact@riksdagsmonitor.com
+        - paragraph [ref=e38]:
+          - text: "GitHub:"
+          - link "Hack23/riksdagsmonitor ↗" [ref=e39] [cursor=pointer]:
+            - /url: https://github.com/Hack23/riksdagsmonitor
+    - paragraph [ref=e41]: © 2026 Hack23 AB. Licensed under MIT. Built for transparency.

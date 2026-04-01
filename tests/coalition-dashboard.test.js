@@ -119,7 +119,7 @@ describe('Coalition Dashboard', () => {
   describe('Data Source Configuration', () => {
     it('should configure local-first URLs for all CSV files', () => {
       // Verify DATA_CONFIG structure: each file key should map to [localUrl, remoteUrl]
-      const expectedFiles = ['coalition', 'behavioral', 'decision', 'anomalyClassification', 'anomalyByParty', 'annualVotes', 'decisionTrends', 'partyMomentum'];
+      const expectedFiles = ['coalition', 'behavioral', 'decision', 'anomalyByParty', 'annualVotes', 'decisionTrends', 'partyMomentum'];
       const localPrefix = 'cia-data/';
       const remotePrefix = 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
 
@@ -135,7 +135,6 @@ describe('Coalition Dashboard', () => {
         'cia-data/party/distribution_coalition_alignment.csv',
         'cia-data/parties/distribution_behavioral_patterns_by_party.csv',
         'cia-data/parties/distribution_decision_patterns_by_party.csv',
-        'cia-data/voting/distribution_voting_anomaly_classification.csv',
         'cia-data/anomaly/distribution_anomaly_by_party.csv',
         'cia-data/voting/distribution_annual_party_votes.csv',
         'cia-data/voting/distribution_decision_trends.csv',
@@ -153,7 +152,6 @@ describe('Coalition Dashboard', () => {
         'distribution_coalition_alignment.csv',
         'distribution_behavioral_patterns_by_party.csv',
         'distribution_decision_patterns_by_party.csv',
-        'distribution_voting_anomaly_classification.csv',
         'distribution_anomaly_by_party.csv',
         'distribution_annual_party_votes.csv',
         'distribution_decision_trends.csv',

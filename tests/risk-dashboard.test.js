@@ -176,15 +176,14 @@ describe('Risk Dashboard', () => {
       riskByParty: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_risk_by_party.csv',
       riskBuckets: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_risk_score_buckets.csv',
       riskEvolution: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/percentile_risk_score_evolution.csv',
-      anomalyClassification: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_voting_anomaly_classification.csv',
       anomalyDetection: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/percentile_voting_anomaly_detection.csv',
       crisisResilience: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/distribution_crisis_resilience.csv',
       ethicsConcerns: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/top10_ethics_concerns.csv',
       electoralRisk: 'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/top10_electoral_risk.csv'
     };
 
-    it('should define 9 data source URLs', () => {
-      expect(Object.keys(CIA_DATA_URLS)).toHaveLength(9);
+    it('should define 8 data source URLs', () => {
+      expect(Object.keys(CIA_DATA_URLS)).toHaveLength(8);
     });
 
     it('should point to GitHub raw content', () => {
@@ -213,7 +212,6 @@ describe('Risk Dashboard', () => {
     });
 
     it('should include anomaly datasets', () => {
-      expect(CIA_DATA_URLS.anomalyClassification).toContain('voting_anomaly_classification');
       expect(CIA_DATA_URLS.anomalyDetection).toContain('voting_anomaly_detection');
     });
 
