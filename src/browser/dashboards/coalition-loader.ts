@@ -417,6 +417,16 @@ function getTranslations(): CoalitionTranslations {
 }
 
 function parseCSV(csvText: string): CSVRow[] {
+  const Papa = (globalThis as Record<string, unknown>).Papa as {
+    parse: (input: string, config: Record<string, unknown>) => { data: CSVRow[] };
+  } | undefined;
+
+  if (Papa) {
+    const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+    return parsed.data;
+  }
+
+  // Fallback: naive split (does not handle RFC4180 quoted fields)
   const lines = csvText.trim().split('\n');
   if (lines.length < 2) return [];
 
