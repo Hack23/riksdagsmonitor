@@ -151,6 +151,13 @@ aws s3 cp "$SRC" "$BUCKET" --recursive \
   --cache-control 'public, max-age=86400' \
   "${SKIP[@]}" --exclude 'docs/*'
 
+# CSV data files - medium cache (1 day), explicit text/csv MIME type
+aws s3 cp "$SRC" "$BUCKET" --recursive \
+  --exclude '*' --include '*.csv' \
+  --no-guess-mime-type --content-type 'text/csv; charset=utf-8' \
+  --cache-control 'public, max-age=86400' \
+  "${SKIP[@]}" --exclude 'docs/*'
+
 # ── Documentation directory (coverage, test-results, API docs) ──
 # Docs are regenerated each release so they use shorter cache TTLs.
 # Every format gets an explicit MIME type to fix broken existing objects.
@@ -254,7 +261,7 @@ aws s3 sync "$SRC" "$BUCKET" \
   --exclude '*.webp' --exclude '*.png' --exclude '*.jpg' --exclude '*.jpeg' \
   --exclude '*.gif' --exclude '*.svg' --exclude '*.ico' \
   --exclude '*.woff2' --exclude '*.woff' --exclude '*.ttf' --exclude '*.eot' --exclude '*.otf' \
-  --exclude '*.xml' --exclude '*.json' --exclude '*.txt' \
+  --exclude '*.xml' --exclude '*.json' --exclude '*.txt' --exclude '*.csv' \
   --cache-control 'public, max-age=86400' \
   "${SKIP[@]}" --exclude 'docs/*'
 
