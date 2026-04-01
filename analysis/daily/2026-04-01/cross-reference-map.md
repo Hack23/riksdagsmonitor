@@ -1,51 +1,47 @@
-# 🔗 Cross-Reference Map — 2026-04-01
+# Cross-Reference Map — 2026-04-01
 
-## 📋 Context
+**Generated**: 2026-04-01 14:33 UTC
+**Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer
+**Documents Analyzed**: 66
+**Confidence**: HIGH
 
-| Field | Value |
-|-------|-------|
-| **Map ID** | XRF-2026-04-01-001 |
-| **Date** | 2026-04-01 10:33 UTC |
-| **Documents Mapped** | 6 |
+## Summary
 
----
+Detected **46** cross-document relationships.
 
-## �� Reference Network
+## Detailed Analysis
 
-```mermaid
-graph TD
-    subgraph "🔗 Cross-Document References — 2026-04-01"
-        HD03214["HD03214<br/>Cybersecurity Center"]
-        HD03216["HD03216<br/>Municipal Healthcare"]
-        HD024017["HD024017<br/>S vs Bidragstak"]
-        HD12647["HD12647<br/>Nuclear Guarantees"]
-        HD12648["HD12648<br/>Iran Embassy"]
-        HD01FOU11["HD01FöU11<br/>Maritime Rescue"]
-    end
+### amends
 
-    HD03214 -.->|"Defense theme"| HD01FOU11
-    HD03214 -.->|"Security policy"| HD12647
-    HD024017 -.->|"Welfare reform"| HD03216
-    HD12648 -.->|"Foreign policy"| HD12647
+- **HD024010** → **HD024017** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD024010** → **HD024012** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD024010** → **HD024011** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD024010** → **HD024016** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD024010** → **HD024025** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD024010** → **HD024024** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD024010** → **HD024019** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD024010** → **HD024018** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD024010** → **HD024023** (confidence: 55%)
+  _Amending document title overlaps with target document title_
+- **HD024010** → **HD024022** (confidence: 55%)
+  _Amending document title overlaps with target document title_
 
-    style HD03214 fill:#dc3545,color:#fff
-    style HD024017 fill:#0d6efd,color:#fff
-    style HD03216 fill:#0d6efd,color:#fff
-    style HD12647 fill:#ffc107,color:#000
-    style HD12648 fill:#28a745,color:#fff
-    style HD01FOU11 fill:#28a745,color:#fff
-```
+## Key Findings
 
-### Thematic Clusters
+1. **46** inter-document relationships mapped
 
-| Cluster | Documents | Theme |
-|---------|-----------|-------|
-| **Defense/Security** | HD03214, HD01FöU11, HD12647 | National security modernization |
-| **Social Welfare** | HD024017, HD03216 | Welfare reform and healthcare |
-| **Foreign Policy** | HD12648, HD12647 | Iran relations and nuclear policy |
+## Implications
 
----
+Cross-references enrich article narratives by linking related legislative developments.
 
-## 📋 Document Control
+## Data Quality Notes
 
-| **Created** | 2026-04-01 10:33 UTC | **Framework** | Cross-Reference v2.1 |
+Cross-reference confidence is driven by shared policy domains and textual similarity.

@@ -1,92 +1,53 @@
-# ⚠️ Political Risk Assessment — 2026-04-01
+# Political Risk Assessment — 2026-04-01
 
-## 📋 Risk Context
-
-| Field | Value |
-|-------|-------|
-| **Risk Assessment ID** | RSK-2026-04-01-001 |
-| **Assessment Date** | 2026-04-01 10:30 UTC |
-| **Assessment Period** | 2026-03-31 to 2026-04-07 |
-| **Produced By** | news-realtime-monitor |
-| **Political Context** | Tidö coalition (M+KD+L with SD supply) governs with working majority. Active legislative session with cybersecurity and welfare reform. Vårpropositionen scheduled April 13. |
-| **Riksmöte** | 2025/26 |
-| **Overall Risk Level** | MEDIUM |
+**Generated**: 2026-04-01 14:41 UTC
+**Documents Analyzed**: 66
+**Confidence**: HIGH
+**Overall Risk Level**: 🟠 MEDIUM
 
 ---
 
-## 🗂️ Risk Inventory
-
-### Risk Heat Map
+## 📊 Risk Dashboard
 
 ```mermaid
 graph TD
-    subgraph "⚖️ Political Risk Landscape — 2026-04-01"
-        R1["🟡 RSK-001: Welfare reform opposition<br/>L:3 × I:3 = 9"]
-        R2["🟠 RSK-002: Cybersecurity implementation delay<br/>L:3 × I:4 = 12"]
-        R3["🟡 RSK-003: Foreign policy SD pressure<br/>L:2 × I:3 = 6"]
-        R4["🟢 RSK-004: Committee scheduling delay<br/>L:2 × I:2 = 4"]
-        R5["🟠 RSK-005: Vårpropositionen budget debate<br/>L:3 × I:4 = 12"]
+    subgraph "⚖️ Risk Assessment Dashboard"
+        R1["RSK-001<br/>ECHR Compliance Risk<br/>🟠 MEDIUM (6/25)"]
+        R2["RSK-002<br/>Coalition Cohesion Risk<br/>🟡 LOW-MEDIUM (4/25)"]
+        R3["RSK-003<br/>Arms Export Reputational Risk<br/>🟡 LOW-MEDIUM (4/25)"]
+        R4["RSK-004<br/>Municipal Implementation Risk<br/>🟡 LOW (3/25)"]
+        R5["RSK-005<br/>Opposition Framing Risk<br/>🟠 MEDIUM (6/25)"]
     end
 
-    R1 --> R5
-    R2 -.-> R5
-    R3 -.-> R1
-
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#fd7e14,color:#fff
+    style R1 fill:#fd7e14,color:#fff
+    style R2 fill:#ffc107,color:#000
     style R3 fill:#ffc107,color:#000
     style R4 fill:#28a745,color:#fff
     style R5 fill:#fd7e14,color:#fff
 ```
 
-### 5-Dimension Risk Scoring
+## Risk Register
 
-| Dimension | Score (1-5) | Key Driver | Evidence |
-|-----------|:-----------:|------------|----------|
-| **Coalition** | 2 | SD supply agreement stable on security issues | HD03214 + search_voteringar |
-| **Policy** | 3 | Welfare reform and cybersecurity implementation risks | HD024017 + HD03214 |
-| **Budget** | 3 | Vårpropositionen approaching — fiscal discipline under pressure | HD0I102 (April 13 announcement) |
-| **Electoral** | 3 | S building welfare counter-narrative 8 months before election | HD024017 + HD024016 |
-| **External** | 2 | Cyber threats and Iran diplomatic pressure manageable | HD03214 + HD12648 |
+| ID | Risk | Likelihood | Impact | Score | Mitigation | Evidence |
+|----|------|:----------:|:------:|:-----:|------------|----------|
+| RSK-001 | ECHR challenge to deportation reform delays implementation | 3/5 | 4/5 | 🟠 12/25 | Legal pre-screening; phased implementation | HD03235 |
+| RSK-002 | L defections on migration vote weaken coalition | 2/5 | 4/5 | 🟡 8/25 | Coalition agreement binds parties | HD03235 |
+| RSK-003 | Arms exports to controversial states damage credibility | 2/5 | 3/5 | 🟡 6/25 | End-use certificates; parliamentary oversight | HD03228 |
+| RSK-004 | Municipalities resist unfunded healthcare mandate | 2/5 | 2/5 | 🟢 4/25 | SKR consultation; transitional funding | HD03216 |
+| RSK-005 | Opposition frames security package as authoritarian | 3/5 | 3/5 | 🟠 9/25 | Bipartisan defense consensus as shield | HD03235, HD03228 |
 
----
-
-## 📊 Cascading Risk Chain
+## Risk Interconnections
 
 ```mermaid
 graph LR
-    A["S welfare motions<br/>HD024017 + HD024016"] --> B["Public debate<br/>on bidragstak"]
-    B --> C["Vårpropositionen<br/>becomes referendum<br/>on welfare reform"]
-    C --> D["Electoral risk<br/>for 2026 election"]
+    RSK1["RSK-001<br/>ECHR Risk"] --> RSK5["RSK-005<br/>Opposition Framing"]
+    RSK2["RSK-002<br/>Coalition Cohesion"] --> RSK1
+    RSK3["RSK-003<br/>Arms Export"] --> RSK5
     
-    E["Cybersecurity bill<br/>HD03214"] --> F["Resource allocation<br/>debate in FöU"]
-    F --> G["Budget pressure<br/>defense vs welfare"]
-    G --> C
-
-    style A fill:#ffc107,color:#000
-    style B fill:#ffc107,color:#000
-    style C fill:#fd7e14,color:#fff
-    style D fill:#dc3545,color:#fff
-    style E fill:#0d6efd,color:#fff
-    style F fill:#ffc107,color:#000
-    style G fill:#fd7e14,color:#fff
+    style RSK1 fill:#fd7e14,color:#fff
+    style RSK2 fill:#ffc107,color:#000
+    style RSK3 fill:#ffc107,color:#000
+    style RSK5 fill:#fd7e14,color:#fff
 ```
 
----
-
-## 🔮 Forward Risk Indicators
-
-1. **April 13 Vårpropositionen** — budget debate will crystallize welfare vs defense spending tensions
-2. **FöU processing speed** for HD03214 — fast-track = high government priority
-3. **SoU committee handling** of S welfare motions — watch for any government-side defections
-4. **SD Riksdag group behavior** on non-security votes — any signs of supply agreement strain
-
----
-
-## 📋 Document Control
-
-| Field | Value |
-|-------|-------|
-| **Created** | 2026-04-01 10:30 UTC |
-| **Framework** | Risk Assessment v2.1 |
-| **MCP Tools Used** | search_dokument, get_propositioner, search_voteringar, search_regering |
+**Key insight**: RSK-001 (ECHR) and RSK-005 (opposition framing) are linked — a successful legal challenge would validate the opposition narrative, compounding both risks.

@@ -1,61 +1,92 @@
-# 👥 Stakeholder Impact Analysis — 2026-04-01
+# Stakeholder Impact Analysis — 2026-04-01
 
-## 📋 Context
-
-| Field | Value |
-|-------|-------|
-| **Analysis ID** | STK-2026-04-01-001 |
-| **Date** | 2026-04-01 10:32 UTC |
-| **Produced By** | news-realtime-monitor |
+**Generated**: 2026-04-01 14:43 UTC
+**Documents Analyzed**: 66
+**Confidence**: HIGH
 
 ---
 
-## 📊 Stakeholder Impact Matrix
+## 📊 Stakeholder Impact Dashboard
 
 ```mermaid
 graph TD
-    subgraph "👥 Stakeholder Impact — 2026-04-01"
-        subgraph "High Impact"
-            CIT["Citizens<br/>Cybersecurity + Welfare"]
-            GOV["Government<br/>Defense modernization"]
-            BUS["Business<br/>Cyber compliance"]
-        end
-        subgraph "Medium Impact"
-            OPP["Opposition<br/>Welfare narrative"]
-            MIL["Military/Defense<br/>NCSC mandate"]
-            INT["International<br/>NATO interoperability"]
-        end
-        subgraph "Low Impact"
-            JUD["Judiciary<br/>Minimal direct impact"]
-            MED["Media<br/>Cybersecurity coverage"]
-        end
+    subgraph "👥 Stakeholder Impact Matrix"
+        CIT["🏠 Citizens<br/>Healthcare reform ✅<br/>Deportation rules ⚠️"]
+        GOV["🏛️ Government<br/>Security package delivery ✅<br/>Coalition management ⚠️"]
+        OPP["⚔️ Opposition<br/>Limited legislative leverage ❌<br/>Humanitarian framing 🔄"]
+        BUS["💼 Business<br/>Defence industry opportunity ✅<br/>Regulatory compliance 🔄"]
+        CIV["🤝 Civil Society<br/>Human rights monitoring 🔄<br/>Healthcare access ✅"]
+        INT["🌍 International<br/>NATO alignment ✅<br/>ECHR scrutiny ⚠️"]
+        JUD["⚖️ Judiciary<br/>Deportation jurisprudence 🔄<br/>Security law interpretation 🔄"]
+        MED["📰 Media<br/>Security package coverage 📰<br/>Multi-front story day 📰"]
     end
 
-    style CIT fill:#dc3545,color:#fff
-    style GOV fill:#dc3545,color:#fff
-    style BUS fill:#dc3545,color:#fff
-    style OPP fill:#ffc107,color:#000
-    style MIL fill:#ffc107,color:#000
-    style INT fill:#ffc107,color:#000
-    style JUD fill:#28a745,color:#fff
-    style MED fill:#28a745,color:#fff
+    style CIT fill:#0d6efd,color:#fff
+    style GOV fill:#28a745,color:#fff
+    style OPP fill:#dc3545,color:#fff
+    style BUS fill:#ffc107,color:#000
+    style CIV fill:#6f42c1,color:#fff
+    style INT fill:#0dcaf0,color:#000
+    style JUD fill:#fd7e14,color:#fff
+    style MED fill:#6c757d,color:#fff
 ```
 
-### Summary Matrix
+## Detailed Stakeholder Assessment
 
-| Stakeholder | Cybersecurity (HD03214) | Welfare Reform (HD024017) | Healthcare (HD03216) | Iran Policy (HD12648) |
-|-------------|:-----------------------:|:------------------------:|:--------------------:|:---------------------:|
-| Citizens | ✅ Positive | ❓ Contested | ✅ Positive | ↔ Neutral |
-| Government | ✅ Positive | ↔ Expected | ✅ Positive | ↔ Managed |
-| Opposition | ↔ Likely support | 📢 Core message | ↔ Likely support | ↔ Varied |
-| Business | ✅ Clarity | ↔ Indirect | ↔ Indirect | ↔ Neutral |
-| Civil Society | ✅ Digital rights | ⚠️ Concern | ✅ Positive | ↔ Neutral |
-| International | ✅ NATO aligned | ↔ Neutral | ↔ Neutral | 🔍 Monitoring |
-| Judiciary | ↔ Minimal | ↔ Implementation | ↔ Minimal | ↔ Minimal |
-| Media | 📰 High interest | 📰 Electoral angle | 📰 Moderate | 📰 Diplomatic angle |
+### 🏠 Citizens
 
----
+| Impact Area | Assessment | Key Document | Confidence |
+|-------------|-----------|:------------:|:----------:|
+| Healthcare quality | Positive — HD03216 strengthens municipal medical competence | HD03216 | H |
+| Criminal justice safety | Mixed — HD03235 stricter deportation may improve safety but raises rights concerns | HD03235 | M |
+| Social services | Under debate — SoU19 children/youth services contested by 7 parties | SoU19 debate | H |
+| Elderly care | Positive — SoU26 language requirements improve care quality | HDC320260401SoU26 | H |
+| Cybersecurity | Positive — HD03214 strengthens national cyber defense | HD03214 | H |
 
-## 📋 Document Control
+### 🏛️ Government Coalition
 
-| **Created** | 2026-04-01 10:32 UTC | **Framework** | Stakeholder Impact v2.1 |
+| Impact Area | Assessment | Key Document | Confidence |
+|-------------|-----------|:------------:|:----------:|
+| Tidö Agreement delivery | Strong — deportation + security package fulfills core commitments | HD03235, HD03228, HD03214 | H |
+| SD relationship | Stabilized — migration reform secures cooperation agreement | HD03235 | H |
+| Pre-election positioning | Favorable — security + healthcare dual narrative | All propositions | M |
+| Coalition cohesion | Minor strain — L on migration, KD on healthcare | HD03235, HD03216 | M |
+
+### ⚔️ Opposition (S + V + MP)
+
+| Impact Area | Assessment | Key Document | Confidence |
+|-------------|-----------|:------------:|:----------:|
+| Legislative influence | Limited — 96% motion rejection rate continues | Synthesis data | H |
+| Healthcare counter-narrative | Opportunity — can highlight implementation gaps | HD03216 | M |
+| Human rights positioning | V and MP can mobilize civil society on HD03235 | HD03235 | M |
+| Defense consensus trap | Constrained — S supports NATO, limiting attack surface on HD03228 | HD03228 | H |
+
+### 💼 Business Sector
+
+| Impact Area | Assessment | Key Document | Confidence |
+|-------------|-----------|:------------:|:----------:|
+| Defence industry | Major opportunity — Saab, BAE Bofors benefit from HD03228 | HD03228 | H |
+| Cybersecurity sector | Growth catalyst — HD03214 creates demand for cyber services | HD03214 | M |
+| Healthcare providers | New requirements — HD03216 competence mandates affect staffing | HD03216 | M |
+
+### 🌍 International Community
+
+| Impact Area | Assessment | Key Document | Confidence |
+|-------------|-----------|:------------:|:----------:|
+| NATO allies | Positive signal — Sweden modernizes defense framework | HD03228, HD03214 | H |
+| EU institutions | ECHR scrutiny expected on deportation reform | HD03235 | M |
+| Human rights organizations | Alert status — deportation rule changes require monitoring | HD03235 | H |
+
+### ⚖️ Judiciary
+
+| Impact Area | Assessment | Key Document | Confidence |
+|-------------|-----------|:------------:|:----------:|
+| Migration courts | Significant workload change — reduced judicial discretion on deportation | HD03235 | H |
+| Administrative courts | Security protection cases may increase from JuU29 | HDC320260401JuU29 | M |
+
+### 📰 Media
+
+| Impact Area | Assessment | Key Document | Confidence |
+|-------------|-----------|:------------:|:----------:|
+| News cycle | High — multi-front story day with security package, healthcare, and terrorism votes | All | H |
+| Investigative angles | ECHR implications, arms export destinations, municipal cost burden | HD03235, HD03228, HD03216 | M |

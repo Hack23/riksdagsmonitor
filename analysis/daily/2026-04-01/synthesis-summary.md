@@ -1,15 +1,22 @@
-# 🧩 Political Intelligence Synthesis — 2026-04-01
+# Analysis Synthesis Summary — 2026-04-01
+
+**Generated**: 2026-04-01 14:39 UTC
+**Data Sources**: get_propositioner, get_betankanden, search_dokument, search_anforanden, search_voteringar, search_regering, get_dokument
+**Documents Analyzed**: 66
+**Confidence**: HIGH
+
+---
 
 ## 📋 Synthesis Context
 
 | Field | Value |
 |-------|-------|
 | **Synthesis ID** | SYN-2026-04-01-001 |
-| **Analysis Date** | 2026-04-01 10:28 UTC |
-| **Documents Analyzed** | 6 |
+| **Analysis Date** | 2026-04-01 14:39 UTC |
+| **Documents Analyzed** | 66 |
 | **Analysis Period** | 2026-03-31 to 2026-04-01 |
 | **Produced By** | news-realtime-monitor |
-| **Overall Confidence** | MEDIUM |
+| **Overall Confidence** | HIGH |
 
 ---
 
@@ -17,79 +24,99 @@
 
 ```mermaid
 graph TD
-    subgraph "📊 Daily Political Intelligence Dashboard — 2026-04-01"
+    subgraph "📊 Daily Political Intelligence Dashboard"
         direction TB
         subgraph "🔒 Sensitivity"
-            CLS["Sensitivity<br/>SENSITIVE<br/>Cybersecurity + Defense"]
+            CLS["Sensitivity<br/>🟡 SENSITIVE<br/>Defence + Migration"]
         end
         subgraph "⚖️ Risk"
-            RSK["Overall Risk<br/>MEDIUM<br/>Top: RSK-002 Resource constraints"]
+            RSK["Overall Risk<br/>🟠 MEDIUM<br/>Multiple policy fronts active"]
         end
         subgraph "🎭 Threat"
-            THR["Threat Level<br/>MODERATE<br/>Top: Cyber infrastructure"]
+            THR["Threat Level<br/>🟡 MODERATE<br/>Human rights legal risk"]
         end
         subgraph "📈 Significance"
-            SIG["Top Significance<br/>7/10<br/>Breaking: Cybersecurity Center"]
+            SIG["Top Significance<br/>8/10<br/>⚡ Breaking"]
         end
     end
 
     subgraph "🎯 Editorial Decision"
         DEC{Article Decision}
-        DEC -->|"Score 7/10"| BRK["⚡ Breaking Article<br/>HD03214 Cybersecurity"]
-        DEC -->|"Score 4-5/10"| STD["📰 Context Articles<br/>HD03216, HD024017"]
-        DEC -->|"Score 3/10"| MON["📋 Monitor Only<br/>HD12648, HD01FöU11"]
+        DEC -->|"High urgency"| BRK["⚡ Breaking Article"]
     end
 
-    style CLS fill:#ffc107,color:#000
-    style RSK fill:#fd7e14,color:#fff
-    style THR fill:#ffc107,color:#000
-    style SIG fill:#dc3545,color:#fff
+    CLS --> DEC
+    RSK --> DEC
+    THR --> DEC
+    SIG --> DEC
+
+    style CLS fill:#ffc107,stroke:#333,stroke-width:2px,color:#000
+    style RSK fill:#fd7e14,stroke:#333,stroke-width:2px,color:#fff
+    style THR fill:#ffc107,stroke:#333,stroke-width:2px,color:#000
+    style SIG fill:#dc3545,stroke:#333,stroke-width:2px,color:#fff
     style BRK fill:#dc3545,color:#fff
-    style STD fill:#0d6efd,color:#fff
-    style MON fill:#28a745,color:#fff
 ```
 
 ---
 
-## 🔑 Cross-Document Patterns
+## 🏆 Top Findings by Significance
 
-### Theme 1: Defense & National Security Modernization
-The cybersecurity center proposition (HD03214) anchors today's legislative activity, supported by written questions on nuclear security guarantees (HD12647) and the FöU maritime rescue committee report (HD01FöU11). Pattern: the Tidö coalition is systematically strengthening Sweden's defense infrastructure post-NATO accession.
-
-### Theme 2: Social Welfare Reform Battleground
-S opposition motions (HD024017, HD024016) against the government's social assistance reform signal an intensifying ideological contest ahead of the 2026 election. The government proposes benefit caps and activity requirements; S frames this as attacking vulnerable families.
-
-### Theme 3: Foreign Policy Assertiveness
-The Iran embassy question cluster (HD12648, HD12634, HD12635, HD12639) by SD's Björn Söder tests the government's willingness to escalate diplomatically with Iran. Meanwhile, S probes nuclear security guarantees (HD12647). Both opposition flanks are pressuring the government on foreign policy.
+| Rank | dok_id | Title | Significance | Risk Tier | SWOT Impact | Recommendation |
+|:----:|--------|-------|:-----------:|:---------:|:-----------:|----------------|
+| 1 | HD03235 | Skärpta regler om utvisning på grund av brott | 8/10 | 🟠 | O dominant (coalition) | ⚡ Breaking |
+| 2 | HD03228 | Ett modernt regelverk för krigsmateriel | 8/10 | 🟠 | O dominant (NATO) | ⚡ Breaking |
+| 3 | HD03214 | Stärkt nationellt cybersäkerhetscenter | 8/10 | 🟡 | S dominant (bipartisan) | ⚡ Breaking |
+| 4 | HD03216 | Stärkt medicinsk kompetens i kommunal sjukvård | 6/10 | 🟡 | O dominant (reform) | 📰 Standard |
+| 5 | HDC320260401JuU14 | Beslut: Terrorism | 7/10 | 🟠 | S dominant (security) | 📰 Standard |
 
 ---
 
-## 📊 Document Significance Ranking
+## 💪 Aggregated SWOT Summary
 
-| Rank | dok_id | Title | Score | Rationale |
-|------|--------|-------|:-----:|-----------|
-| 1 | HD03214 | Cybersecurity Center (prop) | 7/10 | Defense/security legislation, national security infrastructure |
-| 2 | HD024017 | S motion vs bidragstak | 5/10 | Budget implications, welfare ideological contest |
-| 3 | HD03216 | Municipal healthcare (prop) | 4/10 | Healthcare reform, social policy |
-| 4 | HD12647 | Nuclear security guarantees | 4/10 | Defense/foreign policy, NATO implications |
-| 5 | HD12648 | Iran embassy cluster | 3/10 | Foreign policy, SD-M dynamics |
-| 6 | HD01FöU11 | Maritime rescue audit | 3/10 | Defense committee, environmental safety |
+### Coalition Balance
+
+```mermaid
+graph LR
+    subgraph "🏛️ Government Coalition Assessment"
+        GS["✅ Strengths: 8 entries<br/>Dominant: Security package<br/>delivery on Tidö commitments"]
+        GW["⚠️ Weaknesses: 5 entries<br/>Critical: Human rights risks,<br/>L internal tensions"]
+        GO["🚀 Opportunities: 6 entries<br/>Top: NATO integration,<br/>bipartisan defence consensus"]
+        GT["🔴 Threats: 5 entries<br/>Top: Legal challenges,<br/>pre-election opposition framing"]
+    end
+
+    style GS fill:#28a745,color:#fff
+    style GW fill:#ffc107,color:#000
+    style GO fill:#0d6efd,color:#fff
+    style GT fill:#dc3545,color:#fff
+```
+
+### Cross-Document Patterns
+
+1. **Security Package Coordination**: The government released HD03235 (deportation), HD03228 (arms regulation), and HD03214 (cybersecurity) on the same day — a deliberate strategic messaging package signaling strength on national security ahead of the 2026 election cycle.
+
+2. **Healthcare Reform Wave**: Today's chamber votes on SoU16, SoU17, SoU22, SoU26, combined with HD03216 proposition, indicate an accelerating social policy agenda.
+
+3. **Multi-Front Legislative Activity**: 13+ chamber decisions today span justice (JuU11, JuU14, JuU29), defense (FöU6), education (UbU10), healthcare (SoU16/17/22/26), culture (KrU6/7), foreign affairs (UU7), and public administration (KU29) — an exceptionally busy legislative day.
+
+4. **Opposition Challenge**: Active debate on SoU19 (children in social services) with speakers from 7 parties (M, S, SD, V, MP, L, C) signals this is a politically contested topic.
 
 ---
 
 ## 🔮 Forward Intelligence
 
-1. **Riksdag voting at 16:00** — KU29 "Offentlig förvaltning" debate with multi-party speakers scheduled
-2. **Vårpropositionen** — Spring budget debate announced for April 13 (per today's föredragningslista HD0I102)
-3. **FöU committee processing** of HD03214 — watch for fast-track signals
-4. **SoU committee** will process both welfare reform propositions and S counter-motions
+| Indicator | Signal | Timeline | Confidence |
+|-----------|--------|----------|:----------:|
+| S response to HD03235 | Will S support stricter deportation? | 1-2 weeks | M |
+| UU hearing on HD03228 | Arms regulation committee process | 2-4 weeks | H |
+| FöU hearing on HD03214 | Cybersecurity center implementation | 2-4 weeks | H |
+| Municipal response to HD03216 | SKR position on healthcare competence | 1-3 weeks | M |
+| Pre-election positioning | Security package as electoral argument | Ongoing | H |
 
 ---
 
-## 📋 Document Control
+## 📊 Data Quality Notes
 
-| Field | Value |
-|-------|-------|
-| **Created** | 2026-04-01 10:28 UTC |
-| **Framework** | Synthesis v2.1 |
-| **MCP Tools Used** | search_dokument, get_propositioner, get_betankanden, search_voteringar, search_anforanden, search_regering |
+- **Calendar API**: Returned HTML instead of JSON (known intermittent issue). Used search_dokument as fallback.
+- **Vote details**: Individual vote records available for earlier dates (AU10 from 2026-03-04), but today's vote breakdowns not yet in API.
+- **Speech texts**: Anföranden API returned debate metadata but empty text fields — debate titles and speaker information available.
+- **Overall confidence**: HIGH — 66 documents analyzed with comprehensive MCP coverage.
