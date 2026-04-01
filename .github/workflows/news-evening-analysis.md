@@ -225,9 +225,8 @@ Before generating articles, consult these skills:
 
 Based on the editorial profile for `evening-analysis` (from `scripts/editorial-framework.ts`):
 - **SWOT**: ALL 8 stakeholder groups analyzed with evidence from the day's parliamentary activity
-- **SWOT**: quick (1-paragraph overview)
-- **Dashboard**: required (min. 1 Chart.js chart)
-- **Mindmap**: not required
+- **Dashboard**: required (min. 1 chart)
+- **Mindmap**: optional for standard; required for deep/comprehensive
 - **Min. stakeholders**: 8 perspectives (Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion)
 - **Risk Matrix**: required — numeric L×I scores for day's key developments
 - **Forward Indicators**: required — next-day/next-week watch items with specific triggers
