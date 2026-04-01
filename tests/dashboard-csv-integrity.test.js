@@ -259,16 +259,162 @@ describe('Dashboard-CSV Data Integrity', () => {
     });
   });
 
+  describe('Dashboard CSV column validation', () => {
+    /**
+     * Critical column references per dashboard.
+     * Each key must be present as a CSV header in at least one of the dashboard's CSV files.
+     * These are the columns accessed via row['col'] or row.col in the TypeScript source.
+     */
+    const DASHBOARD_COLUMN_REQUIREMENTS = {
+      'stats-loader': {
+        columns: ['object_name', 'row_count', 'status'],
+      },
+      'party-dashboard': {
+        columns: ['party', 'year', 'momentum', 'alignment_rate', 'party1', 'party2'],
+      },
+      'election-cycle': {
+        columns: ['election_cycle_id', 'party', 'cycle_year', 'performance_score', 'avg_approval_rate',
+          'forecast_confidence', 'semester', 'total_ballots', 'is_pre_election_semester'],
+      },
+      'committees-dashboard': {
+        columns: ['year', 'committee', 'committee_code', 'productivity_level', 'quarter'],
+      },
+      'coalition-dashboard': {
+        columns: ['party', 'party1', 'party2', 'alignment_rate', 'behavioral_assessment',
+          'anomaly_classification', 'avg_rebellions', 'politician_count', 'vote_count', 'year'],
+      },
+      'seasonal-patterns': {
+        columns: ['quarter', 'total_ballots', 'attendance_rate', 'documents_produced',
+          'ballot_z_score', 'doc_z_score', 'year', 'is_election_year', 'seasonal_pattern_classification'],
+      },
+      'pre-election': {
+        columns: ['year', 'total_ballots', 'total_documents', 'is_election_year',
+          'avg_party_win_rate', 'avg_party_absence_rate'],
+      },
+      'anomaly-detection': {
+        columns: ['quarter', 'year', 'anomaly_severity', 'anomaly_type', 'max_z_score'],
+      },
+      'ministry-dashboard': {
+        columns: ['ministry_name', 'documents_produced', 'risk_level', 'year',
+          'ministry_code', 'committee', 'approval_rate', 'total_proposals'],
+      },
+      'risk-dashboard': {
+        columns: ['party'],
+      },
+      'politician-dashboard': {
+        columns: ['person_id', 'first_name', 'last_name', 'risk_level', 'risk_score',
+          'experience_level', 'politician_count', 'influence_classification'],
+      },
+      'cia-dashboard': {
+        columns: ['party', 'year', 'risk_level', 'politician_count', 'status',
+          'alignment_rate', 'ministry_name', 'effectiveness_assessment'],
+      },
+    };
+
+    /** Get CSV headers as an array */
+    function getCsvHeaders(csvPath) {
+      const fullPath = resolve(CIA_DATA_DIR, csvPath);
+      if (!existsSync(fullPath)) return [];
+      const content = readFileSync(fullPath, 'utf-8').trim();
+      if (!content) return [];
+      return content.split('\n')[0].split(',').map(h => h.trim().replace(/"/g, ''));
+    }
+
+    Object.entries(DASHBOARD_COLUMN_REQUIREMENTS).forEach(([dashboardName, { columns }]) => {
+      describe(dashboardName, () => {
+        // Get all CSV headers for this dashboard
+        const dashConfig = DASHBOARD_CSV_DEPENDENCIES[dashboardName];
+        if (!dashConfig) return;
+
+        const allHeaders = new Set();
+        dashConfig.csvFiles.forEach(csv => {
+          getCsvHeaders(csv).forEach(h => allHeaders.add(h));
+        });
+
+        columns.forEach(col => {
+          it(`should have column "${col}" in at least one CSV`, () => {
+            expect(allHeaders.has(col),
+              `Dashboard "${dashboardName}" accesses column "${col}" but no CSV has this header. Available: ${[...allHeaders].join(', ')}`
+            ).toBe(true);
+          });
+        });
+      });
+    });
+  });
+
+  describe('Extraction summary row count validation', () => {
+    const summaryPath = resolve(CIA_DATA_DIR, 'extraction_summary_report.csv');
+
+    it('extraction_summary_report.csv should have 200 rows', () => {
+      expect(existsSync(summaryPath)).toBe(true);
+      const rows = countDataRows(summaryPath);
+      expect(rows).toBe(200);
+    });
+
+    it('should contain view entries matching dashboard source views', () => {
+      const content = readFileSync(summaryPath, 'utf-8');
+      const viewNames = [
+        'view_politician_risk_summary',
+        'view_riksdagen_politician_influence_metrics',
+        'view_party_effectiveness_trends',
+        'view_riksdagen_party_momentum_analysis',
+        'view_committee_productivity_matrix',
+        'view_riksdagen_committee_decisions',
+        'view_ministry_productivity_matrix',
+        'view_ministry_decision_impact',
+        'view_ministry_effectiveness_trends',
+        'view_election_cycle_comparative_analysis',
+        'view_election_cycle_decision_intelligence',
+        'view_riksdagen_seasonal_activity_patterns',
+        'view_riksdagen_seasonal_anomaly_detection',
+        'view_riksdagen_pre_election_quarterly_activity',
+        'view_decision_temporal_trends',
+        'view_riksdagen_crisis_resilience_indicators',
+      ];
+      viewNames.forEach(view => {
+        expect(content).toContain(view);
+      });
+    });
+
+    it('all source views should have success status', () => {
+      const lines = readFileSync(summaryPath, 'utf-8').trim().split('\n').slice(1);
+      const viewNames = [
+        'view_politician_risk_summary',
+        'view_riksdagen_politician_influence_metrics',
+        'view_party_effectiveness_trends',
+        'view_riksdagen_party_momentum_analysis',
+        'view_committee_productivity_matrix',
+        'view_riksdagen_committee_decisions',
+        'view_ministry_productivity_matrix',
+        'view_ministry_decision_impact',
+        'view_ministry_effectiveness_trends',
+        'view_election_cycle_comparative_analysis',
+        'view_election_cycle_decision_intelligence',
+        'view_riksdagen_seasonal_activity_patterns',
+        'view_riksdagen_seasonal_anomaly_detection',
+        'view_riksdagen_pre_election_quarterly_activity',
+        'view_decision_temporal_trends',
+        'view_riksdagen_crisis_resilience_indicators',
+      ];
+      for (const line of lines) {
+        const [, objName, status] = line.split(',');
+        if (viewNames.includes(objName)) {
+          expect(status, `View ${objName} should have success status`).toBe('success');
+        }
+      }
+    });
+  });
+
   describe('CSV data quality summary', () => {
     it('should report all empty/header-only CSV files in cia-data', () => {
       const emptyFiles = [];
 
-      function scanDir(dir) {
+      function collectEmptyCsvFiles(dir) {
         const entries = readdirSync(dir, { withFileTypes: true });
         for (const entry of entries) {
           const fullPath = join(dir, entry.name);
           if (entry.isDirectory()) {
-            scanDir(fullPath);
+            collectEmptyCsvFiles(fullPath);
           } else if (entry.name.endsWith('.csv')) {
             const rows = countDataRows(fullPath);
             if (rows === 0) {
@@ -279,7 +425,7 @@ describe('Dashboard-CSV Data Integrity', () => {
         }
       }
 
-      scanDir(CIA_DATA_DIR);
+      collectEmptyCsvFiles(CIA_DATA_DIR);
 
       // Log empty files for visibility but don't fail the test
       // Empty CSV files are acceptable if they are not referenced by any dashboard
@@ -294,8 +440,8 @@ describe('Dashboard-CSV Data Integrity', () => {
         config.csvFiles.forEach(csv => dashboardCsvs.add(csv));
       });
 
-      const brokenDashboardCsvs = emptyFiles.filter(f => dashboardCsvs.has(f));
-      expect(brokenDashboardCsvs, `Dashboard-referenced CSVs that are empty: ${brokenDashboardCsvs.join(', ')}`).toEqual([]);
+      const referencedEmptyCsvs = emptyFiles.filter(f => dashboardCsvs.has(f));
+      expect(referencedEmptyCsvs, `Dashboard-referenced CSVs that are empty: ${referencedEmptyCsvs.join(', ')}`).toEqual([]);
     });
   });
 });
