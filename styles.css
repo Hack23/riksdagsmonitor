@@ -9462,9 +9462,9 @@ body.news-page {
    parliament, government, and agencies with systematic transparency.
    ============================================= */
 
-/* News Article Container — full-width layout */
+/* News Article Container — constrained width for readability */
 .news-article {
-  max-width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 clamp(1rem, 3vw, 3rem);
   background: var(--bg-color, #f8f9fa);
@@ -9546,6 +9546,29 @@ body.news-page {
 .news-article .article-content p {
   margin: 0 0 1.35rem 0;
   line-height: 1.8;
+  max-width: 75ch;
+}
+
+/* Images inside articles — ensure fully visible */
+.news-article .article-content img,
+.news-article img:not(.hero-banner-bg):not(.article-site-logo) {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius, 8px);
+  display: block;
+  margin: 1rem auto;
+}
+
+.news-article .article-content figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.news-article .article-content figcaption {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #666);
+  margin-top: 0.5rem;
+  font-style: italic;
 }
 
 /* Context Box */
@@ -10202,6 +10225,56 @@ body.news-page {
   padding-top: 2rem;
 }
 
+/* Article sub-lede (secondary lead paragraph) */
+.news-article .article-lede {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary, #4a4a4a);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+/* Interpellation and motion entry cards */
+.news-article .interpellation-entry,
+.news-article .motion-entry {
+  background: var(--badge-bg, #f8f9fa);
+  border-left: 4px solid var(--primary-color, #006633);
+  border-radius: 0 var(--border-radius-sm, 4px) var(--border-radius-sm, 4px) 0;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.news-article .interpellation-entry h4,
+.news-article .motion-entry h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: var(--header-color, #006633);
+}
+
+.news-article .interpellation-entry p,
+.news-article .motion-entry p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+html[data-theme="dark"] .news-article .interpellation-entry,
+html[data-theme="dark"] .news-article .motion-entry {
+  background: rgba(0, 28, 37, 0.4);
+  border-left-color: var(--primary-color);
+}
+
+html[data-theme="dark"] .news-article .article-lede {
+  color: var(--text-secondary, #b0b0b0);
+}
+
+[dir="rtl"] .news-article .interpellation-entry,
+[dir="rtl"] .news-article .motion-entry {
+  border-left: none;
+  border-right: 4px solid var(--primary-color, #006633);
+  border-radius: var(--border-radius-sm, 4px) 0 0 var(--border-radius-sm, 4px);
+}
+
 .news-article .article-sources {
   background: var(--badge-bg, #f8f9fa);
   padding: 1.5rem;
@@ -10856,7 +10929,7 @@ a:not(.btn):not(.btn-primary-large):not(.btn-secondary):not(.nav-link):not([clas
 }
 
 /* ── 5. Article Text Readability ──────────────────────────────────────── */
-/* Full-width article content — no artificial narrow column */
+/* Article content — readable width within constrained container */
 .article-content,
 .news-article .article-content,
 .news-article .lede,
@@ -10865,9 +10938,9 @@ a:not(.btn):not(.btn-primary-large):not(.btn-secondary):not(.nav-link):not([clas
   max-width: 100%;
 }
 
-/* Full-width article container */
+/* Constrained article container for readability */
 .news-article {
-  max-width: 100%;
+  max-width: 1200px;
   margin-inline: auto;
 }
 
@@ -11683,6 +11756,19 @@ html[data-theme="dark"] .news-article .article-content h2 {
 
 html[data-theme="dark"] .news-article .article-content h3 {
   color: var(--primary-color);
+}
+
+/* Dark mode: article content text alignment and spacing */
+html[data-theme="dark"] .news-article .article-content p {
+  color: var(--text-color, #e0e0e0);
+}
+
+html[data-theme="dark"] .news-article .article-sources {
+  background: rgba(0, 28, 37, 0.4);
+}
+
+html[data-theme="dark"] .news-article .article-sources h3 {
+  color: var(--primary-light);
 }
 
 /* Light mode: news articles get professional green tones */
