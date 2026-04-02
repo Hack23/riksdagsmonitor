@@ -4,6 +4,16 @@
  * releases. Evaluates political intelligence significance across multiple dimensions
  * to detect important strategic content that should trigger deep inspection analysis.
  *
+ * ⚠️ DEPRECATED FOR SIGNIFICANCE ASSESSMENT (v3.0, 2026-04-02):
+ * Per analysis/methodologies/ai-driven-analysis-guide.md Rule 2, the function
+ * scoreNewsworthiness() is DEPRECATED for generating editorial significance
+ * assessments. AI agents in agentic workflow .md files MUST produce their own
+ * significance scoring based on actual document content analysis, not heuristic
+ * keyword matching. See SHARED_PROMPT_PATTERNS.md for AI prompt patterns.
+ *
+ * This module retains the scoring infrastructure for article type routing
+ * (deep-inspection vs standard vs brief) which is NOT deprecated.
+ *
  * Used by agentic workflows to prioritise content and decide when to generate
  * deep-inspection articles vs standard coverage.
  *
