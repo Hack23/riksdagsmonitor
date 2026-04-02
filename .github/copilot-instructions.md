@@ -6,7 +6,7 @@
 **Stack**: HTML5, CSS3, TypeScript 6.0.2, Vite 8.0.3, Vitest 4.1.2, Cypress 15.13.0
 **Runtime**: Node.js 25, ES2025 target, ESNext modules
 **Deploy**: GitHub Pages + AWS S3 dual deployment
-**Languages**: 14-language support (EN, SV, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH)
+**Languages**: 14-language support (EN, SV, DA, NB, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH)
 **Security**: ISO 27001:2022, NIST CSF 2.0, CIS Controls v8.1 compliant
 **Organization**: Hack23 AB
 **ISMS**: [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC)
@@ -24,6 +24,8 @@
 - Run checks and validations before committing
 
 ### 2. Never Create New Markdown Files (Unless Explicitly Requested)
+- Update and extend existing Markdown documentation instead of adding new `.md` files.
+- Only create a new Markdown file when the user explicitly requests it.
 
 ### 3. Run Checks Before Committing
 - **MUST**: Validate HTML (`htmlhint`), check links (`linkinator`), validate JSON
