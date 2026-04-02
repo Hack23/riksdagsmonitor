@@ -257,56 +257,64 @@ Scripts MUST NEVER generate any of these — this is the AI agent's exclusive re
 
 #### Deprecated Analysis-Generating Scripts
 
-The following script directories previously generated analysis content and are now **DEPRECATED** — their analysis functions are replaced by AI agent analysis in workflow prompts:
+The following script directories and functions previously generated analysis content and are now **DEPRECATED** — their analysis functions are replaced by AI agent analysis in workflow prompts:
 
-| Directory | Status | Replacement |
+| Directory/Function | Status | Replacement |
 |-----------|--------|-------------|
 | `scripts/ai-analysis/` | ⚠️ DEPRECATED for analysis generation | AI agent performs analysis per workflow prompts |
 | `scripts/analysis-framework/` | ⚠️ DEPRECATED for analysis generation | AI agent uses methodology guides directly |
 | `scripts/data-transformers/content-generators/ai-swot-analyzer.ts` | ⚠️ DEPRECATED | AI agent generates SWOT per political-swot-framework.md |
 | `scripts/data-transformers/content-generators/stakeholder-swot-section.ts` | ⚠️ DEPRECATED | AI agent generates stakeholder analysis per stakeholder-impact.md |
+| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildDynamicSwot()` | ⚠️ DEPRECATED | AI prompt: "Generate SWOT for all 8 stakeholder groups with dok_id evidence" |
+| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildStrategicImplications()` | ⚠️ DEPRECATED | AI prompt: "Write strategic implications citing specific policy signals" |
+| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildKeyTakeaways()` | ⚠️ DEPRECATED | AI prompt: "Extract 5 key takeaways with confidence levels" |
+| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildLegislativeImpact()` | ⚠️ DEPRECATED | AI prompt: "Assess legislative impact using committee + vote data" |
+| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildCrossPartyImplications()` | ⚠️ DEPRECATED | AI prompt: "Analyze cross-party dynamics from voting records" |
+| `scripts/data-transformers/content-generators/shared.ts` → `generateDeepAnalysisSection()` | ⚠️ DEPRECATED | AI prompt: "Write 5W deep analysis (Who/What/When/Why/Winners)" |
+| `scripts/data-transformers/content-generators/newsworthiness.ts` → `scoreNewsworthiness()` | ⚠️ DEPRECATED | AI prompt: "Score newsworthiness 0-100 with dimension breakdown" |
+| `scripts/data-transformers/content-generators/shared.ts` → all `*Text()` templates | ⚠️ DEPRECATED | AI prompt: "Write editorial analysis from actual document data" |
 
-**These scripts may still be called for data downloading and HTML formatting functions**, but their analysis output (SWOT entries, risk scores, classifications) MUST be treated as stubs that the AI agent MUST overwrite with real template-compliant analysis.
+**These scripts may still be called for data downloading and HTML formatting functions**, but their analysis output (SWOT entries, risk scores, classifications, titles, descriptions, editorial judgments) MUST be treated as stubs that the AI agent MUST overwrite with real template-compliant analysis.
 ````
 
 ---
 
-## 📊 TOP 10 QUALITY ISSUES IN CURRENT ARTICLES (2026-04-01)
+## 📊 TOP 10 QUALITY ISSUES IN CURRENT ARTICLES (2026-04-02)
 
-> **Quality audit findings** — these issues MUST be addressed by improving all agentic workflow prompts.
+> **Quality audit findings** — these issues MUST be addressed by improving all agentic workflow prompts. Updated from 2026-04-01 audit with additional 2026-04-02 findings.
 
 ````markdown
-### Quality Issues Detected in 2026-04-01 Articles
+### Quality Issues Detected in 2026-04-02 Articles
 
-These issues were identified across all 61 articles generated on 2026-04-01. ALL workflow `.md` files must be updated to prevent these issues.
+These issues were identified across all articles generated on 2026-04-02. ALL workflow `.md` files must be updated to prevent these issues.
 
 | # | Issue | Severity | Affected Workflows | Root Cause |
 |---|-------|----------|-------------------|------------|
-| 1 | **ZERO Mermaid diagrams** in any article | CRITICAL | ALL | Workflows don't enforce Mermaid rendering in HTML output |
-| 2 | **SWOT tables use prose** instead of structured evidence tables with dok_id columns | HIGH | committee-reports, interpellations, motions, month-ahead | Prompt doesn't require evidence table format |
-| 3 | **Interpellation articles have ZERO dok_id/frs references** | HIGH | news-interpellations | Data fetch doesn't include frs document IDs |
-| 4 | **Only 3 of 8 stakeholder groups** analyzed (Government, Opposition, Civil Society) | HIGH | ALL | Prompt only asks for 3 perspectives |
-| 5 | **No numeric L×I risk scores** — risk assessment uses text labels only | MEDIUM | committee-reports, interpellations, month-ahead | No structured risk matrix in prompt |
-| 6 | **Breaking-votering missing English variant** | CRITICAL | news-article-generator | English votering article not generated |
-| 7 | **No "Forward Indicators" section** with triggers and timelines | MEDIUM | breaking, committee-reports, interpellations, motions | Prompt doesn't require forward indicators |
-| 8 | **Canvas.js charts used instead of Mermaid** | MEDIUM | ALL | Article template uses Canvas library, not Mermaid |
-| 9 | **No classification decision tree or significance scoring** visible in articles | MEDIUM | ALL | Classification metadata hidden in badges only |
-| 10 | **Generic boilerplate** repeated across articles ("Requires committee review...") | MEDIUM | committee-reports, month-ahead, interpellations | Template-driven generation without per-document customization |
+| 1 | **3 of 5 articles have placeholder meta descriptions** ("Analysis of N documents covering Field:, Field:") | CRITICAL | committee-reports, propositions, interpellations | Script generates meta description from template, AI doesn't overwrite |
+| 2 | **Generic title suffix "Defense in Focus" repeated** across 3 unrelated article types | CRITICAL | committee-reports, propositions, interpellations | Script generates title from category label, AI doesn't generate newsworthy title |
+| 3 | **ZERO links to analysis files** in any news article | HIGH | ALL | No prompt instruction to include GitHub analysis references |
+| 4 | **Truncated Swedish text in English articles** — proposition excerpts cut off mid-sentence | HIGH | propositions | Script truncates text; AI should translate/summarize instead |
+| 5 | **Cross-reference map reports "0 relationships"** despite clear document clusters | HIGH | ALL analysis | AI cross-reference detection prompt too weak |
+| 6 | **SWOT tables use prose** instead of structured evidence tables with dok_id columns | HIGH | committee-reports, interpellations, motions | Prompt doesn't require evidence table format |
+| 7 | **Only 3 of 8 stakeholder groups** analyzed in some articles | HIGH | committee-reports, propositions | Prompt only asks for 3 perspectives |
+| 8 | **Risk assessment contradictions** — RSK-04 says "LOW RISK" but cites evidence proving strength | MEDIUM | analysis risk-assessment.md | AI doesn't validate label-evidence consistency |
+| 9 | **No "Forward Indicators" section** with specific trigger dates | MEDIUM | committee-reports, interpellations, motions | Prompt doesn't require dated triggers |
+| 10 | **Generic boilerplate** repeated across articles ("Requires committee review...") | MEDIUM | committee-reports, propositions | Template-driven generation without per-document customization |
 
-#### Workflow Fix Requirements
+#### Workflow Fix Requirements (Updated 2026-04-02)
 
 Every `news-*.md` workflow MUST be updated to:
 
-1. **Require Mermaid diagrams**: Add explicit instruction to include ≥1 Mermaid diagram in every article HTML
-2. **Require structured SWOT tables**: Add HTML table template with `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact` columns
-3. **Require dok_id citations**: Add validation step checking `grep -c 'dok_id\|Prop\.\|frs\|mot\.\|bet\.' article.html`
-4. **Require 8 stakeholder groups**: Update prompt to list all 8 groups with instructions for evidence per group
-5. **Require numeric risk matrix**: Add L×I table template in prompt
-6. **Require forward indicators**: Add "What to Watch" section template with trigger/timeline/significance columns
-7. **Require classification rationale**: Add significance scoring section template
-8. **Ban boilerplate**: Add anti-pattern list of rejected phrases with enforcement check
-9. **Require confidence labels**: Add `[HIGH]`/`[MEDIUM]`/`[LOW]` on all analytical claims
-10. **Enforce article type in all outputs**: Tag analysis with article type to prevent cross-type overwriting
+1. **AI-generate titles**: Add explicit prompt instruction — AI MUST generate a unique, newsworthy title from actual document content; NEVER use template patterns like "Category: Topic This Week: Defense in Focus"
+2. **AI-generate meta descriptions**: Add explicit prompt instruction — AI MUST write a 150-160 character description highlighting key political intelligence; NEVER use "Analysis of N documents covering Field:, Field:"
+3. **Include analysis references**: Add "📊 Analysis & Sources" section linking to `https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${DATE}/${ARTICLE_TYPE}/` files
+4. **AI-translate, don't truncate**: AI MUST translate/summarize Swedish text for English articles; NEVER paste truncated Swedish text
+5. **Require cross-reference detection**: AI MUST identify ≥3 document relationships per date (policy clusters, legislative chains, opposition patterns)
+6. **Require structured SWOT tables**: Add HTML table template with `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact` columns
+7. **Require 8 stakeholder groups**: Update prompt to list all 8 groups with instructions for evidence per group
+8. **Validate label-evidence consistency**: AI MUST verify risk labels match their cited evidence direction
+9. **Require dated forward indicators**: Add "What to Watch" with specific committee dates and vote schedules
+10. **Ban boilerplate**: Add anti-pattern list of rejected phrases: "Requires committee review and chamber debate", "Defense in Focus", "Analysis of N documents"
 ````
 
 ---
