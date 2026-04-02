@@ -841,8 +841,8 @@ Custom domains can be added per workflow:
 
 ```markdown
 ---
-firewall:
-  allow:
+network:
+  allowed:
     - api.example.com
     - data.government.se
 ---
