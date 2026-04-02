@@ -2,8 +2,8 @@
 name: "GitHub Actions Integration for Agentic Workflows"
 description: "Comprehensive guide to integrating agentic automation with GitHub Actions CI/CD pipelines, including workflow triggers, environment configuration, secrets management, matrix strategies, and deployment patterns for production-ready autonomous systems."
 license: "Apache-2.0"
-version: "1.0.0"
-last_updated: "2026-02-17"
+version: "2.0.0"
+last_updated: "2026-04-02"
 tags:
   - github-actions
   - ci-cd
@@ -1520,6 +1520,6 @@ When integrating agentic workflows with GitHub Actions:
 ---
 
 **License**: Apache-2.0  
-**Version**: 1.0.0  
-**Last Updated**: 2026-02-17  
+**Version**: 2.0.0  
+**Last Updated**: 2026-04-02  
 **Maintained by**: Hack23 Organization

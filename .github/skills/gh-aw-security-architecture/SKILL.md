@@ -2,8 +2,8 @@
 name: GitHub Agentic Workflows Security Architecture
 description: Comprehensive security architecture for GitHub Agentic Workflows including defense-in-depth, threat modeling, sandboxing, permission models, attack vectors, and security best practices
 license: Apache-2.0
-version: 1.0.0
-last_updated: 2026-02-17
+version: 2.0.0
+last_updated: 2026-04-02
 tags:
   - github-agentic-workflows
   - security
@@ -1723,32 +1723,64 @@ Ensure all team members understand:
 - [GitHub Actions Security Hardening](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions)
 - [Step Security Harden Runner](https://github.com/step-security/harden-runner)
 - [OWASP AI Security](https://owasp.org/www-project-ai-security-and-privacy-guide/)
-- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
-- [Microsoft Threat Modeling Tool](https://www.microsoft.com/en-us/securityengineering/sdl/threatmodeling)
+- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework/)
+
+## 🆕 Five-Layer Security Model (v0.45.5)
+
+GitHub Agentic Workflows addresses AI agent manipulation with five security layers:
+
+### Layer 1: Read-Only Tokens
+The AI agent receives a GitHub token scoped to **read-only** permissions. Even if the agent attempts to push code or delete files, the token doesn't allow it.
+
+### Layer 2: Zero Secrets in Agent
+The agent process **never** receives write tokens, API keys, or credentials. Secrets exist only in separate, isolated jobs that run **after** the agent finishes and outputs pass review.
+
+### Layer 3: Containerized with Network Firewall
+The agent runs in an isolated container. The **Agent Workflow Firewall (AWF)** routes all outbound traffic through a Squid proxy enforcing an explicit domain allowlist. Unauthorized traffic is dropped at the kernel level.
+
+### Layer 4: Safe Outputs with Guardrails
+The agent cannot write to GitHub directly. It produces structured artifacts describing intended actions. A separate job with scoped write permissions applies only what the workflow explicitly permits — hard limits per operation, required title prefixes, label constraints.
+
+### Layer 5: Agentic Threat Detection
+Before any output is applied, a dedicated **threat detection job** runs an AI-powered scan of the agent's proposed changes. It checks for:
+- Prompt injection attacks
+- Leaked credentials
+- Malicious code patterns
+
+If suspicious content is found, the workflow **fails immediately** and nothing is written.
+
+### Integrity Filtering
+
+The `min-integrity` setting controls which users can trigger agent actions in public repositories:
+
+| Level | Who Can Trigger | Use Case |
+|-------|----------------|----------|
+| `approved` (default) | Owners, members, collaborators | Most workflows |
+| `none` | All users | Public issue triage |
+
+```yaml
+tools:
+  github:
+    min-integrity: approved  # Default — restrict to trusted users
+```
 
 ---
 
 ## ✅ Remember
 
-- [ ] Implement defense-in-depth with multiple security layers
-- [ ] Use STRIDE framework for threat modeling
-- [ ] Sandbox agent execution with containers and namespaces
-- [ ] Apply least privilege principle to all permissions
-- [ ] Validate and sanitize all inputs and outputs
-- [ ] Scan for secrets in agent outputs
-- [ ] Monitor for attack vectors (prompt injection, exfiltration, etc.)
-- [ ] Enforce network egress controls
-- [ ] Set resource limits (CPU, memory, time, disk)
-- [ ] Implement comprehensive audit logging
-- [ ] Require human approval for critical operations
-- [ ] Regular security audits and dependency scanning
-- [ ] Have incident response plan ready
-- [ ] Train team on security best practices
-- [ ] Use zero trust architecture (never trust, always verify)
-- [ ] Keep security controls up to date
+- ✅ Five security layers work together — no single point of failure
+- ✅ Read-only tokens + zero secrets = agent can't exfiltrate or write
+- ✅ AWF firewall blocks unauthorized network egress at kernel level
+- ✅ Safe outputs enforce hard limits — the agent requests, a gated job decides
+- ✅ Threat detection scans all outputs before any write occurs
+- ✅ Use `min-integrity` to control public repo exposure
+- ✅ STRIDE threat modeling for all custom workflows
+- ✅ Least privilege on all permissions
+- ✅ Monitor audit logs for anomalies
+- ✅ Regular security reviews of workflow configurations
 
 ---
 
-**Last Updated**: 2026-02-17  
-**Version**: 1.0.0  
+**Last Updated**: 2026-04-02  
+**Version**: 2.0.0  
 **License**: Apache-2.0

@@ -2,8 +2,8 @@
 name: GitHub Agentic Workflows Tools Ecosystem
 description: Comprehensive guide for all available tools including GitHub, file operations, web, bash, playwright, tool capabilities and limitations, integration patterns, custom tool development, security considerations, and usage examples
 license: Apache-2.0
-version: 1.0.0
-last_updated: 2026-02-17
+version: 2.0.0
+last_updated: 2026-04-02
 tags:
   - github-agentic-workflows
   - tools
@@ -697,31 +697,73 @@ async function retryTool(tool, args, maxRetries = 3) {
 
 ---
 
+## 🆕 Tool Scoping & Engine Support (v0.45.5)
+
+### GitHub Tools Configuration
+
+Scope tool access in frontmatter:
+
+```markdown
+---
+tools:
+  github:
+    toolsets: [issues, labels, pull-requests]  # Specific toolsets
+    min-integrity: approved                     # Integrity filtering
+---
+```
+
+Available toolsets: `context`, `repos`, `issues`, `pull-requests`, `users`, `projects`, `actions`, `security`, `discussions`, `stars`, `notifications`, `gists`
+
+### Engine-Specific Tool Support
+
+| Engine | GitHub Tools | Bash | Playwright | File Ops | MCP |
+|--------|-------------|------|------------|----------|-----|
+| Copilot | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Claude | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Codex | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Gemini | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+### MCP Tool Routing
+
+Connect external tools via MCP servers. The MCP Gateway routes requests from the agent to Docker containers running MCP servers:
+
+```markdown
+---
+tools:
+  github:
+    toolsets: [issues]
+  mcp:
+    servers:
+      - name: custom-server
+        command: npx
+        args: ["-y", "@my/mcp-server"]
+---
+```
+
 ## 📚 References
 
-- [GitHub REST API](https://docs.github.com/en/rest)
-- [Playwright Docs](https://playwright.dev/)
+- [GitHub Tools Reference](https://github.github.com/gh-aw/reference/github-tools/)
+- [Tools Overview](https://github.github.com/gh-aw/reference/tools/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [Playwright Docs](https://playwright.dev/)
 
 ---
 
 ## ✅ Remember
 
-- [ ] Understand all available tools
-- [ ] Choose the right tool for each task
-- [ ] Validate tool inputs
-- [ ] Sanitize paths and commands
-- [ ] Rate limit tool invocations
-- [ ] Audit log all usage
-- [ ] Handle errors gracefully
-- [ ] Use parallel execution when possible
-- [ ] Secure sensitive parameters
-- [ ] Test custom tools thoroughly
-- [ ] Monitor tool performance
-- [ ] Keep tools up to date
+- ✅ Scope tools to minimum needed (least privilege)
+- ✅ Use `toolsets` to restrict GitHub API access
+- ✅ Use `min-integrity` for public repo security
+- ✅ All engines support the same tool categories
+- ✅ MCP enables extensibility with custom servers
+- ✅ Validate tool inputs, sanitize paths and commands
+- ✅ Rate limit tool invocations
+- ✅ Handle errors gracefully
+- ✅ Use parallel tool execution when possible
+- ✅ Audit log all tool usage
 
 ---
 
-**Last Updated**: 2026-02-17  
-**Version**: 1.0.0  
+**Last Updated**: 2026-04-02  
+**Version**: 2.0.0  
 **License**: Apache-2.0

@@ -2,8 +2,8 @@
 name: GitHub Agentic Workflows Continuous AI Patterns
 description: Comprehensive guide for continuous AI workflows including triage, review, maintenance, monitoring, scheduling strategies, event-driven automation, human-in-the-loop patterns, and feedback loops
 license: Apache-2.0
-version: 1.0.0
-last_updated: 2026-02-17
+version: 2.0.0
+last_updated: 2026-04-02
 tags:
   - github-agentic-workflows
   - continuous-ai
@@ -1359,32 +1359,63 @@ class FeedbackCollector {
 ## 📚 References
 
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [GitHub Copilot Agents](https://docs.github.com/en/copilot/concepts/agents)
-- [Continuous Integration/Delivery](https://martinfowler.com/articles/continuousIntegration.html)
-- [DevOps Patterns](https://www.devops-research.com/research.html)
+- [Agent Factory Blog Series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt)
+- [Continuous AI (GitHub Next)](https://githubnext.com/projects/continuous-ai)
+
+## 🆕 Agent Factory Patterns (Lessons from github/gh-aw)
+
+### Proven Workflow Categories
+
+The GitHub Next team operates 100+ agentic workflows. Key categories:
+
+| Category | Examples | Impact |
+|----------|---------|--------|
+| **Issue Triage** | Auto-label, auto-assign, duplicate detection | Instant response to new issues |
+| **Code Quality** | Code Simplifier, Dead Code Remover, Typist | Continuous incremental improvement |
+| **Documentation** | Doc Healer, Doc Updater, Glossary Maintainer | Always-current docs |
+| **Security** | Red Team Agent, Secrets Analysis, Malicious Code Scan | Daily security posture |
+| **Metrics** | Code Metrics, Token Consumption, Performance Summary | Data-driven decisions |
+| **Analytics** | Session Insights, PR NLP Analysis, Prompt Clustering | Meta-analysis of AI behavior |
+| **Project Coordination** | Plan Command, Discussion Task Miner | 67% PR merge rate |
+
+### Key Insights
+
+1. **Specialized agents > generic agents** — Customize for your repo context
+2. **Incremental > heroic** — Small daily improvements compound over time
+3. **Observability is essential** — Meta-analyze agent behavior patterns
+4. **Schedule staggering** — Avoid resource contention with varied cron times
+5. **Merge rate matters** — Track accepted vs. rejected agent PRs
+
+### Multi-Agent Coordination
+
+```markdown
+# Pattern: Sequential task chaining
+# Step 1: Task Miner discovers work from discussions
+# Step 2: Plan Command decomposes into sub-issues
+# Step 3: Copilot Coding Agent implements each sub-issue
+# Step 4: Code review and merge
+
+# Verified causal chain example:
+# Discussion #7631 → Issue #8058 → PR #8110 (merged)
+```
 
 ---
 
 ## ✅ Remember
 
-- [ ] Design agents for continuous operation (24/7)
-- [ ] Implement progressive review levels (quick → deep)
-- [ ] Use adaptive scheduling based on activity
-- [ ] Set up event-driven agent dispatch
-- [ ] Add human approval gates for critical actions
-- [ ] Collect feedback on agent performance
-- [ ] Monitor agent metrics (accuracy, latency, satisfaction)
-- [ ] Implement graceful degradation and fallbacks
-- [ ] Log all agent actions for audit
-- [ ] Use circuit breakers to prevent runaway agents
-- [ ] Implement duplicate detection for issues/PRs
-- [ ] Set up anomaly detection for monitoring
-- [ ] Create feedback loops for continuous learning
-- [ ] Schedule retraining based on performance metrics
-- [ ] Document agent decision logic
+- ✅ Design agents for continuous 24/7 operation
+- ✅ Use adaptive scheduling based on repository activity
+- ✅ Implement event-driven dispatch (issues, PRs, comments)
+- ✅ Add human approval gates for critical operations
+- ✅ Monitor agent merge rates as quality signal
+- ✅ Specialize agents — generic agents underperform
+- ✅ Incremental improvements compound over time
+- ✅ Meta-analyze agent behavior (NLP, clustering, session insights)
+- ✅ Stagger schedules to avoid contention
+- ✅ Log all actions for audit trail
 
 ---
 
-**Last Updated**: 2026-02-17  
-**Version**: 1.0.0  
+**Last Updated**: 2026-04-02  
+**Version**: 2.0.0  
 **License**: Apache-2.0

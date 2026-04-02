@@ -2,8 +2,8 @@
 name: "Containerization for Agentic Workflows"
 description: "Comprehensive Docker and container orchestration patterns for GitHub Agentic Workflows including container isolation, security hardening, multi-stage builds, image optimization, Docker Compose orchestration, and Kubernetes deployment patterns for production-ready autonomous agent systems."
 license: "Apache-2.0"
-version: "1.0.0"
-last_updated: "2026-02-17"
+version: "2.0.0"
+last_updated: "2026-04-02"
 tags:
   - docker
   - containers
@@ -1391,6 +1391,6 @@ When containerizing agentic workflows:
 ---
 
 **License**: Apache-2.0  
-**Version**: 1.0.0  
-**Last Updated**: 2026-02-17  
+**Version**: 2.0.0  
+**Last Updated**: 2026-04-02  
 **Maintained by**: Hack23 Organization

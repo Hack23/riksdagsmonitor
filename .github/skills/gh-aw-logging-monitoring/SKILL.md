@@ -2,8 +2,8 @@
 name: "Logging and Monitoring for Agentic Workflows"
 description: "Comprehensive observability patterns for GitHub Agentic Workflows including structured logging, metrics collection, alerting strategies, debugging techniques, and production monitoring best practices for autonomous agent systems."
 license: "Apache-2.0"
-version: "1.0.0"
-last_updated: "2026-02-17"
+version: "2.0.0"
+last_updated: "2026-04-02"
 tags:
   - logging
   - monitoring
@@ -1465,6 +1465,6 @@ When implementing logging and monitoring for agentic workflows:
 ---
 
 **License**: Apache-2.0  
-**Version**: 1.0.0  
-**Last Updated**: 2026-02-17  
+**Version**: 2.0.0  
+**Last Updated**: 2026-04-02  
 **Maintained by**: Hack23 Organization

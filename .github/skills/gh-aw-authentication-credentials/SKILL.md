@@ -2,8 +2,8 @@
 name: "Authentication and Credentials for Agentic Workflows"
 description: "Comprehensive security patterns for managing authentication in GitHub Agentic Workflows including GitHub token types, credential storage, token rotation, least privilege access control, MCP server authentication, and API key management best practices."
 license: "Apache-2.0"
-version: "1.0.0"
-last_updated: "2026-02-17"
+version: "2.0.0"
+last_updated: "2026-04-02"
 tags:
   - authentication
   - credentials
@@ -1461,6 +1461,6 @@ When managing authentication and credentials:
 ---
 
 **License**: Apache-2.0  
-**Version**: 1.0.0  
-**Last Updated**: 2026-02-17  
+**Version**: 2.0.0  
+**Last Updated**: 2026-04-02  
 **Maintained by**: Hack23 Organization

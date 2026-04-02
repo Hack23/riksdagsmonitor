@@ -2,8 +2,8 @@
 name: gh-aw-workflow-authoring
 description: Master GitHub Agentic Workflows authoring - markdown syntax, natural language instructions, YAML frontmatter, compilation, and workflow patterns
 license: Apache-2.0
-version: 1.0.0
-last_updated: 2026-02-17
+version: 2.0.0
+last_updated: 2026-04-02
 tags: [github-agentic-workflows, workflow-authoring, markdown, natural-language, ai-automation]
 ---
 
@@ -850,13 +850,97 @@ If it fails (permissions, file doesn't exist, etc.):
 - **gh-aw-continuous-ai-patterns** - Workflow patterns and strategies
 - **gh-aw-github-actions-integration** - Deployment and CI/CD
 
+## 🆕 v0.45.5 Features
+
+### AI Engine Selection
+
+Specify the engine in frontmatter or let `gh aw compile` choose the default:
+
+```markdown
+---
+engine: claude     # Options: copilot, claude, codex, gemini
+timeout-minutes: 5
+---
+```
+
+### Integrity Filtering
+
+Control who can trigger workflows in public repositories:
+
+```markdown
+---
+tools:
+  github:
+    toolsets: [issues, labels]
+    min-integrity: approved  # Only collaborators+ (default)
+    # min-integrity: none    # Allow all users (for public triage)
+---
+```
+
+### Threat Detection
+
+Every workflow automatically includes threat detection. The dedicated scan checks agent outputs for:
+- Prompt injection attacks
+- Leaked credentials
+- Malicious code patterns
+
+If suspicious content is found, the workflow fails immediately and nothing is written.
+
+### Cross-Repository Workflows
+
+```markdown
+---
+safe-outputs:
+  create-pull-request:
+    target-repo: owner/other-repo  # Cross-repo PRs
+---
+```
+
+### Workflow Commands (Slash Commands)
+
+Trigger workflows from issue/PR comments:
+
+```markdown
+---
+on:
+  issue_comment:
+    types: [created]
+    command: /plan   # Triggers on `/plan` comments
+---
+```
+
+## 🏭 Agent Factory Patterns (Best Practices from github/gh-aw)
+
+### High-Impact Patterns
+
+| Pattern | Description | Example Merge Rate |
+|---------|-------------|-------------------|
+| **Plan Command** | `/plan` decomposes issues into sub-tasks | 67% (514/761 PRs) |
+| **Discussion Task Miner** | Extracts tasks from discussion threads | 57% (60/105 PRs) |
+| **Code Simplifier** | Daily incremental code improvements | Continuous |
+| **Issue Triage Agent** | Auto-labels and comments on new issues | Event-driven |
+
+### Scheduling Best Practices
+
+```markdown
+---
+on:
+  schedule: daily           # Once per day
+  # schedule: "0 9 * * 1-5" # Weekdays at 9am
+  # schedule: "0 */6 * * *" # Every 6 hours
+---
+```
+
+Stagger schedules to avoid resource contention. Use `timeout-minutes: 5` for quick tasks, `timeout-minutes: 30` for complex analysis.
+
 ## 📚 References
 
-- [GitHub Agentic Workflows Documentation](https://github.github.com/gh-aw/)
+- [Official Documentation](https://github.github.com/gh-aw/)
 - [Quick Start Guide](https://github.github.com/gh-aw/setup/quick-start/)
 - [How They Work](https://github.github.com/gh-aw/introduction/how-they-work/)
 - [Workflow Examples](https://github.github.com/gh-aw/examples/)
-- [Best Practices](https://github.github.com/gh-aw/guides/best-practices/)
+- [Agent Factory Blog (19-part series)](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt)
+- [LLM-friendly Docs](https://github.github.com/gh-aw/llms-small.txt)
 
 ## ✅ Remember
 
@@ -866,13 +950,15 @@ If it fails (permissions, file doesn't exist, etc.):
 - ✅ Structure with clear sections
 - ✅ Provide examples in instructions
 - ✅ Handle errors gracefully
-- ✅ Test before deploying
+- ✅ Test before deploying — use `gh aw compile` to validate
 - ✅ Focus on single responsibility
-- ✅ Compile generates .lock.yml
+- ✅ Compile generates `.lock.yml` — never edit lock files manually
 - ✅ Natural language beats complex YAML
+- ✅ Use `min-integrity` for public repo security
+- ✅ Threat detection is always active — no opt-out needed
 
 ---
 
-**Version**: 1.0.0  
-**Last Updated**: 2026-02-17  
+**Version**: 2.0.0  
+**Last Updated**: 2026-04-02  
 **Maintained by**: Hack23 AB

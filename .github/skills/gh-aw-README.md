@@ -1,206 +1,137 @@
 # 🤖 GitHub Agentic Workflows Skills Collection
 
-> Comprehensive expertise in GitHub Agentic Workflows - AI-powered repository automation using natural language markdown instead of complex YAML.
+> Comprehensive expertise in GitHub Agentic Workflows (v0.45.5) — AI-powered repository automation using natural language markdown with five-layer security guardrails.
 
 ## 📚 Skills Overview
 
-This collection provides 12 comprehensive skills covering all aspects of GitHub Agentic Workflows, from core concepts to advanced security, configuration, and operations.
+This collection provides 12 skills + 1 umbrella skill covering all aspects of GitHub Agentic Workflows (gh-aw), from workflow authoring to security architecture, MCP integration, and operations.
 
-### 🎯 Core Components (Phase 1)
+### 🎯 Core Components
 
-| Skill | Lines | Description |
-|-------|-------|-------------|
-| **[gh-aw-safe-outputs](./gh-aw-safe-outputs/SKILL.md)** | 647 | Safe outputs architecture, security, sanitization, and write operation patterns |
-| **[gh-aw-mcp-gateway](./gh-aw-mcp-gateway/SKILL.md)** | 2,298 | MCP Gateway configuration, routing, Docker support, and server management |
-| **[gh-aw-firewall](./gh-aw-firewall/SKILL.md)** | 832 | Network egress control, domain whitelisting, Squid proxy, API proxy sidecar |
-| **[gh-aw-workflow-authoring](./gh-aw-workflow-authoring/SKILL.md)** | 878 | Workflow creation, markdown syntax, natural language, prompt engineering |
+| Skill | Description |
+|-------|-------------|
+| **[gh-aw-workflow-authoring](./gh-aw-workflow-authoring/SKILL.md)** | Markdown syntax, YAML frontmatter, natural language instructions, `gh aw compile` |
+| **[gh-aw-safe-outputs](./gh-aw-safe-outputs/SKILL.md)** | Write isolation, sanitization, safe output types (issue, PR, comment, file, label) |
+| **[gh-aw-tools-ecosystem](./gh-aw-tools-ecosystem/SKILL.md)** | GitHub/file/web/bash/Playwright tools, MCP tool routing, custom tools |
+| **[gh-aw-firewall](./gh-aw-firewall/SKILL.md)** | AWF network egress control, Squid proxy, domain allowlists, iptables enforcement |
 
-### 🔬 Advanced Features (Phase 2)
+### 🔬 Advanced Features
 
-| Skill | Lines | Description |
-|-------|-------|-------------|
-| **[gh-aw-security-architecture](./gh-aw-security-architecture/SKILL.md)** | 1,754 | Defense-in-depth, threat modeling, sandboxing, attack vector mitigations |
-| **[gh-aw-mcp-configuration](./gh-aw-mcp-configuration/SKILL.md)** | 1,700 | MCP server setup, transport protocols, lifecycle management, validation |
-| **[gh-aw-continuous-ai-patterns](./gh-aw-continuous-ai-patterns/SKILL.md)** | 1,390 | Continuous AI concept, workflow patterns, scheduling, human-in-the-loop |
-| **[gh-aw-tools-ecosystem](./gh-aw-tools-ecosystem/SKILL.md)** | 727 | Complete tools reference, GitHub/file/web/bash/playwright integration |
+| Skill | Description |
+|-------|-------------|
+| **[gh-aw-security-architecture](./gh-aw-security-architecture/SKILL.md)** | Five-layer defense-in-depth, threat detection, sandboxing, attack mitigations |
+| **[gh-aw-mcp-configuration](./gh-aw-mcp-configuration/SKILL.md)** | MCP server setup, stdio/HTTP/SSE transports, lifecycle management, validation |
+| **[gh-aw-mcp-gateway](./gh-aw-mcp-gateway/SKILL.md)** | MCP Gateway proxy, Docker integration, multi-server routing, observability |
+| **[gh-aw-continuous-ai-patterns](./gh-aw-continuous-ai-patterns/SKILL.md)** | Continuous AI, scheduling strategies, event-driven, human-in-the-loop |
 
-### 🚀 Operations & Deployment (Phase 3)
+### 🚀 Operations & Deployment
 
-| Skill | Lines | Description |
-|-------|-------|-------------|
-| **[gh-aw-github-actions-integration](./gh-aw-github-actions-integration/SKILL.md)** | 1,529 | CI/CD patterns, environment setup, secrets management, deployment |
-| **[gh-aw-logging-monitoring](./gh-aw-logging-monitoring/SKILL.md)** | 1,470 | Logging architecture, metrics, alerting, debugging, observability |
-| **[gh-aw-authentication-credentials](./gh-aw-authentication-credentials/SKILL.md)** | 1,466 | GitHub tokens, credential storage, token rotation, least privilege |
-| **[gh-aw-containerization](./gh-aw-containerization/SKILL.md)** | 1,396 | Docker patterns, container security, image optimization, orchestration |
+| Skill | Description |
+|-------|-------------|
+| **[gh-aw-github-actions-integration](./gh-aw-github-actions-integration/SKILL.md)** | CI/CD integration, workflow triggers, secrets management, deployment patterns |
+| **[gh-aw-logging-monitoring](./gh-aw-logging-monitoring/SKILL.md)** | Structured logging, metrics collection, alerting, debugging, observability |
+| **[gh-aw-authentication-credentials](./gh-aw-authentication-credentials/SKILL.md)** | Token types, credential storage, rotation, least privilege, MCP auth |
+| **[gh-aw-containerization](./gh-aw-containerization/SKILL.md)** | Container isolation, security hardening, image optimization, orchestration |
 
-## 📊 Statistics
+### 🌐 Umbrella Skill
 
-- **Total Skills**: 12
-- **Total Lines**: 16,087
-- **Total Size**: ~450KB
-- **Code Examples**: 300+
-- **Architecture Diagrams**: 15+
-- **Best Practices**: 200+
+| Skill | Description |
+|-------|-------------|
+| **[github-agentic-workflows](./github-agentic-workflows/SKILL.md)** | High-level overview integrating all 12 skills into a unified reference |
 
 ## 🎯 What Are GitHub Agentic Workflows?
 
-GitHub Agentic Workflows are AI-powered workflows that combine:
-- 📝 **Natural Language**: Written in markdown instead of complex YAML
-- 🧠 **AI Understanding**: Use AI to understand repository context
-- 🎯 **Context-Aware**: Make decisions without explicit conditionals
-- 🔒 **Safe by Default**: Read-only with controlled write operations
-- 🛡️ **Defense-in-Depth**: Multiple security layers
+A Go-based GitHub CLI extension (`gh aw`) that lets you write AI-powered workflows in **natural language markdown** instead of complex YAML. Workflows compile to GitHub Actions `.lock.yml` files and run with five built-in security layers:
 
-## 🚀 Quick Start Learning Path
+1. **Read-only tokens** — Agent receives only read permissions
+2. **Zero secrets in agent** — Write tokens exist only in isolated post-agent jobs
+3. **Containerized + network firewall** — Squid proxy with domain allowlists, iptables enforcement
+4. **Safe outputs with guardrails** — Structured artifacts with hard limits, title prefixes, label constraints
+5. **Agentic threat detection** — AI-powered scan for prompt injection, leaked credentials, malicious code
 
-### Beginner (Start Here)
-1. **[gh-aw-workflow-authoring](./gh-aw-workflow-authoring/SKILL.md)** - Learn to write workflows
-2. **[gh-aw-safe-outputs](./gh-aw-safe-outputs/SKILL.md)** - Understand safe write operations
-3. **[gh-aw-tools-ecosystem](./gh-aw-tools-ecosystem/SKILL.md)** - Explore available tools
+### Supported AI Engines
+- **Copilot** (GitHub) — Default engine
+- **Claude** (Anthropic) — Alternative engine
+- **Codex** (OpenAI) — Alternative engine
+- **Gemini** (Google) — Experimental engine
+- **Custom engines** — Extensible architecture
 
-### Intermediate
-4. **[gh-aw-mcp-gateway](./gh-aw-mcp-gateway/SKILL.md)** - MCP server integration
-5. **[gh-aw-github-actions-integration](./gh-aw-github-actions-integration/SKILL.md)** - Deploy workflows
-6. **[gh-aw-continuous-ai-patterns](./gh-aw-continuous-ai-patterns/SKILL.md)** - Advanced patterns
+## 🚀 Quick Start
 
-### Advanced
-7. **[gh-aw-security-architecture](./gh-aw-security-architecture/SKILL.md)** - Security deep dive
-8. **[gh-aw-firewall](./gh-aw-firewall/SKILL.md)** - Network security
-9. **[gh-aw-mcp-configuration](./gh-aw-mcp-configuration/SKILL.md)** - Advanced MCP setup
-10. **[gh-aw-authentication-credentials](./gh-aw-authentication-credentials/SKILL.md)** - Credential management
+```bash
+# Install the CLI extension
+gh extension install github/gh-aw
 
-### Operations
-11. **[gh-aw-logging-monitoring](./gh-aw-logging-monitoring/SKILL.md)** - Observability
-12. **[gh-aw-containerization](./gh-aw-containerization/SKILL.md)** - Production deployment
+# Add a workflow from the gallery
+gh aw add-wizard https://github.com/github/gh-aw/blob/v0.45.5/.github/workflows/issue-triage-agent.md
 
-## 🏗️ Architecture Overview
+# Compile to GitHub Actions
+gh aw compile
+
+# Push and trigger
+git push
+```
+
+### Example: Daily Issues Report
+
+```markdown
+---
+on:
+  schedule: daily
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+safe-outputs:
+  create-issue:
+    title-prefix: "[team-status] "
+    labels: [report, daily-status]
+    close-older-issues: true
+---
+
+## Daily Issues Report
+
+Create an upbeat daily status report for the team as a GitHub issue.
+
+## What to include
+
+- Recent repository activity (issues, PRs, discussions, releases)
+- Progress tracking, goal reminders and highlights
+- Actionable next steps for maintainers
+```
+
+## 🏗️ Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                   GitHub Agentic Workflow                    │
-│  ┌────────────────────────────────────────────────────────┐ │
-│  │  Natural Language Markdown (.md)                       │ │
-│  │  - Human-authored instructions                          │ │
-│  │  - Context-aware prompts                                │ │
-│  │  - YAML frontmatter configuration                       │ │
-│  └────────────────────────────────────────────────────────┘ │
-│                            ▼                                  │
-│  ┌────────────────────────────────────────────────────────┐ │
-│  │  Compilation (.lock.yml)                               │ │
-│  │  - Converts to GitHub Actions YAML                     │ │
-│  │  - Validates configuration                              │ │
-│  │  - Generates execution plan                             │ │
-│  └────────────────────────────────────────────────────────┘ │
-│                            ▼                                  │
-│  ┌────────────────────────────────────────────────────────┐ │
-│  │  Execution Environment                                  │ │
-│  │  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐     │ │
-│  │  │  Security   │ │ MCP Gateway │ │  Firewall   │     │ │
-│  │  │  Sandbox    │ │  (Routing)  │ │ (Network)   │     │ │
-│  │  └─────────────┘ └─────────────┘ └─────────────┘     │ │
-│  │           │              │              │               │ │
-│  │           └──────────────┴──────────────┘               │ │
-│  │                          ▼                               │ │
-│  │  ┌────────────────────────────────────────────────────┐ │ │
-│  │  │  AI Agent (Claude Opus 4.6)                        │ │ │
-│  │  │  - Reads repository context                        │ │ │
-│  │  │  - Makes decisions                                  │ │ │
-│  │  │  - Generates safe outputs                          │ │ │
-│  │  └────────────────────────────────────────────────────┘ │ │
-│  │                          ▼                               │ │
-│  │  ┌────────────────────────────────────────────────────┐ │ │
-│  │  │  Safe Outputs (Write Operations)                   │ │ │
-│  │  │  - Sanitized and validated                         │ │ │
-│  │  │  - Explicit approval required                      │ │ │
-│  │  │  - Auditable and traceable                         │ │ │
-│  │  └────────────────────────────────────────────────────┘ │ │
-│  └────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────┘
+GitHub Event → ┌──────────────────────────────┐
+               │  Isolated Container          │
+               │  · Read-only Token           │
+               │  · Firewall-Protected        │
+               │  · AI Agent (Copilot/Claude) │
+               └──────────┬───────────────────┘
+                          ▼
+               Proposed Output (artifact)
+                          ▼
+               Threat Detection (AI scan)
+                    ╱           ╲
+               ✓ safe        ✗ suspicious
+                  ▼              ▼
+            Write Job         Blocked
+          (scoped token)
+                  ▼
+             GitHub API
 ```
 
 ## 🛡️ Security Model
 
-All skills emphasize security-first design:
-
-- ✅ **Read-Only by Default**: All permissions start at read-only
-- ✅ **Explicit Write Operations**: Safe outputs for all writes
-- ✅ **Sandboxed Execution**: Container isolation with resource limits
-- ✅ **Network Restrictions**: Firewall with domain whitelisting
-- ✅ **Credential Isolation**: Secrets never exposed to AI agents
-- ✅ **Defense-in-Depth**: Multiple security layers
-- ✅ **Audit Trail**: All actions logged and traceable
-
-## 📖 Key Concepts
-
-### Natural Language Over YAML
-
-**Before (Traditional GitHub Actions):**
-```yaml
-if: |
-  contains(github.event.issue.labels.*.name, 'bug') &&
-  !contains(github.event.issue.labels.*.name, 'wontfix') &&
-  github.event.issue.state == 'open' &&
-  github.event.issue.user.login != 'dependabot[bot]'
-```
-
-**After (Agentic Workflow):**
-```markdown
-If this is an open bug that should be fixed (not a wontfix or bot), 
-provide helpful triage information.
-```
-
-### Safe Outputs Pattern
-
-All write operations go through safe outputs:
-- `safeoutputs___issue` - Create/update issues
-- `safeoutputs___pull_request` - Create PRs
-- `safeoutputs___comment` - Add comments
-- `safeoutputs___file` - Modify files
-- `safeoutputs___label` - Manage labels
-- `safeoutputs___noop` - Read-only mode
-
-### Continuous AI
-
-Systematic, automated application of AI to software development:
-- ✅ Automatic documentation updates
-- ✅ Incremental code quality improvements
-- ✅ Intelligent issue triage
-- ✅ Context-aware code review
-- ✅ Repository health monitoring
-
-## 🎓 Use Cases
-
-### Issue Management
-- Automated triage and labeling
-- Duplicate detection
-- Priority assessment
-- Assignee suggestions
-
-### Code Review
-- Security vulnerability detection
-- Code quality analysis
-- Test coverage checks
-- Style compliance verification
-
-### Documentation
-- Auto-sync with code changes
-- Example validation
-- Link checking
-- Version updates
-
-### Maintenance
-- Dependency updates review
-- Repository health checks
-- Stale issue management
-- License compliance
-
-## 🔗 External Resources
-
-- **[Official Documentation](https://github.github.com/gh-aw/)** - Complete docs
-- **[GitHub Repository](https://github.com/github/gh-aw)** - Source code
-- **[Quick Start](https://github.github.com/gh-aw/setup/quick-start/)** - Get started
-- **[Examples](https://github.github.com/gh-aw/examples/)** - Real workflows
-- **[Security](https://github.github.com/gh-aw/introduction/architecture/)** - Security details
+- ✅ **Read-Only by Default** — Permissions start at read-only
+- ✅ **Safe Outputs** — All writes go through structured, validated artifacts
+- ✅ **Sandboxed Execution** — Container isolation with resource limits
+- ✅ **Network Firewall (AWF)** — Squid proxy + iptables domain allowlists
+- ✅ **Credential Isolation** — Secrets never exposed to AI agent process
+- ✅ **Threat Detection** — AI-powered scan blocks suspicious outputs
+- ✅ **Integrity Filtering** — `min-integrity` controls who can trigger agents
+- ✅ **Audit Trail** — All actions logged and traceable
 
 ## 📋 Skill Dependencies
 
@@ -219,41 +150,20 @@ graph TD
     I --> L[gh-aw-containerization]
 ```
 
-## ✅ Skill Quality Standards
+## 🔗 External Resources
 
-Every skill includes:
-- ✅ YAML frontmatter with metadata
-- ✅ Comprehensive content (600-2,300 lines)
-- ✅ Emoji section headers
-- ✅ Code examples (10-50+ per skill)
-- ✅ Architecture diagrams
-- ✅ Best practices section
-- ✅ Security considerations
-- ✅ Troubleshooting guides
-- ✅ Related skills references
-- ✅ External documentation links
-- ✅ Remember checklist
+- **[Official Documentation](https://github.github.com/gh-aw/)** — Complete reference
+- **[Abridged Docs (LLM-friendly)](https://github.github.com/gh-aw/llms-small.txt)** — Compact version
+- **[Full Docs (LLM-friendly)](https://github.github.com/gh-aw/llms-full.txt)** — Complete version
+- **[Agent Factory Blog Series](https://github.github.com/gh-aw/_llms-txt/agentic-workflows.txt)** — 19-part series
+- **[GitHub Blog Post](https://github.blog/ai-and-ml/automate-repository-tasks-with-github-agentic-workflows/)** — Introduction
+- **[Quick Start](https://github.github.com/gh-aw/setup/quick-start/)** — Getting started
+- **[Source Code](https://github.com/github/gh-aw)** — 100+ example workflows
 
 ## 🏆 Maintenance
 
-- **Version**: 1.0.0
-- **Last Updated**: 2026-02-17
+- **Version**: 2.0.0
+- **Last Updated**: 2026-04-02
+- **gh-aw Version**: v0.45.5
 - **License**: Apache-2.0
 - **Maintained by**: Hack23 AB
-- **Review Cycle**: Quarterly
-- **Based on**: GitHub Agentic Workflows (gh-aw, gh-aw-firewall, gh-aw-mcpg)
-
-## 💡 Contributing
-
-These skills are maintained as part of the Riksdagsmonitor project. To contribute:
-
-1. Review existing skills for patterns
-2. Follow YAML frontmatter standards
-3. Include comprehensive examples
-4. Add security considerations
-5. Cross-reference related skills
-6. Test examples before committing
-
----
-
-**Need help?** Start with [gh-aw-workflow-authoring](./gh-aw-workflow-authoring/SKILL.md) to learn the basics!
