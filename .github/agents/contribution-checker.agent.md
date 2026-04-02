@@ -1,4 +1,5 @@
 ---
+name: contribution-checker
 description: Evaluate a single PR against the target repository's CONTRIBUTING.md for compliance and quality
 user-invokable: false
 ---

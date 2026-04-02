@@ -1,4 +1,5 @@
 ---
+name: interactive-agent-designer
 description: Interactive wizard that guides users through creating and optimizing high-quality prompts, agent instructions, and workflow descriptions for GitHub Agentic Workflows
 disable-model-invocation: true
 ---

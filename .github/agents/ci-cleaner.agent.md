@@ -1,4 +1,5 @@
 ---
+name: ci-cleaner
 description: Tidies up the repository CI state by formatting sources, running linters, fixing issues, running tests, and recompiling workflows
 disable-model-invocation: true
 ---
