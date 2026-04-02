@@ -497,7 +497,65 @@
 <a name='L432'></a><a href='#L432'>432</a>
 <a name='L433'></a><a href='#L433'>433</a>
 <a name='L434'></a><a href='#L434'>434</a>
-<a name='L435'></a><a href='#L435'>435</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L435'></a><a href='#L435'>435</a>
+<a name='L436'></a><a href='#L436'>436</a>
+<a name='L437'></a><a href='#L437'>437</a>
+<a name='L438'></a><a href='#L438'>438</a>
+<a name='L439'></a><a href='#L439'>439</a>
+<a name='L440'></a><a href='#L440'>440</a>
+<a name='L441'></a><a href='#L441'>441</a>
+<a name='L442'></a><a href='#L442'>442</a>
+<a name='L443'></a><a href='#L443'>443</a>
+<a name='L444'></a><a href='#L444'>444</a>
+<a name='L445'></a><a href='#L445'>445</a>
+<a name='L446'></a><a href='#L446'>446</a>
+<a name='L447'></a><a href='#L447'>447</a>
+<a name='L448'></a><a href='#L448'>448</a>
+<a name='L449'></a><a href='#L449'>449</a>
+<a name='L450'></a><a href='#L450'>450</a>
+<a name='L451'></a><a href='#L451'>451</a>
+<a name='L452'></a><a href='#L452'>452</a>
+<a name='L453'></a><a href='#L453'>453</a>
+<a name='L454'></a><a href='#L454'>454</a>
+<a name='L455'></a><a href='#L455'>455</a>
+<a name='L456'></a><a href='#L456'>456</a>
+<a name='L457'></a><a href='#L457'>457</a>
+<a name='L458'></a><a href='#L458'>458</a>
+<a name='L459'></a><a href='#L459'>459</a>
+<a name='L460'></a><a href='#L460'>460</a>
+<a name='L461'></a><a href='#L461'>461</a>
+<a name='L462'></a><a href='#L462'>462</a>
+<a name='L463'></a><a href='#L463'>463</a>
+<a name='L464'></a><a href='#L464'>464</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -937,9 +995,47 @@
  */
 &nbsp;
 import type { Language } from './language.js';
-import type { MultiDimensionalQualityAssessment } from '../ai-analysis/quality-assessor.js';
-import type { UrgencyLabel } from '../ai-analysis/political-significance.js';
 import type { ClassificationLevel, RiskLevel, ConfidenceLabel } from '../analysis-reader.js';
+&nbsp;
+/* ── Inlined types (formerly from deleted ai-analysis modules) ── */
+&nbsp;
+/** Urgency label for political significance assessment */
+export type UrgencyLabel = 'breaking' | 'major' | 'standard' | 'background';
+&nbsp;
+/** Score for a single quality dimension */
+export interface DimensionScore {
+  score: number;
+  evidence: string[];
+  improvements: string[];
+}
+&nbsp;
+/** Severity of a quality issue */
+export type QualityIssueSeverity = 'critical' | 'major' | 'minor';
+&nbsp;
+/** A single quality problem found in the article */
+export interface QualityIssue {
+  severity: QualityIssueSeverity;
+  dimension: string;
+  description: string;
+  suggestedFix: string;
+}
+&nbsp;
+/** Full multi-dimensional quality assessment result */
+export interface MultiDimensionalQualityAssessment {
+  overallScore: number;
+  dimensions: {
+    factualAccuracy: DimensionScore;
+    stakeholderCoverage: DimensionScore;
+    analyticalDepth: DimensionScore;
+    editorialConsistency: DimensionScore;
+    evidenceQuality: DimensionScore;
+    languageQuality: DimensionScore;
+  };
+  issues: QualityIssue[];
+  suggestions: string[];
+  passesThreshold: boolean;
+  assessmentPasses: number;
+}
 &nbsp;
 /** Category label shown in article headers */
 export type ArticleCategory = 'prospective' | 'retrospective' | 'analysis' | 'breaking';
@@ -1074,17 +1170,8 @@ export interface DateRange {
   end: string;
 }
 &nbsp;
-// ---------------------------------------------------------------------------
-// Multi-dimensional quality assessment types — single source of truth in
-// scripts/ai-analysis/quality-assessor.ts, re-exported here for convenience.
-// ---------------------------------------------------------------------------
-&nbsp;
-export type {
-  DimensionScore,
-  QualityIssueSeverity,
-  QualityIssue,
-  MultiDimensionalQualityAssessment,
-} from '../ai-analysis/quality-assessor.js';
+// Multi-dimensional quality assessment types are now defined at the top of this file
+// (inlined from the deleted ai-analysis/quality-assessor module).
 &nbsp;
 /** Quality metrics for a single generated article */
 export interface ArticleQualityScore {
@@ -1372,7 +1459,7 @@ export interface MultiPanelDashboard {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-01T00:14:45.296Z
+                at 2026-04-02T08:47:46.219Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

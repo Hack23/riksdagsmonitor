@@ -1,5 +1,5 @@
 {
-  "version": "0.8.15",
+  "version": "0.8.16",
   "name": "riksdagsmonitor",
   "problems": [
     "extraneous: @emnapi/core@1.8.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor/node_modules/@emnapi/core",
@@ -2822,8 +2822,8 @@
       }
     },
     "knip": {
-      "version": "6.1.1",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.1.1.tgz",
+      "version": "6.2.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.2.0.tgz",
       "overridden": false,
       "dependencies": {
         "@nodelib/fs.walk": {
@@ -3090,14 +3090,14 @@
       "overridden": false
     },
     "playwright": {
-      "version": "1.58.2",
-      "resolved": "https://registry.npmjs.org/playwright/-/playwright-1.58.2.tgz",
+      "version": "1.59.1",
+      "resolved": "https://registry.npmjs.org/playwright/-/playwright-1.59.1.tgz",
       "overridden": false,
       "dependencies": {
         "fsevents": {},
         "playwright-core": {
-          "version": "1.58.2",
-          "resolved": "https://registry.npmjs.org/playwright-core/-/playwright-core-1.58.2.tgz",
+          "version": "1.59.1",
+          "resolved": "https://registry.npmjs.org/playwright-core/-/playwright-core-1.59.1.tgz",
           "overridden": false
         }
       }
