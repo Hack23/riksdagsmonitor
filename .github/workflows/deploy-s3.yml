@@ -74,16 +74,6 @@ jobs:
         with:
           fetch-depth: 0  # Need full history to restore mtimes
 
-      - name: Restore file modification times from git
-        run: |
-          # Restore mtimes to git commit time for accurate change detection
-          # This prevents re-uploading all files on every deployment
-          git ls-tree -r --name-only HEAD | while read filename; do
-            TIME=$(git log -1 --format="%ai" -- "$filename")
-            touch -d "$TIME" "$filename"
-          done
-          echo "✅ Restored mtimes for $(git ls-tree -r --name-only HEAD | wc -l) files"
-
       - name: Setup Node.js
         uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
