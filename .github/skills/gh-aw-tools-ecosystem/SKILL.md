@@ -725,18 +725,17 @@ Available toolsets: `context`, `repos`, `issues`, `pull-requests`, `users`, `pro
 
 ### MCP Tool Routing
 
-Connect external tools via MCP servers. The MCP Gateway routes requests from the agent to Docker containers running MCP servers:
+Connect external tools via MCP servers. The MCP Gateway routes requests from the agent to Docker containers running MCP servers. In this repository, MCP servers are configured via a top-level `mcp-servers` key in workflow frontmatter, with additional repo-level definitions in `.github/copilot-mcp.json`:
 
 ```markdown
 ---
+mcp-servers:
+  custom-server:
+    command: npx
+    args: ["-y", "@my/mcp-server"]
 tools:
   github:
     toolsets: [issues]
-  mcp:
-    servers:
-      - name: custom-server
-        command: npx
-        args: ["-y", "@my/mcp-server"]
 ---
 ```
 

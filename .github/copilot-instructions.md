@@ -91,11 +91,15 @@ This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-
 ## 🔄 CI/CD
 
 ```yaml
+# Partial example — key security patterns for every workflow job:
 permissions:
   contents: read  # Least privilege
-steps:
-  - uses: step-security/harden-runner@SHA
-  - uses: actions/checkout@SHA
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: step-security/harden-runner@SHA
+      - uses: actions/checkout@SHA
 ```
 
 Quality gates: HTMLHint + linkinator + Dependabot + CodeQL + secret scanning

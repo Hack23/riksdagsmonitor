@@ -858,7 +858,9 @@ Specify the engine in frontmatter or let `gh aw compile` choose the default:
 
 ```markdown
 ---
-engine: claude     # Options: copilot, claude, codex, gemini
+engine:
+  id: claude                       # Options: copilot, claude, codex, gemini
+  model: claude-3-5-sonnet         # Engine-specific model identifier
 timeout-minutes: 5
 ---
 ```

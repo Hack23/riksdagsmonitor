@@ -1674,18 +1674,19 @@ Key patterns:
 - **HTTP transport** — Remote MCP servers (e.g., `https://api.githubcopilot.com/mcp/insiders`)
 - **SSE transport** — Server-sent events for streaming responses
 
-Configure in workflow frontmatter:
+Configure via a top-level `mcp-servers` key in workflow frontmatter (repo-level definitions go in `.github/copilot-mcp.json`):
 
 ```markdown
 ---
+mcp-servers:
+  github-mcp:
+    url: https://api.githubcopilot.com/mcp/insiders
+  custom:
+    command: npx
+    args: ["-y", "@my/mcp-server"]
 tools:
-  mcp:
-    servers:
-      - name: github-mcp
-        url: https://api.githubcopilot.com/mcp/insiders
-      - name: custom
-        command: npx
-        args: ["-y", "@my/mcp-server"]
+  github:
+    toolsets: [issues]
 ---
 ```
 
