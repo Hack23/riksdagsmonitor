@@ -590,15 +590,6 @@ jobs:
           role-session-name: githubworkflowrolesession-release
           aws-region: us-east-1
 
-      - name: Restore file modification times from git
-        run: |
-          # Restore mtimes to git commit time for accurate change detection
-          git ls-tree -r --name-only HEAD | while read filename; do
-            TIME=$(git log -1 --format="%ai" -- "$filename")
-            touch -d "$TIME" "$filename"
-          done
-          echo "✅ Restored mtimes for $(git ls-tree -r --name-only HEAD | wc -l) files"
-
       - name: Extract build to repository root
         run: |
           echo "📦 Extracting release build to repository root..."
