@@ -514,6 +514,18 @@ For **non-deep-inspection** article types only, if the script fails, generate ar
 > printf '%s\n' '</body></html>' >> "$FILE"
 > ```
 
+## Step 3b: AI Title, Meta Description & Analysis References
+
+> 🚨 **MANDATORY** — After article HTML is generated, the AI MUST improve titles, descriptions, and add analysis references. See `SHARED_PROMPT_PATTERNS.md` sections "AI-DRIVEN TITLE & META DESCRIPTION GENERATION" and "ANALYSIS FILE GITHUB REFERENCES" for full protocols.
+
+**1. Generate newsworthy titles** — Read each article's content, then replace the script-generated title following: `[Active Verb] + [Specific Actor/Institution] + [Concrete Policy Action]`. BANNED: ❌ any title ending with ": {Topic} in Focus" or generic category labels.
+
+**2. Generate AI meta descriptions** (150-160 chars) — Summarize key political intelligence from actual content. BANNED: ❌ any description starting with "Analysis of N documents".
+
+**3. Add analysis references section** — Insert the "📊 Analysis & Sources" HTML block before footer, linking to analysis files for the article's date and type (see SHARED_PROMPT_PATTERNS.md "ANALYSIS FILE GITHUB REFERENCES" for the complete template and type-to-folder mapping).
+
+**4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.
+
 ## Step 4: Translate & Validate
 
 Check for untranslated Swedish content in non-Swedish articles:

@@ -764,6 +764,18 @@ If the script genuinely fails after verifying MCP, generate articles manually ON
 > printf '%s\n' '</body></html>' >> "$FILE"
 > ```
 
+## Step 3b: AI Title, Meta Description & Analysis References
+
+> 🚨 **MANDATORY** — After article HTML is generated, the AI MUST improve titles, descriptions, and add analysis references. See `SHARED_PROMPT_PATTERNS.md` sections "AI-DRIVEN TITLE & META DESCRIPTION GENERATION" and "ANALYSIS FILE GITHUB REFERENCES" for full protocols.
+
+**1. Generate newsworthy titles** — Read each article's content, then replace the script-generated title following: `[Active Verb] + [Specific Actor/Institution] + [Concrete Policy Action]`. BANNED: ❌ "Breaking News: Latest Updates" or generic category labels.
+
+**2. Generate AI meta descriptions** (150-160 chars) — Summarize key political intelligence from actual content. BANNED: ❌ any description starting with "Analysis of N documents".
+
+**3. Add analysis references section** — Insert the "📊 Analysis & Sources" HTML block before footer, linking to `analysis/daily/${ARTICLE_DATE}/realtime-${HHMM}/` analysis files and `analysis/methodologies/ai-driven-analysis-guide.md`.
+
+**4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.
+
 ## Step 4: Validate & Translate
 
 ```bash

@@ -473,6 +473,18 @@ These elements are validated by `bash scripts/validate-news-generation.sh` (Chec
 npx tsx scripts/fix-article-navigation.ts
 ```
 
+### Step 3b: AI Title, Meta Description & Analysis References
+
+> 🚨 **MANDATORY** — After article HTML is generated, the AI MUST improve titles, descriptions, and add analysis references. See `SHARED_PROMPT_PATTERNS.md` sections "AI-DRIVEN TITLE & META DESCRIPTION GENERATION" and "ANALYSIS FILE GITHUB REFERENCES" for full protocols.
+
+**1. Generate newsworthy titles** — Replace script-generated title with: `[Active Verb] + [Specific Institution] + [Concrete Policy Action]`. BANNED: ❌ generic category labels or ": {Topic} in Focus".
+
+**2. Generate AI meta descriptions** (150-160 chars) — Key political intelligence summary. BANNED: ❌ "Analysis of N documents".
+
+**3. Add analysis references** — Insert "📊 Analysis & Sources" HTML block linking to `analysis/daily/${ARTICLE_DATE}/month-ahead/` files and `analysis/methodologies/ai-driven-analysis-guide.md`.
+
+**4. Update all metadata** — `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>`.
+
 ### Step 4: Translate, Validate & Verify Analysis Quality
 
 Run validation and HTMLHint before creating PR:
