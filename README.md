@@ -15,6 +15,11 @@ Riksdagsmonitor is a comprehensive intelligence platform for monitoring politica
           <img src="https://img.shields.io/website?url=https://riksdagsmonitor.com" alt="Website Status">
         </a>
       </div>
+      <div>
+        <a href="https://www.npmjs.com/package/riksdagsmonitor">
+          <img src="https://img.shields.io/npm/v/riksdagsmonitor.svg" alt="npm version">
+        </a>
+      </div>
     </td>
     <td>
       <p><strong>Swedish Parliament Intelligence Platform</strong> monitoring political activity in Sweden's Riksdag with systematic transparency through real-time analysis and 50+ years of historical data (1971-2024).</p>
