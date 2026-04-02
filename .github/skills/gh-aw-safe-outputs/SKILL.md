@@ -645,7 +645,10 @@ This is automatic — no configuration needed. If detection fails, **nothing is 
 | Comment | `add-comment` | Add comments to issues/PRs |
 | Label | `add-labels` | Add labels to issues/PRs |
 | File | `create-or-update-file` | Modify repository files |
+| Dispatch | `dispatch-workflow` | Trigger other workflows (with `workflows` whitelist and `max` count) |
 | Noop | *(default)* | Read-only, no writes |
+
+Additionally, `safe-outputs` supports a top-level `allowed-domains` key to whitelist network endpoints the agent may contact (see this repo's news workflows for examples).
 
 ### Constraints You Can Set
 

@@ -712,7 +712,7 @@ tools:
 ---
 ```
 
-Available toolsets: `context`, `repos`, `issues`, `pull-requests`, `users`, `projects`, `actions`, `security`, `discussions`, `stars`, `notifications`, `gists`
+Available toolsets: `all`, `context`, `repos`, `issues`, `pull-requests`, `users`, `projects`, `actions`, `security`, `discussions`, `stars`, `notifications`, `gists` (`all` is a shorthand that enables every GitHub toolset)
 
 ### Engine-Specific Tool Support
 

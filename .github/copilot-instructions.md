@@ -64,12 +64,14 @@
 ## 🎨 Design System
 
 ```css
-/* Colors */
---primary-cyan: #00d9ff;  --primary-magenta: #ff006e;  --primary-yellow: #ffbe0b;
---dark-bg: #0a0e27;  --mid-bg: #1a1e3d;  --light-text: #e0e0e0;
-/* Typography */
---font-primary: 'Inter', sans-serif;  --font-heading: 'Orbitron', sans-serif;
-/* Breakpoints: 320px (default) → 768px (tablet) → 1024px (desktop) → 1440px (large) */
+:root {
+  /* Colors */
+  --primary-cyan: #00d9ff;  --primary-magenta: #ff006e;  --primary-yellow: #ffbe0b;
+  --dark-bg: #0a0e27;  --mid-bg: #1a1e3d;  --light-text: #e0e0e0;
+  /* Typography */
+  --font-primary: 'Inter', sans-serif;  --font-heading: 'Orbitron', sans-serif;
+  /* Breakpoints: 320px (default) → 768px (tablet) → 1024px (desktop) → 1440px (large) */
+}
 ```
 
 ## 🤖 GitHub Agentic Workflows
