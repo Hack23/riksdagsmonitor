@@ -41,7 +41,7 @@
 ### HTML: Semantic HTML5, ARIA, mobile-first, no div soup, no inline styles
 ### CSS: Custom properties, Grid/Flexbox, cyberpunk theme, 4.5:1 contrast, no frameworks
 ### TypeScript: ES2025 target, strict mode, ESLint with es2025 globals
-### Multi-Language: 14 files per page, RTL for AR/HE, hreflang SEO, BCP-47 `nb` for Norwegian
+### Multi-Language: 14 files per page, RTL for AR/HE, hreflang SEO, Norwegian uses BCP-47 `nb` (preferred) though some existing content still uses legacy `no`; keep instructions and site output in sync during migration
 
 ## 🔒 Security Rules
 

@@ -77,7 +77,8 @@ git push
 ```markdown
 ---
 on:
-  schedule: daily  # gh-aw shorthand (equivalent to cron: "0 0 * * *")
+  schedule:
+    - cron: "0 0 * * *"  # daily at 00:00 UTC (explicit cron as used in this repo's CI)
 permissions:
   contents: read
   issues: read

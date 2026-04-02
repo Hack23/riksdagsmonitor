@@ -924,15 +924,13 @@ on:
 
 ### Scheduling Best Practices
 
-gh-aw supports a `daily` shorthand, but you can also use standard cron syntax:
+Use explicit cron syntax in workflow frontmatter (this repo's convention):
 
 ```markdown
 ---
 on:
-  schedule: daily              # gh-aw shorthand for once per day
-  # Equivalent cron syntax:
-  # schedule:
-  #   - cron: "0 0 * * *"     # Once per day at midnight
+  schedule:
+    - cron: "0 0 * * *"       # Once per day at midnight
   #   - cron: "0 9 * * 1-5"   # Weekdays at 9am
   #   - cron: "0 */6 * * *"   # Every 6 hours
 ---
