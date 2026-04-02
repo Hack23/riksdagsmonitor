@@ -922,12 +922,17 @@ on:
 
 ### Scheduling Best Practices
 
+gh-aw supports a `daily` shorthand, but you can also use standard cron syntax:
+
 ```markdown
 ---
 on:
-  schedule: daily           # Once per day
-  # schedule: "0 9 * * 1-5" # Weekdays at 9am
-  # schedule: "0 */6 * * *" # Every 6 hours
+  schedule: daily              # gh-aw shorthand for once per day
+  # Equivalent cron syntax:
+  # schedule:
+  #   - cron: "0 0 * * *"     # Once per day at midnight
+  #   - cron: "0 9 * * 1-5"   # Weekdays at 9am
+  #   - cron: "0 */6 * * *"   # Every 6 hours
 ---
 ```
 
