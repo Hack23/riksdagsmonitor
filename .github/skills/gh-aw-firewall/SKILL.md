@@ -2,8 +2,8 @@
 name: gh-aw-firewall
 description: Network egress control for AI agents with domain whitelisting, Squid proxy, iptables enforcement, and secure credential management
 license: Apache-2.0
-version: 1.0.0
-last_updated: 2026-02-17
+version: 2.0.0
+last_updated: 2026-04-02
 tags: [github-agentic-workflows, network-security, firewall, squid, domain-whitelisting, egress-control]
 ---
 
@@ -805,28 +805,63 @@ npm update -g gh-aw-firewall
 
 ## 📚 References
 
-- [AWF Repository](https://github.com/github/gh-aw-firewall)
-- [Quickstart Guide](https://github.com/github/gh-aw-firewall/docs/quickstart.md)
-- [Chroot Mode](https://github.com/github/gh-aw-firewall/docs/chroot-mode.md)
-- [API Proxy Sidecar](https://github.com/github/gh-aw-firewall/docs/api-proxy-sidecar.md)
-- [GitHub Actions Integration](https://github.com/github/gh-aw-firewall/docs/github_actions.md)
-- [Squid Documentation](http://www.squid-cache.org/Doc/)
+- [AWF Documentation](https://github.github.com/gh-aw/introduction/architecture/#agent-workflow-firewall-awf)
+- [Security Architecture](https://github.github.com/gh-aw/introduction/architecture/)
+
+## 🆕 AWF in the Five-Layer Security Model (v0.45.5)
+
+The Agent Workflow Firewall (AWF) is **Layer 3** of the five-layer security model:
+
+```
+Layer 1: Read-only tokens (agent can't write)
+Layer 2: Zero secrets in agent (nothing to steal)
+Layer 3: AWF Firewall (can't call unauthorized servers)  ← THIS SKILL
+Layer 4: Safe outputs (structured, validated writes)
+Layer 5: Threat detection (AI scans for malicious content)
+```
+
+### How AWF Works
+
+1. **Squid Proxy** — All outbound HTTP/HTTPS traffic routed through Squid
+2. **Domain Allowlist** — Only explicitly allowed domains pass through
+3. **iptables Enforcement** — Kernel-level rules block all other traffic
+4. **SSL Bump** — HTTPS traffic can be inspected (optional)
+5. **API Proxy Sidecar** — Credential-bearing requests isolated from agent
+
+### Default Allowed Domains
+
+The firewall allows essential domains:
+- `api.github.com` — GitHub API access
+- `github.com` — Repository content
+- `api.githubcopilot.com` — Copilot API
+- `api.anthropic.com` — Claude API (if using Claude engine)
+- `api.openai.com` — Codex API (if using Codex engine)
+
+Custom domains can be added per workflow:
+
+```markdown
+---
+network:
+  allowed:
+    - api.example.com
+    - data.government.se
+---
+```
 
 ## ✅ Remember
 
-- ✅ AWF provides L7 domain whitelisting
-- ✅ iptables enforces rules at host level
-- ✅ Three modes: Standard, Chroot, API Proxy
-- ✅ Use API proxy for credential isolation
-- ✅ SSL Bump enables HTTPS inspection
-- ✅ Monitor logs for security events
+- ✅ AWF is Layer 3 of five-layer security — prevents data exfiltration
+- ✅ Domain allowlist = explicit opt-in, everything else blocked
+- ✅ iptables enforces at kernel level — can't bypass from container
+- ✅ SSL Bump enables HTTPS content inspection
+- ✅ API proxy isolates credentials from agent process
+- ✅ Monitor firewall logs for security events
+- ✅ Principle of least privilege — minimize allowed domains
 - ✅ Test firewall rules before production
-- ✅ Principle of least privilege (minimal domains)
-- ✅ Regular security updates
-- ✅ Works transparently with containers
+- ✅ Compromised agent has no outbound escape route
 
 ---
 
-**Version**: 1.0.0  
-**Last Updated**: 2026-02-17  
+**Version**: 2.0.0  
+**Last Updated**: 2026-04-02  
 **Maintained by**: Hack23 AB

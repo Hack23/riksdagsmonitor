@@ -1,10 +1,10 @@
 ---
 name: github-agentic-workflows
-description: Comprehensive expertise in GitHub Agentic Workflows - agentic automation, MCP tools, safe outputs, security architecture, and operational patterns
+description: Comprehensive expertise in GitHub Agentic Workflows (v0.45.5) — AI-powered repository automation with five-layer security, safe outputs, MCP tools, and Continuous AI patterns
 license: Apache-2.0
-version: 1.0.0
-last_updated: 2026-02-11
-tags: [automation, ai, github-actions, mcp, security, continuous-ai]
+version: 2.0.0
+last_updated: 2026-04-02
+tags: [automation, ai, github-actions, mcp, security, continuous-ai, gh-aw]
 ---
 
 # 🤖 GitHub Agentic Workflows Skill

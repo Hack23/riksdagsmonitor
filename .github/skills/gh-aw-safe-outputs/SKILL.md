@@ -2,8 +2,8 @@
 name: gh-aw-safe-outputs
 description: Expert knowledge in GitHub Agentic Workflows safe outputs - security architecture, sanitization, controlled AI actions, and write operation patterns
 license: Apache-2.0
-version: 1.0.0
-last_updated: 2026-02-16
+version: 2.0.0
+last_updated: 2026-04-02
 tags: [github-agentic-workflows, safe-outputs, security, ai-safety, sanitization]
 ---
 
@@ -620,28 +620,76 @@ alerts:
 - **gh-aw-workflow-authoring** - Workflow creation
 - **gh-aw-logging-monitoring** - Observability
 
+## 🆕 Threat Detection Integration (v0.45.5)
+
+Before any safe output is applied, a dedicated **threat detection job** runs an AI-powered scan:
+
+```
+Agent Output → Threat Detection Scan → ✓ safe → Write Job → GitHub API
+                                     → ✗ suspicious → BLOCKED (workflow fails)
+```
+
+The scan checks for:
+- **Prompt injection** — Attempts to override instructions via crafted content
+- **Leaked credentials** — API keys, tokens, passwords in output
+- **Malicious code** — Known attack patterns, obfuscated payloads
+
+This is automatic — no configuration needed. If detection fails, **nothing is written**.
+
+### Safe Output Types Reference
+
+| Type | Frontmatter Key | What It Does |
+|------|----------------|-------------|
+| Issue | `create-issue` | Create/update GitHub issues |
+| Pull Request | `create-pull-request` | Create PRs (including cross-repo) |
+| Comment | `add-comment` | Add comments to issues/PRs |
+| Label | `add-labels` | Add labels to issues/PRs |
+| File | `create-or-update-file` | Modify repository files |
+| Dispatch | `dispatch-workflow` | Trigger other workflows (with `workflows` whitelist and `max` count) |
+| Noop | *(default)* | Read-only, no writes |
+
+Additionally, `safe-outputs` supports a top-level `allowed-domains` key to whitelist network endpoints the agent may contact (see this repo's news workflows for examples).
+
+### Constraints You Can Set
+
+```markdown
+---
+safe-outputs:
+  create-issue:
+    title-prefix: "[bot] "        # Required title prefix
+    labels: [automated, report]    # Allowed labels only
+    max-count: 1                   # Max issues per run
+    close-older-issues: true       # Auto-close previous
+  create-pull-request:
+    max-count: 1
+    target-repo: owner/other-repo  # Cross-repo support
+  add-labels:
+    allowed: [bug, feature, docs]  # Whitelist of labels
+---
+```
+
 ## 📚 References
 
-- [GitHub Agentic Workflows Documentation](https://github.github.com/gh-aw/)
-- [Safe Outputs Specification](https://github.com/github/gh-aw/blob/main/docs/safe-outputs.md)
+- [Official Documentation](https://github.github.com/gh-aw/)
+- [Safe Outputs Reference](https://github.github.com/gh-aw/reference/safe-outputs/)
+- [Threat Detection](https://github.github.com/gh-aw/reference/threat-detection/)
 - [Security Architecture](https://github.github.com/gh-aw/introduction/architecture/)
-- [Guardrails Overview](https://github.com/github/gh-aw#guardrails)
 
 ## ✅ Remember
 
-- ✅ Safe outputs are the ONLY way AI writes
-- ✅ All outputs are sanitized automatically
-- ✅ Use least privilege (minimal tools)
-- ✅ Restrict paths with allowed_paths
-- ✅ Test with malicious inputs
-- ✅ Monitor audit logs regularly
-- ✅ Use noop for recommendations
-- ✅ Human approval for critical operations
-- ✅ Size limits prevent resource exhaustion
-- ✅ Secret scanning prevents leaks
+- ✅ Safe outputs are the **ONLY** way AI agents write to GitHub
+- ✅ All outputs pass through threat detection before applying
+- ✅ Sanitization is automatic — no opt-in needed
+- ✅ Set `max-count` to limit operations per run
+- ✅ Use `title-prefix` for easy identification
+- ✅ Use `allowed` lists to restrict labels/paths
+- ✅ Cross-repo PRs supported via `target-repo`
+- ✅ Use noop (default) for read-only analysis workflows
+- ✅ Monitor audit logs for anomalies
+- ✅ Secret scanning prevents credential leaks in outputs
 
 ---
 
-**Version**: 1.0.0  
-**Last Updated**: 2026-02-16  
+**Version**: 2.0.0  
+**Last Updated**: 2026-04-02  
 **Maintained by**: Hack23 AB

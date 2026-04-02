@@ -2,8 +2,8 @@
 name: GitHub Agentic Workflows MCP Configuration
 description: Comprehensive guide for MCP (Model Context Protocol) server setup, transport protocols, configuration validation, lifecycle management, tool discovery, and error handling patterns
 license: Apache-2.0
-version: 1.0.0
-last_updated: 2026-02-17
+version: 2.0.0
+last_updated: 2026-04-02
 tags:
   - github-agentic-workflows
   - mcp
@@ -1665,6 +1665,31 @@ function validateToolInput(schema, input) {
 
 ---
 
+## 🆕 MCP in Agentic Workflows (v0.45.5)
+
+MCP servers extend agent capabilities through standardized tool interfaces. In gh-aw, the MCP Gateway runs inside the agent container, routing requests to Docker-hosted MCP servers.
+
+Key patterns:
+- **stdio transport** — Local MCP servers communicating via stdin/stdout
+- **HTTP transport** — Remote MCP servers (e.g., `https://api.githubcopilot.com/mcp/insiders`)
+- **SSE transport** — Server-sent events for streaming responses
+
+Configure via a top-level `mcp-servers` key in workflow frontmatter (repo-level definitions go in `.github/copilot-mcp.json`):
+
+```markdown
+---
+mcp-servers:
+  github-mcp:
+    url: https://api.githubcopilot.com/mcp/insiders
+  custom:
+    command: npx
+    args: ["-y", "@my/mcp-server"]
+tools:
+  github:
+    toolsets: [issues]
+---
+```
+
 ## 📚 References
 
 - [Model Context Protocol Specification](https://spec.modelcontextprotocol.io/)
@@ -1695,6 +1720,6 @@ function validateToolInput(schema, input) {
 
 ---
 
-**Last Updated**: 2026-02-17  
-**Version**: 1.0.0  
+**Last Updated**: 2026-04-02  
+**Version**: 2.0.0  
 **License**: Apache-2.0

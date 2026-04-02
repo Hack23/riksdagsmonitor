@@ -2,8 +2,8 @@
 name: gh-aw-mcp-gateway
 description: Expert knowledge in GitHub Agentic Workflows MCP Gateway - Model Context Protocol routing, configuration, Docker integration, security, and production deployment patterns
 license: MIT
-version: 1.0.0
-last_updated: 2026-02-16
+version: 2.0.0
+last_updated: 2026-04-02
 tags: [github-agentic-workflows, mcp, model-context-protocol, mcp-gateway, docker, json-rpc, security]
 ---
 
