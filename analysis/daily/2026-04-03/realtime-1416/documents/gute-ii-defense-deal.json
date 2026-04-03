@@ -1,0 +1,16 @@
+{
+  "id": "gute-ii-defense-deal",
+  "type": "pressmeddelanden",
+  "title": "Luftvärnsavtal på 8,7 miljarder stärker Sveriges anti-drönarförmåga",
+  "date": "2026-04-02",
+  "source": "Regeringskansliet / Försvarsdepartementet",
+  "minister": "Pål Jonson (M)",
+  "amount_sek": 8700000000,
+  "contractors": ["Saab", "BAE Systems Bofors", "SISU", "Nammo"],
+  "system_name": "GUTE II",
+  "purpose": "Counter-UAS (C-UAS) and territorial air defense",
+  "delivery_period": "2027-2028",
+  "part_of_program": "15B SEK territorial air defense + 3.5B SEK anti-drone systems",
+  "capabilities": ["Saab G1X sensors", "Trackfire 30mm weapon station", "Tridon mk2 40mm on truck", "Electronic warfare systems", "Command and integration systems"],
+  "infrastructure_protected": ["military bases", "nuclear power plants", "railway hubs", "cities"]
+}
