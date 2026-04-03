@@ -1,15 +1,15 @@
 # Data Download Manifest — 2026-04-02
 
-**Generated**: 2026-04-02 04:45 UTC
+**Generated**: 2026-04-03 04:46 UTC
 **Data Sources**: get_betankanden
-**Documents Analyzed**: 0
+**Documents Analyzed**: 2
 **Confidence**: HIGH
 
 ## Summary
 
 Downloaded **50** documents (session-wide) from 1 MCP data sources.
 
-After date filtering to **2026-04-02**: **0** documents selected for analysis.
+After date filtering to **2026-04-02**: **2** documents selected for analysis.
 
 ## Document Counts by Type
 

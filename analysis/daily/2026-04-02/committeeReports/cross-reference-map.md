@@ -1,63 +1,25 @@
-# 🔗 Cross-Reference Map — Committee Reports
+# Cross-Reference Map — 2026-04-02
 
-## 📋 Cross-Reference Context
+**Generated**: 2026-04-02 04:45 UTC
+**Data Sources**: get_betankanden
+**Documents Analyzed**: 0
+**Confidence**: HIGH
 
-| Field | Value |
-|-------|-------|
-| **Map ID** | XRF-2026-04-02-CR01 |
-| **Map Date** | 2026-04-03 04:54 UTC |
-| **Documents Mapped** | 2 |
-| **Produced By** | news-committee-reports |
+## Summary
 
----
+Detected **0** cross-document relationships.
 
-## 📊 Cross-References
+## Detailed Analysis
 
-### HD01FöU12 ↔ Related Documents
+No cross-document relationships detected in current batch.
+## Key Findings
 
-| Reference | Relationship | Significance |
-|-----------|-------------|:------------:|
-| Prop. 2025/26:142 | Parent proposition | HIGH |
-| Prop. 2025/26:214 (Cybersecurity Center) | Defence modernization cluster | MEDIUM |
-| Prop. 2025/26:228 (Arms Export Rules) | Defence policy package | MEDIUM |
+1. **0** inter-document relationships mapped
 
-### HD01JuU15 ↔ Related Documents
+## Implications
 
-| Reference | Relationship | Significance |
-|-----------|-------------|:------------:|
-| Prop. 2025/26:235 (Deportation Rules) | JuU criminal justice cluster | MEDIUM |
-| Trygghetsberedningen (pending SOU) | Referenced in Reservation 1 | HIGH |
+Cross-references enrich article narratives by linking related legislative developments.
 
----
+## Data Quality Notes
 
-## 🔀 Thematic Clusters
-
-```mermaid
-graph TD
-    subgraph "Defence Modernization"
-        F12["FöU12<br/>Civilian Protection"]
-        P142["Prop. 142<br/>Shelter Law"]
-        P214["Prop. 214<br/>Cybersecurity"]
-        P228["Prop. 228<br/>Arms Export"]
-    end
-
-    subgraph "Criminal Justice"
-        J15["JuU15<br/>Corrections"]
-        P235["Prop. 235<br/>Deportation"]
-        TB["Trygghetsberedningen<br/>(pending SOU)"]
-    end
-
-    P142 --> F12
-    F12 -.-> P214
-    F12 -.-> P228
-    J15 -.-> P235
-    TB -.-> J15
-
-    style F12 fill:#ff006e,color:#fff
-    style J15 fill:#00d9ff,color:#0a0e27
-    style P142 fill:#ffbe0b,color:#0a0e27
-```
-
----
-
-**Document Control:** Cross-reference map generated 2026-04-03 04:54 UTC. Classification: PUBLIC.
+Cross-reference confidence is driven by shared policy domains and textual similarity.
