@@ -358,7 +358,25 @@ These analysis files are committed alongside articles for human review and conti
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
-ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+# Determine the article type from input for scoped analysis directory
+REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
+[ -z "$REQUESTED_TYPE" ] && REQUESTED_TYPE="committee-reports"
+# Use the first type if comma-separated (each type gets its own subfolder)
+FIRST_TYPE=$(echo "$REQUESTED_TYPE" | cut -d',' -f1 | tr '-' ' ' | awk '{for(i=1;i<=NF;i++){$i=toupper(substr($i,1,1))tolower(substr($i,2))}}1' | tr -d ' ')
+# Map to folder names matching SHARED_PROMPT_PATTERNS
+case "$REQUESTED_TYPE" in
+  *committee-reports*) ANALYSIS_SUBFOLDER="committeeReports" ;;
+  *interpellation*) ANALYSIS_SUBFOLDER="interpellations" ;;
+  *motions*) ANALYSIS_SUBFOLDER="motions" ;;
+  *propositions*) ANALYSIS_SUBFOLDER="propositions" ;;
+  *week-ahead*) ANALYSIS_SUBFOLDER="week-ahead" ;;
+  *month-ahead*) ANALYSIS_SUBFOLDER="month-ahead" ;;
+  *weekly-review*) ANALYSIS_SUBFOLDER="weekly-review" ;;
+  *monthly-review*) ANALYSIS_SUBFOLDER="monthly-review" ;;
+  *breaking*) ANALYSIS_SUBFOLDER="realtime-$(date -u +%H%M)" ;;
+  *) ANALYSIS_SUBFOLDER="$REQUESTED_TYPE" ;;
+esac
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then
   ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
@@ -592,9 +610,9 @@ news/content/{YYYY-MM-DD}/{article-types}
 ⚠️ DO NOT use `git push` — the safe output tool handles publishing. Commit locally, then use the tool.
 
 ```bash
-# Stage articles and analysis — scoped to current date to stay within 100-file PR limit
+# Stage articles and analysis — scoped to requested article type subfolder
 git add news/ || true
-git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/" || true
+git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/${ANALYSIS_SUBFOLDER:-${REQUESTED_TYPE}}/" || true
 git add analysis/weekly/ || true
 # Enforce safe-outputs 100-file PR limit
 STAGED_COUNT=$(git diff --cached --name-only | wc -l)

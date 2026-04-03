@@ -303,7 +303,7 @@ Example: `news/content/2026-03-23/monthly-review`
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally (scoped to current date to stay within 100-file PR limit): `git add news/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/" analysis/weekly/ && git commit -m "Add monthly-review articles and analysis artifacts"`
+> 2. Stage and commit locally (scoped to monthly-review subfolder): `git add news/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/monthly-review/" analysis/weekly/ && git commit -m "Add monthly-review articles and analysis artifacts"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -420,7 +420,7 @@ These files are committed alongside articles for human review and continuous imp
 
 ```bash
 ARTICLE_DATE=$(date -u +%Y-%m-%d)
-ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/monthly-review"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then
   ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
