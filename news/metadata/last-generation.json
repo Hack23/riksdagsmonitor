@@ -1,23 +1,53 @@
 {
-  "timestamp": "2026-04-03T07:28:40.928Z",
+  "timestamp": "2026-04-03T17:15:32.425Z",
   "types": [
     "interpellations"
   ],
   "languagesGenerated": [
-    "en",
-    "sv"
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
   ],
   "allRequestedLanguages": [
-    "en",
-    "sv"
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
   ],
   "batchSize": "all",
   "skipExisting": false,
-  "generated": 2,
+  "generated": 12,
   "errors": 0,
   "articles": [
-    "2026-04-03-interpellation-debates-en.html",
-    "2026-04-03-interpellation-debates-sv.html"
+    "2026-04-03-interpellation-debates-da.html",
+    "2026-04-03-interpellation-debates-no.html",
+    "2026-04-03-interpellation-debates-fi.html",
+    "2026-04-03-interpellation-debates-de.html",
+    "2026-04-03-interpellation-debates-fr.html",
+    "2026-04-03-interpellation-debates-es.html",
+    "2026-04-03-interpellation-debates-nl.html",
+    "2026-04-03-interpellation-debates-ar.html",
+    "2026-04-03-interpellation-debates-he.html",
+    "2026-04-03-interpellation-debates-ja.html",
+    "2026-04-03-interpellation-debates-ko.html",
+    "2026-04-03-interpellation-debates-zh.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
