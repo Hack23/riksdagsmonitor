@@ -580,7 +580,7 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
   ARTICLE_DATE="${{ github.event.inputs.article_date }}"
   [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
 fi
-ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/propositions"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then
   ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
