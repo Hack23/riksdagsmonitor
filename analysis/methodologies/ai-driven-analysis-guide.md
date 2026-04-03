@@ -1342,8 +1342,9 @@ For this article's documents, generate visualization data in JSON format:
      ]
    }
 
-Embed this data as a <script type="application/json" class="chart-data"> element
-in the article HTML. The rendering script reads this data to create interactive charts.
+Embed each visualization payload as a <script type="application/json" class="chart-data" data-chart-type="{chartType}"> element
+in the article HTML, where `{chartType}` identifies the visualization type (for example: `swot`, `vote`, or `risk-heat-map`).
+The rendering script reads elements by the shared `chart-data` class and uses `data-chart-type` to create the correct interactive chart.
 ```
 
 #### Mermaid Diagram Requirements in Analysis Files

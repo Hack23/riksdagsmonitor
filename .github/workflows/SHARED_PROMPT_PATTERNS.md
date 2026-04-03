@@ -363,8 +363,10 @@ If an article fails ≥6 checks: DO NOT commit — escalate for manual review
 
 Read these files for the current article type and date:
 
+> Use the analysis subfolder name from the type→folder mapping table above (for example `committeeReports`, not the article slug `committee-reports`).
+
 ```bash
-ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}"
+ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
 cat "${ANALYSIS_BASE}/synthesis-summary.md"      # Key findings, risk levels, confidence
 cat "${ANALYSIS_BASE}/swot-analysis.md"           # Top SWOT entries → Winners & Losers
 cat "${ANALYSIS_BASE}/risk-assessment.md"         # Risk scores → Strategic Context
@@ -479,7 +481,7 @@ When the article HTML contains chart container elements, provide visualization d
 }
 ```
 
-Embed as `<script type="application/json" class="chart-data-{chartType}">` before the chart container.
+Embed as `<script type="application/json" class="chart-data">` before the chart container. Use the JSON `chartType` property to identify the visualization type.
 ````
 
 ---
