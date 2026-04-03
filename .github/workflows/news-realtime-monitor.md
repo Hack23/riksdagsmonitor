@@ -270,9 +270,8 @@ if [ -d "$UNSCOPED_DIR" ]; then
   fi
   if [ -d "$UNSCOPED_DIR/documents" ]; then
     mkdir -p "$SCOPED_DIR/documents"
-    find "$UNSCOPED_DIR/documents" -mindepth 1 -maxdepth 1 -exec mv {} "$SCOPED_DIR/documents/" \;
-    rmdir "$UNSCOPED_DIR/documents" 2>/dev/null || true
-    echo "📁 Relocated pipeline documents/ contents → $SCOPED_DIR/documents"
+    find "$UNSCOPED_DIR/documents" -mindepth 1 -maxdepth 1 -exec cp -R -f {} "$SCOPED_DIR/documents/" \;
+    echo "📁 Copied pipeline documents/ contents → $SCOPED_DIR/documents (kept unscoped originals for downstream per-file analysis)"
   fi
 fi
 ls -la "$SCOPED_DIR/" 2>/dev/null || echo "⚠️ No output directory"

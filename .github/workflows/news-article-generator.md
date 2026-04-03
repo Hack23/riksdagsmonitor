@@ -336,26 +336,43 @@ if [ -z "$RAW_REQUESTED_TYPE" ] || [[ "$RAW_REQUESTED_TYPE" == *,* ]]; then
 fi
 REQUESTED_TYPE="$RAW_REQUESTED_TYPE"
 [ -z "$REQUESTED_TYPE" ] && REQUESTED_TYPE="committee-reports"
-# Capture HHMM once for breaking type to prevent minute-boundary divergence between relocation and ANALYSIS_SUBFOLDER
-_AG_HHMM=$(date -u +%H%M)
-if [ "$_IS_SCHEDULE_OR_MULTI" = true ]; then
-  # Multi-type or schedule-driven run — use a dedicated workflow-scoped folder
-  _RELOC_SUBFOLDER="article-generator-${_AG_HHMM}"
-else
-  case "$REQUESTED_TYPE" in
-    *committee-reports*) _RELOC_SUBFOLDER="committeeReports" ;;
-    *interpellation*) _RELOC_SUBFOLDER="interpellations" ;;
-    *motions*) _RELOC_SUBFOLDER="motions" ;;
-    *propositions*) _RELOC_SUBFOLDER="propositions" ;;
-    *week-ahead*) _RELOC_SUBFOLDER="week-ahead" ;;
-    *month-ahead*) _RELOC_SUBFOLDER="month-ahead" ;;
-    *weekly-review*) _RELOC_SUBFOLDER="weekly-review" ;;
-    *monthly-review*) _RELOC_SUBFOLDER="monthly-review" ;;
-    *breaking*) _RELOC_SUBFOLDER="realtime-${_AG_HHMM}" ;;
-    *deep-inspection*) _RELOC_SUBFOLDER="deep-inspection" ;;
-    *) _RELOC_SUBFOLDER="$REQUESTED_TYPE" ;;
-  esac
+# Capture and persist HHMM/subfolder once so later blocks can source the same values
+ANALYSIS_SUBFOLDER_ENV=/tmp/analysis_subfolder.env
+if [ -f "$ANALYSIS_SUBFOLDER_ENV" ]; then
+  # Reuse previously persisted values to keep relocation/staging/validation deterministic
+  # shellcheck source=/tmp/analysis_subfolder.env
+  . "$ANALYSIS_SUBFOLDER_ENV"
+  [ -n "${ANALYSIS_HHMM:-}" ] && _AG_HHMM="$ANALYSIS_HHMM"
+  [ -n "${ANALYSIS_SUBFOLDER:-}" ] && _RELOC_SUBFOLDER="$ANALYSIS_SUBFOLDER"
 fi
+if [ -z "${_AG_HHMM:-}" ]; then
+  _AG_HHMM=$(date -u +%H%M)
+fi
+if [ -z "${_RELOC_SUBFOLDER:-}" ]; then
+  if [ "$_IS_SCHEDULE_OR_MULTI" = true ]; then
+    # Multi-type or schedule-driven run — use a dedicated workflow-scoped folder
+    _RELOC_SUBFOLDER="article-generator-${_AG_HHMM}"
+  else
+    case "$REQUESTED_TYPE" in
+      *committee-reports*) _RELOC_SUBFOLDER="committeeReports" ;;
+      *interpellation*) _RELOC_SUBFOLDER="interpellations" ;;
+      *motions*) _RELOC_SUBFOLDER="motions" ;;
+      *propositions*) _RELOC_SUBFOLDER="propositions" ;;
+      *week-ahead*) _RELOC_SUBFOLDER="week-ahead" ;;
+      *month-ahead*) _RELOC_SUBFOLDER="month-ahead" ;;
+      *weekly-review*) _RELOC_SUBFOLDER="weekly-review" ;;
+      *monthly-review*) _RELOC_SUBFOLDER="monthly-review" ;;
+      *breaking*) _RELOC_SUBFOLDER="realtime-${_AG_HHMM}" ;;
+      *deep-inspection*) _RELOC_SUBFOLDER="deep-inspection" ;;
+      *) _RELOC_SUBFOLDER="$REQUESTED_TYPE" ;;
+    esac
+  fi
+fi
+# Persist immediately so all subsequent blocks get the same values
+echo "ANALYSIS_SUBFOLDER=$_RELOC_SUBFOLDER" > "$ANALYSIS_SUBFOLDER_ENV"
+echo "ANALYSIS_HHMM=$_AG_HHMM" >> "$ANALYSIS_SUBFOLDER_ENV"
+echo "_AG_HHMM=$_AG_HHMM" >> "$ANALYSIS_SUBFOLDER_ENV"
+echo "_RELOC_SUBFOLDER=$_RELOC_SUBFOLDER" >> "$ANALYSIS_SUBFOLDER_ENV"
 UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
 SCOPED_DIR="$UNSCOPED_DIR/$_RELOC_SUBFOLDER"
 if [ -d "$UNSCOPED_DIR" ]; then
@@ -441,8 +458,11 @@ else
   fi
 fi
 # Persist ANALYSIS_SUBFOLDER for use in the commit step (agentic blocks may run independently)
-echo "ANALYSIS_SUBFOLDER=$ANALYSIS_SUBFOLDER" > /tmp/analysis_subfolder.env
-echo "_AG_HHMM=$_AG_HHMM" >> /tmp/analysis_subfolder.env
+ANALYSIS_SUBFOLDER_ENV=/tmp/analysis_subfolder.env
+echo "ANALYSIS_SUBFOLDER=$ANALYSIS_SUBFOLDER" > "$ANALYSIS_SUBFOLDER_ENV"
+echo "ANALYSIS_HHMM=${_AG_HHMM:-}" >> "$ANALYSIS_SUBFOLDER_ENV"
+echo "_AG_HHMM=${_AG_HHMM:-}" >> "$ANALYSIS_SUBFOLDER_ENV"
+echo "_RELOC_SUBFOLDER=$ANALYSIS_SUBFOLDER" >> "$ANALYSIS_SUBFOLDER_ENV"
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then
