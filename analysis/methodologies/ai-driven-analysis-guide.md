@@ -1297,16 +1297,19 @@ Example:
 
 ## 📊 Visualization Integration Protocol (v4.0)
 
-### Chart.js / D3.js Integration in Articles
+> **Scope rule**: Chart.js / D3.js visualizations are for **HTML news articles only**.
+> Markdown analysis files (`.md`) MUST use **Mermaid diagrams** for all visualizations — see §Mermaid Diagram Requirements below.
 
-News articles SHOULD include interactive visualizations when data supports them. The AI agent generates the data and configuration; scripts render the Chart.js/D3.js containers.
+### Chart.js / D3.js Integration in News Articles
 
-#### Supported Visualization Types
+News articles (HTML) SHOULD include interactive visualizations when data supports them. The AI agent generates the data and configuration; scripts render the Chart.js containers via `<canvas data-chart-config="...">`.
+
+#### Supported Visualization Types (HTML news articles only)
 
 | Visualization | Use Case | Library | AI Provides |
 |---------------|----------|---------|-------------|
-| **SWOT Quadrant Chart** | Stakeholder analysis summary | D3.js | SWOT entries with impact scores |
-| **Risk Heat Map** | Risk assessment visualization | D3.js | L×I scores for all identified risks |
+| **SWOT Quadrant Chart** | Stakeholder analysis summary | Chart.js (radar) | SWOT entries with impact scores |
+| **Risk Heat Map** | Risk assessment visualization | Chart.js (scatter) | L×I scores for all identified risks |
 | **Coalition Vote Chart** | Party voting patterns | Chart.js (bar) | Vote counts per party (Ja/Nej/Avstår) |
 | **Policy Domain Radar** | Multi-dimensional policy coverage | Chart.js (radar) | Scores per policy domain (0-10) |
 | **Legislative Pipeline Sankey** | Document flow from proposal to vote | D3.js (Sankey) | Source→committee→vote stage data |

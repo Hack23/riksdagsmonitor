@@ -454,9 +454,11 @@ Write 50-80 words connecting these documents to the broader political landscape:
 
 ---
 
-## 📊 VISUALIZATION DATA GENERATION (v4.0 — for articles with chart containers)
+## 📊 VISUALIZATION DATA GENERATION (v4.0 — for HTML news articles with chart containers)
 
-> When articles contain chart containers, the AI MUST provide data for interactive Chart.js/D3.js visualizations.
+> **Scope**: Chart.js / D3.js visualizations are for **HTML news articles only**. Markdown analysis files (`.md`) MUST use **Mermaid diagrams** for all visualizations.
+>
+> When news articles contain chart containers, the AI MUST provide data for interactive Chart.js visualizations.
 
 ````markdown
 ### AI Visualization Data Protocol
