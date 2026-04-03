@@ -410,25 +410,35 @@ if [ -z "$RAW_REQUESTED_TYPE" ] || [[ "$RAW_REQUESTED_TYPE" == *,* ]]; then
 fi
 REQUESTED_TYPE="$RAW_REQUESTED_TYPE"
 [ -z "$REQUESTED_TYPE" ] && REQUESTED_TYPE="committee-reports"
-# Map to folder names matching SHARED_PROMPT_PATTERNS article type isolation rules
-# Use dedicated folder for multi-type/schedule runs; reuse _AG_HHMM for breaking consistency
-_AG_HHMM=${_AG_HHMM:-$(date -u +%H%M)}
-if [ "$_IS_SCHEDULE_OR_MULTI" = true ]; then
-  ANALYSIS_SUBFOLDER="article-generator-${_AG_HHMM}"
+# Reuse previously persisted relocation/analysis folder when available so later blocks
+# do not recompute a different minute-based directory.
+if [ -f /tmp/analysis_subfolder.env ]; then
+  source /tmp/analysis_subfolder.env
+fi
+if [ -n "${ANALYSIS_SUBFOLDER:-}" ]; then
+  ANALYSIS_SUBFOLDER="$ANALYSIS_SUBFOLDER"
+elif [ -n "${_RELOC_SUBFOLDER:-}" ]; then
+  ANALYSIS_SUBFOLDER="$_RELOC_SUBFOLDER"
 else
-  case "$REQUESTED_TYPE" in
-    *committee-reports*) ANALYSIS_SUBFOLDER="committeeReports" ;;
-    *interpellation*) ANALYSIS_SUBFOLDER="interpellations" ;;
-    *motions*) ANALYSIS_SUBFOLDER="motions" ;;
-    *propositions*) ANALYSIS_SUBFOLDER="propositions" ;;
-    *week-ahead*) ANALYSIS_SUBFOLDER="week-ahead" ;;
-    *month-ahead*) ANALYSIS_SUBFOLDER="month-ahead" ;;
-    *weekly-review*) ANALYSIS_SUBFOLDER="weekly-review" ;;
-    *monthly-review*) ANALYSIS_SUBFOLDER="monthly-review" ;;
-    *breaking*) ANALYSIS_SUBFOLDER="realtime-${_AG_HHMM}" ;;
-    *deep-inspection*) ANALYSIS_SUBFOLDER="deep-inspection" ;;
-    *) echo "⚠️ Unknown article type '$REQUESTED_TYPE' — using as-is for subfolder"; ANALYSIS_SUBFOLDER="$REQUESTED_TYPE" ;;
-  esac
+  # Use dedicated folder for multi-type/schedule runs; reuse _AG_HHMM for breaking consistency
+  _AG_HHMM=${_AG_HHMM:-$(date -u +%H%M)}
+  if [ "$_IS_SCHEDULE_OR_MULTI" = true ]; then
+    ANALYSIS_SUBFOLDER="article-generator-${_AG_HHMM}"
+  else
+    case "$REQUESTED_TYPE" in
+      *committee-reports*) ANALYSIS_SUBFOLDER="committeeReports" ;;
+      *interpellation*) ANALYSIS_SUBFOLDER="interpellations" ;;
+      *motions*) ANALYSIS_SUBFOLDER="motions" ;;
+      *propositions*) ANALYSIS_SUBFOLDER="propositions" ;;
+      *week-ahead*) ANALYSIS_SUBFOLDER="week-ahead" ;;
+      *month-ahead*) ANALYSIS_SUBFOLDER="month-ahead" ;;
+      *weekly-review*) ANALYSIS_SUBFOLDER="weekly-review" ;;
+      *monthly-review*) ANALYSIS_SUBFOLDER="monthly-review" ;;
+      *breaking*) ANALYSIS_SUBFOLDER="realtime-${_AG_HHMM}" ;;
+      *deep-inspection*) ANALYSIS_SUBFOLDER="deep-inspection" ;;
+      *) echo "⚠️ Unknown article type '$REQUESTED_TYPE' — using as-is for subfolder"; ANALYSIS_SUBFOLDER="$REQUESTED_TYPE" ;;
+    esac
+  fi
 fi
 # Persist ANALYSIS_SUBFOLDER for use in the commit step (agentic blocks may run independently)
 echo "ANALYSIS_SUBFOLDER=$ANALYSIS_SUBFOLDER" > /tmp/analysis_subfolder.env
