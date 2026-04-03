@@ -361,9 +361,7 @@ ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 # Determine the article type from input for scoped analysis directory
 REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
 [ -z "$REQUESTED_TYPE" ] && REQUESTED_TYPE="committee-reports"
-# Use the first type if comma-separated (each type gets its own subfolder)
-FIRST_TYPE=$(echo "$REQUESTED_TYPE" | cut -d',' -f1 | tr '-' ' ' | awk '{for(i=1;i<=NF;i++){$i=toupper(substr($i,1,1))tolower(substr($i,2))}}1' | tr -d ' ')
-# Map to folder names matching SHARED_PROMPT_PATTERNS
+# Map to folder names matching SHARED_PROMPT_PATTERNS article type isolation rules
 case "$REQUESTED_TYPE" in
   *committee-reports*) ANALYSIS_SUBFOLDER="committeeReports" ;;
   *interpellation*) ANALYSIS_SUBFOLDER="interpellations" ;;
@@ -374,7 +372,8 @@ case "$REQUESTED_TYPE" in
   *weekly-review*) ANALYSIS_SUBFOLDER="weekly-review" ;;
   *monthly-review*) ANALYSIS_SUBFOLDER="monthly-review" ;;
   *breaking*) ANALYSIS_SUBFOLDER="realtime-$(date -u +%H%M)" ;;
-  *) ANALYSIS_SUBFOLDER="$REQUESTED_TYPE" ;;
+  *deep-inspection*) ANALYSIS_SUBFOLDER="deep-inspection" ;;
+  *) echo "⚠️ Unknown article type '$REQUESTED_TYPE' — using as-is for subfolder"; ANALYSIS_SUBFOLDER="$REQUESTED_TYPE" ;;
 esac
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
 ANALYSIS_COUNT=0
