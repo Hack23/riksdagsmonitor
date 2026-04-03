@@ -1,5 +1,5 @@
 {
-  "version": "0.8.19",
+  "version": "0.8.20",
   "name": "riksdagsmonitor",
   "problems": [
     "extraneous: @emnapi/core@1.8.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor/node_modules/@emnapi/core",
@@ -321,8 +321,8 @@
       }
     },
     "@types/node": {
-      "version": "25.5.0",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-25.5.0.tgz",
+      "version": "25.5.2",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-25.5.2.tgz",
       "overridden": false,
       "dependencies": {
         "undici-types": {
@@ -338,7 +338,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.5.0"
+          "version": "25.5.2"
         }
       }
     },
@@ -1451,7 +1451,7 @@
               "overridden": false,
               "dependencies": {
                 "@types/node": {
-                  "version": "25.5.0"
+                  "version": "25.5.2"
                 }
               }
             },
@@ -2625,7 +2625,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.5.0"
+          "version": "25.5.2"
         },
         "@types/whatwg-mimetype": {
           "version": "3.0.2",
@@ -2638,7 +2638,7 @@
           "overridden": false,
           "dependencies": {
             "@types/node": {
-              "version": "25.5.0"
+              "version": "25.5.2"
             }
           }
         },
@@ -2822,8 +2822,8 @@
       }
     },
     "knip": {
-      "version": "6.2.0",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.2.0.tgz",
+      "version": "6.3.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.3.0.tgz",
       "overridden": false,
       "dependencies": {
         "@nodelib/fs.walk": {
@@ -3683,7 +3683,7 @@
       "overridden": false,
       "dependencies": {
         "@types/node": {
-          "version": "25.5.0"
+          "version": "25.5.2"
         },
         "@vitejs/devtools": {},
         "esbuild": {
@@ -3810,7 +3810,7 @@
         "@edge-runtime/vm": {},
         "@opentelemetry/api": {},
         "@types/node": {
-          "version": "25.5.0"
+          "version": "25.5.2"
         },
         "@vitest/browser-playwright": {},
         "@vitest/browser-preview": {},
