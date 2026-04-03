@@ -385,6 +385,16 @@ echo "📊 Analysis artifacts for $ARTICLE_DATE:"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output"
 DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
 echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
+# Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
+# but this workflow needs them under analysis/daily/$DATE/week-ahead/
+UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
+SCOPED_DIR="$UNSCOPED_DIR/week-ahead"
+if [ -d "$UNSCOPED_DIR" ] && [ ! -d "$SCOPED_DIR" ]; then
+  mkdir -p "$SCOPED_DIR"
+  find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv {} "$SCOPED_DIR/" \;
+  [ -d "$UNSCOPED_DIR/documents" ] && mv "$UNSCOPED_DIR/documents" "$SCOPED_DIR/"
+  echo "📁 Relocated pipeline artifacts → $SCOPED_DIR"
+fi
 if [ "$DATA_JSON_COUNT" -eq 0 ]; then
   echo "🚨 CRITICAL: Pipeline downloaded ZERO data. Agent MUST diagnose and fix — do NOT fabricate analysis."
 fi

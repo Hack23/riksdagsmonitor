@@ -802,15 +802,30 @@ git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
 
 **For all other workflows** (realtime-monitor, evening-analysis, article-generator, month-ahead, week-ahead, weekly-review, monthly-review) — MUST also scope to their article-type subdirectory:
 
+> ⚠️ **Pipeline relocation required**: `pre-article-analysis.ts` writes to `analysis/daily/$DATE/` (unscoped) when run without `--doc-type`. Each workflow MUST relocate the pipeline artifacts into its type subfolder immediately after the pipeline step:
+>
+> ```bash
+> UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
+> SCOPED_DIR="$UNSCOPED_DIR/$ARTICLE_TYPE"
+> if [ -d "$UNSCOPED_DIR" ] && [ ! -d "$SCOPED_DIR" ]; then
+>   mkdir -p "$SCOPED_DIR"
+>   find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv {} "$SCOPED_DIR/" \;
+>   [ -d "$UNSCOPED_DIR/documents" ] && mv "$UNSCOPED_DIR/documents" "$SCOPED_DIR/"
+>   echo "📁 Relocated pipeline artifacts → $SCOPED_DIR"
+> fi
+> ```
+
 | Workflow | `ARTICLE_TYPE` subfolder | Example `git add` path |
 |----------|-------------------------|----------------------|
 | news-realtime-monitor | `realtime-${HHMM}` (time-stamped) | `analysis/daily/$DATE/realtime-1430/` |
 | news-evening-analysis | `evening-analysis` | `analysis/daily/$DATE/evening-analysis/` |
-| news-article-generator | `${REQUESTED_TYPE}` (dynamic) | `analysis/daily/$DATE/committeeReports/` |
+| news-article-generator | mapped from `REQUESTED_TYPE` | `analysis/daily/$DATE/committeeReports/` |
 | news-month-ahead | `month-ahead` | `analysis/daily/$DATE/month-ahead/` |
 | news-week-ahead | `week-ahead` | `analysis/daily/$DATE/week-ahead/` |
 | news-weekly-review | `weekly-review` | `analysis/daily/$DATE/weekly-review/` |
 | news-monthly-review | `monthly-review` | `analysis/daily/$DATE/monthly-review/` |
+
+> **`news-article-generator` folder naming**: The `REQUESTED_TYPE` input uses hyphenated values (e.g., `committee-reports`) but analysis folders use mapped names (e.g., `committeeReports`). See the `case` mapping block in the workflow.
 
 ```bash
 # Stage analysis scoped to article type subfolder — prevents overwriting other workflows' analysis

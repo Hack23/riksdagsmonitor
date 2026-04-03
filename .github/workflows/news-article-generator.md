@@ -327,6 +327,31 @@ echo "📊 Analysis artifacts for $ARTICLE_DATE:"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output"
 DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
 echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
+# Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
+# Determine target subfolder from requested article type (done later in detail, use temp detection)
+REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
+[ -z "$REQUESTED_TYPE" ] && REQUESTED_TYPE="committee-reports"
+case "$REQUESTED_TYPE" in
+  *committee-reports*) _RELOC_SUBFOLDER="committeeReports" ;;
+  *interpellation*) _RELOC_SUBFOLDER="interpellations" ;;
+  *motions*) _RELOC_SUBFOLDER="motions" ;;
+  *propositions*) _RELOC_SUBFOLDER="propositions" ;;
+  *week-ahead*) _RELOC_SUBFOLDER="week-ahead" ;;
+  *month-ahead*) _RELOC_SUBFOLDER="month-ahead" ;;
+  *weekly-review*) _RELOC_SUBFOLDER="weekly-review" ;;
+  *monthly-review*) _RELOC_SUBFOLDER="monthly-review" ;;
+  *breaking*) _RELOC_SUBFOLDER="realtime-$(date -u +%H%M)" ;;
+  *deep-inspection*) _RELOC_SUBFOLDER="deep-inspection" ;;
+  *) _RELOC_SUBFOLDER="$REQUESTED_TYPE" ;;
+esac
+UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
+SCOPED_DIR="$UNSCOPED_DIR/$_RELOC_SUBFOLDER"
+if [ -d "$UNSCOPED_DIR" ] && [ ! -d "$SCOPED_DIR" ]; then
+  mkdir -p "$SCOPED_DIR"
+  find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv {} "$SCOPED_DIR/" \;
+  [ -d "$UNSCOPED_DIR/documents" ] && mv "$UNSCOPED_DIR/documents" "$SCOPED_DIR/"
+  echo "📁 Relocated pipeline artifacts → $SCOPED_DIR"
+fi
 if [ "$DATA_JSON_COUNT" -eq 0 ]; then
   echo "🚨 CRITICAL: Pipeline downloaded ZERO data. Agent MUST diagnose and fix — do NOT fabricate analysis."
 fi

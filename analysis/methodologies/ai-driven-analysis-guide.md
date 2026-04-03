@@ -974,6 +974,7 @@ Examples from data:
 - "Riksdag Approves Stricter Deportation Rules as Coalition Unites on Justice Reform"
 - "Hultqvist Challenges Government on Scandinavian Mountain Airport Emergency Gaps"
 - "Four Propositions Signal Government's Spring Security Offensive"
+```
 
 #### Prompt: AI-Driven Meta Description Generation
 

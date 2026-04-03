@@ -257,7 +257,17 @@ fi
 # Verify data was actually downloaded
 DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
 echo "📊 JSON data files downloaded: $DATA_JSON_COUNT"
-ls -la "analysis/daily/$ARTICLE_DATE/$ARTICLE_TYPE/" 2>/dev/null || echo "⚠️ No output directory"
+# Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
+# but this workflow needs them under analysis/daily/$DATE/realtime-${HHMM}/
+UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
+SCOPED_DIR="$UNSCOPED_DIR/$ARTICLE_TYPE"
+if [ -d "$UNSCOPED_DIR" ] && [ ! -d "$SCOPED_DIR" ]; then
+  mkdir -p "$SCOPED_DIR"
+  find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv {} "$SCOPED_DIR/" \;
+  [ -d "$UNSCOPED_DIR/documents" ] && mv "$UNSCOPED_DIR/documents" "$SCOPED_DIR/"
+  echo "📁 Relocated pipeline artifacts → $SCOPED_DIR"
+fi
+ls -la "$SCOPED_DIR/" 2>/dev/null || echo "⚠️ No output directory"
 if [ "$DATA_JSON_COUNT" -eq 0 ]; then
   echo "🚨 ZERO data downloaded. Agent MUST fix scripts or use direct MCP tool calls."
 fi
