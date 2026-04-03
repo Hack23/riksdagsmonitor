@@ -992,6 +992,32 @@ if [ -d "$ANALYSIS_DIR/documents" ]; then
 fi
 
 echo ""
+echo "--- Check 8: Batch analysis enrichment (prevents empty '0 documents analyzed' files) ---"
+if [ -d "$ANALYSIS_DIR/documents" ]; then
+  PERDOC_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l)
+  if [ "${PERDOC_COUNT:-0}" -gt 0 ]; then
+    # Per-document analysis exists — batch files MUST NOT report "0 documents analyzed"
+    for bf in synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md classification-results.md significance-scoring.md stakeholder-perspectives.md; do
+      BATCH_FILE="$ANALYSIS_DIR/$bf"
+      [ ! -f "$BATCH_FILE" ] && continue
+      ZERO_DOCS=$(grep -cE "(Documents Analyzed|documents analyzed|Analyzed \*\*0|Scored \*\*0|for \*\*0|to \*\*0|across 0 documents|for 0 political)" "$BATCH_FILE" 2>/dev/null) || true
+      FILE_SIZE=$(wc -c < "$BATCH_FILE" 2>/dev/null) || true
+      if [ "${ZERO_DOCS:-0}" -gt 0 ]; then
+        echo "❌ FAIL: $bf reports '0 documents' but $PERDOC_COUNT per-doc analyses exist — MUST be enriched"
+        QUALITY_PASS=false
+        FAIL_COUNT=$((FAIL_COUNT + 1))
+      elif [ "${FILE_SIZE:-0}" -lt 500 ]; then
+        echo "❌ FAIL: $bf is only ${FILE_SIZE} bytes — too small for meaningful analysis (minimum: 500)"
+        QUALITY_PASS=false
+        FAIL_COUNT=$((FAIL_COUNT + 1))
+      else
+        echo "✅ PASS: $bf has substantive content (${FILE_SIZE} bytes)"
+      fi
+    done
+  fi
+fi
+
+echo ""
 echo "=== Quality Gate Summary ==="
 echo "Failures: $FAIL_COUNT | Warnings: $WARN_COUNT"
 if [ "$QUALITY_PASS" = "true" ]; then
