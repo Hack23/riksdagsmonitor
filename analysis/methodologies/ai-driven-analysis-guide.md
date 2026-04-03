@@ -1495,14 +1495,20 @@ flowchart LR
 ```markdown
 ### Step 3a: Read Pre-Computed Analysis (MANDATORY before article generation)
 
+Use `${ANALYSIS_SUBFOLDER}` for analysis paths, not the public `${ARTICLE_TYPE}` slug. The workflows map article slugs to analysis folders, for example:
+- `committee-reports` → `committeeReports`
+- `government-propositions` → `propositions`
+- `opposition-motions` → `motions`
+- `interpellation-debates` → `interpellations`
+
 Before writing ANY article content, the AI MUST read:
 
-1. `analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/synthesis-summary.md` → Extract key findings, risk levels, confidence scores
-2. `analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/swot-analysis.md` → Extract top S/W/O/T entries for Winners & Losers
-3. `analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/risk-assessment.md` → Extract risk scores for Strategic Context
-4. `analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/stakeholder-perspectives.md` → Extract stakeholder impacts
-5. `analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/significance-scoring.md` → Extract significance scores for prioritization
-6. Per-document analysis files in `documents/` subfolder → Extract per-document "Why It Matters"
+1. `analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/synthesis-summary.md` → Extract key findings, risk levels, confidence scores
+2. `analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/swot-analysis.md` → Extract top S/W/O/T entries for Winners & Losers
+3. `analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/risk-assessment.md` → Extract risk scores for Strategic Context
+4. `analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/stakeholder-perspectives.md` → Extract stakeholder impacts
+5. `analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/significance-scoring.md` → Extract significance scores for prioritization
+6. Per-document analysis files in `analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/documents/` subfolder → Extract per-document "Why It Matters"
 
 If synthesis reports "0 documents analyzed":
 - DO NOT skip article generation

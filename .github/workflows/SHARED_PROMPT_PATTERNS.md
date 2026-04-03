@@ -371,9 +371,10 @@ Read these files for the current article type and date:
 # to the wrong directory.
 if [ -z "${ANALYSIS_SUBFOLDER:-}" ]; then
   case "${ARTICLE_TYPE}" in
-    committee-reports)       ANALYSIS_SUBFOLDER="committeeReports" ;;
-    opposition-motions)      ANALYSIS_SUBFOLDER="motions" ;;
-    interpellation-debates)  ANALYSIS_SUBFOLDER="interpellations" ;;
+    committee-reports)        ANALYSIS_SUBFOLDER="committeeReports" ;;
+    government-propositions)  ANALYSIS_SUBFOLDER="propositions" ;;
+    opposition-motions)       ANALYSIS_SUBFOLDER="motions" ;;
+    interpellation-debates)   ANALYSIS_SUBFOLDER="interpellations" ;;
     breaking)
       : "${HHMM:?HHMM must be set for breaking articles to resolve realtime-\${HHMM} analysis folder}"
       ANALYSIS_SUBFOLDER="realtime-${HHMM}"
