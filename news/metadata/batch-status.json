@@ -1,33 +1,17 @@
 {
   "complete": true,
   "completedLanguages": [
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "en",
+    "sv"
   ],
   "remainingLanguages": [],
   "allRequestedLanguages": [
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "en",
+    "sv"
   ],
+<<<<<<< news/content/2026-04-03/interpellations-9cb53356ee7a9620
+  "timestamp": "2026-04-03T07:28:44.536Z"
+=======
   "timestamp": "2026-04-03T06:46:20.318Z"
+>>>>>>> main
 }

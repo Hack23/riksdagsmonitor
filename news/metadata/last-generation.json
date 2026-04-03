@@ -1,66 +1,23 @@
 {
-  "timestamp": "2026-04-03T06:46:10.539Z",
+  "timestamp": "2026-04-03T07:28:40.928Z",
   "types": [
-    "committee-reports",
-    "propositions"
+    "interpellations"
   ],
   "languagesGenerated": [
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "en",
+    "sv"
   ],
   "allRequestedLanguages": [
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "en",
+    "sv"
   ],
   "batchSize": "all",
-  "skipExisting": true,
-  "generated": 24,
+  "skipExisting": false,
+  "generated": 2,
   "errors": 0,
   "articles": [
-    "2026-04-03-committee-reports-da.html",
-    "2026-04-03-committee-reports-no.html",
-    "2026-04-03-committee-reports-fi.html",
-    "2026-04-03-committee-reports-de.html",
-    "2026-04-03-committee-reports-fr.html",
-    "2026-04-03-committee-reports-es.html",
-    "2026-04-03-committee-reports-nl.html",
-    "2026-04-03-committee-reports-ar.html",
-    "2026-04-03-committee-reports-he.html",
-    "2026-04-03-committee-reports-ja.html",
-    "2026-04-03-committee-reports-ko.html",
-    "2026-04-03-committee-reports-zh.html",
-    "2026-04-03-government-propositions-da.html",
-    "2026-04-03-government-propositions-no.html",
-    "2026-04-03-government-propositions-fi.html",
-    "2026-04-03-government-propositions-de.html",
-    "2026-04-03-government-propositions-fr.html",
-    "2026-04-03-government-propositions-es.html",
-    "2026-04-03-government-propositions-nl.html",
-    "2026-04-03-government-propositions-ar.html",
-    "2026-04-03-government-propositions-he.html",
-    "2026-04-03-government-propositions-ja.html",
-    "2026-04-03-government-propositions-ko.html",
-    "2026-04-03-government-propositions-zh.html"
+    "2026-04-03-interpellation-debates-en.html",
+    "2026-04-03-interpellation-debates-sv.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"

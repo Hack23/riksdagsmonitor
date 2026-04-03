@@ -1,8 +1,15 @@
 {
+<<<<<<< news/content/2026-04-03/interpellations-9cb53356ee7a9620
+  "2026-04-03-interpellation-debates-en.html": {
+    "filename": "2026-04-03-interpellation-debates-en.html",
+    "lang": "en",
+    "articleType": "interpellations",
+=======
   "2026-04-03-committee-reports-da.html": {
     "filename": "2026-04-03-committee-reports-da.html",
     "lang": "da",
     "articleType": "committee-reports",
+>>>>>>> main
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -19,12 +26,21 @@
       },
       "issueCount": 0
     },
+<<<<<<< news/content/2026-04-03/interpellations-9cb53356ee7a9620
+    "timestamp": "2026-04-03T07:28:44.530Z"
+  },
+  "2026-04-03-interpellation-debates-sv.html": {
+    "filename": "2026-04-03-interpellation-debates-sv.html",
+    "lang": "sv",
+    "articleType": "interpellations",
+=======
     "timestamp": "2026-04-03T06:46:14.406Z"
   },
   "2026-04-03-committee-reports-no.html": {
     "filename": "2026-04-03-committee-reports-no.html",
     "lang": "no",
     "articleType": "committee-reports",
+>>>>>>> main
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -41,6 +57,9 @@
       },
       "issueCount": 0
     },
+<<<<<<< news/content/2026-04-03/interpellations-9cb53356ee7a9620
+    "timestamp": "2026-04-03T07:28:44.533Z"
+=======
     "timestamp": "2026-04-03T06:46:14.411Z"
   },
   "2026-04-03-committee-reports-fi.html": {
@@ -526,5 +545,6 @@
       "issueCount": 0
     },
     "timestamp": "2026-04-03T06:46:20.315Z"
+>>>>>>> main
   }
 }
