@@ -1,46 +1,30 @@
 {
-<<<<<<< news/content/2026-04-03/interpellations-9cb53356ee7a9620
-  "2026-04-03-interpellation-debates-en.html": {
-    "filename": "2026-04-03-interpellation-debates-en.html",
-    "lang": "en",
-    "articleType": "interpellations",
-=======
-  "2026-04-03-committee-reports-da.html": {
-    "filename": "2026-04-03-committee-reports-da.html",
+  "2026-04-03-interpellation-debates-da.html": {
+    "filename": "2026-04-03-interpellation-debates-da.html",
     "lang": "da",
-    "articleType": "committee-reports",
->>>>>>> main
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 100,
-      "passesThreshold": true,
-      "assessmentPasses": 1,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 100,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 0
-    },
-<<<<<<< news/content/2026-04-03/interpellations-9cb53356ee7a9620
-    "timestamp": "2026-04-03T07:28:44.530Z"
-  },
-  "2026-04-03-interpellation-debates-sv.html": {
-    "filename": "2026-04-03-interpellation-debates-sv.html",
-    "lang": "sv",
     "articleType": "interpellations",
-=======
-    "timestamp": "2026-04-03T06:46:14.406Z"
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 100,
+      "passesThreshold": true,
+      "assessmentPasses": 1,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 100,
+        "analyticalDepth": 100,
+        "editorialConsistency": 100,
+        "evidenceQuality": 100,
+        "languageQuality": 100
+      },
+      "issueCount": 0
+    },
+    "timestamp": "2026-04-03T17:15:35.787Z"
   },
-  "2026-04-03-committee-reports-no.html": {
-    "filename": "2026-04-03-committee-reports-no.html",
+  "2026-04-03-interpellation-debates-no.html": {
+    "filename": "2026-04-03-interpellation-debates-no.html",
     "lang": "no",
-    "articleType": "committee-reports",
->>>>>>> main
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -57,15 +41,12 @@
       },
       "issueCount": 0
     },
-<<<<<<< news/content/2026-04-03/interpellations-9cb53356ee7a9620
-    "timestamp": "2026-04-03T07:28:44.533Z"
-=======
-    "timestamp": "2026-04-03T06:46:14.411Z"
+    "timestamp": "2026-04-03T17:15:35.793Z"
   },
-  "2026-04-03-committee-reports-fi.html": {
-    "filename": "2026-04-03-committee-reports-fi.html",
+  "2026-04-03-interpellation-debates-fi.html": {
+    "filename": "2026-04-03-interpellation-debates-fi.html",
     "lang": "fi",
-    "articleType": "committee-reports",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -82,12 +63,12 @@
       },
       "issueCount": 0
     },
-    "timestamp": "2026-04-03T06:46:14.417Z"
+    "timestamp": "2026-04-03T17:15:35.800Z"
   },
-  "2026-04-03-committee-reports-de.html": {
-    "filename": "2026-04-03-committee-reports-de.html",
+  "2026-04-03-interpellation-debates-de.html": {
+    "filename": "2026-04-03-interpellation-debates-de.html",
     "lang": "de",
-    "articleType": "committee-reports",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -104,12 +85,12 @@
       },
       "issueCount": 0
     },
-    "timestamp": "2026-04-03T06:46:14.421Z"
+    "timestamp": "2026-04-03T17:15:35.806Z"
   },
-  "2026-04-03-committee-reports-fr.html": {
-    "filename": "2026-04-03-committee-reports-fr.html",
+  "2026-04-03-interpellation-debates-fr.html": {
+    "filename": "2026-04-03-interpellation-debates-fr.html",
     "lang": "fr",
-    "articleType": "committee-reports",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -126,12 +107,12 @@
       },
       "issueCount": 0
     },
-    "timestamp": "2026-04-03T06:46:14.424Z"
+    "timestamp": "2026-04-03T17:15:35.811Z"
   },
-  "2026-04-03-committee-reports-es.html": {
-    "filename": "2026-04-03-committee-reports-es.html",
+  "2026-04-03-interpellation-debates-es.html": {
+    "filename": "2026-04-03-interpellation-debates-es.html",
     "lang": "es",
-    "articleType": "committee-reports",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -148,12 +129,12 @@
       },
       "issueCount": 0
     },
-    "timestamp": "2026-04-03T06:46:14.427Z"
+    "timestamp": "2026-04-03T17:15:35.816Z"
   },
-  "2026-04-03-committee-reports-nl.html": {
-    "filename": "2026-04-03-committee-reports-nl.html",
+  "2026-04-03-interpellation-debates-nl.html": {
+    "filename": "2026-04-03-interpellation-debates-nl.html",
     "lang": "nl",
-    "articleType": "committee-reports",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -170,12 +151,12 @@
       },
       "issueCount": 0
     },
-    "timestamp": "2026-04-03T06:46:14.430Z"
+    "timestamp": "2026-04-03T17:15:35.821Z"
   },
-  "2026-04-03-committee-reports-ar.html": {
-    "filename": "2026-04-03-committee-reports-ar.html",
+  "2026-04-03-interpellation-debates-ar.html": {
+    "filename": "2026-04-03-interpellation-debates-ar.html",
     "lang": "ar",
-    "articleType": "committee-reports",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -192,12 +173,12 @@
       },
       "issueCount": 0
     },
-    "timestamp": "2026-04-03T06:46:14.433Z"
+    "timestamp": "2026-04-03T17:15:35.826Z"
   },
-  "2026-04-03-committee-reports-he.html": {
-    "filename": "2026-04-03-committee-reports-he.html",
+  "2026-04-03-interpellation-debates-he.html": {
+    "filename": "2026-04-03-interpellation-debates-he.html",
     "lang": "he",
-    "articleType": "committee-reports",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -214,13 +195,13 @@
       },
       "issueCount": 0
     },
-    "timestamp": "2026-04-03T06:46:14.437Z"
+    "timestamp": "2026-04-03T17:15:35.832Z"
   },
-  "2026-04-03-committee-reports-ja.html": {
-    "filename": "2026-04-03-committee-reports-ja.html",
+  "2026-04-03-interpellation-debates-ja.html": {
+    "filename": "2026-04-03-interpellation-debates-ja.html",
     "lang": "ja",
-    "articleType": "committee-reports",
-    "score": 88,
+    "articleType": "interpellations",
+    "score": 100,
     "passed": true,
     "multidimensional": {
       "overallScore": 100,
@@ -236,12 +217,12 @@
       },
       "issueCount": 0
     },
-    "timestamp": "2026-04-03T06:46:14.441Z"
+    "timestamp": "2026-04-03T17:15:35.836Z"
   },
-  "2026-04-03-committee-reports-ko.html": {
-    "filename": "2026-04-03-committee-reports-ko.html",
+  "2026-04-03-interpellation-debates-ko.html": {
+    "filename": "2026-04-03-interpellation-debates-ko.html",
     "lang": "ko",
-    "articleType": "committee-reports",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -258,34 +239,12 @@
       },
       "issueCount": 0
     },
-    "timestamp": "2026-04-03T06:46:14.444Z"
+    "timestamp": "2026-04-03T17:15:35.841Z"
   },
-  "2026-04-03-committee-reports-zh.html": {
-    "filename": "2026-04-03-committee-reports-zh.html",
+  "2026-04-03-interpellation-debates-zh.html": {
+    "filename": "2026-04-03-interpellation-debates-zh.html",
     "lang": "zh",
-    "articleType": "committee-reports",
-    "score": 88,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 100,
-      "passesThreshold": true,
-      "assessmentPasses": 1,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 100,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 0
-    },
-    "timestamp": "2026-04-03T06:46:14.447Z"
-  },
-  "2026-04-03-government-propositions-da.html": {
-    "filename": "2026-04-03-government-propositions-da.html",
-    "lang": "da",
-    "articleType": "propositions",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -302,249 +261,6 @@
       },
       "issueCount": 0
     },
-    "timestamp": "2026-04-03T06:46:20.277Z"
-  },
-  "2026-04-03-government-propositions-no.html": {
-    "filename": "2026-04-03-government-propositions-no.html",
-    "lang": "no",
-    "articleType": "propositions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 100,
-      "passesThreshold": true,
-      "assessmentPasses": 1,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 100,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 0
-    },
-    "timestamp": "2026-04-03T06:46:20.281Z"
-  },
-  "2026-04-03-government-propositions-fi.html": {
-    "filename": "2026-04-03-government-propositions-fi.html",
-    "lang": "fi",
-    "articleType": "propositions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 100,
-      "passesThreshold": true,
-      "assessmentPasses": 1,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 100,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 0
-    },
-    "timestamp": "2026-04-03T06:46:20.285Z"
-  },
-  "2026-04-03-government-propositions-de.html": {
-    "filename": "2026-04-03-government-propositions-de.html",
-    "lang": "de",
-    "articleType": "propositions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 100,
-      "passesThreshold": true,
-      "assessmentPasses": 1,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 100,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 0
-    },
-    "timestamp": "2026-04-03T06:46:20.288Z"
-  },
-  "2026-04-03-government-propositions-fr.html": {
-    "filename": "2026-04-03-government-propositions-fr.html",
-    "lang": "fr",
-    "articleType": "propositions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 100,
-      "passesThreshold": true,
-      "assessmentPasses": 1,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 100,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 0
-    },
-    "timestamp": "2026-04-03T06:46:20.292Z"
-  },
-  "2026-04-03-government-propositions-es.html": {
-    "filename": "2026-04-03-government-propositions-es.html",
-    "lang": "es",
-    "articleType": "propositions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 100,
-      "passesThreshold": true,
-      "assessmentPasses": 1,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 100,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 0
-    },
-    "timestamp": "2026-04-03T06:46:20.295Z"
-  },
-  "2026-04-03-government-propositions-nl.html": {
-    "filename": "2026-04-03-government-propositions-nl.html",
-    "lang": "nl",
-    "articleType": "propositions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 100,
-      "passesThreshold": true,
-      "assessmentPasses": 1,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 100,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 0
-    },
-    "timestamp": "2026-04-03T06:46:20.298Z"
-  },
-  "2026-04-03-government-propositions-ar.html": {
-    "filename": "2026-04-03-government-propositions-ar.html",
-    "lang": "ar",
-    "articleType": "propositions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 100,
-      "passesThreshold": true,
-      "assessmentPasses": 1,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 100,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 0
-    },
-    "timestamp": "2026-04-03T06:46:20.302Z"
-  },
-  "2026-04-03-government-propositions-he.html": {
-    "filename": "2026-04-03-government-propositions-he.html",
-    "lang": "he",
-    "articleType": "propositions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 100,
-      "passesThreshold": true,
-      "assessmentPasses": 1,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 100,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 0
-    },
-    "timestamp": "2026-04-03T06:46:20.305Z"
-  },
-  "2026-04-03-government-propositions-ja.html": {
-    "filename": "2026-04-03-government-propositions-ja.html",
-    "lang": "ja",
-    "articleType": "propositions",
-    "score": 96,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 100,
-      "passesThreshold": true,
-      "assessmentPasses": 1,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 100,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 0
-    },
-    "timestamp": "2026-04-03T06:46:20.309Z"
-  },
-  "2026-04-03-government-propositions-ko.html": {
-    "filename": "2026-04-03-government-propositions-ko.html",
-    "lang": "ko",
-    "articleType": "propositions",
-    "score": 100,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 100,
-      "passesThreshold": true,
-      "assessmentPasses": 1,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 100,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 0
-    },
-    "timestamp": "2026-04-03T06:46:20.312Z"
-  },
-  "2026-04-03-government-propositions-zh.html": {
-    "filename": "2026-04-03-government-propositions-zh.html",
-    "lang": "zh",
-    "articleType": "propositions",
-    "score": 97,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 100,
-      "passesThreshold": true,
-      "assessmentPasses": 1,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
-        "analyticalDepth": 100,
-        "editorialConsistency": 100,
-        "evidenceQuality": 100,
-        "languageQuality": 100
-      },
-      "issueCount": 0
-    },
-    "timestamp": "2026-04-03T06:46:20.315Z"
->>>>>>> main
+    "timestamp": "2026-04-03T17:15:35.846Z"
   }
 }
