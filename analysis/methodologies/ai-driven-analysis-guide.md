@@ -11,13 +11,13 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--02-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--03-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-04-02 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-02  
+**📋 Document Owner:** CEO | **📄 Version:** 4.0 | **📅 Last Updated:** 2026-04-03 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-03  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -60,6 +60,25 @@ analysis/daily/YYYY-MM-DD/{articleType}/
 **Test:** If you can replace the "analysis" content with Lorem Ipsum and nobody notices, it's scripted crap — not genuine analysis.
 
 > **v3.0 Addition**: Functions like `buildDynamicSwot()`, `buildStrategicImplications()`, `buildKeyTakeaways()`, `generateDeepAnalysisSection()`, `scoreNewsworthiness()`, and all `*Text()` template functions in `scripts/` are **DEPRECATED** for analysis generation. Their output is treated as fallback stubs. AI agents in workflow `.md` files MUST overwrite ALL template-generated analysis text with genuine, evidence-based political intelligence.
+
+> **v4.0 Addition — AI-Only Article Content**: The following content in news articles MUST be fully AI-generated. Scripts may ONLY provide the HTML skeleton and data payload. All prose, analysis, and editorial content must come from AI prompts:
+>
+> | Content Type | AI MUST Generate | Script MAY Provide |
+> |-------------|------------------|-------------------|
+> | **Article lede** | Context-rich opening paragraph naming actors, policy significance, and political stakes | Empty `<p class="lede">` container |
+> | **"Why It Matters"** | Per-document differentiated analysis citing specific policy impact and stakeholder effects | Nothing — this section must be 100% AI |
+> | **Winners & Losers** | Named parties/actors with specific evidence from voting records or committee outcomes | Nothing — this section must be 100% AI |
+> | **Key Takeaways** | 3-5 unique insights with confidence labels and dok_id evidence | Empty `<ul>` container |
+> | **Strategic Context** | Coalition dynamics, opposition strategy, electoral implications from actual data | Nothing — this section must be 100% AI |
+> | **SWOT/Risk inline summaries** | Key findings from pre-computed analysis files, with links to full analysis on GitHub | Empty chart containers with D3/Chart.js scripts |
+> | **Policy domain labels** | Correct classification using committee→domain mapping (see §Policy Domain Inference below) | Raw committee code only |
+>
+> **v4.0 Banned Script Patterns**: The following code-generated content patterns are REJECTED in articles:
+> - `"Analysis of N documents covering {Field}:, {Field}:"` — template placeholder lede
+> - `"The political landscape remains fluid, with both government and opposition positioning for advantage."` — generic filler
+> - `"Touches on {policy} policy. {Category} reports on {policy} set the framework..."` — repeated boilerplate "Why It Matters"
+> - `"No chamber debate data is available for these items, limiting our ability..."` — excuse masquerading as analysis
+> - Any `"Why It Matters"` text that appears identically for ≥2 documents in the same article
 
 ### Rule 3: Read ALL Methodologies Before Analyzing
 
