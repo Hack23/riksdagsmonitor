@@ -692,6 +692,24 @@ For each interpellation found, cross-reference the minister's response to identi
 
 **4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.
 
+### Step 3d: AI Content Quality Enforcement (v4.0 — MANDATORY)
+
+> 🚨 **v4.0 CRITICAL**: The AI MUST read pre-computed analysis and rewrite ALL script-generated stub content. See `SHARED_PROMPT_PATTERNS.md` §"AI ARTICLE CONTENT GENERATION" and `ai-driven-analysis-guide.md` v4.0.
+
+**1. Read pre-computed analysis** — Read synthesis, SWOT, risk analysis from `analysis/daily/${ARTICLE_DATE}/interpellations/`.
+
+**2. Replace script-generated lede** — Replace any `"Analysis of N documents..."` with AI lede naming the most targeted minister, the filing party strategy, and the most significant interpellation topic.
+
+**3. Replace boilerplate "Why It Matters"** — For EACH interpellation, write unique analysis citing the interpellation number, the specific question asked, the targeted minister's portfolio, and why this matters politically. BANNED: `"Touches on {X} policy..."` boilerplate.
+
+**4. Replace generic "Winners & Losers"** — Replace `"The political landscape remains fluid..."` with specific accountability analysis: which ministers face the most pressure, which opposition parties demonstrate coordination, and minister response timeliness.
+
+**5. Integrate minister response data** — Use cross-reference results from Step 3b (minister response speeches via MCP `search_anforanden`) to enrich the article with response summaries, accountability gaps, and policy commitments.
+
+**6. Replace excuse-as-analysis** — Replace `"No chamber debate data..."` with analysis from the interpellation text itself or minister response speeches.
+
+**7. Add interpellation coordination analysis** — Identify patterns: Are multiple interpellations targeting the same minister? The same policy area? Filed on the same day (suggesting coordination)?
+
 ### Step 4: Translate, Validate & Verify Analysis Quality
 
 Run validation and HTMLHint before creating PR:

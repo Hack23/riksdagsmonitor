@@ -661,6 +661,24 @@ npx tsx scripts/fix-article-navigation.ts
 
 **4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.
 
+### Step 3c: AI Content Quality Enforcement (v4.0 — MANDATORY)
+
+> 🚨 **v4.0 CRITICAL**: The AI MUST read pre-computed analysis and rewrite ALL script-generated stub content. See `SHARED_PROMPT_PATTERNS.md` §"AI ARTICLE CONTENT GENERATION" and `ai-driven-analysis-guide.md` v4.0.
+
+**1. Read pre-computed analysis** — Read synthesis, SWOT, risk, and stakeholder analysis from `analysis/daily/${ARTICLE_DATE}/propositions/`.
+
+**2. Replace script-generated lede** — Replace any `"Analysis of N documents..."` placeholder with AI lede naming specific propositions, ministers, and political significance.
+
+**3. Replace boilerplate "Why It Matters"** — For EACH proposition, write unique analysis citing the proposition number (e.g., Prop. 2025/26:235), specific policy changes, budget impact (SEK amounts), and affected populations. BANNED: `"Touches on {X} policy..."` boilerplate.
+
+**4. Replace generic "Winners & Losers"** — Replace `"The political landscape remains fluid..."` with specific analysis naming government ministers who tabled the propositions and opposition parties likely to challenge them.
+
+**5. Replace excuse-as-analysis** — Replace `"No chamber debate data..."` with analysis of the proposition text itself or debate data from MCP `search_anforanden`.
+
+**6. Handle empty analysis** — If synthesis reports "0 documents analyzed", use MCP `get_propositioner(rm="2025/26")` directly. NEVER publish with "0 documents analyzed" as content.
+
+**7. Add Strategic Context** — Explain whether propositions represent coordinated government offensive (pre-election legislative push) or routine business. Cross-reference with committee reports and motions from the same date.
+
 ### Step 4: Translate, Validate & Verify Analysis Quality
 
 Run validation and HTMLHint before creating PR:

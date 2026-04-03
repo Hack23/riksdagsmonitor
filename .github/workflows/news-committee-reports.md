@@ -681,6 +681,30 @@ npx tsx scripts/fix-article-navigation.ts
 
 **4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.
 
+### Step 3c: AI Content Quality Enforcement (v4.0 — MANDATORY)
+
+> 🚨 **v4.0 CRITICAL**: The AI MUST read pre-computed analysis files and rewrite ALL script-generated stub content. See `SHARED_PROMPT_PATTERNS.md` §"AI ARTICLE CONTENT GENERATION" and `ai-driven-analysis-guide.md` v4.0 §"AI Article Content Generation Protocol".
+
+**1. Read pre-computed analysis** — Before modifying article content, read:
+```bash
+cat "analysis/daily/${ARTICLE_DATE}/committeeReports/synthesis-summary.md"
+cat "analysis/daily/${ARTICLE_DATE}/committeeReports/swot-analysis.md"
+cat "analysis/daily/${ARTICLE_DATE}/committeeReports/risk-assessment.md"
+cat "analysis/daily/${ARTICLE_DATE}/committeeReports/stakeholder-perspectives.md"
+```
+
+**2. Replace script-generated lede** — Find and replace any `<p class="lede">Analysis of N documents covering...` with an AI-generated analytical lede naming the most significant committee report, key actors, and political significance.
+
+**3. Replace boilerplate "Why It Matters"** — For EACH committee report entry, replace any `"Touches on {X} policy..."` boilerplate with document-specific analysis citing the committee code, policy measure, budget impact, and party positions.
+
+**4. Replace generic "Winners & Losers"** — Find and replace `"The political landscape remains fluid..."` with specific winners/losers naming parties (M, S, SD, V, MP, C, L, KD) with evidence from vote records or committee decisions.
+
+**5. Replace excuse-as-analysis** — Find and replace `"No chamber debate data is available..."` with either: (a) actual debate data from MCP `search_anforanden`, or (b) analysis of the committee report text itself.
+
+**6. Add Key Takeaways** — If missing, add 3-5 bullet points with bold lead phrases, dok_id citations, and [HIGH/MEDIUM/LOW] confidence labels.
+
+**7. Verify policy domain labels** — Ensure each committee report is classified by its committee code (FöU=Defence, JuU=Justice, SoU=Healthcare, etc.), NOT by keyword heuristics.
+
 ### Step 4: Translate Swedish Content & Verify Analysis Quality
 All Swedish API data MUST be translated. Check every article for `data-translate="true"` markers.
 

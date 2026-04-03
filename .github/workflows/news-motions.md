@@ -673,6 +673,24 @@ npx tsx scripts/fix-article-navigation.ts
 
 **4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.
 
+### Step 3c: AI Content Quality Enforcement (v4.0 — MANDATORY)
+
+> 🚨 **v4.0 CRITICAL**: The AI MUST read pre-computed analysis and rewrite ALL script-generated stub content. See `SHARED_PROMPT_PATTERNS.md` §"AI ARTICLE CONTENT GENERATION" and `ai-driven-analysis-guide.md` v4.0.
+
+**1. Read pre-computed analysis** — Read synthesis, SWOT, risk analysis from `analysis/daily/${ARTICLE_DATE}/motions/`.
+
+**2. Replace script-generated lede** — Replace any `"Analysis of N documents..."` with AI lede naming the most significant opposition motion(s), filing party, and policy target.
+
+**3. Replace boilerplate "Why It Matters"** — For EACH motion, write unique analysis citing motion number, specific policy proposal, party strategy, and target government policy. BANNED: `"Touches on {X} policy..."` boilerplate.
+
+**4. Replace generic "Winners & Losers"** — Replace `"The political landscape remains fluid..."` with specific opposition strategy analysis: which parties filed, what government policies they target, likelihood of committee support.
+
+**5. Verify document count consistency** — Ensure the number of motions in the title/lede matches the number detailed in the body. If title says "50 motions" but body details 10, either expand body or correct the title.
+
+**6. Verify policy domain classification** — Each motion MUST be classified by its Riksdag committee assignment (utskott), NOT by keyword matching. BANNED: Classifying a food safety motion as "housing policy" based on co-location with housing motions.
+
+**7. Add opposition strategy context** — Explain whether motions represent coordinated opposition campaign, individual MP initiative, or response to government proposition.
+
 ### Step 4: Translate, Validate & Verify Analysis Quality
 
 Run validation and HTMLHint before creating PR:
