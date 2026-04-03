@@ -810,12 +810,14 @@ git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
 > if [ -d "$UNSCOPED_DIR" ]; then
 >   mkdir -p "$SCOPED_DIR"
 >   if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then
->     find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv {} "$SCOPED_DIR/" \;
->     echo "📁 Relocated pipeline *.md artifacts → $SCOPED_DIR"
+>     find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec cp -f {} "$SCOPED_DIR/" \;
+>     echo "📁 Copied pipeline *.md artifacts → $SCOPED_DIR (kept unscoped originals for analysis-reader.ts)"
 >   fi
 >   if [ -d "$UNSCOPED_DIR/documents" ]; then
->     mv "$UNSCOPED_DIR/documents" "$SCOPED_DIR/"
->     echo "📁 Relocated pipeline documents/ → $SCOPED_DIR"
+>     mkdir -p "$SCOPED_DIR/documents"
+>     find "$UNSCOPED_DIR/documents" -mindepth 1 -maxdepth 1 -exec mv {} "$SCOPED_DIR/documents/" \;
+>     rmdir "$UNSCOPED_DIR/documents" 2>/dev/null || true
+>     echo "📁 Relocated pipeline documents/ contents → $SCOPED_DIR/documents (merge-safe)"
 >   fi
 > fi
 > ```

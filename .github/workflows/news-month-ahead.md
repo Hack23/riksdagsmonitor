@@ -407,8 +407,10 @@ if [ -d "$UNSCOPED_DIR" ]; then
     echo "📁 Relocated pipeline *.md artifacts → $SCOPED_DIR"
   fi
   if [ -d "$UNSCOPED_DIR/documents" ]; then
-    mv "$UNSCOPED_DIR/documents" "$SCOPED_DIR/"
-    echo "📁 Relocated pipeline documents/ → $SCOPED_DIR"
+    mkdir -p "$SCOPED_DIR/documents"
+    find "$UNSCOPED_DIR/documents" -mindepth 1 -maxdepth 1 -exec mv {} "$SCOPED_DIR/documents/" \;
+    rmdir "$UNSCOPED_DIR/documents" 2>/dev/null || true
+    echo "📁 Relocated pipeline documents/ contents → $SCOPED_DIR/documents"
   fi
 fi
 if [ "$DATA_JSON_COUNT" -eq 0 ]; then
