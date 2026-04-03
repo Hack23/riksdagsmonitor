@@ -503,7 +503,7 @@ npx tsx scripts/fix-article-navigation.ts
 
 **4. Generate government agenda preview** — List upcoming government actions (propositions expected, ministerial meetings, EU engagements) with political significance context.
 
-**5. Replace generic filler** — Remove `"The political landscape remains fluid..."` and replace with specific forward indicators: "Watch: FöU committee scheduling GUTE II follow-up by April 15" with named triggers and dates.
+**5. Replace generic filler** — Remove `"The political landscape remains fluid..."` and replace with specific forward indicators derived from MCP data (e.g., `get_calendar_events`, `get_betankanden`). Each indicator MUST name a real upcoming event, committee, or deadline extracted from the data — e.g., "Watch: `<COMMITTEE>` scheduling `<TOPIC>` follow-up by `<DATE from calendar>`". Do NOT hard-code example dates or event names; always source them from the current week's MCP query results.
 
 **6. Verify document count consistency** — Ensure report counts are consistent across title, lede, body, and key takeaways. Contradictory counts (17 vs 42 vs 16) are REJECTED.
 
