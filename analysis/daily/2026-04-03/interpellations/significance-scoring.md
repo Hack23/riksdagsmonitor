@@ -41,6 +41,41 @@ Scored **20** interpellations for political significance (0–10 scale). Top-sco
 2. **4** documents rated High (score 6–7): foreign policy, integration, postal service, disability
 3. **15** documents rated Medium/Low
 
+## 📊 Significance Distribution
+
+```mermaid
+graph TD
+    subgraph "Critical (8+)"
+        C1["HD10425<br/>Defence Infrastructure Costs<br/>Score: 8/10"]
+    end
+
+    subgraph "High (6-7)"
+        H1["HD10426<br/>Israel Death Penalty<br/>Score: 7/10"]
+        H2["HD10422<br/>Integration Policy<br/>Score: 7/10"]
+        H3["HD10427<br/>Postnord Ownership<br/>Score: 6/10"]
+        H4["HD10416<br/>Disability Review<br/>Score: 6/10"]
+    end
+
+    subgraph "Medium (4-5)"
+        M1["5 interpellations<br/>Police, Airports, Bridges<br/>Score: 4-5/10"]
+    end
+
+    subgraph "Low (1-3)"
+        L1["10 interpellations<br/>Regional transport, housing<br/>Score: 3/10"]
+    end
+
+    C1 -->|"Defence nexus"| H1
+    H2 -->|"Coalition test"| H3
+
+    style C1 fill:#ff006e,color:#fff
+    style H1 fill:#ff8c00,color:#fff
+    style H2 fill:#ff8c00,color:#fff
+    style H3 fill:#ffbe0b,color:#000
+    style H4 fill:#ffbe0b,color:#000
+    style M1 fill:#00d9ff,color:#000
+    style L1 fill:#e0e0e0,color:#000
+```
+
 ## Data Quality Notes
 
-Significance scores use document type, policy domain breadth, coalition context, content richness, and stakeholder impact breadth.
+Significance scores use document type, policy domain breadth, coalition context, content richness, and stakeholder impact breadth. Scoring methodology follows `analysis/methodologies/political-risk-methodology.md` 5×5 Likelihood × Impact matrix. Confidence: MEDIUM [MEDIUM] — 5 of 20 documents enriched with full text content.

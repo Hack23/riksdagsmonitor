@@ -33,6 +33,53 @@ Classified **20** parliamentary interpellations by policy domain, target ministe
 | V (Left Party) | 3 | Awad (3) | Disability rights focus |
 | MP (Green Party) | 1 | Seye Larsen (1) | Social welfare spotlight |
 
+## 📊 Domain Distribution Diagram
+
+```mermaid
+pie title Interpellation Policy Domains (20 documents)
+    "Infrastructure/Transport" : 7
+    "Integration/Labour" : 3
+    "Social Welfare/Disability" : 3
+    "Social Services" : 1
+    "Foreign Policy" : 1
+    "Defence" : 1
+    "Energy/Industry" : 1
+    "Healthcare" : 1
+    "Disability Rights" : 1
+    "State Ownership" : 1
+```
+
+```mermaid
+graph LR
+    subgraph "Opposition Filing Strategy"
+        S["S — Social Democrats<br/>16 interpellations"]
+        V["V — Left Party<br/>3 interpellations"]
+        MP["MP — Green Party<br/>1 interpellation"]
+    end
+
+    subgraph "Government Target Ministers"
+        KC["Carlson (KD)<br/>Infrastructure"]
+        MS["Svantesson (M)<br/>Finance"]
+        BL["Britz (L)<br/>Integration"]
+        PJ["Jonson (M)<br/>Defence"]
+    end
+
+    S -->|"Multi-front scrutiny"| KC
+    S -->|"Budget & welfare"| MS
+    S -->|"Integration"| BL
+    V -->|"Disability rights"| KC
+    MP -->|"Social welfare"| MS
+    S -->|"Defence gap"| PJ
+
+    style S fill:#e8112d,color:#fff
+    style V fill:#da291c,color:#fff
+    style MP fill:#83cf39,color:#000
+    style KC fill:#005cb8,color:#fff
+    style MS fill:#1b49dd,color:#fff
+    style BL fill:#006ab3,color:#fff
+    style PJ fill:#1b49dd,color:#fff
+```
+
 ## Data Quality Notes
 
-Classification confidence: MEDIUM. Based on full-text (5) and metadata/summary (15) analysis.
+Classification confidence: MEDIUM [MEDIUM]. Based on full-text (5) and metadata/summary (15) analysis. Domain assignments validated against riksdag-regering-mcp interpellation metadata. Filing party analysis cross-referenced with MP profiles.
