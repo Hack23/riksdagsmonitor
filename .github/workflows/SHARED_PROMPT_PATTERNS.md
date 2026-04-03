@@ -278,9 +278,9 @@ The following script directories and functions previously generated analysis con
 
 ---
 
-## 📊 TOP 10 QUALITY ISSUES IN CURRENT ARTICLES (2026-04-02 + 2026-04-03)
+## 📊 TOP 10 QUALITY ISSUES IN CURRENT ARTICLES (2026-04-03 Systemic Audit)
 
-> **Quality audit findings** — these issues MUST be addressed by improving all agentic workflow prompts. Updated with 2026-04-03 systemic audit results.
+> **Quality audit findings** — these issues MUST be addressed by improving all agentic workflow prompts. The 2026-04-03 systemic audit supersedes the earlier 2026-04-02 spot-check findings (placeholder ledes, generic titles, missing analysis references) which are now subsumed under the broader issues below.
 
 ````markdown
 ### Systemic Quality Issues (2026-04-03 Audit)

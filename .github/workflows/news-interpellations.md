@@ -695,6 +695,8 @@ For each interpellation found, cross-reference the minister's response to identi
 ### Step 3d: AI Content Quality Enforcement (v4.0 — MANDATORY)
 
 > 🚨 **v4.0 CRITICAL**: The AI MUST read pre-computed analysis and rewrite ALL script-generated stub content. See `SHARED_PROMPT_PATTERNS.md` §"AI ARTICLE CONTENT GENERATION" and `ai-driven-analysis-guide.md` v4.0.
+>
+> **Note:** This is Step 3**d** (not 3c) because interpellations has an additional Step 3b (Cross-Reference Minister Responses) and Step 3c (AI Title/Meta), shifting this enforcement step to 3d. All other workflows use Step 3c for this same enforcement.
 
 **1. Read pre-computed analysis** — Read synthesis, SWOT, risk analysis from `analysis/daily/${ARTICLE_DATE}/interpellations/`.
 
