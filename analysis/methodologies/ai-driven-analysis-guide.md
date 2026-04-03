@@ -1373,7 +1373,7 @@ Every analysis file MUST include at least 1 Mermaid diagram. For synthesis files
 When classifying documents by policy domain, use the Riksdag committee assignment as the PRIMARY indicator. Title-based keyword heuristics are SECONDARY and must NOT override committee classification.
 
 | Committee Code | Committee Name | Primary Policy Domain | Secondary Domain |
-|:-:|---|---|---|
+|---|---|---|---|
 | FiU | Finansutskottet | 💰 Fiscal & Economic Policy | Budget, Taxation |
 | JuU | Justitieutskottet | ⚖️ Justice & Criminal Policy | Courts, Police, Corrections |
 | FöU | Försvarsutskottet | 🛡️ Defence & Security Policy | Military, Civil Defence, NATO |
