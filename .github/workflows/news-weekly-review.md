@@ -391,11 +391,16 @@ echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
 # but this workflow needs them under analysis/daily/$DATE/weekly-review/
 UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
 SCOPED_DIR="$UNSCOPED_DIR/weekly-review"
-if [ -d "$UNSCOPED_DIR" ] && [ ! -d "$SCOPED_DIR" ]; then
+if [ -d "$UNSCOPED_DIR" ]; then
   mkdir -p "$SCOPED_DIR"
-  find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv {} "$SCOPED_DIR/" \;
-  [ -d "$UNSCOPED_DIR/documents" ] && mv "$UNSCOPED_DIR/documents" "$SCOPED_DIR/"
-  echo "📁 Relocated pipeline artifacts → $SCOPED_DIR"
+  if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then
+    find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv {} "$SCOPED_DIR/" \;
+    echo "📁 Relocated pipeline *.md artifacts → $SCOPED_DIR"
+  fi
+  if [ -d "$UNSCOPED_DIR/documents" ]; then
+    mv "$UNSCOPED_DIR/documents" "$SCOPED_DIR/"
+    echo "📁 Relocated pipeline documents/ → $SCOPED_DIR"
+  fi
 fi
 if [ "$DATA_JSON_COUNT" -eq 0 ]; then
   echo "🚨 CRITICAL: Pipeline downloaded ZERO data. Agent MUST diagnose and fix — do NOT fabricate analysis."

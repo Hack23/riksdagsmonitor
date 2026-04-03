@@ -241,8 +241,9 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
     ARTICLE_DATE=$(date -u +%Y-%m-%d)
   fi
 fi
-# UNIQUE RUN ID: Set HHMM timestamp for this run to prevent overwriting other realtime runs
+# UNIQUE RUN ID: Set HHMM timestamp ONCE for this run — persist to env file so all bash blocks use the same value
 HHMM=${HHMM:-$(date -u +%H%M)}
+echo "HHMM=$HHMM" > /tmp/hhmm.env
 ARTICLE_TYPE="realtime-${HHMM}"
 echo "📥 Downloading data for $ARTICLE_DATE (run: $ARTICLE_TYPE)..."
 # CRITICAL: Source mcp-setup.sh to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the AWF gateway
@@ -261,11 +262,16 @@ echo "📊 JSON data files downloaded: $DATA_JSON_COUNT"
 # but this workflow needs them under analysis/daily/$DATE/realtime-${HHMM}/
 UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
 SCOPED_DIR="$UNSCOPED_DIR/$ARTICLE_TYPE"
-if [ -d "$UNSCOPED_DIR" ] && [ ! -d "$SCOPED_DIR" ]; then
+if [ -d "$UNSCOPED_DIR" ]; then
   mkdir -p "$SCOPED_DIR"
-  find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv {} "$SCOPED_DIR/" \;
-  [ -d "$UNSCOPED_DIR/documents" ] && mv "$UNSCOPED_DIR/documents" "$SCOPED_DIR/"
-  echo "📁 Relocated pipeline artifacts → $SCOPED_DIR"
+  if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then
+    find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv {} "$SCOPED_DIR/" \;
+    echo "📁 Relocated pipeline *.md artifacts → $SCOPED_DIR"
+  fi
+  if [ -d "$UNSCOPED_DIR/documents" ]; then
+    mv "$UNSCOPED_DIR/documents" "$SCOPED_DIR/"
+    echo "📁 Relocated pipeline documents/ → $SCOPED_DIR"
+  fi
 fi
 ls -la "$SCOPED_DIR/" 2>/dev/null || echo "⚠️ No output directory"
 if [ "$DATA_JSON_COUNT" -eq 0 ]; then
@@ -438,7 +444,7 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
     ARTICLE_DATE=$(date -u +%Y-%m-%d)
   fi
 fi
-HHMM=${HHMM:-$(date -u +%H%M)}
+[ -f /tmp/hhmm.env ] && source /tmp/hhmm.env || HHMM=${HHMM:-$(date -u +%H%M)}
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/realtime-${HHMM}"
 QUALITY_PASS=true
 FAIL_COUNT=0
@@ -555,7 +561,7 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
   ARTICLE_DATE="${{ github.event.inputs.article_date }}"
   [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
 fi
-HHMM=${HHMM:-$(date -u +%H%M)}
+[ -f /tmp/hhmm.env ] && source /tmp/hhmm.env || HHMM=${HHMM:-$(date -u +%H%M)}
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/realtime-${HHMM}"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then
@@ -660,7 +666,7 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
     ARTICLE_DATE="$(date -u +%Y-%m-%d)"
   fi
 fi
-HHMM=${HHMM:-$(date -u +%H%M)}
+[ -f /tmp/hhmm.env ] && source /tmp/hhmm.env || HHMM=${HHMM:-$(date -u +%H%M)}
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/realtime-${HHMM}"
 ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l)
 echo "Analysis artifacts: $ANALYSIS_COUNT files in $ANALYSIS_DIR"
@@ -771,7 +777,7 @@ If the script genuinely fails after verifying MCP, generate articles manually ON
 >
 > ✅ **Build the file incrementally** with multiple small `printf` appends (no heredoc, no size limits):
 > ```bash
-> HHMM=${HHMM:-$(date -u +%H%M)}
+> [ -f /tmp/hhmm.env ] && source /tmp/hhmm.env || HHMM=${HHMM:-$(date -u +%H%M)}
 > FILE="news/${ARTICLE_DATE}-breaking-${HHMM}-en.html"
 > printf '%s\n' '<!DOCTYPE html>' > "$FILE"
 > printf '%s\n' '<html lang="en">' >> "$FILE"
@@ -867,7 +873,7 @@ news/content/{YYYY-MM-DD}/breaking
 
 ```bash
 # Stage articles and analysis — scoped to this run's time-stamped folder to prevent overwriting other runs
-HHMM=${HHMM:-$(date -u +%H%M)}
+[ -f /tmp/hhmm.env ] && source /tmp/hhmm.env || HHMM=${HHMM:-$(date -u +%H%M)}
 git add news/ || true
 git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/realtime-${HHMM}/" || true
 git add analysis/weekly/ || true

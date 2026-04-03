@@ -328,29 +328,41 @@ ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis o
 DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
 echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
 # Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
-# Determine target subfolder from requested article type (done later in detail, use temp detection)
+# Determine target subfolder — use dedicated folder for multi-type/schedule runs to avoid mixing artifacts
 REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
 [ -z "$REQUESTED_TYPE" ] && REQUESTED_TYPE="committee-reports"
-case "$REQUESTED_TYPE" in
-  *committee-reports*) _RELOC_SUBFOLDER="committeeReports" ;;
-  *interpellation*) _RELOC_SUBFOLDER="interpellations" ;;
-  *motions*) _RELOC_SUBFOLDER="motions" ;;
-  *propositions*) _RELOC_SUBFOLDER="propositions" ;;
-  *week-ahead*) _RELOC_SUBFOLDER="week-ahead" ;;
-  *month-ahead*) _RELOC_SUBFOLDER="month-ahead" ;;
-  *weekly-review*) _RELOC_SUBFOLDER="weekly-review" ;;
-  *monthly-review*) _RELOC_SUBFOLDER="monthly-review" ;;
-  *breaking*) _RELOC_SUBFOLDER="realtime-$(date -u +%H%M)" ;;
-  *deep-inspection*) _RELOC_SUBFOLDER="deep-inspection" ;;
-  *) _RELOC_SUBFOLDER="$REQUESTED_TYPE" ;;
-esac
+# Capture HHMM once for breaking type to prevent minute-boundary divergence between relocation and ANALYSIS_SUBFOLDER
+_AG_HHMM=$(date -u +%H%M)
+if [ -z "$REQUESTED_TYPE" ] || [[ "$REQUESTED_TYPE" == *,* ]]; then
+  # Multi-type or schedule-driven run — use a dedicated workflow-scoped folder
+  _RELOC_SUBFOLDER="article-generator-${_AG_HHMM}"
+else
+  case "$REQUESTED_TYPE" in
+    *committee-reports*) _RELOC_SUBFOLDER="committeeReports" ;;
+    *interpellation*) _RELOC_SUBFOLDER="interpellations" ;;
+    *motions*) _RELOC_SUBFOLDER="motions" ;;
+    *propositions*) _RELOC_SUBFOLDER="propositions" ;;
+    *week-ahead*) _RELOC_SUBFOLDER="week-ahead" ;;
+    *month-ahead*) _RELOC_SUBFOLDER="month-ahead" ;;
+    *weekly-review*) _RELOC_SUBFOLDER="weekly-review" ;;
+    *monthly-review*) _RELOC_SUBFOLDER="monthly-review" ;;
+    *breaking*) _RELOC_SUBFOLDER="realtime-${_AG_HHMM}" ;;
+    *deep-inspection*) _RELOC_SUBFOLDER="deep-inspection" ;;
+    *) _RELOC_SUBFOLDER="$REQUESTED_TYPE" ;;
+  esac
+fi
 UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
 SCOPED_DIR="$UNSCOPED_DIR/$_RELOC_SUBFOLDER"
-if [ -d "$UNSCOPED_DIR" ] && [ ! -d "$SCOPED_DIR" ]; then
+if [ -d "$UNSCOPED_DIR" ]; then
   mkdir -p "$SCOPED_DIR"
-  find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv {} "$SCOPED_DIR/" \;
-  [ -d "$UNSCOPED_DIR/documents" ] && mv "$UNSCOPED_DIR/documents" "$SCOPED_DIR/"
-  echo "📁 Relocated pipeline artifacts → $SCOPED_DIR"
+  if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then
+    find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv {} "$SCOPED_DIR/" \;
+    echo "📁 Relocated pipeline *.md artifacts → $SCOPED_DIR"
+  fi
+  if [ -d "$UNSCOPED_DIR/documents" ]; then
+    mv "$UNSCOPED_DIR/documents" "$SCOPED_DIR/"
+    echo "📁 Relocated pipeline documents/ → $SCOPED_DIR"
+  fi
 fi
 if [ "$DATA_JSON_COUNT" -eq 0 ]; then
   echo "🚨 CRITICAL: Pipeline downloaded ZERO data. Agent MUST diagnose and fix — do NOT fabricate analysis."
@@ -387,19 +399,25 @@ ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
 [ -z "$REQUESTED_TYPE" ] && REQUESTED_TYPE="committee-reports"
 # Map to folder names matching SHARED_PROMPT_PATTERNS article type isolation rules
-case "$REQUESTED_TYPE" in
-  *committee-reports*) ANALYSIS_SUBFOLDER="committeeReports" ;;
-  *interpellation*) ANALYSIS_SUBFOLDER="interpellations" ;;
-  *motions*) ANALYSIS_SUBFOLDER="motions" ;;
-  *propositions*) ANALYSIS_SUBFOLDER="propositions" ;;
-  *week-ahead*) ANALYSIS_SUBFOLDER="week-ahead" ;;
-  *month-ahead*) ANALYSIS_SUBFOLDER="month-ahead" ;;
-  *weekly-review*) ANALYSIS_SUBFOLDER="weekly-review" ;;
-  *monthly-review*) ANALYSIS_SUBFOLDER="monthly-review" ;;
-  *breaking*) ANALYSIS_SUBFOLDER="realtime-$(date -u +%H%M)" ;;
-  *deep-inspection*) ANALYSIS_SUBFOLDER="deep-inspection" ;;
-  *) echo "⚠️ Unknown article type '$REQUESTED_TYPE' — using as-is for subfolder"; ANALYSIS_SUBFOLDER="$REQUESTED_TYPE" ;;
-esac
+# Use dedicated folder for multi-type/schedule runs; reuse _AG_HHMM for breaking consistency
+_AG_HHMM=${_AG_HHMM:-$(date -u +%H%M)}
+if [ -z "$REQUESTED_TYPE" ] || [[ "$REQUESTED_TYPE" == *,* ]]; then
+  ANALYSIS_SUBFOLDER="article-generator-${_AG_HHMM}"
+else
+  case "$REQUESTED_TYPE" in
+    *committee-reports*) ANALYSIS_SUBFOLDER="committeeReports" ;;
+    *interpellation*) ANALYSIS_SUBFOLDER="interpellations" ;;
+    *motions*) ANALYSIS_SUBFOLDER="motions" ;;
+    *propositions*) ANALYSIS_SUBFOLDER="propositions" ;;
+    *week-ahead*) ANALYSIS_SUBFOLDER="week-ahead" ;;
+    *month-ahead*) ANALYSIS_SUBFOLDER="month-ahead" ;;
+    *weekly-review*) ANALYSIS_SUBFOLDER="weekly-review" ;;
+    *monthly-review*) ANALYSIS_SUBFOLDER="monthly-review" ;;
+    *breaking*) ANALYSIS_SUBFOLDER="realtime-${_AG_HHMM}" ;;
+    *deep-inspection*) ANALYSIS_SUBFOLDER="deep-inspection" ;;
+    *) echo "⚠️ Unknown article type '$REQUESTED_TYPE' — using as-is for subfolder"; ANALYSIS_SUBFOLDER="$REQUESTED_TYPE" ;;
+  esac
+fi
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then
