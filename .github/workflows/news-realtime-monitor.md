@@ -815,6 +815,22 @@ If the script genuinely fails after verifying MCP, generate articles manually ON
 
 **4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.
 
+## Step 3c: AI Content Quality Enforcement (v4.0 — MANDATORY)
+
+> 🚨 **v4.0 CRITICAL**: Breaking news articles MUST have the highest content quality. Read pre-computed analysis and rewrite ALL stub content. See `SHARED_PROMPT_PATTERNS.md` §"AI ARTICLE CONTENT GENERATION" and `ai-driven-analysis-guide.md` v4.0.
+
+**1. Read pre-computed analysis** — Read ALL analysis files from `analysis/daily/${ARTICLE_DATE}/realtime-${HHMM}/` including per-document analyses in `documents/`.
+
+**2. Write intelligence-grade lede** — Breaking news ledes MUST name the specific development, key actor, quantified impact (SEK amounts, seat counts, affected populations), and urgency.
+
+**3. Write unique "Why It Matters"** per document — Each document's analysis MUST be specific to that document's content. BANNED: any repeated `"Touches on {X} policy..."` boilerplate.
+
+**4. Write substantive "Winners & Losers"** — Name specific parties, ministers, agencies, and sectors with evidence from the analysis. BANNED: `"The political landscape remains fluid..."`.
+
+**5. Include Key Takeaways** — 3-5 bullet points with confidence labels and dok_id citations.
+
+**6. Include visualization data** — For breaking news with voting data, include Chart.js vote distribution data. For defense/budget articles, include budget allocation data.
+
 ## Step 4: Validate & Translate
 
 ```bash

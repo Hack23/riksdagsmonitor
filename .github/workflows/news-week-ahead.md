@@ -491,6 +491,24 @@ npx tsx scripts/fix-article-navigation.ts
 
 **4. Update all metadata** — `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>`.
 
+### Step 3c: AI Content Quality Enforcement (v4.0 — MANDATORY)
+
+> 🚨 **v4.0 CRITICAL**: Week-ahead articles require forward-looking intelligence. Read pre-computed analysis and generate prospective content. See `SHARED_PROMPT_PATTERNS.md` §"AI ARTICLE CONTENT GENERATION" and `ai-driven-analysis-guide.md` v4.0.
+
+**1. Read pre-computed analysis** — Read analysis from `analysis/daily/${ARTICLE_DATE}/week-ahead/`. If synthesis reports "0 documents analyzed", use MCP `get_calendar_events` and `get_betankanden` to populate content directly.
+
+**2. Generate forward-looking lede** — Week-ahead ledes MUST name specific upcoming events (committee votes, plenary debates, government announcements) with dates and significance. BANNED: empty or generic ledes.
+
+**3. Generate committee schedule analysis** — For each scheduled committee report debate, explain: what the committee decided, which parties filed reservations, and what the expected plenary vote outcome is.
+
+**4. Generate government agenda preview** — List upcoming government actions (propositions expected, ministerial meetings, EU engagements) with political significance context.
+
+**5. Replace generic filler** — Remove `"The political landscape remains fluid..."` and replace with specific forward indicators derived from MCP data (e.g., `get_calendar_events`, `get_betankanden`). Each indicator MUST name a real upcoming event, committee, or deadline extracted from the data — e.g., "Watch: `<COMMITTEE>` scheduling `<TOPIC>` follow-up by `<DATE from calendar>`". Do NOT hard-code example dates or event names; always source them from the current week's MCP query results.
+
+**6. Verify document count consistency** — Ensure report counts are consistent across title, lede, body, and key takeaways. Contradictory counts (17 vs 42 vs 16) are REJECTED.
+
+**7. Handle Easter/recess periods** — When parliament is in recess, explain what legislation is pending for the return session and what government agencies are acting during recess.
+
 ### Step 4: Translate, Validate & Verify Analysis Quality
 
 Run validation and HTMLHint before creating PR:

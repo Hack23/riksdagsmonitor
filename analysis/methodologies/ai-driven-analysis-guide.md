@@ -11,13 +11,13 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--02-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--03-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-04-02 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-02  
+**📋 Document Owner:** CEO | **📄 Version:** 4.0 | **📅 Last Updated:** 2026-04-03 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-03  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -60,6 +60,25 @@ analysis/daily/YYYY-MM-DD/{articleType}/
 **Test:** If you can replace the "analysis" content with Lorem Ipsum and nobody notices, it's scripted crap — not genuine analysis.
 
 > **v3.0 Addition**: Functions like `buildDynamicSwot()`, `buildStrategicImplications()`, `buildKeyTakeaways()`, `generateDeepAnalysisSection()`, `scoreNewsworthiness()`, and all `*Text()` template functions in `scripts/` are **DEPRECATED** for analysis generation. Their output is treated as fallback stubs. AI agents in workflow `.md` files MUST overwrite ALL template-generated analysis text with genuine, evidence-based political intelligence.
+
+> **v4.0 Addition — AI-Only Article Content**: The following content in news articles MUST be fully AI-generated. Scripts may ONLY provide the HTML skeleton and data payload. All prose, analysis, and editorial content must come from AI prompts:
+>
+> | Content Type | AI MUST Generate | Script MAY Provide |
+> |-------------|------------------|-------------------|
+> | **Article lede** | Context-rich opening paragraph naming actors, policy significance, and political stakes | Empty `<p class="lede">` container |
+> | **"Why It Matters"** | Per-document differentiated analysis citing specific policy impact and stakeholder effects | Nothing — this section must be 100% AI |
+> | **Winners & Losers** | Named parties/actors with specific evidence from voting records or committee outcomes | Nothing — this section must be 100% AI |
+> | **Key Takeaways** | 3-5 unique insights with confidence labels and dok_id evidence | Empty `<ul>` container |
+> | **Strategic Context** | Coalition dynamics, opposition strategy, electoral implications from actual data | Nothing — this section must be 100% AI |
+> | **SWOT/Risk inline summaries** | Key findings from pre-computed analysis files, with links to full analysis on GitHub | Empty chart containers using the standard `<canvas data-chart-config="...">`/container convention (no inline scripts) |
+> | **Policy domain labels** | Correct classification using committee→domain mapping (see §Policy Domain Inference below) | Raw committee code only |
+>
+> **v4.0 Banned Script Patterns**: The following code-generated content patterns are REJECTED in articles:
+> - `"Analysis of N documents covering {Field}:, {Field}:"` — template placeholder lede
+> - `"The political landscape remains fluid, with both government and opposition positioning for advantage."` — generic filler
+> - `"Touches on {policy} policy. {Category} reports on {policy} set the framework..."` — repeated boilerplate "Why It Matters"
+> - `"No chamber debate data is available for these items, limiting our ability..."` — excuse masquerading as analysis
+> - Any `"Why It Matters"` text that appears identically for ≥2 documents in the same article
 
 ### Rule 3: Read ALL Methodologies Before Analyzing
 
@@ -1080,7 +1099,7 @@ For EACH relationship, provide:
 | 5 | Forward indicators use vague timelines ("1-2 weeks") | MEDIUM | `risk-assessment.md` | AI must cite specific committee schedules and vote dates |
 | 6 | Threat actor mapping omits government response/mitigation | MEDIUM | `threat-analysis.md` | AI must include both threat and response for each actor |
 
-### News Article Quality Issues
+### News Article Quality Issues (2026-04-02)
 
 | # | Issue | Severity | Article(s) | Required Fix |
 |---|-------|----------|-----------|------------|
@@ -1090,6 +1109,496 @@ For EACH relationship, provide:
 | 4 | Mixed Swedish/English content without clear separation | MEDIUM | committee-reports-en.html, propositions-en.html | AI must ensure language consistency |
 | 5 | No links to analysis files in any news article | MEDIUM | ALL | Add "📊 Analysis & Sources" section |
 | 6 | Committee reports "What This Means" sections use generic language | MEDIUM | committee-reports-en.html | AI must write specific analytical prose |
+
+---
+
+## 🔍 Quality Issues Audit (2026-04-03 Findings — v4.0)
+
+### Systemic Content Quality Crisis
+
+The 2026-04-03 audit reveals **systemic quality failures** across 500+ generated news articles, driven by deprecated script templates that the AI agent fails to overwrite. Three critical patterns affect 85%+ of all articles:
+
+```mermaid
+graph TD
+    subgraph "🔴 Root Cause Chain"
+        RC1["📦 Deprecated template functions<br/>still generating content"] --> RC2["🤖 AI agent fails to<br/>overwrite template stubs"]
+        RC2 --> RC3["✅ Quality gate stubs<br/>always return 100/100"]
+        RC3 --> RC4["📰 Low-quality articles<br/>published without review"]
+    end
+    
+    subgraph "📊 Impact Scope"
+        I1["444 files: generic filler<br/>'political landscape remains fluid'"]
+        I2["456 files: excuse-as-analysis<br/>'No chamber debate data'"]
+        I3["210 files: boilerplate 'Why It Matters'<br/>'Touches on {X} policy'"]
+        I4["64 files: placeholder ledes<br/>'Analysis of N documents'"]
+    end
+    
+    RC4 --> I1
+    RC4 --> I2
+    RC4 --> I3
+    RC4 --> I4
+
+    style RC1 fill:#dc3545,color:#fff
+    style RC2 fill:#dc3545,color:#fff
+    style RC3 fill:#dc3545,color:#fff
+    style RC4 fill:#dc3545,color:#fff
+    style I1 fill:#fd7e14,color:#fff
+    style I2 fill:#fd7e14,color:#fff
+    style I3 fill:#fd7e14,color:#fff
+    style I4 fill:#ffc107,color:#000
+```
+
+### News Article Quality Issues (2026-04-03)
+
+| # | Issue | Severity | Scope | Required Fix |
+|---|-------|----------|-------|------------|
+| 1 | **Generic filler**: `"The political landscape remains fluid, with both government and opposition positioning for advantage."` appears in 444+ files | CRITICAL | ALL article types, ALL languages | AI MUST replace with specific winners/losers analysis naming parties, vote margins, and stakeholder impact |
+| 2 | **Excuse-as-analysis**: `"No chamber debate data is available for these items, limiting our ability..."` in 456+ files | CRITICAL | ALL article types | AI MUST either (a) fetch debate data via MCP `search_anforanden`, or (b) provide analysis from committee report text, NOT excuse text |
+| 3 | **Boilerplate "Why It Matters"**: `"Touches on {X} policy. {Generic category text}..."` in 210+ files — identical text reused across different documents | HIGH | committee-reports, propositions, motions | AI MUST write document-specific analysis explaining the unique policy impact of EACH document |
+| 4 | **Contradictory numbers**: Article headlines claim different document counts than body text (e.g., "50 motions" in title, 10 in body) | HIGH | opposition-motions | AI MUST verify document counts match between title, lede, and body before committing |
+| 5 | **Policy misclassification**: Food safety motion (HD024020) labeled as "housing policy"; water power exceptions labeled "housing policy" | HIGH | opposition-motions | AI MUST use Riksdag committee assignment (not keyword heuristic) for policy domain classification |
+| 6 | **Missing analysis references**: Only 2 of 36 articles on 2026-04-03 include the "📊 Analysis & Sources" section | MEDIUM | ALL except week-ahead | AI MUST add analysis references section to EVERY article (see §Analysis-to-Article Reference Linking) |
+| 7 | **Empty analysis files**: `propositions/synthesis-summary.md` and `week-ahead/synthesis-summary.md` report "0 documents analyzed" | CRITICAL | propositions, week-ahead | AI MUST populate analysis from MCP data even when pre-article-analysis.ts finds 0 documents |
+| 8 | **Quality gate disabled**: `assessArticleQuality()` in `helpers.ts` is a stub returning 100/100 for all articles | CRITICAL | ALL articles | AI workflow MUST self-evaluate against quality rubric before committing |
+
+### Analysis File Quality Issues (2026-04-03)
+
+| # | Issue | Severity | File(s) | Required Fix |
+|---|-------|----------|---------|------------|
+| 1 | Propositions synthesis reports "0 documents analyzed" despite government tabling 4 propositions | CRITICAL | `propositions/synthesis-summary.md` | AI must use MCP `get_propositioner` to find and analyze documents when script reports 0 |
+| 2 | Week-ahead synthesis reports "0 documents analyzed" despite 17 committee reports scheduled | CRITICAL | `week-ahead/synthesis-summary.md` | AI must use MCP `get_calendar_events` and `get_betankanden` to populate week-ahead content |
+| 3 | Committee reports synthesis says 2 documents but article says 10 — data inconsistency | HIGH | `committeeReports/synthesis-summary.md` | AI must reconcile analysis and article document counts |
+
+---
+
+## 📰 AI Article Content Generation Protocol (v4.0)
+
+### Mandatory AI-Generated Sections
+
+Every news article MUST contain these AI-generated sections. Script templates provide the HTML skeleton ONLY — all prose content must come from AI analysis of actual data.
+
+#### 1. Analytical Lede (MANDATORY — replaces script placeholder)
+
+> **Current anti-pattern (BANNED):**
+> ```html
+> <p class="lede">Analysis of 10 documents covering Committee:, Published:</p>
+> ```
+
+> **Required pattern:**
+> ```html
+> <p class="lede">Sweden's Defense Committee endorsed sweeping civilian shelter 
+> legislation effective June 2026, while the Justice Committee rejected all 76 
+> opposition demands on criminal corrections — signaling the governing coalition's 
+> pre-election security consolidation strategy. [HIGH confidence]</p>
+> ```
+
+**AI Prompt for Lede Generation:**
+```
+Read ALL documents analyzed for this article. Write a lede paragraph (40-60 words) that:
+1. Names the MOST significant political development (not a document count)
+2. Identifies the key actor(s) by name and party: e.g., "Defense Minister Pål Jonson (M)"
+3. States the concrete political action taken or proposed
+4. Explains WHY this matters NOW (election timing, coalition dynamics, policy impact)
+5. Includes a confidence label [HIGH/MEDIUM/LOW]
+6. NEVER starts with "Analysis of N documents" — this is BANNED
+```
+
+#### 2. Per-Document "Why It Matters" (MANDATORY — replaces boilerplate)
+
+> **Current anti-pattern (BANNED — appears 210+ times):**
+> ```html
+> <p><strong>Why It Matters:</strong> Touches on defence and security policy. 
+> Defence proposals engage Sweden's NATO obligations and cross-party consensus-building 
+> mechanisms for national security legislation.</p>
+> ```
+
+> **Required pattern:**
+> ```html
+> <p><strong>Why It Matters:</strong> FöU12 establishes Sweden's first comprehensive 
+> civilian shelter law since 1944, requiring municipalities to map and upgrade 65,000+ 
+> shelters by 2028. With Russia's invasion of Ukraine as backdrop, this bipartisan 
+> measure (only V and MP dissented) reflects post-NATO accession defense deepening. 
+> Budget: SEK 2.1 billion over 3 years. [HIGH confidence — source: Prop. 2025/26:228]</p>
+> ```
+
+**AI Prompt for "Why It Matters":**
+```
+For EACH document in the article, write a unique "Why It Matters" paragraph (30-50 words) that:
+1. Names the SPECIFIC law, committee, or policy measure (not just the policy domain)
+2. Cites QUANTIFIED impact: budget amounts (SEK), affected population, timeline, seat counts
+3. Places it in POLITICAL CONTEXT: which parties support/oppose, coalition dynamics, electoral timing
+4. References the SOURCE document (dok_id, proposition number, committee report code)
+5. NEVER reuses the same "Why It Matters" text for multiple documents — each must be unique
+6. BANNED pattern: "Touches on {X} policy. {Generic text about the policy domain}..."
+```
+
+#### 3. Winners & Losers Analysis (MANDATORY — replaces generic filler)
+
+> **Current anti-pattern (BANNED — appears 444+ times):**
+> ```html
+> <h3>Winners & Losers</h3>
+> <p>The political landscape remains fluid, with both government and opposition 
+> positioning for advantage.</p>
+> ```
+
+> **Required pattern:**
+> ```html
+> <h3>Winners & Losers</h3>
+> <p><strong>Winners:</strong> Defense Minister Jonson (M) consolidates NATO credibility 
+> with SEK 8.7B GUTE II deal; municipalities gain SEK 2.1B shelter upgrade funding; 
+> Saab/BAE Systems Bofors secure largest counter-drone contract in Swedish history.</p>
+> <p><strong>Losers:</strong> V and MP face isolation after opposing shelter law; 
+> criminal justice opposition (76 rejected demands) signals S strategy failure on 
+> corrections policy; ECHR compliance concerns on HD03235 deportation bill remain 
+> unaddressed by government.</p>
+> ```
+
+**AI Prompt for Winners & Losers:**
+```
+Analyze ALL documents in this article and identify:
+1. **Winners** (2-4): Name specific parties, ministers, agencies, or sectors that GAIN from these developments. Cite the specific document and quantified benefit.
+2. **Losers** (2-4): Name specific parties, opposition figures, or affected groups that are DISADVANTAGED. Cite the specific document and quantified loss.
+3. NEVER use generic filler like "The political landscape remains fluid" — this is BANNED
+4. Every winner/loser claim MUST cite a specific document (dok_id) or vote record
+5. Include party abbreviations: (M), (S), (SD), (V), (MP), (C), (L), (KD)
+```
+
+#### 4. Strategic Context (MANDATORY — replaces missing section)
+
+**AI Prompt for Strategic Context:**
+```
+Write a "Strategic Context" paragraph (50-80 words) that:
+1. Connects this article's documents to the BROADER political landscape
+2. Identifies whether this represents government OFFENSIVE (new legislation), 
+   DEFENSIVE (responding to opposition), or MAINTENANCE (routine business)
+3. Notes electoral timing implications (how far from next election, budget cycle position)
+4. Cross-references related documents from OTHER article types on the same date
+5. Uses MCP data: search_voteringar for vote records, search_anforanden for debate context
+```
+
+#### 5. Key Takeaways (MANDATORY — replaces script-generated bullets)
+
+**AI Prompt for Key Takeaways:**
+```
+Generate 3-5 key takeaways as bullet points, each with:
+1. A bold lead phrase (5-8 words) summarizing the insight
+2. One sentence of supporting evidence with dok_id citation
+3. A confidence label [HIGH/MEDIUM/LOW]
+4. NEVER use generic takeaways like "Monitor developments over 1-2 weeks"
+5. Each takeaway must be UNIQUE to this article (not reusable across dates)
+
+Example:
+- **Coalition unity on security agenda [HIGH]:** All four government propositions 
+  (Prop. 2025/26:214, 228, 235, 216) passed with full coalition + SD support, 
+  demonstrating pre-election alignment on law-and-order messaging.
+```
+
+---
+
+## 📊 Visualization Integration Protocol (v4.0)
+
+> **Scope rule**: Chart.js / D3.js visualizations are for **HTML news articles only**.
+> Markdown analysis files (`.md`) MUST use **Mermaid diagrams** for all visualizations — see §Mermaid Diagram Requirements below.
+
+### Chart.js / D3.js Integration in News Articles
+
+News articles (HTML) SHOULD include interactive visualizations when data supports them. The AI agent generates the data and configuration; scripts render the Chart.js containers via `<canvas data-chart-config="...">`.
+
+#### Supported Visualization Types (HTML news articles only)
+
+| Visualization | Use Case | Library | AI Provides |
+|---------------|----------|---------|-------------|
+| **SWOT Quadrant Chart** | Stakeholder analysis summary | Chart.js (radar) | SWOT entries with impact scores |
+| **Risk Heat Map** | Risk assessment visualization | Chart.js (scatter) | L×I scores for all identified risks |
+| **Coalition Vote Chart** | Party voting patterns | Chart.js (bar) | Vote counts per party (Ja/Nej/Avstår) |
+| **Policy Domain Radar** | Multi-dimensional policy coverage | Chart.js (radar) | Scores per policy domain (0-10) |
+| **Legislative Pipeline Sankey** | Document flow from proposal to vote | D3.js (Sankey) | Source→committee→vote stage data |
+| **CSS Mindmap** | Topic relationship overview | Pure CSS | Hierarchical topic structure |
+| **Timeline Chart** | Legislative schedule and deadlines | Chart.js (line) | Date-based milestones |
+
+#### AI Prompt for Visualization Data
+
+```
+For this article's documents, generate visualization data in JSON format:
+
+1. **SWOT Quadrant** (if SWOT analysis exists, emit a valid Chart.js config in `data-chart-config`):
+   {
+     "type": "radar",
+     "data": {
+       "labels": ["Strengths", "Weaknesses", "Opportunities", "Threats"],
+       "datasets": [
+         {
+           "label": "SWOT impact profile",
+           "data": [8, 6, 7, 9],
+           "backgroundColor": "rgba(0, 217, 255, 0.15)",
+           "borderColor": "#00d9ff",
+           "borderWidth": 2,
+           "pointRadius": 5
+         }
+       ]
+     },
+     "options": {
+       "responsive": true,
+       "plugins": {
+         "legend": { "labels": { "color": "#e0e0e0" } }
+       },
+       "scales": {
+         "r": {
+           "grid": { "color": "rgba(255,255,255,0.1)" },
+           "ticks": { "color": "#b0b0b0", "backdropColor": "transparent" },
+           "pointLabels": { "color": "#e0e0e0" }
+         }
+       }
+     }
+   }
+
+2. **Vote Chart** (if voting data available via search_voteringar, emit a valid Chart.js config in `data-chart-config`):
+   {
+     "type": "bar",
+     "data": {
+       "labels": ["S", "M", "SD", "V", "C", "MP", "L", "KD"],
+       "datasets": [
+         { "label": "Ja",     "data": [0, 68, 0, 0, 0, 0, 16, 19], "backgroundColor": "#83cf39" },
+         { "label": "Nej",    "data": [107, 0, 0, 24, 24, 18, 0, 0], "backgroundColor": "#ff006e" },
+         { "label": "Avstår", "data": [0, 0, 73, 0, 0, 0, 0, 0], "backgroundColor": "#ffbe0b" }
+       ]
+     },
+     "options": {
+       "responsive": true,
+       "scales": {
+         "x": { "stacked": true, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } },
+         "y": { "stacked": true, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } }
+       },
+       "plugins": {
+         "legend": { "labels": { "color": "#e0e0e0" } }
+       }
+     }
+   }
+
+3. **Risk Heat Map** (if risk assessment exists, emit a valid Chart.js config in `data-chart-config`):
+   {
+     "type": "scatter",
+     "data": {
+       "datasets": [
+         {
+           "label": "Risks",
+           "data": [
+             { "x": 3, "y": 4 },
+             { "x": 2, "y": 5 }
+           ],
+           "backgroundColor": ["#dc3545", "#fd7e14"],
+           "pointRadius": 10
+         }
+       ]
+     },
+     "options": {
+       "responsive": true,
+       "scales": {
+         "x": { "title": { "display": true, "text": "Likelihood", "color": "#e0e0e0" }, "min": 0, "max": 5, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } },
+         "y": { "title": { "display": true, "text": "Impact", "color": "#e0e0e0" }, "min": 0, "max": 5, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } }
+       },
+       "plugins": {
+         "legend": { "labels": { "color": "#e0e0e0" } }
+       }
+     }
+   }
+
+Embed each visualization on the target `<canvas>` element using a
+`data-chart-config` attribute as the serialized handoff format
+(for generation examples, see `scripts/data-transformers/content-generators/dashboard-section.ts`).
+Serialize a **complete, valid Chart.js configuration object** (with `type`, `data`, `options`)
+into `data-chart-config`. Do **not** use `<script type="application/json" class="chart-data">`.
+**Important:** charts will render only if the target page loads a client-side initializer
+that reads `canvas[data-chart-config]` and instantiates Chart.js from that JSON; do not
+assume article pages perform this step automatically unless that initializer is explicitly present.
+
+> **Canonical chart type identifiers**: You may add a `chartType` string field at the top level
+> of the JSON config for downstream identification. Valid identifiers: `coalition-votes`,
+> `swot-quadrant`, `risk-heatmap`, `policy-radar`, `legislative-sankey`, `css-mindmap`, `timeline`.
+```
+
+#### Mermaid Diagram Requirements in Analysis Files
+
+Every analysis file MUST include at least 1 Mermaid diagram. For synthesis files, include at least 2:
+
+```
+## Required Mermaid Diagrams per Analysis Type
+
+| Analysis File | Required Diagram(s) | Content |
+|---------------|---------------------|---------|
+| synthesis-summary.md | 2: Document relationship + Risk interconnection | Show how documents relate and how risks cascade |
+| swot-analysis.md | 1: SWOT quadrant mapping with cross-links | Show S↔O exploits and W↔T amplifications |
+| risk-assessment.md | 1: Risk heat map or cascading risk chain | Show L×I positioning and risk dependencies |
+| threat-analysis.md | 1: Threat actor diagram or attack tree | Show threat sources, pathways, and mitigations |
+| stakeholder-perspectives.md | 1: Stakeholder impact network | Show which stakeholders are affected and how |
+| significance-scoring.md | 1: Multi-dimensional scoring radar | Show 5-dimension significance breakdown |
+| cross-reference-map.md | 1: Document relationship graph | Show ALL detected cross-references |
+```
+
+---
+
+## 🏷️ Policy Domain Inference Protocol (v4.0)
+
+### Committee-to-Domain Mapping
+
+When classifying documents by policy domain, use the Riksdag committee assignment as the PRIMARY indicator. Title-based keyword heuristics are SECONDARY and must NOT override committee classification.
+
+| Committee Code | Committee Name | Primary Policy Domain | Secondary Domain |
+|---|---|---|---|
+| FiU | Finansutskottet | 💰 Fiscal & Economic Policy | Budget, Taxation |
+| JuU | Justitieutskottet | ⚖️ Justice & Criminal Policy | Courts, Police, Corrections |
+| FöU | Försvarsutskottet | 🛡️ Defence & Security Policy | Military, Civil Defence, NATO |
+| SoU | Socialutskottet | 🏥 Healthcare & Social Policy | Welfare, Pensions, Elder Care |
+| UU | Utrikesutskottet | 🌍 Foreign Affairs | Diplomacy, EU, International Aid |
+| AU | Arbetsmarknadsutskottet | 👷 Labour Market | Employment, Integration, Work Permits |
+| CU | Civilutskottet | 🏠 Housing & Consumer Policy | Property, Planning, Consumer Protection |
+| KU | Konstitutionsutskottet | 📜 Constitutional Affairs | Government Accountability, Elections |
+| UbU | Utbildningsutskottet | 📚 Education | Schools, Universities, Research |
+| MJU | Miljö- och jordbruksutskottet | 🌱 Environment & Agriculture | Climate, Food Safety, Water |
+| NU | Näringsutskottet | 🏭 Industry & Commerce | Business, Energy, Trade |
+| SfU | Socialförsäkringsutskottet | 🫂 Social Insurance | Parental Leave, Sickness, Migration |
+| TU | Trafikutskottet | 🚂 Transport & Infrastructure | Roads, Rail, Aviation, Digital |
+| SkU | Skatteutskottet | 🧾 Taxation | Tax Policy, Revenue |
+| KrU | Kulturutskottet | 🎭 Culture & Media | Arts, Press, Public Broadcasting |
+
+**v4.0 Rule — Domain Classification Priority:**
+1. **Committee assignment** (from `utskott` field in MCP data) — AUTHORITATIVE
+2. **Cross-reference** to parent proposition or committee report — HIGH confidence
+3. **Title keyword analysis** — SUPPLEMENTARY only, NEVER overrides committee assignment
+4. **BANNED**: Classifying a document based solely on keyword presence (e.g., labeling a food safety motion as "housing policy" because it appears in a list with housing motions)
+
+---
+
+## 🤖 Claude Opus 4.6 Agentic Workflow Enhancements (v4.0)
+
+### Pre-Article Analysis Integration
+
+> **v4.0 Critical Fix**: The AI agent MUST read pre-computed analysis files BEFORE generating article content. Currently, scripts generate stub articles and the AI is expected to enhance them, but analysis data is not explicitly consumed.
+
+**Required Workflow Sequence:**
+
+```mermaid
+flowchart LR
+    A["📥 Step 1: Data Download<br/>MCP + pre-article-analysis.ts"] --> B["📊 Step 2: Per-File AI Analysis<br/>Read methodology, analyze each file"]
+    B --> C["📋 Step 3a: READ Analysis Files<br/>synthesis, SWOT, risk, stakeholder"]
+    C --> D["📰 Step 3b: Generate Article HTML<br/>Using analysis as primary source"]
+    D --> E["🏷️ Step 3c: AI Title & Meta<br/>From actual article content"]
+    E --> F["📊 Step 3d: Add Analysis References<br/>Link to all analysis files"]
+    F --> G["✅ Step 4: Quality Self-Check<br/>Against rubric (min 7.0/10)"]
+    G --> H["🌐 Step 5: Translate<br/>All 14 languages"]
+    
+    style C fill:#28a745,color:#fff
+    style D fill:#0d6efd,color:#fff
+    style G fill:#ffc107,color:#000
+```
+
+**NEW Step 3a — Read Analysis Before Writing Article:**
+
+```markdown
+### Step 3a: Read Pre-Computed Analysis (MANDATORY before article generation)
+
+Use `${ANALYSIS_SUBFOLDER}` for analysis paths, not the public `${ARTICLE_TYPE}` slug. The workflows map article slugs to analysis folders, for example:
+- `committee-reports` → `committeeReports`
+- `government-propositions` → `propositions`
+- `opposition-motions` → `motions`
+- `interpellation-debates` → `interpellations`
+
+Before writing ANY article content, the AI MUST read:
+
+1. `analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/synthesis-summary.md` → Extract key findings, risk levels, confidence scores
+2. `analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/swot-analysis.md` → Extract top S/W/O/T entries for Winners & Losers
+3. `analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/risk-assessment.md` → Extract risk scores for Strategic Context
+4. `analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/stakeholder-perspectives.md` → Extract stakeholder impacts
+5. `analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/significance-scoring.md` → Extract significance scores for prioritization
+6. Per-document analysis files in `analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/documents/` subfolder → Extract per-document "Why It Matters"
+
+If synthesis reports "0 documents analyzed":
+- DO NOT skip article generation
+- USE MCP tools directly to fetch and analyze documents
+- Flag the data gap: "⚠️ Pre-computed analysis unavailable — article generated from live MCP data"
+```
+
+### AI Self-Evaluation Quality Gate
+
+> **v4.0 Addition**: Since `assessArticleQuality()` in `helpers.ts` is a disabled stub (always returns 100/100), the AI agent MUST perform its own quality evaluation.
+
+**AI Prompt for Self-Evaluation:**
+
+```markdown
+## Article Quality Self-Check (run before committing)
+
+Score this article on 5 dimensions (1-10 each, minimum 7.0 composite):
+
+1. **Evidence Density** (weight: 25%): 
+   - Count dok_id citations. ≥5 = score 8+, ≥3 = score 6+, <3 = FAIL
+   - Count named politicians with party abbreviation. ≥3 = score 7+
+
+2. **Analytical Depth** (weight: 25%):
+   - Does the lede name a specific political development? (not "Analysis of N documents")
+   - Does "Why It Matters" differ for each document? (not copy-paste)
+   - Does "Winners & Losers" name specific parties and cite evidence?
+   - Is "Strategic Context" present with coalition/electoral analysis?
+
+3. **Structural Completeness** (weight: 20%):
+   - [ ] Analytical lede present (not placeholder)
+   - [ ] Per-document "Why It Matters" sections (all unique)
+   - [ ] Winners & Losers with named parties
+   - [ ] Key Takeaways with confidence labels
+   - [ ] Analysis References section with GitHub links
+   - [ ] No untranslated Swedish text in non-Swedish articles
+
+4. **Visualization** (weight: 15%):
+   - [ ] At least 1 visualization data block or Mermaid reference
+   - [ ] SWOT summary or risk indicator visible in article
+
+5. **Neutrality** (weight: 15%):
+   - [ ] Both government and opposition perspectives represented
+   - [ ] Confidence labels on analytical claims
+   - [ ] No opinion-only statements without [ASSESSMENT] tag
+
+**If composite score < 7.0**: Revise the article before committing. Up to 3 revision passes allowed.
+**If any dimension < 5.0**: Article MUST be revised — do not commit.
+```
+
+### Handling Empty Analysis (v4.0 Critical Fix)
+
+When `pre-article-analysis.ts` reports "0 documents analyzed" (as happened for propositions and week-ahead on 2026-04-03), the AI agent MUST NOT generate an empty article. Instead:
+
+```markdown
+## Empty Analysis Fallback Protocol
+
+1. **Attempt MCP data retrieval directly:**
+   - Propositions: `get_propositioner(rm="2025/26", limit=20)`
+   - Committee reports: `get_betankanden(rm="2025/26", limit=20)`  
+   - Motions: `get_motioner(rm="2025/26", limit=50)`
+   - Interpellations: `get_interpellationer(rm="2025/26", limit=20)`
+   - Calendar: `get_calendar_events(from=ARTICLE_DATE, tom=ARTICLE_DATE+7)`
+
+2. **If MCP returns data**: Analyze documents and generate full article content
+3. **If MCP returns no data**: Generate a SHORT analytical article explaining:
+   - Why no documents were expected (recess period, parliamentary calendar)
+   - What documents are expected NEXT (upcoming committee schedules)
+   - Link to the most recent substantive analysis for context
+4. **NEVER publish an article with "0 documents analyzed" as the lede**
+```
+
+---
+
+## 🔍 Quality Issues Audit Cumulative Findings
+
+### Persistent Issues Across Audits (2026-04-02 + 2026-04-03)
+
+| Issue Category | 2026-04-02 Status | 2026-04-03 Status | Trend |
+|:---|:---:|:---:|:---:|
+| Placeholder meta descriptions | 3 articles | Fixed in most, still in some | 🟡 Improving |
+| Generic "Defense in Focus" titles | 3 articles | Fixed | 🟢 Resolved |
+| Missing analysis-references section | ALL articles | 2/36 have it | 🔴 Still failing |
+| Generic "Why It Matters" boilerplate | Present | 210+ files affected | 🔴 Systemic |
+| "Political landscape remains fluid" filler | Not tracked | 444+ files affected | 🔴 Systemic |
+| "No chamber debate data" excuse text | Not tracked | 456+ files affected | 🔴 Systemic |
+| Empty synthesis (0 documents) | Not tracked | 2 of 7 folders | 🔴 New issue |
+| Policy domain misclassification | Not tracked | Multiple instances | 🔴 New issue |
+| Data count inconsistencies (title vs body) | Not tracked | Multiple instances | 🔴 New issue |
 
 ---
 
@@ -1112,9 +1621,10 @@ For EACH relationship, provide:
 
 **Document Control:**  
 - **Path:** `/analysis/methodologies/ai-driven-analysis-guide.md`  
-- **Version:** 3.0  
+- **Version:** 4.0  
+- **Key Changes v4.0:** AI article content generation protocol (5 mandatory sections with prompts), visualization integration protocol (Chart.js/D3.js), policy domain inference with committee mapping, pre-article analysis integration requirement, AI self-evaluation quality gate, empty analysis fallback protocol, 2026-04-03 systemic quality audit (444+ generic filler, 456+ excuse-as-analysis, 210+ boilerplate), cumulative quality tracking  
 - **Key Changes v3.0:** Claude Opus 4.6 agentic integration, AI-first analysis principle, deprecated code function table, AI title/description generation prompts, analysis-to-article reference linking, cross-reference quality requirements, 2026-04-02 quality audit findings  
 - **Key Changes v2.1:** Document-type analysis focus table, analysis depth levels (L1/L2/L3), anti-pattern gallery, quality gate checklist with scoring rubric  
 - **Key Changes v2.0:** Folder isolation rules, AI-only content mandate, multi-framework depth requirements, advanced anti-pattern detection  
 - **Classification:** Public  
-- **Next Review:** 2026-07-02
+- **Next Review:** 2026-07-03

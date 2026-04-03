@@ -278,42 +278,281 @@ The following script directories and functions previously generated analysis con
 
 ---
 
-## 📊 TOP 10 QUALITY ISSUES IN CURRENT ARTICLES (2026-04-02)
+## 📊 TOP 10 QUALITY ISSUES IN CURRENT ARTICLES (2026-04-03 Systemic Audit)
 
-> **Quality audit findings** — these issues MUST be addressed by improving all agentic workflow prompts. Updated from 2026-04-01 audit with additional 2026-04-02 findings.
+> **Quality audit findings** — these issues MUST be addressed by improving all agentic workflow prompts. The 2026-04-03 systemic audit supersedes the earlier 2026-04-02 spot-check findings (placeholder ledes, generic titles, missing analysis references) which are now subsumed under the broader issues below.
 
 ````markdown
-### Quality Issues Detected in 2026-04-02 Articles
+### Systemic Quality Issues (2026-04-03 Audit)
 
-These issues were identified across all articles generated on 2026-04-02. ALL workflow `.md` files must be updated to prevent these issues.
+> 🔴 **CRITICAL**: The 2026-04-03 audit revealed that deprecated template functions are the PRIMARY source of low-quality content in 85%+ of articles. AI agents MUST overwrite ALL template-generated content.
 
-| # | Issue | Severity | Affected Workflows | Root Cause |
-|---|-------|----------|-------------------|------------|
-| 1 | **3 of 5 articles have placeholder meta descriptions** ("Analysis of N documents covering Field:, Field:") | CRITICAL | committee-reports, propositions, interpellations | Script generates meta description from template, AI doesn't overwrite |
-| 2 | **Generic title suffix "Defense in Focus" repeated** across 3 unrelated article types | CRITICAL | committee-reports, propositions, interpellations | Script generates title from category label, AI doesn't generate newsworthy title |
-| 3 | **ZERO links to analysis files** in any news article | HIGH | ALL | No prompt instruction to include GitHub analysis references |
-| 4 | **Truncated Swedish text in English articles** — proposition excerpts cut off mid-sentence | HIGH | propositions | Script truncates text; AI should translate/summarize instead |
-| 5 | **Cross-reference map reports "0 relationships"** despite clear document clusters | HIGH | ALL analysis | AI cross-reference detection prompt too weak |
-| 6 | **SWOT tables use prose** instead of structured evidence tables with dok_id columns | HIGH | committee-reports, interpellations, motions | Prompt doesn't require evidence table format |
-| 7 | **Only 3 of 8 stakeholder groups** analyzed in some articles | HIGH | committee-reports, propositions | Prompt only asks for 3 perspectives |
-| 8 | **Risk assessment contradictions** — RSK-04 says "LOW RISK" but cites evidence proving strength | MEDIUM | analysis risk-assessment.md | AI doesn't validate label-evidence consistency |
-| 9 | **No "Forward Indicators" section** with specific trigger dates | MEDIUM | committee-reports, interpellations, motions | Prompt doesn't require dated triggers |
-| 10 | **Generic boilerplate** repeated across articles ("Requires committee review...") | MEDIUM | committee-reports, propositions | Template-driven generation without per-document customization |
+| # | Issue | Severity | Scope | Root Cause | Required Fix |
+|---|-------|----------|-------|-----------|------------|
+| 1 | **"The political landscape remains fluid, with both government and opposition positioning for advantage."** appears in 444+ files | CRITICAL | ALL types | `shared.ts` Winners & Losers fallback template | AI MUST replace with specific winners/losers naming parties, evidence, vote margins |
+| 2 | **"No chamber debate data is available for these items, limiting our ability..."** in 456+ files | CRITICAL | ALL types | Script excuse for missing data | AI MUST fetch debate data via MCP `search_anforanden` or analyze from committee text |
+| 3 | **"Touches on {X} policy. {Generic domain text}..."** in 210+ files — identical across documents | HIGH | committee-reports, propositions, motions | `shared.ts` boilerplate templates per policy domain | AI MUST write unique "Why It Matters" per document with specific evidence |
+| 4 | **Contradictory document counts** (title says 50, body shows 10) | HIGH | opposition-motions | Script counts ALL motions, article only details subset | AI MUST reconcile counts: either detail all or correctly scope the title |
+| 5 | **Policy misclassification** (food safety labeled "housing policy") | HIGH | opposition-motions | Keyword heuristic in scripts, not committee-based | AI MUST use Riksdag committee code for domain (see ai-driven-analysis-guide.md §Policy Domain Inference) |
+| 6 | **Missing analysis-references section** in 34 of 36 articles on 2026-04-03 | MEDIUM | ALL except week-ahead | AI doesn't consistently add reference section | AI MUST add "📊 Analysis & Sources" section to EVERY article |
+| 7 | **Empty synthesis files** (0 documents analyzed) for propositions and week-ahead | CRITICAL | propositions, week-ahead | `pre-article-analysis.ts` found 0 docs, AI accepted empty output | AI MUST use MCP fallback when script reports 0 (see ai-driven-analysis-guide.md §Empty Analysis Fallback) |
+| 8 | **Placeholder ledes** ("Analysis of 10 documents covering Committee:, Published:") in 64+ files | MEDIUM | Older articles | Script meta description template never overwritten | AI MUST generate analytical lede from actual content |
+| 9 | **assessArticleQuality() stub** always returns 100/100 | CRITICAL | ALL | Quality gate disabled in helpers.ts | AI MUST self-evaluate against 5-dimension rubric before committing |
+| 10 | **Raw Swedish text in English articles** — unedited government document excerpts | HIGH | propositions, interpellations | Script pastes excerpt without translation | AI MUST translate/summarize, NEVER paste raw Swedish in English articles |
 
-#### Workflow Fix Requirements (Updated 2026-04-02)
+### BANNED Content Patterns (v4.0 — Violations = Article Rejection)
 
-Every `news-*.md` workflow MUST be updated to:
+The following text patterns are BANNED in all generated articles. The AI agent MUST detect and replace these during article generation:
 
-1. **AI-generate titles**: Add explicit prompt instruction — AI MUST generate a unique, newsworthy title from actual document content; NEVER use template patterns like "Category: Topic This Week: Defense in Focus"
-2. **AI-generate meta descriptions**: Add explicit prompt instruction — AI MUST write a 150-160 character description highlighting key political intelligence; NEVER use "Analysis of N documents covering Field:, Field:"
-3. **Include analysis references**: Add "📊 Analysis & Sources" section linking to `https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${DATE}/${ARTICLE_TYPE}/` files
-4. **AI-translate, don't truncate**: AI MUST translate/summarize Swedish text for English articles; NEVER paste truncated Swedish text
-5. **Require cross-reference detection**: AI MUST identify ≥3 document relationships per date (policy clusters, legislative chains, opposition patterns)
-6. **Require structured SWOT tables**: Add HTML table template with `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact` columns
-7. **Require 8 stakeholder groups**: Update prompt to list all 8 groups with instructions for evidence per group
-8. **Validate label-evidence consistency**: AI MUST verify risk labels match their cited evidence direction
-9. **Require dated forward indicators**: Add "What to Watch" with specific committee dates and vote schedules
-10. **Ban boilerplate**: Add anti-pattern list of rejected phrases: "Requires committee review and chamber debate", "Defense in Focus", "Analysis of N documents"
+```
+❌ "The political landscape remains fluid, with both government and opposition positioning for advantage."
+❌ "No chamber debate data is available for these items, limiting our ability to assess..."
+❌ "Touches on {X} policy. {Policy domain} proposals/reports/motions {generic text}..."
+❌ "Analysis of N documents covering {Field}:, {Field}:"
+❌ "Requires committee review and chamber debate"
+❌ "{Category}: Policy Priorities This Week: {Topic} in Focus"
+❌ Any "Why It Matters" text that appears identically for ≥2 documents in the same article
+❌ Any "Winners & Losers" section under 50 words that doesn't name specific parties
+```
+
+### Article Quality Self-Check (MANDATORY before committing)
+
+Every news workflow MUST include this AI self-check step after article generation:
+
+```markdown
+## Quality Self-Check Protocol
+
+Before committing, verify EACH article passes these checks:
+
+### ✅ Content Quality (must pass ALL)
+- [ ] Lede paragraph names specific actors/institutions and policy significance (NOT "Analysis of N documents")
+- [ ] ZERO instances of "The political landscape remains fluid" or equivalent generic filler
+- [ ] Every "Why It Matters" section is UNIQUE to its document (no duplicate text across documents)
+- [ ] Winners & Losers section names ≥2 winners and ≥2 losers with party abbreviations and evidence
+- [ ] ≥5 dok_id citations in article body
+- [ ] ≥3 named politicians with party abbreviation (e.g., "Elisabeth Svantesson (M)")
+
+### ✅ Structural Completeness
+- [ ] "📊 Analysis & Sources" section present with GitHub links to all analysis files
+- [ ] Key Takeaways section with 3-5 bullet points and confidence labels
+- [ ] No untranslated Swedish text in non-Swedish language articles
+- [ ] Document counts in title, lede, and body are CONSISTENT
+
+### ✅ Analytical Depth  
+- [ ] Strategic context connecting documents to broader political landscape
+- [ ] ZERO excuse-as-analysis patterns ("No chamber debate data available...")
+- [ ] Policy domains inferred from committee codes, NOT keyword heuristics
+- [ ] Confidence labels [HIGH/MEDIUM/LOW] on analytical claims
+
+### Scoring
+If an article fails ≥3 checks: REVISE before committing (up to 3 iterations)
+If an article fails ≥6 checks: DO NOT commit — escalate for manual review
+```
+````
+
+---
+
+## 📊 AI ARTICLE CONTENT GENERATION (v4.0 — copy into every content workflow)
+
+> **NON-NEGOTIABLE**: Article content (lede, analysis, winners/losers, takeaways) MUST be AI-generated from actual document analysis. Script stubs are HTML skeletons ONLY.
+
+````markdown
+### Step 3a: Read Pre-Computed Analysis (MANDATORY — before writing article)
+
+> 🚨 **v4.0 CRITICAL**: The AI MUST read analysis files BEFORE generating article content. Do NOT write articles solely from script-provided data.
+
+Read these files for the current article type and date:
+
+> Use the analysis subfolder name from the type→folder mapping table above (for example `committeeReports`, not the article slug `committee-reports`). If a workflow already knows the exact analysis subfolder, it MAY set `ANALYSIS_SUBFOLDER` explicitly before this block.
+
+```bash
+# Map article slug → analysis subfolder name.
+# Allow explicit override so future non-identity mappings do not silently resolve
+# to the wrong directory.
+if [ -z "${ANALYSIS_SUBFOLDER:-}" ]; then
+  case "${ARTICLE_TYPE}" in
+    committee-reports)        ANALYSIS_SUBFOLDER="committeeReports" ;;
+    government-propositions)  ANALYSIS_SUBFOLDER="propositions" ;;
+    opposition-motions)       ANALYSIS_SUBFOLDER="motions" ;;
+    interpellation-debates)   ANALYSIS_SUBFOLDER="interpellations" ;;
+    breaking)
+      : "${HHMM:?HHMM must be set for breaking articles to resolve realtime-\${HHMM} analysis folder}"
+      ANALYSIS_SUBFOLDER="realtime-${HHMM}"
+      ;;
+    *)                       ANALYSIS_SUBFOLDER="${ARTICLE_TYPE}" ;;
+  esac
+fi
+
+ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
+cat "${ANALYSIS_BASE}/synthesis-summary.md"      # Key findings, risk levels, confidence
+cat "${ANALYSIS_BASE}/swot-analysis.md"           # Top SWOT entries → Winners & Losers
+cat "${ANALYSIS_BASE}/risk-assessment.md"         # Risk scores → Strategic Context
+cat "${ANALYSIS_BASE}/stakeholder-perspectives.md" # Stakeholder impacts
+cat "${ANALYSIS_BASE}/significance-scoring.md"    # Significance scores → prioritization
+ls "${ANALYSIS_BASE}/documents/"                  # Per-document analyses → Why It Matters
+```
+
+**If synthesis reports "0 documents analyzed":**
+1. Use MCP tools to fetch documents directly (see §Empty Analysis Fallback in ai-driven-analysis-guide.md v4.0)
+2. Flag: `"⚠️ Pre-computed analysis unavailable — article generated from live MCP data"`
+3. NEVER publish an article with "0 documents analyzed" as content
+
+### Step 3b: AI-Generate Article Content (MANDATORY — replaces script stubs)
+
+After reading analysis, generate these 5 mandatory sections:
+
+#### Section 1: Analytical Lede (replaces script placeholder)
+
+```
+Generate a 40-60 word lede paragraph that:
+- Names the MOST significant political development from the analyzed documents
+- Identifies key actor(s) by name and party: e.g., "Defense Minister Pål Jonson (M)"
+- States the concrete political action (bill tabled, committee approved, vote outcome)
+- Explains WHY this matters NOW (election timing, coalition dynamics, international context)
+- BANNED: "Analysis of N documents covering {field}" — this is NEVER acceptable
+```
+
+#### Section 2: Per-Document "Why It Matters" (replaces boilerplate)
+
+```
+For EACH document in the article, write a UNIQUE paragraph (30-50 words) that:
+- Names the SPECIFIC law/committee/policy measure (not just the domain)
+- Cites QUANTIFIED impact: SEK amounts, population affected, timeline, seat counts
+- Places it in POLITICAL CONTEXT: party positions, coalition dynamics, electoral timing
+- References SOURCE document (dok_id, proposition number, committee code)
+- BANNED: "Touches on {X} policy. {Generic domain text}..." — identical text for multiple docs
+```
+
+#### Section 3: Winners & Losers (replaces generic filler)
+
+```
+Name 2-4 WINNERS and 2-4 LOSERS from this article's developments:
+- Each winner/loser: [Party/Actor name (party abbreviation)] + [Specific gain/loss] + [Evidence dok_id]
+- BANNED: "The political landscape remains fluid" — this is NEVER acceptable
+- Minimum 50 words for this section
+```
+
+#### Section 4: Key Takeaways (replaces script bullets)
+
+```
+Generate 3-5 key takeaways, each with:
+- Bold lead phrase (5-8 words)
+- One sentence of supporting evidence with dok_id citation
+- Confidence label [HIGH/MEDIUM/LOW]
+- BANNED: generic takeaways like "Monitor developments over 1-2 weeks"
+```
+
+#### Section 5: Strategic Context (NEW — no script equivalent)
+
+```
+Write 50-80 words connecting these documents to the broader political landscape:
+- Is this government OFFENSIVE (new legislation), DEFENSIVE (responding to opposition), or MAINTENANCE?
+- Electoral timing implications (distance to 2026 election)
+- Cross-reference related documents from other article types on the same date
+- Use MCP data: search_voteringar for votes, search_anforanden for debate context
+```
+````
+
+---
+
+## 📊 VISUALIZATION DATA GENERATION (v4.0 — for HTML news articles with chart containers)
+
+> **Scope**: Chart.js / D3.js visualizations are for **HTML news articles only**. Markdown analysis files (`.md`) MUST use **Mermaid diagrams** for all visualizations.
+>
+> When news articles contain chart containers, the AI MUST provide data for interactive Chart.js visualizations.
+
+````markdown
+### AI Visualization Data Protocol
+
+When the article HTML contains chart container elements, provide visualization data:
+
+All visualization examples below are **valid Chart.js configuration objects** matching the `data-chart-config` convention used by the site renderer (`scripts/data-transformers/content-generators/dashboard-section.ts`). You may add a top-level `chartType` string for downstream identification.
+
+#### Vote Distribution Chart (for articles with voting data)
+```json
+{
+  "chartType": "coalition-votes",
+  "type": "bar",
+  "data": {
+    "labels": ["S", "M", "SD", "V", "C", "MP", "L", "KD"],
+    "datasets": [
+      { "label": "Ja",     "data": [0, 68, 0, 0, 0, 0, 16, 19], "backgroundColor": "#83cf39" },
+      { "label": "Nej",    "data": [107, 0, 0, 24, 24, 18, 0, 0], "backgroundColor": "#ff006e" },
+      { "label": "Avstår", "data": [0, 0, 73, 0, 0, 0, 0, 0], "backgroundColor": "#ffbe0b" }
+    ]
+  },
+  "options": {
+    "responsive": true,
+    "scales": {
+      "x": { "stacked": true, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } },
+      "y": { "stacked": true, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } }
+    },
+    "plugins": { "legend": { "labels": { "color": "#e0e0e0" } } }
+  }
+}
+```
+
+#### SWOT Summary Chart (for articles with SWOT analysis)
+```json
+{
+  "chartType": "swot-quadrant",
+  "type": "radar",
+  "data": {
+    "labels": ["Strengths", "Weaknesses", "Opportunities", "Threats"],
+    "datasets": [{
+      "label": "SWOT impact profile",
+      "data": [8, 7, 9, 6],
+      "backgroundColor": "rgba(0, 217, 255, 0.15)",
+      "borderColor": "#00d9ff",
+      "borderWidth": 2,
+      "pointRadius": 5,
+      "pointBackgroundColor": ["#83cf39", "#ff006e", "#00d9ff", "#ffbe0b"]
+    }]
+  },
+  "options": {
+    "responsive": true,
+    "plugins": { "legend": { "labels": { "color": "#e0e0e0" } } },
+    "scales": {
+      "r": {
+        "grid": { "color": "rgba(255,255,255,0.1)" },
+        "ticks": { "color": "#b0b0b0", "backdropColor": "transparent" },
+        "pointLabels": { "color": "#e0e0e0", "font": { "size": 12 } }
+      }
+    }
+  }
+}
+```
+
+#### Risk Heat Map (for articles with risk assessment)
+```json
+{
+  "chartType": "risk-heatmap",
+  "type": "scatter",
+  "data": {
+    "datasets": [{
+      "label": "Risks",
+      "data": [
+        { "x": 4, "y": 5 },
+        { "x": 3, "y": 3 }
+      ],
+      "backgroundColor": ["#dc3545", "#fd7e14"],
+      "pointRadius": 10
+    }]
+  },
+  "options": {
+    "responsive": true,
+    "scales": {
+      "x": { "title": { "display": true, "text": "Likelihood", "color": "#e0e0e0" }, "min": 0, "max": 5, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } },
+      "y": { "title": { "display": true, "text": "Impact", "color": "#e0e0e0" }, "min": 0, "max": 5, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } }
+    },
+    "plugins": { "legend": { "labels": { "color": "#e0e0e0" } } }
+  }
+}
+```
+
+Embed each chart on the target `<canvas>` element using a `data-chart-config` attribute containing the full Chart.js configuration object. Do **not** emit `<script class="chart-data">` blocks. Treat `data-chart-config` as the canonical hand-off format for chart data, but only use this pattern when the target page explicitly includes a chart initializer that scans `canvas[data-chart-config]` and instantiates the corresponding Chart.js chart; otherwise the chart will not render.
+
+> **Canonical chart type identifiers** (use these exact strings in the optional `chartType` field inside `data-chart-config`): `coalition-votes`, `swot-quadrant`, `risk-heatmap`, `policy-radar`, `legislative-sankey`, `css-mindmap`, `timeline`.
 ````
 
 ---
@@ -1212,22 +1451,22 @@ Add this section before the article footer in every generated HTML article:
   <h2>📊 Analysis &amp; Sources</h2>
   <p>This article is based on AI-driven political intelligence analysis. Full methodology and analysis files:</p>
   <ul>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/synthesis-summary.md" rel="noopener">📋 Synthesis Summary</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/swot-analysis.md" rel="noopener">💪 SWOT Analysis</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/risk-assessment.md" rel="noopener">⚠️ Risk Assessment</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/threat-analysis.md" rel="noopener">🎭 Threat Analysis</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/stakeholder-perspectives.md" rel="noopener">👥 Stakeholder Perspectives</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/significance-scoring.md" rel="noopener">📈 Significance Scoring</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/classification-results.md" rel="noopener">🏷️ Classification Results</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md" rel="noopener">🤖 AI Analysis Methodology (v3.0)</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/synthesis-summary.md" rel="noopener">📋 Synthesis Summary</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/swot-analysis.md" rel="noopener">💪 SWOT Analysis</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/risk-assessment.md" rel="noopener">⚠️ Risk Assessment</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/threat-analysis.md" rel="noopener">🎭 Threat Analysis</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/stakeholder-perspectives.md" rel="noopener">👥 Stakeholder Perspectives</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/significance-scoring.md" rel="noopener">📈 Significance Scoring</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/classification-results.md" rel="noopener">🏷️ Classification Results</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md" rel="noopener">🤖 AI Analysis Methodology (v4.0)</a></li>
   </ul>
-  <p><em>Per-document analyses: <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/documents/" rel="noopener">documents/</a></em></p>
+  <p><em>Per-document analyses: <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/documents/" rel="noopener">documents/</a></em></p>
 </section>
 ```
 
 #### Article Type → Analysis Folder Mapping
 
-| Article Type | `${ARTICLE_TYPE}` in path |
+| Article Type | `${ANALYSIS_SUBFOLDER}` |
 |-------------|--------------------------|
 | Committee Reports | `committeeReports` |
 | Government Propositions | `propositions` |
@@ -1245,7 +1484,7 @@ Add this section before the article footer in every generated HTML article:
 1. After `generate-news-enhanced.ts` creates article HTML, read each file
 2. Locate the closing `</article>` or `</main>` tag
 3. Insert the analysis references section BEFORE the footer
-4. Replace `${ARTICLE_DATE}` and `${ARTICLE_TYPE}` with actual values
+4. Replace `${ARTICLE_DATE}` and `${ANALYSIS_SUBFOLDER}` with actual values (use the mapping table above)
 5. Verify all analysis files exist before linking (skip missing ones)
 6. For evening analysis: link to ALL article-type analysis folders for the date
 
