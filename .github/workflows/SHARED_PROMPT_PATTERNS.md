@@ -363,15 +363,23 @@ If an article fails ≥6 checks: DO NOT commit — escalate for manual review
 
 Read these files for the current article type and date:
 
-> Use the analysis subfolder name from the type→folder mapping table above (for example `committeeReports`, not the article slug `committee-reports`).
+> Use the analysis subfolder name from the type→folder mapping table above (for example `committeeReports`, not the article slug `committee-reports`). If a workflow already knows the exact analysis subfolder, it MAY set `ANALYSIS_SUBFOLDER` explicitly before this block.
 
 ```bash
-# Map article slug → analysis subfolder name
-case "${ARTICLE_TYPE}" in
-  committee-reports)   ANALYSIS_SUBFOLDER="committeeReports" ;;
-  opposition-motions)  ANALYSIS_SUBFOLDER="motions" ;;
-  *)                   ANALYSIS_SUBFOLDER="${ARTICLE_TYPE}" ;;
-esac
+# Map article slug → analysis subfolder name.
+# Allow explicit override so future non-identity mappings do not silently resolve
+# to the wrong directory.
+if [ -z "${ANALYSIS_SUBFOLDER:-}" ]; then
+  case "${ARTICLE_TYPE}" in
+    committee-reports)   ANALYSIS_SUBFOLDER="committeeReports" ;;
+    opposition-motions)  ANALYSIS_SUBFOLDER="motions" ;;
+    breaking)
+      : "${HHMM:?HHMM must be set for breaking articles to resolve realtime-\${HHMM} analysis folder}"
+      ANALYSIS_SUBFOLDER="realtime-${HHMM}"
+      ;;
+    *)                   ANALYSIS_SUBFOLDER="${ARTICLE_TYPE}" ;;
+  esac
+fi
 
 ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
 cat "${ANALYSIS_BASE}/synthesis-summary.md"      # Key findings, risk levels, confidence
@@ -488,9 +496,9 @@ When the article HTML contains chart container elements, provide visualization d
 }
 ```
 
-Embed as `<script type="application/json" class="chart-data" data-chart-type="{chartType}">` before the chart container, where `{chartType}` matches the JSON `chartType` value. The rendering script reads elements by the shared `chart-data` class and uses `data-chart-type` to select the correct chart renderer.
+Embed the chart on the target `<canvas>` element using a `data-chart-config` attribute that contains the full JSON configuration, including the `chartType` field shown above. Do **not** emit a separate `<script class="chart-data" data-chart-type="...">` block; the current site/article implementation reads chart configuration from `canvas[data-chart-config]`.
 
-> **Canonical chart type identifiers** (use these exact strings in both the `data-chart-type` attribute and the JSON `chartType` field): `coalition-votes`, `swot-quadrant`, `risk-heatmap`, `policy-radar`, `legislative-sankey`, `css-mindmap`, `timeline`.
+> **Canonical chart type identifiers** (use these exact strings in the JSON `chartType` field inside `data-chart-config`): `coalition-votes`, `swot-quadrant`, `risk-heatmap`, `policy-radar`, `legislative-sankey`, `css-mindmap`, `timeline`.
 ````
 
 ---

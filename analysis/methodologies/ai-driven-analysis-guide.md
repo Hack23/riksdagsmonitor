@@ -1345,12 +1345,15 @@ For this article's documents, generate visualization data in JSON format:
      ]
    }
 
-Embed each visualization payload as a <script type="application/json" class="chart-data" data-chart-type="{chartType}"> element
-in the article HTML, where `{chartType}` matches the JSON `chartType` value.
-The rendering script reads elements by the shared `chart-data` class and uses `data-chart-type` to create the correct interactive chart.
+Embed each visualization payload on the target `<canvas>` element using the existing
+`data-chart-config` attribute convention used by the site renderer.
+Serialize a complete Chart.js configuration object into `data-chart-config`, and include the
+visualization's canonical `chartType` inside that JSON so downstream code can identify the chart.
+Do **not** use `<script type="application/json" class="chart-data" data-chart-type="...">`,
+because this guide must match the current rendering implementation.
 
-Canonical chart type identifiers (use these exact strings in both the `data-chart-type` attribute
-and the JSON `chartType` field): `coalition-votes`, `swot-quadrant`, `risk-heatmap`,
+Canonical chart type identifiers (use these exact strings in the JSON `chartType` field inside
+the serialized `data-chart-config` payload): `coalition-votes`, `swot-quadrant`, `risk-heatmap`,
 `policy-radar`, `legislative-sankey`, `css-mindmap`, `timeline`.
 ```
 
