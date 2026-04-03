@@ -1,74 +1,85 @@
-# Political Risk Assessment — 2026-04-02
+# ⚠️ Political Risk Assessment — Committee Reports
 
-**Generated**: 2026-04-02 04:45 UTC | **Improved**: 2026-04-02 11:24 UTC (translation workflow)
-**Data Sources**: get_betankanden, search_voteringar, get_voting_group
-**Documents Analyzed**: 10
-**Confidence**: HIGH
+## 📋 Risk Context
 
-## Summary
+| Field | Value |
+|-------|-------|
+| **Risk Assessment ID** | RSK-2026-04-02-CR01 |
+| **Assessment Date** | 2026-04-03 04:53 UTC |
+| **Assessment Period** | 2026-04-02 committee reports |
+| **Produced By** | news-committee-reports |
+| **Political Context** | M-KD-L minority government with SD supply-and-confidence agreement. Pending chamber votes on JuU15, FöU12. Civil defence reform and criminal justice policy in focus. |
+| **Riksmöte** | 2025/26 |
+| **Overall Risk Level** | MEDIUM |
 
-Coalition demonstrates moderate risk. While the security agenda (FöU12, JuU15, UU6) enjoys broad coalition support, healthcare and equality reports (SoU16/17, AU11) create opposition attack vectors ahead of the 2026 election cycle. SD supply agreement remains intact but criminal justice delivery (JuU15) is critical to continued cooperation.
+---
+
+## 🗂️ Risk Inventory
+
+### Risk Heat Map
 
 ```mermaid
-graph LR
-    subgraph "Risk Matrix — 5×5 L×I"
-        direction TB
-        R1["⚠️ SD cooperation<br/>L:2 × I:4 = 8"]:::moderate
-        R2["🏥 Healthcare narrative<br/>L:3 × I:3 = 9"]:::moderate
-        R3["⚖️ Equality critique<br/>L:3 × I:2 = 6"]:::low
-        R4["🗳️ Election pressure<br/>L:4 × I:4 = 16"]:::high
-        R5["🇪🇺 EU compliance delay<br/>L:2 × I:2 = 4"]:::low
+graph TD
+    subgraph "⚖️ Political Risk Landscape — 2026-04-02"
+        R1["R1: Municipal readiness<br/>failure for shelter law<br/>L:3 × I:4 = 12"]
+        R2["R2: Prison overcrowding<br/>policy vacuum<br/>L:3 × I:3 = 9"]
+        R3["R3: Disability accessibility<br/>cross-party consensus<br/>L:2 × I:3 = 6"]
+        R4["R4: Trygghetsberedningen<br/>tillkännagivande risk<br/>L:2 × I:3 = 6"]
+        R5["R5: Public anxiety from<br/>shelter audit findings<br/>L:2 × I:4 = 8"]
     end
 
-    R1 -->|"depends on JuU15"| D1["JuU15 delivery"]:::action
-    R2 -->|"driven by SoU16/17"| D2["Opposition framing"]:::action
-    R4 -->|"amplifies all risks"| R1
-    R4 -->|"amplifies"| R2
+    R1 --> R5
+    R2 --> R4
 
-    classDef high fill:#5c1a1a,stroke:#ff006e,color:#e0e0e0,stroke-width:3px
-    classDef moderate fill:#5c3d1a,stroke:#ffbe0b,color:#e0e0e0,stroke-width:2px
-    classDef low fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
-    classDef action fill:#0a0e27,stroke:#00ff88,color:#00ff88,stroke-width:2px
+    style R1 fill:#dc3545,color:#fff
+    style R2 fill:#fd7e14,color:#fff
+    style R3 fill:#ffc107,color:#000
+    style R4 fill:#ffc107,color:#000
+    style R5 fill:#fd7e14,color:#fff
 ```
-
-## Detailed Analysis
-
-**Coalition Risk Score**: 42/100
-**Risk Level**: MODERATE
 
 ### Risk Register
 
-| Risk ID | Description | Likelihood | Impact | Score (L×I) | Confidence |
-|---------|------------|------------|--------|-------------|------------|
-| R1 | SD supply agreement breakdown | 2 | 4 | 8 | [HIGH] |
-| R2 | Opposition healthcare narrative gains traction | 3 | 3 | 9 | [MEDIUM] |
-| R3 | Equality/discrimination critique (AU11) | 3 | 2 | 6 | [MEDIUM] |
-| R4 | Election cycle pressure on legislative agenda | 4 | 4 | 16 | [HIGH] |
-| R5 | EU compliance delay (MJU18 UTP directive) | 2 | 2 | 4 | [LOW] |
+| Risk ID | Risk Description | Source | Likelihood (1-5) | Impact (1-5) | L×I Score | Risk Level | Confidence |
+|---------|-----------------|--------|:-----------------:|:------------:|:---------:|:----------:|:----------:|
+| R1 | Municipal shelter readiness failure by June 1, 2026 | HD01FöU12 | 3 | 4 | 12 | HIGH | MEDIUM |
+| R2 | Prison overcrowding escalation without policy response | HD01JuU15 | 3 | 3 | 9 | MEDIUM | MEDIUM |
+| R3 | Disability accessibility becomes cross-party consensus forcing government concession | HD01FöU12 | 2 | 3 | 6 | MEDIUM | MEDIUM |
+| R4 | Opposition forces tillkännagivande on Trygghetsberedningen implementation | HD01JuU15 | 2 | 3 | 6 | MEDIUM | MEDIUM |
+| R5 | Public anxiety spike from shelter condition audits | HD01FöU12 | 2 | 4 | 8 | MEDIUM | LOW |
 
-### Anomaly Flags
+---
 
-- **[HIGH]** CROSS_PARTY_VOTE: High KD-M voting alignment (88.5%) — coalition discipline strong on security matters
-- **[HIGH]** CROSS_PARTY_VOTE: High L-M voting alignment (87.9%) — liberal coalition partner locked in
-- **[MEDIUM]** CROSS_PARTY_VOTE: High KD-L alignment (87.9%) — junior coalition parties voting together
-- **[MEDIUM]** CROSS_PARTY_VOTE: C-L alignment (81.3%) — potential centrist bloc formation
-- **[LOW]** CROSS_PARTY_VOTE: C-KD alignment (80.3%) — cross-bloc dynamics to monitor
+## 🔗 Cascading Risk Chain
 
-## Key Findings
+```mermaid
+graph TD
+    TRIGGER["June 1, 2026<br/>Law Effective Date"] --> CHECK["Municipal<br/>Readiness Check"]
+    CHECK -->|"FAIL"| GAP["Shelter Gaps<br/>Identified"]
+    GAP --> MEDIA["Media Coverage<br/>of Deficiencies"]
+    MEDIA --> PUBLIC["Public Anxiety<br/>About Preparedness"]
+    PUBLIC --> POLITICAL["Political Pressure<br/>on Government"]
+    POLITICAL --> OPPOSITION["Opposition Leverages<br/>Reservation 1 Predictions"]
 
-1. Coalition stability at risk score **42/100** (MODERATE) — elevated by election cycle proximity (R4)
-2. **5** anomaly flags detected — all indicate strong coalition discipline, not fragmentation
-3. **Defense cluster** (FöU11, FöU12, UU6) reduces security-related risks through cross-party consensus
-4. **Healthcare reports** (SoU16, SoU17) represent the highest-impact opposition opportunity (R2)
-5. SD supply agreement stable — JuU15 (correctional reform) delivery maintains cooperation basis (R1)
+    CHECK -->|"PASS"| SUCCESS["Government Claims<br/>Policy Delivery Win"]
 
-## Implications
+    style TRIGGER fill:#fd7e14,color:#fff
+    style GAP fill:#dc3545,color:#fff
+    style SUCCESS fill:#28a745,color:#fff
+    style OPPOSITION fill:#dc3545,color:#fff
+```
 
-- 10 documents analyzed for risk indicators across 7 committees
-- 3 high-significance documents identified (FöU12: 9/10, JuU15: 8/10, UU6: 8/10)
-- Coalition stability appears moderate — strong on security, vulnerable on welfare
-- Election cycle (R4, L:4 × I:4 = 16) is the dominant risk amplifier
+---
 
-## Data Quality Notes
+## 🔮 Forward Indicators
 
-Risk assessment derived from committee report analysis, CIA coalition metrics, and voting alignment data. Cross-party voting percentages from `get_voting_group` for rm 2025/26. Document significance scores based on committee type, political salience, and legislative impact.
+| # | Indicator | Trigger | Timeline | Confidence |
+|---|-----------|---------|----------|:----------:|
+| 1 | MSB shelter inventory audit results | Agency publication | April-May 2026 | HIGH |
+| 2 | Kriminalvården monthly occupancy statistics | Agency reporting | Monthly | HIGH |
+| 3 | Chamber vote dynamics on FöU12 and JuU15 | Kammarens scheduling | 1-2 weeks | HIGH |
+| 4 | Municipal budget allocation for shelter upgrades | Municipal council decisions | Q2 2026 | MEDIUM |
+
+---
+
+**Document Control:** Risk assessment generated 2026-04-03 04:53 UTC. Classification: PUBLIC.

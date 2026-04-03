@@ -1,28 +1,49 @@
-# Document Significance Scoring — 2026-04-02
+# 📈 Document Significance Scoring — Committee Reports
 
-**Generated**: 2026-04-02 04:45 UTC
-**Data Sources**: get_betankanden
-**Documents Analyzed**: 0
-**Confidence**: HIGH
+## 📋 Scoring Context
 
-## Summary
+| Field | Value |
+|-------|-------|
+| **Scoring ID** | SIG-2026-04-02-CR01 |
+| **Scoring Date** | 2026-04-03 04:54 UTC |
+| **Documents Scored** | 2 |
+| **Produced By** | news-committee-reports |
 
-Scored **0** documents for political significance (0–10 scale).
+---
 
-## Detailed Analysis
+## 📊 5-Dimension Significance Scoring
 
-| Score | Level | Type | dok_id | Title |
-|-------|-------|------|--------|-------|
+### HD01FöU12 — Civilian Protection Law
 
-## Key Findings
+| Dimension | Score (0-10) | Rationale |
+|-----------|:------------:|-----------|
+| Parliamentary Impact | 8 | New law creating shelter framework; committee endorses Prop. 2025/26:142 |
+| Policy Impact | 9 | Municipal obligations, property owner duties, new protection category |
+| Public Interest | 9 | Direct citizen impact; highly visible post-Ukraine security topic |
+| Urgency | 8 | June 1, 2026 implementation deadline — 2 months away |
+| Cross-Party Significance | 7 | Broad support with 6 constructive reservations |
+| **Total** | **8.2/10** | **HIGH SIGNIFICANCE** |
 
-1. **0** document(s) rated Critical (score ≥ 8)
-2. **0** document(s) rated High (score 6–7)
+### HD01JuU15 — Criminal Corrections Issues
 
-## Implications
+| Dimension | Score (0-10) | Rationale |
+|-----------|:------------:|-----------|
+| Parliamentary Impact | 5 | Standard motion batch rejection; 76 demands addressed |
+| Policy Impact | 5 | Signals policy gap but no new legislation proposed |
+| Public Interest | 6 | Prison policy is visible topic; overcrowding concerns |
+| Urgency | 4 | No immediate deadline; ongoing policy development |
+| Cross-Party Significance | 7 | 4-party joint reservation on Trygghetsberedningen shows unity |
+| **Total** | **5.4/10** | **MEDIUM SIGNIFICANCE** |
 
-High-significance documents should be prioritised for deep-inspection article generation.
+---
 
-## Data Quality Notes
+## 🏆 Priority Ranking
 
-Significance scores use document type, committee tier, domain breadth, coalition context, and content richness.
+| Rank | dok_id | Title | Score | Recommendation |
+|------|--------|-------|:-----:|----------------|
+| 1 | HD01FöU12 | Stronger Civilian Protection | 8.2/10 | Lead story — landmark legislation |
+| 2 | HD01JuU15 | Criminal Corrections Issues | 5.4/10 | Secondary analysis — opposition dynamics focus |
+
+---
+
+**Document Control:** Significance scoring generated 2026-04-03 04:54 UTC. Classification: PUBLIC.

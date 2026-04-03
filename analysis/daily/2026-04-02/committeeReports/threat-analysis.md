@@ -1,24 +1,41 @@
-# Political Threat Analysis — 2026-04-02
+# 🔴 Political Threat Analysis — Committee Reports
 
-**Generated**: 2026-04-02 04:45 UTC
-**Data Sources**: get_betankanden
-**Documents Analyzed**: 0
-**Confidence**: LOW
+## 📋 Threat Context
 
-## Summary
+| Field | Value |
+|-------|-------|
+| **Threat Assessment ID** | THR-2026-04-02-CR01 |
+| **Assessment Date** | 2026-04-03 04:54 UTC |
+| **Documents Analyzed** | 2 |
+| **Produced By** | news-committee-reports |
+| **Overall Threat Level** | LOW-MEDIUM |
 
-Identified **0** threat indicators across 0 documents.
+---
 
-## Detailed Analysis
+## 🎯 Threat Indicators
 
-## Key Findings
+| # | Threat Category | Indicator | Source | Severity | Confidence |
+|---|----------------|-----------|--------|:--------:|:----------:|
+| T1 | Democratic Scrutiny | 76 criminal corrections motions rejected en masse without alternative proposals | HD01JuU15 | LOW | MEDIUM |
+| T2 | Rights Protection | Disability accessibility concerns raised independently by 3 opposition parties | HD01FöU12, Res. 2-4 | MEDIUM | HIGH |
+| T3 | Implementation Capacity | 2-month window for municipalities to comply with new shelter law | HD01FöU12 | MEDIUM | MEDIUM |
+| T4 | Policy Delivery | Trygghetsberedningen proposals pending without government timeline | HD01JuU15, Res. 1 | LOW | MEDIUM |
 
-1. **0** threat indicators identified targeting 0 stakeholder group(s)
+```mermaid
+graph LR
+    subgraph "🔴 Threat Assessment — 2026-04-02"
+        T1["Democratic Scrutiny<br/>Mass motion rejection<br/>LOW"]
+        T2["Rights Protection<br/>Accessibility gap<br/>MEDIUM"]
+        T3["Implementation<br/>Capacity stress<br/>MEDIUM"]
+        T4["Policy Delivery<br/>Delayed reform<br/>LOW"]
+    end
 
-## Implications
+    style T1 fill:#28a745,color:#fff
+    style T2 fill:#ffc107,color:#000
+    style T3 fill:#ffc107,color:#000
+    style T4 fill:#28a745,color:#fff
+```
 
-Threat analysis should inform risk-focused article framing and editorial prioritisation.
+---
 
-## Data Quality Notes
-
-Analysis confidence: LOW.
+**Document Control:** Threat analysis generated 2026-04-03 04:54 UTC. Classification: PUBLIC.

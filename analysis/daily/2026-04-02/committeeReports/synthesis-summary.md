@@ -1,73 +1,118 @@
-# Analysis Synthesis Summary — 2026-04-02
+# 🧩 Political Intelligence Synthesis — Committee Reports
 
-**Generated**: 2026-04-02 04:45 UTC | **Improved**: 2026-04-02 11:24 UTC (translation workflow)
-**Data Sources**: get_betankanden, search_voteringar, search_anforanden
-**Documents Analyzed**: 10
-**Confidence**: HIGH
+## 📋 Synthesis Context
 
-## Summary
+| Field | Value |
+|-------|-------|
+| **Synthesis ID** | SYN-2026-04-02-CR01 |
+| **Analysis Date** | 2026-04-03 04:52 UTC |
+| **Documents Analyzed** | 2 |
+| **Analysis Period** | 2026-04-02 committee reports |
+| **Produced By** | news-committee-reports |
+| **Overall Confidence** | MEDIUM |
 
-Analysis of 10 committee reports (betänkanden) from 2026-03-31 to 2026-04-02 across 7 committees (JuU, FöU, SoU, SfU, MJU, UU, AU). Key themes: defense and civilian protection (FöU11, FöU12), criminal justice reform (JuU15), healthcare organization (SoU16, SoU17), and security policy (UU6). Overall political risk: **MODERATE**. Average document significance: 7.2/10.
+---
+
+## 📊 Intelligence Dashboard
 
 ```mermaid
 graph TD
-    subgraph "Committee Report Clusters — 2026-04-02"
+    subgraph "📊 Committee Reports Intelligence Dashboard — 2026-04-02"
         direction TB
-        A["🛡️ Defense & Security<br/>FöU11, FöU12, UU6"]:::security
-        B["⚖️ Criminal Justice<br/>JuU15"]:::justice
-        C["🏥 Healthcare<br/>SoU16, SoU17"]:::health
-        D["💼 Labor & Equality<br/>AU11, AU12"]:::labor
-        E["🌾 Agriculture/Trade<br/>MJU18"]:::trade
-        F["🏦 Social Insurance<br/>SfU18"]:::social
+        subgraph "🔒 Sensitivity"
+            SEN1["🟢 JuU15<br/>Criminal Corrections<br/>PUBLIC"]
+            SEN2["🟡 FöU12<br/>Civilian Protection<br/>SENSITIVE"]
+        end
+        subgraph "⚠️ Risk Level"
+            RSK1["🟡 JuU15<br/>MEDIUM<br/>Opposition unity risk"]
+            RSK2["🟠 FöU12<br/>HIGH<br/>Implementation risk"]
+        end
+        subgraph "📈 Significance"
+            SIG1["JuU15: 6/10<br/>Opposition coordination"]
+            SIG2["FöU12: 8/10<br/>Landmark legislation"]
+        end
     end
 
-    A -->|"NATO alignment"| G["Coalition Priority:<br/>Security Agenda"]:::highlight
-    B -->|"Tidöavtalet"| G
-    C -->|"Regional reform"| H["Opposition Focus:<br/>Welfare State"]:::opposition
-    D -->|"Equality gaps"| H
-    E -->|"EU directive"| I["EU Compliance"]:::eu
-    F -->|"Benefits reform"| H
-
-    classDef security fill:#1a3a5c,stroke:#00d9ff,color:#e0e0e0
-    classDef justice fill:#3d1a5c,stroke:#ff006e,color:#e0e0e0
-    classDef health fill:#1a5c3d,stroke:#00ff88,color:#e0e0e0
-    classDef labor fill:#5c3d1a,stroke:#ffbe0b,color:#e0e0e0
-    classDef trade fill:#2d4a1a,stroke:#88ff00,color:#e0e0e0
-    classDef social fill:#4a1a2d,stroke:#ff8800,color:#e0e0e0
-    classDef highlight fill:#0a0e27,stroke:#00d9ff,color:#00d9ff,stroke-width:3px
-    classDef opposition fill:#0a0e27,stroke:#ff006e,color:#ff006e,stroke-width:3px
-    classDef eu fill:#0a0e27,stroke:#ffbe0b,color:#ffbe0b,stroke-width:2px
+    style SEN1 fill:#28a745,color:#fff
+    style SEN2 fill:#ffc107,color:#000
+    style RSK1 fill:#ffc107,color:#000
+    style RSK2 fill:#fd7e14,color:#fff
+    style SIG1 fill:#007bff,color:#fff
+    style SIG2 fill:#dc3545,color:#fff
 ```
 
-## Key Findings
+---
 
-1. **Defense cluster dominance** [HIGH]: 3 of 10 reports (FöU11, FöU12, UU6) address defense/security — reflecting NATO membership integration priorities
-2. **Criminal justice reform** [HIGH]: JuU15 on correctional services aligns with Tidöavtalet commitments on stricter criminal penalties
-3. **Healthcare dual focus** [MEDIUM]: SoU16 (organization) and SoU17 (prioritization) signal ongoing structural reform debate
-4. **Coalition risk**: MODERATE (score: 42/100) — security agenda enjoys broad support but welfare debates expose government–opposition fault lines
-5. **EU compliance pressure** [MEDIUM]: MJU18 on UTP directive implementation reflects ongoing EU law transposition obligations
+## 🔑 Cross-Document Patterns
 
-## Top Documents by Significance
+### Theme 1: Defence-Security Modernization Cluster
 
-| Score | Type | dok_id | Title |
-|-------|------|--------|-------|
-| 9/10 | FöU | HD01FöU12 | Ett starkare skydd för civilbefolkningen vid höjd beredskap |
-| 8/10 | JuU | HD01JuU15 | Kriminalvårdsfrågor |
-| 8/10 | UU | HD01UU6 | Säkerhetspolitik |
-| 7/10 | FöU | HD01FöU11 | Riksrevisionens rapport om miljöräddning vid stora olyckor till sjöss |
-| 7/10 | SoU | HD01SoU16 | Hälso- och sjukvårdens organisation |
-| 7/10 | SoU | HD01SoU17 | Prioriteringar inom hälso- och sjukvården |
-| 6/10 | AU | HD01AU11 | Jämställdhet och åtgärder mot diskriminering |
-| 6/10 | AU | HD01AU12 | Arbetsmiljö |
-| 6/10 | SfU | HD01SfU18 | Socialförsäkringsfrågor |
-| 6/10 | MJU | HD01MJU18 | Förbättrat genomförande av UTP-direktivets förbud mot sena annulleringar |
+Both reports form part of the government's broader security modernization agenda. FöU12 directly implements Prop. 2025/26:142 on civilian protection, while JuU15 addresses criminal corrections infrastructure that is part of the government's "trygghet" (safety/security) narrative. The government is simultaneously expanding physical civilian shelter capacity (FöU12) and rejecting demands for expanded criminal corrections capacity (JuU15) — a prioritization signal: defence over criminal justice reform.
 
-## Implications
+### Theme 2: Opposition Unity Patterns
 
-Overall political risk level: **MODERATE**. The concentration of defense and security reports (FöU12, UU6) alongside criminal justice reform (JuU15) reflects the government's prioritization of the Tidöavtalet security agenda ahead of the 2026 election cycle. Opposition parties (S, V, MP) are likely to leverage healthcare (SoU16/17) and equality (AU11) reports to challenge government welfare priorities.
+Both reports feature joint S, V, C, MP reservations (8 in JuU15, 6 in FöU12), indicating sustained opposition coordination. Notably:
+- **JuU15 Reservation 1** (S, V, C, MP jointly) on Trygghetsberedningen — full opposition unity
+- **FöU12 Reservations 2-4** — V, C, and MP independently raise disability accessibility, suggesting genuine cross-party concern rather than coordinated opposition
 
-Articles should reference specific dok_id values and committee designations to ensure analytical depth and traceability.
+### Theme 3: Implementation Capacity Stress
 
-## Data Quality Notes
+Both reports expose municipal/agency implementation capacity as a systemic concern:
+- **FöU12**: June 1, 2026 deadline for shelter law — 2-month window for municipalities
+- **JuU15**: Prison capacity constraints acknowledged but 76 reform motions rejected
 
-Overall confidence: **HIGH**. Committee reports retrieved via `get_betankanden` with `rm=2025/26`. Document content enriched via `get_dokument_innehall` for all 10 reports. All analysis results are available in sibling files.
+---
+
+## 🏆 Document Significance Ranking
+
+| Rank | dok_id | Title | Score | Rationale |
+|------|--------|-------|:-----:|-----------|
+| 1 | HD01FöU12 | Stronger Protection for Civilians During Heightened Preparedness | 8/10 | Landmark legislation creating new civil defence framework; direct citizen and municipal impact; NATO context; June 2026 implementation deadline |
+| 2 | HD01JuU15 | Criminal Corrections Issues | 6/10 | 76 motions rejected with 8 reservations; opposition unity on Trygghetsberedningen; signals policy delivery gap in corrections |
+
+---
+
+## 🔄 Aggregate SWOT
+
+### Government Coalition — Combined Assessment
+
+| Quadrant | Key Finding | Evidence |
+|----------|-------------|----------|
+| **Strengths** | Successfully advances major civil defence legislation while maintaining committee control on criminal justice | FöU12 endorsed; JuU15 all motions rejected |
+| **Weaknesses** | Implementation capacity questionable — tight June 2026 deadline for FöU12; 76 unanswered corrections demands in JuU15 | FöU12 Reservation 1; JuU15 motion rejection |
+| **Opportunities** | Civil protection law strengthens NATO credibility; security policy wins heading into 2026 election cycle | FöU12 modernization; broader defence investment narrative |
+| **Threats** | Disability accessibility triple-flag (V, C, MP independently) could become cross-party consensus issue; corrections overcrowding risks | FöU12 Reservations 2-4; JuU15 capacity pressures |
+
+---
+
+## ⚠️ Risk Interconnections
+
+```mermaid
+graph LR
+    A["Municipal capacity<br/>stress (FöU12)"] --> B["Implementation<br/>delays"]
+    C["Corrections capacity<br/>gap (JuU15)"] --> D["Public safety<br/>concerns"]
+    B --> E["Government credibility<br/>on security agenda"]
+    D --> E
+    E --> F["Electoral risk<br/>2026"]
+
+    style A fill:#fd7e14,color:#fff
+    style C fill:#ffc107,color:#000
+    style E fill:#dc3545,color:#fff
+    style F fill:#dc3545,color:#fff
+```
+
+---
+
+## 🔮 Forward Intelligence
+
+| # | What to Watch | Trigger | Timeline | Confidence |
+|---|---------------|---------|----------|:----------:|
+| 1 | Chamber votes on FöU12 and JuU15 — watch for roll-call dynamics | Kammarens scheduling | 1-2 weeks | HIGH |
+| 2 | MSB shelter readiness reporting ahead of June 1 law effective date | MSB press release or riksdag inquiry | April-May 2026 | HIGH |
+| 3 | Trygghetsberedningen final report — could reset criminal justice debate | SOU publication | Q2-Q3 2026 | MEDIUM |
+| 4 | Kriminalvården monthly capacity statistics — approaching 100% occupancy? | BRÅ/Kriminalvården reporting | Monthly | HIGH |
+| 5 | Related defence propositions: Prop. 2025/26:214 (cybersecurity), Prop. 2025/26:228 (arms export) | FöU committee processing | Q2 2026 | MEDIUM |
+
+---
+
+**Document Control:** Synthesis generated 2026-04-03 04:52 UTC by news-committee-reports. Classification: PUBLIC. Valid until 2026-04-16.
