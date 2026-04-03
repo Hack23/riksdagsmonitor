@@ -454,6 +454,7 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
   ARTICLE_DATE="${{ github.event.inputs.article_date }}"
   [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
 fi
+ORIGINAL_ARTICLE_DATE="$ARTICLE_DATE"
 
 # Check if the requested date has any analyzed documents (per-date, doc-type-scoped manifest only)
 MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/propositions/data-download-manifest.md"
@@ -466,6 +467,7 @@ echo "📄 Propositions analyzed for $ARTICLE_DATE: $DATE_DOCS_ANALYZED"
 
 if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
   echo "⚠️ No proposition data for $ARTICLE_DATE — activating lookback fallback (up to 7 days)"
+  DATA_DATE=""
   for DAYS_BACK in 1 2 3 4 5 6 7; do
     # Cross-platform date arithmetic: GNU date (-d) on Linux/GitHub Actions, BSD date (-v) on macOS
     LOOKBACK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
@@ -479,8 +481,8 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     fi
     [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
     if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
-      echo "✅ Found $DATE_DOCS_ANALYZED propositions already analyzed for $LOOKBACK_DATE — using this date without re-running analysis"
-      ARTICLE_DATE="$LOOKBACK_DATE"
+      echo "✅ Found $DATE_DOCS_ANALYZED propositions already analyzed for $LOOKBACK_DATE"
+      DATA_DATE="$LOOKBACK_DATE"
       break
     fi
     # No existing data — run pre-article analysis for this lookback date
@@ -494,12 +496,25 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     fi
     [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
     if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
-      echo "✅ Successfully analyzed $DATE_DOCS_ANALYZED propositions for $LOOKBACK_DATE — using this date"
-      ARTICLE_DATE="$LOOKBACK_DATE"
+      echo "✅ Successfully analyzed $DATE_DOCS_ANALYZED propositions for $LOOKBACK_DATE"
+      DATA_DATE="$LOOKBACK_DATE"
       break
     fi
   done
-  echo "🗓️ Using analysis date: $ARTICLE_DATE"
+  # Lookback protection: copy analysis to today's directory instead of overwriting historical data
+  if [ -n "$DATA_DATE" ] && [ "$DATA_DATE" != "$ORIGINAL_ARTICLE_DATE" ]; then
+    SRC_DIR="analysis/daily/$DATA_DATE/propositions"
+    DST_DIR="analysis/daily/$ORIGINAL_ARTICLE_DATE/propositions"
+    if [ -d "$SRC_DIR" ]; then
+      mkdir -p "$DST_DIR"
+      cp -r "$SRC_DIR"/* "$DST_DIR/" 2>/dev/null || true
+      echo "📁 Copied analysis from $DATA_DATE → $ORIGINAL_ARTICLE_DATE (preserving original at $DATA_DATE)"
+    fi
+    ARTICLE_DATE="$ORIGINAL_ARTICLE_DATE"
+  elif [ -n "$DATA_DATE" ]; then
+    ARTICLE_DATE="$DATA_DATE"
+  fi
+  echo "🗓️ Using analysis date: $ARTICLE_DATE (data sourced from: ${DATA_DATE:-$ARTICLE_DATE})"
   # Persist resolved ARTICLE_DATE for downstream steps
   if [ -n "${GITHUB_ENV:-}" ]; then
     echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"

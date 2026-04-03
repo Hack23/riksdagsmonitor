@@ -909,6 +909,7 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
   ARTICLE_DATE="${{ github.event.inputs.article_date }}"
   [ -z "${ARTICLE_DATE:-}" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
 fi
+ORIGINAL_ARTICLE_DATE="$ARTICLE_DATE"
 
 # Step 1: Check if the requested article date has any analyzed documents (per-date, not session-wide)
 MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/data-download-manifest.md"
@@ -922,6 +923,7 @@ echo "📄 Documents analyzed for $ARTICLE_DATE: $DATE_DOCS_ANALYZED"
 if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
   echo "⚠️ No per-date data for $ARTICLE_DATE — activating lookback fallback"
   # Step 2: Try previous dates (up to 7 days back) until we find one with analyzed documents
+  DATA_DATE=""
   for DAYS_BACK in 1 2 3 4 5 6 7; do
     # Cross-platform date arithmetic: GNU date (-d) on Linux/GitHub Actions, BSD date (-v) on macOS
     LOOKBACK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
@@ -935,8 +937,8 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     fi
     [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
     if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
-      echo "✅ Found $DATE_DOCS_ANALYZED documents already analyzed for $LOOKBACK_DATE — using this date without re-running analysis"
-      ARTICLE_DATE="$LOOKBACK_DATE"
+      echo "✅ Found $DATE_DOCS_ANALYZED documents already analyzed for $LOOKBACK_DATE"
+      DATA_DATE="$LOOKBACK_DATE"
       break
     fi
     # No existing data — run pre-article analysis for this lookback date
@@ -950,12 +952,27 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     fi
     [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
     if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
-      echo "✅ Successfully analyzed $DATE_DOCS_ANALYZED documents for $LOOKBACK_DATE — using this date"
-      ARTICLE_DATE="$LOOKBACK_DATE"
+      echo "✅ Successfully analyzed $DATE_DOCS_ANALYZED documents for $LOOKBACK_DATE"
+      DATA_DATE="$LOOKBACK_DATE"
       break
     fi
   done
-  echo "🗓️ Using analysis date: $ARTICLE_DATE"
+  # Lookback protection: copy analysis to today's directory instead of overwriting historical data
+  # When lookback finds existing analysis from a previous date, we COPY it to the article date
+  # directory so that downstream rewrites modify the copy, not the original.
+  if [ -n "$DATA_DATE" ] && [ "$DATA_DATE" != "$ORIGINAL_ARTICLE_DATE" ]; then
+    SRC_DIR="analysis/daily/$DATA_DATE/${ARTICLE_TYPE:-}"
+    DST_DIR="analysis/daily/$ORIGINAL_ARTICLE_DATE/${ARTICLE_TYPE:-}"
+    if [ -n "${ARTICLE_TYPE:-}" ] && [ -d "$SRC_DIR" ]; then
+      mkdir -p "$DST_DIR"
+      cp -r "$SRC_DIR"/* "$DST_DIR/" 2>/dev/null || true
+      echo "📁 Copied analysis from $DATA_DATE → $ORIGINAL_ARTICLE_DATE (preserving original at $DATA_DATE)"
+    fi
+    ARTICLE_DATE="$ORIGINAL_ARTICLE_DATE"
+  elif [ -n "$DATA_DATE" ]; then
+    ARTICLE_DATE="$DATA_DATE"
+  fi
+  echo "🗓️ Using analysis date: $ARTICLE_DATE (data sourced from: ${DATA_DATE:-$ARTICLE_DATE})"
 
   # Persist selected ARTICLE_DATE for downstream steps
   if [ -n "${GITHUB_ENV:-}" ]; then
@@ -970,7 +987,12 @@ PENDING=${PENDING:-0}
 echo "📊 Total pending per-file analysis files (all dates): $PENDING"
 ```
 
-**Key principle**: The lookback trigger uses the **per-date** "Documents Analyzed" count from `data-download-manifest.md`, NOT session-wide catalog totals. When a lookback date is selected, `$ARTICLE_DATE` is updated so downstream steps (daily synthesis rewrite, commit) target the correct directory.
+**Key principle**: The lookback trigger uses the **per-date** "Documents Analyzed" count from `data-download-manifest.md`, NOT session-wide catalog totals. When lookback finds existing analysis from a previous date, it **copies** the analysis to today's directory so downstream rewrites modify the copy, preserving the original historical analysis.
+
+**Lookback protection**: When `DATA_DATE != ORIGINAL_ARTICLE_DATE`, analysis artifacts are copied (not moved) from the source date to the article date. This ensures that:
+1. Historical analysis at the data date is never overwritten
+2. The agent works on fresh copies at the article date
+3. Article references correctly point to the article date directory
 
 **ARTICLE_DATE overwrite protection**: The resolved `ARTICLE_DATE` is persisted to `$GITHUB_ENV` after lookback selection. **Important**: any downstream bash snippet that initializes `ARTICLE_DATE` from inputs or `date -u` MUST use an idempotent guard to avoid overwriting the lookback-selected date. Place this snippet at the start of any step that runs AFTER the lookback loop:
 
