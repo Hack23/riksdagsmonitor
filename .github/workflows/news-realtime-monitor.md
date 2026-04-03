@@ -241,7 +241,11 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
     ARTICLE_DATE=$(date -u +%Y-%m-%d)
   fi
 fi
-echo "📥 Downloading data for $ARTICLE_DATE..."
+# UNIQUE RUN ID: Set HHMM timestamp ONCE for this run — persist to env file so all bash blocks use the same value
+HHMM=${HHMM:-$(date -u +%H%M)}
+echo "HHMM=$HHMM" > /tmp/hhmm.env
+ARTICLE_TYPE="realtime-${HHMM}"
+echo "📥 Downloading data for $ARTICLE_DATE (run: $ARTICLE_TYPE)..."
 # CRITICAL: Source mcp-setup.sh to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the AWF gateway
 # Scripts download data only — analysis is done by AI afterwards
 source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL:-NOT SET}" && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
@@ -254,7 +258,23 @@ fi
 # Verify data was actually downloaded
 DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
 echo "📊 JSON data files downloaded: $DATA_JSON_COUNT"
-ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No output directory"
+# Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
+# but this workflow needs them under analysis/daily/$DATE/realtime-${HHMM}/
+UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
+SCOPED_DIR="$UNSCOPED_DIR/$ARTICLE_TYPE"
+if [ -d "$UNSCOPED_DIR" ]; then
+  mkdir -p "$SCOPED_DIR"
+  if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then
+    find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec cp -f {} "$SCOPED_DIR/" \;
+    echo "📁 Copied pipeline *.md artifacts → $SCOPED_DIR (kept unscoped originals for analysis-reader.ts)"
+  fi
+  if [ -d "$UNSCOPED_DIR/documents" ]; then
+    mkdir -p "$SCOPED_DIR/documents"
+    find "$UNSCOPED_DIR/documents" -mindepth 1 -maxdepth 1 -exec cp -R -f {} "$SCOPED_DIR/documents/" \;
+    echo "📁 Copied pipeline documents/ contents → $SCOPED_DIR/documents (kept unscoped originals for downstream per-file analysis)"
+  fi
+fi
+ls -la "$SCOPED_DIR/" 2>/dev/null || echo "⚠️ No output directory"
 if [ "$DATA_JSON_COUNT" -eq 0 ]; then
   echo "🚨 ZERO data downloaded. Agent MUST fix scripts or use direct MCP tool calls."
 fi
@@ -297,11 +317,11 @@ fi
 
 3. **For EVERY downloaded document/data file**: apply ALL 6 analytical lenses and create `{dok_id}-analysis.md` following the per-file template. Cite specific data (dok_id, vote counts, party names). Include ≥1 color-coded Mermaid diagram with `style` directives.
 
-4. **Create/rewrite ALL 7 daily synthesis files** in `analysis/daily/$ARTICLE_DATE/` — each MUST follow its template EXACTLY (metadata header, Mermaid diagrams with color-coded style directives, structured evidence tables, confidence labels, no `[REQUIRED]` placeholders).
+4. **Create/rewrite ALL 7 daily synthesis files** in `analysis/daily/$ARTICLE_DATE/realtime-${HHMM}/` — each MUST follow its template EXACTLY (metadata header, Mermaid diagrams with color-coded style directives, structured evidence tables, confidence labels, no `[REQUIRED]` placeholders).
 
 5. **Run the quality gate bash check** from SHARED_PROMPT_PATTERNS Step 5b. If it fails, go back and fix analysis files until it passes.
 
-6. **Commit data AND analysis together** — stage scoped to current date: `git add analysis/data/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/"` (see Step 5 for full file-count safety pattern)
+6. **Commit data AND analysis together** — stage scoped to this run: `git add analysis/data/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/realtime-${HHMM}/"` (see Step 5 for full file-count safety pattern)
 
 > ❌ **FAILURE MODES** (any of these = workflow failure):
 > - Skipping analysis creation
@@ -425,11 +445,12 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
     ARTICLE_DATE=$(date -u +%Y-%m-%d)
   fi
 fi
-ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+[ -f /tmp/hhmm.env ] && source /tmp/hhmm.env || HHMM=${HHMM:-$(date -u +%H%M)}
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/realtime-${HHMM}"
 QUALITY_PASS=true
 FAIL_COUNT=0
 
-echo "=== 🔍 Analysis Quality Gate Check ==="
+echo "=== 🔍 Analysis Quality Gate Check (realtime-${HHMM}) ==="
 
 # Collect ALL analysis markdown files (daily synthesis + per-file in documents/)
 ALL_MD_FILES=$(find "$ANALYSIS_DIR" -name "*.md" -type f 2>/dev/null)
@@ -541,7 +562,8 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
   ARTICLE_DATE="${{ github.event.inputs.article_date }}"
   [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
 fi
-ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+[ -f /tmp/hhmm.env ] && source /tmp/hhmm.env || HHMM=${HHMM:-$(date -u +%H%M)}
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/realtime-${HHMM}"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then
   ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
@@ -553,7 +575,7 @@ else
 fi
 ```
 
-> **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files in `analysis/daily/YYYY-MM-DD/`, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Realtime Monitor - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).
+> **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files in `analysis/daily/YYYY-MM-DD/realtime-HHMM/`, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Realtime Monitor - {date} {HHMM}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).
 
 ## Step 2: Detect Significant Events
 
@@ -635,7 +657,7 @@ Map raw score to tier: **≥ 7 = HIGH** | **4–6 = MEDIUM** | **≤ 3 = LOW**
 
 If no HIGH or MEDIUM events found:
 
-1. **First check if analysis artifacts exist** in `analysis/daily/YYYY-MM-DD/`:
+1. **First check if analysis artifacts exist** in `analysis/daily/YYYY-MM-DD/realtime-HHMM/`:
 ```bash
 # Idempotent: prefer resolved/input date, then fall back to today
 if [ -z "${ARTICLE_DATE:-}" ]; then
@@ -645,17 +667,18 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
     ARTICLE_DATE="$(date -u +%Y-%m-%d)"
   fi
 fi
-ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+[ -f /tmp/hhmm.env ] && source /tmp/hhmm.env || HHMM=${HHMM:-$(date -u +%H%M)}
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/realtime-${HHMM}"
 ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l)
-echo "Analysis artifacts: $ANALYSIS_COUNT files"
+echo "Analysis artifacts: $ANALYSIS_COUNT files in $ANALYSIS_DIR"
 ```
 
 2. **If analysis artifacts exist** (ANALYSIS_COUNT > 0): Commit them and create an analysis-only PR:
 ```bash
 git add "$ANALYSIS_DIR"/
-git commit -m "📊 Analysis artifacts - Realtime Monitor - $(date -u +%Y-%m-%d)"
+git commit -m "📊 Analysis artifacts - Realtime Monitor ${HHMM} - $(date -u +%Y-%m-%d)"
 ```
-Then call `safeoutputs___create_pull_request` with title `📊 Analysis Only - Realtime Monitor - {date}`, body including actual query stats, and labels `["analysis-only", "realtime-monitor"]`.
+Then call `safeoutputs___create_pull_request` with title `📊 Analysis Only - Realtime Monitor ${HHMM} - {date}`, body including actual query stats, and labels `["analysis-only", "realtime-monitor"]`.
 
 3. **If NO analysis artifacts exist**: Substitute actual runtime values into this template:
 ```
@@ -746,7 +769,7 @@ fi
 
 If the script genuinely fails after verifying MCP, generate articles manually ONE language at a time:
 1. Check elapsed time — if >= 38 minutes, stop and call noop with summary
-2. Write HTML to `news/YYYY-MM-DD-{slug}-{lang}.html`
+2. Write HTML to `news/YYYY-MM-DD-breaking-HHMM-{lang}.html` (HHMM = time of this run, ensures uniqueness across multiple daily runs)
 3. Use `<link rel="stylesheet" href="../styles.css">` — NO embedded `<style>` tags
 4. Include language switcher, article-top-nav, Schema.org NewsArticle, hreflang tags
 5. Use `dir="rtl"` for Arabic (ar) and Hebrew (he)
@@ -755,7 +778,8 @@ If the script genuinely fails after verifying MCP, generate articles manually ON
 >
 > ✅ **Build the file incrementally** with multiple small `printf` appends (no heredoc, no size limits):
 > ```bash
-> FILE="news/YYYY-MM-DD-slug-en.html"
+> [ -f /tmp/hhmm.env ] && source /tmp/hhmm.env || HHMM=${HHMM:-$(date -u +%H%M)}
+> FILE="news/${ARTICLE_DATE}-breaking-${HHMM}-en.html"
 > printf '%s\n' '<!DOCTYPE html>' > "$FILE"
 > printf '%s\n' '<html lang="en">' >> "$FILE"
 > printf '%s\n' '<head><link rel="stylesheet" href="../styles.css"></head>' >> "$FILE"
@@ -763,6 +787,18 @@ If the script genuinely fails after verifying MCP, generate articles manually ON
 > # ... append each section separately ...
 > printf '%s\n' '</body></html>' >> "$FILE"
 > ```
+
+## Step 3b: AI Title, Meta Description & Analysis References
+
+> 🚨 **MANDATORY** — After article HTML is generated, the AI MUST improve titles, descriptions, and add analysis references. See `SHARED_PROMPT_PATTERNS.md` sections "AI-DRIVEN TITLE & META DESCRIPTION GENERATION" and "ANALYSIS FILE GITHUB REFERENCES" for full protocols.
+
+**1. Generate newsworthy titles** — Read each article's content, then replace the script-generated title following: `[Active Verb] + [Specific Actor/Institution] + [Concrete Policy Action]`. BANNED: ❌ "Breaking News: Latest Updates" or generic category labels.
+
+**2. Generate AI meta descriptions** (150-160 chars) — Summarize key political intelligence from actual content. BANNED: ❌ any description starting with "Analysis of N documents".
+
+**3. Add analysis references section** — Insert the "📊 Analysis & Sources" HTML block before footer, linking to `analysis/daily/${ARTICLE_DATE}/realtime-${HHMM}/` analysis files and `analysis/methodologies/ai-driven-analysis-guide.md`.
+
+**4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.
 
 ## Step 4: Validate & Translate
 
@@ -837,9 +873,10 @@ news/content/{YYYY-MM-DD}/breaking
 ⚠️ DO NOT use `git push` — the safe output tool handles publishing. Commit locally, then use the tool.
 
 ```bash
-# Stage articles and analysis — scoped to current date to stay within 100-file PR limit
+# Stage articles and analysis — scoped to this run's time-stamped folder to prevent overwriting other runs
+[ -f /tmp/hhmm.env ] && source /tmp/hhmm.env || HHMM=${HHMM:-$(date -u +%H%M)}
 git add news/ || true
-git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/" || true
+git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/realtime-${HHMM}/" || true
 git add analysis/weekly/ || true
 git add analysis/data/ || true
 # Enforce safe-outputs 100-file PR limit
@@ -855,7 +892,7 @@ if [ "$STAGED_COUNT" -gt 90 ]; then
   STAGED_COUNT=$(git diff --cached --name-only | wc -l)
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
-git commit -m "🔴 Breaking: {headline} - $(date +%Y-%m-%d)"
+git commit -m "🔴 Breaking ${HHMM}: {headline} - $(date +%Y-%m-%d)"
 ```
 
 Then **immediately** call (as a direct tool call, NOT via bash):

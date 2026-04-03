@@ -590,6 +590,23 @@ fi
 [ -z "$MANIFEST_DOCS" ] && MANIFEST_DOCS=0
 DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
 echo "📊 Documents in manifest: $MANIFEST_DOCS, JSON data files: $DATA_JSON_COUNT"
+# Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
+# but this workflow needs them under analysis/daily/$DATE/evening-analysis/
+UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
+SCOPED_DIR="$UNSCOPED_DIR/evening-analysis"
+if [ -d "$UNSCOPED_DIR" ]; then
+  mkdir -p "$SCOPED_DIR"
+  if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then
+    find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec cp -f {} "$SCOPED_DIR/" \;
+    echo "📁 Copied pipeline *.md artifacts → $SCOPED_DIR (kept unscoped originals for analysis-reader.ts)"
+  fi
+  if [ -d "$UNSCOPED_DIR/documents" ]; then
+    mkdir -p "$SCOPED_DIR/documents"
+    find "$UNSCOPED_DIR/documents" -mindepth 1 -maxdepth 1 -exec mv {} "$SCOPED_DIR/documents/" \;
+    rmdir "$UNSCOPED_DIR/documents" 2>/dev/null || true
+    echo "📁 Relocated pipeline documents/ contents → $SCOPED_DIR/documents"
+  fi
+fi
 if [ "$MANIFEST_DOCS" -eq 0 ] && [ "$DATA_JSON_COUNT" -eq 0 ]; then
   echo "🚨 CRITICAL: Pipeline downloaded ZERO data. Agent MUST diagnose and fix — do NOT fabricate analysis."
 fi
@@ -736,7 +753,7 @@ style X fill:#6f42c1,color:#fff   /* 🟣 Purple — Special category */
 
 > 🚨 **CRITICAL**: The `pre-article-analysis.ts` script generates **stub files** that do NOT follow the full template structure from `analysis/templates/`. You MUST rewrite each daily synthesis file to match its template.
 
-After per-file analyses, rewrite ALL daily files in `analysis/daily/$ARTICLE_DATE/` to follow their templates:
+After per-file analyses, rewrite ALL daily files in `analysis/daily/$ARTICLE_DATE/evening-analysis/` to follow their templates:
 
 | Daily File | Template | Key Requirements |
 |------------|----------|-----------------|
@@ -750,7 +767,7 @@ After per-file analyses, rewrite ALL daily files in `analysis/daily/$ARTICLE_DAT
 
 **Important filename & template adaptation rules:**
 - The mapped templates were originally authored as **single-event assessments** and may reference `event-slug` or `evening-*` filenames and a single primary `dok_id`.
-- For this workflow, you MUST adapt those templates for **batch daily summaries** (potentially multiple `dok_id` values per file) while keeping the existing daily filenames under `analysis/daily/$ARTICLE_DATE/`.
+- For this workflow, you MUST adapt those templates for **batch daily summaries** (potentially multiple `dok_id` values per file) while keeping the existing daily filenames under `analysis/daily/$ARTICLE_DATE/evening-analysis/`.
 - NEVER create new markdown files (e.g. `event-slug`, `evening-*`) based on suggestions inside the templates. Always rewrite the existing stub file (the exact daily filename in the table above).
 
 **Protocol for each daily file:**
@@ -780,12 +797,12 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
     ARTICLE_DATE=$(date -u +%Y-%m-%d)
   fi
 fi
-ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/evening-analysis"
 QUALITY_PASS=true
 FAIL_COUNT=0
 WARN_COUNT=0
 
-echo "=== 🔍 Analysis Quality Gate Check ==="
+echo "=== 🔍 Analysis Quality Gate Check (evening-analysis) ==="
 
 DAILY_MD_FILES=$(find "$ANALYSIS_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null)
 PERFILE_MD_FILES=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null)
@@ -901,7 +918,7 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
   ARTICLE_DATE="${{ github.event.inputs.article_date }}"
   [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
 fi
-ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/evening-analysis"
 NEW_ANALYSIS_COUNT=$(git status --porcelain -- analysis/data/ "$ANALYSIS_DIR" 2>/dev/null | wc -l)
 if [ "$NEW_ANALYSIS_COUNT" -gt 0 ]; then
   echo "📊 Found $NEW_ANALYSIS_COUNT new/modified analysis artifacts — these MUST be committed (do NOT use safeoutputs___noop)"
@@ -961,8 +978,8 @@ get_calendar_events({ from: "<tomorrow>", tom: "<tomorrow>", limit: 50 })
 **Statistical enrichment (optional):** For economic policy topics, use World Bank and SCB MCP servers as context. See `scripts/world-bank-context.ts` and `scripts/scb-context.ts`. Never block on SCB/World Bank failures.
 
 **If ALL queries return empty results** (no votes, no speeches, no reports, no government activity):
-1. **First check if analysis artifacts exist** in `analysis/daily/YYYY-MM-DD/`
-2. If analysis artifacts exist: commit them with `git add "analysis/daily/$ARTICLE_DATE/" && git commit -m "📊 Analysis artifacts - Evening Analysis - $(date -u +%Y-%m-%d)"` and call `safeoutputs___create_pull_request` with title `📊 Analysis Only - Evening Analysis - {date}`, labels `["analysis-only", "evening-analysis"]`
+1. **First check if analysis artifacts exist** in `analysis/daily/YYYY-MM-DD/evening-analysis/`
+2. If analysis artifacts exist: commit them with `git add "analysis/daily/$ARTICLE_DATE/evening-analysis/" && git commit -m "📊 Analysis artifacts - Evening Analysis - $(date -u +%Y-%m-%d)"` and call `safeoutputs___create_pull_request` with title `📊 Analysis Only - Evening Analysis - {date}`, labels `["analysis-only", "evening-analysis"]`
 3. If NO analysis artifacts exist: call `safeoutputs___noop({"message": "No significant parliamentary activity found for today's evening analysis. Pre-article analysis pipeline also produced no output."})` and stop.
 
 ## Step 3: Generate Articles
@@ -1043,6 +1060,24 @@ TODAY="$(date +%Y-%m-%d)"
 NEW_ARTICLES="$(git status --porcelain -- news/ | awk '{print $2}' | grep "${TODAY}-" || true)"
 echo "Generated: $(echo "$NEW_ARTICLES" | wc -l) articles"
 ```
+
+## Step 3b: AI Title, Meta Description & Analysis References
+
+> 🚨 **MANDATORY** — After article HTML is generated by scripts, the AI MUST improve titles, descriptions, and add analysis references. See `SHARED_PROMPT_PATTERNS.md` sections "AI-DRIVEN TITLE & META DESCRIPTION GENERATION" and "ANALYSIS FILE GITHUB REFERENCES" for full protocols.
+
+**1. Generate newsworthy titles** — Read each article's content, then replace the script-generated title following: `[Active Verb] + [Specific Actor/Institution] + [Concrete Policy Action]`. BANNED: ❌ any title ending with ": {Topic} in Focus" or "Evening Analysis: Daily Summary".
+
+**2. Generate AI meta descriptions** (150-160 chars) — Summarize key political intelligence from actual content. BANNED: ❌ any description starting with "Analysis of N documents".
+
+**3. Add analysis references section** — Insert the "📊 Analysis & Sources" HTML block before footer. For evening analysis, link to ALL article-type analysis folders for the date:
+- `analysis/daily/${ARTICLE_DATE}/committeeReports/` (if exists)
+- `analysis/daily/${ARTICLE_DATE}/propositions/` (if exists)
+- `analysis/daily/${ARTICLE_DATE}/interpellations/` (if exists)
+- `analysis/daily/${ARTICLE_DATE}/motions/` (if exists)
+- `analysis/daily/${ARTICLE_DATE}/realtime-*/` (if exists)
+- `analysis/methodologies/ai-driven-analysis-guide.md`
+
+**4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.
 
 ## Step 4: Translate & Validate
 
@@ -1129,7 +1164,7 @@ news/content/{YYYY-MM-DD}/evening-analysis
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally (scoped to current date — see Step 5 for full file-count safety pattern): `git add news/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/" analysis/weekly/ && git commit -m "🌆 Evening Analysis - $(date +%Y-%m-%d)"`
+> 2. Stage and commit locally (scoped to evening-analysis subfolder): `git add news/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/evening-analysis/" analysis/weekly/ && git commit -m "🌆 Evening Analysis - $(date +%Y-%m-%d)"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -1139,14 +1174,14 @@ news/content/{YYYY-MM-DD}/evening-analysis
 - ✅ **REQUIRED:** `safeoutputs___create_pull_request` with analysis-only PR when no articles but analysis artifacts exist — title: `📊 Analysis Only - Evening Analysis - {date}`, labels: `["analysis-only", "evening-analysis"]`
 - ✅ **ONLY USE `safeoutputs___noop` if genuinely no parliamentary activity AND no analysis artifacts** in the queried date range
 - ❌ **NEVER use `safeoutputs___noop` as fallback for PR creation failures**
-- ❌ **NEVER use `safeoutputs___noop` if analysis artifacts exist for the current `ARTICLE_DATE` under `analysis/daily/` (for example, `analysis/daily/2025-03-04/`)**
+- ❌ **NEVER use `safeoutputs___noop` if analysis artifacts exist for the current `ARTICLE_DATE` under `analysis/daily/.../evening-analysis/` (for example, `analysis/daily/2025-03-04/evening-analysis/`)**
 
 > **🚨 NEVER search for safe output tools via bash.** After `git commit`, call `safeoutputs___create_pull_request` directly as your VERY NEXT action.
 
 ```bash
-# Stage articles and analysis — scoped to current date to stay within 100-file PR limit
+# Stage articles and analysis — scoped to evening-analysis subfolder to prevent overwriting other workflows
 git add news/ || true
-git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/" || true
+git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/evening-analysis/" || true
 git add analysis/weekly/ || true
 # Enforce safe-outputs 100-file PR limit
 STAGED_COUNT=$(git diff --cached --name-only | wc -l)
@@ -1216,10 +1251,10 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 
 **YOU MUST call exactly one safe output tool before exiting.** This is the single most important rule of this workflow.
 
-**Analysis artifacts MUST always be committed.** Before calling any safe output tool, check if `analysis/daily/YYYY-MM-DD/` (for the current `ARTICLE_DATE`) contains files. If it does, commit only that directory with `git add "analysis/daily/${ARTICLE_DATE}/"` and include it in the PR or create an analysis-only PR.
+**Analysis artifacts MUST always be committed.** Before calling any safe output tool, check if `analysis/daily/YYYY-MM-DD/evening-analysis/` (for the current `ARTICLE_DATE`) contains files. If it does, commit only that directory with `git add "analysis/daily/${ARTICLE_DATE}/evening-analysis/"` and include it in the PR or create an analysis-only PR.
 
 - If you generated articles → `safeoutputs___create_pull_request({...})` (includes analysis artifacts)
-- If no articles but analysis artifacts exist → `git add "analysis/daily/${ARTICLE_DATE}/" && git commit -m "📊 Analysis artifacts - $(date -u +%Y-%m-%d)"` then `safeoutputs___create_pull_request({"title": "📊 Analysis Only - Evening Analysis - {date}", "body": "## Analysis Only\n\nNo articles generated but analysis artifacts committed for review.\n\nDocuments analyzed: {count}\nKey findings: {summary from synthesis-summary.md}", "labels": ["analysis-only", "evening-analysis"]})`
+- If no articles but analysis artifacts exist → `git add "analysis/daily/${ARTICLE_DATE}/evening-analysis/" && git commit -m "📊 Analysis artifacts - Evening Analysis - $(date -u +%Y-%m-%d)"` then `safeoutputs___create_pull_request({"title": "📊 Analysis Only - Evening Analysis - {date}", "body": "## Analysis Only\n\nNo articles generated but analysis artifacts committed for review.\n\nDocuments analyzed: {count}\nKey findings: {summary from synthesis-summary.md}", "labels": ["analysis-only", "evening-analysis"]})`
 - If MCP server unreachable (no analysis produced) → `safeoutputs___noop({"message": "MCP server unavailable. No articles or analysis generated."})`
 - If MCP data unavailable → `safeoutputs___missing_data({"reason": "MCP returned no usable data for evening analysis."})`
 - If any error occurs → commit any analysis artifacts first, then `safeoutputs___noop({"message": "Error during evening analysis: <brief description>"})`

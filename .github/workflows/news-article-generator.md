@@ -327,6 +327,67 @@ echo "📊 Analysis artifacts for $ARTICLE_DATE:"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output"
 DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
 echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
+# Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
+# Determine target subfolder — use dedicated folder for multi-type/schedule runs to avoid mixing artifacts
+RAW_REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
+_IS_SCHEDULE_OR_MULTI=false
+if [ -z "$RAW_REQUESTED_TYPE" ] || [[ "$RAW_REQUESTED_TYPE" == *,* ]]; then
+  _IS_SCHEDULE_OR_MULTI=true
+fi
+REQUESTED_TYPE="$RAW_REQUESTED_TYPE"
+[ -z "$REQUESTED_TYPE" ] && REQUESTED_TYPE="committee-reports"
+# Capture and persist HHMM/subfolder once so later blocks can source the same values
+ANALYSIS_SUBFOLDER_ENV=/tmp/analysis_subfolder.env
+if [ -f "$ANALYSIS_SUBFOLDER_ENV" ]; then
+  # Reuse previously persisted values to keep relocation/staging/validation deterministic
+  # shellcheck source=/tmp/analysis_subfolder.env
+  . "$ANALYSIS_SUBFOLDER_ENV"
+  [ -n "${ANALYSIS_HHMM:-}" ] && _AG_HHMM="$ANALYSIS_HHMM"
+  [ -n "${ANALYSIS_SUBFOLDER:-}" ] && _RELOC_SUBFOLDER="$ANALYSIS_SUBFOLDER"
+fi
+if [ -z "${_AG_HHMM:-}" ]; then
+  _AG_HHMM=$(date -u +%H%M)
+fi
+if [ -z "${_RELOC_SUBFOLDER:-}" ]; then
+  if [ "$_IS_SCHEDULE_OR_MULTI" = true ]; then
+    # Multi-type or schedule-driven run — use a dedicated workflow-scoped folder
+    _RELOC_SUBFOLDER="article-generator-${_AG_HHMM}"
+  else
+    case "$REQUESTED_TYPE" in
+      *committee-reports*) _RELOC_SUBFOLDER="committeeReports" ;;
+      *interpellation*) _RELOC_SUBFOLDER="interpellations" ;;
+      *motions*) _RELOC_SUBFOLDER="motions" ;;
+      *propositions*) _RELOC_SUBFOLDER="propositions" ;;
+      *week-ahead*) _RELOC_SUBFOLDER="week-ahead" ;;
+      *month-ahead*) _RELOC_SUBFOLDER="month-ahead" ;;
+      *weekly-review*) _RELOC_SUBFOLDER="weekly-review" ;;
+      *monthly-review*) _RELOC_SUBFOLDER="monthly-review" ;;
+      *breaking*) _RELOC_SUBFOLDER="realtime-${_AG_HHMM}" ;;
+      *deep-inspection*) _RELOC_SUBFOLDER="deep-inspection" ;;
+      *) _RELOC_SUBFOLDER="$REQUESTED_TYPE" ;;
+    esac
+  fi
+fi
+# Persist immediately so all subsequent blocks get the same values
+echo "ANALYSIS_SUBFOLDER=$_RELOC_SUBFOLDER" > "$ANALYSIS_SUBFOLDER_ENV"
+echo "ANALYSIS_HHMM=$_AG_HHMM" >> "$ANALYSIS_SUBFOLDER_ENV"
+echo "_AG_HHMM=$_AG_HHMM" >> "$ANALYSIS_SUBFOLDER_ENV"
+echo "_RELOC_SUBFOLDER=$_RELOC_SUBFOLDER" >> "$ANALYSIS_SUBFOLDER_ENV"
+UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
+SCOPED_DIR="$UNSCOPED_DIR/$_RELOC_SUBFOLDER"
+if [ -d "$UNSCOPED_DIR" ]; then
+  mkdir -p "$SCOPED_DIR"
+  if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then
+    find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec cp -f {} "$SCOPED_DIR/" \;
+    echo "📁 Copied pipeline *.md artifacts → $SCOPED_DIR (kept unscoped originals for analysis-reader.ts)"
+  fi
+  if [ -d "$UNSCOPED_DIR/documents" ]; then
+    mkdir -p "$SCOPED_DIR/documents"
+    find "$UNSCOPED_DIR/documents" -mindepth 1 -maxdepth 1 -exec mv {} "$SCOPED_DIR/documents/" \;
+    rmdir "$UNSCOPED_DIR/documents" 2>/dev/null || true
+    echo "📁 Relocated pipeline documents/ contents → $SCOPED_DIR/documents"
+  fi
+fi
 if [ "$DATA_JSON_COUNT" -eq 0 ]; then
   echo "🚨 CRITICAL: Pipeline downloaded ZERO data. Agent MUST diagnose and fix — do NOT fabricate analysis."
 fi
@@ -358,7 +419,51 @@ These analysis files are committed alongside articles for human review and conti
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
-ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+# Determine the article type from input for scoped analysis directory
+RAW_REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
+_IS_SCHEDULE_OR_MULTI=false
+if [ -z "$RAW_REQUESTED_TYPE" ] || [[ "$RAW_REQUESTED_TYPE" == *,* ]]; then
+  _IS_SCHEDULE_OR_MULTI=true
+fi
+REQUESTED_TYPE="$RAW_REQUESTED_TYPE"
+[ -z "$REQUESTED_TYPE" ] && REQUESTED_TYPE="committee-reports"
+# Reuse previously persisted relocation/analysis folder when available so later blocks
+# do not recompute a different minute-based directory.
+if [ -f /tmp/analysis_subfolder.env ]; then
+  source /tmp/analysis_subfolder.env
+fi
+if [ -n "${ANALYSIS_SUBFOLDER:-}" ]; then
+  ANALYSIS_SUBFOLDER="$ANALYSIS_SUBFOLDER"
+elif [ -n "${_RELOC_SUBFOLDER:-}" ]; then
+  ANALYSIS_SUBFOLDER="$_RELOC_SUBFOLDER"
+else
+  # Use dedicated folder for multi-type/schedule runs; reuse _AG_HHMM for breaking consistency
+  _AG_HHMM=${_AG_HHMM:-$(date -u +%H%M)}
+  if [ "$_IS_SCHEDULE_OR_MULTI" = true ]; then
+    ANALYSIS_SUBFOLDER="article-generator-${_AG_HHMM}"
+  else
+    case "$REQUESTED_TYPE" in
+      *committee-reports*) ANALYSIS_SUBFOLDER="committeeReports" ;;
+      *interpellation*) ANALYSIS_SUBFOLDER="interpellations" ;;
+      *motions*) ANALYSIS_SUBFOLDER="motions" ;;
+      *propositions*) ANALYSIS_SUBFOLDER="propositions" ;;
+      *week-ahead*) ANALYSIS_SUBFOLDER="week-ahead" ;;
+      *month-ahead*) ANALYSIS_SUBFOLDER="month-ahead" ;;
+      *weekly-review*) ANALYSIS_SUBFOLDER="weekly-review" ;;
+      *monthly-review*) ANALYSIS_SUBFOLDER="monthly-review" ;;
+      *breaking*) ANALYSIS_SUBFOLDER="realtime-${_AG_HHMM}" ;;
+      *deep-inspection*) ANALYSIS_SUBFOLDER="deep-inspection" ;;
+      *) echo "⚠️ Unknown article type '$REQUESTED_TYPE' — using as-is for subfolder"; ANALYSIS_SUBFOLDER="$REQUESTED_TYPE" ;;
+    esac
+  fi
+fi
+# Persist ANALYSIS_SUBFOLDER for use in the commit step (agentic blocks may run independently)
+ANALYSIS_SUBFOLDER_ENV=/tmp/analysis_subfolder.env
+echo "ANALYSIS_SUBFOLDER=$ANALYSIS_SUBFOLDER" > "$ANALYSIS_SUBFOLDER_ENV"
+echo "ANALYSIS_HHMM=${_AG_HHMM:-}" >> "$ANALYSIS_SUBFOLDER_ENV"
+echo "_AG_HHMM=${_AG_HHMM:-}" >> "$ANALYSIS_SUBFOLDER_ENV"
+echo "_RELOC_SUBFOLDER=$ANALYSIS_SUBFOLDER" >> "$ANALYSIS_SUBFOLDER_ENV"
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then
   ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
@@ -514,6 +619,18 @@ For **non-deep-inspection** article types only, if the script fails, generate ar
 > printf '%s\n' '</body></html>' >> "$FILE"
 > ```
 
+## Step 3b: AI Title, Meta Description & Analysis References
+
+> 🚨 **MANDATORY** — After article HTML is generated, the AI MUST improve titles, descriptions, and add analysis references. See `SHARED_PROMPT_PATTERNS.md` sections "AI-DRIVEN TITLE & META DESCRIPTION GENERATION" and "ANALYSIS FILE GITHUB REFERENCES" for full protocols.
+
+**1. Generate newsworthy titles** — Read each article's content, then replace the script-generated title following: `[Active Verb] + [Specific Actor/Institution] + [Concrete Policy Action]`. BANNED: ❌ any title ending with ": {Topic} in Focus" or generic category labels.
+
+**2. Generate AI meta descriptions** (150-160 chars) — Summarize key political intelligence from actual content. BANNED: ❌ any description starting with "Analysis of N documents".
+
+**3. Add analysis references section** — Insert the "📊 Analysis & Sources" HTML block before footer, linking to analysis files for the article's date and type (see SHARED_PROMPT_PATTERNS.md "ANALYSIS FILE GITHUB REFERENCES" for the complete template and type-to-folder mapping).
+
+**4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.
+
 ## Step 4: Translate & Validate
 
 Check for untranslated Swedish content in non-Swedish articles:
@@ -580,9 +697,34 @@ news/content/{YYYY-MM-DD}/{article-types}
 ⚠️ DO NOT use `git push` — the safe output tool handles publishing. Commit locally, then use the tool.
 
 ```bash
-# Stage articles and analysis — scoped to current date to stay within 100-file PR limit
+# Restore persisted ANALYSIS_SUBFOLDER (agentic blocks may run independently)
+[ -f /tmp/analysis_subfolder.env ] && source /tmp/analysis_subfolder.env
+ARTICLE_DATE="${{ github.event.inputs.article_date }}"
+[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+# Fallback: recompute ANALYSIS_SUBFOLDER if env file was not available
+if [ -z "$ANALYSIS_SUBFOLDER" ]; then
+  RAW_REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
+  if [ -z "$RAW_REQUESTED_TYPE" ] || [[ "$RAW_REQUESTED_TYPE" == *,* ]]; then
+    ANALYSIS_SUBFOLDER="article-generator-${_AG_HHMM:-$(date -u +%H%M)}"
+  else
+    case "$RAW_REQUESTED_TYPE" in
+      *committee-reports*) ANALYSIS_SUBFOLDER="committeeReports" ;;
+      *interpellation*) ANALYSIS_SUBFOLDER="interpellations" ;;
+      *motions*) ANALYSIS_SUBFOLDER="motions" ;;
+      *propositions*) ANALYSIS_SUBFOLDER="propositions" ;;
+      *week-ahead*) ANALYSIS_SUBFOLDER="week-ahead" ;;
+      *month-ahead*) ANALYSIS_SUBFOLDER="month-ahead" ;;
+      *weekly-review*) ANALYSIS_SUBFOLDER="weekly-review" ;;
+      *monthly-review*) ANALYSIS_SUBFOLDER="monthly-review" ;;
+      *breaking*) ANALYSIS_SUBFOLDER="realtime-${_AG_HHMM:-$(date -u +%H%M)}" ;;
+      *deep-inspection*) ANALYSIS_SUBFOLDER="deep-inspection" ;;
+      *) ANALYSIS_SUBFOLDER="$RAW_REQUESTED_TYPE" ;;
+    esac
+  fi
+fi
+# Stage articles and analysis — scoped to requested article type subfolder
 git add news/ || true
-git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/" || true
+git add "analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/" || true
 git add analysis/weekly/ || true
 # Enforce safe-outputs 100-file PR limit
 STAGED_COUNT=$(git diff --cached --name-only | wc -l)

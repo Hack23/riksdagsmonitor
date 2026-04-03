@@ -301,7 +301,7 @@ Example: `news/content/2026-03-23/weekly-review`
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally (scoped to current date to stay within 100-file PR limit): `git add news/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/" analysis/weekly/ && git commit -m "Add weekly-review articles and analysis artifacts"`
+> 2. Stage and commit locally (scoped to weekly-review subfolder): `git add news/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/weekly-review/" analysis/weekly/ && git commit -m "Add weekly-review articles and analysis artifacts"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -387,6 +387,23 @@ echo "📊 Analysis artifacts for $ARTICLE_DATE:"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output"
 DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
 echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
+# Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
+# but this workflow needs them under analysis/daily/$DATE/weekly-review/
+UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
+SCOPED_DIR="$UNSCOPED_DIR/weekly-review"
+if [ -d "$UNSCOPED_DIR" ]; then
+  mkdir -p "$SCOPED_DIR"
+  if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then
+    find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec cp -f {} "$SCOPED_DIR/" \;
+    echo "📁 Copied pipeline *.md artifacts → $SCOPED_DIR (kept unscoped originals for analysis-reader.ts)"
+  fi
+  if [ -d "$UNSCOPED_DIR/documents" ]; then
+    mkdir -p "$SCOPED_DIR/documents"
+    find "$UNSCOPED_DIR/documents" -mindepth 1 -maxdepth 1 -exec mv {} "$SCOPED_DIR/documents/" \;
+    rmdir "$UNSCOPED_DIR/documents" 2>/dev/null || true
+    echo "📁 Relocated pipeline documents/ contents → $SCOPED_DIR/documents"
+  fi
+fi
 if [ "$DATA_JSON_COUNT" -eq 0 ]; then
   echo "🚨 CRITICAL: Pipeline downloaded ZERO data. Agent MUST diagnose and fix — do NOT fabricate analysis."
 fi
@@ -413,7 +430,7 @@ These files are committed alongside articles for human review and continuous imp
 
 ```bash
 ARTICLE_DATE=$(date -u +%Y-%m-%d)
-ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE"
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/weekly-review"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then
   ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
@@ -463,6 +480,18 @@ These elements are validated by `bash scripts/validate-news-generation.sh` (Chec
 # FALLBACK ONLY — use if validate-news-generation.sh reports missing navigation elements
 npx tsx scripts/fix-article-navigation.ts
 ```
+
+### Step 3b: AI Title, Meta Description & Analysis References
+
+> 🚨 **MANDATORY** — After article HTML is generated, the AI MUST improve titles, descriptions, and add analysis references. See `SHARED_PROMPT_PATTERNS.md` sections "AI-DRIVEN TITLE & META DESCRIPTION GENERATION" and "ANALYSIS FILE GITHUB REFERENCES" for full protocols.
+
+**1. Generate newsworthy titles** — Replace script-generated title with: `[Active Verb] + [Specific Institution] + [Concrete Policy Action]`. BANNED: ❌ generic category labels or ": {Topic} in Focus".
+
+**2. Generate AI meta descriptions** (150-160 chars) — Key political intelligence summary. BANNED: ❌ "Analysis of N documents".
+
+**3. Add analysis references** — Insert "📊 Analysis & Sources" HTML block linking to `analysis/daily/${ARTICLE_DATE}/weekly-review/` files and `analysis/methodologies/ai-driven-analysis-guide.md`.
+
+**4. Update all metadata** — `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>`.
 
 ### Step 4: Translate, Validate & Verify Analysis Quality
 

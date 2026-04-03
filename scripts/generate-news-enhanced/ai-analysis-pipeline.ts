@@ -5,6 +5,23 @@
  * per-document analysis, cross-document synthesis, and quality scoring to produce
  * context-aware political insights from every stakeholder perspective.
  *
+ * ⚠️ DEPRECATED FOR ANALYSIS GENERATION (v3.0, 2026-04-02):
+ * Per analysis/methodologies/ai-driven-analysis-guide.md Rule 2, the following
+ * functions in this module are DEPRECATED for generating analysis content:
+ * - buildDynamicSwot() → Replace with AI prompt in workflow .md
+ * - buildStrategicImplications() → Replace with AI prompt in workflow .md
+ * - buildKeyTakeaways() → Replace with AI prompt in workflow .md
+ * - buildLegislativeImpact() → Replace with AI prompt in workflow .md
+ * - buildCrossPartyImplications() → Replace with AI prompt in workflow .md
+ * - scoreAnalysisDepth() → Replace with AI prompt quality evaluation
+ *
+ * Their output is treated as FALLBACK STUBS. AI agents in agentic workflow .md
+ * files MUST overwrite all template-generated text with genuine, evidence-based
+ * political intelligence analysis. See SHARED_PROMPT_PATTERNS.md for AI prompts.
+ *
+ * This module retains data classification, document type detection, and HTML
+ * formatting functions which are NOT deprecated.
+ *
  * NOTE: This module does NOT integrate with external LLM/MCP services. All analysis
  * is performed via rule-based heuristics and localised template interpolation. The
  * "iteration" depth controls how many passes run (see {@link AIAnalysisPipeline}).

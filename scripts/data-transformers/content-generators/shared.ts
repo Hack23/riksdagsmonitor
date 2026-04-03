@@ -4,6 +4,22 @@
  * Contains TITLE_SUFFIX_TEMPLATES, keyword extraction, event/document matching helpers,
  * and the deep analysis section generator (5W framework).
  *
+ * ⚠️ DEPRECATED FOR ANALYSIS GENERATION (v3.0, 2026-04-02):
+ * Per analysis/methodologies/ai-driven-analysis-guide.md Rule 2, the following
+ * functions are DEPRECATED for generating analysis content:
+ * - generateDeepAnalysisSection() → Replace with AI prompt in workflow .md
+ * - All *Text() template functions (govAdvantageText, oppPressureText, etc.)
+ *   → Replace with AI-generated editorial analysis from actual document data
+ * - renderAggregatedPestle(), renderStakeholderImpactSummary(),
+ *   renderRiskAssessment(), renderImplementationAssessment()
+ *   → Replace with AI prompts for framework analysis
+ *
+ * Their output is treated as FALLBACK STUBS. AI agents in agentic workflow .md
+ * files MUST overwrite all template-generated text with genuine political intelligence.
+ *
+ * HTML utility functions (escapeHtml, pickLang, TITLE_SUFFIX_TEMPLATES) and
+ * structural helpers remain active and are NOT deprecated.
+ *
  * @author Hack23 AB
  * @license Apache-2.0
  */

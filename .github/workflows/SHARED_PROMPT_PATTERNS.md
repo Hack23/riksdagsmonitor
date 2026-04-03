@@ -257,56 +257,63 @@ Scripts MUST NEVER generate any of these — this is the AI agent's exclusive re
 
 #### Deprecated Analysis-Generating Scripts
 
-The following script directories previously generated analysis content and are now **DEPRECATED** — their analysis functions are replaced by AI agent analysis in workflow prompts:
+The following script directories and functions previously generated analysis content and are now **DEPRECATED** — their analysis functions are replaced by AI agent analysis in workflow prompts:
 
-| Directory | Status | Replacement |
+| Directory/Function | Status | Replacement |
 |-----------|--------|-------------|
 | `scripts/ai-analysis/` | ⚠️ DEPRECATED for analysis generation | AI agent performs analysis per workflow prompts |
 | `scripts/analysis-framework/` | ⚠️ DEPRECATED for analysis generation | AI agent uses methodology guides directly |
 | `scripts/data-transformers/content-generators/ai-swot-analyzer.ts` | ⚠️ DEPRECATED | AI agent generates SWOT per political-swot-framework.md |
 | `scripts/data-transformers/content-generators/stakeholder-swot-section.ts` | ⚠️ DEPRECATED | AI agent generates stakeholder analysis per stakeholder-impact.md |
+| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildDynamicSwot()` | ⚠️ DEPRECATED | AI prompt: "Generate SWOT for all 8 stakeholder groups with dok_id evidence" |
+| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildStrategicImplications()` | ⚠️ DEPRECATED | AI prompt: "Write strategic implications citing specific policy signals" |
+| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildKeyTakeaways()` | ⚠️ DEPRECATED | AI prompt: "Extract 5 key takeaways with confidence levels" |
+| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildLegislativeImpact()` | ⚠️ DEPRECATED | AI prompt: "Assess legislative impact using committee + vote data" |
+| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildCrossPartyImplications()` | ⚠️ DEPRECATED | AI prompt: "Analyze cross-party dynamics from voting records" |
+| `scripts/data-transformers/content-generators/shared.ts` → `generateDeepAnalysisSection()` | ⚠️ DEPRECATED | AI prompt: "Write 5W deep analysis (Who/What/When/Why/Winners)" |
+| `scripts/data-transformers/content-generators/newsworthiness.ts` → `scoreNewsworthiness()` | ⚠️ DEPRECATED | AI prompt: "Score newsworthiness 0-100 with dimension breakdown" |
+| `scripts/data-transformers/content-generators/shared.ts` → all `*Text()` templates | ⚠️ DEPRECATED | AI prompt: "Write editorial analysis from actual document data" |
 
-**These scripts may still be called for data downloading and HTML formatting functions**, but their analysis output (SWOT entries, risk scores, classifications) MUST be treated as stubs that the AI agent MUST overwrite with real template-compliant analysis.
-````
+**These scripts may still be called for data downloading and HTML formatting functions**, but their analysis output (SWOT entries, risk scores, classifications, titles, descriptions, editorial judgments) MUST be treated as stubs that the AI agent MUST overwrite with real template-compliant analysis.
 
 ---
 
-## 📊 TOP 10 QUALITY ISSUES IN CURRENT ARTICLES (2026-04-01)
+## 📊 TOP 10 QUALITY ISSUES IN CURRENT ARTICLES (2026-04-02)
 
-> **Quality audit findings** — these issues MUST be addressed by improving all agentic workflow prompts.
+> **Quality audit findings** — these issues MUST be addressed by improving all agentic workflow prompts. Updated from 2026-04-01 audit with additional 2026-04-02 findings.
 
 ````markdown
-### Quality Issues Detected in 2026-04-01 Articles
+### Quality Issues Detected in 2026-04-02 Articles
 
-These issues were identified across all 61 articles generated on 2026-04-01. ALL workflow `.md` files must be updated to prevent these issues.
+These issues were identified across all articles generated on 2026-04-02. ALL workflow `.md` files must be updated to prevent these issues.
 
 | # | Issue | Severity | Affected Workflows | Root Cause |
 |---|-------|----------|-------------------|------------|
-| 1 | **ZERO Mermaid diagrams** in any article | CRITICAL | ALL | Workflows don't enforce Mermaid rendering in HTML output |
-| 2 | **SWOT tables use prose** instead of structured evidence tables with dok_id columns | HIGH | committee-reports, interpellations, motions, month-ahead | Prompt doesn't require evidence table format |
-| 3 | **Interpellation articles have ZERO dok_id/frs references** | HIGH | news-interpellations | Data fetch doesn't include frs document IDs |
-| 4 | **Only 3 of 8 stakeholder groups** analyzed (Government, Opposition, Civil Society) | HIGH | ALL | Prompt only asks for 3 perspectives |
-| 5 | **No numeric L×I risk scores** — risk assessment uses text labels only | MEDIUM | committee-reports, interpellations, month-ahead | No structured risk matrix in prompt |
-| 6 | **Breaking-votering missing English variant** | CRITICAL | news-article-generator | English votering article not generated |
-| 7 | **No "Forward Indicators" section** with triggers and timelines | MEDIUM | breaking, committee-reports, interpellations, motions | Prompt doesn't require forward indicators |
-| 8 | **Canvas.js charts used instead of Mermaid** | MEDIUM | ALL | Article template uses Canvas library, not Mermaid |
-| 9 | **No classification decision tree or significance scoring** visible in articles | MEDIUM | ALL | Classification metadata hidden in badges only |
-| 10 | **Generic boilerplate** repeated across articles ("Requires committee review...") | MEDIUM | committee-reports, month-ahead, interpellations | Template-driven generation without per-document customization |
+| 1 | **3 of 5 articles have placeholder meta descriptions** ("Analysis of N documents covering Field:, Field:") | CRITICAL | committee-reports, propositions, interpellations | Script generates meta description from template, AI doesn't overwrite |
+| 2 | **Generic title suffix "Defense in Focus" repeated** across 3 unrelated article types | CRITICAL | committee-reports, propositions, interpellations | Script generates title from category label, AI doesn't generate newsworthy title |
+| 3 | **ZERO links to analysis files** in any news article | HIGH | ALL | No prompt instruction to include GitHub analysis references |
+| 4 | **Truncated Swedish text in English articles** — proposition excerpts cut off mid-sentence | HIGH | propositions | Script truncates text; AI should translate/summarize instead |
+| 5 | **Cross-reference map reports "0 relationships"** despite clear document clusters | HIGH | ALL analysis | AI cross-reference detection prompt too weak |
+| 6 | **SWOT tables use prose** instead of structured evidence tables with dok_id columns | HIGH | committee-reports, interpellations, motions | Prompt doesn't require evidence table format |
+| 7 | **Only 3 of 8 stakeholder groups** analyzed in some articles | HIGH | committee-reports, propositions | Prompt only asks for 3 perspectives |
+| 8 | **Risk assessment contradictions** — RSK-04 says "LOW RISK" but cites evidence proving strength | MEDIUM | analysis risk-assessment.md | AI doesn't validate label-evidence consistency |
+| 9 | **No "Forward Indicators" section** with specific trigger dates | MEDIUM | committee-reports, interpellations, motions | Prompt doesn't require dated triggers |
+| 10 | **Generic boilerplate** repeated across articles ("Requires committee review...") | MEDIUM | committee-reports, propositions | Template-driven generation without per-document customization |
 
-#### Workflow Fix Requirements
+#### Workflow Fix Requirements (Updated 2026-04-02)
 
 Every `news-*.md` workflow MUST be updated to:
 
-1. **Require Mermaid diagrams**: Add explicit instruction to include ≥1 Mermaid diagram in every article HTML
-2. **Require structured SWOT tables**: Add HTML table template with `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact` columns
-3. **Require dok_id citations**: Add validation step checking `grep -c 'dok_id\|Prop\.\|frs\|mot\.\|bet\.' article.html`
-4. **Require 8 stakeholder groups**: Update prompt to list all 8 groups with instructions for evidence per group
-5. **Require numeric risk matrix**: Add L×I table template in prompt
-6. **Require forward indicators**: Add "What to Watch" section template with trigger/timeline/significance columns
-7. **Require classification rationale**: Add significance scoring section template
-8. **Ban boilerplate**: Add anti-pattern list of rejected phrases with enforcement check
-9. **Require confidence labels**: Add `[HIGH]`/`[MEDIUM]`/`[LOW]` on all analytical claims
-10. **Enforce article type in all outputs**: Tag analysis with article type to prevent cross-type overwriting
+1. **AI-generate titles**: Add explicit prompt instruction — AI MUST generate a unique, newsworthy title from actual document content; NEVER use template patterns like "Category: Topic This Week: Defense in Focus"
+2. **AI-generate meta descriptions**: Add explicit prompt instruction — AI MUST write a 150-160 character description highlighting key political intelligence; NEVER use "Analysis of N documents covering Field:, Field:"
+3. **Include analysis references**: Add "📊 Analysis & Sources" section linking to `https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${DATE}/${ARTICLE_TYPE}/` files
+4. **AI-translate, don't truncate**: AI MUST translate/summarize Swedish text for English articles; NEVER paste truncated Swedish text
+5. **Require cross-reference detection**: AI MUST identify ≥3 document relationships per date (policy clusters, legislative chains, opposition patterns)
+6. **Require structured SWOT tables**: Add HTML table template with `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact` columns
+7. **Require 8 stakeholder groups**: Update prompt to list all 8 groups with instructions for evidence per group
+8. **Validate label-evidence consistency**: AI MUST verify risk labels match their cited evidence direction
+9. **Require dated forward indicators**: Add "What to Watch" with specific committee dates and vote schedules
+10. **Ban boilerplate**: Add anti-pattern list of rejected phrases: "Requires committee review and chamber debate", "Defense in Focus", "Analysis of N documents"
 ````
 
 ---
@@ -793,10 +800,44 @@ echo "📊 Final staged file count: $STAGED_COUNT"
 git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
 ```
 
-**For general workflows** (realtime-monitor, evening-analysis, article-generator — no `--doc-type`):
+**For all other workflows** (realtime-monitor, evening-analysis, article-generator, month-ahead, week-ahead, weekly-review, monthly-review) — MUST also scope to their article-type subdirectory:
+
+> ⚠️ **Pipeline relocation required**: `pre-article-analysis.ts` writes to `analysis/daily/$DATE/` (unscoped) when run without `--doc-type`. Each workflow MUST relocate the pipeline artifacts into its type subfolder immediately after the pipeline step. The relocation MUST be idempotent (safe on reruns):
+>
+> ```bash
+> UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
+> SCOPED_DIR="$UNSCOPED_DIR/$ARTICLE_TYPE"
+> if [ -d "$UNSCOPED_DIR" ]; then
+>   mkdir -p "$SCOPED_DIR"
+>   if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then
+>     find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec cp -f {} "$SCOPED_DIR/" \;
+>     echo "📁 Copied pipeline *.md artifacts → $SCOPED_DIR (kept unscoped originals for analysis-reader.ts)"
+>   fi
+>   if [ -d "$UNSCOPED_DIR/documents" ]; then
+>     mkdir -p "$SCOPED_DIR/documents"
+>     find "$UNSCOPED_DIR/documents" -mindepth 1 -maxdepth 1 -exec mv {} "$SCOPED_DIR/documents/" \;
+>     rmdir "$UNSCOPED_DIR/documents" 2>/dev/null || true
+>     echo "📁 Relocated pipeline documents/ contents → $SCOPED_DIR/documents (merge-safe)"
+>   fi
+> fi
+> ```
+
+| Workflow | `ARTICLE_TYPE` subfolder | Example `git add` path |
+|----------|-------------------------|----------------------|
+| news-realtime-monitor | `realtime-${HHMM}` (time-stamped) | `analysis/daily/$DATE/realtime-1430/` |
+| news-evening-analysis | `evening-analysis` | `analysis/daily/$DATE/evening-analysis/` |
+| news-article-generator | mapped from `REQUESTED_TYPE` (single-type) or `article-generator-HHMM` (multi-type) | `analysis/daily/$DATE/committeeReports/` |
+| news-month-ahead | `month-ahead` | `analysis/daily/$DATE/month-ahead/` |
+| news-week-ahead | `week-ahead` | `analysis/daily/$DATE/week-ahead/` |
+| news-weekly-review | `weekly-review` | `analysis/daily/$DATE/weekly-review/` |
+| news-monthly-review | `monthly-review` | `analysis/daily/$DATE/monthly-review/` |
+
+> **`news-article-generator` folder naming**: For single-type runs, the `REQUESTED_TYPE` input (hyphenated, e.g., `committee-reports`) is mapped to folder names (e.g., `committeeReports`). For multi-type or schedule-driven runs (comma-separated types), a dedicated `article-generator-HHMM` subfolder is used to avoid mixing artifacts across types. See the `case` mapping block in the workflow.
+
 ```bash
-# Stage analysis scoped to current date
-git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/" || true
+# Stage analysis scoped to article type subfolder — prevents overwriting other workflows' analysis
+ARTICLE_TYPE="evening-analysis"  # Set per workflow (realtime uses "realtime-${HHMM}")
+git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/${ARTICLE_TYPE}/" || true
 git add analysis/weekly/ || true
 git add analysis/data/ || true
 # Enforce safe-outputs 100-file PR limit
@@ -812,15 +853,17 @@ if [ "$STAGED_COUNT" -gt 90 ]; then
   STAGED_COUNT=$(git diff --cached --name-only | wc -l)
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
-git commit -m "📊 Data + Analysis - $ARTICLE_DATE"
+git commit -m "📊 Data + Analysis ($ARTICLE_TYPE) - $ARTICLE_DATE"
 ```
+
+> ⚠️ **Realtime monitor uniqueness**: `news-realtime-monitor` can run multiple times per day. It MUST use `HHMM=$(date -u +%H%M)` for both the analysis subfolder (`realtime-${HHMM}/`) and article filename (`news/${DATE}-breaking-${HHMM}-{lang}.html`) to avoid overwriting previous runs.
 
 > ❌ **PROHIBITED**: Committing analysis without downloaded data files (unless pruned for 100-file limit)
 > ❌ **PROHIBITED**: Committing stub/empty analysis when data exists
 > ❌ **PROHIBITED**: Skipping analysis creation — every document MUST have analysis
 > ❌ **PROHIBITED**: Writing analysis that doesn't follow the template structure
 > ❌ **PROHIBITED**: Using broad `git add analysis/data/ analysis/daily/ analysis/weekly/` without scoping — this accumulates old files and exceeds the 100-file PR limit
-> ❌ **PROHIBITED**: Doc-type workflows staging parent date directory `analysis/daily/$DATE/` — this causes conflicts when committee-reports, motions, propositions, and interpellations run on the same date. Always scope to `analysis/daily/$DATE/{docType}/`
+> ❌ **PROHIBITED**: ANY workflow staging parent date directory `analysis/daily/$DATE/` without article type scope — this causes conflicts and overwrites. ALL workflows MUST scope to `analysis/daily/$DATE/{articleType}/`
 ````
 
 ## 🔧 MANDATORY: Script Debugging & Fixing (copy into every analysis workflow)
@@ -1052,6 +1095,151 @@ Read these methodology documents to guide your analysis:
 - [ ] Daily synthesis files follow their corresponding `analysis/templates/` structure exactly
 - [ ] Every daily file has template metadata header (ID, date, riksmöte, confidence)
 ````
+
+## 🏷️ AI-DRIVEN TITLE & META DESCRIPTION GENERATION (copy into every content workflow)
+
+> **NON-NEGOTIABLE**: Article titles and meta descriptions MUST be generated by the AI agent from actual document content analysis — NEVER from code templates or generic patterns.
+
+````markdown
+### AI Title Generation Protocol
+
+> 🚨 **CRITICAL**: The AI agent MUST generate a unique, newsworthy title for every article. Script-generated template titles are stubs that MUST be overwritten.
+
+#### Title Requirements (60-80 characters)
+
+1. **Lead with the most significant political development** — not a generic category label
+2. **Name specific actors or institutions** when central to the story
+3. **Use active verbs** — "advances", "challenges", "unveils", "blocks", "fractures"
+4. **Convey political significance** — why this matters, not just what happened
+5. **NEVER use template patterns** — these are BANNED:
+   - ❌ `"{Category}: Policy Priorities This Week: Defense in Focus"`
+   - ❌ `"{Category}: Holding Government to Account: Defense in Focus"`
+   - ❌ `"{Category}: Parliamentary Priorities This Week: {Topic}"`
+   - ❌ Any title ending with `: Defense in Focus` or `: {Topic} in Focus`
+
+#### Title Construction Formula
+```
+[Active Verb] + [Specific Actor/Institution] + [Concrete Policy Action] + [Political Significance]
+```
+
+#### Title Quality Examples
+
+| ❌ BANNED (Generic Template) | ✅ REQUIRED (Newsworthy) |
+|------------------------------|--------------------------|
+| "Committee Reports: Parliamentary Priorities This Week: Defense in Focus" | "Riksdag Committees Advance Civilian Protection and Criminal Justice Reforms" |
+| "Government Propositions: Policy Priorities This Week: Defense in Focus" | "Four Government Bills Target Deportation, Cybersecurity, and Arms Export" |
+| "Interpellation Debates: Holding Government to Account: Defense in Focus" | "Opposition Grills Ministers on Airport Safety, Defense Costs, and Migration" |
+| "Evening Analysis: Daily Summary" | "Security First: Sweden Advances Deportation Reform and Cybersecurity Legislation" |
+| "Breaking News: Latest Updates" | "Sweden Launches Multi-Front Security Push: Defense, Criminal Justice, and Arms Export Reform" |
+
+#### Implementation: After article HTML is generated by scripts, the AI MUST:
+1. Read the generated article content to understand key political developments
+2. Generate a newsworthy title following the formula above
+3. Update `<title>`, `<meta property="og:title">`, and `<h1>` in the HTML file
+4. Verify the title is unique (not reused from another article type)
+
+### AI Meta Description Generation Protocol
+
+> 🚨 **CRITICAL**: Meta descriptions MUST summarize key political intelligence in 150-160 characters. Script-generated placeholders are BANNED.
+
+#### Meta Description Requirements (150-160 characters)
+
+1. **Summarize key political intelligence** — not document counts or field names
+2. **Include specific policy areas and actors** — committee names, party dynamics, minister names
+3. **Highlight the newsworthy angle** — why a reader should click
+4. **Use analytical language** — intelligence-grade, not bureaucratic
+
+#### BANNED Meta Description Patterns
+- ❌ `"Analysis of N documents covering {Field}:, {Field}:"` — This is a template placeholder
+- ❌ `"Analysis of 10 documents covering Committee:, Published:"` — Missing actual content
+- ❌ `"Analysis of 15 documents covering Filed by:, Published:"` — Meaningless to readers
+- ❌ Any meta description starting with "Analysis of N documents"
+
+#### Meta Description Quality Examples
+
+| ❌ BANNED (Placeholder) | ✅ REQUIRED (Intelligence) |
+|-------------------------|----------------------------|
+| "Analysis of 10 documents covering Committee:, Published:" | "Sweden's Defense and Justice committees advance wartime protection and criminal deportation reforms in coordinated spring push." |
+| "Analysis of 15 documents covering Filed by:, Published:" | "Opposition MPs challenge ministers on airport safety, defense costs, and migration policy through 15 targeted interpellations." |
+| "Analysis of 10 documents covering Published:, Why It Matters:" | "Government submits four propositions on deportation, cybersecurity, arms exports, and healthcare — signaling spring security priorities." |
+
+#### Implementation: After article HTML is generated, the AI MUST:
+1. Read article content to identify the 2-3 most important political developments
+2. Write a 150-160 character summary highlighting political significance
+3. Update `<meta name="description">` and `<meta property="og:description">` in the HTML
+4. Verify no placeholder patterns remain (search for "Analysis of" + "documents covering")
+````
+
+---
+
+## 📊 ANALYSIS FILE GITHUB REFERENCES (copy into every content workflow)
+
+> **NON-NEGOTIABLE**: Every news article MUST link to its underlying analysis files on GitHub, enabling readers to verify claims and access deeper intelligence.
+
+````markdown
+### Analysis File Reference Linking
+
+> 🚨 **CRITICAL**: After generating articles, the AI MUST add a "📊 Analysis & Sources" section linking to all analysis files for the article's date and type.
+
+#### Reference Section Template
+
+Add this section before the article footer in every generated HTML article:
+
+```html
+<section class="analysis-references" aria-label="Analysis sources and methodology">
+  <h2>📊 Analysis &amp; Sources</h2>
+  <p>This article is based on AI-driven political intelligence analysis. Full methodology and analysis files:</p>
+  <ul>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/synthesis-summary.md" rel="noopener">📋 Synthesis Summary</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/swot-analysis.md" rel="noopener">💪 SWOT Analysis</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/risk-assessment.md" rel="noopener">⚠️ Risk Assessment</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/threat-analysis.md" rel="noopener">🎭 Threat Analysis</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/stakeholder-perspectives.md" rel="noopener">👥 Stakeholder Perspectives</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/significance-scoring.md" rel="noopener">📈 Significance Scoring</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/classification-results.md" rel="noopener">🏷️ Classification Results</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md" rel="noopener">🤖 AI Analysis Methodology (v3.0)</a></li>
+  </ul>
+  <p><em>Per-document analyses: <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/documents/" rel="noopener">documents/</a></em></p>
+</section>
+```
+
+#### Article Type → Analysis Folder Mapping
+
+| Article Type | `${ARTICLE_TYPE}` in path |
+|-------------|--------------------------|
+| Committee Reports | `committeeReports` |
+| Government Propositions | `propositions` |
+| Interpellation Debates | `interpellations` |
+| Opposition Motions | `motions` |
+| Evening Analysis | `evening-analysis` |
+| Breaking News / Realtime | `realtime-${HHMM}` |
+| Week Ahead | `week-ahead` |
+| Month Ahead | `month-ahead` |
+| Weekly Review | `weekly-review` |
+| Monthly Review | `monthly-review` |
+
+#### Implementation Steps
+
+1. After `generate-news-enhanced.ts` creates article HTML, read each file
+2. Locate the closing `</article>` or `</main>` tag
+3. Insert the analysis references section BEFORE the footer
+4. Replace `${ARTICLE_DATE}` and `${ARTICLE_TYPE}` with actual values
+5. Verify all analysis files exist before linking (skip missing ones)
+6. For evening analysis: link to ALL article-type analysis folders for the date
+
+#### Validation
+```bash
+# Verify analysis references are present in generated articles
+for FILE in news/${ARTICLE_DATE}-*-en.html; do
+  REFS=$(grep -c "analysis-references" "$FILE" 2>/dev/null || echo 0)
+  if [ "$REFS" -eq 0 ]; then
+    echo "⚠️ MISSING analysis references in: $FILE"
+  fi
+done
+```
+````
+
+---
 
 ## Minister-Response Cross-Reference (interpellations workflow only)
 
