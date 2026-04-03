@@ -1,54 +1,23 @@
 {
-  "timestamp": "2026-04-02T11:24:54.880Z",
+  "timestamp": "2026-04-03T07:28:40.928Z",
   "types": [
-    "breaking",
-    "committee-reports"
+    "interpellations"
   ],
   "languagesGenerated": [
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "en",
+    "sv"
   ],
   "allRequestedLanguages": [
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "en",
+    "sv"
   ],
   "batchSize": "all",
-  "skipExisting": true,
-  "generated": 12,
+  "skipExisting": false,
+  "generated": 2,
   "errors": 0,
   "articles": [
-    "2026-04-02-committee-reports-da.html",
-    "2026-04-02-committee-reports-no.html",
-    "2026-04-02-committee-reports-fi.html",
-    "2026-04-02-committee-reports-de.html",
-    "2026-04-02-committee-reports-fr.html",
-    "2026-04-02-committee-reports-es.html",
-    "2026-04-02-committee-reports-nl.html",
-    "2026-04-02-committee-reports-ar.html",
-    "2026-04-02-committee-reports-he.html",
-    "2026-04-02-committee-reports-ja.html",
-    "2026-04-02-committee-reports-ko.html",
-    "2026-04-02-committee-reports-zh.html"
+    "2026-04-03-interpellation-debates-en.html",
+    "2026-04-03-interpellation-debates-sv.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
