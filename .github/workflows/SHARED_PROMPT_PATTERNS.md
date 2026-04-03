@@ -366,6 +366,13 @@ Read these files for the current article type and date:
 > Use the analysis subfolder name from the type→folder mapping table above (for example `committeeReports`, not the article slug `committee-reports`).
 
 ```bash
+# Map article slug → analysis subfolder name
+case "${ARTICLE_TYPE}" in
+  committee-reports)   ANALYSIS_SUBFOLDER="committeeReports" ;;
+  opposition-motions)  ANALYSIS_SUBFOLDER="motions" ;;
+  *)                   ANALYSIS_SUBFOLDER="${ARTICLE_TYPE}" ;;
+esac
+
 ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
 cat "${ANALYSIS_BASE}/synthesis-summary.md"      # Key findings, risk levels, confidence
 cat "${ANALYSIS_BASE}/swot-analysis.md"           # Top SWOT entries → Winners & Losers
@@ -481,7 +488,9 @@ When the article HTML contains chart container elements, provide visualization d
 }
 ```
 
-Embed as `<script type="application/json" class="chart-data">` before the chart container. Use the JSON `chartType` property to identify the visualization type.
+Embed as `<script type="application/json" class="chart-data" data-chart-type="{chartType}">` before the chart container, where `{chartType}` matches the JSON `chartType` value. The rendering script reads elements by the shared `chart-data` class and uses `data-chart-type` to select the correct chart renderer.
+
+> **Canonical chart type identifiers** (use these exact strings in both the `data-chart-type` attribute and the JSON `chartType` field): `coalition-votes`, `swot-quadrant`, `risk-heatmap`, `policy-radar`, `legislative-sankey`, `css-mindmap`, `timeline`.
 ````
 
 ---
@@ -1380,22 +1389,22 @@ Add this section before the article footer in every generated HTML article:
   <h2>📊 Analysis &amp; Sources</h2>
   <p>This article is based on AI-driven political intelligence analysis. Full methodology and analysis files:</p>
   <ul>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/synthesis-summary.md" rel="noopener">📋 Synthesis Summary</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/swot-analysis.md" rel="noopener">💪 SWOT Analysis</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/risk-assessment.md" rel="noopener">⚠️ Risk Assessment</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/threat-analysis.md" rel="noopener">🎭 Threat Analysis</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/stakeholder-perspectives.md" rel="noopener">👥 Stakeholder Perspectives</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/significance-scoring.md" rel="noopener">📈 Significance Scoring</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/classification-results.md" rel="noopener">🏷️ Classification Results</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/synthesis-summary.md" rel="noopener">📋 Synthesis Summary</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/swot-analysis.md" rel="noopener">💪 SWOT Analysis</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/risk-assessment.md" rel="noopener">⚠️ Risk Assessment</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/threat-analysis.md" rel="noopener">🎭 Threat Analysis</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/stakeholder-perspectives.md" rel="noopener">👥 Stakeholder Perspectives</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/significance-scoring.md" rel="noopener">📈 Significance Scoring</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/classification-results.md" rel="noopener">🏷️ Classification Results</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md" rel="noopener">🤖 AI Analysis Methodology (v4.0)</a></li>
   </ul>
-  <p><em>Per-document analyses: <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/documents/" rel="noopener">documents/</a></em></p>
+  <p><em>Per-document analyses: <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/documents/" rel="noopener">documents/</a></em></p>
 </section>
 ```
 
 #### Article Type → Analysis Folder Mapping
 
-| Article Type | `${ARTICLE_TYPE}` in path |
+| Article Type | `${ANALYSIS_SUBFOLDER}` |
 |-------------|--------------------------|
 | Committee Reports | `committeeReports` |
 | Government Propositions | `propositions` |
@@ -1413,7 +1422,7 @@ Add this section before the article footer in every generated HTML article:
 1. After `generate-news-enhanced.ts` creates article HTML, read each file
 2. Locate the closing `</article>` or `</main>` tag
 3. Insert the analysis references section BEFORE the footer
-4. Replace `${ARTICLE_DATE}` and `${ARTICLE_TYPE}` with actual values
+4. Replace `${ARTICLE_DATE}` and `${ANALYSIS_SUBFOLDER}` with actual values (use the mapping table above)
 5. Verify all analysis files exist before linking (skip missing ones)
 6. For evening analysis: link to ALL article-type analysis folders for the date
 

@@ -1320,6 +1320,7 @@ For this article's documents, generate visualization data in JSON format:
 
 1. **SWOT Quadrant** (if SWOT analysis exists):
    {
+     "chartType": "swot-quadrant",
      "strengths": [{"label": "S1: ...", "impact": 8, "evidence": "dok_id"}],
      "weaknesses": [{"label": "W1: ...", "impact": 6, "evidence": "dok_id"}],
      "opportunities": [{"label": "O1: ...", "impact": 7, "evidence": "dok_id"}],
@@ -1328,6 +1329,7 @@ For this article's documents, generate visualization data in JSON format:
 
 2. **Vote Chart** (if voting data available via search_voteringar):
    {
+     "chartType": "coalition-votes",
      "parties": ["S", "M", "SD", "V", "C", "MP", "L", "KD"],
      "ja": [0, 68, 0, 0, 0, 0, 16, 19],
      "nej": [107, 0, 0, 24, 24, 18, 0, 0],
@@ -1336,6 +1338,7 @@ For this article's documents, generate visualization data in JSON format:
 
 3. **Risk Heat Map** (if risk assessment exists):
    {
+     "chartType": "risk-heatmap",
      "risks": [
        {"id": "R1", "label": "...", "likelihood": 3, "impact": 4, "color": "#dc3545"},
        {"id": "R2", "label": "...", "likelihood": 2, "impact": 5, "color": "#fd7e14"}
@@ -1343,8 +1346,12 @@ For this article's documents, generate visualization data in JSON format:
    }
 
 Embed each visualization payload as a <script type="application/json" class="chart-data" data-chart-type="{chartType}"> element
-in the article HTML, where `{chartType}` identifies the visualization type (for example: `swot`, `vote`, or `risk-heat-map`).
+in the article HTML, where `{chartType}` matches the JSON `chartType` value.
 The rendering script reads elements by the shared `chart-data` class and uses `data-chart-type` to create the correct interactive chart.
+
+Canonical chart type identifiers (use these exact strings in both the `data-chart-type` attribute
+and the JSON `chartType` field): `coalition-votes`, `swot-quadrant`, `risk-heatmap`,
+`policy-radar`, `legislative-sankey`, `css-mindmap`, `timeline`.
 ```
 
 #### Mermaid Diagram Requirements in Analysis Files
