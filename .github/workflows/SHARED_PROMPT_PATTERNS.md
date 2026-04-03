@@ -800,10 +800,22 @@ echo "📊 Final staged file count: $STAGED_COUNT"
 git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
 ```
 
-**For general workflows** (realtime-monitor, evening-analysis, article-generator — no `--doc-type`):
+**For all other workflows** (realtime-monitor, evening-analysis, article-generator, month-ahead, week-ahead, weekly-review, monthly-review) — MUST also scope to their article-type subdirectory:
+
+| Workflow | `ARTICLE_TYPE` subfolder | Example `git add` path |
+|----------|-------------------------|----------------------|
+| news-realtime-monitor | `realtime-${HHMM}` (time-stamped) | `analysis/daily/$DATE/realtime-1430/` |
+| news-evening-analysis | `evening-analysis` | `analysis/daily/$DATE/evening-analysis/` |
+| news-article-generator | `${REQUESTED_TYPE}` (dynamic) | `analysis/daily/$DATE/committeeReports/` |
+| news-month-ahead | `month-ahead` | `analysis/daily/$DATE/month-ahead/` |
+| news-week-ahead | `week-ahead` | `analysis/daily/$DATE/week-ahead/` |
+| news-weekly-review | `weekly-review` | `analysis/daily/$DATE/weekly-review/` |
+| news-monthly-review | `monthly-review` | `analysis/daily/$DATE/monthly-review/` |
+
 ```bash
-# Stage analysis scoped to current date
-git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/" || true
+# Stage analysis scoped to article type subfolder — prevents overwriting other workflows' analysis
+ARTICLE_TYPE="evening-analysis"  # Set per workflow (realtime uses "realtime-${HHMM}")
+git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/${ARTICLE_TYPE}/" || true
 git add analysis/weekly/ || true
 git add analysis/data/ || true
 # Enforce safe-outputs 100-file PR limit
@@ -819,15 +831,17 @@ if [ "$STAGED_COUNT" -gt 90 ]; then
   STAGED_COUNT=$(git diff --cached --name-only | wc -l)
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
-git commit -m "📊 Data + Analysis - $ARTICLE_DATE"
+git commit -m "📊 Data + Analysis ($ARTICLE_TYPE) - $ARTICLE_DATE"
 ```
+
+> ⚠️ **Realtime monitor uniqueness**: `news-realtime-monitor` can run multiple times per day. It MUST use `HHMM=$(date -u +%H%M)` for both the analysis subfolder (`realtime-${HHMM}/`) and article filename (`news/${DATE}-breaking-${HHMM}-{lang}.html`) to avoid overwriting previous runs.
 
 > ❌ **PROHIBITED**: Committing analysis without downloaded data files (unless pruned for 100-file limit)
 > ❌ **PROHIBITED**: Committing stub/empty analysis when data exists
 > ❌ **PROHIBITED**: Skipping analysis creation — every document MUST have analysis
 > ❌ **PROHIBITED**: Writing analysis that doesn't follow the template structure
 > ❌ **PROHIBITED**: Using broad `git add analysis/data/ analysis/daily/ analysis/weekly/` without scoping — this accumulates old files and exceeds the 100-file PR limit
-> ❌ **PROHIBITED**: Doc-type workflows staging parent date directory `analysis/daily/$DATE/` — this causes conflicts when committee-reports, motions, propositions, and interpellations run on the same date. Always scope to `analysis/daily/$DATE/{docType}/`
+> ❌ **PROHIBITED**: ANY workflow staging parent date directory `analysis/daily/$DATE/` without article type scope — this causes conflicts and overwrites. ALL workflows MUST scope to `analysis/daily/$DATE/{articleType}/`
 ````
 
 ## 🔧 MANDATORY: Script Debugging & Fixing (copy into every analysis workflow)
