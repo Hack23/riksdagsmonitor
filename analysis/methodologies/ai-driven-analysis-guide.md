@@ -70,7 +70,7 @@ analysis/daily/YYYY-MM-DD/{articleType}/
 > | **Winners & Losers** | Named parties/actors with specific evidence from voting records or committee outcomes | Nothing — this section must be 100% AI |
 > | **Key Takeaways** | 3-5 unique insights with confidence labels and dok_id evidence | Empty `<ul>` container |
 > | **Strategic Context** | Coalition dynamics, opposition strategy, electoral implications from actual data | Nothing — this section must be 100% AI |
-> | **SWOT/Risk inline summaries** | Key findings from pre-computed analysis files, with links to full analysis on GitHub | Empty chart containers with D3/Chart.js scripts |
+> | **SWOT/Risk inline summaries** | Key findings from pre-computed analysis files, with links to full analysis on GitHub | Empty chart containers using the standard `<canvas data-chart-config="...">`/container convention (no inline scripts) |
 > | **Policy domain labels** | Correct classification using committee→domain mapping (see §Policy Domain Inference below) | Raw committee code only |
 >
 > **v4.0 Banned Script Patterns**: The following code-generated content patterns are REJECTED in articles:
@@ -1318,43 +1318,98 @@ News articles SHOULD include interactive visualizations when data supports them.
 ```
 For this article's documents, generate visualization data in JSON format:
 
-1. **SWOT Quadrant** (if SWOT analysis exists):
+1. **SWOT Quadrant** (if SWOT analysis exists, emit a valid Chart.js config in `data-chart-config`):
    {
-     "chartType": "swot-quadrant",
-     "strengths": [{"label": "S1: ...", "impact": 8, "evidence": "dok_id"}],
-     "weaknesses": [{"label": "W1: ...", "impact": 6, "evidence": "dok_id"}],
-     "opportunities": [{"label": "O1: ...", "impact": 7, "evidence": "dok_id"}],
-     "threats": [{"label": "T1: ...", "impact": 9, "evidence": "dok_id"}]
+     "type": "radar",
+     "data": {
+       "labels": ["Strengths", "Weaknesses", "Opportunities", "Threats"],
+       "datasets": [
+         {
+           "label": "SWOT impact profile",
+           "data": [8, 6, 7, 9],
+           "backgroundColor": "rgba(0, 217, 255, 0.15)",
+           "borderColor": "#00d9ff",
+           "borderWidth": 2,
+           "pointRadius": 5
+         }
+       ]
+     },
+     "options": {
+       "responsive": true,
+       "plugins": {
+         "legend": { "labels": { "color": "#e0e0e0" } }
+       },
+       "scales": {
+         "r": {
+           "grid": { "color": "rgba(255,255,255,0.1)" },
+           "ticks": { "color": "#b0b0b0", "backdropColor": "transparent" },
+           "pointLabels": { "color": "#e0e0e0" }
+         }
+       }
+     }
    }
 
-2. **Vote Chart** (if voting data available via search_voteringar):
+2. **Vote Chart** (if voting data available via search_voteringar, emit a valid Chart.js config in `data-chart-config`):
    {
-     "chartType": "coalition-votes",
-     "parties": ["S", "M", "SD", "V", "C", "MP", "L", "KD"],
-     "ja": [0, 68, 0, 0, 0, 0, 16, 19],
-     "nej": [107, 0, 0, 24, 24, 18, 0, 0],
-     "avstar": [0, 0, 73, 0, 0, 0, 0, 0]
+     "type": "bar",
+     "data": {
+       "labels": ["S", "M", "SD", "V", "C", "MP", "L", "KD"],
+       "datasets": [
+         { "label": "Ja",     "data": [0, 68, 0, 0, 0, 0, 16, 19], "backgroundColor": "#83cf39" },
+         { "label": "Nej",    "data": [107, 0, 0, 24, 24, 18, 0, 0], "backgroundColor": "#ff006e" },
+         { "label": "Avstår", "data": [0, 0, 73, 0, 0, 0, 0, 0], "backgroundColor": "#ffbe0b" }
+       ]
+     },
+     "options": {
+       "responsive": true,
+       "scales": {
+         "x": { "stacked": true, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } },
+         "y": { "stacked": true, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } }
+       },
+       "plugins": {
+         "legend": { "labels": { "color": "#e0e0e0" } }
+       }
+     }
    }
 
-3. **Risk Heat Map** (if risk assessment exists):
+3. **Risk Heat Map** (if risk assessment exists, emit a valid Chart.js config in `data-chart-config`):
    {
-     "chartType": "risk-heatmap",
-     "risks": [
-       {"id": "R1", "label": "...", "likelihood": 3, "impact": 4, "color": "#dc3545"},
-       {"id": "R2", "label": "...", "likelihood": 2, "impact": 5, "color": "#fd7e14"}
-     ]
+     "type": "scatter",
+     "data": {
+       "datasets": [
+         {
+           "label": "Risks",
+           "data": [
+             { "x": 3, "y": 4 },
+             { "x": 2, "y": 5 }
+           ],
+           "backgroundColor": ["#dc3545", "#fd7e14"],
+           "pointRadius": 10
+         }
+       ]
+     },
+     "options": {
+       "responsive": true,
+       "scales": {
+         "x": { "title": { "display": true, "text": "Likelihood", "color": "#e0e0e0" }, "min": 0, "max": 5, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } },
+         "y": { "title": { "display": true, "text": "Impact", "color": "#e0e0e0" }, "min": 0, "max": 5, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } }
+       },
+       "plugins": {
+         "legend": { "labels": { "color": "#e0e0e0" } }
+       }
+     }
    }
 
-Embed each visualization payload on the target `<canvas>` element using the existing
-`data-chart-config` attribute convention used by the site renderer.
-Serialize a complete Chart.js configuration object into `data-chart-config`, and include the
-visualization's canonical `chartType` inside that JSON so downstream code can identify the chart.
-Do **not** use `<script type="application/json" class="chart-data" data-chart-type="...">`,
-because this guide must match the current rendering implementation.
+Embed each visualization on the target `<canvas>` element using the existing
+`data-chart-config` attribute convention used by the site renderer
+(see `scripts/data-transformers/content-generators/dashboard-section.ts`).
+Serialize a **complete, valid Chart.js configuration object** (with `type`, `data`, `options`)
+into `data-chart-config`. Do **not** use `<script type="application/json" class="chart-data">`;
+the rendering implementation reads configs from `canvas[data-chart-config]`.
 
-Canonical chart type identifiers (use these exact strings in the JSON `chartType` field inside
-the serialized `data-chart-config` payload): `coalition-votes`, `swot-quadrant`, `risk-heatmap`,
-`policy-radar`, `legislative-sankey`, `css-mindmap`, `timeline`.
+> **Canonical chart type identifiers**: You may add a `chartType` string field at the top level
+> of the JSON config for downstream identification. Valid identifiers: `coalition-votes`,
+> `swot-quadrant`, `risk-heatmap`, `policy-radar`, `legislative-sankey`, `css-mindmap`, `timeline`.
 ```
 
 #### Mermaid Diagram Requirements in Analysis Files

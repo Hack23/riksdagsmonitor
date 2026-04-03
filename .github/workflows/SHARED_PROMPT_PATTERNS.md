@@ -371,13 +371,14 @@ Read these files for the current article type and date:
 # to the wrong directory.
 if [ -z "${ANALYSIS_SUBFOLDER:-}" ]; then
   case "${ARTICLE_TYPE}" in
-    committee-reports)   ANALYSIS_SUBFOLDER="committeeReports" ;;
-    opposition-motions)  ANALYSIS_SUBFOLDER="motions" ;;
+    committee-reports)       ANALYSIS_SUBFOLDER="committeeReports" ;;
+    opposition-motions)      ANALYSIS_SUBFOLDER="motions" ;;
+    interpellation-debates)  ANALYSIS_SUBFOLDER="interpellations" ;;
     breaking)
       : "${HHMM:?HHMM must be set for breaking articles to resolve realtime-\${HHMM} analysis folder}"
       ANALYSIS_SUBFOLDER="realtime-${HHMM}"
       ;;
-    *)                   ANALYSIS_SUBFOLDER="${ARTICLE_TYPE}" ;;
+    *)                       ANALYSIS_SUBFOLDER="${ARTICLE_TYPE}" ;;
   esac
 fi
 
@@ -462,15 +463,29 @@ Write 50-80 words connecting these documents to the broader political landscape:
 
 When the article HTML contains chart container elements, provide visualization data:
 
+All visualization examples below are **valid Chart.js configuration objects** matching the `data-chart-config` convention used by the site renderer (`scripts/data-transformers/content-generators/dashboard-section.ts`). You may add a top-level `chartType` string for downstream identification.
+
 #### Vote Distribution Chart (for articles with voting data)
 ```json
 {
   "chartType": "coalition-votes",
-  "parties": ["S", "M", "SD", "V", "C", "MP", "L", "KD"],
-  "ja": [0, 68, 0, 0, 0, 0, 16, 19],
-  "nej": [107, 0, 0, 24, 24, 18, 0, 0],
-  "avstar": [0, 0, 73, 0, 0, 0, 0, 0],
-  "source": "search_voteringar result for bet. 2025/26:FiU20"
+  "type": "bar",
+  "data": {
+    "labels": ["S", "M", "SD", "V", "C", "MP", "L", "KD"],
+    "datasets": [
+      { "label": "Ja",     "data": [0, 68, 0, 0, 0, 0, 16, 19], "backgroundColor": "#83cf39" },
+      { "label": "Nej",    "data": [107, 0, 0, 24, 24, 18, 0, 0], "backgroundColor": "#ff006e" },
+      { "label": "Avstår", "data": [0, 0, 73, 0, 0, 0, 0, 0], "backgroundColor": "#ffbe0b" }
+    ]
+  },
+  "options": {
+    "responsive": true,
+    "scales": {
+      "x": { "stacked": true, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } },
+      "y": { "stacked": true, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } }
+    },
+    "plugins": { "legend": { "labels": { "color": "#e0e0e0" } } }
+  }
 }
 ```
 
@@ -478,10 +493,30 @@ When the article HTML contains chart container elements, provide visualization d
 ```json
 {
   "chartType": "swot-quadrant",
-  "strengths": [{"label": "Coalition unity on security", "score": 8, "dok_id": "HD03235"}],
-  "weaknesses": [{"label": "ECHR compliance risk", "score": 7, "dok_id": "HD03235"}],
-  "opportunities": [{"label": "NATO integration momentum", "score": 9, "dok_id": "HD03228"}],
-  "threats": [{"label": "Opposition coordination", "score": 6, "dok_id": "HD10428"}]
+  "type": "radar",
+  "data": {
+    "labels": ["Strengths", "Weaknesses", "Opportunities", "Threats"],
+    "datasets": [{
+      "label": "SWOT impact profile",
+      "data": [8, 7, 9, 6],
+      "backgroundColor": "rgba(0, 217, 255, 0.15)",
+      "borderColor": "#00d9ff",
+      "borderWidth": 2,
+      "pointRadius": 5,
+      "pointBackgroundColor": ["#83cf39", "#ff006e", "#00d9ff", "#ffbe0b"]
+    }]
+  },
+  "options": {
+    "responsive": true,
+    "plugins": { "legend": { "labels": { "color": "#e0e0e0" } } },
+    "scales": {
+      "r": {
+        "grid": { "color": "rgba(255,255,255,0.1)" },
+        "ticks": { "color": "#b0b0b0", "backdropColor": "transparent" },
+        "pointLabels": { "color": "#e0e0e0", "font": { "size": 12 } }
+      }
+    }
+  }
 }
 ```
 
@@ -489,16 +524,32 @@ When the article HTML contains chart container elements, provide visualization d
 ```json
 {
   "chartType": "risk-heatmap",
-  "risks": [
-    {"id": "R1", "label": "Deportation ECHR challenge", "likelihood": 4, "impact": 5},
-    {"id": "R2", "label": "Shelter implementation delay", "likelihood": 3, "impact": 3}
-  ]
+  "type": "scatter",
+  "data": {
+    "datasets": [{
+      "label": "Risks",
+      "data": [
+        { "x": 4, "y": 5 },
+        { "x": 3, "y": 3 }
+      ],
+      "backgroundColor": ["#dc3545", "#fd7e14"],
+      "pointRadius": 10
+    }]
+  },
+  "options": {
+    "responsive": true,
+    "scales": {
+      "x": { "title": { "display": true, "text": "Likelihood", "color": "#e0e0e0" }, "min": 0, "max": 5, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } },
+      "y": { "title": { "display": true, "text": "Impact", "color": "#e0e0e0" }, "min": 0, "max": 5, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } }
+    },
+    "plugins": { "legend": { "labels": { "color": "#e0e0e0" } } }
+  }
 }
 ```
 
-Embed the chart on the target `<canvas>` element using a `data-chart-config` attribute that contains the full JSON configuration, including the `chartType` field shown above. Do **not** emit a separate `<script class="chart-data" data-chart-type="...">` block; the current site/article implementation reads chart configuration from `canvas[data-chart-config]`.
+Embed each chart on the target `<canvas>` element using a `data-chart-config` attribute containing the full Chart.js configuration object. Do **not** emit `<script class="chart-data">` blocks; the site renderer reads configs from `canvas[data-chart-config]`.
 
-> **Canonical chart type identifiers** (use these exact strings in the JSON `chartType` field inside `data-chart-config`): `coalition-votes`, `swot-quadrant`, `risk-heatmap`, `policy-radar`, `legislative-sankey`, `css-mindmap`, `timeline`.
+> **Canonical chart type identifiers** (use these exact strings in the optional `chartType` field inside `data-chart-config`): `coalition-votes`, `swot-quadrant`, `risk-heatmap`, `policy-radar`, `legislative-sankey`, `css-mindmap`, `timeline`.
 ````
 
 ---
