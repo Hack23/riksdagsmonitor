@@ -1403,12 +1403,14 @@ For this article's documents, generate visualization data in JSON format:
      }
    }
 
-Embed each visualization on the target `<canvas>` element using the existing
-`data-chart-config` attribute convention used by the site renderer
-(see `scripts/data-transformers/content-generators/dashboard-section.ts`).
+Embed each visualization on the target `<canvas>` element using a
+`data-chart-config` attribute as the serialized handoff format
+(for generation examples, see `scripts/data-transformers/content-generators/dashboard-section.ts`).
 Serialize a **complete, valid Chart.js configuration object** (with `type`, `data`, `options`)
-into `data-chart-config`. Do **not** use `<script type="application/json" class="chart-data">`;
-the rendering implementation reads configs from `canvas[data-chart-config]`.
+into `data-chart-config`. Do **not** use `<script type="application/json" class="chart-data">`.
+**Important:** charts will render only if the target page loads a client-side initializer
+that reads `canvas[data-chart-config]` and instantiates Chart.js from that JSON; do not
+assume article pages perform this step automatically unless that initializer is explicitly present.
 
 > **Canonical chart type identifiers**: You may add a `chartType` string field at the top level
 > of the JSON config for downstream identification. Valid identifiers: `coalition-votes`,
