@@ -929,16 +929,16 @@ engine:
 
 These functions in `scripts/` contain hardcoded analysis logic that MUST be replaced with AI prompt instructions in workflow `.md` files:
 
-| Deprecated Function | File | Replacement |
-|---------------------|------|-------------|
-| `buildDynamicSwot()` | `ai-analysis-pipeline.ts:561-659` | AI prompt: "Generate SWOT for all 8 stakeholder groups with dok_id evidence" |
-| `buildStrategicImplications()` | `ai-analysis-pipeline.ts:661-730` | AI prompt: "Write strategic implications paragraph citing specific policy signals" |
-| `buildKeyTakeaways()` | `ai-analysis-pipeline.ts:734-774` | AI prompt: "Extract 5 key takeaways with confidence levels and evidence" |
-| `buildLegislativeImpact()` | `ai-analysis-pipeline.ts:248-264` | AI prompt: "Assess legislative impact using committee + vote data" |
-| `buildCrossPartyImplications()` | `ai-analysis-pipeline.ts:266-280` | AI prompt: "Analyze cross-party dynamics from voting records and motions" |
-| `generateDeepAnalysisSection()` | `shared.ts:456-590` | AI prompt: "Write 5W deep analysis (Who/What/When/Why/Winners)" |
-| `scoreNewsworthiness()` | `newsworthiness.ts:251-305` | AI prompt: "Score newsworthiness 0-100 with dimension breakdown" |
-| All `*Text()` templates | `shared.ts:396-857` | AI prompt: "Write editorial analysis based on actual document data" |
+| Deprecated Function | File / Symbol Reference | Replacement |
+|---------------------|-------------------------|-------------|
+| `buildDynamicSwot()` | `ai-analysis-pipeline.ts` (`buildDynamicSwot`) | AI prompt: "Generate SWOT for all 8 stakeholder groups with dok_id evidence" |
+| `buildStrategicImplications()` | `ai-analysis-pipeline.ts` (`buildStrategicImplications`) | AI prompt: "Write strategic implications paragraph citing specific policy signals" |
+| `buildKeyTakeaways()` | `ai-analysis-pipeline.ts` (`buildKeyTakeaways`) | AI prompt: "Extract 5 key takeaways with confidence levels and evidence" |
+| `buildLegislativeImpact()` | `ai-analysis-pipeline.ts` (`buildLegislativeImpact`) | AI prompt: "Assess legislative impact using committee + vote data" |
+| `buildCrossPartyImplications()` | `ai-analysis-pipeline.ts` (`buildCrossPartyImplications`) | AI prompt: "Analyze cross-party dynamics from voting records and motions" |
+| `generateDeepAnalysisSection()` | `shared.ts` (`generateDeepAnalysisSection`) | AI prompt: "Write 5W deep analysis (Who/What/When/Why/Winners)" |
+| `scoreNewsworthiness()` | `newsworthiness.ts` (`scoreNewsworthiness`) | AI prompt: "Score newsworthiness 0-100 with dimension breakdown" |
+| All `*Text()` templates | `shared.ts` (`*Text()` template functions) | AI prompt: "Write editorial analysis based on actual document data" |
 
 > **Migration path**: These functions remain as fallbacks but their output is treated as stubs. AI agents in workflows MUST overwrite all template-generated text with genuine analysis.
 
@@ -968,15 +968,12 @@ Generate a newsworthy article title (60-80 characters) that:
 
 ### Title Construction Formula
 
-```
-[Active Verb] + [Specific Actor/Institution] + [Concrete Policy Action] + [Political Significance]
-```
+- Formula: `[Active Verb] + [Specific Actor/Institution] + [Concrete Policy Action] + [Political Significance]`
 
 Examples from data:
 - "Riksdag Approves Stricter Deportation Rules as Coalition Unites on Justice Reform"
 - "Hultqvist Challenges Government on Scandinavian Mountain Airport Emergency Gaps"
 - "Four Propositions Signal Government's Spring Security Offensive"
-```
 
 #### Prompt: AI-Driven Meta Description Generation
 
