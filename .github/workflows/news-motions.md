@@ -590,6 +590,18 @@ The analysis pipeline outputs the following artifacts per doc-type run:
 
 These files are committed alongside articles for human review and continuous improvement.
 
+### 🔴 MANDATORY: Batch Analysis Enrichment (Prevents Empty "0 Documents Analyzed" Files)
+
+> **Root Cause**: The `pre-article-analysis.ts` script filters documents by exact date match. When no motions are published on the exact analysis date, batch files report "0 documents analyzed" — this violates `ai-driven-analysis-guide.md` quality requirements.
+
+**After per-file analysis, check if batch files are empty and enrich them:**
+
+1. Check `synthesis-summary.md` — if it reports "0 documents analyzed" but per-document analyses exist in `documents/`, aggregate the per-doc findings into all 9 batch files
+2. If NO per-doc analyses exist AND batch files show "0 documents analyzed", use MCP `get_motioner(rm="2025/26", limit=50)` directly to find recent motions and create meaningful analysis
+3. Each enriched batch file MUST include: ≥1 Mermaid diagram, structured tables, evidence citations, confidence labels
+4. **NEVER commit batch files that report "0 documents analyzed" when analysis data is available**
+5. See `ai-driven-analysis-guide.md` "Deep-Inspection Batch Analysis Enrichment Protocol (v4.1)" for full requirements
+
 ### 📋 Rewrite Daily Synthesis Files to Follow Templates
 
 > 🚨 **CRITICAL**: Script-generated stubs do NOT follow template structure. Rewrite each daily file to match its `analysis/templates/` counterpart. Read each template with `cat` before rewriting. Every file needs: metadata header (ID, date, riksmöte, confidence), ≥1 color-coded Mermaid diagram, evidence tables with dok_id citations, and no `[REQUIRED]` placeholders.

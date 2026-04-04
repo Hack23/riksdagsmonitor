@@ -418,6 +418,18 @@ ls -la "analysis/weekly/$WEEK_LABEL/" 2>/dev/null || echo "⚠️ No weekly aggr
 
 These files are committed alongside articles for human review and continuous improvement.
 
+### 🔴 MANDATORY: Batch Analysis Enrichment (Prevents Empty "0 Documents Analyzed" Files)
+
+> **Root Cause**: The `pre-article-analysis.ts` script filters documents by exact date match. When no documents match the exact analysis date, batch files report "0 documents analyzed" — this violates `ai-driven-analysis-guide.md` quality requirements.
+
+**After per-file analysis, check if batch files are empty and enrich them:**
+
+1. Check `synthesis-summary.md` — if it reports "0 documents analyzed" but per-document analyses exist in `documents/`, aggregate the per-doc findings into all 9 batch files
+2. If NO per-doc analyses exist AND batch files show "0 documents analyzed", use MCP `get_calendar_events(from=ARTICLE_DATE, tom=7_DAYS_AHEAD)` and `get_betankanden(rm="2025/26", limit=20)` directly to find upcoming parliamentary activity and create meaningful analysis
+3. Each enriched batch file MUST include: ≥1 Mermaid diagram, structured tables, evidence citations, confidence labels
+4. **NEVER commit batch files that report "0 documents analyzed" when analysis data is available**
+5. See `ai-driven-analysis-guide.md` "Deep-Inspection Batch Analysis Enrichment Protocol (v4.1)" for full requirements
+
 ### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
 
 **Before deciding whether to generate articles or call noop, you MUST:**

@@ -87,6 +87,7 @@ export function parseArgs(argv: string[]): {
   weekLabel: string | null;
   rm: string | null;
   docType: DocumentTypeKey | null;
+  documentIds: string[];
 } {
   const args = argv.slice(2);
   const get = (flag: string): string | null => {
@@ -157,7 +158,24 @@ export function parseArgs(argv: string[]): {
     docType = docTypeArg;
   }
 
-  return { date: isoDate, aggregate, limit, weekLabel, rm, docType };
+  // --document-ids: Comma-separated Riksdag dok_id values for deep-inspection.
+  // When provided, these specific documents are fetched by ID and included in
+  // analysis regardless of their date, ensuring deep-inspection batch analysis
+  // files contain real content instead of "0 documents analyzed".
+  const documentIdsArg = get('--document-ids');
+  const DOK_ID_PATTERN = /^[A-Za-z0-9_-]+$/;
+  const documentIds = documentIdsArg
+    ? documentIdsArg.split(',').map(id => id.trim()).filter(id => {
+        if (!id) return false;
+        if (!DOK_ID_PATTERN.test(id)) {
+          console.warn(`⚠️ Skipping invalid document ID: ${id} (must be alphanumeric/hyphens/underscores only)`);
+          return false;
+        }
+        return true;
+      })
+    : [];
+
+  return { date: isoDate, aggregate, limit, weekLabel, rm, docType, documentIds };
 }
 
 function isoWeekNumber(date: Date): number {
@@ -530,8 +548,9 @@ async function runPreArticleAnalysis(opts: {
   weekLabel: string | null;
   rm: string | null;
   docType: DocumentTypeKey | null;
+  documentIds: string[];
 }): Promise<void> {
-  const { date, limit, aggregate, weekLabel, rm, docType } = opts;
+  const { date, limit, aggregate, weekLabel, rm, docType, documentIds } = opts;
 
   if (aggregate && weekLabel) {
     console.log(`\n📅 Running weekly aggregation for: ${weekLabel}`);
@@ -566,13 +585,49 @@ async function runPreArticleAnalysis(opts: {
 
   const { data, manifest } = await downloadAllDocuments(client, downloadOpts);
   const flattenedDocs = flattenDocuments(data);
+
+  // Build a set of explicitly requested document IDs for deep-inspection bypass.
+  const requestedIdSet = new Set(documentIds.map(id => id.toUpperCase()));
+
   const allDocs = flattenedDocs.filter((doc: RawDocument) => {
+    // Documents explicitly requested by ID are ALWAYS included regardless of date.
+    // This is critical for deep-inspection which targets specific documents that
+    // may have been published on previous days.
+    const docId = doc.dok_id ?? '';
+    if (requestedIdSet.size > 0 && requestedIdSet.has(docId.toUpperCase())) {
+      return true;
+    }
     // Only keep documents whose datum matches the requested analysis date (YYYY-MM-DD).
     if (doc.datum && typeof doc.datum === 'string') {
       return doc.datum.slice(0, 10) === date;
     }
     return false;
   });
+
+  // If document IDs were requested but not found in the bulk download, attempt
+  // to fetch them individually via fetchDocumentDetails so deep-inspection always has data.
+  if (requestedIdSet.size > 0) {
+    const foundIds = new Set(allDocs.map((d: RawDocument) => (d.dok_id ?? '').toUpperCase()));
+    const missingIds = documentIds.filter(id => !foundIds.has(id.toUpperCase()));
+    if (missingIds.length > 0) {
+      console.log(`   🔍 Fetching ${missingIds.length} targeted document(s) by ID: ${missingIds.join(', ')}`);
+      for (const dokId of missingIds) {
+        try {
+          const result = await client.fetchDocumentDetails(dokId, false);
+          if (result && typeof result === 'object') {
+            const doc = result as unknown as RawDocument;
+            if (!doc.dok_id) {
+              (doc as Record<string, unknown>).dok_id = dokId;
+            }
+            allDocs.push(doc);
+            console.log(`   ✅ Fetched document ${dokId}: ${(doc as Record<string, unknown>).titel ?? (doc as Record<string, unknown>).title ?? '(no title)'}`);
+          }
+        } catch (err) {
+          console.warn(`   ⚠️ Failed to fetch document ${dokId}: ${err instanceof Error ? err.message : String(err)}`);
+        }
+      }
+    }
+  }
   const excludedDocsCount = flattenedDocs.length - allDocs.length;
 
   console.log(`   Downloaded ${flattenedDocs.length} unique documents from ${manifest.dataSources.length} MCP tools`);

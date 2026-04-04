@@ -317,7 +317,15 @@ if [ -z "$ARTICLE_DATE" ]; then
 fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 # CRITICAL: Source mcp-setup.sh FIRST to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
-source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
+# For deep-inspection, pass --document-ids to include targeted documents regardless of date
+PIPELINE_EXTRA_ARGS=""
+if echo "${RAW_REQUESTED_TYPE:-${{ github.event.inputs.article_types }}}" | grep -q "deep-inspection"; then
+  DI_DOC_IDS="${{ github.event.inputs.document_ids }}"
+  # Sanitize: only allow alphanumeric, hyphens, commas (valid Riksdag dok_id characters)
+  DI_DOC_IDS=$(echo "$DI_DOC_IDS" | tr -cd 'A-Za-z0-9,_-')
+  [ -n "$DI_DOC_IDS" ] && PIPELINE_EXTRA_ARGS="--document-ids $DI_DOC_IDS"
+fi
+source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 $PIPELINE_EXTRA_ARGS 2>&1 | tee /tmp/pipeline-output.log
 PIPE_EXIT=${PIPESTATUS[0]}
 if [ "$PIPE_EXIT" -ne 0 ]; then
   echo "❌ Pipeline failed — agent MUST diagnose and fix (read /tmp/pipeline-output.log)"
@@ -407,6 +415,43 @@ After the script-based analysis, perform **AI-driven per-file analysis** for dee
 5. Quality gate: ≥3 evidence points, confidence labels, no template placeholders
 
 These analysis files are committed alongside articles for human review and continuous improvement.
+
+### 🔴 MANDATORY: Batch Analysis Enrichment (Prevents Empty "0 Documents Analyzed" Files)
+
+> **Root cause**: The `pre-article-analysis.ts` script filters documents by exact date match. For `deep-inspection` and lookback scenarios, targeted documents may have earlier dates, causing batch analysis files (synthesis-summary.md, swot-analysis.md, etc.) to report "0 documents analyzed" despite per-document analysis being rich and complete.
+
+**After completing per-file AI analysis, the agent MUST check and enrich batch analysis files:**
+
+```bash
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
+# Check if batch analysis files are empty/minimal
+SYNTH_DOCS=$(grep -oP 'Documents Analyzed.*?(\d+)' "$ANALYSIS_DIR/synthesis-summary.md" 2>/dev/null | grep -oP '\d+$' || echo "0")
+echo "📊 Synthesis reports $SYNTH_DOCS documents analyzed"
+if [ "$SYNTH_DOCS" -eq 0 ]; then
+  echo "🔴 EMPTY BATCH ANALYSIS DETECTED — agent MUST rewrite batch files from per-document analysis"
+fi
+```
+
+**When batch files show "0 documents analyzed" but per-document analysis exists in `documents/`:**
+
+1. **Read ALL per-document `*-analysis.md` files** in the `documents/` subdirectory
+2. **Aggregate findings** into each batch analysis file:
+   - `synthesis-summary.md` — Combine executive summaries, compute overall risk/significance, list all documents with scores. MUST include Intelligence Dashboard Mermaid diagram.
+   - `swot-analysis.md` — Aggregate all SWOT entries from per-doc analyses into a combined SWOT with evidence tables and Mermaid quadrant diagram.
+   - `risk-assessment.md` — Collect all risk entries, compute aggregate risk score, include risk matrix Mermaid diagram.
+   - `threat-analysis.md` — Aggregate threat indicators from per-doc analyses, include threat taxonomy Mermaid diagram.
+   - `classification-results.md` — Summarize document classifications with structured tables.
+   - `significance-scoring.md` — List all documents with their significance scores in a ranked table.
+   - `stakeholder-perspectives.md` — Aggregate stakeholder impacts across all analyzed documents with evidence tables.
+   - `cross-reference-map.md` — Map relationships between analyzed documents.
+3. **Quality requirements for enriched batch files** (from `ai-driven-analysis-guide.md`):
+   - ≥1 color-coded Mermaid diagram per file
+   - Structured markdown tables (not plain prose)
+   - Evidence citations with dok_id
+   - Confidence labels `[HIGH]`/`[MEDIUM]`/`[LOW]` on analytical claims
+   - No "0 documents analyzed" in any header or summary
+   - Each file ≥500 bytes (empty files are rejected)
+4. **NEVER commit batch files that report "0 documents analyzed" when per-document analysis exists** — this is a quality gate failure
 
 ### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
 

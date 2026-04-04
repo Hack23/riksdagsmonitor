@@ -1582,6 +1582,60 @@ When `pre-article-analysis.ts` reports "0 documents analyzed" (as happened for p
 4. **NEVER publish an article with "0 documents analyzed" as the lede**
 ```
 
+### 🔍 Deep-Inspection Batch Analysis Enrichment Protocol (v4.1)
+
+> **Root Cause (2026-04-03 audit)**: Deep-inspection analysis for HD03214 produced a rich per-document analysis (5.1KB with SWOT, risk, stakeholders, Mermaid diagrams) but all 9 batch analysis files reported "0 documents analyzed" (total: 7.3KB vs 52.4KB for a properly populated folder). This is because `pre-article-analysis.ts` filters documents by exact date match, and deep-inspection targets documents from previous days.
+
+**The problem**: Deep-inspection targets specific documents by ID (e.g., `HD03214` dated 2026-04-01), but the batch analysis pipeline filters for `datum === ARTICLE_DATE` (2026-04-03). Result: 300 documents downloaded, 0 pass the date filter, all 9 batch files are empty skeletons.
+
+**The fix (two-pronged):**
+
+1. **Script-level**: `pre-article-analysis.ts` now accepts `--document-ids` flag. When provided, documents matching those IDs bypass the date filter and are included in batch analysis regardless of their publication date.
+
+2. **Agent-level**: After per-file AI analysis, the agent MUST verify batch analysis quality and rewrite any files showing "0 documents analyzed":
+
+```markdown
+## Batch Analysis Enrichment Steps
+
+### Step 1: Detect empty batch files
+Check each of the 9 batch analysis files for "Documents Analyzed: 0" or "0 documents".
+If ANY batch file reports 0 documents but per-document analysis exists in documents/, proceed to Step 2.
+
+### Step 2: Read all per-document analyses
+Read every `*-analysis.md` file in the `documents/` subdirectory.
+Extract: executive summaries, SWOT entries, risk scores, stakeholder impacts, classification data, significance scores, forward indicators.
+
+### Step 3: Rewrite batch files with aggregated content
+Each batch file MUST:
+- Report the actual number of documents analyzed (matching per-doc count)
+- Include structured markdown tables (not prose)
+- Include ≥1 color-coded Mermaid diagram with real data
+- Include evidence citations with dok_id
+- Include confidence labels [HIGH]/[MEDIUM]/[LOW]
+- Be ≥500 bytes (not skeleton output)
+
+### Step 4: Quality gate
+- [ ] synthesis-summary.md has Intelligence Dashboard Mermaid + Top Documents table
+- [ ] swot-analysis.md has ≥2 quadrants with evidence tables
+- [ ] risk-assessment.md has risk matrix with L×I scores
+- [ ] threat-analysis.md has threat taxonomy with indicators
+- [ ] classification-results.md has document classification table
+- [ ] significance-scoring.md has ranked significance table
+- [ ] stakeholder-perspectives.md has 6-lens impact table
+- [ ] cross-reference-map.md has relationship mapping
+- [ ] No file contains "0 documents analyzed" when per-doc analysis exists
+```
+
+**Comparison — Before vs After enrichment:**
+
+| Metric | Empty (Bad) | Enriched (Good) |
+|--------|:-----------:|:---------------:|
+| Total batch file size | ~7KB | ≥30KB |
+| Mermaid diagrams | 0 | ≥8 (one per file) |
+| Evidence tables | 0 | ≥8 |
+| dok_id citations | 0 | ≥3 per file |
+| "0 documents analyzed" | 9 files | 0 files |
+
 ---
 
 ## 🔍 Quality Issues Audit Cumulative Findings
@@ -1596,7 +1650,8 @@ When `pre-article-analysis.ts` reports "0 documents analyzed" (as happened for p
 | Generic "Why It Matters" boilerplate | Present | 210+ files affected | 🔴 Systemic |
 | "Political landscape remains fluid" filler | Not tracked | 444+ files affected | 🔴 Systemic |
 | "No chamber debate data" excuse text | Not tracked | 456+ files affected | 🔴 Systemic |
-| Empty synthesis (0 documents) | Not tracked | 2 of 7 folders | 🔴 New issue |
+| Empty synthesis (0 documents) | Not tracked | 2 of 7 folders + deep-inspection | 🟡 Fix deployed (v4.1 enrichment protocol + --document-ids) |
+| Deep-inspection empty batch files | Not tracked | 9 files at 7.3KB total | 🟡 Fix deployed (v4.1 --document-ids + enrichment) |
 | Policy domain misclassification | Not tracked | Multiple instances | 🔴 New issue |
 | Data count inconsistencies (title vs body) | Not tracked | Multiple instances | 🔴 New issue |
 

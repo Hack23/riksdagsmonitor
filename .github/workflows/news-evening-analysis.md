@@ -919,6 +919,18 @@ fi
 
 > **If the quality gate FAILS**: Go back and rewrite the failing files. Read the template again (`view analysis/templates/<template>.md`), then rewrite the file to match it. Do NOT proceed until all checks pass.
 
+### 🔴 MANDATORY: Batch Analysis Enrichment (Prevents Empty "0 Documents Analyzed" Files)
+
+> **Root Cause**: The `pre-article-analysis.ts` script filters documents by exact date match. When no documents match the exact analysis date, batch files report "0 documents analyzed" — this violates `ai-driven-analysis-guide.md` quality requirements.
+
+**After per-file analysis and quality gate, check if batch files are empty and enrich them:**
+
+1. Check `synthesis-summary.md` — if it reports "0 documents analyzed" but per-document analyses exist in `documents/`, aggregate the per-doc findings into all 9 batch files
+2. If NO per-doc analyses exist AND batch files show "0 documents analyzed", use MCP tools directly (`search_dokument`, `get_propositioner`, `get_betankanden`, `search_anforanden`, `get_calendar_events`) to find recent parliamentary activity and create meaningful analysis
+3. Each enriched batch file MUST include: ≥1 Mermaid diagram, structured tables, evidence citations, confidence labels
+4. **NEVER commit batch files that report "0 documents analyzed" when analysis data is available**
+5. See `ai-driven-analysis-guide.md` "Deep-Inspection Batch Analysis Enrichment Protocol (v4.1)" for full requirements
+
 ### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
 
 **Before deciding whether to generate articles or call noop, you MUST:**
