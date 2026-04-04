@@ -3,8 +3,7 @@ name: "News: Week Ahead"
 description: Generates week-ahead prospective articles in core languages (EN, SV). Translations handled by news-translate workflow. Runs Fridays to preview the upcoming parliamentary week.
 strict: false
 on:
-  schedule:
-    - cron: "0 7 * * 5"
+  schedule: weekly on friday around 7:00
   workflow_dispatch:
     inputs:
       article_date:
@@ -47,11 +46,10 @@ network:
     - api.scb.se
     - api.worldbank.org
     - data.riksdagen.se
+    - www.riksdagen.se
+    - www.regeringen.se
+    - www.scb.se
     - regeringen.se
-    - "*.se"
-    - "*.com"
-    - "*.org"
-    - "*.io"
     - default
 
 mcp-servers:
@@ -82,6 +80,9 @@ safe-outputs:
     - api.scb.se
     - api.worldbank.org
     - data.riksdagen.se
+    - www.riksdagen.se
+    - www.regeringen.se
+    - www.scb.se
     - www.riksdagen.se
     - www.regeringen.se
     - github.com

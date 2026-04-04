@@ -47,11 +47,10 @@ network:
     - api.scb.se
     - api.worldbank.org
     - data.riksdagen.se
+    - www.riksdagen.se
+    - www.regeringen.se
+    - www.scb.se
     - regeringen.se
-    - "*.se"
-    - "*.com"
-    - "*.org"
-    - "*.io"
     - default
 
 mcp-servers:
@@ -82,6 +81,9 @@ safe-outputs:
     - api.scb.se
     - api.worldbank.org
     - data.riksdagen.se
+    - www.riksdagen.se
+    - www.regeringen.se
+    - www.scb.se
     - www.riksdagen.se
     - www.regeringen.se
     - github.com

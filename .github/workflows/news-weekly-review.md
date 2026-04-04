@@ -3,8 +3,7 @@ name: "News: Weekly Review"
 description: Generates weekly review retrospective articles in core languages (EN, SV). Translations handled by news-translate workflow. Runs Saturdays to review the past week.
 strict: false
 on:
-  schedule:
-    - cron: "0 9 * * 6"
+  schedule: weekly on saturday around 9:00
   workflow_dispatch:
     inputs:
       article_date:
@@ -47,11 +46,10 @@ network:
     - api.scb.se
     - api.worldbank.org
     - data.riksdagen.se
+    - www.riksdagen.se
+    - www.regeringen.se
+    - www.scb.se
     - regeringen.se
-    - "*.se"
-    - "*.com"
-    - "*.org"
-    - "*.io"
     - default
 
 mcp-servers:
@@ -82,6 +80,9 @@ safe-outputs:
     - api.scb.se
     - api.worldbank.org
     - data.riksdagen.se
+    - www.riksdagen.se
+    - www.regeringen.se
+    - www.scb.se
     - www.riksdagen.se
     - www.regeringen.se
     - github.com
