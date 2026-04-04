@@ -56,11 +56,16 @@ network:
     - api.scb.se
     - api.worldbank.org
     - data.riksdagen.se
+    - www.riksdagen.se
+    - riksdagen.se
+    - www.regeringen.se
+    - www.scb.se
     - regeringen.se
-    - "*.se"
-    - "*.com"
-    - "*.org"
-    - "*.io"
+    - hack23.com
+    - www.hack23.com
+    - riksdagsmonitor.com
+    - www.riksdagsmonitor.com
+    - hack23.github.io
     - default
 
 mcp-servers:
@@ -83,6 +88,12 @@ tools:
     args: ["-y", "@playwright/mcp@0.0.68", "--headless"]
     env:
       DISPLAY: ":99"
+  repo-memory:
+    branch-name: memory/news-generation
+    allowed-extensions: [".md", ".json"]
+    max-file-size: 51200
+    max-file-count: 50
+    max-patch-size: 51200
 
 safe-outputs:
   allowed-domains:
@@ -91,12 +102,19 @@ safe-outputs:
     - api.worldbank.org
     - data.riksdagen.se
     - www.riksdagen.se
+    - riksdagen.se
     - www.regeringen.se
+    - www.scb.se
     - github.com
+    - hack23.com
+    - www.hack23.com
+    - riksdagsmonitor.com
+    - www.riksdagsmonitor.com
+    - hack23.github.io
   create-pull-request:
     labels: [agentic-news, analysis-data]
     draft: false
-    expires: 14
+    expires: 14d
   add-comment: {}
   dispatch-workflow:
     workflows: [news-translate]
@@ -162,6 +180,20 @@ bash({ command: "..." }) // ← WRONG: missing description
 3. Safe output tools are **always in your tool list**. NEVER search for them via bash.
 4. **NEVER** write your own MCP HTTP/JSON-RPC client. Use the scripts or direct tool calls only.
 5. Exiting without calling a safe output tool = workflow failure.
+
+## 🧠 Repo Memory
+
+This workflow uses **persistent repo-memory** on branch `memory/news-generation` (shared with all news workflows).
+
+**At run START — read context:**
+- Read `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` for today (and optionally yesterday) to check which dok_ids were already analyzed recently
+- Read `memory/news-generation/last-run-news-realtime-monitor.json` for previous run metadata
+- Skip documents already covered by another workflow to avoid duplicate analysis
+
+**At run END — write context:**
+- Update `memory/news-generation/last-run-news-realtime-monitor.json` with date, documents analyzed, quality score
+- Write processed dok_ids to `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` (sharded by date; retain last 7 days)
+- Update `memory/news-generation/translation-status.json` with new articles needing translation
 
 ## ⏱️ Time Budget (45 minutes)
 

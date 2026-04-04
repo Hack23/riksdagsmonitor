@@ -3,8 +3,7 @@ name: "News: Committee Reports"
 description: Generates committee reports analysis articles in core languages (EN, SV). Translations for remaining 12 languages are handled by the dedicated news-translate workflow via dispatch-workflow. Single article type per run.
 strict: false
 on:
-  schedule:
-    - cron: "0 4 * * 1-5"
+  schedule: daily around 4:00 on weekdays
   workflow_dispatch:
     inputs:
       article_date:
@@ -47,11 +46,16 @@ network:
     - api.scb.se
     - api.worldbank.org
     - data.riksdagen.se
+    - www.riksdagen.se
+    - riksdagen.se
+    - www.regeringen.se
+    - www.scb.se
     - regeringen.se
-    - "*.se"
-    - "*.com"
-    - "*.org"
-    - "*.io"
+    - hack23.com
+    - www.hack23.com
+    - riksdagsmonitor.com
+    - www.riksdagsmonitor.com
+    - hack23.github.io
     - default
 
 mcp-servers:
@@ -69,6 +73,12 @@ tools:
     toolsets:
       - all
   bash: true
+  repo-memory:
+    branch-name: memory/news-generation
+    allowed-extensions: [".md", ".json"]
+    max-file-size: 51200
+    max-file-count: 50
+    max-patch-size: 51200
 
 safe-outputs:
   allowed-domains:
@@ -77,12 +87,19 @@ safe-outputs:
     - api.worldbank.org
     - data.riksdagen.se
     - www.riksdagen.se
+    - riksdagen.se
     - www.regeringen.se
+    - www.scb.se
     - github.com
+    - hack23.com
+    - www.hack23.com
+    - riksdagsmonitor.com
+    - www.riksdagsmonitor.com
+    - hack23.github.io
   create-pull-request:
     labels: [agentic-news, analysis-data]
     draft: false
-    expires: 14
+    expires: 14d
   add-comment: {}
   dispatch-workflow:
     workflows: [news-translate]
@@ -102,6 +119,7 @@ engine:
   id: copilot
   model: claude-opus-4.6
 ---
+
 # 📋 Committee Reports Article Generator
 
 You are the **News Journalist Agent** for Riksdagsmonitor generating **committee reports** analysis articles.
@@ -121,6 +139,20 @@ This focused approach ensures:
 - Smaller patch sizes (avoids safe_outputs failures)
 - Faster execution within timeout
 - Independent scheduling per article type
+
+## 🧠 Repo Memory
+
+This workflow uses **persistent repo-memory** on branch `memory/news-generation` (shared with all news workflows).
+
+**At run START — read context:**
+- Read `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` for today (and optionally yesterday) to check which dok_ids were already analyzed recently
+- Read `memory/news-generation/last-run-news-committee-reports.json` for previous run metadata
+- Skip documents already covered by another workflow to avoid duplicate analysis
+
+**At run END — write context:**
+- Update `memory/news-generation/last-run-news-committee-reports.json` with date, documents analyzed, quality score
+- Write processed dok_ids to `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` (sharded by date; retain last 7 days)
+- Update `memory/news-generation/translation-status.json` with new articles needing translation
 
 ## ⏱️ Time Budget (45 minutes)
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`

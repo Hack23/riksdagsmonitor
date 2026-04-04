@@ -1717,6 +1717,8 @@ tools:
 - [ ] Version MCP server APIs
 - [ ] Implement graceful degradation
 - [ ] Use timeout for all MCP operations
+- [ ] **Prefer `repo-memory:` and `cache-memory:` over `@modelcontextprotocol/server-memory`** — gh-aw native tools are persistent across runs; generic MCP memory is ephemeral per process
+- [ ] **Skip `@modelcontextprotocol/server-sequential-thinking`** — modern LLMs (Claude Opus 4.6, GPT-5) have native CoT; it wastes context tokens
 
 ---
 

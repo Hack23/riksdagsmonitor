@@ -534,8 +534,10 @@ grep "TCP_DENIED" /var/log/squid/access.log | tail -20
 
 **Solutions:**
 - Add domain to whitelist
-- Use wildcard: `*.example.com`
+- Use subdomain wildcard sparingly: `*.example.com` (for known trusted organizations only)
 - Check for typos in domain name
+
+> ⚠️ **NEVER use TLD-level wildcards** like `*.com`, `*.org`, `*.se`, `*.io` — these effectively disable the firewall by allowing all traffic to those TLDs. Always use explicit domain names (e.g., `api.example.com`, `data.example.se`) or scoped subdomain wildcards for trusted organizations only.
 
 #### 3. SSL Certificate Issues
 

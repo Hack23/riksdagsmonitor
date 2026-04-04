@@ -54,11 +54,16 @@ network:
     - api.scb.se
     - api.worldbank.org
     - data.riksdagen.se
+    - www.riksdagen.se
+    - riksdagen.se
+    - www.regeringen.se
+    - www.scb.se
     - regeringen.se
-    - "*.se"
-    - "*.com"
-    - "*.org"
-    - "*.io"
+    - hack23.com
+    - www.hack23.com
+    - riksdagsmonitor.com
+    - www.riksdagsmonitor.com
+    - hack23.github.io
     - default
 
 mcp-servers:
@@ -76,6 +81,12 @@ tools:
     toolsets:
       - all
   bash: true
+  repo-memory:
+    branch-name: memory/news-generation
+    allowed-extensions: [".md", ".json"]
+    max-file-size: 51200
+    max-file-count: 50
+    max-patch-size: 51200
 
 safe-outputs:
   report-failure-as-issue: false
@@ -85,13 +96,20 @@ safe-outputs:
     - api.worldbank.org
     - data.riksdagen.se
     - www.riksdagen.se
+    - riksdagen.se
     - www.regeringen.se
+    - www.scb.se
     - github.com
+    - hack23.com
+    - www.hack23.com
+    - riksdagsmonitor.com
+    - www.riksdagsmonitor.com
+    - hack23.github.io
   max-patch-size: 2048
   create-pull-request:
     labels: [agentic-news, translation]
     draft: false
-    expires: 14
+    expires: 14d
   add-comment: {}
 
 steps:
@@ -190,6 +208,7 @@ engine:
   id: copilot
   model: claude-opus-4.6
 ---
+
 # 🌐 News Article Translation Agent
 
 You are the **Translation Agent** for Riksdagsmonitor. Your primary focus is producing **excellent, faithful translations** of news articles into target languages. You do NOT generate original content — you translate existing articles. Additionally, as mandated by `analysis/methodologies/ai-driven-analysis-guide.md`, you MUST review and improve existing analysis artifacts during every workflow run — no workflow run is ever wasted.
@@ -300,6 +319,20 @@ news/translate/{YYYY-MM-DD}/{article-type}
 Example: `news/translate/2026-03-23/committee-reports`
 
 > **Note:** `safeoutputs___create_pull_request` handles branch creation automatically; this naming convention is documented for traceability and conflict avoidance.
+
+## 🧠 Repo Memory
+
+This workflow uses **persistent repo-memory** on branch `memory/news-generation` (shared with all news workflows).
+
+**At run START — read context:**
+- Read `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` for today (and optionally yesterday) to check which dok_ids were already analyzed recently
+- Read `memory/news-generation/last-run-news-translate.json` for previous run metadata
+- Skip documents already covered by another workflow to avoid duplicate analysis
+
+**At run END — write context:**
+- Update `memory/news-generation/last-run-news-translate.json` with date, documents analyzed, quality score
+- Write processed dok_ids to `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` (sharded by date; retain last 7 days)
+- Update `memory/news-generation/translation-status.json` with new articles needing translation
 
 ## ⏱️ Time Budget (60 minutes)
 
@@ -867,10 +900,20 @@ This section is the **canonical reference** for all translation quality standard
 5. **data-translate markers**: ZERO `data-translate="true"` spans allowed in final output
 
 ### Per-Language Requirements:
-- **RTL languages (ar, he)**: Ensure `dir="rtl"` on `<html>` and proper text direction
-- **CJK languages (ja, ko, zh)**: Use native script only, no romanization in body text
-- **Nordic languages (da, no, fi)**: Use language-specific parliamentary terms, not Swedish
-- **European languages (de, fr, es, nl)**: Use formal register appropriate for political journalism
+- **RTL languages (ar, he)**: Ensure `dir="rtl"` on `<html>` and proper text direction. Mirror CSS layout (flexbox `row-reverse` where applicable). Numerals stay LTR within RTL text.
+- **CJK languages (ja, ko, zh)**: Use native script only, no romanization in body text. Honorifics must follow target-language conventions (e.g., Japanese: 議員 not "MP"). CJK quotation marks (「」/『』 for ja, ""/''/《》 for zh).
+- **Nordic languages (da, no, fi)**: Use language-specific parliamentary terms, not Swedish. For Norwegian Bokmål, use file suffix/workflow input `no`, but set `lang="nb"` inside the HTML because the BCP-47 language tag is `nb`. Danish uses "Riksdagen" not "Riksdag". Finnish uses appropriate case suffixes for Swedish proper nouns.
+- **European languages (de, fr, es, nl)**: Use formal register appropriate for political journalism. German: compound nouns (e.g., "Regierungsvorschlag" not "Regierung Vorschlag"). French: accent-correct typography ("à", "é", "ç"). Spanish: formal "usted" register throughout.
+
+### Political Intelligence Translation Standards:
+Translated articles MUST maintain the same analytical rigor as the English source:
+- **SWOT tables**: Translate cell content, keep table structure intact. Do NOT simplify or summarize SWOT entries.
+- **Risk matrices**: Preserve L×I numeric scores. Translate risk descriptions and mitigations.
+- **Confidence labels**: Keep `[HIGH]`/`[MEDIUM]`/`[LOW]` as English tags (internationally recognized) OR translate to target language equivalent BUT be consistent within each article.
+- **dok_id references**: NEVER translate document identifiers (Prop., Bet., Mot., frs). These are official Swedish designations.
+- **Mermaid diagrams**: Translate node labels while keeping the Mermaid syntax structure intact. Colors and arrow directions must be preserved.
+- **Chart.js data**: Translate label strings in `canvas[data-chart-config]` JSON. Do NOT modify numeric data values.
+- **Forward indicators**: Translate the indicator text but preserve dates, committee names (in Swedish), and significance labels.
 
 ### Localized Section Headings (use CONTENT_LABELS):
 Instead of English section headings, use localized equivalents from `scripts/data-transformers/constants/content-labels-part1.ts` and `content-labels-part2.ts`:
@@ -901,6 +944,17 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 - "Why It Matters" analysis MUST be translated, not removed or simplified
 - Statistical data and citations MUST be preserved identically
 - Policy implications and strategic context MUST be faithfully rendered
+- SWOT analysis tables MUST retain all 8 stakeholder perspectives (not reduced to fewer)
+- Risk matrix scores (L×I) MUST be numerically identical across all language versions
+- Forward indicators MUST preserve exact dates, timeline ranges, and trigger events
+- Confidence labels MUST appear on every analytical claim (same as EN source)
+- Inter-article cross-references (links to other Riksdagsmonitor articles) MUST use the correct language-specific URL path
+
+### Cross-Language Consistency:
+- Same article in all 14 languages must convey identical factual content
+- Analytical conclusions must not be softened or strengthened vs. the EN source
+- Manually compare key sections (SWOT, risk matrix, forward indicators) across language versions to verify parity
+- Every translated article MUST include correct `hreflang` links to all other language versions
 
 ### Bash Validation Commands:
 ```bash

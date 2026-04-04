@@ -2,6 +2,20 @@
 
 > **Internal reference document** — Not a live workflow. Copy-paste these standardised blocks into every `news-*.md` workflow to ensure consistency.
 
+## 🌐 Hack23 Ecosystem Context
+
+Riksdagsmonitor is part of the **Hack23** platform for democratic transparency and political intelligence. When generating articles and analysis, link to and reference these resources:
+
+| Resource | URL | Purpose |
+|----------|-----|---------|
+| **Hack23 Main Site** | https://hack23.com | Company homepage, ISMS documentation |
+| **Riksdagsmonitor** | https://riksdagsmonitor.com | Political intelligence news platform |
+| **GitHub Pages** | https://hack23.github.io | Open-source project documentation |
+| **CIA Platform** | https://hack23.github.io/cia/ | Citizen Intelligence Agency — historical data |
+| **GitHub Repo** | https://github.com/Hack23/riksdagsmonitor | Source code and analysis data |
+
+Articles MAY include links to these sites when contextually relevant (e.g., linking to historical data, methodology documentation, or the live site).
+
 ---
 
 ## 🔒 ARTICLE TYPE ISOLATION — Absolute Enforcement
@@ -658,6 +672,54 @@ Before generating articles, consult these skills:
 8. **`scripts/prompts/v2/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
 9. **`scripts/prompts/v2/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
 ```
+
+## 🧠 Repo Memory — Persistent Cross-Workflow Context (copy into every workflow)
+
+> **All workflows share branch `memory/news-generation`** — git-backed, persistent across runs, version-controlled. Unlike ephemeral MCP servers that die when the process ends, repo-memory survives indefinitely and is readable by every workflow in the repository.
+
+````markdown
+### Repo Memory Usage
+
+All workflows have access to `repo-memory` on the shared branch `memory/news-generation`.
+Use it to maintain cross-workflow context: what was covered, what's pending, quality scores, and recurring patterns.
+
+**Shared branch `memory/news-generation`** means:
+- Breaking news knows what weekly review already covered
+- Translations know which articles are pending
+- Evening analysis knows what propositions/motions workflows produced today
+- Weekly/monthly reviews can see cumulative quality trends
+
+**When to READ memory (start of every run):**
+1. Check `memory/news-generation/last-run-{workflow-name}.json` for previous run metadata
+2. Read `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` for today (and optionally yesterday) to avoid re-analyzing documents already covered recently
+3. Read `memory/news-generation/quality-scores-summary.json` for rolling quality trends
+
+**When to WRITE memory (end of every run):**
+1. Update `memory/news-generation/last-run-{workflow-name}.json` with:
+   - `date`, `article_type`, `documents_analyzed` (array of dok_ids), `articles_generated` (count), `quality_score`
+2. Write today's processed documents to `memory/news-generation/covered-documents/{YYYY-MM-DD}.json`:
+   - Each dok_id processed today with article_type and timestamp
+   - Sharded by date to prevent unbounded growth; retain only recent shards (last 7 days) for deduplication
+3. Write detailed quality metrics to `memory/news-generation/quality-scores/{YYYY-MM-DD}.json` and update `memory/news-generation/quality-scores-summary.json` with compact rolling aggregates
+   - Prune old shards beyond the retention window your workflow needs
+
+**File naming convention:**
+- `last-run-{workflow-name}.json` — per-workflow state (e.g., `last-run-news-propositions.json`)
+- `covered-documents/{YYYY-MM-DD}.json` — cross-workflow deduplication index, sharded by date
+- `quality-scores/{YYYY-MM-DD}.json` — detailed quality tracking, sharded by date
+- `quality-scores-summary.json` — compact rolling aggregates (kept small)
+- `translation-status.json` — tracks which articles need translation (used by news-translate)
+
+**Example: Deduplication across workflows**
+```jsonc
+// covered-documents/2026-04-04.json
+{
+  "H901FiU1": { "workflow": "news-committee-reports", "timestamp": "2026-04-04T06:15:00Z" },
+  "H902Prop45": { "workflow": "news-propositions", "timestamp": "2026-04-04T07:30:00Z" }
+}
+```
+Before analyzing a document, check if its dok_id already appears in today's shard. If so, skip or cross-reference.
+````
 
 ## Standardised Analysis Depth Gate (copy into every workflow)
 

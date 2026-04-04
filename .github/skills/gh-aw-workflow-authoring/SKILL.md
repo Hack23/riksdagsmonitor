@@ -924,19 +924,54 @@ on:
 
 ### Scheduling Best Practices
 
-Use explicit cron syntax in workflow frontmatter (this repo's convention):
+**Prefer fuzzy schedules** over fixed cron to distribute workflow execution times and reduce load spikes:
+
+```markdown
+---
+on:
+  schedule: daily on weekdays              # Recommended: Mon-Fri, auto-distributed
+  schedule: daily around 9:00 on weekdays  # With approximate time hint
+  schedule: weekly on friday around 7:00   # Weekly with day and time
+  schedule: every 6 hours                  # Periodic interval
+---
+```
+
+The compiler converts fuzzy schedules to deterministic cron expressions, scattering execution times automatically. This avoids the "Monday wall of work" problem where weekend tasks pile up.
+
+**Use fixed cron only when** the exact time matters (e.g., monthly runs on specific dates):
 
 ```markdown
 ---
 on:
   schedule:
-    - cron: "0 0 * * *"       # Once per day at midnight
-  #   - cron: "0 9 * * 1-5"   # Weekdays at 9am
-  #   - cron: "0 */6 * * *"   # Every 6 hours
+    - cron: "0 8 1 * *"    # 1st of month — no fuzzy equivalent
+    - cron: "0 10 28 * *"  # 28th of month
 ---
 ```
 
-Stagger schedules to avoid resource contention. Use `timeout-minutes: 5` for quick tasks, `timeout-minutes: 30` for complex analysis.
+Stagger schedules to avoid resource contention. Use `timeout-minutes: 5` for quick tasks, `timeout-minutes: 45` for complex analysis.
+
+### Cross-Run Memory Patterns
+
+gh-aw provides three built-in memory mechanisms (prefer these over `@modelcontextprotocol/server-memory` which is ephemeral per run):
+
+| Mechanism | Persistence | Scope | Use Case |
+|-----------|------------|-------|----------|
+| `repo-memory:` | Git-backed, permanent | Cross-workflow via shared branch | Shared state across workflows (e.g., dedup indexes, quality scores) |
+| `cache-memory:` | GitHub Actions cache, ~7 days | Per-workflow or shared via key | Session state, intermediate results |
+| `cache:` | GitHub Actions cache | Per-workflow | Dependencies, build artifacts |
+
+**Recommended: `repo-memory:`** for cross-workflow context:
+```yaml
+tools:
+  repo-memory:
+    branch-name: memory/my-project
+    allowed-extensions: [".md", ".json"]
+    max-file-size: 10240
+    max-file-count: 100
+```
+
+**Avoid:** `@modelcontextprotocol/server-memory` — dies when the process ends, lost every run. Also skip `@modelcontextprotocol/server-sequential-thinking` — Claude has native CoT reasoning; it wastes context tokens.
 
 ## 📚 References
 

@@ -28,6 +28,18 @@ This methodology guide defines how AI agents perform **per-file political intell
 
 > *"The quality standard for every analysis file is [SWOT.md](../../SWOT.md) and [THREAT_MODEL.md](../../THREAT_MODEL.md) — rich formatting, evidence-based claims, actionable intelligence, and visual clarity through Mermaid diagrams."*
 
+### Hack23 Ecosystem Integration
+
+Riksdagsmonitor is part of the **Hack23** democratic transparency platform. Analysis should reference and link to these resources when contextually relevant:
+
+| Resource | URL | Use in Analysis |
+|----------|-----|-----------------|
+| **Hack23** | https://hack23.com | Company & ISMS documentation |
+| **Riksdagsmonitor** | https://riksdagsmonitor.com | Live political intelligence platform |
+| **CIA Platform** | https://hack23.github.io/cia/ | Historical politician data, voting records |
+| **GitHub Pages** | https://hack23.github.io | Open-source project documentation |
+| **Source Repo** | https://github.com/Hack23/riksdagsmonitor | Analysis methodology, raw data |
+
 ---
 
 ## 🔴 ABSOLUTE RULES (Violations = Rejected Output)

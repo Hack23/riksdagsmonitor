@@ -691,9 +691,33 @@ For each translated article, verify:
 - [ ] Natural flow in target language
 - [ ] Cultural references adapted or explained
 - [ ] Political intelligence tone preserved (analytical, crisp, data-driven)
+- [ ] All SWOT table entries translated (not summarized or removed)
+- [ ] Risk matrix L×I scores preserved numerically
+- [ ] Confidence labels ([HIGH]/[MEDIUM]/[LOW]) present on all analytical claims
+- [ ] Mermaid diagram labels translated, structure preserved
+- [ ] Chart.js data labels translated, numeric values unchanged
+- [ ] Forward indicators: dates and committee names preserved, text translated
+- [ ] dok_id references (Prop., Bet., Mot., frs) kept as-is (official Swedish designations)
+- [ ] Party abbreviations (S, M, SD, V, MP, C, L, KD) untranslated
+- [ ] hreflang links to all 14 language versions present
+- [ ] RTL direction set for Arabic/Hebrew articles
+- [ ] CJK articles use native quotation marks
+- [ ] Norwegian BCP-47 code is `nb` (not `no`)
+
+### Political Intelligence Translation Principles
+
+1. **Intelligence products are language-independent**: The factual content, analytical depth, and confidence assessments must be identical across all 14 language versions. A reader of the Arabic version must receive the same intelligence value as a reader of the English version.
+
+2. **Translate the analysis, not just the words**: Political intelligence requires understanding the meaning behind policy decisions. Translators must convey the strategic implications, not just the surface-level text. For example, "coalition fracture" in English should use the politically charged equivalent in each target language, not a neutral synonym.
+
+3. **Preserve the evidence chain**: Every dok_id citation, vote count, committee reference, and named politician must appear in the translation exactly as in the source. The evidence chain is the foundation of intelligence credibility.
+
+4. **Adapt cultural context, not analytical conclusions**: Some political concepts (e.g., "minority government", "confidence-and-supply agreement") may need brief contextual explanation in languages where the audience is less familiar with Nordic parliamentary systems. Add minimal context within the translated text rather than removing the analysis.
+
+5. **Maintain editorial voice consistency**: Riksdagsmonitor uses OSINT/INTOP political intelligence editorial standards. The tone should be: analytical (not emotional), evidence-based (not opinion-driven), forward-looking (not merely retrospective), and crisp (not verbose).
 
 ---
 
 **Data Source**: Analysis of 81 translated news articles (Feb 2026)  
 **Style Guide**: OSINT/INTOP political intelligence editorial standards (adapted for 14 languages)  
-**Last Updated**: 2026-02-15
+**Last Updated**: 2026-04-04
