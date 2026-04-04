@@ -23,9 +23,9 @@
  * @license Apache-2.0
  */
 
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
-import { existsSync, readdirSync } from 'node:fs';
+import { existsSync } from 'node:fs';
 
 /** Urgency label for political significance assessment */
 export type UrgencyLabel = 'breaking' | 'major' | 'standard' | 'background';
@@ -563,7 +563,7 @@ async function readAnalysisFile(date: string, filename: string, basePath?: strin
   // Scan immediate subdirectories for the file (e.g., deep-inspection/, propositions/)
   const dateDir = join(resolvedBase, date);
   try {
-    const entries = readdirSync(dateDir, { withFileTypes: true });
+    const entries = await readdir(dateDir, { withFileTypes: true });
     for (const entry of entries) {
       if (!entry.isDirectory()) continue;
       const subPath = join(dateDir, entry.name, filename);
@@ -673,7 +673,7 @@ export async function findLatestAnalysisDate(maxDaysBack = 7, basePath?: string)
 
       // Check subdirectories (e.g., deep-inspection/, propositions/)
       try {
-        const entries = readdirSync(dirPath, { withFileTypes: true });
+        const entries = await readdir(dirPath, { withFileTypes: true });
         for (const entry of entries) {
           if (!entry.isDirectory()) continue;
           const hasSubFile = Object.values(ANALYSIS_FILES).some(
