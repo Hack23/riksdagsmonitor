@@ -25,7 +25,7 @@
 
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { existsSync } from 'node:fs';
+import { existsSync, readdirSync } from 'node:fs';
 
 /** Urgency label for political significance assessment */
 export type UrgencyLabel = 'breaking' | 'major' | 'standard' | 'background';
@@ -545,18 +545,38 @@ const DATE_FORMAT_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 /**
  * Attempt to read a markdown file from the analysis directory.
+ * First checks `analysis/daily/{date}/{filename}`, then scans immediate
+ * subdirectories (e.g., `deep-inspection/`, `propositions/`) for the file.
  * Returns `null` if the file does not exist, cannot be read, or `date` is
  * not a valid YYYY-MM-DD string (guards against path traversal).
  */
 async function readAnalysisFile(date: string, filename: string, basePath?: string): Promise<string | null> {
   if (!DATE_FORMAT_RE.test(date)) return null;
   const resolvedBase = basePath ?? ANALYSIS_BASE_PATH;
-  const filePath = join(resolvedBase, date, filename);
+  const rootPath = join(resolvedBase, date, filename);
   try {
-    return await readFile(filePath, 'utf-8');
+    return await readFile(rootPath, 'utf-8');
   } catch {
-    return null;
+    // Root-level file not found — scan subdirectories
   }
+
+  // Scan immediate subdirectories for the file (e.g., deep-inspection/, propositions/)
+  const dateDir = join(resolvedBase, date);
+  try {
+    const entries = readdirSync(dateDir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (!entry.isDirectory()) continue;
+      const subPath = join(dateDir, entry.name, filename);
+      try {
+        return await readFile(subPath, 'utf-8');
+      } catch {
+        // Not in this subdirectory — continue
+      }
+    }
+  } catch {
+    // Date directory doesn't exist or can't be read
+  }
+  return null;
 }
 
 // ---------------------------------------------------------------------------
@@ -647,9 +667,23 @@ export async function findLatestAnalysisDate(maxDaysBack = 7, basePath?: string)
     const dateStr = d.toISOString().split('T')[0]!;
     const dirPath = join(resolvedBase, dateStr);
     if (existsSync(dirPath)) {
-      // Check at least one analysis file exists
-      const hasFile = Object.values(ANALYSIS_FILES).some(f => existsSync(join(dirPath, f)));
-      if (hasFile) return dateStr;
+      // Check root-level analysis files first
+      const hasRootFile = Object.values(ANALYSIS_FILES).some(f => existsSync(join(dirPath, f)));
+      if (hasRootFile) return dateStr;
+
+      // Check subdirectories (e.g., deep-inspection/, propositions/)
+      try {
+        const entries = readdirSync(dirPath, { withFileTypes: true });
+        for (const entry of entries) {
+          if (!entry.isDirectory()) continue;
+          const hasSubFile = Object.values(ANALYSIS_FILES).some(
+            f => existsSync(join(dirPath, entry.name, f)),
+          );
+          if (hasSubFile) return dateStr;
+        }
+      } catch {
+        // Can't read subdirectories — skip
+      }
     }
   }
   return null;
