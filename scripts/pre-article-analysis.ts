@@ -163,8 +163,16 @@ export function parseArgs(argv: string[]): {
   // analysis regardless of their date, ensuring deep-inspection batch analysis
   // files contain real content instead of "0 documents analyzed".
   const documentIdsArg = get('--document-ids');
+  const DOK_ID_PATTERN = /^[A-Za-z0-9_-]+$/;
   const documentIds = documentIdsArg
-    ? documentIdsArg.split(',').map(id => id.trim()).filter(Boolean)
+    ? documentIdsArg.split(',').map(id => id.trim()).filter(id => {
+        if (!id) return false;
+        if (!DOK_ID_PATTERN.test(id)) {
+          console.warn(`⚠️ Skipping invalid document ID: ${id} (must be alphanumeric/hyphens/underscores only)`);
+          return false;
+        }
+        return true;
+      })
     : [];
 
   return { date: isoDate, aggregate, limit, weekLabel, rm, docType, documentIds };

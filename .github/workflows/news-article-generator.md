@@ -321,6 +321,8 @@ echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 PIPELINE_EXTRA_ARGS=""
 if echo "${RAW_REQUESTED_TYPE:-${{ github.event.inputs.article_types }}}" | grep -q "deep-inspection"; then
   DI_DOC_IDS="${{ github.event.inputs.document_ids }}"
+  # Sanitize: only allow alphanumeric, hyphens, commas (valid Riksdag dok_id characters)
+  DI_DOC_IDS=$(echo "$DI_DOC_IDS" | tr -cd 'A-Za-z0-9,_-')
   [ -n "$DI_DOC_IDS" ] && PIPELINE_EXTRA_ARGS="--document-ids $DI_DOC_IDS"
 fi
 source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 $PIPELINE_EXTRA_ARGS 2>&1 | tee /tmp/pipeline-output.log
