@@ -54,6 +54,7 @@ network:
     - api.worldbank.org
     - data.riksdagen.se
     - www.riksdagen.se
+    - riksdagen.se
     - www.regeringen.se
     - www.scb.se
     - regeringen.se
@@ -98,6 +99,7 @@ safe-outputs:
     - api.worldbank.org
     - data.riksdagen.se
     - www.riksdagen.se
+    - riksdagen.se
     - www.regeringen.se
     - www.scb.se
     - github.com

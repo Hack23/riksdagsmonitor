@@ -691,33 +691,34 @@ Use it to maintain cross-workflow context: what was covered, what's pending, qua
 
 **When to READ memory (start of every run):**
 1. Check `memory/news-generation/last-run-{workflow-name}.json` for previous run metadata
-2. Read `memory/news-generation/covered-documents.json` to avoid re-analyzing documents already covered today
-3. Read `memory/news-generation/quality-scores.json` to track improvement trends
+2. Read `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` for today (and optionally yesterday) to avoid re-analyzing documents already covered recently
+3. Read `memory/news-generation/quality-scores-summary.json` for rolling quality trends
 
 **When to WRITE memory (end of every run):**
 1. Update `memory/news-generation/last-run-{workflow-name}.json` with:
    - `date`, `article_type`, `documents_analyzed` (array of dok_ids), `articles_generated` (count), `quality_score`
-2. Append to `memory/news-generation/covered-documents.json`:
+2. Write today's processed documents to `memory/news-generation/covered-documents/{YYYY-MM-DD}.json`:
    - Each dok_id processed today with article_type and timestamp
-3. Update `memory/news-generation/quality-scores.json` with cumulative quality metrics
+   - Sharded by date to prevent unbounded growth; retain only recent shards (last 7 days) for deduplication
+3. Write detailed quality metrics to `memory/news-generation/quality-scores/{YYYY-MM-DD}.json` and update `memory/news-generation/quality-scores-summary.json` with compact rolling aggregates
+   - Prune old shards beyond the retention window your workflow needs
 
 **File naming convention:**
 - `last-run-{workflow-name}.json` — per-workflow state (e.g., `last-run-news-propositions.json`)
-- `covered-documents.json` — cross-workflow deduplication index
-- `quality-scores.json` — quality tracking across all workflows
+- `covered-documents/{YYYY-MM-DD}.json` — cross-workflow deduplication index, sharded by date
+- `quality-scores/{YYYY-MM-DD}.json` — detailed quality tracking, sharded by date
+- `quality-scores-summary.json` — compact rolling aggregates (kept small)
 - `translation-status.json` — tracks which articles need translation (used by news-translate)
 
 **Example: Deduplication across workflows**
 ```jsonc
-// covered-documents.json
+// covered-documents/2026-04-04.json
 {
-  "2026-04-04": {
-    "H901FiU1": { "workflow": "news-committee-reports", "timestamp": "2026-04-04T06:15:00Z" },
-    "H902Prop45": { "workflow": "news-propositions", "timestamp": "2026-04-04T07:30:00Z" }
-  }
+  "H901FiU1": { "workflow": "news-committee-reports", "timestamp": "2026-04-04T06:15:00Z" },
+  "H902Prop45": { "workflow": "news-propositions", "timestamp": "2026-04-04T07:30:00Z" }
 }
 ```
-Before analyzing a document, check if its dok_id already appears in today's entries. If so, skip or cross-reference.
+Before analyzing a document, check if its dok_id already appears in today's shard. If so, skip or cross-reference.
 ````
 
 ## Standardised Analysis Depth Gate (copy into every workflow)
