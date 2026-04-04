@@ -1,11 +1,11 @@
 # Weekly Analysis Aggregation — 2026-W14
 
-**Generated**: 2026-04-03 07:28 UTC
+**Generated**: 2026-04-04 09:14 UTC
 **Data Sources**: Aggregated from daily synthesis summaries
-**Documents Analyzed**: 81
+**Documents Analyzed**: 151
 **Confidence**: HIGH
 **Period**: 2026-W14
-**Days Included**: 5
+**Days Included**: 6
 
 ## Summary
 
@@ -446,11 +446,547 @@ See `threat-analysis.md` for detailed taxonomy. Primary threats:
 
 ---
 
-## Day: 2026-04-03
+## Day: 2026-04-03 (committeeReports)
+
+# 🧩 Political Intelligence Synthesis — Committee Reports
+
+## 📋 Synthesis Context
+
+| Field | Value |
+|-------|-------|
+| **Synthesis ID** | SYN-2026-04-02-CR01 |
+| **Analysis Date** | 2026-04-03 04:52 UTC |
+| **Documents Analyzed** | 2 |
+| **Analysis Period** | 2026-04-02 committee reports |
+| **Produced By** | news-committee-reports |
+| **Overall Confidence** | MEDIUM |
+
+---
+
+## 📊 Intelligence Dashboard
+
+```mermaid
+graph TD
+    subgraph "📊 Committee Reports Intelligence Dashboard — 2026-04-02"
+        direction TB
+        subgraph "🔒 Sensitivity"
+            SEN1["🟢 JuU15<br/>Criminal Corrections<br/>PUBLIC"]
+            SEN2["🟡 FöU12<br/>Civilian Protection<br/>SENSITIVE"]
+        end
+        subgraph "⚠️ Risk Level"
+            RSK1["🟡 JuU15<br/>MEDIUM<br/>Opposition unity risk"]
+            RSK2["🟠 FöU12<br/>HIGH<br/>Implementation risk"]
+        end
+        subgraph "📈 Significance"
+            SIG1["JuU15: 6/10<br/>Opposition coordination"]
+            SIG2["FöU12: 8/10<br/>Landmark legislation"]
+        end
+    end
+
+    style SEN1 fill:#28a745,color:#fff
+    style SEN2 fill:#ffc107,color:#000
+    style RSK1 fill:#ffc107,color:#000
+    style RSK2 fill:#fd7e14,color:#fff
+    style SIG1 fill:#007bff,color:#fff
+    style SIG2 fill:#dc3545,color:#fff
+```
+
+---
+
+## 🔑 Cross-Document Patterns
+
+### Theme 1: Defence-Security Modernization Cluster
+
+Both reports form part of the government's broader security modernization agenda. FöU12 directly implements Prop. 2025/26:142 on civilian protection, while JuU15 addresses criminal corrections infrastructure that is part of the government's "trygghet" (safety/security) narrative. The government is simultaneously expanding physical civilian shelter capacity (FöU12) and rejecting demands for expanded criminal corrections capacity (JuU15) — a prioritization signal: defence over criminal justice reform.
+
+### Theme 2: Opposition Unity Patterns
+
+Both reports feature joint S, V, C, MP reservations (8 in JuU15, 6 in FöU12), indicating sustained opposition coordination. Notably:
+- **JuU15 Reservation 1** (S, V, C, MP jointly) on Trygghetsberedningen — full opposition unity
+- **FöU12 Reservations 2-4** — V, C, and MP independently raise disability accessibility, suggesting genuine cross-party concern rather than coordinated opposition
+
+### Theme 3: Implementation Capacity Stress
+
+Both reports expose municipal/agency implementation capacity as a systemic concern:
+- **FöU12**: June 1, 2026 deadline for shelter law — 2-month window for municipalities
+- **JuU15**: Prison capacity constraints acknowledged but 76 reform motions rejected
+
+---
+
+## 🏆 Document Significance Ranking
+
+| Rank | dok_id | Title | Score | Rationale |
+|------|--------|-------|:-----:|-----------|
+| 1 | HD01FöU12 | Stronger Protection for Civilians During Heightened Preparedness | 8/10 | Landmark legislation creating new civil defence framework; direct citizen and municipal impact; NATO context; June 2026 implementation deadline |
+| 2 | HD01JuU15 | Criminal Corrections Issues | 6/10 | 76 motions rejected with 8 reservations; opposition unity on Trygghetsberedningen; signals policy delivery gap in corrections |
+
+---
+
+## 🔄 Aggregate SWOT
+
+### Government Coalition — Combined Assessment
+
+| Quadrant | Key Finding | Evidence |
+|----------|-------------|----------|
+| **Strengths** | Successfully advances major civil defence legislation while maintaining committee control on criminal justice | FöU12 endorsed; JuU15 all motions rejected |
+| **Weaknesses** | Implementation capacity questionable — tight June 2026 deadline for FöU12; 76 unanswered corrections demands in JuU15 | FöU12 Reservation 1; JuU15 motion rejection |
+| **Opportunities** | Civil protection law strengthens NATO credibility; security policy wins heading into 2026 election cycle | FöU12 modernization; broader defence investment narrative |
+| **Threats** | Disability accessibility triple-flag (V, C, MP independently) could become cross-party consensus issue; corrections overcrowding risks | FöU12 Reservations 2-4; JuU15 capacity pressures |
+
+---
+
+## ⚠️ Risk Interconnections
+
+```mermaid
+graph LR
+    A["Municipal capacity<br/>stress (FöU12)"] --> B["Implementation<br/>delays"]
+    C["Corrections capacity<br/>gap (JuU15)"] --> D["Public safety<br/>concerns"]
+    B --> E["Government credibility<br/>on security agenda"]
+    D --> E
+    E --> F["Electoral risk<br/>2026"]
+
+    style A fill:#fd7e14,color:#fff
+    style C fill:#ffc107,color:#000
+    style E fill:#dc3545,color:#fff
+    style F fill:#dc3545,color:#fff
+```
+
+---
+
+## 🔮 Forward Intelligence
+
+| # | What to Watch | Trigger | Timeline | Confidence |
+|---|---------------|---------|----------|:----------:|
+| 1 | Chamber votes on FöU12 and JuU15 — watch for roll-call dynamics | Kammarens scheduling | 1-2 weeks | HIGH |
+| 2 | MSB shelter readiness reporting ahead of June 1 law effective date | MSB press release or riksdag inquiry | April-May 2026 | HIGH |
+| 3 | Trygghetsberedningen final report — could reset criminal justice debate | SOU publication | Q2-Q3 2026 | MEDIUM |
+| 4 | Kriminalvården monthly capacity statistics — approaching 100% occupancy? | BRÅ/Kriminalvården reporting | Monthly | HIGH |
+| 5 | Related defence propositions: Prop. 2025/26:214 (cybersecurity), Prop. 2025/26:228 (arms export) | FöU committee processing | Q2 2026 | MEDIUM |
+
+---
+
+**Document Control:** Synthesis generated 2026-04-03 04:52 UTC by news-committee-reports. Classification: PUBLIC. Valid until 2026-04-16.
+
+
+---
+
+## Day: 2026-04-03 (interpellations)
+
+# Analysis Synthesis Summary — 2026-04-02
+
+**Generated**: 2026-04-02 07:28 UTC | **Enhanced**: 2026-04-02 (AI deep analysis)
+**Data Sources**: riksdag-regering-mcp get_interpellationer (rm=2025/26, limit=20)
+**Documents Analyzed**: 20
+**Confidence**: MEDIUM — based on 20 most recent interpellations (of 428 total in 2025/26)
+**Riksmöte**: 2025/26
+**Analysis Depth**: deep
+
+## Summary
+
+Analysis of 20 recent interpellations (2026-03-25 to 2026-04-02) reveals **intensifying opposition scrutiny of the Tidö government's infrastructure, integration, and social welfare policies**. The Social Democrats (S) dominate with 16 of 20 interpellations, supported by Left Party (V, 3) and Green Party (MP, 1). Infrastructure Minister Andreas Carlson (KD) faces the heaviest pressure with 7 interpellations targeting transport and regional aviation.
+
+```mermaid
+pie title Interpellations by Party (2026-03-25 to 2026-04-02)
+    "S (Social Democrats)" : 16
+    "V (Left Party)" : 3
+    "MP (Green Party)" : 1
+```
+
+```mermaid
+flowchart LR
+    subgraph Opposition["Opposition Scrutiny Pattern"]
+        S["S (16 interpellations)"]
+        V["V (3 interpellations)"]
+        MP["MP (1 interpellation)"]
+    end
+    subgraph Ministers["Government Ministers Targeted"]
+        AC["Carlson KD (7)"]:::kd
+        ES["Svantesson M (3)"]:::m
+        CWG["Waltersson Grönvall M (2)"]:::m
+        Other["Others (8)"]:::other
+    end
+    subgraph Themes["Policy Domains"]
+        Infra["Infrastructure/Transport"]
+        Social["Social Welfare"]
+        Integ["Integration"]
+        Foreign["Foreign Policy"]
+        Defence["Defence"]
+    end
+    S --> AC
+    S --> ES
+    S --> Other
+    V --> CWG
+    V --> AC
+    MP --> CWG
+    AC --> Infra
+    AC --> Defence
+    ES --> Integ
+    CWG --> Social
+    Other --> Foreign
+
+    classDef kd fill:#1a73e8,color:#fff
+    classDef m fill:#003f87,color:#fff
+    classDef other fill:#666,color:#fff
+```
+
+## Key Findings
+
+1. **[HIGH] Infrastructure dominance**: 7 of 20 interpellations target infrastructure/transport policy — Carlson (KD) is the most pressured minister
+2. **[HIGH] Defence-infrastructure nexus**: HD10425 (Kalle Olsson, S) exposes critical gap in cost allocation for military base infrastructure — Trafikverket threatening to delay defence expansion
+3. **[MEDIUM] Social welfare scrutiny**: V party leads on disability rights (HD10411, HD10412, HD10416) — targeting both M and KD ministers
+4. **[MEDIUM] Integration debate intensifying**: 3 interpellations (HD10420-HD10422) from Lawen Redar (S) challenge government's integration and labour policies
+5. **[MEDIUM] Foreign policy accountability**: HD10426 (Azra Muranovic, S) demands diplomatic response to Israel's death penalty legislation
+6. **[LOW] Regional aviation crisis**: HD10424 and HD10428 highlight Trafikverket's proposed cuts to regional air routes with defence implications
+
+## Top Documents by Significance
+
+| Score | dok_id | Title | Filed By | Target Minister |
+|-------|--------|-------|----------|----------------|
+| 8/10 | HD10425 | Infrastructure costs at defence establishments | Kalle Olsson (S) | Carlson (KD) |
+| 7/10 | HD10426 | Israel's death penalty laws | Azra Muranovic (S) | Malmer Stenergard (M) |
+| 7/10 | HD10422 | Government labour and integration policy | Lawen Redar (S) | Britz (L) |
+| 6/10 | HD10427 | Postnord and state ownership policy | Isak From (S) | Svantesson (M) |
+| 6/10 | HD10416 | Funktionsrätt Sverige review | Nadja Awad (V) | Waltersson Grönvall (M) |
+| 5/10 | HD10420 | Police authority conduct | Lawen Redar (S) | Strömmer (M) |
+| 5/10 | HD10428 | Emergency preparedness airport | Peter Hultqvist (S) | Carlson (KD) |
+| 5/10 | HD10419 | Södertälje motorway bridge | Ingela Nylund Watz (S) | Jonson (M) |
+
+## Minister Accountability Scorecard
+
+| Minister | Party | Interpellations | Response Deadline | Status |
+|----------|-------|----------------|-------------------|--------|
+| Andreas Carlson (KD) | KD | 7 | 2026-04-21 to 2026-04-27 | ⏳ Pending |
+| Elisabeth Svantesson (M) | M | 3 | 2026-04-22 | ⏳ Pending |
+| Camilla Waltersson Grönvall (M) | M | 2 | TBD | ⏳ Pending |
+| Gunnar Strömmer (M) | M | 1 | TBD | ⏳ Pending |
+| Johan Britz (L) | L | 1 | TBD | ⏳ Pending |
+| Maria Malmer Stenergard (M) | M | 1 | 2026-04-22 | ⏳ Pending |
+| Ebba Busch (KD) | KD | 1 | TBD | ⏳ Pending |
+| Elisabet Lann (KD) | KD | 1 | TBD | ⏳ Pending |
+| Erik Slottner (KD) | KD | 1 | TBD | ⏳ Pending |
+| Pål Jonson (M) | M | 1 | TBD | ⏳ Pending |
+
+## Forward Indicators
+
+1. **[HIGH]** Minister Carlson's response to 7 interpellations due by April 21-27 — watch for pattern of evasion vs concrete policy commitments
+2. **[MEDIUM]** Redar's triple-interpellation strategy (HD10420-422) targeting integration policy — signals S election campaign framing
+3. **[MEDIUM]** V party disability rights offensive (3 interpellations in 1 day) — coordinated pressure on social welfare ministers
+4. **[LOW]** Foreign policy interpellation on Israel (HD10426) — test of government's diplomatic positioning ahead of EU Foreign Affairs Council
+
+## Implications
+
+- Opposition parties (S, V, MP) are coordinating a multi-front scrutiny campaign ahead of the 2026 election
+- Infrastructure policy is the primary battleground, with defence implications adding urgency
+- The pattern suggests S is building a narrative of government neglect of regional Sweden and public services
+
+## Data Quality Notes
+
+Overall confidence: **MEDIUM**. Full-text available for 5 of 20 interpellations. Remaining 15 analyzed from metadata/summaries. All analysis results are available in sibling files.
+
+
+---
+
+## Day: 2026-04-03 (motions)
 
 # Analysis Synthesis Summary — 2026-04-03
 
-**Generated**: 2026-04-03 07:27 UTC
+**ID**: SYNTH-2026-04-03-motions
+**Generated**: 2026-04-03 06:30 UTC
+**Data Sources**: riksdag-regering-mcp (get_motioner rm=2025/26)
+**Documents Analyzed**: 50
+**Analysis Period**: 2026-04-01
+**Workflow**: news-motions
+**Overall Confidence**: HIGH
+
+## 📊 Intelligence Dashboard
+
+```mermaid
+flowchart LR
+    subgraph Input["📥 Data Collection"]
+        A["50 Motions<br/>2026-04-01"]
+    end
+    subgraph Analysis["🔍 Analysis"]
+        B["Education Reform<br/>17 motions"]
+        C["Housing Policy<br/>9 motions"]
+        D["Finance/Industry<br/>10 motions"]
+        E["Social Welfare<br/>6 motions"]
+        F["Justice/Other<br/>8 motions"]
+    end
+    subgraph Output["📰 Editorial"]
+        G["Standard Article<br/>Opposition Strategy"]
+    end
+    A --> B & C & D & E & F
+    B & C & D & E & F --> G
+    style B fill:#dc3545,color:#fff
+    style C fill:#fd7e14,color:#fff
+    style D fill:#ffc107,color:#000
+    style E fill:#28a745,color:#fff
+    style F fill:#17a2b8,color:#fff
+```
+
+## 🏆 Top Findings by Significance
+
+| Rank | dok_id | Title | Significance | Risk Tier | Key Impact |
+|------|--------|-------|-------------|-----------|------------|
+| 1 | HD024011 | Flexible rental market (prop. 187) | 7/10 | 🟠 MEDIUM | S opposes deposit/security changes — housing affordability |
+| 2 | HD024052 | Benefit lock & sanctions (prop. 210) | 7/10 | 🟠 MEDIUM | MP rejects entire proposition — welfare state principles |
+| 3 | HD024062 | Enhanced societal protection (prop. 181) | 6/10 | 🟡 LOW-MED | V challenges criminal sentencing reform |
+| 4 | HD024025 | Equal grading system (prop. 197) | 6/10 | 🟡 LOW-MED | S+C+MP all filed competing motions on grading |
+| 5 | HD024026 | Rural Sweden policy (prop. 158) | 6/10 | 🟡 LOW-MED | S+C+MP+V all challenge rural development approach |
+
+## 💪 Aggregated SWOT Summary
+
+```mermaid
+quadrantChart
+    title Opposition Motion Strategy Balance
+    x-axis "Internal Focus" --> "External Focus"
+    y-axis "Defensive" --> "Offensive"
+    quadrant-1 "Opportunities"
+    quadrant-2 "Strengths"
+    quadrant-3 "Weaknesses"
+    quadrant-4 "Threats"
+    "Education coalition S+C+MP": [0.3, 0.8]
+    "Welfare state defense MP+V": [0.2, 0.6]
+    "Housing pushback S": [0.4, 0.7]
+    "Rural fragmentation": [0.7, 0.3]
+    "Opposition disunity": [0.3, 0.2]
+    "Criminal justice isolation V": [0.6, 0.4]
+```
+
+| Quadrant | Count | Highest-Impact Entry |
+|----------|-------|---------------------|
+| Strengths | 3 | Education reform: cross-party opposition (S, C, MP all challenge prop. 193-197) [HIGH] |
+| Weaknesses | 2 | Criminal justice: only V challenges prop. 181/185 — no broader opposition coalition [MEDIUM] |
+| Opportunities | 3 | Rural policy: 4-party convergence (S, C, MP, V) on prop. 158 could form united front [HIGH] |
+| Threats | 2 | Opposition fragmentation: MP dominates (40%) but fragmented across domains [MEDIUM] |
+
+**Balance Assessment**: Opposition shows strongest coordination on education policy where S, C, and MP filed parallel motions on the same propositions. Welfare and housing remain party-siloed (MP/V on welfare, S on housing). [HIGH confidence]
+
+## ⚖️ Risk Landscape Summary
+
+| Risk Category | Score Range | Highest Risk | Trend |
+|--------------|------------|-------------|-------|
+| Coalition Stability | 2-4 🟢 | Cross-party voting anomalies (KD-M 88.5%) | → Stable |
+| Policy Implementation | 3-5 🟡 | Education reforms face broad opposition | ↑ Rising |
+| Budget/Fiscal | 2-3 🟢 | No significant fiscal challenges | → Stable |
+| Electoral | 3-4 🟢 | Opposition coordination may shift polls | → Stable |
+| Democratic Process | 2-3 🟢 | Transparency debate (prop. 191) | → Stable |
+| External | 2-3 🟢 | Nordic cooperation scrutinized (skr. 90) | → Stable |
+
+## 👥 Stakeholder Impact Overview
+
+| Stakeholder | Impact | Direction | Key Driver |
+|------------|--------|-----------|------------|
+| Citizens | MEDIUM | Mixed | Education + housing reforms affect daily life |
+| Government Coalition | LOW-MEDIUM | Defensive | Must defend 15+ propositions simultaneously |
+| Opposition Bloc | MEDIUM | Offensive | Coordinated education push, fragmented elsewhere |
+| Business/Industry | LOW | Neutral | Procurement and fund market motions are technical |
+| International/EU | LOW | Neutral | Only Nordic cooperation skrivelse addressed |
+| Media/Public Opinion | MEDIUM | Watchful | Education reform debate likely to dominate coverage |
+
+## 🎯 Narrative Direction
+
+**Lede thesis**: Sweden's opposition parties filed 50 motions on April 1 targeting the government's sweeping education overhaul, with the Green Party (MP) leading a charge that spans school discipline to new curricula, while Social Democrats focus on housing and welfare policy. [HIGH confidence]
+
+**Primary angle**: Education dominates — 17 of 50 motions challenge 6 different education propositions, with unprecedented cross-party alignment between S, C, and MP on grading reform and school support.
+
+**Secondary angle**: Welfare state defense — MP and V jointly oppose the government's benefit sanctions (prop. 210), framing it as an ideological battle over trust-based vs. punitive social policy.
+
+## 🔮 Forward Indicators
+
+| Indicator | Timeline | Source | Watch Priority |
+|-----------|----------|--------|---------------|
+| UbU committee hearings on prop. 193-197 | April-May 2026 | Committee calendar | 🔴 HIGH |
+| CU processing of housing motions | April-June 2026 | Committee schedule | 🟠 MEDIUM |
+| SfU vote on benefit sanctions (prop. 210) | May-June 2026 | Riksdag calendar | 🟠 MEDIUM |
+| Rural policy debate in NU | April-May 2026 | Committee schedule | 🟡 LOW |
+
+## 📋 Analysis Artifacts Inventory
+
+| File | Status | Quality |
+|------|--------|---------|
+| classification-results.md | ✅ Complete | Script-generated, AI-enhanced |
+| risk-assessment.md | ✅ Complete | AI-rewritten with evidence |
+| swot-analysis.md | ✅ Complete | AI-rewritten with 8 stakeholders |
+| threat-analysis.md | ✅ Complete | AI-rewritten |
+| stakeholder-perspectives.md | ✅ Complete | AI-rewritten |
+| significance-scoring.md | ✅ Complete | AI-rewritten |
+| cross-reference-map.md | ✅ Complete | AI-rewritten |
+| Per-file analyses | ✅ 50/50 | Script-generated |
+
+## �� MCP Data Files Used
+
+| Path | Tool | Type | Freshness |
+|------|------|------|-----------|
+| get_motioner(rm=2025/26, limit=20) | riksdag-regering | API | Live (2026-04-03) |
+| get_sync_status() | riksdag-regering | API | Live |
+| 50× documents/*.json | pre-article-analysis | Cached | 2026-04-01 data |
+
+
+---
+
+## Day: 2026-04-03 (propositions)
+
+# 🧩 Political Intelligence Synthesis — Propositions
+
+## 📋 Synthesis Context
+
+| Field | Value |
+|-------|-------|
+| **Synthesis ID** | SYN-2026-04-03-PROP |
+| **Date** | 2026-04-03 |
+| **Riksmöte** | 2025/26 |
+| **Producer** | AI Analysis Pipeline (Propositions) |
+| **Documents Analyzed** | 3 |
+| **Confidence** | HIGH |
+| **Classification** | Public |
+| **Data Window** | 2026-04-01 → 2026-04-03 |
+
+## 📊 Intelligence Dashboard
+
+```mermaid
+graph TD
+    subgraph "Propositions Intelligence Overview"
+        S["🔒 Sensitivity<br/>SENSITIVE"]
+        R["⚠️ Risk Level<br/>MEDIUM-HIGH"]
+        T["🎭 Threat Level<br/>MEDIUM"]
+        SIG["📊 Significance<br/>HIGH (7.2/10)"]
+        D["📰 Decision<br/>PRIORITY PUBLISH"]
+    end
+    S --> R
+    R --> T
+    T --> SIG
+    SIG --> D
+    style S fill:#fd7e14,color:#fff
+    style R fill:#fd7e14,color:#fff
+    style T fill:#ffc107,color:#000
+    style SIG fill:#dc3545,color:#fff
+    style D fill:#28a745,color:#fff
+```
+
+## 📋 Top Documents by Significance
+
+| Rank | dok_id | Title | Type | Score | Decision | Minister |
+|------|--------|-------|------|-------|----------|----------|
+| 1 | HD03214 | Lagändringar för ett stärkt nationellt cybersäkerhetscenter | Proposition | 7/10 | 📰 Publish | Carl-Oskar Bohlin (M) |
+| 2 | HD03235 | Skärpta regler om utvisning på grund av brott | Proposition | 7/10 | 📰 Publish | Johan Forssell (M) |
+| 3 | HD03228 | Ett modernt och anpassat regelverk för krigsmateriel | Proposition | 7/10 | 📰 Publish | Benjamin Dousa (M) |
+
+## 🔍 Cross-Document Pattern Analysis
+
+### Pattern 1: Coordinated Security & Defense Modernization [HIGH confidence]
+
+The Tidö government is advancing a **coordinated defense and security legislative package** across three departments. HD03214 (cybersecurity center) and HD03228 (war materials regulation) form a paired defense modernization effort, while HD03235 (deportation rules) strengthens the internal security dimension.
+
+| # | Action | dok_id | Department | Confidence |
+|---|--------|--------|------------|------------|
+| 1 | Cybersecurity center — new inter-agency coordination law | HD03214 | Försvarsdepartementet | HIGH |
+| 2 | War materials export modernization | HD03228 | Utrikesdepartementet | HIGH |
+| 3 | Criminal deportation rule tightening | HD03235 | Justitiedepartementet | HIGH |
+
+### Pattern 2: Tidö Agreement Implementation Acceleration [MEDIUM confidence]
+
+All three propositions align with Tidö Agreement priorities: NATO integration (HD03214, HD03228) and migration enforcement (HD03235). This represents the most concentrated security-policy output in a single week during the 2025/26 riksmöte.
+
+## 📊 Aggregated SWOT Summary
+
+| Quadrant | Key Finding | Evidence | Confidence |
+|----------|------------|----------|------------|
+| 💪 Strength | Cross-party consensus on defense (M, KD, L, SD + partial S support) | HD03214, HD03228 | HIGH |
+| 💪 Strength | NATO alignment strengthens Sweden's alliance positioning | HD03228 | HIGH |
+| 💪 Strength | Government demonstrates legislative delivery capability | HD03214, HD03228, HD03235 | HIGH |
+| ⚠️ Weakness | Inter-agency coordination complexity (FRA, MSB, SÄPO) | HD03214 | MEDIUM |
+| ⚠️ Weakness | EU legal challenge risk on deportation rules | HD03235 | MEDIUM |
+| 🌱 Opportunity | Defense export revenue growth from modernized rules | HD03228 | MEDIUM |
+| 🌱 Opportunity | Improved NATO interoperability score | HD03214 | HIGH |
+| 🔥 Threat | Prison system overcrowding from stricter deportation enforcement | HD03235 | MEDIUM |
+| 🔥 Threat | Civil liberties concerns may fuel opposition narrative | HD03235 | MEDIUM |
+
+## ⚠️ Risk Landscape
+
+```mermaid
+graph LR
+    subgraph "Risk Interconnection Map"
+        R1["R1: Inter-Agency<br/>Coordination Failure<br/>L3×I3=9 🟡"]
+        R2["R2: EU Legal<br/>Challenge<br/>L3×I4=12 🟠"]
+        R3["R3: Prison<br/>Overcrowding<br/>L4×I3=12 🟠"]
+        R4["R4: Defense Export<br/>Controversy<br/>L2×I3=6 🟡"]
+    end
+    R1 -->|"delays"| R4
+    R3 -->|"amplifies"| R2
+    R2 -->|"opposition narrative"| R3
+    style R1 fill:#ffc107,color:#000
+    style R2 fill:#fd7e14,color:#fff
+    style R3 fill:#fd7e14,color:#fff
+    style R4 fill:#ffc107,color:#000
+```
+
+| Risk ID | Description | L | I | Score | Tier | Trend | Source |
+|---------|-------------|---|---|-------|------|-------|--------|
+| R1 | Inter-agency coordination failure (FRA/MSB/SÄPO) | 3 | 3 | 9 | 🟡 Medium | → | HD03214 |
+| R2 | EU legal challenge on deportation rules | 3 | 4 | 12 | 🟠 High | ↑ | HD03235 |
+| R3 | Prison system overcrowding cascade | 4 | 3 | 12 | 🟠 High | ↑ | HD03235 |
+| R4 | Defense export controversy | 2 | 3 | 6 | 🟡 Medium | → | HD03228 |
+
+## 🎭 Threat Summary
+
+| Category | Primary Threat | Severity | Actor | Evidence |
+|----------|---------------|----------|-------|----------|
+| 📝 Legislative Integrity | Rushed implementation timeline | 2/5 | Government | HD03214 |
+| 🔇 Transparency | Limited public consultation on war materials rules | 3/5 | Utrikesdepartementet | HD03228 |
+| ⛔ Democratic Process | Opposition marginalization on deportation bill | 3/5 | Justitiedepartementet | HD03235 |
+| 👑 Power Balance | Executive power concentration in cybersecurity | 2/5 | Försvarsdepartementet | HD03214 |
+
+## 👥 Stakeholder Impact Overview
+
+| Stakeholder | Impact Level | Net Effect | Key Concern | Confidence |
+|-------------|-------------|------------|-------------|------------|
+| 🏘️ Citizens | MEDIUM | Mixed | Security vs. civil liberties trade-off | HIGH |
+| 🏛️ Government Coalition | HIGH | Positive | Demonstrates Tidö delivery | HIGH |
+| 🗳️ Opposition | MEDIUM | Negative | Forced to respond on security terrain | MEDIUM |
+| 🏭 Business | HIGH | Positive | Defense export opportunity | HIGH |
+| 🤝 Civil Society | MEDIUM | Divided | Human rights concerns (HD03235) | MEDIUM |
+| 🌍 International/EU | HIGH | Mixed | NATO positive, ECHR scrutiny risk | HIGH |
+
+## 🔮 Forward Indicators
+
+| Indicator | Timeline | Source | Watch Priority |
+|-----------|----------|--------|----------------|
+| FöU committee hearing on HD03214 | Q2 2026 | Riksdag calendar | 🔴 HIGH |
+| JuU committee hearing on HD03235 | Q2 2026 | Riksdag calendar | 🔴 HIGH |
+| UU assessment of HD03228 | Q2 2026 | Riksdag calendar | 🟠 MEDIUM |
+| EU Commission review of deportation alignment | Q3 2026 | EU monitoring | 🟠 MEDIUM |
+| NATO interoperability assessment | H2 2026 | NATO reporting | 🟡 MEDIUM |
+
+## 📋 Analysis Artifacts Inventory
+
+| Artifact | Status | File |
+|----------|--------|------|
+| Classification Results | ✅ Complete | `classification-results.md` |
+| Risk Assessment | ✅ Complete | `risk-assessment.md` |
+| SWOT Analysis | ✅ Complete | `swot-analysis.md` |
+| Threat Analysis | ✅ Complete | `threat-analysis.md` |
+| Significance Scoring | ✅ Complete | `significance-scoring.md` |
+| Stakeholder Perspectives | ✅ Complete | `stakeholder-perspectives.md` |
+| Cross-Reference Map | ✅ Complete | `cross-reference-map.md` |
+| Data Download Manifest | ✅ Complete | `data-download-manifest.md` |
+
+---
+
+**Document Control:**
+- **Template Path:** `/analysis/templates/synthesis-summary.md`
+- **Version:** 2.1
+- **Classification:** Public
+- **Next Review:** 2026-06-30
+
+
+---
+
+## Day: 2026-04-04
+
+# Analysis Synthesis Summary — 2026-04-04
+
+**Generated**: 2026-04-04 09:13 UTC
 **Data Sources**: get_propositioner, get_motioner, get_betankanden, search_voteringar, search_anforanden, get_fragor, get_interpellationer
 **Documents Analyzed**: 0
 **Confidence**: LOW
