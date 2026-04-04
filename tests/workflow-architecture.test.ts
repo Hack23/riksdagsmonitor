@@ -38,10 +38,52 @@ const CONTENT_WORKFLOWS = [
   'news-evening-analysis.md',
 ];
 
-/** Parse cron schedule from workflow frontmatter */
-function extractCronSchedule(content: string): string | null {
+/** Parse schedule from workflow frontmatter (supports both cron and gh-aw fuzzy formats) */
+function extractSchedule(content: string): string | null {
+  // Match standard cron: "0 8 1 * *"
   const cronMatch = content.match(/cron:\s*"([^"]+)"/);
-  return cronMatch ? (cronMatch[1] ?? null) : null;
+  if (cronMatch) return cronMatch[1] ?? null;
+
+  // Match gh-aw fuzzy schedule: "schedule: daily around 4:00 on weekdays"
+  const fuzzyMatch = content.match(/schedule:\s*((?:daily|weekly|monthly)\b[^\n]*)/);
+  if (fuzzyMatch) return fuzzyMatch[1]?.trim() ?? null;
+
+  return null;
+}
+
+/** Extract hour from a schedule string (cron or fuzzy format) */
+function extractScheduleHour(schedule: string): number | null {
+  // Cron format: "0 8 1 * *" → hour is 2nd field
+  const cronParts = schedule.match(/^\d+\s+(\d+)/);
+  if (cronParts) return parseInt(cronParts[1]!, 10);
+
+  // Fuzzy format: "daily around 4:00 on weekdays" → hour after "around"
+  const fuzzyHour = schedule.match(/around\s+(\d+):/);
+  if (fuzzyHour) return parseInt(fuzzyHour[1]!, 10);
+
+  return null;
+}
+
+/** Extract day-of-week name from a fuzzy schedule, or cron day number */
+function extractScheduleDayOfWeek(schedule: string): string | null {
+  // Fuzzy format: "weekly on friday around 7:00"
+  const fuzzyDay = schedule.match(/on\s+(monday|tuesday|wednesday|thursday|friday|saturday|sunday)/i);
+  if (fuzzyDay) return fuzzyDay[1]!.toLowerCase();
+
+  // Cron format: "0 8 * * 5" → 5th field is day-of-week
+  const parts = schedule.split(/\s+/);
+  if (parts.length >= 5 && parts[4] !== '*') return parts[4]!;
+
+  return null;
+}
+
+/** Extract day-of-month from a cron schedule */
+function extractScheduleDayOfMonth(schedule: string): string | null {
+  // Cron format: "0 8 1 * *" → 3rd field is day-of-month
+  const parts = schedule.split(/\s+/);
+  if (parts.length >= 5 && parts[2] !== '*') return parts[2]!;
+
+  return null;
 }
 
 /** Parse frontmatter from .md workflow file */
@@ -62,7 +104,7 @@ describe('Workflow Architecture', () => {
     }
   });
 
-  it('should have unique cron schedules for each article type workflow', () => {
+  it('should have unique schedules for each article type workflow', () => {
     const schedules = new Map<string, string>();
 
     for (const [articleType, workflowFile] of Object.entries(ARTICLE_TYPE_WORKFLOWS)) {
@@ -70,15 +112,15 @@ describe('Workflow Architecture', () => {
       expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
       const content = fs.readFileSync(filepath, 'utf-8');
-      const cron = extractCronSchedule(content);
+      const schedule = extractSchedule(content);
 
-      if (cron) {
-        const existing = schedules.get(cron);
+      if (schedule) {
+        const existing = schedules.get(schedule);
         expect(
           existing,
-          `Schedule conflict: "${articleType}" and "${existing}" both use cron "${cron}"`
+          `Schedule conflict: "${articleType}" and "${existing}" both use schedule "${schedule}"`
         ).toBeUndefined();
-        schedules.set(cron, articleType);
+        schedules.set(schedule, articleType);
       }
     }
 
@@ -131,11 +173,11 @@ describe('Workflow Architecture', () => {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
-      const frontmatter = parseFrontmatter(filepath);
-      const hasCron = frontmatter.includes('cron:');
+      const content = fs.readFileSync(filepath, 'utf-8');
+      const hasSchedule = extractSchedule(content) !== null;
       expect(
-        hasCron,
-        `Workflow ${workflowFile} should have a cron schedule`
+        hasSchedule,
+        `Workflow ${workflowFile} should have a schedule (cron or fuzzy)`
       ).toBe(true);
     }
   });
@@ -323,11 +365,11 @@ describe('Schedule Staggering', () => {
       expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
       const content = fs.readFileSync(filepath, 'utf-8');
-      const cron = extractCronSchedule(content);
-      if (cron) {
-        const hourMatch = cron.match(/^\d+\s+(\d+)/);
-        if (hourMatch) {
-          weekdaySchedules.push({ file: workflowFile, hour: parseInt(hourMatch[1]!, 10) });
+      const schedule = extractSchedule(content);
+      if (schedule) {
+        const hour = extractScheduleHour(schedule);
+        if (hour !== null) {
+          weekdaySchedules.push({ file: workflowFile, hour });
         }
       }
     }
@@ -348,10 +390,12 @@ describe('Schedule Staggering', () => {
       expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
       const content = fs.readFileSync(filepath, 'utf-8');
-      const cron = extractCronSchedule(content);
-      if (cron) {
-        const parts = cron.split(/\s+/);
-        weekendWorkflows.push({ file: workflowFile, dayOfWeek: parts[4] ?? '' });
+      const schedule = extractSchedule(content);
+      if (schedule) {
+        const dayOfWeek = extractScheduleDayOfWeek(schedule);
+        if (dayOfWeek) {
+          weekendWorkflows.push({ file: workflowFile, dayOfWeek });
+        }
       }
     }
 
@@ -371,10 +415,12 @@ describe('Schedule Staggering', () => {
       expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
 
       const content = fs.readFileSync(filepath, 'utf-8');
-      const cron = extractCronSchedule(content);
-      if (cron) {
-        const parts = cron.split(/\s+/);
-        monthlyWorkflows.push({ file: workflowFile, dayOfMonth: parts[2] ?? '' });
+      const schedule = extractSchedule(content);
+      if (schedule) {
+        const dayOfMonth = extractScheduleDayOfMonth(schedule);
+        if (dayOfMonth) {
+          monthlyWorkflows.push({ file: workflowFile, dayOfMonth });
+        }
       }
     }
 
