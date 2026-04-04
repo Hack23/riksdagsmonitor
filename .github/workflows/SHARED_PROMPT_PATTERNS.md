@@ -659,6 +659,50 @@ Before generating articles, consult these skills:
 9. **`scripts/prompts/v2/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
 ```
 
+## 🧠 Memory & Sequential Thinking MCP Tools (available in all workflows)
+
+```markdown
+### Memory MCP (Knowledge Graph)
+
+All workflows have access to the `memory` MCP server which provides an in-session knowledge graph.
+Use it to track cross-document relationships and avoid redundant analysis during multi-document processing.
+
+**When to use:**
+- Processing multiple documents: Store key findings from each document as entities, then query relationships across them
+- Cross-referencing political actors: Create entities for MPs, parties, committees mentioned across documents and link them with relations
+- Tracking quality checks: Store completed checks as entities to avoid repeating analysis
+- Building cumulative context: When analyzing 5+ documents, store extracted facts to maintain accuracy across the full batch
+
+**Tools:** `create_entities`, `create_relations`, `add_observations`, `search_nodes`, `open_nodes`, `read_graph`
+
+**Example usage pattern (multi-document analysis):**
+1. For each document analyzed, call `create_entities` with key findings (document ID, policy area, key actors, decisions)
+2. Call `create_relations` to link related documents (e.g., motion references proposition, committee reviews motion)
+3. Before writing the article, call `read_graph` to see the full picture of cross-document relationships
+4. Use the knowledge graph to identify patterns (e.g., "3 motions from SD all oppose the same proposition")
+
+### Sequential Thinking MCP
+
+All workflows have access to the `sequential-thinking` MCP server for structured multi-step reasoning.
+Use it for complex analytical tasks that benefit from explicit step-by-step reasoning chains.
+
+**When to use:**
+- Complex political analysis requiring multi-step reasoning (coalition dynamics, policy impact chains)
+- SWOT analysis where each quadrant needs systematic evaluation
+- Risk assessment with multiple interacting factors
+- Evaluating competing interpretations of political events
+- Quality self-checks where systematic verification improves accuracy
+
+**Tool:** `sequentialthinking` — provide thought, thoughtNumber, totalThoughts, nextThoughtNeeded
+
+**Example usage pattern (political analysis):**
+1. Thought 1: Identify the core policy change and affected stakeholders
+2. Thought 2: Analyze government coalition position and internal tensions
+3. Thought 3: Map opposition responses and alternative proposals
+4. Thought 4: Assess economic/social impact using SCB/World Bank data
+5. Thought 5: Synthesize into forward-looking risk assessment with specific triggers
+```
+
 ## Standardised Analysis Depth Gate (copy into every workflow)
 
 ```markdown

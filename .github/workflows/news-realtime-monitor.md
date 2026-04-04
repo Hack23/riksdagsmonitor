@@ -72,6 +72,12 @@ mcp-servers:
   world-bank:
     command: npx
     args: ["-y", "worldbank-mcp@1.0.1"]
+  memory:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-memory"]
+  sequential-thinking:
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-sequential-thinking"]
 
 tools:
   github:
