@@ -708,7 +708,7 @@ Use it to maintain cross-workflow context: what was covered, what's pending, qua
 - `translation-status.json` — tracks which articles need translation (used by news-translate)
 
 **Example: Deduplication across workflows**
-```json
+```jsonc
 // covered-documents.json
 {
   "2026-04-04": {

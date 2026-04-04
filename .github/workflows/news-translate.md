@@ -323,11 +323,11 @@ This workflow uses **persistent repo-memory** on branch `memory/news-generation`
 
 **At run START — read context:**
 - Read `memory/news-generation/covered-documents.json` to check which dok_ids were already analyzed today
-- Read `memory/news-generation/last-run-'news-translate'.json` for previous run metadata
+- Read `memory/news-generation/last-run-news-translate.json` for previous run metadata
 - Skip documents already covered by another workflow to avoid duplicate analysis
 
 **At run END — write context:**
-- Update `memory/news-generation/last-run-'news-translate'.json` with date, documents analyzed, quality score
+- Update `memory/news-generation/last-run-news-translate.json` with date, documents analyzed, quality score
 - Append processed dok_ids to `memory/news-generation/covered-documents.json`
 - Update `memory/news-generation/translation-status.json` with new articles needing translation
 
