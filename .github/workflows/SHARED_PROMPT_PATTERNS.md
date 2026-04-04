@@ -677,7 +677,7 @@ Before generating articles, consult these skills:
 
 > **All workflows share branch `memory/news-generation`** — git-backed, persistent across runs, version-controlled. Unlike ephemeral MCP servers that die when the process ends, repo-memory survives indefinitely and is readable by every workflow in the repository.
 
-```markdown
+````markdown
 ### Repo Memory Usage
 
 All workflows have access to `repo-memory` on the shared branch `memory/news-generation`.
@@ -718,7 +718,7 @@ Use it to maintain cross-workflow context: what was covered, what's pending, qua
 }
 ```
 Before analyzing a document, check if its dok_id already appears in today's entries. If so, skip or cross-reference.
-```
+````
 
 ## Standardised Analysis Depth Gate (copy into every workflow)
 

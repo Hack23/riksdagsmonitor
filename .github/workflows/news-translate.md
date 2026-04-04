@@ -899,7 +899,7 @@ This section is the **canonical reference** for all translation quality standard
 ### Per-Language Requirements:
 - **RTL languages (ar, he)**: Ensure `dir="rtl"` on `<html>` and proper text direction. Mirror CSS layout (flexbox `row-reverse` where applicable). Numerals stay LTR within RTL text.
 - **CJK languages (ja, ko, zh)**: Use native script only, no romanization in body text. Honorifics must follow target-language conventions (e.g., Japanese: 議員 not "MP"). CJK quotation marks (「」/『』 for ja, ""/''/《》 for zh).
-- **Nordic languages (da, nb, fi)**: Use language-specific parliamentary terms, not Swedish. Norwegian uses BCP-47 code `nb` (Bokmål). Danish uses "Riksdagen" not "Riksdag". Finnish uses appropriate case suffixes for Swedish proper nouns.
+- **Nordic languages (da, no, fi)**: Use language-specific parliamentary terms, not Swedish. For Norwegian Bokmål, use file suffix/workflow input `no`, but set `lang="nb"` inside the HTML because the BCP-47 language tag is `nb`. Danish uses "Riksdagen" not "Riksdag". Finnish uses appropriate case suffixes for Swedish proper nouns.
 - **European languages (de, fr, es, nl)**: Use formal register appropriate for political journalism. German: compound nouns (e.g., "Regierungsvorschlag" not "Regierung Vorschlag"). French: accent-correct typography ("à", "é", "ç"). Spanish: formal "usted" register throughout.
 
 ### Political Intelligence Translation Standards:
@@ -950,7 +950,7 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 ### Cross-Language Consistency:
 - Same article in all 14 languages must convey identical factual content
 - Analytical conclusions must not be softened or strengthened vs. the EN source
-- Run `npx tsx scripts/validate-news-translations.ts --cross-check` to verify parity across language versions
+- Manually compare key sections (SWOT, risk matrix, forward indicators) across language versions to verify parity
 - Every translated article MUST include correct `hreflang` links to all other language versions
 
 ### Bash Validation Commands:
