@@ -561,11 +561,12 @@ async function readAnalysisFile(date: string, filename: string, basePath?: strin
   }
 
   // Scan immediate subdirectories for the file (e.g., deep-inspection/, propositions/)
+  // Sort alphabetically for deterministic selection when multiple subdirs exist
   const dateDir = join(resolvedBase, date);
   try {
     const entries = await readdir(dateDir, { withFileTypes: true });
-    for (const entry of entries) {
-      if (!entry.isDirectory()) continue;
+    const sortedDirs = entries.filter(e => e.isDirectory()).sort((a, b) => a.name.localeCompare(b.name));
+    for (const entry of sortedDirs) {
       const subPath = join(dateDir, entry.name, filename);
       try {
         return await readFile(subPath, 'utf-8');
@@ -672,10 +673,11 @@ export async function findLatestAnalysisDate(maxDaysBack = 7, basePath?: string)
       if (hasRootFile) return dateStr;
 
       // Check subdirectories (e.g., deep-inspection/, propositions/)
+      // Sort alphabetically for deterministic iteration order
       try {
         const entries = await readdir(dirPath, { withFileTypes: true });
-        for (const entry of entries) {
-          if (!entry.isDirectory()) continue;
+        const sortedDirs = entries.filter(e => e.isDirectory()).sort((a, b) => a.name.localeCompare(b.name));
+        for (const entry of sortedDirs) {
           const hasSubFile = Object.values(ANALYSIS_FILES).some(
             f => existsSync(join(dirPath, entry.name, f)),
           );

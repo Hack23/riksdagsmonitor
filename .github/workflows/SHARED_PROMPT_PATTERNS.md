@@ -996,11 +996,11 @@ echo "--- Check 8: Batch analysis enrichment (prevents empty '0 documents analyz
 if [ -d "$ANALYSIS_DIR/documents" ]; then
   PERDOC_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l)
   if [ "${PERDOC_COUNT:-0}" -gt 0 ]; then
-    # Per-document analysis exists — batch files MUST NOT report "0 documents analyzed"
-    for bf in synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md classification-results.md significance-scoring.md stakeholder-perspectives.md; do
+    # Per-document analysis exists — all mandatory batch artifacts MUST NOT report "0 documents analyzed"
+    for bf in synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md classification-results.md significance-scoring.md stakeholder-perspectives.md cross-reference-map.md data-download-manifest.md; do
       BATCH_FILE="$ANALYSIS_DIR/$bf"
       [ ! -f "$BATCH_FILE" ] && continue
-      ZERO_DOCS=$(grep -cE "(Documents Analyzed|documents analyzed|Analyzed \*\*0|Scored \*\*0|for \*\*0|to \*\*0|across 0 documents|for 0 political)" "$BATCH_FILE" 2>/dev/null) || true
+      ZERO_DOCS=$(grep -cE "(Documents Analyzed\*\*:\s*0|documents analyzed:\s*0|Analyzed \*\*0|Scored \*\*0|for \*\*0|to \*\*0|across 0 documents|for 0 political)" "$BATCH_FILE" 2>/dev/null) || true
       FILE_SIZE=$(wc -c < "$BATCH_FILE" 2>/dev/null) || true
       if [ "${ZERO_DOCS:-0}" -gt 0 ]; then
         echo "❌ FAIL: $bf reports '0 documents' but $PERDOC_COUNT per-doc analyses exist — MUST be enriched"

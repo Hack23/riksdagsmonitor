@@ -559,6 +559,46 @@ describe('readDailyAnalysis', () => {
     expect(result.riskAssessment).toBeNull();  // Missing file → null
     expect(result.swot).toBeNull();            // Missing file → null
   });
+
+  it('finds analysis files in subdirectories when root-level files are absent', async () => {
+    // Place analysis in a subdirectory (e.g., deep-inspection/)
+    const subDir = join(tempBase, TEST_DATE, 'deep-inspection');
+    mkdirSync(subDir, { recursive: true });
+    writeFileSync(join(subDir, 'classification-results.md'), CLASSIFICATION_MD, 'utf-8');
+    writeFileSync(join(subDir, 'risk-assessment.md'), RISK_MD, 'utf-8');
+
+    const result = await readDailyAnalysis(TEST_DATE, tempBase);
+    expect(result.hasAnalysis).toBe(true);
+    expect(result.classification).not.toBeNull();
+    expect(result.classification?.level).toBe('HIGH');
+    expect(result.riskAssessment).not.toBeNull();
+    expect(result.riskAssessment?.level).toBe('elevated');
+  });
+
+  it('prefers root-level files over subdirectory files', async () => {
+    // Root-level classification
+    writeFileSync(join(tempBase, TEST_DATE, 'classification-results.md'), CLASSIFICATION_MD, 'utf-8');
+    // Subdirectory classification with different content
+    const subDir = join(tempBase, TEST_DATE, 'propositions');
+    mkdirSync(subDir, { recursive: true });
+    writeFileSync(join(subDir, 'classification-results.md'), '# Classification\n**Level**: LOW\n**Confidence**: LOW', 'utf-8');
+
+    const result = await readDailyAnalysis(TEST_DATE, tempBase);
+    expect(result.classification?.level).toBe('HIGH');  // Root takes precedence
+  });
+
+  it('selects subdirectory deterministically (alphabetical) when multiple exist', async () => {
+    // Create two subdirectories with different classification levels
+    const subA = join(tempBase, TEST_DATE, 'aaa-first');
+    const subZ = join(tempBase, TEST_DATE, 'zzz-last');
+    mkdirSync(subA, { recursive: true });
+    mkdirSync(subZ, { recursive: true });
+    writeFileSync(join(subA, 'classification-results.md'), CLASSIFICATION_MD, 'utf-8'); // HIGH
+    writeFileSync(join(subZ, 'classification-results.md'), '# Classification\n**Level**: LOW\n**Confidence**: LOW', 'utf-8');
+
+    const result = await readDailyAnalysis(TEST_DATE, tempBase);
+    expect(result.classification?.level).toBe('HIGH');  // 'aaa-first' comes first alphabetically
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -600,6 +640,16 @@ describe('findLatestAnalysisDate', () => {
 
     const result = await findLatestAnalysisDate(7, tempBase);
     expect(result).toBeNull();
+  });
+
+  it('finds analysis date when files exist only in subdirectories', async () => {
+    const today = new Date().toISOString().split('T')[0]!;
+    const subDir = join(tempBase, today, 'propositions');
+    mkdirSync(subDir, { recursive: true });
+    writeFileSync(join(subDir, 'classification-results.md'), CLASSIFICATION_MD, 'utf-8');
+
+    const result = await findLatestAnalysisDate(7, tempBase);
+    expect(result).toBe(today);
   });
 });
 
