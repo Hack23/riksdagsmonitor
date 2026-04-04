@@ -40,8 +40,8 @@ const CONTENT_WORKFLOWS = [
 
 /** Parse schedule from workflow frontmatter (supports both cron and gh-aw fuzzy formats) */
 function extractSchedule(content: string): string | null {
-  // Match standard cron: "0 8 1 * *"
-  const cronMatch = content.match(/cron:\s*"([^"]+)"/);
+  // Match standard cron with double or single quotes: cron: "0 8 1 * *" or cron: '0 18 * * 1-5'
+  const cronMatch = content.match(/cron:\s*["']([^"']+)["']/);
   if (cronMatch) return cronMatch[1] ?? null;
 
   // Match gh-aw fuzzy schedule: "schedule: daily around 4:00 on weekdays"
