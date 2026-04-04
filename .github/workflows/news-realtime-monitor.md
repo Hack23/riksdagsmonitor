@@ -114,7 +114,7 @@ safe-outputs:
   create-pull-request:
     labels: [agentic-news, analysis-data]
     draft: false
-    expires: 14
+    expires: 14d
   add-comment: {}
   dispatch-workflow:
     workflows: [news-translate]

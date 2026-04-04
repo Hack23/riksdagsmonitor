@@ -99,7 +99,7 @@ safe-outputs:
   create-pull-request:
     labels: [agentic-news, analysis-data]
     draft: false
-    expires: 14
+    expires: 14d
   add-comment: {}
   dispatch-workflow:
     workflows: [news-translate]
@@ -119,6 +119,7 @@ engine:
   id: copilot
   model: claude-opus-4.6
 ---
+
 # 📊 Weekly Review Article Generator
 
 You are the **News Journalist Agent** for Riksdagsmonitor generating **weekly review** retrospective articles.

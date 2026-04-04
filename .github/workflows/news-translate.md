@@ -109,7 +109,7 @@ safe-outputs:
   create-pull-request:
     labels: [agentic-news, translation]
     draft: false
-    expires: 14
+    expires: 14d
   add-comment: {}
 
 steps:
@@ -208,6 +208,7 @@ engine:
   id: copilot
   model: claude-opus-4.6
 ---
+
 # 🌐 News Article Translation Agent
 
 You are the **Translation Agent** for Riksdagsmonitor. Your primary focus is producing **excellent, faithful translations** of news articles into target languages. You do NOT generate original content — you translate existing articles. Additionally, as mandated by `analysis/methodologies/ai-driven-analysis-guide.md`, you MUST review and improve existing analysis artifacts during every workflow run — no workflow run is ever wasted.
