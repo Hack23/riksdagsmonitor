@@ -2,6 +2,20 @@
 
 > **Internal reference document** — Not a live workflow. Copy-paste these standardised blocks into every `news-*.md` workflow to ensure consistency.
 
+## 🌐 Hack23 Ecosystem Context
+
+Riksdagsmonitor is part of the **Hack23** platform for democratic transparency and political intelligence. When generating articles and analysis, link to and reference these resources:
+
+| Resource | URL | Purpose |
+|----------|-----|---------|
+| **Hack23 Main Site** | https://hack23.com | Company homepage, ISMS documentation |
+| **Riksdagsmonitor** | https://riksdagsmonitor.com | Political intelligence news platform |
+| **GitHub Pages** | https://hack23.github.io | Open-source project documentation |
+| **CIA Platform** | https://hack23.github.io/cia/ | Citizen Intelligence Agency — historical data |
+| **GitHub Repo** | https://github.com/Hack23/riksdagsmonitor | Source code and analysis data |
+
+Articles MAY include links to these sites when contextually relevant (e.g., linking to historical data, methodology documentation, or the live site).
+
 ---
 
 ## 🔒 ARTICLE TYPE ISOLATION — Absolute Enforcement

@@ -60,6 +60,11 @@ network:
     - www.regeringen.se
     - www.scb.se
     - regeringen.se
+    - hack23.com
+    - www.hack23.com
+    - riksdagsmonitor.com
+    - www.riksdagsmonitor.com
+    - hack23.github.io
     - default
 
 mcp-servers:
@@ -98,9 +103,12 @@ safe-outputs:
     - www.riksdagen.se
     - www.regeringen.se
     - www.scb.se
-    - www.riksdagen.se
-    - www.regeringen.se
     - github.com
+    - hack23.com
+    - www.hack23.com
+    - riksdagsmonitor.com
+    - www.riksdagsmonitor.com
+    - hack23.github.io
   create-pull-request:
     labels: [agentic-news, analysis-data]
     draft: false

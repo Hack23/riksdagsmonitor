@@ -58,6 +58,11 @@ network:
     - www.regeringen.se
     - www.scb.se
     - regeringen.se
+    - hack23.com
+    - www.hack23.com
+    - riksdagsmonitor.com
+    - www.riksdagsmonitor.com
+    - hack23.github.io
     - default
 
 mcp-servers:
@@ -92,9 +97,12 @@ safe-outputs:
     - www.riksdagen.se
     - www.regeringen.se
     - www.scb.se
-    - www.riksdagen.se
-    - www.regeringen.se
     - github.com
+    - hack23.com
+    - www.hack23.com
+    - riksdagsmonitor.com
+    - www.riksdagsmonitor.com
+    - hack23.github.io
   max-patch-size: 2048
   create-pull-request:
     labels: [agentic-news, translation]
@@ -889,10 +897,20 @@ This section is the **canonical reference** for all translation quality standard
 5. **data-translate markers**: ZERO `data-translate="true"` spans allowed in final output
 
 ### Per-Language Requirements:
-- **RTL languages (ar, he)**: Ensure `dir="rtl"` on `<html>` and proper text direction
-- **CJK languages (ja, ko, zh)**: Use native script only, no romanization in body text
-- **Nordic languages (da, no, fi)**: Use language-specific parliamentary terms, not Swedish
-- **European languages (de, fr, es, nl)**: Use formal register appropriate for political journalism
+- **RTL languages (ar, he)**: Ensure `dir="rtl"` on `<html>` and proper text direction. Mirror CSS layout (flexbox `row-reverse` where applicable). Numerals stay LTR within RTL text.
+- **CJK languages (ja, ko, zh)**: Use native script only, no romanization in body text. Honorifics must follow target-language conventions (e.g., Japanese: 議員 not "MP"). CJK quotation marks (「」/『』 for ja, ""/''/《》 for zh).
+- **Nordic languages (da, nb, fi)**: Use language-specific parliamentary terms, not Swedish. Norwegian uses BCP-47 code `nb` (Bokmål). Danish uses "Riksdagen" not "Riksdag". Finnish uses appropriate case suffixes for Swedish proper nouns.
+- **European languages (de, fr, es, nl)**: Use formal register appropriate for political journalism. German: compound nouns (e.g., "Regierungsvorschlag" not "Regierung Vorschlag"). French: accent-correct typography ("à", "é", "ç"). Spanish: formal "usted" register throughout.
+
+### Political Intelligence Translation Standards:
+Translated articles MUST maintain the same analytical rigor as the English source:
+- **SWOT tables**: Translate cell content, keep table structure intact. Do NOT simplify or summarize SWOT entries.
+- **Risk matrices**: Preserve L×I numeric scores. Translate risk descriptions and mitigations.
+- **Confidence labels**: Keep `[HIGH]`/`[MEDIUM]`/`[LOW]` as English tags (internationally recognized) OR translate to target language equivalent BUT be consistent within each article.
+- **dok_id references**: NEVER translate document identifiers (Prop., Bet., Mot., frs). These are official Swedish designations.
+- **Mermaid diagrams**: Translate node labels while keeping the Mermaid syntax structure intact. Colors and arrow directions must be preserved.
+- **Chart.js data**: Translate label strings in `canvas[data-chart-config]` JSON. Do NOT modify numeric data values.
+- **Forward indicators**: Translate the indicator text but preserve dates, committee names (in Swedish), and significance labels.
 
 ### Localized Section Headings (use CONTENT_LABELS):
 Instead of English section headings, use localized equivalents from `scripts/data-transformers/constants/content-labels-part1.ts` and `content-labels-part2.ts`:
@@ -923,6 +941,17 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 - "Why It Matters" analysis MUST be translated, not removed or simplified
 - Statistical data and citations MUST be preserved identically
 - Policy implications and strategic context MUST be faithfully rendered
+- SWOT analysis tables MUST retain all 8 stakeholder perspectives (not reduced to fewer)
+- Risk matrix scores (L×I) MUST be numerically identical across all language versions
+- Forward indicators MUST preserve exact dates, timeline ranges, and trigger events
+- Confidence labels MUST appear on every analytical claim (same as EN source)
+- Inter-article cross-references (links to other Riksdagsmonitor articles) MUST use the correct language-specific URL path
+
+### Cross-Language Consistency:
+- Same article in all 14 languages must convey identical factual content
+- Analytical conclusions must not be softened or strengthened vs. the EN source
+- Run `npx tsx scripts/validate-news-translations.ts --cross-check` to verify parity across language versions
+- Every translated article MUST include correct `hreflang` links to all other language versions
 
 ### Bash Validation Commands:
 ```bash
