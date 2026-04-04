@@ -140,13 +140,13 @@ If **force_generation** is `true`, generate articles even if recent ones exist. 
 This workflow uses **persistent repo-memory** on branch `memory/news-generation` (shared with all news workflows).
 
 **At run START — read context:**
-- Read `memory/news-generation/covered-documents.json` to check which dok_ids were already analyzed today
+- Read `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` for today (and optionally yesterday) to check which dok_ids were already analyzed recently
 - Read `memory/news-generation/last-run-news-week-ahead.json` for previous run metadata
 - Skip documents already covered by another workflow to avoid duplicate analysis
 
 **At run END — write context:**
 - Update `memory/news-generation/last-run-news-week-ahead.json` with date, documents analyzed, quality score
-- Append processed dok_ids to `memory/news-generation/covered-documents.json`
+- Write processed dok_ids to `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` (sharded by date; retain last 7 days)
 - Update `memory/news-generation/translation-status.json` with new articles needing translation
 
 ## ⏱️ Time Budget (30 minutes)
