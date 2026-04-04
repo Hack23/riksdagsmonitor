@@ -63,18 +63,18 @@ mcp-servers:
   world-bank:
     command: npx
     args: ["-y", "worldbank-mcp@1.0.1"]
-  memory:
-    command: npx
-    args: ["-y", "@modelcontextprotocol/server-memory"]
-  sequential-thinking:
-    command: npx
-    args: ["-y", "@modelcontextprotocol/server-sequential-thinking"]
 
 tools:
   github:
     toolsets:
       - all
   bash: true
+  repo-memory:
+    branch-name: memory/news-generation
+    allowed-extensions: [".md", ".json"]
+    max-file-size: 51200
+    max-file-count: 50
+    max-patch-size: 51200
 
 safe-outputs:
   allowed-domains:
@@ -127,6 +127,20 @@ This focused approach ensures:
 - Smaller patch sizes (avoids safe_outputs failures)
 - Faster execution within timeout
 - Independent scheduling per article type
+
+## 🧠 Repo Memory
+
+This workflow uses **persistent repo-memory** on branch `memory/news-generation` (shared with all news workflows).
+
+**At run START — read context:**
+- Read `memory/news-generation/covered-documents.json` to check which dok_ids were already analyzed today
+- Read `memory/news-generation/last-run-'news-committee-reports'.json` for previous run metadata
+- Skip documents already covered by another workflow to avoid duplicate analysis
+
+**At run END — write context:**
+- Update `memory/news-generation/last-run-'news-committee-reports'.json` with date, documents analyzed, quality score
+- Append processed dok_ids to `memory/news-generation/covered-documents.json`
+- Update `memory/news-generation/translation-status.json` with new articles needing translation
 
 ## ⏱️ Time Budget (45 minutes)
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`

@@ -659,48 +659,51 @@ Before generating articles, consult these skills:
 9. **`scripts/prompts/v2/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
 ```
 
-## 🧠 Memory & Sequential Thinking MCP Tools (available in all workflows)
+## 🧠 Repo Memory — Persistent Cross-Workflow Context (copy into every workflow)
+
+> **All workflows share branch `memory/news-generation`** — git-backed, persistent across runs, version-controlled. Unlike ephemeral MCP servers that die when the process ends, repo-memory survives indefinitely and is readable by every workflow in the repository.
 
 ```markdown
-### Memory MCP (Knowledge Graph)
+### Repo Memory Usage
 
-All workflows have access to the `memory` MCP server which provides an in-session knowledge graph.
-Use it to track cross-document relationships and avoid redundant analysis during multi-document processing.
+All workflows have access to `repo-memory` on the shared branch `memory/news-generation`.
+Use it to maintain cross-workflow context: what was covered, what's pending, quality scores, and recurring patterns.
 
-**When to use:**
-- Processing multiple documents: Store key findings from each document as entities, then query relationships across them
-- Cross-referencing political actors: Create entities for MPs, parties, committees mentioned across documents and link them with relations
-- Tracking quality checks: Store completed checks as entities to avoid repeating analysis
-- Building cumulative context: When analyzing 5+ documents, store extracted facts to maintain accuracy across the full batch
+**Shared branch `memory/news-generation`** means:
+- Breaking news knows what weekly review already covered
+- Translations know which articles are pending
+- Evening analysis knows what propositions/motions workflows produced today
+- Weekly/monthly reviews can see cumulative quality trends
 
-**Tools:** `create_entities`, `create_relations`, `add_observations`, `search_nodes`, `open_nodes`, `read_graph`
+**When to READ memory (start of every run):**
+1. Check `memory/news-generation/last-run-{workflow-name}.json` for previous run metadata
+2. Read `memory/news-generation/covered-documents.json` to avoid re-analyzing documents already covered today
+3. Read `memory/news-generation/quality-scores.json` to track improvement trends
 
-**Example usage pattern (multi-document analysis):**
-1. For each document analyzed, call `create_entities` with key findings (document ID, policy area, key actors, decisions)
-2. Call `create_relations` to link related documents (e.g., motion references proposition, committee reviews motion)
-3. Before writing the article, call `read_graph` to see the full picture of cross-document relationships
-4. Use the knowledge graph to identify patterns (e.g., "3 motions from SD all oppose the same proposition")
+**When to WRITE memory (end of every run):**
+1. Update `memory/news-generation/last-run-{workflow-name}.json` with:
+   - `date`, `article_type`, `documents_analyzed` (array of dok_ids), `articles_generated` (count), `quality_score`
+2. Append to `memory/news-generation/covered-documents.json`:
+   - Each dok_id processed today with article_type and timestamp
+3. Update `memory/news-generation/quality-scores.json` with cumulative quality metrics
 
-### Sequential Thinking MCP
+**File naming convention:**
+- `last-run-{workflow-name}.json` — per-workflow state (e.g., `last-run-news-propositions.json`)
+- `covered-documents.json` — cross-workflow deduplication index
+- `quality-scores.json` — quality tracking across all workflows
+- `translation-status.json` — tracks which articles need translation (used by news-translate)
 
-All workflows have access to the `sequential-thinking` MCP server for structured multi-step reasoning.
-Use it for complex analytical tasks that benefit from explicit step-by-step reasoning chains.
-
-**When to use:**
-- Complex political analysis requiring multi-step reasoning (coalition dynamics, policy impact chains)
-- SWOT analysis where each quadrant needs systematic evaluation
-- Risk assessment with multiple interacting factors
-- Evaluating competing interpretations of political events
-- Quality self-checks where systematic verification improves accuracy
-
-**Tool:** `sequentialthinking` — provide thought, thoughtNumber, totalThoughts, nextThoughtNeeded
-
-**Example usage pattern (political analysis):**
-1. Thought 1: Identify the core policy change and affected stakeholders
-2. Thought 2: Analyze government coalition position and internal tensions
-3. Thought 3: Map opposition responses and alternative proposals
-4. Thought 4: Assess economic/social impact using SCB/World Bank data
-5. Thought 5: Synthesize into forward-looking risk assessment with specific triggers
+**Example: Deduplication across workflows**
+```json
+// covered-documents.json
+{
+  "2026-04-04": {
+    "H901FiU1": { "workflow": "news-committee-reports", "timestamp": "2026-04-04T06:15:00Z" },
+    "H902Prop45": { "workflow": "news-propositions", "timestamp": "2026-04-04T07:30:00Z" }
+  }
+}
+```
+Before analyzing a document, check if its dok_id already appears in today's entries. If so, skip or cross-reference.
 ```
 
 ## Standardised Analysis Depth Gate (copy into every workflow)

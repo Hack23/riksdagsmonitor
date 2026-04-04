@@ -70,18 +70,18 @@ mcp-servers:
   world-bank:
     command: npx
     args: ["-y", "worldbank-mcp@1.0.1"]
-  memory:
-    command: npx
-    args: ["-y", "@modelcontextprotocol/server-memory"]
-  sequential-thinking:
-    command: npx
-    args: ["-y", "@modelcontextprotocol/server-sequential-thinking"]
 
 tools:
   github:
     toolsets:
       - all
   bash: true
+  repo-memory:
+    branch-name: memory/news-generation
+    allowed-extensions: [".md", ".json"]
+    max-file-size: 51200
+    max-file-count: 50
+    max-patch-size: 51200
 
 safe-outputs:
   report-failure-as-issue: false
@@ -306,6 +306,20 @@ news/translate/{YYYY-MM-DD}/{article-type}
 Example: `news/translate/2026-03-23/committee-reports`
 
 > **Note:** `safeoutputs___create_pull_request` handles branch creation automatically; this naming convention is documented for traceability and conflict avoidance.
+
+## 🧠 Repo Memory
+
+This workflow uses **persistent repo-memory** on branch `memory/news-generation` (shared with all news workflows).
+
+**At run START — read context:**
+- Read `memory/news-generation/covered-documents.json` to check which dok_ids were already analyzed today
+- Read `memory/news-generation/last-run-'news-translate'.json` for previous run metadata
+- Skip documents already covered by another workflow to avoid duplicate analysis
+
+**At run END — write context:**
+- Update `memory/news-generation/last-run-'news-translate'.json` with date, documents analyzed, quality score
+- Append processed dok_ids to `memory/news-generation/covered-documents.json`
+- Update `memory/news-generation/translation-status.json` with new articles needing translation
 
 ## ⏱️ Time Budget (60 minutes)
 

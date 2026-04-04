@@ -69,12 +69,6 @@ mcp-servers:
   world-bank:
     command: npx
     args: ["-y", "worldbank-mcp@1.0.1"]
-  memory:
-    command: npx
-    args: ["-y", "@modelcontextprotocol/server-memory"]
-  sequential-thinking:
-    command: npx
-    args: ["-y", "@modelcontextprotocol/server-sequential-thinking"]
 
 tools:
   github:
@@ -86,6 +80,12 @@ tools:
     args: ["-y", "@playwright/mcp@0.0.68", "--headless"]
     env:
       DISPLAY: ":99"
+  repo-memory:
+    branch-name: memory/news-generation
+    allowed-extensions: [".md", ".json"]
+    max-file-size: 51200
+    max-file-count: 50
+    max-patch-size: 51200
 
 safe-outputs:
   allowed-domains:
@@ -168,6 +168,20 @@ bash({ command: "..." }) // ← WRONG: missing description
 3. **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them.
 4. **NEVER** write your own MCP HTTP/JSON-RPC client. Use the scripts or direct tool calls only.
 5. Exiting without calling a safe output tool = **workflow failure**. If anything goes wrong at any point, call `safeoutputs___noop` immediately.
+
+## 🧠 Repo Memory
+
+This workflow uses **persistent repo-memory** on branch `memory/news-generation` (shared with all news workflows).
+
+**At run START — read context:**
+- Read `memory/news-generation/covered-documents.json` to check which dok_ids were already analyzed today
+- Read `memory/news-generation/last-run-'news-evening-analysis'.json` for previous run metadata
+- Skip documents already covered by another workflow to avoid duplicate analysis
+
+**At run END — write context:**
+- Update `memory/news-generation/last-run-'news-evening-analysis'.json` with date, documents analyzed, quality score
+- Append processed dok_ids to `memory/news-generation/covered-documents.json`
+- Update `memory/news-generation/translation-status.json` with new articles needing translation
 
 ## ⏱️ Time Budget (45 minutes)
 
