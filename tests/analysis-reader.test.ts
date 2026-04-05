@@ -935,9 +935,15 @@ describe('subtractBusinessDays', () => {
     expect(subtractBusinessDays('2026-04-07', -3)).toBe('2026-04-07');
   });
 
-  it('throws RangeError for malformed date string', () => {
+  it('throws RangeError for non-date string', () => {
     expect(() => subtractBusinessDays('not-a-date', 1)).toThrow(RangeError);
+  });
+
+  it('throws RangeError for wrong separator', () => {
     expect(() => subtractBusinessDays('2026/04/07', 1)).toThrow(RangeError);
+  });
+
+  it('throws RangeError for empty string', () => {
     expect(() => subtractBusinessDays('', 1)).toThrow(RangeError);
   });
 

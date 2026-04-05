@@ -79,7 +79,7 @@ function normalise(raw: unknown[]): RawDocument[] {
  * Fractional values are rounded down, and negative values are treated as 0.
  *
  * @param dateStr - ISO date string (YYYY-MM-DD)
- * @param days    - Number of business days to subtract; fractional values are floored and values < 0 are clamped to 0
+ * @param days    - Number of business days to subtract
  * @throws {RangeError} If `dateStr` is not a valid YYYY-MM-DD date string
  */
 export function subtractBusinessDays(dateStr: string, days: number): string {
