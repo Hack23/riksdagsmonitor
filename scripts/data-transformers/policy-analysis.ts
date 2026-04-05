@@ -264,7 +264,7 @@ export function detectPolicyDomainsWithConfidence(doc: RawDocument, lang: Langua
   const keywordDomains = _detectDomainsByKeywords(doc, lang);
   return {
     domains: keywordDomains,
-    confidence: keywordDomains.length > 0 ? 'LOW' : 'LOW',
+    confidence: 'LOW',
   };
 }
 
