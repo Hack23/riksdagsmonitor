@@ -214,15 +214,17 @@ npm install riksdagsmonitor
 // Core utilities (no dependencies required)
 import { getActiveThemeColors, BREAKPOINTS, getPartyColor } from 'riksdagsmonitor';
 import { loadJSON, loadCSV, createDataSource } from 'riksdagsmonitor';
-import { createChart, getResponsiveOptions, initDashboardSection } from 'riksdagsmonitor';
 import { showLoadingState, showErrorState, formatNumber, debounce } from 'riksdagsmonitor';
+
+// Chart utilities (requires chart.js peer dependency)
+import { createChart, getResponsiveOptions, initDashboardSection } from 'riksdagsmonitor/shared/chart-factory';
 
 // Register Chart.js, D3.js, PapaParse as globals (requires peer dependencies)
 import 'riksdagsmonitor/shared/register-globals';
 
 // Individual dashboard modules
-import { initPartyDashboard } from 'riksdagsmonitor/dashboards/party-dashboard';
-import { initRiskDashboard } from 'riksdagsmonitor/dashboards/risk-dashboard';
+import { init as initPartyDashboard } from 'riksdagsmonitor/dashboards/party-dashboard';
+import { init as initRiskDashboard } from 'riksdagsmonitor/dashboards/risk-dashboard';
 
 // CIA intelligence modules
 import { CIADataLoader } from 'riksdagsmonitor/cia/data-loader';

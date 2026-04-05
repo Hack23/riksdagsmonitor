@@ -40,10 +40,10 @@
 
 import {
   logger,
-  addChartKeyboardNav,
   showDataSourceDisclaimer,
   renderErrorFallback,
 } from '../shared/index.js';
+import { addChartKeyboardNav } from '../shared/chart-factory.js';
 
 import { detectLanguage } from '../shared/index.js';
 import type { CSVRow } from '../shared/index.js';
