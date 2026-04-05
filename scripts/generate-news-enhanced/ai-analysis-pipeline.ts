@@ -393,6 +393,9 @@ export class AIAnalysisPipeline {
   private readonly iterations: number;
   private readonly qualityThreshold: number;
 
+  /** Class-level guard shared across all instances so deprecation warnings are emitted at most once per process. */
+  private static _deprecationWarned = false;
+
   constructor(options: { iterations?: number; qualityThreshold?: number } = {}) {
     this.iterations = Math.min(10, Math.max(1, Math.floor(options.iterations ?? 3)));
     this.qualityThreshold = options.qualityThreshold ?? QUALITY_THRESHOLD;
@@ -434,6 +437,16 @@ export class AIAnalysisPipeline {
     let synthesis = this.iterations >= 2
       ? this.synthesizeAcrossDocuments(classified, documentAnalyses, normalizedFocusTopic, lang)
       : this.createEmptySynthesis();
+
+    // Emit a single consolidated deprecation warning per process for the
+    // template-based builders that are slated for replacement by AI prompts.
+    if (!AIAnalysisPipeline._deprecationWarned) {
+      AIAnalysisPipeline._deprecationWarned = true;
+      console.warn(
+        '[DEPRECATED] buildDynamicSwot(), buildStrategicImplications(), and buildKeyTakeaways() '
+        + 'are deprecated (v3.0). Use AI prompts in workflow .md files instead.',
+      );
+    }
 
     // Build dynamic SWOT (always — uses classification data from Pass 1)
     const dynamicSwotEntries = this.buildDynamicSwot(classified, normalizedFocusTopic, lang);
@@ -575,6 +588,10 @@ export class AIAnalysisPipeline {
     return { policyConvergence, coalitionStressIndicators, emergingTrends, stakeholderPowerDynamics };
   }
 
+  /**
+   * @deprecated Since v3.0 — Replace with AI prompt in workflow .md files.
+   * See analysis/methodologies/ai-driven-analysis-guide.md Rule 2.
+   */
   private buildDynamicSwot(
     classified: ClassifiedDocuments,
     focusTopic: string | null,
@@ -675,6 +692,10 @@ export class AIAnalysisPipeline {
     };
   }
 
+  /**
+   * @deprecated Since v3.0 — Replace with AI prompt in workflow .md files.
+   * See analysis/methodologies/ai-driven-analysis-guide.md Rule 2.
+   */
   private buildStrategicImplications(
     classified: ClassifiedDocuments,
     focusTopic: string | null,
@@ -748,6 +769,10 @@ export class AIAnalysisPipeline {
 
   // ── Key takeaways ─────────────────────────────────────────────────────────
 
+  /**
+   * @deprecated Since v3.0 — Replace with AI prompt in workflow .md files.
+   * See analysis/methodologies/ai-driven-analysis-guide.md Rule 2.
+   */
   private buildKeyTakeaways(
     classified: ClassifiedDocuments,
     focusTopic: string | null,

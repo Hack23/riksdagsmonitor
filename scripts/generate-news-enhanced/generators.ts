@@ -1037,8 +1037,12 @@ function docTypeLabel(doktyp: string, lang: Language, count?: number): string {
  *   2 = depth 1 + Historical Context + Predictive Assessment
  *   3 = depth 2 + Executive Intelligence Summary + Methodology (3 iterations)
  *   4 = depth 3 + quality-review iteration in Methodology (4 iterations)
- * When an AIAnalysisResult is supplied, its strategic implications and key
- * takeaways replace the template-based versions for richer, context-aware output.
+ * When `aiResult` is provided, both the Strategic Implications and Key
+ * Takeaways sections use its AI-generated content when present. For either
+ * AI-driven section with missing content, including when no AIAnalysisResult
+ * is supplied or when the corresponding `aiResult` field is empty,
+ * AI_MUST_REPLACE markers are emitted (v3.0+ — no template-generated fallback
+ * content).
  */
 function generateDeepInspectionContent(
   docs: RawDocument[],
@@ -1089,12 +1093,10 @@ function generateDeepInspectionContent(
   const stratHeading = deepLabel('strategicImplications', lang);
   html += `\n<section class="strategic-implications" aria-label="${esc(stratHeading)}">\n`;
   html += `  <h2>${esc(stratHeading)}</h2>\n`;
-  // Use AI-generated strategic implications when available (richer than template version).
-  // Safe to inject directly: AIAnalysisPipeline.buildStrategicImplications() escapes all
-  // dynamic values (topic, domain, signal) at construction time via escapeHtml(). The
-  // fallback buildStrategicImplications() in generators.ts also escapes its inputs.
+  // Use AI-generated strategic implications when non-empty; otherwise emit
+  // replacement marker for downstream AI processing (v3.0+).
   const strategicImplHtml = aiResult?.strategicImplications
-    ?? buildStrategicImplications(docs, topic, lang);
+    || '<!-- AI_MUST_REPLACE: strategic_implications -->';
   html += `  ${strategicImplHtml}\n`;
   html += `</section>\n`;
 
@@ -1120,7 +1122,7 @@ function generateDeepInspectionContent(
     });
     html += `</ul>\n`;
   } else {
-    html += buildKeyTakeaways(docs, topic, lang);
+    html += '<!-- AI_MUST_REPLACE: key_takeaways -->';
   }
   html += `</section>\n`;
 
@@ -1259,150 +1261,6 @@ function buildDocumentEntry(
 
   entry += `  </article>\n`;
   return entry;
-}
-
-/** Build strategic implications paragraph tied to the topic and document patterns. */
-function buildStrategicImplications(docs: RawDocument[], topic: string | null, lang: Language): string {
-  const esc = escapeHtml;
-  const propCount = docs.filter(d => effectiveType(d) === 'prop').length;
-  const betCount = docs.filter(d => effectiveType(d) === 'bet').length;
-  const motCount = docs.filter(d => effectiveType(d) === 'mot').length;
-  const pressmCount = docs.filter(d => effectiveType(d) === 'pressm').length;
-  const extCount = docs.filter(d => effectiveType(d) === 'ext').length;
-  const enrichedCount = docs.filter(d => d.contentFetched).length;
-  const legislativeCount = propCount + betCount + motCount;
-
-  // Detect all policy domains across documents for richer context
-  const allDomains = new Set<string>();
-  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
-  const domainPhrase = allDomains.size > 0 ? [...allDomains].slice(0, 3).map(d => esc(d)).join(', ') : '';
-
-  // Choose a template style based on document composition
-  const isLegislativeFocused = legislativeCount > 0;
-  const isPressOrExternal = pressmCount + extCount > 0 && legislativeCount === 0;
-
-  let enText: string;
-  if (isPressOrExternal) {
-    // Non-legislative documents (press releases, external) — differentiate messaging
-    const typeDesc = pressmCount > 0 ? `${pressmCount} government press release${pressmCount !== 1 ? 's' : ''}` : `${extCount} external reference${extCount !== 1 ? 's' : ''}`;
-    const signalText = pressmCount > 0
-      ? 'Government press communications signal policy priorities and upcoming legislative action.'
-      : 'These external references illuminate the policy landscape and highlight areas of potential legislative interest.';
-    enText = `Based on analysis of ${docs.length} document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriched with full text)${topic ? ` specifically addressing <strong>${esc(topic)}</strong>` : ''}: This deep inspection examines ${typeDesc}${domainPhrase ? ` spanning ${domainPhrase}` : ''}. ${signalText} Stakeholders should track whether formal propositions or committee referrals follow, which would confirm the transition from policy signalling to legislative commitment.`;
-  } else if (isLegislativeFocused) {
-    const signalText = propCount > betCount ? 'active government agenda-setting' : betCount > propCount ? 'strong parliamentary scrutiny' : 'balanced legislative activity';
-    enText = `Based on analysis of ${docs.length} parliamentary document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriched with full text)${topic ? ` specifically addressing <strong>${esc(topic)}</strong>` : ''}: The legislative pipeline shows ${propCount} government proposition${propCount !== 1 ? 's' : ''}, ${betCount} committee report${betCount !== 1 ? 's' : ''}, and ${motCount} opposition motion${motCount !== 1 ? 's' : ''}. This distribution signals ${signalText}${domainPhrase ? ` in ${domainPhrase}` : ' in this policy area'}. Stakeholders should monitor committee deliberations and chamber voting patterns as the most reliable indicators of policy trajectory.`;
-  } else {
-    enText = `Based on analysis of ${docs.length} document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriched with full text)${topic ? ` specifically addressing <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? `, covering ${domainPhrase}` : ''}: This analysis provides a snapshot of current policy direction. Stakeholders should monitor subsequent legislative developments for concrete implementation signals.`;
-  }
-
-  const enrichedPhraseSv = `${enrichedCount} ${enrichedCount === 1 ? 'berikat' : 'berikade'} med fulltext`;
-  let svText: string;
-  if (isPressOrExternal) {
-    const typeDescSv = pressmCount > 0 ? `${pressmCount} pressmeddelande${pressmCount !== 1 ? 'n' : ''}` : `${extCount} extern${extCount !== 1 ? 'a' : ''} referens${extCount !== 1 ? 'er' : ''}`;
-    const signalTextSv = pressmCount > 0
-      ? 'Regeringens presskommunikation signalerar politiska prioriteringar och kommande lagstiftningsåtgärder.'
-      : 'Dessa externa referenser belyser det politiska landskapet och lyfter fram områden med potentiellt lagstiftningsintresse.';
-    svText = `Baserat på analys av ${docs.length} dokument (${enrichedPhraseSv})${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Denna djupanalys granskar ${typeDescSv}${domainPhrase ? ` inom ${domainPhrase}` : ''}. ${signalTextSv} Intressenter bör bevaka om formella propositioner eller utskottsremisser följer.`;
-  } else if (isLegislativeFocused && legislativeCount > 0) {
-    svText = `Baserat på analys av ${docs.length} riksdagsdokument (${enrichedPhraseSv})${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}: Det lagstiftande flödet visar ${propCount} proposition${propCount !== 1 ? 'er' : ''}, ${betCount} betänkande${betCount !== 1 ? 'n' : ''} och ${motCount} motion${motCount !== 1 ? 'er' : ''}. Intressenter bör följa utskottens överläggningar och kammarens voteringsmönster.`;
-  } else {
-    svText = `Baserat på analys av ${docs.length} dokument (${enrichedPhraseSv})${topic ? ` med specifik inriktning på <strong>${esc(topic)}</strong>` : ''}${domainPhrase ? ` inom ${domainPhrase}` : ''}: Analysen ger en ögonblicksbild av den aktuella politiska inriktningen och dess betydelse för centrala intressenter.`;
-  }
-
-  const templates: Partial<Record<Language, string>> = {
-    en: enText,
-    sv: svText,
-    da: `Baseret på analyse af ${docs.length} dokument${docs.length !== 1 ? 'er' : ''} (${enrichedCount} beriget med fulde tekster)${topic ? ` specifikt om <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `Den lovgivningsmæssige aktivitet viser ${propCount} regeringsforslag, ${betCount} udvalgsrapport${betCount !== 1 ? 'er' : ''} og ${motCount} oppositionsforslag.` : 'Analysen giver et øjebliksbillede af den aktuelle politiske retning.'}`,
-    no: `Basert på analyse av ${docs.length} dokument${docs.length !== 1 ? 'er' : ''} (${enrichedCount} beriket med fulltekst)${topic ? ` spesifikt om <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `Lovgivningsaktiviteten viser ${propCount} regjeringsforslag, ${betCount} komitérapport${betCount !== 1 ? 'er' : ''} og ${motCount} opposisjonsforslag.` : 'Analysen gir et øyeblikksbilde av den aktuelle politiske retningen.'}`,
-    fi: `Perustuen ${docs.length} asiakirjan analyysiin (${enrichedCount} rikastettu koko tekstillä)${topic ? ` koskien erityisesti <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `Lainsäädäntötoiminta osoittaa ${propCount} hallituksen esitystä, ${betCount} valiokunnan mietintöä ja ${motCount} oppositioaloitetta.` : 'Analyysi tarjoaa tilannekuvan nykyisestä poliittisesta suunnasta.'}`,
-    de: `Basierend auf der Analyse von ${docs.length} Dokument${docs.length !== 1 ? 'en' : ''} (${enrichedCount} mit vollständigem Text angereichert)${topic ? ` speziell zu <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `Der Gesetzgebungsprozess zeigt ${propCount} Regierungsvorlage${propCount !== 1 ? 'n' : ''}, ${betCount} Ausschussbericht${betCount !== 1 ? 'e' : ''} und ${motCount} Oppositionsantrag${motCount !== 1 ? 'e' : ''}.` : 'Die Analyse bietet eine Momentaufnahme der aktuellen politischen Richtung.'}`,
-    fr: `Basé sur l'analyse de ${docs.length} document${docs.length !== 1 ? 's' : ''} (${enrichedCount} enrichi${enrichedCount !== 1 ? 's' : ''} avec le texte complet)${topic ? ` abordant spécifiquement <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `Le pipeline législatif montre ${propCount} proposition${propCount !== 1 ? 's' : ''} gouvernementale${propCount !== 1 ? 's' : ''}, ${betCount} rapport${betCount !== 1 ? 's' : ''} de commission et ${motCount} motion${motCount !== 1 ? 's' : ''} d'opposition.` : 'L\'analyse offre un aperçu de l\'orientation politique actuelle.'}`,
-    es: `Basado en el análisis de ${docs.length} documento${docs.length !== 1 ? 's' : ''} (${enrichedCount} enriquecido${enrichedCount !== 1 ? 's' : ''} con texto completo)${topic ? ` que abordan específicamente <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `La actividad legislativa muestra ${propCount} proposición${propCount !== 1 ? 'es' : ''} gubernamental${propCount !== 1 ? 'es' : ''}, ${betCount} informe${betCount !== 1 ? 's' : ''} de comité y ${motCount} moción${motCount !== 1 ? 'es' : ''} de oposición.` : 'El análisis proporciona una instantánea de la dirección política actual.'}`,
-    nl: `Gebaseerd op analyse van ${docs.length} document${docs.length !== 1 ? 'en' : ''} (${enrichedCount} verrijkt met volledige tekst)${topic ? ` specifiek over <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `De wetgevende activiteit toont ${propCount} regeringsvoorstel${propCount !== 1 ? 'len' : ''}, ${betCount} commissierapport${betCount !== 1 ? 'en' : ''} en ${motCount} oppositiemotie${motCount !== 1 ? 's' : ''}.` : 'De analyse biedt een momentopname van de huidige politieke richting.'}`,
-    ar: `استناداً إلى تحليل ${docs.length} وثيقة (${enrichedCount} مُعزَّزة بالنص الكامل)${topic ? ` تتناول تحديداً <strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `يُظهر النشاط التشريعي ${propCount} مقترحاً حكومياً و${betCount} تقرير${betCount !== 1 ? 'اً' : ''} للجنة و${motCount} اقتراح${motCount !== 1 ? 'اً' : ''} معارضاً.` : 'يوفر التحليل لقطة للاتجاه السياسي الحالي.'}`,
-    he: `בהתבסס על ניתוח ${docs.length} מסמכ${docs.length !== 1 ? 'ים' : ''} (${enrichedCount} עם טקסט מלא)${topic ? ` המתמקדים ב<strong>${esc(topic)}</strong>` : ''}: ${isLegislativeFocused ? `הפעילות החקיקתית מראה ${propCount} הצעת חוק ממשלתית, ${betCount} דוח ועדה ו-${motCount} הצעת אופוזיציה.` : 'הניתוח מספק תמונת מצב של הכיוון הפוליטי הנוכחי.'}`,
-    ja: `${docs.length}件の文書分析（${enrichedCount}件は全文で強化）${topic ? `、<strong>${esc(topic)}</strong>に特化` : ''}に基づく: ${isLegislativeFocused ? `立法活動は${propCount}件の政府提案、${betCount}件の委員会報告、${motCount}件の野党動議を示しています。` : '分析は現在の政策方向のスナップショットを提供しています。'}`,
-    ko: `${docs.length}개 문서 분석(${enrichedCount}개 전문 보강)${topic ? `, <strong>${esc(topic)}</strong>에 집중` : ''}에 기반: ${isLegislativeFocused ? `입법 활동은 ${propCount}개 정부 제안, ${betCount}개 위원회 보고서, ${motCount}개 야당 발의안을 보여줍니다.` : '분석은 현재 정책 방향의 스냅샷을 제공합니다.'}`,
-    zh: `基于对${docs.length}份文件（${enrichedCount}份含全文）的分析${topic ? `，专注于<strong>${esc(topic)}</strong>` : ''}：${isLegislativeFocused ? `立法活动显示${propCount}项政府提案、${betCount}份委员会报告和${motCount}项反对党动议。` : '该分析提供了当前政策方向的快照。'}`,
-  };
-  const text = templates[lang] ?? templates.en ?? '';
-  return `<p>${text}</p>`;
-}
-
-/** Build a bulleted key-takeaways list derived from document patterns and topic. */
-function buildKeyTakeaways(docs: RawDocument[], topic: string | null, lang: Language): string {
-  const esc = escapeHtml;
-  const items: string[] = [];
-
-  // Derive takeaways from document patterns
-  const propDocs = docs.filter(d => effectiveType(d) === 'prop');
-  const betDocs  = docs.filter(d => effectiveType(d) === 'bet');
-  const motDocs  = docs.filter(d => effectiveType(d) === 'mot');
-  const euDocs   = docs.filter(d => effectiveType(d) === 'fpm' || effectiveType(d) === 'eu');
-  const sfsDocs  = docs.filter(d => effectiveType(d) === 'sfs');
-  const pressmDocs = docs.filter(d => effectiveType(d) === 'pressm');
-
-  const topicPhrase = topic ? ` (${esc(topic)})` : '';
-
-  if (propDocs.length > 0) {
-    const titles = propDocs.slice(0, 2).map(d => esc(d.titel || d.title || d.dok_id || '')).join('; ');
-    items.push(lang === 'sv'
-      ? `<strong>${propDocs.length} proposition${propDocs.length !== 1 ? 'er' : ''}</strong>${topicPhrase} aktiv lagstiftning: ${titles}`
-      : `<strong>${propDocs.length} government proposition${propDocs.length !== 1 ? 's' : ''}</strong>${topicPhrase} in active legislation: ${titles}`);
-  }
-  if (sfsDocs.length > 0) {
-    items.push(lang === 'sv'
-      ? `<strong>${sfsDocs.length} antagen lag/förordning</strong>${topicPhrase} — rättsligt ramverk etablerat`
-      : `<strong>${sfsDocs.length} enacted law/statute</strong>${topicPhrase} — legal framework established`);
-  }
-  if (betDocs.length > 0) {
-    items.push(lang === 'sv'
-      ? `<strong>${betDocs.length} utskottsbetänkande${betDocs.length !== 1 ? 'n' : ''}</strong> visar parlamentarisk granskning av${topicPhrase}`
-      : `<strong>${betDocs.length} committee report${betDocs.length !== 1 ? 's' : ''}</strong> demonstrate parliamentary scrutiny of${topicPhrase}`);
-  }
-  if (motDocs.length > 0) {
-    items.push(lang === 'sv'
-      ? `<strong>${motDocs.length} oppositionsmotion${motDocs.length !== 1 ? 'er' : ''}</strong> utmanar${topicPhrase} inriktning`
-      : `<strong>${motDocs.length} opposition motion${motDocs.length !== 1 ? 's' : ''}</strong> challenge${motDocs.length === 1 ? 's' : ''} the${topicPhrase} direction`);
-  }
-  if (euDocs.length > 0) {
-    items.push(lang === 'sv'
-      ? `<strong>${euDocs.length} EU-faktapromemoria</strong> visar europeisk dimension av${topicPhrase}`
-      : `<strong>${euDocs.length} EU position paper${euDocs.length !== 1 ? 's' : ''}</strong> reveal the European dimension of${topicPhrase}`);
-  }
-
-  // Press release / government communication insights
-  if (pressmDocs.length > 0) {
-    items.push(lang === 'sv'
-      ? `<strong>${pressmDocs.length} pressmeddelande${pressmDocs.length !== 1 ? 'n' : ''} från regeringen</strong> signalerar kommande policyåtgärder${topicPhrase}`
-      : `<strong>${pressmDocs.length} government press release${pressmDocs.length !== 1 ? 's' : ''}</strong> signal${pressmDocs.length === 1 ? 's' : ''} upcoming policy action${topicPhrase}`);
-  }
-
-  // Content-derived insight: detected policy domains
-  const allDomains = new Set<string>();
-  docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDomains.add(dom)));
-  if (allDomains.size > 0) {
-    const domainList = [...allDomains].slice(0, 4).map(d => esc(d)).join(', ');
-    items.push(lang === 'sv'
-      ? `<strong>Identifierade policyområden:</strong> ${domainList}`
-      : `<strong>Policy domains identified:</strong> ${domainList}`);
-  }
-
-  const enriched = docs.filter(d => d.contentFetched).length;
-  if (enriched > 0) {
-    items.push(lang === 'sv'
-      ? `<strong>${enriched} av ${docs.length} dokument</strong> ${enriched === 1 ? 'berikat' : 'berikade'} med fulltext för djupanalys`
-      : `<strong>${enriched} of ${docs.length} document${docs.length !== 1 ? 's' : ''}</strong> enriched with full text for deep analysis`);
-  }
-
-  if (items.length === 0) {
-    items.push(lang === 'sv'
-      ? `Djupanalys genomförd av ${docs.length} dokument${topicPhrase}`
-      : `Deep analysis conducted on ${docs.length} document${docs.length !== 1 ? 's' : ''}${topicPhrase}`);
-  }
-
-  return `<ul class="key-takeaways-list">\n${items.map(i => `  <li>${i}</li>`).join('\n')}\n</ul>\n`;
 }
 
 // ---------------------------------------------------------------------------
