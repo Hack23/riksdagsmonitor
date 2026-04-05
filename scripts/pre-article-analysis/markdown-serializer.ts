@@ -139,7 +139,7 @@ export interface SynthesisSummary {
   aggregateRiskLevel: string;
   /** When lookback was used, the actual date of the data (YYYY-MM-DD).
    *  `null` when documents match the requested article date exactly. */
-  dataFreshness?: string | null;
+  dataFreshness: string | null;
 }
 
 // ---------------------------------------------------------------------------

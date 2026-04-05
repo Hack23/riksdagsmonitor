@@ -161,7 +161,7 @@ export interface SynthesisSummaryResult {
   forwardIndicators: string[];
   /** When lookback was used, the actual date of the data (YYYY-MM-DD).
    *  `null` when documents match the requested article date exactly. */
-  dataFreshness?: string | null;
+  dataFreshness: string | null;
 }
 
 /** Complete pre-computed daily analysis for a given date */
@@ -751,10 +751,12 @@ export function deriveArticleClassificationMeta(analysis: DailyAnalysis): {
 }
 
 /**
- * Check whether a daily analysis has substantive content (Documents Analyzed > 0).
+ * Check whether a daily analysis has substantive content.
  *
- * When the synthesis file reports 0 documents analyzed, the analysis is treated
- * as empty and downstream generators should fall back to a previous date.
+ * An analysis is considered non-empty when the synthesis contains at least
+ * one key theme or a narrative direction. When the synthesis-summary.md file
+ * was not generated (synthesis is null), the function defers to `hasAnalysis`
+ * since other analysis files may still contain useful data.
  */
 export function isNonEmptyAnalysis(analysis: DailyAnalysis): boolean {
   if (!analysis.hasAnalysis) return false;

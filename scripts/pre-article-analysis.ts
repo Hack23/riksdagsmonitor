@@ -617,6 +617,11 @@ async function runPreArticleAnalysis(opts: {
   // low-activity days), expand the filter to include previous business days
   // (up to MAX_LOOKBACK_BUSINESS_DAYS).  This prevents empty "Documents
   // Analyzed: 0" synthesis files from propagating to article generators.
+  //
+  // The requestedIdSet guard ensures lookback is ONLY used for generic
+  // date-based runs. Deep-inspection runs (--document-ids) fetch specific
+  // documents by ID in the block below, so lookback is unnecessary and would
+  // introduce unrelated documents.
   let dataFreshness: string | null = null;
   if (allDocs.length === 0 && requestedIdSet.size === 0) {
     for (let lookback = 1; lookback <= MAX_LOOKBACK_BUSINESS_DAYS; lookback++) {
