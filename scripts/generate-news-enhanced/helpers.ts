@@ -61,7 +61,7 @@ const DIMENSION_WEIGHT_SUM: number = Object.values(DIMENSION_WEIGHTS).reduce(
   0,
 );
 
-if (Math.abs(DIMENSION_WEIGHT_SUM - 1) > Number.EPSILON) {
+if (Math.abs(DIMENSION_WEIGHT_SUM - 1) > 1e-10) {
   throw new Error(`DIMENSION_WEIGHTS must sum to 1.0, got ${DIMENSION_WEIGHT_SUM}`);
 }
 
@@ -92,8 +92,8 @@ function scoreFactualAccuracy(html: string): DimensionScore {
 function scoreStakeholderCoverage(html: string): DimensionScore {
   // Strip script/style blocks before tag stripping to avoid JS/JSON-LD pollution
   const stripped: string = html
-    .replace(/<script[\s>][\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style[\s>][\s\S]*?<\/style>/gi, ' ')
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, ' ')
     .replace(/<[^>]+>/g, ' ');
   const evidence: string[] = [];
   const improvements: string[] = [];
