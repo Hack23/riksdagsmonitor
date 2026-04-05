@@ -1321,7 +1321,7 @@ describe('Data Transformers', () => {
         reports: [{ titel: 'Diverse frågor', url: 'https://example.com/1', dok_id: 'X1' }]
       } as MockArticlePayload, 'committee-reports', 'en') as string;
 
-      expect(content).toContain('Requires committee review');
+      expect(content).toContain('AI_MUST_REPLACE');
     });
 
     it('should produce committee-specific fallback when organ is known but no title keyword matches', () => {
@@ -2062,7 +2062,7 @@ describe('Data Transformers', () => {
 
     it('should have string-valued policySignificanceGeneric for en', () => {
       expect(typeof CONTENT_LABELS.en.policySignificanceGeneric).toBe('string');
-      expect(CONTENT_LABELS.en.policySignificanceGeneric).toContain('committee review');
+      expect(CONTENT_LABELS.en.policySignificanceGeneric).toContain('AI_MUST_REPLACE');
     });
 
     it('should have localized generalMatters for sv (not English)', () => {

@@ -4,7 +4,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { generateDeepAnalysisSection } from '../scripts/data-transformers/content-generators/shared.js';
+import { generateDeepAnalysisSection, detectBannedPatterns } from '../scripts/data-transformers/content-generators/shared.js';
 import type { RawDocument } from '../scripts/data-transformers/types.js';
 
 /** Helper to create minimal RawDocument stubs */
@@ -95,5 +95,19 @@ describe('generateDeepAnalysisSection', () => {
 
     expect(result).toContain('S');
     expect(result).toContain('M');
+  });
+
+  it('does not produce any banned boilerplate patterns', () => {
+    const docs = [makeDoc(), makeDoc({ parti: 'M' }), makeDoc({ parti: 'SD', doktyp: 'prop' })];
+    const result = generateDeepAnalysisSection({ documents: docs, lang: 'en', articleType: 'propositions' });
+    const banned = detectBannedPatterns(result);
+    expect(banned).toEqual([]);
+  });
+
+  it('uses AI replacement markers for winners/losers fallback', () => {
+    // All motions (no gov docs) and no CIA context → should hit the fallback branch
+    const docs = [makeDoc({ doktyp: 'mot' }), makeDoc({ doktyp: 'mot', parti: 'M' })];
+    const result = generateDeepAnalysisSection({ documents: docs, lang: 'en', articleType: 'motions' });
+    expect(result).toContain('AI_MUST_REPLACE');
   });
 });
