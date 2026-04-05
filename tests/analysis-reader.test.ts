@@ -999,6 +999,7 @@ describe('isNonEmptyAnalysis', () => {
         keyThemes: ['Budget debate'],
         articleFocus: '',
         forwardIndicators: [],
+        dataFreshness: null,
       },
     };
     expect(isNonEmptyAnalysis(analysis)).toBe(true);
@@ -1013,6 +1014,7 @@ describe('isNonEmptyAnalysis', () => {
         keyThemes: [],
         articleFocus: '',
         forwardIndicators: [],
+        dataFreshness: null,
       },
     };
     expect(isNonEmptyAnalysis(analysis)).toBe(true);
@@ -1027,6 +1029,7 @@ describe('isNonEmptyAnalysis', () => {
         keyThemes: [],
         articleFocus: '',
         forwardIndicators: [],
+        dataFreshness: null,
       },
     };
     expect(isNonEmptyAnalysis(analysis)).toBe(false);
