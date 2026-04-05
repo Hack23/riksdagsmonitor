@@ -393,6 +393,9 @@ export class AIAnalysisPipeline {
   private readonly iterations: number;
   private readonly qualityThreshold: number;
 
+  /** Module-level guard so deprecation warnings are emitted at most once per process. */
+  private static _deprecationWarned = false;
+
   constructor(options: { iterations?: number; qualityThreshold?: number } = {}) {
     this.iterations = Math.min(10, Math.max(1, Math.floor(options.iterations ?? 3)));
     this.qualityThreshold = options.qualityThreshold ?? QUALITY_THRESHOLD;
@@ -434,6 +437,16 @@ export class AIAnalysisPipeline {
     let synthesis = this.iterations >= 2
       ? this.synthesizeAcrossDocuments(classified, documentAnalyses, normalizedFocusTopic, lang)
       : this.createEmptySynthesis();
+
+    // Emit a single consolidated deprecation warning per process for the
+    // template-based builders that are slated for replacement by AI prompts.
+    if (!AIAnalysisPipeline._deprecationWarned) {
+      AIAnalysisPipeline._deprecationWarned = true;
+      console.warn(
+        '[DEPRECATED] buildDynamicSwot(), buildStrategicImplications(), buildKeyTakeaways() '
+        + 'are deprecated (v3.0). Use AI prompts in workflow .md files instead.',
+      );
+    }
 
     // Build dynamic SWOT (always — uses classification data from Pass 1)
     const dynamicSwotEntries = this.buildDynamicSwot(classified, normalizedFocusTopic, lang);
@@ -584,7 +597,6 @@ export class AIAnalysisPipeline {
     focusTopic: string | null,
     lang: Language,
   ): DynamicSwotEntries {
-    console.warn('[DEPRECATED] buildDynamicSwot() is deprecated (v3.0). Use AI prompt in workflow .md instead.');
     const topic = focusTopic ?? classified.allDomains[0] ?? 'policy';
     const {
       propDocs, betDocs, motDocs, sfsDocs, skrDocs, euDocs, pressmDocs, extDocs,
@@ -689,7 +701,6 @@ export class AIAnalysisPipeline {
     focusTopic: string | null,
     lang: Language,
   ): string {
-    console.warn('[DEPRECATED] buildStrategicImplications() is deprecated (v3.0). Use AI prompt in workflow .md instead.');
     const esc = escapeHtml;
     const topic = focusTopic ?? classified.allDomains[0] ?? '';
     const { propDocs, betDocs, motDocs, pressmDocs, extDocs, enrichedCount, allDomains } = classified;
@@ -767,7 +778,6 @@ export class AIAnalysisPipeline {
     focusTopic: string | null,
     lang: Language,
   ): string[] {
-    console.warn('[DEPRECATED] buildKeyTakeaways() is deprecated (v3.0). Use AI prompt in workflow .md instead.');
     const topic = focusTopic ?? classified.allDomains[0] ?? 'policy';
     const { propDocs, betDocs, motDocs, euDocs, enrichedCount } = classified;
     const total = propDocs.length + betDocs.length + motDocs.length

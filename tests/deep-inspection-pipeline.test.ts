@@ -151,6 +151,12 @@ describe('generateDeepInspectionContent depth-gated sections', () => {
     expect(html).not.toContain('class="methodology-confidence"');
   });
 
+  it('emits AI_MUST_REPLACE markers when aiResult is absent', async () => {
+    const html = await render(1, 'en');
+    expect(html).toContain('<!-- AI_MUST_REPLACE: strategic_implications -->');
+    expect(html).toContain('<!-- AI_MUST_REPLACE: key_takeaways -->');
+  });
+
   it('depth 2 adds historical and predictive sections only', async () => {
     const html = await render(2, 'en');
     expect(html).toContain('class="historical-context"');
