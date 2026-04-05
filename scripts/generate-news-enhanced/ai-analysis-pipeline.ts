@@ -575,11 +575,16 @@ export class AIAnalysisPipeline {
     return { policyConvergence, coalitionStressIndicators, emergingTrends, stakeholderPowerDynamics };
   }
 
+  /**
+   * @deprecated Since v3.0 — Replace with AI prompt in workflow .md files.
+   * See analysis/methodologies/ai-driven-analysis-guide.md Rule 2.
+   */
   private buildDynamicSwot(
     classified: ClassifiedDocuments,
     focusTopic: string | null,
     lang: Language,
   ): DynamicSwotEntries {
+    console.warn('[DEPRECATED] buildDynamicSwot() is deprecated (v3.0). Use AI prompt in workflow .md instead.');
     const topic = focusTopic ?? classified.allDomains[0] ?? 'policy';
     const {
       propDocs, betDocs, motDocs, sfsDocs, skrDocs, euDocs, pressmDocs, extDocs,
@@ -675,11 +680,16 @@ export class AIAnalysisPipeline {
     };
   }
 
+  /**
+   * @deprecated Since v3.0 — Replace with AI prompt in workflow .md files.
+   * See analysis/methodologies/ai-driven-analysis-guide.md Rule 2.
+   */
   private buildStrategicImplications(
     classified: ClassifiedDocuments,
     focusTopic: string | null,
     lang: Language,
   ): string {
+    console.warn('[DEPRECATED] buildStrategicImplications() is deprecated (v3.0). Use AI prompt in workflow .md instead.');
     const esc = escapeHtml;
     const topic = focusTopic ?? classified.allDomains[0] ?? '';
     const { propDocs, betDocs, motDocs, pressmDocs, extDocs, enrichedCount, allDomains } = classified;
@@ -748,11 +758,16 @@ export class AIAnalysisPipeline {
 
   // ── Key takeaways ─────────────────────────────────────────────────────────
 
+  /**
+   * @deprecated Since v3.0 — Replace with AI prompt in workflow .md files.
+   * See analysis/methodologies/ai-driven-analysis-guide.md Rule 2.
+   */
   private buildKeyTakeaways(
     classified: ClassifiedDocuments,
     focusTopic: string | null,
     lang: Language,
   ): string[] {
+    console.warn('[DEPRECATED] buildKeyTakeaways() is deprecated (v3.0). Use AI prompt in workflow .md instead.');
     const topic = focusTopic ?? classified.allDomains[0] ?? 'policy';
     const { propDocs, betDocs, motDocs, euDocs, enrichedCount } = classified;
     const total = propDocs.length + betDocs.length + motDocs.length
