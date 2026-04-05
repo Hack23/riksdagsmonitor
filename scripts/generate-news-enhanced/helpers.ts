@@ -34,8 +34,17 @@ import { detectSwedishLeakage } from '../detect-swedish-leakage.js';
 /** Swedish party abbreviations used to detect stakeholder coverage. */
 const SWEDISH_PARTIES: readonly string[] = ['S', 'M', 'SD', 'V', 'MP', 'C', 'L', 'KD'];
 
+/** Pre-compiled regexes for party name matching (word boundaries, case-sensitive). */
+const PARTY_REGEXES: readonly RegExp[] = SWEDISH_PARTIES.map(p => new RegExp(`\\b${p}\\b`));
+
 /** Minimum number of dok_id citations for a passing evidence quality score. */
 const MIN_DOK_ID_CITATIONS = 2;
+
+/** Number of Swedish leakage occurrences that trigger one deduction step. */
+const LEAKAGE_OCCURRENCES_PER_DEDUCTION = 5;
+
+/** Points deducted per leakage deduction step. */
+const LEAKAGE_DEDUCTION_AMOUNT = 25;
 
 /** Dimension weights for the weighted overall score (must sum to 1.0). */
 const DIMENSION_WEIGHTS: Record<string, number> = {
@@ -76,12 +85,8 @@ function scoreStakeholderCoverage(html: string): DimensionScore {
   const evidence: string[] = [];
   const improvements: string[] = [];
 
-  // Count distinct Swedish parties mentioned
-  const mentionedParties: string[] = SWEDISH_PARTIES.filter(party => {
-    // Match party abbreviation as a whole word (case-sensitive for short abbreviations)
-    const regex = new RegExp(`\\b${party}\\b`);
-    return regex.test(stripped);
-  });
+  // Count distinct Swedish parties mentioned using pre-compiled regexes
+  const mentionedParties: string[] = SWEDISH_PARTIES.filter((_, i) => PARTY_REGEXES[i].test(stripped));
 
   evidence.push(`${mentionedParties.length} distinct parties mentioned: ${mentionedParties.join(', ') || 'none'}`);
 
@@ -194,7 +199,9 @@ function scoreEvidenceQuality(html: string, docIds: readonly string[]): Dimensio
   const dokIdPatterns: RegExp[] = [
     /data-dok-id/gi,
     /dok_id/gi,
-    /\b[A-Z]\d{3}[A-Za-z]\w+\b/g, // Riksdag document ID format (e.g. H901AU10)
+    // Riksdag document ID format: letter + 3 digits + letter(s) + alphanumeric suffix
+    // Examples: H901AU10, H901FiU1, GZ10259. Intentionally broad to catch variants.
+    /\b[A-Z]\d{3}[A-Za-z]\w+\b/g,
   ];
   let htmlDokIdCount = 0;
   for (const pattern of dokIdPatterns) {
@@ -249,8 +256,7 @@ function scoreLanguageQuality(html: string, lang: string): DimensionScore {
     evidence.push(`Top leaked terms: ${topTerms}`);
   }
 
-  // Deduct 25 points per 5 leaked occurrences, capped at -100
-  const deduction: number = Math.min(100, Math.floor(leakageScore / 5) * 25);
+  const deduction: number = Math.min(100, Math.floor(leakageScore / LEAKAGE_OCCURRENCES_PER_DEDUCTION) * LEAKAGE_DEDUCTION_AMOUNT);
   const score: number = Math.max(0, 100 - deduction);
 
   if (leakageScore > 0) {
