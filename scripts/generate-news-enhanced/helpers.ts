@@ -23,36 +23,350 @@ import {
   toISODate,
 } from './config.js';
 
-import type { MultiDimensionalQualityAssessment } from '../types/article.js';
+import type { MultiDimensionalQualityAssessment, DimensionScore, QualityIssue } from '../types/article.js';
+import { detectBannedPatterns } from '../data-transformers/content-generators/shared.js';
+import { detectSwedishLeakage } from '../detect-swedish-leakage.js';
 
 // ---------------------------------------------------------------------------
-// Stub quality functions (deleted with ai-analysis module).
-// Per ai-driven-analysis-guide.md Rule 2, quality assessment is now done by
-// the AI agent in agentic workflows, not by scripts.
+// Multi-dimensional article quality assessment
 // ---------------------------------------------------------------------------
 
-/** Stub: returns a passing quality assessment */
-function assessArticleQuality(_html: string, _lang: string, _docIds: readonly string[], _threshold: number): MultiDimensionalQualityAssessment {
+/** Swedish party abbreviations used to detect stakeholder coverage. */
+const SWEDISH_PARTIES: readonly string[] = ['S', 'M', 'SD', 'V', 'MP', 'C', 'L', 'KD'];
+
+/** Minimum number of dok_id citations for a passing evidence quality score. */
+const MIN_DOK_ID_CITATIONS = 2;
+
+/** Dimension weights for the weighted overall score (must sum to 1.0). */
+const DIMENSION_WEIGHTS: Record<string, number> = {
+  factualAccuracy: 0.25,
+  stakeholderCoverage: 0.15,
+  analyticalDepth: 0.15,
+  editorialConsistency: 0.10,
+  evidenceQuality: 0.20,
+  languageQuality: 0.15,
+};
+
+/**
+ * Assess the factual accuracy dimension.
+ * Detects banned boilerplate patterns — each one deducts 20 points.
+ */
+function scoreFactualAccuracy(html: string): DimensionScore {
+  const bannedLabels: string[] = detectBannedPatterns(html);
+  const deduction: number = bannedLabels.length * 20;
+  const score: number = Math.max(0, 100 - deduction);
+
+  const evidence: string[] = bannedLabels.length === 0
+    ? ['No banned boilerplate patterns detected']
+    : bannedLabels.map(label => `Banned pattern found: ${label}`);
+
+  const improvements: string[] = bannedLabels.map(
+    label => `Replace banned pattern "${label}" with genuine, document-specific analysis`,
+  );
+
+  return { score, evidence, improvements };
+}
+
+/**
+ * Assess stakeholder coverage dimension.
+ * Checks for named political parties/actors — at least 2 distinct parties expected.
+ */
+function scoreStakeholderCoverage(html: string): DimensionScore {
+  const stripped: string = html.replace(/<[^>]+>/g, ' ');
+  const evidence: string[] = [];
+  const improvements: string[] = [];
+
+  // Count distinct Swedish parties mentioned
+  const mentionedParties: string[] = SWEDISH_PARTIES.filter(party => {
+    // Match party abbreviation as a whole word (case-sensitive for short abbreviations)
+    const regex = new RegExp(`\\b${party}\\b`);
+    return regex.test(stripped);
+  });
+
+  evidence.push(`${mentionedParties.length} distinct parties mentioned: ${mentionedParties.join(', ') || 'none'}`);
+
+  // Check for Winners & Losers section
+  const hasWinnersLosers: boolean = /winners?\s*(and|&|\/)\s*losers?/i.test(stripped)
+    || /vinnare\s*(och|&|\/)\s*förlorare/i.test(stripped);
+
+  if (hasWinnersLosers) {
+    evidence.push('Winners & Losers section detected');
+  }
+
+  let score = 100;
+  if (mentionedParties.length < 2) {
+    score -= 30;
+    improvements.push('Add coverage of at least 2 distinct political parties with named actors');
+  }
+  if (!hasWinnersLosers) {
+    score -= 15;
+    improvements.push('Add a Winners & Losers section identifying which parties gain or lose');
+  }
+
+  return { score: Math.max(0, score), evidence, improvements };
+}
+
+/**
+ * Assess analytical depth dimension.
+ * Checks for Mermaid diagrams, analytical framework mentions, and structured analysis.
+ */
+function scoreAnalyticalDepth(html: string): DimensionScore {
+  const evidence: string[] = [];
+  const improvements: string[] = [];
+
+  // Count Mermaid diagrams
+  const mermaidMatches: RegExpMatchArray | null = html.match(/class="mermaid"/g);
+  const mermaidCount: number = mermaidMatches ? mermaidMatches.length : 0;
+  evidence.push(`${mermaidCount} Mermaid diagram(s) found`);
+
+  // Count analytical framework references
+  const frameworkPatterns: RegExp[] = [
+    /SWOT/i, /cost-benefit/i, /risk\s+assessment/i, /impact\s+analysis/i,
+    /stakeholder\s+analysis/i, /comparative\s+analysis/i, /trend\s+analysis/i,
+  ];
+  const frameworkCount: number = frameworkPatterns.filter(p => p.test(html)).length;
+  evidence.push(`${frameworkCount} analytical framework reference(s) found`);
+
+  // Check for h3 sub-sections (deeper analysis)
+  const h3Matches: RegExpMatchArray | null = html.match(/<h3[\s>]/gi);
+  const h3Count: number = h3Matches ? h3Matches.length : 0;
+  evidence.push(`${h3Count} sub-section(s) found`);
+
+  let score = 100;
+  if (mermaidCount === 0) {
+    score -= 20;
+    improvements.push('Add at least one Mermaid diagram visualizing key relationships or processes');
+  }
+  if (frameworkCount === 0) {
+    score -= 15;
+    improvements.push('Reference analytical frameworks (SWOT, cost-benefit, risk assessment) to deepen analysis');
+  }
+  if (h3Count < 2) {
+    score -= 10;
+    improvements.push('Add sub-sections (h3) for more granular analytical depth');
+  }
+
+  return { score: Math.max(0, score), evidence, improvements };
+}
+
+/**
+ * Assess editorial consistency dimension.
+ * Detects duplicate "Why It Matters" sections and other structural duplications.
+ */
+function scoreEditorialConsistency(html: string): DimensionScore {
+  const evidence: string[] = [];
+  const improvements: string[] = [];
+
+  // Count "Why It Matters" occurrences
+  const whyItMattersMatches: RegExpMatchArray | null = html.match(/Why\s+It\s+Matters/gi);
+  const whyItMattersCount: number = whyItMattersMatches ? whyItMattersMatches.length : 0;
+  evidence.push(`${whyItMattersCount} "Why It Matters" occurrence(s)`);
+
+  // Count "What to Watch" occurrences
+  const watchMatches: RegExpMatchArray | null = html.match(/What\s+to\s+Watch/gi);
+  const watchCount: number = watchMatches ? watchMatches.length : 0;
+  evidence.push(`${watchCount} "What to Watch" occurrence(s)`);
+
+  let score = 100;
+  const duplicateWhyItMatters: number = Math.max(0, whyItMattersCount - 1);
+  if (duplicateWhyItMatters > 0) {
+    score -= duplicateWhyItMatters * 15;
+    improvements.push(`Remove ${duplicateWhyItMatters} duplicate "Why It Matters" section(s) — only one per article`);
+  }
+  const duplicateWatch: number = Math.max(0, watchCount - 1);
+  if (duplicateWatch > 0) {
+    score -= duplicateWatch * 15;
+    improvements.push(`Remove ${duplicateWatch} duplicate "What to Watch" section(s) — only one per article`);
+  }
+
+  return { score: Math.max(0, score), evidence, improvements };
+}
+
+/**
+ * Assess evidence quality dimension.
+ * Checks for dok_id citations, confidence labels, and named sources.
+ */
+function scoreEvidenceQuality(html: string, docIds: readonly string[]): DimensionScore {
+  const evidence: string[] = [];
+  const improvements: string[] = [];
+
+  // Count dok_id references in the HTML itself (e.g. data-dok-id or inline references)
+  const dokIdPatterns: RegExp[] = [
+    /data-dok-id/gi,
+    /dok_id/gi,
+    /\b[A-Z]\d{3}[A-Za-z]\w+\b/g, // Riksdag document ID format (e.g. H901AU10)
+  ];
+  let htmlDokIdCount = 0;
+  for (const pattern of dokIdPatterns) {
+    const matches: RegExpMatchArray | null = html.match(pattern);
+    if (matches) htmlDokIdCount += matches.length;
+  }
+
+  // Also count provided source document IDs
+  const totalDocIds: number = docIds.length + htmlDokIdCount;
+  evidence.push(`${totalDocIds} document ID reference(s) found (${docIds.length} source IDs + ${htmlDokIdCount} inline)`);
+
+  // Check for confidence labels
+  const confidencePattern = /\b(HIGH|MEDIUM|LOW)\s+confidence\b/gi;
+  const confidenceMatches: RegExpMatchArray | null = html.match(confidencePattern);
+  const confidenceCount: number = confidenceMatches ? confidenceMatches.length : 0;
+  evidence.push(`${confidenceCount} confidence label(s) found`);
+
+  let score = 100;
+  if (totalDocIds < MIN_DOK_ID_CITATIONS) {
+    score -= 20;
+    improvements.push(`Add at least ${MIN_DOK_ID_CITATIONS} document ID citations (dok_id) to support factual claims`);
+  }
+  if (confidenceCount === 0) {
+    score -= 15;
+    improvements.push('Add confidence labels (HIGH/MEDIUM/LOW confidence) to analytical claims');
+  }
+
+  return { score: Math.max(0, score), evidence, improvements };
+}
+
+/**
+ * Assess language quality dimension.
+ * Detects Swedish text leakage in non-Swedish articles using the dedicated detector.
+ */
+function scoreLanguageQuality(html: string, lang: string): DimensionScore {
+  const evidence: string[] = [];
+  const improvements: string[] = [];
+
+  if (lang === 'sv') {
+    evidence.push('Swedish article — language leakage check not applicable');
+    return { score: 100, evidence, improvements };
+  }
+
+  const leakageReport = detectSwedishLeakage(html, lang as Language);
+  const leakageScore: number = leakageReport.score;
+  const leakedTerms = leakageReport.leakedTerms;
+
+  evidence.push(`${leakedTerms.length} unique Swedish term(s) leaked (${leakageScore} total occurrence(s))`);
+
+  if (leakedTerms.length > 0) {
+    const topTerms: string = leakedTerms.slice(0, 5).map(t => `"${t.term}"`).join(', ');
+    evidence.push(`Top leaked terms: ${topTerms}`);
+  }
+
+  // Deduct 25 points per 5 leaked occurrences, capped at -100
+  const deduction: number = Math.min(100, Math.floor(leakageScore / 5) * 25);
+  const score: number = Math.max(0, 100 - deduction);
+
+  if (leakageScore > 0) {
+    improvements.push(`Translate ${leakedTerms.length} Swedish term(s) to ${lang}: ${leakedTerms.slice(0, 3).map(t => `"${t.term}"`).join(', ')}`);
+  }
+
+  return { score, evidence, improvements };
+}
+
+/**
+ * Multi-dimensional article quality assessment.
+ *
+ * Scores 6 dimensions independently, then computes a weighted overall score.
+ * Returns actionable improvement suggestions and detected quality issues.
+ *
+ * @param html      - raw HTML of the article
+ * @param lang      - language code (e.g. "en", "sv")
+ * @param docIds    - source document IDs used in the article
+ * @param threshold - minimum overall score to pass (typically MULTIDIM_QUALITY_THRESHOLD)
+ * @returns MultiDimensionalQualityAssessment with per-dimension scores, issues, and suggestions
+ */
+export function assessArticleQuality(html: string, lang: string, docIds: readonly string[], threshold: number): MultiDimensionalQualityAssessment {
+  // ── Pass 1: score each dimension ────────────────────────────────────────
+  const factualAccuracy = scoreFactualAccuracy(html);
+  const stakeholderCoverage = scoreStakeholderCoverage(html);
+  const analyticalDepth = scoreAnalyticalDepth(html);
+  const editorialConsistency = scoreEditorialConsistency(html);
+  const evidenceQuality = scoreEvidenceQuality(html, docIds);
+  const languageQuality = scoreLanguageQuality(html, lang);
+
+  const dimensions = {
+    factualAccuracy,
+    stakeholderCoverage,
+    analyticalDepth,
+    editorialConsistency,
+    evidenceQuality,
+    languageQuality,
+  };
+
+  // ── Pass 2: aggregate weighted overall score ────────────────────────────
+  const overallScore: number = Math.round(
+    factualAccuracy.score * DIMENSION_WEIGHTS.factualAccuracy +
+    stakeholderCoverage.score * DIMENSION_WEIGHTS.stakeholderCoverage +
+    analyticalDepth.score * DIMENSION_WEIGHTS.analyticalDepth +
+    editorialConsistency.score * DIMENSION_WEIGHTS.editorialConsistency +
+    evidenceQuality.score * DIMENSION_WEIGHTS.evidenceQuality +
+    languageQuality.score * DIMENSION_WEIGHTS.languageQuality,
+  );
+
+  // ── Collect issues sorted by severity ───────────────────────────────────
+  const issues: QualityIssue[] = [];
+
+  for (const [dimName, dim] of Object.entries(dimensions)) {
+    if (dim.score < 50) {
+      issues.push({
+        severity: 'critical',
+        dimension: dimName,
+        description: `${dimName} score critically low (${dim.score}/100)`,
+        suggestedFix: dim.improvements[0] ?? 'Improve this dimension',
+      });
+    } else if (dim.score < 70) {
+      issues.push({
+        severity: 'major',
+        dimension: dimName,
+        description: `${dimName} score below acceptable (${dim.score}/100)`,
+        suggestedFix: dim.improvements[0] ?? 'Improve this dimension',
+      });
+    } else if (dim.score < 90 && dim.improvements.length > 0) {
+      issues.push({
+        severity: 'minor',
+        dimension: dimName,
+        description: `${dimName} has room for improvement (${dim.score}/100)`,
+        suggestedFix: dim.improvements[0] ?? 'Improve this dimension',
+      });
+    }
+  }
+
+  // Sort: critical → major → minor
+  const severityOrder: Record<string, number> = { critical: 0, major: 1, minor: 2 };
+  issues.sort((a, b) => (severityOrder[a.severity] ?? 3) - (severityOrder[b.severity] ?? 3));
+
+  // ── Collect top suggestions ─────────────────────────────────────────────
+  const suggestions: string[] = [];
+  for (const dim of Object.values(dimensions)) {
+    for (const imp of dim.improvements) {
+      suggestions.push(imp);
+    }
+  }
+
+  const passesThreshold: boolean = overallScore >= threshold;
+
   return {
-    overallScore: 100,
-    dimensions: {
-      factualAccuracy: { score: 100, evidence: [], improvements: [] },
-      stakeholderCoverage: { score: 100, evidence: [], improvements: [] },
-      analyticalDepth: { score: 100, evidence: [], improvements: [] },
-      editorialConsistency: { score: 100, evidence: [], improvements: [] },
-      evidenceQuality: { score: 100, evidence: [], improvements: [] },
-      languageQuality: { score: 100, evidence: [], improvements: [] },
-    },
-    issues: [],
-    suggestions: [],
-    passesThreshold: true,
-    assessmentPasses: 1,
+    overallScore,
+    dimensions,
+    issues,
+    suggestions,
+    passesThreshold,
+    assessmentPasses: 2,
   };
 }
 
-/** Stub: no-op quality report */
-function printQualityReport(_assessment: MultiDimensionalQualityAssessment, _filename: string): void {
-  // Quality reporting is now handled by AI workflows
+/** Print a summary of the multi-dimensional quality assessment to console. */
+function printQualityReport(assessment: MultiDimensionalQualityAssessment, filename: string): void {
+  const reportId: string = filename.replace(/\.html$/, '');
+  console.log(`\n🔍 Multi-dimensional Quality Report: ${reportId}`);
+  console.log(`   Overall score:          ${assessment.overallScore}/100 — ${assessment.passesThreshold ? 'PASSED' : 'BELOW THRESHOLD'}`);
+  for (const [dimName, dim] of Object.entries(assessment.dimensions)) {
+    const icon: string = dim.score >= 80 ? '✅' : dim.score >= 50 ? '⚠️' : '❌';
+    console.log(`   ${dimName}: ${dim.score}/100 ${icon}`);
+  }
+  if (assessment.issues.length > 0) {
+    console.log(`   Issues (${assessment.issues.length}):`);
+    for (const issue of assessment.issues.slice(0, 5)) {
+      console.log(`     [${issue.severity}] ${issue.description}`);
+    }
+  }
 }
 
 /** Stub: returns HTML unchanged (quality metadata injection removed) */
