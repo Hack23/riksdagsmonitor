@@ -352,7 +352,7 @@ describe('assessArticleQuality', () => {
       if (!helpers) return;
       const html = '<p>Some content with HIGH confidence.</p>';
       const result = helpers.assessArticleQuality(html, 'en', ['doc1', 'doc2'], 60);
-      expect(result.dimensions.evidenceQuality.evidence[0]).toContain('2 source IDs');
+      expect(result.dimensions.evidenceQuality.evidence[0]).toContain('2 source');
     });
 
     it('deduplicates overlapping document ID matches', () => {
@@ -360,8 +360,10 @@ describe('assessArticleQuality', () => {
       // H901AU10 appears in data-dok-id, in dok_id reference, and as a bare ID — should count once
       const html = '<p data-dok-id="H901AU10">dok_id: H901AU10. Reference to H901AU10 here.</p>';
       const result = helpers.assessArticleQuality(html, 'en', ['H901AU10'], 60);
-      // Total should be 1 unique doc ID (all references are the same ID)
+      // Total should be 1 unique doc ID (all references are the same ID, deduplicated)
       expect(result.dimensions.evidenceQuality.evidence[0]).toContain('1 unique document ID');
+      // Score should reflect only 1 citation (below minimum of 2), so deduction applies
+      expect(result.dimensions.evidenceQuality.score).toBeLessThan(100);
     });
   });
 

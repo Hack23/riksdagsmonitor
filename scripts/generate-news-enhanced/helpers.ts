@@ -238,7 +238,7 @@ function scoreEvidenceQuality(html: string, docIds: readonly string[]): Dimensio
 
   const totalDocIds: number = new Set<string>([...sourceDocIds, ...htmlDocIds]).size;
   evidence.push(
-    `${totalDocIds} unique document ID reference(s) found (${sourceDocIds.size} source IDs + ${htmlDocIds.size} unique inline, deduplicated)`,
+    `${totalDocIds} unique document ID reference(s) found (${sourceDocIds.size} source + ${htmlDocIds.size} inline, merged and deduplicated)`,
   );
 
   // Check for confidence labels
