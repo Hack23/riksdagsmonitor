@@ -18,6 +18,12 @@ import {
   formatDocumentDate,
   filterFreshDocuments
 } from '../scripts/data-transformers.js';
+import {
+  classifyByCommitteeCode,
+  detectPolicyDomainsWithConfidence,
+  detectPolicyDomains,
+} from '../scripts/data-transformers/policy-analysis.js';
+import { COMMITTEE_TO_DOMAIN } from '../scripts/data-transformers/constants/committee-names.js';
 import type { Language } from '../scripts/types/language.js';
 import type { EventGridItem, WatchPoint, ArticleMetadata } from '../scripts/types/article.js';
 
@@ -1324,22 +1330,23 @@ describe('Data Transformers', () => {
       expect(content).toContain('AI_MUST_REPLACE: policy_significance_generic');
     });
 
-    it('should produce committee-specific fallback when organ is known but no title keyword matches', () => {
+    it('should detect constitutional affairs domain from KU committee code', () => {
       const content = generateArticleContent({
         propositions: [{ titel: 'Diverse administrativa ändringar', organ: 'KU', url: 'https://example.com/1', dok_id: 'KU1' }]
       } as MockArticlePayload, 'propositions', 'en') as string;
 
-      // KU is not mapped to a domain — should get committee-specific fallback instead of generic
+      // KU is mapped to 'constitutional' domain — gets domain-specific analysis
       expect(content).not.toContain('Requires committee review and chamber debate before a decision is reached.');
-      expect(content).toContain('Committee on the Constitution');
+      expect(content).toContain('constitutional affairs');
     });
 
-    it('should produce Swedish committee fallback for sv language', () => {
+    it('should produce Swedish constitutional domain for KU organ', () => {
       const content = generateArticleContent({
         propositions: [{ titel: 'Diverse administrativa ändringar', organ: 'KU', url: 'https://example.com/1', dok_id: 'KU1' }]
       } as MockArticlePayload, 'propositions', 'sv') as string;
 
-      expect(content).toContain('konstitutionsutskottet');
+      // KU is now mapped to 'constitutional' domain → Swedish name 'konstitutionella frågor'
+      expect(content).toContain('konstitutionella frågor');
     });
 
     it('should detect "vapen" as defence and security policy', () => {
@@ -1406,22 +1413,22 @@ describe('Data Transformers', () => {
       expect(content).toContain('trade and industry policy');
     });
 
-    it('should use committee fallback for KU organ when title has no matching keywords', () => {
+    it('should detect constitutional affairs domain from KU organ in committee reports', () => {
       const content = generateArticleContent({
         reports: [{ titel: 'Grundlagsändringar', organ: 'KU', url: 'https://example.com/1', dok_id: 'KU1' }]
       } as MockArticlePayload, 'committee-reports', 'en') as string;
 
-      // KU not mapped to domain — gets committee-specific fallback
+      // KU mapped to 'constitutional' domain — domain-specific analysis mentions the committee
       expect(content).not.toContain('Requires committee review and chamber debate before a decision is reached.');
       expect(content).toContain('Committee on the Constitution');
     });
 
-    it('should use committee fallback for KrU organ when title has no matching keywords', () => {
+    it('should detect culture and media domain from KrU organ in committee reports', () => {
       const content = generateArticleContent({
         reports: [{ titel: 'Kulturfrågor', organ: 'KrU', url: 'https://example.com/1', dok_id: 'KrU1' }]
       } as MockArticlePayload, 'committee-reports', 'en') as string;
 
-      // KrU not mapped to domain — gets committee-specific fallback
+      // KrU mapped to 'culture' domain — domain-specific analysis mentions the committee
       expect(content).not.toContain('Requires committee review and chamber debate before a decision is reached.');
       expect(content).toContain('Committee on Cultural Affairs');
     });
@@ -1432,6 +1439,110 @@ describe('Data Transformers', () => {
       } as MockArticlePayload, 'committee-reports', 'sv') as string;
 
       expect(content).toContain('finanspolitik');
+    });
+  });
+
+  describe('Committee-code-based classification (classifyByCommitteeCode)', () => {
+    it('should map all 15 committee codes to domain keys', () => {
+      const expectedMappings: Record<string, string> = {
+        AU: 'labour',
+        CU: 'housing',
+        FiU: 'fiscal',
+        FöU: 'defence',
+        JuU: 'justice',
+        KU: 'constitutional',
+        KrU: 'culture',
+        MJU: 'environment',
+        NU: 'trade',
+        SkU: 'fiscal',
+        SfU: 'social-insurance',
+        SoU: 'healthcare',
+        TU: 'transport',
+        UbU: 'education',
+        UU: 'eu-foreign',
+      };
+      for (const [code, expectedDomain] of Object.entries(expectedMappings)) {
+        expect(classifyByCommitteeCode(code)).toBe(expectedDomain);
+      }
+    });
+
+    it('should return null for unknown committee codes', () => {
+      expect(classifyByCommitteeCode('XYZ')).toBeNull();
+      expect(classifyByCommitteeCode('')).toBeNull();
+    });
+
+    it('should have COMMITTEE_TO_DOMAIN covering all 15 committees', () => {
+      expect(Object.keys(COMMITTEE_TO_DOMAIN)).toHaveLength(15);
+    });
+  });
+
+  describe('detectPolicyDomainsWithConfidence', () => {
+    it('should return HIGH confidence when committee code is available', () => {
+      const result = detectPolicyDomainsWithConfidence({ organ: 'FiU', titel: 'Budget' });
+      expect(result.confidence).toBe('HIGH');
+      expect(result.domains).toHaveLength(1);
+      expect(result.domains[0]).toBe('fiscal policy');
+    });
+
+    it('should return LOW confidence when only keywords are available', () => {
+      const result = detectPolicyDomainsWithConfidence({ titel: 'Klimat och miljö' });
+      expect(result.confidence).toBe('LOW');
+      expect(result.domains.length).toBeGreaterThan(0);
+      expect(result.domains).toContain('environmental and climate policy');
+    });
+
+    it('should return LOW confidence with empty domains when nothing matches', () => {
+      const result = detectPolicyDomainsWithConfidence({ titel: 'Diverse frågor' });
+      expect(result.confidence).toBe('LOW');
+      expect(result.domains).toHaveLength(0);
+    });
+
+    it('should prioritize committee code over title keywords', () => {
+      // Title suggests environment but committee code says fiscal
+      const result = detectPolicyDomainsWithConfidence({ organ: 'FiU', titel: 'Klimatlag miljö' });
+      expect(result.confidence).toBe('HIGH');
+      expect(result.domains).toHaveLength(1);
+      expect(result.domains[0]).toBe('fiscal policy');
+    });
+
+    it('should map SfU to social-insurance domain, not migration', () => {
+      const result = detectPolicyDomainsWithConfidence({ organ: 'SfU', titel: 'Socialförsäkring' });
+      expect(result.confidence).toBe('HIGH');
+      expect(result.domains[0]).toBe('social insurance policy');
+    });
+
+    it('should map KU to constitutional affairs domain', () => {
+      const result = detectPolicyDomainsWithConfidence({ organ: 'KU', titel: 'Grundlag' });
+      expect(result.confidence).toBe('HIGH');
+      expect(result.domains[0]).toBe('constitutional affairs');
+    });
+
+    it('should map KrU to culture and media policy domain', () => {
+      const result = detectPolicyDomainsWithConfidence({ organ: 'KrU', titel: 'Kultur' });
+      expect(result.confidence).toBe('HIGH');
+      expect(result.domains[0]).toBe('culture and media policy');
+    });
+
+    it('should return localised domain names for Swedish', () => {
+      const result = detectPolicyDomainsWithConfidence({ organ: 'FiU', titel: 'Budget' }, 'sv');
+      expect(result.domains[0]).toBe('finanspolitik');
+    });
+  });
+
+  describe('detectPolicyDomains (backward compatibility)', () => {
+    it('should still detect domains from committee codes', () => {
+      const domains = detectPolicyDomains({ organ: 'FiU', titel: 'Budget' });
+      expect(domains).toContain('fiscal policy');
+    });
+
+    it('should still detect domains from keywords as fallback', () => {
+      const domains = detectPolicyDomains({ titel: 'Vapenlagen och vapentillstånd' });
+      expect(domains).toContain('defence and security policy');
+    });
+
+    it('should return empty array when nothing matches', () => {
+      const domains = detectPolicyDomains({ titel: 'Diverse frågor' });
+      expect(domains).toHaveLength(0);
     });
   });
 
@@ -1893,16 +2004,16 @@ describe('Data Transformers', () => {
     });
 
     it('domainCount reflects actual policy domains, not committee count', () => {
-      // 3 propositions, all sent to FiU (1 committee) but touching 2 distinct domains
+      // 3 propositions without committee code — keyword fallback detects multiple domains
       const content = generateArticleContent({
         propositions: [
-          { titel: 'Klimatlag miljö', organ: 'FiU', url: 'https://example.com/p1', dok_id: 'P1' },
-          { titel: 'Försvarsbudget militär', organ: 'FiU', url: 'https://example.com/p2', dok_id: 'P2' },
-          { titel: 'Extra budgetanslag', organ: 'FiU', url: 'https://example.com/p3', dok_id: 'P3' }
+          { titel: 'Klimatlag miljö', url: 'https://example.com/p1', dok_id: 'P1' },
+          { titel: 'Försvarsbudget militär', url: 'https://example.com/p2', dok_id: 'P2' },
+          { titel: 'Extra budgetanslag finans', url: 'https://example.com/p3', dok_id: 'P3' }
         ]
       } as MockArticlePayload, 'propositions', 'en') as string;
 
-      // Committee count is 1 (all FiU) but domain count should be > 1 (climate + defence + fiscal)
+      // Keyword fallback detects climate + defence + fiscal domains
       // The text must NOT say "1 policy domain" when multiple domains are detected
       expect(content).not.toMatch(/touch on 1 policy domain[^s]/);
     });

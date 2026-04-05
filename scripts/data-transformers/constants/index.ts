@@ -11,5 +11,5 @@
  */
 
 export { LOCALE_MAP } from './locale-map.js';
-export { COMMITTEE_NAMES } from './committee-names.js';
+export { COMMITTEE_NAMES, COMMITTEE_TO_DOMAIN } from './committee-names.js';
 export { CONTENT_LABELS } from './content-labels.js';
