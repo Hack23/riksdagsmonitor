@@ -41,7 +41,7 @@ export const COMMITTEE_NAMES: CommitteeNameMap = {
  *
  * Domain keys correspond to the `DomainKey` union in policy-analysis.ts.
  */
-export const COMMITTEE_TO_DOMAIN: Readonly<Record<string, string>> = {
+export const COMMITTEE_TO_DOMAIN = {
   AU: 'labour',
   CU: 'housing',
   FiU: 'fiscal',
@@ -57,4 +57,4 @@ export const COMMITTEE_TO_DOMAIN: Readonly<Record<string, string>> = {
   TU: 'transport',
   UbU: 'education',
   UU: 'eu-foreign',
-};
+} as const;

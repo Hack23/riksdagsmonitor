@@ -61,7 +61,7 @@ import {
 } from './helpers.js';
 
 // ---------------------------------------------------------------------------
-// Per-language domain name translations (12 domains × 14 languages)
+// Per-language domain name translations (15 domains × 14 languages)
 // English keys are used internally; localised names are returned to callers.
 // ---------------------------------------------------------------------------
 export type DomainKey = 'fiscal' | 'defence' | 'environment' | 'education' | 'healthcare'
@@ -71,10 +71,9 @@ export type DomainKey = 'fiscal' | 'defence' | 'environment' | 'education' | 'he
 /**
  * Classification confidence level for policy domain detection.
  * - `HIGH` — derived from authoritative committee code (organ field)
- * - `MEDIUM` — derived from committee code with keyword corroboration
  * - `LOW` — derived from keyword heuristics only (no committee code)
  */
-export type ClassificationConfidence = 'HIGH' | 'MEDIUM' | 'LOW';
+export type ClassificationConfidence = 'HIGH' | 'LOW';
 
 /** Result of policy domain detection with confidence metadata. */
 export interface PolicyDomainResult {
@@ -228,8 +227,10 @@ function domainName(key: DomainKey, lang: Language | string): string {
  * @returns The canonical DomainKey, or `null` if the code is unknown
  */
 export function classifyByCommitteeCode(committeeCode: string): DomainKey | null {
-  const domain = COMMITTEE_TO_DOMAIN[committeeCode];
-  return domain ? domain as DomainKey : null;
+  if (committeeCode in COMMITTEE_TO_DOMAIN) {
+    return COMMITTEE_TO_DOMAIN[committeeCode as keyof typeof COMMITTEE_TO_DOMAIN];
+  }
+  return null;
 }
 
 /**

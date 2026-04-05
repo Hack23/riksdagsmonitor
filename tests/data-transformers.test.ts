@@ -1330,14 +1330,14 @@ describe('Data Transformers', () => {
       expect(content).toContain('AI_MUST_REPLACE: policy_significance_generic');
     });
 
-    it('should produce committee-specific fallback when organ is known but no title keyword matches', () => {
+    it('should detect constitutional affairs domain from KU committee code', () => {
       const content = generateArticleContent({
         propositions: [{ titel: 'Diverse administrativa ändringar', organ: 'KU', url: 'https://example.com/1', dok_id: 'KU1' }]
       } as MockArticlePayload, 'propositions', 'en') as string;
 
-      // KU is not mapped to a domain — should get committee-specific fallback instead of generic
+      // KU is mapped to 'constitutional' domain — gets domain-specific analysis
       expect(content).not.toContain('Requires committee review and chamber debate before a decision is reached.');
-      expect(content).toContain('Committee on the Constitution');
+      expect(content).toContain('constitutional affairs');
     });
 
     it('should produce Swedish constitutional domain for KU organ', () => {
@@ -1413,22 +1413,22 @@ describe('Data Transformers', () => {
       expect(content).toContain('trade and industry policy');
     });
 
-    it('should use committee fallback for KU organ when title has no matching keywords', () => {
+    it('should detect constitutional affairs domain from KU organ in committee reports', () => {
       const content = generateArticleContent({
         reports: [{ titel: 'Grundlagsändringar', organ: 'KU', url: 'https://example.com/1', dok_id: 'KU1' }]
       } as MockArticlePayload, 'committee-reports', 'en') as string;
 
-      // KU not mapped to domain — gets committee-specific fallback
+      // KU mapped to 'constitutional' domain — domain-specific analysis mentions the committee
       expect(content).not.toContain('Requires committee review and chamber debate before a decision is reached.');
       expect(content).toContain('Committee on the Constitution');
     });
 
-    it('should use committee fallback for KrU organ when title has no matching keywords', () => {
+    it('should detect culture and media domain from KrU organ in committee reports', () => {
       const content = generateArticleContent({
         reports: [{ titel: 'Kulturfrågor', organ: 'KrU', url: 'https://example.com/1', dok_id: 'KrU1' }]
       } as MockArticlePayload, 'committee-reports', 'en') as string;
 
-      // KrU not mapped to domain — gets committee-specific fallback
+      // KrU mapped to 'culture' domain — domain-specific analysis mentions the committee
       expect(content).not.toContain('Requires committee review and chamber debate before a decision is reached.');
       expect(content).toContain('Committee on Cultural Affairs');
     });
