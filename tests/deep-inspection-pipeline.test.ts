@@ -159,10 +159,15 @@ describe('generateDeepInspectionContent depth-gated sections', () => {
 
   it('emits AI_MUST_REPLACE markers when aiResult has empty content', async () => {
     const { __deepInspectionTestHooks } = await import('../scripts/generate-news-enhanced/generators.js');
-    const emptyAiResult = {
+    const emptyAiResult: import('../scripts/generate-news-enhanced/ai-analysis-pipeline.js').AIAnalysisResult = {
       iterations: 1,
       documentAnalyses: [],
-      synthesis: { keyThemes: [], policyImplications: [], crossDocumentInsights: [] },
+      synthesis: {
+        policyConvergence: '',
+        coalitionStressIndicators: '',
+        emergingTrends: '',
+        stakeholderPowerDynamics: '',
+      },
       dynamicSwotEntries: {
         government:    { strengths: [], weaknesses: [], opportunities: [], threats: [] },
         opposition:    { strengths: [], weaknesses: [], opportunities: [], threats: [] },
