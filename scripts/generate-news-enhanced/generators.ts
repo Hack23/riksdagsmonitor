@@ -1090,7 +1090,8 @@ function generateDeepInspectionContent(
   const stratHeading = deepLabel('strategicImplications', lang);
   html += `\n<section class="strategic-implications" aria-label="${esc(stratHeading)}">\n`;
   html += `  <h2>${esc(stratHeading)}</h2>\n`;
-  // AI-generated strategic implications only; no template fallback (v3.0+).
+  // Use AI-generated strategic implications when available; otherwise emit
+  // replacement marker for downstream AI processing (v3.0+).
   const strategicImplHtml = aiResult?.strategicImplications
     ?? '<!-- AI_MUST_REPLACE: strategic_implications -->';
   html += `  ${strategicImplHtml}\n`;
