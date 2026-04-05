@@ -137,6 +137,9 @@ export interface SynthesisSummary {
   topDocuments: SignificanceEntry[];
   overallConfidence: 'HIGH' | 'MEDIUM' | 'LOW';
   aggregateRiskLevel: string;
+  /** When lookback was used, the actual date of the data (YYYY-MM-DD).
+   *  `null` when documents match the requested article date exactly. */
+  dataFreshness?: string | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -651,6 +654,9 @@ export function serializeSynthesisSummary(
 
   lines.push('', '## Data Quality Notes', '');
   lines.push(`Overall confidence: **${synthesis.overallConfidence}**. All analysis results are available in sibling files.`);
+  if (synthesis.dataFreshness) {
+    lines.push(`**Data Freshness**: Documents sourced from **${synthesis.dataFreshness}** via lookback fallback (article date: ${ctx.date}).`);
+  }
 
   return lines.join('\n');
 }

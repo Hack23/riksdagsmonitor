@@ -72,6 +72,29 @@ function normalise(raw: unknown[]): RawDocument[] {
   return (raw as RawDocument[]).filter(Boolean);
 }
 
+/**
+ * Subtract a number of business days (Mon–Fri) from a YYYY-MM-DD date string.
+ * Returns the resulting date in YYYY-MM-DD format.
+ *
+ * @param dateStr - ISO date string (YYYY-MM-DD)
+ * @param days    - Number of business days to subtract (must be >= 0)
+ */
+export function subtractBusinessDays(dateStr: string, days: number): string {
+  const d = new Date(`${dateStr}T00:00:00Z`);
+  let remaining = Math.max(0, Math.floor(days));
+  while (remaining > 0) {
+    d.setUTCDate(d.getUTCDate() - 1);
+    const dow = d.getUTCDay(); // 0=Sun, 6=Sat
+    if (dow !== 0 && dow !== 6) {
+      remaining--;
+    }
+  }
+  return d.toISOString().slice(0, 10);
+}
+
+/** Maximum number of business days to look back when zero documents match the requested date. */
+export const MAX_LOOKBACK_BUSINESS_DAYS = 5;
+
 /** All internal fetch task names, kept in sync with the `fetchTasks` array
  *  inside `downloadAllDocuments()`.  Used to derive the `FetchTaskName` type
  *  and to validate the `FETCH_TASK_TYPE_MAP` at compile time. */
