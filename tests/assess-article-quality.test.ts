@@ -234,6 +234,14 @@ describe('assessArticleQuality', () => {
       const result = helpers.assessArticleQuality(html, 'en', [], 60);
       expect(result.dimensions.stakeholderCoverage.score).toBe(85);
     });
+
+    it('ignores party mentions inside script/style blocks', () => {
+      if (!helpers) return;
+      const html = '<script>const parties = "S M SD V";</script><p>The government presented a plan.</p>';
+      const result = helpers.assessArticleQuality(html, 'en', [], 60);
+      // No parties should be detected in <script> content
+      expect(result.dimensions.stakeholderCoverage.score).toBeLessThanOrEqual(70);
+    });
   });
 
   // ---------------------------------------------------------------------------
@@ -301,6 +309,13 @@ describe('assessArticleQuality', () => {
         expect.arrayContaining([expect.stringContaining('What to Watch')]),
       );
     });
+
+    it('does not flag "Why It Matters" in prose text (only headings)', () => {
+      if (!helpers) return;
+      const html = '<h2>Why It Matters</h2><p>This is why it matters to the public. Why It Matters is key.</p>';
+      const result = helpers.assessArticleQuality(html, 'en', [], 60);
+      expect(result.dimensions.editorialConsistency.score).toBe(100);
+    });
   });
 
   // ---------------------------------------------------------------------------
@@ -338,6 +353,15 @@ describe('assessArticleQuality', () => {
       const html = '<p>Some content with HIGH confidence.</p>';
       const result = helpers.assessArticleQuality(html, 'en', ['doc1', 'doc2'], 60);
       expect(result.dimensions.evidenceQuality.evidence[0]).toContain('2 source IDs');
+    });
+
+    it('deduplicates overlapping document ID matches', () => {
+      if (!helpers) return;
+      // H901AU10 appears in data-dok-id, in dok_id reference, and as a bare ID — should count once
+      const html = '<p data-dok-id="H901AU10">dok_id: H901AU10. Reference to H901AU10 here.</p>';
+      const result = helpers.assessArticleQuality(html, 'en', ['H901AU10'], 60);
+      // Total should be 1 unique doc ID (all references are the same ID)
+      expect(result.dimensions.evidenceQuality.evidence[0]).toContain('1 unique document ID');
     });
   });
 

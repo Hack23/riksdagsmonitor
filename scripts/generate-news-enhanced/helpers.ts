@@ -47,14 +47,23 @@ const LEAKAGE_OCCURRENCES_PER_DEDUCTION = 5;
 const LEAKAGE_DEDUCTION_AMOUNT = 25;
 
 /** Dimension weights for the weighted overall score (must sum to 1.0). */
-const DIMENSION_WEIGHTS: Record<string, number> = {
+const DIMENSION_WEIGHTS = {
   factualAccuracy: 0.25,
   stakeholderCoverage: 0.15,
   analyticalDepth: 0.15,
   editorialConsistency: 0.10,
   evidenceQuality: 0.20,
   languageQuality: 0.15,
-};
+} as const satisfies Record<keyof MultiDimensionalQualityAssessment['dimensions'], number>;
+
+const DIMENSION_WEIGHT_SUM: number = Object.values(DIMENSION_WEIGHTS).reduce(
+  (sum, weight) => sum + weight,
+  0,
+);
+
+if (Math.abs(DIMENSION_WEIGHT_SUM - 1) > Number.EPSILON) {
+  throw new Error(`DIMENSION_WEIGHTS must sum to 1.0, got ${DIMENSION_WEIGHT_SUM}`);
+}
 
 /**
  * Assess the factual accuracy dimension.
@@ -81,7 +90,11 @@ function scoreFactualAccuracy(html: string): DimensionScore {
  * Checks for named political parties/actors — at least 2 distinct parties expected.
  */
 function scoreStakeholderCoverage(html: string): DimensionScore {
-  const stripped: string = html.replace(/<[^>]+>/g, ' ');
+  // Strip script/style blocks before tag stripping to avoid JS/JSON-LD pollution
+  const stripped: string = html
+    .replace(/<script[\s>][\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s>][\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ');
   const evidence: string[] = [];
   const improvements: string[] = [];
 
@@ -162,15 +175,15 @@ function scoreEditorialConsistency(html: string): DimensionScore {
   const evidence: string[] = [];
   const improvements: string[] = [];
 
-  // Count "Why It Matters" occurrences
-  const whyItMattersMatches: RegExpMatchArray | null = html.match(/Why\s+It\s+Matters/gi);
+  // Count "Why It Matters" occurrences in heading tags only (h2/h3)
+  const whyItMattersMatches: RegExpMatchArray | null = html.match(/<h[23][^>]*>[^<]*Why\s+It\s+Matters[^<]*<\/h[23]>/gi);
   const whyItMattersCount: number = whyItMattersMatches ? whyItMattersMatches.length : 0;
-  evidence.push(`${whyItMattersCount} "Why It Matters" occurrence(s)`);
+  evidence.push(`${whyItMattersCount} "Why It Matters" heading(s)`);
 
-  // Count "What to Watch" occurrences
-  const watchMatches: RegExpMatchArray | null = html.match(/What\s+to\s+Watch/gi);
+  // Count "What to Watch" occurrences in heading tags only (h2/h3)
+  const watchMatches: RegExpMatchArray | null = html.match(/<h[23][^>]*>[^<]*What\s+to\s+Watch[^<]*<\/h[23]>/gi);
   const watchCount: number = watchMatches ? watchMatches.length : 0;
-  evidence.push(`${watchCount} "What to Watch" occurrence(s)`);
+  evidence.push(`${watchCount} "What to Watch" heading(s)`);
 
   let score = 100;
   const duplicateWhyItMatters: number = Math.max(0, whyItMattersCount - 1);
@@ -195,23 +208,38 @@ function scoreEvidenceQuality(html: string, docIds: readonly string[]): Dimensio
   const evidence: string[] = [];
   const improvements: string[] = [];
 
-  // Count dok_id references in the HTML itself (e.g. data-dok-id or inline references)
-  const dokIdPatterns: RegExp[] = [
-    /data-dok-id/gi,
-    /dok_id/gi,
-    // Riksdag document ID format: letter + 3 digits + letter(s) + alphanumeric suffix
-    // Examples: H901AU10, H901FiU1, GZ10259. Intentionally broad to catch variants.
-    /\b[A-Z]\d{3}[A-Za-z]\w+\b/g,
-  ];
-  let htmlDokIdCount = 0;
-  for (const pattern of dokIdPatterns) {
-    const matches: RegExpMatchArray | null = html.match(pattern);
-    if (matches) htmlDokIdCount += matches.length;
-  }
+  const normalizeDocId = (value: string): string => value.trim().toUpperCase();
 
-  // Also count provided source document IDs
-  const totalDocIds: number = docIds.length + htmlDokIdCount;
-  evidence.push(`${totalDocIds} document ID reference(s) found (${docIds.length} source IDs + ${htmlDokIdCount} inline)`);
+  // Deduplicate source document IDs
+  const sourceDocIds: Set<string> = new Set(
+    docIds
+      .map((docId: string) => normalizeDocId(docId))
+      .filter((docId: string) => docId.length > 0),
+  );
+
+  // Extract unique document IDs from HTML (deduplicated across patterns)
+  const htmlDocIds: Set<string> = new Set();
+  const addMatchesToSet = (pattern: RegExp, groupIndex: number = 0): void => {
+    for (const match of html.matchAll(pattern)) {
+      const candidate: string | undefined = match[groupIndex];
+      if (!candidate) continue;
+      const normalized: string = normalizeDocId(candidate);
+      if (normalized) htmlDocIds.add(normalized);
+    }
+  };
+
+  // Extract explicit document ID values from common HTML/JSON citation fields
+  addMatchesToSet(/data-dok-id\s*=\s*["']([^"']+)["']/gi, 1);
+  addMatchesToSet(/\bdok_id\b\s*[:=]\s*["']?([A-Za-z0-9]+)["']?/gi, 1);
+
+  // Riksdag document ID format: letter + 3 digits + letter(s) + alphanumeric suffix
+  // Examples: H901AU10, H901FiU1, GZ10259. Intentionally broad to catch variants.
+  addMatchesToSet(/\b([A-Z]\d{3}[A-Za-z]\w+)\b/gi, 1);
+
+  const totalDocIds: number = new Set<string>([...sourceDocIds, ...htmlDocIds]).size;
+  evidence.push(
+    `${totalDocIds} unique document ID reference(s) found (${sourceDocIds.size} source IDs + ${htmlDocIds.size} unique inline, deduplicated)`,
+  );
 
   // Check for confidence labels
   const confidencePattern = /\b(HIGH|MEDIUM|LOW)\s+confidence\b/gi;
