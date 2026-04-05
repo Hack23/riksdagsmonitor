@@ -236,9 +236,11 @@ import { CIADashboardRenderer } from 'riksdagsmonitor/cia/visualizations';
 The core shared utilities work without any dependencies. For visualization dashboards, install the optional peer dependencies:
 
 ```bash
-npm install chart.js d3 papaparse                # For full dashboard support
-npm install chartjs-plugin-annotation             # For chart annotations
+npm install chart.js d3 papaparse                # Required for dashboard support
+npm install chartjs-plugin-annotation             # Optional — for chart annotations
 ```
+
+> **Note:** `chartjs-plugin-annotation` is loaded conditionally at runtime — dashboards work without it, but chart annotations will be unavailable.
 
 ## 🌐 Live Platform
 

@@ -12,7 +12,6 @@
  */
 
 import { Chart } from 'chart.js/auto';
-import 'chartjs-plugin-annotation';
 import * as d3 from 'd3';
 import Papa from 'papaparse';
 
@@ -20,3 +19,8 @@ import Papa from 'papaparse';
 (globalThis as Record<string, unknown>).Chart = Chart;
 (globalThis as Record<string, unknown>).d3 = d3;
 (globalThis as Record<string, unknown>).Papa = Papa;
+
+// chartjs-plugin-annotation is optional — load it when available
+import('chartjs-plugin-annotation').catch(() => {
+  /* annotation plugin not installed — annotations disabled */
+});
