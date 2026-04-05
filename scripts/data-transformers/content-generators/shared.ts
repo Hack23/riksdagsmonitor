@@ -406,7 +406,7 @@ function analyseWinnersLosers(
     }
   }
 
-  return parts.join(' ') || neutralText(lang);
+  return parts.join(' ') || '<!-- AI_MUST_REPLACE: winners_losers_analysis -->';
 }
 
 function govAdvantageText(lang: Language | string, gov: number, opp: number): string {
@@ -449,14 +449,6 @@ function coalitionRiskText(lang: Language | string, margin: number): string {
   const templates: Record<string, string> = {
     en: `With a majority margin of only ${margin} seats, the coalition faces elevated risk of legislative defeats on contested measures.`,
     sv: `Med en majoritetsmarginal på bara ${margin} mandat löper koalitionen förhöjd risk för nederlag vid omstridda omröstningar.`,
-  };
-  return templates[lang as string] ?? templates.en;
-}
-
-function neutralText(lang: Language | string): string {
-  const templates: Record<string, string> = {
-    en: 'The political landscape remains fluid, with both government and opposition positioning for advantage.',
-    sv: 'Det politiska landskapet förblir rörligt, med både regering och opposition som positionerar sig.',
   };
   return templates[lang as string] ?? templates.en;
 }
@@ -822,7 +814,7 @@ function generateCriticalAssessment(docs: RawDocument[], lang: Language | string
   // Check for lack of debate data (information gap)
   const withSpeeches = docs.filter(d => d.speeches && d.speeches.length > 0).length;
   if (withSpeeches === 0 && docs.length > 3) {
-    parts.push(noDebateDataText(lang));
+    parts.push(debateAnalysisMarker());
   }
 
   // Thin majority risk assessment
@@ -848,12 +840,8 @@ function singlePartyDominanceText(lang: Language | string): string {
   return t[lang as string] ?? t.en;
 }
 
-function noDebateDataText(lang: Language | string): string {
-  const t: Record<string, string> = {
-    en: 'No chamber debate data is available for these items, limiting our ability to assess the depth of parliamentary deliberation. This information gap should be monitored — the quality of democracy depends on substantive debate, not just procedural passage.',
-    sv: 'Inga debattdata från kammaren finns tillgängliga, vilket begränsar vår förmåga att bedöma parlamentariskt deliberationsdjup.',
-  };
-  return t[lang as string] ?? t.en;
+function debateAnalysisMarker(): string {
+  return '<!-- AI_MUST_REPLACE: debate_analysis -->';
 }
 
 function criticalStabilityText(lang: Language | string): string {
@@ -1144,4 +1132,38 @@ function renderImplementationAssessment(analyses: DocumentAnalysis[], lang: Lang
 
 function feasibilityRank(f: string): number {
   return f === 'high' ? 3 : f === 'medium' ? 2 : 1;
+}
+
+/* ── Banned pattern detection ─────────────────────────────────────────────── */
+
+/**
+ * Banned content patterns that indicate low-quality boilerplate text.
+ * Per SHARED_PROMPT_PATTERNS.md §BANNED Content Patterns v4.0, these
+ * must never appear in production articles. AI agents MUST replace them
+ * with genuine, document-specific analysis.
+ */
+const BANNED_PATTERNS: readonly { label: string; pattern: RegExp }[] = [
+  { label: 'neutralText: "The political landscape remains fluid…"', pattern: /The political landscape remains fluid,? with both government and opposition positioning for advantage/i },
+  { label: 'debateAnalysisMarker: "No chamber debate data is available…"', pattern: /No chamber debate data is available for these items,? limiting our ability/i },
+  { label: 'policySignificanceTouches: "Touches on {domains}."', pattern: /Touches on [\p{L}\p{N}][\p{L}\p{N}\s,&/()-]*\./iu },
+  { label: 'analysisOfNDocuments: "Analysis of N documents covering…"', pattern: /Analysis of \d+ documents covering/i },
+  { label: 'policySignificanceGeneric: "Requires committee review and chamber debate…"', pattern: /Requires committee review and chamber debate/i },
+];
+
+/**
+ * Detect banned boilerplate patterns in HTML content.
+ * Returns an array of human-readable labels identifying each detected
+ * banned pattern, suitable for quality gate logs and error messages.
+ *
+ * @param html - The HTML string to scan for banned patterns
+ * @returns Array of stable human-readable labels for each detected banned pattern
+ */
+export function detectBannedPatterns(html: string): string[] {
+  const found: string[] = [];
+  for (const { label, pattern } of BANNED_PATTERNS) {
+    if (pattern.test(html)) {
+      found.push(label);
+    }
+  }
+  return found;
 }
