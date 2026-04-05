@@ -33,6 +33,20 @@ describe('detectBannedPatterns', () => {
     expect(found.some(p => p.includes('Touches on'))).toBe(true);
   });
 
+  it('detects "Touches on X, Y policy" pattern with comma-separated domains', () => {
+    const html = '<p>Touches on education policy, health policy.</p>';
+    const found = detectBannedPatterns(html);
+    expect(found.length).toBeGreaterThan(0);
+    expect(found.some(p => p.includes('Touches on'))).toBe(true);
+  });
+
+  it('detects "Touches on EU and foreign affairs" pattern without policy suffix', () => {
+    const html = '<p>Touches on EU and foreign affairs.</p>';
+    const found = detectBannedPatterns(html);
+    expect(found.length).toBeGreaterThan(0);
+    expect(found.some(p => p.includes('Touches on'))).toBe(true);
+  });
+
   it('detects "Analysis of N documents covering" pattern', () => {
     const html = '<p>Analysis of 5 documents covering Defence, Finance:</p>';
     const found = detectBannedPatterns(html);

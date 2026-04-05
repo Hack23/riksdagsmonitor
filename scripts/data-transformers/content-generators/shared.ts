@@ -1145,7 +1145,7 @@ function feasibilityRank(f: string): number {
 const BANNED_PATTERNS: readonly RegExp[] = [
   /The political landscape remains fluid,? with both government and opposition positioning for advantage/i,
   /No chamber debate data is available for these items,? limiting our ability/i,
-  /Touches on \w[\w\s]* policy\./i,
+  /Touches on [\p{L}\p{N}][\p{L}\p{N}\s,&/()-]*\./iu,
   /Analysis of \d+ documents covering/i,
   /Requires committee review and chamber debate/i,
 ];
