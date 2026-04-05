@@ -1142,26 +1142,27 @@ function feasibilityRank(f: string): number {
  * must never appear in production articles. AI agents MUST replace them
  * with genuine, document-specific analysis.
  */
-const BANNED_PATTERNS: readonly RegExp[] = [
-  /The political landscape remains fluid,? with both government and opposition positioning for advantage/i,
-  /No chamber debate data is available for these items,? limiting our ability/i,
-  /Touches on [\p{L}\p{N}][\p{L}\p{N}\s,&/()-]*\./iu,
-  /Analysis of \d+ documents covering/i,
-  /Requires committee review and chamber debate/i,
+const BANNED_PATTERNS: readonly { label: string; pattern: RegExp }[] = [
+  { label: 'neutralText: "The political landscape remains fluid…"', pattern: /The political landscape remains fluid,? with both government and opposition positioning for advantage/i },
+  { label: 'noDebateDataText: "No chamber debate data is available…"', pattern: /No chamber debate data is available for these items,? limiting our ability/i },
+  { label: 'policySignificanceTouches: "Touches on {domains}."', pattern: /Touches on [\p{L}\p{N}][\p{L}\p{N}\s,&/()-]*\./iu },
+  { label: 'analysisOfNDocuments: "Analysis of N documents covering…"', pattern: /Analysis of \d+ documents covering/i },
+  { label: 'policySignificanceGeneric: "Requires committee review and chamber debate…"', pattern: /Requires committee review and chamber debate/i },
 ];
 
 /**
  * Detect banned boilerplate patterns in HTML content.
- * Returns an array of matched pattern descriptions for quality gate consumption.
+ * Returns an array of human-readable labels identifying each detected
+ * banned pattern, suitable for quality gate logs and error messages.
  *
  * @param html - The HTML string to scan for banned patterns
- * @returns Array of human-readable descriptions of each detected banned pattern
+ * @returns Array of stable human-readable labels for each detected banned pattern
  */
 export function detectBannedPatterns(html: string): string[] {
   const found: string[] = [];
-  for (const pattern of BANNED_PATTERNS) {
+  for (const { label, pattern } of BANNED_PATTERNS) {
     if (pattern.test(html)) {
-      found.push(pattern.source);
+      found.push(label);
     }
   }
   return found;
