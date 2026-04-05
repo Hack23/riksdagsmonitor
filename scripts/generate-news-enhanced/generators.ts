@@ -1037,9 +1037,10 @@ function docTypeLabel(doktyp: string, lang: Language, count?: number): string {
  *   2 = depth 1 + Historical Context + Predictive Assessment
  *   3 = depth 2 + Executive Intelligence Summary + Methodology (3 iterations)
  *   4 = depth 3 + quality-review iteration in Methodology (4 iterations)
- * When an AIAnalysisResult is supplied, its strategic implications and key
- * takeaways are used. Without an AIAnalysisResult, empty AI_MUST_REPLACE markers
- * are emitted (v3.0+ — no template-generated fallback content).
+ * takeaways are used when present. For AI-driven sections with missing content
+ * (including when no AIAnalysisResult is supplied, or when `keyTakeaways` is
+ * empty), AI_MUST_REPLACE markers are emitted (v3.0+ — no template-generated
+ * fallback content).
  */
 function generateDeepInspectionContent(
   docs: RawDocument[],
@@ -1090,10 +1091,10 @@ function generateDeepInspectionContent(
   const stratHeading = deepLabel('strategicImplications', lang);
   html += `\n<section class="strategic-implications" aria-label="${esc(stratHeading)}">\n`;
   html += `  <h2>${esc(stratHeading)}</h2>\n`;
-  // Use AI-generated strategic implications when available; otherwise emit
+  // Use AI-generated strategic implications when non-empty; otherwise emit
   // replacement marker for downstream AI processing (v3.0+).
   const strategicImplHtml = aiResult?.strategicImplications
-    ?? '<!-- AI_MUST_REPLACE: strategic_implications -->';
+    || '<!-- AI_MUST_REPLACE: strategic_implications -->';
   html += `  ${strategicImplHtml}\n`;
   html += `</section>\n`;
 

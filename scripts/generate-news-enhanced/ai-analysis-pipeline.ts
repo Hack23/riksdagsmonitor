@@ -443,7 +443,8 @@ export class AIAnalysisPipeline {
     if (!AIAnalysisPipeline._deprecationWarned) {
       AIAnalysisPipeline._deprecationWarned = true;
       console.warn(
-        '[DEPRECATED] buildDynamicSwot(), buildStrategicImplications(), buildKeyTakeaways() '
+        '[DEPRECATED] buildDynamicSwot(), buildStrategicImplications(), buildKeyTakeaways(), '
+        + 'buildLegislativeImpact(), buildCrossPartyImplications(), and scoreAnalysisDepth() '
         + 'are deprecated (v3.0). Use AI prompts in workflow .md files instead.',
       );
     }
