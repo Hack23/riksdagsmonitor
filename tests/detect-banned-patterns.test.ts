@@ -14,51 +14,51 @@ describe('detectBannedPatterns', () => {
 
   it('detects "The political landscape remains fluid" pattern', () => {
     const html = '<p>The political landscape remains fluid, with both government and opposition positioning for advantage.</p>';
-    const found = detectBannedPatterns(html);
-    expect(found.length).toBeGreaterThan(0);
-    expect(found.some(p => p.includes('political landscape remains fluid'))).toBe(true);
+    expect(detectBannedPatterns(html)).toEqual([
+      'neutralText: "The political landscape remains fluid…"',
+    ]);
   });
 
   it('detects "No chamber debate data is available" pattern', () => {
     const html = '<p>No chamber debate data is available for these items, limiting our ability to assess deliberation.</p>';
-    const found = detectBannedPatterns(html);
-    expect(found.length).toBeGreaterThan(0);
-    expect(found.some(p => p.includes('No chamber debate data'))).toBe(true);
+    expect(detectBannedPatterns(html)).toEqual([
+      'noDebateDataText: "No chamber debate data is available…"',
+    ]);
   });
 
   it('detects "Touches on X policy" pattern', () => {
     const html = '<p>Touches on education policy.</p>';
-    const found = detectBannedPatterns(html);
-    expect(found.length).toBeGreaterThan(0);
-    expect(found.some(p => p.includes('Touches on'))).toBe(true);
+    expect(detectBannedPatterns(html)).toEqual([
+      'policySignificanceTouches: "Touches on {domains}."',
+    ]);
   });
 
   it('detects "Touches on X, Y policy" pattern with comma-separated domains', () => {
     const html = '<p>Touches on education policy, health policy.</p>';
-    const found = detectBannedPatterns(html);
-    expect(found.length).toBeGreaterThan(0);
-    expect(found.some(p => p.includes('Touches on'))).toBe(true);
+    expect(detectBannedPatterns(html)).toEqual([
+      'policySignificanceTouches: "Touches on {domains}."',
+    ]);
   });
 
   it('detects "Touches on EU and foreign affairs" pattern without policy suffix', () => {
     const html = '<p>Touches on EU and foreign affairs.</p>';
-    const found = detectBannedPatterns(html);
-    expect(found.length).toBeGreaterThan(0);
-    expect(found.some(p => p.includes('Touches on'))).toBe(true);
+    expect(detectBannedPatterns(html)).toEqual([
+      'policySignificanceTouches: "Touches on {domains}."',
+    ]);
   });
 
   it('detects "Analysis of N documents covering" pattern', () => {
     const html = '<p>Analysis of 5 documents covering Defence, Finance:</p>';
-    const found = detectBannedPatterns(html);
-    expect(found.length).toBeGreaterThan(0);
-    expect(found.some(p => p.includes('Analysis of'))).toBe(true);
+    expect(detectBannedPatterns(html)).toEqual([
+      'analysisOfNDocuments: "Analysis of N documents covering…"',
+    ]);
   });
 
   it('detects "Requires committee review and chamber debate" pattern', () => {
     const html = '<p>Requires committee review and chamber debate before a decision is reached.</p>';
-    const found = detectBannedPatterns(html);
-    expect(found.length).toBeGreaterThan(0);
-    expect(found.some(p => p.includes('Requires committee review'))).toBe(true);
+    expect(detectBannedPatterns(html)).toEqual([
+      'policySignificanceGeneric: "Requires committee review and chamber debate…"',
+    ]);
   });
 
   it('detects multiple banned patterns in the same content', () => {
@@ -66,8 +66,10 @@ describe('detectBannedPatterns', () => {
       '<p>The political landscape remains fluid, with both government and opposition positioning for advantage.</p>',
       '<p>Requires committee review and chamber debate.</p>',
     ].join('\n');
-    const found = detectBannedPatterns(html);
-    expect(found.length).toBe(2);
+    expect(detectBannedPatterns(html)).toEqual([
+      'neutralText: "The political landscape remains fluid…"',
+      'policySignificanceGeneric: "Requires committee review and chamber debate…"',
+    ]);
   });
 
   it('does not flag AI replacement markers as banned', () => {

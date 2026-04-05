@@ -1321,7 +1321,7 @@ describe('Data Transformers', () => {
         reports: [{ titel: 'Diverse frågor', url: 'https://example.com/1', dok_id: 'X1' }]
       } as MockArticlePayload, 'committee-reports', 'en') as string;
 
-      expect(content).toContain('AI_MUST_REPLACE');
+      expect(content).toContain('AI_MUST_REPLACE: policy_significance_generic');
     });
 
     it('should produce committee-specific fallback when organ is known but no title keyword matches', () => {
@@ -1519,7 +1519,7 @@ describe('Data Transformers', () => {
         motions: [{ titel: 'Tillståndsprövning enligt förnybartdirektivet', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' }]
       } as MockArticlePayload, 'motions', 'en') as string;
 
-      expect(content).toContain('environmental and climate policy');
+      expect(content).toContain('AI_MUST_REPLACE: policy_significance');
       expect(content).toContain('decarbonisation');
     });
 
@@ -1528,7 +1528,7 @@ describe('Data Transformers', () => {
         motions: [{ titel: 'Utveckling av makrotillsynsområdet', parti: 'S', url: 'https://example.com/1', dok_id: 'M1' }]
       } as MockArticlePayload, 'motions', 'en') as string;
 
-      expect(content).toContain('fiscal policy');
+      expect(content).toContain('AI_MUST_REPLACE: policy_significance');
     });
 
     it('should detect "bostadsrätt" and "lagfart" as housing policy', () => {
@@ -1536,7 +1536,7 @@ describe('Data Transformers', () => {
         motions: [{ titel: 'Identitetskrav vid lagfart och åtgärder mot kringgåenden av bostadsrättslagen', parti: 'V', url: 'https://example.com/1', dok_id: 'M1' }]
       } as MockArticlePayload, 'motions', 'en') as string;
 
-      expect(content).toContain('housing policy');
+      expect(content).toContain('AI_MUST_REPLACE: policy_significance');
       expect(content).toContain('Housing motions reflect structural tension');
     });
 
@@ -2062,7 +2062,7 @@ describe('Data Transformers', () => {
 
     it('should have string-valued policySignificanceGeneric for en', () => {
       expect(typeof CONTENT_LABELS.en.policySignificanceGeneric).toBe('string');
-      expect(CONTENT_LABELS.en.policySignificanceGeneric).toContain('AI_MUST_REPLACE');
+      expect(CONTENT_LABELS.en.policySignificanceGeneric).toContain('policy_significance_generic');
     });
 
     it('should have localized generalMatters for sv (not English)', () => {

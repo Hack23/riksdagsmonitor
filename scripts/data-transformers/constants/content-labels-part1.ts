@@ -82,7 +82,7 @@ export const CONTENT_LABELS_PART1: Partial<Record<string, ContentLabelSet>> = {
     ministerInterpellationCount: (minister: string, n: number): string => `${minister} — ${n} interpellation${n !== 1 ? 's' : ''}`,
     otherCommittee: 'Other committees',
     otherDocuments: 'Other documents',
-    policySignificanceTouches: (domains: string): string => `<!-- AI_MUST_REPLACE: policy_significance for ${domains} -->`,
+    policySignificanceTouches: (_domains: string): string => '<!-- AI_MUST_REPLACE: policy_significance -->',
     policySignificanceGeneric: '<!-- AI_MUST_REPLACE: policy_significance_generic -->',
     processedThisPeriod: 'processed this period',
     generalMatters: 'General matters',

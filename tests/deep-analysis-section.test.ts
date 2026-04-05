@@ -104,10 +104,10 @@ describe('generateDeepAnalysisSection', () => {
     expect(banned).toEqual([]);
   });
 
-  it('uses AI replacement markers for winners/losers fallback', () => {
+  it('uses the winners/losers AI replacement marker for fallback', () => {
     // All motions (no gov docs) and no CIA context → should hit the fallback branch
     const docs = [makeDoc({ doktyp: 'mot' }), makeDoc({ doktyp: 'mot', parti: 'M' })];
     const result = generateDeepAnalysisSection({ documents: docs, lang: 'en', articleType: 'motions' });
-    expect(result).toContain('AI_MUST_REPLACE');
+    expect(result).toContain('<!-- AI_MUST_REPLACE: winners_losers_analysis -->');
   });
 });
