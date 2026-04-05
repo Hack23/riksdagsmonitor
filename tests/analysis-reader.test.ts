@@ -37,6 +37,8 @@ import {
   readLatestAnalysis,
   findLatestAnalysisDate,
   deriveArticleClassificationMeta,
+  isNonEmptyAnalysis,
+  readLatestNonEmptyAnalysis,
 } from '../scripts/analysis-reader.js';
 import type {
   ClassificationResult,
@@ -891,5 +893,250 @@ describe('getAnalysisEnrichment', () => {
         rmSync(tmpBase, { recursive: true, force: true });
       }
     }
+  });
+});
+
+// ---------------------------------------------------------------------------
+// subtractBusinessDays tests
+// ---------------------------------------------------------------------------
+
+import { subtractBusinessDays, MAX_LOOKBACK_BUSINESS_DAYS } from '../scripts/pre-article-analysis/data-downloader.js';
+
+describe('subtractBusinessDays', () => {
+  it('subtracts 0 business days (returns same date)', () => {
+    expect(subtractBusinessDays('2026-04-07', 0)).toBe('2026-04-07');
+  });
+
+  it('subtracts 1 business day (Monday → Friday)', () => {
+    // 2026-04-06 is Monday, 1 business day back = Friday 2026-04-03
+    expect(subtractBusinessDays('2026-04-06', 1)).toBe('2026-04-03');
+  });
+
+  it('subtracts 1 business day (Wednesday → Tuesday)', () => {
+    expect(subtractBusinessDays('2026-04-08', 1)).toBe('2026-04-07');
+  });
+
+  it('skips weekends when subtracting', () => {
+    // 2026-04-06 is Monday, 5 business days back = 2026-03-30 (Mon)
+    expect(subtractBusinessDays('2026-04-06', 5)).toBe('2026-03-30');
+  });
+
+  it('handles crossing month boundary', () => {
+    // 2026-04-01 is Wednesday, 1 business day = 2026-03-31 (Tue)
+    expect(subtractBusinessDays('2026-04-01', 1)).toBe('2026-03-31');
+  });
+
+  it('handles Saturday as start date', () => {
+    // 2026-04-04 is Saturday, 1 business day back = 2026-04-03 (Fri)
+    expect(subtractBusinessDays('2026-04-04', 1)).toBe('2026-04-03');
+  });
+
+  it('handles negative days as 0', () => {
+    expect(subtractBusinessDays('2026-04-07', -3)).toBe('2026-04-07');
+  });
+
+  it('throws RangeError for non-date string', () => {
+    expect(() => subtractBusinessDays('not-a-date', 1)).toThrow(RangeError);
+  });
+
+  it('throws RangeError for wrong separator', () => {
+    expect(() => subtractBusinessDays('2026/04/07', 1)).toThrow(RangeError);
+  });
+
+  it('throws RangeError for empty string', () => {
+    expect(() => subtractBusinessDays('', 1)).toThrow(RangeError);
+  });
+
+  it('throws RangeError for invalid calendar date', () => {
+    // Matches YYYY-MM-DD format but is not a real calendar date
+    expect(() => subtractBusinessDays('2026-13-45', 1)).toThrow(RangeError);
+  });
+});
+
+describe('MAX_LOOKBACK_BUSINESS_DAYS', () => {
+  it('is 5', () => {
+    expect(MAX_LOOKBACK_BUSINESS_DAYS).toBe(5);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// parseSynthesisSummary dataFreshness tests
+// ---------------------------------------------------------------------------
+
+describe('parseSynthesisSummary dataFreshness', () => {
+  it('extracts dataFreshness from Data Quality Notes section', () => {
+    const md = `# Synthesis Summary
+
+## Key Themes
+
+- Budget debate
+
+## Data Quality Notes
+
+Overall confidence: **MEDIUM**. All analysis results are available in sibling files.
+**Data Freshness**: Documents sourced from **2026-04-01** via lookback fallback (article date: 2026-04-03).
+`;
+    const result = parseSynthesisSummary(md);
+    expect(result.dataFreshness).toBe('2026-04-01');
+  });
+
+  it('returns null dataFreshness when no lookback used', () => {
+    const result = parseSynthesisSummary(SYNTHESIS_MD);
+    expect(result.dataFreshness).toBeNull();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// isNonEmptyAnalysis tests
+// ---------------------------------------------------------------------------
+
+describe('isNonEmptyAnalysis', () => {
+  const emptyStub: DailyAnalysis = {
+    date: '2026-04-03',
+    classification: null,
+    riskAssessment: null,
+    swot: null,
+    threatAnalysis: null,
+    stakeholderPerspectives: null,
+    significance: null,
+    synthesis: null,
+    hasAnalysis: false,
+  };
+
+  it('returns false when hasAnalysis is false', () => {
+    expect(isNonEmptyAnalysis(emptyStub)).toBe(false);
+  });
+
+  it('returns true when synthesis has key themes', () => {
+    const analysis: DailyAnalysis = {
+      ...emptyStub,
+      hasAnalysis: true,
+      synthesis: {
+        narrativeDirection: '',
+        keyThemes: ['Budget debate'],
+        articleFocus: '',
+        forwardIndicators: [],
+        dataFreshness: null,
+      },
+    };
+    expect(isNonEmptyAnalysis(analysis)).toBe(true);
+  });
+
+  it('returns true when synthesis has narrative direction', () => {
+    const analysis: DailyAnalysis = {
+      ...emptyStub,
+      hasAnalysis: true,
+      synthesis: {
+        narrativeDirection: 'Coalition advances defense budget.',
+        keyThemes: [],
+        articleFocus: '',
+        forwardIndicators: [],
+        dataFreshness: null,
+      },
+    };
+    expect(isNonEmptyAnalysis(analysis)).toBe(true);
+  });
+
+  it('returns false when synthesis is empty (no themes or narrative)', () => {
+    const analysis: DailyAnalysis = {
+      ...emptyStub,
+      hasAnalysis: true,
+      synthesis: {
+        narrativeDirection: '',
+        keyThemes: [],
+        articleFocus: '',
+        forwardIndicators: [],
+        dataFreshness: null,
+      },
+    };
+    expect(isNonEmptyAnalysis(analysis)).toBe(false);
+  });
+
+  it('returns true when synthesis is null but other analysis exists', () => {
+    const analysis: DailyAnalysis = {
+      ...emptyStub,
+      hasAnalysis: true,
+      classification: {
+        level: 'HIGH',
+        priority: 'major',
+        confidence: 'HIGH',
+        summary: 'Test',
+        documentIds: [],
+        domains: [],
+      },
+      synthesis: null,
+    };
+    expect(isNonEmptyAnalysis(analysis)).toBe(true);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// readLatestNonEmptyAnalysis tests
+// ---------------------------------------------------------------------------
+
+describe('readLatestNonEmptyAnalysis', () => {
+  let tempBase: string;
+
+  beforeEach(() => {
+    tempBase = join(tmpdir(), `rdm-nonempty-${randomUUID()}`);
+    mkdirSync(tempBase, { recursive: true });
+  });
+
+  afterEach(() => {
+    if (existsSync(tempBase)) {
+      rmSync(tempBase, { recursive: true, force: true });
+    }
+  });
+
+  it('returns current date analysis when it is non-empty', async () => {
+    const targetDate = '2026-04-03';
+    mkdirSync(join(tempBase, targetDate), { recursive: true });
+    writeFileSync(join(tempBase, targetDate, 'synthesis-summary.md'), SYNTHESIS_MD, 'utf-8');
+    writeFileSync(join(tempBase, targetDate, 'classification-results.md'), CLASSIFICATION_MD, 'utf-8');
+
+    const result = await readLatestNonEmptyAnalysis(targetDate, 5, tempBase);
+    expect(result.date).toBe(targetDate);
+    expect(result.hasAnalysis).toBe(true);
+    expect(result.synthesis?.keyThemes.length).toBeGreaterThan(0);
+  });
+
+  it('falls back to previous day when current is empty', async () => {
+    const emptyDate = '2026-04-03';
+    const goodDate = '2026-04-02';
+
+    // Empty analysis for requested date
+    mkdirSync(join(tempBase, emptyDate), { recursive: true });
+    writeFileSync(join(tempBase, emptyDate, 'synthesis-summary.md'), '# Synthesis\n\nNo data.', 'utf-8');
+
+    // Good analysis for previous date
+    mkdirSync(join(tempBase, goodDate), { recursive: true });
+    writeFileSync(join(tempBase, goodDate, 'synthesis-summary.md'), SYNTHESIS_MD, 'utf-8');
+    writeFileSync(join(tempBase, goodDate, 'classification-results.md'), CLASSIFICATION_MD, 'utf-8');
+
+    const result = await readLatestNonEmptyAnalysis(emptyDate, 5, tempBase);
+    expect(result.date).toBe(goodDate);
+    expect(result.hasAnalysis).toBe(true);
+    expect(result.synthesis?.keyThemes.length).toBeGreaterThan(0);
+  });
+
+  it('returns original empty analysis when no non-empty analysis exists within range', async () => {
+    const emptyDate = '2026-04-03';
+    mkdirSync(join(tempBase, emptyDate), { recursive: true });
+    writeFileSync(join(tempBase, emptyDate, 'synthesis-summary.md'), '# Synthesis\n\nNo data.', 'utf-8');
+
+    const result = await readLatestNonEmptyAnalysis(emptyDate, 2, tempBase);
+    expect(result.date).toBe(emptyDate);
+  });
+
+  it('returns stub when no analysis exists at all', async () => {
+    const result = await readLatestNonEmptyAnalysis('2026-04-03', 5, tempBase);
+    // Should return the empty stub for the original date
+    expect(result.hasAnalysis).toBe(false);
+  });
+
+  it('returns empty result without lookback when date format is invalid', async () => {
+    // Invalid date format should skip lookback and just return readDailyAnalysis result
+    const result = await readLatestNonEmptyAnalysis('not-a-date', 5, tempBase);
+    expect(result.hasAnalysis).toBe(false);
   });
 });

@@ -159,6 +159,9 @@ export interface SynthesisSummaryResult {
   articleFocus: string;
   /** Forward indicators for "What to Watch Next" */
   forwardIndicators: string[];
+  /** When lookback was used, the actual date of the data (YYYY-MM-DD).
+   *  `null` when documents match the requested article date exactly. */
+  dataFreshness: string | null;
 }
 
 /** Complete pre-computed daily analysis for a given date */
@@ -514,11 +517,16 @@ export function parseSynthesisSummary(markdown: string): SynthesisSummaryResult 
   const forwardSection = extractSection(markdown, 'Forward Indicators') || extractSection(markdown, 'What to Watch');
   const forwardIndicators = forwardSection ? extractBulletList(forwardSection) : [];
 
+  // Extract data freshness from Data Quality Notes section if present
+  const freshnessMatch = /\*\*Data Freshness\*\*:\s*Documents sourced from \*\*(\d{4}-\d{2}-\d{2})\*\*/.exec(markdown);
+  const dataFreshness = freshnessMatch?.[1] ?? null;
+
   return {
     narrativeDirection: narrativeDirection.split('\n').filter(l => l.trim()).join(' ').trim(),
     keyThemes: keyThemes.slice(0, 8),
     articleFocus: articleFocus.split('\n').filter(l => l.trim()).join(' ').trim(),
     forwardIndicators: forwardIndicators.slice(0, 5),
+    dataFreshness,
   };
 }
 
@@ -740,4 +748,65 @@ export function deriveArticleClassificationMeta(analysis: DailyAnalysis): {
     significanceScore: analysis.significance?.score,
     urgency: analysis.significance?.urgency,
   };
+}
+
+/**
+ * Check whether a daily analysis has substantive content.
+ *
+ * An analysis is considered non-empty when the synthesis contains at least
+ * one key theme or a narrative direction. When the synthesis-summary.md file
+ * was not generated (synthesis is null), the function defers to `hasAnalysis`
+ * since other analysis files may still contain useful data.
+ */
+export function isNonEmptyAnalysis(analysis: DailyAnalysis): boolean {
+  if (!analysis.hasAnalysis) return false;
+  // When the synthesis-summary.md was not present, synthesis is null — that
+  // alone is not proof of empty analysis (other files may still be present).
+  // However, if synthesis exists and has no key themes / no narrative, the
+  // analysis is considered empty.
+  if (analysis.synthesis === null) return analysis.hasAnalysis;
+  const hasThemes = analysis.synthesis.keyThemes.length > 0;
+  const hasNarrative = analysis.synthesis.narrativeDirection.length > 0;
+  return hasThemes || hasNarrative;
+}
+
+/**
+ * Read the daily analysis for `date`, falling back to previous dates when the
+ * current analysis is empty (Documents Analyzed: 0).
+ *
+ * This prevents article generators from receiving empty analysis data when the
+ * requested date had no parliamentary activity (weekends, holidays, etc.).
+ *
+ * @param date        - Date string in YYYY-MM-DD format
+ * @param maxDaysBack - Maximum number of days to search back (default 5)
+ * @param basePath    - Optional override for the base analysis directory path
+ * @returns DailyAnalysis for the most recent non-empty date found, or the
+ *          original empty analysis if no non-empty analysis exists within range.
+ */
+export async function readLatestNonEmptyAnalysis(
+  date: string,
+  maxDaysBack = 5,
+  basePath?: string,
+): Promise<DailyAnalysis> {
+  // Guard against malformed date strings to prevent Date arithmetic errors.
+  if (!DATE_FORMAT_RE.test(date)) {
+    return readDailyAnalysis(date, basePath);
+  }
+  const primary = await readDailyAnalysis(date, basePath);
+  if (isNonEmptyAnalysis(primary)) return primary;
+
+  // Lookback: try previous days
+  for (let i = 1; i <= maxDaysBack; i++) {
+    const d = new Date(`${date}T00:00:00Z`);
+    d.setUTCDate(d.getUTCDate() - i);
+    const prevDate = d.toISOString().slice(0, 10);
+    const prev = await readDailyAnalysis(prevDate, basePath);
+    if (isNonEmptyAnalysis(prev)) {
+      console.log(`[analysis-reader] Lookback fallback: using analysis from ${prevDate} (requested: ${date})`);
+      return prev;
+    }
+  }
+
+  // No non-empty analysis found within range — return the original
+  return primary;
 }

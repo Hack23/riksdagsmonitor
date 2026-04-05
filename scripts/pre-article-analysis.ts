@@ -36,6 +36,8 @@ import { normalizedCIAContext } from './news-types/weekly-review/data-loader.js'
 import {
   downloadAllDocuments,
   flattenDocuments,
+  subtractBusinessDays,
+  MAX_LOOKBACK_BUSINESS_DAYS,
 } from './pre-article-analysis/data-downloader.js';
 import type { DocumentTypeKey } from './pre-article-analysis/data-downloader.js';
 
@@ -386,6 +388,7 @@ function buildSynthesis(
   docs: RawDocument[],
   significanceEntries: SignificanceEntry[],
   riskResult: RiskAssessmentResult,
+  dataFreshness?: string | null,
 ): SynthesisSummary {
   const totalDocs = docs.length;
   const topDocs = [...significanceEntries].sort((a, b) => b.score - a.score).slice(0, 10);
@@ -405,6 +408,9 @@ function buildSynthesis(
   if (riskResult.anomalyFlags.length > 0) {
     keyFindings.push(`${riskResult.anomalyFlags.length} anomaly flag(s) detected requiring editorial attention`);
   }
+  if (dataFreshness) {
+    keyFindings.push(`Data sourced from ${dataFreshness} via lookback fallback — check freshness indicators`);
+  }
 
   const executiveSummary = [
     `Pre-article analysis completed for ${totalDocs} documents.`,
@@ -413,7 +419,8 @@ function buildSynthesis(
     overallConfidence === 'HIGH'
       ? 'High data coverage — analysis results are reliable for article generation.'
       : 'Partial data coverage — treat analysis as directional guidance.',
-  ].join(' ');
+    dataFreshness ? `Note: Documents sourced from ${dataFreshness} via lookback (article date differs).` : '',
+  ].filter(Boolean).join(' ');
 
   return {
     totalDocs,
@@ -422,6 +429,7 @@ function buildSynthesis(
     topDocuments: topDocs,
     overallConfidence,
     aggregateRiskLevel: riskResult.riskLevel,
+    dataFreshness: dataFreshness ?? null,
   };
 }
 
@@ -604,6 +612,38 @@ async function runPreArticleAnalysis(opts: {
     return false;
   });
 
+  // ── Lookback fallback: widen the date filter when no documents match ────
+  // When no documents match the exact date (common on weekends, holidays, or
+  // low-activity days), expand the filter to include previous business days
+  // (up to MAX_LOOKBACK_BUSINESS_DAYS).  This prevents empty "Documents
+  // Analyzed: 0" synthesis files from propagating to article generators.
+  //
+  // The requestedIdSet guard ensures lookback is ONLY used for generic
+  // date-based runs. Deep-inspection runs (--document-ids) fetch specific
+  // documents by ID in the block below, so lookback is unnecessary and would
+  // introduce unrelated documents.
+  let dataFreshness: string | null = null;
+  if (allDocs.length === 0 && requestedIdSet.size === 0) {
+    for (let lookback = 1; lookback <= MAX_LOOKBACK_BUSINESS_DAYS; lookback++) {
+      const lookbackDate = subtractBusinessDays(date, lookback);
+      const lookbackDocs = flattenedDocs.filter((doc: RawDocument) => {
+        if (doc.datum && typeof doc.datum === 'string') {
+          return doc.datum.slice(0, 10) === lookbackDate;
+        }
+        return false;
+      });
+      if (lookbackDocs.length > 0) {
+        allDocs.push(...lookbackDocs);
+        dataFreshness = lookbackDate;
+        console.log(`   🔄 Lookback fallback: 0 documents for ${date}, using ${lookbackDocs.length} documents from ${lookbackDate} (${lookback} business day(s) back)`);
+        break;
+      }
+    }
+    if (allDocs.length === 0) {
+      console.warn(`   ⚠️  Lookback exhausted (${MAX_LOOKBACK_BUSINESS_DAYS} business days) — no recent documents found in downloaded batch.`);
+    }
+  }
+
   // If document IDs were requested but not found in the bulk download, attempt
   // to fetch them individually via fetchDocumentDetails so deep-inspection always has data.
   if (requestedIdSet.size > 0) {
@@ -628,12 +668,18 @@ async function runPreArticleAnalysis(opts: {
       }
     }
   }
-  const excludedDocsCount = flattenedDocs.length - allDocs.length;
+  // Compute excluded count from the original date-filtered set (before any
+  // by-ID fetches were appended).  `Math.max(0, …)` guards against cases
+  // where individually-fetched documents grow `allDocs` beyond `flattenedDocs`.
+  const excludedDocsCount = Math.max(0, flattenedDocs.length - allDocs.length);
 
   console.log(`   Downloaded ${flattenedDocs.length} unique documents from ${manifest.dataSources.length} MCP tools`);
   console.log(
     `   Selected ${allDocs.length} documents for analysis for ${date} (${excludedDocsCount} with missing or non-matching dates excluded)`,
   );
+  if (dataFreshness) {
+    console.log(`   📅 Data freshness: documents sourced from ${dataFreshness} (lookback active)`);
+  }
   console.log(`   Duration: ${manifest.durationMs}ms`);
   console.log(`   Riksmöte: ${resolvedRm}`);
 
@@ -719,7 +765,7 @@ async function runPreArticleAnalysis(opts: {
 
   // ── Step 9: Synthesis ─────────────────────────────────────────────────────
   console.log('\n🧩 Step 9: Synthesizing all analysis...');
-  const synthesis = buildSynthesis(allDocs, significanceEntries, riskResult);
+  const synthesis = buildSynthesis(allDocs, significanceEntries, riskResult, dataFreshness);
   writeAnalysis(outputDir, 'synthesis-summary.md', serializeSynthesisSummary(ctx, synthesis));
 
   // ── Step 10: Per-document analysis files ─────────────────────────────────
