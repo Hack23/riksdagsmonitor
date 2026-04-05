@@ -1,9 +1,14 @@
 /**
  * @module data-transformers/policy-analysis
  * @description Policy domain detection and analysis for parliamentary
- * documents. Detects fiscal, defence, environmental, education, healthcare,
- * migration, EU, justice, labour, housing, transport, and trade domains
- * using keyword matching against Swedish document titles.
+ * documents. Uses Riksdag committee codes as the **primary** classifier
+ * (HIGH confidence) and falls back to keyword matching against Swedish
+ * document titles (LOW confidence) when committee code is unavailable.
+ *
+ * Covers 15 policy domains matching all 15 Riksdag standing committees:
+ * fiscal, defence, environment, education, healthcare, migration,
+ * eu-foreign, justice, labour, housing, transport, trade,
+ * constitutional, culture, and social-insurance.
  *
  * Also provides confidence level assessment for intelligence analysis.
  *
@@ -45,7 +50,7 @@ export function assessConfidenceLevel(evidenceCount: number, sourceQuality: numb
 import { escapeHtml } from '../html-utils.js';
 import type { Language } from '../types/language.js';
 import type { RawDocument } from './types.js';
-import { COMMITTEE_NAMES } from './constants.js';
+import { COMMITTEE_NAMES, COMMITTEE_TO_DOMAIN } from './constants.js';
 import {
   L,
   svSpan,
@@ -60,7 +65,22 @@ import {
 // English keys are used internally; localised names are returned to callers.
 // ---------------------------------------------------------------------------
 export type DomainKey = 'fiscal' | 'defence' | 'environment' | 'education' | 'healthcare'
-  | 'migration' | 'eu-foreign' | 'justice' | 'labour' | 'housing' | 'transport' | 'trade';
+  | 'migration' | 'eu-foreign' | 'justice' | 'labour' | 'housing' | 'transport' | 'trade'
+  | 'constitutional' | 'culture' | 'social-insurance';
+
+/**
+ * Classification confidence level for policy domain detection.
+ * - `HIGH` — derived from authoritative committee code (organ field)
+ * - `MEDIUM` — derived from committee code with keyword corroboration
+ * - `LOW` — derived from keyword heuristics only (no committee code)
+ */
+export type ClassificationConfidence = 'HIGH' | 'MEDIUM' | 'LOW';
+
+/** Result of policy domain detection with confidence metadata. */
+export interface PolicyDomainResult {
+  domains: string[];
+  confidence: ClassificationConfidence;
+}
 
 const DOMAIN_NAMES: Readonly<Record<DomainKey, Record<string, string>>> = {
   fiscal: {
@@ -146,6 +166,30 @@ const DOMAIN_NAMES: Readonly<Record<DomainKey, Record<string, string>>> = {
     ar: 'سياسة التجارة والصناعة', he: 'מדיניות מסחר ותעשייה',
     ja: '通商・産業政策', ko: '통상·산업 정책', zh: '贸易和产业政策',
   },
+  constitutional: {
+    en: 'constitutional affairs', sv: 'konstitutionella frågor',
+    da: 'forfatningsspørgsmål', no: 'konstitusjonelle spørsmål',
+    fi: 'perustuslakiasiat', de: 'Verfassungsangelegenheiten',
+    fr: 'affaires constitutionnelles', es: 'asuntos constitucionales',
+    nl: 'constitutionele zaken', ar: 'الشؤون الدستورية',
+    he: 'ענייני חוקה', ja: '憲法問題', ko: '헌법 사안', zh: '宪法事务',
+  },
+  culture: {
+    en: 'culture and media policy', sv: 'kultur- och mediepolitik',
+    da: 'kultur- og mediepolitik', no: 'kultur- og mediepolitikk',
+    fi: 'kulttuuri- ja mediapolitiikka', de: 'Kultur- und Medienpolitik',
+    fr: 'politique culturelle et médiatique', es: 'política cultural y de medios',
+    nl: 'cultuur- en mediabeleid', ar: 'سياسة الثقافة والإعلام',
+    he: 'מדיניות תרבות ותקשורת', ja: '文化・メディア政策', ko: '문화·미디어 정책', zh: '文化和媒体政策',
+  },
+  'social-insurance': {
+    en: 'social insurance policy', sv: 'socialförsäkringspolitik',
+    da: 'socialforsikringspolitik', no: 'trygdepolitikk',
+    fi: 'sosiaalivakuutuspolitiikka', de: 'Sozialversicherungspolitik',
+    fr: 'politique d\'assurance sociale', es: 'política de seguro social',
+    nl: 'socialezekerheidsbeleid', ar: 'سياسة التأمين الاجتماعي',
+    he: 'מדיניות ביטוח לאומי', ja: '社会保険政策', ko: '사회보험 정책', zh: '社会保险政策',
+  },
 };
 
 /**
@@ -176,64 +220,102 @@ function domainName(key: DomainKey, lang: Language | string): string {
 }
 
 /**
+ * Classify a document's policy domain using the Riksdag committee code.
+ * This is the **authoritative** classifier — committee codes are the canonical
+ * indicator of policy domain in the Swedish parliamentary system.
+ *
+ * @param committeeCode - Riksdag committee code (e.g. 'FiU', 'JuU', 'MJU')
+ * @returns The canonical DomainKey, or `null` if the code is unknown
+ */
+export function classifyByCommitteeCode(committeeCode: string): DomainKey | null {
+  const domain = COMMITTEE_TO_DOMAIN[committeeCode];
+  return domain ? domain as DomainKey : null;
+}
+
+/**
  * Detect policy domains from a document's title and committee code.
+ * Prioritises committee-code-based classification (HIGH confidence) over
+ * keyword heuristics (LOW confidence).
  * Returns a deduplicated array of localised domain strings.
  */
 export function detectPolicyDomains(doc: RawDocument, lang: Language | string = 'en'): string[] {
-  const title = (doc.titel || doc.title || '').toLowerCase();
+  const { domains } = detectPolicyDomainsWithConfidence(doc, lang);
+  return domains;
+}
+
+/**
+ * Detect policy domains with classification confidence metadata.
+ * - **HIGH**: Domain derived from authoritative committee code (organ field)
+ * - **LOW**: Domain derived from keyword heuristics only
+ */
+export function detectPolicyDomainsWithConfidence(doc: RawDocument, lang: Language | string = 'en'): PolicyDomainResult {
   const organ = doc.organ || doc.committee || '';
+
+  // ── Primary: committee-code-based classification (HIGH confidence) ──
+  const committeeDomain = organ ? classifyByCommitteeCode(organ) : null;
+  if (committeeDomain) {
+    return {
+      domains: [domainName(committeeDomain, lang)],
+      confidence: 'HIGH',
+    };
+  }
+
+  // ── Fallback: keyword heuristics (LOW confidence) ──
+  const keywordDomains = _detectDomainsByKeywords(doc, lang);
+  return {
+    domains: keywordDomains,
+    confidence: keywordDomains.length > 0 ? 'LOW' : 'LOW',
+  };
+}
+
+/**
+ * Internal keyword-based domain detection — used only as fallback when
+ * committee code is unavailable or unknown.
+ */
+function _detectDomainsByKeywords(doc: RawDocument, lang: Language | string): string[] {
+  const title = (doc.titel || doc.title || '').toLowerCase();
   const set = new Set<string>();
 
   if (title.includes('skatt') || title.includes('tax') || title.includes('budget') || title.includes('finans')
       || title.includes('makrotillsyn') || title.includes('macroprudential')
       || title.includes('moms') || title.includes('mervärd') || title.includes('skattebedrägeri')
       || title.includes('e-id') || title.includes('e-legitimation') || title.includes('verklig huvudman')
-      || title.includes('penningtvätt') || /\bbeneficial owner(ship)?\b/.test(title) || title.includes('fakturabedrägeri')
-      || organ === 'SkU' || organ === 'FiU')
+      || title.includes('penningtvätt') || /\bbeneficial owner(ship)?\b/.test(title) || title.includes('fakturabedrägeri'))
     set.add(domainName('fiscal', lang));
   if (title.includes('försvar') || title.includes('defen') || title.includes('militär') || title.includes('nato')
       || title.includes('vapen') || title.includes('beredskap') || title.includes('totalförsvar')
       || title.includes('krigsmateriel') || title.includes('säkerhetsskydd') || title.includes('preparedness')
-      || title.includes('weapon')
-      || organ === 'FöU')
+      || title.includes('weapon'))
     set.add(domainName('defence', lang));
   if (title.includes('miljö') || title.includes('klimat') || title.includes('environ') || title.includes('energi')
       || title.includes('förnybart') || title.includes('renewable') || title.includes('koldioxid')
-      || title.includes('hållbar') || title.includes('sustain')
-      || organ === 'MJU')
+      || title.includes('hållbar') || title.includes('sustain'))
     set.add(domainName('environment', lang));
-  if (title.includes('utbildning') || title.includes('educ') || title.includes('skola') || title.includes('högskola')
-      || organ === 'UbU')
+  if (title.includes('utbildning') || title.includes('educ') || title.includes('skola') || title.includes('högskola'))
     set.add(domainName('education', lang));
-  if (title.includes('vård') || title.includes('hälsa') || title.includes('health') || title.includes('omsorg')
-      || organ === 'SoU')
+  if (title.includes('vård') || title.includes('hälsa') || title.includes('health') || title.includes('omsorg'))
     set.add(domainName('healthcare', lang));
   if (title.includes('migration') || title.includes('invandring') || title.includes('asyl') || title.includes('utlänning')
       || title.includes('uppehållstillstånd') || title.includes('medborgarskap') || title.includes('citizenship')
-      || title.includes('utvisning') || title.includes('statslöshet')
-      || organ === 'SfU')
+      || title.includes('utvisning') || title.includes('statslöshet'))
     set.add(domainName('migration', lang));
-  if (/\beu\b/.test(title) || title.includes('europa') || title.includes('utrik') || title.includes('foreign')
-      || organ === 'UU')
+  if (/\beu\b/.test(title) || title.includes('europa') || title.includes('utrik') || title.includes('foreign'))
     set.add(domainName('eu-foreign', lang));
   if (title.includes('brott') || title.includes('straff') || title.includes('polis') || title.includes('justice')
-      || title.includes('kriminal') || organ === 'JuU')
+      || title.includes('kriminal'))
     set.add(domainName('justice', lang));
   if (title.includes('arbetsmarknad') || title.includes('labour') || title.includes('anställning')
       || title.includes('facklig') || /\bilo\b/.test(title) || title.includes('trakasserier')
-      || title.includes('kollektivavtal') || title.includes('lönediskriminering') || title.includes('harassment')
-      || organ === 'AU')
+      || title.includes('kollektivavtal') || title.includes('lönediskriminering') || title.includes('harassment'))
     set.add(domainName('labour', lang));
   if (title.includes('bostad') || title.includes('housing') || title.includes('hyra') || title.includes('bostadsrätt')
-      || title.includes('lagfart') || title.includes('fastighet')
-      || organ === 'CU')
+      || title.includes('lagfart') || title.includes('fastighet'))
     set.add(domainName('housing', lang));
-  if (title.includes('trafik') || title.includes('transport') || title.includes('järnväg') || title.includes('väg')
-      || organ === 'TU')
+  if (title.includes('trafik') || title.includes('transport') || title.includes('järnväg') || title.includes('väg'))
     set.add(domainName('transport', lang));
   if (title.includes('näring') || title.includes('handel') || title.includes('trade') || title.includes('industri')
       || title.includes('företag') || title.includes('jordbruk') || title.includes('lantbruk')
-      || title.includes('veterinär') || title.includes('djur') || organ === 'NU')
+      || title.includes('veterinär') || title.includes('djur'))
     set.add(domainName('trade', lang));
 
   return Array.from(set);
@@ -529,6 +611,48 @@ const DOMAIN_ANALYSES: Record<string, _LangPair> = {
       de: { default: 'Bildungsvorschläge müssen nationale Lehrplanstandards mit kommunaler Durchführungsautonomie und der umstrittenen Rolle privater Anbieter im schwedischen Schulsystem ausbalancieren.' },
       fr: { default: 'Les propositions éducatives doivent équilibrer les normes nationales de programme avec l\'autonomie de prestation municipale et le rôle controversé des prestataires privés dans le système scolaire suédois.' },
       es: { default: 'Las propuestas educativas deben equilibrar los estándares curriculares nacionales con la autonomía de prestación municipal y el controvertido papel de los proveedores privados en el sistema escolar sueco.' },
+    },
+    'constitutional affairs': {
+      en: {
+        mot: 'Constitutional motions engage the foundational rules of Swedish governance — amendments here reshape the balance between parliament, government, and courts.',
+        bet: 'The Committee on the Constitution exercises unique oversight authority, including annual scrutiny of ministerial conduct and freedom of the press safeguards.',
+        ip: 'This interpellation raises constitutional questions, pressing the minister to account for governance practices, transparency, or the protection of fundamental rights.',
+        default: 'Constitutional proposals touch the core framework of Swedish democracy — the Instrument of Government, freedom of the press, and fundamental rights provisions.'
+      },
+      sv: {
+        mot: 'Konstitutionella motioner berör de grundläggande reglerna för svensk styrning – ändringar här omformar maktbalansen mellan riksdag, regering och domstolar.',
+        bet: 'Konstitutionsutskottet utövar en unik granskningsroll, inklusive årlig granskning av ministrarnas tjänsteutövning och tryckfrihetens skydd.',
+        ip: 'Denna interpellation väcker konstitutionella frågor och kräver att ministern redovisar styrningspraxis, transparens eller skyddet av grundläggande rättigheter.',
+        default: 'Konstitutionella förslag berör grundlagen, tryckfriheten och de medborgerliga rättigheterna – kärnan i svensk demokrati.'
+      },
+    },
+    'culture and media policy': {
+      en: {
+        mot: 'Culture and media motions address public service broadcasting, arts funding, and cultural heritage — areas where political independence and state support intersect.',
+        bet: 'The Committee on Cultural Affairs shapes Sweden\'s cultural policy framework, from public broadcasting governance to arts funding allocation and heritage preservation.',
+        ip: 'This interpellation scrutinises cultural and media policy, pressing the minister to justify funding decisions, editorial independence, or cultural heritage priorities.',
+        default: 'Cultural and media proposals balance creative freedom and public interest with state funding responsibilities and the independence of public service media.'
+      },
+      sv: {
+        mot: 'Kultur- och mediemotioner rör public service, konstfinansiering och kulturarv – områden där politisk oberoende och statligt stöd möts.',
+        bet: 'Kulturutskottet formar Sveriges kulturpolitik, från public service-styrning till anslagsfördelning för konst och kulturarvsvård.',
+        ip: 'Denna interpellation granskar kultur- och mediepolitiken och kräver att ministern motiverar finansieringsbeslut, redaktionellt oberoende eller kulturarvsprioriteringar.',
+        default: 'Kultur- och mediepropositioner balanserar kreativ frihet och allmänintresse med statliga finansieringsansvar och public service-mediernas oberoende.'
+      },
+    },
+    'social insurance policy': {
+      en: {
+        mot: 'Social insurance motions target pension rules, sickness benefits, and parental leave — reforms that affect every working citizen and carry high electoral sensitivity.',
+        bet: 'The Social Insurance Committee\'s reports shape Sweden\'s universal welfare model, from pension adequacy to disability and parental insurance frameworks.',
+        ip: 'This interpellation demands government accountability on social insurance, pressing the minister to explain benefit levels, processing times, or coverage gaps.',
+        default: 'Social insurance proposals engage the core of Sweden\'s welfare state — pension system, sickness insurance, and parental benefits that underpin social security.'
+      },
+      sv: {
+        mot: 'Socialförsäkringsmotioner riktar sig mot pensionsregler, sjukförsäkring och föräldraledighet – reformer som berör alla förvärvsarbetande och har hög valrörelseaktualitet.',
+        bet: 'Socialförsäkringsutskottets betänkanden formar Sveriges generella välfärdsmodell, från pensionernas tillräcklighet till sjuk- och föräldraförsäkringens ramar.',
+        ip: 'Denna interpellation kräver regeringens ansvarighet i socialförsäkringsfrågor och pressar ministern att förklara ersättningsnivåer, handläggningstider eller luckor i skyddet.',
+        default: 'Socialförsäkringspropositioner berör kärnan i den svenska välfärdsstaten – pensionssystemet, sjukförsäkringen och föräldrapenningen.'
+      },
     }
 };
 
@@ -537,7 +661,7 @@ const EN_DOMAIN_MAP: Record<string, string> = _LOCALISED_TO_EN;
 
 /**
  * Return a substantive domain-specific and type-specific analysis sentence.
- * Each of 12 policy domains has tailored text for motions (mot), committee
+ * Each of 15 policy domains has tailored text for motions (mot), committee
  * reports (bet), interpellations (ip), and propositions/default. English and
  * Swedish are always present; other languages fall back per-key to English.
  */
@@ -749,6 +873,21 @@ export const SCB_DOMAIN_TABLES: Readonly<Record<DomainKey, { query: string; tabl
     query: 'näringsliv företag BNP',
     tables: ['TAB5802', 'TAB5803'],
     indicators: ['GDP growth', 'Business starts', 'Industrial production index'],
+  },
+  constitutional: {
+    query: 'grundlag demokrati riksdag',
+    tables: [],
+    indicators: ['Voter turnout', 'Parliamentary composition'],
+  },
+  culture: {
+    query: 'kultur media public service',
+    tables: [],
+    indicators: ['Cultural spending', 'Public broadcasting budget'],
+  },
+  'social-insurance': {
+    query: 'pension sjukförsäkring socialförsäkring',
+    tables: [],
+    indicators: ['Pension expenditure', 'Sickness benefit claims', 'Parental leave uptake'],
   },
 };
 

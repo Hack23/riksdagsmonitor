@@ -41,8 +41,8 @@ export { transformCalendarToEventGrid, extractTopics, extractWatchPoints } from 
 export { groupMotionsByProposition, groupPropositionsByCommittee, calculateInfluenceScore } from './document-analysis.js';
 
 // ── Re-export policy analysis (confidence levels & narrative framing) ──────
-export type { ConfidenceLevel, NarrativeFrame } from './policy-analysis.js';
-export { assessConfidenceLevel, detectNarrativeFrames } from './policy-analysis.js';
+export type { ConfidenceLevel, NarrativeFrame, ClassificationConfidence, PolicyDomainResult } from './policy-analysis.js';
+export { assessConfidenceLevel, detectNarrativeFrames, classifyByCommitteeCode, detectPolicyDomainsWithConfidence } from './policy-analysis.js';
 
 // ── Re-export risk analysis ────────────────────────────────────────────────
 export type { RiskLevel, CoalitionRiskIndex, CoalitionRiskComponents, AnomalyFlag, TrendDirection, TrendDataPoint, TrendComparison } from './risk-analysis.js';

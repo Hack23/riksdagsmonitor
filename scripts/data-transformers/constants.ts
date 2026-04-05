@@ -11,4 +11,4 @@
  * @license Apache-2.0
  */
 
-export { LOCALE_MAP, COMMITTEE_NAMES, CONTENT_LABELS } from './constants/index.js';
+export { LOCALE_MAP, COMMITTEE_NAMES, COMMITTEE_TO_DOMAIN, CONTENT_LABELS } from './constants/index.js';
