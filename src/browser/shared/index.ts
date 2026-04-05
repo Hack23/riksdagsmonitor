@@ -15,6 +15,9 @@ export * from './theme.js';
 export * from './logger.js';
 export * from './dom-utils.js';
 export * from './data-loader.js';
-export * from './chart-factory.js';
 export * from './fallback-ui.js';
 export * from './error-boundary.js';
+
+// Note: chart-factory is intentionally excluded from this barrel export
+// to keep the root entry point free of chart.js type dependencies.
+// Import chart utilities directly: import { createChart } from 'riksdagsmonitor/shared/chart-factory';

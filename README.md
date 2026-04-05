@@ -190,6 +190,58 @@ See [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) for detailed security c
 - **3.5+ Million Votes** - Comprehensive voting record analysis
 - **109,000+ Documents** - Parliamentary documents processed and analyzed
 
+## 📦 npm Package
+
+Install the shared TypeScript library for Swedish Parliament data visualization:
+
+```bash
+npm install riksdagsmonitor
+```
+
+### What's Included
+
+- **Theme System** — Dark/light cyberpunk themes with WCAG AA contrast compliance
+- **Chart Factory** — Pre-configured Chart.js creation with responsive breakpoints and keyboard navigation
+- **Data Loader** — Resilient data fetching with retry logic, caching, and CSV/JSON parsing
+- **DOM Utilities** — Loading states, error boundaries, screen reader announcements, locale-aware formatting
+- **Type Definitions** — Full TypeScript interfaces for political data structures
+- **Dashboard Modules** — 12 specialized intelligence dashboard components
+- **CIA Intelligence Modules** — Data loaders, visualizations, and election prediction engine
+
+### Usage
+
+```typescript
+// Core utilities (no dependencies required)
+import { getActiveThemeColors, BREAKPOINTS, getPartyColor } from 'riksdagsmonitor';
+import { loadJSON, loadCSV, createDataSource } from 'riksdagsmonitor';
+import { showLoadingState, showErrorState, formatNumber, debounce } from 'riksdagsmonitor';
+
+// Chart utilities (requires chart.js peer dependency)
+import { createChart, getResponsiveOptions, initDashboardSection } from 'riksdagsmonitor/shared/chart-factory';
+
+// Register Chart.js, D3.js, PapaParse as globals (requires peer dependencies)
+import 'riksdagsmonitor/shared/register-globals';
+
+// Individual dashboard modules
+import { init as initPartyDashboard } from 'riksdagsmonitor/dashboards/party-dashboard';
+import { init as initRiskDashboard } from 'riksdagsmonitor/dashboards/risk-dashboard';
+
+// CIA intelligence modules
+import { CIADataLoader } from 'riksdagsmonitor/cia/data-loader';
+import { CIADashboardRenderer } from 'riksdagsmonitor/cia/visualizations';
+```
+
+### Peer Dependencies
+
+The core shared utilities work without any dependencies. For visualization dashboards, install the optional peer dependencies:
+
+```bash
+npm install chart.js d3 papaparse                # Required for dashboard support
+npm install chartjs-plugin-annotation             # Optional — for chart annotations
+```
+
+> **Note:** `chartjs-plugin-annotation` is loaded conditionally at runtime — dashboards work without it, but chart annotations will be unavailable.
+
 ## 🌐 Live Platform
 
 **Website:** [riksdagsmonitor.com](https://riksdagsmonitor.com)
@@ -321,7 +373,7 @@ Riksdagsmonitor integrates multiple authoritative Swedish open data sources:
 
 ### Stack
 - **Frontend:** Static HTML/CSS with JavaScript dashboards
-- **Build System:** Vite 7 (ES modules, code splitting)
+- **Build System:** Vite 8 (ES modules, code splitting)
 - **Visualization:** Chart.js 4 + D3.js 7 hosted locally on CloudFront
 - **Testing:** Vitest (unit), Cypress (E2E) - 2890 tests passing
 - **Styling:** Custom CSS with cyberpunk theme, responsive design

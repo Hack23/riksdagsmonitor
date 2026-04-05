@@ -2,9 +2,13 @@
   "name": "riksdagsmonitor",
   "version": "0.8.23",
   "type": "module",
-  "description": "Swedish Parliament Intelligence Platform - Monitor political activity with systematic transparency",
+  "description": "Swedish Parliament (Riksdag) intelligence platform — TypeScript utilities for political data visualization, dashboards, and open data analysis with Chart.js and D3.js",
   "main": "dist/lib/shared/index.js",
+  "module": "dist/lib/shared/index.js",
   "types": "dist/lib/shared/index.d.ts",
+  "sideEffects": [
+    "./dist/lib/shared/register-globals.js"
+  ],
   "exports": {
     ".": {
       "import": "./dist/lib/shared/index.js",
@@ -14,9 +18,9 @@
       "import": "./dist/lib/shared/index.js",
       "types": "./dist/lib/shared/index.d.ts"
     },
-    "./shared/register-globals": {
-      "import": "./dist/lib/shared/register-globals.js",
-      "types": "./dist/lib/shared/register-globals.d.ts"
+    "./shared/*": {
+      "import": "./dist/lib/shared/*.js",
+      "types": "./dist/lib/shared/*.d.ts"
     },
     "./cia/*": {
       "import": "./dist/lib/cia/*.js",
@@ -29,15 +33,10 @@
     "./ui/*": {
       "import": "./dist/lib/ui/*.js",
       "types": "./dist/lib/ui/*.d.ts"
-    },
-    "./scripts/*": {
-      "import": "./dist/scripts/*.js",
-      "types": "./dist/scripts/*.d.ts"
     }
   },
   "files": [
     "dist/lib",
-    "dist/scripts",
     "README.md",
     "LICENSE",
     "SECURITY.md"
@@ -103,18 +102,29 @@
   },
   "keywords": [
     "riksdag",
+    "riksdagen",
+    "swedish-parliament",
     "parliament",
     "sweden",
     "politics",
+    "political-data",
+    "political-intelligence",
+    "political-analysis",
+    "democracy",
+    "civic-tech",
+    "open-data",
     "osint",
     "transparency",
-    "intelligence",
+    "government",
+    "data-visualization",
+    "dashboard",
     "chart.js",
     "d3",
-    "dashboard",
-    "theme",
     "typescript",
-    "political-data"
+    "monitoring",
+    "voting-records",
+    "parliamentary",
+    "intelligence"
   ],
   "author": "Hack23 AB",
   "license": "Apache-2.0",
@@ -122,13 +132,29 @@
     "url": "https://github.com/Hack23/riksdagsmonitor/issues"
   },
   "homepage": "https://riksdagsmonitor.com",
-  "dependencies": {
-    "ajv": "8.18.0",
-    "ajv-formats": "3.0.1",
-    "chart.js": "4.5.1",
-    "chartjs-plugin-annotation": "3.1.0",
-    "d3": "7.9.0",
-    "papaparse": "5.5.3"
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Hack23"
+  },
+  "peerDependencies": {
+    "chart.js": "^4.0.0",
+    "chartjs-plugin-annotation": "^3.0.0",
+    "d3": "^7.0.0",
+    "papaparse": "^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "chart.js": {
+      "optional": true
+    },
+    "chartjs-plugin-annotation": {
+      "optional": true
+    },
+    "d3": {
+      "optional": true
+    },
+    "papaparse": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
@@ -137,6 +163,11 @@
     "@types/papaparse": "5.5.2",
     "@vitest/coverage-v8": "4.1.2",
     "@vitest/ui": "4.1.2",
+    "ajv": "8.18.0",
+    "ajv-formats": "3.0.1",
+    "chart.js": "4.5.1",
+    "chartjs-plugin-annotation": "3.1.0",
+    "d3": "7.9.0",
     "eslint": "10.2.0",
     "globals": "17.4.0",
     "happy-dom": "20.8.9",
@@ -144,6 +175,7 @@
     "js-yaml": "4.1.1",
     "json-schema-to-typescript": "15.0.4",
     "knip": "6.3.0",
+    "papaparse": "5.5.3",
     "playwright": "1.59.1",
     "start-server-and-test": "3.0.0",
     "tsx": "4.21.0",

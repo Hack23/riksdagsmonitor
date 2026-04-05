@@ -666,7 +666,11 @@ jobs:
       - name: Verify package contents
         run: |
           echo "📦 Package contents preview:"
-          npm pack --dry-run
+          PACK_OUTPUT="$(npm pack --dry-run 2>&1)"
+          printf '%s\n' "$PACK_OUTPUT"
+          echo ""
+          echo "📊 Package size summary:"
+          printf '%s\n' "$PACK_OUTPUT" | grep -E "^npm notice (package size|unpacked size|total files)" || true
 
       - name: Publish to npm with provenance
         run: npm publish --ignore-scripts --provenance --access public

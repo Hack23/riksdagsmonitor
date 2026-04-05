@@ -26,10 +26,10 @@
  * */
 
 import {
-  createChart,
   showDataSourceDisclaimer,
   renderErrorFallback,
 } from '../shared/index.js';
+import { createChart } from '../shared/chart-factory.js';
 
 import { logger } from '../shared/index.js';
 import type { CSVRow } from '../shared/index.js';

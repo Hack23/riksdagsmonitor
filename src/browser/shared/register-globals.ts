@@ -12,7 +12,6 @@
  */
 
 import { Chart } from 'chart.js/auto';
-import 'chartjs-plugin-annotation';
 import * as d3 from 'd3';
 import Papa from 'papaparse';
 
@@ -20,3 +19,11 @@ import Papa from 'papaparse';
 (globalThis as Record<string, unknown>).Chart = Chart;
 (globalThis as Record<string, unknown>).d3 = d3;
 (globalThis as Record<string, unknown>).Papa = Papa;
+
+// Optional Chart.js plugins must be imported explicitly by applications that
+// need them. Do not dynamically import `chartjs-plugin-annotation` here:
+// bundlers such as Vite/Rollup/Webpack will still try to resolve the module
+// at build time and fail when the optional dependency is not installed.
+//
+// To enable annotations, import `chartjs-plugin-annotation` in the consuming
+// entry point before creating charts that use annotation configuration.
