@@ -20,7 +20,8 @@ import Papa from 'papaparse';
 (globalThis as Record<string, unknown>).d3 = d3;
 (globalThis as Record<string, unknown>).Papa = Papa;
 
-// chartjs-plugin-annotation is optional — load it when available
+// chartjs-plugin-annotation is optional — load it when available.
+// The import side-effect auto-registers the plugin with Chart.js.
 import('chartjs-plugin-annotation').catch(() => {
   /* annotation plugin not installed — annotations disabled */
 });
