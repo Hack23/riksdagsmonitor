@@ -22,7 +22,7 @@ describe('detectBannedPatterns', () => {
   it('detects "No chamber debate data is available" pattern', () => {
     const html = '<p>No chamber debate data is available for these items, limiting our ability to assess deliberation.</p>';
     expect(detectBannedPatterns(html)).toEqual([
-      'noDebateDataText: "No chamber debate data is available…"',
+      'debateAnalysisMarker: "No chamber debate data is available…"',
     ]);
   });
 

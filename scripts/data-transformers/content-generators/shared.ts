@@ -814,7 +814,7 @@ function generateCriticalAssessment(docs: RawDocument[], lang: Language | string
   // Check for lack of debate data (information gap)
   const withSpeeches = docs.filter(d => d.speeches && d.speeches.length > 0).length;
   if (withSpeeches === 0 && docs.length > 3) {
-    parts.push(noDebateDataText(lang));
+    parts.push(debateAnalysisMarker());
   }
 
   // Thin majority risk assessment
@@ -840,7 +840,7 @@ function singlePartyDominanceText(lang: Language | string): string {
   return t[lang as string] ?? t.en;
 }
 
-function noDebateDataText(_lang: Language | string): string {
+function debateAnalysisMarker(): string {
   return '<!-- AI_MUST_REPLACE: debate_analysis -->';
 }
 
@@ -1144,7 +1144,7 @@ function feasibilityRank(f: string): number {
  */
 const BANNED_PATTERNS: readonly { label: string; pattern: RegExp }[] = [
   { label: 'neutralText: "The political landscape remains fluid…"', pattern: /The political landscape remains fluid,? with both government and opposition positioning for advantage/i },
-  { label: 'noDebateDataText: "No chamber debate data is available…"', pattern: /No chamber debate data is available for these items,? limiting our ability/i },
+  { label: 'debateAnalysisMarker: "No chamber debate data is available…"', pattern: /No chamber debate data is available for these items,? limiting our ability/i },
   { label: 'policySignificanceTouches: "Touches on {domains}."', pattern: /Touches on [\p{L}\p{N}][\p{L}\p{N}\s,&/()-]*\./iu },
   { label: 'analysisOfNDocuments: "Analysis of N documents covering…"', pattern: /Analysis of \d+ documents covering/i },
   { label: 'policySignificanceGeneric: "Requires committee review and chamber debate…"', pattern: /Requires committee review and chamber debate/i },
