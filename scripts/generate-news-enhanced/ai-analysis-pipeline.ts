@@ -393,7 +393,7 @@ export class AIAnalysisPipeline {
   private readonly iterations: number;
   private readonly qualityThreshold: number;
 
-  /** Module-level guard so deprecation warnings are emitted at most once per process. */
+  /** Class-level guard shared across all instances so deprecation warnings are emitted at most once per process. */
   private static _deprecationWarned = false;
 
   constructor(options: { iterations?: number; qualityThreshold?: number } = {}) {
@@ -443,8 +443,7 @@ export class AIAnalysisPipeline {
     if (!AIAnalysisPipeline._deprecationWarned) {
       AIAnalysisPipeline._deprecationWarned = true;
       console.warn(
-        '[DEPRECATED] buildDynamicSwot(), buildStrategicImplications(), buildKeyTakeaways(), '
-        + 'buildLegislativeImpact(), buildCrossPartyImplications(), and scoreAnalysisDepth() '
+        '[DEPRECATED] buildDynamicSwot(), buildStrategicImplications(), and buildKeyTakeaways() '
         + 'are deprecated (v3.0). Use AI prompts in workflow .md files instead.',
       );
     }

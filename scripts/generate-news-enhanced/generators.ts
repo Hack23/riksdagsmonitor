@@ -1037,10 +1037,12 @@ function docTypeLabel(doktyp: string, lang: Language, count?: number): string {
  *   2 = depth 1 + Historical Context + Predictive Assessment
  *   3 = depth 2 + Executive Intelligence Summary + Methodology (3 iterations)
  *   4 = depth 3 + quality-review iteration in Methodology (4 iterations)
- * takeaways are used when present. For AI-driven sections with missing content
- * (including when no AIAnalysisResult is supplied, or when `keyTakeaways` is
- * empty), AI_MUST_REPLACE markers are emitted (v3.0+ — no template-generated
- * fallback content).
+ * When `aiResult` is provided, both the Strategic Implications and Key
+ * Takeaways sections use its AI-generated content when present. For either
+ * AI-driven section with missing content, including when no AIAnalysisResult
+ * is supplied or when the corresponding `aiResult` field is empty,
+ * AI_MUST_REPLACE markers are emitted (v3.0+ — no template-generated fallback
+ * content).
  */
 function generateDeepInspectionContent(
   docs: RawDocument[],

@@ -157,6 +157,28 @@ describe('generateDeepInspectionContent depth-gated sections', () => {
     expect(html).toContain('<!-- AI_MUST_REPLACE: key_takeaways -->');
   });
 
+  it('emits AI_MUST_REPLACE markers when aiResult has empty content', async () => {
+    const { __deepInspectionTestHooks } = await import('../scripts/generate-news-enhanced/generators.js');
+    const emptyAiResult = {
+      iterations: 1,
+      documentAnalyses: [],
+      synthesis: { keyThemes: [], policyImplications: [], crossDocumentInsights: [] },
+      dynamicSwotEntries: {
+        government:    { strengths: [], weaknesses: [], opportunities: [], threats: [] },
+        opposition:    { strengths: [], weaknesses: [], opportunities: [], threats: [] },
+        privateSector: { strengths: [], weaknesses: [], opportunities: [], threats: [] },
+      },
+      strategicImplications: '',
+      keyTakeaways: [],
+      analysisScore: 0,
+    };
+    const html = __deepInspectionTestHooks.generateDeepInspectionContent(
+      docs, 'Fiscal policy', 'en', 1, emptyAiResult,
+    );
+    expect(html).toContain('<!-- AI_MUST_REPLACE: strategic_implications -->');
+    expect(html).toContain('<!-- AI_MUST_REPLACE: key_takeaways -->');
+  });
+
   it('depth 2 adds historical and predictive sections only', async () => {
     const html = await render(2, 'en');
     expect(html).toContain('class="historical-context"');
