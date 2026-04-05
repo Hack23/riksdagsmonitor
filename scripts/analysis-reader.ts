@@ -788,6 +788,10 @@ export async function readLatestNonEmptyAnalysis(
   maxDaysBack = 5,
   basePath?: string,
 ): Promise<DailyAnalysis> {
+  // Guard against malformed date strings to prevent Date arithmetic errors.
+  if (!DATE_FORMAT_RE.test(date)) {
+    return readDailyAnalysis(date, basePath);
+  }
   const primary = await readDailyAnalysis(date, basePath);
   if (isNonEmptyAnalysis(primary)) return primary;
 

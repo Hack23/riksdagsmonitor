@@ -668,7 +668,10 @@ async function runPreArticleAnalysis(opts: {
       }
     }
   }
-  const excludedDocsCount = flattenedDocs.length - allDocs.length;
+  // Compute excluded count from the original date-filtered set (before any
+  // by-ID fetches were appended).  `Math.max(0, …)` guards against cases
+  // where individually-fetched documents grow `allDocs` beyond `flattenedDocs`.
+  const excludedDocsCount = Math.max(0, flattenedDocs.length - allDocs.length);
 
   console.log(`   Downloaded ${flattenedDocs.length} unique documents from ${manifest.dataSources.length} MCP tools`);
   console.log(

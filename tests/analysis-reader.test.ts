@@ -934,6 +934,17 @@ describe('subtractBusinessDays', () => {
   it('handles negative days as 0', () => {
     expect(subtractBusinessDays('2026-04-07', -3)).toBe('2026-04-07');
   });
+
+  it('throws RangeError for malformed date string', () => {
+    expect(() => subtractBusinessDays('not-a-date', 1)).toThrow(RangeError);
+    expect(() => subtractBusinessDays('2026/04/07', 1)).toThrow(RangeError);
+    expect(() => subtractBusinessDays('', 1)).toThrow(RangeError);
+  });
+
+  it('throws RangeError for invalid calendar date', () => {
+    // Matches YYYY-MM-DD format but is not a real calendar date
+    expect(() => subtractBusinessDays('2026-13-45', 1)).toThrow(RangeError);
+  });
 });
 
 describe('MAX_LOOKBACK_BUSINESS_DAYS', () => {
@@ -1114,6 +1125,12 @@ describe('readLatestNonEmptyAnalysis', () => {
   it('returns stub when no analysis exists at all', async () => {
     const result = await readLatestNonEmptyAnalysis('2026-04-03', 5, tempBase);
     // Should return the empty stub for the original date
+    expect(result.hasAnalysis).toBe(false);
+  });
+
+  it('returns empty result without lookback when date format is invalid', async () => {
+    // Invalid date format should skip lookback and just return readDailyAnalysis result
+    const result = await readLatestNonEmptyAnalysis('not-a-date', 5, tempBase);
     expect(result.hasAnalysis).toBe(false);
   });
 });
