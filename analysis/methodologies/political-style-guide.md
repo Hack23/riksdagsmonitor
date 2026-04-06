@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-04-06 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -890,15 +890,128 @@ The following demonstrates proper intelligence-grade writing:
 
 ---
 
+## 🔄 Bad→Good Rewrite Examples (v2.1)
+
+For each prohibited pattern, this section shows a concrete rewrite demonstrating how to transform banned content into intelligence-grade analysis with specific evidence, named actors, and MCP data references.
+
+### Example 1: Vague Attribution → Named Actor with Evidence
+
+❌ **BANNED:**
+> "Politicians discussed the new migration policy during the session, with various parties expressing different views."
+
+✅ **REWRITE:**
+> Justitieminister Gunnar Strömmer (M) presented prop. 2025/26:117 on mandatory detention during the JuU committee hearing on 2026-03-12. Socialdemokraternas rättspolitiska talesperson Ardalan Shekarabi responded that S "cannot support a measure that violates ECHR Article 5(1)" (anförande 2026-03-12, search_anforanden). Vänsterpartiet (V) and Miljöpartiet (MP) filed joint reservations in the committee report (dok_id: HC01JuU15).
+
+**What changed:** Named 3 parties and 2 individuals, cited a specific proposition, dok_id, and MCP source.
+
+---
+
+### Example 2: Unattributed Opinions → Sourced Claims
+
+❌ **BANNED:**
+> "Many believe the coalition may face difficulties in the coming months as various risks emerge."
+
+✅ **REWRITE:**
+> Coalition stability risk scores L=3, I=5, Score=15 [HIGH confidence], driven by SD's formal demand for stricter migration enforcement via interpellation 2025/26:412 (dok_id: HD04567). Novus polling (2026-03-28) shows M+KD+L+SD combined support at 48.3% (±2.1%), below the 50% threshold for the first time since the 2022 election.
+
+**What changed:** Replaced "many believe" with quantified risk scores, specific MCP-traced evidence, and named polling data with margin of error.
+
+---
+
+### Example 3: Circular Reasoning → Strategic Significance
+
+❌ **BANNED:**
+> "This is an important development because it matters for Swedish politics and could have significant implications."
+
+✅ **REWRITE:**
+> FöU's adoption of bet. 2025/26:FöU8 on defence spending (191 Ja, 158 Nej; search_voteringar rm=2025/26) establishes Sweden's first NATO-era defence budget at 2.1% of GDP. The vote margin (33 seats) conceals a coalition fracture: Liberalerna (L) filed a reservation opposing the cyber defence allocation (dok_id: HC01FöU8, reservation §4), signaling policy divergence that could cascade into the autumn budget negotiation if FiU attempts to reallocate the funds.
+
+**What changed:** Replaced circular "important because it matters" with specific vote counts, budget figures, a named committee fracture, and a forward-looking cascading risk assessment.
+
+---
+
+### Example 4: Generic SWOT Entries → Evidence-Based Assessment
+
+❌ **BANNED:**
+> **Strength:** "Strong leadership" | **Threat:** "Various risks"
+
+✅ **REWRITE:**
+> | Quadrant | Entry | Confidence | Evidence |
+> |:---|:---|:---:|:---|
+> | **Strength** | Ulf Kristersson (M) maintained coalition discipline through 14 consecutive contested votes (Jan–Mar 2026), losing only 1 (FöU8 L defection) | HIGH | search_voteringar rm=2025/26, party=M; 93% voting cohesion rate |
+> | **Threat** | SD interpellation 2025/26:412 explicitly threatens to withdraw budget support unless migration enforcement benchmarks are met by 2026-06-01 | HIGH | dok_id: HD04567; Jimmie Åkesson plenary speech 2026-03-15 |
+
+**What changed:** "Strong leadership" became a quantified voting cohesion claim with 14 specific votes and 93% rate. "Various risks" became a specific, dated, dok_id-backed threat with a named deadline.
+
+---
+
+### Example 5: Missing Opposition → Balanced Coverage
+
+❌ **BANNED:**
+> "The government's new education reform will modernize Swedish schools and improve learning outcomes for students across the country."
+
+✅ **REWRITE:**
+> The government's education reform (prop. 2025/26:89, dok_id: HD02345) restructures the gymnasieskola curriculum with emphasis on STEM pathways. UbU approved the proposition 9-6 (get_betankanden organ=UbU, rm=2025/26). **Opposition response:** Socialdemokraternas utbildningspolitiska talesperson Lina Axelsson Kihlblom called the reform "a step backwards for equity" (anförande 2026-03-20), while Centerpartiet (C) filed a reservation proposing a parallel vocational training track (HC01UbU12, reservation §2). [ASSESSMENT: Reform likely passes plenary but faces implementation resistance from kommuner — MEDIUM confidence]
+
+**What changed:** Added opposition voices (S spokesperson by name, C reservation with dok_id), balanced government framing with critique, and added confidence-labeled assessment.
+
+---
+
+### Example 6: Missing Forward Indicator → Actionable Watch List
+
+❌ **BANNED:**
+> "The situation will continue to develop and may change in the future."
+
+✅ **REWRITE:**
+> **What to Watch Next:**
+> - 📅 **2026-04-07:** Plenary votering on bet. 2025/26:JuU15 — L's plenary vote will signal coalition cohesion on justice policy
+> - 📅 **2026-04-15:** FiU spring amending budget deadline — SD budget demands must be resolved before this date
+> - 📅 **2026-04-22:** SCB partisympatiundersökning Q1 2026 release — L's polling position relative to 4% threshold
+> - **Trigger:** If L votes against JuU15 in plenary AND SCB shows L below 4%, Coalition Risk escalates from L=3,I=5,Score=15 to L=4,I=5,Score=20
+
+**What changed:** Replaced vague future reference with 3 dated events, specific MCP-observable triggers, and a quantified escalation pathway.
+
+---
+
+### Example 7: Unlabeled Analytical Claims → Confidence-Labeled Assessment
+
+❌ **BANNED:**
+> "The coalition will likely survive until the next election, although there are some challenges ahead."
+
+✅ **REWRITE:**
+> The Tidö coalition's survival probability through September 2026 is assessed at **65%** [MEDIUM confidence]. Supporting evidence: 14 consecutive votes sustained (search_voteringar rm=2025/26), Tidöavtal renegotiation scheduled Q2 2026 (government press release 2026-03-01). Countervailing evidence: SD interpellation ultimatum (dok_id: HD04567) creates a binary trigger event by 2026-06-01. If SD migration benchmarks are unmet, survival probability drops to **35%** [LOW confidence — contingent on SD leadership decision]. Calibrated against "SD conditionally supports government" scenario (risk-methodology §Calibration Examples, Scenario 4).
+
+**What changed:** "Likely survive" became a 65% probability with confidence label, dual evidence chains (supporting and countervailing), a named contingency, and calibration anchor.
+
+---
+
+### Example 8: Fabricated Content → MCP-Traceable Claims
+
+❌ **BANNED:**
+> "According to recent reports, several members of parliament have raised concerns about the government's handling of the energy crisis."
+
+✅ **REWRITE:**
+> Three interpellationer filed in March 2026 target the government's energy policy:
+> 1. **2025/26:398** by Kajsa Fredholm (V) — questioning Vattenfall restructuring timeline (dok_id: HD04234)
+> 2. **2025/26:403** by Per Bolund (MP) — demanding disclosure of fossil fuel subsidy figures (dok_id: HD04289)
+> 3. **2025/26:411** by Lars Hjälmered (M, backbench) — unusual government-party dissent on nuclear energy procurement (dok_id: HD04456)
+>
+> **Data source:** riksdag-regering-mcp get_interpellationer(rm="2025/26"), filtered by energy-related keywords. The M backbench interpellation (#411) is particularly noteworthy as intra-coalition dissent [MEDIUM confidence — single data point, monitor for pattern].
+
+**What changed:** "Recent reports" and "several members" became 3 specific, numbered interpellationer with dok_ids, named MPs with party affiliations, and an analytical observation about intra-coalition dissent with confidence label.
+
+---
+
 ## Document Control
 
 | Field | Value |
 |---|---|
-| Version | 2.0.0 |
+| Version | 2.1.0 |
 | Status | Active |
 | Owner | Hack23 AB |
 | Review Cycle | Quarterly |
 | Next Review | 2026-06-30 |
+| Key Changes v2.1 | Bad→Good Rewrite Examples (8 worked examples covering all prohibited pattern categories) |
 | Key Changes v2.0 | Intelligence depth standards, evidence density requirements, analytical depth indicators |
 | Related | `scripts/prompts/v2/political-analysis.md`, `scripts/analysis-reader.ts` |
 | ISMS Reference | Secure_Development_Policy.md §4.2 |

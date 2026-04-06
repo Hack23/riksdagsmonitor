@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-3.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 3.1 | **📅 Last Updated:** 2026-04-06 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -446,12 +446,13 @@ All identified threat actors are classified on two axes: **Intent** and **Capabi
 **Document Control:**  
 - **Path:** `/analysis/methodologies/political-threat-framework.md`  
 - **ISMS Reference:** [Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md)  
-- **Version:** 2.0  
+- **Version:** 3.1  
 - **Frameworks:** Attack Trees, Political Kill Chain, Diamond Model, Political Threat Taxonomy, Threat Actor Profiling  
+- **Key Changes v3.1:** Cross-Methodology Linkage Protocol (Severity→Likelihood mapping, SWOT Threats vs. dedicated threat analysis scope comparison, synthesis integration protocol with 4-step workflow, integrated dashboard Mermaid diagram)  
 - **Classification:** Public  
 - **Next Review:** 2026-06-30
 
-<!-- version: 3.0.0 | updated: 2026-03-30 | author: Hack23 AB -->
+<!-- version: 3.1.0 | updated: 2026-04-06 | author: Hack23 AB -->
 <!-- document-control: political-analysis-methodology | classification: public -->
 
 ## Appendix A: Political Threat Category Detailed Definitions
@@ -852,6 +853,127 @@ The AI agent **MUST** follow this protocol when performing threat analysis:
 8. **Score severity** using the calibration table
 9. **Connect to risk scoring** using the Threat-to-Risk integration table
 10. **Identify forward indicators** — what MCP-observable signals would indicate threat escalation?
+
+---
+
+## 🔗 Cross-Methodology Linkage Protocol (v3.1)
+
+Threat analysis does not exist in isolation — it feeds into risk assessment and interacts with SWOT analysis. This section defines how findings from the threat framework connect to the other two analytical frameworks and how all three are synthesized.
+
+### Threat → Risk Integration
+
+Threat analysis findings provide **input to risk likelihood scoring** in the [political-risk-methodology.md](political-risk-methodology.md). The mapping is:
+
+```mermaid
+flowchart LR
+    T["🎭 Threat Framework<br/>Severity Score (1–5)"]
+    R["⚠️ Risk Methodology<br/>Likelihood × Impact"]
+    S["💼 SWOT Framework<br/>Threats Quadrant"]
+
+    T -->|"Severity informs<br/>Likelihood (L)"| R
+    T -->|"Active threats become<br/>SWOT Threat entries"| S
+    R -->|"Risk scores inform<br/>Threat prioritization"| T
+    S -->|"SWOT Threats feed<br/>Attack Tree targets"| T
+
+    style T fill:#e74c3c,color:#fff
+    style R fill:#f39c12,color:#000
+    style S fill:#3498db,color:#fff
+```
+
+#### Severity → Likelihood Mapping Table
+
+| Threat Severity (this framework) | Risk Likelihood (risk-methodology) | Rationale |
+|:---:|:---:|:---|
+| 1 (Informational) | L=1 (Rare) | Theoretical threat, no active indicators |
+| 2 (Low) | L=2 (Unlikely) | Threat identified but no progression observed |
+| 3 (Medium) | L=3 (Possible) | Active threat indicators, early Kill Chain stages |
+| 4 (High) | L=4 (Likely) | Threat at mid-to-late Kill Chain stage, multiple indicators |
+| 5 (Critical) | L=5 (Almost Certain) | Threat at final Kill Chain stage, imminent materialization |
+
+**Rule:** When a threat assessment produces a severity score, it MUST be reflected in the corresponding risk category's Likelihood value. If a threat scores Severity=4, the corresponding risk cannot have Likelihood=1 without explicit justification.
+
+### SWOT "Threats" vs. Dedicated Threat Analysis
+
+The SWOT Threats quadrant and the dedicated threat framework serve **different purposes** at different analytical depths:
+
+| Dimension | SWOT Threats Quadrant | Dedicated Threat Framework |
+|:---|:---|:---|
+| **Scope** | Broad — any external factor that could harm the actor | Specific — decomposed attack paths, progression stages |
+| **Depth** | Summary (1–3 lines per entry) | Deep analysis (Attack Trees, Kill Chain, Diamond Model, Actor Profiling) |
+| **Framework** | Single quadrant within 4-quadrant SWOT | 4+ complementary frameworks combined |
+| **Output** | Threat list with confidence labels | Threat taxonomy, severity calibration, forward indicators |
+| **Time horizon** | Current snapshot | Current + prognostic (forward indicators) |
+| **When to use** | Every analysis (SWOT is mandatory) | High-significance events (SENSITIVE/RESTRICTED classification) |
+
+#### Integration Rules
+
+1. **Every dedicated threat finding** MUST produce a corresponding SWOT Threat entry — the SWOT entry is the **summary** of the deeper analysis
+2. **Not every SWOT Threat** requires a dedicated threat analysis — only those scoring ≥3 severity warrant full framework treatment
+3. **Cross-reference format:** SWOT Threat entries from dedicated analysis include `(see threat-analysis.md §[section])` annotation
+
+### Synthesis Summary Integration Protocol
+
+When producing a **synthesis-summary.md** (daily, weekly, or monthly), weave together all three frameworks using this structure:
+
+#### Step 1: Identify Active Threats
+
+From `threat-analysis.md`, extract threats at Kill Chain Stage ≥3 (Delivery or beyond):
+
+| Threat | Severity | Kill Chain Stage | Affected Risk Category |
+|:---|:---:|:---:|:---|
+| `[Threat name]` | `[1–5]` | `[Stage name]` | `[Coalition/Policy/Budget/Electoral/External]` |
+
+#### Step 2: Map Threats to Risk Scores
+
+Transfer threat severity to risk likelihood per the mapping table above, then compute L×I:
+
+| Risk Category | Threat-Informed L | Impact (I) | Score | Prior Score | Δ |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| `[Category]` | `[1–5]` | `[1–5]` | `[L×I]` | `[previous]` | `[change]` |
+
+#### Step 3: Reflect in SWOT
+
+Add or update SWOT Threat entries for each active threat, applying confidence levels:
+
+| SWOT Threat | Confidence | Source | Cross-Reference |
+|:---|:---:|:---|:---|
+| `[Entry text]` | `[HIGH/MEDIUM/LOW]` | `[dok_id or MCP ref]` | `threat-analysis.md §[section]` |
+
+#### Step 4: Produce Integrated Dashboard
+
+```mermaid
+graph TD
+    subgraph "Threat Layer"
+        T1["🔴 Active Threat 1<br/>Severity: 4/5"]
+        T2["🟡 Active Threat 2<br/>Severity: 2/5"]
+    end
+
+    subgraph "Risk Layer"
+        R1["⚠️ Coalition Risk<br/>L=4, I=5, Score=20"]
+        R2["📋 Policy Risk<br/>L=2, I=3, Score=6"]
+    end
+
+    subgraph "SWOT Layer"
+        SW1["🔴 T: SD ultimatum<br/>HIGH confidence"]
+        SW2["🟡 T: EU directive<br/>MEDIUM confidence"]
+    end
+
+    T1 -->|"Severity 4 → L=4"| R1
+    T2 -->|"Severity 2 → L=2"| R2
+    R1 -->|"Score ≥15 → HIGH priority"| SW1
+    R2 -->|"Score <10 → standard"| SW2
+
+    style T1 fill:#dc3545,color:#fff
+    style T2 fill:#ffc107,color:#000
+    style R1 fill:#fd7e14,color:#fff
+    style R2 fill:#28a745,color:#fff
+    style SW1 fill:#dc3545,color:#fff
+    style SW2 fill:#ffc107,color:#000
+```
+
+### Anti-Pattern: Disconnected Analyses
+
+> **REJECTED:** Producing a threat analysis, risk assessment, and SWOT analysis that do not reference each other. If `threat-analysis.md` identifies a Severity=4 threat but `risk-assessment.md` shows all risks below Score=10, there is a methodology disconnect that must be resolved before publication.
 
 ---
 

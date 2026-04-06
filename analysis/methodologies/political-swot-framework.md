@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -621,6 +621,110 @@ flowchart TD
 
 ---
 
+## 🔄 SWOT Evolution Tracking (v2.2)
+
+SWOT analyses are **living documents** that change as the political landscape evolves. This section defines how to track SWOT changes over time, detect inter-quadrant migration, and aggregate cross-day SWOT data for weekly/monthly reviews.
+
+### SWOT Delta Template
+
+When producing sequential SWOT analyses (e.g., daily or weekly), include a **SWOT Delta** section showing what changed since the previous analysis:
+
+| Quadrant | Entry | Status | Prior Day | Current Day | Evidence for Change |
+|:---|:---|:---:|:---|:---|:---|
+| **Strength** | Coalition voting cohesion at 89% | **Persists** ✅ | S1: 89% cohesion (2026-03-31) | S1: 89% cohesion (2026-04-01) | `search_voteringar rm=2025/26` — no new votes |
+| **Strength** | L above 4% threshold | **Degraded** ⬇️ | S3: L at 4.4% (Novus 2026-03-15) | → Moved to Weakness | SCB partisympati 2026-04-01: L at 3.8% (±1.1%) |
+| **Weakness** | L threshold risk | **New** 🆕 | *(not present)* | W4: L at 3.8% (±1.1%) | Migrated from Strength S3 |
+| **Opportunity** | FiU spring budget amendment | **Resolved** ✓ | O2: Spring amending budget expected | *(removed — event occurred)* | Budget tabled 2026-04-01 via `get_propositioner` |
+| **Threat** | SD migration ultimatum | **Escalated** ↑ | T1: SD rhetoric intensifying | T1: SD formal demand via interpellation | `get_interpellationer` dok_id: HD04567 |
+
+#### Status Codes
+
+| Code | Meaning | Action Required |
+|:---:|:---|:---|
+| **Persists** ✅ | Entry unchanged — same evidence, same assessment | Carry forward with updated date |
+| **New** 🆕 | Entry did not exist in prior analysis | Document the triggering evidence and date |
+| **Degraded** ⬇️ | Entry's evidence weakened or confidence decayed | Update confidence level; consider migration |
+| **Escalated** ↑ | Entry's severity or confidence increased | Update with new evidence; re-score |
+| **Resolved** ✓ | The underlying situation no longer applies | Remove from active SWOT; archive in historical context |
+| **Migrated** ↔ | Entry moved to a different quadrant | Document both the old and new quadrant |
+
+### Inter-Quadrant Migration Rules
+
+SWOT entries can **migrate between quadrants** as the political situation evolves. Common migration patterns:
+
+```mermaid
+graph LR
+    S["✅ Strength"]
+    W["⚠️ Weakness"]
+    O["🚀 Opportunity"]
+    T["🔴 Threat"]
+
+    S -->|"Evidence reversal<br/>(e.g., polling drops)"| W
+    W -->|"Remediation<br/>(e.g., policy reform)"| S
+    O -->|"Window closes<br/>(e.g., deadline passes)"| T
+    T -->|"Mitigated<br/>(e.g., agreement reached)"| O
+    O -->|"Captured successfully"| S
+    T -->|"Materialized"| W
+
+    style S fill:#28a745,color:#fff
+    style W fill:#dc3545,color:#fff
+    style O fill:#0d6efd,color:#fff
+    style T fill:#ffc107,color:#000
+```
+
+#### Migration Examples
+
+| Migration | Example | Trigger Evidence |
+|:---|:---|:---|
+| **Strength → Weakness** | Coalition voting cohesion 89% → 62% after contested FöU vote | `search_voteringar rm=2025/26, bet=FöU8` |
+| **Opportunity → Threat** | EU Green Deal funding window closes without Swedish application submitted | EU deadline + `search_dokument` for missing proposition |
+| **Threat → Weakness** | SD migration ultimatum materializes — coalition partner defects on SfU vote | `search_voteringar` showing SD voting with opposition |
+| **Weakness → Strength** | Government successfully renegotiates Tidöavtal migration section | Joint coalition press conference + `search_dokument` |
+| **Opportunity → Strength** | Government captures spring budget opportunity with cross-party support | `search_voteringar rm=2025/26, bet=FiU20` |
+
+> **Rule:** Every migration MUST cite the specific MCP evidence that triggered the move. Undocumented migrations are rejected.
+
+### Cross-Document SWOT Aggregation Protocol
+
+When producing **weekly reviews** or **monthly strategic briefs**, aggregate daily SWOT analyses using this protocol:
+
+#### Step 1: Collect Daily SWOTs
+
+Gather all SWOT analyses from `analysis/daily/YYYY-MM-DD/*/swot-analysis.md` for the period.
+
+#### Step 2: Frequency Analysis
+
+Count how many times each SWOT entry appears across the period:
+
+| Entry | Quadrant | Appearances (out of N days) | Persistence Rate | Trend |
+|:---|:---|:---:|:---:|:---:|
+| Coalition cohesion ≥85% | Strength | 5/5 | 100% | → Stable |
+| L threshold risk | Weakness | 3/5 | 60% | ↑ Emerging |
+| SD migration demands | Threat | 5/5 | 100% | ↑ Escalating |
+| FiU spring budget | Opportunity | 2/5 | 40% | ↓ Resolving |
+
+#### Step 3: Weighted Aggregation
+
+For the aggregated weekly/monthly SWOT:
+
+- **Include** entries with ≥60% persistence rate as core items
+- **Flag** entries with 30–59% persistence as emerging/resolving
+- **Exclude** entries with <30% persistence (one-off events) unless they triggered a migration
+- **Weight** by confidence: HIGH entries count 1.0×, MEDIUM 0.7×, LOW 0.4×
+
+#### Step 4: Delta Summary
+
+Produce a period-level delta:
+
+> **Weekly SWOT Delta (2026-03-31 to 2026-04-06):**
+> - **New Strengths:** 1 (budget passed with cross-party support)
+> - **Lost Strengths:** 1 (L polling dropped below 4% → migrated to Weakness)
+> - **New Threats:** 2 (SD interpellation, ECJ infringement warning)
+> - **Resolved Opportunities:** 1 (spring budget tabled)
+> - **Net SWOT Balance:** Weakening (−1 Strength, +2 Threats)
+
+---
+
 ## 🔗 Related Documents
 
 - [templates/swot-analysis.md](../templates/swot-analysis.md) — SWOT template
@@ -635,8 +739,9 @@ flowchart TD
 **Document Control:**  
 - **Path:** `/analysis/methodologies/political-swot-framework.md`  
 - **CIA Reference:** [CIA SWOT.md](https://github.com/Hack23/cia/blob/master/SWOT.md)  
-- **Version:** 2.1  
-- **Advanced Techniques:** Cross-SWOT Interference, TOWS Matrix, Scenario Generation, Power-Interest Mapping, EU Parliament Cross-Reference  
+- **Version:** 2.2  
+- **Advanced Techniques:** Cross-SWOT Interference, TOWS Matrix, Scenario Generation, Power-Interest Mapping, EU Parliament Cross-Reference, SWOT Evolution Tracking  
+- **Key Changes v2.2:** SWOT Evolution Tracking (SWOT Delta template, inter-quadrant migration rules with Mermaid diagram, cross-document aggregation protocol for weekly/monthly reviews)  
 - **EU Integration:** European Parliament MCP Server data sources, cross-parliament aggregation, Swedish MEP ↔ EP group mapping  
 - **Classification:** Public  
 - **Next Review:** 2026-06-30

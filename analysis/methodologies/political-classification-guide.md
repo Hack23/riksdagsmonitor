@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--31-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-31 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -474,11 +474,85 @@ When automated classification via MCP tools produces ambiguous results:
 
 ---
 
+## 🏛️ Committee→Domain Canonical Mapping (v2.2)
+
+This table is the **authoritative single source of truth** for mapping Riksdag committee codes to policy domains. Both the TypeScript classification code (`scripts/data-transformers/constants/committee-names.ts: COMMITTEE_TO_DOMAIN`) and AI analysis agents reference this table. Any discrepancy should be resolved by updating the code to match this document.
+
+### Primary Mapping: 15 Riksdag Committees → Policy Domains
+
+| Committee Code | Committee Name (Swedish) | Committee Name (English) | Domain Key | Domain Display Name | Classification Priority |
+|:---:|:---|:---|:---:|:---|:---:|
+| **AU** | Arbetsmarknadsutskottet | Committee on Labour Market Affairs | `labour` | Labour Market | Standard |
+| **CU** | Civilutskottet | Committee on Civil Affairs | `housing` | Housing & Civil Law | Standard |
+| **FiU** | Finansutskottet | Committee on Finance | `fiscal` | Fiscal Policy | **Elevated** (budget) |
+| **FöU** | Försvarsutskottet | Committee on Defence | `defence` | Defence & Security | **Elevated** (security) |
+| **JuU** | Justitieutskottet | Committee on Justice | `justice` | Justice & Law | Standard |
+| **KU** | Konstitutionsutskottet | Committee on the Constitution | `constitutional` | Constitutional Affairs | **Elevated** (oversight) |
+| **KrU** | Kulturutskottet | Committee on Cultural Affairs | `culture` | Culture & Media | Standard |
+| **MJU** | Miljö- och jordbruksutskottet | Committee on Environment and Agriculture | `environment` | Environment & Agriculture | Standard |
+| **NU** | Näringsutskottet | Committee on Industry and Trade | `trade` | Industry & Trade | Standard |
+| **SkU** | Skatteutskottet | Committee on Taxation | `fiscal` | Fiscal Policy | **Elevated** (taxation) |
+| **SfU** | Socialförsäkringsutskottet | Committee on Social Insurance | `social-insurance` | Social Insurance | Standard |
+| **SoU** | Socialutskottet | Committee on Social Affairs | `healthcare` | Healthcare & Social Affairs | Standard |
+| **TU** | Trafikutskottet | Committee on Transport | `transport` | Transport & Infrastructure | Standard |
+| **UbU** | Utbildningsutskottet | Committee on Education | `education` | Education & Research | Standard |
+| **UU** | Utrikesutskottet | Committee on Foreign Affairs | `eu-foreign` | EU & Foreign Affairs | **Elevated** (external) |
+
+### Classification Priority Notes
+
+- **Elevated committees** (FiU, FöU, KU, SkU, UU) produce documents that default to **ELEVATED urgency** baseline due to their institutional significance
+- **FiU + SkU** both map to `fiscal` domain — the committee code distinguishes spending (FiU) from revenue (SkU) context
+- **KU** documents involving _granskning_ (constitutional review) default to **SENSITIVE** classification
+
+### Usage in Classification Pipeline
+
+```mermaid
+flowchart LR
+    DOC["📄 Riksdag Document<br/>with organ field"]
+    DOC --> CHECK{"organ in<br/>COMMITTEE_TO_DOMAIN?"}
+    CHECK -->|"Yes"| HIGH["✅ Domain assigned<br/>Confidence: HIGH"]
+    CHECK -->|"No / missing"| FALLBACK["🔍 Keyword heuristics<br/>Confidence: LOW"]
+
+    style DOC fill:#e3f2fd,stroke:#2196f3
+    style HIGH fill:#c8e6c9,stroke:#4caf50
+    style FALLBACK fill:#fff9c4,stroke:#ffd54f
+```
+
+**Rule:** Committee-code classification is always **PRIMARY** (HIGH confidence). Keyword-based domain detection is **FALLBACK** only (LOW confidence). When both are present, the committee-code result takes precedence.
+
+### Code Reference
+
+```typescript
+// Source: scripts/data-transformers/constants/committee-names.ts
+export const COMMITTEE_TO_DOMAIN = {
+  AU: 'labour',
+  CU: 'housing',
+  FiU: 'fiscal',
+  FöU: 'defence',
+  JuU: 'justice',
+  KU: 'constitutional',
+  KrU: 'culture',
+  MJU: 'environment',
+  NU: 'trade',
+  SkU: 'fiscal',
+  SfU: 'social-insurance',
+  SoU: 'healthcare',
+  TU: 'transport',
+  UbU: 'education',
+  UU: 'eu-foreign'
+} as const;
+```
+
+> **Maintenance rule:** If a new committee is created or an existing committee is renamed, update BOTH this table AND the TypeScript constant in the same PR.
+
+---
+
 **Document Control:**  
 - **Path:** `/analysis/methodologies/political-classification-guide.md`  
 - **ISMS Reference:** [CLASSIFICATION.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)  
-- **Version:** 2.1  
+- **Version:** 2.2  
 - **Advanced Dimensions:** Political Temperature Index, Strategic Significance, Coalition Impact Vector  
+- **Key Changes v2.2:** Committee→Domain Canonical Mapping (15 committees with domain keys, classification priorities, Mermaid pipeline diagram, code reference)  
 - **MCP Integration:** riksdag-regering-mcp tool mapping, committee-specific baselines  
 - **Classification:** Public  
 - **Next Review:** 2026-06-30
