@@ -910,14 +910,14 @@ The SWOT Threats quadrant and the dedicated threat framework serve **different p
 The dedicated threat framework is triggered when **either** of the following gates is met (logical OR — not both required):
 
 1. **Classification gate:** The document or event has **SENSITIVE** or **RESTRICTED** sensitivity classification
-2. **Severity gate:** A SWOT Threat entry scores **≥3 severity** on the 1–5 scale
+2. **SWOT threat significance gate:** A SWOT Threat entry is recorded with **Impact = High** and **Confidence = Medium or High** in the existing SWOT entry fields
 
-**Conflict resolution:** If a SENSITIVE/RESTRICTED event has all threats at severity <3, the dedicated framework is still required (classification gate overrides). Conversely, a PUBLIC event with a severity ≥3 threat also triggers full analysis (severity gate overrides). When in doubt, apply the framework — false positives are preferable to missed threats.
+**Conflict resolution:** If a SENSITIVE/RESTRICTED event has no SWOT Threat entries meeting the significance gate above, the dedicated framework is still required (classification gate overrides). Conversely, a PUBLIC event with a SWOT Threat entry recorded as **Impact = High** and **Confidence = Medium or High** also triggers full analysis (significance gate overrides). When in doubt, apply the framework — false positives are preferable to missed threats.
 
 Additional rules:
 
 1. **Every dedicated threat finding** MUST produce a corresponding SWOT Threat entry — the SWOT entry is the **summary** of the deeper analysis
-2. **Not every SWOT Threat** requires a dedicated threat analysis — only those meeting one of the two gates above warrant full framework treatment
+2. **Not every SWOT Threat** requires a dedicated threat analysis — only those meeting one of the two gates above warrant full framework treatment, using the existing SWOT **Impact** and **Confidence** fields for the significance gate
 3. **Cross-reference format:** SWOT Threat entries from dedicated analysis include `(see threat-analysis.md §[section])` annotation
 
 ### Synthesis Summary Integration Protocol

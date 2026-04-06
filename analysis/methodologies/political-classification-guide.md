@@ -458,7 +458,7 @@ When automated classification via MCP tools produces ambiguous results:
 |----------|-----------|-----------------|
 | **SENSITIVE vs. RESTRICTED** | Err toward RESTRICTED (higher classification). If any single trigger exceeds threshold, classify RESTRICTED. | Cross-reference `search_voteringar` for contested votes; check `get_interpellationer` for ministerial evasion patterns |
 | **ROUTINE vs. ELEVATED urgency** | Check parliamentary calendar — within 2 weeks of major vote → ELEVATED | Use `get_calendar_events` to verify upcoming Riksdag schedule |
-| **Domain ambiguity** | Assign strongest-evidence domain as primary; use secondary domains for remaining relevance. CON and DEF always take precedence. | Verify committee assignment via `get_dokument` metadata (`organ` field) |
+| **Domain ambiguity** | Assign strongest-evidence domain as primary; use secondary domains for remaining relevance. `constitutional` and `defence` always take precedence. | Verify committee assignment via `get_dokument` metadata (`organ` field) |
 | **Manual vs. automated divergence** | Use the higher score and flag for human editorial review with divergence note | Compare MCP-extracted data against manual analysis; document discrepancy |
 
 ---

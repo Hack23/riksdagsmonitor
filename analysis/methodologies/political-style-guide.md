@@ -261,14 +261,7 @@ Translations must preserve:
 
 ---
 
-**Document Control:**  
-- **Path:** `/analysis/methodologies/political-style-guide.md`  
-- **ISMS Reference:** [STYLE_GUIDE.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md)  
-- **Classification:** Public  
-- **Next Review:** 2026-06-26
 # Political Intelligence Style Guide
-
-<!-- version: 1.0.0 | updated: 2026-03-26 | author: Hack23 AB -->
 
 ## Purpose
 
