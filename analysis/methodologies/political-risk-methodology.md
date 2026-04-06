@@ -520,7 +520,7 @@ This section provides a **complete, date-specific worked example** showing how t
 
 **Context:** The government's migration reform bill (prop. 2025/26:117) faces a potential European Court of Human Rights challenge. Track how the risk score evolves as new evidence arrives over 7 days.
 
-#### Day 1 (Monday 2026-03-24): Initial Assessment
+#### Day 1 (Tuesday 2026-03-24): Initial Assessment
 
 | Risk Factor | Likelihood | Impact | Score | Evidence |
 |:---|:---:|:---:|:---:|:---|
@@ -529,7 +529,7 @@ This section provides a **complete, date-specific worked example** showing how t
 **Confidence:** MEDIUM — academic opinion but no official ECHR action  
 **MCP sources:** `get_propositioner(rm="2025/26")`, `get_betankanden(organ="SfU")`
 
-#### Day 3 (Wednesday 2026-03-26): Lagrådet Opinion Published
+#### Day 3 (Thursday 2026-03-26): Lagrådet Opinion Published
 
 **New evidence:** Lagrådet (Council on Legislation) publishes opinion on prop. 2025/26:117 stating "no conflict with ECHR Article 3 or Article 8" — favorable to government position.
 
@@ -545,7 +545,7 @@ This section provides a **complete, date-specific worked example** showing how t
 **Confidence:** HIGH — multiple sources including Lagrådet official position  
 **Citation:** `search_dokument(doktyp=yttr, titel="prop. 2025/26:117")`
 
-#### Day 5 (Friday 2026-03-28): Opposition Files KU Complaint
+#### Day 5 (Saturday 2026-03-28): Opposition Files KU Complaint
 
 **New evidence:** Socialdemokraterna (S) files a KU complaint (konstitutionsutskottsanmälan) alleging the migration bill process was rushed without adequate remiss period.
 
@@ -562,13 +562,13 @@ This section provides a **complete, date-specific worked example** showing how t
 **Confidence:** HIGH — two official documents with opposing indicators  
 **Citation:** `search_dokument(organ="KU", rm="2025/26")`
 
-#### Day 7 (Sunday 2026-03-30): No New Evidence
+#### Day 7 (Monday 2026-03-30): No New Evidence
 
 **No new evidence for 2 days.** Score carries forward unchanged:
 
 - Risk: L=3, I=4, Score=**12** `Last evidence: 2026-03-28 (2 days ago)`
 - Staleness status: **Current** ✅ (within 3-day window)
-- **Next scheduled check:** Monday 2026-03-31 — monitor for KU committee response and any ECHR filings
+- **Next scheduled check:** Tuesday 2026-03-31 — monitor for KU committee response and any ECHR filings
 
 #### Summary: 7-Day Risk Evolution
 

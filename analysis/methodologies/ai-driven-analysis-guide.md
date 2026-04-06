@@ -1760,7 +1760,7 @@ This section shows the expected structure and depth for a **single MCP document 
 **Committee:** Justitieutskottet (JuU)
 **Subject:** Skärpta straff för återfallsförbrytare (Harsher sentences for repeat offenders)
 **dok_id:** HC01JuU15
-**Classification:** 🟡 SENSITIVE | JUS | ELEVATED
+**Classification:** 🟡 SENSITIVE | justice | ELEVATED
 **Analysis Depth:** L2 (Strategic)
 
 ---
