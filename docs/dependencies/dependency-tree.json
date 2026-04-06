@@ -1,5 +1,5 @@
 {
-  "version": "0.8.24",
+  "version": "0.8.26",
   "name": "riksdagsmonitor",
   "problems": [
     "extraneous: @emnapi/core@1.8.1 /home/runner/work/riksdagsmonitor/riksdagsmonitor/node_modules/@emnapi/core",
@@ -3673,13 +3673,13 @@
           }
         },
         "vite": {
-          "version": "8.0.3"
+          "version": "8.0.5"
         }
       }
     },
     "vite": {
-      "version": "8.0.3",
-      "resolved": "https://registry.npmjs.org/vite/-/vite-8.0.3.tgz",
+      "version": "8.0.5",
+      "resolved": "https://registry.npmjs.org/vite/-/vite-8.0.5.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -3874,7 +3874,7 @@
             },
             "msw": {},
             "vite": {
-              "version": "8.0.3"
+              "version": "8.0.5"
             }
           }
         },
@@ -3986,7 +3986,7 @@
           "version": "3.1.0"
         },
         "vite": {
-          "version": "8.0.3"
+          "version": "8.0.5"
         },
         "why-is-node-running": {
           "version": "2.3.0",
