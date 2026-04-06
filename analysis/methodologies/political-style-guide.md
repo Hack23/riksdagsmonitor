@@ -964,12 +964,12 @@ For each prohibited pattern, this section shows a concrete rewrite demonstrating
 
 ✅ **REWRITE:**
 > **What to Watch Next:**
-> - 📅 **2026-04-07:** Plenary votering on bet. 2025/26:JuU15 — L's plenary vote will signal coalition cohesion on justice policy
-> - 📅 **2026-04-15:** FiU spring amending budget deadline — SD budget demands must be resolved before this date
-> - 📅 **2026-04-22:** SCB partisympatiundersökning Q1 2026 release — L's polling position relative to 4% threshold
+> - 📅 **[YYYY-MM-DD]:** Plenary votering on bet. 2025/26:JuU15 — L's plenary vote will signal coalition cohesion on justice policy
+> - 📅 **[YYYY-MM-DD]:** FiU spring amending budget deadline — SD budget demands must be resolved before this date
+> - 📅 **[YYYY-MM-DD]:** SCB partisympatiundersökning Q1 release — L's polling position relative to 4% threshold
 > - **Trigger:** If L votes against JuU15 in plenary AND SCB shows L below 4%, Coalition Risk escalates from L=3,I=5,Score=15 to L=4,I=5,Score=20
 
-**What changed:** Replaced vague future reference with 3 dated events, specific MCP-observable triggers, and a quantified escalation pathway.
+**What changed:** Replaced a vague future reference with placeholder-dated events, specific MCP-observable triggers, and a quantified escalation pathway.
 
 ---
 

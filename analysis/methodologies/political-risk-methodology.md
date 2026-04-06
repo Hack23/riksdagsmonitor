@@ -564,9 +564,9 @@ This section provides a **complete, date-specific worked example** showing how t
 
 #### Day 7 (Sunday 2026-03-30): No New Evidence
 
-**No new evidence for 2 days.** Score carries forward with staleness marker:
+**No new evidence for 2 days.** Score carries forward unchanged:
 
-- Risk: L=3, I=4, Score=**12** `⚠️ Last evidence: 2026-03-28 (2 days ago)`
+- Risk: L=3, I=4, Score=**12** `Last evidence: 2026-03-28 (2 days ago)`
 - Staleness status: **Current** ✅ (within 3-day window)
 - **Next scheduled check:** Monday 2026-03-31 — monitor for KU committee response and any ECHR filings
 

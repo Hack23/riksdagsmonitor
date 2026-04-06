@@ -243,7 +243,7 @@ The AI agent **MUST** follow this protocol when classifying political documents:
 1. **Read this guide** — understand sensitivity levels, domain taxonomy, urgency matrix, AND the advanced dimensions below
 2. **Extract key fields** from the document (title, type, committee, parties involved, date)
 3. **Determine sensitivity** — PUBLIC (default), SENSITIVE (triggers apply), RESTRICTED (editorial review)
-4. **Assign primary domain** + up to 2 secondary domains from the 13-domain taxonomy
+4. **Assign primary domain** + up to 2 secondary domains from the 15-domain `DomainKey` taxonomy (see §Committee→Domain Canonical Mapping below)
 5. **Assess urgency** using the calendar-aware urgency matrix
 6. **Calculate Political Temperature Index** — composite score from 5 temperature indicators
 7. **Assess Strategic Significance** — distinguish short-term news value from long-term importance
@@ -467,7 +467,7 @@ When automated classification via MCP tools produces ambiguous results:
 
 > **🚫 Anti-Pattern Warning:** Classification output without **all three** of the following is **REJECTED** by the pipeline:
 > 1. **Explicit sensitivity level** (PUBLIC / SENSITIVE / RESTRICTED)
-> 2. **Domain code** from the 13-domain taxonomy (ECO, DEF, JUS, SOC, HEA, EDU, ENV, AGR, INF, ENE, FOR, MIG, CON)
+> 2. **Domain key** from the 15-domain `DomainKey` taxonomy (`fiscal`, `defence`, `justice`, `healthcare`, `education`, `environment`, `labour`, `housing`, `transport`, `trade`, `eu-foreign`, `migration`, `constitutional`, `culture`, `social-insurance`) — see §Committee→Domain Canonical Mapping
 > 3. **Urgency level** (ROUTINE / ELEVATED / URGENT / CRITICAL)
 >
 > Incomplete classifications are returned to the originating agent for remediation. No downstream processing (risk scoring, significance assessment, publication) proceeds until all three fields are present.

@@ -903,12 +903,21 @@ The SWOT Threats quadrant and the dedicated threat framework serve **different p
 | **Framework** | Single quadrant within 4-quadrant SWOT | 4+ complementary frameworks combined |
 | **Output** | Threat list with confidence labels | Threat taxonomy, severity calibration, forward indicators |
 | **Time horizon** | Current snapshot | Current + prognostic (forward indicators) |
-| **When to use** | Every analysis (SWOT is mandatory) | High-significance events (SENSITIVE/RESTRICTED classification) |
+| **When to use** | Every analysis (SWOT is mandatory) | High-significance events meeting either gate (see below) |
 
 #### Integration Rules
 
+The dedicated threat framework is triggered when **either** of the following gates is met (logical OR — not both required):
+
+1. **Classification gate:** The document or event has **SENSITIVE** or **RESTRICTED** sensitivity classification
+2. **Severity gate:** A SWOT Threat entry scores **≥3 severity** on the 1–5 scale
+
+**Conflict resolution:** If a SENSITIVE/RESTRICTED event has all threats at severity <3, the dedicated framework is still required (classification gate overrides). Conversely, a PUBLIC event with a severity ≥3 threat also triggers full analysis (severity gate overrides). When in doubt, apply the framework — false positives are preferable to missed threats.
+
+Additional rules:
+
 1. **Every dedicated threat finding** MUST produce a corresponding SWOT Threat entry — the SWOT entry is the **summary** of the deeper analysis
-2. **Not every SWOT Threat** requires a dedicated threat analysis — only those scoring ≥3 severity warrant full framework treatment
+2. **Not every SWOT Threat** requires a dedicated threat analysis — only those meeting one of the two gates above warrant full framework treatment
 3. **Cross-reference format:** SWOT Threat entries from dedicated analysis include `(see threat-analysis.md §[section])` annotation
 
 ### Synthesis Summary Integration Protocol
