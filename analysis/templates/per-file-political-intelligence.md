@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--31-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-31 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** This template is for **per-file** analysis. For each data file downloaded via MCP, the AI agent produces one analysis markdown file stored as `{id}-analysis.md` in the workflow's isolated folder. AI MUST read ALL 6 methodology guides before analyzing.
@@ -34,7 +34,7 @@
 > - Analysis with 0 named politicians/parties
 > - Analysis that merely restates the document title as a "finding"
 >
-> **MUST include:** ≥3 evidence points with dok_id, ≥1 color-coded Mermaid diagram, multi-framework analysis (SWOT + at least one of: Risk, Attack Tree, Kill Chain), named actors with party affiliations, forward indicators.
+> **MUST include:** ≥3 evidence points with dok_id, ≥1 color-coded Mermaid diagram (classification tree, risk matrix, stakeholder map, or threat taxonomy — at least one is MANDATORY), multi-framework analysis (SWOT + at least one of: Risk, Attack Tree, Kill Chain), named actors with party affiliations, forward indicators.
 
 
 ---
@@ -309,6 +309,24 @@ graph TD
 |-----------------|-------------|--------|
 | `[If related documents exist]` | `[supports / contradicts / amends / supersedes / responds-to]` | `[dok_id]` |
 
+### Same-Day Document Cross-Reference Table
+
+> **AI Instructions:** List all other documents analyzed on the same day for the same article type. This enables cross-document pattern detection.
+
+| # | dok_id | Title | Document Type | Significance | Key Connection to This Document |
+|:-:|--------|-------|--------------|:-----------:|-------------------------------|
+| 1 | `[OPTIONAL: another same-day dok_id]` | `[title]` | `[type]` | `[score]` | `[How does it relate?]` |
+| 2 | `[OPTIONAL]` | `[title]` | `[type]` | `[score]` | `[relationship]` |
+
+### Hack23 Ecosystem Cross-Reference
+
+> **AI Instructions:** When CIA platform data is available, cross-reference this document analysis with relevant CIA intelligence products (risk summaries, party analyses, election forecasts, etc.).
+
+| CIA Product | Data Point | Relevance to This Document |
+|-------------|-----------|---------------------------|
+| `[OPTIONAL: e.g. cia-data/exports/risk-summary.json]` | `[e.g. Coalition stability score: 62%]` | `[How this document analysis relates to CIA data]` |
+| `[OPTIONAL: e.g. cia-data/exports/party-metrics.json]` | `[e.g. SD voting discipline: 94%]` | `[relevance]` |
+
 ---
 
 ## 📊 Data Quality Assessment
@@ -336,12 +354,35 @@ graph TD
 
 ---
 
+## ✅ Quality Self-Check Checklist
+
+> **Pre-commit validation — every item MUST be checked before finalising this per-file analysis.**
+
+- [ ] **Document Identity complete:** dok_id, type, title, date, riksmöte, MCP source, timestamp, analyst all filled
+- [ ] **Executive Summary written:** 3–5 sentences of intelligence-level analysis (not document summary) with confidence label
+- [ ] **≥1 Mermaid diagram rendered:** At least one color-coded Mermaid diagram present (classification, risk, stakeholder, or threat)
+- [ ] **SWOT Impact Assessment filled:** At least 2 quadrants (S/W/O/T) have evidence-backed entries for government or opposition
+- [ ] **Risk Assessment scored:** All 6 risk dimensions have L×I scores (not `[?]` placeholders)
+- [ ] **≥3 evidence points:** At least 3 claims cite specific dok_ids or named evidence sources
+- [ ] **Named actors:** ≥2 named politicians/parties with party affiliations cited
+- [ ] **Forward Indicators present:** ≥2 forward indicators with timelines and watch priorities
+- [ ] **Data Quality Assessment filled:** Source completeness, evidence density, temporal currency, confidence all assessed
+- [ ] **MCP Data Files listed:** All consulted data files recorded with source MCP tool and freshness
+- [ ] **No placeholder text remaining:** Search for `[REQUIRED` — zero hits expected
+- [ ] **No anti-pattern content:** No "No strengths identified", no generic boilerplate, no title-only restatements
+- [ ] **Cross-references linked:** Related documents and same-day cross-references populated
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/per-file-political-intelligence.md`  
 - **Output Path:** `analysis/daily/YYYY-MM-DD/{articleType}/documents/{dok_id}-analysis.md`  
-- **Version:** 2.1  
+- **Version:** 2.2  
+- **Effective Date:** 2026-04-06 (UTC)  
 - **Frameworks:** SWOT, Risk, Attack Trees, Kill Chain, Diamond Model, Stakeholder  
 - **Framework References:** [SWOT.md](../../SWOT.md), [THREAT_MODEL.md](../../THREAT_MODEL.md)  
 - **Methodology:** [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md)  
+- **ISMS Alignment:** ISO 27001:2022 A.5.7 (Threat Intelligence), NIST CSF 2.0 ID.RA (Risk Assessment)  
 - **Classification:** Public  
+- **Owner:** Hack23 AB (Org.nr 5595347807)  
 - **Next Review:** 2026-06-30
