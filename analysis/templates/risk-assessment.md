@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `risk-assessment.md` in the workflow's own folder (never overwrite another workflow's files). Scores use Likelihood × Impact methodology from [methodologies/political-risk-methodology.md](../methodologies/political-risk-methodology.md).
@@ -93,13 +93,15 @@ graph TD
 Risk Tiers:  1–4 = Low 🟢  |  5–9 = Medium 🟡  |  10–14 = High 🟠  |  15–25 = Critical 🔴
 ```
 
-| Risk ID | Description | Likelihood (1–5) | Impact (1–5) | Risk Score | Tier | Mitigation |
-|---------|-------------|:----------------:|:------------:|:----------:|------|------------|
-| `RSK-001` | `[REQUIRED: e.g. "Budget vote fails in Riksdag"]` | `[#]` | `[#]` | `[L×I]` | `[🟢/🟡/🟠/🔴]` | `[REQUIRED: 1 sentence]` |
-| `RSK-002` | `[REQUIRED]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[REQUIRED]` |
-| `RSK-003` | `[OPTIONAL]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[OPTIONAL]` |
-| `RSK-004` | `[OPTIONAL]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[OPTIONAL]` |
-| `RSK-005` | `[OPTIONAL]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[OPTIONAL]` |
+| Risk ID | Description | Likelihood (1–5) | Impact (1–5) | Risk Score | Tier | Trend | Mitigation |
+|---------|-------------|:----------------:|:------------:|:----------:|------|:-----:|------------|
+| `RSK-001` | `[REQUIRED: e.g. "Budget vote fails in Riksdag"]` | `[#]` | `[#]` | `[L×I]` | `[🟢/🟡/🟠/🔴]` | `[↑/→/↓]` | `[REQUIRED: mitigation actions; append "Trend evidence:" followed by 1 sentence]` |
+| `RSK-002` | `[REQUIRED]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[↑/→/↓]` | `[REQUIRED: mitigation actions; append "Trend evidence:" followed by 1 sentence]` |
+| `RSK-003` | `[OPTIONAL]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[↑/→/↓]` | `[OPTIONAL: mitigation actions; append "Trend evidence:" followed by 1 sentence if trend is used]` |
+| `RSK-004` | `[OPTIONAL]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[↑/→/↓]` | `[OPTIONAL: mitigation actions; append "Trend evidence:" followed by 1 sentence if trend is used]` |
+| `RSK-005` | `[OPTIONAL]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[↑/→/↓]` | `[OPTIONAL: mitigation actions; append "Trend evidence:" followed by 1 sentence if trend is used]` |
+
+> **Trend Legend:** `↑ Increasing` — risk score rose since last assessment · `→ Stable` — no change · `↓ Decreasing` — risk score dropped. Record the required 1-sentence evidence justification in the final table column, prefixed with `Trend evidence:`.
 
 **Risk Score Summary** (copy scores from table above):
 
@@ -316,10 +318,93 @@ flowchart TD
 
 ---
 
+## 📊 Section 8: Previous Assessment Comparison
+
+> **AI Instructions:** Compare current risk scores with the most recent previous risk assessment for the same article type. If no previous assessment exists, note "First assessment — no baseline available."
+
+| Risk ID | Previous Score | Current Score | Change | Trend | Evidence for Change |
+|---------|:--------------:|:------------:|:------:|:-----:|---------------------|
+| `RSK-001` | `[previous L×I or N/A]` | `[current L×I]` | `[+N / 0 / -N]` | `[↑/→/↓]` | `[REQUIRED: What changed since last assessment?]` |
+| `RSK-002` | `[previous L×I or N/A]` | `[current L×I]` | `[+N / 0 / -N]` | `[↑/→/↓]` | `[REQUIRED]` |
+| `RSK-003` | `[previous or N/A]` | `[current]` | `[delta]` | `[↑/→/↓]` | `[OPTIONAL]` |
+
+**Previous Assessment Reference:** `[REQUIRED: path to previous risk-assessment.md or "N/A — first assessment"]`  
+**Overall Risk Trend:** `[REQUIRED: ↑ Escalating / → Stable / ↓ De-escalating]`  
+**Trend Confidence:** `[REQUIRED: HIGH / MEDIUM / LOW]`
+
+---
+
+## 🌐 Section 9: Risk Interconnection Diagram
+
+> **AI Instructions:** Render the risk interconnection map from Section 6 as a Mermaid diagram showing how the 5 risk dimensions amplify or dampen each other. Edge labels describe the mechanism.
+
+```mermaid
+graph LR
+    subgraph "🌐 Risk Interconnection Map"
+        COA["🤝 Coalition<br/>Stability"]
+        POL["📋 Policy<br/>Implementation"]
+        BUD["💰 Budget<br/>/ Fiscal"]
+        ELE["🗳️ Electoral<br/>Risk"]
+        EXT["🌍 External<br/>/ International"]
+    end
+
+    COA -->|"[mechanism]"| POL
+    COA -->|"[mechanism]"| BUD
+    POL -->|"[mechanism]"| ELE
+    BUD -->|"[mechanism]"| COA
+    EXT -->|"[mechanism]"| POL
+
+    style COA fill:#dc3545,color:#fff
+    style POL fill:#fd7e14,color:#fff
+    style BUD fill:#ffc107,color:#000
+    style ELE fill:#28a745,color:#fff
+    style EXT fill:#0d6efd,color:#fff
+```
+
+> **AI Instructions:** Replace `[mechanism]` edge labels with actual causal descriptions (e.g., "SD withdrawal collapses budget majority"). Color each node by its current risk tier using the standard palette.
+
+---
+
+## 🔗 Cross-References
+
+> *Link to sibling analysis files and same-day analysis from other article types for contextual completeness.*
+
+| Related Analysis File | Relationship | Key Finding |
+|----------------------|-------------|-------------|
+| `[REQUIRED: e.g. swot-analysis.md]` | `[feeds into / informed by / contradicts]` | `[1 sentence]` |
+| `[REQUIRED: e.g. threat-analysis.md]` | `[feeds into / informed by]` | `[1 sentence]` |
+| `[REQUIRED: e.g. synthesis-summary.md]` | `[summarises / consumed by]` | `[1 sentence]` |
+| `[OPTIONAL: same-day analysis from different article type]` | `[cross-reference]` | `[1 sentence]` |
+
+---
+
+## ✅ Quality Self-Check Checklist
+
+> **Pre-commit validation — every item MUST be checked before finalising this analysis.**
+
+- [ ] **Metadata complete:** Risk Assessment ID, date, period, producer, political context, riksmöte, overall risk level all filled
+- [ ] **Risk Heat Map rendered:** Mermaid diagram has actual risk descriptions (no `[placeholder]` text remaining)
+- [ ] **Minimum 2 risks scored:** At least RSK-001 and RSK-002 have L×I scores with evidence
+- [ ] **Trend column populated:** Every scored risk has a trend indicator (↑/→/↓) with evidence
+- [ ] **Cascading Risk Chain present:** Section 5 has a completed Mermaid flowchart for the highest-risk event
+- [ ] **Risk Interconnection Map filled:** Section 6 table and Section 9 diagram have actual mechanisms (not placeholders)
+- [ ] **Forward Indicators present:** Section 7 has ≥2 scenarios with probabilities summing to ~100%
+- [ ] **Previous Assessment Comparison:** Section 8 filled (or marked "first assessment")
+- [ ] **MCP Data Provenance:** All data sources listed with timestamps; every factual claim traceable
+- [ ] **No placeholder text remaining:** Search for `[REQUIRED` — zero hits expected
+- [ ] **Cross-references linked:** At least 2 sibling analysis files referenced
+- [ ] **Named actors:** ≥2 named politicians/parties with party affiliations cited
+- [ ] **Confidence labels:** Every claim has H/M/L confidence or numeric severity
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/risk-assessment.md`  
 - **Framework Reference:** [methodologies/political-risk-methodology.md](../methodologies/political-risk-methodology.md)  
-- **Version:** 2.1  
-- **Advanced Sections:** Cascading Risk, Risk Interconnection, Scenario Outlook, MCP Data Provenance  
+- **Version:** 2.2  
+- **Effective Date:** 2026-04-06 (UTC)  
+- **Advanced Sections:** Cascading Risk, Risk Interconnection, Scenario Outlook, Previous Assessment Comparison, MCP Data Provenance  
+- **ISMS Alignment:** ISO 27001:2022 A.5.7 (Threat Intelligence), NIST CSF 2.0 ID.RA (Risk Assessment)  
 - **Classification:** Public  
+- **Owner:** Hack23 AB (Org.nr 5595347807)  
 - **Next Review:** 2026-06-30

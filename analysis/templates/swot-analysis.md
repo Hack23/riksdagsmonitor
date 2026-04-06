@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `swot-analysis.md` in the workflow's own folder (never overwrite another workflow's files). Each SWOT entry requires a dok_id or named evidence source — opinion-only entries are prohibited. See [methodologies/political-swot-framework.md](../methodologies/political-swot-framework.md).
@@ -45,6 +45,7 @@
 | **Produced By** | `[REQUIRED: workflow name or analyst]` |
 | **Primary MCP Sources** | `[REQUIRED: list of riksdag-regering-mcp tools used]` |
 | **Validity Window** | `[REQUIRED: entries valid until YYYY-MM-DD — see temporal decay guide]` |
+| **Temporal Window** | `[REQUIRED: e.g. "2026-03-25 to 2026-04-01" — exact date range of documents covered by this SWOT; distinct from Validity Window which tracks entry expiry]` |
 
 ---
 
@@ -298,10 +299,76 @@ graph TD
 
 ---
 
+## 🔄 Section 8: SWOT Delta — Changes Since Previous Analysis
+
+> **AI Instructions:** Compare current SWOT entries with the most recent previous SWOT analysis for the same article type. Categorise each entry as New, Changed, Removed, or Unchanged. If no previous analysis exists, mark all as "New — first analysis."
+
+**Previous SWOT Reference:** `[REQUIRED: path to previous swot-analysis.md or "N/A — first analysis"]`
+
+### New Entries (not in previous analysis)
+
+| Quadrant | Entry ID | Statement | Evidence for Emergence |
+|:--------:|:--------:|-----------|------------------------|
+| `[S/W/O/T]` | `[e.g. S3]` | `[New strength/weakness/opportunity/threat]` | `[What triggered this new entry?]` |
+| `[S/W/O/T]` | `[e.g. T3]` | `[OPTIONAL]` | `[trigger]` |
+
+### Changed Entries (present in both, but score/confidence shifted)
+
+| Quadrant | Entry ID | Previous Assessment | Current Assessment | Change Reason |
+|:--------:|:--------:|--------------------|--------------------|---------------|
+| `[S/W/O/T]` | `[e.g. W1]` | `[Previous: Confidence M, Impact M]` | `[Current: Confidence H, Impact H]` | `[What changed?]` |
+
+### Removed Entries (in previous analysis but no longer applicable)
+
+| Quadrant | Entry ID | Previous Statement | Reason for Removal |
+|:--------:|:--------:|--------------------|--------------------|
+| `[S/W/O/T]` | `[e.g. O2]` | `[Former opportunity]` | `[Why no longer applicable]` |
+
+**SWOT Delta Summary:** `[REQUIRED: 1–2 sentences — e.g. "2 new threats emerged from SD budget rhetoric; 1 weakness resolved after committee agreement. Net: threat landscape worsened."]`
+
+---
+
+## 🔗 Cross-References
+
+> *Link to sibling analysis files and same-day analysis from other article types for contextual completeness.*
+
+| Related Analysis File | Relationship | Key Finding |
+|----------------------|-------------|-------------|
+| `[REQUIRED: e.g. risk-assessment.md]` | `[SWOT threats feed into risk register]` | `[1 sentence]` |
+| `[REQUIRED: e.g. threat-analysis.md]` | `[SWOT threats aligned with threat taxonomy]` | `[1 sentence]` |
+| `[REQUIRED: e.g. synthesis-summary.md]` | `[aggregated SWOT consumed by synthesis]` | `[1 sentence]` |
+| `[OPTIONAL: same-day analysis from different article type]` | `[cross-reference]` | `[1 sentence]` |
+
+---
+
+## ✅ Quality Self-Check Checklist
+
+> **Pre-commit validation — every item MUST be checked before finalising this analysis.**
+
+- [ ] **SWOT Context complete:** All metadata fields filled including temporal window and validity window
+- [ ] **Minimum 2 entries per quadrant:** Government Coalition SWOT has ≥2 Strengths, ≥2 Weaknesses, ≥1 Opportunity, ≥1 Threat
+- [ ] **Evidence on every entry:** No SWOT entry without a dok_id or named evidence source
+- [ ] **Confidence labels present:** Every entry has H/M/L confidence and impact ratings
+- [ ] **Entry dates populated:** Temporal decay tracking enabled for all entries
+- [ ] **Mermaid SWOT diagram rendered:** Quadrant Mapping diagram has actual findings (no placeholders)
+- [ ] **TOWS Matrix complete:** At least SO and WO strategies filled with specific actions
+- [ ] **Cross-SWOT Interference:** ≥2 interference pairs identified with net political impact
+- [ ] **SWOT Delta section filled:** Comparison with previous analysis (or "first analysis" noted)
+- [ ] **Forward Indicators present:** ≥2 scenarios with probabilities and SWOT element references
+- [ ] **MCP Data Provenance:** All data sources listed; every entry traceable to MCP tool call
+- [ ] **No placeholder text remaining:** Search for `[REQUIRED` — zero hits expected
+- [ ] **Named actors:** ≥2 named politicians/parties with party affiliations cited
+- [ ] **Cross-references linked:** At least 2 sibling analysis files referenced
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/swot-analysis.md`  
 - **Framework Reference:** [SWOT.md](../../SWOT.md), [methodologies/political-swot-framework.md](../methodologies/political-swot-framework.md)  
-- **Version:** 2.1  
-- **Advanced Sections:** Cross-SWOT Interference, TOWS Matrix, Forward Indicators & Scenario Outlook, MCP Data Provenance  
+- **Version:** 2.2  
+- **Effective Date:** 2026-04-06 (UTC)  
+- **Advanced Sections:** Cross-SWOT Interference, TOWS Matrix, SWOT Delta, Forward Indicators & Scenario Outlook, MCP Data Provenance  
+- **ISMS Alignment:** ISO 27001:2022 A.5.7 (Threat Intelligence), NIST CSF 2.0 ID.RA (Risk Assessment)  
 - **Classification:** Public  
+- **Owner:** Hack23 AB (Org.nr 5595347807)  
 - **Next Review:** 2026-06-30

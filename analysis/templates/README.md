@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-4.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--31-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.0 | **📅 Last Updated:** 2026-03-31 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 4.1 | **📅 Last Updated:** 2026-04-06 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -231,14 +231,14 @@ graph LR
 
 | # | Template | Purpose | Key Sections | MCP Data Sources | Output Format | Priority |
 |:-:|----------|---------|-------------|------------------|---------------|:--------:|
-| 1 | [🏷️ Political Classification](political-classification.md) | 7-dimension event classification | Sensitivity Level, Policy Domain, Urgency Level, Classification Dimensions | `search_dokument`, `get_calendar_events`, `get_betankanden` | Metadata table + checkbox dimensions + Mermaid | 🔴 HIGH |
-| 2 | [⚠️ Risk Assessment](risk-assessment.md) | Quantified risk using 5×5 L×I matrix across 8 categories | Risk Context, Risk Register, Heat Map, Mitigation | `search_voteringar`, `get_betankanden`, `get_propositioner` | Risk register + L×I heat map Mermaid + trends | 🔴 HIGH |
-| 3 | [🎭 Threat Analysis](threat-analysis.md) | Multi-framework political threat assessment | 6 Threat Dimensions, Diamond Model, Attack Trees, Kill Chain | `search_voteringar`, `search_anforanden`, `get_interpellationer` | Dimension tables + severity Mermaid | 🔴 HIGH |
-| 4 | [💼 SWOT Analysis](swot-analysis.md) | Evidence-based SWOT with TOWS + Cross-SWOT | SWOT Context, Quadrants, Strategic Implications | `get_betankanden`, `search_voteringar`, `get_propositioner` | 4-quadrant tables + Mermaid chart | 🟡 MEDIUM |
-| 5 | [👥 Stakeholder Impact](stakeholder-impact.md) | Multi-lens stakeholder impact assessment | 8 Stakeholder Groups, Impact Matrix | `search_ledamoter`, `get_betankanden`, `search_anforanden` | Stakeholder tables + Mermaid diagram | 🟡 MEDIUM |
-| 6 | [📈 Significance Scoring](significance-scoring.md) | 5-dimension composite score (1–10) | 5 Scoring Dimensions, Composite Score, Decision | `search_dokument`, `get_calendar_events` | Scoring table + publish decision | 🔴 HIGH |
-| 7 | [🧩 Synthesis Summary](synthesis-summary.md) | Daily intelligence synthesis | Headlines, SWOT, Risk, Threat, Forward Indicators | All MCP tools (aggregated) | Dashboard + Mermaid overview | 🔴 HIGH |
-| 8 | [🔍 Per-File Intelligence](per-file-political-intelligence.md) | Deep per-document AI analysis (**most used**) | Executive Summary, Classification, SWOT, Risk, Threat, Stakeholder, Significance | Depends on document type | Comprehensive `{dok_id}-analysis.md` in `analysis/daily/.../documents/` | 🔴 CRITICAL |
+| 1 | [🏷️ Political Classification](political-classification.md) | 7-dimension event classification | Sensitivity Level, Policy Domain, Urgency Level, Classification Dimensions, **Confidence Decay Rule** | `search_dokument`, `get_calendar_events`, `get_betankanden` | Metadata table + checkbox dimensions + Mermaid | 🔴 HIGH |
+| 2 | [⚠️ Risk Assessment](risk-assessment.md) | Quantified risk using 5×5 L×I matrix across 5 main dimensions | Risk Context, Risk Register, Heat Map, Mitigation, **Risk Trend (↑↓→)**, **Previous Assessment Comparison**, **Risk Interconnection Mermaid** | `search_voteringar`, `get_betankanden`, `get_propositioner` | Risk register + L×I heat map Mermaid + trends | 🔴 HIGH |
+| 3 | [🎭 Threat Analysis](threat-analysis.md) | Multi-framework political threat assessment | 6 Threat Dimensions, Diamond Model, Attack Trees, Kill Chain, **Threat Evolution Timeline**, **Cross-Methodology Linkage** | `search_voteringar`, `search_anforanden`, `get_interpellationer` | Dimension tables + severity Mermaid | 🔴 HIGH |
+| 4 | [💼 SWOT Analysis](swot-analysis.md) | Evidence-based SWOT with TOWS + Cross-SWOT | SWOT Context, Quadrants, Strategic Implications, **SWOT Delta (New/Changed/Removed)**, **Temporal Window** | `get_betankanden`, `search_voteringar`, `get_propositioner` | 4-quadrant tables + Mermaid chart | 🟡 MEDIUM |
+| 5 | [👥 Stakeholder Impact](stakeholder-impact.md) | Multi-lens stakeholder impact assessment | 8 Stakeholder Groups, Impact Matrix, **Position Change Tracking**, **Power-Interest Grid** | `search_ledamoter`, `get_betankanden`, `search_anforanden` | Stakeholder tables + Mermaid diagram | 🟡 MEDIUM |
+| 6 | [📈 Significance Scoring](significance-scoring.md) | 5-dimension composite score (1–10) | 5 Scoring Dimensions, Composite Score, Decision, **Relative Scoring (same-type comparison)** | `search_dokument`, `get_calendar_events` | Scoring table + publish decision | 🔴 HIGH |
+| 7 | [🧩 Synthesis Summary](synthesis-summary.md) | Daily intelligence synthesis | Headlines, SWOT, Risk, Threat, **Mandatory Forward Indicators**, **Aggregate Risk Level with Trend** | All MCP tools (aggregated) | Dashboard + Mermaid overview | 🔴 HIGH |
+| 8 | [🔍 Per-File Intelligence](per-file-political-intelligence.md) | Deep per-document AI analysis (**most used**) | Executive Summary, Classification, SWOT, Risk, Threat, Stakeholder, Significance, **Same-Day Cross-Reference**, **Hack23 Ecosystem Cross-Reference** | Depends on document type | Comprehensive `{dok_id}-analysis.md` in `analysis/daily/.../documents/` | 🔴 CRITICAL |
 
 ---
 
@@ -283,6 +283,7 @@ flowchart LR
 | **Dimensions** | 7: Public Interest · Democratic Integrity · Policy Urgency · Economic · Governance · Political Capital · Legislative |
 | **Severity Levels** | CRITICAL · HIGH · MEDIUM · LOW |
 | **Output** | Classification results table with confidence labels |
+| **New in v2.2** | **Confidence Decay Rule** — classifications older than 7 days should be reviewed; those 8+ days require re-evaluation |
 
 ---
 
@@ -291,22 +292,23 @@ flowchart LR
 | Attribute | Value |
 |-----------|-------|
 | **Purpose** | Systematic political risk identification, scoring, and mitigation analysis |
-| **Risk Categories** | 8: Policy · Legislative · Economic · Social · Security · Diplomatic · Coalition · Constitutional |
-| **Scoring** | Likelihood (1–5) × Impact (1–5) = Risk Score (1–25) with color coding |
-| **Advanced** | Cascading risk chains · Risk velocity · Political Temperature Index |
+| **Scored Dimensions** | 5: Coalition · Policy · Budget · Electoral · External |
+| **Scoring** | Five-dimension risk profile using 1–5 scores per dimension with an overall risk synthesis and color-coded prioritization |
+| **Advanced** | Related sub-analyses: Cascading risk chains · Risk velocity · Political Temperature Index |
+| **New in v2.2** | **Risk Trend column** (↑↓→) · **Previous Assessment Comparison** · **Risk Interconnection Mermaid diagram** |
 
 ```mermaid
 graph LR
-    subgraph "🟢 Low Risk (1–6)"
+    subgraph "🟢 Low Risk (1–4)"
         L["Routine<br/>Monitoring"]
     end
-    subgraph "🟡 Medium Risk (7–12)"
+    subgraph "🟡 Medium Risk (5–9)"
         M["Active<br/>Tracking"]
     end
-    subgraph "🟠 High Risk (13–18)"
+    subgraph "🟠 High Risk (10–14)"
         H["Urgent<br/>Analysis"]
     end
-    subgraph "🔴 Critical Risk (19–25)"
+    subgraph "🔴 Critical Risk (15–25)"
         C["Immediate<br/>Escalation"]
     end
 
@@ -328,6 +330,7 @@ graph LR
 | **Stakeholder Lenses** | Government Coalition · Opposition · Citizens · Economic Actors · International |
 | **Advanced Features** | TOWS Matrix · Cross-SWOT Interference · Temporal Dynamics · Scenario Generation |
 | **Required Output** | Evidence table per quadrant + Mermaid visualization |
+| **New in v2.2** | **SWOT Delta section** (New/Changed/Removed entries) · **Temporal window specification** |
 
 > ⚠️ **Anti-Pattern Warning:** Generic bullet points like "Strong parliamentary majority" without dok_id evidence are REJECTED by the quality gate.
 
@@ -341,6 +344,7 @@ graph LR
 | **Required Frameworks** | Attack Trees + at least ONE of: Kill Chain, Diamond Model, Actor Profiling |
 | **Threat Taxonomy** | 6 categories: Narrative Integrity · Legislative Integrity · Accountability · Transparency · Democratic Process · Power Balance |
 | **Threat Agents** | 6: Ruling Coalition · Opposition · External Actors · Special Interests · Media · Institutional |
+| **New in v3.2** | **Threat Evolution Timeline** · **Cross-Methodology Linkage** (how threats feed into SWOT and Risk) |
 
 > ⚠️ **Anti-Pattern Warning:** Using STRIDE alone is FORBIDDEN. Political threats require politically-native categories, not cybersecurity taxonomies.
 
@@ -382,6 +386,7 @@ graph TD
 | **Score Range** | 1–10 integer composite score |
 | **Dimensions** | Political Weight · Public Impact · Legislative Consequence · Temporal Urgency · Cross-Reference Density |
 | **Thresholds** | ≥8 Breaking News · 6–7 Major Analysis · 4–5 Standard Coverage · <4 Monitoring Only |
+| **New in v2.2** | **Relative Scoring section** — compares document score to same-type average |
 
 ---
 
@@ -393,6 +398,7 @@ graph TD
 | **Stakeholder Groups** | Government · Parliament · Opposition · Judiciary · Media · Citizens · International · Industry |
 | **Assessment Axes** | Impact Magnitude · Impact Direction (positive/negative) · Timeframe · Certainty |
 | **Output** | Stakeholder impact matrix with directional indicators |
+| **New in v2.2** | **Position Change Tracking** (before/after this document) · **Power-Interest Grid** (Mermaid quadrant chart) |
 
 ---
 
@@ -404,6 +410,7 @@ graph TD
 | **Input** | All per-document analyses + classification + risk + SWOT + threat + significance + stakeholder |
 | **Output Sections** | Executive Summary · Key Findings · Cross-Document Patterns · Risk Overview · Strategic Outlook |
 | **Role** | Final deliverable that feeds directly into article generation |
+| **New in v2.2** | **Mandatory Forward Indicators** (3+ required) · **Aggregate Risk Level with Trend** · **Quality Self-Check Protocol** |
 
 ```mermaid
 flowchart TB
@@ -484,6 +491,30 @@ sequenceDiagram
         QG->>AI: ❌ Revision required
     end
 ```
+
+---
+
+## 🆕 v2.2 Common Improvements (All Templates)
+
+All 8 templates were updated in v2.2 (2026-04-06) with the following cross-cutting improvements:
+
+### ✅ Quality Self-Check Checklist
+Every template now includes a **mandatory quality self-check checklist** at the bottom (before Document Control). AI agents must verify each item before finalising analysis output. Checklists enforce:
+- Metadata completeness
+- Evidence density requirements
+- Mermaid diagram rendering verification
+- Named actor citation requirements
+- No remaining placeholder text (`[REQUIRED` search test)
+- Cross-reference linkage
+
+### 🔗 Cross-Reference Section
+Every template now includes a **cross-reference section** linking to sibling analysis files (e.g., risk-assessment.md ↔ swot-analysis.md ↔ threat-analysis.md) and same-day analysis from other article types. This enables contextual completeness and cross-document pattern detection.
+
+### 📋 Enhanced Document Control Footer
+All templates now include **ISMS alignment references** (ISO 27001:2022, NIST CSF 2.0) in the Document Control footer, plus explicit `Owner` and `Effective Date` fields matching Hack23 ISMS documentation standards.
+
+### 📊 Cross-Temporal Comparison
+Templates that support temporal analysis now include explicit **previous assessment comparison** sections with trend indicators (↑ Increasing / → Stable / ↓ Decreasing) and evidence requirements for each trend direction.
 
 ---
 

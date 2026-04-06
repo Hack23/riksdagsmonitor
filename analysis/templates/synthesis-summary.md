@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `synthesis-summary.md` in the workflow's own folder. This file synthesizes per-file analyses into an integrated intelligence picture. AI reads all per-file analyses and produces genuine synthesis — not a mechanical concatenation of summaries.
@@ -161,12 +161,12 @@ graph LR
 
 | Threat Category | Threat Level | Key Finding |
 |----------------|:------------:|-------------|
-| S — Spoofing | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
-| T — Tampering | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
-| R — Repudiation | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
-| I — Disclosure | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
-| D — Denial | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
-| E — Elevation | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
+| NI — Narrative Integrity | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
+| LI — Legislative Integrity | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
+| AC — Accountability | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
+| TR — Transparency | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
+| DP — Democratic Process | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
+| PB — Power Balance | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
 
 **Overall Threat Level:** `[REQUIRED: LOW / MODERATE / HIGH / SEVERE]`
 
@@ -195,13 +195,26 @@ graph LR
 
 ---
 
-## 🔮 Forward Indicators
+## 🔮 Forward Indicators (MANDATORY)
+
+> **⚠️ This section is MANDATORY — analysis without forward indicators is incomplete and will be REJECTED.**
 
 | # | Indicator | Timeline | Source | Watch Priority |
 |---|-----------|----------|--------|:--------------:|
 | 1 | `[REQUIRED: specific event or metric to monitor]` | `[days/weeks]` | `[data source]` | `🔴/🟠/🟡/🟢` |
 | 2 | `[REQUIRED]` | `[timeline]` | `[source]` | `[tier]` |
-| 3 | `[OPTIONAL]` | `[timeline]` | `[source]` | `[tier]` |
+| 3 | `[REQUIRED]` | `[timeline]` | `[source]` | `[tier]` |
+
+**Aggregate Risk Level Summary:**
+
+| Metric | Value | Trend vs. Previous |
+|--------|-------|:------------------:|
+| **Overall Risk Level** | `[REQUIRED: LOW / MEDIUM / HIGH / CRITICAL]` | `[↑/→/↓]` |
+| **Overall Threat Level** | `[REQUIRED: LOW / MODERATE / HIGH / SEVERE]` | `[↑/→/↓]` |
+| **Highest Significance Score** | `[REQUIRED: #.#/10]` | `[↑/→/↓]` |
+| **SWOT Balance** | `[REQUIRED: Positive / Neutral / Negative]` | `[↑/→/↓]` |
+
+**Previous Synthesis Reference:** `[REQUIRED: path to previous synthesis-summary.md or "N/A — first synthesis"]`
 
 ---
 
@@ -235,9 +248,46 @@ graph LR
 
 ---
 
+## 🔗 Cross-References
+
+> *Link to same-day analysis from other article types and related external intelligence products.*
+
+| Related Analysis | Article Type | Date | Key Finding |
+|-----------------|-------------|------|-------------|
+| `[OPTIONAL: e.g. analysis/daily/2026-04-04/propositions/synthesis-summary.md]` | `[propositions]` | `[date]` | `[1 sentence]` |
+| `[OPTIONAL: e.g. analysis/daily/2026-04-04/committee-reports/synthesis-summary.md]` | `[committee-reports]` | `[date]` | `[1 sentence]` |
+| `[OPTIONAL: CIA platform data]` | `[cia-export]` | `[date]` | `[1 sentence]` |
+
+---
+
+## ✅ Quality Self-Check Checklist
+
+> **Pre-commit validation — every item MUST be checked before finalising this synthesis. Derived from SHARED_PROMPT_PATTERNS.md §Quality Self-Check Protocol.**
+
+- [ ] **Synthesis Context complete:** All metadata fields filled (ID, date, documents analyzed, period, producer, confidence)
+- [ ] **Intelligence Dashboard rendered:** Mermaid diagram has actual values (no grey placeholder nodes remaining)
+- [ ] **≥3 documents ranked:** Top Findings table has at least 3 documents with significance scores
+- [ ] **Aggregated SWOT present:** Coalition Balance Mermaid rendered with actual S/W/O/T counts
+- [ ] **Risk Landscape Summary filled:** All 5 risk dimensions have score ranges and trend indicators
+- [ ] **Threat Summary complete:** All 6 threat categories assessed with threat levels
+- [ ] **Stakeholder Impact Overview filled:** All 6 stakeholder groups have impact levels and drivers
+- [ ] **Narrative Direction written:** 4–6 sentence lede thesis with confidence label
+- [ ] **Forward Indicators MANDATORY:** ≥3 specific forward indicators with timelines and watch priorities
+- [ ] **Aggregate Risk Level with trends:** Overall risk, threat, significance, SWOT balance all have trend arrows
+- [ ] **Analysis Artifacts Inventory:** All 7 artifact statuses (✅/⚠️/❌) filled
+- [ ] **MCP Data Provenance:** All data sources listed with timestamps
+- [ ] **No placeholder text remaining:** Search for `[REQUIRED` — zero hits expected
+- [ ] **Cross-document patterns identified:** Synthesis adds value beyond concatenating individual analyses
+- [ ] **Named actors:** ≥3 named politicians/parties cited across the synthesis
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/synthesis-summary.md`  
-- **Version:** 2.1  
+- **Version:** 2.2  
+- **Effective Date:** 2026-04-06 (UTC)  
 - **Consumed By:** All news article generator workflows  
+- **ISMS Alignment:** ISO 27001:2022 A.5.7 (Threat Intelligence), NIST CSF 2.0 ID.RA (Risk Assessment)  
 - **Classification:** Public  
+- **Owner:** Hack23 AB (Org.nr 5595347807)  
 - **Next Review:** 2026-06-30

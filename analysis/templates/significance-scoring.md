@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--31-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-31 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `significance-scoring.md` in the workflow's own folder (never overwrite another workflow's files). The significance scorer TypeScript implementation is at `scripts/analysis-framework/significance-scorer.ts` — this provides automated numeric scores only. AI must provide the **analytical rationale** explaining why documents score as they do.
@@ -272,9 +272,65 @@ These examples provide anchor points for consistent scoring across workflows:
 
 ---
 
+## 📊 Section 7: Relative Scoring — Same-Type Comparison
+
+> **AI Instructions:** Compare this document's composite score with the average score for the same document type in recent analyses. This contextualises whether this event is unusually significant or routine for its category.
+
+| Metric | Value |
+|--------|-------|
+| **This Document's Composite Score** | `[REQUIRED: #.#/10]` |
+| **Same-Type Average (last 7 days)** | `[REQUIRED: #.#/10 or "N/A — insufficient data"]` |
+| **Same-Type Median (last 7 days)** | `[OPTIONAL: #.#/10]` |
+| **Deviation from Average** | `[REQUIRED: +#.# above / -#.# below / at average]` |
+| **Percentile Rank** | `[OPTIONAL: e.g. "Top 10% of propositions this week"]` |
+
+**Relative Significance Assessment:** `[REQUIRED: 1–2 sentences — e.g. "This proposition scores 2.3 points above the average for propositions in the last 7 days, driven primarily by its cross-party dimension (8/10 vs. average 4.2/10). This is an outlier warranting Priority treatment."]`
+
+### Same-Type Score Distribution (Last 7 Days)
+
+| Document Type | Count | Min | Avg | Max | This Score | Relative Position |
+|--------------|:-----:|:---:|:---:|:---:|:----------:|:----------------:|
+| `[REQUIRED: e.g. Propositions]` | `[N]` | `[#.#]` | `[#.#]` | `[#.#]` | `[#.#]` | `[Above/At/Below avg]` |
+
+---
+
+## 🔗 Cross-References
+
+> *Link to sibling analysis files and same-day analysis from other article types.*
+
+| Related Analysis File | Relationship | Key Finding |
+|----------------------|-------------|-------------|
+| `[REQUIRED: e.g. classification-results.md]` | `[significance informs classification urgency]` | `[1 sentence]` |
+| `[REQUIRED: e.g. synthesis-summary.md]` | `[significance drives synthesis ranking]` | `[1 sentence]` |
+| `[OPTIONAL: same-day analysis from different article type]` | `[cross-reference]` | `[1 sentence]` |
+
+---
+
+## ✅ Quality Self-Check Checklist
+
+> **Pre-commit validation — every item MUST be checked before finalising this scoring.**
+
+- [ ] **Event Context complete:** Score ID, event name, dok_id, scoring date, scorer all filled
+- [ ] **All 5 dimensions scored:** Parliamentary, Policy, Public Interest, Urgency, Cross-party all have 0–10 scores
+- [ ] **Sub-criterion rationales provided:** Each sub-criterion (0–3) has a 1-sentence rationale
+- [ ] **Composite Score calculated:** Weighted formula applied correctly (sum matches component scores)
+- [ ] **Score Profile Mermaid rendered:** Decision gate diagram has actual scores (no `[#]` placeholders)
+- [ ] **Publication Decision assigned:** Archive/Monitor/Publish/Priority/Breaking with rationale
+- [ ] **Relative Scoring filled:** Same-type comparison with average and deviation calculated
+- [ ] **Score Reconciliation checked:** If automated score diverges >3 points, higher score used and flagged
+- [ ] **MCP Data Files listed:** All consulted data files with timestamps
+- [ ] **No placeholder text remaining:** Search for `[REQUIRED` — zero hits expected
+- [ ] **Cross-references linked:** At least 1 sibling analysis file referenced
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/significance-scoring.md`  
-- **Version:** 2.1  
+- **Version:** 2.2  
+- **Effective Date:** 2026-04-06 (UTC)  
 - **Scorer Implementation:** `scripts/analysis-framework/significance-scorer.ts`  
+- **Advanced Sections:** Relative Scoring, Same-Type Comparison  
+- **ISMS Alignment:** ISO 27001:2022 A.5.7 (Threat Intelligence), NIST CSF 2.0 ID.RA (Risk Assessment)  
 - **Classification:** Public  
+- **Owner:** Hack23 AB (Org.nr 5595347807)  
 - **Next Review:** 2026-06-30

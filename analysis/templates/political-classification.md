@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `classification-results.md` in the workflow's own folder (never overwrite another workflow's files). Replace all `[REQUIRED]` and `[OPTIONAL]` placeholders with actual values. Include Political Temperature Index and Coalition Impact Vector assessments.
@@ -280,10 +280,62 @@ Significance Score: [REQUIRED: see significance-scoring.md, 0–10 composite]
 
 ---
 
+## ⏳ Classification Confidence Decay Rule
+
+> **Classifications older than 7 days MUST be re-evaluated.** Political events evolve rapidly; a classification assigned on Monday may be outdated by the following Monday due to new committee decisions, coalition negotiations, or public opinion shifts.
+
+| Classification Age | Action Required | Rationale |
+|:------------------:|:---------------:|-----------|
+| **0–3 days** | ✅ Current — no action | Classification reflects active political context |
+| **4–7 days** | ⚠️ Review recommended | Political landscape may have shifted; check for new developments |
+| **8–14 days** | 🟠 Re-evaluation REQUIRED | Urgency and sensitivity may have changed; update or confirm |
+| **15–30 days** | 🔴 Re-classification MANDATORY | Original context likely stale; full re-assessment needed |
+| **31+ days** | ❌ Expired — archive only | Classification no longer actionable; retain for trend analysis only |
+
+**This Classification's Age:** `[REQUIRED: N days since Classification Date]`  
+**Re-evaluation Status:** `[REQUIRED: Current / Review needed / Re-evaluation required / Expired]`
+
+---
+
+## 🔗 Cross-References
+
+> *Link to sibling analysis files and same-day analysis from other article types.*
+
+| Related Analysis File | Relationship | Key Finding |
+|----------------------|-------------|-------------|
+| `[REQUIRED: e.g. significance-scoring.md]` | `[classification informs significance urgency dimension]` | `[1 sentence]` |
+| `[REQUIRED: e.g. synthesis-summary.md]` | `[classification feeds intelligence dashboard]` | `[1 sentence]` |
+| `[OPTIONAL: same-day analysis from different article type]` | `[cross-reference]` | `[1 sentence]` |
+
+---
+
+## ✅ Quality Self-Check Checklist
+
+> **Pre-commit validation — every item MUST be checked before finalising this classification.**
+
+- [ ] **Document Metadata complete:** Classification ID, event date, classification date, dok_id, classified by all filled
+- [ ] **All 4 classification dimensions assigned:** Sensitivity, Policy Domain, Urgency, Impact Scope
+- [ ] **Rationale provided for each dimension:** Sensitivity, urgency, and impact scope all have 1–2 sentence rationales
+- [ ] **Classification Decision Tree path noted:** Active path through Mermaid diagram identified
+- [ ] **Impact Analysis Matrix scored:** At least 3 of 5 dimensions (Democratic, Economic, Social, Coalition, International) scored
+- [ ] **Cross-Reference Tags complete:** Primary Actors, Riksmöte, Significance Score all filled
+- [ ] **Classification Rationale written:** 2–4 sentence summary + justification + confidence assessment
+- [ ] **Recommended Action selected:** Publish/Breaking/Monitor/Archive checkbox checked
+- [ ] **Confidence Decay assessed:** Classification age calculated and re-evaluation status noted
+- [ ] **MCP Data Provenance:** All data sources listed with timestamps
+- [ ] **No placeholder text remaining:** Search for `[REQUIRED` — zero hits expected
+- [ ] **Named actors cited:** ≥1 named politician/party in classification rationale
+- [ ] **Cross-references linked:** At least 1 sibling analysis file referenced
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/political-classification.md`  
-- **Version:** 2.1  
-- **Advanced Dimensions:** Political Temperature Index, Strategic Significance, Coalition Impact Vector  
+- **Version:** 2.2  
+- **Effective Date:** 2026-04-06 (UTC)  
+- **Advanced Dimensions:** Political Temperature Index, Strategic Significance, Coalition Impact Vector, Confidence Decay Rule  
 - **Framework Reference:** [methodologies/political-classification-guide.md](../methodologies/political-classification-guide.md)  
+- **ISMS Alignment:** ISO 27001:2022 A.5.12 (Classification of Information), NIST CSF 2.0 ID.AM (Asset Management)  
 - **Classification:** Public  
+- **Owner:** Hack23 AB (Org.nr 5595347807)  
 - **Next Review:** 2026-06-30

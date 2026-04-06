@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--31-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-03-31 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `stakeholder-impact.md` in the workflow's own folder (never overwrite another workflow's files). Complete the context block first, then assess each stakeholder group with specific evidence. AI must provide genuine impact analysis with named actors and dok_id citations — not generic "may affect business" prose.
@@ -328,10 +328,97 @@ _Note: In the Extended Impact Summary Matrix, stakeholder groups may appear in a
 
 ---
 
+## 📊 Stakeholder Position Change Tracking
+
+> **AI Instructions:** Track how stakeholder positions changed as a result of this policy/event compared to their previous known stance. This enables longitudinal stakeholder analysis.
+
+| Stakeholder | Position BEFORE This Document | Position AFTER This Document | Shift Direction | Evidence |
+|------------|------------------------------|-----------------------------:|:---------------:|---------|
+| `[REQUIRED: e.g. Government Coalition]` | `[e.g. Strong support for reform]` | `[e.g. Qualified support — SD demands amendments]` | `[→ weakened / → strengthened / → unchanged]` | `[dok_id]` |
+| `[REQUIRED: e.g. Opposition (S)]` | `[e.g. Opposed on principle]` | `[e.g. Offers conditional support on amendment]` | `[→ softened / → hardened / → unchanged]` | `[dok_id]` |
+| `[REQUIRED: e.g. Business Sector]` | `[previous stance]` | `[current stance]` | `[shift]` | `[evidence]` |
+| `[OPTIONAL]` | `[previous]` | `[current]` | `[shift]` | `[evidence]` |
+
+**Most Significant Position Shift:** `[REQUIRED: Which stakeholder shifted most and why?]`
+
+---
+
+## 📐 Power-Interest Grid
+
+> **AI Instructions:** Place each stakeholder on the Power-Interest grid to determine engagement strategy. Power = ability to influence policy outcomes. Interest = stake in this specific policy.
+
+```mermaid
+quadrantChart
+    title Stakeholder Power-Interest Grid
+    x-axis Low Interest --> High Interest
+    y-axis Low Power --> High Power
+    quadrant-1 Manage Closely
+    quadrant-2 Keep Satisfied
+    quadrant-3 Monitor
+    quadrant-4 Keep Informed
+
+    "Government Coalition": [0.8, 0.9]
+    "Opposition (S)": [0.7, 0.6]
+    "Citizens": [0.6, 0.3]
+    "Business": [0.5, 0.5]
+    "Civil Society": [0.4, 0.2]
+    "International/EU": [0.3, 0.4]
+    "Judiciary": [0.2, 0.7]
+    "Media": [0.7, 0.2]
+```
+
+> **AI Instructions:** Replace the placeholder coordinates with actual Power (y) and Interest (x) values between 0.0–1.0 based on the assessment. Position labels should reference actual actor names.
+
+| Stakeholder | Power (0–1.0) | Interest (0–1.0) | Grid Position | Engagement Strategy |
+|------------|:-------------:|:----------------:|:-------------:|---------------------|
+| `[Government]` | `[0.0–1.0]` | `[0.0–1.0]` | `[Manage Closely / Keep Satisfied / Keep Informed / Monitor]` | `[1 sentence]` |
+| `[Opposition]` | `[0.0–1.0]` | `[0.0–1.0]` | `[grid position]` | `[1 sentence]` |
+| `[Citizens]` | `[0.0–1.0]` | `[0.0–1.0]` | `[grid position]` | `[1 sentence]` |
+| `[Business]` | `[0.0–1.0]` | `[0.0–1.0]` | `[grid position]` | `[1 sentence]` |
+
+---
+
+## 🔗 Cross-References
+
+> *Link to sibling analysis files and same-day analysis from other article types.*
+
+| Related Analysis File | Relationship | Key Finding |
+|----------------------|-------------|-------------|
+| `[REQUIRED: e.g. risk-assessment.md]` | `[stakeholder impacts inform risk scoring]` | `[1 sentence]` |
+| `[REQUIRED: e.g. swot-analysis.md]` | `[stakeholder dynamics map to SWOT entries]` | `[1 sentence]` |
+| `[REQUIRED: e.g. synthesis-summary.md]` | `[stakeholder overview consumed by synthesis]` | `[1 sentence]` |
+| `[OPTIONAL: same-day analysis from different article type]` | `[cross-reference]` | `[1 sentence]` |
+
+---
+
+## ✅ Quality Self-Check Checklist
+
+> **Pre-commit validation — every item MUST be checked before finalising this assessment.**
+
+- [ ] **Assessment Context complete:** All metadata fields filled (ID, date, subject, dok_id, stage, producer, overall impact)
+- [ ] **All 8 stakeholder groups assessed:** Citizens, Government, Opposition, Business, Civil Society, International, Judiciary, Media
+- [ ] **Specific evidence on every group:** No generic "may affect" prose — every impact claims specific actors, mechanisms, and evidence
+- [ ] **Named actors cited:** ≥3 named politicians/parties/organisations with specific roles
+- [ ] **Impact Summary Matrix filled:** All 8 rows in Extended Impact Summary Matrix have levels, timelines, confidence
+- [ ] **Inter-Stakeholder Tensions identified:** ≥2 tension pairs with mechanisms and editorial relevance
+- [ ] **Position Change Tracking filled:** ≥3 stakeholders tracked with before/after positions
+- [ ] **Power-Interest Grid rendered:** Mermaid quadrant chart with actual stakeholder positions
+- [ ] **Conflicting Impact Resolution applied:** Editorial framing pattern selected when stakeholder impacts conflict
+- [ ] **MCP Data Provenance:** All files and tools listed; every factual claim traceable
+- [ ] **No placeholder text remaining:** Search for `[REQUIRED` — zero hits expected
+- [ ] **Publish Recommendation provided:** YES/MONITOR with article type and suggested headline angle
+- [ ] **Cross-references linked:** At least 2 sibling analysis files referenced
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/stakeholder-impact.md`  
-- **Version:** 2.1  
+- **Version:** 2.2  
+- **Effective Date:** 2026-04-06 (UTC)  
 - **Lens References:** `scripts/analysis-framework/lenses/` (citizen, economic, government, international, media, opposition)  
 - **Framework Reference:** [methodologies/political-style-guide.md](../methodologies/political-style-guide.md)  
+- **Advanced Sections:** Position Change Tracking, Power-Interest Grid  
+- **ISMS Alignment:** ISO 27001:2022 A.5.7 (Threat Intelligence), NIST CSF 2.0 ID.RA (Risk Assessment)  
 - **Classification:** Public  
+- **Owner:** Hack23 AB (Org.nr 5595347807)  
 - **Next Review:** 2026-06-30

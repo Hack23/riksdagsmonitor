@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-3.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-3.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.1 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 3.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `threat-analysis.md` in the workflow's own folder (never overwrite another workflow's files). Each threat requires evidence citations and multi-framework analysis. See [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md).
@@ -330,10 +330,93 @@ graph TD
 
 ---
 
+## 📈 Section 8: Threat Evolution Timeline
+
+> **AI Instructions:** Compare current threat landscape with the most recent previous threat analysis. Show how each threat category evolved over time.
+
+**Previous Threat Analysis Reference:** `[REQUIRED: path to previous threat-analysis.md or "N/A — first analysis"]`
+
+```mermaid
+timeline
+    title Threat Landscape Evolution
+    section Previous Assessment
+        [Date] : [Category]: [Level]
+        [Date] : [Category]: [Level]
+    section Current Assessment
+        [Date] : [Category]: [Level] — [↑/→/↓]
+        [Date] : [Category]: [Level] — [↑/→/↓]
+```
+
+| Threat Category | Previous Level | Current Level | Change | Key Driver of Change |
+|----------------|:--------------:|:------------:|:------:|---------------------|
+| Narrative Integrity | `[previous or N/A]` | `[current]` | `[↑/→/↓]` | `[What changed?]` |
+| Legislative Integrity | `[previous or N/A]` | `[current]` | `[↑/→/↓]` | `[What changed?]` |
+| Accountability | `[previous or N/A]` | `[current]` | `[↑/→/↓]` | `[What changed?]` |
+| Transparency | `[previous or N/A]` | `[current]` | `[↑/→/↓]` | `[What changed?]` |
+| Democratic Process | `[previous or N/A]` | `[current]` | `[↑/→/↓]` | `[What changed?]` |
+| Power Balance | `[previous or N/A]` | `[current]` | `[↑/→/↓]` | `[What changed?]` |
+
+**Overall Threat Trend:** `[REQUIRED: ↑ Escalating / → Stable / ↓ De-escalating]`  
+**New Threats Emerged:** `[REQUIRED: count and brief description]`  
+**Threats Resolved:** `[REQUIRED: count and brief description or "None"]`
+
+---
+
+## 🔄 Section 9: Cross-Methodology Linkage
+
+> **AI Instructions:** Show how threat analysis findings feed into SWOT and Risk assessments. This ensures analytical coherence across frameworks.
+
+| Threat Finding | Feeds Into → SWOT | Feeds Into → Risk | Feeds Into → Stakeholder |
+|---------------|-------------------|-------------------|--------------------------|
+| `[REQUIRED: e.g. NI-001: Disinformation campaign]` | `[→ SWOT Threat T1]` | `[→ RSK-002: Coalition stability L:3×I:4]` | `[→ Media: HIGH impact]` |
+| `[REQUIRED: e.g. PB-001: Executive overreach]` | `[→ SWOT Weakness W2]` | `[→ RSK-001: Electoral integrity L:2×I:5]` | `[→ Judiciary: HIGH impact]` |
+| `[OPTIONAL]` | `[→ SWOT entry]` | `[→ Risk entry]` | `[→ Stakeholder group]` |
+
+**Analytical Coherence Check:** `[REQUIRED: Confirm that all HIGH/SEVERE threats are reflected as SWOT Threats or Weaknesses AND as Risk Register entries. If gaps exist, either add missing entries to the corresponding SWOT/Risk template or provide a 1-sentence justification for why the threat does not warrant cross-methodology reflection.]`
+
+---
+
+## 🔗 Cross-References
+
+> *Link to sibling analysis files and same-day analysis from other article types.*
+
+| Related Analysis File | Relationship | Key Finding |
+|----------------------|-------------|-------------|
+| `[REQUIRED: e.g. risk-assessment.md]` | `[threat findings feed risk register]` | `[1 sentence]` |
+| `[REQUIRED: e.g. swot-analysis.md]` | `[threats map to SWOT T entries]` | `[1 sentence]` |
+| `[REQUIRED: e.g. stakeholder-impact.md]` | `[threats affect specific stakeholders]` | `[1 sentence]` |
+| `[OPTIONAL: same-day analysis from different article type]` | `[cross-reference]` | `[1 sentence]` |
+
+---
+
+## ✅ Quality Self-Check Checklist
+
+> **Pre-commit validation — every item MUST be checked before finalising this analysis.**
+
+- [ ] **Threat Context complete:** All metadata fields filled (ID, date, period, producer, context, overall level)
+- [ ] **All 6 threat categories assessed:** Narrative Integrity, Legislative Integrity, Accountability, Transparency, Democratic Process, Power Balance
+- [ ] **Attack Tree rendered:** Section 2 Mermaid diagram has actual threat decomposition (no placeholders)
+- [ ] **Kill Chain assessed:** Section 3 has current stage identified with evidence for each active stage
+- [ ] **Diamond Model filled:** Section 4 has Adversary, Capability, Infrastructure, Victim with evidence
+- [ ] **ICO Profile complete:** Intent, Capability, Opportunity, Track Record, Constraints all assessed
+- [ ] **Priority Mitigations listed:** ≥2 specific mitigation actions with responsible actors
+- [ ] **Threat Evolution tracked:** Section 8 compares with previous analysis (or "first analysis" noted)
+- [ ] **Cross-Methodology Linkage filled:** Section 9 maps threats to SWOT, Risk, and Stakeholder entries
+- [ ] **MCP Data Provenance:** All data sources listed; every threat severity score traceable
+- [ ] **No placeholder text remaining:** Search for `[REQUIRED` — zero hits expected
+- [ ] **Political Threat Taxonomy used:** NOT STRIDE categories — confirmed using NI/LI/AC/TR/DP/PB
+- [ ] **Named actors:** ≥2 named threat actors with party affiliations or institutional roles
+
+---
+
 **Document Control:**  
 - **Template Path:** `/analysis/templates/threat-analysis.md`  
 - **Framework Reference:** [THREAT_MODEL.md](../../THREAT_MODEL.md), [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md)  
-- **Version:** 3.1  
+- **Version:** 3.2  
+- **Effective Date:** 2026-04-06 (UTC)  
 - **Frameworks:** Attack Trees, Kill Chain, Diamond Model, Political Threat Taxonomy, Threat Actor Profiling  
+- **Advanced Sections:** Threat Evolution Timeline, Cross-Methodology Linkage  
+- **ISMS Alignment:** ISO 27001:2022 A.5.7 (Threat Intelligence), NIST CSF 2.0 ID.RA (Risk Assessment), DE.CM (Security Continuous Monitoring)  
 - **Classification:** Public  
+- **Owner:** Hack23 AB (Org.nr 5595347807)  
 - **Next Review:** 2026-06-30
