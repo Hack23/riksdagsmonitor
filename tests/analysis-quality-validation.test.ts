@@ -93,19 +93,22 @@ const MERMAID_STYLE_PATTERN = /style\s+\w+\s+fill:|fill:#[0-9a-fA-F]{3,6}/;
 const LXI_SCORING_PATTERN = /[Ll](?:ikelihood)?\s*[×xX*]\s*[Ii](?:mpact)?|Risk\s+Score|L×I/;
 
 /**
+ * Structured analysis ID pattern. Matches IDs with a known prefix, ISO date,
+ * and a suffix that is either numeric (001, 1212) or alphabetic with optional
+ * trailing digits (MOT, CR01, RT1018, DI).
+ *
+ * Examples: `SYN-2026-04-04-001`, `RSK-2026-04-02-CR01`, `CLS-2026-04-03-RT1018`, `SYN-2026-04-03-DI`
+ */
+const STRUCTURED_ID_PATTERN = /\b(?:SYN|RSK|SWT|THR|STK|SIG|CLS|XRF|DDM)-\d{4}-\d{2}-\d{2}-(?:\d{3,4}|[A-Za-z]{2,}(?:\d{2,})?)\b/;
+
+/**
  * Detect whether a file uses the **strict v2** template format:
  * - Must have table-format metadata (`| **Field** | Value |`)
- * - Must have a structured analysis ID with a known analysis prefix, ISO date,
- *   and a repository-supported suffix (for example `SYN-2026-04-04-001`,
- *   `SYN-2026-04-02-CR01`, `SYN-2026-04-03-RT1018`, `SYN-2026-04-03-DI`)
+ * - Must have a structured analysis ID (see STRUCTURED_ID_PATTERN)
  */
 function isStrictV2Format(content: string): boolean {
   const hasTableMetadata = /\|\s*\*\*\w+.*\*\*\s*\|/.test(content);
-  const hasStructuredId =
-    /\b(?:SYN|RSK|SWT|THR|STK|SIG|CLS|XRF|DDM)-\d{4}-\d{2}-\d{2}-(?:\d{3,4}|[A-Za-z]{2,}(?:\d{2,})?)\b/.test(
-      content,
-    );
-  return hasTableMetadata && hasStructuredId;
+  return hasTableMetadata && STRUCTURED_ID_PATTERN.test(content);
 }
 
 // ---------------------------------------------------------------------------
@@ -261,8 +264,11 @@ function extractOverallConfidence(content: string): 'HIGH' | 'MEDIUM' | 'LOW' | 
 function hasAnyConfidenceIndicator(content: string): boolean {
   // First try structured Overall Confidence metadata
   if (extractOverallConfidence(content) !== null) return true;
-  // Fall back to loose inline detection for files like threat-analysis.md
-  return /\bconfidence\b/i.test(content) || /\b(HIGH|MEDIUM|LOW)\b/.test(content);
+  // Fall back to contextual detection: require "confidence" near HIGH/MEDIUM/LOW
+  // or the word "confidence" used as a metadata/table header
+  return /\bconfidence\b.*\b(HIGH|MEDIUM|LOW)\b/im.test(content) ||
+    /\b(HIGH|MEDIUM|LOW)\b.*\bconfidence\b/im.test(content) ||
+    /\|\s*Confidence\s*\|/i.test(content);
 }
 
 // ---------------------------------------------------------------------------
@@ -387,13 +393,12 @@ describe('Analysis Quality Validation', () => {
     });
 
     it('should have structured IDs in strict-v2 synthesis files', () => {
-      const ID_PATTERN = /\b(?:SYN|RSK|SWT|THR|STK|SIG|CLS|XRF|DDM)-\d{4}-\d{2}-\d{2}-(?:\d{3,4}|[A-Za-z]{2,}(?:\d{2,})?)\b/;
       const failures: string[] = [];
 
       for (const dir of strictV2SynthesisDirectories) {
         const content = readAnalysisFile(dir, 'synthesis-summary.md');
         if (!content) continue;
-        if (!ID_PATTERN.test(content)) {
+        if (!STRUCTURED_ID_PATTERN.test(content)) {
           failures.push(
             `${dir.date}/${dir.articleType}/synthesis-summary.md: missing structured Synthesis ID`
           );
@@ -707,20 +712,23 @@ describe('Analysis Quality Validation', () => {
       expect(failures, `Strict-v2 synthesis files with missing/invalid confidence:\n${failures.join('\n')}`).toHaveLength(0);
     });
 
-    it('should have confidence indicators in all threat analysis files', () => {
+    it('should have confidence or severity indicators in all threat analysis files', () => {
       const failures: string[] = [];
 
       for (const dir of analysisDirs) {
         const content = readAnalysisFile(dir, 'threat-analysis.md');
         if (!content) continue;
-        if (!hasAnyConfidenceIndicator(content)) {
+        // Threat analysis files may use severity, threat level, or confidence labels
+        const hasIndicator = hasAnyConfidenceIndicator(content) ||
+          /\b(?:Severity|Threat\s+Level|Overall\s+Threat)\b/i.test(content);
+        if (!hasIndicator) {
           failures.push(
-            `${dir.date}/${dir.articleType}/threat-analysis.md: no confidence indicators found`
+            `${dir.date}/${dir.articleType}/threat-analysis.md: no confidence or severity indicators found`
           );
         }
       }
 
-      expect(failures, `Threat analyses missing confidence:\n${failures.join('\n')}`).toHaveLength(0);
+      expect(failures, `Threat analyses missing indicators:\n${failures.join('\n')}`).toHaveLength(0);
     });
   });
 
