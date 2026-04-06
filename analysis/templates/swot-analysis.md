@@ -45,7 +45,7 @@
 | **Produced By** | `[REQUIRED: workflow name or analyst]` |
 | **Primary MCP Sources** | `[REQUIRED: list of riksdag-regering-mcp tools used]` |
 | **Validity Window** | `[REQUIRED: entries valid until YYYY-MM-DD — see temporal decay guide]` |
-| **Temporal Window** | `[REQUIRED: e.g. "2026-03-25 to 2026-04-01" — exact date range this SWOT covers]` |
+| **Temporal Window** | `[REQUIRED: e.g. "2026-03-25 to 2026-04-01" — exact date range of documents covered by this SWOT; distinct from Validity Window which tracks entry expiry]` |
 
 ---
 

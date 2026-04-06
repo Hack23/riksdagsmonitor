@@ -283,7 +283,7 @@ flowchart LR
 | **Dimensions** | 7: Public Interest · Democratic Integrity · Policy Urgency · Economic · Governance · Political Capital · Legislative |
 | **Severity Levels** | CRITICAL · HIGH · MEDIUM · LOW |
 | **Output** | Classification results table with confidence labels |
-| **New in v2.2** | **Confidence Decay Rule** — classifications older than 7 days require re-evaluation |
+| **New in v2.2** | **Confidence Decay Rule** — classifications older than 7 days should be reviewed; those 8+ days require re-evaluation |
 
 ---
 

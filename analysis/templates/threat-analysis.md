@@ -372,7 +372,7 @@ timeline
 | `[REQUIRED: e.g. PB-001: Executive overreach]` | `[→ SWOT Weakness W2]` | `[→ RSK-001: Democratic Process L:2×I:5]` | `[→ Judiciary: HIGH impact]` |
 | `[OPTIONAL]` | `[→ SWOT entry]` | `[→ Risk entry]` | `[→ Stakeholder group]` |
 
-**Analytical Coherence Check:** `[REQUIRED: Confirm that all HIGH/SEVERE threats are reflected as SWOT Threats or Weaknesses AND as Risk Register entries. Note any gaps.]`
+**Analytical Coherence Check:** `[REQUIRED: Confirm that all HIGH/SEVERE threats are reflected as SWOT Threats or Weaknesses AND as Risk Register entries. If gaps exist, either add missing entries to the corresponding SWOT/Risk template or provide a 1-sentence justification for why the threat does not warrant cross-methodology reflection.]`
 
 ---
 

@@ -284,7 +284,7 @@ These examples provide anchor points for consistent scoring across workflows:
 | **Deviation from Average** | `[REQUIRED: +#.# above / -#.# below / at average]` |
 | **Percentile Rank** | `[OPTIONAL: e.g. "Top 10% of propositions this week"]` |
 
-**Relative Significance Assessment:** `[REQUIRED: 1–2 sentences — e.g. "This proposition scores 2.3 points above the average for propositions this week, driven primarily by its cross-party dimension (8/10 vs. average 4.2/10). This is an outlier warranting Priority treatment."]`
+**Relative Significance Assessment:** `[REQUIRED: 1–2 sentences — e.g. "This proposition scores 2.3 points above the average for propositions in the last 7 days, driven primarily by its cross-party dimension (8/10 vs. average 4.2/10). This is an outlier warranting Priority treatment."]`
 
 ### Same-Type Score Distribution (Last 7 Days)
 
