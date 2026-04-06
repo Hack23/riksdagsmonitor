@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-4.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--03-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.0 | **📅 Last Updated:** 2026-04-03 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 4.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-03  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -1650,6 +1650,155 @@ Each batch file MUST:
 
 ---
 
+## 📋 Empty Data Handling Protocol (v4.2)
+
+When MCP tools return **zero documents** for the requested date/scope, the AI agent must follow this structured protocol rather than producing empty or placeholder analysis.
+
+### Decision Flowchart
+
+```mermaid
+flowchart TD
+    START["🔍 MCP query returns<br/>0 documents for target date"]
+    START --> LB["📅 Lookback Strategy<br/>Try previous 5 business days"]
+    LB -->|"Documents found"| ANALYZE["✅ Analyze found documents<br/>Note actual data date in header"]
+    LB -->|"Still 0 documents"| DIRECT["🔄 Direct MCP Retrieval<br/>Query broader scope"]
+    DIRECT -->|"Documents found"| ANALYZE
+    DIRECT -->|"Still 0 documents"| CARRY["📊 Carry-Forward Protocol"]
+    CARRY --> OUTPUT["📝 Minimum Output"]
+
+    style START fill:#dc3545,color:#fff
+    style ANALYZE fill:#28a745,color:#fff
+    style CARRY fill:#ffc107,color:#000
+    style OUTPUT fill:#0d6efd,color:#fff
+```
+
+### Step 1: Lookback Strategy (Automated)
+
+The `pre-article-analysis.ts` pipeline automatically looks back up to **5 business days** (configurable via `MAX_LOOKBACK_BUSINESS_DAYS`). If documents are found via lookback, the `dataFreshness` field records the actual date using the canonical serialized format expected by downstream parsing:
+
+```markdown
+**Data Freshness**: Documents sourced from **2026-04-01** via lookback fallback (article date: 2026-04-03).
+```
+
+### Step 2: Direct MCP Retrieval (Agent-Level)
+
+If the pipeline lookback found nothing, the AI agent MUST attempt direct MCP queries with progressively broader scope:
+
+| Priority | MCP Query | Expected Yield |
+|:---:|:---|:---|
+| 1 | `get_propositioner(rm="2025/26", limit=20)` | Recent government propositions |
+| 2 | `get_betankanden(rm="2025/26", limit=20)` | Recent committee reports |
+| 3 | `get_motioner(rm="2025/26", limit=50)` | Recent motions |
+| 4 | `get_interpellationer(rm="2025/26", limit=20)` | Recent interpellations |
+| 5 | `get_fragor(rm="2025/26", limit=20)` | Recent written questions |
+| 6 | `get_calendar_events(from=DATE, tom=DATE+7)` | Upcoming parliamentary events |
+| 7 | `search_anforanden(rm="2025/26", limit=20)` | Recent chamber speeches |
+
+### Step 3: Carry-Forward Protocol
+
+When **no new documents** are available from any source (e.g., parliamentary recess, holiday period), produce a **minimum viable analysis** by carrying forward active items:
+
+#### Mandatory Carry-Forward Items
+
+| Analysis File | Carry-Forward Content | Source |
+|:---|:---|:---|
+| `synthesis-summary.md` | Most recent risk dashboard with staleness status | Previous day's `risk-assessment.md` |
+| `risk-assessment.md` | All active risk scores with `Last evidence: [date]` field and staleness status derived from the aging table | Previous day's risk scores |
+| `swot-analysis.md` | Active SWOT entries with confidence decay applied | Previous day's SWOT |
+| `threat-analysis.md` | Active threat indicators with forward indicators | Previous day's threat analysis |
+| `classification-results.md` | "No new documents — carry-forward active classifications" | Previous day's classifications |
+
+#### Minimum Output Requirements
+
+Even with 0 new documents, every output file MUST contain:
+
+1. **Header** with accurate metadata (date, data source status, lookback result)
+2. **Parliamentary calendar context** — explain WHY no documents (recess? weekend? holiday?)
+3. **Active risk/SWOT carry-forward** with staleness markers
+4. **Forward indicators** — what to watch for in the next analysis cycle
+5. **≥1 Mermaid diagram** (risk dashboard or calendar timeline)
+6. **NEVER** publish a file that says only "Documents Analyzed: 0" with no further content
+
+#### Example: Minimum Output for Empty Day
+
+```markdown
+## 📊 Synthesis Summary — 2026-04-03
+
+**Generated:** 2026-04-03 07:30 UTC
+**Documents Analyzed:** 0 (new) | 12 (carry-forward from 2026-04-01)
+**Parliamentary Calendar:** Riksdagen in session; no plenary votes scheduled for 2026-04-03
+**Data Freshness**: Documents sourced from **2026-04-01**; no new documents for 2 business days
+
+### Active Risk Dashboard (carry-forward)
+
+| Risk | L | I | Score | Last Evidence | Status |
+|:---|:---:|:---:|:---:|:---|:---:|
+| Coalition stability | 2 | 5 | 10 | 2026-04-01 | ✅ Current |
+| L threshold risk | 4 | 5 | 20 | 2026-03-28 | ⚠️ Aging |
+
+### What to Watch Next
+- FöU scheduled votering 2026-04-07 (Monday)
+- SfU betänkande 2025/26:SfU14 expected week of 2026-04-07
+```
+
+---
+
+## 📊 Per-File Analysis Output Example (v4.2)
+
+This section shows the expected structure and depth for a **single MCP document analysis** to serve as a model for AI agents.
+
+### Example: Analysis of Betänkande 2025/26:JuU15
+
+**Input:** Committee report from Justitieutskottet on criminal justice reform
+
+**Expected output structure:**
+
+```markdown
+# 📄 Intelligence Analysis: Bet. 2025/26:JuU15 — Criminal Sentencing Reform
+
+**Document:** Betänkande 2025/26:JuU15
+**Committee:** Justitieutskottet (JuU)
+**Subject:** Skärpta straff för återfallsförbrytare (Harsher sentences for repeat offenders)
+**dok_id:** HC01JuU15
+**Classification:** 🟡 SENSITIVE | justice | ELEVATED
+**Analysis Depth:** L2 (Strategic)
+
+---
+
+## Executive Summary
+
+JuU15 proposes mandatory minimum sentences for repeat violent offenders,
+marking the government's third criminal justice tightening this riksmöte.
+The committee voted 10-7 along government/opposition lines with L filing
+a separate reservation on proportionality grounds. [HIGH confidence]
+
+## SWOT Assessment
+
+| Quadrant | Entry | Confidence | Evidence |
+|:---|:---|:---:|:---|
+| Strength | Government secured committee majority (10-7) | HIGH | Voteringsresultat JuU 2026-03-15 |
+| Weakness | L reservation signals coalition friction on justice policy | HIGH | dok_id: HC01JuU15, reservation §3 |
+| Opportunity | Cross-party support from SD on sentencing enhancement | MEDIUM | search_anforanden: SD spokesperson statement |
+| Threat | ECHR proportionality challenge if sentences exceed EU norms | MEDIUM | Legal analysis; no formal complaint yet |
+
+## Risk Assessment
+
+| Risk | L | I | Score | Calibration Anchor |
+|:---|:---:|:---:|:---:|:---|
+| L breaks coalition on proportionality | 2 | 4 | 8 | "L conditionally supports but signals red line" |
+| Opposition delays via procedural challenge | 3 | 2 | 6 | "S uses reservations but lacks blocking votes" |
+
+## Forward Indicators
+
+- **Watch:** Plenary vote on JuU15 scheduled 2026-04-02
+- **Watch:** L plenary spokesperson — will they maintain reservation or withdraw?
+- **Trigger:** If L votes against in plenary → Coalition Risk escalates to L=4
+```
+
+> **This example demonstrates:** dok_id citations, named actors (L, SD, S), L×I risk scoring with calibration anchors, confidence labels, forward indicators with specific dates, and classified intelligence assessment.
+
+---
+
 ## 🔍 Quality Issues Audit Cumulative Findings
 
 ### Persistent Issues Across Audits (2026-04-02 + 2026-04-03)
@@ -1688,7 +1837,8 @@ Each batch file MUST:
 
 **Document Control:**  
 - **Path:** `/analysis/methodologies/ai-driven-analysis-guide.md`  
-- **Version:** 4.0  
+- **Version:** 4.2  
+- **Key Changes v4.2:** Empty Data Handling Protocol (lookback strategy, direct MCP retrieval, carry-forward protocol, minimum output requirements), Per-File Analysis Output Example (worked example of betänkande analysis with SWOT/risk/forward indicators)  
 - **Key Changes v4.0:** AI article content generation protocol (5 mandatory sections with prompts), visualization integration protocol (Chart.js/D3.js), policy domain inference with committee mapping, pre-article analysis integration requirement, AI self-evaluation quality gate, empty analysis fallback protocol, 2026-04-03 systemic quality audit (444+ generic filler, 456+ excuse-as-analysis, 210+ boilerplate), cumulative quality tracking  
 - **Key Changes v3.0:** Claude Opus 4.6 agentic integration, AI-first analysis principle, deprecated code function table, AI title/description generation prompts, analysis-to-article reference linking, cross-reference quality requirements, 2026-04-02 quality audit findings  
 - **Key Changes v2.1:** Document-type analysis focus table, analysis depth levels (L1/L2/L3), anti-pattern gallery, quality gate checklist with scoring rubric  

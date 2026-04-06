@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.0 | **📅 Last Updated:** 2026-03-30 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-04-06 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -455,10 +455,139 @@ search_anforanden(text="migration", rm="2025/26")
 
 ---
 
+## ⏱️ Temporal Analysis Protocol (v2.1)
+
+Risk scores are **point-in-time snapshots** that degrade as the political environment evolves. This section defines how to track risk evolution over time, when to trigger re-scoring, and how to flag stale assessments.
+
+### Re-Scoring Triggers
+
+The following observable events **require** immediate risk re-scoring for any affected risk category:
+
+| Trigger Event | Affected Risk Category | MCP Detection Tool | Expected Response Time |
+|:---|:---|:---|:---:|
+| Riksdag vote outcome (pass/fail) | Coalition, Policy, Budget | `search_voteringar` | Same day |
+| Lagrådet opinion published | Policy, Constitutional | `search_dokument(doktyp=yttr)` | Same day |
+| Committee hearing conclusion | Policy, Legislative | `get_betankanden` | Same day |
+| Budget publication or amending budget | Budget, Coalition, Electoral | `get_propositioner` | Same day |
+| Court ruling (ECJ, Supreme Court) | Policy, External, Constitutional | `search_dokument` fulltext | Same day |
+| Opinion poll (Novus, SCB partisympati) | Electoral, Coalition | External data | Within 2 days |
+| Government reshuffle or resignation | Coalition, Electoral | News monitoring | Immediate |
+| EU directive transposition deadline | External, Policy | EU calendar | 7 days before deadline |
+| Parliamentary recess start/end | All categories | `get_calendar_events` | Day of |
+
+### Staleness Rules
+
+| Risk Age (since last evidence update) | Status | Required Action |
+|:---:|:---|:---|
+| 0–3 days | **Current** ✅ | No action — score is fresh |
+| 4–7 days | **Aging** 🟡 | Acceptable if no trigger events occurred; note age in assessment |
+| 8–14 days | **Stale** 🟠 | Flag for review — analyst must verify score still holds via MCP query |
+| 15+ days | **Expired** 🔴 | Score MUST be re-assessed before inclusion in any output |
+
+> **Rule:** Every risk score published in a daily, weekly, or monthly analysis MUST include its last-evidence date. Scores older than 7 days without new evidence must carry a `⚠️ STALE` marker.
+
+### Temporal Risk Evolution Table Template
+
+Use this template to track how a single risk evolves across multiple analysis cycles:
+
+| Date | Risk ID | Event / New Evidence | Prior L | Prior I | Prior Score | Δ Evidence Strength | Posterior L | Posterior I | Posterior Score | Trend |
+|:---|:---|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| `[YYYY-MM-DD]` | `[R1–Rn]` | `[MCP-observable event]` | `[1-5]` | `[1-5]` | `[L×I]` | `[±adjustment]` | `[1-5]` | `[1-5]` | `[L×I]` | `[↑ → ↓]` |
+
+### Temporal Evolution Mermaid Template
+
+```mermaid
+graph LR
+    D1["📅 Day 1<br/>R2: L3×I4=12"]
+    D3["📅 Day 3<br/>R2: L2×I4=8"]
+    D7["📅 Day 7<br/>R2: L2×I4=8"]
+
+    D1 -->|"Lagrådet favorable<br/>opinion published"| D3
+    D3 -->|"No new evidence<br/>(4 days)"| D7
+
+    style D1 fill:#dc3545,color:#fff
+    style D3 fill:#ffc107,color:#000
+    style D7 fill:#ffc107,color:#000
+```
+
+---
+
+## 📐 Bayesian Updating Worked Example (v2.1)
+
+This section provides a **complete, date-specific worked example** showing how to apply the Bayesian updating protocol from §Advanced Technique 2 in practice.
+
+### Scenario: ECHR Challenge to Swedish Migration Policy
+
+**Context:** The government's migration reform bill (prop. 2025/26:117) faces a potential European Court of Human Rights challenge. Track how the risk score evolves as new evidence arrives over 7 days.
+
+#### Day 1 (Tuesday 2026-03-24): Initial Assessment
+
+| Risk Factor | Likelihood | Impact | Score | Evidence |
+|:---|:---:|:---:|:---:|:---|
+| ECHR challenge to migration bill | 3 (Possible) | 4 (Significant) | **12** | Prop. 2025/26:117 passed committee (SfU) with 3 reservations; legal scholars cited in DN question ECHR compatibility; no formal complaint yet |
+
+**Confidence:** MEDIUM — academic opinion but no official ECHR action  
+**MCP sources:** `get_propositioner(rm="2025/26")`, `get_betankanden(organ="SfU")`
+
+#### Day 3 (Thursday 2026-03-26): Lagrådet Opinion Published
+
+**New evidence:** Lagrådet (Council on Legislation) publishes opinion on prop. 2025/26:117 stating "no conflict with ECHR Article 3 or Article 8" — favorable to government position.
+
+| Step | Action | Value |
+|:---:|:---|:---|
+| 1 | **Prior score** | L=3, I=4, Score=**12** |
+| 2 | **New evidence** | Lagrådet favorable opinion (official document, HIGH authority) |
+| 3 | **Evidence strength** | Official Riksdag document → ±1 to ±2 adjustment |
+| 4 | **Direction** | Favorable opinion **reduces** likelihood of successful ECHR challenge |
+| 5 | **Posterior score** | L=**2** (−1), I=4 (unchanged), Score=**8** |
+
+**Updated risk:** L=2, I=4, Score=**8** (was 12 → −4)  
+**Confidence:** HIGH — multiple sources including Lagrådet official position  
+**Citation:** `search_dokument(doktyp=yttr, titel="prop. 2025/26:117")`
+
+#### Day 5 (Saturday 2026-03-28): Opposition Files KU Complaint
+
+**New evidence:** Socialdemokraterna (S) files a KU complaint (konstitutionsutskottsanmälan) alleging the migration bill process was rushed without adequate remiss period.
+
+| Step | Action | Value |
+|:---:|:---|:---|
+| 1 | **Prior score** | L=2, I=4, Score=**8** |
+| 2 | **New evidence** | KU complaint filed (official Riksdag document) — procedural challenge |
+| 3 | **Evidence strength** | Official document → ±1 adjustment; procedural complaints are common |
+| 4 | **Direction** | KU complaints **increase** procedural risk but don't directly affect ECHR |
+| 5 | **Assessment** | Impact stays at 4; Likelihood increases to **3** (procedural vulnerability reinforces ECHR risk pathway) |
+| 6 | **Posterior score** | L=**3** (+1), I=4 (unchanged), Score=**12** |
+
+**Updated risk:** L=3, I=4, Score=**12** (was 8 → +4)  
+**Confidence:** HIGH — two official documents with opposing indicators  
+**Citation:** `search_dokument(organ="KU", rm="2025/26")`
+
+#### Day 7 (Monday 2026-03-30): No New Evidence
+
+**No new evidence for 2 days.** Score carries forward unchanged:
+
+- Risk: L=3, I=4, Score=**12** `Last evidence: 2026-03-28 (2 days ago)`
+- Staleness status: **Current** ✅ (within 3-day window)
+- **Next scheduled check:** Tuesday 2026-03-31 — monitor for KU committee response and any ECHR filings
+
+#### Summary: 7-Day Risk Evolution
+
+| Date | Event | L | I | Score | Δ | Confidence |
+|:---|:---|:---:|:---:|:---:|:---:|:---|
+| 2026-03-24 | Initial assessment | 3 | 4 | 12 | — | MEDIUM |
+| 2026-03-26 | Lagrådet favorable opinion | 2 | 4 | 8 | −4 | HIGH |
+| 2026-03-28 | S files KU complaint | 3 | 4 | 12 | +4 | HIGH |
+| 2026-03-30 | No new evidence | 3 | 4 | 12 | 0 | HIGH (Current) |
+
+> **Key Insight:** Risk scores are non-monotonic — they can decrease and increase as competing evidence accumulates. The analyst must track each directional change with its specific evidence, not simply report the latest score.
+
+---
+
 **Document Control:**  
 - **Path:** `/analysis/methodologies/political-risk-methodology.md`  
 - **ISMS Reference:** [Risk_Assessment_Methodology.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md)  
-- **Version:** 2.0  
-- **Advanced Techniques:** Cascading Risk, Bayesian Updating, Risk Interconnection, Scenario Trees  
+- **Version:** 2.1  
+- **Advanced Techniques:** Cascading Risk, Bayesian Updating, Risk Interconnection, Scenario Trees, Temporal Analysis Protocol  
+- **Key Changes v2.1:** Temporal Analysis Protocol (re-scoring triggers, staleness rules, evolution template), Bayesian Updating Worked Example (7-day ECHR challenge scenario with date-specific evidence chain)  
 - **Classification:** Public  
 - **Next Review:** 2026-06-30
