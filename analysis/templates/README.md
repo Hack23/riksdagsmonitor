@@ -232,7 +232,7 @@ graph LR
 | # | Template | Purpose | Key Sections | MCP Data Sources | Output Format | Priority |
 |:-:|----------|---------|-------------|------------------|---------------|:--------:|
 | 1 | [🏷️ Political Classification](political-classification.md) | 7-dimension event classification | Sensitivity Level, Policy Domain, Urgency Level, Classification Dimensions, **Confidence Decay Rule** | `search_dokument`, `get_calendar_events`, `get_betankanden` | Metadata table + checkbox dimensions + Mermaid | 🔴 HIGH |
-| 2 | [⚠️ Risk Assessment](risk-assessment.md) | Quantified risk using 5×5 L×I matrix across 8 categories | Risk Context, Risk Register, Heat Map, Mitigation, **Risk Trend (↑↓→)**, **Previous Assessment Comparison**, **Risk Interconnection Mermaid** | `search_voteringar`, `get_betankanden`, `get_propositioner` | Risk register + L×I heat map Mermaid + trends | 🔴 HIGH |
+| 2 | [⚠️ Risk Assessment](risk-assessment.md) | Quantified risk using 5×5 L×I matrix across 5 main dimensions | Risk Context, Risk Register, Heat Map, Mitigation, **Risk Trend (↑↓→)**, **Previous Assessment Comparison**, **Risk Interconnection Mermaid** | `search_voteringar`, `get_betankanden`, `get_propositioner` | Risk register + L×I heat map Mermaid + trends | 🔴 HIGH |
 | 3 | [🎭 Threat Analysis](threat-analysis.md) | Multi-framework political threat assessment | 6 Threat Dimensions, Diamond Model, Attack Trees, Kill Chain, **Threat Evolution Timeline**, **Cross-Methodology Linkage** | `search_voteringar`, `search_anforanden`, `get_interpellationer` | Dimension tables + severity Mermaid | 🔴 HIGH |
 | 4 | [💼 SWOT Analysis](swot-analysis.md) | Evidence-based SWOT with TOWS + Cross-SWOT | SWOT Context, Quadrants, Strategic Implications, **SWOT Delta (New/Changed/Removed)**, **Temporal Window** | `get_betankanden`, `search_voteringar`, `get_propositioner` | 4-quadrant tables + Mermaid chart | 🟡 MEDIUM |
 | 5 | [👥 Stakeholder Impact](stakeholder-impact.md) | Multi-lens stakeholder impact assessment | 8 Stakeholder Groups, Impact Matrix, **Position Change Tracking**, **Power-Interest Grid** | `search_ledamoter`, `get_betankanden`, `search_anforanden` | Stakeholder tables + Mermaid diagram | 🟡 MEDIUM |
@@ -292,9 +292,9 @@ flowchart LR
 | Attribute | Value |
 |-----------|-------|
 | **Purpose** | Systematic political risk identification, scoring, and mitigation analysis |
-| **Risk Categories** | 8: Policy · Legislative · Economic · Social · Security · Diplomatic · Coalition · Constitutional |
-| **Scoring** | Likelihood (1–5) × Impact (1–5) = Risk Score (1–25) with color coding |
-| **Advanced** | Cascading risk chains · Risk velocity · Political Temperature Index |
+| **Scored Dimensions** | 5: Coalition · Policy · Budget · Electoral · External |
+| **Scoring** | Five-dimension risk profile using 1–5 scores per dimension with an overall risk synthesis and color-coded prioritization |
+| **Advanced** | Related sub-analyses: Cascading risk chains · Risk velocity · Political Temperature Index |
 | **New in v2.2** | **Risk Trend column** (↑↓→) · **Previous Assessment Comparison** · **Risk Interconnection Mermaid diagram** |
 
 ```mermaid

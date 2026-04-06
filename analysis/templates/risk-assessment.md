@@ -12,7 +12,7 @@
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
@@ -95,13 +95,13 @@ Risk Tiers:  1–4 = Low 🟢  |  5–9 = Medium 🟡  |  10–14 = High 🟠  |
 
 | Risk ID | Description | Likelihood (1–5) | Impact (1–5) | Risk Score | Tier | Trend | Mitigation |
 |---------|-------------|:----------------:|:------------:|:----------:|------|:-----:|------------|
-| `RSK-001` | `[REQUIRED: e.g. "Budget vote fails in Riksdag"]` | `[#]` | `[#]` | `[L×I]` | `[🟢/🟡/🟠/🔴]` | `[↑/→/↓]` | `[REQUIRED: 1 sentence]` |
-| `RSK-002` | `[REQUIRED]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[↑/→/↓]` | `[REQUIRED]` |
-| `RSK-003` | `[OPTIONAL]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[↑/→/↓]` | `[OPTIONAL]` |
-| `RSK-004` | `[OPTIONAL]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[↑/→/↓]` | `[OPTIONAL]` |
-| `RSK-005` | `[OPTIONAL]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[↑/→/↓]` | `[OPTIONAL]` |
+| `RSK-001` | `[REQUIRED: e.g. "Budget vote fails in Riksdag"]` | `[#]` | `[#]` | `[L×I]` | `[🟢/🟡/🟠/🔴]` | `[↑/→/↓]` | `[REQUIRED: mitigation actions; append "Trend evidence:" followed by 1 sentence]` |
+| `RSK-002` | `[REQUIRED]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[↑/→/↓]` | `[REQUIRED: mitigation actions; append "Trend evidence:" followed by 1 sentence]` |
+| `RSK-003` | `[OPTIONAL]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[↑/→/↓]` | `[OPTIONAL: mitigation actions; append "Trend evidence:" followed by 1 sentence if trend is used]` |
+| `RSK-004` | `[OPTIONAL]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[↑/→/↓]` | `[OPTIONAL: mitigation actions; append "Trend evidence:" followed by 1 sentence if trend is used]` |
+| `RSK-005` | `[OPTIONAL]` | `[#]` | `[#]` | `[L×I]` | `[tier]` | `[↑/→/↓]` | `[OPTIONAL: mitigation actions; append "Trend evidence:" followed by 1 sentence if trend is used]` |
 
-> **Trend Legend:** `↑ Increasing` — risk score rose since last assessment · `→ Stable` — no change · `↓ Decreasing` — risk score dropped. Provide 1-sentence evidence justification for each trend direction.
+> **Trend Legend:** `↑ Increasing` — risk score rose since last assessment · `→ Stable` — no change · `↓ Decreasing` — risk score dropped. Record the required 1-sentence evidence justification in the final table column, prefixed with `Trend evidence:`.
 
 **Risk Score Summary** (copy scores from table above):
 

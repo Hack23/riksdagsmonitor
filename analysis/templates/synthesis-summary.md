@@ -12,7 +12,7 @@
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--30-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
@@ -161,12 +161,12 @@ graph LR
 
 | Threat Category | Threat Level | Key Finding |
 |----------------|:------------:|-------------|
-| S — Spoofing | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
-| T — Tampering | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
-| R — Repudiation | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
-| I — Disclosure | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
-| D — Denial | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
-| E — Elevation | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
+| NI — Narrative Integrity | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
+| LI — Legislative Integrity | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
+| AC — Accountability | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
+| TR — Transparency | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
+| DP — Democratic Process | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
+| PB — Power Balance | `[LOW/MOD/HIGH/SEVERE]` | `[1 sentence]` |
 
 **Overall Threat Level:** `[REQUIRED: LOW / MODERATE / HIGH / SEVERE]`
 
