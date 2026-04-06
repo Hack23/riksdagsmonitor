@@ -62,11 +62,6 @@ const UNFILLED_PLACEHOLDER_PATTERNS = [
   /\[PLACEHOLDER\]/i,
 ];
 
-/** Use the canonical banned-pattern detector to avoid policy drift in this test. */
-function detectAnalysisBannedPatterns(content: string): string[] {
-  return detectBannedPatterns(content);
-}
-
 /** Regex for Riksdag document IDs (e.g., HD03214, H901AU10, hd10428) */
 const DOK_ID_PATTERN = /\b[Hh][A-Za-z]?\d{2,7}[A-Za-zÅÄÖåäö]*\d*\b/g;
 
@@ -722,7 +717,7 @@ describe('Analysis Quality Validation', () => {
       for (const dir of analysisDirs) {
         for (const [filename, filePath] of dir.files) {
           const content = readCachedFile(filePath);
-          const detected = detectAnalysisBannedPatterns(content);
+          const detected = detectBannedPatterns(content);
           for (const label of detected) {
             failures.push(
               `${dir.date}/${dir.articleType}/${filename}: contains banned pattern "${label}"`
