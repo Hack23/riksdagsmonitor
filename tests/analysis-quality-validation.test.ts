@@ -27,6 +27,7 @@ import { describe, it, expect, beforeAll } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { detectBannedPatterns } from '../scripts/data-transformers/content-generators/shared.js';
 
 // ---------------------------------------------------------------------------
 // Paths & Constants
@@ -61,21 +62,10 @@ const UNFILLED_PLACEHOLDER_PATTERNS = [
   /\[PLACEHOLDER\]/i,
 ];
 
-/** Banned content patterns per SHARED_PROMPT_PATTERNS.md §BANNED Content Patterns */
-const ANALYSIS_BANNED_PATTERNS: readonly { label: string; pattern: RegExp }[] = [
-  {
-    label: 'neutralText: "The political landscape remains fluid…"',
-    pattern: /The political landscape remains fluid,? with both government and opposition positioning for advantage/i,
-  },
-  {
-    label: 'debateAnalysisMarker: "No chamber debate data is available…"',
-    pattern: /No chamber debate data is available for these items,? limiting our ability/i,
-  },
-  {
-    label: 'policySignificanceGeneric: "Requires committee review and chamber debate…"',
-    pattern: /Requires committee review and chamber debate/i,
-  },
-];
+/** Use the canonical banned-pattern detector to avoid policy drift in this test. */
+function detectAnalysisBannedPatterns(content: string): string[] {
+  return detectBannedPatterns(content);
+}
 
 /** Regex for Riksdag document IDs (e.g., HD03214, H901AU10, hd10428) */
 const DOK_ID_PATTERN = /\b[Hh][A-Za-z]?\d{2,7}[A-Za-zÅÄÖåäö]*\d*\b/g;
@@ -184,10 +174,26 @@ function discoverAnalysisDirectories(): AnalysisDirectory[] {
   return dirs;
 }
 
+/** Content cache — avoids repeated readFileSync across tests */
+const _contentCache = new Map<string, string>();
+
 function readAnalysisFile(dir: AnalysisDirectory, filename: string): string | null {
   const filePath = dir.files.get(filename);
   if (!filePath) return null;
-  return fs.readFileSync(filePath, 'utf-8');
+  const cached = _contentCache.get(filePath);
+  if (cached !== undefined) return cached;
+  const content = fs.readFileSync(filePath, 'utf-8');
+  _contentCache.set(filePath, content);
+  return content;
+}
+
+/** Read any file by path, using the content cache */
+function readCachedFile(filePath: string): string {
+  const cached = _contentCache.get(filePath);
+  if (cached !== undefined) return cached;
+  const content = fs.readFileSync(filePath, 'utf-8');
+  _contentCache.set(filePath, content);
+  return content;
 }
 
 function countDokIds(text: string): number {
@@ -220,18 +226,6 @@ function extractDocumentsAnalyzedCount(text: string): number | null {
   const paraMatch = /\*\*Documents Analyzed\*\*:\s*(\d+)/i.exec(text);
   if (paraMatch?.[1]) return parseInt(paraMatch[1], 10);
   return null;
-}
-
-function hasRequiredMetadata(content: string, fields: string[]): string[] {
-  const missing: string[] = [];
-  for (const field of fields) {
-    const escaped = field.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const pattern = new RegExp(`\\*\\*${escaped}\\*\\*`, 'i');
-    if (!pattern.test(content)) {
-      missing.push(field);
-    }
-  }
-  return missing;
 }
 
 /**
@@ -378,7 +372,7 @@ describe('Analysis Quality Validation', () => {
 
       for (const dir of analysisDirs) {
         for (const [filename, filePath] of dir.files) {
-          const content = fs.readFileSync(filePath, 'utf-8');
+          const content = readCachedFile(filePath);
           for (const pattern of UNFILLED_PLACEHOLDER_PATTERNS) {
             if (pattern.test(content)) {
               failures.push(
@@ -641,23 +635,25 @@ describe('Analysis Quality Validation', () => {
   // -----------------------------------------------------------------------
   describe('Confidence Labels', () => {
 
-    it('should have a parseable HIGH/MEDIUM/LOW confidence value in strict-v2 synthesis summary files', () => {
-      // Complementary to Template Structure's metadata presence check —
-      // this validates the extracted value is actually one of HIGH/MEDIUM/LOW
+    it('should have a valid Overall Confidence value (HIGH, MEDIUM, or LOW) in strict-v2 synthesis files', () => {
+      // Combined check: extract the Overall Confidence metadata and verify it
+      // is actually one of HIGH/MEDIUM/LOW (covers both presence and validity)
+      const validConfidenceValues = new Set(['HIGH', 'MEDIUM', 'LOW']);
       const failures: string[] = [];
 
       for (const dir of strictV2SynthesisDirectories) {
         const content = readAnalysisFile(dir, 'synthesis-summary.md');
         if (!content) continue;
         const confidence = extractOverallConfidence(content);
-        if (!confidence) {
+        const normalizedConfidence = confidence?.trim().toUpperCase();
+        if (!normalizedConfidence || !validConfidenceValues.has(normalizedConfidence)) {
           failures.push(
-            `${dir.date}/${dir.articleType}/synthesis-summary.md: no parseable Overall Confidence value (expected HIGH, MEDIUM, or LOW)`
+            `${dir.date}/${dir.articleType}/synthesis-summary.md: invalid Overall Confidence metadata "${confidence ?? 'missing'}" (expected HIGH, MEDIUM, or LOW)`
           );
         }
       }
 
-      expect(failures, `Strict-v2 synthesis files without parseable confidence:\n${failures.join('\n')}`).toHaveLength(0);
+      expect(failures, `Strict-v2 synthesis files with invalid confidence values:\n${failures.join('\n')}`).toHaveLength(0);
     });
 
     it('should have confidence-annotated key findings when using inline labels', () => {
@@ -695,23 +691,6 @@ describe('Analysis Quality Validation', () => {
       expect(failures, `Strict-v2 risk assessments missing scoring:\n${failures.join('\n')}`).toHaveLength(0);
     });
 
-    it('should have a valid Overall Confidence value (HIGH, MEDIUM, or LOW) in strict-v2 synthesis files', () => {
-      const failures: string[] = [];
-
-      for (const dir of strictV2SynthesisDirectories) {
-        const content = readAnalysisFile(dir, 'synthesis-summary.md');
-        if (!content) continue;
-        const confidence = extractOverallConfidence(content);
-        if (!confidence) {
-          failures.push(
-            `${dir.date}/${dir.articleType}/synthesis-summary.md: missing or invalid Overall Confidence metadata (expected HIGH, MEDIUM, or LOW)`
-          );
-        }
-      }
-
-      expect(failures, `Strict-v2 synthesis files with missing/invalid confidence:\n${failures.join('\n')}`).toHaveLength(0);
-    });
-
     it('should have confidence or severity indicators in all threat analysis files', () => {
       const failures: string[] = [];
 
@@ -742,13 +721,12 @@ describe('Analysis Quality Validation', () => {
 
       for (const dir of analysisDirs) {
         for (const [filename, filePath] of dir.files) {
-          const content = fs.readFileSync(filePath, 'utf-8');
-          for (const { label, pattern } of ANALYSIS_BANNED_PATTERNS) {
-            if (pattern.test(content)) {
-              failures.push(
-                `${dir.date}/${dir.articleType}/${filename}: contains banned pattern "${label}"`
-              );
-            }
+          const content = readCachedFile(filePath);
+          const detected = detectAnalysisBannedPatterns(content);
+          for (const label of detected) {
+            failures.push(
+              `${dir.date}/${dir.articleType}/${filename}: contains banned pattern "${label}"`
+            );
           }
         }
       }
@@ -763,7 +741,7 @@ describe('Analysis Quality Validation', () => {
 
       for (const dir of analysisDirs) {
         for (const [filename, filePath] of dir.files) {
-          const content = fs.readFileSync(filePath, 'utf-8');
+          const content = readCachedFile(filePath);
           if (GENERIC_SIGNIFICANCE.test(content)) {
             failures.push(
               `${dir.date}/${dir.articleType}/${filename}: contains "This is significant because" without dok_id evidence`
@@ -781,7 +759,7 @@ describe('Analysis Quality Validation', () => {
 
       for (const dir of analysisDirs) {
         for (const [filename, filePath] of dir.files) {
-          const content = fs.readFileSync(filePath, 'utf-8');
+          const content = readCachedFile(filePath);
           if (UNATTRIBUTED_CLAIMS.test(content)) {
             failures.push(
               `${dir.date}/${dir.articleType}/${filename}: contains unattributed political claim`
