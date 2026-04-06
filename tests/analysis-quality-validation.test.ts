@@ -196,10 +196,10 @@ function countConfidenceLabels(text: string): number {
 function extractDocumentsAnalyzedCount(text: string): number | null {
   // V2 table format: | **Documents Analyzed** | 5 |
   const tableMatch = /\*\*Documents Analyzed\*\*\s*\|\s*(\d+)/i.exec(text);
-  if (tableMatch) return parseInt(tableMatch[1]!, 10);
+  if (tableMatch?.[1]) return parseInt(tableMatch[1], 10);
   // V1 paragraph format: **Documents Analyzed**: 5
   const paraMatch = /\*\*Documents Analyzed\*\*:\s*(\d+)/i.exec(text);
-  if (paraMatch) return parseInt(paraMatch[1]!, 10);
+  if (paraMatch?.[1]) return parseInt(paraMatch[1], 10);
   return null;
 }
 
@@ -598,7 +598,8 @@ describe('Analysis Quality Validation', () => {
 
       // Files that use inline labels should have ≥2 of them for proper coverage
       for (const dir of filesWithLabels) {
-        const content = readAnalysisFile(dir, 'synthesis-summary.md')!;
+        const content = readAnalysisFile(dir, 'synthesis-summary.md');
+        if (!content) continue;
         const count = countConfidenceLabels(content);
         expect(count, `${dir.date}/${dir.articleType}: inline confidence label count`).toBeGreaterThanOrEqual(1);
       }
@@ -685,7 +686,8 @@ describe('Analysis Quality Validation', () => {
     });
 
     it('should not contain "This is significant because" without evidence', () => {
-      const GENERIC_SIGNIFICANCE = /This is significant because(?!.*\b[Hh][A-Za-z]?\d{2,7})/;
+      // Check within the same line (not across paragraphs) for a dok_id after the phrase
+      const GENERIC_SIGNIFICANCE = /This is significant because(?!.{0,200}\b[Hh][A-Za-z]?\d{2,7})/;
       const failures: string[] = [];
 
       for (const dir of analysisDirs) {
@@ -746,7 +748,13 @@ describe('Analysis Quality Validation', () => {
         const uniqueRefs = [...new Set(referencedIds.map(id => id.toUpperCase()))];
 
         const matchingIds = uniqueRefs.filter(id =>
-          jsonFiles.some(jf => jf === id || jf.includes(id) || id.includes(jf))
+          jsonFiles.some(jf => {
+            if (jf === id) return true;
+            // Only match if the shorter string is at least 4 chars to avoid false positives
+            if (id.length >= 4 && jf.includes(id)) return true;
+            if (jf.length >= 4 && id.includes(jf)) return true;
+            return false;
+          })
         );
 
         if (matchingIds.length === 0 && uniqueRefs.length > 0) {
