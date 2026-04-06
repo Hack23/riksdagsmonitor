@@ -920,19 +920,19 @@ When producing a **synthesis-summary.md** (daily, weekly, or monthly), weave tog
 
 #### Step 1: Identify Active Threats
 
-From `threat-analysis.md`, extract threats at Kill Chain Stage ≥3 (Delivery or beyond):
+From `threat-analysis.md`, extract threats at Kill Chain Stage ≥3 (Delivery or beyond), and assign each threat to the **canonical risk category names defined in the risk methodology**:
 
 | Threat | Severity | Kill Chain Stage | Affected Risk Category |
 |:---|:---:|:---:|:---|
-| `[Threat name]` | `[1–5]` | `[Stage name]` | `[Coalition/Policy/Budget/Electoral/External]` |
+| `[Threat name]` | `[1–5]` | `[Stage name]` | `[Coalition stability / Policy implementation / Legislative integrity / Economic governance / Social cohesion / Democratic process]` |
 
 #### Step 2: Map Threats to Risk Scores
 
-Transfer threat severity to risk likelihood per the mapping table above, then compute L×I:
+Transfer threat severity to risk likelihood per the mapping table above, using the same canonical risk categories from the risk methodology, then compute L×I:
 
 | Risk Category | Threat-Informed L | Impact (I) | Score | Prior Score | Δ |
 |:---|:---:|:---:|:---:|:---:|:---:|
-| `[Category]` | `[1–5]` | `[1–5]` | `[L×I]` | `[previous]` | `[change]` |
+| `[Canonical category name]` | `[1–5]` | `[1–5]` | `[L×I]` | `[previous]` | `[change]` |
 
 #### Step 3: Reflect in SWOT
 

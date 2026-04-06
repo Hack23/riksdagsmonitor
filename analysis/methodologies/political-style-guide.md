@@ -261,8 +261,6 @@ Translations must preserve:
 
 ---
 
-# Political Intelligence Style Guide
-
 ## Purpose
 
 This style guide establishes standards for political intelligence reporting across all article types published by Riksdagsmonitor. Inspired by the [ISMS Style Guide](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md), it adapts documentation and communication standards to the domain of parliamentary intelligence reporting.

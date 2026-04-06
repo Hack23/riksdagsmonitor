@@ -500,14 +500,14 @@ Use this template to track how a single risk evolves across multiple analysis cy
 graph LR
     D1["📅 Day 1<br/>R2: L3×I4=12"]
     D3["📅 Day 3<br/>R2: L2×I4=8"]
-    D7["📅 Day 7<br/>R2: L2×I4=8 ⚠️"]
+    D7["📅 Day 7<br/>R2: L2×I4=8"]
 
     D1 -->|"Lagrådet favorable<br/>opinion published"| D3
     D3 -->|"No new evidence<br/>(4 days)"| D7
 
     style D1 fill:#dc3545,color:#fff
     style D3 fill:#ffc107,color:#000
-    style D7 fill:#ffc107,color:#000,stroke:#dc3545,stroke-width:3px
+    style D7 fill:#ffc107,color:#000
 ```
 
 ---

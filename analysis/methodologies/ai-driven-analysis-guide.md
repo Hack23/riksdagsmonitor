@@ -1702,8 +1702,8 @@ When **no new documents** are available from any source (e.g., parliamentary rec
 
 | Analysis File | Carry-Forward Content | Source |
 |:---|:---|:---|
-| `synthesis-summary.md` | Most recent risk dashboard with staleness markers | Previous day's `risk-assessment.md` |
-| `risk-assessment.md` | All active risk scores with `⚠️ Last evidence: [date]` markers | Previous day's risk scores |
+| `synthesis-summary.md` | Most recent risk dashboard with staleness status | Previous day's `risk-assessment.md` |
+| `risk-assessment.md` | All active risk scores with `Last evidence: [date]` field and staleness status derived from the aging table | Previous day's risk scores |
 | `swot-analysis.md` | Active SWOT entries with confidence decay applied | Previous day's SWOT |
 | `threat-analysis.md` | Active threat indicators with forward indicators | Previous day's threat analysis |
 | `classification-results.md` | "No new documents — carry-forward active classifications" | Previous day's classifications |
@@ -1727,7 +1727,7 @@ Even with 0 new documents, every output file MUST contain:
 **Generated:** 2026-04-03 07:30 UTC
 **Documents Analyzed:** 0 (new) | 12 (carry-forward from 2026-04-01)
 **Parliamentary Calendar:** Riksdagen in session; no plenary votes scheduled for 2026-04-03
-**Data Freshness:** No new documents since 2026-04-01 (2 business days)
+**Data Freshness**: Documents sourced from **2026-04-01**; no new documents for 2 business days
 
 ### Active Risk Dashboard (carry-forward)
 
