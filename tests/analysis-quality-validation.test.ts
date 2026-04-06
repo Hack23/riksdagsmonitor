@@ -590,18 +590,18 @@ describe('Analysis Quality Validation', () => {
     });
 
     it('should have confidence-annotated key findings when using inline labels', () => {
-      // Verify that files using inline [HIGH]/[MEDIUM]/[LOW] labels have adequate coverage
-      const filesWithLabels = synthesisDirectories.filter(dir => {
+      // Verify that strict-v2 files using inline [HIGH]/[MEDIUM]/[LOW] labels have ≥2 for proper coverage
+      const v2FilesWithLabels = strictV2SynthesisDirectories.filter(dir => {
         const content = readAnalysisFile(dir, 'synthesis-summary.md');
         return content ? countConfidenceLabels(content) > 0 : false;
       });
 
-      // Files that use inline labels should have ≥2 of them for proper coverage
-      for (const dir of filesWithLabels) {
+      // Strict-v2 files that use inline labels should have ≥2 of them for proper coverage
+      for (const dir of v2FilesWithLabels) {
         const content = readAnalysisFile(dir, 'synthesis-summary.md');
         if (!content) continue;
         const count = countConfidenceLabels(content);
-        expect(count, `${dir.date}/${dir.articleType}: inline confidence label count`).toBeGreaterThanOrEqual(1);
+        expect(count, `${dir.date}/${dir.articleType}: inline confidence label count`).toBeGreaterThanOrEqual(2);
       }
     });
 
@@ -630,11 +630,22 @@ describe('Analysis Quality Validation', () => {
       for (const dir of synthesisDirectories) {
         const content = readAnalysisFile(dir, 'synthesis-summary.md');
         if (!content) continue;
-        // Check both v2 table and v1 paragraph formats
+        // Match v2 table format: | **Confidence** | HIGH |
         const tableMatch = /\*\*(?:Overall\s+)?Confidence(?:\s+Level)?\*\*\s*\|\s*(.+)/i.exec(content);
+        // Match v1 paragraph format: **Confidence**: HIGH  or  **Overall Confidence**: HIGH
         const paraMatch = /\*\*(?:Overall\s+)?Confidence\*\*:\s*(.+)/i.exec(content);
-        const value = tableMatch?.[1]?.trim() ?? paraMatch?.[1]?.trim();
-        if (value && !/\b(HIGH|MEDIUM|LOW)\b/i.test(value)) {
+        // Match colon-inside-bold format: **Overall Confidence:** HIGH
+        const colonInsideMatch = /\*\*(?:Overall\s+)?Confidence:\*\*\s*(.+)/i.exec(content);
+        const value = tableMatch?.[1]?.trim() ?? paraMatch?.[1]?.trim() ?? colonInsideMatch?.[1]?.trim();
+
+        if (!value) {
+          // Enforce presence only on strict-v2 files; legacy files are checked elsewhere
+          if (dir.isStrictV2) {
+            failures.push(
+              `${dir.date}/${dir.articleType}/synthesis-summary.md: missing Overall Confidence metadata line`
+            );
+          }
+        } else if (!/\b(HIGH|MEDIUM|LOW)\b/i.test(value)) {
           failures.push(
             `${dir.date}/${dir.articleType}/synthesis-summary.md: invalid confidence value "${value}"`
           );
