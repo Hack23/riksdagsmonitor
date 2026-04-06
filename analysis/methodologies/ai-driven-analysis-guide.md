@@ -1674,10 +1674,10 @@ flowchart TD
 
 ### Step 1: Lookback Strategy (Automated)
 
-The `pre-article-analysis.ts` pipeline automatically looks back up to **5 business days** (configurable via `MAX_LOOKBACK_BUSINESS_DAYS`). If documents are found via lookback, the `dataFreshness` field records the actual date:
+The `pre-article-analysis.ts` pipeline automatically looks back up to **5 business days** (configurable via `MAX_LOOKBACK_BUSINESS_DAYS`). If documents are found via lookback, the `dataFreshness` field records the actual date using the canonical serialized format expected by downstream parsing:
 
 ```markdown
-**Data Freshness:** Lookback applied — documents from 2026-04-01 (target: 2026-04-03)
+**Data Freshness**: Documents sourced from **2026-04-01** via lookback fallback (article date: 2026-04-03).
 ```
 
 ### Step 2: Direct MCP Retrieval (Agent-Level)

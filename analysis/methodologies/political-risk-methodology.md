@@ -577,7 +577,7 @@ This section provides a **complete, date-specific worked example** showing how t
 | 2026-03-24 | Initial assessment | 3 | 4 | 12 | — | MEDIUM |
 | 2026-03-26 | Lagrådet favorable opinion | 2 | 4 | 8 | −4 | HIGH |
 | 2026-03-28 | S files KU complaint | 3 | 4 | 12 | +4 | HIGH |
-| 2026-03-30 | No new evidence | 3 | 4 | 12 | 0 | HIGH (aging) |
+| 2026-03-30 | No new evidence | 3 | 4 | 12 | 0 | HIGH (Current) |
 
 > **Key Insight:** Risk scores are non-monotonic — they can decrease and increase as competing evidence accumulates. The analyst must track each directional change with its specific evidence, not simply report the latest score.
 
