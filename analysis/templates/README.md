@@ -299,16 +299,16 @@ flowchart LR
 
 ```mermaid
 graph LR
-    subgraph "🟢 Low Risk (1–6)"
+    subgraph "🟢 Low Risk (1–4)"
         L["Routine<br/>Monitoring"]
     end
-    subgraph "🟡 Medium Risk (7–12)"
+    subgraph "🟡 Medium Risk (5–9)"
         M["Active<br/>Tracking"]
     end
-    subgraph "🟠 High Risk (13–18)"
+    subgraph "🟠 High Risk (10–14)"
         H["Urgent<br/>Analysis"]
     end
-    subgraph "🔴 Critical Risk (19–25)"
+    subgraph "🔴 Critical Risk (15–25)"
         C["Immediate<br/>Escalation"]
     end
 

@@ -362,7 +362,7 @@ graph TD
 - [ ] **Executive Summary written:** 3–5 sentences of intelligence-level analysis (not document summary) with confidence label
 - [ ] **≥1 Mermaid diagram rendered:** At least one color-coded Mermaid diagram present (classification, risk, stakeholder, or threat)
 - [ ] **SWOT Impact Assessment filled:** At least 2 quadrants (S/W/O/T) have evidence-backed entries for government or opposition
-- [ ] **Risk Assessment scored:** All 6 risk dimensions have L×I scores (not `[?]` placeholders)
+- [ ] **Risk Assessment scored:** All 5 political risk dimensions (Coalition, Policy, Budget, Electoral, External) have L×I scores (not `[?]` placeholders)
 - [ ] **≥3 evidence points:** At least 3 claims cite specific dok_ids or named evidence sources
 - [ ] **Named actors:** ≥2 named politicians/parties with party affiliations cited
 - [ ] **Forward Indicators present:** ≥2 forward indicators with timelines and watch priorities

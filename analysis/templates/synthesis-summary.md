@@ -268,7 +268,7 @@ graph LR
 - [ ] **Intelligence Dashboard rendered:** Mermaid diagram has actual values (no grey placeholder nodes remaining)
 - [ ] **≥3 documents ranked:** Top Findings table has at least 3 documents with significance scores
 - [ ] **Aggregated SWOT present:** Coalition Balance Mermaid rendered with actual S/W/O/T counts
-- [ ] **Risk Landscape Summary filled:** All 6 risk categories have score ranges and trend indicators
+- [ ] **Risk Landscape Summary filled:** All 5 risk dimensions have score ranges and trend indicators
 - [ ] **Threat Summary complete:** All 6 threat categories assessed with threat levels
 - [ ] **Stakeholder Impact Overview filled:** All 6 stakeholder groups have impact levels and drivers
 - [ ] **Narrative Direction written:** 4–6 sentence lede thesis with confidence label
