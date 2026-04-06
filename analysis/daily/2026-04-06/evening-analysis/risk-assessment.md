@@ -11,28 +11,20 @@
 ## Risk Heat Map
 
 ```mermaid
-graph TD
-    subgraph "Political Risk Matrix — April 6, 2026"
-        direction LR
-        R1["🟡 RSK-01<br/>Opposition security block<br/>L:2 × I:5 = 10"]
-        R2["🟡 RSK-02<br/>Coalition immigration split<br/>L:2 × I:4 = 8"]
-        R3["🟡 RSK-03<br/>Healthcare reform stall<br/>L:3 × I:3 = 9"]
-        R4["🟢 RSK-04<br/>Education confrontation<br/>L:3 × I:2 = 6"]
-        R5["🟢 RSK-05<br/>Democratic input strain<br/>L:2 × I:3 = 6"]
-        R6["🟢 RSK-06<br/>EU subsidiarity friction<br/>L:1 × I:3 = 3"]
-    end
-    R1 -->|"S may seek amendments"| BLOCK["FöU/JuU committee<br/>security legislation"]
-    R2 -->|"L cautious on immigration"| SPLIT["SfU/SoU handling<br/>HD03215 + HD03229"]
-    R3 -->|"Capacity strain"| STALL["SoU handling 3 reports<br/>+ EU subsidiarity"]
-    R4 -->|"15+ opposition motions"| CONFRONT["UbU processing<br/>5 education props"]
-    R5 -->|"336+ motions rejected"| INPUT["CU18, JuU11, KU30<br/>single week"]
-    R6 -->|"Institutional, not political"| SUBSID["HD01SoU37<br/>subsidiarity opinion"]
-    style R1 fill:#ffd93d,color:#000
-    style R2 fill:#ffd93d,color:#000
-    style R3 fill:#ffd93d,color:#000
-    style R4 fill:#6bcb77,color:#000
-    style R5 fill:#6bcb77,color:#000
-    style R6 fill:#6bcb77,color:#000
+quadrantChart
+    title Political Risk Matrix — April 6, 2026
+    x-axis "Low Likelihood" --> "High Likelihood"
+    y-axis "Low Impact" --> "High Impact"
+    quadrant-1 "Critical Watch"
+    quadrant-2 "Monitor Closely"
+    quadrant-3 "Low Priority"
+    quadrant-4 "Manage Proactively"
+    "Opposition security block": [0.3, 0.8]
+    "Coalition immigration split": [0.25, 0.65]
+    "Healthcare reform stall": [0.45, 0.5]
+    "Education confrontation": [0.55, 0.35]
+    "EU subsidiarity friction": [0.2, 0.3]
+    "Democratic input strain": [0.4, 0.45]
 ```
 
 ## Detailed Risk Assessment

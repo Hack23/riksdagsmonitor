@@ -74,6 +74,9 @@ const MERMAID_BLOCK_PATTERN = /```mermaid[\s\S]*?```/g;
 /** Mermaid style directive pattern (indicates color-coded diagrams) */
 const MERMAID_STYLE_PATTERN = /style\s+\w+\s+fill:|fill:#[0-9a-fA-F]{3,6}/;
 
+/** Mermaid diagram types that are inherently styled (no `style` directive support) */
+const INHERENTLY_STYLED_MERMAID = /```mermaid\s*\n\s*(quadrantChart|pie|gantt|gitGraph|timeline|mindmap|sankey)/;
+
 /** L×I scoring pattern for risk assessments */
 const LXI_SCORING_PATTERN = /[Ll](?:ikelihood)?\s*[×xX*]\s*[Ii](?:mpact)?|Risk\s+Score|L×I/;
 
@@ -205,7 +208,9 @@ function countMermaidBlocks(text: string): number {
 function hasMermaidStyling(text: string): boolean {
   const blocks = text.match(MERMAID_BLOCK_PATTERN);
   if (!blocks) return false;
-  return blocks.some(block => MERMAID_STYLE_PATTERN.test(block));
+  return blocks.every(block =>
+    MERMAID_STYLE_PATTERN.test(block) || INHERENTLY_STYLED_MERMAID.test(block)
+  );
 }
 
 function countConfidenceLabels(text: string): number {
