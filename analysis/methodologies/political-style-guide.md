@@ -960,7 +960,7 @@ For each prohibited pattern, this section shows a concrete rewrite demonstrating
 > - 📅 **[YYYY-MM-DD]:** Plenary votering on bet. 2025/26:JuU15 — L's plenary vote will signal coalition cohesion on justice policy
 > - 📅 **[YYYY-MM-DD]:** FiU spring amending budget deadline — SD budget demands must be resolved before this date
 > - 📅 **[YYYY-MM-DD]:** SCB partisympatiundersökning Q1 release — L's polling position relative to 4% threshold
-> - **Trigger:** If L votes against JuU15 in plenary AND SCB shows L below 4%, Coalition Risk escalates from L=3,I=5,Score=15 to L=4,I=5,Score=20
+> - **Trigger:** If Liberalerna (L) votes against JuU15 in plenary AND SCB shows Liberalerna below 4%, Coalition Risk escalates from Likelihood=3, Impact=5, Score=15 to Likelihood=4, Impact=5, Score=20
 
 **What changed:** Replaced a vague future reference with placeholder-dated events, specific MCP-observable triggers, and a quantified escalation pathway.
 

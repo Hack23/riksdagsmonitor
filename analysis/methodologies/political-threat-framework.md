@@ -870,7 +870,7 @@ flowchart LR
     R["⚠️ Risk Methodology<br/>Likelihood × Impact"]
     S["💼 SWOT Framework<br/>Threats Quadrant"]
 
-    T -->|"Severity informs<br/>Likelihood (L) &amp; Impact (I)"| R
+    T -->|"Severity informs<br/>Likelihood (L) & Impact (I)"| R
     T -->|"Active threats become<br/>SWOT Threat entries"| S
     R -->|"Risk scores inform<br/>Threat prioritization"| T
     S -->|"SWOT Threats feed<br/>Attack Tree targets"| T
@@ -880,17 +880,11 @@ flowchart LR
     style S fill:#3498db,color:#fff
 ```
 
-#### Severity → Likelihood Mapping Table
+#### Severity → Risk Alignment
 
-| Threat Severity (this framework) | Risk Likelihood (risk-methodology) | Rationale |
-|:---:|:---:|:---|
-| 1 (Negligible) | L=1 (Rare) | Theoretical threat, no active indicators |
-| 2 (Minor) | L=2 (Unlikely) | Threat identified but no progression observed |
-| 3 (Moderate) | L=3 (Possible) | Active threat indicators, early Kill Chain stages |
-| 4 (Major) | L=4 (Likely) | Threat at mid-to-late Kill Chain stage, multiple indicators |
-| 5 (Severe) | L=5 (Almost Certain) | Threat at final Kill Chain stage, imminent materialization |
+Use the existing **Threat-to-Risk Integration** table earlier in this document as the authoritative mapping between this framework's severity scores and the risk methodology values.
 
-**Rule:** When a threat assessment produces a severity score, it MUST be reflected in the corresponding risk category's Likelihood value. If a threat scores Severity=4, the corresponding risk cannot have Likelihood=1 without explicit justification.
+**Rule:** When a threat assessment produces a severity score, it MUST be reflected in the corresponding risk category's **Likelihood (L)** and **Impact (I)** values in accordance with the existing Threat-to-Risk Integration mapping. If a threat scores `Severity=4`, the corresponding risk assessment cannot assign materially inconsistent values (for example, `L=1` and/or `I=1`) without explicit justification.
 
 ### SWOT "Threats" vs. Dedicated Threat Analysis
 
