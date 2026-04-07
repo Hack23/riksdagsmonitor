@@ -169,6 +169,17 @@ bash({ command: "..." }) // ← WRONG: missing description
 
 > When you see fenced bash code blocks below (three backticks followed by bash), they show the **command content** to execute. You MUST wrap each in a proper bash tool call with both `command` and `description` parameters. For multi-line scripts, join commands with `&&` or `;` into a single `command` string.
 
+## 🛡️ AWF Shell Safety — MANDATORY for Agent-Generated Bash
+
+> **The Agent Workflow Firewall (AWF) blocks dangerous shell expansion patterns.** Fenced bash blocks in init steps run as normal shell, but any command YOU generate via the `bash` tool IS subject to AWF filtering.
+
+**Key rules — NEVER use these in your generated bash commands:**
+1. **NEVER** use `$`+`{VAR}` — always use `$VAR` (no curly braces)
+2. **NEVER** use `$`+`(command)` — use pipes, `find -exec`, or separate commands
+3. **NEVER** use `$`+`{VAR:-default}` — set defaults with `if/then` first, then use `$VAR`
+4. **Use `find -exec`** instead of for-loops with `$`+`(basename ...)`
+5. **Use direct file paths** when possible instead of variable-constructed paths with braces
+
 ## ⚠️ NON-NEGOTIABLE RULES
 
 1. Every run **MUST** end with exactly one safe output tool call:
@@ -237,7 +248,7 @@ Before generating articles, consult these skills:
 
 ### Article Type Isolation
 
-> 🚨 **This workflow writes analysis ONLY to `analysis/daily/${ARTICLE_DATE}/evening-analysis/`**. NEVER write to the parent date directory or another article type's folder. See SHARED_PROMPT_PATTERNS.md "Article Type Isolation" section.
+> 🚨 **This workflow writes analysis ONLY to `analysis/daily/$ARTICLE_DATE/evening-analysis/`**. NEVER write to the parent date directory or another article type's folder. See SHARED_PROMPT_PATTERNS.md "Article Type Isolation" section.
 
 ### Standardised Analysis Depth Gate
 
@@ -1038,7 +1049,7 @@ get_calendar_events({ from: "<tomorrow>", tom: "<tomorrow>", limit: 50 })
 
 **If ALL queries return empty results** (no votes, no speeches, no reports, no government activity):
 1. **First check if analysis artifacts exist** in `analysis/daily/YYYY-MM-DD/evening-analysis/`
-2. If analysis artifacts exist: commit them with `git add "analysis/daily/$ARTICLE_DATE/evening-analysis/" && git commit -m "📊 Analysis artifacts - Evening Analysis - $(date -u +%Y-%m-%d)"` and call `safeoutputs___create_pull_request` with title `📊 Analysis Only - Evening Analysis - {date}`, labels `["analysis-only", "evening-analysis"]`
+2. If analysis artifacts exist: commit them with `git add "analysis/daily/$ARTICLE_DATE/evening-analysis/" && git commit -m "📊 Analysis artifacts - Evening Analysis - {date}"` and call `safeoutputs___create_pull_request` with title `📊 Analysis Only - Evening Analysis - {date}`, labels `["analysis-only", "evening-analysis"]`
 3. If NO analysis artifacts exist: call `safeoutputs___noop({"message": "No significant parliamentary activity found for today's evening analysis. Pre-article analysis pipeline also produced no output."})` and stop.
 
 ## Step 3: Generate Articles
@@ -1129,11 +1140,11 @@ echo "Generated: $(echo "$NEW_ARTICLES" | wc -l) articles"
 **2. Generate AI meta descriptions** (150-160 chars) — Summarize key political intelligence from actual content. BANNED: ❌ any description starting with "Analysis of N documents".
 
 **3. Add analysis references section** — Insert the "📊 Analysis & Sources" HTML block before footer. For evening analysis, link to ALL article-type analysis folders for the date:
-- `analysis/daily/${ARTICLE_DATE}/committeeReports/` (if exists)
-- `analysis/daily/${ARTICLE_DATE}/propositions/` (if exists)
-- `analysis/daily/${ARTICLE_DATE}/interpellations/` (if exists)
-- `analysis/daily/${ARTICLE_DATE}/motions/` (if exists)
-- `analysis/daily/${ARTICLE_DATE}/realtime-*/` (if exists)
+- `analysis/daily/$ARTICLE_DATE/committeeReports/` (if exists)
+- `analysis/daily/$ARTICLE_DATE/propositions/` (if exists)
+- `analysis/daily/$ARTICLE_DATE/interpellations/` (if exists)
+- `analysis/daily/$ARTICLE_DATE/motions/` (if exists)
+- `analysis/daily/$ARTICLE_DATE/realtime-*/` (if exists)
 - `analysis/methodologies/ai-driven-analysis-guide.md`
 
 **4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.
@@ -1223,7 +1234,7 @@ news/content/{YYYY-MM-DD}/evening-analysis
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally (scoped to evening-analysis subfolder): `git add news/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/evening-analysis/" analysis/weekly/ && git commit -m "🌆 Evening Analysis - $(date +%Y-%m-%d)"`
+> 2. Stage and commit locally (scoped to evening-analysis subfolder): `git add news/ "analysis/daily/$ARTICLE_DATE/evening-analysis/" analysis/weekly/ && git commit -m "🌆 Evening Analysis - $ARTICLE_DATE"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -1310,10 +1321,10 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 
 **YOU MUST call exactly one safe output tool before exiting.** This is the single most important rule of this workflow.
 
-**Analysis artifacts MUST always be committed.** Before calling any safe output tool, check if `analysis/daily/YYYY-MM-DD/evening-analysis/` (for the current `ARTICLE_DATE`) contains files. If it does, commit only that directory with `git add "analysis/daily/${ARTICLE_DATE}/evening-analysis/"` and include it in the PR or create an analysis-only PR.
+**Analysis artifacts MUST always be committed.** Before calling any safe output tool, check if `analysis/daily/YYYY-MM-DD/evening-analysis/` (for the current `ARTICLE_DATE`) contains files. If it does, commit only that directory with `git add "analysis/daily/$ARTICLE_DATE/evening-analysis/"` and include it in the PR or create an analysis-only PR.
 
 - If you generated articles → `safeoutputs___create_pull_request({...})` (includes analysis artifacts)
-- If no articles but analysis artifacts exist → `git add "analysis/daily/${ARTICLE_DATE}/evening-analysis/" && git commit -m "📊 Analysis artifacts - Evening Analysis - $(date -u +%Y-%m-%d)"` then `safeoutputs___create_pull_request({"title": "📊 Analysis Only - Evening Analysis - {date}", "body": "## Analysis Only\n\nNo articles generated but analysis artifacts committed for review.\n\nDocuments analyzed: {count}\nKey findings: {summary from synthesis-summary.md}", "labels": ["analysis-only", "evening-analysis"]})`
+- If no articles but analysis artifacts exist → `git add "analysis/daily/$ARTICLE_DATE/evening-analysis/" && git commit -m "📊 Analysis artifacts - Evening Analysis - {date}"` then `safeoutputs___create_pull_request({"title": "📊 Analysis Only - Evening Analysis - {date}", "body": "## Analysis Only\n\nNo articles generated but analysis artifacts committed for review.\n\nDocuments analyzed: {count}\nKey findings: {summary from synthesis-summary.md}", "labels": ["analysis-only", "evening-analysis"]})`
 - If MCP server unreachable (no analysis produced) → `safeoutputs___noop({"message": "MCP server unavailable. No articles or analysis generated."})`
 - If MCP data unavailable → `safeoutputs___missing_data({"reason": "MCP returned no usable data for evening analysis."})`
 - If any error occurs → commit any analysis artifacts first, then `safeoutputs___noop({"message": "Error during evening analysis: <brief description>"})`

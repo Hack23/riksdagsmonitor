@@ -207,6 +207,17 @@ bash({ command: "..." }) // ← WRONG: missing description
 
 > When you see fenced bash code blocks below (three backticks followed by bash), they show the **command content** to execute. You MUST wrap each in a proper bash tool call with both `command` and `description` parameters. For multi-line scripts, join commands with `&&` or `;` into a single `command` string.
 
+## 🛡️ AWF Shell Safety — MANDATORY for Agent-Generated Bash
+
+> **The Agent Workflow Firewall (AWF) blocks dangerous shell expansion patterns.** Fenced bash blocks in init steps run as normal shell, but any command YOU generate via the `bash` tool IS subject to AWF filtering.
+
+**Key rules — NEVER use these in your generated bash commands:**
+1. **NEVER** use `$`+`{VAR}` — always use `$VAR` (no curly braces)
+2. **NEVER** use `$`+`(command)` — use pipes, `find -exec`, or separate commands
+3. **NEVER** use `$`+`{VAR:-default}` — set defaults with `if/then` first, then use `$VAR`
+4. **Use `find -exec`** instead of for-loops with `$`+`(basename ...)`
+5. **Use direct file paths** when possible instead of variable-constructed paths with braces
+
 ## ⚠️ NON-NEGOTIABLE RULES
 
 1. Every run **MUST** end with exactly one safe output tool call:
@@ -274,7 +285,7 @@ Before generating articles, consult these skills:
 
 ### Article Type Isolation
 
-> 🚨 **This workflow writes analysis ONLY to `analysis/daily/${ARTICLE_DATE}/${REQUESTED_TYPE}/`**. NEVER write to the parent date directory or another article type's folder. See SHARED_PROMPT_PATTERNS.md "Article Type Isolation" section.
+> 🚨 **This workflow writes analysis ONLY to `analysis/daily/$ARTICLE_DATE/$REQUESTED_TYPE/`**. NEVER write to the parent date directory or another article type's folder. See SHARED_PROMPT_PATTERNS.md "Article Type Isolation" section.
 
 ### Standardised Analysis Depth Gate
 
@@ -713,7 +724,7 @@ For **non-deep-inspection** article types only, if the script fails, generate ar
 
 > 🚨 **v4.0 CRITICAL**: This is the multi-type article generator. Apply content quality enforcement for ALL article types. See `SHARED_PROMPT_PATTERNS.md` §"AI ARTICLE CONTENT GENERATION" and `ai-driven-analysis-guide.md` v4.0.
 
-**1. Read pre-computed analysis** — For the current `${REQUESTED_TYPE}`, read ALL analysis files from `analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/`. If synthesis reports "0 documents analyzed", use MCP tools to fetch data directly (see ai-driven-analysis-guide.md §Empty Analysis Fallback).
+**1. Read pre-computed analysis** — For the current `$REQUESTED_TYPE`, read ALL analysis files from `analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/`. If synthesis reports "0 documents analyzed", use MCP tools to fetch data directly (see ai-driven-analysis-guide.md §Empty Analysis Fallback).
 
 **2. Scan for BANNED content patterns** — Search each generated article for these exact strings or equivalent boilerplate patterns and REPLACE them:
 - Exact string: `"The political landscape remains fluid"` → Replace with specific winners/losers
