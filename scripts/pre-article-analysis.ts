@@ -311,7 +311,7 @@ function analyzeDocuments(docs: RawDocument[], _cia: unknown, _lang: string): St
       const organ = d.organ || d.committee || '';
 
       // Domain classification using committee→domain mapping
-      const domainResult = detectPolicyDomainsWithConfidence(d, 'en');
+      const domainResult = detectPolicyDomainsWithConfidence(d, _lang);
       const domainConfidence = domainResult.confidence === 'HIGH' ? 70 : 30;
 
       // Significance scoring heuristics based on document type and content
