@@ -189,7 +189,7 @@
     "worldbank-mcp": "1.0.1"
   },
   "optionalDependencies": {
-    "cypress": "15.13.0"
+    "cypress": "15.13.1"
   },
   "overrides": {
     "glob": "13.0.6"
