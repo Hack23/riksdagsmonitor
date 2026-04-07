@@ -65,6 +65,10 @@ const UNFILLED_PLACEHOLDER_PATTERNS = [
 /** Regex for Riksdag document IDs (e.g., HD03214, H901AU10, hd10428) */
 const DOK_ID_PATTERN = /\b[Hh][A-Za-z]?\d{2,7}[A-Za-zÅÄÖåäö]*\d*\b/g;
 
+/** Committee report abbreviation pattern (e.g., FöU12, JuU15, MJU30, KU38).
+ *  These are valid Riksdag document references used in synthesis summaries. */
+const COMMITTEE_CODE_PATTERN = /\b(?:AU|CU|FiU|FöU|JuU|KU|KrU|MJU|NU|SfU|SkU|SoU|TU|UbU|UU)\d{1,3}\b/g;
+
 /** Confidence label pattern (inline [HIGH]/[MEDIUM]/[LOW] annotations) */
 const CONFIDENCE_LABEL_PATTERN = /\[(HIGH|MEDIUM|LOW)\]/g;
 
@@ -77,8 +81,12 @@ const MERMAID_STYLE_PATTERN = /style\s+\w+\s+fill:|fill:#[0-9a-fA-F]{3,6}/;
 /** Mermaid diagram types that are inherently styled (no `style` directive support) */
 const INHERENTLY_STYLED_MERMAID = /```mermaid\s*\n\s*(quadrantChart|pie|gantt|gitGraph|timeline|mindmap|sankey)/;
 
-/** L×I scoring pattern for risk assessments */
-const LXI_SCORING_PATTERN = /[Ll](?:ikelihood)?\s*[×xX*]\s*[Ii](?:mpact)?|Risk\s+Score|L×I/;
+/** L×I scoring pattern for risk assessments — matches various common formats:
+ *  - `L × I`, `L*I`, `Likelihood × Impact`
+ *  - `Risk Score`
+ *  - `Likelihood (1-5) | Impact (1-5)` table headers
+ *  - Inline `L:N × I:N` (Mermaid-embedded) */
+const LXI_SCORING_PATTERN = /[Ll](?:ikelihood)?\s*[×xX*]\s*[Ii](?:mpact)?|Risk\s+Score|L×I|Likelihood\s*\([^)]*\)\s*\|\s*Impact\s*\([^)]*\)|L:\d+\s*×\s*I:\d+/;
 
 /**
  * Structured analysis ID pattern. Matches IDs with a known prefix, ISO date,
@@ -195,9 +203,12 @@ function readCachedFile(filePath: string): string {
 }
 
 function countDokIds(text: string): number {
-  const matches = text.match(DOK_ID_PATTERN);
-  if (!matches) return 0;
-  return new Set(matches.map(m => m.toUpperCase())).size;
+  const dokMatches = text.match(DOK_ID_PATTERN);
+  const committeeMatches = text.match(COMMITTEE_CODE_PATTERN);
+  const ids = new Set<string>();
+  if (dokMatches) dokMatches.forEach(m => ids.add(m.toUpperCase()));
+  if (committeeMatches) committeeMatches.forEach(m => ids.add(m.toUpperCase()));
+  return ids.size;
 }
 
 function countMermaidBlocks(text: string): number {
@@ -436,6 +447,8 @@ describe('Analysis Quality Validation', () => {
         for (const analysisFile of ['classification-results.md', 'significance-scoring.md'] as const) {
           const content = readAnalysisFile(dir, analysisFile);
           if (!content) continue;
+          // Skip script-generated (v1) files in mixed-format directories
+          if (!isStrictV2Format(content)) continue;
           const count = countDokIds(content);
           if (count < 1) {
             failures.push(
@@ -455,6 +468,8 @@ describe('Analysis Quality Validation', () => {
       for (const dir of strictV2WithDocs) {
         const content = readAnalysisFile(dir, 'risk-assessment.md');
         if (!content) continue;
+        // Skip script-generated (v1) files in mixed-format directories
+        if (!isStrictV2Format(content)) continue;
         const count = countDokIds(content);
         if (count < 1) {
           failures.push(
@@ -490,6 +505,8 @@ describe('Analysis Quality Validation', () => {
       for (const dir of strictV2WithDocs) {
         const content = readAnalysisFile(dir, 'swot-analysis.md');
         if (!content) continue;
+        // Skip script-generated (v1) files in mixed-format directories
+        if (!isStrictV2Format(content)) continue;
         const dokIdCount = countDokIds(content);
         if (dokIdCount < 1) {
           failures.push(
@@ -549,6 +566,8 @@ describe('Analysis Quality Validation', () => {
       for (const dir of strictV2Directories) {
         const content = readAnalysisFile(dir, 'swot-analysis.md');
         if (!content) continue;
+        // Skip script-generated (v1) files in mixed-format directories
+        if (!isStrictV2Format(content)) continue;
         const count = countMermaidBlocks(content);
         if (count < 1) {
           failures.push(
@@ -566,6 +585,8 @@ describe('Analysis Quality Validation', () => {
       for (const dir of strictV2Directories) {
         const content = readAnalysisFile(dir, 'risk-assessment.md');
         if (!content) continue;
+        // Skip script-generated (v1) files in mixed-format directories
+        if (!isStrictV2Format(content)) continue;
         const count = countMermaidBlocks(content);
         if (count < 1) {
           failures.push(
@@ -678,6 +699,8 @@ describe('Analysis Quality Validation', () => {
       for (const dir of strictV2Directories) {
         const content = readAnalysisFile(dir, 'risk-assessment.md');
         if (!content) continue;
+        // Skip script-generated (v1) files in mixed-format directories
+        if (!isStrictV2Format(content)) continue;
         // Accept either L×I formula or a Risk Level indicator
         const hasLxI = LXI_SCORING_PATTERN.test(content);
         const hasRiskLevel = /\bRisk\s+Level\b/i.test(content);

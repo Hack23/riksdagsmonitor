@@ -174,7 +174,7 @@ function significanceLabel(score: number): string {
  * Keep all parsing in this file derived from this constant so a future prefix
  * change does not silently drift from regex-based extraction logic.
  */
-const POLICY_DOMAIN_INSIGHT_PREFIX = 'Policy domain:';
+export const POLICY_DOMAIN_INSIGHT_PREFIX = 'Policy domain:';
 
 function escapeRegExp(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -288,7 +288,9 @@ export function serializeClassificationResults(
       .filter((v, i, arr) => arr.indexOf(v) === i)
       .slice(0, 3);
     if (domains.length === 0 && result.keyInsights.length > 0) {
-      const domainInsight = result.keyInsights.find(i => i.startsWith(POLICY_DOMAIN_INSIGHT_PREFIX));
+      const domainInsight = result.keyInsights
+        .map(insight => insight.trim())
+        .find(insight => POLICY_DOMAIN_INSIGHT_REGEX.test(insight));
       if (domainInsight) {
         const raw = extractPolicyDomainFromInsight(domainInsight);
         if (raw) {

@@ -65,6 +65,7 @@ import {
   serializeSynthesisSummary,
   serializeDocumentAnalysis,
   sanitizeDokId,
+  POLICY_DOMAIN_INSIGHT_PREFIX,
 } from './pre-article-analysis/markdown-serializer.js';
 
 // ---------------------------------------------------------------------------
@@ -74,12 +75,6 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
 const ANALYSIS_DIR = path.join(REPO_ROOT, 'analysis');
-
-/**
- * Prefix used in keyInsights to tag policy domain classifications.
- * This format is consumed by the markdown-serializer to extract domain info.
- */
-export const POLICY_DOMAIN_INSIGHT_PREFIX = 'Policy domain:';
 
 /**
  * Swedish phrase indicating a motion responds to a government proposition.
