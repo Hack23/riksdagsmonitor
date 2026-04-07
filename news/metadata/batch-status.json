@@ -1,13 +1,18 @@
 {
   "complete": true,
-  "completedLanguages": [
-    "en",
-    "sv"
+  "allDone": [
+    "da",
+    "no",
+    "fi",
+    "de",
+    "fr",
+    "es",
+    "nl",
+    "ar",
+    "he",
+    "ja",
+    "ko",
+    "zh"
   ],
-  "remainingLanguages": [],
-  "allRequestedLanguages": [
-    "en",
-    "sv"
-  ],
-  "timestamp": "2026-04-07T07:05:10.904Z"
+  "timestamp": "2026-04-07T11:28:56.439Z"
 }
