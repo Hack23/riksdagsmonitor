@@ -32,6 +32,7 @@ import { calculateCoalitionRiskIndex, detectAnomalousPatterns } from './data-tra
 import type { RawDocument, CIAContext } from './data-transformers/types.js';
 import { loadCIAContext } from './news-types/weekly-review/index.js';
 import { normalizedCIAContext } from './news-types/weekly-review/data-loader.js';
+import { detectPolicyDomainsWithConfidence } from './data-transformers/policy-analysis.js';
 
 import {
   downloadAllDocuments,
@@ -64,6 +65,7 @@ import {
   serializeSynthesisSummary,
   serializeDocumentAnalysis,
   sanitizeDokId,
+  POLICY_DOMAIN_INSIGHT_PREFIX,
 } from './pre-article-analysis/markdown-serializer.js';
 
 // ---------------------------------------------------------------------------
@@ -73,6 +75,13 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
 const ANALYSIS_DIR = path.join(REPO_ROOT, 'analysis');
+
+/**
+ * Swedish phrase indicating a motion responds to a government proposition.
+ * Documents from the Riksdag API always use Swedish titles regardless of
+ * the target analysis language, so Swedish-only detection is correct here.
+ */
+const MOTION_PROPOSITION_RESPONSE_PREFIX = 'med anledning av prop';
 
 function formatTimestampForMarkdown(date: Date = new Date()): string {
   return date.toISOString().slice(0, 16).replace('T', ' ') + ' UTC';
@@ -279,17 +288,71 @@ interface StubDocumentResult {
   confidenceScore: number;
 }
 
-/** Stub: returns empty analysis results. Real analysis is AI-driven in workflows. */
+/**
+ * Script-based document analysis using available metadata.
+ *
+ * This function provides automated data extraction and basic classification
+ * from document metadata (doktyp, organ, title keywords). It does NOT perform
+ * deep political intelligence analysis — that is the responsibility of AI agents
+ * in agentic workflows following analysis/methodologies/ai-driven-analysis-guide.md.
+ *
+ * Significance scoring heuristics:
+ * - propositions (prop): base 5, +2 if defence/migration/budget topic
+ * - committee reports (bet): base 4, +2 if justice/defence committee
+ * - interpellations (ip): base 3, +1 if targets senior minister
+ * - motions (mot): base 2, +1 if responds to government proposition
+ * - other: base 1
+ */
 function analyzeDocuments(docs: RawDocument[], _cia: unknown, _lang: string): StubBatchResult {
   return {
-    results: docs.map(d => ({
-      document: d,
-      overallSignificance: 0,
-      perspectives: [],
-      crossDocumentLinks: [],
-      keyInsights: [],
-      confidenceScore: 0,
-    })),
+    results: docs.map(d => {
+      const doktyp = (d.doktyp || '').toLowerCase();
+      const title = (d.titel || d.title || '').toLowerCase();
+      const organ = d.organ || d.committee || '';
+
+      // Domain classification using committee→domain mapping
+      const domainResult = detectPolicyDomainsWithConfidence(d, _lang);
+      const domainConfidence = domainResult.confidence === 'HIGH' ? 70 : 30;
+
+      // Significance scoring heuristics based on document type and content
+      let significance = 1;
+      if (doktyp === 'prop') {
+        significance = 5;
+        if (title.includes('försvar') || title.includes('nato') || title.includes('budget') ||
+            title.includes('migration') || title.includes('utvisning') || title.includes('cyber')) {
+          significance += 2;
+        }
+      } else if (doktyp === 'bet') {
+        significance = 4;
+        if (['JuU', 'FöU', 'UU', 'KU'].some(c => organ.includes(c))) {
+          significance += 2;
+        }
+      } else if (doktyp === 'ip') {
+        significance = 3;
+        if (title.includes('statsråd') || title.includes('minister')) {
+          significance += 1;
+        }
+      } else if (doktyp === 'mot') {
+        significance = 2;
+        if (title.includes(MOTION_PROPOSITION_RESPONSE_PREFIX)) {
+          significance += 1; // Response to proposition = slightly more significant
+        }
+      }
+
+      // Cap at 10
+      significance = Math.min(significance, 10);
+
+      return {
+        document: d,
+        overallSignificance: significance,
+        perspectives: [],
+        crossDocumentLinks: [],
+        keyInsights: domainResult.domains.length > 0
+          ? [`${POLICY_DOMAIN_INSIGHT_PREFIX} ${domainResult.domains.join(', ')} (${domainResult.confidence} confidence)`]
+          : [],
+        confidenceScore: domainConfidence,
+      };
+    }),
     crossDocumentLinks: [],
   };
 }
