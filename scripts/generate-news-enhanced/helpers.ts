@@ -419,6 +419,12 @@ export interface AnalysisEnrichment {
   confidenceLabel: ConfidenceLabel;
   significance?: number;
   urgency?: UrgencyLabel;
+  /** Key findings from pre-computed synthesis analysis (for article enrichment) */
+  synthesisKeyFindings?: string[];
+  /** Aggregate risk summary from pre-computed risk assessment */
+  riskSummary?: string;
+  /** Date of the analysis data (may differ from article date due to lookback) */
+  analysisDate?: string;
 }
 
 /**
@@ -476,9 +482,13 @@ export async function getAnalysisEnrichment(
       confidenceLabel: meta.confidenceLabel,
       significance: meta.significanceScore,
       urgency: meta.urgency,
+      // Feed pre-computed analysis content into article generation
+      synthesisKeyFindings: analysis.synthesis?.keyThemes ?? [],
+      riskSummary: analysis.riskAssessment?.summary ?? undefined,
+      analysisDate: analysis.date,
     };
     analysisEnrichmentCache.set(cacheKey, enrichment);
-    console.log(`  📊 Analysis enrichment loaded: classification=${meta.classificationLevel}, risk=${meta.riskLevel}, confidence=${meta.confidenceLabel}`);
+    console.log(`  📊 Analysis enrichment loaded: classification=${meta.classificationLevel}, risk=${meta.riskLevel}, confidence=${meta.confidenceLabel}, keyThemes=${enrichment.synthesisKeyFindings?.length ?? 0}`);
     return enrichment;
   } catch (error: unknown) {
     if (process.env.DEBUG || process.env.LOG_LEVEL === 'debug') {
@@ -903,16 +913,17 @@ export function generateDynamicTitle(
     }
   }
 
-  // Build dynamic subtitle from highlights
+  // Build dynamic subtitle from highlights — avoid banned template patterns
+  // per ai-driven-analysis-guide.md Rule 2: "Analysis of N documents covering {Field}:" is REJECTED
   let subtitle: string;
   if (highlights.length >= 2) {
-    subtitle = `Analysis of ${docCount} documents covering ${highlights.slice(0, 2).join(', ')}`;
+    subtitle = `Political intelligence briefing on ${highlights.slice(0, 2).join(' and ')} — ${docCount} parliamentary documents analyzed`;
   } else if (highlights.length === 1) {
-    subtitle = `Analysis of ${docCount} documents focusing on ${highlights[0]}`;
+    subtitle = `In-depth analysis of ${highlights[0]} based on ${docCount} parliamentary documents`;
   } else if (theme) {
-    subtitle = `Analysis of ${docCount} parliamentary documents on ${theme}`;
+    subtitle = `${theme} — comprehensive analysis of ${docCount} parliamentary documents from the current session`;
   } else {
-    subtitle = `Analysis of ${docCount} parliamentary documents revealing key political developments`;
+    subtitle = `Key political developments from ${docCount} parliamentary documents in the current Riksdag session`;
   }
 
   return { title, subtitle };

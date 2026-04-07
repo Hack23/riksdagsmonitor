@@ -233,14 +233,17 @@ export function detectAnomalousPatterns(data: CIAContext | undefined): AnomalyFl
   });
 
   // Check for cross-party voting patterns (opposition aligning with coalition on key issues)
+  // oppositionAlignment = how often opposition votes WITH the coalition (high = unusual cross-party)
+  // coalitionAlignment = how often coalition parties vote together (high = stable, expected)
   if (votingPatterns?.keyIssues) {
     votingPatterns.keyIssues.forEach(issue => {
-      const crossPartyRate = issue.crossPartyVotes ?? 0;
-      if (crossPartyRate > 30) {
+      const oppAlignPct = issue.oppositionAlignment ?? 0;
+      const rawVotes = issue.crossPartyVotes ?? 0;
+      if (oppAlignPct > 30) {
         flags.push({
           type: 'CROSS_PARTY_VOTE',
-          severity: crossPartyRate > 60 ? 'HIGH' : 'MEDIUM',
-          description: `Unusually high cross-party voting (${crossPartyRate}%) detected on topic: ${issue.topic}.`,
+          severity: oppAlignPct > 60 ? 'HIGH' : 'MEDIUM',
+          description: `Unusually high cross-party voting — opposition aligned with coalition at ${oppAlignPct}% (${rawVotes} aligned votes) on topic: ${issue.topic}.`,
           subject: issue.topic,
         });
       }

@@ -193,6 +193,9 @@ function frontmatter(ctx: SerializationContext, title: string, docCount: number,
     `**Data Sources**: ${ctx.dataSources.join(', ')}`,
     `**Documents Analyzed**: ${docCount}`,
     `**Confidence**: ${confidenceLabel(confidenceScore)}`,
+    `**Produced By**: pre-article-analysis script (automated data pipeline)`,
+    '',
+    `> ⚠️ **Script-Generated Analysis**: This file was produced by the automated data pipeline (\`scripts/pre-article-analysis.ts\`). It contains structured data extraction and basic statistical analysis only. For deep political intelligence with evidence-based claims, Mermaid diagrams, and multi-framework analysis, this file should be enriched or replaced by AI-driven analysis following \`analysis/methodologies/ai-driven-analysis-guide.md\`.`,
     '',
   ].join('\n');
 }
@@ -257,10 +260,21 @@ export function serializeClassificationResults(
   for (const result of results.slice(0, MAX_DETAILED_RESULTS)) {
     const title = result.document.titel || result.document.title || result.document.dok_id || 'Unknown';
     const dokId = result.document.dok_id || 'N/A';
-    const domains = result.perspectives
+    // Domains: try perspectives first, then keyInsights (which may contain domain info)
+    let domains = result.perspectives
       .flatMap(p => p.relatedPolicies)
       .filter((v, i, arr) => arr.indexOf(v) === i)
       .slice(0, 3);
+    if (domains.length === 0 && result.keyInsights.length > 0) {
+      // Extract domain from keyInsights (format: "Policy domain: X, Y (Z confidence)")
+      const domainInsight = result.keyInsights.find(i => i.startsWith('Policy domain:'));
+      if (domainInsight) {
+        const match = domainInsight.match(/^Policy domain:\s*(.+?)\s*\(/);
+        if (match) {
+          domains = match[1].split(',').map(d => d.trim());
+        }
+      }
+    }
 
     lines.push(`### ${title}`);
     lines.push(`- **dok_id**: ${dokId}`);
@@ -347,15 +361,28 @@ export function serializeSwotAnalysis(
   docCount: number,
   swots: SwotSummary[],
 ): string {
+  const hasContent = swots.length > 0;
   const lines: string[] = [
-    frontmatter(ctx, 'Political SWOT Analysis', docCount, 70),
+    frontmatter(ctx, 'Political SWOT Analysis', docCount, hasContent ? 70 : 20),
     '## Summary',
     '',
-    `Generated SWOT analysis for **${swots.length}** political actor(s) based on ${docCount} documents.`,
-    '',
-    '## Detailed Analysis',
-    '',
   ];
+
+  if (!hasContent) {
+    lines.push(
+      `> ⚠️ **No SWOT entries generated**: The automated data pipeline found ${docCount} documents but could not extract SWOT contributions from metadata alone. Deep SWOT analysis requires AI-driven per-document analysis following \`analysis/methodologies/political-swot-framework.md\`.`,
+      '',
+      'AI agentic workflows should replace this file with multi-framework SWOT analysis including:',
+      '- Evidence-backed strengths/weaknesses/opportunities/threats per political actor',
+      '- Cross-SWOT interference patterns',
+      '- TOWS matrix and scenario generation',
+      '- Color-coded Mermaid diagrams with real data',
+    );
+  } else {
+    lines.push(`Generated SWOT analysis for **${swots.length}** political actor(s) based on ${docCount} documents.`);
+  }
+
+  lines.push('', '## Detailed Analysis', '');
 
   for (const swot of swots) {
     lines.push(`### ${swot.forStakeholder}`, '');
@@ -378,13 +405,19 @@ export function serializeSwotAnalysis(
   }
 
   lines.push('## Key Findings', '');
-  lines.push('1. SWOT entries derived from all six perspective analyses across downloaded documents.');
+  if (hasContent) {
+    lines.push('1. SWOT entries derived from all six perspective analyses across downloaded documents.');
+  } else {
+    lines.push('1. No SWOT entries could be derived from document metadata alone — AI analysis required.');
+  }
 
   lines.push('', '## Implications', '');
   lines.push('SWOT insights should inform stakeholder framing in generated articles.');
 
   lines.push('', '## Data Quality Notes', '');
-  lines.push('SWOT confidence is proportional to document richness (full-text vs metadata-only).');
+  lines.push(hasContent
+    ? 'SWOT confidence is proportional to document richness (full-text vs metadata-only).'
+    : 'SWOT confidence: LOW. Script pipeline provides structured data only — AI analysis is required for political SWOT insights.');
 
   return lines.join('\n');
 }
@@ -410,15 +443,30 @@ export function serializeThreatAnalysis(
       ? results.reduce((sum, r) => sum + r.confidenceScore, 0) / results.length
       : 0;
 
+  const hasContent = threatEntries.length > 0;
+
   const lines: string[] = [
-    frontmatter(ctx, 'Political Threat Analysis', results.length, avgConfidence),
+    frontmatter(ctx, 'Political Threat Analysis', results.length, hasContent ? avgConfidence : Math.min(avgConfidence, 20)),
     '## Summary',
     '',
-    `Identified **${threatEntries.length}** threat indicators across ${results.length} documents.`,
-    '',
-    '## Detailed Analysis',
-    '',
   ];
+
+  if (!hasContent) {
+    lines.push(
+      `> ⚠️ **No threat indicators extracted**: The automated data pipeline found ${results.length} documents but could not identify specific threat indicators from metadata alone. Deep threat analysis requires AI-driven per-document analysis following \`analysis/methodologies/political-threat-framework.md\`.`,
+      '',
+      'AI agentic workflows should replace this file with multi-framework threat analysis including:',
+      '- Attack Tree analysis with threat actors and vectors',
+      '- Kill Chain analysis of political threat progressions',
+      '- Diamond Model threat actor characterization',
+      '- Political Threat Taxonomy classification',
+      '- Color-coded Mermaid diagrams with evidence-based data',
+    );
+  } else {
+    lines.push(`Identified **${threatEntries.length}** threat indicators across ${results.length} documents.`);
+  }
+
+  lines.push('', '## Detailed Analysis', '');
 
   const grouped = new Map<string, string[]>();
   for (const entry of threatEntries) {
@@ -434,13 +482,19 @@ export function serializeThreatAnalysis(
   }
 
   lines.push('## Key Findings', '');
-  lines.push(`1. **${threatEntries.length}** threat indicators identified targeting ${grouped.size} stakeholder group(s)`);
+  if (hasContent) {
+    lines.push(`1. **${threatEntries.length}** threat indicators identified targeting ${grouped.size} stakeholder group(s)`);
+  } else {
+    lines.push('1. No threat indicators could be derived from document metadata alone — AI analysis required.');
+  }
 
   lines.push('', '## Implications', '');
   lines.push('Threat analysis should inform risk-focused article framing and editorial prioritisation.');
 
   lines.push('', '## Data Quality Notes', '');
-  lines.push(`Analysis confidence: ${confidenceLabel(avgConfidence)}.`);
+  lines.push(hasContent
+    ? `Analysis confidence: ${confidenceLabel(avgConfidence)}.`
+    : `Analysis confidence: LOW. Script pipeline provides structured data only — AI analysis is required for political threat assessment.`);
 
   return lines.join('\n');
 }
