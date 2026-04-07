@@ -187,6 +187,17 @@ bash({ command: "..." }) // ← WRONG: missing description
 
 > When you see fenced bash code blocks below (three backticks followed by bash), they show the **command content** to execute. You MUST wrap each in a proper bash tool call with both `command` and `description` parameters. For multi-line scripts, join commands with `&&` or `;` into a single `command` string.
 
+## 🛡️ AWF Shell Safety — MANDATORY for Agent-Generated Bash
+
+> **The Agent Workflow Firewall (AWF) blocks dangerous shell expansion patterns.** Fenced bash blocks in init steps run as normal shell, but any command YOU generate via the `bash` tool IS subject to AWF filtering.
+
+**Key rules — NEVER use these in your generated bash commands:**
+1. **NEVER** use `\${VAR}` — always use `\$VAR` (no curly braces)
+2. **NEVER** use `\$(command)` — use pipes, `find -exec`, or separate commands
+3. **NEVER** use `\${VAR:-default}` — set defaults with `if/then` first, then use `\$VAR`
+4. **Use `find -exec`** instead of for-loops with `\$(basename ...)`
+5. **Use direct file paths** when possible instead of variable-constructed paths with braces
+
 ## Required Skills
 
 Before generating articles, consult these skills:
@@ -333,7 +344,7 @@ Example: `news/content/2026-03-23/weekly-review`
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally (scoped to weekly-review subfolder): `git add news/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/weekly-review/" analysis/weekly/ && git commit -m "Add weekly-review articles and analysis artifacts"`
+> 2. Stage and commit locally (scoped to weekly-review subfolder): `git add news/ "analysis/daily/$ARTICLE_DATE/weekly-review/" analysis/weekly/ && git commit -m "Add weekly-review articles and analysis artifacts"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -521,7 +532,7 @@ npx tsx scripts/fix-article-navigation.ts
 
 **2. Generate AI meta descriptions** (150-160 chars) — Key political intelligence summary. BANNED: ❌ "Analysis of N documents".
 
-**3. Add analysis references** — Insert "📊 Analysis & Sources" HTML block linking to `analysis/daily/${ARTICLE_DATE}/weekly-review/` files and `analysis/methodologies/ai-driven-analysis-guide.md`.
+**3. Add analysis references** — Insert "📊 Analysis & Sources" HTML block linking to `analysis/daily/$ARTICLE_DATE/weekly-review/` files and `analysis/methodologies/ai-driven-analysis-guide.md`.
 
 **4. Update all metadata** — `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>`.
 

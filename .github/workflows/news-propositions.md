@@ -185,6 +185,17 @@ bash({ command: "..." }) // ← WRONG: missing description
 
 > When you see fenced bash code blocks below (three backticks followed by bash), they show the **command content** to execute. You MUST wrap each in a proper bash tool call with both `command` and `description` parameters. For multi-line scripts, join commands with `&&` or `;` into a single `command` string.
 
+## 🛡️ AWF Shell Safety — MANDATORY for Agent-Generated Bash
+
+> **The Agent Workflow Firewall (AWF) blocks dangerous shell expansion patterns.** Fenced bash blocks in init steps run as normal shell, but any command YOU generate via the `bash` tool IS subject to AWF filtering.
+
+**Key rules — NEVER use these in your generated bash commands:**
+1. **NEVER** use `\${VAR}` — always use `\$VAR` (no curly braces)
+2. **NEVER** use `\$(command)` — use pipes, `find -exec`, or separate commands
+3. **NEVER** use `\${VAR:-default}` — set defaults with `if/then` first, then use `\$VAR`
+4. **Use `find -exec`** instead of for-loops with `\$(basename ...)`
+5. **Use direct file paths** when possible instead of variable-constructed paths with braces
+
 ## 🚫 CRITICAL: Article Generation Safety
 
 **Articles MUST be generated using `npx tsx scripts/generate-news-enhanced.ts` — NEVER manually.**
@@ -693,11 +704,11 @@ npx tsx scripts/fix-article-navigation.ts
 **2. Generate AI meta descriptions** (150-160 chars) — Summarize the key political intelligence from actual article content. BANNED: ❌ "Analysis of N documents covering Published:, Why It Matters:" or any description starting with "Analysis of N documents".
 
 **3. Add analysis references section** — Insert the "📊 Analysis & Sources" HTML block (from SHARED_PROMPT_PATTERNS.md) before the article footer, linking to:
-- `analysis/daily/${ARTICLE_DATE}/propositions/synthesis-summary.md`
-- `analysis/daily/${ARTICLE_DATE}/propositions/swot-analysis.md`
-- `analysis/daily/${ARTICLE_DATE}/propositions/risk-assessment.md`
-- `analysis/daily/${ARTICLE_DATE}/propositions/threat-analysis.md`
-- `analysis/daily/${ARTICLE_DATE}/propositions/stakeholder-perspectives.md`
+- `analysis/daily/$ARTICLE_DATE/propositions/synthesis-summary.md`
+- `analysis/daily/$ARTICLE_DATE/propositions/swot-analysis.md`
+- `analysis/daily/$ARTICLE_DATE/propositions/risk-assessment.md`
+- `analysis/daily/$ARTICLE_DATE/propositions/threat-analysis.md`
+- `analysis/daily/$ARTICLE_DATE/propositions/stakeholder-perspectives.md`
 - `analysis/daily/${ARTICLE_DATE}/propositions/significance-scoring.md`
 - `analysis/daily/${ARTICLE_DATE}/propositions/classification-results.md`
 - `analysis/methodologies/ai-driven-analysis-guide.md`

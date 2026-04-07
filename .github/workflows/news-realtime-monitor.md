@@ -170,6 +170,26 @@ bash({ command: "..." }) // ← WRONG: missing description
 
 > When you see fenced bash code blocks below (three backticks followed by bash), they show the **command content** to execute. You MUST wrap each in a proper bash tool call with both `command` and `description` parameters. For multi-line scripts, join commands with `&&` or `;` into a single `command` string.
 
+## 🛡️ AWF Shell Safety — MANDATORY for Agent-Generated Bash
+
+> **The Agent Workflow Firewall (AWF) blocks dangerous shell expansion patterns.** Fenced bash blocks in init steps run as normal shell, but any command YOU generate via the `bash` tool IS subject to AWF filtering. You MUST follow these rules:
+
+| ❌ BLOCKED pattern | ✅ SAFE alternative |
+|---|---|
+| `${VAR}` | `$VAR` (no curly braces) |
+| `${VAR:-default}` | Set default first: `if [ -z "$VAR" ]; then VAR=default; fi` then use `$VAR` |
+| `$(command)` | Run as separate command, or use `find -exec` |
+| `$(basename $f)` | Use `find -exec basename {} \;` or `ls` |
+| `${PIPESTATUS[0]}` | Check `$?` immediately after the command |
+| `realtime-${HHMM}` | `realtime-$HHMM` (no braces) |
+| `for f in "$DIR/"*.json; do echo "$(basename $f)"; done` | `find "$DIR" -name "*.json" -exec basename {} \;` |
+
+**Key rules:**
+1. **NEVER** use `${...}` — always use `$VAR` (no curly braces)
+2. **NEVER** use `$(...)` command substitution — use pipes or `find -exec`
+3. **Use `find -exec`** instead of for-loops with command substitution
+4. **Use direct paths** when possible (e.g., `cat analysis/daily/2026-04-07/realtime-1411/synthesis-summary.md`)
+
 ## ⚠️ NON-NEGOTIABLE RULES
 
 1. Every run **MUST** end with exactly one safe output tool call:
@@ -349,11 +369,11 @@ fi
 
 3. **For EVERY downloaded document/data file**: apply ALL 6 analytical lenses and create `{dok_id}-analysis.md` following the per-file template. Cite specific data (dok_id, vote counts, party names). Include ≥1 color-coded Mermaid diagram with `style` directives.
 
-4. **Create/rewrite ALL 7 daily synthesis files** in `analysis/daily/$ARTICLE_DATE/realtime-${HHMM}/` — each MUST follow its template EXACTLY (metadata header, Mermaid diagrams with color-coded style directives, structured evidence tables, confidence labels, no `[REQUIRED]` placeholders).
+4. **Create/rewrite ALL 7 daily synthesis files** in `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` — each MUST follow its template EXACTLY (metadata header, Mermaid diagrams with color-coded style directives, structured evidence tables, confidence labels, no `[REQUIRED]` placeholders).
 
 5. **Run the quality gate bash check** from SHARED_PROMPT_PATTERNS Step 5b. If it fails, go back and fix analysis files until it passes.
 
-6. **Commit data AND analysis together** — stage scoped to this run: `git add analysis/data/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/realtime-${HHMM}/"` (see Step 5 for full file-count safety pattern)
+6. **Commit data AND analysis together** — stage scoped to this run: `git add analysis/data/ "analysis/daily/$ARTICLE_DATE/realtime-$HHMM/"` (see Step 5 for full file-count safety pattern). ⚠️ AWF safety: do NOT use `${VAR}` or `$(cmd)` — use `$VAR` only.
 
 > ❌ **FAILURE MODES** (any of these = workflow failure):
 > - Skipping analysis creation
@@ -466,7 +486,7 @@ After data is downloaded, you MUST complete ALL of these steps before proceeding
    - `view analysis/methodologies/political-swot-framework.md` — understand evidence tables
 
 **Step B — Create real per-file analyses** (for EVERY document):
-1. List all downloaded documents: `find analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/documents/ -name "*.json" -type f`
+1. List all downloaded documents: `find analysis/daily/$ARTICLE_DATE/documents/ -name "*.json" -type f` (⚠️ AWF: use `$VAR` not `${VAR}`, never use `$(cmd)`)
 2. For EACH JSON file:
    a. Read it with `view` — extract dok_id, titel, datum, parti, organ
    b. Apply ALL 6 analytical lenses (classification, SWOT, risk, Political Threat Taxonomy, stakeholders, forward indicators)
@@ -482,6 +502,8 @@ After data is downloaded, you MUST complete ALL of these steps before proceeding
 3. Every claim must cite real data (dok_id, vote counts, party names)
 
 **Step D — Run quality gate** (BLOCKING — must pass before proceeding):
+
+> ⚠️ **AWF Safety**: The quality gate below runs as a compiled init step (normal bash). If you need to **re-run** it yourself after fixing files, use `$HHMM` and `$ARTICLE_DATE` (no curly braces), use `find -exec basename {} \;` instead of `$(basename $f)`, and avoid `$(cmd)` command substitution. See the AWF Shell Safety section above.
 
 ```bash
 # Idempotent: only set if not already resolved by lookback

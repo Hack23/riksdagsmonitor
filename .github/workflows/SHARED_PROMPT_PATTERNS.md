@@ -18,6 +18,37 @@ Articles MAY include links to these sites when contextually relevant (e.g., link
 
 ---
 
+## 🛡️ AWF Shell Safety — Mandatory for ALL Agent-Generated Bash Commands
+
+> **The Agent Workflow Firewall (AWF) blocks dangerous shell expansion patterns.** When you generate bash commands at runtime, you **MUST** follow these rules. Fenced bash blocks in init steps run as normal bash and are not affected — but any command YOU write via the `bash` tool IS subject to AWF filtering.
+
+| ❌ BLOCKED pattern | ✅ SAFE alternative | Why |
+|---|---|---|
+| `${VAR}` | `$VAR` | Brace-enclosed expansion is blocked |
+| `${VAR:-default}` | `if [ -z "$VAR" ]; then VAR=default; fi` then use `$VAR` | Default-value expansion is blocked |
+| `$(command)` | Pipe the result or use `find -exec` | Command substitution is blocked |
+| `$(basename $f)` | `find ... -exec basename {} \;` or `ls` with path stripping | Nested command substitution blocked |
+| `${PIPESTATUS[0]}` | Check `$?` immediately after the command | Array expansion is blocked |
+| `for f in "$DIR/"*.json; do echo "$(basename $f)"; done` | `find "$DIR" -name "*.json" -exec basename {} \;` | Loop + substitution blocked |
+| `realtime-${HHMM}` | `realtime-$HHMM` | Even simple brace expansion is blocked |
+
+**Rules for agent-generated bash:**
+1. **NEVER** use `${...}` (curly braces around variable names) — always use `$VAR` instead
+2. **NEVER** use `$(...)` (command substitution) — use pipes, `find -exec`, or separate commands
+3. **NEVER** use `${VAR:-default}` or `${VAR:=default}` — set defaults with `if/then` first
+4. **Use `find -exec`** instead of for-loops with command substitution
+5. **Use `cat` with direct paths** instead of variable-constructed paths with braces
+6. When you need a computed value, run the computation as a **separate bash command** and store the result, then use `$VAR` (no braces) in subsequent commands
+
+**Example — reading files safely:**
+```
+# Instead of: for f in "$DIR/"*.json; do echo "=== $(basename $f) ==="; cat "$f"; done
+# Use:
+find analysis/daily/2026-04-07/realtime-1411/documents -name "*.json" -exec cat {} \;
+```
+
+---
+
 ## 🔒 ARTICLE TYPE ISOLATION — Absolute Enforcement
 
 > **NON-NEGOTIABLE**: Different article types MUST NEVER overwrite, merge, or conflict with each other's analysis artifacts. Each workflow owns its article type exclusively.

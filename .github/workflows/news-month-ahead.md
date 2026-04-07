@@ -188,6 +188,17 @@ bash({ command: "..." }) // ← WRONG: missing description
 
 > When you see fenced bash code blocks below (three backticks followed by bash), they show the **command content** to execute. You MUST wrap each in a proper bash tool call with both `command` and `description` parameters. For multi-line scripts, join commands with `&&` or `;` into a single `command` string.
 
+## 🛡️ AWF Shell Safety — MANDATORY for Agent-Generated Bash
+
+> **The Agent Workflow Firewall (AWF) blocks dangerous shell expansion patterns.** Fenced bash blocks in init steps run as normal shell, but any command YOU generate via the `bash` tool IS subject to AWF filtering.
+
+**Key rules — NEVER use these in your generated bash commands:**
+1. **NEVER** use `\${VAR}` — always use `\$VAR` (no curly braces)
+2. **NEVER** use `\$(command)` — use pipes, `find -exec`, or separate commands
+3. **NEVER** use `\${VAR:-default}` — set defaults with `if/then` first, then use `\$VAR`
+4. **Use `find -exec`** instead of for-loops with `\$(basename ...)`
+5. **Use direct file paths** when possible instead of variable-constructed paths with braces
+
 ## Required Skills
 
 Before generating articles, consult these skills:
@@ -208,7 +219,7 @@ Before generating articles, consult these skills:
 
 ### Article Type Isolation
 
-> 🚨 **This workflow writes analysis ONLY to `analysis/daily/${ARTICLE_DATE}/month-ahead/`**. NEVER write to the parent date directory or another article type's folder. See SHARED_PROMPT_PATTERNS.md "Article Type Isolation" section.
+> 🚨 **This workflow writes analysis ONLY to `analysis/daily/$ARTICLE_DATE/month-ahead/`**. NEVER write to the parent date directory or another article type's folder. See SHARED_PROMPT_PATTERNS.md "Article Type Isolation" section.
 
 ### Standardised Analysis Depth Gate
 
@@ -346,7 +357,7 @@ Example: `news/content/2026-03-23/month-ahead`
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally (scoped to month-ahead subfolder): `git add news/ "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/month-ahead/" analysis/weekly/ && git commit -m "Add month-ahead articles and analysis artifacts"`
+> 2. Stage and commit locally (scoped to month-ahead subfolder): `git add news/ "analysis/daily/$ARTICLE_DATE/month-ahead/" analysis/weekly/ && git commit -m "Add month-ahead articles and analysis artifacts"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -357,7 +368,7 @@ Example: `news/content/2026-03-23/month-ahead`
 - ✅ `safeoutputs___create_pull_request` with analysis-only PR when no articles but analysis artifacts exist — title: `📊 Analysis Only - Month Ahead - {date}`, labels: `["analysis-only", "month-ahead"]`
 - ✅ `safeoutputs___noop` ONLY if genuinely no upcoming events in next 30 days AND no analysis artifacts
 - ❌ NEVER use `safeoutputs___noop` as fallback for PR creation failures
-- ❌ NEVER use `safeoutputs___noop` if analysis artifacts for the current run exist (e.g. under `analysis/daily/${ARTICLE_DATE}/` or `analysis/weekly/${WEEK_LABEL}/`)
+- ❌ NEVER use `safeoutputs___noop` if analysis artifacts for the current run exist (e.g. under `analysis/daily/$ARTICLE_DATE/` or `analysis/weekly/$WEEK_LABEL/`)
 
 > **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them. After `git commit`, call the tool directly as your VERY NEXT action.
 
@@ -531,7 +542,7 @@ npx tsx scripts/fix-article-navigation.ts
 
 **2. Generate AI meta descriptions** (150-160 chars) — Key political intelligence summary. BANNED: ❌ "Analysis of N documents".
 
-**3. Add analysis references** — Insert "📊 Analysis & Sources" HTML block linking to `analysis/daily/${ARTICLE_DATE}/month-ahead/` files and `analysis/methodologies/ai-driven-analysis-guide.md`.
+**3. Add analysis references** — Insert "📊 Analysis & Sources" HTML block linking to `analysis/daily/$ARTICLE_DATE/month-ahead/` files and `analysis/methodologies/ai-driven-analysis-guide.md`.
 
 **4. Update all metadata** — `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>`.
 
