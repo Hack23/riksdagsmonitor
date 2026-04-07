@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-07T11:28:13.950Z",
+  "timestamp": "2026-04-07T17:28:03.461Z",
   "types": [
-    "committee-reports"
+    "breaking"
   ],
   "languagesGenerated": [
     "da",
@@ -32,23 +32,10 @@
     "zh"
   ],
   "batchSize": "all",
-  "skipExisting": true,
-  "generated": 12,
+  "skipExisting": false,
+  "generated": 0,
   "errors": 0,
-  "articles": [
-    "2026-04-07-committee-reports-da.html",
-    "2026-04-07-committee-reports-no.html",
-    "2026-04-07-committee-reports-fi.html",
-    "2026-04-07-committee-reports-de.html",
-    "2026-04-07-committee-reports-fr.html",
-    "2026-04-07-committee-reports-es.html",
-    "2026-04-07-committee-reports-nl.html",
-    "2026-04-07-committee-reports-ar.html",
-    "2026-04-07-committee-reports-he.html",
-    "2026-04-07-committee-reports-ja.html",
-    "2026-04-07-committee-reports-ko.html",
-    "2026-04-07-committee-reports-zh.html"
-  ],
+  "articles": [],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
 }
