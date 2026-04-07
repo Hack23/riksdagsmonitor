@@ -169,10 +169,26 @@ function significanceLabel(score: number): string {
 }
 
 /**
- * Prefix used by pre-article-analysis.ts to tag policy domain classifications in keyInsights.
- * Must match {@link POLICY_DOMAIN_INSIGHT_PREFIX} in the parent module.
+ * Prefix used to tag policy domain classifications in keyInsights.
+ *
+ * Keep all parsing in this file derived from this constant so a future prefix
+ * change does not silently drift from regex-based extraction logic.
  */
 const POLICY_DOMAIN_INSIGHT_PREFIX = 'Policy domain:';
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+const POLICY_DOMAIN_INSIGHT_REGEX = new RegExp(
+  `^${escapeRegExp(POLICY_DOMAIN_INSIGHT_PREFIX)}\\s*(.+?)\\s*(?:\\(|$)`,
+  'i',
+);
+
+function extractPolicyDomainFromInsight(insight: string): string | null {
+  const match = POLICY_DOMAIN_INSIGHT_REGEX.exec(insight.trim());
+  return match?.[1]?.trim() || null;
+}
 
 function escapeMarkdownTableCell(value: string): string {
   return value
@@ -272,12 +288,11 @@ export function serializeClassificationResults(
       .filter((v, i, arr) => arr.indexOf(v) === i)
       .slice(0, 3);
     if (domains.length === 0 && result.keyInsights.length > 0) {
-      // Extract domain from keyInsights (format: "Policy domain: X, Y (Z confidence)")
       const domainInsight = result.keyInsights.find(i => i.startsWith(POLICY_DOMAIN_INSIGHT_PREFIX));
       if (domainInsight) {
-        const match = domainInsight.match(/^Policy domain:\s*(.+?)\s*\(/);
-        if (match) {
-          domains = match[1].split(',').map(d => d.trim());
+        const raw = extractPolicyDomainFromInsight(domainInsight);
+        if (raw) {
+          domains = raw.split(',').map(d => d.trim()).slice(0, 3);
         }
       }
     }
