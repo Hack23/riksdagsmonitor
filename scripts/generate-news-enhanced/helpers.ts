@@ -419,8 +419,8 @@ export interface AnalysisEnrichment {
   confidenceLabel: ConfidenceLabel;
   significance?: number;
   urgency?: UrgencyLabel;
-  /** Key findings from pre-computed synthesis analysis (for article enrichment) */
-  synthesisKeyFindings?: string[];
+  /** Key themes from pre-computed synthesis analysis (for article enrichment) */
+  synthesisKeyThemes?: string[];
   /** Aggregate risk summary from pre-computed risk assessment */
   riskSummary?: string;
   /** Date of the analysis data (may differ from article date due to lookback) */
@@ -483,12 +483,12 @@ export async function getAnalysisEnrichment(
       significance: meta.significanceScore,
       urgency: meta.urgency,
       // Feed pre-computed analysis content into article generation
-      synthesisKeyFindings: analysis.synthesis?.keyThemes ?? [],
+      synthesisKeyThemes: analysis.synthesis?.keyThemes ?? [],
       riskSummary: analysis.riskAssessment?.summary ?? undefined,
       analysisDate: analysis.date,
     };
     analysisEnrichmentCache.set(cacheKey, enrichment);
-    console.log(`  📊 Analysis enrichment loaded: classification=${meta.classificationLevel}, risk=${meta.riskLevel}, confidence=${meta.confidenceLabel}, keyThemes=${enrichment.synthesisKeyFindings?.length ?? 0}`);
+    console.log(`  📊 Analysis enrichment loaded: classification=${meta.classificationLevel}, risk=${meta.riskLevel}, confidence=${meta.confidenceLabel}, keyThemes=${enrichment.synthesisKeyThemes?.length ?? 0}`);
     return enrichment;
   } catch (error: unknown) {
     if (process.env.DEBUG || process.env.LOG_LEVEL === 'debug') {
