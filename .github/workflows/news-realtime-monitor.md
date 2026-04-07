@@ -176,17 +176,17 @@ bash({ command: "..." }) // ← WRONG: missing description
 
 | ❌ BLOCKED pattern | ✅ SAFE alternative |
 |---|---|
-| `${VAR}` | `$VAR` (no curly braces) |
-| `${VAR:-default}` | Set default first: `if [ -z "$VAR" ]; then VAR=default; fi` then use `$VAR` |
-| `$(command)` | Run as separate command, or use `find -exec` |
-| `$(basename $f)` | Use `find -exec basename {} \;` or `ls` |
-| `${PIPESTATUS[0]}` | Check `$?` immediately after the command |
-| `realtime-${HHMM}` | `realtime-$HHMM` (no braces) |
-| `for f in "$DIR/"*.json; do echo "$(basename $f)"; done` | `find "$DIR" -name "*.json" -exec basename {} \;` |
+| `$`+`{VAR}` | `$VAR` (no curly braces) |
+| `$`+`{VAR:-default}` | Set default first: `if [ -z "$VAR" ]; then VAR=default; fi` then use `$VAR` |
+| `$`+`(command)` | Run as separate command, or use `find -exec` |
+| `$`+`(basename $f)` | Use `find -exec basename {} \;` or `ls` |
+| `$`+`{PIPESTATUS[0]}` | Use `set -o pipefail` and check `$?` immediately after the pipeline, or avoid pipelines |
+| `realtime-` + `$`+`{HHMM}` | `realtime-$HHMM` (no braces) |
+| `for f in "$DIR/"*.json; do echo "$`+`(basename $f)"; done` | `find "$DIR" -name "*.json" -exec basename {} \;` |
 
 **Key rules:**
-1. **NEVER** use `${...}` — always use `$VAR` (no curly braces)
-2. **NEVER** use `$(...)` command substitution — use pipes or `find -exec`
+1. **NEVER** use `$`+`{...}` — always use `$VAR` (no curly braces)
+2. **NEVER** use `$`+`(...)` command substitution — use pipes or `find -exec`
 3. **Use `find -exec`** instead of for-loops with command substitution
 4. **Use direct paths** when possible (e.g., `cat analysis/daily/2026-04-07/realtime-1411/synthesis-summary.md`)
 

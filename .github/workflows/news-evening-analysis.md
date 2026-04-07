@@ -174,10 +174,10 @@ bash({ command: "..." }) // ← WRONG: missing description
 > **The Agent Workflow Firewall (AWF) blocks dangerous shell expansion patterns.** Fenced bash blocks in init steps run as normal shell, but any command YOU generate via the `bash` tool IS subject to AWF filtering.
 
 **Key rules — NEVER use these in your generated bash commands:**
-1. **NEVER** use `\${VAR}` — always use `\$VAR` (no curly braces)
-2. **NEVER** use `\$(command)` — use pipes, `find -exec`, or separate commands
-3. **NEVER** use `\${VAR:-default}` — set defaults with `if/then` first, then use `\$VAR`
-4. **Use `find -exec`** instead of for-loops with `\$(basename ...)`
+1. **NEVER** use `$`+`{VAR}` — always use `$VAR` (no curly braces)
+2. **NEVER** use `$`+`(command)` — use pipes, `find -exec`, or separate commands
+3. **NEVER** use `$`+`{VAR:-default}` — set defaults with `if/then` first, then use `$VAR`
+4. **Use `find -exec`** instead of for-loops with `$`+`(basename ...)`
 5. **Use direct file paths** when possible instead of variable-constructed paths with braces
 
 ## ⚠️ NON-NEGOTIABLE RULES
@@ -1234,7 +1234,7 @@ news/content/{YYYY-MM-DD}/evening-analysis
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally (scoped to evening-analysis subfolder): `git add news/ "analysis/daily/$ARTICLE_DATE/evening-analysis/" analysis/weekly/ && git commit -m "🌆 Evening Analysis - $(date +%Y-%m-%d)"`
+> 2. Stage and commit locally (scoped to evening-analysis subfolder): `git add news/ "analysis/daily/$ARTICLE_DATE/evening-analysis/" analysis/weekly/ && git commit -m "🌆 Evening Analysis - $ARTICLE_DATE"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
