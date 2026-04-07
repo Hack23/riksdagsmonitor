@@ -327,7 +327,7 @@ export async function generateCommitteeReports(): Promise<GenerationResult> {
       const sources: string[] = generateSources(['get_betankanden', 'get_dokument_innehall']);
 
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Committee Reports: Parliamentary Priorities This Week`, subtitle: `Analysis of ${reports.length} committee reports revealing Riksdag priorities for the current session` },
+        en: { title: `Committee Reports: Parliamentary Priorities This Week`, subtitle: `${reports.length} committee reports revealing Riksdag priorities for the current session` },
         sv: { title: `Utskottsbetänkanden: Riksdagens prioriteringar denna vecka`, subtitle: `Analys av ${reports.length} utskottsbetänkanden som avslöjar riksdagens prioriteringar` },
         da: { title: `Udvalgsbetænkninger: Parlamentets prioriteringer denne uge`, subtitle: `Analyse af ${reports.length} udvalgsbetænkninger` },
         no: { title: `Komitéinnstillinger: Stortingets prioriteringer denne uken`, subtitle: `Analyse av ${reports.length} komitéinnstillinger` },
@@ -419,7 +419,7 @@ export async function generatePropositions(): Promise<GenerationResult> {
       const sources: string[] = generateSources(['get_propositioner', 'get_dokument_innehall']);
 
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Government Propositions: Policy Priorities This Week`, subtitle: `Analysis of ${propositions.length} government propositions shaping the legislative agenda` },
+        en: { title: `Government Propositions: Policy Priorities This Week`, subtitle: `${propositions.length} government propositions shaping the legislative agenda` },
         sv: { title: `Regeringens propositioner: Veckans prioriteringar`, subtitle: `Analys av ${propositions.length} propositioner som formar den lagstiftande agendan` },
         da: { title: `Regeringsforslag: Politiske prioriteringer denne uge`, subtitle: `Analyse af ${propositions.length} regeringsforslag` },
         no: { title: `Regjeringens proposisjoner: Politiske prioriteringer denne uken`, subtitle: `Analyse av ${propositions.length} regjeringsproposisjoner` },
@@ -511,7 +511,7 @@ export async function generateMotions(): Promise<GenerationResult> {
       const sources: string[] = generateSources(['get_motioner', 'get_dokument_innehall']);
 
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Opposition Motions: Battle Lines This Week`, subtitle: `Analysis of ${motions.length} opposition motions revealing parliamentary fault lines` },
+        en: { title: `Opposition Motions: Battle Lines This Week`, subtitle: `${motions.length} opposition motions revealing parliamentary fault lines` },
         sv: { title: `Oppositionsmotioner: Veckans stridslinjer`, subtitle: `Analys av ${motions.length} oppositionsmotioner som avslöjar parlamentariska skiljelinjer` },
         da: { title: `Oppositionsforslag: Ugens kamppladser`, subtitle: `Analyse af ${motions.length} oppositionsforslag` },
         no: { title: `Opposisjonsforslag: Ukens kamplinjer`, subtitle: `Analyse av ${motions.length} opposisjonsforslag` },
@@ -603,7 +603,7 @@ export async function generateInterpellations(): Promise<GenerationResult> {
       const sources: string[] = generateSources(['get_interpellationer', 'get_dokument_innehall']);
 
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Interpellation Debates: Holding Government to Account`, subtitle: `Analysis of ${interpellations.length} interpellation debates demanding ministerial accountability` },
+        en: { title: `Interpellation Debates: Holding Government to Account`, subtitle: `${interpellations.length} interpellation debates demanding ministerial accountability` },
         sv: { title: `Interpellationsdebatter: Regeringen ställs till svars`, subtitle: `Analys av ${interpellations.length} interpellationsdebatter som kräver ministersvar` },
         da: { title: `Interpellationsdebatter: Regeringen stilles til ansvar`, subtitle: `Analyse af ${interpellations.length} interpellationsdebatter` },
         no: { title: `Interpellasjonsdebatter: Regjeringen stilles til ansvar`, subtitle: `Analyse av ${interpellations.length} interpellasjonsdebatter` },
