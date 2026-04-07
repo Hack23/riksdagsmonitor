@@ -1,46 +1,266 @@
 {
-  "2026-04-07-opposition-motions-en.html": {
-    "filename": "2026-04-07-opposition-motions-en.html",
-    "lang": "en",
-    "articleType": "motions",
-    "score": 100,
+  "2026-04-07-committee-reports-da.html": {
+    "filename": "2026-04-07-committee-reports-da.html",
+    "lang": "da",
+    "articleType": "committee-reports",
+    "score": 98,
     "passed": true,
     "multidimensional": {
-      "overallScore": 61,
+      "overallScore": 70,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
-        "factualAccuracy": 80,
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 55,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 25
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-07T11:28:18.078Z"
+  },
+  "2026-04-07-committee-reports-no.html": {
+    "filename": "2026-04-07-committee-reports-no.html",
+    "lang": "no",
+    "articleType": "committee-reports",
+    "score": 98,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 70,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 55,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 25
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-07T11:28:18.090Z"
+  },
+  "2026-04-07-committee-reports-fi.html": {
+    "filename": "2026-04-07-committee-reports-fi.html",
+    "lang": "fi",
+    "articleType": "committee-reports",
+    "score": 98,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 70,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 55,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 25
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-07T11:28:18.098Z"
+  },
+  "2026-04-07-committee-reports-de.html": {
+    "filename": "2026-04-07-committee-reports-de.html",
+    "lang": "de",
+    "articleType": "committee-reports",
+    "score": 99,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 66,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
         "stakeholderCoverage": 55,
         "analyticalDepth": 65,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
         "languageQuality": 0
       },
-      "issueCount": 5
+      "issueCount": 4
     },
-    "timestamp": "2026-04-07T07:05:10.898Z"
+    "timestamp": "2026-04-07T11:28:18.103Z"
   },
-  "2026-04-07-opposition-motions-sv.html": {
-    "filename": "2026-04-07-opposition-motions-sv.html",
-    "lang": "sv",
-    "articleType": "motions",
-    "score": 95,
+  "2026-04-07-committee-reports-fr.html": {
+    "filename": "2026-04-07-committee-reports-fr.html",
+    "lang": "fr",
+    "articleType": "committee-reports",
+    "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 86,
+      "overallScore": 70,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 85,
+        "stakeholderCoverage": 55,
         "analyticalDepth": 65,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
-        "languageQuality": 100
+        "languageQuality": 25
       },
-      "issueCount": 3
+      "issueCount": 4
     },
-    "timestamp": "2026-04-07T07:05:10.901Z"
+    "timestamp": "2026-04-07T11:28:18.109Z"
+  },
+  "2026-04-07-committee-reports-es.html": {
+    "filename": "2026-04-07-committee-reports-es.html",
+    "lang": "es",
+    "articleType": "committee-reports",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 70,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 55,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 25
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-07T11:28:18.117Z"
+  },
+  "2026-04-07-committee-reports-nl.html": {
+    "filename": "2026-04-07-committee-reports-nl.html",
+    "lang": "nl",
+    "articleType": "committee-reports",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 70,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 55,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 25
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-07T11:28:18.125Z"
+  },
+  "2026-04-07-committee-reports-ar.html": {
+    "filename": "2026-04-07-committee-reports-ar.html",
+    "lang": "ar",
+    "articleType": "committee-reports",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 70,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 55,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 25
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-07T11:28:18.131Z"
+  },
+  "2026-04-07-committee-reports-he.html": {
+    "filename": "2026-04-07-committee-reports-he.html",
+    "lang": "he",
+    "articleType": "committee-reports",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 70,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 55,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 25
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-07T11:28:18.137Z"
+  },
+  "2026-04-07-committee-reports-ja.html": {
+    "filename": "2026-04-07-committee-reports-ja.html",
+    "lang": "ja",
+    "articleType": "committee-reports",
+    "score": 85,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 70,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 55,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 25
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-07T11:28:18.142Z"
+  },
+  "2026-04-07-committee-reports-ko.html": {
+    "filename": "2026-04-07-committee-reports-ko.html",
+    "lang": "ko",
+    "articleType": "committee-reports",
+    "score": 98,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 70,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 55,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 25
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-07T11:28:18.147Z"
+  },
+  "2026-04-07-committee-reports-zh.html": {
+    "filename": "2026-04-07-committee-reports-zh.html",
+    "lang": "zh",
+    "articleType": "committee-reports",
+    "score": 85,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 70,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 55,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 25
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-07T11:28:18.152Z"
   }
 }
