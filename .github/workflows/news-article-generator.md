@@ -285,7 +285,7 @@ Before generating articles, consult these skills:
 
 ### Article Type Isolation
 
-> 🚨 **This workflow writes analysis ONLY to `analysis/daily/${ARTICLE_DATE}/${REQUESTED_TYPE}/`**. NEVER write to the parent date directory or another article type's folder. See SHARED_PROMPT_PATTERNS.md "Article Type Isolation" section.
+> 🚨 **This workflow writes analysis ONLY to `analysis/daily/$ARTICLE_DATE/$REQUESTED_TYPE/`**. NEVER write to the parent date directory or another article type's folder. See SHARED_PROMPT_PATTERNS.md "Article Type Isolation" section.
 
 ### Standardised Analysis Depth Gate
 
@@ -724,7 +724,7 @@ For **non-deep-inspection** article types only, if the script fails, generate ar
 
 > 🚨 **v4.0 CRITICAL**: This is the multi-type article generator. Apply content quality enforcement for ALL article types. See `SHARED_PROMPT_PATTERNS.md` §"AI ARTICLE CONTENT GENERATION" and `ai-driven-analysis-guide.md` v4.0.
 
-**1. Read pre-computed analysis** — For the current `${REQUESTED_TYPE}`, read ALL analysis files from `analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/`. If synthesis reports "0 documents analyzed", use MCP tools to fetch data directly (see ai-driven-analysis-guide.md §Empty Analysis Fallback).
+**1. Read pre-computed analysis** — For the current `$REQUESTED_TYPE`, read ALL analysis files from `analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/`. If synthesis reports "0 documents analyzed", use MCP tools to fetch data directly (see ai-driven-analysis-guide.md §Empty Analysis Fallback).
 
 **2. Scan for BANNED content patterns** — Search each generated article for these exact strings or equivalent boilerplate patterns and REPLACE them:
 - Exact string: `"The political landscape remains fluid"` → Replace with specific winners/losers

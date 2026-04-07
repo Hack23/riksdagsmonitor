@@ -721,9 +721,9 @@ npx tsx scripts/fix-article-navigation.ts
 - `analysis/daily/$ARTICLE_DATE/motions/swot-analysis.md`
 - `analysis/daily/$ARTICLE_DATE/motions/risk-assessment.md`
 - `analysis/daily/$ARTICLE_DATE/motions/threat-analysis.md`
-- `analysis/daily/${ARTICLE_DATE}/motions/stakeholder-perspectives.md`
-- `analysis/daily/${ARTICLE_DATE}/motions/significance-scoring.md`
-- `analysis/daily/${ARTICLE_DATE}/motions/classification-results.md`
+- `analysis/daily/$ARTICLE_DATE/motions/stakeholder-perspectives.md`
+- `analysis/daily/$ARTICLE_DATE/motions/significance-scoring.md`
+- `analysis/daily/$ARTICLE_DATE/motions/classification-results.md`
 - `analysis/methodologies/ai-driven-analysis-guide.md`
 
 **4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.

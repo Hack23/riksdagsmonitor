@@ -739,9 +739,9 @@ For each interpellation found, cross-reference the minister's response to identi
 - `analysis/daily/$ARTICLE_DATE/interpellations/swot-analysis.md`
 - `analysis/daily/$ARTICLE_DATE/interpellations/risk-assessment.md`
 - `analysis/daily/$ARTICLE_DATE/interpellations/threat-analysis.md`
-- `analysis/daily/${ARTICLE_DATE}/interpellations/stakeholder-perspectives.md`
-- `analysis/daily/${ARTICLE_DATE}/interpellations/significance-scoring.md`
-- `analysis/daily/${ARTICLE_DATE}/interpellations/classification-results.md`
+- `analysis/daily/$ARTICLE_DATE/interpellations/stakeholder-perspectives.md`
+- `analysis/daily/$ARTICLE_DATE/interpellations/significance-scoring.md`
+- `analysis/daily/$ARTICLE_DATE/interpellations/classification-results.md`
 - `analysis/methodologies/ai-driven-analysis-guide.md`
 - Per-document analyses in `documents/` subfolder
 

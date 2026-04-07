@@ -728,9 +728,9 @@ npx tsx scripts/fix-article-navigation.ts
 - `analysis/daily/$ARTICLE_DATE/committeeReports/swot-analysis.md`
 - `analysis/daily/$ARTICLE_DATE/committeeReports/risk-assessment.md`
 - `analysis/daily/$ARTICLE_DATE/committeeReports/threat-analysis.md`
-- `analysis/daily/${ARTICLE_DATE}/committeeReports/stakeholder-perspectives.md`
-- `analysis/daily/${ARTICLE_DATE}/committeeReports/significance-scoring.md`
-- `analysis/daily/${ARTICLE_DATE}/committeeReports/classification-results.md`
+- `analysis/daily/$ARTICLE_DATE/committeeReports/stakeholder-perspectives.md`
+- `analysis/daily/$ARTICLE_DATE/committeeReports/significance-scoring.md`
+- `analysis/daily/$ARTICLE_DATE/committeeReports/classification-results.md`
 - `analysis/methodologies/ai-driven-analysis-guide.md`
 - Per-document analyses in `documents/` subfolder
 
@@ -742,10 +742,10 @@ npx tsx scripts/fix-article-navigation.ts
 
 **1. Read pre-computed analysis** — Before modifying article content, read:
 ```bash
-cat "analysis/daily/${ARTICLE_DATE}/committeeReports/synthesis-summary.md"
-cat "analysis/daily/${ARTICLE_DATE}/committeeReports/swot-analysis.md"
-cat "analysis/daily/${ARTICLE_DATE}/committeeReports/risk-assessment.md"
-cat "analysis/daily/${ARTICLE_DATE}/committeeReports/stakeholder-perspectives.md"
+cat "analysis/daily/$ARTICLE_DATE/committeeReports/synthesis-summary.md"
+cat "analysis/daily/$ARTICLE_DATE/committeeReports/swot-analysis.md"
+cat "analysis/daily/$ARTICLE_DATE/committeeReports/risk-assessment.md"
+cat "analysis/daily/$ARTICLE_DATE/committeeReports/stakeholder-perspectives.md"
 ```
 
 **2. Replace script-generated lede** — Find and replace any `<p class="lede">Analysis of N documents covering...` with an AI-generated analytical lede naming the most significant committee report, key actors, and political significance.

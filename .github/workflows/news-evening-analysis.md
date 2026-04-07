@@ -1321,10 +1321,10 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 
 **YOU MUST call exactly one safe output tool before exiting.** This is the single most important rule of this workflow.
 
-**Analysis artifacts MUST always be committed.** Before calling any safe output tool, check if `analysis/daily/YYYY-MM-DD/evening-analysis/` (for the current `ARTICLE_DATE`) contains files. If it does, commit only that directory with `git add "analysis/daily/${ARTICLE_DATE}/evening-analysis/"` and include it in the PR or create an analysis-only PR.
+**Analysis artifacts MUST always be committed.** Before calling any safe output tool, check if `analysis/daily/YYYY-MM-DD/evening-analysis/` (for the current `ARTICLE_DATE`) contains files. If it does, commit only that directory with `git add "analysis/daily/$ARTICLE_DATE/evening-analysis/"` and include it in the PR or create an analysis-only PR.
 
 - If you generated articles → `safeoutputs___create_pull_request({...})` (includes analysis artifacts)
-- If no articles but analysis artifacts exist → `git add "analysis/daily/${ARTICLE_DATE}/evening-analysis/" && git commit -m "📊 Analysis artifacts - Evening Analysis - {date}"` then `safeoutputs___create_pull_request({"title": "📊 Analysis Only - Evening Analysis - {date}", "body": "## Analysis Only\n\nNo articles generated but analysis artifacts committed for review.\n\nDocuments analyzed: {count}\nKey findings: {summary from synthesis-summary.md}", "labels": ["analysis-only", "evening-analysis"]})`
+- If no articles but analysis artifacts exist → `git add "analysis/daily/$ARTICLE_DATE/evening-analysis/" && git commit -m "📊 Analysis artifacts - Evening Analysis - {date}"` then `safeoutputs___create_pull_request({"title": "📊 Analysis Only - Evening Analysis - {date}", "body": "## Analysis Only\n\nNo articles generated but analysis artifacts committed for review.\n\nDocuments analyzed: {count}\nKey findings: {summary from synthesis-summary.md}", "labels": ["analysis-only", "evening-analysis"]})`
 - If MCP server unreachable (no analysis produced) → `safeoutputs___noop({"message": "MCP server unavailable. No articles or analysis generated."})`
 - If MCP data unavailable → `safeoutputs___missing_data({"reason": "MCP returned no usable data for evening analysis."})`
 - If any error occurs → commit any analysis artifacts first, then `safeoutputs___noop({"message": "Error during evening analysis: <brief description>"})`

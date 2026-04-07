@@ -709,8 +709,8 @@ npx tsx scripts/fix-article-navigation.ts
 - `analysis/daily/$ARTICLE_DATE/propositions/risk-assessment.md`
 - `analysis/daily/$ARTICLE_DATE/propositions/threat-analysis.md`
 - `analysis/daily/$ARTICLE_DATE/propositions/stakeholder-perspectives.md`
-- `analysis/daily/${ARTICLE_DATE}/propositions/significance-scoring.md`
-- `analysis/daily/${ARTICLE_DATE}/propositions/classification-results.md`
+- `analysis/daily/$ARTICLE_DATE/propositions/significance-scoring.md`
+- `analysis/daily/$ARTICLE_DATE/propositions/classification-results.md`
 - `analysis/methodologies/ai-driven-analysis-guide.md`
 - Per-document analyses in `documents/` subfolder
 
@@ -720,7 +720,7 @@ npx tsx scripts/fix-article-navigation.ts
 
 > 🚨 **v4.0 CRITICAL**: The AI MUST read pre-computed analysis and rewrite ALL script-generated stub content. See `SHARED_PROMPT_PATTERNS.md` §"AI ARTICLE CONTENT GENERATION" and `ai-driven-analysis-guide.md` v4.0.
 
-**1. Read pre-computed analysis** — Read synthesis, SWOT, risk, and stakeholder analysis from `analysis/daily/${ARTICLE_DATE}/propositions/`.
+**1. Read pre-computed analysis** — Read synthesis, SWOT, risk, and stakeholder analysis from `analysis/daily/$ARTICLE_DATE/propositions/`.
 
 **2. Replace script-generated lede** — Replace any `"Analysis of N documents..."` placeholder with AI lede naming specific propositions, ministers, and political significance.
 
