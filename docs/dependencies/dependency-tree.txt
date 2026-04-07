@@ -1,16 +1,16 @@
-riksdagsmonitor@0.8.26 /home/runner/work/riksdagsmonitor/riksdagsmonitor
-├─┬ @emnapi/core@1.8.1 extraneous
-│ ├── @emnapi/wasi-threads@1.1.0 deduped
+riksdagsmonitor@0.8.27 /home/runner/work/riksdagsmonitor/riksdagsmonitor
+├─┬ @emnapi/core@1.9.1 extraneous
+│ ├── @emnapi/wasi-threads@1.2.0 deduped
 │ └── tslib@2.8.1
-├─┬ @emnapi/runtime@1.8.1 extraneous
+├─┬ @emnapi/runtime@1.9.1 extraneous
 │ └── tslib@2.8.1 deduped
-├─┬ @emnapi/wasi-threads@1.1.0 extraneous
+├─┬ @emnapi/wasi-threads@1.2.0 extraneous
 │ └── tslib@2.8.1 deduped
 ├─┬ @eslint/js@10.0.1
 │ └── eslint@10.2.0 deduped
-├─┬ @napi-rs/wasm-runtime@1.1.1 extraneous
-│ ├── @emnapi/core@1.8.1 deduped
-│ ├── @emnapi/runtime@1.8.1 deduped
+├─┬ @napi-rs/wasm-runtime@1.1.2 extraneous
+│ ├── @emnapi/core@1.9.1 deduped
+│ ├── @emnapi/runtime@1.9.1 deduped
 │ └── @tybys/wasm-util@0.10.1 deduped
 ├─┬ @tybys/wasm-util@0.10.1 extraneous
 │ └── tslib@2.8.1 deduped
@@ -62,11 +62,11 @@ riksdagsmonitor@0.8.26 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ └── undici-types@7.18.2
 ├─┬ @types/papaparse@5.5.2
 │ └── @types/node@25.5.2 deduped
-├─┬ @vitest/coverage-v8@4.1.2
+├─┬ @vitest/coverage-v8@4.1.3
 │ ├── @bcoe/v8-coverage@1.0.2
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@4.1.2
-│ ├─┬ @vitest/utils@4.1.2
-│ │ ├── @vitest/pretty-format@4.1.2 deduped
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser@4.1.3
+│ ├─┬ @vitest/utils@4.1.3
+│ │ ├── @vitest/pretty-format@4.1.3 deduped
 │ │ ├── convert-source-map@2.0.0
 │ │ └── tinyrainbow@3.1.0 deduped
 │ ├─┬ ast-v8-to-istanbul@1.0.0
@@ -96,9 +96,9 @@ riksdagsmonitor@0.8.26 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── obug@2.1.1
 │ ├── std-env@4.0.0
 │ ├── tinyrainbow@3.1.0
-│ └── vitest@4.1.2 deduped
-├─┬ @vitest/ui@4.1.2
-│ ├── @vitest/utils@4.1.2 deduped
+│ └── vitest@4.1.3 deduped
+├─┬ @vitest/ui@4.1.3
+│ ├── @vitest/utils@4.1.3 deduped
 │ ├── fflate@0.8.2
 │ ├── flatted@3.4.2
 │ ├── pathe@2.0.3
@@ -111,7 +111,7 @@ riksdagsmonitor@0.8.26 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ │ └── picomatch@4.0.4 deduped
 │ │ └── picomatch@4.0.4 deduped
 │ ├── tinyrainbow@3.1.0 deduped
-│ └── vitest@4.1.2 deduped
+│ └── vitest@4.1.3 deduped
 ├─┬ ajv-formats@3.0.1
 │ └── ajv@8.18.0 deduped
 ├─┬ ajv@8.18.0
@@ -794,8 +794,8 @@ riksdagsmonitor@0.8.26 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 ├─┬ vite-plugin-sri-gen@1.3.2
 │ ├─┬ parse5@8.0.0
 │ │ └── entities@6.0.1
-│ └── vite@8.0.5 deduped
-├─┬ vite@8.0.5
+│ └── vite@8.0.6 deduped
+├─┬ vite@8.0.6
 │ ├── @types/node@25.5.2 deduped
 │ ├── UNMET OPTIONAL DEPENDENCY @vitejs/devtools@^0.1.0
 │ ├── esbuild@0.27.3 deduped
@@ -820,24 +820,24 @@ riksdagsmonitor@0.8.26 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ │ ├── nanoid@3.3.11
 │ │ ├── picocolors@1.1.1 deduped
 │ │ └── source-map-js@1.2.1 deduped
-│ ├─┬ rolldown@1.0.0-rc.12
-│ │ ├── @oxc-project/types@0.122.0
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-android-arm64@1.0.0-rc.12
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-arm64@1.0.0-rc.12
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-x64@1.0.0-rc.12
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-freebsd-x64@1.0.0-rc.12
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm-gnueabihf@1.0.0-rc.12
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-gnu@1.0.0-rc.12
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-musl@1.0.0-rc.12
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-ppc64-gnu@1.0.0-rc.12
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-s390x-gnu@1.0.0-rc.12
-│ │ ├── @rolldown/binding-linux-x64-gnu@1.0.0-rc.12
-│ │ ├── @rolldown/binding-linux-x64-musl@1.0.0-rc.12
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-openharmony-arm64@1.0.0-rc.12
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-wasm32-wasi@1.0.0-rc.12
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-arm64-msvc@1.0.0-rc.12
-│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-x64-msvc@1.0.0-rc.12
-│ │ └── @rolldown/pluginutils@1.0.0-rc.12
+│ ├─┬ rolldown@1.0.0-rc.13
+│ │ ├── @oxc-project/types@0.123.0
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-android-arm64@1.0.0-rc.13
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-arm64@1.0.0-rc.13
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-darwin-x64@1.0.0-rc.13
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-freebsd-x64@1.0.0-rc.13
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm-gnueabihf@1.0.0-rc.13
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-gnu@1.0.0-rc.13
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-arm64-musl@1.0.0-rc.13
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-ppc64-gnu@1.0.0-rc.13
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-linux-s390x-gnu@1.0.0-rc.13
+│ │ ├── @rolldown/binding-linux-x64-gnu@1.0.0-rc.13
+│ │ ├── @rolldown/binding-linux-x64-musl@1.0.0-rc.13
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-openharmony-arm64@1.0.0-rc.13
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-wasm32-wasi@1.0.0-rc.13
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-arm64-msvc@1.0.0-rc.13
+│ │ ├── UNMET OPTIONAL DEPENDENCY @rolldown/binding-win32-x64-msvc@1.0.0-rc.13
+│ │ └── @rolldown/pluginutils@1.0.0-rc.13
 │ ├── UNMET OPTIONAL DEPENDENCY sass-embedded@^1.70.0
 │ ├── UNMET OPTIONAL DEPENDENCY sass@^1.70.0
 │ ├── UNMET OPTIONAL DEPENDENCY stylus@>=0.54.8
@@ -846,41 +846,43 @@ riksdagsmonitor@0.8.26 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── tinyglobby@0.2.15 deduped
 │ ├── tsx@4.21.0 deduped
 │ └── yaml@2.8.2 deduped
-├─┬ vitest@4.1.2
+├─┬ vitest@4.1.3
 │ ├── UNMET OPTIONAL DEPENDENCY @edge-runtime/vm@*
 │ ├── UNMET OPTIONAL DEPENDENCY @opentelemetry/api@^1.9.0
 │ ├── @types/node@25.5.2 deduped
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@4.1.2
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@4.1.2
-│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-webdriverio@4.1.2
-│ ├─┬ @vitest/expect@4.1.2
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-playwright@4.1.3
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-preview@4.1.3
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/browser-webdriverio@4.1.3
+│ ├── UNMET OPTIONAL DEPENDENCY @vitest/coverage-istanbul@4.1.3
+│ ├── @vitest/coverage-v8@4.1.3 deduped
+│ ├─┬ @vitest/expect@4.1.3
 │ │ ├── @standard-schema/spec@1.1.0
 │ │ ├─┬ @types/chai@5.2.3
 │ │ │ ├── @types/deep-eql@4.0.2
 │ │ │ └── assertion-error@2.0.1
-│ │ ├── @vitest/spy@4.1.2 deduped
-│ │ ├── @vitest/utils@4.1.2 deduped
+│ │ ├── @vitest/spy@4.1.3 deduped
+│ │ ├── @vitest/utils@4.1.3 deduped
 │ │ ├── chai@6.2.2
 │ │ └── tinyrainbow@3.1.0 deduped
-│ ├─┬ @vitest/mocker@4.1.2
-│ │ ├── @vitest/spy@4.1.2 deduped
+│ ├─┬ @vitest/mocker@4.1.3
+│ │ ├── @vitest/spy@4.1.3 deduped
 │ │ ├── estree-walker@3.0.3 deduped
 │ │ ├── magic-string@0.30.21 deduped
 │ │ ├── UNMET OPTIONAL DEPENDENCY msw@^2.4.9
-│ │ └── vite@8.0.5 deduped
-│ ├─┬ @vitest/pretty-format@4.1.2
+│ │ └── vite@8.0.6 deduped
+│ ├─┬ @vitest/pretty-format@4.1.3
 │ │ └── tinyrainbow@3.1.0 deduped
-│ ├─┬ @vitest/runner@4.1.2
-│ │ ├── @vitest/utils@4.1.2 deduped
+│ ├─┬ @vitest/runner@4.1.3
+│ │ ├── @vitest/utils@4.1.3 deduped
 │ │ └── pathe@2.0.3 deduped
-│ ├─┬ @vitest/snapshot@4.1.2
-│ │ ├── @vitest/pretty-format@4.1.2 deduped
-│ │ ├── @vitest/utils@4.1.2 deduped
+│ ├─┬ @vitest/snapshot@4.1.3
+│ │ ├── @vitest/pretty-format@4.1.3 deduped
+│ │ ├── @vitest/utils@4.1.3 deduped
 │ │ ├── magic-string@0.30.21 deduped
 │ │ └── pathe@2.0.3 deduped
-│ ├── @vitest/spy@4.1.2
-│ ├── @vitest/ui@4.1.2 deduped
-│ ├── @vitest/utils@4.1.2 deduped
+│ ├── @vitest/spy@4.1.3
+│ ├── @vitest/ui@4.1.3 deduped
+│ ├── @vitest/utils@4.1.3 deduped
 │ ├── es-module-lexer@2.0.0
 │ ├── expect-type@1.3.0
 │ ├── happy-dom@20.8.9 deduped
@@ -895,7 +897,7 @@ riksdagsmonitor@0.8.26 /home/runner/work/riksdagsmonitor/riksdagsmonitor
 │ ├── tinyexec@1.0.2
 │ ├── tinyglobby@0.2.15 deduped
 │ ├── tinyrainbow@3.1.0 deduped
-│ ├── vite@8.0.5 deduped
+│ ├── vite@8.0.6 deduped
 │ └─┬ why-is-node-running@2.3.0
 │   ├── siginfo@2.0.0
 │   └── stackback@0.0.2
