@@ -75,6 +75,19 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
 const ANALYSIS_DIR = path.join(REPO_ROOT, 'analysis');
 
+/**
+ * Prefix used in keyInsights to tag policy domain classifications.
+ * This format is consumed by the markdown-serializer to extract domain info.
+ */
+export const POLICY_DOMAIN_INSIGHT_PREFIX = 'Policy domain:';
+
+/**
+ * Swedish phrase indicating a motion responds to a government proposition.
+ * Documents from the Riksdag API always use Swedish titles regardless of
+ * the target analysis language, so Swedish-only detection is correct here.
+ */
+const MOTION_PROPOSITION_RESPONSE_PREFIX = 'med anledning av prop';
+
 function formatTimestampForMarkdown(date: Date = new Date()): string {
   return date.toISOString().slice(0, 16).replace('T', ' ') + ' UTC';
 }
@@ -326,7 +339,7 @@ function analyzeDocuments(docs: RawDocument[], _cia: unknown, _lang: string): St
         }
       } else if (doktyp === 'mot') {
         significance = 2;
-        if (title.includes('med anledning av prop')) {
+        if (title.includes(MOTION_PROPOSITION_RESPONSE_PREFIX)) {
           significance += 1; // Response to proposition = slightly more significant
         }
       }
@@ -340,7 +353,7 @@ function analyzeDocuments(docs: RawDocument[], _cia: unknown, _lang: string): St
         perspectives: [],
         crossDocumentLinks: [],
         keyInsights: domainResult.domains.length > 0
-          ? [`Policy domain: ${domainResult.domains.join(', ')} (${domainResult.confidence} confidence)`]
+          ? [`${POLICY_DOMAIN_INSIGHT_PREFIX} ${domainResult.domains.join(', ')} (${domainResult.confidence} confidence)`]
           : [],
         confidenceScore: domainConfidence,
       };

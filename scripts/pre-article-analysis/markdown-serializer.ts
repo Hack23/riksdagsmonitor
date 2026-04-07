@@ -168,6 +168,12 @@ function significanceLabel(score: number): string {
   return '🟢 Low';
 }
 
+/**
+ * Prefix used by pre-article-analysis.ts to tag policy domain classifications in keyInsights.
+ * Must match {@link POLICY_DOMAIN_INSIGHT_PREFIX} in the parent module.
+ */
+const POLICY_DOMAIN_INSIGHT_PREFIX = 'Policy domain:';
+
 function escapeMarkdownTableCell(value: string): string {
   return value
     .replace(/\\/g, '\\\\')
@@ -267,7 +273,7 @@ export function serializeClassificationResults(
       .slice(0, 3);
     if (domains.length === 0 && result.keyInsights.length > 0) {
       // Extract domain from keyInsights (format: "Policy domain: X, Y (Z confidence)")
-      const domainInsight = result.keyInsights.find(i => i.startsWith('Policy domain:'));
+      const domainInsight = result.keyInsights.find(i => i.startsWith(POLICY_DOMAIN_INSIGHT_PREFIX));
       if (domainInsight) {
         const match = domainInsight.match(/^Policy domain:\s*(.+?)\s*\(/);
         if (match) {
