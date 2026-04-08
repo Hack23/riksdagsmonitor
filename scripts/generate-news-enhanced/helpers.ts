@@ -838,12 +838,18 @@ export async function writeArticlePair(htmlEN: string, htmlSV: string, slug: str
  * not substantive political content.
  */
 const HIGHLIGHT_REJECT_PATTERNS: readonly RegExp[] = [
+  /** Document metadata field labels (e.g. "Committee:", "Filed by:") */
   /^(Committee|Published|Filed by|Filed By|Why It Matters|What This Means|Thematic Analysis):?$/i,
+  /** Generic section headers that add no political intelligence */
   /^(Opposition Strategy|Latest|Overview|Summary|Background|Context|Report):?$/i,
-  /^\d{4}-\d{2}-\d{2}/,                             // raw dates
-  /^(Betänkande|Proposition|Motion|Interpellation)\s/i, // doc type prefixes
-  /^HD\d+/i,                                         // dok_id references
-  /^(Committee on|Utskott)/i,                        // committee prefix labels
+  /** Raw date strings (e.g. "2026-04-08") */
+  /^\d{4}-\d{2}-\d{2}/,
+  /** Swedish document type prefixes (e.g. "Betänkande 2025/26:FöU12") */
+  /^(Betänkande|Proposition|Motion|Interpellation)\s/i,
+  /** dok_id references (e.g. "HD12345") */
+  /^HD\d+/i,
+  /** English/Swedish committee prefix labels */
+  /^(Committee on|Utskott)/i,
 ];
 
 function extractHighlights(content: string, maxHighlights: number = 3): string[] {

@@ -34,26 +34,39 @@ import {
 // SEO / Structured Data helpers
 // ---------------------------------------------------------------------------
 
+/** Minimum viable headline length after banned-pattern removal */
+const MIN_HEADLINE_LENGTH = 10;
+/** Maximum meta description length (Google SERP limit is ~155-160 chars) */
+const MAX_META_DESCRIPTION_LENGTH = 160;
+/** Characters reserved for ellipsis suffix when truncating descriptions */
+const ELLIPSIS_SUFFIX_LENGTH = 3;
+/** Minimum truncated length before we accept word-boundary truncation */
+const MIN_TRUNCATED_DESCRIPTION_LENGTH = 100;
+
+/**
+ * Patterns that indicate boilerplate text in alternativeHeadline fields.
+ * These are script-generated template artifacts that must not appear in
+ * Schema.org structured data.
+ */
+const HEADLINE_BANNED_PATTERNS: readonly RegExp[] = [
+  /Political intelligence briefing on [A-Za-z:]+\s+and\s+[A-Za-z:]+\s*[—–-]\s*\d+ parliamentary documents analyzed/i,
+  /In-depth analysis of [A-Za-z:]+\s+based on \d+ parliamentary documents/i,
+  /Analysis of \d+ documents covering[^.]*/i,
+];
+
 /**
  * Sanitize a subtitle for use as Schema.org alternativeHeadline.
  * Strips banned boilerplate patterns that leak from script-generated content.
  */
 function sanitizeAlternativeHeadline(subtitle: string, maxLen: number = 110): string {
   let clean = subtitle;
-  // Strip known banned patterns that pollute alternativeHeadline
-  const bannedPatterns = [
-    /Political intelligence briefing on [A-Za-z:]+\s+and\s+[A-Za-z:]+\s*[—–-]\s*\d+ parliamentary documents analyzed/i,
-    /In-depth analysis of [A-Za-z:]+\s+based on \d+ parliamentary documents/i,
-    /Analysis of \d+ documents covering[^.]*/i,
-  ];
-  for (const bp of bannedPatterns) {
+  for (const bp of HEADLINE_BANNED_PATTERNS) {
     if (bp.test(clean)) {
-      // Fall back to a generic but valid headline
       clean = clean.replace(bp, '').trim();
     }
   }
   // If cleaning emptied the string, return a safe fallback
-  if (clean.length < 10) {
+  if (clean.length < MIN_HEADLINE_LENGTH) {
     clean = subtitle.substring(0, maxLen);
   }
   return clean.substring(0, maxLen);
@@ -72,21 +85,18 @@ function countWords(html: string): number {
  * Ensures the description is 150-160 characters and doesn't contain banned patterns.
  */
 function generateSeoDescription(subtitle: string, title: string): string {
-  // Start with subtitle, which is the best candidate
   let desc = subtitle;
 
   // Check for banned "Analysis of N documents" patterns
   if (/Analysis of \d+ documents/i.test(desc) || /briefing on \w+:\s+and/i.test(desc)) {
-    // Fall back to title-based description
     desc = `${title}. Political intelligence analysis from Sweden's Riksdag — AI-generated from official parliamentary sources.`;
   }
 
   // Ensure description is within 150-160 char range
-  if (desc.length > 160) {
-    // Truncate at word boundary
-    const truncated = desc.substring(0, 157);
+  if (desc.length > MAX_META_DESCRIPTION_LENGTH) {
+    const truncated = desc.substring(0, MAX_META_DESCRIPTION_LENGTH - ELLIPSIS_SUFFIX_LENGTH);
     const lastSpace = truncated.lastIndexOf(' ');
-    desc = lastSpace > 100 ? truncated.substring(0, lastSpace) + '...' : truncated + '...';
+    desc = lastSpace > MIN_TRUNCATED_DESCRIPTION_LENGTH ? truncated.substring(0, lastSpace) + '...' : truncated + '...';
   }
 
   return desc;
