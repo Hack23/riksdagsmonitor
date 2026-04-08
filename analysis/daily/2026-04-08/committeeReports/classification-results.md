@@ -39,6 +39,43 @@ Classified 20 committee reports by policy domain, sensitivity level, and urgency
 | HD01NU17 | NU | Energy Markets | MEDIUM | MEDIUM | P3 |
 | HD01KrU10 | KrU | Cultural Policy/EU | LOW | LOW | P3 |
 
+## Classification Distribution
+
+```mermaid
+pie title Sensitivity Distribution (20 Reports)
+    "HIGH" : 3
+    "MEDIUM" : 12
+    "LOW" : 5
+```
+
+```mermaid
+pie title Priority Distribution
+    "P1 — Critical" : 3
+    "P2 — Important" : 3
+    "P3 — Standard" : 14
+```
+
+```mermaid
+flowchart LR
+    classDef p1 fill:#e74c3c,stroke:#c0392b,color:#fff
+    classDef p2 fill:#f39c12,stroke:#e67e22,color:#fff
+    classDef p3 fill:#3498db,stroke:#2980b9,color:#fff
+
+    P1["P1 — Critical"]:::p1
+    P2["P2 — Important"]:::p2
+    P3["P3 — Standard"]:::p3
+
+    P1 --> FoU12["FöU12<br/>Defence"]:::p1
+    P1 --> MJU30["MJU30<br/>Climate"]:::p1
+    P1 --> UU6["UU6<br/>Security Policy"]:::p1
+
+    P2 --> SoU37["SoU37<br/>Health/EU"]:::p2
+    P2 --> JuU15["JuU15<br/>Justice"]:::p2
+    P2 --> CU18["CU18<br/>Housing"]:::p2
+
+    P3 --> OTHER["14 additional reports<br/>across 9 committees"]:::p3
+```
+
 ## Data Quality Notes
 
-Classification confidence: **HIGH** for domain assignment (committee-based), **MEDIUM** for sensitivity assessment.
+Classification confidence: **HIGH** for domain assignment (committee-based), **MEDIUM** for sensitivity assessment. [HIGH] confidence in committee mapping verified against Riksdag committee codes. Cross-referenced against 12 active committees in riksmöte 2025/26.

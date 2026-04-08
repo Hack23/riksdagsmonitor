@@ -29,6 +29,27 @@
 - **Committee assignment**: UU (Utrikesutskottet / Foreign Affairs Committee)
 - **Policy impact**: Defence export framework, NATO interoperability, dual-use controls
 
+## Classification Distribution
+
+```mermaid
+pie title Document Sensitivity Distribution
+    "PUBLIC" : 1
+```
+
+```mermaid
+flowchart TD
+    classDef defence fill:#e74c3c,stroke:#c0392b,color:#fff
+    classDef trade fill:#f39c12,stroke:#e67e22,color:#fff
+    classDef routine fill:#3498db,stroke:#2980b9,color:#fff
+
+    HD03114["HD03114<br/>Strategisk exportkontroll 2025<br/>Skr. 2025/26:114"]:::defence
+    UU["UU — Utrikesutskottet"]:::trade
+    HD03114 --> UU
+    UU --> DOMAIN_DEF["Defence & Security Policy"]:::defence
+    UU --> DOMAIN_TRADE["Foreign Trade Policy"]:::trade
+    UU --> DOMAIN_INTL["International Law Compliance"]:::routine
+```
+
 ## Data Quality Notes
 
-Classification based on document metadata, committee assignment, and policy domain analysis. Confidence: MEDIUM.
+Classification based on document metadata, committee assignment, and policy domain analysis. Confidence: MEDIUM [MEDIUM]. Single document limits statistical analysis; classification confidence elevated by NATO context and committee-level verification.
