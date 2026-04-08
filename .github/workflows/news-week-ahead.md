@@ -271,7 +271,7 @@ Use this calculated `rm` value in ALL MCP queries requiring the `rm` parameter.
 
 ## MANDATORY Deduplication Check
 
-Before generating articles, verify no duplicate articles exist for the target date:
+Before generating articles, check if articles already exist for the target date. **This check controls article GENERATION only — the deep political analysis phase ALWAYS runs regardless.**
 ```bash
 # Resolve article date: use workflow_dispatch input when provided, fallback to UTC today
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
@@ -283,12 +283,13 @@ ARTICLE_TYPE="week-ahead"
 FORCE_GENERATION="${{ github.event.inputs.force_generation || 'false' }}"
 EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}-en.html 2>/dev/null | wc -l)
 if [ "$EXISTING" -gt 0 ] && [ "${FORCE_GENERATION}" != "true" ]; then
-  echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — skipping (set force_generation=true to override)"
-  exit 0
+  echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — article generation will be skipped (analysis still runs)"
+  echo "SKIP_ARTICLE_GENERATION=true"
 fi
+# NOTE: Do NOT exit here or call safeoutputs___noop — analysis phase MUST still execute
 ```
 
-If articles already exist and `force_generation` is not `true`, call `safeoutputs___noop` with a message explaining that articles already exist for the target date.
+> **🚨 NEVER call `safeoutputs___noop` because articles already exist.** If articles exist, the workflow MUST still run the full 15-20 minute deep political analysis phase and commit analysis artifacts. The dedup check only controls whether NEW HTML articles are generated — analysis is the primary output and always runs. If analysis produces artifacts, use `safeoutputs___create_pull_request` with `analysis-only` label.
 
 ## MANDATORY MCP Health Gate
 
@@ -348,7 +349,8 @@ Example: `news/content/2026-03-23/week-ahead`
 
 - ✅ `safeoutputs___create_pull_request` when articles generated
 - ✅ `safeoutputs___create_pull_request` with analysis-only PR when no articles but analysis artifacts exist — title: `📊 Analysis Only - Week Ahead - {date}`, labels: `["analysis-only", "week-ahead"]`
-- ✅ `safeoutputs___noop` ONLY if genuinely no upcoming calendar events AND no analysis artifacts
+- ✅ `safeoutputs___noop` ONLY if MCP server is completely unreachable after 3 retry attempts AND no analysis artifacts exist
+- ❌ NEVER use `safeoutputs___noop` because articles already exist — analysis always runs
 - ❌ NEVER use `safeoutputs___noop` as fallback for PR creation failures
 - ❌ NEVER use `safeoutputs___noop` if analysis artifacts for the current run exist (e.g. under `analysis/daily/$ARTICLE_DATE/` or `analysis/weekly/$WEEK_LABEL/`)
 
@@ -399,8 +401,8 @@ get_calendar_events({ from: today, tom: nextWeek, limit: 100 })
 
 ## Generation Steps
 
-### Step 1: Check Recent Generation
-Check if week-ahead articles exist from the last 11 hours.
+### Step 1: Check Existing Articles (Analysis Always Runs)
+Check if week-ahead articles already exist for the target date. If they do, skip article generation but **ALWAYS run the full deep political analysis phase** — analysis is the primary output and must execute on every run regardless of article existence.
 
 ### Step 2: Query MCP
 ```javascript

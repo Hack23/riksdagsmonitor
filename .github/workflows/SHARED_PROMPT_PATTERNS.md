@@ -867,18 +867,25 @@ npx tsx scripts/validate-cross-references.ts news/*-{type}-*.html
 
 ## Standardised Deduplication Check (copy into every content workflow)
 
+> 🚨 **CRITICAL**: The deduplication check controls **article generation only** — it NEVER skips the deep political analysis phase. Analysis MUST always run regardless of whether articles already exist. When articles exist, the workflow still performs full 15-20 minute analysis and commits analysis artifacts. Only the HTML article generation step is skipped (unless `force_generation=true`).
+
 ```bash
-# Check if articles for today already exist
+# Check if articles for today already exist (controls article GENERATION only, NOT analysis)
 EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}-en.html 2>/dev/null | wc -l)
 if [ "$EXISTING" -gt 0 ] && [ "${FORCE_GENERATION}" != "true" ]; then
-  echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — skipping (use FORCE_GENERATION=true to override)"
-  exit 0
+  echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — article generation will be skipped (analysis still runs)"
+  echo "SKIP_ARTICLE_GENERATION=true"
 fi
+# NOTE: Do NOT exit here or call safeoutputs___noop — analysis phase MUST still execute
 ```
+
+> **🚨 NEVER call `safeoutputs___noop` because articles already exist.** The only valid reason for noop is when the MCP server is completely unreachable after 3 retry attempts. If articles exist but analysis produces new artifacts, commit those artifacts via `safeoutputs___create_pull_request` with `analysis-only` label.
 
 ## 🚨 MANDATORY: AI-Driven Analysis Using Methods & Templates (copy into every analysis workflow)
 
 > **NON-NEGOTIABLE**: The AI agent's PRIMARY job is to create real analysis for every piece of data or document downloaded from MCP. Scripts generate stubs — the AI MUST replace them with full template-compliant analysis. This is NOT optional.
+
+> **🚨 ANALYSIS RUNS EVERY TIME — NO EXCEPTIONS**: The deep political analysis phase executes on EVERY workflow run, regardless of whether articles already exist, regardless of whether another workflow ran recently, regardless of any other condition. The ONLY reason to skip analysis is if the MCP server is completely unreachable after 3 retry attempts. "Another job ran 18 minutes ago" is NOT a valid reason to skip analysis. Code changes, data updates, and new parliamentary activity happen continuously — every run MUST produce fresh analysis.
 
 ````markdown
 ### AI-Driven Analysis Protocol
@@ -891,6 +898,7 @@ fi
 > 5. **Create analysis for EVERY document/data piece** following the templates exactly
 > 6. **Pass the quality gate** (see below) — every analysis file must contain Mermaid diagrams, evidence tables, and dok_id citations
 > 7. **Commit both data AND analysis** — never one without the other
+> 8. **NEVER skip analysis** because articles already exist or another run completed recently — analysis is the PRIMARY output
 
 #### ⏱️ Mandatory Minimum Analysis Time: 15 Minutes
 

@@ -315,7 +315,7 @@ echo "============================"
 
 ## MANDATORY Deduplication Check
 
-Before generating articles, verify no duplicate articles exist for the target date:
+Before generating articles, check if articles already exist for the target date. **This check controls article GENERATION only — the deep political analysis phase ALWAYS runs regardless.**
 ```bash
 # Resolve article date: use workflow_dispatch input when provided, fallback to UTC today
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
@@ -325,12 +325,13 @@ fi
 ARTICLE_TYPE="evening-analysis"
 EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}-en.html 2>/dev/null | wc -l)
 if [ "$EXISTING" -gt 0 ]; then
-  echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — skipping"
-  exit 0
+  echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — article generation will be skipped (analysis still runs)"
+  echo "SKIP_ARTICLE_GENERATION=true"
 fi
+# NOTE: Do NOT exit here or call safeoutputs___noop — analysis phase MUST still execute
 ```
 
-If articles already exist, call `safeoutputs___noop` with a message explaining that articles already exist for the target date.
+> **🚨 NEVER call `safeoutputs___noop` because articles already exist.** If articles exist, the workflow MUST still run the full 15-20 minute deep political analysis phase and commit analysis artifacts. The dedup check only controls whether NEW HTML articles are generated — analysis is the primary output and always runs. If analysis produces artifacts, use `safeoutputs___create_pull_request` with `analysis-only` label.
 
 ### MCP Health Gate
 
@@ -1260,7 +1261,8 @@ news/content/{YYYY-MM-DD}/evening-analysis
 
 - ✅ **REQUIRED:** `safeoutputs___create_pull_request` when articles were generated
 - ✅ **REQUIRED:** `safeoutputs___create_pull_request` with analysis-only PR when no articles but analysis artifacts exist — title: `📊 Analysis Only - Evening Analysis - {date}`, labels: `["analysis-only", "evening-analysis"]`
-- ✅ **ONLY USE `safeoutputs___noop` if genuinely no parliamentary activity AND no analysis artifacts** in the queried date range
+- ✅ **ONLY USE `safeoutputs___noop` if MCP server is completely unreachable after 3 retry attempts AND no analysis artifacts exist**
+- ❌ **NEVER use `safeoutputs___noop` because articles already exist** — analysis always runs
 - ❌ **NEVER use `safeoutputs___noop` as fallback for PR creation failures**
 - ❌ **NEVER use `safeoutputs___noop` if analysis artifacts exist for the current `ARTICLE_DATE` under `analysis/daily/.../evening-analysis/` (for example, `analysis/daily/2025-03-04/evening-analysis/`)**
 
