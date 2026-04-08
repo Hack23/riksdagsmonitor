@@ -31,54 +31,84 @@ The `analysis/daily/` directory stores per-day analysis artifacts produced by Ri
 
 ```
 analysis/daily/
-├── YYYY-MM-DD/          ← ISO 8601 date (always zero-padded)
-│   ├── morning-significance-scores.json
-│   ├── morning-classification.md
-│   ├── morning-risk-snapshot.md
-│   ├── evening-swot-update.md
-│   ├── evening-stakeholder-impact.md
-│   ├── evening-threat-snapshot.md
-│   ├── realtime-HHMM-classification.md   ← timestamped (e.g. realtime-1000-classification.md)
-│   └── realtime-HHMM-risk-delta.md
+├── YYYY-MM-DD/                  ← ISO 8601 date (always zero-padded)
+│   ├── committeeReports/        ← Committee reports analysis (news-committee-reports workflow)
+│   │   ├── synthesis-summary.md
+│   │   ├── classification-results.md
+│   │   ├── risk-assessment.md
+│   │   ├── swot-analysis.md
+│   │   ├── threat-analysis.md
+│   │   ├── stakeholder-perspectives.md
+│   │   ├── significance-scoring.md
+│   │   ├── cross-reference-map.md
+│   │   ├── data-download-manifest.md
+│   │   └── documents/           ← Per-document analysis files
+│   ├── propositions/            ← Government propositions (news-propositions workflow)
+│   │   └── (same 9 batch files + documents/)
+│   ├── motions/                 ← Opposition motions (news-motions workflow)
+│   │   └── (same 9 batch files + documents/)
+│   ├── interpellations/         ← Interpellation debates (news-interpellations workflow)
+│   │   └── (same 9 batch files + documents/)
+│   ├── evening-analysis/        ← Evening analysis (news-evening-analysis workflow)
+│   │   └── (same 9 batch files + documents/)
+│   ├── realtime-HHMM/           ← Time-stamped realtime (news-realtime-monitor workflow)
+│   │   └── (same 9 batch files + documents/)
+│   ├── week-ahead/              ← Week-ahead forecasting (news-week-ahead workflow)
+│   │   └── (same 9 batch files)
+│   ├── month-ahead/             ← Month-ahead forecasting (news-month-ahead workflow)
+│   │   └── (same 9 batch files)
+│   ├── weekly-review/           ← Weekly review (news-weekly-review workflow)
+│   │   └── (same 9 batch files)
+│   ├── monthly-review/          ← Monthly review (news-monthly-review workflow)
+│   │   └── (same 9 batch files)
+│   └── general/                 ← Legacy unscoped files (pre-April 2026)
 ```
 
-The filenames above are **aggregated time-of-day artifacts** for a given date (morning, evening, realtime).
-Per-event political classification artifacts follow the separate convention defined in
-`analysis/templates/political-classification.md`: `YYYY-MM-DD-{event-slug}-classification.md` (one file per political event).
-Both naming schemes are intentional and complementary.
+**🚨 CRITICAL: Every article type MUST use its own subdirectory.** Never write analysis `.md` files directly to the `YYYY-MM-DD/` root directory. This prevents merge conflicts when multiple workflows run concurrently on the same date. The `analysis-reader.ts` automatically scans subdirectories.
 
 **Rules:**
 - Always use `YYYY-MM-DD` — never `DD-MM-YYYY`, `MM/DD/YYYY`, or named months
 - Zero-pad day and month: `2026-03-05` not `2026-3-5`
-- If multiple runs occur on the same day, append to the same directory (never create `2026-03-26-v2/`)
-- Realtime files are timestamped `HHMM` in 24-hour UTC: `realtime-1400-classification.md`
+- Each workflow writes ONLY to its own article-type subdirectory
+- Never write `.md` files to the root date directory — always use a subfolder
+- Realtime files are timestamped `HHMM` in 24-hour UTC: `realtime-1400/`
+- If a workflow runs without `--doc-type`, it MUST relocate artifacts using `mv` (not `cp`) into its subfolder
 
 ---
 
-## 📁 Files Created Per Day
+## 📁 Files Created Per Article Type
 
-### 🌅 Morning Files (created by scheduled daily workflows: `news-committee-reports` 04:00, `news-propositions` 05:00, `news-motions` 06:00, `news-interpellations` 07:00 UTC Mon–Fri)
-
-| File | Format | Purpose | Template |
-|------|--------|---------|----------|
-| `morning-significance-scores.json` | JSON | Ranked list of all political events with composite significance scores | TypeScript significance scorer (`scripts/analysis-framework/significance-scorer.ts`) |
-| `morning-classification.md` | Markdown | Event classification results for all scored events | `political-classification.md` |
-| `morning-risk-snapshot.md` | Markdown | Current risk landscape based on morning MCP data | `risk-assessment.md` |
-
-### 🌆 Evening Files (created by `news-evening-analysis`, 18:00 UTC Mon–Fri / 16:00 UTC Sat)
+Each article-type subdirectory contains the same 9 batch analysis files:
 
 | File | Format | Purpose | Template |
 |------|--------|---------|----------|
-| `evening-swot-update.md` | Markdown | Delta SWOT — what changed from morning assessment | `swot-analysis.md` |
-| `evening-stakeholder-impact.md` | Markdown | Stakeholder impact assessment for top events | `stakeholder-impact.md` |
-| `evening-threat-snapshot.md` | Markdown | Updated threat landscape after full day's events | `threat-analysis.md` |
+| `synthesis-summary.md` | Markdown | Overall synthesis of all analyzed documents | `analysis/templates/synthesis-summary.md` |
+| `classification-results.md` | Markdown | Event classification results | `analysis/templates/political-classification.md` |
+| `risk-assessment.md` | Markdown | Risk landscape assessment | `analysis/templates/risk-assessment.md` |
+| `swot-analysis.md` | Markdown | Evidence-based SWOT analysis | `analysis/templates/swot-analysis.md` |
+| `threat-analysis.md` | Markdown | Political threat taxonomy | `analysis/templates/threat-analysis.md` |
+| `stakeholder-perspectives.md` | Markdown | Stakeholder impact assessment | `analysis/templates/stakeholder-impact.md` |
+| `significance-scoring.md` | Markdown | Ranked significance scores | `analysis/templates/significance-scoring.md` |
+| `cross-reference-map.md` | Markdown | Cross-references between documents | — |
+| `data-download-manifest.md` | Markdown | Data sourcing and download manifest | — |
 
-### 📡 Realtime Files (created by `news-realtime-monitor`, 10:00+14:00 UTC Mon–Fri / 12:00 UTC weekends)
+Additionally, the `documents/` subfolder contains per-document analysis files (`*.json` and `*-analysis.md`).
 
-| File | Format | Purpose | Template |
-|------|--------|---------|----------|
-| `realtime-HHMM-classification.md` | Markdown | Point-in-time event classifications | `political-classification.md` |
-| `realtime-HHMM-risk-delta.md` | Markdown | Risk score changes since previous realtime run | `risk-assessment.md` delta format |
+### Workflow → Subfolder Mapping
+
+| Workflow | Subfolder | Schedule |
+|----------|-----------|----------|
+| `news-committee-reports` | `committeeReports/` | Mon–Fri 04:00 UTC |
+| `news-propositions` | `propositions/` | Mon–Fri 05:00 UTC |
+| `news-motions` | `motions/` | Mon–Fri 06:00 UTC |
+| `news-interpellations` | `interpellations/` | Mon–Fri 07:00 UTC |
+| `news-evening-analysis` | `evening-analysis/` | Mon–Fri 18:00 UTC / Sat 16:00 UTC |
+| `news-realtime-monitor` | `realtime-HHMM/` | Mon–Fri 10:00+14:00 UTC / weekends 12:00 UTC |
+| `news-week-ahead` | `week-ahead/` | Fridays 07:00 UTC |
+| `news-month-ahead` | `month-ahead/` | Last weekday of month |
+| `news-weekly-review` | `weekly-review/` | Sundays 15:00 UTC |
+| `news-monthly-review` | `monthly-review/` | 1st of month |
+| `news-article-generator` | `article-generator-HHMM/` or type-specific | On-demand |
 
 ---
 

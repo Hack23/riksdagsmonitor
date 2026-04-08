@@ -693,7 +693,7 @@ npx tsx scripts/fix-article-navigation.ts
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally: `git add news/ && git commit -m "Add translated articles"`
+> 2. Stage and commit locally: `git add news/*-da.html news/*-no.html news/*-fi.html news/*-de.html news/*-fr.html news/*-es.html news/*-nl.html news/*-ar.html news/*-he.html news/*-ja.html news/*-ko.html news/*-zh.html news/metadata/ && git commit -m "Add translated articles"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
