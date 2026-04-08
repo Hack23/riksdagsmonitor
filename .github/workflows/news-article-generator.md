@@ -150,7 +150,7 @@ You are the **News Journalist Agent** for Riksdagsmonitor. Generate high-quality
 **Rules:**
 1. If **article_types** is non-empty, generate ONLY those types. Do NOT fall back to day-of-week schedule.
 2. If **article_types** is empty/blank, use day-of-week schedule (see Step 2).
-3. If **force_generation** is `true`, generate even if recent articles exist.
+3. If **force_generation** is `true`, generate articles even if recent articles exist. Note: the full deep political analysis phase (15-20 minutes) runs on EVERY invocation regardless of this flag.
 4. If **languages** is empty/blank, default to `all` (14 languages).
 5. If **article_types** includes `deep-inspection`, use **document_ids**, **document_urls**, and **focus_topic** for targeted deep analysis. **`document_ids` must be actual Riksdag dok_id values** (e.g. `H901FöU1,GZ01KU1`) — NOT search queries or wildcards. Use the riksdag-regering MCP tools first to find the correct IDs, then pass them.
 6. For `deep-inspection` type: pass `--document-ids=<value>`, `--document-urls=<value>`, and `--focus-topic=<value>` flags to the generation script. **The script generates the following sections — these are ONLY available via the script, never via manual fallback:**
@@ -222,12 +222,14 @@ bash({ command: "..." }) // ← WRONG: missing description
 
 1. Every run **MUST** end with exactly one safe output tool call:
    - Articles generated → `safeoutputs___create_pull_request({...})`
-   - No data available → `safeoutputs___noop({"message": "..."})`
+   - Analysis artifacts exist but no articles → `safeoutputs___create_pull_request({...})` with analysis-only PR
+   - MCP server unreachable AND no analysis artifacts → `safeoutputs___noop({"message": "..."})`
    - Tool unavailable → `safeoutputs___missing_tool({"reason": "..."})`
 2. `safeoutputs___create_pull_request` handles branch creation and push. **NEVER** run `git push` or `git checkout -b`.
 3. Safe output tools are **always in your tool list**. NEVER search for them via bash.
 4. **NEVER** write your own MCP HTTP/JSON-RPC client. Use the scripts or direct tool calls only.
 5. Exiting without calling a safe output tool = workflow failure.
+6. **NEVER** call `safeoutputs___noop` because articles already exist — the full deep political analysis phase (15-20 minutes) MUST always run. Analysis is the primary output.
 
 ## 🧠 Repo Memory
 

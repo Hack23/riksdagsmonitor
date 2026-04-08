@@ -194,12 +194,14 @@ bash({ command: "..." }) // ← WRONG: missing description
 
 1. Every run **MUST** end with exactly one safe output tool call:
    - Articles generated → `safeoutputs___create_pull_request({...})`
-   - No significant events → `safeoutputs___noop({"message": "..."})`
+   - Analysis artifacts exist but no articles → `safeoutputs___create_pull_request({...})` with analysis-only PR
+   - MCP server unreachable AND no analysis artifacts → `safeoutputs___noop({"message": "..."})`
    - Tool unavailable → `safeoutputs___missing_tool({"reason": "..."})`
 2. `safeoutputs___create_pull_request` handles branch creation and push. **NEVER** run `git push` or `git checkout -b`.
 3. Safe output tools are **always in your tool list**. NEVER search for them via bash.
 4. **NEVER** write your own MCP HTTP/JSON-RPC client. Use the scripts or direct tool calls only.
 5. Exiting without calling a safe output tool = workflow failure.
+6. **ALWAYS** run the full deep political analysis phase (15-20 minutes) before deciding on noop. Analysis is the primary output and must execute every run.
 
 ## 🧠 Repo Memory
 
