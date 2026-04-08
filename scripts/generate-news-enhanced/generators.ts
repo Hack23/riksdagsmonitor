@@ -327,20 +327,20 @@ export async function generateCommitteeReports(): Promise<GenerationResult> {
       const sources: string[] = generateSources(['get_betankanden', 'get_dokument_innehall']);
 
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Riksdag Committee Reports`, subtitle: `Political intelligence analysis of ${reports.length} committee reports from the Swedish Parliament's current legislative session` },
-        sv: { title: `Utskottsbetänkanden från riksdagen`, subtitle: `Politisk analys av ${reports.length} utskottsbetänkanden från riksdagens pågående session` },
-        da: { title: `Udvalgsindstillinger fra Riksdagen`, subtitle: `Politisk analyse af ${reports.length} udvalgsbetænkninger fra den svenske Riksdag` },
-        no: { title: `Komitéinnstillinger fra Riksdagen`, subtitle: `Politisk analyse av ${reports.length} komitéinnstillinger fra den svenske Riksdagen` },
-        fi: { title: `Valiokunnan mietinnöt Riksdagista`, subtitle: `Poliittinen analyysi ${reports.length} valiokuntamietinnöstä Ruotsin valtiopäiviltä` },
-        de: { title: `Ausschussberichte aus dem Riksdag`, subtitle: `Politische Analyse von ${reports.length} Ausschussberichten aus dem schwedischen Parlament` },
-        fr: { title: `Rapports de commission du Riksdag`, subtitle: `Analyse politique de ${reports.length} rapports de commission du Parlement suédois` },
-        es: { title: `Informes de comisión del Riksdag`, subtitle: `Análisis político de ${reports.length} informes de comisión del Parlamento sueco` },
-        nl: { title: `Commissierapporten uit de Riksdag`, subtitle: `Politieke analyse van ${reports.length} commissierapporten uit het Zweedse parlement` },
-        ar: { title: `تقارير لجان الريكسداغ`, subtitle: `تحليل سياسي لـ ${reports.length} تقارير لجان من البرلمان السويدي` },
-        he: { title: `דוחות ועדות הריקסדאג`, subtitle: `ניתוח פוליטי של ${reports.length} דוחות ועדות מהפרלמנט השוודי` },
-        ja: { title: `リクスダーグ委員会報告`, subtitle: `スウェーデン議会の${reports.length}件の委員会報告の政治分析` },
-        ko: { title: `릭스다그 위원회 보고서`, subtitle: `스웨덴 의회의 ${reports.length}개 위원회 보고서 정치 분석` },
-        zh: { title: `瑞典议会委员会报告`, subtitle: `对瑞典议会${reports.length}份委员会报告的政治分析` }
+        en: { title: `Riksdag Committee Reports`, subtitle: `Riksdag Committee Reports — AI-generated political intelligence from Sweden's Riksdag` },
+        sv: { title: `Utskottsbetänkanden från riksdagen`, subtitle: `Utskottsbetänkanden från riksdagen — AI-genererad politisk analys från Sveriges riksdag` },
+        da: { title: `Udvalgsindstillinger fra Riksdagen`, subtitle: `Udvalgsindstillinger fra Riksdagen — AI-genereret politisk analyse fra det svenske parlament` },
+        no: { title: `Komitéinnstillinger fra Riksdagen`, subtitle: `Komitéinnstillinger fra Riksdagen — AI-generert politisk analyse fra det svenske parlamentet` },
+        fi: { title: `Valiokunnan mietinnöt Riksdagista`, subtitle: `Valiokunnan mietinnöt Riksdagista — tekoälytuotettu poliittinen analyysi Ruotsin valtiopäiviltä` },
+        de: { title: `Ausschussberichte aus dem Riksdag`, subtitle: `Ausschussberichte aus dem Riksdag — KI-generierte politische Analyse aus dem schwedischen Parlament` },
+        fr: { title: `Rapports de commission du Riksdag`, subtitle: `Rapports de commission du Riksdag — analyse politique générée par IA du Parlement suédois` },
+        es: { title: `Informes de comisión del Riksdag`, subtitle: `Informes de comisión del Riksdag — análisis político generado por IA del Parlamento sueco` },
+        nl: { title: `Commissierapporten uit de Riksdag`, subtitle: `Commissierapporten uit de Riksdag — AI-gegenereerde politieke analyse uit het Zweedse parlement` },
+        ar: { title: `تقارير لجان الريكسداغ`, subtitle: `تقارير لجان الريكسداغ — تحليل سياسي بالذكاء الاصطناعي من البرلمان السويدي` },
+        he: { title: `דוחות ועדות הריקסדאג`, subtitle: `דוחות ועדות הריקסדאג — ניתוח פוליטי שנוצר על ידי בינה מלאכותית מהפרלמנט השוודי` },
+        ja: { title: `リクスダーグ委員会報告`, subtitle: `リクスダーグ委員会報告 — スウェーデン議会のAI生成政治分析` },
+        ko: { title: `릭스다그 위원회 보고서`, subtitle: `릭스다그 위원회 보고서 — 스웨덴 의회의 AI 생성 정치 분석` },
+        zh: { title: `瑞典议会委员会报告`, subtitle: `瑞典议会委员会报告 — 瑞典议会的AI生成政治分析` }
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
@@ -419,20 +419,20 @@ export async function generatePropositions(): Promise<GenerationResult> {
       const sources: string[] = generateSources(['get_propositioner', 'get_dokument_innehall']);
 
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Government Propositions`, subtitle: `Political intelligence analysis of ${propositions.length} government propositions shaping Sweden's legislative agenda` },
-        sv: { title: `Regeringens propositioner`, subtitle: `Politisk analys av ${propositions.length} propositioner som formar Sveriges lagstiftningsagenda` },
-        da: { title: `Regeringsforslag fra Sverige`, subtitle: `Politisk analyse af ${propositions.length} svenske regeringsforslag` },
-        no: { title: `Svenske regjeringsproposisjoner`, subtitle: `Politisk analyse av ${propositions.length} svenske regjeringsproposisjoner` },
-        fi: { title: `Ruotsin hallituksen esitykset`, subtitle: `Poliittinen analyysi ${propositions.length} hallituksen esityksestä` },
-        de: { title: `Schwedische Regierungsvorlagen`, subtitle: `Politische Analyse von ${propositions.length} schwedischen Regierungsvorlagen` },
-        fr: { title: `Propositions du gouvernement suédois`, subtitle: `Analyse politique de ${propositions.length} propositions gouvernementales suédoises` },
-        es: { title: `Proposiciones del gobierno sueco`, subtitle: `Análisis político de ${propositions.length} proposiciones gubernamentales suecas` },
-        nl: { title: `Zweedse regeringsvoorstellen`, subtitle: `Politieke analyse van ${propositions.length} Zweedse regeringsvoorstellen` },
-        ar: { title: `مقترحات الحكومة السويدية`, subtitle: `تحليل سياسي لـ ${propositions.length} مقترحات حكومية سويدية` },
-        he: { title: `הצעות הממשלה השוודית`, subtitle: `ניתוח פוליטי של ${propositions.length} הצעות ממשלה שוודיות` },
-        ja: { title: `スウェーデン政府提案`, subtitle: `スウェーデン政府の${propositions.length}件の提案の政治分析` },
-        ko: { title: `스웨덴 정부 법안`, subtitle: `스웨덴 정부의 ${propositions.length}개 법안 정치 분석` },
-        zh: { title: `瑞典政府提案`, subtitle: `对瑞典政府${propositions.length}份提案的政治分析` }
+        en: { title: `Government Propositions`, subtitle: `Government Propositions — AI-generated political intelligence from Sweden's Riksdag` },
+        sv: { title: `Regeringens propositioner`, subtitle: `Regeringens propositioner — AI-genererad politisk analys från Sveriges riksdag` },
+        da: { title: `Regeringsforslag fra Sverige`, subtitle: `Regeringsforslag fra Sverige — AI-genereret politisk analyse fra det svenske parlament` },
+        no: { title: `Svenske regjeringsproposisjoner`, subtitle: `Svenske regjeringsproposisjoner — AI-generert politisk analyse fra det svenske parlamentet` },
+        fi: { title: `Ruotsin hallituksen esitykset`, subtitle: `Ruotsin hallituksen esitykset — tekoälytuotettu poliittinen analyysi Ruotsin valtiopäiviltä` },
+        de: { title: `Schwedische Regierungsvorlagen`, subtitle: `Schwedische Regierungsvorlagen — KI-generierte politische Analyse aus dem schwedischen Parlament` },
+        fr: { title: `Propositions du gouvernement suédois`, subtitle: `Propositions du gouvernement suédois — analyse politique générée par IA du Parlement suédois` },
+        es: { title: `Proposiciones del gobierno sueco`, subtitle: `Proposiciones del gobierno sueco — análisis político generado por IA del Parlamento sueco` },
+        nl: { title: `Zweedse regeringsvoorstellen`, subtitle: `Zweedse regeringsvoorstellen — AI-gegenereerde politieke analyse uit het Zweedse parlement` },
+        ar: { title: `مقترحات الحكومة السويدية`, subtitle: `مقترحات الحكومة السويدية — تحليل سياسي بالذكاء الاصطناعي من البرلمان السويدي` },
+        he: { title: `הצעות הממשלה השוודית`, subtitle: `הצעות הממשלה השוודית — ניתוח פוליטי שנוצר על ידי בינה מלאכותית מהפרלמנט השוודי` },
+        ja: { title: `スウェーデン政府提案`, subtitle: `スウェーデン政府提案 — スウェーデン議会のAI生成政治分析` },
+        ko: { title: `스웨덴 정부 법안`, subtitle: `스웨덴 정부 법안 — 스웨덴 의회의 AI 생성 정치 분석` },
+        zh: { title: `瑞典政府提案`, subtitle: `瑞典政府提案 — 瑞典议会的AI生成政治分析` }
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
@@ -511,20 +511,20 @@ export async function generateMotions(): Promise<GenerationResult> {
       const sources: string[] = generateSources(['get_motioner', 'get_dokument_innehall']);
 
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Opposition Motions`, subtitle: `Political intelligence analysis of ${motions.length} opposition motions challenging the Swedish government's legislative agenda` },
-        sv: { title: `Oppositionsmotioner`, subtitle: `Politisk analys av ${motions.length} oppositionsmotioner som utmanar regeringens lagstiftningsagenda` },
-        da: { title: `Svenske oppositionsforslag`, subtitle: `Politisk analyse af ${motions.length} oppositionsforslag fra den svenske Riksdag` },
-        no: { title: `Svenske opposisjonsforslag`, subtitle: `Politisk analyse av ${motions.length} opposisjonsforslag fra den svenske Riksdagen` },
-        fi: { title: `Ruotsin opposition aloitteet`, subtitle: `Poliittinen analyysi ${motions.length} opposition aloitteesta Ruotsin valtiopäiviltä` },
-        de: { title: `Schwedische Oppositionsanträge`, subtitle: `Politische Analyse von ${motions.length} Oppositionsanträgen aus dem schwedischen Riksdag` },
-        fr: { title: `Motions de l'opposition suédoise`, subtitle: `Analyse politique de ${motions.length} motions d'opposition au Riksdag suédois` },
-        es: { title: `Mociones de la oposición sueca`, subtitle: `Análisis político de ${motions.length} mociones de oposición en el Riksdag sueco` },
-        nl: { title: `Zweedse oppositiemoties`, subtitle: `Politieke analyse van ${motions.length} oppositiemoties in de Zweedse Riksdag` },
-        ar: { title: `اقتراحات المعارضة السويدية`, subtitle: `تحليل سياسي لـ ${motions.length} اقتراحات معارضة من البرلمان السويدي` },
-        he: { title: `הצעות האופוזיציה השוודית`, subtitle: `ניתוח פוליטי של ${motions.length} הצעות אופוזיציה מהריקסדאג השוודי` },
-        ja: { title: `スウェーデン野党動議`, subtitle: `スウェーデン議会の${motions.length}件の野党動議の政治分析` },
-        ko: { title: `스웨덴 야당 동의`, subtitle: `스웨덴 의회의 ${motions.length}개 야당 동의 정치 분석` },
-        zh: { title: `瑞典反对党动议`, subtitle: `对瑞典议会${motions.length}份反对党动议的政治分析` }
+        en: { title: `Opposition Motions`, subtitle: `Opposition Motions — AI-generated political intelligence from Sweden's Riksdag` },
+        sv: { title: `Oppositionsmotioner`, subtitle: `Oppositionsmotioner — AI-genererad politisk analys från Sveriges riksdag` },
+        da: { title: `Svenske oppositionsforslag`, subtitle: `Svenske oppositionsforslag — AI-genereret politisk analyse fra det svenske parlament` },
+        no: { title: `Svenske opposisjonsforslag`, subtitle: `Svenske opposisjonsforslag — AI-generert politisk analyse fra det svenske parlamentet` },
+        fi: { title: `Ruotsin opposition aloitteet`, subtitle: `Ruotsin opposition aloitteet — tekoälytuotettu poliittinen analyysi Ruotsin valtiopäiviltä` },
+        de: { title: `Schwedische Oppositionsanträge`, subtitle: `Schwedische Oppositionsanträge — KI-generierte politische Analyse aus dem schwedischen Riksdag` },
+        fr: { title: `Motions de l'opposition suédoise`, subtitle: `Motions de l'opposition suédoise — analyse politique générée par IA du Riksdag suédois` },
+        es: { title: `Mociones de la oposición sueca`, subtitle: `Mociones de la oposición sueca — análisis político generado por IA del Riksdag sueco` },
+        nl: { title: `Zweedse oppositiemoties`, subtitle: `Zweedse oppositiemoties — AI-gegenereerde politieke analyse uit de Zweedse Riksdag` },
+        ar: { title: `اقتراحات المعارضة السويدية`, subtitle: `اقتراحات المعارضة السويدية — تحليل سياسي بالذكاء الاصطناعي من البرلمان السويدي` },
+        he: { title: `הצעות האופוזיציה השוודית`, subtitle: `הצעות האופוזיציה השוודית — ניתוח פוליטי שנוצר על ידי בינה מלאכותית מהריקסדאג השוודי` },
+        ja: { title: `スウェーデン野党動議`, subtitle: `スウェーデン野党動議 — スウェーデン議会のAI生成政治分析` },
+        ko: { title: `스웨덴 야당 동의`, subtitle: `스웨덴 야당 동의 — 스웨덴 의회의 AI 생성 정치 분석` },
+        zh: { title: `瑞典反对党动议`, subtitle: `瑞典反对党动议 — 瑞典议会的AI生成政治分析` }
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
@@ -603,20 +603,20 @@ export async function generateInterpellations(): Promise<GenerationResult> {
       const sources: string[] = generateSources(['get_interpellationer', 'get_dokument_innehall']);
 
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Interpellation Debates`, subtitle: `Political intelligence analysis of ${interpellations.length} interpellation debates demanding ministerial accountability in Sweden's Riksdag` },
-        sv: { title: `Interpellationsdebatter`, subtitle: `Politisk analys av ${interpellations.length} interpellationsdebatter som kräver ministersvar i Sveriges riksdag` },
-        da: { title: `Interpellationsdebatter i Riksdagen`, subtitle: `Politisk analyse af ${interpellations.length} interpellationsdebatter fra den svenske Riksdag` },
-        no: { title: `Interpellasjonsdebatter i Riksdagen`, subtitle: `Politisk analyse av ${interpellations.length} interpellasjonsdebatter fra den svenske Riksdagen` },
-        fi: { title: `Välikysymyskeskustelut Riksdagissa`, subtitle: `Poliittinen analyysi ${interpellations.length} välikysymyskeskustelusta Ruotsin valtiopäiviltä` },
-        de: { title: `Interpellationsdebatten im Riksdag`, subtitle: `Politische Analyse von ${interpellations.length} Interpellationsdebatten aus dem schwedischen Riksdag` },
-        fr: { title: `Débats d'interpellation au Riksdag`, subtitle: `Analyse politique de ${interpellations.length} débats d'interpellation au Parlement suédois` },
-        es: { title: `Debates de interpelación en el Riksdag`, subtitle: `Análisis político de ${interpellations.length} debates de interpelación del Parlamento sueco` },
-        nl: { title: `Interpellatiedebatten in de Riksdag`, subtitle: `Politieke analyse van ${interpellations.length} interpellatiedebatten in de Zweedse Riksdag` },
-        ar: { title: `مناقشات الاستجواب في الريكسداغ`, subtitle: `تحليل سياسي لـ ${interpellations.length} مناقشات استجواب من البرلمان السويدي` },
-        he: { title: `דיוני אינטרפלציה בריקסדאג`, subtitle: `ניתוח פוליטי של ${interpellations.length} דיוני אינטרפלציה מהפרלמנט השוודי` },
-        ja: { title: `リクスダーグ質問主意書討論`, subtitle: `スウェーデン議会の${interpellations.length}件の質問主意書討論の政治分析` },
-        ko: { title: `릭스다그 대정부 질의 토론`, subtitle: `스웨덴 의회의 ${interpellations.length}건의 대정부 질의 토론 정치 분석` },
-        zh: { title: `瑞典议会质询辩论`, subtitle: `对瑞典议会${interpellations.length}场质询辩论的政治分析` }
+        en: { title: `Interpellation Debates`, subtitle: `Interpellation Debates — AI-generated political intelligence from Sweden's Riksdag` },
+        sv: { title: `Interpellationsdebatter`, subtitle: `Interpellationsdebatter — AI-genererad politisk analys från Sveriges riksdag` },
+        da: { title: `Interpellationsdebatter i Riksdagen`, subtitle: `Interpellationsdebatter i Riksdagen — AI-genereret politisk analyse fra det svenske parlament` },
+        no: { title: `Interpellasjonsdebatter i Riksdagen`, subtitle: `Interpellasjonsdebatter i Riksdagen — AI-generert politisk analyse fra det svenske parlamentet` },
+        fi: { title: `Välikysymyskeskustelut Riksdagissa`, subtitle: `Välikysymyskeskustelut Riksdagissa — tekoälytuotettu poliittinen analyysi Ruotsin valtiopäiviltä` },
+        de: { title: `Interpellationsdebatten im Riksdag`, subtitle: `Interpellationsdebatten im Riksdag — KI-generierte politische Analyse aus dem schwedischen Riksdag` },
+        fr: { title: `Débats d'interpellation au Riksdag`, subtitle: `Débats d'interpellation au Riksdag — analyse politique générée par IA du Parlement suédois` },
+        es: { title: `Debates de interpelación en el Riksdag`, subtitle: `Debates de interpelación en el Riksdag — análisis político generado por IA del Parlamento sueco` },
+        nl: { title: `Interpellatiedebatten in de Riksdag`, subtitle: `Interpellatiedebatten in de Riksdag — AI-gegenereerde politieke analyse uit de Zweedse Riksdag` },
+        ar: { title: `مناقشات الاستجواب في الريكسداغ`, subtitle: `مناقشات الاستجواب في الريكسداغ — تحليل سياسي بالذكاء الاصطناعي من البرلمان السويدي` },
+        he: { title: `דיוני אינטרפלציה בריקסדאג`, subtitle: `דיוני אינטרפלציה בריקסדאג — ניתוח פוליטי שנוצר על ידי בינה מלאכותית מהפרלמנט השוודי` },
+        ja: { title: `リクスダーグ質問主意書討論`, subtitle: `リクスダーグ質問主意書討論 — スウェーデン議会のAI生成政治分析` },
+        ko: { title: `릭스다그 대정부 질의 토론`, subtitle: `릭스다그 대정부 질의 토론 — 스웨덴 의회의 AI 생성 정치 분석` },
+        zh: { title: `瑞典议会质询辩论`, subtitle: `瑞典议会质询辩论 — 瑞典议会的AI生成政治分析` }
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
@@ -2114,20 +2114,20 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       zh: '政策分析',
     };
     const titles: Record<Language, TitleSet> = {
-      en: { title: `Deep Inspection: ${sanitizedTopic || defaultTopicLabels.en}`, subtitle: `In-depth analysis of ${enrichedDocs.length} parliamentary documents` },
-      sv: { title: `Djupanalys: ${sanitizedTopic || defaultTopicLabels.sv}`, subtitle: `Fördjupad analys av ${enrichedDocs.length} riksdagsdokument` },
-      da: { title: `Dybdeanalyse: ${sanitizedTopic || defaultTopicLabels.da}`, subtitle: `Dybdegående analyse af ${enrichedDocs.length} parlamentariske dokumenter` },
-      no: { title: `Dybdeanalyse: ${sanitizedTopic || defaultTopicLabels.no}`, subtitle: `Inngående analyse av ${enrichedDocs.length} parlamentariske dokumenter` },
-      fi: { title: `Syväanalyysi: ${sanitizedTopic || defaultTopicLabels.fi}`, subtitle: `Syvällinen analyysi ${enrichedDocs.length} parlamentaarisesta asiakirjasta` },
-      de: { title: `Tiefenanalyse: ${sanitizedTopic || defaultTopicLabels.de}`, subtitle: `Eingehende Analyse von ${enrichedDocs.length} parlamentarischen Dokumenten` },
-      fr: { title: `Analyse approfondie: ${sanitizedTopic || defaultTopicLabels.fr}`, subtitle: `Analyse en profondeur de ${enrichedDocs.length} documents parlementaires` },
-      es: { title: `Análisis en profundidad: ${sanitizedTopic || defaultTopicLabels.es}`, subtitle: `Análisis detallado de ${enrichedDocs.length} documentos parlamentarios` },
-      nl: { title: `Diepteanalyse: ${sanitizedTopic || defaultTopicLabels.nl}`, subtitle: `Diepgaande analyse van ${enrichedDocs.length} parlementaire documenten` },
-      ar: { title: `تحليل معمّق: ${sanitizedTopic || defaultTopicLabels.ar}`, subtitle: `تحليل متعمق لـ ${enrichedDocs.length} وثائق برلمانية` },
-      he: { title: `ניתוח מעמיק: ${sanitizedTopic || defaultTopicLabels.he}`, subtitle: `ניתוח מעמיק של ${enrichedDocs.length} מסמכים פרלמנטריים` },
-      ja: { title: `詳細分析：${sanitizedTopic || defaultTopicLabels.ja}`, subtitle: `${enrichedDocs.length}件の議会文書の詳細分析` },
-      ko: { title: `심층 분석: ${sanitizedTopic || defaultTopicLabels.ko}`, subtitle: `${enrichedDocs.length}개 의회 문서 심층 분석` },
-      zh: { title: `深度分析：${sanitizedTopic || defaultTopicLabels.zh}`, subtitle: `${enrichedDocs.length}份议会文件深度分析` },
+      en: { title: `Deep Inspection: ${sanitizedTopic || defaultTopicLabels.en}`, subtitle: `Deep Inspection — AI-generated political intelligence from Sweden's Riksdag` },
+      sv: { title: `Djupanalys: ${sanitizedTopic || defaultTopicLabels.sv}`, subtitle: `Djupanalys — AI-genererad politisk analys från Sveriges riksdag` },
+      da: { title: `Dybdeanalyse: ${sanitizedTopic || defaultTopicLabels.da}`, subtitle: `Dybdeanalyse — AI-genereret politisk analyse fra det svenske parlament` },
+      no: { title: `Dybdeanalyse: ${sanitizedTopic || defaultTopicLabels.no}`, subtitle: `Dybdeanalyse — AI-generert politisk analyse fra det svenske parlamentet` },
+      fi: { title: `Syväanalyysi: ${sanitizedTopic || defaultTopicLabels.fi}`, subtitle: `Syväanalyysi — tekoälytuotettu poliittinen analyysi Ruotsin valtiopäiviltä` },
+      de: { title: `Tiefenanalyse: ${sanitizedTopic || defaultTopicLabels.de}`, subtitle: `Tiefenanalyse — KI-generierte politische Analyse aus dem schwedischen Parlament` },
+      fr: { title: `Analyse approfondie: ${sanitizedTopic || defaultTopicLabels.fr}`, subtitle: `Analyse approfondie — analyse politique générée par IA du Parlement suédois` },
+      es: { title: `Análisis en profundidad: ${sanitizedTopic || defaultTopicLabels.es}`, subtitle: `Análisis en profundidad — análisis político generado por IA del Parlamento sueco` },
+      nl: { title: `Diepteanalyse: ${sanitizedTopic || defaultTopicLabels.nl}`, subtitle: `Diepteanalyse — AI-gegenereerde politieke analyse uit het Zweedse parlement` },
+      ar: { title: `تحليل معمّق: ${sanitizedTopic || defaultTopicLabels.ar}`, subtitle: `تحليل معمّق — تحليل سياسي بالذكاء الاصطناعي من البرلمان السويدي` },
+      he: { title: `ניתוח מעמיק: ${sanitizedTopic || defaultTopicLabels.he}`, subtitle: `ניתוח מעמיק — ניתוח פוליטי שנוצר על ידי בינה מלאכותית מהפרלמנט השוודי` },
+      ja: { title: `詳細分析：${sanitizedTopic || defaultTopicLabels.ja}`, subtitle: `詳細分析 — スウェーデン議会のAI生成政治分析` },
+      ko: { title: `심층 분석: ${sanitizedTopic || defaultTopicLabels.ko}`, subtitle: `심층 분석 — 스웨덴 의회의 AI 생성 정치 분석` },
+      zh: { title: `深度分析：${sanitizedTopic || defaultTopicLabels.zh}`, subtitle: `深度分析 — 瑞典议会的AI生成政治分析` },
     };
 
     const enrichment = await getAnalysisEnrichment();

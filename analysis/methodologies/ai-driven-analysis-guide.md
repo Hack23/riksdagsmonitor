@@ -77,6 +77,9 @@ analysis/daily/YYYY-MM-DD/{articleType}/
 >
 > | Content Type | AI MUST Generate | Script MAY Provide |
 > |-------------|------------------|-------------------|
+> | **Article title** | Newsworthy title naming actors, policy actions, political significance — from analysis | Generic article type label only (e.g., "Government Propositions") |
+> | **Meta description** | 150-160 char intelligence summary from synthesis findings | Generic stub only |
+> | **Subtitle / alternativeHeadline** | Content-specific subtitle from synthesis key highlights | Generic stub with AI attribution |
 > | **Article lede** | Context-rich opening paragraph naming actors, policy significance, and political stakes | Empty `<p class="lede">` container |
 > | **"Why It Matters"** | Per-document differentiated analysis citing specific policy impact and stakeholder effects | Nothing — this section must be 100% AI |
 > | **Winners & Losers** | Named parties/actors with specific evidence from voting records or committee outcomes | Nothing — this section must be 100% AI |
@@ -84,6 +87,16 @@ analysis/daily/YYYY-MM-DD/{articleType}/
 > | **Strategic Context** | Coalition dynamics, opposition strategy, electoral implications from actual data | Nothing — this section must be 100% AI |
 > | **SWOT/Risk inline summaries** | Key findings from pre-computed analysis files, with links to full analysis on GitHub | Empty chart containers using the standard `<canvas data-chart-config="...">`/container convention (no inline scripts) |
 > | **Policy domain labels** | Correct classification using committee→domain mapping (see §Policy Domain Inference below) | Raw committee code only |
+>
+> **v5.0 — ABSOLUTE BAN on Code-Generated Titles and Descriptions**:
+> - ❌ `generateDynamicTitle()` — now a deprecated stub. Do NOT rely on its output.
+> - ❌ `extractHighlights()` — REMOVED. Regex-scanning HTML for `<strong>` tags is NOT analysis.
+> - ❌ `extractDominantTheme()` — REMOVED. Keyword matching is NOT political intelligence.
+> - ❌ Any subtitle containing `"${count} documents"` or `"${count} parliamentary"` — interpolated document counts are NOT descriptions.
+> - ❌ Any title produced by string concatenation of `baseTitle + ": " + theme` — this is template output, not AI analysis.
+> - ✅ The AI agent (Copilot opus 4.6) MUST read the completed synthesis-summary.md and generate titles/descriptions based on the actual political intelligence findings.
+> - ✅ Titles must follow the formula: `[Active Verb] + [Specific Actor/Institution] + [Concrete Policy Action]`
+> - ✅ Descriptions must summarize the #1 ranked finding from the significance scoring.
 >
 > **v4.0 Banned Script Patterns**: The following code-generated content patterns are REJECTED in articles:
 > - `"Analysis of N documents covering {Field}:, {Field}:"` — template placeholder lede

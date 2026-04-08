@@ -993,15 +993,51 @@ For each prohibited pattern, this section shows a concrete rewrite demonstrating
 
 ---
 
+## Article Title & SEO Standards (v5.0 — NEW)
+
+> **NON-NEGOTIABLE**: Article titles, meta descriptions, and all SEO metadata MUST be AI-generated from the completed analysis — NEVER from code templates, string interpolation, or regex extraction.
+
+### Title Writing Standards
+
+| Rule | Requirement | Example |
+|------|-------------|---------|
+| **Formula** | `[Active Verb] + [Actor/Institution] + [Policy Action]` | "Riksdag Advances Criminal Deportation Reform as FöU12 Clears Committee" |
+| **Length** | 60-80 characters | Short enough for Google SERP, long enough for specificity |
+| **Specificity** | Must name at least ONE actor, institution, or policy measure | ❌ "Committee Reports" → ✅ "Defense Committee Approves NATO Integration Package" |
+| **Evidence** | Must reference a finding from the synthesis-summary.md | Title flows from "Recommended Title" field in synthesis |
+| **All languages** | AI must generate unique titles in ALL languages — no untranslated English stubs | Each language version reads the same synthesis but produces a culturally appropriate title |
+
+### Meta Description Standards
+
+| Rule | Requirement |
+|------|-------------|
+| **Length** | 150-160 characters (Google SERP limit) |
+| **Content** | Summarize the #1 ranked finding from significance-scoring |
+| **Specificity** | Name policy areas, actors, and significance level |
+| **Banned** | ❌ "Analysis of N documents covering..." ❌ Document counts ❌ Metadata field labels |
+
+### BANNED Title Patterns (v5.0)
+
+| Pattern | Why Banned | Fix |
+|---------|-----------|-----|
+| `"Government Propositions: Defense in Focus"` | Template concatenation, not analysis | AI reads synthesis and generates newsworthy title |
+| `"Committee Reports: {Committee Name}"` | Regex extraction from HTML | AI identifies the most significant finding |
+| `"Political intelligence analysis of N documents"` | Document count interpolation | AI summarizes actual political intelligence |
+| `"Evening Analysis: Daily Summary"` | Generic label | AI synthesizes the day's most significant development |
+| Any title ending with `": {Topic} in Focus"` | Banned suffix pattern | Use active verb formula instead |
+
+---
+
 ## Document Control
 
 | Field | Value |
 |---|---|
-| Version | 2.1.0 |
+| Version | 2.2.0 |
 | Status | Active |
 | Owner | Hack23 AB |
 | Review Cycle | Quarterly |
 | Next Review | 2026-06-30 |
+| Key Changes v2.2 | Article Title & SEO Standards (v5.0) — AI-only title generation, banned code-generated patterns |
 | Key Changes v2.1 | Bad→Good Rewrite Examples (8 worked examples covering all prohibited pattern categories) |
 | Key Changes v2.0 | Intelligence depth standards, evidence density requirements, analytical depth indicators |
 | Related | `scripts/prompts/v2/political-analysis.md`, `scripts/analysis-reader.ts` |

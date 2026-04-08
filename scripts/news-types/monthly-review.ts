@@ -366,63 +366,63 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
 /**
  * Get language-specific titles
  */
-function getTitles(lang: Language, documentCount: number): TitleSet {
+function getTitles(lang: Language, _documentCount: number): TitleSet {
   const titles: Record<Language, TitleSet> = {
     en: {
       title: `Monthly Review: Parliament in Perspective`,
-      subtitle: `Comprehensive analysis of ${documentCount} developments from the past month in Swedish politics`
+      subtitle: `Monthly Review — AI-generated political intelligence from Sweden's Riksdag`
     },
     sv: {
       title: `Månadskrönika: Riksdagen i perspektiv`,
-      subtitle: `Omfattande analys av ${documentCount} händelser från den gångna månaden`
+      subtitle: `Månadskrönika — AI-genererad politisk analys från Sveriges riksdag`
     },
     da: {
       title: `Månedsgennemgang: Parlamentet i perspektiv`,
-      subtitle: `Omfattende analyse af ${documentCount} begivenheder fra den forgangne måned`
+      subtitle: `Månedsgennemgang — AI-genereret politisk analyse fra det svenske parlament`
     },
     no: {
       title: `Månedsgjennomgang: Stortinget i perspektiv`,
-      subtitle: `Omfattende analyse av ${documentCount} hendelser fra den siste måneden`
+      subtitle: `Månedsgjennomgang — AI-generert politisk analyse fra det svenske parlamentet`
     },
     fi: {
       title: `Kuukausikatsaus: Eduskunta perspektiivissä`,
-      subtitle: `Kattava analyysi ${documentCount} tapahtumasta viime kuukaudelta`
+      subtitle: `Kuukausikatsaus — tekoälytuotettu poliittinen analyysi Ruotsin valtiopäiviltä`
     },
     de: {
       title: `Monatsrückblick: Parlament in Perspektive`,
-      subtitle: `Umfassende Analyse von ${documentCount} Entwicklungen des vergangenen Monats`
+      subtitle: `Monatsrückblick — KI-generierte politische Analyse aus dem schwedischen Parlament`
     },
     fr: {
       title: `Revue mensuelle : Le Parlement en perspective`,
-      subtitle: `Analyse complète de ${documentCount} développements du mois écoulé`
+      subtitle: `Revue mensuelle — analyse politique générée par IA du Parlement suédois`
     },
     es: {
       title: `Revisión mensual: El Parlamento en perspectiva`,
-      subtitle: `Análisis integral de ${documentCount} desarrollos del mes pasado`
+      subtitle: `Revisión mensual — análisis político generado por IA del Parlamento sueco`
     },
     nl: {
       title: `Maandelijkse terugblik: Parlement in perspectief`,
-      subtitle: `Uitgebreide analyse van ${documentCount} ontwikkelingen van de afgelopen maand`
+      subtitle: `Maandelijkse terugblik — AI-gegenereerde politieke analyse uit het Zweedse parlement`
     },
     ar: {
       title: `المراجعة الشهرية: البرلمان في منظور`,
-      subtitle: `تحليل شامل لـ ${documentCount} تطور من الشهر الماضي`
+      subtitle: `المراجعة الشهرية — تحليل سياسي بالذكاء الاصطناعي من البرلمان السويدي`
     },
     he: {
       title: `סקירה חודשית: הפרלמנט בפרספקטיבה`,
-      subtitle: `ניתוח מקיף של ${documentCount} התפתחויות מהחודש שעבר`
+      subtitle: `סקירה חודשית — ניתוח פוליטי שנוצר על ידי בינה מלאכותית מהפרלמנט השוודי`
     },
     ja: {
       title: `月間レビュー：議会を展望する`,
-      subtitle: `先月の${documentCount}件の動向の包括的分析`
+      subtitle: `月間レビュー — スウェーデン議会のAI生成政治分析`
     },
     ko: {
       title: `월간 리뷰: 의회 전망`,
-      subtitle: `지난 달 ${documentCount}건의 동향에 대한 종합 분석`
+      subtitle: `월간 리뷰 — 스웨덴 의회의 AI 생성 정치 분석`
     },
     zh: {
       title: `月度回顾：议会纵览`,
-      subtitle: `过去一个月${documentCount}项发展的综合分析`
+      subtitle: `月度回顾 — 瑞典议会的AI生成政治分析`
     }
   };
 

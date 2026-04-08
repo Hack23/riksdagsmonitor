@@ -81,18 +81,22 @@ function countWords(html: string): number {
 }
 
 /**
- * Generate a proper SEO meta description from subtitle.
- * Ensures the description is 150-160 characters and doesn't contain banned patterns.
+ * Generate SEO meta description from subtitle.
+ *
+ * v5.0: The subtitle is now set by the AI agent (not code templates).
+ * This function only enforces the 160-char length limit for Google SERP.
+ * The banned-pattern check is retained as a safety net but should never
+ * trigger if the AI agent followed the workflow prompt correctly.
  */
 function generateSeoDescription(subtitle: string, title: string): string {
   let desc = subtitle;
 
-  // Check for banned "Analysis of N documents" patterns
+  // Safety net: if AI agent did not replace the script stub, fall back to title
   if (/Analysis of \d+ documents/i.test(desc) || /briefing on \w+:\s+and/i.test(desc)) {
-    desc = `${title}. Political intelligence analysis from Sweden's Riksdag — AI-generated from official parliamentary sources.`;
+    desc = `${title} — AI-generated political intelligence from Sweden's Riksdag.`;
   }
 
-  // Ensure description is within 150-160 char range
+  // Enforce SERP length limit
   if (desc.length > MAX_META_DESCRIPTION_LENGTH) {
     const truncated = desc.substring(0, MAX_META_DESCRIPTION_LENGTH - ELLIPSIS_SUFFIX_LENGTH);
     const lastSpace = truncated.lastIndexOf(' ');
