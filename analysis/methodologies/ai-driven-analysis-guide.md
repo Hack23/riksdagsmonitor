@@ -973,6 +973,69 @@ These functions in `scripts/` contain hardcoded analysis logic that MUST be repl
 
 > **Migration path**: These functions remain as fallbacks but their output is treated as stubs. AI agents in workflows MUST overwrite all template-generated text with genuine analysis.
 
+### 🚨 Analysis-Driven Article Decision Protocol (v5.0 — MANDATORY)
+
+> **NON-NEGOTIABLE**: Article decisions (whether to publish, what title to use, what description to write) MUST be made AFTER all analysis is complete — NEVER before. The synthesis-summary.md "Narrative Direction & Article Decision" section is the SINGLE SOURCE OF TRUTH for article generation.
+
+#### Protocol: Complete Analysis → Decide Article → Generate Content → AI Title/SEO
+
+```mermaid
+flowchart TD
+    A["📥 Step 1: Download Data<br/>MCP queries, catalog pending files"] --> B["🔍 Step 2: Run Full Analysis Pipeline<br/>Classification → SWOT → Risk → Threat → Stakeholder → Significance"]
+    B --> C["🧩 Step 3: AI Synthesis<br/>synthesis-summary.md with Narrative Direction"]
+    C --> D{"📰 Step 4: Article Decision<br/>Read synthesis significance scores"}
+    D -->|"Significance ≥ 7.0"| E["⚡ BREAKING/PRIORITY Article"]
+    D -->|"Significance 5.0–6.9"| F["📰 STANDARD Article"]
+    D -->|"Significance < 5.0"| G["📋 ANALYSIS-ONLY<br/>(no article, commit analysis)"]
+    E --> H["✍️ Step 5: AI Generates Article Content<br/>from synthesis, NOT templates"]
+    F --> H
+    H --> I["🏷️ Step 6: AI Generates Title & SEO<br/>from article content analysis"]
+    I --> J["✅ Step 7: Validate & Commit"]
+    G --> J
+
+    style A fill:#0d6efd,color:#fff
+    style B fill:#6610f2,color:#fff
+    style C fill:#6f42c1,color:#fff
+    style D fill:#ffc107,color:#000
+    style E fill:#dc3545,color:#fff
+    style F fill:#28a745,color:#fff
+    style G fill:#6c757d,color:#fff
+    style H fill:#fd7e14,color:#fff
+    style I fill:#20c997,color:#fff
+    style J fill:#28a745,color:#fff
+```
+
+#### What This Means in Practice
+
+1. **Scripts run pre-article-analysis.ts** — downloads data, runs heuristic pre-scoring, creates directory structure
+2. **AI agent reads ALL methodology guides** — SWOT, Risk, Threat, Classification, Style (as per Rule 3)
+3. **AI agent performs deep per-file analysis** — produces `.analysis.md` for each document
+4. **AI agent writes synthesis-summary.md** — including the **AI-Recommended Article Metadata** section with:
+   - Recommended title (EN + SV) based on top findings
+   - Recommended meta description based on key intelligence
+   - Key highlights — substantive findings, not metadata labels
+   - Article decision (PUBLISH/ANALYSIS-ONLY/SKIP) with justification
+5. **ONLY AFTER synthesis is complete**: Article HTML generation begins
+6. **AI reads synthesis** to generate article content — lede, Why It Matters, Winners & Losers, etc.
+7. **AI reads the article content** to generate final title and SEO metadata
+8. **Title MUST reference specific findings** — never generic category labels
+
+#### BANNED: Pre-Analysis Article Decisions
+
+- ❌ Generating article HTML before synthesis-summary.md is complete
+- ❌ Using script-generated titles without AI review of actual content
+- ❌ Copying subtitle from static template strings (e.g., "Political intelligence analysis of N documents")
+- ❌ Making publish/skip decisions based on document count alone
+- ❌ Generating titles from regex extraction of `<strong>` tags (scripted heuristic)
+
+#### REQUIRED: Post-Analysis Article Decisions
+
+- ✅ Read completed synthesis-summary.md "Recommended Title" fields
+- ✅ Read completed synthesis-summary.md "Article Decision" to determine publication
+- ✅ Generate title from actual political intelligence in the synthesis
+- ✅ Generate meta description from top-ranked findings in the significance table
+- ✅ Apply title/SEO to ALL languages (not just English)
+
 ### AI Prompt Templates for Analysis Generation
 
 #### Prompt: AI-Driven Title Generation
