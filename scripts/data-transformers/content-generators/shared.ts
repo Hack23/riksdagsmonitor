@@ -1148,6 +1148,8 @@ const BANNED_PATTERNS: readonly { label: string; pattern: RegExp }[] = [
   { label: 'policySignificanceTouches: "Touches on {domains}."', pattern: /Touches on [\p{L}\p{N}][\p{L}\p{N}\s,&/()-]*\./iu },
   { label: 'analysisOfNDocuments: "Analysis of N documents covering…"', pattern: /Analysis of \d+ documents covering/i },
   { label: 'policySignificanceGeneric: "Requires committee review and chamber debate…"', pattern: /Requires committee review and chamber debate/i },
+  { label: 'topicInFocusSuffix: "…: {Topic} in Focus"', pattern: /:\s+\w[\w\s]*\bin Focus\b/i },
+  { label: 'briefingOnFieldLabels: "Political intelligence briefing on {Field}: and {Field}:"', pattern: /Political intelligence briefing on \w+:\s+and\s+\w+:/i },
 ];
 
 /**

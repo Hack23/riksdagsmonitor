@@ -832,6 +832,20 @@ export async function writeArticlePair(htmlEN: string, htmlSV: string, slug: str
 // ---------------------------------------------------------------------------
 
 /** Extract top N most relevant highlight phrases from article content */
+/**
+ * Metadata field labels and generic template patterns that MUST NOT
+ * appear in extracted highlights — they are HTML formatting artifacts,
+ * not substantive political content.
+ */
+const HIGHLIGHT_REJECT_PATTERNS: readonly RegExp[] = [
+  /^(Committee|Published|Filed by|Filed By|Why It Matters|What This Means|Thematic Analysis):?$/i,
+  /^(Opposition Strategy|Latest|Overview|Summary|Background|Context|Report):?$/i,
+  /^\d{4}-\d{2}-\d{2}/,                             // raw dates
+  /^(Betänkande|Proposition|Motion|Interpellation)\s/i, // doc type prefixes
+  /^HD\d+/i,                                         // dok_id references
+  /^(Committee on|Utskott)/i,                        // committee prefix labels
+];
+
 function extractHighlights(content: string, maxHighlights: number = 3): string[] {
   // Look for strong/emphasized patterns in the HTML
   const strongMatches = content.match(/<strong>([^<]{5,60})<\/strong>/gi) ?? [];
@@ -842,7 +856,9 @@ function extractHighlights(content: string, maxHighlights: number = 3): string[]
   const result: string[] = [];
   for (const m of [...strongMatches, ...h3Matches]) {
     const text = m.replace(/<\/?(?:strong|h3)[^>]*>/gi, '').trim();
-    if (text.length >= 5 && text.length <= 80 && !seen.has(text)) {
+    // Reject metadata field labels and generic template artifacts
+    const isReject = HIGHLIGHT_REJECT_PATTERNS.some(p => p.test(text));
+    if (!isReject && text.length >= 5 && text.length <= 80 && !seen.has(text)) {
       seen.add(text);
       result.push(text);
       if (result.length >= maxHighlights) break;
@@ -901,27 +917,34 @@ export function generateDynamicTitle(
   const highlights = extractHighlights(content);
   const theme = extractDominantTheme(content);
 
-  // Build dynamic title incorporating the dominant theme
+  // Build dynamic title from content — NEVER append ": {Topic} in Focus" (BANNED pattern)
   let title = baseTitle;
-  if (theme && !baseTitle.toLowerCase().includes(theme.toLowerCase())) {
-    title = `${baseTitle}: ${theme} in Focus`;
-  } else if (highlights.length > 0) {
-    const topHighlight = highlights[0];
-    // Only append if it adds meaningful context and isn't too long
-    if (topHighlight.length <= 40 && !baseTitle.includes(topHighlight)) {
-      title = `${baseTitle}: ${topHighlight}`;
+  if (highlights.length >= 2) {
+    // Combine two concrete highlights into a newsworthy title
+    const combined = `${highlights[0]} and ${highlights[1]}`;
+    if (combined.length <= 60) {
+      title = `${baseTitle}: ${combined}`;
+    } else if (highlights[0].length <= 40) {
+      title = `${baseTitle}: ${highlights[0]}`;
     }
+  } else if (highlights.length === 1 && highlights[0].length <= 40) {
+    title = `${baseTitle}: ${highlights[0]}`;
+  } else if (theme && !baseTitle.toLowerCase().includes(theme.toLowerCase())) {
+    // Use theme as title enrichment WITHOUT the banned ": X in Focus" suffix
+    title = `${baseTitle}: ${theme}`;
   }
 
-  // Build dynamic subtitle from highlights — avoid banned template patterns
-  // per ai-driven-analysis-guide.md Rule 2: "Analysis of N documents covering {Field}:" is REJECTED
+  // Build dynamic subtitle — avoid banned "Analysis of N documents" and
+  // "Political intelligence briefing on {Field}:" patterns.  Produce a
+  // substantive summary that works as Schema.org alternativeHeadline and
+  // <meta name="description">.
   let subtitle: string;
   if (highlights.length >= 2) {
-    subtitle = `Political intelligence briefing on ${highlights.slice(0, 2).join(' and ')} — ${docCount} parliamentary documents analyzed`;
+    subtitle = `${highlights[0]} and ${highlights[1]} among ${docCount} parliamentary documents analyzed in this session`;
   } else if (highlights.length === 1) {
-    subtitle = `In-depth analysis of ${highlights[0]} based on ${docCount} parliamentary documents`;
+    subtitle = `${highlights[0]} — in-depth intelligence from ${docCount} parliamentary documents`;
   } else if (theme) {
-    subtitle = `${theme} — comprehensive analysis of ${docCount} parliamentary documents from the current session`;
+    subtitle = `${theme} policy developments across ${docCount} parliamentary documents from the current Riksdag session`;
   } else {
     subtitle = `Key political developments from ${docCount} parliamentary documents in the current Riksdag session`;
   }

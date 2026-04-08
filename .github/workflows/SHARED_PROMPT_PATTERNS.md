@@ -1581,6 +1581,8 @@ Read these methodology documents to guide your analysis:
    - ❌ `"{Category}: Holding Government to Account: Defense in Focus"`
    - ❌ `"{Category}: Parliamentary Priorities This Week: {Topic}"`
    - ❌ Any title ending with `: Defense in Focus` or `: {Topic} in Focus`
+   - ❌ `"{Category}: Battle Lines This Week"` — generic confrontational framing
+   - ❌ `"Political intelligence briefing on Committee: and Published:"` — metadata field leak
 
 #### Title Construction Formula
 ```
@@ -1619,6 +1621,7 @@ Read these methodology documents to guide your analysis:
 - ❌ `"Analysis of 10 documents covering Committee:, Published:"` — Missing actual content
 - ❌ `"Analysis of 15 documents covering Filed by:, Published:"` — Meaningless to readers
 - ❌ Any meta description starting with "Analysis of N documents"
+- ❌ `"Political intelligence briefing on Committee: and Published: — N parliamentary documents analyzed"` — Metadata field leak from extractHighlights
 
 #### Meta Description Quality Examples
 

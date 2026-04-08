@@ -327,20 +327,20 @@ export async function generateCommitteeReports(): Promise<GenerationResult> {
       const sources: string[] = generateSources(['get_betankanden', 'get_dokument_innehall']);
 
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Committee Reports: Parliamentary Priorities This Week`, subtitle: `${reports.length} committee reports revealing Riksdag priorities for the current session` },
-        sv: { title: `Utskottsbetänkanden: Riksdagens prioriteringar denna vecka`, subtitle: `Analys av ${reports.length} utskottsbetänkanden som avslöjar riksdagens prioriteringar` },
-        da: { title: `Udvalgsbetænkninger: Parlamentets prioriteringer denne uge`, subtitle: `Analyse af ${reports.length} udvalgsbetænkninger` },
-        no: { title: `Komitéinnstillinger: Stortingets prioriteringer denne uken`, subtitle: `Analyse av ${reports.length} komitéinnstillinger` },
-        fi: { title: `Valiokunnan mietinnöt: Eduskunnan prioriteetit tällä viikolla`, subtitle: `Analyysi ${reports.length} valiokunnan mietinnöstä` },
-        de: { title: `Ausschussberichte: Parlamentarische Prioritäten diese Woche`, subtitle: `Analyse von ${reports.length} Ausschussberichten` },
-        fr: { title: `Rapports de commission: Priorités parlementaires cette semaine`, subtitle: `Analyse de ${reports.length} rapports de commission` },
-        es: { title: `Informes de comisión: Prioridades parlamentarias esta semana`, subtitle: `Análisis de ${reports.length} informes de comisión` },
-        nl: { title: `Commissierapporten: Parlementaire prioriteiten deze week`, subtitle: `Analyse van ${reports.length} commissierapporten` },
-        ar: { title: `تقارير اللجان: أولويات البرلمان هذا الأسبوع`, subtitle: `تحليل ${reports.length} تقارير لجان` },
-        he: { title: `דוחות ועדה: סדרי עדיפויות פרלמנטריים השבוע`, subtitle: `ניתוח ${reports.length} דוחות ועדה` },
-        ja: { title: `委員会報告：今週の議会優先事項`, subtitle: `${reports.length}件の委員会報告の分析` },
-        ko: { title: `위원회 보고서: 이번 주 의회 우선순위`, subtitle: `${reports.length}개 위원회 보고서 분석` },
-        zh: { title: `委员会报告：本周议会优先事项`, subtitle: `${reports.length}份委员会报告分析` }
+        en: { title: `Riksdag Committee Reports`, subtitle: `Political intelligence analysis of ${reports.length} committee reports from the Swedish Parliament's current legislative session` },
+        sv: { title: `Utskottsbetänkanden från riksdagen`, subtitle: `Politisk analys av ${reports.length} utskottsbetänkanden från riksdagens pågående session` },
+        da: { title: `Udvalgsindstillinger fra Riksdagen`, subtitle: `Politisk analyse af ${reports.length} udvalgsbetænkninger fra den svenske Riksdag` },
+        no: { title: `Komitéinnstillinger fra Riksdagen`, subtitle: `Politisk analyse av ${reports.length} komitéinnstillinger fra den svenske Riksdagen` },
+        fi: { title: `Valiokunnan mietinnöt Riksdagista`, subtitle: `Poliittinen analyysi ${reports.length} valiokuntamietinnöstä Ruotsin valtiopäiviltä` },
+        de: { title: `Ausschussberichte aus dem Riksdag`, subtitle: `Politische Analyse von ${reports.length} Ausschussberichten aus dem schwedischen Parlament` },
+        fr: { title: `Rapports de commission du Riksdag`, subtitle: `Analyse politique de ${reports.length} rapports de commission du Parlement suédois` },
+        es: { title: `Informes de comisión del Riksdag`, subtitle: `Análisis político de ${reports.length} informes de comisión del Parlamento sueco` },
+        nl: { title: `Commissierapporten uit de Riksdag`, subtitle: `Politieke analyse van ${reports.length} commissierapporten uit het Zweedse parlement` },
+        ar: { title: `تقارير لجان الريكسداغ`, subtitle: `تحليل سياسي لـ ${reports.length} تقارير لجان من البرلمان السويدي` },
+        he: { title: `דוחות ועדות הריקסדאג`, subtitle: `ניתוח פוליטי של ${reports.length} דוחות ועדות מהפרלמנט השוודי` },
+        ja: { title: `リクスダーグ委員会報告`, subtitle: `スウェーデン議会の${reports.length}件の委員会報告の政治分析` },
+        ko: { title: `릭스다그 위원회 보고서`, subtitle: `스웨덴 의회의 ${reports.length}개 위원회 보고서 정치 분석` },
+        zh: { title: `瑞典议会委员会报告`, subtitle: `对瑞典议会${reports.length}份委员会报告的政治分析` }
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
@@ -419,20 +419,20 @@ export async function generatePropositions(): Promise<GenerationResult> {
       const sources: string[] = generateSources(['get_propositioner', 'get_dokument_innehall']);
 
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Government Propositions: Policy Priorities This Week`, subtitle: `${propositions.length} government propositions shaping the legislative agenda` },
-        sv: { title: `Regeringens propositioner: Veckans prioriteringar`, subtitle: `Analys av ${propositions.length} propositioner som formar den lagstiftande agendan` },
-        da: { title: `Regeringsforslag: Politiske prioriteringer denne uge`, subtitle: `Analyse af ${propositions.length} regeringsforslag` },
-        no: { title: `Regjeringens proposisjoner: Politiske prioriteringer denne uken`, subtitle: `Analyse av ${propositions.length} regjeringsproposisjoner` },
-        fi: { title: `Hallituksen esitykset: Viikon poliittiset prioriteetit`, subtitle: `Analyysi ${propositions.length} hallituksen esityksestä` },
-        de: { title: `Regierungsvorlagen: Politische Prioritäten diese Woche`, subtitle: `Analyse von ${propositions.length} Regierungsvorlagen` },
-        fr: { title: `Propositions gouvernementales: Priorités politiques cette semaine`, subtitle: `Analyse de ${propositions.length} propositions gouvernementales` },
-        es: { title: `Proposiciones gubernamentales: Prioridades políticas esta semana`, subtitle: `Análisis de ${propositions.length} proposiciones gubernamentales` },
-        nl: { title: `Regeringsvoorstellen: Politieke prioriteiten deze week`, subtitle: `Analyse van ${propositions.length} regeringsvoorstellen` },
-        ar: { title: `مقترحات الحكومة: الأولويات السياسية هذا الأسبوع`, subtitle: `تحليل ${propositions.length} مقترحات حكومية` },
-        he: { title: `הצעות ממשלה: סדרי עדיפויות מדיניים השבוע`, subtitle: `ניתוח ${propositions.length} הצעות ממשלה` },
-        ja: { title: `政府提案：今週の政策優先事項`, subtitle: `${propositions.length}件の政府提案の分析` },
-        ko: { title: `정부 법안: 이번 주 정책 우선순위`, subtitle: `${propositions.length}개 정부 법안 분석` },
-        zh: { title: `政府提案：本周政策优先事项`, subtitle: `${propositions.length}份政府提案分析` }
+        en: { title: `Government Propositions`, subtitle: `Political intelligence analysis of ${propositions.length} government propositions shaping Sweden's legislative agenda` },
+        sv: { title: `Regeringens propositioner`, subtitle: `Politisk analys av ${propositions.length} propositioner som formar Sveriges lagstiftningsagenda` },
+        da: { title: `Regeringsforslag fra Sverige`, subtitle: `Politisk analyse af ${propositions.length} svenske regeringsforslag` },
+        no: { title: `Svenske regjeringsproposisjoner`, subtitle: `Politisk analyse av ${propositions.length} svenske regjeringsproposisjoner` },
+        fi: { title: `Ruotsin hallituksen esitykset`, subtitle: `Poliittinen analyysi ${propositions.length} hallituksen esityksestä` },
+        de: { title: `Schwedische Regierungsvorlagen`, subtitle: `Politische Analyse von ${propositions.length} schwedischen Regierungsvorlagen` },
+        fr: { title: `Propositions du gouvernement suédois`, subtitle: `Analyse politique de ${propositions.length} propositions gouvernementales suédoises` },
+        es: { title: `Proposiciones del gobierno sueco`, subtitle: `Análisis político de ${propositions.length} proposiciones gubernamentales suecas` },
+        nl: { title: `Zweedse regeringsvoorstellen`, subtitle: `Politieke analyse van ${propositions.length} Zweedse regeringsvoorstellen` },
+        ar: { title: `مقترحات الحكومة السويدية`, subtitle: `تحليل سياسي لـ ${propositions.length} مقترحات حكومية سويدية` },
+        he: { title: `הצעות הממשלה השוודית`, subtitle: `ניתוח פוליטי של ${propositions.length} הצעות ממשלה שוודיות` },
+        ja: { title: `スウェーデン政府提案`, subtitle: `スウェーデン政府の${propositions.length}件の提案の政治分析` },
+        ko: { title: `스웨덴 정부 법안`, subtitle: `스웨덴 정부의 ${propositions.length}개 법안 정치 분석` },
+        zh: { title: `瑞典政府提案`, subtitle: `对瑞典政府${propositions.length}份提案的政治分析` }
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
@@ -511,20 +511,20 @@ export async function generateMotions(): Promise<GenerationResult> {
       const sources: string[] = generateSources(['get_motioner', 'get_dokument_innehall']);
 
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Opposition Motions: Battle Lines This Week`, subtitle: `${motions.length} opposition motions revealing parliamentary fault lines` },
-        sv: { title: `Oppositionsmotioner: Veckans stridslinjer`, subtitle: `Analys av ${motions.length} oppositionsmotioner som avslöjar parlamentariska skiljelinjer` },
-        da: { title: `Oppositionsforslag: Ugens kamppladser`, subtitle: `Analyse af ${motions.length} oppositionsforslag` },
-        no: { title: `Opposisjonsforslag: Ukens kamplinjer`, subtitle: `Analyse av ${motions.length} opposisjonsforslag` },
-        fi: { title: `Opposition aloitteet: Viikon taistelulinjat`, subtitle: `Analyysi ${motions.length} opposition aloitteesta` },
-        de: { title: `Oppositionsanträge: Kampflinien dieser Woche`, subtitle: `Analyse von ${motions.length} Oppositionsanträgen` },
-        fr: { title: `Motions d'opposition: Lignes de bataille cette semaine`, subtitle: `Analyse de ${motions.length} motions d'opposition` },
-        es: { title: `Mociones de oposición: Líneas de batalla esta semana`, subtitle: `Análisis de ${motions.length} mociones de oposición` },
-        nl: { title: `Oppositiemoties: Strijdlijnen deze week`, subtitle: `Analyse van ${motions.length} oppositiemoties` },
-        ar: { title: `اقتراحات المعارضة: خطوط المعركة هذا الأسبوع`, subtitle: `تحليل ${motions.length} اقتراحات المعارضة` },
-        he: { title: `הצעות אופוזיציה: קווי העימות השבוע`, subtitle: `ניתוח ${motions.length} הצעות אופוזיציה` },
-        ja: { title: `野党動議：今週の対立構図`, subtitle: `${motions.length}件の野党動議の分析` },
-        ko: { title: `야당 동의: 이번 주 대립 구도`, subtitle: `${motions.length}개 야당 동의 분석` },
-        zh: { title: `反对党动议：本周对立格局`, subtitle: `${motions.length}份反对党动议分析` }
+        en: { title: `Opposition Motions`, subtitle: `Political intelligence analysis of ${motions.length} opposition motions challenging the Swedish government's legislative agenda` },
+        sv: { title: `Oppositionsmotioner`, subtitle: `Politisk analys av ${motions.length} oppositionsmotioner som utmanar regeringens lagstiftningsagenda` },
+        da: { title: `Svenske oppositionsforslag`, subtitle: `Politisk analyse af ${motions.length} oppositionsforslag fra den svenske Riksdag` },
+        no: { title: `Svenske opposisjonsforslag`, subtitle: `Politisk analyse av ${motions.length} opposisjonsforslag fra den svenske Riksdagen` },
+        fi: { title: `Ruotsin opposition aloitteet`, subtitle: `Poliittinen analyysi ${motions.length} opposition aloitteesta Ruotsin valtiopäiviltä` },
+        de: { title: `Schwedische Oppositionsanträge`, subtitle: `Politische Analyse von ${motions.length} Oppositionsanträgen aus dem schwedischen Riksdag` },
+        fr: { title: `Motions de l'opposition suédoise`, subtitle: `Analyse politique de ${motions.length} motions d'opposition au Riksdag suédois` },
+        es: { title: `Mociones de la oposición sueca`, subtitle: `Análisis político de ${motions.length} mociones de oposición en el Riksdag sueco` },
+        nl: { title: `Zweedse oppositiemoties`, subtitle: `Politieke analyse van ${motions.length} oppositiemoties in de Zweedse Riksdag` },
+        ar: { title: `اقتراحات المعارضة السويدية`, subtitle: `تحليل سياسي لـ ${motions.length} اقتراحات معارضة من البرلمان السويدي` },
+        he: { title: `הצעות האופוזיציה השוודית`, subtitle: `ניתוח פוליטי של ${motions.length} הצעות אופוזיציה מהריקסדאג השוודי` },
+        ja: { title: `スウェーデン野党動議`, subtitle: `スウェーデン議会の${motions.length}件の野党動議の政治分析` },
+        ko: { title: `스웨덴 야당 동의`, subtitle: `스웨덴 의회의 ${motions.length}개 야당 동의 정치 분석` },
+        zh: { title: `瑞典反对党动议`, subtitle: `对瑞典议会${motions.length}份反对党动议的政治分析` }
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;
@@ -603,20 +603,20 @@ export async function generateInterpellations(): Promise<GenerationResult> {
       const sources: string[] = generateSources(['get_interpellationer', 'get_dokument_innehall']);
 
       const titles: Record<Language, TitleSet> = {
-        en: { title: `Interpellation Debates: Holding Government to Account`, subtitle: `${interpellations.length} interpellation debates demanding ministerial accountability` },
-        sv: { title: `Interpellationsdebatter: Regeringen ställs till svars`, subtitle: `Analys av ${interpellations.length} interpellationsdebatter som kräver ministersvar` },
-        da: { title: `Interpellationsdebatter: Regeringen stilles til ansvar`, subtitle: `Analyse af ${interpellations.length} interpellationsdebatter` },
-        no: { title: `Interpellasjonsdebatter: Regjeringen stilles til ansvar`, subtitle: `Analyse av ${interpellations.length} interpellasjonsdebatter` },
-        fi: { title: `Välikysymyskeskustelut: Hallitus tilivelvollisena`, subtitle: `Analyysi ${interpellations.length} välikysymyskeskustelusta` },
-        de: { title: `Interpellationsdebatten: Regierung in der Verantwortung`, subtitle: `Analyse von ${interpellations.length} Interpellationsdebatten` },
-        fr: { title: `Débats d'interpellation: Le gouvernement sommé de répondre`, subtitle: `Analyse de ${interpellations.length} débats d'interpellation` },
-        es: { title: `Debates de interpelación: El gobierno rinde cuentas`, subtitle: `Análisis de ${interpellations.length} debates de interpelación` },
-        nl: { title: `Interpellatiedebatten: Regering ter verantwoording`, subtitle: `Analyse van ${interpellations.length} interpellatiedebatten` },
-        ar: { title: `مناقشات الاستجواب: محاسبة الحكومة`, subtitle: `تحليل ${interpellations.length} مناقشات استجواب` },
-        he: { title: `דיוני אינטרפלציה: הממשלה נדרשת לתת דין וחשבון`, subtitle: `ניתוח ${interpellations.length} דיוני אינטרפלציה` },
-        ja: { title: `質問主意書討論：政府の説明責任を追及`, subtitle: `${interpellations.length}件の質問主意書討論の分析` },
-        ko: { title: `대정부 질의 토론: 정부 책임 추궁`, subtitle: `${interpellations.length}건의 대정부 질의 토론 분석` },
-        zh: { title: `质询辩论：追究政府责任`, subtitle: `${interpellations.length}场质询辩论分析` }
+        en: { title: `Interpellation Debates`, subtitle: `Political intelligence analysis of ${interpellations.length} interpellation debates demanding ministerial accountability in Sweden's Riksdag` },
+        sv: { title: `Interpellationsdebatter`, subtitle: `Politisk analys av ${interpellations.length} interpellationsdebatter som kräver ministersvar i Sveriges riksdag` },
+        da: { title: `Interpellationsdebatter i Riksdagen`, subtitle: `Politisk analyse af ${interpellations.length} interpellationsdebatter fra den svenske Riksdag` },
+        no: { title: `Interpellasjonsdebatter i Riksdagen`, subtitle: `Politisk analyse av ${interpellations.length} interpellasjonsdebatter fra den svenske Riksdagen` },
+        fi: { title: `Välikysymyskeskustelut Riksdagissa`, subtitle: `Poliittinen analyysi ${interpellations.length} välikysymyskeskustelusta Ruotsin valtiopäiviltä` },
+        de: { title: `Interpellationsdebatten im Riksdag`, subtitle: `Politische Analyse von ${interpellations.length} Interpellationsdebatten aus dem schwedischen Riksdag` },
+        fr: { title: `Débats d'interpellation au Riksdag`, subtitle: `Analyse politique de ${interpellations.length} débats d'interpellation au Parlement suédois` },
+        es: { title: `Debates de interpelación en el Riksdag`, subtitle: `Análisis político de ${interpellations.length} debates de interpelación del Parlamento sueco` },
+        nl: { title: `Interpellatiedebatten in de Riksdag`, subtitle: `Politieke analyse van ${interpellations.length} interpellatiedebatten in de Zweedse Riksdag` },
+        ar: { title: `مناقشات الاستجواب في الريكسداغ`, subtitle: `تحليل سياسي لـ ${interpellations.length} مناقشات استجواب من البرلمان السويدي` },
+        he: { title: `דיוני אינטרפלציה בריקסדאג`, subtitle: `ניתוח פוליטי של ${interpellations.length} דיוני אינטרפלציה מהפרלמנט השוודי` },
+        ja: { title: `リクスダーグ質問主意書討論`, subtitle: `スウェーデン議会の${interpellations.length}件の質問主意書討論の政治分析` },
+        ko: { title: `릭스다그 대정부 질의 토론`, subtitle: `스웨덴 의회의 ${interpellations.length}건의 대정부 질의 토론 정치 분석` },
+        zh: { title: `瑞典议会质询辩论`, subtitle: `对瑞典议会${interpellations.length}场质询辩论的政治分析` }
       };
 
       const langTitles: TitleSet = titles[lang] || titles.en;

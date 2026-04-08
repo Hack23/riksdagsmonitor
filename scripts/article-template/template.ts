@@ -30,6 +30,68 @@ import {
   hreflangCode,
 } from './helpers.js';
 
+// ---------------------------------------------------------------------------
+// SEO / Structured Data helpers
+// ---------------------------------------------------------------------------
+
+/**
+ * Sanitize a subtitle for use as Schema.org alternativeHeadline.
+ * Strips banned boilerplate patterns that leak from script-generated content.
+ */
+function sanitizeAlternativeHeadline(subtitle: string, maxLen: number = 110): string {
+  let clean = subtitle;
+  // Strip known banned patterns that pollute alternativeHeadline
+  const bannedPatterns = [
+    /Political intelligence briefing on [A-Za-z:]+\s+and\s+[A-Za-z:]+\s*[—–-]\s*\d+ parliamentary documents analyzed/i,
+    /In-depth analysis of [A-Za-z:]+\s+based on \d+ parliamentary documents/i,
+    /Analysis of \d+ documents covering[^.]*/i,
+  ];
+  for (const bp of bannedPatterns) {
+    if (bp.test(clean)) {
+      // Fall back to a generic but valid headline
+      clean = clean.replace(bp, '').trim();
+    }
+  }
+  // If cleaning emptied the string, return a safe fallback
+  if (clean.length < 10) {
+    clean = subtitle.substring(0, maxLen);
+  }
+  return clean.substring(0, maxLen);
+}
+
+/**
+ * Calculate accurate word count from HTML content by stripping tags first.
+ */
+function countWords(html: string): number {
+  const text = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  return text.split(' ').filter(w => w.length > 0).length;
+}
+
+/**
+ * Generate a proper SEO meta description from subtitle.
+ * Ensures the description is 150-160 characters and doesn't contain banned patterns.
+ */
+function generateSeoDescription(subtitle: string, title: string): string {
+  // Start with subtitle, which is the best candidate
+  let desc = subtitle;
+
+  // Check for banned "Analysis of N documents" patterns
+  if (/Analysis of \d+ documents/i.test(desc) || /briefing on \w+:\s+and/i.test(desc)) {
+    // Fall back to title-based description
+    desc = `${title}. Political intelligence analysis from Sweden's Riksdag — AI-generated from official parliamentary sources.`;
+  }
+
+  // Ensure description is within 150-160 char range
+  if (desc.length > 160) {
+    // Truncate at word boundary
+    const truncated = desc.substring(0, 157);
+    const lastSpace = truncated.lastIndexOf(' ');
+    desc = lastSpace > 100 ? truncated.substring(0, lastSpace) + '...' : truncated + '...';
+  }
+
+  return desc;
+}
+
 /**
  * Map a political intelligence classification level to its corresponding icon emoji.
  * Returns the appropriate colour-coded circle for use in classification badges.
@@ -116,6 +178,11 @@ export function generateArticleHTML(data: ArticleData): string {
   const dirAttr: string = isRTL ? ' dir="rtl"' : '';
   const baseSlug: string = slug.replace(`-${lang}.html`, '');
 
+  // Generate clean SEO metadata — avoid banned patterns in descriptions
+  const seoDescription: string = generateSeoDescription(subtitle, title);
+  const altHeadline: string = sanitizeAlternativeHeadline(subtitle);
+  const wordCount: number = countWords(fixedContent);
+
   return `<!DOCTYPE html>
 <html lang="${hreflangCode(lang)}"${dirAttr}>
 <head>
@@ -123,14 +190,14 @@ export function generateArticleHTML(data: ArticleData): string {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; base-uri 'self'; form-action 'self'">
   <title>${escapeHtml(title)}</title>
-  <meta name="description" content="${escapeHtml(subtitle).substring(0, 160)}">
+  <meta name="description" content="${escapeHtml(seoDescription)}">
   <meta name="keywords" content="${keywords.join(', ')}">
   <meta name="author" content="James Pether Sörling, CISSP, CISM">
   <link rel="canonical" href="https://riksdagsmonitor.com/news/${slug}">
   
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="${escapeHtml(title)}">
-  <meta property="og:description" content="${escapeHtml(subtitle).substring(0, 200)}">
+  <meta property="og:description" content="${escapeHtml(seoDescription)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://riksdagsmonitor.com/news/${slug}">
   <meta property="og:image" content="https://riksdagsmonitor.com/images/og-image-news.webp">
@@ -148,7 +215,7 @@ ${tags.map(tag => `  <meta property="article:tag" content="${escapeHtml(tag)}">`
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(title)}">
-  <meta name="twitter:description" content="${escapeHtml(subtitle).substring(0, 200)}">
+  <meta name="twitter:description" content="${escapeHtml(seoDescription)}">
   <meta name="twitter:image" content="https://riksdagsmonitor.com/images/og-image-news.webp">
   <meta name="twitter:image:alt" content="Riksdagsmonitor - Swedish Parliament Intelligence">
   <meta name="twitter:site" content="@riksdagsmonitor">
@@ -198,10 +265,11 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
     "@context": "https://schema.org",
     "@type": "NewsArticle",
     "headline": "${escapeHtml(title)}",
-    "alternativeHeadline": "${escapeHtml(subtitle).substring(0, 100)}",
-    "description": "${escapeHtml(subtitle).substring(0, 200)}",
+    "alternativeHeadline": "${escapeHtml(altHeadline)}",
+    "description": "${escapeHtml(seoDescription)}",
     "datePublished": "${dateObj.toISOString()}",
     "dateModified": "${dateObj.toISOString()}",
+    "dateCreated": "${dateObj.toISOString()}",
     "author": {
       "@type": "Person",
       "name": "James Pether Sörling",
@@ -231,7 +299,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
     },
     "articleSection": "${typeLabel}",
     "articleBody": "${sanitizeArticleBody(escapeHtml(fixedContent))}...",
-    "wordCount": ${Math.ceil(fixedContent.length / 5)},
+    "wordCount": ${wordCount},
     "inLanguage": "${hreflangCode(lang)}",
     "keywords": "${keywords.join(', ')}",
     "about": {
@@ -248,6 +316,10 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://riksdagsmonitor.com/news/${slug}"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".article-header h1", ".lede"]
     }${tags.length > 0 ? `,
     "mentions": [${tags.map(tag => `
       {
