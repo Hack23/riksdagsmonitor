@@ -561,18 +561,16 @@ const DATE_FORMAT_RE = /^\d{4}-\d{2}-\d{2}$/;
 async function readAnalysisFile(date: string, filename: string, basePath?: string): Promise<string | null> {
   if (!DATE_FORMAT_RE.test(date)) return null;
   const resolvedBase = basePath ?? ANALYSIS_BASE_PATH;
-  const rootPath = join(resolvedBase, date, filename);
-  try {
-    return await readFile(rootPath, 'utf-8');
-  } catch {
-    // Root-level file not found — scan subdirectories
-  }
-
-  // Scan immediate subdirectories for the file (e.g., deep-inspection/, propositions/)
-  // Sort alphabetically for deterministic selection when multiple subdirs exist
   const dateDir = join(resolvedBase, date);
+
+  // Prefer subdirectory files (AI-generated deep analysis) over root-level
+  // files (script-generated heuristic analysis). AI workflows write to
+  // article-type subfolders (e.g., propositions/, evening-analysis/) and
+  // produce publication-quality analysis. Root-level files may be lower-quality
+  // copies from pre-article-analysis.ts and should only be used as fallback.
   try {
     const entries = await readdir(dateDir, { withFileTypes: true });
+    // Sort alphabetically for deterministic selection when multiple subdirs exist
     const sortedDirs = entries.filter(e => e.isDirectory()).sort((a, b) => a.name.localeCompare(b.name));
     for (const entry of sortedDirs) {
       const subPath = join(dateDir, entry.name, filename);
@@ -584,6 +582,14 @@ async function readAnalysisFile(date: string, filename: string, basePath?: strin
     }
   } catch {
     // Date directory doesn't exist or can't be read
+  }
+
+  // Fallback to root-level file (script-generated or legacy)
+  const rootPath = join(resolvedBase, date, filename);
+  try {
+    return await readFile(rootPath, 'utf-8');
+  } catch {
+    // Root-level file not found either
   }
   return null;
 }

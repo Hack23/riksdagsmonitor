@@ -362,6 +362,45 @@ The following script directories and functions previously generated analysis con
 
 ---
 
+## 🏆 AI ANALYSIS QUALITY HIERARCHY — AI Always Wins
+
+> **NON-NEGOTIABLE**: AI-generated deep political analysis MUST NEVER be overwritten, shadowed, or replaced by script-generated heuristic analysis. The quality hierarchy is absolute.
+
+````markdown
+### Analysis Quality Priority (Highest → Lowest)
+
+| Priority | Source | Quality | Location | Description |
+|----------|--------|---------|----------|-------------|
+| 🥇 **1st** | AI workflow (agentic) | Publication-quality deep analysis | `analysis/daily/YYYY-MM-DD/{articleType}/` | Full methodology compliance: Mermaid diagrams, evidence tables, dok_id citations, multi-framework analysis |
+| 🥈 **2nd** | AI workflow (rerun suffix) | Publication-quality deep analysis | `analysis/daily/YYYY-MM-DD/{articleType}-2/` etc. | Same quality as 1st, auto-suffixed for repeat runs |
+| 🥉 **3rd** | Script (`pre-article-analysis.ts`) | Heuristic data extraction only | `analysis/daily/YYYY-MM-DD/{docType}/` | Automated pipeline: basic scoring, empty SWOT/threat, no Mermaid, no evidence tables |
+| ❌ **Never** | Root-level script copies | LOW quality | `analysis/daily/YYYY-MM-DD/*.md` (root) | Legacy root copies — reader prefers subdirectory files |
+
+### Rules
+
+1. **`analysis-reader.ts` prefers subdirectory files over root-level files.** AI analysis in `{articleType}/` subdirectories always takes priority over script copies at root level.
+2. **`pre-article-analysis.ts` keeps output in its scoped subfolder only.** Script output is NEVER copied to root level to avoid shadowing AI analysis.
+3. **AI workflows MUST improve existing analysis, never downgrade.** If script analysis already exists in a subfolder, the AI workflow MUST read it, enrich it with deep political intelligence, and overwrite it with publication-quality output following `analysis/methodologies/ai-driven-analysis-guide.md`.
+4. **Script analysis is a STARTING POINT, not a final product.** Script-generated files include `**Produced By**: pre-article-analysis script` metadata. AI workflows MUST detect this marker and replace the content with full methodology-compliant analysis.
+
+### How to Detect Script-Generated Analysis
+
+Script-generated files contain these markers (any one is sufficient):
+- `**Produced By**: pre-article-analysis script (automated data pipeline)`
+- `> ⚠️ **Script-Generated Analysis**: This file was produced by the automated data pipeline`
+- `SWOT confidence: LOW. Script pipeline provides structured data only`
+- `Analysis confidence: LOW. Script pipeline provides structured data only`
+
+When an AI workflow detects these markers, it MUST:
+1. Read the script's data extraction (document lists, committee codes, dates)
+2. **Discard** the script's analysis content (risk scores, significance, classifications)
+3. **Replace** with deep political intelligence using methodology guides and templates
+4. **Remove** the "Produced By" and "Script-Generated" markers
+5. Add proper metadata: `**Produced By**: {workflow-name} AI analysis (deep political intelligence)`
+````
+
+---
+
 ## 📊 TOP 10 QUALITY ISSUES IN CURRENT ARTICLES (2026-04-03 Systemic Audit)
 
 > **Quality audit findings** — these issues MUST be addressed by improving all agentic workflow prompts. The 2026-04-03 systemic audit supersedes the earlier 2026-04-02 spot-check findings (placeholder ledes, generic titles, missing analysis references) which are now subsumed under the broader issues below.
