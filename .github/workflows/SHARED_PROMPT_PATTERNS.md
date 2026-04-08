@@ -66,20 +66,20 @@ Every workflow MUST use this path pattern for ALL analysis output:
 analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/
 ```
 
-| Workflow | `${ARTICLE_TYPE}` folder | Owned files |
-|----------|-------------------------|-------------|
-| news-committee-reports | `committeeReports/` | All analysis for betänkanden |
-| news-interpellations | `interpellations/` | All analysis for interpellationer/frågor |
-| news-motions | `motions/` | All analysis for motioner |
-| news-propositions | `propositions/` | All analysis for propositioner |
-| news-month-ahead | `month-ahead/` | Monthly strategic outlook analysis |
-| news-week-ahead | `week-ahead/` | Weekly parliamentary preview analysis |
-| news-evening-analysis | `evening-analysis/` | Daily evening synthesis analysis |
-| news-weekly-review | `weekly-review/` | Weekly retrospective analysis |
-| news-monthly-review | `monthly-review/` | Monthly retrospective analysis |
-| news-realtime-monitor | `realtime-${HHMM}/` | Breaking news time-stamped analysis |
-| news-article-generator | `${REQUESTED_TYPE}/` | Analysis for the requested article type |
-| news-translate | *(reads only, never writes analysis)* | Translation output only |
+| Workflow | Base subfolder | Suffix on re-run | Owned files |
+|----------|---------------|------------------|-------------|
+| news-committee-reports | `committeeReports/` | `committeeReports-2/`, `-3/`, … | All analysis for betänkanden |
+| news-interpellations | `interpellations/` | `interpellations-2/`, `-3/`, … | All analysis for interpellationer/frågor |
+| news-motions | `motions/` | `motions-2/`, `-3/`, … | All analysis for motioner |
+| news-propositions | `propositions/` | `propositions-2/`, `-3/`, … | All analysis for propositioner |
+| news-month-ahead | `month-ahead/` | `month-ahead-2/`, `-3/`, … | Monthly strategic outlook analysis |
+| news-week-ahead | `week-ahead/` | `week-ahead-2/`, `-3/`, … | Weekly parliamentary preview analysis |
+| news-evening-analysis | `evening-analysis/` | `evening-analysis-2/`, `-3/`, … | Daily evening synthesis analysis |
+| news-weekly-review | `weekly-review/` | `weekly-review-2/`, `-3/`, … | Weekly retrospective analysis |
+| news-monthly-review | `monthly-review/` | `monthly-review-2/`, `-3/`, … | Monthly retrospective analysis |
+| news-realtime-monitor | `realtime-${HHMM}/` | *(inherently unique — no suffix needed)* | Breaking news time-stamped analysis |
+| news-article-generator | `${REQUESTED_TYPE}/` | `${REQUESTED_TYPE}-2/`, `-3/`, … | Analysis for the requested article type |
+| news-translate | *(reads only, never writes analysis)* | — | Translation output only |
 
 #### Enforcement Rules
 
@@ -93,20 +93,59 @@ analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/
 
 - ❌ Writing to `analysis/daily/${ARTICLE_DATE}/` root (no article type subfolder)
 - ❌ `git add analysis/daily/${ARTICLE_DATE}/` without article type scope
+- ❌ `git add news/` — stages ALL articles from ALL workflows, causing merge conflicts
+- ❌ Copying (`cp`) analysis files to both subfolder AND root date directory
 - ❌ One workflow modifying another workflow's synthesis-summary.md
 - ❌ Realtime monitor overwriting committee-reports analysis
 - ❌ Evening analysis replacing interpellations SWOT with its own
 - ❌ Article generator writing analysis without article type in path
+- ❌ Leaving root-level `.md` files in `analysis/daily/${ARTICLE_DATE}/` after relocation (use `mv`, never `cp`)
+
+#### Run Suffix Resolution (prevents merge conflicts from repeated runs)
+
+When a scheduled workflow runs and the analysis subfolder already exists (from a prior merged run), it MUST use a suffixed folder to avoid overwriting or causing merge conflicts. **Exception:** `force_generation=true` deliberately overwrites the base folder.
+
+```bash
+# === Run Suffix Resolution ===
+# Call AFTER setting BASE_SUBFOLDER and ARTICLE_DATE, BEFORE running the analysis pipeline.
+# - force_generation=true  → reuse base folder (overwrite is intentional)
+# - otherwise              → auto-suffix if base folder already has synthesis-summary.md
+#
+# Inputs:  BASE_SUBFOLDER (e.g. "propositions"), ARTICLE_DATE, FORCE_GENERATION
+# Outputs: ANALYSIS_SUBFOLDER (e.g. "propositions" or "propositions-2")
+ANALYSIS_SUBFOLDER="$BASE_SUBFOLDER"
+if [ "${FORCE_GENERATION:-false}" != "true" ]; then
+  _SUFFIX=1
+  while [ -f "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/synthesis-summary.md" ]; do
+    _SUFFIX=$((_SUFFIX + 1))
+    ANALYSIS_SUBFOLDER="${BASE_SUBFOLDER}-${_SUFFIX}"
+  done
+fi
+echo "📁 Analysis subfolder resolved: analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
+```
+
+**Result examples:**
+| Scenario | `ANALYSIS_SUBFOLDER` |
+|----------|---------------------|
+| First run of the day | `propositions` |
+| force_generation re-run | `propositions` (overwrites) |
+| Second scheduled run (first merged) | `propositions-2` |
+| Third scheduled run (first two merged) | `propositions-3` |
+
+> **Realtime monitor** already uses `realtime-HHMM` (inherently unique per run) — it does NOT need suffix resolution.
 
 #### Git Add Pattern (MANDATORY for all workflows)
 
 ```bash
-# CORRECT — scoped to article type
+# CORRECT — scoped to this workflow's news outputs and resolved analysis subfolder
 ARTICLE_TYPE="committeeReports"  # Set per workflow
-git add "analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/" || true
+git add news/*committee-reports*.html 2>/dev/null || true  # Only this workflow's articles
+git add news/metadata/ 2>/dev/null || true                  # Metadata (small, fast-changing)
+git add "analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/" || true
 
 # INCORRECT — will conflict with other workflows
-# git add "analysis/daily/${ARTICLE_DATE}/" || true  # ← NEVER DO THIS
+# git add news/ || true                                    # ← NEVER DO THIS — stages all workflows' articles
+# git add "analysis/daily/${ARTICLE_DATE}/" || true        # ← NEVER DO THIS — stages all workflows' analysis
 ```
 ````
 
@@ -320,6 +359,45 @@ The following script directories and functions previously generated analysis con
 | `scripts/data-transformers/content-generators/shared.ts` → all `*Text()` templates | ⚠️ DEPRECATED | AI prompt: "Write editorial analysis from actual document data" |
 
 **These scripts may still be called for data downloading and HTML formatting functions**, but their analysis output (SWOT entries, risk scores, classifications, titles, descriptions, editorial judgments) MUST be treated as stubs that the AI agent MUST overwrite with real template-compliant analysis.
+
+---
+
+## 🏆 AI ANALYSIS QUALITY HIERARCHY — AI Always Wins
+
+> **NON-NEGOTIABLE**: AI-generated deep political analysis MUST NEVER be overwritten, shadowed, or replaced by script-generated heuristic analysis. The quality hierarchy is absolute.
+
+````markdown
+### Analysis Quality Priority (Highest → Lowest)
+
+| Priority | Source | Quality | Location | Description |
+|----------|--------|---------|----------|-------------|
+| 🥇 **1st** | AI workflow (agentic) | Publication-quality deep analysis | `analysis/daily/YYYY-MM-DD/{articleType}/` | Full methodology compliance: Mermaid diagrams, evidence tables, dok_id citations, multi-framework analysis |
+| 🥈 **2nd** | AI workflow (rerun suffix) | Publication-quality deep analysis | `analysis/daily/YYYY-MM-DD/{articleType}-2/` etc. | Same quality as 1st, auto-suffixed for repeat runs |
+| 🥉 **3rd** | Script (`pre-article-analysis.ts`) | Heuristic data extraction only | `analysis/daily/YYYY-MM-DD/{docType}/` | Automated pipeline: basic scoring, empty SWOT/threat, no Mermaid, no evidence tables |
+| ❌ **Never** | Root-level script copies | LOW quality | `analysis/daily/YYYY-MM-DD/*.md` (root) | Legacy root copies — reader prefers subdirectory files |
+
+### Rules
+
+1. **`analysis-reader.ts` prefers subdirectory files over root-level files.** AI analysis in `{articleType}/` subdirectories always takes priority over script copies at root level.
+2. **`pre-article-analysis.ts` keeps output in its scoped subfolder only.** Script output is NEVER copied to root level to avoid shadowing AI analysis.
+3. **AI workflows MUST improve existing analysis, never downgrade.** If script analysis already exists in a subfolder, the AI workflow MUST read it, enrich it with deep political intelligence, and overwrite it with publication-quality output following `analysis/methodologies/ai-driven-analysis-guide.md`.
+4. **Script analysis is a STARTING POINT, not a final product.** Script-generated files include `**Produced By**: pre-article-analysis script` metadata. AI workflows MUST detect this marker and replace the content with full methodology-compliant analysis.
+
+### How to Detect Script-Generated Analysis
+
+Script-generated files contain these markers (any one is sufficient):
+- `**Produced By**: pre-article-analysis script (automated data pipeline)`
+- `> ⚠️ **Script-Generated Analysis**: This file was produced by the automated data pipeline`
+- `SWOT confidence: LOW. Script pipeline provides structured data only`
+- `Analysis confidence: LOW. Script pipeline provides structured data only`
+
+When an AI workflow detects these markers, it MUST:
+1. Read the script's data extraction (document lists, committee codes, dates)
+2. **Discard** the script's analysis content (risk scores, significance, classifications)
+3. **Replace** with deep political intelligence using methodology guides and templates
+4. **Remove** the "Produced By" and "Script-Generated" markers
+5. Add proper metadata: `**Produced By**: {workflow-name} AI analysis (deep political intelligence)`
+````
 
 ---
 
@@ -829,9 +907,12 @@ fi
 
 #### Step 1: Download Data (scripts + fallback to direct MCP calls)
 
-Try the script pipeline first:
+Try the script pipeline first. **Doc-type workflows** (committee-reports, motions, propositions, interpellations) MUST pass `--doc-type` to write directly to the scoped subdirectory:
 ```bash
-source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
+# For doc-type workflows (committee-reports, motions, propositions, interpellations):
+source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 --doc-type "$DOC_TYPE" 2>&1 | tee /tmp/pipeline-output.log
+# For other workflows (evening-analysis, realtime, week-ahead, etc.) — run without --doc-type, then MOVE (not copy) artifacts:
+# source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
 ```
 
 Check results:
@@ -931,7 +1012,9 @@ For each file in `analysis/daily/$ARTICLE_DATE/`, the agent MUST rewrite it to m
 Run this bash check on ALL analysis files (daily synthesis AND per-file analyses in `documents/`) before committing:
 
 ```bash
-ANALYSIS_DIR="analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}"
+# CRITICAL: Use article-type-scoped directory, NEVER the bare date directory
+ANALYSIS_SUBFOLDER="${ANALYSIS_SUBFOLDER:-${ARTICLE_TYPE}}"
+ANALYSIS_DIR="analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/${ANALYSIS_SUBFOLDER}"
 QUALITY_PASS=true
 FAIL_COUNT=0
 WARN_COUNT=0
@@ -1160,16 +1243,16 @@ git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
 
 **For all other workflows** (realtime-monitor, evening-analysis, article-generator, month-ahead, week-ahead, weekly-review, monthly-review) — MUST also scope to their article-type subdirectory:
 
-> ⚠️ **Pipeline relocation required**: `pre-article-analysis.ts` writes to `analysis/daily/$DATE/` (unscoped) when run without `--doc-type`. Each workflow MUST relocate the pipeline artifacts into its type subfolder immediately after the pipeline step. The relocation MUST be idempotent (safe on reruns):
+> ⚠️ **Pipeline relocation required**: `pre-article-analysis.ts` writes to `analysis/daily/$DATE/` (unscoped) when run without `--doc-type`. Each workflow MUST **move** (not copy) pipeline artifacts into its type subfolder immediately after the pipeline step. **NEVER leave .md files at the root date directory level** — this causes merge conflicts when multiple workflows run on the same date. The relocation MUST use the resolved `ANALYSIS_SUBFOLDER` (from Run Suffix Resolution) and be idempotent (safe on reruns):
 >
 > ```bash
 > UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
-> SCOPED_DIR="$UNSCOPED_DIR/$ARTICLE_TYPE"
+> SCOPED_DIR="$UNSCOPED_DIR/$ANALYSIS_SUBFOLDER"
 > if [ -d "$UNSCOPED_DIR" ]; then
 >   mkdir -p "$SCOPED_DIR"
 >   if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then
->     find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec cp -f {} "$SCOPED_DIR/" \;
->     echo "📁 Copied pipeline *.md artifacts → $SCOPED_DIR (kept unscoped originals for analysis-reader.ts)"
+>     find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv -f {} "$SCOPED_DIR/" \;
+>     echo "📁 Moved pipeline *.md artifacts → $SCOPED_DIR (root cleaned to prevent merge conflicts)"
 >   fi
 >   if [ -d "$UNSCOPED_DIR/documents" ]; then
 >     mkdir -p "$SCOPED_DIR/documents"
@@ -1179,6 +1262,8 @@ git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
 >   fi
 > fi
 > ```
+>
+> 🚨 **CRITICAL**: The `analysis-reader.ts` already scans subdirectories automatically — it does NOT need root-level files. Never keep copies at the root date directory.
 
 | Workflow | `ARTICLE_TYPE` subfolder | Example `git add` path |
 |----------|-------------------------|----------------------|

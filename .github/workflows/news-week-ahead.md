@@ -339,7 +339,7 @@ Example: `news/content/2026-03-23/week-ahead`
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally (scoped to week-ahead subfolder): `git add news/ "analysis/daily/$ARTICLE_DATE/week-ahead/" analysis/weekly/ && git commit -m "Add week-ahead articles and analysis artifacts"`
+> 2. Stage and commit locally (scoped to week-ahead subfolder): `git add news/*week-ahead*.html news/metadata/ "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" analysis/weekly/ && git commit -m "Add week-ahead articles and analysis artifacts"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -430,13 +430,24 @@ DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l
 echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
 # Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
 # but this workflow needs them under analysis/daily/$DATE/week-ahead/
+# === Run Suffix Resolution (see SHARED_PROMPT_PATTERNS.md) ===
+BASE_SUBFOLDER="week-ahead"
+ANALYSIS_SUBFOLDER="$BASE_SUBFOLDER"
+if [ "${FORCE_GENERATION:-false}" != "true" ]; then
+  _SUFFIX=1
+  while [ -f "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/synthesis-summary.md" ]; do
+    _SUFFIX=$((_SUFFIX + 1))
+    ANALYSIS_SUBFOLDER="${BASE_SUBFOLDER}-${_SUFFIX}"
+  done
+fi
+echo "📁 Analysis subfolder resolved: $ANALYSIS_SUBFOLDER"
 UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
-SCOPED_DIR="$UNSCOPED_DIR/week-ahead"
+SCOPED_DIR="$UNSCOPED_DIR/$ANALYSIS_SUBFOLDER"
 if [ -d "$UNSCOPED_DIR" ]; then
   mkdir -p "$SCOPED_DIR"
   if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then
-    find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec cp -f {} "$SCOPED_DIR/" \;
-    echo "📁 Copied pipeline *.md artifacts → $SCOPED_DIR (kept unscoped originals for analysis-reader.ts)"
+    find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv -f {} "$SCOPED_DIR/" \;
+    echo "📁 Moved pipeline *.md artifacts → $SCOPED_DIR (root cleaned to prevent merge conflicts)"
   fi
   if [ -d "$UNSCOPED_DIR/documents" ]; then
     mkdir -p "$SCOPED_DIR/documents"

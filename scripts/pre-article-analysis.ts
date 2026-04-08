@@ -851,44 +851,16 @@ async function runPreArticleAnalysis(opts: {
   console.log(`   📝 Generated ${perDocCount} per-document analysis files`);
 
   // ── Summary ───────────────────────────────────────────────────────────────
-  // When --doc-type is used, batch artifacts live under a subdirectory but
-  // existing consumers (analysis-reader.ts, getAnalysisEnrichment) read from
-  // the unscoped analysis/daily/<date>/ path.  Copy the 9 batch artefacts to
-  // that location so downstream generators still find them.  Per-document
-  // files intentionally stay only in the scoped directory.
-  if (docType) {
-    const unscopedDir = path.join(ANALYSIS_DIR, 'daily', date);
-    ensureDir(unscopedDir);
-    const batchFiles = [
-      'data-download-manifest.md',
-      'classification-results.md',
-      'risk-assessment.md',
-      'swot-analysis.md',
-      'threat-analysis.md',
-      'stakeholder-perspectives.md',
-      'significance-scoring.md',
-      'cross-reference-map.md',
-      'synthesis-summary.md',
-    ];
-    for (const file of batchFiles) {
-      const src = path.join(outputDir, file);
-      const dest = path.join(unscopedDir, file);
-      if (fs.existsSync(src)) {
-        try {
-          // Use atomic create to avoid check-then-copy race under concurrency.
-          fs.copyFileSync(src, dest, fs.constants.COPYFILE_EXCL);
-        } catch (error) {
-          const err = error as NodeJS.ErrnoException;
-          if (err.code !== 'EEXIST') {
-            throw err;
-          }
-          // If the file already exists, another workflow created it first.
-          // This is expected in parallel runs; keep the existing unscoped copy.
-        }
-      }
-    }
-    console.log(`   📋 Copied batch artifacts to ${path.relative(REPO_ROOT, unscopedDir)}/ for enrichment readers`);
-  }
+  // When --doc-type is used, batch artifacts stay ONLY in the scoped subdirectory
+  // (e.g., analysis/daily/<date>/propositions/).  analysis-reader.ts scans
+  // subdirectories automatically and prefers them over root-level files, so
+  // downstream consumers will find them.
+  //
+  // Root-level copies are deliberately NOT created — this prevents low-quality
+  // script-generated heuristic analysis from shadowing high-quality AI-generated
+  // analysis produced by the agentic workflows.  AI workflows write to the same
+  // article-type subfolders and follow analysis/methodologies/ai-driven-analysis-guide.md
+  // for deep political intelligence with Mermaid diagrams and evidence tables.
 
   const totalFiles = 9 + perDocCount + storedCount;
   console.log(`\n✅ Analysis complete! Results in: ${path.relative(REPO_ROOT, outputDir)}/`);
