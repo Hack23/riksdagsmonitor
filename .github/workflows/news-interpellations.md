@@ -323,9 +323,12 @@ FORCE_GENERATION="${{ github.event.inputs.force_generation || 'false' }}"
 EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}-en.html 2>/dev/null | wc -l)
 if [ "$EXISTING" -gt 0 ] && [ "${FORCE_GENERATION}" != "true" ]; then
   echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — article generation will be skipped (analysis still runs)"
-  echo "SKIP_ARTICLE_GENERATION=true"
+  SKIP_ARTICLE_GENERATION=true
+  echo "SKIP_ARTICLE_GENERATION=true" >> "$GITHUB_ENV"
 fi
 # NOTE: Do NOT exit here or call safeoutputs___noop — analysis phase MUST still execute
+# Later article-generation steps MUST gate on: if [ "$SKIP_ARTICLE_GENERATION" != "true" ]; then ...
+
 ```
 
 > **🚨 NEVER call `safeoutputs___noop` because articles already exist.** If articles exist, the workflow MUST still run the full 15-20 minute deep political analysis phase and commit analysis artifacts. The dedup check only controls whether NEW HTML articles are generated — analysis is the primary output and always runs. If analysis produces artifacts, use `safeoutputs___create_pull_request` with `analysis-only` label.

@@ -874,9 +874,11 @@ npx tsx scripts/validate-cross-references.ts news/*-{type}-*.html
 EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}-en.html 2>/dev/null | wc -l)
 if [ "$EXISTING" -gt 0 ] && [ "${FORCE_GENERATION}" != "true" ]; then
   echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — article generation will be skipped (analysis still runs)"
-  echo "SKIP_ARTICLE_GENERATION=true"
+  SKIP_ARTICLE_GENERATION=true
+  echo "SKIP_ARTICLE_GENERATION=true" >> "$GITHUB_ENV"
 fi
 # NOTE: Do NOT exit here or call safeoutputs___noop — analysis phase MUST still execute
+# Later article-generation steps MUST gate on: if [ "$SKIP_ARTICLE_GENERATION" != "true" ]; then ...
 ```
 
 > **🚨 NEVER call `safeoutputs___noop` because articles already exist.** The only valid reason for noop is when the MCP server is completely unreachable after 3 retry attempts. If articles exist but analysis produces new artifacts, commit those artifacts via `safeoutputs___create_pull_request` with `analysis-only` label.
