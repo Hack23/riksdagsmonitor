@@ -1,17 +1,17 @@
 {
-  "2026-04-08-government-propositions-da.html": {
-    "filename": "2026-04-08-government-propositions-da.html",
+  "2026-04-08-interpellation-debates-da.html": {
+    "filename": "2026-04-08-interpellation-debates-da.html",
     "lang": "da",
-    "articleType": "propositions",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 66,
+      "overallScore": 71,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 55,
+        "stakeholderCoverage": 85,
         "analyticalDepth": 65,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
@@ -19,21 +19,21 @@
       },
       "issueCount": 4
     },
-    "timestamp": "2026-04-08T10:51:14.730Z"
+    "timestamp": "2026-04-08T11:29:16.070Z"
   },
-  "2026-04-08-government-propositions-no.html": {
-    "filename": "2026-04-08-government-propositions-no.html",
+  "2026-04-08-interpellation-debates-no.html": {
+    "filename": "2026-04-08-interpellation-debates-no.html",
     "lang": "no",
-    "articleType": "propositions",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 66,
+      "overallScore": 71,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 55,
+        "stakeholderCoverage": 85,
         "analyticalDepth": 65,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
@@ -41,21 +41,21 @@
       },
       "issueCount": 4
     },
-    "timestamp": "2026-04-08T10:51:14.741Z"
+    "timestamp": "2026-04-08T11:29:16.083Z"
   },
-  "2026-04-08-government-propositions-fi.html": {
-    "filename": "2026-04-08-government-propositions-fi.html",
+  "2026-04-08-interpellation-debates-fi.html": {
+    "filename": "2026-04-08-interpellation-debates-fi.html",
     "lang": "fi",
-    "articleType": "propositions",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 66,
+      "overallScore": 71,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 55,
+        "stakeholderCoverage": 85,
         "analyticalDepth": 65,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
@@ -63,21 +63,21 @@
       },
       "issueCount": 4
     },
-    "timestamp": "2026-04-08T10:51:14.750Z"
+    "timestamp": "2026-04-08T11:29:16.094Z"
   },
-  "2026-04-08-government-propositions-de.html": {
-    "filename": "2026-04-08-government-propositions-de.html",
+  "2026-04-08-interpellation-debates-de.html": {
+    "filename": "2026-04-08-interpellation-debates-de.html",
     "lang": "de",
-    "articleType": "propositions",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 66,
+      "overallScore": 71,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 55,
+        "stakeholderCoverage": 85,
         "analyticalDepth": 65,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
@@ -85,21 +85,21 @@
       },
       "issueCount": 4
     },
-    "timestamp": "2026-04-08T10:51:14.758Z"
+    "timestamp": "2026-04-08T11:29:16.104Z"
   },
-  "2026-04-08-government-propositions-fr.html": {
-    "filename": "2026-04-08-government-propositions-fr.html",
+  "2026-04-08-interpellation-debates-fr.html": {
+    "filename": "2026-04-08-interpellation-debates-fr.html",
     "lang": "fr",
-    "articleType": "propositions",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 66,
+      "overallScore": 71,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 55,
+        "stakeholderCoverage": 85,
         "analyticalDepth": 65,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
@@ -107,21 +107,21 @@
       },
       "issueCount": 4
     },
-    "timestamp": "2026-04-08T10:51:14.765Z"
+    "timestamp": "2026-04-08T11:29:16.113Z"
   },
-  "2026-04-08-government-propositions-es.html": {
-    "filename": "2026-04-08-government-propositions-es.html",
+  "2026-04-08-interpellation-debates-es.html": {
+    "filename": "2026-04-08-interpellation-debates-es.html",
     "lang": "es",
-    "articleType": "propositions",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 66,
+      "overallScore": 71,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 55,
+        "stakeholderCoverage": 85,
         "analyticalDepth": 65,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
@@ -129,21 +129,21 @@
       },
       "issueCount": 4
     },
-    "timestamp": "2026-04-08T10:51:14.774Z"
+    "timestamp": "2026-04-08T11:29:16.122Z"
   },
-  "2026-04-08-government-propositions-nl.html": {
-    "filename": "2026-04-08-government-propositions-nl.html",
+  "2026-04-08-interpellation-debates-nl.html": {
+    "filename": "2026-04-08-interpellation-debates-nl.html",
     "lang": "nl",
-    "articleType": "propositions",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 66,
+      "overallScore": 71,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 55,
+        "stakeholderCoverage": 85,
         "analyticalDepth": 65,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
@@ -151,21 +151,21 @@
       },
       "issueCount": 4
     },
-    "timestamp": "2026-04-08T10:51:14.785Z"
+    "timestamp": "2026-04-08T11:29:16.130Z"
   },
-  "2026-04-08-government-propositions-ar.html": {
-    "filename": "2026-04-08-government-propositions-ar.html",
+  "2026-04-08-interpellation-debates-ar.html": {
+    "filename": "2026-04-08-interpellation-debates-ar.html",
     "lang": "ar",
-    "articleType": "propositions",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 66,
+      "overallScore": 71,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 55,
+        "stakeholderCoverage": 85,
         "analyticalDepth": 65,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
@@ -173,21 +173,21 @@
       },
       "issueCount": 4
     },
-    "timestamp": "2026-04-08T10:51:14.800Z"
+    "timestamp": "2026-04-08T11:29:16.143Z"
   },
-  "2026-04-08-government-propositions-he.html": {
-    "filename": "2026-04-08-government-propositions-he.html",
+  "2026-04-08-interpellation-debates-he.html": {
+    "filename": "2026-04-08-interpellation-debates-he.html",
     "lang": "he",
-    "articleType": "propositions",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 66,
+      "overallScore": 71,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 55,
+        "stakeholderCoverage": 85,
         "analyticalDepth": 65,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
@@ -195,43 +195,21 @@
       },
       "issueCount": 4
     },
-    "timestamp": "2026-04-08T10:51:14.811Z"
+    "timestamp": "2026-04-08T11:29:16.151Z"
   },
-  "2026-04-08-government-propositions-ja.html": {
-    "filename": "2026-04-08-government-propositions-ja.html",
+  "2026-04-08-interpellation-debates-ja.html": {
+    "filename": "2026-04-08-interpellation-debates-ja.html",
     "lang": "ja",
-    "articleType": "propositions",
-    "score": 94,
-    "passed": true,
-    "multidimensional": {
-      "overallScore": 66,
-      "passesThreshold": true,
-      "assessmentPasses": 2,
-      "dimensions": {
-        "factualAccuracy": 100,
-        "stakeholderCoverage": 55,
-        "analyticalDepth": 65,
-        "editorialConsistency": 100,
-        "evidenceQuality": 65,
-        "languageQuality": 0
-      },
-      "issueCount": 4
-    },
-    "timestamp": "2026-04-08T10:51:14.821Z"
-  },
-  "2026-04-08-government-propositions-ko.html": {
-    "filename": "2026-04-08-government-propositions-ko.html",
-    "lang": "ko",
-    "articleType": "propositions",
+    "articleType": "interpellations",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 66,
+      "overallScore": 71,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 55,
+        "stakeholderCoverage": 85,
         "analyticalDepth": 65,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
@@ -239,21 +217,21 @@
       },
       "issueCount": 4
     },
-    "timestamp": "2026-04-08T10:51:14.828Z"
+    "timestamp": "2026-04-08T11:29:16.159Z"
   },
-  "2026-04-08-government-propositions-zh.html": {
-    "filename": "2026-04-08-government-propositions-zh.html",
-    "lang": "zh",
-    "articleType": "propositions",
-    "score": 94,
+  "2026-04-08-interpellation-debates-ko.html": {
+    "filename": "2026-04-08-interpellation-debates-ko.html",
+    "lang": "ko",
+    "articleType": "interpellations",
+    "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 66,
+      "overallScore": 71,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 55,
+        "stakeholderCoverage": 85,
         "analyticalDepth": 65,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
@@ -261,6 +239,292 @@
       },
       "issueCount": 4
     },
-    "timestamp": "2026-04-08T10:51:14.835Z"
+    "timestamp": "2026-04-08T11:29:16.168Z"
+  },
+  "2026-04-08-interpellation-debates-zh.html": {
+    "filename": "2026-04-08-interpellation-debates-zh.html",
+    "lang": "zh",
+    "articleType": "interpellations",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 71,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 0
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-08T11:29:16.175Z"
+  },
+  "2026-04-08-opposition-motions-da.html": {
+    "filename": "2026-04-08-opposition-motions-da.html",
+    "lang": "da",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 71,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 0
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-08T11:29:18.681Z"
+  },
+  "2026-04-08-opposition-motions-no.html": {
+    "filename": "2026-04-08-opposition-motions-no.html",
+    "lang": "no",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 71,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 0
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-08T11:29:18.688Z"
+  },
+  "2026-04-08-opposition-motions-fi.html": {
+    "filename": "2026-04-08-opposition-motions-fi.html",
+    "lang": "fi",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 71,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 0
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-08T11:29:18.694Z"
+  },
+  "2026-04-08-opposition-motions-de.html": {
+    "filename": "2026-04-08-opposition-motions-de.html",
+    "lang": "de",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 71,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 0
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-08T11:29:18.701Z"
+  },
+  "2026-04-08-opposition-motions-fr.html": {
+    "filename": "2026-04-08-opposition-motions-fr.html",
+    "lang": "fr",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 71,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 0
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-08T11:29:18.707Z"
+  },
+  "2026-04-08-opposition-motions-es.html": {
+    "filename": "2026-04-08-opposition-motions-es.html",
+    "lang": "es",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 71,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 0
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-08T11:29:18.714Z"
+  },
+  "2026-04-08-opposition-motions-nl.html": {
+    "filename": "2026-04-08-opposition-motions-nl.html",
+    "lang": "nl",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 71,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 0
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-08T11:29:18.722Z"
+  },
+  "2026-04-08-opposition-motions-ar.html": {
+    "filename": "2026-04-08-opposition-motions-ar.html",
+    "lang": "ar",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 71,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 0
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-08T11:29:18.729Z"
+  },
+  "2026-04-08-opposition-motions-he.html": {
+    "filename": "2026-04-08-opposition-motions-he.html",
+    "lang": "he",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 71,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 0
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-08T11:29:18.735Z"
+  },
+  "2026-04-08-opposition-motions-ja.html": {
+    "filename": "2026-04-08-opposition-motions-ja.html",
+    "lang": "ja",
+    "articleType": "motions",
+    "score": 91,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 71,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 0
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-08T11:29:18.742Z"
+  },
+  "2026-04-08-opposition-motions-ko.html": {
+    "filename": "2026-04-08-opposition-motions-ko.html",
+    "lang": "ko",
+    "articleType": "motions",
+    "score": 100,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 71,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 0
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-08T11:29:18.749Z"
+  },
+  "2026-04-08-opposition-motions-zh.html": {
+    "filename": "2026-04-08-opposition-motions-zh.html",
+    "lang": "zh",
+    "articleType": "motions",
+    "score": 91,
+    "passed": true,
+    "multidimensional": {
+      "overallScore": 71,
+      "passesThreshold": true,
+      "assessmentPasses": 2,
+      "dimensions": {
+        "factualAccuracy": 100,
+        "stakeholderCoverage": 85,
+        "analyticalDepth": 65,
+        "editorialConsistency": 100,
+        "evidenceQuality": 65,
+        "languageQuality": 0
+      },
+      "issueCount": 4
+    },
+    "timestamp": "2026-04-08T11:29:18.757Z"
   }
 }
