@@ -137,11 +137,11 @@ echo "📁 Analysis subfolder resolved: analysis/daily/$ARTICLE_DATE/$ANALYSIS_S
 #### Git Add Pattern (MANDATORY for all workflows)
 
 ```bash
-# CORRECT — scoped to article type for both analysis AND news
+# CORRECT — scoped to this workflow's news outputs and resolved analysis subfolder
 ARTICLE_TYPE="committeeReports"  # Set per workflow
 git add news/*committee-reports*.html 2>/dev/null || true  # Only this workflow's articles
 git add news/metadata/ 2>/dev/null || true                  # Metadata (small, fast-changing)
-git add "analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/" || true
+git add "analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/" || true
 
 # INCORRECT — will conflict with other workflows
 # git add news/ || true                                    # ← NEVER DO THIS — stages all workflows' articles
@@ -974,7 +974,8 @@ Run this bash check on ALL analysis files (daily synthesis AND per-file analyses
 
 ```bash
 # CRITICAL: Use article-type-scoped directory, NEVER the bare date directory
-ANALYSIS_DIR="analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/${ARTICLE_TYPE}"
+ANALYSIS_SUBFOLDER="${ANALYSIS_SUBFOLDER:-${ARTICLE_TYPE}}"
+ANALYSIS_DIR="analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/${ANALYSIS_SUBFOLDER}"
 QUALITY_PASS=true
 FAIL_COUNT=0
 WARN_COUNT=0

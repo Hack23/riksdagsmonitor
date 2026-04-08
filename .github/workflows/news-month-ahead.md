@@ -357,7 +357,7 @@ Example: `news/content/2026-03-23/month-ahead`
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally (scoped to month-ahead subfolder): `git add news/*month-ahead*.html news/metadata/ "analysis/daily/$ARTICLE_DATE/month-ahead/" analysis/weekly/ && git commit -m "Add month-ahead articles and analysis artifacts"`
+> 2. Stage and commit locally (scoped to resolved month-ahead analysis subfolder): `git add news/*month-ahead*.html news/metadata/ "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" analysis/weekly/ && git commit -m "Add month-ahead articles and analysis artifacts"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.

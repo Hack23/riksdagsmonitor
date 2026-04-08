@@ -63,7 +63,7 @@ analysis/daily/
 │   │   └── (same 9 batch files)
 │   ├── monthly-review/          ← Monthly review (news-monthly-review workflow)
 │   │   └── (same 9 batch files)
-│   └── general/                 ← Legacy unscoped files (pre-April 2026)
+│   └── general/                 ← Legacy unscoped files (from before subfolder convention)
 ```
 
 **🚨 CRITICAL: Every article type MUST use its own subdirectory.** Never write analysis `.md` files directly to the `YYYY-MM-DD/` root directory. This prevents merge conflicts when multiple workflows run concurrently on the same date. The `analysis-reader.ts` automatically scans subdirectories.

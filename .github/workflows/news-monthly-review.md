@@ -347,7 +347,7 @@ Example: `news/content/2026-03-23/monthly-review`
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally (scoped to monthly-review subfolder): `git add news/*monthly-review*.html news/metadata/ "analysis/daily/$ARTICLE_DATE/monthly-review/" analysis/weekly/ && git commit -m "Add monthly-review articles and analysis artifacts"`
+> 2. Stage and commit locally (scoped to the resolved monthly-review subfolder): `git add news/*monthly-review*.html news/metadata/ "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" analysis/weekly/ && git commit -m "Add monthly-review articles and analysis artifacts"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
