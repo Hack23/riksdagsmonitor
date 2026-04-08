@@ -577,7 +577,7 @@ describe('readDailyAnalysis', () => {
     expect(result.riskAssessment?.level).toBe('elevated');
   });
 
-  it('prefers root-level files over subdirectory files', async () => {
+  it('prefers subdirectory files over root-level files', async () => {
     // Root-level classification
     writeFileSync(join(tempBase, TEST_DATE, 'classification-results.md'), CLASSIFICATION_MD, 'utf-8');
     // Subdirectory classification with different content
@@ -586,7 +586,7 @@ describe('readDailyAnalysis', () => {
     writeFileSync(join(subDir, 'classification-results.md'), '# Classification\n**Level**: LOW\n**Confidence**: LOW', 'utf-8');
 
     const result = await readDailyAnalysis(TEST_DATE, tempBase);
-    expect(result.classification?.level).toBe('HIGH');  // Root takes precedence
+    expect(result.classification?.level).toBe('LOW');  // Subdirectory takes precedence (AI-generated)
   });
 
   it('selects subdirectory deterministically (alphabetical) when multiple exist', async () => {

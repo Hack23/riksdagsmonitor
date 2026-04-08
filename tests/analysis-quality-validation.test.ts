@@ -481,16 +481,19 @@ describe('Analysis Quality Validation', () => {
       expect(failures, `Strict-v2 risk assessments with docs but no citations:\n${failures.join('\n')}`).toHaveLength(0);
     });
 
-    it('should have ≥2 unique dok_id citations in strict-v2 synthesis summary files', () => {
+    it('should have ≥2 unique dok_id citations in strict-v2 synthesis summary files (≥1 for single-document)', () => {
       const failures: string[] = [];
 
       for (const dir of strictV2SynthesisDirectories) {
         const content = readAnalysisFile(dir, 'synthesis-summary.md');
         if (!content) continue;
         const count = countDokIds(content);
-        if (count < 2) {
+        const docCount = extractDocumentsAnalyzedCount(content);
+        // Single-document analyses legitimately have only 1 dok_id citation
+        const minRequired = (docCount !== null && docCount <= 1) ? 1 : 2;
+        if (count < minRequired) {
           failures.push(
-            `${dir.date}/${dir.articleType}/synthesis-summary.md: only ${count} dok_id citations (minimum 2)`
+            `${dir.date}/${dir.articleType}/synthesis-summary.md: only ${count} dok_id citations (minimum ${minRequired})`
           );
         }
       }
