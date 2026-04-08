@@ -832,99 +832,39 @@ export async function writeArticlePair(htmlEN: string, htmlSV: string, slug: str
 // ---------------------------------------------------------------------------
 
 /** Extract top N most relevant highlight phrases from article content */
-function extractHighlights(content: string, maxHighlights: number = 3): string[] {
-  // Look for strong/emphasized patterns in the HTML
-  const strongMatches = content.match(/<strong>([^<]{5,60})<\/strong>/gi) ?? [];
-  // Also look for h3 headings as highlights
-  const h3Matches = content.match(/<h3[^>]*>([^<]{5,80})<\/h3>/gi) ?? [];
-
-  const seen = new Set<string>();
-  const result: string[] = [];
-  for (const m of [...strongMatches, ...h3Matches]) {
-    const text = m.replace(/<\/?(?:strong|h3)[^>]*>/gi, '').trim();
-    if (text.length >= 5 && text.length <= 80 && !seen.has(text)) {
-      seen.add(text);
-      result.push(text);
-      if (result.length >= maxHighlights) break;
-    }
-  }
-  return result;
-}
-
-/** Extract key policy domain or committee name from content */
-function extractDominantTheme(content: string): string | null {
-  const text = content.replace(/<[^>]+>/g, ' ');
-  // Known Swedish committee patterns
-  const committees = [
-    'Finansutskottet', 'Försvarsutskottet', 'Justitieutskottet', 'Socialutskottet',
-    'Utrikesutskottet', 'Civilutskottet', 'Näringsutskottet', 'Kulturutskottet',
-    'Miljöutskottet', 'Arbetsmarknadsutskottet', 'Konstitutionsutskottet',
-    'Socialförsäkringsutskottet', 'Trafikutskottet', 'Utbildningsutskottet',
-  ];
-  for (const c of committees) {
-    if (text.includes(c)) return c;
-  }
-  // Policy domain patterns
-  const domains = [
-    { pattern: /\b(defense|defence|försvar|NATO|military)\b/i, theme: 'Defense' },
-    { pattern: /\b(budget|fiscal|skattepo|ekonomi|finance)\b/i, theme: 'Economy' },
-    { pattern: /\b(migration|invandring|asylum|refugee)\b/i, theme: 'Migration' },
-    { pattern: /\b(climate|miljö|environment|hållbar|sustainability)\b/i, theme: 'Climate' },
-    { pattern: /\b(education|utbildning|school|skola)\b/i, theme: 'Education' },
-    { pattern: /\b(health|hälso|vård|sjukvård|healthcare)\b/i, theme: 'Health' },
-    { pattern: /\b(EU|European Union|Europeiska)\b/i, theme: 'EU Affairs' },
-    { pattern: /\b(justice|rätts|crime|brott|law enforcement)\b/i, theme: 'Justice' },
-    { pattern: /\b(labour|arbetsmarknad|employment|unemployment)\b/i, theme: 'Labour' },
-  ];
-  for (const d of domains) {
-    if (d.pattern.test(text)) return d.theme;
-  }
-  return null;
-}
+// v5.0: The HIGHLIGHT_REJECT_PATTERNS array and extractHighlights/extractDominantTheme
+// functions were removed. Title generation is now performed by the AI agent (Copilot
+// opus 4.6) during agentic workflows — see ai-driven-analysis-guide.md v5.0.
+// The BANNED_PATTERNS for content quality remain in shared.ts detectBannedPatterns().
 
 /**
- * Generate a dynamic, content-based title that highlights key findings.
+ * @deprecated v5.0 — Stub only. AI agent generates all titles.
  *
- * Uses extractable highlights from article content to produce titles that
- * reflect the specific topics covered rather than generic templates.
+ * Returns the base title and a placeholder subtitle.
+ * The AI agent in the agentic workflow (.md prompt) MUST overwrite
+ * both the title and subtitle with genuine, content-analysed values.
  *
- * @param baseTitle - The generic article type title prefix
- * @param content   - The HTML content of the article
- * @param docCount  - Number of source documents analyzed
- * @returns         A `TitleSet` with content-enriched title and description
+ * Previously this function used regex heuristics (extractHighlights,
+ * extractDominantTheme) to build titles from HTML content. That approach
+ * produced low-quality, scripted titles that violated the ai-driven-analysis-guide.md
+ * requirement that ALL titles be AI-generated from actual political analysis.
+ *
+ * @param baseTitle - The generic article type title (e.g. "Government Propositions")
+ * @param _content  - Unused. Retained for API compatibility.
+ * @param _docCount - Unused. Retained for API compatibility.
+ * @returns A stub `TitleSet` — AI agent MUST replace both fields.
  */
 export function generateDynamicTitle(
   baseTitle: string,
-  content: string,
-  docCount: number,
+  _content: string,
+  _docCount: number,
 ): { title: string; subtitle: string } {
-  const highlights = extractHighlights(content);
-  const theme = extractDominantTheme(content);
-
-  // Build dynamic title incorporating the dominant theme
-  let title = baseTitle;
-  if (theme && !baseTitle.toLowerCase().includes(theme.toLowerCase())) {
-    title = `${baseTitle}: ${theme} in Focus`;
-  } else if (highlights.length > 0) {
-    const topHighlight = highlights[0];
-    // Only append if it adds meaningful context and isn't too long
-    if (topHighlight.length <= 40 && !baseTitle.includes(topHighlight)) {
-      title = `${baseTitle}: ${topHighlight}`;
-    }
-  }
-
-  // Build dynamic subtitle from highlights — avoid banned template patterns
-  // per ai-driven-analysis-guide.md Rule 2: "Analysis of N documents covering {Field}:" is REJECTED
-  let subtitle: string;
-  if (highlights.length >= 2) {
-    subtitle = `Political intelligence briefing on ${highlights.slice(0, 2).join(' and ')} — ${docCount} parliamentary documents analyzed`;
-  } else if (highlights.length === 1) {
-    subtitle = `In-depth analysis of ${highlights[0]} based on ${docCount} parliamentary documents`;
-  } else if (theme) {
-    subtitle = `${theme} — comprehensive analysis of ${docCount} parliamentary documents from the current session`;
-  } else {
-    subtitle = `Key political developments from ${docCount} parliamentary documents in the current Riksdag session`;
-  }
-
-  return { title, subtitle };
+  // v5.0: Return base title only — AI agent in workflow prompt MUST
+  // overwrite with analysis-driven, newsworthy title and description.
+  // See: ai-driven-analysis-guide.md §"Analysis-Driven Article Decision Protocol (v5.0)"
+  // See: SHARED_PROMPT_PATTERNS.md §"AI-DRIVEN TITLE & META DESCRIPTION GENERATION"
+  return {
+    title: baseTitle,
+    subtitle: `${baseTitle} — AI-generated political intelligence from Sweden's Riksdag`,
+  };
 }

@@ -77,6 +77,9 @@ analysis/daily/YYYY-MM-DD/{articleType}/
 >
 > | Content Type | AI MUST Generate | Script MAY Provide |
 > |-------------|------------------|-------------------|
+> | **Article title** | Newsworthy title naming actors, policy actions, political significance — from analysis | Generic article type label only (e.g., "Government Propositions") |
+> | **Meta description** | 150-160 char intelligence summary from synthesis findings | Generic stub only |
+> | **Subtitle / alternativeHeadline** | Content-specific subtitle from synthesis key highlights | Generic stub with AI attribution |
 > | **Article lede** | Context-rich opening paragraph naming actors, policy significance, and political stakes | Empty `<p class="lede">` container |
 > | **"Why It Matters"** | Per-document differentiated analysis citing specific policy impact and stakeholder effects | Nothing — this section must be 100% AI |
 > | **Winners & Losers** | Named parties/actors with specific evidence from voting records or committee outcomes | Nothing — this section must be 100% AI |
@@ -84,6 +87,16 @@ analysis/daily/YYYY-MM-DD/{articleType}/
 > | **Strategic Context** | Coalition dynamics, opposition strategy, electoral implications from actual data | Nothing — this section must be 100% AI |
 > | **SWOT/Risk inline summaries** | Key findings from pre-computed analysis files, with links to full analysis on GitHub | Empty chart containers using the standard `<canvas data-chart-config="...">`/container convention (no inline scripts) |
 > | **Policy domain labels** | Correct classification using committee→domain mapping (see §Policy Domain Inference below) | Raw committee code only |
+>
+> **v5.0 — ABSOLUTE BAN on Code-Generated Titles and Descriptions**:
+> - ❌ `generateDynamicTitle()` — now a deprecated stub. Do NOT rely on its output.
+> - ❌ `extractHighlights()` — REMOVED. Regex-scanning HTML for `<strong>` tags is NOT analysis.
+> - ❌ `extractDominantTheme()` — REMOVED. Keyword matching is NOT political intelligence.
+> - ❌ Any subtitle containing `"${count} documents"` or `"${count} parliamentary"` — interpolated document counts are NOT descriptions.
+> - ❌ Any title produced by string concatenation of `baseTitle + ": " + theme` — this is template output, not AI analysis.
+> - ✅ The AI agent (Copilot opus 4.6) MUST read the completed synthesis-summary.md and generate titles/descriptions based on the actual political intelligence findings.
+> - ✅ Titles must follow the formula: `[Active Verb] + [Specific Actor/Institution] + [Concrete Policy Action]`
+> - ✅ Descriptions must summarize the #1 ranked finding from the significance scoring.
 >
 > **v4.0 Banned Script Patterns**: The following code-generated content patterns are REJECTED in articles:
 > - `"Analysis of N documents covering {Field}:, {Field}:"` — template placeholder lede
@@ -972,6 +985,69 @@ These functions in `scripts/` contain hardcoded analysis logic that MUST be repl
 | All `*Text()` templates | `shared.ts` (`*Text()` template functions) | AI prompt: "Write editorial analysis based on actual document data" |
 
 > **Migration path**: These functions remain as fallbacks but their output is treated as stubs. AI agents in workflows MUST overwrite all template-generated text with genuine analysis.
+
+### 🚨 Analysis-Driven Article Decision Protocol (v5.0 — MANDATORY)
+
+> **NON-NEGOTIABLE**: Article decisions (whether to publish, what title to use, what description to write) MUST be made AFTER all analysis is complete — NEVER before. The synthesis-summary.md "Narrative Direction & Article Decision" section is the SINGLE SOURCE OF TRUTH for article generation.
+
+#### Protocol: Complete Analysis → Decide Article → Generate Content → AI Title/SEO
+
+```mermaid
+flowchart TD
+    A["📥 Step 1: Download Data<br/>MCP queries, catalog pending files"] --> B["🔍 Step 2: Run Full Analysis Pipeline<br/>Classification → SWOT → Risk → Threat → Stakeholder → Significance"]
+    B --> C["🧩 Step 3: AI Synthesis<br/>synthesis-summary.md with Narrative Direction"]
+    C --> D{"📰 Step 4: Article Decision<br/>Read synthesis significance scores"}
+    D -->|"Significance ≥ 7.0"| E["⚡ BREAKING/PRIORITY Article"]
+    D -->|"Significance 5.0–6.9"| F["📰 STANDARD Article"]
+    D -->|"Significance < 5.0"| G["📋 ANALYSIS-ONLY<br/>(no article, commit analysis)"]
+    E --> H["✍️ Step 5: AI Generates Article Content<br/>from synthesis, NOT templates"]
+    F --> H
+    H --> I["🏷️ Step 6: AI Generates Title & SEO<br/>from article content analysis"]
+    I --> J["✅ Step 7: Validate & Commit"]
+    G --> J
+
+    style A fill:#0d6efd,color:#fff
+    style B fill:#6610f2,color:#fff
+    style C fill:#6f42c1,color:#fff
+    style D fill:#ffc107,color:#000
+    style E fill:#dc3545,color:#fff
+    style F fill:#28a745,color:#fff
+    style G fill:#6c757d,color:#fff
+    style H fill:#fd7e14,color:#fff
+    style I fill:#20c997,color:#fff
+    style J fill:#28a745,color:#fff
+```
+
+#### What This Means in Practice
+
+1. **Scripts run pre-article-analysis.ts** — downloads data, runs heuristic pre-scoring, creates directory structure
+2. **AI agent reads ALL methodology guides** — SWOT, Risk, Threat, Classification, Style (as per Rule 3)
+3. **AI agent performs deep per-file analysis** — produces `.analysis.md` for each document
+4. **AI agent writes synthesis-summary.md** — including the **AI-Recommended Article Metadata** section with:
+   - Recommended title (EN + SV) based on top findings
+   - Recommended meta description based on key intelligence
+   - Key highlights — substantive findings, not metadata labels
+   - Article decision (PUBLISH/ANALYSIS-ONLY/SKIP) with justification
+5. **ONLY AFTER synthesis is complete**: Article HTML generation begins
+6. **AI reads synthesis** to generate article content — lede, Why It Matters, Winners & Losers, etc.
+7. **AI reads the article content** to generate final title and SEO metadata
+8. **Title MUST reference specific findings** — never generic category labels
+
+#### BANNED: Pre-Analysis Article Decisions
+
+- ❌ Generating article HTML before synthesis-summary.md is complete
+- ❌ Using script-generated titles without AI review of actual content
+- ❌ Copying subtitle from static template strings (e.g., "Political intelligence analysis of N documents")
+- ❌ Making publish/skip decisions based on document count alone
+- ❌ Generating titles from regex extraction of `<strong>` tags (scripted heuristic)
+
+#### REQUIRED: Post-Analysis Article Decisions
+
+- ✅ Read completed synthesis-summary.md "Recommended Title" fields
+- ✅ Read completed synthesis-summary.md "Article Decision" to determine publication
+- ✅ Generate title from actual political intelligence in the synthesis
+- ✅ Generate meta description from top-ranked findings in the significance table
+- ✅ Apply title/SEO to ALL languages (not just English)
 
 ### AI Prompt Templates for Analysis Generation
 
