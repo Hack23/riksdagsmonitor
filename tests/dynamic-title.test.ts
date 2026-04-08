@@ -148,4 +148,18 @@ describe('generateDynamicTitle integration', () => {
         .toHaveLength(0);
     }
   });
+
+  it('subtitle templates contain AI attribution stub', async () => {
+    // v5.0: All subtitles should contain the AI-generated marker so the AI agent
+    // can identify them as stubs that need replacement
+    for (const file of generatorFiles) {
+      const content = fs.readFileSync(file, 'utf-8');
+      const subtitleLines = content.match(/subtitle:\s*`[^`]+`/g) ?? [];
+      const aiStubs = subtitleLines.filter(s => s.includes('AI-generat') || s.includes('AI-genererad') || s.includes('AI-genereret') || s.includes('AI-generert') || s.includes('tekoäly') || s.includes('KI-generierte') || s.includes('AI-gegenereerde') || s.includes('الذكاء الاصطناعي') || s.includes('בינה מלאכותית') || s.includes('AI生成') || s.includes('AI 생성') || s.includes('générée par IA') || s.includes('generado por IA'));
+      // At least some subtitles should have the AI attribution marker
+      if (subtitleLines.length > 0) {
+        expect(aiStubs.length, `${file} should have AI attribution in subtitle stubs`).toBeGreaterThan(0);
+      }
+    }
+  });
 });

@@ -403,59 +403,59 @@ function getTitles(lang: Language, eventContext: string): TitleSet {
   const titles: Record<Language, TitleSet> = {
     en: {
       title: `Breaking: ${eventContext}`,
-      subtitle: `Live coverage of major parliamentary development`
+      subtitle: `Breaking — AI-generated political intelligence from Sweden's Riksdag`
     },
     sv: {
       title: `Senaste nytt: ${eventContext}`,
-      subtitle: `Direktrapportering från riksdagen`
+      subtitle: `Senaste nytt — AI-genererad politisk analys från Sveriges riksdag`
     },
     da: {
       title: `Seneste nyt: ${eventContext}`,
-      subtitle: `Direkte dækning af parlamentarisk udvikling`
+      subtitle: `Seneste nyt — AI-genereret politisk analyse fra det svenske parlament`
     },
     no: {
       title: `Siste nytt: ${eventContext}`,
-      subtitle: `Direkte dekning av parlamentarisk utvikling`
+      subtitle: `Siste nytt — AI-generert politisk analyse fra det svenske parlamentet`
     },
     fi: {
       title: `Viimeisimmät uutiset: ${eventContext}`,
-      subtitle: `Suora raportointi parlamentaarisesta kehityksestä`
+      subtitle: `Viimeisimmät uutiset — tekoälytuotettu poliittinen analyysi Ruotsin valtiopäiviltä`
     },
     de: {
       title: `Eilmeldung: ${eventContext}`,
-      subtitle: `Live-Berichterstattung über parlamentarische Entwicklung`
+      subtitle: `Eilmeldung — KI-generierte politische Analyse aus dem schwedischen Parlament`
     },
     fr: {
       title: `Dernière minute: ${eventContext}`,
-      subtitle: `Couverture en direct du développement parlementaire`
+      subtitle: `Dernière minute — analyse politique générée par IA du Parlement suédois`
     },
     es: {
       title: `Última hora: ${eventContext}`,
-      subtitle: `Cobertura en vivo del desarrollo parlamentario`
+      subtitle: `Última hora — análisis político generado por IA del Parlamento sueco`
     },
     nl: {
       title: `Laatste nieuws: ${eventContext}`,
-      subtitle: `Live verslag van parlementaire ontwikkeling`
+      subtitle: `Laatste nieuws — AI-gegenereerde politieke analyse uit het Zweedse parlement`
     },
     ar: {
       title: `عاجل: ${eventContext}`,
-      subtitle: `تغطية مباشرة للتطورات البرلمانية`
+      subtitle: `عاجل — تحليل سياسي بالذكاء الاصطناعي من البرلمان السويدي`
     },
     he: {
       title: `חדשות אחרונות: ${eventContext}`,
-      subtitle: `סיקור חי של התפתחות פרלמנטרית`
+      subtitle: `חדשות אחרונות — ניתוח פוליטי שנוצר על ידי בינה מלאכותית מהפרלמנט השוודי`
     },
     ja: {
       title: `速報：${eventContext}`,
-      subtitle: `議会の重要な展開のライブカバレッジ`
+      subtitle: `速報 — スウェーデン議会のAI生成政治分析`
     },
     ko: {
       title: `속보: ${eventContext}`,
-      subtitle: `의회 주요 발전 실시간 보도`
+      subtitle: `속보 — 스웨덴 의회의 AI 생성 정치 분석`
     },
     zh: {
       title: `快讯：${eventContext}`,
-      subtitle: `议会重大发展实时报道`
+      subtitle: `快讯 — 瑞典议会的AI生成政治分析`
     }
   };
   
