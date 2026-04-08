@@ -339,7 +339,7 @@ Example: `news/content/2026-03-23/week-ahead`
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally (scoped to week-ahead subfolder): `git add news/ "analysis/daily/$ARTICLE_DATE/week-ahead/" analysis/weekly/ && git commit -m "Add week-ahead articles and analysis artifacts"`
+> 2. Stage and commit locally (scoped to week-ahead subfolder): `git add news/*week-ahead*.html news/metadata/ "analysis/daily/$ARTICLE_DATE/week-ahead/" analysis/weekly/ && git commit -m "Add week-ahead articles and analysis artifacts"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -435,8 +435,8 @@ SCOPED_DIR="$UNSCOPED_DIR/week-ahead"
 if [ -d "$UNSCOPED_DIR" ]; then
   mkdir -p "$SCOPED_DIR"
   if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then
-    find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec cp -f {} "$SCOPED_DIR/" \;
-    echo "📁 Copied pipeline *.md artifacts → $SCOPED_DIR (kept unscoped originals for analysis-reader.ts)"
+    find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv -f {} "$SCOPED_DIR/" \;
+    echo "📁 Moved pipeline *.md artifacts → $SCOPED_DIR (root cleaned to prevent merge conflicts)"
   fi
   if [ -d "$UNSCOPED_DIR/documents" ]; then
     mkdir -p "$SCOPED_DIR/documents"

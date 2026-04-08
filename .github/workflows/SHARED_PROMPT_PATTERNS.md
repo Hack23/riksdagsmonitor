@@ -93,20 +93,26 @@ analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/
 
 - ❌ Writing to `analysis/daily/${ARTICLE_DATE}/` root (no article type subfolder)
 - ❌ `git add analysis/daily/${ARTICLE_DATE}/` without article type scope
+- ❌ `git add news/` — stages ALL articles from ALL workflows, causing merge conflicts
+- ❌ Copying (`cp`) analysis files to both subfolder AND root date directory
 - ❌ One workflow modifying another workflow's synthesis-summary.md
 - ❌ Realtime monitor overwriting committee-reports analysis
 - ❌ Evening analysis replacing interpellations SWOT with its own
 - ❌ Article generator writing analysis without article type in path
+- ❌ Leaving root-level `.md` files in `analysis/daily/${ARTICLE_DATE}/` after relocation (use `mv`, never `cp`)
 
 #### Git Add Pattern (MANDATORY for all workflows)
 
 ```bash
-# CORRECT — scoped to article type
+# CORRECT — scoped to article type for both analysis AND news
 ARTICLE_TYPE="committeeReports"  # Set per workflow
+git add news/*committee-reports*.html 2>/dev/null || true  # Only this workflow's articles
+git add news/metadata/ 2>/dev/null || true                  # Metadata (small, fast-changing)
 git add "analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/" || true
 
 # INCORRECT — will conflict with other workflows
-# git add "analysis/daily/${ARTICLE_DATE}/" || true  # ← NEVER DO THIS
+# git add news/ || true                                    # ← NEVER DO THIS — stages all workflows' articles
+# git add "analysis/daily/${ARTICLE_DATE}/" || true        # ← NEVER DO THIS — stages all workflows' analysis
 ```
 ````
 
@@ -829,9 +835,12 @@ fi
 
 #### Step 1: Download Data (scripts + fallback to direct MCP calls)
 
-Try the script pipeline first:
+Try the script pipeline first. **Doc-type workflows** (committee-reports, motions, propositions, interpellations) MUST pass `--doc-type` to write directly to the scoped subdirectory:
 ```bash
-source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
+# For doc-type workflows (committee-reports, motions, propositions, interpellations):
+source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 --doc-type "$DOC_TYPE" 2>&1 | tee /tmp/pipeline-output.log
+# For other workflows (evening-analysis, realtime, week-ahead, etc.) — run without --doc-type, then MOVE (not copy) artifacts:
+# source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
 ```
 
 Check results:
@@ -931,7 +940,8 @@ For each file in `analysis/daily/$ARTICLE_DATE/`, the agent MUST rewrite it to m
 Run this bash check on ALL analysis files (daily synthesis AND per-file analyses in `documents/`) before committing:
 
 ```bash
-ANALYSIS_DIR="analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}"
+# CRITICAL: Use article-type-scoped directory, NEVER the bare date directory
+ANALYSIS_DIR="analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/${ARTICLE_TYPE}"
 QUALITY_PASS=true
 FAIL_COUNT=0
 WARN_COUNT=0
@@ -1160,7 +1170,7 @@ git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
 
 **For all other workflows** (realtime-monitor, evening-analysis, article-generator, month-ahead, week-ahead, weekly-review, monthly-review) — MUST also scope to their article-type subdirectory:
 
-> ⚠️ **Pipeline relocation required**: `pre-article-analysis.ts` writes to `analysis/daily/$DATE/` (unscoped) when run without `--doc-type`. Each workflow MUST relocate the pipeline artifacts into its type subfolder immediately after the pipeline step. The relocation MUST be idempotent (safe on reruns):
+> ⚠️ **Pipeline relocation required**: `pre-article-analysis.ts` writes to `analysis/daily/$DATE/` (unscoped) when run without `--doc-type`. Each workflow MUST **move** (not copy) pipeline artifacts into its type subfolder immediately after the pipeline step. **NEVER leave .md files at the root date directory level** — this causes merge conflicts when multiple workflows run on the same date. The relocation MUST be idempotent (safe on reruns):
 >
 > ```bash
 > UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
@@ -1168,8 +1178,8 @@ git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
 > if [ -d "$UNSCOPED_DIR" ]; then
 >   mkdir -p "$SCOPED_DIR"
 >   if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then
->     find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec cp -f {} "$SCOPED_DIR/" \;
->     echo "📁 Copied pipeline *.md artifacts → $SCOPED_DIR (kept unscoped originals for analysis-reader.ts)"
+>     find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv -f {} "$SCOPED_DIR/" \;
+>     echo "📁 Moved pipeline *.md artifacts → $SCOPED_DIR (root cleaned to prevent merge conflicts)"
 >   fi
 >   if [ -d "$UNSCOPED_DIR/documents" ]; then
 >     mkdir -p "$SCOPED_DIR/documents"
@@ -1179,6 +1189,8 @@ git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
 >   fi
 > fi
 > ```
+>
+> 🚨 **CRITICAL**: The `analysis-reader.ts` already scans subdirectories automatically — it does NOT need root-level files. Never keep copies at the root date directory.
 
 | Workflow | `ARTICLE_TYPE` subfolder | Example `git add` path |
 |----------|-------------------------|----------------------|

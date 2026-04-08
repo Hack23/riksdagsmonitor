@@ -317,13 +317,14 @@ SCOPED_DIR="$UNSCOPED_DIR/$ARTICLE_TYPE"
 if [ -d "$UNSCOPED_DIR" ]; then
   mkdir -p "$SCOPED_DIR"
   if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then
-    find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec cp -f {} "$SCOPED_DIR/" \;
-    echo "📁 Copied pipeline *.md artifacts → $SCOPED_DIR (kept unscoped originals for analysis-reader.ts)"
+    find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv -f {} "$SCOPED_DIR/" \;
+    echo "📁 Moved pipeline *.md artifacts → $SCOPED_DIR (root cleaned to prevent merge conflicts)"
   fi
   if [ -d "$UNSCOPED_DIR/documents" ]; then
     mkdir -p "$SCOPED_DIR/documents"
-    find "$UNSCOPED_DIR/documents" -mindepth 1 -maxdepth 1 -exec cp -R -f {} "$SCOPED_DIR/documents/" \;
-    echo "📁 Copied pipeline documents/ contents → $SCOPED_DIR/documents (kept unscoped originals for downstream per-file analysis)"
+    find "$UNSCOPED_DIR/documents" -mindepth 1 -maxdepth 1 -exec mv {} "$SCOPED_DIR/documents/" \;
+    rmdir "$UNSCOPED_DIR/documents" 2>/dev/null || true
+    echo "📁 Moved pipeline documents/ contents → $SCOPED_DIR/documents (root cleaned to prevent merge conflicts)"
   fi
 fi
 ls -la "$SCOPED_DIR/" 2>/dev/null || echo "⚠️ No output directory"
@@ -972,7 +973,9 @@ news/content/{YYYY-MM-DD}/breaking
 ```bash
 # Stage articles and analysis — scoped to this run's time-stamped folder to prevent overwriting other runs
 [ -f /tmp/hhmm.env ] && source /tmp/hhmm.env || HHMM=${HHMM:-$(date -u +%H%M)}
-git add news/ || true
+# CRITICAL: Stage only this workflow's articles and metadata, NOT all of news/
+git add news/*realtime*.html news/*breaking*.html news/*monitor*.html 2>/dev/null || true
+git add news/metadata/ 2>/dev/null || true
 git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/realtime-${HHMM}/" || true
 git add analysis/weekly/ || true
 git add analysis/data/ || true

@@ -842,14 +842,17 @@ for pattern in \
 done
 
 # Stage improved analysis artifacts (mandatory — no workflow run wasted)
+# CRITICAL: Only stage specific files the translate agent modified, NOT the entire date directory.
+# Staging the entire date directory causes merge conflicts with concurrent doc-type workflows.
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date -u +%Y-%m-%d)"
-git add "analysis/daily/${ARTICLE_DATE}/" 2>/dev/null || true
-# Also check nearby dates if analysis was improved there
-for DAYS_BACK in 1 2 3; do
-  CHECK_DATE="$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -j -f "%Y-%m-%d" "$ARTICLE_DATE" -v-"$DAYS_BACK"d +%Y-%m-%d 2>/dev/null || true)"
-  [ -z "$CHECK_DATE" ] && continue
-  git add "analysis/daily/${CHECK_DATE}/" 2>/dev/null || true
+# Stage only files that were actually modified by this workflow (use git diff to find them)
+git diff --name-only -- "analysis/daily/" 2>/dev/null | while read -r changed_file; do
+  git add "$changed_file" 2>/dev/null || true
+done
+# Also stage any new untracked analysis files created by this workflow
+git ls-files --others --exclude-standard -- "analysis/daily/" 2>/dev/null | while read -r new_file; do
+  git add "$new_file" 2>/dev/null || true
 done
 
 # Preemptively enforce safe-outputs 100-file PR limit (buffer at >90 staged files)
@@ -858,13 +861,9 @@ if [ "$STAGED_COUNT" -gt 90 ]; then
   echo "⚠️ Staged $STAGED_COUNT files is approaching the 100-file PR limit (preemptive guard at >90). Reducing analysis scope to a minimal priority subset to stay within the limit."
   # First unstage all analysis artifacts
   git reset HEAD -- analysis/ 2>/dev/null || true
-  # Re-stage minimal high-priority analysis for the current article date and nearby dates
-  # (mirror the earlier ARTICLE_DATE + DAYS_BACK staging so genuine improvements aren't silently dropped)
-  git add "analysis/daily/${ARTICLE_DATE}/" 2>/dev/null || true
-  for DAYS_BACK in 1 2 3; do
-    CHECK_DATE="$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -j -f "%Y-%m-%d" "$ARTICLE_DATE" -v-"$DAYS_BACK"d +%Y-%m-%d 2>/dev/null || true)"
-    [ -z "$CHECK_DATE" ] && continue
-    git add "analysis/daily/${CHECK_DATE}/" 2>/dev/null || true
+  # Re-stage only files actually modified by this workflow (not entire directories)
+  git diff --name-only -- "analysis/daily/" 2>/dev/null | head -20 | while read -r changed_file; do
+    git add "$changed_file" 2>/dev/null || true
   done
   STAGED_COUNT=$(git diff --cached --name-only | wc -l)
 fi

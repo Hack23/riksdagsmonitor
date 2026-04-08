@@ -382,7 +382,10 @@ Example: `news/content/2026-03-23/motions`
 
 ```bash
 # Stage articles and analysis — scoped to article type to stay within 100-file PR limit
-git add news/ || true
+# CRITICAL: Stage only this workflow's articles and metadata, NOT all of news/
+# Using article-type pattern prevents merge conflicts with concurrent workflows
+git add news/*opposition-motions*.html news/*motions*.html 2>/dev/null || true
+git add news/metadata/ 2>/dev/null || true
 git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/motions/" || true
 # Enforce safe-outputs 100-file PR limit
 STAGED_COUNT=$(git diff --cached --name-only | wc -l)
@@ -465,7 +468,7 @@ get_motioner({ rm: <calculated riksmöte>, limit: 20 })
 
 ### Step 2.5: Run Pre-Article Analysis Pipeline
 
-**CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/motions/`. The 9 batch artifacts are also copied to the unscoped `analysis/daily/YYYY-MM-DD/` directory so existing enrichment readers (`readDailyAnalysis`, `getAnalysisEnrichment`) find them at the default path. Per-document files (`documents/*.json`, `documents/*-analysis.md`) remain only under the scoped directory.
+**CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/motions/`. The `--doc-type motions` flag ensures ALL output goes directly to the scoped subdirectory. **NEVER write or copy analysis files to the parent date directory** — doing so causes merge conflicts when multiple doc-type workflows run on the same date. The `analysis-reader.ts` automatically scans subdirectories, so root-level copies are NOT needed.
 
 ```bash
 # Idempotent: only set if not already resolved by lookback

@@ -640,8 +640,8 @@ SCOPED_DIR="$UNSCOPED_DIR/evening-analysis"
 if [ -d "$UNSCOPED_DIR" ]; then
   mkdir -p "$SCOPED_DIR"
   if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then
-    find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec cp -f {} "$SCOPED_DIR/" \;
-    echo "📁 Copied pipeline *.md artifacts → $SCOPED_DIR (kept unscoped originals for analysis-reader.ts)"
+    find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" -exec mv -f {} "$SCOPED_DIR/" \;
+    echo "📁 Moved pipeline *.md artifacts → $SCOPED_DIR (root cleaned to prevent merge conflicts)"
   fi
   if [ -d "$UNSCOPED_DIR/documents" ]; then
     mkdir -p "$SCOPED_DIR/documents"
@@ -1234,7 +1234,7 @@ news/content/{YYYY-MM-DD}/evening-analysis
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally (scoped to evening-analysis subfolder): `git add news/ "analysis/daily/$ARTICLE_DATE/evening-analysis/" analysis/weekly/ && git commit -m "🌆 Evening Analysis - $ARTICLE_DATE"`
+> 2. Stage and commit locally (scoped to evening-analysis subfolder): `git add news/*evening*.html news/metadata/ "analysis/daily/$ARTICLE_DATE/evening-analysis/" analysis/weekly/ && git commit -m "🌆 Evening Analysis - $ARTICLE_DATE"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
@@ -1250,7 +1250,9 @@ news/content/{YYYY-MM-DD}/evening-analysis
 
 ```bash
 # Stage articles and analysis — scoped to evening-analysis subfolder to prevent overwriting other workflows
-git add news/ || true
+# CRITICAL: Stage only this workflow's articles and metadata, NOT all of news/
+git add news/*evening-analysis*.html news/*evening*.html 2>/dev/null || true
+git add news/metadata/ 2>/dev/null || true
 git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/evening-analysis/" || true
 git add analysis/weekly/ || true
 # Enforce safe-outputs 100-file PR limit
