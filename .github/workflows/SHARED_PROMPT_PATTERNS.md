@@ -66,20 +66,20 @@ Every workflow MUST use this path pattern for ALL analysis output:
 analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/
 ```
 
-| Workflow | `${ARTICLE_TYPE}` folder | Owned files |
-|----------|-------------------------|-------------|
-| news-committee-reports | `committeeReports/` | All analysis for betänkanden |
-| news-interpellations | `interpellations/` | All analysis for interpellationer/frågor |
-| news-motions | `motions/` | All analysis for motioner |
-| news-propositions | `propositions/` | All analysis for propositioner |
-| news-month-ahead | `month-ahead/` | Monthly strategic outlook analysis |
-| news-week-ahead | `week-ahead/` | Weekly parliamentary preview analysis |
-| news-evening-analysis | `evening-analysis/` | Daily evening synthesis analysis |
-| news-weekly-review | `weekly-review/` | Weekly retrospective analysis |
-| news-monthly-review | `monthly-review/` | Monthly retrospective analysis |
-| news-realtime-monitor | `realtime-${HHMM}/` | Breaking news time-stamped analysis |
-| news-article-generator | `${REQUESTED_TYPE}/` | Analysis for the requested article type |
-| news-translate | *(reads only, never writes analysis)* | Translation output only |
+| Workflow | Base subfolder | Suffix on re-run | Owned files |
+|----------|---------------|------------------|-------------|
+| news-committee-reports | `committeeReports/` | `committeeReports-2/`, `-3/`, … | All analysis for betänkanden |
+| news-interpellations | `interpellations/` | `interpellations-2/`, `-3/`, … | All analysis for interpellationer/frågor |
+| news-motions | `motions/` | `motions-2/`, `-3/`, … | All analysis for motioner |
+| news-propositions | `propositions/` | `propositions-2/`, `-3/`, … | All analysis for propositioner |
+| news-month-ahead | `month-ahead/` | `month-ahead-2/`, `-3/`, … | Monthly strategic outlook analysis |
+| news-week-ahead | `week-ahead/` | `week-ahead-2/`, `-3/`, … | Weekly parliamentary preview analysis |
+| news-evening-analysis | `evening-analysis/` | `evening-analysis-2/`, `-3/`, … | Daily evening synthesis analysis |
+| news-weekly-review | `weekly-review/` | `weekly-review-2/`, `-3/`, … | Weekly retrospective analysis |
+| news-monthly-review | `monthly-review/` | `monthly-review-2/`, `-3/`, … | Monthly retrospective analysis |
+| news-realtime-monitor | `realtime-${HHMM}/` | *(inherently unique — no suffix needed)* | Breaking news time-stamped analysis |
+| news-article-generator | `${REQUESTED_TYPE}/` | `${REQUESTED_TYPE}-2/`, `-3/`, … | Analysis for the requested article type |
+| news-translate | *(reads only, never writes analysis)* | — | Translation output only |
 
 #### Enforcement Rules
 
@@ -100,6 +100,39 @@ analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/
 - ❌ Evening analysis replacing interpellations SWOT with its own
 - ❌ Article generator writing analysis without article type in path
 - ❌ Leaving root-level `.md` files in `analysis/daily/${ARTICLE_DATE}/` after relocation (use `mv`, never `cp`)
+
+#### Run Suffix Resolution (prevents merge conflicts from repeated runs)
+
+When a scheduled workflow runs and the analysis subfolder already exists (from a prior merged run), it MUST use a suffixed folder to avoid overwriting or causing merge conflicts. **Exception:** `force_generation=true` deliberately overwrites the base folder.
+
+```bash
+# === Run Suffix Resolution ===
+# Call AFTER setting BASE_SUBFOLDER and ARTICLE_DATE, BEFORE running the analysis pipeline.
+# - force_generation=true  → reuse base folder (overwrite is intentional)
+# - otherwise              → auto-suffix if base folder already has synthesis-summary.md
+#
+# Inputs:  BASE_SUBFOLDER (e.g. "propositions"), ARTICLE_DATE, FORCE_GENERATION
+# Outputs: ANALYSIS_SUBFOLDER (e.g. "propositions" or "propositions-2")
+ANALYSIS_SUBFOLDER="$BASE_SUBFOLDER"
+if [ "${FORCE_GENERATION:-false}" != "true" ]; then
+  _SUFFIX=1
+  while [ -f "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/synthesis-summary.md" ]; do
+    _SUFFIX=$((_SUFFIX + 1))
+    ANALYSIS_SUBFOLDER="${BASE_SUBFOLDER}-${_SUFFIX}"
+  done
+fi
+echo "📁 Analysis subfolder resolved: analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
+```
+
+**Result examples:**
+| Scenario | `ANALYSIS_SUBFOLDER` |
+|----------|---------------------|
+| First run of the day | `propositions` |
+| force_generation re-run | `propositions` (overwrites) |
+| Second scheduled run (first merged) | `propositions-2` |
+| Third scheduled run (first two merged) | `propositions-3` |
+
+> **Realtime monitor** already uses `realtime-HHMM` (inherently unique per run) — it does NOT need suffix resolution.
 
 #### Git Add Pattern (MANDATORY for all workflows)
 
@@ -1170,11 +1203,11 @@ git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
 
 **For all other workflows** (realtime-monitor, evening-analysis, article-generator, month-ahead, week-ahead, weekly-review, monthly-review) — MUST also scope to their article-type subdirectory:
 
-> ⚠️ **Pipeline relocation required**: `pre-article-analysis.ts` writes to `analysis/daily/$DATE/` (unscoped) when run without `--doc-type`. Each workflow MUST **move** (not copy) pipeline artifacts into its type subfolder immediately after the pipeline step. **NEVER leave .md files at the root date directory level** — this causes merge conflicts when multiple workflows run on the same date. The relocation MUST be idempotent (safe on reruns):
+> ⚠️ **Pipeline relocation required**: `pre-article-analysis.ts` writes to `analysis/daily/$DATE/` (unscoped) when run without `--doc-type`. Each workflow MUST **move** (not copy) pipeline artifacts into its type subfolder immediately after the pipeline step. **NEVER leave .md files at the root date directory level** — this causes merge conflicts when multiple workflows run on the same date. The relocation MUST use the resolved `ANALYSIS_SUBFOLDER` (from Run Suffix Resolution) and be idempotent (safe on reruns):
 >
 > ```bash
 > UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
-> SCOPED_DIR="$UNSCOPED_DIR/$ARTICLE_TYPE"
+> SCOPED_DIR="$UNSCOPED_DIR/$ANALYSIS_SUBFOLDER"
 > if [ -d "$UNSCOPED_DIR" ]; then
 >   mkdir -p "$SCOPED_DIR"
 >   if find "$UNSCOPED_DIR" -maxdepth 1 -type f -name "*.md" | grep -q .; then

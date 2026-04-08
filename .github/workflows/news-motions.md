@@ -478,6 +478,19 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
     ARTICLE_DATE=$(date -u +%Y-%m-%d)
   fi
 fi
+
+# === Run Suffix Resolution (see SHARED_PROMPT_PATTERNS.md) ===
+BASE_SUBFOLDER="motions"
+ANALYSIS_SUBFOLDER="$BASE_SUBFOLDER"
+if [ "${FORCE_GENERATION:-false}" != "true" ]; then
+  _SUFFIX=1
+  while [ -f "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/synthesis-summary.md" ]; do
+    _SUFFIX=$((_SUFFIX + 1))
+    ANALYSIS_SUBFOLDER="${BASE_SUBFOLDER}-${_SUFFIX}"
+  done
+fi
+echo "📁 Analysis subfolder resolved: $ANALYSIS_SUBFOLDER"
+
 echo "📊 Downloading data for $ARTICLE_DATE..."
 # CRITICAL: Source mcp-setup.sh to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
 source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL:-NOT SET}"
@@ -487,11 +500,29 @@ if [ "$PIPE_EXIT" -ne 0 ]; then
   echo "❌ Pipeline failed with exit code $PIPE_EXIT — agent MUST diagnose and fix (see Script Debugging Protocol)"
   tail -30 /tmp/pipeline-output.log
 fi
-echo "📊 Analysis artifacts for $ARTICLE_DATE/motions:"
-ls -la "analysis/daily/$ARTICLE_DATE/motions/" 2>/dev/null || echo "⚠️ No analysis output"
+
+# If suffixed, relocate from base folder to suffixed folder
+if [ "$ANALYSIS_SUBFOLDER" != "$BASE_SUBFOLDER" ]; then
+  SRC="analysis/daily/$ARTICLE_DATE/$BASE_SUBFOLDER"
+  DST="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
+  if [ -d "$SRC" ]; then
+    mkdir -p "$DST"
+    find "$SRC" -maxdepth 1 -type f -exec mv -f {} "$DST/" \;
+    if [ -d "$SRC/documents" ]; then
+      mkdir -p "$DST/documents"
+      find "$SRC/documents" -mindepth 1 -maxdepth 1 -exec mv {} "$DST/documents/" \;
+      rmdir "$SRC/documents" 2>/dev/null || true
+    fi
+    rmdir "$SRC" 2>/dev/null || true
+    echo "📁 Relocated pipeline output → $DST (suffix applied for merge safety)"
+  fi
+fi
+
+echo "📊 Analysis artifacts for $ARTICLE_DATE/$ANALYSIS_SUBFOLDER:"
+ls -la "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" 2>/dev/null || echo "⚠️ No analysis output"
 # Verify actual data was downloaded
 MANIFEST_DOCS=0
-MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/motions/data-download-manifest.md"
+MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/data-download-manifest.md"
 if [ -f "$MANIFEST_PATH" ]; then
   MANIFEST_DOCS=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
 fi

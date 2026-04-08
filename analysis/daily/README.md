@@ -45,6 +45,8 @@ analysis/daily/
 │   │   └── documents/           ← Per-document analysis files
 │   ├── propositions/            ← Government propositions (news-propositions workflow)
 │   │   └── (same 9 batch files + documents/)
+│   ├── propositions-2/          ← Second run of propositions on same day (auto-suffixed)
+│   │   └── (same 9 batch files + documents/)
 │   ├── motions/                 ← Opposition motions (news-motions workflow)
 │   │   └── (same 9 batch files + documents/)
 │   ├── interpellations/         ← Interpellation debates (news-interpellations workflow)
@@ -66,12 +68,16 @@ analysis/daily/
 
 **🚨 CRITICAL: Every article type MUST use its own subdirectory.** Never write analysis `.md` files directly to the `YYYY-MM-DD/` root directory. This prevents merge conflicts when multiple workflows run concurrently on the same date. The `analysis-reader.ts` automatically scans subdirectories.
 
+**Run Suffix Resolution:** If a workflow runs a second time on the same day and the base subfolder already has a `synthesis-summary.md`, it auto-suffixes to `-2`, `-3`, etc. (e.g., `propositions-2/`). Exception: `force_generation=true` deliberately overwrites the base folder.
+
 **Rules:**
 - Always use `YYYY-MM-DD` — never `DD-MM-YYYY`, `MM/DD/YYYY`, or named months
 - Zero-pad day and month: `2026-03-05` not `2026-3-5`
 - Each workflow writes ONLY to its own article-type subdirectory
 - Never write `.md` files to the root date directory — always use a subfolder
 - Realtime files are timestamped `HHMM` in 24-hour UTC: `realtime-1400/`
+- Repeated runs auto-suffix: `propositions/` → `propositions-2/` → `propositions-3/`
+- `force_generation=true` overwrites the base folder (no suffix)
 - If a workflow runs without `--doc-type`, it MUST relocate artifacts using `mv` (not `cp`) into its subfolder
 
 ---

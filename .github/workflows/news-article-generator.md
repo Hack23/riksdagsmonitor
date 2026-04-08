@@ -418,6 +418,17 @@ if [ -z "${_RELOC_SUBFOLDER:-}" ]; then
       *deep-inspection*) _RELOC_SUBFOLDER="deep-inspection" ;;
       *) _RELOC_SUBFOLDER="$REQUESTED_TYPE" ;;
     esac
+    # === Run Suffix Resolution (see SHARED_PROMPT_PATTERNS.md) ===
+    # For single-type runs: auto-suffix if base folder already has synthesis-summary.md
+    # force_generation=true → reuse base folder (overwrite is intentional)
+    if [ "${FORCE_GENERATION:-false}" != "true" ]; then
+      _BASE_RELOC="$_RELOC_SUBFOLDER"
+      _SUFFIX=1
+      while [ -f "analysis/daily/$ARTICLE_DATE/$_RELOC_SUBFOLDER/synthesis-summary.md" ]; do
+        _SUFFIX=$((_SUFFIX + 1))
+        _RELOC_SUBFOLDER="${_BASE_RELOC}-${_SUFFIX}"
+      done
+    fi
   fi
 fi
 # Persist immediately so all subsequent blocks get the same values
