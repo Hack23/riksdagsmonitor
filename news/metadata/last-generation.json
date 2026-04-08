@@ -1,41 +1,24 @@
 {
-  "timestamp": "2026-04-07T17:28:03.461Z",
+  "timestamp": "2026-04-08T06:09:19.030Z",
   "types": [
-    "breaking"
+    "propositions"
   ],
   "languagesGenerated": [
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "en",
+    "sv"
   ],
   "allRequestedLanguages": [
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "en",
+    "sv"
   ],
   "batchSize": "all",
-  "skipExisting": false,
-  "generated": 0,
+  "skipExisting": true,
+  "generated": 2,
   "errors": 0,
-  "articles": [],
+  "articles": [
+    "2026-04-08-government-propositions-en.html",
+    "2026-04-08-government-propositions-sv.html"
+  ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
 }
