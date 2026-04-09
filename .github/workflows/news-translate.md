@@ -714,12 +714,22 @@ for lang in $(echo "$LANG_ARG" | tr ',' ' '); do
     [ -f "$f" ] || continue
     EN_SOURCE=$(echo "$f" | sed "s/-${lang}\\.html/-en.html/")
     [ -f "$EN_SOURCE" ] || continue
-    # Count English sentences from source found verbatim in translation
-    LEAKED=$(grep -oP '<p[^>]*>[^<]{40,}</p>' "$EN_SOURCE" | while read -r line; do
-      CLEAN=$(echo "$line" | sed 's/<[^>]*>//g' | head -c 80)
-      grep -qF "$CLEAN" "$f" && echo "1"
+    # Count English source paragraphs found verbatim in translation.
+    # Use perl multi-line mode because article paragraphs span multiple lines.
+    LEAKED=$(perl -0ne '
+      while (/<p\b[^>]*>(.*?)<\/p>/gms) {
+        my $text = $1;
+        $text =~ s/<[^>]*>//g;
+        $text =~ s/\s+/ /g;
+        $text =~ s/^\s+|\s+$//g;
+        next if length($text) < 40;
+        print substr($text, 0, 80), "\n";
+      }
+    ' "$EN_SOURCE" | while IFS= read -r snippet; do
+      [ -n "$snippet" ] || continue
+      grep -qF "$snippet" "$f" && echo "1"
     done | wc -l)
-    TOTAL=$(grep -c '<p[^>]*>' "$f" || echo 0)
+    TOTAL=$(perl -0ne 'BEGIN { $count = 0 } $count += () = /<p\b[^>]*>.*?<\/p>/gms; END { print $count }' "$f")
     if [ "$LEAKED" -gt 3 ]; then
       echo "⚠️ $f: $LEAKED/$TOTAL paragraphs still in English — needs more translation work"
     fi

@@ -501,21 +501,23 @@ function validateNewsTranslations(directory: string = 'news'): number {
     }
 
     // Body content leakage check (EN/SV text in non-EN/SV articles)
+    // Leakage is computed here but only counted in summary totals for
+    // marker-passed files (see below) to keep the summary math correct.
+    let fileLeakage: ContentLeakageRecord | null = null;
     if (lang && lang !== 'en') {
       const enSourcePath = deriveEnSourcePath(filepath);
-      const leakage = checkBodyContentLeakage(filepath, enSourcePath, lang);
-      if (leakage) {
-        totalContentLeakage++;
-        leakageFiles.push(leakage);
-        const paraMsg = leakage.untranslatedParagraphs > 0
-          ? `${leakage.untranslatedParagraphs} leaked paragraph(s) (${leakage.percentUntranslated}% of ${leakage.totalParagraphs})`
+      fileLeakage = checkBodyContentLeakage(filepath, enSourcePath, lang);
+      if (fileLeakage) {
+        leakageFiles.push(fileLeakage);
+        const paraMsg = fileLeakage.untranslatedParagraphs > 0
+          ? `${fileLeakage.untranslatedParagraphs} leaked paragraph(s) (${fileLeakage.percentUntranslated}% of ${fileLeakage.totalParagraphs})`
           : '';
-        const phraseMsg = leakage.phraseMatches > 0
-          ? `${leakage.phraseMatches} phrase match(es)`
+        const phraseMsg = fileLeakage.phraseMatches > 0
+          ? `${fileLeakage.phraseMatches} phrase match(es)`
           : '';
         const combined = [paraMsg, phraseMsg].filter(Boolean).join(', ');
         console.log(`${colors.yellow}⚠ Content leakage: ${filename} — ${combined}${colors.reset}`);
-        for (const sample of leakage.samples.slice(0, 3)) {
+        for (const sample of fileLeakage.samples.slice(0, 3)) {
           console.log(`  ${colors.yellow}  ${sample}${colors.reset}`);
         }
       }
@@ -528,6 +530,10 @@ function validateNewsTranslations(directory: string = 'news'): number {
     } else if (result.passed) {
       console.log(`${colors.green}✓ ${filename} (${(lang ?? '').toUpperCase()})${colors.reset}`);
       totalPassed++;
+      // Only count leakage toward summary totals for marker-passed files
+      if (fileLeakage) {
+        totalContentLeakage++;
+      }
     } else {
       console.log(`${colors.red}✗ ${filename} (${(lang ?? '').toUpperCase()})${colors.reset}`);
       console.log(
