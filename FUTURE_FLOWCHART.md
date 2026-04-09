@@ -125,14 +125,14 @@ flowchart TD
     
     Z --> AA[End: Content Live in 14 Languages]
     
-    style A fill:#4caf50
-    style H fill:#9c27b0
-    style K fill:#ff9800
-    style M fill:#e91e63
-    style N fill:#00bcd4
-    style O fill:#f44336
-    style Z fill:#4caf50
-    style AA fill:#4caf50
+    style A fill:#4caf50,color:#000000
+    style H fill:#9c27b0,color:#ffffff
+    style K fill:#ff9800,color:#000000
+    style M fill:#e91e63,color:#ffffff
+    style N fill:#00bcd4,color:#000000
+    style O fill:#f44336,color:#ffffff
+    style Z fill:#4caf50,color:#000000
+    style AA fill:#4caf50,color:#000000
 ```
 
 **Key Technologies:**
@@ -194,13 +194,13 @@ flowchart TD
     T --> U[Export to Multi-Language News]
     U --> V[End: Fact-Check Report Published]
     
-    style A fill:#4caf50
-    style B fill:#00bcd4
-    style L fill:#9c27b0
-    style N fill:#4caf50
-    style O fill:#f44336
-    style P fill:#ff9800
-    style V fill:#4caf50
+    style A fill:#4caf50,color:#000000
+    style B fill:#00bcd4,color:#000000
+    style L fill:#9c27b0,color:#ffffff
+    style N fill:#4caf50,color:#000000
+    style O fill:#f44336,color:#ffffff
+    style P fill:#ff9800,color:#000000
+    style V fill:#4caf50,color:#000000
 ```
 
 **Key Technologies:**
@@ -282,11 +282,11 @@ flowchart TD
     AC --> AD[Retrain for Next Cycle]
     AD --> AE[End: Archive & Publish Learnings]
     
-    style A fill:#4caf50
-    style J fill:#9c27b0
-    style M fill:#ff9800
-    style R fill:#00bcd4
-    style AE fill:#4caf50
+    style A fill:#4caf50,color:#000000
+    style J fill:#9c27b0,color:#ffffff
+    style M fill:#ff9800,color:#000000
+    style R fill:#00bcd4,color:#000000
+    style AE fill:#4caf50,color:#000000
 ```
 
 **Key Technologies:**
@@ -361,11 +361,11 @@ flowchart TD
     W --> X[Store Prediction & Result]
     X --> Y[End: Feed into Future Models]
     
-    style A fill:#4caf50
-    style G fill:#ff9800
-    style K fill:#9c27b0
-    style P fill:#00bcd4
-    style Y fill:#4caf50
+    style A fill:#4caf50,color:#000000
+    style G fill:#ff9800,color:#000000
+    style K fill:#9c27b0,color:#ffffff
+    style P fill:#00bcd4,color:#000000
+    style Y fill:#4caf50,color:#000000
 ```
 
 **Key Technologies:**
@@ -445,12 +445,12 @@ flowchart TD
     
     X --> Y[End: Display Results + Related Searches]
     
-    style A fill:#4caf50
-    style C fill:#9c27b0
-    style I fill:#ff9800
-    style K fill:#00bcd4
-    style Q fill:#9c27b0
-    style Y fill:#4caf50
+    style A fill:#4caf50,color:#000000
+    style C fill:#9c27b0,color:#ffffff
+    style I fill:#ff9800,color:#000000
+    style K fill:#00bcd4,color:#000000
+    style Q fill:#9c27b0,color:#ffffff
+    style Y fill:#4caf50,color:#000000
 ```
 
 **Key Technologies:**
@@ -542,12 +542,12 @@ flowchart TD
     
     AF -->|No Issues| AH[End: Knowledge Graph Live]
     
-    style A fill:#4caf50
-    style H fill:#9c27b0
-    style U fill:#00bcd4
-    style V fill:#00bcd4
-    style AD fill:#e91e63
-    style AH fill:#4caf50
+    style A fill:#4caf50,color:#000000
+    style H fill:#9c27b0,color:#ffffff
+    style U fill:#00bcd4,color:#000000
+    style V fill:#00bcd4,color:#000000
+    style AD fill:#e91e63,color:#ffffff
+    style AH fill:#4caf50,color:#000000
 ```
 
 **Key Technologies:**
@@ -635,11 +635,11 @@ flowchart TD
     AF --> X
     AG --> AH[End: User Engaged]
     
-    style A fill:#4caf50
-    style O fill:#9c27b0
-    style Q fill:#ff9800
-    style W fill:#00bcd4
-    style AH fill:#4caf50
+    style A fill:#4caf50,color:#000000
+    style O fill:#9c27b0,color:#ffffff
+    style Q fill:#ff9800,color:#000000
+    style W fill:#00bcd4,color:#000000
+    style AH fill:#4caf50,color:#000000
 ```
 
 **Key Technologies:**
@@ -704,11 +704,11 @@ flowchart TD
     
     R -->|No| T[End: Conversation Complete]
     
-    style A fill:#4caf50
-    style C fill:#00bcd4
-    style N fill:#9c27b0
-    style P fill:#00bcd4
-    style T fill:#4caf50
+    style A fill:#4caf50,color:#000000
+    style C fill:#00bcd4,color:#000000
+    style N fill:#9c27b0,color:#ffffff
+    style P fill:#00bcd4,color:#000000
+    style T fill:#4caf50,color:#000000
 ```
 
 **Key Technologies:**
@@ -789,11 +789,11 @@ flowchart TD
     Z -->|Yes| A
     Z -->|No| AA[End: Archive Stream Data]
     
-    style A fill:#4caf50
-    style G fill:#ff9800
-    style S fill:#00bcd4
-    style T fill:#9c27b0
-    style AA fill:#4caf50
+    style A fill:#4caf50,color:#000000
+    style G fill:#ff9800,color:#000000
+    style S fill:#00bcd4,color:#000000
+    style T fill:#9c27b0,color:#ffffff
+    style AA fill:#4caf50,color:#000000
 ```
 
 **Key Technologies:**
@@ -879,11 +879,11 @@ flowchart TD
     AC --> AE[GPT-5: Multi-Language Report]
     AE --> AD
     
-    style A fill:#4caf50
-    style J fill:#ff9800
-    style S fill:#00bcd4
-    style Y fill:#9c27b0
-    style AD fill:#4caf50
+    style A fill:#4caf50,color:#000000
+    style J fill:#ff9800,color:#000000
+    style S fill:#00bcd4,color:#000000
+    style Y fill:#9c27b0,color:#ffffff
+    style AD fill:#4caf50,color:#000000
 ```
 
 **Key Technologies:**
@@ -968,11 +968,11 @@ flowchart TD
     AC --> AD[Announce to Users]
     AD --> AE[End: New Model Live]
     
-    style A fill:#4caf50
-    style B fill:#9c27b0
-    style M fill:#ff9800
-    style Y fill:#4caf50
-    style AE fill:#4caf50
+    style A fill:#4caf50,color:#000000
+    style B fill:#9c27b0,color:#ffffff
+    style M fill:#ff9800,color:#000000
+    style Y fill:#4caf50,color:#000000
+    style AE fill:#4caf50,color:#000000
 ```
 
 **Key Technologies:**
@@ -1051,12 +1051,12 @@ flowchart TD
     AA --> AB[Distribute to All Clients]
     AB --> AC[End: Privacy-Preserving Model Updated]
     
-    style A fill:#4caf50
-    style M fill:#ff9800
-    style N fill:#ff9800
-    style O fill:#ff9800
-    style S fill:#9c27b0
-    style AC fill:#4caf50
+    style A fill:#4caf50,color:#000000
+    style M fill:#ff9800,color:#000000
+    style N fill:#ff9800,color:#000000
+    style O fill:#ff9800,color:#000000
+    style S fill:#9c27b0,color:#ffffff
+    style AC fill:#4caf50,color:#000000
 ```
 
 **Key Technologies:**
@@ -1152,11 +1152,11 @@ flowchart TD
     AC --> AF[Leaderboard Update]
     AF --> AG[End: Community Contribution Recorded]
     
-    style A fill:#4caf50
-    style O fill:#ff9800
-    style S fill:#9c27b0
-    style AA fill:#4caf50
-    style AG fill:#4caf50
+    style A fill:#4caf50,color:#000000
+    style O fill:#ff9800,color:#000000
+    style S fill:#9c27b0,color:#ffffff
+    style AA fill:#4caf50,color:#000000
+    style AG fill:#4caf50,color:#000000
 ```
 
 **Key Technologies:**
@@ -1244,11 +1244,11 @@ flowchart TD
     AA -->|Yes| AB[Renew Certification]
     AB --> AC[End: AI System Compliant]
     
-    style A fill:#4caf50
-    style D fill:#f44336
-    style J fill:#ff9800
-    style X fill:#9c27b0
-    style AC fill:#4caf50
+    style A fill:#4caf50,color:#000000
+    style D fill:#f44336,color:#ffffff
+    style J fill:#ff9800,color:#000000
+    style X fill:#9c27b0,color:#ffffff
+    style AC fill:#4caf50,color:#000000
 ```
 
 **Key Policies:**
@@ -1393,10 +1393,10 @@ graph TD
     N --> O
     T --> U
     
-    style A fill:#00d9ff
-    style I fill:#ff006e
-    style O fill:#ffbe0b
-    style U fill:#9c27b0
+    style A fill:#00d9ff,color:#000000
+    style I fill:#ff006e,color:#ffffff
+    style O fill:#ffbe0b,color:#000000
+    style U fill:#9c27b0,color:#ffffff
 ```
 
 ### AI Model Evolution Timeline

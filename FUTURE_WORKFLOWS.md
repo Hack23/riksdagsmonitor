@@ -647,37 +647,37 @@ flowchart TD
 ```mermaid
 gantt
     title Workflow Growth Projection
-    dateFormat YYYY-Q
+    dateFormat YYYY-MM-DD
     axisFormat %Y
 
     section Security
-    Current (5)          :done, 2026-Q1, 2026-Q1
-    + Dependency Auto     :2026-Q3, 2026-Q4
-    + Supply Chain v2     :2027-Q1, 2027-Q2
+    Current 5 workflows         :done, 2026-01-01, 2026-03-31
+    Dependency Auto              :2026-07-01, 2026-12-31
+    Supply Chain v2              :2027-01-01, 2027-06-30
 
     section Testing
-    Current (7)          :done, 2026-Q1, 2026-Q1
-    + Visual Regression   :2026-Q2, 2026-Q3
-    + Cross-Browser Matrix:2026-Q3, 2026-Q4
-    + ML Model Validation :2027-Q2, 2027-Q3
+    Current 7 workflows         :done, 2026-01-01, 2026-03-31
+    Visual Regression            :2026-04-01, 2026-09-30
+    Cross-Browser Matrix         :2026-07-01, 2026-12-31
+    ML Model Validation          :2027-04-01, 2027-09-30
 
     section Data Pipeline
-    Current (5)          :done, 2026-Q1, 2026-Q1
-    + CIA Pipeline v2     :2026-Q2, 2026-Q3
-    + OSINT Pipeline      :2027-Q1, 2027-Q3
-    + Prediction Pipeline :2027-Q3, 2028-Q1
+    Current 5 workflows         :done, 2026-01-01, 2026-03-31
+    CIA Pipeline v2              :2026-04-01, 2026-09-30
+    OSINT Pipeline               :2027-01-01, 2027-09-30
+    Prediction Pipeline          :2027-07-01, 2028-03-31
 
     section Agentic
-    Current (12)         :done, 2026-Q1, 2026-Q1
-    + Fact-Checking       :2027-Q1, 2027-Q2
-    + Editorial Board     :2028-Q1, 2028-Q2
-    + Multi-Platform      :2028-Q2, 2028-Q3
+    Current 12 workflows        :done, 2026-01-01, 2026-03-31
+    Fact-Checking                :2027-01-01, 2027-06-30
+    Editorial Board              :2028-01-01, 2028-06-30
+    Multi-Platform               :2028-04-01, 2028-09-30
 
     section Deploy
-    Current (3)          :done, 2026-Q1, 2026-Q1
-    + Preview Deploys     :2026-Q2, 2026-Q3
-    + Canary Deploys      :2028-Q1, 2028-Q2
-    + Self-Healing        :2028-Q2, 2028-Q4
+    Current 3 workflows         :done, 2026-01-01, 2026-03-31
+    Preview Deploys              :2026-04-01, 2026-09-30
+    Canary Deploys               :2028-01-01, 2028-06-30
+    Self-Healing                 :2028-04-01, 2028-12-31
 ```
 
 | Year | Projected Distinct Workflows | New Capabilities |

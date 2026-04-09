@@ -55,33 +55,56 @@ This document provides a forward-looking SWOT analysis for Riksdagsmonitor over 
 ## 📋 Future SWOT Overview
 
 ```mermaid
+%%{init: {
+  "theme": "neutral",
+  "themeVariables": {
+    "quadrant1Fill": "#2E7D32",
+    "quadrant2Fill": "#D32F2F",
+    "quadrant3Fill": "#1565C0",
+    "quadrant4Fill": "#FF9800",
+    "quadrantTitleFill": "#ffffff",
+    "quadrantPointFill": "#ffffff",
+    "quadrantPointTextFill": "#000000",
+    "quadrantXAxisTextFill": "#000000",
+    "quadrantYAxisTextFill": "#000000"
+  },
+  "quadrantChart": {
+    "chartWidth": 700,
+    "chartHeight": 700,
+    "pointLabelFontSize": 12,
+    "titleFontSize": 20,
+    "quadrantLabelFontSize": 16,
+    "xAxisLabelFontSize": 14,
+    "yAxisLabelFontSize": 14
+  }
+}}%%
 quadrantChart
     title Riksdagsmonitor Future SWOT (2026-2037)
-    x-axis Internal --> External
-    y-axis Negative --> Positive
-    quadrant-1 Opportunities
-    quadrant-2 Strengths
-    quadrant-3 Weaknesses
-    quadrant-4 Threats
+    x-axis Internal Factors --> External Factors
+    y-axis Threats --> Opportunities
+    quadrant-1 STRENGTHS
+    quadrant-2 WEAKNESSES
+    quadrant-3 OPPORTUNITIES
+    quadrant-4 THREATS
 
-    "AI-Powered Analytics": [0.20, 0.95]
-    "Nordic 4-Parliament Coverage": [0.15, 0.90]
-    "Knowledge Graph 109K+ Docs": [0.25, 0.85]
-    "API Platform Revenue": [0.30, 0.80]
-    "30+ Language Support": [0.20, 0.75]
-    "Predictive Election Models": [0.10, 0.88]
-    "ISMS Compliance Leadership": [0.15, 0.70]
+    "AI-Powered Analytics": [0.20, 0.92]
+    "Nordic 4-Parliament Coverage": [0.15, 0.88]
+    "Knowledge Graph 109K+ Docs": [0.25, 0.82]
+    "API Platform Revenue": [0.30, 0.78]
+    "30+ Language Support": [0.20, 0.72]
+    "Predictive Election Models": [0.10, 0.85]
+    "ISMS Compliance Leadership": [0.15, 0.68]
 
-    "Complex AI Infrastructure": [0.25, 0.20]
-    "Funding Requirements": [0.30, 0.15]
-    "Team Scaling Needed": [0.20, 0.25]
-    "Regulatory Complexity": [0.35, 0.30]
+    "Complex AI Infrastructure": [0.25, 0.22]
+    "Funding Requirements": [0.30, 0.18]
+    "Team Scaling Needed": [0.20, 0.28]
+    "Regulatory Complexity": [0.35, 0.32]
 
-    "Global Parliament Network": [0.85, 0.95]
-    "Research Institution Market": [0.80, 0.85]
-    "Civic Education Platform": [0.75, 0.80]
-    "AI Governance Leadership": [0.90, 0.75]
-    "EU Digital Democracy": [0.80, 0.90]
+    "Global Parliament Network": [0.85, 0.92]
+    "Research Institution Market": [0.80, 0.82]
+    "Civic Education Platform": [0.75, 0.78]
+    "AI Governance Leadership": [0.90, 0.72]
+    "EU Digital Democracy": [0.80, 0.88]
 
     "Big Tech Competition": [0.85, 0.25]
     "AI Regulation Uncertainty": [0.80, 0.20]
@@ -677,14 +700,37 @@ quadrantChart
 ## 📈 Risk-Adjusted Opportunity Scoring
 
 ```mermaid
+%%{init: {
+  "theme": "neutral",
+  "themeVariables": {
+    "quadrant1Fill": "#2E7D32",
+    "quadrant2Fill": "#1565C0",
+    "quadrant3Fill": "#9E9E9E",
+    "quadrant4Fill": "#FF9800",
+    "quadrantTitleFill": "#ffffff",
+    "quadrantPointFill": "#ffffff",
+    "quadrantPointTextFill": "#000000",
+    "quadrantXAxisTextFill": "#000000",
+    "quadrantYAxisTextFill": "#000000"
+  },
+  "quadrantChart": {
+    "chartWidth": 700,
+    "chartHeight": 700,
+    "pointLabelFontSize": 12,
+    "titleFontSize": 20,
+    "quadrantLabelFontSize": 16,
+    "xAxisLabelFontSize": 14,
+    "yAxisLabelFontSize": 14
+  }
+}}%%
 quadrantChart
-    title Opportunity Portfolio: Impact vs Probability (2026-2030)
+    title Opportunity Portfolio Impact vs Probability 2026-2030
     x-axis Low Probability --> High Probability
     y-axis Low Impact --> High Impact
-    quadrant-1 Prime Opportunities
-    quadrant-2 Strategic Bets
-    quadrant-3 Monitor Only
-    quadrant-4 Quick Wins
+    quadrant-1 PRIME OPPORTUNITIES
+    quadrant-2 STRATEGIC BETS
+    quadrant-3 MONITOR ONLY
+    quadrant-4 QUICK WINS
 
     "Research API Launch": [0.80, 0.75]
     "Nordic Parliament Expansion": [0.75, 0.85]
@@ -763,14 +809,37 @@ quadrantChart
 ## 📊 SWOT Matrix Visualization
 
 ```mermaid
+%%{init: {
+  "theme": "neutral",
+  "themeVariables": {
+    "quadrant1Fill": "#2E7D32",
+    "quadrant2Fill": "#1565C0",
+    "quadrant3Fill": "#D32F2F",
+    "quadrant4Fill": "#FF9800",
+    "quadrantTitleFill": "#ffffff",
+    "quadrantPointFill": "#ffffff",
+    "quadrantPointTextFill": "#000000",
+    "quadrantXAxisTextFill": "#000000",
+    "quadrantYAxisTextFill": "#000000"
+  },
+  "quadrantChart": {
+    "chartWidth": 700,
+    "chartHeight": 700,
+    "pointLabelFontSize": 12,
+    "titleFontSize": 20,
+    "quadrantLabelFontSize": 16,
+    "xAxisLabelFontSize": 14,
+    "yAxisLabelFontSize": 14
+  }
+}}%%
 quadrantChart
-    title SWOT Position Matrix: Strategic Quadrants 2026-2030
+    title SWOT Position Matrix Strategic Quadrants 2026-2030
     x-axis Internal Weaknesses --> Internal Strengths
     y-axis External Threats --> External Opportunities
-    quadrant-1 Leverage Strengths for Opportunities
-    quadrant-2 Convert Weaknesses into Strengths
-    quadrant-3 Defend Against Threats
-    quadrant-4 Address Weakness-Threat Combinations
+    quadrant-1 LEVERAGE STRENGTHS
+    quadrant-2 CONVERT WEAKNESSES
+    quadrant-3 DEFEND AGAINST THREATS
+    quadrant-4 ADDRESS COMBINATIONS
 
     "SO: Research API Launch": [0.80, 0.78]
     "SO: EU Grant Application": [0.75, 0.90]
@@ -778,7 +847,7 @@ quadrantChart
     "WO: Team Growth via Funding": [0.35, 0.80]
     "WO: API Revenue for Infra": [0.40, 0.72]
     "ST: Open Source vs Big Tech": [0.78, 0.25]
-    "ST: Human Review vs Misinformation": [0.72, 0.30]
+    "ST: Human Review vs Misinfo": [0.72, 0.30]
     "WT: Single Person + API Break": [0.22, 0.20]
     "WT: No Revenue + Regulation": [0.18, 0.35]
 ```

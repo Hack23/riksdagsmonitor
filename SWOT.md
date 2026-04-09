@@ -51,41 +51,64 @@ This SWOT analysis evaluates Riksdagsmonitor's strategic position as a Swedish P
 **Strategic Focus:** This quadrant chart provides a visual representation of Riksdagsmonitor's strengths, weaknesses, opportunities, and threats arranged by their internal/external nature and positive/negative impact.
 
 ```mermaid
+%%{init: {
+  "theme": "neutral",
+  "themeVariables": {
+    "quadrant1Fill": "#2E7D32",
+    "quadrant2Fill": "#D32F2F",
+    "quadrant3Fill": "#1565C0",
+    "quadrant4Fill": "#FF9800",
+    "quadrantTitleFill": "#ffffff",
+    "quadrantPointFill": "#ffffff",
+    "quadrantPointTextFill": "#000000",
+    "quadrantXAxisTextFill": "#000000",
+    "quadrantYAxisTextFill": "#000000"
+  },
+  "quadrantChart": {
+    "chartWidth": 700,
+    "chartHeight": 700,
+    "pointLabelFontSize": 12,
+    "titleFontSize": 20,
+    "quadrantLabelFontSize": 16,
+    "xAxisLabelFontSize": 14,
+    "yAxisLabelFontSize": 14
+  }
+}}%%
 quadrantChart
     title Riksdagsmonitor SWOT Analysis
-    x-axis Internal --> External
-    y-axis Negative --> Positive
-    quadrant-1 Opportunities
-    quadrant-2 Strengths
-    quadrant-3 Weaknesses
-    quadrant-4 Threats
+    x-axis Internal Factors --> External Factors
+    y-axis Threats --> Opportunities
+    quadrant-1 STRENGTHS
+    quadrant-2 WEAKNESSES
+    quadrant-3 OPPORTUNITIES
+    quadrant-4 THREATS
 
-    "50+ Years Political Data": [0.15, 0.95]
-    "14-Language Support": [0.25, 0.85]
+    "50+ Years Political Data": [0.15, 0.85]
+    "14-Language Support": [0.25, 0.80]
     "19 CIA Intelligence Products": [0.20, 0.90]
-    "Static Architecture (GitHub Pages)": [0.30, 0.75]
-    "ISMS Compliance": [0.10, 0.80]
+    "Static Architecture": [0.30, 0.75]
+    "ISMS Compliance": [0.10, 0.78]
     "349 MPs Tracked": [0.25, 0.70]
-    "32 MCP Tools (riksdag-regering)": [0.35, 0.85]
-    "Transparent Security Model": [0.15, 0.75]
+    "32 MCP Tools": [0.35, 0.82]
+    "Transparent Security Model": [0.15, 0.72]
 
-    "Single Developer": [0.25, 0.15]
-    "No Monetization Model": [0.35, 0.20]
-    "Limited Marketing": [0.15, 0.25]
-    "Static Site Limitations": [0.30, 0.30]
-    "Manual Content Generation": [0.20, 0.20]
+    "Single Developer": [0.25, 0.20]
+    "No Monetization Model": [0.35, 0.22]
+    "Limited Marketing": [0.15, 0.28]
+    "Static Site Limitations": [0.30, 0.32]
+    "Manual Content Generation": [0.20, 0.18]
 
-    "Nordic Expansion (DK/NO/FI)": [0.80, 0.90]
-    "EU Parliament Integration": [0.85, 0.85]
-    "API Monetization": [0.75, 0.80]
-    "International Research Partnerships": [0.90, 0.75]
-    "Civic Education Market": [0.70, 0.70]
-    "Business Intelligence Integration": [0.80, 0.65]
-    "AI-Enhanced Analytics": [0.75, 0.95]
+    "Nordic Expansion": [0.80, 0.88]
+    "EU Parliament Integration": [0.85, 0.82]
+    "API Monetization": [0.75, 0.78]
+    "Research Partnerships": [0.90, 0.72]
+    "Civic Education Market": [0.70, 0.68]
+    "Business Intelligence": [0.80, 0.65]
+    "AI-Enhanced Analytics": [0.75, 0.92]
 
     "Competing Platforms": [0.80, 0.30]
     "EU CRA Regulatory Burden": [0.85, 0.25]
-    "Swedish Riksdag API Changes": [0.75, 0.20]
+    "Riksdag API Changes": [0.75, 0.20]
     "Market Consolidation": [0.90, 0.35]
     "Budget Sustainability": [0.70, 0.15]
 ```
@@ -840,43 +863,43 @@ quadrantChart
 ```mermaid
 gantt
     title Strategic Development Timeline
-    dateFormat YYYY-Q1
-    axisFormat %Y-%q
-    
+    dateFormat YYYY-MM-DD
+    axisFormat %Y
+
     section Data Resilience
-    API Monitoring & Fallback         :a1, 2026-Q1, 2quarters
-    Multi-Source Strategy             :a2, 2026-Q2, 2quarters
-    Partnership with Riksdag IT       :a3, 2026-Q3, 1quarters
-    
+    API Monitoring and Fallback         :a1, 2026-01-01, 180d
+    Multi-Source Strategy               :a2, 2026-04-01, 180d
+    Partnership with Riksdag IT         :a3, 2026-07-01, 90d
+
     section Documentation
-    Architecture Documentation        :b1, 2026-Q1, 1quarters
-    API Documentation                 :b2, 2026-Q2, 2quarters
-    Contributor Onboarding            :b3, 2026-Q3, 2quarters
-    
+    Architecture Documentation          :b1, 2026-01-01, 90d
+    API Documentation                   :b2, 2026-04-01, 180d
+    Contributor Onboarding              :b3, 2026-07-01, 180d
+
     section Agent Automation
-    Agentic Content Workflows         :c1, 2026-Q1, 3quarters
-    Multi-Language Automation         :c2, 2026-Q2, 2quarters
-    Quality Automation                :c3, 2026-Q3, 2quarters
-    
+    Agentic Content Workflows           :c1, 2026-01-01, 270d
+    Multi-Language Automation           :c2, 2026-04-01, 180d
+    Quality Automation                  :c3, 2026-07-01, 180d
+
     section Nordic Expansion
-    Denmark API Integration           :d1, 2026-Q2, 3quarters
-    Norway API Integration            :d2, 2026-Q4, 3quarters
-    Finland API Integration           :d3, 2027-Q2, 3quarters
-    
+    Denmark API Integration             :d1, 2026-04-01, 270d
+    Norway API Integration              :d2, 2026-10-01, 270d
+    Finland API Integration             :d3, 2027-04-01, 270d
+
     section API Monetization
-    API Development (MVP)             :e1, 2026-Q3, 3quarters
-    Freemium Launch                   :e2, 2027-Q1, 2quarters
-    Enterprise Tier                   :e3, 2027-Q3, 2quarters
-    
+    API Development MVP                 :e1, 2026-07-01, 270d
+    Freemium Launch                     :e2, 2027-01-01, 180d
+    Enterprise Tier                     :e3, 2027-07-01, 180d
+
     section EU Integration
-    EU Parliament Data Research       :f1, 2026-Q4, 2quarters
-    Swedish MEP Tracking              :f2, 2027-Q2, 3quarters
-    Full EU Coverage                  :f3, 2028-Q1, 4quarters
-    
+    EU Parliament Data Research         :f1, 2026-10-01, 180d
+    Swedish MEP Tracking                :f2, 2027-04-01, 270d
+    Full EU Coverage                    :f3, 2028-01-01, 365d
+
     section AI Analytics
-    Data Structure Preparation        :g1, 2026-Q3, 2quarters
-    ML Model Development              :g2, 2027-Q1, 3quarters
-    Election Forecasting Launch       :g3, 2027-Q4, 2quarters
+    Data Structure Preparation          :g1, 2026-07-01, 180d
+    ML Model Development                :g2, 2027-01-01, 270d
+    Election Forecasting Launch         :g3, 2027-10-01, 180d
 ```
 
 ---
