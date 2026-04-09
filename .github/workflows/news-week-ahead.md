@@ -587,7 +587,9 @@ npx tsx scripts/fix-article-navigation.ts
 
 **5. Replace generic filler** — Remove `"The political landscape remains fluid..."` and replace with specific forward indicators derived from MCP data (e.g., `get_calendar_events`, `get_betankanden`). Each indicator MUST name a real upcoming event, committee, or deadline extracted from the data — e.g., "Watch: `<COMMITTEE>` scheduling `<TOPIC>` follow-up by `<DATE from calendar>`". Do NOT hard-code example dates or event names; always source them from the current week's MCP query results.
 
-**6. Verify document count consistency** — Ensure report counts are consistent across title, lede, body, and key takeaways. Contradictory counts (17 vs 42 vs 16) are REJECTED.
+**6. 🔴 MANDATORY: Replace ALL `AI_MUST_REPLACE` markers** — Search generated HTML for `<!-- AI_MUST_REPLACE: ... -->` markers in Deep Analysis subsections and replace EACH with specific forward-looking political intelligence. ZERO markers may survive in committed HTML.
+
+**7. Verify document count consistency** — Ensure report counts are consistent across title, lede, body, and key takeaways. Contradictory counts (17 vs 42 vs 16) are REJECTED.
 
 **7. Handle Easter/recess periods** — When parliament is in recess, explain what legislation is pending for the return session and what government agencies are acting during recess.
 

@@ -472,6 +472,58 @@ fi
 echo ""
 
 # ============================================================================
+# Check: No surviving AI_MUST_REPLACE markers in article HTML
+# ============================================================================
+echo "📋 Check: No AI_MUST_REPLACE markers surviving in article HTML"
+
+AI_MARKER_COUNT=0
+AI_MARKER_FILES=""
+for article in news/*.html; do
+  if [ -f "$article" ]; then
+    MARKERS=$(grep -c 'AI_MUST_REPLACE' "$article" 2>/dev/null) || true
+    if [ "${MARKERS:-0}" -gt 0 ]; then
+      AI_MARKER_COUNT=$((AI_MARKER_COUNT + MARKERS))
+      AI_MARKER_FILES="$AI_MARKER_FILES $article"
+      echo -e "${YELLOW}⚠️ $article has $MARKERS AI_MUST_REPLACE marker(s) — AI agent must replace these with real analysis${NC}"
+    fi
+  fi
+done
+
+if [ "$AI_MARKER_COUNT" -gt 0 ]; then
+  echo -e "${YELLOW}⚠️ $AI_MARKER_COUNT total AI_MUST_REPLACE marker(s) found in article HTML — AI agent should replace these with genuine political analysis${NC}"
+  WARNINGS=$((WARNINGS + 1))
+else
+  ARTICLE_COUNT=$(find news -maxdepth 1 -name '*.html' -type f 2>/dev/null | wc -l) || true
+  if [ "${ARTICLE_COUNT:-0}" -gt 0 ]; then
+    echo -e "${GREEN}✅ No AI_MUST_REPLACE markers found in $ARTICLE_COUNT article(s)${NC}"
+  else
+    echo -e "${YELLOW}ℹ️  No article files found to check${NC}"
+  fi
+fi
+
+# Check for banned generic template text in today's articles
+BANNED_GENERIC_COUNT=0
+for article in news/*.html; do
+  if [ -f "$article" ]; then
+    if grep -q 'The pace of activity signals the political urgency' "$article" 2>/dev/null || \
+       grep -q 'broad legislative push that will shape multiple aspects' "$article" 2>/dev/null || \
+       grep -q 'culmination of legislative review, with recommendations that guide' "$article" 2>/dev/null || \
+       grep -q 'cascade through committee deliberations, chamber votes' "$article" 2>/dev/null || \
+       grep -q 'While parliament deliberates these legislative matters' "$article" 2>/dev/null || \
+       grep -q 'Standard parliamentary procedures are being followed' "$article" 2>/dev/null; then
+      BANNED_GENERIC_COUNT=$((BANNED_GENERIC_COUNT + 1))
+      echo -e "${YELLOW}⚠️ $article contains BANNED generic template text — AI must replace${NC}"
+    fi
+  fi
+done
+
+if [ "$BANNED_GENERIC_COUNT" -gt 0 ]; then
+  echo -e "${YELLOW}⚠️ $BANNED_GENERIC_COUNT article(s) contain banned generic Deep Analysis template text${NC}"
+  WARNINGS=$((WARNINGS + 1))
+fi
+echo ""
+
+# ============================================================================
 # Summary
 # ============================================================================
 echo "================================================================"
