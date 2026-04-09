@@ -54,10 +54,10 @@ This SWOT analysis evaluates Riksdagsmonitor's strategic position as a Swedish P
 %%{init: {
   "theme": "neutral",
   "themeVariables": {
-    "quadrant1Fill": "#2E7D32",
-    "quadrant2Fill": "#D32F2F",
-    "quadrant3Fill": "#1565C0",
-    "quadrant4Fill": "#FF9800",
+    "quadrant1Fill": "#1565C0",
+    "quadrant2Fill": "#2E7D32",
+    "quadrant3Fill": "#FF9800",
+    "quadrant4Fill": "#D32F2F",
     "quadrantTitleFill": "#ffffff",
     "quadrantPointFill": "#ffffff",
     "quadrantPointTextFill": "#000000",
@@ -78,9 +78,9 @@ quadrantChart
     title Riksdagsmonitor SWOT Analysis
     x-axis Internal Factors --> External Factors
     y-axis Threats --> Opportunities
-    quadrant-1 STRENGTHS
-    quadrant-2 WEAKNESSES
-    quadrant-3 OPPORTUNITIES
+    quadrant-1 OPPORTUNITIES
+    quadrant-2 STRENGTHS
+    quadrant-3 WEAKNESSES
     quadrant-4 THREATS
 
     "50+ Years Political Data": [0.15, 0.85]

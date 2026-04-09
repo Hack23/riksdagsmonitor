@@ -651,33 +651,33 @@ gantt
     axisFormat %Y
 
     section Security
-    Current 5 workflows         :done, 2026-01-01, 2026-03-31
-    Dependency Auto              :2026-07-01, 2026-12-31
-    Supply Chain v2              :2027-01-01, 2027-06-30
+    Current 5 workflows         :done, sec0, 2026-01-01, 2026-03-31
+    Dependency Auto              :sec1, 2026-07-01, 2026-12-31
+    Supply Chain v2              :sec2, 2027-01-01, 2027-06-30
 
     section Testing
-    Current 7 workflows         :done, 2026-01-01, 2026-03-31
-    Visual Regression            :2026-04-01, 2026-09-30
-    Cross-Browser Matrix         :2026-07-01, 2026-12-31
-    ML Model Validation          :2027-04-01, 2027-09-30
+    Current 7 workflows         :done, tst0, 2026-01-01, 2026-03-31
+    Visual Regression            :tst1, 2026-04-01, 2026-09-30
+    Cross-Browser Matrix         :tst2, 2026-07-01, 2026-12-31
+    ML Model Validation          :tst3, 2027-04-01, 2027-09-30
 
     section Data Pipeline
-    Current 5 workflows         :done, 2026-01-01, 2026-03-31
-    CIA Pipeline v2              :2026-04-01, 2026-09-30
-    OSINT Pipeline               :2027-01-01, 2027-09-30
-    Prediction Pipeline          :2027-07-01, 2028-03-31
+    Current 5 workflows         :done, dat0, 2026-01-01, 2026-03-31
+    CIA Pipeline v2              :dat1, 2026-04-01, 2026-09-30
+    OSINT Pipeline               :dat2, 2027-01-01, 2027-09-30
+    Prediction Pipeline          :dat3, 2027-07-01, 2028-03-31
 
     section Agentic
-    Current 12 workflows        :done, 2026-01-01, 2026-03-31
-    Fact-Checking                :2027-01-01, 2027-06-30
-    Editorial Board              :2028-01-01, 2028-06-30
-    Multi-Platform               :2028-04-01, 2028-09-30
+    Current 12 workflows        :done, agt0, 2026-01-01, 2026-03-31
+    Fact-Checking                :agt1, 2027-01-01, 2027-06-30
+    Editorial Board              :agt2, 2028-01-01, 2028-06-30
+    Multi-Platform               :agt3, 2028-04-01, 2028-09-30
 
     section Deploy
-    Current 3 workflows         :done, 2026-01-01, 2026-03-31
-    Preview Deploys              :2026-04-01, 2026-09-30
-    Canary Deploys               :2028-01-01, 2028-06-30
-    Self-Healing                 :2028-04-01, 2028-12-31
+    Current 3 workflows         :done, dep0, 2026-01-01, 2026-03-31
+    Preview Deploys              :dep1, 2026-04-01, 2026-09-30
+    Canary Deploys               :dep2, 2028-01-01, 2028-06-30
+    Self-Healing                 :dep3, 2028-04-01, 2028-12-31
 ```
 
 | Year | Projected Distinct Workflows | New Capabilities |
