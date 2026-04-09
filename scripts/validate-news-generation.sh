@@ -504,8 +504,14 @@ fi
 BANNED_GENERIC_COUNT=0
 ARTICLE_FILES=(news/*.html)
 if [ -f "${ARTICLE_FILES[0]}" ] && command -v npx &>/dev/null; then
-  BANNED_OUTPUT=$(npx tsx scripts/check-banned-patterns.ts news/*.html 2>/dev/null) || true
-  if [ -n "$BANNED_OUTPUT" ]; then
+  BANNED_OUTPUT=""
+  BANNED_EXIT=0
+  BANNED_OUTPUT=$(npx tsx scripts/check-banned-patterns.ts news/*.html) || BANNED_EXIT=$?
+  if [ "$BANNED_EXIT" -ge 126 ]; then
+    # Exit codes 126+ indicate the command could not be executed (126=not executable, 127=not found, 128+=signals)
+    echo -e "${RED}❌ Failed to execute banned pattern detection (exit $BANNED_EXIT). Review the error output above.${NC}"
+    ERRORS=$((ERRORS + 1))
+  elif [ -n "$BANNED_OUTPUT" ]; then
     while IFS= read -r line; do
       FILE=$(echo "$line" | jq -r '.file' 2>/dev/null) || FILE=""
       if [ -n "$FILE" ]; then

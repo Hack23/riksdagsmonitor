@@ -29,4 +29,4 @@ for (const file of files) {
   }
 }
 
-process.exit(Math.min(count, 125)); // cap at 125 per POSIX convention
+process.exit(Math.min(count, 125)); // cap at 125 to keep the exit status in range and avoid common shell-reserved codes like 126/127
