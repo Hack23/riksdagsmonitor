@@ -430,4 +430,124 @@ describe('validate-news-translations.ts', () => {
       expect(output).toContain('og:locale');
     });
   });
+
+  describe('Content leakage detection', () => {
+    it('should detect English paragraph leakage in non-EN articles', () => {
+      // Create EN source article with substantive paragraphs
+      const enContent = `<!DOCTYPE html>
+<html lang="en">
+<head><meta property="og:locale" content="en_US"><script type="application/ld+json">{"inLanguage": "en"}</script></head>
+<body>
+  <p>This is a substantive analytical paragraph about Swedish government policy that should be translated into the target language.</p>
+  <p>The coalition dynamics reveal significant tensions between governing parties on immigration reform matters.</p>
+</body>
+</html>`;
+      writeFileSync(`${testDir}/2026-04-09-test-en.html`, enContent);
+
+      // Create DE translation that still contains verbatim EN paragraphs (untranslated)
+      const deContent = `<!DOCTYPE html>
+<html lang="de">
+<head><meta property="og:locale" content="de_DE"><script type="application/ld+json">{"inLanguage": "de"}</script></head>
+<body>
+  <p>This is a substantive analytical paragraph about Swedish government policy that should be translated into the target language.</p>
+  <p>Die Koalitionsdynamik zeigt erhebliche Spannungen zwischen den Regierungsparteien in Fragen der Einwanderungsreform.</p>
+</body>
+</html>`;
+      writeFileSync(`${testDir}/2026-04-09-test-de.html`, deContent);
+
+      const result = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+        encoding: 'utf-8'
+      });
+
+      expect(result).toContain('Content leakage');
+      expect(result).toContain('EN leakage');
+    });
+
+    it('should detect Swedish text leakage in non-SV articles', () => {
+      const deContent = `<!DOCTYPE html>
+<html lang="de">
+<head><meta property="og:locale" content="de_DE"><script type="application/ld+json">{"inLanguage": "de"}</script></head>
+<body>
+  <p>Dies ist ein deutscher Absatz über die schwedische Regierungspolitik und ihre Auswirkungen.</p>
+  <p>Regeringen överlämnar denna proposition till riksdagen. Stockholm den 1 april 2026.</p>
+</body>
+</html>`;
+      writeFileSync(`${testDir}/2026-04-09-test-de.html`, deContent);
+
+      const result = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+        encoding: 'utf-8'
+      });
+
+      expect(result).toContain('Content leakage');
+      expect(result).toContain('SV leakage');
+    });
+
+    it('should detect banned English boilerplate phrases in translations', () => {
+      const frContent = `<!DOCTYPE html>
+<html lang="fr">
+<head><meta property="og:locale" content="fr_FR"><script type="application/ld+json">{"inLanguage": "fr"}</script></head>
+<body>
+  <p>Ceci est un paragraphe analytique en français sur la politique gouvernementale suédoise.</p>
+  <p>The pace of activity signals the political urgency driving this legislative push forward.</p>
+  <p>Live intelligence platform for Swedish Parliament monitoring using CIA OSINT capabilities.</p>
+</body>
+</html>`;
+      writeFileSync(`${testDir}/2026-04-09-test-fr.html`, frContent);
+
+      const result = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+        encoding: 'utf-8'
+      });
+
+      expect(result).toContain('Content leakage');
+      expect(result).toContain('EN phrase');
+    });
+
+    it('should pass for fully translated articles with no leakage', () => {
+      // EN source
+      const enContent = `<!DOCTYPE html>
+<html lang="en">
+<head><meta property="og:locale" content="en_US"><script type="application/ld+json">{"inLanguage": "en"}</script></head>
+<body>
+  <p>The government submitted ten new propositions to parliament this week covering defense and justice policy.</p>
+</body>
+</html>`;
+      writeFileSync(`${testDir}/2026-04-09-test-en.html`, enContent);
+
+      // Fully translated DE article
+      const deContent = `<!DOCTYPE html>
+<html lang="de">
+<head><meta property="og:locale" content="de_DE"><script type="application/ld+json">{"inLanguage": "de"}</script></head>
+<body>
+  <p>Die Regierung hat diese Woche zehn neue Gesetzesvorlagen zu Verteidigungs- und Justizpolitik ins Parlament eingebracht.</p>
+</body>
+</html>`;
+      writeFileSync(`${testDir}/2026-04-09-test-de.html`, deContent);
+
+      const result = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+        encoding: 'utf-8'
+      });
+
+      expect(result).not.toContain('Content leakage');
+      expect(result).toContain('✅ ALL ARTICLES FULLY TRANSLATED');
+    });
+
+    it('should not flag EN articles for content leakage', () => {
+      // EN articles should not be checked for EN paragraph leakage
+      const enContent = `<!DOCTYPE html>
+<html lang="en">
+<head><meta property="og:locale" content="en_US"><script type="application/ld+json">{"inLanguage": "en"}</script></head>
+<body>
+  <p>The pace of activity signals the political urgency driving the current legislative session forward.</p>
+  <p>Live intelligence platform for Swedish Parliament monitoring using CIA OSINT capabilities.</p>
+</body>
+</html>`;
+      writeFileSync(`${testDir}/2026-04-09-test-en.html`, enContent);
+
+      const result = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+        encoding: 'utf-8'
+      });
+
+      expect(result).not.toContain('Content leakage');
+    });
+  });
 });

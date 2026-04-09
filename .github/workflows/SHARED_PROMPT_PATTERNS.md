@@ -512,6 +512,7 @@ Before committing, verify EACH article passes these checks:
 - [ ] "📊 Analysis & Sources" section present with GitHub links to all analysis files
 - [ ] Key Takeaways section with 3-5 bullet points and confidence labels
 - [ ] No untranslated Swedish text in non-Swedish language articles
+- [ ] No untranslated English body paragraphs in non-English language articles (ALL paragraphs must be translated)
 - [ ] Document counts in title, lede, and body are CONSISTENT
 
 ### ✅ Analytical Depth  
