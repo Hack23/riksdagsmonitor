@@ -108,7 +108,7 @@ describe('generateDeepAnalysisSection', () => {
     // All motions (no gov docs) and no CIA context → should hit the fallback branch
     const docs = [makeDoc({ doktyp: 'mot' }), makeDoc({ doktyp: 'mot', parti: 'M' })];
     const result = generateDeepAnalysisSection({ documents: docs, lang: 'en', articleType: 'motions' });
-    expect(result).toContain('<!-- AI_MUST_REPLACE: winners_losers_analysis');
+    expect(result).toContain('<!-- AI_MUST_REPLACE: winners_losers_analysis —');
   });
 
   it('emits AI_MUST_REPLACE markers in Deep Analysis subsections', () => {

@@ -507,8 +507,12 @@ if [ -f "${ARTICLE_FILES[0]}" ] && command -v npx &>/dev/null; then
   BANNED_OUTPUT=$(npx tsx scripts/check-banned-patterns.ts news/*.html 2>/dev/null) || true
   if [ -n "$BANNED_OUTPUT" ]; then
     while IFS= read -r line; do
-      FILE=$(echo "$line" | jq -r '.file' 2>/dev/null) || true
-      echo -e "${RED}❌ $FILE contains BANNED generic template text — AI must replace${NC}"
+      FILE=$(echo "$line" | jq -r '.file' 2>/dev/null) || FILE=""
+      if [ -n "$FILE" ]; then
+        echo -e "${RED}❌ $FILE contains BANNED generic template text — AI must replace${NC}"
+      else
+        echo -e "${RED}❌ (unknown file) contains BANNED generic template text — AI must replace${NC}"
+      fi
       BANNED_GENERIC_COUNT=$((BANNED_GENERIC_COUNT + 1))
     done <<< "$BANNED_OUTPUT"
   fi
