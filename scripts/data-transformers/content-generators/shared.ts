@@ -608,7 +608,7 @@ function generateTimelineContext(docs: RawDocument[], _lang: Language | string, 
   // Provide minimal factual scaffold — AI agent MUST replace with genuine timeline analysis
   // that explains political significance, scheduling strategy, and contextual importance.
   const committeeCount = committees.size;
-  const committeeNames = [...committees].join(', ');
+  const committeeNames = [...committees].map(name => escapeHtml(name)).join(', ');
 
   const prospective = articleType.includes('ahead');
   const retrospective = articleType.includes('review');

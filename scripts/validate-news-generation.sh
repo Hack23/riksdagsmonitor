@@ -484,14 +484,14 @@ for article in news/*.html; do
     if [ "${MARKERS:-0}" -gt 0 ]; then
       AI_MARKER_COUNT=$((AI_MARKER_COUNT + MARKERS))
       AI_MARKER_FILES="$AI_MARKER_FILES $article"
-      echo -e "${YELLOW}⚠️ $article has $MARKERS AI_MUST_REPLACE marker(s) — AI agent must replace these with real analysis${NC}"
+      echo -e "${RED}❌ $article has $MARKERS AI_MUST_REPLACE marker(s) — committed article HTML must not contain unresolved placeholders${NC}"
     fi
   fi
 done
 
 if [ "$AI_MARKER_COUNT" -gt 0 ]; then
-  echo -e "${YELLOW}⚠️ $AI_MARKER_COUNT total AI_MUST_REPLACE marker(s) found in article HTML — AI agent should replace these with genuine political analysis${NC}"
-  WARNINGS=$((WARNINGS + 1))
+  echo -e "${RED}❌ $AI_MARKER_COUNT total AI_MUST_REPLACE marker(s) found in article HTML — validation requires zero unresolved placeholders${NC}"
+  ERRORS=$((ERRORS + 1))
 else
   ARTICLE_COUNT=$(find news -maxdepth 1 -name '*.html' -type f 2>/dev/null | wc -l) || true
   if [ "${ARTICLE_COUNT:-0}" -gt 0 ]; then
@@ -518,8 +518,8 @@ for article in news/*.html; do
 done
 
 if [ "$BANNED_GENERIC_COUNT" -gt 0 ]; then
-  echo -e "${YELLOW}⚠️ $BANNED_GENERIC_COUNT article(s) contain banned generic Deep Analysis template text${NC}"
-  WARNINGS=$((WARNINGS + 1))
+  echo -e "${RED}❌ $BANNED_GENERIC_COUNT article(s) contain banned generic Deep Analysis template text${NC}"
+  ERRORS=$((ERRORS + 1))
 fi
 echo ""
 

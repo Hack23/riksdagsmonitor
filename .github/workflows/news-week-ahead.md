@@ -591,7 +591,7 @@ npx tsx scripts/fix-article-navigation.ts
 
 **7. Verify document count consistency** — Ensure report counts are consistent across title, lede, body, and key takeaways. Contradictory counts (17 vs 42 vs 16) are REJECTED.
 
-**7. Handle Easter/recess periods** — When parliament is in recess, explain what legislation is pending for the return session and what government agencies are acting during recess.
+**8. Handle Easter/recess periods** — When parliament is in recess, explain what legislation is pending for the return session and what government agencies are acting during recess.
 
 ### Step 4: Translate, Validate & Verify Analysis Quality
 

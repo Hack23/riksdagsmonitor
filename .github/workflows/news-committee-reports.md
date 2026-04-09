@@ -824,7 +824,7 @@ cat "analysis/daily/$ARTICLE_DATE/committeeReports/stakeholder-perspectives.md"
 
 **7. Add Key Takeaways** — If missing, add 3-5 bullet points with bold lead phrases, dok_id citations, and [HIGH/MEDIUM/LOW] confidence labels.
 
-**7. Verify policy domain labels** — Ensure each committee report is classified by its committee code (FöU=Defence, JuU=Justice, SoU=Healthcare, etc.), NOT by keyword heuristics.
+**8. Verify policy domain labels** — Ensure each committee report is classified by its committee code (FöU=Defence, JuU=Justice, SoU=Healthcare, etc.), NOT by keyword heuristics.
 
 ### Step 4: Translate Swedish Content & Verify Analysis Quality
 All Swedish API data MUST be translated. Check every article for `data-translate="true"` markers.
