@@ -159,20 +159,23 @@ const SWEDISH_LEAKAGE_PHRASES: readonly RegExp[] = [
  * approach ensures nested script/style tags are fully removed.
  */
 function extractBodyParagraphs(html: string): string[] {
-  // Use DOMParser-style iterative removal to fully strip script/style blocks.
-  // The closing-tag regex allows optional whitespace/attributes (e.g. </script >).
+  // Regex patterns that match opening-through-closing tags, handling whitespace
+  // and attributes in closing tags (e.g. </script > or </style\tbar>).
+  // The inner [^<]* with negative lookahead avoids crossing nested boundaries.
+  const SCRIPT_TAG_RE = /<script\b[^<]*(?:(?!<\/script\b)<[^<]*)*<\/script\b[^>]*>/gi;
+  const STYLE_TAG_RE = /<style\b[^<]*(?:(?!<\/style\b)<[^<]*)*<\/style\b[^>]*>/gi;
+
+  // Use iterative removal to fully strip script/style blocks.
   let cleaned = html;
   let prev = '';
-  // Iteratively remove script blocks (handles nested or malformed cases)
   while (prev !== cleaned) {
     prev = cleaned;
-    cleaned = cleaned.replace(/<script\b[^<]*(?:(?!<\/script\b)<[^<]*)*<\/script\b[^>]*>/gi, '');
+    cleaned = cleaned.replace(SCRIPT_TAG_RE, '');
   }
-  // Iteratively remove style blocks
   prev = '';
   while (prev !== cleaned) {
     prev = cleaned;
-    cleaned = cleaned.replace(/<style\b[^<]*(?:(?!<\/style\b)<[^<]*)*<\/style\b[^>]*>/gi, '');
+    cleaned = cleaned.replace(STYLE_TAG_RE, '');
   }
 
   // Extract paragraph text
@@ -222,9 +225,11 @@ function checkBodyContentLeakage(
   if (enSourcePath && existsSync(enSourcePath)) {
     const enContent = readFileSync(enSourcePath, 'utf-8');
     const enParagraphs = extractBodyParagraphs(enContent);
+    // Use a Set for O(1) lookup instead of O(n) array.includes()
+    const translatedParagraphSet = new Set(translatedParagraphs);
 
     for (const enPara of enParagraphs) {
-      if (enPara.length >= MIN_PARAGRAPH_LENGTH && translatedParagraphs.includes(enPara)) {
+      if (enPara.length >= MIN_PARAGRAPH_LENGTH && translatedParagraphSet.has(enPara)) {
         enParagraphLeakageCount++;
         if (samples.length < 5) {
           samples.push(`[EN leakage] ${enPara.slice(0, 100)}...`);
