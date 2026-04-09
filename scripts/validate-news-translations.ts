@@ -86,6 +86,7 @@ interface ContentLeakageRecord {
   readonly filename: string;
   readonly lang: string;
   readonly untranslatedParagraphs: number;
+  readonly phraseMatches: number;
   readonly totalParagraphs: number;
   readonly percentUntranslated: number;
   readonly samples: string[];
@@ -112,11 +113,11 @@ const ENGLISH_LEAKAGE_PHRASES: readonly RegExp[] = [
   /\bcascade through committee deliberations\b/i,
   /\bStandard parliamentary procedures\b/i,
   /\bWhile parliament deliberates\b/i,
-  /\bWhy It Matters\b/,
-  /\bPolicy Context\b/,
-  /\bCoalition Dynamics\b/,
-  /\bStakeholder Impact\b/,
-  /\bForward Indicators\b/,
+  /\bWhy It Matters\b/i,
+  /\bPolicy Context\b/i,
+  /\bCoalition Dynamics\b/i,
+  /\bStakeholder Impact\b/i,
+  /\bForward Indicators\b/i,
   /\bRead the full proposition\b/i,
   /\bLive intelligence platform for Swedish Parliament\b/i,
   /\bSwedish cybersecurity consultancy specializing\b/i,
@@ -158,18 +159,20 @@ const SWEDISH_LEAKAGE_PHRASES: readonly RegExp[] = [
  * approach ensures nested script/style tags are fully removed.
  */
 function extractBodyParagraphs(html: string): string[] {
-  // Iteratively remove script blocks (handles nested cases)
+  // Use DOMParser-style iterative removal to fully strip script/style blocks.
+  // The closing-tag regex allows optional whitespace/attributes (e.g. </script >).
   let cleaned = html;
   let prev = '';
+  // Iteratively remove script blocks (handles nested or malformed cases)
   while (prev !== cleaned) {
     prev = cleaned;
-    cleaned = cleaned.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, '');
+    cleaned = cleaned.replace(/<script\b[^<]*(?:(?!<\/script\b)<[^<]*)*<\/script\b[^>]*>/gi, '');
   }
   // Iteratively remove style blocks
   prev = '';
   while (prev !== cleaned) {
     prev = cleaned;
-    cleaned = cleaned.replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, '');
+    cleaned = cleaned.replace(/<style\b[^<]*(?:(?!<\/style\b)<[^<]*)*<\/style\b[^>]*>/gi, '');
   }
 
   // Extract paragraph text
@@ -177,8 +180,15 @@ function extractBodyParagraphs(html: string): string[] {
   const pRegex = /<p[^>]*>([\s\S]*?)<\/p>/gi;
   let match: RegExpExecArray | null;
   while ((match = pRegex.exec(cleaned)) !== null) {
-    // Strip remaining HTML tags from paragraph content (text-only comparison)
-    const text = (match[1] ?? '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+    // Strip remaining HTML tags from paragraph content (text-only comparison, not for rendering)
+    let text = match[1] ?? '';
+    // Iteratively remove any surviving tags
+    let prevText = '';
+    while (prevText !== text) {
+      prevText = text;
+      text = text.replace(/<[^>]*>/g, '');
+    }
+    text = text.replace(/\s+/g, ' ').trim();
     if (text.length >= MIN_PARAGRAPH_LENGTH) {
       paragraphs.push(text);
     }
@@ -214,7 +224,7 @@ function checkBodyContentLeakage(
     const enParagraphs = extractBodyParagraphs(enContent);
 
     for (const enPara of enParagraphs) {
-      if (enPara.length >= MIN_PARAGRAPH_LENGTH && translatedContent.includes(enPara)) {
+      if (enPara.length >= MIN_PARAGRAPH_LENGTH && translatedParagraphs.includes(enPara)) {
         enParagraphLeakageCount++;
         if (samples.length < 5) {
           samples.push(`[EN leakage] ${enPara.slice(0, 100)}...`);
@@ -234,7 +244,8 @@ function checkBodyContentLeakage(
     }
   }
 
-  // 3. Check for Swedish raw text leakage (applies to ALL non-SV languages including EN)
+  // 3. Check for Swedish raw text leakage in non-Swedish translated files
+  //    that reach this point (EN files return early above because they are the source)
   if (fileLang !== 'sv') {
     for (const pattern of SWEDISH_LEAKAGE_PHRASES) {
       if (pattern.test(translatedContent)) {
@@ -247,19 +258,24 @@ function checkBodyContentLeakage(
     }
   }
 
-  const totalLeakageItems = enParagraphLeakageCount + phraseLeakageCount;
   const totalParagraphs = translatedParagraphs.length;
-  // Percentage is based on EN paragraph leakage only (phrase matches are additive flags)
+  // Percentage is based on EN paragraph leakage only; phrase matches are reported separately.
   const percentUntranslated = totalParagraphs > 0
     ? Math.round((enParagraphLeakageCount / totalParagraphs) * 100)
     : 0;
+  const hasLeakage = enParagraphLeakageCount > 0 || phraseLeakageCount > 0;
 
-  if (totalLeakageItems === 0) return null;
+  if (!hasLeakage) return null;
+
+  if (phraseLeakageCount > 0 && samples.length < 5) {
+    samples.unshift(`[Phrase matches] ${phraseLeakageCount} English/Swedish leakage phrase match(es) detected.`);
+  }
 
   return {
     filename,
     lang: fileLang,
-    untranslatedParagraphs: totalLeakageItems,
+    untranslatedParagraphs: enParagraphLeakageCount,
+    phraseMatches: phraseLeakageCount,
     totalParagraphs,
     percentUntranslated,
     samples,
@@ -478,7 +494,14 @@ function validateNewsTranslations(directory: string = 'news'): number {
       if (leakage) {
         totalContentLeakage++;
         leakageFiles.push(leakage);
-        console.log(`${colors.yellow}⚠ Content leakage: ${filename} — ${leakage.untranslatedParagraphs} untranslated items (${leakage.percentUntranslated}% of ${leakage.totalParagraphs} paragraphs)${colors.reset}`);
+        const paraMsg = leakage.untranslatedParagraphs > 0
+          ? `${leakage.untranslatedParagraphs} leaked paragraph(s) (${leakage.percentUntranslated}% of ${leakage.totalParagraphs})`
+          : '';
+        const phraseMsg = leakage.phraseMatches > 0
+          ? `${leakage.phraseMatches} phrase match(es)`
+          : '';
+        const combined = [paraMsg, phraseMsg].filter(Boolean).join(', ');
+        console.log(`${colors.yellow}⚠ Content leakage: ${filename} — ${combined}${colors.reset}`);
         for (const sample of leakage.samples.slice(0, 3)) {
           console.log(`  ${colors.yellow}  ${sample}${colors.reset}`);
         }
@@ -574,7 +597,14 @@ function validateNewsTranslations(directory: string = 'news'): number {
     console.log(`\n${colors.bold}${colors.yellow}⚠ TRANSLATION QUALITY WARNING${colors.reset}`);
     console.log(`\n${colors.yellow}Articles with untranslated English/Swedish body content:${colors.reset}\n`);
     for (const rec of leakageFiles) {
-      console.log(`  ${colors.yellow}⚠${colors.reset} ${rec.filename} — ${rec.untranslatedParagraphs} untranslated items (${rec.percentUntranslated}% of ${rec.totalParagraphs} paragraphs)`);
+      const paraMsg = rec.untranslatedParagraphs > 0
+        ? `${rec.untranslatedParagraphs} leaked paragraph(s) (${rec.percentUntranslated}% of ${rec.totalParagraphs})`
+        : '';
+      const phraseMsg = rec.phraseMatches > 0
+        ? `${rec.phraseMatches} phrase match(es)`
+        : '';
+      const combined = [paraMsg, phraseMsg].filter(Boolean).join(', ');
+      console.log(`  ${colors.yellow}⚠${colors.reset} ${rec.filename} — ${combined}`);
     }
     console.log(`\n${colors.yellow}Action Required:${colors.reset}`);
     console.log(`1. The translation workflow MUST translate ALL body paragraphs to the target language`);

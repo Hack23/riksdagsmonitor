@@ -636,9 +636,11 @@ source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts \
 
 ### 3c. 🚨 MANDATORY Translation Completeness Enhancement
 
-The TypeScript script generates **structural baselines only** — it translates metadata, section headings, and labels using a static dictionary, but it does **NOT translate the article body paragraphs**. The AI agent (you) MUST translate all remaining English/Swedish body content into the target language.
+The TypeScript script generates **structural baselines only** — it translates metadata, section headings, and labels using a static dictionary, but it does **NOT translate the article body paragraphs**. The AI agent (you) MUST translate all remaining English/Swedish body content into the target language before the article is considered complete.
 
-**⏰ TIME GUARD**: If more than 35 minutes have elapsed, limit to translating the **top 3 highest-impact untranslated paragraphs per article** (lede, "Why It Matters", and the conclusion). A partial translation is better than none.
+**⏰ TIME GUARD**: If more than 35 minutes have elapsed, you MAY temporarily limit work to the **top 3 highest-impact untranslated paragraphs per article** (lede, "Why It Matters", and the conclusion) **only to save intermediate progress for a later completion pass**.
+
+**PR / PUBLICATION GATE**: Partial translations are **NOT** acceptable for creating or updating a PR intended for merge/publication. Before opening or updating a PR, the article body must be fully translated for the target language and must have **ZERO untranslated-content/leakage warnings**. If the time guard was used, mark the article as incomplete and rerun later to finish all remaining paragraphs before PR creation.
 
 #### What the TypeScript Script Translates (Already Done):
 - Meta tags (title, description, keywords, og:*, twitter:*)
@@ -694,8 +696,20 @@ After enhancing translations, run a quick spot-check:
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date -u +%Y-%m-%d)"
 
+LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
+[ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="all-extra"
+
+case "$LANGUAGES_INPUT" in
+  "nordic-extra") LANG_ARG="da,no,fi" ;;
+  "eu-extra") LANG_ARG="de,fr,es,nl" ;;
+  "cjk") LANG_ARG="ja,ko,zh" ;;
+  "rtl") LANG_ARG="ar,he" ;;
+  "all-extra") LANG_ARG="da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh" ;;
+  *) LANG_ARG="$LANGUAGES_INPUT" ;;
+esac
+
 # Count English paragraph leakage in translated articles
-for lang in da no fi de fr es nl ar he ja ko zh; do
+for lang in $(echo "$LANG_ARG" | tr ',' ' '); do
   for f in news/${ARTICLE_DATE}-*-${lang}.html; do
     [ -f "$f" ] || continue
     EN_SOURCE=$(echo "$f" | sed "s/-${lang}\\.html/-en.html/")
