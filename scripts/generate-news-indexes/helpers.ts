@@ -16,6 +16,7 @@ import type {
   ArticleTypeValue,
 } from './types.js';
 import { LANGUAGES, LANGUAGE_FLAGS, AVAILABLE_IN_TRANSLATIONS } from './constants.js';
+import { decodeHtmlEntities } from '../html-utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -79,11 +80,12 @@ export function parseArticleMetadata(filePath: string): NewsArticleMetadata | nu
     const lang: string = langMatch[1]!;
 
     // Extract metadata from HTML meta tags
+    // Decode HTML entities to UTF-8 to prevent double-escaping in index pages
     const metadata: NewsArticleMetadata = {
       slug: fileName,
       lang,
-      title: extractMetaContent(content, 'og:title') || extractTitle(content) || 'Untitled',
-      description: extractMetaContent(content, 'og:description') || extractMetaContent(content, 'description') || '',
+      title: decodeHtmlEntities(extractMetaContent(content, 'og:title') || extractTitle(content) || 'Untitled'),
+      description: decodeHtmlEntities(extractMetaContent(content, 'og:description') || extractMetaContent(content, 'description') || ''),
       date: normalizeDateString(
         extractMetaContent(content, 'article:published_time') ||
         extractMetaContent(content, 'date') ||
@@ -92,7 +94,7 @@ export function parseArticleMetadata(filePath: string): NewsArticleMetadata | nu
       ),
       type: classifyArticleType(content, fileName),
       topics: extractTopics(content),
-      tags: extractTags(content),
+      tags: decodeHtmlEntities(extractTags(content).join('|||')).split('|||'),
     };
 
     return metadata;

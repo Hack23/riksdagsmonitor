@@ -190,6 +190,17 @@ bash({ command: "..." }) // ← WRONG: missing description
 3. **Use `find -exec`** instead of for-loops with command substitution
 4. **Use direct paths** when possible (e.g., `cat analysis/daily/2026-04-07/realtime-1411/synthesis-summary.md`)
 
+## 🔤 UTF-8 Encoding — MANDATORY for ALL Content
+
+> **NON-NEGOTIABLE**: All article content, titles, descriptions, and metadata MUST use native UTF-8 characters. NEVER use HTML numeric entities (`&#228;`, `&#246;`, `&#229;`) for non-ASCII characters like Swedish åäö, German üö, French éè, etc.
+
+**Rules:**
+1. Write Swedish characters as UTF-8: `ö`, `ä`, `å`, `Ö`, `Ä`, `Å` — NEVER as `&#246;`, `&#228;`, etc.
+2. Author name: Always `James Pether Sörling` — never `S&#246;rling`.
+3. All HTML files use `<meta charset="UTF-8">` — entities are unnecessary and cause double-escaping bugs.
+4. This applies to ALL languages and ALL output: titles, meta tags, JSON-LD, article body, analysis files.
+
+
 ## ⚠️ NON-NEGOTIABLE RULES
 
 1. Every run **MUST** end with exactly one safe output tool call:
