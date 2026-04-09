@@ -500,20 +500,19 @@ else
 fi
 
 # Check 15: No banned generic template text in article HTML
+# Uses detectBannedPatterns() from shared.ts as the single canonical pattern list
 BANNED_GENERIC_COUNT=0
-for article in news/*.html; do
-  if [ -f "$article" ]; then
-    if grep -q 'The pace of activity signals the political urgency' "$article" 2>/dev/null || \
-       grep -q 'broad legislative push that will shape multiple aspects' "$article" 2>/dev/null || \
-       grep -q 'culmination of legislative review, with recommendations that guide' "$article" 2>/dev/null || \
-       grep -q 'cascade through committee deliberations, chamber votes' "$article" 2>/dev/null || \
-       grep -q 'While parliament deliberates these legislative matters' "$article" 2>/dev/null || \
-       grep -q 'Standard parliamentary procedures are being followed' "$article" 2>/dev/null; then
+ARTICLE_FILES=(news/*.html)
+if [ -f "${ARTICLE_FILES[0]}" ] && command -v npx &>/dev/null; then
+  BANNED_OUTPUT=$(npx tsx scripts/check-banned-patterns.ts news/*.html 2>/dev/null) || true
+  if [ -n "$BANNED_OUTPUT" ]; then
+    while IFS= read -r line; do
+      FILE=$(echo "$line" | jq -r '.file' 2>/dev/null) || true
+      echo -e "${RED}❌ $FILE contains BANNED generic template text — AI must replace${NC}"
       BANNED_GENERIC_COUNT=$((BANNED_GENERIC_COUNT + 1))
-      echo -e "${RED}❌ $article contains BANNED generic template text — AI must replace${NC}"
-    fi
+    done <<< "$BANNED_OUTPUT"
   fi
-done
+fi
 
 if [ "$BANNED_GENERIC_COUNT" -gt 0 ]; then
   echo -e "${RED}❌ $BANNED_GENERIC_COUNT article(s) contain banned generic Deep Analysis template text${NC}"

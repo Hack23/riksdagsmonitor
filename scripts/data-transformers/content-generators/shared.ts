@@ -406,7 +406,7 @@ function analyseWinnersLosers(
     }
   }
 
-  return parts.join(' ') || '<!-- AI_MUST_REPLACE: winners_losers_analysis -->';
+  return parts.join(' ') || '<!-- AI_MUST_REPLACE: winners_losers_analysis — Analyse the political winners and losers of these developments, identifying which parties gain strategic advantage and why. Output MUST be in the article\'s language. -->';
 }
 
 function govAdvantageText(lang: Language | string, gov: number, opp: number): string {
@@ -664,11 +664,11 @@ function focusedAgendaText(_lang: Language | string, n: number): string {
 }
 
 function instabilityText(_lang: Language | string): string {
-  return '<!-- AI_MUST_REPLACE: coalition_instability — Provide specific analysis of current coalition stability indicators, recent fractures, and how instability affects these specific legislative items -->';
+  return '<!-- AI_MUST_REPLACE: coalition_instability — Provide specific analysis of current coalition stability indicators, recent fractures, and how instability affects these specific legislative items. Output MUST be in the article\'s language. -->';
 }
 
 function defaultWhyText(_lang: Language | string): string {
-  return '<!-- AI_MUST_REPLACE: why_matters — Write specific analysis of why these particular parliamentary developments matter, citing concrete political dynamics, stakeholder impacts, and strategic implications -->';
+  return '<!-- AI_MUST_REPLACE: why_matters — Write specific analysis of why these particular parliamentary developments matter, citing concrete political dynamics, stakeholder impacts, and strategic implications. Output MUST be in the article\'s language. -->';
 }
 
 function generateImpactAnalysis(docs: RawDocument[], lang: Language | string, cia: CIAContext | undefined): string {
@@ -715,7 +715,7 @@ function thinMajorityImpactText(_lang: Language | string, margin: number): strin
 }
 
 function genericImpactText(_lang: Language | string): string {
-  return '<!-- AI_MUST_REPLACE: political_impact — Write specific analysis of the political impact of these items, naming parties, citing vote margins, and identifying which measures will pass or face challenges -->';
+  return '<!-- AI_MUST_REPLACE: political_impact — Write specific analysis of the political impact of these items, naming parties, citing vote margins, and identifying which measures will pass or face challenges. Output MUST be in the article\'s language. -->';
 }
 
 function generateConsequencesAnalysis(docs: RawDocument[], lang: Language | string, _articleType: string): string {
@@ -744,7 +744,7 @@ function motConsequencesText(_lang: Language | string, n: number): string {
 }
 
 function genericConsequencesText(_lang: Language | string): string {
-  return '<!-- AI_MUST_REPLACE: consequences — Write specific analysis of the consequences and next steps for these items, including committee timelines, expected vote dates, implementation requirements, and political ramifications -->';
+  return '<!-- AI_MUST_REPLACE: consequences — Write specific analysis of the consequences and next steps for these items, including committee timelines, expected vote dates, implementation requirements, and political ramifications. Output MUST be in the article\'s language. -->';
 }
 
 function generateCriticalAssessment(docs: RawDocument[], lang: Language | string, cia: CIAContext | undefined): string {
@@ -783,11 +783,11 @@ function generateCriticalAssessment(docs: RawDocument[], lang: Language | string
 }
 
 function singlePartyDominanceText(_lang: Language | string): string {
-  return '<!-- AI_MUST_REPLACE: single_party_dominance — Analyse why one party dominates opposition activity: strategic focus, internal party dynamics, or failure of other parties to engage? Cite specific evidence. -->';
+  return '<!-- AI_MUST_REPLACE: single_party_dominance — Analyse why one party dominates opposition activity: strategic focus, internal party dynamics, or failure of other parties to engage? Cite specific evidence. Output MUST be in the article\'s language. -->';
 }
 
 function debateAnalysisMarker(): string {
-  return '<!-- AI_MUST_REPLACE: debate_analysis -->';
+  return '<!-- AI_MUST_REPLACE: debate_analysis — Analyse the available debate data and provide specific insights on parliamentary discourse. Output MUST be in the article\'s language. -->';
 }
 
 function criticalStabilityText(lang: Language | string): string {
@@ -799,7 +799,7 @@ function criticalStabilityText(lang: Language | string): string {
 }
 
 function defaultCriticalText(_lang: Language | string): string {
-  return '<!-- AI_MUST_REPLACE: critical_assessment — Write a critical assessment that challenges assumptions, identifies gaps between intent and likely outcomes, evaluates which measures face implementation risks, and provides an honest evaluation of the political dynamics at play -->';
+  return '<!-- AI_MUST_REPLACE: critical_assessment — Write a critical assessment that challenges assumptions, identifies gaps between intent and likely outcomes, evaluates which measures face implementation risks, and provides an honest evaluation of the political dynamics at play. Output MUST be in the article\'s language. -->';
 }
 
 function generatePerspectivesAnalysis(docs: RawDocument[], lang: Language | string, parties: Map<string, number>): string {

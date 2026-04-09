@@ -108,6 +108,45 @@ describe('generateDeepAnalysisSection', () => {
     // All motions (no gov docs) and no CIA context → should hit the fallback branch
     const docs = [makeDoc({ doktyp: 'mot' }), makeDoc({ doktyp: 'mot', parti: 'M' })];
     const result = generateDeepAnalysisSection({ documents: docs, lang: 'en', articleType: 'motions' });
-    expect(result).toContain('<!-- AI_MUST_REPLACE: winners_losers_analysis -->');
+    expect(result).toContain('<!-- AI_MUST_REPLACE: winners_losers_analysis');
+  });
+
+  it('emits AI_MUST_REPLACE markers in Deep Analysis subsections', () => {
+    const docs = [makeDoc({ doktyp: 'prop' }), makeDoc({ doktyp: 'mot', parti: 'M' })];
+    const result = generateDeepAnalysisSection({ documents: docs, lang: 'en', articleType: 'propositions' });
+
+    // Timeline, why-matters, impact, consequences, and critical subsections should all contain markers
+    expect(result).toContain('AI_MUST_REPLACE: timeline_context');
+    expect(result).toContain('AI_MUST_REPLACE: political_impact');
+    expect(result).toContain('AI_MUST_REPLACE: consequences');
+    expect(result).toContain('AI_MUST_REPLACE: critical_assessment');
+  });
+
+  it('all AI_MUST_REPLACE markers include language requirement', () => {
+    const docs = [makeDoc({ doktyp: 'prop' }), makeDoc({ doktyp: 'mot', parti: 'M' })];
+    const result = generateDeepAnalysisSection({ documents: docs, lang: 'en', articleType: 'propositions' });
+
+    // Extract all AI_MUST_REPLACE markers from the output
+    const markers = result.match(/<!-- AI_MUST_REPLACE:.*?-->/g) || [];
+    expect(markers.length).toBeGreaterThan(0);
+    for (const marker of markers) {
+      expect(marker).toContain("Output MUST be in the article's language");
+    }
+  });
+
+  it('does not emit deprecated generic template prose in Deep Analysis output', () => {
+    const docs = [
+      makeDoc({ doktyp: 'prop' }),
+      makeDoc({ doktyp: 'mot', parti: 'M' }),
+      makeDoc({ doktyp: 'bet', parti: 'SD' }),
+    ];
+    const result = generateDeepAnalysisSection({ documents: docs, lang: 'en', articleType: 'propositions' });
+
+    // None of the old generic template text should appear
+    expect(result).not.toContain('The pace of activity signals the political urgency');
+    expect(result).not.toContain('broad legislative push that will shape multiple aspects');
+    expect(result).not.toContain('culmination of legislative review');
+    expect(result).not.toContain('cascade through committee deliberations');
+    expect(result).not.toContain('Standard parliamentary procedures are being followed');
   });
 });
