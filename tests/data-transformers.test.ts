@@ -1216,7 +1216,7 @@ describe('Data Transformers', () => {
       } as MockArticlePayload, 'week-ahead', 'en') as string;
 
       // pillar-transition is now empty — generic transitions deprecated in favor of AI-written prose
-      expect(content).not.toContain('While parliament deliberates');
+      expect(content).not.toContain('pillar-transition');
     });
 
     it('should render key takeaways in propositions content', () => {
@@ -1251,7 +1251,7 @@ describe('Data Transformers', () => {
       } as MockArticlePayload, 'propositions', 'en') as string;
 
       // pillar-transition is now empty — generic transitions deprecated in favor of AI-written prose
-      expect(content).not.toContain('While parliament deliberates');
+      expect(content).not.toContain('pillar-transition');
     });
 
     it('should include policy domain cross-analysis in propositions key takeaways', () => {

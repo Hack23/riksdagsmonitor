@@ -472,9 +472,9 @@ fi
 echo ""
 
 # ============================================================================
-# Check: No surviving AI_MUST_REPLACE markers in article HTML
+# Check 14: No surviving AI_MUST_REPLACE markers in article HTML
 # ============================================================================
-echo "📋 Check: No AI_MUST_REPLACE markers surviving in article HTML"
+echo "📋 Check 14: No AI_MUST_REPLACE markers surviving in article HTML"
 
 AI_MARKER_COUNT=0
 for article in news/*.html; do
@@ -499,7 +499,7 @@ else
   fi
 fi
 
-# Check for banned generic template text in today's articles
+# Check 15: No banned generic template text in article HTML
 BANNED_GENERIC_COUNT=0
 for article in news/*.html; do
   if [ -f "$article" ]; then
