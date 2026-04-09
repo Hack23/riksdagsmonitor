@@ -134,13 +134,10 @@ export function getLocalizedHeading(lang: Language | string, pillar: EditorialPi
 }
 
 /**
- * Analytical transition phrases bridging adjacent editorial pillars.
- * DEPRECATED: These generic transitions are now replaced by AI_MUST_REPLACE markers.
- * AI agents MUST write article-specific transitions that connect the actual content
- * being discussed, not generic parliamentary boilerplate.
- *
- * The getPillarTransition() function now returns empty string for all transitions,
- * forcing the AI agent to write specific connective prose or omit transitions entirely.
+ * DEPRECATED: Generic inter-pillar transitions have been removed from this module.
+ * All transition values are intentionally empty strings, so callers can either
+ * provide article-specific connective prose or skip rendering the transition
+ * element entirely when the value is falsy.
  */
 export const INTER_PILLAR_TRANSITIONS: Readonly<Record<Language, Readonly<Record<string, string>>>> = {
   en: {
