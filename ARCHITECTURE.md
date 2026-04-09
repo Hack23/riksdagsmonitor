@@ -87,13 +87,13 @@ graph TB
     CIA -->|Fetches data from| Parliament
     CIA -->|Fetches data from| Government
     
-    style Users fill:#e1f5ff,stroke:#0277bd,stroke-width:2px
-    style System fill:#4caf50,stroke:#2e7d32,stroke-width:3px
-    style CIA fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px
-    style GitHub fill:#ff9800,stroke:#e65100,stroke-width:2px
-    style AWS fill:#2196f3,stroke:#1565c0,stroke-width:2px
-    style Parliament fill:#ffeb3b,stroke:#f57f17,stroke-width:2px
-    style Government fill:#ffeb3b,stroke:#f57f17,stroke-width:2px
+    style Users fill:#e1f5ff,stroke:#0277bd,stroke-width:2px,color:#000000
+    style System fill:#4caf50,stroke:#2e7d32,stroke-width:3px,color:#000000
+    style CIA fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
+    style GitHub fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    style AWS fill:#2196f3,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style Parliament fill:#ffeb3b,stroke:#f57f17,stroke-width:2px,color:#000000
+    style Government fill:#ffeb3b,stroke:#f57f17,stroke-width:2px,color:#000000
 ```
 
 ### Context Relationships
@@ -172,16 +172,16 @@ graph TB
     Actions -->|Deploy| S3US
     Actions -->|Deploy| GHCDN
     
-    style Users fill:#e1f5ff
-    style CF fill:#4caf50
-    style S3US fill:#2196f3
-    style S3EU fill:#64b5f6
-    style GHCDN fill:#90caf9
-    style Static fill:#81c784
-    style Dashboards fill:#ff9800
-    style NewsEngine fill:#9c27b0
-    style GitHub fill:#ff6f00
-    style Actions fill:#00bcd4
+    style Users fill:#e1f5ff,color:#000000
+    style CF fill:#4caf50,color:#000000
+    style S3US fill:#2196f3,color:#ffffff
+    style S3EU fill:#64b5f6,color:#000000
+    style GHCDN fill:#90caf9,color:#000000
+    style Static fill:#81c784,color:#000000
+    style Dashboards fill:#ff9800,color:#000000
+    style NewsEngine fill:#9c27b0,color:#ffffff
+    style GitHub fill:#ff6f00,color:#000000
+    style Actions fill:#00bcd4,color:#000000
 ```
 
 ### Container Responsibilities
@@ -287,16 +287,16 @@ graph TD
     
     CSS --> Fonts
     
-    style Index fill:#4caf50
-    style InlineScript fill:#ff9800
-    style CommitteeDash fill:#2196f3
-    style CoalitionDash fill:#2196f3
-    style ElectionDash fill:#2196f3
-    style Placeholders fill:#9e9e9e
-    style CSS fill:#00bcd4
-    style Chart fill:#ff9800
-    style D3 fill:#ff9800
-    style NewsGen fill:#9c27b0
+    style Index fill:#4caf50,color:#000000
+    style InlineScript fill:#ff9800,color:#000000
+    style CommitteeDash fill:#2196f3,color:#ffffff
+    style CoalitionDash fill:#2196f3,color:#ffffff
+    style ElectionDash fill:#2196f3,color:#ffffff
+    style Placeholders fill:#9e9e9e,color:#000000
+    style CSS fill:#00bcd4,color:#000000
+    style Chart fill:#ff9800,color:#000000
+    style D3 fill:#ff9800,color:#000000
+    style NewsGen fill:#9c27b0,color:#ffffff
 ```
 
 ### Component Details
@@ -415,11 +415,11 @@ graph LR
     T --> V[Live on riksdagsmonitor.com ✅]
     U --> W[DR Standby Ready ✅]
     
-    style D fill:#4caf50
-    style E fill:#ff9800
-    style F fill:#f44336
+    style D fill:#4caf50,color:#000000
+    style E fill:#ff9800,color:#000000
+    style F fill:#f44336,color:#ffffff
     style L fill:#f44336,color:#fff
-    style O fill:#4caf50
+    style O fill:#4caf50,color:#000000
     style V fill:#4caf50,color:#fff
     style W fill:#2196f3,color:#fff
 ```
@@ -750,9 +750,9 @@ graph LR
     Git --> S3
     S3 --> CDN
     
-    style Git fill:#ff9800
-    style S3 fill:#2196f3
-    style CDN fill:#4caf50
+    style Git fill:#ff9800,color:#000000
+    style S3 fill:#2196f3,color:#ffffff
+    style CDN fill:#4caf50,color:#000000
 ```
 
 ### Data Sources
@@ -787,11 +787,11 @@ graph TD
     Watch --> Opposition
     Opposition --> Ahead
     
-    style Lead fill:#ff9800,stroke:#e65100,stroke-width:2px
-    style Pulse fill:#4caf50,stroke:#2e7d32,stroke-width:2px
-    style Watch fill:#2196f3,stroke:#1565c0,stroke-width:2px
-    style Opposition fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px
-    style Ahead fill:#00bcd4,stroke:#00838f,stroke-width:2px
+    style Lead fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    style Pulse fill:#4caf50,stroke:#2e7d32,stroke-width:2px,color:#000000
+    style Watch fill:#2196f3,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style Opposition fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
+    style Ahead fill:#00bcd4,stroke:#00838f,stroke-width:2px,color:#000000
 ```
 
 **Pillar Definitions:**
@@ -875,10 +875,10 @@ graph LR
     State -->|Read| Realtime
     State -->|Read| Generator
     
-    style State fill:#ff9800,stroke:#e65100,stroke-width:2px
-    style Evening fill:#4caf50,stroke:#2e7d32,stroke-width:2px
-    style Realtime fill:#2196f3,stroke:#1565c0,stroke-width:2px
-    style Generator fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px
+    style State fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    style Evening fill:#4caf50,stroke:#2e7d32,stroke-width:2px,color:#000000
+    style Realtime fill:#2196f3,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style Generator fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
 ```
 
 **State File Schema (workflow-state.json):**
@@ -936,11 +936,11 @@ graph TB
     
     Validation --> Commit[Git Commit<br/>14 HTML files<br/>news/YYYY-MM-DD-evening-analysis*.html]
     
-    style Source fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px
-    style Nordic fill:#4caf50,stroke:#2e7d32,stroke-width:2px
-    style EU fill:#2196f3,stroke:#1565c0,stroke-width:2px
-    style Global fill:#ff9800,stroke:#e65100,stroke-width:2px
-    style Validation fill:#00bcd4,stroke:#00838f,stroke-width:2px
+    style Source fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
+    style Nordic fill:#4caf50,stroke:#2e7d32,stroke-width:2px,color:#000000
+    style EU fill:#2196f3,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style Global fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    style Validation fill:#00bcd4,stroke:#00838f,stroke-width:2px,color:#000000
 ```
 
 **Language-Specific Requirements:**
@@ -996,12 +996,12 @@ graph TD
     Index --> Orchestrator
     Index --> Validation
 
-    style Types fill:#4caf50,stroke:#2e7d32,stroke-width:2px
-    style Orchestrator fill:#2196f3,stroke:#1565c0,stroke-width:2px
-    style Validation fill:#ff9800,stroke:#e65100,stroke-width:2px
-    style Index fill:#9e9e9e,stroke:#616161,stroke-width:2px
-    style NewsTypes fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px
-    style Template fill:#00bcd4,stroke:#00838f,stroke-width:2px
+    style Types fill:#4caf50,stroke:#2e7d32,stroke-width:2px,color:#000000
+    style Orchestrator fill:#2196f3,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style Validation fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    style Index fill:#9e9e9e,stroke:#616161,stroke-width:2px,color:#000000
+    style NewsTypes fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
+    style Template fill:#00bcd4,stroke:#00838f,stroke-width:2px,color:#000000
 ```
 
 #### Pipeline Lifecycle Stages
@@ -1105,12 +1105,12 @@ graph TD
     Layer4 --> Layer5
     Layer5 --> Layer6
     
-    style Layer1 fill:#4caf50,stroke:#2e7d32,stroke-width:2px
-    style Layer2 fill:#4caf50,stroke:#2e7d32,stroke-width:2px
-    style Layer3 fill:#ff9800,stroke:#e65100,stroke-width:2px
-    style Layer4 fill:#ff9800,stroke:#e65100,stroke-width:2px
-    style Layer5 fill:#2196f3,stroke:#1565c0,stroke-width:2px
-    style Layer6 fill:#f44336,stroke:#c62828,stroke-width:2px
+    style Layer1 fill:#4caf50,stroke:#2e7d32,stroke-width:2px,color:#000000
+    style Layer2 fill:#4caf50,stroke:#2e7d32,stroke-width:2px,color:#000000
+    style Layer3 fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    style Layer4 fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    style Layer5 fill:#2196f3,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style Layer6 fill:#f44336,stroke:#c62828,stroke-width:2px,color:#ffffff
 ```
 
 ### Security Control Summary
@@ -1175,12 +1175,12 @@ graph TB
     
     Users -.->|DNS Failover| GitHub
     
-    style S3US fill:#2196f3,stroke:#1565c0,stroke-width:2px
-    style S3EU fill:#64b5f6,stroke:#1976d2,stroke-width:2px
-    style Edge1 fill:#90caf9,stroke:#42a5f5,stroke-width:2px
-    style Edge2 fill:#90caf9,stroke:#42a5f5,stroke-width:2px
-    style Edge3 fill:#90caf9,stroke:#42a5f5,stroke-width:2px
-    style GitHub fill:#ff9800,stroke:#e65100,stroke-width:2px
+    style S3US fill:#2196f3,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style S3EU fill:#64b5f6,stroke:#1976d2,stroke-width:2px,color:#000000
+    style Edge1 fill:#90caf9,stroke:#42a5f5,stroke-width:2px,color:#000000
+    style Edge2 fill:#90caf9,stroke:#42a5f5,stroke-width:2px,color:#000000
+    style Edge3 fill:#90caf9,stroke:#42a5f5,stroke-width:2px,color:#000000
+    style GitHub fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
 ```
 
 ### Performance Characteristics
@@ -1248,10 +1248,10 @@ graph TB
     Deploy --> Dashboard
     Performance --> Dashboard
     
-    style GH fill:#ff9800,stroke:#e65100,stroke-width:2px
-    style Security fill:#f44336,stroke:#c62828,stroke-width:2px
-    style Dashboard fill:#2196f3,stroke:#1565c0,stroke-width:2px
-    style Slack fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px
+    style GH fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    style Security fill:#f44336,stroke:#c62828,stroke-width:2px,color:#ffffff
+    style Dashboard fill:#2196f3,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style Slack fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
 ```
 
 ### Metrics Collection
@@ -1360,12 +1360,12 @@ graph LR
     DeployS3 --> LivePrimary[Live on CloudFront<br/>riksdagsmonitor.com]
     DeployGH --> LiveDR[DR Standby on GitHub Pages<br/>riksdagsmonitor.com/DR]
     
-    style Quality fill:#4caf50,stroke:#2e7d32,stroke-width:2px
-    style Security fill:#f44336,stroke:#c62828,stroke-width:2px
-    style Tests fill:#2196f3,stroke:#1565c0,stroke-width:2px
-    style Merge fill:#ff9800,stroke:#e65100,stroke-width:2px
-    style LivePrimary fill:#4caf50,stroke:#2e7d32,stroke-width:3px
-    style LiveDR fill:#2196f3,stroke:#1565c0,stroke-width:2px
+    style Quality fill:#4caf50,stroke:#2e7d32,stroke-width:2px,color:#000000
+    style Security fill:#f44336,stroke:#c62828,stroke-width:2px,color:#ffffff
+    style Tests fill:#2196f3,stroke:#1565c0,stroke-width:2px,color:#ffffff
+    style Merge fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    style LivePrimary fill:#4caf50,stroke:#2e7d32,stroke-width:3px,color:#000000
+    style LiveDR fill:#2196f3,stroke:#1565c0,stroke-width:2px,color:#ffffff
 ```
 
 ### Deployment Strategy
@@ -1578,10 +1578,10 @@ graph TB
     RR --> Regering
     SCB --> SCBData
     
-    style Agent fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px
-    style Skills fill:#4caf50,stroke:#2e7d32,stroke-width:2px
-    style RR fill:#ff9800,stroke:#e65100,stroke-width:2px
-    style GH fill:#2196f3,stroke:#1565c0,stroke-width:2px
+    style Agent fill:#9c27b0,stroke:#6a1b9a,stroke-width:2px,color:#ffffff
+    style Skills fill:#4caf50,stroke:#2e7d32,stroke-width:2px,color:#000000
+    style RR fill:#ff9800,stroke:#e65100,stroke-width:2px,color:#000000
+    style GH fill:#2196f3,stroke:#1565c0,stroke-width:2px,color:#ffffff
 ```
 
 #### riksdag-regering-mcp Server

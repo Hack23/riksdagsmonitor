@@ -91,10 +91,10 @@ flowchart TD
     U --> V[AWS CloudFront Cache Invalidation]
     V --> W[Production Live]
 
-    style A fill:#4caf50
-    style W fill:#4caf50
-    style F fill:#f44336
-    style S fill:#f44336
+    style A fill:#4caf50,color:#000000
+    style W fill:#4caf50,color:#000000
+    style F fill:#f44336,color:#ffffff
+    style S fill:#f44336,color:#ffffff
 ```
 
 ---
@@ -140,9 +140,9 @@ flowchart TD
     T -->|Yes| V[Merge to Main]
     V --> W[Deploy to Production]
 
-    style A fill:#4caf50
-    style W fill:#4caf50
-    style I fill:#ff9800
+    style A fill:#4caf50,color:#000000
+    style W fill:#4caf50,color:#000000
+    style I fill:#ff9800,color:#000000
 ```
 
 ---
@@ -182,9 +182,9 @@ flowchart TD
 
     L --> S
 
-    style A fill:#4caf50
-    style S fill:#4caf50
-    style K fill:#ff9800
+    style A fill:#4caf50,color:#000000
+    style S fill:#4caf50,color:#000000
+    style K fill:#ff9800,color:#000000
 ```
 
 ---
@@ -237,8 +237,8 @@ flowchart TD
 
     X -->|No| AA[Continue Dashboard Exploration]
 
-    style A fill:#4caf50
-    style V fill:#00bcd4
+    style A fill:#4caf50,color:#000000
+    style V fill:#00bcd4,color:#000000
 ```
 
 ---
@@ -276,10 +276,10 @@ flowchart TD
     R --> S[Sign with Sigstore]
     S --> T[All Security Checks Passed]
 
-    style A fill:#4caf50
-    style T fill:#4caf50
-    style G fill:#f44336
-    style P fill:#f44336
+    style A fill:#4caf50,color:#000000
+    style T fill:#4caf50,color:#000000
+    style G fill:#f44336,color:#ffffff
+    style P fill:#f44336,color:#ffffff
 ```
 
 ---
@@ -316,8 +316,8 @@ flowchart TD
     Q --> R[Update Language Index Pages]
     R --> S[14 Language Files Ready]
 
-    style A fill:#4caf50
-    style S fill:#4caf50
+    style A fill:#4caf50,color:#000000
+    style S fill:#4caf50,color:#000000
 ```
 
 ---
@@ -402,14 +402,14 @@ flowchart TD
     DEPLOY --> CDN[AWS CloudFront Invalidation]
     CDN --> PROD[Production Live at riksdagsmonitor.com]
 
-    style DEV fill:#4caf50
-    style PROD fill:#4caf50
-    style AUDIT_FAIL fill:#f44336
-    style HTML_FAIL fill:#f44336
-    style LINT_FAIL fill:#f44336
-    style TEST_FAIL fill:#f44336
-    style E2E_FAIL fill:#f44336
-    style BLOCK_MERGE fill:#f44336
+    style DEV fill:#4caf50,color:#000000
+    style PROD fill:#4caf50,color:#000000
+    style AUDIT_FAIL fill:#f44336,color:#ffffff
+    style HTML_FAIL fill:#f44336,color:#ffffff
+    style LINT_FAIL fill:#f44336,color:#ffffff
+    style TEST_FAIL fill:#f44336,color:#ffffff
+    style E2E_FAIL fill:#f44336,color:#ffffff
+    style BLOCK_MERGE fill:#f44336,color:#ffffff
 ```
 
 ---
@@ -486,10 +486,10 @@ flowchart TD
     MERGE --> DEPLOY_PIPELINE[Deployment Pipeline]
     DEPLOY_PIPELINE --> NEWS_LIVE[News Article Live in 14 Languages]
 
-    style CRON fill:#2196f3
-    style NEWS_LIVE fill:#4caf50
-    style SKIP fill:#ff9800
-    style DISCARD fill:#f44336
+    style CRON fill:#2196f3,color:#ffffff
+    style NEWS_LIVE fill:#4caf50,color:#000000
+    style SKIP fill:#ff9800,color:#000000
+    style DISCARD fill:#f44336,color:#ffffff
 ```
 
 ---
@@ -542,10 +542,10 @@ flowchart TD
     SCHEMA_ERROR --> STALE_BANNER
     STALE_BANNER --> FINAL_DASHBOARD
 
-    style CRON2 fill:#2196f3
-    style FINAL_DASHBOARD fill:#4caf50
-    style ERROR_LOG fill:#ff9800
-    style SCHEMA_ERROR fill:#ff9800
+    style CRON2 fill:#2196f3,color:#ffffff
+    style FINAL_DASHBOARD fill:#4caf50,color:#000000
+    style ERROR_LOG fill:#ff9800,color:#000000
+    style SCHEMA_ERROR fill:#ff9800,color:#000000
 ```
 
 ---
@@ -588,9 +588,9 @@ flowchart LR
     RENDER_CHARTS --> LANG_SWITCHER[Language Switcher Component]
     LANG_SWITCHER --> FINAL_PAGE[Complete Interactive Page]
 
-    style USER fill:#4caf50
-    style FINAL_PAGE fill:#4caf50
-    style GHPAGES fill:#ff9800
+    style USER fill:#4caf50,color:#000000
+    style FINAL_PAGE fill:#4caf50,color:#000000
+    style GHPAGES fill:#ff9800,color:#000000
 ```
 
 ---
@@ -649,10 +649,10 @@ flowchart TD
     BUILD_PROVENANCE --> MERGE_ALLOWED[PR Merge Allowed]
     ALL_PASS -->|No| BLOCK_PR
 
-    style CODE_CHANGE fill:#4caf50
-    style MERGE_ALLOWED fill:#4caf50
-    style BLOCK_PR fill:#f44336
-    style IMMEDIATE_BLOCK fill:#f44336
+    style CODE_CHANGE fill:#4caf50,color:#000000
+    style MERGE_ALLOWED fill:#4caf50,color:#000000
+    style BLOCK_PR fill:#f44336,color:#ffffff
+    style IMMEDIATE_BLOCK fill:#f44336,color:#ffffff
 ```
 
 ---
@@ -719,9 +719,9 @@ flowchart TD
     SEO_FIX --> SEO_AUDIT
     SEO_CHECK -->|Valid| ALL_14_READY[14 Language Files Ready]
 
-    style SOURCE_EN fill:#4caf50
-    style ALL_14_READY fill:#4caf50
-    style SEO_FIX fill:#ff9800
+    style SOURCE_EN fill:#4caf50,color:#000000
+    style ALL_14_READY fill:#4caf50,color:#000000
+    style SEO_FIX fill:#ff9800,color:#000000
 ```
 
 ---
@@ -769,11 +769,11 @@ flowchart TD
     HASH_SIGN --> STORE_VALIDATED[Store Validated Data]
     FALLBACK_CACHE --> STALE_FLAG[Mark Data as Stale]
 
-    style DATA_INGEST fill:#2196f3
-    style APPROVED_DATA fill:#4caf50
-    style SCHEMA_ERR fill:#f44336
-    style QUARANTINE fill:#ff9800
-    style STALE_FLAG fill:#ff9800
+    style DATA_INGEST fill:#2196f3,color:#ffffff
+    style APPROVED_DATA fill:#4caf50,color:#000000
+    style SCHEMA_ERR fill:#f44336,color:#ffffff
+    style QUARANTINE fill:#ff9800,color:#000000
+    style STALE_FLAG fill:#ff9800,color:#000000
 ```
 
 ---
@@ -812,10 +812,10 @@ flowchart TD
     INTEGRITY_CONFIRMED --> PUBLISH_GATE[Publishing Gate]
     PUBLISH_GATE --> PUBLISHED[Content Published]
 
-    style CONTENT_CREATE fill:#2196f3
-    style PUBLISHED fill:#4caf50
-    style INCIDENT_ALERT fill:#f44336
-    style CONTENT_QUARANTINE fill:#f44336
+    style CONTENT_CREATE fill:#2196f3,color:#ffffff
+    style PUBLISHED fill:#4caf50,color:#000000
+    style INCIDENT_ALERT fill:#f44336,color:#ffffff
+    style CONTENT_QUARANTINE fill:#f44336,color:#ffffff
 ```
 
 ---
@@ -854,10 +854,10 @@ flowchart TD
     JOB_COMPLETE --> RUNNER_TEARDOWN[Runner Ephemeral Teardown]
     RUNNER_TEARDOWN --> NO_PERSIST[No Data Persists]
 
-    style RUNNER_START fill:#2196f3
-    style NO_PERSIST fill:#4caf50
-    style DENY_LOG fill:#f44336
-    style ALERT_EGRESS fill:#f44336
+    style RUNNER_START fill:#2196f3,color:#ffffff
+    style NO_PERSIST fill:#4caf50,color:#000000
+    style DENY_LOG fill:#f44336,color:#ffffff
+    style ALERT_EGRESS fill:#f44336,color:#ffffff
 ```
 
 ---

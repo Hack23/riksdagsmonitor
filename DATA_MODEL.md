@@ -1612,13 +1612,13 @@ graph TB
     LocalCache -->|Cache Hit| Dashboard
     LocalCache -->|Cache Miss| GitHub
     
-    style Riksdag fill:#ff9800
-    style ETL fill:#4caf50
-    style DB fill:#2196f3
-    style Export fill:#9c27b0
-    style GitHub fill:#ff9800
-    style CloudFront fill:#4caf50
-    style Dashboard fill:#00bcd4
+    style Riksdag fill:#ff9800,color:#000000
+    style ETL fill:#4caf50,color:#000000
+    style DB fill:#2196f3,color:#ffffff
+    style Export fill:#9c27b0,color:#ffffff
+    style GitHub fill:#ff9800,color:#000000
+    style CloudFront fill:#4caf50,color:#000000
+    style Dashboard fill:#00bcd4,color:#000000
 ```
 
 ---
@@ -1789,11 +1789,11 @@ graph LR
     C -->|Cache| G[LocalStorage]
     G -->|Serve| D
     
-    style A fill:#ff9800
-    style B fill:#4caf50
-    style C fill:#2196f3
-    style D fill:#9c27b0
-    style E fill:#f44336
+    style A fill:#ff9800,color:#000000
+    style B fill:#4caf50,color:#000000
+    style C fill:#2196f3,color:#ffffff
+    style D fill:#9c27b0,color:#ffffff
+    style E fill:#f44336,color:#ffffff
 ```
 
 **Pipeline Stages**:
@@ -2320,13 +2320,13 @@ graph TB
     System -->|Visualizations| Citizen
     System -->|Visualizations| Researcher
     
-    style Riksdag fill:#ff9800
-    style Election fill:#ff9800
-    style Finance fill:#ff9800
-    style WorldBank fill:#ff9800
-    style CIA fill:#9c27b0
-    style System fill:#4caf50
-    style Analyst fill:#2196f3
+    style Riksdag fill:#ff9800,color:#000000
+    style Election fill:#ff9800,color:#000000
+    style Finance fill:#ff9800,color:#000000
+    style WorldBank fill:#ff9800,color:#000000
+    style CIA fill:#9c27b0,color:#ffffff
+    style System fill:#4caf50,color:#000000
+    style Analyst fill:#2196f3,color:#ffffff
 ```
 
 ---
@@ -2370,11 +2370,11 @@ graph TB
     Dashboards --> LocalStorage
     LocalStorage --> Dashboards
     
-    style CIA_DB fill:#2196f3
-    style GitHub fill:#ff9800
-    style S3 fill:#4caf50
-    style Dashboards fill:#9c27b0
-    style Validator fill:#f44336
+    style CIA_DB fill:#2196f3,color:#ffffff
+    style GitHub fill:#ff9800,color:#000000
+    style S3 fill:#4caf50,color:#000000
+    style Dashboards fill:#9c27b0,color:#ffffff
+    style Validator fill:#f44336,color:#ffffff
 ```
 
 ---

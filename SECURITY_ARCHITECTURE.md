@@ -236,14 +236,14 @@ graph TB
     Actions -->|Deploy| GitHubRepo
     Security -->|Monitor| GitHubRepo
     
-    style User fill:#e1f5ff
-    style Route53 fill:#ff9800
-    style CF fill:#4caf50
-    style S3US fill:#2196f3
-    style GHCDN fill:#90caf9
-    style Actions fill:#ff9800
-    style Security fill:#f44336
-    style CIA fill:#9c27b0
+    style User fill:#e1f5ff,color:#000000
+    style Route53 fill:#ff9800,color:#000000
+    style CF fill:#4caf50,color:#000000
+    style S3US fill:#2196f3,color:#ffffff
+    style GHCDN fill:#90caf9,color:#000000
+    style Actions fill:#ff9800,color:#000000
+    style Security fill:#f44336,color:#ffffff
+    style CIA fill:#9c27b0,color:#ffffff
 ```
 
 ## 2. 🔐 Security Architecture Components
@@ -787,13 +787,13 @@ graph TB
     L4A --> L5A
     L5A --> L6A
     
-    style User fill:#ff6b6b
-    style L1A fill:#51cf66
-    style L2A fill:#4dabf7
-    style L3A fill:#ffd43b
-    style L4A fill:#ff8787
-    style L5A fill:#da77f2
-    style L6A fill:#20c997
+    style User fill:#ff6b6b,color:#000000
+    style L1A fill:#51cf66,color:#000000
+    style L2A fill:#4dabf7,color:#000000
+    style L3A fill:#ffd43b,color:#000000
+    style L4A fill:#ff8787,color:#000000
+    style L5A fill:#da77f2,color:#000000
+    style L6A fill:#20c997,color:#000000
 ```
 
 ### **Layer 1: Network Security (Perimeter Defense)**
@@ -1082,13 +1082,13 @@ graph TB
     Route53 -->|Primary DNS| CF
     Route53 -.->|Failover DNS<br/>on health check failure| GHCDN
     
-    style User fill:#e1f5ff
-    style Route53 fill:#ff9800
-    style CF fill:#4caf50
-    style S3US fill:#2196f3
-    style S3EU fill:#90caf9
-    style GHCDN fill:#9c27b0
-    style GHRepo fill:#673ab7
+    style User fill:#e1f5ff,color:#000000
+    style Route53 fill:#ff9800,color:#000000
+    style CF fill:#4caf50,color:#000000
+    style S3US fill:#2196f3,color:#ffffff
+    style S3EU fill:#90caf9,color:#000000
+    style GHCDN fill:#9c27b0,color:#ffffff
+    style GHRepo fill:#673ab7,color:#ffffff
 ```
 
 ### **Availability Tiers**
@@ -1208,15 +1208,15 @@ graph TB
     UpdateDocs --> End
     Dismiss --> End
     
-    style Alert fill:#ff6b6b
+    style Alert fill:#ff6b6b,color:#000000
     style Immediate fill:#ff0000,color:#fff
-    style Urgent fill:#ff6b6b
-    style Scheduled fill:#ffd43b
-    style Backlog fill:#51cf66
-    style Contain fill:#4dabf7
-    style Remediate fill:#da77f2
-    style Verify fill:#20c997
-    style End fill:#e9ecef
+    style Urgent fill:#ff6b6b,color:#000000
+    style Scheduled fill:#ffd43b,color:#000000
+    style Backlog fill:#51cf66,color:#000000
+    style Contain fill:#4dabf7,color:#000000
+    style Remediate fill:#da77f2,color:#000000
+    style Verify fill:#20c997,color:#000000
+    style End fill:#e9ecef,color:#000000
 ```
 
 ### **Investigation Procedures**
@@ -1313,14 +1313,14 @@ graph LR
     
     Monitor --> Detect
     
-    style Detect fill:#4dabf7
+    style Detect fill:#4dabf7,color:#000000
     style C fill:#ff0000,color:#fff
-    style H fill:#ff6b6b
-    style M fill:#ffd43b
-    style L fill:#51cf66
-    style Remediate fill:#da77f2
-    style Verify fill:#20c997
-    style Close fill:#e9ecef
+    style H fill:#ff6b6b,color:#000000
+    style M fill:#ffd43b,color:#000000
+    style L fill:#51cf66,color:#000000
+    style Remediate fill:#da77f2,color:#000000
+    style Verify fill:#20c997,color:#000000
+    style Close fill:#e9ecef,color:#000000
 ```
 
 ### **Remediation SLAs**
@@ -1869,17 +1869,17 @@ graph TB
     
     Improve --> Monitor
     
-    style Monitor fill:#4dabf7
-    style Alert fill:#ff6b6b
+    style Monitor fill:#4dabf7,color:#000000
+    style Alert fill:#ff6b6b,color:#000000
     style Immediate fill:#ff0000,color:#fff
-    style Urgent fill:#ff6b6b
-    style Standard fill:#ffd43b
-    style Routine fill:#51cf66
-    style Investigate fill:#da77f2
-    style Respond fill:#20c997
-    style Document fill:#868e96
-    style Review fill:#e9ecef
-    style Improve fill:#51cf66
+    style Urgent fill:#ff6b6b,color:#000000
+    style Standard fill:#ffd43b,color:#000000
+    style Routine fill:#51cf66,color:#000000
+    style Investigate fill:#da77f2,color:#000000
+    style Respond fill:#20c997,color:#000000
+    style Document fill:#868e96,color:#000000
+    style Review fill:#e9ecef,color:#000000
+    style Improve fill:#51cf66,color:#000000
 ```
 
 ### **Operational Procedures**
@@ -2850,9 +2850,9 @@ flowchart TD
     AWS --> AWS_DNS[Route 53 DNS infrastructure]
     AWS --> AWS_DDOS[DDoS protection at network layer]
 
-    style HACK23 fill:#4caf50
-    style GITHUB fill:#2196f3
-    style AWS fill:#ff9800
+    style HACK23 fill:#4caf50,color:#000000
+    style GITHUB fill:#2196f3,color:#ffffff
+    style AWS fill:#ff9800,color:#000000
 ```
 
 ### Third-Party Risk Register

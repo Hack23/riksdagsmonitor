@@ -778,7 +778,7 @@ Traditional AI-generated news is shallow — it rewrites press releases. Riksdag
 ### Evolution Overview
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27', 'background': '#0a0e27'}}}%%
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27", "background": "#0a0e27"}}}%%
 timeline
     title Riksdagsmonitor Evolution — 2026 to 2037
     section Phase 3 — Foundation (2026)
@@ -828,7 +828,7 @@ timeline
 *Current phase — AI-disrupted news generation operational*
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
 graph LR
     subgraph SGCompleted["✅ Completed"]
         style SGCompleted fill:#006400,stroke:#00d9ff,color:#e0e0e0
@@ -860,7 +860,7 @@ graph LR
 ### Phase 4: Predictive Intelligence & Nordic Expansion (2027–2029)
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
 graph TB
     subgraph SG2027["2027 — Predictive Analytics"]
         style SG2027 fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
@@ -896,7 +896,7 @@ graph TB
 ### Phase 5: EU-Wide Coverage & Pre-AGI (2030–2033)
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
 graph LR
     subgraph SGEU["2030-2031 — EU Scale"]
         style SGEU fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
@@ -923,7 +923,7 @@ graph LR
 > *When AGI or near-AGI systems emerge, Riksdagsmonitor's modular architecture is designed with flexibility to adapt to future AI paradigm shifts — including potential AGI capabilities — while maintaining democratic safeguards.*
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#ff006e', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#00d9ff', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#ff006e", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#00d9ff", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
 graph TB
     subgraph SGAGI["🤖 6.1 AGI-Enhanced Intelligence"]
         style SGAGI fill:#1a1e3d,stroke:#ff006e,color:#e0e0e0
@@ -979,7 +979,7 @@ graph TB
 | **2034–2037** | 100–120+ | AGI / Post-AGI | ⚡ Transformative democracy platform |
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#00d9ff', 'primaryTextColor': '#e0e0e0', 'primaryBorderColor': '#ff006e', 'lineColor': '#ffbe0b', 'secondaryColor': '#1a1e3d', 'tertiaryColor': '#0a0e27'}}}%%
+%%{init: {"theme": "dark", "themeVariables": {"primaryColor": "#00d9ff", "primaryTextColor": "#e0e0e0", "primaryBorderColor": "#ff006e", "lineColor": "#ffbe0b", "secondaryColor": "#1a1e3d", "tertiaryColor": "#0a0e27"}}}%%
 xychart-beta
     title "Riksdagsmonitor Workflow Growth Projection (2026–2037)"
     x-axis ["2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037"]

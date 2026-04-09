@@ -41,13 +41,13 @@ Riksdagsmonitor provides public political transparency services requiring high a
 ```mermaid
 %%{
   init: {
-    'theme': 'base',
-    'themeVariables': {
-      'primaryColor': '#1565C0',
-      'primaryTextColor': '#0d47a1',
-      'lineColor': '#1565C0',
-      'secondaryColor': '#4CAF50',
-      'tertiaryColor': '#FF9800'
+    "theme": "base",
+    "themeVariables": {
+      "primaryColor": "#1565C0",
+      "primaryTextColor": "#0d47a1",
+      "lineColor": "#1565C0",
+      "secondaryColor": "#4CAF50",
+      "tertiaryColor": "#FF9800"
     }
   }
 }%%
@@ -83,9 +83,9 @@ graph TB
     PRIMARY --> FAILOVER
     DR --> FAILOVER
     
-    style BIA fill:#1565C0
-    style RECOVERY fill:#FF9800
-    style DEPLOYMENT fill:#4CAF50
+    style BIA fill:#1565C0,color:#ffffff
+    style RECOVERY fill:#FF9800,color:#000000
+    style DEPLOYMENT fill:#4CAF50,color:#000000
 ```
 
 ### 📈 Impact Thresholds
@@ -105,13 +105,13 @@ graph TB
 ```mermaid
 %%{
   init: {
-    'theme': 'base',
-    'themeVariables': {
-      'primaryColor': '#1565C0',
-      'primaryTextColor': '#0d47a1',
-      'lineColor': '#1565C0',
-      'secondaryColor': '#4CAF50',
-      'tertiaryColor': '#FF9800'
+    "theme": "base",
+    "themeVariables": {
+      "primaryColor": "#1565C0",
+      "primaryTextColor": "#0d47a1",
+      "lineColor": "#1565C0",
+      "secondaryColor": "#4CAF50",
+      "tertiaryColor": "#FF9800"
     }
   }
 }%%
@@ -142,9 +142,9 @@ graph TB
     USERS -->|HTTPS/TLS 1.3| CF
     USERS -.->|HTTPS/TLS 1.3 (DR)| GH
     
-    style ROUTE53 fill:#1565C0
-    style PRIMARY fill:#4CAF50
-    style DR fill:#FF9800
+    style ROUTE53 fill:#1565C0,color:#ffffff
+    style PRIMARY fill:#4CAF50,color:#000000
+    style DR fill:#FF9800,color:#000000
 ```
 
 ### 🛡️ Availability Objectives & Assumptions
@@ -325,13 +325,13 @@ _**Disclaimer**: These are business continuity **design objectives** based on AW
 ```mermaid
 %%{
   init: {
-    'theme': 'base',
-    'themeVariables': {
-      'primaryColor': '#1565C0',
-      'primaryTextColor': '#0d47a1',
-      'lineColor': '#1565C0',
-      'secondaryColor': '#4CAF50',
-      'tertiaryColor': '#FF9800'
+    "theme": "base",
+    "themeVariables": {
+      "primaryColor": "#1565C0",
+      "primaryTextColor": "#0d47a1",
+      "lineColor": "#1565C0",
+      "secondaryColor": "#4CAF50",
+      "tertiaryColor": "#FF9800"
     }
   }
 }%%
@@ -355,11 +355,11 @@ graph TD
     
     VERIFY --> DOCUMENT[📝 Incident Documentation<br/>Post-Event Analysis]
     
-    style INCIDENT fill:#FF9800
-    style MANUAL_DNS fill:#1565C0
-    style AUTO_FAILOVER fill:#4CAF50
-    style ROUTE53_FAILOVER fill:#1565C0
-    style VERIFY fill:#4CAF50
+    style INCIDENT fill:#FF9800,color:#000000
+    style MANUAL_DNS fill:#1565C0,color:#ffffff
+    style AUTO_FAILOVER fill:#4CAF50,color:#000000
+    style ROUTE53_FAILOVER fill:#1565C0,color:#ffffff
+    style VERIFY fill:#4CAF50,color:#000000
 ```
 
 ---

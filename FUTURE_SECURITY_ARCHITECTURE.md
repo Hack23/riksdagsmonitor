@@ -147,12 +147,12 @@ graph TB
     L4 --> L5
     L5 --> L6
     
-    style L1 fill:#4caf50
-    style L2 fill:#4caf50
-    style L3 fill:#ff9800
-    style L4 fill:#ff9800
-    style L5 fill:#2196f3
-    style L6 fill:#f44336
+    style L1 fill:#4caf50,color:#000000
+    style L2 fill:#4caf50,color:#000000
+    style L3 fill:#ff9800,color:#000000
+    style L4 fill:#ff9800,color:#000000
+    style L5 fill:#2196f3,color:#ffffff
+    style L6 fill:#f44336,color:#ffffff
 ```
 
 **Strengths:**
@@ -205,12 +205,12 @@ graph TB
     T4 --> T8
     T5 --> T9
     
-    style T1 fill:#ff9800
-    style T2 fill:#ff9800
-    style T3 fill:#ff9800
-    style T7 fill:#f44336
-    style T8 fill:#f44336
-    style T9 fill:#f44336
+    style T1 fill:#ff9800,color:#000000
+    style T2 fill:#ff9800,color:#000000
+    style T3 fill:#ff9800,color:#000000
+    style T7 fill:#f44336,color:#ffffff
+    style T8 fill:#f44336,color:#ffffff
+    style T9 fill:#f44336,color:#ffffff
 ```
 
 ### 2.2 Regulatory Evolution
@@ -237,9 +237,9 @@ graph LR
     Current[Current: TLS 1.3<br/>RSA 2048, ECDSA P-256] --> Hybrid[2027 Q2: Hybrid Mode<br/>Classical + PQC]
     Hybrid --> Full[2028 Q1: Full PQC<br/>CRYSTALS-Kyber, CRYSTALS-Dilithium]
     
-    style Current fill:#90caf9
-    style Hybrid fill:#ff9800
-    style Full fill:#4caf50
+    style Current fill:#90caf9,color:#000000
+    style Hybrid fill:#ff9800,color:#000000
+    style Full fill:#4caf50,color:#000000
 ```
 
 **Implementation Plan:**
@@ -303,10 +303,10 @@ graph TB
     A3 --> Alerts
     A4 --> Alerts
     
-    style A1 fill:#2196f3
-    style A2 fill:#2196f3
-    style A3 fill:#2196f3
-    style A4 fill:#2196f3
+    style A1 fill:#2196f3,color:#ffffff
+    style A2 fill:#2196f3,color:#ffffff
+    style A3 fill:#2196f3,color:#ffffff
+    style A4 fill:#2196f3,color:#ffffff
 ```
 
 **Capabilities:**
@@ -407,10 +407,10 @@ graph TB
     M2 --> M3
     M3 --> M4
     
-    style M1 fill:#90caf9
-    style M2 fill:#ff9800
-    style M3 fill:#2196f3
-    style M4 fill:#4caf50
+    style M1 fill:#90caf9,color:#000000
+    style M2 fill:#ff9800,color:#000000
+    style M3 fill:#2196f3,color:#ffffff
+    style M4 fill:#4caf50,color:#000000
 ```
 
 **Components:**
@@ -560,9 +560,9 @@ graph LR
     Current[AWS CloudFront + S3<br/>Multi-region deployment] --> Enhanced[AWS WAF Integration<br/>Advanced application protection]
     Enhanced --> Premium[Multi-CDN Strategy<br/>Resilience & performance]
     
-    style Current fill:#4caf50
-    style Enhanced fill:#ff9800
-    style Premium fill:#4caf50
+    style Current fill:#4caf50,color:#000000
+    style Enhanced fill:#ff9800,color:#000000
+    style Premium fill:#4caf50,color:#000000
 ```
 
 **Enhancements:**
@@ -631,9 +631,9 @@ graph TB
     C6 --> C10
     C7 --> C11
     
-    style C1 fill:#90caf9
-    style C4 fill:#ff9800
-    style C8 fill:#4caf50
+    style C1 fill:#90caf9,color:#000000
+    style C4 fill:#ff9800,color:#000000
+    style C8 fill:#4caf50,color:#000000
 ```
 
 ### 6.2 New Compliance Requirements
@@ -716,9 +716,9 @@ graph LR
     Current[2026: 7.21/10.0<br/>LOW Risk] --> Enhanced[2027: 4.5/10.0<br/>VERY LOW Risk]
     Enhanced --> Optimized[2030: 2.0/10.0<br/>MINIMAL Risk]
     
-    style Current fill:#4caf50
-    style Enhanced fill:#4caf50
-    style Optimized fill:#4caf50
+    style Current fill:#4caf50,color:#000000
+    style Enhanced fill:#4caf50,color:#000000
+    style Optimized fill:#4caf50,color:#000000
 ```
 
 **Target Risk Reduction:**

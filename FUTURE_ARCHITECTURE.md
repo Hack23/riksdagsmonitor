@@ -885,11 +885,11 @@ graph TB
     Operations --> XRay[X-Ray Distributed Tracing]
     Operations --> EventBridge[EventBridge Automation]
     
-    style Security fill:#FF6B6B
-    style Reliability fill:#4ECDC4
-    style Performance fill:#45B7D1
-    style Cost fill:#FFA07A
-    style Operations fill:#98D8C8
+    style Security fill:#FF6B6B,color:#000000
+    style Reliability fill:#4ECDC4,color:#000000
+    style Performance fill:#45B7D1,color:#000000
+    style Cost fill:#FFA07A,color:#000000
+    style Operations fill:#98D8C8,color:#000000
 ```
 
 ### 🔒 Security Pillar Implementation
@@ -957,10 +957,10 @@ graph LR
     Config -->|Validate| Lambda
     Config -->|Validate| Aurora
     
-    style WAF fill:#FF6B6B
-    style GuardDuty fill:#FF6B6B
-    style SecurityHub fill:#FF6B6B
-    style KMS fill:#FF6B6B
+    style WAF fill:#FF6B6B,color:#000000
+    style GuardDuty fill:#FF6B6B,color:#000000
+    style SecurityHub fill:#FF6B6B,color:#000000
+    style KMS fill:#FF6B6B,color:#000000
 ```
 
 ### ⚡ Reliability Pillar Implementation
@@ -1024,11 +1024,11 @@ graph TB
     Backup -->|Backup| Aurora_Primary
     Backup -->|Backup| Aurora_Global
     
-    style AZ1 fill:#4ECDC4
-    style AZ2 fill:#4ECDC4
-    style AZ3 fill:#4ECDC4
-    style AZ4 fill:#45B7D1
-    style AZ5 fill:#45B7D1
+    style AZ1 fill:#4ECDC4,color:#000000
+    style AZ2 fill:#4ECDC4,color:#000000
+    style AZ3 fill:#4ECDC4,color:#000000
+    style AZ4 fill:#45B7D1,color:#000000
+    style AZ5 fill:#45B7D1,color:#000000
 ```
 
 ### ⚡ Performance Efficiency Pillar Implementation
@@ -1089,10 +1089,10 @@ graph LR
     Lambda --> CloudWatch
     Aurora --> CloudWatch
     
-    style CloudFront fill:#45B7D1
-    style Lambda fill:#45B7D1
-    style Aurora fill:#45B7D1
-    style DynamoDB fill:#45B7D1
+    style CloudFront fill:#45B7D1,color:#000000
+    style Lambda fill:#45B7D1,color:#000000
+    style Aurora fill:#45B7D1,color:#000000
+    style DynamoDB fill:#45B7D1,color:#000000
 ```
 
 ### 💰 Cost Optimization Pillar Implementation
@@ -1178,9 +1178,9 @@ graph TB
     CloudWatch --> DevOpsGuru
     XRay --> DevOpsGuru
     
-    style CloudWatch fill:#98D8C8
-    style XRay fill:#98D8C8
-    style EventBridge fill:#98D8C8
+    style CloudWatch fill:#98D8C8,color:#000000
+    style XRay fill:#98D8C8,color:#000000
+    style EventBridge fill:#98D8C8,color:#000000
 ```
 
 ---
@@ -1244,11 +1244,11 @@ graph TB
     IAM --> Lambda
     Organizations --> IAM
     
-    style WAF fill:#FF6B6B
-    style GuardDuty fill:#FF6B6B
-    style SecurityHub fill:#FF6B6B
-    style KMS fill:#FF6B6B
-    style CloudTrail fill:#FF6B6B
+    style WAF fill:#FF6B6B,color:#000000
+    style GuardDuty fill:#FF6B6B,color:#000000
+    style SecurityHub fill:#FF6B6B,color:#000000
+    style KMS fill:#FF6B6B,color:#000000
+    style CloudTrail fill:#FF6B6B,color:#000000
 ```
 
 ### 🔍 Amazon GuardDuty - Threat Detection
@@ -1351,9 +1351,9 @@ flowchart LR
     CloudTrail[AWS CloudTrail<br/>Log All KMS Operations]
     KMS --> CloudTrail
     
-    style KMS fill:#FF6B6B
-    style Aurora fill:#4ECDC4
-    style S3 fill:#4ECDC4
+    style KMS fill:#FF6B6B,color:#000000
+    style Aurora fill:#4ECDC4,color:#000000
+    style S3 fill:#4ECDC4,color:#000000
 ```
 
 ### 📊 AWS CloudTrail - Audit Logging
@@ -1458,12 +1458,12 @@ graph TB
     Backup --> DynamoDB_Primary
     Backup --> DynamoDB_Secondary
     
-    style Route53 fill:#4ECDC4
-    style CloudFront fill:#4ECDC4
-    style Aurora_Primary fill:#45B7D1
-    style Aurora_Secondary fill:#95E1D3
-    style DynamoDB_Primary fill:#45B7D1
-    style DynamoDB_Secondary fill:#95E1D3
+    style Route53 fill:#4ECDC4,color:#000000
+    style CloudFront fill:#4ECDC4,color:#000000
+    style Aurora_Primary fill:#45B7D1,color:#000000
+    style Aurora_Secondary fill:#95E1D3,color:#000000
+    style DynamoDB_Primary fill:#45B7D1,color:#000000
+    style DynamoDB_Secondary fill:#95E1D3,color:#000000
 ```
 
 ### 🔄 Aurora Global Database
@@ -1607,9 +1607,9 @@ graph TB
     Test --> EventBridge
     Monitor --> CloudWatch
     
-    style Discover fill:#98D8C8
-    style Assess fill:#98D8C8
-    style Test fill:#4ECDC4
+    style Discover fill:#98D8C8,color:#000000
+    style Assess fill:#98D8C8,color:#000000
+    style Test fill:#4ECDC4,color:#000000
 ```
 
 ### 🎯 RTO/RPO Requirements
@@ -1745,9 +1745,9 @@ graph TB
     SecurityHub --> ServiceNow
     SecurityHub --> Archer
     
-    style SecurityHub fill:#FF6B6B
-    style S3Logs fill:#4ECDC4
-    style Kinesis fill:#45B7D1
+    style SecurityHub fill:#FF6B6B,color:#000000
+    style S3Logs fill:#4ECDC4,color:#000000
+    style Kinesis fill:#45B7D1,color:#000000
 ```
 
 ### 🔍 SIEM Connectors
