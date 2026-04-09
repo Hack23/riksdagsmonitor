@@ -96,13 +96,6 @@ interface ContentLeakageRecord {
 // ---------------------------------------------------------------------------
 
 /**
- * Minimum translation completeness threshold.
- * Articles below this percentage are flagged as failing.
- * Set to 85% to allow some technical terms and proper nouns.
- */
-const MIN_TRANSLATION_COMPLETENESS_PCT = 85;
-
-/**
  * Minimum paragraph character length to consider for leakage checks.
  * Short fragments like dates or single words are skipped.
  */
@@ -159,20 +152,33 @@ const SWEDISH_LEAKAGE_PHRASES: readonly RegExp[] = [
 /**
  * Extract visible text paragraphs from HTML body content.
  * Strips tags, scripts, styles; returns non-trivial paragraphs.
+ *
+ * NOTE: This function is used for text comparison only (not for
+ * rendering), so incomplete sanitization is acceptable. The iterative
+ * approach ensures nested script/style tags are fully removed.
  */
 function extractBodyParagraphs(html: string): string[] {
-  // Remove script/style blocks
-  let cleaned = html.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '');
-  cleaned = cleaned.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '');
-  // Remove JSON-LD blocks
-  cleaned = cleaned.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/gi, '');
+  // Iteratively remove script blocks (handles nested cases)
+  let cleaned = html;
+  let prev = '';
+  while (prev !== cleaned) {
+    prev = cleaned;
+    cleaned = cleaned.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, '');
+  }
+  // Iteratively remove style blocks
+  prev = '';
+  while (prev !== cleaned) {
+    prev = cleaned;
+    cleaned = cleaned.replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, '');
+  }
 
   // Extract paragraph text
   const paragraphs: string[] = [];
   const pRegex = /<p[^>]*>([\s\S]*?)<\/p>/gi;
   let match: RegExpExecArray | null;
   while ((match = pRegex.exec(cleaned)) !== null) {
-    const text = (match[1] ?? '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+    // Strip remaining HTML tags from paragraph content (text-only comparison)
+    const text = (match[1] ?? '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
     if (text.length >= MIN_PARAGRAPH_LENGTH) {
       paragraphs.push(text);
     }
@@ -198,7 +204,8 @@ function checkBodyContentLeakage(
 
   if (translatedParagraphs.length === 0) return null;
 
-  let untranslatedCount = 0;
+  let enParagraphLeakageCount = 0;
+  let phraseLeakageCount = 0;
   const samples: string[] = [];
 
   // 1. Check for English paragraph leakage from EN source
@@ -208,7 +215,7 @@ function checkBodyContentLeakage(
 
     for (const enPara of enParagraphs) {
       if (enPara.length >= MIN_PARAGRAPH_LENGTH && translatedContent.includes(enPara)) {
-        untranslatedCount++;
+        enParagraphLeakageCount++;
         if (samples.length < 5) {
           samples.push(`[EN leakage] ${enPara.slice(0, 100)}...`);
         }
@@ -219,7 +226,7 @@ function checkBodyContentLeakage(
   // 2. Check for known English boilerplate phrases
   for (const pattern of ENGLISH_LEAKAGE_PHRASES) {
     if (pattern.test(translatedContent)) {
-      untranslatedCount++;
+      phraseLeakageCount++;
       const m = translatedContent.match(pattern);
       if (m && samples.length < 5) {
         samples.push(`[EN phrase] ${m[0]}`);
@@ -231,7 +238,7 @@ function checkBodyContentLeakage(
   if (fileLang !== 'sv') {
     for (const pattern of SWEDISH_LEAKAGE_PHRASES) {
       if (pattern.test(translatedContent)) {
-        untranslatedCount++;
+        phraseLeakageCount++;
         const m = translatedContent.match(pattern);
         if (m && samples.length < 5) {
           samples.push(`[SV leakage] ${m[0]}`);
@@ -240,17 +247,19 @@ function checkBodyContentLeakage(
     }
   }
 
+  const totalLeakageItems = enParagraphLeakageCount + phraseLeakageCount;
   const totalParagraphs = translatedParagraphs.length;
+  // Percentage is based on EN paragraph leakage only (phrase matches are additive flags)
   const percentUntranslated = totalParagraphs > 0
-    ? Math.round((untranslatedCount / totalParagraphs) * 100)
+    ? Math.round((enParagraphLeakageCount / totalParagraphs) * 100)
     : 0;
 
-  if (untranslatedCount === 0) return null;
+  if (totalLeakageItems === 0) return null;
 
   return {
     filename,
     lang: fileLang,
-    untranslatedParagraphs: untranslatedCount,
+    untranslatedParagraphs: totalLeakageItems,
     totalParagraphs,
     percentUntranslated,
     samples,
