@@ -26,5 +26,26 @@
 2. **3** document(s) rated High (score 6-7): NU18, MJU30, AU11
 3. Defence and security dominate this period's legislative activity
 
+## Significance Distribution
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#1565C0', 'primaryTextColor': '#ffffff'}}}%%
+pie title Document Significance Distribution (2026-04-09)
+    "Critical (≥8)" : 2
+    "High (6-7)" : 3
+    "Medium (4-5)" : 5
+```
+
+## Policy Domain Heatmap
+
+```mermaid
+%%{init: {'theme': 'base'}}%%
+xychart-beta
+    title "Significance by Policy Domain"
+    x-axis ["Defence", "Foreign", "Energy", "Climate", "Equality", "EU/GMO", "Justice", "Housing", "Health", "Language"]
+    y-axis "Score (0-10)" 0 --> 10
+    bar [9, 9, 8, 7, 7, 6, 6, 5, 5, 5]
+```
+
 ## Data Quality Notes
 Scores based on reservation count analysis, committee hierarchy (FöU/UU = tier-1), policy domain breadth, and coalition context.
