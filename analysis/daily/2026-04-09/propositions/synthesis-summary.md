@@ -53,6 +53,39 @@ PUBLISH — significance score 6/10 for lead story; 4/10 secondary story provide
 ### Article Priority
 MEDIUM — legislatively significant but not crisis-level
 
+## Legislative Flow Diagram
+
+```mermaid
+flowchart TD
+    SC["Supreme Court Ruling<br/>'Tjäderspelet i Malsättra'"]:::red --> GOV["Government Response"]:::blue
+    GOV --> PROP["Prop. 2025/26:230<br/>Environmental Code Amendment"]:::green
+    GOV --> SKR["Skr. 2025/26:219<br/>Dental Care Audit Response"]:::yellow
+    PROP --> MJU["MJU Committee Review"]:::blue
+    SKR --> SOU["SoU Committee Review"]:::blue
+    MJU --> DEBATE["Chamber Debate"]:::neutral
+    SOU --> DEBATE
+    DEBATE --> VOTE["Chamber Vote"]:::neutral
+
+    classDef red fill:#D32F2F,color:#ffffff
+    classDef blue fill:#1565C0,color:#ffffff
+    classDef green fill:#2E7D32,color:#ffffff
+    classDef yellow fill:#FF9800,color:#000000
+    classDef neutral fill:#616161,color:#ffffff
+```
+
+## Stakeholder Impact Assessment
+
+| Stakeholder Group | Impact | Assessment | Confidence |
+|---|---|---|---|
+| **Property Owners** | HIGH | Gain statutory compensation right for species protection restrictions | [HIGH] |
+| **Environmental Organizations** | HIGH | Risk of weakened species protection enforcement | [MEDIUM] |
+| **Government Coalition (M-KD-L)** | MEDIUM | Delivers on property rights agenda, aligned with SD support | [HIGH] |
+| **Opposition (MP, V)** | MEDIUM | Expected strong resistance in MJU committee | [HIGH] |
+| **Municipalities** | LOW-MEDIUM | Implementation burden for compensation processing | [LOW] |
+| **EU/International** | LOW | Must comply with EU Habitats Directive obligations | [MEDIUM] |
+| **Dental Care Recipients** | LOW | No immediate reform; status quo maintained | [HIGH] |
+| **Media/Public Opinion** | MEDIUM | Property rights narrative vs. environmental alarm | [MEDIUM] |
+
 ## Implications
 
 The species protection compensation proposition represents a meaningful shift in Sweden's environmental governance framework. By establishing a statutory right to compensation, the government signals willingness to prioritize property rights alongside environmental protection — a position likely to generate heated MJU committee debate between coalition parties (supportive) and MP/V (opposed). The dental care audit response, while lower significance, completes a picture of a government managing routine parliamentary accountability in its healthcare portfolio.
