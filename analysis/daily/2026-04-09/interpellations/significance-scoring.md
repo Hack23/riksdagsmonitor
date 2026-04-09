@@ -35,6 +35,30 @@ Scored 2 interpellations for political significance (0-10 scale). Both documents
 2. **0** document(s) rated Critical (score >= 9) — but HD10429 approaches critical threshold
 3. Both interpellations from same party (SD) targeting different coalition ministers — strategic coordination pattern
 
+## Significance Distribution
+
+```mermaid
+quadrantChart
+    title Interpellation Significance Matrix
+    x-axis "Low Policy Breadth" --> "High Policy Breadth"
+    y-axis "Low Coalition Impact" --> "High Coalition Impact"
+    quadrant-1 "CRITICAL: Act Immediately"
+    quadrant-2 "HIGH: Strategic Coalition Risk"
+    quadrant-3 "ROUTINE: Monitor Only"
+    quadrant-4 "NOTABLE: Policy Watch"
+    "frs 429 Free Speech": [0.7, 0.9]
+    "frs 430 Mosque Hate": [0.5, 0.7]
+```
+
+## Forward Indicators
+
+| Indicator | Timeline | Trigger | Confidence |
+|---|---|---|---|
+| Minister Strömmer response to frs 429 | April 24-27, 2026 | Scheduled response deadline | [HIGH] |
+| Minister Forssmed response to frs 430 | April 24, 2026 | Scheduled response deadline | [HIGH] |
+| Chamber debate scheduling | May 2026 | If ministers respond positively | [MEDIUM] |
+| Coalition unity vote signal | Post-response | Watch for SD abstention pattern | [LOW] |
+
 ## Implications
 
 Both interpellations warrant prominent article placement. HD10429 should lead the article due to higher constitutional significance and broader policy implications.
