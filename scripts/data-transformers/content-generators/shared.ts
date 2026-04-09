@@ -601,29 +601,26 @@ export function generateDeepAnalysisSection(opts: DeepAnalysisOptions): string {
 // Deep Analysis subsection generators
 // ---------------------------------------------------------------------------
 
-function generateTimelineContext(docs: RawDocument[], lang: Language | string, articleType: string): string {
+function generateTimelineContext(docs: RawDocument[], _lang: Language | string, articleType: string): string {
   const count = docs.length;
   const committees = new Set(docs.map(d => d.organ || d.committee || '').filter(Boolean));
+
+  // Provide minimal factual scaffold — AI agent MUST replace with genuine timeline analysis
+  // that explains political significance, scheduling strategy, and contextual importance.
+  const committeeCount = committees.size;
+  const committeeNames = [...committees].join(', ');
 
   const prospective = articleType.includes('ahead');
   const retrospective = articleType.includes('review');
 
-  const templates: Record<string, Record<string, string>> = {
-    en: {
-      prospective: `${count} items are scheduled across ${committees.size} committee${committees.size !== 1 ? 's' : ''}, creating a dense legislative calendar that demands close monitoring. Each item moves through committee review and chamber debate — timing and sequencing will determine which issues reach a vote.`,
-      retrospective: `Over the review period, ${count} parliamentary actions were recorded across ${committees.size} committee${committees.size !== 1 ? 's' : ''}. The volume and distribution of activity reveals the government's priorities and the opposition's strategic responses.`,
-      default: `${count} parliamentary items across ${committees.size} active committee${committees.size !== 1 ? 's' : ''} define the current legislative landscape. The pace of activity signals the political urgency driving these proceedings.`,
-    },
-    sv: {
-      prospective: `${count} ärenden är planerade i ${committees.size} utskott, vilket skapar en tät lagstiftningskalender som kräver noggrann bevakning.`,
-      retrospective: `Under granskningsperioden registrerades ${count} parlamentariska åtgärder i ${committees.size} utskott. Volymen och fördelningen avslöjar regeringens prioriteringar.`,
-      default: `${count} riksdagsärenden i ${committees.size} aktiva utskott definierar det aktuella lagstiftningslandskapet.`,
-    },
-  };
+  const typeLabel = prospective ? 'scheduled' : retrospective ? 'recorded' : 'active';
 
-  const langTemplates = templates[lang as string] ?? templates.en;
-  const key = prospective ? 'prospective' : retrospective ? 'retrospective' : 'default';
-  return langTemplates[key] ?? langTemplates.default;
+  // Minimal factual data only — no generic "analysis" or "significance" claims
+  const factualBase = committeeCount > 0
+    ? `${count} ${typeLabel} items across ${committeeCount} committee${committeeCount !== 1 ? 's' : ''} (${committeeNames}).`
+    : `${count} ${typeLabel} parliamentary items.`;
+
+  return `${factualBase} <!-- AI_MUST_REPLACE: timeline_context — Write specific analysis of scheduling significance, political timing strategy, and why this legislative calendar matters now -->`;
 }
 
 function generateWhyAnalysis(docs: RawDocument[], lang: Language | string, cia: CIAContext | undefined, extraContext?: string): string {
@@ -657,36 +654,21 @@ function generateWhyAnalysis(docs: RawDocument[], lang: Language | string, cia: 
   return parts.join(' ');
 }
 
-function broadAgendaText(lang: Language | string, n: number): string {
-  const templates: Record<string, string> = {
-    en: `With ${n} policy domains in play, this represents a broad legislative push that will shape multiple aspects of Swedish society. The breadth of activity makes this a critical period for understanding the government's strategic direction.`,
-    sv: `Med ${n} politikområden i spel representerar detta en bred lagstiftningssatsning som kommer att forma flera aspekter av det svenska samhället.`,
-  };
-  return templates[lang as string] ?? templates.en;
+function broadAgendaText(_lang: Language | string, n: number): string {
+  // Minimal factual scaffold — AI MUST replace with specific political significance analysis
+  return `${n} policy domains active. <!-- AI_MUST_REPLACE: why_matters — Explain WHY these specific domains matter politically right now, what strategic intent drives this breadth, and what it reveals about coalition priorities -->`;
 }
 
-function focusedAgendaText(lang: Language | string, n: number): string {
-  const templates: Record<string, string> = {
-    en: `Activity concentrated in ${n} policy domains suggests targeted legislative priorities rather than broad reform, making each initiative particularly consequential.`,
-    sv: `Aktivitet koncentrerad till ${n} politikområden tyder på riktade lagstiftningsprioriteringar snarare än bred reform.`,
-  };
-  return templates[lang as string] ?? templates.en;
+function focusedAgendaText(_lang: Language | string, n: number): string {
+  return `${n} policy domains active. <!-- AI_MUST_REPLACE: why_matters — Explain the strategic significance of this focused legislative approach and what it reveals about government priorities -->`;
 }
 
-function instabilityText(lang: Language | string): string {
-  const templates: Record<string, string> = {
-    en: 'The current coalition instability adds significant uncertainty to all legislative proceedings. Any controversial measure could become a confidence test.',
-    sv: 'Den nuvarande koalitionsinstabiliteten tillför betydande osäkerhet till alla lagstiftningsförfaranden.',
-  };
-  return templates[lang as string] ?? templates.en;
+function instabilityText(_lang: Language | string): string {
+  return '<!-- AI_MUST_REPLACE: coalition_instability — Provide specific analysis of current coalition stability indicators, recent fractures, and how instability affects these specific legislative items -->';
 }
 
-function defaultWhyText(lang: Language | string): string {
-  const templates: Record<string, string> = {
-    en: 'These parliamentary developments carry significance for Swedish governance, reflecting ongoing policy debates and power dynamics within the Riksdag.',
-    sv: 'Dessa riksdagshändelser har betydelse för svensk styrning och speglar pågående politiska debatter och maktdynamik.',
-  };
-  return templates[lang as string] ?? templates.en;
+function defaultWhyText(_lang: Language | string): string {
+  return '<!-- AI_MUST_REPLACE: why_matters — Write specific analysis of why these particular parliamentary developments matter, citing concrete political dynamics, stakeholder impacts, and strategic implications -->';
 }
 
 function generateImpactAnalysis(docs: RawDocument[], lang: Language | string, cia: CIAContext | undefined): string {
@@ -716,44 +698,24 @@ function generateImpactAnalysis(docs: RawDocument[], lang: Language | string, ci
   return parts.join(' ') || genericImpactText(lang);
 }
 
-function propImpactText(lang: Language | string, n: number): string {
-  const t: Record<string, string> = {
-    en: `${n} government proposition${n !== 1 ? 's' : ''} will, if adopted, directly alter Swedish law and policy, affecting citizens, businesses, and institutions.`,
-    sv: `${n} regeringsproposition${n !== 1 ? 'er' : ''} kommer, om de antas, att direkt ändra svensk lag och politik.`,
-  };
-  return t[lang as string] ?? t.en;
+function propImpactText(_lang: Language | string, n: number): string {
+  return `${n} government proposition${n !== 1 ? 's' : ''} filed. <!-- AI_MUST_REPLACE: political_impact — Analyse the specific political impact: which propositions face opposition, what coalition dynamics are at play, which policy areas face the strongest resistance, and what the vote arithmetic looks like -->`;
 }
 
-function betImpactText(lang: Language | string, n: number): string {
-  const t: Record<string, string> = {
-    en: `${n} committee report${n !== 1 ? 's' : ''} represent${n === 1 ? 's' : ''} the culmination of legislative review, with recommendations that guide chamber votes.`,
-    sv: `${n} betänkande${n !== 1 ? 'n' : ''} representerar kulmen av lagstiftningsöversynen.`,
-  };
-  return t[lang as string] ?? t.en;
+function betImpactText(_lang: Language | string, n: number): string {
+  return `${n} committee report${n !== 1 ? 's' : ''} issued. <!-- AI_MUST_REPLACE: political_impact — Analyse the political significance of these specific committee recommendations: key votes, reservation patterns, which parties are aligned or divided, and implications for chamber votes -->`;
 }
 
-function motImpactText(lang: Language | string, n: number): string {
-  const t: Record<string, string> = {
-    en: `${n} opposition motion${n !== 1 ? 's' : ''} challenge${n === 1 ? 's' : ''} the government's position, even though most motions are historically rejected; they signal future electoral battlegrounds.`,
-    sv: `${n} oppositionsmotion${n !== 1 ? 'er' : ''} utmanar regeringens position och signalerar framtida valfrågor.`,
-  };
-  return t[lang as string] ?? t.en;
+function motImpactText(_lang: Language | string, n: number): string {
+  return `${n} opposition motion${n !== 1 ? 's' : ''} filed. <!-- AI_MUST_REPLACE: political_impact — Analyse the strategic purpose of these specific motions: which target government vulnerabilities, which signal election campaign themes, and what they reveal about opposition coordination -->`;
 }
 
-function thinMajorityImpactText(lang: Language | string, margin: number): string {
-  const t: Record<string, string> = {
-    en: `The thin majority margin of ${margin} seat${margin !== 1 ? 's' : ''} means any defection could defeat government measures, amplifying the political stakes.`,
-    sv: `Den tunna majoritetsmarginal på ${margin} mandat innebär att varje avhopp kan fälla regeringens förslag.`,
-  };
-  return t[lang as string] ?? t.en;
+function thinMajorityImpactText(_lang: Language | string, margin: number): string {
+  return `Majority margin: ${margin} seat${margin !== 1 ? 's' : ''}. <!-- AI_MUST_REPLACE: majority_impact — Analyse how this thin margin affects these specific legislative items and which measures are most vulnerable to defection -->`;
 }
 
-function genericImpactText(lang: Language | string): string {
-  const t: Record<string, string> = {
-    en: 'The legislative activity reflects the ongoing interplay between governing ambition and opposition scrutiny that characterises Swedish parliamentary democracy.',
-    sv: 'Lagstiftningsaktiviteten speglar det pågående samspelet mellan regeringsambitioner och oppositionens granskning.',
-  };
-  return t[lang as string] ?? t.en;
+function genericImpactText(_lang: Language | string): string {
+  return '<!-- AI_MUST_REPLACE: political_impact — Write specific analysis of the political impact of these items, naming parties, citing vote margins, and identifying which measures will pass or face challenges -->';
 }
 
 function generateConsequencesAnalysis(docs: RawDocument[], lang: Language | string, _articleType: string): string {
@@ -773,28 +735,16 @@ function generateConsequencesAnalysis(docs: RawDocument[], lang: Language | stri
   return parts.join(' ');
 }
 
-function propConsequencesText(lang: Language | string, n: number): string {
-  const t: Record<string, string> = {
-    en: `If adopted, these ${n} proposition${n !== 1 ? 's' : ''} will trigger implementation across government agencies, requiring regulatory changes, budget allocations, and administrative adaptation. Failure to pass would signal coalition weakness and embolden the opposition.`,
-    sv: `Om de antas kommer dessa ${n} proposition${n !== 1 ? 'er' : ''} att utlösa implementering i myndigheter, kräva regeländringar och budgetanpassningar.`,
-  };
-  return t[lang as string] ?? t.en;
+function propConsequencesText(_lang: Language | string, n: number): string {
+  return `${n} proposition${n !== 1 ? 's' : ''} pending. <!-- AI_MUST_REPLACE: consequences — Analyse the specific implementation consequences: which agencies must act, what regulatory changes are required, budget implications, and timeline for each proposition -->`;
 }
 
-function motConsequencesText(lang: Language | string, n: number): string {
-  const t: Record<string, string> = {
-    en: `The ${n} opposition motion${n !== 1 ? 's' : ''}, while likely to be rejected, establish the policy alternatives that opposition parties will champion in the next election cycle. Rejection does not diminish their strategic value as campaign ammunition.`,
-    sv: `De ${n} oppositionsmotion${n !== 1 ? 'erna' : 'en'}, även om de troligen avslås, etablerar policyalternativ för nästa valcykel.`,
-  };
-  return t[lang as string] ?? t.en;
+function motConsequencesText(_lang: Language | string, n: number): string {
+  return `${n} opposition motion${n !== 1 ? 's' : ''} pending. <!-- AI_MUST_REPLACE: consequences — Analyse the strategic consequences: how will rejection/acceptance affect party positioning, which motions establish new policy alternatives, and what campaign value do they carry -->`;
 }
 
-function genericConsequencesText(lang: Language | string): string {
-  const t: Record<string, string> = {
-    en: 'The outcomes of these proceedings will cascade through committee deliberations, chamber votes, and ultimately into policy implementation — or be shelved, affecting political credibility and future legislative strategy.',
-    sv: 'Resultaten av dessa ärenden kommer att kaskadgenomslag genom utskottsbehandling, kammarröstning och slutligen policyimplementering.',
-  };
-  return t[lang as string] ?? t.en;
+function genericConsequencesText(_lang: Language | string): string {
+  return '<!-- AI_MUST_REPLACE: consequences — Write specific analysis of the consequences and next steps for these items, including committee timelines, expected vote dates, implementation requirements, and political ramifications -->';
 }
 
 function generateCriticalAssessment(docs: RawDocument[], lang: Language | string, cia: CIAContext | undefined): string {
@@ -832,12 +782,8 @@ function generateCriticalAssessment(docs: RawDocument[], lang: Language | string
   return parts.join(' ');
 }
 
-function singlePartyDominanceText(lang: Language | string): string {
-  const t: Record<string, string> = {
-    en: 'Opposition activity is dominated by a single party, which may indicate either strategic focus or a failure of other parties to engage. Watch for whether this concentration reflects genuine policy leadership or internal opposition dysfunction.',
-    sv: 'Oppositionsaktiviteten domineras av ett enda parti, vilket kan tyda på antingen strategiskt fokus eller andra partiers misslyckande att engagera sig.',
-  };
-  return t[lang as string] ?? t.en;
+function singlePartyDominanceText(_lang: Language | string): string {
+  return '<!-- AI_MUST_REPLACE: single_party_dominance — Analyse why one party dominates opposition activity: strategic focus, internal party dynamics, or failure of other parties to engage? Cite specific evidence. -->';
 }
 
 function debateAnalysisMarker(): string {
@@ -852,12 +798,8 @@ function criticalStabilityText(lang: Language | string): string {
   return t[lang as string] ?? t.en;
 }
 
-function defaultCriticalText(lang: Language | string): string {
-  const t: Record<string, string> = {
-    en: 'Standard parliamentary procedures are being followed, but vigilance is warranted. The gap between legislative intent and implementation often reveals the true political winners and losers. Monitor committee amendments and chamber debate quality for the full picture.',
-    sv: 'Standardiserade parlamentariska förfaranden följs, men vaksamhet är motiverad. Klyftan mellan lagstiftningsavsikt och implementering avslöjar ofta de verkliga vinnarna och förlorarna.',
-  };
-  return t[lang as string] ?? t.en;
+function defaultCriticalText(_lang: Language | string): string {
+  return '<!-- AI_MUST_REPLACE: critical_assessment — Write a critical assessment that challenges assumptions, identifies gaps between intent and likely outcomes, evaluates which measures face implementation risks, and provides an honest evaluation of the political dynamics at play -->';
 }
 
 function generatePerspectivesAnalysis(docs: RawDocument[], lang: Language | string, parties: Map<string, number>): string {
@@ -1150,6 +1092,18 @@ const BANNED_PATTERNS: readonly { label: string; pattern: RegExp }[] = [
   { label: 'policySignificanceGeneric: "Requires committee review and chamber debate…"', pattern: /Requires committee review and chamber debate/i },
   { label: 'topicInFocusSuffix: "…: {Topic} in Focus"', pattern: /:\s+\w[\w\s]*\bin Focus\b/i },
   { label: 'briefingOnFieldLabels: "Political intelligence briefing on {Field}: and {Field}:"', pattern: /Political intelligence briefing on \w+:\s+and\s+\w+:/i },
+  // Deep Analysis generic template patterns — AI MUST replace these with specific analysis
+  { label: 'genericTimeline: "The pace of activity signals…"', pattern: /The pace of activity signals the political urgency/i },
+  { label: 'genericTimeline: "define the current legislative landscape"', pattern: /define the current legislative landscape/i },
+  { label: 'genericWhy: "broad legislative push that will shape"', pattern: /broad legislative push that will shape multiple aspects/i },
+  { label: 'genericWhy: "critical period for understanding the government"', pattern: /critical period for understanding the government.s strategic direction/i },
+  { label: 'genericImpact: "culmination of legislative review, with recommendations that guide"', pattern: /culmination of legislative review,? with recommendations that guide/i },
+  { label: 'genericImpact: "interplay between governing ambition and opposition scrutiny"', pattern: /interplay between governing ambition and opposition scrutiny/i },
+  { label: 'genericConsequences: "cascade through committee deliberations"', pattern: /cascade through committee deliberations,? chamber votes/i },
+  { label: 'genericConsequences: "establish the policy alternatives that opposition parties will champion"', pattern: /establish the policy alternatives that opposition parties will champion/i },
+  { label: 'genericCritical: "Standard parliamentary procedures are being followed"', pattern: /Standard parliamentary procedures are being followed/i },
+  { label: 'genericCritical: "gap between legislative intent and implementation"', pattern: /gap between legislative intent and implementation often reveals/i },
+  { label: 'genericPillarTransition: "While parliament deliberates these legislative matters"', pattern: /While parliament deliberates these legislative matters/i },
 ];
 
 /**

@@ -1207,7 +1207,7 @@ describe('Data Transformers', () => {
       expect(content).toContain('opposition oversight');
     });
 
-    it('should include pillar transition in week-ahead content', () => {
+    it('should not include generic pillar transition in week-ahead content (deprecated — AI must write transitions)', () => {
       const content = generateArticleContent({
         events: [
           { titel: 'Debatt', datum: '2026-02-10T10:00:00', organ: 'Kammaren' }
@@ -1215,7 +1215,8 @@ describe('Data Transformers', () => {
         highlights: [{ title: 'Test', description: 'Test' }]
       } as MockArticlePayload, 'week-ahead', 'en') as string;
 
-      expect(content).toContain('pillar-transition');
+      // pillar-transition is now empty — generic transitions deprecated in favor of AI-written prose
+      expect(content).not.toContain('While parliament deliberates');
     });
 
     it('should render key takeaways in propositions content', () => {
@@ -1242,14 +1243,15 @@ describe('Data Transformers', () => {
       expect(content).toContain('propositioner har hänvisats');
     });
 
-    it('should include pillar transition in propositions content', () => {
+    it('should not include generic pillar transition in propositions content (deprecated — AI must write transitions)', () => {
       const content = generateArticleContent({
         propositions: [
           { titel: 'Budget 2026', organ: 'FiU', url: 'https://example.com/p1', dok_id: 'P1' }
         ]
       } as MockArticlePayload, 'propositions', 'en') as string;
 
-      expect(content).toContain('pillar-transition');
+      // pillar-transition is now empty — generic transitions deprecated in favor of AI-written prose
+      expect(content).not.toContain('While parliament deliberates');
     });
 
     it('should include policy domain cross-analysis in propositions key takeaways', () => {
