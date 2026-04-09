@@ -16,5 +16,34 @@
 | **International/EU** | EU directive compliance; subsidiarity challenge sends signal | NU18, SoU37 | Positive — Sweden seen as compliant NATO/EU member | HIGH |
 | **Civil Society** | Equality debate active; minority language protection inadequate | AU11, KU31 | Concerning — rights advocacy met with motion rejections | HIGH |
 
+## Stakeholder Impact Diagram
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'quadrant1Fill': '#1565C0', 'quadrant2Fill': '#2E7D32', 'quadrant3Fill': '#FF9800', 'quadrant4Fill': '#D32F2F', 'quadrant1TextFill': '#ffffff', 'quadrant2TextFill': '#ffffff', 'quadrant3TextFill': '#ffffff', 'quadrant4TextFill': '#ffffff', 'quadrantPointFill': '#ffffff', 'quadrantPointTextFill': '#000000'}}}%%
+quadrantChart
+    title Stakeholder Impact vs Influence on Committee Reports
+    x-axis Low Influence --> High Influence
+    y-axis Negative Impact --> Positive Impact
+    quadrant-1 Supportive & Influential
+    quadrant-2 Supportive & Emerging
+    quadrant-3 Concerned & Emerging
+    quadrant-4 Concerned & Influential
+    Government: [0.85, 0.80]
+    Opposition: [0.75, 0.45]
+    Citizens: [0.35, 0.50]
+    Business: [0.60, 0.70]
+    International-EU: [0.70, 0.75]
+    Civil Society: [0.30, 0.35]
+    Judiciary: [0.55, 0.60]
+    Media: [0.40, 0.55]
+```
+
+## Additional Stakeholder Groups
+
+| Stakeholder | Primary Impact | Key Report | Assessment | Confidence |
+|-------------|---------------|------------|:----------:|:----------:|
+| **Judiciary/Constitutional** | Subsidiarity challenge on GMO directive tests constitutional boundaries; shelter law raises property rights questions | SoU37, FöU12 | Neutral — procedural oversight role activated | MEDIUM |
+| **Media/Public Opinion** | Defence and shelter debates generate high public interest; energy permits attract moderate coverage | FöU12, UU6, NU18 | Engaged — security topics dominate news cycle | HIGH |
+
 ## Data Quality Notes
-Confidence: **HIGH**. Multi-stakeholder analysis based on 20 committee reports with full-text verification for top 5.
+Confidence: **HIGH**. Multi-stakeholder analysis based on 20 committee reports covering all 8 mandatory stakeholder groups with full-text verification for top 5.
