@@ -909,7 +909,9 @@ If the script genuinely fails after verifying MCP, generate articles manually ON
 
 **5. Include Key Takeaways** — 3-5 bullet points with confidence labels and dok_id citations.
 
-**6. Include visualization data** — For breaking news with voting data, include Chart.js vote distribution data. For defense/budget articles, include budget allocation data.
+**6. 🔴 MANDATORY: Replace ALL `AI_MUST_REPLACE` markers** — Search generated HTML for `<!-- AI_MUST_REPLACE: ... -->` markers in Deep Analysis subsections and replace EACH with specific political intelligence. ZERO markers may survive in committed HTML.
+
+**7. Include visualization data** — For breaking news with voting data, include Chart.js vote distribution data. For defense/budget articles, include budget allocation data.
 
 ## Step 4: Validate & Translate
 

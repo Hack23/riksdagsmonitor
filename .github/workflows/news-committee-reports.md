@@ -812,9 +812,19 @@ cat "analysis/daily/$ARTICLE_DATE/committeeReports/stakeholder-perspectives.md"
 
 **5. Replace excuse-as-analysis** — Find and replace `"No chamber debate data is available..."` with either: (a) actual debate data from MCP `search_anforanden`, or (b) analysis of the committee report text itself.
 
-**6. Add Key Takeaways** — If missing, add 3-5 bullet points with bold lead phrases, dok_id citations, and [HIGH/MEDIUM/LOW] confidence labels.
+**6. 🔴 MANDATORY: Replace ALL Deep Analysis `AI_MUST_REPLACE` markers** — The script now generates `<!-- AI_MUST_REPLACE: ... -->` markers in EVERY Deep Analysis subsection (Timeline & Context, Why This Matters, Political Impact, Actions & Consequences, Critical Assessment). You MUST:
+  - Search the generated HTML for ALL `AI_MUST_REPLACE` markers
+  - Replace EACH marker with genuine, specific political intelligence analysis
+  - "Timeline & Context" → Write about the specific scheduling strategy, why these reports come now, and how timing relates to the legislative calendar
+  - "Why This Matters" → Explain the specific political significance of THESE particular items — which parties gain/lose, what policy areas shift, how it affects citizens
+  - "Political Impact" → Name specific parties, vote margins, coalition dynamics, and which measures face the strongest resistance
+  - "Actions & Consequences" → Detail specific implementation requirements, agency actions needed, budget implications, and timeline for each major item
+  - "Critical Assessment" → Provide a genuine critical evaluation: what's the gap between stated intent and likely outcome? Where is the government overreaching or underdelivering?
+  - ZERO `AI_MUST_REPLACE` markers may survive in the final committed HTML
 
-**7. Verify policy domain labels** — Ensure each committee report is classified by its committee code (FöU=Defence, JuU=Justice, SoU=Healthcare, etc.), NOT by keyword heuristics.
+**7. Add Key Takeaways** — If missing, add 3-5 bullet points with bold lead phrases, dok_id citations, and [HIGH/MEDIUM/LOW] confidence labels.
+
+**8. Verify policy domain labels** — Ensure each committee report is classified by its committee code (FöU=Defence, JuU=Justice, SoU=Healthcare, etc.), NOT by keyword heuristics.
 
 ### Step 4: Translate Swedish Content & Verify Analysis Quality
 All Swedish API data MUST be translated. Check every article for `data-translate="true"` markers.

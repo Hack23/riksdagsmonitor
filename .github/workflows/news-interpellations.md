@@ -817,11 +817,20 @@ For each interpellation found, cross-reference the minister's response to identi
 
 **4. Replace generic "Winners & Losers"** — Replace `"The political landscape remains fluid..."` with specific accountability analysis: which ministers face the most pressure, which opposition parties demonstrate coordination, and minister response timeliness.
 
-**5. Integrate minister response data** — Use cross-reference results from Step 3b (minister response speeches via MCP `search_anforanden`) to enrich the article with response summaries, accountability gaps, and policy commitments.
+**5. 🔴 MANDATORY: Replace ALL Deep Analysis `AI_MUST_REPLACE` markers** — The script generates `<!-- AI_MUST_REPLACE: ... -->` markers in EVERY Deep Analysis subsection. You MUST:
+  - Search generated HTML for ALL `AI_MUST_REPLACE` markers and replace EACH with genuine political intelligence
+  - "Timeline & Context" → When were these interpellations filed, what political events triggered them, expected minister response dates
+  - "Why This Matters" → Specific analysis of which ministers face accountability pressure and what policy failures these expose
+  - "Political Impact" → Name specific ministers targeted, opposition coordination patterns, government vulnerability assessment
+  - "Actions & Consequences" → Detail expected minister responses, policy commitments demanded, and consequences of evasive answers
+  - "Critical Assessment" → Honest evaluation of whether interpellations are genuine accountability tools or political theater
+  - ZERO `AI_MUST_REPLACE` markers may survive in the final committed HTML
 
-**6. Replace excuse-as-analysis** — Replace `"No chamber debate data..."` with analysis from the interpellation text itself or minister response speeches.
+**6. Integrate minister response data** — Use cross-reference results from Step 3b (minister response speeches via MCP `search_anforanden`) to enrich the article with response summaries, accountability gaps, and policy commitments.
 
-**7. Add interpellation coordination analysis** — Identify patterns: Are multiple interpellations targeting the same minister? The same policy area? Filed on the same day (suggesting coordination)?
+**7. Replace excuse-as-analysis** — Replace `"No chamber debate data..."` with analysis from the interpellation text itself or minister response speeches.
+
+**8. Add interpellation coordination analysis** — Identify patterns: Are multiple interpellations targeting the same minister? The same policy area? Filed on the same day (suggesting coordination)?
 
 ### Step 4: Translate, Validate & Verify Analysis Quality
 

@@ -758,14 +758,16 @@ For **non-deep-inspection** article types only, if the script fails, generate ar
 
 **3. Enforce per-document unique "Why It Matters"** — Verify that NO two documents in the same article share identical "Why It Matters" text. If found, rewrite each with document-specific evidence.
 
-**4. Enforce minimum analytical depth** — Every article MUST contain:
+**4. 🔴 MANDATORY: Replace ALL Deep Analysis `AI_MUST_REPLACE` markers** — The script generates `<!-- AI_MUST_REPLACE: ... -->` HTML comment markers in Deep Analysis subsections. Search EVERY generated article for these markers and replace EACH with genuine, specific political intelligence analysis. ZERO `AI_MUST_REPLACE` markers may survive in committed HTML. Each subsection (Timeline & Context, Why This Matters, Political Impact, Actions & Consequences, Critical Assessment) must contain analysis specific to the documents in the article — not generic parliamentary boilerplate.
+
+**5. Enforce minimum analytical depth** — Every article MUST contain:
 - Analytical lede naming actors and political significance
 - Per-document analysis (not flat list of links)
 - Winners & Losers with named parties and evidence (≥50 words)
 - Key Takeaways with confidence labels (3-5 bullet points)
 - Analysis references section with GitHub links
 
-**5. Run self-quality check** — Score each article against the 5-dimension rubric from SHARED_PROMPT_PATTERNS.md §"Article Quality Self-Check". If any article scores below 7.0 composite, revise before committing.
+**6. Run self-quality check** — Score each article against the 5-dimension rubric from SHARED_PROMPT_PATTERNS.md §"Article Quality Self-Check". If any article scores below 7.0 composite, revise before committing.
 
 ## Step 4: Translate & Validate
 

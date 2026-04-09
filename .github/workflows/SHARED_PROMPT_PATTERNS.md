@@ -383,6 +383,12 @@ The following script directories and functions previously generated analysis con
 | `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildLegislativeImpact()` | ⚠️ DEPRECATED | AI prompt: "Assess legislative impact using committee + vote data" |
 | `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildCrossPartyImplications()` | ⚠️ DEPRECATED | AI prompt: "Analyze cross-party dynamics from voting records" |
 | `scripts/data-transformers/content-generators/shared.ts` → `generateDeepAnalysisSection()` | ⚠️ DEPRECATED | AI prompt: "Write 5W deep analysis (Who/What/When/Why/Winners)" |
+| `scripts/data-transformers/content-generators/shared.ts` → `generateTimelineContext()` | 🔴 REMOVED | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific timeline analysis |
+| `scripts/data-transformers/content-generators/shared.ts` → `broadAgendaText()`, `focusedAgendaText()`, `defaultWhyText()` | 🔴 REMOVED | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific "Why This Matters" analysis |
+| `scripts/data-transformers/content-generators/shared.ts` → `genericImpactText()`, `propImpactText()`, `betImpactText()`, `motImpactText()` | 🔴 REMOVED | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific political impact analysis |
+| `scripts/data-transformers/content-generators/shared.ts` → `genericConsequencesText()`, `propConsequencesText()`, `motConsequencesText()` | 🔴 REMOVED | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific consequences analysis |
+| `scripts/data-transformers/content-generators/shared.ts` → `defaultCriticalText()` | 🔴 REMOVED | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific critical assessment |
+| `scripts/editorial-pillars.ts` → `INTER_PILLAR_TRANSITIONS` | 🔴 REMOVED | Transitions now empty — AI MUST write article-specific connective prose or omit |
 | `scripts/data-transformers/content-generators/newsworthiness.ts` → `scoreNewsworthiness()` | ⚠️ DEPRECATED | AI prompt: "Score newsworthiness 0-100 with dimension breakdown" |
 | `scripts/data-transformers/content-generators/shared.ts` → all `*Text()` templates | ⚠️ DEPRECATED | AI prompt: "Write editorial analysis from actual document data" |
 
@@ -464,6 +470,18 @@ The following text patterns are BANNED in all generated articles. The AI agent M
 ❌ "{Category}: Policy Priorities This Week: {Topic} in Focus"
 ❌ Any "Why It Matters" text that appears identically for ≥2 documents in the same article
 ❌ Any "Winners & Losers" section under 50 words that doesn't name specific parties
+❌ "The pace of activity signals the political urgency driving these proceedings."
+❌ "define the current legislative landscape"
+❌ "broad legislative push that will shape multiple aspects of Swedish society"
+❌ "critical period for understanding the government's strategic direction"
+❌ "culmination of legislative review, with recommendations that guide chamber votes"
+❌ "interplay between governing ambition and opposition scrutiny"
+❌ "cascade through committee deliberations, chamber votes, and ultimately into policy implementation"
+❌ "establish the policy alternatives that opposition parties will champion"
+❌ "Standard parliamentary procedures are being followed, but vigilance is warranted"
+❌ "gap between legislative intent and implementation often reveals"
+❌ "While parliament deliberates these legislative matters, the executive branch has been equally active"
+❌ Any Deep Analysis subsection (Timeline, Why This Matters, Political Impact, Actions & Consequences, Critical Assessment) that contains generic template text instead of specific political analysis
 ```
 
 ### Article Quality Self-Check (MANDATORY before committing)
@@ -482,6 +500,13 @@ Before committing, verify EACH article passes these checks:
 - [ ] Winners & Losers section names ≥2 winners and ≥2 losers with party abbreviations and evidence
 - [ ] ≥5 dok_id citations in article body
 - [ ] ≥3 named politicians with party abbreviation (e.g., "Elisabeth Svantesson (M)")
+- [ ] ZERO `<!-- AI_MUST_REPLACE:` markers surviving in final HTML — ALL must be replaced with real analysis
+- [ ] Deep Analysis "Timeline & Context" contains SPECIFIC scheduling analysis, NOT generic "pace of activity" text
+- [ ] Deep Analysis "Why This Matters" contains SPECIFIC political significance, NOT generic "broad legislative push" text
+- [ ] Deep Analysis "Political Impact" contains SPECIFIC party/vote analysis, NOT generic "culmination of legislative review" text
+- [ ] Deep Analysis "Actions & Consequences" contains SPECIFIC implementation details, NOT generic "cascade through committee" text
+- [ ] Deep Analysis "Critical Assessment" contains GENUINE evaluation, NOT generic "standard parliamentary procedures" text
+- [ ] NO generic pillar-transition text ("While parliament deliberates these legislative matters...")
 
 ### ✅ Structural Completeness
 - [ ] "📊 Analysis & Sources" section present with GitHub links to all analysis files

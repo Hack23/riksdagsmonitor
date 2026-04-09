@@ -788,9 +788,18 @@ npx tsx scripts/fix-article-navigation.ts
 
 **5. Replace excuse-as-analysis** — Replace `"No chamber debate data..."` with analysis of the proposition text itself or debate data from MCP `search_anforanden`.
 
-**6. Handle empty analysis** — If synthesis reports "0 documents analyzed", use MCP `get_propositioner(rm="2025/26")` directly. NEVER publish with "0 documents analyzed" as content.
+**6. 🔴 MANDATORY: Replace ALL Deep Analysis `AI_MUST_REPLACE` markers** — The script generates `<!-- AI_MUST_REPLACE: ... -->` markers in EVERY Deep Analysis subsection. You MUST:
+  - Search generated HTML for ALL `AI_MUST_REPLACE` markers and replace EACH with genuine political intelligence
+  - "Timeline & Context" → Specific scheduling strategy, why these propositions come now, government legislative timing
+  - "Why This Matters" → Specific political significance naming affected populations, budget amounts, policy shifts
+  - "Political Impact" → Name parties, ministers, vote arithmetic, coalition dynamics for each proposition
+  - "Actions & Consequences" → Detail agency implementation, regulatory changes, budget allocations per proposition
+  - "Critical Assessment" → Honest evaluation of feasibility, political risks, gaps between intent and likely outcome
+  - ZERO `AI_MUST_REPLACE` markers may survive in the final committed HTML
 
-**7. Add Strategic Context** — Explain whether propositions represent coordinated government offensive (pre-election legislative push) or routine business. Cross-reference with committee reports and motions from the same date.
+**7. Handle empty analysis** — If synthesis reports "0 documents analyzed", use MCP `get_propositioner(rm="2025/26")` directly. NEVER publish with "0 documents analyzed" as content.
+
+**8. Add Strategic Context** — Explain whether propositions represent coordinated government offensive (pre-election legislative push) or routine business. Cross-reference with committee reports and motions from the same date.
 
 ### Step 4: Translate, Validate & Verify Analysis Quality
 

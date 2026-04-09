@@ -796,11 +796,20 @@ npx tsx scripts/fix-article-navigation.ts
 
 **4. Replace generic "Winners & Losers"** — Replace `"The political landscape remains fluid..."` with specific opposition strategy analysis: which parties filed, what government policies they target, likelihood of committee support.
 
-**5. Verify document count consistency** — Ensure the number of motions in the title/lede matches the number detailed in the body. If title says "50 motions" but body details 10, either expand body or correct the title.
+**5. 🔴 MANDATORY: Replace ALL Deep Analysis `AI_MUST_REPLACE` markers** — The script generates `<!-- AI_MUST_REPLACE: ... -->` markers in EVERY Deep Analysis subsection. You MUST:
+  - Search generated HTML for ALL `AI_MUST_REPLACE` markers and replace EACH with genuine political intelligence
+  - "Timeline & Context" → Specific context on when these motions were filed, what triggered them, upcoming committee consideration dates
+  - "Why This Matters" → Specific analysis of what policy alternatives these motions establish and which target government vulnerabilities
+  - "Political Impact" → Name parties filing, their strategic objectives, which motions have cross-party support potential
+  - "Actions & Consequences" → Detail committee referral outcomes, likelihood of acceptance, campaign value for opposition parties
+  - "Critical Assessment" → Honest evaluation of which motions have policy substance vs. which are purely symbolic campaign ammunition
+  - ZERO `AI_MUST_REPLACE` markers may survive in the final committed HTML
 
-**6. Verify policy domain classification** — Each motion MUST be classified by its Riksdag committee assignment (utskott), NOT by keyword matching. BANNED: Classifying a food safety motion as "housing policy" based on co-location with housing motions.
+**6. Verify document count consistency** — Ensure the number of motions in the title/lede matches the number detailed in the body. If title says "50 motions" but body details 10, either expand body or correct the title.
 
-**7. Add opposition strategy context** — Explain whether motions represent coordinated opposition campaign, individual MP initiative, or response to government proposition.
+**7. Verify policy domain classification** — Each motion MUST be classified by its Riksdag committee assignment (utskott), NOT by keyword matching. BANNED: Classifying a food safety motion as "housing policy" based on co-location with housing motions.
+
+**8. Add opposition strategy context** — Explain whether motions represent coordinated opposition campaign, individual MP initiative, or response to government proposition.
 
 ### Step 4: Translate, Validate & Verify Analysis Quality
 

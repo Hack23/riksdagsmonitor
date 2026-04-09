@@ -472,6 +472,65 @@ fi
 echo ""
 
 # ============================================================================
+# Check 14: No surviving AI_MUST_REPLACE markers in article HTML
+# ============================================================================
+echo "📋 Check 14: No AI_MUST_REPLACE markers surviving in article HTML"
+
+AI_MARKER_COUNT=0
+for article in news/*.html; do
+  if [ -f "$article" ]; then
+    MARKERS=$(grep -c 'AI_MUST_REPLACE' "$article" 2>/dev/null) || true
+    if [ "${MARKERS:-0}" -gt 0 ]; then
+      AI_MARKER_COUNT=$((AI_MARKER_COUNT + MARKERS))
+      echo -e "${RED}❌ $article has $MARKERS AI_MUST_REPLACE marker(s) — committed article HTML must not contain unresolved placeholders${NC}"
+    fi
+  fi
+done
+
+if [ "$AI_MARKER_COUNT" -gt 0 ]; then
+  echo -e "${RED}❌ $AI_MARKER_COUNT total AI_MUST_REPLACE marker(s) found in article HTML — validation requires zero unresolved placeholders${NC}"
+  ERRORS=$((ERRORS + 1))
+else
+  ARTICLE_COUNT=$(find news -maxdepth 1 -name '*.html' -type f 2>/dev/null | wc -l) || true
+  if [ "${ARTICLE_COUNT:-0}" -gt 0 ]; then
+    echo -e "${GREEN}✅ No AI_MUST_REPLACE markers found in $ARTICLE_COUNT article(s)${NC}"
+  else
+    echo -e "${YELLOW}ℹ️  No article files found to check${NC}"
+  fi
+fi
+
+# Check 15: No banned generic template text in article HTML
+# Uses detectBannedPatterns() from shared.ts as the single canonical pattern list
+BANNED_GENERIC_COUNT=0
+ARTICLE_FILES=(news/*.html)
+if [ -f "${ARTICLE_FILES[0]}" ] && command -v npx &>/dev/null; then
+  BANNED_OUTPUT=""
+  BANNED_EXIT=0
+  BANNED_OUTPUT=$(npx tsx scripts/check-banned-patterns.ts news/*.html) || BANNED_EXIT=$?
+  if [ "$BANNED_EXIT" -ge 126 ]; then
+    # Exit codes 126+ indicate the command could not be executed (126=not executable, 127=not found, 128+=signals)
+    echo -e "${RED}❌ Failed to execute banned pattern detection (exit $BANNED_EXIT). Review the error output above.${NC}"
+    ERRORS=$((ERRORS + 1))
+  elif [ -n "$BANNED_OUTPUT" ]; then
+    while IFS= read -r line; do
+      FILE=$(echo "$line" | jq -r '.file' 2>/dev/null) || FILE=""
+      if [ -n "$FILE" ]; then
+        echo -e "${RED}❌ $FILE contains BANNED generic template text — AI must replace${NC}"
+      else
+        echo -e "${RED}❌ (unknown file) contains BANNED generic template text — AI must replace${NC}"
+      fi
+      BANNED_GENERIC_COUNT=$((BANNED_GENERIC_COUNT + 1))
+    done <<< "$BANNED_OUTPUT"
+  fi
+fi
+
+if [ "$BANNED_GENERIC_COUNT" -gt 0 ]; then
+  echo -e "${RED}❌ $BANNED_GENERIC_COUNT article(s) contain banned generic Deep Analysis template text${NC}"
+  ERRORS=$((ERRORS + 1))
+fi
+echo ""
+
+# ============================================================================
 # Summary
 # ============================================================================
 echo "================================================================"
