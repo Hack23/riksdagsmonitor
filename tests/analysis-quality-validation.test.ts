@@ -236,6 +236,9 @@ function extractDocumentsAnalyzedCount(text: string): number | null {
   // V1 paragraph format: **Documents Analyzed**: 5
   const paraMatch = /\*\*Documents Analyzed\*\*:\s*(\d+)/i.exec(text);
   if (paraMatch?.[1]) return parseInt(paraMatch[1], 10);
+  // Colon-inside-bold: **Documents Analyzed:** 5
+  const colonInsideMatch = /\*\*Documents Analyzed:\*\*\s*(\d+)/i.exec(text);
+  if (colonInsideMatch?.[1]) return parseInt(colonInsideMatch[1], 10);
   return null;
 }
 
