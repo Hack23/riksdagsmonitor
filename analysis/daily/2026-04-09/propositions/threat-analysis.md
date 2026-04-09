@@ -10,7 +10,7 @@
 
 ## Summary
 
-Threat analysis identifies **no critical democratic threats** from today's propositions. The species protection compensation proposition (HD03230) touches on environmental governance norms but does not threaten democratic functions. Primary threat vectors are policy-level: fiscal uncertainty and potential environmental protection erosion.
+Threat analysis identifies **no critical democratic threats** from today's propositions. The species protection compensation proposition (HD03230) intersects with environmental governance norms but does not threaten democratic functions. Primary threat vectors are policy-level: fiscal uncertainty and potential environmental protection erosion.
 
 ## Political Threat Taxonomy
 
