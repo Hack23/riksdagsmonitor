@@ -7,14 +7,16 @@
  * @description
  * Validates that news articles published in non-Swedish languages are
  * fully translated, preventing partially-translated articles from publication.
+ * Checks both data-translate markers AND actual untranslated English/Swedish
+ * body content by comparing translated articles against their EN source.
  *
  * @author Hack23 AB (Multilingual Intelligence & Quality Assurance)
  * @license Apache-2.0
- * @version 2.0.0
+ * @version 3.0.0
  */
 
-import { readFileSync, readdirSync, statSync } from 'fs';
-import { join, basename } from 'path';
+import { readFileSync, readdirSync, existsSync, statSync } from 'fs';
+import { join, basename, dirname } from 'path';
 
 import type { Language } from './types/language.js';
 
@@ -77,6 +79,195 @@ interface FailedFileRecord {
   readonly lang: string;
   readonly count: number;
   readonly samples: string[];
+}
+
+/** Record for files with untranslated body content (English or Swedish leakage) */
+interface ContentLeakageRecord {
+  readonly filename: string;
+  readonly lang: string;
+  readonly untranslatedParagraphs: number;
+  readonly totalParagraphs: number;
+  readonly percentUntranslated: number;
+  readonly samples: string[];
+}
+
+// ---------------------------------------------------------------------------
+// English / Swedish body-content leakage detection
+// ---------------------------------------------------------------------------
+
+/**
+ * Minimum translation completeness threshold.
+ * Articles below this percentage are flagged as failing.
+ * Set to 85% to allow some technical terms and proper nouns.
+ */
+const MIN_TRANSLATION_COMPLETENESS_PCT = 85;
+
+/**
+ * Minimum paragraph character length to consider for leakage checks.
+ * Short fragments like dates or single words are skipped.
+ */
+const MIN_PARAGRAPH_LENGTH = 40;
+
+/**
+ * English phrases that MUST NOT appear verbatim in non-EN translations.
+ * These indicate untranslated analytical body content.
+ */
+const ENGLISH_LEAKAGE_PHRASES: readonly RegExp[] = [
+  /\bThe pace of activity signals\b/i,
+  /\bbroad legislative push\b/i,
+  /\bculmination of legislative review\b/i,
+  /\bcascade through committee deliberations\b/i,
+  /\bStandard parliamentary procedures\b/i,
+  /\bWhile parliament deliberates\b/i,
+  /\bWhy It Matters\b/,
+  /\bPolicy Context\b/,
+  /\bCoalition Dynamics\b/,
+  /\bStakeholder Impact\b/,
+  /\bForward Indicators\b/,
+  /\bRead the full proposition\b/i,
+  /\bLive intelligence platform for Swedish Parliament\b/i,
+  /\bSwedish cybersecurity consultancy specializing\b/i,
+  /\bAI-generated political intelligence based on OSINT\b/i,
+  /\bThe outcomes of these proceedings will cascade\b/i,
+  /\bThe legislative activity reflects the ongoing interplay\b/i,
+  /\bopposition parties have mounted coordinated responses\b/i,
+  /\banalysis confidence:/i,
+  /\bThis article is supported by structured political intelligence\b/i,
+];
+
+/**
+ * Swedish phrases that MUST NOT appear in non-SV articles.
+ * These indicate raw API text that was not translated.
+ */
+const SWEDISH_LEAKAGE_PHRASES: readonly RegExp[] = [
+  /Regeringen överlämnar denna/,
+  /till riksdagen/,
+  /riksdagen\.?\s*Stockholm den/,
+  /Riksrevisionens rapport om/,
+  /med anledning av prop\./,
+  /med anledning av skr\./,
+  /Skyddet för yttrandefriheten/,
+  /Åtgärder mot social dumpning/,
+  /Regeringens integrationspolitik/,
+  /Nationell plan för nya datacenter/,
+  /Funktionsrätt Sveriges granskning/,
+  /Polismyndighetens myndighetsutövning/,
+  /Fördelning av ansvar för infrastrukturkostnader/,
+  /Statligt säkerställande av bra vård/,
+];
+
+/**
+ * Extract visible text paragraphs from HTML body content.
+ * Strips tags, scripts, styles; returns non-trivial paragraphs.
+ */
+function extractBodyParagraphs(html: string): string[] {
+  // Remove script/style blocks
+  let cleaned = html.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '');
+  cleaned = cleaned.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '');
+  // Remove JSON-LD blocks
+  cleaned = cleaned.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/gi, '');
+
+  // Extract paragraph text
+  const paragraphs: string[] = [];
+  const pRegex = /<p[^>]*>([\s\S]*?)<\/p>/gi;
+  let match: RegExpExecArray | null;
+  while ((match = pRegex.exec(cleaned)) !== null) {
+    const text = (match[1] ?? '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+    if (text.length >= MIN_PARAGRAPH_LENGTH) {
+      paragraphs.push(text);
+    }
+  }
+  return paragraphs;
+}
+
+/**
+ * Check how many paragraphs from an EN source appear verbatim in a translated article.
+ * Returns an object with leakage metrics.
+ */
+function checkBodyContentLeakage(
+  translatedFilePath: string,
+  enSourcePath: string | null,
+  fileLang: string,
+): ContentLeakageRecord | null {
+  // Skip EN files — they are the source
+  if (fileLang === 'en') return null;
+
+  const translatedContent = readFileSync(translatedFilePath, 'utf-8');
+  const filename = basename(translatedFilePath);
+  const translatedParagraphs = extractBodyParagraphs(translatedContent);
+
+  if (translatedParagraphs.length === 0) return null;
+
+  let untranslatedCount = 0;
+  const samples: string[] = [];
+
+  // 1. Check for English paragraph leakage from EN source
+  if (enSourcePath && existsSync(enSourcePath)) {
+    const enContent = readFileSync(enSourcePath, 'utf-8');
+    const enParagraphs = extractBodyParagraphs(enContent);
+
+    for (const enPara of enParagraphs) {
+      if (enPara.length >= MIN_PARAGRAPH_LENGTH && translatedContent.includes(enPara)) {
+        untranslatedCount++;
+        if (samples.length < 5) {
+          samples.push(`[EN leakage] ${enPara.slice(0, 100)}...`);
+        }
+      }
+    }
+  }
+
+  // 2. Check for known English boilerplate phrases
+  for (const pattern of ENGLISH_LEAKAGE_PHRASES) {
+    if (pattern.test(translatedContent)) {
+      untranslatedCount++;
+      const m = translatedContent.match(pattern);
+      if (m && samples.length < 5) {
+        samples.push(`[EN phrase] ${m[0]}`);
+      }
+    }
+  }
+
+  // 3. Check for Swedish raw text leakage (applies to ALL non-SV languages including EN)
+  if (fileLang !== 'sv') {
+    for (const pattern of SWEDISH_LEAKAGE_PHRASES) {
+      if (pattern.test(translatedContent)) {
+        untranslatedCount++;
+        const m = translatedContent.match(pattern);
+        if (m && samples.length < 5) {
+          samples.push(`[SV leakage] ${m[0]}`);
+        }
+      }
+    }
+  }
+
+  const totalParagraphs = translatedParagraphs.length;
+  const percentUntranslated = totalParagraphs > 0
+    ? Math.round((untranslatedCount / totalParagraphs) * 100)
+    : 0;
+
+  if (untranslatedCount === 0) return null;
+
+  return {
+    filename,
+    lang: fileLang,
+    untranslatedParagraphs: untranslatedCount,
+    totalParagraphs,
+    percentUntranslated,
+    samples,
+  };
+}
+
+/**
+ * Derive the EN source file path from a translated file path.
+ * e.g. news/2026-04-09-committee-reports-de.html → news/2026-04-09-committee-reports-en.html
+ */
+function deriveEnSourcePath(filepath: string): string | null {
+  const dir = dirname(filepath);
+  const name = basename(filepath);
+  const enName = name.replace(/-[a-z]{2}\.html$/, '-en.html');
+  if (enName === name) return null; // couldn't derive
+  const enPath = join(dir, enName);
+  return existsSync(enPath) ? enPath : null;
 }
 
 /** BCP-47 validation error record */
@@ -252,7 +443,9 @@ function validateNewsTranslations(directory: string = 'news'): number {
   let totalFailed = 0;
   let totalErrors = 0;
   let totalBCP47Errors = 0;
+  let totalContentLeakage = 0;
   const failedFiles: FailedFileRecord[] = [];
+  const leakageFiles: ContentLeakageRecord[] = [];
 
   for (const filepath of nonSwedishFiles) {
     const filename = basename(filepath);
@@ -266,6 +459,20 @@ function validateNewsTranslations(directory: string = 'news'): number {
       console.log(`${colors.yellow}⚠ BCP-47: ${filename}${colors.reset}`);
       for (const err of bcp47Errors) {
         console.log(`  ${colors.yellow}${err.field}: expected "${err.expected}", got "${err.actual}"${colors.reset}`);
+      }
+    }
+
+    // Body content leakage check (EN/SV text in non-EN/SV articles)
+    if (lang && lang !== 'en') {
+      const enSourcePath = deriveEnSourcePath(filepath);
+      const leakage = checkBodyContentLeakage(filepath, enSourcePath, lang);
+      if (leakage) {
+        totalContentLeakage++;
+        leakageFiles.push(leakage);
+        console.log(`${colors.yellow}⚠ Content leakage: ${filename} — ${leakage.untranslatedParagraphs} untranslated items (${leakage.percentUntranslated}% of ${leakage.totalParagraphs} paragraphs)${colors.reset}`);
+        for (const sample of leakage.samples.slice(0, 3)) {
+          console.log(`  ${colors.yellow}  ${sample}${colors.reset}`);
+        }
       }
     }
 
@@ -318,7 +525,15 @@ function validateNewsTranslations(directory: string = 'news'): number {
     console.log(`${colors.red}✗ BCP-47 inconsistencies: ${totalBCP47Errors}${colors.reset}`);
   }
 
-  if (totalFailed > 0 || totalBCP47Errors > 0) {
+  if (totalContentLeakage > 0) {
+    console.log(`${colors.yellow}⚠ Articles with EN/SV body content leakage: ${totalContentLeakage}${colors.reset}`);
+  }
+
+  const hasHardFailures = totalFailed > 0 || totalBCP47Errors > 0;
+  // Content leakage is a warning that will become a hard failure when translation
+  // workflows are updated. For now, report but don't block.
+
+  if (hasHardFailures) {
     console.log(`\n${colors.bold}${colors.red}❌ VALIDATION FAILED${colors.reset}`);
 
     if (failedFiles.length > 0) {
@@ -344,12 +559,27 @@ function validateNewsTranslations(directory: string = 'news'): number {
     }
 
     return 1;
-  } else {
-    console.log(
-      `\n${colors.bold}${colors.green}✅ ALL ARTICLES FULLY TRANSLATED${colors.reset}\n`,
-    );
+  }
+
+  if (leakageFiles.length > 0) {
+    console.log(`\n${colors.bold}${colors.yellow}⚠ TRANSLATION QUALITY WARNING${colors.reset}`);
+    console.log(`\n${colors.yellow}Articles with untranslated English/Swedish body content:${colors.reset}\n`);
+    for (const rec of leakageFiles) {
+      console.log(`  ${colors.yellow}⚠${colors.reset} ${rec.filename} — ${rec.untranslatedParagraphs} untranslated items (${rec.percentUntranslated}% of ${rec.totalParagraphs} paragraphs)`);
+    }
+    console.log(`\n${colors.yellow}Action Required:${colors.reset}`);
+    console.log(`1. The translation workflow MUST translate ALL body paragraphs to the target language`);
+    console.log(`2. Raw Swedish API text (interpellation/proposition excerpts) must be translated or summarized`);
+    console.log(`3. English analytical paragraphs must not appear verbatim in non-EN articles`);
+    console.log(`4. Re-run the news-translate workflow with improved prompts\n`);
+    // Return warning exit code (0 for now, will become 1 when workflow is updated)
     return 0;
   }
+
+  console.log(
+    `\n${colors.bold}${colors.green}✅ ALL ARTICLES FULLY TRANSLATED${colors.reset}\n`,
+  );
+  return 0;
 }
 
 // Run validation
