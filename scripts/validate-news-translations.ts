@@ -103,6 +103,14 @@ interface ContentLeakageRecord {
 const MIN_PARAGRAPH_LENGTH = 40;
 
 /**
+ * Regex patterns that match opening-through-closing script/style tags,
+ * handling whitespace and attributes in closing tags (e.g. </script > or </style\tbar>).
+ * Hoisted to module level to avoid repeated compilation per file.
+ */
+const SCRIPT_TAG_RE = /<script\b[^<]*(?:(?!<\/script\b)<[^<]*)*<\/script\b[^>]*>/gi;
+const STYLE_TAG_RE = /<style\b[^<]*(?:(?!<\/style\b)<[^<]*)*<\/style\b[^>]*>/gi;
+
+/**
  * English phrases that MUST NOT appear verbatim in non-EN translations.
  * These indicate untranslated analytical body content.
  */
@@ -154,16 +162,16 @@ const SWEDISH_LEAKAGE_PHRASES: readonly RegExp[] = [
  * Extract visible text paragraphs from HTML body content.
  * Strips tags, scripts, styles; returns non-trivial paragraphs.
  *
- * NOTE: This function is used for text comparison only (not for
- * rendering), so incomplete sanitization is acceptable. The iterative
- * approach ensures nested script/style tags are fully removed.
+ * NOTE: This is a best-effort HTML text extraction helper for validator
+ * comparisons, not a full HTML parser. Because it is used for leakage
+ * detection, extraction correctness matters: missed script/style/tag
+ * stripping can reduce comparison accuracy. The iterative approach is
+ * intended to remove nested script/style content more completely.
  */
 function extractBodyParagraphs(html: string): string[] {
-  // Regex patterns that match opening-through-closing tags, handling whitespace
-  // and attributes in closing tags (e.g. </script > or </style\tbar>).
-  // The inner [^<]* with negative lookahead avoids crossing nested boundaries.
-  const SCRIPT_TAG_RE = /<script\b[^<]*(?:(?!<\/script\b)<[^<]*)*<\/script\b[^>]*>/gi;
-  const STYLE_TAG_RE = /<style\b[^<]*(?:(?!<\/style\b)<[^<]*)*<\/style\b[^>]*>/gi;
+  // Reset lastIndex for module-level regexes (they carry state with /g flag)
+  SCRIPT_TAG_RE.lastIndex = 0;
+  STYLE_TAG_RE.lastIndex = 0;
 
   // Use iterative removal to fully strip script/style blocks.
   let cleaned = html;
@@ -549,7 +557,16 @@ function validateNewsTranslations(directory: string = 'news'): number {
   console.log(`Summary`);
   console.log(`===========================================${colors.reset}\n`);
   console.log(`Total articles checked: ${nonSwedishFiles.length}`);
-  console.log(`${colors.green}✓ Fully translated: ${totalPassed}${colors.reset}`);
+  if (totalContentLeakage > 0) {
+    // When leakage warnings exist, clarify that "passed" means marker checks only
+    const fullyClean = totalPassed - totalContentLeakage;
+    if (fullyClean > 0) {
+      console.log(`${colors.green}✓ Fully translated: ${fullyClean}${colors.reset}`);
+    }
+    console.log(`${colors.green}✓ Marker check passed (with leakage warnings): ${totalContentLeakage}${colors.reset}`);
+  } else {
+    console.log(`${colors.green}✓ Fully translated: ${totalPassed}${colors.reset}`);
+  }
   console.log(
     `${colors.red}✗ Contains untranslated content: ${totalFailed}${colors.reset}`,
   );
