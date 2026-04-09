@@ -477,13 +477,11 @@ echo ""
 echo "📋 Check: No AI_MUST_REPLACE markers surviving in article HTML"
 
 AI_MARKER_COUNT=0
-AI_MARKER_FILES=""
 for article in news/*.html; do
   if [ -f "$article" ]; then
     MARKERS=$(grep -c 'AI_MUST_REPLACE' "$article" 2>/dev/null) || true
     if [ "${MARKERS:-0}" -gt 0 ]; then
       AI_MARKER_COUNT=$((AI_MARKER_COUNT + MARKERS))
-      AI_MARKER_FILES="$AI_MARKER_FILES $article"
       echo -e "${RED}❌ $article has $MARKERS AI_MUST_REPLACE marker(s) — committed article HTML must not contain unresolved placeholders${NC}"
     fi
   fi
@@ -512,7 +510,7 @@ for article in news/*.html; do
        grep -q 'While parliament deliberates these legislative matters' "$article" 2>/dev/null || \
        grep -q 'Standard parliamentary procedures are being followed' "$article" 2>/dev/null; then
       BANNED_GENERIC_COUNT=$((BANNED_GENERIC_COUNT + 1))
-      echo -e "${YELLOW}⚠️ $article contains BANNED generic template text — AI must replace${NC}"
+      echo -e "${RED}❌ $article contains BANNED generic template text — AI must replace${NC}"
     fi
   fi
 done

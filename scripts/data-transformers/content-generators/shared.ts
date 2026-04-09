@@ -615,12 +615,12 @@ function generateTimelineContext(docs: RawDocument[], _lang: Language | string, 
 
   const typeLabel = prospective ? 'scheduled' : retrospective ? 'recorded' : 'active';
 
-  // Minimal factual data only — no generic "analysis" or "significance" claims
-  const factualBase = committeeCount > 0
-    ? `${count} ${typeLabel} items across ${committeeCount} committee${committeeCount !== 1 ? 's' : ''} (${committeeNames}).`
-    : `${count} ${typeLabel} parliamentary items.`;
+  // Entire paragraph is comment-only so AI must write the full rendered text in the target language
+  const factualHint = committeeCount > 0
+    ? `${count} ${typeLabel} items across ${committeeCount} committee(s): ${committeeNames}`
+    : `${count} ${typeLabel} parliamentary items`;
 
-  return `${factualBase} <!-- AI_MUST_REPLACE: timeline_context — Write specific analysis of scheduling significance, political timing strategy, and why this legislative calendar matters now -->`;
+  return `<!-- AI_MUST_REPLACE: timeline_context — DATA: ${factualHint}. Write specific analysis of scheduling significance, political timing strategy, and why this legislative calendar matters now. Output MUST be in the article's language. -->`;
 }
 
 function generateWhyAnalysis(docs: RawDocument[], lang: Language | string, cia: CIAContext | undefined, extraContext?: string): string {
@@ -655,12 +655,12 @@ function generateWhyAnalysis(docs: RawDocument[], lang: Language | string, cia: 
 }
 
 function broadAgendaText(_lang: Language | string, n: number): string {
-  // Minimal factual scaffold — AI MUST replace with specific political significance analysis
-  return `${n} policy domains active. <!-- AI_MUST_REPLACE: why_matters — Explain WHY these specific domains matter politically right now, what strategic intent drives this breadth, and what it reveals about coalition priorities -->`;
+  // Entire output is comment-only — AI writes the full rendered paragraph in the target language
+  return `<!-- AI_MUST_REPLACE: why_matters — DATA: ${n} policy domains active. Explain WHY these specific domains matter politically right now, what strategic intent drives this breadth, and what it reveals about coalition priorities. Output MUST be in the article's language. -->`;
 }
 
 function focusedAgendaText(_lang: Language | string, n: number): string {
-  return `${n} policy domains active. <!-- AI_MUST_REPLACE: why_matters — Explain the strategic significance of this focused legislative approach and what it reveals about government priorities -->`;
+  return `<!-- AI_MUST_REPLACE: why_matters — DATA: ${n} policy domains active. Explain the strategic significance of this focused legislative approach and what it reveals about government priorities. Output MUST be in the article's language. -->`;
 }
 
 function instabilityText(_lang: Language | string): string {
@@ -699,19 +699,19 @@ function generateImpactAnalysis(docs: RawDocument[], lang: Language | string, ci
 }
 
 function propImpactText(_lang: Language | string, n: number): string {
-  return `${n} government proposition${n !== 1 ? 's' : ''} filed. <!-- AI_MUST_REPLACE: political_impact — Analyse the specific political impact: which propositions face opposition, what coalition dynamics are at play, which policy areas face the strongest resistance, and what the vote arithmetic looks like -->`;
+  return `<!-- AI_MUST_REPLACE: political_impact — DATA: ${n} government proposition(s) filed. Analyse the specific political impact: which propositions face opposition, what coalition dynamics are at play, which policy areas face the strongest resistance, and what the vote arithmetic looks like. Output MUST be in the article's language. -->`;
 }
 
 function betImpactText(_lang: Language | string, n: number): string {
-  return `${n} committee report${n !== 1 ? 's' : ''} issued. <!-- AI_MUST_REPLACE: political_impact — Analyse the political significance of these specific committee recommendations: key votes, reservation patterns, which parties are aligned or divided, and implications for chamber votes -->`;
+  return `<!-- AI_MUST_REPLACE: political_impact — DATA: ${n} committee report(s) issued. Analyse the political significance of these specific committee recommendations: key votes, reservation patterns, which parties are aligned or divided, and implications for chamber votes. Output MUST be in the article's language. -->`;
 }
 
 function motImpactText(_lang: Language | string, n: number): string {
-  return `${n} opposition motion${n !== 1 ? 's' : ''} filed. <!-- AI_MUST_REPLACE: political_impact — Analyse the strategic purpose of these specific motions: which target government vulnerabilities, which signal election campaign themes, and what they reveal about opposition coordination -->`;
+  return `<!-- AI_MUST_REPLACE: political_impact — DATA: ${n} opposition motion(s) filed. Analyse the strategic purpose of these specific motions: which target government vulnerabilities, which signal election campaign themes, and what they reveal about opposition coordination. Output MUST be in the article's language. -->`;
 }
 
 function thinMajorityImpactText(_lang: Language | string, margin: number): string {
-  return `Majority margin: ${margin} seat${margin !== 1 ? 's' : ''}. <!-- AI_MUST_REPLACE: majority_impact — Analyse how this thin margin affects these specific legislative items and which measures are most vulnerable to defection -->`;
+  return `<!-- AI_MUST_REPLACE: majority_impact — DATA: majority margin ${margin} seat(s). Analyse how this thin margin affects these specific legislative items and which measures are most vulnerable to defection. Output MUST be in the article's language. -->`;
 }
 
 function genericImpactText(_lang: Language | string): string {
@@ -736,11 +736,11 @@ function generateConsequencesAnalysis(docs: RawDocument[], lang: Language | stri
 }
 
 function propConsequencesText(_lang: Language | string, n: number): string {
-  return `${n} proposition${n !== 1 ? 's' : ''} pending. <!-- AI_MUST_REPLACE: consequences — Analyse the specific implementation consequences: which agencies must act, what regulatory changes are required, budget implications, and timeline for each proposition -->`;
+  return `<!-- AI_MUST_REPLACE: consequences — DATA: ${n} proposition(s) pending. Analyse the specific implementation consequences: which agencies must act, what regulatory changes are required, budget implications, and timeline for each proposition. Output MUST be in the article's language. -->`;
 }
 
 function motConsequencesText(_lang: Language | string, n: number): string {
-  return `${n} opposition motion${n !== 1 ? 's' : ''} pending. <!-- AI_MUST_REPLACE: consequences — Analyse the strategic consequences: how will rejection/acceptance affect party positioning, which motions establish new policy alternatives, and what campaign value do they carry -->`;
+  return `<!-- AI_MUST_REPLACE: consequences — DATA: ${n} opposition motion(s) pending. Analyse the strategic consequences: how will rejection/acceptance affect party positioning, which motions establish new policy alternatives, and what campaign value do they carry. Output MUST be in the article's language. -->`;
 }
 
 function genericConsequencesText(_lang: Language | string): string {
