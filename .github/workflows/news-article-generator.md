@@ -767,7 +767,7 @@ For **non-deep-inspection** article types only, if the script fails, generate ar
 - Key Takeaways with confidence labels (3-5 bullet points)
 - Analysis references section with GitHub links
 
-**5. Run self-quality check** — Score each article against the 5-dimension rubric from SHARED_PROMPT_PATTERNS.md §"Article Quality Self-Check". If any article scores below 7.0 composite, revise before committing.
+**6. Run self-quality check** — Score each article against the 5-dimension rubric from SHARED_PROMPT_PATTERNS.md §"Article Quality Self-Check". If any article scores below 7.0 composite, revise before committing.
 
 ## Step 4: Translate & Validate
 
