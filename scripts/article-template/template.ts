@@ -8,7 +8,7 @@
  * @license Apache-2.0
  */
 
-import { escapeHtml } from '../html-utils.js';
+import { escapeHtml, decodeHtmlEntities } from '../html-utils.js';
 import { CONTENT_LABELS } from '../data-transformers.js';
 import type { Language } from '../types/language.js';
 import type { ArticleData, EventGridItem, WatchPoint, TemplateSection } from '../types/article.js';
@@ -138,20 +138,20 @@ function toSafeClassToken(value: string): string {
 export function generateArticleHTML(data: ArticleData): string {
   const {
     slug,
-    title,
-    subtitle,
+    title: rawTitle,
+    subtitle: rawSubtitle,
     date,
     type,
     articleType,
     readTime = '5 min read',
     lang = 'en',
     locale,
-    content,
+    content: rawContent,
     events = [],
     watchPoints = [],
     sources = [],
-    keywords = [],
-    tags = [],
+    keywords: rawKeywords = [],
+    tags: rawTags = [],
     sections = [],
     significance,
     urgency,
@@ -159,6 +159,14 @@ export function generateArticleHTML(data: ArticleData): string {
     riskLevel,
     confidenceLabel,
   } = data;
+
+  // Decode any HTML entities to UTF-8 to prevent double-escaping.
+  // AI agents may produce &#228; instead of ä — normalize here.
+  const title: string = decodeHtmlEntities(rawTitle);
+  const subtitle: string = decodeHtmlEntities(rawSubtitle);
+  const content: string = decodeHtmlEntities(rawContent);
+  const keywords: string[] = rawKeywords.map((k) => decodeHtmlEntities(k));
+  const tags: string[] = rawTags.map((t) => decodeHtmlEntities(t));
 
   // Use proper OG locale for the language
   const ogLocale: string = locale || OG_LOCALE_MAP[lang] || 'en_US';

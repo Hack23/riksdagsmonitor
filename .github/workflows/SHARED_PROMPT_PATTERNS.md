@@ -49,6 +49,34 @@ find analysis/daily/2026-04-07/realtime-1411/documents -name "*.json" -exec cat 
 
 ---
 
+## 🔤 UTF-8 Encoding — MANDATORY for ALL Content
+
+> **NON-NEGOTIABLE**: All article content, titles, descriptions, metadata, and analysis output MUST use native UTF-8 characters. NEVER use HTML numeric entities (`&#228;`, `&#246;`, `&#229;`, etc.) for non-ASCII characters.
+
+| ❌ WRONG (HTML entity) | ✅ CORRECT (UTF-8) | Character |
+|---|---|---|
+| `&#228;` | `ä` | a-umlaut |
+| `&#246;` | `ö` | o-umlaut |
+| `&#229;` | `å` | a-ring |
+| `&#196;` | `Ä` | A-umlaut |
+| `&#214;` | `Ö` | O-umlaut |
+| `&#197;` | `Å` | A-ring |
+| `&#233;` | `é` | e-acute |
+| `&#252;` | `ü` | u-umlaut |
+| `&#8212;` | `—` | em-dash |
+| `&#8217;` | `'` | right single quote |
+
+**Rules:**
+1. **Always write Swedish characters as UTF-8**: `ö`, `ä`, `å`, `Ö`, `Ä`, `Å` — never as `&#246;`, `&#228;`, etc.
+2. **All files are UTF-8 encoded** — the `<meta charset="UTF-8">` tag is present in all HTML output.
+3. **Author name**: Always `James Pether Sörling` — never `James Pether S&#246;rling`.
+4. **This applies to ALL languages**: Swedish, Finnish, German, French, Spanish, and any text containing accented characters.
+5. **JSON-LD / Schema.org**: HTML entities are NOT decoded in JSON — always use actual UTF-8 characters.
+6. **Meta tags** (`og:title`, `og:description`, `twitter:title`, etc.): Always use UTF-8 characters, never entities.
+7. **The article template includes a `decodeHtmlEntities()` safety net**, but agents should output correct UTF-8 from the start.
+
+---
+
 ## 🔒 ARTICLE TYPE ISOLATION — Absolute Enforcement
 
 > **NON-NEGOTIABLE**: Different article types MUST NEVER overwrite, merge, or conflict with each other's analysis artifacts. Each workflow owns its article type exclusively.

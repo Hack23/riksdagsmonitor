@@ -393,6 +393,17 @@ bash({ command: "..." }) // ← WRONG: missing description
 4. **Use `find -exec`** instead of for-loops with `$`+`(basename ...)`
 5. **Use direct file paths** when possible instead of variable-constructed paths with braces
 
+## 🔤 UTF-8 Encoding — MANDATORY for ALL Content
+
+> **NON-NEGOTIABLE**: All article content, titles, descriptions, and metadata MUST use native UTF-8 characters. NEVER use HTML numeric entities (`&#228;`, `&#246;`, `&#229;`) for non-ASCII characters like Swedish åäö, German üö, French éè, etc.
+
+**Rules:**
+1. Write Swedish characters as UTF-8: `ö`, `ä`, `å`, `Ö`, `Ä`, `Å` — NEVER as `&#246;`, `&#228;`, etc.
+2. Author name: Always `James Pether Sörling` — never `S&#246;rling`.
+3. All HTML files use `<meta charset="UTF-8">` — entities are unnecessary and cause double-escaping bugs.
+4. This applies to ALL languages and ALL output: titles, meta tags, JSON-LD, article body, analysis files.
+
+
 ## Required Skills
 
 Before translating articles, consult these skills:
