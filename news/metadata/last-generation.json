@@ -1,66 +1,23 @@
 {
-  "timestamp": "2026-04-08T11:29:11.978Z",
+  "timestamp": "2026-04-09T06:09:32.557Z",
   "types": [
-    "interpellations",
-    "motions"
+    "propositions"
   ],
   "languagesGenerated": [
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "en",
+    "sv"
   ],
   "allRequestedLanguages": [
-    "da",
-    "no",
-    "fi",
-    "de",
-    "fr",
-    "es",
-    "nl",
-    "ar",
-    "he",
-    "ja",
-    "ko",
-    "zh"
+    "en",
+    "sv"
   ],
   "batchSize": "all",
-  "skipExisting": false,
-  "generated": 24,
+  "skipExisting": true,
+  "generated": 2,
   "errors": 0,
   "articles": [
-    "2026-04-08-interpellation-debates-da.html",
-    "2026-04-08-interpellation-debates-no.html",
-    "2026-04-08-interpellation-debates-fi.html",
-    "2026-04-08-interpellation-debates-de.html",
-    "2026-04-08-interpellation-debates-fr.html",
-    "2026-04-08-interpellation-debates-es.html",
-    "2026-04-08-interpellation-debates-nl.html",
-    "2026-04-08-interpellation-debates-ar.html",
-    "2026-04-08-interpellation-debates-he.html",
-    "2026-04-08-interpellation-debates-ja.html",
-    "2026-04-08-interpellation-debates-ko.html",
-    "2026-04-08-interpellation-debates-zh.html",
-    "2026-04-08-opposition-motions-da.html",
-    "2026-04-08-opposition-motions-no.html",
-    "2026-04-08-opposition-motions-fi.html",
-    "2026-04-08-opposition-motions-de.html",
-    "2026-04-08-opposition-motions-fr.html",
-    "2026-04-08-opposition-motions-es.html",
-    "2026-04-08-opposition-motions-nl.html",
-    "2026-04-08-opposition-motions-ar.html",
-    "2026-04-08-opposition-motions-he.html",
-    "2026-04-08-opposition-motions-ja.html",
-    "2026-04-08-opposition-motions-ko.html",
-    "2026-04-08-opposition-motions-zh.html"
+    "2026-04-09-government-propositions-en.html",
+    "2026-04-09-government-propositions-sv.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
