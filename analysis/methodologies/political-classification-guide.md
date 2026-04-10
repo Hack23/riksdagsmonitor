@@ -11,13 +11,13 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
+**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-01  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -190,6 +190,22 @@ Key dates that automatically elevate urgency:
 - **April**: Spring Amending Budget — **ELEVATED** minimum
 - **June**: Spring session close — **ELEVATED** for pending legislation
 - **September (election year)**: Riksdag election — **CRITICAL** political environment
+
+### Election 2026 Urgency Boosts
+
+In the **12 months before September 2026**, apply urgency boost rules for electoral sensitivity:
+
+| Document Type | Normal Urgency | Election-Year Boost | Boost Condition |
+|--------------|:--------------:|:-------------------:|:----------------|
+| Budget propositions | ELEVATED | URGENT | Within 6 months of election |
+| Coalition agreements / breakdowns | URGENT | CRITICAL | Any time |
+| Welfare, healthcare, migration policy | ROUTINE/ELEVATED | +1 tier | Voter salience > HIGH |
+| Criminal justice reform | ELEVATED | URGENT | If sentencing/police scope is national |
+| Constitutional amendments | ELEVATED | CRITICAL | Any time |
+| Government confidence votes | CRITICAL | CRITICAL | No boost needed — always CRITICAL |
+| Ministerial appointments/resignations | ELEVATED | URGENT | Within 3 months of election |
+
+> **Boost rationale:** Electoral proximity makes politically salient events more consequential for public discourse and editorial routing. Analysts MUST apply the election-year boost and document the rationale.
 
 ---
 
@@ -550,9 +566,10 @@ export const COMMITTEE_TO_DOMAIN = {
 **Document Control:**  
 - **Path:** `/analysis/methodologies/political-classification-guide.md`  
 - **ISMS Reference:** [CLASSIFICATION.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)  
-- **Version:** 2.2  
-- **Advanced Dimensions:** Political Temperature Index, Strategic Significance, Coalition Impact Vector  
+- **Version:** 2.3  
+- **Advanced Dimensions:** Political Temperature Index, Strategic Significance, Coalition Impact Vector, Election 2026 Context  
+- **Key Changes v2.3:** Added Election 2026 classification context (electoral sensitivity boost rules for pre-election period), 5-level confidence scale integration, enhanced urgency criteria for election-year events  
 - **Key Changes v2.2:** Committee→Domain Canonical Mapping (15 committees with domain keys, classification priorities, Mermaid pipeline diagram, code reference)  
 - **MCP Integration:** riksdag-regering-mcp tool mapping, committee-specific baselines  
 - **Classification:** Public  
-- **Next Review:** 2026-06-30
+- **Next Review:** 2026-09-01

@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `synthesis-summary.md` in the workflow's own folder. This file synthesizes per-file analyses into an integrated intelligence picture. AI reads all per-file analyses and produces genuine synthesis — not a mechanical concatenation of summaries.
@@ -41,7 +41,7 @@
 | **Documents Analyzed** | `[REQUIRED: N]` |
 | **Analysis Period** | `[REQUIRED: e.g. "2026-03-28 00:00–18:00 UTC"]` |
 | **Produced By** | `[REQUIRED: workflow name]` |
-| **Overall Confidence** | `[REQUIRED: HIGH / MEDIUM / LOW]` |
+| **Overall Confidence** | `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]` |
 
 ---
 
@@ -176,12 +176,12 @@ graph LR
 
 | Stakeholder | Impact | Direction | Key Driver |
 |------------|:------:|:---------:|------------|
-| 🏘️ Citizens | `[H/M/L/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
-| 🏛️ Government | `[H/M/L/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
-| 🗳️ Opposition | `[H/M/L/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
-| 🏭 Business | `[H/M/L/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
-| 🤝 Civil Society | `[H/M/L/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
-| 🌍 International | `[H/M/L/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 🏘️ Citizens | `[VH/H/M/L/VL/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 🏛️ Government | `[VH/H/M/L/VL/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 🗳️ Opposition | `[VH/H/M/L/VL/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 🏭 Business | `[VH/H/M/L/VL/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 🤝 Civil Society | `[VH/H/M/L/VL/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 🌍 International | `[VH/H/M/L/VL/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
 
 ---
 
@@ -193,7 +193,7 @@ graph LR
 
 **Primary Narrative Angle:** `[REQUIRED: 1 sentence — the article headline thesis]`  
 **Secondary Angles:** `[OPTIONAL: 1–2 alternative narrative framings]`  
-**Confidence:** `[REQUIRED: HIGH / MEDIUM / LOW]`
+**Confidence:** `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]`
 
 ### 📰 AI-Recommended Article Metadata (MANDATORY — v5.0)
 
@@ -224,6 +224,45 @@ graph LR
 - Meta description references the #1 ranked finding from the Top Findings table
 - Key highlights are unique, substantive facts — not section headers or generic categories
 - Article decision is justified by specific significance scores ≥ 5.0 (Publish) or ≥ 7.0 (Priority/Breaking)
+
+---
+
+## 📊 Historical Comparison
+
+> **AI Instructions:** Compare current period findings with equivalent periods from previous riksmöten. This establishes trend context and prevents over-indexing on routine developments.
+
+| Metric | Current Period | Prior Period (3 months ago) | Year Ago | Trend |
+|--------|---------------|----------------------------|----------|-------|
+| **Overall Risk Level** | `[REQUIRED]` | `[OPTIONAL]` | `[OPTIONAL]` | `[↑/→/↓]` |
+| **Coalition Stability** | `[REQUIRED]` | `[OPTIONAL]` | `[OPTIONAL]` | `[↑/→/↓]` |
+| **Legislative Throughput** | `[REQUIRED: N documents]` | `[OPTIONAL]` | `[OPTIONAL]` | `[↑/→/↓]` |
+| **Opposition Activity Level** | `[REQUIRED: VH/H/M/L/VL]` | `[OPTIONAL]` | `[OPTIONAL]` | `[↑/→/↓]` |
+| **Average Significance Score** | `[REQUIRED: #.#/10]` | `[OPTIONAL]` | `[OPTIONAL]` | `[↑/→/↓]` |
+
+**Historical Context:** `[REQUIRED: 2–3 sentences placing this period in historical context. Is this an unusually active/risky period? Compare to equivalent pre-election periods in 2021/22.]`
+
+**Precedents from Prior Riksmöten:**
+
+| Precedent | Riksmöte | Outcome | Relevance to Current Period |
+|-----------|----------|---------|----------------------------|
+| `[OPTIONAL: similar political situation]` | `[e.g. 2021/22]` | `[What happened]` | `[Why it matters now]` |
+| `[OPTIONAL]` | `[year]` | `[outcome]` | `[relevance]` |
+
+---
+
+## 🗳️ Election 2026 Implications
+
+| Dimension | Assessment | Evidence |
+|-----------|------------|----------|
+| **Electoral Impact** | `[REQUIRED: How does this affect September 2026 election positioning?]` | `[Specific evidence]` |
+| **Coalition Scenarios** | `[REQUIRED: Which coalition configurations benefit/suffer?]` | `[Evidence]` |
+| **Voter Salience** | `[REQUIRED: Which voter segments are most affected? By how much?]` | `[Evidence]` |
+| **Campaign Vulnerability** | `[REQUIRED: Does this create campaign attack vectors for opposition?]` | `[Evidence]` |
+| **Policy Legacy** | `[REQUIRED: Will this become an electoral asset or liability?]` | `[Evidence]` |
+
+**Overall Electoral Significance**: `[REQUIRED: CRITICAL/HIGH/MODERATE/LOW/NEGLIGIBLE]`
+
+**Most Likely Narrative**: `[REQUIRED: How will this be framed in the 2026 campaign?]`
 
 ---
 
@@ -292,6 +331,18 @@ graph LR
 
 ---
 
+## 🎯 Confidence Scale Reference (5-Level)
+
+| Level | Label | Criteria | Evidence Threshold |
+|-------|-------|----------|--------------------|
+| ⬛ 1 | **VERY LOW** | Speculation only, single unverified source | 0–1 sources, no corroboration |
+| 🟥 2 | **LOW** | Circumstantial evidence, indirect indicators | 2 sources, indirect evidence |
+| 🟧 3 | **MEDIUM** | Multiple independent sources, moderate corroboration | 3+ sources, moderate agreement |
+| 🟩 4 | **HIGH** | Official records, documented data, direct evidence | Official docs, voting records, committee reports |
+| 🟦 5 | **VERY HIGH** | Verified data + independent corroboration + expert consensus | Multiple official sources, cross-validated |
+
+---
+
 ## ✅ Quality Self-Check Checklist
 
 > **Pre-commit validation — every item MUST be checked before finalising this synthesis. Derived from SHARED_PROMPT_PATTERNS.md §Quality Self-Check Protocol.**
@@ -310,14 +361,18 @@ graph LR
 - [ ] **MCP Data Provenance:** All data sources listed with timestamps
 - [ ] **No placeholder text remaining:** Search for `[REQUIRED` — zero hits expected
 - [ ] **Cross-document patterns identified:** Synthesis adds value beyond concatenating individual analyses
+- [ ] **Election 2026 Implications present:** All 5 dimensions assessed with evidence and Overall Electoral Significance rating
+- [ ] **Historical Comparison table filled:** Current period compared with prior periods and trend arrows
+- [ ] **5-level confidence applied:** Overall Confidence uses VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW scale
 - [ ] **Named actors:** ≥3 named politicians/parties cited across the synthesis
 
 ---
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/synthesis-summary.md`  
-- **Version:** 2.2  
-- **Effective Date:** 2026-04-06 (UTC)  
+- **Version:** 2.3  
+- **Effective Date:** 2026-06-01 (UTC)  
+- **Key Changes v2.3:** Added Election 2026 Implications section, Historical Comparison tables, 5-level confidence scale (VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW), updated quality checklist  
 - **Consumed By:** All news article generator workflows  
 - **ISMS Alignment:** ISO 27001:2022 A.5.7 (Threat Intelligence), NIST CSF 2.0 ID.RA (Risk Assessment)  
 - **Classification:** Public  

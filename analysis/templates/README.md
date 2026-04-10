@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-4.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.1 | **📅 Last Updated:** 2026-04-06 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 4.2 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -491,6 +491,29 @@ sequenceDiagram
         QG->>AI: ❌ Revision required
     end
 ```
+
+---
+
+## 🆕 v2.3 Common Improvements (All Templates)
+
+All 8 templates were updated in v2.3 (2026-06-01) with the following cross-cutting improvements:
+
+### 🗳️ Election 2026 Implications Section
+Every template now includes an **Election 2026** section that assesses electoral impact, coalition scenarios, voter salience, campaign vulnerability, and policy legacy relative to the September 2026 Swedish general election. This section is **MANDATORY** in all analysis output.
+
+### 🎯 5-Level Confidence Scale
+The binary HIGH/MEDIUM/LOW confidence scale has been replaced with a **5-level confidence scale**:
+- ⬛ **VERY LOW** — Speculation only, single unverified source
+- 🟥 **LOW** — Circumstantial evidence, indirect indicators
+- 🟧 **MEDIUM** — Multiple independent sources, moderate corroboration
+- 🟩 **HIGH** — Official records, documented data, direct evidence
+- 🟦 **VERY HIGH** — Verified data + independent corroboration + expert consensus
+
+### 📊 Historical Comparison Tables
+`synthesis-summary.md` now includes a **Historical Comparison** section with tables comparing current period metrics to prior periods and year-ago data, plus a precedents table from prior riksmöten.
+
+### 📈 Election 2026 Relevance Score
+`significance-scoring.md` now includes an **Election 2026 Relevance Score** with proximity bonus, coalition stability multiplier, and voter salience factor to produce election-adjusted significance scores.
 
 ---
 

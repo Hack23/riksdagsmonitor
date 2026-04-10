@@ -11,13 +11,13 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-04-06 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
+**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-01  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -85,6 +85,33 @@ graph LR
 | 5–9 | **Medium** | 🟡 | Active monitoring; flag in daily analysis |
 | 10–14 | **High** | 🟠 | Priority assessment; include in news |
 | 15–25 | **Critical** | 🔴 | Immediate analysis; breaking news consideration |
+
+### 5-Level Confidence Scale Mapping for Risk Scores
+
+Risk scores carry a confidence label that reflects the quality and completeness of evidence behind the L×I assessment:
+
+| Confidence Level | Label | Risk Score Context | Evidence Requirements |
+|:----------------:|-------|-------------------|-----------------------|
+| 🟦 5 | **VERY HIGH** | Score backed by official voting records or government actions | Multiple official sources, cross-validated, no conflicting evidence |
+| 🟩 4 | **HIGH** | Score based on official Riksdag API data or documented government positions | ≥2 official sources, direct evidence |
+| 🟧 3 | **MEDIUM** | Score based on multiple news reports or committee proceedings | 3+ sources with moderate agreement; some inferential gaps |
+| 🟥 2 | **LOW** | Score based on limited public information or indirect indicators | 2 sources, circumstantial evidence; score may shift significantly |
+| ⬛ 1 | **VERY LOW** | Score is speculative; single source or no confirmed evidence | 0–1 sources; treat score as provisional |
+
+**Application rule:** Always append the confidence label to every risk score entry. Example: `L=3, I=4, Score=12 [HIGH confidence — based on JuU committee vote records and ministerial statement]`
+
+### Election 2026 Risk Proximity Factor
+
+Apply a **proximity factor** to Electoral risk scores based on distance to the September 2026 election:
+
+| Months to Election | Proximity Factor | Applied Risk Score |
+|:-----------------:|:---------------:|:-----------------:|
+| >18 months | ×1.0 | Standard L×I score |
+| 12–18 months | ×1.1 | Score × 1.1 (rounded up) |
+| 6–12 months | ×1.25 | Score × 1.25 (rounded up) |
+| <6 months | ×1.5 | Score × 1.5 (rounded up) |
+
+> **Rationale:** Political risks with direct electoral implications become more consequential as the election approaches. A score of 8 (HIGH) with 5 months to election becomes 12 (HIGH→ border of CRITICAL) after proximity adjustment.
 
 ---
 
@@ -586,8 +613,9 @@ This section provides a **complete, date-specific worked example** showing how t
 **Document Control:**  
 - **Path:** `/analysis/methodologies/political-risk-methodology.md`  
 - **ISMS Reference:** [Risk_Assessment_Methodology.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Risk_Assessment_Methodology.md)  
-- **Version:** 2.1  
-- **Advanced Techniques:** Cascading Risk, Bayesian Updating, Risk Interconnection, Scenario Trees, Temporal Analysis Protocol  
+- **Version:** 2.2  
+- **Advanced Techniques:** Cascading Risk, Bayesian Updating, Risk Interconnection, Scenario Trees, Temporal Analysis Protocol, 5-Level Confidence Scale, Election 2026 Risk Mapping  
+- **Key Changes v2.2:** Added 5-Level Confidence Scale mapping to risk scoring (VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW), Election 2026 risk dimension with electoral proximity factor, updated calibration examples with confidence levels  
 - **Key Changes v2.1:** Temporal Analysis Protocol (re-scoring triggers, staleness rules, evolution template), Bayesian Updating Worked Example (7-day ECHR challenge scenario with date-specific evidence chain)  
 - **Classification:** Public  
-- **Next Review:** 2026-06-30
+- **Next Review:** 2026-09-01
