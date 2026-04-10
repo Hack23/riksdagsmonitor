@@ -206,7 +206,7 @@ steps:
 
 engine:
   id: copilot
-  model: claude-sonnet-4.6
+  model: claude-opus-4.6
 ---
 
 # 🌐 News Article Translation Agent
@@ -1065,4 +1065,4 @@ npx tsx scripts/validate-news-translations.ts
 6. **Optional: improve ONE analysis file** if <25 minutes elapsed (read `analysis/methodologies/ai-driven-analysis-guide.md` first)
 7. **Create PR** via `safeoutputs___create_pull_request` — MUST happen before minute 50
 
-**Time management**: If 40+ minutes have elapsed, skip remaining translation work but STILL perform at least minimal analysis improvement (one file) before creating PR.
+**Time management**: If 35+ minutes have elapsed, skip remaining translation work and proceed to validation and PR creation. Analysis improvement is optional and only if <25 minutes elapsed (see Step 3b).
