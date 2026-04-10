@@ -213,6 +213,15 @@ engine:
 
 You are the **Translation Agent** for Riksdagsmonitor. Your primary focus is producing **excellent, faithful translations** of news articles into target languages. You do NOT generate original content — you translate existing articles. Additionally, as mandated by `analysis/methodologies/ai-driven-analysis-guide.md`, you MUST review and improve existing analysis artifacts during every workflow run — no workflow run is ever wasted.
 
+## 🚨 PRIORITY ZERO: Avoid Timeout Failure
+
+**The single most important rule**: You MUST call either `safeoutputs___create_pull_request` or `safeoutputs___noop` before running out of time. A timeout failure (60 minutes with no safe output) is the WORST possible outcome — it wastes all tokens and produces nothing.
+
+**Immediate checks (first 2 minutes):**
+1. Check if EN source articles exist on disk → if not, call `safeoutputs___noop` IMMEDIATELY
+2. Scan for untranslated articles → if all translated, call `safeoutputs___noop` IMMEDIATELY
+3. If work exists, record `START_TIME` and begin translation
+
 ## 🔧 Workflow Dispatch Parameters
 
 - **article_date** = `${{ github.event.inputs.article_date }}`
@@ -336,28 +345,39 @@ This workflow uses **persistent repo-memory** on branch `memory/news-generation`
 
 ## ⏱️ Time Budget (60 minutes)
 
-- **Minutes 0–3**: Scan for untranslated articles, determine work scope
-- **Minutes 3–8**: MCP warm-up, load source articles
-- **Minutes 8–15**: Generate TypeScript structural baselines
-- **Minutes 15–42**: 🚨 **CRITICAL** — Translate ALL body paragraphs for each target language (Step 3c). This is the most important step. Each translated article must contain ZERO English/Swedish body paragraphs.
-- **Minutes 42–48**: 🚨 **MANDATORY** — Review and improve existing analysis (see Step 3b)
-- **Minutes 48–53**: Validate translations, run quality checks
-- **Minutes 53–60**: Create PR with `safeoutputs___create_pull_request`
+- **Minutes 0–2**: 🚨 **PRIORITY ZERO** — Check if EN source articles exist. If not → call `safeoutputs___noop` IMMEDIATELY and exit.
+- **Minutes 2–5**: Scan for untranslated articles, determine work scope (batch limit: 1 type max)
+- **Minutes 5–8**: Load source article, understand structure
+- **Minutes 8–12**: Generate TypeScript structural baselines
+- **Minutes 12–35**: 🚨 **CRITICAL** — Translate ALL body paragraphs for each target language (Step 3c). This is the most important step.
+- **Minutes 35–40**: Validate translations, run quality checks
+- **Minutes 40–45**: Optional: improve ONE analysis file if time permits (Step 3b)
+- **Minutes 45–50**: Create PR with `safeoutputs___create_pull_request`
+- **Minutes 50+**: 🚨 **HARD STOP** — If you haven't called a safe output yet, call `safeoutputs___noop` NOW
+
+> **RULE**: You MUST call either `safeoutputs___create_pull_request` or `safeoutputs___noop` before minute 50. Timing out at 60 minutes without a safe output is a CRITICAL FAILURE.
 
 ### 🚨 BATCH LIMITING (prevents timeout)
 
-When scanning reveals **more than 2 article types** needing translation, sort them alphabetically and process only the **first 2 types**. The remaining types will be picked up by the next scheduled run or a manual dispatch.
+When scanning reveals **more than 1 article type** needing translation, sort them alphabetically and process only the **first 1 type**. The remaining types will be picked up by the next scheduled run or a manual dispatch. This keeps the agent focused and prevents timeouts.
 
 **Time guard**: Before starting translation of each article type, check elapsed time:
 ```bash
-TIME_GUARD_SECONDS=2400  # 40 minutes
+TIME_GUARD_SECONDS=2100  # 35 minutes
 ELAPSED=$(( $(date +%s) - START_TIME ))
 if [ "$ELAPSED" -gt "$TIME_GUARD_SECONDS" ]; then
-  echo "⏰ 40+ minutes elapsed — skipping remaining article types to avoid timeout"
+  echo "⏰ 35+ minutes elapsed — skipping remaining work to avoid timeout"
   echo "   Remaining types will be handled by the next scheduled run."
 fi
 ```
-If more than **40 minutes** have elapsed, IMMEDIATELY skip to Step 4 (Validate) and Step 5 (Create PR) with whatever translations have been generated so far. A partial PR is better than a timeout failure.
+If more than **35 minutes** have elapsed, IMMEDIATELY skip to Step 4 (Validate) and Step 5 (Create PR) with whatever translations have been generated so far. A partial PR is better than a timeout failure.
+
+### 🚨 HARD TIMEOUT GUARD — MANDATORY
+
+At **45 minutes** elapsed, you MUST stop ALL work and proceed directly to safe output:
+- If translations were generated: run validation, commit, and call `safeoutputs___create_pull_request`
+- If no translations were generated: call `safeoutputs___noop` with message explaining what happened
+- **NEVER** let the workflow timeout at 60 minutes without calling a safe output**
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
 
@@ -407,13 +427,15 @@ bash({ command: "..." }) // ← WRONG: missing description
 
 ## Required Skills
 
-Before translating articles, consult these skills:
-1. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
-2. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology
-3. **`.github/skills/legislative-monitoring/SKILL.md`** — Voting patterns, committee tracking, bill progress
-4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
-5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines (required for translation quality)
-6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
+Skills are loaded **lazily** — read each skill file only when you reach the step that needs it, NOT upfront:
+1. **`.github/skills/editorial-standards/SKILL.md`** — Read before translating body paragraphs
+2. **`.github/skills/swedish-political-system/SKILL.md`** — Read when translating parliamentary terms
+3. **`.github/skills/legislative-monitoring/SKILL.md`** — Read when translating legislative content
+4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — Read only if MCP queries are needed
+5. **`.github/skills/language-expertise/SKILL.md`** — Read before translating to verify per-language style
+6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Read before creating PR
+
+**Do NOT read all 6 skills before starting work.** Reading skill files costs time. Load them on-demand during the relevant step.
 
 ## 📊 Translation Analysis Depth
 
@@ -509,12 +531,12 @@ if [ -z "$ARTICLE_TYPE" ]; then
     echo "✅ All articles from $ARTICLE_DATE are fully translated."
   else
     echo "📋 Articles needing translation ($UNTRANSLATED_COUNT types): $UNTRANSLATED_TYPES"
-    if [ "$UNTRANSLATED_COUNT" -gt 2 ]; then
-      # Sort alphabetically for deterministic batch selection, then take first 2
+    if [ "$UNTRANSLATED_COUNT" -gt 1 ]; then
+      # Sort alphabetically for deterministic batch selection, then take first 1
       SORTED_TYPES=$(echo "$UNTRANSLATED_TYPES" | tr ',' '\n' | sort | tr '\n' ',' | sed 's/,$//')
-      BATCH_TYPES=$(echo "$SORTED_TYPES" | cut -d',' -f1-2)
-      REMAINING=$(echo "$SORTED_TYPES" | cut -d',' -f3-)
-      echo "⚠️ BATCH LIMIT: Processing only first 2 types (sorted): $BATCH_TYPES"
+      BATCH_TYPES=$(echo "$SORTED_TYPES" | cut -d',' -f1)
+      REMAINING=$(echo "$SORTED_TYPES" | cut -d',' -f2-)
+      echo "⚠️ BATCH LIMIT: Processing only first 1 type (sorted): $BATCH_TYPES"
       echo "   Deferred to next run: $REMAINING"
       UNTRANSLATED_TYPES="$BATCH_TYPES"
     fi
@@ -524,7 +546,7 @@ fi
 
 If no untranslated articles are found, call `safeoutputs___noop` with message: "All articles are fully translated. No translation work needed."
 
-**IMPORTANT**: When batch limiting is applied, the agent MUST only process the `BATCH_TYPES` (first 2 article types). Do NOT attempt to translate deferred types — they will be handled by the next scheduled run.
+**IMPORTANT**: When batch limiting is applied, the agent MUST only process the `BATCH_TYPES` (first 1 article type). Do NOT attempt to translate deferred types — they will be handled by the next scheduled run.
 
 ### Mandatory EN Source Availability Check
 
@@ -547,13 +569,10 @@ fi
 
 ## Step 2: MCP Health Gate
 
-Before generating translations, verify MCP connectivity (needed for proper parliamentary term translation):
+Before generating translations, verify MCP connectivity with a single call:
 
 1. Call `get_sync_status({})` — if successful, proceed
-2. If it fails, wait 30 seconds and retry (up to 3 total attempts)
-3. If ALL 3 attempts fail:
-   - Use `safeoutputs___noop` with message: "MCP server unavailable after 3 connection attempts. No translations generated."
-   - The workflow MUST end with noop
+2. If it fails, proceed anyway — the TypeScript script handles offline mode gracefully. MCP is only needed for enhanced term translation, not the structural baseline.
 
 ## 📅 Riksmöte (Parliamentary Session) Calculation
 
@@ -638,7 +657,7 @@ source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts \
 
 The TypeScript script generates **structural baselines only** — it translates metadata, section headings, and labels using a static dictionary, but it does **NOT translate the article body paragraphs**. The AI agent (you) MUST translate all remaining English/Swedish body content into the target language before the article is considered complete.
 
-**⏰ TIME GUARD**: If more than 35 minutes have elapsed, you MAY temporarily limit work to the **top 3 highest-impact untranslated paragraphs per article** (lede, "Why It Matters", and the conclusion) **only to save intermediate progress for a later completion pass**.
+**⏰ TIME GUARD**: If more than 30 minutes have elapsed, you MAY temporarily limit work to the **top 3 highest-impact untranslated paragraphs per article** (lede, "Why It Matters", and the conclusion) **only to save intermediate progress for a later completion pass**.
 
 **PR / PUBLICATION GATE**: Partial translations are **NOT** acceptable for creating or updating a PR intended for merge/publication. Before opening or updating a PR, the article body must be fully translated for the target language and must have **ZERO untranslated-content/leakage warnings**. If the time guard was used, mark the article as incomplete and rerun later to finish all remaining paragraphs before PR creation.
 
@@ -802,87 +821,32 @@ npx tsx scripts/fix-article-navigation.ts
 
 > **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them. After `git commit`, call the tool directly as your VERY NEXT action.
 
-## Step 3b: 🚨 MANDATORY — Review and Improve Existing Analysis
+## Step 3b: Optional — Review and Improve Existing Analysis (Time-Gated)
 
-> **NON-NEGOTIABLE**: Per `analysis/methodologies/ai-driven-analysis-guide.md`, no agentic workflow run is ever wasted. The translation agent MUST use its runtime to review and improve existing analysis artifacts. This step is MANDATORY even when translation is the primary task.
+> **TIME GATE**: Only perform analysis improvement if **less than 25 minutes** have elapsed. If more than 25 minutes have passed, SKIP this entire step and proceed to Step 4 (Validate). Translation is the PRIMARY task; analysis improvement is a bonus.
 
-### Required Reading
-
-Before improving analysis, read these methodology documents:
-1. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Master guide with bad vs. good examples
-2. **`analysis/methodologies/political-swot-framework.md`** — Evidence-based SWOT with confidence hierarchy
-3. **`analysis/methodologies/political-risk-methodology.md`** — 5×5 Likelihood × Impact risk matrix
-4. **`analysis/methodologies/political-threat-framework.md`** — Political Threat Taxonomy
-5. **`analysis/methodologies/political-classification-guide.md`** — Sensitivity, domain, urgency taxonomy
-6. **`analysis/methodologies/political-style-guide.md`** — Writing standards and evidence density
-
-And these analysis templates:
-1. **`analysis/templates/per-file-political-intelligence.md`** — Per-document analysis output format
-2. **`analysis/templates/synthesis-summary.md`** — Daily synthesis template
-3. **`analysis/templates/risk-assessment.md`** — Risk assessment template
-4. **`analysis/templates/political-classification.md`** — Classification template
-5. **`analysis/templates/threat-analysis.md`** — Threat analysis template
-6. **`analysis/templates/swot-analysis.md`** — SWOT analysis template
-7. **`analysis/templates/stakeholder-impact.md`** — Stakeholder impact template
-8. **`analysis/templates/significance-scoring.md`** — Significance scoring template
-
-### Analysis Improvement Protocol
+If time permits, check for existing analysis artifacts and improve ONE file:
 
 ```bash
-# Check for existing analysis needing improvement
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE="$(date -u +%Y-%m-%d)"
 
-echo "=== Mandatory Analysis Improvement Check ==="
-# Check current date first, then nearby dates
-ANALYSIS_TARGET=""
-for CHECK_OFFSET in 0 1 2 3; do
-  CHECK_DATE=$(date -u -d "$ARTICLE_DATE - $CHECK_OFFSET days" +%Y-%m-%d 2>/dev/null || date -u -v-${CHECK_OFFSET}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
-  [ -z "$CHECK_DATE" ] && continue
-  CHECK_DIR="analysis/daily/${CHECK_DATE}"
-  EXISTING=$(find "$CHECK_DIR" -name "*.md" -type f 2>/dev/null | wc -l)
-  if [ "$EXISTING" -gt 0 ]; then
-    echo "📋 Found $EXISTING analysis files for $CHECK_DATE"
-    ANALYSIS_TARGET="$CHECK_DIR"
-    break
-  fi
-done
-
-if [ -n "$ANALYSIS_TARGET" ]; then
-  # Count files with improvement opportunities
-  REQUIRED_PLACEHOLDERS=$(grep -rl '\[REQUIRED\]' "$ANALYSIS_TARGET" 2>/dev/null | wc -l)
-  MISSING_MERMAID=$(find "$ANALYSIS_TARGET" -name "*.md" -type f 2>/dev/null | while read f; do ! grep -q '```mermaid' "$f" 2>/dev/null && echo "$f"; done | wc -l)
-  echo "⚠️ Files with [REQUIRED] placeholders: $REQUIRED_PLACEHOLDERS"
-  echo "⚠️ Files missing Mermaid diagrams: $MISSING_MERMAID"
-  echo "📍 Analysis target directory: $ANALYSIS_TARGET"
-else
-  echo "📋 No existing analysis found for nearby dates — create NEW baseline analysis following ai-driven-analysis-guide.md"
-  echo "   Use MCP tools to gather data and create per-file analysis for available documents."
-  echo "   Even a minimal analysis artifact (1 synthesis file with Mermaid diagram) is better than none."
-  mkdir -p "analysis/daily/${ARTICLE_DATE}"
-  ANALYSIS_TARGET="analysis/daily/${ARTICLE_DATE}"
+ELAPSED=$(( $(date +%s) - START_TIME ))
+if [ "$ELAPSED" -gt 1500 ]; then
+  echo "⏰ 25+ minutes elapsed — skipping analysis improvement to focus on translation quality"
+  exit 0
 fi
-echo "================================"
+
+ANALYSIS_TARGET="analysis/daily/${ARTICLE_DATE}"
+if [ -d "$ANALYSIS_TARGET" ]; then
+  REQUIRED_PLACEHOLDERS=$(grep -rl '\[REQUIRED\]' "$ANALYSIS_TARGET" 2>/dev/null | wc -l)
+  echo "📋 Found $REQUIRED_PLACEHOLDERS files with [REQUIRED] placeholders in $ANALYSIS_TARGET"
+else
+  echo "📋 No existing analysis found for $ARTICLE_DATE — skipping"
+fi
 ```
 
-**⏰ TIME GUARD**: Check elapsed time before starting analysis improvement. If more than 40 minutes have passed, limit improvements to the single most impactful file (the one with the most `[REQUIRED]` placeholders).
-
-When existing analysis is found, the agent MUST:
-
-1. **Scan for quality gaps**: Identify files with `[REQUIRED]` placeholders, missing Mermaid diagrams, empty SWOT quadrants, or missing dok_id citations
-2. **Prioritize improvements**: Focus on files related to the articles being translated (same article type/date)
-3. **Apply template structure**: Ensure files follow their corresponding template from `analysis/templates/`
-4. **Add evidence from translation context**: During translation, the agent reads EN source articles in detail — use this knowledge to enrich analysis (e.g., add stakeholder perspectives, improve SWOT entries, add forward indicators)
-5. **Improve at least one file**: Even under time pressure, improve at least ONE analysis file per workflow run
-
-### Analysis Improvement Checklist
-- [ ] Read `analysis/methodologies/ai-driven-analysis-guide.md`
-- [ ] Identify existing analysis files needing improvement
-- [ ] Fill `[REQUIRED]` placeholders with evidence-based content
-- [ ] Add missing Mermaid diagrams (≥1 per file, color-coded)
-- [ ] Ensure SWOT entries cite specific dok_id, vote counts, party names
-- [ ] Add confidence labels (`[HIGH]`/`[MEDIUM]`/`[LOW]`) where missing
-- [ ] Commit improved analysis alongside translations
+If analysis files exist and time permits, improve at most **ONE** file (the one with the most `[REQUIRED]` placeholders). Read `analysis/methodologies/ai-driven-analysis-guide.md` before making changes. Stage improved files alongside translations.
 
 ## Step 4: Validate Translation Quality
 
@@ -1089,16 +1053,16 @@ npx tsx scripts/validate-news-translations.ts
 | EN/SV files accidentally staged | Agent created core language files | Pre-commit safety removes them (see Step 5) |
 | Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL}"` |
 | Translation incomplete | Time budget exceeded | Commit partial translations, note missing languages in PR body. A partial PR is better than a timeout. |
-| Too many article types | Batch limiting applied | Only first 2 types processed per run; remaining types deferred to next scheduled run |
+| Too many article types | Batch limiting applied | Only first 1 type processed per run; remaining types deferred to next scheduled run |
 | HTMLHint errors | Malformed translation HTML | Run `npx tsx scripts/article-quality-enhancer.ts --fix` |
 
 🎯 **Now begin — follow this sequence:**
-1. **Check EN source articles** exist on disk. If they don't → call `safeoutputs___noop`
-2. **Scan for untranslated articles** (apply batch limit of 2 types max)
-3. **Warm up MCP** with `get_sync_status()`
-4. **Generate translations** with the TypeScript script
-5. **🚨 MANDATORY: Read `analysis/methodologies/ai-driven-analysis-guide.md`** and review/improve existing analysis artifacts (Step 3b) — no workflow run is ever wasted
-6. **Validate** translations and analysis quality
-7. **Create PR** via `safeoutputs___create_pull_request`
+1. **🚨 PRIORITY ZERO: Check EN source articles** exist on disk. If they don't → call `safeoutputs___noop` IMMEDIATELY — do not proceed further
+2. **Scan for untranslated articles** (apply batch limit of 1 type max). If all translated → call `safeoutputs___noop`
+3. **Generate translations** with the TypeScript script
+4. **Translate body paragraphs** — the core work (read skills lazily as needed)
+5. **Validate** translations
+6. **Optional: improve ONE analysis file** if <25 minutes elapsed (read `analysis/methodologies/ai-driven-analysis-guide.md` first)
+7. **Create PR** via `safeoutputs___create_pull_request` — MUST happen before minute 50
 
-**Time management**: If 40+ minutes have elapsed, skip remaining translation work but STILL perform at least minimal analysis improvement (one file) before creating PR.
+**Time management**: If 35+ minutes have elapsed, skip remaining translation work and proceed to validation and PR creation. Analysis improvement is optional and only if <25 minutes elapsed (see Step 3b).
