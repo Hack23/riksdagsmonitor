@@ -311,15 +311,22 @@ Also reference `scripts/prompts/v2/stakeholder-perspectives.md` for stakeholder 
 
 ```bash
 echo "=== Translation Scope ==="
-START_TIME=$(date +%s)
+date +%s > /tmp/start_time.txt
 date -u "+%A %Y-%m-%d %H:%M:%S UTC"
 
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-if [ -z "$ARTICLE_DATE" ]; then ARTICLE_DATE=$(date -u +%Y-%m-%d); fi
+if [ -z "$ARTICLE_DATE" ]; then
+  date -u +%Y-%m-%d > /tmp/article_date.txt
+  ARTICLE_DATE=$(cat /tmp/article_date.txt)
+fi
 echo "Article date: $ARTICLE_DATE"
 
 ARTICLE_TYPE="${{ github.event.inputs.article_type }}"
-echo "Article type: ${ARTICLE_TYPE:-(scan all)}"
+if [ -z "$ARTICLE_TYPE" ]; then
+  echo "Article type: (scan all)"
+else
+  echo "Article type: $ARTICLE_TYPE"
+fi
 
 LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
 if [ -z "$LANGUAGES_INPUT" ]; then LANGUAGES_INPUT="all-extra"; fi
@@ -329,12 +336,12 @@ case "$LANGUAGES_INPUT" in
   "cjk") LANGS="ja ko zh" ;;
   "rtl") LANGS="ar he" ;;
   "all-extra") LANGS="da no fi de fr es nl ar he ja ko zh" ;;
-  *) LANGS=$(echo "$LANGUAGES_INPUT" | tr ',' ' ') ;;
+  *) echo "$LANGUAGES_INPUT" | tr ',' ' ' > /tmp/langs.txt && LANGS=$(cat /tmp/langs.txt) ;;
 esac
 echo "Target languages: $LANGS"
 
 # List EN source articles
-ls -1 news/${ARTICLE_DATE}-*-en.html 2>/dev/null || echo "No EN sources found"
+ls -1 news/$ARTICLE_DATE-*-en.html 2>/dev/null || echo "No EN sources found"
 echo "========================="
 ```
 
@@ -344,15 +351,16 @@ Scan for untranslated articles. For each EN article, check which target language
 
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-if [ -z "$ARTICLE_DATE" ]; then ARTICLE_DATE=$(date -u +%Y-%m-%d); fi
+if [ -z "$ARTICLE_DATE" ]; then
+  date -u +%Y-%m-%d > /tmp/article_date.txt
+  ARTICLE_DATE=$(cat /tmp/article_date.txt)
+fi
 ARTICLE_TYPE="${{ github.event.inputs.article_type }}"
 
-for en_file in news/${ARTICLE_DATE}-*-en.html; do
-  test -f "$en_file" || continue
-  SLUG=$(basename "$en_file" .html | sed "s/-en$//")
+find news -maxdepth 1 -name "$ARTICLE_DATE-*-en.html" -exec basename {} .html \; | sed "s/-en$//" | while read SLUG; do
   MISSING=""
   for lang in da no fi de fr es nl ar he ja ko zh; do
-    test -f "news/${SLUG}-${lang}.html" || MISSING="$MISSING $lang"
+    test -f "news/$SLUG-$lang.html" || MISSING="$MISSING $lang"
   done
   if [ -n "$MISSING" ]; then
     echo "NEEDS TRANSLATION: $SLUG -> $MISSING"
@@ -430,7 +438,16 @@ Run validation scripts:
 ```bash
 npx tsx scripts/validate-file-ownership.ts translation
 npx tsx scripts/validate-news-translations.ts
-npx htmlhint "news/*-*.html" 2>/dev/null || echo "HTMLHint warnings (non-blocking)"
+
+# HTMLHint validation with auto-fix for common nesting errors
+if ! npx htmlhint "news/*-*.html" 2>/dev/null; then
+  echo "⚠️ HTML validation errors found, attempting auto-fix..."
+  npx tsx scripts/article-quality-enhancer.ts --fix
+  if ! npx htmlhint "news/*-*.html"; then
+    echo "❌ HTML validation failed after auto-fix. Please resolve remaining HTMLHint errors before creating a PR."
+    exit 1
+  fi
+fi
 ```
 
 If validation reports issues, fix them with the `edit` tool before proceeding.
@@ -462,7 +479,8 @@ git add news/*-da.html news/*-no.html news/*-fi.html news/*-de.html \
   news/*-he.html news/*-ja.html news/*-ko.html news/*-zh.html 2>/dev/null || true
 STAGED=$(git diff --cached --name-only | wc -l)
 echo "Staged files: $STAGED"
-git commit -m "chore: translate articles $(date -u +%Y-%m-%d)"
+date -u +%Y-%m-%d > /tmp/commit_date.txt
+git commit -m "chore: translate articles $(cat /tmp/commit_date.txt)"
 ```
 
 Then **immediately** call as a direct tool call:
