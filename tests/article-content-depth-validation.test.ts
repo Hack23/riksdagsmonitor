@@ -152,9 +152,7 @@ describe('countSpecificClaims', () => {
     `;
     // Same doc ID repeated 3 times should count as 1
     const claims = countSpecificClaims(html);
-    // The exact count depends on whether percentages/names are also present,
-    // but the doc contribution should be 1 (not 3)
-    expect(claims).toBeLessThanOrEqual(1);
+    expect(claims).toBe(1);
   });
 
   it('should cap document references at 5', () => {
