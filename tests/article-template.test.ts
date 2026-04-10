@@ -38,6 +38,7 @@ interface MockArticleData {
   confidenceLabel?: ConfidenceLabel;
   significance?: number;
   urgency?: string;
+  analysisReferencesHtml?: string;
 }
 
 describe('Article Template', () => {

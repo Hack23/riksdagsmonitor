@@ -28,6 +28,7 @@ import { generateArticleHTML } from './article-template.js';
 import type { AnalysisEnrichment } from './generate-news-enhanced/helpers.js';
 import { readDailyAnalysis, deriveArticleClassificationMeta } from './analysis-reader.js';
 import type { Language } from './types/language.js';
+import { generateAnalysisReferencesHtml } from './analysis-references.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -344,6 +345,7 @@ async function generateForDate(targetDate: Date, type: string, client: MCPClient
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
+        analysisReferencesHtml: generateAnalysisReferencesHtml({ date: dateStr, articleType: type, lang }),
         ...(enrichment ?? {}),
       });
 
