@@ -216,11 +216,14 @@ export function generateWhatHappensNextSection(
   const title: string = WHAT_HAPPENS_NEXT_TITLES[lang] || WHAT_HAPPENS_NEXT_TITLES.en;
   const sigLabels = SIGNIFICANCE_LABELS[lang] || SIGNIFICANCE_LABELS.en;
 
+  const VALID_SIGNIFICANCE = new Set(['high', 'medium', 'low']);
+
   const rows = items
     .filter(item => item.date && item.event)
     .map(item => {
-      const sigClass = `significance-${item.significance}`;
-      const sigLabel = sigLabels[item.significance];
+      const significance = VALID_SIGNIFICANCE.has(item.significance) ? item.significance : 'medium';
+      const sigClass = `significance-${significance}`;
+      const sigLabel = sigLabels[significance];
       return `      <li class="timeline-item ${sigClass}">
         <time class="timeline-date" datetime="${escapeHtml(item.date)}">${escapeHtml(item.date)}</time>
         <span class="timeline-event">${escapeHtml(item.event)}</span>
@@ -259,11 +262,14 @@ export function generateWinnersLosersSection(
   const title: string = WINNERS_LOSERS_TITLES[lang] || WINNERS_LOSERS_TITLES.en;
   const outcomeLabels = OUTCOME_LABELS[lang] || OUTCOME_LABELS.en;
 
+  const VALID_OUTCOMES = new Set(['wins', 'loses', 'mixed']);
+
   const rows = entries
     .filter(e => e.actor && e.evidence)
     .map(e => {
-      const outcomeClass = `outcome-${e.outcome}`;
-      const outcomeLabel = outcomeLabels[e.outcome];
+      const outcome = VALID_OUTCOMES.has(e.outcome) ? e.outcome : 'mixed';
+      const outcomeClass = `outcome-${outcome}`;
+      const outcomeLabel = outcomeLabels[outcome];
       return `      <li class="wl-entry ${outcomeClass}">
         <span class="wl-actor">${escapeHtml(e.actor)}</span>
         <span class="wl-outcome">${escapeHtml(outcomeLabel)}</span>

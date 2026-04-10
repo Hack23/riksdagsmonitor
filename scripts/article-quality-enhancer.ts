@@ -334,7 +334,7 @@ function countSpecificClaims(content: string): number {
   });
   count += Math.min(uniqueDocumentReferences.size, 5);
 
-  // Percentage figures with surrounding context (e.g. "increased by 12%")
+  // Percentage figures (e.g. "12%", "3.5%")
   // Cap at 5 to prevent a heavily statistics-driven article from
   // single-handedly satisfying the minSpecificClaims threshold via
   // repetitive figures alone (e.g. budget tables with 20+ percentages).

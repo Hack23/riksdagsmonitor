@@ -373,6 +373,6 @@ export function generateSectionTransition(
   const actor = context.actorName ?? defaults.actor;
 
   return template
-    .replace(/\{topic\}/g, topic)
-    .replace(/\{actor\}/g, actor);
+    .replace(/\{topic\}/g, () => topic)
+    .replace(/\{actor\}/g, () => actor);
 }
