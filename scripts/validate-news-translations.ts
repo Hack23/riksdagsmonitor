@@ -467,8 +467,9 @@ function checkFileForAIMustReplaceMarkers(filepath: string): AIMarkerFileRecord 
     }
 
     return { filename, lang, markerCount: allMatches.length, samples };
-  } catch {
-    return null;
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
+    throw new Error(`Failed to validate AI_MUST_REPLACE markers in ${filepath}: ${message}`, { cause: error });
   }
 }
 
@@ -590,10 +591,16 @@ function validateNewsTranslations(directory: string = 'news'): number {
       console.log(`  ${colors.red}${result.error}${colors.reset}\n`);
       totalErrors++;
     } else if (result.passed) {
-      console.log(`${colors.green}✓ ${filename} (${(lang ?? '').toUpperCase()})${colors.reset}`);
-      totalPassed++;
+      // Files with AI_MUST_REPLACE markers are NOT counted as passed — they
+      // are a separate hard failure reported via aiMarkerFiles.
+      if (aiMarkerRecord) {
+        // Already logged above; don't double-count as passed.
+      } else {
+        console.log(`${colors.green}✓ ${filename} (${(lang ?? '').toUpperCase()})${colors.reset}`);
+        totalPassed++;
+      }
       // Only count leakage toward summary totals for marker-passed files
-      if (fileLeakage) {
+      if (fileLeakage && !aiMarkerRecord) {
         totalContentLeakage++;
       }
     } else {

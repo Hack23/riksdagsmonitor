@@ -654,7 +654,7 @@ The TypeScript script generates **structural baselines only** — it translates 
 3. **Raw Swedish API text** — Interpellation excerpts, proposition summaries that come from the Riksdag API are often pasted as-is. You MUST translate these to the target language or summarize them.
 4. **English boilerplate phrases** — Remove or translate phrases like "Read the full proposition", "Live intelligence platform for Swedish Parliament monitoring"
 5. **Section headings** that were not covered by CONTENT_LABELS (e.g., specific policy domain names used as h3/h4 headings)
-6. **🚨 AI_MUST_REPLACE HTML comments** — SCAN every HTML comment in the source article. If any contains `AI_MUST_REPLACE`, you MUST generate replacement content in the target language. See critical section below.
+6. **🚨 AI_MUST_REPLACE HTML comments** — SCAN every HTML comment in the **translated** article. If any contains `AI_MUST_REPLACE`, you MUST generate replacement content in the target language. See critical section below.
 
 #### 🚨 CRITICAL: AI_MUST_REPLACE Comment Handling
 

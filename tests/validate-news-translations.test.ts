@@ -567,7 +567,7 @@ describe('validate-news-translations.ts', () => {
       let exitCode = 0;
       let output = '';
       try {
-        output = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+        execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
           encoding: 'utf-8'
         });
       } catch (error: unknown) {
@@ -595,7 +595,7 @@ describe('validate-news-translations.ts', () => {
       let exitCode = 0;
       let output = '';
       try {
-        output = execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+        execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
           encoding: 'utf-8'
         });
       } catch (error: unknown) {
