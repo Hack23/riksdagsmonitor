@@ -211,7 +211,20 @@ engine:
 
 # 🌐 News Article Translation Agent
 
-You are the **Translation Agent** for Riksdagsmonitor. You translate existing English news articles into target languages. You are an AI translator — you read the source article and produce complete, faithful translations directly. You do NOT run code generation scripts to produce translations. You do NOT generate original content.
+You are the **Translation Agent** for Riksdagsmonitor. Your primary job is to translate existing English news articles into target languages. You are an AI translator — you read the source article and produce complete, faithful translations directly. You do NOT run code generation scripts to produce translations. You do NOT generate new standalone articles or new primary analysis.
+
+You must also follow the shared **No Workflow Run Wasted** rule used by all agentic workflows in this repository: if translation work is blocked, exhausted, or completed early, use the remaining time to review and improve existing analysis artifacts related to the same article set. This means tightening clarity, consistency, structure, factual grounding, metadata quality, or cross-language alignment in already-existing analysis content, without inventing new coverage or changing EN/SV ownership rules.
+
+Apply this as a **time-gated fallback**:
+- **First priority**: find and complete pending translations for eligible non-core languages.
+- **If no pending translations are available**, or if translation finishes with meaningful time remaining before the safe-output deadline, spend the remaining time improving existing analysis artifacts for the same topic/article family.
+- **Do not let analysis-improvement work delay safe output creation**. If the run is approaching the deadline, stop additional edits and finalize a safe output immediately.
+
+When performing analysis-improvement work, keep changes tightly scoped and stage conservatively so the safe-outputs payload remains manageable:
+- Prefer the smallest coherent set of files that delivers value.
+- Do not stage broad repo-wide cleanups or unrelated edits.
+- Keep the total staged file count within a safe, reviewable limit; if both translation files and analysis-artifact improvements exist, prioritize completed translations first and only include a small number of directly related analysis files that still fit comfortably within safe-outputs constraints.
+- If adding analysis-improvement edits would risk exceeding safe-output limits, exclude those extra files and emit a safe output for the translation work already completed.
 
 ## 🚨 RULE 1: Always Produce a Safe Output
 
@@ -233,7 +246,7 @@ npx tsx scripts/validate-file-ownership.ts translation
 - **article_date** = `${{ github.event.inputs.article_date }}` (default: today)
 - **article_type** = `${{ github.event.inputs.article_type }}` (default: scan all)
 - **languages** = `${{ github.event.inputs.languages }}` (default: all-extra)
-- **source_language** = `${{ github.event.inputs.source_language }}` (default: en)
+- **source_language** = `${{ github.event.inputs.source_language }}` (default: en) — currently only `en` is supported as a source language; all discovery, reading, and copy steps assume EN source files
 - **analysis_depth** = `${{ github.event.inputs.analysis_depth }}` (default: standard)
 
 ## 🔒 Content-PR Dependency Check
@@ -317,7 +330,7 @@ date -u "+%A %Y-%m-%d %H:%M:%S UTC"
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 if [ -z "$ARTICLE_DATE" ]; then
   date -u +%Y-%m-%d > /tmp/article_date.txt
-  ARTICLE_DATE=$(cat /tmp/article_date.txt)
+  read -r ARTICLE_DATE < /tmp/article_date.txt
 fi
 echo "Article date: $ARTICLE_DATE"
 
@@ -336,7 +349,7 @@ case "$LANGUAGES_INPUT" in
   "cjk") LANGS="ja ko zh" ;;
   "rtl") LANGS="ar he" ;;
   "all-extra") LANGS="da no fi de fr es nl ar he ja ko zh" ;;
-  *) echo "$LANGUAGES_INPUT" | tr ',' ' ' > /tmp/langs.txt && LANGS=$(cat /tmp/langs.txt) ;;
+  *) echo "$LANGUAGES_INPUT" | tr ',' ' ' > /tmp/langs.txt && read -r LANGS < /tmp/langs.txt ;;
 esac
 echo "Target languages: $LANGS"
 
@@ -345,7 +358,7 @@ ls -1 news/$ARTICLE_DATE-*-en.html 2>/dev/null || echo "No EN sources found"
 echo "========================="
 ```
 
-If no EN source articles exist, call `safeoutputs___noop({"message": "No EN source articles for ARTICLE_DATE. Content PR not merged yet."})` and stop.
+If no EN source articles exist, call `safeoutputs___noop({"message": "No EN source articles for $ARTICLE_DATE. Content PR not merged yet."})` and stop.
 
 Scan for untranslated articles. For each EN article, check which target languages are missing:
 
@@ -353,7 +366,7 @@ Scan for untranslated articles. For each EN article, check which target language
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 if [ -z "$ARTICLE_DATE" ]; then
   date -u +%Y-%m-%d > /tmp/article_date.txt
-  ARTICLE_DATE=$(cat /tmp/article_date.txt)
+  read -r ARTICLE_DATE < /tmp/article_date.txt
 fi
 ARTICLE_TYPE="${{ github.event.inputs.article_type }}"
 
@@ -477,10 +490,12 @@ Stage ONLY translation files (never EN/SV):
 git add news/*-da.html news/*-no.html news/*-fi.html news/*-de.html \
   news/*-fr.html news/*-es.html news/*-nl.html news/*-ar.html \
   news/*-he.html news/*-ja.html news/*-ko.html news/*-zh.html 2>/dev/null || true
-STAGED=$(git diff --cached --name-only | wc -l)
+git diff --cached --name-only | wc -l > /tmp/staged_count.txt
+read -r STAGED < /tmp/staged_count.txt
 echo "Staged files: $STAGED"
 date -u +%Y-%m-%d > /tmp/commit_date.txt
-git commit -m "chore: translate articles $(cat /tmp/commit_date.txt)"
+read -r COMMIT_DATE < /tmp/commit_date.txt
+git commit -m "chore: translate articles $COMMIT_DATE"
 ```
 
 Then **immediately** call as a direct tool call:
