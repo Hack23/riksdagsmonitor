@@ -40,6 +40,7 @@ import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
 import { generateDynamicTitle, getAnalysisEnrichment } from '../generate-news-enhanced/helpers.js';
 import { buildArticleVisualizationSections } from '../generate-news-enhanced/generators.js';
+import { generateAnalysisReferencesHtml } from '../analysis-references.js';
 
 /**
  * Required MCP tools for monthly-review articles
@@ -311,11 +312,12 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
       // Build additional visualization sections (SWOT, dashboard, economic)
       const extraSections = buildArticleVisualizationSections(documents as RawDocument[], null, lang);
 
+      const articleDate = today.toISOString().split('T')[0] ?? '';
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: enriched.title,
         subtitle: enriched.subtitle,
-        date: today.toISOString().split('T')[0] ?? '',
+        date: articleDate,
         type: 'retrospective' as ArticleCategory,
         readTime,
         lang,
@@ -326,6 +328,7 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
         topics: metadata.topics,
         tags: metadata.tags,
         sections: [ciaSection, ...extraSections],
+        analysisReferencesHtml: generateAnalysisReferencesHtml({ date: articleDate, articleType: 'monthly-review', lang }),
         ...(enrichment ?? {}),
       });
 

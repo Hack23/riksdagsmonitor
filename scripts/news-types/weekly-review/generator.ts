@@ -23,6 +23,7 @@ import { getCurrentRiksmote } from '../motions.js';
 import type { GenerationOptions, TitleSet, VotingRecord } from './types.js';
 import { REQUIRED_TOOLS } from './types.js';
 import { loadCIAContext, enrichWithFullText, attachSpeechesToDocuments, formatDateForSlug } from './data-loader.js';
+import { generateAnalysisReferencesHtml } from '../../analysis-references.js';
 import {
   analyzeCoalitionStress,
   calculateWeeklyActivityMetrics,
@@ -205,11 +206,12 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
       // Build additional visualization sections (SWOT, dashboard, economic)
       const extraSections = buildArticleVisualizationSections(documents, null, lang);
 
+      const articleDate = today.toISOString().split('T')[0] ?? '';
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: enriched.title,
         subtitle: enriched.subtitle,
-        date: today.toISOString().split('T')[0] ?? '',
+        date: articleDate,
         type: 'retrospective' as ArticleCategory,
         readTime,
         lang,
@@ -220,6 +222,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
         topics: metadata.topics,
         tags: metadata.tags,
         sections: [ciaSection, ...extraSections],
+        analysisReferencesHtml: generateAnalysisReferencesHtml({ date: articleDate, articleType: 'weekly-review', lang }),
         ...(enrichment ?? {}),
       });
 

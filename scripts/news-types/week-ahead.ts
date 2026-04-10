@@ -188,6 +188,7 @@ import { generateArticleHTML } from '../article-template.js';
 import { getAnalysisEnrichment } from '../generate-news-enhanced/helpers.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord, DateRange } from '../types/article.js';
+import { generateAnalysisReferencesHtml } from '../analysis-references.js';
 
 /**
  * Required MCP tools for week-ahead articles.
@@ -338,11 +339,12 @@ export async function generateWeekAhead(options: GenerationOptions = {}): Promis
       
       const titles: TitleSet = getTitles(lang, range);
       
+      const articleDate = today.toISOString().split('T')[0] ?? '';
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: titles.title,
         subtitle: titles.subtitle,
-        date: today.toISOString().split('T')[0] ?? '',
+        date: articleDate,
         type: 'prospective' as ArticleCategory,
         readTime,
         lang,
@@ -353,6 +355,7 @@ export async function generateWeekAhead(options: GenerationOptions = {}): Promis
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
+        analysisReferencesHtml: generateAnalysisReferencesHtml({ date: articleDate, articleType: 'week-ahead', lang }),
         ...(enrichment ?? {}),
       });
       
