@@ -66,10 +66,13 @@ jobs:
       - name: Install gh-aw CLI
         run: |
           echo "Installing gh-aw tool..."
-          # Try to install the GitHub CLI extension
-          # Note: This may require authentication
+          # Pin to a specific version to prevent regressions from buggy releases.
+          # v0.67.4 introduced GITHUB_COPILOT_INTEGRATION_ID which broke all workflows;
+          # v0.68.0 fixes this. Update this pin when upgrading gh-aw.
+          GH_AW_VERSION="v0.68.0"
           if gh auth status 2>/dev/null; then
-            gh extension install github/gh-aw || echo "Failed to install gh-aw extension"
+            gh extension install github/gh-aw --pin "$GH_AW_VERSION" || echo "Failed to install gh-aw extension"
+            echo "✅ Installed gh-aw $GH_AW_VERSION"
           else
             echo "⚠️ GitHub CLI not authenticated"
             echo "Skipping gh-aw installation"
