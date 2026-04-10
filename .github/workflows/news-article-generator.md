@@ -81,11 +81,7 @@ tools:
     toolsets:
       - all
   bash: true
-  microsoft/playwright:
-    command: npx
-    args: ["-y", "@playwright/mcp@0.0.68", "--headless"]
-    env:
-      DISPLAY: ":99"
+  playwright:
   repo-memory:
     branch-name: memory/news-generation
     allowed-extensions: [".md", ".json"]
