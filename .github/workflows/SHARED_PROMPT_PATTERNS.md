@@ -919,6 +919,55 @@ npx tsx scripts/validate-cross-references.ts news/*-{type}-*.html
 ```
 ````
 
+## MANDATORY MCP Health Gate (copy into every workflow)
+
+All workflows MUST verify MCP connectivity before proceeding with content or translation work:
+
+1. Call `get_sync_status({})` — retry up to 3× (30s wait between each)
+2. After 3 failures → `safeoutputs___noop({"message": "MCP server unavailable after 3 attempts"})` — do NOT proceed
+3. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
+4. **For translation workflows**: MCP is required for accurate political term translation and cross-referencing. Do NOT proceed without MCP.
+5. **NEVER let the workflow timeout** without calling a safe output. If MCP is down, noop immediately instead of wasting 60 minutes.
+
+## Standardised PR Description Template (copy into every workflow)
+
+> **All pull requests created by agentic workflows MUST have descriptive, structured PR bodies.** Use this template pattern for consistent, informative PR descriptions.
+
+### Content Workflow PR Template
+```
+safeoutputs___create_pull_request({
+  "title": "📰 {Article Type} - {YYYY-MM-DD}",
+  "body": "## Summary\n\n{Brief description of what was generated}\n\n### Articles\n- Languages: {language list}\n- Article count: {count}\n- Article type: {type}\n\n### Analysis\n- Analysis files: {count} files in `analysis/daily/{date}/{type}/`\n- Quality gate: {PASSED/FAILED}\n\n### Validation\n- HTMLHint: ✅ passed\n- File ownership: ✅ validated\n- Playwright: ✅ validated\n\n### Source\n- Workflow: `{workflow-name}`\n- MCP data freshness: {sync status}\n- Riksmöte: {rm value}",
+  "labels": ["agentic-news", "analysis-data"]
+})
+```
+
+### Translation Workflow PR Template
+```
+safeoutputs___create_pull_request({
+  "title": "🌐 Article Translations - {YYYY-MM-DD}",
+  "body": "## Summary\n\nTranslated {article_type} articles into {count} languages.\n\n### Translations\n- Source language: {source_lang}\n- Target languages: {lang_list}\n- Articles translated: {count}\n- Translation method: TypeScript baseline + AI body translation\n\n### Quality\n- All section headings translated: ✅\n- All body paragraphs translated: ✅\n- No English fallback text: ✅\n- RTL layout verified (ar, he): ✅\n- data-translate markers removed: ✅\n\n### Analysis Updates\n- Analysis files updated: {count} (if any)\n\n### Source\n- Workflow: `news-translate`\n- Source articles: `news/{date}-*-en.html`",
+  "labels": ["agentic-news", "translation"]
+})
+```
+
+### Analysis-Only PR Template
+```
+safeoutputs___create_pull_request({
+  "title": "📊 Analysis Only - {Article Type} - {YYYY-MM-DD}",
+  "body": "## Summary\n\nAnalysis artifacts generated (no new articles — articles already exist for this date).\n\n### Analysis\n- Analysis files: {count} files\n- Location: `analysis/daily/{date}/{type}/`\n- Quality gate: {PASSED/FAILED}\n\n### Source\n- Workflow: `{workflow-name}`\n- Reason: Articles already existed; analysis-only run",
+  "labels": ["agentic-news", "analysis-only", "{type}"]
+})
+```
+
+> **Key rules for PR bodies:**
+> - ALWAYS include a `## Summary` section with a brief human-readable description
+> - ALWAYS list the languages, article count, and article type
+> - ALWAYS include validation results (HTMLHint, file ownership, Playwright)
+> - ALWAYS include the source workflow name
+> - NEVER leave the PR body empty or use a single-line description
+> - PR titles MUST include an emoji prefix, article type, and date
+
 ## Standardised Deduplication Check (copy into every content workflow)
 
 > 🚨 **CRITICAL**: The deduplication check controls **article generation only** — it NEVER skips the deep political analysis phase. Analysis MUST always run regardless of whether articles already exist. When articles exist, the workflow still performs full 15-20 minute analysis and commits analysis artifacts. Only the HTML article generation step is skipped (unless `force_generation=true`).

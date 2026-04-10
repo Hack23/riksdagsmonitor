@@ -567,12 +567,13 @@ fi
 
 **If EN_COUNT is 0**, you MUST call `safeoutputs___noop` with message: "No EN source articles available for {date}. Content workflow PR must be merged first. Translation skipped." Do NOT attempt to generate articles from MCP data.
 
-## Step 2: MCP Health Gate
+## MANDATORY MCP Health Gate
 
-Before generating translations, verify MCP connectivity with a single call:
+Before generating translations, verify MCP connectivity:
 
-1. Call `get_sync_status({})` — if successful, proceed
-2. If it fails, proceed anyway — the TypeScript script handles offline mode gracefully. MCP is only needed for enhanced term translation, not the structural baseline.
+1. Call `get_sync_status({})` — retry up to 3× (30s wait between each)
+2. After 3 failures → `safeoutputs___noop({"message": "MCP server unavailable after 3 attempts — translation deferred to next scheduled run"})` — do NOT proceed without MCP connectivity
+3. MCP is required for accurate political term translation and cross-referencing. Proceeding without it produces low-quality translations that fail editorial review.
 
 ## 📅 Riksmöte (Parliamentary Session) Calculation
 
@@ -959,8 +960,8 @@ Then **immediately** call (as a direct tool call, NOT via bash):
 ```
 safeoutputs___create_pull_request({
   "title": "🌐 Article Translations - {date}",
-  "body": "## Article Translations\n\nLanguages: {list}\nArticles translated: {count}\nAnalysis updates (if any): see commit message for file count\nSource: news-translate workflow",
-  "labels": ["automated-news", "translations", "needs-editorial-review"]
+  "body": "## Summary\n\nTranslated {article_type} articles into {count} languages.\n\n### Translations\n- Source language: EN\n- Target languages: {lang_list}\n- Articles translated: {count}\n- Translation method: TypeScript baseline + AI body translation\n\n### Quality\n- All section headings translated: ✅\n- All body paragraphs translated: ✅\n- No English fallback text: ✅\n- RTL layout verified (ar, he): ✅\n- data-translate markers removed: ✅\n\n### Analysis Updates\n- Analysis files updated: {analysis_count} (if any)\n\n### Source\n- Workflow: `news-translate`\n- Source articles: `news/{date}-*-en.html`",
+  "labels": ["agentic-news", "translation"]
 })
 ```
 
