@@ -59,10 +59,10 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact + Entry
 
 | # | Strength Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
 |---|-------------------|-------------------|:----------:|:------:|:----------:|
-| S1 | `[REQUIRED: specific, verifiable strength — e.g. "Coalition maintains working Riksdag majority of 176 seats through SD support agreement"]` | `[REQUIRED: dok_id or vote record]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
-| S2 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
-| S3 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
-| S4 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| S1 | `[REQUIRED: specific, verifiable strength — e.g. "Coalition maintains working Riksdag majority of 176 seats through SD support agreement"]` | `[REQUIRED: dok_id or vote record]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
+| S2 | `[REQUIRED]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
+| S3 | `[OPTIONAL]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
+| S4 | `[OPTIONAL]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
 
 **Coalition Strength Summary:** `[REQUIRED: 1–2 sentences]`
 
@@ -72,9 +72,9 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact + Entry
 
 | # | Weakness Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
 |---|-------------------|-------------------|:----------:|:------:|:----------:|
-| W1 | `[REQUIRED: e.g. "Internal disagreement on migration targets between M and L weakens policy coherence"]` | `[REQUIRED: dok_id or debate reference]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
-| W2 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
-| W3 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| W1 | `[REQUIRED: e.g. "Internal disagreement on migration targets between M and L weakens policy coherence"]` | `[REQUIRED: dok_id or debate reference]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
+| W2 | `[REQUIRED]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
+| W3 | `[OPTIONAL]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
 
 **Coalition Weakness Summary:** `[REQUIRED: 1–2 sentences]`
 
@@ -84,9 +84,9 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact + Entry
 
 | # | Opportunity Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
 |---|----------------------|-------------------|:----------:|:------:|:----------:|
-| O1 | `[REQUIRED: e.g. "Improving macroeconomic indicators provide window for tax reform legislation"]` | `[REQUIRED: SCB data or budget dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
-| O2 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
-| O3 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| O1 | `[REQUIRED: e.g. "Improving macroeconomic indicators provide window for tax reform legislation"]` | `[REQUIRED: SCB data or budget dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
+| O2 | `[REQUIRED]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
+| O3 | `[OPTIONAL]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
 
 **Coalition Opportunity Summary:** `[REQUIRED: 1–2 sentences]`
 
@@ -96,9 +96,9 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact + Entry
 
 | # | Threat Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
 |---|-----------------|-------------------|:----------:|:------:|:----------:|
-| T1 | `[REQUIRED: e.g. "No-confidence motion risk if SD withdraws budget support over crime legislation stall"]` | `[REQUIRED: interpellation or debate ref]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
-| T2 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
-| T3 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| T1 | `[REQUIRED: e.g. "No-confidence motion risk if SD withdraws budget support over crime legislation stall"]` | `[REQUIRED: interpellation or debate ref]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
+| T2 | `[REQUIRED]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
+| T3 | `[OPTIONAL]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
 
 **Coalition Threat Summary:** `[REQUIRED: 1–2 sentences]`
 
@@ -114,27 +114,27 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact + Entry
 
 | # | Strength Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
 |---|-------------------|-------------------|:----------:|:------:|:----------:|
-| S1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
-| S2 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| S1 | `[REQUIRED]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
+| S2 | `[OPTIONAL]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
 
 ### ⚠️ Weaknesses — Opposition
 
 | # | Weakness Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
 |---|-------------------|-------------------|:----------:|:------:|:----------:|
-| W1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
-| W2 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| W1 | `[REQUIRED]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
+| W2 | `[OPTIONAL]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
 
 ### 🚀 Opportunities — Opposition
 
 | # | Opportunity Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
 |---|----------------------|-------------------|:----------:|:------:|:----------:|
-| O1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| O1 | `[REQUIRED]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
 
 ### 🔴 Threats — Opposition
 
 | # | Threat Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
 |---|-----------------|-------------------|:----------:|:------:|:----------:|
-| T1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| T1 | `[REQUIRED]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
 
 ---
 
@@ -146,26 +146,26 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact + Entry
 
 | # | Strength Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
 |---|-------------------|-------------------|:----------:|:------:|:----------:|
-| S1 | `[REQUIRED: e.g. "Sweden meets 2025 renewable energy target; supporting legislation fully enacted (prop 2024/25:XX)"]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
-| S2 | `[OPTIONAL]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| S1 | `[REQUIRED: e.g. "Sweden meets 2025 renewable energy target; supporting legislation fully enacted (prop 2024/25:XX)"]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
+| S2 | `[OPTIONAL]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
 
 ### ⚠️ Weaknesses in Domain
 
 | # | Weakness Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
 |---|-------------------|-------------------|:----------:|:------:|:----------:|
-| W1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| W1 | `[REQUIRED]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
 
 ### 🚀 Opportunities in Domain
 
 | # | Opportunity Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
 |---|----------------------|-------------------|:----------:|:------:|:----------:|
-| O1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| O1 | `[REQUIRED]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
 
 ### 🔴 Threats to Domain
 
 | # | Threat Statement | Evidence (dok_id) | Confidence | Impact | Entry Date |
 |---|-----------------|-------------------|:----------:|:------:|:----------:|
-| T1 | `[REQUIRED]` | `[dok_id]` | `H/M/L` | `H/M/L` | `YYYY-MM-DD` |
+| T1 | `[REQUIRED]` | `[dok_id]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` | `YYYY-MM-DD` |
 
 ---
 
@@ -290,10 +290,10 @@ graph TD
 
 | SWOT Quadrant | Primary MCP Tools | Evidence Items | Confidence |
 |:-------------:|------------------|:--------------:|:----------:|
-| **Strengths** | `[e.g. search_voteringar, get_betankanden]` | `[#]` | `[H/M/L]` |
-| **Weaknesses** | `[e.g. search_anforanden, search_dokument]` | `[#]` | `[H/M/L]` |
-| **Opportunities** | `[e.g. search_regering, get_calendar_events]` | `[#]` | `[H/M/L]` |
-| **Threats** | `[e.g. search_voteringar, search_dokument_fulltext]` | `[#]` | `[H/M/L]` |
+| **Strengths** | `[e.g. search_voteringar, get_betankanden]` | `[#]` | `[VH/H/M/L/VL]` |
+| **Weaknesses** | `[e.g. search_anforanden, search_dokument]` | `[#]` | `[VH/H/M/L/VL]` |
+| **Opportunities** | `[e.g. search_regering, get_calendar_events]` | `[#]` | `[VH/H/M/L/VL]` |
+| **Threats** | `[e.g. search_voteringar, search_dokument_fulltext]` | `[#]` | `[VH/H/M/L/VL]` |
 
 > **📌 Note:** Confidence follows the temporal decay rule from [political-swot-framework.md](../methodologies/political-swot-framework.md): HIGH (0–30d, remains HIGH at 30d)→MEDIUM (90d)→LOW (180d)→EXPIRED. All files listed MUST exist at the stated paths; mark transient data as `(transient — not cached)`.
 
@@ -387,7 +387,7 @@ graph TD
 - [ ] **SWOT Context complete:** All metadata fields filled including temporal window and validity window
 - [ ] **Minimum 2 entries per quadrant:** Government Coalition SWOT has ≥2 Strengths, ≥2 Weaknesses, ≥1 Opportunity, ≥1 Threat
 - [ ] **Evidence on every entry:** No SWOT entry without a dok_id or named evidence source
-- [ ] **Confidence labels present:** Every entry has H/M/L confidence and impact ratings
+- [ ] **Confidence labels present:** Every entry has VH/H/M/L/VL confidence and impact ratings
 - [ ] **Entry dates populated:** Temporal decay tracking enabled for all entries
 - [ ] **Mermaid SWOT diagram rendered:** Quadrant Mapping diagram has actual findings (no placeholders)
 - [ ] **TOWS Matrix complete:** At least SO and WO strategies filled with specific actions

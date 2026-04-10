@@ -172,7 +172,7 @@ You are the **Evening Political Analyst** for Riksdagsmonitor. Generate comprehe
 
 ## 🧠 Repo Memory
 
-Uses `memory/news-generation` branch. START: read `memory/news-generation/last-run-news-evening-analysis.json` + `covered-documents/{YYYY-MM-DD}.json`. END: update both + `translation-status.json`. Skip already-covered dok_ids.
+Uses `memory/news-generation` branch. START: read `memory/news-generation/last-run-news-evening-analysis.json` + `memory/news-generation/covered-documents/{YYYY-MM-DD}.json`. END: update both + `memory/news-generation/translation-status.json`. Skip already-covered dok_ids.
 
 ## ⏱️ Time Budget (45 minutes)
 
@@ -300,7 +300,7 @@ fi
 
 ### MCP Health Gate
 
-Call `get_sync_status({})` first; retry up to 3× (30s wait). After 3 failures → `safeoutputs___noop("MCP unavailable")`. All content MUST come from live MCP data.
+Call `get_sync_status({})` first; retry up to 3× (30s wait). After 3 failures → `safeoutputs___noop({"message": "MCP unavailable"})`. All content MUST come from live MCP data.
 
 ### DATA FRESHNESS CHECK
 

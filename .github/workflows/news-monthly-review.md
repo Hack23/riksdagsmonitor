@@ -141,7 +141,7 @@ This is a **retrospective** article providing comprehensive analysis of the past
 
 ## 🧠 Repo Memory
 
-Uses `memory/news-generation` branch. START: read `memory/news-generation/last-run-news-monthly-review.json` + `covered-documents/{YYYY-MM-DD}.json`. END: update both + `translation-status.json`. Skip already-covered dok_ids.
+Uses `memory/news-generation` branch. START: read `memory/news-generation/last-run-news-monthly-review.json` + `memory/news-generation/covered-documents/{YYYY-MM-DD}.json`. END: update both + `memory/news-generation/translation-status.json`. Skip already-covered dok_ids.
 
 ## ⏱️ Time Budget (30 minutes)
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
@@ -263,7 +263,7 @@ fi
 ## MANDATORY MCP Health Gate
 
 1. Call `get_sync_status({})` — retry up to 3× (30s wait between each)
-2. After 3 failures → `safeoutputs___noop("MCP server unavailable after 3 attempts")`
+2. After 3 failures → `safeoutputs___noop({"message": "MCP server unavailable after 3 attempts"})`
 3. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
 
 ## 🛡️ File Ownership Contract

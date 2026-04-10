@@ -203,6 +203,12 @@ graph TD
 
 | Path | Steps Required | Feasibility (1–5) | Detectability (1–5) | Political Cost | Most Likely? |
 |------|:--------------:|:-----------------:|:-------------------:|:--------------:|:------------:|
+**Political Cost scale:** `VH = Very High` · `H = High` · `M = Medium` · `L = Low` · `VL = Very Low`
+
+> Rate the expected political cost to the attacker if the path is attempted or exposed (e.g. public backlash, coalition fracture, media scrutiny, loss of legitimacy, sanctions, or electoral damage).
+
+| Path | Steps Required | Feasibility (1–5) | Detectability (1–5) | Political Cost | Most Likely? |
+|------|:--------------:|:-----------------:|:-------------------:|:--------------:|:------------:|
 | Path A | `[#]` | `[1-5]` | `[1-5]` | `[VH/H/M/L/VL]` | `[Y/N]` |
 | Path B | `[#]` | `[1-5]` | `[1-5]` | `[VH/H/M/L/VL]` | `[Y/N]` |
 

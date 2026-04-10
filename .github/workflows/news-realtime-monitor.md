@@ -190,7 +190,7 @@ You are the **Real-Time Political Monitor** for Riksdagsmonitor. Detect signific
 
 ## 🧠 Repo Memory
 
-Uses `memory/news-generation` branch. START: read `memory/news-generation/last-run-news-realtime-monitor.json` + `covered-documents/{YYYY-MM-DD}.json`. END: update both + `translation-status.json`. Skip already-covered dok_ids.
+Uses `memory/news-generation` branch. START: read `memory/news-generation/last-run-news-realtime-monitor.json` + `memory/news-generation/covered-documents/{YYYY-MM-DD}.json`. END: update both + `memory/news-generation/translation-status.json`. Skip already-covered dok_ids.
 
 ## ⏱️ Time Budget (45 minutes)
 
