@@ -245,13 +245,13 @@ source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts --types
 
 ## Required Skills
 
-Before generating articles, consult these skills:
-1. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
-2. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology
+Consult these skills as needed during article generation — do NOT spend time reading all files upfront before starting work. Start the MCP data collection immediately and read skill files only when relevant to the current step:
+1. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards (read during article writing)
+2. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology (read when analyzing interpellations)
 3. **`.github/skills/legislative-monitoring/SKILL.md`** — Voting patterns, committee tracking, bill progress
-4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
-5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
-6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
+4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation (read before MCP calls)
+5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines (read during translation)
+6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage (read before creating PR)
 7. **`scripts/prompts/v2/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
 8. **`scripts/prompts/v2/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
 9. **`scripts/prompts/v2/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
@@ -800,7 +800,7 @@ For each interpellation found, cross-reference the minister's response to identi
    - "Key Highlights" — verify title references at least one highlight
    - "Article Decision" and "Article Priority" — validate publication decision
 
-**2. Generate newsworthy titles from analysis** — Read each article's content AND the synthesis findings, then generate a title following: `[Active Verb] + [Specific Actor/Institution] + [Concrete Policy Action]`. The title MUST reference findings from the synthesis. Apply to ALL languages. BANNED: ❌ "Interpellation Debates: Holding Government to Account: Defense in Focus" or any title ending with ": {Topic} in Focus".
+**2. Generate newsworthy titles from analysis** — Read each article's content AND the synthesis findings, then generate a title following: `[Active Verb] + [Specific Actor/Institution] + [Concrete Policy Action]`. The title MUST reference findings from the synthesis — not generic category labels. Apply to ALL languages (not just English). BANNED: ❌ "Interpellation Debates: Holding Government to Account: Defense in Focus" or any title ending with ": {Topic} in Focus".
 
 **3. Generate AI meta descriptions from analysis** (150-160 chars) — Summarize the #1 ranked finding from synthesis significance-scoring. BANNED: ❌ "Analysis of N documents covering Filed by:, Published:" or any description starting with "Analysis of N documents".
 
@@ -815,7 +815,7 @@ For each interpellation found, cross-reference the minister's response to identi
 - `analysis/methodologies/ai-driven-analysis-guide.md`
 - Per-document analyses in `documents/` subfolder
 
-**5. Update all metadata in ALL languages** — For EVERY generated language file, ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, `<h1>`, Schema.org `headline`, `alternativeHeadline`, and `description` all reflect the AI-generated title and description.
+**5. Update all metadata in ALL languages** — For EVERY generated language file, ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, `<h1>`, Schema.org `headline`, `alternativeHeadline`, and `description` all reflect the AI-generated title and description. Non-English articles MUST have properly translated AI titles — not English titles or generic templates.
 
 ### Step 3d: AI Content Quality Enforcement (v4.0 — MANDATORY)
 
@@ -864,7 +864,7 @@ if [ "$NEWS_FILES" -gt 0 ]; then
     echo "⚠️ HTML validation errors found, attempting auto-fix..."
     npx tsx scripts/article-quality-enhancer.ts --fix
     if ! npx htmlhint "news/*-*.html"; then
-      echo "❌ HTML validation errors remain after auto-fix. Please fix them before creating a PR."
+      echo "❌ HTML validation failed after auto-fix. Please resolve remaining HTMLHint errors before creating a PR."
       exit 1
     fi
   fi
