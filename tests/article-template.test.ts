@@ -1100,4 +1100,28 @@ describe('Article Template', () => {
       expect(html).not.toContain('risk-badge');
     });
   });
+
+  describe('Analysis references section', () => {
+    it('renders analysisReferencesHtml between content and footer', () => {
+      const refHtml = '<section class="analysis-references"><h2>Analysis</h2><ul><li>test</li></ul></section>';
+      const data: MockArticleData = {
+        ...mockArticleData,
+        analysisReferencesHtml: refHtml,
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).toContain(refHtml);
+      // Verify it appears before the footer
+      const refIdx = html.indexOf('analysis-references');
+      const footerIdx = html.indexOf('article-footer');
+      expect(refIdx).toBeLessThan(footerIdx);
+      // Verify it appears after the article content
+      const contentEndIdx = html.indexOf('</div>\n\n');
+      expect(refIdx).toBeGreaterThan(contentEndIdx);
+    });
+
+    it('omits analysis references section when not provided', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).not.toContain('analysis-references');
+    });
+  });
 });

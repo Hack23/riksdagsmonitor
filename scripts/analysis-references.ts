@@ -14,7 +14,6 @@
 import fs from 'fs';
 import path from 'path';
 import type { Language } from './types/language.js';
-import type { ArticleType } from './types/article.js';
 
 // ---------------------------------------------------------------------------
 // Constants
