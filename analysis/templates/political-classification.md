@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `classification-results.md` in the workflow's own folder (never overwrite another workflow's files). Replace all `[REQUIRED]` and `[OPTIONAL]` placeholders with actual values. Include Political Temperature Index and Coalition Impact Vector assessments.
@@ -204,9 +204,9 @@ Significance Score: [REQUIRED: see significance-scoring.md, 0–10 composite]
 `[REQUIRED: Explain why each classification dimension was assigned its value. Reference specific evidence from the source document.]`
 
 ### Confidence Assessment
-- **Source Quality:** `[HIGH / MEDIUM / LOW]` — `[reason]`
-- **Information Completeness:** `[HIGH / MEDIUM / LOW]` — `[reason]`
-- **Overall Confidence:** `[HIGH / MEDIUM / LOW]`
+- **Source Quality:** `[VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]` — `[reason]`
+- **Information Completeness:** `[VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]` — `[reason]`
+- **Overall Confidence:** `[VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]`
 
 ### Recommended Action
 - [ ] 📰 **Publish** — Include in next news cycle (significance ≥ 6)
@@ -297,6 +297,34 @@ Significance Score: [REQUIRED: see significance-scoring.md, 0–10 composite]
 
 ---
 
+## 🗳️ Election 2026 Classification Context
+
+> *How does this classified event's sensitivity, urgency, and scope translate into electoral relevance?*
+
+| Dimension | Assessment | Evidence |
+|-----------|------------|----------|
+| **Electoral Impact** | `[REQUIRED: How does this event affect September 2026 election positioning?]` | `[Specific evidence]` |
+| **Coalition Scenarios** | `[REQUIRED: Which coalition configurations benefit/suffer from this classification?]` | `[Evidence]` |
+| **Voter Salience** | `[REQUIRED: Is this event type salient for voter blocs heading into 2026?]` | `[Evidence]` |
+| **Campaign Vulnerability** | `[REQUIRED: Does this event create campaign attack vectors given its sensitivity level?]` | `[Evidence]` |
+| **Policy Legacy** | `[REQUIRED: Will this event's classification (SENSITIVE/RESTRICTED) affect electoral discourse?]` | `[Evidence]` |
+
+**Overall Electoral Significance**: `[REQUIRED: CRITICAL/HIGH/MODERATE/LOW/NEGLIGIBLE]`
+
+---
+
+## 🎯 Confidence Scale Reference (5-Level)
+
+| Level | Label | Criteria | Evidence Threshold |
+|-------|-------|----------|--------------------|
+| ⬛ 1 | **VERY LOW** | Speculation only, single unverified source | 0–1 sources, no corroboration |
+| 🟥 2 | **LOW** | Circumstantial evidence, indirect indicators | 2 sources, indirect evidence |
+| 🟧 3 | **MEDIUM** | Multiple independent sources, moderate corroboration | 3+ sources, moderate agreement |
+| 🟩 4 | **HIGH** | Official records, documented data, direct evidence | Official docs, voting records, committee reports |
+| 🟦 5 | **VERY HIGH** | Verified data + independent corroboration + expert consensus | Multiple official sources, cross-validated |
+
+---
+
 ## 🔗 Cross-References
 
 > *Link to sibling analysis files and same-day analysis from other article types.*
@@ -324,6 +352,8 @@ Significance Score: [REQUIRED: see significance-scoring.md, 0–10 composite]
 - [ ] **Confidence Decay assessed:** Classification age calculated and re-evaluation status noted
 - [ ] **MCP Data Provenance:** All data sources listed with timestamps
 - [ ] **No placeholder text remaining:** Search for `[REQUIRED` — zero hits expected
+- [ ] **Election 2026 Classification Context present:** All 5 dimensions assessed with overall electoral significance
+- [ ] **5-level confidence applied:** Source Quality, Information Completeness, Overall Confidence use VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW
 - [ ] **Named actors cited:** ≥1 named politician/party in classification rationale
 - [ ] **Cross-references linked:** At least 1 sibling analysis file referenced
 

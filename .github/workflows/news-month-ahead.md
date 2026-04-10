@@ -141,17 +141,7 @@ This is a **prospective** article providing a 30-day forward-looking strategic o
 
 ## 🧠 Repo Memory
 
-This workflow uses **persistent repo-memory** on branch `memory/news-generation` (shared with all news workflows).
-
-**At run START — read context:**
-- Read `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` for today (and optionally yesterday) to check which dok_ids were already analyzed recently
-- Read `memory/news-generation/last-run-news-month-ahead.json` for previous run metadata
-- Skip documents already covered by another workflow to avoid duplicate analysis
-
-**At run END — write context:**
-- Update `memory/news-generation/last-run-news-month-ahead.json` with date, documents analyzed, quality score
-- Write processed dok_ids to `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` (sharded by date; retain last 7 days)
-- Update `memory/news-generation/translation-status.json` with new articles needing translation
+Uses `memory/news-generation` branch. START: read `memory/news-generation/last-run-news-month-ahead.json` + `memory/news-generation/covered-documents/{YYYY-MM-DD}.json`. END: update both + `memory/news-generation/translation-status.json`. Skip already-covered dok_ids.
 
 ## ⏱️ Time Budget (30 minutes)
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
@@ -166,65 +156,23 @@ This workflow uses **persistent repo-memory** on branch `memory/news-generation`
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
 
-**Every `bash` tool call MUST include both required parameters — omitting either causes validation errors:**
+> **Full reference:** See `SHARED_PROMPT_PATTERNS.md` → "Bash Tool Call Format". Key rule: every `bash` call MUST have both `command` AND `description` parameters. Example: `bash({ command: "date -u '+%Y-%m-%d'", description: "Get current UTC date" })`
 
-| Parameter | Required | Description |
-|-----------|----------|-------------|
-| `command` | ✅ YES | The shell command string to execute |
-| `description` | ✅ YES | Short human-readable label (≤100 chars) |
+## 🛡️ AWF Shell Safety
 
-**✅ CORRECT** — always provide both `command` and `description`:
-```
-bash({ command: "date -u '+%Y-%m-%d'", description: "Get current UTC date" })
-bash({ command: "npm ci --prefer-offline --no-audit", description: "Install npm dependencies" })
-bash({ command: "npx htmlhint 'news/*-*.html'", description: "Validate HTML files" })
-```
+> **Full reference:** See `SHARED_PROMPT_PATTERNS.md` → "AWF Shell Safety". Summary: use `$VAR` not `$`+`{VAR}`, use `find -exec` not `$(...)`, set defaults with `if/then` before using `$VAR`.
 
-**❌ WRONG** — missing parameters cause `"command": Required, "description": Required` errors:
-```
-bash("npm ci")           // ← WRONG: no named parameters
-bash({ command: "..." }) // ← WRONG: missing description
-```
+## 🔤 UTF-8 Encoding
 
-> When you see fenced bash code blocks below (three backticks followed by bash), they show the **command content** to execute. You MUST wrap each in a proper bash tool call with both `command` and `description` parameters. For multi-line scripts, join commands with `&&` or `;` into a single `command` string.
-
-## 🛡️ AWF Shell Safety — MANDATORY for Agent-Generated Bash
-
-> **The Agent Workflow Firewall (AWF) blocks dangerous shell expansion patterns.** Fenced bash blocks in init steps run as normal shell, but any command YOU generate via the `bash` tool IS subject to AWF filtering.
-
-**Key rules — NEVER use these in your generated bash commands:**
-1. **NEVER** use `$`+`{VAR}` — always use `$VAR` (no curly braces)
-2. **NEVER** use `$`+`(command)` — use pipes, `find -exec`, or separate commands
-3. **NEVER** use `$`+`{VAR:-default}` — set defaults with `if/then` first, then use `$VAR`
-4. **Use `find -exec`** instead of for-loops with `$`+`(basename ...)`
-5. **Use direct file paths** when possible instead of variable-constructed paths with braces
-
-## 🔤 UTF-8 Encoding — MANDATORY for ALL Content
-
-> **NON-NEGOTIABLE**: All article content, titles, descriptions, and metadata MUST use native UTF-8 characters. NEVER use HTML numeric entities (`&#228;`, `&#246;`, `&#229;`) for non-ASCII characters like Swedish åäö, German üö, French éè, etc.
-
-**Rules:**
-1. Write Swedish characters as UTF-8: `ö`, `ä`, `å`, `Ö`, `Ä`, `Å` — NEVER as `&#246;`, `&#228;`, etc.
-2. Author name: Always `James Pether Sörling` — never `S&#246;rling`.
-3. All HTML files use `<meta charset="UTF-8">` — entities are unnecessary and cause double-escaping bugs.
-4. This applies to ALL languages and ALL output: titles, meta tags, JSON-LD, article body, analysis files.
+> **Full reference:** See `SHARED_PROMPT_PATTERNS.md` → "UTF-8 Encoding". Summary: use native UTF-8 (`ö`, `ä`, `å`) — NEVER HTML entities (`&#246;`, `&#228;`). Author: `James Pether Sörling`.
 
 
 ## Required Skills
 
-Before generating articles, consult these skills:
-1. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
-2. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology
-3. **`.github/skills/legislative-monitoring/SKILL.md`** — Voting patterns, committee tracking, bill progress
-4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
-5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
-6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
-7. **`scripts/prompts/v2/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
-8. **`scripts/prompts/v2/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
-9. **`scripts/prompts/v2/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
-10. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Per-file AI analysis protocol
-11. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Methodology for deep per-file analysis
-12. **`analysis/templates/per-file-political-intelligence.md`** — Per-file analysis output template
+Consult as needed — do NOT read all files upfront:
+- **Skills:** `.github/skills/editorial-standards/SKILL.md`, `.github/skills/swedish-political-system/SKILL.md`, `.github/skills/legislative-monitoring/SKILL.md`, `.github/skills/riksdag-regering-mcp/SKILL.md`, `.github/skills/language-expertise/SKILL.md`, `.github/skills/gh-aw-safe-outputs/SKILL.md`
+- **Analysis:** `scripts/prompts/v2/political-analysis.md`, `per-file-intelligence-analysis.md`, `stakeholder-perspectives.md`, `quality-criteria.md`
+- **Methodology:** `analysis/methodologies/ai-driven-analysis-guide.md` (v5.0) + `analysis/templates/per-file-political-intelligence.md`
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
 
@@ -262,6 +210,10 @@ Based on the editorial profile for `month-ahead` (from `scripts/editorial-framew
 
 > 🚨 **ANTI-PATTERNS (REJECTED)**: Generic "Requires committee review and chamber debate" (must be unique per entry), SWOT with only 3 groups, no forward date-specific indicators, no Mermaid diagrams, no cross-document synthesis
 
+### 🗳️ Election 2026 Lens (Mandatory — v5.0)
+
+Every analysis MUST include an **Election 2026 Implications** section assessing: Electoral Impact, Coalition Scenarios, Voter Salience, Campaign Vulnerability, and Policy Legacy. Use the **5-level confidence scale** (⬛VERY LOW → 🟥LOW → 🟧MEDIUM → 🟩HIGH → 🟦VERY HIGH). See `analysis/methodologies/ai-driven-analysis-guide.md` v5.0 for full criteria.
+
 ### Phase 1 — Data Collection & Initial Analysis
 1. Fetch MCP data (`get_calendar_events`, `get_propositioner`, `get_motioner`, `get_interpellationer`, `get_sync_status`)
 2. Build monthly legislative pipeline with key milestones
@@ -291,12 +243,7 @@ echo "============================"
 
 ## 📅 Riksmöte (Parliamentary Session) Calculation
 
-The Swedish parliamentary session runs September–August. Calculate the current `rm` value:
-- If current month is September or later (calendar month 9; JavaScript `Date` month index 8): `rm = "{currentYear}/{nextYear's last 2 digits}"`
-- If current month is before September (calendar month ≤ 8; JavaScript `Date` month index ≤ 7): `rm = "{previousYear}/{currentYear's last 2 digits}"`
-- Example: February 2026 → `rm = "2025/26"`, October 2026 → `rm = "2026/27"`
-
-Use this calculated `rm` value in ALL MCP queries requiring the `rm` parameter.
+September+ → `rm = "{year}/{year+1 2-digit}"` (e.g. Oct 2026 → `2026/27`). Before September → `rm = "{year-1}/{year 2-digit}"` (e.g. Feb 2026 → `2025/26`). Use in ALL MCP queries requiring `rm`.
 
 ## MANDATORY Deduplication Check
 
@@ -325,89 +272,37 @@ fi
 
 ## MANDATORY MCP Health Gate
 
-Before generating ANY articles, verify MCP connectivity:
-
-1. Call `get_sync_status({})` — if successful, proceed
-2. If it fails, wait 30 seconds and retry (up to 3 total attempts)
-3. If ALL 3 attempts fail:
-   - Use `safeoutputs___noop` with message: "MCP server unavailable after 3 connection attempts. No articles generated."
-   - DO NOT analyze existing articles in the repository
-   - DO NOT fabricate or recycle content
-   - The workflow MUST end with noop
-
-**CRITICAL**: ALL article content MUST originate from live MCP data. Never generate content from:
-- Existing articles in the news/ directory
-- Cached or stale data
-- AI-generated content without MCP source data
+1. Call `get_sync_status({})` — retry up to 3× (30s wait between each)
+2. After 3 failures → `safeoutputs___noop({"message": "MCP server unavailable after 3 attempts"})`
+3. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
 
 ## 🛡️ File Ownership Contract
 
-This workflow is a **content** workflow and MUST only create/modify files for **EN and SV** languages.
-
-- ✅ **Allowed:** `news/YYYY-MM-DD-*-en.html`, `news/YYYY-MM-DD-*-sv.html`
-- ❌ **Forbidden:** `news/YYYY-MM-DD-*-da.html`, `news/YYYY-MM-DD-*-no.html`, or any other translation language
-
-Validate file ownership (checks staged, unstaged, and untracked changes):
-```bash
-npx tsx scripts/validate-file-ownership.ts content
-```
-
-If the validator reports violations, remove tracked changes with `git restore --staged --worktree -- <file>` (or `git checkout -- <file>` on older Git), and remove untracked files with `rm <file>` (or `git clean -f -- <file>`) before committing.
+Content workflows: only create/modify **EN and SV** files (`news/YYYY-MM-DD-*-en.html`, `*-sv.html`). Validate with `npx tsx scripts/validate-file-ownership.ts content`. Fix violations: `git restore --staged --worktree -- <file>` (tracked) or `rm <file>` (untracked).
 
 ### Branch Naming Convention
 
-Use deterministic branch names for content PRs:
-```
-news/content/{YYYY-MM-DD}/{article-type}
-```
-Example: `news/content/2026-03-23/month-ahead`
-
-> **Note:** `safeoutputs___create_pull_request` handles branch creation automatically; this naming convention is documented for traceability and conflict avoidance.
+Branch: `news/content/{YYYY-MM-DD}/{article-type}` (e.g. `news/content/2026-03-23/month-ahead`). `safeoutputs___create_pull_request` handles this automatically.
 
 ## MANDATORY PR Creation
 
 > **🚀 HOW SAFE PR CREATION WORKS — READ THIS FIRST**
 >
-> The `safeoutputs___create_pull_request` tool handles **everything**: branch creation, pushing commits, and opening the PR. You do NOT create branches or push manually.
+> The `safeoutputs___create_pull_request` tool handles **everything**: branch creation, pushing commits, and opening the PR. Do NOT run `git push` or `git checkout -b` manually.
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
 > 2. Stage and commit locally (scoped to resolved month-ahead analysis subfolder): `git add news/*month-ahead*.html news/metadata/ "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" analysis/weekly/ && git commit -m "Add month-ahead articles and analysis artifacts"`
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
-> **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
-> **❌ DO NOT** try alternative approaches if the tool call works — one call is all you need.
-> **❌ DO NOT** call `safeoutputs___noop` if articles were generated but PR creation failed — let the workflow FAIL instead.
-
-- ✅ `safeoutputs___create_pull_request` when articles generated
-- ✅ `safeoutputs___create_pull_request` with analysis-only PR when no articles but analysis artifacts exist — title: `📊 Analysis Only - Month Ahead - {date}`, labels: `["analysis-only", "month-ahead"]`
-- ✅ `safeoutputs___noop` ONLY if MCP server is completely unreachable after 3 retry attempts AND no analysis artifacts exist
-- ❌ NEVER use `safeoutputs___noop` because articles already exist — analysis always runs
-- ❌ NEVER use `safeoutputs___noop` as fallback for PR creation failures
-- ❌ NEVER use `safeoutputs___noop` if analysis artifacts for the current run exist (e.g. under `analysis/daily/$ARTICLE_DATE/` or `analysis/weekly/$WEEK_LABEL/`)
-
-> **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them. After `git commit`, call the tool directly as your VERY NEXT action.
+- ✅ `safeoutputs___create_pull_request` for articles or analysis-only PRs
+- ✅ `safeoutputs___noop` ONLY if MCP unreachable after 3 attempts AND no analysis artifacts exist
+- ❌ NEVER noop because articles already exist — analysis always runs
+- ❌ Safe output tools are in your tool list — NEVER search for them via bash
 
 ## 🌐 Dispatch Translation Workflow
 
-After creating the content PR with `safeoutputs___create_pull_request`, dispatch the translation workflow for remaining languages:
-
-```
-safeoutputs___dispatch_workflow({
-  "workflow_name": "news-translate",
-  "inputs": {
-    "article_date": "<YYYY-MM-DD>",
-    "article_type": "<article-type>",
-    "languages": "all-extra"
-  }
-})
-```
-
-This triggers the dedicated `news-translate` workflow which generates high-quality translations for all 12 non-core languages (da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh) using `concurrency.job-discriminator` for parallel execution.
-
-> **⚠️ Timing note:** The dispatch runs immediately after creating this PR, but the translate workflow checks out `main` where the EN/SV articles may not yet exist (the content PR hasn't been merged). In this case, the translate workflow will `noop` gracefully. The scheduled translate cron (11:00 and 17:00 UTC weekdays) will pick up the translations after the content PR is merged.
-
-> **Note:** Full translation quality rules are maintained in `news-translate.md`. When generating EN/SV articles, ensure content is analytically rich — translations will faithfully reproduce the same depth.
+After creating the content PR, dispatch translations: `safeoutputs___dispatch_workflow({ "workflow_name": "news-translate", "inputs": { "article_date": "<YYYY-MM-DD>", "article_type": "<article-type>", "languages": "all-extra" } })`. See `news-translate.md` for full translation quality rules.
 
 ## MCP Tools
 
@@ -618,14 +513,6 @@ Month-ahead articles should include:
 5. **Watch Points**: Issues likely to generate political controversy
 6. **International Context**: EU coordination, Nordic cooperation events
 
-## 🌐 MANDATORY Translation Quality Rules
+## 🌐 Translation Quality
 
-> **📋 Canonical translation rules are maintained in `news-translate.md`.**
-
-For EN/SV articles generated by this workflow, ensure:
-1. **ALL section headings** and body content in the correct language (EN or SV)
-2. **Meta keywords** in the article language
-3. **No untranslated data-translate spans** in final output
-4. Swedish API titles translated to article language
-
-When the `news-translate` workflow handles remaining 12 languages, it applies the full translation quality rules including RTL support (ar, he), CJK native script (ja, ko, zh), Nordic parliamentary terms (da, no, fi), and European formal register (de, fr, es, nl). See `news-translate.md` for comprehensive per-language requirements.
+EN/SV only: all headings, meta, content in correct language; no untranslated `data-translate` spans; Swedish API titles translated. Full rules: `news-translate.md`.

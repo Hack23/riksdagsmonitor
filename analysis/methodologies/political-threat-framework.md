@@ -11,13 +11,13 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-3.1-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-3.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.1 | **📅 Last Updated:** 2026-04-06 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
+**📋 Document Owner:** CEO | **📄 Version:** 3.2 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-01  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -446,13 +446,14 @@ All identified threat actors are classified on two axes: **Intent** and **Capabi
 **Document Control:**  
 - **Path:** `/analysis/methodologies/political-threat-framework.md`  
 - **ISMS Reference:** [Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md)  
-- **Version:** 3.1  
-- **Frameworks:** Attack Trees, Political Kill Chain, Diamond Model, Political Threat Taxonomy, Threat Actor Profiling  
+- **Version:** 3.2  
+- **Frameworks:** Attack Trees, Political Kill Chain, Diamond Model, Political Threat Taxonomy, Threat Actor Profiling, Election 2026 Threat Taxonomy  
+- **Key Changes v3.2:** Added Election 2026 threat taxonomy (electoral integrity threats, campaign attack vector analysis, coalition stability pre-election), 5-level confidence scale for threat severity assessments  
 - **Key Changes v3.1:** Cross-Methodology Linkage Protocol (Severity→Likelihood mapping, SWOT Threats vs. dedicated threat analysis scope comparison, synthesis integration protocol with 4-step workflow, integrated dashboard Mermaid diagram)  
 - **Classification:** Public  
-- **Next Review:** 2026-06-30
+- **Next Review:** 2026-09-01
 
-<!-- version: 3.1.0 | updated: 2026-04-06 | author: Hack23 AB -->
+<!-- version: 3.2.0 | updated: 2026-06-01 | author: Hack23 AB -->
 <!-- document-control: political-analysis-methodology | classification: public -->
 
 ## Appendix A: Political Threat Category Detailed Definitions
