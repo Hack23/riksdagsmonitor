@@ -654,6 +654,39 @@ The TypeScript script generates **structural baselines only** — it translates 
 3. **Raw Swedish API text** — Interpellation excerpts, proposition summaries that come from the Riksdag API are often pasted as-is. You MUST translate these to the target language or summarize them.
 4. **English boilerplate phrases** — Remove or translate phrases like "Read the full proposition", "Live intelligence platform for Swedish Parliament monitoring"
 5. **Section headings** that were not covered by CONTENT_LABELS (e.g., specific policy domain names used as h3/h4 headings)
+6. **🚨 AI_MUST_REPLACE HTML comments** — SCAN every HTML comment in the **translated** article. If any contains `AI_MUST_REPLACE`, you MUST generate replacement content in the target language. See critical section below.
+
+#### 🚨 CRITICAL: AI_MUST_REPLACE Comment Handling
+
+The content generator embeds placeholder HTML comments in the form:
+```html
+<!-- AI_MUST_REPLACE: marker_name — DATA: hint text. Write specific analysis here. Output MUST be in the article's language. -->
+```
+
+**These comments MUST be replaced with real content before publication.** Leaving them in the article is a hard CI failure (exit 1). The translation workflow MUST:
+
+1. **SCAN every HTML comment** in the translated article for `AI_MUST_REPLACE`
+2. **For each marker found**, read the `DATA:` hint inside the comment to understand what content to generate
+3. **Replace the entire `<!-- AI_MUST_REPLACE ... -->` comment** with genuine, specific analysis written in the **target language** (not English)
+4. **Use actual document data** (party names, vote counts, document titles) — NOT generic templates
+5. **Verify zero markers remain** before creating a PR
+
+**Detection command (run before PR creation):**
+```bash
+grep -r 'AI_MUST_REPLACE' news/${ARTICLE_DATE}-*-${lang}.html && echo "❌ MARKERS FOUND — must replace before PR" || echo "✅ No markers found"
+```
+
+**Common marker types and required output:**
+- `timeline_context` → Analysis of scheduling significance and political timing
+- `why_matters` → Specific explanation of why these documents matter politically
+- `political_impact` → Named-party analysis of political impact with vote arithmetic
+- `consequences` → Specific implementation consequences and next steps
+- `coalition_instability` → Current coalition stability indicators with evidence
+- `critical_assessment` → Critical evaluation of intent vs. likely outcomes
+- `single_party_dominance` → Analysis of why one party dominates
+- `debate_analysis` → Insights from debate data
+- `majority_impact` → Effect of thin majority on specific legislation
+- `winners_losers_analysis` → Political winners and losers analysis
 
 #### Translation Completeness Check Process:
 
