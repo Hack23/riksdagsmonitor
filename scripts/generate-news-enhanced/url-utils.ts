@@ -75,9 +75,10 @@ export function isGitHubUrl(url: string): boolean {
 }
 
 /**
- * Convert a GitHub blob/tree URL to a raw.githubusercontent.com URL.
+ * Convert a GitHub blob/tree/raw URL to a raw.githubusercontent.com URL.
  * Handles patterns like:
  *   - https://github.com/{owner}/{repo}/blob/{branch}/{path}
+ *   - https://github.com/{owner}/{repo}/tree/{branch}/{path}
  *   - https://github.com/{owner}/{repo}/raw/{branch}/{path}
  *   - https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{path} (returned as-is)
  *
@@ -98,12 +99,13 @@ export function toGitHubRawUrl(url: string): string | null {
     }
 
     // Path: /{owner}/{repo}/blob/{branch}/{...path}
+    // or:   /{owner}/{repo}/tree/{branch}/{...path}
     // or:   /{owner}/{repo}/raw/{branch}/{...path}
     const segments = parsed.pathname.split('/').filter(Boolean);
     if (segments.length < 4) return null;
 
     const [owner, repo, refType, ...rest] = segments;
-    if (refType !== 'blob' && refType !== 'raw') return null;
+    if (refType !== 'blob' && refType !== 'raw' && refType !== 'tree') return null;
 
     // rest = [branch, ...pathParts]
     return `https://raw.githubusercontent.com/${owner}/${repo}/${rest.join('/')}`;

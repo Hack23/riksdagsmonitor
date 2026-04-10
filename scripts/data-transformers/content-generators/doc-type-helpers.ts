@@ -111,7 +111,7 @@ export const DOC_TYPE_DISPLAY: Readonly<Record<string, DocTypeLocalization>> = {
     plural: {
       en: 'External References', sv: 'Externa referenser', da: 'Eksterne referencer', no: 'Eksterne referanser',
       fi: 'Ulkoiset viitteet', de: 'Externe Referenzen', fr: 'Références externes', es: 'Referencias externas',
-      nl: 'Externe referenties', ar: 'مراجع خارجية', he: 'הפניות חיצוניות', ja: '外部参照', ko: '외부 참조', zh: '외부参考',
+      nl: 'Externe referenties', ar: 'مراجع خارجية', he: 'הפניות חיצוניות', ja: '外部参照', ko: '외부 참조', zh: '外部参考',
     },
   },
   other: {
