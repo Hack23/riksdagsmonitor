@@ -184,7 +184,8 @@ function hasWhyThisMatters(content: string): boolean {
 
 /**
  * Detect "What Happens Next" timeline section.
- * Looks for the rendered section class or common heading variants in 14 languages.
+ * Looks for the rendered section class or heading variants across supported languages.
+ * Covers: en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh.
  *
  * @param content - HTML content of article
  * @returns True if the section is present
@@ -194,9 +195,15 @@ function hasWhatHappensNext(content: string): boolean {
     /class=["'][^"']*\bwhat-happens-next\b/,
     /what\s+happens\s+next/i,
     /vad\s+händer\s+härnäst/i,
-    /la\s+suite\s+des\s+événements/i,
+    /hvad\s+sker\s+der\s+nu/i,
+    /hva\s+skjer\s+videre/i,
+    /mitä\s+tapahtuu\s+seuraavaksi/i,
     /was\s+passiert\s+als\s+nächstes/i,
+    /la\s+suite\s+des\s+événements/i,
     /qué\s+sucede\s+a\s+continuación/i,
+    /wat\s+gebeurt\s+er\s+nu/i,
+    /ماذا يحدث بعد ذلك/,
+    /מה קורה בהמשך/,
     /次のステップ/,
     /다음\s+단계/,
     /下一步/,
@@ -206,7 +213,8 @@ function hasWhatHappensNext(content: string): boolean {
 
 /**
  * Detect "Winners & Losers" analysis section.
- * Looks for the rendered section class or common heading variants in 14 languages.
+ * Looks for the rendered section class or heading variants across supported languages.
+ * Covers: en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh.
  *
  * @param content - HTML content of article
  * @returns True if the section is present
@@ -216,9 +224,15 @@ function hasWinnersLosers(content: string): boolean {
     /class=["'][^"']*\bwinners-losers\b/,
     /winners\s*(?:&|and)\s*losers/i,
     /vinnare\s+och\s+förlorare/i,
+    /vindere\s+og\s+tabere/i,
+    /vinnere\s+og\s+tapere/i,
+    /voittajat\s+ja\s+häviäjät/i,
     /gewinner\s+und\s+verlierer/i,
     /gagnants\s+et\s+perdants/i,
     /ganadores\s+y\s+perdedores/i,
+    /winnaars\s+en\s+verliezers/i,
+    /الرابحون والخاسرون/,
+    /מנצחים ומפסידים/,
     /勝者と敗者/,
     /승자와\s+패자/,
     /赢家与输家/,
@@ -262,24 +276,35 @@ function hasSubstantialLede(content: string): boolean {
 }
 
 /**
- * Count specific factual claims with cited evidence.
- * Looks for patterns that indicate a verifiable, specific claim:
+ * Count specific claim indicators in article text.
+ * Looks for patterns that indicate potentially verifiable, specific content:
  * - Explicit document references (Prop., Bet., Mot., IP)
- * - Percentage or currency figures with context
- * - Named actors with attributed statements
+ * - Percentage figures
+ * - Named MPs or ministers matching the pattern "Firstname Lastname (Party)"
  *
  * @param content - HTML content of article
- * @returns Number of detected specific claims
+ * @returns Number of detected specific claim indicators
  */
 function countSpecificClaims(content: string): number {
   const text = stripHtml(content);
   let count = 0;
 
-  // Document references
+  // Count unique normalized document IDs rather than every occurrence to
+  // prevent repeated mentions of the same citation from inflating the score.
+  // Cap at 5, consistent with other claim signals below.
+  const uniqueDocumentReferences = new Set<string>();
   DOCUMENT_ID_PATTERNS.forEach((pattern: RegExp) => {
-    const matches = text.match(pattern);
-    count += matches ? matches.length : 0;
+    const flags = pattern.global ? pattern.flags : `${pattern.flags}g`;
+    const globalPattern = new RegExp(pattern.source, flags);
+
+    for (const match of text.matchAll(globalPattern)) {
+      const documentReference = match[0]?.trim();
+      if (documentReference) {
+        uniqueDocumentReferences.add(documentReference.replace(/\s+/g, ' ').toLowerCase());
+      }
+    }
   });
+  count += Math.min(uniqueDocumentReferences.size, 5);
 
   // Percentage figures with surrounding context (e.g. "increased by 12%")
   // Cap at 5 to prevent a heavily statistics-driven article from

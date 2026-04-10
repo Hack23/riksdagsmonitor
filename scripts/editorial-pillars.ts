@@ -300,6 +300,27 @@ const SECTION_TRANSITION_TEMPLATES: Readonly<Record<string, TransitionTemplates>
 } as const;
 
 /**
+ * Per-language default context values for section transition interpolation.
+ * Prevents mixed-language output when callers omit context for non-English articles.
+ */
+const DEFAULT_TRANSITION_CONTEXT: Readonly<Record<Language, { topic: string; actor: string }>> = {
+  en: { topic: 'this legislation', actor: 'key stakeholders' },
+  sv: { topic: 'denna lagstiftning', actor: 'centrala aktörer' },
+  da: { topic: 'denne lovgivning', actor: 'centrale aktører' },
+  no: { topic: 'denne lovgivningen', actor: 'sentrale aktører' },
+  fi: { topic: 'tämä lainsäädäntö', actor: 'keskeiset toimijat' },
+  de: { topic: 'diese Gesetzgebung', actor: 'zentrale Akteure' },
+  fr: { topic: 'cette législation', actor: 'les acteurs clés' },
+  es: { topic: 'esta legislación', actor: 'los actores clave' },
+  nl: { topic: 'deze wetgeving', actor: 'belangrijke actoren' },
+  ar: { topic: 'هذا التشريع', actor: 'الأطراف الرئيسية' },
+  he: { topic: 'חקיקה זו', actor: 'בעלי העניין המרכזיים' },
+  ja: { topic: 'この法案', actor: '主要関係者' },
+  ko: { topic: '이 법안', actor: '주요 이해관계자' },
+  zh: { topic: '该立法', actor: '关键利益相关者' },
+} as const;
+
+/**
  * Generate a context-aware inter-section transition sentence.
  *
  * Returns an empty string when no template is registered for the given
@@ -307,12 +328,10 @@ const SECTION_TRANSITION_TEMPLATES: Readonly<Record<string, TransitionTemplates>
  * The returned string is **plain text** (not HTML) — wrap it in a `<p>` tag
  * with appropriate CSS class at the call site.
  *
- * **Important**: The default context values (`'this legislation'` and
- * `'key stakeholders'`) are English strings.  For non-English articles,
- * callers **must** supply language-appropriate `context.topicKeyword` and
- * `context.actorName` values so that the interpolated tokens match the
- * article's language.  Failing to do so will result in English text inside
- * a non-English article.
+ * **Important**: Default context values (`topicKeyword` and `actorName`) are
+ * provided in each of the 14 supported languages via `DEFAULT_TRANSITION_CONTEXT`.
+ * However, for best results callers should supply specific `context.topicKeyword`
+ * and `context.actorName` values that match the article's actual subject matter.
  *
  * @param lang         - Article language code
  * @param fromSection  - CSS class / identifier of the preceding section
@@ -348,8 +367,9 @@ export function generateSectionTransition(
     templates[lang as Language] ?? templates.en ?? '';
   if (!template) return '';
 
-  const topic = context.topicKeyword ?? 'this legislation';
-  const actor = context.actorName ?? 'key stakeholders';
+  const defaults = DEFAULT_TRANSITION_CONTEXT[lang as Language] ?? DEFAULT_TRANSITION_CONTEXT.en;
+  const topic = context.topicKeyword ?? defaults.topic;
+  const actor = context.actorName ?? defaults.actor;
 
   return template
     .replace(/\{topic\}/g, topic)
