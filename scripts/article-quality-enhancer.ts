@@ -249,16 +249,44 @@ function hasWinnersLosers(content: string): boolean {
  * @returns Estimated word count within the section
  */
 function countSectionWords(content: string, sectionClass: string): number {
-  // Extract content between opening tag with matching class and matching closing tag
+  // Find the opening tag with the requested class, then scan forward to the
+  // matching closing tag while tracking nested <section>/<div> elements.
   const escapedClass = sectionClass.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const sectionPattern = new RegExp(
-    `<(?:section|div)[^>]*class=(?:"|')[^"']*\\b${escapedClass}\\b[^"']*(?:"|')[^>]*>([\\s\\S]*?)</(?:section|div)>`,
+  const openingTagPattern = new RegExp(
+    `<(section|div)\\b[^>]*class=(?:"|')[^"']*\\b${escapedClass}\\b[^"']*(?:"|')[^>]*>`,
     'i',
   );
-  const match = content.match(sectionPattern);
-  if (!match?.[1]) return 0;
-  const text = match[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-  return text.split(' ').filter((w: string) => w.length > 0).length;
+  const openingMatch = openingTagPattern.exec(content);
+  if (!openingMatch || openingMatch.index < 0) return 0;
+
+  const rootTag = openingMatch[1].toLowerCase();
+  const contentStart = openingMatch.index + openingMatch[0].length;
+  const tagPattern = /<\/?(section|div)\b[^>]*>/gi;
+  tagPattern.lastIndex = contentStart;
+
+  const stack: string[] = [rootTag];
+  let tagMatch: RegExpExecArray | null = tagPattern.exec(content);
+
+  while (tagMatch) {
+    const matchedTag = tagMatch[0];
+    const tagName = tagMatch[1].toLowerCase();
+    const isClosingTag = matchedTag.startsWith('</');
+
+    if (!isClosingTag) {
+      stack.push(tagName);
+    } else if (stack.length > 0 && stack[stack.length - 1] === tagName) {
+      stack.pop();
+      if (stack.length === 0) {
+        const innerHtml = content.slice(contentStart, tagMatch.index);
+        const text = innerHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+        return text.split(' ').filter((w: string) => w.length > 0).length;
+      }
+    }
+
+    tagMatch = tagPattern.exec(content);
+  }
+
+  return 0;
 }
 
 /**

@@ -251,4 +251,18 @@ describe('countSectionWords', () => {
     const html = '<section class="faq-section"></section>';
     expect(countSectionWords(html, 'faq-section')).toBe(0);
   });
+
+  it('should count all words when section contains nested div/section elements', () => {
+    const html =
+      '<section class="key-takeaways">' +
+      '<div class="inner">' +
+      '<p>first second third</p>' +
+      '</div>' +
+      '<section class="subsection">' +
+      '<p>fourth fifth</p>' +
+      '</section>' +
+      '<p>sixth seventh eighth</p>' +
+      '</section>';
+    expect(countSectionWords(html, 'key-takeaways')).toBe(8);
+  });
 });
