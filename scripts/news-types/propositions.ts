@@ -183,6 +183,7 @@ import { generateArticleHTML } from '../article-template.js';
 import { getAnalysisEnrichment } from '../generate-news-enhanced/helpers.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
+import { generateAnalysisReferencesHtml } from '../analysis-references.js';
 
 /**
  * Required MCP tools for propositions articles
@@ -307,11 +308,12 @@ export async function generatePropositions(options: GenerationOptions = {}): Pro
       
       const titles: TitleSet = getTitles(lang, propositions.length, propositions);
       
+      const articleDate = today.toISOString().split('T')[0] ?? '';
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: titles.title,
         subtitle: titles.subtitle,
-        date: today.toISOString().split('T')[0] ?? '',
+        date: articleDate,
         type: 'analysis' as ArticleCategory,
         readTime,
         lang,
@@ -321,6 +323,7 @@ export async function generatePropositions(options: GenerationOptions = {}): Pro
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
+        analysisReferencesHtml: generateAnalysisReferencesHtml({ date: articleDate, articleType: 'propositions', lang }),
         ...(enrichment ?? {}),
       });
       

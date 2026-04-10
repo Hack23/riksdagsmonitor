@@ -158,6 +158,7 @@ export function generateArticleHTML(data: ArticleData): string {
     classificationLevel,
     riskLevel,
     confidenceLabel,
+    analysisReferencesHtml = '',
   } = data;
 
   // Decode any HTML entities to UTF-8 to prevent double-escaping.
@@ -474,6 +475,8 @@ ${watchPoints.length > 0 ? generateWatchSection(watchPoints as ReadonlyArray<Wat
 
 ${(sections as TemplateSection[]).length > 0 ? (sections as TemplateSection[]).map(s => `<div id="${escapeHtml(s.id)}" class="${escapeHtml(s.className ?? 'article-section')}">${s.html}</div>`).join('\n') : ''}
   </div>
+
+${analysisReferencesHtml}
 
   <footer class="article-footer">
     <div class="article-sources">

@@ -156,6 +156,7 @@ import {
 import { generateArticleHTML } from '../article-template.js';
 import { BREAKING_NEWS_THRESHOLD } from '../generate-news-enhanced/config.js';
 import type { RawDocument } from '../data-transformers/types.js';
+import { generateAnalysisReferencesHtml } from '../analysis-references.js';
 
 /** Significance scoring result (analysis is now AI-driven) */
 interface SignificanceScore {
@@ -338,11 +339,12 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
       // Build visualization sections (SWOT, dashboard)
       const sections = buildArticleVisualizationSections(eventDocs, null, lang);
       
+      const articleDate = today.toISOString().split('T')[0] ?? '';
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: enriched.title,
         subtitle: enriched.subtitle,
-        date: today.toISOString().split('T')[0] ?? '',
+        date: articleDate,
         type: 'breaking' as ArticleCategory,
         readTime,
         lang,
@@ -352,6 +354,7 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
+        analysisReferencesHtml: generateAnalysisReferencesHtml({ date: articleDate, articleType: 'breaking', lang }),
         // Spread analysis enrichment first, then override significance/urgency
         // with breaking-news-specific scores only when actually computed.
         ...(enrichment ?? {}),

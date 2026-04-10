@@ -38,6 +38,7 @@ interface MockArticleData {
   confidenceLabel?: ConfidenceLabel;
   significance?: number;
   urgency?: string;
+  analysisReferencesHtml?: string;
 }
 
 describe('Article Template', () => {
@@ -1098,6 +1099,35 @@ describe('Article Template', () => {
       const html = generateArticleHTML(data as unknown as ArticleData) as string;
       expect(html).toContain('classification-badge');
       expect(html).not.toContain('risk-badge');
+    });
+  });
+
+  describe('Analysis references section', () => {
+    it('renders analysisReferencesHtml between content and footer', () => {
+      const refHtml = '<section class="analysis-references"><h2>Analysis</h2><ul><li>test</li></ul></section>';
+      const data: MockArticleData = {
+        ...mockArticleData,
+        analysisReferencesHtml: refHtml,
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).toContain(refHtml);
+      // Verify it appears before the footer
+      const refIdx = html.indexOf('analysis-references');
+      const footerIdx = html.indexOf('article-footer');
+      expect(refIdx).toBeGreaterThan(0);
+      expect(footerIdx).toBeGreaterThan(0);
+      expect(refIdx).toBeLessThan(footerIdx);
+      // Verify it appears after the article-content closing div by locating
+      // the unique "article-content" class and its matching </div>.
+      const contentOpenIdx = html.indexOf('class="article-content');
+      expect(contentOpenIdx).toBeGreaterThan(0);
+      // The analysis-references section must come after article-content opens
+      expect(refIdx).toBeGreaterThan(contentOpenIdx);
+    });
+
+    it('omits analysis references section when not provided', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).not.toContain('analysis-references');
     });
   });
 });
