@@ -4,6 +4,13 @@
  * Contains TITLE_SUFFIX_TEMPLATES, keyword extraction, event/document matching helpers,
  * and the deep analysis section generator (5W framework).
  *
+ * Implementation is split into focused sub-modules:
+ * - doc-type-helpers.ts    — DOC_TYPE_DISPLAY, localizeDocType, TITLE_SUFFIX_TEMPLATES
+ * - event-helpers.ts       — findRelatedDocuments, findRelatedQuestions, extractMinister
+ * - impact-helpers.ts      — generateImpactAnalysis, generateConsequencesAnalysis
+ * - framework-renderers.ts — PESTLE/stakeholder/risk/implementation HTML renderers
+ * - ai-marker-helpers.ts   — detectBannedPatterns
+ *
  * ⚠️ DEPRECATED FOR ANALYSIS GENERATION (v3.0, 2026-04-02):
  * Per analysis/methodologies/ai-driven-analysis-guide.md Rule 2, the following
  * functions are DEPRECATED for generating analysis content:
@@ -26,265 +33,26 @@
 
 import { escapeHtml } from '../../html-utils.js';
 import type { Language } from '../../types/language.js';
-import type { RawDocument, RawCalendarEvent, CIAContext } from '../types.js';
+import type { RawDocument, CIAContext } from '../types.js';
 import { L, normalizePartyKey } from '../helpers.js';
 import { detectPolicyDomains } from '../policy-analysis.js';
 
-/* ── Stub types/functions for deleted analysis modules ── */
-/* Per ai-driven-analysis-guide.md Rule 2: scripts must NOT generate analysis */
+// ── Re-exports from sub-modules (backward-compatible) ──────────────────────
+export type { DocTypeLocalization } from './doc-type-helpers.js';
+export { DOC_TYPE_DISPLAY, localizeDocType, TITLE_SUFFIX_TEMPLATES } from './doc-type-helpers.js';
+export { findRelatedDocuments, findRelatedQuestions, extractMinister } from './event-helpers.js';
+export { detectBannedPatterns } from './ai-marker-helpers.js';
 
-interface PESTLEDimensions {
-  political: string[];
-  economic: string[];
-  social: string[];
-  technological: string[];
-  legal: string[];
-  environmental: string[];
-}
-
-interface StakeholderDirectImpact {
-  direction: 'positive' | 'negative' | 'mixed' | 'neutral';
-  magnitude: 'significant' | 'moderate' | 'minor';
-  summary: string;
-}
-
-interface StakeholderImpact {
-  stakeholder: string;
-  displayName: string;
-  directImpact: StakeholderDirectImpact;
-  confidence: string;
-  implementationBurden: 'high' | 'medium' | 'low';
-}
-
-interface ImplementationAssessment {
-  feasibility: 'high' | 'medium' | 'low';
-  keyObstacles: string[];
-  agenciesInvolved: string[];
-  timeline: string;
-  estimatedTimeline: string;
-  summary: string;
-}
-
-interface DocumentAnalysis {
-  pestleDimensions: PESTLEDimensions;
-  stakeholderImpacts: StakeholderImpact[];
-  implementationAssessment: ImplementationAssessment;
-  riskAssessment: RiskAssessment[];
-  [key: string]: unknown;
-}
-
-type PESTLEAnalysis = PESTLEDimensions;
-
-interface RiskAssessment {
-  type: 'political' | 'implementation' | 'public-acceptance' | 'legal' | 'financial';
-  severity: 'high' | 'medium' | 'low';
-  description: string;
-}
-
-interface BatchAnalysisResult { results: unknown[] }
-
-/** Stub: returns empty analysis. Real analysis is AI-driven in workflows. */
-function analyzeDocumentsBatch(_docs: unknown[], _lang?: Language | string, _cia?: CIAContext): Map<string, DocumentAnalysis> {
-  return new Map();
-}
-
-/** Stub: returns empty perspectives. Real analysis is AI-driven in workflows. */
-function analyzeDocumentsPerspectives(_docs: unknown[], _cia?: CIAContext, _lang?: Language | string): BatchAnalysisResult {
-  return { results: [] };
-}
-
-/** Localise raw Riksdag document type codes for display (singular/plural-aware, multi-language). */
-export type DocTypeLocalization = {
-  singular: Partial<Record<Language, string>>;
-  plural: Partial<Record<Language, string>>;
-};
-
-export const DOC_TYPE_DISPLAY: Readonly<Record<string, DocTypeLocalization>> = {
-  prop: {
-    singular: {
-      en: 'Proposition', sv: 'Proposition', da: 'Proposition', no: 'Proposisjon',
-      fi: 'Hallituksen esitys', de: 'Regierungsvorlage', fr: 'Projet de loi', es: 'Proposición',
-      nl: 'Wetsvoorstel', ar: 'مقترح قانون', he: 'הצעת חוק', ja: '法案', ko: '정부 제출 법안', zh: '政府法案',
-    },
-    plural: {
-      en: 'Propositions', sv: 'Propositioner', da: 'Propositioner', no: 'Proposisjoner',
-      fi: 'Hallituksen esitykset', de: 'Regierungsvorlagen', fr: 'Projets de loi', es: 'Proposiciones',
-      nl: 'Wetsvoorstellen', ar: 'مقترحات قوانين', he: 'הצעות חוק', ja: '法案', ko: '정부 제출 법안', zh: '政府法案',
-    },
-  },
-  bet: {
-    singular: {
-      en: 'Committee Report', sv: 'Betänkande', da: 'Udvalgsbetænkning', no: 'Komitéinnstilling',
-      fi: 'Valiokunnan mietintö', de: 'Ausschussbericht', fr: 'Rapport de commission', es: 'Informe de comisión',
-      nl: 'Commissieverslag', ar: 'تقرير لجنة', he: 'דוח ועדה', ja: '委員会報告書', ko: '위원회 보고서', zh: '委员会报告',
-    },
-    plural: {
-      en: 'Committee Reports', sv: 'Betänkanden', da: 'Udvalgsbetænkninger', no: 'Komitéinnstillinger',
-      fi: 'Valiokunnan mietinnöt', de: 'Ausschussberichte', fr: 'Rapports de commission', es: 'Informes de comisión',
-      nl: 'Commissieverslagen', ar: 'تقارير لجان', he: 'דוחות ועדה', ja: '委員会報告書', ko: '위원회 보고서', zh: '委员会报告',
-    },
-  },
-  mot: {
-    singular: {
-      en: 'Motion', sv: 'Motion', da: 'Forslag', no: 'Forslag',
-      fi: 'Aloite', de: 'Antrag', fr: 'Motion', es: 'Moción',
-      nl: 'Motie', ar: 'مقترح', he: 'הצעה', ja: '動議', ko: '동의안', zh: '动议',
-    },
-    plural: {
-      en: 'Motions', sv: 'Motioner', da: 'Forslag', no: 'Forslag',
-      fi: 'Aloitteet', de: 'Anträge', fr: 'Motions', es: 'Mociones',
-      nl: 'Moties', ar: 'مقترحات', he: 'הצעות', ja: '動議', ko: '동의안', zh: '动议',
-    },
-  },
-  skr: {
-    singular: {
-      en: 'Government Communication', sv: 'Skrivelse', da: 'Regeringsskrivelse', no: 'Regjeringsskriv',
-      fi: 'Valtioneuvoston kirjelmä', de: 'Regierungsschreiben', fr: 'Communication du gouvernement', es: 'Comunicación del gobierno',
-      nl: 'Regeringsmededeling', ar: 'مذكرة حكومية', he: 'מכתב ממשלתי', ja: '政府通信文書', ko: '정부 통신문', zh: '政府公文',
-    },
-    plural: {
-      en: 'Government Communications', sv: 'Skrivelser', da: 'Regeringsskrivelser', no: 'Regjeringsskriv',
-      fi: 'Valtioneuvoston kirjelmät', de: 'Regierungsschreiben', fr: 'Communications du gouvernement', es: 'Comunicaciones del gobierno',
-      nl: 'Regeringsmededelingen', ar: 'مذكرات حكومية', he: 'מכתבים ממשלתיים', ja: '政府通信文書', ko: '정부 통신문', zh: '政府公文',
-    },
-  },
-  sfs: {
-    singular: {
-      en: 'Law/Statute', sv: 'Lag/förordning', da: 'Lov/forordning', no: 'Lov/forordning',
-      fi: 'Laki/asetus', de: 'Gesetz/Verordnung', fr: 'Loi/Règlement', es: 'Ley/Reglamento',
-      nl: 'Wet/Verordening', ar: 'قانون / لائحة', he: 'חוק/תקנה', ja: '法律／条例', ko: '법률/법규', zh: '法律/法规',
-    },
-    plural: {
-      en: 'Laws/Statutes', sv: 'Lagar/förordningar', da: 'Love/forordninger', no: 'Lover/forordninger',
-      fi: 'Lait/asetukset', de: 'Gesetze/Verordnungen', fr: 'Lois/Règlements', es: 'Leyes/Reglamentos',
-      nl: 'Wetten/Verordeningen', ar: 'قوانين / لوائح', he: 'חוקים/תקנות', ja: '法律／条例', ko: '법률/법규', zh: '法律/法规',
-    },
-  },
-  fpm: {
-    singular: {
-      en: 'EU Position Paper', sv: 'Faktapromemoria', da: 'EU-faktanota', no: 'EU-faktanotat',
-      fi: 'EU-tietomuistio', de: 'EU-Positionspapier', fr: 'Note de position UE', es: 'Documento de posición de la UE',
-      nl: 'EU-positiepaper', ar: 'ورقة موقف للاتحاد الأوروبي', he: 'מסמך עמדה של האיחוד האירופי', ja: 'EUポジションペーパー', ko: 'EU 입장 문서', zh: '欧盟立场文件',
-    },
-    plural: {
-      en: 'EU Position Papers', sv: 'Faktapromemorior', da: 'EU-faktanotaer', no: 'EU-faktanotater',
-      fi: 'EU-tietomuistiot', de: 'EU-Positionspapiere', fr: 'Notes de position UE', es: 'Documentos de posición de la UE',
-      nl: 'EU-positiepapers', ar: 'أوراق موقف للاتحاد الأوروبي', he: 'מסמכי עמדה של האיחוד האירופי', ja: 'EUポジションペーパー', ko: 'EU 입장 문서', zh: '欧盟立场文件',
-    },
-  },
-  pressm: {
-    singular: {
-      en: 'Press Release', sv: 'Pressmeddelande', da: 'Pressemeddelelse', no: 'Pressemelding',
-      fi: 'Lehdistötiedote', de: 'Pressemitteilung', fr: 'Communiqué de presse', es: 'Comunicado de prensa',
-      nl: 'Persbericht', ar: 'بيان صحفي', he: 'הודעה לעיתונות', ja: 'プレスリリース', ko: '보도자료', zh: '新闻稿',
-    },
-    plural: {
-      en: 'Press Releases', sv: 'Pressmeddelanden', da: 'Pressemeddelelser', no: 'Pressemeldinger',
-      fi: 'Lehdistötiedotteet', de: 'Pressemitteilungen', fr: 'Communiqués de presse', es: 'Comunicados de prensa',
-      nl: 'Persberichten', ar: 'بيانات صحفية', he: 'הודעות לעיתונות', ja: 'プレスリリース', ko: '보도자료', zh: '新闻稿',
-    },
-  },
-  ext: {
-    singular: {
-      en: 'External Reference', sv: 'Extern referens', da: 'Ekstern reference', no: 'Ekstern referanse',
-      fi: 'Ulkoinen viite', de: 'Externe Referenz', fr: 'Référence externe', es: 'Referencia externa',
-      nl: 'Externe referentie', ar: 'مرجع خارجي', he: 'הפניה חיצונית', ja: '外部参照', ko: '외부 참조', zh: '外部参考',
-    },
-    plural: {
-      en: 'External References', sv: 'Externa referenser', da: 'Eksterne referencer', no: 'Eksterne referanser',
-      fi: 'Ulkoiset viitteet', de: 'Externe Referenzen', fr: 'Références externes', es: 'Referencias externas',
-      nl: 'Externe referenties', ar: 'مراجع خارجية', he: 'הפניות חיצוניות', ja: '外部参照', ko: '외부 참조', zh: '外部参考',
-    },
-  },
-  other: {
-    singular: {
-      en: 'Other Document', sv: 'Övrigt dokument', da: 'Andet dokument', no: 'Annet dokument',
-      fi: 'Muu asiakirja', de: 'Sonstiges Dokument', fr: 'Autre document', es: 'Otro documento',
-      nl: 'Overig document', ar: 'مستند آخر', he: 'מסמך אחר', ja: 'その他の文書', ko: '기타 문서', zh: '其他文件',
-    },
-    plural: {
-      en: 'Other Documents', sv: 'Övriga dokument', da: 'Andre dokumenter', no: 'Andre dokumenter',
-      fi: 'Muut asiakirjat', de: 'Sonstige Dokumente', fr: 'Autres documents', es: 'Otros documentos',
-      nl: 'Overige documenten', ar: 'مستندات أخرى', he: 'מסמכים אחרים', ja: 'その他の文書', ko: '기타 문서', zh: '其他文件',
-    },
-  },
-};
-
-export function localizeDocType(code: string, lang: Language | string, count?: number): string {
-  const entry = DOC_TYPE_DISPLAY[code];
-  if (!entry) return code;
-  const usePlural = count !== 1;
-  const primary = usePlural ? entry.plural : entry.singular;
-  const fallback = usePlural ? entry.singular : entry.plural;
-  return primary[lang as Language] ?? primary.en ?? fallback[lang as Language] ?? fallback.en ?? code;
-}
-
-/** Per-language title-suffix templates for inverted-pyramid lede construction. */
-export const TITLE_SUFFIX_TEMPLATES: Readonly<Record<string, (t: string) => string>> = {
-  sv: t => ` — inklusive "${t}"`,
-  da: t => ` — herunder "${t}"`,
-  no: t => ` — inkludert "${t}"`,
-  fi: t => ` — mukaan lukien "${t}"`,
-  de: t => ` — darunter "${t}"`,
-  fr: t => ` — notamment "${t}"`,
-  es: t => ` — incluyendo "${t}"`,
-  nl: t => ` — inclusief "${t}"`,
-  ar: t => ` — بما فيها "${t}"`,
-  he: t => ` — כולל "${t}"`,
-  ja: t => `、「${t}」を含む`,
-  ko: t => `, "${t}" 포함`,
-  zh: t => `，包括"${t}"`,
-};
-
-/** Extract meaningful keywords from text for cross-reference matching (min 2 chars, captures EU, KU, etc.; splits on whitespace, hyphens, and commas) */
-function extractKeywords(text: string): string[] {
-  return text.toLowerCase().split(/[\s,–-]+/u).filter(w => w.length >= 2);
-}
-
-/** Find documents related to a calendar event by organ match or keyword overlap (max 3) */
-export function findRelatedDocuments(event: RawCalendarEvent, documents: RawDocument[]): RawDocument[] {
-  const eventOrgan = event.organ ?? '';
-  const keywords = extractKeywords(event.rubrik ?? event.titel ?? event.title ?? '');
-  return documents.filter(doc => {
-    const docOrgan = doc.organ ?? doc.committee ?? '';
-    if (eventOrgan && docOrgan && eventOrgan.toLowerCase() === docOrgan.toLowerCase()) return true;
-    const docText = (doc.titel ?? doc.title ?? '').toLowerCase();
-    return keywords.some(kw => docText.includes(kw));
-  }).slice(0, 3);
-}
-
-/** Find written questions related to a calendar event by keyword overlap (max 3) */
-export function findRelatedQuestions(event: RawCalendarEvent, questions: RawDocument[]): RawDocument[] {
-  const keywords = extractKeywords(event.rubrik ?? event.titel ?? event.title ?? '');
-  return questions.filter(q => {
-    const qText = (q.titel ?? q.title ?? '').toLowerCase();
-    return keywords.some(kw => qText.includes(kw));
-  }).slice(0, 3);
-}
-
-/** Extract targeted minister name from interpellation summary "till MINISTER" header line.
- *  Strips trailing topic clauses ("om X", "angående Y", etc.) and punctuation. */
-export function extractMinister(summary: string): string {
-  // Use non-newline whitespace ([^\S\n]+) so we don't cross into the next line
-  const m = summary.match(/\btill[^\S\n]+([^\n]+)/i);
-  if (!m) return '';
-  const raw = m[1].trim();
-  if (!raw) return '';
-
-  // Remove common trailing topic clauses and punctuation
-  const lowerRaw = raw.toLowerCase();
-  const stopPhrases = [' om ', ' angående ', ' rörande ', ' beträffande '];
-  let end = raw.length;
-  for (const phrase of stopPhrases) {
-    const idx = lowerRaw.indexOf(phrase);
-    if (idx !== -1 && idx < end) end = idx;
-  }
-  // Cut at terminating punctuation if it comes earlier
-  const punctIdx = raw.search(/[?:;.,]/);
-  if (punctIdx !== -1 && punctIdx < end) end = punctIdx;
-
-  return raw.slice(0, end).trim();
-}
+// ── Sub-module imports used by the deep analysis section ───────────────────
+import { generateImpactAnalysis, generateConsequencesAnalysis } from './impact-helpers.js';
+import {
+  type DocumentAnalysis, type BatchAnalysisResult, type RiskAssessment,
+  analyzeDocumentsBatch, analyzeDocumentsPerspectives,
+  MAX_PERSPECTIVE_INSIGHTS,
+  renderAggregatedPestle, renderStakeholderImpactSummary,
+  renderRiskAssessment, renderImplementationAssessment,
+} from './framework-renderers.js';
+import { localizeDocType } from './doc-type-helpers.js';
 
 // ---------------------------------------------------------------------------
 // Deep Analysis Section (5W Framework)
@@ -338,6 +106,10 @@ export function analyzeDocumentsForContent(
   const perspectiveAnalysis = analyzeDocumentsPerspectives(docs, cia, lang);
   return { frameworkAnalysis, perspectiveAnalysis };
 }
+
+// ---------------------------------------------------------------------------
+// Deep Analysis section private helpers
+// ---------------------------------------------------------------------------
 
 /**
  * Extract unique party names from a set of documents for "Who" analysis.
@@ -452,6 +224,163 @@ function coalitionRiskText(lang: Language | string, margin: number): string {
   };
   return templates[lang as string] ?? templates.en;
 }
+
+// ---------------------------------------------------------------------------
+// Deep Analysis subsection generators
+// ---------------------------------------------------------------------------
+
+function generateTimelineContext(docs: RawDocument[], _lang: Language | string, articleType: string): string {
+  const count = docs.length;
+  const committees = new Set(docs.map(d => d.organ || d.committee || '').filter(Boolean));
+
+  // Provide minimal factual scaffold — AI agent MUST replace with genuine timeline analysis
+  // that explains political significance, scheduling strategy, and contextual importance.
+  const committeeCount = committees.size;
+  const committeeNames = [...committees].map(name => escapeHtml(name)).join(', ');
+
+  const prospective = articleType.includes('ahead');
+  const retrospective = articleType.includes('review');
+
+  const typeLabel = prospective ? 'scheduled' : retrospective ? 'recorded' : 'active';
+
+  // Entire paragraph is comment-only so AI must write the full rendered text in the target language
+  const factualHint = committeeCount > 0
+    ? `${count} ${typeLabel} items across ${committeeCount} committee(s): ${committeeNames}`
+    : `${count} ${typeLabel} parliamentary items`;
+
+  return `<!-- AI_MUST_REPLACE: timeline_context — DATA: ${factualHint}. Write specific analysis of scheduling significance, political timing strategy, and why this legislative calendar matters now. Output MUST be in the article's language. -->`;
+}
+
+function generateWhyAnalysis(docs: RawDocument[], lang: Language | string, cia: CIAContext | undefined, extraContext?: string): string {
+  const parts: string[] = [];
+
+  // Domain breadth signals policy ambition
+  const domains = aggregateDomains(docs, lang);
+  const domainCount = domains.size;
+  if (domainCount >= 4) {
+    parts.push(broadAgendaText(lang, domainCount));
+  } else if (domainCount >= 2) {
+    parts.push(focusedAgendaText(lang, domainCount));
+  }
+
+  // Coalition stability context
+  if (cia) {
+    const stability = cia.coalitionStability?.stabilityScore ?? 100;
+    if (stability < 50) {
+      parts.push(instabilityText(lang));
+    }
+  }
+
+  if (extraContext) {
+    parts.push(escapeHtml(extraContext));
+  }
+
+  if (parts.length === 0) {
+    parts.push(defaultWhyText(lang));
+  }
+
+  return parts.join(' ');
+}
+
+function broadAgendaText(_lang: Language | string, n: number): string {
+  // Entire output is comment-only — AI writes the full rendered paragraph in the target language
+  return `<!-- AI_MUST_REPLACE: why_matters — DATA: ${n} policy domains active. Explain WHY these specific domains matter politically right now, what strategic intent drives this breadth, and what it reveals about coalition priorities. Output MUST be in the article's language. -->`;
+}
+
+function focusedAgendaText(_lang: Language | string, n: number): string {
+  return `<!-- AI_MUST_REPLACE: why_matters — DATA: ${n} policy domains active. Explain the strategic significance of this focused legislative approach and what it reveals about government priorities. Output MUST be in the article's language. -->`;
+}
+
+function instabilityText(_lang: Language | string): string {
+  return '<!-- AI_MUST_REPLACE: coalition_instability — Provide specific analysis of current coalition stability indicators, recent fractures, and how instability affects these specific legislative items. Output MUST be in the article\'s language. -->';
+}
+
+function defaultWhyText(_lang: Language | string): string {
+  return '<!-- AI_MUST_REPLACE: why_matters — Write specific analysis of why these particular parliamentary developments matter, citing concrete political dynamics, stakeholder impacts, and strategic implications. Output MUST be in the article\'s language. -->';
+}
+
+function generateCriticalAssessment(docs: RawDocument[], lang: Language | string, cia: CIAContext | undefined): string {
+  const parts: string[] = [];
+
+  // Check for single-party dominance in motions (potential echo chamber)
+  const motionParties = new Map<string, number>();
+  docs.filter(d => d.doktyp === 'mot').forEach(d => {
+    const p = normalizePartyKey(d.parti);
+    if (p && p !== 'other') motionParties.set(p, (motionParties.get(p) ?? 0) + 1);
+  });
+  const totalMotions = [...motionParties.values()].reduce((a, b) => a + b, 0);
+  if (motionParties.size === 1 && totalMotions > 3) {
+    parts.push(singlePartyDominanceText(lang));
+  }
+
+  // Check for lack of debate data (information gap)
+  const withSpeeches = docs.filter(d => d.speeches && d.speeches.length > 0).length;
+  if (withSpeeches === 0 && docs.length > 3) {
+    parts.push(debateAnalysisMarker());
+  }
+
+  // Thin majority risk assessment
+  if (cia) {
+    const stability = cia.coalitionStability?.stabilityScore ?? 100;
+    if (stability < 40) {
+      parts.push(criticalStabilityText(lang));
+    }
+  }
+
+  if (parts.length === 0) {
+    parts.push(defaultCriticalText(lang));
+  }
+
+  return parts.join(' ');
+}
+
+function singlePartyDominanceText(_lang: Language | string): string {
+  return '<!-- AI_MUST_REPLACE: single_party_dominance — Analyse why one party dominates opposition activity: strategic focus, internal party dynamics, or failure of other parties to engage? Cite specific evidence. Output MUST be in the article\'s language. -->';
+}
+
+function debateAnalysisMarker(): string {
+  return '<!-- AI_MUST_REPLACE: debate_analysis — Analyse the available debate data and provide specific insights on parliamentary discourse. Output MUST be in the article\'s language. -->';
+}
+
+function criticalStabilityText(lang: Language | string): string {
+  const t: Record<string, string> = {
+    en: 'Coalition stability has deteriorated to critical levels. The risk of a government crisis is non-trivial, and any procedural surprise could trigger a confidence vote. All legislative analysis must be read through this lens of instability.',
+    sv: 'Koalitionsstabiliteten har försämrats till kritiska nivåer. Risken för en regeringskris är icke-trivial.',
+  };
+  return t[lang as string] ?? t.en;
+}
+
+function defaultCriticalText(_lang: Language | string): string {
+  return '<!-- AI_MUST_REPLACE: critical_assessment — Write a critical assessment that challenges assumptions, identifies gaps between intent and likely outcomes, evaluates which measures face implementation risks, and provides an honest evaluation of the political dynamics at play. Output MUST be in the article\'s language. -->';
+}
+
+function generatePerspectivesAnalysis(docs: RawDocument[], lang: Language | string, parties: Map<string, number>): string {
+  const sortedParties = [...parties.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4);
+  const partyAnalyses: string[] = [];
+
+  for (const [party, count] of sortedParties) {
+    const partyDocs = docs.filter(d => normalizePartyKey(d.parti) === party);
+    const partyDomains = aggregateDomains(partyDocs, lang);
+    const topDomains = [...partyDomains.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 2)
+      .map(([d]) => d);
+    if (topDomains.length > 0) {
+      partyAnalyses.push(
+        `<strong>${escapeHtml(party)}</strong> (${count}): ${topDomains.map(d => escapeHtml(d)).join(', ')}`
+      );
+    } else {
+      partyAnalyses.push(`<strong>${escapeHtml(party)}</strong> (${count})`);
+    }
+  }
+
+  if (partyAnalyses.length === 0) return '';
+  return partyAnalyses.join(' · ');
+}
+
+// ---------------------------------------------------------------------------
+// Main deep analysis section generator
+// ---------------------------------------------------------------------------
 
 /**
  * Generate a comprehensive Deep Analysis section following the 5W framework
@@ -568,7 +497,7 @@ export function generateDeepAnalysisSection(opts: DeepAnalysisOptions): string {
     parts.push(renderStakeholderImpactSummary(analyses, lang));
 
     // Risk Assessment — aggregate risk factors across documents
-    const allRisks = analyses.flatMap(a => a.riskAssessment);
+    const allRisks = analyses.flatMap(a => a.riskAssessment as RiskAssessment[]);
     if (allRisks.length > 0) {
       parts.push(`    <h3>${escapeHtml(lbl('deepAnalysisRisk'))}</h3>`);
       parts.push(renderRiskAssessment(allRisks, lang));
@@ -595,531 +524,4 @@ export function generateDeepAnalysisSection(opts: DeepAnalysisOptions): string {
 
   parts.push('    </section>\n');
   return parts.join('\n');
-}
-
-// ---------------------------------------------------------------------------
-// Deep Analysis subsection generators
-// ---------------------------------------------------------------------------
-
-function generateTimelineContext(docs: RawDocument[], _lang: Language | string, articleType: string): string {
-  const count = docs.length;
-  const committees = new Set(docs.map(d => d.organ || d.committee || '').filter(Boolean));
-
-  // Provide minimal factual scaffold — AI agent MUST replace with genuine timeline analysis
-  // that explains political significance, scheduling strategy, and contextual importance.
-  const committeeCount = committees.size;
-  const committeeNames = [...committees].map(name => escapeHtml(name)).join(', ');
-
-  const prospective = articleType.includes('ahead');
-  const retrospective = articleType.includes('review');
-
-  const typeLabel = prospective ? 'scheduled' : retrospective ? 'recorded' : 'active';
-
-  // Entire paragraph is comment-only so AI must write the full rendered text in the target language
-  const factualHint = committeeCount > 0
-    ? `${count} ${typeLabel} items across ${committeeCount} committee(s): ${committeeNames}`
-    : `${count} ${typeLabel} parliamentary items`;
-
-  return `<!-- AI_MUST_REPLACE: timeline_context — DATA: ${factualHint}. Write specific analysis of scheduling significance, political timing strategy, and why this legislative calendar matters now. Output MUST be in the article's language. -->`;
-}
-
-function generateWhyAnalysis(docs: RawDocument[], lang: Language | string, cia: CIAContext | undefined, extraContext?: string): string {
-  const parts: string[] = [];
-
-  // Domain breadth signals policy ambition
-  const domains = aggregateDomains(docs, lang);
-  const domainCount = domains.size;
-  if (domainCount >= 4) {
-    parts.push(broadAgendaText(lang, domainCount));
-  } else if (domainCount >= 2) {
-    parts.push(focusedAgendaText(lang, domainCount));
-  }
-
-  // Coalition stability context
-  if (cia) {
-    const stability = cia.coalitionStability?.stabilityScore ?? 100;
-    if (stability < 50) {
-      parts.push(instabilityText(lang));
-    }
-  }
-
-  if (extraContext) {
-    parts.push(escapeHtml(extraContext));
-  }
-
-  if (parts.length === 0) {
-    parts.push(defaultWhyText(lang));
-  }
-
-  return parts.join(' ');
-}
-
-function broadAgendaText(_lang: Language | string, n: number): string {
-  // Entire output is comment-only — AI writes the full rendered paragraph in the target language
-  return `<!-- AI_MUST_REPLACE: why_matters — DATA: ${n} policy domains active. Explain WHY these specific domains matter politically right now, what strategic intent drives this breadth, and what it reveals about coalition priorities. Output MUST be in the article's language. -->`;
-}
-
-function focusedAgendaText(_lang: Language | string, n: number): string {
-  return `<!-- AI_MUST_REPLACE: why_matters — DATA: ${n} policy domains active. Explain the strategic significance of this focused legislative approach and what it reveals about government priorities. Output MUST be in the article's language. -->`;
-}
-
-function instabilityText(_lang: Language | string): string {
-  return '<!-- AI_MUST_REPLACE: coalition_instability — Provide specific analysis of current coalition stability indicators, recent fractures, and how instability affects these specific legislative items. Output MUST be in the article\'s language. -->';
-}
-
-function defaultWhyText(_lang: Language | string): string {
-  return '<!-- AI_MUST_REPLACE: why_matters — Write specific analysis of why these particular parliamentary developments matter, citing concrete political dynamics, stakeholder impacts, and strategic implications. Output MUST be in the article\'s language. -->';
-}
-
-function generateImpactAnalysis(docs: RawDocument[], lang: Language | string, cia: CIAContext | undefined): string {
-  const parts: string[] = [];
-
-  const propCount = docs.filter(d => d.doktyp === 'prop').length;
-  const motCount = docs.filter(d => d.doktyp === 'mot').length;
-  const betCount = docs.filter(d => d.doktyp === 'bet').length;
-
-  if (propCount > 0) {
-    parts.push(propImpactText(lang, propCount));
-  }
-  if (betCount > 0) {
-    parts.push(betImpactText(lang, betCount));
-  }
-  if (motCount > 0) {
-    parts.push(motImpactText(lang, motCount));
-  }
-
-  if (cia) {
-    const margin = cia.coalitionStability?.majorityMargin ?? 0;
-    if (margin <= 5) {
-      parts.push(thinMajorityImpactText(lang, margin));
-    }
-  }
-
-  return parts.join(' ') || genericImpactText(lang);
-}
-
-function propImpactText(_lang: Language | string, n: number): string {
-  return `<!-- AI_MUST_REPLACE: political_impact — DATA: ${n} government proposition(s) filed. Analyse the specific political impact: which propositions face opposition, what coalition dynamics are at play, which policy areas face the strongest resistance, and what the vote arithmetic looks like. Output MUST be in the article's language. -->`;
-}
-
-function betImpactText(_lang: Language | string, n: number): string {
-  return `<!-- AI_MUST_REPLACE: political_impact — DATA: ${n} committee report(s) issued. Analyse the political significance of these specific committee recommendations: key votes, reservation patterns, which parties are aligned or divided, and implications for chamber votes. Output MUST be in the article's language. -->`;
-}
-
-function motImpactText(_lang: Language | string, n: number): string {
-  return `<!-- AI_MUST_REPLACE: political_impact — DATA: ${n} opposition motion(s) filed. Analyse the strategic purpose of these specific motions: which target government vulnerabilities, which signal election campaign themes, and what they reveal about opposition coordination. Output MUST be in the article's language. -->`;
-}
-
-function thinMajorityImpactText(_lang: Language | string, margin: number): string {
-  return `<!-- AI_MUST_REPLACE: majority_impact — DATA: majority margin ${margin} seat(s). Analyse how this thin margin affects these specific legislative items and which measures are most vulnerable to defection. Output MUST be in the article's language. -->`;
-}
-
-function genericImpactText(_lang: Language | string): string {
-  return '<!-- AI_MUST_REPLACE: political_impact — Write specific analysis of the political impact of these items, naming parties, citing vote margins, and identifying which measures will pass or face challenges. Output MUST be in the article\'s language. -->';
-}
-
-function generateConsequencesAnalysis(docs: RawDocument[], lang: Language | string, _articleType: string): string {
-  const propCount = docs.filter(d => d.doktyp === 'prop').length;
-  const motCount = docs.filter(d => d.doktyp === 'mot').length;
-  const parts: string[] = [];
-
-  if (propCount > 0) {
-    parts.push(propConsequencesText(lang, propCount));
-  }
-  if (motCount > 0) {
-    parts.push(motConsequencesText(lang, motCount));
-  }
-  if (parts.length === 0) {
-    parts.push(genericConsequencesText(lang));
-  }
-  return parts.join(' ');
-}
-
-function propConsequencesText(_lang: Language | string, n: number): string {
-  return `<!-- AI_MUST_REPLACE: consequences — DATA: ${n} proposition(s) pending. Analyse the specific implementation consequences: which agencies must act, what regulatory changes are required, budget implications, and timeline for each proposition. Output MUST be in the article's language. -->`;
-}
-
-function motConsequencesText(_lang: Language | string, n: number): string {
-  return `<!-- AI_MUST_REPLACE: consequences — DATA: ${n} opposition motion(s) pending. Analyse the strategic consequences: how will rejection/acceptance affect party positioning, which motions establish new policy alternatives, and what campaign value do they carry. Output MUST be in the article's language. -->`;
-}
-
-function genericConsequencesText(_lang: Language | string): string {
-  return '<!-- AI_MUST_REPLACE: consequences — Write specific analysis of the consequences and next steps for these items, including committee timelines, expected vote dates, implementation requirements, and political ramifications. Output MUST be in the article\'s language. -->';
-}
-
-function generateCriticalAssessment(docs: RawDocument[], lang: Language | string, cia: CIAContext | undefined): string {
-  const parts: string[] = [];
-
-  // Check for single-party dominance in motions (potential echo chamber)
-  const motionParties = new Map<string, number>();
-  docs.filter(d => d.doktyp === 'mot').forEach(d => {
-    const p = normalizePartyKey(d.parti);
-    if (p && p !== 'other') motionParties.set(p, (motionParties.get(p) ?? 0) + 1);
-  });
-  const totalMotions = [...motionParties.values()].reduce((a, b) => a + b, 0);
-  if (motionParties.size === 1 && totalMotions > 3) {
-    parts.push(singlePartyDominanceText(lang));
-  }
-
-  // Check for lack of debate data (information gap)
-  const withSpeeches = docs.filter(d => d.speeches && d.speeches.length > 0).length;
-  if (withSpeeches === 0 && docs.length > 3) {
-    parts.push(debateAnalysisMarker());
-  }
-
-  // Thin majority risk assessment
-  if (cia) {
-    const stability = cia.coalitionStability?.stabilityScore ?? 100;
-    if (stability < 40) {
-      parts.push(criticalStabilityText(lang));
-    }
-  }
-
-  if (parts.length === 0) {
-    parts.push(defaultCriticalText(lang));
-  }
-
-  return parts.join(' ');
-}
-
-function singlePartyDominanceText(_lang: Language | string): string {
-  return '<!-- AI_MUST_REPLACE: single_party_dominance — Analyse why one party dominates opposition activity: strategic focus, internal party dynamics, or failure of other parties to engage? Cite specific evidence. Output MUST be in the article\'s language. -->';
-}
-
-function debateAnalysisMarker(): string {
-  return '<!-- AI_MUST_REPLACE: debate_analysis — Analyse the available debate data and provide specific insights on parliamentary discourse. Output MUST be in the article\'s language. -->';
-}
-
-function criticalStabilityText(lang: Language | string): string {
-  const t: Record<string, string> = {
-    en: 'Coalition stability has deteriorated to critical levels. The risk of a government crisis is non-trivial, and any procedural surprise could trigger a confidence vote. All legislative analysis must be read through this lens of instability.',
-    sv: 'Koalitionsstabiliteten har försämrats till kritiska nivåer. Risken för en regeringskris är icke-trivial.',
-  };
-  return t[lang as string] ?? t.en;
-}
-
-function defaultCriticalText(_lang: Language | string): string {
-  return '<!-- AI_MUST_REPLACE: critical_assessment — Write a critical assessment that challenges assumptions, identifies gaps between intent and likely outcomes, evaluates which measures face implementation risks, and provides an honest evaluation of the political dynamics at play. Output MUST be in the article\'s language. -->';
-}
-
-function generatePerspectivesAnalysis(docs: RawDocument[], lang: Language | string, parties: Map<string, number>): string {
-  const sortedParties = [...parties.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4);
-  const partyAnalyses: string[] = [];
-
-  for (const [party, count] of sortedParties) {
-    const partyDocs = docs.filter(d => normalizePartyKey(d.parti) === party);
-    const partyDomains = aggregateDomains(partyDocs, lang);
-    const topDomains = [...partyDomains.entries()]
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 2)
-      .map(([d]) => d);
-    if (topDomains.length > 0) {
-      partyAnalyses.push(
-        `<strong>${escapeHtml(party)}</strong> (${count}): ${topDomains.map(d => escapeHtml(d)).join(', ')}`
-      );
-    } else {
-      partyAnalyses.push(`<strong>${escapeHtml(party)}</strong> (${count})`);
-    }
-  }
-
-  if (partyAnalyses.length === 0) return '';
-  return partyAnalyses.join(' · ');
-}
-
-// ---------------------------------------------------------------------------
-// Framework analysis section renderers
-// ---------------------------------------------------------------------------
-
-/** Max items per PESTLE dimension in aggregated display */
-const MAX_PESTLE_ITEMS = 4;
-/** Max stakeholder impacts shown in the summary list */
-const MAX_STAKEHOLDER_IMPACTS = 7;
-/** Max risk items shown in the risk assessment summary */
-const MAX_RISK_ITEMS = 5;
-/** Max perspective insights shown from 6-lens analysis */
-const MAX_PERSPECTIVE_INSIGHTS = 5;
-/** Max implementation obstacles listed */
-const MAX_IMPLEMENTATION_OBSTACLES = 4;
-/** Max agencies displayed in implementation assessment */
-const MAX_AGENCIES_DISPLAYED = 5;
-
-const PESTLE_LABELS: Readonly<Record<string, Record<keyof PESTLEAnalysis, string>>> = {
-  en: { political: 'Political', economic: 'Economic', social: 'Social', technological: 'Technological', legal: 'Legal', environmental: 'Environmental' },
-  sv: { political: 'Politisk', economic: 'Ekonomisk', social: 'Social', technological: 'Teknologisk', legal: 'Juridisk', environmental: 'Miljö' },
-  da: { political: 'Politisk', economic: 'Økonomisk', social: 'Social', technological: 'Teknologisk', legal: 'Juridisk', environmental: 'Miljø' },
-  no: { political: 'Politisk', economic: 'Økonomisk', social: 'Sosial', technological: 'Teknologisk', legal: 'Juridisk', environmental: 'Miljø' },
-  fi: { political: 'Poliittinen', economic: 'Taloudellinen', social: 'Sosiaalinen', technological: 'Teknologinen', legal: 'Oikeudellinen', environmental: 'Ympäristö' },
-  de: { political: 'Politisch', economic: 'Wirtschaftlich', social: 'Sozial', technological: 'Technologisch', legal: 'Rechtlich', environmental: 'Umwelt' },
-  fr: { political: 'Politique', economic: 'Économique', social: 'Social', technological: 'Technologique', legal: 'Juridique', environmental: 'Environnemental' },
-  es: { political: 'Político', economic: 'Económico', social: 'Social', technological: 'Tecnológico', legal: 'Jurídico', environmental: 'Ambiental' },
-  nl: { political: 'Politiek', economic: 'Economisch', social: 'Sociaal', technological: 'Technologisch', legal: 'Juridisch', environmental: 'Milieu' },
-  ar: { political: 'سياسي', economic: 'اقتصادي', social: 'اجتماعي', technological: 'تقني', legal: 'قانوني', environmental: 'بيئي' },
-  he: { political: 'פוליטי', economic: 'כלכלי', social: 'חברתי', technological: 'טכנולוגי', legal: 'משפטי', environmental: 'סביבתי' },
-  ja: { political: '政治', economic: '経済', social: '社会', technological: '技術', legal: '法的', environmental: '環境' },
-  ko: { political: '정치', economic: '경제', social: '사회', technological: '기술', legal: '법률', environmental: '환경' },
-  zh: { political: '政治', economic: '经济', social: '社会', technological: '技术', legal: '法律', environmental: '环境' },
-};
-
-const RISK_TYPE_LABELS: Readonly<Record<string, Record<RiskAssessment['type'], string>>> = {
-  en: { political: 'Political', implementation: 'Implementation', 'public-acceptance': 'Public acceptance', legal: 'Legal', financial: 'Financial' },
-  sv: { political: 'Politisk', implementation: 'Genomförande', 'public-acceptance': 'Offentlig acceptans', legal: 'Juridisk', financial: 'Finansiell' },
-  da: { political: 'Politisk', implementation: 'Implementering', 'public-acceptance': 'Offentlig accept', legal: 'Juridisk', financial: 'Finansiel' },
-  no: { political: 'Politisk', implementation: 'Implementering', 'public-acceptance': 'Offentlig aksept', legal: 'Juridisk', financial: 'Finansiell' },
-  fi: { political: 'Poliittinen', implementation: 'Toteutus', 'public-acceptance': 'Julkinen hyväksyntä', legal: 'Oikeudellinen', financial: 'Taloudellinen' },
-  de: { political: 'Politisch', implementation: 'Umsetzung', 'public-acceptance': 'Öffentliche Akzeptanz', legal: 'Rechtlich', financial: 'Finanziell' },
-  fr: { political: 'Politique', implementation: 'Mise en œuvre', 'public-acceptance': 'Acceptation publique', legal: 'Juridique', financial: 'Financier' },
-  es: { political: 'Político', implementation: 'Implementación', 'public-acceptance': 'Aceptación pública', legal: 'Jurídico', financial: 'Financiero' },
-  nl: { political: 'Politiek', implementation: 'Implementatie', 'public-acceptance': 'Publieke acceptatie', legal: 'Juridisch', financial: 'Financieel' },
-  ar: { political: 'سياسي', implementation: 'تنفيذي', 'public-acceptance': 'القبول العام', legal: 'قانوني', financial: 'مالي' },
-  he: { political: 'פוליטי', implementation: 'יישום', 'public-acceptance': 'קבלה ציבורית', legal: 'משפטי', financial: 'פיננסי' },
-  ja: { political: '政治', implementation: '実装', 'public-acceptance': '世論受容', legal: '法的', financial: '財政' },
-  ko: { political: '정치', implementation: '이행', 'public-acceptance': '대중 수용성', legal: '법률', financial: '재정' },
-  zh: { political: '政治', implementation: '实施', 'public-acceptance': '公众接受度', legal: '法律', financial: '财政' },
-};
-
-const LEVEL_LABELS: Readonly<Record<string, Record<'high' | 'medium' | 'low', string>>> = {
-  en: { high: 'High', medium: 'Medium', low: 'Low' },
-  sv: { high: 'Hög', medium: 'Medel', low: 'Låg' },
-  da: { high: 'Høj', medium: 'Mellem', low: 'Lav' },
-  no: { high: 'Høy', medium: 'Middels', low: 'Lav' },
-  fi: { high: 'Korkea', medium: 'Keskitaso', low: 'Matala' },
-  de: { high: 'Hoch', medium: 'Mittel', low: 'Niedrig' },
-  fr: { high: 'Élevé', medium: 'Moyen', low: 'Faible' },
-  es: { high: 'Alto', medium: 'Medio', low: 'Bajo' },
-  nl: { high: 'Hoog', medium: 'Middel', low: 'Laag' },
-  ar: { high: 'مرتفع', medium: 'متوسط', low: 'منخفض' },
-  he: { high: 'גבוה', medium: 'בינוני', low: 'נמוך' },
-  ja: { high: '高', medium: '中', low: '低' },
-  ko: { high: '높음', medium: '보통', low: '낮음' },
-  zh: { high: '高', medium: '中', low: '低' },
-};
-
-const IMPLEMENTATION_LABELS: Readonly<Record<string, { feasibility: string; obstacles: string; agencies: string; noStakeholderData: string; noImplementationData: string; burden: string }>> = {
-  en: { feasibility: 'Feasibility', obstacles: 'Key obstacles', agencies: 'Agencies involved', noStakeholderData: 'No stakeholder impact data available.', noImplementationData: 'No implementation data available.', burden: 'Burden' },
-  sv: { feasibility: 'Genomförbarhet', obstacles: 'Viktiga hinder', agencies: 'Berörda myndigheter', noStakeholderData: 'Ingen data om intressentpåverkan tillgänglig.', noImplementationData: 'Ingen implementeringsdata tillgänglig.', burden: 'Belastning' },
-  da: { feasibility: 'Gennemførlighed', obstacles: 'Vigtige hindringer', agencies: 'Involverede myndigheder', noStakeholderData: 'Ingen data om interessentpåvirkning tilgængelig.', noImplementationData: 'Ingen implementeringsdata tilgængelig.', burden: 'Byrde' },
-  no: { feasibility: 'Gjennomførbarhet', obstacles: 'Viktige hindringer', agencies: 'Involverte etater', noStakeholderData: 'Ingen data om interessentpåvirkning tilgjengelig.', noImplementationData: 'Ingen implementeringsdata tilgjengelig.', burden: 'Belastning' },
-  fi: { feasibility: 'Toteutettavuus', obstacles: 'Keskeiset esteet', agencies: 'Mukana olevat viranomaiset', noStakeholderData: 'Sidosryhmävaikutustietoa ei saatavilla.', noImplementationData: 'Toteutustietoa ei saatavilla.', burden: 'Rasite' },
-  de: { feasibility: 'Umsetzbarkeit', obstacles: 'Wesentliche Hindernisse', agencies: 'Beteiligte Behörden', noStakeholderData: 'Keine Daten zu Stakeholder-Auswirkungen verfügbar.', noImplementationData: 'Keine Umsetzungsdaten verfügbar.', burden: 'Belastung' },
-  fr: { feasibility: 'Faisabilité', obstacles: 'Obstacles clés', agencies: 'Agences impliquées', noStakeholderData: 'Aucune donnée d’impact des parties prenantes disponible.', noImplementationData: 'Aucune donnée de mise en œuvre disponible.', burden: 'Charge' },
-  es: { feasibility: 'Viabilidad', obstacles: 'Obstáculos clave', agencies: 'Organismos implicados', noStakeholderData: 'No hay datos de impacto en partes interesadas.', noImplementationData: 'No hay datos de implementación disponibles.', burden: 'Carga' },
-  nl: { feasibility: 'Haalbaarheid', obstacles: 'Belangrijkste obstakels', agencies: 'Betrokken instanties', noStakeholderData: 'Geen gegevens over impact op belanghebbenden beschikbaar.', noImplementationData: 'Geen implementatiegegevens beschikbaar.', burden: 'Last' },
-  ar: { feasibility: 'قابلية التنفيذ', obstacles: 'العقبات الرئيسية', agencies: 'الجهات المعنية', noStakeholderData: 'لا تتوفر بيانات تأثير أصحاب المصلحة.', noImplementationData: 'لا تتوفر بيانات تنفيذ.', burden: 'العبء' },
-  he: { feasibility: 'ישימות', obstacles: 'חסמים מרכזיים', agencies: 'גורמים מעורבים', noStakeholderData: 'אין נתוני השפעה על בעלי עניין.', noImplementationData: 'אין נתוני יישום.', burden: 'נטל' },
-  ja: { feasibility: '実現可能性', obstacles: '主な障害', agencies: '関係機関', noStakeholderData: 'ステークホルダー影響データはありません。', noImplementationData: '実施データはありません。', burden: '負担' },
-  ko: { feasibility: '실행 가능성', obstacles: '주요 장애 요인', agencies: '관여 기관', noStakeholderData: '이해관계자 영향 데이터가 없습니다.', noImplementationData: '이행 데이터가 없습니다.', burden: '부담' },
-  zh: { feasibility: '可实施性', obstacles: '关键障碍', agencies: '涉及机构', noStakeholderData: '暂无利益相关方影响数据。', noImplementationData: '暂无实施数据。', burden: '负担' },
-};
-
-function localizeLevel(level: 'high' | 'medium' | 'low', lang: Language | string): string {
-  return LEVEL_LABELS[lang as string]?.[level] ?? LEVEL_LABELS.en[level];
-}
-
-function localizeRiskType(type: RiskAssessment['type'], lang: Language | string): string {
-  return RISK_TYPE_LABELS[lang as string]?.[type] ?? RISK_TYPE_LABELS.en[type];
-}
-
-function localizedImplementationLabels(lang: Language | string): { feasibility: string; obstacles: string; agencies: string; noStakeholderData: string; noImplementationData: string; burden: string } {
-  return IMPLEMENTATION_LABELS[lang as string] ?? IMPLEMENTATION_LABELS.en;
-}
-
-/**
- * Aggregate PESTLE dimensions across multiple document analyses into a
- * deduplicated list per dimension and render as an HTML description list.
- */
-function renderAggregatedPestle(analyses: DocumentAnalysis[], lang: Language | string): string {
-  const merged: PESTLEAnalysis = {
-    political: [], economic: [], social: [],
-    technological: [], legal: [], environmental: [],
-  };
-
-  for (const a of analyses) {
-    const p = a.pestleDimensions;
-    merged.political.push(...p.political);
-    merged.economic.push(...p.economic);
-    merged.social.push(...p.social);
-    merged.technological.push(...p.technological);
-    merged.legal.push(...p.legal);
-    merged.environmental.push(...p.environmental);
-  }
-
-  // Deduplicate per dimension
-  const dedup = (arr: string[]): string[] => [...new Set(arr)].slice(0, MAX_PESTLE_ITEMS);
-
-  const labels = PESTLE_LABELS[lang as string] ?? PESTLE_LABELS.en;
-  const dims: Array<[string, string[]]> = [
-    [labels.political, dedup(merged.political)],
-    [labels.economic, dedup(merged.economic)],
-    [labels.social, dedup(merged.social)],
-    [labels.technological, dedup(merged.technological)],
-    [labels.legal, dedup(merged.legal)],
-    [labels.environmental, dedup(merged.environmental)],
-  ];
-
-  const items = dims
-    .filter(([, items]) => items.length > 0)
-    .map(([label, items]) =>
-      `      <dt><strong>${escapeHtml(label)}</strong></dt>\n      <dd>${items.map(i => escapeHtml(i)).join(' ')}</dd>`,
-    )
-    .join('\n');
-
-  return `    <dl class="pestle-analysis">\n${items}\n    </dl>`;
-}
-
-/**
- * Render a summary of stakeholder impacts across all analysed documents.
- * Shows up to 7 stakeholder groups with impact direction, confidence, and burden.
- */
-function renderStakeholderImpactSummary(analyses: DocumentAnalysis[], lang: Language | string): string {
-  const labels = localizedImplementationLabels(lang);
-  // Collect all stakeholder impacts, deduplicated by stakeholder name
-  const impactMap = new Map<string, StakeholderImpact>();
-  for (const a of analyses) {
-    for (const impact of a.stakeholderImpacts) {
-      // Keep the higher-magnitude impact per stakeholder
-      const existing = impactMap.get(impact.stakeholder);
-      if (!existing || magnitudeRank(impact.directImpact.magnitude) > magnitudeRank(existing.directImpact.magnitude)) {
-        impactMap.set(impact.stakeholder, impact);
-      }
-    }
-  }
-
-  const impacts = [...impactMap.values()].slice(0, MAX_STAKEHOLDER_IMPACTS);
-  if (impacts.length === 0) return `    <p>${escapeHtml(labels.noStakeholderData)}</p>`;
-
-  const rows = impacts.map(i => {
-    const directionIcon =
-      i.directImpact.direction === 'positive' ? '↑'
-      : i.directImpact.direction === 'negative' ? '↓'
-      : i.directImpact.direction === 'mixed' ? '↕'
-      : '→';
-    const burdenText = localizeLevel(i.implementationBurden, lang);
-    return `      <li><strong>${escapeHtml(i.displayName)}</strong>: ${directionIcon} ${escapeHtml(i.directImpact.summary)} (${escapeHtml(i.confidence)}; ${escapeHtml(labels.burden)}: ${escapeHtml(burdenText)})</li>`;
-  });
-
-  return `    <ul class="stakeholder-impact-list">\n${rows.join('\n')}\n    </ul>`;
-}
-
-/**
- * Render a risk assessment summary. Groups risks by type and keeps the
- * highest-severity risk per type.
- */
-function renderRiskAssessment(risks: RiskAssessment[], lang: Language | string): string {
-  // Deduplicate by type, preferring higher severity
-  const byType = new Map<string, RiskAssessment>();
-  for (const r of risks) {
-    const key = r.type;
-    const existing = byType.get(key);
-    if (!existing || severityRank(r.severity) > severityRank(existing.severity)) {
-      byType.set(key, r);
-    }
-  }
-
-  const top = [...byType.values()].slice(0, MAX_RISK_ITEMS);
-  const rows = top.map(r => {
-    const icon = r.severity === 'high' ? '🔴' : r.severity === 'medium' ? '🟡' : '🟢';
-    return `      <li>${icon} <strong>${escapeHtml(localizeRiskType(r.type, lang))}</strong> (${escapeHtml(localizeLevel(r.severity, lang))}): ${escapeHtml(r.description)}</li>`;
-  });
-
-  return `    <ul class="risk-assessment-list">\n${rows.join('\n')}\n    </ul>`;
-}
-
-function severityRank(s: string): number {
-  return s === 'high' ? 3 : s === 'medium' ? 2 : 1;
-}
-
-function magnitudeRank(magnitude: 'significant' | 'moderate' | 'minor'): number {
-  return magnitude === 'significant' ? 3 : magnitude === 'moderate' ? 2 : 1;
-}
-
-/**
- * Render implementation assessment summary from framework analyses.
- */
-function renderImplementationAssessment(analyses: DocumentAnalysis[], lang: Language | string): string {
-  const labels = localizedImplementationLabels(lang);
-  const assessments: ImplementationAssessment[] = analyses.map(a => a.implementationAssessment);
-  if (assessments.length === 0) return `    <p>${escapeHtml(labels.noImplementationData)}</p>`;
-
-  // Aggregate obstacles and agencies across all documents
-  const allObstacles = new Set<string>();
-  const allAgencies = new Set<string>();
-  let highestFeasibility: ImplementationAssessment['feasibility'] = 'high';
-  let selectedAssessment: ImplementationAssessment = assessments[0];
-
-  for (const ia of assessments) {
-    ia.keyObstacles.forEach(o => allObstacles.add(o));
-    ia.agenciesInvolved.forEach(a => allAgencies.add(a));
-    if (feasibilityRank(ia.feasibility) < feasibilityRank(highestFeasibility)) {
-      highestFeasibility = ia.feasibility;
-      selectedAssessment = ia;
-    }
-  }
-
-  const parts: string[] = [];
-  const fIcon = highestFeasibility === 'high' ? '🟢' : highestFeasibility === 'medium' ? '🟡' : '🔴';
-  const timeline = selectedAssessment.estimatedTimeline;
-  parts.push(`    <p>${fIcon} <strong>${escapeHtml(labels.feasibility)}:</strong> ${escapeHtml(localizeLevel(highestFeasibility, lang))}. ${escapeHtml(timeline)}</p>`);
-
-  if (allObstacles.size > 0) {
-    const obstacleList = [...allObstacles].slice(0, MAX_IMPLEMENTATION_OBSTACLES).map(o => `<li>${escapeHtml(o)}</li>`).join('');
-    parts.push(`    <p><strong>${escapeHtml(labels.obstacles)}:</strong></p>\n    <ul>${obstacleList}</ul>`);
-  }
-
-  if (allAgencies.size > 0) {
-    parts.push(`    <p><strong>${escapeHtml(labels.agencies)}:</strong> ${[...allAgencies].slice(0, MAX_AGENCIES_DISPLAYED).map(a => escapeHtml(a)).join(', ')}</p>`);
-  }
-
-  return parts.join('\n');
-}
-
-function feasibilityRank(f: string): number {
-  return f === 'high' ? 3 : f === 'medium' ? 2 : 1;
-}
-
-/* ── Banned pattern detection ─────────────────────────────────────────────── */
-
-/**
- * Banned content patterns that indicate low-quality boilerplate text.
- * Per SHARED_PROMPT_PATTERNS.md §BANNED Content Patterns v4.0, these
- * must never appear in production articles. AI agents MUST replace them
- * with genuine, document-specific analysis.
- */
-const BANNED_PATTERNS: readonly { label: string; pattern: RegExp }[] = [
-  { label: 'neutralText: "The political landscape remains fluid…"', pattern: /The political landscape remains fluid,? with both government and opposition positioning for advantage/i },
-  { label: 'debateAnalysisMarker: "No chamber debate data is available…"', pattern: /No chamber debate data is available for these items,? limiting our ability/i },
-  { label: 'policySignificanceTouches: "Touches on {domains}."', pattern: /Touches on [\p{L}\p{N}][\p{L}\p{N}\s,&/()-]*\./iu },
-  { label: 'analysisOfNDocuments: "Analysis of N documents covering…"', pattern: /Analysis of \d+ documents covering/i },
-  { label: 'policySignificanceGeneric: "Requires committee review and chamber debate…"', pattern: /Requires committee review and chamber debate/i },
-  { label: 'topicInFocusSuffix: "…: {Topic} in Focus"', pattern: /:\s+\w[\w\s]*\bin Focus\b/i },
-  { label: 'briefingOnFieldLabels: "Political intelligence briefing on {Field}: and {Field}:"', pattern: /Political intelligence briefing on \w+:\s+and\s+\w+:/i },
-  // Deep Analysis generic template patterns — AI MUST replace these with specific analysis
-  { label: 'genericTimeline: "The pace of activity signals…"', pattern: /The pace of activity signals the political urgency/i },
-  { label: 'genericTimeline: "define the current legislative landscape"', pattern: /define the current legislative landscape/i },
-  { label: 'genericWhy: "broad legislative push that will shape"', pattern: /broad legislative push that will shape multiple aspects/i },
-  { label: 'genericWhy: "critical period for understanding the government"', pattern: /critical period for understanding the government.s strategic direction/i },
-  { label: 'genericImpact: "culmination of legislative review, with recommendations that guide"', pattern: /culmination of legislative review,? with recommendations that guide/i },
-  { label: 'genericImpact: "interplay between governing ambition and opposition scrutiny"', pattern: /interplay between governing ambition and opposition scrutiny/i },
-  { label: 'genericConsequences: "cascade through committee deliberations"', pattern: /cascade through committee deliberations,? chamber votes/i },
-  { label: 'genericConsequences: "establish the policy alternatives that opposition parties will champion"', pattern: /establish the policy alternatives that opposition parties will champion/i },
-  { label: 'genericCritical: "Standard parliamentary procedures are being followed"', pattern: /Standard parliamentary procedures are being followed/i },
-  { label: 'genericCritical: "gap between legislative intent and implementation"', pattern: /gap between legislative intent and implementation often reveals/i },
-  { label: 'genericPillarTransition: "While parliament deliberates these legislative matters"', pattern: /While parliament deliberates these legislative matters/i },
-];
-
-/**
- * Detect banned boilerplate patterns in HTML content.
- * Returns an array of human-readable labels identifying each detected
- * banned pattern, suitable for quality gate logs and error messages.
- *
- * @param html - The HTML string to scan for banned patterns
- * @returns Array of stable human-readable labels for each detected banned pattern
- */
-export function detectBannedPatterns(html: string): string[] {
-  const found: string[] = [];
-  for (const { label, pattern } of BANNED_PATTERNS) {
-    if (pattern.test(html)) {
-      found.push(label);
-    }
-  }
-  return found;
 }
