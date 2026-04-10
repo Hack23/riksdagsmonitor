@@ -12,7 +12,6 @@ import { escapeHtml, decodeHtmlEntities } from '../html-utils.js';
 import { CONTENT_LABELS } from '../data-transformers.js';
 import type { Language } from '../types/language.js';
 import type { ArticleData, EventGridItem, WatchPoint, TemplateSection } from '../types/article.js';
-import type { FAQItem } from '../types/editorial.js';
 import type { ClassificationLevel } from '../analysis-reader.js';
 import { SITE_TAGLINE, OG_LOCALE_MAP, TYPE_LABELS, ALL_LANG_CODES } from './constants.js';
 import { getStyleClass } from './registry.js';
@@ -420,12 +419,12 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
     }
   }
   </script>
-  ${(faqItems as FAQItem[]).length > 0 ? `
+  ${faqItems.length > 0 ? `
   <!-- FAQPage structured data for rich SERP snippets and voice assistants -->
   <script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: (faqItems as FAQItem[]).map(item => ({
+    mainEntity: faqItems.map(item => ({
       '@type': 'Question',
       name: item.question,
       acceptedAnswer: {
@@ -490,7 +489,7 @@ ${fixedContent}
 
 ${watchPoints.length > 0 ? generateWatchSection(watchPoints as ReadonlyArray<WatchPoint>, lang) : ''}
 
-${(faqItems as FAQItem[]).length > 0 ? generateFaqSection(faqItems as FAQItem[], lang) : ''}
+${faqItems.length > 0 ? generateFaqSection(faqItems, lang) : ''}
 
 ${(sections as TemplateSection[]).length > 0 ? (sections as TemplateSection[]).map(s => `<div id="${escapeHtml(s.id)}" class="${escapeHtml(s.className ?? 'article-section')}">${s.html}</div>`).join('\n') : ''}
   </div>

@@ -328,16 +328,17 @@ const DEFAULT_TRANSITION_CONTEXT: Readonly<Record<Language, { topic: string; act
  * The returned string is **plain text** (not HTML) — wrap it in a `<p>` tag
  * with appropriate CSS class at the call site.
  *
- * **Important**: Default context values (`topicKeyword` and `actorName`) are
- * provided in each of the 14 supported languages via `DEFAULT_TRANSITION_CONTEXT`.
+ * Callers may omit `context`, in which case localized defaults are used for the
+ * requested language (falling back to English defaults as a last resort).
  * However, for best results callers should supply specific `context.topicKeyword`
- * and `context.actorName` values that match the article's actual subject matter.
+ * and `context.actorName` values that match the article's actual subject matter,
+ * especially for non-English articles.
  *
  * @param lang         - Article language code
  * @param fromSection  - CSS class / identifier of the preceding section
  * @param toSection    - CSS class / identifier of the following section
  * @param context      - Optional topic and actor to interpolate into the template.
- *                       **Required for non-English articles.**
+ *                       When omitted, localized defaults are used.
  * @returns Localized transition sentence or empty string
  *
  * @example
