@@ -174,6 +174,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'watch-points',
       'what-happens-next',
       'winners-losers',
+      'faq',
       'sources-methodology',
     ],
     qualityThresholds: {
@@ -203,6 +204,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'watch-points',
       'what-happens-next',
       'winners-losers',
+      'faq',
       'sources-methodology',
     ],
     qualityThresholds: {
@@ -258,6 +260,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'watch-points',
       'what-happens-next',
       'winners-losers',
+      'faq',
       'sources-methodology',
     ],
     qualityThresholds: {
@@ -286,6 +289,7 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'watch-points',
       'what-happens-next',
       'winners-losers',
+      'faq',
       'sources-methodology',
     ],
     qualityThresholds: {

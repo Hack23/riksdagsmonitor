@@ -422,22 +422,18 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
   </script>
   ${(faqItems as FAQItem[]).length > 0 ? `
   <!-- FAQPage structured data for rich SERP snippets and voice assistants -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [${(faqItems as FAQItem[]).map(item => `
-      {
-        "@type": "Question",
-        "name": "${escapeHtml(item.question)}",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "${escapeHtml(item.answer)}"
-        }
-      }`).join(',')}
-    ]
-  }
-  </script>` : ''}
+  <script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: (faqItems as FAQItem[]).map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  }).replace(/</g, '\\u003c')}</script>` : ''}
   
 </head>
 <body>

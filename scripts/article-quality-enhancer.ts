@@ -214,7 +214,7 @@ function hasWhatHappensNext(content: string): boolean {
 function hasWinnersLosers(content: string): boolean {
   const patterns: readonly RegExp[] = [
     /class=["'][^"']*\bwinners-losers\b/,
-    /winners\s*[&and]+\s*losers/i,
+    /winners\s*(?:&|and)\s*losers/i,
     /vinnare\s+och\s+förlorare/i,
     /gewinner\s+und\s+verlierer/i,
     /gagnants\s+et\s+perdants/i,
