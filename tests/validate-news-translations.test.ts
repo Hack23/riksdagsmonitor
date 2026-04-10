@@ -550,4 +550,85 @@ describe('validate-news-translations.ts', () => {
       expect(result).not.toContain('Content leakage');
     });
   });
+
+  describe('AI_MUST_REPLACE marker detection', () => {
+    it('should detect AI_MUST_REPLACE markers in HTML comments and fail CI', () => {
+      const esContent = `<!DOCTYPE html>
+<html lang="es">
+<head><meta property="og:locale" content="es_ES"><script type="application/ld+json">{"inLanguage": "es"}</script></head>
+<body>
+  <p>Este es un párrafo en español sobre política sueca.</p>
+  <!-- AI_MUST_REPLACE: why_matters — DATA: 3 policy domains active. Explain the strategic significance. Output MUST be in the article's language. -->
+  <p>Otro párrafo de análisis político.</p>
+</body>
+</html>`;
+      writeFileSync(`${testDir}/2026-04-09-test-es.html`, esContent);
+
+      let exitCode = 0;
+      let output = '';
+      try {
+        execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+          encoding: 'utf-8'
+        });
+      } catch (error: unknown) {
+        exitCode = (error as ExecSyncError).status;
+        output = (error as ExecSyncError).stdout ?? '';
+      }
+
+      expect(exitCode).toBe(1);
+      expect(output).toContain('AI_MUST_REPLACE');
+      expect(output).toContain('VALIDATION FAILED');
+    });
+
+    it('should report sample marker names from AI_MUST_REPLACE comments', () => {
+      const deContent = `<!DOCTYPE html>
+<html lang="de">
+<head><meta property="og:locale" content="de_DE"><script type="application/ld+json">{"inLanguage": "de"}</script></head>
+<body>
+  <p>Dies ist ein deutscher Absatz.</p>
+  <!-- AI_MUST_REPLACE: coalition_instability — Analysiere die Koalitionsstabilität. Output MUST be in the article's language. -->
+  <!-- AI_MUST_REPLACE: critical_assessment — Schreibe eine kritische Bewertung. Output MUST be in the article's language. -->
+</body>
+</html>`;
+      writeFileSync(`${testDir}/2026-04-09-test-de.html`, deContent);
+
+      let exitCode = 0;
+      let output = '';
+      try {
+        execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+          encoding: 'utf-8'
+        });
+      } catch (error: unknown) {
+        exitCode = (error as ExecSyncError).status;
+        output = (error as ExecSyncError).stdout ?? '';
+      }
+
+      expect(exitCode).toBe(1);
+      expect(output).toContain('coalition_instability');
+      expect(output).toContain('2 unresolved marker(s)');
+    });
+
+    it('should pass validation for articles with no AI_MUST_REPLACE markers', () => {
+      const fiContent = `<!DOCTYPE html>
+<html lang="fi">
+<head><meta property="og:locale" content="fi_FI"><script type="application/ld+json">{"inLanguage": "fi"}</script></head>
+<body>
+  <p>Tämä on suomenkielinen artikkeli ruotsin parlamentista.</p>
+  <p>Koalitiodynamiikka osoittaa merkittäviä jännitteitä hallituspuolueiden välillä.</p>
+</body>
+</html>`;
+      writeFileSync(`${testDir}/2026-04-09-test-fi.html`, fiContent);
+
+      let exitCode = 0;
+      try {
+        execSync(`node scripts/validate-news-translations.ts ${testDir}`, {
+          encoding: 'utf-8'
+        });
+      } catch (error: unknown) {
+        exitCode = (error as ExecSyncError).status;
+      }
+
+      expect(exitCode).toBe(0);
+    });
+  });
 });
