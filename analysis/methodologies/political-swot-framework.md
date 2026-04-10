@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -121,15 +121,17 @@ Threats are demonstrated by **opposition motions**, **no-confidence signals**, a
 
 ---
 
-## 🎯 Confidence Level Assignment
+## 🎯 Confidence Level Assignment (5-Level Scale)
 
 ### Assignment Criteria
 
-| Level | Criteria | Example |
-|-------|---------|---------|
-| **HIGH** | Multiple independent sources corroborate; primary source is official Riksdag document or SCB statistics; source is current (within 90 days) | "Coalition secured 176/349 votes on budget motion 2025/26:FPM45 (verified via voteringsresultat 2025-11-24)" |
-| **MEDIUM** | Single primary source confirmed; or multiple secondary sources; or primary source older than 90 days | "Government polling at 38% approval per Novus (2026-02-15); single pollster" |
-| **LOW** | Credible but single unverified source; inference from related evidence; source older than 180 days | "Estimated L party dissent based on parliamentary debate tone — no formal vote yet" |
+| Level | Label | Criteria | Example |
+|:-----:|-------|---------|---------|
+| 🟦 5 | **VERY HIGH** | Multiple official sources, cross-validated, no conflicting evidence; primary source is official Riksdag voting records or government legislation | "Coalition secured 176/349 votes on motion FPM45 (voteringsresultat 2025-11-24, cross-checked against party position statements)" |
+| 🟩 4 | **HIGH** | Multiple independent sources corroborate; primary source is official Riksdag document or SCB statistics; source current (within 90 days) | "Coalition secured 176/349 votes on budget motion 2025/26:FPM45 (verified via voteringsresultat 2025-11-24)" |
+| 🟧 3 | **MEDIUM** | Single primary source confirmed; or multiple secondary sources; or primary source 90–180 days old | "Government polling at 38% approval per Novus (2026-02-15); single pollster" |
+| 🟥 2 | **LOW** | Credible but single unverified source; inference from related evidence; source 180+ days old | "Estimated L party dissent based on parliamentary debate tone — no formal vote yet" |
+| ⬛ 1 | **VERY LOW** | Speculation only; no direct evidence; inferred from general political patterns | "Possible SD internal disagreement suggested by tone of spokesperson statement" |
 
 ### Confidence Decay Rule
 
@@ -137,13 +139,15 @@ SWOT entries age and their confidence level **automatically degrades** over time
 
 | Original Confidence | After 30 days | After 90 days | After 180 days |
 |--------------------|:------------:|:-------------:|:--------------:|
+| VERY HIGH | VERY HIGH | HIGH | MEDIUM |
 | HIGH | HIGH | MEDIUM | LOW |
 | MEDIUM | MEDIUM | LOW | EXPIRED |
 | LOW | LOW | EXPIRED | EXPIRED |
+| VERY LOW | EXPIRED | EXPIRED | EXPIRED |
 
 **EXPIRED entries must be re-verified or removed before inclusion in new SWOT analyses.**
 
-> **Clarification:** EXPIRED is a **lifecycle status**, not a confidence level. The confidence hierarchy is HIGH → MEDIUM → LOW (active). When temporal decay moves a LOW-confidence entry past 90 days, it becomes EXPIRED — meaning it is no longer active and must be handled per the rules below. An active SWOT analysis contains ONLY entries with confidence HIGH, MEDIUM, or LOW.
+> **Clarification:** EXPIRED is a **lifecycle status**, not a confidence level. When temporal decay moves an entry to EXPIRED, it must be handled per the rules below. An active SWOT analysis contains ONLY entries with confidence VERY HIGH, HIGH, MEDIUM, or LOW.
 
 ### Handling EXPIRED Entries
 
@@ -154,7 +158,36 @@ When an entry reaches EXPIRED status:
 3. **Archive**: If no new evidence, move entry to "Historical Context" section (informational, not active SWOT)
 4. **Remove**: If the situation has fundamentally changed (e.g., new coalition formed), delete the entry entirely
 
-> **Rule:** An active SWOT analysis must contain ZERO expired entries. Every entry must have a confidence of HIGH, MEDIUM, or LOW with a clear evidence trail.
+> **Rule:** An active SWOT analysis must contain ZERO expired entries. Every entry must have a confidence of VERY HIGH, HIGH, MEDIUM, or LOW with a clear evidence trail.
+
+---
+
+## 🗳️ Election 2026 — Mandatory SWOT Dimension
+
+> **Added in v2.3 — Election 2026 is a MANDATORY SWOT dimension for all analyses in 2025–2026.**
+
+With the September 2026 Swedish general election approaching, every SWOT analysis MUST include an **Electoral Dimension** assessment across all four quadrants.
+
+### Electoral SWOT Quadrant Requirements
+
+| Quadrant | Election 2026 Focus | Evidence Standard |
+|----------|--------------------|--------------------|
+| **Strengths** | Policies that position governing coalition favorably for 2026 (track record, deliveries, approval metrics) | Opinion polling, government implementation reports |
+| **Weaknesses** | Policy failures or controversies that create electoral vulnerabilities (budget gaps, coalition tensions, unfulfilled promises) | Riksdag debates, media coverage, opposition motions |
+| **Opportunities** | Policy areas where the government can score electoral wins before September 2026 | Legislative calendar, EU funds, pending legislation |
+| **Threats** | External events or opposition strategies that could damage electoral prospects | Opposition motions, global economic indicators, security events |
+
+### Minimum Electoral SWOT Requirements
+
+Every SWOT analysis produced within 18 months of September 2026 MUST include:
+- **≥1 Strength entry** with specific electoral relevance and evidence
+- **≥1 Weakness entry** with specific electoral vulnerability and attack vector potential
+- **≥1 Opportunity entry** with timeline relative to election date
+- **≥1 Threat entry** with probability assessment and mitigation options
+
+### Electoral SWOT Confidence Standards
+
+Electoral SWOT entries require **MEDIUM confidence minimum** (3+ sources). Speculation about electoral consequences without supporting polling or documented party positions must be labeled **VERY LOW** and isolated from substantive findings.
 
 ---
 
@@ -739,9 +772,10 @@ Produce a period-level delta:
 **Document Control:**  
 - **Path:** `/analysis/methodologies/political-swot-framework.md`  
 - **CIA Reference:** [CIA SWOT.md](https://github.com/Hack23/cia/blob/master/SWOT.md)  
-- **Version:** 2.2  
-- **Advanced Techniques:** Cross-SWOT Interference, TOWS Matrix, Scenario Generation, Power-Interest Mapping, EU Parliament Cross-Reference, SWOT Evolution Tracking  
+- **Version:** 2.3  
+- **Advanced Techniques:** Cross-SWOT Interference, TOWS Matrix, Scenario Generation, Power-Interest Mapping, EU Parliament Cross-Reference, SWOT Evolution Tracking, Election 2026 Mandatory Dimension  
+- **Key Changes v2.3:** Election 2026 as mandatory SWOT dimension (electoral quadrant requirements, confidence standards for electoral entries), 5-level confidence scale replacing HIGH/MEDIUM/LOW (VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW with updated decay table)  
 - **Key Changes v2.2:** SWOT Evolution Tracking (SWOT Delta template, inter-quadrant migration rules with Mermaid diagram, cross-document aggregation protocol for weekly/monthly reviews)  
 - **EU Integration:** European Parliament MCP Server data sources, cross-parliament aggregation, Swedish MEP ↔ EP group mapping  
 - **Classification:** Public  
-- **Next Review:** 2026-06-30
+- **Next Review:** 2026-09-01

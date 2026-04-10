@@ -147,48 +147,15 @@ You are the **Evening Political Analyst** for Riksdagsmonitor. Generate comprehe
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
 
-**Every `bash` tool call MUST include both required parameters — omitting either causes validation errors:**
+> **Full reference:** See `SHARED_PROMPT_PATTERNS.md` → "Bash Tool Call Format". Key rule: every `bash` call MUST have both `command` AND `description` parameters. Example: `bash({ command: "date -u '+%Y-%m-%d'", description: "Get current UTC date" })`
 
-| Parameter | Required | Description |
-|-----------|----------|-------------|
-| `command` | ✅ YES | The shell command string to execute |
-| `description` | ✅ YES | Short human-readable label (≤100 chars) |
+## 🛡️ AWF Shell Safety
 
-**✅ CORRECT** — always provide both `command` and `description`:
-```
-bash({ command: "date -u '+%Y-%m-%d'", description: "Get current UTC date" })
-bash({ command: "npm ci --prefer-offline --no-audit", description: "Install npm dependencies" })
-bash({ command: "npx htmlhint 'news/*-*.html'", description: "Validate HTML files" })
-```
+> **Full reference:** See `SHARED_PROMPT_PATTERNS.md` → "AWF Shell Safety". Summary: use `$VAR` not `$`+`{VAR}`, use `find -exec` not `$(...)`, set defaults with `if/then` before using `$VAR`.
 
-**❌ WRONG** — missing parameters cause `"command": Required, "description": Required` errors:
-```
-bash("npm ci")           // ← WRONG: no named parameters
-bash({ command: "..." }) // ← WRONG: missing description
-```
+## 🔤 UTF-8 Encoding
 
-> When you see fenced bash code blocks below (three backticks followed by bash), they show the **command content** to execute. You MUST wrap each in a proper bash tool call with both `command` and `description` parameters. For multi-line scripts, join commands with `&&` or `;` into a single `command` string.
-
-## 🛡️ AWF Shell Safety — MANDATORY for Agent-Generated Bash
-
-> **The Agent Workflow Firewall (AWF) blocks dangerous shell expansion patterns.** Fenced bash blocks in init steps run as normal shell, but any command YOU generate via the `bash` tool IS subject to AWF filtering.
-
-**Key rules — NEVER use these in your generated bash commands:**
-1. **NEVER** use `$`+`{VAR}` — always use `$VAR` (no curly braces)
-2. **NEVER** use `$`+`(command)` — use pipes, `find -exec`, or separate commands
-3. **NEVER** use `$`+`{VAR:-default}` — set defaults with `if/then` first, then use `$VAR`
-4. **Use `find -exec`** instead of for-loops with `$`+`(basename ...)`
-5. **Use direct file paths** when possible instead of variable-constructed paths with braces
-
-## 🔤 UTF-8 Encoding — MANDATORY for ALL Content
-
-> **NON-NEGOTIABLE**: All article content, titles, descriptions, and metadata MUST use native UTF-8 characters. NEVER use HTML numeric entities (`&#228;`, `&#246;`, `&#229;`) for non-ASCII characters like Swedish åäö, German üö, French éè, etc.
-
-**Rules:**
-1. Write Swedish characters as UTF-8: `ö`, `ä`, `å`, `Ö`, `Ä`, `Å` — NEVER as `&#246;`, `&#228;`, etc.
-2. Author name: Always `James Pether Sörling` — never `S&#246;rling`.
-3. All HTML files use `<meta charset="UTF-8">` — entities are unnecessary and cause double-escaping bugs.
-4. This applies to ALL languages and ALL output: titles, meta tags, JSON-LD, article body, analysis files.
+> **Full reference:** See `SHARED_PROMPT_PATTERNS.md` → "UTF-8 Encoding". Summary: use native UTF-8 (`ö`, `ä`, `å`) — NEVER HTML entities (`&#246;`, `&#228;`). Author: `James Pether Sörling`.
 
 
 ## ⚠️ NON-NEGOTIABLE RULES
@@ -205,17 +172,7 @@ bash({ command: "..." }) // ← WRONG: missing description
 
 ## 🧠 Repo Memory
 
-This workflow uses **persistent repo-memory** on branch `memory/news-generation` (shared with all news workflows).
-
-**At run START — read context:**
-- Read `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` for today (and optionally yesterday) to check which dok_ids were already analyzed recently
-- Read `memory/news-generation/last-run-news-evening-analysis.json` for previous run metadata
-- Skip documents already covered by another workflow to avoid duplicate analysis
-
-**At run END — write context:**
-- Update `memory/news-generation/last-run-news-evening-analysis.json` with date, documents analyzed, quality score
-- Write processed dok_ids to `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` (sharded by date; retain last 7 days)
-- Update `memory/news-generation/translation-status.json` with new articles needing translation
+Uses `memory/news-generation` branch. START: read `memory/news-generation/last-run-news-evening-analysis.json` + `covered-documents/{YYYY-MM-DD}.json`. END: update both + `translation-status.json`. Skip already-covered dok_ids.
 
 ## ⏱️ Time Budget (45 minutes)
 
@@ -241,19 +198,10 @@ START_TIME=$(date +%s)
 
 ## Required Skills
 
-Before generating articles, consult these skills:
-1. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
-2. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology
-3. **`.github/skills/legislative-monitoring/SKILL.md`** — Voting patterns, committee tracking, bill progress
-4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
-5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
-6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
-7. **`scripts/prompts/v2/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
-8. **`scripts/prompts/v2/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
-9. **`scripts/prompts/v2/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
-10. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Per-file AI analysis protocol
-11. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Methodology for deep per-file analysis
-12. **`analysis/templates/per-file-political-intelligence.md`** — Per-file analysis output template
+Consult as needed — do NOT read all files upfront:
+- **Skills:** `editorial-standards`, `swedish-political-system`, `legislative-monitoring`, `riksdag-regering-mcp`, `language-expertise`, `gh-aw-safe-outputs` (all in `.github/skills/*/SKILL.md`)
+- **Analysis:** `scripts/prompts/v2/political-analysis.md`, `per-file-intelligence-analysis.md`, `quality-criteria.md`
+- **Methodology:** `analysis/methodologies/ai-driven-analysis-guide.md` (v5.0) + `analysis/templates/per-file-political-intelligence.md`
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
 
@@ -290,6 +238,10 @@ Based on the editorial profile for `evening-analysis` (from `scripts/editorial-f
 
 > 🚨 **ANTI-PATTERNS (REJECTED)**: Surface-level daily summaries without analysis, SWOT with only 3 groups, no Mermaid diagrams, no risk scores, no forward indicators
 
+### 🗳️ Election 2026 Lens (Mandatory — v5.0)
+
+Every analysis MUST include an **Election 2026 Implications** section assessing: Electoral Impact, Coalition Scenarios, Voter Salience, Campaign Vulnerability, and Policy Legacy. Use the **5-level confidence scale** (⬛VERY LOW → 🟥LOW → 🟧MEDIUM → 🟩HIGH → 🟦VERY HIGH). See `analysis/methodologies/ai-driven-analysis-guide.md` v5.0 for full criteria.
+
 ### Phase 1 — Data Collection & Initial Analysis
 1. Fetch today's activity from MCP (`search_anforanden` — filter by `datum`, `get_betankanden` — filter by `publicerad`, `search_voteringar` — filter by `datum`, `get_sync_status`)
 2. Score newsworthiness of each item using `scoreNewsworthiness()` logic
@@ -319,10 +271,9 @@ echo "Day of week: $DAY_OF_WEEK (6=Saturday weekly wrap-up)"
 echo "============================"
 ```
 
-## 📅 Riksmöte (Parliamentary Session) Calculation
-- September or later: `rm = "{currentYear}/{nextYear's last 2 digits}"`
-- Before September: `rm = "{previousYear}/{currentYear's last 2 digits}"`
-- Example: February 2026 → `rm = "2025/26"`
+## 📅 Riksmöte Calculation
+
+Sep+ → `rm = "{year}/{year+1 2-digit}"` (e.g. Oct 2026 → `2026/27`). Before Sep → `rm = "{year-1}/{year 2-digit}"` (e.g. Feb 2026 → `2025/26`).
 
 ## MANDATORY Deduplication Check
 
@@ -349,13 +300,7 @@ fi
 
 ### MCP Health Gate
 
-STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm up MCP and check stale data.
-
-1. Call `get_sync_status({})` — if successful, proceed
-2. If it fails, wait 30 seconds and retry (up to 3 total attempts)
-3. If ALL 3 attempts fail → `safeoutputs___noop` with "MCP server unavailable after 3 connection attempts."
-
-**ALL article content MUST originate from live MCP data.**
+Call `get_sync_status({})` first; retry up to 3× (30s wait). After 3 failures → `safeoutputs___noop("MCP unavailable")`. All content MUST come from live MCP data.
 
 ### DATA FRESHNESS CHECK
 
@@ -369,240 +314,52 @@ if (hoursSinceSync > 48) { /* add stale data disclaimer */ }
 
 Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc queries, use `scripts/mcp-query-cli.ts` — NEVER implement custom MCP client code (PROHIBITION).
 
-**Date calculation pattern:**
-```javascript
-const lookbackHours = 24; // adjust as needed (e.g. 8 for evening analysis, 168 for weekly)
-const now = new Date();
-const fromDate = new Date(now.getTime() - lookbackHours * 3600000); // 3600000 ms = 1 hour
-const weekAgo = new Date(now.getTime() - 7 * 86400000); // 86400000 ms = 1 day
-const today = now.toISOString().split('T')[0];
-// ISO string variants for tools with native date params
-const fromDateIso = fromDate.toISOString().slice(0, 10);
-// Day-granularity date strings (via .slice(0, 10) truncation):
-const lookbackDays = Math.ceil(lookbackHours / 24);
-const fromDateStr = new Date(Date.now() - lookbackDays * 86400000).toISOString().slice(0, 10);
-// For weekly review (Saturday): 5-day lookback = 5 * 86400000 ms
-const weekFromDate = new Date(Date.now() - 5 * 86400000).toISOString().slice(0, 10);
-```
-
-**Tools with native date params** (supports from/tom or dateFrom/dateTo):
-- `get_calendar_events` — supports `from`/`tom` parameters (**⚠️ Known issue: may return HTML instead of JSON — see Calendar API Fallback below**)
-- `search_regering` — supports `dateFrom`/`dateTo` parameters
-- `analyze_g0v_by_department` — supports `dateFrom`/`dateTo` parameters
-
-### ⚠️ Calendar API Fallback
-
-The Riksdag calendar API (`get_calendar_events`) intermittently returns HTML instead of JSON. If the calendar call returns an error, empty results with an `error` field, or HTML content:
-
-1. **Do NOT treat calendar failure as "no events"** — continue evaluating all other data sources normally.
-2. **Use `search_dokument` as a document-based proxy** to detect recently published committee reports and propositions (these indicate active parliamentary work even when the calendar is unavailable):
-   ```
-   search_dokument({ from_date: "<fromDate>", to_date: "<today>", limit: 50, doktyp: "bet" })
-   search_dokument({ from_date: "<fromDate>", to_date: "<today>", limit: 30, doktyp: "prop" })
-   ```
-   > Note: This does NOT replace the calendar's session-timing data. It provides publication signals as context for whether parliament is active.
-3. **Flag the API error** in any noop message or article metadata so it can be investigated.
-4. The calendar is supplementary context — its failure should never block article generation from other sources.
-
-**Tools requiring post-query filter by datum/publicerad/inlämnad:**
-- `search_voteringar` — filter by `datum` field
-- `get_betankanden` — filter by `publicerad` date
-- `get_motioner` — filter by `inlämnad` date
-- `get_propositioner` — filter by `publicerad` date
-- `search_anforanden` — filter by `datum` field
-
-Filter results to only include items with dates `>= fromDate` using timezone-safe ISO string comparison:
-
-For tools without native date support, apply a post-query date filter:
-
-```javascript
-// Calculate lookback window (e.g. 24 hours = 86400000 ms, 1 hour = 3600000 ms)
-const fromDate = new Date(Date.now() - 24 * 3600000).toISOString().slice(0, 10);
-const results = queryResults.filter(
-  item => (item.publicerad || item.datum || item.inlämnad || '').slice(0, 10) >= fromDate
-);
-```
-
-Filter results to only include items with dates `>= fromDate` using ISO-string comparison (avoids timezone-sensitive `new Date()` parsing):
-```js
-const filtered = results.filter(item =>
-  (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10) >= fromDate
-);
-// Discouraged alternative: new Date() parsing — timezone/format sensitive
-// const filtered = rawResults.filter(item => new Date(item.publicerad || item.datum || item.inlämnad) >= fromDate);
-```
-
-**Post-query date filtering example** (day-granularity; 86400000 ms = 1 day):
-```javascript
-const fromDate = new Date(Date.now() - lookback_days * 86400000).toISOString().slice(0, 10);
-const results = rawResults.filter(item => {
-  const itemDate = (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10);
-  return itemDate >= fromDate; // lexicographic YYYY-MM-DD comparison — no timezone drift
-});
-```
-
-**Date calculation pattern** (day-granularity — `.toISOString().slice(0, 10)` truncates to YYYY-MM-DD):
+**Date calculation (canonical pattern):**
 ```javascript
 const now = new Date();
-const lookback_hours = 12; // default; override via workflow input
-const lookbackHours = Number(lookback_hours);
-if (!Number.isFinite(lookbackHours) || !Number.isInteger(lookbackHours) || lookbackHours <= 0) {
-  throw new Error('Invalid lookback_hours');
-}
-const lookbackMs = lookbackHours * 3600000; // 3600000 ms per hour
-const fromDate = new Date(now.getTime() - lookbackMs).toISOString().slice(0, 10);
-// For weekly review (Saturday): 5 * 86400000 ms = 5 days
-const weekStart = new Date(now.getTime() - 5 * 86400000).toISOString().slice(0, 10);
+const lookbackHours = Number("${{ github.event.inputs.lookback_hours }}") || 12;
+const fromDateIso = new Date(now.getTime() - lookbackHours * 3600000).toISOString().slice(0, 10);
 const today = now.toISOString().slice(0, 10);
 ```
 
-**Post-query filtering example:**
+**Post-query date filter (use for tools without native date params):**
 ```javascript
-const results = await get_betankanden({ rm: currentRm, limit: 50 });
-const recent = results.filter(item => {
-  const itemDate = (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10);
-  return itemDate >= fromDate;
-});
+const recent = results.filter(item =>
+  (item.datum || item.publicerad || item.inlämnad || '').slice(0, 10) >= fromDateIso
+);
 ```
 
-**Date calculation example:**
-```javascript
-const today = new Date().toISOString().slice(0, 10);
-const fromDate = new Date(Date.now() - 86400000).toISOString().slice(0, 10); // 24h lookback
-const weekAgo = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
-// For Saturday weekly review, use 5-day lookback (5 * 86400000 ms)
-```
+**Tools with native date params:** `get_calendar_events` (`from`/`tom`), `search_regering` + `analyze_g0v_by_department` (`dateFrom`/`dateTo`).
+**Tools requiring post-query filter:** `search_voteringar` (`datum`), `get_betankanden` (`publicerad`), `get_motioner` (`inlämnad`), `get_propositioner` (`publicerad`), `search_anforanden` (`datum`).
 
-**Post-query filtering example:**
-```javascript
-// Filter betankanden by publicerad date (ISO-string day comparison — avoids timezone-sensitive Date parsing)
-const recent = results.filter(r => r.publicerad?.slice(0, 10) >= fromDate);
-// Filter voteringar by datum
-const todayVotes = votes.filter(v => v.datum?.slice(0, 10) >= fromDate);
-```
+### ⚠️ Calendar API Fallback
+
+`get_calendar_events` intermittently returns HTML. If it fails: (1) do NOT treat failure as "no events"; (2) use `search_dokument({ from_date, to_date, doktyp: "bet" })` as a proxy for active parliamentary work; (3) flag the error in output. Calendar failure must never block article generation from other sources.
 
 ### Cross-Referencing Strategy
 
-Cross-reference related data sources for richer analysis. Filter all results by date to `>= fromDate`.
-
-#### Example 1: Committee Report Deep Dive
-```
-// 1. Fetch committee reports for the period
-// 2. For each report, look up related voting records via search_voteringar(bet: reportId)
-// 3. Cross-reference with any motions that reference the same bet
-```
-
-#### Example 2: Government Activity Analysis
-```
-// 1. Get government propositions (get_propositioner)
-// 2. Search for committee reports (get_betankanden) that reference each proposition
-// 3. Look up debate speeches (search_anforanden) on the same topic
-```
-
-#### Example 3: Party Behavior Analysis
-```
-// 1. Get voting records grouped by party (search_voteringar with groupBy: parti)
-// 2. Cross-reference with motions filed by each party
-// 3. Identify where parties voted against their own motions
-```
-
-### Detailed Code Examples
-
-**Example 1: Committee Report Deep Dive**
 ```javascript
-// Setup: riksmöte + date threshold (ISO-string comparison — timezone-safe)
-const currentRm = '2025/26'; // adjust to current session
-const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10); // YYYY-MM-DD
-// 1. Fetch committee reports, filter by date using ISO-string comparison
-const allReports = await get_betankanden({ rm: currentRm });
-const reports = allReports.filter(r => (r.publicerad || r.datum || '').slice(0, 10) >= fromDateIso);
-// 2. For each report, cross-reference voting records
+// Committee Report Deep Dive
+const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
+const reports = (await get_betankanden({ rm: currentRm }))
+  .filter(r => (r.publicerad || '').slice(0, 10) >= fromDateIso);
 for (const report of reports) {
   const votes = await search_voteringar({ bet: report.beteckning });
 }
-```
 
-**Example 2: Government Activity Analysis**
-```javascript
-// Setup: riksmöte + date threshold (ISO-string comparison — timezone-safe)
-const currentRm = '2025/26'; // adjust to current session
-const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10); // YYYY-MM-DD
-// 1. Fetch propositions, filter by date using ISO-string comparison
-const allProps = await get_propositioner({ rm: currentRm });
-const props = allProps.filter(p => (p.publicerad || p.datum || '').slice(0, 10) >= fromDateIso);
-// 2. Cross-reference with government press releases (native dateFrom param)
-const press = await search_regering({ type: 'pressmeddelanden', dateFrom: fromDateIso });
-```
-
-**Example 3: Party Behavior Analysis**
-```javascript
-// Setup: riksmöte + date threshold + party (ISO-string comparison — timezone-safe)
-const currentRm = '2025/26'; // adjust to current session
-const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10); // YYYY-MM-DD
-const partyCode = 'S'; // e.g. S, M, SD, V, MP, C, L, KD
-// 1. Get motions filed by party, filter by date using ISO-string comparison
-const allMotions = await get_motioner({ rm: currentRm });
-const motions = allMotions.filter(m => (m.inlämnad || m.datum || '').slice(0, 10) >= fromDateIso);
-// 2. Get party voting patterns, filter by date
-const allVotes = await search_voteringar({ parti: partyCode, rm: currentRm });
-const votes = allVotes.filter(v => (v.datum || '').slice(0, 10) >= fromDateIso);
-```
-
-**Example 2: Government Activity Analysis**
-```javascript
-// 1. Get government documents in date range
-const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
-const today = new Date().toISOString().slice(0, 10);
-const govDocs = await search_regering({ dateFrom: fromDateIso, dateTo: today, limit: 30 });
-
-// 2. Get related propositions
-const propositions = (await get_propositioner({ rm: currentRm, limit: 20 }))
+// Government Activity Analysis
+const props = (await get_propositioner({ rm: currentRm, limit: 20 }))
   .filter(p => (p.publicerad || '').slice(0, 10) >= fromDateIso);
-```
+const press = await search_regering({ type: 'pressmeddelanden', dateFrom: fromDateIso });
 
-**Example 3: Party Behavior Analysis**
-```javascript
-// 1. Get party voting records
-const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
+// Party Behavior Analysis
 const votes = (await search_voteringar({ rm: currentRm, limit: 100 }))
   .filter(v => (v.datum || '').slice(0, 10) >= fromDateIso);
-
-// 2. Get party speeches
 const speeches = (await search_anforanden({ rm: currentRm, limit: 100 }))
   .filter(a => (a.datum || '').slice(0, 10) >= fromDateIso);
 ```
 
-**Detailed Example: Committee Report Deep Dive**
-```javascript
-// 1. Fetch committee reports
-const reports = await get_betankanden({ rm: riksmote, limit: 20 });
-// 2. Cross-reference with voting records
-const votes = await search_voteringar({ rm: riksmote, limit: 50 });
-const reportsWithVotes = reports.filter(r => votes.some(v => v.bet === r.bet));
-```
-
-**Detailed Example: Government Activity Analysis**
-```javascript
-// 1. Fetch government propositions
-const props = await get_propositioner({ rm: riksmote, limit: 20 });
-// 2. Cross-reference with committee referrals
-const referred = props.filter(p => p.referredTo);
-```
-
-**Detailed Example: Party Behavior Analysis**
-```javascript
-// 1. Fetch party motions
-const motions = await get_motioner({ rm: riksmote, limit: 50 });
-// 2. Group by party for oversight analysis
-const byParty = motions.reduce((acc, m) => {
-  acc[m.parti] = (acc[m.parti] || 0) + 1;
-  return acc;
-}, {});
-```
-
-**Troubleshooting**:
-- Too broad results → Tighten date range or add keyword filters
-- Missing data → Verify riksmöte calculation and date ranges
+**Troubleshooting**: Too broad → tighten date range; Missing data → verify riksmöte calculation.
 
 ### Saturday vs Weekday Mode
 
@@ -1236,51 +993,20 @@ npx tsx scripts/validate-cross-references.ts news/*-evening-analysis-*.html
 
 ## 🛡️ File Ownership Contract
 
-This workflow is a **content** workflow and MUST only create/modify files for **EN and SV** languages.
-
-- ✅ **Allowed:** `news/YYYY-MM-DD-*-en.html`, `news/YYYY-MM-DD-*-sv.html`
-- ❌ **Forbidden:** `news/YYYY-MM-DD-*-da.html`, `news/YYYY-MM-DD-*-no.html`, or any other translation language
-
-Validate file ownership (checks staged, unstaged, and untracked changes):
-```bash
-npx tsx scripts/validate-file-ownership.ts content
-```
-
-If the validator reports violations, remove tracked changes with `git restore --staged --worktree -- <file>` (or `git checkout -- <file>` on older Git), and remove untracked files with `rm <file>` (or `git clean -f -- <file>`) before committing.
+Content workflows: only create/modify **EN and SV** files (`news/YYYY-MM-DD-*-en.html`, `*-sv.html`). Validate with `npx tsx scripts/validate-file-ownership.ts content`. Fix violations: `git restore --staged --worktree -- <file>` (tracked) or `rm <file>` (untracked).
 
 ### Branch Naming Convention
 
-Use deterministic branch names for content PRs:
-```
-news/content/{YYYY-MM-DD}/evening-analysis
-```
-
-> **Note:** `safeoutputs___create_pull_request` handles branch creation automatically; this naming convention is documented for traceability and conflict avoidance.
+Branch: `news/content/{YYYY-MM-DD}/evening-analysis`. `safeoutputs___create_pull_request` handles this automatically.
 
 ## Step 5: Commit & Create PR
 
-### MANDATORY PR Creation (READ THIS FIRST)
+> `safeoutputs___create_pull_request` handles branch creation, push, and PR opening. Stage files and call it directly.
 
-> **🚀 HOW SAFE PR CREATION WORKS**
->
-> The `safeoutputs___create_pull_request` tool handles **everything**: branch creation, pushing commits, and opening the PR. You do NOT create branches or push manually.
->
-> **Exact steps:**
-> 1. Write article files to `news/` using `bash` or `edit` tools
-> 2. Stage and commit locally (scoped to resolved evening-analysis subfolder): `git add news/*evening*.html news/metadata/ "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" analysis/weekly/ && git commit -m "🌆 Evening Analysis - $ARTICLE_DATE"`
-> 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
->
-> **❌ DO NOT** run `git push`, `git checkout -b`, `git branch`, or use GitHub API to create PRs.
-> **❌ DO NOT** call `safeoutputs___noop` if articles were generated but PR creation failed — let the workflow FAIL instead.
-
-- ✅ **REQUIRED:** `safeoutputs___create_pull_request` when articles were generated
-- ✅ **REQUIRED:** `safeoutputs___create_pull_request` with analysis-only PR when no articles but analysis artifacts exist — title: `📊 Analysis Only - Evening Analysis - {date}`, labels: `["analysis-only", "evening-analysis"]`
-- ✅ **ONLY USE `safeoutputs___noop` if MCP server is completely unreachable after 3 retry attempts AND no analysis artifacts exist**
-- ❌ **NEVER use `safeoutputs___noop` because articles already exist** — analysis always runs
-- ❌ **NEVER use `safeoutputs___noop` as fallback for PR creation failures**
-- ❌ **NEVER use `safeoutputs___noop` if analysis artifacts exist for the current `ARTICLE_DATE` under `analysis/daily/.../evening-analysis/` (for example, `analysis/daily/2025-03-04/evening-analysis/`)**
-
-> **🚨 NEVER search for safe output tools via bash.** After `git commit`, call `safeoutputs___create_pull_request` directly as your VERY NEXT action.
+- ✅ `safeoutputs___create_pull_request` for articles or analysis-only PRs (`analysis-only` + `evening-analysis` labels)
+- ✅ `safeoutputs___noop` ONLY if MCP unreachable after 3 attempts AND no analysis artifacts exist
+- ❌ NEVER noop because articles already exist — analysis always runs
+- ❌ Safe output tools are in your tool list — NEVER search for them via bash
 
 ```bash
 # Stage articles and analysis — scoped to evening-analysis subfolder to prevent overwriting other workflows

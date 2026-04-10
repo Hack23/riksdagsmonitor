@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `swot-analysis.md` in the workflow's own folder (never overwrite another workflow's files). Each SWOT entry requires a dok_id or named evidence source — opinion-only entries are prohibited. See [methodologies/political-swot-framework.md](../methodologies/political-swot-framework.md).
@@ -328,6 +328,45 @@ graph TD
 
 ---
 
+## 🗳️ Section 9: Election 2026 SWOT Dimension
+
+> *How do the SWOT findings translate into electoral positioning for September 2026?*
+
+| Dimension | Assessment | Evidence |
+|-----------|------------|----------|
+| **Electoral Impact** | `[REQUIRED: How do these SWOT findings affect September 2026 election positioning?]` | `[Specific evidence]` |
+| **Coalition Scenarios** | `[REQUIRED: Which coalition configurations benefit/suffer from the current SWOT balance?]` | `[Evidence]` |
+| **Voter Salience** | `[REQUIRED: Which voter segments are most affected by these SWOT dynamics?]` | `[Evidence]` |
+| **Campaign Vulnerability** | `[REQUIRED: Which SWOT weaknesses/threats create campaign attack vectors?]` | `[Evidence]` |
+| **Policy Legacy** | `[REQUIRED: Which SWOT strengths/opportunities will become electoral assets?]` | `[Evidence]` |
+
+**Overall Electoral Significance**: `[REQUIRED: CRITICAL/HIGH/MODERATE/LOW/NEGLIGIBLE]`
+
+**Most Likely Electoral Narrative**: `[REQUIRED: How will these SWOT findings be framed in the 2026 campaign?]`
+
+### Electoral SWOT Balance
+
+| Quadrant | Electoral Asset/Liability | Impact on 2026 Campaign |
+|----------|--------------------------|------------------------|
+| ✅ Strengths | `[REQUIRED: Which strengths are electoral assets?]` | `[Positive/negative framing potential]` |
+| ⚠️ Weaknesses | `[REQUIRED: Which weaknesses are electoral liabilities?]` | `[Attack vector potential]` |
+| 🚀 Opportunities | `[REQUIRED: Which opportunities can be turned into campaign wins?]` | `[Timing relative to Sept 2026]` |
+| 🔴 Threats | `[REQUIRED: Which threats could damage electoral standing?]` | `[Risk level for 2026 campaign]` |
+
+---
+
+## 🎯 Confidence Scale Reference (5-Level)
+
+| Level | Label | Criteria | Evidence Threshold |
+|-------|-------|----------|--------------------|
+| ⬛ 1 | **VERY LOW** | Speculation only, single unverified source | 0–1 sources, no corroboration |
+| 🟥 2 | **LOW** | Circumstantial evidence, indirect indicators | 2 sources, indirect evidence |
+| 🟧 3 | **MEDIUM** | Multiple independent sources, moderate corroboration | 3+ sources, moderate agreement |
+| 🟩 4 | **HIGH** | Official records, documented data, direct evidence | Official docs, voting records, committee reports |
+| 🟦 5 | **VERY HIGH** | Verified data + independent corroboration + expert consensus | Multiple official sources, cross-validated |
+
+---
+
 ## 🔗 Cross-References
 
 > *Link to sibling analysis files and same-day analysis from other article types for contextual completeness.*
@@ -357,6 +396,8 @@ graph TD
 - [ ] **Forward Indicators present:** ≥2 scenarios with probabilities and SWOT element references
 - [ ] **MCP Data Provenance:** All data sources listed; every entry traceable to MCP tool call
 - [ ] **No placeholder text remaining:** Search for `[REQUIRED` — zero hits expected
+- [ ] **Election 2026 SWOT Dimension present:** Section 9 filled with all 5 dimensions and electoral SWOT balance table
+- [ ] **5-level confidence applied:** SWOT entry Confidence columns use the full scale where appropriate
 - [ ] **Named actors:** ≥2 named politicians/parties with party affiliations cited
 - [ ] **Cross-references linked:** At least 2 sibling analysis files referenced
 
@@ -365,8 +406,9 @@ graph TD
 **Document Control:**  
 - **Template Path:** `/analysis/templates/swot-analysis.md`  
 - **Framework Reference:** [SWOT.md](../../SWOT.md), [methodologies/political-swot-framework.md](../methodologies/political-swot-framework.md)  
-- **Version:** 2.2  
-- **Effective Date:** 2026-04-06 (UTC)  
+- **Version:** 2.3  
+- **Effective Date:** 2026-06-01 (UTC)  
+- **Key Changes v2.3:** Added Election 2026 SWOT Dimension section (Section 9), Electoral SWOT Balance table, 5-level confidence scale reference, updated quality checklist  
 - **Advanced Sections:** Cross-SWOT Interference, TOWS Matrix, SWOT Delta, Forward Indicators & Scenario Outlook, MCP Data Provenance  
 - **ISMS Alignment:** ISO 27001:2022 A.5.7 (Threat Intelligence), NIST CSF 2.0 ID.RA (Risk Assessment)  
 - **Classification:** Public  

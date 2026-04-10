@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-4.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-4.1-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--03--31-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.0 | **📅 Last Updated:** 2026-03-31 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 4.1 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -745,6 +745,30 @@ flowchart TD
 | **Prompts v2** | AI prompt library for analysis generation | [scripts/prompts/v2/](../../scripts/prompts/v2/) |
 | **WORKFLOWS.md** | CI/CD and agentic workflow documentation | [WORKFLOWS.md](../../WORKFLOWS.md) |
 | **ISMS-PUBLIC** | Hack23 Information Security Management System | [Hack23/ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC) |
+
+---
+
+## 🆕 v4.1 Methodology Upgrades (2026-06-01)
+
+All methodology guides were updated in v4.1 with the following cross-cutting improvements:
+
+### 🗳️ Election 2026 Coverage
+- `ai-driven-analysis-guide.md` v5.0: Mandatory Election 2026 lens with 5-dimension electoral assessment for ALL analyses
+- `political-classification-guide.md` v2.3: Election 2026 urgency boost rules for pre-election period
+- `political-swot-framework.md` v2.3: Election 2026 as mandatory SWOT dimension with electoral quadrant requirements
+- `political-style-guide.md` v2.2: Election 2026 framing requirements with approved vocabulary and confidence standards
+
+### 🎯 5-Level Confidence Scale
+All methodology guides now use a unified **5-level confidence scale**:
+- ⬛ VERY LOW → 🟥 LOW → 🟧 MEDIUM → 🟩 HIGH → 🟦 VERY HIGH
+- `political-swot-framework.md`: Updated decay table from 3-level to 5-level
+- `political-risk-methodology.md`: Added confidence scale mapping + election proximity factor
+
+### 📊 Mermaid Diagram Mandates
+- `ai-driven-analysis-guide.md` v5.0: Specifies required diagram type per analysis context (flowchart/timeline/quadrantChart/mindmap for each scenario)
+
+### 📋 Historical Comparison
+- `ai-driven-analysis-guide.md` v5.0: Mandatory historical comparison with 3 time periods + precedents table for all synthesis analyses
 
 ---
 

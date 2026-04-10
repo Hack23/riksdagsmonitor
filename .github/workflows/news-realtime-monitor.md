@@ -148,27 +148,7 @@ You are the **Real-Time Political Monitor** for Riksdagsmonitor. Detect signific
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
 
-**Every `bash` tool call MUST include both required parameters — omitting either causes validation errors:**
-
-| Parameter | Required | Description |
-|-----------|----------|-------------|
-| `command` | ✅ YES | The shell command string to execute |
-| `description` | ✅ YES | Short human-readable label (≤100 chars) |
-
-**✅ CORRECT** — always provide both `command` and `description`:
-```
-bash({ command: "date -u '+%Y-%m-%d'", description: "Get current UTC date" })
-bash({ command: "npm ci --prefer-offline --no-audit", description: "Install npm dependencies" })
-bash({ command: "npx htmlhint 'news/*-*.html'", description: "Validate HTML files" })
-```
-
-**❌ WRONG** — missing parameters cause `"command": Required, "description": Required` errors:
-```
-bash("npm ci")           // ← WRONG: no named parameters
-bash({ command: "..." }) // ← WRONG: missing description
-```
-
-> When you see fenced bash code blocks below (three backticks followed by bash), they show the **command content** to execute. You MUST wrap each in a proper bash tool call with both `command` and `description` parameters. For multi-line scripts, join commands with `&&` or `;` into a single `command` string.
+> **Full reference:** See `SHARED_PROMPT_PATTERNS.md` → "Bash Tool Call Format". Key rule: every `bash` call MUST have both `command` AND `description` parameters. Example: `bash({ command: "date -u '+%Y-%m-%d'", description: "Get current UTC date" })`
 
 ## 🛡️ AWF Shell Safety — MANDATORY for Agent-Generated Bash
 
@@ -190,15 +170,9 @@ bash({ command: "..." }) // ← WRONG: missing description
 3. **Use `find -exec`** instead of for-loops with command substitution
 4. **Use direct paths** when possible (e.g., `cat analysis/daily/2026-04-07/realtime-1411/synthesis-summary.md`)
 
-## 🔤 UTF-8 Encoding — MANDATORY for ALL Content
+## 🔤 UTF-8 Encoding
 
-> **NON-NEGOTIABLE**: All article content, titles, descriptions, and metadata MUST use native UTF-8 characters. NEVER use HTML numeric entities (`&#228;`, `&#246;`, `&#229;`) for non-ASCII characters like Swedish åäö, German üö, French éè, etc.
-
-**Rules:**
-1. Write Swedish characters as UTF-8: `ö`, `ä`, `å`, `Ö`, `Ä`, `Å` — NEVER as `&#246;`, `&#228;`, etc.
-2. Author name: Always `James Pether Sörling` — never `S&#246;rling`.
-3. All HTML files use `<meta charset="UTF-8">` — entities are unnecessary and cause double-escaping bugs.
-4. This applies to ALL languages and ALL output: titles, meta tags, JSON-LD, article body, analysis files.
+> **Full reference:** See `SHARED_PROMPT_PATTERNS.md` → "UTF-8 Encoding". Summary: use native UTF-8 (`ö`, `ä`, `å`) — NEVER HTML entities (`&#246;`, `&#228;`). Author: `James Pether Sörling`.
 
 
 ## ⚠️ NON-NEGOTIABLE RULES
@@ -216,17 +190,7 @@ bash({ command: "..." }) // ← WRONG: missing description
 
 ## 🧠 Repo Memory
 
-This workflow uses **persistent repo-memory** on branch `memory/news-generation` (shared with all news workflows).
-
-**At run START — read context:**
-- Read `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` for today (and optionally yesterday) to check which dok_ids were already analyzed recently
-- Read `memory/news-generation/last-run-news-realtime-monitor.json` for previous run metadata
-- Skip documents already covered by another workflow to avoid duplicate analysis
-
-**At run END — write context:**
-- Update `memory/news-generation/last-run-news-realtime-monitor.json` with date, documents analyzed, quality score
-- Write processed dok_ids to `memory/news-generation/covered-documents/{YYYY-MM-DD}.json` (sharded by date; retain last 7 days)
-- Update `memory/news-generation/translation-status.json` with new articles needing translation
+Uses `memory/news-generation` branch. START: read `memory/news-generation/last-run-news-realtime-monitor.json` + `covered-documents/{YYYY-MM-DD}.json`. END: update both + `translation-status.json`. Skip already-covered dok_ids.
 
 ## ⏱️ Time Budget (45 minutes)
 
@@ -958,26 +922,11 @@ fi
 
 ## 🛡️ File Ownership Contract
 
-This workflow is a **content** workflow and MUST only create/modify files for **EN and SV** languages.
-
-- ✅ **Allowed:** `news/YYYY-MM-DD-*-en.html`, `news/YYYY-MM-DD-*-sv.html`
-- ❌ **Forbidden:** `news/YYYY-MM-DD-*-da.html`, `news/YYYY-MM-DD-*-no.html`, or any other translation language
-
-Validate file ownership (checks staged, unstaged, and untracked changes):
-```bash
-npx tsx scripts/validate-file-ownership.ts content
-```
-
-If the validator reports violations, remove tracked changes with `git restore --staged --worktree -- <file>` (or `git checkout -- <file>` on older Git), and remove untracked files with `rm <file>` (or `git clean -f -- <file>`) before committing.
+Content workflows: only create/modify **EN and SV** files (`news/YYYY-MM-DD-*-en.html`, `*-sv.html`). Validate with `npx tsx scripts/validate-file-ownership.ts content`. Fix violations: `git restore --staged --worktree -- <file>` (tracked) or `rm <file>` (untracked).
 
 ### Branch Naming Convention
 
-Use deterministic branch names for content PRs:
-```
-news/content/{YYYY-MM-DD}/breaking
-```
-
-> **Note:** `safeoutputs___create_pull_request` handles branch creation automatically; this naming convention is documented for traceability and conflict avoidance.
+Branch: `news/content/{YYYY-MM-DD}/breaking`. `safeoutputs___create_pull_request` handles this automatically.
 
 ## Step 5: Commit & Create PR
 
@@ -1021,19 +970,10 @@ safeoutputs___create_pull_request({
 
 ## Required Skills
 
-Before generating articles, consult these skills:
-1. **`.github/skills/editorial-standards/SKILL.md`** — OSINT/INTOP editorial standards
-2. **`.github/skills/swedish-political-system/SKILL.md`** — Parliamentary terminology
-3. **`.github/skills/legislative-monitoring/SKILL.md`** — Voting patterns, committee tracking, bill progress
-4. **`.github/skills/riksdag-regering-mcp/SKILL.md`** — MCP tool documentation
-5. **`.github/skills/language-expertise/SKILL.md`** — Per-language style guidelines
-6. **`.github/skills/gh-aw-safe-outputs/SKILL.md`** — Safe outputs usage
-7. **`scripts/prompts/v2/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
-8. **`scripts/prompts/v2/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
-9. **`scripts/prompts/v2/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
-10. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Per-file AI analysis protocol
-11. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Methodology for deep per-file analysis
-12. **`analysis/templates/per-file-political-intelligence.md`** — Per-file analysis output template
+Consult as needed — do NOT read all files upfront:
+- **Skills:** `editorial-standards`, `swedish-political-system`, `legislative-monitoring`, `riksdag-regering-mcp`, `language-expertise`, `gh-aw-safe-outputs` (all in `.github/skills/*/SKILL.md`)
+- **Analysis:** `scripts/prompts/v2/political-analysis.md`, `per-file-intelligence-analysis.md`, `quality-criteria.md`
+- **Methodology:** `analysis/methodologies/ai-driven-analysis-guide.md` (v5.0) + `analysis/templates/per-file-political-intelligence.md`
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
 

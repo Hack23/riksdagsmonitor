@@ -12,11 +12,11 @@
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Version-3.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 3.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
+**📋 Document Owner:** CEO | **�� Version:** 3.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/`. Save as `threat-analysis.md` in the workflow's own folder (never overwrite another workflow's files). Each threat requires evidence citations and multi-framework analysis. See [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md).
@@ -376,6 +376,34 @@ timeline
 
 ---
 
+## 🗳️ Election 2026 Threat Implications
+
+| Dimension | Assessment | Evidence |
+|-----------|------------|----------|
+| **Electoral Impact** | `[REQUIRED: How do these threats affect September 2026 election positioning?]` | `[Specific evidence]` |
+| **Coalition Scenarios** | `[REQUIRED: Which coalition configurations are most threatened before 2026?]` | `[Evidence]` |
+| **Voter Salience** | `[REQUIRED: Which voter segments are most affected by these democratic threats?]` | `[Evidence]` |
+| **Campaign Vulnerability** | `[REQUIRED: How can opposition weaponize these threat findings?]` | `[Evidence]` |
+| **Policy Legacy** | `[REQUIRED: Will these threats materialize into electoral liabilities by Sept 2026?]` | `[Evidence]` |
+
+**Overall Electoral Significance**: `[REQUIRED: CRITICAL/HIGH/MODERATE/LOW/NEGLIGIBLE]`
+
+**Most Likely Electoral Narrative**: `[REQUIRED: How will opposition frame these democratic integrity threats in 2026 campaign?]`
+
+---
+
+## 🎯 Confidence Scale Reference (5-Level)
+
+| Level | Label | Criteria | Evidence Threshold |
+|-------|-------|----------|--------------------|
+| ⬛ 1 | **VERY LOW** | Speculation only, single unverified source | 0–1 sources, no corroboration |
+| 🟥 2 | **LOW** | Circumstantial evidence, indirect indicators | 2 sources, indirect evidence |
+| 🟧 3 | **MEDIUM** | Multiple independent sources, moderate corroboration | 3+ sources, moderate agreement |
+| 🟩 4 | **HIGH** | Official records, documented data, direct evidence | Official docs, voting records, committee reports |
+| 🟦 5 | **VERY HIGH** | Verified data + independent corroboration + expert consensus | Multiple official sources, cross-validated |
+
+---
+
 ## 🔗 Cross-References
 
 > *Link to sibling analysis files and same-day analysis from other article types.*
@@ -405,6 +433,8 @@ timeline
 - [ ] **MCP Data Provenance:** All data sources listed; every threat severity score traceable
 - [ ] **No placeholder text remaining:** Search for `[REQUIRED` — zero hits expected
 - [ ] **Political Threat Taxonomy used:** NOT STRIDE categories — confirmed using NI/LI/AC/TR/DP/PB
+- [ ] **Election 2026 Threat Implications present:** All 5 dimensions assessed with overall electoral significance rating
+- [ ] **5-level confidence applied:** Threat severity assessments use the full confidence scale where applicable
 - [ ] **Named actors:** ≥2 named threat actors with party affiliations or institutional roles
 
 ---
@@ -413,7 +443,8 @@ timeline
 - **Template Path:** `/analysis/templates/threat-analysis.md`  
 - **Framework Reference:** [THREAT_MODEL.md](../../THREAT_MODEL.md), [methodologies/political-threat-framework.md](../methodologies/political-threat-framework.md)  
 - **Version:** 3.2  
-- **Effective Date:** 2026-04-06 (UTC)  
+- **Effective Date:** 2026-06-01 (UTC)
+- **Key Changes v3.3:** Added Election 2026 Threat Implications section, 5-level confidence scale reference, updated quality checklist  
 - **Frameworks:** Attack Trees, Kill Chain, Diamond Model, Political Threat Taxonomy, Threat Actor Profiling  
 - **Advanced Sections:** Threat Evolution Timeline, Cross-Methodology Linkage  
 - **ISMS Alignment:** ISO 27001:2022 A.5.7 (Threat Intelligence), NIST CSF 2.0 ID.RA (Risk Assessment), DE.CM (Security Continuous Monitoring)  

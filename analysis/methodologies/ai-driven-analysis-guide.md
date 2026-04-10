@@ -11,13 +11,13 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-4.2-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-5.0-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 4.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-03  
+**📋 Document Owner:** CEO | **📄 Version:** 5.0 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-01  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 ---
@@ -1510,18 +1510,29 @@ assume article pages perform this step automatically unless that initializer is 
 Every analysis file MUST include at least 1 Mermaid diagram. For synthesis files, include at least 2:
 
 ```
-## Required Mermaid Diagrams per Analysis Type
+## Required Mermaid Diagrams per Analysis Type (v5.0)
 
-| Analysis File | Required Diagram(s) | Content |
-|---------------|---------------------|---------|
-| synthesis-summary.md | 2: Document relationship + Risk interconnection | Show how documents relate and how risks cascade |
-| swot-analysis.md | 1: SWOT quadrant mapping with cross-links | Show S↔O exploits and W↔T amplifications |
-| risk-assessment.md | 1: Risk heat map or cascading risk chain | Show L×I positioning and risk dependencies |
-| threat-analysis.md | 1: Threat actor diagram or attack tree | Show threat sources, pathways, and mitigations |
-| stakeholder-perspectives.md | 1: Stakeholder impact network | Show which stakeholders are affected and how |
-| significance-scoring.md | 1: Multi-dimensional scoring radar | Show 5-dimension significance breakdown |
-| cross-reference-map.md | 1: Document relationship graph | Show ALL detected cross-references |
-```
+| Analysis File | Required Diagram Type | Diagram Purpose | Minimum Color-Coded Nodes |
+|---------------|----------------------|-----------------|:-------------------------:|
+| per-file-political-intelligence.md | `flowchart LR` — classification tree + `quadrantChart` — SWOT impact | Classification decision path + political impact mapping | 4 colors |
+| synthesis-summary.md | `graph TD` — intelligence dashboard + `graph LR` — SWOT balance | Daily landscape overview + coalition assessment | 4 colors each |
+| swot-analysis.md | `graph TD` — SWOT quadrant mapping with cross-links | S↔O exploits and W↔T amplifications | 4 colors |
+| risk-assessment.md | `graph TD` — risk heat map + `flowchart TD` — cascading chain | L×I positioning and risk dependencies | 4 tiers (green/yellow/orange/red) |
+| threat-analysis.md | `graph LR` — attack tree (threat taxonomy branches) | Threat sources, pathways, and mitigations | 6 threat categories |
+| stakeholder-impact.md | `graph TD` — stakeholder impact network | Stakeholder groups affected and direction | 6 stakeholder groups |
+| significance-scoring.md | `graph TD` — scoring profile + decision gate | 5-dimension significance breakdown | 5 decision outcomes |
+| political-classification.md | `graph LR` — classification decision tree | Sensitivity + urgency + scope paths | 4 paths |
+
+### Diagram Type Mandate by Analysis Context
+
+| Analysis Context | Mandatory Diagram Type | Reason |
+|-----------------|----------------------|--------|
+| **Legislative process** | `flowchart` (LR or TD) — stages from committee to royal assent | Visualize process status and bottlenecks |
+| **Policy evolution over time** | `timeline` or `gantt` — chronological development | Track policy trajectory |
+| **Coalition/party dynamics** | `quadrantChart` — party position mapping | Reveal alignment and opposition patterns |
+| **Risk landscape** | `graph TD` with color-coded L×I scores | Visualize risk tiers and dependencies |
+| **Stakeholder relationships** | `graph LR` with directional influence arrows | Map power dynamics and coalition potential |
+| **Threat decomposition** | `flowchart` attack tree structure | Identify threat vectors and mitigations |
 
 ---
 
@@ -1894,6 +1905,118 @@ a separate reservation on proportionality grounds. [HIGH confidence]
 
 ---
 
+| Data count inconsistencies (title vs body) | Not tracked | Multiple instances | 🔴 New issue |
+
+---
+
+## 🗳️ Election 2026 Lens — Mandatory Analysis Requirement (v5.0)
+
+> **Added in v5.0 — ALL analyses MUST include an Election 2026 section.**
+
+With the September 2026 Swedish general election approaching, every political intelligence analysis MUST assess electoral implications. This requirement applies to all analysis templates and workflow outputs.
+
+### Mandatory Election 2026 Assessment Dimensions
+
+Every per-file analysis and synthesis summary MUST assess:
+
+1. **Electoral Impact** — How does this document/event affect September 2026 election positioning?
+2. **Coalition Scenarios** — Which coalition configurations benefit/suffer?
+3. **Voter Salience** — Which voter segments are most affected, and by how much?
+4. **Campaign Vulnerability** — Does this create campaign attack vectors for opposition?
+5. **Policy Legacy** — Will this become an electoral asset or liability by September 2026?
+
+### Electoral Significance Classifications
+
+| Classification | Definition | Action |
+|---------------|-----------|--------|
+| 🔴 **CRITICAL** | Event will directly affect 2026 election outcome | Include in all synthesis summaries; flag for electoral tracking |
+| 🟠 **HIGH** | Significant pre-election narrative contribution | Mandatory inclusion in forward indicators |
+| 🟡 **MODERATE** | Peripheral electoral relevance | Include if space allows; note in stakeholder analysis |
+| 🟢 **LOW** | Minimal electoral impact | Optional brief mention |
+| ⚪ **NEGLIGIBLE** | No discernible electoral dimension | Skip Election 2026 section (note: "negligible electoral relevance") |
+
+### Pre-Election Analysis Calendar
+
+| Milestone | Date | Analysis Focus |
+|-----------|------|---------------|
+| Budget proposition deadline | Sep 2026 | Fiscal credibility, welfare promises |
+| Last major Riksdag session | Jun 2026 | Legislative legacy assessment |
+| Party conference season | Sep–Oct 2025 | Policy positioning, coalition signals |
+| EU implications window | Ongoing | Sweden's EU presidency, ECHR compliance |
+| **General Election** | **Sep 2026** | **Full electoral analysis required** |
+
+---
+
+## 🎯 5-Level Confidence Scale (v5.0)
+
+> **Replaces binary HIGH/MEDIUM/LOW scale across ALL analysis types.**
+
+| Level | Label | Criteria | Evidence Threshold | Color Code |
+|-------|-------|----------|--------------------|:----------:|
+| ⬛ 1 | **VERY LOW** | Speculation only, single unverified source | 0–1 sources, no corroboration | `#6c757d` |
+| 🟥 2 | **LOW** | Circumstantial evidence, indirect indicators | 2 sources, indirect evidence | `#dc3545` |
+| 🟧 3 | **MEDIUM** | Multiple independent sources, moderate corroboration | 3+ sources, moderate agreement | `#fd7e14` |
+| 🟩 4 | **HIGH** | Official records, documented data, direct evidence | Official docs, voting records, committee reports | `#28a745` |
+| 🟦 5 | **VERY HIGH** | Verified data + independent corroboration + expert consensus | Multiple official sources, cross-validated | `#0d6efd` |
+
+### Confidence Level Application Rules
+
+- **VERY HIGH** — Applies only to claims backed by official voting records, committee decisions, government propositions, or multiple verified news sources with cross-validation.
+- **HIGH** — Official documents (riksdag API data, government press releases) consulted but not independently cross-validated.
+- **MEDIUM** — Multiple sources available but with some inconsistency or incomplete coverage.
+- **LOW** — Limited evidence; claim is inferential or based on pattern recognition without direct confirmation.
+- **VERY LOW** — Speculative; only a single indirect indicator with no corroborating evidence.
+
+### Migration from 3-Level to 5-Level Scale
+
+When upgrading existing analyses to use the 5-level scale:
+- Previous `HIGH` → `HIGH` (4) or `VERY HIGH` (5) depending on cross-validation status
+- Previous `MEDIUM` → `MEDIUM` (3) or `LOW` (2) depending on evidence density
+- Previous `LOW` → `LOW` (2) or `VERY LOW` (1) depending on source quality
+
+---
+
+## 📊 Mandatory Mermaid Diagram Requirements (v5.0)
+
+Each analysis type MUST include the specified Mermaid diagram type:
+
+| Analysis Type | Required Mermaid Diagram | Purpose |
+|--------------|------------------------|---------|
+| **Legislative process analyses** | `flowchart` — showing legislative stages (committee → floor vote → royal assent) | Visualize process status and bottlenecks |
+| **Policy evolution analyses** | `timeline` or `gantt` — showing policy development over time | Track policy trajectory |
+| **Coalition/party dynamics** | `quadrantChart` or `mindmap` — mapping party positions | Reveal alignment patterns |
+| **Risk assessment** | `graph TD` with color-coded risk nodes (L×I scores) | Visualize risk landscape |
+| **Stakeholder relationships** | `graph LR` with directional arrows showing influence | Map power dynamics |
+| **Threat analysis** | `flowchart` attack tree (LR direction, threat taxonomy) | Decompose threat vectors |
+
+### Mermaid Color Standards
+
+```
+🔴 CRITICAL/SEVERE/RESTRICTED: fill:#dc3545,color:#fff
+🟠 HIGH/URGENT: fill:#fd7e14,color:#fff
+🟡 MEDIUM/ELEVATED: fill:#ffc107,color:#000
+🟢 LOW/ROUTINE/PUBLIC: fill:#28a745,color:#fff
+🔵 INFORMATION/ELEVATED: fill:#0d6efd,color:#fff
+⚪ NEUTRAL/PLACEHOLDER: fill:#6c757d,color:#fff
+```
+
+---
+
+## 📋 Historical Comparison Requirements (v5.0)
+
+Every synthesis-level analysis MUST include a historical comparison with:
+
+1. **Same period last riksmöte** — Compare document volumes, risk levels, coalition dynamics
+2. **Same period last year** — Year-over-year trend indicators
+3. **Pre-election equivalents** — Compare to equivalent pre-election periods in 2021/22
+
+**Historical Comparison Minimum Requirements:**
+- At least 3 metric comparisons with trend arrows (↑/→/↓)
+- At least 1 precedent from a prior riksmöte with documented outcome
+- Context statement of 2–3 sentences explaining whether this is a historically unusual period
+
+---
+
 ## 📚 Related Documents
 
 | Document | Purpose |
@@ -1913,11 +2036,12 @@ a separate reservation on proportionality grounds. [HIGH confidence]
 
 **Document Control:**  
 - **Path:** `/analysis/methodologies/ai-driven-analysis-guide.md`  
-- **Version:** 4.2  
+- **Version:** 5.0  
+- **Key Changes v5.0:** Election 2026 Lens (mandatory 5-dimension electoral assessment for ALL analyses), 5-Level Confidence Scale replacing binary HIGH/MEDIUM/LOW, Mermaid diagram mandates per analysis type (flowchart/timeline/quadrantChart/mindmap/xychart), Historical Comparison requirements (3 time periods + precedents), pre-election analysis calendar  
 - **Key Changes v4.2:** Empty Data Handling Protocol (lookback strategy, direct MCP retrieval, carry-forward protocol, minimum output requirements), Per-File Analysis Output Example (worked example of betänkande analysis with SWOT/risk/forward indicators)  
 - **Key Changes v4.0:** AI article content generation protocol (5 mandatory sections with prompts), visualization integration protocol (Chart.js/D3.js), policy domain inference with committee mapping, pre-article analysis integration requirement, AI self-evaluation quality gate, empty analysis fallback protocol, 2026-04-03 systemic quality audit (444+ generic filler, 456+ excuse-as-analysis, 210+ boilerplate), cumulative quality tracking  
 - **Key Changes v3.0:** Claude Opus 4.6 agentic integration, AI-first analysis principle, deprecated code function table, AI title/description generation prompts, analysis-to-article reference linking, cross-reference quality requirements, 2026-04-02 quality audit findings  
 - **Key Changes v2.1:** Document-type analysis focus table, analysis depth levels (L1/L2/L3), anti-pattern gallery, quality gate checklist with scoring rubric  
 - **Key Changes v2.0:** Folder isolation rules, AI-only content mandate, multi-framework depth requirements, advanced anti-pattern detection  
 - **Classification:** Public  
-- **Next Review:** 2026-07-03
+- **Next Review:** 2026-09-01

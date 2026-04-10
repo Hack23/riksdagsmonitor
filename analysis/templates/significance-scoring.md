@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `significance-scoring.md` in the workflow's own folder (never overwrite another workflow's files). The significance scorer TypeScript implementation is at `scripts/analysis-framework/significance-scorer.ts` — this provides automated numeric scores only. AI must provide the **analytical rationale** explaining why documents score as they do.
@@ -294,6 +294,38 @@ These examples provide anchor points for consistent scoring across workflows:
 
 ---
 
+## 🗳️ Election 2026 Relevance Score
+
+> *Adjust significance scoring context based on proximity to September 2026 election.*
+
+| Dimension | Score Adjustment | Rationale |
+|-----------|:---------------:|-----------|
+| **Electoral proximity bonus** | `[REQUIRED: +0.0 to +2.0 — distance from election matters; <6 months from Sept 2026 = +1.0 max bonus]` | `[Evidence for time-sensitivity]` |
+| **Coalition stability multiplier** | `[REQUIRED: ×1.0 to ×1.5 — documents that directly affect coalition stability before elections]` | `[Evidence]` |
+| **Voter salience factor** | `[REQUIRED: +0.0 to +1.0 — issues with high voter salience score higher in pre-election period]` | `[Evidence]` |
+
+**Election-Adjusted Significance Score:** `[REQUIRED: base composite + electoral proximity bonus, capped at 10.0]` `/10`
+
+**Election 2026 Relevance Classification:**
+- [ ] 🔴 **DECISIVE** — This event will directly affect 2026 election outcome (adjusted score ≥ 9.0)
+- [ ] 🟠 **SIGNIFICANT** — Contributes to pre-election narrative (adjusted score 7.0–8.9)
+- [ ] 🟡 **MODERATE** — Peripheral electoral relevance (adjusted score 5.0–6.9)
+- [ ] 🟢 **MARGINAL** — Minimal electoral impact (adjusted score < 5.0)
+
+---
+
+## 🎯 Confidence Scale Reference (5-Level)
+
+| Level | Label | Criteria | Evidence Threshold |
+|-------|-------|----------|--------------------|
+| ⬛ 1 | **VERY LOW** | Speculation only, single unverified source | 0–1 sources, no corroboration |
+| 🟥 2 | **LOW** | Circumstantial evidence, indirect indicators | 2 sources, indirect evidence |
+| 🟧 3 | **MEDIUM** | Multiple independent sources, moderate corroboration | 3+ sources, moderate agreement |
+| 🟩 4 | **HIGH** | Official records, documented data, direct evidence | Official docs, voting records, committee reports |
+| 🟦 5 | **VERY HIGH** | Verified data + independent corroboration + expert consensus | Multiple official sources, cross-validated |
+
+---
+
 ## 🔗 Cross-References
 
 > *Link to sibling analysis files and same-day analysis from other article types.*
@@ -317,6 +349,8 @@ These examples provide anchor points for consistent scoring across workflows:
 - [ ] **Score Profile Mermaid rendered:** Decision gate diagram has actual scores (no `[#]` placeholders)
 - [ ] **Publication Decision assigned:** Archive/Monitor/Publish/Priority/Breaking with rationale
 - [ ] **Relative Scoring filled:** Same-type comparison with average and deviation calculated
+- [ ] **Election 2026 Relevance Score present:** Electoral proximity bonus, coalition multiplier, voter salience factor assessed
+- [ ] **5-level confidence scale available:** Reference table present for consistent confidence labeling
 - [ ] **Score Reconciliation checked:** If automated score diverges >3 points, higher score used and flagged
 - [ ] **MCP Data Files listed:** All consulted data files with timestamps
 - [ ] **No placeholder text remaining:** Search for `[REQUIRED` — zero hits expected

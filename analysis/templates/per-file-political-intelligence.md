@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** This template is for **per-file** analysis. For each data file downloaded via MCP, the AI agent produces one analysis markdown file stored as `{id}-analysis.md` in the workflow's isolated folder. AI MUST read ALL 6 methodology guides before analyzing.
@@ -93,7 +93,7 @@ graph LR
 | **Primary Domain** | `[REQUIRED: e.g. Migration (MIG), Defence (DEF), Economy (ECO), Climate (ENV), Justice (JUS), Health (HEA), Education (EDU), Foreign Affairs (FOR)]` |
 | **Urgency** | `[REQUIRED: ROUTINE / ELEVATED / URGENT / CRITICAL]` |
 | **Significance Score** | `[REQUIRED: 0–10]` |
-| **Confidence** | `[REQUIRED: HIGH / MEDIUM / LOW]` |
+| **Confidence** | `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]` |
 
 ---
 
@@ -291,6 +291,22 @@ graph TD
 
 ---
 
+## 🗳️ Election 2026 Implications
+
+| Dimension | Assessment | Evidence |
+|-----------|------------|----------|
+| **Electoral Impact** | `[REQUIRED: How does this document affect September 2026 election positioning?]` | `[Specific evidence from document]` |
+| **Coalition Scenarios** | `[REQUIRED: Which coalition configurations benefit/suffer from this policy?]` | `[Evidence]` |
+| **Voter Salience** | `[REQUIRED: Which voter segments are most affected? By how much?]` | `[Evidence]` |
+| **Campaign Vulnerability** | `[REQUIRED: Does this create campaign attack vectors for opposition?]` | `[Evidence]` |
+| **Policy Legacy** | `[REQUIRED: Will this become an electoral asset or liability by Sept 2026?]` | `[Evidence]` |
+
+**Overall Electoral Significance**: `[REQUIRED: CRITICAL/HIGH/MODERATE/LOW/NEGLIGIBLE]`
+
+**Most Likely Narrative**: `[REQUIRED: How will this be framed in the 2026 campaign?]`
+
+---
+
 ## 🔮 Forward Indicators
 
 > *What to monitor as a consequence of this document.*
@@ -336,7 +352,7 @@ graph TD
 | **Source Completeness** | `[REQUIRED: Full text / Metadata only / Summary only]` |
 | **Evidence Density** | `[REQUIRED: N evidence points cited]` |
 | **Temporal Currency** | `[REQUIRED: Current / Recent (30d) / Dated (90d) / Stale (180d+)]` |
-| **Analytical Confidence** | `[REQUIRED: HIGH / MEDIUM / LOW]` |
+| **Analytical Confidence** | `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]` |
 
 ---
 
@@ -370,6 +386,8 @@ graph TD
 - [ ] **MCP Data Files listed:** All consulted data files recorded with source MCP tool and freshness
 - [ ] **No placeholder text remaining:** Search for `[REQUIRED` — zero hits expected
 - [ ] **No anti-pattern content:** No "No strengths identified", no generic boilerplate, no title-only restatements
+- [ ] **Election 2026 Implications present:** All 5 dimensions assessed (Electoral Impact, Coalition Scenarios, Voter Salience, Campaign Vulnerability, Policy Legacy)
+- [ ] **5-level confidence applied:** Confidence fields use VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW scale
 - [ ] **Cross-references linked:** Related documents and same-day cross-references populated
 
 ---
@@ -377,8 +395,9 @@ graph TD
 **Document Control:**  
 - **Template Path:** `/analysis/templates/per-file-political-intelligence.md`  
 - **Output Path:** `analysis/daily/YYYY-MM-DD/{articleType}/documents/{dok_id}-analysis.md`  
-- **Version:** 2.2  
-- **Effective Date:** 2026-04-06 (UTC)  
+- **Version:** 2.3  
+- **Effective Date:** 2026-06-01 (UTC)  
+- **Key Changes v2.3:** Added Election 2026 Implications section, 5-level confidence scale (VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW) replacing binary H/M/L, improved differentiated per-document insights  
 - **Frameworks:** SWOT, Risk, Attack Trees, Kill Chain, Diamond Model, Stakeholder  
 - **Framework References:** [SWOT.md](../../SWOT.md), [THREAT_MODEL.md](../../THREAT_MODEL.md)  
 - **Methodology:** [ai-driven-analysis-guide.md](../methodologies/ai-driven-analysis-guide.md)  

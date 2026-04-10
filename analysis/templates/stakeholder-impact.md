@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.3-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-04-06 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **📌 Template Instructions:** Copy to `analysis/daily/YYYY-MM-DD/{articleType}/` and save as `stakeholder-impact.md` in the workflow's own folder (never overwrite another workflow's files). Complete the context block first, then assess each stakeholder group with specific evidence. AI must provide genuine impact analysis with named actors and dok_id citations — not generic "may affect business" prose.
@@ -378,6 +378,43 @@ quadrantChart
 
 ---
 
+## 🗳️ Election 2026 Stakeholder Effects
+
+| Dimension | Assessment | Evidence |
+|-----------|------------|----------|
+| **Electoral Impact** | `[REQUIRED: How do stakeholder dynamics affect September 2026 election positioning?]` | `[Specific evidence]` |
+| **Coalition Scenarios** | `[REQUIRED: Which stakeholder coalitions benefit/suffer from current policies?]` | `[Evidence]` |
+| **Voter Salience** | `[REQUIRED: Which stakeholder groups translate most directly into voter blocs?]` | `[Evidence]` |
+| **Campaign Vulnerability** | `[REQUIRED: Which stakeholder harms create campaign attack vectors for opposition?]` | `[Evidence]` |
+| **Policy Legacy** | `[REQUIRED: Which stakeholder wins/losses will define the electoral narrative?]` | `[Evidence]` |
+
+**Overall Electoral Significance**: `[REQUIRED: CRITICAL/HIGH/MODERATE/LOW/NEGLIGIBLE]`
+
+**Most Likely Electoral Narrative**: `[REQUIRED: How will stakeholder impacts be framed in the 2026 campaign?]`
+
+### Stakeholder Voting Bloc Alignment (Election 2026)
+
+| Stakeholder Group | Size (est. voters) | Current Policy Disposition | Swing Potential | Electoral Risk |
+|------------------|--------------------|---------------------------|:---------------:|:-------------:|
+| Citizens — Welfare-dependent | `[OPTIONAL: e.g. ~1.5M]` | `[OPTIONAL: favourable/neutral/unfavourable]` | `[HIGH/MED/LOW]` | `[tier]` |
+| Citizens — Working age | `[OPTIONAL]` | `[OPTIONAL]` | `[HIGH/MED/LOW]` | `[tier]` |
+| Business / Industry | `[OPTIONAL]` | `[OPTIONAL]` | `[HIGH/MED/LOW]` | `[tier]` |
+| Civil Society orgs | `[OPTIONAL]` | `[OPTIONAL]` | `[HIGH/MED/LOW]` | `[tier]` |
+
+---
+
+## 🎯 Confidence Scale Reference (5-Level)
+
+| Level | Label | Criteria | Evidence Threshold |
+|-------|-------|----------|--------------------|
+| ⬛ 1 | **VERY LOW** | Speculation only, single unverified source | 0–1 sources, no corroboration |
+| 🟥 2 | **LOW** | Circumstantial evidence, indirect indicators | 2 sources, indirect evidence |
+| 🟧 3 | **MEDIUM** | Multiple independent sources, moderate corroboration | 3+ sources, moderate agreement |
+| 🟩 4 | **HIGH** | Official records, documented data, direct evidence | Official docs, voting records, committee reports |
+| 🟦 5 | **VERY HIGH** | Verified data + independent corroboration + expert consensus | Multiple official sources, cross-validated |
+
+---
+
 ## 🔗 Cross-References
 
 > *Link to sibling analysis files and same-day analysis from other article types.*
@@ -398,6 +435,8 @@ quadrantChart
 - [ ] **Assessment Context complete:** All metadata fields filled (ID, date, subject, dok_id, stage, producer, overall impact)
 - [ ] **All 8 stakeholder groups assessed:** Citizens, Government, Opposition, Business, Civil Society, International, Judiciary, Media
 - [ ] **Specific evidence on every group:** No generic "may affect" prose — every impact claims specific actors, mechanisms, and evidence
+- [ ] **Election 2026 Stakeholder Effects present:** All 5 dimensions assessed with Voting Bloc Alignment table
+- [ ] **5-level confidence applied:** Stakeholder impact confidence uses the full scale where applicable
 - [ ] **Named actors cited:** ≥3 named politicians/parties/organisations with specific roles
 - [ ] **Impact Summary Matrix filled:** All 8 rows in Extended Impact Summary Matrix have levels, timelines, confidence
 - [ ] **Inter-Stakeholder Tensions identified:** ≥2 tension pairs with mechanisms and editorial relevance
@@ -414,7 +453,8 @@ quadrantChart
 **Document Control:**  
 - **Template Path:** `/analysis/templates/stakeholder-impact.md`  
 - **Version:** 2.2  
-- **Effective Date:** 2026-04-06 (UTC)  
+- **Effective Date:** 2026-06-01 (UTC)
+- **Key Changes v2.3:** Added Election 2026 Stakeholder Effects section with Voting Bloc Alignment table, 5-level confidence scale reference, updated quality checklist  
 - **Lens References:** `scripts/analysis-framework/lenses/` (citizen, economic, government, international, media, opposition)  
 - **Framework Reference:** [methodologies/political-style-guide.md](../methodologies/political-style-guide.md)  
 - **Advanced Sections:** Position Change Tracking, Power-Interest Grid  

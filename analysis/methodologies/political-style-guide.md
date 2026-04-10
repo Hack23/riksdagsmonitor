@@ -11,12 +11,12 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.2-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 2.1 | **📅 Last Updated:** 2026-04-06 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 2.2 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-06-30  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
@@ -1028,6 +1028,50 @@ For each prohibited pattern, this section shows a concrete rewrite demonstrating
 
 ---
 
+## 🗳️ Election 2026 Framing Requirements (v2.2)
+
+> **Mandatory framing standard for all analyses produced within 18 months of September 2026.**
+
+### Electoral Context in Writing
+
+When events have electoral relevance, writers MUST apply these framing standards:
+
+| Writing Context | Requirement | Example |
+|----------------|-------------|---------|
+| **Article lede** | Include electoral stakes if electoral significance ≥ MODERATE | "The coalition's migration compromise sets up a key electoral battleground ahead of September 2026." |
+| **"Why It Matters" section** | Mandatory Election 2026 sentence if electoral significance ≥ HIGH | "This decision will directly shape coalition narratives in the 2026 election campaign." |
+| **Forward Indicators** | Include election-related milestones with dates | "Watch: Party conference positioning Sep–Oct 2025; Budget 2026 proposition Sep 2026" |
+| **SWOT analysis** | Electoral dimension required in O and T quadrants | "T: Opposition will use this policy failure as election attack vector" |
+
+### Election 2026 Framing Vocabulary
+
+**Approved framing phrases** (use these consistently across languages):
+- "ahead of the September 2026 general election" / "inför riksdagsvalet i september 2026"
+- "electoral positioning" / "valdispositioner"
+- "campaign attack vector" / "valkampanjens attackvektor"
+- "electoral asset" / "valtillgång"
+- "electoral liability" / "valbelastning"
+- "coalition stability before 2026" / "koalitionsstabilitet före 2026"
+
+**Banned electoral framing** (avoid these patterns):
+- ❌ "The election could be affected" — too vague; specify HOW
+- ❌ "Voters might care about this" — use polling data instead
+- ❌ "This is politically significant" — specify which actors, in what way
+- ❌ "Could be an election issue" — use Electoral Significance classification instead
+
+### Confidence Requirements for Electoral Claims
+
+Electoral claims about 2026 require **MEDIUM confidence minimum** (3+ evidence sources). Claims at VERY LOW or LOW confidence must be explicitly labeled and isolated from primary findings.
+
+| Electoral Claim Type | Minimum Confidence | Evidence Required |
+|---------------------|:-----------------:|-------------------|
+| Current polling data | HIGH | Specific pollster, date, sample size |
+| Party position on electoral strategy | MEDIUM | Party statement, spokesperson quote, or motion |
+| Voter segment impact | MEDIUM | SCB demographic data + policy impact analysis |
+| Speculative electoral outcome | VERY LOW | Label explicitly; do not assert as finding |
+
+---
+
 ## Document Control
 
 | Field | Value |
@@ -1036,8 +1080,8 @@ For each prohibited pattern, this section shows a concrete rewrite demonstrating
 | Status | Active |
 | Owner | Hack23 AB |
 | Review Cycle | Quarterly |
-| Next Review | 2026-06-30 |
-| Key Changes v2.2 | Article Title & SEO Standards (v5.0) — AI-only title generation, banned code-generated patterns |
+| Next Review | 2026-09-01 |
+| Key Changes v2.2 | Article Title & SEO Standards (v5.0) — AI-only title generation, banned code-generated patterns; Election 2026 Framing Requirements (electoral context in writing, vocabulary standards, confidence requirements) |
 | Key Changes v2.1 | Bad→Good Rewrite Examples (8 worked examples covering all prohibited pattern categories) |
 | Key Changes v2.0 | Intelligence depth standards, evidence density requirements, analytical depth indicators |
 | Related | `scripts/prompts/v2/political-analysis.md`, `scripts/analysis-reader.ts` |
