@@ -222,7 +222,7 @@ echo "⏱️ Elapsed: $((ELAPSED / 60))m $((ELAPSED % 60))s"
 - `>= 40 min` → STOP ALL WORK, call safe output tool (`safeoutputs___noop` or `safeoutputs___create_pull_request`) IMMEDIATELY — do NOT run any more bash commands
 - **CRITICAL**: If you have not called a safe output tool and time is running out, call `safeoutputs___noop` immediately. Failing to call a safe output tool causes a workflow failure.
 
-## Step 1: Date Validation & MCP Health Check
+## Step 1: Date Validation & MANDATORY MCP Health Check
 
 ```bash
 echo "=== Workflow Start - Date Validation ==="
@@ -233,11 +233,13 @@ date +"%Z: %A %Y-%m-%d %H:%M:%S"
 echo "============================"
 ```
 
-Then verify MCP connectivity — STEP 1: ALWAYS check data freshness first:
+Then verify MCP connectivity — ALWAYS check data freshness first with the MANDATORY health gate (3 retries):
 ```
 get_sync_status({})
 ```
-If it fails after 3 retries, call `safeoutputs___noop` with message "MCP server unavailable". Do NOT fabricate content.
+1. Call `get_sync_status({})` — retry up to 3× (30s wait between each)
+2. After 3 failures → `safeoutputs___noop({"message": "MCP server unavailable after 3 attempts"})` — do NOT fabricate content
+3. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
 
 If data is stale (> 48 hours), add disclaimer. Use riksdag-regering-mcp (32 tools for Swedish parliament data). For ad-hoc queries, use `scripts/mcp-query-cli.ts` — NEVER implement custom MCP client code (PROHIBITION).
 
