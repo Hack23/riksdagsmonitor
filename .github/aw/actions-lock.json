@@ -10,6 +10,11 @@
       "version": "v8",
       "sha": "70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3"
     },
+    "actions/download-artifact@v8.0.1": {
+      "repo": "actions/download-artifact",
+      "version": "v8.0.1",
+      "sha": "3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c"
+    },
     "actions/github-script@v8": {
       "repo": "actions/github-script",
       "version": "v8",
@@ -24,6 +29,11 @@
       "repo": "actions/upload-artifact",
       "version": "v7",
       "sha": "bbbca2ddaa5d8feaa63e36b76fdaad77386f024f"
+    },
+    "github/gh-aw-actions/setup-cli@v0.67.4": {
+      "repo": "github/gh-aw-actions/setup-cli",
+      "version": "v0.67.4",
+      "sha": "9d6ae06250fc0ec536a0e5f35de313b35bad7246"
     },
     "github/gh-aw-actions/setup@v0.67.4": {
       "repo": "github/gh-aw-actions/setup",
