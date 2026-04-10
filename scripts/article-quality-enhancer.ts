@@ -252,7 +252,7 @@ function countSectionWords(content: string, sectionClass: string): number {
   // Extract content between opening tag with matching class and matching closing tag
   const escapedClass = sectionClass.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const sectionPattern = new RegExp(
-    `<(?:section|div)[^>]*class="[^"]*${escapedClass}[^"]*"[^>]*>([\\s\\S]*?)</(?:section|div)>`,
+    `<(?:section|div)[^>]*class=(?:"|')[^"']*\\b${escapedClass}\\b[^"']*(?:"|')[^>]*>([\\s\\S]*?)</(?:section|div)>`,
     'i',
   );
   const match = content.match(sectionPattern);

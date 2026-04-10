@@ -139,9 +139,26 @@ function makeWinnersLosersDirective(articleLabel: string): AIStyleDirective {
   };
 }
 
-// ---------------------------------------------------------------------------
-// Registry definition
-// ---------------------------------------------------------------------------
+/**
+ * Shared AI directive for the "FAQ" section.
+ * Generates reader-focused frequently-asked questions with concise answers.
+ */
+function makeFaqDirective(articleLabel: string): AIStyleDirective {
+  return {
+    section: 'faq',
+    tone: 'informational',
+    maxWords: 300,
+    requiresSubheadings: false,
+    stakeholderFocus: ['Citizens', 'Voters', 'Media'],
+    rubric: [
+      ...GLOBAL_STYLE_RUBRIC,
+      `Generate 3–5 reader-focused FAQ entries for: ${articleLabel}`,
+      'Each entry: a natural-language question a citizen might ask, followed by a concise 1–3 sentence answer.',
+      'Ground every answer in facts from the source documents — no speculation.',
+      'Cover a range of angles: impact, timeline, stakeholders, and next steps.',
+    ],
+  };
+}
 
 const REGISTRY: Readonly<Record<ArticleType, ArticleTemplate>> = {
   'week-ahead': {
@@ -258,6 +275,7 @@ const REGISTRY: Readonly<Record<ArticleType, ArticleTemplate>> = {
       'key-takeaways': makeKeyTakeawaysDirective(['Committees', 'Government', 'Parliament']),
       'what-happens-next': makeWhatHappensNextDirective('Committee Reports'),
       'winners-losers': makeWinnersLosersDirective('Committee Reports'),
+      faq: makeFaqDirective('Committee Reports'),
     },
   },
 
@@ -284,6 +302,7 @@ const REGISTRY: Readonly<Record<ArticleType, ArticleTemplate>> = {
       'key-takeaways': makeKeyTakeawaysDirective(['Government', 'Parliament', 'Citizens']),
       'what-happens-next': makeWhatHappensNextDirective('Government Proposition'),
       'winners-losers': makeWinnersLosersDirective('Government Proposition'),
+      faq: makeFaqDirective('Government Proposition'),
     },
   },
 
@@ -309,6 +328,7 @@ const REGISTRY: Readonly<Record<ArticleType, ArticleTemplate>> = {
       'key-takeaways': makeKeyTakeawaysDirective(['Opposition', 'Government', 'Voters']),
       'what-happens-next': makeWhatHappensNextDirective('Opposition Motions'),
       'winners-losers': makeWinnersLosersDirective('Opposition Motions'),
+      faq: makeFaqDirective('Opposition Motions'),
     },
   },
 
@@ -345,6 +365,7 @@ const REGISTRY: Readonly<Record<ArticleType, ArticleTemplate>> = {
       },
       'what-happens-next': makeWhatHappensNextDirective('Interpellation Debate'),
       'winners-losers': makeWinnersLosersDirective('Interpellation Debate'),
+      faq: makeFaqDirective('Interpellation Debate'),
     },
   },
 
