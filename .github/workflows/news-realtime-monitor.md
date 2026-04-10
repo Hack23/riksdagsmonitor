@@ -971,8 +971,8 @@ safeoutputs___create_pull_request({
 ## Required Skills
 
 Consult as needed — do NOT read all files upfront:
-- **Skills:** `editorial-standards`, `swedish-political-system`, `legislative-monitoring`, `riksdag-regering-mcp`, `language-expertise`, `gh-aw-safe-outputs` (all in `.github/skills/*/SKILL.md`)
-- **Analysis:** `scripts/prompts/v2/political-analysis.md`, `per-file-intelligence-analysis.md`, `quality-criteria.md`
+- **Skills:** `.github/skills/editorial-standards/SKILL.md`, `.github/skills/swedish-political-system/SKILL.md`, `.github/skills/legislative-monitoring/SKILL.md`, `.github/skills/riksdag-regering-mcp/SKILL.md`, `.github/skills/language-expertise/SKILL.md`, `.github/skills/gh-aw-safe-outputs/SKILL.md`
+- **Analysis:** `scripts/prompts/v2/political-analysis.md`, `per-file-intelligence-analysis.md`, `stakeholder-perspectives.md`, `quality-criteria.md`
 - **Methodology:** `analysis/methodologies/ai-driven-analysis-guide.md` (v5.0) + `analysis/templates/per-file-political-intelligence.md`
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework

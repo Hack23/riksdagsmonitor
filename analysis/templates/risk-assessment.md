@@ -424,7 +424,7 @@ graph LR
 - [ ] **Election 2026 Risk Dimensions present:** All 5 dimensions assessed with overall electoral significance rating
 - [ ] **5-level confidence applied:** Assessment Confidence and Trend Confidence use VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW scale
 - [ ] **Named actors:** ≥2 named politicians/parties with party affiliations cited
-- [ ] **Confidence labels:** Every claim has H/M/L confidence or numeric severity
+- [ ] **Confidence labels:** Every claim has VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW confidence or numeric severity
 
 ---
 

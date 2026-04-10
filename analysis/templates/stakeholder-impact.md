@@ -452,7 +452,7 @@ quadrantChart
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/stakeholder-impact.md`  
-- **Version:** 2.2  
+- **Version:** 2.3  
 - **Effective Date:** 2026-06-01 (UTC)
 - **Key Changes v2.3:** Added Election 2026 Stakeholder Effects section with Voting Bloc Alignment table, 5-level confidence scale reference, updated quality checklist  
 - **Lens References:** `scripts/analysis-framework/lenses/` (citizen, economic, government, international, media, opposition)  

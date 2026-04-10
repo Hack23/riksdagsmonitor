@@ -199,7 +199,7 @@ START_TIME=$(date +%s)
 ## Required Skills
 
 Consult as needed — do NOT read all files upfront:
-- **Skills:** `editorial-standards`, `swedish-political-system`, `legislative-monitoring`, `riksdag-regering-mcp`, `language-expertise`, `gh-aw-safe-outputs` (all in `.github/skills/*/SKILL.md`)
+- **Skills:** `.github/skills/editorial-standards/SKILL.md`, `.github/skills/swedish-political-system/SKILL.md`, `.github/skills/legislative-monitoring/SKILL.md`, `.github/skills/riksdag-regering-mcp/SKILL.md`, `.github/skills/language-expertise/SKILL.md`, `.github/skills/gh-aw-safe-outputs/SKILL.md`
 - **Analysis:** `scripts/prompts/v2/political-analysis.md`, `per-file-intelligence-analysis.md`, `quality-criteria.md`
 - **Methodology:** `analysis/methodologies/ai-driven-analysis-guide.md` (v5.0) + `analysis/templates/per-file-political-intelligence.md`
 
@@ -271,7 +271,7 @@ echo "Day of week: $DAY_OF_WEEK (6=Saturday weekly wrap-up)"
 echo "============================"
 ```
 
-## 📅 Riksmöte Calculation
+## 📅 Riksmöte (Parliamentary Session) Calculation
 
 Sep+ → `rm = "{year}/{year+1 2-digit}"` (e.g. Oct 2026 → `2026/27`). Before Sep → `rm = "{year-1}/{year 2-digit}"` (e.g. Feb 2026 → `2025/26`).
 
@@ -1001,7 +1001,9 @@ Branch: `news/content/{YYYY-MM-DD}/evening-analysis`. `safeoutputs___create_pull
 
 ## Step 5: Commit & Create PR
 
-> `safeoutputs___create_pull_request` handles branch creation, push, and PR opening. Stage files and call it directly.
+### HOW SAFE PR CREATION WORKS
+
+> `safeoutputs___create_pull_request` handles branch creation, push, and PR opening — do NOT run `git push` or `git checkout -b` manually. Stage files, then call the tool directly.
 
 - ✅ `safeoutputs___create_pull_request` for articles or analysis-only PRs (`analysis-only` + `evening-analysis` labels)
 - ✅ `safeoutputs___noop` ONLY if MCP unreachable after 3 attempts AND no analysis artifacts exist

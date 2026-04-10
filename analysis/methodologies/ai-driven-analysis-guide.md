@@ -12,7 +12,7 @@
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Version-5.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--06-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
@@ -1933,7 +1933,7 @@ Every per-file analysis and synthesis summary MUST assess:
 | 🟠 **HIGH** | Significant pre-election narrative contribution | Mandatory inclusion in forward indicators |
 | 🟡 **MODERATE** | Peripheral electoral relevance | Include if space allows; note in stakeholder analysis |
 | 🟢 **LOW** | Minimal electoral impact | Optional brief mention |
-| ⚪ **NEGLIGIBLE** | No discernible electoral dimension | Skip Election 2026 section (note: "negligible electoral relevance") |
+| ⚪ **NEGLIGIBLE** | No discernible electoral dimension | Include Election 2026 section and explicitly mark as negligible electoral relevance |
 
 ### Pre-Election Analysis Calendar
 

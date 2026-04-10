@@ -189,7 +189,7 @@ source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts --types
 ## Required Skills
 
 Consult as needed — do NOT read all files upfront:
-- **Skills:** `editorial-standards`, `swedish-political-system`, `legislative-monitoring`, `riksdag-regering-mcp`, `language-expertise`, `gh-aw-safe-outputs` (all in `.github/skills/*/SKILL.md`)
+- **Skills:** `.github/skills/editorial-standards/SKILL.md`, `.github/skills/swedish-political-system/SKILL.md`, `.github/skills/legislative-monitoring/SKILL.md`, `.github/skills/riksdag-regering-mcp/SKILL.md`, `.github/skills/language-expertise/SKILL.md`, `.github/skills/gh-aw-safe-outputs/SKILL.md`
 - **Analysis:** `scripts/prompts/v2/political-analysis.md`, `per-file-intelligence-analysis.md`, `quality-criteria.md`
 - **Methodology:** `analysis/methodologies/ai-driven-analysis-guide.md` (v5.0) + `analysis/templates/per-file-political-intelligence.md`
 
@@ -261,7 +261,7 @@ echo "Article Type: motions"
 echo "============================"
 ```
 
-## 📅 Riksmöte Calculation
+## 📅 Riksmöte (Parliamentary Session) Calculation
 
 September+ → `rm = "{year}/{year+1 2-digit}"` (e.g. Oct 2026 → `2026/27`). Before September → `rm = "{year-1}/{year 2-digit}"` (e.g. Feb 2026 → `2025/26`). Use in ALL MCP queries requiring `rm`.
 
@@ -305,6 +305,8 @@ Content workflows: only create/modify **EN and SV** files (`news/YYYY-MM-DD-*-en
 Branch: `news/content/{YYYY-MM-DD}/{article-type}` (e.g. `news/content/2026-03-23/motions`). `safeoutputs___create_pull_request` handles this automatically.
 
 ## MANDATORY PR Creation
+
+### HOW SAFE PR CREATION WORKS
 
 > `safeoutputs___create_pull_request` handles branch creation, push, and PR opening — do NOT run `git push` or `git checkout -b` manually. Stage files, then call the tool directly.
 

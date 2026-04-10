@@ -169,8 +169,8 @@ Uses `memory/news-generation` branch. START: read `memory/news-generation/last-r
 ## Required Skills
 
 Consult as needed — do NOT read all files upfront:
-- **Skills:** `editorial-standards`, `swedish-political-system`, `legislative-monitoring`, `riksdag-regering-mcp`, `language-expertise`, `gh-aw-safe-outputs` (all in `.github/skills/*/SKILL.md`)
-- **Analysis:** `scripts/prompts/v2/political-analysis.md`, `per-file-intelligence-analysis.md`, `quality-criteria.md`
+- **Skills:** `.github/skills/editorial-standards/SKILL.md`, `.github/skills/swedish-political-system/SKILL.md`, `.github/skills/legislative-monitoring/SKILL.md`, `.github/skills/riksdag-regering-mcp/SKILL.md`, `.github/skills/language-expertise/SKILL.md`, `.github/skills/gh-aw-safe-outputs/SKILL.md`
+- **Analysis:** `scripts/prompts/v2/political-analysis.md`, `per-file-intelligence-analysis.md`, `stakeholder-perspectives.md`, `quality-criteria.md`
 - **Methodology:** `analysis/methodologies/ai-driven-analysis-guide.md` (v5.0) + `analysis/templates/per-file-political-intelligence.md`
 
 ## 📊 MANDATORY Multi-Step AI Analysis Framework
@@ -228,7 +228,7 @@ echo "Article Type: weekly-review"
 echo "============================"
 ```
 
-## 📅 Riksmöte Calculation
+## 📅 Riksmöte (Parliamentary Session) Calculation
 
 September+ → `rm = "{year}/{year+1 2-digit}"` (e.g. Oct 2026 → `2026/27`). Before September → `rm = "{year-1}/{year 2-digit}"` (e.g. Feb 2026 → `2025/26`). Use in ALL MCP queries requiring `rm`.
 
@@ -275,7 +275,7 @@ Branch: `news/content/{YYYY-MM-DD}/{article-type}` (e.g. `news/content/2026-03-2
 
 > **🚀 HOW SAFE PR CREATION WORKS — READ THIS FIRST**
 >
-> The `safeoutputs___create_pull_request` tool handles **everything**: branch creation, pushing commits, and opening the PR. You do NOT create branches or push manually.
+> The `safeoutputs___create_pull_request` tool handles **everything**: branch creation, pushing commits, and opening the PR. Do NOT run `git push` or `git checkout -b` manually.
 >
 > **Exact steps:**
 > 1. Write article files to `news/` using `bash` or `edit` tools
