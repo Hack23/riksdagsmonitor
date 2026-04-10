@@ -62,6 +62,9 @@ const DEFAULT_THRESHOLDS: QualityThresholds = {
   recommendInternationalComparison: false,
   recommendEconomicContext: true,
   recommendSCBContext: true,
+  recommendWhatHappensNext: true,
+  recommendWinnersLosers: true,
+  minSpecificClaims: 3,
 };
 
 /**
@@ -177,6 +180,116 @@ function hasWhyThisMatters(content: string): boolean {
   ];
 
   return patterns.some((pattern: RegExp) => pattern.test(content));
+}
+
+/**
+ * Detect "What Happens Next" timeline section.
+ * Looks for the rendered section class or common heading variants in 14 languages.
+ *
+ * @param content - HTML content of article
+ * @returns True if the section is present
+ */
+function hasWhatHappensNext(content: string): boolean {
+  const patterns: readonly RegExp[] = [
+    /class=["'][^"']*\bwhat-happens-next\b/,
+    /what\s+happens\s+next/i,
+    /vad\s+händer\s+härnäst/i,
+    /la\s+suite\s+des\s+événements/i,
+    /was\s+passiert\s+als\s+nächstes/i,
+    /qué\s+sucede\s+a\s+continuación/i,
+    /次のステップ/,
+    /다음\s+단계/,
+    /下一步/,
+  ];
+  return patterns.some((p: RegExp) => p.test(content));
+}
+
+/**
+ * Detect "Winners & Losers" analysis section.
+ * Looks for the rendered section class or common heading variants in 14 languages.
+ *
+ * @param content - HTML content of article
+ * @returns True if the section is present
+ */
+function hasWinnersLosers(content: string): boolean {
+  const patterns: readonly RegExp[] = [
+    /class=["'][^"']*\bwinners-losers\b/,
+    /winners\s*[&and]+\s*losers/i,
+    /vinnare\s+och\s+förlorare/i,
+    /gewinner\s+und\s+verlierer/i,
+    /gagnants\s+et\s+perdants/i,
+    /ganadores\s+y\s+perdedores/i,
+    /勝者と敗者/,
+    /승자와\s+패자/,
+    /赢家与输家/,
+  ];
+  return patterns.some((p: RegExp) => p.test(content));
+}
+
+/**
+ * Count approximate words in a specific HTML section identified by its CSS class.
+ * Returns 0 if the section is not found.
+ *
+ * @param content - Full HTML content of article
+ * @param sectionClass - CSS class of the target section element
+ * @returns Estimated word count within the section
+ */
+function countSectionWords(content: string, sectionClass: string): number {
+  // Extract content between opening tag with matching class and matching closing tag
+  const escapedClass = sectionClass.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const sectionPattern = new RegExp(
+    `<(?:section|div)[^>]*class="[^"]*${escapedClass}[^"]*"[^>]*>([\\s\\S]*?)</(?:section|div)>`,
+    'i',
+  );
+  const match = content.match(sectionPattern);
+  if (!match?.[1]) return 0;
+  const text = match[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  return text.split(' ').filter((w: string) => w.length > 0).length;
+}
+
+/**
+ * Validate that the lede paragraph has sufficient depth (minimum 30 words).
+ * A lede shorter than this is likely a stub or template placeholder.
+ *
+ * @param content - HTML content of article
+ * @returns True if lede meets the minimum word count
+ */
+function hasSubstantialLede(content: string): boolean {
+  const ledeMatch = content.match(/<p[^>]*class=["'][^"']*\blede\b[^"']*["'][^>]*>([\s\S]*?)<\/p>/i);
+  if (!ledeMatch?.[1]) return false;
+  const text = ledeMatch[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  return text.split(' ').filter((w: string) => w.length > 0).length >= 30;
+}
+
+/**
+ * Count specific factual claims with cited evidence.
+ * Looks for patterns that indicate a verifiable, specific claim:
+ * - Explicit document references (Prop., Bet., Mot., IP)
+ * - Percentage or currency figures with context
+ * - Named actors with attributed statements
+ *
+ * @param content - HTML content of article
+ * @returns Number of detected specific claims
+ */
+function countSpecificClaims(content: string): number {
+  const text = stripHtml(content);
+  let count = 0;
+
+  // Document references
+  DOCUMENT_ID_PATTERNS.forEach((pattern: RegExp) => {
+    const matches = text.match(pattern);
+    count += matches ? matches.length : 0;
+  });
+
+  // Percentage figures with surrounding context (e.g. "increased by 12%")
+  const percentMatches = text.match(/\b\d+(?:\.\d+)?%/g);
+  count += percentMatches ? Math.min(percentMatches.length, 5) : 0;
+
+  // Named MPs or ministers (Swedish name pattern: "Firstname Lastname (Party)")
+  const namedActors = text.match(/[A-ZÅÄÖ][a-zåäö]+\s+[A-ZÅÄÖ][a-zåäö]+\s*\([A-ZÅÄÖ]{1,3}\)/g);
+  count += namedActors ? Math.min(namedActors.length, 5) : 0;
+
+  return count;
 }
 
 /**
@@ -337,6 +450,10 @@ export async function enhanceArticleQuality(
     hasLanguageSwitcher: hasLanguageSwitcher(content),
     hasArticleTopNav: hasArticleTopNav(content),
     hasBackToNews: hasBackToNews(content),
+    hasWhatHappensNext: hasWhatHappensNext(content),
+    hasWinnersLosers: hasWinnersLosers(content),
+    specificClaimsCount: countSpecificClaims(content),
+    hasSubstantialLede: hasSubstantialLede(content),
   };
 
   // Calculate overall score
@@ -369,6 +486,15 @@ export async function enhanceArticleQuality(
     issues.push('Missing required historical context (at least one historical comparison required)');
   }
 
+  // Content depth validation — minimum specific claims
+  const minClaims = options.minSpecificClaims ?? 0;
+  if (minClaims > 0 && (metrics.specificClaimsCount ?? 0) < minClaims) {
+    issues.push(
+      `Only ${metrics.specificClaimsCount ?? 0} specific verifiable claims detected (need ${minClaims}). ` +
+      'Add document references, percentage figures, or named actors with party attributions.',
+    );
+  }
+
   // Separate warnings (recommendations) from blocking failures
   const warnings: string[] = [];
 
@@ -387,6 +513,18 @@ export async function enhanceArticleQuality(
 
   if (options.recommendSCBContext && !metrics.hasSCBContext) {
     warnings.push('Recommended: Add Swedish statistical context (SCB official statistics)');
+  }
+
+  if (options.recommendWhatHappensNext && !metrics.hasWhatHappensNext) {
+    warnings.push('Recommended: Add "What Happens Next" timeline section with legislative pipeline dates');
+  }
+
+  if (options.recommendWinnersLosers && !metrics.hasWinnersLosers) {
+    warnings.push('Recommended: Add "Winners & Losers" section naming political actors with evidence');
+  }
+
+  if (!metrics.hasSubstantialLede) {
+    warnings.push('Lede paragraph appears thin (< 30 words) — consider expanding with the most newsworthy fact');
   }
 
   if (metrics.hasStatisticalClaims) {
@@ -517,11 +655,16 @@ export {
   countPartyPerspectives,
   countCrossReferences,
   hasWhyThisMatters,
+  hasWhatHappensNext,
+  hasWinnersLosers,
   hasHistoricalContext,
   hasInternationalComparison,
   hasLanguageSwitcher,
   hasArticleTopNav,
   hasBackToNews,
+  countSpecificClaims,
+  hasSubstantialLede,
+  countSectionWords,
   calculateQualityScore,
   DEFAULT_THRESHOLDS,
 };

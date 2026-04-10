@@ -70,6 +70,12 @@ export interface QualityThresholds {
   recommendEconomicContext?: boolean;
   /** Recommend Swedish statistical context from SCB (non-blocking) */
   recommendSCBContext?: boolean;
+  /** Recommend "What Happens Next" timeline section (non-blocking) */
+  recommendWhatHappensNext?: boolean;
+  /** Recommend "Winners & Losers" section (non-blocking) */
+  recommendWinnersLosers?: boolean;
+  /** Minimum number of specific verifiable claims required (blocking if > 0) */
+  minSpecificClaims?: number;
 }
 
 /** Measured quality metrics for a single article */
@@ -92,6 +98,14 @@ export interface QualityMetrics {
   hasArticleTopNav?: boolean;
   /** Whether the article has a back-to-news link (in top nav or footer) */
   hasBackToNews?: boolean;
+  /** Whether the article contains a "What Happens Next" legislative timeline section */
+  hasWhatHappensNext?: boolean;
+  /** Whether the article contains a "Winners & Losers" political analysis section */
+  hasWinnersLosers?: boolean;
+  /** Number of specific, verifiable factual claims detected (documents, percentages, named actors) */
+  specificClaimsCount?: number;
+  /** Whether the lede paragraph has at least 30 words (not a stub) */
+  hasSubstantialLede?: boolean;
 }
 
 /** Quality assessment result for a single article */

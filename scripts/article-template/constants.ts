@@ -149,6 +149,109 @@ export const WATCH_SECTION_TITLES: Record<Language, string> = {
 };
 
 /**
+ * "What Happens Next" timeline section titles for all 14 languages.
+ * Renders the legislative pipeline with dates and significance indicators.
+ */
+export const WHAT_HAPPENS_NEXT_TITLES: Record<Language, string> = {
+  en: 'What Happens Next',
+  sv: 'Vad händer härnäst',
+  da: 'Hvad sker der nu',
+  no: 'Hva skjer videre',
+  fi: 'Mitä tapahtuu seuraavaksi',
+  de: 'Was passiert als Nächstes',
+  fr: 'La suite des événements',
+  es: 'Qué sucede a continuación',
+  nl: 'Wat gebeurt er nu',
+  ar: 'ماذا يحدث بعد ذلك',
+  he: 'מה קורה בהמשך',
+  ja: '次のステップ',
+  ko: '다음 단계',
+  zh: '下一步将会发生什么'
+};
+
+/**
+ * "Winners & Losers" analysis section titles for all 14 languages.
+ * Names political actors with evidence-backed outcome assessments.
+ */
+export const WINNERS_LOSERS_TITLES: Record<Language, string> = {
+  en: 'Winners & Losers',
+  sv: 'Vinnare och förlorare',
+  da: 'Vindere og tabere',
+  no: 'Vinnere og tapere',
+  fi: 'Voittajat ja häviäjät',
+  de: 'Gewinner und Verlierer',
+  fr: 'Gagnants et perdants',
+  es: 'Ganadores y perdedores',
+  nl: 'Winnaars en verliezers',
+  ar: 'الرابحون والخاسرون',
+  he: 'מנצחים ומפסידים',
+  ja: '勝者と敗者',
+  ko: '승자와 패자',
+  zh: '赢家与输家'
+};
+
+/**
+ * FAQ section titles for all 14 languages.
+ */
+export const FAQ_SECTION_TITLES: Record<Language, string> = {
+  en: 'Frequently Asked Questions',
+  sv: 'Vanliga frågor',
+  da: 'Ofte stillede spørgsmål',
+  no: 'Vanlige spørsmål',
+  fi: 'Usein kysytyt kysymykset',
+  de: 'Häufig gestellte Fragen',
+  fr: 'Questions fréquemment posées',
+  es: 'Preguntas frecuentes',
+  nl: 'Veelgestelde vragen',
+  ar: 'الأسئلة المتكررة',
+  he: 'שאלות נפוצות',
+  ja: 'よくある質問',
+  ko: '자주 묻는 질문',
+  zh: '常见问题'
+};
+
+/**
+ * Significance labels for "What Happens Next" timeline items.
+ * Maps significance level to a localized label (High / Medium / Low).
+ */
+export const SIGNIFICANCE_LABELS: Record<Language, Record<'high' | 'medium' | 'low', string>> = {
+  en: { high: 'High', medium: 'Medium', low: 'Low' },
+  sv: { high: 'Hög', medium: 'Medel', low: 'Låg' },
+  da: { high: 'Høj', medium: 'Mellem', low: 'Lav' },
+  no: { high: 'Høy', medium: 'Middels', low: 'Lav' },
+  fi: { high: 'Korkea', medium: 'Keskitaso', low: 'Matala' },
+  de: { high: 'Hoch', medium: 'Mittel', low: 'Niedrig' },
+  fr: { high: 'Élevé', medium: 'Moyen', low: 'Faible' },
+  es: { high: 'Alto', medium: 'Medio', low: 'Bajo' },
+  nl: { high: 'Hoog', medium: 'Gemiddeld', low: 'Laag' },
+  ar: { high: 'عالٍ', medium: 'متوسط', low: 'منخفض' },
+  he: { high: 'גבוה', medium: 'בינוני', low: 'נמוך' },
+  ja: { high: '高', medium: '中', low: '低' },
+  ko: { high: '높음', medium: '보통', low: '낮음' },
+  zh: { high: '高', medium: '中', low: '低' },
+};
+
+/**
+ * Winners/Losers outcome labels for all 14 languages.
+ */
+export const OUTCOME_LABELS: Record<Language, Record<'wins' | 'loses' | 'mixed', string>> = {
+  en: { wins: 'Wins', loses: 'Loses', mixed: 'Mixed' },
+  sv: { wins: 'Vinner', loses: 'Förlorar', mixed: 'Blandat' },
+  da: { wins: 'Vinder', loses: 'Taber', mixed: 'Blandet' },
+  no: { wins: 'Vinner', loses: 'Taper', mixed: 'Blandet' },
+  fi: { wins: 'Voittaa', loses: 'Häviää', mixed: 'Sekoitettu' },
+  de: { wins: 'Gewinnt', loses: 'Verliert', mixed: 'Gemischt' },
+  fr: { wins: 'Gagne', loses: 'Perd', mixed: 'Mitigé' },
+  es: { wins: 'Gana', loses: 'Pierde', mixed: 'Mixto' },
+  nl: { wins: 'Wint', loses: 'Verliest', mixed: 'Gemengd' },
+  ar: { wins: 'يفوز', loses: 'يخسر', mixed: 'مختلط' },
+  he: { wins: 'מנצח', loses: 'מפסיד', mixed: 'מעורב' },
+  ja: { wins: '勝ち', loses: '負け', mixed: '混在' },
+  ko: { wins: '승리', loses: '패배', mixed: '혼합' },
+  zh: { wins: '获益', loses: '受损', mixed: '复杂' },
+};
+
+/**
  * Locale map for Intl date formatting across all 14 languages
  */
 export const LOCALE_MAP: Record<string, string> = {
