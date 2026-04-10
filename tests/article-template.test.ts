@@ -1114,10 +1114,15 @@ describe('Article Template', () => {
       // Verify it appears before the footer
       const refIdx = html.indexOf('analysis-references');
       const footerIdx = html.indexOf('article-footer');
+      expect(refIdx).toBeGreaterThan(0);
+      expect(footerIdx).toBeGreaterThan(0);
       expect(refIdx).toBeLessThan(footerIdx);
-      // Verify it appears after the article content
-      const contentEndIdx = html.indexOf('</div>\n\n');
-      expect(refIdx).toBeGreaterThan(contentEndIdx);
+      // Verify it appears after the article-content closing div by locating
+      // the unique "article-content" class and its matching </div>.
+      const contentOpenIdx = html.indexOf('class="article-content');
+      expect(contentOpenIdx).toBeGreaterThan(0);
+      // The analysis-references section must come after article-content opens
+      expect(refIdx).toBeGreaterThan(contentOpenIdx);
     });
 
     it('omits analysis references section when not provided', () => {

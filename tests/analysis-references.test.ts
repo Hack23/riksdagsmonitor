@@ -188,7 +188,7 @@ describe('analysis-references', () => {
       // Verify section structure
       expect(html).toContain('<section class="analysis-references"');
       expect(html).toContain('aria-label="Analysis sources and methodology"');
-      expect(html).toContain('📊 Analysis & Sources');
+      expect(html).toContain('📊 Analysis &amp; Sources');
 
       // Verify all known file links
       expect(html).toContain('analysis/daily/2026-04-10/propositions/synthesis-summary.md');

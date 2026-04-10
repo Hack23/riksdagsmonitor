@@ -14,6 +14,7 @@
 import fs from 'fs';
 import path from 'path';
 import type { Language } from './types/language.js';
+import { escapeHtml } from './html-utils.js';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -297,14 +298,17 @@ export function generateAnalysisReferencesHtml(options: AnalysisReferencesOption
 
   const analysisPath = `analysis/daily/${date}/${subfolder}`;
 
+  /** URL-encode a single path segment (filename) for use in href attributes. */
+  const encodePathSegment = (segment: string): string => encodeURIComponent(segment);
+
   // Build list items for known files (in canonical order), then any extras
   const listItems: string[] = [];
   const processedFiles = new Set<string>();
 
   for (const known of KNOWN_ANALYSIS_FILES) {
     if (files.includes(known.filename)) {
-      const label = known.labels[lang] ?? known.labels.en;
-      const href = `${GITHUB_BLOB_BASE}/${analysisPath}/${known.filename}`;
+      const label = escapeHtml(known.labels[lang] ?? known.labels.en);
+      const href = `${GITHUB_BLOB_BASE}/${analysisPath}/${encodePathSegment(known.filename)}`;
       listItems.push(`    <li><a href="${href}" rel="noopener noreferrer">${known.emoji} ${label}</a></li>`);
       processedFiles.add(known.filename);
     }
@@ -313,25 +317,26 @@ export function generateAnalysisReferencesHtml(options: AnalysisReferencesOption
   // Add any remaining .md files not in the known list
   for (const file of files) {
     if (!processedFiles.has(file)) {
-      const label = file.replace(/\.md$/, '').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-      const href = `${GITHUB_BLOB_BASE}/${analysisPath}/${file}`;
+      const rawLabel = file.replace(/\.md$/, '').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      const label = escapeHtml(rawLabel);
+      const href = `${GITHUB_BLOB_BASE}/${analysisPath}/${encodePathSegment(file)}`;
       listItems.push(`    <li><a href="${href}" rel="noopener noreferrer">📄 ${label}</a></li>`);
     }
   }
 
   // Always add methodology link
   const methodologyHref = `${GITHUB_BLOB_BASE}/analysis/methodologies/ai-driven-analysis-guide.md`;
-  listItems.push(`    <li><a href="${methodologyHref}" rel="noopener noreferrer">🤖 ${methodologyLabel}</a></li>`);
+  listItems.push(`    <li><a href="${methodologyHref}" rel="noopener noreferrer">🤖 ${escapeHtml(methodologyLabel)}</a></li>`);
 
   // Build the HTML
-  let html = `\n  <section class="analysis-references" aria-label="${ariaLabel}">
-    <h2>📊 ${sectionTitle}</h2>
-    <p>${introText}</p>
+  let html = `\n  <section class="analysis-references" aria-label="${escapeHtml(ariaLabel)}">
+    <h2>📊 ${escapeHtml(sectionTitle)}</h2>
+    <p>${escapeHtml(introText)}</p>
     <ul>\n${listItems.join('\n')}\n    </ul>`;
 
   if (hasDocumentsDir) {
     const docsHref = `${GITHUB_TREE_BASE}/${analysisPath}/documents/`;
-    html += `\n    <p><em>${perDocLabel}: <a href="${docsHref}" rel="noopener noreferrer">documents/</a></em></p>`;
+    html += `\n    <p><em>${escapeHtml(perDocLabel)}: <a href="${docsHref}" rel="noopener noreferrer">documents/</a></em></p>`;
   }
 
   html += '\n  </section>';
