@@ -345,7 +345,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
     },
     "speakable": {
       "@type": "SpeakableSpecification",
-      "cssSelector": [".article-header h1", ".lede", ".key-takeaways", ".what-happens-next", ".winners-losers"]
+      "cssSelector": [".article-header h1", ".lede", ".key-takeaways", ".what-happens-next", ".winners-losers", ".faq-section"]
     }${tags.length > 0 ? `,
     "mentions": [${tags.map(tag => `
       {

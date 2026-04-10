@@ -307,10 +307,18 @@ const SECTION_TRANSITION_TEMPLATES: Readonly<Record<string, TransitionTemplates>
  * The returned string is **plain text** (not HTML) — wrap it in a `<p>` tag
  * with appropriate CSS class at the call site.
  *
+ * **Important**: The default context values (`'this legislation'` and
+ * `'key stakeholders'`) are English strings.  For non-English articles,
+ * callers **must** supply language-appropriate `context.topicKeyword` and
+ * `context.actorName` values so that the interpolated tokens match the
+ * article's language.  Failing to do so will result in English text inside
+ * a non-English article.
+ *
  * @param lang         - Article language code
  * @param fromSection  - CSS class / identifier of the preceding section
  * @param toSection    - CSS class / identifier of the following section
- * @param context      - Optional topic and actor to interpolate into the template
+ * @param context      - Optional topic and actor to interpolate into the template.
+ *                       **Required for non-English articles.**
  * @returns Localized transition sentence or empty string
  *
  * @example
@@ -319,6 +327,11 @@ const SECTION_TRANSITION_TEMPLATES: Readonly<Record<string, TransitionTemplates>
  *   actorName: 'Socialdemokraterna',
  * });
  * // → "The SWOT analysis above translates into clear gains and losses for Socialdemokraterna and other actors:"
+ *
+ * // Swedish article — supply Swedish context values:
+ * const transSv = generateSectionTransition('sv', 'swot', 'winners-losers', {
+ *   actorName: 'Socialdemokraterna',
+ * });
  * ```
  */
 export function generateSectionTransition(

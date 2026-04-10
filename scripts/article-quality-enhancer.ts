@@ -282,10 +282,15 @@ function countSpecificClaims(content: string): number {
   });
 
   // Percentage figures with surrounding context (e.g. "increased by 12%")
+  // Cap at 5 to prevent a heavily statistics-driven article from
+  // single-handedly satisfying the minSpecificClaims threshold via
+  // repetitive figures alone (e.g. budget tables with 20+ percentages).
   const percentMatches = text.match(/\b\d+(?:\.\d+)?%/g);
   count += percentMatches ? Math.min(percentMatches.length, 5) : 0;
 
   // Named MPs or ministers (Swedish name pattern: "Firstname Lastname (Party)")
+  // Capped at 5 for the same reason as percentage matches: prevents a roster
+  // of names without substantive claims from satisfying the threshold.
   const namedActors = text.match(/[A-ZÅÄÖ][a-zåäö]+\s+[A-ZÅÄÖ][a-zåäö]+\s*\([A-ZÅÄÖ]{1,3}\)/g);
   count += namedActors ? Math.min(namedActors.length, 5) : 0;
 
