@@ -147,7 +147,7 @@ Uses `memory/news-generation` branch. START: read `memory/news-generation/last-r
 ## ⏱️ Time Budget (45 minutes)
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
 - **Minutes 3–6**: Run pre-article-analysis pipeline (download data)
-- **Minutes 6–21**: 🚨 **AI Analysis (15 min minimum)**: Read ALL methodology guides + ALL templates. Create per-file analysis with color-coded Mermaid diagrams and evidence tables. Run quality gate bash check.
+- **Minutes 6–21**: 🚨 **AI Analysis (15 min minimum)**: Consult methodology guides + templates as needed. Create per-file analysis with color-coded Mermaid diagrams and evidence tables. Run quality gate bash check.
 - **Minutes 21–25**: Query MCP tools for propositions data
 - **Minutes 25–33**: Generate articles for core languages (EN, SV) using `npx tsx scripts/generate-news-enhanced.ts`
 - **Minutes 33–38**: Validate and fix any quality issues
@@ -525,14 +525,15 @@ echo "📊 Total pending proposition analysis files (all dates): $PENDING"
 After the script-based analysis, perform **AI-driven per-file analysis** for deeper intelligence:
 
 1. Run `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to list files needing analysis
-2. **Read ALL methodology guides AND templates** (use `view` or `cat` to read each fully):
+2. **Read the master methodology guide and per-file template** (required upfront), then consult others as needed:
    - `analysis/methodologies/ai-driven-analysis-guide.md` — Master per-file analysis guide (includes bad/good examples)
+   - `analysis/templates/per-file-political-intelligence.md` — Per-file output template
+   - Consult the following as needed for the current analysis step:
    - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT with confidence hierarchy
    - `analysis/methodologies/political-risk-methodology.md` — 5×5 Likelihood×Impact risk matrix
    - `analysis/methodologies/political-threat-framework.md` — Political Threat Taxonomy, Attack Trees, severity calibration
    - `analysis/methodologies/political-classification-guide.md` — Sensitivity and domain taxonomy
    - `analysis/methodologies/political-style-guide.md` — Writing standards and evidence density
-   - `analysis/templates/per-file-political-intelligence.md` — Per-file output template
    - `analysis/templates/synthesis-summary.md` — Daily synthesis template
    - `analysis/templates/risk-assessment.md` — Risk assessment template
    - `analysis/templates/political-classification.md` — Classification template

@@ -145,7 +145,7 @@ Uses `memory/news-generation` branch. START: read `memory/news-generation/last-r
 ## ⏱️ Time Budget (45 minutes)
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
 - **Minutes 3–6**: Run pre-article-analysis pipeline (download data)
-- **Minutes 6–21**: 🚨 **AI Analysis (15 min minimum)**: Read ALL methodology guides + ALL templates. Create per-file analysis with color-coded Mermaid diagrams and evidence tables. Run quality gate bash check.
+- **Minutes 6–21**: 🚨 **AI Analysis (15 min minimum)**: Consult methodology guides + templates as needed. Create per-file analysis with color-coded Mermaid diagrams and evidence tables. Run quality gate bash check.
 - **Minutes 21–25**: Query documents and votes from past 7 days
 - **Minutes 25–35**: Generate articles for all 14 languages
 - **Minutes 35–40**: Validate and commit analysis + articles

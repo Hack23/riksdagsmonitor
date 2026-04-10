@@ -202,13 +202,13 @@ START_TIME=$(date +%s)
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()` warm-up |
 | Download | 3–6 | Run data download scripts (MCP data fetch) |
-| **AI Analysis** | **6–21** | **🚨 MANDATORY 15 min minimum**: Read ALL methodology guides + ALL templates, create per-file analysis with Mermaid diagrams and evidence tables. Run quality gate bash check. |
+| **AI Analysis** | **6–21** | **🚨 MANDATORY 15 min minimum**: Consult methodology guides + templates as needed, create per-file analysis with Mermaid diagrams and evidence tables. Run quality gate bash check. |
 | Detect | 21–25 | Query MCP tools for today's activity |
 | Generate | 25–33 | Run `generate-news-enhanced.ts` script (core languages by default; supports all 14 languages via `languages=all`) |
 | Validate | 33–38 | Run `validate-news-generation.sh` |
 | Commit+PR | 38–43 | `git add && git commit`, then `safeoutputs___create_pull_request` |
 
-> ⚠️ **Analysis phase is 15 minutes minimum** — this is NOT negotiable. PR #1452 demonstrated that < 10 min produces unacceptable analysis (plain prose, no Mermaid diagrams, no evidence tables). The AI MUST read all methodology/template documents and produce publication-quality output matching [SWOT.md](../../SWOT.md) formatting standard.
+> ⚠️ **Analysis phase is 15 minutes minimum** — this is NOT negotiable. PR #1452 demonstrated that < 10 min produces unacceptable analysis (plain prose, no Mermaid diagrams, no evidence tables). The AI MUST consult methodology guides and templates as needed and produce publication-quality output matching [SWOT.md](../../SWOT.md) formatting standard.
 
 **Hard cutoffs** — check elapsed time before EVERY phase:
 ```bash
@@ -321,29 +321,23 @@ fi
 
 ### 🚨🚨🚨 MANDATORY: AI Must Analyse ALL Data Using Methods & Templates (15 min minimum)
 
-> **THIS IS YOUR PRIMARY JOB.** You MUST spend **at least 15 minutes** on analysis. For every piece of data or document downloaded from MCP, you MUST read ALL methodology guides and ALL templates, then create analysis following those templates exactly. This is NOT optional.
+> **THIS IS YOUR PRIMARY JOB.** You MUST spend **at least 15 minutes** on analysis. For every piece of data or document downloaded from MCP, you MUST read the master methodology guide and per-file template upfront, then consult other methodology guides and templates as needed for each analysis step. This is NOT optional.
 >
 > **Why 15 minutes?** PR #1452 demonstrated that rushing analysis (< 10 min) produces: plain prose without tables, no Mermaid diagrams, no dok_id evidence citations, no template structure. This is REJECTED. The templates require structured tables, color-coded Mermaid diagrams, evidence citations, and multi-section analysis that cannot be done properly in less than 15 minutes.
 
 #### What you MUST do (no exceptions):
 
-1. **Read ALL 6 methodology guides** (use `view` to read each one fully — not skim):
+1. **Read the master methodology guide and per-file template** (required upfront):
    - `analysis/methodologies/ai-driven-analysis-guide.md` — Master guide (bad vs. good examples, quality gate)
+   - `analysis/templates/per-file-political-intelligence.md` — Per-file output template
+
+2. **Consult other methodology guides and templates as needed** for the current analysis step:
    - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT with confidence hierarchy
    - `analysis/methodologies/political-risk-methodology.md` — 5×5 risk matrix
    - `analysis/methodologies/political-threat-framework.md` — Political Threat Taxonomy
    - `analysis/methodologies/political-classification-guide.md` — Classification taxonomy
    - `analysis/methodologies/political-style-guide.md` — Writing standards
-
-2. **Read ALL 8 analysis templates** (use `view` to read each one fully — these define the output format):
-   - `analysis/templates/per-file-political-intelligence.md`
-   - `analysis/templates/synthesis-summary.md`
-   - `analysis/templates/risk-assessment.md`
-   - `analysis/templates/political-classification.md`
-   - `analysis/templates/threat-analysis.md`
-   - `analysis/templates/swot-analysis.md` — SWOT MUST have: Context table, evidence tables with dok_id/confidence/impact columns, Mermaid SWOT Quadrant Mapping
-   - `analysis/templates/stakeholder-impact.md`
-   - `analysis/templates/significance-scoring.md`
+   - `analysis/templates/synthesis-summary.md`, `risk-assessment.md`, `political-classification.md`, `threat-analysis.md`, `swot-analysis.md` (SWOT MUST have: Context table, evidence tables with dok_id/confidence/impact columns, Mermaid SWOT Quadrant Mapping), `stakeholder-impact.md`, `significance-scoring.md`
 
 3. **For EVERY downloaded document/data file**: apply ALL 6 analytical lenses and create `{dok_id}-analysis.md` following the per-file template. Cite specific data (dok_id, vote counts, party names). Include ≥1 color-coded Mermaid diagram with `style` directives.
 

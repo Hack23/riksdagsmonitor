@@ -176,12 +176,12 @@ graph LR
 
 | Stakeholder | Impact | Direction | Key Driver |
 |------------|:------:|:---------:|------------|
-| 🏘️ Citizens | `[H/M/L/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
-| 🏛️ Government | `[H/M/L/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
-| 🗳️ Opposition | `[H/M/L/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
-| 🏭 Business | `[H/M/L/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
-| 🤝 Civil Society | `[H/M/L/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
-| 🌍 International | `[H/M/L/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 🏘️ Citizens | `[VH/H/M/L/VL/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 🏛️ Government | `[VH/H/M/L/VL/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 🗳️ Opposition | `[VH/H/M/L/VL/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 🏭 Business | `[VH/H/M/L/VL/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 🤝 Civil Society | `[VH/H/M/L/VL/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
+| 🌍 International | `[VH/H/M/L/VL/N]` | `[positive/negative/neutral]` | `[REQUIRED]` |
 
 ---
 
@@ -193,7 +193,7 @@ graph LR
 
 **Primary Narrative Angle:** `[REQUIRED: 1 sentence — the article headline thesis]`  
 **Secondary Angles:** `[OPTIONAL: 1–2 alternative narrative framings]`  
-**Confidence:** `[REQUIRED: HIGH / MEDIUM / LOW]`
+**Confidence:** `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]`
 
 ### 📰 AI-Recommended Article Metadata (MANDATORY — v5.0)
 
@@ -236,7 +236,7 @@ graph LR
 | **Overall Risk Level** | `[REQUIRED]` | `[OPTIONAL]` | `[OPTIONAL]` | `[↑/→/↓]` |
 | **Coalition Stability** | `[REQUIRED]` | `[OPTIONAL]` | `[OPTIONAL]` | `[↑/→/↓]` |
 | **Legislative Throughput** | `[REQUIRED: N documents]` | `[OPTIONAL]` | `[OPTIONAL]` | `[↑/→/↓]` |
-| **Opposition Activity Level** | `[REQUIRED: H/M/L]` | `[OPTIONAL]` | `[OPTIONAL]` | `[↑/→/↓]` |
+| **Opposition Activity Level** | `[REQUIRED: VH/H/M/L/VL]` | `[OPTIONAL]` | `[OPTIONAL]` | `[↑/→/↓]` |
 | **Average Significance Score** | `[REQUIRED: #.#/10]` | `[OPTIONAL]` | `[OPTIONAL]` | `[↑/→/↓]` |
 
 **Historical Context:** `[REQUIRED: 2–3 sentences placing this period in historical context. Is this an unusually active/risky period? Compare to equivalent pre-election periods in 2021/22.]`

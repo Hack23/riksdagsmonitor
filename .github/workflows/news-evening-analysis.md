@@ -184,7 +184,7 @@ START_TIME=$(date +%s)
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()`, determine day type |
 | Download | 3–6 | Run `populate-analysis-data.ts` + `pre-article-analysis.ts` (script-driven data download) |
-| **AI Analysis** | **6–21** | **🚨 MANDATORY 15 min minimum**: Read ALL methodology guides + ALL templates, create per-file analysis with Mermaid diagrams and evidence tables. Run quality gate bash check. |
+| **AI Analysis** | **6–21** | **🚨 MANDATORY 15 min minimum**: Consult methodology guides + templates as needed, create per-file analysis with Mermaid diagrams and evidence tables. Run quality gate bash check. |
 | Data | 21–25 | Query additional MCP tools for parliamentary activity |
 | Generate | 25–33 | Run generation script OR manual synthesis (see Step 3) |
 | Validate | 33–38 | Translate, validate, commit |

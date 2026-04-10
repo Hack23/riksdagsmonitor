@@ -19,7 +19,7 @@
 **📋 Document Owner:** CEO | **📄 Version:** 2.3 | **📅 Last Updated:** 2026-06-01 (UTC)  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
-> **📌 Template Instructions:** This template is for **per-file** analysis. For each data file downloaded via MCP, the AI agent produces one analysis markdown file stored as `{id}-analysis.md` in the workflow's isolated folder. AI MUST read ALL 6 methodology guides before analyzing.
+> **📌 Template Instructions:** This template is for **per-file** analysis. For each data file downloaded via MCP, the AI agent produces one analysis markdown file stored as `{id}-analysis.md` in the workflow's isolated folder. AI MUST read `analysis/methodologies/ai-driven-analysis-guide.md` (v5.0) before analyzing; consult other methodology guides only when needed for the current analysis step.
 >
 > **Output path:** `analysis/daily/YYYY-MM-DD/{articleType}/documents/{dok_id}-analysis.md`
 >
@@ -56,7 +56,7 @@
 
 ## 🎯 Executive Summary
 
-`[REQUIRED: 3–5 sentences capturing the political significance. Intelligence-level analysis — not just what happened, but what it means for power dynamics, coalition stability, and democratic accountability. Include confidence label.]` **[HIGH/MEDIUM/LOW]**
+`[REQUIRED: 3–5 sentences capturing the political significance. Intelligence-level analysis — not just what happened, but what it means for power dynamics, coalition stability, and democratic accountability. Include confidence label.]` **[VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW]**
 
 ---
 
@@ -121,19 +121,19 @@ quadrantChart
 
 | Quadrant | Statement | Evidence | Confidence | Impact |
 |----------|-----------|----------|:----------:|:------:|
-| ✅ Strength | `[If this document strengthens the government position — specific claim]` | `[dok_id or evidence]` | `H/M/L` | `H/M/L` |
-| ⚠️ Weakness | `[If this document exposes a government vulnerability]` | `[dok_id or evidence]` | `H/M/L` | `H/M/L` |
-| 🚀 Opportunity | `[If this creates a government opportunity]` | `[dok_id or evidence]` | `H/M/L` | `H/M/L` |
-| 🔴 Threat | `[If this poses a threat to the government]` | `[dok_id or evidence]` | `H/M/L` | `H/M/L` |
+| ✅ Strength | `[If this document strengthens the government position — specific claim]` | `[dok_id or evidence]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` |
+| ⚠️ Weakness | `[If this document exposes a government vulnerability]` | `[dok_id or evidence]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` |
+| 🚀 Opportunity | `[If this creates a government opportunity]` | `[dok_id or evidence]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` |
+| 🔴 Threat | `[If this poses a threat to the government]` | `[dok_id or evidence]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` |
 
 ### Opposition Impact
 
 | Quadrant | Statement | Evidence | Confidence | Impact |
 |----------|-----------|----------|:----------:|:------:|
-| ✅ Strength | `[If this strengthens the opposition]` | `[dok_id or evidence]` | `H/M/L` | `H/M/L` |
-| ⚠️ Weakness | `[If this exposes an opposition vulnerability]` | `[dok_id or evidence]` | `H/M/L` | `H/M/L` |
-| 🚀 Opportunity | `[If this creates an opposition opportunity]` | `[dok_id or evidence]` | `H/M/L` | `H/M/L` |
-| 🔴 Threat | `[If this poses a threat to the opposition]` | `[dok_id or evidence]` | `H/M/L` | `H/M/L` |
+| ✅ Strength | `[If this strengthens the opposition]` | `[dok_id or evidence]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` |
+| ⚠️ Weakness | `[If this exposes an opposition vulnerability]` | `[dok_id or evidence]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` |
+| 🚀 Opportunity | `[If this creates an opposition opportunity]` | `[dok_id or evidence]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` |
+| 🔴 Threat | `[If this poses a threat to the opposition]` | `[dok_id or evidence]` | `VH/H/M/L/VL` | `VH/H/M/L/VL` |
 
 ---
 
@@ -189,7 +189,7 @@ graph TD
 | Democratic Process | `[1-5]` | `[1-5]` | `[L×I]` | `[REQUIRED: specific risk statement]` |
 | External / International | `[1-5]` | `[1-5]` | `[L×I]` | `[OPTIONAL: EU, NATO, Nordic impact]` |
 
-**Overall Risk Level:** `[REQUIRED: CRITICAL / HIGH / MEDIUM / LOW]`  
+**Overall Risk Level:** `[REQUIRED: CRITICAL / HIGH / MEDIUM / LOW / NEGLIGIBLE]`  
 **Risk-to-SWOT:** Any score ≥15 → add as SWOT Threat entry. Any score 10–14 → add as SWOT Weakness or Threat.
 
 ### Anomaly Flags
@@ -282,12 +282,12 @@ graph TD
 
 | Stakeholder | Impact Level | Key Assessment | Confidence |
 |------------|:------------:|----------------|:----------:|
-| 🏛️ Government | `[HIGH/MEDIUM/LOW/NONE]` | `[REQUIRED: How does this affect government's position, agenda, and coalition stability?]` | `[H/M/L]` |
-| ⚖️ Opposition | `[HIGH/MEDIUM/LOW/NONE]` | `[REQUIRED: How does this create opportunities or challenges for opposition parties?]` | `[H/M/L]` |
-| 👥 Citizens | `[HIGH/MEDIUM/LOW/NONE]` | `[REQUIRED: How does this affect public services, rights, daily life?]` | `[H/M/L]` |
-| 💰 Economic | `[HIGH/MEDIUM/LOW/NONE]` | `[REQUIRED: Fiscal impact, business implications, labour market effects?]` | `[H/M/L]` |
-| 🌍 International | `[HIGH/MEDIUM/LOW/NONE]` | `[REQUIRED: EU compliance, Nordic cooperation, foreign relations?]` | `[H/M/L]` |
-| 📰 Media | `[HIGH/MEDIUM/LOW/NONE]` | `[REQUIRED: Newsworthiness, narrative potential, public attention?]` | `[H/M/L]` |
+| 🏛️ Government | `[HIGH/MEDIUM/LOW/NONE]` | `[REQUIRED: How does this affect government's position, agenda, and coalition stability?]` | `[VH/H/M/L/VL]` |
+| ⚖️ Opposition | `[HIGH/MEDIUM/LOW/NONE]` | `[REQUIRED: How does this create opportunities or challenges for opposition parties?]` | `[VH/H/M/L/VL]` |
+| 👥 Citizens | `[HIGH/MEDIUM/LOW/NONE]` | `[REQUIRED: How does this affect public services, rights, daily life?]` | `[VH/H/M/L/VL]` |
+| 💰 Economic | `[HIGH/MEDIUM/LOW/NONE]` | `[REQUIRED: Fiscal impact, business implications, labour market effects?]` | `[VH/H/M/L/VL]` |
+| 🌍 International | `[HIGH/MEDIUM/LOW/NONE]` | `[REQUIRED: EU compliance, Nordic cooperation, foreign relations?]` | `[VH/H/M/L/VL]` |
+| 📰 Media | `[HIGH/MEDIUM/LOW/NONE]` | `[REQUIRED: Newsworthiness, narrative potential, public attention?]` | `[VH/H/M/L/VL]` |
 
 ---
 

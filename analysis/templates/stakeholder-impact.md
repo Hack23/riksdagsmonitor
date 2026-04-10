@@ -91,7 +91,7 @@ graph TD
 | **Affected Population** | `[REQUIRED: e.g. "All 10.5M residents", "Pensioners 65+", "Urban renters", "Asylum seekers"]` |
 | **Impact Type** | `[REQUIRED: FINANCIAL / LEGAL / SOCIAL / HEALTH / EDUCATIONAL / COMBINATION]` |
 | **Evidence Sources** | `[REQUIRED: dok_id(s), SCB statistics ref, or budget document]` |
-| **Confidence Level** | `[REQUIRED: HIGH / MEDIUM / LOW]` |
+| **Confidence Level** | `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]` |
 
 **Citizen Impact Narrative:**  
 `[REQUIRED: 2–4 sentences explaining how ordinary citizens experience this change. Be specific about amounts (SEK), eligibility criteria, timelines, and regional variation if applicable. Reference the scripts/analysis-framework/lenses/citizen.ts perspective framework.]`
@@ -111,7 +111,7 @@ graph TD
 | **Primary Affected Parties** | `[REQUIRED: e.g. "M (primary), SD (secondary), KD (minor)"]` |
 | **Coalition Cohesion Effect** | `[REQUIRED: STRENGTHENS / NEUTRAL / STRAINS / FRACTURES]` |
 | **Evidence Sources** | `[REQUIRED: dok_id, debate ref, or interpellation]` |
-| **Confidence Level** | `[REQUIRED: HIGH / MEDIUM / LOW]` |
+| **Confidence Level** | `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]` |
 
 **Government Coalition Impact Narrative:**  
 `[REQUIRED: 2–3 sentences. Reference scripts/analysis-framework/lenses/government.ts.]`
@@ -129,7 +129,7 @@ graph TD
 | **Primary Affected Parties** | `[REQUIRED: e.g. "S (gains credibility), V (opposition opportunity), MP (marginalised)"]` |
 | **Electoral Positioning Effect** | `[REQUIRED: POSITIVE / NEUTRAL / NEGATIVE — from opposition perspective]` |
 | **Evidence Sources** | `[REQUIRED: anföranden refs or motion dok_ids]` |
-| **Confidence Level** | `[REQUIRED: HIGH / MEDIUM / LOW]` |
+| **Confidence Level** | `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]` |
 
 **Opposition Impact Narrative:**  
 `[REQUIRED: 2–3 sentences. Reference scripts/analysis-framework/lenses/opposition.ts.]`
@@ -148,7 +148,7 @@ graph TD
 | **Economic Impact Type** | `[REQUIRED: COMPLIANCE COST / MARKET OPPORTUNITY / REGULATORY BURDEN / TAX CHANGE / OTHER]` |
 | **Estimated Financial Impact** | `[OPTIONAL: e.g. "±X BSEK annually per Finansdepartementet estimate"]` |
 | **Evidence Sources** | `[REQUIRED: proposition dok_id, Riksbank ref, or SOU]` |
-| **Confidence Level** | `[REQUIRED: HIGH / MEDIUM / LOW]` |
+| **Confidence Level** | `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]` |
 
 **Business Sector Impact Narrative:**  
 `[REQUIRED: 2–3 sentences. Reference scripts/analysis-framework/lenses/economic.ts.]`
@@ -166,7 +166,7 @@ graph TD
 | **Most Affected Organisations** | `[REQUIRED: e.g. "LO, TCO (labour)", "Rädda Barnen (welfare)", "Greenpeace (environment)"]` |
 | **Civil Society Response** | `[REQUIRED: SUPPORTIVE / NEUTRAL / OPPOSED / DIVIDED]` |
 | **Evidence Sources** | `[REQUIRED: remissvar refs, consultation documents, or media statements]` |
-| **Confidence Level** | `[REQUIRED: HIGH / MEDIUM / LOW]` |
+| **Confidence Level** | `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]` |
 
 **Civil Society Impact Narrative:**  
 `[REQUIRED: 2–3 sentences.]`
@@ -184,7 +184,7 @@ graph TD
 | **Affected Relationships** | `[REQUIRED: e.g. "EU Commission (sanctions risk)", "NATO allies", "Nordic Council"]` |
 | **Treaty/Directive Compliance** | `[REQUIRED: COMPLIANT / AT RISK / NON-COMPLIANT / UNCERTAIN]` |
 | **Evidence Sources** | `[REQUIRED: EU directive refs, international agreement dok_ids]` |
-| **Confidence Level** | `[REQUIRED: HIGH / MEDIUM / LOW]` |
+| **Confidence Level** | `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]` |
 
 **International Impact Narrative:**  
 `[REQUIRED: 2–3 sentences. Reference scripts/analysis-framework/lenses/international.ts.]`
@@ -242,7 +242,7 @@ _Note: In the Extended Impact Summary Matrix, stakeholder groups may appear in a
 | **Constitutional Compliance** | `[REQUIRED: COMPLIANT / CONSTITUTIONAL RISK / UNDER REVIEW / UNCERTAIN]` |
 | **Legal Precedent Impact** | `[REQUIRED: NONE / MINOR ADJUSTMENT / SIGNIFICANT SHIFT / NEW PRECEDENT]` |
 | **Evidence Sources** | `[REQUIRED: Lagrådet remiss, SOU dok_id, or constitutional analysis]` |
-| **Confidence Level** | `[REQUIRED: HIGH / MEDIUM / LOW]` |
+| **Confidence Level** | `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]` |
 
 **Judiciary Impact Narrative:**  
 `[REQUIRED: 2–3 sentences. Consider Lagrådet opinions, constitutional implications under Regeringsformen (RF), court capacity, and effects on rule-of-law guarantees. Note any EU Charter of Fundamental Rights interactions.]`
@@ -261,7 +261,7 @@ _Note: In the Extended Impact Summary Matrix, stakeholder groups may appear in a
 | **Framing Dynamics** | `[REQUIRED: e.g. "Government frames as security; opposition as civil liberties threat"]` |
 | **Key Media Actors** | `[REQUIRED: e.g. "SVT Nyheter, DN ledare, Expressen, SR Ekot"]` |
 | **Evidence Sources** | `[REQUIRED: media monitoring refs, press conference dok_ids, or debate transcripts]` |
-| **Confidence Level** | `[REQUIRED: HIGH / MEDIUM / LOW]` |
+| **Confidence Level** | `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]` |
 
 **Media Impact Narrative:**  
 `[REQUIRED: 2–3 sentences. Reference scripts/analysis-framework/lenses/media.ts. Describe the anticipated media cycle, competing narratives, and whether the issue will sustain public attention or be displaced.]`

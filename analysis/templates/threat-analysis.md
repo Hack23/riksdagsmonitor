@@ -203,8 +203,8 @@ graph TD
 
 | Path | Steps Required | Feasibility (1–5) | Detectability (1–5) | Political Cost | Most Likely? |
 |------|:--------------:|:-----------------:|:-------------------:|:--------------:|:------------:|
-| Path A | `[#]` | `[1-5]` | `[1-5]` | `[H/M/L]` | `[Y/N]` |
-| Path B | `[#]` | `[1-5]` | `[1-5]` | `[H/M/L]` | `[Y/N]` |
+| Path A | `[#]` | `[1-5]` | `[1-5]` | `[VH/H/M/L/VL]` | `[Y/N]` |
+| Path B | `[#]` | `[1-5]` | `[1-5]` | `[VH/H/M/L/VL]` | `[Y/N]` |
 
 **Cheapest attack path:** `[REQUIRED: Which path has highest feasibility and lowest cost?]`
 
@@ -244,12 +244,12 @@ graph TD
 
 | Attribute | Assessment | Confidence |
 |-----------|-----------|:----------:|
-| **Intent** | `[REQUIRED: What do they want?]` | `[H/M/L]` |
-| **Capability** | `[REQUIRED: What can they actually do?]` | `[H/M/L]` |
-| **Opportunity** | `[REQUIRED: What upcoming events create windows?]` | `[H/M/L]` |
-| **Track Record** | `[REQUIRED: Have they acted on similar threats before?]` | `[H/M/L]` |
-| **Constraints** | `[REQUIRED: What limits their action?]` | `[H/M/L]` |
-| **Overall ICO Level** | `[REQUIRED: HIGH / MEDIUM / LOW]` | `[H/M/L]` |
+| **Intent** | `[REQUIRED: What do they want?]` | `[VH/H/M/L/VL]` |
+| **Capability** | `[REQUIRED: What can they actually do?]` | `[VH/H/M/L/VL]` |
+| **Opportunity** | `[REQUIRED: What upcoming events create windows?]` | `[VH/H/M/L/VL]` |
+| **Track Record** | `[REQUIRED: Have they acted on similar threats before?]` | `[VH/H/M/L/VL]` |
+| **Constraints** | `[REQUIRED: What limits their action?]` | `[VH/H/M/L/VL]` |
+| **Overall ICO Level** | `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]` | `[VH/H/M/L/VL]` |
 
 ---
 
@@ -284,7 +284,7 @@ graph TD
 3. **[Threat ID]:** `[Mitigation action]`
 
 **Overall Threat Level:** `[REQUIRED: LOW / MODERATE / HIGH / SEVERE]`  
-**Assessment Confidence:** `[REQUIRED: HIGH / MEDIUM / LOW]`
+**Assessment Confidence:** `[REQUIRED: VERY HIGH / HIGH / MEDIUM / LOW / VERY LOW]`
 
 ---
 
