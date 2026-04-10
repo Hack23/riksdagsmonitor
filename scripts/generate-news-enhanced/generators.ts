@@ -664,9 +664,9 @@ export async function generateInterpellations(): Promise<GenerationResult> {
 
 // ---------------------------------------------------------------------------
 // URL & text utilities — implementation extracted to url-utils.ts
-// Re-exported here for backward compatibility.
+// Imported for local use and re-exported for backward compatibility.
 // ---------------------------------------------------------------------------
-export {
+import {
   extractDocIdFromUrl,
   isGovernmentUrl,
   isGitHubUrl,
@@ -674,6 +674,15 @@ export {
   hashPathSuffix,
   sanitizePlainText,
 } from './url-utils.js';
+
+export {
+  extractDocIdFromUrl,
+  isGovernmentUrl,
+  isGitHubUrl,
+  toGitHubRawUrl,
+  hashPathSuffix,
+  sanitizePlainText,
+};
 
 // ---------------------------------------------------------------------------
 // Deep-Inspection content generator (topic-focused, comprehensive)
