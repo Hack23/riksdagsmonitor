@@ -5,6 +5,7 @@
 
 import type { Language } from './language.js';
 import type { ClassificationLevel, RiskLevel, ConfidenceLabel } from '../analysis-reader.js';
+import type { FAQItem } from './editorial.js';
 
 /* ── Inlined types (formerly from deleted ai-analysis modules) ── */
 
@@ -170,6 +171,12 @@ export interface ArticleData {
    * When present, it is injected between the article content and the footer.
    */
   analysisReferencesHtml?: string;
+  /**
+   * Optional FAQ items rendered as an HTML section and emitted as Schema.org
+   * `FAQPage` structured data for rich SERP snippets and voice assistants.
+   * Each item contains a plain-text question and a concise answer.
+   */
+  faqItems?: FAQItem[];
 }
 
 /** A single generated article (language variant) */

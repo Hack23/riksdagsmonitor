@@ -97,9 +97,68 @@ function makeSwotDirective(subject: string): AIStyleDirective {
   };
 }
 
-// ---------------------------------------------------------------------------
-// Registry definition
-// ---------------------------------------------------------------------------
+/**
+ * Shared AI directive for the "What Happens Next" timeline section.
+ * Lists upcoming legislative milestones with significance ratings.
+ */
+function makeWhatHappensNextDirective(articleLabel: string): AIStyleDirective {
+  return {
+    section: 'what-happens-next',
+    tone: 'informational',
+    maxWords: 250,
+    requiresSubheadings: false,
+    stakeholderFocus: ['Parliament', 'Government', 'Committees', 'Citizens'],
+    rubric: [
+      ...GLOBAL_STYLE_RUBRIC,
+      `Provide 3–6 ordered upcoming events for: ${articleLabel}`,
+      'Each entry: exact ISO date (YYYY-MM-DD), one-sentence event description, and significance (high/medium/low).',
+      'Use only dates that can be sourced from the Riksdag calendar or the bill text.',
+      'Do not speculate; omit dates that are not confirmed.',
+    ],
+  };
+}
+
+/**
+ * Shared AI directive for the "Winners & Losers" analysis section.
+ * Names political actors with evidence-backed outcome assessments.
+ */
+function makeWinnersLosersDirective(articleLabel: string): AIStyleDirective {
+  return {
+    section: 'winners-losers',
+    tone: 'analytical',
+    maxWords: 300,
+    requiresSubheadings: false,
+    stakeholderFocus: ['Parties', 'Ministers', 'Interest groups', 'Citizens'],
+    rubric: [
+      ...GLOBAL_STYLE_RUBRIC,
+      `Identify 3–6 named actors affected by: ${articleLabel}`,
+      'Each entry: actor name, outcome (wins/loses/mixed), one-sentence evidence citing a specific document or vote.',
+      'Balance wins and losses — do not list only one outcome type.',
+      'Use only verifiable facts; no speculation.',
+    ],
+  };
+}
+
+/**
+ * Shared AI directive for the "FAQ" section.
+ * Generates reader-focused frequently-asked questions with concise answers.
+ */
+function makeFaqDirective(articleLabel: string): AIStyleDirective {
+  return {
+    section: 'faq',
+    tone: 'informational',
+    maxWords: 300,
+    requiresSubheadings: false,
+    stakeholderFocus: ['Citizens', 'Voters', 'Media'],
+    rubric: [
+      ...GLOBAL_STYLE_RUBRIC,
+      `Generate 3–5 reader-focused FAQ entries for: ${articleLabel}`,
+      'Each entry: a natural-language question a citizen might ask, followed by a concise 1–3 sentence answer.',
+      'Ground every answer in facts from the source documents — no speculation.',
+      'Cover a range of angles: impact, timeline, stakeholders, and next steps.',
+    ],
+  };
+}
 
 const REGISTRY: Readonly<Record<ArticleType, ArticleTemplate>> = {
   'week-ahead': {
@@ -214,6 +273,9 @@ const REGISTRY: Readonly<Record<ArticleType, ArticleTemplate>> = {
         ],
       },
       'key-takeaways': makeKeyTakeawaysDirective(['Committees', 'Government', 'Parliament']),
+      'what-happens-next': makeWhatHappensNextDirective('Committee Reports'),
+      'winners-losers': makeWinnersLosersDirective('Committee Reports'),
+      faq: makeFaqDirective('Committee Reports'),
     },
   },
 
@@ -238,6 +300,9 @@ const REGISTRY: Readonly<Record<ArticleType, ArticleTemplate>> = {
       },
       swot: makeSwotDirective('Government Proposition'),
       'key-takeaways': makeKeyTakeawaysDirective(['Government', 'Parliament', 'Citizens']),
+      'what-happens-next': makeWhatHappensNextDirective('Government Proposition'),
+      'winners-losers': makeWinnersLosersDirective('Government Proposition'),
+      faq: makeFaqDirective('Government Proposition'),
     },
   },
 
@@ -261,6 +326,9 @@ const REGISTRY: Readonly<Record<ArticleType, ArticleTemplate>> = {
         ],
       },
       'key-takeaways': makeKeyTakeawaysDirective(['Opposition', 'Government', 'Voters']),
+      'what-happens-next': makeWhatHappensNextDirective('Opposition Motions'),
+      'winners-losers': makeWinnersLosersDirective('Opposition Motions'),
+      faq: makeFaqDirective('Opposition Motions'),
     },
   },
 
@@ -295,6 +363,9 @@ const REGISTRY: Readonly<Record<ArticleType, ArticleTemplate>> = {
           'Rate response adequacy: Comprehensive / Partial / Evasive.',
         ],
       },
+      'what-happens-next': makeWhatHappensNextDirective('Interpellation Debate'),
+      'winners-losers': makeWinnersLosersDirective('Interpellation Debate'),
+      faq: makeFaqDirective('Interpellation Debate'),
     },
   },
 

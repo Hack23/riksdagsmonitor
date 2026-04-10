@@ -62,6 +62,9 @@ const DEFAULT_THRESHOLDS: QualityThresholds = {
   recommendInternationalComparison: false,
   recommendEconomicContext: true,
   recommendSCBContext: true,
+  recommendWhatHappensNext: true,
+  recommendWinnersLosers: true,
+  minSpecificClaims: 3,
 };
 
 /**
@@ -177,6 +180,174 @@ function hasWhyThisMatters(content: string): boolean {
   ];
 
   return patterns.some((pattern: RegExp) => pattern.test(content));
+}
+
+/**
+ * Detect "What Happens Next" timeline section.
+ * Looks for the rendered section class or heading variants across supported languages.
+ * Covers: en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh.
+ *
+ * @param content - HTML content of article
+ * @returns True if the section is present
+ */
+function hasWhatHappensNext(content: string): boolean {
+  const patterns: readonly RegExp[] = [
+    /class=["'][^"']*\bwhat-happens-next\b/,
+    /what\s+happens\s+next/i,
+    /vad\s+händer\s+härnäst/i,
+    /hvad\s+sker\s+der\s+nu/i,
+    /hva\s+skjer\s+videre/i,
+    /mitä\s+tapahtuu\s+seuraavaksi/i,
+    /was\s+passiert\s+als\s+nächstes/i,
+    /la\s+suite\s+des\s+événements/i,
+    /qué\s+sucede\s+a\s+continuación/i,
+    /wat\s+gebeurt\s+er\s+nu/i,
+    /ماذا يحدث بعد ذلك/,
+    /מה קורה בהמשך/,
+    /次のステップ/,
+    /다음\s+단계/,
+    /下一步/,
+  ];
+  return patterns.some((p: RegExp) => p.test(content));
+}
+
+/**
+ * Detect "Winners & Losers" analysis section.
+ * Looks for the rendered section class or heading variants across supported languages.
+ * Covers: en, sv, da, no, fi, de, fr, es, nl, ar, he, ja, ko, zh.
+ *
+ * @param content - HTML content of article
+ * @returns True if the section is present
+ */
+function hasWinnersLosers(content: string): boolean {
+  const patterns: readonly RegExp[] = [
+    /class=["'][^"']*\bwinners-losers\b/,
+    /winners\s*(?:&|and)\s*losers/i,
+    /vinnare\s+och\s+förlorare/i,
+    /vindere\s+og\s+tabere/i,
+    /vinnere\s+og\s+tapere/i,
+    /voittajat\s+ja\s+häviäjät/i,
+    /gewinner\s+und\s+verlierer/i,
+    /gagnants\s+et\s+perdants/i,
+    /ganadores\s+y\s+perdedores/i,
+    /winnaars\s+en\s+verliezers/i,
+    /الرابحون والخاسرون/,
+    /מנצחים ומפסידים/,
+    /勝者と敗者/,
+    /승자와\s+패자/,
+    /赢家与输家/,
+  ];
+  return patterns.some((p: RegExp) => p.test(content));
+}
+
+/**
+ * Count approximate words in a specific HTML section identified by its CSS class.
+ * Returns 0 if the section is not found.
+ *
+ * @param content - Full HTML content of article
+ * @param sectionClass - CSS class of the target section element
+ * @returns Estimated word count within the section
+ */
+function countSectionWords(content: string, sectionClass: string): number {
+  // Find the opening tag with the requested class, then scan forward to the
+  // matching closing tag while tracking nested <section>/<div> elements.
+  const escapedClass = sectionClass.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const openingTagPattern = new RegExp(
+    `<(section|div)\\b[^>]*class=(?:"|')[^"']*\\b${escapedClass}\\b[^"']*(?:"|')[^>]*>`,
+    'i',
+  );
+  const openingMatch = openingTagPattern.exec(content);
+  if (!openingMatch || openingMatch.index < 0) return 0;
+
+  const rootTag = openingMatch[1].toLowerCase();
+  const contentStart = openingMatch.index + openingMatch[0].length;
+  const tagPattern = /<\/?(section|div)\b[^>]*>/gi;
+  tagPattern.lastIndex = contentStart;
+
+  const stack: string[] = [rootTag];
+  let tagMatch: RegExpExecArray | null = tagPattern.exec(content);
+
+  while (tagMatch) {
+    const matchedTag = tagMatch[0];
+    const tagName = tagMatch[1].toLowerCase();
+    const isClosingTag = matchedTag.startsWith('</');
+
+    if (!isClosingTag) {
+      stack.push(tagName);
+    } else if (stack.length > 0 && stack[stack.length - 1] === tagName) {
+      stack.pop();
+      if (stack.length === 0) {
+        const innerHtml = content.slice(contentStart, tagMatch.index);
+        const text = innerHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+        return text.split(' ').filter((w: string) => w.length > 0).length;
+      }
+    }
+
+    tagMatch = tagPattern.exec(content);
+  }
+
+  return 0;
+}
+
+/**
+ * Validate that the lede paragraph has sufficient depth (minimum 30 words).
+ * A lede shorter than this is likely a stub or template placeholder.
+ *
+ * @param content - HTML content of article
+ * @returns True if lede meets the minimum word count
+ */
+function hasSubstantialLede(content: string): boolean {
+  const ledeMatch = content.match(/<p[^>]*class=["'][^"']*\blede\b[^"']*["'][^>]*>([\s\S]*?)<\/p>/i);
+  if (!ledeMatch?.[1]) return false;
+  const text = ledeMatch[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  return text.split(' ').filter((w: string) => w.length > 0).length >= 30;
+}
+
+/**
+ * Count specific claim indicators in article text.
+ * Looks for patterns that indicate potentially verifiable, specific content:
+ * - Explicit document references (Prop., Bet., Mot., IP)
+ * - Percentage figures
+ * - Named MPs or ministers matching the pattern "Firstname Lastname (Party)"
+ *
+ * @param content - HTML content of article
+ * @returns Number of detected specific claim indicators
+ */
+function countSpecificClaims(content: string): number {
+  const text = stripHtml(content);
+  let count = 0;
+
+  // Count unique normalized document IDs rather than every occurrence to
+  // prevent repeated mentions of the same citation from inflating the score.
+  // Cap at 5, consistent with other claim signals below.
+  const uniqueDocumentReferences = new Set<string>();
+  DOCUMENT_ID_PATTERNS.forEach((pattern: RegExp) => {
+    const flags = pattern.global ? pattern.flags : `${pattern.flags}g`;
+    const globalPattern = new RegExp(pattern.source, flags);
+
+    for (const match of text.matchAll(globalPattern)) {
+      const documentReference = match[0]?.trim();
+      if (documentReference) {
+        uniqueDocumentReferences.add(documentReference.replace(/\s+/g, ' ').toLowerCase());
+      }
+    }
+  });
+  count += Math.min(uniqueDocumentReferences.size, 5);
+
+  // Percentage figures (e.g. "12%", "3.5%")
+  // Cap at 5 to prevent a heavily statistics-driven article from
+  // single-handedly satisfying the minSpecificClaims threshold via
+  // repetitive figures alone (e.g. budget tables with 20+ percentages).
+  const percentMatches = text.match(/\b\d+(?:\.\d+)?%/g);
+  count += percentMatches ? Math.min(percentMatches.length, 5) : 0;
+
+  // Named MPs or ministers (Swedish name pattern: "Firstname Lastname (Party)")
+  // Capped at 5 for the same reason as percentage matches: prevents a roster
+  // of names without substantive claims from satisfying the threshold.
+  const namedActors = text.match(/[A-ZÅÄÖ][a-zåäö]+\s+[A-ZÅÄÖ][a-zåäö]+\s*\([A-ZÅÄÖ]{1,3}\)/g);
+  count += namedActors ? Math.min(namedActors.length, 5) : 0;
+
+  return count;
 }
 
 /**
@@ -337,6 +508,10 @@ export async function enhanceArticleQuality(
     hasLanguageSwitcher: hasLanguageSwitcher(content),
     hasArticleTopNav: hasArticleTopNav(content),
     hasBackToNews: hasBackToNews(content),
+    hasWhatHappensNext: hasWhatHappensNext(content),
+    hasWinnersLosers: hasWinnersLosers(content),
+    specificClaimsCount: countSpecificClaims(content),
+    hasSubstantialLede: hasSubstantialLede(content),
   };
 
   // Calculate overall score
@@ -369,6 +544,15 @@ export async function enhanceArticleQuality(
     issues.push('Missing required historical context (at least one historical comparison required)');
   }
 
+  // Content depth validation — minimum specific claims
+  const minClaims = options.minSpecificClaims ?? 0;
+  if (minClaims > 0 && (metrics.specificClaimsCount ?? 0) < minClaims) {
+    issues.push(
+      `Only ${metrics.specificClaimsCount ?? 0} specific verifiable claims detected (need ${minClaims}). ` +
+      'Add document references, percentage figures, or named actors with party attributions.',
+    );
+  }
+
   // Separate warnings (recommendations) from blocking failures
   const warnings: string[] = [];
 
@@ -387,6 +571,18 @@ export async function enhanceArticleQuality(
 
   if (options.recommendSCBContext && !metrics.hasSCBContext) {
     warnings.push('Recommended: Add Swedish statistical context (SCB official statistics)');
+  }
+
+  if (options.recommendWhatHappensNext && !metrics.hasWhatHappensNext) {
+    warnings.push('Recommended: Add "What Happens Next" timeline section with legislative pipeline dates');
+  }
+
+  if (options.recommendWinnersLosers && !metrics.hasWinnersLosers) {
+    warnings.push('Recommended: Add "Winners & Losers" section naming political actors with evidence');
+  }
+
+  if (!metrics.hasSubstantialLede) {
+    warnings.push('Lede paragraph appears thin (< 30 words) — consider expanding with the most newsworthy fact');
   }
 
   if (metrics.hasStatisticalClaims) {
@@ -517,11 +713,16 @@ export {
   countPartyPerspectives,
   countCrossReferences,
   hasWhyThisMatters,
+  hasWhatHappensNext,
+  hasWinnersLosers,
   hasHistoricalContext,
   hasInternationalComparison,
   hasLanguageSwitcher,
   hasArticleTopNav,
   hasBackToNews,
+  countSpecificClaims,
+  hasSubstantialLede,
+  countSectionWords,
   calculateQualityScore,
   DEFAULT_THRESHOLDS,
 };

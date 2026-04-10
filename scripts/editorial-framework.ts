@@ -47,7 +47,10 @@ export type EditorialSection =
   | 'policy-mindmap'
   | 'deep-analysis'
   | 'watch-points'
-  | 'sources-methodology';
+  | 'sources-methodology'
+  | 'what-happens-next'
+  | 'winners-losers'
+  | 'faq';
 
 /**
  * Profile describing the editorial requirements for a single article type.
@@ -169,6 +172,9 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'policy-mindmap',
       'deep-analysis',
       'watch-points',
+      'what-happens-next',
+      'winners-losers',
+      'faq',
       'sources-methodology',
     ],
     qualityThresholds: {
@@ -196,6 +202,9 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'policy-mindmap',
       'deep-analysis',
       'watch-points',
+      'what-happens-next',
+      'winners-losers',
+      'faq',
       'sources-methodology',
     ],
     qualityThresholds: {
@@ -249,6 +258,9 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'policy-dashboard',
       'deep-analysis',
       'watch-points',
+      'what-happens-next',
+      'winners-losers',
+      'faq',
       'sources-methodology',
     ],
     qualityThresholds: {
@@ -275,6 +287,9 @@ export const ARTICLE_TYPE_PROFILES: Readonly<Record<EditorialProfileKey, Article
       'policy-dashboard',
       'deep-analysis',
       'watch-points',
+      'what-happens-next',
+      'winners-losers',
+      'faq',
       'sources-methodology',
     ],
     qualityThresholds: {

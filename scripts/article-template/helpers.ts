@@ -10,12 +10,18 @@
 
 import type { Language } from '../types/language.js';
 import type { EventGridItem, WatchPoint } from '../types/article.js';
+import type { WhatHappensNextItem, WinnersLosersEntry, FAQItem } from '../types/editorial.js';
 import type { BreadcrumbLabels, FooterLabelSet } from '../types/content.js';
 import {
   BREADCRUMB_TRANSLATIONS,
   FOOTER_LABELS,
   EVENT_CALENDAR_TITLES,
   WATCH_SECTION_TITLES,
+  WHAT_HAPPENS_NEXT_TITLES,
+  WINNERS_LOSERS_TITLES,
+  FAQ_SECTION_TITLES,
+  SIGNIFICANCE_LABELS,
+  OUTCOME_LABELS,
   LOCALE_MAP,
   LANG_DISPLAY,
   SITE_FOOTER_LABELS,
@@ -188,6 +194,137 @@ export function generateArticleLanguageSwitcher(baseSlug: string, currentLang: L
   }).join('\n');
   const ariaLabel: string = LANG_SWITCHER_ARIA_LABELS[currentLang as Language] || LANG_SWITCHER_ARIA_LABELS.en;
   return `  <nav class="language-switcher" role="navigation" aria-label="${ariaLabel}">\n${links}\n  </nav>`;
+}
+
+/**
+ * Generate the "What Happens Next" timeline section.
+ *
+ * Renders an ordered list of upcoming legislative pipeline dates with
+ * significance indicators (high / medium / low).  Items with no `date` are
+ * omitted.  The section has class `what-happens-next` so the quality enhancer
+ * and Schema.org generator can locate it.
+ *
+ * @param items   - Ordered list of upcoming events
+ * @param lang    - Article language (determines heading and label text)
+ * @returns HTML `<section>` element string
+ */
+export function generateWhatHappensNextSection(
+  items: ReadonlyArray<WhatHappensNextItem>,
+  lang: Language = 'en',
+): string {
+  if (items.length === 0) return '';
+  const title: string = WHAT_HAPPENS_NEXT_TITLES[lang] || WHAT_HAPPENS_NEXT_TITLES.en;
+  const sigLabels = SIGNIFICANCE_LABELS[lang] || SIGNIFICANCE_LABELS.en;
+
+  const VALID_SIGNIFICANCE = new Set(['high', 'medium', 'low']);
+
+  const rows = items
+    .filter(item => item.date && item.event)
+    .map(item => {
+      const significance = VALID_SIGNIFICANCE.has(item.significance) ? item.significance : 'medium';
+      const sigClass = `significance-${significance}`;
+      const sigLabel = sigLabels[significance];
+      return `      <li class="timeline-item ${sigClass}">
+        <time class="timeline-date" datetime="${escapeHtml(item.date)}">${escapeHtml(item.date)}</time>
+        <span class="timeline-event">${escapeHtml(item.event)}</span>
+        <span class="timeline-significance" aria-label="${escapeHtml(sigLabel)}">${escapeHtml(sigLabel)}</span>
+      </li>`;
+    })
+    .join('\n');
+
+  if (!rows) return '';
+
+  return `
+  <section class="what-happens-next" aria-label="${escapeHtml(title)}">
+    <h2>${escapeHtml(title)}</h2>
+    <ol class="timeline-list">
+${rows}
+    </ol>
+  </section>`;
+}
+
+/**
+ * Generate the "Winners & Losers" political analysis section.
+ *
+ * Each entry names an actor, classifies their outcome (wins / loses / mixed),
+ * and provides a one-sentence evidence string.  The section has class
+ * `winners-losers` so downstream validators can detect it.
+ *
+ * @param entries - Array of actor outcome entries
+ * @param lang    - Article language
+ * @returns HTML `<section>` element string
+ */
+export function generateWinnersLosersSection(
+  entries: ReadonlyArray<WinnersLosersEntry>,
+  lang: Language = 'en',
+): string {
+  if (entries.length === 0) return '';
+  const title: string = WINNERS_LOSERS_TITLES[lang] || WINNERS_LOSERS_TITLES.en;
+  const outcomeLabels = OUTCOME_LABELS[lang] || OUTCOME_LABELS.en;
+
+  const VALID_OUTCOMES = new Set(['wins', 'loses', 'mixed']);
+
+  const rows = entries
+    .filter(e => e.actor && e.evidence)
+    .map(e => {
+      const outcome = VALID_OUTCOMES.has(e.outcome) ? e.outcome : 'mixed';
+      const outcomeClass = `outcome-${outcome}`;
+      const outcomeLabel = outcomeLabels[outcome];
+      return `      <li class="wl-entry ${outcomeClass}">
+        <span class="wl-actor">${escapeHtml(e.actor)}</span>
+        <span class="wl-outcome">${escapeHtml(outcomeLabel)}</span>
+        <span class="wl-evidence">${escapeHtml(e.evidence)}</span>
+      </li>`;
+    })
+    .join('\n');
+
+  if (!rows) return '';
+
+  return `
+  <section class="winners-losers" aria-label="${escapeHtml(title)}">
+    <h2>${escapeHtml(title)}</h2>
+    <ul class="wl-list">
+${rows}
+    </ul>
+  </section>`;
+}
+
+/**
+ * Generate the FAQ section HTML.
+ *
+ * Renders a `<section class="faq-section">` with question/answer pairs in a
+ * definition-list structure.  This HTML is used for in-page display; the
+ * matching Schema.org FAQPage structured data is emitted separately in
+ * `generateArticleHTML`.
+ *
+ * @param items - Array of FAQ items
+ * @param lang  - Article language
+ * @returns HTML `<section>` element string (empty string if no items)
+ */
+export function generateFaqSection(
+  items: ReadonlyArray<FAQItem>,
+  lang: Language = 'en',
+): string {
+  if (items.length === 0) return '';
+  const title: string = FAQ_SECTION_TITLES[lang] || FAQ_SECTION_TITLES.en;
+
+  const pairs = items
+    .filter(item => item.question && item.answer)
+    .map(item => `    <div class="faq-item">
+      <dt class="faq-question">${escapeHtml(item.question)}</dt>
+      <dd class="faq-answer">${escapeHtml(item.answer)}</dd>
+    </div>`)
+    .join('\n');
+
+  if (!pairs) return '';
+
+  return `
+  <section class="faq-section" aria-label="${escapeHtml(title)}">
+    <h2>${escapeHtml(title)}</h2>
+    <dl class="faq-list">
+${pairs}
+    </dl>
+  </section>`;
 }
 
 /**

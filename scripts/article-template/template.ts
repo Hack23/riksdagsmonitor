@@ -25,6 +25,7 @@ import {
   formatDate,
   generateEventCalendar,
   generateWatchSection,
+  generateFaqSection,
   generateArticleLanguageSwitcher,
   generateSiteFooter,
   hreflangCode,
@@ -159,6 +160,7 @@ export function generateArticleHTML(data: ArticleData): string {
     riskLevel,
     confidenceLabel,
     analysisReferencesHtml = '',
+    faqItems = [],
   } = data;
 
   // Decode any HTML entities to UTF-8 to prevent double-escaping.
@@ -342,7 +344,7 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
     },
     "speakable": {
       "@type": "SpeakableSpecification",
-      "cssSelector": [".article-header h1", ".lede"]
+      "cssSelector": [".article-header h1", ".lede", ".key-takeaways", ".what-happens-next", ".winners-losers", ".faq-section"]
     }${tags.length > 0 ? `,
     "mentions": [${tags.map(tag => `
       {
@@ -417,6 +419,20 @@ ${ALL_LANG_CODES.map(l => `  <link rel="alternate" hreflang="${hreflangCode(l)}"
     }
   }
   </script>
+  ${faqItems.length > 0 ? `
+  <!-- FAQPage structured data for rich SERP snippets and voice assistants -->
+  <script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  }).replace(/</g, '\\u003c')}</script>` : ''}
   
 </head>
 <body>
@@ -472,6 +488,8 @@ ${events.length > 0 ? generateEventCalendar(events as ReadonlyArray<EventGridIte
 ${fixedContent}
 
 ${watchPoints.length > 0 ? generateWatchSection(watchPoints as ReadonlyArray<WatchPoint>, lang) : ''}
+
+${faqItems.length > 0 ? generateFaqSection(faqItems, lang) : ''}
 
 ${(sections as TemplateSection[]).length > 0 ? (sections as TemplateSection[]).map(s => `<div id="${escapeHtml(s.id)}" class="${escapeHtml(s.className ?? 'article-section')}">${s.html}</div>`).join('\n') : ''}
   </div>
