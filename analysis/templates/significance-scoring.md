@@ -296,11 +296,11 @@ These examples provide anchor points for consistent scoring across workflows:
 
 ## 🗳️ Election 2026 Relevance Score
 
-> *Adjust significance scoring context based on proximity to September 2026 election.*
+> *Adjust significance scoring context based on proximity to the September 2026 election, using the same time-banded scale for every assessment.*
 
 | Dimension | Score Adjustment | Rationale |
 |-----------|:---------------:|-----------|
-| **Electoral proximity bonus** | `[REQUIRED: +0.0 to +2.0 — distance from election matters; <6 months from Sept 2026 = +1.0 max bonus]` | `[Evidence for time-sensitivity]` |
+| **Electoral proximity bonus** | `[REQUIRED: +0.0 to +2.0 — scale by time to Sept 2026 election: >12 months = +0.0 to +0.5; 6–12 months = +0.5 to +1.0; <6 months = +1.0 to +2.0]` | `[Evidence for time-sensitivity]` |
 | **Coalition stability multiplier** | `[REQUIRED: ×1.0 to ×1.5 — documents that directly affect coalition stability before elections]` | `[Evidence]` |
 | **Voter salience factor** | `[REQUIRED: +0.0 to +1.0 — issues with high voter salience score higher in pre-election period]` | `[Evidence]` |
 
@@ -360,11 +360,12 @@ These examples provide anchor points for consistent scoring across workflows:
 
 **Document Control:**  
 - **Template Path:** `/analysis/templates/significance-scoring.md`  
-- **Version:** 2.2  
-- **Effective Date:** 2026-04-06 (UTC)  
+- **Version:** 2.3  
+- **Effective Date:** 2026-06-01 (UTC)  
+- **Key Changes v2.3:** Added Election 2026 Relevance Score section, time-banded electoral proximity bonus (+0.0 to +2.0), coalition stability multiplier, voter salience factor  
 - **Scorer Implementation:** `scripts/analysis-framework/significance-scorer.ts`  
 - **Advanced Sections:** Relative Scoring, Same-Type Comparison  
 - **ISMS Alignment:** ISO 27001:2022 A.5.7 (Threat Intelligence), NIST CSF 2.0 ID.RA (Risk Assessment)  
 - **Classification:** Public  
 - **Owner:** Hack23 AB (Org.nr 5595347807)  
-- **Next Review:** 2026-06-30
+- **Next Review:** 2026-09-01

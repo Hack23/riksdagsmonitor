@@ -102,7 +102,7 @@ Risk scores carry a confidence label that reflects the quality and completeness 
 
 ### Election 2026 Risk Proximity Factor
 
-In the 12 months before September 2026, apply a **proximity factor** to Electoral risk scores:
+Apply a **proximity factor** to Electoral risk scores based on distance to the September 2026 election:
 
 | Months to Election | Proximity Factor | Applied Risk Score |
 |:-----------------:|:---------------:|:-----------------:|

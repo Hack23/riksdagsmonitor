@@ -187,7 +187,7 @@ Every SWOT analysis produced within 18 months of September 2026 MUST include:
 
 ### Electoral SWOT Confidence Standards
 
-Electoral SWOT entries require **MEDIUM confidence minimum** (3+ sources). Speculation about electoral consequences without supporting polling or documented party positions must be labeled **VERY LOW** and isolated from substantive findings.
+Electoral SWOT entries require **MEDIUM confidence minimum** (3+ sources). **VERY LOW** confidence content is **not** permitted as an active Electoral SWOT entry and must **not** be used to satisfy the minimum Strength/Weakness/Opportunity/Threat requirements above. Speculation about electoral consequences without supporting polling or documented party positions may only appear in a clearly separate **Speculative / Monitoring Notes** subsection, labeled **VERY LOW**, and isolated from substantive findings.
 
 ---
 
