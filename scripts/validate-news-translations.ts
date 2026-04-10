@@ -92,6 +92,14 @@ interface ContentLeakageRecord {
   readonly samples: string[];
 }
 
+/** Record for files containing unresolved AI_MUST_REPLACE markers in HTML comments */
+interface AIMarkerFileRecord {
+  readonly filename: string;
+  readonly lang: string;
+  readonly markerCount: number;
+  readonly samples: string[];
+}
+
 // ---------------------------------------------------------------------------
 // English / Swedish body-content leakage detection
 // ---------------------------------------------------------------------------
@@ -425,6 +433,46 @@ function checkFileForUntranslatedContent(filepath: string): CheckResult {
 }
 
 /**
+ * Regex to detect unresolved AI_MUST_REPLACE markers in HTML comments.
+ * These markers are embedded by content generators and MUST be replaced
+ * by AI agents before publication. They should never appear in translated articles.
+ *
+ * Pattern matches: <!-- AI_MUST_REPLACE: ... -->
+ */
+const AI_MUST_REPLACE_COMMENT_RE = /<!--[\s\S]*?AI_MUST_REPLACE[\s\S]*?-->/g;
+
+/**
+ * Check if a file contains unresolved AI_MUST_REPLACE markers in HTML comments.
+ * These are quality failures that must be fixed before publication.
+ */
+function checkFileForAIMustReplaceMarkers(filepath: string): AIMarkerFileRecord | null {
+  try {
+    const content = readFileSync(filepath, 'utf-8');
+    AI_MUST_REPLACE_COMMENT_RE.lastIndex = 0;
+    const allMatches = content.match(AI_MUST_REPLACE_COMMENT_RE);
+    if (!allMatches || allMatches.length === 0) return null;
+
+    const filename = basename(filepath);
+    const lang = getLanguageCode(filename) ?? '';
+
+    // Collect up to 3 sample marker names for reporting
+    const samples: string[] = [];
+    const nameRe = /AI_MUST_REPLACE:\s*([\w_]+)/g;
+    let m: RegExpExecArray | null;
+    while ((m = nameRe.exec(content)) !== null && samples.length < 3) {
+      const name = m[1] ?? '';
+      if (name && !samples.includes(name)) {
+        samples.push(name);
+      }
+    }
+
+    return { filename, lang, markerCount: allMatches.length, samples };
+  } catch {
+    return null;
+  }
+}
+
+/**
  * Get all HTML files in a directory (recursive).
  */
 function getAllHtmlFiles(dir: string): string[] {
@@ -482,8 +530,10 @@ function validateNewsTranslations(directory: string = 'news'): number {
   let totalErrors = 0;
   let totalBCP47Errors = 0;
   let totalContentLeakage = 0;
+  let totalAIMarkers = 0;
   const failedFiles: FailedFileRecord[] = [];
   const leakageFiles: ContentLeakageRecord[] = [];
+  const aiMarkerFiles: AIMarkerFileRecord[] = [];
 
   for (const filepath of nonSwedishFiles) {
     const filename = basename(filepath);
@@ -498,6 +548,18 @@ function validateNewsTranslations(directory: string = 'news'): number {
       for (const err of bcp47Errors) {
         console.log(`  ${colors.yellow}${err.field}: expected "${err.expected}", got "${err.actual}"${colors.reset}`);
       }
+    }
+
+    // AI_MUST_REPLACE marker check — unresolved placeholders in HTML comments
+    // are a hard failure: they indicate the AI did not replace template content.
+    const aiMarkerRecord = checkFileForAIMustReplaceMarkers(filepath);
+    if (aiMarkerRecord) {
+      aiMarkerFiles.push(aiMarkerRecord);
+      totalAIMarkers += aiMarkerRecord.markerCount;
+      const sampleStr = aiMarkerRecord.samples.length > 0
+        ? ` [${aiMarkerRecord.samples.join(', ')}]`
+        : '';
+      console.log(`${colors.red}✗ AI_MUST_REPLACE: ${filename} — ${aiMarkerRecord.markerCount} unresolved marker(s)${sampleStr}${colors.reset}`);
     }
 
     // Body content leakage check (EN/SV text in non-EN/SV articles)
@@ -585,11 +647,15 @@ function validateNewsTranslations(directory: string = 'news'): number {
     console.log(`${colors.red}✗ BCP-47 inconsistencies: ${totalBCP47Errors}${colors.reset}`);
   }
 
+  if (totalAIMarkers > 0) {
+    console.log(`${colors.red}✗ Unresolved AI_MUST_REPLACE markers: ${totalAIMarkers} in ${aiMarkerFiles.length} article(s)${colors.reset}`);
+  }
+
   if (totalContentLeakage > 0) {
     console.log(`${colors.yellow}⚠ Articles with EN/SV body content leakage: ${totalContentLeakage}${colors.reset}`);
   }
 
-  const hasHardFailures = totalFailed > 0 || totalBCP47Errors > 0;
+  const hasHardFailures = totalFailed > 0 || totalBCP47Errors > 0 || aiMarkerFiles.length > 0;
   // Content leakage is a warning that will become a hard failure when translation
   // workflows are updated. For now, report but don't block.
 
@@ -610,6 +676,21 @@ function validateNewsTranslations(directory: string = 'news'): number {
       console.log(`3. Translate the Swedish text to the article's target language`);
       console.log(`4. Replace the span with plain translated text`);
       console.log(`5. Consult TRANSLATION_GUIDE.md for terminology\n`);
+    }
+
+    if (aiMarkerFiles.length > 0) {
+      console.log(`\n${colors.yellow}AI_MUST_REPLACE Action Required:${colors.reset}`);
+      console.log(`The following articles contain unresolved AI_MUST_REPLACE placeholders in HTML comments.`);
+      console.log(`The AI translation agent MUST replace these with genuine content in the target language:\n`);
+      aiMarkerFiles.forEach(({ filename, markerCount, samples }) => {
+        const sampleStr = samples.length > 0 ? ` [${samples.join(', ')}]` : '';
+        console.log(`  ${colors.red}✗${colors.reset} ${filename} - ${markerCount} marker(s)${sampleStr}`);
+      });
+      console.log(`\n${colors.yellow}Fix:${colors.reset}`);
+      console.log(`1. Open the source EN article and the translated article`);
+      console.log(`2. Find every <!-- AI_MUST_REPLACE: ... --> comment`);
+      console.log(`3. Replace the entire comment with genuine analysis in the target language`);
+      console.log(`4. Re-run the translation workflow with updated prompts\n`);
     }
 
     if (totalBCP47Errors > 0) {
