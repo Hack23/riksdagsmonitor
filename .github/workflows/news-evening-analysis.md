@@ -300,7 +300,7 @@ fi
 
 ### MCP Health Gate
 
-Call `get_sync_status({})` first; retry up to 3× (30s wait). After 3 failures → `safeoutputs___noop({"message": "MCP unavailable"})`. All content MUST come from live MCP data.
+STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm up MCP and check stale data. Retry up to 3× (30s wait). After 3 failures → `safeoutputs___noop({"message": "MCP unavailable"})`. All content MUST come from live MCP data.
 
 ### DATA FRESHNESS CHECK
 
@@ -329,8 +329,8 @@ const recent = results.filter(item =>
 );
 ```
 
-**Tools with native date params:** `get_calendar_events` (`from`/`tom`), `search_regering` + `analyze_g0v_by_department` (`dateFrom`/`dateTo`).
-**Tools requiring post-query filter:** `search_voteringar` (`datum`), `get_betankanden` (`publicerad`), `get_motioner` (`inlämnad`), `get_propositioner` (`publicerad`), `search_anforanden` (`datum`).
+**Tools with native date params:** `get_calendar_events` supports `from`/`tom`, `search_regering` + `analyze_g0v_by_department` supports `dateFrom`/`dateTo`.
+**Tools requiring post-query filter:** `search_voteringar` (filter by `datum`), `get_betankanden` (filter by `publicerad`), `get_motioner` (filter by `inlämnad`), `get_propositioner` (filter by `publicerad`), `search_anforanden` (filter by `datum`).
 
 ### ⚠️ Calendar API Fallback
 
@@ -338,6 +338,9 @@ const recent = results.filter(item =>
 
 ### Cross-Referencing Strategy
 
+Cross-reference related data sources to produce richer analysis. Combine committee reports, voting records, propositions, and motions for comprehensive coverage.
+
+**Example 1:** Link committee reports with voting records to show how parties voted on specific policy areas:
 ```javascript
 // Committee Report Deep Dive
 const fromDateIso = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
@@ -346,7 +349,10 @@ const reports = (await get_betankanden({ rm: currentRm }))
 for (const report of reports) {
   const votes = await search_voteringar({ bet: report.beteckning });
 }
+```
 
+**Example 2:** Cross-reference government propositions with press releases and party speeches:
+```javascript
 // Government Activity Analysis
 const props = (await get_propositioner({ rm: currentRm, limit: 20 }))
   .filter(p => (p.publicerad || '').slice(0, 10) >= fromDateIso);
