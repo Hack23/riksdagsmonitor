@@ -292,7 +292,7 @@ After creating the content PR, dispatch translations: `safeoutputs___dispatch_wo
 
 **Primary tool:** `get_calendar_events` — fetches upcoming 7-day calendar (**⚠️ Known issue: may return HTML instead of JSON; if this happens, treat it as a calendar retrieval failure and state that explicitly in the analysis. You may query `search_dokument` with a recent lookback window only as a proxy signal of parliamentary activity (e.g., recently published committee reports/propositions), but must never treat "no documents found" as "no upcoming events."**)
 **Cross-reference:** `search_dokument`, `get_fragor`, `get_interpellationer`
-**Statistical enrichment:** SCB/World Bank — for scheduled economic debates, pre-fetch relevant indicators. Use committee-mapped tables from `scripts/scb-context.ts` based on which committees have scheduled meetings (e.g., FiU agenda→fiscal TAB1291 + World Bank GDP/inflation indicators).
+**Statistical enrichment:** SCB/World Bank — for scheduled economic debates, pre-fetch relevant indicators. Use committee-mapped tables from `scripts/scb-context.ts` based on which committees have scheduled meetings (e.g., FiU agenda→fiscal TAB1291 + World Bank GDP/inflation indicators). 28 World Bank indicators available — see `analysis/worldbank/indicators-inventory.json` and `SHARED_PROMPT_PATTERNS.md` §"WORLD BANK ECONOMIC CONTEXT INTEGRATION" for chart templates. MUST generate ≥1 economic chart when week includes economic policy events.
 
 ```javascript
 get_sync_status({})

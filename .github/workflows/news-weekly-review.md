@@ -297,7 +297,7 @@ After creating the content PR, dispatch translations: `safeoutputs___dispatch_wo
 
 **Primary tool:** `search_dokument` — searches documents from past 7 days
 **Cross-reference:** `search_voteringar`, `get_betankanden`, `search_anforanden`
-**Statistical enrichment:** SCB MCP + World Bank — enrich weekly context with relevant economic indicators. Auto-select SCB tables and World Bank indicators based on which committees were active during the week (see `scripts/scb-context.ts` and `scripts/world-bank-context.ts` for committee mappings).
+**Statistical enrichment:** SCB MCP + World Bank — enrich weekly context with relevant economic indicators. Auto-select SCB tables and World Bank indicators (28 total) based on which committees were active during the week (see `scripts/scb-context.ts` and `scripts/world-bank-context.ts` for committee mappings). See `analysis/worldbank/indicators-inventory.json` for full inventory and `SHARED_PROMPT_PATTERNS.md` §"WORLD BANK ECONOMIC CONTEXT INTEGRATION" for Chart.js chart templates (`economic-comparison`, `economic-trend`, `nordic-radar`). MUST generate ≥2 economic charts: one Nordic comparison, one trend line.
 **Fact-checking:** Review speeches from `search_anforanden` for statistical claims. Use `scripts/statistical-claims-detector.ts` to detect and cross-reference claims against official SCB/World Bank data. Include a "Faktakoll" section for any detected inaccuracies.
 
 ```javascript

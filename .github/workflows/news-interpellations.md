@@ -365,7 +365,7 @@ After creating the content PR, dispatch translations: `safeoutputs___dispatch_wo
 **Primary tool:** `get_interpellationer` — fetches latest interpellations (formal parliamentary questions demanding minister responses)
 **Cross-reference:** `search_dokument_fulltext`, `search_anforanden`
 **Calendar context:** `get_calendar_events` — check today's scheduled interpellation debate times (**⚠️ may return HTML instead of JSON; if calendar fails, explicitly flag the calendar API error and proceed without debate timing context, relying on `get_interpellationer` and `search_anforanden` for substance and recency**)
-**Statistical enrichment:** SCB MCP — enrich with statistics relevant to interpellation policy areas. World Bank indicators are mapped per committee in `scripts/world-bank-context.ts`.
+**Statistical enrichment:** SCB MCP — enrich with statistics relevant to interpellation policy areas. World Bank indicators (28 total) are mapped per committee in `scripts/world-bank-context.ts`. See `analysis/worldbank/indicators-inventory.json` for full inventory. Key indicators for interpellations: Rule of Law (RL.EST), Voice & Accountability (VA.EST), plus topic-matched indicators. See `SHARED_PROMPT_PATTERNS.md` §"WORLD BANK ECONOMIC CONTEXT INTEGRATION" for Chart.js chart templates.
 
 ```javascript
 get_sync_status({})
