@@ -88,7 +88,7 @@
 | Nordic defense comparison | Bar chart | SE, DK, NO, FI military % |
 | Defense budget proposition | Combined: trend + comparison | 5-year trend + Nordic |
 
-**Example trend with target annotation**:
+**Example trend with target annotation** (uses `chartjs-plugin-annotation@3.1.0`, already included in project dependencies):
 ```json
 {
   "chartType": "economic-trend",
