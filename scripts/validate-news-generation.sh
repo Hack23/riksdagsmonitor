@@ -122,8 +122,6 @@ echo "📋 Check 3b: Analysis references section in news articles"
 
 MISSING_REFS=0
 CHECKED_ARTICLES=0
-# Check today's articles (most relevant for agentic workflow validation)
-TODAY_DATE="$(date +%Y-%m-%d)"
 for file in news/*-{en,sv}.html; do
   if [ -f "$file" ]; then
     # Only check actual article files (not index files)
