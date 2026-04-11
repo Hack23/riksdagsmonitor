@@ -711,8 +711,11 @@ done
 
 ### Step 4: Translate, Validate & Verify Analysis Quality
 
-Run validation and HTMLHint before creating PR:
+Run analysis references fix, validation, and HTMLHint before creating PR:
 ```bash
+# 🔴 MANDATORY: Inject analysis references into any article missing them
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --type propositions
+
 bash scripts/validate-news-generation.sh
 VALIDATION_EXIT=$?
 if [ "$VALIDATION_EXIT" -ne 0 ]; then

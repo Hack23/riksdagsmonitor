@@ -1770,12 +1770,37 @@ Read these methodology documents to guide your analysis:
 
 > 🔴 **NON-NEGOTIABLE — TRANSPARENCY REQUIREMENT**: Every news article MUST contain a "📊 Analysis & Sources" section linking to ALL analysis files created for that article. This is the **#1 transparency and integrity requirement** — readers MUST be able to verify every claim by accessing the underlying analysis. Articles WITHOUT analysis references are **REJECTED**.
 
-> ⚠️ **REALITY CHECK**: The TypeScript generator (`generateArticleHTML`) embeds analysis references automatically via `analysisReferencesHtml`. **HOWEVER**, when the AI agent rewrites article HTML or generates articles manually (evening-analysis, realtime-monitor), the auto-generated section is often lost. **AI agents MUST ALWAYS verify** the section exists after any HTML modification, and add it manually if missing.
+> ⚠️ **DETERMINISTIC FIX**: The `scripts/fix-analysis-references.ts` script **deterministically injects** analysis references into any article missing them. Since analysis files and articles are created in the **same workflow run**, the script scans `analysis/daily/{date}/{subfolder}/` to discover exactly which files exist and builds properly localized links. **Every content workflow MUST run this script before validation.**
+
+> ```bash
+> # 🔴 MANDATORY — run BEFORE validate-news-generation.sh in EVERY content workflow
+> npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE"
+> ```
 
 ````markdown
-### 🔴 MANDATORY: Analysis References Verification (EVERY article, EVERY workflow)
+### 🔴 MANDATORY: Deterministic Analysis References Injection
 
-> **After generating or modifying ANY article HTML, ALWAYS run this check:**
+> **The `fix-analysis-references.ts` script is the primary guarantee.** It runs as a mandatory step in every content workflow, right before validation. It:
+> 1. Scans ALL article HTML files for the date
+> 2. Checks if each has `class="analysis-references"`
+> 3. If missing, generates the section by scanning `analysis/daily/{date}/{subfolder}/` for actual `.md` files
+> 4. Injects the localized HTML section before the article footer
+> 5. Is idempotent — safe to run multiple times
+
+```bash
+# Run in every content workflow, right before validate-news-generation.sh:
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE"
+
+# Or target a specific article type:
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --type committee-reports
+
+# Dry run to preview changes:
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --dry-run
+```
+
+### Manual Fallback: Verification Check
+
+> **If the script is unavailable**, verify manually:
 
 ```bash
 # MANDATORY — run after article generation, BEFORE committing

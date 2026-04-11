@@ -1015,6 +1015,10 @@ When `analysis_depth` is `deep` or `comprehensive`:
 3. **Quality Gate**: word count ≥ 400, no identical why-it-matters, all Swedish text translated
 
 ### Phase 3 — Final Quality Gate Before PR
+```bash
+# 🔴 MANDATORY: Inject analysis references into any article missing them
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE"
+```
 Run `bash scripts/validate-news-generation.sh` before committing.
 
 

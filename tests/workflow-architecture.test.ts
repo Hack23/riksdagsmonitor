@@ -897,6 +897,23 @@ describe('Analysis Depth Input', () => {
     }
   });
 
+  it('all content workflows should run fix-analysis-references.ts before validation', () => {
+    const allContentWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md',
+      'news-article-generator.md',
+    ];
+    for (const workflowFile of allContentWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('fix-analysis-references.ts'),
+        `Workflow ${workflowFile} must run fix-analysis-references.ts before validation`
+      ).toBe(true);
+    }
+  });
+
   it('translation workflow should preserve analysis-references section', () => {
     const filepath = path.join(WORKFLOWS_DIR, 'news-translate.md');
     expect(fs.existsSync(filepath)).toBe(true);

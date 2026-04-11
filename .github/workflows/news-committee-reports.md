@@ -819,8 +819,12 @@ grep -o 'Why It Matters[^<]*' "news/$(date +%Y-%m-%d)-committee-reports-en.html"
 **Note**: News index files, metadata, and sitemap are generated automatically at build time by the `prebuild` script. Do NOT run generation scripts or commit their output — only commit the article HTML files. Run `npm run prebuild` (or `npm run build`) locally if you need to preview the generated indexes, metadata, or sitemap.
 
 ### Step 6: Validate & Create PR
-Run validation and HTMLHint before creating PR:
+Run analysis references fix, validation, and HTMLHint before creating PR:
 ```bash
+# 🔴 MANDATORY: Inject analysis references into any article missing them
+# This is deterministic — scans analysis/ dir for files created in this workflow run
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --type committee-reports
+
 bash scripts/validate-news-generation.sh
 VALIDATION_EXIT=$?
 if [ "$VALIDATION_EXIT" -ne 0 ]; then

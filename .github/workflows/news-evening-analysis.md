@@ -968,8 +968,11 @@ done
 
 **Translation rules:** Translate all Swedish text. Keep party names (S, M, SD, V, MP, C, L, KD) and personal names untranslated. Zero language mixing.
 
-Then run validation:
+Then run analysis references fix and validation:
 ```bash
+# 🔴 MANDATORY: Inject analysis references into any article missing them
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --type evening-analysis
+
 bash scripts/validate-news-generation.sh
 VALIDATION_EXIT=$?
 if [ "$VALIDATION_EXIT" -ne 0 ]; then
