@@ -309,7 +309,7 @@ function main(): void {
     const alreadyExists = hasAnalysisReferences(html);
 
     // --rewrite mode: detect and replace sections with broken links
-    if (alreadyExists && (rewrite || upgrade)) {
+    if (alreadyExists && rewrite) {
       const broken = hasBrokenAnalysisLinks(html);
       if (broken) {
         brokenDetected++;
