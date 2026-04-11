@@ -1051,7 +1051,7 @@ When `analysis_depth` is `deep` or `comprehensive`:
 ### Phase 3 — Final Quality Gate Before PR
 ```bash
 # 🔴 MANDATORY: Inject analysis references into any article missing them
-npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE"
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite
 ```
 Run `bash scripts/validate-news-generation.sh` before committing.
 

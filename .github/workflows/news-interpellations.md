@@ -790,7 +790,7 @@ done
 Run analysis references fix, validation, and HTMLHint before creating PR:
 ```bash
 # 🔴 MANDATORY: Inject analysis references into any article missing them
-npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --type interpellations
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite --type interpellations
 
 bash scripts/validate-news-generation.sh
 VALIDATION_EXIT=$?

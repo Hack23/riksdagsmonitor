@@ -131,6 +131,77 @@ function hasAnalysisReferences(html: string): boolean {
 }
 
 /**
+ * Helper: check if a path (resolved against ROOT) is an existing file.
+ */
+function isFileAtRoot(relativePath: string): boolean {
+  try {
+    return fs.statSync(path.resolve(ROOT, relativePath)).isFile();
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Helper: check if a path (resolved against ROOT) is an existing directory.
+ */
+function isDirectoryAtRoot(relativePath: string): boolean {
+  try {
+    return fs.statSync(path.resolve(ROOT, relativePath)).isDirectory();
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Check if an existing analysis-references section has broken links.
+ * Extracts analysis file paths from href attributes and verifies they exist
+ * on the local filesystem (resolved against the repository ROOT).
+ * Uses statSync().isFile() for blob links and statSync().isDirectory() for
+ * tree links to match the -f / -d semantics in validate-news-generation.sh.
+ * Returns true if ANY analysis file link is broken.
+ */
+function hasBrokenAnalysisLinks(html: string): boolean {
+  // Extract all analysis/daily/... paths from href attributes within the analysis-references section
+  const sectionStart = html.indexOf('class="analysis-references"');
+  if (sectionStart === -1) return false;
+  const sectionEnd = html.indexOf('</section>', sectionStart);
+  if (sectionEnd === -1) return false;
+  const section = html.slice(sectionStart, sectionEnd);
+
+  // Match GitHub blob URL paths: href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/..."
+  const githubBlobRegex = /href="https:\/\/github\.com\/Hack23\/riksdagsmonitor\/blob\/main\/(analysis\/daily\/[^"]+\.md)"/g;
+  let match: RegExpExecArray | null;
+  while ((match = githubBlobRegex.exec(section)) !== null) {
+    const filePath = match[1];
+    if (!isFileAtRoot(filePath)) {
+      return true; // At least one blob link target is not a file
+    }
+  }
+
+  // Match GitHub tree URL paths: href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/..."
+  const githubTreeRegex = /href="https:\/\/github\.com\/Hack23\/riksdagsmonitor\/tree\/main\/(analysis\/daily\/[^"]+)"/g;
+  while ((match = githubTreeRegex.exec(section)) !== null) {
+    const dirPath = match[1].replace(/\/$/, ''); // Remove trailing slash
+    if (!isDirectoryAtRoot(dirPath)) {
+      return true; // At least one tree link target is not a directory
+    }
+  }
+
+  // Match relative paths: href="../analysis/daily/..." or href="analysis/daily/..."
+  const relativeBlobRegex = /href="(?:\.\.\/)*?(analysis\/daily\/[^"]+\.md)"/g;
+  while ((match = relativeBlobRegex.exec(section)) !== null) {
+    const filePath = match[1];
+    if (!isFileAtRoot(filePath)) {
+      return true; // At least one relative link target is not a file
+    }
+  }
+
+  // If the section exists but has no analysis links at all, it's likely a placeholder
+  // Don't treat it as broken — it may be a legitimately empty section
+  return false;
+}
+
+/**
  * Check if an aggregation-type article has cross-reference links.
  * Returns true if the article has the "Cross-Referenced Analysis" subsection.
  */
@@ -209,6 +280,7 @@ function main(): void {
   const args = process.argv.slice(2);
   const dryRun = args.includes('--dry-run');
   const upgrade = args.includes('--upgrade');
+  const rewrite = args.includes('--rewrite');
   const dateIdx = args.indexOf('--date');
   const filterDate = dateIdx !== -1 ? args[dateIdx + 1] : undefined;
   const typeIdx = args.indexOf('--type');
@@ -217,6 +289,7 @@ function main(): void {
   console.log('📊 Fix Analysis References — Ensuring all articles link to their analysis files');
   if (dryRun) console.log('  (dry run — no files will be modified)\n');
   if (upgrade) console.log('  (upgrade mode — will replace existing sections for aggregation types missing cross-references)\n');
+  if (rewrite) console.log('  (rewrite mode — will replace existing sections that have broken links to non-existent analysis files)\n');
   if (filterDate) console.log(`  Filtering to date: ${filterDate}`);
   if (filterType) console.log(`  Filtering to type: ${filterType}`);
   console.log('');
@@ -233,6 +306,8 @@ function main(): void {
   let alreadyHas = 0;
   let injected = 0;
   let upgraded = 0;
+  let rewritten = 0;
+  let brokenDetected = 0;
   let noAnalysis = 0;
   let skipped = 0;
 
@@ -252,6 +327,38 @@ function main(): void {
     let html = fs.readFileSync(info.filepath, 'utf-8');
 
     const alreadyExists = hasAnalysisReferences(html);
+
+    // --rewrite mode: detect and replace sections with broken links
+    if (alreadyExists && rewrite) {
+      const broken = hasBrokenAnalysisLinks(html);
+      if (broken) {
+        brokenDetected++;
+        // Remove broken section and regenerate from filesystem scan
+        html = removeAnalysisReferences(html);
+        const referencesHtml = generateAnalysisReferencesHtml({
+          date: info.date,
+          articleType: info.articleType,
+          lang: info.lang,
+        });
+        if (referencesHtml) {
+          const modified = injectAnalysisReferences(html, referencesHtml);
+          if (modified) {
+            if (!dryRun) {
+              fs.writeFileSync(info.filepath, modified, 'utf-8');
+            }
+            rewritten++;
+            console.log(`  🔧 ${dryRun ? 'Would rewrite' : 'Rewrote'} broken analysis references: ${filename}`);
+            continue;
+          }
+        }
+        // If no analysis files exist to link to, remove the broken section entirely
+        if (!dryRun) {
+          fs.writeFileSync(info.filepath, html, 'utf-8');
+        }
+        console.log(`  ⚠️  Removed broken analysis-references (no analysis files found): ${filename}`);
+        continue;
+      }
+    }
 
     // Check if this aggregation-type article needs cross-reference upgrade
     if (alreadyExists && upgrade && AGGREGATION_ARTICLE_TYPES.has(info.articleType) && !hasCrossReferences(html)) {
@@ -311,6 +418,8 @@ function main(): void {
   console.log(`Already have analysis references: ${alreadyHas}`);
   console.log(`Injected analysis references: ${injected}`);
   console.log(`Upgraded with cross-references: ${upgraded}`);
+  console.log(`Broken links detected: ${brokenDetected}`);
+  console.log(`Rewritten (broken → fixed): ${rewritten}`);
   console.log(`No analysis files available: ${noAnalysis}`);
   console.log(`Skipped (unrecognized pattern): ${skipped}`);
   if (dryRun) console.log('\n(Dry run — no files were modified)');
@@ -330,6 +439,7 @@ if (import.meta.url === pathToFileURL(process.argv[1]).href) {
 export {
   parseArticleFilename,
   hasAnalysisReferences,
+  hasBrokenAnalysisLinks,
   hasCrossReferences,
   removeAnalysisReferences,
   injectAnalysisReferences,

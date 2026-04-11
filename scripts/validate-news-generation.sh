@@ -149,6 +149,73 @@ fi
 echo ""
 
 # ============================================================================
+# Check 3c: Analysis References — Broken Links
+# ============================================================================
+echo "📋 Check 3c: Analysis references link integrity"
+BROKEN_REFS=0
+CHECKED_REFS=0
+for file in news/*-{en,sv}.html; do
+  if [ -f "$file" ]; then
+    BASENAME="$(basename "$file")"
+    if [[ "$BASENAME" == index* ]]; then
+      continue
+    fi
+    if grep -q 'class="analysis-references"' "$file" 2>/dev/null; then
+      CHECKED_REFS=$((CHECKED_REFS + 1))
+      # Extract analysis paths from GitHub blob/tree URLs using portable awk
+      BROKEN_IN_FILE=0
+      while IFS=: read -r link_type link_path; do
+        [ -n "$link_type" ] || continue
+        [ -n "$link_path" ] || continue
+        case "$link_type" in
+          blob)
+            if [ ! -f "$link_path" ]; then
+              BROKEN_IN_FILE=$((BROKEN_IN_FILE + 1))
+            fi
+            ;;
+          tree)
+            if [ ! -d "$link_path" ]; then
+              BROKEN_IN_FILE=$((BROKEN_IN_FILE + 1))
+            fi
+            ;;
+        esac
+      done <<LINKS
+$(awk '{
+  line = $0
+  while (match(line, /href="[^"]+"/)) {
+    href = substr(line, RSTART + 6, RLENGTH - 7)
+    if (href ~ /^https:\/\/github\.com\/Hack23\/riksdagsmonitor\/(blob|tree)\/main\//) {
+      sub(/^https:\/\/github\.com\/Hack23\/riksdagsmonitor\//, "", href)
+      split(href, parts, "/")
+      link_type = parts[1]
+      link_path = href
+      sub(/^(blob|tree)\/main\//, "", link_path)
+      print link_type ":" link_path
+    }
+    line = substr(line, RSTART + RLENGTH)
+  }
+}' "$file")
+LINKS
+      if [ "$BROKEN_IN_FILE" -gt 0 ]; then
+        echo -e "${YELLOW}⚠️ $BROKEN_IN_FILE broken analysis link(s) in: $BASENAME${NC}"
+        BROKEN_REFS=$((BROKEN_REFS + 1))
+        WARNINGS=$((WARNINGS + 1))
+      fi
+    fi
+  fi
+done
+
+if [ $CHECKED_REFS -eq 0 ]; then
+  echo -e "${YELLOW}ℹ️  No articles with analysis-references to check${NC}"
+elif [ $BROKEN_REFS -eq 0 ]; then
+  echo -e "${GREEN}✅ All $CHECKED_REFS articles have valid analysis reference links${NC}"
+else
+  echo -e "${YELLOW}⚠️ $BROKEN_REFS of $CHECKED_REFS articles have broken analysis links${NC}"
+  echo -e "${YELLOW}   ↳ Run: npx tsx scripts/fix-analysis-references.ts --rewrite${NC}"
+fi
+echo ""
+
+# ============================================================================
 # Check 4: BreadcrumbList localization (spot check key languages)
 # ============================================================================
 echo "📋 Check 4: BreadcrumbList structured data localization"

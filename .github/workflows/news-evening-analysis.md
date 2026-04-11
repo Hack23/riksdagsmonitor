@@ -1023,7 +1023,7 @@ done
 Then run analysis references fix and validation:
 ```bash
 # 🔴 MANDATORY: Inject analysis references into any article missing them
-npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --type evening-analysis
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite --type evening-analysis
 
 bash scripts/validate-news-generation.sh
 VALIDATION_EXIT=$?
