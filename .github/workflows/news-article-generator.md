@@ -736,7 +736,16 @@ For **non-deep-inspection** article types only, if the script fails, generate ar
 
 **2. Generate AI meta descriptions** (150-160 chars) — Summarize key political intelligence from actual content. BANNED: ❌ any description starting with "Analysis of N documents".
 
-**3. Add analysis references section** — Insert the "📊 Analysis & Sources" HTML block before footer, linking to analysis files for the article's date and type (see SHARED_PROMPT_PATTERNS.md "ANALYSIS FILE GITHUB REFERENCES" for the complete template and type-to-folder mapping).
+**3. 🔴 Add analysis references section (MANDATORY — VERIFY AFTER)** — Insert the "📊 Analysis & Sources" HTML block before footer, linking to analysis files for the article's date and type (see SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES for the complete template and type-to-folder mapping).
+
+**After inserting, VERIFY** by running:
+```bash
+for FILE in news/$ARTICLE_DATE-*-*.html; do
+  if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
+    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
+  fi
+done
+```
 
 **4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.
 

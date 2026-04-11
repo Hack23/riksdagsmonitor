@@ -931,13 +931,25 @@ echo "Generated: $(echo "$NEW_ARTICLES" | wc -l) articles"
 
 **3. Generate AI meta descriptions from analysis** (150-160 chars) — Summarize the day's top 2-3 developments. BANNED: ❌ any description starting with "Analysis of N documents".
 
-**4. Add analysis references section** — Insert the "📊 Analysis & Sources" HTML block before footer. For evening analysis, link to ALL article-type analysis folders for the date:
+**4. 🔴 Add analysis references section (MANDATORY — VERIFY AFTER)** — Insert the "📊 Analysis & Sources" HTML block before footer. For evening analysis, link to ALL article-type analysis folders for the date:
+- `analysis/daily/$ARTICLE_DATE/evening-analysis/` (this workflow's own analysis)
 - `analysis/daily/$ARTICLE_DATE/committeeReports/` (if exists)
 - `analysis/daily/$ARTICLE_DATE/propositions/` (if exists)
 - `analysis/daily/$ARTICLE_DATE/interpellations/` (if exists)
 - `analysis/daily/$ARTICLE_DATE/motions/` (if exists)
 - `analysis/daily/$ARTICLE_DATE/realtime-*/` (if exists)
 - `analysis/methodologies/ai-driven-analysis-guide.md`
+
+> Use `ls analysis/daily/$ARTICLE_DATE/` to discover which folders exist.
+
+**After inserting, VERIFY** by running:
+```bash
+for FILE in news/$ARTICLE_DATE-evening-analysis-*.html; do
+  if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
+    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
+  fi
+done
+```
 
 **5. Update all metadata in ALL languages** — For EVERY generated language file, ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, `<h1>`, Schema.org `headline`, `alternativeHeadline`, and `description` all reflect the AI-generated title and description.
 

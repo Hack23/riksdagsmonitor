@@ -462,7 +462,16 @@ npx tsx scripts/fix-article-navigation.ts
 
 **2. Generate AI meta descriptions** (150-160 chars) — Key political intelligence summary. BANNED: ❌ "Analysis of N documents".
 
-**3. Add analysis references** — Insert "📊 Analysis & Sources" HTML block linking to `analysis/daily/$ARTICLE_DATE/monthly-review/` files and `analysis/methodologies/ai-driven-analysis-guide.md`.
+**3. 🔴 Add analysis references (MANDATORY — VERIFY AFTER)** — Insert "📊 Analysis & Sources" HTML block (from SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES) linking to `analysis/daily/$ARTICLE_DATE/monthly-review/` files and `analysis/methodologies/ai-driven-analysis-guide.md`.
+
+**After inserting, VERIFY** by running:
+```bash
+for FILE in news/$ARTICLE_DATE-monthly-review-*.html; do
+  if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
+    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
+  fi
+done
+```
 
 **4. Update all metadata** — `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>`.
 

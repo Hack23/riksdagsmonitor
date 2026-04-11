@@ -664,7 +664,7 @@ npx tsx scripts/fix-article-navigation.ts
 
 **3. Generate AI meta descriptions from analysis** (150-160 chars) — Summarize the #1 ranked finding from synthesis significance-scoring. BANNED: ❌ any description starting with "Analysis of N documents".
 
-**4. Add analysis references section** — Insert the "📊 Analysis & Sources" HTML block (from SHARED_PROMPT_PATTERNS.md) before the article footer, linking to:
+**4. 🔴 Add analysis references section (MANDATORY — VERIFY AFTER)** — Insert the "📊 Analysis & Sources" HTML block (from SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES) before the article footer, linking to:
 - `analysis/daily/$ARTICLE_DATE/motions/synthesis-summary.md`
 - `analysis/daily/$ARTICLE_DATE/motions/swot-analysis.md`
 - `analysis/daily/$ARTICLE_DATE/motions/risk-assessment.md`
@@ -672,7 +672,19 @@ npx tsx scripts/fix-article-navigation.ts
 - `analysis/daily/$ARTICLE_DATE/motions/stakeholder-perspectives.md`
 - `analysis/daily/$ARTICLE_DATE/motions/significance-scoring.md`
 - `analysis/daily/$ARTICLE_DATE/motions/classification-results.md`
+- `analysis/daily/$ARTICLE_DATE/motions/cross-reference-map.md`
+- `analysis/daily/$ARTICLE_DATE/motions/data-download-manifest.md`
 - `analysis/methodologies/ai-driven-analysis-guide.md`
+- Per-document analyses in `documents/` subfolder
+
+**After inserting, VERIFY** by running:
+```bash
+for FILE in news/$ARTICLE_DATE-*motions*-*.html; do
+  if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
+    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
+  fi
+done
+```
 
 **5. Update all metadata in ALL languages** — For EVERY generated language file, ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, `<h1>`, Schema.org `headline`, `alternativeHeadline`, and `description` all reflect the AI-generated title and description.
 

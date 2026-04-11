@@ -115,6 +115,42 @@ fi
 echo ""
 
 # ============================================================================
+# Check 3b: Analysis references section present in all news articles
+# (Transparency requirement: every article must link to its analysis files)
+# ============================================================================
+echo "📋 Check 3b: Analysis references section in news articles"
+
+MISSING_REFS=0
+CHECKED_ARTICLES=0
+# Check today's articles (most relevant for agentic workflow validation)
+TODAY_DATE="$(date +%Y-%m-%d)"
+for file in news/*-{en,sv}.html; do
+  if [ -f "$file" ]; then
+    # Only check actual article files (not index files)
+    BASENAME="$(basename "$file")"
+    if [[ "$BASENAME" == index* ]]; then
+      continue
+    fi
+    CHECKED_ARTICLES=$((CHECKED_ARTICLES + 1))
+    if ! grep -q 'class="analysis-references"' "$file" 2>/dev/null; then
+      echo -e "${YELLOW}⚠️ Missing analysis-references section: $BASENAME${NC}"
+      MISSING_REFS=$((MISSING_REFS + 1))
+      WARNINGS=$((WARNINGS + 1))
+    fi
+  fi
+done
+
+if [ $CHECKED_ARTICLES -eq 0 ]; then
+  echo -e "${YELLOW}ℹ️  No article files found to check${NC}"
+elif [ $MISSING_REFS -eq 0 ]; then
+  echo -e "${GREEN}✅ All $CHECKED_ARTICLES articles have analysis-references section${NC}"
+else
+  echo -e "${YELLOW}⚠️ $MISSING_REFS of $CHECKED_ARTICLES articles missing analysis-references section${NC}"
+  echo -e "${YELLOW}   ↳ See SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES for template${NC}"
+fi
+echo ""
+
+# ============================================================================
 # Check 4: BreadcrumbList localization (spot check key languages)
 # ============================================================================
 echo "📋 Check 4: BreadcrumbList structured data localization"

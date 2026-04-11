@@ -671,7 +671,7 @@ npx tsx scripts/fix-article-navigation.ts
 
 **3. Generate AI meta descriptions from analysis** (150-160 chars) — Summarize the #1 ranked finding from synthesis significance-scoring. BANNED: ❌ "Analysis of N documents covering Committee:, Published:" or any description starting with "Analysis of N documents".
 
-**4. Add analysis references section** — Insert the "📊 Analysis & Sources" HTML block (from SHARED_PROMPT_PATTERNS.md) before the article footer, linking to:
+**4. 🔴 Add analysis references section (MANDATORY — VERIFY AFTER)** — Insert the "📊 Analysis & Sources" HTML block (from SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES) before the article footer, linking to:
 - `analysis/daily/$ARTICLE_DATE/committeeReports/synthesis-summary.md`
 - `analysis/daily/$ARTICLE_DATE/committeeReports/swot-analysis.md`
 - `analysis/daily/$ARTICLE_DATE/committeeReports/risk-assessment.md`
@@ -679,8 +679,19 @@ npx tsx scripts/fix-article-navigation.ts
 - `analysis/daily/$ARTICLE_DATE/committeeReports/stakeholder-perspectives.md`
 - `analysis/daily/$ARTICLE_DATE/committeeReports/significance-scoring.md`
 - `analysis/daily/$ARTICLE_DATE/committeeReports/classification-results.md`
+- `analysis/daily/$ARTICLE_DATE/committeeReports/cross-reference-map.md`
+- `analysis/daily/$ARTICLE_DATE/committeeReports/data-download-manifest.md`
 - `analysis/methodologies/ai-driven-analysis-guide.md`
 - Per-document analyses in `documents/` subfolder
+
+**After inserting, VERIFY** by running:
+```bash
+for FILE in news/$ARTICLE_DATE-committee-reports-*.html; do
+  if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
+    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
+  fi
+done
+```
 
 **5. Update all metadata in ALL languages** — For EVERY generated language file, ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, `<h1>`, Schema.org `headline`, `alternativeHeadline`, and `description` all reflect the AI-generated title and description. Non-English articles MUST have properly translated AI titles — not English titles or generic templates.
 
