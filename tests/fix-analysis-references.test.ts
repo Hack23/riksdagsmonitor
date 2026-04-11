@@ -5,10 +5,13 @@
  * @license Apache-2.0
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import {
   parseArticleFilename,
   hasAnalysisReferences,
+  hasBrokenAnalysisLinks,
+  hasCrossReferences,
+  removeAnalysisReferences,
   injectAnalysisReferences,
   FILENAME_SLUG_TO_ARTICLE_TYPE,
 } from '../scripts/fix-analysis-references.js';
@@ -132,6 +135,119 @@ describe('fix-analysis-references', () => {
     it('returns null for empty references HTML', () => {
       const result = injectAnalysisReferences('<body></body>', '');
       expect(result).toBeNull();
+    });
+  });
+
+  describe('hasBrokenAnalysisLinks()', () => {
+    let existsSyncSpy: ReturnType<typeof vi.spyOn>;
+
+    beforeEach(() => {
+      // Default: mock fs.existsSync to return false (files don't exist)
+      const fs = require('fs');
+      existsSyncSpy = vi.spyOn(fs, 'existsSync');
+    });
+
+    afterEach(() => {
+      existsSyncSpy.mockRestore();
+    });
+
+    it('returns false when no analysis-references section exists', () => {
+      expect(hasBrokenAnalysisLinks('<html><body>no section</body></html>')).toBe(false);
+    });
+
+    it('returns false when section exists but has no analysis links', () => {
+      const html = '<section class="analysis-references"><p>Some text</p></section>';
+      expect(hasBrokenAnalysisLinks(html)).toBe(false);
+    });
+
+    it('returns true when GitHub blob link points to missing file', () => {
+      existsSyncSpy.mockReturnValue(false);
+      const html = `<section class="analysis-references">
+        <a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-11/weekly-review/synthesis-summary.md">link</a>
+      </section>`;
+      expect(hasBrokenAnalysisLinks(html)).toBe(true);
+    });
+
+    it('returns false when GitHub blob link points to existing file', () => {
+      existsSyncSpy.mockReturnValue(true);
+      const html = `<section class="analysis-references">
+        <a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-11/weekly-review/synthesis-summary.md">link</a>
+      </section>`;
+      expect(hasBrokenAnalysisLinks(html)).toBe(false);
+    });
+
+    it('returns true when GitHub tree link points to missing directory', () => {
+      existsSyncSpy.mockReturnValue(false);
+      const html = `<section class="analysis-references">
+        <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-11/weekly-review/">dir link</a>
+      </section>`;
+      expect(hasBrokenAnalysisLinks(html)).toBe(true);
+    });
+
+    it('returns false when GitHub tree link points to existing directory', () => {
+      existsSyncSpy.mockReturnValue(true);
+      const html = `<section class="analysis-references">
+        <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-11/weekly-review/">dir link</a>
+      </section>`;
+      expect(hasBrokenAnalysisLinks(html)).toBe(false);
+    });
+
+    it('returns true when relative path link points to missing file', () => {
+      existsSyncSpy.mockReturnValue(false);
+      const html = `<section class="analysis-references">
+        <a href="analysis/daily/2026-04-11/weekly-review/swot-analysis.md">relative link</a>
+      </section>`;
+      expect(hasBrokenAnalysisLinks(html)).toBe(true);
+    });
+
+    it('detects broken links among a mix of valid and invalid', () => {
+      existsSyncSpy.mockImplementation((p: string) => {
+        return typeof p === 'string' && p.includes('synthesis-summary');
+      });
+      const html = `<section class="analysis-references">
+        <a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-11/weekly-review/synthesis-summary.md">exists</a>
+        <a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-11/weekly-review/nonexistent.md">broken</a>
+      </section>`;
+      expect(hasBrokenAnalysisLinks(html)).toBe(true);
+    });
+
+    it('returns false when section is missing closing tag', () => {
+      const html = '<section class="analysis-references"><p>no closing tag';
+      expect(hasBrokenAnalysisLinks(html)).toBe(false);
+    });
+  });
+
+  describe('hasCrossReferences()', () => {
+    it('returns true when English cross-reference text exists', () => {
+      expect(hasCrossReferences('<div>Cross-Referenced Analysis</div>')).toBe(true);
+    });
+
+    it('returns true when Swedish cross-reference text exists', () => {
+      expect(hasCrossReferences('<div>Korsrefererad analys</div>')).toBe(true);
+    });
+
+    it('returns false when no cross-reference text exists', () => {
+      expect(hasCrossReferences('<div>Some other content</div>')).toBe(false);
+    });
+  });
+
+  describe('removeAnalysisReferences()', () => {
+    it('removes section from HTML', () => {
+      const html = '<body><main>content</main><section class="analysis-references"><p>refs</p></section>\n<footer>foot</footer></body>';
+      const result = removeAnalysisReferences(html);
+      expect(result).not.toContain('analysis-references');
+      expect(result).toContain('<main>content</main>');
+      expect(result).toContain('<footer>foot</footer>');
+    });
+
+    it('returns original HTML when no section exists', () => {
+      const html = '<body><main>content</main></body>';
+      expect(removeAnalysisReferences(html)).toBe(html);
+    });
+
+    it('returns original HTML when section has no closing tag', () => {
+      const html = '<body><section class="analysis-references"><p>no close';
+      expect(removeAnalysisReferences(html)).toBe(html);
     });
   });
 });

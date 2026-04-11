@@ -143,13 +143,10 @@ function hasBrokenAnalysisLinks(html: string): boolean {
   if (sectionEnd === -1) return false;
   const section = html.slice(sectionStart, sectionEnd);
 
-  let hasLinks = false;
-
   // Match GitHub blob URL paths: href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/..."
   const githubBlobRegex = /href="https:\/\/github\.com\/Hack23\/riksdagsmonitor\/blob\/main\/(analysis\/daily\/[^"]+\.md)"/g;
   let match: RegExpExecArray | null;
   while ((match = githubBlobRegex.exec(section)) !== null) {
-    hasLinks = true;
     const filePath = match[1];
     if (!fs.existsSync(filePath)) {
       return true; // At least one link is broken
@@ -159,7 +156,6 @@ function hasBrokenAnalysisLinks(html: string): boolean {
   // Match GitHub tree URL paths: href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/..."
   const githubTreeRegex = /href="https:\/\/github\.com\/Hack23\/riksdagsmonitor\/tree\/main\/(analysis\/daily\/[^"]+)"/g;
   while ((match = githubTreeRegex.exec(section)) !== null) {
-    hasLinks = true;
     const dirPath = match[1].replace(/\/$/, ''); // Remove trailing slash
     if (!fs.existsSync(dirPath)) {
       return true; // At least one directory link is broken
@@ -169,7 +165,6 @@ function hasBrokenAnalysisLinks(html: string): boolean {
   // Match relative paths: href="../analysis/daily/..." or href="analysis/daily/..."
   const relativeBlobRegex = /href="(?:\.\.\/)*?(analysis\/daily\/[^"]+\.md)"/g;
   while ((match = relativeBlobRegex.exec(section)) !== null) {
-    hasLinks = true;
     const filePath = match[1];
     if (!fs.existsSync(filePath)) {
       return true; // At least one relative link is broken

@@ -149,9 +149,9 @@ fi
 echo ""
 
 # ============================================================================
-# Check 3b: Analysis References — Broken Links
+# Check 3c: Analysis References — Broken Links
 # ============================================================================
-echo "📋 Check 3b: Analysis references link integrity"
+echo "📋 Check 3c: Analysis references link integrity"
 BROKEN_REFS=0
 CHECKED_REFS=0
 for file in news/*-{en,sv}.html; do
@@ -162,13 +162,40 @@ for file in news/*-{en,sv}.html; do
     fi
     if grep -q 'class="analysis-references"' "$file" 2>/dev/null; then
       CHECKED_REFS=$((CHECKED_REFS + 1))
-      # Extract analysis/daily/ paths from GitHub blob URLs and check they exist locally
+      # Extract analysis paths from GitHub blob/tree URLs using portable awk
       BROKEN_IN_FILE=0
-      for link in $(grep -oP 'href="https://github\.com/Hack23/riksdagsmonitor/blob/main/\Kanalysis/daily/[^"]+\.md' "$file" 2>/dev/null); do
-        if [ ! -f "$link" ]; then
-          BROKEN_IN_FILE=$((BROKEN_IN_FILE + 1))
-        fi
-      done
+      while IFS=: read -r link_type link_path; do
+        [ -n "$link_type" ] || continue
+        [ -n "$link_path" ] || continue
+        case "$link_type" in
+          blob)
+            if [ ! -f "$link_path" ]; then
+              BROKEN_IN_FILE=$((BROKEN_IN_FILE + 1))
+            fi
+            ;;
+          tree)
+            if [ ! -d "$link_path" ]; then
+              BROKEN_IN_FILE=$((BROKEN_IN_FILE + 1))
+            fi
+            ;;
+        esac
+      done <<LINKS
+$(awk '{
+  line = $0
+  while (match(line, /href="[^"]+"/)) {
+    href = substr(line, RSTART + 6, RLENGTH - 7)
+    if (href ~ /^https:\/\/github\.com\/Hack23\/riksdagsmonitor\/(blob|tree)\/main\//) {
+      sub(/^https:\/\/github\.com\/Hack23\/riksdagsmonitor\//, "", href)
+      split(href, parts, "/")
+      link_type = parts[1]
+      link_path = href
+      sub(/^(blob|tree)\/main\//, "", link_path)
+      print link_type ":" link_path
+    }
+    line = substr(line, RSTART + RLENGTH)
+  }
+}' "$file")
+LINKS
       if [ "$BROKEN_IN_FILE" -gt 0 ]; then
         echo -e "${YELLOW}⚠️ $BROKEN_IN_FILE broken analysis link(s) in: $BASENAME${NC}"
         BROKEN_REFS=$((BROKEN_REFS + 1))
