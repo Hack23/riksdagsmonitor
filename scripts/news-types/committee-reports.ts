@@ -183,7 +183,6 @@ import { generateArticleHTML } from '../article-template.js';
 import { getAnalysisEnrichment } from '../generate-news-enhanced/helpers.js';
 import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
-import { generateAnalysisReferencesHtml } from '../analysis-references.js';
 
 /**
  * Required MCP tools for committee-reports articles
@@ -321,7 +320,7 @@ export async function generateCommitteeReports(options: GenerationOptions = {}):
         keywords: metadata.keywords,
         topics: metadata.topics,
         tags: metadata.tags,
-        analysisReferencesHtml: generateAnalysisReferencesHtml({ date: articleDate, articleType: 'committee-reports', lang }),
+        // Analysis references are injected by fix-analysis-references.ts post-processor
         ...(enrichment ?? {}),
       });
       
