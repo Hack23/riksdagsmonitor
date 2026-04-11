@@ -6,6 +6,7 @@
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import fs from 'node:fs';
 import {
   parseArticleFilename,
   hasAnalysisReferences,
@@ -139,16 +140,17 @@ describe('fix-analysis-references', () => {
   });
 
   describe('hasBrokenAnalysisLinks()', () => {
-    let existsSyncSpy: ReturnType<typeof vi.spyOn>;
+    let statSyncSpy: ReturnType<typeof vi.spyOn>;
+
+    const fileStats = { isFile: () => true, isDirectory: () => false };
+    const dirStats = { isFile: () => false, isDirectory: () => true };
 
     beforeEach(() => {
-      // Default: mock fs.existsSync to return false (files don't exist)
-      const fs = require('fs');
-      existsSyncSpy = vi.spyOn(fs, 'existsSync');
+      statSyncSpy = vi.spyOn(fs, 'statSync');
     });
 
     afterEach(() => {
-      existsSyncSpy.mockRestore();
+      statSyncSpy.mockRestore();
     });
 
     it('returns false when no analysis-references section exists', () => {
@@ -161,7 +163,7 @@ describe('fix-analysis-references', () => {
     });
 
     it('returns true when GitHub blob link points to missing file', () => {
-      existsSyncSpy.mockReturnValue(false);
+      statSyncSpy.mockImplementation(() => { throw new Error('ENOENT'); });
       const html = `<section class="analysis-references">
         <a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-11/weekly-review/synthesis-summary.md">link</a>
       </section>`;
@@ -169,15 +171,23 @@ describe('fix-analysis-references', () => {
     });
 
     it('returns false when GitHub blob link points to existing file', () => {
-      existsSyncSpy.mockReturnValue(true);
+      statSyncSpy.mockReturnValue(fileStats as unknown as fs.Stats);
       const html = `<section class="analysis-references">
         <a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-11/weekly-review/synthesis-summary.md">link</a>
       </section>`;
       expect(hasBrokenAnalysisLinks(html)).toBe(false);
     });
 
+    it('returns true when GitHub blob link target is a directory not a file', () => {
+      statSyncSpy.mockReturnValue(dirStats as unknown as fs.Stats);
+      const html = `<section class="analysis-references">
+        <a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-11/weekly-review/synthesis-summary.md">link</a>
+      </section>`;
+      expect(hasBrokenAnalysisLinks(html)).toBe(true);
+    });
+
     it('returns true when GitHub tree link points to missing directory', () => {
-      existsSyncSpy.mockReturnValue(false);
+      statSyncSpy.mockImplementation(() => { throw new Error('ENOENT'); });
       const html = `<section class="analysis-references">
         <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-11/weekly-review/">dir link</a>
       </section>`;
@@ -185,15 +195,23 @@ describe('fix-analysis-references', () => {
     });
 
     it('returns false when GitHub tree link points to existing directory', () => {
-      existsSyncSpy.mockReturnValue(true);
+      statSyncSpy.mockReturnValue(dirStats as unknown as fs.Stats);
       const html = `<section class="analysis-references">
         <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-11/weekly-review/">dir link</a>
       </section>`;
       expect(hasBrokenAnalysisLinks(html)).toBe(false);
     });
 
+    it('returns true when GitHub tree link target is a file not a directory', () => {
+      statSyncSpy.mockReturnValue(fileStats as unknown as fs.Stats);
+      const html = `<section class="analysis-references">
+        <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-11/weekly-review/">dir link</a>
+      </section>`;
+      expect(hasBrokenAnalysisLinks(html)).toBe(true);
+    });
+
     it('returns true when relative path link points to missing file', () => {
-      existsSyncSpy.mockReturnValue(false);
+      statSyncSpy.mockImplementation(() => { throw new Error('ENOENT'); });
       const html = `<section class="analysis-references">
         <a href="analysis/daily/2026-04-11/weekly-review/swot-analysis.md">relative link</a>
       </section>`;
@@ -201,8 +219,11 @@ describe('fix-analysis-references', () => {
     });
 
     it('detects broken links among a mix of valid and invalid', () => {
-      existsSyncSpy.mockImplementation((p: string) => {
-        return typeof p === 'string' && p.includes('synthesis-summary');
+      statSyncSpy.mockImplementation((p: unknown) => {
+        if (typeof p === 'string' && p.includes('synthesis-summary')) {
+          return fileStats as unknown as fs.Stats;
+        }
+        throw new Error('ENOENT');
       });
       const html = `<section class="analysis-references">
         <a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-11/weekly-review/synthesis-summary.md">exists</a>

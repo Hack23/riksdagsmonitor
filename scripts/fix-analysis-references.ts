@@ -131,9 +131,34 @@ function hasAnalysisReferences(html: string): boolean {
 }
 
 /**
+ * Helper: check if a path (resolved against ROOT) is an existing file.
+ */
+function isFileAtRoot(relativePath: string): boolean {
+  try {
+    return fs.statSync(path.resolve(ROOT, relativePath)).isFile();
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Helper: check if a path (resolved against ROOT) is an existing directory.
+ */
+function isDirectoryAtRoot(relativePath: string): boolean {
+  try {
+    return fs.statSync(path.resolve(ROOT, relativePath)).isDirectory();
+  } catch {
+    return false;
+  }
+}
+
+/**
  * Check if an existing analysis-references section has broken links.
  * Extracts analysis file paths from href attributes and verifies they exist
- * on the local filesystem. Returns true if ANY analysis file link is broken.
+ * on the local filesystem (resolved against the repository ROOT).
+ * Uses statSync().isFile() for blob links and statSync().isDirectory() for
+ * tree links to match the -f / -d semantics in validate-news-generation.sh.
+ * Returns true if ANY analysis file link is broken.
  */
 function hasBrokenAnalysisLinks(html: string): boolean {
   // Extract all analysis/daily/... paths from href attributes within the analysis-references section
@@ -148,8 +173,8 @@ function hasBrokenAnalysisLinks(html: string): boolean {
   let match: RegExpExecArray | null;
   while ((match = githubBlobRegex.exec(section)) !== null) {
     const filePath = match[1];
-    if (!fs.existsSync(filePath)) {
-      return true; // At least one link is broken
+    if (!isFileAtRoot(filePath)) {
+      return true; // At least one blob link target is not a file
     }
   }
 
@@ -157,8 +182,8 @@ function hasBrokenAnalysisLinks(html: string): boolean {
   const githubTreeRegex = /href="https:\/\/github\.com\/Hack23\/riksdagsmonitor\/tree\/main\/(analysis\/daily\/[^"]+)"/g;
   while ((match = githubTreeRegex.exec(section)) !== null) {
     const dirPath = match[1].replace(/\/$/, ''); // Remove trailing slash
-    if (!fs.existsSync(dirPath)) {
-      return true; // At least one directory link is broken
+    if (!isDirectoryAtRoot(dirPath)) {
+      return true; // At least one tree link target is not a directory
     }
   }
 
@@ -166,8 +191,8 @@ function hasBrokenAnalysisLinks(html: string): boolean {
   const relativeBlobRegex = /href="(?:\.\.\/)*?(analysis\/daily\/[^"]+\.md)"/g;
   while ((match = relativeBlobRegex.exec(section)) !== null) {
     const filePath = match[1];
-    if (!fs.existsSync(filePath)) {
-      return true; // At least one relative link is broken
+    if (!isFileAtRoot(filePath)) {
+      return true; // At least one relative link target is not a file
     }
   }
 
