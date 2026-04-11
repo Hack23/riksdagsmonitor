@@ -1,5 +1,5 @@
 {
-  "version": "0.8.32",
+  "version": "0.8.33",
   "name": "riksdagsmonitor",
   "problems": [
     "extraneous: @emnapi/core@1.9.2 /home/runner/work/riksdagsmonitor/riksdagsmonitor/node_modules/@emnapi/core",
@@ -2822,8 +2822,8 @@
       }
     },
     "knip": {
-      "version": "6.3.1",
-      "resolved": "https://registry.npmjs.org/knip/-/knip-6.3.1.tgz",
+      "version": "6.4.0",
+      "resolved": "https://registry.npmjs.org/knip/-/knip-6.4.0.tgz",
       "overridden": false,
       "dependencies": {
         "@nodelib/fs.walk": {
