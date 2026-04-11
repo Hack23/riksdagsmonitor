@@ -375,9 +375,9 @@ describe('WorldBankClient', () => {
       expect(INDICATOR_IDS.inflation).toBe('FP.CPI.TOTL.ZG');
     });
 
-    it('should have all 16 defined indicators', () => {
+    it('should have all 29 defined indicators', () => {
       const indicatorCount = Object.keys(INDICATOR_IDS).length;
-      expect(indicatorCount).toBe(16);
+      expect(indicatorCount).toBe(29);
     });
 
     it('should have valid World Bank indicator ID format', () => {

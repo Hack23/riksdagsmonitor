@@ -56,8 +56,14 @@ export interface EconomicSectionHeadings {
 /**
  * Maps World Bank indicators to Swedish political policy areas.
  * Each indicator is linked to relevant Riksdag committees and policy domains.
+ *
+ * Full inventory: analysis/worldbank/indicators-inventory.json
+ * Committee mapping: analysis/worldbank/indicator-policy-mapping.md
  */
 export const ECONOMIC_INDICATORS: readonly EconomicIndicatorContext[] = [
+  // ---------------------------------------------------------------------------
+  // Economic indicators
+  // ---------------------------------------------------------------------------
   {
     indicatorId: INDICATOR_IDS.gdpGrowth,
     name: 'GDP Growth',
@@ -65,6 +71,14 @@ export const ECONOMIC_INDICATORS: readonly EconomicIndicatorContext[] = [
     policyAreas: ['fiscal policy', 'economic growth', 'budget'],
     committees: ['FiU'],
     unit: '% annual',
+  },
+  {
+    indicatorId: INDICATOR_IDS.gdpPerCapita,
+    name: 'GDP per Capita',
+    description: 'GDP per capita in current USD — standard of living measure relevant to welfare and labor market debates.',
+    policyAreas: ['economic growth', 'welfare', 'standard of living'],
+    committees: ['FiU', 'AU'],
+    unit: 'USD',
   },
   {
     indicatorId: INDICATOR_IDS.unemployment,
@@ -83,6 +97,25 @@ export const ECONOMIC_INDICATORS: readonly EconomicIndicatorContext[] = [
     unit: '% annual',
   },
   {
+    indicatorId: INDICATOR_IDS.exportsGdpPct,
+    name: 'Exports (% of GDP)',
+    description: 'Exports of goods and services as share of GDP — measures trade competitiveness and economic openness.',
+    policyAreas: ['trade policy', 'EU relations', 'competitiveness'],
+    committees: ['NU', 'UU'],
+    unit: '% of GDP',
+  },
+  {
+    indicatorId: INDICATOR_IDS.fdiNet,
+    name: 'Foreign Direct Investment',
+    description: 'FDI net inflows in current USD — foreign investment attractiveness and economic openness indicator.',
+    policyAreas: ['trade policy', 'investment', 'economic growth'],
+    committees: ['NU'],
+    unit: 'USD',
+  },
+  // ---------------------------------------------------------------------------
+  // Fiscal & governance indicators
+  // ---------------------------------------------------------------------------
+  {
     indicatorId: INDICATOR_IDS.govExpenditure,
     name: 'Government Expenditure',
     description: 'General government final consumption expenditure as share of GDP — reflects the size and scope of public sector.',
@@ -96,46 +129,6 @@ export const ECONOMIC_INDICATORS: readonly EconomicIndicatorContext[] = [
     description: 'Total trade (exports + imports) as percentage of GDP — measures Sweden\'s economic integration and trade dependency.',
     policyAreas: ['trade policy', 'EU relations', 'economic integration'],
     committees: ['NU', 'UU'],
-    unit: '% of GDP',
-  },
-  {
-    indicatorId: INDICATOR_IDS.militaryExpenditure,
-    name: 'Military Expenditure',
-    description: 'Defense spending as share of GDP — critical context for NATO accession debates and security policy.',
-    policyAreas: ['defense', 'security policy', 'NATO'],
-    committees: ['FöU'],
-    unit: '% of GDP',
-  },
-  {
-    indicatorId: INDICATOR_IDS.co2Emissions,
-    name: 'CO₂ Emissions per Capita',
-    description: 'Carbon dioxide emissions per person — relevant to climate policy and environmental legislation.',
-    policyAreas: ['climate policy', 'environmental regulation', 'green transition'],
-    committees: ['MJU'],
-    unit: 'metric tons per capita',
-  },
-  {
-    indicatorId: INDICATOR_IDS.rdExpenditure,
-    name: 'R&D Expenditure',
-    description: 'Research and development spending as share of GDP — indicator of innovation capacity and knowledge economy investment.',
-    policyAreas: ['research policy', 'innovation', 'education'],
-    committees: ['UbU'],
-    unit: '% of GDP',
-  },
-  {
-    indicatorId: INDICATOR_IDS.giniIndex,
-    name: 'GINI Index',
-    description: 'Income inequality measure (0 = perfect equality, 100 = maximum inequality) — central to social policy and redistribution debates.',
-    policyAreas: ['income distribution', 'social policy', 'welfare'],
-    committees: ['SoU', 'AU'],
-    unit: 'index (0-100)',
-  },
-  {
-    indicatorId: INDICATOR_IDS.currentAccountBalance,
-    name: 'Current Account Balance',
-    description: 'Current account balance as share of GDP — reflects Sweden\'s external economic position and trade competitiveness.',
-    policyAreas: ['trade policy', 'economic stability', 'fiscal policy'],
-    committees: ['FiU', 'NU'],
     unit: '% of GDP',
   },
   {
@@ -169,6 +162,133 @@ export const ECONOMIC_INDICATORS: readonly EconomicIndicatorContext[] = [
     policyAreas: ['public administration', 'government quality', 'institutional capacity'],
     committees: ['KU', 'FiU'],
     unit: 'index (-2.5 to 2.5)',
+  },
+  // ---------------------------------------------------------------------------
+  // Defense indicator
+  // ---------------------------------------------------------------------------
+  {
+    indicatorId: INDICATOR_IDS.militaryExpenditure,
+    name: 'Military Expenditure',
+    description: 'Defense spending as share of GDP — critical context for NATO accession debates and security policy. NATO target is 2% of GDP.',
+    policyAreas: ['defense', 'security policy', 'NATO'],
+    committees: ['FöU'],
+    unit: '% of GDP',
+  },
+  // ---------------------------------------------------------------------------
+  // Social indicators
+  // ---------------------------------------------------------------------------
+  {
+    indicatorId: INDICATOR_IDS.lifeExpectancy,
+    name: 'Life Expectancy',
+    description: 'Life expectancy at birth — health system performance and quality of life indicator across Nordic countries.',
+    policyAreas: ['health policy', 'welfare', 'demographics'],
+    committees: ['SoU'],
+    unit: 'years',
+  },
+  {
+    indicatorId: INDICATOR_IDS.birthRate,
+    name: 'Birth Rate',
+    description: 'Crude birth rate per 1,000 people — demographic trend affecting welfare planning and family policy.',
+    policyAreas: ['demographics', 'family policy', 'welfare'],
+    committees: ['SoU'],
+    unit: 'per 1,000 people',
+  },
+  {
+    indicatorId: INDICATOR_IDS.deathRate,
+    name: 'Death Rate',
+    description: 'Crude death rate per 1,000 people — demographic and health system outcome indicator.',
+    policyAreas: ['demographics', 'health policy'],
+    committees: ['SoU'],
+    unit: 'per 1,000 people',
+  },
+  {
+    indicatorId: INDICATOR_IDS.internetUsers,
+    name: 'Internet Users',
+    description: 'Individuals using the Internet as percentage of population — digital infrastructure and e-government readiness.',
+    policyAreas: ['digital policy', 'e-government', 'telecommunications'],
+    committees: ['TU'],
+    unit: '% of population',
+  },
+  // ---------------------------------------------------------------------------
+  // Education indicators
+  // ---------------------------------------------------------------------------
+  {
+    indicatorId: INDICATOR_IDS.educationExpenditure,
+    name: 'Education Expenditure',
+    description: 'Government expenditure on education as share of GDP — measures education investment level across Nordic countries.',
+    policyAreas: ['education', 'public spending', 'human capital'],
+    committees: ['UbU'],
+    unit: '% of GDP',
+  },
+  {
+    indicatorId: INDICATOR_IDS.schoolEnrollment,
+    name: 'School Enrollment (Primary)',
+    description: 'Gross enrollment ratio in primary education — education access and coverage indicator.',
+    policyAreas: ['education', 'child welfare'],
+    committees: ['UbU'],
+    unit: '% gross',
+  },
+  // ---------------------------------------------------------------------------
+  // Health indicators
+  // ---------------------------------------------------------------------------
+  {
+    indicatorId: INDICATOR_IDS.healthExpenditure,
+    name: 'Health Expenditure',
+    description: 'Current health expenditure as share of GDP — healthcare system investment and efficiency measure.',
+    policyAreas: ['health policy', 'public spending', 'welfare'],
+    committees: ['SoU'],
+    unit: '% of GDP',
+  },
+  {
+    indicatorId: INDICATOR_IDS.physicians,
+    name: 'Physicians per 1,000',
+    description: 'Physicians per 1,000 people — healthcare system staffing capacity indicator.',
+    policyAreas: ['health policy', 'healthcare staffing'],
+    committees: ['SoU'],
+    unit: 'per 1,000 people',
+  },
+  {
+    indicatorId: INDICATOR_IDS.hospitalBeds,
+    name: 'Hospital Beds per 1,000',
+    description: 'Hospital beds per 1,000 people — healthcare infrastructure capacity. Sweden has relatively few beds vs. European average.',
+    policyAreas: ['health policy', 'healthcare infrastructure'],
+    committees: ['SoU'],
+    unit: 'per 1,000 people',
+  },
+  // ---------------------------------------------------------------------------
+  // Environment & innovation indicators
+  // ---------------------------------------------------------------------------
+  {
+    indicatorId: INDICATOR_IDS.co2Emissions,
+    name: 'CO₂ Emissions per Capita',
+    description: 'Carbon dioxide emissions per person — relevant to climate policy and environmental legislation.',
+    policyAreas: ['climate policy', 'environmental regulation', 'green transition'],
+    committees: ['MJU'],
+    unit: 'metric tons per capita',
+  },
+  {
+    indicatorId: INDICATOR_IDS.rdExpenditure,
+    name: 'R&D Expenditure',
+    description: 'Research and development spending as share of GDP — indicator of innovation capacity and knowledge economy investment.',
+    policyAreas: ['research policy', 'innovation', 'education'],
+    committees: ['UbU'],
+    unit: '% of GDP',
+  },
+  {
+    indicatorId: INDICATOR_IDS.giniIndex,
+    name: 'GINI Index',
+    description: 'Income inequality measure (0 = perfect equality, 100 = maximum inequality) — central to social policy and redistribution debates.',
+    policyAreas: ['income distribution', 'social policy', 'welfare'],
+    committees: ['SoU', 'AU'],
+    unit: 'index (0-100)',
+  },
+  {
+    indicatorId: INDICATOR_IDS.currentAccountBalance,
+    name: 'Current Account Balance',
+    description: 'Current account balance as share of GDP — reflects Sweden\'s external economic position and trade competitiveness.',
+    policyAreas: ['trade policy', 'economic stability', 'fiscal policy'],
+    committees: ['FiU', 'NU'],
+    unit: '% of GDP',
   },
 ] as const;
 

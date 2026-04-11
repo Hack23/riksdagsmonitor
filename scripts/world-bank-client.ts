@@ -72,32 +72,80 @@ export const COUNTRY_CODES = {
 /**
  * Key World Bank indicator IDs relevant to Swedish political intelligence.
  * These indicators provide economic context for policy analysis.
+ *
+ * Organised into categories matching the World Bank MCP server tools:
+ * - Economic: get-economic-data (GDP, inflation, unemployment, trade, FDI)
+ * - Social: get-social-data (population, life expectancy, birth/death rates)
+ * - Education: get-education-data (enrollment, expenditure)
+ * - Health: get-health-data (expenditure, physicians, hospital beds)
+ * - Fiscal/Governance: REST API only (tax, governance indicators)
+ * - Defense: REST API only (military expenditure)
+ * - Environment/Innovation: REST API only (CO₂, R&D, GINI)
+ *
+ * Full inventory: analysis/worldbank/indicators-inventory.json
  */
 export const INDICATOR_IDS = {
+  // ---------------------------------------------------------------------------
+  // Economic indicators (available via MCP get-economic-data)
+  // ---------------------------------------------------------------------------
   /** GDP growth (annual %) */
   gdpGrowth: 'NY.GDP.MKTP.KD.ZG',
+  /** GDP per capita, current USD */
+  gdpPerCapita: 'NY.GDP.PCAP.CD',
+  /** GDP per capita, PPP (current international $) */
+  gdpPerCapitaPpp: 'NY.GDP.PCAP.PP.CD',
   /** Unemployment, total (% of total labor force) */
   unemployment: 'SL.UEM.TOTL.ZS',
   /** Inflation, consumer prices (annual %) */
   inflation: 'FP.CPI.TOTL.ZG',
+  /** Exports of goods and services (% of GDP) */
+  exportsGdpPct: 'NE.EXP.GNFS.ZS',
+  /** Foreign direct investment, net inflows (BoP, current US$) */
+  fdiNet: 'BN.KLT.DINV.CD',
+  /** GNI per capita, Atlas method (current US$) */
+  gniPerCapita: 'NY.GNP.PCAP.CD',
+
+  // ---------------------------------------------------------------------------
+  // Social indicators (available via MCP get-social-data)
+  // ---------------------------------------------------------------------------
   /** Population, total */
   population: 'SP.POP.TOTL',
+  /** Life expectancy at birth, total (years) */
+  lifeExpectancy: 'SP.DYN.LE00.IN',
+  /** Birth rate, crude (per 1,000 people) */
+  birthRate: 'SP.DYN.CBRT.IN',
+  /** Death rate, crude (per 1,000 people) */
+  deathRate: 'SP.DYN.CDRT.IN',
+  /** Individuals using the Internet (% of population) */
+  internetUsers: 'IT.NET.USER.ZS',
+
+  // ---------------------------------------------------------------------------
+  // Education indicators (available via MCP get-education-data)
+  // ---------------------------------------------------------------------------
+  /** Government expenditure on education, total (% of GDP) */
+  educationExpenditure: 'SE.XPD.TOTL.GD.ZS',
+  /** School enrollment, primary (% gross) */
+  schoolEnrollment: 'SE.PRM.ENRR',
+
+  // ---------------------------------------------------------------------------
+  // Health indicators (available via MCP get-health-data)
+  // ---------------------------------------------------------------------------
+  /** Current health expenditure (% of GDP) */
+  healthExpenditure: 'SH.XPD.CHEX.GD.ZS',
+  /** Physicians (per 1,000 people) */
+  physicians: 'SH.MED.PHYS.ZS',
+  /** Hospital beds (per 1,000 people) */
+  hospitalBeds: 'SH.MED.BEDS.ZS',
+
+  // ---------------------------------------------------------------------------
+  // Fiscal & governance indicators (REST API only)
+  // ---------------------------------------------------------------------------
   /** Trade (% of GDP) */
   tradeGdpPct: 'NE.TRD.GNFS.ZS',
   /** Government expenditure (% of GDP) */
   govExpenditure: 'GC.XPN.TOTL.GD.ZS',
-  /** GDP per capita, PPP (current international $) */
-  gdpPerCapitaPpp: 'NY.GDP.PCAP.PP.CD',
   /** Current account balance (% of GDP) */
   currentAccountBalance: 'BN.CAB.XOKA.GD.ZS',
-  /** Military expenditure (% of GDP) */
-  militaryExpenditure: 'MS.MIL.XPND.GD.ZS',
-  /** CO2 emissions (metric tons per capita) */
-  co2Emissions: 'EN.ATM.CO2E.PC',
-  /** GINI index */
-  giniIndex: 'SI.POV.GINI',
-  /** Research and development expenditure (% of GDP) */
-  rdExpenditure: 'GB.XPD.RSDV.GD.ZS',
   /** Tax revenue (% of GDP) — relevant to SkU taxation committee */
   taxRevenue: 'GC.TAX.TOTL.GD.ZS',
   /** Rule of law estimate — relevant to KU constitution committee */
@@ -106,6 +154,22 @@ export const INDICATOR_IDS = {
   voiceAccountability: 'VA.EST',
   /** Government effectiveness estimate — relevant to KU constitution committee */
   govEffectiveness: 'GE.EST',
+
+  // ---------------------------------------------------------------------------
+  // Defense indicator (REST API only)
+  // ---------------------------------------------------------------------------
+  /** Military expenditure (% of GDP) */
+  militaryExpenditure: 'MS.MIL.XPND.GD.ZS',
+
+  // ---------------------------------------------------------------------------
+  // Environment & innovation indicators (REST API only)
+  // ---------------------------------------------------------------------------
+  /** CO2 emissions (metric tons per capita) */
+  co2Emissions: 'EN.ATM.CO2E.PC',
+  /** GINI index */
+  giniIndex: 'SI.POV.GINI',
+  /** Research and development expenditure (% of GDP) */
+  rdExpenditure: 'GB.XPD.RSDV.GD.ZS',
 } as const;
 
 // ---------------------------------------------------------------------------

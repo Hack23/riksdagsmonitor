@@ -842,7 +842,216 @@ All visualization examples below are **valid Chart.js configuration objects** ma
 
 Embed each chart on the target `<canvas>` element using a `data-chart-config` attribute containing the full Chart.js configuration object. Do **not** emit `<script class="chart-data">` blocks. Treat `data-chart-config` as the canonical hand-off format for chart data, but only use this pattern when the target page explicitly includes a chart initializer that scans `canvas[data-chart-config]` and instantiates the corresponding Chart.js chart; otherwise the chart will not render.
 
-> **Canonical chart type identifiers** (use these exact strings in the optional `chartType` field inside `data-chart-config`): `coalition-votes`, `swot-quadrant`, `risk-heatmap`, `policy-radar`, `legislative-sankey`, `css-mindmap`, `timeline`.
+> **Canonical chart type identifiers** (use these exact strings in the optional `chartType` field inside `data-chart-config`): `coalition-votes`, `swot-quadrant`, `risk-heatmap`, `policy-radar`, `legislative-sankey`, `css-mindmap`, `timeline`, `economic-comparison`, `economic-trend`, `nordic-radar`.
+````
+
+---
+
+## 🌍 WORLD BANK ECONOMIC CONTEXT INTEGRATION (v1.0 — for ALL content workflows)
+
+> **NON-NEGOTIABLE**: Every article MUST include economic context from World Bank indicators when the article's policy domain matches available indicators. This enriches political intelligence with quantitative evidence.
+
+````markdown
+### World Bank Indicator Reference for AI Agents
+
+The World Bank MCP server (`world-bank`) provides 19 indicators via direct MCP tools, plus 9 additional indicators via the REST API client (`scripts/world-bank-client.ts`). AI agents MUST use these to enrich articles.
+
+#### Available MCP Tools & Indicators
+
+**Economic Data** (`get-economic-data`):
+| MCP Param | Indicator ID | Name | Unit |
+|-----------|-------------|------|------|
+| `GDP_GROWTH` | NY.GDP.MKTP.KD.ZG | GDP Growth | % annual |
+| `GDP_PER_CAPITA` | NY.GDP.PCAP.CD | GDP per Capita | USD |
+| `UNEMPLOYMENT` | SL.UEM.TOTL.ZS | Unemployment | % labor force |
+| `INFLATION` | FP.CPI.TOTL.ZG | Inflation (CPI) | % annual |
+| `EXPORTS_GDP` | NE.EXP.GNFS.ZS | Exports (% GDP) | % of GDP |
+| `FDI_NET` | BN.KLT.DINV.CD | FDI Net Inflows | USD |
+| `GNI` | NY.GNP.MKTP.CD | GNI | USD |
+| `GNI_PER_CAPITA` | NY.GNP.PCAP.CD | GNI per Capita | USD |
+
+**Social Data** (`get-social-data`):
+| MCP Param | Indicator ID | Name | Unit |
+|-----------|-------------|------|------|
+| `POPULATION` | SP.POP.TOTL | Population | persons |
+| `LIFE_EXPECTANCY` | SP.DYN.LE00.IN | Life Expectancy | years |
+| `BIRTH_RATE` | SP.DYN.CBRT.IN | Birth Rate | per 1,000 |
+| `DEATH_RATE` | SP.DYN.CDRT.IN | Death Rate | per 1,000 |
+| `INTERNET_USERS` | IT.NET.USER.ZS | Internet Users | % population |
+
+**Education Data** (`get-education-data`):
+| MCP Param | Indicator ID | Name | Unit |
+|-----------|-------------|------|------|
+| `EDUCATION_EXPENDITURE` | SE.XPD.TOTL.GD.ZS | Education Expenditure | % of GDP |
+| `SCHOOL_ENROLLMENT` | SE.PRM.ENRR | School Enrollment | % gross |
+
+**Health Data** (`get-health-data`):
+| MCP Param | Indicator ID | Name | Unit |
+|-----------|-------------|------|------|
+| `HEALTH_EXPENDITURE` | SH.XPD.CHEX.GD.ZS | Health Expenditure | % of GDP |
+| `PHYSICIANS` | SH.MED.PHYS.ZS | Physicians | per 1,000 |
+| `HOSPITAL_BEDS` | SH.MED.BEDS.ZS | Hospital Beds | per 1,000 |
+
+**REST-Only Indicators** (fetched by `scripts/world-bank-client.ts`):
+| Indicator ID | Name | Unit | Committee |
+|-------------|------|------|-----------|
+| GC.TAX.TOTL.GD.ZS | Tax Revenue | % of GDP | SkU, FiU |
+| MS.MIL.XPND.GD.ZS | Military Expenditure | % of GDP | FöU |
+| GC.XPN.TOTL.GD.ZS | Government Expenditure | % of GDP | FiU |
+| EN.ATM.CO2E.PC | CO₂ Emissions per Capita | metric tons | MJU |
+| GB.XPD.RSDV.GD.ZS | R&D Expenditure | % of GDP | UbU |
+| SI.POV.GINI | GINI Index | 0-100 | SoU, AU |
+| RL.EST | Rule of Law | -2.5 to 2.5 | KU, JuU |
+| VA.EST | Voice & Accountability | -2.5 to 2.5 | KU |
+| GE.EST | Government Effectiveness | -2.5 to 2.5 | KU, FiU |
+
+#### Committee → Indicator Quick Lookup
+
+| Committee | Key Indicators |
+|-----------|---------------|
+| **FiU** (Finance) | GDP Growth, Inflation, Tax Revenue, Gov Expenditure, Current Account |
+| **AU** (Labor) | Unemployment, GINI Index, GDP per Capita |
+| **SkU** (Tax) | Tax Revenue |
+| **NU** (Industry) | Trade %, Exports %, FDI |
+| **UU** (Foreign Affairs) | Trade %, Exports % |
+| **FöU** (Defense) | Military Expenditure (NATO 2% target) |
+| **SoU** (Social) | Life Expectancy, Health Exp., Physicians, Hospital Beds, GINI |
+| **UbU** (Education) | Education Exp., R&D Exp., School Enrollment |
+| **MJU** (Environment) | CO₂ Emissions |
+| **KU** (Constitution) | Rule of Law, Voice & Accountability, Gov Effectiveness |
+| **TU** (Transport) | Internet Users |
+
+#### Article Type → Indicator Priority
+
+| Article Type | MUST Include | SHOULD Include |
+|-------------|-------------|----------------|
+| propositions | GDP Growth, Unemployment + committee-matched | Inflation, Trade, Military Exp. |
+| committee-reports | All committee-specific indicators | Nordic comparison |
+| motions | Topic-matched indicators | Nordic comparison |
+| interpellations | Rule of Law, Voice & Accountability | Topic-matched |
+| weekly-review | GDP Growth, Unemployment, Inflation | Governance indicators |
+| monthly-review | **All 28 indicators** | Full Nordic comparison |
+| week-ahead / month-ahead | GDP Growth, Unemployment, Inflation | Trend analysis |
+| evening-analysis | Top 3 relevant to day's events | — |
+
+#### How to Fetch Data (AI Agent Instructions)
+
+1. **Detect policy domains** from article source documents
+2. **Map to indicators** using committee lookup above
+3. **Fetch Sweden data** (use `countryCode="SE"` for MCP, `SWE` for REST):
+```
+get-economic-data(countryCode="SE", indicator="GDP_GROWTH", years=10)
+get-economic-data(countryCode="SE", indicator="UNEMPLOYMENT", years=10)
+```
+4. **Fetch Nordic comparison** for top 3 indicators:
+```
+get-economic-data(countryCode="DK", indicator="GDP_GROWTH", years=5)
+get-economic-data(countryCode="NO", indicator="GDP_GROWTH", years=5)
+get-economic-data(countryCode="FI", indicator="GDP_GROWTH", years=5)
+get-economic-data(countryCode="DE", indicator="GDP_GROWTH", years=5)
+```
+5. **Generate charts** using canonical types below
+
+#### Economic Chart Templates
+
+**Nordic Comparison Bar Chart** (`economic-comparison`):
+```json
+{
+  "chartType": "economic-comparison",
+  "type": "bar",
+  "data": {
+    "labels": ["Sweden", "Denmark", "Norway", "Finland", "Germany"],
+    "datasets": [{
+      "label": "GDP Growth 2024 (%)",
+      "data": [0.82, 1.5, 0.7, 0.3, -0.1],
+      "backgroundColor": ["#00d9ff", "#ff006e", "#ffbe0b", "#83cf39", "#9d4edd"],
+      "borderWidth": 1
+    }]
+  },
+  "options": {
+    "responsive": true,
+    "plugins": { "legend": { "labels": { "color": "#e0e0e0" } } },
+    "scales": {
+      "y": { "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } },
+      "x": { "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } }
+    }
+  }
+}
+```
+
+**Sweden Trend Line Chart** (`economic-trend`):
+```json
+{
+  "chartType": "economic-trend",
+  "type": "line",
+  "data": {
+    "labels": ["2019", "2020", "2021", "2022", "2023", "2024"],
+    "datasets": [{
+      "label": "Sweden Military Expenditure (% GDP)",
+      "data": [1.1, 1.2, 1.3, 1.3, 1.5, 1.7],
+      "borderColor": "#00d9ff",
+      "backgroundColor": "rgba(0,217,255,0.2)",
+      "borderWidth": 2,
+      "fill": true
+    }]
+  },
+  "options": {
+    "responsive": true,
+    "plugins": {
+      "annotation": {
+        "annotations": {
+          "target": {
+            "type": "line",
+            "yMin": 2.0, "yMax": 2.0,
+            "borderColor": "#ff006e",
+            "borderDash": [6, 6],
+            "label": { "display": true, "content": "NATO 2% target", "color": "#ff006e" }
+          }
+        }
+      },
+      "legend": { "labels": { "color": "#e0e0e0" } }
+    },
+    "scales": {
+      "y": { "title": { "display": true, "text": "% of GDP", "color": "#e0e0e0" }, "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } },
+      "x": { "ticks": { "color": "#b0b0b0" }, "grid": { "color": "rgba(255,255,255,0.06)" } }
+    }
+  }
+}
+```
+
+**Nordic Radar Overview** (`nordic-radar`):
+```json
+{
+  "chartType": "nordic-radar",
+  "type": "radar",
+  "data": {
+    "labels": ["GDP Growth", "Unemployment", "Inflation", "Health Exp.", "Education Exp."],
+    "datasets": [
+      { "label": "Sweden", "data": [65, 40, 55, 80, 90], "backgroundColor": "rgba(0,217,255,0.15)", "borderColor": "#00d9ff", "borderWidth": 2 },
+      { "label": "Denmark", "data": [75, 60, 50, 75, 70], "backgroundColor": "rgba(255,0,110,0.15)", "borderColor": "#ff006e", "borderWidth": 2 },
+      { "label": "Norway", "data": [55, 70, 45, 85, 65], "backgroundColor": "rgba(255,190,11,0.15)", "borderColor": "#ffbe0b", "borderWidth": 2 },
+      { "label": "Finland", "data": [30, 35, 60, 70, 75], "backgroundColor": "rgba(131,207,57,0.15)", "borderColor": "#83cf39", "borderWidth": 2 }
+    ]
+  },
+  "options": {
+    "responsive": true,
+    "plugins": { "legend": { "labels": { "color": "#e0e0e0" } } },
+    "scales": {
+      "r": {
+        "grid": { "color": "rgba(255,255,255,0.1)" },
+        "ticks": { "color": "#b0b0b0", "backdropColor": "transparent" },
+        "pointLabels": { "color": "#e0e0e0", "font": { "size": 12 } }
+      }
+    }
+  }
+}
+```
+
+> **Country color palette** (consistent across all charts): Sweden `#00d9ff`, Denmark `#ff006e`, Norway `#ffbe0b`, Finland `#83cf39`, Germany `#9d4edd`.
+
+> **Full indicator inventory**: `analysis/worldbank/indicators-inventory.json` — machine-readable reference with all 28 indicators, committee mappings, chart types, and article relevance.
+
+> **Use case guide**: `analysis/worldbank/use-cases.md` — detailed scenarios for when each indicator adds value.
 ````
 
 ---
