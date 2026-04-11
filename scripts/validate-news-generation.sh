@@ -149,6 +149,46 @@ fi
 echo ""
 
 # ============================================================================
+# Check 3b: Analysis References — Broken Links
+# ============================================================================
+echo "📋 Check 3b: Analysis references link integrity"
+BROKEN_REFS=0
+CHECKED_REFS=0
+for file in news/*-{en,sv}.html; do
+  if [ -f "$file" ]; then
+    BASENAME="$(basename "$file")"
+    if [[ "$BASENAME" == index* ]]; then
+      continue
+    fi
+    if grep -q 'class="analysis-references"' "$file" 2>/dev/null; then
+      CHECKED_REFS=$((CHECKED_REFS + 1))
+      # Extract analysis/daily/ paths from GitHub blob URLs and check they exist locally
+      BROKEN_IN_FILE=0
+      for link in $(grep -oP 'href="https://github\.com/Hack23/riksdagsmonitor/blob/main/\Kanalysis/daily/[^"]+\.md' "$file" 2>/dev/null); do
+        if [ ! -f "$link" ]; then
+          BROKEN_IN_FILE=$((BROKEN_IN_FILE + 1))
+        fi
+      done
+      if [ "$BROKEN_IN_FILE" -gt 0 ]; then
+        echo -e "${YELLOW}⚠️ $BROKEN_IN_FILE broken analysis link(s) in: $BASENAME${NC}"
+        BROKEN_REFS=$((BROKEN_REFS + 1))
+        WARNINGS=$((WARNINGS + 1))
+      fi
+    fi
+  fi
+done
+
+if [ $CHECKED_REFS -eq 0 ]; then
+  echo -e "${YELLOW}ℹ️  No articles with analysis-references to check${NC}"
+elif [ $BROKEN_REFS -eq 0 ]; then
+  echo -e "${GREEN}✅ All $CHECKED_REFS articles have valid analysis reference links${NC}"
+else
+  echo -e "${YELLOW}⚠️ $BROKEN_REFS of $CHECKED_REFS articles have broken analysis links${NC}"
+  echo -e "${YELLOW}   ↳ Run: npx tsx scripts/fix-analysis-references.ts --rewrite${NC}"
+fi
+echo ""
+
+# ============================================================================
 # Check 4: BreadcrumbList localization (spot check key languages)
 # ============================================================================
 echo "📋 Check 4: BreadcrumbList structured data localization"

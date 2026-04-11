@@ -859,7 +859,7 @@ Run analysis references fix, validation, and HTMLHint before creating PR:
 ```bash
 # 🔴 MANDATORY: Inject analysis references into any article missing them
 # This is deterministic — scans analysis/ dir for files created in this workflow run
-npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --type committee-reports
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite --type committee-reports
 
 bash scripts/validate-news-generation.sh
 VALIDATION_EXIT=$?

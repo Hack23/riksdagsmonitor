@@ -816,7 +816,7 @@ If untranslated content found, translate each `<span data-translate="true" lang=
 Then run analysis references fix and validation:
 ```bash
 # 🔴 MANDATORY: Inject analysis references into any article missing them
-npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE"
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite
 
 bash scripts/validate-news-generation.sh
 VALIDATION_EXIT=$?

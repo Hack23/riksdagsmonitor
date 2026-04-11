@@ -1883,11 +1883,11 @@ Read these methodology documents to guide your analysis:
 
 > 🔴 **NON-NEGOTIABLE — TRANSPARENCY REQUIREMENT**: Every news article MUST contain a "📊 Analysis & Sources" section linking to ALL analysis files created for that article. This is the **#1 transparency and integrity requirement** — readers MUST be able to verify every claim by accessing the underlying analysis. Articles WITHOUT analysis references are **REJECTED**.
 
-> ⚠️ **DETERMINISTIC FIX**: The `scripts/fix-analysis-references.ts` script **deterministically injects** analysis references into any article missing them. Since analysis files and articles are created in the **same workflow run**, the script scans `analysis/daily/{date}/{subfolder}/` to discover exactly which files exist and builds properly localized links. **Every content workflow MUST run this script before validation.**
+> ⚠️ **DETERMINISTIC FIX**: The `scripts/fix-analysis-references.ts` script **deterministically injects** analysis references into any article missing them. Since analysis files and articles are created in the **same workflow run**, the script scans `analysis/daily/{date}/{subfolder}/` to discover exactly which files exist and builds properly localized links. **Every content workflow MUST run this script with `--rewrite` before validation.** The `--rewrite` flag also detects and replaces any existing analysis-references sections that contain broken links to non-existent files.
 
 > ```bash
 > # 🔴 MANDATORY — run BEFORE validate-news-generation.sh in EVERY content workflow
-> npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE"
+> npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite
 > ```
 
 ````markdown
@@ -1898,17 +1898,18 @@ Read these methodology documents to guide your analysis:
 > 2. Checks if each has `class="analysis-references"`
 > 3. If missing, generates the section by scanning `analysis/daily/{date}/{subfolder}/` for actual `.md` files
 > 4. Injects the localized HTML section before the article footer
-> 5. Is idempotent — safe to run multiple times
+> 5. With `--rewrite`: detects broken links in existing sections and regenerates them from filesystem scan
+> 6. Is idempotent — safe to run multiple times
 
 ```bash
 # Run in every content workflow, right before validate-news-generation.sh:
-npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE"
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite
 
 # Or target a specific article type:
-npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --type committee-reports
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --type committee-reports --rewrite
 
 # Dry run to preview changes:
-npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --dry-run
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite --dry-run
 ```
 
 ### Manual Fallback: Verification Check
