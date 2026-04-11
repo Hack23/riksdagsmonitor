@@ -837,6 +837,58 @@ get_calendar_events({ from: "<tomorrow>", tom: "<tomorrow>", limit: 50 })
 2. If analysis artifacts exist: commit them with `git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" && git commit -m "📊 Analysis artifacts - Evening Analysis - {date}"` and call `safeoutputs___create_pull_request` with title `📊 Analysis Only - Evening Analysis - {date}`, labels `["analysis-only", "evening-analysis"]`
 3. If NO analysis artifacts exist: call `safeoutputs___noop({"message": "No significant parliamentary activity found for today's evening analysis. Pre-article analysis pipeline also produced no output."})` and stop.
 
+### 🔬 Step 2b: Read ALL Analysis Files + Cross-Reference Sibling Types (MANDATORY)
+
+> 🔴 **NON-NEGOTIABLE**: Evening analysis synthesizes the ENTIRE day's parliamentary activity. The AI MUST read ALL analysis files from ALL article types before generating the evening article. See SHARED_PROMPT_PATTERNS.md §"MANDATORY PRE-ARTICLE ANALYSIS READING".
+
+```bash
+ANALYSIS_SUBFOLDER="evening-analysis"
+ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
+
+# Step 1: Read own analysis
+echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
+if [ -d "$ANALYSIS_BASE" ]; then
+  for MD_FILE in "$ANALYSIS_BASE"/*.md; do
+    if [ -f "$MD_FILE" ]; then
+      echo "--- Reading: $(basename $MD_FILE) ---"
+      cat "$MD_FILE"
+      echo ""
+    fi
+  done
+  if [ -d "$ANALYSIS_BASE/documents" ]; then
+    for DOC_FILE in "$ANALYSIS_BASE/documents"/*.md; do
+      if [ -f "$DOC_FILE" ]; then
+        echo "--- Per-doc: $(basename $DOC_FILE) ---"
+        cat "$DOC_FILE"
+        echo ""
+      fi
+    done
+  fi
+fi
+
+# Step 2: Cross-reference ALL sibling analysis types for the same date
+echo "🔍 Cross-referencing sibling analysis types for $ARTICLE_DATE..."
+for SIBLING_DIR in analysis/daily/$ARTICLE_DATE/*/; do
+  if [ -d "$SIBLING_DIR" ]; then
+    SIBLING_TYPE="$(basename $SIBLING_DIR)"
+    if [ "$SIBLING_TYPE" = "$ANALYSIS_SUBFOLDER" ]; then continue; fi
+    echo "📖 Cross-referencing: $SIBLING_TYPE"
+    for SIBLING_FILE in "$SIBLING_DIR/synthesis-summary.md" "$SIBLING_DIR/significance-scoring.md" "$SIBLING_DIR/stakeholder-perspectives.md"; do
+      if [ -f "$SIBLING_FILE" ]; then
+        echo "--- Sibling ($SIBLING_TYPE): $(basename $SIBLING_FILE) ---"
+        cat "$SIBLING_FILE"
+        echo ""
+      fi
+    done
+  fi
+done
+
+TOTAL_FILES=$(find "analysis/daily/$ARTICLE_DATE" -name "*.md" -type f 2>/dev/null | wc -l)
+echo "✅ Read $TOTAL_FILES total analysis files across all types — evening article MUST synthesize these findings"
+```
+
+> **After reading, confirm synthesis by noting**: (1) total files read, (2) which sibling types were found, (3) the day's top 3 most significant findings across ALL types. The evening article MUST reflect findings from ALL sibling types, not just its own analysis.
+
 ## Step 3: Generate Articles
 
 ### Saturday — Use Generation Script
@@ -931,13 +983,25 @@ echo "Generated: $(echo "$NEW_ARTICLES" | wc -l) articles"
 
 **3. Generate AI meta descriptions from analysis** (150-160 chars) — Summarize the day's top 2-3 developments. BANNED: ❌ any description starting with "Analysis of N documents".
 
-**4. Add analysis references section** — Insert the "📊 Analysis & Sources" HTML block before footer. For evening analysis, link to ALL article-type analysis folders for the date:
+**4. 🔴 Add analysis references section (MANDATORY — VERIFY AFTER)** — Insert the "📊 Analysis & Sources" HTML block before footer. For evening analysis, link to ALL article-type analysis folders for the date:
+- `analysis/daily/$ARTICLE_DATE/evening-analysis/` (this workflow's own analysis)
 - `analysis/daily/$ARTICLE_DATE/committeeReports/` (if exists)
 - `analysis/daily/$ARTICLE_DATE/propositions/` (if exists)
 - `analysis/daily/$ARTICLE_DATE/interpellations/` (if exists)
 - `analysis/daily/$ARTICLE_DATE/motions/` (if exists)
 - `analysis/daily/$ARTICLE_DATE/realtime-*/` (if exists)
 - `analysis/methodologies/ai-driven-analysis-guide.md`
+
+> Use `ls analysis/daily/$ARTICLE_DATE/` to discover which folders exist.
+
+**After inserting, VERIFY** by running:
+```bash
+for FILE in news/$ARTICLE_DATE-evening-analysis-*.html; do
+  if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
+    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
+  fi
+done
+```
 
 **5. Update all metadata in ALL languages** — For EVERY generated language file, ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, `<h1>`, Schema.org `headline`, `alternativeHeadline`, and `description` all reflect the AI-generated title and description.
 
@@ -956,8 +1020,11 @@ done
 
 **Translation rules:** Translate all Swedish text. Keep party names (S, M, SD, V, MP, C, L, KD) and personal names untranslated. Zero language mixing.
 
-Then run validation:
+Then run analysis references fix and validation:
 ```bash
+# 🔴 MANDATORY: Inject analysis references into any article missing them
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --type evening-analysis
+
 bash scripts/validate-news-generation.sh
 VALIDATION_EXIT=$?
 if [ "$VALIDATION_EXIT" -ne 0 ]; then

@@ -40,7 +40,6 @@ import type { Language } from '../types/language.js';
 import type { ArticleCategory, GeneratedArticle, GenerationResult, MCPCallRecord } from '../types/article.js';
 import { generateDynamicTitle, getAnalysisEnrichment } from '../generate-news-enhanced/helpers.js';
 import { buildArticleVisualizationSections } from '../generate-news-enhanced/generators.js';
-import { generateAnalysisReferencesHtml } from '../analysis-references.js';
 
 /**
  * Required MCP tools for monthly-review articles
@@ -328,7 +327,7 @@ export async function generateMonthlyReview(options: GenerationOptions = {}): Pr
         topics: metadata.topics,
         tags: metadata.tags,
         sections: [ciaSection, ...extraSections],
-        analysisReferencesHtml: generateAnalysisReferencesHtml({ date: articleDate, articleType: 'monthly-review', lang }),
+        // Analysis references are injected by fix-analysis-references.ts post-processor
         ...(enrichment ?? {}),
       });
 

@@ -49,7 +49,6 @@ import {
 } from './helpers.js';
 import { AIAnalysisPipeline } from './ai-analysis-pipeline.js';
 import { sharedAnalysisCache } from './analysis-cache.js';
-import { generateAnalysisReferencesHtml } from '../analysis-references.js';
 
 /** Metadata from analysis iteration (stub — analysis is now AI-driven in workflows) */
 interface AnalysisIterationMetadata {
@@ -272,7 +271,7 @@ export async function generateWeekAhead(): Promise<GenerationResult> {
         topics: metadata.topics,
         tags: metadata.tags,
         sections,
-        analysisReferencesHtml: generateAnalysisReferencesHtml({ date: toISODate(today), articleType: 'week-ahead', lang }),
+        // Analysis references are injected by fix-analysis-references.ts post-processor
         ...(enrichment ?? {}),
       });
       await writeSingleArticle(html, slug, lang, 'week-ahead');
@@ -367,7 +366,7 @@ export async function generateCommitteeReports(): Promise<GenerationResult> {
         topics: metadata.topics,
         tags: metadata.tags,
         sections,
-        analysisReferencesHtml: generateAnalysisReferencesHtml({ date: toISODate(today), articleType: 'committee-reports', lang }),
+        // Analysis references are injected by fix-analysis-references.ts post-processor
         ...(enrichment ?? {}),
       });
 
@@ -460,7 +459,7 @@ export async function generatePropositions(): Promise<GenerationResult> {
         topics: metadata.topics,
         tags: metadata.tags,
         sections,
-        analysisReferencesHtml: generateAnalysisReferencesHtml({ date: toISODate(today), articleType: 'propositions', lang }),
+        // Analysis references are injected by fix-analysis-references.ts post-processor
         ...(enrichment ?? {}),
       });
 
@@ -553,7 +552,7 @@ export async function generateMotions(): Promise<GenerationResult> {
         topics: metadata.topics,
         tags: metadata.tags,
         sections,
-        analysisReferencesHtml: generateAnalysisReferencesHtml({ date: toISODate(today), articleType: 'motions', lang }),
+        // Analysis references are injected by fix-analysis-references.ts post-processor
         ...(enrichment ?? {}),
       });
 
@@ -646,7 +645,7 @@ export async function generateInterpellations(): Promise<GenerationResult> {
         topics: metadata.topics,
         tags: metadata.tags,
         sections,
-        analysisReferencesHtml: generateAnalysisReferencesHtml({ date: toISODate(today), articleType: 'interpellations', lang }),
+        // Analysis references are injected by fix-analysis-references.ts post-processor
         ...(enrichment ?? {}),
       });
 
@@ -2100,7 +2099,7 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
         topics: metadata.topics,
         tags: metadata.tags,
         sections,
-        analysisReferencesHtml: generateAnalysisReferencesHtml({ date: toISODate(today), articleType: 'deep-inspection', lang }),
+        // Analysis references are injected by fix-analysis-references.ts post-processor
         ...(enrichment ?? {}),
       });
 

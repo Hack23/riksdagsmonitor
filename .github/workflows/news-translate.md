@@ -306,6 +306,8 @@ The Swedish parliamentary session runs September–August. Calculate the current
 
 When translating, preserve ALL analysis depth. Translate content but NEVER remove analytical components (SWOT tables, Mermaid diagrams, risk matrices, confidence labels).
 
+> 🔴 **NON-NEGOTIABLE: Preserve the "📊 Analysis & Sources" section** (`class="analysis-references"`) during translation. This section links to analysis files on GitHub and MUST appear in every translated article. Translate the section title and intro text to the target language, but keep all GitHub URLs unchanged. If the source article is missing the analysis-references section, add it using the template from SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES.
+
 ## Required Skills
 
 Load lazily — read each only when you need it, NOT upfront:

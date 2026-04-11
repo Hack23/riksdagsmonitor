@@ -23,7 +23,6 @@ import { getCurrentRiksmote } from '../motions.js';
 import type { GenerationOptions, TitleSet, VotingRecord } from './types.js';
 import { REQUIRED_TOOLS } from './types.js';
 import { loadCIAContext, enrichWithFullText, attachSpeechesToDocuments, formatDateForSlug } from './data-loader.js';
-import { generateAnalysisReferencesHtml } from '../../analysis-references.js';
 import {
   analyzeCoalitionStress,
   calculateWeeklyActivityMetrics,
@@ -222,7 +221,7 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
         topics: metadata.topics,
         tags: metadata.tags,
         sections: [ciaSection, ...extraSections],
-        analysisReferencesHtml: generateAnalysisReferencesHtml({ date: articleDate, articleType: 'weekly-review', lang }),
+        // Analysis references are injected by fix-analysis-references.ts post-processor
         ...(enrichment ?? {}),
       });
 

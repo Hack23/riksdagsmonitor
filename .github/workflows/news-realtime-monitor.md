@@ -744,6 +744,40 @@ Replace each `<placeholder>` with the actual value from your queries:
 
 **Stop here only if no analysis artifacts exist.** Parliament is often inactive — but analysis artifacts should still be committed for review.
 
+### 🔬 Step 2b: Read ALL Analysis Files (MANDATORY — before article generation)
+
+> 🔴 **NON-NEGOTIABLE**: The AI agent MUST `cat` every analysis `.md` file BEFORE generating any article HTML. Analysis and articles are created in the **same workflow run** — there is zero excuse for not reading the analysis. See SHARED_PROMPT_PATTERNS.md §"MANDATORY PRE-ARTICLE ANALYSIS READING".
+
+```bash
+HHMM=$(date -u +%H%M)
+ANALYSIS_SUBFOLDER="realtime-${HHMM}"
+ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
+
+echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
+if [ -d "$ANALYSIS_BASE" ]; then
+  for MD_FILE in "$ANALYSIS_BASE"/*.md; do
+    if [ -f "$MD_FILE" ]; then
+      echo "--- Reading: $(basename $MD_FILE) ---"
+      cat "$MD_FILE"
+      echo ""
+    fi
+  done
+  if [ -d "$ANALYSIS_BASE/documents" ]; then
+    for DOC_FILE in "$ANALYSIS_BASE/documents"/*.md; do
+      if [ -f "$DOC_FILE" ]; then
+        echo "--- Per-doc: $(basename $DOC_FILE) ---"
+        cat "$DOC_FILE"
+        echo ""
+      fi
+    done
+  fi
+  ANALYSIS_FILE_COUNT=$(find "$ANALYSIS_BASE" -name "*.md" -type f | wc -l)
+  echo "✅ Read $ANALYSIS_FILE_COUNT analysis files — these MUST drive article content"
+else
+  echo "⚠️ No analysis directory found at $ANALYSIS_BASE"
+fi
+```
+
 ## Step 3: Generate Articles Using Purpose-Built Script
 
 **🚨 ALWAYS use the TypeScript generation script — it handles MCP queries, HTML templating, all 14 languages, translation, and article quality internally.**
@@ -847,7 +881,16 @@ If the script genuinely fails after verifying MCP, generate articles manually ON
 
 **2. Generate AI meta descriptions** (150-160 chars) — Summarize key political intelligence from actual content. BANNED: ❌ any description starting with "Analysis of N documents".
 
-**3. Add analysis references section** — Insert the "📊 Analysis & Sources" HTML block before footer, linking to `analysis/daily/${ARTICLE_DATE}/realtime-${HHMM}/` analysis files and `analysis/methodologies/ai-driven-analysis-guide.md`.
+**3. 🔴 Add analysis references section (MANDATORY — VERIFY AFTER)** — Insert the "📊 Analysis & Sources" HTML block before footer, linking to `analysis/daily/${ARTICLE_DATE}/realtime-${HHMM}/` analysis files and `analysis/methodologies/ai-driven-analysis-guide.md`. See SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES for the full template.
+
+**After inserting, VERIFY** by running:
+```bash
+for FILE in news/$ARTICLE_DATE-*breaking*-*.html news/$ARTICLE_DATE-*realtime*-*.html; do
+  if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
+    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
+  fi
+done
+```
 
 **4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.
 
@@ -1006,6 +1049,10 @@ When `analysis_depth` is `deep` or `comprehensive`:
 3. **Quality Gate**: word count ≥ 400, no identical why-it-matters, all Swedish text translated
 
 ### Phase 3 — Final Quality Gate Before PR
+```bash
+# 🔴 MANDATORY: Inject analysis references into any article missing them
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE"
+```
 Run `bash scripts/validate-news-generation.sh` before committing.
 
 

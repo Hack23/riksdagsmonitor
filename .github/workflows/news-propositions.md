@@ -613,6 +613,42 @@ fi
 
 > **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Propositions - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).
 
+### 🔬 Step 2b: Read ALL Analysis Files (MANDATORY — before article generation)
+
+> 🔴 **NON-NEGOTIABLE**: The AI agent MUST `cat` every analysis `.md` file BEFORE generating any article HTML. Analysis and articles are created in the **same workflow run** — there is zero excuse for not reading the analysis. Articles written without reading analysis are shallow and REJECTED. See SHARED_PROMPT_PATTERNS.md §"MANDATORY PRE-ARTICLE ANALYSIS READING".
+
+```bash
+ANALYSIS_SUBFOLDER="propositions"
+ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
+
+echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
+if [ -d "$ANALYSIS_BASE" ]; then
+  for MD_FILE in "$ANALYSIS_BASE"/*.md; do
+    if [ -f "$MD_FILE" ]; then
+      echo "--- Reading: $(basename $MD_FILE) ---"
+      cat "$MD_FILE"
+      echo ""
+    fi
+  done
+  if [ -d "$ANALYSIS_BASE/documents" ]; then
+    echo "📄 Reading per-document analyses..."
+    for DOC_FILE in "$ANALYSIS_BASE/documents"/*.md; do
+      if [ -f "$DOC_FILE" ]; then
+        echo "--- Per-doc: $(basename $DOC_FILE) ---"
+        cat "$DOC_FILE"
+        echo ""
+      fi
+    done
+  fi
+  ANALYSIS_FILE_COUNT=$(find "$ANALYSIS_BASE" -name "*.md" -type f | wc -l)
+  echo "✅ Read $ANALYSIS_FILE_COUNT analysis files — these MUST drive article content"
+else
+  echo "⚠️ No analysis directory found at $ANALYSIS_BASE — will use MCP fallback for article content"
+fi
+```
+
+> **After reading, confirm you loaded the analysis** by noting: (1) number of files read, (2) top 3 significance-ranked findings, (3) key risk scores. If you cannot produce this summary, you have NOT read the analysis.
+
 ### Step 3: Generate Articles
 
 ```bash
@@ -658,7 +694,7 @@ npx tsx scripts/fix-article-navigation.ts
 
 **3. Generate AI meta descriptions from analysis** (150-160 chars) — Summarize the #1 ranked finding from synthesis significance-scoring. BANNED: ❌ "Analysis of N documents covering Published:, Why It Matters:" or any description starting with "Analysis of N documents".
 
-**4. Add analysis references section** — Insert the "📊 Analysis & Sources" HTML block (from SHARED_PROMPT_PATTERNS.md) before the article footer, linking to:
+**4. 🔴 Add analysis references section (MANDATORY — VERIFY AFTER)** — Insert the "📊 Analysis & Sources" HTML block (from SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES) before the article footer, linking to:
 - `analysis/daily/$ARTICLE_DATE/propositions/synthesis-summary.md`
 - `analysis/daily/$ARTICLE_DATE/propositions/swot-analysis.md`
 - `analysis/daily/$ARTICLE_DATE/propositions/risk-assessment.md`
@@ -666,8 +702,19 @@ npx tsx scripts/fix-article-navigation.ts
 - `analysis/daily/$ARTICLE_DATE/propositions/stakeholder-perspectives.md`
 - `analysis/daily/$ARTICLE_DATE/propositions/significance-scoring.md`
 - `analysis/daily/$ARTICLE_DATE/propositions/classification-results.md`
+- `analysis/daily/$ARTICLE_DATE/propositions/cross-reference-map.md`
+- `analysis/daily/$ARTICLE_DATE/propositions/data-download-manifest.md`
 - `analysis/methodologies/ai-driven-analysis-guide.md`
 - Per-document analyses in `documents/` subfolder
+
+**After inserting, VERIFY** by running:
+```bash
+for FILE in news/$ARTICLE_DATE-*propositions*-*.html news/$ARTICLE_DATE-government-propositions-*.html; do
+  if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
+    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
+  fi
+done
+```
 
 **5. Update all metadata in ALL languages** — For EVERY generated language file, ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, `<h1>`, Schema.org `headline`, `alternativeHeadline`, and `description` all reflect the AI-generated title and description. Non-English articles MUST have properly translated AI titles — not English titles or generic templates.
 
@@ -700,8 +747,11 @@ npx tsx scripts/fix-article-navigation.ts
 
 ### Step 4: Translate, Validate & Verify Analysis Quality
 
-Run validation and HTMLHint before creating PR:
+Run analysis references fix, validation, and HTMLHint before creating PR:
 ```bash
+# 🔴 MANDATORY: Inject analysis references into any article missing them
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --type propositions
+
 bash scripts/validate-news-generation.sh
 VALIDATION_EXIT=$?
 if [ "$VALIDATION_EXIT" -ne 0 ]; then

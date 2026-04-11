@@ -620,6 +620,28 @@ echo "📰 Types: $ARTICLE_TYPES | Languages: $LANG_ARG"
 
 Valid article types (defined in `scripts/generate-news-enhanced/config.ts:VALID_ARTICLE_TYPES`): `week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`, `committee-reports`, `propositions`, `motions`, `interpellations`, `breaking`, `deep-inspection`. Note: `evening-analysis` is NOT a valid script type — evening analysis requires manual synthesis (see `news-evening-analysis.md`).
 
+### 🔬 Step 2b: Read ALL Analysis Files (MANDATORY — before article generation)
+
+> 🔴 **NON-NEGOTIABLE**: The AI agent MUST `cat` every analysis `.md` file BEFORE generating any article HTML. Analysis and articles are created in the **same workflow run** — there is zero excuse for not reading the analysis. See SHARED_PROMPT_PATTERNS.md §"MANDATORY PRE-ARTICLE ANALYSIS READING".
+
+```bash
+echo "📖 Reading ALL analysis files for $ARTICLE_DATE..."
+for ANALYSIS_DIR in analysis/daily/$ARTICLE_DATE/*/; do
+  if [ -d "$ANALYSIS_DIR" ]; then
+    echo "📖 Reading: $(basename $ANALYSIS_DIR)"
+    for MD_FILE in "$ANALYSIS_DIR"/*.md; do
+      if [ -f "$MD_FILE" ]; then
+        echo "--- $(basename $ANALYSIS_DIR)/$(basename $MD_FILE) ---"
+        cat "$MD_FILE"
+        echo ""
+      fi
+    done
+  fi
+done
+TOTAL_FILES=$(find "analysis/daily/$ARTICLE_DATE" -name "*.md" -type f 2>/dev/null | wc -l)
+echo "✅ Read $TOTAL_FILES analysis files — these MUST drive article content"
+```
+
 ## Step 3: Generate Articles (Script-First)
 
 **PRIMARY APPROACH — use the batch generation script:**
@@ -736,7 +758,16 @@ For **non-deep-inspection** article types only, if the script fails, generate ar
 
 **2. Generate AI meta descriptions** (150-160 chars) — Summarize key political intelligence from actual content. BANNED: ❌ any description starting with "Analysis of N documents".
 
-**3. Add analysis references section** — Insert the "📊 Analysis & Sources" HTML block before footer, linking to analysis files for the article's date and type (see SHARED_PROMPT_PATTERNS.md "ANALYSIS FILE GITHUB REFERENCES" for the complete template and type-to-folder mapping).
+**3. 🔴 Add analysis references section (MANDATORY — VERIFY AFTER)** — Insert the "📊 Analysis & Sources" HTML block before footer, linking to analysis files for the article's date and type (see SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES for the complete template and type-to-folder mapping).
+
+**After inserting, VERIFY** by running:
+```bash
+for FILE in news/$ARTICLE_DATE-*-*.html; do
+  if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
+    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
+  fi
+done
+```
 
 **4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.
 
@@ -782,8 +813,11 @@ If untranslated content found, translate each `<span data-translate="true" lang=
 
 **Translation rules:** Translate all Swedish text. Keep party names (S, M, SD, V, MP, C, L, KD) and personal names untranslated. Zero language mixing.
 
-Then run validation:
+Then run analysis references fix and validation:
 ```bash
+# 🔴 MANDATORY: Inject analysis references into any article missing them
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE"
+
 bash scripts/validate-news-generation.sh
 VALIDATION_EXIT=$?
 if [ "$VALIDATION_EXIT" -ne 0 ]; then

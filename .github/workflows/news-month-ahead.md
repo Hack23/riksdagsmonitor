@@ -425,6 +425,43 @@ fi
 
 > **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Month Ahead - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).
 
+### 🔬 Step 2b: Read ALL Analysis Files + Cross-Reference Sibling Types (MANDATORY)
+
+> 🔴 **NON-NEGOTIABLE**: Month-ahead forecasting synthesizes across ALL article types. The AI MUST read ALL analysis files from ALL article types before generating the forecast. See SHARED_PROMPT_PATTERNS.md §"MANDATORY PRE-ARTICLE ANALYSIS READING".
+
+```bash
+ANALYSIS_SUBFOLDER="month-ahead"
+ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
+
+echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
+if [ -d "$ANALYSIS_BASE" ]; then
+  for MD_FILE in "$ANALYSIS_BASE"/*.md; do
+    if [ -f "$MD_FILE" ]; then
+      echo "--- Reading: $(basename $MD_FILE) ---"
+      cat "$MD_FILE"
+      echo ""
+    fi
+  done
+fi
+
+echo "🔍 Cross-referencing sibling analysis types for $ARTICLE_DATE..."
+for SIBLING_DIR in analysis/daily/$ARTICLE_DATE/*/; do
+  if [ -d "$SIBLING_DIR" ]; then
+    SIBLING_TYPE="$(basename $SIBLING_DIR)"
+    if [ "$SIBLING_TYPE" = "$ANALYSIS_SUBFOLDER" ]; then continue; fi
+    echo "📖 Cross-referencing: $SIBLING_TYPE"
+    for SIBLING_FILE in "$SIBLING_DIR/synthesis-summary.md" "$SIBLING_DIR/significance-scoring.md"; do
+      if [ -f "$SIBLING_FILE" ]; then
+        echo "--- Sibling ($SIBLING_TYPE): $(basename $SIBLING_FILE) ---"
+        cat "$SIBLING_FILE"
+        echo ""
+      fi
+    done
+  fi
+done
+echo "✅ Cross-referencing complete — month-ahead MUST incorporate findings from all sibling types"
+```
+
 ### Step 3: Generate Articles
 
 ```bash
@@ -464,14 +501,26 @@ npx tsx scripts/fix-article-navigation.ts
 
 **2. Generate AI meta descriptions** (150-160 chars) — Key political intelligence summary. BANNED: ❌ "Analysis of N documents".
 
-**3. Add analysis references** — Insert "📊 Analysis & Sources" HTML block linking to `analysis/daily/$ARTICLE_DATE/month-ahead/` files and `analysis/methodologies/ai-driven-analysis-guide.md`.
+**3. 🔴 Add analysis references (MANDATORY — VERIFY AFTER)** — Insert "📊 Analysis & Sources" HTML block (from SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES) linking to `analysis/daily/$ARTICLE_DATE/month-ahead/` files and `analysis/methodologies/ai-driven-analysis-guide.md`.
+
+**After inserting, VERIFY** by running:
+```bash
+for FILE in news/$ARTICLE_DATE-month-ahead-*.html; do
+  if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
+    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
+  fi
+done
+```
 
 **4. Update all metadata** — `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>`.
 
 ### Step 4: Translate, Validate & Verify Analysis Quality
 
-Run validation and HTMLHint before creating PR:
+Run analysis references fix, validation, and HTMLHint before creating PR:
 ```bash
+# 🔴 MANDATORY: Inject analysis references into any article missing them
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --type month-ahead
+
 bash scripts/validate-news-generation.sh
 VALIDATION_EXIT=$?
 if [ "$VALIDATION_EXIT" -ne 0 ]; then
