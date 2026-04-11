@@ -872,6 +872,40 @@ describe('Analysis Depth Input', () => {
       ).toBe(true);
     }
   });
+
+  it('should have mandatory analysis-references verification in all content workflows', () => {
+    const allContentWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md',
+      'news-article-generator.md',
+    ];
+    for (const workflowFile of allContentWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      // Every content workflow must have a verification step that checks for analysis-references
+      expect(
+        content.includes('class="analysis-references"') || content.includes("class=\\\"analysis-references\\\""),
+        `Workflow ${workflowFile} must have analysis-references verification check`
+      ).toBe(true);
+      // Every content workflow must mark analysis references as MANDATORY
+      expect(
+        content.includes('MANDATORY') && (content.includes('analysis references') || content.includes('analysis-references')),
+        `Workflow ${workflowFile} must have MANDATORY analysis references instruction`
+      ).toBe(true);
+    }
+  });
+
+  it('translation workflow should preserve analysis-references section', () => {
+    const filepath = path.join(WORKFLOWS_DIR, 'news-translate.md');
+    expect(fs.existsSync(filepath)).toBe(true);
+    const content = fs.readFileSync(filepath, 'utf-8');
+    expect(
+      content.includes('analysis-references'),
+      'Translation workflow must mention preserving analysis-references section'
+    ).toBe(true);
+  });
 });
 
 describe('Iterative Analysis Protocol', () => {
