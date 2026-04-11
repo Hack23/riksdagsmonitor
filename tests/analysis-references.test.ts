@@ -337,5 +337,82 @@ describe('analysis-references', () => {
 
       expect(html).toContain('https://github.com/Hack23/riksdagsmonitor/blob/main/');
     });
+
+    it('includes cross-reference links for aggregation article types', () => {
+      // Create the main evening-analysis folder
+      const mainDir = join(testDir, '2026-04-10', 'evening-analysis');
+      mkdirSync(mainDir, { recursive: true });
+      writeFileSync(join(mainDir, 'synthesis-summary.md'), '# Evening Summary');
+
+      // Create sibling analysis folders
+      const propDir = join(testDir, '2026-04-10', 'propositions');
+      mkdirSync(propDir, { recursive: true });
+      writeFileSync(join(propDir, 'synthesis-summary.md'), '# Propositions Summary');
+
+      const crDir = join(testDir, '2026-04-10', 'committeeReports');
+      mkdirSync(crDir, { recursive: true });
+      writeFileSync(join(crDir, 'synthesis-summary.md'), '# Committee Reports Summary');
+
+      const html = generateAnalysisReferencesHtml({
+        date: '2026-04-10',
+        articleType: 'evening-analysis',
+        lang: 'en',
+        analysisBasePath: testDir,
+      });
+
+      // Should contain own analysis
+      expect(html).toContain('evening-analysis/synthesis-summary.md');
+      // Should contain cross-reference links to sibling types
+      expect(html).toContain('Cross-Referenced Analysis');
+      expect(html).toContain('analysis/daily/2026-04-10/committeeReports');
+      expect(html).toContain('analysis/daily/2026-04-10/propositions');
+      expect(html).toContain('Committee Reports Analysis');
+      expect(html).toContain('Propositions Analysis');
+    });
+
+    it('does NOT include cross-reference links for single-type workflows', () => {
+      // Create the main propositions folder
+      const mainDir = join(testDir, '2026-04-10', 'propositions');
+      mkdirSync(mainDir, { recursive: true });
+      writeFileSync(join(mainDir, 'synthesis-summary.md'), '# Propositions Summary');
+
+      // Create sibling
+      const crDir = join(testDir, '2026-04-10', 'committeeReports');
+      mkdirSync(crDir, { recursive: true });
+      writeFileSync(join(crDir, 'synthesis-summary.md'), '# Committee Reports Summary');
+
+      const html = generateAnalysisReferencesHtml({
+        date: '2026-04-10',
+        articleType: 'propositions',
+        lang: 'en',
+        analysisBasePath: testDir,
+      });
+
+      // Should contain own analysis
+      expect(html).toContain('propositions/synthesis-summary.md');
+      // Should NOT contain cross-reference section
+      expect(html).not.toContain('Cross-Referenced Analysis');
+      expect(html).not.toContain('committeeReports');
+    });
+
+    it('localizes cross-reference labels for Swedish', () => {
+      const mainDir = join(testDir, '2026-04-10', 'weekly-review');
+      mkdirSync(mainDir, { recursive: true });
+      writeFileSync(join(mainDir, 'synthesis-summary.md'), '# Weekly Summary');
+
+      const propDir = join(testDir, '2026-04-10', 'propositions');
+      mkdirSync(propDir, { recursive: true });
+      writeFileSync(join(propDir, 'synthesis-summary.md'), '# Prop Summary');
+
+      const html = generateAnalysisReferencesHtml({
+        date: '2026-04-10',
+        articleType: 'weekly-review',
+        lang: 'sv',
+        analysisBasePath: testDir,
+      });
+
+      expect(html).toContain('Korsrefererad analys');
+      expect(html).toContain('Propositionsanalys');
+    });
   });
 });

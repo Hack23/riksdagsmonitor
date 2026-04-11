@@ -27,7 +27,7 @@ import type { Language } from './types/language.js';
 import { ALL_LANG_CODES } from './article-template/constants.js';
 import {
   generateAnalysisReferencesHtml,
-  ARTICLE_TYPE_TO_ANALYSIS_SUBFOLDER,
+  AGGREGATION_ARTICLE_TYPES,
 } from './analysis-references.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -131,6 +131,31 @@ function hasAnalysisReferences(html: string): boolean {
 }
 
 /**
+ * Check if an aggregation-type article has cross-reference links.
+ * Returns true if the article has the "Cross-Referenced Analysis" subsection.
+ */
+function hasCrossReferences(html: string): boolean {
+  return html.includes('Cross-Referenced Analysis') || html.includes('Korsrefererad analys');
+}
+
+/**
+ * Remove the existing analysis-references section from HTML.
+ * Returns the HTML without the section, or the original if not found.
+ */
+function removeAnalysisReferences(html: string): string {
+  const startTag = '<section class="analysis-references"';
+  const endTag = '</section>';
+  const startIdx = html.indexOf(startTag);
+  if (startIdx === -1) return html;
+  const endIdx = html.indexOf(endTag, startIdx);
+  if (endIdx === -1) return html;
+  // Remove from start of section to end of </section> plus trailing newline
+  const afterEnd = endIdx + endTag.length;
+  const trailing = html[afterEnd] === '\n' ? afterEnd + 1 : afterEnd;
+  return html.slice(0, startIdx) + html.slice(trailing);
+}
+
+/**
  * Inject the analysis-references HTML section into an article.
  * Inserts before </body>, or before <footer if </body> not found.
  * Returns the modified HTML, or null if no injection point was found.
@@ -183,6 +208,7 @@ function injectAnalysisReferences(html: string, referencesHtml: string): string 
 function main(): void {
   const args = process.argv.slice(2);
   const dryRun = args.includes('--dry-run');
+  const upgrade = args.includes('--upgrade');
   const dateIdx = args.indexOf('--date');
   const filterDate = dateIdx !== -1 ? args[dateIdx + 1] : undefined;
   const typeIdx = args.indexOf('--type');
@@ -190,6 +216,7 @@ function main(): void {
 
   console.log('📊 Fix Analysis References — Ensuring all articles link to their analysis files');
   if (dryRun) console.log('  (dry run — no files will be modified)\n');
+  if (upgrade) console.log('  (upgrade mode — will replace existing sections for aggregation types missing cross-references)\n');
   if (filterDate) console.log(`  Filtering to date: ${filterDate}`);
   if (filterType) console.log(`  Filtering to type: ${filterType}`);
   console.log('');
@@ -205,6 +232,7 @@ function main(): void {
   let checked = 0;
   let alreadyHas = 0;
   let injected = 0;
+  let upgraded = 0;
   let noAnalysis = 0;
   let skipped = 0;
 
@@ -221,9 +249,33 @@ function main(): void {
 
     checked++;
 
-    const html = fs.readFileSync(info.filepath, 'utf-8');
+    let html = fs.readFileSync(info.filepath, 'utf-8');
 
-    if (hasAnalysisReferences(html)) {
+    const alreadyExists = hasAnalysisReferences(html);
+
+    // Check if this aggregation-type article needs cross-reference upgrade
+    if (alreadyExists && upgrade && AGGREGATION_ARTICLE_TYPES.has(info.articleType) && !hasCrossReferences(html)) {
+      // Remove old section and re-inject with cross-references
+      html = removeAnalysisReferences(html);
+      const referencesHtml = generateAnalysisReferencesHtml({
+        date: info.date,
+        articleType: info.articleType,
+        lang: info.lang,
+      });
+      if (referencesHtml) {
+        const modified = injectAnalysisReferences(html, referencesHtml);
+        if (modified) {
+          if (!dryRun) {
+            fs.writeFileSync(info.filepath, modified, 'utf-8');
+          }
+          upgraded++;
+          console.log(`  🔄 ${dryRun ? 'Would upgrade' : 'Upgraded'} with cross-references: ${filename}`);
+          continue;
+        }
+      }
+    }
+
+    if (alreadyExists) {
       alreadyHas++;
       continue;
     }
@@ -258,6 +310,7 @@ function main(): void {
   console.log(`Articles checked: ${checked}`);
   console.log(`Already have analysis references: ${alreadyHas}`);
   console.log(`Injected analysis references: ${injected}`);
+  console.log(`Upgraded with cross-references: ${upgraded}`);
   console.log(`No analysis files available: ${noAnalysis}`);
   console.log(`Skipped (unrecognized pattern): ${skipped}`);
   if (dryRun) console.log('\n(Dry run — no files were modified)');
@@ -277,6 +330,8 @@ if (import.meta.url === pathToFileURL(process.argv[1]).href) {
 export {
   parseArticleFilename,
   hasAnalysisReferences,
+  hasCrossReferences,
+  removeAnalysisReferences,
   injectAnalysisReferences,
   FILENAME_SLUG_TO_ARTICLE_TYPE,
 };

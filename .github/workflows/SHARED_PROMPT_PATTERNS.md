@@ -529,6 +529,119 @@ If an article fails ≥6 checks: DO NOT commit — escalate for manual review
 
 ---
 
+## 🔬 MANDATORY PRE-ARTICLE ANALYSIS READING — ALL Analysis Must Be Read Before Article Generation
+
+> 🔴 **NON-NEGOTIABLE — TRANSPARENCY & INTELLIGENCE DEPTH REQUIREMENT**: The AI agent MUST read ALL analysis artifacts (`cat`/`view` every `.md` file) BEFORE generating any article HTML. Articles written without first reading the analysis are **shallow, boilerplate, and REJECTED**. The analysis and articles are created in the **same workflow run** — there is zero excuse for not reading the analysis.
+
+### Why This Rule Exists
+
+1. **Analysis files are the intelligence foundation** — they contain SWOT, risk scores, threat analysis, significance rankings, stakeholder impacts, and cross-references that MUST drive article content
+2. **Articles without analysis context are shallow** — they produce generic "Analysis of N documents" boilerplate instead of genuine political intelligence
+3. **Transparency requires traceability** — every claim in the article must map back to a finding in the analysis files
+4. **Same workflow, same run** — the analysis is created minutes before the article, so the agent has direct access
+
+### Step 2b: Read ALL Analysis Files (MANDATORY — between analysis creation and article generation)
+
+> 🚨 **This step runs AFTER Phase 2 (analysis creation) and BEFORE Step 3 (article generation).** The AI agent MUST `cat` every analysis file to load the findings into context.
+
+````markdown
+#### Read Own Article Type's Analysis (MANDATORY for ALL workflows)
+
+```bash
+# Resolve analysis subfolder for this article type
+if [ -z "${ANALYSIS_SUBFOLDER:-}" ]; then
+  case "${ARTICLE_TYPE}" in
+    committee-reports)        ANALYSIS_SUBFOLDER="committeeReports" ;;
+    government-propositions)  ANALYSIS_SUBFOLDER="propositions" ;;
+    opposition-motions)       ANALYSIS_SUBFOLDER="motions" ;;
+    interpellation-debates)   ANALYSIS_SUBFOLDER="interpellations" ;;
+    breaking)                 ANALYSIS_SUBFOLDER="realtime-${HHMM}" ;;
+    *)                        ANALYSIS_SUBFOLDER="${ARTICLE_TYPE}" ;;
+  esac
+fi
+
+ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
+
+echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
+if [ -d "$ANALYSIS_BASE" ]; then
+  for MD_FILE in "$ANALYSIS_BASE"/*.md; do
+    if [ -f "$MD_FILE" ]; then
+      echo "--- Reading: $(basename $MD_FILE) ---"
+      cat "$MD_FILE"
+      echo ""
+    fi
+  done
+
+  # Also read per-document analyses
+  if [ -d "$ANALYSIS_BASE/documents" ]; then
+    echo "📄 Reading per-document analyses..."
+    for DOC_FILE in "$ANALYSIS_BASE/documents"/*.md; do
+      if [ -f "$DOC_FILE" ]; then
+        echo "--- Per-doc: $(basename $DOC_FILE) ---"
+        cat "$DOC_FILE"
+        echo ""
+      fi
+    done
+  fi
+
+  ANALYSIS_FILE_COUNT=$(find "$ANALYSIS_BASE" -name "*.md" -type f | wc -l)
+  echo "✅ Read $ANALYSIS_FILE_COUNT analysis files from $ANALYSIS_BASE"
+else
+  echo "⚠️ No analysis directory found at $ANALYSIS_BASE — will use MCP fallback"
+fi
+```
+
+#### Cross-Reference Sibling Analysis Types (MANDATORY for aggregation workflows)
+
+> **Evening analysis, weekly review, monthly review, week-ahead, and month-ahead** synthesize across ALL article types. These workflows MUST also read analysis from sibling types.
+
+```bash
+# For aggregation workflows (evening-analysis, weekly-review, monthly-review, week-ahead, month-ahead):
+echo "🔍 Cross-referencing sibling analysis types for $ARTICLE_DATE..."
+for SIBLING_DIR in analysis/daily/$ARTICLE_DATE/*/; do
+  if [ -d "$SIBLING_DIR" ]; then
+    SIBLING_TYPE="$(basename $SIBLING_DIR)"
+    # Skip own type (already read above)
+    if [ "$SIBLING_TYPE" = "$ANALYSIS_SUBFOLDER" ]; then continue; fi
+    echo "📖 Cross-referencing: $SIBLING_TYPE"
+    # Read synthesis and significance from sibling (most important for cross-referencing)
+    for SIBLING_FILE in "$SIBLING_DIR/synthesis-summary.md" "$SIBLING_DIR/significance-scoring.md" "$SIBLING_DIR/stakeholder-perspectives.md"; do
+      if [ -f "$SIBLING_FILE" ]; then
+        echo "--- Sibling ($SIBLING_TYPE): $(basename $SIBLING_FILE) ---"
+        cat "$SIBLING_FILE"
+        echo ""
+      fi
+    done
+  fi
+done
+echo "✅ Cross-referencing complete"
+```
+
+#### For Single-Type Workflows (propositions, motions, committee-reports, interpellations)
+
+> Single-type workflows do NOT need to read ALL sibling analysis. However, they SHOULD read the cross-reference-map.md to understand connections to other article types.
+
+```bash
+# Read cross-reference map to understand connections
+if [ -f "$ANALYSIS_BASE/cross-reference-map.md" ]; then
+  echo "🔗 Reading cross-reference map for connections to other types..."
+  cat "$ANALYSIS_BASE/cross-reference-map.md"
+fi
+```
+````
+
+### Verification: Confirm Analysis Was Read
+
+> After reading, the AI MUST confirm it loaded the analysis by summarizing:
+> 1. Number of analysis files read
+> 2. Top 3 significance-ranked findings
+> 3. Key risk scores and confidence levels
+> 4. Which sibling types were cross-referenced (for aggregation workflows)
+>
+> **If the agent cannot produce this summary, it has NOT read the analysis.**
+
+---
+
 ## 📊 AI ARTICLE CONTENT GENERATION (v4.0 — copy into every content workflow)
 
 > **NON-NEGOTIABLE**: Article content (lede, analysis, winners/losers, takeaways) MUST be AI-generated from actual document analysis. Script stubs are HTML skeletons ONLY.

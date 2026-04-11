@@ -207,6 +207,65 @@ export const ARTICLE_TYPE_TO_ANALYSIS_SUBFOLDER: Record<string, string> = {
   'deep-inspection': 'deep-inspection',
 };
 
+/**
+ * Aggregation article types that synthesize across ALL daily analysis.
+ * These workflows read (and should link to) sibling analysis from other
+ * article types on the same date.
+ */
+export const AGGREGATION_ARTICLE_TYPES: ReadonlySet<string> = new Set([
+  'evening-analysis',
+  'weekly-review',
+  'monthly-review',
+  'week-ahead',
+  'month-ahead',
+]);
+
+/**
+ * Display metadata for sibling analysis type folders used in cross-reference links.
+ */
+const SIBLING_TYPE_DISPLAY: Record<string, { emoji: string; labels: Record<Language, string> }> = {
+  propositions: {
+    emoji: '📜',
+    labels: {
+      en: 'Propositions Analysis', sv: 'Propositionsanalys', da: 'Propositionsanalyse',
+      no: 'Proposisjonsanalyse', fi: 'Esitysanalyysi', de: 'Propositionsanalyse',
+      fr: 'Analyse des propositions', es: 'Análisis de proposiciones',
+      nl: 'Propositieanalyse', ar: 'تحليل المقترحات', he: 'ניתוח הצעות',
+      ja: '法案分析', ko: '법안 분석', zh: '法案分析',
+    },
+  },
+  committeeReports: {
+    emoji: '📋',
+    labels: {
+      en: 'Committee Reports Analysis', sv: 'Utskottsbetänkandeanalys', da: 'Udvalgsberetningsanalyse',
+      no: 'Komitérapportanalyse', fi: 'Valiokuntalausuntoanalyysi', de: 'Ausschussberichtsanalyse',
+      fr: 'Analyse des rapports de comité', es: 'Análisis de informes de comité',
+      nl: 'Commissierapportanalyse', ar: 'تحليل تقارير اللجان', he: 'ניתוח דוחות ועדה',
+      ja: '委員会報告分析', ko: '위원회 보고서 분석', zh: '委员会报告分析',
+    },
+  },
+  motions: {
+    emoji: '✊',
+    labels: {
+      en: 'Motions Analysis', sv: 'Motionsanalys', da: 'Forslagsanalyse',
+      no: 'Forslags-analyse', fi: 'Aloiteanalyysi', de: 'Antraganalyse',
+      fr: 'Analyse des motions', es: 'Análisis de mociones',
+      nl: 'Motieanalyse', ar: 'تحليل الاقتراحات', he: 'ניתוח הצעות',
+      ja: '動議分析', ko: '발의 분석', zh: '动议分析',
+    },
+  },
+  interpellations: {
+    emoji: '❓',
+    labels: {
+      en: 'Interpellations Analysis', sv: 'Interpellationsanalys', da: 'Interpellationsanalyse',
+      no: 'Interpellasjonsanalyse', fi: 'Välikysymysanalyysi', de: 'Interpellationsanalyse',
+      fr: 'Analyse des interpellations', es: 'Análisis de interpelaciones',
+      nl: 'Interpellatieanalyse', ar: 'تحليل الاستجوابات', he: 'ניתוח אינטרפלציות',
+      ja: '質問主意書分析', ko: '대정부질문 분석', zh: '质询分析',
+    },
+  },
+};
+
 // ---------------------------------------------------------------------------
 // Public API
 // ---------------------------------------------------------------------------
@@ -324,6 +383,33 @@ export function generateAnalysisReferencesHtml(options: AnalysisReferencesOption
     }
   }
 
+  // For aggregation types (evening-analysis, weekly-review, etc.), add links to
+  // sibling analysis folders from the same date
+  const siblingItems: string[] = [];
+  if (AGGREGATION_ARTICLE_TYPES.has(options.articleType)) {
+    const basePath = options.analysisBasePath ?? 'analysis/daily';
+    const dateDir = path.join(basePath, date);
+    if (fs.existsSync(dateDir)) {
+      const siblingDirs = fs.readdirSync(dateDir, { withFileTypes: true })
+        .filter(e => e.isDirectory() && e.name !== subfolder)
+        .map(e => e.name)
+        .sort();
+      for (const sibDir of siblingDirs) {
+        const display = SIBLING_TYPE_DISPLAY[sibDir];
+        if (display) {
+          const sibLabel = escapeHtml(display.labels[lang] ?? display.labels.en);
+          const sibHref = `${GITHUB_TREE_BASE}/analysis/daily/${date}/${sibDir}`;
+          siblingItems.push(`    <li><a href="${sibHref}" rel="noopener noreferrer">${display.emoji} ${sibLabel}</a></li>`);
+        } else {
+          // Unknown sibling — use generic label
+          const rawLabel = sibDir.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+          const sibHref = `${GITHUB_TREE_BASE}/analysis/daily/${date}/${sibDir}`;
+          siblingItems.push(`    <li><a href="${sibHref}" rel="noopener noreferrer">📂 ${escapeHtml(rawLabel)}</a></li>`);
+        }
+      }
+    }
+  }
+
   // Always add methodology link
   const methodologyHref = `${GITHUB_BLOB_BASE}/analysis/methodologies/ai-driven-analysis-guide.md`;
   listItems.push(`    <li><a href="${methodologyHref}" rel="noopener noreferrer">🤖 ${escapeHtml(methodologyLabel)}</a></li>`);
@@ -333,6 +419,19 @@ export function generateAnalysisReferencesHtml(options: AnalysisReferencesOption
     <h2>📊 ${escapeHtml(sectionTitle)}</h2>
     <p>${escapeHtml(introText)}</p>
     <ul>\n${listItems.join('\n')}\n    </ul>`;
+
+  // Add sibling analysis links for aggregation types
+  if (siblingItems.length > 0) {
+    const crossRefTitle: Record<Language, string> = {
+      en: 'Cross-Referenced Analysis', sv: 'Korsrefererad analys', da: 'Krydsrefereret analyse',
+      no: 'Kryssreferert analyse', fi: 'Ristiviiteanalyysi', de: 'Querverweis-Analyse',
+      fr: 'Analyse avec références croisées', es: 'Análisis con referencias cruzadas',
+      nl: 'Kruisverwijzingsanalyse', ar: 'تحليل مرجعي متقاطع', he: 'ניתוח הפניות צולבות',
+      ja: '相互参照分析', ko: '교차 참조 분석', zh: '交叉引用分析',
+    };
+    const crossTitle = escapeHtml(crossRefTitle[lang] ?? crossRefTitle.en);
+    html += `\n    <h3>🔗 ${crossTitle}</h3>\n    <ul>\n${siblingItems.join('\n')}\n    </ul>`;
+  }
 
   if (hasDocumentsDir) {
     const docsHref = `${GITHUB_TREE_BASE}/${analysisPath}/documents/`;

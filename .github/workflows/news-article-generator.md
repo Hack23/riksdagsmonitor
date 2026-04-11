@@ -620,6 +620,28 @@ echo "📰 Types: $ARTICLE_TYPES | Languages: $LANG_ARG"
 
 Valid article types (defined in `scripts/generate-news-enhanced/config.ts:VALID_ARTICLE_TYPES`): `week-ahead`, `month-ahead`, `weekly-review`, `monthly-review`, `committee-reports`, `propositions`, `motions`, `interpellations`, `breaking`, `deep-inspection`. Note: `evening-analysis` is NOT a valid script type — evening analysis requires manual synthesis (see `news-evening-analysis.md`).
 
+### 🔬 Step 2b: Read ALL Analysis Files (MANDATORY — before article generation)
+
+> 🔴 **NON-NEGOTIABLE**: The AI agent MUST `cat` every analysis `.md` file BEFORE generating any article HTML. Analysis and articles are created in the **same workflow run** — there is zero excuse for not reading the analysis. See SHARED_PROMPT_PATTERNS.md §"MANDATORY PRE-ARTICLE ANALYSIS READING".
+
+```bash
+echo "📖 Reading ALL analysis files for $ARTICLE_DATE..."
+for ANALYSIS_DIR in analysis/daily/$ARTICLE_DATE/*/; do
+  if [ -d "$ANALYSIS_DIR" ]; then
+    echo "📖 Reading: $(basename $ANALYSIS_DIR)"
+    for MD_FILE in "$ANALYSIS_DIR"/*.md; do
+      if [ -f "$MD_FILE" ]; then
+        echo "--- $(basename $ANALYSIS_DIR)/$(basename $MD_FILE) ---"
+        cat "$MD_FILE"
+        echo ""
+      fi
+    done
+  fi
+done
+TOTAL_FILES=$(find "analysis/daily/$ARTICLE_DATE" -name "*.md" -type f 2>/dev/null | wc -l)
+echo "✅ Read $TOTAL_FILES analysis files — these MUST drive article content"
+```
+
 ## Step 3: Generate Articles (Script-First)
 
 **PRIMARY APPROACH — use the batch generation script:**

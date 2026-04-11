@@ -613,6 +613,42 @@ fi
 
 > **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Propositions - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).
 
+### 🔬 Step 2b: Read ALL Analysis Files (MANDATORY — before article generation)
+
+> 🔴 **NON-NEGOTIABLE**: The AI agent MUST `cat` every analysis `.md` file BEFORE generating any article HTML. Analysis and articles are created in the **same workflow run** — there is zero excuse for not reading the analysis. Articles written without reading analysis are shallow and REJECTED. See SHARED_PROMPT_PATTERNS.md §"MANDATORY PRE-ARTICLE ANALYSIS READING".
+
+```bash
+ANALYSIS_SUBFOLDER="propositions"
+ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
+
+echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
+if [ -d "$ANALYSIS_BASE" ]; then
+  for MD_FILE in "$ANALYSIS_BASE"/*.md; do
+    if [ -f "$MD_FILE" ]; then
+      echo "--- Reading: $(basename $MD_FILE) ---"
+      cat "$MD_FILE"
+      echo ""
+    fi
+  done
+  if [ -d "$ANALYSIS_BASE/documents" ]; then
+    echo "📄 Reading per-document analyses..."
+    for DOC_FILE in "$ANALYSIS_BASE/documents"/*.md; do
+      if [ -f "$DOC_FILE" ]; then
+        echo "--- Per-doc: $(basename $DOC_FILE) ---"
+        cat "$DOC_FILE"
+        echo ""
+      fi
+    done
+  fi
+  ANALYSIS_FILE_COUNT=$(find "$ANALYSIS_BASE" -name "*.md" -type f | wc -l)
+  echo "✅ Read $ANALYSIS_FILE_COUNT analysis files — these MUST drive article content"
+else
+  echo "⚠️ No analysis directory found at $ANALYSIS_BASE — will use MCP fallback for article content"
+fi
+```
+
+> **After reading, confirm you loaded the analysis** by noting: (1) number of files read, (2) top 3 significance-ranked findings, (3) key risk scores. If you cannot produce this summary, you have NOT read the analysis.
+
 ### Step 3: Generate Articles
 
 ```bash

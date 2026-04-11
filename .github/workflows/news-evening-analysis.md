@@ -837,6 +837,58 @@ get_calendar_events({ from: "<tomorrow>", tom: "<tomorrow>", limit: 50 })
 2. If analysis artifacts exist: commit them with `git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" && git commit -m "📊 Analysis artifacts - Evening Analysis - {date}"` and call `safeoutputs___create_pull_request` with title `📊 Analysis Only - Evening Analysis - {date}`, labels `["analysis-only", "evening-analysis"]`
 3. If NO analysis artifacts exist: call `safeoutputs___noop({"message": "No significant parliamentary activity found for today's evening analysis. Pre-article analysis pipeline also produced no output."})` and stop.
 
+### 🔬 Step 2b: Read ALL Analysis Files + Cross-Reference Sibling Types (MANDATORY)
+
+> 🔴 **NON-NEGOTIABLE**: Evening analysis synthesizes the ENTIRE day's parliamentary activity. The AI MUST read ALL analysis files from ALL article types before generating the evening article. See SHARED_PROMPT_PATTERNS.md §"MANDATORY PRE-ARTICLE ANALYSIS READING".
+
+```bash
+ANALYSIS_SUBFOLDER="evening-analysis"
+ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
+
+# Step 1: Read own analysis
+echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
+if [ -d "$ANALYSIS_BASE" ]; then
+  for MD_FILE in "$ANALYSIS_BASE"/*.md; do
+    if [ -f "$MD_FILE" ]; then
+      echo "--- Reading: $(basename $MD_FILE) ---"
+      cat "$MD_FILE"
+      echo ""
+    fi
+  done
+  if [ -d "$ANALYSIS_BASE/documents" ]; then
+    for DOC_FILE in "$ANALYSIS_BASE/documents"/*.md; do
+      if [ -f "$DOC_FILE" ]; then
+        echo "--- Per-doc: $(basename $DOC_FILE) ---"
+        cat "$DOC_FILE"
+        echo ""
+      fi
+    done
+  fi
+fi
+
+# Step 2: Cross-reference ALL sibling analysis types for the same date
+echo "🔍 Cross-referencing sibling analysis types for $ARTICLE_DATE..."
+for SIBLING_DIR in analysis/daily/$ARTICLE_DATE/*/; do
+  if [ -d "$SIBLING_DIR" ]; then
+    SIBLING_TYPE="$(basename $SIBLING_DIR)"
+    if [ "$SIBLING_TYPE" = "$ANALYSIS_SUBFOLDER" ]; then continue; fi
+    echo "📖 Cross-referencing: $SIBLING_TYPE"
+    for SIBLING_FILE in "$SIBLING_DIR/synthesis-summary.md" "$SIBLING_DIR/significance-scoring.md" "$SIBLING_DIR/stakeholder-perspectives.md"; do
+      if [ -f "$SIBLING_FILE" ]; then
+        echo "--- Sibling ($SIBLING_TYPE): $(basename $SIBLING_FILE) ---"
+        cat "$SIBLING_FILE"
+        echo ""
+      fi
+    done
+  fi
+done
+
+TOTAL_FILES=$(find "analysis/daily/$ARTICLE_DATE" -name "*.md" -type f 2>/dev/null | wc -l)
+echo "✅ Read $TOTAL_FILES total analysis files across all types — evening article MUST synthesize these findings"
+```
+
+> **After reading, confirm synthesis by noting**: (1) total files read, (2) which sibling types were found, (3) the day's top 3 most significant findings across ALL types. The evening article MUST reflect findings from ALL sibling types, not just its own analysis.
+
 ## Step 3: Generate Articles
 
 ### Saturday — Use Generation Script

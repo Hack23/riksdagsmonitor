@@ -914,6 +914,47 @@ describe('Analysis Depth Input', () => {
     }
   });
 
+  it('all content workflows should have mandatory pre-article analysis reading step', () => {
+    const allContentWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md',
+      'news-article-generator.md',
+    ];
+    for (const workflowFile of allContentWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      // Every workflow must have the Step 2b header
+      expect(
+        content.includes('Step 2b: Read ALL Analysis Files') || content.includes('Read ALL Analysis Files'),
+        `Workflow ${workflowFile} must have mandatory "Read ALL Analysis Files" step before article generation`
+      ).toBe(true);
+      // Every workflow must have the bash reading loop
+      expect(
+        content.includes('Reading ALL analysis files') || content.includes('Reading: $(basename'),
+        `Workflow ${workflowFile} must have bash commands to read analysis files`
+      ).toBe(true);
+    }
+  });
+
+  it('aggregation workflows should cross-reference sibling analysis types', () => {
+    const aggregationWorkflows = [
+      'news-evening-analysis.md',
+      'news-week-ahead.md',
+      'news-month-ahead.md',
+      'news-weekly-review.md',
+      'news-monthly-review.md',
+    ];
+    for (const workflowFile of aggregationWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      const content = fs.readFileSync(filepath, 'utf-8');
+      expect(
+        content.includes('Cross-Reference Sibling Types') || content.includes('Cross-referencing sibling'),
+        `Aggregation workflow ${workflowFile} must cross-reference sibling analysis types`
+      ).toBe(true);
+    }
+  });
+
   it('translation workflow should preserve analysis-references section', () => {
     const filepath = path.join(WORKFLOWS_DIR, 'news-translate.md');
     expect(fs.existsSync(filepath)).toBe(true);

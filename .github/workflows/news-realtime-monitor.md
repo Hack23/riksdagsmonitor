@@ -744,6 +744,40 @@ Replace each `<placeholder>` with the actual value from your queries:
 
 **Stop here only if no analysis artifacts exist.** Parliament is often inactive — but analysis artifacts should still be committed for review.
 
+### 🔬 Step 2b: Read ALL Analysis Files (MANDATORY — before article generation)
+
+> 🔴 **NON-NEGOTIABLE**: The AI agent MUST `cat` every analysis `.md` file BEFORE generating any article HTML. Analysis and articles are created in the **same workflow run** — there is zero excuse for not reading the analysis. See SHARED_PROMPT_PATTERNS.md §"MANDATORY PRE-ARTICLE ANALYSIS READING".
+
+```bash
+HHMM=$(date -u +%H%M)
+ANALYSIS_SUBFOLDER="realtime-${HHMM}"
+ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
+
+echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
+if [ -d "$ANALYSIS_BASE" ]; then
+  for MD_FILE in "$ANALYSIS_BASE"/*.md; do
+    if [ -f "$MD_FILE" ]; then
+      echo "--- Reading: $(basename $MD_FILE) ---"
+      cat "$MD_FILE"
+      echo ""
+    fi
+  done
+  if [ -d "$ANALYSIS_BASE/documents" ]; then
+    for DOC_FILE in "$ANALYSIS_BASE/documents"/*.md; do
+      if [ -f "$DOC_FILE" ]; then
+        echo "--- Per-doc: $(basename $DOC_FILE) ---"
+        cat "$DOC_FILE"
+        echo ""
+      fi
+    done
+  fi
+  ANALYSIS_FILE_COUNT=$(find "$ANALYSIS_BASE" -name "*.md" -type f | wc -l)
+  echo "✅ Read $ANALYSIS_FILE_COUNT analysis files — these MUST drive article content"
+else
+  echo "⚠️ No analysis directory found at $ANALYSIS_BASE"
+fi
+```
+
 ## Step 3: Generate Articles Using Purpose-Built Script
 
 **🚨 ALWAYS use the TypeScript generation script — it handles MCP queries, HTML templating, all 14 languages, translation, and article quality internally.**

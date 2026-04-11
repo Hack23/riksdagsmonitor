@@ -423,6 +423,43 @@ fi
 
 > **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Monthly Review - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).
 
+### 🔬 Step 2b: Read ALL Analysis Files + Cross-Reference Sibling Types (MANDATORY)
+
+> 🔴 **NON-NEGOTIABLE**: Monthly review synthesizes the entire month's parliamentary activity. The AI MUST read ALL analysis files from ALL article types before generating the review. See SHARED_PROMPT_PATTERNS.md §"MANDATORY PRE-ARTICLE ANALYSIS READING".
+
+```bash
+ANALYSIS_SUBFOLDER="monthly-review"
+ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
+
+echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
+if [ -d "$ANALYSIS_BASE" ]; then
+  for MD_FILE in "$ANALYSIS_BASE"/*.md; do
+    if [ -f "$MD_FILE" ]; then
+      echo "--- Reading: $(basename $MD_FILE) ---"
+      cat "$MD_FILE"
+      echo ""
+    fi
+  done
+fi
+
+echo "🔍 Cross-referencing sibling analysis types for $ARTICLE_DATE..."
+for SIBLING_DIR in analysis/daily/$ARTICLE_DATE/*/; do
+  if [ -d "$SIBLING_DIR" ]; then
+    SIBLING_TYPE="$(basename $SIBLING_DIR)"
+    if [ "$SIBLING_TYPE" = "$ANALYSIS_SUBFOLDER" ]; then continue; fi
+    echo "📖 Cross-referencing: $SIBLING_TYPE"
+    for SIBLING_FILE in "$SIBLING_DIR/synthesis-summary.md" "$SIBLING_DIR/significance-scoring.md"; do
+      if [ -f "$SIBLING_FILE" ]; then
+        echo "--- Sibling ($SIBLING_TYPE): $(basename $SIBLING_FILE) ---"
+        cat "$SIBLING_FILE"
+        echo ""
+      fi
+    done
+  fi
+done
+echo "✅ Cross-referencing complete — monthly review MUST incorporate findings from all sibling types"
+```
+
 ### Step 3: Generate Articles
 
 ```bash
