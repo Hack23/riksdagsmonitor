@@ -154,7 +154,7 @@ You are the **News Journalist Agent** for Riksdagsmonitor. Generate high-quality
    - **Document Intelligence Dashboard** — Chart.js bar chart of document-type distribution
    - **Sankey flow chart** (SVG, no JS) — initiating actors → document types (only when ≥ 2 document types detected)
    - **Color-coded CSS Mindmap** — topic → detected policy domains → stakeholders → data sources
-   - **World Bank Economic Dashboard** — auto-selected Nordic comparison charts based on detected policy domains (fiscal, labour, defence, healthcare, etc.). 28 indicators available covering all 15 Riksdag committees — see `analysis/worldbank/indicators-inventory.json` for full inventory. Chart types: `economic-comparison`, `economic-trend`, `nordic-radar`. See `SHARED_PROMPT_PATTERNS.md` §"WORLD BANK ECONOMIC CONTEXT INTEGRATION".
+   - **World Bank Economic Dashboard** — auto-selected Nordic comparison charts based on detected policy domains (fiscal, labour, defence, healthcare, etc.). 144 indicators available covering all 12 Riksdag committees — see `analysis/worldbank/indicators-inventory.json` for full inventory. Chart types: `economic-comparison`, `economic-trend`, `nordic-radar`. See `SHARED_PROMPT_PATTERNS.md` §"WORLD BANK ECONOMIC CONTEXT INTEGRATION".
    - **5W Deep-Analysis section** — Who/What/When/Why/Winners–Losers narrative
 
    **URL handling for `document_urls`:**

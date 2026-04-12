@@ -342,7 +342,7 @@ After creating the content PR, dispatch translations: `safeoutputs___dispatch_wo
 
 **Primary tool:** `get_propositioner` — fetches latest government propositions
 **Cross-reference:** `search_dokument`, `analyze_g0v_by_department`
-**Statistical enrichment:** SCB MCP — enrich with economic/fiscal data relevant to propositions. Use committee-mapped SCB tables: fiscal→TAB1291/TAB1292 (FiU), taxation→TAB1291 (SkU), trade→TAB5802 (NU). World Bank indicators (28 total): GDP Growth, Gov Expenditure, Tax Revenue, Military Expenditure, and more. See `analysis/worldbank/indicators-inventory.json` for full inventory and `SHARED_PROMPT_PATTERNS.md` §"WORLD BANK ECONOMIC CONTEXT INTEGRATION" for Chart.js chart templates (`economic-comparison`, `economic-trend`, `nordic-radar`). MUST generate ≥1 economic chart per proposition using committee-matched indicators.
+**Statistical enrichment:** SCB MCP — enrich with economic/fiscal data relevant to propositions. Use committee-mapped SCB tables: fiscal→TAB1291/TAB1292 (FiU), taxation→TAB1291 (SkU), trade→TAB5802 (NU). World Bank indicators (144 total): GDP Growth, Gov Expenditure, Tax Revenue, Military Expenditure, and more. See `analysis/worldbank/indicators-inventory.json` for full inventory and `SHARED_PROMPT_PATTERNS.md` §"WORLD BANK ECONOMIC CONTEXT INTEGRATION" for Chart.js chart templates (`economic-comparison`, `economic-trend`, `nordic-radar`). MUST generate ≥1 economic chart per proposition using committee-matched indicators.
 **Fact-checking:** When propositions reference specific statistics, cross-reference against SCB/World Bank data using `scripts/statistical-claims-detector.ts` patterns.
 
 ```javascript
