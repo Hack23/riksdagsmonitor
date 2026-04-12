@@ -398,13 +398,13 @@ The following functions are **HTML renderers**, not analysis generators. They ta
 
 | Function | Module | Purpose | AI Agent Relationship |
 |----------|--------|---------|----------------------|
-| `generateSwotSection({ data, lang })` | `swot-section.ts` | Renders SWOT quadrant HTML from `SwotData` | AI writes SWOT analysis in markdown → script reads it → calls this function to render HTML |
-| `generateDashboardSection({ data, lang })` | `dashboard-section.ts` | Renders Chart.js canvas HTML from chart config | AI provides chart data in analysis → script calls this to render chart containers |
-| `generateMindmapSection({ topic, branches, lang })` | `mindmap-section.ts` | Renders CSS mindmap HTML from branch data | AI defines mindmap structure in analysis → script renders it as interactive HTML |
-| `generateMultiPanelDashboardSection(...)` | `dashboard-section.ts` | Renders multi-panel CSS dashboards | AI provides panel data → script renders the full dashboard |
-| `generateEconomicDashboardSection(...)` | `economic-dashboard-section.ts` | Renders economic indicator dashboard | AI provides economic data → script renders comparative charts |
+| `generateSwotSection({ data, lang })` | `swot-section.ts` | Renders SWOT quadrant HTML from `SwotData` | **Current implementation:** AI writes SWOT analysis in markdown → script reads it → extracts SWOT data → calls this function to render HTML |
+| `generateDashboardSection({ data, lang })` | `dashboard-section.ts` | Renders Chart.js canvas HTML from chart config | Renderer utility: used when structured chart data is provided by the pipeline; automatic extraction from AI analysis markdown is not currently implemented as a standard flow |
+| `generateMindmapSection({ topic, branches, lang })` | `mindmap-section.ts` | Renders CSS mindmap HTML from branch data | Renderer utility: used when structured mindmap branch data is provided by the pipeline; analysis-to-mindmap extraction is workflow-specific or future-facing |
+| `generateMultiPanelDashboardSection(...)` | `dashboard-section.ts` | Renders multi-panel CSS dashboards | Renderer utility for pre-structured panel data; not a guaranteed current markdown-extraction path |
+| `generateEconomicDashboardSection(...)` | `economic-dashboard-section.ts` | Renders economic indicator dashboard | Renderer utility for structured economic dashboard data when available; automated extraction from agent analysis should be treated as planned or workflow-specific unless separately implemented |
 
-> **How AI agents interact with these**: AI agents do NOT call these TypeScript functions directly. Instead, AI agents write rich analysis content (SWOT entries, chart data, mindmap structures) in their analysis markdown files. The `generate-news-enhanced` script reads the analysis, extracts the structured data, and calls these renderer functions to produce the final HTML article sections.
+> **How AI agents interact with these**: AI agents do NOT call these TypeScript functions directly. These utilities are renderers only. Unless a specific workflow explicitly implements and validates a machine-readable input format, `generate-news-enhanced` should be treated as consuming final article HTML/section-ready content rather than generically extracting SWOT entries, chart data, or mindmap structures from markdown analysis files. Currently, only SWOT data extraction from analysis markdown is implemented as a standard flow. Workflow authors MUST NOT assume a supported structured-parse step exists for dashboard, mindmap, or other renderer inputs; if a renderer is used, the workflow must explicitly define how its input data is produced and validated.
 
 #### Minor TypeScript/Script Corrections Policy
 
