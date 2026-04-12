@@ -4,6 +4,12 @@
  * Maps World Bank indicators to Swedish political policy areas, enabling enriched
  * analysis that connects parliamentary decisions to economic outcomes.
  *
+ * **SINGLE SOURCE OF TRUTH**: Indicator data is loaded from
+ * `analysis/worldbank/indicators-inventory.json` — the canonical machine-readable
+ * inventory. Both AI agents (`view` tool) and this TypeScript module consume the
+ * same JSON, ensuring consistency. To add or modify indicators, edit the JSON file
+ * only — no TypeScript changes are required, and updates are picked up on the next run.
+ *
  * Used by agentic workflows and article quality enhancement to add economic depth
  * to political reporting.
  *
@@ -11,8 +17,11 @@
  * @license Apache-2.0
  */
 
+import { readFileSync } from 'fs';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
 import type { Language } from './types/language.js';
-import { INDICATOR_IDS, COUNTRY_CODES } from './world-bank-client.js';
+import { COUNTRY_CODES } from './world-bank-client.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -50,127 +59,109 @@ export interface EconomicSectionHeadings {
 }
 
 // ---------------------------------------------------------------------------
-// Economic indicator mappings
+// JSON inventory types (mirrors analysis/worldbank/indicators-inventory.json)
+// ---------------------------------------------------------------------------
+
+interface InventoryIndicator {
+  id: string;
+  key: string;
+  name: string;
+  unit: string;
+  description?: string;
+  policyAreas?: string[];
+  committees?: string[];
+  mcpTool?: string;
+  mcpParam?: string;
+  source?: number;
+}
+
+interface InventoryDomain {
+  label: string;
+  committees: string[];
+  indicatorCount: number;
+  indicators: InventoryIndicator[];
+}
+
+interface IndicatorInventory {
+  version: string;
+  totalIndicators: number;
+  domains: Record<string, InventoryDomain>;
+}
+
+// ---------------------------------------------------------------------------
+// Load indicators from JSON inventory (single source of truth)
 // ---------------------------------------------------------------------------
 
 /**
- * Maps World Bank indicators to Swedish political policy areas.
- * Each indicator is linked to relevant Riksdag committees and policy domains.
+ * Resolve the path to the indicators inventory JSON.
+ * Works both when running from the repo root (`npx tsx scripts/...`) and
+ * from within the scripts directory.
  */
-export const ECONOMIC_INDICATORS: readonly EconomicIndicatorContext[] = [
-  {
-    indicatorId: INDICATOR_IDS.gdpGrowth,
-    name: 'GDP Growth',
-    description: 'Annual GDP growth rate — a key measure of economic performance that directly impacts government fiscal capacity and policy options.',
-    policyAreas: ['fiscal policy', 'economic growth', 'budget'],
-    committees: ['FiU'],
-    unit: '% annual',
-  },
-  {
-    indicatorId: INDICATOR_IDS.unemployment,
-    name: 'Unemployment Rate',
-    description: 'Total unemployment as percentage of labor force — central to labor market policy debates and welfare spending.',
-    policyAreas: ['labor market', 'welfare', 'employment policy'],
-    committees: ['AU'],
-    unit: '% of labor force',
-  },
-  {
-    indicatorId: INDICATOR_IDS.inflation,
-    name: 'Consumer Price Inflation',
-    description: 'Annual change in consumer prices — affects household purchasing power and Riksbank monetary policy.',
-    policyAreas: ['monetary policy', 'cost of living', 'economic stability'],
-    committees: ['FiU'],
-    unit: '% annual',
-  },
-  {
-    indicatorId: INDICATOR_IDS.govExpenditure,
-    name: 'Government Expenditure',
-    description: 'General government final consumption expenditure as share of GDP — reflects the size and scope of public sector.',
-    policyAreas: ['public spending', 'fiscal policy', 'budget'],
-    committees: ['FiU'],
-    unit: '% of GDP',
-  },
-  {
-    indicatorId: INDICATOR_IDS.tradeGdpPct,
-    name: 'Trade Openness',
-    description: 'Total trade (exports + imports) as percentage of GDP — measures Sweden\'s economic integration and trade dependency.',
-    policyAreas: ['trade policy', 'EU relations', 'economic integration'],
-    committees: ['NU', 'UU'],
-    unit: '% of GDP',
-  },
-  {
-    indicatorId: INDICATOR_IDS.militaryExpenditure,
-    name: 'Military Expenditure',
-    description: 'Defense spending as share of GDP — critical context for NATO accession debates and security policy.',
-    policyAreas: ['defense', 'security policy', 'NATO'],
-    committees: ['FöU'],
-    unit: '% of GDP',
-  },
-  {
-    indicatorId: INDICATOR_IDS.co2Emissions,
-    name: 'CO₂ Emissions per Capita',
-    description: 'Carbon dioxide emissions per person — relevant to climate policy and environmental legislation.',
-    policyAreas: ['climate policy', 'environmental regulation', 'green transition'],
-    committees: ['MJU'],
-    unit: 'metric tons per capita',
-  },
-  {
-    indicatorId: INDICATOR_IDS.rdExpenditure,
-    name: 'R&D Expenditure',
-    description: 'Research and development spending as share of GDP — indicator of innovation capacity and knowledge economy investment.',
-    policyAreas: ['research policy', 'innovation', 'education'],
-    committees: ['UbU'],
-    unit: '% of GDP',
-  },
-  {
-    indicatorId: INDICATOR_IDS.giniIndex,
-    name: 'GINI Index',
-    description: 'Income inequality measure (0 = perfect equality, 100 = maximum inequality) — central to social policy and redistribution debates.',
-    policyAreas: ['income distribution', 'social policy', 'welfare'],
-    committees: ['SoU', 'AU'],
-    unit: 'index (0-100)',
-  },
-  {
-    indicatorId: INDICATOR_IDS.currentAccountBalance,
-    name: 'Current Account Balance',
-    description: 'Current account balance as share of GDP — reflects Sweden\'s external economic position and trade competitiveness.',
-    policyAreas: ['trade policy', 'economic stability', 'fiscal policy'],
-    committees: ['FiU', 'NU'],
-    unit: '% of GDP',
-  },
-  {
-    indicatorId: INDICATOR_IDS.taxRevenue,
-    name: 'Tax Revenue',
-    description: 'Tax revenue as share of GDP — central to taxation policy debates and fiscal capacity.',
-    policyAreas: ['taxation', 'fiscal policy', 'public finances'],
-    committees: ['SkU', 'FiU'],
-    unit: '% of GDP',
-  },
-  {
-    indicatorId: INDICATOR_IDS.ruleOfLaw,
-    name: 'Rule of Law',
-    description: 'World Governance Indicator for rule of law — reflects judicial independence, property rights, and constitutional order.',
-    policyAreas: ['rule of law', 'constitutional affairs', 'judicial independence'],
-    committees: ['KU', 'JuU'],
-    unit: 'index (-2.5 to 2.5)',
-  },
-  {
-    indicatorId: INDICATOR_IDS.voiceAccountability,
-    name: 'Voice and Accountability',
-    description: 'World Governance Indicator for citizen participation and press freedom — core to democratic governance oversight.',
-    policyAreas: ['democracy', 'press freedom', 'constitutional affairs'],
-    committees: ['KU'],
-    unit: 'index (-2.5 to 2.5)',
-  },
-  {
-    indicatorId: INDICATOR_IDS.govEffectiveness,
-    name: 'Government Effectiveness',
-    description: 'World Governance Indicator for quality of public services and policy implementation.',
-    policyAreas: ['public administration', 'government quality', 'institutional capacity'],
-    committees: ['KU', 'FiU'],
-    unit: 'index (-2.5 to 2.5)',
-  },
-] as const;
+function resolveInventoryPath(): string {
+  try {
+    const thisDir = dirname(fileURLToPath(import.meta.url));
+    return resolve(thisDir, '..', 'analysis', 'worldbank', 'indicators-inventory.json');
+  } catch {
+    // Fallback for environments where import.meta.url is unavailable
+    return resolve(process.cwd(), 'analysis', 'worldbank', 'indicators-inventory.json');
+  }
+}
+
+/**
+ * Load and transform indicators from the JSON inventory file.
+ * Each indicator in the JSON is mapped to an EconomicIndicatorContext
+ * with description, policyAreas, and committees.
+ */
+function loadIndicatorsFromInventory(): readonly EconomicIndicatorContext[] {
+  try {
+    const raw = readFileSync(resolveInventoryPath(), 'utf-8');
+    const inventory: IndicatorInventory = JSON.parse(raw);
+
+    const indicators: EconomicIndicatorContext[] = [];
+    for (const domain of Object.values(inventory.domains)) {
+      for (const ind of domain.indicators) {
+        indicators.push({
+          indicatorId: ind.id,
+          name: ind.name,
+          description: ind.description ?? `${ind.name} — ${domain.label} indicator for Sweden.`,
+          policyAreas: ind.policyAreas ?? [domain.label.toLowerCase()],
+          committees: ind.committees ?? domain.committees,
+          unit: ind.unit,
+        });
+      }
+    }
+    return indicators;
+  } catch (err: unknown) {
+    const error =
+      err instanceof Error
+        ? err
+        : new Error(`[world-bank-context] Failed to load indicators inventory: ${String(err)}`);
+
+    // Tests may intentionally mock or omit the inventory file.
+    // Preserve the existing fallback there, but fail fast elsewhere so
+    // builds cannot silently generate incomplete economic content.
+    if (process.env.NODE_ENV === 'test') {
+      return [];
+    }
+
+    console.error(`[world-bank-context] Failed to load indicators inventory: ${error.message}`);
+    throw error;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Economic indicator mappings (loaded from JSON)
+// ---------------------------------------------------------------------------
+
+/**
+ * All World Bank indicators mapped to Swedish political policy areas.
+ * Loaded from `analysis/worldbank/indicators-inventory.json` — the single source of truth.
+ *
+ * To add indicators: edit the JSON file, NOT this module.
+ * Full inventory: analysis/worldbank/indicators-inventory.json
+ * Committee mapping: analysis/worldbank/indicator-policy-mapping.md
+ */
+export const ECONOMIC_INDICATORS: readonly EconomicIndicatorContext[] = loadIndicatorsFromInventory();
 
 // ---------------------------------------------------------------------------
 // Nordic comparison configuration
@@ -234,7 +225,7 @@ export const ECONOMIC_SECTION_HEADINGS: Readonly<Record<Language, EconomicSectio
   fi: {
     economicContext: 'Taloudellinen konteksti',
     nordicComparison: 'Pohjoismainen vertailu',
-    policyImplications: 'Politiikan vaikutukset',
+    policyImplications: 'Poliittiset vaikutukset',
     country: 'Maa',
     unit: 'Yksikkö',
   },
@@ -374,11 +365,26 @@ export function hasEconomicContext(content: string): boolean {
     /\bekonomi/i, // Swedish: economy
     /\bhandelsbalans/i, // Swedish: trade balance (handelsbalans, handelsbalansen, etc.)
     /\bstatsskuld/i, // Swedish: national debt (statsskuld, statsskulden, etc.)
-    /\bförsvarsutgift/i, // Swedish: defense expenditure (försvarsutgift, försvarsutgifter, försvarsutgifterna, etc.)
-    /\bforskningsutgift/i, // Swedish: R&D expenditure (forskningsutgift, forskningsutgifter, forskningsutgifterna, etc.)
+    /\bförsvarsutgift/i, // Swedish: defense expenditure (försvarsutgift, försvarsutgifter, etc.)
+    /\bforskningsutgift/i, // Swedish: R&D expenditure (forskningsutgift, forskningsutgifter, etc.)
+    /\bmilitärut/i, // Swedish: military expenditure (militärutgift, etc.)
+    /\bskattein/i, // Swedish: tax revenue (skatteintäkt, skatteintäkter, etc.)
+    /\bgini/i, // GINI index
+    /\bco2\b/i, // CO2 emissions
+    /\bnato\s*2\s*%/i, // NATO 2% target
+    /\bförny(?:else)?bart?\s+energi/i, // Swedish: renewable energy (förnybar/förnyelsebar energi)
+    /\bbirth\s*rate\b/i,
+    /\bfertility\s*rate\b/i,
+    /\blife\s*expectancy\b/i,
     /\bNY\.GDP/i, // World Bank indicator IDs
     /\bSL\.UEM/i,
     /\bFP\.CPI/i,
+    /\bMS\.MIL/i,
+    /\bGC\.TAX/i,
+    /\bSI\.POV\.GINI/i,
+    /\bEN\.ATM/i,
+    /\bSH\.XPD/i,
+    /\bSE\.XPD/i,
   ];
 
   return patterns.some((pattern) => pattern.test(text));

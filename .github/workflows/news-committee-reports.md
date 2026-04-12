@@ -361,7 +361,7 @@ After creating the content PR, dispatch translations: `safeoutputs___dispatch_wo
 
 **Primary tool:** `get_betankanden` — fetches latest committee reports
 **Cross-reference:** `search_voteringar`, `search_anforanden`, `get_propositioner`
-**Statistical enrichment:** SCB MCP + World Bank — enrich with data matching the reporting committee. Use domain-to-committee mappings from `scripts/scb-context.ts` (e.g., FiU reports→fiscal TAB1291, AU→labour TAB5765, JuU→crime TAB1172, MJU→environment TAB5404). World Bank indicators are mapped per committee in `scripts/world-bank-context.ts` (14 indicators covering all 15 committees).
+**Statistical enrichment:** SCB MCP + World Bank — enrich with data matching the reporting committee. Use domain-to-committee mappings from `scripts/scb-context.ts` (e.g., FiU reports→fiscal TAB1291, AU→labour TAB5765, JuU→crime TAB1172, MJU→environment TAB5404). **World Bank indicators (144 across all 12 committees)**: `view analysis/worldbank/indicators-inventory.json` to find indicators by committee — each indicator has `policyAreas`, `committees`, and `mcpTool` fields. Use MCP tools for indicators with `mcpTool` field. See `SHARED_PROMPT_PATTERNS.md` §"WORLD BANK ECONOMIC CONTEXT INTEGRATION" for Chart.js chart templates (`economic-comparison`, `economic-trend`, `nordic-radar`). MUST generate ≥1 economic chart when committee has mapped indicators.
 **Fact-checking:** Use `scripts/statistical-claims-detector.ts` to detect statistical claims in related debates and cross-reference against official SCB/World Bank data.
 
 ```javascript

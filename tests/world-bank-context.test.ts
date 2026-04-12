@@ -53,7 +53,7 @@ describe('world-bank-context', () => {
     });
 
     it('should include military expenditure for defense policy', () => {
-      const military = ECONOMIC_INDICATORS.find((i) => i.name === 'Military Expenditure');
+      const military = ECONOMIC_INDICATORS.find((i) => i.name === 'Military Expenditure (% GDP)');
       expect(military).toBeDefined();
       expect(military!.policyAreas).toContain('defense');
       expect(military!.committees).toContain('FöU');
@@ -197,7 +197,7 @@ describe('world-bank-context', () => {
     it('should find defense indicators for NATO queries', () => {
       const results = findRelevantIndicators('nato');
       expect(results.length).toBeGreaterThan(0);
-      expect(results.some((i) => i.name === 'Military Expenditure')).toBe(true);
+      expect(results.some((i) => i.name === 'Military Expenditure (% GDP)')).toBe(true);
     });
 
     it('should find climate indicators', () => {

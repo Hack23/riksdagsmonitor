@@ -7,11 +7,16 @@
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import {
   WorldBankClient,
   getDefaultWorldBankClient,
   COUNTRY_CODES,
   INDICATOR_IDS,
+  WB_SOURCES,
+  WGI_INDICATOR_IDS,
 } from '../scripts/world-bank-client.js';
 import type { WorldBankDataPoint } from '../scripts/world-bank-client.js';
 
@@ -375,9 +380,9 @@ describe('WorldBankClient', () => {
       expect(INDICATOR_IDS.inflation).toBe('FP.CPI.TOTL.ZG');
     });
 
-    it('should have all 16 defined indicators', () => {
+    it('should have all 144 defined indicators', () => {
       const indicatorCount = Object.keys(INDICATOR_IDS).length;
-      expect(indicatorCount).toBe(16);
+      expect(indicatorCount).toBe(144);
     });
 
     it('should have valid World Bank indicator ID format', () => {
@@ -386,6 +391,121 @@ describe('WorldBankClient', () => {
         // or governance indicators: XX.EST
         expect(id).toMatch(/^[A-Z]{2}\./);
       });
+    });
+
+    it('should cover all 17 Riksdag-relevant domains', () => {
+      // Verify we have indicators from each major domain
+      const domains = {
+        nationalAccounts: (id: string) => id.startsWith('NY.GDP') || id.startsWith('NE.CON') || id.startsWith('NE.GDI') || id.startsWith('NY.GNS') || id.startsWith('NY.ADJ') || id.startsWith('NY.GNP'),
+        taxation: (id: string) => id.startsWith('GC.'),
+        trade: (id: string) => id.startsWith('NE.TRD') || id.startsWith('NE.EXP') || id.startsWith('NE.IMP') || id.startsWith('BN.') || id.startsWith('BX.') || id.startsWith('BM.') || id.startsWith('TX.') || id.startsWith('NE.RSB'),
+        labor: (id: string) => id.startsWith('SL.'),
+        inflation: (id: string) => id.startsWith('FP.'),
+        financial: (id: string) => id.startsWith('FS.') || id.startsWith('FR.'),
+        demographics: (id: string) => id.startsWith('SP.') || id.startsWith('SM.') || id.startsWith('SH.DYN'),
+        health: (id: string) => id.startsWith('SH.') && !id.startsWith('SH.DYN'),
+        education: (id: string) => id.startsWith('SE.'),
+        environment: (id: string) => id.startsWith('EN.') || id.startsWith('AG.'),
+        infrastructure: (id: string) => id.startsWith('IT.') || id.startsWith('IS.') || id.startsWith('IP.PAT'),
+        innovation: (id: string) => id.startsWith('GB.') || id === 'BX.GSR.CCIS.ZS' || id.startsWith('IP.JRN'),
+        military: (id: string) => id.startsWith('MS.'),
+        governance: (id: string) => id.endsWith('.EST'),
+        inequality: (id: string) => id.startsWith('SI.'),
+        gender: (id: string) => id.startsWith('SG.'),
+        energy: (id: string) => id.startsWith('EG.'),
+      };
+
+      const ids = Object.values(INDICATOR_IDS);
+      for (const [domain, matcher] of Object.entries(domains)) {
+        const count = ids.filter(matcher).length;
+        expect(count, `Domain '${domain}' should have at least 1 indicator`).toBeGreaterThanOrEqual(1);
+      }
+    });
+
+    it('should stay in sync with JSON inventory (single source of truth)', () => {
+      // Drift detection: INDICATOR_IDS must match analysis/worldbank/indicators-inventory.json
+      const __dirname = path.dirname(fileURLToPath(import.meta.url));
+      const inventoryPath = path.resolve(__dirname, '../analysis/worldbank/indicators-inventory.json');
+      const inventory = JSON.parse(fs.readFileSync(inventoryPath, 'utf-8'));
+
+      // Collect all {key → id} pairs from the JSON inventory
+      const inventoryMap = new Map<string, string>();
+      for (const domainData of Object.values(inventory.domains) as Array<{ indicators: Array<{ key: string; id: string }> }>) {
+        for (const ind of domainData.indicators) {
+          inventoryMap.set(ind.key, ind.id);
+        }
+      }
+
+      // Every TS key/value must exist in JSON inventory
+      const tsEntries = Object.entries(INDICATOR_IDS) as [string, string][];
+      for (const [key, id] of tsEntries) {
+        expect(inventoryMap.has(key), `INDICATOR_IDS.${key} missing from JSON inventory`).toBe(true);
+        expect(inventoryMap.get(key), `INDICATOR_IDS.${key} ID mismatch vs JSON inventory`).toBe(id);
+      }
+
+      // Every JSON inventory entry must exist in TS
+      for (const [key, id] of inventoryMap.entries()) {
+        expect((INDICATOR_IDS as Record<string, string>)[key], `JSON inventory key '${key}' (${id}) missing from INDICATOR_IDS`).toBe(id);
+      }
+
+      // Count must match
+      expect(tsEntries.length).toBe(inventoryMap.size);
+    });
+  });
+
+  describe('WGI_INDICATOR_IDS', () => {
+    it('should contain 6 governance indicator IDs', () => {
+      expect(WGI_INDICATOR_IDS.size).toBe(6);
+    });
+
+    it('should include all WGI estimate indicators', () => {
+      expect(WGI_INDICATOR_IDS.has('RL.EST')).toBe(true);
+      expect(WGI_INDICATOR_IDS.has('VA.EST')).toBe(true);
+      expect(WGI_INDICATOR_IDS.has('GE.EST')).toBe(true);
+      expect(WGI_INDICATOR_IDS.has('RQ.EST')).toBe(true);
+      expect(WGI_INDICATOR_IDS.has('CC.EST')).toBe(true);
+      expect(WGI_INDICATOR_IDS.has('PV.EST')).toBe(true);
+    });
+
+    it('should match governance indicators in INDICATOR_IDS', () => {
+      expect(WGI_INDICATOR_IDS.has(INDICATOR_IDS.ruleOfLaw)).toBe(true);
+      expect(WGI_INDICATOR_IDS.has(INDICATOR_IDS.voiceAccountability)).toBe(true);
+      expect(WGI_INDICATOR_IDS.has(INDICATOR_IDS.govEffectiveness)).toBe(true);
+      expect(WGI_INDICATOR_IDS.has(INDICATOR_IDS.regulatoryQuality)).toBe(true);
+      expect(WGI_INDICATOR_IDS.has(INDICATOR_IDS.controlOfCorruption)).toBe(true);
+      expect(WGI_INDICATOR_IDS.has(INDICATOR_IDS.politicalStability)).toBe(true);
+    });
+  });
+
+  describe('WB_SOURCES', () => {
+    it('should have WDI source as 2', () => {
+      expect(WB_SOURCES.wdi).toBe(2);
+    });
+
+    it('should have WGI source as 75', () => {
+      expect(WB_SOURCES.wgi).toBe(75);
+    });
+  });
+
+  describe('WGI source parameter in URL', () => {
+    it('should add source=75 for WGI indicators', async () => {
+      const mockResponse = { ok: true, json: () => Promise.resolve([{}, []]) };
+      global.fetch = vi.fn().mockResolvedValue(mockResponse);
+
+      await client.getIndicator('SWE', 'CC.EST');
+
+      const fetchCall = (global.fetch as ReturnType<typeof vi.fn>).mock.calls[0][0] as string;
+      expect(fetchCall).toContain('source=75');
+    });
+
+    it('should NOT add source parameter for WDI indicators', async () => {
+      const mockResponse = { ok: true, json: () => Promise.resolve([{}, []]) };
+      global.fetch = vi.fn().mockResolvedValue(mockResponse);
+
+      await client.getIndicator('SWE', 'NY.GDP.MKTP.KD.ZG');
+
+      const fetchCall = (global.fetch as ReturnType<typeof vi.fn>).mock.calls[0][0] as string;
+      expect(fetchCall).not.toContain('source=');
     });
   });
 

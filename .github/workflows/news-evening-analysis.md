@@ -830,7 +830,7 @@ get_calendar_events({ from: "<tomorrow>", tom: "<tomorrow>", limit: 50 })
 
 **Filter results by date** — apply post-query date filtering as described in Step 1.
 
-**Statistical enrichment (optional):** For economic policy topics, use World Bank and SCB MCP servers as context. See `scripts/world-bank-context.ts` and `scripts/scb-context.ts`. Never block on SCB/World Bank failures.
+**Statistical enrichment (optional):** For economic policy topics, use World Bank and SCB MCP servers as context. **144 World Bank indicators available** — `view analysis/worldbank/indicators-inventory.json` to discover indicators matching the day's policy topics (each indicator has `policyAreas`, `committees`, and `mcpTool` fields). Fetch top 3 most relevant using MCP tools for indicators with `mcpTool` field. See `SHARED_PROMPT_PATTERNS.md` §"WORLD BANK ECONOMIC CONTEXT INTEGRATION" for chart templates. Never block on SCB/World Bank failures.
 
 **If ALL queries return empty results** (no votes, no speeches, no reports, no government activity):
 1. **First check if analysis artifacts exist** in `analysis/daily/YYYY-MM-DD/$ANALYSIS_SUBFOLDER/`

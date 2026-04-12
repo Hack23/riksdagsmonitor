@@ -310,7 +310,7 @@ After creating the content PR, dispatch translations: `safeoutputs___dispatch_wo
 
 **Primary tool:** `get_calendar_events` — 30-day forward calendar (**⚠️ Known issue: may return HTML instead of JSON; if this happens, treat it as a calendar retrieval failure and state that explicitly in the analysis. You may query `search_dokument` with a recent lookback window only as a proxy signal of parliamentary activity (e.g., recent publications related to expected topics), but must never treat "no documents found" as "no upcoming events."**)
 **Cross-reference:** `get_propositioner`, `search_dokument`, `search_regering`
-**Statistical enrichment:** SCB/World Bank — for major economic milestones (budget debates, economic policy events), pre-fetch trend data from committee-mapped indicators. See `scripts/scb-context.ts` for 15 domain→committee mappings and `scripts/world-bank-context.ts` for 14 WB indicator→committee mappings.
+**Statistical enrichment:** SCB/World Bank — for major economic milestones (budget debates, economic policy events), pre-fetch trend data from committee-mapped indicators. See `scripts/scb-context.ts` for 15 domain→committee mappings. **World Bank indicators (144 total)**: `view analysis/worldbank/indicators-inventory.json` for the complete inventory with `policyAreas`, `committees`, and `mcpTool` fields per indicator. Use MCP tools for indicators with `mcpTool` field. See `SHARED_PROMPT_PATTERNS.md` §"WORLD BANK ECONOMIC CONTEXT INTEGRATION" for Chart.js chart templates (`economic-comparison`, `economic-trend`, `nordic-radar`). MUST generate ≥2 economic charts for monthly forecasting.
 
 ```javascript
 get_sync_status({})

@@ -59,6 +59,23 @@ const DEFAULT_BASE_URL = 'https://api.worldbank.org/v2';
 const DEFAULT_TIMEOUT = 15_000;
 const DEFAULT_MAX_RETRIES = 2;
 
+/**
+ * World Bank API source IDs for different indicator databases.
+ * Most indicators use the default WDI source (2), but Worldwide
+ * Governance Indicators (WGI) require source=75.
+ */
+export const WB_SOURCES = {
+  /** World Development Indicators (default) */
+  wdi: 2,
+  /** Worldwide Governance Indicators — needed for CC.EST, RQ.EST, PV.EST, GE.EST, RL.EST, VA.EST */
+  wgi: 75,
+} as const;
+
+/** Indicator IDs that require source=75 (WGI) for REST API access */
+export const WGI_INDICATOR_IDS = new Set([
+  'RL.EST', 'VA.EST', 'GE.EST', 'RQ.EST', 'CC.EST', 'PV.EST',
+]);
+
 /** ISO 3166-1 alpha-3 codes for Sweden and comparison countries */
 export const COUNTRY_CODES = {
   sweden: 'SWE',
@@ -70,42 +87,376 @@ export const COUNTRY_CODES = {
 } as const;
 
 /**
- * Key World Bank indicator IDs relevant to Swedish political intelligence.
- * These indicators provide economic context for policy analysis.
+ * Comprehensive World Bank indicator IDs for Swedish political intelligence.
+ *
+ * Organised into 17 domains covering all Riksdag committee policy areas.
+ * Total: 144 verified indicators with Sweden annual time-series data.
+ *
+ * Access methods:
+ * - **MCP tools**: get-economic-data, get-social-data, get-education-data, get-health-data
+ * - **REST API**: api.worldbank.org/v2 (default source=2/WDI)
+ * - **WGI REST API**: api.worldbank.org/v2 with source=75 (governance indicators)
+ *
+ * Full machine-readable inventory: analysis/worldbank/indicators-inventory.json
+ * Committee mapping: analysis/worldbank/indicator-policy-mapping.md
  */
 export const INDICATOR_IDS = {
+  // ===========================================================================
+  // 1. NATIONAL ACCOUNTS & GDP (FiU — Finance Committee)
+  // ===========================================================================
+  /** GDP (current US$) */
+  gdp: 'NY.GDP.MKTP.CD',
   /** GDP growth (annual %) */
   gdpGrowth: 'NY.GDP.MKTP.KD.ZG',
-  /** Unemployment, total (% of total labor force) */
-  unemployment: 'SL.UEM.TOTL.ZS',
-  /** Inflation, consumer prices (annual %) */
-  inflation: 'FP.CPI.TOTL.ZG',
-  /** Population, total */
-  population: 'SP.POP.TOTL',
-  /** Trade (% of GDP) */
-  tradeGdpPct: 'NE.TRD.GNFS.ZS',
-  /** Government expenditure (% of GDP) */
-  govExpenditure: 'GC.XPN.TOTL.GD.ZS',
+  /** GDP (constant LCU) */
+  gdpConstantLcu: 'NY.GDP.MKTP.KN',
+  /** GDP, PPP (current international $) */
+  gdpPpp: 'NY.GDP.MKTP.PP.CD',
+  /** GDP per capita (current US$) */
+  gdpPerCapita: 'NY.GDP.PCAP.CD',
+  /** GDP per capita growth (annual %) */
+  gdpPerCapitaGrowth: 'NY.GDP.PCAP.KD.ZG',
   /** GDP per capita, PPP (current international $) */
   gdpPerCapitaPpp: 'NY.GDP.PCAP.PP.CD',
+  /** GDP per capita, PPP (constant 2021 international $) */
+  gdpPerCapitaPppConst: 'NY.GDP.PCAP.PP.KD',
+  /** General government final consumption expenditure (% of GDP) */
+  govConsumption: 'NE.CON.GOVT.ZS',
+  /** Households final consumption expenditure (% of GDP) */
+  householdConsumption: 'NE.CON.PRVT.ZS',
+  /** Gross capital formation (% of GDP) */
+  grossCapitalFormation: 'NE.GDI.TOTL.ZS',
+  /** Gross fixed capital formation (% of GDP) */
+  grossFixedCapital: 'NE.GDI.FTOT.ZS',
+  /** Gross savings (% of GDP) */
+  grossSavings: 'NY.GNS.ICTR.ZS',
+  /** Adjusted net national income per capita (current US$) */
+  adjNetNationalIncome: 'NY.ADJ.NNTY.PC.CD',
+  /** GNI (current US$) */
+  gni: 'NY.GNP.MKTP.CD',
+  /** GNI per capita, Atlas method (current US$) */
+  gniPerCapita: 'NY.GNP.PCAP.CD',
+  /** GNI per capita, PPP (current international $) */
+  gniPerCapitaPpp: 'NY.GNP.PCAP.PP.CD',
+
+  // ===========================================================================
+  // 2. GOVERNMENT FINANCE & TAXATION (SkU, FiU)
+  // ===========================================================================
+  /** Tax revenue (% of GDP) */
+  taxRevenue: 'GC.TAX.TOTL.GD.ZS',
+  /** Expense (% of GDP) */
+  govExpenditure: 'GC.XPN.TOTL.GD.ZS',
+  /** Revenue, excluding grants (% of GDP) */
+  govRevenue: 'GC.REV.XGRT.GD.ZS',
+  /** Taxes on goods and services (% of revenue) */
+  taxGoodsServices: 'GC.TAX.GSRV.RV.ZS',
+  /** Taxes on income, profits and capital gains (% of revenue) */
+  taxIncome: 'GC.TAX.YPKG.RV.ZS',
+  /** Taxes on international trade (% of revenue) */
+  taxTrade: 'GC.TAX.INTT.RV.ZS',
+  /** Net investment in nonfinancial assets (% of GDP) */
+  netInvestment: 'GC.NFN.TOTL.GD.ZS',
+  /** Cash surplus/deficit (% of GDP) */
+  cashSurplusDeficit: 'GC.BAL.CASH.GD.ZS',
+  /** Net lending (+) / net borrowing (-) (% of GDP) */
+  netLending: 'GC.NLD.TOTL.GD.ZS',
+
+  // ===========================================================================
+  // 3. TRADE & BALANCE OF PAYMENTS (NU, UU)
+  // ===========================================================================
+  /** Trade (% of GDP) */
+  tradeGdpPct: 'NE.TRD.GNFS.ZS',
+  /** Exports of goods and services (% of GDP) */
+  exportsGdpPct: 'NE.EXP.GNFS.ZS',
+  /** Imports of goods and services (% of GDP) */
+  importsGdpPct: 'NE.IMP.GNFS.ZS',
+  /** Exports of goods and services (current US$) */
+  exportsUsd: 'NE.EXP.GNFS.CD',
+  /** Imports of goods and services (current US$) */
+  importsUsd: 'NE.IMP.GNFS.CD',
   /** Current account balance (% of GDP) */
   currentAccountBalance: 'BN.CAB.XOKA.GD.ZS',
-  /** Military expenditure (% of GDP) */
-  militaryExpenditure: 'MS.MIL.XPND.GD.ZS',
+  /** Foreign direct investment, net inflows (BoP, current US$) */
+  fdiNet: 'BN.KLT.DINV.CD',
+  /** Foreign direct investment, net inflows (% of GDP) */
+  fdiNetGdpPct: 'BX.KLT.DINV.WD.GD.ZS',
+  /** Foreign direct investment, net outflows (% of GDP) */
+  fdiOutGdpPct: 'BM.KLT.DINV.WD.GD.ZS',
+  /** High-technology exports (% of manufactured exports) */
+  highTechExports: 'TX.VAL.TECH.MF.ZS',
+  /** External balance on goods and services (% of GDP) */
+  externalBalance: 'NE.RSB.GNFS.ZS',
+
+  // ===========================================================================
+  // 4. LABOR MARKET & EMPLOYMENT (AU — Labor Market Committee)
+  // ===========================================================================
+  /** Unemployment, total (% of total labor force) */
+  unemployment: 'SL.UEM.TOTL.ZS',
+  /** Unemployment, female (% of female labor force) */
+  unemploymentFemale: 'SL.UEM.TOTL.FE.ZS',
+  /** Unemployment, male (% of male labor force) */
+  unemploymentMale: 'SL.UEM.TOTL.MA.ZS',
+  /** Unemployment, youth total (% 15-24) */
+  youthUnemployment: 'SL.UEM.1524.ZS',
+  /** Unemployment, youth female (% 15-24) */
+  youthUnemploymentFemale: 'SL.UEM.1524.FE.ZS',
+  /** Unemployment, youth male (% 15-24) */
+  youthUnemploymentMale: 'SL.UEM.1524.MA.ZS',
+  /** Long-term unemployment (% of total unemployment) */
+  longTermUnemployment: 'SL.UEM.LTRM.ZS',
+  /** Long-term unemployment, female (%) */
+  longTermUnemploymentFemale: 'SL.UEM.LTRM.FE.ZS',
+  /** Long-term unemployment, male (%) */
+  longTermUnemploymentMale: 'SL.UEM.LTRM.MA.ZS',
+  /** Labor force participation rate, total (% ages 15+) */
+  laborForceParticipation: 'SL.TLF.CACT.ZS',
+  /** Labor force participation rate, female (% ages 15+) */
+  laborForceParticipationFemale: 'SL.TLF.CACT.FE.ZS',
+  /** Labor force participation rate, male (% ages 15+) */
+  laborForceParticipationMale: 'SL.TLF.CACT.MA.ZS',
+  /** Labor force, total */
+  laborForceTotal: 'SL.TLF.TOTL.IN',
+  /** Employment to population ratio, 15+, total (%) */
+  employmentRatio: 'SL.EMP.TOTL.SP.ZS',
+  /** Employment to population ratio, 15+, female (%) */
+  employmentRatioFemale: 'SL.EMP.TOTL.SP.FE.ZS',
+  /** Employment to population ratio, 15+, male (%) */
+  employmentRatioMale: 'SL.EMP.TOTL.SP.MA.ZS',
+  /** Vulnerable employment, total (% of total employment) */
+  vulnerableEmployment: 'SL.EMP.VULN.ZS',
+  /** Self-employed, total (% of total employment) */
+  selfEmployed: 'SL.EMP.SELF.ZS',
+  /** Wage and salaried workers, total (% of total employment) */
+  wageSalariedWorkers: 'SL.EMP.WORK.ZS',
+  /** GDP per person employed (constant 2021 PPP $) */
+  laborProductivity: 'SL.GDP.PCAP.EM.KD',
+
+  // ===========================================================================
+  // 5. INFLATION & PRICES (FiU)
+  // ===========================================================================
+  /** Inflation, consumer prices (annual %) */
+  inflation: 'FP.CPI.TOTL.ZG',
+  /** Inflation, GDP deflator (annual %) */
+  inflationGdpDeflator: 'NY.GDP.DEFL.KD.ZG',
+  /** Consumer price index (2010 = 100) */
+  consumerPriceIndex: 'FP.CPI.TOTL',
+
+  // ===========================================================================
+  // 6. FINANCIAL SECTOR (FiU)
+  // ===========================================================================
+  /** Domestic credit to private sector by banks (% of GDP) */
+  domesticCreditBanks: 'FS.AST.PRVT.GD.ZS',
+  /** Real interest rate (%) */
+  realInterestRate: 'FR.INR.RINR',
+  /** Lending interest rate (%) */
+  lendingRate: 'FR.INR.LEND',
+  /** Deposit interest rate (%) */
+  depositRate: 'FR.INR.DPST',
+
+  // ===========================================================================
+  // 7. DEMOGRAPHICS & POPULATION (SoU — Social Affairs Committee)
+  // ===========================================================================
+  /** Population, total */
+  population: 'SP.POP.TOTL',
+  /** Population growth (annual %) */
+  populationGrowth: 'SP.POP.GROW',
+  /** Population ages 65 and above (% of total) */
+  population65Plus: 'SP.POP.65UP.TO.ZS',
+  /** Population ages 0-14 (% of total) */
+  populationChildren: 'SP.POP.0014.TO.ZS',
+  /** Population ages 15-64 (% of total) */
+  populationWorkingAge: 'SP.POP.1564.TO.ZS',
+  /** Urban population (% of total) */
+  urbanPopulation: 'SP.URB.TOTL.IN.ZS',
+  /** Rural population (% of total) */
+  ruralPopulation: 'SP.RUR.TOTL.ZS',
+  /** Age dependency ratio (% of working-age population) */
+  ageDependencyRatio: 'SP.POP.DPND',
+  /** Age dependency ratio, old (% of working-age) */
+  ageDependencyOld: 'SP.POP.DPND.OL',
+  /** Age dependency ratio, young (% of working-age) */
+  ageDependencyYoung: 'SP.POP.DPND.YG',
+  /** Net migration */
+  netMigration: 'SM.POP.NETM',
+  /** Refugee population by country/territory of asylum */
+  refugeePopulation: 'SM.POP.REFG',
+  /** Life expectancy at birth, total (years) */
+  lifeExpectancy: 'SP.DYN.LE00.IN',
+  /** Life expectancy at birth, female (years) */
+  lifeExpectancyFemale: 'SP.DYN.LE00.FE.IN',
+  /** Life expectancy at birth, male (years) */
+  lifeExpectancyMale: 'SP.DYN.LE00.MA.IN',
+  /** Birth rate, crude (per 1,000 people) */
+  birthRate: 'SP.DYN.CBRT.IN',
+  /** Death rate, crude (per 1,000 people) */
+  deathRate: 'SP.DYN.CDRT.IN',
+  /** Fertility rate, total (births per woman) */
+  fertilityRate: 'SP.DYN.TFRT.IN',
+  /** Adolescent fertility rate (births per 1,000 women ages 15-19) */
+  adolescentFertility: 'SP.ADO.TFRT',
+  /** Mortality rate, infant (per 1,000 live births) */
+  infantMortality: 'SP.DYN.IMRT.IN',
+  /** Mortality rate, under-5 (per 1,000 live births) */
+  under5Mortality: 'SH.DYN.MORT',
+
+  // ===========================================================================
+  // 8. HEALTH (SoU)
+  // ===========================================================================
+  /** Current health expenditure (% of GDP) */
+  healthExpenditure: 'SH.XPD.CHEX.GD.ZS',
+  /** Current health expenditure per capita (current US$) */
+  healthExpenditurePerCapita: 'SH.XPD.CHEX.PC.CD',
+  /** Domestic general government health expenditure (% of GDP) */
+  govHealthExpenditure: 'SH.XPD.GHED.GD.ZS',
+  /** Domestic general government health exp. (% of current health exp.) */
+  govHealthShare: 'SH.XPD.GHED.CH.ZS',
+  /** Domestic private health expenditure (% of current health exp.) */
+  privateHealthShare: 'SH.XPD.PVTD.CH.ZS',
+  /** Out-of-pocket expenditure (% of current health expenditure) */
+  outOfPocketHealth: 'SH.XPD.OOPC.CH.ZS',
+  /** Physicians (per 1,000 people) */
+  physicians: 'SH.MED.PHYS.ZS',
+  /** Hospital beds (per 1,000 people) */
+  hospitalBeds: 'SH.MED.BEDS.ZS',
+  /** Nurses and midwives (per 1,000 people) */
+  nursesAndMidwives: 'SH.MED.NUMW.P3',
+  /** Suicide mortality rate (per 100,000 population) */
+  suicideMortality: 'SH.STA.SUIC.P5',
+  /** Prevalence of current tobacco use (% of adults) */
+  tobaccoUse: 'SH.PRV.SMOK',
+  /** Total alcohol consumption per capita (liters of pure alcohol) */
+  alcoholConsumption: 'SH.ALC.PCAP.LI',
+  /** Immunization, measles (% of children ages 12-23 months) */
+  measlesImmunization: 'SH.IMM.MEAS',
+  /** Immunization, DPT (% of children ages 12-23 months) */
+  dptImmunization: 'SH.IMM.IDPT',
+
+  // ===========================================================================
+  // 9. EDUCATION (UbU — Education Committee)
+  // ===========================================================================
+  /** Government expenditure on education, total (% of GDP) */
+  educationExpenditure: 'SE.XPD.TOTL.GD.ZS',
+  /** Government expenditure on education (% of government expenditure) */
+  educationGovShare: 'SE.XPD.TOTL.GB.ZS',
+  /** School enrollment, primary (% gross) */
+  schoolEnrollment: 'SE.PRM.ENRR',
+  /** School enrollment, secondary (% gross) */
+  secondaryEnrollment: 'SE.SEC.ENRR',
+  /** School enrollment, tertiary (% gross) */
+  tertiaryEnrollment: 'SE.TER.ENRR',
+  /** Primary completion rate (% of relevant age group) */
+  primaryCompletion: 'SE.PRM.CMPT.ZS',
+
+  // ===========================================================================
+  // 10. ENVIRONMENT & CLIMATE (MJU — Environment Committee)
+  // ===========================================================================
   /** CO2 emissions (metric tons per capita) */
   co2Emissions: 'EN.ATM.CO2E.PC',
-  /** GINI index */
-  giniIndex: 'SI.POV.GINI',
+  /** CO2 emissions (kt) */
+  co2EmissionsTotal: 'EN.ATM.CO2E.KT',
+  /** Energy use (kg of oil equivalent per capita) */
+  energyUse: 'EG.USE.PCAP.KG.OE',
+  /** Renewable energy consumption (% of total final energy) */
+  renewableEnergy: 'EG.FEC.RNEW.ZS',
+  /** Renewable electricity output (% of total electricity output) */
+  renewableElectricity: 'EG.ELC.RNEW.ZS',
+  /** Forest area (% of land area) */
+  forestArea: 'AG.LND.FRST.ZS',
+  /** PM2.5 air pollution, mean annual exposure (µg/m³) */
+  airPollution: 'EN.ATM.PM25.MC.M3',
+  /** Electricity production from nuclear sources (% of total) */
+  nuclearElectricity: 'EG.ELC.NUCL.ZS',
+  /** Electricity production from hydroelectric sources (% of total) */
+  hydroElectricity: 'EG.ELC.HYRO.ZS',
+  /** Electricity production from renewables excl. hydro (% of total) */
+  renewableElecExHydro: 'EG.ELC.RNWX.ZS',
+
+  // ===========================================================================
+  // 11. INFRASTRUCTURE & TECHNOLOGY (TU — Transport Committee)
+  // ===========================================================================
+  /** Individuals using the Internet (% of population) */
+  internetUsers: 'IT.NET.USER.ZS',
+  /** Fixed broadband subscriptions (per 100 people) */
+  broadbandSubscriptions: 'IT.NET.BBND.P2',
+  /** Mobile cellular subscriptions (per 100 people) */
+  mobileSubscriptions: 'IT.CEL.SETS.P2',
+  /** Secure Internet servers (per 1 million people) */
+  secureServers: 'IT.NET.SECR.P6',
+  /** Air transport, passengers carried */
+  airPassengers: 'IS.AIR.PSGR',
+  /** Patent applications, residents */
+  patentsResident: 'IP.PAT.RESD',
+  /** Patent applications, nonresidents */
+  patentsNonresident: 'IP.PAT.NRES',
+
+  // ===========================================================================
+  // 12. INNOVATION & RESEARCH (UbU)
+  // ===========================================================================
   /** Research and development expenditure (% of GDP) */
   rdExpenditure: 'GB.XPD.RSDV.GD.ZS',
-  /** Tax revenue (% of GDP) — relevant to SkU taxation committee */
-  taxRevenue: 'GC.TAX.TOTL.GD.ZS',
-  /** Rule of law estimate — relevant to KU constitution committee */
+  /** Researchers in R&D (per million people) */
+  researchersPerMillion: 'SP.POP.SCIE.RD.P6',
+  /** Scientific and technical journal articles */
+  scientificArticles: 'IP.JRN.ARTC.SC',
+  /** ICT service exports (% of service exports, BoP) */
+  ictServiceExports: 'BX.GSR.CCIS.ZS',
+
+  // ===========================================================================
+  // 13. MILITARY & SECURITY (FöU — Defense Committee)
+  // ===========================================================================
+  /** Military expenditure (% of GDP) */
+  militaryExpenditure: 'MS.MIL.XPND.GD.ZS',
+  /** Military expenditure (current USD) */
+  militaryExpenditureUsd: 'MS.MIL.XPND.CD',
+  /** Military expenditure (% of central government expenditure) */
+  militaryGovShare: 'MS.MIL.XPND.ZS',
+  /** Armed forces personnel, total */
+  armedForcesTotal: 'MS.MIL.TOTL.P1',
+  /** Armed forces personnel (% of total labor force) */
+  armedForcesLaborShare: 'MS.MIL.TOTL.TF.ZS',
+
+  // ===========================================================================
+  // 14. GOVERNANCE & INSTITUTIONS (KU, JuU)
+  // Note: WGI indicators require source=75 in REST API calls
+  // ===========================================================================
+  /** Rule of Law: Estimate (-2.5 to 2.5) [source=75] */
   ruleOfLaw: 'RL.EST',
-  /** Voice and accountability estimate — relevant to KU constitution committee */
+  /** Voice and Accountability: Estimate [source=75] */
   voiceAccountability: 'VA.EST',
-  /** Government effectiveness estimate — relevant to KU constitution committee */
+  /** Government Effectiveness: Estimate [source=75] */
   govEffectiveness: 'GE.EST',
+  /** Regulatory Quality: Estimate [source=75] */
+  regulatoryQuality: 'RQ.EST',
+  /** Control of Corruption: Estimate [source=75] */
+  controlOfCorruption: 'CC.EST',
+  /** Political Stability and Absence of Violence: Estimate [source=75] */
+  politicalStability: 'PV.EST',
+
+  // ===========================================================================
+  // 15. INEQUALITY & POVERTY (SoU, AU)
+  // ===========================================================================
+  /** GINI index */
+  giniIndex: 'SI.POV.GINI',
+  /** Income share held by highest 10% */
+  incomeTop10: 'SI.DST.10TH.10',
+  /** Income share held by lowest 10% */
+  incomeBottom10: 'SI.DST.FRST.10',
+  /** Income share held by lowest 20% */
+  incomeBottom20: 'SI.DST.FRST.20',
+  /** Income share held by highest 20% */
+  incomeTop20: 'SI.DST.05TH.20',
+
+  // ===========================================================================
+  // 16. GENDER & SOCIAL INCLUSION (AU, KU)
+  // ===========================================================================
+  /** Proportion of seats held by women in national parliaments (%) */
+  womenInParliament: 'SG.GEN.PARL.ZS',
+
+  // ===========================================================================
+  // 17. ENERGY (MJU, NU)
+  // ===========================================================================
+  /** Electric power consumption (kWh per capita) */
+  electricPowerConsumption: 'EG.USE.ELEC.KH.PC',
 } as const;
 
 // ---------------------------------------------------------------------------
@@ -140,7 +491,9 @@ export class WorldBankClient {
     indicatorId: string,
     perPage = 50,
   ): Promise<WorldBankDataPoint[]> {
-    const url = `${this.baseURL}/country/${encodeURIComponent(countryCode)}/indicator/${encodeURIComponent(indicatorId)}?format=json&per_page=${perPage}`;
+    // WGI governance indicators require source=75
+    const sourceParam = WGI_INDICATOR_IDS.has(indicatorId) ? `&source=${WB_SOURCES.wgi}` : '';
+    const url = `${this.baseURL}/country/${encodeURIComponent(countryCode)}/indicator/${encodeURIComponent(indicatorId)}?format=json&per_page=${perPage}${sourceParam}`;
 
     const data = await this.fetchWithRetry(url);
 
