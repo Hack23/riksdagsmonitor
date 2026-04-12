@@ -5,13 +5,13 @@
 <h1 align="center">🌍 World Bank Indicators — Political Intelligence Inventory</h1>
 
 <p align="center">
-  <strong>Complete reference mapping World Bank economic indicators to Swedish political entities</strong><br>
+  <strong>SINGLE SOURCE OF TRUTH for all World Bank indicator mappings</strong><br>
   <em>📊 Economic · 👥 Social · 🎓 Education · 🏥 Health · 🏛️ Governance</em>
 </p>
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-3.0-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
@@ -19,13 +19,28 @@
 
 ## 🎯 Purpose
 
-This directory contains the **comprehensive inventory** of 144 World Bank indicators available for enriching Riksdagsmonitor political intelligence articles. Every indicator is mapped to:
+This directory contains the **single source of truth** for all 144 World Bank indicators used in Riksdagsmonitor political intelligence. The JSON inventory (`indicators-inventory.json`) is the canonical machine-readable reference consumed by:
 
-- **17 policy domains** covering all aspects of Swedish governance
-- **12 Riksdag committees** (utskott) that oversee relevant policy areas
-- **Article types** where each indicator should be included
-- **Chart types** — Chart.js (HTML articles) and Mermaid (analysis markdown files)
-- **Access method** — MCP tools (19 indicators) or REST API client (125 indicators)
+- **AI agents** (agentic workflows) — read via `view analysis/worldbank/indicators-inventory.json`
+- **TypeScript modules** — `world-bank-context.ts` loads indicators from this JSON automatically
+- **Analysis documents** — reference for economic context in markdown analysis files
+
+Every indicator includes:
+- **`id`** — World Bank indicator code (e.g., `NY.GDP.MKTP.KD.ZG`)
+- **`name`** — Human-readable name
+- **`description`** — Context-rich description for articles
+- **`policyAreas`** — Swedish policy areas this indicator relates to
+- **`committees`** — Relevant Riksdag committees (utskott)
+- **`unit`** — Measurement unit
+- **`mcpTool`** / **`mcpParam`** — MCP tool access (19 indicators)
+
+### 🔍 AI Agent Discovery Protocol
+
+> **For agentic workflows**: To find relevant indicators for any article topic:
+> 1. `view analysis/worldbank/indicators-inventory.json`
+> 2. Search for indicators where `policyAreas` or `committees` match the article's subject
+> 3. Use MCP tools for indicators with `mcpTool` field
+> 4. Reference other indicators by name/ID — build-time scripts handle REST API fetching
 
 ## 📁 Contents
 
@@ -37,6 +52,14 @@ This directory contains the **comprehensive inventory** of 144 World Bank indica
 | [use-cases.md](use-cases.md) | Best use cases per article type and policy domain |
 
 ## 🔗 Integration Points
+
+### JSON Inventory (Single Source of Truth)
+```
+analysis/worldbank/indicators-inventory.json
+```
+- **AI agents**: Read with `view` tool to discover indicators on-demand
+- **TypeScript modules**: `world-bank-context.ts` loads from this JSON at import time
+- **To add indicators**: Edit this JSON file ONLY — TypeScript picks up changes automatically
 
 ### MCP Server (Agentic Workflows)
 ```yaml
@@ -53,13 +76,15 @@ world-bank:
 | `get-education-data` | School enrollment, education spending, literacy | `countryCode`, `indicator`, `years` |
 | `get-health-data` | Health spending, physicians, hospital beds | `countryCode`, `indicator`, `years` |
 | `get-country-info` | Region, income level, capital, coordinates | `countryCode` |
-| `search-indicators` | Search indicators by keyword | `keyword` |
+| `search-indicators` | Search indicators by keyword (limited coverage) | `keyword` |
+
+> **Note**: `search-indicators` has limited coverage. Always prefer reading `indicators-inventory.json` for comprehensive discovery.
 
 ### TypeScript Modules (Build-Time)
 | Module | Purpose |
 |--------|---------|
 | `scripts/world-bank-client.ts` | REST client with `INDICATOR_IDS` and `COUNTRY_CODES` |
-| `scripts/world-bank-context.ts` | Policy area mapping and localized headings (14 languages) |
+| `scripts/world-bank-context.ts` | Loads from JSON inventory, provides localized headings (14 languages) and policy area matching |
 | `scripts/data-transformers/content-generators/economic-dashboard-section.ts` | Chart.js dashboard generation |
 | `scripts/populate-analysis-data.ts` | Automated data fetch to `analysis/data/worldbank/` |
 

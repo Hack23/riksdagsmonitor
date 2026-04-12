@@ -847,19 +847,55 @@ Embed each chart on the target `<canvas>` element using a `data-chart-config` at
 
 ---
 
-## 🌍 WORLD BANK ECONOMIC CONTEXT INTEGRATION (v2.0 — for ALL content workflows)
+## 🌍 WORLD BANK ECONOMIC CONTEXT INTEGRATION (v3.0 — for ALL content workflows)
 
 > **NON-NEGOTIABLE**: Every article MUST include economic context from World Bank indicators when the article's policy domain matches available indicators. This enriches political intelligence with quantitative evidence.
 
 ````markdown
 ### World Bank Indicator Reference for AI Agents
 
+> **SINGLE SOURCE OF TRUTH**: `analysis/worldbank/indicators-inventory.json`
+> This JSON file is the canonical machine-readable inventory of ALL indicators. Both AI agents and TypeScript modules load from this same file. To discover indicators, **`view analysis/worldbank/indicators-inventory.json`** — do NOT reference TypeScript source code.
+
 The World Bank integration provides **144 indicators** across 17 Riksdag-relevant domains:
 - **19 indicators** via MCP tools (get-economic-data, get-social-data, get-education-data, get-health-data)
-- **119 indicators** via REST API client (`scripts/world-bank-client.ts`)
-- **6 WGI governance indicators** via REST API with source=75 (auto-detected by client)
+- **125 indicators** via REST API (build-time scripts fetch automatically)
+- **6 WGI governance indicators** via REST API with source=75 (auto-detected)
 
 AI agents MUST use these to enrich articles.
+
+#### 🔍 On-Demand Indicator Discovery (AI Agent Protocol)
+
+> **MANDATORY FIRST STEP**: Before writing any article, discover relevant indicators using this protocol.
+
+1. **Read the inventory**: `view analysis/worldbank/indicators-inventory.json`
+   - Each indicator has: `id`, `key`, `name`, `unit`, `description`, `policyAreas`, `committees`
+   - Indicators with `mcpTool` field can be fetched via MCP tools
+   - The JSON is organized by domain (nationalAccounts, labor, military, governance, etc.)
+
+2. **Match to article topic**: Find indicators where `policyAreas` or `committees` match the article's subject
+   - Example: Defense proposition → look in `military` domain (committees: FöU)
+   - Example: Budget debate → look in `nationalAccounts` + `governmentFinance` domains (committees: FiU, SkU)
+
+3. **Fetch data via MCP** for indicators that have `mcpTool` field:
+   ```
+   get-economic-data(countryCode="SE", indicator="GDP_GROWTH", years=10)
+   get-social-data(countryCode="SE", indicator="LIFE_EXPECTANCY", years=10)
+   get-health-data(countryCode="SE", indicator="HEALTH_EXPENDITURE", years=10)
+   get-education-data(countryCode="SE", indicator="EDUCATION_EXPENDITURE", years=10)
+   ```
+
+4. **For non-MCP indicators**: Reference the indicator ID and name in analysis text — the build-time scripts will fetch data via REST API automatically.
+
+5. **Nordic comparison**: Always fetch comparison countries for top indicators:
+   ```
+   get-economic-data(countryCode="DK", indicator="GDP_GROWTH", years=5)
+   get-economic-data(countryCode="NO", indicator="GDP_GROWTH", years=5)
+   get-economic-data(countryCode="FI", indicator="GDP_GROWTH", years=5)
+   get-economic-data(countryCode="DE", indicator="GDP_GROWTH", years=5)
+   ```
+
+> **IMPORTANT**: The `search-indicators` MCP tool has limited coverage. Always prefer reading `analysis/worldbank/indicators-inventory.json` for comprehensive discovery.
 
 #### Available MCP Tools & Indicators
 
@@ -897,7 +933,7 @@ AI agents MUST use these to enrich articles.
 | `PHYSICIANS` | SH.MED.PHYS.ZS | Physicians | per 1,000 |
 | `HOSPITAL_BEDS` | SH.MED.BEDS.ZS | Hospital Beds | per 1,000 |
 
-**REST-Only Indicators — Key Additions** (fetched by `scripts/world-bank-client.ts`, full list of 125+ in `analysis/worldbank/indicators-inventory.json`):
+**Additional Domain Indicators** (full details with descriptions, policyAreas, and committees in `analysis/worldbank/indicators-inventory.json`):
 
 | Domain | Key Indicators | Committee |
 |--------|---------------|-----------|
@@ -948,21 +984,22 @@ AI agents MUST use these to enrich articles.
 
 #### How to Fetch Data (AI Agent Instructions)
 
-1. **Detect policy domains** from article source documents
-2. **Map to indicators** using committee lookup above
-3. **Fetch Sweden data** (use `countryCode="SE"` for MCP, `SWE` for REST):
+1. **Read indicator inventory**: `view analysis/worldbank/indicators-inventory.json` to find all indicators for the article's policy domains
+2. **Detect policy domains** from article source documents
+3. **Map to indicators** using inventory's `policyAreas` and `committees` fields, or committee lookup above
+4. **Fetch Sweden data** for MCP-supported indicators (those with `mcpTool` field in inventory):
 ```
 get-economic-data(countryCode="SE", indicator="GDP_GROWTH", years=10)
 get-economic-data(countryCode="SE", indicator="UNEMPLOYMENT", years=10)
 ```
-4. **Fetch Nordic comparison** for top 3 indicators:
+5. **Fetch Nordic comparison** for top 3 indicators:
 ```
 get-economic-data(countryCode="DK", indicator="GDP_GROWTH", years=5)
 get-economic-data(countryCode="NO", indicator="GDP_GROWTH", years=5)
 get-economic-data(countryCode="FI", indicator="GDP_GROWTH", years=5)
 get-economic-data(countryCode="DE", indicator="GDP_GROWTH", years=5)
 ```
-5. **Generate charts** using canonical types below
+6. **Generate charts** using canonical types below
 
 #### Economic Chart Templates
 
