@@ -18,8 +18,29 @@ import { describe, it, expect, vi, afterEach } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { extractPartyMentions } from '../scripts/party-variants.js';
 import { detectArticleLanguage, getLocalizedHeading } from '../scripts/editorial-pillars.js';
+
+/** Simple party mention extraction for test purposes. */
+const PARTY_NAMES: Record<string, string[]> = {
+  S: ['Socialdemokraterna', 'S'], M: ['Moderaterna', 'M'],
+  SD: ['Sverigedemokraterna', 'SD'], V: ['Vänsterpartiet', 'V'],
+  MP: ['Miljöpartiet', 'MP'], C: ['Centerpartiet', 'C'],
+  L: ['Liberalerna', 'L'], KD: ['Kristdemokraterna', 'KD'],
+};
+function extractPartyMentions(html: string | null | undefined): Set<string> {
+  const parties = new Set<string>();
+  if (!html) return parties;
+  for (const [code, variants] of Object.entries(PARTY_NAMES)) {
+    for (const v of variants) {
+      const escaped = v.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      if (new RegExp(`(?:^|[^\\p{L}\\p{N}])${escaped}(?=$|[^\\p{L}\\p{N}])`, 'ui').test(html)) {
+        parties.add(code);
+        break;
+      }
+    }
+  }
+  return parties;
+}
 import type { Language } from '../scripts/types/language.js';
 
 const __filename = fileURLToPath(import.meta.url);

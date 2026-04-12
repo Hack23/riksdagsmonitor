@@ -145,7 +145,6 @@ data-pipeline:
       - changed-files:
           - any-glob-to-any-file:
               - ".github/workflows/data-pipeline.yml"
-              - "scripts/pipeline-*.js"
               - "scripts/fetch-*.js"
               - "scripts/validate-*.js"
       - title: "pipeline:*"
@@ -176,7 +175,6 @@ i18n:
               - "sitemap_*.xml"
               - "news/**/*_*.html"
               - "TRANSLATION_GUIDE.md"
-              - "scripts/extract-vocabulary.js"
       - title: "i18n:*"
       - title: "localization:*"
       - title: "l10n:*"

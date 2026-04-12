@@ -7,8 +7,8 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { generateArticleHTML } from '../../scripts/article-template.js';
-import type { ArticleData, ArticleCategory, TemplateSection } from '../../scripts/types/article.js';
+import { generateArticleHTML } from '../scripts/article-template.js';
+import type { ArticleData, ArticleCategory, TemplateSection } from '../scripts/types/article.js';
 
 // ---------------------------------------------------------------------------
 // Shared minimal article data
