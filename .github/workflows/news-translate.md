@@ -150,7 +150,7 @@ steps:
           echo "gh error:"
           sed 's/^/  /' "$GH_ERROR_LOG"
         fi
-        echo "   Today's date has open content PRs — agent will look for older articles to translate."
+        echo "   Could not determine whether today's date has open content PRs — deferring today and looking for older articles to translate."
         echo "TODAY_DEFERRED=true" >> "$GITHUB_ENV"
         exit 0
       fi
@@ -384,7 +384,7 @@ ARTICLE_TYPE="${{ github.event.inputs.article_type }}"
 
 find news -maxdepth 1 -name "$ARTICLE_DATE-*-en.html" -exec basename {} .html \; | sed "s/-en$//" | while read SLUG; do
   MISSING=""
-  for lang in da no fi de fr es nl ar he ja ko zh; do
+  for lang in $LANGS; do
     test -f "news/$SLUG-$lang.html" || MISSING="$MISSING $lang"
   done
   if [ -n "$MISSING" ]; then
@@ -411,7 +411,7 @@ for i in $(seq 1 30); do
   for EN_FILE in $EN_FILES; do
     SLUG=$(basename "$EN_FILE" .html | sed "s/-en$//")
     MISSING=""
-    for lang in da no fi de fr es nl ar he ja ko zh; do
+    for lang in $LANGS; do
       test -f "news/$SLUG-$lang.html" || MISSING="$MISSING $lang"
     done
     if [ -n "$MISSING" ]; then
