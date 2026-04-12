@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-2.0-555?style=for-the-badge" alt="Version"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
@@ -19,12 +19,13 @@
 
 ## 🎯 Purpose
 
-This directory contains the **comprehensive inventory** of World Bank indicators available for enriching Riksdagsmonitor political intelligence articles. Every indicator is mapped to:
+This directory contains the **comprehensive inventory** of 144 World Bank indicators available for enriching Riksdagsmonitor political intelligence articles. Every indicator is mapped to:
 
-- **Swedish Riksdag committees** (utskott) that oversee the relevant policy area
-- **Policy domains** where the indicator provides context
-- **Article types** where the indicator should be included
-- **Chart types** (Chart.js configurations) for visual presentation
+- **17 policy domains** covering all aspects of Swedish governance
+- **12 Riksdag committees** (utskott) that oversee relevant policy areas
+- **Article types** where each indicator should be included
+- **Chart types** — Chart.js (HTML articles) and Mermaid (analysis markdown files)
+- **Access method** — MCP tools (19 indicators) or REST API client (125 indicators)
 
 ## 📁 Contents
 
@@ -69,63 +70,53 @@ Economic indicators are visualized using these canonical chart types:
 - `nordic-radar` — Multi-indicator radar comparison
 - `policy-radar` — Policy area impact radar
 
-## 📊 Quick Reference: All Available Indicators
+## 📊 Quick Reference: 144 Indicators Across 17 Domains
 
-### Economic (9 indicators)
-| Code | Name | Unit | MCP Tool |
-|------|------|------|----------|
-| `NY.GDP.MKTP.KD.ZG` | GDP Growth | % annual | `get-economic-data(indicator=GDP_GROWTH)` |
-| `NY.GDP.PCAP.CD` | GDP per Capita | USD | `get-economic-data(indicator=GDP_PER_CAPITA)` |
-| `NY.GDP.PCAP.PP.CD` | GDP per Capita (PPP) | Int'l $ | `get-economic-data(indicator=GDP_PER_CAPITA)` |
-| `SL.UEM.TOTL.ZS` | Unemployment | % labor force | `get-economic-data(indicator=UNEMPLOYMENT)` |
-| `FP.CPI.TOTL.ZG` | Inflation (CPI) | % annual | `get-economic-data(indicator=INFLATION)` |
-| `NE.TRD.GNFS.ZS` | Trade (% GDP) | % of GDP | — |
-| `NE.EXP.GNFS.ZS` | Exports (% GDP) | % of GDP | `get-economic-data(indicator=EXPORTS_GDP)` |
-| `BN.KLT.DINV.CD` | FDI Net Inflows | USD | `get-economic-data(indicator=FDI_NET)` |
-| `BN.CAB.XOKA.GD.ZS` | Current Account Balance | % of GDP | — |
+| Domain | Count | Key Indicators | Primary Committees | Access |
+|--------|-------|---------------|-------------------|--------|
+| **National Accounts** | 17 | GDP, GNI, PPP, Consumption, Savings, Capital Formation | FiU | MCP + REST |
+| **Government Finance** | 9 | Tax Revenue, Expenditure, Revenue, Cash Balance, Net Lending | SkU, FiU | REST |
+| **Trade & Payments** | 11 | Exports, Imports, FDI, Current Account, High-Tech Exports | NU, UU | MCP + REST |
+| **Labor Market** | 20 | Unemployment (total/M/F/youth), Participation, Employment, Productivity | AU | MCP + REST |
+| **Inflation & Prices** | 3 | CPI Inflation, GDP Deflator, Consumer Price Index | FiU | MCP + REST |
+| **Financial Sector** | 4 | Bank Credit, Interest Rates (real/lending/deposit) | FiU | REST |
+| **Demographics** | 22 | Population, Life Expectancy, Migration, Fertility, Age Dependency | SoU | MCP + REST |
+| **Health** | 14 | Health Exp., Physicians, Beds, Nurses, Suicide, Tobacco, Alcohol, Immunization | SoU | MCP + REST |
+| **Education** | 6 | Education Exp., Enrollment (primary/secondary/tertiary) | UbU | MCP + REST |
+| **Environment** | 10 | CO₂, Renewable Energy, Forest, PM2.5, Nuclear/Hydro Power | MJU | REST |
+| **Infrastructure** | 7 | Internet, Broadband, Mobile, Servers, Air Travel, Patents | TU | MCP + REST |
+| **Innovation** | 4 | R&D Expenditure, Researchers, Scientific Articles, ICT Exports | UbU | REST |
+| **Military** | 5 | Military Exp. (% GDP / USD / % Govt), Armed Forces, Labor Share | FöU | REST |
+| **Governance (WGI)** | 6 | Rule of Law, Voice, Effectiveness, Regulatory, Corruption, Stability | KU, JuU | REST source=75 |
+| **Inequality** | 5 | GINI, Income Top/Bottom 10%, Income Top/Bottom 20% | SoU, AU | REST |
+| **Gender** | 1 | Women in Parliament (%) | KU, AU | REST |
+| **Energy** | 1 | Electric Power Consumption | MJU, NU | REST |
 
-### Fiscal & Governance (5 indicators)
-| Code | Name | Unit | MCP Tool |
-|------|------|------|----------|
-| `GC.XPN.TOTL.GD.ZS` | Government Expenditure | % of GDP | — |
-| `GC.TAX.TOTL.GD.ZS` | Tax Revenue | % of GDP | — |
-| `GE.EST` | Government Effectiveness | index (-2.5 to 2.5) | — |
-| `RL.EST` | Rule of Law | index (-2.5 to 2.5) | — |
-| `VA.EST` | Voice and Accountability | index (-2.5 to 2.5) | — |
+> 📝 **Note on WGI Governance Indicators**: The 6 WGI indicators require `source=75` in World Bank REST API calls. The `WorldBankClient` handles this automatically via the `WGI_INDICATOR_IDS` set.
 
-### Defense & Security (1 indicator)
-| Code | Name | Unit | MCP Tool |
-|------|------|------|----------|
-| `MS.MIL.XPND.GD.ZS` | Military Expenditure | % of GDP | — |
+### MCP-Accessible Indicators (19)
 
-### Social (5 indicators)
-| Code | Name | Unit | MCP Tool |
-|------|------|------|----------|
-| `SP.POP.TOTL` | Population | persons | `get-social-data(indicator=POPULATION)` |
-| `SP.DYN.LE00.IN` | Life Expectancy | years | `get-social-data(indicator=LIFE_EXPECTANCY)` |
-| `SP.DYN.CBRT.IN` | Birth Rate | per 1,000 | `get-social-data(indicator=BIRTH_RATE)` |
-| `SP.DYN.CDRT.IN` | Death Rate | per 1,000 | `get-social-data(indicator=DEATH_RATE)` |
-| `IT.NET.USER.ZS` | Internet Users | % population | `get-social-data(indicator=INTERNET_USERS)` |
-
-### Education (2 indicators)
-| Code | Name | Unit | MCP Tool |
-|------|------|------|----------|
-| `SE.XPD.TOTL.GD.ZS` | Education Expenditure | % of GDP | `get-education-data(indicator=EDUCATION_EXPENDITURE)` |
-| `SE.PRM.ENRR` | School Enrollment (Primary) | % gross | `get-education-data(indicator=SCHOOL_ENROLLMENT)` |
-
-### Health (3 indicators)
-| Code | Name | Unit | MCP Tool |
-|------|------|------|----------|
-| `SH.XPD.CHEX.GD.ZS` | Health Expenditure | % of GDP | `get-health-data(indicator=HEALTH_EXPENDITURE)` |
-| `SH.MED.PHYS.ZS` | Physicians | per 1,000 people | `get-health-data(indicator=PHYSICIANS)` |
-| `SH.MED.BEDS.ZS` | Hospital Beds | per 1,000 people | `get-health-data(indicator=HOSPITAL_BEDS)` |
-
-### Environment & Innovation (3 indicators)
-| Code | Name | Unit | MCP Tool |
-|------|------|------|----------|
-| `EN.ATM.CO2E.PC` | CO₂ Emissions per Capita | metric tons | — |
-| `GB.XPD.RSDV.GD.ZS` | R&D Expenditure | % of GDP | — |
-| `SI.POV.GINI` | GINI Index | index (0-100) | — |
+| MCP Tool | Indicator | Code | MCP Param |
+|----------|-----------|------|-----------|
+| `get-economic-data` | GDP Growth | `NY.GDP.MKTP.KD.ZG` | `GDP_GROWTH` |
+| `get-economic-data` | GDP per Capita | `NY.GDP.PCAP.CD` | `GDP_PER_CAPITA` |
+| `get-economic-data` | Unemployment | `SL.UEM.TOTL.ZS` | `UNEMPLOYMENT` |
+| `get-economic-data` | Inflation | `FP.CPI.TOTL.ZG` | `INFLATION` |
+| `get-economic-data` | Exports (% GDP) | `NE.EXP.GNFS.ZS` | `EXPORTS_GDP` |
+| `get-economic-data` | FDI Net Inflows | `BN.KLT.DINV.CD` | `FDI_NET` |
+| `get-economic-data` | GNI | `NY.GNP.MKTP.CD` | `GNI` |
+| `get-economic-data` | GNI per Capita | `NY.GNP.PCAP.CD` | `GNI_PER_CAPITA` |
+| `get-social-data` | Population | `SP.POP.TOTL` | `POPULATION` |
+| `get-social-data` | Life Expectancy | `SP.DYN.LE00.IN` | `LIFE_EXPECTANCY` |
+| `get-social-data` | Birth Rate | `SP.DYN.CBRT.IN` | `BIRTH_RATE` |
+| `get-social-data` | Death Rate | `SP.DYN.CDRT.IN` | `DEATH_RATE` |
+| `get-social-data` | Internet Users | `IT.NET.USER.ZS` | `INTERNET_USERS` |
+| `get-education-data` | Education Expenditure | `SE.XPD.TOTL.GD.ZS` | `EDUCATION_EXPENDITURE` |
+| `get-education-data` | School Enrollment | `SE.PRM.ENRR` | `SCHOOL_ENROLLMENT` |
+| `get-health-data` | Health Expenditure | `SH.XPD.CHEX.GD.ZS` | `HEALTH_EXPENDITURE` |
+| `get-health-data` | Physicians | `SH.MED.PHYS.ZS` | `PHYSICIANS` |
+| `get-health-data` | Hospital Beds | `SH.MED.BEDS.ZS` | `HOSPITAL_BEDS` |
+| `get-health-data` | Immunization (Measles) | `SH.IMM.MEAS` | `IMMUNIZATION` |
 
 ---
 

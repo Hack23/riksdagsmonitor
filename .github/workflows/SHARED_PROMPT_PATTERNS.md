@@ -847,14 +847,19 @@ Embed each chart on the target `<canvas>` element using a `data-chart-config` at
 
 ---
 
-## 🌍 WORLD BANK ECONOMIC CONTEXT INTEGRATION (v1.0 — for ALL content workflows)
+## 🌍 WORLD BANK ECONOMIC CONTEXT INTEGRATION (v2.0 — for ALL content workflows)
 
 > **NON-NEGOTIABLE**: Every article MUST include economic context from World Bank indicators when the article's policy domain matches available indicators. This enriches political intelligence with quantitative evidence.
 
 ````markdown
 ### World Bank Indicator Reference for AI Agents
 
-The World Bank MCP server (`world-bank`) provides 19 indicators via direct MCP tools, plus 9 additional indicators via the REST API client (`scripts/world-bank-client.ts`). AI agents MUST use these to enrich articles.
+The World Bank integration provides **144 indicators** across 17 Riksdag-relevant domains:
+- **19 indicators** via MCP tools (get-economic-data, get-social-data, get-education-data, get-health-data)
+- **119 indicators** via REST API client (`scripts/world-bank-client.ts`)
+- **6 WGI governance indicators** via REST API with source=75 (auto-detected by client)
+
+AI agents MUST use these to enrich articles.
 
 #### Available MCP Tools & Indicators
 
@@ -892,47 +897,54 @@ The World Bank MCP server (`world-bank`) provides 19 indicators via direct MCP t
 | `PHYSICIANS` | SH.MED.PHYS.ZS | Physicians | per 1,000 |
 | `HOSPITAL_BEDS` | SH.MED.BEDS.ZS | Hospital Beds | per 1,000 |
 
-**REST-Only Indicators** (fetched by `scripts/world-bank-client.ts`):
-| Indicator ID | Name | Unit | Committee |
-|-------------|------|------|-----------|
-| GC.TAX.TOTL.GD.ZS | Tax Revenue | % of GDP | SkU, FiU |
-| MS.MIL.XPND.GD.ZS | Military Expenditure | % of GDP | FöU |
-| GC.XPN.TOTL.GD.ZS | Government Expenditure | % of GDP | FiU |
-| EN.ATM.CO2E.PC | CO₂ Emissions per Capita | metric tons | MJU |
-| GB.XPD.RSDV.GD.ZS | R&D Expenditure | % of GDP | UbU |
-| SI.POV.GINI | GINI Index | 0-100 | SoU, AU |
-| RL.EST | Rule of Law | -2.5 to 2.5 | KU, JuU |
-| VA.EST | Voice & Accountability | -2.5 to 2.5 | KU |
-| GE.EST | Government Effectiveness | -2.5 to 2.5 | KU, FiU |
+**REST-Only Indicators — Key Additions** (fetched by `scripts/world-bank-client.ts`, full list of 125+ in `analysis/worldbank/indicators-inventory.json`):
 
-#### Committee → Indicator Quick Lookup
+| Domain | Key Indicators | Committee |
+|--------|---------------|-----------|
+| **Government Finance** | Tax Revenue, Govt Expenditure, Revenue, Tax Income, Net Lending | SkU, FiU |
+| **Trade** | Trade %, Imports %, FDI (% GDP), High-Tech Exports, External Balance | NU, UU |
+| **Labor Market** | Youth Unemployment, Long-term Unemployment, Labor Participation (M/F), Employment Ratio, Productivity | AU |
+| **Financial** | Domestic Credit, Real Interest Rate, Lending Rate | FiU |
+| **Demographics** | Population 65+, Age Dependency, Net Migration, Refugees, Fertility Rate, Infant Mortality | SoU |
+| **Health** | Health Exp. per Capita, Govt Health Share, Nurses, Suicide Rate, Tobacco, Alcohol, Immunization | SoU |
+| **Education** | Education (% Govt Exp.), Secondary/Tertiary Enrollment, Primary Completion | UbU |
+| **Environment** | CO₂ Total (kt), Renewable Energy/Electricity, Forest Area, Air Pollution, Nuclear/Hydro Power | MJU |
+| **Military** | Military Exp. (USD), Military (% Govt Exp.), Armed Forces Personnel | FöU |
+| **Governance** | Rule of Law, Voice & Accountability, Govt Effectiveness, Regulatory Quality, Corruption Control, Political Stability | KU, JuU |
+| **Innovation** | R&D Expenditure, Researchers/million, Scientific Articles, ICT Exports | UbU |
+| **Inequality** | GINI Index, Income Top/Bottom 10%, Income Top/Bottom 20% | SoU, AU |
+| **Gender** | Women in Parliament (%) | KU |
+| **Infrastructure** | Broadband, Mobile Subscriptions, Secure Servers, Patents | TU |
 
-| Committee | Key Indicators |
-|-----------|---------------|
-| **FiU** (Finance) | GDP Growth, Inflation, Tax Revenue, Gov Expenditure, Current Account |
-| **AU** (Labor) | Unemployment, GINI Index, GDP per Capita |
-| **SkU** (Tax) | Tax Revenue |
-| **NU** (Industry) | Trade %, Exports %, FDI |
-| **UU** (Foreign Affairs) | Trade %, Exports % |
-| **FöU** (Defense) | Military Expenditure (NATO 2% target) |
-| **SoU** (Social) | Life Expectancy, Health Exp., Physicians, Hospital Beds, GINI |
-| **UbU** (Education) | Education Exp., R&D Exp., School Enrollment |
-| **MJU** (Environment) | CO₂ Emissions |
-| **KU** (Constitution) | Rule of Law, Voice & Accountability, Gov Effectiveness |
-| **TU** (Transport) | Internet Users |
+#### Committee → Indicator Quick Lookup (144 indicators across all committees)
 
-#### Article Type → Indicator Priority
+| Committee | Key Indicators | Count |
+|-----------|---------------|-------|
+| **FiU** (Finance) | GDP Growth, GDP per Capita, Inflation, Govt Expenditure, Tax Revenue, Current Account, GNI, Govt Consumption, Gross Savings, Real Interest Rate | 30+ |
+| **AU** (Labor) | Unemployment (total/M/F), Youth Unemployment, Long-term Unemployment, Labor Participation (M/F), Employment Ratio, Productivity, GINI, Vulnerable Employment | 22+ |
+| **SkU** (Tax) | Tax Revenue, Tax Income, Tax Goods & Services, Tax Trade | 6 |
+| **NU** (Industry) | Trade %, Exports %, FDI, High-Tech Exports, Regulatory Quality, Self-Employment | 12+ |
+| **UU** (Foreign Affairs) | Trade %, Exports %, GDP PPP | 5 |
+| **FöU** (Defense) | Military Expenditure (% GDP, USD, % Govt), Armed Forces Personnel, Political Stability | 6 |
+| **SoU** (Social) | Life Expectancy (M/F), Health Exp., Physicians, Hospital Beds, Nurses, GINI, Population, Birth/Death/Fertility Rate, Age Dependency, Migration, Refugees | 35+ |
+| **UbU** (Education) | Education Exp. (% GDP, % Govt), Primary/Secondary/Tertiary Enrollment, R&D Exp., Researchers, Scientific Articles | 10 |
+| **MJU** (Environment) | CO₂ Emissions, Renewable Energy/Electricity, Forest Area, Air Pollution, Nuclear/Hydro Power, Energy Use | 11 |
+| **KU** (Constitution) | Rule of Law, Voice & Accountability, Govt Effectiveness, Regulatory Quality, Corruption Control, Political Stability, Women in Parliament | 8 |
+| **JuU** (Justice) | Rule of Law, Control of Corruption | 2 |
+| **TU** (Transport) | Internet Users, Broadband, Mobile, Secure Servers, Air Passengers | 5 |
 
-| Article Type | MUST Include | SHOULD Include |
-|-------------|-------------|----------------|
-| propositions | GDP Growth, Unemployment + committee-matched | Inflation, Trade, Military Exp. |
-| committee-reports | All committee-specific indicators | Nordic comparison |
-| motions | Topic-matched indicators | Nordic comparison |
-| interpellations | Rule of Law, Voice & Accountability | Topic-matched |
-| weekly-review | GDP Growth, Unemployment, Inflation | Governance indicators |
-| monthly-review | **All 28 indicators** | Full Nordic comparison |
-| week-ahead / month-ahead | GDP Growth, Unemployment, Inflation | Trend analysis |
-| evening-analysis | Top 3 relevant to day's events | — |
+#### Article Type → Indicator Priority (from 144 available)
+
+| Article Type | MUST Include | SHOULD Include | New in v2.0 |
+|-------------|-------------|----------------|-------------|
+| propositions | GDP Growth, Unemployment + committee-matched | Inflation, Trade, Military Exp. | Youth Unemployment, GINI, Governance indicators |
+| committee-reports | All committee-specific indicators | Nordic comparison | Gender indicators, full financial sector |
+| motions | Topic-matched indicators | Nordic comparison | Relevant sub-indicators (e.g., female unemployment for gender motions) |
+| interpellations | Rule of Law, Voice & Accountability | Topic-matched | Control of Corruption, Political Stability |
+| weekly-review | GDP Growth, Unemployment, Inflation | Governance indicators | Labor productivity, Renewable energy, Women in Parliament |
+| monthly-review | **All 144 indicators** | Full Nordic comparison | All new domains (demographics, inequality, innovation) |
+| week-ahead / month-ahead | GDP Growth, Unemployment, Inflation | Trend analysis | Age dependency, Net migration, Energy mix |
+| evening-analysis | Top 3 relevant to day's events | — | Match new granular indicators to topic |
 
 #### How to Fetch Data (AI Agent Instructions)
 
@@ -1049,7 +1061,123 @@ get-economic-data(countryCode="DE", indicator="GDP_GROWTH", years=5)
 
 > **Country color palette** (consistent across all charts): Sweden `#00d9ff`, Denmark `#ff006e`, Norway `#ffbe0b`, Finland `#83cf39`, Germany `#9d4edd`.
 
-> **Full indicator inventory**: `analysis/worldbank/indicators-inventory.json` — machine-readable reference with all 28 indicators, committee mappings, chart types, and article relevance.
+> **Full indicator inventory**: `analysis/worldbank/indicators-inventory.json` — machine-readable reference with all 144 indicators, committee mappings, and domain categorization.
+
+#### Mermaid Diagram Templates for Analysis Markdown Files
+
+> **Scope**: Analysis `.md` files MUST use **Mermaid diagrams**, NOT Chart.js. These templates provide publication-quality visualizations for economic context in analysis documents.
+
+**Economic Trend Comparison (xychart)**:
+```mermaid
+xychart-beta
+    title "Sweden GDP Growth vs Nordic Average (%, 2019-2024)"
+    x-axis [2019, 2020, 2021, 2022, 2023, 2024]
+    y-axis "GDP Growth (%)" -4 --> 6
+    line [2.0, -2.2, 5.2, 1.3, -0.2, 0.8]
+    line [1.8, -2.0, 4.5, 2.1, 0.5, 1.2]
+```
+
+**Budget Structure (pie)**:
+```mermaid
+pie title Sweden Government Revenue Composition
+    "Income & Profit Tax" : 38
+    "Goods & Services Tax (VAT)" : 27
+    "Social Contributions" : 22
+    "International Trade Tax" : 3
+    "Other Revenue" : 10
+```
+
+**Policy Impact Flow (graph)**:
+```mermaid
+graph LR
+    subgraph "📊 Economic Indicators"
+        GDP["GDP Growth<br/>0.8%"]
+        UE["Unemployment<br/>8.4%"]
+        INF["Inflation<br/>2.1%"]
+    end
+    subgraph "🏛️ Policy Response"
+        FP["Fiscal Policy<br/>Expansionary"]
+        MP["Monetary Policy<br/>Rate cuts"]
+        LP["Labor Policy<br/>Active programs"]
+    end
+    subgraph "📈 Expected Outcomes"
+        G["Growth ↑"]
+        E["Employment ↑"]
+        S["Stability"]
+    end
+    GDP --> FP
+    UE --> LP
+    INF --> MP
+    FP --> G
+    LP --> E
+    MP --> S
+    style GDP fill:#00d9ff,color:#000
+    style UE fill:#ff006e,color:#fff
+    style INF fill:#ffbe0b,color:#000
+    style FP fill:#1a1e3d,color:#e0e0e0
+    style MP fill:#1a1e3d,color:#e0e0e0
+    style LP fill:#1a1e3d,color:#e0e0e0
+    style G fill:#28a745,color:#fff
+    style E fill:#28a745,color:#fff
+    style S fill:#28a745,color:#fff
+```
+
+**Nordic Comparison Quadrant (quadrantChart)**:
+```mermaid
+quadrantChart
+    title Nordic Country Performance Matrix
+    x-axis "Low GDP Growth" --> "High GDP Growth"
+    y-axis "High Unemployment" --> "Low Unemployment"
+    quadrant-1 Strong Economy
+    quadrant-2 Growth Challenge
+    quadrant-3 Structural Issues
+    quadrant-4 Recovery Phase
+    Sweden: [0.45, 0.35]
+    Denmark: [0.65, 0.55]
+    Norway: [0.40, 0.60]
+    Finland: [0.30, 0.45]
+```
+
+**Defense Spending Timeline (gantt)**:
+```mermaid
+gantt
+    title Sweden NATO 2% GDP Defense Spending Trajectory
+    dateFormat YYYY
+    axisFormat %Y
+    section Actual
+        1.1% GDP : done, 2019, 2020
+        1.2% GDP : done, 2020, 2021
+        1.3% GDP : done, 2021, 2023
+        1.5% GDP : done, 2023, 2024
+        1.7% GDP : active, 2024, 2025
+    section Projected
+        1.9% GDP : 2025, 2026
+        2.0% GDP Target : crit, 2026, 2027
+```
+
+**Governance Radar (mindmap)**:
+```mermaid
+mindmap
+  root((Sweden<br/>Governance))
+    Rule of Law
+      Score: 1.60
+      Percentile: 97th
+    Voice & Accountability
+      Score: 1.57
+      Percentile: 96th
+    Govt Effectiveness
+      Score: 1.60
+      Percentile: 94th
+    Regulatory Quality
+      Score: 1.72
+      Percentile: 96th
+    Control of Corruption
+      Score: 2.03
+      Percentile: 98th
+    Political Stability
+      Score: 0.76
+      Percentile: 72nd
+```
 
 > **Use case guide**: `analysis/worldbank/use-cases.md` — detailed scenarios for when each indicator adds value.
 ````

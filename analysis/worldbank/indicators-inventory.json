@@ -1,487 +1,1088 @@
 {
-  "version": "1.0",
-  "description": "Complete inventory of World Bank indicators for Riksdagsmonitor political intelligence",
+  "version": "2.0",
+  "description": "Complete inventory of 144 World Bank indicators for Riksdagsmonitor political intelligence",
   "lastUpdated": "2026-04-11",
   "source": "World Bank Open Data API (api.worldbank.org/v2) + worldbank-mcp@1.0.1",
   "targetCountry": "SE (Sweden)",
-  "comparisonCountries": ["SE", "DK", "NO", "FI", "DE"],
-  "categories": {
-    "economic": {
-      "label": "Economic Indicators",
+  "comparisonCountries": [
+    "SE",
+    "DK",
+    "NO",
+    "FI",
+    "DE"
+  ],
+  "totalIndicators": 144,
+  "notes": {
+    "wgiGovernance": "WGI indicators (CC.EST, RQ.EST, PV.EST, GE.EST, RL.EST, VA.EST) require source=75 in REST API calls. The WorldBankClient handles this automatically.",
+    "annualData": "All indicators are annual time-series. Most have 20+ years of Sweden data.",
+    "mcpVsRest": "19 indicators available via MCP tools (get-economic-data, get-social-data, get-education-data, get-health-data). Remaining 125 available via REST API client."
+  },
+  "domains": {
+    "nationalAccounts": {
+      "label": "National Accounts & GDP",
+      "committees": [
+        "FiU"
+      ],
+      "indicatorCount": 17,
       "indicators": [
+        {
+          "id": "NY.GDP.MKTP.CD",
+          "key": "gdp",
+          "name": "GDP (current US$)",
+          "unit": "USD"
+        },
         {
           "id": "NY.GDP.MKTP.KD.ZG",
           "key": "gdpGrowth",
           "name": "GDP Growth",
-          "description": "Annual GDP growth rate — key measure of economic performance impacting government fiscal capacity",
           "unit": "% annual",
           "mcpTool": "get-economic-data",
-          "mcpParam": "GDP_GROWTH",
-          "committees": ["FiU"],
-          "policyAreas": ["fiscal policy", "economic growth", "budget"],
-          "chartTypes": ["economic-trend", "economic-comparison", "nordic-radar"],
-          "articleRelevance": ["propositions", "committee-reports", "weekly-review", "monthly-review"],
-          "latestData": { "SE": { "year": 2024, "value": 0.82 } }
+          "mcpParam": "GDP_GROWTH"
+        },
+        {
+          "id": "NY.GDP.MKTP.KN",
+          "key": "gdpConstantLcu",
+          "name": "GDP (constant LCU)",
+          "unit": "SEK (constant)"
+        },
+        {
+          "id": "NY.GDP.MKTP.PP.CD",
+          "key": "gdpPpp",
+          "name": "GDP, PPP",
+          "unit": "international $"
         },
         {
           "id": "NY.GDP.PCAP.CD",
           "key": "gdpPerCapita",
           "name": "GDP per Capita",
-          "description": "GDP per capita in current USD — standard of living measure relevant to welfare debates",
           "unit": "USD",
           "mcpTool": "get-economic-data",
-          "mcpParam": "GDP_PER_CAPITA",
-          "committees": ["FiU", "AU"],
-          "policyAreas": ["economic growth", "welfare", "standard of living"],
-          "chartTypes": ["economic-comparison", "economic-trend"],
-          "articleRelevance": ["propositions", "monthly-review"],
-          "latestData": { "SE": { "year": 2024, "value": 57117.49 } }
+          "mcpParam": "GDP_PER_CAPITA"
+        },
+        {
+          "id": "NY.GDP.PCAP.KD.ZG",
+          "key": "gdpPerCapitaGrowth",
+          "name": "GDP per Capita Growth",
+          "unit": "% annual"
         },
         {
           "id": "NY.GDP.PCAP.PP.CD",
           "key": "gdpPerCapitaPpp",
           "name": "GDP per Capita (PPP)",
-          "description": "GDP per capita adjusted for purchasing power parity — better cross-country comparison",
-          "unit": "international $",
-          "mcpTool": null,
-          "mcpParam": null,
-          "committees": ["FiU"],
-          "policyAreas": ["economic growth", "welfare"],
-          "chartTypes": ["economic-comparison", "nordic-radar"],
-          "articleRelevance": ["monthly-review", "weekly-review"],
-          "latestData": {}
+          "unit": "international $"
         },
         {
-          "id": "SL.UEM.TOTL.ZS",
-          "key": "unemployment",
-          "name": "Unemployment Rate",
-          "description": "Total unemployment as % of labor force — central to labor market policy debates",
-          "unit": "% of labor force",
-          "mcpTool": "get-economic-data",
-          "mcpParam": "UNEMPLOYMENT",
-          "committees": ["AU"],
-          "policyAreas": ["labor market", "welfare", "employment policy"],
-          "chartTypes": ["economic-trend", "economic-comparison", "nordic-radar"],
-          "articleRelevance": ["propositions", "motions", "committee-reports", "weekly-review", "monthly-review"],
-          "latestData": { "SE": { "year": 2025, "value": 8.694 } }
+          "id": "NY.GDP.PCAP.PP.KD",
+          "key": "gdpPerCapitaPppConst",
+          "name": "GDP per Capita (PPP, constant)",
+          "unit": "2021 international $"
         },
         {
-          "id": "FP.CPI.TOTL.ZG",
-          "key": "inflation",
-          "name": "Consumer Price Inflation",
-          "description": "Annual CPI change — affects household purchasing power and Riksbank monetary policy",
-          "unit": "% annual",
-          "mcpTool": "get-economic-data",
-          "mcpParam": "INFLATION",
-          "committees": ["FiU"],
-          "policyAreas": ["monetary policy", "cost of living", "economic stability"],
-          "chartTypes": ["economic-trend", "economic-comparison", "nordic-radar"],
-          "articleRelevance": ["propositions", "committee-reports", "weekly-review", "monthly-review"],
-          "latestData": { "SE": { "year": 2024, "value": 2.836 } }
+          "id": "NE.CON.GOVT.ZS",
+          "key": "govConsumption",
+          "name": "Government Consumption",
+          "unit": "% of GDP"
         },
+        {
+          "id": "NE.CON.PRVT.ZS",
+          "key": "householdConsumption",
+          "name": "Household Consumption",
+          "unit": "% of GDP"
+        },
+        {
+          "id": "NE.GDI.TOTL.ZS",
+          "key": "grossCapitalFormation",
+          "name": "Gross Capital Formation",
+          "unit": "% of GDP"
+        },
+        {
+          "id": "NE.GDI.FTOT.ZS",
+          "key": "grossFixedCapital",
+          "name": "Gross Fixed Capital Formation",
+          "unit": "% of GDP"
+        },
+        {
+          "id": "NY.GNS.ICTR.ZS",
+          "key": "grossSavings",
+          "name": "Gross Savings",
+          "unit": "% of GDP"
+        },
+        {
+          "id": "NY.ADJ.NNTY.PC.CD",
+          "key": "adjNetNationalIncome",
+          "name": "Adjusted Net National Income per Capita",
+          "unit": "USD"
+        },
+        {
+          "id": "NY.GNP.MKTP.CD",
+          "key": "gni",
+          "name": "GNI",
+          "unit": "USD"
+        },
+        {
+          "id": "NY.GNP.PCAP.CD",
+          "key": "gniPerCapita",
+          "name": "GNI per Capita",
+          "unit": "USD",
+          "mcpTool": "get-economic-data",
+          "mcpParam": "GNI_PER_CAPITA"
+        },
+        {
+          "id": "NY.GNP.PCAP.PP.CD",
+          "key": "gniPerCapitaPpp",
+          "name": "GNI per Capita (PPP)",
+          "unit": "international $"
+        }
+      ]
+    },
+    "governmentFinance": {
+      "label": "Government Finance & Taxation",
+      "committees": [
+        "SkU",
+        "FiU"
+      ],
+      "indicatorCount": 9,
+      "indicators": [
+        {
+          "id": "GC.TAX.TOTL.GD.ZS",
+          "key": "taxRevenue",
+          "name": "Tax Revenue",
+          "unit": "% of GDP"
+        },
+        {
+          "id": "GC.XPN.TOTL.GD.ZS",
+          "key": "govExpenditure",
+          "name": "Government Expenditure",
+          "unit": "% of GDP"
+        },
+        {
+          "id": "GC.REV.XGRT.GD.ZS",
+          "key": "govRevenue",
+          "name": "Government Revenue",
+          "unit": "% of GDP"
+        },
+        {
+          "id": "GC.TAX.GSRV.RV.ZS",
+          "key": "taxGoodsServices",
+          "name": "Taxes on Goods & Services",
+          "unit": "% of revenue"
+        },
+        {
+          "id": "GC.TAX.YPKG.RV.ZS",
+          "key": "taxIncome",
+          "name": "Taxes on Income & Profits",
+          "unit": "% of revenue"
+        },
+        {
+          "id": "GC.TAX.INTT.RV.ZS",
+          "key": "taxTrade",
+          "name": "Taxes on International Trade",
+          "unit": "% of revenue"
+        },
+        {
+          "id": "GC.NFN.TOTL.GD.ZS",
+          "key": "netInvestment",
+          "name": "Net Public Investment",
+          "unit": "% of GDP"
+        },
+        {
+          "id": "GC.BAL.CASH.GD.ZS",
+          "key": "cashSurplusDeficit",
+          "name": "Cash Surplus/Deficit",
+          "unit": "% of GDP"
+        },
+        {
+          "id": "GC.NLD.TOTL.GD.ZS",
+          "key": "netLending",
+          "name": "Net Lending/Borrowing",
+          "unit": "% of GDP"
+        }
+      ]
+    },
+    "trade": {
+      "label": "Trade & Balance of Payments",
+      "committees": [
+        "NU",
+        "UU"
+      ],
+      "indicatorCount": 11,
+      "indicators": [
         {
           "id": "NE.TRD.GNFS.ZS",
           "key": "tradeGdpPct",
-          "name": "Trade (% of GDP)",
-          "description": "Total trade as % of GDP — measures Sweden's economic integration and trade dependency",
-          "unit": "% of GDP",
-          "mcpTool": null,
-          "mcpParam": null,
-          "committees": ["NU", "UU"],
-          "policyAreas": ["trade policy", "EU relations", "economic integration"],
-          "chartTypes": ["economic-comparison", "nordic-radar"],
-          "articleRelevance": ["propositions", "committee-reports"],
-          "latestData": {}
+          "name": "Trade Openness",
+          "unit": "% of GDP"
         },
         {
           "id": "NE.EXP.GNFS.ZS",
           "key": "exportsGdpPct",
           "name": "Exports (% of GDP)",
-          "description": "Exports of goods and services as % of GDP — trade competitiveness indicator",
           "unit": "% of GDP",
           "mcpTool": "get-economic-data",
-          "mcpParam": "EXPORTS_GDP",
-          "committees": ["NU", "UU"],
-          "policyAreas": ["trade policy", "EU relations", "competitiveness"],
-          "chartTypes": ["economic-comparison", "economic-trend"],
-          "articleRelevance": ["propositions", "committee-reports"],
-          "latestData": { "SE": { "year": 2024, "value": 54.31 } }
+          "mcpParam": "EXPORTS_GDP"
         },
         {
-          "id": "BN.KLT.DINV.CD",
-          "key": "fdiNet",
-          "name": "Foreign Direct Investment (Net)",
-          "description": "FDI net inflows in USD — foreign investment attractiveness indicator",
-          "unit": "USD",
-          "mcpTool": "get-economic-data",
-          "mcpParam": "FDI_NET",
-          "committees": ["NU"],
-          "policyAreas": ["trade policy", "investment", "economic growth"],
-          "chartTypes": ["economic-trend"],
-          "articleRelevance": ["monthly-review"],
-          "latestData": { "SE": { "year": 2024, "value": 2528010932.96 } }
+          "id": "NE.IMP.GNFS.ZS",
+          "key": "importsGdpPct",
+          "name": "Imports (% of GDP)",
+          "unit": "% of GDP"
+        },
+        {
+          "id": "NE.EXP.GNFS.CD",
+          "key": "exportsUsd",
+          "name": "Exports (current US$)",
+          "unit": "USD"
+        },
+        {
+          "id": "NE.IMP.GNFS.CD",
+          "key": "importsUsd",
+          "name": "Imports (current US$)",
+          "unit": "USD"
         },
         {
           "id": "BN.CAB.XOKA.GD.ZS",
           "key": "currentAccountBalance",
           "name": "Current Account Balance",
-          "description": "Current account balance as % of GDP — external economic position",
-          "unit": "% of GDP",
-          "mcpTool": null,
-          "mcpParam": null,
-          "committees": ["FiU", "NU"],
-          "policyAreas": ["trade policy", "economic stability", "fiscal policy"],
-          "chartTypes": ["economic-comparison", "nordic-radar"],
-          "articleRelevance": ["monthly-review"],
-          "latestData": {}
+          "unit": "% of GDP"
+        },
+        {
+          "id": "BN.KLT.DINV.CD",
+          "key": "fdiNet",
+          "name": "FDI Net Inflows",
+          "unit": "USD",
+          "mcpTool": "get-economic-data",
+          "mcpParam": "FDI_NET"
+        },
+        {
+          "id": "BX.KLT.DINV.WD.GD.ZS",
+          "key": "fdiNetGdpPct",
+          "name": "FDI Net Inflows (% GDP)",
+          "unit": "% of GDP"
+        },
+        {
+          "id": "BM.KLT.DINV.WD.GD.ZS",
+          "key": "fdiOutGdpPct",
+          "name": "FDI Net Outflows (% GDP)",
+          "unit": "% of GDP"
+        },
+        {
+          "id": "TX.VAL.TECH.MF.ZS",
+          "key": "highTechExports",
+          "name": "High-Technology Exports",
+          "unit": "% of manufactured exports"
+        },
+        {
+          "id": "NE.RSB.GNFS.ZS",
+          "key": "externalBalance",
+          "name": "External Balance",
+          "unit": "% of GDP"
         }
       ]
     },
-    "fiscal_governance": {
-      "label": "Fiscal & Governance Indicators",
+    "labor": {
+      "label": "Labor Market & Employment",
+      "committees": [
+        "AU"
+      ],
+      "indicatorCount": 20,
       "indicators": [
         {
-          "id": "GC.XPN.TOTL.GD.ZS",
-          "key": "govExpenditure",
-          "name": "Government Expenditure",
-          "description": "Government final consumption expenditure as % of GDP — public sector size measure",
-          "unit": "% of GDP",
-          "mcpTool": null,
-          "mcpParam": null,
-          "committees": ["FiU"],
-          "policyAreas": ["public spending", "fiscal policy", "budget"],
-          "chartTypes": ["economic-comparison", "nordic-radar"],
-          "articleRelevance": ["propositions", "committee-reports", "monthly-review"],
-          "latestData": {}
+          "id": "SL.UEM.TOTL.ZS",
+          "key": "unemployment",
+          "name": "Unemployment Rate",
+          "unit": "% of labor force",
+          "mcpTool": "get-economic-data",
+          "mcpParam": "UNEMPLOYMENT"
         },
         {
-          "id": "GC.TAX.TOTL.GD.ZS",
-          "key": "taxRevenue",
-          "name": "Tax Revenue",
-          "description": "Tax revenue as % of GDP — central to taxation policy debates and fiscal capacity",
-          "unit": "% of GDP",
-          "mcpTool": null,
-          "mcpParam": null,
-          "committees": ["SkU", "FiU"],
-          "policyAreas": ["taxation", "fiscal policy", "public finances"],
-          "chartTypes": ["economic-comparison", "economic-trend", "nordic-radar"],
-          "articleRelevance": ["propositions", "committee-reports", "motions", "monthly-review"],
-          "latestData": {}
+          "id": "SL.UEM.TOTL.FE.ZS",
+          "key": "unemploymentFemale",
+          "name": "Unemployment, Female",
+          "unit": "% of female labor force"
         },
         {
-          "id": "GE.EST",
-          "key": "govEffectiveness",
-          "name": "Government Effectiveness",
-          "description": "World Governance Indicator for quality of public services and policy implementation",
-          "unit": "index (-2.5 to 2.5)",
-          "mcpTool": null,
-          "mcpParam": null,
-          "committees": ["KU", "FiU"],
-          "policyAreas": ["public administration", "government quality", "institutional capacity"],
-          "chartTypes": ["economic-comparison", "nordic-radar"],
-          "articleRelevance": ["weekly-review", "monthly-review"],
-          "latestData": {}
+          "id": "SL.UEM.TOTL.MA.ZS",
+          "key": "unemploymentMale",
+          "name": "Unemployment, Male",
+          "unit": "% of male labor force"
         },
         {
-          "id": "RL.EST",
-          "key": "ruleOfLaw",
-          "name": "Rule of Law",
-          "description": "World Governance Indicator for judicial independence, property rights, constitutional order",
-          "unit": "index (-2.5 to 2.5)",
-          "mcpTool": null,
-          "mcpParam": null,
-          "committees": ["KU", "JuU"],
-          "policyAreas": ["rule of law", "constitutional affairs", "judicial independence"],
-          "chartTypes": ["economic-comparison", "nordic-radar"],
-          "articleRelevance": ["weekly-review", "monthly-review", "interpellations"],
-          "latestData": {}
+          "id": "SL.UEM.1524.ZS",
+          "key": "youthUnemployment",
+          "name": "Youth Unemployment (15-24)",
+          "unit": "% ages 15-24"
         },
         {
-          "id": "VA.EST",
-          "key": "voiceAccountability",
-          "name": "Voice and Accountability",
-          "description": "World Governance Indicator for citizen participation and press freedom",
-          "unit": "index (-2.5 to 2.5)",
-          "mcpTool": null,
-          "mcpParam": null,
-          "committees": ["KU"],
-          "policyAreas": ["democracy", "press freedom", "constitutional affairs"],
-          "chartTypes": ["economic-comparison", "nordic-radar"],
-          "articleRelevance": ["weekly-review", "monthly-review"],
-          "latestData": {}
+          "id": "SL.UEM.1524.FE.ZS",
+          "key": "youthUnemploymentFemale",
+          "name": "Youth Unemployment, Female",
+          "unit": "% ages 15-24"
+        },
+        {
+          "id": "SL.UEM.1524.MA.ZS",
+          "key": "youthUnemploymentMale",
+          "name": "Youth Unemployment, Male",
+          "unit": "% ages 15-24"
+        },
+        {
+          "id": "SL.UEM.LTRM.ZS",
+          "key": "longTermUnemployment",
+          "name": "Long-term Unemployment",
+          "unit": "% of total unemployment"
+        },
+        {
+          "id": "SL.UEM.LTRM.FE.ZS",
+          "key": "longTermUnemploymentFemale",
+          "name": "Long-term Unemployment, Female",
+          "unit": "% of female unemployment"
+        },
+        {
+          "id": "SL.UEM.LTRM.MA.ZS",
+          "key": "longTermUnemploymentMale",
+          "name": "Long-term Unemployment, Male",
+          "unit": "% of male unemployment"
+        },
+        {
+          "id": "SL.TLF.CACT.ZS",
+          "key": "laborForceParticipation",
+          "name": "Labor Force Participation",
+          "unit": "% ages 15+"
+        },
+        {
+          "id": "SL.TLF.CACT.FE.ZS",
+          "key": "laborForceParticipationFemale",
+          "name": "Labor Force Participation, Female",
+          "unit": "% ages 15+"
+        },
+        {
+          "id": "SL.TLF.CACT.MA.ZS",
+          "key": "laborForceParticipationMale",
+          "name": "Labor Force Participation, Male",
+          "unit": "% ages 15+"
+        },
+        {
+          "id": "SL.TLF.TOTL.IN",
+          "key": "laborForceTotal",
+          "name": "Labor Force Total",
+          "unit": "persons"
+        },
+        {
+          "id": "SL.EMP.TOTL.SP.ZS",
+          "key": "employmentRatio",
+          "name": "Employment-to-Population Ratio",
+          "unit": "% ages 15+"
+        },
+        {
+          "id": "SL.EMP.TOTL.SP.FE.ZS",
+          "key": "employmentRatioFemale",
+          "name": "Employment Ratio, Female",
+          "unit": "% ages 15+"
+        },
+        {
+          "id": "SL.EMP.TOTL.SP.MA.ZS",
+          "key": "employmentRatioMale",
+          "name": "Employment Ratio, Male",
+          "unit": "% ages 15+"
+        },
+        {
+          "id": "SL.EMP.VULN.ZS",
+          "key": "vulnerableEmployment",
+          "name": "Vulnerable Employment",
+          "unit": "% of total employment"
+        },
+        {
+          "id": "SL.EMP.SELF.ZS",
+          "key": "selfEmployed",
+          "name": "Self-Employment",
+          "unit": "% of total employment"
+        },
+        {
+          "id": "SL.EMP.WORK.ZS",
+          "key": "wageSalariedWorkers",
+          "name": "Wage & Salaried Workers",
+          "unit": "% of total employment"
+        },
+        {
+          "id": "SL.GDP.PCAP.EM.KD",
+          "key": "laborProductivity",
+          "name": "Labor Productivity",
+          "unit": "constant 2021 PPP $"
         }
       ]
     },
-    "defense_security": {
-      "label": "Defense & Security Indicators",
+    "inflation": {
+      "label": "Inflation & Prices",
+      "committees": [
+        "FiU"
+      ],
+      "indicatorCount": 3,
       "indicators": [
         {
-          "id": "MS.MIL.XPND.GD.ZS",
-          "key": "militaryExpenditure",
-          "name": "Military Expenditure",
-          "description": "Defense spending as % of GDP — critical for NATO accession debates and security policy",
-          "unit": "% of GDP",
-          "mcpTool": null,
-          "mcpParam": null,
-          "committees": ["FöU"],
-          "policyAreas": ["defense", "security policy", "NATO"],
-          "chartTypes": ["economic-comparison", "economic-trend", "nordic-radar"],
-          "articleRelevance": ["propositions", "committee-reports", "motions", "interpellations", "weekly-review", "monthly-review"],
-          "latestData": {}
+          "id": "FP.CPI.TOTL.ZG",
+          "key": "inflation",
+          "name": "Consumer Price Inflation",
+          "unit": "% annual",
+          "mcpTool": "get-economic-data",
+          "mcpParam": "INFLATION"
+        },
+        {
+          "id": "NY.GDP.DEFL.KD.ZG",
+          "key": "inflationGdpDeflator",
+          "name": "GDP Deflator Inflation",
+          "unit": "% annual"
+        },
+        {
+          "id": "FP.CPI.TOTL",
+          "key": "consumerPriceIndex",
+          "name": "Consumer Price Index",
+          "unit": "index (2010=100)"
         }
       ]
     },
-    "social": {
-      "label": "Social Indicators",
+    "financial": {
+      "label": "Financial Sector",
+      "committees": [
+        "FiU"
+      ],
+      "indicatorCount": 4,
+      "indicators": [
+        {
+          "id": "FS.AST.PRVT.GD.ZS",
+          "key": "domesticCreditBanks",
+          "name": "Domestic Credit by Banks",
+          "unit": "% of GDP"
+        },
+        {
+          "id": "FR.INR.RINR",
+          "key": "realInterestRate",
+          "name": "Real Interest Rate",
+          "unit": "%"
+        },
+        {
+          "id": "FR.INR.LEND",
+          "key": "lendingRate",
+          "name": "Lending Interest Rate",
+          "unit": "%"
+        },
+        {
+          "id": "FR.INR.DPST",
+          "key": "depositRate",
+          "name": "Deposit Interest Rate",
+          "unit": "%"
+        }
+      ]
+    },
+    "demographics": {
+      "label": "Demographics & Population",
+      "committees": [
+        "SoU"
+      ],
+      "indicatorCount": 22,
       "indicators": [
         {
           "id": "SP.POP.TOTL",
           "key": "population",
           "name": "Population",
-          "description": "Total population — demographic context for per-capita analysis and welfare planning",
           "unit": "persons",
           "mcpTool": "get-social-data",
-          "mcpParam": "POPULATION",
-          "committees": ["SoU", "AU"],
-          "policyAreas": ["demographics", "welfare", "migration"],
-          "chartTypes": ["economic-trend"],
-          "articleRelevance": ["monthly-review"],
-          "latestData": { "SE": { "year": 2024, "value": 10569709 } }
+          "mcpParam": "POPULATION"
+        },
+        {
+          "id": "SP.POP.GROW",
+          "key": "populationGrowth",
+          "name": "Population Growth",
+          "unit": "% annual"
+        },
+        {
+          "id": "SP.POP.65UP.TO.ZS",
+          "key": "population65Plus",
+          "name": "Population 65+",
+          "unit": "% of total"
+        },
+        {
+          "id": "SP.POP.0014.TO.ZS",
+          "key": "populationChildren",
+          "name": "Population 0-14",
+          "unit": "% of total"
+        },
+        {
+          "id": "SP.POP.1564.TO.ZS",
+          "key": "populationWorkingAge",
+          "name": "Working-Age Population",
+          "unit": "% of total"
+        },
+        {
+          "id": "SP.URB.TOTL.IN.ZS",
+          "key": "urbanPopulation",
+          "name": "Urban Population",
+          "unit": "% of total"
+        },
+        {
+          "id": "SP.RUR.TOTL.ZS",
+          "key": "ruralPopulation",
+          "name": "Rural Population",
+          "unit": "% of total"
+        },
+        {
+          "id": "SP.POP.DPND",
+          "key": "ageDependencyRatio",
+          "name": "Age Dependency Ratio",
+          "unit": "% of working-age"
+        },
+        {
+          "id": "SP.POP.DPND.OL",
+          "key": "ageDependencyOld",
+          "name": "Old-Age Dependency Ratio",
+          "unit": "% of working-age"
+        },
+        {
+          "id": "SP.POP.DPND.YG",
+          "key": "ageDependencyYoung",
+          "name": "Young Dependency Ratio",
+          "unit": "% of working-age"
+        },
+        {
+          "id": "SM.POP.NETM",
+          "key": "netMigration",
+          "name": "Net Migration",
+          "unit": "persons"
+        },
+        {
+          "id": "SM.POP.REFG",
+          "key": "refugeePopulation",
+          "name": "Refugee Population",
+          "unit": "persons"
         },
         {
           "id": "SP.DYN.LE00.IN",
           "key": "lifeExpectancy",
           "name": "Life Expectancy",
-          "description": "Life expectancy at birth — health system performance and quality of life measure",
           "unit": "years",
           "mcpTool": "get-social-data",
-          "mcpParam": "LIFE_EXPECTANCY",
-          "committees": ["SoU"],
-          "policyAreas": ["health policy", "welfare", "demographics"],
-          "chartTypes": ["economic-comparison", "economic-trend", "nordic-radar"],
-          "articleRelevance": ["propositions", "committee-reports", "monthly-review"],
-          "latestData": { "SE": { "year": 2024, "value": 84.063 } }
+          "mcpParam": "LIFE_EXPECTANCY"
+        },
+        {
+          "id": "SP.DYN.LE00.FE.IN",
+          "key": "lifeExpectancyFemale",
+          "name": "Life Expectancy, Female",
+          "unit": "years"
+        },
+        {
+          "id": "SP.DYN.LE00.MA.IN",
+          "key": "lifeExpectancyMale",
+          "name": "Life Expectancy, Male",
+          "unit": "years"
         },
         {
           "id": "SP.DYN.CBRT.IN",
           "key": "birthRate",
           "name": "Birth Rate",
-          "description": "Crude birth rate per 1,000 people — demographic trend affecting welfare policy",
           "unit": "per 1,000 people",
           "mcpTool": "get-social-data",
-          "mcpParam": "BIRTH_RATE",
-          "committees": ["SoU"],
-          "policyAreas": ["demographics", "family policy", "welfare"],
-          "chartTypes": ["economic-trend", "economic-comparison"],
-          "articleRelevance": ["monthly-review"],
-          "latestData": { "SE": { "year": 2024, "value": 9.3 } }
+          "mcpParam": "BIRTH_RATE"
         },
         {
           "id": "SP.DYN.CDRT.IN",
           "key": "deathRate",
           "name": "Death Rate",
-          "description": "Crude death rate per 1,000 people — demographic and health system indicator",
           "unit": "per 1,000 people",
           "mcpTool": "get-social-data",
-          "mcpParam": "DEATH_RATE",
-          "committees": ["SoU"],
-          "policyAreas": ["demographics", "health policy"],
-          "chartTypes": ["economic-trend"],
-          "articleRelevance": ["monthly-review"],
-          "latestData": { "SE": { "year": 2024, "value": 8.6 } }
+          "mcpParam": "DEATH_RATE"
+        },
+        {
+          "id": "SP.DYN.TFRT.IN",
+          "key": "fertilityRate",
+          "name": "Fertility Rate",
+          "unit": "births per woman"
+        },
+        {
+          "id": "SP.ADO.TFRT",
+          "key": "adolescentFertility",
+          "name": "Adolescent Fertility Rate",
+          "unit": "per 1,000 women ages 15-19"
+        },
+        {
+          "id": "SP.DYN.IMRT.IN",
+          "key": "infantMortality",
+          "name": "Infant Mortality Rate",
+          "unit": "per 1,000 live births"
+        },
+        {
+          "id": "SH.DYN.MORT",
+          "key": "under5Mortality",
+          "name": "Under-5 Mortality Rate",
+          "unit": "per 1,000 live births"
         },
         {
           "id": "IT.NET.USER.ZS",
           "key": "internetUsers",
           "name": "Internet Users",
-          "description": "Internet users as % of population — digital infrastructure and e-government readiness",
           "unit": "% of population",
           "mcpTool": "get-social-data",
-          "mcpParam": "INTERNET_USERS",
-          "committees": ["TU"],
-          "policyAreas": ["digital policy", "e-government", "telecommunications"],
-          "chartTypes": ["economic-comparison", "nordic-radar"],
-          "articleRelevance": ["monthly-review"],
-          "latestData": { "SE": { "year": 2025, "value": 95.766 } }
+          "mcpParam": "INTERNET_USERS"
+        }
+      ]
+    },
+    "health": {
+      "label": "Health",
+      "committees": [
+        "SoU"
+      ],
+      "indicatorCount": 14,
+      "indicators": [
+        {
+          "id": "SH.XPD.CHEX.GD.ZS",
+          "key": "healthExpenditure",
+          "name": "Health Expenditure (% GDP)",
+          "unit": "% of GDP",
+          "mcpTool": "get-health-data",
+          "mcpParam": "HEALTH_EXPENDITURE"
+        },
+        {
+          "id": "SH.XPD.CHEX.PC.CD",
+          "key": "healthExpenditurePerCapita",
+          "name": "Health Expenditure per Capita",
+          "unit": "USD"
+        },
+        {
+          "id": "SH.XPD.GHED.GD.ZS",
+          "key": "govHealthExpenditure",
+          "name": "Government Health Expenditure",
+          "unit": "% of GDP"
+        },
+        {
+          "id": "SH.XPD.GHED.CH.ZS",
+          "key": "govHealthShare",
+          "name": "Government Health Share",
+          "unit": "% of health expenditure"
+        },
+        {
+          "id": "SH.XPD.PVTD.CH.ZS",
+          "key": "privateHealthShare",
+          "name": "Private Health Expenditure Share",
+          "unit": "% of health expenditure"
+        },
+        {
+          "id": "SH.XPD.OOPC.CH.ZS",
+          "key": "outOfPocketHealth",
+          "name": "Out-of-Pocket Health Expenditure",
+          "unit": "% of health expenditure"
+        },
+        {
+          "id": "SH.MED.PHYS.ZS",
+          "key": "physicians",
+          "name": "Physicians per 1,000",
+          "unit": "per 1,000 people",
+          "mcpTool": "get-health-data",
+          "mcpParam": "PHYSICIANS"
+        },
+        {
+          "id": "SH.MED.BEDS.ZS",
+          "key": "hospitalBeds",
+          "name": "Hospital Beds per 1,000",
+          "unit": "per 1,000 people",
+          "mcpTool": "get-health-data",
+          "mcpParam": "HOSPITAL_BEDS"
+        },
+        {
+          "id": "SH.MED.NUMW.P3",
+          "key": "nursesAndMidwives",
+          "name": "Nurses & Midwives per 1,000",
+          "unit": "per 1,000 people"
+        },
+        {
+          "id": "SH.STA.SUIC.P5",
+          "key": "suicideMortality",
+          "name": "Suicide Mortality Rate",
+          "unit": "per 100,000"
+        },
+        {
+          "id": "SH.PRV.SMOK",
+          "key": "tobaccoUse",
+          "name": "Tobacco Use Prevalence",
+          "unit": "% of adults"
+        },
+        {
+          "id": "SH.ALC.PCAP.LI",
+          "key": "alcoholConsumption",
+          "name": "Alcohol Consumption",
+          "unit": "liters pure alcohol"
+        },
+        {
+          "id": "SH.IMM.MEAS",
+          "key": "measlesImmunization",
+          "name": "Measles Immunization",
+          "unit": "% of children 12-23 months",
+          "mcpTool": "get-health-data",
+          "mcpParam": "IMMUNIZATION"
+        },
+        {
+          "id": "SH.IMM.IDPT",
+          "key": "dptImmunization",
+          "name": "DPT Immunization",
+          "unit": "% of children 12-23 months"
         }
       ]
     },
     "education": {
-      "label": "Education Indicators",
+      "label": "Education",
+      "committees": [
+        "UbU"
+      ],
+      "indicatorCount": 6,
       "indicators": [
         {
           "id": "SE.XPD.TOTL.GD.ZS",
           "key": "educationExpenditure",
-          "name": "Education Expenditure",
-          "description": "Government expenditure on education as % of GDP — education investment level",
+          "name": "Education Expenditure (% GDP)",
           "unit": "% of GDP",
           "mcpTool": "get-education-data",
-          "mcpParam": "EDUCATION_EXPENDITURE",
-          "committees": ["UbU"],
-          "policyAreas": ["education", "public spending", "human capital"],
-          "chartTypes": ["economic-comparison", "economic-trend", "nordic-radar"],
-          "articleRelevance": ["propositions", "committee-reports", "monthly-review"],
-          "latestData": { "SE": { "year": 2022, "value": 7.319 } }
+          "mcpParam": "EDUCATION_EXPENDITURE"
+        },
+        {
+          "id": "SE.XPD.TOTL.GB.ZS",
+          "key": "educationGovShare",
+          "name": "Education (% Govt Expenditure)",
+          "unit": "% of govt expenditure"
         },
         {
           "id": "SE.PRM.ENRR",
           "key": "schoolEnrollment",
           "name": "School Enrollment (Primary)",
-          "description": "Gross enrollment ratio in primary education — education access indicator",
           "unit": "% gross",
           "mcpTool": "get-education-data",
-          "mcpParam": "SCHOOL_ENROLLMENT",
-          "committees": ["UbU"],
-          "policyAreas": ["education", "child welfare"],
-          "chartTypes": ["economic-comparison"],
-          "articleRelevance": ["monthly-review"],
-          "latestData": { "SE": { "year": 2024, "value": 114.87 } }
+          "mcpParam": "SCHOOL_ENROLLMENT"
+        },
+        {
+          "id": "SE.SEC.ENRR",
+          "key": "secondaryEnrollment",
+          "name": "School Enrollment (Secondary)",
+          "unit": "% gross"
+        },
+        {
+          "id": "SE.TER.ENRR",
+          "key": "tertiaryEnrollment",
+          "name": "School Enrollment (Tertiary)",
+          "unit": "% gross"
+        },
+        {
+          "id": "SE.PRM.CMPT.ZS",
+          "key": "primaryCompletion",
+          "name": "Primary Completion Rate",
+          "unit": "% of relevant age group"
         }
       ]
     },
-    "health": {
-      "label": "Health Indicators",
-      "indicators": [
-        {
-          "id": "SH.XPD.CHEX.GD.ZS",
-          "key": "healthExpenditure",
-          "name": "Health Expenditure",
-          "description": "Current health expenditure as % of GDP — healthcare system investment level",
-          "unit": "% of GDP",
-          "mcpTool": "get-health-data",
-          "mcpParam": "HEALTH_EXPENDITURE",
-          "committees": ["SoU"],
-          "policyAreas": ["health policy", "public spending", "welfare"],
-          "chartTypes": ["economic-comparison", "economic-trend", "nordic-radar"],
-          "articleRelevance": ["propositions", "committee-reports", "monthly-review"],
-          "latestData": { "SE": { "year": 2024, "value": 11.215 } }
-        },
-        {
-          "id": "SH.MED.PHYS.ZS",
-          "key": "physicians",
-          "name": "Physicians",
-          "description": "Physicians per 1,000 people — healthcare system capacity indicator",
-          "unit": "per 1,000 people",
-          "mcpTool": "get-health-data",
-          "mcpParam": "PHYSICIANS",
-          "committees": ["SoU"],
-          "policyAreas": ["health policy", "healthcare staffing"],
-          "chartTypes": ["economic-comparison", "nordic-radar"],
-          "articleRelevance": ["committee-reports", "monthly-review"],
-          "latestData": { "SE": { "year": 2021, "value": 4.408 } }
-        },
-        {
-          "id": "SH.MED.BEDS.ZS",
-          "key": "hospitalBeds",
-          "name": "Hospital Beds",
-          "description": "Hospital beds per 1,000 people — healthcare infrastructure indicator",
-          "unit": "per 1,000 people",
-          "mcpTool": "get-health-data",
-          "mcpParam": "HOSPITAL_BEDS",
-          "committees": ["SoU"],
-          "policyAreas": ["health policy", "healthcare infrastructure"],
-          "chartTypes": ["economic-comparison", "nordic-radar"],
-          "articleRelevance": ["committee-reports", "monthly-review"],
-          "latestData": { "SE": { "year": 2022, "value": 1.9 } }
-        }
-      ]
-    },
-    "environment_innovation": {
-      "label": "Environment & Innovation Indicators",
+    "environment": {
+      "label": "Environment & Climate",
+      "committees": [
+        "MJU"
+      ],
+      "indicatorCount": 10,
       "indicators": [
         {
           "id": "EN.ATM.CO2E.PC",
           "key": "co2Emissions",
           "name": "CO₂ Emissions per Capita",
-          "description": "Carbon dioxide emissions per person — climate policy and environmental legislation context",
-          "unit": "metric tons per capita",
-          "mcpTool": null,
-          "mcpParam": null,
-          "committees": ["MJU"],
-          "policyAreas": ["climate policy", "environmental regulation", "green transition"],
-          "chartTypes": ["economic-comparison", "economic-trend", "nordic-radar"],
-          "articleRelevance": ["propositions", "committee-reports", "motions", "monthly-review"],
-          "latestData": {}
+          "unit": "metric tons per capita"
         },
+        {
+          "id": "EN.ATM.CO2E.KT",
+          "key": "co2EmissionsTotal",
+          "name": "CO₂ Emissions Total (kt)",
+          "unit": "kilotons"
+        },
+        {
+          "id": "EG.USE.PCAP.KG.OE",
+          "key": "energyUse",
+          "name": "Energy Use per Capita",
+          "unit": "kg oil equivalent"
+        },
+        {
+          "id": "EG.FEC.RNEW.ZS",
+          "key": "renewableEnergy",
+          "name": "Renewable Energy (%)",
+          "unit": "% of total energy"
+        },
+        {
+          "id": "EG.ELC.RNEW.ZS",
+          "key": "renewableElectricity",
+          "name": "Renewable Electricity (%)",
+          "unit": "% of total electricity"
+        },
+        {
+          "id": "AG.LND.FRST.ZS",
+          "key": "forestArea",
+          "name": "Forest Area (%)",
+          "unit": "% of land area"
+        },
+        {
+          "id": "EN.ATM.PM25.MC.M3",
+          "key": "airPollution",
+          "name": "Air Pollution (PM2.5)",
+          "unit": "µg/m³"
+        },
+        {
+          "id": "EG.ELC.NUCL.ZS",
+          "key": "nuclearElectricity",
+          "name": "Nuclear Electricity (%)",
+          "unit": "% of total electricity"
+        },
+        {
+          "id": "EG.ELC.HYRO.ZS",
+          "key": "hydroElectricity",
+          "name": "Hydroelectric Power (%)",
+          "unit": "% of total electricity"
+        },
+        {
+          "id": "EG.ELC.RNWX.ZS",
+          "key": "renewableElecExHydro",
+          "name": "Renewable Excl. Hydro (%)",
+          "unit": "% of total electricity"
+        }
+      ]
+    },
+    "infrastructure": {
+      "label": "Infrastructure & Technology",
+      "committees": [
+        "TU"
+      ],
+      "indicatorCount": 6,
+      "indicators": [
+        {
+          "id": "IT.NET.BBND.P2",
+          "key": "broadbandSubscriptions",
+          "name": "Broadband Subscriptions",
+          "unit": "per 100 people"
+        },
+        {
+          "id": "IT.CEL.SETS.P2",
+          "key": "mobileSubscriptions",
+          "name": "Mobile Subscriptions",
+          "unit": "per 100 people"
+        },
+        {
+          "id": "IT.NET.SECR.P6",
+          "key": "secureServers",
+          "name": "Secure Internet Servers",
+          "unit": "per million people"
+        },
+        {
+          "id": "IS.AIR.PSGR",
+          "key": "airPassengers",
+          "name": "Air Transport Passengers",
+          "unit": "persons"
+        },
+        {
+          "id": "IP.PAT.RESD",
+          "key": "patentsResident",
+          "name": "Patent Applications (Resident)",
+          "unit": "applications"
+        },
+        {
+          "id": "IP.PAT.NRES",
+          "key": "patentsNonresident",
+          "name": "Patent Applications (Non-resident)",
+          "unit": "applications"
+        }
+      ]
+    },
+    "innovation": {
+      "label": "Innovation & Research",
+      "committees": [
+        "UbU"
+      ],
+      "indicatorCount": 4,
+      "indicators": [
         {
           "id": "GB.XPD.RSDV.GD.ZS",
           "key": "rdExpenditure",
           "name": "R&D Expenditure",
-          "description": "Research and development spending as % of GDP — innovation capacity indicator",
-          "unit": "% of GDP",
-          "mcpTool": null,
-          "mcpParam": null,
-          "committees": ["UbU"],
-          "policyAreas": ["research policy", "innovation", "education"],
-          "chartTypes": ["economic-comparison", "economic-trend", "nordic-radar"],
-          "articleRelevance": ["propositions", "committee-reports", "monthly-review"],
-          "latestData": {}
+          "unit": "% of GDP"
         },
+        {
+          "id": "SP.POP.SCIE.RD.P6",
+          "key": "researchersPerMillion",
+          "name": "Researchers per Million",
+          "unit": "per million people"
+        },
+        {
+          "id": "IP.JRN.ARTC.SC",
+          "key": "scientificArticles",
+          "name": "Scientific Journal Articles",
+          "unit": "articles"
+        },
+        {
+          "id": "BX.GSR.CCIS.ZS",
+          "key": "ictServiceExports",
+          "name": "ICT Service Exports",
+          "unit": "% of service exports"
+        }
+      ]
+    },
+    "military": {
+      "label": "Military & Security",
+      "committees": [
+        "FöU"
+      ],
+      "indicatorCount": 5,
+      "indicators": [
+        {
+          "id": "MS.MIL.XPND.GD.ZS",
+          "key": "militaryExpenditure",
+          "name": "Military Expenditure (% GDP)",
+          "unit": "% of GDP"
+        },
+        {
+          "id": "MS.MIL.XPND.CD",
+          "key": "militaryExpenditureUsd",
+          "name": "Military Expenditure (USD)",
+          "unit": "USD"
+        },
+        {
+          "id": "MS.MIL.XPND.ZS",
+          "key": "militaryGovShare",
+          "name": "Military (% Govt Expenditure)",
+          "unit": "% of govt expenditure"
+        },
+        {
+          "id": "MS.MIL.TOTL.P1",
+          "key": "armedForcesTotal",
+          "name": "Armed Forces Personnel",
+          "unit": "persons"
+        },
+        {
+          "id": "MS.MIL.TOTL.TF.ZS",
+          "key": "armedForcesLaborShare",
+          "name": "Armed Forces (% Labor Force)",
+          "unit": "% of labor force"
+        }
+      ]
+    },
+    "governance": {
+      "label": "Governance & Institutions",
+      "committees": [
+        "KU",
+        "JuU"
+      ],
+      "indicatorCount": 6,
+      "notes": "Requires source=75 (WGI) in REST API calls",
+      "indicators": [
+        {
+          "id": "RL.EST",
+          "key": "ruleOfLaw",
+          "name": "Rule of Law",
+          "unit": "index (-2.5 to 2.5)",
+          "source": 75
+        },
+        {
+          "id": "VA.EST",
+          "key": "voiceAccountability",
+          "name": "Voice and Accountability",
+          "unit": "index (-2.5 to 2.5)",
+          "source": 75
+        },
+        {
+          "id": "GE.EST",
+          "key": "govEffectiveness",
+          "name": "Government Effectiveness",
+          "unit": "index (-2.5 to 2.5)",
+          "source": 75
+        },
+        {
+          "id": "RQ.EST",
+          "key": "regulatoryQuality",
+          "name": "Regulatory Quality",
+          "unit": "index (-2.5 to 2.5)",
+          "source": 75
+        },
+        {
+          "id": "CC.EST",
+          "key": "controlOfCorruption",
+          "name": "Control of Corruption",
+          "unit": "index (-2.5 to 2.5)",
+          "source": 75
+        },
+        {
+          "id": "PV.EST",
+          "key": "politicalStability",
+          "name": "Political Stability",
+          "unit": "index (-2.5 to 2.5)",
+          "source": 75
+        }
+      ]
+    },
+    "inequality": {
+      "label": "Inequality & Poverty",
+      "committees": [
+        "SoU",
+        "AU"
+      ],
+      "indicatorCount": 5,
+      "indicators": [
         {
           "id": "SI.POV.GINI",
           "key": "giniIndex",
           "name": "GINI Index",
-          "description": "Income inequality measure (0=equality, 100=maximum inequality) — social policy context",
-          "unit": "index (0-100)",
-          "mcpTool": null,
-          "mcpParam": null,
-          "committees": ["SoU", "AU"],
-          "policyAreas": ["income distribution", "social policy", "welfare"],
-          "chartTypes": ["economic-comparison", "nordic-radar"],
-          "articleRelevance": ["propositions", "monthly-review"],
-          "latestData": {}
+          "unit": "index (0-100)"
+        },
+        {
+          "id": "SI.DST.10TH.10",
+          "key": "incomeTop10",
+          "name": "Income Share: Top 10%",
+          "unit": "% of income"
+        },
+        {
+          "id": "SI.DST.FRST.10",
+          "key": "incomeBottom10",
+          "name": "Income Share: Bottom 10%",
+          "unit": "% of income"
+        },
+        {
+          "id": "SI.DST.FRST.20",
+          "key": "incomeBottom20",
+          "name": "Income Share: Bottom 20%",
+          "unit": "% of income"
+        },
+        {
+          "id": "SI.DST.05TH.20",
+          "key": "incomeTop20",
+          "name": "Income Share: Top 20%",
+          "unit": "% of income"
         }
       ]
-    }
-  },
-  "committeeMapping": {
-    "FiU": {
-      "name": "Finansutskottet (Finance Committee)",
-      "indicators": ["NY.GDP.MKTP.KD.ZG", "NY.GDP.PCAP.CD", "FP.CPI.TOTL.ZG", "GC.XPN.TOTL.GD.ZS", "GC.TAX.TOTL.GD.ZS", "BN.CAB.XOKA.GD.ZS", "GE.EST", "NY.GDP.PCAP.PP.CD"]
     },
-    "AU": {
-      "name": "Arbetsmarknadsutskottet (Labor Market Committee)",
-      "indicators": ["SL.UEM.TOTL.ZS", "SI.POV.GINI", "NY.GDP.PCAP.CD", "SP.POP.TOTL"]
+    "gender": {
+      "label": "Gender & Social Inclusion",
+      "committees": [
+        "KU",
+        "AU"
+      ],
+      "indicatorCount": 1,
+      "indicators": [
+        {
+          "id": "SG.GEN.PARL.ZS",
+          "key": "womenInParliament",
+          "name": "Women in Parliament",
+          "unit": "% of total seats"
+        }
+      ]
     },
-    "SkU": {
-      "name": "Skatteutskottet (Taxation Committee)",
-      "indicators": ["GC.TAX.TOTL.GD.ZS"]
-    },
-    "NU": {
-      "name": "Näringsutskottet (Industry Committee)",
-      "indicators": ["NE.TRD.GNFS.ZS", "NE.EXP.GNFS.ZS", "BN.KLT.DINV.CD", "BN.CAB.XOKA.GD.ZS"]
-    },
-    "UU": {
-      "name": "Utrikesutskottet (Foreign Affairs Committee)",
-      "indicators": ["NE.TRD.GNFS.ZS", "NE.EXP.GNFS.ZS"]
-    },
-    "FöU": {
-      "name": "Försvarsutskottet (Defense Committee)",
-      "indicators": ["MS.MIL.XPND.GD.ZS"]
-    },
-    "SoU": {
-      "name": "Socialutskottet (Social Affairs Committee)",
-      "indicators": ["SP.DYN.LE00.IN", "SP.DYN.CBRT.IN", "SP.DYN.CDRT.IN", "SH.XPD.CHEX.GD.ZS", "SH.MED.PHYS.ZS", "SH.MED.BEDS.ZS", "SI.POV.GINI", "SP.POP.TOTL"]
-    },
-    "UbU": {
-      "name": "Utbildningsutskottet (Education Committee)",
-      "indicators": ["SE.XPD.TOTL.GD.ZS", "SE.PRM.ENRR", "GB.XPD.RSDV.GD.ZS"]
-    },
-    "MJU": {
-      "name": "Miljö- och jordbruksutskottet (Environment Committee)",
-      "indicators": ["EN.ATM.CO2E.PC"]
-    },
-    "KU": {
-      "name": "Konstitutionsutskottet (Constitution Committee)",
-      "indicators": ["RL.EST", "VA.EST", "GE.EST"]
-    },
-    "JuU": {
-      "name": "Justitieutskottet (Justice Committee)",
-      "indicators": ["RL.EST"]
-    },
-    "TU": {
-      "name": "Trafikutskottet (Transport Committee)",
-      "indicators": ["IT.NET.USER.ZS"]
+    "energy": {
+      "label": "Energy",
+      "committees": [
+        "MJU",
+        "NU"
+      ],
+      "indicatorCount": 1,
+      "indicators": [
+        {
+          "id": "EG.USE.ELEC.KH.PC",
+          "key": "electricPowerConsumption",
+          "name": "Electric Power Consumption",
+          "unit": "kWh per capita"
+        }
+      ]
     }
   }
 }

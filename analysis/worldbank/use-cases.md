@@ -1,6 +1,6 @@
-# 📊 World Bank Indicators — Use Cases for Political Intelligence
+# 📊 World Bank Indicators — Use Cases for Political Intelligence (v2.0)
 
-> **Purpose**: Defines when and how each category of World Bank indicators should be used in Riksdagsmonitor article generation, with specific examples of chart integration.
+> **Purpose**: Defines when and how 144 World Bank indicators should be used in Riksdagsmonitor article generation and analysis documents. Includes both Chart.js templates (for HTML articles) and Mermaid templates (for `.md` analysis files).
 
 ---
 
@@ -8,16 +8,21 @@
 
 ### Always Include (every article)
 - **GDP Growth** and **Unemployment** — universal economic context
-- Any indicator matching the article's detected committee (e.g., defense article → Military Expenditure)
+- Any indicator matching the article's detected committee (see `indicator-policy-mapping.md`)
+- Gender dimension when available (e.g., male/female unemployment split)
 
 ### Include When Relevant (policy-matched)
 - Match indicators to the article's policy domains (detected from proposition text, motion subject, committee assignment)
 - Use `findRelevantIndicators(policyArea)` from `scripts/world-bank-context.ts`
+- For labor topics: include youth unemployment, labor participation by gender
+- For defense topics: include NATO 2% trajectory and armed forces data
+- For governance topics: include all 6 WGI indicators (source=75)
 
 ### Include for Comprehensive Context (monthly/weekly reviews)
-- Full Nordic comparison with all 28 indicators
+- Full Nordic comparison with all 144 indicators
 - Trend analysis showing 10-year trajectories
-- Governance indicators for democratic health assessment
+- All 6 governance indicators for democratic health assessment
+- Demographic aging and migration trends
 
 ---
 
