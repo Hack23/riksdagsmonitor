@@ -965,7 +965,7 @@ AI agents MUST use these to enrich articles.
 | **SoU** (Social) | Life Expectancy (M/F), Health Exp., Physicians, Hospital Beds, Nurses, GINI, Population, Birth/Death/Fertility Rate, Age Dependency, Migration, Refugees | 35+ |
 | **UbU** (Education) | Education Exp. (% GDP, % Govt), Primary/Secondary/Tertiary Enrollment, R&D Exp., Researchers, Scientific Articles | 10 |
 | **MJU** (Environment) | CO₂ Emissions, Renewable Energy/Electricity, Forest Area, Air Pollution, Nuclear/Hydro Power, Energy Use | 11 |
-| **KU** (Constitution) | Rule of Law, Voice & Accountability, Govt Effectiveness, Regulatory Quality, Corruption Control, Political Stability, Women in Parliament | 8 |
+| **KU** (Constitution) | Rule of Law, Voice & Accountability, Govt Effectiveness, Regulatory Quality, Corruption Control, Political Stability, Women in Parliament | 7 |
 | **JuU** (Justice) | Rule of Law, Control of Corruption | 2 |
 | **TU** (Transport) | Internet Users, Broadband, Mobile, Secure Servers, Air Passengers | 5 |
 
