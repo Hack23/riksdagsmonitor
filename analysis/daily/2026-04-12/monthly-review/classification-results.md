@@ -1,0 +1,26 @@
+# Political Classification Results — 2026-04-12
+
+**Generated**: 2026-04-12 11:29 UTC
+**Data Sources**: 
+**Documents Analyzed**: 0
+**Confidence**: LOW
+**Produced By**: pre-article-analysis script (automated data pipeline)
+
+> ⚠️ **Script-Generated Analysis**: This file was produced by the automated data pipeline (`scripts/pre-article-analysis.ts`). It contains structured data extraction and basic statistical analysis only. For deep political intelligence with evidence-based claims, Mermaid diagrams, and multi-framework analysis, this file should be enriched or replaced by AI-driven analysis following `analysis/methodologies/ai-driven-analysis-guide.md`.
+
+## Summary
+
+Classified **0** parliamentary documents by sensitivity, impact, urgency, and domain.
+
+## Detailed Analysis
+
+## Key Findings
+
+
+## Implications
+
+Classification drives article prioritisation. High-significance documents should receive deep-inspection treatment.
+
+## Data Quality Notes
+
+Classification confidence: LOW. Higher confidence when full-text content is available.
