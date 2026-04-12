@@ -1,6 +1,6 @@
 {
   "name": "riksdagsmonitor",
-  "version": "0.8.35",
+  "version": "0.8.36",
   "type": "module",
   "description": "Swedish Parliament (Riksdag) intelligence platform — TypeScript utilities for political data visualization, dashboards, and open data analysis with Chart.js and D3.js",
   "main": "dist/lib/shared/index.js",
@@ -75,7 +75,6 @@
     "generate-sitemap": "node scripts/generate-sitemap.ts",
     "generate-sitemap-html": "npx tsx scripts/generate-sitemap-html.ts",
     "generate-rss": "npx tsx scripts/generate-rss.ts",
-
     "htmlhint": "sh -c 'htmlhint *.html; set -- news/*.html; if [ -e \"$1\" ]; then htmlhint \"$@\"; else echo \"No news/*.html files to lint\"; fi'",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
