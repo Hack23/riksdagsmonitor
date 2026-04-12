@@ -839,11 +839,11 @@ All visualization examples below are **valid Chart.js configuration objects** ma
   }
 }
 ```
+````
 
 Embed each chart on the target `<canvas>` element using a `data-chart-config` attribute containing the full Chart.js configuration object. Do **not** emit `<script class="chart-data">` blocks. Treat `data-chart-config` as the canonical hand-off format for chart data, but only use this pattern when the target page explicitly includes a chart initializer that scans `canvas[data-chart-config]` and instantiates the corresponding Chart.js chart; otherwise the chart will not render.
 
 > **Canonical chart type identifiers** (use these exact strings in the optional `chartType` field inside `data-chart-config`): `coalition-votes`, `swot-quadrant`, `risk-heatmap`, `policy-radar`, `legislative-sankey`, `css-mindmap`, `timeline`, `economic-comparison`, `economic-trend`, `nordic-radar`.
-````
 
 ---
 
@@ -971,7 +971,7 @@ AI agents MUST use these to enrich articles.
 
 #### Article Type → Indicator Priority (from 144 available)
 
-| Article Type | MUST Include | SHOULD Include | New in v2.0 |
+| Article Type | MUST Include | SHOULD Include | New in v3.0 |
 |-------------|-------------|----------------|-------------|
 | propositions | GDP Growth, Unemployment + committee-matched | Inflation, Trade, Military Exp. | Youth Unemployment, GINI, Governance indicators |
 | committee-reports | All committee-specific indicators | Nordic comparison | Gender indicators, full financial sector |
