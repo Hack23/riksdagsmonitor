@@ -240,12 +240,12 @@ Every analysis MUST include an **Election 2026 Implications** section assessing:
 
 ### Phase 1 — Data Collection & Initial Analysis
 1. Fetch today's activity from MCP (`search_anforanden` — filter by `datum`, `get_betankanden` — filter by `publicerad`, `search_voteringar` — filter by `datum`, `get_sync_status`)
-2. Score newsworthiness of each item using `scoreNewsworthiness()` logic
+2. Assess newsworthiness of each item using AI analysis (score 0-100 with dimension breakdown: political significance, public impact, timeliness, unexpectedness)
 3. Build initial outline: day-in-review lede, top stories, votes summary, tonight's context
 
 ### Phase 2 — Depth Enhancement (for `deep`/`comprehensive` depth)
 1. **Quick SWOT**: 1-paragraph SWOT overview of the day's political balance
-2. **Activity Dashboard**: Generate `generateDashboardSection()` with ≥1 chart (today's activity breakdown)
+2. **Activity Dashboard**: Include a concise activity breakdown by type/party as a Markdown table or bullet list; do not assume an automatic dashboard rendering step unless a workflow-specific validated input format is defined.
 3. **Quality Gate**:
    - Verify article covers events from today's date (not yesterday or tomorrow)
    - Verify all Swedish API text is translated

@@ -207,9 +207,9 @@ Every analysis MUST include an **Election 2026 Implications** section assessing:
 
 ### Phase 2 — Iterative Depth Enhancement (repeat per `analysis_depth`)
 For each AI iteration:
-1. **Condensed SWOT**: Generate `generateSwotSection()` with ≥3 stakeholder perspectives on the week's balance of power
-2. **Week-in-Review Dashboard**: Generate `generateDashboardSection()` with ≥2 charts (activity by day, document type breakdown)
-3. **Policy Mindmap**: Generate `generateMindmapSection()` showing how the week's stories interconnect
+1. **Condensed SWOT**: Write SWOT analysis with ≥3 stakeholder perspectives on the week's balance of power, using clear markdown headings and bullets suitable for the standard SWOT extraction flow
+2. **Week-in-Review Dashboard**: Provide ≥2 visualization-ready summaries (for example: activity by day and document type breakdown) with explicit labels, values, and short interpretation text; do not assume an interactive dashboard renderer unless a workflow-specific validated input format is defined
+3. **Policy Mindmap**: Provide a structured outline showing how the week's stories interconnect (central topic + branches + sub-branches) in nested markdown bullets; do not assume a mindmap render pipeline unless a workflow-specific validated input format is defined
 4. **Quality Gate** (check before next iteration):
    - Verify the article covers the actual past week (Mon–Fri), not a forecast
    - Verify voting analysis section includes specific vote outcomes

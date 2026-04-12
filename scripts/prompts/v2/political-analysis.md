@@ -96,14 +96,17 @@ const html = generateArticleHTML({
 
 ### Step 3: Use Pre-Computed SWOT
 
-When `analysis.swot` is available, pass it directly to `generateSwotSection()`:
+> **Note**: The `generateSwotSection()` function is an HTML renderer used by the article generation script. AI agents do NOT call this function directly. Instead, AI agents write SWOT analysis in markdown files — the script reads the analysis and calls this function to render HTML. `buildSwotFromDocs` below is pseudocode representing the fallback path.
+
+When `analysis.swot` is available, the script passes it directly to `generateSwotSection()`:
 
 ```typescript
+// Pseudocode — illustrative only; actual implementation is in generators.ts
 import { generateSwotSection } from '../../data-transformers/content-generators/swot-section.js';
 
 const swotHtml = analysis.swot
   ? generateSwotSection({ data: analysis.swot, lang })
-  : generateSwotSection({ data: buildSwotFromDocs(docs, lang), lang });
+  : generateSwotSection({ data: /* fallback: build from docs */ {}, lang });
 ```
 
 ### Step 4: Build Forward Indicators from Threat Analysis

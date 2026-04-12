@@ -205,7 +205,7 @@ Every analysis MUST include an **Election 2026 Implications** section assessing:
 
 ### Phase 2 — Depth Enhancement (for `deep`/`comprehensive` depth only)
 1. **Quick SWOT**: 1-paragraph SWOT overview of the week's political balance
-2. **Event Dashboard**: Generate `generateDashboardSection()` with ≥2 charts (committee meeting density, event type breakdown)
+2. **Event Dashboard**: Provide concise summary data for ≥2 analytical views (committee meeting density, event type breakdown) as prose or markdown tables that can be included directly in the article without requiring any undocumented rendering pipeline
 3. **Quality Gate**:
    - Verify watch-points are specific and actionable (not just event titles)
    - Verify all Swedish API text is translated

@@ -222,8 +222,8 @@ Every analysis MUST include an **Election 2026 Implications** section assessing:
 ### Phase 2 — Iterative Depth Enhancement (repeat per `analysis_depth`)
 For each AI iteration:
 1. **Full SWOT Analysis**: Generate multi-stakeholder SWOT with ALL 8 groups (Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion) focusing on upcoming legislative priorities. Use structured evidence tables with columns: `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact`, `Entry Date`. Every entry MUST cite specific scheduled debate, committee meeting, or expected vote.
-2. **Strategic Dashboard**: Generate `generateDashboardSection()` with ≥2 charts (documents by week, policy domain distribution)
-3. **Policy Mindmap**: Generate `generateMindmapSection()` showing inter-connected policy areas
+2. **Strategic Dashboard Summary**: Provide concise comparative summaries for at least 2 analytical views (for example, documents by week and policy domain distribution) using prose and/or markdown tables that can be included directly in the article without requiring any undocumented rendering pipeline.
+3. **Policy Relationship Outline**: Describe inter-connected policy areas as a clear hierarchical outline (central topic, major branches, and sub-items) in standard markdown so the relationships are explicit without assuming automated mindmap rendering.
 4. **Quality Gate** (check before next iteration):
    - Verify forward-looking watch-points reference specific scheduled events
    - Verify all Swedish API text is translated

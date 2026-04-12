@@ -5,7 +5,6 @@
     "js/*.js",
     "dashboard/*.js",
     "scripts/*.ts",
-    "scripts/*.js",
     "scripts/news-types/*.ts",
     "scripts/committees-dashboard/*.ts",
     "scripts/coalition-dashboard/*.ts",
@@ -19,7 +18,6 @@
     "js/**/*.js",
     "dashboard/**/*.js",
     "scripts/**/*.ts",
-    "scripts/**/*.js",
     "tests/**/*.ts",
     "tests/**/*.js",
     "cypress/**/*.js"
@@ -29,11 +27,9 @@
   ],
   "ignoreDependencies": [
     "htmlhint",
-    "js-yaml",
-    "playwright"
+    "js-yaml"
   ],
   "ignoreBinaries": [
-    "playwright",
     "cypress",
     "python3",
     "linkinator"

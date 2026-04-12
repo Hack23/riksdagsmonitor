@@ -208,10 +208,10 @@ Every analysis MUST include an **Election 2026 Implications** section assessing:
 
 ### Phase 2 — Iterative Depth Enhancement (3 iterations for `deep`/`comprehensive`)
 For each AI iteration:
-1. **Full SWOT**: Generate `generateSwotSection()` with ≥5 stakeholder perspectives per quadrant (government coalition, opposition parties, affected citizens, EU/Nordic context, media/civil society, business sector, academic/think-tanks)
-2. **Monthly Dashboard**: Generate `generateEconomicDashboardSection()` with ≥4 charts (monthly trends, party activity ranking, policy domain heatmap, legislative pipeline)
-3. **Policy Mindmap**: Generate `generateMindmapSection()` showing the month's cross-cutting policy themes
-4. **Stakeholder SWOT**: Generate `generateStakeholderSwotSection()` with ≥7 perspectives for comprehensive depth
+1. **Full SWOT**: Write a clearly structured SWOT analysis with ≥5 stakeholder perspectives per quadrant (government coalition, opposition parties, affected citizens, EU/Nordic context, media/civil society, business sector, academic/think-tanks). Format it as publication-ready markdown with explicit `Strengths`, `Weaknesses`, `Opportunities`, and `Threats` headings.
+2. **Monthly Dashboard Summary**: Provide a dashboard-style analytical summary covering at least 4 evidence-based views: monthly trends, party activity ranking, policy domain heatmap summary, and legislative pipeline status. Present the underlying figures and comparisons directly in markdown text and bullet lists or tables; do not assume any machine-readable chart schema or automatic rendering step.
+3. **Policy Theme Map**: Describe the month's cross-cutting policy themes as a hierarchical outline with one central theme and clearly labelled subthemes. Use readable markdown headings or nested bullet lists rather than implying a structured mindmap payload or CSS-rendered component.
+4. **Stakeholder SWOT**: Write a stakeholder-focused SWOT with ≥7 perspectives for comprehensive depth, and cite specific `dok_id` evidence for each entry.
 5. **Quality Gate** (check before next iteration):
    - Verify trend comparison uses actual previous-month data from MCP
    - Verify party rankings section covers all 8 Riksdag parties
