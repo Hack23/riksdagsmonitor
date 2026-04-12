@@ -245,7 +245,7 @@ npx tsx scripts/validate-file-ownership.ts translation
 ## 🔒 Content-PR Dependency Check
 
 The pre-flight init steps check for open content PRs and source article availability. Instead of blocking the workflow, they set environment flags:
-- `TODAY_DEFERRED=true` — today's date has open content PRs or an error occurred; skip today but scan older dates
+- `TODAY_DEFERRED=true` — today's date has open content PRs, or the `gh pr list` / `jq` commands failed; skip today but scan older dates
 - `TODAY_NO_SOURCES=true` — no EN source articles exist for today; scan older dates
 
 **You always run.** Use these flags to decide your starting point, then cascade through the fallback strategy below.
@@ -382,7 +382,6 @@ if [ -z "$ARTICLE_DATE" ]; then
 fi
 ARTICLE_TYPE="${{ github.event.inputs.article_type }}"
 
-FOUND_WORK=false
 find news -maxdepth 1 -name "$ARTICLE_DATE-*-en.html" -exec basename {} .html \; | sed "s/-en$//" | while read SLUG; do
   MISSING=""
   for lang in da no fi de fr es nl ar he ja ko zh; do
