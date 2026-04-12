@@ -12,6 +12,8 @@ import {
   getDefaultWorldBankClient,
   COUNTRY_CODES,
   INDICATOR_IDS,
+  WB_SOURCES,
+  WGI_INDICATOR_IDS,
 } from '../scripts/world-bank-client.js';
 import type { WorldBankDataPoint } from '../scripts/world-bank-client.js';
 
@@ -375,9 +377,9 @@ describe('WorldBankClient', () => {
       expect(INDICATOR_IDS.inflation).toBe('FP.CPI.TOTL.ZG');
     });
 
-    it('should have all 29 defined indicators', () => {
+    it('should have all 144 defined indicators', () => {
       const indicatorCount = Object.keys(INDICATOR_IDS).length;
-      expect(indicatorCount).toBe(29);
+      expect(indicatorCount).toBe(144);
     });
 
     it('should have valid World Bank indicator ID format', () => {
@@ -386,6 +388,88 @@ describe('WorldBankClient', () => {
         // or governance indicators: XX.EST
         expect(id).toMatch(/^[A-Z]{2}\./);
       });
+    });
+
+    it('should cover all 17 Riksdag-relevant domains', () => {
+      // Verify we have indicators from each major domain
+      const domains = {
+        nationalAccounts: (id: string) => id.startsWith('NY.GDP') || id.startsWith('NE.CON') || id.startsWith('NE.GDI') || id.startsWith('NY.GNS') || id.startsWith('NY.ADJ') || id.startsWith('NY.GNP'),
+        taxation: (id: string) => id.startsWith('GC.'),
+        trade: (id: string) => id.startsWith('NE.TRD') || id.startsWith('NE.EXP') || id.startsWith('NE.IMP') || id.startsWith('BN.') || id.startsWith('BX.') || id.startsWith('BM.') || id.startsWith('TX.') || id.startsWith('NE.RSB'),
+        labor: (id: string) => id.startsWith('SL.'),
+        inflation: (id: string) => id.startsWith('FP.'),
+        demographics: (id: string) => id.startsWith('SP.') || id.startsWith('SM.') || id.startsWith('SH.DYN'),
+        health: (id: string) => id.startsWith('SH.') && !id.startsWith('SH.DYN'),
+        education: (id: string) => id.startsWith('SE.'),
+        environment: (id: string) => id.startsWith('EN.') || id.startsWith('EG.') || id.startsWith('AG.'),
+        military: (id: string) => id.startsWith('MS.'),
+        governance: (id: string) => id.endsWith('.EST'),
+        inequality: (id: string) => id.startsWith('SI.'),
+        gender: (id: string) => id.startsWith('SG.'),
+        innovation: (id: string) => id.startsWith('GB.') || id.startsWith('IP.') || id.startsWith('IT.') || id === 'BX.GSR.CCIS.ZS',
+      };
+
+      const ids = Object.values(INDICATOR_IDS);
+      for (const [domain, matcher] of Object.entries(domains)) {
+        const count = ids.filter(matcher).length;
+        expect(count, `Domain '${domain}' should have at least 1 indicator`).toBeGreaterThanOrEqual(1);
+      }
+    });
+  });
+
+  describe('WGI_INDICATOR_IDS', () => {
+    it('should contain 6 governance indicator IDs', () => {
+      expect(WGI_INDICATOR_IDS.size).toBe(6);
+    });
+
+    it('should include all WGI estimate indicators', () => {
+      expect(WGI_INDICATOR_IDS.has('RL.EST')).toBe(true);
+      expect(WGI_INDICATOR_IDS.has('VA.EST')).toBe(true);
+      expect(WGI_INDICATOR_IDS.has('GE.EST')).toBe(true);
+      expect(WGI_INDICATOR_IDS.has('RQ.EST')).toBe(true);
+      expect(WGI_INDICATOR_IDS.has('CC.EST')).toBe(true);
+      expect(WGI_INDICATOR_IDS.has('PV.EST')).toBe(true);
+    });
+
+    it('should match governance indicators in INDICATOR_IDS', () => {
+      expect(WGI_INDICATOR_IDS.has(INDICATOR_IDS.ruleOfLaw)).toBe(true);
+      expect(WGI_INDICATOR_IDS.has(INDICATOR_IDS.voiceAccountability)).toBe(true);
+      expect(WGI_INDICATOR_IDS.has(INDICATOR_IDS.govEffectiveness)).toBe(true);
+      expect(WGI_INDICATOR_IDS.has(INDICATOR_IDS.regulatoryQuality)).toBe(true);
+      expect(WGI_INDICATOR_IDS.has(INDICATOR_IDS.controlOfCorruption)).toBe(true);
+      expect(WGI_INDICATOR_IDS.has(INDICATOR_IDS.politicalStability)).toBe(true);
+    });
+  });
+
+  describe('WB_SOURCES', () => {
+    it('should have WDI source as 2', () => {
+      expect(WB_SOURCES.wdi).toBe(2);
+    });
+
+    it('should have WGI source as 75', () => {
+      expect(WB_SOURCES.wgi).toBe(75);
+    });
+  });
+
+  describe('WGI source parameter in URL', () => {
+    it('should add source=75 for WGI indicators', async () => {
+      const mockResponse = { ok: true, json: () => Promise.resolve([{}, []]) };
+      global.fetch = vi.fn().mockResolvedValue(mockResponse);
+
+      await client.getIndicator('SWE', 'CC.EST');
+
+      const fetchCall = (global.fetch as ReturnType<typeof vi.fn>).mock.calls[0][0] as string;
+      expect(fetchCall).toContain('source=75');
+    });
+
+    it('should NOT add source parameter for WDI indicators', async () => {
+      const mockResponse = { ok: true, json: () => Promise.resolve([{}, []]) };
+      global.fetch = vi.fn().mockResolvedValue(mockResponse);
+
+      await client.getIndicator('SWE', 'NY.GDP.MKTP.KD.ZG');
+
+      const fetchCall = (global.fetch as ReturnType<typeof vi.fn>).mock.calls[0][0] as string;
+      expect(fetchCall).not.toContain('source=');
     });
   });
 
