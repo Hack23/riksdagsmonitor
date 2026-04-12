@@ -382,7 +382,13 @@ if [ -z "$ARTICLE_DATE" ]; then
 fi
 ARTICLE_TYPE="${{ github.event.inputs.article_type }}"
 
-find news -maxdepth 1 -name "$ARTICLE_DATE-*-en.html" -exec basename {} .html \; | sed "s/-en$//" | while read SLUG; do
+if [ -n "$ARTICLE_TYPE" ]; then
+  ARTICLE_PATTERN="$ARTICLE_DATE-$ARTICLE_TYPE-*-en.html"
+else
+  ARTICLE_PATTERN="$ARTICLE_DATE-*-en.html"
+fi
+
+find news -maxdepth 1 -name "$ARTICLE_PATTERN" -exec basename {} .html \; | sed "s/-en$//" | while read SLUG; do
   MISSING=""
   for lang in $LANGS; do
     test -f "news/$SLUG-$lang.html" || MISSING="$MISSING $lang"
@@ -406,7 +412,12 @@ echo "=== Scanning earlier dates for missing translations ==="
 for i in $(seq 1 30); do
   SCAN_DATE=$(date -u -d "$i days ago" +%Y-%m-%d 2>/dev/null || date -u -v-${i}d +%Y-%m-%d 2>/dev/null)
   if [ -z "$SCAN_DATE" ]; then continue; fi
-  EN_FILES=$(ls news/$SCAN_DATE-*-en.html 2>/dev/null)
+  if [ -n "$ARTICLE_TYPE" ]; then
+    EN_GLOB="news/$SCAN_DATE-$ARTICLE_TYPE-*-en.html"
+  else
+    EN_GLOB="news/$SCAN_DATE-*-en.html"
+  fi
+  EN_FILES=$(ls $EN_GLOB 2>/dev/null)
   if [ -z "$EN_FILES" ]; then continue; fi
   for EN_FILE in $EN_FILES; do
     SLUG=$(basename "$EN_FILE" .html | sed "s/-en$//")
