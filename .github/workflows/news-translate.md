@@ -437,9 +437,9 @@ If earlier articles need translation, pick the most recent one and translate it.
 
 #### Phase 3: Improve existing translations
 
-If ALL articles from all dates are 100% translated (all 12 languages present for every EN source), then improve existing translation quality:
+If ALL articles from all dates are 100% translated for the current run (every EN source has all requested target languages in `$LANGS`), then improve existing translation quality:
 
-1. Pick the most recent article that has all translations
+1. Pick the most recent article that has all requested translations for the current run
 2. Read the EN source and one of the existing translations (e.g., `da`)
 3. Compare quality — check for: untranslated English phrases leaking through, awkward phrasing, missing political terminology, incomplete section translations
 4. Use the `edit` tool to improve the translations in-place
