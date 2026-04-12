@@ -510,12 +510,13 @@
    CODE AND INSTALLATION BLOCKS
    ================================================== */
 .code-block {
-  background: #f6f8fa;
-  border: 1px solid #d0d7de;
+  background: var(--card-bg, #f6f8fa);
+  color: var(--text-color, #1a1a1a);
+  border: 1px solid var(--border-color, #d0d7de);
   border-radius: 6px;
   padding: 1rem;
   margin: 1rem 0;
-  font-family: 'Courier New', monospace;
+  font-family: var(--font-mono, 'Courier New', monospace);
   overflow-x: auto;
 }
 
@@ -6940,17 +6941,6 @@ footer {
 .mx-0 {
   margin-left: 0;
   margin-right: 0;
-}
-
-/* Code block styling */
-.code-block {
-  background: var(--card-bg, #f6f8fa);
-  color: var(--text-color, #1a1a1a);
-  padding: 15px;
-  border-radius: var(--border-radius);
-  overflow-x: auto;
-  font-family: var(--font-mono);
-  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
 }
 
 /* White card variants */

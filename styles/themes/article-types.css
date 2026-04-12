@@ -264,61 +264,87 @@
 
 /* ── Light mode: darken accent colours for WCAG AA contrast on white ────── */
 /* Some accent colours (yellow, gold, cyan) have < 4.5:1 contrast on white.
-   Override with darker equivalents that still look thematically correct.    */
+   Override with darker equivalents that still look thematically correct.
+   --type-accent-rgb must stay in sync so rgba() tints/borders are coherent. */
 html[data-theme="light"] .news-article.article-type-week-ahead {
-  --type-accent: #006b8a;           /* darker cyan   */
-  --type-label:  #006b8a;
+  --type-accent:     #006b8a;           /* darker cyan   */
+  --type-accent-rgb: 0, 107, 138;
+  --type-bg:         rgba(0, 107, 138, 0.04);
+  --type-label:      #006b8a;
 }
 
 html[data-theme="light"] .news-article.article-type-interpellations {
-  --type-accent: #8a6600;           /* darker yellow  */
-  --type-label:  #8a6600;
+  --type-accent:     #8a6600;           /* darker yellow  */
+  --type-accent-rgb: 138, 102, 0;
+  --type-bg:         rgba(138, 102, 0, 0.05);
+  --type-label:      #8a6600;
 }
 
 html[data-theme="light"] .news-article.article-type-monthly-review {
-  --type-accent: #8a7000;           /* darker gold    */
-  --type-label:  #8a7000;
+  --type-accent:     #8a7000;           /* darker gold    */
+  --type-accent-rgb: 138, 112, 0;
+  --type-bg:         rgba(138, 112, 0, 0.04);
+  --type-label:      #8a7000;
 }
 
 html[data-theme="light"] .news-article.article-type-weekly-review {
-  --type-accent: #00806d;           /* darker teal    */
-  --type-label:  #00806d;
+  --type-accent:     #00806d;           /* darker teal    */
+  --type-accent-rgb: 0, 128, 109;
+  --type-bg:         rgba(0, 128, 109, 0.04);
+  --type-label:      #00806d;
 }
 
 html[data-theme="light"] .news-article.article-type-committee-reports {
-  --type-accent: #007a30;           /* darker green   */
-  --type-label:  #007a30;
+  --type-accent:     #007a30;           /* darker green   */
+  --type-accent-rgb: 0, 122, 48;
+  --type-bg:         rgba(0, 122, 48, 0.04);
+  --type-label:      #007a30;
 }
 
 html[data-theme="light"] .news-article.article-type-month-ahead {
-  --type-accent: #00728a;           /* darker teal    */
-  --type-label:  #00728a;
+  --type-accent:     #00728a;           /* darker teal    */
+  --type-accent-rgb: 0, 114, 138;
+  --type-bg:         rgba(0, 114, 138, 0.04);
+  --type-label:      #00728a;
 }
 
-/* @media fallback for OS-level light preference (no data-theme attribute) */
+/* @media fallback for OS-level light preference when no explicit theme set.
+   Scoped to html:not([data-theme]) so manual dark/light choice always wins. */
 @media (prefers-color-scheme: light) {
-  .news-article.article-type-week-ahead {
-    --type-accent: #006b8a;
-    --type-label:  #006b8a;
+  html:not([data-theme]) .news-article.article-type-week-ahead {
+    --type-accent:     #006b8a;
+    --type-accent-rgb: 0, 107, 138;
+    --type-bg:         rgba(0, 107, 138, 0.04);
+    --type-label:      #006b8a;
   }
-  .news-article.article-type-interpellations {
-    --type-accent: #8a6600;
-    --type-label:  #8a6600;
+  html:not([data-theme]) .news-article.article-type-interpellations {
+    --type-accent:     #8a6600;
+    --type-accent-rgb: 138, 102, 0;
+    --type-bg:         rgba(138, 102, 0, 0.05);
+    --type-label:      #8a6600;
   }
-  .news-article.article-type-monthly-review {
-    --type-accent: #8a7000;
-    --type-label:  #8a7000;
+  html:not([data-theme]) .news-article.article-type-monthly-review {
+    --type-accent:     #8a7000;
+    --type-accent-rgb: 138, 112, 0;
+    --type-bg:         rgba(138, 112, 0, 0.04);
+    --type-label:      #8a7000;
   }
-  .news-article.article-type-weekly-review {
-    --type-accent: #00806d;
-    --type-label:  #00806d;
+  html:not([data-theme]) .news-article.article-type-weekly-review {
+    --type-accent:     #00806d;
+    --type-accent-rgb: 0, 128, 109;
+    --type-bg:         rgba(0, 128, 109, 0.04);
+    --type-label:      #00806d;
   }
-  .news-article.article-type-committee-reports {
-    --type-accent: #007a30;
-    --type-label:  #007a30;
+  html:not([data-theme]) .news-article.article-type-committee-reports {
+    --type-accent:     #007a30;
+    --type-accent-rgb: 0, 122, 48;
+    --type-bg:         rgba(0, 122, 48, 0.04);
+    --type-label:      #007a30;
   }
-  .news-article.article-type-month-ahead {
-    --type-accent: #00728a;
-    --type-label:  #00728a;
+  html:not([data-theme]) .news-article.article-type-month-ahead {
+    --type-accent:     #00728a;
+    --type-accent-rgb: 0, 114, 138;
+    --type-bg:         rgba(0, 114, 138, 0.04);
+    --type-label:      #00728a;
   }
 }
