@@ -8,7 +8,7 @@
  * `analysis/worldbank/indicators-inventory.json` — the canonical machine-readable
  * inventory. Both AI agents (`view` tool) and this TypeScript module consume the
  * same JSON, ensuring consistency. To add or modify indicators, edit the JSON file
- * only — this module picks up changes automatically.
+ * only — no TypeScript changes are required, and updates are picked up on the next run.
  *
  * Used by agentic workflows and article quality enhancement to add economic depth
  * to political reporting.
@@ -372,7 +372,7 @@ export function hasEconomicContext(content: string): boolean {
     /\bgini/i, // GINI index
     /\bco2\b/i, // CO2 emissions
     /\bnato\s*2\s*%/i, // NATO 2% target
-    /\bförnyelsebart?\s+energi/i, // Swedish: renewable energy (förnybar/förnyelsebar energi)
+    /\bförny(?:else)?bart?\s+energi/i, // Swedish: renewable energy (förnybar/förnyelsebar energi)
     /\bbirth\s*rate\b/i,
     /\bfertility\s*rate\b/i,
     /\blife\s*expectancy\b/i,
