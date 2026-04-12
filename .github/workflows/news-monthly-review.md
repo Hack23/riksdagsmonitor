@@ -208,10 +208,10 @@ Every analysis MUST include an **Election 2026 Implications** section assessing:
 
 ### Phase 2 — Iterative Depth Enhancement (3 iterations for `deep`/`comprehensive`)
 For each AI iteration:
-1. **Full SWOT**: Generate `generateSwotSection()` with ≥5 stakeholder perspectives per quadrant (government coalition, opposition parties, affected citizens, EU/Nordic context, media/civil society, business sector, academic/think-tanks)
-2. **Monthly Dashboard**: Generate `generateEconomicDashboardSection()` with ≥4 charts (monthly trends, party activity ranking, policy domain heatmap, legislative pipeline)
-3. **Policy Mindmap**: Generate `generateMindmapSection()` showing the month's cross-cutting policy themes
-4. **Stakeholder SWOT**: Generate `generateStakeholderSwotSection()` with ≥7 perspectives for comprehensive depth
+1. **Full SWOT**: Write SWOT analysis with ≥5 stakeholder perspectives per quadrant (government coalition, opposition parties, affected citizens, EU/Nordic context, media/civil society, business sector, academic/think-tanks) — the script renders this as an interactive SWOT section
+2. **Monthly Dashboard**: Provide chart data for ≥4 visualizations (monthly trends, party activity ranking, policy domain heatmap, legislative pipeline — the script renders these as interactive dashboard sections)
+3. **Policy Mindmap**: Define mindmap structure showing the month's cross-cutting policy themes (central topic + color-coded branches — the script renders this as a CSS mindmap)
+4. **Stakeholder SWOT**: Write stakeholder-focused SWOT with ≥7 perspectives for comprehensive depth (each entry must cite specific dok_id evidence)
 5. **Quality Gate** (check before next iteration):
    - Verify trend comparison uses actual previous-month data from MCP
    - Verify party rankings section covers all 8 Riksdag parties

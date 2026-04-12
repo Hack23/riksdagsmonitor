@@ -8,6 +8,8 @@
 
 **Always prefer pre-computed SWOT data** from `analysis/daily/YYYY-MM-DD/swot-analysis.md` over inline generation.
 
+> **Note**: The code below shows the **script-side** flow. AI agents do NOT call `generateSwotSection()` directly. Instead, AI agents write SWOT analysis content in markdown — the script reads the analysis and calls this HTML renderer function to produce the article section.
+
 ```typescript
 import { readDailyAnalysis } from '../../analysis-reader.js';
 import { generateSwotSection } from '../../data-transformers/content-generators/swot-section.js';

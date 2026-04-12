@@ -241,7 +241,7 @@ Every analysis MUST include an **Election 2026 Implications** section assessing:
 ### Phase 2 — Iterative Depth Enhancement (repeat per `analysis_depth`)
 For each AI iteration:
 1. **SWOT Analysis**: Generate multi-stakeholder SWOT with ALL 8 groups (Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion). Use structured evidence tables with columns: `#`, `Statement`, `Evidence (mot. ID/dok_id)`, `Confidence`, `Impact`, `Entry Date`. Every entry MUST cite specific motion number, party origin, and policy area.
-2. **Coalition Dashboard**: Generate `generateDashboardSection()` with ≥1 chart (party motion count)
+2. **Coalition Dashboard**: Provide chart data for ≥1 visualization (party motion count — the script renders this as an interactive dashboard section)
 3. **Quality Gate** (check before next iteration):
    - Verify opposition strategy section is substantive (not just party counts)
    - Verify no identical "Why It Matters" text across entries

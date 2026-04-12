@@ -371,28 +371,55 @@ Scripts MUST NEVER generate any of these — this is the AI agent's exclusive re
 
 The following script directories and functions previously generated analysis content and are now **DEPRECATED** — their analysis functions are replaced by AI agent analysis in workflow prompts:
 
+> ⚠️ **IMPORTANT DISTINCTION**: The table below lists **analysis-generating** functions that are deprecated. The **HTML rendering** functions (`generateSwotSection()`, `generateDashboardSection()`, `generateMindmapSection()`) are **NOT deprecated** — they are active HTML renderers that take structured data and produce formatted HTML sections. AI agents produce analysis content in markdown files; scripts then render that content into HTML using these renderer functions. See §HTML RENDERER FUNCTIONS below.
+
 | Directory/Function | Status | Replacement |
 |-----------|--------|-------------|
 | `scripts/ai-analysis/` | ⚠️ DEPRECATED for analysis generation | AI agent performs analysis per workflow prompts |
 | `scripts/analysis-framework/` | ⚠️ DEPRECATED for analysis generation | AI agent uses methodology guides directly |
 | `scripts/data-transformers/content-generators/ai-swot-analyzer.ts` | ⚠️ DEPRECATED | AI agent generates SWOT per political-swot-framework.md |
 | `scripts/data-transformers/content-generators/stakeholder-swot-section.ts` | ⚠️ DEPRECATED | AI agent generates stakeholder analysis per stakeholder-impact.md |
-| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildDynamicSwot()` | ⚠️ DEPRECATED | AI prompt: "Generate SWOT for all 8 stakeholder groups with dok_id evidence" |
-| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildStrategicImplications()` | ⚠️ DEPRECATED | AI prompt: "Write strategic implications citing specific policy signals" |
-| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildKeyTakeaways()` | ⚠️ DEPRECATED | AI prompt: "Extract 5 key takeaways with confidence levels" |
-| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildLegislativeImpact()` | ⚠️ DEPRECATED | AI prompt: "Assess legislative impact using committee + vote data" |
-| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `buildCrossPartyImplications()` | ⚠️ DEPRECATED | AI prompt: "Analyze cross-party dynamics from voting records" |
+| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `AIAnalysisPipeline` class | ⚠️ DEPRECATED | AI agent performs all analysis; class retained only for type definitions |
 | `scripts/data-transformers/content-generators/shared.ts` → `generateDeepAnalysisSection()` | ⚠️ DEPRECATED | AI prompt: "Write 5W deep analysis (Who/What/When/Why/Winners)" |
-| `scripts/data-transformers/content-generators/shared.ts` → `generateTimelineContext()` | 🔴 REMOVED | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific timeline analysis |
-| `scripts/data-transformers/content-generators/shared.ts` → `broadAgendaText()`, `focusedAgendaText()`, `defaultWhyText()` | 🔴 REMOVED | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific "Why This Matters" analysis |
-| `scripts/data-transformers/content-generators/shared.ts` → `genericImpactText()`, `propImpactText()`, `betImpactText()`, `motImpactText()` | 🔴 REMOVED | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific political impact analysis |
-| `scripts/data-transformers/content-generators/shared.ts` → `genericConsequencesText()`, `propConsequencesText()`, `motConsequencesText()` | 🔴 REMOVED | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific consequences analysis |
-| `scripts/data-transformers/content-generators/shared.ts` → `defaultCriticalText()` | 🔴 REMOVED | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific critical assessment |
-| `scripts/editorial-pillars.ts` → `INTER_PILLAR_TRANSITIONS` | 🔴 REMOVED | Transitions now empty — AI MUST write article-specific connective prose or omit |
-| `scripts/data-transformers/content-generators/newsworthiness.ts` → `scoreNewsworthiness()` | ⚠️ DEPRECATED | AI prompt: "Score newsworthiness 0-100 with dimension breakdown" |
+| `scripts/data-transformers/content-generators/shared.ts` → `generateTimelineContext()` | 🔴 STUB | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific timeline analysis |
+| `scripts/data-transformers/content-generators/shared.ts` → `broadAgendaText()`, `focusedAgendaText()`, `defaultWhyText()` | 🔴 STUB | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific "Why This Matters" analysis |
+| `scripts/data-transformers/content-generators/shared.ts` → `genericImpactText()`, `propImpactText()`, `betImpactText()`, `motImpactText()` | 🔴 STUB | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific political impact analysis |
+| `scripts/data-transformers/content-generators/shared.ts` → `genericConsequencesText()`, `propConsequencesText()`, `motConsequencesText()` | 🔴 STUB | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific consequences analysis |
+| `scripts/data-transformers/content-generators/shared.ts` → `defaultCriticalText()` | 🔴 STUB | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific critical assessment |
+| `scripts/editorial-pillars.ts` → `INTER_PILLAR_TRANSITIONS` | 🔴 EMPTY | Transitions now return empty strings — AI MUST write article-specific connective prose or omit |
+| `scripts/data-transformers/content-generators/newsworthiness.ts` → `scoreNewsworthiness()` | ✅ ACTIVE (data utility) | Heuristic scoring still used by scripts; AI SHOULD also independently assess newsworthiness |
 | `scripts/data-transformers/content-generators/shared.ts` → all `*Text()` templates | ⚠️ DEPRECATED | AI prompt: "Write editorial analysis from actual document data" |
 
 **These scripts may still be called for data downloading and HTML formatting functions**, but their analysis output (SWOT entries, risk scores, classifications, titles, descriptions, editorial judgments) MUST be treated as stubs that the AI agent MUST overwrite with real template-compliant analysis.
+
+#### HTML Renderer Functions (NOT Deprecated — Active Utilities)
+
+The following functions are **HTML renderers**, not analysis generators. They take structured data and produce formatted HTML. They are used by `generate-news-enhanced` to build article sections and are **actively maintained**:
+
+| Function | Module | Purpose | AI Agent Relationship |
+|----------|--------|---------|----------------------|
+| `generateSwotSection({ data, lang })` | `swot-section.ts` | Renders SWOT quadrant HTML from `SwotData` | AI writes SWOT analysis in markdown → script reads it → calls this function to render HTML |
+| `generateDashboardSection({ data, lang })` | `dashboard-section.ts` | Renders Chart.js canvas HTML from chart config | AI provides chart data in analysis → script calls this to render chart containers |
+| `generateMindmapSection({ topic, branches, lang })` | `mindmap-section.ts` | Renders CSS mindmap HTML from branch data | AI defines mindmap structure in analysis → script renders it as interactive HTML |
+| `generateMultiPanelDashboardSection(...)` | `dashboard-section.ts` | Renders multi-panel CSS dashboards | AI provides panel data → script renders the full dashboard |
+| `generateEconomicDashboardSection(...)` | `economic-dashboard-section.ts` | Renders economic indicator dashboard | AI provides economic data → script renders comparative charts |
+
+> **How AI agents interact with these**: AI agents do NOT call these TypeScript functions directly. Instead, AI agents write rich analysis content (SWOT entries, chart data, mindmap structures) in their analysis markdown files. The `generate-news-enhanced` script reads the analysis, extracts the structured data, and calls these renderer functions to produce the final HTML article sections.
+
+#### Minor TypeScript/Script Corrections Policy
+
+> **Agentic workflows MAY make minor corrections** to TypeScript code and scripts when necessary to complete their mission, but MUST use AI prompts for all important analysis and content creation.
+
+| Allowed Minor Corrections | Prohibited Changes |
+|--------------------------|-------------------|
+| Fix broken file paths or import statements | Rewrite analysis-generating logic |
+| Correct typos in template strings | Add new analysis functions |
+| Fix date format bugs in scripts | Change article quality thresholds |
+| Update stale configuration values | Modify editorial framework scoring |
+| Fix syntax errors blocking article generation | Change MCP tool invocation patterns |
+| Adjust HTML template structure for validation | Remove or bypass quality gates |
+
+**Rule**: If a correction affects analysis content quality, it MUST be done via AI prompt analysis — not by editing TypeScript code.
 
 ---
 
@@ -1321,6 +1348,9 @@ Before generating articles, consult these skills:
 7. **`scripts/prompts/v2/political-analysis.md`** — Core political analysis framework (6 analytical lenses)
 8. **`scripts/prompts/v2/stakeholder-perspectives.md`** — Multi-perspective analysis instructions
 9. **`scripts/prompts/v2/quality-criteria.md`** — Quality self-assessment rubric (minimum 7/10)
+10. **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Per-file AI analysis protocol
+11. **`analysis/methodologies/ai-driven-analysis-guide.md`** — Master methodology guide (v5.0): analysis-driven article decisions, policy domain inference, empty analysis fallback, Election 2026 lens
+12. **`analysis/templates/per-file-political-intelligence.md`** — Per-file analysis output template (SWOT, risk matrix, threat taxonomy, Mermaid diagrams)
 ```
 
 ## 🧠 Repo Memory — Persistent Cross-Workflow Context (copy into every workflow)
@@ -2124,6 +2154,8 @@ Read these methodology documents to guide your analysis:
 - **`analysis/templates/stakeholder-impact.md`** — Stakeholder impact template
 - **`analysis/templates/significance-scoring.md`** — Significance scoring template
 - **`scripts/prompts/v2/per-file-intelligence-analysis.md`** — Detailed analysis prompt
+- **`analysis/templates/per-file-political-intelligence.md`** — Per-file analysis output template (SWOT, risk, threat, Mermaid)
+- **`analysis/methodologies/ai-driven-analysis-guide.md`** — Master methodology guide (v5.0)
 
 #### Protocol
 1. **Catalog:** Run `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to list files needing analysis

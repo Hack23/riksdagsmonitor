@@ -96,7 +96,9 @@ const html = generateArticleHTML({
 
 ### Step 3: Use Pre-Computed SWOT
 
-When `analysis.swot` is available, pass it directly to `generateSwotSection()`:
+> **Note**: The `generateSwotSection()` function is an HTML renderer used by the article generation script. AI agents do NOT call this function directly. Instead, AI agents write SWOT analysis in markdown files — the script reads the analysis and calls this function to render HTML.
+
+When `analysis.swot` is available, the script passes it directly to `generateSwotSection()`:
 
 ```typescript
 import { generateSwotSection } from '../../data-transformers/content-generators/swot-section.js';
