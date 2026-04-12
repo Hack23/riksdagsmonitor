@@ -377,9 +377,9 @@ The following script directories and functions previously generated analysis con
 |-----------|--------|-------------|
 | `scripts/ai-analysis/` | ⚠️ DEPRECATED for analysis generation | AI agent performs analysis per workflow prompts |
 | `scripts/analysis-framework/` | ⚠️ DEPRECATED for analysis generation | AI agent uses methodology guides directly |
-| `scripts/data-transformers/content-generators/ai-swot-analyzer.ts` | ⚠️ DEPRECATED | AI agent generates SWOT per political-swot-framework.md |
-| `scripts/data-transformers/content-generators/stakeholder-swot-section.ts` | ⚠️ DEPRECATED | AI agent generates stakeholder analysis per stakeholder-impact.md |
-| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `AIAnalysisPipeline` class | ⚠️ DEPRECATED | AI agent performs all analysis; class retained only for type definitions |
+| `scripts/generate-news-enhanced/swot-analyzer.ts` | ⚠️ DEPRECATED | AI agent generates SWOT per political-swot-framework.md |
+| `scripts/data-transformers/content-generators/index.ts` → `generateStakeholderSwotSection()` | ⚠️ DEPRECATED | AI agent generates stakeholder analysis per stakeholder-impact.md |
+| `scripts/generate-news-enhanced/ai-analysis-pipeline.ts` → `AIAnalysisPipeline` class | ⚠️ DEPRECATED | AI agent performs the primary analysis; class still runs as a deprecated/stub runtime pipeline |
 | `scripts/data-transformers/content-generators/shared.ts` → `generateDeepAnalysisSection()` | ⚠️ DEPRECATED | AI prompt: "Write 5W deep analysis (Who/What/When/Why/Winners)" |
 | `scripts/data-transformers/content-generators/shared.ts` → `generateTimelineContext()` | 🔴 STUB | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific timeline analysis |
 | `scripts/data-transformers/content-generators/shared.ts` → `broadAgendaText()`, `focusedAgendaText()`, `defaultWhyText()` | 🔴 STUB | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific "Why This Matters" analysis |
@@ -387,7 +387,7 @@ The following script directories and functions previously generated analysis con
 | `scripts/data-transformers/content-generators/shared.ts` → `genericConsequencesText()`, `propConsequencesText()`, `motConsequencesText()` | 🔴 STUB | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific consequences analysis |
 | `scripts/data-transformers/content-generators/shared.ts` → `defaultCriticalText()` | 🔴 STUB | Now outputs `AI_MUST_REPLACE` marker — AI MUST write specific critical assessment |
 | `scripts/editorial-pillars.ts` → `INTER_PILLAR_TRANSITIONS` | 🔴 EMPTY | Transitions now return empty strings — AI MUST write article-specific connective prose or omit |
-| `scripts/data-transformers/content-generators/newsworthiness.ts` → `scoreNewsworthiness()` | ✅ ACTIVE (data utility) | Heuristic scoring still used by scripts; AI SHOULD also independently assess newsworthiness |
+| `scripts/data-transformers/content-generators/newsworthiness.ts` → `scoreNewsworthiness()` | ✅ ACTIVE (data utility) | Heuristic scoring retained for routing/experimentation/tests; AI MUST independently assess editorial significance |
 | `scripts/data-transformers/content-generators/shared.ts` → all `*Text()` templates | ⚠️ DEPRECATED | AI prompt: "Write editorial analysis from actual document data" |
 
 **These scripts may still be called for data downloading and HTML formatting functions**, but their analysis output (SWOT entries, risk scores, classifications, titles, descriptions, editorial judgments) MUST be treated as stubs that the AI agent MUST overwrite with real template-compliant analysis.
