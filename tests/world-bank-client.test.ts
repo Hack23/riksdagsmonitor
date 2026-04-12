@@ -418,6 +418,37 @@ describe('WorldBankClient', () => {
         expect(count, `Domain '${domain}' should have at least 1 indicator`).toBeGreaterThanOrEqual(1);
       }
     });
+
+    it('should stay in sync with JSON inventory (single source of truth)', () => {
+      // Drift detection: INDICATOR_IDS must match analysis/worldbank/indicators-inventory.json
+      const fs = require('node:fs');
+      const path = require('node:path');
+      const inventoryPath = path.resolve(__dirname, '../analysis/worldbank/indicators-inventory.json');
+      const inventory = JSON.parse(fs.readFileSync(inventoryPath, 'utf-8'));
+
+      // Collect all {key → id} pairs from the JSON inventory
+      const inventoryMap = new Map<string, string>();
+      for (const domainData of Object.values(inventory.domains) as Array<{ indicators: Array<{ key: string; id: string }> }>) {
+        for (const ind of domainData.indicators) {
+          inventoryMap.set(ind.key, ind.id);
+        }
+      }
+
+      // Every TS key/value must exist in JSON inventory
+      const tsEntries = Object.entries(INDICATOR_IDS) as [string, string][];
+      for (const [key, id] of tsEntries) {
+        expect(inventoryMap.has(key), `INDICATOR_IDS.${key} missing from JSON inventory`).toBe(true);
+        expect(inventoryMap.get(key), `INDICATOR_IDS.${key} ID mismatch vs JSON inventory`).toBe(id);
+      }
+
+      // Every JSON inventory entry must exist in TS
+      for (const [key, id] of inventoryMap.entries()) {
+        expect((INDICATOR_IDS as Record<string, string>)[key], `JSON inventory key '${key}' (${id}) missing from INDICATOR_IDS`).toBe(id);
+      }
+
+      // Count must match
+      expect(tsEntries.length).toBe(inventoryMap.size);
+    });
   });
 
   describe('WGI_INDICATOR_IDS', () => {
