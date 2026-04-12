@@ -109,7 +109,7 @@ Economic indicators are visualized using these canonical chart types:
 | **Health** | 14 | Health Exp., Physicians, Beds, Nurses, Suicide, Tobacco, Alcohol, Immunization | SoU | MCP + REST |
 | **Education** | 6 | Education Exp., Enrollment (primary/secondary/tertiary) | UbU | MCP + REST |
 | **Environment** | 10 | CO₂, Renewable Energy, Forest, PM2.5, Nuclear/Hydro Power | MJU | REST |
-| **Infrastructure** | 7 | Internet, Broadband, Mobile, Servers, Air Travel, Patents | TU | MCP + REST |
+| **Infrastructure** | 6 | Broadband, Mobile, Servers, Air Travel, Patents | TU | MCP + REST |
 | **Innovation** | 4 | R&D Expenditure, Researchers, Scientific Articles, ICT Exports | UbU | REST |
 | **Military** | 5 | Military Exp. (% GDP / USD / % Govt), Armed Forces, Labor Share | FöU | REST |
 | **Governance (WGI)** | 6 | Rule of Law, Voice, Effectiveness, Regulatory, Corruption, Stability | KU, JuU | REST source=75 |

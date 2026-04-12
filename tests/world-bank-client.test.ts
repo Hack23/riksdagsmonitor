@@ -398,15 +398,18 @@ describe('WorldBankClient', () => {
         trade: (id: string) => id.startsWith('NE.TRD') || id.startsWith('NE.EXP') || id.startsWith('NE.IMP') || id.startsWith('BN.') || id.startsWith('BX.') || id.startsWith('BM.') || id.startsWith('TX.') || id.startsWith('NE.RSB'),
         labor: (id: string) => id.startsWith('SL.'),
         inflation: (id: string) => id.startsWith('FP.'),
+        financial: (id: string) => id.startsWith('FS.') || id.startsWith('FR.'),
         demographics: (id: string) => id.startsWith('SP.') || id.startsWith('SM.') || id.startsWith('SH.DYN'),
         health: (id: string) => id.startsWith('SH.') && !id.startsWith('SH.DYN'),
         education: (id: string) => id.startsWith('SE.'),
-        environment: (id: string) => id.startsWith('EN.') || id.startsWith('EG.') || id.startsWith('AG.'),
+        environment: (id: string) => id.startsWith('EN.') || id.startsWith('AG.'),
+        infrastructure: (id: string) => id.startsWith('IT.') || id.startsWith('IS.') || id.startsWith('IP.PAT'),
+        innovation: (id: string) => id.startsWith('GB.') || id === 'BX.GSR.CCIS.ZS' || id.startsWith('IP.JRN'),
         military: (id: string) => id.startsWith('MS.'),
         governance: (id: string) => id.endsWith('.EST'),
         inequality: (id: string) => id.startsWith('SI.'),
         gender: (id: string) => id.startsWith('SG.'),
-        innovation: (id: string) => id.startsWith('GB.') || id.startsWith('IP.') || id.startsWith('IT.') || id === 'BX.GSR.CCIS.ZS',
+        energy: (id: string) => id.startsWith('EG.'),
       };
 
       const ids = Object.values(INDICATOR_IDS);

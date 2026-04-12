@@ -1,6 +1,6 @@
-# 📊 World Bank Indicators — Use Cases for Political Intelligence (v2.0)
+# 📊 World Bank Indicators — Use Cases for Political Intelligence (v3.0)
 
-> **Purpose**: Defines when and how 144 World Bank indicators should be used in Riksdagsmonitor article generation and analysis documents. Includes both Chart.js templates (for HTML articles) and Mermaid templates (for `.md` analysis files).
+> **Purpose**: Defines when and how 144 World Bank indicators should be used in Riksdagsmonitor article generation and analysis documents under the v3.0 World Bank protocol/inventory schema. Includes both Chart.js templates (for HTML articles) and Mermaid templates (for `.md` analysis files).
 
 ---
 
@@ -183,7 +183,7 @@
 3. **Fetch data** using World Bank MCP tools:
 
 ```
-# Economic indicators (9 available via MCP)
+# Economic indicators (8 available via MCP)
 get-economic-data(countryCode="SE", indicator="GDP_GROWTH", years=10)
 get-economic-data(countryCode="SE", indicator="UNEMPLOYMENT", years=10)
 get-economic-data(countryCode="SE", indicator="INFLATION", years=10)

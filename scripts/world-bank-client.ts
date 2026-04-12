@@ -89,8 +89,8 @@ export const COUNTRY_CODES = {
 /**
  * Comprehensive World Bank indicator IDs for Swedish political intelligence.
  *
- * Organised into 18 domains covering all Riksdag committee policy areas.
- * Total: ~193 verified indicators with Sweden annual time-series data.
+ * Organised into 17 domains covering all Riksdag committee policy areas.
+ * Total: 144 verified indicators with Sweden annual time-series data.
  *
  * Access methods:
  * - **MCP tools**: get-economic-data, get-social-data, get-education-data, get-health-data

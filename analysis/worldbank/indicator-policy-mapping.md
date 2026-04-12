@@ -1,7 +1,7 @@
-# 🏛️ World Bank Indicator → Swedish Political Entity Mapping (v2.0)
+# 🏛️ World Bank Indicator → Swedish Political Entity Mapping (v3.0)
 
 > **Purpose**: Maps all 144 World Bank indicators to Riksdag committees, policy areas, and article types for political intelligence enrichment.
-> **Source**: `scripts/world-bank-client.ts` (INDICATOR_IDS) + `scripts/world-bank-context.ts` (ECONOMIC_INDICATORS)
+> **Source**: Canonical inventory in `analysis/worldbank/indicators-inventory.json`; consumed by `scripts/world-bank-client.ts` (INDICATOR_IDS) and `scripts/world-bank-context.ts` (ECONOMIC_INDICATORS)
 
 ---
 
@@ -179,7 +179,7 @@ Covers health, demographics, welfare, and social protection.
 
 ---
 
-### KU — Konstitutionsutskottet (Constitution Committee) — 8 indicators
+### KU — Konstitutionsutskottet (Constitution Committee) — 7 indicators
 
 | Indicator | Code | Unit | Notes |
 |-----------|------|------|-------|
@@ -190,7 +190,6 @@ Covers health, demographics, welfare, and social protection.
 | **Corruption Control** | `CC.EST` | index | Anti-corruption [source=75] |
 | **Political Stability** | `PV.EST` | index | Governance stability [source=75] |
 | **Women in Parliament** | `SG.GEN.PARL.ZS` | % | Democratic representation |
-| **Voice & Accountability** | `VA.EST` | index | Constitutional freedoms [source=75] |
 
 **Chart**: Governance radar + Nordic governance comparison.
 
@@ -243,7 +242,7 @@ Covers health, demographics, welfare, and social protection.
 | Health | 14 | SoU | MCP + REST |
 | Education | 6 | UbU | MCP + REST |
 | Environment | 10 | MJU | REST |
-| Infrastructure | 7 | TU | MCP + REST |
+| Infrastructure | 6 | TU | MCP + REST |
 | Innovation | 4 | UbU | REST |
 | Military | 5 | FöU | REST |
 | Governance (WGI) | 6 | KU, JuU | REST source=75 |
@@ -254,5 +253,5 @@ Covers health, demographics, welfare, and social protection.
 
 ---
 
-**Last Updated**: 2026-04-11
-**Version**: 2.0
+**Last Updated**: 2026-04-12
+**Version**: 3.0

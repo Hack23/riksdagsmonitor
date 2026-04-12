@@ -131,9 +131,13 @@ function loadIndicatorsFromInventory(): readonly EconomicIndicatorContext[] {
       }
     }
     return indicators;
-  } catch {
-    // Graceful fallback: return empty array if JSON is unavailable (e.g. in tests with mocked FS)
-    // Tests that need indicators should mock this or use the JSON directly
+  } catch (err: unknown) {
+    // Log warning so broken paths / invalid JSON are visible in build output.
+    // Only silently degrade in test environments where the FS may be mocked.
+    if (process.env.NODE_ENV !== 'test') {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn(`[world-bank-context] Failed to load indicators inventory: ${msg}`);
+    }
     return [];
   }
 }
