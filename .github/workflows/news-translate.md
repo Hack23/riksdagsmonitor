@@ -150,8 +150,8 @@ steps:
           echo "gh error:"
           sed 's/^/  /' "$GH_ERROR_LOG"
         fi
-        echo "   Deferring translation to avoid potential merge conflicts."
-        echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
+        echo "   Today's date has open content PRs — agent will look for older articles to translate."
+        echo "TODAY_DEFERRED=true" >> "$GITHUB_ENV"
         exit 0
       fi
 
@@ -166,21 +166,20 @@ steps:
           sed 's/^/  /' "$JQ_ERROR_LOG"
         fi
         OPEN_CONTENT_PRS=0
-        echo "   Deferring translation to avoid potential merge conflicts."
-        echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
+        echo "   Parse error — agent will look for older articles to translate."
+        echo "TODAY_DEFERRED=true" >> "$GITHUB_ENV"
         exit 0
       fi
 
       if [ "$OPEN_CONTENT_PRS" -gt 0 ]; then
-        echo "⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — deferring translation"
-        echo "   Next scheduled run will retry once content workflow PRs are merged."
-        echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
+        echo "⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — today deferred"
+        echo "   Agent will look for older articles needing translation."
+        echo "TODAY_DEFERRED=true" >> "$GITHUB_ENV"
         exit 0
       fi
       echo "✅ No open content PRs for $ARTICLE_DATE — proceeding with translation"
 
   - name: Pre-flight source article check
-    if: env.SKIP_TRANSLATION != 'true'
     env:
       ARTICLE_DATE_INPUT: ${{ github.event.inputs.article_date }}
     run: |
@@ -190,19 +189,12 @@ steps:
       fi
       EN_SOURCE_COUNT=$(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null | wc -l)
       if [ "$EN_SOURCE_COUNT" -eq 0 ]; then
-        echo "⛔ No EN source articles found for $ARTICLE_DATE — aborting to avoid race condition"
-        echo "   Next scheduled run will retry once content workflow PR is merged."
-        echo "SKIP_TRANSLATION=true" >> "$GITHUB_ENV"
+        echo "⚠ No EN source articles found for $ARTICLE_DATE"
+        echo "   Agent will scan older dates for untranslated articles."
+        echo "TODAY_NO_SOURCES=true" >> "$GITHUB_ENV"
         exit 0
       fi
       echo "✅ Found $EN_SOURCE_COUNT EN source article(s) for $ARTICLE_DATE — proceeding with translation"
-
-  - name: Preflight gate
-    if: env.SKIP_TRANSLATION == 'true'
-    run: |
-      echo "::notice::Translation deferred by pre-flight checks — halting workflow to avoid unnecessary agent execution."
-      echo "The next scheduled run will retry automatically."
-      exit 1
 
 engine:
   id: copilot
@@ -215,9 +207,10 @@ You are the **Translation Agent** for Riksdagsmonitor. Your primary job is to tr
 
 You must also follow the shared **No Workflow Run Wasted** rule used by all agentic workflows in this repository: if translation work is blocked, exhausted, or completed early, use the remaining time to review and improve existing analysis artifacts related to the same article set. This means tightening clarity, consistency, structure, factual grounding, metadata quality, or cross-language alignment in already-existing analysis content, without inventing new coverage or changing EN/SV ownership rules.
 
-Apply this as a **time-gated fallback**:
-- **First priority**: find and complete pending translations for eligible non-core languages.
-- **If no pending translations are available**, or if translation finishes with meaningful time remaining before the safe-output deadline, spend the remaining time improving existing analysis artifacts for the same topic/article family.
+Apply this as a **cascading fallback** — you MUST always find work to do:
+- **First priority**: find and complete pending translations for today's date (unless today is deferred by pre-flight).
+- **Second priority**: if today is deferred/complete, scan the last 30 days for EN articles that are missing translations in any target language. Translate the most recent one found.
+- **Third priority**: if ALL articles from the last 30 days have 100% translations, improve existing translation quality — fix English leakage, improve phrasing, correct political terminology, ensure natural fluency.
 - **Do not let analysis-improvement work delay safe output creation**. If the run is approaching the deadline, stop additional edits and finalize a safe output immediately.
 
 When performing analysis-improvement work, keep changes tightly scoped and stage conservatively so the safe-outputs payload remains manageable:
@@ -251,12 +244,16 @@ npx tsx scripts/validate-file-ownership.ts translation
 
 ## 🔒 Content-PR Dependency Check
 
-The pre-flight init steps already check for open content PRs and source article availability. If either check fails, the workflow halts before reaching you. If you are running, EN source articles exist on disk.
+The pre-flight init steps check for open content PRs and source article availability. Instead of blocking the workflow, they set environment flags:
+- `TODAY_DEFERRED=true` — today's date has open content PRs or an error occurred; skip today but scan older dates
+- `TODAY_NO_SOURCES=true` — no EN source articles exist for today; scan older dates
+
+**You always run.** Use these flags to decide your starting point, then cascade through the fallback strategy below.
 
 Documentation of the check logic for traceability:
 ```bash
-# Pre-flight sets SKIP_TRANSLATION=true and OPEN_CONTENT_PRS count in $GITHUB_ENV
-# Preflight gate step exits 1 if SKIP_TRANSLATION == 'true'
+# Pre-flight sets TODAY_DEFERRED=true or TODAY_NO_SOURCES=true in $GITHUB_ENV
+# Agent ALWAYS runs and decides what to translate using cascading fallback
 ```
 
 ### Branch Naming Convention
@@ -322,7 +319,14 @@ Also reference `scripts/prompts/v2/stakeholder-perspectives.md` for stakeholder 
 
 ## 🎯 Step-by-Step Execution
 
-### Step 1: Determine Date and Discover Work
+### Step 1: Determine Date and Discover Work (Cascading Fallback)
+
+**🚨 CRITICAL RULE: You MUST always perform translations. Never return noop without exhausting all options.**
+
+The cascading fallback strategy is:
+1. **Today's articles** — translate missing languages for today (unless `TODAY_DEFERRED` or `TODAY_NO_SOURCES`)
+2. **Earlier articles** — scan last 30 days for EN articles missing translations
+3. **Improve existing** — if all translations are 100% complete, improve quality of existing translations
 
 ```bash
 echo "=== Translation Scope ==="
@@ -355,14 +359,20 @@ case "$LANGUAGES_INPUT" in
 esac
 echo "Target languages: $LANGS"
 
-# List EN source articles
-ls -1 news/$ARTICLE_DATE-*-en.html 2>/dev/null || echo "No EN sources found"
+# Check pre-flight flags
+echo "TODAY_DEFERRED=$TODAY_DEFERRED"
+echo "TODAY_NO_SOURCES=$TODAY_NO_SOURCES"
+
+# List EN source articles for today
+ls -1 news/$ARTICLE_DATE-*-en.html 2>/dev/null || echo "No EN sources found for today"
 echo "========================="
 ```
 
-If no EN source articles exist, call `safeoutputs___noop({"message": "No EN source articles for $ARTICLE_DATE. Content PR not merged yet."})` and stop.
+#### Phase 1: Check today's articles
 
-Scan for untranslated articles. For each EN article, check which target languages are missing:
+If `TODAY_DEFERRED` or `TODAY_NO_SOURCES` is set, skip directly to Phase 2.
+
+Otherwise, scan today's date for untranslated articles:
 
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
@@ -372,6 +382,7 @@ if [ -z "$ARTICLE_DATE" ]; then
 fi
 ARTICLE_TYPE="${{ github.event.inputs.article_type }}"
 
+FOUND_WORK=false
 find news -maxdepth 1 -name "$ARTICLE_DATE-*-en.html" -exec basename {} .html \; | sed "s/-en$//" | while read SLUG; do
   MISSING=""
   for lang in da no fi de fr es nl ar he ja ko zh; do
@@ -385,7 +396,46 @@ find news -maxdepth 1 -name "$ARTICLE_DATE-*-en.html" -exec basename {} .html \;
 done
 ```
 
-If all articles are fully translated, call `safeoutputs___noop({"message": "All articles fully translated."})` and stop.
+If today has untranslated articles, proceed to translate them (pick first 1 type alphabetically).
+
+#### Phase 2: Scan earlier dates for missing translations
+
+If today is deferred, has no sources, or all today's articles are fully translated, scan the last 30 days:
+
+```bash
+echo "=== Scanning earlier dates for missing translations ==="
+for i in $(seq 1 30); do
+  SCAN_DATE=$(date -u -d "$i days ago" +%Y-%m-%d 2>/dev/null || date -u -v-${i}d +%Y-%m-%d 2>/dev/null)
+  if [ -z "$SCAN_DATE" ]; then continue; fi
+  EN_FILES=$(ls news/$SCAN_DATE-*-en.html 2>/dev/null)
+  if [ -z "$EN_FILES" ]; then continue; fi
+  for EN_FILE in $EN_FILES; do
+    SLUG=$(basename "$EN_FILE" .html | sed "s/-en$//")
+    MISSING=""
+    for lang in da no fi de fr es nl ar he ja ko zh; do
+      test -f "news/$SLUG-$lang.html" || MISSING="$MISSING $lang"
+    done
+    if [ -n "$MISSING" ]; then
+      echo "EARLIER NEEDS TRANSLATION: $SLUG -> $MISSING"
+    fi
+  done
+done
+echo "=== End scan ==="
+```
+
+If earlier articles need translation, pick the most recent one and translate it.
+
+#### Phase 3: Improve existing translations
+
+If ALL articles from all dates are 100% translated (all 12 languages present for every EN source), then improve existing translation quality:
+
+1. Pick the most recent article that has all translations
+2. Read the EN source and one of the existing translations (e.g., `da`)
+3. Compare quality — check for: untranslated English phrases leaking through, awkward phrasing, missing political terminology, incomplete section translations
+4. Use the `edit` tool to improve the translations in-place
+5. Create a PR with the improvements
+
+**Never call `safeoutputs___noop` without first completing Phase 1, Phase 2, AND Phase 3.** Only noop if there are literally zero EN articles in the entire `news/` directory.
 
 If multiple article types need translation, pick only the **first 1** alphabetically.
 
@@ -563,19 +613,23 @@ npx tsx scripts/validate-news-translations.ts
 
 | Scenario | Fix |
 |----------|-----|
-| No EN source articles | Call `safeoutputs___noop` — content PR not merged yet |
-| All articles translated | Call `safeoutputs___noop` — no work needed |
+| No EN source articles for today | Scan last 30 days for earlier articles missing translations |
+| Today deferred (open content PRs) | Scan last 30 days for earlier articles missing translations |
+| All articles fully translated | Improve quality of existing translations (fix English leakage, improve phrasing) |
+| No EN articles in entire news/ dir | Call `safeoutputs___noop` — only valid reason to noop |
 | EN/SV files staged | `git checkout -- news/*-en.html news/*-sv.html` before commit |
 | Time running out | Commit partial translations + create PR. Partial > timeout |
 | HTMLHint errors | Fix with `edit` tool or run `npx tsx scripts/article-quality-enhancer.ts --fix` |
 
 ## 🎯 Execution Summary
 
-1. **Discover** — determine date, find EN sources, check what needs translation
+1. **Discover** — determine date, scan for work using cascading fallback (today → older dates → improve existing)
 2. **Read** — read the EN source article fully with `view` tool
-3. **Translate** — for each language: copy EN file, use `edit` to translate all content
+3. **Translate** — for each language: copy EN file, use `edit` tool to AI-translate all content (NEVER use scripts or dictionaries)
 4. **Validate** — run `validate-file-ownership.ts translation` + `validate-news-translations.ts`
 5. **PR** — stage, commit, `safeoutputs___create_pull_request`
+
+**NEVER call safeoutputs___noop without first checking: today's articles, earlier dates (last 30 days), and existing translation quality.**
 
 **Never exceed 45 minutes without calling a safe output.**
 

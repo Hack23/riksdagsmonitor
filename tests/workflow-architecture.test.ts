@@ -1543,18 +1543,17 @@ describe('Compiled lock workflow synchronization', () => {
     expect(content).toContain('--json headRefName');
   });
 
-  it('news-translate.lock.yml preflight gate should set SKIP_TRANSLATION flag and halt on defer', () => {
+  it('news-translate.lock.yml preflight should set TODAY_DEFERRED flag and let agent decide', () => {
     const filepath = path.join(WORKFLOWS_DIR, 'news-translate.lock.yml');
     expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
     const content = fs.readFileSync(filepath, 'utf-8');
-    // Preflight steps should set env flag instead of silently exiting 0
-    expect(content).toContain('SKIP_TRANSLATION=true');
+    // Preflight steps should set informational env flags instead of blocking workflow
+    expect(content).toContain('TODAY_DEFERRED=true');
     expect(content).toContain('GITHUB_ENV');
-    // Source article check should be guarded by the skip flag
-    expect(content).toContain("env.SKIP_TRANSLATION != 'true'");
-    // Gate step should halt the job when SKIP_TRANSLATION is set
-    expect(content).toContain('name: Preflight gate');
-    expect(content).toContain("env.SKIP_TRANSLATION == 'true'");
-    expect(content).toContain('exit 1');
+    // Source article check should set TODAY_NO_SOURCES instead of blocking
+    expect(content).toContain('TODAY_NO_SOURCES=true');
+    // No hard preflight gate that kills the workflow — agent always runs
+    expect(content).not.toContain('name: Preflight gate');
+    expect(content).not.toContain('SKIP_TRANSLATION=true');
   });
 });
