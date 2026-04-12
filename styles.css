@@ -596,14 +596,6 @@ html[data-theme="dark"] .martial-arts-term {
   border-bottom-color: #aaa;
 }
 
-html[data-theme="light"] .korean-emphasis {
-  color: var(--header-color, #006633);
-}
-
-html[data-theme="light"] .martial-arts-term {
-  border-bottom-color: var(--text-secondary, #4a4a4a);
-}
-
 /* Base styles - Premium Design */
 * {
   transition-property: color, background-color, border-color, box-shadow;
@@ -7609,39 +7601,40 @@ html[lang="zh"] {
   opacity: 0.9;
 }
 
+/* OS-level dark preference only applies when no explicit theme is set */
 @media (prefers-color-scheme: dark) {
-  .alert-banner.critical {
+  html:not([data-theme]) .alert-banner.critical {
     background: rgba(198, 40, 40, 0.2);
     color: #ef5350;
     border-color: #ef5350;
   }
-  
-  .alert-banner.high {
+
+  html:not([data-theme]) .alert-banner.high {
     background: rgba(230, 81, 0, 0.2);
     color: #ff9800;
     border-color: #ff9800;
   }
-  
-  .alert-banner.normal {
+
+  html:not([data-theme]) .alert-banner.normal {
     background: rgba(46, 125, 50, 0.2);
     color: #66bb6a;
     border-color: #66bb6a;
   }
 
-  .alert-banner.moderate {
+  html:not([data-theme]) .alert-banner.moderate {
     background: rgba(251, 192, 45, 0.2);
     color: #fbc02d;
     border-color: #fbc02d;
   }
 
-  .alert-banner.low {
+  html:not([data-theme]) .alert-banner.low {
     background: rgba(56, 142, 60, 0.2);
     color: #66bb6a;
     border-color: #388e3c;
   }
 }
 
-/* data-theme overrides for alert banners */
+/* Explicit dark theme overrides for alert banners */
 html[data-theme="dark"] .alert-banner.critical {
   background: rgba(198, 40, 40, 0.2);
   color: #ef5350;
@@ -7669,36 +7662,6 @@ html[data-theme="dark"] .alert-banner.moderate {
 html[data-theme="dark"] .alert-banner.low {
   background: rgba(56, 142, 60, 0.2);
   color: #66bb6a;
-  border-color: #388e3c;
-}
-
-html[data-theme="light"] .alert-banner.critical {
-  background: #ffebee;
-  color: #c62828;
-  border-color: #ef5350;
-}
-
-html[data-theme="light"] .alert-banner.high {
-  background: #fff3e0;
-  color: #e65100;
-  border-color: #ff9800;
-}
-
-html[data-theme="light"] .alert-banner.normal {
-  background: #e8f5e9;
-  color: #2e7d32;
-  border-color: #66bb6a;
-}
-
-html[data-theme="light"] .alert-banner.moderate {
-  background: rgba(251, 192, 45, 0.15);
-  color: #7a5c00;
-  border-color: #e6a817;
-}
-
-html[data-theme="light"] .alert-banner.low {
-  background: rgba(56, 142, 60, 0.15);
-  color: #1b5e20;
   border-color: #388e3c;
 }
 
@@ -8873,8 +8836,8 @@ button,
 .dismiss-alert {
   margin-left: auto;
   padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.25);
   color: inherit;
   border-radius: var(--border-radius-sm);
   cursor: pointer;
@@ -8884,8 +8847,18 @@ button,
 }
 
 .dismiss-alert:hover {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .dismiss-alert {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+html[data-theme="dark"] .dismiss-alert:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 .dismiss-alert:focus {
