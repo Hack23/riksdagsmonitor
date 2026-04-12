@@ -13,7 +13,7 @@
 
 ### Include When Relevant (policy-matched)
 - Match indicators to the article's policy domains (detected from proposition text, motion subject, committee assignment)
-- Use `findRelevantIndicators(policyArea)` from `scripts/world-bank-context.ts`
+- Use `view analysis/worldbank/indicators-inventory.json` to identify policy-matched indicators; if helper logic such as `findRelevantIndicators(policyArea)` is used, treat the JSON inventory as the authoritative source it is backed by
 - For labor topics: include youth unemployment, labor participation by gender
 - For defense topics: include NATO 2% trajectory and armed forces data
 - For governance topics: include all 6 WGI indicators (source=75)

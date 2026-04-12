@@ -132,13 +132,20 @@ function loadIndicatorsFromInventory(): readonly EconomicIndicatorContext[] {
     }
     return indicators;
   } catch (err: unknown) {
-    // Log warning so broken paths / invalid JSON are visible in build output.
-    // Only silently degrade in test environments where the FS may be mocked.
-    if (process.env.NODE_ENV !== 'test') {
-      const msg = err instanceof Error ? err.message : String(err);
-      console.warn(`[world-bank-context] Failed to load indicators inventory: ${msg}`);
+    const error =
+      err instanceof Error
+        ? err
+        : new Error(`[world-bank-context] Failed to load indicators inventory: ${String(err)}`);
+
+    // Tests may intentionally mock or omit the inventory file.
+    // Preserve the existing fallback there, but fail fast elsewhere so
+    // builds cannot silently generate incomplete economic content.
+    if (process.env.NODE_ENV === 'test') {
+      return [];
     }
-    return [];
+
+    console.error(`[world-bank-context] Failed to load indicators inventory: ${error.message}`);
+    throw error;
   }
 }
 
