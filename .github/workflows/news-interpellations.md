@@ -255,7 +255,7 @@ Every analysis MUST include an **Election 2026 Implications** section assessing:
 ### Phase 2 — Iterative Depth Enhancement (repeat per `analysis_depth`)
 For each AI iteration:
 1. **SWOT Analysis**: Generate multi-stakeholder SWOT with ALL 8 groups (Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion). Use structured evidence tables with columns: `#`, `Statement`, `Evidence (frs ID/dok_id)`, `Confidence`, `Impact`, `Entry Date`. Every entry MUST cite specific interpellation frs ID, minister name, and policy area.
-2. **Accountability Dashboard**: Provide chart data for ≥1 visualization (interpellations by minister or party — the script renders this as an interactive dashboard section)
+2. **Accountability Dashboard**: Include at least one chart-ready summary (interpellations by minister or party), formatted as a clear Markdown table or bullet list; do not assume automatic dashboard rendering unless a separate workflow step explicitly parses and renders it.
 3. **Quality Gate** (check before next iteration):
    - Verify ministerial accountability section names specific ministers and their policy areas
    - Verify no identical "Why It Matters" text across entries — each must reference the specific minister and policy context

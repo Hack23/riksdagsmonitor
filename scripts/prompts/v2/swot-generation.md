@@ -8,15 +8,17 @@
 
 **Always prefer pre-computed SWOT data** from `analysis/daily/YYYY-MM-DD/swot-analysis.md` over inline generation.
 
-> **Note**: The code below shows the **script-side** flow. AI agents do NOT call `generateSwotSection()` directly. Instead, AI agents write SWOT analysis content in markdown — the script reads the analysis and calls this HTML renderer function to produce the article section.
+> **Note**: The pseudocode below illustrates the **script-side** flow. AI agents do NOT call `generateSwotSection()` directly. Instead, AI agents write SWOT analysis content in markdown — the script reads the analysis and calls this HTML renderer function to produce the article section. `buildSwotFromDocs` is pseudocode representing the fallback path; the actual implementation is in `generators.ts`.
 
 ```typescript
+// Pseudocode — illustrative only; actual implementation is in generators.ts
 import { readDailyAnalysis } from '../../analysis-reader.js';
 import { generateSwotSection } from '../../data-transformers/content-generators/swot-section.js';
 
 const analysis = await readDailyAnalysis(today);
 
-const swotData = analysis.swot ?? buildSwotFromDocs(docs, lang);
+// analysis.swot is extracted from AI-written markdown analysis
+const swotData = analysis.swot ?? /* fallback: build from docs */ {};
 const swotHtml = generateSwotSection({ data: swotData, lang });
 ```
 

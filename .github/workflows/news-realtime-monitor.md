@@ -1045,7 +1045,7 @@ For breaking news, this workflow uses the `breaking` profile (from `scripts/edit
 ### Phase 2 — Depth Enhancement (per `analysis_depth`)
 When `analysis_depth` is `deep` or `comprehensive`:
 1. Add **Quick SWOT** paragraph for each major article
-2. Add **Activity Chart** — provide chart data for dashboard visualization (the script renders this as an interactive dashboard section)
+2. Add **Activity Summary** — include a concise trend summary as prose or a simple Markdown bullet list/table (for example, recent item counts by time period or source). Do not emit a standalone machine-readable chart payload here unless the workflow explicitly defines the schema and downstream consumption step.
 3. **Quality Gate**: word count ≥ 400, no identical why-it-matters, all Swedish text translated
 
 ### Phase 3 — Final Quality Gate Before PR

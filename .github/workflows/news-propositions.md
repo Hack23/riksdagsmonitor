@@ -232,9 +232,9 @@ Every analysis MUST include an **Election 2026 Implications** section assessing:
 
 ### Phase 2 — Iterative Depth Enhancement (repeat per `analysis_depth`)
 For each AI iteration:
-1. **SWOT Analysis**: Write SWOT analysis with ≥3 stakeholder perspectives (≥5 when `analysis_depth` is `deep` or `comprehensive`) — the script renders this as an interactive SWOT section
-2. **Policy Dashboard**: Provide chart data for ≥1 visualization (≥2 for `deep`/`comprehensive` — the script renders these as interactive dashboard sections)
-3. **Mindmap**: Define mindmap structure showing policy impact connections (only for `deep`/`comprehensive` — the script renders this as a CSS mindmap)
+1. **SWOT Analysis**: Write SWOT analysis with ≥3 stakeholder perspectives (≥5 when `analysis_depth` is `deep` or `comprehensive`) as publication-ready prose and bullet points
+2. **Policy Comparison Summary**: Provide a concise markdown table or bullet list with ≥1 comparative policy metric set (≥2 for `deep`/`comprehensive`) suitable for later manual visualization if needed; do not assume any automatic chart rendering
+3. **Impact Map**: For `deep`/`comprehensive`, describe policy impact connections as a nested markdown bullet list (mindmap-style) that can be published as text without requiring a renderer
 4. **Quality Gate** (check before next iteration):
    - Verify legislative timeline is included per proposition
    - Verify no identical "Why It Matters" text across entries

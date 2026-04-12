@@ -245,7 +245,7 @@ Every analysis MUST include an **Election 2026 Implications** section assessing:
 
 ### Phase 2 — Depth Enhancement (for `deep`/`comprehensive` depth)
 1. **Quick SWOT**: 1-paragraph SWOT overview of the day's political balance
-2. **Activity Dashboard**: Provide chart data for ≥1 visualization (today's activity breakdown by type/party — the script renders this as an interactive dashboard section)
+2. **Activity Dashboard**: Include a concise activity breakdown by type/party as a Markdown table or bullet list; do not assume an automatic dashboard rendering step unless a workflow-specific validated input format is defined.
 3. **Quality Gate**:
    - Verify article covers events from today's date (not yesterday or tomorrow)
    - Verify all Swedish API text is translated
