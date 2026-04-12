@@ -7,6 +7,9 @@
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import {
   WorldBankClient,
   getDefaultWorldBankClient,
@@ -421,8 +424,7 @@ describe('WorldBankClient', () => {
 
     it('should stay in sync with JSON inventory (single source of truth)', () => {
       // Drift detection: INDICATOR_IDS must match analysis/worldbank/indicators-inventory.json
-      const fs = require('node:fs');
-      const path = require('node:path');
+      const __dirname = path.dirname(fileURLToPath(import.meta.url));
       const inventoryPath = path.resolve(__dirname, '../analysis/worldbank/indicators-inventory.json');
       const inventory = JSON.parse(fs.readFileSync(inventoryPath, 'utf-8'));
 
