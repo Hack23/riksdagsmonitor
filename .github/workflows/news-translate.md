@@ -417,7 +417,7 @@ for i in $(seq 1 30); do
   else
     EN_GLOB="news/$SCAN_DATE-*-en.html"
   fi
-  EN_FILES=$(ls $EN_GLOB 2>/dev/null)
+  EN_FILES=$(ls $EN_GLOB 2>/dev/null || true)
   if [ -z "$EN_FILES" ]; then continue; fi
   for EN_FILE in $EN_FILES; do
     SLUG=$(basename "$EN_FILE" .html | sed "s/-en$//")
