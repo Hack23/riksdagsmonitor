@@ -261,3 +261,64 @@
   padding-right: 1rem;
   margin-right: 0;
 }
+
+/* ── Light mode: darken accent colours for WCAG AA contrast on white ────── */
+/* Some accent colours (yellow, gold, cyan) have < 4.5:1 contrast on white.
+   Override with darker equivalents that still look thematically correct.    */
+html[data-theme="light"] .news-article.article-type-week-ahead {
+  --type-accent: #006b8a;           /* darker cyan   */
+  --type-label:  #006b8a;
+}
+
+html[data-theme="light"] .news-article.article-type-interpellations {
+  --type-accent: #8a6600;           /* darker yellow  */
+  --type-label:  #8a6600;
+}
+
+html[data-theme="light"] .news-article.article-type-monthly-review {
+  --type-accent: #8a7000;           /* darker gold    */
+  --type-label:  #8a7000;
+}
+
+html[data-theme="light"] .news-article.article-type-weekly-review {
+  --type-accent: #00806d;           /* darker teal    */
+  --type-label:  #00806d;
+}
+
+html[data-theme="light"] .news-article.article-type-committee-reports {
+  --type-accent: #007a30;           /* darker green   */
+  --type-label:  #007a30;
+}
+
+html[data-theme="light"] .news-article.article-type-month-ahead {
+  --type-accent: #00728a;           /* darker teal    */
+  --type-label:  #00728a;
+}
+
+/* @media fallback for OS-level light preference (no data-theme attribute) */
+@media (prefers-color-scheme: light) {
+  .news-article.article-type-week-ahead {
+    --type-accent: #006b8a;
+    --type-label:  #006b8a;
+  }
+  .news-article.article-type-interpellations {
+    --type-accent: #8a6600;
+    --type-label:  #8a6600;
+  }
+  .news-article.article-type-monthly-review {
+    --type-accent: #8a7000;
+    --type-label:  #8a7000;
+  }
+  .news-article.article-type-weekly-review {
+    --type-accent: #00806d;
+    --type-label:  #00806d;
+  }
+  .news-article.article-type-committee-reports {
+    --type-accent: #007a30;
+    --type-label:  #007a30;
+  }
+  .news-article.article-type-month-ahead {
+    --type-accent: #00728a;
+    --type-label:  #00728a;
+  }
+}
