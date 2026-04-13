@@ -377,7 +377,7 @@ Before starting work, verify MCP connectivity:
 ```bash
 echo "🔍 MCP Gateway Diagnostics"
 echo "Direct MCP server:" && curl -sf --max-time 15 -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' "https://riksdag-regering-ai.onrender.com/mcp" 2>/dev/null | head -c 200 || echo "UNREACHABLE"
-echo "Gateway:" && source scripts/mcp-setup.sh 2>/dev/null && echo "MCP_SERVER_URL=$MCP_SERVER_URL" && curl -sf --max-time 10 "$MCP_SERVER_URL" 2>/dev/null | head -c 200 || echo "GATEWAY UNREACHABLE"
+echo "Gateway:" && source scripts/mcp-setup.sh 2>/dev/null && echo "MCP_SERVER_URL=$MCP_SERVER_URL" && curl -sf --max-time 10 -X POST -H "Content-Type: application/json" -H "Authorization: $MCP_AUTH_TOKEN" -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' "$MCP_SERVER_URL" 2>/dev/null | head -c 200 || echo "GATEWAY UNREACHABLE"
 echo "DNS:" && for d in riksdag-regering-ai.onrender.com api.scb.se data.riksdagen.se; do nslookup "$d" 2>/dev/null | tail -2; done
 ```
 3. After 5 failures → `safeoutputs___noop({"message": "MCP server unavailable after 5 attempts — Render.com cold start exceeded timeout — translation deferred to next scheduled run"})` — do NOT proceed

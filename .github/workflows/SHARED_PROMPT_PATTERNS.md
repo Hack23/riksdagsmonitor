@@ -1529,7 +1529,7 @@ echo ""
 echo "🔌 MCP Gateway test (via host.docker.internal):"
 source scripts/mcp-setup.sh 2>/dev/null
 echo "MCP_SERVER_URL=$MCP_SERVER_URL"
-curl -sf --max-time 10 "$MCP_SERVER_URL" 2>/dev/null | head -c 200 || echo "GATEWAY UNREACHABLE"
+curl -sf --max-time 10 -X POST -H "Content-Type: application/json" -H "Authorization: $MCP_AUTH_TOKEN" -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' "$MCP_SERVER_URL" 2>/dev/null | head -c 200 || echo "GATEWAY UNREACHABLE"
 
 # 3. DNS resolution from within sandbox
 echo ""
