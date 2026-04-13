@@ -272,9 +272,17 @@ fi
 
 ## MANDATORY MCP Health Gate
 
-1. Call `get_sync_status({})` — retry up to 3× (30s wait between each)
-2. After 3 failures → `safeoutputs___noop({"message": "MCP server unavailable after 3 attempts"})`
-3. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
+**Pre-warm the riksdag-regering MCP server** (Render.com cold starts can take 60–90s):
+```bash
+echo "🔥 Pre-warming riksdag-regering MCP server (Render.com cold start mitigation)..."
+curl -sf --max-time 15 "https://riksdag-regering-ai.onrender.com/mcp" -o /dev/null 2>/dev/null || echo "Pre-warm ping sent (server may be waking up)"
+sleep 10
+```
+
+1. Call `get_sync_status({})` — retry up to 5× (45s wait between each)
+2. If you get **"unknown tool"** or **"0 tools registered"** errors, this means the MCP server is still initializing after a Render.com cold start. **Keep retrying — do NOT noop early.**
+3. After 5 failures → `safeoutputs___noop({"message": "MCP server unavailable after 5 attempts — Render.com cold start exceeded timeout"})`
+4. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
 
 ## 🛡️ File Ownership Contract
 
@@ -296,7 +304,7 @@ Branch: `news/content/{YYYY-MM-DD}/{article-type}` (e.g. `news/content/2026-03-2
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 - ✅ `safeoutputs___create_pull_request` for articles or analysis-only PRs
-- ✅ `safeoutputs___noop` ONLY if MCP unreachable after 3 attempts AND no analysis artifacts exist
+- ✅ `safeoutputs___noop` ONLY if MCP unreachable after 5 attempts AND no analysis artifacts exist
 - ❌ NEVER noop because articles already exist — analysis always runs
 - ❌ Safe output tools are in your tool list — NEVER search for them via bash
 

@@ -280,11 +280,19 @@ Process only **1 article type** per run. If multiple types need translation, tak
 
 ## MANDATORY MCP Health Gate
 
+**Pre-warm the riksdag-regering MCP server** (Render.com cold starts can take 60–90s):
+```bash
+echo "🔥 Pre-warming riksdag-regering MCP server (Render.com cold start mitigation)..."
+curl -sf --max-time 15 "https://riksdag-regering-ai.onrender.com/mcp" -o /dev/null 2>/dev/null || echo "Pre-warm ping sent (server may be waking up)"
+sleep 10
+```
+
 Before starting work, verify MCP connectivity:
 
-1. Call `get_sync_status({})` — retry up to 3× (30s wait between each)
-2. After 3 failures → `safeoutputs___noop({"message": "MCP server unavailable after 3 attempts — translation deferred to next scheduled run"})` — do NOT proceed
-3. MCP is required for accurate political term translation and cross-referencing.
+1. Call `get_sync_status({})` — retry up to 5× (45s wait between each)
+2. If you get **"unknown tool"** or **"0 tools registered"** errors, this means the MCP server is still initializing after a Render.com cold start. **Keep retrying — do NOT noop early.**
+3. After 5 failures → `safeoutputs___noop({"message": "MCP server unavailable after 5 attempts — Render.com cold start exceeded timeout — translation deferred to next scheduled run"})` — do NOT proceed
+4. MCP is required for accurate political term translation and cross-referencing.
 
 ## 📅 Riksmöte (Parliamentary Session) Calculation
 
