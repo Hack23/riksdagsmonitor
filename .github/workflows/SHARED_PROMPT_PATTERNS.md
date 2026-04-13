@@ -1438,13 +1438,23 @@ npx tsx scripts/validate-cross-references.ts news/*-{type}-*.html
 
 ## MANDATORY MCP Health Gate (copy into every workflow)
 
-All workflows MUST verify MCP connectivity before proceeding with content or translation work:
+All workflows MUST verify MCP connectivity before proceeding with content or translation work.
 
-1. Call `get_sync_status({})` — retry up to 3× (30s wait between each)
-2. After 3 failures → `safeoutputs___noop({"message": "MCP server unavailable after 3 attempts"})` — do NOT proceed
-3. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
-4. **For translation workflows**: MCP is required for accurate political term translation and cross-referencing. Do NOT proceed without MCP.
-5. **NEVER let the workflow timeout** without calling a safe output. If MCP is down, noop immediately instead of wasting 60 minutes.
+**Pre-warm the riksdag-regering MCP server** (Render.com cold starts can take 60–90s):
+```bash
+echo "🔥 Pre-warming riksdag-regering MCP server (Render.com cold start mitigation)..."
+curl -sf --max-time 15 "https://riksdag-regering-ai.onrender.com/mcp" -o /dev/null 2>/dev/null || echo "Pre-warm ping sent (server may be waking up)"
+sleep 10
+```
+
+Then call the health gate:
+
+1. Call `get_sync_status({})` — retry up to 5× (45s wait between each)
+2. If you get **"unknown tool"** or **"0 tools registered"** errors, this means the MCP server is still initializing after a Render.com cold start. **Keep retrying — do NOT noop early.**
+3. After 5 failures → `safeoutputs___noop({"message": "MCP server unavailable after 5 attempts — Render.com cold start exceeded timeout"})` — do NOT proceed
+4. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
+5. **For translation workflows**: MCP is required for accurate political term translation and cross-referencing. Do NOT proceed without MCP.
+6. **NEVER let the workflow timeout** without calling a safe output. If MCP is down, noop after the 5 retries instead of wasting 60 minutes.
 
 ## Standardised PR Description Template (copy into every workflow)
 

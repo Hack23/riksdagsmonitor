@@ -343,13 +343,21 @@ echo "============================"
 - Before September: `rm = "{previousYear}/{currentYear's last 2 digits}"`
 - Example: February 2026 → `rm = "2025/26"`
 
-### MCP Health Gate
+### MANDATORY MCP Health Gate
+
+**Pre-warm the riksdag-regering MCP server** (Render.com cold starts can take 60–90s):
+```bash
+echo "🔥 Pre-warming riksdag-regering MCP server (Render.com cold start mitigation)..."
+curl -sf --max-time 15 "https://riksdag-regering-ai.onrender.com/mcp" -o /dev/null 2>/dev/null || echo "Pre-warm ping sent (server may be waking up)"
+sleep 10
+```
 
 STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm up MCP and check stale data.
 
 1. Call `get_sync_status({})` — if successful, proceed
-2. If it fails, wait 30 seconds and retry (up to 3 total attempts)
-3. If ALL 3 attempts fail → `safeoutputs___noop` with "MCP server unavailable after 3 connection attempts."
+2. If you get **"unknown tool"** or **"0 tools registered"** errors, this means the MCP server is still initializing after a Render.com cold start. Wait 45s and retry.
+3. Retry up to 5 total attempts (45s wait between each)
+4. If ALL 5 attempts fail → `safeoutputs___noop` with "MCP server unavailable after 5 connection attempts — Render.com cold start exceeded timeout."
 
 **ALL article content MUST originate from live MCP data.** Never fabricate, recycle, or generate from cached data.
 

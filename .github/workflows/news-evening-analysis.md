@@ -294,9 +294,16 @@ fi
 
 > **🚨 NEVER call `safeoutputs___noop` because articles already exist.** If articles exist, the workflow MUST still run the full 15-20 minute deep political analysis phase and commit analysis artifacts. The dedup check only controls whether NEW HTML articles are generated — analysis is the primary output and always runs. If analysis produces artifacts, use `safeoutputs___create_pull_request` with `analysis-only` label.
 
-### MCP Health Gate
+### MANDATORY MCP Health Gate
 
-STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm up MCP and check stale data. Retry up to 3× (30s wait). After 3 failures → `safeoutputs___noop({"message": "MCP unavailable"})`. All content MUST come from live MCP data.
+**Pre-warm the riksdag-regering MCP server** (Render.com cold starts can take 60–90s):
+```bash
+echo "🔥 Pre-warming riksdag-regering MCP server (Render.com cold start mitigation)..."
+curl -sf --max-time 15 "https://riksdag-regering-ai.onrender.com/mcp" -o /dev/null 2>/dev/null || echo "Pre-warm ping sent (server may be waking up)"
+sleep 10
+```
+
+STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm up MCP and check stale data. If you get **"unknown tool"** or **"0 tools registered"** errors, this means the MCP server is still initializing after a Render.com cold start — wait 45s and retry. Retry up to 5× (45s wait between each). After 5 failures → `safeoutputs___noop({"message": "MCP server unavailable after 5 attempts — Render.com cold start exceeded timeout"})`. All content MUST come from live MCP data.
 
 ### DATA FRESHNESS CHECK
 
@@ -1075,7 +1082,7 @@ Branch: `news/content/{YYYY-MM-DD}/evening-analysis`. `safeoutputs___create_pull
 > `safeoutputs___create_pull_request` handles branch creation, push, and PR opening — do NOT run `git push` or `git checkout -b` manually. Stage files, then call the tool directly.
 
 - ✅ `safeoutputs___create_pull_request` for articles or analysis-only PRs (`analysis-only` + `evening-analysis` labels)
-- ✅ `safeoutputs___noop` ONLY if MCP unreachable after 3 attempts AND no analysis artifacts exist
+- ✅ `safeoutputs___noop` ONLY if MCP unreachable after 5 attempts AND no analysis artifacts exist
 - ❌ NEVER noop because articles already exist — analysis always runs
 - ❌ Safe output tools are in your tool list — NEVER search for them via bash
 
