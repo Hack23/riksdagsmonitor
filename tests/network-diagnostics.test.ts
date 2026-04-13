@@ -247,12 +247,12 @@ describe('Network Diagnostics Configuration', () => {
       });
     });
 
-    it('network.allowed should include "default" for gh-aw built-in domains', () => {
+    it('network.allowed should include "defaults" for gh-aw built-in domains', () => {
       workflowDomains.forEach((domains, workflow) => {
         expect(
           domains,
-          `${workflow} missing "default" in network.allowed`
-        ).toContain('default');
+          `${workflow} missing "defaults" in network.allowed`
+        ).toContain('defaults');
       });
     });
 
@@ -426,16 +426,16 @@ describe('Network Diagnostics Configuration', () => {
 
   describe('In-Prompt MCP Gateway Diagnostics (runs after MCP Gateway)', () => {
     ALL_NEWS_WORKFLOWS.forEach(workflow => {
-      it(`${workflow} should have in-prompt gateway diagnostics bash block`, () => {
+      it(`${workflow} should have in-prompt MCP quick diagnostic block`, () => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
         const content = fs.readFileSync(filepath, 'utf-8');
 
-        // The agent prompt (after ---) must include gateway diagnostics
-        // that run AFTER the MCP Gateway is started (unlike pre-flight checks)
+        // The agent prompt (after ---) must include MCP diagnostic
+        // that runs AFTER the MCP Gateway is started (unlike pre-flight checks)
         expect(
           content,
-          `${workflow} missing in-prompt "MCP Gateway Diagnostics" block`
-        ).toContain('MCP Gateway Diagnostics');
+          `${workflow} missing in-prompt "MCP Quick Diagnostic" block`
+        ).toContain('MCP Quick Diagnostic');
       });
 
       it(`${workflow} should test both direct and gateway MCP in prompt`, () => {
@@ -448,11 +448,11 @@ describe('Network Diagnostics Configuration', () => {
           `${workflow} missing direct MCP server check in prompt`
         ).toContain('Direct MCP server');
 
-        // Must test gateway routing (host.docker.internal or MCP_SERVER_URL)
+        // Must test gateway routing with UNREACHABLE fallback
         expect(
           content,
           `${workflow} missing gateway routing check in prompt`
-        ).toContain('GATEWAY UNREACHABLE');
+        ).toContain('UNREACHABLE');
       });
     });
   });
@@ -506,7 +506,7 @@ describe('Network Diagnostics Configuration', () => {
         expect(
           body,
           `${workflow} missing gateway diagnostics in prompt body`
-        ).toContain('MCP Gateway Diagnostics');
+        ).toContain('MCP Quick Diagnostic');
       });
     });
   });
