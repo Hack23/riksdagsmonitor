@@ -57,7 +57,7 @@ export interface SCBDomainConfig {
 // Constants
 // ---------------------------------------------------------------------------
 
-const DEFAULT_SERVER_URL = 'https://scb-mcp.onrender.com/mcp';
+const DEFAULT_SERVER_URL = process.env['SCB_MCP_SERVER_URL'] ?? 'https://scb-mcp.onrender.com/mcp';
 const DEFAULT_TIMEOUT = 15_000;
 const DEFAULT_MAX_RETRIES = 2;
 

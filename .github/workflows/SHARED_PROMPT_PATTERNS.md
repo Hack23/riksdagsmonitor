@@ -1532,6 +1532,8 @@ TypeScript scripts (e.g., `generate-news-enhanced.ts`) access the riksdag-regeri
 ```bash
 source scripts/mcp-setup.sh
 # Sets: MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering
+# Sets: SCB_MCP_SERVER_URL=http://host.docker.internal:80/mcp/scb
+# Sets: WORLD_BANK_MCP_SERVER_URL=http://host.docker.internal:80/mcp/world-bank
 # Sets: MCP_AUTH_TOKEN=<gateway API key extracted from mcp-config.json>
 # Sets: MCP_CLIENT_TIMEOUT_MS=90000
 
@@ -1539,9 +1541,12 @@ npx tsx scripts/generate-news-enhanced.ts --types=propositions --languages="en,s
 ```
 
 The `mcp-setup.sh` script:
-1. Routes through the MCP gateway at `http://host.docker.internal:80/mcp/riksdag-regering`
+1. Routes through the MCP gateway at `http://host.docker.internal:80/mcp/<server-name>`
 2. Extracts the gateway API key from `/home/runner/.copilot/mcp-config.json`
 3. Sets a 90-second timeout for cold-start tolerance
+4. Configures gateway URLs for all three MCP data servers (riksdag, SCB, World Bank)
+
+> **IMPORTANT**: Tool names are always bare (e.g., `get_motioner`, not `riksdag-regering--get_motioner`). The gateway routes by URL path, not by tool name prefix.
 
 > **The AI agent does NOT need to run `mcp-setup.sh`** — tool calls go through the gateway automatically. `mcp-setup.sh` is only for TypeScript scripts that make HTTP requests to the MCP server.
 
@@ -1558,7 +1563,7 @@ The `mcp-setup.sh` script:
 ### Error Handling by Server
 
 **riksdag-regering errors:**
-- `"unknown tool"` → Server cold-starting, tools not registered yet → retry
+- `"unknown tool"` → Server cold-starting (tools not registered yet), OR wrong tool name → verify bare tool names (no prefix), retry
 - `"connection timeout"` → Server sleeping on Render.com → wait 30s, retry
 - `"0 tools registered"` → Server HTTP is up but MCP not initialized → retry with POST
 

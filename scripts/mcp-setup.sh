@@ -7,7 +7,8 @@
 #   source scripts/mcp-setup.sh
 #   npx tsx scripts/generate-news-enhanced.ts --types=committee-reports ...
 #
-# Sets: MCP_SERVER_URL, MCP_AUTH_TOKEN, MCP_CLIENT_TIMEOUT_MS
+# Sets: MCP_SERVER_URL, MCP_AUTH_TOKEN, MCP_CLIENT_TIMEOUT_MS,
+#       SCB_MCP_SERVER_URL, WORLD_BANK_MCP_SERVER_URL
 #
 # Token extraction priority:
 #   1. gateway.apiKey (legacy)
@@ -18,6 +19,10 @@
 
 # Route through MCP gateway (direct HTTPS fails in AWF sandbox)
 export MCP_SERVER_URL="http://host.docker.internal:80/mcp/riksdag-regering"
+
+# SCB and World Bank MCP servers also available through gateway
+export SCB_MCP_SERVER_URL="http://host.docker.internal:80/mcp/scb"
+export WORLD_BANK_MCP_SERVER_URL="http://host.docker.internal:80/mcp/world-bank"
 
 # Extract auth token using node (repo runtime — no python3 dependency)
 _MCP_CONFIG_PATH="${GH_AW_MCP_CONFIG:-/home/runner/.copilot/mcp-config.json}"
