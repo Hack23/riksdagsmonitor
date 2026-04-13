@@ -1,47 +1,89 @@
-# Political Risk Assessment — Interpellations 2026-04-13
+# Political Risk Assessment — 2026-04-13
 
-| Field | Value |
-|-------|-------|
-| **ID** | RISK-IP-2026-04-13-001 |
-| **Date** | 2026-04-13 |
-| **Riksmöte** | 2025/26 |
-| **Documents Analyzed** | 2 |
-| **Overall Risk Level** | MEDIUM |
-| **Generated** | 2026-04-13 07:20 UTC |
+**Generated**: 2026-04-13 22:02 UTC
+**Data Sources**: get_interpellationer, get_dokument_innehall
+**Documents Analyzed**: 2 (frs 2025/26:429, frs 2025/26:430)
+**Confidence**: HIGH (80%)
+**Produced By**: news-interpellations AI workflow (deep analysis)
 
-## Risk Dashboard
+---
+
+## Summary
+
+Risk assessment of two SD interpellations targeting government ministers on constitutional rights (demonstration freedom) and social cohesion (hate speech from religious institutions). Primary risks center on erosion of fundamental rights through overly broad legislation and policy failure on religious institution oversight.
+
+## Risk Matrix Visualization
 
 ```mermaid
-graph TD
-    subgraph "⚖️ Political Risk Matrix — 2026-04-13"
-        R1["RSK-001: Heckler's veto<br/>institutionalisation<br/>L:3 × I:5 = 15<br/>🔴 HIGH"]
-        R2["RSK-002: Police discretion<br/>overreach on Prop 133<br/>L:3 × I:4 = 12<br/>🟠 MEDIUM-HIGH"]
-        R3["RSK-003: Constitutional<br/>norm erosion<br/>L:2 × I:5 = 10<br/>🟡 MEDIUM"]
-        R4["RSK-004: Coalition strain<br/>SD vs M/KD ministers<br/>L:3 × I:3 = 9<br/>🟡 MEDIUM"]
-    end
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#ffc107,color:#000
+quadrantChart
+    title Political Risk Matrix — Interpellations 2026-04-13
+    x-axis "Low Likelihood" --> "High Likelihood"
+    y-axis "Low Impact" --> "High Impact"
+    quadrant-1 "Monitor"
+    quadrant-2 "Critical Risks"
+    quadrant-3 "Low Priority"
+    quadrant-4 "Mitigate"
+    "Hooligan's veto normalization": [0.60, 0.90]
+    "Police discretion overreach": [0.75, 0.80]
+    "Coalition fracture SD-M": [0.40, 0.75]
+    "Anti-Muslim backlash": [0.55, 0.70]
+    "Anti-Semitism escalation": [0.45, 0.85]
+    "International rep. damage": [0.50, 0.55]
 ```
 
-## 5×5 Risk Matrix
+## Detailed Risk Analysis
 
-| Risk ID | Description | Likelihood (1-5) | Impact (1-5) | L×I Score | Level | Evidence |
-|---------|-------------|:-----------------:|:-------------:|:---------:|:-----:|----------|
-| RSK-001 | Heckler's veto institutionalisation via Prop 133 | 3 | 5 | **15** | 🔴 HIGH | HD10429: "hot om våld blir ett effektivt verktyg för att stoppa vissa åsikter" |
-| RSK-002 | Police discretion overreach on public assembly permits | 3 | 4 | **12** | 🟠 MEDIUM-HIGH | HD10429: broad language "säkerheten för människors liv eller hälsa" |
-| RSK-003 | Constitutional norm erosion — gradual restriction of demonstration rights | 2 | 5 | **10** | 🟡 MEDIUM | HD10429: "förskjutningar som över tid riskerar att bli norm" |
-| RSK-004 | Coalition strain — SD publicly challenges M and KD ministers | 3 | 3 | **9** | 🟡 MEDIUM | HD10429 targets Strömmer (M), HD10430 targets Forssmed (KD) |
+### Risk 1: Legislative Creep on Demonstration Rights
+- **Source**: frs 2025/26:429 (HD10429) — Proposition 2025/26:133
+- **Description**: Broad "security" formulation enables police to relocate or cancel demonstrations without clear judicial oversight
+- **Likelihood**: 4/5 — Police operational culture favors security over expression
+- **Impact**: 4/5 — Fundamental constitutional right at stake
+- **L×I Score**: **16** 🔴 CRITICAL
+- **Indicators**: First police decision to relocate a controversial demonstration post-enactment
+- **Mitigation**: Judicial review requirement; explicit legislative safeguards; KU oversight
 
-## Risk Interconnections
+### Risk 2: "Hooligan's Veto" Normalization
+- **Source**: frs 2025/26:429 (HD10429) — "våldsverkarnas veto" concept
+- **Description**: Threat of violence becomes effective tool for suppressing unpopular expression
+- **Likelihood**: 3/5 — Already observed in Quran burning context
+- **Impact**: 5/5 — Destroys democratic discourse foundation
+- **L×I Score**: **15** 🔴 CRITICAL
+- **Indicators**: Denied demonstration permits citing security post-legislation; international pressure leading to cancellations
+- **Mitigation**: Minister's explicit commitment to not allowing threats to determine policy
 
-RSK-001 and RSK-002 are causally linked: if police gain broad discretion to deny permits (RSK-002), the heckler's veto mechanism (RSK-001) becomes operationalised. RSK-003 represents the long-term systemic consequence. RSK-004 is the political trigger — SD's interpellations are the mechanism exposing these risks publicly.
+### Risk 3: Hate Speech from Religious Institutions Continues
+- **Source**: frs 2025/26:430 (HD10430) — Kristianstad mosque imams
+- **Description**: Second mosque in same city exposed within months; pattern suggests systemic oversight failure
+- **Likelihood**: 3/5 — Limited oversight mechanisms currently in place
+- **Impact**: 4/5 — Social cohesion and community safety
+- **L×I Score**: **12** 🟡 HIGH
+- **Indicators**: Further Expressen or media exposés; escalation of anti-Jewish incidents
+- **Mitigation**: Strengthened oversight of religious institution funding; training requirements for religious leaders
 
-## Mitigation Factors
+### Risk 4: Coalition Fracture Between SD and Government
+- **Source**: Both interpellations — SD challenging M and KD ministers simultaneously
+- **Description**: Coordinated SD challenge to coalition partners signals growing friction before Election 2026
+- **Likelihood**: 2/5 — SD maintains strategic interest in coalition stability
+- **Impact**: 4/5 — Government collapse would trigger early election dynamics
+- **L×I Score**: **8** 🟡 MODERATE
+- **Indicators**: SD filing additional interpellations on same themes; SD threatening to withdraw support on specific votes
+- **Mitigation**: Ministers provide satisfactory responses by April 24 deadline
 
-| Factor | Risk Mitigated | Assessment |
-|--------|---------------|------------|
-| Minister Strömmer's response (due April 27) may provide constitutional guarantees | RSK-001, RSK-002, RSK-003 | Potential if response is substantive **[MEDIUM confidence]** |
-| Existing constitutional safeguards (Regeringsformen 2:1) | RSK-001, RSK-003 | Strong institutional framework **[HIGH confidence]** |
-| Media scrutiny of minister responses | RSK-004 | Transparency ensures accountability **[HIGH confidence]** |
+## Coalition Stability Assessment
+
+**Coalition Risk Score**: 18/100 (LOW-MODERATE)
+- Baseline stability: Strong (government majority intact)
+- Interpellation pressure: Moderate (support party challenging but not threatening withdrawal)
+- Election proximity: Elevating all political dynamics
+- SD strategy: Calibrated criticism, not destabilization
+
+## Key Findings
+
+1. Two 🔴 CRITICAL risks identified: legislative creep on demonstration rights and hooligan's veto normalization
+2. Two 🟡 HIGH/MODERATE risks: religious institution oversight failure and coalition friction
+3. Coalition stability remains intact but under increased monitoring pressure
+4. All risks have forward indicators that can be tracked through minister responses (deadline: April 24)
+
+## Implications
+
+The primary risk is not immediate coalition collapse but gradual erosion of fundamental democratic rights through well-intentioned but poorly constrained legislation. Minister responses due April 24 will be the key risk mitigation event.

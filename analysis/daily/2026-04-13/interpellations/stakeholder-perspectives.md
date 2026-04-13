@@ -1,60 +1,104 @@
-# Stakeholder Perspectives — Interpellations 2026-04-13
+# Stakeholder Perspective Analysis — 2026-04-13
 
-| Field | Value |
-|-------|-------|
-| **ID** | STKH-IP-2026-04-13-001 |
-| **Date** | 2026-04-13 |
-| **Riksmöte** | 2025/26 |
-| **Documents Analyzed** | 2 |
-| **Overall Confidence** | MEDIUM |
-| **Generated** | 2026-04-13 07:20 UTC |
+**Generated**: 2026-04-13 22:02 UTC
+**Data Sources**: get_interpellationer, get_dokument_innehall
+**Documents Analyzed**: 2 (frs 2025/26:429, frs 2025/26:430)
+**Confidence**: HIGH (80%)
+**Produced By**: news-interpellations AI workflow (deep analysis)
 
-## Stakeholder Impact Matrix
+---
+
+## Summary
+
+Applied **8 stakeholder lenses** to 2 interpellations analyzing coordinated SD accountability campaign targeting government ministers on freedom of expression and hate speech.
+
+## Stakeholder Impact Map
 
 ```mermaid
-graph TD
-    subgraph "👥 Stakeholder Impact — 2026-04-13"
-        S1["Citizens<br/>Impact: HIGH<br/>Fundamental rights debate"]
-        S2["Government Coalition<br/>Impact: HIGH<br/>Internal SD pressure"]
-        S3["Opposition Bloc<br/>Impact: MEDIUM<br/>Opportunity from friction"]
-        S4["Business/Industry<br/>Impact: LOW<br/>Regulatory clarity"]
-        S5["Civil Society<br/>Impact: HIGH<br/>Rights mobilisation"]
-        S6["International/EU<br/>Impact: MEDIUM<br/>Reputation risk"]
-        S7["Judiciary<br/>Impact: HIGH<br/>Constitutional test"]
-        S8["Media<br/>Impact: MEDIUM<br/>Accountability stories"]
-    end
-    style S1 fill:#dc3545,color:#fff
-    style S2 fill:#dc3545,color:#fff
-    style S3 fill:#ffc107,color:#000
-    style S4 fill:#28a745,color:#fff
-    style S5 fill:#dc3545,color:#fff
-    style S6 fill:#ffc107,color:#000
-    style S7 fill:#dc3545,color:#fff
-    style S8 fill:#ffc107,color:#000
+mindmap
+  root((Interpellations<br/>2026-04-13))
+    Citizens
+      Demonstration rights
+      Jewish community safety
+      Democratic participation
+    Government Coalition
+      SD internal challenge to M and KD
+      Minister accountability pressure
+      Coalition management strain
+    Opposition Bloc
+      Exploit intra-coalition tensions
+      Free speech defense opportunity
+      Integration policy critique
+    Business/Industry
+      Regulatory clarity benefits
+      International reputation stakes
+    Civil Society
+      Rights organizations affected
+      Religious community tensions
+      Anti-racism advocacy activated
+    International/EU
+      ECHR compliance questions
+      IHRA commitment relevance
+      Authoritarian state influence
+    Judiciary/Constitutional
+      Police discretion vs judicial oversight
+      Hate speech prosecution threshold
+      Constitutional proportionality
+    Media/Public Opinion
+      Expressen investigations driving agenda
+      Quran burning debate ongoing
+      Election 2026 amplification
 ```
 
-## Detailed Stakeholder Analysis
+## Detailed Perspective Analysis
 
-### Citizens — Impact: HIGH
-Both interpellations directly affect citizen rights. frs 2025/26:429 addresses whether demonstration rights may be curtailed under Prop 133, affecting every citizen's ability to participate in public protest. frs 2025/26:430 addresses hate speech affecting religious communities in Kristianstad. **[HIGH confidence]**
+### 1. Citizens
+- **Primary concern**: Right to peaceful demonstration at meaningful locations (frs 2025/26:429); safety from hate speech targeting (frs 2025/26:430)
+- **Impact level**: HIGH — Constitutional rights directly affected
+- **Key evidence**: HD10429 raises "våldsverkarnas veto" — citizens lose rights when threats override democratic participation
 
-### Government Coalition — Impact: HIGH
-Unusually, both interpellations come from SD, the government's informal support party, targeting M and KD ministers. This signals internal coalition tension and puts ministers Strömmer and Forssmed on the spot to defend government policy while maintaining SD cooperation. **[HIGH confidence]**
+### 2. Government Coalition (M, KD, L + SD support)
+- **Primary concern**: Managing internal SD criticism while maintaining coalition stability
+- **Impact level**: HIGH — Two ministers personally targeted by support party
+- **Key evidence**: Strömmer (M) and Forssmed (KD) both face April 24 response deadlines on sensitive constitutional/social issues
 
-### Opposition Bloc — Impact: MEDIUM
-Opposition parties (S, V, MP, C) can use SD-coalition friction to highlight government dysfunction. However, frs 2025/26:429's freedom of expression argument creates an awkward dynamic where opposition may align with SD on civil liberties. **[MEDIUM confidence]**
+### 3. Opposition Bloc (S, V, MP, C)
+- **Primary concern**: Leveraging visible coalition friction for electoral advantage
+- **Impact level**: MEDIUM — Opportunity to appear as stronger defenders of fundamental rights
+- **Key evidence**: SD challenging its own coalition opens space for opposition to differentiate
 
-### Business/Industry — Impact: LOW
-Limited direct impact. Regulatory clarity on public assemblies from Prop 133 may benefit event and security industries marginally. **[LOW confidence]**
+### 4. Business/Industry
+- **Primary concern**: Regulatory predictability and Sweden's international reputation as open society
+- **Impact level**: LOW — Indirect effects through investment climate perceptions
+- **Key evidence**: Sweden's free speech tradition is an economic soft power asset
 
-### Civil Society — Impact: HIGH
-Civil liberties organisations face critical moment: frs 2025/26:429 raises fundamental rights questions that could galvanise advocacy. Muslim community organisations face stigmatisation risk from HD10430's framing. **[HIGH confidence]**
+### 5. Civil Society
+- **Primary concern**: Rights organizations face chilling effect from demonstration restrictions; religious communities face collective accountability
+- **Impact level**: HIGH — NGOs, Jewish organizations, Muslim community groups all directly affected
+- **Key evidence**: HD10430 documents specific hate speech targeting children's attitudes toward Jews
 
-### International/EU — Impact: MEDIUM
-Sweden's international reputation as freedom of expression champion is at stake if Prop 133 is perceived as restricting demonstration rights. HD10429 explicitly references pressure from "authoritarian states" post-Quran-burnings. **[MEDIUM confidence]**
+### 6. International/EU
+- **Primary concern**: Sweden's compliance with ECHR Article 11 (assembly) and IHRA definition of anti-Semitism
+- **Impact level**: MEDIUM — International monitoring of Swedish democratic standards
+- **Key evidence**: HD10429 explicitly mentions "påtryckningar från auktoritära stater" influencing domestic policy
 
-### Judiciary/Constitutional — Impact: HIGH
-frs 2025/26:429 raises specific constitutional questions about Regeringsformen 2:1 and the breadth of Prop 133's language. Judicial interpretation challenges likely if law is enacted. **[HIGH confidence]**
+### 7. Judiciary/Constitutional
+- **Primary concern**: Proportionality of police powers under proposition 2025/26:133; prosecution thresholds for hate speech
+- **Impact level**: HIGH — Fundamental separation of powers questions
+- **Key evidence**: HD10429 questions whether police discretion replaces judicial oversight on fundamental rights
 
-### Media/Public Opinion — Impact: MEDIUM
-Tangible accountability stories: minister responses to specific questions with deadlines (April 24, April 27) create follow-up coverage opportunities. Risk of oversimplification in coverage. **[MEDIUM confidence]**
+### 8. Media/Public Opinion
+- **Primary concern**: Continuing investigative accountability (Expressen); balanced reporting on polarizing issues
+- **Impact level**: HIGH — Media driving agenda through investigations; election 2026 amplifies coverage
+- **Key evidence**: HD10430 triggered entirely by Expressen investigation; public opinion divided on free speech boundaries
+
+## Key Findings
+
+1. **Citizens and judiciary most critically impacted** — both face direct constitutional rights implications
+2. **Government coalition uniquely pressured** — SD challenging from within, rare accountability dynamic
+3. **Civil society faces dual pressure** — rights restrictions AND hate speech exposures affect different community organizations
+4. **Media plays driving role** — Expressen investigations are the primary trigger for HD10430
+
+## Implications
+
+All 8 stakeholder groups are meaningfully affected — these are not routine interpellations but touch fundamental democratic infrastructure. The coordinated SD strategy ensures maximum stakeholder attention ahead of Election 2026.

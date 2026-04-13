@@ -1,56 +1,80 @@
-# Political Threat Analysis — Interpellations 2026-04-13
+# Political Threat Analysis — 2026-04-13
 
-| Field | Value |
-|-------|-------|
-| **ID** | THREAT-IP-2026-04-13-001 |
-| **Date** | 2026-04-13 |
-| **Riksmöte** | 2025/26 |
-| **Documents Analyzed** | 2 |
-| **Overall Threat Level** | MODERATE |
-| **Generated** | 2026-04-13 07:20 UTC |
+**Generated**: 2026-04-13 22:02 UTC
+**Data Sources**: get_interpellationer, get_dokument_innehall
+**Documents Analyzed**: 2 (frs 2025/26:429, frs 2025/26:430)
+**Confidence**: HIGH (78%)
+**Produced By**: news-interpellations AI workflow (deep analysis)
 
-## Threat Dashboard
+---
 
-```mermaid
-graph TD
-    subgraph "🎭 Political Threat Analysis — 2026-04-13"
-        T1["AC: Accountability Erosion<br/>Ministers may give evasive<br/>responses to SD interpellations<br/>🟡 MODERATE"]
-        T2["NI: Normative Integrity<br/>Prop 133 may undermine<br/>constitutional freedom norms<br/>🟠 ELEVATED"]
-        T3["DP: Democratic Polarisation<br/>Religious extremism framing<br/>increases social division<br/>🟡 MODERATE"]
-    end
-    style T1 fill:#ffc107,color:#000
-    style T2 fill:#fd7e14,color:#fff
-    style T3 fill:#ffc107,color:#000
-```
+## Summary
 
-## Threat Categories
+Threat analysis identifies two primary democratic function threat categories activated by these interpellations: erosion of fundamental rights through legislative overreach (Category 1: Constitutional Integrity) and failure to protect minority communities from institutional hate speech (Category 3: Social Cohesion).
 
-| Category | Code | Level | Evidence | Confidence |
-|----------|:----:|:-----:|----------|:----------:|
-| **Accountability Erosion** | AC | 🟡 MODERATE | Ministers Strömmer and Forssmed face interpellation pressure from SD but may respond evasively to avoid coalition conflict | MEDIUM |
-| **Normative Integrity** | NI | 🟠 ELEVATED | Prop 2025/26:133 broad language ("säkerheten för människors liv eller hälsa") creates potential for demonstration rights erosion | HIGH |
-| **Democratic Polarisation** | DP | 🟡 MODERATE | HD10430 framing of mosque hate speech may increase social division in communities like Kristianstad | MEDIUM |
-
-## Democratic Function Impact Assessment
-
-| Democratic Function | Impact | Evidence (dok_id) | Confidence |
-|-------------------|:------:|-------------------|:----------:|
-| Freedom of Expression | 🟠 MEDIUM-HIGH | frs 2025/26:429: Prop 133 may restrict demonstration rights via "heckler's veto" mechanism | HIGH |
-| Parliamentary Accountability | 🟢 POSITIVE | Both interpellations demonstrate functioning accountability — ministers must respond within statutory deadlines | HIGH |
-| Rule of Law | 🟡 MEDIUM | frs 2025/26:429: Police discretion under Prop 133 may lead to inconsistent enforcement | MEDIUM |
-| Social Cohesion | 🟡 MEDIUM | frs 2025/26:430: Mosque hate speech narrative may increase inter-community tensions | MEDIUM |
-
-## Attack Tree: Heckler's Veto Institutionalisation
+## Threat Taxonomy
 
 ```mermaid
 graph TD
-    ROOT["Heckler's Veto<br/>Institutionalised"] --> A["Prop 133 gives police<br/>broad discretion"]
-    ROOT --> B["Violence threats against<br/>controversial demonstrations"]
-    A --> C["Police deny permits<br/>citing 'safety concerns'"]
-    B --> C
-    C --> D["Demonstrations effectively<br/>suppressed by threat actors"]
-    D --> E["Constitutional norm<br/>erosion over time"]
-    style ROOT fill:#dc3545,color:#fff
-    style C fill:#fd7e14,color:#fff
-    style E fill:#dc3545,color:#fff
+    ROOT["Democratic Function Threats"] --> C1["🔴 Category 1:<br/>Constitutional Integrity"]
+    ROOT --> C3["🟡 Category 3:<br/>Social Cohesion"]
+    
+    C1 --> T1["T1.1: Legislative creep<br/>Prop 2025/26:133"]
+    C1 --> T2["T1.2: Police discretion<br/>replacing judicial oversight"]
+    C1 --> T3["T1.3: Foreign pressure<br/>on domestic rights"]
+    
+    C3 --> T4["T3.1: Institutional<br/>hate speech"]
+    C3 --> T5["T3.2: Anti-Semitism<br/>normalization"]
+    C3 --> T6["T3.3: Community<br/>polarization"]
+    
+    style C1 fill:#FF5722,stroke:#333,color:#fff
+    style C3 fill:#FFC107,stroke:#333,color:#000
+    style T1 fill:#FFCDD2,stroke:#333
+    style T2 fill:#FFCDD2,stroke:#333
+    style T3 fill:#FFCDD2,stroke:#333
+    style T4 fill:#FFF9C4,stroke:#333
+    style T5 fill:#FFF9C4,stroke:#333
+    style T6 fill:#FFF9C4,stroke:#333
 ```
+
+## Detailed Threat Assessment
+
+### T1.1: Legislative Creep on Fundamental Rights
+- **Source**: frs 2025/26:429 (HD10429)
+- **Threat Actor**: Government (unintentional overreach)
+- **Vector**: Proposition 2025/26:133 — broad "security" formulation
+- **Severity**: 🔴 HIGH — Affects constitutional foundation
+- **Evidence**: "formuleringen 'säkerheten för människors liv eller hälsa' mycket bred. Den saknar tydlig avgränsning" (HD10429)
+- **Democratic Function Impact**: Demonstration freedom (RF 2:1) potentially constrained
+
+### T1.2: Police Discretion Replacing Judicial Oversight
+- **Source**: frs 2025/26:429 (HD10429)
+- **Threat Actor**: Police operational culture
+- **Vector**: New legal authority to relocate/cancel demonstrations without judicial check
+- **Severity**: 🔴 HIGH — Separation of powers concern
+- **Evidence**: "uttryckligt lagstöd för Polismyndigheten att ändra tid och plats" (HD10429)
+
+### T3.1: Institutional Hate Speech
+- **Source**: frs 2025/26:430 (HD10430)
+- **Threat Actor**: Radical religious leaders (specific imams in Kristianstad)
+- **Vector**: Sermons in established mosques preaching hatred
+- **Severity**: 🟡 MEDIUM-HIGH — Targets specific minority (Jewish community)
+- **Evidence**: "uppmanat muslimer att hata icke-muslimer", "blod, död och fördrivning" against Jews (HD10430)
+
+### T3.2: Anti-Semitism Normalization
+- **Source**: frs 2025/26:430 (HD10430)
+- **Threat Actor**: Radical religious leaders, community networks
+- **Vector**: Intergenerational hate transmission — "kommande generationer lär sig att 'skada' judar"
+- **Severity**: 🔴 HIGH — Systematic radicalization targeting children
+- **Evidence**: HD10430 cites imam teaching children "muslimerna 'kommer att hämnas'"
+
+## Key Findings
+
+1. **Constitutional integrity** faces dual threat: legislative overreach from government and foreign pressure from authoritarian states
+2. **Social cohesion** threatened by institutional hate speech pattern in Kristianstad — two mosques exposed in rapid succession
+3. **Intergenerational radicalization** is the most severe long-term threat (children taught hatred)
+4. **Democratic accountability is functioning** — interpellation mechanism forces minister responses
+
+## Implications
+
+These interpellations reveal genuine threats to democratic function, not merely political posturing. The legislative creep risk (T1.1) is systemic and enduring; the anti-Semitism threat (T3.2) targets community safety. Minister responses will determine whether democratic self-correction mechanisms function effectively.

@@ -1,33 +1,29 @@
 # Data Download Manifest — 2026-04-13
 
-| Field | Value |
-|-------|-------|
-| **Generated** | 2026-04-13 07:20 UTC |
-| **Data Sources** | riksdag-regering-mcp (lookback from 2026-04-08) |
-| **Documents Analyzed** | 2 |
-| **Confidence** | MEDIUM |
-| **Produced By** | news-interpellations (AI-enriched lookback) |
+**Generated**: 2026-04-13 21:57 UTC
+**Data Sources**: get_interpellationer
+**Documents Analyzed**: 2
+**Confidence**: HIGH
+**Produced By**: pre-article-analysis script (automated data pipeline)
+
+> ⚠️ **Script-Generated Analysis**: This file was produced by the automated data pipeline (`scripts/pre-article-analysis.ts`). It contains structured data extraction and basic statistical analysis only. For deep political intelligence with evidence-based claims, Mermaid diagrams, and multi-framework analysis, this file should be enriched or replaced by AI-driven analysis following `analysis/methodologies/ai-driven-analysis-guide.md`.
 
 ## Summary
 
-Downloaded **2** interpellation documents via lookback from 2026-04-08 data fetch. MCP server unavailable on 2026-04-13 (Render.com cold start — 0 tools registered after 5 retries). Data sourced from successful fetch on 2026-04-08 covering interpellations filed 2026-04-07.
+Downloaded **50** documents (session-wide) from 1 MCP data sources.
+
+After date filtering to **2026-04-13**: **2** documents selected for analysis.
 
 ## Document Counts by Type
 
-| Type | Count | dok_ids |
-|------|:-----:|---------|
-| **interpellations** | 2 | HD10429, HD10430 |
-| propositions | 0 | — |
-| motions | 0 | — |
-| committeeReports | 0 | — |
-
-## Documents Downloaded
-
-| dok_id | Title | Date | Party | Target Minister |
-|--------|-------|------|-------|----------------|
-| HD10429 | Skyddet för yttrandefriheten i förhållande till prop 2025/26:133 | 2026-04-07 | SD | Justitieminister Gunnar Strömmer (M) |
-| HD10430 | Moskéer som sprider hat och hot | 2026-04-07 | SD | Socialminister Jakob Forssmed (KD) |
+- **propositions**: 0 documents
+- **motions**: 0 documents
+- **committeeReports**: 0 documents
+- **votes**: 0 documents
+- **speeches**: 0 documents
+- **questions**: 0 documents
+- **interpellations**: 50 documents
 
 ## Data Quality Notes
 
-MCP server returned 0 tools on 2026-04-13 after 5 connection attempts. Lookback to 2026-04-08 successful — both documents have full text and metadata available. Chamber announcement date for both interpellations is 2026-04-13 (today).
+All documents sourced from official riksdag-regering-mcp API.
