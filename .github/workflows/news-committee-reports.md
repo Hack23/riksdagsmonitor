@@ -1058,7 +1058,12 @@ fi
 if [ -f "news/$ARTICLE_DATE-committee-reports-en.html" ] || [ -f "news/$ARTICLE_DATE-committee-reports-sv.html" ]; then
   if ! npx htmlhint "news/$ARTICLE_DATE-committee-reports-en.html" "news/$ARTICLE_DATE-committee-reports-sv.html" 2>/dev/null; then
     echo "⚠️ HTML validation errors in today's articles, attempting auto-fix (scoped to today only)..."
-    npx tsx scripts/article-quality-enhancer.ts --fix "news/$ARTICLE_DATE-committee-reports-*.html"
+    if [ -f "news/$ARTICLE_DATE-committee-reports-en.html" ]; then
+      npx tsx scripts/article-quality-enhancer.ts --fix "news/$ARTICLE_DATE-committee-reports-en.html"
+    fi
+    if [ -f "news/$ARTICLE_DATE-committee-reports-sv.html" ]; then
+      npx tsx scripts/article-quality-enhancer.ts --fix "news/$ARTICLE_DATE-committee-reports-sv.html"
+    fi
     if ! npx htmlhint "news/$ARTICLE_DATE-committee-reports-en.html" "news/$ARTICLE_DATE-committee-reports-sv.html" 2>/dev/null; then
       echo "⚠️ HTML validation still failing after auto-fix — manual review needed (continuing to PR)"
     fi

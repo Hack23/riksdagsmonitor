@@ -916,7 +916,12 @@ fi
 if [ -f "news/$ARTICLE_DATE-opposition-motions-en.html" ] || [ -f "news/$ARTICLE_DATE-opposition-motions-sv.html" ]; then
   if ! npx htmlhint "news/$ARTICLE_DATE-opposition-motions-en.html" "news/$ARTICLE_DATE-opposition-motions-sv.html" 2>/dev/null; then
     echo "⚠️ HTML validation errors in today's articles, attempting auto-fix (scoped to today only)..."
-    npx tsx scripts/article-quality-enhancer.ts --fix "news/$ARTICLE_DATE-opposition-motions-*.html"
+    if [ -f "news/$ARTICLE_DATE-opposition-motions-en.html" ]; then
+      npx tsx scripts/article-quality-enhancer.ts --fix "news/$ARTICLE_DATE-opposition-motions-en.html"
+    fi
+    if [ -f "news/$ARTICLE_DATE-opposition-motions-sv.html" ]; then
+      npx tsx scripts/article-quality-enhancer.ts --fix "news/$ARTICLE_DATE-opposition-motions-sv.html"
+    fi
     if ! npx htmlhint "news/$ARTICLE_DATE-opposition-motions-en.html" "news/$ARTICLE_DATE-opposition-motions-sv.html" 2>/dev/null; then
       echo "⚠️ HTML validation still failing after auto-fix — manual review needed (continuing to PR)"
     fi

@@ -2235,6 +2235,7 @@ git commit -m "📊 Data + Analysis ($ARTICLE_TYPE) - $ARTICLE_DATE"
 > ❌ **PROHIBITED**: Writing analysis that doesn't follow the template structure
 > ❌ **PROHIBITED**: Using broad `git add analysis/data/ analysis/daily/ analysis/weekly/` without scoping — this accumulates old files and exceeds the 100-file PR limit
 > ❌ **PROHIBITED**: ANY workflow staging parent date directory `analysis/daily/$DATE/` without article type scope — this causes conflicts and overwrites. ALL workflows MUST scope to `analysis/daily/$DATE/{articleType}/`
+> ❌ **PROHIBITED**: Running `npx htmlhint "news/*-*.html"` or `article-quality-enhancer.ts --fix` without a glob argument — this modifies ALL existing articles (400–500 files) and causes E003 when those files are staged. ALWAYS scope htmlhint and --fix to today's articles only using explicit filenames.
 ````
 
 ## 🔧 MANDATORY: Script Debugging & Fixing (copy into every analysis workflow)
