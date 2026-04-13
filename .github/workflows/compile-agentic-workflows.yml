@@ -55,7 +55,7 @@ jobs:
           find .github/workflows -name "*.lock.yml" -type f -delete
           echo "✅ All lock files deleted"
       
-       - name: Compile Agentic Workflows
+      - name: Compile Agentic Workflows
         id: compile
         run: |
           echo "Compiling agentic workflows..."
