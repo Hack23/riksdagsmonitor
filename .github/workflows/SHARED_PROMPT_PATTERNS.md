@@ -2112,8 +2112,19 @@ STAGED_COUNT=0
 read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
 echo "📊 Staged file count: $STAGED_COUNT (limit: 100)"
 if [ "$STAGED_COUNT" -gt 90 ]; then
-  echo "⚠️ Staged $STAGED_COUNT files exceeds safe threshold. Removing analysis artifacts."
-  git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" 2>/dev/null || true
+  echo "⚠️ Staged $STAGED_COUNT files exceeds safe threshold. Removing non-essential analysis — keeping core summaries."
+  # Keep core analysis: synthesis-summary.md, significance-scoring.json, risk-assessment.md
+  # Remove only lower-priority individual analysis .json files first
+  git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*-analysis.json 2>/dev/null || true
+  git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*-details.json 2>/dev/null || true
+  git diff --cached --name-only > /tmp/staged_files.txt
+  awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  STAGED_COUNT=0
+  read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
+fi
+if [ "$STAGED_COUNT" -gt 90 ]; then
+  echo "⚠️ Still $STAGED_COUNT files. Removing remaining analysis .json — keeping .md summaries."
+  git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.json 2>/dev/null || true
   git diff --cached --name-only > /tmp/staged_files.txt
   awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
   STAGED_COUNT=0
@@ -2162,7 +2173,9 @@ git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
 ```bash
 # Stage analysis scoped to article type subfolder — prevents overwriting other workflows' analysis
 ARTICLE_TYPE="evening-analysis"  # Set per workflow (realtime uses "realtime-${HHMM}")
-git add "analysis/daily/$ARTICLE_DATE/$ARTICLE_TYPE/" || true
+# Stage summary files by default; only add whole directory if count is safe
+git add "analysis/daily/$ARTICLE_DATE/$ARTICLE_TYPE"/*.md 2>/dev/null || true
+git add "analysis/daily/$ARTICLE_DATE/$ARTICLE_TYPE"/*.json 2>/dev/null || true
 git add analysis/weekly/ || true
 git add analysis/data/ || true
 # Enforce safe-outputs 100-file PR limit (AWF-safe: no $(...) — write to temp file + read back)

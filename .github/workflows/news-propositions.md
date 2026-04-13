@@ -436,8 +436,19 @@ if [ "$STAGED_COUNT" -gt 90 ]; then
   read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
 fi
 if [ "$STAGED_COUNT" -gt 90 ]; then
-  echo "⚠️ Still $STAGED_COUNT files. Removing all analysis artifacts."
-  git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" 2>/dev/null || true
+  echo "⚠️ Still $STAGED_COUNT files. Removing non-essential analysis — keeping core summaries."
+  # Keep core analysis: synthesis-summary.md, significance-scoring.json, risk-assessment.md
+  # Remove only lower-priority individual analysis .json files first
+  git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*-analysis.json 2>/dev/null || true
+  git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*-details.json 2>/dev/null || true
+  git diff --cached --name-only > /tmp/staged_files.txt
+  awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  STAGED_COUNT=0
+  read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
+fi
+if [ "$STAGED_COUNT" -gt 90 ]; then
+  echo "⚠️ Still $STAGED_COUNT files. Removing remaining analysis .json — keeping .md summaries."
+  git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.json 2>/dev/null || true
   git diff --cached --name-only > /tmp/staged_files.txt
   awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
   STAGED_COUNT=0
