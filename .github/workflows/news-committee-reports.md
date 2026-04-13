@@ -235,6 +235,7 @@ Uses `memory/news-generation` branch. START: read `memory/news-generation/last-r
 - **Minutes 25–33**: Generate articles for core languages (EN, SV) using `npx tsx scripts/generate-news-enhanced.ts`
 - **Minutes 33–38**: Validate and fix any quality issues
 - **Minutes 38–43**: Commit analysis artifacts + articles, create PR with `safeoutputs___create_pull_request`
+- **Minutes 43–45**: 🚨 **HARD DEADLINE** — If no safe output has been called yet, IMMEDIATELY call `safeoutputs___noop` with reason "Time limit reached before completion"
 
 > ⚠️ **Analysis phase is 15 minutes minimum** — every analysis file must contain color-coded Mermaid diagrams, structured evidence tables with dok_id citations, and follow template structure exactly.
 
@@ -387,23 +388,17 @@ fi
 
 ## MANDATORY MCP Health Gate
 
-**Pre-warm the riksdag-regering MCP server** (Render.com cold starts can take 60–90s):
-```bash
-echo "🔥 Pre-warming riksdag-regering MCP server (Render.com cold start mitigation)..."
-curl -sf --max-time 15 "https://riksdag-regering-ai.onrender.com/mcp" -o /dev/null 2>/dev/null || echo "Pre-warm ping sent (server may be waking up)"
-sleep 10
-```
+> **The step-level pre-warm (6 attempts × 20s) already mitigates Render.com cold starts.** This in-prompt gate is a lightweight verification — NOT a full retry loop. Do NOT spend more than 90 seconds here.
 
-1. Call `get_sync_status({})` — retry up to 5× (45s wait between each)
-2. If you get **"unknown tool"** or **"0 tools registered"** errors, this means the MCP server is still initializing after a Render.com cold start. **Keep retrying — do NOT noop early.** After 3 consecutive failures, run MCP gateway diagnostics:
+1. Call `get_sync_status({})` — retry up to **3×** (20s wait between each, not 45s — the server is already warm from the step-level pre-warm)
+2. If you get **"unknown tool"** or **"0 tools registered"** errors after 3 attempts, run a quick diagnostic:
 ```bash
-echo "🔍 MCP Gateway Diagnostics"
+echo "🔍 MCP Quick Diagnostic"
 echo "Direct MCP server:" && curl -sf --max-time 15 -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' "https://riksdag-regering-ai.onrender.com/mcp" 2>/dev/null | head -c 200 || echo "UNREACHABLE"
-echo "Gateway:" && source scripts/mcp-setup.sh 2>/dev/null && echo "MCP_SERVER_URL=$MCP_SERVER_URL" && curl -sf --max-time 10 -X POST -H "Content-Type: application/json" -H "Authorization: $MCP_AUTH_TOKEN" -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' "$MCP_SERVER_URL" 2>/dev/null | head -c 200 || echo "GATEWAY UNREACHABLE"
-echo "DNS:" && for d in riksdag-regering-ai.onrender.com api.scb.se data.riksdagen.se; do nslookup "$d" 2>/dev/null | tail -2; done
 ```
-3. After 5 failures → `safeoutputs___noop({"message": "MCP server unavailable after 5 attempts — Render.com cold start exceeded timeout"})`
+3. After 3 failures → `safeoutputs___noop({"message": "MCP server unavailable after 3 attempts — step-level pre-warm also failed"})`
 4. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
+5. **⏱️ Do NOT spend more than 2 minutes on MCP warmup** — proceed to analysis immediately once `get_sync_status` succeeds.
 
 ## 🛡️ File Ownership Contract
 
@@ -722,6 +717,45 @@ fi
 ```
 
 > **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Committee Reports - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).
+
+### 🔴 MANDATORY ANALYSIS VERIFICATION GATE (STOP — DO NOT SKIP)
+
+> 🚨 **ABSOLUTE RULE: You MUST NOT proceed to article generation until this gate passes.** This gate enforces the "No Workflow Run Wasted" principle — analysis is the primary output of every run.
+
+**Run this verification BEFORE any article generation:**
+```bash
+ARTICLE_DATE="${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}"
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/committeeReports"
+echo "=== 🔴 MANDATORY ANALYSIS VERIFICATION GATE ==="
+echo "📅 Date: $ARTICLE_DATE"
+ANALYSIS_MD_COUNT=0
+if [ -d "$ANALYSIS_DIR" ]; then
+  ANALYSIS_MD_COUNT=$(find "$ANALYSIS_DIR" -name "*.md" -type f | wc -l)
+fi
+ANALYSIS_PER_DOC=0
+if [ -d "$ANALYSIS_DIR/documents" ]; then
+  ANALYSIS_PER_DOC=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f | wc -l)
+fi
+echo "📊 Batch analysis files: $ANALYSIS_MD_COUNT"
+echo "📊 Per-document analysis files: $ANALYSIS_PER_DOC"
+if [ "$ANALYSIS_MD_COUNT" -eq 0 ]; then
+  echo "🔴 GATE FAILED: Zero analysis artifacts exist. You MUST run the full analysis phase (Steps 2–2.5) BEFORE proceeding."
+  echo "🔴 DO NOT proceed to article generation. DO NOT call safeoutputs___noop. Run analysis NOW."
+else
+  echo "✅ GATE PASSED: $ANALYSIS_MD_COUNT analysis files found. You may proceed to article generation."
+fi
+echo "=============================================="
+```
+
+**If this gate fails (0 analysis files):**
+1. **STOP** — do not proceed to article generation
+2. Go back and run the full analysis pipeline (Step 2.5: pre-article-analysis + Per-File AI Analysis Enhancement)
+3. Re-run this gate after analysis completes
+4. Only proceed to article generation once the gate passes
+
+**If this gate passes but per-document analyses are 0:**
+1. Run the Per-File AI Analysis Enhancement phase to create per-document analyses
+2. Continue to article generation after per-document analyses are created
 
 ### 🔬 Step 2b: Read ALL Analysis Files (MANDATORY — before article generation)
 
