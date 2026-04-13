@@ -5,17 +5,20 @@
  * network configuration, MCP server URLs, health gate patterns, and
  * safe-output domain allowlists.
  *
- * Prevents regressions like PR #1711 where MCP gateway unavailability
- * caused analysis-only fallback due to misconfigured network or missing
- * health gates.
+ * Root cause from PR #1711: the "Network and MCP diagnostics" step ran
+ * as a pre-flight check BEFORE the MCP Gateway was started by gh-aw.
+ * It tested direct HTTPS to external endpoints (which passed), but the
+ * agent actually routes through the MCP Gateway at host.docker.internal:80
+ * (started later). The gateway returned 0 tools, causing analysis-only
+ * fallback — despite diagnostics showing all green.
  *
- * Verifies:
- * - Network allowed domains are consistent across all 12 news workflows
- * - MCP server URLs match expected endpoints
+ * This test suite enforces:
+ * - Pre-flight step is clearly named to avoid false confidence
+ * - In-prompt gateway diagnostics exist (run AFTER gateway is up)
+ * - Both direct and gateway routing are tested in the agent prompt
+ * - Network allowed domains are consistent across all 12 workflows
  * - MCP health gate (get_sync_status + safeoutputs___noop) present
- * - MCP client defaults align with workflow configuration
  * - Safe-output allowed-domains cover required external services
- * - mcp-setup.sh gateway URL is properly configured
  *
  * @author Hack23 AB
  * @license Apache-2.0
@@ -376,13 +379,33 @@ describe('Network Diagnostics Configuration', () => {
     });
   });
 
-  describe('Network Diagnostics Bash Block', () => {
-    it('news-article-generator.md should have canonical network diagnostics block', () => {
+  describe('Pre-flight External Reachability Check (runs before MCP Gateway)', () => {
+    it('all workflows should label pre-flight step correctly', () => {
+      // The pre-flight step tests DIRECT external HTTPS — not gateway routing.
+      // It MUST be clearly named to avoid false confidence (see PR #1711).
+      ALL_NEWS_WORKFLOWS.forEach(workflow => {
+        const filepath = path.join(WORKFLOWS_DIR, workflow);
+        const content = fs.readFileSync(filepath, 'utf-8');
+        const fm = extractFrontmatter(content);
+
+        // Must NOT use the misleading old name
+        expect(
+          fm,
+          `${workflow} still uses misleading "Network and MCP diagnostics" step name`
+        ).not.toContain('- name: Network and MCP diagnostics');
+
+        // Must use the clarified name
+        expect(
+          fm,
+          `${workflow} missing pre-flight step with clarified name`
+        ).toContain('Pre-flight external endpoint reachability check');
+      });
+    });
+
+    it('news-article-generator.md should have canonical diagnostics content', () => {
       const filepath = path.join(WORKFLOWS_DIR, 'news-article-generator.md');
       const content = fs.readFileSync(filepath, 'utf-8');
 
-      // Verify the diagnostic block pattern
-      expect(content).toContain('Network Diagnostics');
       expect(content).toContain('DNS Resolution Tests');
       expect(content).toContain('HTTPS Connectivity Tests');
       expect(content).toContain('MCP Server Tool Count');
@@ -397,6 +420,39 @@ describe('Network Diagnostics Configuration', () => {
           content,
           `Diagnostics block missing domain check for: ${domain}`
         ).toContain(domain);
+      });
+    });
+  });
+
+  describe('In-Prompt MCP Gateway Diagnostics (runs after MCP Gateway)', () => {
+    ALL_NEWS_WORKFLOWS.forEach(workflow => {
+      it(`${workflow} should have in-prompt gateway diagnostics bash block`, () => {
+        const filepath = path.join(WORKFLOWS_DIR, workflow);
+        const content = fs.readFileSync(filepath, 'utf-8');
+
+        // The agent prompt (after ---) must include gateway diagnostics
+        // that run AFTER the MCP Gateway is started (unlike pre-flight checks)
+        expect(
+          content,
+          `${workflow} missing in-prompt "MCP Gateway Diagnostics" block`
+        ).toContain('MCP Gateway Diagnostics');
+      });
+
+      it(`${workflow} should test both direct and gateway MCP in prompt`, () => {
+        const filepath = path.join(WORKFLOWS_DIR, workflow);
+        const content = fs.readFileSync(filepath, 'utf-8');
+
+        // Must test direct Render.com endpoint
+        expect(
+          content,
+          `${workflow} missing direct MCP server check in prompt`
+        ).toContain('Direct MCP server');
+
+        // Must test gateway routing (host.docker.internal or MCP_SERVER_URL)
+        expect(
+          content,
+          `${workflow} missing gateway routing check in prompt`
+        ).toContain('GATEWAY UNREACHABLE');
       });
     });
   });
@@ -424,6 +480,33 @@ describe('Network Diagnostics Configuration', () => {
           hasPreWarm || hasHealthGate || hasToolsList,
           `${workflow} has no MCP warm-up or health check mechanism`
         ).toBe(true);
+      });
+    });
+  });
+
+  describe('Step Ordering Awareness', () => {
+    it('pre-flight steps should be in frontmatter, gateway diagnostics in prompt body', () => {
+      // Validates the architectural split:
+      // - Pre-flight checks (frontmatter steps:) run BEFORE MCP Gateway
+      // - In-prompt gateway diagnostics run AFTER MCP Gateway (inside agent)
+      ALL_NEWS_WORKFLOWS.forEach(workflow => {
+        const filepath = path.join(WORKFLOWS_DIR, workflow);
+        const content = fs.readFileSync(filepath, 'utf-8');
+        const fm = extractFrontmatter(content);
+        const parts = content.split('---');
+        const body = parts.length >= 3 ? parts.slice(2).join('---') : '';
+
+        // Pre-flight reachability should be in frontmatter steps
+        expect(
+          fm,
+          `${workflow} missing pre-flight check in frontmatter steps`
+        ).toContain('Pre-flight external endpoint reachability');
+
+        // Gateway diagnostics should be in prompt body (runs inside agent)
+        expect(
+          body,
+          `${workflow} missing gateway diagnostics in prompt body`
+        ).toContain('MCP Gateway Diagnostics');
       });
     });
   });
