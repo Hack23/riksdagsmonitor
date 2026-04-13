@@ -75,12 +75,12 @@ mcp-servers:
   scb:
     container: "node:lts-alpine"
     entrypoint: "npx"
-    entrypointArgs: ["npx", "-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"]
+    entrypointArgs: ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"]
     allowed: ["*"]
   world-bank:
     container: "node:lts-alpine"
     entrypoint: "npx"
-    entrypointArgs: ["npx", "-y", "worldbank-mcp@1.0.1"]
+    entrypointArgs: ["-y", "worldbank-mcp@1.0.1"]
     allowed: ["*"]
 
 tools:
