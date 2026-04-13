@@ -528,7 +528,8 @@ describe('Network Diagnostics Configuration', () => {
 
   describe('Stakeholder Perspectives Reference', () => {
     ALL_NEWS_WORKFLOWS.forEach(workflow => {
-      // Skip translate workflow — it doesn't generate original analysis
+      // Skip news-translate.md — it only translates existing EN/SV articles
+      // into 12 additional languages; it does not generate original analysis.
       if (workflow === 'news-translate.md') return;
 
       it(`${workflow} should reference stakeholder-perspectives.md`, () => {
