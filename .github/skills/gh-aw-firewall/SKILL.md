@@ -810,7 +810,7 @@ npm update -g gh-aw-firewall
 - [AWF Documentation](https://github.github.com/gh-aw/introduction/architecture/#agent-workflow-firewall-awf)
 - [Security Architecture](https://github.github.com/gh-aw/introduction/architecture/)
 
-## 🆕 AWF in the Five-Layer Security Model (v0.45.5)
+## 🆕 AWF in the Five-Layer Security Model (v0.68.1)
 
 The Agent Workflow Firewall (AWF) is **Layer 3** of the five-layer security model:
 

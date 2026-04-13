@@ -697,7 +697,41 @@ async function retryTool(tool, args, maxRetries = 3) {
 
 ---
 
-## 🆕 Tool Scoping & Engine Support (v0.45.5)
+## 🆕 Tool Scoping & Engine Support (v0.68.1)
+
+### Agentic Workflows Introspection Tool
+
+Enable workflow introspection for AI agents with:
+
+```yaml
+tools:
+  agentic-workflows: true
+```
+
+This provides tools for:
+- **status** — Show status of workflow files in the repository
+- **compile** — Compile markdown workflows to YAML
+- **logs** — Download and analyze workflow run logs
+- **audit** — Investigate workflow run failures and generate reports
+- **checks** — Classify CI check state for a pull request (returns normalized verdict: `success`, `failed`, `pending`, `no_checks`, `policy_blocked`)
+
+**Use case**: Enable AI agents to analyze GitHub Actions traces and improve workflows based on execution history.
+
+### Runtime Configuration
+
+All agentic workflows MUST specify the Node.js runtime version:
+
+```yaml
+runtimes:
+  node:
+    version: "25"
+```
+
+Runtime configuration properties:
+- `version:` — Runtime version (e.g., `"25"`, `"3.12"`, `"latest"`)
+- `action-repo:` — GitHub Actions setup action (e.g., `"actions/setup-node"`)
+- `action-version:` — Setup action version (e.g., `"v4"`, `"v5"`)
+- `if:` — Optional condition (e.g., `"hashFiles('go.mod') != ''"`)
 
 ### GitHub Tools Configuration
 

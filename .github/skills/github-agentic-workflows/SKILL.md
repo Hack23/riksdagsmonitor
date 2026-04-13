@@ -1,6 +1,6 @@
 ---
 name: github-agentic-workflows
-description: Comprehensive expertise in GitHub Agentic Workflows (v0.45.5) — AI-powered repository automation with five-layer security, safe outputs, MCP tools, and Continuous AI patterns
+description: Comprehensive expertise in GitHub Agentic Workflows (v0.68.1) — AI-powered repository automation with five-layer security, safe outputs, MCP tools, and Continuous AI patterns
 license: Apache-2.0
 version: 2.0.0
 last_updated: 2026-04-02

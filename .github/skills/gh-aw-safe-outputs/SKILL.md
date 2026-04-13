@@ -620,7 +620,7 @@ alerts:
 - **gh-aw-workflow-authoring** - Workflow creation
 - **gh-aw-logging-monitoring** - Observability
 
-## 🆕 Threat Detection Integration (v0.45.5)
+## 🆕 Threat Detection Integration (v0.68.1)
 
 Before any safe output is applied, a dedicated **threat detection job** runs an AI-powered scan:
 

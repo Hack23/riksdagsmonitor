@@ -1725,7 +1725,7 @@ Ensure all team members understand:
 - [OWASP AI Security](https://owasp.org/www-project-ai-security-and-privacy-guide/)
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework/)
 
-## 🆕 Five-Layer Security Model (v0.45.5)
+## 🆕 Five-Layer Security Model (v0.68.1)
 
 GitHub Agentic Workflows addresses AI agent manipulation with five security layers:
 
