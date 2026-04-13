@@ -169,11 +169,13 @@ echo "📁 Analysis subfolder resolved: analysis/daily/$ARTICLE_DATE/$ANALYSIS_S
 ARTICLE_TYPE="committeeReports"  # Set per workflow
 git add news/*committee-reports*.html 2>/dev/null || true  # Only this workflow's articles
 git add news/metadata/ 2>/dev/null || true                  # Metadata (small, fast-changing)
-git add "analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/" || true
+git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.md 2>/dev/null || true   # Summary files only
+git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.json 2>/dev/null || true # Summary JSON only
+# NOTE: documents/ is intentionally EXCLUDED — doc-type workflows can have 100+ files there
 
 # INCORRECT — will conflict with other workflows
 # git add news/ || true                                    # ← NEVER DO THIS — stages all workflows' articles
-# git add "analysis/daily/${ARTICLE_DATE}/" || true        # ← NEVER DO THIS — stages all workflows' analysis
+# git add "analysis/daily/$ARTICLE_DATE/" || true          # ← NEVER DO THIS — stages all workflows' analysis
 ```
 ````
 
@@ -2095,14 +2097,38 @@ fi
 ```bash
 # Stage analysis scoped to article type — avoids conflicts with other doc-type workflows on the same date
 DOC_TYPE="committeeReports"  # One of: committeeReports, motions, propositions, interpellations
-git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/${DOC_TYPE}/" || true
-git add analysis/weekly/ || true
-# Enforce safe-outputs 100-file PR limit
-STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+# Use $ANALYSIS_SUBFOLDER (from Run Suffix Resolution); fallback to $DOC_TYPE
+if [ -z "$ANALYSIS_SUBFOLDER" ]; then
+  ANALYSIS_SUBFOLDER="$DOC_TYPE"
+fi
+# Stage summary .md files ONLY — EXCLUDE documents/ to stay under 100-file limit.
+# With --limit 50, documents/ alone can contain 100+ files (50 JSON + 50 analysis.md).
+git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.md 2>/dev/null || true
+git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.json 2>/dev/null || true
+# Enforce safe-outputs 100-file PR limit (AWF-safe: no $(...) — write to temp file + read back)
+git diff --cached --name-only > /tmp/staged_files.txt
+awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+STAGED_COUNT=0
+read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
+echo "📊 Staged file count: $STAGED_COUNT (limit: 100)"
 if [ "$STAGED_COUNT" -gt 90 ]; then
-  echo "⚠️ Staged $STAGED_COUNT files exceeds 100-file PR limit. Removing weekly analysis."
-  git reset HEAD -- analysis/weekly/ 2>/dev/null || true
-  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+  echo "⚠️ Staged $STAGED_COUNT files exceeds safe threshold. Removing non-essential analysis — keeping core summaries."
+  # Graduated pruning: remove individual doc-level analysis JSON first, keep synthesis/scoring/risk .md
+  # If still over limit, all .json goes but .md summaries (synthesis-summary.md, risk-assessment.md) survive
+  git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*-analysis.json 2>/dev/null || true
+  git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*-details.json 2>/dev/null || true
+  git diff --cached --name-only > /tmp/staged_files.txt
+  awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  STAGED_COUNT=0
+  read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
+fi
+if [ "$STAGED_COUNT" -gt 90 ]; then
+  echo "⚠️ Still $STAGED_COUNT files. Removing remaining analysis .json — keeping .md summaries."
+  git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.json 2>/dev/null || true
+  git diff --cached --name-only > /tmp/staged_files.txt
+  awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  STAGED_COUNT=0
+  read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
 git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
@@ -2147,20 +2173,32 @@ git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
 ```bash
 # Stage analysis scoped to article type subfolder — prevents overwriting other workflows' analysis
 ARTICLE_TYPE="evening-analysis"  # Set per workflow (realtime uses "realtime-${HHMM}")
-git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/${ARTICLE_TYPE}/" || true
+# Stage summary files by default; only add whole directory if count is safe
+git add "analysis/daily/$ARTICLE_DATE/$ARTICLE_TYPE"/*.md 2>/dev/null || true
+git add "analysis/daily/$ARTICLE_DATE/$ARTICLE_TYPE"/*.json 2>/dev/null || true
 git add analysis/weekly/ || true
 git add analysis/data/ || true
-# Enforce safe-outputs 100-file PR limit
-STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+# Enforce safe-outputs 100-file PR limit (AWF-safe: no $(...) — write to temp file + read back)
+git diff --cached --name-only > /tmp/staged_files.txt
+awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+STAGED_COUNT=0
+read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
+echo "📊 Staged file count: $STAGED_COUNT (limit: 100)"
 if [ "$STAGED_COUNT" -gt 90 ]; then
-  echo "⚠️ Staged $STAGED_COUNT files exceeds 100-file PR limit. Removing bulk data."
+  echo "⚠️ Staged $STAGED_COUNT files exceeds safe threshold. Removing bulk data."
   git reset HEAD -- analysis/data/ 2>/dev/null || true
-  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+  git diff --cached --name-only > /tmp/staged_files.txt
+  awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  STAGED_COUNT=0
+  read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
 fi
 if [ "$STAGED_COUNT" -gt 90 ]; then
   echo "⚠️ Still $STAGED_COUNT files. Removing weekly analysis."
   git reset HEAD -- analysis/weekly/ 2>/dev/null || true
-  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+  git diff --cached --name-only > /tmp/staged_files.txt
+  awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  STAGED_COUNT=0
+  read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
 git commit -m "📊 Data + Analysis ($ARTICLE_TYPE) - $ARTICLE_DATE"
