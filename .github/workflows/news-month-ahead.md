@@ -152,7 +152,7 @@ steps:
       KEEP_ALIVE_PID=$!
       echo "Keep-alive PID: $KEEP_ALIVE_PID (auto-exits after 15 min)"
 
-  - name: Network and MCP diagnostics
+  - name: Pre-flight external endpoint reachability check (runs before MCP Gateway)
     run: |
       echo "🔍 Network Diagnostics — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
       echo "═══════════════════════════════════════════"
