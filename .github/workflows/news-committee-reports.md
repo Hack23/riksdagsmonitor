@@ -457,8 +457,8 @@ if [ "$STAGED_COUNT" -gt 90 ]; then
 fi
 if [ "$STAGED_COUNT" -gt 90 ]; then
   echo "⚠️ Still $STAGED_COUNT files. Removing non-essential analysis — keeping core summaries."
-  # Keep core analysis: synthesis-summary.md, significance-scoring.json, risk-assessment.md
-  # Remove only lower-priority individual analysis .json files first
+  # Graduated pruning: remove individual doc-level analysis JSON first, keep synthesis/scoring/risk .md
+  # If still over limit, all .json goes but .md summaries (synthesis-summary.md, risk-assessment.md) survive
   git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*-analysis.json 2>/dev/null || true
   git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*-details.json 2>/dev/null || true
   git diff --cached --name-only > /tmp/staged_files.txt
