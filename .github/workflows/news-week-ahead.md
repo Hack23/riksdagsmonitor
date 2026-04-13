@@ -231,6 +231,7 @@ Uses `memory/news-generation` branch. START: read `memory/news-generation/last-r
 - **Minutes 18–25**: Generate articles for all 14 languages
 - **Minutes 25–28**: Validate and commit analysis + articles
 - **Minutes 28–30**: Create PR with `safeoutputs___create_pull_request`
+- **Minutes 43–45**: 🚨 **HARD DEADLINE** — If no safe output has been called yet, IMMEDIATELY call `safeoutputs___noop` with reason "Time limit reached before completion"
 
 > ⚠️ **Analysis must include color-coded Mermaid diagrams, evidence tables, and template structure compliance** — plain prose is NEVER acceptable.
 
@@ -337,23 +338,17 @@ fi
 
 ## MANDATORY MCP Health Gate
 
-**Pre-warm the riksdag-regering MCP server** (Render.com cold starts can take 60–90s):
-```bash
-echo "🔥 Pre-warming riksdag-regering MCP server (Render.com cold start mitigation)..."
-curl -sf --max-time 15 "https://riksdag-regering-ai.onrender.com/mcp" -o /dev/null 2>/dev/null || echo "Pre-warm ping sent (server may be waking up)"
-sleep 10
-```
+> **The step-level pre-warm (6 attempts × 20s) already mitigates Render.com cold starts.** This in-prompt gate is a lightweight verification — NOT a full retry loop. Do NOT spend more than 90 seconds here.
 
-1. Call `get_sync_status({})` — retry up to 5× (45s wait between each)
-2. If you get **"unknown tool"** or **"0 tools registered"** errors, this means the MCP server is still initializing after a Render.com cold start. **Keep retrying — do NOT noop early.** After 3 consecutive failures, run MCP gateway diagnostics:
+1. Call `get_sync_status({})` — retry up to **3×** (20s wait between each, not 45s — the server is already warm from the step-level pre-warm)
+2. If you get **"unknown tool"** or **"0 tools registered"** errors after 3 attempts, run a quick diagnostic:
 ```bash
-echo "🔍 MCP Gateway Diagnostics"
+echo "🔍 MCP Quick Diagnostic"
 echo "Direct MCP server:" && curl -sf --max-time 15 -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' "https://riksdag-regering-ai.onrender.com/mcp" 2>/dev/null | head -c 200 || echo "UNREACHABLE"
-echo "Gateway:" && source scripts/mcp-setup.sh 2>/dev/null && echo "MCP_SERVER_URL=$MCP_SERVER_URL" && curl -sf --max-time 10 -X POST -H "Content-Type: application/json" -H "Authorization: $MCP_AUTH_TOKEN" -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' "$MCP_SERVER_URL" 2>/dev/null | head -c 200 || echo "GATEWAY UNREACHABLE"
-echo "DNS:" && for d in riksdag-regering-ai.onrender.com api.scb.se data.riksdagen.se; do nslookup "$d" 2>/dev/null | tail -2; done
 ```
-3. After 5 failures → `safeoutputs___noop({"message": "MCP server unavailable after 5 attempts — Render.com cold start exceeded timeout"})`
+3. After 3 failures → `safeoutputs___noop({"message": "MCP server unavailable after 3 attempts — step-level pre-warm also failed"})`
 4. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
+5. **⏱️ Do NOT spend more than 2 minutes on MCP warmup** — proceed to analysis immediately once `get_sync_status` succeeds.
 
 ## 🛡️ File Ownership Contract
 
