@@ -174,7 +174,7 @@ steps:
         "https://api.worldbank.org/v2/country/SE?format=json" \
         "https://data.riksdagen.se/dokumentlista/?sok=test&doktyp=bet&utformat=json&a=1" \
       ; do
-        HTTP_CODE=$(curl -sf -o /dev/null -w "%{http_code}" --max-time 10 "$url" 2>/dev/null || echo "000")
+        HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$url" 2>/dev/null || echo "000")
         DOMAIN=$(echo "$url" | sed 's|https://||' | cut -d/ -f1)
         if [ "$HTTP_CODE" -ge 200 ] && [ "$HTTP_CODE" -lt 400 ]; then
           echo "  ✅ $DOMAIN → HTTP $HTTP_CODE"
