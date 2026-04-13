@@ -2094,9 +2094,21 @@ fi
 | news-propositions | `propositions` | `propositions` |
 | news-interpellations | `interpellations` | `interpellations` |
 
+> ⚠️ **CRITICAL: Stage only today's new articles by exact filename, NOT with a wildcard glob.**
+> Using `git add news/*committee-reports*.html` stages ALL existing articles (400–500 files), many
+> of which may be modified by auto-fix scripts, causing E003 (>100 files). Always use:
+> ```bash
+> git add "news/$ARTICLE_DATE-committee-reports-en.html" 2>/dev/null || true
+> git add "news/$ARTICLE_DATE-committee-reports-sv.html" 2>/dev/null || true
+> ```
+
 ```bash
 # Stage analysis scoped to article type — avoids conflicts with other doc-type workflows on the same date
 DOC_TYPE="committeeReports"  # One of: committeeReports, motions, propositions, interpellations
+ARTICLE_SLUG="committee-reports"  # Filename slug: committee-reports, opposition-motions, government-propositions, interpellation-debates
+# Stage ONLY today's new articles by exact filename (prevents staging 400-500 existing articles)
+git add "news/$ARTICLE_DATE-$ARTICLE_SLUG-en.html" 2>/dev/null || true
+git add "news/$ARTICLE_DATE-$ARTICLE_SLUG-sv.html" 2>/dev/null || true
 # Use $ANALYSIS_SUBFOLDER (from Run Suffix Resolution); fallback to $DOC_TYPE
 if [ -z "$ANALYSIS_SUBFOLDER" ]; then
   ANALYSIS_SUBFOLDER="$DOC_TYPE"
@@ -2129,6 +2141,17 @@ if [ "$STAGED_COUNT" -gt 90 ]; then
   awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
   STAGED_COUNT=0
   read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
+fi
+# FINAL HARD GUARD: if count still exceeds 99, remove all analysis .md except synthesis-summary.md
+if [ "$STAGED_COUNT" -gt 99 ]; then
+  echo "🚨 CRITICAL: $STAGED_COUNT files still exceeds safe limit of 99. Removing all analysis .md except synthesis-summary."
+  git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.md 2>/dev/null || true
+  git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/synthesis-summary.md" 2>/dev/null || true
+  git diff --cached --name-only > /tmp/staged_files.txt
+  awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  STAGED_COUNT=0
+  read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
+  echo "📊 After emergency pruning: $STAGED_COUNT files"
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
 git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
