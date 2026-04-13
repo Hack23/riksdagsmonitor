@@ -45,6 +45,10 @@ concurrency:
   job-discriminator: ${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}
   cancel-in-progress: true
 
+runtimes:
+  node:
+    version: "25"
+
 network:
   allowed:
     - node
@@ -87,6 +91,7 @@ tools:
   github:
     toolsets:
       - all
+  agentic-workflows: true
   bash: true
   repo-memory:
     branch-name: memory/news-generation
