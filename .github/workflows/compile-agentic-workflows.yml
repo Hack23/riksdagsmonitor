@@ -48,44 +48,58 @@ jobs:
           fi
         env:
           GH_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Delete existing lock files
+        run: |
+          echo "Deleting existing lock files for clean recompilation..."
+          find .github/workflows -name "*.lock.yml" -type f -delete
+          echo "✅ All lock files deleted"
       
-      - name: Compile Agentic Workflows
+       - name: Compile Agentic Workflows
         id: compile
         run: |
           echo "Compiling agentic workflows..."
-          
-          # Find all .md workflow files
-          md_files=$(find .github/workflows -name "*.md" -type f)
-          
+
+          # Exclude non-workflow markdown files (README.md, SHARED_PROMPT_PATTERNS.md)
+          md_files=$(find .github/workflows -name "*.md" \
+            -not -name "README.md" \
+            -not -name "SHARED_PROMPT_PATTERNS.md" \
+            -type f | sort)
+
           if [ -z "$md_files" ]; then
             echo "No .md workflow files found"
             exit 0
           fi
-          
+
           compiled=false
-          
+          compile_failed=false
+
           for md_file in $md_files; do
             echo "Processing: $md_file"
-            
-            # Check if gh aw command is available
+
             if command -v gh >/dev/null 2>&1 && gh aw compile --help >/dev/null 2>&1; then
               echo "  Compiling with gh aw compile..."
-              gh aw compile "$md_file" || {
+              if gh aw compile "$md_file"; then
+                compiled=true
+              else
                 echo "  ❌ Failed to compile $md_file"
-                continue
-              }
-              compiled=true
+                compile_failed=true
+              fi
             else
               echo "  ⚠️ gh-aw tool not available"
               echo "  Please install gh-aw extension: gh extension install github/gh-aw"
               echo "  Or run 'gh aw compile' locally"
-              
-              # Set output to indicate manual action needed
               echo "needs_manual_compile=true" >> $GITHUB_OUTPUT
               exit 1
             fi
           done
-          
+
+          if [ "$compile_failed" = true ]; then
+            echo "❌ One or more workflows failed to compile"
+            echo "needs_manual_compile=true" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+
           if [ "$compiled" = true ]; then
             echo "✅ Workflows compiled successfully"
             echo "compiled=true" >> $GITHUB_OUTPUT
@@ -94,7 +108,7 @@ jobs:
           fi
         env:
           GH_TOKEN: ${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
-      
+     
       - name: Check for changes
         id: check_changes
         run: |
