@@ -1440,7 +1440,34 @@ npx tsx scripts/validate-cross-references.ts news/*-{type}-*.html
 
 All workflows MUST verify MCP connectivity before proceeding with content or translation work.
 
-**Pre-warm the riksdag-regering MCP server** (Render.com cold starts can take 60–90s):
+### Layer 1: CI-Level Pre-Warm Step (YAML frontmatter `steps:`)
+
+**Every workflow MUST include this CI step in its YAML frontmatter `steps:` section**, after `Install dependencies` and before the `engine:` block. This runs as an actual GitHub Actions step BEFORE the MCP gateway starts, giving the Render.com server time to wake up:
+
+```yaml
+  - name: Pre-warm MCP server (Render.com cold start mitigation)
+    run: |
+      echo "🔥 Pre-warming riksdag-regering MCP server (Render.com cold start)..."
+      WARM=false
+      for i in 1 2 3 4 5; do
+        if curl -sf --max-time 30 "https://riksdag-regering-ai.onrender.com/mcp" -o /dev/null 2>/dev/null; then
+          echo "✅ MCP server responded on attempt $i"
+          WARM=true
+          break
+        fi
+        echo "⏳ Attempt $i/5 — server may be cold-starting, waiting 15s..."
+        sleep 15
+      done
+      if [ "$WARM" = "false" ]; then
+        echo "⚠️ MCP server did not respond after 5 pre-warm attempts — agent will retry via in-prompt health gate"
+      fi
+```
+
+> **Why a CI step?** The old approach had the curl pre-warm only in the markdown prompt body (agent instructions). This meant the pre-warm ran INSIDE the AWF sandbox AFTER the MCP gateway had already tried to connect. If the server was cold, the gateway would fail before the agent even executed the curl. The CI step runs on the host BEFORE the MCP gateway starts, giving the server 60–75s to wake up.
+
+### Layer 2: In-Prompt Health Gate (markdown body)
+
+**Pre-warm the riksdag-regering MCP server** (backup — in case CI pre-warm was insufficient):
 ```bash
 echo "🔥 Pre-warming riksdag-regering MCP server (Render.com cold start mitigation)..."
 curl -sf --max-time 15 "https://riksdag-regering-ai.onrender.com/mcp" -o /dev/null 2>/dev/null || echo "Pre-warm ping sent (server may be waking up)"

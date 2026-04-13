@@ -116,6 +116,23 @@ steps:
     run: |
       npm ci --prefer-offline --no-audit
 
+  - name: Pre-warm MCP server (Render.com cold start mitigation)
+    run: |
+      echo "🔥 Pre-warming riksdag-regering MCP server (Render.com cold start)..."
+      WARM=false
+      for i in 1 2 3 4 5; do
+        if curl -sf --max-time 30 "https://riksdag-regering-ai.onrender.com/mcp" -o /dev/null 2>/dev/null; then
+          echo "✅ MCP server responded on attempt $i"
+          WARM=true
+          break
+        fi
+        echo "⏳ Attempt $i/5 — server may be cold-starting, waiting 15s..."
+        sleep 15
+      done
+      if [ "$WARM" = "false" ]; then
+        echo "⚠️ MCP server did not respond after 5 pre-warm attempts — agent will retry via in-prompt health gate"
+      fi
+
 engine:
   id: copilot
   model: claude-opus-4.6
