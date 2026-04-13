@@ -153,9 +153,12 @@ network:
     - api.scb.se                       # Statistics Sweden API
     - api.worldbank.org                # World Bank API
     - data.riksdagen.se                # Riksdag open data
-    - riksdagen.se / www.riksdagen.se  # Riksdag website
-    - regeringen.se / www.regeringen.se # Government website
-    - hack23.com / www.hack23.com      # Hack23 platform
+    - riksdagen.se                     # Riksdag website
+    - www.riksdagen.se                 # Riksdag website
+    - regeringen.se                    # Government website
+    - www.regeringen.se                # Government website
+    - hack23.com                       # Hack23 platform
+    - www.hack23.com                   # Hack23 platform
     - riksdagsmonitor.com              # This platform
     - raw.githubusercontent.com        # GitHub raw content
     - hack23.github.io                 # GitHub Pages
@@ -210,5 +213,5 @@ Quality gates: HTMLHint + linkinator + Dependabot + CodeQL + secret scanning
 
 ---
 
-**Last Updated**: 2026-04-02
-**Version**: 3.0
+**Last Updated**: 2026-04-13
+**Version**: 3.1

@@ -2,8 +2,8 @@
 name: gh-aw-workflow-authoring
 description: Master GitHub Agentic Workflows authoring - markdown syntax, natural language instructions, YAML frontmatter, compilation, and workflow patterns
 license: Apache-2.0
-version: 2.0.0
-last_updated: 2026-04-02
+version: 2.0.1
+last_updated: 2026-04-13
 tags: [github-agentic-workflows, workflow-authoring, markdown, natural-language, ai-automation]
 ---
 

@@ -2,8 +2,8 @@
 name: GitHub Agentic Workflows Security Architecture
 description: Comprehensive security architecture for GitHub Agentic Workflows including defense-in-depth, threat modeling, sandboxing, permission models, attack vectors, and security best practices
 license: Apache-2.0
-version: 2.0.0
-last_updated: 2026-04-02
+version: 2.0.1
+last_updated: 2026-04-13
 tags:
   - github-agentic-workflows
   - security

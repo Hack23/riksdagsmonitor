@@ -2,8 +2,8 @@
 name: gh-aw-firewall
 description: Network egress control for AI agents with domain whitelisting, Squid proxy, iptables enforcement, and secure credential management
 license: Apache-2.0
-version: 2.0.0
-last_updated: 2026-04-02
+version: 2.0.1
+last_updated: 2026-04-13
 tags: [github-agentic-workflows, network-security, firewall, squid, domain-whitelisting, egress-control]
 ---
 
