@@ -56,6 +56,7 @@ network:
     - www.hack23.com
     - riksdagsmonitor.com
     - www.riksdagsmonitor.com
+    - raw.githubusercontent.com
     - hack23.github.io
     - default
 
@@ -96,6 +97,7 @@ safe-outputs:
     - www.hack23.com
     - riksdagsmonitor.com
     - www.riksdagsmonitor.com
+    - raw.githubusercontent.com
     - hack23.github.io
   create-pull-request:
     labels: [agentic-news, analysis-data]
@@ -149,6 +151,53 @@ steps:
       done &
       KEEP_ALIVE_PID=$!
       echo "Keep-alive PID: $KEEP_ALIVE_PID (auto-exits after 15 min)"
+
+  - name: Network and MCP diagnostics
+    run: |
+      echo "🔍 Network Diagnostics — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+      echo "═══════════════════════════════════════════"
+      echo ""
+      echo "📡 DNS Resolution Tests:"
+      for domain in riksdag-regering-ai.onrender.com api.scb.se api.worldbank.org data.riksdagen.se www.riksdagen.se www.regeringen.se; do
+        if nslookup "$domain" >/dev/null 2>&1; then
+          IP=$(nslookup "$domain" 2>/dev/null | grep -A1 "Name:" | grep "Address:" | head -1 | awk '{print $2}')
+          echo "  ✅ $domain → $IP"
+        else
+          echo "  ❌ $domain — DNS FAILED"
+        fi
+      done
+      echo ""
+      echo "🌐 HTTPS Connectivity Tests:"
+      for url in \
+        "https://riksdag-regering-ai.onrender.com/mcp" \
+        "https://api.scb.se/OV0104/v2beta" \
+        "https://api.worldbank.org/v2/country/SE?format=json" \
+        "https://data.riksdagen.se/dokumentlista/?sok=test&doktyp=bet&utformat=json&a=1" \
+      ; do
+        HTTP_CODE=$(curl -sf -o /dev/null -w "%{http_code}" --max-time 10 "$url" 2>/dev/null || echo "000")
+        DOMAIN=$(echo "$url" | sed 's|https://||' | cut -d/ -f1)
+        if [ "$HTTP_CODE" -ge 200 ] && [ "$HTTP_CODE" -lt 400 ]; then
+          echo "  ✅ $DOMAIN → HTTP $HTTP_CODE"
+        elif [ "$HTTP_CODE" = "000" ]; then
+          echo "  ❌ $DOMAIN → TIMEOUT/UNREACHABLE"
+        else
+          echo "  ⚠️ $DOMAIN → HTTP $HTTP_CODE"
+        fi
+      done
+      echo ""
+      echo "🔌 MCP Server Tool Count:"
+      TOOL_RESP=$(curl -sf --max-time 15 -X POST \
+        -H "Content-Type: application/json" \
+        -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
+        "https://riksdag-regering-ai.onrender.com/mcp" 2>/dev/null) || TOOL_RESP=""
+      if echo "$TOOL_RESP" | grep -q '"tools"'; then
+        TOOL_COUNT=$(echo "$TOOL_RESP" | grep -o '"name"' | wc -l)
+        echo "  ✅ riksdag-regering MCP: $TOOL_COUNT tools registered"
+      else
+        echo "  ❌ riksdag-regering MCP: No tools response (server may still be starting)"
+      fi
+      echo ""
+      echo "═══════════════════════════════════════════"
 
 engine:
   id: copilot
@@ -314,7 +363,13 @@ sleep 10
 ```
 
 1. Call `get_sync_status({})` — retry up to 5× (45s wait between each)
-2. If you get **"unknown tool"** or **"0 tools registered"** errors, this means the MCP server is still initializing after a Render.com cold start. **Keep retrying — do NOT noop early.**
+2. If you get **"unknown tool"** or **"0 tools registered"** errors, this means the MCP server is still initializing after a Render.com cold start. **Keep retrying — do NOT noop early.** After 3 consecutive failures, run MCP gateway diagnostics:
+```bash
+echo "🔍 MCP Gateway Diagnostics"
+echo "Direct MCP server:" && curl -sf --max-time 15 -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' "https://riksdag-regering-ai.onrender.com/mcp" 2>/dev/null | head -c 200 || echo "UNREACHABLE"
+echo "Gateway:" && source scripts/mcp-setup.sh 2>/dev/null && echo "MCP_SERVER_URL=$MCP_SERVER_URL" && curl -sf --max-time 10 "$MCP_SERVER_URL" 2>/dev/null | head -c 200 || echo "GATEWAY UNREACHABLE"
+echo "DNS:" && for d in riksdag-regering-ai.onrender.com api.scb.se data.riksdagen.se; do nslookup "$d" 2>/dev/null | tail -2; done
+```
 3. After 5 failures → `safeoutputs___noop({"message": "MCP server unavailable after 5 attempts — Render.com cold start exceeded timeout"})`
 4. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
 
