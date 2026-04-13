@@ -435,18 +435,33 @@ Branch: `news/content/{YYYY-MM-DD}/{article-type}` (e.g. `news/content/2026-03-2
 # Using article-type pattern prevents merge conflicts with concurrent workflows
 git add news/*interpellation*.html 2>/dev/null || true
 git add news/metadata/ 2>/dev/null || true
-git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/interpellations/" || true
-# Enforce safe-outputs 100-file PR limit
-STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+# Use $ANALYSIS_SUBFOLDER (set during Run Suffix Resolution above); fallback to base type
+if [ -z "$ANALYSIS_SUBFOLDER" ]; then
+  ANALYSIS_SUBFOLDER="interpellations"
+fi
+# Stage analysis summary .md files ONLY — EXCLUDE documents/ to stay under 100-file limit.
+# With --limit 50, documents/ alone can contain 100+ files (50 JSON + 50 analysis.md).
+git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.md 2>/dev/null || true
+git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.json 2>/dev/null || true
+# Enforce safe-outputs 100-file PR limit (AWF-safe: no $(...) — write to temp file + read back)
+git diff --cached --name-only > /tmp/staged_files.txt
+awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+STAGED_COUNT=0
+read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
+echo "📊 Staged file count: $STAGED_COUNT (limit: 100)"
 if [ "$STAGED_COUNT" -gt 90 ]; then
-  echo "⚠️ Staged $STAGED_COUNT files exceeds 100-file PR limit. Removing per-document analysis files."
-  git reset HEAD -- "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/interpellations/documents/" 2>/dev/null || true
-  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+  echo "⚠️ $STAGED_COUNT files exceeds safe threshold. Removing metadata to reduce count."
+  git reset HEAD -- news/metadata/ 2>/dev/null || true
+  git diff --cached --name-only > /tmp/staged_files.txt
+  awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
 fi
 if [ "$STAGED_COUNT" -gt 90 ]; then
   echo "⚠️ Still $STAGED_COUNT files. Removing all analysis artifacts."
-  git reset HEAD -- "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/interpellations/" 2>/dev/null || true
-  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+  git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" 2>/dev/null || true
+  git diff --cached --name-only > /tmp/staged_files.txt
+  awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
 git commit -m "Add interpellation-debates articles and analysis artifacts"
