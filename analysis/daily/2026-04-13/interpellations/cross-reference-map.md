@@ -1,53 +1,48 @@
-# Cross-Reference Map — Interpellations 2026-04-13
+# Cross-Reference Map — 2026-04-13
 
-| Field | Value |
-|-------|-------|
-| **ID** | XREF-IP-2026-04-13-001 |
-| **Date** | 2026-04-13 |
-| **Riksmöte** | 2025/26 |
-| **Documents Mapped** | 2 |
-| **Generated** | 2026-04-13 07:20 UTC |
+**Generated**: 2026-04-13 22:02 UTC
+**Data Sources**: get_interpellationer, get_dokument_innehall
+**Documents Analyzed**: 2 (frs 2025/26:429, frs 2025/26:430)
+**Confidence**: HIGH (80%)
+**Produced By**: news-interpellations AI workflow (deep analysis)
+
+---
+
+## Summary
+
+Detected **3** cross-document relationships between the two interpellations.
 
 ## Cross-Reference Diagram
 
 ```mermaid
 graph LR
-    subgraph "📋 Interpellation Cross-References"
-        HD10429["HD10429<br/>Freedom of Expression<br/>vs Prop 133"]
-        HD10430["HD10430<br/>Mosque Hate Speech"]
-        PROP133["Prop 2025/26:133<br/>Assembly Security Bill"]
-        QBURN["Quran Burning<br/>Incidents 2023"]
-        EXPRESSEN["Expressen Exposé<br/>Imam Hate Speech"]
-        SD["SD Filing Strategy<br/>Both filed April 1-2"]
-    end
-
-    HD10429 --> PROP133
-    HD10429 --> QBURN
-    HD10430 --> EXPRESSEN
-    HD10429 -.->|"Security vs Freedom<br/>paradox"| HD10430
-    QBURN --> PROP133
-    SD --> HD10429
-    SD --> HD10430
-
-    style HD10429 fill:#0d6efd,color:#fff
-    style HD10430 fill:#dc3545,color:#fff
-    style PROP133 fill:#ffc107,color:#000
-    style SD fill:#ffd700,color:#000
+    HD10429["HD10429<br/>frs 2025/26:429<br/>Freedom of Expression"] -->|"same party (SD)"| HD10430["HD10430<br/>frs 2025/26:430<br/>Mosque Hate Speech"]
+    HD10429 -->|"same filing date<br/>(2026-04-07)"| HD10430
+    HD10429 -->|"thematic: religious<br/>expression boundaries"| HD10430
+    
+    HD10429 -->|"references"| PROP["Prop 2025/26:133<br/>Demonstration Security"]
+    HD10430 -->|"references"| EXP["Expressen Investigation<br/>Kristianstad Mosques"]
+    
+    style HD10429 fill:#FFD700,stroke:#333,color:#000
+    style HD10430 fill:#FFD700,stroke:#333,color:#000
+    style PROP fill:#B0C4DE,stroke:#333
+    style EXP fill:#B0C4DE,stroke:#333
 ```
 
-## Reference Links
+## Detailed Cross-References
 
-| Source dok_id | References | Relationship |
-|--------------|-----------|--------------|
-| HD10429 | Proposition 2025/26:133 | Directly challenges this government bill on assembly security |
-| HD10429 | Quran burning incidents (2023) | Contextual trigger for Prop 133 |
-| HD10429 | HD10430 | Thematic pair — security vs freedom tension |
-| HD10430 | Expressen exposé on imam hate speech | Primary evidence cited in interpellation |
-| HD10430 | BrB 16:8 (hate crime legislation) | Legal framework referenced |
+| # | Source | Target | Relationship Type | Evidence |
+|---|--------|--------|-------------------|----------|
+| 1 | HD10429 | HD10430 | Same party filing (SD) | Both filed by SD MPs on 2026-04-07 |
+| 2 | HD10429 | HD10430 | Thematic link | Both concern religious expression and constitutional boundaries |
+| 3 | HD10429 | Prop 2025/26:133 | Direct reference | Interpellation explicitly challenges proposition content |
 
-## Shared Patterns
+## Key Findings
 
-- **Filing coordination**: Both interpellations filed by SD members on April 1-2, 2026
-- **Target strategy**: Each targets a different coalition minister (M and KD)
-- **Policy paradox**: HD10430 identifies a security threat, HD10429 questions government response to that threat
-- **Timeline alignment**: Both announced in Riksdag chamber on same date (April 13)
+1. **Coordinated filing pattern** — same party, same date, related themes targeting different ministers
+2. **External reference network** — HD10429 links to proposition 2025/26:133; HD10430 links to Expressen investigation
+3. **Complementary targeting** — HD10429 targets M minister (Strömmer), HD10430 targets KD minister (Forssmed) — maximizing coalition pressure
+
+## Implications
+
+Cross-references confirm coordinated SD strategy. Articles should present both interpellations as part of a single strategic campaign rather than isolated parliamentary questions.
