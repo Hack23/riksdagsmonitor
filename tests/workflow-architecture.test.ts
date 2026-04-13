@@ -19,6 +19,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const WORKFLOWS_DIR = path.join(__dirname, '..', '.github', 'workflows');
+const AW_DIR = path.join(__dirname, '..', '.github', 'aw');
 
 /** All article types that should have dedicated workflows */
 const ARTICLE_TYPE_WORKFLOWS: Record<string, string> = {
@@ -761,15 +762,15 @@ describe('Interpellations Minister-Response Cross-Reference', () => {
 
 describe('Shared Prompt Patterns Reference', () => {
   it('should have SHARED_PROMPT_PATTERNS.md reference document', () => {
-    const filepath = path.join(WORKFLOWS_DIR, 'SHARED_PROMPT_PATTERNS.md');
+    const filepath = path.join(AW_DIR, 'SHARED_PROMPT_PATTERNS.md');
     expect(
       fs.existsSync(filepath),
-      'Missing .github/workflows/SHARED_PROMPT_PATTERNS.md reference document'
+      'Missing .github/aw/SHARED_PROMPT_PATTERNS.md reference document'
     ).toBe(true);
   });
 
   it('SHARED_PROMPT_PATTERNS.md should list all 6 required skills', () => {
-    const filepath = path.join(WORKFLOWS_DIR, 'SHARED_PROMPT_PATTERNS.md');
+    const filepath = path.join(AW_DIR, 'SHARED_PROMPT_PATTERNS.md');
     if (!fs.existsSync(filepath)) return;
     const content = fs.readFileSync(filepath, 'utf-8');
     expect(content).toContain('editorial-standards');
