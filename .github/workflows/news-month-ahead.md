@@ -75,6 +75,8 @@ mcp-servers:
     allowed: ["*"]
 
 tools:
+  startup-timeout: 180
+  timeout: 120
   github:
     toolsets:
       - all
@@ -360,6 +362,8 @@ fi
 ## MANDATORY MCP Health Gate
 
 > **The step-level pre-warm (6 attempts × 20s) already mitigates Render.com cold starts.** This in-prompt gate is a lightweight verification — NOT a full retry loop. Do NOT spend more than 90 seconds here.
+>
+> **📖 Full MCP architecture, tool names, and calling conventions:** See `SHARED_PROMPT_PATTERNS.md` → "MCP Architecture & Tool Reference" section. Tool names are EXACT: riksdag tools use underscores (`get_sync_status`), World Bank uses hyphens (`get-economic-data`), SCB uses underscores (`search_tables`).
 
 1. Call `get_sync_status({})` — retry up to **3×** (20s wait between each, not 45s — the server is already warm from the step-level pre-warm)
 2. If you get **"unknown tool"** or **"0 tools registered"** errors after 3 attempts, run a quick diagnostic:
