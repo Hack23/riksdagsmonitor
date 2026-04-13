@@ -41,8 +41,7 @@ concurrency:
 network:
   allowed:
     - node
-    - github.com
-    - api.github.com
+    - github
     - riksdag-regering-ai.onrender.com
     - api.scb.se
     - api.worldbank.org
@@ -58,17 +57,22 @@ network:
     - www.riksdagsmonitor.com
     - raw.githubusercontent.com
     - hack23.github.io
-    - default
+    - defaults
 
 mcp-servers:
   riksdag-regering:
     url: https://riksdag-regering-ai.onrender.com/mcp
+    allowed: ["*"]
   scb:
-    command: npx
-    args: ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"]
+    container: "node:lts-alpine"
+    entrypoint: "npx"
+    entrypointArgs: ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"]
+    allowed: ["*"]
   world-bank:
-    command: npx
-    args: ["-y", "worldbank-mcp@1.0.1"]
+    container: "node:lts-alpine"
+    entrypoint: "npx"
+    entrypointArgs: ["-y", "worldbank-mcp@1.0.1"]
+    allowed: ["*"]
 
 tools:
   github:
@@ -92,7 +96,6 @@ safe-outputs:
     - riksdagen.se
     - www.regeringen.se
     - www.scb.se
-    - github.com
     - hack23.com
     - www.hack23.com
     - riksdagsmonitor.com
