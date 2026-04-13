@@ -1513,7 +1513,8 @@ Then call the health gate:
 If MCP tools return errors ("unknown tool", "0 tools registered", connection timeouts), run these diagnostics BEFORE calling noop:
 
 ```bash
-echo "🔍 MCP Gateway Diagnostics — $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+echo "🔍 MCP Gateway Diagnostics"
+date -u '+%Y-%m-%dT%H:%M:%SZ'
 echo "═══════════════════════════════════════════"
 
 # 1. Test direct MCP server connectivity (bypasses gateway)
