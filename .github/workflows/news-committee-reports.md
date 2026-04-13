@@ -452,6 +452,7 @@ if [ "$STAGED_COUNT" -gt 90 ]; then
   git reset HEAD -- news/metadata/ 2>/dev/null || true
   git diff --cached --name-only > /tmp/staged_files.txt
   awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  STAGED_COUNT=0
   read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
 fi
 if [ "$STAGED_COUNT" -gt 90 ]; then
@@ -459,6 +460,7 @@ if [ "$STAGED_COUNT" -gt 90 ]; then
   git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" 2>/dev/null || true
   git diff --cached --name-only > /tmp/staged_files.txt
   awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  STAGED_COUNT=0
   read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"

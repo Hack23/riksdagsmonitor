@@ -169,7 +169,9 @@ echo "📁 Analysis subfolder resolved: analysis/daily/$ARTICLE_DATE/$ANALYSIS_S
 ARTICLE_TYPE="committeeReports"  # Set per workflow
 git add news/*committee-reports*.html 2>/dev/null || true  # Only this workflow's articles
 git add news/metadata/ 2>/dev/null || true                  # Metadata (small, fast-changing)
-git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" || true
+git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.md 2>/dev/null || true   # Summary files only
+git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.json 2>/dev/null || true # Summary JSON only
+# NOTE: documents/ is intentionally EXCLUDED — doc-type workflows can have 100+ files there
 
 # INCORRECT — will conflict with other workflows
 # git add news/ || true                                    # ← NEVER DO THIS — stages all workflows' articles
@@ -2114,6 +2116,7 @@ if [ "$STAGED_COUNT" -gt 90 ]; then
   git reset HEAD -- "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" 2>/dev/null || true
   git diff --cached --name-only > /tmp/staged_files.txt
   awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  STAGED_COUNT=0
   read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
@@ -2173,6 +2176,7 @@ if [ "$STAGED_COUNT" -gt 90 ]; then
   git reset HEAD -- analysis/data/ 2>/dev/null || true
   git diff --cached --name-only > /tmp/staged_files.txt
   awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  STAGED_COUNT=0
   read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
 fi
 if [ "$STAGED_COUNT" -gt 90 ]; then
@@ -2180,6 +2184,7 @@ if [ "$STAGED_COUNT" -gt 90 ]; then
   git reset HEAD -- analysis/weekly/ 2>/dev/null || true
   git diff --cached --name-only > /tmp/staged_files.txt
   awk 'END{print NR}' /tmp/staged_files.txt > /tmp/staged_count.txt
+  STAGED_COUNT=0
   read STAGED_COUNT < /tmp/staged_count.txt 2>/dev/null || true
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
