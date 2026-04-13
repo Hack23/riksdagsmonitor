@@ -84,6 +84,8 @@ mcp-servers:
     allowed: ["*"]
 
 tools:
+  startup-timeout: 180
+  timeout: 120
   github:
     toolsets:
       - all
@@ -323,6 +325,8 @@ echo "============================"
 Then verify MCP connectivity — ALWAYS check data freshness first with the MANDATORY MCP Health Gate:
 
 > **The step-level pre-warm (6 attempts × 20s) already mitigates Render.com cold starts.** This in-prompt gate is a lightweight verification — NOT a full retry loop. Do NOT spend more than 90 seconds here.
+>
+> **📖 Full MCP architecture, tool names, and calling conventions:** See `SHARED_PROMPT_PATTERNS.md` → "MCP Architecture & Tool Reference" section. Tool names are EXACT: riksdag tools use underscores (`get_sync_status`), World Bank uses hyphens (`get-economic-data`), SCB uses underscores (`search_tables`).
 
 ```
 get_sync_status({})

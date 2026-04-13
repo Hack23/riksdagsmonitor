@@ -1436,6 +1436,138 @@ npx tsx scripts/validate-cross-references.ts news/*-{type}-*.html
 ```
 ````
 
+## 🔌 MCP Architecture & Tool Reference
+
+> **This section explains how MCP servers work in gh-aw agentic workflows.** Understanding this architecture prevents "unknown tool" errors, authentication failures, and wasted retry loops.
+
+### Architecture Overview
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│  AWF Sandbox (Docker container)                                  │
+│                                                                  │
+│  ┌─────────────┐    ┌────────────────────────────────────────┐  │
+│  │  AI Agent    │───▶│  MCP Gateway (gh-aw-mcpg v0.2.17)    │  │
+│  │  (Copilot)   │    │  http://host.docker.internal:80/mcp/  │  │
+│  └─────────────┘    └──────┬──────────┬──────────┬───────────┘  │
+│                            │          │          │               │
+│                   ┌────────▼──┐ ┌─────▼────┐ ┌──▼──────────┐   │
+│                   │ riksdag-  │ │   scb    │ │ world-bank  │   │
+│                   │ regering  │ │(container)│ │ (container) │   │
+│                   │ (HTTP)    │ │node:lts  │ │ node:lts    │   │
+│                   └───────────┘ └──────────┘ └─────────────┘   │
+│                        │                                        │
+│               ┌────────▼──────────┐                             │
+│               │ riksdag-regering- │                             │
+│               │ ai.onrender.com   │                             │
+│               │ (remote HTTP MCP) │                             │
+│               └───────────────────┘                             │
+└──────────────────────────────────────────────────────────────────┘
+```
+
+**Key concepts:**
+1. **The AI agent calls tools by name** — e.g., `get_sync_status({})`, `search_tables({...})`. No server prefix needed.
+2. **The MCP gateway routes** each tool call to the correct MCP server based on tool registration.
+3. **riksdag-regering** is a remote HTTP MCP server (hosted on Render.com — subject to cold starts).
+4. **scb** and **world-bank** are local container-based MCP servers (started by the gateway — always available).
+5. **GitHub tools** (`github___*`) and **safe output tools** (`safeoutputs___*`) are built-in — always available.
+
+### How the AI Agent Calls MCP Tools
+
+MCP tools are available as **direct function calls** in the agent's tool list. Call them by their exact tool name:
+
+```javascript
+// riksdag-regering tools (32 tools — remote HTTP server)
+get_sync_status({})                                           // Health check — ALWAYS call first
+get_propositioner({ rm: "2025/26", limit: 20 })              // Government propositions
+get_betankanden({ rm: "2025/26", limit: 20 })                // Committee reports
+get_motioner({ rm: "2025/26", limit: 20 })                   // MP motions
+get_interpellationer({ rm: "2025/26", limit: 20 })           // Interpellations
+get_fragor({ rm: "2025/26", limit: 20 })                     // Written questions
+search_dokument({ doktyp: "prop", rm: "2025/26", limit: 20 }) // Search documents
+search_anforanden({ rm: "2025/26", limit: 20 })              // Search speeches
+search_voteringar({ rm: "2025/26", limit: 20 })              // Search votes
+search_ledamoter({ parti: "S", limit: 50 })                  // Search MPs
+get_calendar_events({ from: "2026-04-01", tom: "2026-04-30" }) // Calendar
+get_voting_group({ rm: "2025/26", groupBy: "parti" })        // Voting groups
+enhanced_government_search({ query: "budget", limit: 10 })   // Combined search
+analyze_g0v_by_department({})                                 // Department analysis
+search_regering({ title: "budget", limit: 10 })              // Government documents
+get_dokument({ dok_id: "H901FiU1" })                         // Specific document
+get_ledamot({ intressent_id: "0123456789" })                  // Specific MP
+fetch_report({ report: "ledamotsstatistik" })                 // Statistical reports
+
+// SCB (Statistics Sweden) tools (5 tools — local container)
+search_tables({ query: "befolkning", language: "en" })        // Search tables
+get_table_info({ table_id: "07459", language: "en" })         // Table info
+fetch_metadata({ table_id: "07459", language: "en" })         // Table metadata
+query_table({ table_id: "07459", value_codes: { Tid: "top(5)" } }) // Query data
+get_code_list({ code_list_id: "vs_Fylker" })                  // Code lists
+
+// World Bank tools (5 tools — local container)
+get-economic-data({ countryCode: "SE", indicator: "GDP_GROWTH", years: 10 })
+get-social-data({ countryCode: "SE", indicator: "POPULATION", years: 10 })
+get-education-data({ countryCode: "SE", indicator: "LITERACY_RATE", years: 10 })
+get-health-data({ countryCode: "SE", indicator: "HEALTH_EXPENDITURE", years: 10 })
+get-country-info({ countryCode: "SE" })
+search-indicators({ keyword: "education" })
+
+// GitHub built-in tools (always available)
+github___list_issues({...})
+github___create_pull_request({...})
+// ... see github_mcp_tools_with_safeoutputs_prompt.md for full list
+
+// Safe output tools (always available — NEVER search for these via bash)
+safeoutputs___create_pull_request({...})
+safeoutputs___noop({"message": "..."})
+safeoutputs___dispatch_workflow({...})
+```
+
+> **⚠️ CRITICAL**: Tool names are EXACT. `get_sync_status` ≠ `getSyncStatus` ≠ `get-sync-status`. World Bank tools use **hyphens** (`get-economic-data`). Riksdag/SCB tools use **underscores** (`get_sync_status`, `search_tables`).
+
+### How TypeScript Scripts Access MCP (via mcp-setup.sh)
+
+TypeScript scripts (e.g., `generate-news-enhanced.ts`) access the riksdag-regering MCP server through the **MCP gateway** using HTTP:
+
+```bash
+source scripts/mcp-setup.sh
+# Sets: MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering
+# Sets: MCP_AUTH_TOKEN=<gateway API key extracted from mcp-config.json>
+# Sets: MCP_CLIENT_TIMEOUT_MS=90000
+
+npx tsx scripts/generate-news-enhanced.ts --types=propositions --languages="en,sv"
+```
+
+The `mcp-setup.sh` script:
+1. Routes through the MCP gateway at `http://host.docker.internal:80/mcp/riksdag-regering`
+2. Extracts the gateway API key from `/home/runner/.copilot/mcp-config.json`
+3. Sets a 90-second timeout for cold-start tolerance
+
+> **The AI agent does NOT need to run `mcp-setup.sh`** — tool calls go through the gateway automatically. `mcp-setup.sh` is only for TypeScript scripts that make HTTP requests to the MCP server.
+
+### MCP Server Availability
+
+| Server | Type | Startup | Cold Start Risk | Retry Strategy |
+|--------|------|---------|-----------------|----------------|
+| **riksdag-regering** | Remote HTTP | ~10-120s | HIGH (Render.com free tier) | Layer 1 pre-warm + Layer 2 health gate |
+| **scb** | Local container | ~5-15s | LOW (starts with gateway) | Retry 2× with 10s wait |
+| **world-bank** | Local container | ~5-15s | LOW (starts with gateway) | Retry 2× with 10s wait |
+| **GitHub** | Built-in | Instant | NONE | No retry needed |
+| **Safe Outputs** | Built-in | Instant | NONE | No retry needed |
+
+### Error Handling by Server
+
+**riksdag-regering errors:**
+- `"unknown tool"` → Server cold-starting, tools not registered yet → retry
+- `"connection timeout"` → Server sleeping on Render.com → wait 30s, retry
+- `"0 tools registered"` → Server HTTP is up but MCP not initialized → retry with POST
+
+**scb/world-bank errors:**
+- `"connection refused"` → Container not started yet → wait 10s, retry
+- `"tool execution error"` → API-level error (bad query) → fix parameters, do NOT retry blindly
+
+---
+
 ## MANDATORY MCP Health Gate (copy into every workflow)
 
 All workflows MUST verify MCP connectivity before proceeding with content or translation work.
@@ -1495,18 +1627,21 @@ Additionally, because there is a 3–10 minute gap between the pre-warm step and
 **Pre-warm the riksdag-regering MCP server** (backup — in case CI pre-warm was insufficient):
 ```bash
 echo "🔥 Pre-warming riksdag-regering MCP server (Render.com cold start mitigation)..."
-curl -sf --max-time 15 "https://riksdag-regering-ai.onrender.com/mcp" -o /dev/null 2>/dev/null || echo "Pre-warm ping sent (server may be waking up)"
+curl -sf --max-time 15 -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' "https://riksdag-regering-ai.onrender.com/mcp" -o /dev/null 2>/dev/null || echo "Pre-warm ping sent (server may be waking up)"
 sleep 10
 ```
 
+> **CRITICAL**: Use POST with `tools/list` — a simple GET only wakes the HTTP server but does NOT initialize the MCP tool registry. See Layer 1 explanation above.
+
 Then call the health gate:
 
-1. Call `get_sync_status({})` — if it fails, wait 45s and retry up to 5 times total
+1. Call `get_sync_status({})` — retry up to **3×** (20s wait between each — the server is already warm from the step-level pre-warm)
 2. If you get **"unknown tool"** or **"0 tools registered"** errors, this means the MCP server is still initializing after a Render.com cold start. **Keep retrying — do NOT noop early.**
-3. After 5 failures → `safeoutputs___noop({"message": "MCP server unavailable after 5 attempts — Render.com cold start exceeded timeout"})` — do NOT proceed
+3. After 3 failures → `safeoutputs___noop({"message": "MCP server unavailable after 3 attempts — Render.com cold start exceeded timeout"})` — do NOT proceed
 4. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
 5. **For translation workflows**: MCP is required for accurate political term translation and cross-referencing. Do NOT proceed without MCP.
-6. **NEVER let the workflow timeout** without calling a safe output. If MCP is down, noop after the 5 retries instead of wasting 60 minutes.
+6. **NEVER let the workflow timeout** without calling a safe output. If MCP is down, noop after the 3 retries instead of wasting 60 minutes.
+7. **⏱️ Do NOT spend more than 2 minutes on MCP warmup** — proceed to analysis immediately once `get_sync_status` succeeds.
 
 ### Layer 3: MCP Gateway Diagnostics (run when tools fail)
 

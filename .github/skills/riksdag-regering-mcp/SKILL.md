@@ -108,7 +108,25 @@ Provide comprehensive access to Swedish political data through the `riksdag-rege
 - **Transparency Dashboards**: Real-time political metrics
 - **Risk Assessment**: Identify democratic accountability gaps
 
-## Examples
+## Calling MCP Tools in Agentic Workflows
+
+In gh-aw agentic workflows, MCP tools are called **directly by name** without any prefix. The MCP gateway routes to the correct server automatically:
+
+```javascript
+// Direct tool calls in agentic workflows (no prefix needed):
+get_sync_status({})                                       // Health check — ALWAYS call first
+get_propositioner({ rm: "2025/26", limit: 20 })           // Government propositions
+get_betankanden({ rm: "2025/26", limit: 20 })             // Committee reports
+search_dokument({ doktyp: "prop", rm: "2025/26" })        // Search documents
+search_voteringar({ rm: "2025/26", parti: "S" })          // Search votes
+get_calendar_events({ from: "2026-04-01", tom: "2026-04-30" }) // Calendar events
+```
+
+> **⚠️ Tool names use underscores** (e.g., `get_sync_status`, NOT `get-sync-status`).
+> The gateway at `http://host.docker.internal:80/mcp/riksdag-regering` handles routing.
+> See `SHARED_PROMPT_PATTERNS.md` → "MCP Architecture & Tool Reference" for full tool list.
+
+## Examples (TypeScript)
 
 ### Good Pattern: MP Voting Discipline Analysis
 ```javascript
