@@ -1,9 +1,9 @@
 {
-  "2026-04-10-opposition-motions-en.html": {
-    "filename": "2026-04-10-opposition-motions-en.html",
+  "2026-04-13-government-propositions-en.html": {
+    "filename": "2026-04-13-government-propositions-en.html",
     "lang": "en",
-    "articleType": "motions",
-    "score": 99,
+    "articleType": "propositions",
+    "score": 100,
     "passed": true,
     "multidimensional": {
       "overallScore": 73,
@@ -19,13 +19,13 @@
       },
       "issueCount": 3
     },
-    "timestamp": "2026-04-10T07:18:28.988Z"
+    "timestamp": "2026-04-13T14:01:42.852Z"
   },
-  "2026-04-10-opposition-motions-sv.html": {
-    "filename": "2026-04-10-opposition-motions-sv.html",
+  "2026-04-13-government-propositions-sv.html": {
+    "filename": "2026-04-13-government-propositions-sv.html",
     "lang": "sv",
-    "articleType": "motions",
-    "score": 95,
+    "articleType": "propositions",
+    "score": 100,
     "passed": true,
     "multidimensional": {
       "overallScore": 88,
@@ -41,6 +41,6 @@
       },
       "issueCount": 2
     },
-    "timestamp": "2026-04-10T07:18:28.992Z"
+    "timestamp": "2026-04-13T14:01:42.859Z"
   }
 }
