@@ -1442,28 +1442,53 @@ All workflows MUST verify MCP connectivity before proceeding with content or tra
 
 ### Layer 1: CI-Level Pre-Warm Step (YAML frontmatter `steps:`)
 
-**Every workflow MUST include this CI step in its YAML frontmatter `steps:` section**, after `Install dependencies` and before the `engine:` block. This runs as an actual GitHub Actions step BEFORE the MCP gateway starts, giving the Render.com server time to wake up:
+**Every workflow MUST include this CI step in its YAML frontmatter `steps:` section**, after `Install dependencies` and before the `engine:` block. This runs as an actual GitHub Actions step BEFORE the MCP gateway starts, giving the Render.com server time to wake up.
+
+**CRITICAL**: The pre-warm MUST use MCP protocol POST requests (not simple GET). A GET only wakes the HTTP server but does NOT initialize the MCP tool registry. The MCP gateway needs tools to be registered — a warm HTTP server with 0 registered tools causes "unknown tool" errors.
+
+Additionally, because there is a 3–10 minute gap between the pre-warm step and the MCP gateway start (due to repo-memory cloning, Docker image pulls, safe-outputs setup, etc.), the pre-warm starts a **background keep-alive pinger** that sends MCP `tools/list` POST requests every 30 seconds. This prevents Render.com from putting the server back to sleep before the gateway connects.
 
 ```yaml
   - name: Pre-warm MCP server (Render.com cold start mitigation)
     run: |
-      echo "🔥 Pre-warming riksdag-regering MCP server (Render.com cold start)..."
+      echo "🔥 Pre-warming riksdag-regering MCP server via MCP protocol..."
+      MCP_URL="https://riksdag-regering-ai.onrender.com/mcp"
       WARM=false
-      for i in 1 2 3 4 5; do
-        if curl -sf --max-time 30 "https://riksdag-regering-ai.onrender.com/mcp" -o /dev/null 2>/dev/null; then
-          echo "✅ MCP server responded on attempt $i"
+      for i in 1 2 3 4 5 6; do
+        RESP=$(curl -sf --max-time 30 -X POST \
+          -H "Content-Type: application/json" \
+          -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
+          "$MCP_URL" 2>/dev/null) || true
+        if echo "$RESP" | grep -q '"tools"'; then
+          TOOL_COUNT=$(echo "$RESP" | grep -o '"name"' | wc -l)
+          echo "✅ MCP server responded on attempt $i with $TOOL_COUNT tools registered"
           WARM=true
           break
         fi
-        echo "⏳ Attempt $i/5 — server may be cold-starting, waiting 15s..."
-        sleep 15
+        echo "⏳ Attempt $i/6 — server may be cold-starting, waiting 20s..."
+        sleep 20
       done
       if [ "$WARM" = "false" ]; then
-        echo "⚠️ MCP server did not respond after 5 pre-warm attempts — agent will retry via in-prompt health gate"
+        echo "⚠️ MCP server did not respond after 6 attempts — agent will retry via in-prompt health gate"
       fi
+      echo "🔄 Starting background keep-alive pinger (every 30s, max 15 min)..."
+      KEEP_ALIVE_END=$(($(date +%s) + 900))
+      while [ "$(date +%s)" -lt "$KEEP_ALIVE_END" ]; do
+        curl -sf --max-time 10 -X POST \
+          -H "Content-Type: application/json" \
+          -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
+          "$MCP_URL" -o /dev/null 2>/dev/null || true
+        sleep 30
+      done &
+      KEEP_ALIVE_PID=$!
+      echo "Keep-alive PID: $KEEP_ALIVE_PID (auto-exits after 15 min)"
 ```
 
-> **Why a CI step?** The old approach had the curl pre-warm only in the markdown prompt body (agent instructions). This meant the pre-warm ran INSIDE the AWF sandbox AFTER the MCP gateway had already tried to connect. If the server was cold, the gateway would fail before the agent even executed the curl. The CI step runs on the host BEFORE the MCP gateway starts, giving the server 60–75s to wake up.
+> **Why MCP protocol POST instead of GET?** The previous approach used `curl -sf "https://riksdag-regering-ai.onrender.com/mcp"` (GET). The GET request only returns a health check JSON — it does NOT trigger MCP session initialization or tool registry loading. The MCP gateway sends POST requests with `tools/list` to discover tools. If the tool registry hasn't been initialized by a prior POST request, the gateway receives 0 tools and reports "unknown tool" errors. Using POST with `tools/list` forces full MCP initialization.
+>
+> **Why a background keep-alive?** The CI `steps:` section runs early in the agent job. Between the pre-warm and the MCP gateway start, there are 3–10 minutes of setup (repo-memory cloning, Docker image pulls, safe-outputs config, etc.). On Render.com free tier, inactive servers go to sleep after ~5 minutes. The keep-alive pinger sends `tools/list` every 30s to prevent this. It auto-exits after 15 minutes to avoid resource waste.
+>
+> **Error scenarios**: If the MCP server is completely down (not just cold), the POST requests will fail silently (`|| true`). The pre-warm reports "did not respond after 6 attempts" and the agent falls back to Layer 2 (in-prompt health gate). If Layer 2 also fails, the agent must call `safeoutputs___noop()` with a detailed error message — never let the workflow timeout without producing a safe output.
 
 ### Layer 2: In-Prompt Health Gate (markdown body)
 
