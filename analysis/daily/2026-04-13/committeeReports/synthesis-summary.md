@@ -10,7 +10,7 @@
 | **Overall Confidence** | **HIGH** |
 | **Risk Level** | **ELEVATED** |
 
-## �� Key Findings
+## 🔑 Key Findings
 
 1. **Security-Migration Legislative Cluster** — The government has orchestrated a coordinated release of 9 committee reports across security (UU6, FöU8, FöU12) and migration (SfU16, SfU31, SfU32, SfU36) policy areas within 48 hours, rejecting a combined 404 opposition motions. This represents the most intensive legislative consolidation of the Tidö Agreement security and migration agenda this session. **[HIGH]**
 
@@ -58,7 +58,7 @@ graph TD
     end
     UU6 -.->|NATO context| FoU8
     FoU8 -.->|Personnel for| FoU12
-    SfU16 -.->|Tido package| SfU31
+    SfU16 -.->|Tidö package| SfU31
     MJU30 -.->|Policy tension| NU18
     style UU6 fill:#ff006e,color:#fff
     style SfU16 fill:#ff006e,color:#fff

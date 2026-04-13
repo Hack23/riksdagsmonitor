@@ -17,7 +17,7 @@
 | HD01FöU8 | FöU | Defence Personnel | 7 | 8 | 6 | 8 | 7 | **36/50** | 🟠 HIGH |
 | HD01SfU31 | SfU | Detention Framework | 6 | 8 | 7 | 7 | 6 | **34/50** | 🟠 HIGH |
 | HD01SfU32 | SfU | Returns Enforcement | 6 | 7 | 7 | 7 | 6 | **33/50** | 🟠 HIGH |
-| HD01SfU36 | SfU | Conduct Requirements | 6 | 7 | 7 | 7 | 6 | **33/50** | �� HIGH |
+| HD01SfU36 | SfU | Conduct Requirements | 6 | 7 | 7 | 7 | 6 | **33/50** | 🟠 HIGH |
 | HD01NU18 | NU | Renewables Permitting | 6 | 7 | 6 | 7 | 5 | **31/50** | 🟡 MEDIUM |
 | HD01SoU16 | SoU | Healthcare Organization | 6 | 6 | 7 | 5 | 6 | **30/50** | 🟡 MEDIUM |
 | HD01SoU17 | SoU | Healthcare Priorities | 6 | 6 | 7 | 5 | 6 | **30/50** | 🟡 MEDIUM |
@@ -29,4 +29,4 @@
 | HD01AU11 | AU | Gender Equality | 5 | 5 | 5 | 4 | 4 | **23/50** | 🔵 LOW |
 | HD01MJU18 | MJU | UTP Directive | 4 | 5 | 4 | 5 | 3 | **21/50** | 🔵 LOW |
 | HD01UbU31 | UbU | Research Ethics | 4 | 5 | 3 | 4 | 3 | **19/50** | ⚪ ROUTINE |
-| HD01MJU30 | MJU | Climate Goals | 7 | 9 | 8 | 7 | 9 | **40/50** | 🔴 CRITICAL |
+| HD01TU15 | TU | Railway and Public Transport | 5 | 5 | 5 | 4 | 4 | **23/50** | 🔵 LOW |

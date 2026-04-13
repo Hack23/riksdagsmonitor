@@ -16,7 +16,7 @@
 | 3 | Climate targets weakened through EU alignment — breaks 2017 cross-party consensus | 4 | 4 | 16 | 🔴 VERY HIGH | HD01MJU30 |
 | 4 | EU-Sweden migration policy conflict — national measures may exceed EU asylum pact framework | 3 | 4 | 12 | 🟠 HIGH | HD01SfU16, HD01SfU31 |
 | 5 | Healthcare access crisis worsens — 348 motions rejected without alternative strategy | 4 | 3 | 12 | 🟠 HIGH | HD01SoU16, HD01SoU17 |
-| 6 | Municipal capacity gaps in civilian protection implementation | 4 | 3 | 12 | �� HIGH | HD01FöU12 |
+| 6 | Municipal capacity gaps in civilian protection implementation | 4 | 3 | 12 | 🟠 HIGH | HD01FöU12 |
 | 7 | SD security consensus erodes before election — DCA debate intensifies | 2 | 5 | 10 | 🟠 HIGH | HD01UU6 |
 | 8 | Detention framework proportionality challenged in courts | 3 | 3 | 9 | 🟡 MEDIUM | HD01SfU31 |
 
