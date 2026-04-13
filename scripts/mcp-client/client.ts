@@ -133,7 +133,7 @@ export class MCPClient {
     tool: string,
     params: Record<string, unknown> = {},
     retryCount = 0,
-    skipPrefix = false,
+    _skipPrefix = false,
   ): Promise<Record<string, unknown>> {
     if (!tool || typeof tool !== 'string' || !/^[a-zA-Z0-9_-]+$/.test(tool)) {
       throw new Error(
@@ -141,7 +141,7 @@ export class MCPClient {
       );
     }
 
-    if (retryCount === 0 && !skipPrefix) {
+    if (retryCount === 0) {
       this.requestCount++;
     }
 
@@ -149,11 +149,10 @@ export class MCPClient {
     const timeoutId = setTimeout(() => controller.abort(), this.timeout);
 
     try {
-      const isGateway =
-        this.baseURL.includes('host.docker.internal') ||
-        this.baseURL.includes('/mcp/riksdag-regering');
-      const shouldPrefix = isGateway && !skipPrefix && !tool.includes('--');
-      const toolName = shouldPrefix ? `riksdag-regering--${tool}` : tool;
+      // The MCP gateway routes by URL path (e.g., /mcp/riksdag-regering),
+      // so tool names should always be bare (e.g., 'get_motioner', not
+      // 'riksdag-regering--get_motioner'). No server prefix is needed.
+      const toolName = tool;
 
       const jsonRpcRequest: JsonRpcRequest = {
         jsonrpc: '2.0',
@@ -213,18 +212,6 @@ export class MCPClient {
       if (jsonRpcResponse.error) {
         const errorMsg = jsonRpcResponse.error.message || JSON.stringify(jsonRpcResponse.error);
 
-        const isToolLookupError =
-          errorMsg.includes('not found') ||
-          errorMsg.includes('Internal error') ||
-          errorMsg.includes('Unknown tool') ||
-          errorMsg.includes('unknown tool');
-
-        if (isToolLookupError && toolName.startsWith('riksdag-regering--') && !skipPrefix) {
-          const bareTool = toolName.replace(/^riksdag-regering--/, '');
-          console.warn(`⚠️ Tool '${toolName}' not found, retrying as '${bareTool}'...`);
-          return this.request(bareTool, params, retryCount, true);
-        }
-
         if (errorMsg.includes('session initialization') || errorMsg.includes('Too Many Requests')) {
           this.sessionId = null;
           if (retryCount < 2) {
@@ -232,7 +219,7 @@ export class MCPClient {
             console.warn(`⚠️ Session error, re-initializing after ${delay}ms...`);
             await new Promise<void>((r) => setTimeout(r, delay));
             await this.initializeSession();
-            return this.request(tool, params, retryCount + 1, skipPrefix);
+            return this.request(tool, params, retryCount + 1);
           }
         }
 
@@ -284,7 +271,7 @@ export class MCPClient {
         );
         this.sessionId = null;
         await this.sleep(delay);
-        return this.request(tool, params, retryCount + 1, skipPrefix);
+        return this.request(tool, params, retryCount + 1);
       }
 
       this.errorCount++;

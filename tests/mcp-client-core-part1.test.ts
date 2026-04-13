@@ -599,7 +599,7 @@ describe('MCPClient', () => {
       expect(body.params.name).toBe('test_tool');
     });
 
-    it('should add prefix when using MCP gateway URL', async () => {
+    it('should use bare tool names when using MCP gateway URL', async () => {
       const gatewayClient = new MCPClient({ baseURL: 'http://host.docker.internal:80/mcp/riksdag-regering' });
       global.fetch = vi.fn(() => Promise.resolve({
         ok: true,
@@ -609,45 +609,22 @@ describe('MCPClient', () => {
       await gatewayClient.request('test_tool', {});
       const mockFetch = global.fetch as ReturnType<typeof vi.fn>;
       const body: JsonRpcBody = JSON.parse((mockFetch.mock.calls[0] as [string, RequestInit])[1].body as string);
-      // Gateway URL: prefix added
-      expect(body.params.name).toBe('riksdag-regering--test_tool');
+      // Gateway URL: bare tool name (gateway routes by URL path, not tool prefix)
+      expect(body.params.name).toBe('test_tool');
     });
 
-    it('should try without prefix if gateway returns Internal error', async () => {
+    it('should throw on Internal error from gateway without retry', async () => {
       const gatewayClient = new MCPClient({ baseURL: 'http://host.docker.internal:80/mcp/riksdag-regering' });
-      let callCount = 0;
-      global.fetch = vi.fn(() => {
-        callCount++;
-        if (callCount === 1) {
-          // First call with prefix fails with Internal error
-          return Promise.resolve({
-            ok: true,
-            json: () => Promise.resolve({
-              jsonrpc: '2.0',
-              id: 1,
-              error: { code: -32603, message: 'Internal error' }
-            })
-          });
-        }
-        // Second call without prefix succeeds
-        return Promise.resolve({
-          ok: true,
-          json: () => Promise.resolve({ jsonrpc: '2.0', id: 2, result: { success: true } })
-        });
-      }) as unknown as typeof global.fetch;
+      global.fetch = vi.fn(() => Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({
+          jsonrpc: '2.0',
+          id: 1,
+          error: { code: -32603, message: 'Internal error' }
+        })
+      })) as unknown as typeof global.fetch;
 
-      const result = await gatewayClient.request('test_tool', {});
-      expect(result).toEqual({ success: true });
-      expect(global.fetch).toHaveBeenCalledTimes(2);
-      
-      const mockFetch = global.fetch as ReturnType<typeof vi.fn>;
-      // First call should have prefix
-      const firstCall: JsonRpcBody = JSON.parse((mockFetch.mock.calls[0] as [string, RequestInit])[1].body as string);
-      expect(firstCall.params.name).toBe('riksdag-regering--test_tool');
-      
-      // Second call should not have prefix
-      const secondCall: JsonRpcBody = JSON.parse((mockFetch.mock.calls[1] as [string, RequestInit])[1].body as string);
-      expect(secondCall.params.name).toBe('test_tool');
+      await expect(gatewayClient.request('test_tool', {})).rejects.toThrow('MCP tool error: Internal error');
     });
   });
 
