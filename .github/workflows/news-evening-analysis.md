@@ -125,20 +125,35 @@ steps:
 
   - name: Pre-warm MCP server (Render.com cold start mitigation)
     run: |
-      echo "🔥 Pre-warming riksdag-regering MCP server (Render.com cold start)..."
+      echo "🔥 Pre-warming riksdag-regering MCP server via MCP protocol..."
+      MCP_URL="https://riksdag-regering-ai.onrender.com/mcp"
       WARM=false
-      for i in 1 2 3 4 5; do
-        if curl -sf --max-time 30 "https://riksdag-regering-ai.onrender.com/mcp" -o /dev/null 2>/dev/null; then
-          echo "✅ MCP server responded on attempt $i"
+      for i in 1 2 3 4 5 6; do
+        RESP=$(curl -sf --max-time 30 -X POST \
+          -H "Content-Type: application/json" \
+          -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
+          "$MCP_URL" 2>/dev/null) || true
+        if echo "$RESP" | grep -q '"tools"'; then
+          TOOL_COUNT=$(echo "$RESP" | grep -o '"name"' | wc -l)
+          echo "✅ MCP server responded on attempt $i with $TOOL_COUNT tools registered"
           WARM=true
           break
         fi
-        echo "⏳ Attempt $i/5 — server may be cold-starting, waiting 15s..."
-        sleep 15
+        echo "⏳ Attempt $i/6 — server may be cold-starting, waiting 20s..."
+        sleep 20
       done
       if [ "$WARM" = "false" ]; then
-        echo "⚠️ MCP server did not respond after 5 pre-warm attempts — agent will retry via in-prompt health gate"
+        echo "⚠️ MCP server did not respond after 6 attempts — agent will retry via in-prompt health gate"
       fi
+      echo "🔄 Starting background keep-alive pinger (every 30s)..."
+      while true; do
+        curl -sf --max-time 10 -X POST \
+          -H "Content-Type: application/json" \
+          -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
+          "$MCP_URL" -o /dev/null 2>/dev/null || true
+        sleep 30
+      done &
+      echo "Keep-alive PID: $!"
 
 engine:
   id: copilot
