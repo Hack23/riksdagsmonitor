@@ -138,15 +138,17 @@ steps:
       if [ "$WARM" = "false" ]; then
         echo "⚠️ MCP server did not respond after 6 attempts — agent will retry via in-prompt health gate"
       fi
-      echo "🔄 Starting background keep-alive pinger (every 30s)..."
-      while true; do
+      echo "🔄 Starting background keep-alive pinger (every 30s, max 15 min)..."
+      KEEP_ALIVE_END=$(($(date +%s) + 900))
+      while [ "$(date +%s)" -lt "$KEEP_ALIVE_END" ]; do
         curl -sf --max-time 10 -X POST \
           -H "Content-Type: application/json" \
           -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
           "$MCP_URL" -o /dev/null 2>/dev/null || true
         sleep 30
       done &
-      echo "Keep-alive PID: $!"
+      KEEP_ALIVE_PID=$!
+      echo "Keep-alive PID: $KEEP_ALIVE_PID (auto-exits after 15 min)"
 
 engine:
   id: copilot

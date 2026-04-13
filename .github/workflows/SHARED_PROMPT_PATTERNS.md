@@ -1471,20 +1471,24 @@ Additionally, because there is a 3–10 minute gap between the pre-warm step and
       if [ "$WARM" = "false" ]; then
         echo "⚠️ MCP server did not respond after 6 attempts — agent will retry via in-prompt health gate"
       fi
-      echo "🔄 Starting background keep-alive pinger (every 30s)..."
-      while true; do
+      echo "🔄 Starting background keep-alive pinger (every 30s, max 15 min)..."
+      KEEP_ALIVE_END=$(($(date +%s) + 900))
+      while [ "$(date +%s)" -lt "$KEEP_ALIVE_END" ]; do
         curl -sf --max-time 10 -X POST \
           -H "Content-Type: application/json" \
           -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
           "$MCP_URL" -o /dev/null 2>/dev/null || true
         sleep 30
       done &
-      echo "Keep-alive PID: $!"
+      KEEP_ALIVE_PID=$!
+      echo "Keep-alive PID: $KEEP_ALIVE_PID (auto-exits after 15 min)"
 ```
 
 > **Why MCP protocol POST instead of GET?** The previous approach used `curl -sf "https://riksdag-regering-ai.onrender.com/mcp"` (GET). The GET request only returns a health check JSON — it does NOT trigger MCP session initialization or tool registry loading. The MCP gateway sends POST requests with `tools/list` to discover tools. If the tool registry hasn't been initialized by a prior POST request, the gateway receives 0 tools and reports "unknown tool" errors. Using POST with `tools/list` forces full MCP initialization.
 >
-> **Why a background keep-alive?** The CI `steps:` section runs early in the agent job. Between the pre-warm and the MCP gateway start, there are 3–10 minutes of setup (repo-memory cloning, Docker image pulls, safe-outputs config, etc.). On Render.com free tier, inactive servers go to sleep after ~5 minutes. The keep-alive pinger sends `tools/list` every 30s to prevent this.
+> **Why a background keep-alive?** The CI `steps:` section runs early in the agent job. Between the pre-warm and the MCP gateway start, there are 3–10 minutes of setup (repo-memory cloning, Docker image pulls, safe-outputs config, etc.). On Render.com free tier, inactive servers go to sleep after ~5 minutes. The keep-alive pinger sends `tools/list` every 30s to prevent this. It auto-exits after 15 minutes to avoid resource waste.
+>
+> **Error scenarios**: If the MCP server is completely down (not just cold), the POST requests will fail silently (`|| true`). The pre-warm reports "did not respond after 6 attempts" and the agent falls back to Layer 2 (in-prompt health gate). If Layer 2 also fails, the agent must call `safeoutputs___noop()` with a detailed error message — never let the workflow timeout without producing a safe output.
 
 ### Layer 2: In-Prompt Health Gate (markdown body)
 
