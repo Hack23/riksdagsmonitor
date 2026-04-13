@@ -303,7 +303,13 @@ curl -sf --max-time 15 "https://riksdag-regering-ai.onrender.com/mcp" -o /dev/nu
 sleep 10
 ```
 
-STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm up MCP and check stale data. If you get **"unknown tool"** or **"0 tools registered"** errors, this means the MCP server is still initializing after a Render.com cold start — wait 45s and retry. Retry up to 5× (45s wait between each). After 5 failures → `safeoutputs___noop({"message": "MCP server unavailable after 5 attempts — Render.com cold start exceeded timeout"})`. All content MUST come from live MCP data.
+STEP 1: ALWAYS check data freshness first — call `get_sync_status({})` to warm up MCP and check stale data.
+
+1. Call `get_sync_status({})` — if it fails, wait 45s and retry
+2. If you get **"unknown tool"** or **"0 tools registered"** errors, this means the MCP server is still initializing after a Render.com cold start. **Keep retrying — do NOT noop early.**
+3. Retry up to 5 total attempts (45s wait between each)
+4. After 5 failures → `safeoutputs___noop({"message": "MCP server unavailable after 5 attempts — Render.com cold start exceeded timeout"})`
+5. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
 
 ### DATA FRESHNESS CHECK
 

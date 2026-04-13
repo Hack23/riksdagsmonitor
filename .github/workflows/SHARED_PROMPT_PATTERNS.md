@@ -1449,7 +1449,7 @@ sleep 10
 
 Then call the health gate:
 
-1. Call `get_sync_status({})` — retry up to 5× (45s wait between each)
+1. Call `get_sync_status({})` — if it fails, wait 45s and retry up to 5 times total
 2. If you get **"unknown tool"** or **"0 tools registered"** errors, this means the MCP server is still initializing after a Render.com cold start. **Keep retrying — do NOT noop early.**
 3. After 5 failures → `safeoutputs___noop({"message": "MCP server unavailable after 5 attempts — Render.com cold start exceeded timeout"})` — do NOT proceed
 4. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
