@@ -1508,6 +1508,41 @@ Then call the health gate:
 5. **For translation workflows**: MCP is required for accurate political term translation and cross-referencing. Do NOT proceed without MCP.
 6. **NEVER let the workflow timeout** without calling a safe output. If MCP is down, noop after the 5 retries instead of wasting 60 minutes.
 
+### Layer 3: MCP Gateway Diagnostics (run when tools fail)
+
+If MCP tools return errors ("unknown tool", "0 tools registered", connection timeouts), run these diagnostics BEFORE calling noop:
+
+```bash
+echo "🔍 MCP Gateway Diagnostics"
+date -u '+%Y-%m-%dT%H:%M:%SZ'
+echo "═══════════════════════════════════════════"
+
+# 1. Test direct MCP server connectivity (bypasses gateway)
+echo "📡 Direct MCP server test:"
+curl -sf --max-time 15 -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
+  "https://riksdag-regering-ai.onrender.com/mcp" 2>/dev/null | head -c 200 || echo "UNREACHABLE"
+
+# 2. Test MCP gateway connectivity
+echo ""
+echo "🔌 MCP Gateway test (via host.docker.internal):"
+source scripts/mcp-setup.sh 2>/dev/null
+echo "MCP_SERVER_URL=$MCP_SERVER_URL"
+curl -sf --max-time 10 -X POST -H "Content-Type: application/json" -H "Authorization: $MCP_AUTH_TOKEN" -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' "$MCP_SERVER_URL" 2>/dev/null | head -c 200 || echo "GATEWAY UNREACHABLE"
+
+# 3. DNS resolution from within sandbox
+echo ""
+echo "🌐 DNS resolution:"
+for d in riksdag-regering-ai.onrender.com api.scb.se api.worldbank.org data.riksdagen.se; do
+  nslookup "$d" 2>/dev/null | grep -A1 "Name:" | tail -1 || echo "$d: DNS FAILED"
+done
+
+echo "═══════════════════════════════════════════"
+```
+
+> **When to run diagnostics**: Only run this bash block if `get_sync_status()` fails after 3+ retries. The diagnostics output helps the next workflow iteration diagnose whether the issue is DNS, firewall, MCP server, or gateway configuration. Include the diagnostics output in the noop message.
+
 ## Standardised PR Description Template (copy into every workflow)
 
 > **All pull requests created by agentic workflows MUST have descriptive, structured PR bodies.** Use this template pattern for consistent, informative PR descriptions.
