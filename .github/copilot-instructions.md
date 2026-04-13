@@ -76,7 +76,7 @@
 
 ## 🤖 GitHub Agentic Workflows
 
-This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-aw v0.45.5) for AI-powered news generation. 12 agentic workflows in `.github/workflows/` produce daily political intelligence articles with five-layer security:
+This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-aw v0.68.1) for AI-powered news generation. 12 agentic workflows in `.github/workflows/` produce daily political intelligence articles with five-layer security:
 
 1. **Read-only tokens** — Agent gets only read permissions
 2. **Zero secrets in agent** — Write tokens isolated in separate jobs
@@ -89,6 +89,80 @@ This repo uses [GitHub Agentic Workflows](https://github.github.com/gh-aw/) (gh-
 - **Midday**: Month-ahead, week-ahead forecasting
 - **Evening**: Evening analysis, realtime monitoring
 - **Weekly/Monthly**: Reviews, translations across 14 languages
+
+### Runtime Configuration (All Workflows)
+All agentic workflows MUST include the `runtimes:` field to enforce Node.js 25:
+```yaml
+runtimes:
+  node:
+    version: "25"
+```
+
+### Tool Configuration (All Workflows)
+All agentic workflows include these tools for full access:
+```yaml
+tools:
+  startup-timeout: 180
+  timeout: 120
+  github:
+    toolsets: [all]       # Full GitHub API access
+  agentic-workflows: true # Workflow introspection (status, compile, logs, audit, checks)
+  bash: true              # Shell commands
+  playwright:             # Browser automation (where needed)
+  repo-memory:            # Persistent memory across runs
+    branch-name: memory/news-generation
+```
+
+### MCP Server Configuration (All Workflows)
+All agentic workflows configure 3 custom MCP servers:
+```yaml
+mcp-servers:
+  riksdag-regering:        # Swedish Parliament data (HTTP)
+    url: https://riksdag-regering-ai.onrender.com/mcp
+    allowed: ["*"]
+  scb:                     # Statistics Sweden (container)
+    container: "node:lts-alpine"
+    entrypoint: "npx"
+    entrypointArgs: ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"]
+    allowed: ["*"]
+  world-bank:              # World Bank data (container)
+    container: "node:lts-alpine"
+    entrypoint: "npx"
+    entrypointArgs: ["-y", "worldbank-mcp@1.0.1"]
+    allowed: ["*"]
+```
+
+### MCP Server Inspection
+Use the `gh aw mcp inspect` command to analyze and debug MCP servers:
+```bash
+gh aw mcp inspect                                        # List all workflows with MCP configs
+gh aw mcp inspect workflow-name                           # Inspect MCP servers in a workflow
+gh aw mcp inspect workflow-name --server server-name      # Filter to specific server
+gh aw mcp inspect workflow-name --server name --tool tool # Show tool details
+```
+
+### Network Permissions
+All workflows use a curated allowlist plus custom domains:
+```yaml
+network:
+  allowed:
+    - node                             # npm registry ecosystem
+    - github                           # GitHub API
+    - defaults                         # Curated dev domains
+    - riksdag-regering-ai.onrender.com # Riksdag MCP server
+    - api.scb.se                       # Statistics Sweden API
+    - api.worldbank.org                # World Bank API
+    - data.riksdagen.se                # Riksdag open data
+    - riksdagen.se                     # Riksdag website
+    - www.riksdagen.se                 # Riksdag website
+    - regeringen.se                    # Government website
+    - www.regeringen.se                # Government website
+    - hack23.com                       # Hack23 platform
+    - www.hack23.com                   # Hack23 platform
+    - riksdagsmonitor.com              # This platform
+    - raw.githubusercontent.com        # GitHub raw content
+    - hack23.github.io                 # GitHub Pages
+```
 
 ## 🔄 CI/CD
 
@@ -139,5 +213,5 @@ Quality gates: HTMLHint + linkinator + Dependabot + CodeQL + secret scanning
 
 ---
 
-**Last Updated**: 2026-04-02
-**Version**: 3.0
+**Last Updated**: 2026-04-13
+**Version**: 3.1

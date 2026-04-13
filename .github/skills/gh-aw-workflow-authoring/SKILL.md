@@ -2,8 +2,8 @@
 name: gh-aw-workflow-authoring
 description: Master GitHub Agentic Workflows authoring - markdown syntax, natural language instructions, YAML frontmatter, compilation, and workflow patterns
 license: Apache-2.0
-version: 2.0.0
-last_updated: 2026-04-02
+version: 2.0.1
+last_updated: 2026-04-13
 tags: [github-agentic-workflows, workflow-authoring, markdown, natural-language, ai-automation]
 ---
 
@@ -850,7 +850,7 @@ If it fails (permissions, file doesn't exist, etc.):
 - **gh-aw-continuous-ai-patterns** - Workflow patterns and strategies
 - **gh-aw-github-actions-integration** - Deployment and CI/CD
 
-## 🆕 v0.45.5 Features
+## 🆕 v0.68.1 Features
 
 ### AI Engine Selection
 
@@ -896,6 +896,44 @@ safe-outputs:
   create-pull-request:
     target-repo: owner/other-repo  # Cross-repo PRs
 ---
+```
+
+### Runtime Configuration
+
+All agentic workflows MUST include the `runtimes:` field to enforce specific runtime versions:
+
+```yaml
+runtimes:
+  node:
+    version: "25"    # Required: Node.js 25
+  python:
+    version: "3.12"  # Optional: Python 3.12
+    action-repo: "actions/setup-python"
+    action-version: "v5"
+```
+
+Runtimes from imported shared workflows are merged automatically.
+
+### Agentic Workflows Introspection Tool
+
+Enable workflow introspection with:
+
+```yaml
+tools:
+  agentic-workflows: true
+```
+
+Provides: `status`, `compile`, `logs`, `audit`, `checks` tools for self-improving workflows.
+
+### MCP Server Inspection
+
+Debug MCP server configurations from the command line:
+
+```bash
+gh aw mcp inspect                                             # List all
+gh aw mcp inspect workflow-name                                # Inspect workflow
+gh aw mcp inspect workflow-name --server name                  # Filter server
+gh aw mcp inspect workflow-name --server name --tool tool-name # Tool details
 ```
 
 ### Workflow Commands (Slash Commands)

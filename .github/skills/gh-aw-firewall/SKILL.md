@@ -2,8 +2,8 @@
 name: gh-aw-firewall
 description: Network egress control for AI agents with domain whitelisting, Squid proxy, iptables enforcement, and secure credential management
 license: Apache-2.0
-version: 2.0.0
-last_updated: 2026-04-02
+version: 2.0.1
+last_updated: 2026-04-13
 tags: [github-agentic-workflows, network-security, firewall, squid, domain-whitelisting, egress-control]
 ---
 
@@ -810,7 +810,7 @@ npm update -g gh-aw-firewall
 - [AWF Documentation](https://github.github.com/gh-aw/introduction/architecture/#agent-workflow-firewall-awf)
 - [Security Architecture](https://github.github.com/gh-aw/introduction/architecture/)
 
-## 🆕 AWF in the Five-Layer Security Model (v0.45.5)
+## 🆕 AWF in the Five-Layer Security Model (v0.68.1)
 
 The Agent Workflow Firewall (AWF) is **Layer 3** of the five-layer security model:
 

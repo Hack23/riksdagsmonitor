@@ -2,8 +2,8 @@
 name: GitHub Agentic Workflows Security Architecture
 description: Comprehensive security architecture for GitHub Agentic Workflows including defense-in-depth, threat modeling, sandboxing, permission models, attack vectors, and security best practices
 license: Apache-2.0
-version: 2.0.0
-last_updated: 2026-04-02
+version: 2.0.1
+last_updated: 2026-04-13
 tags:
   - github-agentic-workflows
   - security
@@ -1725,7 +1725,7 @@ Ensure all team members understand:
 - [OWASP AI Security](https://owasp.org/www-project-ai-security-and-privacy-guide/)
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework/)
 
-## 🆕 Five-Layer Security Model (v0.45.5)
+## 🆕 Five-Layer Security Model (v0.68.1)
 
 GitHub Agentic Workflows addresses AI agent manipulation with five security layers:
 

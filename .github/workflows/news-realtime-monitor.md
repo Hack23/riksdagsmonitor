@@ -47,6 +47,10 @@ concurrency:
   group: gh-aw-news-realtime-monitor-${{ inputs.article_date || 'today' }}
   cancel-in-progress: false
 
+runtimes:
+  node:
+    version: "25"
+
 network:
   allowed:
     - node
@@ -89,6 +93,7 @@ tools:
   github:
     toolsets:
       - all
+  agentic-workflows: true
   bash: true
   playwright:
   repo-memory:

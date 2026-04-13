@@ -2,8 +2,8 @@
 name: GitHub Agentic Workflows MCP Configuration
 description: Comprehensive guide for MCP (Model Context Protocol) server setup, transport protocols, configuration validation, lifecycle management, tool discovery, and error handling patterns
 license: Apache-2.0
-version: 2.0.0
-last_updated: 2026-04-02
+version: 2.0.1
+last_updated: 2026-04-13
 tags:
   - github-agentic-workflows
   - mcp
@@ -1665,7 +1665,7 @@ function validateToolInput(schema, input) {
 
 ---
 
-## 🆕 MCP in Agentic Workflows (v0.45.5)
+## 🆕 MCP in Agentic Workflows (v0.68.1)
 
 MCP servers extend agent capabilities through standardized tool interfaces. In gh-aw, the MCP Gateway runs inside the agent container, routing requests to Docker-hosted MCP servers.
 
@@ -1688,6 +1688,76 @@ tools:
   github:
     toolsets: [issues]
 ---
+```
+
+## 🔍 MCP Server Inspection (v0.68.1)
+
+Use the `gh aw mcp inspect` command to analyze and debug MCP servers configured in agentic workflows:
+
+### Inspection Commands
+
+```bash
+# List all workflows with MCP configurations
+gh aw mcp inspect
+
+# Inspect MCP servers in a specific workflow
+gh aw mcp inspect news-propositions
+
+# Filter to a specific MCP server
+gh aw mcp inspect news-propositions --server riksdag-regering
+
+# Show detailed information about a specific tool (requires --server)
+gh aw mcp inspect news-propositions --server riksdag-regering --tool search_dokument
+```
+
+### What `--tool` Flag Provides
+
+The `--tool` flag provides detailed information about a specific tool, including:
+- **Tool name, title, and description**
+- **Input schema and parameters** (JSON Schema)
+- **Whether the tool is allowed** in the workflow configuration
+- **Annotations and additional metadata**
+
+**Note**: The `--tool` flag requires the `--server` flag to specify which MCP server contains the tool.
+
+### riksdagsmonitor MCP Server Configuration
+
+All agentic workflows in this repository configure 3 custom MCP servers:
+
+```yaml
+mcp-servers:
+  riksdag-regering:
+    url: https://riksdag-regering-ai.onrender.com/mcp
+    allowed: ["*"]
+  scb:
+    container: "node:lts-alpine"
+    entrypoint: "npx"
+    entrypointArgs: ["-y", "@jarib/pxweb-mcp@2.0.0", "--url", "https://api.scb.se/OV0104/v2beta"]
+    allowed: ["*"]
+  world-bank:
+    container: "node:lts-alpine"
+    entrypoint: "npx"
+    entrypointArgs: ["-y", "worldbank-mcp@1.0.1"]
+    allowed: ["*"]
+```
+
+### Copilot Agent MCP Configuration (`.github/copilot-mcp.json`)
+
+For Copilot coding agent sessions (not agentic workflows), MCP servers are configured in `.github/copilot-mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "riksdag-regering": { "type": "http", "url": "..." },
+    "scb": { "type": "local", "command": "npx", "args": [...] },
+    "world-bank": { "type": "local", "command": "npx", "args": [...] },
+    "github": { "type": "http", "url": "https://api.githubcopilot.com/mcp/insiders" },
+    "filesystem": { "type": "local", "command": "mcp-server-filesystem" },
+    "memory": { "type": "local", "command": "mcp-server-memory" },
+    "sequential-thinking": { "type": "local", "command": "mcp-server-sequential-thinking" },
+    "playwright": { "type": "local", "command": "npx", "args": ["-y", "@playwright/mcp@latest"] }
+  }
+}
 ```
 
 ## 📚 References

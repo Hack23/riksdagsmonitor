@@ -1,6 +1,6 @@
 # 🤖 GitHub Agentic Workflows Skills Collection
 
-> Comprehensive expertise in GitHub Agentic Workflows (v0.45.5) — AI-powered repository automation using natural language markdown with five-layer security guardrails.
+> Comprehensive expertise in GitHub Agentic Workflows (v0.68.1) — AI-powered repository automation using natural language markdown with five-layer security guardrails.
 
 ## 📚 Skills Overview
 
@@ -63,7 +63,7 @@ A Go-based GitHub CLI extension (`gh aw`) that lets you write AI-powered workflo
 gh extension install github/gh-aw
 
 # Add a workflow from the gallery
-gh aw add-wizard https://github.com/github/gh-aw/blob/v0.45.5/.github/workflows/issue-triage-agent.md
+gh aw add-wizard https://github.com/github/gh-aw/blob/v0.68.1/.github/workflows/issue-triage-agent.md
 
 # Compile to GitHub Actions
 gh aw compile
@@ -163,8 +163,105 @@ graph TD
 
 ## 🏆 Maintenance
 
-- **Version**: 2.0.0
-- **Last Updated**: 2026-04-02
-- **gh-aw Version**: v0.45.5
+- **Version**: 2.1.0
+- **Last Updated**: 2026-04-13
+- **gh-aw Version**: v0.68.1
 - **License**: Apache-2.0
 - **Maintained by**: Hack23 AB
+
+## 🔍 MCP Server Inspection
+
+Use the `gh aw mcp inspect` command to analyze and debug MCP servers configured in agentic workflows:
+
+```bash
+# List all workflows with MCP configurations
+gh aw mcp inspect
+
+# Inspect MCP servers in a specific workflow
+gh aw mcp inspect news-propositions
+
+# Filter to a specific MCP server
+gh aw mcp inspect news-propositions --server riksdag-regering
+
+# Show detailed information about a specific tool (requires --server)
+gh aw mcp inspect news-propositions --server riksdag-regering --tool search_dokument
+```
+
+The `--tool` flag provides:
+- Tool name, title, and description
+- Input schema and parameters
+- Whether the tool is allowed in the workflow configuration
+- Annotations and additional metadata
+
+## ⚙️ Runtime Configuration
+
+All agentic workflows MUST specify the Node.js runtime version:
+
+```yaml
+runtimes:
+  node:
+    version: "25"    # Required: Node.js 25 for all workflows
+```
+
+Runtime configuration properties:
+- `version:` — Runtime version (e.g., `"25"`, `"3.12"`, `"latest"`)
+- `action-repo:` — GitHub Actions setup action (e.g., `"actions/setup-node"`)
+- `action-version:` — Setup action version (e.g., `"v4"`, `"v5"`)
+- `if:` — Optional condition (e.g., `"hashFiles('go.mod') != ''"`)
+
+Runtimes from imported shared workflows are merged automatically.
+
+## 🛠️ Tool Configuration Reference
+
+Standard tool configuration for riksdagsmonitor agentic workflows:
+
+```yaml
+tools:
+  startup-timeout: 180       # MCP server initialization timeout (seconds)
+  timeout: 120               # Per-operation timeout (seconds)
+  github:
+    toolsets: [all]           # Full GitHub API access (context, repos, issues, PRs, actions, etc.)
+  agentic-workflows: true    # Workflow introspection (status, compile, logs, audit, checks)
+  bash: true                 # Shell command execution
+  playwright:                # Browser automation (optional, for visual validation)
+  repo-memory:               # Persistent memory across workflow runs
+    branch-name: memory/news-generation
+    allowed-extensions: [".md", ".json"]
+    max-file-size: 51200
+    max-file-count: 50
+    max-patch-size: 51200
+```
+
+### Available `agentic-workflows:` Tools
+When `agentic-workflows: true` is set, the AI agent gains access to:
+- **status** — Show status of workflow files in the repository
+- **compile** — Compile markdown workflows to YAML
+- **logs** — Download and analyze workflow run logs
+- **audit** — Investigate workflow run failures and generate reports
+- **checks** — Classify CI check state for a pull request
+
+### Network Permissions Configuration
+
+```yaml
+network:
+  allowed:
+    - node       # npm registry and Node.js ecosystem
+    - github     # GitHub API and services
+    - defaults   # Curated allowlist of development domains
+    # Custom domains for MCP servers and data sources:
+    - riksdag-regering-ai.onrender.com
+    - api.scb.se
+    - api.worldbank.org
+    - data.riksdagen.se
+    - riksdagen.se
+    - www.riksdagen.se
+    - regeringen.se
+    - www.regeringen.se
+    - www.scb.se
+    - hack23.com
+    - www.hack23.com
+    - riksdagsmonitor.com
+    - www.riksdagsmonitor.com
+    - raw.githubusercontent.com
+    - hack23.github.io
+```
