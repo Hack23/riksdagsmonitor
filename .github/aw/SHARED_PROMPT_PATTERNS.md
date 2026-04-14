@@ -2260,7 +2260,7 @@ echo "📊 Final staged file count: $STAGED_COUNT"
 git commit -m "📊 Data + Analysis ($ARTICLE_TYPE) - $ARTICLE_DATE"
 ```
 
-> ⚠️ **Realtime monitor uniqueness**: `news-realtime-monitor` can run multiple times per day. It MUST use `HHMM=$(date -u +%H%M)` for both the analysis subfolder (`realtime-$HHMM/`) and article filename (`news/$DATE-breaking-$HHMM-{lang}.html`) to avoid overwriting previous runs.
+> ⚠️ **Realtime monitor uniqueness**: `news-realtime-monitor` can run multiple times per day. It MUST derive `HHMM` using the AWF-safe pattern `date -u +%H%M > /tmp/hhmm.txt`, then `HHMM=0000` and `read HHMM < /tmp/hhmm.txt 2>/dev/null || true`, and use that value for both the analysis subfolder (`realtime-$HHMM/`) and article filename (`news/$DATE-breaking-$HHMM-{lang}.html`) to avoid overwriting previous runs.
 
 > ❌ **PROHIBITED**: Committing analysis without downloaded data files (unless pruned for 100-file limit)
 > ❌ **PROHIBITED**: Committing stub/empty analysis when data exists

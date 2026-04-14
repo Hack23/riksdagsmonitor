@@ -509,13 +509,15 @@ DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
   echo "🗓️ Analysis date: $ARTICLE_DATE"
   if [ -n "$GITHUB_ENV" ]; then echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"; fi
 fi
-npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null > /tmp/pending.json || echo \'{"pendingAnalysis":0}\' > /tmp/pending.json
+npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null > /tmp/pending.json || printf '%s\n' '{"pendingAnalysis":0}' > /tmp/pending.json
 PENDING=0
 if [ -f /tmp/pending.json ]; then
-  grep -o \'"pendingAnalysis":[0-9]*\' /tmp/pending.json 2>/dev/null | grep -o \'[0-9]*$\' > /tmp/pending_count.txt 2>/dev/null || echo 0 > /tmp/pending_count.txt
+  jq -r '.pendingAnalysis // 0' /tmp/pending.json 2>/dev/null > /tmp/pending_count.txt || echo 0 > /tmp/pending_count.txt
   read PENDING < /tmp/pending_count.txt
+  case "$PENDING" in
+    ''|*[!0-9]*) PENDING=0 ;;
+  esac
 fi
-[ -z "$PENDING" ] && PENDING=0
 echo "📊 Pending analyses: $PENDING"
 ```
 
@@ -535,7 +537,7 @@ After data is downloaded, you MUST complete ALL of these steps before proceeding
    - `view analysis/methodologies/political-swot-framework.md` — understand evidence tables
 
 **Step B — Create real per-file analyses** (for EVERY document):
-1. List all downloaded documents: `find analysis/daily/$ARTICLE_DATE/documents/ -name "*.json" -type f` (⚠️ AWF: use `$VAR` not `$VAR`, never use `$(cmd)`)
+1. List all downloaded documents: `find analysis/daily/$ARTICLE_DATE/documents/ -name "*.json" -type f` (⚠️ AWF: use `$VAR` instead of `${VAR}`; never use `$(cmd)`)
 2. For EACH JSON file:
    a. Read it with `view` — extract dok_id, titel, datum, parti, organ
    b. Apply ALL 6 analytical lenses (classification, SWOT, risk, Political Threat Taxonomy, stakeholders, forward indicators)
@@ -552,7 +554,7 @@ After data is downloaded, you MUST complete ALL of these steps before proceeding
 
 **Step D — Run quality gate** (BLOCKING — must pass before proceeding):
 
-> ⚠️ AWF Safety: use `$VAR` not `$VAR`, avoid `$(cmd)`, use `find -exec basename {} \;` instead of `$(basename $f)`.
+> ⚠️ AWF Safety: use `$VAR` instead of `${VAR}`, avoid `$(cmd)`, use `find -exec basename {} \;` instead of `$(basename $f)`.
 
 ```bash
 if [ -z "$ARTICLE_DATE" ]; then

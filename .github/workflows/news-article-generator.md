@@ -601,7 +601,7 @@ These analysis files are committed alongside articles for human review and conti
 ```bash
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
 # Check if batch analysis files are empty/minimal
-grep -oP 'Documents Analyzed.*?(\d+)' "$ANALYSIS_DIR/synthesis-summary.md" 2>/dev/null | grep -oP '\d+$' > /tmp/synth_docs.txt || echo "0" > /tmp/synth_docs.txt
+sed -nE 's/.*Documents Analyzed[^0-9]*([0-9]+).*/\1/p' "$ANALYSIS_DIR/synthesis-summary.md" 2>/dev/null | sed -n '1p' > /tmp/synth_docs.txt || echo "0" > /tmp/synth_docs.txt
 read SYNTH_DOCS < /tmp/synth_docs.txt
 echo "📊 Synthesis reports $SYNTH_DOCS documents analyzed"
 if [ "$SYNTH_DOCS" -eq 0 ]; then

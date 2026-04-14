@@ -1122,8 +1122,10 @@ For each language in the resolved `LANG_ARG` list:
 ```bash
 date +%Y-%m-%d > /tmp/today.txt
 read TODAY < /tmp/today.txt
-NEW_ARTICLES="$(git status --porcelain -- news/ | awk '{print $2}' | grep "$TODAY-" || true)"
-echo "Generated: $(echo "$NEW_ARTICLES" | wc -l) articles"
+git status --porcelain -- news/ | awk '{print $2}' | grep "$TODAY-" > /tmp/new-articles.txt || true
+wc -l < /tmp/new-articles.txt > /tmp/new-articles-count.txt
+read ARTICLE_COUNT < /tmp/new-articles-count.txt
+echo "Generated: $ARTICLE_COUNT articles"
 ```
 
 ## Step 3b: AI Title, Meta Description & Analysis References (v5.0 — Analysis-Driven)
