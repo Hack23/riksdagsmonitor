@@ -639,7 +639,13 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
   DATA_DATE=""
   for DAYS_BACK in 1 2 3 4 5 6 7; do
     # Cross-platform date arithmetic: GNU date (-d) on Linux/GitHub Actions, BSD date (-v) on macOS
-    date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null > /tmp/lookback.txt || echo "" > /tmp/lookback.txt
+    if date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null > /tmp/lookback.txt; then
+      :
+    elif date -u -j -f "%Y-%m-%d" "$ARTICLE_DATE" -v-"$DAYS_BACK"d +%Y-%m-%d 2>/dev/null > /tmp/lookback.txt; then
+      :
+    else
+      echo "" > /tmp/lookback.txt
+    fi
     read LOOKBACK_DATE < /tmp/lookback.txt
     [ -z "$LOOKBACK_DATE" ] && continue
     echo "🔍 Checking $LOOKBACK_DATE for analyzed interpellations..."
@@ -1047,7 +1053,7 @@ npx tsx scripts/validate-cross-references.ts news/*-interpellation-debates-*.htm
 grep -l "Filed by: Unknown" news/*-interpellation-debates-*.html 2>/dev/null | wc -l || true
 
 # Check for untranslated spans in English article (should return 0)
-grep -c \'data-translate="true"\' "news/$ARTICLE_DATE-interpellation-debates-en.html" 2>/dev/null || true
+grep -c 'data-translate="true"' "news/$ARTICLE_DATE-interpellation-debates-en.html" 2>/dev/null || true
 
 # Check word count of English article text content (warn if < 500; HTML tags stripped)
 FILE="news/$ARTICLE_DATE-interpellation-debates-en.html"

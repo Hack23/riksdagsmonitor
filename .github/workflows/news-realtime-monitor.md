@@ -478,7 +478,10 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
   echo "⚠️ Activating 7-day lookback fallback..."
   DATA_DATE=""
   for DAYS_BACK in 1 2 3 4 5 6 7; do
-    date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null > /tmp/lookback.txt || echo "" > /tmp/lookback.txt
+    echo "" > /tmp/lookback.txt
+    if ! date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null > /tmp/lookback.txt; then
+      date -u -j -f "%Y-%m-%d" "$ARTICLE_DATE" -v-"$DAYS_BACK"d +%Y-%m-%d 2>/dev/null > /tmp/lookback.txt || echo "" > /tmp/lookback.txt
+    fi
     read LOOKBACK_DATE < /tmp/lookback.txt
     [ -z "$LOOKBACK_DATE" ] && continue
     MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/data-download-manifest.md"
