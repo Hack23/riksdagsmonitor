@@ -241,23 +241,7 @@ You are the **Real-Time Political Monitor** for Riksdagsmonitor. Detect signific
 
 ## 🛡️ AWF Shell Safety — MANDATORY for Agent-Generated Bash
 
-> **The Agent Workflow Firewall (AWF) blocks dangerous shell expansion patterns.** Fenced bash blocks in init steps run as normal shell, but any command YOU generate via the `bash` tool IS subject to AWF filtering. You MUST follow these rules:
-
-| ❌ BLOCKED pattern | ✅ SAFE alternative |
-|---|---|
-| `$`+`{VAR}` | `$VAR` (no curly braces) |
-| `$`+`{VAR:-default}` | Set default first: `if [ -z "$VAR" ]; then VAR=default; fi` then use `$VAR` |
-| `$`+`(command)` | Run as separate command, or use `find -exec` |
-| `$`+`(basename $f)` | Use `find -exec basename {} \;` or `ls` |
-| `$`+`{PIPESTATUS[0]}` | Use `set -o pipefail` and check `$?` immediately after the pipeline, or avoid pipelines |
-| `realtime-` + `$`+`{HHMM}` | `realtime-$HHMM` (no braces) |
-| `for f in "$DIR/"*.json; do echo "$`+`(basename $f)"; done` | `find "$DIR" -name "*.json" -exec basename {} \;` |
-
-**Key rules:**
-1. **NEVER** use `$`+`{...}` — always use `$VAR` (no curly braces)
-2. **NEVER** use `$`+`(...)` command substitution — use pipes or `find -exec`
-3. **Use `find -exec`** instead of for-loops with command substitution
-4. **Use direct paths** when possible (e.g., `cat analysis/daily/2026-04-07/realtime-1411/synthesis-summary.md`)
+> See `SHARED_PROMPT_PATTERNS.md` §"AWF Shell Safety" for the full rules and pattern table. Key: use `$VAR` (no braces), `find -exec` (no command substitution), set defaults with `if/then`.
 
 ## 🔤 UTF-8 Encoding
 
@@ -453,242 +437,49 @@ fi
 
 ### 🔄 Data Lookback Fallback
 
-> Never produce empty/stub analysis. If no data for today, look back (up to 7 days) to find unanalyzed data.
+> Never produce empty/stub analysis. If no data for today, look back up to 7 days. See `SHARED_PROMPT_PATTERNS.md` §"Data Lookback Fallback Strategy" for the complete bash implementation.
 
-```bash
-if [ -z "$ARTICLE_DATE" ]; then
-  if [ -n "${{ github.event.inputs.article_date }}" ]; then
-    ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  else
-    date -u +%Y-%m-%d > /tmp/today.txt
-    read ARTICLE_DATE < /tmp/today.txt
-  fi
-fi
-ORIGINAL_ARTICLE_DATE="$ARTICLE_DATE"
-MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/data-download-manifest.md"
-DATE_DOCS_ANALYZED=0
-if [ -f "$MANIFEST_PATH" ]; then
-  grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/docs_a3.txt || echo 0 > /tmp/docs_a3.txt
-read DATE_DOCS_ANALYZED < /tmp/docs_a3.txt
-DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
-fi
-[ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
-echo "📄 Docs analyzed for $ARTICLE_DATE: $DATE_DOCS_ANALYZED"
-if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
-  echo "⚠️ Activating 7-day lookback fallback..."
-  DATA_DATE=""
-  for DAYS_BACK in 1 2 3 4 5 6 7; do
-    # Cross-platform date arithmetic: GNU date (-d) on Linux/GitHub Actions, BSD date (-v) on macOS
-    if date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null > /tmp/lookback.txt; then
-      :
-    elif date -u -j -f "%Y-%m-%d" "$ARTICLE_DATE" -v-"$DAYS_BACK"d +%Y-%m-%d 2>/dev/null > /tmp/lookback.txt; then
-      :
-    else
-      echo "" > /tmp/lookback.txt
-    fi
-    read LOOKBACK_DATE < /tmp/lookback.txt
-    [ -z "$LOOKBACK_DATE" ] && continue
-    MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/data-download-manifest.md"
-    DATE_DOCS_ANALYZED=0
-    [ -f "$MANIFEST_PATH" ] && grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/docs_a3.txt || echo 0 > /tmp/docs_a3.txt
-read DATE_DOCS_ANALYZED < /tmp/docs_a3.txt
-DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
-    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
-    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then DATA_DATE="$LOOKBACK_DATE"; break; fi
-    source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
-    DATE_DOCS_ANALYZED=0
-    [ -f "$MANIFEST_PATH" ] && grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/docs_a3.txt || echo 0 > /tmp/docs_a3.txt
-read DATE_DOCS_ANALYZED < /tmp/docs_a3.txt
-DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
-    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
-    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then DATA_DATE="$LOOKBACK_DATE"; break; fi
-  done
-  if [ -n "$DATA_DATE" ] && [ "$DATA_DATE" != "$ORIGINAL_ARTICLE_DATE" ]; then
-    SRC_DIR="analysis/daily/$DATA_DATE/realtime-$HHMM"
-    DST_DIR="analysis/daily/$ORIGINAL_ARTICLE_DATE/realtime-$HHMM"
-    if [ -d "$SRC_DIR" ]; then
-      mkdir -p "$DST_DIR"; cp -r "$SRC_DIR"/* "$DST_DIR/" 2>/dev/null || true
-    fi
-    ARTICLE_DATE="$ORIGINAL_ARTICLE_DATE"
-  elif [ -n "$DATA_DATE" ]; then
-    ARTICLE_DATE="$DATA_DATE"
-  fi
-  echo "🗓️ Analysis date: $ARTICLE_DATE"
-  if [ -n "$GITHUB_ENV" ]; then echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"; fi
-fi
-npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null > /tmp/pending.json || printf '%s\n' '{"pendingAnalysis":0}' > /tmp/pending.json
-PENDING=0
-if [ -f /tmp/pending.json ]; then
-  jq -r '.pendingAnalysis // 0' /tmp/pending.json 2>/dev/null > /tmp/pending_count.txt || echo 0 > /tmp/pending_count.txt
-  read PENDING < /tmp/pending_count.txt
-  case "$PENDING" in
-    ''|*[!0-9]*) PENDING=0 ;;
-  esac
-fi
-echo "📊 Pending analyses: $PENDING"
-```
+Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-manifest.md` → if 0 docs, loop `DAYS_BACK` 1–7 using `date -u -d "$ARTICLE_DATE - $DAYS_BACK days"`, run `pre-article-analysis.ts --date "$LOOKBACK_DATE"` → copy artifacts from found date to original date folder if needed → run `catalog-downloaded-data.ts --pending-only` to get `$PENDING` count.
 
 ### Per-File Analysis & Daily Synthesis (done by AI, not scripts)
 
-> Scripts download data and produce **stub files only**. The AI agent MUST **replace ALL stubs** with real analysis following methods and templates. This is your PRIMARY job — do NOT skip it.
+> Scripts download data and produce **stub files only**. The AI agent MUST **replace ALL stubs** with real analysis. Follow `SHARED_PROMPT_PATTERNS.md` §"Per-File AI Analysis Block" and §"MANDATORY: AI-Driven Analysis Using Methods & Templates" exactly (Steps A–D below are a summary):
 
-#### 🚨 Per-File Analysis Protocol (BLOCKING — must complete before Step 2)
+**Step A**: Read `analysis/methodologies/ai-driven-analysis-guide.md` + `analysis/templates/per-file-political-intelligence.md` FIRST. Then consult SHARED_PROMPT_PATTERNS Steps 2–3 (all 6 methodology guides, all 8 templates).
 
-After data is downloaded, you MUST complete ALL of these steps before proceeding to event detection:
+**Step B**: For EVERY document JSON → create `{dok_id}-analysis.md` with ALL 6 analytical lenses, ≥1 color-coded Mermaid with `style` directives, evidence tables with dok_id/confidence/impact, real SWOT entries.
 
-**Step A — Read templates and methodologies** (FIRST, before writing anything):
-1. Follow the organization-wide **SHARED_PROMPT_PATTERNS Step 2 + Step 3** exactly: read **all 6 methodology guides** and **all 8 analysis templates** defined there (in `analysis/methodologies/` and `analysis/templates/`) **before writing any analysis**. Do NOT subset or skip any required document.
-2. After completing SHARED_PROMPT_PATTERNS Steps 2–3, (re)read these **news-monitor-specific assets**:
-   - `view analysis/templates/per-file-political-intelligence.md` — read FULLY, note the required structure
-   - `view analysis/methodologies/ai-driven-analysis-guide.md` — read the "BAD vs GOOD" examples
-   - `view analysis/methodologies/political-swot-framework.md` — understand evidence tables
+**Step C**: Rewrite ALL 7 daily synthesis files in `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` to match their templates exactly.
 
-**Step B — Create real per-file analyses** (for EVERY document):
-1. List all downloaded documents: `find analysis/daily/$ARTICLE_DATE/documents/ -name "*.json" -type f` (⚠️ AWF: use `$VAR` instead of `${VAR}`; never use `$(cmd)`)
-2. For EACH JSON file:
-   a. Read it with `view` — extract dok_id, titel, datum, parti, organ
-   b. Apply ALL 6 analytical lenses (classification, SWOT, risk, Political Threat Taxonomy, stakeholders, forward indicators)
-   c. Write or rewrite the per-file analysis markdown so that its filename matches the `*-analysis.md` convention (for example `{dok_id}-analysis.md`) and follows the per-file template EXACTLY
-   d. Include ≥1 color-coded Mermaid diagram with `style` directives and REAL data
-   e. Include structured evidence tables with dok_id, confidence, impact columns
-   f. SWOT quadrants must have REAL entries — NOT "_No strengths identified_"
-   g. Stakeholder perspectives must cite SPECIFIC data — NOT generic boilerplate like "this document requires assessment"
-
-**Step C — Rewrite daily synthesis files** (ALL 7 files must match templates):
-1. Read each template: `view analysis/templates/{template}.md`
-2. Rewrite each daily file to match its template EXACTLY
-3. Every claim must cite real data (dok_id, vote counts, party names)
-
-**Step D — Run quality gate** (BLOCKING — must pass before proceeding):
-
-> ⚠️ AWF Safety: use `$VAR` instead of `${VAR}`, avoid `$(cmd)`, use `find -exec basename {} \;` instead of `$(basename $f)`.
-
-```bash
-if [ -z "$ARTICLE_DATE" ]; then
-  if [ -n "${{ github.event.inputs.article_date }}" ]; then
-    ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  else
-    date -u +%Y-%m-%d > /tmp/today.txt
-    read ARTICLE_DATE < /tmp/today.txt
-  fi
-fi
-[ -f /tmp/hhmm.env ] && . /tmp/hhmm.env
-if [ -z "$HHMM" ]; then
-  date -u +%H%M > /tmp/hhmm_val.txt
-  read HHMM < /tmp/hhmm_val.txt
-fi
-ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/realtime-$HHMM"
-QUALITY_PASS=true; FAIL_COUNT=0
-echo "=== Quality Gate: $ANALYSIS_DIR ==="
-# Count files (AWF-safe: pipe to file)
-find "$ANALYSIS_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null | wc -l > /tmp/daily_count.txt
-read DAILY_COUNT < /tmp/daily_count.txt
-find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l > /tmp/perfile_count.txt
-read PERFILE_COUNT < /tmp/perfile_count.txt
-echo "Daily: $DAILY_COUNT | Per-file: $PERFILE_COUNT"
-for f in "$ANALYSIS_DIR"/*.md; do
-  [ ! -f "$f" ] && continue
-  grep -c '```mermaid' "$f" 2>/dev/null > /tmp/mc.txt || echo 0 > /tmp/mc.txt
-  read MC < /tmp/mc.txt
-  [ "$MC" -eq 0 ] && { echo "❌ $f: NO Mermaid"; QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT+1)); }
-  grep -q '```mermaid' "$f" 2>/dev/null && grep -c 'style.*fill:#' "$f" 2>/dev/null > /tmp/sc.txt || echo 0 > /tmp/sc.txt
-  read SC < /tmp/sc.txt && [ "$SC" -eq 0 ] && { echo "❌ $f: no color styles"; QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT+1)); }
-done
-for f in "$ANALYSIS_DIR"/*.md "$ANALYSIS_DIR"/documents/*-analysis.md; do
-  [ ! -f "$f" ] && continue
-  grep -c '\[REQUIRED\]' "$f" 2>/dev/null > /tmp/rc.txt || echo 0 > /tmp/rc.txt
-  read RC < /tmp/rc.txt
-  [ "$RC" -gt 0 ] && { echo "❌ $f: $RC [REQUIRED] placeholders"; QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT+1)); }
-done
-SWOT_FILE="$ANALYSIS_DIR/swot-analysis.md"
-if [ -f "$SWOT_FILE" ]; then
-  grep -c '|.*dok_id\||.*Evidence' "$SWOT_FILE" 2>/dev/null > /tmp/tc_count.txt || echo 0 > /tmp/tc_count.txt
-  read TC < /tmp/tc_count.txt
-  [ "$TC" -eq 0 ] && { echo "❌ swot-analysis.md: no evidence tables"; QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT+1)); }
-fi
-STUB_COUNT=0
-for f in "$ANALYSIS_DIR"/documents/*-analysis.md; do
-  [ ! -f "$f" ] && continue
-  SS=0
-  grep -cE '_No (strengths|weaknesses|opportunities|threats) identified_' "$f" 2>/dev/null > /tmp/es.txt || echo 0 > /tmp/es.txt
-  read ES < /tmp/es.txt
-  [ "$ES" -ge 2 ] && SS=$((SS+2))
-  grep -c 'this document requires assessment' "$f" 2>/dev/null > /tmp/bs.txt || echo 0 > /tmp/bs.txt
-  read BS < /tmp/bs.txt
-  [ "$BS" -ge 2 ] && SS=$((SS+2))
-  grep -c '```mermaid' "$f" 2>/dev/null > /tmp/mc.txt || echo 0 > /tmp/mc.txt
-  read MC < /tmp/mc.txt; [ "$MC" -eq 0 ] && SS=$((SS+1))
-  grep -c '^|' "$f" 2>/dev/null > /tmp/tc2.txt || echo 0 > /tmp/tc2.txt
-  read TC < /tmp/tc2.txt
-  [ "$TC" -lt 2 ] && SS=$((SS+1))
-  [ "$SS" -ge 3 ] && { echo "❌ $f: stub (score=$SS)"; STUB_COUNT=$((STUB_COUNT+1)); QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT+1)); }
-done
-if [ -d "$ANALYSIS_DIR/documents" ]; then
-  find "$ANALYSIS_DIR/documents" -name "*.json" -type f 2>/dev/null | wc -l > /tmp/jc.txt
-  read JC < /tmp/jc.txt
-  find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l > /tmp/ac.txt
-  read AC < /tmp/ac.txt
-  [ "$JC" -gt 0 ] && [ "$AC" -lt "$JC" ] && { echo "❌ $AC/$JC analyses"; QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT+1)); }
-fi
-if [ "$QUALITY_PASS" = "true" ]; then
-  echo "✅ Quality gate PASSED"
-else
-  echo "❌ Quality gate FAILED ($FAIL_COUNT failures) — fix then re-run. Templates: analysis/templates/"
-  [ "$STUB_COUNT" -gt 0 ] && echo "🚨 $STUB_COUNT stubs — replace with evidence-based analysis"
-fi
-```
+**Step D — Run quality gate** (BLOCKING): See `SHARED_PROMPT_PATTERNS.md` §"Step 5b: MANDATORY Quality Gate" for the complete bash script. Run it and fix ALL failures before proceeding.
 
 > 🚨 **BLOCKING**: Fix all failures before proceeding. Read `analysis/templates/<template>.md`, rewrite failing files, re-run gate.
 
-### 🔴 MANDATORY: Batch Analysis Enrichment (Prevents Empty "0 Documents Analyzed" Files)
+### 🔴 MANDATORY: Batch Analysis Enrichment
 
-> **Root Cause**: The `pre-article-analysis.ts` script filters documents by exact date match. When no documents match the exact analysis date, batch files report "0 documents analyzed" — this violates `ai-driven-analysis-guide.md` quality requirements.
-
-**After per-file analysis and quality gate, check if batch files are empty and enrich them:**
-
-1. Check `synthesis-summary.md` — if it reports "0 documents analyzed" but per-document analyses exist in `documents/`, aggregate the per-doc findings into all 9 batch files
-2. If NO per-doc analyses exist AND batch files show "0 documents analyzed", use MCP tools directly (`search_dokument`, `get_propositioner`, `get_betankanden`, `search_anforanden`) to find recent parliamentary activity and create meaningful analysis
-3. Each enriched batch file MUST include: ≥1 Mermaid diagram, structured tables, evidence citations, confidence labels
-4. **NEVER commit batch files that report "0 documents analyzed" when analysis data is available**
-5. See `ai-driven-analysis-guide.md` "Deep-Inspection Batch Analysis Enrichment Protocol (v4.1)" for full requirements
+If `synthesis-summary.md` reports "0 documents analyzed" but per-doc analyses exist in `documents/`, aggregate findings into all 9 batch files. If NO per-doc analyses exist, use MCP tools directly to create meaningful analysis. See `ai-driven-analysis-guide.md` §"Deep-Inspection Batch Analysis Enrichment Protocol (v4.1)". **NEVER commit batch files reporting "0 documents analyzed".**
 
 ### 🚨 MANDATORY: Commit Data AND Analysis
 
-**Before deciding whether to generate articles or call noop, you MUST:**
-
-1. **Verify data was downloaded** — `find analysis/data/ -name "*.json" -type f | wc -l` must be > 0
-2. **Verify analysis was created** — every downloaded document has a `-analysis.md` file
-3. **Verify daily synthesis files follow templates** — no `[REQUIRED]` placeholders, Mermaid diagrams with real data
-4. **ALWAYS commit data AND analysis together**:
+Before deciding to generate articles or call noop, check if analysis artifacts exist:
 
 ```bash
-# Idempotent: only set if not already resolved by lookback
-if [ -z "$ARTICLE_DATE" ]; then
-  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  if [ -z "$ARTICLE_DATE" ]; then
-  date -u +%Y-%m-%d > /tmp/today.txt
-  read ARTICLE_DATE < /tmp/today.txt
-fi
-fi
 [ -f /tmp/hhmm.env ] && . /tmp/hhmm.env
 if [ -z "$HHMM" ]; then
   date -u +%H%M > /tmp/hhmm_val.txt
   read HHMM < /tmp/hhmm_val.txt
 fi
+if [ -z "$ARTICLE_DATE" ]; then
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
+fi
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/realtime-$HHMM"
-ANALYSIS_COUNT=0
-if [ -d "$ANALYSIS_DIR" ]; then
-  find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l > /tmp/analysis_count.txt
-  read ANALYSIS_COUNT < /tmp/analysis_count.txt
-fi
-if [ "$ANALYSIS_COUNT" -gt 0 ]; then
-  echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed (do NOT use safeoutputs___noop)"
-else
-  echo "📊 Found 0 analysis artifacts — safeoutputs___noop is allowed (no files to commit)"
-fi
+find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l > /tmp/analysis_count.txt
+read ANALYSIS_COUNT < /tmp/analysis_count.txt
+echo "Analysis artifacts: $ANALYSIS_COUNT files in $ANALYSIS_DIR"
 ```
 
-> **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files in `analysis/daily/YYYY-MM-DD/realtime-HHMM/`, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Realtime Monitor - {date} {HHMM}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).
+> **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If ANY files exist in `analysis/daily/YYYY-MM-DD/realtime-HHMM/`, commit them via `safeoutputs___create_pull_request` — title: `📊 Analysis Only - Realtime Monitor - {date} {HHMM}`, labels: `["analysis-only", "realtime-monitor"]`. Only use noop if ZERO output files were produced.
 
 ## Step 2: Detect Significant Events
 
@@ -710,20 +501,7 @@ get_betankanden({ rm: "<rm>", limit: 20 })
 
 ### ⚠️ Calendar API Fallback
 
-The Riksdag calendar API (`get_calendar_events`) is known to intermittently return HTML instead of JSON. If the calendar call returns an error, empty results with an `error` field, or HTML content:
-
-1. **Do NOT treat the calendar failure as "no events"** — other data sources may still have significant content.
-2. **Use `search_dokument` as a document-based proxy** to detect recently published committee reports and propositions (these indicate active parliamentary work even when the calendar is unavailable):
-   ```
-   search_dokument({ from_date: "<today>", to_date: "<today>", limit: 50, doktyp: "bet" })
-   search_dokument({ from_date: "<today>", to_date: "<today>", limit: 30, doktyp: "prop" })
-   ```
-   > Note: This does NOT replace the calendar's session-timing data. It provides publication signals as context for whether parliament is active.
-3. **Flag the API error** in any noop message so it can be investigated:
-   ```
-   safeoutputs___noop({ "message": "... calendar (API error: returned HTML instead of JSON) ..." })
-   ```
-4. Continue evaluating all other data sources normally — the calendar is supplementary, not blocking.
+`get_calendar_events` may return HTML instead of JSON intermittently. If it fails: (1) do NOT treat as "no events"; (2) use `search_dokument({ from_date: "<today>", to_date: "<today>", limit: 50, doktyp: "bet" })` as a proxy; (3) flag the error in any noop message; (4) continue evaluating all other data sources normally.
 
 ### Significance Assessment — AI-Driven Severity Classification
 
@@ -768,41 +546,9 @@ Map raw score to tier: **≥ 7 = HIGH** | **4–6 = MEDIUM** | **≤ 3 = LOW**
 
 ### No-Events Early Exit
 
-If no HIGH or MEDIUM events found:
-
-1. **First check if analysis artifacts exist** in `analysis/daily/YYYY-MM-DD/realtime-HHMM/`:
-```bash
-# Idempotent: prefer resolved/input date, then fall back to today
-if [ -z "$ARTICLE_DATE" ]; then
-  if [ -n "${{ github.event.inputs.article_date }}" ]; then
-    ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  else
-    date -u +%Y-%m-%d > /tmp/today.txt
-read ARTICLE_DATE < /tmp/today.txt
-  fi
-fi
-[ -f /tmp/hhmm.env ] && . /tmp/hhmm.env
-if [ -z "$HHMM" ]; then
-  date -u +%H%M > /tmp/hhmm_val.txt
-  read HHMM < /tmp/hhmm_val.txt
-fi
-ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/realtime-$HHMM"
-find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l > /tmp/analysis_count.txt
-read ANALYSIS_COUNT < /tmp/analysis_count.txt
-echo "Analysis artifacts: $ANALYSIS_COUNT files in $ANALYSIS_DIR"
-```
-
-2. **If analysis artifacts exist** (ANALYSIS_COUNT > 0): Commit them and create an analysis-only PR:
-```bash
-git add "$ANALYSIS_DIR"/
-git commit -m "📊 Analysis artifacts - Realtime Monitor $HHMM - $ARTICLE_DATE"
-```
-Then call `safeoutputs___create_pull_request` with title `📊 Analysis Only - Realtime Monitor $HHMM - {date}`, body including actual query stats, and labels `["analysis-only", "realtime-monitor"]`.
-
-3. **If NO analysis artifacts exist**: call noop with actual values:
-```
-safeoutputs___noop({ "message": "No significant events on <today>. Votes (<lastVoteDate>), props (<propCount>), bets (<betCount>), gov (<govCount>), calendar (<calendarStatus>). Max severity=<maxScore> (<HIGH threshold ≥7). Analysis produced 0 files. Next check 2-4h." })
-```
+If no HIGH or MEDIUM events found: use the already-set `$ANALYSIS_COUNT` from the MANDATORY Commit check above.
+- **ANALYSIS_COUNT > 0**: `git add "$ANALYSIS_DIR"/` and commit, then `safeoutputs___create_pull_request` with title `📊 Analysis Only - Realtime Monitor $HHMM - {date}`, labels `["analysis-only", "realtime-monitor"]`.
+- **ANALYSIS_COUNT = 0**: call `safeoutputs___noop({ "message": "No significant events on <today>. Votes (<lastVoteDate>), props (<propCount>), bets (<betCount>), gov (<govCount>), calendar (<calendarStatus>). Max severity=<maxScore> (<HIGH threshold ≥7). Analysis produced 0 files. Next check 2-4h." })`
 
 **Stop here only if no analysis artifacts exist.**
 
@@ -817,15 +563,7 @@ if [ -z "$HHMM" ]; then
   read HHMM < /tmp/hhmm_val.txt
 fi
 ANALYSIS_BASE="analysis/daily/$ARTICLE_DATE/realtime-$HHMM"
-echo "📖 Reading all analysis from $ANALYSIS_BASE..."
-if [ -d "$ANALYSIS_BASE" ]; then
-  for f in "$ANALYSIS_BASE"/*.md "$ANALYSIS_BASE/documents"/*.md; do
-    [ -f "$f" ] && cat "$f" && echo ""
-  done
-  echo "✅ Done reading — these MUST drive article content"
-else
-  echo "⚠️ No analysis at $ANALYSIS_BASE"
-fi
+find "$ANALYSIS_BASE" -name "*.md" -type f 2>/dev/null -exec cat {} \; -exec echo \;
 ```
 
 ## Step 3: Generate Articles Using Purpose-Built Script
@@ -877,37 +615,7 @@ fi
 
 ### Fallback: Manual Generation (ONLY if script fails with error AND no articles created)
 
-> **Before declaring script failure, verify MCP is live in the same shell:**
-> ```bash
-> source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"
-> ```
-> Expected output: `MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering`
-> If the value is blank or "unset", `mcp-setup.sh` failed to read the gateway key — check `GH_AW_MCP_CONFIG`. If set correctly, retry the full script command.
-
-If the script genuinely fails after verifying MCP, generate articles manually ONE language at a time:
-1. Check elapsed time — if >= 38 minutes, stop and call noop with summary
-2. Write HTML to `news/YYYY-MM-DD-breaking-HHMM-{lang}.html` (HHMM = time of this run, ensures uniqueness across multiple daily runs)
-3. Use `<link rel="stylesheet" href="../styles.css">` — NO embedded `<style>` tags
-4. Include language switcher, article-top-nav, Schema.org NewsArticle, hreflang tags
-5. Use `dir="rtl"` for Arabic (ar) and Hebrew (he)
-
-> 🚫 **NEVER use bash heredoc (`cat > file << 'EOF'`) to write article HTML.** Heredoc truncates large content and causes silent failures.
->
-> ✅ **Build the file incrementally** with multiple small `printf` appends (no heredoc, no size limits):
-> ```bash
-> [ -f /tmp/hhmm.env ] && . /tmp/hhmm.env
-if [ -z "$HHMM" ]; then
-  date -u +%H%M > /tmp/hhmm_val.txt
-  read HHMM < /tmp/hhmm_val.txt
-fi
-> FILE="news/$ARTICLE_DATE-breaking-$HHMM-en.html"
-> printf '%s\n' '<!DOCTYPE html>' > "$FILE"
-> printf '%s\n' '<html lang="en">' >> "$FILE"
-> printf '%s\n' '<head><link rel="stylesheet" href="../styles.css"></head>' >> "$FILE"
-> printf '%s\n' '<body>' >> "$FILE"
-> # ... append each section separately ...
-> printf '%s\n' '</body></html>' >> "$FILE"
-> ```
+Verify MCP first: `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"` (expect `http://host.docker.internal:80/mcp/riksdag-regering`). If the script genuinely fails, generate HTML manually using `printf` appends (never heredoc) to `news/YYYY-MM-DD-breaking-HHMM-{lang}.html`. Include stylesheet link, language switcher, Schema.org, hreflang tags, `dir="rtl"` for ar/he. Check elapsed time: if >= 38 min, skip and call noop.
 
 ## Step 3b: AI Title, Meta Description & Analysis References
 
@@ -1048,22 +756,9 @@ Consult as needed — do NOT read all files upfront:
 
 > Read `analysis_depth` input first (default: `deep`). Breaking news profile: SWOT=quick 1-paragraph, Dashboard=not required, AI iterations: 1 (standard)/2 (deep)/3 (comprehensive).
 
-### Phase 1 — Event Detection & Significance Scoring
-1. Fetch real-time MCP data based on `article_types` input
-2. Score each event for newsworthiness; only generate articles for significant events
-3. Build initial outlines per article type
+### Phase 1–3 Analysis Framework
 
-### Phase 2 — Depth Enhancement (per `analysis_depth`)
-When `analysis_depth` is `deep` or `comprehensive`:
-1. Add **Quick SWOT** paragraph for each major article
-2. Add **Activity Summary** — concise trend summary as prose or Markdown bullet list/table
-3. **Quality Gate**: word count ≥ 400, no identical why-it-matters, all Swedish text translated
-
-### Phase 3 — Final Quality Gate Before PR
-```bash
-npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite
-```
-Run `bash scripts/validate-news-generation.sh` before committing.
+See `SHARED_PROMPT_PATTERNS.md` §"Standardised Analysis Depth Gate" and §"MANDATORY: AI-Driven Analysis Using Methods & Templates" for Phase 1 (event detection + significance scoring), Phase 2 (depth enhancement: Quick SWOT, Activity Summary, quality gate: ≥400 words, no identical why-it-matters), and Phase 3 (final quality gate bash + `validate-news-generation.sh`).
 
 ### Non-EN/SV Article Requirements:
 - ALL h1/h2/h3 MUST be in target language; ALL body paragraphs MUST be in target language
