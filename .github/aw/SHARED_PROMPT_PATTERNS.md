@@ -1658,8 +1658,10 @@ Then call the health gate:
 3. After 3 failures → `safeoutputs___noop({"message": "MCP server unavailable after 3 attempts — Render.com cold start exceeded timeout"})` — do NOT proceed
 4. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
 5. **For translation workflows**: MCP is required for accurate political term translation and cross-referencing. Do NOT proceed without MCP.
-6. **NEVER let the workflow timeout** without calling a safe output. If MCP is down, noop after the 3 retries instead of wasting 60 minutes.
+6. **NEVER let the workflow timeout** without calling a safe output. If MCP is down, noop after the 3 retries instead of wasting the full timeout.
 7. **⏱️ Do NOT spend more than 2 minutes on MCP warmup** — proceed to analysis immediately once `get_sync_status` succeeds.
+
+> 🚨 **SAFEOUTPUTS SESSION LIFETIME WARNING**: The safeoutputs MCP server session has a finite lifetime. If you delay calling `safeoutputs___create_pull_request` or `safeoutputs___noop` too long, the session may expire and return "session not found" errors. This means ALL committed work is LOST (committed locally but never pushed). **Always call your safe output at least 5 minutes before `timeout-minutes`.** For 45-minute workflows, call by minute 40. Never schedule PR creation in the last 5 minutes of a workflow.
 
 ### Layer 3: MCP Gateway Diagnostics (run when tools fail)
 

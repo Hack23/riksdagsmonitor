@@ -38,7 +38,7 @@ permissions:
   discussions: read
   security-events: read
 
-timeout-minutes: 60
+timeout-minutes: 45
 
 concurrency:
   group: gh-aw-news-translate-${{ inputs.article_type || 'batch' }}-${{ inputs.article_date || 'today' }}
@@ -319,7 +319,9 @@ When performing analysis-improvement work, keep changes tightly scoped and stage
 
 You MUST call either `safeoutputs___create_pull_request` or `safeoutputs___noop({"message": "..."})` before the workflow ends. A timeout with no safe output wastes all tokens and produces nothing.
 
-**Hard deadline**: Call a safe output by minute 50. Never exceed 55 minutes without one.
+**Hard deadline**: Call a safe output by minute 38. Never exceed 40 minutes without one.
+
+> 🚨 **CRITICAL — SAFEOUTPUTS SESSION LIFETIME**: The safeoutputs MCP server session can expire on long-running workflows. If you delay PR creation past minute 40, the session may be dead and ALL your work will be lost (committed locally but never pushed). This has happened in production — 10 translated files lost because the agent called `safeoutputs___create_pull_request` at minute 50+ and got "session not found". **Always create your PR by minute 38.**
 
 ## 🚨 RULE 2: Never Modify EN/SV Files
 
@@ -360,15 +362,17 @@ news/translate/{YYYY-MM-DD}/{article-type}
 ```
 > `safeoutputs___create_pull_request` handles branch creation automatically.
 
-## ⏱️ Time Budget (60 minutes)
+## ⏱️ Time Budget (45 minutes)
 
 | Phase | Minutes | Action |
 |-------|---------|--------|
 | Setup | 0–2 | Determine date, scan for work |
-| Translate | 2–42 | AI translates articles (multiple types, multiple languages) |
-| Validate | 42–47 | Run validation scripts |
-| PR | 47–50 | Commit + `safeoutputs___create_pull_request` |
-| Hard stop | 50+ | 🚨 **HARD DEADLINE** — If no safe output yet, IMMEDIATELY call `safeoutputs___noop` with reason "Time limit reached before completion" |
+| Translate | 2–30 | AI translates articles (multiple types, multiple languages) |
+| Validate | 30–35 | Run validation scripts |
+| PR | 35–38 | Commit + `safeoutputs___create_pull_request` |
+| Hard stop | 38+ | 🚨 **HARD DEADLINE** — If no safe output yet, IMMEDIATELY call `safeoutputs___noop` with reason "Time limit reached before completion" |
+
+> 🚨 **WHY 45 MINUTES?** All other agentic workflows use 45-minute timeouts with HARD DEADLINE at minutes 43-45. The safeoutputs MCP server session has a finite lifetime. Previously this workflow used 60 minutes with PR creation at minute 50+, which caused "session not found" errors and LOST all translation work. The tighter budget ensures the safe output call happens while the session is still alive.
 
 ### Batch Strategy — Maximize Translations Per Run
 
@@ -379,7 +383,7 @@ Process articles in this order:
 2. **Within a type** — translate languages in this order: da, nb, fi, de, fr, es, nl (fast European languages first), then ar, he (RTL), then ja, ko, zh (CJK — these take longest)
 3. **Time guard per file**: If a single translation takes more than 4 minutes, something is wrong — skip to the next language
 
-**Do NOT limit to 1 article type per run.** Process as many types as time allows. After completing all languages for one article type, check the elapsed time. If <40 minutes have passed, start the next article type.
+**Do NOT limit to 1 article type per run.** Process as many types as time allows. After completing all languages for one article type, check the elapsed time. If <28 minutes have passed, start the next article type.
 
 **Counting rule**: Before calling safe output, count your translated files. If fewer than 5, explain why in the PR body (e.g., "all today's articles already translated, working on backlog").
 
@@ -668,6 +672,9 @@ If validation reports issues, fix them with the `edit` tool before proceeding.
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, or use GitHub API to create PRs.
 > **❌ DO NOT** call `safeoutputs___noop` if articles were generated but PR creation failed.
+> **❌ DO NOT** delay PR creation past minute 38 — the safeoutputs session WILL expire.
+
+> **🛡️ SAFEOUTPUTS SESSION PROTECTION**: Before calling `safeoutputs___create_pull_request`, verify the session is still alive by calling `safeoutputs___noop({"message": "pre-PR health check"})`. If this fails with "session not found", the session has expired and you cannot create a PR. In that case, save your work summary to repo-memory so the next run knows what was completed.
 
 **Safety check** — remove any accidentally created EN/SV files before committing:
 ```bash
@@ -758,6 +765,7 @@ npx tsx scripts/validate-news-translations.ts
 | EN/SV files staged | `git checkout -- news/*-en.html news/*-sv.html` before commit |
 | Time running out | Commit partial translations + create PR. Partial > timeout |
 | HTMLHint errors | Fix with `edit` tool or run `npx tsx scripts/article-quality-enhancer.ts --fix` |
+| safeoutputs "session not found" | Session expired — save work summary to repo-memory for next run recovery. **Prevention: always call safe output by minute 38.** |
 
 ## 🎯 Execution Summary
 
@@ -769,6 +777,6 @@ npx tsx scripts/validate-news-translations.ts
 
 **NEVER call safeoutputs___noop without first checking: today's articles, earlier dates (last 30 days), and existing translation quality.**
 
-**Never exceed 50 minutes without calling a safe output.**
+**Never exceed 38 minutes without calling a safe output.**
 
-**Time management**: If 40+ minutes have elapsed, stop translating and proceed to validation and PR creation. Partial translations in a PR are better than a timeout.
+**Time management**: If 28+ minutes have elapsed, stop translating and proceed to validation and PR creation. Partial translations in a PR are better than a timeout.
