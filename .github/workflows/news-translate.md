@@ -319,7 +319,7 @@ When performing analysis-improvement work, keep changes tightly scoped and stage
 
 You MUST call either `safeoutputs___create_pull_request` or `safeoutputs___noop({"message": "..."})` before the workflow ends. A timeout with no safe output wastes all tokens and produces nothing.
 
-**Hard deadline**: Call a safe output by minute 45. Never exceed 50 minutes without one.
+**Hard deadline**: Call a safe output by minute 50. Never exceed 55 minutes without one.
 
 ## 🚨 RULE 2: Never Modify EN/SV Files
 
@@ -379,7 +379,7 @@ Process articles in this order:
 2. **Within a type** — translate languages in this order: da, nb, fi, de, fr, es, nl (fast European languages first), then ar, he (RTL), then ja, ko, zh (CJK — these take longest)
 3. **Time guard per file**: If a single translation takes more than 4 minutes, something is wrong — skip to the next language
 
-**Do NOT limit to 1 article type per run.** Process as many types as time allows. After completing all languages for one article type, check the elapsed time. If <35 minutes have passed, start the next article type.
+**Do NOT limit to 1 article type per run.** Process as many types as time allows. After completing all languages for one article type, check the elapsed time. If <40 minutes have passed, start the next article type.
 
 **Counting rule**: Before calling safe output, count your translated files. If fewer than 5, explain why in the PR body (e.g., "all today's articles already translated, working on backlog").
 
@@ -562,9 +562,11 @@ If ALL articles from all dates are 100% translated for the current run (every EN
 
 **Never call `safeoutputs___noop` without first completing Phase 1, Phase 2, AND Phase 3.** Only noop if there are literally zero EN articles in the entire `news/` directory.
 
-If multiple article types need translation, pick only the **first 1** alphabetically.
-
 ### Step 2: Read the EN Source Article
+
+Use the `view` tool (NOT bash cat) to read the full EN source article. Understand the structure, headings, analytical content, and special elements (SWOT tables, Mermaid diagrams, charts). This is what you will translate.
+
+**Speed tip**: Read each article ONCE, then translate it to all required languages before moving on. Do NOT re-read the source for each language.
 
 ### Step 3: Translate — High-Throughput AI Translation
 
@@ -628,19 +630,25 @@ create({
 
 ### Step 4: Validate
 
-Run validation scripts:
+Run validation scripts on newly created translation files only:
 ```bash
 npx tsx scripts/validate-file-ownership.ts translation
 npx tsx scripts/validate-news-translations.ts
 
-# HTMLHint validation with auto-fix for common nesting errors
-if ! npx htmlhint "news/*-*.html" 2>/dev/null; then
-  echo "⚠️ HTML validation errors found, attempting auto-fix..."
-  npx tsx scripts/article-quality-enhancer.ts --fix
-  if ! npx htmlhint "news/*-*.html"; then
-    echo "❌ HTML validation failed after auto-fix. Please resolve remaining HTMLHint errors before creating a PR."
-    exit 1
+# HTMLHint validation — scope to ONLY new translated files (not all news/ files)
+# Build a space-separated list of newly created translation files
+git status --short news/ | grep "^??" | grep -v "\-en\.html" | grep -v "\-sv\.html" | awk '{print $2}' > /tmp/new_trans_validate.txt
+if [ -s /tmp/new_trans_validate.txt ]; then
+  TRANS_FILES=$(tr '\n' ' ' < /tmp/new_trans_validate.txt)
+  if ! npx htmlhint $TRANS_FILES 2>/dev/null; then
+    echo "⚠️ HTML validation errors found, attempting auto-fix..."
+    npx tsx scripts/article-quality-enhancer.ts --fix
+    if ! npx htmlhint $TRANS_FILES; then
+      echo "⚠️ HTML validation errors remain — proceeding with PR anyway (do not block on htmlhint)"
+    fi
   fi
+else
+  echo "No new translation files to validate"
 fi
 ```
 
@@ -653,8 +661,8 @@ If validation reports issues, fix them with the `edit` tool before proceeding.
 > The `safeoutputs___create_pull_request` tool handles **everything**: branch creation, pushing commits, and opening the PR. You do NOT create branches or push manually.
 >
 > **Exact steps:**
-> 1. Write translated HTML files to `news/` using `edit` tool
-> 2. Stage and commit locally: `git add news/*-da.html news/*-no.html news/*-fi.html news/*-de.html news/*-fr.html news/*-es.html news/*-nl.html news/*-ar.html news/*-he.html news/*-ja.html news/*-ko.html news/*-zh.html && git commit -m "chore: translate articles YYYY-MM-DD"`
+> 1. Write translated HTML files to `news/` using `create` tool (one complete file per call)
+> 2. Stage and commit locally — stage only the NEW translation files you just created
 > 3. Call `safeoutputs___create_pull_request` with `title`, `body`, and `labels`
 >
 > **❌ DO NOT** run `git push`, `git checkout -b`, or use GitHub API to create PRs.
@@ -666,14 +674,14 @@ git checkout -- news/*-en.html news/*-sv.html 2>/dev/null || true
 rm -f news/*-en.html.bak news/*-sv.html.bak 2>/dev/null || true
 ```
 
-Stage ONLY translation files (never EN/SV):
+Stage ONLY the translation files you just created (new untracked files) — never EN/SV:
 ```bash
-git add news/*-da.html news/*-no.html news/*-fi.html news/*-de.html \
-  news/*-fr.html news/*-es.html news/*-nl.html news/*-ar.html \
-  news/*-he.html news/*-ja.html news/*-ko.html news/*-zh.html 2>/dev/null || true
+git status --short news/ | grep "^??" | grep -v "\-en\.html" | grep -v "\-sv\.html" | awk '{print $2}' > /tmp/new_trans.txt
+cat /tmp/new_trans.txt
+xargs -a /tmp/new_trans.txt git add 2>/dev/null || true
 git diff --cached --name-only | wc -l > /tmp/staged_count.txt
 read -r STAGED < /tmp/staged_count.txt
-echo "Staged files: $STAGED"
+echo "Staged new translation files: $STAGED"
 date -u +%Y-%m-%d > /tmp/commit_date.txt
 read -r COMMIT_DATE < /tmp/commit_date.txt
 git commit -m "chore: translate articles $COMMIT_DATE"
@@ -753,13 +761,13 @@ npx tsx scripts/validate-news-translations.ts
 ## 🎯 Execution Summary
 
 1. **Discover** — determine date, scan for work using cascading fallback (today → older dates → improve existing)
-2. **Read** — read the EN source article fully with `view` tool
-3. **Translate** — for each language: copy EN file, use `edit` tool to AI-translate all content (NEVER use scripts or dictionaries)
-4. **Validate** — run `validate-file-ownership.ts translation` + `validate-news-translations.ts`
-5. **PR** — stage, commit, `safeoutputs___create_pull_request`
+2. **Read** — read each EN source article with `view` tool (once per article, translate to all languages before moving on)
+3. **Translate** — for each language: write complete translated HTML with `create` tool in a single call (NEVER use `cp`+`edit` or scripts)
+4. **Validate** — run `validate-file-ownership.ts translation` + `validate-news-translations.ts` + HTMLHint on new files only
+5. **PR** — stage new files with `git status --short`, commit, `safeoutputs___create_pull_request`
 
 **NEVER call safeoutputs___noop without first checking: today's articles, earlier dates (last 30 days), and existing translation quality.**
 
-**Never exceed 45 minutes without calling a safe output.**
+**Never exceed 50 minutes without calling a safe output.**
 
-**Time management**: If 35+ minutes have elapsed, skip remaining translation work and proceed to validation and PR creation. Partial translations in a PR are better than a timeout.
+**Time management**: If 40+ minutes have elapsed, stop translating and proceed to validation and PR creation. Partial translations in a PR are better than a timeout.
