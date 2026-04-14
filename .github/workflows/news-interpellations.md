@@ -308,33 +308,23 @@ Consult as needed — do NOT read all files upfront:
 
 ### Standardised Analysis Depth Gate
 
-> ⚠️ **Default is `deep`** — not `standard`. Analysis must always produce publication-quality output with Mermaid diagrams and evidence tables.
-
-| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Mermaid diagrams | Risk matrix (L×I) | Forward indicators | Min. analysis time |
-|-------|--------------|-------------------|--------|---------|-----------------|-------------------|-------------------|-------------------|
-| standard | 1-2 | ≥5 (of 8 groups) | ≥1 | optional | ≥1 color-coded | ≥2 risks scored | ≥2 with triggers | 10 minutes |
-| deep | 2-3 | ≥7 (of 8 groups) | ≥2 | required | ≥2 color-coded | ≥4 risks scored | ≥3 with triggers | 15 minutes |
-| comprehensive | 3+ | all 8 groups | ≥3 | required | ≥3 color-coded | ≥6 risks scored | ≥5 with triggers | 20 minutes |
+> ⚠️ **Default is `deep`** — not `standard`. See `SHARED_PROMPT_PATTERNS.md` §"Standardised Analysis Depth Gate" for the full requirements table (iterations, SWOT stakeholders, charts, Mermaid counts, risk matrix, forward indicators, min time).
 
 **The 8 mandatory stakeholder groups are**: Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion. Every group MUST be analyzed with specific evidence (dok_id, vote counts, named politicians).
-
-**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, quantified risk matrix with numeric L×I scores, forward indicators with specific triggers/timelines, confidence labels on all analytical claims, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
 
 > **Read `analysis_depth` input first** (default: `deep`). This controls iteration count and section requirements.
 
 Based on the editorial profile for `interpellations` (from `scripts/editorial-framework.ts`):
-- **SWOT**: ALL 8 stakeholder groups analyzed with evidence tables (dok_id, frs IDs, minister names, party positions per entry)
-- **Dashboard**: required (min. 1 Chart.js chart)
-- **Mindmap**: not required
-- **Min. stakeholders**: 8 perspectives (Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion)
-- **Risk Matrix**: required — numeric L×I scores for ministerial accountability risks, policy implementation risks
-- **Forward Indicators**: required — minister response timelines (4-week statutory deadline), committee scheduling triggers
-- **Confidence Labels**: `[HIGH]`/`[MEDIUM]`/`[LOW]` on ALL analytical claims
-- **Mermaid Diagrams**: ≥1 color-coded diagram showing ministerial accountability flow or opposition attack patterns
+- **SWOT**: ALL 8 stakeholder groups — evidence tables with `#`, `Statement`, `Evidence (frs ID/dok_id)`, `Confidence`, `Impact`, `Entry Date`
+- **Dashboard**: required (min. 1 Chart.js chart); **Mindmap**: not required
+- **Risk Matrix**: required — numeric L×I scores for ministerial accountability and policy implementation risks
+- **Forward Indicators**: minister response timelines (4-week statutory deadline), committee scheduling triggers
+- **Confidence Labels**: `[HIGH]`/`[MEDIUM]`/`[LOW]` on ALL claims
+- **Mermaid**: ≥1 color-coded diagram (ministerial accountability flow or opposition attack patterns)
 - **Dok_id/frs Citations**: MANDATORY — every interpellation MUST cite its frs ID (e.g., "frs 2025/26:634")
 - **AI iterations**: 2 (standard), 2 (deep), or 3 (comprehensive)
 
-> 🚨 **ANTI-PATTERNS (REJECTED)**: Articles with 0 frs ID citations, SWOT with only Government/Opposition/Civil Society (need all 8 groups), generic "Why It Matters" text reused across entries, no Mermaid diagrams
+> 🚨 **ANTI-PATTERNS (REJECTED)**: 0 frs ID citations; SWOT with only 3 groups (need all 8); generic "Why It Matters" reused across entries; no Mermaid diagrams
 
 ### 🗳️ Election 2026 Lens (Mandatory — v5.0)
 
@@ -539,271 +529,22 @@ get_interpellationer({ rm: <calculated riksmöte>, limit: 20 })
 
 **CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/interpellations/`. The `--doc-type interpellations` flag ensures ALL output goes directly to the scoped subdirectory. **NEVER write or copy analysis files to the parent date directory** — doing so causes merge conflicts when multiple doc-type workflows run on the same date. The `analysis-reader.ts` automatically scans subdirectories, so root-level copies are NOT needed.
 
-```bash
-# Idempotent: only set if not already resolved by lookback
-if [ -z "$ARTICLE_DATE" ]; then
-  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  if [ -z "$ARTICLE_DATE" ]; then
-    date -u +%Y-%m-%d > /tmp/today.txt
-    read ARTICLE_DATE < /tmp/today.txt
-  fi
-fi
-
-# === Run Suffix Resolution (see SHARED_PROMPT_PATTERNS.md) ===
-BASE_SUBFOLDER="interpellations"
-ANALYSIS_SUBFOLDER="$BASE_SUBFOLDER"
-if [ "$FORCE_GENERATION" != "true" ]; then
-  _SUFFIX=1
-  while [ -f "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/synthesis-summary.md" ]; do
-    _SUFFIX=$((_SUFFIX + 1))
-    ANALYSIS_SUBFOLDER="$BASE_SUBFOLDER-$_SUFFIX"
-  done
-fi
-echo "📁 Analysis subfolder resolved: $ANALYSIS_SUBFOLDER"
-
-echo "📊 Downloading data for $ARTICLE_DATE..."
-# CRITICAL: Source mcp-setup.sh to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
-source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 --doc-type interpellations > /tmp/pipeline-output.log 2>&1
-PIPE_EXIT=$?
-cat /tmp/pipeline-output.log
-if [ "$PIPE_EXIT" -ne 0 ]; then
-  echo "❌ Pipeline failed with exit code $PIPE_EXIT — agent MUST diagnose and fix (see Script Debugging Protocol)"
-  tail -30 /tmp/pipeline-output.log
-fi
-
-# If suffixed, relocate from base folder to suffixed folder
-if [ "$ANALYSIS_SUBFOLDER" != "$BASE_SUBFOLDER" ]; then
-  SRC="analysis/daily/$ARTICLE_DATE/$BASE_SUBFOLDER"
-  DST="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
-  if [ -d "$SRC" ]; then
-    mkdir -p "$DST"
-    find "$SRC" -maxdepth 1 -type f -exec mv -f {} "$DST/" \;
-    if [ -d "$SRC/documents" ]; then
-      mkdir -p "$DST/documents"
-      find "$SRC/documents" -mindepth 1 -maxdepth 1 -exec mv {} "$DST/documents/" \;
-      rmdir "$SRC/documents" 2>/dev/null || true
-    fi
-    rmdir "$SRC" 2>/dev/null || true
-    echo "📁 Relocated pipeline output → $DST (suffix applied for merge safety)"
-  fi
-fi
-
-echo "📊 Analysis artifacts for $ARTICLE_DATE/$ANALYSIS_SUBFOLDER:"
-ls -la "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" 2>/dev/null || echo "⚠️ No analysis output"
-# Verify actual data was downloaded
-MANIFEST_DOCS=0
-MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/data-download-manifest.md"
-if [ -f "$MANIFEST_PATH" ]; then
-  grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/manifest_docs.txt || echo 0 > /tmp/manifest_docs.txt
-  read MANIFEST_DOCS < /tmp/manifest_docs.txt
-  MANIFEST_DOCS=$MANIFEST_DOCS
-fi
-[ -z "$MANIFEST_DOCS" ] && MANIFEST_DOCS=0
-find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l > /tmp/data_count.txt
-read DATA_JSON_COUNT < /tmp/data_count.txt
-echo "📊 Documents in manifest: $MANIFEST_DOCS, JSON data files: $DATA_JSON_COUNT"
-if [ "$MANIFEST_DOCS" -eq 0 ] && [ "$DATA_JSON_COUNT" -eq 0 ]; then
-  echo "🚨 CRITICAL: Pipeline downloaded ZERO data. Agent MUST diagnose and fix — do NOT fabricate analysis."
-fi
-```
+Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-manifest.md` → if 0 docs, loop `DAYS_BACK` 1–7 using `date -u -d "$ARTICLE_DATE - $DAYS_BACK days"`, run `pre-article-analysis.ts --date "$LOOKBACK_DATE"` → copy artifacts from found date to original date folder → run `catalog-downloaded-data.ts --pending-only`. See `SHARED_PROMPT_PATTERNS.md` §"Data Lookback Fallback Strategy" for full bash implementation.
 
 ### 🔄 Data Lookback Fallback
 
 > 🚨 **CRITICAL RULE**: Never produce empty/stub analysis. If no data for today, look back to find unanalyzed data.
 
 ```bash
-# Idempotent: only set if not already resolved by lookback
+[ -f /tmp/hhmm.env ] && . /tmp/hhmm.env
 if [ -z "$ARTICLE_DATE" ]; then
-  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  if [ -z "$ARTICLE_DATE" ]; then
-    date -u +%Y-%m-%d > /tmp/today.txt
-    read ARTICLE_DATE < /tmp/today.txt
-  fi
-fi
-ORIGINAL_ARTICLE_DATE="$ARTICLE_DATE"
-
-# Check if the requested date has any analyzed documents (per-date, doc-type-scoped manifest only)
-MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/interpellations/data-download-manifest.md"
-DATE_DOCS_ANALYZED=0
-if [ -f "$MANIFEST_PATH" ]; then
-  grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/docs_a3.txt || echo 0 > /tmp/docs_a3.txt
-read DATE_DOCS_ANALYZED < /tmp/docs_a3.txt
-DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
-fi
-[ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
-echo "📄 Interpellations analyzed for $ARTICLE_DATE: $DATE_DOCS_ANALYZED"
-
-if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
-  echo "⚠️ No interpellation data for $ARTICLE_DATE — activating lookback fallback (up to 7 days)"
-  DATA_DATE=""
-  for DAYS_BACK in 1 2 3 4 5 6 7; do
-    # Cross-platform date arithmetic: GNU date (-d) on Linux/GitHub Actions, BSD date (-v) on macOS
-    if date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null > /tmp/lookback.txt; then
-      :
-    elif date -u -j -f "%Y-%m-%d" "$ARTICLE_DATE" -v-"$DAYS_BACK"d +%Y-%m-%d 2>/dev/null > /tmp/lookback.txt; then
-      :
-    else
-      echo "" > /tmp/lookback.txt
-    fi
-    read LOOKBACK_DATE < /tmp/lookback.txt
-    [ -z "$LOOKBACK_DATE" ] && continue
-    echo "🔍 Checking $LOOKBACK_DATE for analyzed interpellations..."
-    # First, check if a manifest already exists with non-zero Documents Analyzed
-    MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/interpellations/data-download-manifest.md"
-    DATE_DOCS_ANALYZED=0
-    if [ -f "$MANIFEST_PATH" ]; then
-      grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/docs_a.txt || echo 0 > /tmp/docs_a.txt
-      read DATE_DOCS_ANALYZED < /tmp/docs_a.txt
-      DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
-    fi
-    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
-    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
-      echo "✅ Found $DATE_DOCS_ANALYZED interpellations already analyzed for $LOOKBACK_DATE"
-      DATA_DATE="$LOOKBACK_DATE"
-      break
-    fi
-    # No existing data — run pre-article analysis for this lookback date
-    echo "ℹ️ No existing manifest data for $LOOKBACK_DATE — running pre-article analysis"
-    source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 --doc-type interpellations 2>/dev/null || true
-    # Re-check manifest after running analysis
-    MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/interpellations/data-download-manifest.md"
-    DATE_DOCS_ANALYZED=0
-    if [ -f "$MANIFEST_PATH" ]; then
-      grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/docs_a.txt || echo 0 > /tmp/docs_a.txt
-      read DATE_DOCS_ANALYZED < /tmp/docs_a.txt
-      DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
-    fi
-    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
-    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
-      echo "✅ Successfully analyzed $DATE_DOCS_ANALYZED interpellations for $LOOKBACK_DATE"
-      DATA_DATE="$LOOKBACK_DATE"
-      break
-    fi
-  done
-  # Lookback protection: copy analysis to today's directory instead of overwriting historical data
-  if [ -n "$DATA_DATE" ] && [ "$DATA_DATE" != "$ORIGINAL_ARTICLE_DATE" ]; then
-    SRC_DIR="analysis/daily/$DATA_DATE/interpellations"
-    DST_DIR="analysis/daily/$ORIGINAL_ARTICLE_DATE/interpellations"
-    if [ -d "$SRC_DIR" ]; then
-      mkdir -p "$DST_DIR"
-      cp -r "$SRC_DIR"/* "$DST_DIR/" 2>/dev/null || true
-      echo "📁 Copied analysis from $DATA_DATE → $ORIGINAL_ARTICLE_DATE (preserving original at $DATA_DATE)"
-    fi
-    ARTICLE_DATE="$ORIGINAL_ARTICLE_DATE"
-  elif [ -n "$DATA_DATE" ]; then
-    ARTICLE_DATE="$DATA_DATE"
-  fi
-  echo "🗓️ Using analysis date: $ARTICLE_DATE (data sourced from: $DATA_DATE)"
-  # Persist ARTICLE_DATE after lookback selection for downstream steps
-  if [ -n "$GITHUB_ENV" ]; then
-    echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"
-  fi
-fi
-
-# Report pending per-file analysis count for monitoring
-npx tsx scripts/catalog-downloaded-data.ts --pending-only --type interpellations 2>/dev/null | jq -r '.pendingAnalysis // 0' > /tmp/pending_num.txt 2>/dev/null || echo 0 > /tmp/pending_num.txt
-PENDING=0
-read PENDING < /tmp/pending_num.txt || PENDING=0
-case "$PENDING" in ''|*[!0-9]*) PENDING=0 ;; esac
-echo "📊 Total pending interpellation analysis files (all dates): $PENDING"
-```
-
-### Per-File AI Analysis Enhancement
-
-> 🚨 **CRITICAL RULE:** You must **actually read the JSON data** in each file and base all analysis on real data found there. Every SWOT entry, risk score, and stakeholder assessment must cite specific data from the file (dok_id, vote counts, party names, reservation details). Generic or boilerplate analysis is a failure mode — see the "Concrete Example: What Good Analysis Looks Like" section in `analysis/methodologies/ai-driven-analysis-guide.md` for bad vs. good comparison.
-
-After the script-based analysis, perform **AI-driven per-file analysis** for deeper intelligence:
-
-1. Run `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to list files needing analysis
-2. **Read the master methodology guide and per-file template** (required upfront), then consult others as needed:
-   - `analysis/methodologies/ai-driven-analysis-guide.md` — Master per-file analysis guide (includes bad/good examples)
-   - `analysis/templates/per-file-political-intelligence.md` — Per-file output template
-   - Consult the following as needed for the current analysis step:
-   - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT with confidence hierarchy
-   - `analysis/methodologies/political-risk-methodology.md` — 5×5 Likelihood×Impact risk matrix
-   - `analysis/methodologies/political-threat-framework.md` — Political Threat Taxonomy, Attack Trees, severity calibration
-   - `analysis/methodologies/political-classification-guide.md` — Sensitivity and domain taxonomy
-   - `analysis/methodologies/political-style-guide.md` — Writing standards and evidence density
-   - `analysis/templates/synthesis-summary.md` — Daily synthesis template
-   - `analysis/templates/risk-assessment.md` — Risk assessment template
-   - `analysis/templates/political-classification.md` — Classification template
-   - `analysis/templates/threat-analysis.md` — Threat template
-   - `analysis/templates/swot-analysis.md` — SWOT template
-   - `analysis/templates/stakeholder-impact.md` — Stakeholder template
-   - `analysis/templates/significance-scoring.md` — Significance template
-3. For each pending file:
-   a. **Read** the JSON data file — use `view` or `cat` to read the actual content
-   b. **Extract** key fields (dok_id, titel, datum, parti, mottagare, status, etc.)
-   c. **Classify** — Sensitivity level, domain, urgency, significance (0–10)
-   d. **SWOT** — Government + Opposition impact with evidence (cite specific dok_id)
-   e. **Risk** — 5×5 Likelihood×Impact matrix with numeric scores
-   f. **Political Threat Taxonomy** — 6 democratic function threat categories (only where applicable — cite evidence)
-   g. **Stakeholders** — 6-lens impact matrix
-   h. **Forward indicators** — Specific watch items with concrete timelines
-   i. **Mermaid diagrams** — At least 1 diagram with REAL data from the file (not placeholder text)
-   j. **Write** `{id}.analysis.md` alongside the data file
-4. Quality gate: ≥3 evidence points, confidence labels, no `[REQUIRED]` placeholders remaining
-
-The analysis pipeline outputs the following artifacts per doc-type run:
-- `data-download-manifest.md` — Download metadata and document counts
-- `classification-results.md` — Document classification and priority levels
-- `risk-assessment.md` — Political risk assessment (coalition stability, anomaly detection)
-- `swot-analysis.md` — SWOT analysis (pre-computed for article enrichment)
-- `threat-analysis.md` — Threat indicators and democratic health
-- `stakeholder-perspectives.md` — Multi-perspective analysis (6 lenses)
-- `significance-scoring.md` — Significance scores and urgency levels
-- `cross-reference-map.md` — Cross-document reference links
-- `synthesis-summary.md` — Combined analysis summary with confidence level
-- `documents/*.json` — Raw downloaded documents (one per document)
-- `documents/*-analysis.md` — Per-document analysis with SWOT, stakeholder perspectives, and significance scoring
-
-These files are committed alongside articles for human review and continuous improvement.
-
-### 🔴 MANDATORY: Batch Analysis Enrichment (Prevents Empty "0 Documents Analyzed" Files)
-
-> **Root Cause**: The `pre-article-analysis.ts` script filters documents by exact date match. When no interpellations are published on the exact analysis date, batch files report "0 documents analyzed" — this violates `ai-driven-analysis-guide.md` quality requirements.
-
-**After per-file analysis, check if batch files are empty and enrich them:**
-
-1. Check `synthesis-summary.md` — if it reports "0 documents analyzed" but per-document analyses exist in `documents/`, aggregate the per-doc findings into all 9 batch files
-2. If NO per-doc analyses exist AND batch files show "0 documents analyzed", use MCP `get_interpellationer(rm="2025/26", limit=20)` directly to find recent interpellations and create meaningful analysis
-3. Each enriched batch file MUST include: ≥1 Mermaid diagram, structured tables, evidence citations, confidence labels
-4. **NEVER commit batch files that report "0 documents analyzed" when analysis data is available**
-5. See `ai-driven-analysis-guide.md` "Deep-Inspection Batch Analysis Enrichment Protocol (v4.1)" for full requirements
-
-### 📋 Rewrite Daily Synthesis Files to Follow Templates
-
-> 🚨 **CRITICAL**: Script-generated stubs do NOT follow template structure. Rewrite each daily file to match its `analysis/templates/` counterpart. Read each template with `cat` before rewriting. Every file needs: metadata header (ID, date, riksmöte, confidence), ≥1 color-coded Mermaid diagram, evidence tables with dok_id citations, and no `[REQUIRED]` placeholders.
-
-### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
-
-**Before deciding whether to generate articles or call noop, you MUST:**
-
-1. **Review the analysis artifacts** in `analysis/daily/YYYY-MM-DD/interpellations/` — read `synthesis-summary.md` and `significance-scoring.md` to understand what was found
-2. **Summarize the analysis findings** — note how many documents were downloaded, their significance scores, key themes, and risk levels
-3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
-
-```bash
-# Idempotent: only set if not already resolved by lookback
-if [ -z "$ARTICLE_DATE" ]; then
-  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  if [ -z "$ARTICLE_DATE" ]; then
-    date -u +%Y-%m-%d > /tmp/today.txt
-    read ARTICLE_DATE < /tmp/today.txt
-  fi
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
 fi
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/interpellations"
-ANALYSIS_COUNT=0
-if [ -d "$ANALYSIS_DIR" ]; then
-  find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l > /tmp/analysis_count.txt
-  read ANALYSIS_COUNT < /tmp/analysis_count.txt
-fi
-if [ "$ANALYSIS_COUNT" -gt 0 ]; then
-  echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed (do NOT use safeoutputs___noop)"
-else
-  echo "📊 Found 0 analysis artifacts — safeoutputs___noop is allowed (no files to commit)"
-fi
+find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l > /tmp/analysis_count.txt
+read ANALYSIS_COUNT < /tmp/analysis_count.txt
+echo "Analysis artifacts: $ANALYSIS_COUNT files in $ANALYSIS_DIR"
 ```
 
 > **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Interpellations - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).

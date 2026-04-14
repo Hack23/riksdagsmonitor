@@ -330,32 +330,7 @@ Based on the editorial profile for `committee-reports` (from `scripts/editorial-
 
 Every analysis MUST include an **Election 2026 Implications** section assessing: Electoral Impact, Coalition Scenarios, Voter Salience, Campaign Vulnerability, and Policy Legacy. Use the **5-level confidence scale** (⬛VERY LOW → 🟥LOW → 🟧MEDIUM → 🟩HIGH → 🟦VERY HIGH). See `analysis/methodologies/ai-driven-analysis-guide.md` v5.0 for full criteria.
 
-### Phase 1 — Data Collection & Initial Analysis
-1. Fetch MCP data (`get_betankanden`, `get_sync_status`, cross-reference `search_voteringar`)
-2. Detect policy domains for each report using `scripts/statistical-claims-detector.ts`
-3. Build initial outline: lede, thematic groupings, key takeaways
-
-### Phase 2 — Iterative Depth Enhancement (repeat per `analysis_depth`)
-For each AI iteration:
-1. **SWOT Analysis**: Generate multi-stakeholder SWOT with ALL 8 groups (Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion). Use structured evidence tables with columns: `#`, `Statement`, `Evidence (dok_id)`, `Confidence`, `Impact`, `Entry Date`. Every entry MUST cite specific betänkande number (e.g., "MJU18"), committee decision, or voting outcome.
-2. **Policy Dashboard**: Generate with ≥1 chart (≥2 for `deep`/`comprehensive`). Include ≥1 Mermaid diagram showing committee referral flow or legislative pipeline with color-coded nodes.
-3. **Risk Matrix**: Generate quantified L×I risk assessment with numeric scores (Likelihood 1-5, Impact 1-5) for each committee report. Present as structured HTML table with color-coded risk levels.
-4. **Forward Indicators**: Generate "What to Watch" section with ≥2 specific triggers (e.g., "FöU scheduling of Prop. 2025/26:214 by April 15 — if scheduled, signals government urgency [HIGH]").
-5. **Mindmap**: Generate CSS mindmap showing policy domain connections (only for `deep`/`comprehensive`)
-6. **Classification Rationale**: Include 5-dimension significance scoring (Parliamentary Impact, Policy Impact, Public Interest, Urgency, Cross-Party Significance) with numeric 0-10 scores per dimension.
-7. **Confidence Labels**: Ensure ALL analytical claims have `[HIGH]`/`[MEDIUM]`/`[LOW]` labels.
-8. **Quality Gate** (check before next iteration):
-   - Verify no identical "Why It Matters" text across entries
-   - Verify all Swedish API text is translated
-   - Verify word count ≥ 800
-   - Verify ≥1 Mermaid diagram with color-coded style directives
-   - Verify ≥5 dok_id citations in article body
-   - Verify ALL 8 stakeholder groups have evidence-based entries
-   - Verify no generic boilerplate (grep for "Requires committee review and chamber debate" — must be 0)
-   - If failing any check: re-generate the failing section before proceeding
-
-### Phase 3 — Final Quality Gate Before PR
-Run all validation checks from the **MANDATORY Quality Validation** section below before committing.
+See `SHARED_PROMPT_PATTERNS.md` §"Standardised Analysis Depth Gate" and §"MANDATORY: AI-Driven Analysis Using Methods & Templates" for Phase 1 (data collection + significance scoring), Phase 2 (depth enhancement: Quick SWOT, Activity Summary, quality gate: ≥400 words), and Phase 3 (final quality gate + `validate-news-generation.sh`).
 
 ## MANDATORY Date Validation
 
@@ -604,165 +579,19 @@ fi
 
 > 🚨 **CRITICAL RULE**: Never produce empty/stub analysis. If no data for today, look back to find unanalyzed data.
 
-```bash
-# Idempotent: only set if not already resolved by lookback
-if [ -z "$ARTICLE_DATE" ]; then
-  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  if [ -z "$ARTICLE_DATE" ]; then
-    date -u +%Y-%m-%d > /tmp/today.txt
-    read ARTICLE_DATE < /tmp/today.txt
-  fi
-fi
-ORIGINAL_ARTICLE_DATE="$ARTICLE_DATE"
-
-# Check if the requested date has any analyzed documents (per-date, doc-type-scoped manifest only)
-MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/committeeReports/data-download-manifest.md"
-DATE_DOCS_ANALYZED=0
-if [ -f "$MANIFEST_PATH" ]; then
-  grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/docs_a3.txt || echo 0 > /tmp/docs_a3.txt
-read DATE_DOCS_ANALYZED < /tmp/docs_a3.txt
-DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
-fi
-[ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
-echo "📄 Committee reports analyzed for $ARTICLE_DATE: $DATE_DOCS_ANALYZED"
-
-if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
-  echo "⚠️ No committee report data for $ARTICLE_DATE — activating lookback fallback (up to 7 days)"
-  DATA_DATE=""
-  for DAYS_BACK in 1 2 3 4 5 6 7; do
-    # Cross-platform date arithmetic: GNU date (-d) on Linux/GitHub Actions, BSD date (-v) on macOS
-    if date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null > /tmp/lookback.txt; then
-      :
-    elif date -u -j -f "%Y-%m-%d" "$ARTICLE_DATE" -v-"$DAYS_BACK"d +%Y-%m-%d 2>/dev/null > /tmp/lookback.txt; then
-      :
-    else
-      echo "" > /tmp/lookback.txt
-    fi
-    read LOOKBACK_DATE < /tmp/lookback.txt
-    [ -z "$LOOKBACK_DATE" ] && continue
-    echo "🔍 Checking $LOOKBACK_DATE for analyzed committee reports..."
-    # First, check if a manifest already exists with non-zero Documents Analyzed
-    MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/committeeReports/data-download-manifest.md"
-    DATE_DOCS_ANALYZED=0
-    if [ -f "$MANIFEST_PATH" ]; then
-      grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/docs_a.txt || echo 0 > /tmp/docs_a.txt
-      read DATE_DOCS_ANALYZED < /tmp/docs_a.txt
-      DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
-    fi
-    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
-    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
-      echo "✅ Found $DATE_DOCS_ANALYZED committee reports already analyzed for $LOOKBACK_DATE"
-      DATA_DATE="$LOOKBACK_DATE"
-      break
-    fi
-    # No existing data — run pre-article analysis for this lookback date
-    echo "ℹ️ No existing manifest data for $LOOKBACK_DATE — running pre-article analysis"
-    source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 --doc-type committeeReports 2>/dev/null || true
-    # Re-check manifest after running analysis
-    MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/committeeReports/data-download-manifest.md"
-    DATE_DOCS_ANALYZED=0
-    if [ -f "$MANIFEST_PATH" ]; then
-      grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/docs_a.txt || echo 0 > /tmp/docs_a.txt
-      read DATE_DOCS_ANALYZED < /tmp/docs_a.txt
-      DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
-    fi
-    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
-    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
-      echo "✅ Successfully analyzed $DATE_DOCS_ANALYZED committee reports for $LOOKBACK_DATE"
-      DATA_DATE="$LOOKBACK_DATE"
-      break
-    fi
-  done
-  # Lookback protection: copy analysis to today's directory instead of overwriting historical data
-  if [ -n "$DATA_DATE" ] && [ "$DATA_DATE" != "$ORIGINAL_ARTICLE_DATE" ]; then
-    SRC_DIR="analysis/daily/$DATA_DATE/committeeReports"
-    DST_DIR="analysis/daily/$ORIGINAL_ARTICLE_DATE/committeeReports"
-    if [ -d "$SRC_DIR" ]; then
-      mkdir -p "$DST_DIR"
-      cp -r "$SRC_DIR"/* "$DST_DIR/" 2>/dev/null || true
-      echo "📁 Copied analysis from $DATA_DATE → $ORIGINAL_ARTICLE_DATE (preserving original at $DATA_DATE)"
-    fi
-    ARTICLE_DATE="$ORIGINAL_ARTICLE_DATE"
-  elif [ -n "$DATA_DATE" ]; then
-    ARTICLE_DATE="$DATA_DATE"
-  fi
-  echo "🗓️ Using analysis date: $ARTICLE_DATE (data sourced from: $DATA_DATE)"
-  # Persist the resolved ARTICLE_DATE for subsequent workflow steps
-  if [ -n "$GITHUB_ENV" ]; then
-    echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"
-  fi
-fi
-
-# Report pending per-file analysis count for monitoring
-npx tsx scripts/catalog-downloaded-data.ts --pending-only --type committeeReports 2>/dev/null | jq -r '.pendingAnalysis // 0' > /tmp/pending_num.txt 2>/dev/null || echo 0 > /tmp/pending_num.txt
-PENDING=0
-read PENDING < /tmp/pending_num.txt || PENDING=0
-case "$PENDING" in ''|*[!0-9]*) PENDING=0 ;; esac
-echo "📊 Total pending committee report analysis files (all dates): $PENDING"
-```
+Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-manifest.md` → if 0 docs, loop `DAYS_BACK` 1–7 using `date -u -d "$ARTICLE_DATE - $DAYS_BACK days"`, run `pre-article-analysis.ts --date "$LOOKBACK_DATE"` → copy artifacts from found date to original date folder → run `catalog-downloaded-data.ts --pending-only`. See `SHARED_PROMPT_PATTERNS.md` §"Data Lookback Fallback Strategy" for full bash implementation.
 
 ### Per-File AI Analysis Enhancement
 
-> 🚨 **CRITICAL RULE:** You must **actually read the JSON data** in each file and base all analysis on real data found there. Every SWOT entry, risk score, and stakeholder assessment must cite specific data from the file (dok_id, vote counts, party names, reservation details). Generic or boilerplate analysis is a failure mode — see the "Concrete Example: What Good Analysis Looks Like" section in `analysis/methodologies/ai-driven-analysis-guide.md` for bad vs. good comparison.
-
-After the script-based analysis, perform **AI-driven per-file analysis** for deeper intelligence:
-
-1. Run `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to list files needing analysis
-2. **Read the master methodology guide and per-file template** (required upfront), then consult others as needed:
-   - `analysis/methodologies/ai-driven-analysis-guide.md` — Master per-file analysis guide (includes bad/good examples)
-   - `analysis/templates/per-file-political-intelligence.md` — Per-file output template
-   - Consult the following as needed for the current analysis step:
-   - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT with confidence hierarchy
-   - `analysis/methodologies/political-risk-methodology.md` — 5×5 Likelihood×Impact risk matrix
-   - `analysis/methodologies/political-threat-framework.md` — Political Threat Taxonomy, Attack Trees, severity calibration
-   - `analysis/methodologies/political-classification-guide.md` — Sensitivity and domain taxonomy
-   - `analysis/methodologies/political-style-guide.md` — Writing standards and evidence density
-   - `analysis/templates/synthesis-summary.md` — Daily synthesis template
-   - `analysis/templates/risk-assessment.md` — Risk assessment template
-   - `analysis/templates/political-classification.md` — Classification template
-   - `analysis/templates/threat-analysis.md` — Threat template
-   - `analysis/templates/swot-analysis.md` — SWOT template
-   - `analysis/templates/stakeholder-impact.md` — Stakeholder template
-   - `analysis/templates/significance-scoring.md` — Significance template
-3. For each pending file:
-   a. **Read** the JSON data file — use `view` or `cat` to read the actual content
-   b. **Extract** key fields (dok_id, titel, datum, organ, reservationer, etc.)
-   c. **Classify** — Sensitivity level, domain, urgency, significance (0–10)
-   d. **SWOT** — Government + Opposition impact with evidence (cite specific dok_id, vote margins)
-   e. **Risk** — 5×5 Likelihood×Impact matrix with numeric scores
-   f. **Political Threat Taxonomy** — 6 democratic function threat categories (only where applicable — cite evidence)
-   g. **Stakeholders** — 6-lens impact matrix
-   h. **Forward indicators** — Specific watch items with concrete timelines
-   i. **Mermaid diagrams** — At least 1 diagram with REAL data from the file (not placeholder text)
-   j. **Write** `{id}.analysis.md` alongside the data file
-4. Quality gate: ≥3 evidence points, confidence labels, no `[REQUIRED]` placeholders remaining
-
-The analysis pipeline outputs the following artifacts per doc-type run:
-- `data-download-manifest.md` — Download metadata and document counts
-- `classification-results.md` — Document classification and priority levels
-- `risk-assessment.md` — Political risk assessment (coalition stability, anomaly detection)
-- `swot-analysis.md` — SWOT analysis (pre-computed for article enrichment)
-- `threat-analysis.md` — Threat indicators and democratic health
-- `stakeholder-perspectives.md` — Multi-perspective analysis (6 lenses)
-- `significance-scoring.md` — Significance scores and urgency levels
-- `cross-reference-map.md` — Cross-document reference links
-- `synthesis-summary.md` — Combined analysis summary with confidence level
-- `documents/*.json` — Raw downloaded documents (one per document)
-- `documents/*-analysis.md` — Per-document analysis with SWOT, stakeholder perspectives, and significance scoring
-
-These files are committed alongside articles for human review and continuous improvement.
+>Follow `SHARED_PROMPT_PATTERNS.md` §"Per-File AI Analysis Block" and §"MANDATORY: AI-Driven Analysis Using Methods & Templates" exactly:
+- **Step A**: Read `analysis/methodologies/ai-driven-analysis-guide.md` + `analysis/templates/per-file-political-intelligence.md` FIRST
+- **Step B**: For EVERY document JSON → create `{dok_id}-analysis.md` with ALL 6 analytical lenses, ≥1 color-coded Mermaid, evidence tables
+- **Step C**: Rewrite ALL synthesis files to match templates exactly
+- **Step D**: Run quality gate (see SHARED §"Step 5b: MANDATORY Quality Gate"). Fix ALL failures.
 
 ### 🔴 MANDATORY: Batch Analysis Enrichment (Prevents Empty "0 Documents Analyzed" Files)
 
-> **Root Cause**: The `pre-article-analysis.ts` script filters documents by exact date match. When no committee reports are published on the exact analysis date, batch files report "0 documents analyzed" — this violates `ai-driven-analysis-guide.md` quality requirements.
-
-**After per-file analysis, check if batch files are empty and enrich them:**
-
-1. Check `synthesis-summary.md` — if it reports "0 documents analyzed" but per-document analyses exist in `documents/`, aggregate the per-doc findings into all 9 batch files
-2. If NO per-doc analyses exist AND batch files show "0 documents analyzed", use MCP `get_betankanden(rm="2025/26", limit=20)` directly to find recent committee reports and create meaningful analysis
-3. Each enriched batch file MUST include: ≥1 Mermaid diagram, structured tables, evidence citations, confidence labels
-4. **NEVER commit batch files that report "0 documents analyzed" when analysis data is available**
-5. See `ai-driven-analysis-guide.md` "Deep-Inspection Batch Analysis Enrichment Protocol (v4.1)" for full requirements
+If `synthesis-summary.md` reports "0 documents analyzed" but per-doc analyses exist in `documents/`, aggregate findings into all 9 batch files. If NO per-doc analyses exist, use MCP `get_betankanden(rm="2025/26", limit=20)` directly. See `ai-driven-analysis-guide.md` §"Deep-Inspection Batch Analysis Enrichment Protocol (v4.1)". **NEVER commit batch files reporting "0 documents analyzed".**
 
 ### 📋 Rewrite Daily Synthesis Files to Follow Templates
 
@@ -777,72 +606,22 @@ These files are committed alongside articles for human review and continuous imp
 3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
 
 ```bash
-# Idempotent: only set if not already resolved by lookback
+[ -f /tmp/hhmm.env ] && . /tmp/hhmm.env
 if [ -z "$ARTICLE_DATE" ]; then
-  ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  if [ -z "$ARTICLE_DATE" ]; then
-    date -u +%Y-%m-%d > /tmp/today.txt
-    read ARTICLE_DATE < /tmp/today.txt
-  fi
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
 fi
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/committeeReports"
-ANALYSIS_COUNT=0
-if [ -d "$ANALYSIS_DIR" ]; then
-  find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l > /tmp/analysis_count.txt
-  read ANALYSIS_COUNT < /tmp/analysis_count.txt
-fi
-if [ "$ANALYSIS_COUNT" -gt 0 ]; then
-  echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed (do NOT use safeoutputs___noop)"
-else
-  echo "📊 Found 0 analysis artifacts — safeoutputs___noop is allowed (no files to commit)"
-fi
+find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l > /tmp/analysis_count.txt
+read ANALYSIS_COUNT < /tmp/analysis_count.txt
+echo "Analysis artifacts: $ANALYSIS_COUNT files in $ANALYSIS_DIR"
 ```
 
 > **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Committee Reports - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).
 
 ### 🔴 MANDATORY ANALYSIS VERIFICATION GATE (STOP — DO NOT SKIP)
 
-> 🚨 **ABSOLUTE RULE: You MUST NOT proceed to article generation until this gate passes.** This gate enforces the "No Workflow Run Wasted" principle — analysis is the primary output of every run.
-
-**Run this verification BEFORE any article generation:**
-```bash
-if [ -z "$ARTICLE_DATE" ]; then
-  date -u +%Y-%m-%d > /tmp/today.txt
-  read ARTICLE_DATE < /tmp/today.txt
-fi
-ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/committeeReports"
-echo "=== 🔴 MANDATORY ANALYSIS VERIFICATION GATE ==="
-echo "📅 Date: $ARTICLE_DATE"
-ANALYSIS_MD_COUNT=0
-if [ -d "$ANALYSIS_DIR" ]; then
-  find "$ANALYSIS_DIR" -name "*.md" -type f 2>/dev/null | wc -l > /tmp/analysis_md_count.txt
-read ANALYSIS_MD_COUNT < /tmp/analysis_md_count.txt
-fi
-ANALYSIS_PER_DOC=0
-if [ -d "$ANALYSIS_DIR/documents" ]; then
-  find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l > /tmp/analysis_per_doc.txt
-read ANALYSIS_PER_DOC < /tmp/analysis_per_doc.txt
-fi
-echo "📊 Batch analysis files: $ANALYSIS_MD_COUNT"
-echo "📊 Per-document analysis files: $ANALYSIS_PER_DOC"
-if [ "$ANALYSIS_MD_COUNT" -eq 0 ]; then
-  echo "🔴 GATE FAILED: Zero analysis artifacts exist. You MUST run the full analysis phase (Steps 2–2.5) BEFORE proceeding."
-  echo "🔴 DO NOT proceed to article generation. DO NOT call safeoutputs___noop. Run analysis NOW."
-else
-  echo "✅ GATE PASSED: $ANALYSIS_MD_COUNT analysis files found. You may proceed to article generation."
-fi
-echo "=============================================="
-```
-
-**If this gate fails (0 analysis files):**
-1. **STOP** — do not proceed to article generation
-2. Go back and run the full analysis pipeline (Step 2.5: pre-article-analysis + Per-File AI Analysis Enhancement)
-3. Re-run this gate after analysis completes
-4. Only proceed to article generation once the gate passes
-
-**If this gate passes but per-document analyses are 0:**
-1. Run the Per-File AI Analysis Enhancement phase to create per-document analyses
-2. Continue to article generation after per-document analyses are created
+> 🚨 Run the verification gate bash. See `SHARED_PROMPT_PATTERNS.md` §"Step 5b: MANDATORY Quality Gate". If gate fails (0 analysis files), run the full analysis pipeline and re-run. Only proceed to article generation once gate passes.
 
 ### 🔬 Step 2b: Read ALL Analysis Files (MANDATORY — before article generation)
 
@@ -914,32 +693,7 @@ npx tsx scripts/fix-article-navigation.ts
 
 ### Step 3b: AI Title, Meta Description & Analysis References (v5.0 — Analysis-Driven)
 
-> 🚨 **MANDATORY** — After article HTML is generated, the AI MUST read the completed synthesis-summary.md and use its "AI-Recommended Article Metadata" section to drive title, description, and SEO. See `SHARED_PROMPT_PATTERNS.md` §"AI-DRIVEN TITLE & META DESCRIPTION GENERATION" and `ai-driven-analysis-guide.md` §"Analysis-Driven Article Decision Protocol (v5.0)".
-
-**1. Read synthesis analysis first** — `cat "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/synthesis-summary.md"` and extract:
-   - "Recommended Title (EN)" and "Recommended Title (SV)" — use as starting point
-   - "Meta Description (EN)" and "Meta Description (SV)" — use as starting point
-   - "Key Highlights" — verify title references at least one highlight
-   - "Article Decision" and "Article Priority" — validate publication decision
-
-**2. Generate newsworthy titles from analysis** — Read each article's content AND the synthesis findings, then generate a title following: `[Active Verb] + [Specific Actor/Institution] + [Concrete Policy Action]`. The title MUST reference findings from the synthesis — not generic category labels. Apply to ALL languages (not just English). BANNED: ❌ "Committee Reports: Parliamentary Priorities This Week: Defense in Focus" or any title ending with ": {Topic} in Focus".
-
-**3. Generate AI meta descriptions from analysis** (150-160 chars) — Summarize the #1 ranked finding from synthesis significance-scoring. BANNED: ❌ "Analysis of N documents covering Committee:, Published:" or any description starting with "Analysis of N documents".
-
-**4. 🔴 Add analysis references section (MANDATORY — VERIFY AFTER)** — Insert the "📊 Analysis & Sources" HTML block (from SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES) before the article footer, linking to:
-- `analysis/daily/$ARTICLE_DATE/committeeReports/synthesis-summary.md`
-- `analysis/daily/$ARTICLE_DATE/committeeReports/swot-analysis.md`
-- `analysis/daily/$ARTICLE_DATE/committeeReports/risk-assessment.md`
-- `analysis/daily/$ARTICLE_DATE/committeeReports/threat-analysis.md`
-- `analysis/daily/$ARTICLE_DATE/committeeReports/stakeholder-perspectives.md`
-- `analysis/daily/$ARTICLE_DATE/committeeReports/significance-scoring.md`
-- `analysis/daily/$ARTICLE_DATE/committeeReports/classification-results.md`
-- `analysis/daily/$ARTICLE_DATE/committeeReports/cross-reference-map.md`
-- `analysis/daily/$ARTICLE_DATE/committeeReports/data-download-manifest.md`
-- `analysis/methodologies/ai-driven-analysis-guide.md`
-- Per-document analyses in `documents/` subfolder
-
-**After inserting, VERIFY** by running:
+> 🚨 **MANDATORY** — See `SHARED_PROMPT_PATTERNS.md` §"AI-DRIVEN TITLE & META DESCRIPTION GENERATION". Read `synthesis-summary.md` for recommended titles/descriptions. Title: `[Active Verb] + [Actor] + [Policy Action]`. BANNED: titles ending ": {Topic} in Focus". Meta: 150-160 chars, not starting with "Analysis of N documents". Add "📊 Analysis & Sources" HTML block before footer. Update ALL language metadata. Verify:
 ```bash
 for FILE in news/$ARTICLE_DATE-committee-reports-*.html; do
   if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
@@ -948,41 +702,9 @@ for FILE in news/$ARTICLE_DATE-committee-reports-*.html; do
 done
 ```
 
-**5. Update all metadata in ALL languages** — For EVERY generated language file, ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, `<h1>`, Schema.org `headline`, `alternativeHeadline`, and `description` all reflect the AI-generated title and description. Non-English articles MUST have properly translated AI titles — not English titles or generic templates.
-
 ### Step 3c: AI Content Quality Enforcement (v4.0 — MANDATORY)
 
-> 🚨 **v4.0 CRITICAL**: The AI MUST read pre-computed analysis files and rewrite ALL script-generated stub content. See `SHARED_PROMPT_PATTERNS.md` §"AI ARTICLE CONTENT GENERATION" and `ai-driven-analysis-guide.md` v4.0 §"AI Article Content Generation Protocol".
-
-**1. Read pre-computed analysis** — Before modifying article content, read:
-```bash
-cat "analysis/daily/$ARTICLE_DATE/committeeReports/synthesis-summary.md"
-cat "analysis/daily/$ARTICLE_DATE/committeeReports/swot-analysis.md"
-cat "analysis/daily/$ARTICLE_DATE/committeeReports/risk-assessment.md"
-cat "analysis/daily/$ARTICLE_DATE/committeeReports/stakeholder-perspectives.md"
-```
-
-**2. Replace script-generated lede** — Find and replace any `<p class="lede">Analysis of N documents covering...` with an AI-generated analytical lede naming the most significant committee report, key actors, and political significance.
-
-**3. Replace boilerplate "Why It Matters"** — For EACH committee report entry, replace any `"Touches on {X} policy..."` boilerplate with document-specific analysis citing the committee code, policy measure, budget impact, and party positions.
-
-**4. Replace generic "Winners & Losers"** — Find and replace `"The political landscape remains fluid..."` with specific winners/losers naming parties (M, S, SD, V, MP, C, L, KD) with evidence from vote records or committee decisions.
-
-**5. Replace excuse-as-analysis** — Find and replace `"No chamber debate data is available..."` with either: (a) actual debate data from MCP `search_anforanden`, or (b) analysis of the committee report text itself.
-
-**6. 🔴 MANDATORY: Replace ALL Deep Analysis `AI_MUST_REPLACE` markers** — The script now generates `<!-- AI_MUST_REPLACE: ... -->` markers in EVERY Deep Analysis subsection (Timeline & Context, Why This Matters, Political Impact, Actions & Consequences, Critical Assessment). You MUST:
-  - Search the generated HTML for ALL `AI_MUST_REPLACE` markers
-  - Replace EACH marker with genuine, specific political intelligence analysis
-  - "Timeline & Context" → Write about the specific scheduling strategy, why these reports come now, and how timing relates to the legislative calendar
-  - "Why This Matters" → Explain the specific political significance of THESE particular items — which parties gain/lose, what policy areas shift, how it affects citizens
-  - "Political Impact" → Name specific parties, vote margins, coalition dynamics, and which measures face the strongest resistance
-  - "Actions & Consequences" → Detail specific implementation requirements, agency actions needed, budget implications, and timeline for each major item
-  - "Critical Assessment" → Provide a genuine critical evaluation: what's the gap between stated intent and likely outcome? Where is the government overreaching or underdelivering?
-  - ZERO `AI_MUST_REPLACE` markers may survive in the final committed HTML
-
-**7. Add Key Takeaways** — If missing, add 3-5 bullet points with bold lead phrases, dok_id citations, and [HIGH/MEDIUM/LOW] confidence labels.
-
-**8. Verify policy domain labels** — Ensure each committee report is classified by its committee code (FöU=Defence, JuU=Justice, SoU=Healthcare, etc.), NOT by keyword heuristics.
+> 🚨 See `SHARED_PROMPT_PATTERNS.md` §"AI ARTICLE CONTENT GENERATION". Read pre-computed analysis files. Replace: lede `"Analysis of N documents..."`, boilerplate `"Touches on {X} policy..."`, `"The political landscape remains fluid..."`, `"No chamber debate data..."`. Replace ALL `<!-- AI_MUST_REPLACE: ... -->` markers with genuine analysis. Zero markers in final HTML. Add Key Takeaways with dok_id citations and confidence labels.
 
 ### Step 4: Translate Swedish Content & Verify Analysis Quality
 All Swedish API data MUST be translated. Check every article for `data-translate="true"` markers.

@@ -298,14 +298,7 @@ bash({ command: "..." }) // ← WRONG: missing description
 
 ## 🛡️ AWF Shell Safety — MANDATORY for Agent-Generated Bash
 
-> **The Agent Workflow Firewall (AWF) blocks dangerous shell expansion patterns.** Fenced bash blocks in init steps run as normal shell, but any command YOU generate via the `bash` tool IS subject to AWF filtering.
-
-**Key rules — NEVER use these in your generated bash commands:**
-1. **NEVER** use `$`+`{VAR}` — always use `$VAR` (no curly braces)
-2. **NEVER** use `$`+`(command)` — use pipes, `find -exec`, or separate commands
-3. **NEVER** use `$`+`{VAR:-default}` — set defaults with `if/then` first, then use `$VAR`
-4. **Use `find -exec`** instead of for-loops with `$`+`(basename ...)`
-5. **Use direct file paths** when possible instead of variable-constructed paths with braces
+> See `SHARED_PROMPT_PATTERNS.md` §"AWF Shell Safety" for rules. Key: use `$VAR` (no braces), `find -exec` (no `$(cmd)`), set defaults with `if/then`.
 
 ## 🔤 UTF-8 Encoding — MANDATORY for ALL Content
 
@@ -393,34 +386,15 @@ Before generating articles, consult these skills:
 
 ### Standardised Analysis Depth Gate
 
-> ⚠️ **Default is `deep`** — not `standard`. Analysis must always produce publication-quality output with Mermaid diagrams and evidence tables.
+> ⚠️ **Default is `deep`** — not `standard`. See `SHARED_PROMPT_PATTERNS.md` §"Standardised Analysis Depth Gate" for the full requirements table. Minimum ALL depths: ≥1 color-coded Mermaid, evidence tables with dok_id, quantified risk matrix, forward indicators, confidence labels, follows template exactly.
 
-| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Mermaid diagrams | Risk matrix (L×I) | Forward indicators | Min. analysis time |
-|-------|--------------|-------------------|--------|---------|-----------------|-------------------|-------------------|-------------------|
-| standard | 1-2 | ≥5 (of 8 groups) | ≥1 | optional | ≥1 color-coded | ≥2 risks scored | ≥2 with triggers | 10 minutes |
-| deep | 2-3 | ≥7 (of 8 groups) | ≥2 | required | ≥2 color-coded | ≥4 risks scored | ≥3 with triggers | 15 minutes |
-| comprehensive | 3+ | all 8 groups | ≥3 | required | ≥3 color-coded | ≥6 risks scored | ≥5 with triggers | 20 minutes |
+**The 8 mandatory stakeholder groups**: Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion — each with specific evidence (dok_id, vote counts, named politicians).
 
-**The 8 mandatory stakeholder groups are**: Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion. Every group MUST be analyzed with specific evidence (dok_id, vote counts, named politicians).
-
-**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, quantified risk matrix with numeric L×I scores, forward indicators with specific triggers/timelines, confidence labels on all analytical claims, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
-
-> **Read `analysis_depth` input first** (default: `deep`). This controls how many AI iterations to apply per article type.
-
-Each article type has a profile in `scripts/editorial-framework.ts` with the exact SWOT depth, dashboard requirements, mindmap requirements, stakeholder count, and AI iteration count to target. Use `getArticleTypeProfile(articleType)` to retrieve the profile, then apply the corresponding sections:
-
-| Depth | Iterations | SWOT | Dashboard | Mindmap |
-|-------|-----------|------|-----------|---------|
-| standard | min(2, profile.aiIterations) | as profile | as profile | as profile |
-| deep | clamp(2–3, profile.aiIterations) | as profile | as profile | as profile |
-| comprehensive | max(3, profile.aiIterations) | as profile | as profile | as profile |
+> **Read `analysis_depth` input first** (default: `deep`). Use `getArticleTypeProfile(articleType)` from `scripts/editorial-framework.ts` to get the exact SWOT depth, dashboard, mindmap, stakeholder count, and AI iteration count.
 
 ### Per-Article-Type Iteration Pattern
-For each article type being generated in this run:
-1. **Phase 1**: Fetch data → initial outline
-2. **Phase 2**: Enhance with SWOT + Dashboard + Mindmap (per profile requirements)
-3. **Quality Gate**: word count ≥ profile.minWordCount, no identical why-it-matters, all Swedish translated
-4. **Additional iterations**: if `analysis_depth` is `deep` or `comprehensive` and quality gate fails
+
+See `SHARED_PROMPT_PATTERNS.md` §"Standardised Analysis Depth Gate" for Phase 1 (data + outline), Phase 2 (SWOT + Dashboard + Mindmap per profile), quality gate (word count ≥ profile.minWordCount, unique why-it-matters, all Swedish translated), and additional iterations for `deep`/`comprehensive`.
 
 ## Step 1: Date Validation & MCP Health Check
 
@@ -592,119 +566,13 @@ After the script-based analysis, perform **AI-driven per-file analysis** for dee
 
 These analysis files are committed alongside articles for human review and continuous improvement.
 
-### 🔴 MANDATORY: Batch Analysis Enrichment (Prevents Empty "0 Documents Analyzed" Files)
+### 🔴 MANDATORY: Batch Analysis Enrichment
 
-> **Root cause**: The `pre-article-analysis.ts` script filters documents by exact date match. For `deep-inspection` and lookback scenarios, targeted documents may have earlier dates, causing batch analysis files (synthesis-summary.md, swot-analysis.md, etc.) to report "0 documents analyzed" despite per-document analysis being rich and complete.
-
-**After completing per-file AI analysis, the agent MUST check and enrich batch analysis files:**
-
-```bash
-ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
-# Check if batch analysis files are empty/minimal
-sed -nE 's/.*Documents Analyzed[^0-9]*([0-9]+).*/\1/p' "$ANALYSIS_DIR/synthesis-summary.md" 2>/dev/null | sed -n '1p' > /tmp/synth_docs.txt || echo "0" > /tmp/synth_docs.txt
-read SYNTH_DOCS < /tmp/synth_docs.txt
-echo "📊 Synthesis reports $SYNTH_DOCS documents analyzed"
-if [ "$SYNTH_DOCS" -eq 0 ]; then
-  echo "🔴 EMPTY BATCH ANALYSIS DETECTED — agent MUST rewrite batch files from per-document analysis"
-fi
-```
-
-**When batch files show "0 documents analyzed" but per-document analysis exists in `documents/`:**
-
-1. **Read ALL per-document `*-analysis.md` files** in the `documents/` subdirectory
-2. **Aggregate findings** into each batch analysis file:
-   - `synthesis-summary.md` — Combine executive summaries, compute overall risk/significance, list all documents with scores. MUST include Intelligence Dashboard Mermaid diagram.
-   - `swot-analysis.md` — Aggregate all SWOT entries from per-doc analyses into a combined SWOT with evidence tables and Mermaid quadrant diagram.
-   - `risk-assessment.md` — Collect all risk entries, compute aggregate risk score, include risk matrix Mermaid diagram.
-   - `threat-analysis.md` — Aggregate threat indicators from per-doc analyses, include threat taxonomy Mermaid diagram.
-   - `classification-results.md` — Summarize document classifications with structured tables.
-   - `significance-scoring.md` — List all documents with their significance scores in a ranked table.
-   - `stakeholder-perspectives.md` — Aggregate stakeholder impacts across all analyzed documents with evidence tables.
-   - `cross-reference-map.md` — Map relationships between analyzed documents.
-3. **Quality requirements for enriched batch files** (from `ai-driven-analysis-guide.md`):
-   - ≥1 color-coded Mermaid diagram per file
-   - Structured markdown tables (not plain prose)
-   - Evidence citations with dok_id
-   - Confidence labels `[HIGH]`/`[MEDIUM]`/`[LOW]` on analytical claims
-   - No "0 documents analyzed" in any header or summary
-   - Each file ≥500 bytes (empty files are rejected)
-4. **NEVER commit batch files that report "0 documents analyzed" when per-document analysis exists** — this is a quality gate failure
+If `synthesis-summary.md` reports "0 documents analyzed" but per-doc analyses exist in `documents/`: read ALL `*-analysis.md` files and aggregate into all 8 batch files (synthesis-summary, swot-analysis, risk-assessment, threat-analysis, classification-results, significance-scoring, stakeholder-perspectives, cross-reference-map). Each enriched file needs ≥1 color-coded Mermaid, tables, dok_id citations, confidence labels. See `ai-driven-analysis-guide.md` §"Deep-Inspection Batch Analysis Enrichment Protocol (v4.1)". **NEVER commit batch files reporting "0 documents analyzed".**
 
 ### 🚨 MANDATORY: Analysis Artifacts Must ALWAYS Be Committed
 
-**Before deciding whether to generate articles or call noop, you MUST:**
-
-1. **Review the analysis artifacts** in `analysis/daily/YYYY-MM-DD/` — read `synthesis-summary.md` and `significance-scoring.md` to understand what was found
-2. **Summarize the analysis findings** — note how many documents were downloaded, their significance scores, key themes, and risk levels
-3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
-
-```bash
-ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-if [ -z "$ARTICLE_DATE" ]; then
-  date -u +%Y-%m-%d > /tmp/today.txt
-  read ARTICLE_DATE < /tmp/today.txt
-fi
-# Determine the article type from input for scoped analysis directory
-RAW_REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
-_IS_SCHEDULE_OR_MULTI=false
-if [ -z "$RAW_REQUESTED_TYPE" ] || [[ "$RAW_REQUESTED_TYPE" == *,* ]]; then
-  _IS_SCHEDULE_OR_MULTI=true
-fi
-REQUESTED_TYPE="$RAW_REQUESTED_TYPE"
-[ -z "$REQUESTED_TYPE" ] && REQUESTED_TYPE="committee-reports"
-# Reuse previously persisted relocation/analysis folder when available so later blocks
-# do not recompute a different minute-based directory.
-if [ -f /tmp/analysis_subfolder.env ]; then
-  source /tmp/analysis_subfolder.env
-fi
-if [ -n "$ANALYSIS_SUBFOLDER" ]; then
-  ANALYSIS_SUBFOLDER="$ANALYSIS_SUBFOLDER"
-elif [ -n "$_RELOC_SUBFOLDER" ]; then
-  ANALYSIS_SUBFOLDER="$_RELOC_SUBFOLDER"
-else
-  # Use dedicated folder for multi-type/schedule runs; reuse _AG_HHMM for breaking consistency
-  if [ -z "$_AG_HHMM" ]; then
-    date -u +%H%M > /tmp/hhmm_val.txt
-    read _AG_HHMM < /tmp/hhmm_val.txt
-  fi
-  if [ "$_IS_SCHEDULE_OR_MULTI" = true ]; then
-    ANALYSIS_SUBFOLDER="article-generator-$_AG_HHMM"
-  else
-    case "$REQUESTED_TYPE" in
-      *committee-reports*) ANALYSIS_SUBFOLDER="committeeReports" ;;
-      *interpellation*) ANALYSIS_SUBFOLDER="interpellations" ;;
-      *motions*) ANALYSIS_SUBFOLDER="motions" ;;
-      *propositions*) ANALYSIS_SUBFOLDER="propositions" ;;
-      *week-ahead*) ANALYSIS_SUBFOLDER="week-ahead" ;;
-      *month-ahead*) ANALYSIS_SUBFOLDER="month-ahead" ;;
-      *weekly-review*) ANALYSIS_SUBFOLDER="weekly-review" ;;
-      *monthly-review*) ANALYSIS_SUBFOLDER="monthly-review" ;;
-      *breaking*) ANALYSIS_SUBFOLDER="realtime-$_AG_HHMM" ;;
-      *deep-inspection*) ANALYSIS_SUBFOLDER="deep-inspection" ;;
-      *) echo "⚠️ Unknown article type '$REQUESTED_TYPE' — using as-is for subfolder"; ANALYSIS_SUBFOLDER="$REQUESTED_TYPE" ;;
-    esac
-  fi
-fi
-# Persist ANALYSIS_SUBFOLDER for use in the commit step (agentic blocks may run independently)
-ANALYSIS_SUBFOLDER_ENV=/tmp/analysis_subfolder.env
-echo "ANALYSIS_SUBFOLDER=$ANALYSIS_SUBFOLDER" > "$ANALYSIS_SUBFOLDER_ENV"
-echo "ANALYSIS_HHMM=$_AG_HHMM" >> "$ANALYSIS_SUBFOLDER_ENV"
-echo "_AG_HHMM=$_AG_HHMM" >> "$ANALYSIS_SUBFOLDER_ENV"
-echo "_RELOC_SUBFOLDER=$ANALYSIS_SUBFOLDER" >> "$ANALYSIS_SUBFOLDER_ENV"
-ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
-ANALYSIS_COUNT=0
-if [ -d "$ANALYSIS_DIR" ]; then
-  find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l > /tmp/analysis_count.txt
-  read ANALYSIS_COUNT < /tmp/analysis_count.txt
-fi
-if [ "$ANALYSIS_COUNT" -gt 0 ]; then
-  echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed (do NOT use safeoutputs___noop)"
-else
-  echo "📊 Found 0 analysis artifacts — safeoutputs___noop is allowed (no files to commit)"
-fi
-```
-
-> **🚨 CRITICAL RULE: Never call `safeoutputs___noop` if analysis artifacts exist.** If the pre-article analysis pipeline produced ANY output files in `analysis/daily/YYYY-MM-DD/`, you MUST commit them via `safeoutputs___create_pull_request` — even if no articles are generated. Use an analysis-only PR with title: `📊 Analysis Only - Article Generator - {date}` and label `analysis-only`. Only use `safeoutputs___noop` if the analysis pipeline produced ZERO output files (truly nothing to analyze).
+After analysis, determine `ANALYSIS_SUBFOLDER` (matches article type: `committeeReports`, `interpellations`, `motions`, `propositions`, `week-ahead`, `realtime-$HHMM` for breaking, etc.) and check if `analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER` has files. If ANALYSIS_COUNT > 0: commit via `safeoutputs___create_pull_request` with title `📊 Analysis Only - Article Generator - {date}`, label `analysis-only`. Only call `safeoutputs___noop` if ZERO output files.
 
 ## Step 2: Determine Article Types & Languages
 
