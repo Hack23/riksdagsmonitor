@@ -644,7 +644,8 @@ if [ -s /tmp/new_trans_validate.txt ]; then
     echo "⚠️ HTML validation errors found, attempting auto-fix..."
     npx tsx scripts/article-quality-enhancer.ts --fix
     if ! npx htmlhint $TRANS_FILES; then
-      echo "⚠️ HTML validation errors remain — proceeding with PR anyway (do not block on htmlhint)"
+      echo "⚠️ HTML validation errors remain — proceeding with PR (labeled 'needs-review')"
+      echo "HTMLHINT_FAILED=true" >> /tmp/validation_flags.txt
     fi
   fi
 else
@@ -687,12 +688,12 @@ read -r COMMIT_DATE < /tmp/commit_date.txt
 git commit -m "chore: translate articles $COMMIT_DATE"
 ```
 
-Then **immediately** call as a direct tool call:
+Then **immediately** call as a direct tool call. If `/tmp/validation_flags.txt` contains `HTMLHINT_FAILED=true`, add `needs-review` to the labels:
 ```
 safeoutputs___create_pull_request({
-  "title": "🌐 Article Translations - {date}",
-  "body": "## Summary\n\nTranslated {article_type} articles into {count} languages.\n\n### Translations\n- Source: EN\n- Languages: {lang_list}\n- Files: {count}\n- Method: AI translation\n\n### Quality\n- Section headings: ✅ Translated\n- Body paragraphs: ✅ Translated\n- English leakage: ✅ None\n\n### Source\n- Workflow: `news-translate`",
-  "labels": ["agentic-news", "translation"]
+  "title": "🌐 Article Translations - {date} ({count} files)",
+  "body": "## Summary\n\nTranslated {article_type} articles into {count} languages.\n\n### Translations\n- Source: EN\n- Languages: {lang_list}\n- Files: {count}\n- Method: AI translation (create tool)\n\n### Quality\n- Section headings: ✅ Translated\n- Body paragraphs: ✅ Translated\n- English leakage: ✅ None\n- HTMLHint: {htmlhint_status}\n\n### Source\n- Workflow: `news-translate`",
+  "labels": ["agentic-news", "translation"]   // add "needs-review" if HTMLHINT_FAILED=true
 })
 ```
 
