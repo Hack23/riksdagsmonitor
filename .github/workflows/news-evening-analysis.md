@@ -518,7 +518,7 @@ echo "✅ Data downloaded to analysis/data/"
 # Verify actual data was downloaded
 MANIFEST_DOCS=0
 if [ -f "analysis/daily/$ARTICLE_DATE/data-download-manifest.md" ]; then
-  grep -E '^\*\*Documents Analyzed\*\*' "analysis/daily/$ARTICLE_DATE/data-download-manifest.md" 2>/dev/null | grep -oP '[0-9]+(?=\b)' | head -1 > /tmp/manifest_docs.txt || echo 0 > /tmp/manifest_docs.txt
+  grep -E '^\*\*Documents Analyzed\*\*' "analysis/daily/$ARTICLE_DATE/data-download-manifest.md" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/manifest_docs.txt || echo 0 > /tmp/manifest_docs.txt
 read MANIFEST_DOCS < /tmp/manifest_docs.txt
 fi
 [ -z "$MANIFEST_DOCS" ] && MANIFEST_DOCS=0

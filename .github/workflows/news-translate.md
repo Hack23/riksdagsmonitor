@@ -525,7 +525,6 @@ read SCAN_DATE < /tmp/scan_date.txt
   ls $EN_GLOB 2>/dev/null > /tmp/en_files.txt || true
 EN_FILES=""
 if [ -s /tmp/en_files.txt ]; then
-  EN_FILES=""
   while IFS= read -r _efline; do
     EN_FILES="$EN_FILES $_efline"
   done < /tmp/en_files.txt
