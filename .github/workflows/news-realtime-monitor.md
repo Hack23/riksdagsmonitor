@@ -415,57 +415,33 @@ fi
 
 ### 🔧 If Scripts Downloaded 0 Data
 
-> The agent MUST fix the scripts so they work, or fall back to direct MCP tool calls. Never proceed without data.
+> Fix scripts or fall back to direct MCP tool calls. Never proceed without data.
 
 1. **Read error log**: `cat /tmp/pipeline-output.log | tail -30`
 2. **Check MCP setup**: `echo "MCP_SERVER_URL=$MCP_SERVER_URL"` — must be `http://host.docker.internal:80/mcp/riksdag-regering`
 3. **Fix script issues**: read source with `view`, fix with `edit`, re-run
-4. **If script fix fails**: use direct MCP tool calls (`search_dokument`, `get_propositioner`, etc.) to download data, save each response as JSON to `analysis/data/documents/{type}/`
+4. **If script fix fails**: use direct MCP tools (`search_dokument`, `get_propositioner`, etc.), save to `analysis/data/documents/{type}/`
 
 ### 🚨🚨🚨 MANDATORY: AI Must Analyse ALL Data Using Methods & Templates (15 min minimum)
 
-> **THIS IS YOUR PRIMARY JOB.** You MUST spend **at least 15 minutes** on analysis. For every piece of data or document downloaded from MCP, you MUST read the master methodology guide and per-file template upfront, then consult other methodology guides and templates as needed for each analysis step. This is NOT optional.
->
-> **Why 15 minutes?** PR #1452 demonstrated that rushing analysis (< 10 min) produces: plain prose without tables, no Mermaid diagrams, no dok_id evidence citations, no template structure. This is REJECTED. The templates require structured tables, color-coded Mermaid diagrams, evidence citations, and multi-section analysis that cannot be done properly in less than 15 minutes.
+> **THIS IS YOUR PRIMARY JOB.** Minimum 15 minutes. For every document, read methodology upfront then apply ALL 6 analytical lenses. Templates require structured tables, color-coded Mermaid diagrams, dok_id evidence citations — cannot be done in < 15 minutes. PR #1452 proved < 10 min = REJECTED.
 
-#### What you MUST do (no exceptions):
+**MUST do (no exceptions):**
 
-1. **Read the master methodology guide and per-file template** (required upfront):
-   - `analysis/methodologies/ai-driven-analysis-guide.md` — Master guide (bad vs. good examples, quality gate)
-   - `analysis/templates/per-file-political-intelligence.md` — Per-file output template
+1. **Read upfront**: `analysis/methodologies/ai-driven-analysis-guide.md` + `analysis/templates/per-file-political-intelligence.md`
+2. **Consult as needed**: `political-swot-framework.md`, `political-risk-methodology.md`, `political-threat-framework.md`, `political-classification-guide.md`, `political-style-guide.md`; templates: `synthesis-summary.md`, `risk-assessment.md`, `swot-analysis.md` (needs Context table + evidence tables with dok_id/confidence/impact + Mermaid SWOT Quadrant), `stakeholder-impact.md`, `significance-scoring.md`
+3. **For EVERY document**: create `{dok_id}-analysis.md` with ALL 6 analytical lenses, ≥1 color-coded Mermaid with `style` directives, evidence citations with dok_id/vote counts/party names
+4. **Create/rewrite ALL 7 synthesis files** in `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` — exact template structure, no `[REQUIRED]` placeholders
+5. **Run quality gate** (Step D above). Fix ALL failures before continuing.
+6. **Commit data AND analysis**: `git add analysis/data/ "analysis/daily/$ARTICLE_DATE/realtime-$HHMM/"` (AWF: use `$VAR` not `${VAR}`)
 
-2. **Consult other methodology guides and templates as needed** for the current analysis step:
-   - `analysis/methodologies/political-swot-framework.md` — Evidence-based SWOT with confidence hierarchy
-   - `analysis/methodologies/political-risk-methodology.md` — 5×5 risk matrix
-   - `analysis/methodologies/political-threat-framework.md` — Political Threat Taxonomy
-   - `analysis/methodologies/political-classification-guide.md` — Classification taxonomy
-   - `analysis/methodologies/political-style-guide.md` — Writing standards
-   - `analysis/templates/synthesis-summary.md`, `risk-assessment.md`, `political-classification.md`, `threat-analysis.md`, `swot-analysis.md` (SWOT MUST have: Context table, evidence tables with dok_id/confidence/impact columns, Mermaid SWOT Quadrant Mapping), `stakeholder-impact.md`, `significance-scoring.md`
-
-3. **For EVERY downloaded document/data file**: apply ALL 6 analytical lenses and create `{dok_id}-analysis.md` following the per-file template. Cite specific data (dok_id, vote counts, party names). Include ≥1 color-coded Mermaid diagram with `style` directives.
-
-4. **Create/rewrite ALL 7 daily synthesis files** in `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` — each MUST follow its template EXACTLY (metadata header, Mermaid diagrams with color-coded style directives, structured evidence tables, confidence labels, no `[REQUIRED]` placeholders).
-
-5. **Run the quality gate bash check** from SHARED_PROMPT_PATTERNS Step 5b. If it fails, go back and fix analysis files until it passes.
-
-6. **Commit data AND analysis together** — stage scoped to this run: `git add analysis/data/ "analysis/daily/$ARTICLE_DATE/realtime-$HHMM/"` (see Step 5 for full file-count safety pattern). ⚠️ AWF safety: do NOT use `${VAR}` or `$(cmd)` — use `$VAR` only.
-
-> ❌ **FAILURE MODES** (any of these = workflow failure):
-> - Skipping analysis creation
-> - Writing analysis that doesn't follow templates (plain prose without tables/diagrams)
-> - Committing stubs without replacing them with real analysis
-> - Analysis files with 0 evidence citations or missing dok_id references
-> - Missing color-coded Mermaid diagrams (every analysis file needs ≥1)
-> - `[REQUIRED]` placeholders remaining
-> - SWOT analysis without structured evidence tables (see template for required columns)
-> - Spending less than 15 minutes on analysis
+> ❌ FAILURE MODES: skipping analysis; plain prose without tables/diagrams; stubs with 0 evidence citations; missing dok_id; missing color-coded Mermaid; `[REQUIRED]` placeholders; SWOT without evidence tables; < 15 min analysis.
 
 ### 🔄 Data Lookback Fallback
 
-> 🚨 **CRITICAL RULE**: Never produce empty/stub analysis. If no data for today, look back to find unanalyzed data.
+> Never produce empty/stub analysis. If no data for today, look back (up to 7 days) to find unanalyzed data.
 
 ```bash
-# Idempotent: only set if not already resolved by lookback
 if [ -z "${ARTICLE_DATE:-}" ]; then
   if [ -n "${{ github.event.inputs.article_date }}" ]; then
     ARTICLE_DATE="${{ github.event.inputs.article_date }}"
@@ -474,75 +450,46 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
   fi
 fi
 ORIGINAL_ARTICLE_DATE="$ARTICLE_DATE"
-
-# Check if the requested date has any analyzed documents (per-date manifest, not session-wide catalog)
 MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/data-download-manifest.md"
 DATE_DOCS_ANALYZED=0
 if [ -f "$MANIFEST_PATH" ]; then
   DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
 fi
 [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
-echo "📄 Documents analyzed for $ARTICLE_DATE: $DATE_DOCS_ANALYZED"
-
+echo "📄 Docs analyzed for $ARTICLE_DATE: $DATE_DOCS_ANALYZED"
 if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
-  echo "⚠️ No per-date data for $ARTICLE_DATE — activating lookback fallback (up to 7 days)"
+  echo "⚠️ Activating 7-day lookback fallback..."
   DATA_DATE=""
   for DAYS_BACK in 1 2 3 4 5 6 7; do
-    # Cross-platform date arithmetic: GNU date (-d) on Linux/GitHub Actions, BSD date (-v) on macOS
     LOOKBACK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
     [ -z "$LOOKBACK_DATE" ] && continue
-    echo "🔍 Checking $LOOKBACK_DATE for analyzed data..."
-    # First, check if a manifest already exists with non-zero Documents Analyzed
     MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/data-download-manifest.md"
     DATE_DOCS_ANALYZED=0
-    if [ -f "$MANIFEST_PATH" ]; then
-      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
-    fi
+    [ -f "$MANIFEST_PATH" ] && DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
     [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
-    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
-      echo "✅ Found $DATE_DOCS_ANALYZED documents already analyzed for $LOOKBACK_DATE"
-      DATA_DATE="$LOOKBACK_DATE"
-      break
-    fi
-    # No existing data — run pre-article analysis for this lookback date
-    echo "ℹ️ No existing manifest data for $LOOKBACK_DATE — running pre-article analysis"
+    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then DATA_DATE="$LOOKBACK_DATE"; break; fi
     source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
-    # Re-check manifest after running analysis
     DATE_DOCS_ANALYZED=0
-    if [ -f "$MANIFEST_PATH" ]; then
-      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
-    fi
+    [ -f "$MANIFEST_PATH" ] && DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
     [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
-    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
-      echo "✅ Successfully analyzed $DATE_DOCS_ANALYZED documents for $LOOKBACK_DATE"
-      DATA_DATE="$LOOKBACK_DATE"
-      break
-    fi
+    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then DATA_DATE="$LOOKBACK_DATE"; break; fi
   done
-  # Lookback protection: copy analysis to today's directory instead of overwriting historical data
   if [ -n "$DATA_DATE" ] && [ "$DATA_DATE" != "$ORIGINAL_ARTICLE_DATE" ]; then
-    SRC_DIR="analysis/daily/$DATA_DATE/realtime-${HHMM}"
-    DST_DIR="analysis/daily/$ORIGINAL_ARTICLE_DATE/realtime-${HHMM}"
+    SRC_DIR="analysis/daily/$DATA_DATE/realtime-$HHMM"
+    DST_DIR="analysis/daily/$ORIGINAL_ARTICLE_DATE/realtime-$HHMM"
     if [ -d "$SRC_DIR" ]; then
-      mkdir -p "$DST_DIR"
-      cp -r "$SRC_DIR"/* "$DST_DIR/" 2>/dev/null || true
-      echo "📁 Copied analysis from $DATA_DATE → $ORIGINAL_ARTICLE_DATE (preserving original at $DATA_DATE)"
+      mkdir -p "$DST_DIR"; cp -r "$SRC_DIR"/* "$DST_DIR/" 2>/dev/null || true
     fi
     ARTICLE_DATE="$ORIGINAL_ARTICLE_DATE"
   elif [ -n "$DATA_DATE" ]; then
     ARTICLE_DATE="$DATA_DATE"
   fi
-  echo "🗓️ Using analysis date: $ARTICLE_DATE (data sourced from: ${DATA_DATE:-$ARTICLE_DATE})"
-  # Persist the chosen ARTICLE_DATE so later workflow snippets use the same analysis directory
-  if [ -n "${GITHUB_ENV:-}" ]; then
-    echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"
-  fi
+  echo "🗓️ Analysis date: $ARTICLE_DATE"
+  if [ -n "${GITHUB_ENV:-}" ]; then echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"; fi
 fi
-
-# Report pending per-file analysis count for monitoring
 PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
 [ -z "$PENDING" ] && PENDING=0
-echo "📊 Total pending per-file analysis files (all dates): $PENDING"
+echo "📊 Pending analyses: $PENDING"
 ```
 
 ### Per-File Analysis & Daily Synthesis (done by AI, not scripts)
@@ -578,10 +525,9 @@ After data is downloaded, you MUST complete ALL of these steps before proceeding
 
 **Step D — Run quality gate** (BLOCKING — must pass before proceeding):
 
-> ⚠️ **AWF Safety**: The quality gate below runs as a compiled init step (normal bash). If you need to **re-run** it yourself after fixing files, use `$HHMM` and `$ARTICLE_DATE` (no curly braces), use `find -exec basename {} \;` instead of `$(basename $f)`, and avoid `$(cmd)` command substitution. See the AWF Shell Safety section above.
+> ⚠️ AWF Safety: use `$VAR` not `${VAR}`, avoid `$(cmd)`, use `find -exec basename {} \;` instead of `$(basename $f)`.
 
 ```bash
-# Idempotent: only set if not already resolved by lookback
 if [ -z "${ARTICLE_DATE:-}" ]; then
   if [ -n "${{ github.event.inputs.article_date }}" ]; then
     ARTICLE_DATE="${{ github.event.inputs.article_date }}"
@@ -591,105 +537,52 @@ if [ -z "${ARTICLE_DATE:-}" ]; then
 fi
 [ -f /tmp/hhmm.env ] && source /tmp/hhmm.env || HHMM=${HHMM:-$(date -u +%H%M)}
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/realtime-${HHMM}"
-QUALITY_PASS=true
-FAIL_COUNT=0
-
-echo "=== 🔍 Analysis Quality Gate Check (realtime-${HHMM}) ==="
-
-# Collect ALL analysis markdown files (daily synthesis + per-file in documents/)
+QUALITY_PASS=true; FAIL_COUNT=0
+echo "=== Quality Gate: $ANALYSIS_DIR ==="
 ALL_MD_FILES=$(find "$ANALYSIS_DIR" -name "*.md" -type f 2>/dev/null)
 DAILY_MD_FILES=$(find "$ANALYSIS_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null)
 PERFILE_MD_FILES=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null)
-echo "📊 Daily synthesis files: $(echo "$DAILY_MD_FILES" | grep -c '.' 2>/dev/null || true)"
-echo "📊 Per-file analysis files: $(echo "$PERFILE_MD_FILES" | grep -c '.' 2>/dev/null || true)"
-
-# Check 1: Daily synthesis Mermaid diagrams
+echo "Daily: $(echo "$DAILY_MD_FILES" | grep -c '.' 2>/dev/null || true) | Per-file: $(echo "$PERFILE_MD_FILES" | grep -c '.' 2>/dev/null || true)"
 for f in $DAILY_MD_FILES; do
   [ ! -f "$f" ] && continue
-  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null || true)
-  if [ "${MERMAID_COUNT:-0}" -eq 0 ]; then
-    echo "❌ FAIL: $(basename "$f") has NO Mermaid diagrams"
-    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
-  fi
+  MC=$(grep -c '```mermaid' "$f" 2>/dev/null || true)
+  [ "${MC:-0}" -eq 0 ] && { echo "❌ $f: NO Mermaid"; QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT+1)); }
+  grep -q '```mermaid' "$f" 2>/dev/null && SC=$(grep -c 'style.*fill:#' "$f" 2>/dev/null || true) && [ "${SC:-0}" -eq 0 ] && { echo "❌ $f: no color styles"; QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT+1)); }
 done
-
-# Check 2: Color-coded style directives
-for f in $DAILY_MD_FILES; do
-  [ ! -f "$f" ] && continue
-  if grep -q '```mermaid' "$f" 2>/dev/null; then
-    STYLE_COUNT=$(grep -c 'style.*fill:#' "$f" 2>/dev/null || true)
-    if [ "${STYLE_COUNT:-0}" -eq 0 ]; then
-      echo "❌ FAIL: $(basename "$f") Mermaid has NO color-coded style directives"
-      QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
-    fi
-  fi
-done
-
-# Check 3: No [REQUIRED] placeholders
 for f in $ALL_MD_FILES; do
   [ ! -f "$f" ] && continue
-  REQ_COUNT=$(grep -c '\[REQUIRED\]' "$f" 2>/dev/null || true)
-  if [ "${REQ_COUNT:-0}" -gt 0 ]; then
-    echo "❌ FAIL: $(basename "$f") has $REQ_COUNT [REQUIRED] placeholders"
-    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
-  fi
+  RC=$(grep -c '\[REQUIRED\]' "$f" 2>/dev/null || true)
+  [ "${RC:-0}" -gt 0 ] && { echo "❌ $f: $RC [REQUIRED] placeholders"; QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT+1)); }
 done
-
-# Check 4: SWOT evidence tables
 SWOT_FILE="$ANALYSIS_DIR/swot-analysis.md"
 if [ -f "$SWOT_FILE" ]; then
-  TABLE_COUNT=$(grep -c '|.*dok_id\||.*Evidence' "$SWOT_FILE" 2>/dev/null || true)
-  if [ "${TABLE_COUNT:-0}" -eq 0 ]; then
-    echo "❌ FAIL: swot-analysis.md has NO evidence tables with dok_id"
-    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
-  fi
+  TC=$(grep -c '|.*dok_id\||.*Evidence' "$SWOT_FILE" 2>/dev/null || true)
+  [ "${TC:-0}" -eq 0 ] && { echo "❌ swot-analysis.md: no evidence tables"; QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT+1)); }
 fi
-
-# Check 5: Per-file analyses must NOT be stubs/boilerplate
 STUB_COUNT=0
 for f in $PERFILE_MD_FILES; do
   [ ! -f "$f" ] && continue
-  STUB_SCORE=0
-  EMPTY_SWOT=$(grep -cE '_No (strengths|weaknesses|opportunities|threats) identified_' "$f" 2>/dev/null || true)
-  [ "${EMPTY_SWOT:-0}" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
-  BOILERPLATE=$(grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business\|this document has low newsworthiness\|this document must be assessed for' "$f" 2>/dev/null || true)
-  [ "${BOILERPLATE:-0}" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
-  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null || true)
-  [ "${MERMAID_COUNT:-0}" -eq 0 ] && STUB_SCORE=$((STUB_SCORE + 1))
-  TABLE_COUNT=$(grep -c '^|' "$f" 2>/dev/null || true)
-  [ "${TABLE_COUNT:-0}" -lt 2 ] && STUB_SCORE=$((STUB_SCORE + 1))
-  if [ "${STUB_SCORE:-0}" -ge 3 ]; then
-    echo "❌ FAIL: $(basename "$f") is a stub (score=$STUB_SCORE) — MUST be replaced with real analysis"
-    STUB_COUNT=$((STUB_COUNT + 1))
-    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
-  fi
+  SS=0
+  ES=$(grep -cE '_No (strengths|weaknesses|opportunities|threats) identified_' "$f" 2>/dev/null || true); [ "${ES:-0}" -ge 2 ] && SS=$((SS+2))
+  BS=$(grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business\|this document has low newsworthiness\|this document must be assessed for' "$f" 2>/dev/null || true); [ "${BS:-0}" -ge 2 ] && SS=$((SS+2))
+  MC=$(grep -c '```mermaid' "$f" 2>/dev/null || true); [ "${MC:-0}" -eq 0 ] && SS=$((SS+1))
+  TC=$(grep -c '^|' "$f" 2>/dev/null || true); [ "${TC:-0}" -lt 2 ] && SS=$((SS+1))
+  [ "${SS:-0}" -ge 3 ] && { echo "❌ $f: stub (score=$SS)"; STUB_COUNT=$((STUB_COUNT+1)); QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT+1)); }
 done
-
-# Check 6: Coverage — every JSON must have an analysis
 if [ -d "$ANALYSIS_DIR/documents" ]; then
-  JSON_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*.json" -type f 2>/dev/null | wc -l)
-  ANALYSIS_MD_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l)
-  if [ "${JSON_COUNT:-0}" -gt 0 ] && [ "${ANALYSIS_MD_COUNT:-0}" -lt "${JSON_COUNT:-0}" ]; then
-    echo "❌ FAIL: Only $ANALYSIS_MD_COUNT analysis files for $JSON_COUNT data files"
-    QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
-  fi
+  JC=$(find "$ANALYSIS_DIR/documents" -name "*.json" -type f 2>/dev/null | wc -l)
+  AC=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l)
+  [ "${JC:-0}" -gt 0 ] && [ "${AC:-0}" -lt "${JC:-0}" ] && { echo "❌ $AC/$JC analyses"; QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT+1)); }
 fi
-
-echo ""
 if [ "$QUALITY_PASS" = "true" ]; then
-  echo "✅ Quality gate PASSED — proceed to Step 2"
+  echo "✅ Quality gate PASSED"
 else
-  echo "❌ Quality gate FAILED ($FAIL_COUNT failures)"
-  echo "🚨 You MUST go back and fix analysis files. Read templates again, then rewrite failing files."
-  echo "📌 Per-file template: analysis/templates/per-file-political-intelligence.md"
-  echo "📌 SWOT template: analysis/templates/swot-analysis.md"
-  if [ "${STUB_COUNT:-0}" -gt 0 ]; then
-    echo "🚨 $STUB_COUNT per-file analyses are stubs — replace boilerplate with real evidence-based analysis"
-  fi
+  echo "❌ Quality gate FAILED ($FAIL_COUNT failures) — fix then re-run. Templates: analysis/templates/"
+  [ "${STUB_COUNT:-0}" -gt 0 ] && echo "🚨 $STUB_COUNT stubs — replace with evidence-based analysis"
 fi
 ```
 
-> 🚨 **BLOCKING**: If the quality gate FAILS, you MUST go back and fix the failing files. Read the template (`view analysis/templates/<template>.md`), then rewrite the file to match it. Do NOT proceed to Step 2 until ALL checks pass. Do NOT commit stub/boilerplate per-file analyses.
+> 🚨 **BLOCKING**: Fix all failures before proceeding. Read `analysis/templates/<template>.md`, rewrite failing files, re-run gate.
 
 ### 🔴 MANDATORY: Batch Analysis Enrichment (Prevents Empty "0 Documents Analyzed" Files)
 
@@ -836,50 +729,28 @@ git commit -m "📊 Analysis artifacts - Realtime Monitor ${HHMM} - $(date -u +%
 ```
 Then call `safeoutputs___create_pull_request` with title `📊 Analysis Only - Realtime Monitor ${HHMM} - {date}`, body including actual query stats, and labels `["analysis-only", "realtime-monitor"]`.
 
-3. **If NO analysis artifacts exist**: Substitute actual runtime values into this template:
+3. **If NO analysis artifacts exist**: call noop with actual values:
 ```
-safeoutputs___noop({ "message": "No significant parliamentary events on <today>. Checked: votes (latest <lastVoteDate>), debates, propositions (<propCount> found, max severity=<maxScore>), committee reports (<betCount>), government documents (<govCount>), calendar (<calendarStatus>). No events reached HIGH threshold (≥7). Pre-article analysis also produced no output. Next check in 2-4h." })
+safeoutputs___noop({ "message": "No significant events on <today>. Votes (<lastVoteDate>), props (<propCount>), bets (<betCount>), gov (<govCount>), calendar (<calendarStatus>). Max severity=<maxScore> (<HIGH threshold ≥7). Analysis produced 0 files. Next check 2-4h." })
 ```
-Replace each `<placeholder>` with the actual value from your queries:
-- `<today>` — current date (YYYY-MM-DD)
-- `<lastVoteDate>` — datum of most recent vote found
-- `<propCount>`, `<betCount>`, `<govCount>` — number of items returned per source
-- `<maxScore>` — highest severity score assigned to any event
-- `<calendarStatus>` — "ok" or "API error: HTML instead of JSON"
 
-**Stop here only if no analysis artifacts exist.** Parliament is often inactive — but analysis artifacts should still be committed for review.
+**Stop here only if no analysis artifacts exist.**
 
 ### 🔬 Step 2b: Read ALL Analysis Files (MANDATORY — before article generation)
 
-> 🔴 **NON-NEGOTIABLE**: The AI agent MUST `cat` every analysis `.md` file BEFORE generating any article HTML. Analysis and articles are created in the **same workflow run** — there is zero excuse for not reading the analysis. See SHARED_PROMPT_PATTERNS.md §"MANDATORY PRE-ARTICLE ANALYSIS READING".
+> 🔴 NON-NEGOTIABLE: `cat` every analysis `.md` BEFORE generating HTML. See SHARED_PROMPT_PATTERNS.md §"MANDATORY PRE-ARTICLE ANALYSIS READING".
 
 ```bash
-HHMM=$(date -u +%H%M)
-ANALYSIS_SUBFOLDER="realtime-${HHMM}"
-ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
-
-echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
+[ -f /tmp/hhmm.env ] && source /tmp/hhmm.env || HHMM=${HHMM:-$(date -u +%H%M)}
+ANALYSIS_BASE="analysis/daily/$ARTICLE_DATE/realtime-$HHMM"
+echo "📖 Reading all analysis from $ANALYSIS_BASE..."
 if [ -d "$ANALYSIS_BASE" ]; then
-  for MD_FILE in "$ANALYSIS_BASE"/*.md; do
-    if [ -f "$MD_FILE" ]; then
-      echo "--- Reading: $(basename $MD_FILE) ---"
-      cat "$MD_FILE"
-      echo ""
-    fi
+  for f in "$ANALYSIS_BASE"/*.md "$ANALYSIS_BASE/documents"/*.md; do
+    [ -f "$f" ] && cat "$f" && echo ""
   done
-  if [ -d "$ANALYSIS_BASE/documents" ]; then
-    for DOC_FILE in "$ANALYSIS_BASE/documents"/*.md; do
-      if [ -f "$DOC_FILE" ]; then
-        echo "--- Per-doc: $(basename $DOC_FILE) ---"
-        cat "$DOC_FILE"
-        echo ""
-      fi
-    done
-  fi
-  ANALYSIS_FILE_COUNT=$(find "$ANALYSIS_BASE" -name "*.md" -type f | wc -l)
-  echo "✅ Read $ANALYSIS_FILE_COUNT analysis files — these MUST drive article content"
+  echo "✅ Done reading — these MUST drive article content"
 else
-  echo "⚠️ No analysis directory found at $ANALYSIS_BASE"
+  echo "⚠️ No analysis at $ANALYSIS_BASE"
 fi
 ```
 
@@ -888,18 +759,11 @@ fi
 **🚨 ALWAYS use the TypeScript generation script — it handles MCP queries, HTML templating, all 14 languages, translation, and article quality internally.**
 
 ```bash
-# Use the article_types workflow dispatch parameter
-# For scheduled runs (empty input), default to breaking. Manual dispatch can specify any valid type.
 ARTICLE_TYPES_INPUT="${{ github.event.inputs.article_types }}"
 [ -z "$ARTICLE_TYPES_INPUT" ] && ARTICLE_TYPES_INPUT="breaking"
 export ARTICLE_TYPES_INPUT
-
-# Use the languages workflow dispatch parameter
-# For scheduled runs (empty input), default to core languages (en,sv) to stay within time budget.
-# Manual dispatch can specify "all" for 14-language generation.
 LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
 [ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="en,sv"
-
 case "$LANGUAGES_INPUT" in
   "nordic") LANG_ARG="en,sv,da,no,fi" ;;
   "eu-core") LANG_ARG="en,sv,de,fr,es,nl" ;;
@@ -907,40 +771,21 @@ case "$LANGUAGES_INPUT" in
   *) LANG_ARG="$LANGUAGES_INPUT" ;;
 esac
 export LANG_ARG
-
-# Check elapsed time before starting generation
 source /tmp/gh-aw/agent/timing.env 2>/dev/null || true
 : "${START_TIME:=$(date +%s)}"
 ELAPSED=$(( $(date +%s) - START_TIME ))
 if [ "$ELAPSED" -ge 2100 ]; then
   echo "⏱️ Time budget exceeded (${ELAPSED}s >= 35min) — skipping generation"
-  SCRIPT_EXIT=0
-  NEW_ARTICLES=""
+  SCRIPT_EXIT=0; NEW_ARTICLES=""
 else
-  # Set up MCP connection and generate with 20-minute timeout
-  # LANG_ARG and ARTICLE_TYPES_INPUT are exported so the subshell inherits them safely
   timeout 1200 bash -lc 'source scripts/mcp-setup.sh && npx tsx scripts/generate-news-enhanced.ts --types="$ARTICLE_TYPES_INPUT" --languages="$LANG_ARG" --skip-existing'
   SCRIPT_EXIT=$?
   TIMED_OUT=false
-  if [ "$SCRIPT_EXIT" -eq 124 ]; then
-    echo "⚠️ Script timed out after 20 minutes — proceeding with whatever was generated"
-    TIMED_OUT=true
-  fi
-  echo "Script exit code: $SCRIPT_EXIT"
-
-  # Check for newly generated files
+  [ "$SCRIPT_EXIT" -eq 124 ] && { echo "⚠️ Script timed out — proceeding with generated content"; TIMED_OUT=true; }
+  echo "Script exit: $SCRIPT_EXIT"
   TODAY="$(date +%Y-%m-%d)"
   NEW_ARTICLES="$(git status --porcelain -- news/ | awk '{print $2}' | grep "${TODAY}-" || true)"
-  if [ -z "$NEW_ARTICLES" ]; then
-    echo "No new articles were created."
-  else
-    echo "Newly generated articles:"
-    printf '%s\n' "$NEW_ARTICLES"
-    # Treat timeout as soft failure when content was produced
-    if [ "$TIMED_OUT" = true ]; then
-      SCRIPT_EXIT=0
-    fi
-  fi
+  [ -z "$NEW_ARTICLES" ] && echo "No new articles." || { printf '%s\n' "$NEW_ARTICLES"; [ "$TIMED_OUT" = true ] && SCRIPT_EXIT=0; }
 fi
 ```
 
@@ -980,78 +825,53 @@ If the script genuinely fails after verifying MCP, generate articles manually ON
 
 ## Step 3b: AI Title, Meta Description & Analysis References
 
-> 🚨 **MANDATORY** — After article HTML is generated, the AI MUST improve titles, descriptions, and add analysis references. See `SHARED_PROMPT_PATTERNS.md` sections "AI-DRIVEN TITLE & META DESCRIPTION GENERATION" and "ANALYSIS FILE GITHUB REFERENCES" for full protocols.
+> 🚨 MANDATORY. See SHARED_PROMPT_PATTERNS.md §"AI-DRIVEN TITLE & META DESCRIPTION GENERATION" and §"ANALYSIS FILE GITHUB REFERENCES".
 
-**1. Generate newsworthy titles** — Read each article's content, then replace the script-generated title following: `[Active Verb] + [Specific Actor/Institution] + [Concrete Policy Action]`. BANNED: ❌ "Breaking News: Latest Updates" or generic category labels.
-
-**2. Generate AI meta descriptions** (150-160 chars) — Summarize key political intelligence from actual content. BANNED: ❌ any description starting with "Analysis of N documents".
-
-**3. 🔴 Add analysis references section (MANDATORY — VERIFY AFTER)** — Insert the "📊 Analysis & Sources" HTML block before footer, linking to `analysis/daily/${ARTICLE_DATE}/realtime-${HHMM}/` analysis files and `analysis/methodologies/ai-driven-analysis-guide.md`. See SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES for the full template.
-
-**After inserting, VERIFY** by running:
+1. **Titles**: `[Active Verb] + [Specific Actor] + [Concrete Action]`. ❌ BANNED: "Breaking News: Latest Updates"
+2. **Meta descriptions** (150-160 chars): summarize key intelligence. ❌ BANNED: starting with "Analysis of N documents"
+3. **Add analysis references** HTML block (class="analysis-references") before footer, linking to `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` files. **Verify**:
 ```bash
 for FILE in news/$ARTICLE_DATE-*breaking*-*.html news/$ARTICLE_DATE-*realtime*-*.html; do
-  if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
-    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
-  fi
+  [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE" && echo "🔴 MISSING: $FILE"
 done
 ```
-
-**4. Update all metadata** — Ensure `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, and `<h1>` all reflect the AI-generated title and description.
+4. **Update metadata**: `<title>`, `<meta name="description">`, `og:title`, `og:description`, `<h1>` all match AI title/description.
 
 ## Step 3c: AI Content Quality Enforcement (v4.0 — MANDATORY)
 
-> 🚨 **v4.0 CRITICAL**: Breaking news articles MUST have the highest content quality. Read pre-computed analysis and rewrite ALL stub content. See `SHARED_PROMPT_PATTERNS.md` §"AI ARTICLE CONTENT GENERATION" and `ai-driven-analysis-guide.md` v4.0.
+> See SHARED_PROMPT_PATTERNS.md §"AI ARTICLE CONTENT GENERATION" v4.0. Breaking news MUST rewrite ALL stub content.
 
-**1. Read pre-computed analysis** — Read ALL analysis files from `analysis/daily/${ARTICLE_DATE}/realtime-${HHMM}/` including per-document analyses in `documents/`.
-
-**2. Write intelligence-grade lede** — Breaking news ledes MUST name the specific development, key actor, quantified impact (SEK amounts, seat counts, affected populations), and urgency.
-
-**3. Write unique "Why It Matters"** per document — Each document's analysis MUST be specific to that document's content. BANNED: any repeated `"Touches on {X} policy..."` boilerplate.
-
-**4. Write substantive "Winners & Losers"** — Name specific parties, ministers, agencies, and sectors with evidence from the analysis. BANNED: `"The political landscape remains fluid..."`.
-
-**5. Include Key Takeaways** — 3-5 bullet points with confidence labels and dok_id citations.
-
-**6. 🔴 MANDATORY: Replace ALL `AI_MUST_REPLACE` markers** — Search generated HTML for `<!-- AI_MUST_REPLACE: ... -->` markers in Deep Analysis subsections and replace EACH with specific political intelligence. ZERO markers may survive in committed HTML.
-
-**7. Include visualization data** — For breaking news with voting data, include Chart.js vote distribution data. For defense/budget articles, include budget allocation data.
+1. **Intelligence-grade lede**: specific development + key actor + quantified impact (SEK amounts, seat counts) + urgency
+2. **Unique "Why It Matters"** per document — specific to content. ❌ BANNED: `"Touches on {X} policy..."`
+3. **"Winners & Losers"** — named parties/ministers/sectors with evidence. ❌ BANNED: `"The political landscape remains fluid..."`
+4. **Key Takeaways** — 3-5 bullets with confidence labels and dok_id citations
+5. **Replace ALL `AI_MUST_REPLACE` markers** — ZERO markers in committed HTML
+6. **Visualization data** — voting data: Chart.js vote distribution; budget/defense: include allocation data
 
 ## Step 4: Validate & Translate
 
 ```bash
-# Check for untranslated Swedish content
 UNTRANSLATED=0
 for article in news/*-{en,da,no,fi,de,fr,es,nl,ar,he,ja,ko,zh}.html; do
-  if [ -f "$article" ] && grep -q 'data-translate="true"' "$article"; then
-    echo "NEEDS TRANSLATION: $article"
-    UNTRANSLATED=$((UNTRANSLATED + 1))
-  fi
+  [ -f "$article" ] && grep -q 'data-translate="true"' "$article" && { echo "NEEDS TRANSLATION: $article"; UNTRANSLATED=$((UNTRANSLATED+1)); }
 done
-
-if [ $UNTRANSLATED -gt 0 ]; then
-  echo "WARNING: $UNTRANSLATED articles need translation — translate before committing"
-fi
+[ "$UNTRANSLATED" -gt 0 ] && echo "WARNING: $UNTRANSLATED articles need translation"
 ```
 
-If untranslated content found, translate each `<span data-translate="true" lang="sv">text</span>` to the target language and remove the wrapper.
+Translate `<span data-translate="true" lang="sv">text</span>` to target language and remove wrapper. Keep party abbreviations (S, M, SD, V, MP, C, L, KD) untranslated.
 
-**Translation rules:** Translate all Swedish text. Keep party names (S, M, SD, V, MP, C, L, KD) and personal names untranslated. Zero language mixing.
-
-Then run validation:
 ```bash
-# Check elapsed time before validation
 source /tmp/gh-aw/agent/timing.env 2>/dev/null || true
 : "${START_TIME:=$(date +%s)}"
 ELAPSED=$(( $(date +%s) - START_TIME ))
 if [ "$ELAPSED" -ge 2100 ]; then
-  echo "⏱️ Time budget exceeded (${ELAPSED}s >= 35min) — skipping validation"
+  echo "⏱️ Time budget (35min) exceeded — skipping validation"
   VALIDATION_EXIT=0
 else
   timeout 300 bash scripts/validate-news-generation.sh
   VALIDATION_EXIT=$?
   if [ "$VALIDATION_EXIT" -eq 124 ]; then
-    echo "⚠️ Validation timed out after 5 minutes — proceeding anyway"
+    echo "⚠️ Validation timed out — proceeding"
     VALIDATION_EXIT=0
   fi
   if [ "$VALIDATION_EXIT" -ne 0 ]; then
@@ -1123,24 +943,11 @@ Consult as needed — do NOT read all files upfront:
 
 ### Standardised Analysis Depth Gate
 
-> ⚠️ **Default is `deep`** — not `standard`. Analysis must always produce publication-quality output with Mermaid diagrams and evidence tables.
+> **Default: `deep`**. See SHARED_PROMPT_PATTERNS.md §"Standardised Analysis Depth Gate" for full table. Summary: standard=10min/≥1 Mermaid/≥2 risks; **deep=15min/≥2 Mermaid/≥4 risks** (default); comprehensive=20min/≥3 Mermaid/≥6 risks.
 
-| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Mermaid diagrams | Risk matrix (L×I) | Forward indicators | Min. analysis time |
-|-------|--------------|-------------------|--------|---------|-----------------|-------------------|-------------------|-------------------|
-| standard | 1-2 | ≥5 (of 8 groups) | ≥1 | optional | ≥1 color-coded | ≥2 risks scored | ≥2 with triggers | 10 minutes |
-| deep | 2-3 | ≥7 (of 8 groups) | ≥2 | required | ≥2 color-coded | ≥4 risks scored | ≥3 with triggers | 15 minutes |
-| comprehensive | 3+ | all 8 groups | ≥3 | required | ≥3 color-coded | ≥6 risks scored | ≥5 with triggers | 20 minutes |
+**8 mandatory stakeholder groups**: Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion — each analyzed with specific evidence (dok_id, vote counts, named politicians).
 
-**The 8 mandatory stakeholder groups are**: Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion. Every group MUST be analyzed with specific evidence (dok_id, vote counts, named politicians).
-
-**Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, quantified risk matrix with numeric L×I scores, forward indicators with specific triggers/timelines, confidence labels on all analytical claims, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level.
-
-> **Read `analysis_depth` input first** (default: `deep`). This controls iteration count and section requirements.
-
-For breaking news, this workflow uses the `breaking` profile (from `scripts/editorial-framework.ts`):
-- **SWOT**: quick (1-paragraph overview when article_types includes non-breaking types)
-- **Dashboard**: not required for breaking, required for deeper types
-- **AI iterations**: 1 (standard), 2 (deep), or 3 (comprehensive)
+> Read `analysis_depth` input first (default: `deep`). Breaking news profile: SWOT=quick 1-paragraph, Dashboard=not required, AI iterations: 1 (standard)/2 (deep)/3 (comprehensive).
 
 ### Phase 1 — Event Detection & Significance Scoring
 1. Fetch real-time MCP data based on `article_types` input
@@ -1150,49 +957,23 @@ For breaking news, this workflow uses the `breaking` profile (from `scripts/edit
 ### Phase 2 — Depth Enhancement (per `analysis_depth`)
 When `analysis_depth` is `deep` or `comprehensive`:
 1. Add **Quick SWOT** paragraph for each major article
-2. Add **Activity Summary** — include a concise trend summary as prose or a simple Markdown bullet list/table (for example, recent item counts by time period or source). Do not emit a standalone machine-readable chart payload here unless the workflow explicitly defines the schema and downstream consumption step.
+2. Add **Activity Summary** — concise trend summary as prose or Markdown bullet list/table
 3. **Quality Gate**: word count ≥ 400, no identical why-it-matters, all Swedish text translated
 
 ### Phase 3 — Final Quality Gate Before PR
 ```bash
-# 🔴 MANDATORY: Inject analysis references into any article missing them
 npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite
 ```
 Run `bash scripts/validate-news-generation.sh` before committing.
 
-
-
-### Non-Negotiable Requirements for Non-EN/SV Articles:
-1. **ALL section headings** (h1, h2, h3) MUST be in the target language
-2. **ALL body paragraphs** MUST be written in the target language
-3. **Meta keywords** MUST be translated to the target language
-4. **No English fallback**: If you cannot translate a phrase, use the target language equivalent or omit
-5. **data-translate markers**: ZERO `data-translate="true"` spans allowed in final output
-
-### Per-Language Requirements:
-- **RTL languages (ar, he)**: Ensure `dir="rtl"` on `<html>` and proper text direction
-- **CJK languages (ja, ko, zh)**: Use native script only, no romanization in body text
-- **Nordic languages (da, no, fi)**: Use language-specific parliamentary terms, not Swedish
-- **European languages (de, fr, es, nl)**: Use formal register appropriate for political journalism
-
-### Localized Section Headings (use CONTENT_LABELS):
-Instead of English section headings, use localized equivalents from `scripts/data-transformers/constants/content-labels-part1.ts` and `content-labels-part2.ts`:
-- "Why It Matters" → Use `CONTENT_LABELS[lang].whyItMatters`
-- "What to Watch" → Use `CONTENT_LABELS[lang].whatToWatch`
-- "Key Takeaways" → Use `CONTENT_LABELS[lang].keyTakeaways`
-- "Political Context" → Use `CONTENT_LABELS[lang].politicalContext`
-
-### Post-Generation Validation:
-After generating all articles, run:
-```bash
-npx tsx scripts/validate-news-translations.ts
-```
-Fix any files flagged before committing. Articles with >3 English phrases in non-EN versions must be regenerated.
-
-### Additional Rules:
-- Swedish API titles MUST be translated to target language
-- Party abbreviations (S, M, SD, V, MP, C, L, KD) are NEVER translated
-- ZERO TOLERANCE for language mixing
+### Non-EN/SV Article Requirements:
+- ALL h1/h2/h3 MUST be in target language; ALL body paragraphs MUST be in target language
+- Meta keywords translated; ZERO `data-translate="true"` spans in final output
+- RTL (ar, he): `dir="rtl"` on `<html>`; CJK (ja, ko, zh): native script only
+- Nordic (da, no, fi): language-specific parliamentary terms; EU (de, fr, es, nl): formal register
+- Localized headings: use `CONTENT_LABELS[lang].whyItMatters`, `.whatToWatch`, `.keyTakeaways`, `.politicalContext` from `scripts/data-transformers/constants/content-labels-part1.ts`
+- Post-generation: run `npx tsx scripts/validate-news-translations.ts`; fix files with >3 English phrases in non-EN versions
+- Party abbreviations (S, M, SD, V, MP, C, L, KD) NEVER translated; ZERO TOLERANCE for language mixing
 
 ## Error Handling
 
