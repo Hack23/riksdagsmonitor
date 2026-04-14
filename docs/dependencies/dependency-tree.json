@@ -1,5 +1,5 @@
 {
-  "version": "0.8.37",
+  "version": "0.8.39",
   "name": "riksdagsmonitor",
   "problems": [
     "extraneous: @emnapi/core@1.9.2 /home/runner/work/riksdagsmonitor/riksdagsmonitor/node_modules/@emnapi/core",
@@ -2620,8 +2620,8 @@
       "overridden": false
     },
     "happy-dom": {
-      "version": "20.8.9",
-      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.8.9.tgz",
+      "version": "20.9.0",
+      "resolved": "https://registry.npmjs.org/happy-dom/-/happy-dom-20.9.0.tgz",
       "overridden": false,
       "dependencies": {
         "@types/node": {
@@ -3960,7 +3960,7 @@
           "overridden": false
         },
         "happy-dom": {
-          "version": "20.8.9"
+          "version": "20.9.0"
         },
         "jsdom": {},
         "magic-string": {
@@ -4549,8 +4549,8 @@
           "overridden": false,
           "dependencies": {
             "follow-redirects": {
-              "version": "1.15.11",
-              "resolved": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.11.tgz",
+              "version": "1.16.0",
+              "resolved": "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.16.0.tgz",
               "overridden": false
             },
             "form-data": {
