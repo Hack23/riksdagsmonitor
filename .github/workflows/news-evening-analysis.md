@@ -7,7 +7,7 @@ on:
     # Run weekday evenings at 18:00 UTC (19:00 CET)
     - cron: '0 18 * * 1-5'
     # Saturday: weekly wrap-up summarizing the full parliamentary week
-    - cron: '0 16 * * 6'
+    - cron: '0 16 * * 6-6'
   workflow_dispatch:
     inputs:
       article_date:
