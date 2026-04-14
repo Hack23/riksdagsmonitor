@@ -91,7 +91,7 @@ find analysis/daily/2026-04-07/realtime-1411/documents -name "*.json" -exec cat 
 Every workflow MUST use this path pattern for ALL analysis output:
 
 ```
-analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/
+analysis/daily/$ARTICLE_DATE/$ARTICLE_TYPE/
 ```
 
 | Workflow | Base subfolder | Suffix on re-run | Owned files |
@@ -105,29 +105,29 @@ analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/
 | news-evening-analysis | `evening-analysis/` | `evening-analysis-2/`, `-3/`, … | Daily evening synthesis analysis |
 | news-weekly-review | `weekly-review/` | `weekly-review-2/`, `-3/`, … | Weekly retrospective analysis |
 | news-monthly-review | `monthly-review/` | `monthly-review-2/`, `-3/`, … | Monthly retrospective analysis |
-| news-realtime-monitor | `realtime-${HHMM}/` | *(inherently unique — no suffix needed)* | Breaking news time-stamped analysis |
-| news-article-generator | `${REQUESTED_TYPE}/` | `${REQUESTED_TYPE}-2/`, `-3/`, … | Analysis for the requested article type |
+| news-realtime-monitor | `realtime-$HHMM/` | *(inherently unique — no suffix needed)* | Breaking news time-stamped analysis |
+| news-article-generator | `$REQUESTED_TYPE/` | `$REQUESTED_TYPE-2/`, `-3/`, … | Analysis for the requested article type |
 | news-translate | *(reads only, never writes analysis)* | — | Translation output only |
 
 #### Enforcement Rules
 
 1. **Each workflow sets `ARTICLE_TYPE` at step start** — this variable scopes ALL `git add` and file writes
-2. **`git add` MUST scope to `analysis/daily/${ARTICLE_DATE}/${ARTICLE_TYPE}/`** — NEVER `analysis/daily/${ARTICLE_DATE}/`
+2. **`git add` MUST scope to `analysis/daily/$ARTICLE_DATE/$ARTICLE_TYPE/`** — NEVER `analysis/daily/$ARTICLE_DATE/`
 3. **No workflow may read-modify-write another type's files** — read is allowed for cross-reference, but modification is PROHIBITED
 4. **Concurrent workflow protection**: Multiple workflows (committee-reports, motions, propositions) may run on the same date — isolation prevents merge conflicts
-5. **news-article-generator MUST include article type in filenames**: Generated articles use `${DATE}-${ARTICLE_TYPE}-${LANG}.html` pattern — article type is ALWAYS part of the filename
+5. **news-article-generator MUST include article type in filenames**: Generated articles use `$DATE-$ARTICLE_TYPE-$LANG.html` pattern — article type is ALWAYS part of the filename
 
 #### Anti-Patterns (REJECTED)
 
-- ❌ Writing to `analysis/daily/${ARTICLE_DATE}/` root (no article type subfolder)
-- ❌ `git add analysis/daily/${ARTICLE_DATE}/` without article type scope
+- ❌ Writing to `analysis/daily/$ARTICLE_DATE/` root (no article type subfolder)
+- ❌ `git add analysis/daily/$ARTICLE_DATE/` without article type scope
 - ❌ `git add news/` — stages ALL articles from ALL workflows, causing merge conflicts
 - ❌ Copying (`cp`) analysis files to both subfolder AND root date directory
 - ❌ One workflow modifying another workflow's synthesis-summary.md
 - ❌ Realtime monitor overwriting committee-reports analysis
 - ❌ Evening analysis replacing interpellations SWOT with its own
 - ❌ Article generator writing analysis without article type in path
-- ❌ Leaving root-level `.md` files in `analysis/daily/${ARTICLE_DATE}/` after relocation (use `mv`, never `cp`)
+- ❌ Leaving root-level `.md` files in `analysis/daily/$ARTICLE_DATE/` after relocation (use `mv`, never `cp`)
 
 #### Run Suffix Resolution (prevents merge conflicts from repeated runs)
 
@@ -142,11 +142,11 @@ When a scheduled workflow runs and the analysis subfolder already exists (from a
 # Inputs:  BASE_SUBFOLDER (e.g. "propositions"), ARTICLE_DATE, FORCE_GENERATION
 # Outputs: ANALYSIS_SUBFOLDER (e.g. "propositions" or "propositions-2")
 ANALYSIS_SUBFOLDER="$BASE_SUBFOLDER"
-if [ "${FORCE_GENERATION:-false}" != "true" ]; then
+if [ "$FORCE_GENERATION" != "true" ]; then
   _SUFFIX=1
   while [ -f "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/synthesis-summary.md" ]; do
     _SUFFIX=$((_SUFFIX + 1))
-    ANALYSIS_SUBFOLDER="${BASE_SUBFOLDER}-${_SUFFIX}"
+    ANALYSIS_SUBFOLDER="$BASE_SUBFOLDER-$_SUFFIX"
   done
 fi
 echo "📁 Analysis subfolder resolved: analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
@@ -190,11 +190,11 @@ git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"/*.json 2>/dev/null ||
 
 Every output artifact MUST be tagged with its article type:
 
-1. **HTML filenames**: `news/${DATE}-${ARTICLE_TYPE}-${LANG}.html`
-2. **Analysis folders**: `analysis/daily/${DATE}/${ARTICLE_TYPE}/`
-3. **Commit messages**: `📰 ${ARTICLE_TYPE}: ${description} - ${DATE}`
-4. **Schema.org metadata**: `"articleSection": "${ARTICLE_TYPE}"`
-5. **Analysis file headers**: Include `Article Type: ${ARTICLE_TYPE}` in metadata
+1. **HTML filenames**: `news/$DATE-$ARTICLE_TYPE-$LANG.html`
+2. **Analysis folders**: `analysis/daily/$DATE/$ARTICLE_TYPE/`
+3. **Commit messages**: `📰 ${ARTICLE_TYPE}: $description - $DATE`
+4. **Schema.org metadata**: `"articleSection": "$ARTICLE_TYPE"`
+5. **Analysis file headers**: Include `Article Type: $ARTICLE_TYPE` in metadata
 
 #### Valid Article Types
 
@@ -345,7 +345,7 @@ Scripts (`generate-news-enhanced.ts`, `pre-article-analysis.ts`, etc.) are respo
 | **Validate HTML** | HTMLHint, linkinator, Playwright | Validation reports |
 | **Generate metadata** | Schema.org, OpenGraph, hreflang | HTML head metadata |
 | **Format tables** | Structured HTML table rendering | Semantic table elements |
-| **Create directory structure** | `analysis/daily/${DATE}/${TYPE}/` | Empty directory tree |
+| **Create directory structure** | `analysis/daily/$DATE/$TYPE/` | Empty directory tree |
 
 #### What Scripts MUST NEVER DO (Analysis Content)
 
@@ -578,24 +578,24 @@ If an article fails ≥6 checks: DO NOT commit — escalate for manual review
 
 ```bash
 # Resolve analysis subfolder for this article type
-if [ -z "${ANALYSIS_SUBFOLDER:-}" ]; then
-  case "${ARTICLE_TYPE}" in
+if [ -z "$ANALYSIS_SUBFOLDER" ]; then
+  case "$ARTICLE_TYPE" in
     committee-reports)        ANALYSIS_SUBFOLDER="committeeReports" ;;
     government-propositions)  ANALYSIS_SUBFOLDER="propositions" ;;
     opposition-motions)       ANALYSIS_SUBFOLDER="motions" ;;
     interpellation-debates)   ANALYSIS_SUBFOLDER="interpellations" ;;
-    breaking)                 ANALYSIS_SUBFOLDER="realtime-${HHMM}" ;;
-    *)                        ANALYSIS_SUBFOLDER="${ARTICLE_TYPE}" ;;
+    breaking)                 ANALYSIS_SUBFOLDER="realtime-$HHMM" ;;
+    *)                        ANALYSIS_SUBFOLDER="$ARTICLE_TYPE" ;;
   esac
 fi
 
-ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
+ANALYSIS_BASE="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
 
 echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
 if [ -d "$ANALYSIS_BASE" ]; then
   for MD_FILE in "$ANALYSIS_BASE"/*.md; do
     if [ -f "$MD_FILE" ]; then
-      echo "--- Reading: $(basename $MD_FILE) ---"
+      echo "--- Reading: $MD_FILE ---"
       cat "$MD_FILE"
       echo ""
     fi
@@ -606,14 +606,15 @@ if [ -d "$ANALYSIS_BASE" ]; then
     echo "📄 Reading per-document analyses..."
     for DOC_FILE in "$ANALYSIS_BASE/documents"/*.md; do
       if [ -f "$DOC_FILE" ]; then
-        echo "--- Per-doc: $(basename $DOC_FILE) ---"
+        echo "--- Per-doc: $DOC_FILE ---"
         cat "$DOC_FILE"
         echo ""
       fi
     done
   fi
 
-  ANALYSIS_FILE_COUNT=$(find "$ANALYSIS_BASE" -name "*.md" -type f | wc -l)
+  find "$ANALYSIS_BASE" -name "*.md" -type f 2>/dev/null | wc -l > /tmp/analysis_file_count.txt
+  read ANALYSIS_FILE_COUNT < /tmp/analysis_file_count.txt
   echo "✅ Read $ANALYSIS_FILE_COUNT analysis files from $ANALYSIS_BASE"
 else
   echo "⚠️ No analysis directory found at $ANALYSIS_BASE — will use MCP fallback"
@@ -629,14 +630,15 @@ fi
 echo "🔍 Cross-referencing sibling analysis types for $ARTICLE_DATE..."
 for SIBLING_DIR in analysis/daily/$ARTICLE_DATE/*/; do
   if [ -d "$SIBLING_DIR" ]; then
-    SIBLING_TYPE="$(basename $SIBLING_DIR)"
+    echo "$SIBLING_DIR" | sed 's|/$||' | sed 's|.*/||' > /tmp/sibling_type.txt
+    read SIBLING_TYPE < /tmp/sibling_type.txt
     # Skip own type (already read above)
     if [ "$SIBLING_TYPE" = "$ANALYSIS_SUBFOLDER" ]; then continue; fi
     echo "📖 Cross-referencing: $SIBLING_TYPE"
     # Read synthesis and significance from sibling (most important for cross-referencing)
     for SIBLING_FILE in "$SIBLING_DIR/synthesis-summary.md" "$SIBLING_DIR/significance-scoring.md" "$SIBLING_DIR/stakeholder-perspectives.md"; do
       if [ -f "$SIBLING_FILE" ]; then
-        echo "--- Sibling ($SIBLING_TYPE): $(basename $SIBLING_FILE) ---"
+        echo "--- Sibling ($SIBLING_TYPE): $SIBLING_FILE ---"
         cat "$SIBLING_FILE"
         echo ""
       fi
@@ -688,27 +690,27 @@ Read these files for the current article type and date:
 # Map article slug → analysis subfolder name.
 # Allow explicit override so future non-identity mappings do not silently resolve
 # to the wrong directory.
-if [ -z "${ANALYSIS_SUBFOLDER:-}" ]; then
-  case "${ARTICLE_TYPE}" in
+if [ -z "$ANALYSIS_SUBFOLDER" ]; then
+  case "$ARTICLE_TYPE" in
     committee-reports)        ANALYSIS_SUBFOLDER="committeeReports" ;;
     government-propositions)  ANALYSIS_SUBFOLDER="propositions" ;;
     opposition-motions)       ANALYSIS_SUBFOLDER="motions" ;;
     interpellation-debates)   ANALYSIS_SUBFOLDER="interpellations" ;;
     breaking)
-      : "${HHMM:?HHMM must be set for breaking articles to resolve realtime-\${HHMM} analysis folder}"
-      ANALYSIS_SUBFOLDER="realtime-${HHMM}"
+      : "${HHMM:?HHMM must be set for breaking articles to resolve realtime-\$HHMM analysis folder}"
+      ANALYSIS_SUBFOLDER="realtime-$HHMM"
       ;;
-    *)                       ANALYSIS_SUBFOLDER="${ARTICLE_TYPE}" ;;
+    *)                       ANALYSIS_SUBFOLDER="$ARTICLE_TYPE" ;;
   esac
 fi
 
-ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
-cat "${ANALYSIS_BASE}/synthesis-summary.md"      # Key findings, risk levels, confidence
-cat "${ANALYSIS_BASE}/swot-analysis.md"           # Top SWOT entries → Winners & Losers
-cat "${ANALYSIS_BASE}/risk-assessment.md"         # Risk scores → Strategic Context
-cat "${ANALYSIS_BASE}/stakeholder-perspectives.md" # Stakeholder impacts
-cat "${ANALYSIS_BASE}/significance-scoring.md"    # Significance scores → prioritization
-ls "${ANALYSIS_BASE}/documents/"                  # Per-document analyses → Why It Matters
+ANALYSIS_BASE="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
+cat "$ANALYSIS_BASE/synthesis-summary.md"      # Key findings, risk levels, confidence
+cat "$ANALYSIS_BASE/swot-analysis.md"           # Top SWOT entries → Winners & Losers
+cat "$ANALYSIS_BASE/risk-assessment.md"         # Risk scores → Strategic Context
+cat "$ANALYSIS_BASE/stakeholder-perspectives.md" # Stakeholder impacts
+cat "$ANALYSIS_BASE/significance-scoring.md"    # Significance scores → prioritization
+ls "$ANALYSIS_BASE/documents/"                  # Per-document analyses → Why It Matters
 ```
 
 **If synthesis reports "0 documents analyzed":**
@@ -1289,14 +1291,21 @@ Even workflows whose primary task is NOT analysis MUST:
 
 ```bash
 # Universal analysis check — run at the start of EVERY workflow
-ARTICLE_DATE="${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}"
+if [ -z "$ARTICLE_DATE" ]; then
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
+fi
 echo "=== Mandatory Analysis Check ==="
 
 # Check for existing analysis needing improvement
-EXISTING_ANALYSIS=$(find "analysis/daily/${ARTICLE_DATE}/" -name "*.md" -type f 2>/dev/null | wc -l)
-PENDING_ANALYSIS=$(find "analysis/daily/${ARTICLE_DATE}/" -name "*-analysis.md" -type f 2>/dev/null | wc -l)
-REQUIRED_PLACEHOLDERS=$(grep -rl '\[REQUIRED\]' "analysis/daily/${ARTICLE_DATE}/" 2>/dev/null | wc -l)
-MISSING_MERMAID=$(find "analysis/daily/${ARTICLE_DATE}/" -name "*.md" -type f -exec grep -L "```mermaid" {} \; 2>/dev/null | wc -l)
+find "analysis/daily/$ARTICLE_DATE/" -name "*.md" -type f 2>/dev/null | wc -l > /tmp/existing_analysis.txt
+read EXISTING_ANALYSIS < /tmp/existing_analysis.txt
+find "analysis/daily/$ARTICLE_DATE/" -name "*-analysis.md" -type f 2>/dev/null | wc -l > /tmp/pending_analysis.txt
+read PENDING_ANALYSIS < /tmp/pending_analysis.txt
+grep -rl '\[REQUIRED\]' "analysis/daily/$ARTICLE_DATE/" 2>/dev/null | wc -l > /tmp/req_placeholders.txt
+read REQUIRED_PLACEHOLDERS < /tmp/req_placeholders.txt
+find "analysis/daily/$ARTICLE_DATE/" -name "*.md" -type f -exec grep -L "```mermaid" {} \; 2>/dev/null | wc -l > /tmp/missing_mermaid.txt
+read MISSING_MERMAID < /tmp/missing_mermaid.txt
 
 echo "📊 Existing analysis files: $EXISTING_ANALYSIS"
 echo "📊 Per-file analyses: $PENDING_ANALYSIS"
@@ -1308,9 +1317,11 @@ if [ "$EXISTING_ANALYSIS" -gt 0 ]; then
 else
   echo "📋 No existing analysis for $ARTICLE_DATE — check nearby dates for improvement opportunities"
   for DAYS_BACK in 1 2 3; do
-    CHECK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
+    date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null > /tmp/check_date.txt || date -u "+%Y-%m-%d" --date="$DAYS_BACK days ago" 2>/dev/null > /tmp/check_date.txt || true
+    read CHECK_DATE < /tmp/check_date.txt
     [ -z "$CHECK_DATE" ] && continue
-    NEARBY_ANALYSIS=$(find "analysis/daily/${CHECK_DATE}/" -name "*.md" -type f 2>/dev/null | wc -l)
+    find "analysis/daily/$CHECK_DATE/" -name "*.md" -type f 2>/dev/null | wc -l > /tmp/nearby_analysis.txt
+    read NEARBY_ANALYSIS < /tmp/nearby_analysis.txt
     if [ "$NEARBY_ANALYSIS" -gt 0 ]; then
       echo "  📍 Found $NEARBY_ANALYSIS analysis files for $CHECK_DATE — improve these"
       break
@@ -1730,8 +1741,9 @@ safeoutputs___create_pull_request({
 
 ```bash
 # Check if articles for today already exist (controls article GENERATION only, NOT analysis)
-EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}-en.html 2>/dev/null | wc -l)
-if [ "$EXISTING" -gt 0 ] && [ "${FORCE_GENERATION}" != "true" ]; then
+ls "news/$ARTICLE_DATE-$ARTICLE_TYPE-en.html" 2>/dev/null | wc -l > /tmp/existing_articles.txt
+read EXISTING < /tmp/existing_articles.txt
+if [ "$EXISTING" -gt 0 ] && [ "$FORCE_GENERATION" != "true" ]; then
   echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — article generation will be skipped (analysis still runs)"
   SKIP_ARTICLE_GENERATION=true
   echo "SKIP_ARTICLE_GENERATION=true" >> "$GITHUB_ENV"
@@ -1786,7 +1798,8 @@ source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$
 
 Check results:
 ```bash
-DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
+find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l > /tmp/data_json_count.txt
+read DATA_JSON_COUNT < /tmp/data_json_count.txt
 echo "📊 JSON data files: $DATA_JSON_COUNT"
 ```
 
@@ -1882,8 +1895,12 @@ Run this bash check on ALL analysis files (daily synthesis AND per-file analyses
 
 ```bash
 # CRITICAL: Use article-type-scoped directory, NEVER the bare date directory
-ANALYSIS_SUBFOLDER="${ANALYSIS_SUBFOLDER:-${ARTICLE_TYPE}}"
-ANALYSIS_DIR="analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/${ANALYSIS_SUBFOLDER}"
+if [ -z "$ANALYSIS_SUBFOLDER" ]; then ANALYSIS_SUBFOLDER="$ARTICLE_TYPE"; fi
+if [ -z "$ARTICLE_DATE" ]; then
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
+fi
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
 QUALITY_PASS=true
 FAIL_COUNT=0
 WARN_COUNT=0
@@ -1891,11 +1908,14 @@ WARN_COUNT=0
 echo "=== 🔍 Analysis Quality Gate Check ==="
 
 # Collect ALL analysis markdown files (daily synthesis + per-file in documents/)
-ALL_MD_FILES=$(find "$ANALYSIS_DIR" -name "*.md" -type f 2>/dev/null)
-DAILY_MD_FILES=$(find "$ANALYSIS_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null)
-PERFILE_MD_FILES=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null)
-PERFILE_COUNT=$(echo "$PERFILE_MD_FILES" | grep -c '.' 2>/dev/null || true)
-echo "📊 Daily synthesis files: $(echo "$DAILY_MD_FILES" | grep -c '.' 2>/dev/null || true)"
+find "$ANALYSIS_DIR" -name "*.md" -type f 2>/dev/null | wc -l > /tmp/all_md_count.txt
+read ALL_MD_COUNT < /tmp/all_md_count.txt
+find "$ANALYSIS_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null | wc -l > /tmp/daily_md_count.txt
+read DAILY_MD_COUNT < /tmp/daily_md_count.txt
+find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l > /tmp/perfile_count.txt
+read PERFILE_COUNT < /tmp/perfile_count.txt
+# PERFILE_COUNT already set by find above
+echo "📊 Daily synthesis files: $DAILY_MD_COUNT"
 echo "📊 Per-file analysis files: $PERFILE_COUNT"
 
 # Check 1: Every daily synthesis file must contain at least 1 Mermaid diagram
@@ -1903,8 +1923,9 @@ echo ""
 echo "--- Check 1: Mermaid diagrams in daily synthesis files ---"
 for f in $DAILY_MD_FILES; do
   [ ! -f "$f" ] && continue
-  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null) || true
-  if [ "${MERMAID_COUNT:-0}" -eq 0 ]; then
+  grep -c '```mermaid' "$f" 2>/dev/null > /tmp/mermaid_count.txt || echo 0 > /tmp/mermaid_count.txt
+  read MERMAID_COUNT < /tmp/mermaid_count.txt
+  if [ "$MERMAID_COUNT" -eq 0 ]; then
     echo "❌ FAIL: $f has NO Mermaid diagrams (minimum: 1)"
     QUALITY_PASS=false
     FAIL_COUNT=$((FAIL_COUNT + 1))
@@ -1919,8 +1940,9 @@ echo "--- Check 2: Color-coded style directives in Mermaid diagrams ---"
 for f in $DAILY_MD_FILES; do
   [ ! -f "$f" ] && continue
   if grep -q '```mermaid' "$f" 2>/dev/null; then
-    STYLE_COUNT=$(grep -c 'style.*fill:#' "$f" 2>/dev/null) || true
-    if [ "${STYLE_COUNT:-0}" -eq 0 ]; then
+    grep -c 'style.*fill:#' "$f" 2>/dev/null > /tmp/style_count.txt || echo 0 > /tmp/style_count.txt
+    read STYLE_COUNT < /tmp/style_count.txt
+    if [ "$STYLE_COUNT" -eq 0 ]; then
       echo "❌ FAIL: $f has Mermaid diagram(s) but NO color-coded style directives"
       QUALITY_PASS=false
       FAIL_COUNT=$((FAIL_COUNT + 1))
@@ -1935,8 +1957,9 @@ echo ""
 echo "--- Check 3: No [REQUIRED] placeholders ---"
 for f in $ALL_MD_FILES; do
   [ ! -f "$f" ] && continue
-  REQ_COUNT=$(grep -c '\[REQUIRED\]' "$f" 2>/dev/null) || true
-  if [ "${REQ_COUNT:-0}" -gt 0 ]; then
+  grep -c '\[REQUIRED\]' "$f" 2>/dev/null > /tmp/req_count.txt || echo 0 > /tmp/req_count.txt
+  read REQ_COUNT < /tmp/req_count.txt
+  if [ "$REQ_COUNT" -gt 0 ]; then
     echo "❌ FAIL: $f has $REQ_COUNT unfilled [REQUIRED] placeholders"
     QUALITY_PASS=false
     FAIL_COUNT=$((FAIL_COUNT + 1))
@@ -1948,8 +1971,9 @@ echo ""
 echo "--- Check 4: SWOT evidence tables ---"
 SWOT_FILE="$ANALYSIS_DIR/swot-analysis.md"
 if [ -f "$SWOT_FILE" ]; then
-  TABLE_COUNT=$(grep -c '|.*dok_id\||.*Evidence' "$SWOT_FILE" 2>/dev/null) || true
-  if [ "${TABLE_COUNT:-0}" -eq 0 ]; then
+  grep -c '|.*dok_id\||.*Evidence' "$SWOT_FILE" 2>/dev/null > /tmp/table_count.txt || echo 0 > /tmp/table_count.txt
+  read TABLE_COUNT < /tmp/table_count.txt
+  if [ "$TABLE_COUNT" -eq 0 ]; then
     echo "❌ FAIL: swot-analysis.md has NO evidence tables with dok_id columns"
     QUALITY_PASS=false
     FAIL_COUNT=$((FAIL_COUNT + 1))
@@ -1963,8 +1987,9 @@ echo ""
 echo "--- Check 5: Structured tables in daily synthesis ---"
 for f in $DAILY_MD_FILES; do
   [ ! -f "$f" ] && continue
-  TABLE_COUNT=$(grep -c '^|' "$f" 2>/dev/null) || true
-  if [ "${TABLE_COUNT:-0}" -lt 3 ]; then
+  grep -c '^|' "$f" 2>/dev/null > /tmp/table_count2.txt || echo 0 > /tmp/table_count2.txt
+  read TABLE_COUNT < /tmp/table_count2.txt
+  if [ "$TABLE_COUNT" -lt 3 ]; then
     echo "⚠️ WARNING: $f has only $TABLE_COUNT table rows — templates require structured tables"
     WARN_COUNT=$((WARN_COUNT + 1))
   fi
@@ -1976,36 +2001,40 @@ echo "--- Check 6: Per-file analyses are NOT stubs (documents/ subdirectory) ---
 STUB_PERFILE=0
 for f in $PERFILE_MD_FILES; do
   [ ! -f "$f" ] && continue
-  BASENAME=$(basename "$f")
+  BASENAME="$f"  # AWF-safe: use full path
   # Detect known stub/boilerplate patterns that scripts generate as placeholders
   STUB_SCORE=0
   # Pattern 1: Empty SWOT quadrants ("_No strengths identified_", "_No weaknesses identified_", etc.)
-  EMPTY_SWOT=$(grep -cE '_No (strengths|weaknesses|opportunities|threats) identified_' "$f" 2>/dev/null || true)
-  if [ "${EMPTY_SWOT:-0}" -ge 2 ]; then
+  grep -cE '_No (strengths|weaknesses|opportunities|threats) identified_' "$f" 2>/dev/null > /tmp/stub_es.txt || echo 0 > /tmp/stub_es.txt
+  read EMPTY_SWOT < /tmp/stub_es.txt
+  if [ "$EMPTY_SWOT" -ge 2 ]; then
     STUB_SCORE=$((STUB_SCORE + 2))
   fi
   # Pattern 2: Generic boilerplate perspective text (script-generated template text)
-  BOILERPLATE=$(grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business\|this document has low newsworthiness\|this document must be assessed for' "$f" 2>/dev/null) || true
-  if [ "${BOILERPLATE:-0}" -ge 2 ]; then
+  grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business\|this document has low newsworthiness\|this document must be assessed for' "$f" 2>/dev/null > /tmp/stub_bp.txt || echo 0 > /tmp/stub_bp.txt
+  read BOILERPLATE < /tmp/stub_bp.txt
+  if [ "$BOILERPLATE" -ge 2 ]; then
     STUB_SCORE=$((STUB_SCORE + 2))
   fi
   # Pattern 3: No Mermaid diagrams in per-file analysis
-  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null) || true
-  if [ "${MERMAID_COUNT:-0}" -eq 0 ]; then
+  grep -c '```mermaid' "$f" 2>/dev/null > /tmp/mermaid_count.txt || echo 0 > /tmp/mermaid_count.txt
+  read MERMAID_COUNT < /tmp/mermaid_count.txt
+  if [ "$MERMAID_COUNT" -eq 0 ]; then
     STUB_SCORE=$((STUB_SCORE + 1))
   fi
   # Pattern 4: No evidence table rows (per-file must have structured tables)
-  TABLE_COUNT=$(grep -c '^|' "$f" 2>/dev/null) || true
-  if [ "${TABLE_COUNT:-0}" -lt 2 ]; then
+  grep -c '^|' "$f" 2>/dev/null > /tmp/table_count2.txt || echo 0 > /tmp/table_count2.txt
+  read TABLE_COUNT < /tmp/table_count2.txt
+  if [ "$TABLE_COUNT" -lt 2 ]; then
     STUB_SCORE=$((STUB_SCORE + 1))
   fi
   # FAIL if stub score >= 3 (multiple stub indicators = unreplaced boilerplate)
-  if [ "${STUB_SCORE:-0}" -ge 3 ]; then
+  if [ "$STUB_SCORE" -ge 3 ]; then
     echo "❌ FAIL: $BASENAME is a stub/boilerplate (score=$STUB_SCORE) — AI MUST replace with real template-compliant analysis"
     STUB_PERFILE=$((STUB_PERFILE + 1))
     QUALITY_PASS=false
     FAIL_COUNT=$((FAIL_COUNT + 1))
-  elif [ "${STUB_SCORE:-0}" -ge 2 ]; then
+  elif [ "$STUB_SCORE" -ge 2 ]; then
     echo "⚠️ WARNING: $BASENAME has stub-like patterns (score=$STUB_SCORE) — verify analysis is real, not boilerplate"
     WARN_COUNT=$((WARN_COUNT + 1))
   else
@@ -2025,13 +2054,15 @@ fi
 echo ""
 echo "--- Check 7: Per-file analysis coverage ---"
 if [ -d "$ANALYSIS_DIR/documents" ]; then
-  JSON_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*.json" -type f 2>/dev/null | wc -l)
-  ANALYSIS_MD_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l)
-  if [ "${JSON_COUNT:-0}" -gt 0 ] && [ "${ANALYSIS_MD_COUNT:-0}" -lt "${JSON_COUNT:-0}" ]; then
+  find "$ANALYSIS_DIR/documents" -name "*.json" -type f 2>/dev/null | wc -l > /tmp/json_count.txt
+  read JSON_COUNT < /tmp/json_count.txt
+  find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l > /tmp/amd_count.txt
+  read ANALYSIS_MD_COUNT < /tmp/amd_count.txt
+  if [ "$JSON_COUNT" -gt 0 ] && [ "$ANALYSIS_MD_COUNT" -lt "$JSON_COUNT" ]; then
     echo "❌ FAIL: Only $ANALYSIS_MD_COUNT analysis files for $JSON_COUNT data files — every document needs an analysis"
     QUALITY_PASS=false
     FAIL_COUNT=$((FAIL_COUNT + 1))
-  elif [ "${JSON_COUNT:-0}" -gt 0 ]; then
+  elif [ "$JSON_COUNT" -gt 0 ]; then
     echo "✅ PASS: $ANALYSIS_MD_COUNT analysis files for $JSON_COUNT data files"
   fi
 fi
@@ -2039,24 +2070,27 @@ fi
 echo ""
 echo "--- Check 8: Batch analysis enrichment (prevents empty '0 documents analyzed' files) ---"
 if [ -d "$ANALYSIS_DIR/documents" ]; then
-  PERDOC_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l)
-  if [ "${PERDOC_COUNT:-0}" -gt 0 ]; then
+  find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l > /tmp/perdoc_count.txt
+  read PERDOC_COUNT < /tmp/perdoc_count.txt
+  if [ "$PERDOC_COUNT" -gt 0 ]; then
     # Per-document analysis exists — all mandatory batch artifacts MUST NOT report "0 documents analyzed"
     for bf in synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md classification-results.md significance-scoring.md stakeholder-perspectives.md cross-reference-map.md data-download-manifest.md; do
       BATCH_FILE="$ANALYSIS_DIR/$bf"
       [ ! -f "$BATCH_FILE" ] && continue
-      ZERO_DOCS=$(grep -cE "(Documents Analyzed\*\*:\s*0|documents analyzed:\s*0|Analyzed \*\*0|Scored \*\*0|for \*\*0|to \*\*0|across 0 documents|for 0 political)" "$BATCH_FILE" 2>/dev/null) || true
-      FILE_SIZE=$(wc -c < "$BATCH_FILE" 2>/dev/null) || true
-      if [ "${ZERO_DOCS:-0}" -gt 0 ]; then
+      grep -cE "(Documents Analyzed\*\*:\s*0|documents analyzed:\s*0|Analyzed \*\*0|Scored \*\*0|for \*\*0|to \*\*0|across 0 documents|for 0 political)" "$BATCH_FILE" 2>/dev/null > /tmp/zero_docs.txt || echo 0 > /tmp/zero_docs.txt
+      read ZERO_DOCS < /tmp/zero_docs.txt
+      wc -c < "$BATCH_FILE" 2>/dev/null > /tmp/file_size.txt || echo 0 > /tmp/file_size.txt
+  read FILE_SIZE < /tmp/file_size.txt
+      if [ "$ZERO_DOCS" -gt 0 ]; then
         echo "❌ FAIL: $bf reports '0 documents' but $PERDOC_COUNT per-doc analyses exist — MUST be enriched"
         QUALITY_PASS=false
         FAIL_COUNT=$((FAIL_COUNT + 1))
-      elif [ "${FILE_SIZE:-0}" -lt 500 ]; then
-        echo "❌ FAIL: $bf is only ${FILE_SIZE} bytes — too small for meaningful analysis (minimum: 500)"
+      elif [ "$FILE_SIZE" -lt 500 ]; then
+        echo "❌ FAIL: $bf is only $FILE_SIZE bytes — too small for meaningful analysis (minimum: 500)"
         QUALITY_PASS=false
         FAIL_COUNT=$((FAIL_COUNT + 1))
       else
-        echo "✅ PASS: $bf has substantive content (${FILE_SIZE} bytes)"
+        echo "✅ PASS: $bf has substantive content ($FILE_SIZE bytes)"
       fi
     done
   fi
@@ -2183,7 +2217,7 @@ git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
 
 | Workflow | `ARTICLE_TYPE` subfolder | Example `git add` path |
 |----------|-------------------------|----------------------|
-| news-realtime-monitor | `realtime-${HHMM}` (time-stamped) | `analysis/daily/$DATE/realtime-1430/` |
+| news-realtime-monitor | `realtime-$HHMM` (time-stamped) | `analysis/daily/$DATE/realtime-1430/` |
 | news-evening-analysis | `evening-analysis` | `analysis/daily/$DATE/evening-analysis/` |
 | news-article-generator | mapped from `REQUESTED_TYPE` (single-type) or `article-generator-HHMM` (multi-type) | `analysis/daily/$DATE/committeeReports/` |
 | news-month-ahead | `month-ahead` | `analysis/daily/$DATE/month-ahead/` |
@@ -2195,7 +2229,7 @@ git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
 
 ```bash
 # Stage analysis scoped to article type subfolder — prevents overwriting other workflows' analysis
-ARTICLE_TYPE="evening-analysis"  # Set per workflow (realtime uses "realtime-${HHMM}")
+ARTICLE_TYPE="evening-analysis"  # Set per workflow (realtime uses "realtime-$HHMM")
 # Stage summary files by default; only add whole directory if count is safe
 git add "analysis/daily/$ARTICLE_DATE/$ARTICLE_TYPE"/*.md 2>/dev/null || true
 git add "analysis/daily/$ARTICLE_DATE/$ARTICLE_TYPE"/*.json 2>/dev/null || true
@@ -2227,7 +2261,7 @@ echo "📊 Final staged file count: $STAGED_COUNT"
 git commit -m "📊 Data + Analysis ($ARTICLE_TYPE) - $ARTICLE_DATE"
 ```
 
-> ⚠️ **Realtime monitor uniqueness**: `news-realtime-monitor` can run multiple times per day. It MUST use `HHMM=$(date -u +%H%M)` for both the analysis subfolder (`realtime-${HHMM}/`) and article filename (`news/${DATE}-breaking-${HHMM}-{lang}.html`) to avoid overwriting previous runs.
+> ⚠️ **Realtime monitor uniqueness**: `news-realtime-monitor` can run multiple times per day. It MUST use `HHMM=$(date -u +%H%M)` for both the analysis subfolder (`realtime-$HHMM/`) and article filename (`news/$DATE-breaking-$HHMM-{lang}.html`) to avoid overwriting previous runs.
 
 > ❌ **PROHIBITED**: Committing analysis without downloaded data files (unless pruned for 100-file limit)
 > ❌ **PROHIBITED**: Committing stub/empty analysis when data exists
@@ -2277,9 +2311,12 @@ git commit -m "📊 Data + Analysis ($ARTICLE_TYPE) - $ARTICLE_DATE"
 After the initial data download attempt for `$ARTICLE_DATE`:
 
 ```bash
-if [ -z "${ARTICLE_DATE:-}" ]; then
+if [ -z "$ARTICLE_DATE" ]; then
   ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  [ -z "${ARTICLE_DATE:-}" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  if [ -z "$ARTICLE_DATE" ]; then
+    date -u +%Y-%m-%d > /tmp/today.txt
+    read ARTICLE_DATE < /tmp/today.txt
+  fi
 fi
 ORIGINAL_ARTICLE_DATE="$ARTICLE_DATE"
 
@@ -2287,10 +2324,9 @@ ORIGINAL_ARTICLE_DATE="$ARTICLE_DATE"
 MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/data-download-manifest.md"
 DATE_DOCS_ANALYZED=0
 if [ -f "$MANIFEST_PATH" ]; then
-  DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+  grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' > /tmp/date_docs.txt 2>/dev/null || echo 0 > /tmp/date_docs.txt
+  read DATE_DOCS_ANALYZED < /tmp/date_docs.txt
 fi
-[ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
-echo "📄 Documents analyzed for $ARTICLE_DATE: $DATE_DOCS_ANALYZED"
 
 if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
   echo "⚠️ No per-date data for $ARTICLE_DATE — activating lookback fallback"
@@ -2298,18 +2334,17 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
   DATA_DATE=""
   for DAYS_BACK in 1 2 3 4 5 6 7; do
     # Cross-platform date arithmetic: GNU date (-d) on Linux/GitHub Actions, BSD date (-v) on macOS
-    LOOKBACK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
+    date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null > /tmp/lookback_date.txt || date -u "+%Y-%m-%d" --date="$DAYS_BACK days ago" 2>/dev/null > /tmp/lookback_date.txt || true
+read LOOKBACK_DATE < /tmp/lookback_date.txt
     [ -z "$LOOKBACK_DATE" ] && continue
     echo "🔍 Checking $LOOKBACK_DATE for analyzed data..."
     # First, check if a manifest already exists with non-zero Documents Analyzed
     MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/data-download-manifest.md"
     DATE_DOCS_ANALYZED=0
     if [ -f "$MANIFEST_PATH" ]; then
-      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+      grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' > /tmp/date_docs.txt 2>/dev/null || echo 0 > /tmp/date_docs.txt
+      read DATE_DOCS_ANALYZED < /tmp/date_docs.txt
     fi
-    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
-    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
-      echo "✅ Found $DATE_DOCS_ANALYZED documents already analyzed for $LOOKBACK_DATE"
       DATA_DATE="$LOOKBACK_DATE"
       break
     fi
@@ -2320,11 +2355,9 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     # Re-check manifest after running analysis
     DATE_DOCS_ANALYZED=0
     if [ -f "$MANIFEST_PATH" ]; then
-      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+      grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' > /tmp/date_docs.txt 2>/dev/null || echo 0 > /tmp/date_docs.txt
+      read DATE_DOCS_ANALYZED < /tmp/date_docs.txt
     fi
-    [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
-    if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
-      echo "✅ Successfully analyzed $DATE_DOCS_ANALYZED documents for $LOOKBACK_DATE"
       DATA_DATE="$LOOKBACK_DATE"
       break
     fi
@@ -2333,9 +2366,9 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
   # When lookback finds existing analysis from a previous date, we COPY it to the article date
   # directory so that downstream rewrites modify the copy, not the original.
   if [ -n "$DATA_DATE" ] && [ "$DATA_DATE" != "$ORIGINAL_ARTICLE_DATE" ]; then
-    SRC_DIR="analysis/daily/$DATA_DATE/${ARTICLE_TYPE:-}"
-    DST_DIR="analysis/daily/$ORIGINAL_ARTICLE_DATE/${ARTICLE_TYPE:-}"
-    if [ -n "${ARTICLE_TYPE:-}" ] && [ -d "$SRC_DIR" ]; then
+    SRC_DIR="analysis/daily/$DATA_DATE/$ARTICLE_TYPE"
+    DST_DIR="analysis/daily/$ORIGINAL_ARTICLE_DATE/$ARTICLE_TYPE"
+    if [ -n "$ARTICLE_TYPE" ] && [ -d "$SRC_DIR" ]; then
       mkdir -p "$DST_DIR"
       cp -r "$SRC_DIR"/* "$DST_DIR/" 2>/dev/null || true
       echo "📁 Copied analysis from $DATA_DATE → $ORIGINAL_ARTICLE_DATE (preserving original at $DATA_DATE)"
@@ -2344,18 +2377,21 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
   elif [ -n "$DATA_DATE" ]; then
     ARTICLE_DATE="$DATA_DATE"
   fi
-  echo "🗓️ Using analysis date: $ARTICLE_DATE (data sourced from: ${DATA_DATE:-$ARTICLE_DATE})"
+  DISPLAY_DATE="$DATA_DATE"
+  [ -z "$DISPLAY_DATE" ] && DISPLAY_DATE="$ARTICLE_DATE"
+  echo "🗓️ Using analysis date: $ARTICLE_DATE (data sourced from: $DISPLAY_DATE)"
 
   # Persist selected ARTICLE_DATE for downstream steps
-  if [ -n "${GITHUB_ENV:-}" ]; then
+  if [ -n "$GITHUB_ENV" ]; then
     echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"
     echo "📌 Persisted ARTICLE_DATE=$ARTICLE_DATE to GITHUB_ENV for downstream steps"
   fi
 fi
 
 # Step 3: Report pending per-file analysis count for monitoring
-PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
-PENDING=${PENDING:-0}
+npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null > /tmp/pending_count.txt || echo 0 > /tmp/pending_count.txt
+read PENDING < /tmp/pending_count.txt
+[ -z "$PENDING" ] && PENDING=0
 echo "📊 Total pending per-file analysis files (all dates): $PENDING"
 ```
 
@@ -2371,9 +2407,12 @@ echo "📊 Total pending per-file analysis files (all dates): $PENDING"
 ```bash
 # Idempotent ARTICLE_DATE initialization — only set if not already resolved by lookback
 # Place at the top of any downstream bash step that would otherwise re-initialize ARTICLE_DATE
-if [ -z "${ARTICLE_DATE:-}" ]; then
+if [ -z "$ARTICLE_DATE" ]; then
   ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  if [ -z "$ARTICLE_DATE" ]; then
+    date -u +%Y-%m-%d > /tmp/today.txt
+    read ARTICLE_DATE < /tmp/today.txt
+  fi
 fi
 ```
 
@@ -2623,7 +2662,8 @@ npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite --dr
 
 ```bash
 # MANDATORY — run after article generation, BEFORE committing
-ARTICLE_DATE="$(date +%Y-%m-%d)"
+date +%Y-%m-%d > /tmp/today.txt
+read ARTICLE_DATE < /tmp/today.txt
 MISSING=0
 for FILE in news/$ARTICLE_DATE-*-en.html news/$ARTICLE_DATE-*-sv.html; do
   if [ -f "$FILE" ]; then
@@ -2658,18 +2698,18 @@ fi
   <h2>📊 Analysis &amp; Sources</h2>
   <p>This article is based on AI-driven political intelligence analysis. Full methodology and analysis files:</p>
   <ul>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/synthesis-summary.md" rel="noopener noreferrer">📋 Synthesis Summary</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/swot-analysis.md" rel="noopener noreferrer">💪 SWOT Analysis</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/risk-assessment.md" rel="noopener noreferrer">⚠️ Risk Assessment</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/threat-analysis.md" rel="noopener noreferrer">🎭 Threat Analysis</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/stakeholder-perspectives.md" rel="noopener noreferrer">👥 Stakeholder Perspectives</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/significance-scoring.md" rel="noopener noreferrer">📈 Significance Scoring</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/classification-results.md" rel="noopener noreferrer">🏷️ Classification Results</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/cross-reference-map.md" rel="noopener noreferrer">🔗 Cross-Reference Map</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/data-download-manifest.md" rel="noopener noreferrer">📥 Data Download Manifest</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/synthesis-summary.md" rel="noopener noreferrer">📋 Synthesis Summary</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/swot-analysis.md" rel="noopener noreferrer">💪 SWOT Analysis</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/risk-assessment.md" rel="noopener noreferrer">⚠️ Risk Assessment</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/threat-analysis.md" rel="noopener noreferrer">🎭 Threat Analysis</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/stakeholder-perspectives.md" rel="noopener noreferrer">👥 Stakeholder Perspectives</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/significance-scoring.md" rel="noopener noreferrer">📈 Significance Scoring</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/classification-results.md" rel="noopener noreferrer">🏷️ Classification Results</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/cross-reference-map.md" rel="noopener noreferrer">🔗 Cross-Reference Map</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/data-download-manifest.md" rel="noopener noreferrer">📥 Data Download Manifest</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md" rel="noopener noreferrer">🤖 AI Analysis Methodology</a></li>
   </ul>
-  <p><em>Per-document analyses: <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/documents/" rel="noopener noreferrer">documents/</a></em></p>
+  <p><em>Per-document analyses: <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/documents/" rel="noopener noreferrer">documents/</a></em></p>
 </section>
 ```
 
@@ -2682,11 +2722,11 @@ Evening analysis articles MUST link to ALL analysis folders that exist for the d
   <h2>📊 Analysis &amp; Sources</h2>
   <p>This article synthesizes AI-driven political intelligence from all daily analyses. Full methodology and analysis files:</p>
   <ul>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/${ARTICLE_DATE}/evening-analysis" rel="noopener noreferrer">📋 Evening Analysis — Full Intelligence Package</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/${ARTICLE_DATE}/propositions" rel="noopener noreferrer">📜 Propositions Analysis</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/${ARTICLE_DATE}/committeeReports" rel="noopener noreferrer">📋 Committee Reports Analysis</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/${ARTICLE_DATE}/motions" rel="noopener noreferrer">✊ Motions Analysis</a></li>
-    <li><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/${ARTICLE_DATE}/interpellations" rel="noopener noreferrer">❓ Interpellations Analysis</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/$ARTICLE_DATE/evening-analysis" rel="noopener noreferrer">📋 Evening Analysis — Full Intelligence Package</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/$ARTICLE_DATE/propositions" rel="noopener noreferrer">📜 Propositions Analysis</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/$ARTICLE_DATE/committeeReports" rel="noopener noreferrer">📋 Committee Reports Analysis</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/$ARTICLE_DATE/motions" rel="noopener noreferrer">✊ Motions Analysis</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/$ARTICLE_DATE/interpellations" rel="noopener noreferrer">❓ Interpellations Analysis</a></li>
     <!-- Include realtime-HHMM folders if they exist -->
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md" rel="noopener noreferrer">🤖 AI Analysis Methodology</a></li>
   </ul>
@@ -2697,14 +2737,14 @@ Evening analysis articles MUST link to ALL analysis folders that exist for the d
 
 #### Article Type → Analysis Folder Mapping
 
-| Article Type | `${ANALYSIS_SUBFOLDER}` |
+| Article Type | `$ANALYSIS_SUBFOLDER` |
 |-------------|--------------------------|
 | Committee Reports | `committeeReports` |
 | Government Propositions | `propositions` |
 | Interpellation Debates | `interpellations` |
 | Opposition Motions | `motions` |
 | Evening Analysis | `evening-analysis` (PLUS all other types' folders) |
-| Breaking News / Realtime | `realtime-${HHMM}` |
+| Breaking News / Realtime | `realtime-$HHMM` |
 | Week Ahead | `week-ahead` |
 | Month Ahead | `month-ahead` |
 | Weekly Review | `weekly-review` |
@@ -2724,12 +2764,13 @@ The analysis references CAN be auto-generated by `scripts/analysis-references.ts
 #### 🔴 MANDATORY Validation (run BEFORE every commit)
 ```bash
 # 🔴 MANDATORY — every content workflow MUST run this before committing
-ARTICLE_DATE="$(date +%Y-%m-%d)"
+date +%Y-%m-%d > /tmp/today.txt
+read ARTICLE_DATE < /tmp/today.txt
 MISSING=0
 for FILE in news/$ARTICLE_DATE-*.html; do
   if [ -f "$FILE" ]; then
     if ! grep -q 'class="analysis-references"' "$FILE"; then
-      echo "🔴 MISSING analysis-references in: $(basename $FILE)"
+      echo "🔴 MISSING analysis-references in: $FILE"
       MISSING=$((MISSING + 1))
     fi
   fi

@@ -477,7 +477,7 @@ echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 # CRITICAL: Source mcp-setup.sh FIRST to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
 # For deep-inspection, pass --document-ids to include targeted documents regardless of date
 PIPELINE_EXTRA_ARGS=""
-if echo "${RAW_REQUESTED_TYPE:-${{ github.event.inputs.article_types }}}" | grep -q "deep-inspection"; then
+if echo "$RAW_REQUESTED_TYPE" | grep -q "deep-inspection"; then
   DI_DOC_IDS="${{ github.event.inputs.document_ids }}"
   # Sanitize: only allow alphanumeric, hyphens, commas (valid Riksdag dok_id characters)
   echo "$DI_DOC_IDS" | tr -cd 'A-Za-z0-9,_-' > /tmp/di_ids.txt
@@ -597,7 +597,8 @@ These analysis files are committed alongside articles for human review and conti
 ```bash
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
 # Check if batch analysis files are empty/minimal
-SYNTH_DOCS=$(grep -oP 'Documents Analyzed.*?(\d+)' "$ANALYSIS_DIR/synthesis-summary.md" 2>/dev/null | grep -oP '\d+$' || echo "0")
+grep -oP 'Documents Analyzed.*?(\d+)' "$ANALYSIS_DIR/synthesis-summary.md" 2>/dev/null | grep -oP '\d+$' > /tmp/synth_docs.txt || echo "0" > /tmp/synth_docs.txt
+read SYNTH_DOCS < /tmp/synth_docs.txt
 echo "📊 Synthesis reports $SYNTH_DOCS documents analyzed"
 if [ "$SYNTH_DOCS" -eq 0 ]; then
   echo "🔴 EMPTY BATCH ANALYSIS DETECTED — agent MUST rewrite batch files from per-document analysis"
@@ -635,7 +636,10 @@ fi
 
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+if [ -z "$ARTICLE_DATE" ]; then
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
+fi
 # Determine the article type from input for scoped analysis directory
 RAW_REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
 _IS_SCHEDULE_OR_MULTI=false
@@ -655,7 +659,10 @@ elif [ -n "$_RELOC_SUBFOLDER" ]; then
   ANALYSIS_SUBFOLDER="$_RELOC_SUBFOLDER"
 else
   # Use dedicated folder for multi-type/schedule runs; reuse _AG_HHMM for breaking consistency
-  _AG_HHMM=${_AG_HHMM:-$(date -u +%H%M)}
+  if [ -z "$_AG_HHMM" ]; then
+    date -u +%H%M > /tmp/hhmm_val.txt
+    read _AG_HHMM < /tmp/hhmm_val.txt
+  fi
   if [ "$_IS_SCHEDULE_OR_MULTI" = true ]; then
     ANALYSIS_SUBFOLDER="article-generator-$_AG_HHMM"
   else
@@ -701,7 +708,8 @@ fi
 # Use the article_types workflow dispatch parameter
 ARTICLE_TYPES="${{ github.event.inputs.article_types }}"
 if [ -z "$ARTICLE_TYPES" ]; then
-  DAY_OF_WEEK=$(date -u +"%u")  # 1=Monday, 7=Sunday
+  date -u +%u > /tmp/day_of_week.txt  # 1=Monday, 7=Sunday
+  read DAY_OF_WEEK < /tmp/day_of_week.txt
   case "$DAY_OF_WEEK" in
     5)  ARTICLE_TYPES="week-ahead,committee-reports,propositions,motions,interpellations"
         echo "📅 Friday schedule" ;;
@@ -715,7 +723,8 @@ fi
 # Use the languages workflow dispatch parameter
 LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
 [ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="all"
-LANGUAGES_INPUT=$(echo "$LANGUAGES_INPUT" | xargs)
+echo "$LANGUAGES_INPUT" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' > /tmp/lang_input.txt
+read LANGUAGES_INPUT < /tmp/lang_input.txt
 
 case "$LANGUAGES_INPUT" in
   "nordic") LANG_ARG="en,sv,da,no,fi" ;;
@@ -737,17 +746,18 @@ Valid article types (defined in `scripts/generate-news-enhanced/config.ts:VALID_
 echo "📖 Reading ALL analysis files for $ARTICLE_DATE..."
 for ANALYSIS_DIR in analysis/daily/$ARTICLE_DATE/*/; do
   if [ -d "$ANALYSIS_DIR" ]; then
-    echo "📖 Reading: $(basename $ANALYSIS_DIR)"
+    echo "📖 Reading: $ANALYSIS_DIR"
     for MD_FILE in "$ANALYSIS_DIR"/*.md; do
       if [ -f "$MD_FILE" ]; then
-        echo "--- $(basename $ANALYSIS_DIR)/$(basename $MD_FILE) ---"
+        echo "--- $ANALYSIS_DIR/$MD_FILE ---"
         cat "$MD_FILE"
         echo ""
       fi
     done
   fi
 done
-TOTAL_FILES=$(find "analysis/daily/$ARTICLE_DATE" -name "*.md" -type f 2>/dev/null | wc -l)
+find "analysis/daily/$ARTICLE_DATE" -name "*.md" -type f 2>/dev/null | wc -l > /tmp/total_files.txt
+read TOTAL_FILES < /tmp/total_files.txt
 echo "✅ Read $TOTAL_FILES analysis files — these MUST drive article content"
 ```
 
@@ -791,7 +801,8 @@ while true; do
 
   # Check if all languages are done
   if [ -f "news/metadata/batch-status.json" ]; then
-    ALL_DONE=$(node -e "const s=JSON.parse(require('fs').readFileSync('news/metadata/batch-status.json','utf8')); console.log(s.complete)")
+    node -e "const s=JSON.parse(require('fs').readFileSync('news/metadata/batch-status.json','utf8')); console.log(s.complete)" > /tmp/all_done.txt 2>/dev/null || echo "false" > /tmp/all_done.txt
+    read ALL_DONE < /tmp/all_done.txt
     if [ "$ALL_DONE" = "true" ]; then
       echo "✅ All languages generated!"
       break
@@ -807,20 +818,25 @@ while true; do
   fi
 
   # Check time budget before next batch
-  ELAPSED=$(( ($(date +%s) - $START_TIME) / 60 ))
+  date +%s > /tmp/now_ts.txt
+read AW_NOW_TS < /tmp/now_ts.txt
+ELAPSED=$(( (AW_NOW_TS - START_TIME) / 60 ))
   if [ $ELAPSED -ge 30 ]; then
     echo "⏰ Time budget reached ($ELAPSED min), proceeding with generated articles"
     break
   fi
 done
 
-TODAY="$(date +%Y-%m-%d)"
-NEW_ARTICLES="$(git status --porcelain -- news/ | awk '{print $2}' | grep "$TODAY-" || true)"
+date +%Y-%m-%d > /tmp/today.txt
+read TODAY < /tmp/today.txt
+git status --porcelain -- news/ 2>/dev/null | awk '{print $2}' | grep "$TODAY-" > /tmp/new_articles.txt || true
+NEW_ARTICLES=""
+[ -s /tmp/new_articles.txt ] && NEW_ARTICLES="generated"
 if [ -z "$NEW_ARTICLES" ]; then
   echo "No new articles created."
 else
   echo "Newly generated articles:"
-  printf '%s\n' "$NEW_ARTICLES"
+  cat /tmp/new_articles.txt
 fi
 ```
 
@@ -873,7 +889,7 @@ For **non-deep-inspection** article types only, if the script fails, generate ar
 ```bash
 for FILE in news/$ARTICLE_DATE-*-*.html; do
   if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
-    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
+    echo "🔴 MISSING analysis-references in: $FILE — MUST FIX NOW"
   fi
 done
 ```
@@ -978,12 +994,19 @@ news/content/{YYYY-MM-DD}/{article-types}
 # Restore persisted ANALYSIS_SUBFOLDER (agentic blocks may run independently)
 [ -f /tmp/analysis_subfolder.env ] && source /tmp/analysis_subfolder.env
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+if [ -z "$ARTICLE_DATE" ]; then
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
+fi
 # Fallback: recompute ANALYSIS_SUBFOLDER if env file was not available
 if [ -z "$ANALYSIS_SUBFOLDER" ]; then
   RAW_REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
   if [ -z "$RAW_REQUESTED_TYPE" ] || [[ "$RAW_REQUESTED_TYPE" == *,* ]]; then
-    ANALYSIS_SUBFOLDER="article-generator-${_AG_HHMM:-$(date -u +%H%M)}"
+    if [ -z "$_AG_HHMM" ]; then
+      date -u +%H%M > /tmp/hhmm_val.txt
+      read _AG_HHMM < /tmp/hhmm_val.txt
+    fi
+    ANALYSIS_SUBFOLDER="article-generator-$_AG_HHMM"
   else
     case "$RAW_REQUESTED_TYPE" in
       *committee-reports*) ANALYSIS_SUBFOLDER="committeeReports" ;;
@@ -994,7 +1017,11 @@ if [ -z "$ANALYSIS_SUBFOLDER" ]; then
       *month-ahead*) ANALYSIS_SUBFOLDER="month-ahead" ;;
       *weekly-review*) ANALYSIS_SUBFOLDER="weekly-review" ;;
       *monthly-review*) ANALYSIS_SUBFOLDER="monthly-review" ;;
-      *breaking*) ANALYSIS_SUBFOLDER="realtime-${_AG_HHMM:-$(date -u +%H%M)}" ;;
+      *breaking*) if [ -z "$_AG_HHMM" ]; then
+        date -u +%H%M > /tmp/hhmm_val.txt
+        read _AG_HHMM < /tmp/hhmm_val.txt
+      fi
+      ANALYSIS_SUBFOLDER="realtime-$_AG_HHMM" ;;
       *deep-inspection*) ANALYSIS_SUBFOLDER="deep-inspection" ;;
       *) ANALYSIS_SUBFOLDER="$RAW_REQUESTED_TYPE" ;;
     esac
@@ -1009,14 +1036,16 @@ git add news/metadata/ 2>/dev/null || true
 git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" || true
 git add analysis/weekly/ || true
 # Enforce safe-outputs 100-file PR limit
-STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+git diff --cached --name-only 2>/dev/null | wc -l > /tmp/staged_count.txt
+read STAGED_COUNT < /tmp/staged_count.txt
 if [ "$STAGED_COUNT" -gt 90 ]; then
   echo "⚠️ Staged $STAGED_COUNT files exceeds 100-file PR limit. Removing weekly analysis."
   git reset HEAD -- analysis/weekly/ 2>/dev/null || true
-  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+  git diff --cached --name-only 2>/dev/null | wc -l > /tmp/staged_count.txt
+read STAGED_COUNT < /tmp/staged_count.txt
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
-git commit -m "📰 Automated News Generation - $(date +%Y-%m-%d)"
+git commit -m "📰 Automated News Generation - $ARTICLE_DATE"
 ```
 
 Then **immediately** call (as a direct tool call, NOT via bash):

@@ -800,7 +800,10 @@ fi
 
 **Run this verification BEFORE any article generation:**
 ```bash
-ARTICLE_DATE="${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}"
+if [ -z "$ARTICLE_DATE" ]; then
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
+fi
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/committeeReports"
 echo "=== 🔴 MANDATORY ANALYSIS VERIFICATION GATE ==="
 echo "📅 Date: $ARTICLE_DATE"
@@ -847,7 +850,7 @@ echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
 if [ -d "$ANALYSIS_BASE" ]; then
   for MD_FILE in "$ANALYSIS_BASE"/*.md; do
     if [ -f "$MD_FILE" ]; then
-      echo "--- Reading: $(basename $MD_FILE) ---"
+      echo "--- Reading: $MD_FILE ---"
       cat "$MD_FILE"
       echo ""
     fi
@@ -856,13 +859,14 @@ if [ -d "$ANALYSIS_BASE" ]; then
     echo "📄 Reading per-document analyses..."
     for DOC_FILE in "$ANALYSIS_BASE/documents"/*.md; do
       if [ -f "$DOC_FILE" ]; then
-        echo "--- Per-doc: $(basename $DOC_FILE) ---"
+        echo "--- Per-doc: $DOC_FILE ---"
         cat "$DOC_FILE"
         echo ""
       fi
     done
   fi
-  ANALYSIS_FILE_COUNT=$(find "$ANALYSIS_BASE" -name "*.md" -type f | wc -l)
+  find "$ANALYSIS_BASE" -name "*.md" -type f 2>/dev/null | wc -l > /tmp/analysis_file_count.txt
+  read ANALYSIS_FILE_COUNT < /tmp/analysis_file_count.txt
   echo "✅ Read $ANALYSIS_FILE_COUNT analysis files — these MUST drive article content"
 else
   echo "⚠️ No analysis directory found at $ANALYSIS_BASE — will use MCP fallback for article content"
@@ -933,7 +937,7 @@ npx tsx scripts/fix-article-navigation.ts
 ```bash
 for FILE in news/$ARTICLE_DATE-committee-reports-*.html; do
   if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
-    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
+    echo "🔴 MISSING analysis-references in: $FILE — MUST FIX NOW"
   fi
 done
 ```
@@ -1038,18 +1042,19 @@ npx tsx scripts/validate-cross-references.ts news/*-committee-reports-*.html
 grep -rl "Filed by: Unknown" news/ | grep "committee-reports" | wc -l || true
 
 # Check for untranslated spans in English article (should return 0)
-grep -c 'data-translate="true"' "news/$(date +%Y-%m-%d)-committee-reports-en.html" 2>/dev/null || true
+grep -c \'data-translate="true"\' "news/$ARTICLE_DATE-committee-reports-en.html" 2>/dev/null || true
 
 # Check word count of English article text content (warn if < 500; HTML tags stripped)
-FILE="news/$(date +%Y-%m-%d)-committee-reports-en.html"
+FILE="news/$ARTICLE_DATE-committee-reports-en.html"
 if [ ! -f "$FILE" ]; then echo "WARNING: Expected article file not found: $FILE — check if generation succeeded"; else
-  WORD_COUNT="$(sed 's/<[^>]*>/ /g' "$FILE" | tr -s '[:space:]' '\n' | grep -c '[[:alnum:]]' 2>/dev/null || echo 0)"
+  sed 's/<[^>]*>/ /g' "$FILE" | tr -s '[:space:]' '\n' | grep -c '[[:alnum:]]' 2>/dev/null > /tmp/word_count.txt || echo 0 > /tmp/word_count.txt
+  read WORD_COUNT < /tmp/word_count.txt
   echo "Content word count (HTML tags stripped): $WORD_COUNT"
   if [ "$WORD_COUNT" -lt 500 ]; then echo "WARNING: Article content may be too short ($WORD_COUNT words) — consider expanding before PR"; fi
 fi
 
 # Check for duplicate "Why It Matters" content (should return empty)
-grep -o 'Why It Matters[^<]*' "news/$(date +%Y-%m-%d)-committee-reports-en.html" 2>/dev/null | sort | uniq -d || true
+grep -o 'Why It Matters[^<]*' "news/$ARTICLE_DATE-committee-reports-en.html" 2>/dev/null | sort | uniq -d || true
 ```
 **Note**: Do NOT use `exit 1` in these validation snippets — use warnings so the agent can still create a PR or call noop.
 

@@ -512,7 +512,8 @@ If today is deferred, has no sources, or all today's articles are fully translat
 
 ```bash
 echo "=== Scanning earlier dates for missing translations ==="
-for i in $(seq 1 30); do
+i=1
+while [ "$i" -le 30 ]; do
   date -u -d "$i days ago" +%Y-%m-%d 2>/dev/null > /tmp/scan_date.txt || echo "" > /tmp/scan_date.txt
 read SCAN_DATE < /tmp/scan_date.txt
   if [ -z "$SCAN_DATE" ]; then continue; fi
@@ -523,7 +524,12 @@ read SCAN_DATE < /tmp/scan_date.txt
   fi
   ls $EN_GLOB 2>/dev/null > /tmp/en_files.txt || true
 EN_FILES=""
-[ -s /tmp/en_files.txt ] && { EN_FILES=$(head -100 /tmp/en_files.txt); }
+if [ -s /tmp/en_files.txt ]; then
+  EN_FILES=""
+  while IFS= read -r _efline; do
+    EN_FILES="$EN_FILES $_efline"
+  done < /tmp/en_files.txt
+fi
   if [ -z "$EN_FILES" ]; then continue; fi
   for EN_FILE in $EN_FILES; do
     basename "$EN_FILE" .html | sed "s/-en$//" > /tmp/slug.txt
@@ -536,6 +542,7 @@ read SLUG < /tmp/slug.txt
       echo "EARLIER NEEDS TRANSLATION: $SLUG -> $MISSING"
     fi
   done
+  i=$((i+1))
 done
 echo "=== End scan ==="
 ```

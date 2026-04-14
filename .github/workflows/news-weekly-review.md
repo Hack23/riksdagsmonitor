@@ -540,7 +540,7 @@ echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
 if [ -d "$ANALYSIS_BASE" ]; then
   for MD_FILE in "$ANALYSIS_BASE"/*.md; do
     if [ -f "$MD_FILE" ]; then
-      echo "--- Reading: $(basename $MD_FILE) ---"
+      echo "--- Reading: $MD_FILE ---"
       cat "$MD_FILE"
       echo ""
     fi
@@ -550,12 +550,13 @@ fi
 echo "🔍 Cross-referencing sibling analysis types for $ARTICLE_DATE..."
 for SIBLING_DIR in analysis/daily/$ARTICLE_DATE/*/; do
   if [ -d "$SIBLING_DIR" ]; then
-    SIBLING_TYPE="$(basename $SIBLING_DIR)"
+    echo "$SIBLING_DIR" | sed 's|/$||' | sed 's|.*/||' > /tmp/sibling_type.txt
+    read SIBLING_TYPE < /tmp/sibling_type.txt
     if [ "$SIBLING_TYPE" = "$ANALYSIS_SUBFOLDER" ]; then continue; fi
     echo "📖 Cross-referencing: $SIBLING_TYPE"
     for SIBLING_FILE in "$SIBLING_DIR/synthesis-summary.md" "$SIBLING_DIR/significance-scoring.md"; do
       if [ -f "$SIBLING_FILE" ]; then
-        echo "--- Sibling ($SIBLING_TYPE): $(basename $SIBLING_FILE) ---"
+        echo "--- Sibling ($SIBLING_TYPE): $SIBLING_FILE ---"
         cat "$SIBLING_FILE"
         echo ""
       fi
@@ -610,7 +611,7 @@ npx tsx scripts/fix-article-navigation.ts
 ```bash
 for FILE in news/$ARTICLE_DATE-weekly-review-*.html; do
   if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
-    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
+    echo "🔴 MISSING analysis-references in: $FILE — MUST FIX NOW"
   fi
 done
 ```

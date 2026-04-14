@@ -1,4 +1,4 @@
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"e7ca67e30173b94dfa2b204f0e80605636a2bd7e435e783c44f87cc680f3c7e6","compiler_version":"v0.68.2","agent_id":"copilot","agent_model":"claude-opus-4.6"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"8a018389afca649ad8b082a9c1e5a977bc16ca65e35deb71942cfff90364e331","compiler_version":"v0.68.2","agent_id":"copilot","agent_model":"claude-opus-4.6"}
 # gh-aw-manifest: {"version":1,"secrets":["COPILOT_GITHUB_TOKEN","GH_AW_CI_TRIGGER_TOKEN","GH_AW_GITHUB_MCP_SERVER_TOKEN","GH_AW_GITHUB_TOKEN","GITHUB_TOKEN"],"actions":[{"repo":"actions/checkout","sha":"de0fac2e4500dabe0009e67214ff5f5447ce83dd","version":"v6.0.2"},{"repo":"actions/download-artifact","sha":"3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c","version":"v8.0.1"},{"repo":"actions/github-script","sha":"373c709c69115d41ff229c7e5df9f8788daa9553","version":"v9"},{"repo":"actions/setup-node","sha":"6044e13b5dc448c55e2357c09f80417699197238","version":"6044e13b5dc448c55e2357c09f80417699197238"},{"repo":"actions/upload-artifact","sha":"043fb46d1a93c77aae656e7c1c64a875d1fc6a0a","version":"v7.0.1"},{"repo":"github/gh-aw-actions/setup","sha":"19c436149e80e5be4f0adbd9cdeb391acea5fa91","version":"v0.68.2"}],"containers":[{"image":"alpine:latest"},{"image":"ghcr.io/github/gh-aw-firewall/agent:0.25.20"},{"image":"ghcr.io/github/gh-aw-firewall/api-proxy:0.25.20"},{"image":"ghcr.io/github/gh-aw-firewall/squid:0.25.20"},{"image":"ghcr.io/github/gh-aw-mcpg:v0.2.19"},{"image":"ghcr.io/github/github-mcp-server:v0.32.0"},{"image":"node:lts-alpine"}]}
 #    ___                   _   _      
 #   / _ \                 | | (_)     
@@ -193,21 +193,21 @@ jobs:
         run: |
           bash "${RUNNER_TEMP}/gh-aw/actions/create_prompt_first.sh"
           {
-          cat << 'GH_AW_PROMPT_04047e78322d68ae_EOF'
+          cat << 'GH_AW_PROMPT_9c503efc079860ab_EOF'
           <system>
-          GH_AW_PROMPT_04047e78322d68ae_EOF
+          GH_AW_PROMPT_9c503efc079860ab_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/xpia.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/temp_folder_prompt.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/markdown.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/agentic_workflows_guide.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/repo_memory_prompt.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/safe_outputs_prompt.md"
-          cat << 'GH_AW_PROMPT_04047e78322d68ae_EOF'
+          cat << 'GH_AW_PROMPT_9c503efc079860ab_EOF'
           <safe-output-tools>
           Tools: add_comment, create_pull_request, missing_tool, missing_data, noop
-          GH_AW_PROMPT_04047e78322d68ae_EOF
+          GH_AW_PROMPT_9c503efc079860ab_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/safe_outputs_create_pull_request.md"
-          cat << 'GH_AW_PROMPT_04047e78322d68ae_EOF'
+          cat << 'GH_AW_PROMPT_9c503efc079860ab_EOF'
           </safe-output-tools>
           <github-context>
           The following GitHub context information is available for this workflow:
@@ -237,12 +237,12 @@ jobs:
           {{/if}}
           </github-context>
           
-          GH_AW_PROMPT_04047e78322d68ae_EOF
+          GH_AW_PROMPT_9c503efc079860ab_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/github_mcp_tools_with_safeoutputs_prompt.md"
-          cat << 'GH_AW_PROMPT_04047e78322d68ae_EOF'
+          cat << 'GH_AW_PROMPT_9c503efc079860ab_EOF'
           </system>
           {{#runtime-import .github/workflows/news-translate.md}}
-          GH_AW_PROMPT_04047e78322d68ae_EOF
+          GH_AW_PROMPT_9c503efc079860ab_EOF
           } > "$GH_AW_PROMPT"
       - name: Interpolate variables and render templates
         uses: actions/github-script@373c709c69115d41ff229c7e5df9f8788daa9553 # v9
@@ -409,16 +409,16 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
         name: Pre-flight content PR dependency check
-        run: "ARTICLE_DATE=\"${ARTICLE_DATE_INPUT:-}\"\nif [ -z \"$ARTICLE_DATE\" ]; then\n  ARTICLE_DATE=$(date -u '+%Y-%m-%d')\nfi\nCONTENT_BRANCH_PREFIX=\"news/content/${ARTICLE_DATE}/\"\nGH_ERROR_LOG=$(mktemp)\nJQ_ERROR_LOG=$(mktemp)\nchmod 600 \"$GH_ERROR_LOG\" \"$JQ_ERROR_LOG\"\ntrap 'rm -f \"$GH_ERROR_LOG\" \"$JQ_ERROR_LOG\"' EXIT\nOPEN_CONTENT_PRS=0\n\nset +e\nPR_LIST_JSON=$(gh pr list --repo \"$GH_REPOSITORY\" --base main --state open --limit 200 --json headRefName 2>\"$GH_ERROR_LOG\")\nGH_EXIT_CODE=$?\nset -e\nif [ \"$GH_EXIT_CODE\" -ne 0 ] || [ -z \"$PR_LIST_JSON\" ]; then\n  echo \"⚠ Unable to query open content PRs for $ARTICLE_DATE (gh exit code: $GH_EXIT_CODE).\"\n  if [ -s \"$GH_ERROR_LOG\" ]; then\n    echo \"gh error:\"\n    sed 's/^/  /' \"$GH_ERROR_LOG\"\n  fi\n  echo \"   Could not determine whether today's date has open content PRs — deferring today and looking for older articles to translate.\"\n  echo \"TODAY_DEFERRED=true\" >> \"$GITHUB_ENV\"\n  exit 0\nfi\n\nset +e\nOPEN_CONTENT_PRS=$(printf '%s' \"$PR_LIST_JSON\" | jq -r --arg prefix \"$CONTENT_BRANCH_PREFIX\" '[.[] | select(.headRefName | startswith($prefix))] | length' 2>\"$JQ_ERROR_LOG\")\nJQ_EXIT_CODE=$?\nset -e\nif [ \"$JQ_EXIT_CODE\" -ne 0 ] || ! [[ \"$OPEN_CONTENT_PRS\" =~ ^[0-9]+$ ]]; then\n  echo \"⚠ Unable to parse content PR count for $ARTICLE_DATE (jq exit code: $JQ_EXIT_CODE).\"\n  if [ -s \"$JQ_ERROR_LOG\" ]; then\n    echo \"jq error:\"\n    sed 's/^/  /' \"$JQ_ERROR_LOG\"\n  fi\n  OPEN_CONTENT_PRS=0\n  echo \"   Parse error — agent will look for older articles to translate.\"\n  echo \"TODAY_DEFERRED=true\" >> \"$GITHUB_ENV\"\n  exit 0\nfi\n\nif [ \"$OPEN_CONTENT_PRS\" -gt 0 ]; then\n  echo \"⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — today deferred\"\n  echo \"   Agent will look for older articles needing translation.\"\n  echo \"TODAY_DEFERRED=true\" >> \"$GITHUB_ENV\"\n  exit 0\nfi\necho \"✅ No open content PRs for $ARTICLE_DATE — proceeding with translation\"\n"
+        run: "ARTICLE_DATE=\"$ARTICLE_DATE_INPUT\"\nif [ -z \"$ARTICLE_DATE\" ]; then\n  ARTICLE_DATE=$(date -u '+%Y-%m-%d')\nfi\nCONTENT_BRANCH_PREFIX=\"news/content/$ARTICLE_DATE/\"\nGH_ERROR_LOG=$(mktemp)\nJQ_ERROR_LOG=$(mktemp)\nchmod 600 \"$GH_ERROR_LOG\" \"$JQ_ERROR_LOG\"\ntrap 'rm -f \"$GH_ERROR_LOG\" \"$JQ_ERROR_LOG\"' EXIT\nOPEN_CONTENT_PRS=0\n\nset +e\nPR_LIST_JSON=$(gh pr list --repo \"$GH_REPOSITORY\" --base main --state open --limit 200 --json headRefName 2>\"$GH_ERROR_LOG\")\nGH_EXIT_CODE=$?\nset -e\nif [ \"$GH_EXIT_CODE\" -ne 0 ] || [ -z \"$PR_LIST_JSON\" ]; then\n  echo \"⚠ Unable to query open content PRs for $ARTICLE_DATE (gh exit code: $GH_EXIT_CODE).\"\n  if [ -s \"$GH_ERROR_LOG\" ]; then\n    echo \"gh error:\"\n    sed 's/^/  /' \"$GH_ERROR_LOG\"\n  fi\n  echo \"   Could not determine whether today's date has open content PRs — deferring today and looking for older articles to translate.\"\n  echo \"TODAY_DEFERRED=true\" >> \"$GITHUB_ENV\"\n  exit 0\nfi\n\nset +e\nOPEN_CONTENT_PRS=$(printf '%s' \"$PR_LIST_JSON\" | jq -r --arg prefix \"$CONTENT_BRANCH_PREFIX\" '[.[] | select(.headRefName | startswith($prefix))] | length' 2>\"$JQ_ERROR_LOG\")\nJQ_EXIT_CODE=$?\nset -e\nif [ \"$JQ_EXIT_CODE\" -ne 0 ] || ! [[ \"$OPEN_CONTENT_PRS\" =~ ^[0-9]+$ ]]; then\n  echo \"⚠ Unable to parse content PR count for $ARTICLE_DATE (jq exit code: $JQ_EXIT_CODE).\"\n  if [ -s \"$JQ_ERROR_LOG\" ]; then\n    echo \"jq error:\"\n    sed 's/^/  /' \"$JQ_ERROR_LOG\"\n  fi\n  OPEN_CONTENT_PRS=0\n  echo \"   Parse error — agent will look for older articles to translate.\"\n  echo \"TODAY_DEFERRED=true\" >> \"$GITHUB_ENV\"\n  exit 0\nfi\n\nif [ \"$OPEN_CONTENT_PRS\" -gt 0 ]; then\n  echo \"⏸ $OPEN_CONTENT_PRS content PRs still open for $ARTICLE_DATE — today deferred\"\n  echo \"   Agent will look for older articles needing translation.\"\n  echo \"TODAY_DEFERRED=true\" >> \"$GITHUB_ENV\"\n  exit 0\nfi\necho \"✅ No open content PRs for $ARTICLE_DATE — proceeding with translation\"\n"
       - env:
           ARTICLE_DATE_INPUT: ${{ github.event.inputs.article_date }}
         name: Pre-flight source article check
         run: |-
-          ARTICLE_DATE="${ARTICLE_DATE_INPUT:-}"
+          ARTICLE_DATE="$ARTICLE_DATE_INPUT"
           if [ -z "$ARTICLE_DATE" ]; then
             ARTICLE_DATE=$(date -u '+%Y-%m-%d')
           fi
-          EN_SOURCE_COUNT=$(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null | wc -l)
+          EN_SOURCE_COUNT=$(ls news/$ARTICLE_DATE-*-en.html 2>/dev/null | wc -l)
           if [ "$EN_SOURCE_COUNT" -eq 0 ]; then
             echo "⚠ No EN source articles found for $ARTICLE_DATE"
             echo "   Agent will scan older dates for untranslated articles."
@@ -511,9 +511,9 @@ jobs:
           mkdir -p "${RUNNER_TEMP}/gh-aw/safeoutputs"
           mkdir -p /tmp/gh-aw/safeoutputs
           mkdir -p /tmp/gh-aw/mcp-logs/safeoutputs
-          cat > "${RUNNER_TEMP}/gh-aw/safeoutputs/config.json" << 'GH_AW_SAFE_OUTPUTS_CONFIG_0f6fbe17f6a88908_EOF'
+          cat > "${RUNNER_TEMP}/gh-aw/safeoutputs/config.json" << 'GH_AW_SAFE_OUTPUTS_CONFIG_578687dcad1238ac_EOF'
           {"add_comment":{"max":1},"create_pull_request":{"draft":false,"expires":336,"labels":["agentic-news","translation"],"max":1,"max_patch_size":2048,"protected_files":["package.json","bun.lockb","bunfig.toml","deno.json","deno.jsonc","deno.lock","global.json","NuGet.Config","Directory.Packages.props","mix.exs","mix.lock","go.mod","go.sum","stack.yaml","stack.yaml.lock","pom.xml","build.gradle","build.gradle.kts","settings.gradle","settings.gradle.kts","gradle.properties","package-lock.json","yarn.lock","pnpm-lock.yaml","npm-shrinkwrap.json","requirements.txt","Pipfile","Pipfile.lock","pyproject.toml","setup.py","setup.cfg","Gemfile","Gemfile.lock","uv.lock","CODEOWNERS"],"protected_path_prefixes":[".github/",".agents/"]},"create_report_incomplete_issue":{},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"true"},"push_repo_memory":{"memories":[{"dir":"/tmp/gh-aw/repo-memory/default","id":"default","max_file_count":50,"max_file_size":51200,"max_patch_size":51200}]},"report_incomplete":{}}
-          GH_AW_SAFE_OUTPUTS_CONFIG_0f6fbe17f6a88908_EOF
+          GH_AW_SAFE_OUTPUTS_CONFIG_578687dcad1238ac_EOF
       - name: Write Safe Outputs Tools
         env:
           GH_AW_TOOLS_META_JSON: |
@@ -731,7 +731,7 @@ jobs:
           export MCP_GATEWAY_DOCKER_COMMAND='docker run -i --rm --network host -v /var/run/docker.sock:/var/run/docker.sock -e MCP_GATEWAY_PORT -e MCP_GATEWAY_DOMAIN -e MCP_GATEWAY_API_KEY -e MCP_GATEWAY_PAYLOAD_DIR -e MCP_GATEWAY_PAYLOAD_SIZE_THRESHOLD -e DEBUG -e MCP_GATEWAY_LOG_DIR -e GH_AW_MCP_LOG_DIR -e GH_AW_SAFE_OUTPUTS -e GH_AW_SAFE_OUTPUTS_CONFIG_PATH -e GH_AW_SAFE_OUTPUTS_TOOLS_PATH -e GH_AW_ASSETS_BRANCH -e GH_AW_ASSETS_MAX_SIZE_KB -e GH_AW_ASSETS_ALLOWED_EXTS -e DEFAULT_BRANCH -e GITHUB_MCP_SERVER_TOKEN -e GITHUB_MCP_GUARD_MIN_INTEGRITY -e GITHUB_MCP_GUARD_REPOS -e GITHUB_REPOSITORY -e GITHUB_SERVER_URL -e GITHUB_SHA -e GITHUB_WORKSPACE -e GITHUB_TOKEN -e GITHUB_RUN_ID -e GITHUB_RUN_NUMBER -e GITHUB_RUN_ATTEMPT -e GITHUB_JOB -e GITHUB_ACTION -e GITHUB_EVENT_NAME -e GITHUB_EVENT_PATH -e GITHUB_ACTOR -e GITHUB_ACTOR_ID -e GITHUB_TRIGGERING_ACTOR -e GITHUB_WORKFLOW -e GITHUB_WORKFLOW_REF -e GITHUB_WORKFLOW_SHA -e GITHUB_REF -e GITHUB_REF_NAME -e GITHUB_REF_TYPE -e GITHUB_HEAD_REF -e GITHUB_BASE_REF -e GH_AW_SAFE_OUTPUTS_PORT -e GH_AW_SAFE_OUTPUTS_API_KEY -v /tmp/gh-aw/mcp-payloads:/tmp/gh-aw/mcp-payloads:rw -v /opt:/opt:ro -v /tmp:/tmp:rw -v '"${GITHUB_WORKSPACE}"':'"${GITHUB_WORKSPACE}"':rw ghcr.io/github/gh-aw-mcpg:v0.2.19'
           
           mkdir -p /home/runner/.copilot
-          cat << GH_AW_MCP_CONFIG_eefe4c23d1aaf0a6_EOF | bash "${RUNNER_TEMP}/gh-aw/actions/start_mcp_gateway.sh"
+          cat << GH_AW_MCP_CONFIG_eafa3138b91a1120_EOF | bash "${RUNNER_TEMP}/gh-aw/actions/start_mcp_gateway.sh"
           {
             "mcpServers": {
               "agenticworkflows": {
@@ -847,7 +847,7 @@ jobs:
               "payloadDir": "${MCP_GATEWAY_PAYLOAD_DIR}"
             }
           }
-          GH_AW_MCP_CONFIG_eefe4c23d1aaf0a6_EOF
+          GH_AW_MCP_CONFIG_eafa3138b91a1120_EOF
       - name: Download activation artifact
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:

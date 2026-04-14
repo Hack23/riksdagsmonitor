@@ -768,7 +768,8 @@ if [ -z "$ARTICLE_DATE" ]; then
   if [ -n "${{ github.event.inputs.article_date }}" ]; then
     ARTICLE_DATE="${{ github.event.inputs.article_date }}"
   else
-    ARTICLE_DATE="$(date -u +%Y-%m-%d)"
+    date -u +%Y-%m-%d > /tmp/today.txt
+read ARTICLE_DATE < /tmp/today.txt
   fi
 fi
 [ -f /tmp/hhmm.env ] && . /tmp/hhmm.env
@@ -852,9 +853,12 @@ else
   TIMED_OUT=false
   [ "$SCRIPT_EXIT" -eq 124 ] && { echo "⚠️ Script timed out — proceeding with generated content"; TIMED_OUT=true; }
   echo "Script exit: $SCRIPT_EXIT"
-  TODAY="$(date +%Y-%m-%d)"
-  NEW_ARTICLES="$(git status --porcelain -- news/ | awk '{print $2}' | grep "$TODAY-" || true)"
-  [ -z "$NEW_ARTICLES" ] && echo "No new articles." || { printf '%s\n' "$NEW_ARTICLES"; [ "$TIMED_OUT" = true ] && SCRIPT_EXIT=0; }
+  date +%Y-%m-%d > /tmp/today.txt
+  read TODAY < /tmp/today.txt
+  git status --porcelain -- news/ 2>/dev/null | awk '{print $2}' | grep "$TODAY-" > /tmp/new_articles.txt || true
+  NEW_ARTICLES=""
+  [ -s /tmp/new_articles.txt ] && NEW_ARTICLES="generated"
+  [ -z "$NEW_ARTICLES" ] && echo "No new articles." || { cat /tmp/new_articles.txt; [ "$TIMED_OUT" = true ] && SCRIPT_EXIT=0; }
 fi
 ```
 
@@ -982,23 +986,27 @@ fi
 # CRITICAL: Stage only this workflow's articles and metadata, NOT all of news/
 git add news/*realtime*.html news/*breaking*.html news/*monitor*.html 2>/dev/null || true
 git add news/metadata/ 2>/dev/null || true
-git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/realtime-$HHMM/" || true
+[ -z "$ARTICLE_DATE" ] && { date -u +%Y-%m-%d > /tmp/today.txt; read ARTICLE_DATE < /tmp/today.txt; }
+git add "analysis/daily/$ARTICLE_DATE/realtime-$HHMM/" || true
 git add analysis/weekly/ || true
 git add analysis/data/ || true
 # Enforce safe-outputs 100-file PR limit
-STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+git diff --cached --name-only 2>/dev/null | wc -l > /tmp/staged_count.txt
+read STAGED_COUNT < /tmp/staged_count.txt
 if [ "$STAGED_COUNT" -gt 90 ]; then
   echo "⚠️ Staged $STAGED_COUNT files exceeds 100-file PR limit. Removing bulk data."
   git reset HEAD -- analysis/data/ 2>/dev/null || true
-  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+  git diff --cached --name-only 2>/dev/null | wc -l > /tmp/staged_count.txt
+read STAGED_COUNT < /tmp/staged_count.txt
 fi
 if [ "$STAGED_COUNT" -gt 90 ]; then
   echo "⚠️ Still $STAGED_COUNT files. Removing weekly analysis."
   git reset HEAD -- analysis/weekly/ 2>/dev/null || true
-  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+  git diff --cached --name-only 2>/dev/null | wc -l > /tmp/staged_count.txt
+read STAGED_COUNT < /tmp/staged_count.txt
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
-git commit -m "🔴 Breaking ${HHMM}: {headline} - $(date +%Y-%m-%d)"
+git commit -m "🔴 Breaking $HHMM: {headline} - $ARTICLE_DATE"
 ```
 
 Then **immediately** call (as a direct tool call, NOT via bash):
