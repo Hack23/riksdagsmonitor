@@ -33,10 +33,11 @@ Detected **6** cross-document relationship clusters across 30 opposition motions
 - **HD024066** — MP: Teacher qualifications (Hansén)
 - **Pattern**: S+MP parallel tracks on education — S broader reform package, MP targeted concerns
 
-### Cluster 4: Social Policy Resistance (prop. 201, 207)
+### Cluster 4: Social Policy Resistance (prop. 201, 207, 229)
 - **HD024027** — V: Reject activity requirements (Karlsson)
 - **HD024028** — V: Reject reformed income support (Karlsson)
-- **Pattern**: V double rejection of social security tightening
+- **HD024076** — med anledning av prop. 2025/26:229 En ny mottagandelag
+- **Pattern**: V double rejection of social security tightening; cross-reference with reception law reform
 
 ### Cluster 5: MP Housing Policy Bloc (prop. 180, 187, 188, 209, 212)
 - **HD024059, HD024060, HD024064, HD024065, HD024067** — All MP (Amanda Palmstierna)

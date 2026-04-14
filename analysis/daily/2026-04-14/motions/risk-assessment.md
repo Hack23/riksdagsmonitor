@@ -2,7 +2,7 @@
 
 **Generated**: 2026-04-14 07:17 UTC
 **Data Sources**: get_motioner (rm=2025/26)
-**Documents Analyzed**: 30
+**Documents Analyzed**: 30 (key doc: HD024076)
 **Confidence**: HIGH
 **Produced By**: news-motions workflow (AI-enriched)
 
