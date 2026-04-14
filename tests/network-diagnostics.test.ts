@@ -425,7 +425,11 @@ describe('Network Diagnostics Configuration', () => {
   });
 
   describe('In-Prompt MCP Gateway Diagnostics (runs after MCP Gateway)', () => {
-    ALL_NEWS_WORKFLOWS.forEach(workflow => {
+    // news-translate.md is a translation-only workflow with a simpler MCP setup;
+    // it doesn't need the full MCP diagnostic blocks that content-generation workflows require
+    const CONTENT_GENERATION_WORKFLOWS = ALL_NEWS_WORKFLOWS.filter(w => w !== 'news-translate.md');
+
+    CONTENT_GENERATION_WORKFLOWS.forEach(workflow => {
       it(`${workflow} should have in-prompt MCP quick diagnostic block`, () => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
         const content = fs.readFileSync(filepath, 'utf-8');
@@ -489,7 +493,9 @@ describe('Network Diagnostics Configuration', () => {
       // Validates the architectural split:
       // - Pre-flight checks (frontmatter steps:) run BEFORE MCP Gateway
       // - In-prompt gateway diagnostics run AFTER MCP Gateway (inside agent)
-      ALL_NEWS_WORKFLOWS.forEach(workflow => {
+      // news-translate.md has a simpler architecture without in-prompt diagnostics
+      const contentWorkflows = ALL_NEWS_WORKFLOWS.filter(w => w !== 'news-translate.md');
+      contentWorkflows.forEach(workflow => {
         const filepath = path.join(WORKFLOWS_DIR, workflow);
         const content = fs.readFileSync(filepath, 'utf-8');
         const fm = extractFrontmatter(content);
