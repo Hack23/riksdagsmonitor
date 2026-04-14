@@ -31,7 +31,7 @@ permissions:
   discussions: read
   security-events: read
 
-timeout-minutes: 30
+timeout-minutes: 45
 
 concurrency:
   group: gh-aw-news-week-ahead-${{ inputs.article_date || 'today' }}
@@ -233,7 +233,7 @@ If **force_generation** is `true`, generate articles even if recent ones exist. 
 
 Uses `memory/news-generation` branch. START: read `memory/news-generation/last-run-news-week-ahead.json` + `memory/news-generation/covered-documents/{YYYY-MM-DD}.json`. END: update both + `memory/news-generation/translation-status.json`. Skip already-covered dok_ids.
 
-## ⏱️ Time Budget (30 minutes)
+## ⏱️ Time Budget (45 minutes)
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
 - **Minutes 3–5**: Run pre-article-analysis pipeline (download data)
 - **Minutes 5–15**: 🚨 **AI Analysis (10 min minimum)**: Read methodology guides + templates. Create analysis with color-coded Mermaid diagrams and evidence tables. Run quality gate bash check.
