@@ -366,13 +366,15 @@ Before generating articles, check if articles already exist for the target date.
 # Resolve article date: use workflow_dispatch input when provided, fallback to UTC today
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 if [ -z "$ARTICLE_DATE" ]; then
-  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
 fi
 ARTICLE_TYPE="opposition-motions"
 # Derive FORCE_GENERATION from the workflow_dispatch input
 FORCE_GENERATION="${{ github.event.inputs.force_generation || 'false' }}"
-EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}-en.html 2>/dev/null | wc -l)
-if [ "$EXISTING" -gt 0 ] && [ "${FORCE_GENERATION}" != "true" ]; then
+ls news/$ARTICLE_DATE-$ARTICLE_TYPE-en.html 2>/dev/null | wc -l > /tmp/existing_count.txt
+read EXISTING < /tmp/existing_count.txt
+if [ "$EXISTING" -gt 0 ] && [ "$FORCE_GENERATION" != "true" ]; then
   echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — article generation will be skipped (analysis still runs)"
   SKIP_ARTICLE_GENERATION=true
   echo "SKIP_ARTICLE_GENERATION=true" >> "$GITHUB_ENV"
@@ -524,30 +526,31 @@ get_motioner({ rm: <calculated riksmöte>, limit: 20 })
 
 ```bash
 # Idempotent: only set if not already resolved by lookback
-if [ -z "${ARTICLE_DATE:-}" ]; then
+if [ -z "$ARTICLE_DATE" ]; then
   ARTICLE_DATE="${{ github.event.inputs.article_date }}"
   if [ -z "$ARTICLE_DATE" ]; then
-    ARTICLE_DATE=$(date -u +%Y-%m-%d)
+    date -u +%Y-%m-%d > /tmp/today.txt
+    read ARTICLE_DATE < /tmp/today.txt
   fi
 fi
 
 # === Run Suffix Resolution (see SHARED_PROMPT_PATTERNS.md) ===
 BASE_SUBFOLDER="motions"
 ANALYSIS_SUBFOLDER="$BASE_SUBFOLDER"
-if [ "${FORCE_GENERATION:-false}" != "true" ]; then
+if [ "$FORCE_GENERATION" != "true" ]; then
   _SUFFIX=1
   while [ -f "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/synthesis-summary.md" ]; do
     _SUFFIX=$((_SUFFIX + 1))
-    ANALYSIS_SUBFOLDER="${BASE_SUBFOLDER}-${_SUFFIX}"
+    ANALYSIS_SUBFOLDER="$BASE_SUBFOLDER-$_SUFFIX"
   done
 fi
 echo "📁 Analysis subfolder resolved: $ANALYSIS_SUBFOLDER"
 
 echo "📊 Downloading data for $ARTICLE_DATE..."
 # CRITICAL: Source mcp-setup.sh to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
-source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL:-NOT SET}"
+source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"
 npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 --doc-type motions 2>&1 | tee /tmp/pipeline-output.log
-PIPE_EXIT=${PIPESTATUS[0]}
+PIPE_EXIT=$?  # AWF-safe: use set -o pipefail before pipeline
 if [ "$PIPE_EXIT" -ne 0 ]; then
   echo "❌ Pipeline failed with exit code $PIPE_EXIT — agent MUST diagnose and fix (see Script Debugging Protocol)"
   tail -30 /tmp/pipeline-output.log
@@ -576,10 +579,13 @@ ls -la "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" 2>/dev/null || echo "
 MANIFEST_DOCS=0
 MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/data-download-manifest.md"
 if [ -f "$MANIFEST_PATH" ]; then
-  MANIFEST_DOCS=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+  grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/manifest_docs.txt || echo 0 > /tmp/manifest_docs.txt
+  read MANIFEST_DOCS < /tmp/manifest_docs.txt
+  MANIFEST_DOCS=$MANIFEST_DOCS
 fi
 [ -z "$MANIFEST_DOCS" ] && MANIFEST_DOCS=0
-DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
+find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l > /tmp/data_count.txt
+read DATA_JSON_COUNT < /tmp/data_count.txt
 echo "📊 Documents in manifest: $MANIFEST_DOCS, JSON data files: $DATA_JSON_COUNT"
 if [ "$MANIFEST_DOCS" -eq 0 ] && [ "$DATA_JSON_COUNT" -eq 0 ]; then
   echo "🚨 CRITICAL: Pipeline downloaded ZERO data. Agent MUST diagnose and fix — do NOT fabricate analysis."
@@ -592,9 +598,12 @@ fi
 
 ```bash
 # Idempotent: only set if not already resolved by lookback
-if [ -z "${ARTICLE_DATE:-}" ]; then
+if [ -z "$ARTICLE_DATE" ]; then
   ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  if [ -z "$ARTICLE_DATE" ]; then
+    date -u +%Y-%m-%d > /tmp/today.txt
+    read ARTICLE_DATE < /tmp/today.txt
+  fi
 fi
 ORIGINAL_ARTICLE_DATE="$ARTICLE_DATE"
 
@@ -602,7 +611,9 @@ ORIGINAL_ARTICLE_DATE="$ARTICLE_DATE"
 MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/motions/data-download-manifest.md"
 DATE_DOCS_ANALYZED=0
 if [ -f "$MANIFEST_PATH" ]; then
-  DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+  grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/docs_a3.txt || echo 0 > /tmp/docs_a3.txt
+read DATE_DOCS_ANALYZED < /tmp/docs_a3.txt
+DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
 fi
 [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
 echo "📄 Motions analyzed for $ARTICLE_DATE: $DATE_DOCS_ANALYZED"
@@ -612,14 +623,17 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
   DATA_DATE=""
   for DAYS_BACK in 1 2 3 4 5 6 7; do
     # Cross-platform date arithmetic: GNU date (-d) on Linux/GitHub Actions, BSD date (-v) on macOS
-    LOOKBACK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
+    date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null > /tmp/lookback.txt || echo "" > /tmp/lookback.txt
+    read LOOKBACK_DATE < /tmp/lookback.txt
     [ -z "$LOOKBACK_DATE" ] && continue
     echo "🔍 Checking $LOOKBACK_DATE for analyzed motions..."
     # First, check if a manifest already exists with non-zero Documents Analyzed
     MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/motions/data-download-manifest.md"
     DATE_DOCS_ANALYZED=0
     if [ -f "$MANIFEST_PATH" ]; then
-      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+      grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/docs_a.txt || echo 0 > /tmp/docs_a.txt
+      read DATE_DOCS_ANALYZED < /tmp/docs_a.txt
+      DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
     fi
     [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
     if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
@@ -634,7 +648,9 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/motions/data-download-manifest.md"
     DATE_DOCS_ANALYZED=0
     if [ -f "$MANIFEST_PATH" ]; then
-      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+      grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/docs_a.txt || echo 0 > /tmp/docs_a.txt
+      read DATE_DOCS_ANALYZED < /tmp/docs_a.txt
+      DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
     fi
     [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
     if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
@@ -656,15 +672,18 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
   elif [ -n "$DATA_DATE" ]; then
     ARTICLE_DATE="$DATA_DATE"
   fi
-  echo "🗓️ Using analysis date: $ARTICLE_DATE (data sourced from: ${DATA_DATE:-$ARTICLE_DATE})"
+  echo "🗓️ Using analysis date: $ARTICLE_DATE (data sourced from: $DATA_DATE)"
   # Persist the resolved ARTICLE_DATE so downstream steps honor lookback selection
-  if [ -n "${GITHUB_ENV:-}" ]; then
+  if [ -n "$GITHUB_ENV" ]; then
     echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"
   fi
 fi
 
 # Report pending per-file analysis count for monitoring
-PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only --type motions 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
+npx tsx scripts/catalog-downloaded-data.ts --pending-only --type motions 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0" > /tmp/pending.json 2>/dev/null || echo '{"pendingAnalysis":0}' > /tmp/pending.json
+PENDING=0
+grep -oE '"pendingAnalysis":[0-9]+' /tmp/pending.json 2>/dev/null | grep -oE '[0-9]+' > /tmp/pending_num.txt || echo 0 > /tmp/pending_num.txt
+read PENDING < /tmp/pending_num.txt
 [ -z "$PENDING" ] && PENDING=0
 echo "📊 Total pending motion analysis files (all dates): $PENDING"
 ```
@@ -746,14 +765,18 @@ These files are committed alongside articles for human review and continuous imp
 
 ```bash
 # Idempotent: only set if not already resolved by lookback
-if [ -z "${ARTICLE_DATE:-}" ]; then
+if [ -z "$ARTICLE_DATE" ]; then
   ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  if [ -z "$ARTICLE_DATE" ]; then
+    date -u +%Y-%m-%d > /tmp/today.txt
+    read ARTICLE_DATE < /tmp/today.txt
+  fi
 fi
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/motions"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then
-  ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
+  find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l > /tmp/analysis_count.txt
+  read ANALYSIS_COUNT < /tmp/analysis_count.txt
 fi
 if [ "$ANALYSIS_COUNT" -gt 0 ]; then
   echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed (do NOT use safeoutputs___noop)"
@@ -770,7 +793,7 @@ fi
 
 ```bash
 ANALYSIS_SUBFOLDER="motions"
-ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
+ANALYSIS_BASE="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
 
 echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
 if [ -d "$ANALYSIS_BASE" ]; then

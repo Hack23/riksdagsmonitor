@@ -346,13 +346,15 @@ Before generating articles, check if articles already exist for the target date.
 # Resolve article date: use workflow_dispatch input when provided, fallback to UTC today
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 if [ -z "$ARTICLE_DATE" ]; then
-  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
 fi
 ARTICLE_TYPE="month-ahead"
 # Derive FORCE_GENERATION from the workflow_dispatch input
 FORCE_GENERATION="${{ github.event.inputs.force_generation || 'false' }}"
-EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}-en.html 2>/dev/null | wc -l)
-if [ "$EXISTING" -gt 0 ] && [ "${FORCE_GENERATION}" != "true" ]; then
+ls news/$ARTICLE_DATE-$ARTICLE_TYPE-en.html 2>/dev/null | wc -l > /tmp/existing_count.txt
+read EXISTING < /tmp/existing_count.txt
+if [ "$EXISTING" -gt 0 ] && [ "$FORCE_GENERATION" != "true" ]; then
   echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — article generation will be skipped (analysis still runs)"
   SKIP_ARTICLE_GENERATION=true
   echo "SKIP_ARTICLE_GENERATION=true" >> "$GITHUB_ENV"
@@ -442,29 +444,31 @@ get_calendar_events({ from: today, tom: nextMonth, limit: 200 })
 **CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data, runs all 9 analysis steps, and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`. Article generators will consume these for enrichment.
 
 ```bash
-ARTICLE_DATE=$(date -u +%Y-%m-%d)
+date -u +%Y-%m-%d > /tmp/today.txt
+read ARTICLE_DATE < /tmp/today.txt
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 # CRITICAL: Source mcp-setup.sh FIRST to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
 source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
-PIPE_EXIT=${PIPESTATUS[0]}
+PIPE_EXIT=$?  # AWF-safe: use set -o pipefail before pipeline
 if [ "$PIPE_EXIT" -ne 0 ]; then
   echo "❌ Pipeline failed — agent MUST diagnose and fix (read /tmp/pipeline-output.log)"
   tail -20 /tmp/pipeline-output.log
 fi
 echo "📊 Analysis artifacts for $ARTICLE_DATE:"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output"
-DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
+find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l > /tmp/data_count.txt
+read DATA_JSON_COUNT < /tmp/data_count.txt
 echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
 # Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
 # but this workflow needs them under analysis/daily/$DATE/month-ahead/
 # === Run Suffix Resolution (see SHARED_PROMPT_PATTERNS.md) ===
 BASE_SUBFOLDER="month-ahead"
 ANALYSIS_SUBFOLDER="$BASE_SUBFOLDER"
-if [ "${FORCE_GENERATION:-false}" != "true" ]; then
+if [ "$FORCE_GENERATION" != "true" ]; then
   _SUFFIX=1
   while [ -f "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/synthesis-summary.md" ]; do
     _SUFFIX=$((_SUFFIX + 1))
-    ANALYSIS_SUBFOLDER="${BASE_SUBFOLDER}-${_SUFFIX}"
+    ANALYSIS_SUBFOLDER="$BASE_SUBFOLDER-$_SUFFIX"
   done
 fi
 echo "📁 Analysis subfolder resolved: $ANALYSIS_SUBFOLDER"
@@ -491,7 +495,8 @@ fi
 **Weekly aggregation**: Since this is a monthly-scope workflow, also aggregate the current week's daily analyses for complete context:
 
 ```bash
-WEEK_LABEL=$(date -u +%G-W%V)
+date -u +%G-W%V > /tmp/week_label.txt
+read WEEK_LABEL < /tmp/week_label.txt
 echo "📅 Running weekly aggregation for $WEEK_LABEL..."
 source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --aggregate weekly --date "$WEEK_LABEL" || echo "⚠️ Weekly aggregation failed (non-blocking)"
 ls -la "analysis/weekly/$WEEK_LABEL/" 2>/dev/null || echo "⚠️ No weekly aggregation output"
@@ -508,16 +513,20 @@ These files are committed alongside articles for human review and continuous imp
 3. **ALWAYS commit analysis artifacts** regardless of whether articles will be generated:
 
 ```bash
-ARTICLE_DATE=$(date -u +%Y-%m-%d)
+date -u +%Y-%m-%d > /tmp/today.txt
+read ARTICLE_DATE < /tmp/today.txt
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/month-ahead"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then
-  ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
+  find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l > /tmp/analysis_count.txt
+  read ANALYSIS_COUNT < /tmp/analysis_count.txt
 fi
-WEEK_LABEL=$(date -u +%G-W%V)
+date -u +%G-W%V > /tmp/week_label.txt
+read WEEK_LABEL < /tmp/week_label.txt
 WEEKLY_DIR="analysis/weekly/$WEEK_LABEL"
 if [ -d "$WEEKLY_DIR" ]; then
-  WEEKLY_COUNT=$(find "$WEEKLY_DIR" -type f | wc -l)
+  find "$WEEKLY_DIR" -type f 2>/dev/null | wc -l > /tmp/weekly_count.txt
+  read WEEKLY_COUNT < /tmp/weekly_count.txt
   ANALYSIS_COUNT=$((ANALYSIS_COUNT + WEEKLY_COUNT))
 fi
 if [ "$ANALYSIS_COUNT" -gt 0 ]; then
@@ -535,7 +544,7 @@ fi
 
 ```bash
 ANALYSIS_SUBFOLDER="month-ahead"
-ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
+ANALYSIS_BASE="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
 
 echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
 if [ -d "$ANALYSIS_BASE" ]; then
@@ -633,7 +642,8 @@ if [ "$VALIDATION_EXIT" -ne 0 ]; then
 fi
 
 # HTMLHint validation with auto-fix for common nesting errors
-NEWS_FILES=$(find news -maxdepth 1 -name '*-*.html' | wc -l)
+find news -maxdepth 1 -name '*-*.html' 2>/dev/null | wc -l > /tmp/news_count.txt
+read NEWS_FILES < /tmp/news_count.txt
 if [ "$NEWS_FILES" -gt 0 ]; then
   if ! npx htmlhint "news/*-*.html" 2>/dev/null; then
     echo "⚠️ HTML validation errors found, attempting auto-fix..."
