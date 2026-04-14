@@ -4,10 +4,10 @@ description: Generates comprehensive evening analysis articles in core languages
 strict: false  # Allow custom network domain riksdag-regering-ai.onrender.com (trusted MCP server)
 on:
   schedule:
-    # Run weekday evenings at 18:00 UTC (19:00 CET)
+    # Run weekday evenings at 18:00 UTC (19:00 CET / 20:00 CEST)
     - cron: '0 18 * * 1-5'
-    # Saturday: weekly wrap-up summarizing the full parliamentary week
-    - cron: '0 16 * * 6-6'
+    # Saturday: weekly wrap-up summarizing the full parliamentary week at 16:00 UTC (17:00 CET / 18:00 CEST)
+    - cron: '0 16 * * 6-6'  # Intentional range notation: avoids the gh-aw schedule validation warning; do not simplify to `6`.
   workflow_dispatch:
     inputs:
       article_date:
