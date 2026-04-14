@@ -448,8 +448,10 @@ date -u +%Y-%m-%d > /tmp/today.txt
 read ARTICLE_DATE < /tmp/today.txt
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 # CRITICAL: Source mcp-setup.sh FIRST to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
-source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
-PIPE_EXIT=$?  # AWF-safe: use set -o pipefail before pipeline
+source scripts/mcp-setup.sh
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 > /tmp/pipeline-output.log 2>&1
+PIPE_EXIT=$?
+cat /tmp/pipeline-output.log
 if [ "$PIPE_EXIT" -ne 0 ]; then
   echo "❌ Pipeline failed — agent MUST diagnose and fix (read /tmp/pipeline-output.log)"
   tail -20 /tmp/pipeline-output.log

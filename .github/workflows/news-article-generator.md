@@ -475,6 +475,8 @@ if [ -z "$ARTICLE_DATE" ]; then
 fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 # CRITICAL: Source mcp-setup.sh FIRST to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
+# Determine requested article type early — needed for deep-inspection detection below
+RAW_REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
 # For deep-inspection, pass --document-ids to include targeted documents regardless of date
 PIPELINE_EXTRA_ARGS=""
 if echo "$RAW_REQUESTED_TYPE" | grep -q "deep-inspection"; then
@@ -484,8 +486,10 @@ if echo "$RAW_REQUESTED_TYPE" | grep -q "deep-inspection"; then
 read DI_DOC_IDS < /tmp/di_ids.txt
   [ -n "$DI_DOC_IDS" ] && PIPELINE_EXTRA_ARGS="--document-ids $DI_DOC_IDS"
 fi
-source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 $PIPELINE_EXTRA_ARGS 2>&1 | tee /tmp/pipeline-output.log
-PIPE_EXIT=$?  # AWF-safe: use set -o pipefail before pipeline
+source scripts/mcp-setup.sh
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 $PIPELINE_EXTRA_ARGS > /tmp/pipeline-output.log 2>&1
+PIPE_EXIT=$?
+cat /tmp/pipeline-output.log
 if [ "$PIPE_EXIT" -ne 0 ]; then
   echo "❌ Pipeline failed — agent MUST diagnose and fix (read /tmp/pipeline-output.log)"
   tail -20 /tmp/pipeline-output.log
@@ -497,7 +501,7 @@ read DATA_JSON_COUNT < /tmp/data_count.txt
 echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
 # Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
 # Determine target subfolder — use dedicated folder for multi-type/schedule runs to avoid mixing artifacts
-RAW_REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
+# RAW_REQUESTED_TYPE already set above (before deep-inspection check)
 _IS_SCHEDULE_OR_MULTI=false
 if [ -z "$RAW_REQUESTED_TYPE" ] || [[ "$RAW_REQUESTED_TYPE" == *,* ]]; then
   _IS_SCHEDULE_OR_MULTI=true
@@ -749,7 +753,7 @@ for ANALYSIS_DIR in analysis/daily/$ARTICLE_DATE/*/; do
     echo "📖 Reading: $ANALYSIS_DIR"
     for MD_FILE in "$ANALYSIS_DIR"/*.md; do
       if [ -f "$MD_FILE" ]; then
-        echo "--- $ANALYSIS_DIR/$MD_FILE ---"
+        echo "--- $MD_FILE ---"
         cat "$MD_FILE"
         echo ""
       fi

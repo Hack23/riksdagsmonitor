@@ -508,8 +508,9 @@ echo "📥 Downloading MCP data for $ARTICLE_DATE..."
 source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"
 npx tsx scripts/populate-analysis-data.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Data download had issues (non-blocking)"
 echo "📥 Running pre-article analysis pipeline..."
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
-PIPE_EXIT=$?  # AWF-safe: use set -o pipefail before pipeline
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 > /tmp/pipeline-output.log 2>&1
+PIPE_EXIT=$?
+cat /tmp/pipeline-output.log
 if [ "$PIPE_EXIT" -ne 0 ]; then
   echo "❌ Pipeline failed with exit code $PIPE_EXIT — agent MUST diagnose and fix (see Script Debugging Protocol)"
   tail -30 /tmp/pipeline-output.log
@@ -647,11 +648,10 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
 fi
 
 # Report pending per-file analysis count for monitoring
-npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0" > /tmp/pending.json 2>/dev/null || echo '{"pendingAnalysis":0}' > /tmp/pending.json
+npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq -r '.pendingAnalysis // 0' > /tmp/pending_num.txt 2>/dev/null || echo 0 > /tmp/pending_num.txt
 PENDING=0
-grep -oE '"pendingAnalysis":[0-9]+' /tmp/pending.json 2>/dev/null | grep -oE '[0-9]+' > /tmp/pending_num.txt || echo 0 > /tmp/pending_num.txt
-read PENDING < /tmp/pending_num.txt
-if [ -z "$PENDING" ]; then PENDING=0; fi
+read PENDING < /tmp/pending_num.txt || PENDING=0
+case "$PENDING" in ''|*[!0-9]*) PENDING=0 ;; esac
 echo "📊 Total pending per-file analysis files (all dates): $PENDING"
 ```
 

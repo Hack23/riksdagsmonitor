@@ -1914,14 +1914,13 @@ find "$ANALYSIS_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null | wc -l > /tmp
 read DAILY_MD_COUNT < /tmp/daily_md_count.txt
 find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l > /tmp/perfile_count.txt
 read PERFILE_COUNT < /tmp/perfile_count.txt
-# PERFILE_COUNT already set by find above
 echo "📊 Daily synthesis files: $DAILY_MD_COUNT"
 echo "📊 Per-file analysis files: $PERFILE_COUNT"
 
 # Check 1: Every daily synthesis file must contain at least 1 Mermaid diagram
 echo ""
 echo "--- Check 1: Mermaid diagrams in daily synthesis files ---"
-for f in $DAILY_MD_FILES; do
+for f in "$ANALYSIS_DIR"/*.md; do
   [ ! -f "$f" ] && continue
   grep -c '```mermaid' "$f" 2>/dev/null > /tmp/mermaid_count.txt || echo 0 > /tmp/mermaid_count.txt
   read MERMAID_COUNT < /tmp/mermaid_count.txt
@@ -1937,7 +1936,7 @@ done
 # Check 2: Mermaid diagrams must have color-coded style directives
 echo ""
 echo "--- Check 2: Color-coded style directives in Mermaid diagrams ---"
-for f in $DAILY_MD_FILES; do
+for f in "$ANALYSIS_DIR"/*.md; do
   [ ! -f "$f" ] && continue
   if grep -q '```mermaid' "$f" 2>/dev/null; then
     grep -c 'style.*fill:#' "$f" 2>/dev/null > /tmp/style_count.txt || echo 0 > /tmp/style_count.txt
@@ -1955,7 +1954,7 @@ done
 # Check 3: No [REQUIRED] placeholders remaining
 echo ""
 echo "--- Check 3: No [REQUIRED] placeholders ---"
-for f in $ALL_MD_FILES; do
+for f in "$ANALYSIS_DIR"/*.md "$ANALYSIS_DIR"/documents/*-analysis.md; do
   [ ! -f "$f" ] && continue
   grep -c '\[REQUIRED\]' "$f" 2>/dev/null > /tmp/req_count.txt || echo 0 > /tmp/req_count.txt
   read REQ_COUNT < /tmp/req_count.txt
@@ -1985,7 +1984,7 @@ fi
 # Check 5: Analysis files must have structured tables (not just plain prose)
 echo ""
 echo "--- Check 5: Structured tables in daily synthesis ---"
-for f in $DAILY_MD_FILES; do
+for f in "$ANALYSIS_DIR"/*.md; do
   [ ! -f "$f" ] && continue
   grep -c '^|' "$f" 2>/dev/null > /tmp/table_count2.txt || echo 0 > /tmp/table_count2.txt
   read TABLE_COUNT < /tmp/table_count2.txt
@@ -1999,7 +1998,7 @@ done
 echo ""
 echo "--- Check 6: Per-file analyses are NOT stubs (documents/ subdirectory) ---"
 STUB_PERFILE=0
-for f in $PERFILE_MD_FILES; do
+for f in "$ANALYSIS_DIR"/documents/*-analysis.md; do
   [ ! -f "$f" ] && continue
   BASENAME="$f"  # AWF-safe: use full path
   # Detect known stub/boilerplate patterns that scripts generate as placeholders

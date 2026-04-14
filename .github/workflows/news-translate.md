@@ -515,7 +515,8 @@ echo "=== Scanning earlier dates for missing translations ==="
 i=1
 while [ "$i" -le 30 ]; do
   date -u -d "$i days ago" +%Y-%m-%d 2>/dev/null > /tmp/scan_date.txt || echo "" > /tmp/scan_date.txt
-read SCAN_DATE < /tmp/scan_date.txt
+  read SCAN_DATE < /tmp/scan_date.txt
+  i=$((i+1))
   if [ -z "$SCAN_DATE" ]; then continue; fi
   if [ -n "$ARTICLE_TYPE" ]; then
     EN_GLOB="news/$SCAN_DATE-$ARTICLE_TYPE-*-en.html"
@@ -523,16 +524,16 @@ read SCAN_DATE < /tmp/scan_date.txt
     EN_GLOB="news/$SCAN_DATE-*-en.html"
   fi
   ls $EN_GLOB 2>/dev/null > /tmp/en_files.txt || true
-EN_FILES=""
-if [ -s /tmp/en_files.txt ]; then
-  while IFS= read -r _efline; do
-    EN_FILES="$EN_FILES $_efline"
-  done < /tmp/en_files.txt
-fi
+  EN_FILES=""
+  if [ -s /tmp/en_files.txt ]; then
+    while IFS= read -r _efline; do
+      EN_FILES="$EN_FILES $_efline"
+    done < /tmp/en_files.txt
+  fi
   if [ -z "$EN_FILES" ]; then continue; fi
   for EN_FILE in $EN_FILES; do
     basename "$EN_FILE" .html | sed "s/-en$//" > /tmp/slug.txt
-read SLUG < /tmp/slug.txt
+    read SLUG < /tmp/slug.txt
     MISSING=""
     for lang in $LANGS; do
       test -f "news/$SLUG-$lang.html" || MISSING="$MISSING $lang"
@@ -541,7 +542,6 @@ read SLUG < /tmp/slug.txt
       echo "EARLIER NEEDS TRANSLATION: $SLUG -> $MISSING"
     fi
   done
-  i=$((i+1))
 done
 echo "=== End scan ==="
 ```

@@ -447,7 +447,7 @@ fi
 3. **For EVERY document**: create `{dok_id}-analysis.md` with ALL 6 analytical lenses, ≥1 color-coded Mermaid with `style` directives, evidence citations with dok_id/vote counts/party names
 4. **Create/rewrite ALL 7 synthesis files** in `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` — exact template structure, no `[REQUIRED]` placeholders
 5. **Run quality gate** (Step D above). Fix ALL failures before continuing.
-6. **Commit data AND analysis**: `git add analysis/data/ "analysis/daily/$ARTICLE_DATE/realtime-$HHMM/"` (AWF: use `$VAR` not `$VAR`)
+6. **Commit data AND analysis**: `git add analysis/data/ "analysis/daily/$ARTICLE_DATE/realtime-$HHMM/"` (AWF: use `$VAR` not `${VAR}`)
 
 > ❌ FAILURE MODES: skipping analysis; plain prose without tables/diagrams; stubs with 0 evidence citations; missing dok_id; missing color-coded Mermaid; `[REQUIRED]` placeholders; SWOT without evidence tables; < 15 min analysis.
 
