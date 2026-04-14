@@ -222,11 +222,11 @@ steps:
       ARTICLE_DATE_INPUT: ${{ github.event.inputs.article_date }}
       GH_REPOSITORY: ${{ github.repository }}
     run: |
-      ARTICLE_DATE="${ARTICLE_DATE_INPUT:-}"
+      ARTICLE_DATE="$ARTICLE_DATE_INPUT"
       if [ -z "$ARTICLE_DATE" ]; then
         ARTICLE_DATE=$(date -u '+%Y-%m-%d')
       fi
-      CONTENT_BRANCH_PREFIX="news/content/${ARTICLE_DATE}/"
+      CONTENT_BRANCH_PREFIX="news/content/$ARTICLE_DATE/"
       GH_ERROR_LOG=$(mktemp)
       JQ_ERROR_LOG=$(mktemp)
       chmod 600 "$GH_ERROR_LOG" "$JQ_ERROR_LOG"
@@ -276,11 +276,11 @@ steps:
     env:
       ARTICLE_DATE_INPUT: ${{ github.event.inputs.article_date }}
     run: |
-      ARTICLE_DATE="${ARTICLE_DATE_INPUT:-}"
+      ARTICLE_DATE="$ARTICLE_DATE_INPUT"
       if [ -z "$ARTICLE_DATE" ]; then
         ARTICLE_DATE=$(date -u '+%Y-%m-%d')
       fi
-      EN_SOURCE_COUNT=$(ls news/${ARTICLE_DATE}-*-en.html 2>/dev/null | wc -l)
+      EN_SOURCE_COUNT=$(ls news/$ARTICLE_DATE-*-en.html 2>/dev/null | wc -l)
       if [ "$EN_SOURCE_COUNT" -eq 0 ]; then
         echo "⚠ No EN source articles found for $ARTICLE_DATE"
         echo "   Agent will scan older dates for untranslated articles."
@@ -512,18 +512,28 @@ If today is deferred, has no sources, or all today's articles are fully translat
 
 ```bash
 echo "=== Scanning earlier dates for missing translations ==="
-for i in $(seq 1 30); do
-  SCAN_DATE=$(date -u -d "$i days ago" +%Y-%m-%d 2>/dev/null || date -u -v-${i}d +%Y-%m-%d 2>/dev/null)
+i=1
+while [ "$i" -le 30 ]; do
+  date -u -d "$i days ago" +%Y-%m-%d 2>/dev/null > /tmp/scan_date.txt || echo "" > /tmp/scan_date.txt
+  read SCAN_DATE < /tmp/scan_date.txt
+  i=$((i+1))
   if [ -z "$SCAN_DATE" ]; then continue; fi
   if [ -n "$ARTICLE_TYPE" ]; then
     EN_GLOB="news/$SCAN_DATE-$ARTICLE_TYPE-*-en.html"
   else
     EN_GLOB="news/$SCAN_DATE-*-en.html"
   fi
-  EN_FILES=$(ls $EN_GLOB 2>/dev/null || true)
+  ls $EN_GLOB 2>/dev/null > /tmp/en_files.txt || true
+  EN_FILES=""
+  if [ -s /tmp/en_files.txt ]; then
+    while IFS= read -r _efline; do
+      EN_FILES="$EN_FILES $_efline"
+    done < /tmp/en_files.txt
+  fi
   if [ -z "$EN_FILES" ]; then continue; fi
   for EN_FILE in $EN_FILES; do
-    SLUG=$(basename "$EN_FILE" .html | sed "s/-en$//")
+    basename "$EN_FILE" .html | sed "s/-en$//" > /tmp/slug.txt
+    read SLUG < /tmp/slug.txt
     MISSING=""
     for lang in $LANGS; do
       test -f "news/$SLUG-$lang.html" || MISSING="$MISSING $lang"

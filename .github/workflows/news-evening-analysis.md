@@ -266,7 +266,8 @@ Uses `memory/news-generation` branch. START: read `memory/news-generation/last-r
 ## ⏱️ Time Budget (45 minutes)
 
 ```bash
-START_TIME=$(date +%s)
+date +%s > /tmp/start_time.txt
+read START_TIME < /tmp/start_time.txt
 ```
 
 | Phase | Minutes | Action |
@@ -352,11 +353,13 @@ Run validation checks before committing.
 
 ```bash
 echo "=== Date Validation Check ==="
-START_TIME=$(date +%s)
+date +%s > /tmp/start_time.txt
+read START_TIME < /tmp/start_time.txt
 echo "START_TIME=$START_TIME" > /tmp/gh-aw/agent/timing.env
 date -u "+Current UTC: %A %Y-%m-%d %H:%M:%S"
 date +"%Z: %A %Y-%m-%d %H:%M:%S"
-DAY_OF_WEEK=$(date -u +"%u")
+date -u +"%u" > /tmp/dow.txt
+read DAY_OF_WEEK < /tmp/dow.txt
 echo "Day of week: $DAY_OF_WEEK (6=Saturday weekly wrap-up)"
 echo "============================"
 ```
@@ -372,10 +375,12 @@ Before generating articles, check if articles already exist for the target date.
 # Resolve article date: use workflow_dispatch input when provided, fallback to UTC today
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 if [ -z "$ARTICLE_DATE" ]; then
-  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
 fi
 ARTICLE_TYPE="evening-analysis"
-EXISTING=$(ls news/${ARTICLE_DATE}-${ARTICLE_TYPE}-en.html 2>/dev/null | wc -l)
+ls news/$ARTICLE_DATE-$ARTICLE_TYPE-en.html 2>/dev/null | wc -l > /tmp/existing_count.txt
+read EXISTING < /tmp/existing_count.txt
 if [ "$EXISTING" -gt 0 ]; then
   echo "📋 Articles for $ARTICLE_DATE/$ARTICLE_TYPE already exist — article generation will be skipped (analysis still runs)"
   SKIP_ARTICLE_GENERATION=true
@@ -491,17 +496,21 @@ Download all available parliamentary data using the populate script. Scripts han
 
 ```bash
 # Idempotent: only set if not already resolved by lookback
-if [ -z "${ARTICLE_DATE:-}" ]; then
+if [ -z "$ARTICLE_DATE" ]; then
   ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  if [ -z "$ARTICLE_DATE" ]; then
+    date -u +%Y-%m-%d > /tmp/today.txt
+    read ARTICLE_DATE < /tmp/today.txt
+  fi
 fi
 echo "📥 Downloading MCP data for $ARTICLE_DATE..."
 # CRITICAL: Source mcp-setup.sh to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
-source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL:-NOT SET}"
+source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"
 npx tsx scripts/populate-analysis-data.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Data download had issues (non-blocking)"
 echo "📥 Running pre-article analysis pipeline..."
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
-PIPE_EXIT=${PIPESTATUS[0]}
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 > /tmp/pipeline-output.log 2>&1
+PIPE_EXIT=$?
+cat /tmp/pipeline-output.log
 if [ "$PIPE_EXIT" -ne 0 ]; then
   echo "❌ Pipeline failed with exit code $PIPE_EXIT — agent MUST diagnose and fix (see Script Debugging Protocol)"
   tail -30 /tmp/pipeline-output.log
@@ -510,21 +519,23 @@ echo "✅ Data downloaded to analysis/data/"
 # Verify actual data was downloaded
 MANIFEST_DOCS=0
 if [ -f "analysis/daily/$ARTICLE_DATE/data-download-manifest.md" ]; then
-  MANIFEST_DOCS=$(grep -E '^\*\*Documents Analyzed\*\*' "analysis/daily/$ARTICLE_DATE/data-download-manifest.md" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+  grep -E '^\*\*Documents Analyzed\*\*' "analysis/daily/$ARTICLE_DATE/data-download-manifest.md" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/manifest_docs.txt || echo 0 > /tmp/manifest_docs.txt
+read MANIFEST_DOCS < /tmp/manifest_docs.txt
 fi
 [ -z "$MANIFEST_DOCS" ] && MANIFEST_DOCS=0
-DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
+find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l > /tmp/data_count.txt
+read DATA_JSON_COUNT < /tmp/data_count.txt
 echo "📊 Documents in manifest: $MANIFEST_DOCS, JSON data files: $DATA_JSON_COUNT"
 # Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
 # but this workflow needs them under analysis/daily/$DATE/evening-analysis/
 # === Run Suffix Resolution (see SHARED_PROMPT_PATTERNS.md) ===
 BASE_SUBFOLDER="evening-analysis"
 ANALYSIS_SUBFOLDER="$BASE_SUBFOLDER"
-if [ "${FORCE_GENERATION:-false}" != "true" ]; then
+if [ "$FORCE_GENERATION" != "true" ]; then
   _SUFFIX=1
   while [ -f "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/synthesis-summary.md" ]; do
     _SUFFIX=$((_SUFFIX + 1))
-    ANALYSIS_SUBFOLDER="${BASE_SUBFOLDER}-${_SUFFIX}"
+    ANALYSIS_SUBFOLDER="$BASE_SUBFOLDER-$_SUFFIX"
   done
 fi
 echo "📁 Analysis subfolder resolved: $ANALYSIS_SUBFOLDER"
@@ -554,9 +565,12 @@ fi
 
 ```bash
 # Idempotent: only set if not already resolved by lookback
-if [ -z "${ARTICLE_DATE:-}" ]; then
+if [ -z "$ARTICLE_DATE" ]; then
   ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  if [ -z "$ARTICLE_DATE" ]; then
+    date -u +%Y-%m-%d > /tmp/today.txt
+    read ARTICLE_DATE < /tmp/today.txt
+  fi
 fi
 ORIGINAL_ARTICLE_DATE="$ARTICLE_DATE"
 
@@ -564,7 +578,9 @@ ORIGINAL_ARTICLE_DATE="$ARTICLE_DATE"
 MANIFEST_PATH="analysis/daily/$ARTICLE_DATE/data-download-manifest.md"
 DATE_DOCS_ANALYZED=0
 if [ -f "$MANIFEST_PATH" ]; then
-  DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+  grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/docs_a3.txt || echo 0 > /tmp/docs_a3.txt
+read DATE_DOCS_ANALYZED < /tmp/docs_a3.txt
+DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
 fi
 [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
 echo "📄 Documents analyzed for $ARTICLE_DATE: $DATE_DOCS_ANALYZED"
@@ -574,14 +590,17 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
   DATA_DATE=""
   for DAYS_BACK in 1 2 3 4 5 6 7; do
     # Cross-platform date arithmetic: GNU date (-d) on Linux/GitHub Actions, BSD date (-v) on macOS
-    LOOKBACK_DATE=$(date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null || date -u -v-${DAYS_BACK}d -j -f "%Y-%m-%d" "$ARTICLE_DATE" +%Y-%m-%d 2>/dev/null)
+    date -u -d "$ARTICLE_DATE - $DAYS_BACK days" +%Y-%m-%d 2>/dev/null > /tmp/lookback.txt || echo "" > /tmp/lookback.txt
+    read LOOKBACK_DATE < /tmp/lookback.txt
     [ -z "$LOOKBACK_DATE" ] && continue
     echo "🔍 Checking $LOOKBACK_DATE for analyzed data..."
     # First, check if a manifest already exists with non-zero Documents Analyzed
     MANIFEST_PATH="analysis/daily/$LOOKBACK_DATE/data-download-manifest.md"
     DATE_DOCS_ANALYZED=0
     if [ -f "$MANIFEST_PATH" ]; then
-      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+      grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/docs_a.txt || echo 0 > /tmp/docs_a.txt
+      read DATE_DOCS_ANALYZED < /tmp/docs_a.txt
+      DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
     fi
     [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
     if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
@@ -596,7 +615,9 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
     # Re-check manifest after running analysis
     DATE_DOCS_ANALYZED=0
     if [ -f "$MANIFEST_PATH" ]; then
-      DATE_DOCS_ANALYZED=$(grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" | sed -E 's/^\*\*Documents Analyzed\*\* *: *([0-9]+).*/\1/' || echo 0)
+      grep -E '^\*\*Documents Analyzed\*\*' "$MANIFEST_PATH" 2>/dev/null | grep -oE '[0-9]+' | head -1 > /tmp/docs_a.txt || echo 0 > /tmp/docs_a.txt
+      read DATE_DOCS_ANALYZED < /tmp/docs_a.txt
+      DATE_DOCS_ANALYZED=$DATE_DOCS_ANALYZED
     fi
     [ -z "$DATE_DOCS_ANALYZED" ] && DATE_DOCS_ANALYZED=0
     if [ "$DATE_DOCS_ANALYZED" -gt 0 ]; then
@@ -618,17 +639,19 @@ if [ "$DATE_DOCS_ANALYZED" -eq 0 ]; then
   elif [ -n "$DATA_DATE" ]; then
     ARTICLE_DATE="$DATA_DATE"
   fi
-  echo "🗓️ Using analysis date: $ARTICLE_DATE (data sourced from: ${DATA_DATE:-$ARTICLE_DATE})"
+  echo "🗓️ Using analysis date: $ARTICLE_DATE (data sourced from: $DATA_DATE)"
 
   # Persist selected ARTICLE_DATE for downstream steps
-  if [ -n "${GITHUB_ENV:-}" ]; then
+  if [ -n "$GITHUB_ENV" ]; then
     echo "ARTICLE_DATE=$ARTICLE_DATE" >> "$GITHUB_ENV"
   fi
 fi
 
 # Report pending per-file analysis count for monitoring
-PENDING=$(npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq '.pendingAnalysis // 0' 2>/dev/null || echo "0")
-if [ -z "$PENDING" ]; then PENDING=0; fi
+npx tsx scripts/catalog-downloaded-data.ts --pending-only 2>/dev/null | jq -r '.pendingAnalysis // 0' > /tmp/pending_num.txt 2>/dev/null || echo 0 > /tmp/pending_num.txt
+PENDING=0
+read PENDING < /tmp/pending_num.txt || PENDING=0
+case "$PENDING" in ''|*[!0-9]*) PENDING=0 ;; esac
 echo "📊 Total pending per-file analysis files (all dates): $PENDING"
 ```
 
@@ -741,11 +764,12 @@ After per-file analyses, rewrite ALL daily files in `analysis/daily/$ARTICLE_DAT
 > 🚨 **BLOCKING**: Do NOT proceed to article generation or commit until this quality gate passes. If it fails, go back and fix analysis files.
 
 ```bash
-if [ -z "${ARTICLE_DATE:-}" ]; then
+if [ -z "$ARTICLE_DATE" ]; then
   if [ -n "${{ github.event.inputs.article_date }}" ]; then
     ARTICLE_DATE="${{ github.event.inputs.article_date }}"
   else
-    ARTICLE_DATE=$(date -u +%Y-%m-%d)
+    date -u +%Y-%m-%d > /tmp/today.txt
+    read ARTICLE_DATE < /tmp/today.txt
   fi
 fi
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/evening-analysis"
@@ -755,39 +779,43 @@ WARN_COUNT=0
 
 echo "=== 🔍 Analysis Quality Gate Check (evening-analysis) ==="
 
-DAILY_MD_FILES=$(find "$ANALYSIS_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null)
-PERFILE_MD_FILES=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null)
-ALL_MD_FILES=$(find "$ANALYSIS_DIR" -name "*.md" -type f 2>/dev/null)
-echo "📊 Daily: $(echo "$DAILY_MD_FILES" | grep -c '.' 2>/dev/null || true) | Per-file: $(echo "$PERFILE_MD_FILES" | grep -c '.' 2>/dev/null || true)"
+find "$ANALYSIS_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null | wc -l > /tmp/daily_count.txt
+read DAILY_COUNT < /tmp/daily_count.txt
+find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l > /tmp/perfile_count.txt
+read PERFILE_COUNT < /tmp/perfile_count.txt
+echo "📊 Daily: $DAILY_COUNT | Per-file: $PERFILE_COUNT"
 
 # Check 1: Daily synthesis Mermaid diagrams
-for f in $DAILY_MD_FILES; do
+for f in "$ANALYSIS_DIR"/*.md; do
   [ ! -f "$f" ] && continue
-  MERMAID_COUNT=$(grep -c '```mermaid' "$f" 2>/dev/null || true)
-  if [ "${MERMAID_COUNT:-0}" -eq 0 ]; then
-    echo "❌ FAIL: $(basename "$f") has NO Mermaid diagrams"
+  grep -c '```mermaid' "$f" 2>/dev/null > /tmp/mermaid_count.txt || echo 0 > /tmp/mermaid_count.txt
+  read MERMAID_COUNT < /tmp/mermaid_count.txt
+  if [ "$MERMAID_COUNT" -eq 0 ]; then
+    echo "❌ FAIL: $f has NO Mermaid diagrams"
     QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
   fi
 done
 
 # Check 2: Color-coded style directives in Mermaid diagrams
-for f in $DAILY_MD_FILES; do
+for f in "$ANALYSIS_DIR"/*.md; do
   [ ! -f "$f" ] && continue
   if grep -q '```mermaid' "$f" 2>/dev/null; then
-    STYLE_COUNT=$(grep -c 'style.*fill:#' "$f" 2>/dev/null || true)
-    if [ "${STYLE_COUNT:-0}" -eq 0 ]; then
-      echo "❌ FAIL: $(basename "$f") Mermaid has NO color-coded style directives"
+    grep -c 'style.*fill:#' "$f" 2>/dev/null > /tmp/style_count.txt || echo 0 > /tmp/style_count.txt
+    read STYLE_COUNT < /tmp/style_count.txt
+    if [ "$STYLE_COUNT" -eq 0 ]; then
+      echo "❌ FAIL: $f Mermaid has NO color-coded style directives"
       QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
     fi
   fi
 done
 
 # Check 3: No [REQUIRED] placeholders
-for f in $ALL_MD_FILES; do
+for f in "$ANALYSIS_DIR"/*.md "$ANALYSIS_DIR"/documents/*-analysis.md; do
   [ ! -f "$f" ] && continue
-  REQ_COUNT=$(grep -c '\[REQUIRED\]' "$f" 2>/dev/null || true)
-  if [ "${REQ_COUNT:-0}" -gt 0 ]; then
-    echo "❌ FAIL: $(basename "$f") has $REQ_COUNT unfilled [REQUIRED] placeholders"
+  grep -c '\[REQUIRED\]' "$f" 2>/dev/null > /tmp/req_count.txt || echo 0 > /tmp/req_count.txt
+  read REQ_COUNT < /tmp/req_count.txt
+  if [ "$REQ_COUNT" -gt 0 ]; then
+    echo "❌ FAIL: $f has $REQ_COUNT unfilled [REQUIRED] placeholders"
     QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
   fi
 done
@@ -795,46 +823,58 @@ done
 # Check 4: SWOT evidence tables with dok_id
 SWOT_FILE="$ANALYSIS_DIR/swot-analysis.md"
 if [ -f "$SWOT_FILE" ]; then
-  TABLE_COUNT=$(grep -c '|.*dok_id\||.*Evidence' "$SWOT_FILE" 2>/dev/null || true)
-  if [ "${TABLE_COUNT:-0}" -eq 0 ]; then
+  grep -c '|.*dok_id\||.*Evidence' "$SWOT_FILE" 2>/dev/null > /tmp/table_count.txt || echo 0 > /tmp/table_count.txt
+  read TABLE_COUNT < /tmp/table_count.txt
+  if [ "$TABLE_COUNT" -eq 0 ]; then
     echo "❌ FAIL: swot-analysis.md has NO evidence tables with dok_id"
     QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
   fi
 fi
 
 # Check 5: Structured tables in daily synthesis (not just plain prose)
-for f in $DAILY_MD_FILES; do
+for f in "$ANALYSIS_DIR"/*.md; do
   [ ! -f "$f" ] && continue
-  TABLE_COUNT=$(grep -c '^|' "$f" 2>/dev/null || true)
-  if [ "${TABLE_COUNT:-0}" -lt 3 ]; then
-    echo "⚠️ WARNING: $(basename "$f") has only $TABLE_COUNT table rows — templates require structured tables"
+  grep -c '^|' "$f" 2>/dev/null > /tmp/table_count2.txt || echo 0 > /tmp/table_count2.txt
+  read TABLE_COUNT < /tmp/table_count2.txt
+  if [ "$TABLE_COUNT" -lt 3 ]; then
+    echo "⚠️ WARNING: $f has only $TABLE_COUNT table rows — templates require structured tables"
     WARN_COUNT=$((WARN_COUNT + 1))
   fi
 done
 
 # Check 6: Per-file analyses must NOT be stubs
 STUB_COUNT=0
-for f in $PERFILE_MD_FILES; do
+for f in "$ANALYSIS_DIR"/documents/*-analysis.md; do
   [ ! -f "$f" ] && continue
   STUB_SCORE=0
-  [ "$(grep -cE '_No (strengths|weaknesses|opportunities|threats) identified_' "$f" 2>/dev/null || true)" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
-  [ "$(grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business\|this document has low newsworthiness\|this document must be assessed for' "$f" 2>/dev/null || true)" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
-  [ "$(grep -c '```mermaid' "$f" 2>/dev/null || true)" -eq 0 ] && STUB_SCORE=$((STUB_SCORE + 1))
-  [ "$(grep -c '^|' "$f" 2>/dev/null || true)" -lt 2 ] && STUB_SCORE=$((STUB_SCORE + 1))
-  if [ "${STUB_SCORE:-0}" -ge 3 ]; then
-    echo "❌ FAIL: $(basename "$f") is a stub (score=$STUB_SCORE) — MUST be replaced with real analysis"
+  grep -cE '_No (strengths|weaknesses|opportunities|threats) identified_' "$f" 2>/dev/null > /tmp/stub_es.txt || echo 0 > /tmp/stub_es.txt
+  read STUB_ES < /tmp/stub_es.txt
+  [ "$STUB_ES" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
+  grep -c 'this document requires assessment of\|this document warrants scrutiny for\|this document may affect business\|this document has low newsworthiness\|this document must be assessed for' "$f" 2>/dev/null > /tmp/stub_bs.txt || echo 0 > /tmp/stub_bs.txt
+  read STUB_BS < /tmp/stub_bs.txt
+  [ "$STUB_BS" -ge 2 ] && STUB_SCORE=$((STUB_SCORE + 2))
+  grep -c '```mermaid' "$f" 2>/dev/null > /tmp/stub_mc.txt || echo 0 > /tmp/stub_mc.txt
+  read STUB_MC < /tmp/stub_mc.txt
+  [ "$STUB_MC" -eq 0 ] && STUB_SCORE=$((STUB_SCORE + 1))
+  grep -c '^|' "$f" 2>/dev/null > /tmp/stub_tc.txt || echo 0 > /tmp/stub_tc.txt
+  read STUB_TC < /tmp/stub_tc.txt
+  [ "$STUB_TC" -lt 2 ] && STUB_SCORE=$((STUB_SCORE + 1))
+  if [ "$STUB_SCORE" -ge 3 ]; then
+    echo "❌ FAIL: $f is a stub (score=$STUB_SCORE) — MUST be replaced with real analysis"
     STUB_COUNT=$((STUB_COUNT + 1)); QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
   fi
 done
 
 # Check 7: Coverage — every JSON must have an analysis
 if [ -d "$ANALYSIS_DIR/documents" ]; then
-  JSON_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*.json" -type f 2>/dev/null | wc -l)
-  ANALYSIS_MD_COUNT=$(find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l)
-  if [ "${JSON_COUNT:-0}" -gt 0 ] && [ "${ANALYSIS_MD_COUNT:-0}" -lt "${JSON_COUNT:-0}" ]; then
+  find "$ANALYSIS_DIR/documents" -name "*.json" -type f 2>/dev/null | wc -l > /tmp/json_count.txt
+  read JSON_COUNT < /tmp/json_count.txt
+  find "$ANALYSIS_DIR/documents" -name "*-analysis.md" -type f 2>/dev/null | wc -l > /tmp/amd_count.txt
+  read ANALYSIS_MD_COUNT < /tmp/amd_count.txt
+  if [ "$JSON_COUNT" -gt 0 ] && [ "$ANALYSIS_MD_COUNT" -lt "$JSON_COUNT" ]; then
     echo "❌ FAIL: Only $ANALYSIS_MD_COUNT analysis files for $JSON_COUNT data files"
     QUALITY_PASS=false; FAIL_COUNT=$((FAIL_COUNT + 1))
-  elif [ "${JSON_COUNT:-0}" -gt 0 ]; then
+  elif [ "$JSON_COUNT" -gt 0 ]; then
     echo "✅ PASS: $ANALYSIS_MD_COUNT analysis files for $JSON_COUNT data files"
   fi
 fi
@@ -846,7 +886,7 @@ if [ "$QUALITY_PASS" = "true" ]; then
   echo "✅ Quality gate PASSED — proceed to article generation"
 else
   echo "❌ Quality gate FAILED ($FAIL_COUNT failures) — fix analysis files before proceeding"
-  [ "${STUB_COUNT:-0}" -gt 0 ] && echo "🚨 $STUB_COUNT per-file analyses are stubs — read analysis/templates/per-file-political-intelligence.md and rewrite"
+  [ "$STUB_COUNT" -gt 0 ] && echo "🚨 $STUB_COUNT per-file analyses are stubs — read analysis/templates/per-file-political-intelligence.md and rewrite"
   echo "📌 For per-file analyses: read analysis/templates/per-file-political-intelligence.md"
   echo "📌 For daily synthesis: read the corresponding template in analysis/templates/"
   echo "📌 Reference good examples: SWOT.md, THREAT_MODEL.md"
@@ -877,12 +917,16 @@ fi
 
 ```bash
 # Idempotent: only set if not already resolved by lookback
-if [ -z "${ARTICLE_DATE:-}" ]; then
+if [ -z "$ARTICLE_DATE" ]; then
   ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-  [ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  if [ -z "$ARTICLE_DATE" ]; then
+    date -u +%Y-%m-%d > /tmp/today.txt
+    read ARTICLE_DATE < /tmp/today.txt
+  fi
 fi
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/evening-analysis"
-NEW_ANALYSIS_COUNT=$(git status --porcelain -- analysis/data/ "$ANALYSIS_DIR" 2>/dev/null | wc -l)
+git status --porcelain -- analysis/data/ "$ANALYSIS_DIR" 2>/dev/null | wc -l > /tmp/new_analysis_count.txt
+read NEW_ANALYSIS_COUNT < /tmp/new_analysis_count.txt
 if [ "$NEW_ANALYSIS_COUNT" -gt 0 ]; then
   echo "📊 Found $NEW_ANALYSIS_COUNT new/modified analysis artifacts — these MUST be committed (do NOT use safeoutputs___noop)"
 else
@@ -899,10 +943,13 @@ fi
 source /tmp/gh-aw/agent/timing.env 2>/dev/null || true
 if [ -z "$START_TIME" ]; then
   echo "⚠️ WARNING: START_TIME not set — timing unreliable"
-  START_TIME=$(date +%s)
+  date +%s > /tmp/start_time.txt
+  read START_TIME < /tmp/start_time.txt
 fi
-ELAPSED=$(( ($(date +%s) - $START_TIME) / 60 ))
-echo "Elapsed: ${ELAPSED} minutes"
+date +%s > /tmp/now_ts.txt
+read AW_NOW_TS < /tmp/now_ts.txt
+ELAPSED=$(( (AW_NOW_TS - START_TIME) / 60 ))
+echo "Elapsed: $ELAPSED minutes"
 if [ "$ELAPSED" -ge 35 ]; then
   echo "⚠️ TIME CRITICAL: Skip data gathering, call safe output NOW"
 fi
@@ -951,14 +998,14 @@ get_calendar_events({ from: "<tomorrow>", tom: "<tomorrow>", limit: 50 })
 
 ```bash
 ANALYSIS_SUBFOLDER="evening-analysis"
-ANALYSIS_BASE="analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}"
+ANALYSIS_BASE="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
 
 # Step 1: Read own analysis
 echo "📖 Reading ALL analysis files from $ANALYSIS_BASE..."
 if [ -d "$ANALYSIS_BASE" ]; then
   for MD_FILE in "$ANALYSIS_BASE"/*.md; do
     if [ -f "$MD_FILE" ]; then
-      echo "--- Reading: $(basename $MD_FILE) ---"
+      echo "--- Reading: $MD_FILE ---"
       cat "$MD_FILE"
       echo ""
     fi
@@ -966,7 +1013,7 @@ if [ -d "$ANALYSIS_BASE" ]; then
   if [ -d "$ANALYSIS_BASE/documents" ]; then
     for DOC_FILE in "$ANALYSIS_BASE/documents"/*.md; do
       if [ -f "$DOC_FILE" ]; then
-        echo "--- Per-doc: $(basename $DOC_FILE) ---"
+        echo "--- Per-doc: $DOC_FILE ---"
         cat "$DOC_FILE"
         echo ""
       fi
@@ -978,12 +1025,13 @@ fi
 echo "🔍 Cross-referencing sibling analysis types for $ARTICLE_DATE..."
 for SIBLING_DIR in analysis/daily/$ARTICLE_DATE/*/; do
   if [ -d "$SIBLING_DIR" ]; then
-    SIBLING_TYPE="$(basename $SIBLING_DIR)"
+    echo "$SIBLING_DIR" | sed 's|/$||' | sed 's|.*/||' > /tmp/sibling_type.txt
+    read SIBLING_TYPE < /tmp/sibling_type.txt
     if [ "$SIBLING_TYPE" = "$ANALYSIS_SUBFOLDER" ]; then continue; fi
     echo "📖 Cross-referencing: $SIBLING_TYPE"
     for SIBLING_FILE in "$SIBLING_DIR/synthesis-summary.md" "$SIBLING_DIR/significance-scoring.md" "$SIBLING_DIR/stakeholder-perspectives.md"; do
       if [ -f "$SIBLING_FILE" ]; then
-        echo "--- Sibling ($SIBLING_TYPE): $(basename $SIBLING_FILE) ---"
+        echo "--- Sibling ($SIBLING_TYPE): $SIBLING_FILE ---"
         cat "$SIBLING_FILE"
         echo ""
       fi
@@ -991,7 +1039,8 @@ for SIBLING_DIR in analysis/daily/$ARTICLE_DATE/*/; do
   fi
 done
 
-TOTAL_FILES=$(find "analysis/daily/$ARTICLE_DATE" -name "*.md" -type f 2>/dev/null | wc -l)
+find "analysis/daily/$ARTICLE_DATE" -name "*.md" -type f 2>/dev/null | wc -l > /tmp/total_files.txt
+read TOTAL_FILES < /tmp/total_files.txt
 echo "✅ Read $TOTAL_FILES total analysis files across all types — evening article MUST synthesize these findings"
 ```
 
@@ -1071,9 +1120,12 @@ For each language in the resolved `LANG_ARG` list:
 
 **After all languages or time cutoff:**
 ```bash
-TODAY="$(date +%Y-%m-%d)"
-NEW_ARTICLES="$(git status --porcelain -- news/ | awk '{print $2}' | grep "${TODAY}-" || true)"
-echo "Generated: $(echo "$NEW_ARTICLES" | wc -l) articles"
+date +%Y-%m-%d > /tmp/today.txt
+read TODAY < /tmp/today.txt
+git status --porcelain -- news/ | awk '{print $2}' | grep "$TODAY-" > /tmp/new-articles.txt || true
+wc -l < /tmp/new-articles.txt > /tmp/new-articles-count.txt
+read ARTICLE_COUNT < /tmp/new-articles-count.txt
+echo "Generated: $ARTICLE_COUNT articles"
 ```
 
 ## Step 3b: AI Title, Meta Description & Analysis References (v5.0 — Analysis-Driven)
@@ -1106,7 +1158,7 @@ echo "Generated: $(echo "$NEW_ARTICLES" | wc -l) articles"
 ```bash
 for FILE in news/$ARTICLE_DATE-evening-analysis-*.html; do
   if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
-    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
+    echo "🔴 MISSING analysis-references in: $FILE — MUST FIX NOW"
   fi
 done
 ```
@@ -1140,7 +1192,8 @@ if [ "$VALIDATION_EXIT" -ne 0 ]; then
 fi
 
 # HTMLHint validation with auto-fix
-NEWS_FILES=$(find news -maxdepth 1 -name '*-*.html' | wc -l)
+find news -maxdepth 1 -name '*-*.html' 2>/dev/null | wc -l > /tmp/news_count.txt
+read NEWS_FILES < /tmp/news_count.txt
 if [ "$NEWS_FILES" -gt 0 ]; then
   if ! npx htmlhint "news/*-*.html" 2>/dev/null; then
     echo "⚠️ HTML validation errors, attempting auto-fix..."
@@ -1192,17 +1245,21 @@ Branch: `news/content/{YYYY-MM-DD}/evening-analysis`. `safeoutputs___create_pull
 # CRITICAL: Stage only this workflow's articles and metadata, NOT all of news/
 git add news/*evening-analysis*.html news/*evening*.html 2>/dev/null || true
 git add news/metadata/ 2>/dev/null || true
-git add "analysis/daily/${ARTICLE_DATE:-$(date -u +%Y-%m-%d)}/${ANALYSIS_SUBFOLDER:-evening-analysis}/" || true
+[ -z "$ARTICLE_DATE" ] && { date -u +%Y-%m-%d > /tmp/today.txt; read ARTICLE_DATE < /tmp/today.txt; }
+[ -z "$ANALYSIS_SUBFOLDER" ] && ANALYSIS_SUBFOLDER="evening-analysis"
+git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" || true
 git add analysis/weekly/ || true
 # Enforce safe-outputs 100-file PR limit
-STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+git diff --cached --name-only 2>/dev/null | wc -l > /tmp/staged_count.txt
+read STAGED_COUNT < /tmp/staged_count.txt
 if [ "$STAGED_COUNT" -gt 90 ]; then
   echo "⚠️ Staged $STAGED_COUNT files exceeds 100-file PR limit. Removing weekly analysis."
   git reset HEAD -- analysis/weekly/ 2>/dev/null || true
-  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+  git diff --cached --name-only 2>/dev/null | wc -l > /tmp/staged_count.txt
+read STAGED_COUNT < /tmp/staged_count.txt
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
-git commit -m "🌆 Evening Analysis - $(date +%Y-%m-%d)"
+git commit -m "🌆 Evening Analysis - $ARTICLE_DATE"
 ```
 
 Then **immediately** call (as a direct tool call, NOT via bash):
@@ -1252,7 +1309,7 @@ Fix any files flagged before committing. Articles with >3 English phrases in non
 
 | Scenario | Cause | Fix |
 |----------|-------|-----|
-| Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL}"` — source and npx MUST be chained with `&&` on one line; expected output: `MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering` |
+| Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"` — source and npx MUST be chained with `&&` on one line; expected output: `MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering` |
 | Empty results | No parliamentary activity for the queried date range | Check if analysis artifacts exist in `analysis/daily/` — if yes, commit them and create analysis-only PR; if no, call `safeoutputs___noop` |
 | Timeout | MCP server response exceeds `timeout-minutes` | Commit any analysis artifacts produced so far, then call safe output |
 | Stale data | `hoursSinceSync > 48` from `get_sync_status()` | Add disclaimer noting data staleness; proceed with cached data |

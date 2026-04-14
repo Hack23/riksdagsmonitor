@@ -348,7 +348,8 @@ This workflow uses **persistent repo-memory** on branch `memory/news-generation`
 ## ⏱️ Time Budget (45 minutes)
 
 ```bash
-START_TIME=$(date +%s)
+date +%s > /tmp/start_time.txt
+read START_TIME < /tmp/start_time.txt
 ```
 
 | Phase | Minutes | Action |
@@ -425,7 +426,8 @@ For each article type being generated in this run:
 
 ```bash
 echo "=== Date Validation Check ==="
-START_TIME=$(date +%s)
+date +%s > /tmp/start_time.txt
+read START_TIME < /tmp/start_time.txt
 echo "START_TIME=$START_TIME" > /tmp/gh-aw/agent/timing.env
 date -u "+Current UTC: %A %Y-%m-%d %H:%M:%S"
 date +"%Z: %A %Y-%m-%d %H:%M:%S"
@@ -468,31 +470,38 @@ Tools with date params: `get_calendar_events` (from/tom — **authoritative for 
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
 if [ -z "$ARTICLE_DATE" ]; then
-  ARTICLE_DATE=$(date -u +%Y-%m-%d)
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
 fi
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 # CRITICAL: Source mcp-setup.sh FIRST to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
+# Determine requested article type early — needed for deep-inspection detection below
+RAW_REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
 # For deep-inspection, pass --document-ids to include targeted documents regardless of date
 PIPELINE_EXTRA_ARGS=""
-if echo "${RAW_REQUESTED_TYPE:-${{ github.event.inputs.article_types }}}" | grep -q "deep-inspection"; then
+if echo "$RAW_REQUESTED_TYPE" | grep -q "deep-inspection"; then
   DI_DOC_IDS="${{ github.event.inputs.document_ids }}"
   # Sanitize: only allow alphanumeric, hyphens, commas (valid Riksdag dok_id characters)
-  DI_DOC_IDS=$(echo "$DI_DOC_IDS" | tr -cd 'A-Za-z0-9,_-')
+  echo "$DI_DOC_IDS" | tr -cd 'A-Za-z0-9,_-' > /tmp/di_ids.txt
+read DI_DOC_IDS < /tmp/di_ids.txt
   [ -n "$DI_DOC_IDS" ] && PIPELINE_EXTRA_ARGS="--document-ids $DI_DOC_IDS"
 fi
-source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 $PIPELINE_EXTRA_ARGS 2>&1 | tee /tmp/pipeline-output.log
-PIPE_EXIT=${PIPESTATUS[0]}
+source scripts/mcp-setup.sh
+npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 $PIPELINE_EXTRA_ARGS > /tmp/pipeline-output.log 2>&1
+PIPE_EXIT=$?
+cat /tmp/pipeline-output.log
 if [ "$PIPE_EXIT" -ne 0 ]; then
   echo "❌ Pipeline failed — agent MUST diagnose and fix (read /tmp/pipeline-output.log)"
   tail -20 /tmp/pipeline-output.log
 fi
 echo "📊 Analysis artifacts for $ARTICLE_DATE:"
 ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis output"
-DATA_JSON_COUNT=$(find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l)
+find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l > /tmp/data_count.txt
+read DATA_JSON_COUNT < /tmp/data_count.txt
 echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
 # Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
 # Determine target subfolder — use dedicated folder for multi-type/schedule runs to avoid mixing artifacts
-RAW_REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
+# RAW_REQUESTED_TYPE already set above (before deep-inspection check)
 _IS_SCHEDULE_OR_MULTI=false
 if [ -z "$RAW_REQUESTED_TYPE" ] || [[ "$RAW_REQUESTED_TYPE" == *,* ]]; then
   _IS_SCHEDULE_OR_MULTI=true
@@ -505,16 +514,17 @@ if [ -f "$ANALYSIS_SUBFOLDER_ENV" ]; then
   # Reuse previously persisted values to keep relocation/staging/validation deterministic
   # shellcheck source=/tmp/analysis_subfolder.env
   . "$ANALYSIS_SUBFOLDER_ENV"
-  [ -n "${ANALYSIS_HHMM:-}" ] && _AG_HHMM="$ANALYSIS_HHMM"
-  [ -n "${ANALYSIS_SUBFOLDER:-}" ] && _RELOC_SUBFOLDER="$ANALYSIS_SUBFOLDER"
+  [ -n "$ANALYSIS_HHMM" ] && _AG_HHMM="$ANALYSIS_HHMM"
+  [ -n "$ANALYSIS_SUBFOLDER" ] && _RELOC_SUBFOLDER="$ANALYSIS_SUBFOLDER"
 fi
-if [ -z "${_AG_HHMM:-}" ]; then
-  _AG_HHMM=$(date -u +%H%M)
+if [ -z "$_AG_HHMM" ]; then
+  date -u +%H%M > /tmp/hhmm_val.txt
+  read _AG_HHMM < /tmp/hhmm_val.txt
 fi
-if [ -z "${_RELOC_SUBFOLDER:-}" ]; then
+if [ -z "$_RELOC_SUBFOLDER" ]; then
   if [ "$_IS_SCHEDULE_OR_MULTI" = true ]; then
     # Multi-type or schedule-driven run — use a dedicated workflow-scoped folder
-    _RELOC_SUBFOLDER="article-generator-${_AG_HHMM}"
+    _RELOC_SUBFOLDER="article-generator-$_AG_HHMM"
   else
     case "$REQUESTED_TYPE" in
       *committee-reports*) _RELOC_SUBFOLDER="committeeReports" ;;
@@ -525,19 +535,19 @@ if [ -z "${_RELOC_SUBFOLDER:-}" ]; then
       *month-ahead*) _RELOC_SUBFOLDER="month-ahead" ;;
       *weekly-review*) _RELOC_SUBFOLDER="weekly-review" ;;
       *monthly-review*) _RELOC_SUBFOLDER="monthly-review" ;;
-      *breaking*) _RELOC_SUBFOLDER="realtime-${_AG_HHMM}" ;;
+      *breaking*) _RELOC_SUBFOLDER="realtime-$_AG_HHMM" ;;
       *deep-inspection*) _RELOC_SUBFOLDER="deep-inspection" ;;
       *) _RELOC_SUBFOLDER="$REQUESTED_TYPE" ;;
     esac
     # === Run Suffix Resolution (see SHARED_PROMPT_PATTERNS.md) ===
     # For single-type runs: auto-suffix if base folder already has synthesis-summary.md
     # force_generation=true → reuse base folder (overwrite is intentional)
-    if [ "${FORCE_GENERATION:-false}" != "true" ]; then
+    if [ "$FORCE_GENERATION" != "true" ]; then
       _BASE_RELOC="$_RELOC_SUBFOLDER"
       _SUFFIX=1
       while [ -f "analysis/daily/$ARTICLE_DATE/$_RELOC_SUBFOLDER/synthesis-summary.md" ]; do
         _SUFFIX=$((_SUFFIX + 1))
-        _RELOC_SUBFOLDER="${_BASE_RELOC}-${_SUFFIX}"
+        _RELOC_SUBFOLDER="$_BASE_RELOC-$_SUFFIX"
       done
     fi
   fi
@@ -591,7 +601,8 @@ These analysis files are committed alongside articles for human review and conti
 ```bash
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
 # Check if batch analysis files are empty/minimal
-SYNTH_DOCS=$(grep -oP 'Documents Analyzed.*?(\d+)' "$ANALYSIS_DIR/synthesis-summary.md" 2>/dev/null | grep -oP '\d+$' || echo "0")
+sed -nE 's/.*Documents Analyzed[^0-9]*([0-9]+).*/\1/p' "$ANALYSIS_DIR/synthesis-summary.md" 2>/dev/null | sed -n '1p' > /tmp/synth_docs.txt || echo "0" > /tmp/synth_docs.txt
+read SYNTH_DOCS < /tmp/synth_docs.txt
 echo "📊 Synthesis reports $SYNTH_DOCS documents analyzed"
 if [ "$SYNTH_DOCS" -eq 0 ]; then
   echo "🔴 EMPTY BATCH ANALYSIS DETECTED — agent MUST rewrite batch files from per-document analysis"
@@ -629,7 +640,10 @@ fi
 
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+if [ -z "$ARTICLE_DATE" ]; then
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
+fi
 # Determine the article type from input for scoped analysis directory
 RAW_REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
 _IS_SCHEDULE_OR_MULTI=false
@@ -643,15 +657,18 @@ REQUESTED_TYPE="$RAW_REQUESTED_TYPE"
 if [ -f /tmp/analysis_subfolder.env ]; then
   source /tmp/analysis_subfolder.env
 fi
-if [ -n "${ANALYSIS_SUBFOLDER:-}" ]; then
+if [ -n "$ANALYSIS_SUBFOLDER" ]; then
   ANALYSIS_SUBFOLDER="$ANALYSIS_SUBFOLDER"
-elif [ -n "${_RELOC_SUBFOLDER:-}" ]; then
+elif [ -n "$_RELOC_SUBFOLDER" ]; then
   ANALYSIS_SUBFOLDER="$_RELOC_SUBFOLDER"
 else
   # Use dedicated folder for multi-type/schedule runs; reuse _AG_HHMM for breaking consistency
-  _AG_HHMM=${_AG_HHMM:-$(date -u +%H%M)}
+  if [ -z "$_AG_HHMM" ]; then
+    date -u +%H%M > /tmp/hhmm_val.txt
+    read _AG_HHMM < /tmp/hhmm_val.txt
+  fi
   if [ "$_IS_SCHEDULE_OR_MULTI" = true ]; then
-    ANALYSIS_SUBFOLDER="article-generator-${_AG_HHMM}"
+    ANALYSIS_SUBFOLDER="article-generator-$_AG_HHMM"
   else
     case "$REQUESTED_TYPE" in
       *committee-reports*) ANALYSIS_SUBFOLDER="committeeReports" ;;
@@ -662,7 +679,7 @@ else
       *month-ahead*) ANALYSIS_SUBFOLDER="month-ahead" ;;
       *weekly-review*) ANALYSIS_SUBFOLDER="weekly-review" ;;
       *monthly-review*) ANALYSIS_SUBFOLDER="monthly-review" ;;
-      *breaking*) ANALYSIS_SUBFOLDER="realtime-${_AG_HHMM}" ;;
+      *breaking*) ANALYSIS_SUBFOLDER="realtime-$_AG_HHMM" ;;
       *deep-inspection*) ANALYSIS_SUBFOLDER="deep-inspection" ;;
       *) echo "⚠️ Unknown article type '$REQUESTED_TYPE' — using as-is for subfolder"; ANALYSIS_SUBFOLDER="$REQUESTED_TYPE" ;;
     esac
@@ -671,13 +688,14 @@ fi
 # Persist ANALYSIS_SUBFOLDER for use in the commit step (agentic blocks may run independently)
 ANALYSIS_SUBFOLDER_ENV=/tmp/analysis_subfolder.env
 echo "ANALYSIS_SUBFOLDER=$ANALYSIS_SUBFOLDER" > "$ANALYSIS_SUBFOLDER_ENV"
-echo "ANALYSIS_HHMM=${_AG_HHMM:-}" >> "$ANALYSIS_SUBFOLDER_ENV"
-echo "_AG_HHMM=${_AG_HHMM:-}" >> "$ANALYSIS_SUBFOLDER_ENV"
+echo "ANALYSIS_HHMM=$_AG_HHMM" >> "$ANALYSIS_SUBFOLDER_ENV"
+echo "_AG_HHMM=$_AG_HHMM" >> "$ANALYSIS_SUBFOLDER_ENV"
 echo "_RELOC_SUBFOLDER=$ANALYSIS_SUBFOLDER" >> "$ANALYSIS_SUBFOLDER_ENV"
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
 ANALYSIS_COUNT=0
 if [ -d "$ANALYSIS_DIR" ]; then
-  ANALYSIS_COUNT=$(find "$ANALYSIS_DIR" -type f | wc -l)
+  find "$ANALYSIS_DIR" -type f 2>/dev/null | wc -l > /tmp/analysis_count.txt
+  read ANALYSIS_COUNT < /tmp/analysis_count.txt
 fi
 if [ "$ANALYSIS_COUNT" -gt 0 ]; then
   echo "📊 Found $ANALYSIS_COUNT analysis artifacts in $ANALYSIS_DIR — these MUST be committed (do NOT use safeoutputs___noop)"
@@ -694,7 +712,8 @@ fi
 # Use the article_types workflow dispatch parameter
 ARTICLE_TYPES="${{ github.event.inputs.article_types }}"
 if [ -z "$ARTICLE_TYPES" ]; then
-  DAY_OF_WEEK=$(date -u +"%u")  # 1=Monday, 7=Sunday
+  date -u +%u > /tmp/day_of_week.txt  # 1=Monday, 7=Sunday
+  read DAY_OF_WEEK < /tmp/day_of_week.txt
   case "$DAY_OF_WEEK" in
     5)  ARTICLE_TYPES="week-ahead,committee-reports,propositions,motions,interpellations"
         echo "📅 Friday schedule" ;;
@@ -708,7 +727,8 @@ fi
 # Use the languages workflow dispatch parameter
 LANGUAGES_INPUT="${{ github.event.inputs.languages }}"
 [ -z "$LANGUAGES_INPUT" ] && LANGUAGES_INPUT="all"
-LANGUAGES_INPUT=$(echo "$LANGUAGES_INPUT" | xargs)
+echo "$LANGUAGES_INPUT" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' > /tmp/lang_input.txt
+read LANGUAGES_INPUT < /tmp/lang_input.txt
 
 case "$LANGUAGES_INPUT" in
   "nordic") LANG_ARG="en,sv,da,no,fi" ;;
@@ -730,17 +750,18 @@ Valid article types (defined in `scripts/generate-news-enhanced/config.ts:VALID_
 echo "📖 Reading ALL analysis files for $ARTICLE_DATE..."
 for ANALYSIS_DIR in analysis/daily/$ARTICLE_DATE/*/; do
   if [ -d "$ANALYSIS_DIR" ]; then
-    echo "📖 Reading: $(basename $ANALYSIS_DIR)"
+    echo "📖 Reading: $ANALYSIS_DIR"
     for MD_FILE in "$ANALYSIS_DIR"/*.md; do
       if [ -f "$MD_FILE" ]; then
-        echo "--- $(basename $ANALYSIS_DIR)/$(basename $MD_FILE) ---"
+        echo "--- $MD_FILE ---"
         cat "$MD_FILE"
         echo ""
       fi
     done
   fi
 done
-TOTAL_FILES=$(find "analysis/daily/$ARTICLE_DATE" -name "*.md" -type f 2>/dev/null | wc -l)
+find "analysis/daily/$ARTICLE_DATE" -name "*.md" -type f 2>/dev/null | wc -l > /tmp/total_files.txt
+read TOTAL_FILES < /tmp/total_files.txt
 echo "✅ Read $TOTAL_FILES analysis files — these MUST drive article content"
 ```
 
@@ -759,9 +780,9 @@ if echo "$ARTICLE_TYPES" | grep -q "deep-inspection"; then
   DOCUMENT_IDS="${{ github.event.inputs.document_ids }}"
   DOCUMENT_URLS="${{ github.event.inputs.document_urls }}"
   FOCUS_TOPIC="${{ github.event.inputs.focus_topic }}"
-  [ -n "$DOCUMENT_IDS" ]   && DEEP_ARGS+=("--document-ids=${DOCUMENT_IDS}")
-  [ -n "$DOCUMENT_URLS" ]  && DEEP_ARGS+=("--document-urls=${DOCUMENT_URLS}")
-  [ -n "$FOCUS_TOPIC" ]    && DEEP_ARGS+=("--focus-topic=${FOCUS_TOPIC}")
+  [ -n "$DOCUMENT_IDS" ]   && DEEP_ARGS+=("--document-ids=$DOCUMENT_IDS")
+  [ -n "$DOCUMENT_URLS" ]  && DEEP_ARGS+=("--document-urls=$DOCUMENT_URLS")
+  [ -n "$FOCUS_TOPIC" ]    && DEEP_ARGS+=("--focus-topic=$FOCUS_TOPIC")
   echo "📋 Deep-inspection args: ${DEEP_ARGS[*]}"
 fi
 
@@ -784,7 +805,8 @@ while true; do
 
   # Check if all languages are done
   if [ -f "news/metadata/batch-status.json" ]; then
-    ALL_DONE=$(node -e "const s=JSON.parse(require('fs').readFileSync('news/metadata/batch-status.json','utf8')); console.log(s.complete)")
+    node -e "const s=JSON.parse(require('fs').readFileSync('news/metadata/batch-status.json','utf8')); console.log(s.complete)" > /tmp/all_done.txt 2>/dev/null || echo "false" > /tmp/all_done.txt
+    read ALL_DONE < /tmp/all_done.txt
     if [ "$ALL_DONE" = "true" ]; then
       echo "✅ All languages generated!"
       break
@@ -800,20 +822,25 @@ while true; do
   fi
 
   # Check time budget before next batch
-  ELAPSED=$(( ($(date +%s) - $START_TIME) / 60 ))
+  date +%s > /tmp/now_ts.txt
+read AW_NOW_TS < /tmp/now_ts.txt
+ELAPSED=$(( (AW_NOW_TS - START_TIME) / 60 ))
   if [ $ELAPSED -ge 30 ]; then
     echo "⏰ Time budget reached ($ELAPSED min), proceeding with generated articles"
     break
   fi
 done
 
-TODAY="$(date +%Y-%m-%d)"
-NEW_ARTICLES="$(git status --porcelain -- news/ | awk '{print $2}' | grep "${TODAY}-" || true)"
+date +%Y-%m-%d > /tmp/today.txt
+read TODAY < /tmp/today.txt
+git status --porcelain -- news/ 2>/dev/null | awk '{print $2}' | grep "$TODAY-" > /tmp/new_articles.txt || true
+NEW_ARTICLES=""
+[ -s /tmp/new_articles.txt ] && NEW_ARTICLES="generated"
 if [ -z "$NEW_ARTICLES" ]; then
   echo "No new articles created."
 else
   echo "Newly generated articles:"
-  printf '%s\n' "$NEW_ARTICLES"
+  cat /tmp/new_articles.txt
 fi
 ```
 
@@ -827,7 +854,7 @@ fi
 >
 > **Before declaring script failure, verify MCP is live in the same shell:**
 > ```bash
-> source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL}"
+> source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"
 > ```
 > Expected output: `MCP_SERVER_URL=http://host.docker.internal:80/mcp/riksdag-regering`  
 > If the value is blank or "unset", `mcp-setup.sh` failed to read the gateway key — check `GH_AW_MCP_CONFIG`. If set correctly, retry the full script command.
@@ -866,7 +893,7 @@ For **non-deep-inspection** article types only, if the script fails, generate ar
 ```bash
 for FILE in news/$ARTICLE_DATE-*-*.html; do
   if [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE"; then
-    echo "🔴 MISSING analysis-references in: $(basename $FILE) — MUST FIX NOW"
+    echo "🔴 MISSING analysis-references in: $FILE — MUST FIX NOW"
   fi
 done
 ```
@@ -927,7 +954,8 @@ if [ "$VALIDATION_EXIT" -ne 0 ]; then
 fi
 
 # HTMLHint validation with auto-fix
-NEWS_FILES=$(find news -maxdepth 1 -name '*-*.html' | wc -l)
+find news -maxdepth 1 -name '*-*.html' 2>/dev/null | wc -l > /tmp/news_count.txt
+read NEWS_FILES < /tmp/news_count.txt
 if [ "$NEWS_FILES" -gt 0 ]; then
   if ! npx htmlhint "news/*-*.html" 2>/dev/null; then
     echo "⚠️ HTML validation errors, attempting auto-fix..."
@@ -970,12 +998,19 @@ news/content/{YYYY-MM-DD}/{article-types}
 # Restore persisted ANALYSIS_SUBFOLDER (agentic blocks may run independently)
 [ -f /tmp/analysis_subfolder.env ] && source /tmp/analysis_subfolder.env
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
-[ -z "$ARTICLE_DATE" ] && ARTICLE_DATE=$(date -u +%Y-%m-%d)
+if [ -z "$ARTICLE_DATE" ]; then
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
+fi
 # Fallback: recompute ANALYSIS_SUBFOLDER if env file was not available
 if [ -z "$ANALYSIS_SUBFOLDER" ]; then
   RAW_REQUESTED_TYPE="${{ github.event.inputs.article_types }}"
   if [ -z "$RAW_REQUESTED_TYPE" ] || [[ "$RAW_REQUESTED_TYPE" == *,* ]]; then
-    ANALYSIS_SUBFOLDER="article-generator-${_AG_HHMM:-$(date -u +%H%M)}"
+    if [ -z "$_AG_HHMM" ]; then
+      date -u +%H%M > /tmp/hhmm_val.txt
+      read _AG_HHMM < /tmp/hhmm_val.txt
+    fi
+    ANALYSIS_SUBFOLDER="article-generator-$_AG_HHMM"
   else
     case "$RAW_REQUESTED_TYPE" in
       *committee-reports*) ANALYSIS_SUBFOLDER="committeeReports" ;;
@@ -986,7 +1021,11 @@ if [ -z "$ANALYSIS_SUBFOLDER" ]; then
       *month-ahead*) ANALYSIS_SUBFOLDER="month-ahead" ;;
       *weekly-review*) ANALYSIS_SUBFOLDER="weekly-review" ;;
       *monthly-review*) ANALYSIS_SUBFOLDER="monthly-review" ;;
-      *breaking*) ANALYSIS_SUBFOLDER="realtime-${_AG_HHMM:-$(date -u +%H%M)}" ;;
+      *breaking*) if [ -z "$_AG_HHMM" ]; then
+        date -u +%H%M > /tmp/hhmm_val.txt
+        read _AG_HHMM < /tmp/hhmm_val.txt
+      fi
+      ANALYSIS_SUBFOLDER="realtime-$_AG_HHMM" ;;
       *deep-inspection*) ANALYSIS_SUBFOLDER="deep-inspection" ;;
       *) ANALYSIS_SUBFOLDER="$RAW_REQUESTED_TYPE" ;;
     esac
@@ -998,17 +1037,19 @@ fi
 git diff --name-only -- "news/" 2>/dev/null | xargs -r git add 2>/dev/null || true
 git ls-files --others --exclude-standard -- "news/*.html" 2>/dev/null | xargs -r git add 2>/dev/null || true
 git add news/metadata/ 2>/dev/null || true
-git add "analysis/daily/${ARTICLE_DATE}/${ANALYSIS_SUBFOLDER}/" || true
+git add "analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/" || true
 git add analysis/weekly/ || true
 # Enforce safe-outputs 100-file PR limit
-STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+git diff --cached --name-only 2>/dev/null | wc -l > /tmp/staged_count.txt
+read STAGED_COUNT < /tmp/staged_count.txt
 if [ "$STAGED_COUNT" -gt 90 ]; then
   echo "⚠️ Staged $STAGED_COUNT files exceeds 100-file PR limit. Removing weekly analysis."
   git reset HEAD -- analysis/weekly/ 2>/dev/null || true
-  STAGED_COUNT=$(git diff --cached --name-only | wc -l)
+  git diff --cached --name-only 2>/dev/null | wc -l > /tmp/staged_count.txt
+read STAGED_COUNT < /tmp/staged_count.txt
 fi
 echo "📊 Final staged file count: $STAGED_COUNT"
-git commit -m "📰 Automated News Generation - $(date +%Y-%m-%d)"
+git commit -m "📰 Automated News Generation - $ARTICLE_DATE"
 ```
 
 Then **immediately** call (as a direct tool call, NOT via bash):
@@ -1051,7 +1092,7 @@ safeoutputs___dispatch_workflow({
 
 | Scenario | Cause | Fix |
 |----------|-------|-----|
-| Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=${MCP_SERVER_URL}"` — source and script MUST be chained with `&&` on one line; never pipe source to tail |
+| Tool not found | MCP server not initialized | Run `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"` — source and script MUST be chained with `&&` on one line; never pipe source to tail |
 | Empty results | No new documents for the queried article type | Check if analysis artifacts exist — if yes, commit them and create analysis-only PR; if no, call `safeoutputs___noop` |
 | Timeout | MCP server response exceeds `timeout-minutes` | Commit any analysis artifacts produced so far, then call safe output |
 | Stale data | `hoursSinceSync > 48` from `get_sync_status()` | Add disclaimer noting data staleness; proceed with cached data |
