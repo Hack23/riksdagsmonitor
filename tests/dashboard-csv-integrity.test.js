@@ -273,7 +273,7 @@ describe('Dashboard-CSV Data Integrity', () => {
         columns: ['party', 'year', 'momentum', 'alignment_rate', 'party1', 'party2'],
       },
       'election-cycle': {
-        columns: ['election_cycle_id', 'party', 'cycle_year', 'performance_score', 'avg_approval_rate',
+        columns: ['election_cycle_id', 'party', 'cycle_year', 'overall_performance_score', 'avg_approval_rate',
           'forecast_confidence', 'semester', 'total_ballots', 'is_pre_election_semester'],
       },
       'committees-dashboard': {
