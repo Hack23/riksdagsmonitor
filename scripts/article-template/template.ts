@@ -22,6 +22,7 @@ import {
   getNewsIndexFilename,
   sanitizeArticleBody,
   fixHtmlNesting,
+  stripSwedishBoilerplate,
   formatDate,
   generateEventCalendar,
   generateWatchSection,
@@ -88,13 +89,21 @@ function countWords(html: string): number {
  * This function only enforces the 160-char length limit for Google SERP.
  * The banned-pattern check is retained as a safety net but should never
  * trigger if the AI agent followed the workflow prompt correctly.
+ *
+ * v6.0: Falls back to a title-derived description when the subtitle is
+ * still a generic template stub, rather than echoing the stub verbatim.
  */
 function generateSeoDescription(subtitle: string, title: string): string {
   let desc = subtitle;
 
   // Safety net: if AI agent did not replace the script stub, fall back to title
-  if (/Analysis of \d+ documents/i.test(desc) || /briefing on \w+:\s+and/i.test(desc)) {
-    desc = `${title} — AI-generated political intelligence from Sweden's Riksdag.`;
+  if (/Analysis of \d+ documents/i.test(desc)
+      || /briefing on \w+:\s+and/i.test(desc)
+      || /— AI-generated political intelligence/i.test(desc)) {
+    // Use title itself as a better fallback than the generic template stub
+    desc = title.length > 30
+      ? `${title.substring(0, MAX_META_DESCRIPTION_LENGTH - ELLIPSIS_SUFFIX_LENGTH - 1)}…`
+      : `${title} — Political intelligence from Sweden's Riksdag.`;
   }
 
   // Enforce SERP length limit
@@ -179,7 +188,8 @@ export function generateArticleHTML(data: ArticleData): string {
   const isoDate: string = dateObj.toISOString().split('T')[0] ?? '';
 
   // Fix invalid HTML nesting once so both the rendered body and JSON-LD are consistent
-  const fixedContent: string = fixHtmlNesting(content);
+  // Also strip Swedish boilerplate from non-Swedish articles
+  const fixedContent: string = stripSwedishBoilerplate(fixHtmlNesting(content), lang);
 
   // Fall back to English labels if language not supported.
   // When articleType is set, prefer the per-type localized name from

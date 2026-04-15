@@ -403,8 +403,33 @@ function printQualityReport(assessment: MultiDimensionalQualityAssessment, filen
   }
 }
 
-/** Stub: returns HTML unchanged (quality metadata injection removed) */
-function injectQualityMetadata(html: string, _assessment?: MultiDimensionalQualityAssessment): string {
+/**
+ * Inject quality metadata as `<meta>` tags into the article `<head>`.
+ * Inserts tags just before the closing `</head>` element.
+ *
+ * Quality metadata tags follow the quality-criteria.md v2 specification:
+ * - `article:quality-score` — overall multi-dimensional score (0-100)
+ * - `article:quality-version` — quality assessment version
+ * - `article:quality-iterations` — number of assessment passes
+ * - `article:analysis-used` — whether analysis cache was used
+ */
+function injectQualityMetadata(html: string, assessment?: MultiDimensionalQualityAssessment): string {
+  const score = assessment?.overallScore ?? 0;
+  const passes = assessment?.assessmentPasses ?? 0;
+  const version = 'v2';
+  const analysisUsed = (assessment && assessment.overallScore > 0) ? 'true' : 'false';
+
+  const metaTags = [
+    `  <meta name="article:quality-score" content="${score}">`,
+    `  <meta name="article:quality-version" content="${version}">`,
+    `  <meta name="article:quality-iterations" content="${passes}">`,
+    `  <meta name="article:analysis-used" content="${analysisUsed}">`,
+  ].join('\n');
+
+  // Insert before </head>
+  if (html.includes('</head>')) {
+    return html.replace('</head>', `${metaTags}\n</head>`);
+  }
   return html;
 }
 
@@ -838,33 +863,57 @@ export async function writeArticlePair(htmlEN: string, htmlSV: string, slug: str
 // The BANNED_PATTERNS for content quality remain in shared.ts detectBannedPatterns().
 
 /**
- * @deprecated v5.0 — Stub only. AI agent generates all titles.
+ * Generate a content-aware fallback title and subtitle from article content.
  *
- * Returns the base title and a placeholder subtitle.
- * The AI agent in the agentic workflow (.md prompt) MUST overwrite
- * both the title and subtitle with genuine, content-analysed values.
+ * The AI agent in the agentic workflow (.md prompt) SHOULD overwrite
+ * both the title and subtitle with genuine, analysis-driven values.
+ * This function provides a minimally newsworthy fallback so that articles
+ * never ship with bare category labels as titles.
  *
- * Previously this function used regex heuristics (extractHighlights,
- * extractDominantTheme) to build titles from HTML content. That approach
- * produced low-quality, scripted titles that violated the ai-driven-analysis-guide.md
- * requirement that ALL titles be AI-generated from actual political analysis.
+ * Extracts policy domains from `<strong>` tags and h3 headings in content
+ * to produce titles like "Committee Reports: Defence, Transport, and Climate"
+ * instead of the bare "Committee Reports".
  *
  * @param baseTitle - The generic article type title (e.g. "Government Propositions")
- * @param _content  - Unused. Retained for API compatibility.
- * @param _docCount - Unused. Retained for API compatibility.
- * @returns A stub `TitleSet` — AI agent MUST replace both fields.
+ * @param content   - HTML content of the article body
+ * @param docCount  - Number of source documents (0 if unknown)
+ * @returns A `TitleSet` with content-aware fallback — AI agent should replace both.
  */
 export function generateDynamicTitle(
   baseTitle: string,
-  _content: string,
-  _docCount: number,
+  content: string,
+  docCount: number,
 ): { title: string; subtitle: string } {
-  // v5.0: Return base title only — AI agent in workflow prompt MUST
-  // overwrite with analysis-driven, newsworthy title and description.
-  // See: ai-driven-analysis-guide.md §"Analysis-Driven Article Decision Protocol (v5.0)"
-  // See: SHARED_PROMPT_PATTERNS.md §"AI-DRIVEN TITLE & META DESCRIPTION GENERATION"
-  return {
-    title: baseTitle,
-    subtitle: `${baseTitle} — AI-generated political intelligence from Sweden's Riksdag`,
-  };
+  // Extract topic hints from strong tags and h3 headings
+  const topics: string[] = [];
+  const strongMatches = content.matchAll(/<strong>([^<]{3,50})<\/strong>/gi);
+  for (const m of strongMatches) {
+    const text = m[1]?.trim();
+    if (text && !topics.includes(text) && topics.length < 5) {
+      topics.push(text);
+    }
+  }
+  const h3Matches = content.matchAll(/<h3[^>]*>([^<]{3,60})<\/h3>/gi);
+  for (const m of h3Matches) {
+    const text = m[1]?.trim();
+    if (text && !topics.includes(text) && topics.length < 5) {
+      topics.push(text);
+    }
+  }
+
+  // Build a content-aware title if we found topic hints
+  let title = baseTitle;
+  let subtitle = `${baseTitle} — AI-generated political intelligence from Sweden's Riksdag`;
+
+  if (topics.length > 0) {
+    const topicList = topics.slice(0, 3).join(', ');
+    title = `${baseTitle}: ${topicList}`;
+    const countStr = docCount > 0 ? ` across ${docCount} documents` : '';
+    subtitle = `Analysis of ${topicList}${countStr} in Sweden's Riksdag`;
+  } else if (docCount > 0) {
+    title = `${baseTitle}: ${docCount} Documents Analyzed`;
+    subtitle = `Analysis of ${docCount} parliamentary documents from Sweden's Riksdag`;
+  }
+
+  return { title, subtitle };
 }

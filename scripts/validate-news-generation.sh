@@ -632,6 +632,179 @@ fi
 echo ""
 
 # ============================================================================
+# Check 16: No banned generic title patterns in articles
+# Detects titles that are bare category labels instead of newsworthy headlines
+# ============================================================================
+echo "📋 Check 16: No banned generic title patterns"
+
+BANNED_TITLES=0
+# These are the exact generic category labels that SHARED_PROMPT_PATTERNS.md bans
+BANNED_TITLE_PATTERNS=(
+  "Riksdag Committee Reports"
+  "Government Propositions"
+  "Opposition Motions"
+  "Parliamentary Interpellations"
+  "Breaking News"
+  "Weekly Review"
+)
+
+for article in news/*-en.html; do
+  if [ -f "$article" ]; then
+    BASENAME="$(basename "$article")"
+    if [[ "$BASENAME" == index* ]]; then
+      continue
+    fi
+    # Extract <title> content
+    TITLE_TEXT=$(grep -oP '<title>\K[^<]+' "$article" 2>/dev/null) || true
+    if [ -n "$TITLE_TEXT" ]; then
+      for pattern in "${BANNED_TITLE_PATTERNS[@]}"; do
+        if [ "$TITLE_TEXT" = "$pattern" ]; then
+          echo -e "${YELLOW}⚠️ Generic banned title '$TITLE_TEXT' in $BASENAME — AI agent must replace${NC}"
+          BANNED_TITLES=$((BANNED_TITLES + 1))
+          WARNINGS=$((WARNINGS + 1))
+          break
+        fi
+      done
+    fi
+  fi
+done
+
+if [ $BANNED_TITLES -eq 0 ]; then
+  echo -e "${GREEN}✅ No banned generic title patterns found${NC}"
+else
+  echo -e "${YELLOW}⚠️ $BANNED_TITLES article(s) have generic banned titles — AI agent should replace with newsworthy headlines${NC}"
+fi
+echo ""
+
+# ============================================================================
+# Check 17: No raw Swedish boilerplate in non-Swedish articles
+# ============================================================================
+echo "📋 Check 17: No raw Swedish boilerplate in non-Swedish articles"
+
+SWEDISH_LEAKS=0
+SWEDISH_BOILERPLATE_PATTERNS=(
+  "Regeringen överlämnar denna proposition"
+  "Propositionens huvudsakliga innehåll"
+  "Förslag till riksdagsbeslut"
+  "Stockholm den [0-9]"
+)
+
+for article in news/*-en.html; do
+  if [ -f "$article" ]; then
+    BASENAME="$(basename "$article")"
+    if [[ "$BASENAME" == index* ]]; then
+      continue
+    fi
+    for pattern in "${SWEDISH_BOILERPLATE_PATTERNS[@]}"; do
+      COUNT=$(grep -cP "$pattern" "$article" 2>/dev/null) || true
+      if [ "${COUNT:-0}" -gt 0 ]; then
+        echo -e "${YELLOW}⚠️ Swedish boilerplate in EN article $BASENAME: '$pattern' ($COUNT occurrence(s))${NC}"
+        SWEDISH_LEAKS=$((SWEDISH_LEAKS + COUNT))
+      fi
+    done
+  fi
+done
+
+if [ $SWEDISH_LEAKS -eq 0 ]; then
+  echo -e "${GREEN}✅ No raw Swedish boilerplate in English articles${NC}"
+else
+  echo -e "${YELLOW}⚠️ $SWEDISH_LEAKS Swedish boilerplate occurrence(s) found in English articles${NC}"
+  WARNINGS=$((WARNINGS + 1))
+fi
+echo ""
+
+# ============================================================================
+# Check 18: Duplicate significance text detection
+# Flags articles where >50% of "Why It Matters" / "What This Means" entries
+# are identical — a sign of committee-level fallback text being reused
+# ============================================================================
+echo "📋 Check 18: Duplicate significance text detection"
+
+DUPLICATE_SIG_ARTICLES=0
+for article in news/*-en.html; do
+  if [ -f "$article" ]; then
+    BASENAME="$(basename "$article")"
+    if [[ "$BASENAME" == index* ]]; then
+      continue
+    fi
+    # Extract "Why It Matters" / "What This Means" content (text after the heading within the next <p>)
+    SIG_TEXTS=$(grep -oP '(?<=<p>)[^<]{30,}' "$article" 2>/dev/null | sort | uniq -d | wc -l) || true
+    TOTAL_PARAS=$(grep -cP '<p>[^<]{30,}' "$article" 2>/dev/null) || true
+    if [ "${TOTAL_PARAS:-0}" -gt 4 ] && [ "${SIG_TEXTS:-0}" -gt 2 ]; then
+      echo -e "${YELLOW}⚠️ $BASENAME has $SIG_TEXTS duplicate paragraph(s) out of $TOTAL_PARAS — check for repeated significance text${NC}"
+      DUPLICATE_SIG_ARTICLES=$((DUPLICATE_SIG_ARTICLES + 1))
+    fi
+  fi
+done
+
+if [ $DUPLICATE_SIG_ARTICLES -eq 0 ]; then
+  echo -e "${GREEN}✅ No excessive duplicate significance text detected${NC}"
+else
+  echo -e "${YELLOW}⚠️ $DUPLICATE_SIG_ARTICLES article(s) have duplicate significance text — each document should have unique analysis${NC}"
+  WARNINGS=$((WARNINGS + 1))
+fi
+echo ""
+
+# ============================================================================
+# Check 19: Quality metadata presence in articles
+# Verifies articles contain quality-score meta tags required by quality-criteria v2
+# ============================================================================
+echo "📋 Check 19: Quality metadata tags in articles"
+
+MISSING_QUALITY_META=0
+CHECKED_QUALITY=0
+for article in news/*-en.html news/*-sv.html; do
+  if [ -f "$article" ]; then
+    BASENAME="$(basename "$article")"
+    if [[ "$BASENAME" == index* ]]; then
+      continue
+    fi
+    CHECKED_QUALITY=$((CHECKED_QUALITY + 1))
+    if ! grep -q 'article-quality-score\|article:quality-score' "$article" 2>/dev/null; then
+      MISSING_QUALITY_META=$((MISSING_QUALITY_META + 1))
+    fi
+  fi
+done
+
+if [ $CHECKED_QUALITY -eq 0 ]; then
+  echo -e "${YELLOW}ℹ️  No articles found to check quality metadata${NC}"
+elif [ $MISSING_QUALITY_META -eq 0 ]; then
+  echo -e "${GREEN}✅ All $CHECKED_QUALITY articles have quality metadata tags${NC}"
+else
+  echo -e "${YELLOW}⚠️ $MISSING_QUALITY_META of $CHECKED_QUALITY articles missing quality metadata tags${NC}"
+  WARNINGS=$((WARNINGS + 1))
+fi
+echo ""
+
+# ============================================================================
+# Check 20: Empty paragraph tags in articles
+# ============================================================================
+echo "📋 Check 20: No empty paragraph tags"
+
+EMPTY_P_ARTICLES=0
+for article in news/*-en.html news/*-sv.html; do
+  if [ -f "$article" ]; then
+    BASENAME="$(basename "$article")"
+    if [[ "$BASENAME" == index* ]]; then
+      continue
+    fi
+    EMPTY_P=$(grep -cP '<p>\s*</p>' "$article" 2>/dev/null) || true
+    if [ "${EMPTY_P:-0}" -gt 0 ]; then
+      echo -e "${YELLOW}⚠️ $BASENAME has $EMPTY_P empty <p> tag(s)${NC}"
+      EMPTY_P_ARTICLES=$((EMPTY_P_ARTICLES + 1))
+    fi
+  fi
+done
+
+if [ $EMPTY_P_ARTICLES -eq 0 ]; then
+  echo -e "${GREEN}✅ No empty paragraph tags found${NC}"
+else
+  echo -e "${YELLOW}⚠️ $EMPTY_P_ARTICLES article(s) have empty paragraph tags${NC}"
+  WARNINGS=$((WARNINGS + 1))
+fi
+echo ""
+
+# ============================================================================
 # Summary
 # ============================================================================
 echo "================================================================"

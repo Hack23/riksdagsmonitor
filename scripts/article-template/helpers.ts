@@ -70,7 +70,45 @@ export function getNewsIndexFilename(lang: Language | string): string {
  * any other HTML repair.
  */
 export function fixHtmlNesting(htmlContent: string): string {
-  return htmlContent.replace(/<\/(ul|ol)>\s*<\/p>/g, '</$1>');
+  let result = htmlContent.replace(/<\/(ul|ol)>\s*<\/p>/g, '</$1>');
+
+  // Strip empty paragraph tags (e.g. <p></p>, <p> </p>)
+  result = result.replace(/<p>\s*<\/p>/g, '');
+
+  return result;
+}
+
+/**
+ * Known Swedish boilerplate phrases that leak from Riksdag API responses
+ * into English article content. These are template/procedural text that
+ * should be stripped when generating non-Swedish articles.
+ */
+const SWEDISH_BOILERPLATE_PATTERNS: readonly RegExp[] = [
+  /Regeringen överlämnar denna proposition till riksdagen\.?/g,
+  /Stockholm den \d{1,2} [a-z]+ \d{4}\.?/g,
+  /Propositionens huvudsakliga innehåll\.?/g,
+  /Förslag till riksdagsbeslut\.?/g,
+  /Riksdagen (avslår|bifaller) [^.]+\.?/g,
+  /Ärendet är avslutat\.?/g,
+];
+
+/**
+ * Strip known Swedish boilerplate phrases from non-Swedish content.
+ * These phrases leak from Riksdag API responses and should not appear
+ * in English or other non-Swedish articles.
+ *
+ * @param html - Article HTML content
+ * @param lang - Target language code
+ * @returns Content with Swedish boilerplate removed (for non-sv languages)
+ */
+export function stripSwedishBoilerplate(html: string, lang: string): string {
+  if (lang === 'sv') return html;
+
+  let result = html;
+  for (const pattern of SWEDISH_BOILERPLATE_PATTERNS) {
+    result = result.replace(pattern, '');
+  }
+  return result;
 }
 
 /**
