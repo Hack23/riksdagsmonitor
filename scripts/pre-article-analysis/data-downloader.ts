@@ -338,25 +338,29 @@ export async function downloadAllDocuments(
             // Normalize response fields to match RawDocument conventions
             // (consistent with weekly-review/data-loader.ts enrichment pattern):
             //   details.html       → doc.fullContent
-            //   details.fullText / summary / notis → doc.fullText (first non-empty)
+            //   details.fullText   → doc.fullText (only actual full text, not summary/notis)
+            //   details.summary/notis → doc.summary/notis (kept in own fields)
             const str = (v: unknown): string => typeof v === 'string' ? v : '';
-            const normalizedFullContent = str(details['html']);
-            const normalizedFullText = str(details['fullText'])
-              || str(details['summary'])
-              || str(details['notis'])
-              || '';
-            Object.assign(doc, details, {
-              fullContent: normalizedFullContent,
-              fullText: normalizedFullText,
-              contentFetched: true,
-            });
-            if (!docRecord['summary'] && details['summary']) {
-              docRecord['summary'] = str(details['summary']);
+            const verifiedFullText = str(details['fullText']).trim();
+            const verifiedFullContent = str(details['html']).trim();
+            // Only set fullText/fullContent when non-empty to avoid overwriting existing values
+            if (verifiedFullContent.length > 0) {
+              docRecord['fullContent'] = verifiedFullContent;
             }
-            if (!docRecord['notis'] && details['notis']) {
-              docRecord['notis'] = str(details['notis']);
+            if (verifiedFullText.length > 0) {
+              docRecord['fullText'] = verifiedFullText;
             }
-            return { ...details, fullContent: normalizedFullContent, fullText: normalizedFullText };
+            // Propagate summary/notis only when doc doesn't already have them
+            const detailsSummary = str(details['summary']);
+            const detailsNotis = str(details['notis']);
+            if (!docRecord['summary'] && detailsSummary.length > 0) {
+              docRecord['summary'] = detailsSummary;
+            }
+            if (!docRecord['notis'] && detailsNotis.length > 0) {
+              docRecord['notis'] = detailsNotis;
+            }
+            docRecord['contentFetched'] = true;
+            return { fullText: verifiedFullText, fullContent: verifiedFullContent };
           }),
         );
         for (const result of results) {
