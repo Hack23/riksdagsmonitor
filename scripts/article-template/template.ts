@@ -102,9 +102,12 @@ function generateSeoDescription(subtitle: string, title: string): string {
       || /— AI-generated political intelligence/i.test(desc)) {
     // Use title itself as a better fallback than the generic template stub
     const ellipsisSuffix = '…';
-    desc = title.length > 30
-      ? `${title.substring(0, MAX_META_DESCRIPTION_LENGTH - ellipsisSuffix.length)}${ellipsisSuffix}`
-      : `${title} — Political intelligence from Sweden's Riksdag.`;
+    const maxTitleLengthBeforeTruncation = MAX_META_DESCRIPTION_LENGTH - ellipsisSuffix.length;
+    desc = title.length > maxTitleLengthBeforeTruncation
+      ? `${title.substring(0, maxTitleLengthBeforeTruncation)}${ellipsisSuffix}`
+      : title.length > 30
+        ? title
+        : `${title} — Political intelligence from Sweden's Riksdag.`;
   }
 
   // Enforce SERP length limit

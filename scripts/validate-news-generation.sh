@@ -689,16 +689,22 @@ SWEDISH_BOILERPLATE_PATTERNS=(
   "Stockholm den [0-9]{1,2} [[:alpha:]]+ [0-9]{4}"
 )
 
-for article in news/*-en.html; do
+for article in news/*-*.html; do
   if [ -f "$article" ]; then
     BASENAME="$(basename "$article")"
     if [[ "$BASENAME" == index* ]]; then
       continue
     fi
+    # Skip Swedish articles — boilerplate is expected there
+    if [[ "$BASENAME" == *-sv.html ]]; then
+      continue
+    fi
+    LANG_SUFFIX="${BASENAME##*-}"
+    LANG_SUFFIX="${LANG_SUFFIX%.html}"
     for pattern in "${SWEDISH_BOILERPLATE_PATTERNS[@]}"; do
       COUNT=$(grep -ciE "$pattern" "$article" 2>/dev/null) || true
       if [ "${COUNT:-0}" -gt 0 ]; then
-        echo -e "${YELLOW}⚠️ Swedish boilerplate in EN article $BASENAME: '$pattern' ($COUNT occurrence(s))${NC}"
+        echo -e "${YELLOW}⚠️ Swedish boilerplate in ${LANG_SUFFIX^^} article $BASENAME: '$pattern' ($COUNT occurrence(s))${NC}"
         SWEDISH_LEAKS=$((SWEDISH_LEAKS + COUNT))
       fi
     done
@@ -706,9 +712,9 @@ for article in news/*-en.html; do
 done
 
 if [ $SWEDISH_LEAKS -eq 0 ]; then
-  echo -e "${GREEN}✅ No raw Swedish boilerplate in English articles${NC}"
+  echo -e "${GREEN}✅ No raw Swedish boilerplate in non-Swedish articles${NC}"
 else
-  echo -e "${YELLOW}⚠️ $SWEDISH_LEAKS Swedish boilerplate occurrence(s) found in English articles${NC}"
+  echo -e "${YELLOW}⚠️ $SWEDISH_LEAKS Swedish boilerplate occurrence(s) found in non-Swedish articles${NC}"
   WARNINGS=$((WARNINGS + 1))
 fi
 echo ""
@@ -770,7 +776,7 @@ echo "📋 Check 19: Quality metadata tags in articles"
 
 MISSING_QUALITY_META=0
 CHECKED_QUALITY=0
-for article in news/*-en.html news/*-sv.html; do
+for article in news/*-*.html; do
   if [ -f "$article" ]; then
     BASENAME="$(basename "$article")"
     if [[ "$BASENAME" == index* ]]; then
