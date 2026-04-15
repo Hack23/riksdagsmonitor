@@ -57,12 +57,14 @@ describe('generateDynamicTitle (v6.0 content-aware fallback)', () => {
   });
 
   it('limits topics to 3 in title', () => {
-    const content = '<p><strong>A</strong><strong>B</strong><strong>C</strong><strong>D</strong><strong>E</strong></p>';
+    const content = '<p><strong>Budget Deficit</strong><strong>Tax Reform</strong><strong>Climate Policy</strong><strong>Defense Spending</strong><strong>Energy Market</strong></p>';
     const result = generateDynamicTitle('Reports', content, 5);
-    // Should have at most 3 topics
-    const colonPart = result.title.split(': ')[1] ?? '';
-    const topicCount = colonPart.split(', ').length;
-    expect(topicCount).toBeLessThanOrEqual(3);
+    expect(result.title).toContain('Reports');
+    expect(result.title).toContain('Budget Deficit');
+    expect(result.title).toContain('Tax Reform');
+    expect(result.title).toContain('Climate Policy');
+    expect(result.title).not.toContain('Defense Spending');
+    expect(result.title).not.toContain('Energy Market');
   });
 });
 

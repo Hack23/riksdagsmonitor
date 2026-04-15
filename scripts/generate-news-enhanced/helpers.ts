@@ -411,19 +411,19 @@ function printQualityReport(assessment: MultiDimensionalQualityAssessment, filen
  * - `article:quality-score` — overall multi-dimensional score (0-100)
  * - `article:quality-version` — quality assessment version
  * - `article:quality-iterations` — number of assessment passes
- * - `article:analysis-used` — whether analysis cache was used
+ * - `article:quality-assessed` — whether a quality assessment is present
  */
 function injectQualityMetadata(html: string, assessment?: MultiDimensionalQualityAssessment): string {
   const score = assessment?.overallScore ?? 0;
   const passes = assessment?.assessmentPasses ?? 0;
   const version = 'v2';
-  const analysisUsed = (assessment && assessment.overallScore > 0) ? 'true' : 'false';
+  const qualityAssessed = assessment ? 'true' : 'false';
 
   const metaTags = [
     `  <meta name="article:quality-score" content="${score}">`,
     `  <meta name="article:quality-version" content="${version}">`,
     `  <meta name="article:quality-iterations" content="${passes}">`,
-    `  <meta name="article:analysis-used" content="${analysisUsed}">`,
+    `  <meta name="article:quality-assessed" content="${qualityAssessed}">`,
   ].join('\n');
 
   // Insert before </head>

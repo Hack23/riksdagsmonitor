@@ -715,8 +715,9 @@ echo ""
 
 # ============================================================================
 # Check 18: Duplicate significance text detection
-# Flags articles where >50% of "Why It Matters" / "What This Means" entries
-# are identical — a sign of committee-level fallback text being reused
+# Extracts "Why It Matters" / "What This Means" paragraphs (the <p> immediately
+# following those headings) and flags articles where >50% are identical —
+# a sign of committee-level fallback text being reused.
 # ============================================================================
 echo "📋 Check 18: Duplicate significance text detection"
 
@@ -727,12 +728,25 @@ for article in news/*-en.html; do
     if [[ "$BASENAME" == index* ]]; then
       continue
     fi
-    # Extract "Why It Matters" / "What This Means" content (text after the heading within the next <p>)
-    SIG_TEXTS=$(grep -oP '(?<=<p>)[^<]{30,}' "$article" 2>/dev/null | sort | uniq -d | wc -l) || true
-    TOTAL_PARAS=$(grep -cP '<p>[^<]{30,}' "$article" 2>/dev/null) || true
-    if [ "${TOTAL_PARAS:-0}" -gt 4 ] && [ "${SIG_TEXTS:-0}" -gt 2 ]; then
-      echo -e "${YELLOW}⚠️ $BASENAME has $SIG_TEXTS duplicate paragraph(s) out of $TOTAL_PARAS — check for repeated significance text${NC}"
-      DUPLICATE_SIG_ARTICLES=$((DUPLICATE_SIG_ARTICLES + 1))
+    # Extract paragraphs that follow "Why It Matters" or "What This Means" headings
+    # Pattern: heading tag containing the phrase, then capture the next <p>…</p> content
+    TOTAL_SIG=$(grep -cPi '(Why It Matters|What This Means)' "$article" 2>/dev/null) || true
+    if [ "${TOTAL_SIG:-0}" -lt 2 ]; then
+      continue
+    fi
+    # Extract the text of each significance paragraph (30+ chars after heading)
+    UNIQUE_SIG=$(grep -oPi '(?:Why It Matters|What This Means)[^<]*</h[23]>\s*<p>\K[^<]{30,}' "$article" 2>/dev/null | sort -u | wc -l) || true
+    if [ "${UNIQUE_SIG:-0}" -eq 0 ]; then
+      # Fallback: extract <p> text directly following significance class spans
+      UNIQUE_SIG=$(grep -oP '(?<=significance[^>]*>)[^<]{30,}' "$article" 2>/dev/null | sort -u | wc -l) || true
+    fi
+    # Compute duplicate ratio: if unique < 50% of total, flag it
+    if [ "${UNIQUE_SIG:-0}" -gt 0 ] && [ "$TOTAL_SIG" -gt 0 ]; then
+      RATIO=$((UNIQUE_SIG * 100 / TOTAL_SIG))
+      if [ "$RATIO" -lt 50 ]; then
+        echo -e "${YELLOW}⚠️ $BASENAME: only $UNIQUE_SIG unique significance entries out of $TOTAL_SIG total (${RATIO}%) — check for repeated fallback text${NC}"
+        DUPLICATE_SIG_ARTICLES=$((DUPLICATE_SIG_ARTICLES + 1))
+      fi
     fi
   fi
 done

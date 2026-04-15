@@ -187,9 +187,9 @@ export function generateArticleHTML(data: ArticleData): string {
   const formattedDate: string = formatDate(dateObj, lang);
   const isoDate: string = dateObj.toISOString().split('T')[0] ?? '';
 
-  // Fix invalid HTML nesting once so both the rendered body and JSON-LD are consistent
-  // Also strip Swedish boilerplate from non-Swedish articles
-  const fixedContent: string = stripSwedishBoilerplate(fixHtmlNesting(content), lang);
+  // Strip Swedish boilerplate first (can create empty <p> tags), then fix nesting
+  // (which also strips empty <p> tags) so remnants are cleaned up
+  const fixedContent: string = fixHtmlNesting(stripSwedishBoilerplate(content, lang));
 
   // Fall back to English labels if language not supported.
   // When articleType is set, prefer the per-type localized name from
