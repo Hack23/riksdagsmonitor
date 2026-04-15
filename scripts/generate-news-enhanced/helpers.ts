@@ -426,11 +426,17 @@ function injectQualityMetadata(html: string, assessment?: MultiDimensionalQualit
     `  <meta name="article:quality-assessed" content="${qualityAssessed}">`,
   ].join('\n');
 
-  // Insert before </head>
-  if (html.includes('</head>')) {
-    return html.replace('</head>', `${metaTags}\n</head>`);
+  // Remove any existing quality meta tags first (idempotent)
+  const qualityMetaTagPattern =
+    /\s*<meta\b(?=[^>]*\bname\s*=\s*["']article:quality-[^"']+["'])[^>]*>\s*\n?/gi;
+  const closingHeadPattern = /<\/head>/i;
+  const sanitizedHtml = html.replace(qualityMetaTagPattern, '');
+
+  // Insert before </head> (case-insensitive), preserving the original closing tag casing
+  if (closingHeadPattern.test(sanitizedHtml)) {
+    return sanitizedHtml.replace(closingHeadPattern, (match) => `${metaTags}\n${match}`);
   }
-  return html;
+  return sanitizedHtml;
 }
 
 // ---------------------------------------------------------------------------
@@ -904,12 +910,17 @@ export function generateDynamicTitle(
     }
   }
 
+  // Sanitize topic strings: strip newlines, collapse whitespace, drop quotes
+  const sanitized = topics.map(t =>
+    t.replace(/[\r\n]+/g, ' ').replace(/\s+/g, ' ').replace(/["']/g, '').trim()
+  ).filter(t => t.length >= 3);
+
   // Build a content-aware title if we found topic hints
   let title = baseTitle;
   let subtitle = `${baseTitle} — AI-generated political intelligence from Sweden's Riksdag`;
 
-  if (topics.length > 0) {
-    const topicList = topics.slice(0, 3).join(', ');
+  if (sanitized.length > 0) {
+    const topicList = sanitized.slice(0, 3).join(', ');
     title = `${baseTitle}: ${topicList}`;
     const countStr = docCount > 0 ? ` across ${docCount} documents` : '';
     subtitle = `Analysis of ${topicList}${countStr} in Sweden's Riksdag`;

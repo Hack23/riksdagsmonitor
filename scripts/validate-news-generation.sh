@@ -654,8 +654,8 @@ for article in news/*-en.html; do
     if [[ "$BASENAME" == index* ]]; then
       continue
     fi
-    # Extract <title> content
-    TITLE_TEXT=$(grep -oP '<title>\K[^<]+' "$article" 2>/dev/null) || true
+    # Extract <title> content using a portable pattern (same-line <title>...</title>)
+    TITLE_TEXT=$(sed -n 's|.*<title>\([^<]*\)</title>.*|\1|p' "$article" 2>/dev/null | head -n 1) || true
     if [ -n "$TITLE_TEXT" ]; then
       for pattern in "${BANNED_TITLE_PATTERNS[@]}"; do
         if [ "$TITLE_TEXT" = "$pattern" ]; then
@@ -696,7 +696,7 @@ for article in news/*-en.html; do
       continue
     fi
     for pattern in "${SWEDISH_BOILERPLATE_PATTERNS[@]}"; do
-      COUNT=$(grep -cP "$pattern" "$article" 2>/dev/null) || true
+      COUNT=$(grep -cE "$pattern" "$article" 2>/dev/null) || true
       if [ "${COUNT:-0}" -gt 0 ]; then
         echo -e "${YELLOW}⚠️ Swedish boilerplate in EN article $BASENAME: '$pattern' ($COUNT occurrence(s))${NC}"
         SWEDISH_LEAKS=$((SWEDISH_LEAKS + COUNT))
@@ -729,16 +729,18 @@ for article in news/*-en.html; do
       continue
     fi
     # Extract paragraphs that follow "Why It Matters" or "What This Means" headings
-    # Pattern: heading tag containing the phrase, then capture the next <p>…</p> content
-    TOTAL_SIG=$(grep -cPi '(Why It Matters|What This Means)' "$article" 2>/dev/null) || true
+    # Use perl for portable PCRE extraction (grep -P is not available on all platforms)
+    SIG_PARAGRAPHS=$(perl -0777 -ne 'while (/(?:Why It Matters|What This Means)[^<]*<\/h[23]>\s*<p>([^<]{30,})/gi) { print "$1\n" }' "$article" 2>/dev/null) || true
+    TOTAL_SIG=$(printf '%s\n' "$SIG_PARAGRAPHS" | grep -c .) || true
+    UNIQUE_SIG=$(printf '%s\n' "$SIG_PARAGRAPHS" | grep . | sort -u | wc -l) || true
+    if [ "${TOTAL_SIG:-0}" -eq 0 ]; then
+      # Fallback: extract <p> text directly following significance class spans
+      SIG_PARAGRAPHS=$(perl -ne 'while (/significance[^>]*>([^<]{30,})/gi) { print "$1\n" }' "$article" 2>/dev/null) || true
+      TOTAL_SIG=$(printf '%s\n' "$SIG_PARAGRAPHS" | grep -c .) || true
+      UNIQUE_SIG=$(printf '%s\n' "$SIG_PARAGRAPHS" | grep . | sort -u | wc -l) || true
+    fi
     if [ "${TOTAL_SIG:-0}" -lt 2 ]; then
       continue
-    fi
-    # Extract the text of each significance paragraph (30+ chars after heading)
-    UNIQUE_SIG=$(grep -oPi '(?:Why It Matters|What This Means)[^<]*</h[23]>\s*<p>\K[^<]{30,}' "$article" 2>/dev/null | sort -u | wc -l) || true
-    if [ "${UNIQUE_SIG:-0}" -eq 0 ]; then
-      # Fallback: extract <p> text directly following significance class spans
-      UNIQUE_SIG=$(grep -oP '(?<=significance[^>]*>)[^<]{30,}' "$article" 2>/dev/null | sort -u | wc -l) || true
     fi
     # Compute duplicate ratio: if unique < 50% of total, flag it
     if [ "${UNIQUE_SIG:-0}" -gt 0 ] && [ "$TOTAL_SIG" -gt 0 ]; then
@@ -802,7 +804,7 @@ for article in news/*-en.html news/*-sv.html; do
     if [[ "$BASENAME" == index* ]]; then
       continue
     fi
-    EMPTY_P=$(grep -cP '<p>\s*</p>' "$article" 2>/dev/null) || true
+    EMPTY_P=$(grep -cE '<p>[[:space:]]*</p>' "$article" 2>/dev/null) || true
     if [ "${EMPTY_P:-0}" -gt 0 ]; then
       echo -e "${YELLOW}⚠️ $BASENAME has $EMPTY_P empty <p> tag(s)${NC}"
       EMPTY_P_ARTICLES=$((EMPTY_P_ARTICLES + 1))

@@ -85,7 +85,7 @@ export function fixHtmlNesting(htmlContent: string): string {
  */
 const SWEDISH_BOILERPLATE_PATTERNS: readonly RegExp[] = [
   /Regeringen överlämnar denna proposition till riksdagen\.?/g,
-  /Stockholm den \d{1,2} [a-z]+ \d{4}\.?/g,
+  /Stockholm den \d{1,2} [a-zA-Z]+ \d{4}\.?/gi,
   /Propositionens huvudsakliga innehåll\.?/g,
   /Förslag till riksdagsbeslut\.?/g,
   /Riksdagen (avslår|bifaller) [^.]+\.?/g,
