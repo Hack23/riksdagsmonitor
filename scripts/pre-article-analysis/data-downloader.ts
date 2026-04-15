@@ -329,9 +329,9 @@ export async function downloadAllDocuments(
           batch.map(async (doc) => {
             const docRecord = doc as Record<string, unknown>;
             const dokId = [
-              docRecord['dokumentnamn'],
               docRecord['dok_id'],
               docRecord['id'],
+              docRecord['dokumentnamn'],
             ].find((value): value is string => typeof value === 'string' && value.trim().length > 0);
             if (!dokId) return null;
             const details = await client.fetchDocumentDetails(dokId, true);
