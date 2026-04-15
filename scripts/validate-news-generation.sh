@@ -812,7 +812,7 @@ for article in news/*-*.html; do
     if [[ "$BASENAME" == index* ]]; then
       continue
     fi
-    EMPTY_P=$(grep -cE '<p([[:space:]>])[^>]*>[[:space:]]*</p>' "$article" 2>/dev/null) || true
+    EMPTY_P=$(grep -cE '<p(>|[[:space:]][^>]*>)[[:space:]]*</p>' "$article" 2>/dev/null) || true
     if [ "${EMPTY_P:-0}" -gt 0 ]; then
       echo -e "${YELLOW}⚠️ $BASENAME has $EMPTY_P empty <p> tag(s)${NC}"
       EMPTY_P_ARTICLES=$((EMPTY_P_ARTICLES + 1))
