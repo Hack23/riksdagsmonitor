@@ -885,18 +885,21 @@ export function generateDynamicTitle(
   docCount: number,
 ): { title: string; subtitle: string } {
   // Extract topic hints from strong tags and h3 headings
+  const seen = new Set<string>();
   const topics: string[] = [];
   const strongMatches = content.matchAll(/<strong>([^<]{3,50})<\/strong>/gi);
   for (const m of strongMatches) {
     const text = m[1]?.trim();
-    if (text && !topics.includes(text) && topics.length < 5) {
+    if (text && !seen.has(text) && topics.length < 5) {
+      seen.add(text);
       topics.push(text);
     }
   }
   const h3Matches = content.matchAll(/<h3[^>]*>([^<]{3,60})<\/h3>/gi);
   for (const m of h3Matches) {
     const text = m[1]?.trim();
-    if (text && !topics.includes(text) && topics.length < 5) {
+    if (text && !seen.has(text) && topics.length < 5) {
+      seen.add(text);
       topics.push(text);
     }
   }

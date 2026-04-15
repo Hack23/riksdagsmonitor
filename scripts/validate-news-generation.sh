@@ -686,7 +686,7 @@ SWEDISH_BOILERPLATE_PATTERNS=(
   "Regeringen överlämnar denna proposition"
   "Propositionens huvudsakliga innehåll"
   "Förslag till riksdagsbeslut"
-  "Stockholm den [0-9]"
+  "Stockholm den [0-9]{1,2} [a-z]+ [0-9]{4}"
 )
 
 for article in news/*-en.html; do

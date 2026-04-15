@@ -791,6 +791,11 @@ export function generatePolicySignificance(doc: RawDocument, lang: Language | st
   return docContext ? `${generic} ${docContext}` : generic;
 }
 
+/** Maximum length for document title in context strings. */
+const MAX_DOC_CONTEXT_TITLE_LENGTH = 80;
+/** Length of ellipsis suffix for truncated titles. */
+const DOC_CONTEXT_ELLIPSIS_LENGTH = 3;
+
 /**
  * Build a short document-specific context string to differentiate
  * significance text across documents in the same committee/domain.
@@ -802,8 +807,10 @@ function _buildDocContext(docTitle: string, docId: string, docAuthor: string, la
     parts.push(`[${escapeHtml(docId)}]`);
   }
   if (docTitle && lang === 'en') {
-    // Truncate title to 80 chars for brevity
-    const short = docTitle.length > 80 ? docTitle.substring(0, 77) + '...' : docTitle;
+    // Truncate title for brevity
+    const short = docTitle.length > MAX_DOC_CONTEXT_TITLE_LENGTH
+      ? docTitle.substring(0, MAX_DOC_CONTEXT_TITLE_LENGTH - DOC_CONTEXT_ELLIPSIS_LENGTH) + '...'
+      : docTitle;
     parts.push(`"${escapeHtml(short)}"`);
   }
   if (docAuthor && lang === 'en') {
