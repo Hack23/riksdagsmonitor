@@ -25,10 +25,12 @@ import type { MCPClient } from '../mcp-client/client.js';
 // ---------------------------------------------------------------------------
 
 /**
- * Minimum character count for `fullText`/`fullContent` fields to be classified
- * as meaningful full-text content (not empty/placeholder). Used in data-downloader
- * enrichment and referenced by quality gate checks (Checks 9/10 in
- * SHARED_PROMPT_PATTERNS.md) which use the same >100 threshold via jq.
+ * Strict lower bound for `fullText`/`fullContent` fields to be classified as
+ * meaningful full-text content (not empty/placeholder). Content must be
+ * longer than `FULL_TEXT_MIN_LENGTH` characters (`> 100`), so exactly 100
+ * characters does not qualify. Used in data-downloader enrichment and
+ * referenced by quality gate checks (Checks 9/10 in
+ * SHARED_PROMPT_PATTERNS.md) which use the same `> 100` threshold via jq.
  */
 export const FULL_TEXT_MIN_LENGTH = 100;
 
@@ -351,11 +353,13 @@ export async function downloadAllDocuments(
             };
             const verifiedFullText = sanitize(details['fullText']);
             const verifiedFullContent = str(details['html']).trim();
-            // Only set fullText/fullContent when non-empty to avoid overwriting existing values
-            if (verifiedFullContent.length > 0) {
+            // Only set fullText/fullContent when exceeding FULL_TEXT_MIN_LENGTH
+            // to avoid leaving short/placeholder values that downstream pipeline
+            // code may misinterpret as meaningful full-text content.
+            if (verifiedFullContent.length > FULL_TEXT_MIN_LENGTH) {
               docRecord['fullContent'] = verifiedFullContent;
             }
-            if (verifiedFullText.length > 0) {
+            if (verifiedFullText.length > FULL_TEXT_MIN_LENGTH) {
               docRecord['fullText'] = verifiedFullText;
             }
             // Propagate summary/notis only when doc doesn't already have them
