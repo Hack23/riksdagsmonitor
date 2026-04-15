@@ -47,13 +47,13 @@
 
 ## 📊 Data Quality Assessment
 
-> **AI Instructions:** Count the data depth of ALL documents analyzed. This assessment determines the maximum permissible confidence level for the entire synthesis. If the majority of documents are METADATA-ONLY, the synthesis confidence MUST NOT exceed MEDIUM.
+> **AI Instructions:** Count the data depth of ALL documents analyzed. Classify **FULL-TEXT** using the actual full-text fields (`fullText` or `fullContent`) based on presence and meaningful length; treat `contentFetched` only as an auxiliary signal that content retrieval occurred, not as proof of full text. Classify **SUMMARY-ONLY** when no `fullText`/`fullContent` is present but a substantive summary/notis exists. Classify **METADATA-ONLY** when neither full text nor substantive summary is present. This assessment determines the maximum permissible confidence level for the entire synthesis. If the majority of documents are METADATA-ONLY, the synthesis confidence MUST NOT exceed MEDIUM.
 
 | Metric | Value |
 |--------|-------|
-| **Documents with full text** (`contentFetched: true`, >500 bytes) | `[REQUIRED: X of Y]` |
-| **Documents with summary only** (100-500 chars summary/notis) | `[REQUIRED: X of Y]` |
-| **Documents metadata-only** (<500 bytes, title/date/committee only) | `[REQUIRED: X of Y]` |
+| **Documents with full text** (`fullText`/`fullContent` present with meaningful content; `contentFetched` auxiliary only) | `[REQUIRED: X of Y]` |
+| **Documents with summary only** (no `fullText`/`fullContent`; substantive summary/notis only, e.g. 100-500 chars) | `[REQUIRED: X of Y]` |
+| **Documents metadata-only** (no `fullText`/`fullContent` and no substantive summary; title/date/committee only) | `[REQUIRED: X of Y]` |
 | **Maximum permissible confidence** | `[REQUIRED: Based on ratio — if >50% metadata-only → max MEDIUM; if >75% metadata-only → max LOW]` |
 | **Data enrichment method** | `[REQUIRED: e.g. "pre-article-analysis enrichment", "AI direct MCP calls", "metadata-only"]` |
 

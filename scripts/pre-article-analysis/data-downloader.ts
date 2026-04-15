@@ -18,7 +18,6 @@
 
 import type { RawDocument } from '../data-transformers/types.js';
 import type { MCPClient } from '../mcp-client/client.js';
-import type { RiksdagDocument } from '../types/mcp.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -288,10 +287,9 @@ export async function downloadAllDocuments(
 
   // -----------------------------------------------------------------------
   // Enrichment pass: fetch full-text content for top documents per type.
-  // This calls get_dokument_innehall via MCPClient.enrichDocumentsWithContent()
-  // to ensure analysis artifacts have actual document content, not just
-  // metadata (title, date, committee). Without this step, the analysis
-  // pipeline produces LOW-confidence metadata-only analysis.
+  // Uses fetchDocumentDetails(dok_id, true) to request actual full text
+  // via get_dokument_innehall. Without this step, the analysis pipeline
+  // produces LOW-confidence metadata-only analysis.
   // -----------------------------------------------------------------------
   const enrichLimit = options.enrichLimit ?? MAX_ENRICHMENT_PER_TYPE;
   if (enrichLimit > 0) {
@@ -302,33 +300,41 @@ export async function downloadAllDocuments(
       ? enrichableTypes.filter(t => docTypes.includes(t))
       : enrichableTypes;
 
+    let anyEnriched = false;
     for (const docType of typesToEnrich) {
       const docs = data[docType];
       if (!docs || docs.length === 0) continue;
 
       const toEnrich = docs.slice(0, enrichLimit);
-      try {
-        console.log(`[pre-analysis] Enriching ${toEnrich.length} ${docType} with full-text content...`);
-        // RawDocument and RiksdagDocument are structurally compatible (both are
-        // Record-like objects with dok_id, titel, etc.) but have different TS
-        // definitions. The double cast is necessary because enrichDocumentsWithContent
-        // expects typed RiksdagDocument[] while data-downloader uses generic RawDocument[].
-        const enriched = await client.enrichDocumentsWithContent(
-          toEnrich as unknown as RiksdagDocument[],
-          3, // concurrency
-        );
-        // Merge enriched data back: replace the first N documents with enriched versions
-        for (let i = 0; i < enriched.length; i++) {
-          data[docType][i] = enriched[i] as unknown as RawDocument;
+      let enrichedCount = 0;
+      for (const doc of toEnrich) {
+        const dokId = (doc as Record<string, unknown>)['dokumentnamn'] as string
+          ?? (doc as Record<string, unknown>)['dok_id'] as string
+          ?? (doc as Record<string, unknown>)['id'] as string;
+        if (!dokId) continue;
+        try {
+          const details = await client.fetchDocumentDetails(dokId, true);
+          // Merge fetched details (including fullText/fullContent) back into the doc
+          Object.assign(doc, details, { contentFetched: true });
+          enrichedCount++;
+        } catch (err) {
+          console.warn(
+            `[pre-analysis] ⚠️ Failed to enrich ${dokId}:`,
+            err instanceof Error ? err.message : String(err),
+          );
         }
-        dataSources.push(`get_dokument_innehall(${docType})`);
-        console.log(`[pre-analysis] ✅ Enriched ${enriched.length} ${docType} documents`);
-      } catch (err) {
+      }
+      if (enrichedCount > 0) {
+        anyEnriched = true;
+        console.log(`[pre-analysis] ✅ Enriched ${enrichedCount} of ${toEnrich.length} ${docType} documents with full text`);
+      } else {
         console.warn(
-          `[pre-analysis] ⚠️ ${docType} enrichment failed (metadata-only analysis):`,
-          err instanceof Error ? err.message : String(err),
+          `[pre-analysis] ⚠️ ${docType} enrichment produced no content (metadata-only analysis)`,
         );
       }
+    }
+    if (anyEnriched && !dataSources.includes('get_dokument_innehall')) {
+      dataSources.push('get_dokument_innehall');
     }
   }
 

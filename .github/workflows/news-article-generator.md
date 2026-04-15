@@ -640,7 +640,9 @@ echo "✅ Read $TOTAL_FILES analysis files — these MUST drive article content"
 > 1. Read the synthesis-summary.md in the deep-inspection analysis folder
 > 2. Check if ANY document title/summary contains keywords from `focus_topic`
 > 3. If NO match found → the pipeline downloaded irrelevant documents:
->    - ABORT article generation with `safeoutputs___noop` and message: "Topic-data mismatch: focus_topic='<topic>' but downloaded documents are about <actual topics>"
+>    - ABORT **article generation only**; do **not** use `safeoutputs___noop` because analysis artifacts already exist
+>    - Preserve the downloaded/analysis artifacts and produce a **safe analysis-only output/PR** explaining the mismatch
+>    - The analysis-only output MUST state: `focus_topic='<topic>'`, summarize the actual downloaded document topics as `<actual topics>`, and clearly say that no article was generated due to topic-data mismatch
 >    - Do NOT generate an article from general knowledge about the topic
 >    - Do NOT proceed to manual fallback
 > 4. If match found → proceed normally

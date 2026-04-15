@@ -167,9 +167,9 @@ Before writing ANY analysis, classify every document's data depth:
 
 | Depth Level | Definition | Analysis Permitted | Max Confidence |
 |---|---|---|---|
-| **FULL-TEXT** | Document text fetched via `get_dokument_innehall`, JSON >500 bytes with `contentFetched: true` | All frameworks: SWOT, Risk, Threat, Stakeholder, Significance | **VERY HIGH** |
-| **SUMMARY** | Title + summary/abstract from MCP listing (100-500 chars), or notis field present | Classification, basic SWOT (with caveats), Significance scoring | **MEDIUM** |
-| **METADATA-ONLY** | Title, date, committee code only; JSON <500 bytes | Classification and Significance scoring ONLY | **LOW** |
+| **FULL-TEXT** | Actual document body present in `fullText` or `fullContent` (for example, substantial fetched text from `get_dokument_innehall`); do **not** infer FULL-TEXT from `contentFetched: true` or JSON size alone | All frameworks: SWOT, Risk, Threat, Stakeholder, Significance | **VERY HIGH** |
+| **SUMMARY** | Title + summary/abstract from MCP listing (100-500 chars), or notis field present, but no populated `fullText`/`fullContent` | Classification, basic SWOT (with caveats), Significance scoring | **MEDIUM** |
+| **METADATA-ONLY** | Title, date, committee code only; no summary and no populated `fullText`/`fullContent` | Classification and Significance scoring ONLY | **LOW** |
 | **NO DATA** | Document referenced by topic but NOT in pipeline | **ANALYSIS PROHIBITED** | **N/A — ABORT** |
 
 ### Mandatory Data Depth Label
