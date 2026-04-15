@@ -701,10 +701,11 @@ for article in news/*-*.html; do
     fi
     LANG_SUFFIX="${BASENAME##*-}"
     LANG_SUFFIX="${LANG_SUFFIX%.html}"
+    LANG_SUFFIX_UPPER="$(printf '%s' "$LANG_SUFFIX" | tr '[:lower:]' '[:upper:]')"
     for pattern in "${SWEDISH_BOILERPLATE_PATTERNS[@]}"; do
       COUNT=$(grep -ciE "$pattern" "$article" 2>/dev/null) || true
       if [ "${COUNT:-0}" -gt 0 ]; then
-        echo -e "${YELLOW}⚠️ Swedish boilerplate in ${LANG_SUFFIX^^} article $BASENAME: '$pattern' ($COUNT occurrence(s))${NC}"
+        echo -e "${YELLOW}⚠️ Swedish boilerplate in ${LANG_SUFFIX_UPPER} article $BASENAME: '$pattern' ($COUNT occurrence(s))${NC}"
         SWEDISH_LEAKS=$((SWEDISH_LEAKS + COUNT))
       fi
     done
@@ -805,7 +806,7 @@ echo ""
 echo "📋 Check 20: No empty paragraph tags"
 
 EMPTY_P_ARTICLES=0
-for article in news/*-en.html news/*-sv.html; do
+for article in news/*-*.html; do
   if [ -f "$article" ]; then
     BASENAME="$(basename "$article")"
     if [[ "$BASENAME" == index* ]]; then
