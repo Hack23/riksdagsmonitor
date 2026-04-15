@@ -2138,13 +2138,17 @@ echo ""
 echo "--- Check 9: Confidence-data alignment (prevents confidence inflation) ---"
 SYNTH_FILE="$ANALYSIS_DIR/synthesis-summary.md"
 if [ -f "$SYNTH_FILE" ]; then
-  # Count documents with actual fullText/fullContent using recursive find
+  # Count documents with actual fullText/fullContent with meaningful content (not just key presence)
   HAS_FULLTEXT=0
   find "$ANALYSIS_DIR" -path '*/documents/*.json' -type f 2>/dev/null > /tmp/doc_jsons_check9.txt
   while IFS= read -r jf; do
     [ -z "$jf" ] && continue
     [ ! -f "$jf" ] && continue
-    if grep -q '"fullText"\|"fullContent"' "$jf" 2>/dev/null; then
+    # Extract fullText/fullContent values and check for non-trivial length (>100 chars)
+    grep '"fullText"\|"fullContent"' "$jf" 2>/dev/null > /tmp/ft_lines.txt || true
+    wc -c < /tmp/ft_lines.txt > /tmp/ft_size.txt
+    read FT_SIZE < /tmp/ft_size.txt
+    if [ "$FT_SIZE" -gt 100 ]; then
       HAS_FULLTEXT=$((HAS_FULLTEXT + 1))
     fi
   done < /tmp/doc_jsons_check9.txt
@@ -2188,8 +2192,17 @@ find "$ANALYSIS_DIR" -path '*/documents/*.json' -type f 2>/dev/null > /tmp/doc_j
 while IFS= read -r jf; do
   [ -z "$jf" ] && continue
   [ ! -f "$jf" ] && continue
-  if grep -q '"fullText"\|"fullContent"' "$jf" 2>/dev/null; then
-    FULLTEXT=$((FULLTEXT + 1))
+  # Classify document data depth by checking for meaningful fullText/fullContent content (not just key presence)
+  if grep '"fullText"\|"fullContent"' "$jf" 2>/dev/null > /tmp/ft_lines_c10.txt; then
+    wc -c < /tmp/ft_lines_c10.txt > /tmp/ft_size_c10.txt
+    read FT_SIZE_C10 < /tmp/ft_size_c10.txt
+    if [ "$FT_SIZE_C10" -gt 100 ]; then
+      FULLTEXT=$((FULLTEXT + 1))
+    elif grep -q '"summary"\|"notis"' "$jf" 2>/dev/null; then
+      SUMMARY_ONLY=$((SUMMARY_ONLY + 1))
+    else
+      METADATA_ONLY=$((METADATA_ONLY + 1))
+    fi
   elif grep -q '"summary"\|"notis"' "$jf" 2>/dev/null; then
     SUMMARY_ONLY=$((SUMMARY_ONLY + 1))
   else
