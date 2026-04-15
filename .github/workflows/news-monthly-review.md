@@ -244,7 +244,7 @@ Uses `memory/news-generation` branch. START: read `memory/news-generation/last-r
 - **Minutes 18–25**: Generate articles for all 14 languages
 - **Minutes 25–28**: Validate and commit analysis + articles
 - **Minutes 28–30**: Create PR with `safeoutputs___create_pull_request`
-- **Minutes 43–45**: 🚨 **HARD DEADLINE** — If no safe output has been called yet, IMMEDIATELY call `safeoutputs___noop` with reason "Time limit reached before completion"
+- **Minutes 43–45**: 🚨 **HARD DEADLINE** — If no safe output yet: if ANY artifacts/files were created, IMMEDIATELY stage, commit, call `safeoutputs___create_pull_request` with partial work. ONLY call `safeoutputs___noop` if truly ZERO files were created.
 
 > ⚠️ **Analysis must include color-coded Mermaid diagrams, evidence tables, and template structure compliance** — plain prose is NEVER acceptable.
 

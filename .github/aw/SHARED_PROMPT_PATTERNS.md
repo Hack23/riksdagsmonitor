@@ -1658,8 +1658,15 @@ Then call the health gate:
 3. After 3 failures → `safeoutputs___noop({"message": "MCP server unavailable after 3 attempts — Render.com cold start exceeded timeout"})` — do NOT proceed
 4. **ALL content MUST come from live MCP data.** Never use cached articles, stale data, or AI-fabricated content.
 5. **For translation workflows**: MCP is required for accurate political term translation and cross-referencing. Do NOT proceed without MCP.
-6. **NEVER let the workflow timeout** without calling a safe output. If MCP is down, noop after the 3 retries instead of wasting 60 minutes.
+6. **NEVER let the workflow timeout** without calling a safe output. If MCP is down, noop after the 3 retries instead of wasting the full timeout.
 7. **⏱️ Do NOT spend more than 2 minutes on MCP warmup** — proceed to analysis immediately once `get_sync_status` succeeds.
+
+> 🚨 **UNIVERSAL SAFE OUTPUT RULES — ALL WORKFLOWS MUST FOLLOW:**
+>
+> 1. **Call `safeoutputs___create_pull_request` as EARLY as possible** — the moment you have committed files. The safeoutputs MCP session has a finite lifetime. Successful runs call it by minute ~25. Failed runs that delayed past minute 40 got "session not found" and lost all work.
+> 2. **NEVER call `safeoutputs___noop` when artifacts exist.** Noop means "I did nothing." If you created files, you DID something and MUST create a PR. Partial work in a PR is infinitely better than lost work via noop.
+> 3. **At HARD DEADLINE**: If ANY files were created → `safeoutputs___create_pull_request`. ONLY noop if truly ZERO files were created.
+> 4. **Architecture reminder**: `safeoutputs___create_pull_request` records your intent. A separate `safe_outputs` job executes the PR creation AFTER the agent job ends. If the MCP session expires before you record the intent, the `safe_outputs` job is SKIPPED and all work is lost.
 
 ### Layer 3: MCP Gateway Diagnostics (run when tools fail)
 

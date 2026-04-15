@@ -355,7 +355,7 @@ read START_TIME < /tmp/start_time.txt
 | Validate | 33–38 | Translate, validate, commit |
 | PR | 38–43 | `safeoutputs___create_pull_request` |
 
-| **HARD DEADLINE** | **43–45** | 🚨 If no safe output called yet, IMMEDIATELY call `safeoutputs___noop` with reason "Time limit reached before completion" |
+| **HARD DEADLINE** | **43–45** | 🚨 If no safe output yet: if ANY artifacts/files were created, IMMEDIATELY stage, commit, call `safeoutputs___create_pull_request` with partial work. ONLY call `safeoutputs___noop` if truly ZERO files were created. |
 > ⚠️ **Analysis phase is 15 minutes minimum** — this is NOT negotiable. Every analysis file must contain color-coded Mermaid diagrams, structured evidence tables with dok_id citations, and follow the corresponding template structure exactly.
 
 **Hard cutoffs** — check elapsed time before each phase:
