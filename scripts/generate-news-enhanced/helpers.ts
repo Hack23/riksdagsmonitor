@@ -413,7 +413,7 @@ function printQualityReport(assessment: MultiDimensionalQualityAssessment, filen
  * - `article:quality-iterations` — number of assessment passes
  * - `article:quality-assessed` — whether a quality assessment is present
  */
-function injectQualityMetadata(html: string, assessment?: MultiDimensionalQualityAssessment): string {
+export function injectQualityMetadata(html: string, assessment?: MultiDimensionalQualityAssessment): string {
   const score = assessment?.overallScore ?? 0;
   const passes = assessment?.assessmentPasses ?? 0;
   const version = 'v2';

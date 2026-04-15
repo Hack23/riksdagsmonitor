@@ -4,7 +4,7 @@
  */
 
 import { describe, it, expect, afterEach, vi } from 'vitest';
-import { generateArticleHTML, generateArticleLanguageSwitcher, generateSiteFooter, fixHtmlNesting } from '../scripts/article-template.js';
+import { generateArticleHTML, generateArticleLanguageSwitcher, generateSiteFooter, fixHtmlNesting, stripSwedishBoilerplate } from '../scripts/article-template.js';
 import articleTemplateDefault from '../scripts/article-template.js';
 import type { Language } from '../scripts/types/language.js';
 import type { ClassificationLevel, RiskLevel, ConfidenceLabel } from '../scripts/analysis-reader.js';
@@ -945,6 +945,26 @@ describe('Article Template', () => {
       expect(fixHtmlNesting(input)).toBe('<p>valid paragraph</p><p>another</p>');
     });
 
+    it('should strip empty <p></p> tags', () => {
+      const input = '<p>content</p><p></p><p>more</p>';
+      expect(fixHtmlNesting(input)).toBe('<p>content</p><p>more</p>');
+    });
+
+    it('should strip empty <p> tags with whitespace', () => {
+      const input = '<p>content</p><p>  </p><p>more</p>';
+      expect(fixHtmlNesting(input)).toBe('<p>content</p><p>more</p>');
+    });
+
+    it('should strip empty <p> tags with attributes', () => {
+      const input = '<p>content</p><p class="foo"></p><p>more</p>';
+      expect(fixHtmlNesting(input)).toBe('<p>content</p><p>more</p>');
+    });
+
+    it('should strip empty <p> tags with attributes and whitespace', () => {
+      const input = '<p class="bar" id="x"> </p><p>valid</p>';
+      expect(fixHtmlNesting(input)).toBe('<p>valid</p>');
+    });
+
     it('should fix the pattern in rendered article HTML body', () => {
       const data: MockArticleData = {
         ...mockArticleData,
@@ -965,6 +985,52 @@ describe('Article Template', () => {
       expect(jsonLdMatch).not.toBeNull();
       // The escaped form of </ul></p> should not appear in JSON-LD articleBody
       expect(jsonLdMatch![1]).not.toContain('&lt;/ul&gt;&lt;/p&gt;');
+    });
+  });
+
+  // ---------------------------------------------------------------------------
+  // Swedish boilerplate stripping
+  // ---------------------------------------------------------------------------
+
+  describe('stripSwedishBoilerplate', () => {
+    it('strips known Swedish phrases from non-SV content', () => {
+      const input = '<p>Regeringen överlämnar denna proposition till riksdagen.</p>';
+      expect(stripSwedishBoilerplate(input, 'en')).toBe('<p></p>');
+    });
+
+    it('strips Stockholm date patterns', () => {
+      const input = '<p>Stockholm den 15 april 2024.</p>';
+      expect(stripSwedishBoilerplate(input, 'en')).toBe('<p></p>');
+    });
+
+    it('strips Stockholm date with capitalized month', () => {
+      const input = '<p>Stockholm den 1 Januari 2024.</p>';
+      expect(stripSwedishBoilerplate(input, 'en')).toBe('<p></p>');
+    });
+
+    it('leaves SV content unchanged', () => {
+      const input = '<p>Regeringen överlämnar denna proposition till riksdagen.</p>';
+      expect(stripSwedishBoilerplate(input, 'sv')).toBe(input);
+    });
+
+    it('strips Propositionens huvudsakliga innehåll', () => {
+      const input = '<p>Propositionens huvudsakliga innehåll.</p>';
+      expect(stripSwedishBoilerplate(input, 'en')).toBe('<p></p>');
+    });
+
+    it('strips Förslag till riksdagsbeslut', () => {
+      const input = 'Förslag till riksdagsbeslut.';
+      expect(stripSwedishBoilerplate(input, 'en')).toBe('');
+    });
+
+    it('strips Ärendet är avslutat', () => {
+      const input = '<p>Some text. Ärendet är avslutat.</p>';
+      expect(stripSwedishBoilerplate(input, 'en')).toBe('<p>Some text. </p>');
+    });
+
+    it('leaves non-boilerplate content intact', () => {
+      const input = '<p>This is valid English content about Swedish politics.</p>';
+      expect(stripSwedishBoilerplate(input, 'en')).toBe(input);
     });
   });
 
