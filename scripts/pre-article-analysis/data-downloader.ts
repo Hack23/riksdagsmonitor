@@ -17,6 +17,7 @@
  */
 
 import type { RawDocument } from '../data-transformers/types.js';
+import { isPersonProfileText } from '../data-transformers/helpers.js';
 import type { MCPClient } from '../mcp-client/client.js';
 
 // ---------------------------------------------------------------------------
@@ -342,7 +343,13 @@ export async function downloadAllDocuments(
             //   details.fullText   → doc.fullText (only actual full text, not summary/notis)
             //   details.summary/notis → doc.summary/notis (kept in own fields)
             const str = (v: unknown): string => typeof v === 'string' ? v : '';
-            const verifiedFullText = str(details['fullText']).trim();
+            // Sanitize text fields: filter out MP profile/deceased-notice text
+            // (consistent with weekly-review/data-loader.ts sanitization pattern)
+            const sanitize = (v: unknown): string => {
+              const s = str(v).trim();
+              return isPersonProfileText(s) ? '' : s;
+            };
+            const verifiedFullText = sanitize(details['fullText']);
             const verifiedFullContent = str(details['html']).trim();
             // Only set fullText/fullContent when non-empty to avoid overwriting existing values
             if (verifiedFullContent.length > 0) {
@@ -352,8 +359,8 @@ export async function downloadAllDocuments(
               docRecord['fullText'] = verifiedFullText;
             }
             // Propagate summary/notis only when doc doesn't already have them
-            const detailsSummary = str(details['summary']);
-            const detailsNotis = str(details['notis']);
+            const detailsSummary = sanitize(details['summary']);
+            const detailsNotis = sanitize(details['notis']);
             if (!docRecord['summary'] && detailsSummary.length > 0) {
               docRecord['summary'] = detailsSummary;
             }
@@ -381,6 +388,11 @@ export async function downloadAllDocuments(
               result.reason instanceof Error ? result.reason.message : String(result.reason),
             );
           }
+        }
+        // Small delay between batches to avoid rate limiting on get_dokument_innehall
+        // (consistent with weekly-review/data-loader.ts pattern)
+        if (i + CONCURRENCY < toEnrich.length) {
+          await new Promise<void>(r => setTimeout(r, 300));
         }
       }
       if (fullTextCount > 0) {
