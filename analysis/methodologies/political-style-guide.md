@@ -122,6 +122,15 @@ Three permitted depth levels define what analysis is appropriate for each conten
 
 All factual claims about parliamentary actions **must** cite a `dok_id`:
 
+> ⛔ **FABRICATION BAN (v2.2 Addition)**: The following patterns are BANNED and indicate fabricated content that is not grounded in actual downloaded data:
+> - **Fabricated statistics** without verifiable source citation (e.g., "15M SEK", "300+ votes", "30-40% increase") — every number MUST cite a specific dok_id or MCP data file
+> - **Fabricated document references** — citing Prop/Skr/SOU numbers not present in the analysis pipeline's downloaded documents
+> - **Fabricated politician quotes or positions** — naming specific politicians with specific positions not found in any downloaded document
+> - **General knowledge masquerading as analysis** — generating content about a topic (e.g., cybersecurity policy) when the downloaded documents are about something else entirely (e.g., migration/healthcare)
+> - **Confidence inflation** — claiming HIGH confidence when the synthesis-summary.md reports LOW confidence
+>
+> **Root cause context**: On 2026-04-15, a deep-inspection article claimed to analyze Prop. 2025/26:214 (cybersecurity) with specific budget figures, vote predictions, and international context — but the actual pipeline data contained ZERO cybersecurity documents (only migration/healthcare motions). This ban prevents such fabrication.
+
 | Claim Type | Required Citation |
 |-----------|------------------|
 | Legislation passed/failed | `dok_id` of proposition + vote date |

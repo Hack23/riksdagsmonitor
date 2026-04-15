@@ -1812,6 +1812,34 @@ echo "📊 JSON data files: $DATA_JSON_COUNT"
 
 If `DATA_JSON_COUNT=0`: **the agent MUST diagnose script failures (read error logs, fix code issues, re-run) OR use direct MCP tool calls as fallback.** Save each MCP response as JSON to `analysis/data/documents/{type}/{dok_id}.json`. Never give up on downloading data unless MCP itself is down.
 
+#### Step 1b: Mandatory Full-Text Document Enrichment
+
+> 🚨 **ABSOLUTE RULE**: Analysis based only on metadata (title, date, committee code) is LOW confidence at best. The pre-article-analysis pipeline now enriches top documents automatically via `enrichDocumentsWithContent()`, but workflows MUST verify enrichment and supplement when needed.
+
+**Before ANY per-document analysis**, verify data depth:
+
+1. **Check each document JSON** in `analysis/daily/{date}/{type}/documents/*.json`:
+   - If JSON contains `contentFetched: true` and `summary` field with >100 chars → **FULL-TEXT** available
+   - If JSON contains only `titel`, `datum`, `organ` fields (<500 bytes) → **METADATA-ONLY**
+2. **For METADATA-ONLY documents**, the AI agent MUST call MCP directly:
+   ```
+   Call: get_dokument_innehall({ dok_id: "<value>", include_full_text: true })
+   ```
+   - Store returned content in the document's analysis file
+   - If `get_dokument_innehall` fails: mark document as `METADATA-ONLY` in analysis
+3. **NEVER claim HIGH confidence on metadata-only analysis**
+
+**Confidence Ceiling Rules (Based on Data Depth):**
+
+| Data Depth | Max Confidence | Description |
+|---|---|---|
+| **FULL-TEXT** — Document text fetched via `get_dokument_innehall` | **HIGH** or **VERY HIGH** | Full text verified, multi-framework analysis possible |
+| **SUMMARY** — Title + summary/abstract (100+ chars) from MCP listing | **MEDIUM** | Partial content, limited analysis depth |
+| **METADATA-ONLY** — Title, date, committee code only (<500 bytes) | **LOW** | Classification and scoring only; SWOT/risk analysis PROHIBITED |
+| **NO DATA** — Document not in pipeline | Analysis **PROHIBITED** | Do NOT fabricate analysis from general knowledge |
+
+> ⛔ **FABRICATION BAN**: If analysis JSON files for a topic contain ZERO documents matching the article topic (e.g., focus_topic is "cyber security" but all documents are about migration/healthcare), the workflow MUST abort with `safeoutputs___noop` — NEVER generate an article from general knowledge about a topic when the actual downloaded data is about something else entirely.
+
 #### Step 2: Read ALL Methodology Guides (MANDATORY — do this BEFORE any analysis)
 
 The agent MUST read (using `view` or `cat`) every one of these files before writing any analysis. These define HOW to analyze:
@@ -2099,6 +2127,68 @@ if [ -d "$ANALYSIS_DIR/documents" ]; then
         echo "✅ PASS: $bf has substantive content ($FILE_SIZE bytes)"
       fi
     done
+  fi
+fi
+
+# Check 9: Confidence-Data Alignment — article confidence MUST match analysis confidence
+echo ""
+echo "--- Check 9: Confidence-data alignment (prevents confidence inflation) ---"
+SYNTH_FILE="$ANALYSIS_DIR/synthesis-summary.md"
+if [ -f "$SYNTH_FILE" ]; then
+  grep -i 'Confidence.*LOW\|confidence.*low' "$SYNTH_FILE" 2>/dev/null > /tmp/low_conf.txt || true
+  wc -c < /tmp/low_conf.txt > /tmp/low_conf_size.txt || echo 0 > /tmp/low_conf_size.txt
+  read LOW_CONF_SIZE < /tmp/low_conf_size.txt
+  if [ "$LOW_CONF_SIZE" -gt 0 ]; then
+    # Check average JSON file size — small files = metadata-only
+    AVG_SIZE=0
+    JSON_FILES=0
+    TOTAL_SIZE=0
+    for jf in "$ANALYSIS_DIR"/documents/*.json; do
+      [ ! -f "$jf" ] && continue
+      wc -c < "$jf" > /tmp/jf_size.txt
+      read JF_SIZE < /tmp/jf_size.txt
+      TOTAL_SIZE=$((TOTAL_SIZE + JF_SIZE))
+      JSON_FILES=$((JSON_FILES + 1))
+    done
+    if [ "$JSON_FILES" -gt 0 ]; then
+      AVG_SIZE=$((TOTAL_SIZE / JSON_FILES))
+    fi
+    if [ "$AVG_SIZE" -gt 0 ] && [ "$AVG_SIZE" -lt 500 ]; then
+      echo "⚠️ WARNING: Synthesis confidence is LOW and avg JSON is $AVG_SIZE bytes (metadata-only) — article MUST NOT claim HIGH confidence"
+      WARN_COUNT=$((WARN_COUNT + 1))
+    else
+      echo "✅ PASS: Synthesis confidence aligns with data depth (avg $AVG_SIZE bytes)"
+    fi
+  else
+    echo "✅ PASS: Synthesis does not report LOW confidence"
+  fi
+fi
+
+# Check 10: Data Depth Assessment — count enriched vs metadata-only documents
+echo ""
+echo "--- Check 10: Data depth assessment (enrichment coverage) ---"
+if [ -d "$ANALYSIS_DIR/documents" ]; then
+  ENRICHED=0
+  METADATA_ONLY=0
+  for jf in "$ANALYSIS_DIR"/documents/*.json; do
+    [ ! -f "$jf" ] && continue
+    wc -c < "$jf" > /tmp/jf_size.txt
+    read JF_SIZE < /tmp/jf_size.txt
+    if [ "$JF_SIZE" -ge 500 ]; then
+      ENRICHED=$((ENRICHED + 1))
+    else
+      METADATA_ONLY=$((METADATA_ONLY + 1))
+    fi
+  done
+  TOTAL_DATA=$((ENRICHED + METADATA_ONLY))
+  if [ "$TOTAL_DATA" -gt 0 ]; then
+    echo "📊 Data depth: $ENRICHED enriched (full-text), $METADATA_ONLY metadata-only, out of $TOTAL_DATA total"
+    if [ "$METADATA_ONLY" -gt "$ENRICHED" ]; then
+      echo "⚠️ WARNING: Majority of documents ($METADATA_ONLY/$TOTAL_DATA) are metadata-only — max confidence is MEDIUM"
+      WARN_COUNT=$((WARN_COUNT + 1))
+    else
+      echo "✅ PASS: Majority of documents have full-text content"
+    fi
   fi
 fi
 

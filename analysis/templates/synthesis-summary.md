@@ -45,6 +45,22 @@
 
 ---
 
+## 📊 Data Quality Assessment
+
+> **AI Instructions:** Count the data depth of ALL documents analyzed. This assessment determines the maximum permissible confidence level for the entire synthesis. If the majority of documents are METADATA-ONLY, the synthesis confidence MUST NOT exceed MEDIUM.
+
+| Metric | Value |
+|--------|-------|
+| **Documents with full text** (`contentFetched: true`, >500 bytes) | `[REQUIRED: X of Y]` |
+| **Documents with summary only** (100-500 chars summary/notis) | `[REQUIRED: X of Y]` |
+| **Documents metadata-only** (<500 bytes, title/date/committee only) | `[REQUIRED: X of Y]` |
+| **Maximum permissible confidence** | `[REQUIRED: Based on ratio — if >50% metadata-only → max MEDIUM; if >75% metadata-only → max LOW]` |
+| **Data enrichment method** | `[REQUIRED: e.g. "pre-article-analysis enrichment", "AI direct MCP calls", "metadata-only"]` |
+
+> ⚠️ **Confidence Override Rule**: The `Overall Confidence` in the Synthesis Context table above MUST NOT exceed the `Maximum permissible confidence` calculated here. If it does, reduce the Overall Confidence to match.
+
+---
+
 ## 📊 Intelligence Dashboard
 
 ### Daily Political Landscape

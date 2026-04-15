@@ -18,6 +18,7 @@
 
 import type { RawDocument } from '../data-transformers/types.js';
 import type { MCPClient } from '../mcp-client/client.js';
+import type { RiksdagDocument } from '../types/mcp.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -63,6 +64,9 @@ export interface DownloadResult {
   data: DownloadedData;
   manifest: DownloadManifest;
 }
+
+/** Maximum number of documents to enrich with full-text content per type. */
+export const MAX_ENRICHMENT_PER_TYPE = 5;
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -172,7 +176,7 @@ function currentRm(): string {
  */
 export async function downloadAllDocuments(
   client: MCPClient,
-  options: { limit?: number; rm?: string; docTypes?: DocumentTypeKey[] } = {},
+  options: { limit?: number; rm?: string; docTypes?: DocumentTypeKey[]; enrichLimit?: number } = {},
 ): Promise<DownloadResult> {
   const start = Date.now();
   const limit = options.limit ?? 20;
@@ -281,6 +285,48 @@ export async function downloadAllDocuments(
     questions: data.questions.length,
     interpellations: data.interpellations.length,
   };
+
+  // -----------------------------------------------------------------------
+  // Enrichment pass: fetch full-text content for top documents per type.
+  // This calls get_dokument_innehall via MCPClient.enrichDocumentsWithContent()
+  // to ensure analysis artifacts have actual document content, not just
+  // metadata (title, date, committee). Without this step, the analysis
+  // pipeline produces LOW-confidence metadata-only analysis.
+  // -----------------------------------------------------------------------
+  const enrichLimit = options.enrichLimit ?? MAX_ENRICHMENT_PER_TYPE;
+  if (enrichLimit > 0) {
+    const enrichableTypes: DocumentTypeKey[] = [
+      'propositions', 'committeeReports', 'motions', 'interpellations',
+    ];
+    const typesToEnrich = docTypes
+      ? enrichableTypes.filter(t => docTypes.includes(t))
+      : enrichableTypes;
+
+    for (const docType of typesToEnrich) {
+      const docs = data[docType];
+      if (!docs || docs.length === 0) continue;
+
+      const toEnrich = docs.slice(0, enrichLimit);
+      try {
+        console.log(`[pre-analysis] Enriching ${toEnrich.length} ${docType} with full-text content...`);
+        const enriched = await client.enrichDocumentsWithContent(
+          toEnrich as unknown as RiksdagDocument[],
+          3, // concurrency
+        );
+        // Merge enriched data back: replace the first N documents with enriched versions
+        for (let i = 0; i < enriched.length; i++) {
+          data[docType][i] = enriched[i] as unknown as RawDocument;
+        }
+        dataSources.push(`get_dokument_innehall(${docType})`);
+        console.log(`[pre-analysis] ✅ Enriched ${enriched.length} ${docType} documents`);
+      } catch (err) {
+        console.warn(
+          `[pre-analysis] ⚠️ ${docType} enrichment failed (metadata-only analysis):`,
+          err instanceof Error ? err.message : String(err),
+        );
+      }
+    }
+  }
 
   return {
     data,
