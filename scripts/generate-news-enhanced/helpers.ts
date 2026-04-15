@@ -424,8 +424,12 @@ export function injectQualityMetadata(html: string, assessment?: MultiDimensiona
     `  <meta name="article:quality-version" content="${version}">`,
     `  <meta name="article:quality-iterations" content="${passes}">`,
     `  <meta name="article:quality-assessed" content="${qualityAssessed}">`,
-    // Legacy tags for backward compatibility with existing tooling
+    // Legacy bare quality-* tags for backward compatibility with existing tooling
     `  <meta name="quality-score" content="${score}">`,
+    `  <meta name="quality-version" content="${version}">`,
+    `  <meta name="quality-iterations" content="${passes}">`,
+    `  <meta name="quality-assessed" content="${qualityAssessed}">`,
+    // Legacy article-quality-* (hyphenated) tags for backward compatibility
     `  <meta name="article-quality-score" content="${score}">`,
     `  <meta name="article-quality-version" content="${version}">`,
     `  <meta name="article-quality-iterations" content="${passes}">`,

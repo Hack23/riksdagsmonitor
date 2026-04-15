@@ -18,8 +18,12 @@ describe('injectQualityMetadata', () => {
     expect(result).toContain('<meta name="article:quality-version" content="v2">');
     expect(result).toContain('<meta name="article:quality-iterations" content="0">');
     expect(result).toContain('<meta name="article:quality-assessed" content="false">');
-    // Legacy tags for backward compatibility
+    // Legacy bare quality-* tags for backward compatibility
     expect(result).toContain('<meta name="quality-score" content="0">');
+    expect(result).toContain('<meta name="quality-version" content="v2">');
+    expect(result).toContain('<meta name="quality-iterations" content="0">');
+    expect(result).toContain('<meta name="quality-assessed" content="false">');
+    // Legacy article-quality-* (hyphenated) tags for backward compatibility
     expect(result).toContain('<meta name="article-quality-score" content="0">');
     expect(result).toContain('<meta name="article-quality-version" content="v2">');
     expect(result).toContain('<meta name="article-quality-iterations" content="0">');
@@ -47,8 +51,11 @@ describe('injectQualityMetadata', () => {
     expect(result).toContain('<meta name="article:quality-score" content="85">');
     expect(result).toContain('<meta name="article:quality-iterations" content="3">');
     expect(result).toContain('<meta name="article:quality-assessed" content="true">');
-    // Legacy tags also present with correct values
+    // Legacy bare quality-* tags with correct values
     expect(result).toContain('<meta name="quality-score" content="85">');
+    expect(result).toContain('<meta name="quality-iterations" content="3">');
+    expect(result).toContain('<meta name="quality-assessed" content="true">');
+    // Legacy article-quality-* (hyphenated) tags with correct values
     expect(result).toContain('<meta name="article-quality-score" content="85">');
     expect(result).toContain('<meta name="article-quality-iterations" content="3">');
     expect(result).toContain('<meta name="article-quality-assessed" content="true">');
@@ -65,17 +72,24 @@ describe('injectQualityMetadata', () => {
     expect(iterMatches).toHaveLength(1);
     const assessedMatches = second.match(/article:quality-assessed/g) ?? [];
     expect(assessedMatches).toHaveLength(1);
-    // Legacy tags also not duplicated
+    // Legacy bare quality-* tags also not duplicated
     const legacyScoreMatches = second.match(/name="quality-score"/g) ?? [];
     expect(legacyScoreMatches).toHaveLength(1);
+    const legacyVersionMatches = second.match(/name="quality-version"/g) ?? [];
+    expect(legacyVersionMatches).toHaveLength(1);
+    const legacyIterMatches = second.match(/name="quality-iterations"/g) ?? [];
+    expect(legacyIterMatches).toHaveLength(1);
+    const legacyAssessedMatches = second.match(/name="quality-assessed"/g) ?? [];
+    expect(legacyAssessedMatches).toHaveLength(1);
+    // Legacy article-quality-* (hyphenated) tags also not duplicated
     const legacyArticleScoreMatches = second.match(/name="article-quality-score"/g) ?? [];
     expect(legacyArticleScoreMatches).toHaveLength(1);
-    const legacyVersionMatches = second.match(/name="article-quality-version"/g) ?? [];
-    expect(legacyVersionMatches).toHaveLength(1);
-    const legacyIterMatches = second.match(/name="article-quality-iterations"/g) ?? [];
-    expect(legacyIterMatches).toHaveLength(1);
-    const legacyAssessedMatches = second.match(/name="article-quality-assessed"/g) ?? [];
-    expect(legacyAssessedMatches).toHaveLength(1);
+    const legacyArticleVersionMatches = second.match(/name="article-quality-version"/g) ?? [];
+    expect(legacyArticleVersionMatches).toHaveLength(1);
+    const legacyArticleIterMatches = second.match(/name="article-quality-iterations"/g) ?? [];
+    expect(legacyArticleIterMatches).toHaveLength(1);
+    const legacyArticleAssessedMatches = second.match(/name="article-quality-assessed"/g) ?? [];
+    expect(legacyArticleAssessedMatches).toHaveLength(1);
   });
 
   it('handles case-insensitive </HEAD> tag', () => {
@@ -92,7 +106,7 @@ describe('injectQualityMetadata', () => {
     expect(result).toContain('</Head>');
   });
 
-  it('returns HTML unchanged when no </head> tag present', () => {
+  it('strips existing quality tags but cannot inject new ones when </head> is missing', () => {
     const noHead = '<html><body>content</body></html>';
     const result = injectQualityMetadata(noHead);
     // Tags cannot be inserted without </head>, but existing ones are still stripped

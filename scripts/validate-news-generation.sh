@@ -672,7 +672,7 @@ done
 if [ $BANNED_TITLES -eq 0 ]; then
   echo -e "${GREEN}✅ No banned generic title patterns found${NC}"
 else
-  echo -e "${YELLOW}⚠️ $BANNED_TITLES article(s) have generic banned titles — AI agent should replace with newsworthy headlines${NC}"
+  echo -e "${RED}❌ $BANNED_TITLES article(s) have generic banned titles — AI agent must replace them with newsworthy headlines${NC}"
 fi
 echo ""
 
