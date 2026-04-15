@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-15T06:15:42.417Z",
+  "timestamp": "2026-04-15T07:23:25.624Z",
   "types": [
-    "propositions"
+    "motions"
   ],
   "languagesGenerated": [
     "en",
@@ -16,8 +16,8 @@
   "generated": 2,
   "errors": 0,
   "articles": [
-    "2026-04-15-government-propositions-en.html",
-    "2026-04-15-government-propositions-sv.html"
+    "2026-04-15-opposition-motions-en.html",
+    "2026-04-15-opposition-motions-sv.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
