@@ -309,6 +309,10 @@ export async function downloadAllDocuments(
       const toEnrich = docs.slice(0, enrichLimit);
       try {
         console.log(`[pre-analysis] Enriching ${toEnrich.length} ${docType} with full-text content...`);
+        // RawDocument and RiksdagDocument are structurally compatible (both are
+        // Record-like objects with dok_id, titel, etc.) but have different TS
+        // definitions. The double cast is necessary because enrichDocumentsWithContent
+        // expects typed RiksdagDocument[] while data-downloader uses generic RawDocument[].
         const enriched = await client.enrichDocumentsWithContent(
           toEnrich as unknown as RiksdagDocument[],
           3, // concurrency
