@@ -20,6 +20,18 @@ import type { RawDocument } from '../data-transformers/types.js';
 import type { MCPClient } from '../mcp-client/client.js';
 
 // ---------------------------------------------------------------------------
+// Constants
+// ---------------------------------------------------------------------------
+
+/**
+ * Minimum character count for `fullText`/`fullContent` fields to be classified
+ * as meaningful full-text content (not empty/placeholder). Used in data-downloader
+ * enrichment and referenced by quality gate checks (Checks 9/10 in
+ * SHARED_PROMPT_PATTERNS.md) which use the same >100 threshold via jq.
+ */
+export const FULL_TEXT_MIN_LENGTH = 100;
+
+// ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
 
@@ -315,9 +327,12 @@ export async function downloadAllDocuments(
         const batch = toEnrich.slice(i, i + CONCURRENCY);
         const results = await Promise.allSettled(
           batch.map(async (doc) => {
-            const dokId = (doc as Record<string, unknown>)['dokumentnamn'] as string
-              ?? (doc as Record<string, unknown>)['dok_id'] as string
-              ?? (doc as Record<string, unknown>)['id'] as string;
+            const docRecord = doc as Record<string, unknown>;
+            const dokId = [
+              docRecord['dokumentnamn'],
+              docRecord['dok_id'],
+              docRecord['id'],
+            ].find((value): value is string => typeof value === 'string' && value.trim().length > 0);
             if (!dokId) return null;
             const details = await client.fetchDocumentDetails(dokId, true);
             Object.assign(doc, details, { contentFetched: true });
@@ -328,8 +343,8 @@ export async function downloadAllDocuments(
           if (result.status === 'fulfilled' && result.value !== null) {
             const details = result.value as Record<string, unknown>;
             // Only count as full-text if fullText or fullContent is actually populated
-            const hasFullText = typeof details['fullText'] === 'string' && (details['fullText'] as string).length > 100;
-            const hasFullContent = typeof details['fullContent'] === 'string' && (details['fullContent'] as string).length > 100;
+            const hasFullText = typeof details['fullText'] === 'string' && (details['fullText'] as string).length > FULL_TEXT_MIN_LENGTH;
+            const hasFullContent = typeof details['fullContent'] === 'string' && (details['fullContent'] as string).length > FULL_TEXT_MIN_LENGTH;
             if (hasFullText || hasFullContent) {
               fullTextCount++;
             } else {

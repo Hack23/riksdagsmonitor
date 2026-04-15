@@ -1819,7 +1819,7 @@ If `DATA_JSON_COUNT=0`: **the agent MUST diagnose script failures (read error lo
 **Before ANY per-document analysis**, verify data depth:
 
 1. **Check each document JSON** in `analysis/daily/{date}/{type}/documents/*.json`:
-   - If JSON contains `fullText` or `fullContent` with meaningful non-trivial content (for example >500 chars) → **FULL-TEXT** available
+   - If JSON contains `fullText` or `fullContent` with meaningful non-trivial content (>100 chars) → **FULL-TEXT** available
    - If JSON contains `summary` with >100 chars but no `fullText`/`fullContent` → **SUMMARY**
    - If JSON contains `contentFetched: true` but no `fullText`/`fullContent` → treat as **details fetched**, **NOT** automatically FULL-TEXT
    - If JSON contains only `titel`, `datum`, `organ` fields (or otherwise remains <500 bytes without `summary`, `fullText`, or `fullContent`) → **METADATA-ONLY**
@@ -2138,34 +2138,33 @@ echo ""
 echo "--- Check 9: Confidence-data alignment (prevents confidence inflation) ---"
 SYNTH_FILE="$ANALYSIS_DIR/synthesis-summary.md"
 if [ -f "$SYNTH_FILE" ]; then
-  # Count documents with actual fullText/fullContent with meaningful content (not just key presence)
+  # Count documents with actual fullText/fullContent with meaningful content (>100 chars via jq)
   HAS_FULLTEXT=0
-  find "$ANALYSIS_DIR" -path '*/documents/*.json' -type f 2>/dev/null > /tmp/doc_jsons_check9.txt
+  find "$ANALYSIS_DIR" -path '*/documents/*.json' -type f 2>/dev/null > /tmp/qg9_doc_jsons.txt
   while IFS= read -r jf; do
     [ -z "$jf" ] && continue
     [ ! -f "$jf" ] && continue
-    # Extract fullText/fullContent values and check for non-trivial length (>100 chars)
-    grep '"fullText"\|"fullContent"' "$jf" 2>/dev/null > /tmp/ft_lines.txt || true
-    wc -c < /tmp/ft_lines.txt > /tmp/ft_size.txt
-    read FT_SIZE < /tmp/ft_size.txt
-    if [ "$FT_SIZE" -gt 100 ]; then
+    # Use jq to check actual string lengths of fullText/fullContent (>100 chars)
+    jq -r 'if ((.fullText // "") | length) > 100 then "HAS_FT" elif ((.fullContent // "") | length) > 100 then "HAS_FT" else "NO_FT" end' "$jf" 2>/dev/null > /tmp/qg9_ft_result.txt || echo "NO_FT" > /tmp/qg9_ft_result.txt
+    read FT_RESULT < /tmp/qg9_ft_result.txt
+    if [ "$FT_RESULT" = "HAS_FT" ]; then
       HAS_FULLTEXT=$((HAS_FULLTEXT + 1))
     fi
-  done < /tmp/doc_jsons_check9.txt
+  done < /tmp/qg9_doc_jsons.txt
 
   # Check for HIGH/VERY HIGH confidence claims with no full text
-  grep -i 'Confidence.*HIGH\|confidence.*VERY HIGH' "$SYNTH_FILE" 2>/dev/null > /tmp/high_conf.txt || true
-  wc -c < /tmp/high_conf.txt > /tmp/high_conf_size.txt || echo 0 > /tmp/high_conf_size.txt
-  read HIGH_CONF_SIZE < /tmp/high_conf_size.txt
+  grep -i 'Confidence.*HIGH\|confidence.*VERY HIGH' "$SYNTH_FILE" 2>/dev/null > /tmp/qg9_high_conf.txt || true
+  wc -c < /tmp/qg9_high_conf.txt > /tmp/qg9_high_conf_size.txt || echo 0 > /tmp/qg9_high_conf_size.txt
+  read HIGH_CONF_SIZE < /tmp/qg9_high_conf_size.txt
   if [ "$HIGH_CONF_SIZE" -gt 0 ] && [ "$HAS_FULLTEXT" -eq 0 ]; then
     echo "⚠️ WARNING: Synthesis claims HIGH/VERY HIGH confidence but ZERO documents have fullText/fullContent — article MUST NOT claim HIGH confidence"
     WARN_COUNT=$((WARN_COUNT + 1))
   fi
 
   # Check for LOW confidence with no full text (existing check)
-  grep -i 'Confidence.*LOW\|confidence.*low' "$SYNTH_FILE" 2>/dev/null > /tmp/low_conf.txt || true
-  wc -c < /tmp/low_conf.txt > /tmp/low_conf_size.txt || echo 0 > /tmp/low_conf_size.txt
-  read LOW_CONF_SIZE < /tmp/low_conf_size.txt
+  grep -i 'Confidence.*LOW\|confidence.*low' "$SYNTH_FILE" 2>/dev/null > /tmp/qg9_low_conf.txt || true
+  wc -c < /tmp/qg9_low_conf.txt > /tmp/qg9_low_conf_size.txt || echo 0 > /tmp/qg9_low_conf_size.txt
+  read LOW_CONF_SIZE < /tmp/qg9_low_conf_size.txt
   if [ "$LOW_CONF_SIZE" -gt 0 ]; then
     if [ "$HAS_FULLTEXT" -eq 0 ]; then
       echo "⚠️ WARNING: Synthesis confidence is LOW and no documents have fullText/fullContent — article MUST NOT claim HIGH confidence"
@@ -2180,6 +2179,8 @@ if [ -f "$SYNTH_FILE" ]; then
       echo "ℹ️ INFO: No full text found — confidence ceiling is MEDIUM"
     fi
   fi
+  # Cleanup check 9 temp files
+  rm -f /tmp/qg9_doc_jsons.txt /tmp/qg9_ft_result.txt /tmp/qg9_high_conf.txt /tmp/qg9_high_conf_size.txt /tmp/qg9_low_conf.txt /tmp/qg9_low_conf_size.txt
 fi
 
 # Check 10: Data Depth Assessment — count enriched vs metadata-only documents
@@ -2188,27 +2189,21 @@ echo "--- Check 10: Data depth assessment (enrichment coverage) ---"
 FULLTEXT=0
 SUMMARY_ONLY=0
 METADATA_ONLY=0
-find "$ANALYSIS_DIR" -path '*/documents/*.json' -type f 2>/dev/null > /tmp/doc_jsons_check10.txt
+find "$ANALYSIS_DIR" -path '*/documents/*.json' -type f 2>/dev/null > /tmp/qg10_doc_jsons.txt
 while IFS= read -r jf; do
   [ -z "$jf" ] && continue
   [ ! -f "$jf" ] && continue
-  # Classify document data depth by checking for meaningful fullText/fullContent content (not just key presence)
-  if grep '"fullText"\|"fullContent"' "$jf" 2>/dev/null > /tmp/ft_lines_c10.txt; then
-    wc -c < /tmp/ft_lines_c10.txt > /tmp/ft_size_c10.txt
-    read FT_SIZE_C10 < /tmp/ft_size_c10.txt
-    if [ "$FT_SIZE_C10" -gt 100 ]; then
-      FULLTEXT=$((FULLTEXT + 1))
-    elif grep -q '"summary"\|"notis"' "$jf" 2>/dev/null; then
-      SUMMARY_ONLY=$((SUMMARY_ONLY + 1))
-    else
-      METADATA_ONLY=$((METADATA_ONLY + 1))
-    fi
-  elif grep -q '"summary"\|"notis"' "$jf" 2>/dev/null; then
+  # Use jq to check actual string lengths of fullText/fullContent (>100 chars)
+  jq -r 'if ((.fullText // "") | length) > 100 then "FULLTEXT" elif ((.fullContent // "") | length) > 100 then "FULLTEXT" elif ((.summary // "") | length) > 100 then "SUMMARY" else "METADATA" end' "$jf" 2>/dev/null > /tmp/qg10_depth_result.txt || echo "METADATA" > /tmp/qg10_depth_result.txt
+  read DEPTH_RESULT < /tmp/qg10_depth_result.txt
+  if [ "$DEPTH_RESULT" = "FULLTEXT" ]; then
+    FULLTEXT=$((FULLTEXT + 1))
+  elif [ "$DEPTH_RESULT" = "SUMMARY" ]; then
     SUMMARY_ONLY=$((SUMMARY_ONLY + 1))
   else
     METADATA_ONLY=$((METADATA_ONLY + 1))
   fi
-done < /tmp/doc_jsons_check10.txt
+done < /tmp/qg10_doc_jsons.txt
 TOTAL_DATA=$((FULLTEXT + SUMMARY_ONLY + METADATA_ONLY))
 if [ "$TOTAL_DATA" -gt 0 ]; then
   echo "📊 Data depth: $FULLTEXT full-text (fullText/fullContent), $SUMMARY_ONLY summary-only, $METADATA_ONLY metadata-only, out of $TOTAL_DATA total"
@@ -2219,6 +2214,8 @@ if [ "$TOTAL_DATA" -gt 0 ]; then
     echo "✅ PASS: Majority of documents have full-text or summary content"
   fi
 fi
+# Cleanup check 10 temp files
+rm -f /tmp/qg10_doc_jsons.txt /tmp/qg10_depth_result.txt
 
 echo ""
 echo "=== Quality Gate Summary ==="
