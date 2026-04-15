@@ -1,22 +1,23 @@
 #!/usr/bin/env node
 
 /**
- * @module Infrastructure/SchemaManagement
+ * @module Infrastructure/DataSync
  * @category Intelligence Operations / Supporting Infrastructure
- * @name CIA Schema Synchronization - Upstream Schema Caching System
+ * @name CIA CSV Data Synchronization - In-Place Update System
  *
  * @description
- * Automated schema synchronization system fetching and caching all 19 JSON schemas
- * from the CIA GitHub repository. Maintains local copies of data product schemas
- * for validation, type generation, and data consistency verification. Enables offline
- * operation and faster validation cycles compared to remote fetching.
+ * Discovers every `.csv` file under `cia-data/` and `data/cia/` in this
+ * repository, looks up the matching filename in the CIA upstream repository
+ * (`service.data.impl/sample-data/`), and overwrites the local copy with the
+ * latest upstream content.  **No new files are created** — only files that
+ * already exist in the repository are updated.
  *
  * Usage:
  *   npx tsx scripts/sync-cia-schemas.ts
  *
  * @author Hack23 AB (Data Infrastructure Team)
  * @license Apache-2.0
- * @version 1.4.0
+ * @version 3.0.0
  */
 
 import fs from 'node:fs/promises';
@@ -26,53 +27,43 @@ import { fileURLToPath } from 'node:url';
 const __filename: string = fileURLToPath(import.meta.url);
 const __dirname: string = path.dirname(__filename);
 
-// Base URL for CIA schemas (raw GitHub content)
-const CIA_SCHEMA_BASE_URL: string =
-  'https://raw.githubusercontent.com/Hack23/cia/master/json-export-specs/schemas/';
+// Base URL for CIA sample-data CSV files (raw GitHub content)
+const CIA_CSV_BASE_URL: string =
+  'https://raw.githubusercontent.com/Hack23/cia/master/service.data.impl/sample-data/';
 
-// All 19 CIA data products with their schema names
-const CIA_SCHEMAS: readonly string[] = [
-  'overview-dashboard',
-  'party-performance',
-  'cabinet-scorecard',
-  'election-analysis',
-  'top10-influential-mps',
-  'top10-productive-mps',
-  'top10-controversial-mps',
-  'top10-absent-mps',
-  'top10-rebels',
-  'top10-coalition-brokers',
-  'top10-rising-stars',
-  'top10-electoral-risk',
-  'top10-ethics-concerns',
-  'top10-media-presence',
-  'committee-network',
-  'politician-career',
-  'party-longitudinal',
-  'riksdag-overview',
-  'ministry-performance',
-] as const;
+// Directories to scan for existing CSV files
+const SCAN_DIRS: readonly string[] = ['cia-data', 'data/cia'] as const;
 
-/** Result entry for a successfully synced schema. */
-interface SyncedSchema {
+/** Result entry for a successfully synced CSV file. */
+interface SyncedFile {
   name: string;
+  localPath: string;
   url: string;
   size: number;
   timestamp: string;
 }
 
-/** Result entry for a schema that failed to sync. */
-interface FailedSchema {
+/** Result entry for a CSV file that failed to sync. */
+interface FailedFile {
   name: string;
+  localPath: string;
   url: string;
   error: string;
   timestamp: string;
 }
 
+/** A CSV file skipped because it has no upstream match. */
+interface SkippedFile {
+  name: string;
+  localPath: string;
+  reason: string;
+}
+
 /** Aggregate results of a synchronization run. */
 interface SyncResults {
-  synced: SyncedSchema[];
-  failed: FailedSchema[];
+  synced: SyncedFile[];
+  failed: FailedFile[];
+  skipped: SkippedFile[];
   total: number;
 }
 
@@ -80,208 +71,240 @@ interface SyncResults {
 interface SyncMetadata {
   lastSync: string;
   source: string;
-  totalSchemas: number;
+  totalFiles: number;
   syncedCount: number;
   failedCount: number;
-  schemas: SyncedSchema[];
-  failures: FailedSchema[];
+  skippedCount: number;
+  schemas: SyncedFile[];
+  failures: FailedFile[];
+  skipped: SkippedFile[];
 }
 
-/** Version info tracked per schema. */
-interface SchemaVersionEntry {
-  version: string;
-  $schema: string;
-  lastUpdated: string;
+/**
+ * Recursively find all `.csv` files under `dir`.
+ */
+async function findCsvFiles(dir: string): Promise<string[]> {
+  const results: string[] = [];
+  let entries: import('node:fs').Dirent[];
+  try {
+    entries = await fs.readdir(dir, { withFileTypes: true });
+  } catch {
+    // Directory does not exist — nothing to scan
+    return results;
+  }
+  for (const entry of entries) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      results.push(...(await findCsvFiles(full)));
+    } else if (entry.isFile() && entry.name.endsWith('.csv')) {
+      results.push(full);
+    }
+  }
+  return results;
 }
 
-/** Minimal shape of a JSON Schema file we fetch. */
-interface JsonSchema {
-  $schema?: string;
-  $id?: string;
-  type?: string;
-  version?: string;
-  properties?: Record<string, unknown>;
-  [key: string]: unknown;
-}
-
-class CIASchemaSync {
-  private readonly schemasDir: string;
+class CIADataSync {
+  private readonly repoRoot: string;
   private readonly metadataDir: string;
   private readonly results: SyncResults;
+  /** Set of basenames available upstream (populated once). */
+  private upstreamFiles: Set<string> = new Set();
 
   constructor() {
-    this.schemasDir = path.join(__dirname, '..', 'schemas', 'cia');
-    this.metadataDir = path.join(__dirname, '..', 'schemas', 'metadata');
-    this.results = {
-      synced: [],
-      failed: [],
-      total: CIA_SCHEMAS.length,
-    };
+    this.repoRoot = path.join(__dirname, '..');
+    this.metadataDir = path.join(this.repoRoot, 'schemas', 'metadata');
+    this.results = { synced: [], failed: [], skipped: [], total: 0 };
   }
 
   /**
-   * Fetch a single schema from CIA repository
+   * Fetch the directory listing of upstream sample-data once so we know
+   * which basenames are actually available before attempting downloads.
    */
-  async fetchSchema(schemaName: string): Promise<JsonSchema | null> {
-    const url = `${CIA_SCHEMA_BASE_URL}${schemaName}.schema.json`;
+  async loadUpstreamIndex(): Promise<void> {
+    const apiUrl =
+      'https://api.github.com/repos/Hack23/cia/contents/service.data.impl/sample-data';
+    console.log('🔎 Loading upstream file index...');
+    const response: Response = await fetch(apiUrl, {
+      headers: { Accept: 'application/vnd.github.v3+json' },
+    });
+    if (!response.ok) {
+      throw new Error(
+        `Failed to list upstream directory: ${response.status} ${response.statusText}`,
+      );
+    }
+    const items = (await response.json()) as Array<{ name: string }>;
+    for (const item of items) {
+      if (item.name.endsWith('.csv')) {
+        this.upstreamFiles.add(item.name);
+      }
+    }
+    console.log(
+      `   ✅ Found ${this.upstreamFiles.size} CSV files upstream`,
+    );
+  }
 
-    console.log(`📥 Fetching: ${schemaName}...`);
+  /**
+   * Download upstream CSV and overwrite the local file at `localPath`.
+   */
+  async updateFile(localPath: string): Promise<void> {
+    const basename: string = path.basename(localPath);
+    const relPath: string = path.relative(this.repoRoot, localPath);
+
+    // Check if this basename exists upstream
+    if (!this.upstreamFiles.has(basename)) {
+      console.log(`   ⏭️  Skipped (no upstream match): ${relPath}`);
+      this.results.skipped.push({
+        name: basename,
+        localPath: relPath,
+        reason: 'No matching file in CIA sample-data',
+      });
+      return;
+    }
+
+    const url = `${CIA_CSV_BASE_URL}${basename}`;
+    console.log(`📥 Updating: ${relPath}`);
 
     try {
       const response: Response = await fetch(url);
-
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
 
-      const schema = (await response.json()) as JsonSchema;
+      const content: string = await response.text();
 
-      // Validate it's a valid JSON schema
-      if (!schema.$schema && !schema.$id && !schema.type) {
-        throw new Error('Invalid JSON schema format');
+      // Basic validation
+      const lines = content.trim().split('\n');
+      if (lines.length === 0 || lines[0].trim() === '') {
+        throw new Error('Empty or invalid CSV file');
       }
 
-      // Save schema to local file
-      const schemaPath: string = path.join(
-        this.schemasDir,
-        `${schemaName}.schema.json`,
-      );
-      await fs.writeFile(schemaPath, JSON.stringify(schema, null, 2), 'utf8');
+      await fs.writeFile(localPath, content, 'utf8');
 
-      console.log(`   ✅ Synced: ${schemaName}`);
+      console.log(`   ✅ Updated: ${relPath} (${content.length} bytes)`);
       this.results.synced.push({
-        name: schemaName,
-        url: url,
-        size: JSON.stringify(schema).length,
+        name: basename,
+        localPath: relPath,
+        url,
+        size: content.length,
         timestamp: new Date().toISOString(),
       });
-
-      return schema;
     } catch (error: unknown) {
       console.error(
-        `   ❌ Failed: ${schemaName} - ${(error as Error).message}`,
+        `   ❌ Failed: ${relPath} - ${(error as Error).message}`,
       );
       this.results.failed.push({
-        name: schemaName,
-        url: url,
+        name: basename,
+        localPath: relPath,
+        url,
         error: (error as Error).message,
         timestamp: new Date().toISOString(),
       });
-      return null;
     }
   }
 
   /**
-   * Sync all CIA schemas
+   * Run the full synchronization: discover ➜ download ➜ report.
    */
-  async syncAllSchemas(): Promise<number> {
-    console.log('🔄 CIA Schema Synchronization');
-    console.log('='.repeat(50));
-    console.log(`📋 Total schemas: ${CIA_SCHEMAS.length}`);
-    console.log(`🎯 Source: ${CIA_SCHEMA_BASE_URL}`);
+  async syncAll(): Promise<number> {
+    console.log('🔄 CIA CSV Data Synchronization (in-place update)');
+    console.log('='.repeat(60));
+    console.log(`🎯 Source: ${CIA_CSV_BASE_URL}`);
     console.log('');
 
-    // Ensure directories exist
-    await fs.mkdir(this.schemasDir, { recursive: true });
-    await fs.mkdir(this.metadataDir, { recursive: true });
+    // 1. Load upstream index
+    await this.loadUpstreamIndex();
+    console.log('');
 
-    // Fetch all schemas
-    for (const schemaName of CIA_SCHEMAS) {
-      await this.fetchSchema(schemaName);
+    // 2. Discover all existing CSV files in the repo
+    const localFiles: string[] = [];
+    for (const dir of SCAN_DIRS) {
+      const absDir = path.join(this.repoRoot, dir);
+      const found = await findCsvFiles(absDir);
+      localFiles.push(...found);
+    }
+    // Deduplicate (same basename may appear in multiple dirs — update all copies)
+    localFiles.sort();
+    this.results.total = localFiles.length;
+
+    console.log(`📋 Found ${localFiles.length} existing CSV files to update`);
+    console.log('');
+
+    // 3. Update each file from upstream
+    for (const filePath of localFiles) {
+      await this.updateFile(filePath);
       // Small delay to avoid rate limiting
-      await new Promise<void>((resolve) => setTimeout(resolve, 100));
+      await new Promise<void>((resolve) => setTimeout(resolve, 50));
     }
 
-    // Save metadata
+    // 4. Save metadata & print summary
+    await fs.mkdir(this.metadataDir, { recursive: true });
     await this.saveMetadata();
-
-    // Print summary
     this.printSummary();
 
-    // Return exit code
+    // Exit 0 if at least one file synced and no failures
     return this.results.failed.length === 0 ? 0 : 1;
   }
 
   /**
-   * Save synchronization metadata
+   * Save synchronization metadata to `schemas/metadata/last-sync.json`.
    */
   async saveMetadata(): Promise<void> {
     const metadata: SyncMetadata = {
       lastSync: new Date().toISOString(),
-      source: CIA_SCHEMA_BASE_URL,
-      totalSchemas: this.results.total,
+      source: CIA_CSV_BASE_URL,
+      totalFiles: this.results.total,
       syncedCount: this.results.synced.length,
       failedCount: this.results.failed.length,
+      skippedCount: this.results.skipped.length,
       schemas: this.results.synced,
       failures: this.results.failed,
+      skipped: this.results.skipped,
     };
 
     const metadataPath: string = path.join(this.metadataDir, 'last-sync.json');
     await fs.writeFile(metadataPath, JSON.stringify(metadata, null, 2), 'utf8');
-
-    // Create schema versions file
-    const versions: Record<string, SchemaVersionEntry> = {};
-    for (const result of this.results.synced) {
-      const schemaPath: string = path.join(
-        this.schemasDir,
-        `${result.name}.schema.json`,
-      );
-      const schema = JSON.parse(
-        await fs.readFile(schemaPath, 'utf8'),
-      ) as JsonSchema;
-      versions[result.name] = {
-        version: schema.version ?? '1.0.0',
-        $schema: schema.$schema ?? 'http://json-schema.org/draft-07/schema#',
-        lastUpdated: result.timestamp,
-      };
-    }
-
-    const versionsPath: string = path.join(
-      this.metadataDir,
-      'schema-versions.json',
-    );
-    await fs.writeFile(
-      versionsPath,
-      JSON.stringify(versions, null, 2),
-      'utf8',
-    );
   }
 
   /**
-   * Print synchronization summary
+   * Print synchronization summary to stdout.
    */
   printSummary(): void {
     console.log('');
-    console.log('='.repeat(50));
+    console.log('='.repeat(60));
     console.log('📊 Synchronization Summary');
-    console.log('='.repeat(50));
-    console.log(
-      `✅ Successfully synced: ${this.results.synced.length}/${this.results.total}`,
-    );
-    console.log(
-      `❌ Failed: ${this.results.failed.length}/${this.results.total}`,
-    );
+    console.log('='.repeat(60));
+    console.log(`📁 Total existing CSV files: ${this.results.total}`);
+    console.log(`✅ Successfully updated:     ${this.results.synced.length}`);
+    console.log(`❌ Failed:                   ${this.results.failed.length}`);
+    console.log(`⏭️  Skipped (no upstream):    ${this.results.skipped.length}`);
 
     if (this.results.failed.length > 0) {
       console.log('');
-      console.log('⚠️  Failed schemas:');
-      for (const failure of this.results.failed) {
-        console.log(`   - ${failure.name}: ${failure.error}`);
+      console.log('⚠️  Failed files:');
+      for (const f of this.results.failed) {
+        console.log(`   - ${f.localPath}: ${f.error}`);
+      }
+    }
+
+    if (this.results.skipped.length > 0) {
+      console.log('');
+      console.log('⏭️  Skipped files (repo-local only):');
+      for (const s of this.results.skipped) {
+        console.log(`   - ${s.localPath}: ${s.reason}`);
       }
     }
 
     console.log('');
-    console.log(`📁 Schemas saved to: ${this.schemasDir}`);
     console.log(`📋 Metadata saved to: ${this.metadataDir}`);
-    console.log('='.repeat(50));
+    console.log('='.repeat(60));
   }
 }
 
 // Main execution
 async function main(): Promise<void> {
   try {
-    const syncer = new CIASchemaSync();
-    const exitCode: number = await syncer.syncAllSchemas();
+    const syncer = new CIADataSync();
+    const exitCode: number = await syncer.syncAll();
     process.exit(exitCode);
   } catch (error: unknown) {
     console.error('💥 Fatal error:', error);
@@ -294,4 +317,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   main();
 }
 
-export default CIASchemaSync;
+export default CIADataSync;

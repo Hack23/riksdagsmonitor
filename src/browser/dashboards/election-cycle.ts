@@ -306,7 +306,7 @@ class ElectionCycleCharts {
       partyData.forEach(d => {
         const year = String(d['cycle_year'] ?? d['election_cycle_id'] ?? '');
         if (!cycleData[year]) cycleData[year] = { performance: 0, count: 0 };
-        if (d['performance_score']) { cycleData[year].performance += parseFloat(String(d['performance_score'])); cycleData[year].count++; }
+        if (d['overall_performance_score']) { cycleData[year].performance += parseFloat(String(d['overall_performance_score'])); cycleData[year].count++; }
       });
       const data = Object.keys(cycleData).sort().map(year => ({
         x: year, y: cycleData[year].count > 0 ? cycleData[year].performance / cycleData[year].count : null
