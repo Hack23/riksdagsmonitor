@@ -686,7 +686,7 @@ SWEDISH_BOILERPLATE_PATTERNS=(
   "Regeringen överlämnar denna proposition"
   "Propositionens huvudsakliga innehåll"
   "Förslag till riksdagsbeslut"
-  "Stockholm den [0-9]{1,2} [a-z]+ [0-9]{4}"
+  "Stockholm den [0-9]{1,2} [[:alpha:]]+ [0-9]{4}"
 )
 
 for article in news/*-en.html; do
@@ -696,7 +696,7 @@ for article in news/*-en.html; do
       continue
     fi
     for pattern in "${SWEDISH_BOILERPLATE_PATTERNS[@]}"; do
-      COUNT=$(grep -cE "$pattern" "$article" 2>/dev/null) || true
+      COUNT=$(grep -ciE "$pattern" "$article" 2>/dev/null) || true
       if [ "${COUNT:-0}" -gt 0 ]; then
         echo -e "${YELLOW}⚠️ Swedish boilerplate in EN article $BASENAME: '$pattern' ($COUNT occurrence(s))${NC}"
         SWEDISH_LEAKS=$((SWEDISH_LEAKS + COUNT))
@@ -728,14 +728,15 @@ for article in news/*-en.html; do
     if [[ "$BASENAME" == index* ]]; then
       continue
     fi
-    # Extract paragraphs that follow "Why It Matters" or "What This Means" headings
-    # Use perl for portable PCRE extraction (grep -P is not available on all platforms)
-    SIG_PARAGRAPHS=$(perl -0777 -ne 'while (/(?:Why It Matters|What This Means)[^<]*<\/h[23]>\s*<p>([^<]{30,})/gi) { print "$1\n" }' "$article" 2>/dev/null) || true
+    # Capture the full <p>...</p> block, then strip inline HTML and normalize whitespace
+    # before computing uniqueness so duplicate detection is resilient to markup.
+    SIG_PARAGRAPHS=$(perl -0777 -ne 'while (/(?:Why It Matters|What This Means)[^<]*<\/h[23]>\s*<p\b[^>]*>(.*?)<\/p>/gis) { $t = $1; $t =~ s/<[^>]+>/ /g; $t =~ s/&nbsp;/ /gi; $t =~ s/\s+/ /g; $t =~ s/^\s+|\s+$//g; print "$t\n" if length($t) >= 30 }' "$article" 2>/dev/null) || true
     TOTAL_SIG=$(printf '%s\n' "$SIG_PARAGRAPHS" | grep -c .) || true
     UNIQUE_SIG=$(printf '%s\n' "$SIG_PARAGRAPHS" | grep . | sort -u | wc -l) || true
     if [ "${TOTAL_SIG:-0}" -eq 0 ]; then
-      # Fallback: extract <p> text directly following significance class spans
-      SIG_PARAGRAPHS=$(perl -ne 'while (/significance[^>]*>([^<]{30,})/gi) { print "$1\n" }' "$article" 2>/dev/null) || true
+      # Fallback: extract the paragraph directly following significance-marked elements
+      # and normalize it the same way to avoid truncation from inline markup.
+      SIG_PARAGRAPHS=$(perl -0777 -ne 'while (/<[^>]*significance[^>]*>.*?<\/[^>]+>\s*<p\b[^>]*>(.*?)<\/p>/gis) { $t = $1; $t =~ s/<[^>]+>/ /g; $t =~ s/&nbsp;/ /gi; $t =~ s/\s+/ /g; $t =~ s/^\s+|\s+$//g; print "$t\n" if length($t) >= 30 }' "$article" 2>/dev/null) || true
       TOTAL_SIG=$(printf '%s\n' "$SIG_PARAGRAPHS" | grep -c .) || true
       UNIQUE_SIG=$(printf '%s\n' "$SIG_PARAGRAPHS" | grep . | sort -u | wc -l) || true
     fi

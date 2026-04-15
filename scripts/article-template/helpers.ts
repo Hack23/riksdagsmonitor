@@ -72,8 +72,8 @@ export function getNewsIndexFilename(lang: Language | string): string {
 export function fixHtmlNesting(htmlContent: string): string {
   let result = htmlContent.replace(/<\/(ul|ol)>\s*<\/p>/g, '</$1>');
 
-  // Strip empty paragraph tags (e.g. <p></p>, <p> </p>)
-  result = result.replace(/<p>\s*<\/p>/g, '');
+  // Strip empty paragraph tags (e.g. <p></p>, <p class="foo"></p>, <p> </p>)
+  result = result.replace(/<p\b[^>]*>\s*<\/p>/g, '');
 
   return result;
 }

@@ -893,7 +893,7 @@ export function generateDynamicTitle(
   // Extract topic hints from strong tags and h3 headings
   const seen = new Set<string>();
   const topics: string[] = [];
-  const strongMatches = content.matchAll(/<strong>([^<]{3,50})<\/strong>/gi);
+  const strongMatches = content.matchAll(/<strong[^>]*>([^<]{3,50})<\/strong>/gi);
   for (const m of strongMatches) {
     const text = m[1]?.trim();
     if (text && !seen.has(text) && topics.length < 5) {
@@ -919,14 +919,17 @@ export function generateDynamicTitle(
   let title = baseTitle;
   let subtitle = `${baseTitle} — AI-generated political intelligence from Sweden's Riksdag`;
 
+  const documentLabel = docCount === 1 ? 'document' : 'documents';
+  const documentTitleLabel = docCount === 1 ? 'Document' : 'Documents';
+
   if (sanitized.length > 0) {
     const topicList = sanitized.slice(0, 3).join(', ');
     title = `${baseTitle}: ${topicList}`;
-    const countStr = docCount > 0 ? ` across ${docCount} documents` : '';
+    const countStr = docCount > 0 ? ` across ${docCount} ${documentLabel}` : '';
     subtitle = `Analysis of ${topicList}${countStr} in Sweden's Riksdag`;
   } else if (docCount > 0) {
-    title = `${baseTitle}: ${docCount} Documents Analyzed`;
-    subtitle = `Analysis of ${docCount} parliamentary documents from Sweden's Riksdag`;
+    title = `${baseTitle}: ${docCount} ${documentTitleLabel} Analyzed`;
+    subtitle = `Analysis of ${docCount} parliamentary ${documentLabel} from Sweden's Riksdag`;
   }
 
   return { title, subtitle };
