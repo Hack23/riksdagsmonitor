@@ -87,7 +87,7 @@ export function generateMonthAheadContent(data: ArticleContentData, lang: Langua
       const propDateHtml = formatDocumentDate(prop as RawDocument, lang);
       if (propDateHtml) content += `      <p>${propDateHtml}</p>\n`;
       if (significance) {
-        content += `      <p class="policy-significance">${escapeHtml(significance)}</p>\n`;
+        content += `      <p class="policy-significance">${significance}</p>\n`;
       }
       content += `    </div>\n`;
     });

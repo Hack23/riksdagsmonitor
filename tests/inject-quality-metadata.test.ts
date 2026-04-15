@@ -21,6 +21,9 @@ describe('injectQualityMetadata', () => {
     // Legacy tags for backward compatibility
     expect(result).toContain('<meta name="quality-score" content="0">');
     expect(result).toContain('<meta name="article-quality-score" content="0">');
+    expect(result).toContain('<meta name="article-quality-version" content="v2">');
+    expect(result).toContain('<meta name="article-quality-iterations" content="0">');
+    expect(result).toContain('<meta name="article-quality-assessed" content="false">');
     expect(result).toContain('</head>');
   });
 
@@ -41,9 +44,14 @@ describe('injectQualityMetadata', () => {
       suggestions: [],
     };
     const result = injectQualityMetadata(baseHtml, assessment);
-    expect(result).toContain('content="85"');
-    expect(result).toContain('content="3"');
+    expect(result).toContain('<meta name="article:quality-score" content="85">');
+    expect(result).toContain('<meta name="article:quality-iterations" content="3">');
     expect(result).toContain('<meta name="article:quality-assessed" content="true">');
+    // Legacy tags also present with correct values
+    expect(result).toContain('<meta name="quality-score" content="85">');
+    expect(result).toContain('<meta name="article-quality-score" content="85">');
+    expect(result).toContain('<meta name="article-quality-iterations" content="3">');
+    expect(result).toContain('<meta name="article-quality-assessed" content="true">');
   });
 
   it('is idempotent — no duplicate tags after multiple calls', () => {
@@ -62,6 +70,12 @@ describe('injectQualityMetadata', () => {
     expect(legacyScoreMatches).toHaveLength(1);
     const legacyArticleScoreMatches = second.match(/name="article-quality-score"/g) ?? [];
     expect(legacyArticleScoreMatches).toHaveLength(1);
+    const legacyVersionMatches = second.match(/name="article-quality-version"/g) ?? [];
+    expect(legacyVersionMatches).toHaveLength(1);
+    const legacyIterMatches = second.match(/name="article-quality-iterations"/g) ?? [];
+    expect(legacyIterMatches).toHaveLength(1);
+    const legacyAssessedMatches = second.match(/name="article-quality-assessed"/g) ?? [];
+    expect(legacyAssessedMatches).toHaveLength(1);
   });
 
   it('handles case-insensitive </HEAD> tag', () => {

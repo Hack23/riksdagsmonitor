@@ -90,7 +90,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
           content += `      <div class="document-entry">\n`;
           content += `        <h5>${docUrl ? `<a href="${docUrl}" target="_blank" rel="noopener noreferrer">` : ''}${svSpan(escapeHtml(docTitle), lang)}${docUrl ? '</a>' : ''}</h5>\n`;
           const sig = generatePolicySignificance(doc, lang);
-          if (sig) content += `        <p class="policy-significance">${escapeHtml(sig)}</p>\n`;
+          if (sig) content += `        <p class="policy-significance">${sig}</p>\n`;
           content += `      </div>\n`;
         });
         relatedPolicyQs.forEach(q => {
@@ -156,7 +156,7 @@ export function generateWeekAheadContent(data: WeekAheadData, lang: Language | s
       const dateHtml = formatDocumentDate(doc as import('../types.js').RawDocument, lang);
       if (dateHtml) content += `      <p>${dateHtml}</p>\n`;
       if (significance) {
-        content += `      <p class="policy-significance">${escapeHtml(significance)}</p>\n`;
+        content += `      <p class="policy-significance">${significance}</p>\n`;
       }
       content += `    </div>\n`;
     });

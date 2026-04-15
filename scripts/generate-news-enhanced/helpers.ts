@@ -427,11 +427,15 @@ export function injectQualityMetadata(html: string, assessment?: MultiDimensiona
     // Legacy tags for backward compatibility with existing tooling
     `  <meta name="quality-score" content="${score}">`,
     `  <meta name="article-quality-score" content="${score}">`,
+    `  <meta name="article-quality-version" content="${version}">`,
+    `  <meta name="article-quality-iterations" content="${passes}">`,
+    `  <meta name="article-quality-assessed" content="${qualityAssessed}">`,
   ].join('\n');
 
   // Remove any existing quality meta tags first (idempotent)
+  // Matches: article:quality-*, article-quality-*, quality-score, quality-version, quality-iterations, quality-assessed
   const qualityMetaTagPattern =
-    /\s*<meta\b(?=[^>]*\bname\s*=\s*["'](?:article[:-]quality-[^"']+|quality-score)["'])[^>]*>\s*\n?/gi;
+    /\s*<meta\b(?=[^>]*\bname\s*=\s*["'](?:article[:-]quality-[^"']+|quality-(?:score|version|iterations|assessed))["'])[^>]*>\s*\n?/gi;
   const closingHeadPattern = /<\/head>/i;
   const sanitizedHtml = html.replace(qualityMetaTagPattern, '');
 

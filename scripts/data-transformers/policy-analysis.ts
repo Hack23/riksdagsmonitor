@@ -710,6 +710,10 @@ const IP_FALLBACK: Readonly<Record<string, string>> = {
  * Falls back to a committee-specific sentence (derived from COMMITTEE_NAMES)
  * when no domain keyword matches but the document's organ field identifies a
  * known Riksdag committee.
+ *
+ * **Contract**: Returns HTML-safe text (user-supplied fields are escaped via
+ * `escapeHtml()` internally). Callers must **not** double-escape the result.
+ *
  * @param impliedDoktyp - document type inferred from the calling context
  *   ('mot', 'bet', 'prop', 'ip') when doc.doktyp / doc.documentType is absent.
  */
