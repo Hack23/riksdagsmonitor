@@ -1,31 +1,31 @@
 {
-  "2026-04-14-opposition-motions-en.html": {
-    "filename": "2026-04-14-opposition-motions-en.html",
+  "2026-04-15-government-propositions-en.html": {
+    "filename": "2026-04-15-government-propositions-en.html",
     "lang": "en",
-    "articleType": "motions",
+    "articleType": "propositions",
     "score": 100,
     "passed": true,
     "multidimensional": {
-      "overallScore": 73,
+      "overallScore": 68,
       "passesThreshold": true,
       "assessmentPasses": 2,
       "dimensions": {
         "factualAccuracy": 100,
-        "stakeholderCoverage": 100,
+        "stakeholderCoverage": 70,
         "analyticalDepth": 65,
         "editorialConsistency": 100,
         "evidenceQuality": 65,
         "languageQuality": 0
       },
-      "issueCount": 3
+      "issueCount": 4
     },
-    "timestamp": "2026-04-14T07:19:08.246Z"
+    "timestamp": "2026-04-15T06:15:47.751Z"
   },
-  "2026-04-14-opposition-motions-sv.html": {
-    "filename": "2026-04-14-opposition-motions-sv.html",
+  "2026-04-15-government-propositions-sv.html": {
+    "filename": "2026-04-15-government-propositions-sv.html",
     "lang": "sv",
-    "articleType": "motions",
-    "score": 96,
+    "articleType": "propositions",
+    "score": 100,
     "passed": true,
     "multidimensional": {
       "overallScore": 88,
@@ -41,6 +41,6 @@
       },
       "issueCount": 2
     },
-    "timestamp": "2026-04-14T07:19:08.254Z"
+    "timestamp": "2026-04-15T06:15:47.757Z"
   }
 }
