@@ -1,15 +1,15 @@
-name: Sync CIA Schemas
+name: Sync CIA Data
 
 on:
   workflow_dispatch:
     inputs:
       force_sync:
-        description: 'Force sync even if schemas exist'
+        description: 'Force sync even if files exist'
         required: false
         default: 'true'
   push:
     paths:
-      - 'scripts/sync-cia-schemas.js'
+      - 'scripts/sync-cia-schemas.ts'
       - '.github/workflows/sync-cia-schemas.yml'
 
 permissions:
@@ -41,13 +41,13 @@ jobs:
           npm ci --prefer-offline --no-audit
           echo "✅ Dependencies installed"
 
-      - name: Sync CIA schemas
+      - name: Sync CIA CSV data files
         id: sync
         run: |
-          echo "🔄 Syncing CIA schemas from upstream..."
+          echo "🔄 Syncing CIA CSV data files from upstream..."
           npm run sync-schemas
           
-          # Count synced schemas
+          # Count synced files
           if [ -f schemas/metadata/last-sync.json ]; then
             SYNCED=$(jq -r '.syncedCount' schemas/metadata/last-sync.json 2>/dev/null || echo "0")
             FAILED=$(jq -r '.failedCount' schemas/metadata/last-sync.json 2>/dev/null || echo "0")
@@ -55,16 +55,16 @@ jobs:
             echo "synced=$SYNCED" >> $GITHUB_OUTPUT
             echo "failed=$FAILED" >> $GITHUB_OUTPUT
             
-            echo "✅ Synced $SYNCED schema(s)"
+            echo "✅ Synced $SYNCED CSV file(s)"
             if [ "$FAILED" -gt 0 ]; then
-              echo "⚠️ Failed to sync $FAILED schema(s)"
+              echo "⚠️ Failed to sync $FAILED CSV file(s)"
             fi
           fi
 
       - name: Generate sync summary
         if: always()
         run: |
-          echo "## 🔄 CIA Schema Synchronization" >> $GITHUB_STEP_SUMMARY
+          echo "## 🔄 CIA CSV Data Synchronization" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           
           if [ -f schemas/metadata/last-sync.json ]; then
@@ -74,7 +74,7 @@ jobs:
             
             echo "### Summary" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "- **Total Schemas**: $TOTAL" >> $GITHUB_STEP_SUMMARY
+            echo "- **Total CSV Files**: $TOTAL" >> $GITHUB_STEP_SUMMARY
             echo "- **Successfully Synced**: ✅ $SYNCED" >> $GITHUB_STEP_SUMMARY
             echo "- **Failed**: ❌ $FAILED" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
@@ -88,9 +88,9 @@ jobs:
             fi
             
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### 📋 Synced Schemas" >> $GITHUB_STEP_SUMMARY
+            echo "### 📋 Synced CSV Files" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            jq -r '.schemas[] | "- " + .name + " (" + (.size / 1024 | floor | tostring) + " KB)"' schemas/metadata/last-sync.json >> $GITHUB_STEP_SUMMARY
+            jq -r '.schemas[] | "- " + .name + ".csv (" + (.size / 1024 | floor | tostring) + " KB)"' schemas/metadata/last-sync.json >> $GITHUB_STEP_SUMMARY
           else
             echo "❌ Sync failed - no metadata generated" >> $GITHUB_STEP_SUMMARY
           fi
@@ -108,28 +108,28 @@ jobs:
           retention-days: 30
           if-no-files-found: ignore
 
-      - name: Commit synced schemas
-        if: github.event_name == 'workflow_dispatch' && steps.sync.outputs.synced != '0'
+      - name: Commit synced CSV data files
+        if: steps.sync.outputs.synced != '0'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Add synced schemas
-          git add schemas/
+          # Add synced CSV files
+          git add cia-data/
           
           # Check if there are changes
           if git diff --staged --quiet; then
-            echo "ℹ️ No schema changes detected"
+            echo "ℹ️ No CSV data changes detected"
           else
-            git commit -m "chore: Sync CIA schemas from upstream" \
+            git commit -m "chore: Sync CIA CSV data files from upstream" \
                        -m "" \
-                       -m "Synced schema(s) from CIA repository" \
-                       -m "Source https://github.com/Hack23/cia/tree/master/json-export-specs/schemas" \
+                       -m "Synced CSV file(s) from CIA repository" \
+                       -m "Source https://github.com/Hack23/cia/tree/master/service.data.impl/sample-data" \
                        -m "" \
                        -m "Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
             
             git push
-            echo "✅ Schemas committed and pushed"
+            echo "✅ CSV data files committed and pushed"
           fi
 
       - name: Check sync status

@@ -1,0 +1,3 @@
+sched_name,lock_name
+quartzScheduler,STATE_ACCESS
+quartzScheduler,TRIGGER_ACCESS
