@@ -2152,15 +2152,26 @@ if [ -f "$SYNTH_FILE" ]; then
   rm -f /tmp/qg9_docs_$$.txt
 
   # Extract the actual confidence value from the Overall Confidence table row (avoids matching template/reference text)
+  # NOTE: Avoids $() command substitution per AWF shell safety rules — uses temp files + read instead
   ACTUAL_CONFIDENCE=""
+  CONF_LINE_TMP=/tmp/qg9_conf_line_$$.txt
+  ACTUAL_CONF_TMP=/tmp/qg9_actual_conf_$$.txt
   if [ -f "$SYNTH_FILE" ]; then
     # Look for "| **Overall Confidence** | VALUE |" pattern in synthesis context table
-    CONF_LINE=$(grep -i 'Overall Confidence' "$SYNTH_FILE" 2>/dev/null | grep '|' | head -1)
+    grep -i 'Overall Confidence' "$SYNTH_FILE" 2>/dev/null | grep '|' | head -1 > "$CONF_LINE_TMP" || true
+    CONF_LINE=""
+    if [ -s "$CONF_LINE_TMP" ]; then
+      IFS= read -r CONF_LINE < "$CONF_LINE_TMP"
+    fi
     if [ -n "$CONF_LINE" ]; then
       # Extract the value column (third pipe-delimited field), strip markdown/whitespace
-      ACTUAL_CONFIDENCE=$(echo "$CONF_LINE" | awk -F'|' '{print $3}' | sed 's/\*//g; s/`//g; s/^[[:space:]]*//; s/[[:space:]]*$//' | tr '[:upper:]' '[:lower:]')
+      printf '%s\n' "$CONF_LINE" | awk -F'|' '{print $3}' | sed 's/\*//g; s/`//g; s/^[[:space:]]*//; s/[[:space:]]*$//' | tr '[:upper:]' '[:lower:]' > "$ACTUAL_CONF_TMP"
+      if [ -s "$ACTUAL_CONF_TMP" ]; then
+        IFS= read -r ACTUAL_CONFIDENCE < "$ACTUAL_CONF_TMP"
+      fi
     fi
   fi
+  rm -f "$CONF_LINE_TMP" "$ACTUAL_CONF_TMP"
 
   # Check for HIGH/VERY HIGH confidence claims with no full text
   case "$ACTUAL_CONFIDENCE" in

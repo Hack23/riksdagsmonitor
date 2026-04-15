@@ -330,6 +330,7 @@ export async function downloadAllDocuments(
             const docRecord = doc as Record<string, unknown>;
             const dokId = [
               docRecord['dok_id'],
+              docRecord['dokument_id'],
               docRecord['id'],
               docRecord['dokumentnamn'],
             ].find((value): value is string => typeof value === 'string' && value.trim().length > 0);
