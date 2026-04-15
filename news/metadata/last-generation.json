@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-15T07:10:15.894Z",
+  "timestamp": "2026-04-15T07:23:25.624Z",
   "types": [
-    "interpellations"
+    "motions"
   ],
   "languagesGenerated": [
     "en",
@@ -16,8 +16,8 @@
   "generated": 2,
   "errors": 0,
   "articles": [
-    "2026-04-15-interpellation-debates-en.html",
-    "2026-04-15-interpellation-debates-sv.html"
+    "2026-04-15-opposition-motions-en.html",
+    "2026-04-15-opposition-motions-sv.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"

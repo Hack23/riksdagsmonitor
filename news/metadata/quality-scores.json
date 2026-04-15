@@ -1,8 +1,8 @@
 {
-  "2026-04-15-interpellation-debates-en.html": {
-    "filename": "2026-04-15-interpellation-debates-en.html",
+  "2026-04-15-opposition-motions-en.html": {
+    "filename": "2026-04-15-opposition-motions-en.html",
     "lang": "en",
-    "articleType": "interpellations",
+    "articleType": "motions",
     "score": 100,
     "passed": true,
     "multidimensional": {
@@ -19,13 +19,13 @@
       },
       "issueCount": 3
     },
-    "timestamp": "2026-04-15T07:10:19.205Z"
+    "timestamp": "2026-04-15T07:23:28.945Z"
   },
-  "2026-04-15-interpellation-debates-sv.html": {
-    "filename": "2026-04-15-interpellation-debates-sv.html",
+  "2026-04-15-opposition-motions-sv.html": {
+    "filename": "2026-04-15-opposition-motions-sv.html",
     "lang": "sv",
-    "articleType": "interpellations",
-    "score": 100,
+    "articleType": "motions",
+    "score": 97,
     "passed": true,
     "multidimensional": {
       "overallScore": 88,
@@ -41,6 +41,6 @@
       },
       "issueCount": 2
     },
-    "timestamp": "2026-04-15T07:10:19.211Z"
+    "timestamp": "2026-04-15T07:23:28.949Z"
   }
 }
