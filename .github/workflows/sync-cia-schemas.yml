@@ -70,7 +70,7 @@ jobs:
           if [ -f schemas/metadata/last-sync.json ]; then
             SYNCED=$(jq -r '.syncedCount' schemas/metadata/last-sync.json)
             FAILED=$(jq -r '.failedCount' schemas/metadata/last-sync.json)
-            TOTAL=$(jq -r '.totalSchemas' schemas/metadata/last-sync.json)
+            TOTAL=$(jq -r '.totalFiles' schemas/metadata/last-sync.json)
             
             echo "### Summary" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
@@ -90,7 +90,7 @@ jobs:
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### 📋 Synced CSV Files" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            jq -r '.schemas[] | "- " + .name + ".csv (" + (.size / 1024 | floor | tostring) + " KB)"' schemas/metadata/last-sync.json >> $GITHUB_STEP_SUMMARY
+            jq -r '.schemas[] | "- " + .localPath + " (" + (.size / 1024 | floor | tostring) + " KB)"' schemas/metadata/last-sync.json >> $GITHUB_STEP_SUMMARY
           else
             echo "❌ Sync failed - no metadata generated" >> $GITHUB_STEP_SUMMARY
           fi
@@ -114,8 +114,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Add synced CSV files
-          git add cia-data/
+          # Add updated CSV files (both data directories)
+          git add cia-data/ data/cia/
           
           # Check if there are changes
           if git diff --staged --quiet; then
@@ -123,7 +123,7 @@ jobs:
           else
             git commit -m "chore: Sync CIA CSV data files from upstream" \
                        -m "" \
-                       -m "Synced CSV file(s) from CIA repository" \
+                       -m "Updated existing CSV file(s) from CIA repository sample-data" \
                        -m "Source https://github.com/Hack23/cia/tree/master/service.data.impl/sample-data" \
                        -m "" \
                        -m "Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
