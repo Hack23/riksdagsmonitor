@@ -334,9 +334,29 @@ export async function downloadAllDocuments(
               docRecord['dokumentnamn'],
             ].find((value): value is string => typeof value === 'string' && value.trim().length > 0);
             if (!dokId) return null;
-            const details = await client.fetchDocumentDetails(dokId, true);
-            Object.assign(doc, details, { contentFetched: true });
-            return details;
+            const details = await client.fetchDocumentDetails(dokId, true) as Record<string, unknown>;
+            // Normalize response fields to match RawDocument conventions
+            // (consistent with weekly-review/data-loader.ts enrichment pattern):
+            //   details.html       → doc.fullContent
+            //   details.fullText / summary / notis → doc.fullText (first non-empty)
+            const str = (v: unknown): string => typeof v === 'string' ? v : '';
+            const normalizedFullContent = str(details['html']);
+            const normalizedFullText = str(details['fullText'])
+              || str(details['summary'])
+              || str(details['notis'])
+              || '';
+            Object.assign(doc, details, {
+              fullContent: normalizedFullContent,
+              fullText: normalizedFullText,
+              contentFetched: true,
+            });
+            if (!docRecord['summary'] && details['summary']) {
+              docRecord['summary'] = str(details['summary']);
+            }
+            if (!docRecord['notis'] && details['notis']) {
+              docRecord['notis'] = str(details['notis']);
+            }
+            return { ...details, fullContent: normalizedFullContent, fullText: normalizedFullText };
           }),
         );
         for (const result of results) {

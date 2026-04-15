@@ -2151,27 +2151,45 @@ if [ -f "$SYNTH_FILE" ]; then
   done < /tmp/qg9_docs_$$.txt
   rm -f /tmp/qg9_docs_$$.txt
 
-  # Check for HIGH/VERY HIGH confidence claims with no full text (grep -Ei for portable alternation)
-  if grep -Eqi 'confidence.*(high|very high)' "$SYNTH_FILE" 2>/dev/null && [ "$HAS_FULLTEXT" -eq 0 ]; then
-    echo "⚠️ WARNING: Synthesis claims HIGH/VERY HIGH confidence but ZERO documents have fullText/fullContent — article MUST NOT claim HIGH confidence"
-    WARN_COUNT=$((WARN_COUNT + 1))
+  # Extract the actual confidence value from the Overall Confidence table row (avoids matching template/reference text)
+  ACTUAL_CONFIDENCE=""
+  if [ -f "$SYNTH_FILE" ]; then
+    # Look for "| **Overall Confidence** | VALUE |" pattern in synthesis context table
+    CONF_LINE=$(grep -i 'Overall Confidence' "$SYNTH_FILE" 2>/dev/null | grep '|' | head -1)
+    if [ -n "$CONF_LINE" ]; then
+      # Extract the value column (third pipe-delimited field), strip markdown/whitespace
+      ACTUAL_CONFIDENCE=$(echo "$CONF_LINE" | awk -F'|' '{print $3}' | sed 's/\*//g; s/`//g; s/^[[:space:]]*//; s/[[:space:]]*$//' | tr '[:upper:]' '[:lower:]')
+    fi
   fi
 
-  # Check for LOW confidence with no full text (grep -Ei for portable alternation)
-  if grep -Eqi 'confidence.*low' "$SYNTH_FILE" 2>/dev/null; then
-    if [ "$HAS_FULLTEXT" -eq 0 ]; then
-      echo "⚠️ WARNING: Synthesis confidence is LOW and no documents have fullText/fullContent — article MUST NOT claim HIGH confidence"
-      WARN_COUNT=$((WARN_COUNT + 1))
-    else
-      echo "✅ PASS: Synthesis confidence is LOW but $HAS_FULLTEXT document(s) have full text"
-    fi
-  else
-    if [ "$HAS_FULLTEXT" -gt 0 ]; then
-      echo "✅ PASS: $HAS_FULLTEXT document(s) have full text content"
-    else
-      echo "ℹ️ INFO: No full text found — confidence ceiling is MEDIUM"
-    fi
-  fi
+  # Check for HIGH/VERY HIGH confidence claims with no full text
+  case "$ACTUAL_CONFIDENCE" in
+    *"very high"*|*"high"*)
+      if [ "$HAS_FULLTEXT" -eq 0 ]; then
+        echo "⚠️ WARNING: Synthesis claims HIGH/VERY HIGH confidence but ZERO documents have fullText/fullContent — article MUST NOT claim HIGH confidence"
+        WARN_COUNT=$((WARN_COUNT + 1))
+      fi
+      ;;
+  esac
+
+  # Check for LOW confidence with no full text
+  case "$ACTUAL_CONFIDENCE" in
+    *"low"*|*"very low"*)
+      if [ "$HAS_FULLTEXT" -eq 0 ]; then
+        echo "⚠️ WARNING: Synthesis confidence is LOW and no documents have fullText/fullContent — article MUST NOT claim HIGH confidence"
+        WARN_COUNT=$((WARN_COUNT + 1))
+      else
+        echo "✅ PASS: Synthesis confidence is LOW but $HAS_FULLTEXT document(s) have full text"
+      fi
+      ;;
+    *)
+      if [ "$HAS_FULLTEXT" -gt 0 ]; then
+        echo "✅ PASS: $HAS_FULLTEXT document(s) have full text content"
+      else
+        echo "ℹ️ INFO: No full text found — confidence ceiling is MEDIUM"
+      fi
+      ;;
+  esac
 fi
 
 # Check 10: Data Depth Assessment — count enriched vs metadata-only documents
@@ -2187,7 +2205,7 @@ while IFS= read -r jf; do
   # Classify using jq exit codes — no intermediate temp files
   if jq -e '(((.fullText // "") | length) > 100) or (((.fullContent // "") | length) > 100)' "$jf" >/dev/null 2>&1; then
     FULLTEXT=$((FULLTEXT + 1))
-  elif jq -e '((.summary // "") | length) > 100' "$jf" >/dev/null 2>&1; then
+  elif jq -e '(((.summary // "") | length) > 100) or (((.notis // "") | length) > 100)' "$jf" >/dev/null 2>&1; then
     SUMMARY_ONLY=$((SUMMARY_ONLY + 1))
   else
     METADATA_ONLY=$((METADATA_ONLY + 1))
@@ -2197,7 +2215,7 @@ rm -f /tmp/qg10_docs_$$.txt
 TOTAL_DATA=$((FULLTEXT + SUMMARY_ONLY + METADATA_ONLY))
 if [ "$TOTAL_DATA" -gt 0 ]; then
   echo "📊 Data depth: $FULLTEXT full-text (fullText/fullContent), $SUMMARY_ONLY summary-only, $METADATA_ONLY metadata-only, out of $TOTAL_DATA total"
-  if [ "$METADATA_ONLY" -gt "$FULLTEXT" ]; then
+  if [ "$METADATA_ONLY" -gt $((FULLTEXT + SUMMARY_ONLY)) ]; then
     echo "⚠️ WARNING: Majority of documents ($METADATA_ONLY/$TOTAL_DATA) are metadata-only — max confidence is MEDIUM"
     WARN_COUNT=$((WARN_COUNT + 1))
   else
