@@ -18,6 +18,9 @@ describe('injectQualityMetadata', () => {
     expect(result).toContain('<meta name="article:quality-version" content="v2">');
     expect(result).toContain('<meta name="article:quality-iterations" content="0">');
     expect(result).toContain('<meta name="article:quality-assessed" content="false">');
+    // Legacy tags for backward compatibility
+    expect(result).toContain('<meta name="quality-score" content="0">');
+    expect(result).toContain('<meta name="article-quality-score" content="0">');
     expect(result).toContain('</head>');
   });
 
@@ -54,6 +57,11 @@ describe('injectQualityMetadata', () => {
     expect(iterMatches).toHaveLength(1);
     const assessedMatches = second.match(/article:quality-assessed/g) ?? [];
     expect(assessedMatches).toHaveLength(1);
+    // Legacy tags also not duplicated
+    const legacyScoreMatches = second.match(/name="quality-score"/g) ?? [];
+    expect(legacyScoreMatches).toHaveLength(1);
+    const legacyArticleScoreMatches = second.match(/name="article-quality-score"/g) ?? [];
+    expect(legacyArticleScoreMatches).toHaveLength(1);
   });
 
   it('handles case-insensitive </HEAD> tag', () => {
@@ -75,5 +83,16 @@ describe('injectQualityMetadata', () => {
     const result = injectQualityMetadata(noHead);
     // Tags cannot be inserted without </head>, but existing ones are still stripped
     expect(result).not.toContain('article:quality-score');
+  });
+
+  it('strips pre-existing legacy quality-score tags and replaces with full set', () => {
+    const legacyHtml = '<html><head><meta name="quality-score" content="51">\n</head><body></body></html>';
+    const result = injectQualityMetadata(legacyHtml);
+    // Legacy tag replaced, not duplicated
+    const legacyScoreMatches = result.match(/name="quality-score"/g) ?? [];
+    expect(legacyScoreMatches).toHaveLength(1);
+    // New tags injected
+    expect(result).toContain('<meta name="article:quality-score"');
+    expect(result).toContain('<meta name="article-quality-score"');
   });
 });

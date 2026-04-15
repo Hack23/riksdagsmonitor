@@ -659,9 +659,9 @@ for article in news/*-en.html; do
     if [ -n "$TITLE_TEXT" ]; then
       for pattern in "${BANNED_TITLE_PATTERNS[@]}"; do
         if [ "$TITLE_TEXT" = "$pattern" ]; then
-          echo -e "${YELLOW}⚠️ Generic banned title '$TITLE_TEXT' in $BASENAME — AI agent must replace${NC}"
+          echo -e "${RED}❌ Generic banned title '$TITLE_TEXT' in $BASENAME — AI agent must replace${NC}"
           BANNED_TITLES=$((BANNED_TITLES + 1))
-          WARNINGS=$((WARNINGS + 1))
+          ERRORS=$((ERRORS + 1))
           break
         fi
       done
@@ -784,7 +784,7 @@ for article in news/*-*.html; do
       continue
     fi
     CHECKED_QUALITY=$((CHECKED_QUALITY + 1))
-    if ! grep -Eq 'article-quality-score|article:quality-score' "$article" 2>/dev/null; then
+    if ! grep -Eq 'name="(article-quality-score|article:quality-score|quality-score)"' "$article" 2>/dev/null; then
       MISSING_QUALITY_META=$((MISSING_QUALITY_META + 1))
     fi
   fi
