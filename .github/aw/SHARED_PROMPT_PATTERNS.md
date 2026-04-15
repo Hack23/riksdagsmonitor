@@ -1814,7 +1814,7 @@ If `DATA_JSON_COUNT=0`: **the agent MUST diagnose script failures (read error lo
 
 #### Step 1b: Mandatory Full-Text Document Enrichment
 
-> 🚨 **ABSOLUTE RULE**: Analysis based only on metadata (title, date, committee code) is LOW confidence at best. The pre-article-analysis pipeline now enriches top documents automatically via `enrichDocumentsWithContent()`, but workflows MUST verify enrichment and supplement when needed.
+> 🚨 **ABSOLUTE RULE**: Analysis based only on metadata (title, date, committee code) is LOW confidence at best. The pre-article-analysis pipeline now enriches top documents automatically inside `downloadAllDocuments(...)` via `client.fetchDocumentDetails(dokId, true)`, but workflows MUST verify enrichment and supplement when needed.
 
 **Before ANY per-document analysis**, verify data depth:
 
@@ -2138,18 +2138,31 @@ echo ""
 echo "--- Check 9: Confidence-data alignment (prevents confidence inflation) ---"
 SYNTH_FILE="$ANALYSIS_DIR/synthesis-summary.md"
 if [ -f "$SYNTH_FILE" ]; then
+  # Count documents with actual fullText/fullContent using recursive find
+  HAS_FULLTEXT=0
+  find "$ANALYSIS_DIR" -path '*/documents/*.json' -type f 2>/dev/null > /tmp/doc_jsons_check9.txt
+  while IFS= read -r jf; do
+    [ -z "$jf" ] && continue
+    [ ! -f "$jf" ] && continue
+    if grep -q '"fullText"\|"fullContent"' "$jf" 2>/dev/null; then
+      HAS_FULLTEXT=$((HAS_FULLTEXT + 1))
+    fi
+  done < /tmp/doc_jsons_check9.txt
+
+  # Check for HIGH/VERY HIGH confidence claims with no full text
+  grep -i 'Confidence.*HIGH\|confidence.*VERY HIGH' "$SYNTH_FILE" 2>/dev/null > /tmp/high_conf.txt || true
+  wc -c < /tmp/high_conf.txt > /tmp/high_conf_size.txt || echo 0 > /tmp/high_conf_size.txt
+  read HIGH_CONF_SIZE < /tmp/high_conf_size.txt
+  if [ "$HIGH_CONF_SIZE" -gt 0 ] && [ "$HAS_FULLTEXT" -eq 0 ]; then
+    echo "⚠️ WARNING: Synthesis claims HIGH/VERY HIGH confidence but ZERO documents have fullText/fullContent — article MUST NOT claim HIGH confidence"
+    WARN_COUNT=$((WARN_COUNT + 1))
+  fi
+
+  # Check for LOW confidence with no full text (existing check)
   grep -i 'Confidence.*LOW\|confidence.*low' "$SYNTH_FILE" 2>/dev/null > /tmp/low_conf.txt || true
   wc -c < /tmp/low_conf.txt > /tmp/low_conf_size.txt || echo 0 > /tmp/low_conf_size.txt
   read LOW_CONF_SIZE < /tmp/low_conf_size.txt
   if [ "$LOW_CONF_SIZE" -gt 0 ]; then
-    # Check for actual full-text fields in JSON — not byte size heuristics
-    HAS_FULLTEXT=0
-    for jf in "$ANALYSIS_DIR"/documents/*.json; do
-      [ ! -f "$jf" ] && continue
-      if grep -q '"fullText"\|"fullContent"' "$jf" 2>/dev/null; then
-        HAS_FULLTEXT=$((HAS_FULLTEXT + 1))
-      fi
-    done
     if [ "$HAS_FULLTEXT" -eq 0 ]; then
       echo "⚠️ WARNING: Synthesis confidence is LOW and no documents have fullText/fullContent — article MUST NOT claim HIGH confidence"
       WARN_COUNT=$((WARN_COUNT + 1))
@@ -2157,36 +2170,40 @@ if [ -f "$SYNTH_FILE" ]; then
       echo "✅ PASS: Synthesis confidence is LOW but $HAS_FULLTEXT document(s) have full text"
     fi
   else
-    echo "✅ PASS: Synthesis does not report LOW confidence"
+    if [ "$HAS_FULLTEXT" -gt 0 ]; then
+      echo "✅ PASS: $HAS_FULLTEXT document(s) have full text content"
+    else
+      echo "ℹ️ INFO: No full text found — confidence ceiling is MEDIUM"
+    fi
   fi
 fi
 
 # Check 10: Data Depth Assessment — count enriched vs metadata-only documents
 echo ""
 echo "--- Check 10: Data depth assessment (enrichment coverage) ---"
-if [ -d "$ANALYSIS_DIR/documents" ]; then
-  FULLTEXT=0
-  SUMMARY_ONLY=0
-  METADATA_ONLY=0
-  for jf in "$ANALYSIS_DIR"/documents/*.json; do
-    [ ! -f "$jf" ] && continue
-    if grep -q '"fullText"\|"fullContent"' "$jf" 2>/dev/null; then
-      FULLTEXT=$((FULLTEXT + 1))
-    elif grep -q '"summary"\|"notis"' "$jf" 2>/dev/null; then
-      SUMMARY_ONLY=$((SUMMARY_ONLY + 1))
-    else
-      METADATA_ONLY=$((METADATA_ONLY + 1))
-    fi
-  done
-  TOTAL_DATA=$((FULLTEXT + SUMMARY_ONLY + METADATA_ONLY))
-  if [ "$TOTAL_DATA" -gt 0 ]; then
-    echo "📊 Data depth: $FULLTEXT full-text (fullText/fullContent), $SUMMARY_ONLY summary-only, $METADATA_ONLY metadata-only, out of $TOTAL_DATA total"
-    if [ "$METADATA_ONLY" -gt "$FULLTEXT" ]; then
-      echo "⚠️ WARNING: Majority of documents ($METADATA_ONLY/$TOTAL_DATA) are metadata-only — max confidence is MEDIUM"
-      WARN_COUNT=$((WARN_COUNT + 1))
-    else
-      echo "✅ PASS: Majority of documents have full-text or summary content"
-    fi
+FULLTEXT=0
+SUMMARY_ONLY=0
+METADATA_ONLY=0
+find "$ANALYSIS_DIR" -path '*/documents/*.json' -type f 2>/dev/null > /tmp/doc_jsons_check10.txt
+while IFS= read -r jf; do
+  [ -z "$jf" ] && continue
+  [ ! -f "$jf" ] && continue
+  if grep -q '"fullText"\|"fullContent"' "$jf" 2>/dev/null; then
+    FULLTEXT=$((FULLTEXT + 1))
+  elif grep -q '"summary"\|"notis"' "$jf" 2>/dev/null; then
+    SUMMARY_ONLY=$((SUMMARY_ONLY + 1))
+  else
+    METADATA_ONLY=$((METADATA_ONLY + 1))
+  fi
+done < /tmp/doc_jsons_check10.txt
+TOTAL_DATA=$((FULLTEXT + SUMMARY_ONLY + METADATA_ONLY))
+if [ "$TOTAL_DATA" -gt 0 ]; then
+  echo "📊 Data depth: $FULLTEXT full-text (fullText/fullContent), $SUMMARY_ONLY summary-only, $METADATA_ONLY metadata-only, out of $TOTAL_DATA total"
+  if [ "$METADATA_ONLY" -gt "$FULLTEXT" ]; then
+    echo "⚠️ WARNING: Majority of documents ($METADATA_ONLY/$TOTAL_DATA) are metadata-only — max confidence is MEDIUM"
+    WARN_COUNT=$((WARN_COUNT + 1))
+  else
+    echo "✅ PASS: Majority of documents have full-text or summary content"
   fi
 fi
 

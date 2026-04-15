@@ -86,7 +86,7 @@ graph TD
 
 Score each dimension from **0 to 10**. See calibration examples below.
 
-> ⚠️ **Metadata-Only Score Cap**: Documents with METADATA-ONLY data depth (JSON <500 bytes, no full text or summary) are scored max **3/10** on ALL dimensions. Full document text (via `get_dokument_innehall`) is REQUIRED for scores above 5/10. This prevents over-scoring documents where only the title is known.
+> ⚠️ **Metadata-Only Score Cap**: Documents with METADATA-ONLY data depth (no `summary`, `fullText`, or `fullContent`) are scored max **3/10** on ALL dimensions. Full document text (via `get_dokument_innehall`) is REQUIRED for scores above 5/10. This prevents over-scoring documents where only the title is known.
 
 ### Dimension 1: Parliamentary Significance (0–10)
 
