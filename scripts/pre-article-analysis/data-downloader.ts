@@ -334,9 +334,12 @@ export async function downloadAllDocuments(
             const dokId = [
               docRecord['dok_id'],
               docRecord['dokument_id'],
+              docRecord['rel_dok_id'],
               docRecord['id'],
               docRecord['dokumentnamn'],
-            ].find((value): value is string => typeof value === 'string' && value.trim().length > 0);
+            ]
+              .map((value) => typeof value === 'string' ? value.trim() : '')
+              .find((value): value is string => value.length > 0);
             if (!dokId) return null;
             const details = await client.fetchDocumentDetails(dokId, true) as Record<string, unknown>;
             // Normalize response fields to match RawDocument conventions
