@@ -104,6 +104,8 @@ graph TD
 
 ## 📋 Policy Domain Taxonomy
 
+> ⚠️ **Title-Only Classification Warning**: Domain classification from document titles alone has a ~40% error rate (observed 2026-04-15: housing motions misclassified as labour, asylum motions misclassified as insurance). **Title-only classification is LOW confidence.** To achieve MEDIUM or higher confidence, the classifier MUST read the document summary or full text via `get_dokument_innehall`. When only the title is available, classification MUST include the label `[LOW confidence — title only]`.
+
 Sweden's 13 parliamentary domain codes, aligned with Riksdag committee structure:
 
 - **ECO – Economics & Finance** (FiU oversight)

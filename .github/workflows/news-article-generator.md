@@ -635,6 +635,20 @@ echo "✅ Read $TOTAL_FILES analysis files — these MUST drive article content"
 
 ## Step 3: Generate Articles (Script-First)
 
+> 🔴 **DEEP-INSPECTION TOPIC-DATA ALIGNMENT GATE** (prevents fabricated articles):
+> If `focus_topic` is set for deep-inspection, verify at least 1 downloaded document matches the topic BEFORE generating any article. The agent MUST:
+> 1. Read the synthesis-summary.md in the deep-inspection analysis folder
+> 2. Check if ANY document title/summary contains keywords from `focus_topic`
+> 3. If NO match found → the pipeline downloaded irrelevant documents:
+>    - ABORT **article generation only**; do **not** use `safeoutputs___noop` because analysis artifacts already exist
+>    - Preserve the downloaded/analysis artifacts and produce a **safe analysis-only output/PR** explaining the mismatch
+>    - The analysis-only output MUST state: `focus_topic='<topic>'`, summarize the actual downloaded document topics as `<actual topics>`, and clearly say that no article was generated due to topic-data mismatch
+>    - Do NOT generate an article from general knowledge about the topic
+>    - Do NOT proceed to manual fallback
+> 4. If match found → proceed normally
+>
+> This gate was added after the 2026-04-15 Deep Inspection Cyber incident where an article about cybersecurity was generated from migration/healthcare data.
+
 **PRIMARY APPROACH — use the batch generation script:**
 
 > ⚠️ **CRITICAL — MCP env vars and script MUST run in the same shell session.**

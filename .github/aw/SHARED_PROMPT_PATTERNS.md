@@ -1812,6 +1812,37 @@ echo "📊 JSON data files: $DATA_JSON_COUNT"
 
 If `DATA_JSON_COUNT=0`: **the agent MUST diagnose script failures (read error logs, fix code issues, re-run) OR use direct MCP tool calls as fallback.** Save each MCP response as JSON to `analysis/data/documents/{type}/{dok_id}.json`. Never give up on downloading data unless MCP itself is down.
 
+#### Step 1b: Mandatory Full-Text Document Enrichment
+
+> 🚨 **ABSOLUTE RULE**: Analysis based only on metadata (title, date, committee code) is LOW confidence at best. The pre-article-analysis pipeline now enriches top documents automatically inside `downloadAllDocuments(...)` via `client.fetchDocumentDetails(dokId, true)`, but workflows MUST verify enrichment and supplement when needed.
+
+**Before ANY per-document analysis**, verify data depth:
+
+1. **Check each document JSON** in `analysis/daily/{date}/{type}/documents/*.json`:
+   - If JSON contains `fullText` or `fullContent` with meaningful non-trivial content (>100 chars) → **FULL-TEXT** available
+   - If JSON contains `summary` with >100 chars but no `fullText`/`fullContent` → **SUMMARY**
+   - If JSON contains `contentFetched: true` but no `fullText`/`fullContent` → treat as **details fetched**, **NOT** automatically FULL-TEXT
+   - If JSON contains only `titel`, `datum`, `organ` fields (or otherwise remains <500 bytes without `summary`, `fullText`, or `fullContent`) → **METADATA-ONLY**
+2. **For METADATA-ONLY or SUMMARY-only documents that require deeper analysis**, the AI agent MUST call MCP directly:
+   ```
+   Call: get_dokument_innehall({ dok_id: "<value>", include_full_text: true })
+   ```
+   - Store returned full text in the document's analysis file
+   - Only reclassify to **FULL-TEXT** if the stored result includes `fullText` or `fullContent`
+   - If `get_dokument_innehall` fails: retain the existing classification (`SUMMARY` or `METADATA-ONLY`) in analysis
+3. **NEVER claim HIGH or VERY HIGH confidence unless `fullText` or `fullContent` is verified**
+
+**Confidence Ceiling Rules (Based on Data Depth):**
+
+| Data Depth | Max Confidence | Description |
+|---|---|---|
+| **FULL-TEXT** — Verified document text present in `fullText` or `fullContent` (typically from `get_dokument_innehall`) | **HIGH** or **VERY HIGH** | Full text verified, multi-framework analysis possible |
+| **SUMMARY** — Title + summary/abstract (100+ chars), with or without `contentFetched: true`, but no verified `fullText`/`fullContent` | **MEDIUM** | Partial content, limited analysis depth |
+| **METADATA-ONLY** — Title, date, committee code only (<500 bytes) and no `summary`, `fullText`, or `fullContent` | **LOW** | Classification and scoring only; SWOT/risk analysis PROHIBITED |
+| **NO DATA** — Document not in pipeline | Analysis **PROHIBITED** | Do NOT fabricate analysis from general knowledge |
+
+> ⛔ **FABRICATION BAN**: If analysis JSON files for a topic contain ZERO documents matching the article topic (e.g., `focus_topic` is `"cyber security"` but all documents are about migration/healthcare), the workflow MUST stop article generation and create an **analysis-only PR** that documents the mismatch, cites the inspected files/documents, and clearly states that no article was generated because the downloaded evidence does not match the requested topic. **Do NOT use `safeoutputs___noop` for this case**, because mismatch findings are evidence/artifacts that must be preserved for auditability. NEVER generate an article from general knowledge about a topic when the actual downloaded data is about something else entirely.
+
 #### Step 2: Read ALL Methodology Guides (MANDATORY — do this BEFORE any analysis)
 
 The agent MUST read (using `view` or `cat`) every one of these files before writing any analysis. These define HOW to analyze:
@@ -2099,6 +2130,107 @@ if [ -d "$ANALYSIS_DIR/documents" ]; then
         echo "✅ PASS: $bf has substantive content ($FILE_SIZE bytes)"
       fi
     done
+  fi
+fi
+
+# Check 9: Confidence-Data Alignment — article confidence MUST match analysis confidence
+echo ""
+echo "--- Check 9: Confidence-data alignment (prevents confidence inflation) ---"
+SYNTH_FILE="$ANALYSIS_DIR/synthesis-summary.md"
+if [ -f "$SYNTH_FILE" ]; then
+  # Count documents with actual fullText/fullContent >100 chars via jq exit code (no intermediate temp files)
+  HAS_FULLTEXT=0
+  find "$ANALYSIS_DIR" -path '*/documents/*.json' -type f 2>/dev/null > /tmp/qg9_docs_$$.txt
+  while IFS= read -r jf; do
+    [ -z "$jf" ] && continue
+    [ ! -f "$jf" ] && continue
+    # jq -e exits 0 if expression is truthy, 1 otherwise — no temp file needed
+    if jq -e '(((.fullText // "") | length) > 100) or (((.fullContent // "") | length) > 100)' "$jf" >/dev/null 2>&1; then
+      HAS_FULLTEXT=$((HAS_FULLTEXT + 1))
+    fi
+  done < /tmp/qg9_docs_$$.txt
+  rm -f /tmp/qg9_docs_$$.txt
+
+  # Extract the actual confidence value from the Overall Confidence table row (avoids matching template/reference text)
+  # NOTE: Avoids $() command substitution per AWF shell safety rules — uses temp files + read instead
+  ACTUAL_CONFIDENCE=""
+  CONF_LINE_TMP=/tmp/qg9_conf_line_$$.txt
+  ACTUAL_CONF_TMP=/tmp/qg9_actual_conf_$$.txt
+  if [ -f "$SYNTH_FILE" ]; then
+    # Look for "| **Overall Confidence** | VALUE |" pattern in synthesis context table
+    grep -i 'Overall Confidence' "$SYNTH_FILE" 2>/dev/null | grep '|' | head -1 > "$CONF_LINE_TMP" || true
+    CONF_LINE=""
+    if [ -s "$CONF_LINE_TMP" ]; then
+      IFS= read -r CONF_LINE < "$CONF_LINE_TMP"
+    fi
+    if [ -n "$CONF_LINE" ]; then
+      # Extract the value column (third pipe-delimited field), strip markdown/whitespace
+      printf '%s\n' "$CONF_LINE" | awk -F'|' '{print $3}' | sed 's/\*//g; s/`//g; s/^[[:space:]]*//; s/[[:space:]]*$//' | tr '[:upper:]' '[:lower:]' > "$ACTUAL_CONF_TMP"
+      if [ -s "$ACTUAL_CONF_TMP" ]; then
+        IFS= read -r ACTUAL_CONFIDENCE < "$ACTUAL_CONF_TMP"
+      fi
+    fi
+  fi
+  rm -f "$CONF_LINE_TMP" "$ACTUAL_CONF_TMP"
+
+  # Check for HIGH/VERY HIGH confidence claims with no full text
+  case "$ACTUAL_CONFIDENCE" in
+    *"very high"*|*"high"*)
+      if [ "$HAS_FULLTEXT" -eq 0 ]; then
+        echo "⚠️ WARNING: Synthesis claims HIGH/VERY HIGH confidence but ZERO documents have fullText/fullContent — article MUST NOT claim HIGH confidence"
+        WARN_COUNT=$((WARN_COUNT + 1))
+      fi
+      ;;
+  esac
+
+  # Check for LOW confidence with no full text
+  case "$ACTUAL_CONFIDENCE" in
+    *"low"*|*"very low"*)
+      if [ "$HAS_FULLTEXT" -eq 0 ]; then
+        echo "⚠️ WARNING: Synthesis confidence is LOW and no documents have fullText/fullContent — article MUST NOT claim HIGH confidence"
+        WARN_COUNT=$((WARN_COUNT + 1))
+      else
+        echo "✅ PASS: Synthesis confidence is LOW but $HAS_FULLTEXT document(s) have full text"
+      fi
+      ;;
+    *)
+      if [ "$HAS_FULLTEXT" -gt 0 ]; then
+        echo "✅ PASS: $HAS_FULLTEXT document(s) have full text content"
+      else
+        echo "ℹ️ INFO: No full text found — confidence ceiling is MEDIUM"
+      fi
+      ;;
+  esac
+fi
+
+# Check 10: Data Depth Assessment — count enriched vs metadata-only documents
+echo ""
+echo "--- Check 10: Data depth assessment (enrichment coverage) ---"
+FULLTEXT=0
+SUMMARY_ONLY=0
+METADATA_ONLY=0
+find "$ANALYSIS_DIR" -path '*/documents/*.json' -type f 2>/dev/null > /tmp/qg10_docs_$$.txt
+while IFS= read -r jf; do
+  [ -z "$jf" ] && continue
+  [ ! -f "$jf" ] && continue
+  # Classify using jq exit codes — no intermediate temp files
+  if jq -e '(((.fullText // "") | length) > 100) or (((.fullContent // "") | length) > 100)' "$jf" >/dev/null 2>&1; then
+    FULLTEXT=$((FULLTEXT + 1))
+  elif jq -e '(((.summary // "") | length) > 100) or (((.notis // "") | length) > 100)' "$jf" >/dev/null 2>&1; then
+    SUMMARY_ONLY=$((SUMMARY_ONLY + 1))
+  else
+    METADATA_ONLY=$((METADATA_ONLY + 1))
+  fi
+done < /tmp/qg10_docs_$$.txt
+rm -f /tmp/qg10_docs_$$.txt
+TOTAL_DATA=$((FULLTEXT + SUMMARY_ONLY + METADATA_ONLY))
+if [ "$TOTAL_DATA" -gt 0 ]; then
+  echo "📊 Data depth: $FULLTEXT full-text (fullText/fullContent), $SUMMARY_ONLY summary-only, $METADATA_ONLY metadata-only, out of $TOTAL_DATA total"
+  if [ "$METADATA_ONLY" -gt $((FULLTEXT + SUMMARY_ONLY)) ]; then
+    echo "⚠️ WARNING: Majority of documents ($METADATA_ONLY/$TOTAL_DATA) are metadata-only — max confidence is MEDIUM"
+    WARN_COUNT=$((WARN_COUNT + 1))
+  else
+    echo "✅ PASS: Majority of documents have full-text or summary content"
   fi
 fi
 

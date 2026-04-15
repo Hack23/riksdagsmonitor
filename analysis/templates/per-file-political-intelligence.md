@@ -51,12 +51,15 @@
 | **Source MCP Tool** | `[REQUIRED: e.g. search_dokument, get_propositioner]` |
 | **Analysis Timestamp** | `[REQUIRED: YYYY-MM-DD HH:MM UTC]` |
 | **Analyst** | `[REQUIRED: workflow name, e.g. news-evening-analysis]` |
+| **Data Depth** | `[REQUIRED: FULL-TEXT / SUMMARY / METADATA-ONLY — see ai-driven-analysis-guide.md §Data Availability Prerequisites]` |
 
 ---
 
 ## 🎯 Executive Summary
 
 `[REQUIRED: 3–5 sentences capturing the political significance. Intelligence-level analysis — not just what happened, but what it means for power dynamics, coalition stability, and democratic accountability. Include confidence label.]` **[VERY HIGH/HIGH/MEDIUM/LOW/VERY LOW]**
+
+> ⚠️ **Confidence Ceiling Rule**: If `Data Depth` above is `METADATA-ONLY`, confidence MUST be `LOW` or `VERY LOW`. If `SUMMARY`, max is `MEDIUM`. Only `FULL-TEXT` documents may claim `HIGH` or `VERY HIGH`. See `ai-driven-analysis-guide.md` §Data Availability Prerequisites.
 
 ---
 

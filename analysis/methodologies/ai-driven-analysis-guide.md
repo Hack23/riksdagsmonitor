@@ -157,6 +157,45 @@ Before committing, run the quality gate bash check from `SHARED_PROMPT_PATTERNS.
 
 ---
 
+## 📋 Data Availability Prerequisites (v5.0 Addition)
+
+> **Root Cause Context**: On 2026-04-15, a deep-inspection article about cybersecurity was generated from migration/healthcare metadata — a complete fabrication. This section ensures analysis quality matches actual data depth.
+
+### Data Depth Classification
+
+Before writing ANY analysis, classify every document's data depth:
+
+| Depth Level | Definition | Analysis Permitted | Max Confidence |
+|---|---|---|---|
+| **FULL-TEXT** | Actual document body present in `fullText` or `fullContent` (for example, substantial fetched text from `get_dokument_innehall`); do **not** infer FULL-TEXT from `contentFetched: true` or JSON size alone | All frameworks: SWOT, Risk, Threat, Stakeholder, Significance | **VERY HIGH** |
+| **SUMMARY** | Title + summary/abstract from MCP listing (100-500 chars), or notis field present, but no populated `fullText`/`fullContent` | Classification, basic SWOT (with caveats), Significance scoring | **MEDIUM** |
+| **METADATA-ONLY** | Title, date, committee code only; no summary and no populated `fullText`/`fullContent` | Classification and Significance scoring ONLY | **LOW** |
+| **NO DATA** | Document referenced by topic but NOT in pipeline | **ANALYSIS PROHIBITED** | **N/A — ABORT** |
+
+### Mandatory Data Depth Label
+
+Every per-file analysis MUST include a `Data Depth` field in the Document Identity table:
+
+```markdown
+| **Data Depth** | `[FULL-TEXT / SUMMARY / METADATA-ONLY]` |
+```
+
+### Confidence Ceiling Enforcement
+
+- If document is METADATA-ONLY → ALL claims capped at `[LOW]` confidence
+- If document is SUMMARY → ALL claims capped at `[MEDIUM]` confidence
+- SWOT quadrants for METADATA-ONLY documents MUST include warning: `⚠️ Based on metadata only — not verified from full document text`
+- Risk scoring for METADATA-ONLY documents: maximum 3/10
+
+### Title-Only Classification Warning
+
+Domain classification from document titles alone has a ~40% error rate (observed 2026-04-15: housing motions classified as labour, asylum motions classified as insurance). Title-only classification MUST:
+- Be labeled `[LOW confidence]`
+- Include disclaimer: "Classification based on title only — may be inaccurate"
+- Score max 3/10 on significance
+
+---
+
 ## 🏗️ Architecture: Per-File vs. Per-Day Analysis
 
 ### Why Per-File?
