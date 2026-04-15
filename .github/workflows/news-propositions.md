@@ -245,7 +245,7 @@ Uses `memory/news-generation` branch. START: read `memory/news-generation/last-r
 - **Minutes 25–33**: Generate articles for core languages (EN, SV) using `npx tsx scripts/generate-news-enhanced.ts`
 - **Minutes 33–38**: Validate and fix any quality issues
 - **Minutes 38–43**: Commit analysis artifacts + articles, create PR with `safeoutputs___create_pull_request`
-- **Minutes 43–45**: 🚨 **HARD DEADLINE** — If no safe output has been called yet, IMMEDIATELY call `safeoutputs___noop` with reason "Time limit reached before completion"
+- **Minutes 43–45**: 🚨 **HARD DEADLINE** — If no safe output yet: if ANY artifacts/files were created, IMMEDIATELY stage, commit, call `safeoutputs___create_pull_request` with partial work. ONLY call `safeoutputs___noop` if truly ZERO files were created.
 
 > ⚠️ **Analysis phase is 15 minutes minimum** — every analysis file must contain color-coded Mermaid diagrams, structured evidence tables with dok_id citations, and follow template structure exactly.
 
