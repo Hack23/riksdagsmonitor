@@ -23,7 +23,7 @@ April 16, 2026 marks one of the most legislatively dense days of the spring sess
 
 1. **Youth Crime Crackdown (HD03246)**: Government press conference today. Prop 2025/26:246 introduces stricter sentences for under-18 offenders — core Tidöavtalet delivery. Strömmer (M) positions this as the flagship pre-election justice reform [HIGH confidence, 9/10 significance].
 
-2. **Ukraine Accountability Framework (HD03231 + HD03232)**: Sweden joins the expanded partial agreement for the Special Tribunal for the Crime of Aggression against Ukraine AND the International Register of Damage. Two propositions from Utrikesdepartementet signal Sweden's post-NATO international leadership [HIGH confidence, 8/10].
+2. **Ukraine Accountability Framework (HD03231 + HD03232)**: Sweden joins the expanded partial agreement for the Special Tribunal for the Crime of Aggression against Ukraine AND an international compensation/damages commission. Two propositions from Utrikesdepartementet signal Sweden's post-NATO international leadership [HIGH confidence, 8/10].
 
 3. **Green Transport Tax Reform (HD01SkU23)**: SkU advances permanent tax exemption for workplace EV charging + expanded fuel deductions. Creates dual incentive: electrification push AND short-term cost relief [HIGH confidence, 8/10].
 
@@ -35,7 +35,7 @@ April 16, 2026 marks one of the most legislatively dense days of the spring sess
 
 7. **Forestry Deregulation (HD03242)**: "Active forestry" regulation clarifies rules — environmental groups warn of biodiversity impacts while forest industry celebrates reduced bureaucracy [HIGH confidence, 7/10].
 
-8. **Government Crime Messaging**: 7 of 9 press releases in 24 hours (April 15-16) reinforce law-and-order: indefinite sentences, benefit bans, anti-fraud, cybersecurity, social services tools. Two non-crime items (Ostkustströmming EU designation, PM school visit) round out the agenda. Coordinated pre-election communication strategy [HIGH confidence].
+8. **Government Crime Messaging**: 7 of 9 press releases over 48 hours (April 15-16) reinforce law-and-order: indefinite sentences, benefit bans, anti-fraud, cybersecurity, social services tools. Two non-crime items (Ostkustströmming EU designation, PM school visit) round out the agenda. Coordinated pre-election communication strategy [HIGH confidence].
 
 ## SWOT Analysis
 

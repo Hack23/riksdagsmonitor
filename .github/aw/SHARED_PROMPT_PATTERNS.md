@@ -101,19 +101,34 @@ ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
 MISSING_ARTIFACTS=0
 TOTAL_ARTIFACTS=0
 echo "=== 📊 9-Artifact Completeness Gate ==="
+
+# Per-file minimum sizes matching the table above
+declare -A MIN_SIZES=(
+  ["synthesis-summary.md"]=2000
+  ["swot-analysis.md"]=1500
+  ["risk-assessment.md"]=1000
+  ["threat-analysis.md"]=1000
+  ["classification-results.md"]=800
+  ["significance-scoring.md"]=800
+  ["stakeholder-perspectives.md"]=1000
+  ["cross-reference-map.md"]=500
+  ["data-download-manifest.md"]=300
+)
+
 for REQUIRED_FILE in synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md classification-results.md significance-scoring.md stakeholder-perspectives.md cross-reference-map.md data-download-manifest.md; do
   TOTAL_ARTIFACTS=$((TOTAL_ARTIFACTS + 1))
+  MIN_SIZE=${MIN_SIZES[$REQUIRED_FILE]}
   if [ ! -f "$ANALYSIS_DIR/$REQUIRED_FILE" ]; then
     echo "🔴 MISSING: $REQUIRED_FILE — MUST CREATE"
     MISSING_ARTIFACTS=$((MISSING_ARTIFACTS + 1))
   else
     wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE" > /tmp/fsize.txt
     read FSIZE < /tmp/fsize.txt
-    if [ "$FSIZE" -lt 300 ]; then
-      echo "🔴 STUB: $REQUIRED_FILE ($FSIZE bytes) — MUST ENRICH"
+    if [ "$FSIZE" -lt "$MIN_SIZE" ]; then
+      echo "🔴 UNDERSIZED: $REQUIRED_FILE ($FSIZE bytes < $MIN_SIZE minimum) — MUST ENRICH"
       MISSING_ARTIFACTS=$((MISSING_ARTIFACTS + 1))
     else
-      echo "✅ OK: $REQUIRED_FILE ($FSIZE bytes)"
+      echo "✅ OK: $REQUIRED_FILE ($FSIZE bytes ≥ $MIN_SIZE minimum)"
     fi
   fi
 done

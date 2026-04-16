@@ -68,7 +68,7 @@ graph LR
 
 | # | Threat | Evidence (dok_id) | Severity | Confidence | Status |
 |---|--------|-------------------|:--------:|:----------:|:------:|
-| LI-1 | **CRC compliance tension**: Prop 246 toughens sentences for under-18 offenders, potentially conflicting with Sweden's obligations under the Convention on the Rights of the Child. The reform introduces sentencing measures that children's rights experts argue violate proportionality principles. | HD03246 | 3 | 🟩 HIGH | Emerging |
+| LI-1 | **CRC compliance tension**: Prop 246 toughens sentences for under-18 offenders, potentially conflicting with Sweden's obligations under the Convention on the Rights of the Child. The reform introduces sentencing measures that children's rights experts argue violate proportionality principles. | HD03246 | 2 | 🟩 HIGH | Emerging |
 | LI-2 | **Forestry regulatory rollback**: Prop 242 deregulates forestry rules. Environmental legal scholars may argue this weakens environmental protection mandates from EU directives (Habitats Directive, Biodiversity Strategy). | HD03242 | 2 | 🟧 MEDIUM | Latent |
 
 **Legislative Integrity Assessment:** The primary legislative integrity concern is the tension between Prop 246's tougher youth sentences and Sweden's CRC obligations. This is not a corruption risk but a legal compatibility question that will be tested in JuU committee hearings and potentially at the Lagrådet.
