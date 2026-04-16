@@ -128,6 +128,22 @@ describe('buildAnalysisEnrichmentSections', () => {
       expect(html).toContain('impact-low');
     });
 
+    it('renders localized impact ARIA labels', () => {
+      const sections = buildAnalysisEnrichmentSections(fullEnrichment(), 'sv');
+      const html = sections.find(s => s.id === 'swot-analysis')!.html;
+      expect(html).toContain('aria-label="Hög påverkan"');
+      expect(html).toContain('aria-label="Medelpåverkan"');
+      expect(html).toContain('aria-label="Låg påverkan"');
+    });
+
+    it('wraps impact emoji in aria-hidden for screen readers', () => {
+      const sections = buildAnalysisEnrichmentSections(fullEnrichment(), 'en');
+      const html = sections.find(s => s.id === 'swot-analysis')!.html;
+      expect(html).toContain('aria-hidden="true">🔴</span>');
+      expect(html).toContain('aria-hidden="true">🟡</span>');
+      expect(html).toContain('aria-hidden="true">🟢</span>');
+    });
+
     it('normalizes unknown impact values to medium', () => {
       const enrichment = fullEnrichment({
         swotAnalysis: {
@@ -198,6 +214,14 @@ describe('buildAnalysisEnrichmentSections', () => {
       expect(html).toContain('International/EU');
       expect(html).toContain('Media/Public Opinion');
     });
+
+    it('wraps stakeholder emoji icons in aria-hidden', () => {
+      const sections = buildAnalysisEnrichmentSections(fullEnrichment(), 'en');
+      const html = sections.find(s => s.id === 'stakeholder-perspectives')!.html;
+      expect(html).toContain('aria-hidden="true">🏛️</span>');
+      expect(html).toContain('aria-hidden="true">⚔️</span>');
+      expect(html).toContain('aria-hidden="true">📊</span>');
+    });
   });
 
   // -----------------------------------------------------------------------
@@ -217,6 +241,26 @@ describe('buildAnalysisEnrichmentSections', () => {
       expect(html).toContain('democratic-health');
       expect(html).toContain('MEDIUM');
       expect(html).toContain('🟡');
+    });
+
+    it('renders AT_RISK democratic health with red badge', () => {
+      const enrichment = fullEnrichment({ democraticHealth: 'AT_RISK' });
+      const sections = buildAnalysisEnrichmentSections(enrichment, 'en');
+      const html = sections.find(s => s.id === 'risk-assessment')!.html;
+      expect(html).toContain('AT_RISK');
+      expect(html).toContain('🔴');
+    });
+
+    it('wraps democratic health emoji in aria-hidden', () => {
+      const sections = buildAnalysisEnrichmentSections(fullEnrichment(), 'en');
+      const html = sections.find(s => s.id === 'risk-assessment')!.html;
+      expect(html).toContain('aria-hidden="true">🟡</span>');
+    });
+
+    it('wraps threat indicator emoji in aria-hidden', () => {
+      const sections = buildAnalysisEnrichmentSections(fullEnrichment(), 'en');
+      const html = sections.find(s => s.id === 'risk-assessment')!.html;
+      expect(html).toContain('aria-hidden="true">🎯</span>');
     });
 
     it('renders threat indicators list', () => {
@@ -257,6 +301,12 @@ describe('buildAnalysisEnrichmentSections', () => {
       const sections = buildAnalysisEnrichmentSections(fullEnrichment(), 'de');
       const html = sections.find(s => s.id === 'forward-indicators')!.html;
       expect(html).toContain('Was kommt als Nächstes?');
+    });
+
+    it('wraps forward indicator emoji in aria-hidden', () => {
+      const sections = buildAnalysisEnrichmentSections(fullEnrichment(), 'en');
+      const html = sections.find(s => s.id === 'forward-indicators')!.html;
+      expect(html).toContain('aria-hidden="true">🔮</span>');
     });
   });
 

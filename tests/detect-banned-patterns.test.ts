@@ -76,4 +76,18 @@ describe('detectBannedPatterns', () => {
     const html = '<!-- AI_MUST_REPLACE: winners_losers_analysis -->';
     expect(detectBannedPatterns(html)).toEqual([]);
   });
+
+  it('does not flag "Touches on" with prose connectors in the same sentence', () => {
+    // Legitimate analysis text with "but" in same sentence should not be flagged
+    const html = '<p>Touches on ECHR obligations and EU asylum acquis but primarily domestic.</p>';
+    expect(detectBannedPatterns(html)).toEqual([]);
+  });
+
+  it('flags "Touches on" when connector word is in a later sentence', () => {
+    // Banned pattern in first sentence; connector in second sentence should not save it
+    const html = '<p>Touches on education policy. This is complex but important.</p>';
+    expect(detectBannedPatterns(html)).toContainEqual(
+      'policySignificanceTouches: "Touches on {domains}."',
+    );
+  });
 });

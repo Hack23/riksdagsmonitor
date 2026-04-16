@@ -185,6 +185,24 @@ const ENRICHMENT_LABELS: Record<string, Record<Language, string>> = {
     fr: 'Raison', es: 'Motivo', nl: 'Reden',
     ar: 'السبب', he: 'סיבה', ja: '理由', ko: '이유', zh: '原因',
   },
+  impactHigh: {
+    en: 'High impact', sv: 'Hög påverkan', da: 'Høj påvirkning',
+    no: 'Høy påvirkning', fi: 'Suuri vaikutus', de: 'Hohe Auswirkung',
+    fr: 'Impact élevé', es: 'Alto impacto', nl: 'Hoge impact',
+    ar: 'تأثير عالٍ', he: 'השפעה גבוהה', ja: '影響大', ko: '높은 영향', zh: '高影响',
+  },
+  impactMedium: {
+    en: 'Medium impact', sv: 'Medelpåverkan', da: 'Middel påvirkning',
+    no: 'Middels påvirkning', fi: 'Keskimääräinen vaikutus', de: 'Mittlere Auswirkung',
+    fr: 'Impact moyen', es: 'Impacto medio', nl: 'Gemiddelde impact',
+    ar: 'تأثير متوسط', he: 'השפעה בינונית', ja: '影響中', ko: '중간 영향', zh: '中影响',
+  },
+  impactLow: {
+    en: 'Low impact', sv: 'Låg påverkan', da: 'Lav påvirkning',
+    no: 'Lav påvirkning', fi: 'Pieni vaikutus', de: 'Geringe Auswirkung',
+    fr: 'Impact faible', es: 'Bajo impacto', nl: 'Lage impact',
+    ar: 'تأثير منخفض', he: 'השפעה נמוכה', ja: '影響小', ko: '낮은 영향', zh: '低影响',
+  },
 };
 
 /** Stakeholder perspective labels per language */
@@ -268,10 +286,11 @@ export function buildAnalysisEnrichmentSections(
     const renderEntries = (entries: Array<{ text: string; confidence?: string; impact?: string }>) =>
       entries.map(e => {
         const impact = toImpactLevel(e.impact);
-        // Impact badges with ARIA labels for screen reader accessibility
-        const impactLabel = impact === 'high' ? 'High impact' : impact === 'low' ? 'Low impact' : 'Medium impact';
+        // Impact badges with localized ARIA labels for screen reader accessibility
+        const impactLabelKey = impact === 'high' ? 'impactHigh' : impact === 'low' ? 'impactLow' : 'impactMedium';
+        const impactLabel = lbl(impactLabelKey, lang);
         const badge = impact === 'high' ? '🔴' : impact === 'low' ? '🟢' : '🟡';
-        return `<li><span class="impact-badge impact-${impact}" aria-label="${impactLabel}">${badge}</span> ${escapeHtml(e.text)}</li>`;
+        return `<li><span class="impact-badge impact-${impact}" aria-label="${impactLabel}"><span aria-hidden="true">${badge}</span></span> ${escapeHtml(e.text)}</li>`;
       }).join('\n');
 
     const heading = lbl('swotHeading', lang);
@@ -319,7 +338,7 @@ export function buildAnalysisEnrichmentSections(
         const pLabel = STAKEHOLDER_LABELS[p.key]?.[lang] ?? STAKEHOLDER_LABELS[p.key]?.en ?? p.key;
         return `
           <div class="stakeholder-card">
-            <h3>${p.icon} ${pLabel}</h3>
+            <h3><span aria-hidden="true">${p.icon}</span> ${pLabel}</h3>
             <p>${escapeHtml(text)}</p>
           </div>`;
       }).join('\n');
@@ -345,15 +364,16 @@ export function buildAnalysisEnrichmentSections(
       const healthLabel = lbl('democraticHealth', lang);
       const healthBadge = enrichment.democraticHealth === 'HIGH' ? '🟢' :
         enrichment.democraticHealth === 'MEDIUM' ? '🟡' :
-        enrichment.democraticHealth === 'LOW' ? '🟠' : '🔴';
-      riskHtml += `<p class="democratic-health"><strong>${healthLabel}:</strong> ${healthBadge} ${enrichment.democraticHealth}</p>`;
+        enrichment.democraticHealth === 'LOW' ? '🟠' :
+        enrichment.democraticHealth === 'AT_RISK' ? '🔴' : '🔴';
+      riskHtml += `<p class="democratic-health"><strong>${healthLabel}:</strong> <span aria-hidden="true">${healthBadge}</span> ${enrichment.democraticHealth}</p>`;
     }
 
     if (enrichment.threatIndicators && enrichment.threatIndicators.length > 0) {
       const indicatorLabel = lbl('threatIndicators', lang);
       riskHtml += `<h3>${indicatorLabel}</h3><ul>`;
       for (const indicator of enrichment.threatIndicators.slice(0, 6)) {
-        riskHtml += `<li>🎯 ${escapeHtml(indicator)}</li>`;
+        riskHtml += `<li><span aria-hidden="true">🎯</span> ${escapeHtml(indicator)}</li>`;
       }
       riskHtml += `</ul>`;
     }
@@ -366,7 +386,7 @@ export function buildAnalysisEnrichmentSections(
     const heading = lbl('forwardHeading', lang);
     let forwardHtml = `<h2>${heading}</h2><ul class="forward-indicators">`;
     for (const indicator of enrichment.forwardIndicators.slice(0, 8)) {
-      forwardHtml += `<li>🔮 ${escapeHtml(indicator)}</li>`;
+      forwardHtml += `<li><span aria-hidden="true">🔮</span> ${escapeHtml(indicator)}</li>`;
     }
     forwardHtml += `</ul>`;
 
