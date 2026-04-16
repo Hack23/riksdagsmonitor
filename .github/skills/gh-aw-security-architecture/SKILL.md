@@ -19,6 +19,11 @@ tags:
 
 # 🔐 GitHub Agentic Workflows Security Architecture
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 📋 Overview
 
 This skill provides comprehensive security architecture guidance for GitHub Agentic Workflows (GAW), covering defense-in-depth strategies, threat modeling, sandboxing, permission models, attack vectors, and security best practices. Understanding GAW security is critical for safely deploying AI agents that can read code, execute commands, and modify repositories.

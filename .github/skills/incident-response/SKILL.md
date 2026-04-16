@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Incident Response Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Defines security incident response procedures following NIST SP 800-61 and ISO 27001 Annex A.16.
 

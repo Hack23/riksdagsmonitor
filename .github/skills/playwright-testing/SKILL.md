@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Playwright Testing
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Enable comprehensive browser-based testing and validation for static HTML/CSS websites using Playwright automation framework. Supports visual regression testing, accessibility audits, screenshot capture, and cross-browser validation.

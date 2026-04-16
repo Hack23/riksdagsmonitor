@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # CIS Controls v8.1 Implementation Skill (Static Site)
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Implement prioritized CIS Controls for Riksdagsmonitor's static HTML/CSS website, focusing on controls applicable to static site hosting on GitHub Pages.

@@ -21,6 +21,11 @@ tags:
 
 # 🔄 GitHub Agentic Workflows Continuous AI Patterns
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 📋 Overview
 
 This skill provides comprehensive patterns for implementing Continuous AI workflows with GitHub Agentic Workflows. Continuous AI extends CI/CD principles to AI-powered automation, enabling agents to continuously triage issues, review code, maintain repositories, and monitor systems with minimal human intervention.

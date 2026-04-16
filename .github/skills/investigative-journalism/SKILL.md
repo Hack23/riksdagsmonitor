@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # 🔍 Investigative Journalism Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Provides expertise in investigative journalism techniques for deep political accountability reporting. Covers source verification, document analysis, freedom of information (FOI) requests, data journalism, and ethical investigative practices for systematic transparency in Swedish governance.

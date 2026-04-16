@@ -9,6 +9,11 @@ tags: [github-agentic-workflows, safe-outputs, security, ai-safety, sanitization
 
 # 🛡️ GitHub Agentic Workflows - Safe Outputs Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 📋 Purpose
 
 Master the **safe outputs** pattern in GitHub Agentic Workflows - the foundational security mechanism that enables AI agents to perform write operations safely through explicit, human-approved outputs. This skill provides comprehensive expertise in designing, implementing, and operating safe output patterns for controlled AI automation.

@@ -2,6 +2,11 @@
 
 > Comprehensive expertise in GitHub Agentic Workflows (v0.68.1) — AI-powered repository automation using natural language markdown with five-layer security guardrails.
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 📚 Skills Overview
 
 This collection provides 12 skills + 1 umbrella skill covering all aspects of GitHub Agentic Workflows (gh-aw), from workflow authoring to security architecture, MCP integration, and operations.

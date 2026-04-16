@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Change Management Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Defines change management processes ensuring controlled, documented changes with proper impact assessment and rollback capabilities.
 

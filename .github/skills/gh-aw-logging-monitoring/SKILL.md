@@ -19,6 +19,11 @@ tags:
 
 # 📊 Logging and Monitoring for Agentic Workflows
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 📋 Overview
 
 This skill provides comprehensive patterns for implementing observability in GitHub Agentic Workflows. It covers structured logging architectures, metrics collection, alerting strategies, debugging techniques, and production monitoring best practices for autonomous agent systems.

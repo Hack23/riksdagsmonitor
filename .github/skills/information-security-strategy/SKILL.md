@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Information Security Strategy Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Defines the information security strategy framework for Hack23 projects, integrating risk management with compliance requirements.
 

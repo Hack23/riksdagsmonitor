@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # SEO Optimization Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Ensures websites are optimized for search engines following modern SEO best practices with focus on technical SEO, structured data, and multilingual support.
 

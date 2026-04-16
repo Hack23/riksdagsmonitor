@@ -9,6 +9,11 @@ tags: [automation, ai, github-actions, mcp, security, continuous-ai, gh-aw]
 
 # 🤖 GitHub Agentic Workflows Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 📋 Purpose
 
 Master GitHub Agentic Workflows - the revolutionary approach to repository automation using AI-powered coding agents hosted in GitHub Actions. This skill provides comprehensive expertise in creating, securing, and operating agentic workflows that combine deterministic GitHub Actions infrastructure with AI-driven decision-making.

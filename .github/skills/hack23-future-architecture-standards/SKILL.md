@@ -5,6 +5,11 @@
 **Last Updated:** 2026-02-11  
 **Reference Implementation:** [CIA Compliance Manager FUTURE_ARCHITECTURE.md](https://github.com/Hack23/cia-compliance-manager/blob/main/docs/architecture/FUTURE_ARCHITECTURE.md) (65 KB, 1,326 lines, 15+ diagrams)
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 🎯 Purpose
 
 This skill documents the **complete Hack23 standard** for creating FUTURE_ARCHITECTURE.md documents that outline the architectural evolution roadmap for projects. Based on the gold standard CIA Compliance Manager implementation, this guide ensures consistency, comprehensiveness, and quality across all Hack23 repositories.

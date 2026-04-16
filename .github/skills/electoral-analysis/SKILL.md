@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Electoral Analysis Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **This skill MUST be applied with the AI FIRST principle: never accept first-pass quality. ALL analysis and content MUST go through minimum 2 complete iterations. After first pass, read ALL output back completely and systematically improve every section — strengthen evidence, deepen analysis, add specific citations, broaden perspectives. Spend ALL allocated time on real work. Single-pass output is NEVER acceptable. NO SHORTCUTS.**
+
 ## Purpose
 
 This skill provides comprehensive methodologies for analyzing Swedish electoral dynamics, forecasting election outcomes, predicting coalition formations, and assessing campaign effectiveness. It integrates statistical modeling, polling analysis, and historical trend analysis to produce high-confidence intelligence products for democratic accountability assessment.

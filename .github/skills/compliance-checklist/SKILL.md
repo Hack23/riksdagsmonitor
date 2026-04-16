@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Compliance Checklist Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 This skill provides comprehensive guidance for multi-framework compliance alignment, demonstrating how a single set of ISMS controls can satisfy multiple international frameworks and regulatory requirements simultaneously.

@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # MCP Gateway Configuration Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 This skill provides guidance for configuring MCP (Model Context Protocol) gateways for the Riksdagsmonitor platform. It covers multi-server integration, tool routing, security configuration, and access control to enable secure and efficient AI-assisted development workflows.

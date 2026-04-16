@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Strategic Communication Analysis Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 This skill provides comprehensive methodologies for analyzing strategic political communication in Swedish parliament and media. It enables intelligence operatives to identify narrative framing techniques, detect coordinated messaging campaigns, assess media bias, analyze parliamentary discourse patterns, and identify information warfare tactics through evidence-based analysis of speeches, documents, and media coverage.

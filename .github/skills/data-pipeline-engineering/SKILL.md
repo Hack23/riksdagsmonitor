@@ -6,6 +6,11 @@ license: CC-BY-4.0
 
 # Data Pipeline Engineering Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Expert knowledge in designing robust ETL (Extract, Transform, Load) pipelines for automated data processing, focusing on reliability, monitoring, and maintainability.
 

@@ -19,6 +19,11 @@ tags:
 
 # 🔄 GitHub Actions Integration for Agentic Workflows
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 📋 Overview
 
 This skill provides comprehensive patterns for integrating GitHub Agentic Workflows with GitHub Actions CI/CD pipelines. It covers workflow orchestration, environment configuration, secrets management, parallel execution strategies, and deployment automation for production-ready autonomous agent systems.

@@ -9,6 +9,11 @@ tags: [github-agentic-workflows, workflow-authoring, markdown, natural-language,
 
 # ✍️ GitHub Agentic Workflows - Workflow Authoring Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 📋 Purpose
 
 Master the art of authoring **GitHub Agentic Workflows** - creating AI-powered automation using natural language markdown instead of complex YAML. This skill provides comprehensive expertise in workflow design, natural language instructions, configuration, and best practices for effective agentic automation.

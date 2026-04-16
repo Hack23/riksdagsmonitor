@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # OSINT Methodologies Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 This skill provides comprehensive Open-Source Intelligence (OSINT) collection methodologies specifically tailored for the Riksdagsmonitor (Riksdagsmonitor) platform's mission of democratic transparency and political accountability in Sweden. It ensures ethical, legal, and effective intelligence gathering from public sources while maintaining GDPR compliance and respecting privacy principles.

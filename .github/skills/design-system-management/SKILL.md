@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Design System Management
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Maintain a consistent, scalable design system for riksdagsmonitor using CSS custom properties, component patterns, and the cyberpunk aesthetic theme across all 14 language versions.

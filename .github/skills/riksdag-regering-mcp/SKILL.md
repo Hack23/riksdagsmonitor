@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Riksdag-Regering MCP Server
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Provide comprehensive access to Swedish political data through the `riksdag-regering-mcp` Model Context Protocol (MCP) server. Enables intelligence operatives and political analysts to query, analyze, and visualize data from the Swedish Riksdag (Parliament) and Regeringen (Government).

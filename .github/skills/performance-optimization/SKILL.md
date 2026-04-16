@@ -6,6 +6,11 @@ license: CC-BY-4.0
 
 # Performance Optimization Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Expert knowledge in optimizing web performance focusing on Core Web Vitals, bundle size reduction, and efficient caching strategies.
 

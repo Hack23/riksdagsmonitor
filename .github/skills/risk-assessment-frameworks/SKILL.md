@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Risk Assessment Frameworks Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 This skill provides comprehensive risk assessment methodologies for evaluating political, institutional, and democratic risks within the Swedish political system. It integrates international frameworks (V-Dem, Transparency International, Freedom House) with Riksdagsmonitor platform's proprietary 50+ Drools risk rules to create systematic early warning capabilities for democratic backsliding, corruption, institutional erosion, political violence, and coalition instability.

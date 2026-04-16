@@ -6,6 +6,11 @@ license: CC-BY-4.0
 
 # Advanced Data Visualization Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Expert knowledge in creating interactive, accessible data visualizations using Chart.js and D3.js for complex political intelligence data.
 

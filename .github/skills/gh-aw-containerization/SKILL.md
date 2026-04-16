@@ -19,6 +19,11 @@ tags:
 
 # 🐳 Containerization for Agentic Workflows
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 📋 Overview
 
 This skill provides comprehensive patterns for containerizing GitHub Agentic Workflows using Docker and container orchestration platforms. It covers container isolation strategies, security hardening techniques, multi-stage build optimization, Docker Compose orchestration, and Kubernetes deployment patterns for production-ready autonomous agent systems.

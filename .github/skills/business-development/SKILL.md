@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Business Development Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Strategic business development guidance for growing Riksdagsmonitor as a sustainable open-source political transparency platform, building partnerships, engaging stakeholders, and creating long-term value.

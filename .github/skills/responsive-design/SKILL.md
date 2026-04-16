@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Responsive Design
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Create fluid, adaptable web experiences that work seamlessly across all devices from smartphones (320px) to large desktops (1440px+) using modern CSS techniques and mobile-first methodology.

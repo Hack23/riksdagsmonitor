@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Contribution Guidelines Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Establishes standards for open source contributions ensuring quality, security, and inclusive community engagement.
 

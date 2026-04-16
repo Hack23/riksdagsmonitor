@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Behavioral Analysis Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **This skill MUST be applied with the AI FIRST principle: never accept first-pass quality. ALL analysis and content MUST go through minimum 2 complete iterations. After first pass, read ALL output back completely and systematically improve every section — strengthen evidence, deepen analysis, add specific citations, broaden perspectives. Spend ALL allocated time on real work. Single-pass output is NEVER acceptable. NO SHORTCUTS.**
+
 ## Purpose
 
 This skill provides comprehensive behavioral analysis methodologies for understanding political decision-making, cognitive patterns, and psychological dynamics within the Swedish Parliament. It combines political psychology research with OSINT intelligence to identify behavioral indicators, predict policy positions, and assess leadership effectiveness through evidence-based analysis of voting patterns, speech behavior, and collaboration networks.

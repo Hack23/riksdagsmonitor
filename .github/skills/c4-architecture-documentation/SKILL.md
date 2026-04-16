@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # C4 Architecture Documentation
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Document Riksdagsmonitor architecture using C4 model (Context, Container, Component, Code).

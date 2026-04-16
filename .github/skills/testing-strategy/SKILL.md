@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Testing Strategy Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Defines comprehensive testing approaches ensuring code quality, security, accessibility, and performance through automated and manual testing.
 

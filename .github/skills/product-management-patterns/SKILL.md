@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Product Management Patterns Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Defines product management patterns for prioritizing features, planning roadmaps, and managing the riksdagsmonitor platform.
 

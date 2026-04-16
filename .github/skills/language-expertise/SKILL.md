@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Language Expertise Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Comprehensive linguistic and cultural expertise for ensuring accurate, culturally appropriate, and engaging content across all 14 language versions of Riksdagsmonitor.
