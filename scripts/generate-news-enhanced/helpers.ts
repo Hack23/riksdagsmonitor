@@ -467,6 +467,22 @@ export interface AnalysisEnrichment {
   riskSummary?: string;
   /** Date of the analysis data (may differ from article date due to lookback) */
   analysisDate?: string;
+  /** Full SWOT analysis from pre-computed analysis files */
+  swotAnalysis?: import('../analysis-reader.js').SwotAnalysisResult;
+  /** Stakeholder perspectives from pre-computed analysis */
+  stakeholderPerspectives?: import('../analysis-reader.js').StakeholderPerspectivesResult;
+  /** Synthesis narrative direction for lede generation */
+  narrativeDirection?: string;
+  /** Recommended article focus from pre-computed synthesis */
+  articleFocus?: string;
+  /** Forward indicators for "What to Watch Next" */
+  forwardIndicators?: string[];
+  /** Threat analysis indicators and democratic health */
+  threatIndicators?: string[];
+  /** Democratic health assessment */
+  democraticHealth?: string;
+  /** Top significance-ranked documents with reasons */
+  topDocuments?: Array<{ docId: string; score: number; reason: string }>;
 }
 
 /**
@@ -528,9 +544,18 @@ export async function getAnalysisEnrichment(
       synthesisKeyThemes: analysis.synthesis?.keyThemes ?? [],
       riskSummary: analysis.riskAssessment?.summary ?? undefined,
       analysisDate: analysis.date,
+      // Deep analysis content for article body enrichment
+      swotAnalysis: analysis.swot ?? undefined,
+      stakeholderPerspectives: analysis.stakeholderPerspectives ?? undefined,
+      narrativeDirection: analysis.synthesis?.narrativeDirection ?? undefined,
+      articleFocus: analysis.synthesis?.articleFocus ?? undefined,
+      forwardIndicators: analysis.synthesis?.forwardIndicators ?? [],
+      threatIndicators: analysis.threatAnalysis?.indicators ?? [],
+      democraticHealth: analysis.threatAnalysis?.democraticHealth ?? undefined,
+      topDocuments: analysis.significance?.topDocuments ?? [],
     };
     analysisEnrichmentCache.set(cacheKey, enrichment);
-    console.log(`  📊 Analysis enrichment loaded: classification=${meta.classificationLevel}, risk=${meta.riskLevel}, confidence=${meta.confidenceLabel}, keyThemes=${enrichment.synthesisKeyThemes?.length ?? 0}`);
+    console.log(`  📊 Analysis enrichment loaded: classification=${meta.classificationLevel}, risk=${meta.riskLevel}, confidence=${meta.confidenceLabel}, keyThemes=${enrichment.synthesisKeyThemes?.length ?? 0}, swot=${enrichment.swotAnalysis ? 'YES' : 'NO'}, stakeholders=${enrichment.stakeholderPerspectives ? 'YES' : 'NO'}, forwardIndicators=${enrichment.forwardIndicators?.length ?? 0}, topDocs=${enrichment.topDocuments?.length ?? 0}`);
     return enrichment;
   } catch (error: unknown) {
     if (process.env.DEBUG || process.env.LOG_LEVEL === 'debug') {
@@ -901,13 +926,17 @@ export function generateDynamicTitle(
   content: string,
   docCount: number,
 ): { title: string; subtitle: string } {
+  // Template field labels and generic terms that MUST NOT appear in titles.
+  // These are structural HTML labels, not meaningful political topics.
+  const EXCLUDED_PATTERNS = /^(committee:?|published:?|what this means:?|why it matters:?|filed by:?|read the full|thematic analysis|legislative pipeline|opposition strategy|responses to|report-entr|unknown|policy domain|department)/i;
+
   // Extract topic hints from strong tags and h3 headings
   const seen = new Set<string>();
   const topics: string[] = [];
   const strongMatches = content.matchAll(/<strong[^>]*>([^<]{3,50})<\/strong>/gi);
   for (const m of strongMatches) {
     const text = m[1]?.trim();
-    if (text && !seen.has(text) && topics.length < 5) {
+    if (text && !seen.has(text) && topics.length < 5 && !EXCLUDED_PATTERNS.test(text)) {
       seen.add(text);
       topics.push(text);
     }
@@ -915,7 +944,7 @@ export function generateDynamicTitle(
   const h3Matches = content.matchAll(/<h3[^>]*>([^<]{3,60})<\/h3>/gi);
   for (const m of h3Matches) {
     const text = m[1]?.trim();
-    if (text && !seen.has(text) && topics.length < 5) {
+    if (text && !seen.has(text) && topics.length < 5 && !EXCLUDED_PATTERNS.test(text)) {
       seen.add(text);
       topics.push(text);
     }
@@ -924,7 +953,7 @@ export function generateDynamicTitle(
   // Sanitize topic strings: strip newlines, collapse whitespace, drop quotes
   const sanitized = topics.map(t =>
     t.replace(/[\r\n]+/g, ' ').replace(/\s+/g, ' ').replace(/["']/g, '').trim()
-  ).filter(t => t.length >= 3);
+  ).filter(t => t.length >= 3 && !EXCLUDED_PATTERNS.test(t));
 
   // Build a content-aware title if we found topic hints
   let title = baseTitle;

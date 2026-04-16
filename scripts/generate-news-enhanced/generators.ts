@@ -92,6 +92,152 @@ const AI_STAKEHOLDER_NAMES: Record<string, Record<string, string>> = {
 };
 
 // ---------------------------------------------------------------------------
+// Pre-computed analysis → article section builders
+// ---------------------------------------------------------------------------
+
+/**
+ * Build deep analysis TemplateSections from pre-computed analysis enrichment.
+ * This bridges the gap between AI-generated analysis files and the article HTML
+ * by producing SWOT, stakeholder, forward indicators, and risk sections from
+ * the `AnalysisEnrichment` data loaded by `getAnalysisEnrichment()`.
+ *
+ * When enrichment is null (no analysis files available), returns an empty array
+ * for backward compatibility.
+ */
+function buildAnalysisEnrichmentSections(
+  enrichment: import('./helpers.js').AnalysisEnrichment | null,
+  lang: Language,
+): TemplateSection[] {
+  if (!enrichment) return [];
+  const sections: TemplateSection[] = [];
+  const isSwedish = lang === 'sv';
+
+  // ── 1. SWOT Analysis Section ────────────────────────────────────────────
+  const swot = enrichment.swotAnalysis;
+  if (swot && (swot.strengths.length > 0 || swot.weaknesses.length > 0 || swot.opportunities.length > 0 || swot.threats.length > 0)) {
+    const renderEntries = (entries: Array<{ text: string; confidence?: string; impact?: string }>) =>
+      entries.map(e => {
+        const badge = e.impact === 'high' ? '🔴' : e.impact === 'low' ? '🟢' : '🟡';
+        return `<li>${badge} ${escapeHtml(e.text)}</li>`;
+      }).join('\n');
+
+    const heading = isSwedish ? 'SWOT-analys' : 'SWOT Analysis';
+    const subjectLine = swot.subject ? `<p class="swot-subject">${escapeHtml(swot.subject)}</p>` : '';
+    const html = `
+      <h2>${heading}</h2>
+      ${subjectLine}
+      <div class="swot-grid" role="table" aria-label="${heading}">
+        <div class="swot-quadrant swot-strengths" role="row">
+          <h3 role="columnheader">${isSwedish ? 'Styrkor' : 'Strengths'}</h3>
+          <ul>${renderEntries(swot.strengths)}</ul>
+        </div>
+        <div class="swot-quadrant swot-weaknesses" role="row">
+          <h3 role="columnheader">${isSwedish ? 'Svagheter' : 'Weaknesses'}</h3>
+          <ul>${renderEntries(swot.weaknesses)}</ul>
+        </div>
+        <div class="swot-quadrant swot-opportunities" role="row">
+          <h3 role="columnheader">${isSwedish ? 'Möjligheter' : 'Opportunities'}</h3>
+          <ul>${renderEntries(swot.opportunities)}</ul>
+        </div>
+        <div class="swot-quadrant swot-threats" role="row">
+          <h3 role="columnheader">${isSwedish ? 'Hot' : 'Threats'}</h3>
+          <ul>${renderEntries(swot.threats)}</ul>
+        </div>
+      </div>`;
+    sections.push({ id: 'swot-analysis', html, className: 'swot-section' });
+  }
+
+  // ── 2. Stakeholder Perspectives Section ─────────────────────────────────
+  const sp = enrichment.stakeholderPerspectives;
+  if (sp) {
+    const perspectives = [
+      { key: 'government', label: isSwedish ? 'Regeringskoalitionen' : 'Government Coalition', icon: '🏛️' },
+      { key: 'opposition', label: isSwedish ? 'Oppositionen' : 'Opposition Bloc', icon: '⚔️' },
+      { key: 'citizen', label: isSwedish ? 'Medborgare' : 'Citizens', icon: '👥' },
+      { key: 'economic', label: isSwedish ? 'Näringsliv/Ekonomi' : 'Business/Economy', icon: '📊' },
+      { key: 'international', label: isSwedish ? 'Internationellt/EU' : 'International/EU', icon: '🌍' },
+      { key: 'media', label: isSwedish ? 'Media/Opinion' : 'Media/Public Opinion', icon: '📰' },
+    ].filter(p => sp[p.key as keyof typeof sp]);
+
+    if (perspectives.length > 0) {
+      const heading = isSwedish ? 'Intressentperspektiv' : 'Stakeholder Perspectives';
+      const perspectiveHtml = perspectives.map(p => {
+        const text = sp[p.key as keyof typeof sp] || '';
+        return `
+          <div class="stakeholder-card">
+            <h4>${p.icon} ${p.label}</h4>
+            <p>${escapeHtml(text)}</p>
+          </div>`;
+      }).join('\n');
+
+      sections.push({
+        id: 'stakeholder-perspectives',
+        html: `<h2>${heading}</h2><div class="stakeholder-grid">${perspectiveHtml}</div>`,
+        className: 'stakeholder-section',
+      });
+    }
+  }
+
+  // ── 3. Risk & Threat Assessment Section ─────────────────────────────────
+  if (enrichment.riskSummary || (enrichment.threatIndicators && enrichment.threatIndicators.length > 0)) {
+    const heading = isSwedish ? 'Risk- och hotbedömning' : 'Risk & Threat Assessment';
+    let riskHtml = `<h2>${heading}</h2>`;
+
+    if (enrichment.riskSummary) {
+      riskHtml += `<p class="risk-summary">${escapeHtml(enrichment.riskSummary)}</p>`;
+    }
+
+    if (enrichment.democraticHealth) {
+      const healthLabel = isSwedish ? 'Demokratisk hälsa' : 'Democratic Health';
+      const healthBadge = enrichment.democraticHealth === 'HIGH' ? '🟢' :
+        enrichment.democraticHealth === 'MEDIUM' ? '🟡' :
+        enrichment.democraticHealth === 'LOW' ? '🟠' : '🔴';
+      riskHtml += `<p class="democratic-health"><strong>${healthLabel}:</strong> ${healthBadge} ${enrichment.democraticHealth}</p>`;
+    }
+
+    if (enrichment.threatIndicators && enrichment.threatIndicators.length > 0) {
+      const indicatorLabel = isSwedish ? 'Hotindikatorer' : 'Threat Indicators';
+      riskHtml += `<h3>${indicatorLabel}</h3><ul>`;
+      for (const indicator of enrichment.threatIndicators.slice(0, 6)) {
+        riskHtml += `<li>🎯 ${escapeHtml(indicator)}</li>`;
+      }
+      riskHtml += `</ul>`;
+    }
+
+    sections.push({ id: 'risk-assessment', html: riskHtml, className: 'risk-section' });
+  }
+
+  // ── 4. Forward Indicators Section ───────────────────────────────────────
+  if (enrichment.forwardIndicators && enrichment.forwardIndicators.length > 0) {
+    const heading = isSwedish ? 'Vad händer härnäst?' : 'What to Watch Next';
+    let forwardHtml = `<h2>${heading}</h2><ul class="forward-indicators">`;
+    for (const indicator of enrichment.forwardIndicators.slice(0, 8)) {
+      forwardHtml += `<li>🔮 ${escapeHtml(indicator)}</li>`;
+    }
+    forwardHtml += `</ul>`;
+
+    sections.push({ id: 'forward-indicators', html: forwardHtml, className: 'forward-section' });
+  }
+
+  // ── 5. Significance-Ranked Documents Section ────────────────────────────
+  if (enrichment.topDocuments && enrichment.topDocuments.length > 0) {
+    const heading = isSwedish ? 'Mest betydande dokument' : 'Most Significant Documents';
+    let sigHtml = `<h2>${heading}</h2>`;
+    sigHtml += `<table class="significance-table" role="table" aria-label="${heading}">`;
+    sigHtml += `<thead><tr><th>${isSwedish ? 'Dok-ID' : 'Doc ID'}</th><th>${isSwedish ? 'Poäng' : 'Score'}</th><th>${isSwedish ? 'Motivering' : 'Reason'}</th></tr></thead><tbody>`;
+    for (const doc of enrichment.topDocuments.slice(0, 10)) {
+      const scoreColor = doc.score >= 80 ? 'high' : doc.score >= 50 ? 'medium' : 'low';
+      sigHtml += `<tr><td><code>${escapeHtml(doc.docId)}</code></td><td class="score-${scoreColor}">${doc.score}</td><td>${escapeHtml(doc.reason)}</td></tr>`;
+    }
+    sigHtml += `</tbody></table>`;
+
+    sections.push({ id: 'significance-ranking', html: sigHtml, className: 'significance-section' });
+  }
+
+  return sections;
+}
+
+// ---------------------------------------------------------------------------
 // Shared article visualization builder
 // ---------------------------------------------------------------------------
 
@@ -253,8 +399,8 @@ export async function generateWeekAhead(): Promise<GenerationResult> {
 
       // Build visualization sections (SWOT, dashboard, economic)
       const sections = buildArticleVisualizationSections(documents, null, lang);
-
-      // Generate HTML for this language
+      // Append deep analysis sections from pre-computed analysis files (AI-written)
+      sections.push(...buildAnalysisEnrichmentSections(enrichment, lang));
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: enriched.title,
@@ -350,6 +496,8 @@ export async function generateCommitteeReports(): Promise<GenerationResult> {
 
       // Build visualization sections (SWOT, dashboard, economic)
       const sections = buildArticleVisualizationSections(reports as RawDocument[], null, lang);
+      // Append deep analysis sections from pre-computed analysis files (AI-written)
+      sections.push(...buildAnalysisEnrichmentSections(enrichment, lang));
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
@@ -443,6 +591,8 @@ export async function generatePropositions(): Promise<GenerationResult> {
 
       // Build visualization sections (SWOT, dashboard, economic)
       const sections = buildArticleVisualizationSections(propositions as RawDocument[], null, lang);
+      // Append deep analysis sections from pre-computed analysis files (AI-written)
+      sections.push(...buildAnalysisEnrichmentSections(enrichment, lang));
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
@@ -536,6 +686,8 @@ export async function generateMotions(): Promise<GenerationResult> {
 
       // Build visualization sections (SWOT, dashboard, economic)
       const sections = buildArticleVisualizationSections(motions as RawDocument[], null, lang);
+      // Append deep analysis sections from pre-computed analysis files (AI-written)
+      sections.push(...buildAnalysisEnrichmentSections(enrichment, lang));
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
@@ -629,6 +781,8 @@ export async function generateInterpellations(): Promise<GenerationResult> {
 
       // Build visualization sections (SWOT, dashboard, economic)
       const sections = buildArticleVisualizationSections(interpellations as RawDocument[], null, lang);
+      // Append deep analysis sections from pre-computed analysis files (AI-written)
+      sections.push(...buildAnalysisEnrichmentSections(enrichment, lang));
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
