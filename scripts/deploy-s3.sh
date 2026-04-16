@@ -66,6 +66,11 @@ echo "🚀 Deploying $SRC → $BUCKET"
 
 # ── Helper: sync a set of extensions with explicit MIME type ──
 # Uses aws s3 sync --size-only so unchanged files are skipped.
+# --size-only compares file sizes (not timestamps or checksums).
+# This is the right tradeoff: content changes always alter size for
+# text/code files, and the first deploy after a fresh build always
+# uploads everything anyway.  Use the fix-s3-mimetypes.sh script
+# (manual trigger) to repair metadata on existing objects.
 # Arguments:
 #   $1  content-type
 #   $2  cache-control
