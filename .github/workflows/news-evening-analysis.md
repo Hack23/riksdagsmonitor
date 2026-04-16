@@ -287,25 +287,29 @@ Uses `memory/news-generation` branch. START: read `memory/news-generation/last-r
 ## ⏱️ Time Budget (45 minutes) — ENFORCED Minimum 40 Minutes
 
 > 🔴 **SYSTEMIC ISSUE (PR #1794 audit, 2026-04-16)**: ALL news workflows completing in 13-22 min of 45-min allocation, producing shallow analysis. Agent MUST use at least 40 of 45 minutes. Completion < 40 min = insufficient iteration = REJECTED.
+>
+> 🔴 **ROOT CAUSE (PR #1801, 2026-04-16)**: Evening analysis produced only 3 of 9 required analysis artifacts (missing swot-analysis.md, risk-assessment.md, threat-analysis.md, classification-results.md, cross-reference-map.md, data-download-manifest.md) and completed in 23 minutes. This is because the agent skipped Phase B artifact creation. **ALL 9 artifacts are MANDATORY** — see §"9 REQUIRED Analysis Artifacts" below.
 
 ```bash
 date +%s > /tmp/start_time.txt
 read START_TIME < /tmp/start_time.txt
 ```
 
-| Phase | Minutes | Action |
-|-------|---------|--------|
-| Setup | 0–3 | Date check, `get_sync_status()`, determine day type |
-| Download | 3–6 | Run `populate-analysis-data.ts` + `pre-article-analysis.ts` (script-driven data download) |
-| **AI Analysis Pass 1** | **6–21** | **🚨 MANDATORY 15 min minimum**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries. |
-| **AI Analysis Pass 2** | **21–28** | **🚨 MANDATORY 7 min minimum**: Read ALL analysis back completely, improve every section, replace ALL script stubs with AI analysis. |
-| Gates | 28–30 | Run ENFORCED Minimum Time Gate + Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass. |
-| Generate | 30–36 | Run generation script OR manual synthesis (see Step 3) |
-| **Article Improvement** | **36–40** | 🚨 **Article Improvement Pass**: Read ALL articles back, replace AI_MUST_REPLACE markers, improve content. Run article quality component gate. |
-| Validate+PR | 40–45 | Validate, commit, `safeoutputs___create_pull_request` |
+| Phase | Minutes | Action | ✅ Verification |
+|-------|---------|--------|----------------|
+| Setup | 0–3 | Date check, `get_sync_status()`, determine day type | MCP responds |
+| Download | 3–6 | Run `populate-analysis-data.ts` + `pre-article-analysis.ts` (script-driven data download) | Data files exist |
+| **AI Analysis Pass 1** | **6–21** | **🚨 MANDATORY 15 min minimum**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries. **Create ALL 9 required artifacts.** | 9 artifact files exist |
+| **AI Analysis Pass 2** | **21–28** | **🚨 MANDATORY 7 min minimum**: Read ALL 9 analysis artifacts back completely, improve every section, add missing Mermaid diagrams and evidence tables, replace ALL script stubs with AI analysis. | All 9 files ≥500 bytes |
+| Gates | 28–30 | Run ENFORCED Minimum Time Gate + Enrichment Verification Gate + **9-artifact completeness check** (SHARED_PROMPT_PATTERNS.md). ALL MUST pass. | 0 failures |
+| Generate | 30–36 | Run generation script OR manual synthesis (see Step 3) | HTML files created |
+| **Article Improvement** | **36–40** | 🚨 **Article Improvement Pass**: Read ALL articles back, replace AI_MUST_REPLACE markers, improve content. Run article quality component gate. | 0 AI_MUST_REPLACE markers |
+| Validate+PR | 40–45 | Validate, commit, `safeoutputs___create_pull_request` | PR created |
 
 | **HARD DEADLINE** | **43–45** | 🚨 If no safe output yet: if ANY artifacts/files were created, IMMEDIATELY stage, commit, call `safeoutputs___create_pull_request` with partial work. ONLY call `safeoutputs___noop` if truly ZERO files were created. |
-> ⚠️ **Analysis phase is 22 minutes minimum (Pass 1: 15 min + Pass 2: 7 min)** — every analysis file must contain color-coded Mermaid diagrams, structured evidence tables with dok_id citations, and follow template structure exactly. ALL script-generated stubs MUST be replaced with AI-enriched analysis. Run the ENFORCED gates from SHARED_PROMPT_PATTERNS.md before proceeding to article generation.
+> ⚠️ **Analysis phase is 22 minutes minimum (Pass 1: 15 min + Pass 2: 7 min)** — every analysis file must contain color-coded Mermaid diagrams, structured evidence tables with dok_id citations, and follow template structure exactly. ALL script-generated stubs MUST be replaced with AI-enriched analysis. **ALL 9 required artifacts MUST be created** (not just the 3 the script generates). Run the ENFORCED gates from SHARED_PROMPT_PATTERNS.md before proceeding to article generation.
+>
+> 🔴 **ANTI-PATTERN (REJECTED)**: Creating only synthesis-summary.md + significance-scoring.md + stakeholder-perspectives.md and skipping the other 6 artifacts. This produces shallow articles missing SWOT tables, risk matrices, threat analysis, and classification data.
 
 **Hard cutoffs**: `>= 35 min` → commit & PR now; `>= 43 min` → STOP ALL WORK, call safe output immediately.
 
@@ -520,8 +524,51 @@ Key steps: resolve `ARTICLE_DATE` from input or today → check `analysis/daily/
 Follow `SHARED_PROMPT_PATTERNS.md` §"Per-File AI Analysis Block" and §"MANDATORY: AI-Driven Analysis Using Methods & Templates" exactly:
 - **Step A**: Read `analysis/methodologies/ai-driven-analysis-guide.md` + `analysis/templates/per-file-political-intelligence.md` FIRST
 - **Step B**: For EVERY document JSON → create `{dok_id}-analysis.md` with ALL 6 analytical lenses, ≥1 color-coded Mermaid, evidence tables
-- **Step C**: Rewrite ALL synthesis files to match templates exactly
+- **Step C**: Rewrite ALL 9 synthesis files to match templates exactly (see required artifact list below)
 - **Step D**: Run quality gate (see SHARED §"Step 5b: MANDATORY Quality Gate"). Fix ALL failures.
+
+#### 🔴 B4. 9 REQUIRED Analysis Artifacts — ALL Must Be Created
+
+> 🚨 **NON-NEGOTIABLE**: The evening analysis MUST produce ALL 9 analysis artifacts in `analysis/daily/$ARTICLE_DATE/evening-analysis/`. Producing only 3 of 9 (e.g. only synthesis-summary, significance-scoring, stakeholder-perspectives) is a **CRITICAL FAILURE**. The quality gate WILL reject incomplete analysis.
+
+| # | Required File | Template | What It Must Contain |
+|---|--------------|----------|---------------------|
+| 1 | `synthesis-summary.md` | `analysis/templates/synthesis-summary.md` | SYN-ID, Intelligence Dashboard (Mermaid), Top Findings table, Aggregated SWOT, Risk Landscape, Forward Indicators, Artifacts Inventory |
+| 2 | `swot-analysis.md` | `analysis/templates/swot-analysis.md` | SWT-ID, Quadrant Mapping (Mermaid mindmap), ≥2 filled quadrants with dok_id evidence, Coalition + Opposition SWOT |
+| 3 | `risk-assessment.md` | `analysis/templates/risk-assessment.md` | RSK-ID, Risk Heat Map (Mermaid quadrant chart), ≥4 risks with L×I numeric scores, Coalition Stability Risk |
+| 4 | `threat-analysis.md` | `analysis/templates/threat-analysis.md` | THR-ID, Threat Taxonomy Network (Mermaid), ALL 6 threat categories with ≥1 threat each (severity 1-5) |
+| 5 | `classification-results.md` | `analysis/templates/political-classification.md` | CLS-ID, Sensitivity Decision Tree (Mermaid), per-document table with sensitivity/domain/urgency/significance |
+| 6 | `significance-scoring.md` | `analysis/templates/significance-scoring.md` | SIG-ID, 5-dimension scoring, Composite Score, Publication Decision |
+| 7 | `stakeholder-perspectives.md` | `analysis/templates/stakeholder-impact.md` | STA-ID, Impact Radar (Mermaid), ALL 8 stakeholder groups with impact level and timeline |
+| 8 | `cross-reference-map.md` | Cross-reference template | XRF-ID, Document relationship graph, links between propositions/motions/committee reports/press releases |
+| 9 | `data-download-manifest.md` | Manifest template | Documents Analyzed count, data sources, download timestamps, completeness status |
+
+**Verification — run BEFORE proceeding to article generation:**
+```bash
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/evening-analysis"
+MISSING=0
+for REQUIRED_FILE in synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md classification-results.md significance-scoring.md stakeholder-perspectives.md cross-reference-map.md data-download-manifest.md; do
+  if [ ! -f "$ANALYSIS_DIR/$REQUIRED_FILE" ]; then
+    echo "🔴 MISSING REQUIRED: $REQUIRED_FILE — MUST CREATE NOW"
+    MISSING=$((MISSING + 1))
+  else
+    wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE" > /tmp/fsize.txt
+    read FSIZE < /tmp/fsize.txt
+    if [ "$FSIZE" -lt 500 ]; then
+      echo "🔴 TOO SMALL: $REQUIRED_FILE ($FSIZE bytes) — MUST ENRICH"
+      MISSING=$((MISSING + 1))
+    else
+      echo "✅ OK: $REQUIRED_FILE ($FSIZE bytes)"
+    fi
+  fi
+done
+if [ "$MISSING" -gt 0 ]; then
+  echo "🚨 $MISSING of 9 required artifacts missing or too small — DO NOT proceed to article generation"
+  echo "Go back and create/enrich the missing files following their templates."
+fi
+```
+
+> **If ANY of the 9 files are missing**: Create them NOW. Read the corresponding template, read the downloaded data and sibling analysis, and write a complete analysis file with Mermaid diagrams, evidence tables, and confidence labels. Do NOT proceed to article generation with incomplete analysis.
 
 #### B5. MANDATORY Quality Gate — Run Before Proceeding
 
@@ -751,7 +798,20 @@ echo "Generated: $ARTICLE_COUNT articles"
 
 ## Step 3b: AI Title, Meta Description & Analysis References (v5.0 — Analysis-Driven)
 
-> 🚨 **MANDATORY** — See `SHARED_PROMPT_PATTERNS.md` §"AI-DRIVEN TITLE & META DESCRIPTION GENERATION". Evening analysis synthesizes ALL article types. Read synthesis-summary.md from all sibling folders (`committeeReports/`, `propositions/`, `interpellations/`, `motions/`, `realtime-*/`). Use `ls analysis/daily/$ARTICLE_DATE/` to discover them. Title: `[Active Verb] + [Specific Actor/Institution] + [Policy Action]`. BANNED: ❌ "Evening Analysis: Daily Summary" or titles ending ": {Topic} in Focus". Meta description 150-160 chars, not starting with "Analysis of N documents". Add "📊 Analysis & Sources" HTML block before footer linking ALL analysis folders. Update `<title>`, `<meta description>`, og:title/description, `<h1>`, Schema.org headline in ALL language files.
+> 🚨 **MANDATORY** — See `SHARED_PROMPT_PATTERNS.md` §"AI-DRIVEN TITLE & META DESCRIPTION GENERATION". Evening analysis synthesizes ALL article types. Read synthesis-summary.md from all sibling folders (`committeeReports/`, `propositions/`, `interpellations/`, `motions/`, `realtime-*/`). Use `ls analysis/daily/$ARTICLE_DATE/` to discover them. Title: `[Active Verb] + [Specific Actor/Institution] + [Policy Action]`. BANNED: ❌ "Evening Analysis: Daily Summary" or titles ending ": {Topic} in Focus". Meta description 150-160 chars, not starting with "Analysis of N documents". Update `<title>`, `<meta description>`, og:title/description, `<h1>`, Schema.org headline in ALL language files.
+
+**🔴 Add analysis references section (MANDATORY — VERIFY AFTER)** — Insert the "📊 Analysis & Sources" HTML block (from SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES) before the article footer, linking to ALL 9 required analysis files:
+- `analysis/daily/$ARTICLE_DATE/evening-analysis/synthesis-summary.md`
+- `analysis/daily/$ARTICLE_DATE/evening-analysis/swot-analysis.md`
+- `analysis/daily/$ARTICLE_DATE/evening-analysis/risk-assessment.md`
+- `analysis/daily/$ARTICLE_DATE/evening-analysis/threat-analysis.md`
+- `analysis/daily/$ARTICLE_DATE/evening-analysis/stakeholder-perspectives.md`
+- `analysis/daily/$ARTICLE_DATE/evening-analysis/significance-scoring.md`
+- `analysis/daily/$ARTICLE_DATE/evening-analysis/classification-results.md`
+- `analysis/daily/$ARTICLE_DATE/evening-analysis/cross-reference-map.md`
+- `analysis/daily/$ARTICLE_DATE/evening-analysis/data-download-manifest.md`
+- `analysis/methodologies/ai-driven-analysis-guide.md`
+- Per-document analyses in `documents/` subfolder
 
 **VERIFY** analysis-references inserted by running:
 ```bash

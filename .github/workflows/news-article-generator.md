@@ -453,7 +453,7 @@ Tools with date params: `get_calendar_events` (from/tom — **authoritative for 
 
 ## Step 1.5: Run Pre-Article Analysis Pipeline
 
-**CRITICAL: Run the analysis pipeline BEFORE generating articles.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`.
+**CRITICAL: Run the analysis pipeline BEFORE generating articles.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`. After pipeline completes, run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 files exist. Create any missing artifacts manually using their templates.
 
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
