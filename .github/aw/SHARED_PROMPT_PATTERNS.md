@@ -219,6 +219,10 @@ Every output artifact MUST be tagged with its article type:
 
 > **NON-NEGOTIABLE**: All news articles must meet publication-quality political intelligence standards. Surface-level summaries, generic boilerplate, and shallow analysis are REJECTED.
 
+> 🔴 **v5.0 CRITICAL — AI WRITES EVERYTHING**: The AI agent MUST write ALL article content — analysis, SWOT, stakeholder perspectives, risk assessment, forward indicators, key takeaways. Scripts produce ONLY the HTML shell. If the final article reads like a code-generated list of document titles, it is REJECTED. The AI must produce deep political intelligence that demonstrates genuine analytical insight.
+
+> 🔴 **REGRESSION ALERT**: Articles that contain `AI_MUST_REPLACE` markers, generic "Analysis of N documents" ledes, identical "Why It Matters" text, or zero SWOT/stakeholder analysis are evidence the AI did NOT write the content. These articles MUST be rewritten before commit.
+
 ````markdown
 ### Political Intelligence Depth Requirements
 
@@ -673,9 +677,62 @@ fi
 
 ---
 
-## 📊 AI ARTICLE CONTENT GENERATION (v4.0 — copy into every content workflow)
+## 📊 AI ARTICLE CONTENT GENERATION (v5.0 — copy into every content workflow)
 
-> **NON-NEGOTIABLE**: Article content (lede, analysis, winners/losers, takeaways) MUST be AI-generated from actual document analysis. Script stubs are HTML skeletons ONLY.
+> **NON-NEGOTIABLE**: The AI agent writes ALL article content. Scripts handle ONLY HTML formatting. Articles MUST contain deep political intelligence analysis — not shallow document lists.
+
+> 🚨 **v5.0 CRITICAL — REGRESSION FIX**: Previous articles regressed to shallow list-style content because the AI agent ran `generate-news-enhanced.ts` and committed its output without writing actual analysis. This is REJECTED. The script produces an HTML skeleton with `AI_MUST_REPLACE` markers. The AI MUST:
+> 1. Read ALL pre-computed analysis files (SWOT, stakeholders, risk, synthesis)
+> 2. Write deep political intelligence content based on the analysis
+> 3. Replace EVERY `AI_MUST_REPLACE` marker with genuine analysis prose
+> 4. Verify ZERO markers remain before committing
+>
+> **Articles that read like auto-generated lists of document titles are REJECTED.**
+
+### 🔴 MANDATORY: AI Writes the Article (Not the Script)
+
+The `generate-news-enhanced.ts` script creates an HTML shell with navigation, meta tags, and CSS. The article BODY content is the AI agent's responsibility:
+
+| Content Type | Who Writes It | How |
+|-------------|--------------|-----|
+| SWOT Analysis | AI agent | Read `swot-analysis.md`, write HTML SWOT grid with stakeholder perspectives |
+| Stakeholder Impact | AI agent | Read `stakeholder-perspectives.md`, write impact analysis for 6+ groups |
+| Risk Assessment | AI agent | Read `risk-assessment.md`, write risk narrative with threat indicators |
+| Forward Indicators | AI agent | Read `synthesis-summary.md`, write "What to Watch Next" predictions |
+| Analytical Lede | AI agent | Synthesize top findings into 40-60 word opening paragraph |
+| Why It Matters | AI agent | Write UNIQUE per-document analysis (not generic boilerplate) |
+| Winners & Losers | AI agent | Name specific parties/actors with evidence citations |
+| Key Takeaways | AI agent | Write 3-5 takeaways with dok_id citations and confidence labels |
+| Strategic Context | AI agent | Connect to broader political landscape, Election 2026, coalition dynamics |
+| HTML structure | Script | Article template, navigation, meta tags, CSS classes |
+| Chart containers | Script | Empty chart divs with data attributes for Chart.js/D3.js rendering |
+
+### 🔴 MANDATORY: AI_MUST_REPLACE Marker Elimination Gate
+
+After running `generate-news-enhanced.ts`, the AI MUST eliminate ALL `AI_MUST_REPLACE` markers:
+
+```bash
+# Count remaining AI_MUST_REPLACE markers — MUST be 0
+MARKER_COUNT=0
+for F in news/$ARTICLE_DATE-*-en.html news/$ARTICLE_DATE-*-sv.html; do
+  if [ -f "$F" ]; then
+    grep -c 'AI_MUST_REPLACE' "$F" > /tmp/mc.txt 2>/dev/null || echo 0 > /tmp/mc.txt
+    read MC < /tmp/mc.txt
+    MARKER_COUNT=$((MARKER_COUNT + MC))
+    if [ "$MC" -gt 0 ]; then
+      echo "🔴 $F has $MC AI_MUST_REPLACE markers — AI MUST replace them with real analysis"
+      grep -n 'AI_MUST_REPLACE' "$F" | head -5
+    fi
+  fi
+done
+echo "📊 Total AI_MUST_REPLACE markers remaining: $MARKER_COUNT"
+if [ "$MARKER_COUNT" -gt 0 ]; then
+  echo "❌ BLOCKING: Cannot commit articles with $MARKER_COUNT unreplaced markers"
+  echo "📋 Read each marker's instruction and write the required analysis content"
+fi
+```
+
+> 🚨 **NEVER commit articles with AI_MUST_REPLACE markers.** Each marker contains instructions for what analysis to write. The AI MUST read the instruction and write genuine political analysis to replace it.
 
 ````markdown
 ### Step 3a: Read Pre-Computed Analysis (MANDATORY — before writing article)
@@ -773,6 +830,74 @@ Write 50-80 words connecting these documents to the broader political landscape:
 - Use MCP data: search_voteringar for votes, search_anforanden for debate context
 ```
 ````
+
+---
+
+## 🔴 ARTICLE QUALITY MINIMUM STANDARD (v5.0 — MANDATORY for all content workflows)
+
+> **NON-NEGOTIABLE**: Every article MUST demonstrate genuine political intelligence analysis. Articles that are shallow document lists, generic summaries, or template-driven boilerplate are REJECTED.
+
+### Mandatory Article Sections (AI-Written)
+
+Every article MUST contain AT LEAST these sections (all written by AI, not by scripts):
+
+| # | Section | Min. Words | Requirements |
+|---|---------|-----------|-------------|
+| 1 | **Analytical Lede** | 40-60 | Names most significant development, key actors by name/party, concrete action, why it matters NOW |
+| 2 | **SWOT Analysis** | 200+ | Minimum 6 stakeholder perspectives (Government, Opposition, Citizens, Business, International/EU, Media), evidence-backed with dok_id citations |
+| 3 | **Stakeholder Impact** | 150+ | Who benefits, who loses, specific gains/losses per actor with evidence |
+| 4 | **Risk & Threat Assessment** | 100+ | Democratic health indicator, threat indicators, risk factors with likelihood/impact |
+| 5 | **Strategic Context** | 80+ | Election 2026 implications, coalition dynamics, offensive/defensive posture |
+| 6 | **Forward Indicators** | 80+ | 3-5 specific predictions with timeline and confidence labels |
+| 7 | **Key Takeaways** | 100+ | 3-5 takeaways with bold lead phrase, evidence citation, confidence label |
+
+### Banned Patterns (ZERO TOLERANCE)
+
+These patterns indicate script-generated or AI-lazy content and are ALWAYS rejected:
+
+- ❌ `"Analysis of N documents covering..."` as lede (AI must name the MOST significant finding)
+- ❌ `"Touches on {X} policy domain"` (AI must explain SPECIFIC policy measures)
+- ❌ `"The political landscape remains fluid"` (Generic filler — AI must cite specific dynamics)
+- ❌ `"No chamber debate data available"` (AI must analyze what IS available, not what isn't)
+- ❌ Identical "Why It Matters" text for multiple documents (EACH must be unique)
+- ❌ Flat list of document titles without analytical grouping
+- ❌ Article under 1000 words total (deep analysis requires substance)
+- ❌ Zero SWOT analysis or stakeholder perspectives (MANDATORY in every article)
+- ❌ Zero dok_id citations in the article body
+- ❌ Remaining `AI_MUST_REPLACE` markers (ALL must be replaced before commit)
+
+### Article Quality Gate (Run Before Commit)
+
+```bash
+echo "=== Article Quality Gate ==="
+QUALITY_FAIL=0
+for ARTICLE in news/$ARTICLE_DATE-*-en.html; do
+  [ ! -f "$ARTICLE" ] && continue
+  echo "--- Checking: $ARTICLE ---"
+  # Check 1: AI_MUST_REPLACE markers (MUST be 0)
+  grep -c 'AI_MUST_REPLACE' "$ARTICLE" > /tmp/aqg_mc.txt 2>/dev/null || echo 0 > /tmp/aqg_mc.txt
+  read AQG_MC < /tmp/aqg_mc.txt
+  if [ "$AQG_MC" -gt 0 ]; then echo "🔴 FAIL: $AQG_MC AI_MUST_REPLACE markers remain"; QUALITY_FAIL=$((QUALITY_FAIL + 1)); fi
+  # Check 2: Minimum word count (stripped HTML)
+  sed 's/<[^>]*>/ /g' "$ARTICLE" | tr -s '[:space:]' '\n' | grep -c '[[:alnum:]]' > /tmp/aqg_wc.txt 2>/dev/null || echo 0 > /tmp/aqg_wc.txt
+  read AQG_WC < /tmp/aqg_wc.txt
+  if [ "$AQG_WC" -lt 1000 ]; then echo "🔴 FAIL: Only $AQG_WC words (minimum 1000)"; QUALITY_FAIL=$((QUALITY_FAIL + 1)); fi
+  # Check 3: Banned boilerplate patterns
+  if grep -q 'Analysis of [0-9]* documents' "$ARTICLE"; then echo "🔴 FAIL: Banned lede pattern 'Analysis of N documents'"; QUALITY_FAIL=$((QUALITY_FAIL + 1)); fi
+  if grep -q 'political landscape remains fluid' "$ARTICLE"; then echo "🔴 FAIL: Banned boilerplate 'political landscape remains fluid'"; QUALITY_FAIL=$((QUALITY_FAIL + 1)); fi
+  # Check 4: SWOT presence
+  if ! grep -q 'swot\|SWOT\|stakeholder' "$ARTICLE"; then echo "⚠️ WARN: No SWOT/stakeholder analysis found"; fi
+  # Check 5: dok_id citations
+  grep -oE '[A-Z][0-9]{3,7}[A-Z]?' "$ARTICLE" | sort -u | wc -l > /tmp/aqg_dok.txt 2>/dev/null || echo 0 > /tmp/aqg_dok.txt
+  read AQG_DOK < /tmp/aqg_dok.txt
+  if [ "$AQG_DOK" -lt 1 ]; then echo "⚠️ WARN: No dok_id citations found in article body"; fi
+  echo "📊 Words: $AQG_WC, Markers: $AQG_MC, dok_id refs: $AQG_DOK"
+done
+echo "=== Quality Gate: $QUALITY_FAIL failures ==="
+if [ "$QUALITY_FAIL" -gt 0 ]; then
+  echo "❌ Article quality below minimum standard — AI must rewrite content before committing"
+fi
+```
 
 ---
 
