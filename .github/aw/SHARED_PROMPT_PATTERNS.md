@@ -192,7 +192,7 @@ Every output artifact MUST be tagged with its article type:
 
 1. **HTML filenames**: `news/$DATE-$ARTICLE_TYPE-$LANG.html`
 2. **Analysis folders**: `analysis/daily/$DATE/$ARTICLE_TYPE/`
-3. **Commit messages**: `📰 ${ARTICLE_TYPE}: $description - $DATE`
+3. **Commit messages**: `📰 $ARTICLE_TYPE: $description - $DATE`
 4. **Schema.org metadata**: `"articleSection": "$ARTICLE_TYPE"`
 5. **Analysis file headers**: Include `Article Type: $ARTICLE_TYPE` in metadata
 
@@ -697,7 +697,7 @@ if [ -z "$ANALYSIS_SUBFOLDER" ]; then
     opposition-motions)       ANALYSIS_SUBFOLDER="motions" ;;
     interpellation-debates)   ANALYSIS_SUBFOLDER="interpellations" ;;
     breaking)
-      : "${HHMM:?HHMM must be set for breaking articles to resolve realtime-\$HHMM analysis folder}"
+      if [ -z "$HHMM" ]; then echo "ERROR: HHMM must be set for breaking articles to resolve realtime-HHMM analysis folder" >&2; exit 1; fi
       ANALYSIS_SUBFOLDER="realtime-$HHMM"
       ;;
     *)                       ANALYSIS_SUBFOLDER="$ARTICLE_TYPE" ;;
