@@ -17,7 +17,7 @@
  */
 
 export { generateArticleHTML } from './template.js';
-export { generateEventCalendar, generateWatchSection, generateWhatHappensNextSection, generateWinnersLosersSection, generateFaqSection, generateArticleLanguageSwitcher, generateSiteFooter, fixHtmlNesting } from './helpers.js';
+export { generateEventCalendar, generateWatchSection, generateWhatHappensNextSection, generateWinnersLosersSection, generateFaqSection, generateArticleLanguageSwitcher, generateSiteFooter, fixHtmlNesting, stripSwedishBoilerplate } from './helpers.js';
 export { getTemplate, getStyleClass, getAIDirectives, getLayout, listRegisteredTypes } from './registry.js';
 export type { ArticleTemplate, LayoutConfig, AIStyleDirective, ContentTone, ColumnCount, BreadcrumbStyle } from './types.js';
 export { GLOBAL_STYLE_RUBRIC, ARTICLE_TYPE_NAMES } from './types.js';

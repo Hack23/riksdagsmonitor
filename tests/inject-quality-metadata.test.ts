@@ -1,0 +1,126 @@
+/**
+ * Tests for injectQualityMetadata — quality meta tag injection.
+ *
+ * Verifies that quality meta tags are correctly injected, handles
+ * idempotent re-injection (no duplicates), and works with case-insensitive
+ * </head> matching.
+ */
+
+import { describe, it, expect } from 'vitest';
+import { injectQualityMetadata } from '../scripts/generate-news-enhanced/helpers.js';
+
+describe('injectQualityMetadata', () => {
+  const baseHtml = '<html><head><title>Test</title></head><body></body></html>';
+
+  it('injects quality meta tags before </head>', () => {
+    const result = injectQualityMetadata(baseHtml);
+    expect(result).toContain('<meta name="article:quality-score" content="0">');
+    expect(result).toContain('<meta name="article:quality-version" content="v2">');
+    expect(result).toContain('<meta name="article:quality-iterations" content="0">');
+    expect(result).toContain('<meta name="article:quality-assessed" content="false">');
+    // Legacy bare quality-* tags for backward compatibility
+    expect(result).toContain('<meta name="quality-score" content="0">');
+    expect(result).toContain('<meta name="quality-version" content="v2">');
+    expect(result).toContain('<meta name="quality-iterations" content="0">');
+    expect(result).toContain('<meta name="quality-assessed" content="false">');
+    // Legacy article-quality-* (hyphenated) tags for backward compatibility
+    expect(result).toContain('<meta name="article-quality-score" content="0">');
+    expect(result).toContain('<meta name="article-quality-version" content="v2">');
+    expect(result).toContain('<meta name="article-quality-iterations" content="0">');
+    expect(result).toContain('<meta name="article-quality-assessed" content="false">');
+    expect(result).toContain('</head>');
+  });
+
+  it('injects assessment-aware tags when assessment provided', () => {
+    const assessment = {
+      overallScore: 85,
+      assessmentPasses: 3,
+      passesThreshold: true,
+      dimensions: {
+        factualAccuracy: { score: 90, evidence: [], improvements: [] },
+        stakeholderCoverage: { score: 80, evidence: [], improvements: [] },
+        analyticalDepth: { score: 85, evidence: [], improvements: [] },
+        editorialConsistency: { score: 88, evidence: [], improvements: [] },
+        evidenceQuality: { score: 82, evidence: [], improvements: [] },
+        languageQuality: { score: 90, evidence: [], improvements: [] },
+      },
+      issues: [],
+      suggestions: [],
+    };
+    const result = injectQualityMetadata(baseHtml, assessment);
+    expect(result).toContain('<meta name="article:quality-score" content="85">');
+    expect(result).toContain('<meta name="article:quality-iterations" content="3">');
+    expect(result).toContain('<meta name="article:quality-assessed" content="true">');
+    // Legacy bare quality-* tags with correct values
+    expect(result).toContain('<meta name="quality-score" content="85">');
+    expect(result).toContain('<meta name="quality-iterations" content="3">');
+    expect(result).toContain('<meta name="quality-assessed" content="true">');
+    // Legacy article-quality-* (hyphenated) tags with correct values
+    expect(result).toContain('<meta name="article-quality-score" content="85">');
+    expect(result).toContain('<meta name="article-quality-iterations" content="3">');
+    expect(result).toContain('<meta name="article-quality-assessed" content="true">');
+  });
+
+  it('is idempotent — no duplicate tags after multiple calls', () => {
+    const first = injectQualityMetadata(baseHtml);
+    const second = injectQualityMetadata(first);
+    const scoreMatches = second.match(/article:quality-score/g) ?? [];
+    expect(scoreMatches).toHaveLength(1);
+    const versionMatches = second.match(/article:quality-version/g) ?? [];
+    expect(versionMatches).toHaveLength(1);
+    const iterMatches = second.match(/article:quality-iterations/g) ?? [];
+    expect(iterMatches).toHaveLength(1);
+    const assessedMatches = second.match(/article:quality-assessed/g) ?? [];
+    expect(assessedMatches).toHaveLength(1);
+    // Legacy bare quality-* tags also not duplicated
+    const legacyScoreMatches = second.match(/name="quality-score"/g) ?? [];
+    expect(legacyScoreMatches).toHaveLength(1);
+    const legacyVersionMatches = second.match(/name="quality-version"/g) ?? [];
+    expect(legacyVersionMatches).toHaveLength(1);
+    const legacyIterMatches = second.match(/name="quality-iterations"/g) ?? [];
+    expect(legacyIterMatches).toHaveLength(1);
+    const legacyAssessedMatches = second.match(/name="quality-assessed"/g) ?? [];
+    expect(legacyAssessedMatches).toHaveLength(1);
+    // Legacy article-quality-* (hyphenated) tags also not duplicated
+    const legacyArticleScoreMatches = second.match(/name="article-quality-score"/g) ?? [];
+    expect(legacyArticleScoreMatches).toHaveLength(1);
+    const legacyArticleVersionMatches = second.match(/name="article-quality-version"/g) ?? [];
+    expect(legacyArticleVersionMatches).toHaveLength(1);
+    const legacyArticleIterMatches = second.match(/name="article-quality-iterations"/g) ?? [];
+    expect(legacyArticleIterMatches).toHaveLength(1);
+    const legacyArticleAssessedMatches = second.match(/name="article-quality-assessed"/g) ?? [];
+    expect(legacyArticleAssessedMatches).toHaveLength(1);
+  });
+
+  it('handles case-insensitive </HEAD> tag', () => {
+    const upperHtml = '<html><head><title>Test</title></HEAD><body></body></html>';
+    const result = injectQualityMetadata(upperHtml);
+    expect(result).toContain('<meta name="article:quality-score"');
+    expect(result).toContain('</HEAD>');
+  });
+
+  it('handles mixed-case </Head> tag', () => {
+    const mixedHtml = '<html><head><title>Test</title></Head><body></body></html>';
+    const result = injectQualityMetadata(mixedHtml);
+    expect(result).toContain('<meta name="article:quality-score"');
+    expect(result).toContain('</Head>');
+  });
+
+  it('strips existing quality tags but cannot inject new ones when </head> is missing', () => {
+    const noHead = '<html><body>content</body></html>';
+    const result = injectQualityMetadata(noHead);
+    // Tags cannot be inserted without </head>, but existing ones are still stripped
+    expect(result).not.toContain('article:quality-score');
+  });
+
+  it('strips pre-existing legacy quality-score tags and replaces with full set', () => {
+    const legacyHtml = '<html><head><meta name="quality-score" content="51">\n</head><body></body></html>';
+    const result = injectQualityMetadata(legacyHtml);
+    // Legacy tag replaced, not duplicated
+    const legacyScoreMatches = result.match(/name="quality-score"/g) ?? [];
+    expect(legacyScoreMatches).toHaveLength(1);
+    // New tags injected
+    expect(result).toContain('<meta name="article:quality-score"');
+    expect(result).toContain('<meta name="article-quality-score"');
+  });
+});

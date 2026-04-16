@@ -710,11 +710,20 @@ const IP_FALLBACK: Readonly<Record<string, string>> = {
  * Falls back to a committee-specific sentence (derived from COMMITTEE_NAMES)
  * when no domain keyword matches but the document's organ field identifies a
  * known Riksdag committee.
+ *
+ * **Contract**: Returns HTML-safe text (user-supplied fields are escaped via
+ * `escapeHtml()` internally). Callers must **not** double-escape the result.
+ *
  * @param impliedDoktyp - document type inferred from the calling context
  *   ('mot', 'bet', 'prop', 'ip') when doc.doktyp / doc.documentType is absent.
  */
 export function generatePolicySignificance(doc: RawDocument, lang: Language | string, impliedDoktyp?: string): string {
   const domains = detectPolicyDomains(doc, lang);
+
+  // Extract document-specific context for unique significance text
+  const docTitle = doc.title || doc.titel || doc.rubrik || '';
+  const docId = doc.dok_id || '';
+  const docAuthor = doc.intressent_namn || doc.author || '';
 
   if (domains.length > 0) {
     const domainsStr = domains.join(', ');
@@ -725,7 +734,11 @@ export function generatePolicySignificance(doc: RawDocument, lang: Language | st
 
     const doktyp = doc.doktyp || doc.documentType || impliedDoktyp || '';
     const deepAnalysis = getDomainSpecificAnalysis(domains[0] ?? '', doktyp, lang);
-    return deepAnalysis ? `${baseText} ${deepAnalysis}` : baseText;
+
+    // Add document-specific context to avoid duplicate text across documents
+    const docContext = _buildDocContext(docTitle, docId, docAuthor, lang);
+    const analysis = deepAnalysis ? `${baseText} ${deepAnalysis}` : baseText;
+    return docContext ? `${analysis} ${docContext}` : analysis;
   }
 
   // Secondary: committee-specific context when organ is present but no domain matched
@@ -752,22 +765,62 @@ export function generatePolicySignificance(doc: RawDocument, lang: Language | st
       // English name for all others (client-side data-translate handles further l10n)
       const committeeName = getCommitteeName(organ, lang);
       const tpl = committeeRefTemplates[lang as string];
-      return tpl
+      const baseRef = tpl
         ? tpl(committeeName)
         : `This matter is referred to the ${organEntry.en} for parliamentary examination.`;
+      // Add document-specific context to committee-level fallback
+      const docContext = _buildDocContext(docTitle, docId, docAuthor, lang);
+      return docContext ? `${baseRef} ${docContext}` : baseRef;
     }
   }
 
   // Interpellation-specific fallback: references minister obligation, not committee review
   const doktyp2 = doc.doktyp || doc.documentType || impliedDoktyp || '';
   if (doktyp2 === 'ip') {
-    return IP_FALLBACK[lang as string]
+    const ipBase = IP_FALLBACK[lang as string]
       ?? 'The interpellation is debated in the chamber, where the minister is obliged to respond and be held accountable.';
+    // Add document-specific info (author + recipient) for interpellations
+    const recipient = doc.mottagare || '';
+    if (docAuthor && recipient && lang === 'en') {
+      return `${ipBase} Filed by ${escapeHtml(docAuthor)}${doc.parti ? ` (${escapeHtml(doc.parti)})` : ''}, directed to ${escapeHtml(recipient)}.`;
+    }
+    const docContext = _buildDocContext(docTitle, docId, docAuthor, lang);
+    return docContext ? `${ipBase} ${docContext}` : ipBase;
   }
 
   // Generic significance when no domain detected and no known committee
   const genericVal = L(lang, 'policySignificanceGeneric');
-  return typeof genericVal === 'string' ? genericVal : 'Requires committee review and chamber debate before a decision is reached.';
+  const generic = typeof genericVal === 'string' ? genericVal : 'Requires committee review and chamber debate before a decision is reached.';
+  const docContext = _buildDocContext(docTitle, docId, docAuthor, lang);
+  return docContext ? `${generic} ${docContext}` : generic;
+}
+
+/** Maximum length for document title in context strings. */
+const MAX_DOC_CONTEXT_TITLE_LENGTH = 80;
+/** Length of ellipsis suffix for truncated titles. */
+const DOC_CONTEXT_ELLIPSIS_LENGTH = 3;
+
+/**
+ * Build a short document-specific context string to differentiate
+ * significance text across documents in the same committee/domain.
+ * Returns empty string if no document-specific data is available.
+ */
+function _buildDocContext(docTitle: string, docId: string, docAuthor: string, lang: Language | string): string {
+  const parts: string[] = [];
+  if (docId) {
+    parts.push(`[${escapeHtml(docId)}]`);
+  }
+  if (docTitle && lang === 'en') {
+    // Truncate title for brevity
+    const short = docTitle.length > MAX_DOC_CONTEXT_TITLE_LENGTH
+      ? docTitle.substring(0, MAX_DOC_CONTEXT_TITLE_LENGTH - DOC_CONTEXT_ELLIPSIS_LENGTH) + '...'
+      : docTitle;
+    parts.push(`"${escapeHtml(short)}"`);
+  }
+  if (docAuthor && lang === 'en') {
+    parts.push(`by ${escapeHtml(docAuthor)}`);
+  }
+  return parts.length > 0 ? `(${parts.join(' ')})` : '';
 }
 
 /**

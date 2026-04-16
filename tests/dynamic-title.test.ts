@@ -1,10 +1,9 @@
 /**
- * Tests for generateDynamicTitle — now a stub (v5.0).
+ * Tests for generateDynamicTitle — content-aware fallback (v6.0).
  *
- * Since v5.0, generateDynamicTitle is a DEPRECATED stub that returns
- * the base title and a generic subtitle. The AI agent (Copilot opus 4.6)
- * is responsible for generating all titles and descriptions during
- * agentic workflows. These tests verify the stub behavior.
+ * Since v6.0, generateDynamicTitle extracts topic hints from HTML content
+ * to produce a minimally newsworthy fallback title. The AI agent in the
+ * agentic workflow should still overwrite with fully analysis-driven titles.
  */
 
 import { describe, it, expect } from 'vitest';
@@ -12,51 +11,60 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { generateDynamicTitle } from '../scripts/generate-news-enhanced/helpers.js';
 
-describe('generateDynamicTitle (v5.0 stub)', () => {
-  it('returns base title unchanged — AI agent generates real titles', () => {
-    const result = generateDynamicTitle('Committee Reports', '<p>Plain content without emphasis.</p>', 5);
-    expect(result.title).toBe('Committee Reports');
-    expect(result.subtitle).toContain('Committee Reports');
-  });
-
-  it('does NOT extract highlights from content — that is the AI agent job', () => {
+describe('generateDynamicTitle (v6.0 content-aware fallback)', () => {
+  it('returns enriched title when content has strong tags', () => {
     const content = '<p><strong>Budget Deficit</strong> is a major concern. <strong>Tax Reform</strong> is proposed.</p>';
     const result = generateDynamicTitle('Committee Reports', content, 7);
-    // v5.0: Subtitle should NOT contain extracted highlights — it's a stub
-    expect(result.title).toBe('Committee Reports');
-    expect(result.subtitle).toContain('Committee Reports');
+    expect(result.title).toContain('Committee Reports');
+    expect(result.title).toContain('Budget Deficit');
   });
 
-  it('does NOT detect themes from content — that is the AI agent job', () => {
-    const content = '<p>This article covers defense spending and NATO membership implications.</p>';
+  it('returns enriched title when content has h3 headings', () => {
+    const content = '<h3>Climate Policy Shift</h3><p>Content about climate.</p>';
     const result = generateDynamicTitle('Government Propositions', content, 3);
-    // v5.0: Title should be base title only, not enriched with theme
-    expect(result.title).toBe('Government Propositions');
+    expect(result.title).toContain('Government Propositions');
+    expect(result.title).toContain('Climate Policy Shift');
   });
 
-  it('handles empty content gracefully', () => {
+  it('falls back to doc-count title when no topic hints', () => {
+    const result = generateDynamicTitle('Base Title', '<p>Plain content without emphasis.</p>', 5);
+    expect(result.title).toContain('Base Title');
+    expect(result.title).toContain('5 Documents');
+  });
+
+  it('handles empty content with doc count', () => {
+    const result = generateDynamicTitle('Base Title', '', 10);
+    expect(result.title).toContain('Base Title');
+    expect(result.title).toContain('10 Documents');
+  });
+
+  it('handles empty content and zero doc count', () => {
     const result = generateDynamicTitle('Base Title', '', 0);
     expect(result.title).toBe('Base Title');
-    expect(result.subtitle).toContain('Base Title');
-  });
-
-  it('subtitle includes AI attribution marker', () => {
-    const result = generateDynamicTitle('Test Title', '<p>Content.</p>', 10);
     expect(result.subtitle).toContain('AI-generated');
   });
 
-  it('does not duplicate theme in title if already present', () => {
-    const content = '<p>Defense spending proposals are reviewed.</p>';
-    const result = generateDynamicTitle('Defense Policy Review', content, 3);
-    expect(result.title).toBe('Defense Policy Review');
+  it('subtitle includes AI attribution marker when no content', () => {
+    const result = generateDynamicTitle('Test Title', '', 0);
+    expect(result.subtitle).toContain('AI-generated');
   });
 
-  it('returns consistent stub format regardless of content', () => {
-    const r1 = generateDynamicTitle('Title A', '<h3>Climate Policy Shift</h3>', 4);
-    const r2 = generateDynamicTitle('Title B', '<p>Migration debate</p>', 10);
-    // Both should follow same stub pattern
-    expect(r1.subtitle).toMatch(/AI-generated/);
-    expect(r2.subtitle).toMatch(/AI-generated/);
+  it('subtitle is content-aware when topics extracted', () => {
+    const content = '<p><strong>Defence Spending</strong> is reviewed.</p>';
+    const result = generateDynamicTitle('Defense Policy Review', content, 3);
+    expect(result.subtitle).toContain('Defence Spending');
+    expect(result.subtitle).toContain('Riksdag');
+  });
+
+  it('limits topics to 3 in title', () => {
+    const content = '<p><strong>Budget Deficit</strong><strong>Tax Reform</strong><strong>Climate Policy</strong><strong>Defense Spending</strong><strong>Energy Market</strong></p>';
+    const result = generateDynamicTitle('Reports', content, 5);
+    expect(result.title).toContain('Reports');
+    expect(result.title).toContain('Budget Deficit');
+    expect(result.title).toContain('Tax Reform');
+    expect(result.title).toContain('Climate Policy');
+    expect(result.title).not.toContain('Defense Spending');
+    expect(result.title).not.toContain('Energy Market');
   });
 });
 
