@@ -89,7 +89,7 @@ SWOT analysis of the government's position on criminal justice reform following 
 | OW1 | **"Soft on crime" attack surface**: 88/88 S Nej votes = verified "blocking" evidence for government campaign ads. | JuU15: S unanimous Nej | 🟦 VH | 🟦 VH | 2026-04-16 |
 | OW2 | **No alternative proposal tabled**: Opposition voted Nej without comprehensive counter-platform on youth gang violence. Negative positioning only. | Riksdag document search — no S alternative motion found | 🟩 H | 🟩 H | 2026-04-16 |
 | OW3 | **S coherence problem**: S supports "tougher measures in principle" but voted unanimously against. Creates messaging vulnerability. | S public statements vs JuU15 vote | 🟩 H | 🟩 H | 2026-04-16 |
-| OW4 | **C highest absence rate (25.0%)**: 6/24 absent including party leader Muharrem Demirok. Signals organizational weakness. | JuU15: C 18 Nej, 6 Frånvarande | 🟦 VH | 🟧 M | 2026-04-16 |
+| OW4 | **C highest absence rate (25.0%)**: 6/24 absent including former party leader Muharrem Demirok (ended 2025-05-03) and gruppledare Daniel Bäckström. Current leader **Elisabeth Thand Ringqvist** (since 2025-11-13) was PRESENT and voted Nej. High absence rate signals organizational issues but not leadership disengagement. | JuU15: C 18 Nej, 6 Frånvarande | 🟦 VH | 🟧 M | 2026-04-16 |
 
 ---
 
@@ -180,7 +180,7 @@ quadrantChart
 - [x] Strategic Implications with Key Watch Items and forward indicators
 - [x] Document Control footer
 - [x] Vote data verified: 349 seats, 145/142/62 (Riksdagen MCP API — 349 individual records)
-- [x] Named actors cited throughout (Åkesson, Demirok, Cederfelt, Strömmer, Nordborg, Wallentheim)
+- [x] Named actors cited throughout (Åkesson, Thand Ringqvist, Cederfelt, Strömmer, Nordborg, Wallentheim)
 - [x] 5-level confidence scale applied (VH/H/M/L/VL with emoji indicators)
 - [x] Opposition SWOT included (OS1-OS3, OW1-OW4)
 

@@ -146,7 +146,7 @@ graph TD
 | S | 106 | 18 | 17.0% | Normal for largest party; includes Shekarabi, Redar |
 | V | 22 | 4 | 18.2% | Small caucus; includes Ida Gabrielsson |
 | KD | 19 | 3 | 15.8% | Includes Gudrun Brunegård, Kjell-Arne Ottosson |
-| C | 24 | 6 | 25.0% | ⚠️ Highest absence rate — party leader Muharrem Demirok absent |
+| C | 24 | 6 | 25.0% | ⚠️ Highest absence rate — but party leader **Elisabeth Thand Ringqvist** (since 2025-11-13) was PRESENT and voted Nej. Former leader Muharrem Demirok (ended 2025-05-03) and gruppledare Daniel Bäckström absent. |
 | L | 16 | 3 | 18.8% | Includes Mauricio Rojas, Helena Gellerman |
 | MP | 18 | 3 | 16.7% | Includes Rebecka Le Moine, Janine Alm Ericson |
 | - | 8 | 1 | 12.5% | Katja Nyberg absent |
@@ -246,7 +246,7 @@ graph LR
 - [x] Forward indicators with specific triggers and timelines (8 indicators)
 - [x] Election 2026 Risk Dimensions assessed (5 dimensions, overall CRITICAL)
 - [x] Vote data verified: 349 seats, 145 Ja / 142 Nej / 62 Frånvarande (Riksdagen MCP API)
-- [x] Named actors cited throughout (Åkesson, Demirok, Cederfelt, Nordborg, Wallentheim, Strömmer, etc.)
+- [x] Named actors cited throughout (Åkesson, Thand Ringqvist, Cederfelt, Nordborg, Wallentheim, Strömmer, etc.)
 
 ---
 

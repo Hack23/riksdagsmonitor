@@ -138,14 +138,15 @@ V maintained ideological position with 18/18 present MPs voting Nej. V also tabl
 
 ### JuU15 Voting Behavior (Verified):
 - **C**: 0 Ja, **18** Nej, **6** Absent (**25.0% absence** — highest of any party)
-- **Notable Absence**: Party leader **Muharrem Demirok**, plus Daniel Bäckström, Alireza Akhondi, Catarina Deremar, Anne-Li Sjölund, Anders Ådahl
+- **Party leader Elisabeth Thand Ringqvist was PRESENT** and voted Nej — demonstrating leadership commitment to opposition position
+- **Notable Absences**: Muharrem Demirok (former party leader 2023-2025, now regular MP), Daniel Bäckström (gruppledare), Alireza Akhondi, Catarina Deremar, Anne-Li Sjölund, Anders Ådahl
 
 ### Analysis
 C's **18/18 Nej vote** is the most strategically significant stakeholder development. Previously considered a potential "bridge party," C's JuU15 vote confirms firm opposition alignment. With C in the S/V/MP bloc, the government has **zero prospect** of broad consensus on Prop. 246.
 
 C also tabled HD024095 (proportionality in deportation) — the proportionality argument connects directly to the Prop. 246 criminal age debate.
 
-**⚠️ Notable**: C had the highest absence rate (25.0%) of any party, and party leader Demirok was absent. This warrants investigation — potential scheduling conflict or deliberate distance.
+**⚠️ Notable**: C had the highest absence rate (25.0%) of any party. However, current party leader **Elisabeth Thand Ringqvist** (since 2025-11-13, per CIA data) was **present and voted Nej**, demonstrating personal commitment to C's opposition position. The absent members include former party leader Muharrem Demirok (whose leadership ended 2025-05-03) and gruppledare Daniel Bäckström. The high absence rate warrants investigation — potential scheduling conflict or party organizational issues — but does NOT indicate leadership disengagement.
 
 **Key Actor**: **Ulrika Liljeberg** — C spokesperson in JuU15 debate.
 
@@ -262,7 +263,7 @@ quadrantChart
 - [x] Stakeholder Impact Diagram (Mermaid graph)
 - [x] Stakeholder Power-Interest Grid (Mermaid quadrant chart)
 - [x] All 8 stakeholder groups with voting behavior tables
-- [x] Named individuals cited (Strömmer, Damsgaard, Åkesson, Jomshof, Demirok, Wallentheim, Nordborg, Liljeberg, Westerlund, Andersson Garpvall)
+- [x] Named individuals cited (Strömmer, Damsgaard, Åkesson, Jomshof, Thand Ringqvist, Demirok, Wallentheim, Nordborg, Liljeberg, Westerlund, Andersson Garpvall)
 - [x] Notable absences identified per party with names
 - [x] Cross-Stakeholder Conflict Map with 5 conflict axes
 - [x] Vote data verified: 349 seats, 145/142/62 (Riksdagen MCP API)

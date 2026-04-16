@@ -35,7 +35,7 @@ pie title Document Significance Distribution (24 documents)
 | Score | Level | Type | dok_id | Title | Key Justification |
 |:-----:|:-----:|:----:|:-------|:------|:-------------------|
 | **9/10** | 🔴 Critical | Proposition | HD03246 | Skärpta regler för unga lagöverträdare | First criminal age reduction in 124 years (15→13). 31 law amendments. PM+Justice Minister signed. Affects all 8 parties. 5-year sunset. UN CRC tension. JuU15 proxy vote: **145-142** (margin: 3). |
-| **7/10** | 🟠 High | Betänkande | JuU15 | Kriminalvårdsfrågor | Voted **145-142** at 15:33 on 2026-04-16 (349 members). Clean government/opposition split. Zero cross-aisle. Proxy indicator for Prop. 246 passage arithmetic. Notable absences: Åkesson (SD), Demirok (C). |
+| **7/10** | 🟠 High | Betänkande | JuU15 | Kriminalvårdsfrågor | Voted **145-142** at 15:33 on 2026-04-16 (349 members). Clean government/opposition split. Zero cross-aisle. Proxy indicator for Prop. 246 passage arithmetic. Notable absences: Åkesson (SD party leader), Bäckström (C gruppledare). C party leader Thand Ringqvist present (voted Nej). |
 | 5/10 | 🟡 Medium | Motion | HD024090 | V: mot prop. 2025/26:235 Skärpta regler om utvisning | V opposing government deportation rules. Cross-references criminal justice agenda. Part of 3-motion V opposition strategy. |
 | 5/10 | 🟡 Medium | Motion | HD024091 | V: mot prop. 2025/26:228 Krigsmaterielregelverket | V opposing arms export modernization. Ideological consistency with anti-militarism. Part of systematic opposition pattern. |
 | 5/10 | 🟡 Medium | Motion | HD024092 | V: mot Extra ändringsbudget 2026 (drivmedelsskatt) | V opposing fuel tax cuts. Economic policy opposition from left. Budget domain. |
