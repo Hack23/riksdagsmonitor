@@ -562,6 +562,122 @@ If an article fails ≥6 checks: DO NOT commit — escalate for manual review
 
 ---
 
+## 🔄 MANDATORY ITERATIVE IMPROVEMENT PROTOCOL (v5.0 — applies to ALL workflow phases)
+
+> 🔴 **NON-NEGOTIABLE — AI WORK QUALITY STANDARD**: A single pass is NEVER sufficient. Every phase of work (analysis, articles, validation) MUST go through at least 2 complete iterations. The AI agent MUST use ALL allocated time for each phase — completing early with shallow output is NEVER acceptable. This is the AI-FIRST quality principle: the AI must hold itself to the highest standard of work, iterate until output quality is excellent, and NEVER take shortcuts.
+
+### Why Iterative Improvement Is Mandatory
+
+1. **Single-pass output is consistently shallow** — First drafts lack specific evidence, use generic language, miss cross-references, and produce boilerplate SWOT entries
+2. **15-minute workflows produce 15-minute quality** — Recent workflow runs complete in 13-22 minutes of their 60-minute allocation, producing unacceptably shallow analysis and articles
+3. **Reading your own output catches errors** — Self-review reveals missing dok_id citations, generic stakeholder perspectives, absent economic data, and weak forward indicators
+4. **Improvement passes transform quality** — The difference between a first draft and a refined second pass is the difference between a shallow document list and genuine political intelligence
+
+### Iterative Improvement Protocol (All Phases)
+
+````markdown
+#### Phase 2b: Analysis Improvement Pass (MANDATORY — minimum 7 minutes)
+
+> 🔴 After completing Pass 1 analysis, the AI agent MUST perform this improvement cycle. Skipping this step is a VIOLATION.
+
+```bash
+echo "=== ANALYSIS IMPROVEMENT PASS — Reading ALL analysis files ==="
+echo "⏱️ This pass MUST take at least 7 minutes. DO NOT skip or rush."
+ANALYSIS_BASE="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
+IMPROVEMENT_COUNT=0
+
+# Step 1: Read EVERY analysis file completely
+for MD_FILE in "$ANALYSIS_BASE"/*.md "$ANALYSIS_BASE"/documents/*.md; do
+  [ ! -f "$MD_FILE" ] && continue
+  echo "📖 Reading for improvement: $MD_FILE"
+  cat "$MD_FILE"
+  echo ""
+done
+
+echo "📋 Now systematically improve EACH file..."
+```
+
+**For each analysis file, the AI MUST:**
+1. ✅ Check: Does every SWOT entry cite a specific dok_id, vote count, or named politician?
+   - If not → REWRITE with specific evidence
+2. ✅ Check: Are all 8 stakeholder groups represented (for deep/comprehensive)?
+   - If not → ADD missing stakeholder perspectives with evidence
+3. ✅ Check: Does the file contain at least 1 color-coded Mermaid diagram?
+   - If not → ADD a Mermaid diagram with real data
+4. ✅ Check: Are risk scores justified with specific evidence?
+   - If not → ADD quantified likelihood × impact with rationale
+5. ✅ Check: Are forward indicators specific with dates and trigger conditions?
+   - If not → REWRITE with specific dates, thresholds, and named actors
+6. ✅ Check: Is there cross-referencing to related analysis files?
+   - If not → ADD references to related documents in the same date's analysis
+7. ✅ Check: Is there quantitative economic context (World Bank/SCB data)?
+   - If relevant policy domain → ADD GDP, debt, spending, or other indicators
+8. ✅ Check: Are evidence tables filled completely (no empty cells, no "N/A")?
+   - If not → FILL with actual data or mark as genuinely unavailable with explanation
+
+> **Output**: EVERY analysis file MUST be measurably improved after Pass 2. "Reviewed and found satisfactory" is NOT acceptable — there are ALWAYS improvements to make on a first draft.
+
+#### Phase 3b: Article Improvement Pass (MANDATORY — minimum 8 minutes)
+
+> 🔴 After completing Pass 1 articles, the AI agent MUST perform this improvement cycle. Skipping this step is a VIOLATION.
+
+```bash
+echo "=== ARTICLE IMPROVEMENT PASS — Reading ALL article files ==="
+echo "⏱️ This pass MUST take at least 8 minutes. DO NOT skip or rush."
+IMPROVED_COUNT=0
+
+# Step 1: Read EVERY generated article completely
+for ARTICLE in news/$ARTICLE_DATE-*-en.html news/$ARTICLE_DATE-*-sv.html; do
+  [ ! -f "$ARTICLE" ] && continue
+  echo "📖 Reading for improvement: $ARTICLE"
+  cat "$ARTICLE"
+  echo ""
+done
+
+echo "📋 Now systematically improve EACH article..."
+```
+
+**For each article, the AI MUST:**
+1. ✅ Check: Is the analytical lede specific (names actors, cites actions, explains significance)?
+   - If generic → REWRITE with the most significant political finding
+2. ✅ Check: Are "Why It Matters" sections UNIQUE per document?
+   - If duplicated/generic → REWRITE each with document-specific analysis
+3. ✅ Check: Does the article contain SWOT analysis with evidence citations?
+   - If missing/weak → ADD or STRENGTHEN SWOT grid with dok_id citations
+4. ✅ Check: Are stakeholder perspectives comprehensive (6+ groups)?
+   - If missing/shallow → ADD stakeholder impact cards with specific impacts
+5. ✅ Check: Are forward indicators specific with dates and trigger conditions?
+   - If missing/generic → ADD "What to Watch Next" with specific predictions
+6. ✅ Check: Is there quantitative economic data from World Bank/SCB?
+   - If missing → ADD relevant economic indicators for the policy domain
+7. ✅ Check: Are there remaining `AI_MUST_REPLACE` markers?
+   - If yes → REPLACE each with genuine political analysis
+8. ✅ Check: Does the article exceed 1000 words?
+   - If under → EXPAND sections with deeper analysis
+9. ✅ Check: Are Winners & Losers specific with named actors and evidence?
+   - If generic → REWRITE with specific party/actor names and dok_id references
+10. ✅ Check: Is there strategic context connecting to Election 2026 and coalition dynamics?
+    - If missing → ADD strategic context section
+
+> **Output**: EVERY article MUST be measurably improved after Pass 2. "Reviewed and found satisfactory" is NOT acceptable.
+````
+
+### Time Enforcement Rules
+
+> 🔴 **ABSOLUTE RULES — NO EXCEPTIONS:**
+>
+> 1. **MUST spend at least 45 minutes of the 60-minute workflow** doing real work (analysis, writing, improving)
+> 2. **NEVER complete a phase early** — if you finish ahead of schedule, use remaining time to iterate and improve
+> 3. **A single pass is NEVER good enough** — minimum 2 complete iterations for both analysis and articles
+> 4. **Quality over speed** — it is ALWAYS better to spend more time improving than to commit early
+> 5. **Follow instructions literally** — if allocated 15 minutes for analysis, spend 15 minutes doing analysis work
+> 6. **NO SHORTCUTS** — every improvement checklist item must be addressed for every file
+> 7. **AI_MUST_REPLACE markers are evidence of shortcuts** — zero markers allowed in committed articles
+>
+> **Evidence of time compliance**: The workflow run duration MUST be at least 45 minutes. Runs completing in under 30 minutes are evidence of insufficient iteration and will result in quality reviews.
+
+---
+
 ## 🔬 MANDATORY PRE-ARTICLE ANALYSIS READING — ALL Analysis Must Be Read Before Article Generation
 
 > 🔴 **NON-NEGOTIABLE — TRANSPARENCY & INTELLIGENCE DEPTH REQUIREMENT**: The AI agent MUST read ALL analysis artifacts (`cat`/`view` every `.md` file) BEFORE generating any article HTML. Articles written without first reading the analysis are **shallow, boilerplate, and REJECTED**. The analysis and articles are created in the **same workflow run** — there is zero excuse for not reading the analysis.
@@ -1547,16 +1663,19 @@ Before analyzing a document, check if its dok_id already appears in today's shar
 ### Standardised Analysis Depth Gate
 
 > ⚠️ **Default is `deep`** — not `standard`. Analysis must always produce publication-quality output with Mermaid diagrams and evidence tables.
+> 🔴 **v5.0: ALL depths now require 2+ iterations (improvement pass is MANDATORY)**
 
-| Depth | AI iterations | SWOT stakeholders | Charts | Mindmap | Mermaid diagrams | Risk matrix (L×I) | Forward indicators | Min. analysis time |
-|-------|--------------|-------------------|--------|---------|-----------------|-------------------|-------------------|-------------------|
-| standard | 1-2 | ≥5 (of 8 groups) | ≥1 | optional | ≥1 color-coded | ≥2 risks scored | ≥2 with triggers | 10 minutes |
-| deep | 2-3 | ≥7 (of 8 groups) | ≥2 | required | ≥2 color-coded | ≥4 risks scored | ≥3 with triggers | 15 minutes |
-| comprehensive | 3+ | all 8 groups | ≥3 | required | ≥3 color-coded | ≥6 risks scored | ≥5 with triggers | 20 minutes |
+| Depth | AI iterations (min) | SWOT stakeholders | Charts | Mindmap | Mermaid diagrams | Risk matrix (L×I) | Forward indicators | Min. analysis time | Min. article time |
+|-------|---------------------|-------------------|--------|---------|-----------------|-------------------|-------------------|-------------------|-------------------|
+| standard | 2 (1 create + 1 improve) | ≥5 (of 8 groups) | ≥1 | optional | ≥1 color-coded | ≥2 risks scored | ≥2 with triggers | 15 minutes | 12 minutes |
+| deep | 2-3 (1 create + 1-2 improve) | ≥7 (of 8 groups) | ≥2 | required | ≥2 color-coded | ≥4 risks scored | ≥3 with triggers | 22 minutes | 18 minutes |
+| comprehensive | 3+ (1 create + 2+ improve) | all 8 groups | ≥3 | required | ≥3 color-coded | ≥6 risks scored | ≥5 with triggers | 30 minutes | 22 minutes |
 
 **The 8 mandatory stakeholder groups are**: Citizens, Government Coalition, Opposition Bloc, Business/Industry, Civil Society, International/EU, Judiciary/Constitutional, Media/Public Opinion. Analysis for each group MUST cite specific evidence (dok_id, vote counts, named politicians).
 
 **Minimum requirement for ALL depths**: Every analysis file must contain at least 1 color-coded Mermaid diagram, structured evidence tables with dok_id citations, a quantified risk matrix with L×I scores, forward indicators with specific triggers/timelines, and follow the corresponding template structure exactly. Plain prose without tables/diagrams is NEVER acceptable regardless of depth level. Every SWOT entry must cite dok_id, vote counts, or named politicians — generic text is REJECTED.
+
+**🔴 ITERATIVE IMPROVEMENT IS MANDATORY AT ALL DEPTHS**: The "AI iterations" column specifies MINIMUM iterations. Pass 1 creates the analysis. Pass 2+ reads ALL analysis back completely and improves every file. A single pass is NEVER sufficient regardless of depth level. The improvement pass must produce MEASURABLE improvements: more evidence citations, deeper stakeholder analysis, additional Mermaid diagrams, stronger risk assessments, and richer cross-references.
 ```
 
 ## MANDATORY Playwright Validation (copy into every content workflow)
@@ -1871,7 +1990,7 @@ safeoutputs___create_pull_request({
 
 ## Standardised Deduplication Check (copy into every content workflow)
 
-> 🚨 **CRITICAL**: The deduplication check controls **article generation only** — it NEVER skips the deep political analysis phase. Analysis MUST always run regardless of whether articles already exist. When articles exist, the workflow still performs full 15-20 minute analysis and commits analysis artifacts. Only the HTML article generation step is skipped (unless `force_generation=true`).
+> 🚨 **CRITICAL**: The deduplication check controls **article generation only** — it NEVER skips the deep political analysis phase. Analysis MUST always run regardless of whether articles already exist. When articles exist, the workflow still performs full 22+ minute analysis (Pass 1 + Pass 2 improvement) and commits analysis artifacts. Only the HTML article generation step is skipped (unless `force_generation=true`).
 
 ```bash
 # Check if articles for today already exist (controls article GENERATION only, NOT analysis)
@@ -1894,7 +2013,7 @@ fi
 
 > **🚨 ANALYSIS RUNS EVERY TIME — NO EXCEPTIONS**: The deep political analysis phase executes on EVERY workflow run, regardless of whether articles already exist, regardless of whether another workflow ran recently, regardless of any other condition. The ONLY reason to skip analysis is if the MCP server is completely unreachable after 3 retry attempts. "Another job ran 18 minutes ago" is NOT a valid reason to skip analysis. Code changes, data updates, and new parliamentary activity happen continuously — every run MUST produce fresh analysis.
 
-### ⏱️ Phase Time Budget (45-minute workflow)
+### ⏱️ Phase Time Budget (60-minute workflow — MUST use at least 45 minutes)
 
 > Measured response times (hot MCP server):
 > - riksdag-regering list tools (get_betankanden, get_motioner, etc.): **200–600ms** per call
@@ -1909,20 +2028,31 @@ fi
 | Phase | Minutes | What happens | Hard rule |
 |-------|---------|-------------|-----------|
 | **Phase 0: MCP warmup** | 0–2 | MCP pre-warm, get_sync_status, session init | Max 2 min; noop after 3 failures |
-| **Phase 1: Data retrieval** | 2–10 | Scripts download data + document enrichment | **Must complete by minute 10** |
-| **Phase 2: Analysis** | 10–25 | Read templates, create analysis for every doc | **Min 15 min; must complete before article generation** |
-| **Phase 3: Article generation** | 25–35 | Generate EN/SV HTML articles from analysis | Must complete before safe output |
-| **Phase 4: Safe output** | 25–38 | Call safeoutputs___create_pull_request | **Call by minute ~25; HARD deadline minute 38** |
-| **Phase 5: Translate dispatch** | 35–40 | Dispatch translation workflow if applicable | Only after PR created |
+| **Phase 1: Data retrieval** | 2–8 | Scripts download data + document enrichment | **Must complete by minute 8** |
+| **Phase 2a: Analysis Pass 1** | 8–23 | Read templates, create analysis for every doc | **Min 15 min first pass** |
+| **Phase 2b: Analysis Pass 2 (Iterative Improvement)** | 23–30 | Read ALL analysis, improve depth/evidence/diagrams | **Min 7 min improvement pass — MANDATORY** |
+| **Phase 3a: Article Generation Pass 1** | 30–40 | Generate EN/SV HTML articles from analysis | Script generates skeleton, AI writes all content |
+| **Phase 3b: Article Improvement Pass 2** | 40–48 | Read ALL articles completely, improve every section | **Min 8 min — read and improve ALL content** |
+| **Phase 4: Safe output** | 48–53 | Call safeoutputs___create_pull_request | **HARD deadline minute 53** |
+| **Phase 5: Translate dispatch** | 53–55 | Dispatch translation workflow if applicable | Only after PR created |
 
-> 🚨 **Phase ordering is STRICT**: Data retrieval (Phase 1) MUST complete before analysis (Phase 2) begins. Analysis MUST complete before article generation (Phase 3) begins. Never start generating articles while still fetching data or performing analysis.
+> 🔴 **TOTAL TIME: 60 MINUTES — USE ALL OF IT**. Workflows that complete in under 45 minutes are producing LOW QUALITY output. The AI agent MUST spend at least 45 minutes doing real work — iterating and improving analysis and articles. Completing early with shallow content is NEVER acceptable.
+>
+> 🚨 **Phase ordering is STRICT**: Data retrieval (Phase 1) MUST complete before analysis (Phase 2a) begins. Analysis MUST complete before article generation (Phase 3a) begins. Never start generating articles while still fetching data or performing analysis.
+>
+> 🔴 **ITERATIVE IMPROVEMENT IS MANDATORY — NOT OPTIONAL**:
+> - **Phase 2b**: After creating analysis in Pass 1, the AI MUST `cat` and read EVERY analysis file completely, then improve each file: add missing evidence, strengthen Mermaid diagrams, deepen stakeholder perspectives, add quantitative data, cite more dok_ids. This is NOT skippable.
+> - **Phase 3b**: After generating articles in Pass 1, the AI MUST read EVERY article HTML file completely, then improve: strengthen ledes, deepen "Why It Matters" sections, add SWOT evidence, improve stakeholder analysis, verify all AI_MUST_REPLACE markers are eliminated, enrich with World Bank/SCB data. This is NOT skippable.
+> - **A single pass is NEVER sufficient.** Every workflow MUST complete at least 2 full iterations.
 >
 > **MCP call budget per phase**:
 > - Phase 1: ~30 MCP calls (7 list + up to 20 enrichment + 3 retry buffer)
-> - Phase 2: 0 MCP calls (analysis uses downloaded data only)
-> - Phase 3: 0 MCP calls (article generation uses analysis output only)
+> - Phase 2a: 0 MCP calls (analysis uses downloaded data only)
+> - Phase 2b: Optional MCP calls for additional context (World Bank, SCB, voteringar)
+> - Phase 3a: 0 MCP calls (article generation uses analysis output only)
+> - Phase 3b: Optional MCP calls for enrichment (World Bank economic data, vote context)
 >
-> **If Phase 1 exceeds 10 minutes** (e.g., cold start + slow responses): Reduce enrichment batch size to 2 documents per type instead of 5. Still proceed to Phase 2 with whatever data is available.
+> **If Phase 1 exceeds 8 minutes** (e.g., cold start + slow responses): Reduce enrichment batch size to 2 documents per type instead of 5. Still proceed to Phase 2a with whatever data is available.
 
 ````markdown
 ### AI-Driven Analysis Protocol
@@ -1931,24 +2061,69 @@ fi
 > 1. **Download data** from MCP (scripts try first; if they fail or download 0, agent uses direct MCP tool calls and fixes scripts)
 > 2. **Read ALL 6 methodology guides** before doing any analysis
 > 3. **Read ALL 8 analysis templates** before writing any analysis files
-> 4. **Spend AT LEAST 15 MINUTES on analysis** — this is a hard minimum, not a suggestion. Analysis that takes less than 15 minutes is REJECTED.
+> 4. **Spend AT LEAST 22 MINUTES on analysis** (15 min Pass 1 + 7 min Pass 2 improvement) — this is a hard minimum, not a suggestion. Analysis completed in less time is REJECTED.
 > 5. **Create analysis for EVERY document/data piece** following the templates exactly
-> 6. **Pass the quality gate** (see below) — every analysis file must contain Mermaid diagrams, evidence tables, and dok_id citations
-> 7. **Commit both data AND analysis** — never one without the other
-> 8. **NEVER skip analysis** because articles already exist or another run completed recently — analysis is the PRIMARY output
+> 6. **ITERATE: Read ALL analysis back completely and IMPROVE** — the first pass is never good enough
+> 7. **Pass the quality gate** (see below) — every analysis file must contain Mermaid diagrams, evidence tables, and dok_id citations
+> 8. **Commit both data AND analysis** — never one without the other
+> 9. **NEVER skip analysis** because articles already exist or another run completed recently — analysis is the PRIMARY output
+> 10. **NEVER finish early** — use ALL allocated time for iteration and improvement
 
-#### ⏱️ Mandatory Minimum Analysis Time: 15 Minutes
+#### ⏱️ Mandatory Minimum Analysis Time: 22 Minutes (2 Passes)
 
-> 🚨 **HARD RULE**: The AI agent MUST spend **at least 15 minutes** on analysis work. This means:
+> 🔴 **HARD RULE**: The AI agent MUST spend **at least 22 minutes** on analysis work across **2 mandatory passes**:
+>
+> **Pass 1 (15 minutes minimum) — Initial Analysis Creation:**
 > - Reading ALL 6 methodology guides (not skimming — reading fully)
 > - Reading ALL 8 analysis templates (not skimming — reading fully)
 > - Creating analysis for EVERY document following templates EXACTLY
 > - Including color-coded Mermaid diagrams with REAL data in every analysis file
 > - Filling ALL evidence tables with dok_id, confidence, impact columns
 >
-> **Why 15 minutes?** The templates require structured tables, Mermaid diagrams, evidence citations, and multi-section analysis. This cannot be done properly in less than 15 minutes. PR #1452 demonstrated that rushing analysis (< 10 min) produces unacceptable results: plain text without tables, no Mermaid diagrams, no dok_id citations, no template structure.
+> **Pass 2 (7 minutes minimum) — Mandatory Iterative Improvement:**
+> - `cat` and read EVERY analysis file created in Pass 1 — completely, not skimming
+> - For EACH analysis file, identify gaps: missing stakeholder perspectives, weak evidence, generic text, missing Mermaid diagrams, missing quantitative data
+> - REWRITE sections that are shallow, generic, or lack specific evidence
+> - ADD cross-references between analysis files (e.g., committee report analysis cites related proposition)
+> - ADD World Bank/SCB economic context where policy domain allows
+> - ADD forward indicators with specific dates and trigger conditions
+> - VERIFY every SWOT entry cites specific dok_id, vote counts, or named politicians
+> - The improved version MUST be meaningfully better than Pass 1 — not cosmetic edits
 >
-> **Enforcement**: Before committing, run the quality gate check below. If it fails, you MUST spend more time improving the analysis until it passes.
+> **Why 2 passes?** Single-pass analysis consistently produces shallow, generic output that lacks the depth required for publication-quality political intelligence. The improvement pass forces the AI to critically review its own work and address gaps. PR #1452 and subsequent reviews demonstrated that single-pass analysis produces unacceptable results.
+>
+> **Enforcement**: Before committing, run the quality gate check below. If it fails, you MUST spend more time improving the analysis until it passes. NEVER proceed to article generation with analysis that hasn't been through the improvement pass.
+
+#### ⏱️ Mandatory Minimum Article Time: 18 Minutes (2 Passes)
+
+> 🔴 **HARD RULE**: The AI agent MUST spend **at least 18 minutes** on article generation across **2 mandatory passes**:
+>
+> **Pass 1 (10 minutes minimum) — Initial Article Generation:**
+> - Run `generate-news-enhanced.ts` to create HTML skeleton
+> - Read ALL pre-computed analysis files (SWOT, stakeholders, risk, synthesis)
+> - Write ALL article content sections: analytical lede, per-document analysis, winners/losers, key takeaways, strategic context
+> - Replace EVERY `AI_MUST_REPLACE` marker with genuine analysis
+> - Include World Bank/SCB data where relevant
+>
+> **Pass 2 (8 minutes minimum) — Mandatory Article Improvement:**
+> - `cat` and read EVERY generated article HTML file COMPLETELY — not skimming
+> - For EACH article, critically evaluate:
+>   - Is the lede specific enough? Does it name actors, cite actions, explain significance?
+>   - Are "Why It Matters" sections UNIQUE per document or generic boilerplate?
+>   - Does the SWOT analysis cite specific evidence with dok_ids?
+>   - Are stakeholder perspectives comprehensive (6+ groups)?
+>   - Are forward indicators specific with dates and trigger conditions?
+>   - Is there quantitative economic data from World Bank/SCB?
+>   - Are all `AI_MUST_REPLACE` markers eliminated?
+> - REWRITE any section that is shallow, generic, or lacks evidence
+> - ADD deeper political context: coalition dynamics, Election 2026 implications, opposition strategy
+> - ADD additional dok_id citations and named politician references
+> - VERIFY word count exceeds 1000 words per article
+> - The improved version MUST be meaningfully better than Pass 1
+>
+> **Why 2 passes?** Single-pass articles consistently read like code-generated document lists, not political intelligence. The improvement pass transforms shallow content into publication-quality journalism. Articles that feel like automated lists are REJECTED.
+>
+> **Enforcement**: Run the Article Quality Gate from §ARTICLE QUALITY MINIMUM STANDARD before committing. If it fails, continue improving until it passes.
 
 #### Step 1: Download Data (scripts + fallback to direct MCP calls)
 

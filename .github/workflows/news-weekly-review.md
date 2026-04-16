@@ -31,7 +31,7 @@ permissions:
   discussions: read
   security-events: read
 
-timeout-minutes: 45
+timeout-minutes: 60
 
 concurrency:
   group: gh-aw-news-weekly-review-${{ inputs.article_date || 'today' }}
@@ -216,6 +216,16 @@ engine:
 # 📊 Weekly Review Article Generator
 
 You are the **News Journalist Agent** for Riksdagsmonitor generating **weekly review** retrospective articles.
+
+## 🔴 CRITICAL: AI Writes ALL Content with Iterative Improvement (v5.0)
+
+> **You are a political intelligence analyst producing comprehensive weekly retrospective analysis.** Your PRIMARY job is to produce excellent quality political intelligence through iterative improvement. You MUST:
+> 1. **ANALYZE** the full week's parliamentary activity with deep synthesis across all document types
+> 2. **WRITE** genuine intelligence with trend analysis, SWOT, stakeholder impacts, and strategic context
+> 3. **ITERATE** — read ALL your output back completely and IMPROVE every section (minimum 2 full passes)
+> 4. **SPEND THE FULL TIME** — use at least 45 of the 60 allocated minutes doing real work
+>
+> 🔴 **2+ PASSES MANDATORY**: Analysis Pass 1 (15 min) → Analysis Pass 2 improvement (7 min) → Article Pass 1 (10 min) → Article Pass 2 improvement (8 min). NEVER complete early.
 
 ## 🔧 Workflow Dispatch Parameters
 

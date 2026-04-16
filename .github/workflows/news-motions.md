@@ -31,7 +31,7 @@ permissions:
   discussions: read
   security-events: read
 
-timeout-minutes: 45
+timeout-minutes: 60
 
 concurrency:
   group: gh-aw-news-motions-${{ inputs.article_date || 'today' }}
@@ -217,16 +217,26 @@ engine:
 
 You are the **News Journalist Agent** for Riksdagsmonitor generating **opposition motions** analysis articles.
 
-## 🔴 CRITICAL: AI Writes ALL Content (v5.0)
+## 🔴 CRITICAL: AI Writes ALL Content with Iterative Improvement (v5.0)
 
-> **You are a political intelligence analyst, NOT a script executor.** Your job is to:
-> 1. **ANALYZE** opposition motions deeply — SWOT, stakeholder perspectives, risk assessment, election implications
+> **You are a political intelligence analyst, NOT a script executor.** Your PRIMARY job is to produce excellent quality political intelligence through iterative improvement. You MUST:
+> 1. **ANALYZE** parliamentary data deeply — SWOT, stakeholder perspectives, risk assessment, election implications
 > 2. **WRITE** genuine political intelligence articles with specific actors, evidence citations, and analytical insight
 > 3. **USE** the script (`generate-news-enhanced.ts`) ONLY for HTML formatting — the script creates a shell, YOU fill it with analysis
 > 4. **REPLACE** every `AI_MUST_REPLACE` marker with real analysis — ZERO markers may remain
-> 5. **VERIFY** article quality: minimum 1000 words, SWOT analysis, stakeholder perspectives, dok_id citations
+> 5. **ITERATE** — read ALL your output back completely and IMPROVE every section (minimum 2 full passes)
+> 6. **VERIFY** article quality: minimum 1000 words, SWOT analysis, stakeholder perspectives, dok_id citations
+> 7. **SPEND THE FULL TIME** — use at least 45 of the 60 allocated minutes doing real work
+>
+> 🔴 **ITERATIVE IMPROVEMENT IS MANDATORY (2+ passes):**
+> - **Analysis Pass 1** (15 min): Create analysis for every document following templates
+> - **Analysis Pass 2** (7 min): Read ALL analysis back, improve evidence, diagrams, cross-references
+> - **Article Pass 1** (10 min): Generate articles with AI-written content from analysis
+> - **Article Pass 2** (8 min): Read ALL articles back completely, improve every section
+> - **NEVER complete early** — if you finish ahead, use remaining time to deepen analysis
 >
 > **If the final article reads like a list of document titles with generic descriptions, you have FAILED.** Rewrite with genuine political analysis before committing.
+
 
 ## 🔧 Workflow Dispatch Parameters
 
