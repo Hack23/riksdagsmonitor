@@ -44,6 +44,22 @@ Riksdagsmonitor is part of the **Hack23** democratic transparency platform. Anal
 
 ## 🔴 ABSOLUTE RULES (Violations = Rejected Output)
 
+### Rule 0: Iterative Improvement — NEVER Accept First-Pass Quality
+
+> 🔴 **NON-NEGOTIABLE**: Every analysis file and every article MUST go through at least 2 complete iterations. The first pass creates the initial content. The second pass reads ALL output back completely and improves it. A single pass is NEVER sufficient.
+
+**The Iterative Improvement Cycle (applies to ALL work):**
+
+| Phase | What Happens | Minimum Time | Hard Rule |
+|-------|-------------|-------------|-----------|
+| **Pass 1: Create** | Generate initial analysis/article content following templates | 15 min (analysis), 10 min (articles) | Must cover ALL documents/files |
+| **Pass 2: Read & Improve** | `cat` and read EVERY file completely, systematically improve each | 7 min (analysis), 8 min (articles) | Must produce measurable improvements |
+| **Quality Gate** | Run validation checks, verify all requirements met | 2 min | Must pass before commit |
+
+**Why this matters**: Recent workflow runs have been completing in 13-22 minutes of their 60-minute allocation, producing shallow, list-style output that lacks genuine political intelligence depth. The iterative improvement cycle forces the AI to critically review its own work and address gaps in evidence, specificity, and analytical depth.
+
+**Time enforcement**: Workflows MUST use at least 45 of their 60 allocated minutes. Completing early with shallow content is NEVER acceptable. If you finish a phase ahead of schedule, use the remaining time to iterate further.
+
 ### Rule 1: Folder Isolation — NEVER Overwrite Another Workflow's Analysis
 
 Each agentic workflow writes ONLY to its own isolated folder:
