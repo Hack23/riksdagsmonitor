@@ -245,17 +245,21 @@ This is a **retrospective** article analyzing the past 7 days of parliamentary a
 
 Uses `memory/news-generation` branch. START: read `memory/news-generation/last-run-news-weekly-review.json` + `memory/news-generation/covered-documents/{YYYY-MM-DD}.json`. END: update both + `memory/news-generation/translation-status.json`. Skip already-covered dok_ids.
 
-## ⏱️ Time Budget (45 minutes)
+## ⏱️ Time Budget (45 minutes) — ENFORCED Minimum 40 Minutes
+
+> 🔴 **SYSTEMIC ISSUE (PR #1794 audit, 2026-04-16)**: ALL news workflows completing in 13-22 min of 60-min allocation, producing shallow analysis. Agent MUST use at least 40 of 60 minutes. Completion < 40 min = insufficient iteration = REJECTED.
+
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
 - **Minutes 3–6**: Run pre-article-analysis pipeline (download data)
-- **Minutes 6–21**: 🚨 **AI Analysis (15 min minimum)**: Consult methodology guides + templates as needed. Create per-file analysis with color-coded Mermaid diagrams and evidence tables. Run quality gate bash check.
-- **Minutes 21–25**: Query documents and votes from past 7 days
-- **Minutes 25–35**: Generate articles for all 14 languages
-- **Minutes 35–40**: Validate and commit analysis + articles
-- **Minutes 40–45**: Create PR with `safeoutputs___create_pull_request`
+- **Minutes 6–21**: 🚨 **AI Analysis Pass 1 (15 min minimum)**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries.
+- **Minutes 21–28**: 🚨 **AI Analysis Pass 2 (7 min minimum)**: Read ALL analysis back completely, improve every section, replace ALL script stubs with AI analysis. Run enrichment verification gate.
+- **Minutes 28–30**: Run ENFORCED Minimum Time Gate + Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass.
+- **Minutes 30–38**: Generate articles for all 14 languages
+- **Minutes 38–42**: 🚨 **Article Improvement Pass**: Read ALL articles back, replace AI_MUST_REPLACE markers, improve content. Run article quality component gate.
+- **Minutes 42–45**: Validate, commit, create PR with `safeoutputs___create_pull_request`
 - **Minutes 43–45**: 🚨 **HARD DEADLINE** — If no safe output yet: if ANY artifacts/files were created, IMMEDIATELY stage, commit, call `safeoutputs___create_pull_request` with partial work. ONLY call `safeoutputs___noop` if truly ZERO files were created.
 
-> ⚠️ **Analysis phase is 15 minutes minimum** — every analysis file must contain color-coded Mermaid diagrams, structured evidence tables with dok_id citations, and follow template structure exactly.
+> ⚠️ **Analysis phase is 22 minutes minimum (Pass 1: 15 min + Pass 2: 7 min)** — every analysis file must contain color-coded Mermaid diagrams, structured evidence tables with dok_id citations, and follow template structure exactly. ALL script-generated stubs MUST be replaced with AI-enriched analysis.
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
 

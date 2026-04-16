@@ -286,7 +286,9 @@ You are the **Real-Time Political Monitor** for Riksdagsmonitor. Detect signific
 
 Uses `memory/news-generation` branch. START: read `memory/news-generation/last-run-news-realtime-monitor.json` + `memory/news-generation/covered-documents/{YYYY-MM-DD}.json`. END: update both + `memory/news-generation/translation-status.json`. Skip already-covered dok_ids.
 
-## ⏱️ Time Budget (45 minutes)
+## ⏱️ Time Budget (45 minutes) — ENFORCED Minimum 40 Minutes
+
+> 🔴 **SYSTEMIC ISSUE IDENTIFIED (PR #1794 audit, 2026-04-16)**: ALL news workflows were completing in 13-22 minutes of their 60-minute allocation, producing shallow analysis with unenriched script stubs. The agent MUST use at least 40 of the 60 allocated minutes. Completion before 40 minutes = insufficient iteration = REJECTED quality.
 
 ```bash
 date +%s > /tmp/start_time.txt
@@ -297,14 +299,18 @@ read START_TIME < /tmp/start_time.txt
 |-------|---------|--------|
 | Setup | 0–3 | Date check, `get_sync_status()` warm-up |
 | Download | 3–6 | Run data download scripts (MCP data fetch) |
-| **AI Analysis** | **6–21** | **🚨 MANDATORY 15 min minimum**: Consult methodology guides + templates as needed, create per-file analysis with Mermaid diagrams and evidence tables. Run quality gate bash check. |
-| Detect | 21–25 | Query MCP tools for today's activity |
-| Generate | 25–33 | Run `generate-news-enhanced.ts` script (core languages by default; supports all 14 languages via `languages=all`) |
-| Validate | 33–38 | Run `validate-news-generation.sh` |
-| Commit+PR | 38–43 | `git add && git commit`, then `safeoutputs___create_pull_request` |
+| **AI Analysis Pass 1** | **6–21** | **🚨 MANDATORY 15 min minimum**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries. |
+| **AI Analysis Pass 2** | **21–28** | **🚨 MANDATORY 7 min minimum**: Read ALL analysis back, improve every section, add cross-references, replace ALL script stubs. Run enrichment verification gate. |
+| Detect | 28–30 | Run minimum time gate + enrichment verification gate. Query MCP for today's activity. |
+| Generate | 30–36 | Run `generate-news-enhanced.ts` script. |
+| **Article Improvement** | **36–40** | **🚨 MANDATORY**: Read ALL articles back, replace AI_MUST_REPLACE markers, improve content, run article quality gate. |
+| Validate | 40–42 | Run `validate-news-generation.sh` |
+| Commit+PR | 42–45 | `git add && git commit`, then `safeoutputs___create_pull_request` |
 
 | **HARD DEADLINE** | **43–45** | 🚨 If no safe output yet: if ANY artifacts/files were created, IMMEDIATELY stage, commit, call `safeoutputs___create_pull_request` with partial work. ONLY call `safeoutputs___noop` if truly ZERO files were created. |
-> ⚠️ **Analysis phase is 15 minutes minimum** — this is NOT negotiable. PR #1452 demonstrated that < 10 min produces unacceptable analysis (plain prose, no Mermaid diagrams, no evidence tables). The AI MUST consult methodology guides and templates as needed and produce publication-quality output matching [SWOT.md](../../SWOT.md) formatting standard.
+> ⚠️ **Analysis phase is 15 minutes minimum, total analysis+article work is 34 minutes minimum** — this is NOT negotiable. PR #1452 demonstrated that < 10 min produces unacceptable analysis. PR #1794 demonstrated that 15 min total = shallow articles missing SWOT tables, Mermaid diagrams, risk matrices. The AI MUST use the full time allocation.
+
+> 🔴 **MINIMUM TIME ENFORCEMENT**: Before proceeding to article generation, the agent MUST run the Minimum Analysis Time Gate AND the Analysis Enrichment Verification Gate from SHARED_PROMPT_PATTERNS.md. Both gates MUST pass before article generation begins.
 
 **Hard cutoffs** — check elapsed time before EVERY phase:
 ```bash
@@ -443,18 +449,22 @@ fi
 
 ### 🚨🚨🚨 MANDATORY: AI Must Analyse ALL Data Using Methods & Templates (15 min minimum)
 
-> **THIS IS YOUR PRIMARY JOB.** Minimum 15 minutes. For every document, read methodology upfront then apply ALL 6 analytical lenses. Templates require structured tables, color-coded Mermaid diagrams, dok_id evidence citations — cannot be done in < 15 minutes. PR #1452 proved < 10 min = REJECTED.
+> **THIS IS YOUR PRIMARY JOB.** Minimum 15 minutes for Pass 1, plus 7 minutes for Pass 2. For every document, read methodology upfront then apply ALL 6 analytical lenses. Templates require structured tables, color-coded Mermaid diagrams, dok_id evidence citations — cannot be done in < 15 minutes. PR #1452 proved < 10 min = REJECTED. PR #1794 proved < 22 min total = script stubs remain unenriched.
+
+> 🔴 **PR #1794 LESSON**: Agent completed in 15.4 minutes of 60-minute allocation. Result: SWOT analysis file was EMPTY (script stub), 6/9 synthesis files were script stubs, 20/22 per-document analyses were 56-line stubs. Article was missing SWOT tables, Mermaid diagrams, risk matrices. NEVER repeat this pattern.
 
 **MUST do (no exceptions):**
 
 1. **Read upfront**: `analysis/methodologies/ai-driven-analysis-guide.md` + `analysis/templates/per-file-political-intelligence.md`
 2. **Consult as needed**: `political-swot-framework.md`, `political-risk-methodology.md`, `political-threat-framework.md`, `political-classification-guide.md`, `political-style-guide.md`; templates: `synthesis-summary.md`, `risk-assessment.md`, `swot-analysis.md` (needs Context table + evidence tables with dok_id/confidence/impact + Mermaid SWOT Quadrant), `stakeholder-impact.md`, `significance-scoring.md`
 3. **For EVERY document**: create `{dok_id}-analysis.md` with ALL 6 analytical lenses, ≥1 color-coded Mermaid with `style` directives, evidence citations with dok_id/vote counts/party names
-4. **Create/rewrite ALL 7 synthesis files** in `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` — exact template structure, no `[REQUIRED]` placeholders
+4. **Create/rewrite ALL 9 synthesis files** in `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` — exact template structure, no `[REQUIRED]` placeholders. **ALL 9 files MUST be AI-enriched — ZERO may retain the "pre-article-analysis script" marker.**
 5. **Run quality gate** (Step D above). Fix ALL failures before continuing.
-6. **Commit data AND analysis**: `git add analysis/data/ "analysis/daily/$ARTICLE_DATE/realtime-$HHMM/"` (AWF: use `$VAR` not `${VAR}`)
+6. **Run ENFORCED Analysis Enrichment Verification Gate** from SHARED_PROMPT_PATTERNS.md — BLOCKS if any synthesis files still have script markers.
+7. **Run ENFORCED Minimum Analysis Time Gate** from SHARED_PROMPT_PATTERNS.md — BLOCKS if < 22 minutes elapsed.
+8. **Commit data AND analysis**: `git add analysis/data/ "analysis/daily/$ARTICLE_DATE/realtime-$HHMM/"` (AWF: use `$VAR` not `${VAR}`)
 
-> ❌ FAILURE MODES: skipping analysis; plain prose without tables/diagrams; stubs with 0 evidence citations; missing dok_id; missing color-coded Mermaid; `[REQUIRED]` placeholders; SWOT without evidence tables; < 15 min analysis.
+> ❌ FAILURE MODES (PR #1794 regressions): skipping analysis enrichment; leaving script stubs in synthesis files; plain prose without tables/diagrams; stubs with 0 evidence citations; missing dok_id; missing color-coded Mermaid; `[REQUIRED]` placeholders; SWOT without evidence tables; < 22 min total analysis; completing workflow in < 40 minutes.
 
 ### 🔄 Data Lookback Fallback
 
