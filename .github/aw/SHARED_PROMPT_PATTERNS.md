@@ -77,6 +77,59 @@ find analysis/daily/2026-04-07/realtime-1411/documents -name "*.json" -exec cat 
 
 ---
 
+## 📊 9 REQUIRED Analysis Artifacts — ALL Workflows MUST Produce These
+
+> 🔴 **NON-NEGOTIABLE (Added 2026-04-16, PR #1801)**: Every news workflow MUST produce ALL 9 analysis artifacts in its scoped `analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/` directory. Producing fewer than 9 is a **CRITICAL FAILURE** that results in shallow articles missing SWOT tables, risk matrices, threat analysis, and classification data. The quality gate (§"Step 5b: MANDATORY Quality Gate") checks all 9 files.
+>
+> **Root cause**: Evening analysis workflow run #24527350450 completed in 23 minutes and produced only 3 of 9 artifacts (synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md), resulting in missing risk-assessment, swot-analysis, threat-analysis, classification-results, cross-reference-map, and data-download-manifest. This pattern was observed across multiple workflow types.
+
+| # | Required File | Template | Minimum Size | What It Must Contain |
+|---|--------------|----------|-------------|---------------------|
+| 1 | `synthesis-summary.md` | `analysis/templates/synthesis-summary.md` | 2000 bytes | SYN-ID, Intelligence Dashboard (Mermaid), Top Findings table, Aggregated SWOT, Risk Landscape, Forward Indicators |
+| 2 | `swot-analysis.md` | `analysis/templates/swot-analysis.md` | 1500 bytes | SWT-ID, Quadrant Mapping (Mermaid mindmap), ≥2 filled quadrants with dok_id evidence |
+| 3 | `risk-assessment.md` | `analysis/templates/risk-assessment.md` | 1000 bytes | RSK-ID, Risk Heat Map (Mermaid), ≥4 risks with L×I numeric scores |
+| 4 | `threat-analysis.md` | `analysis/templates/threat-analysis.md` | 1000 bytes | THR-ID, Threat Taxonomy (Mermaid), ALL 6 threat categories |
+| 5 | `classification-results.md` | `analysis/templates/political-classification.md` | 800 bytes | CLS-ID, Sensitivity Decision Tree (Mermaid), per-document classification table |
+| 6 | `significance-scoring.md` | `analysis/templates/significance-scoring.md` | 800 bytes | SIG-ID, 5-dimension scoring, Composite Score, Publication Decision |
+| 7 | `stakeholder-perspectives.md` | `analysis/templates/stakeholder-impact.md` | 1000 bytes | STA-ID, Impact Radar (Mermaid), ALL 8 stakeholder groups |
+| 8 | `cross-reference-map.md` | Cross-reference template | 500 bytes | XRF-ID, Document relationships, inter-type links |
+| 9 | `data-download-manifest.md` | Manifest template | 300 bytes | Documents Analyzed count, data sources, timestamps |
+
+**9-Artifact Completeness Gate (run BEFORE article generation):**
+```bash
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
+MISSING_ARTIFACTS=0
+TOTAL_ARTIFACTS=0
+echo "=== 📊 9-Artifact Completeness Gate ==="
+for REQUIRED_FILE in synthesis-summary.md swot-analysis.md risk-assessment.md threat-analysis.md classification-results.md significance-scoring.md stakeholder-perspectives.md cross-reference-map.md data-download-manifest.md; do
+  TOTAL_ARTIFACTS=$((TOTAL_ARTIFACTS + 1))
+  if [ ! -f "$ANALYSIS_DIR/$REQUIRED_FILE" ]; then
+    echo "🔴 MISSING: $REQUIRED_FILE — MUST CREATE"
+    MISSING_ARTIFACTS=$((MISSING_ARTIFACTS + 1))
+  else
+    wc -c < "$ANALYSIS_DIR/$REQUIRED_FILE" > /tmp/fsize.txt
+    read FSIZE < /tmp/fsize.txt
+    if [ "$FSIZE" -lt 300 ]; then
+      echo "🔴 STUB: $REQUIRED_FILE ($FSIZE bytes) — MUST ENRICH"
+      MISSING_ARTIFACTS=$((MISSING_ARTIFACTS + 1))
+    else
+      echo "✅ OK: $REQUIRED_FILE ($FSIZE bytes)"
+    fi
+  fi
+done
+echo ""
+COMPLETE=$((TOTAL_ARTIFACTS - MISSING_ARTIFACTS))
+echo "📊 Artifact completeness: $COMPLETE / $TOTAL_ARTIFACTS"
+if [ "$MISSING_ARTIFACTS" -gt 0 ]; then
+  echo "🚨🚨🚨 ARTIFACT COMPLETENESS GATE FAILED 🚨🚨🚨"
+  echo "❌ $MISSING_ARTIFACTS required artifacts missing or too small"
+  echo "Go back and create ALL 9 required files following their templates."
+  echo "DO NOT proceed to article generation until ALL 9 artifacts exist."
+fi
+```
+
+---
+
 ## 🔒 ARTICLE TYPE ISOLATION — Absolute Enforcement
 
 > **NON-NEGOTIABLE**: Different article types MUST NEVER overwrite, merge, or conflict with each other's analysis artifacts. Each workflow owns its article type exclusively.
