@@ -117,18 +117,35 @@ flowchart TD
 
 ## Forward Indicators
 
-1. **JuU committee hearings on Prop 246**: Watch for expert testimony on CRC compliance — timeline: within 2 weeks [HIGH confidence]
-2. **SkU23 plenary vote**: Permanent EV charging tax exemption heading to chamber — could pass within April [HIGH confidence]
-3. **V's fiscal alternative**: Dadgostar's fuel tax motion (HD024092) signals V will present a counter-budget narrative for Election 2026 [MEDIUM confidence]
-4. **Interpellation responses**: HD10435 (Bernadotte) and HD10436 (space industry) responses due by May — both test diplomatic sensitivity [MEDIUM confidence]
-5. **Climate debate escalation**: MJU20 audit findings + forestry deregulation = environmental groups will mobilize before summer [HIGH confidence]
+1. **JuU committee hearings on Prop 246**: Watch for expert testimony on CRC compliance — Barnombudsmannen, BRIS, Rädda Barnen expected to submit remissvar. Timeline: within 2 weeks. Gudrun Nordborg (V) recently debated criminal justice in chamber — V will mobilize in JuU. [HIGH confidence]
+2. **SkU23 plenary vote**: Permanent EV charging tax exemption heading to chamber — cross-party support likely, could pass within April. V's Dadgostar opposes fuel deductions specifically (HD024092) but may support EV charging component. [HIGH confidence]
+3. **V's fiscal alternative**: Dadgostar's fuel tax motion (HD024092) signals V will present a counter-budget narrative for Election 2026. This parallels V's historical pattern of fiscal counter-proposals ahead of elections. Svenneling (V) on defense + Haddou (V) on migration create comprehensive left platform. [HIGH confidence]
+4. **Interpellation responses**: HD10435 (Bernadotte murder — El-Haj to Malmer Stenergard) and HD10436 (space industry — Wiking to Edholm) responses due by May. Bernadotte interpellation tests Israel-Sweden diplomatic sensitivity; space industry tests government's science policy ambition. [MEDIUM confidence]
+5. **Climate debate escalation**: MJU20 Riksrevisionen audit findings on climate framework data gaps + forestry deregulation (Prop 242) + fuel deductions = triple environmental credibility challenge. Environmental organizations expected to mobilize before summer. MJU19 waste reform provides partial counternarrative. [HIGH confidence]
+6. **Deportation proposition convergence**: V (HD024090), C (HD024095), MP (HD024097) all filed against Prop 235 — watch for joint opposition statement or combined committee strategy in SfU. C's position is moderate (systematic cases over time) vs V/MP full rejection. [MEDIUM confidence]
+7. **War material export debate**: V (HD024091) + MP (HD024096) both target Prop 228 from different angles (V: full rejection; MP: ban exports to dictatorships). UU committee debate will reveal whether S joins or remains neutral. [MEDIUM confidence]
 
 ## Risk Matrix
 
-| Risk | Likelihood (1-5) | Impact (1-5) | L×I | Mitigation |
-|------|------------------|--------------|-----|------------|
-| CRC backlash on Prop 246 | 4 | 4 | **16** | Government to emphasize rehabilitation elements alongside sentencing |
-| Climate credibility erosion | 3 | 4 | **12** | Point to EV charging reform + waste recycling as green commitments |
-| Opposition coordination hardening | 4 | 3 | **12** | Government to pursue cross-party deals on Ukraine, digital governance |
-| SD-government strain on free speech | 3 | 3 | **9** | Quiet management of interpellation HD10429 response |
-| Forestry environmental protest | 2 | 3 | **6** | Industry stakeholder engagement, environmental impact assessments |
+| Risk | Likelihood (1-5) | Impact (1-5) | L×I | Mitigation | Key Evidence |
+|------|:-:|:-:|:---:|------------|-------------|
+| CRC backlash on Prop 246 | 4 | 4 | **16** | Emphasize rehabilitation alongside sentencing; engage Barnombudsmannen | HD03246 + gov press conference |
+| Opposition coordination hardening | 4 | 3 | **12** | Pursue cross-party deals on Ukraine (Props 231-232), cybersecurity | 8 motions across V, C, MP |
+| Climate credibility erosion | 3 | 4 | **12** | Point to SkU23 EV charging + MJU19 waste recycling as green commitments | HD01MJU20 audit + Prop 242 |
+| Youth justice electoral polarization | 3 | 4 | **12** | Control narrative through JuU committee; frame as protecting victims | HD03246 + V debate history |
+| SD-government internal strain | 3 | 3 | **9** | Quiet diplomatic management; deliver remaining Tidöavtalet items | HD10429 + pre-election pattern |
+| Forestry environmental protest | 2 | 3 | **6** | Industry engagement; environmental impact assessments | HD03242 |
+
+## Artifacts Inventory
+
+| # | Artifact | Status | Size |
+|---|---------|:------:|:----:|
+| 1 | synthesis-summary.md | ✅ Complete | This file |
+| 2 | swot-analysis.md | ✅ Complete | Evidence tables, TOWS matrix, cross-SWOT interference, Mermaid |
+| 3 | risk-assessment.md | ✅ Complete | Heat map, cascading risk chain, risk interconnection, 8 risks scored |
+| 4 | threat-analysis.md | ✅ Complete | 6 threat categories, attack tree, actor profile |
+| 5 | classification-results.md | ✅ Complete | 20 documents classified, PTI 7.2/10, coalition impact vector |
+| 6 | significance-scoring.md | ✅ Complete | 16 documents scored across 5 dimensions |
+| 7 | stakeholder-perspectives.md | ✅ Complete | 8/8 stakeholder groups analyzed |
+| 8 | cross-reference-map.md | ✅ Complete | 6 thematic clusters, proposition-motion links, sibling cross-refs |
+| 9 | data-download-manifest.md | ✅ Complete | 6 MCP tools queried, 24 primary + 32 cross-referenced documents |
