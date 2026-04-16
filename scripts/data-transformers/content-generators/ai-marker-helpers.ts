@@ -18,7 +18,7 @@
 const BANNED_PATTERNS: readonly { label: string; pattern: RegExp }[] = [
   { label: 'neutralText: "The political landscape remains fluid…"', pattern: /The political landscape remains fluid,? with both government and opposition positioning for advantage/i },
   { label: 'debateAnalysisMarker: "No chamber debate data is available…"', pattern: /No chamber debate data is available for these items,? limiting our ability/i },
-  { label: 'policySignificanceTouches: "Touches on {domains}."', pattern: /Touches on [\p{L}\p{N}][\p{L}\p{N}\s,&/()-]*\./iu },
+  { label: 'policySignificanceTouches: "Touches on {domains}."', pattern: /Touches on (?!.*\b(?:but|however|primarily|although|while|despite|because)\b)[\p{L}\p{N}][\p{L}\p{N}\s,&/()-]*\./iu },
   { label: 'analysisOfNDocuments: "Analysis of N documents covering…"', pattern: /Analysis of \d+ documents covering/i },
   { label: 'policySignificanceGeneric: "Requires committee review and chamber debate…"', pattern: /Requires committee review and chamber debate/i },
   { label: 'topicInFocusSuffix: "…: {Topic} in Focus"', pattern: /:\s+\w[\w\s]*\bin Focus\b/i },

@@ -11,7 +11,7 @@ import path from 'path';
 import { translateSwedishContent } from '../translation-dictionary.js';
 import type { Language } from '../types/language.js';
 import type { DateRange, ArticleQualityScore, UrgencyLabel } from '../types/article.js';
-import type { ClassificationLevel, RiskLevel, ConfidenceLabel } from '../analysis-reader.js';
+import type { ClassificationLevel, RiskLevel, ConfidenceLabel, DemocraticHealthLabel } from '../analysis-reader.js';
 import { readLatestAnalysis, deriveArticleClassificationMeta } from '../analysis-reader.js';
 import {
   NEWS_DIR,
@@ -480,7 +480,7 @@ export interface AnalysisEnrichment {
   /** Threat analysis indicators and democratic health */
   threatIndicators?: string[];
   /** Democratic health assessment */
-  democraticHealth?: string;
+  democraticHealth?: DemocraticHealthLabel;
   /** Top significance-ranked documents with reasons */
   topDocuments?: Array<{ docId: string; score: number; reason: string }>;
 }
