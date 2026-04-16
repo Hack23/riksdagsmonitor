@@ -264,6 +264,7 @@ read START_TIME < /tmp/start_time.txt
 ```
 
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
+- **Minutes 3–5**: Run pre-article-analysis pipeline (download data)
 - **Minutes 5–20**: 🚨 **AI Analysis Pass 1 (15 min minimum)**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries.
 - **Minutes 20–27**: 🚨 **AI Analysis Pass 2 (7 min minimum)**: Read ALL analysis back completely, improve every section, replace ALL script stubs with AI analysis. Run enrichment verification gate.
 - **Minutes 27–29**: Run ENFORCED Minimum Time Gate + Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass.
