@@ -36,6 +36,20 @@
 - 24 agents covering security, docs, quality, frontend, ISMS, deployment, devops, intelligence, news, content, data pipeline, data visualization, task management, UI enhancement, and gh-aw workflows
 - 87+ skills auto-load from `.github/skills/`
 
+### 5. 🔴 AI FIRST Quality Principle — Iterative Improvement Required
+> **ALL analysis and content generation MUST follow the AI FIRST principle: never accept first-pass quality.**
+
+- **Minimum 2 complete iterations** for ALL analysis and article content
+- **Pass 1**: Create initial analysis/content following templates and standards
+- **Pass 2**: Read ALL output back completely, critically evaluate, and improve every section
+- **NEVER complete a phase early** — use ALL allocated time for iteration and improvement
+- **NO SHORTCUTS** — every improvement checklist item must be addressed for every file
+- **Quality over speed** — it is ALWAYS better to spend more time improving than to commit early
+- Single-pass output is consistently shallow — first drafts lack specific evidence, use generic language, and produce boilerplate content
+- The improvement pass transforms shallow content into publication-quality political intelligence
+- If allocated 15 minutes for analysis, spend 15 minutes doing real analysis work — do not produce poor quality in a few minutes and move on
+- **Enforcement**: Workflow runs completing under 45 minutes of their 60-minute allocation indicate insufficient iteration
+
 ## 🏗️ Architecture & Design
 
 ### HTML: Semantic HTML5, ARIA, mobile-first, no div soup, no inline styles
@@ -202,16 +216,19 @@ Quality gates: HTMLHint + linkinator + Dependabot + CodeQL + secret scanning
 
 ## 💡 Remember
 
+- **AI FIRST** — Never accept first-pass quality; always iterate and improve
 - **Complete, don't ask** — Make informed decisions
 - **Security first** — Never compromise security
 - **Quality mandatory** — All checks must pass
+- **Iterate always** — Minimum 2 passes for analysis and content; spend ALL allocated time
 - **Mobile-first** — Design for smallest screen up
 - **Accessibility** — WCAG 2.1 AA required
 - **Follow patterns** — Look at existing code
 - **Use agents/skills** — Leverage specialized expertise
 - **BCP-47** — Norwegian uses `nb` not `no`
+- **No shortcuts** — Real AI work for all phases, never produce shallow output
 
 ---
 
-**Last Updated**: 2026-04-13
-**Version**: 3.1
+**Last Updated**: 2026-04-16
+**Version**: 3.2

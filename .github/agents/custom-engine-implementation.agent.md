@@ -5,6 +5,11 @@ applyTo: "pkg/workflow/*engine*.go"
 disable-model-invocation: true
 ---
 
+## 🔴 AI FIRST Quality Principle
+
+> **ALL work MUST follow the AI FIRST principle: never accept first-pass quality. Minimum 2 complete iterations for all analysis and content. Read ALL output back completely after first pass and improve every section. Spend ALL allocated time doing real work — completing early with shallow output is NEVER acceptable. NO SHORTCUTS.**
+
+
 # Custom Agentic Engine Implementation Guide
 
 This document provides a comprehensive guide for implementing custom agentic engines in GitHub Agentic Workflows (gh-aw). It covers architecture patterns, common refactoring opportunities, and step-by-step implementation instructions.
