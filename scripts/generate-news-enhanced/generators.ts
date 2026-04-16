@@ -296,23 +296,23 @@ export function buildAnalysisEnrichmentSections(
     const heading = lbl('swotHeading', lang);
     const subjectLine = swot.subject ? `<p class="swot-subject">${escapeHtml(swot.subject)}</p>` : '';
     const html = `
-      <h2>${heading}</h2>
+      <h2>${escapeHtml(heading)}</h2>
       ${subjectLine}
       <div class="swot-grid" aria-label="${escapeHtml(heading)}">
         <div class="swot-quadrant swot-strengths">
-          <h3>${lbl('strengths', lang)}</h3>
+          <h3>${escapeHtml(lbl('strengths', lang))}</h3>
           <ul>${renderEntries(swot.strengths)}</ul>
         </div>
         <div class="swot-quadrant swot-weaknesses">
-          <h3>${lbl('weaknesses', lang)}</h3>
+          <h3>${escapeHtml(lbl('weaknesses', lang))}</h3>
           <ul>${renderEntries(swot.weaknesses)}</ul>
         </div>
         <div class="swot-quadrant swot-opportunities">
-          <h3>${lbl('opportunities', lang)}</h3>
+          <h3>${escapeHtml(lbl('opportunities', lang))}</h3>
           <ul>${renderEntries(swot.opportunities)}</ul>
         </div>
         <div class="swot-quadrant swot-threats">
-          <h3>${lbl('threats', lang)}</h3>
+          <h3>${escapeHtml(lbl('threats', lang))}</h3>
           <ul>${renderEntries(swot.threats)}</ul>
         </div>
       </div>`;
@@ -338,14 +338,14 @@ export function buildAnalysisEnrichmentSections(
         const pLabel = STAKEHOLDER_LABELS[p.key]?.[lang] ?? STAKEHOLDER_LABELS[p.key]?.en ?? p.key;
         return `
           <div class="stakeholder-card">
-            <h3><span aria-hidden="true">${p.icon}</span> ${pLabel}</h3>
+            <h3><span aria-hidden="true">${p.icon}</span> ${escapeHtml(pLabel)}</h3>
             <p>${escapeHtml(text)}</p>
           </div>`;
       }).join('\n');
 
       sections.push({
         id: 'stakeholder-perspectives',
-        html: `<h2>${heading}</h2><div class="stakeholder-grid">${perspectiveHtml}</div>`,
+        html: `<h2>${escapeHtml(heading)}</h2><div class="stakeholder-grid">${perspectiveHtml}</div>`,
         className: 'stakeholder-section',
       });
     }
@@ -354,7 +354,7 @@ export function buildAnalysisEnrichmentSections(
   // ── 3. Risk & Threat Assessment Section ─────────────────────────────────
   if (enrichment.riskSummary || enrichment.democraticHealth || (enrichment.threatIndicators && enrichment.threatIndicators.length > 0)) {
     const heading = lbl('riskHeading', lang);
-    let riskHtml = `<h2>${heading}</h2>`;
+    let riskHtml = `<h2>${escapeHtml(heading)}</h2>`;
 
     if (enrichment.riskSummary) {
       riskHtml += `<p class="risk-summary">${escapeHtml(enrichment.riskSummary)}</p>`;
@@ -366,12 +366,12 @@ export function buildAnalysisEnrichmentSections(
         enrichment.democraticHealth === 'MEDIUM' ? '🟡' :
         enrichment.democraticHealth === 'LOW' ? '🟠' :
         enrichment.democraticHealth === 'AT_RISK' ? '🔴' : '🔴';
-      riskHtml += `<p class="democratic-health"><strong>${healthLabel}:</strong> <span aria-hidden="true">${healthBadge}</span> ${enrichment.democraticHealth}</p>`;
+      riskHtml += `<p class="democratic-health"><strong>${escapeHtml(healthLabel)}:</strong> <span aria-hidden="true">${healthBadge}</span> ${enrichment.democraticHealth}</p>`;
     }
 
     if (enrichment.threatIndicators && enrichment.threatIndicators.length > 0) {
       const indicatorLabel = lbl('threatIndicators', lang);
-      riskHtml += `<h3>${indicatorLabel}</h3><ul>`;
+      riskHtml += `<h3>${escapeHtml(indicatorLabel)}</h3><ul>`;
       for (const indicator of enrichment.threatIndicators.slice(0, 6)) {
         riskHtml += `<li><span aria-hidden="true">🎯</span> ${escapeHtml(indicator)}</li>`;
       }
@@ -384,7 +384,7 @@ export function buildAnalysisEnrichmentSections(
   // ── 4. Forward Indicators Section ───────────────────────────────────────
   if (enrichment.forwardIndicators && enrichment.forwardIndicators.length > 0) {
     const heading = lbl('forwardHeading', lang);
-    let forwardHtml = `<h2>${heading}</h2><ul class="forward-indicators">`;
+    let forwardHtml = `<h2>${escapeHtml(heading)}</h2><ul class="forward-indicators">`;
     for (const indicator of enrichment.forwardIndicators.slice(0, 8)) {
       forwardHtml += `<li><span aria-hidden="true">🔮</span> ${escapeHtml(indicator)}</li>`;
     }
@@ -396,9 +396,9 @@ export function buildAnalysisEnrichmentSections(
   // ── 5. Significance-Ranked Documents Section ────────────────────────────
   if (enrichment.topDocuments && enrichment.topDocuments.length > 0) {
     const heading = lbl('significanceHeading', lang);
-    let sigHtml = `<h2>${heading}</h2>`;
+    let sigHtml = `<h2>${escapeHtml(heading)}</h2>`;
     sigHtml += `<table class="significance-table" role="table" aria-label="${escapeHtml(heading)}">`;
-    sigHtml += `<thead><tr><th scope="col">${lbl('docId', lang)}</th><th scope="col">${lbl('score', lang)}</th><th scope="col">${lbl('reason', lang)}</th></tr></thead><tbody>`;
+    sigHtml += `<thead><tr><th scope="col">${escapeHtml(lbl('docId', lang))}</th><th scope="col">${escapeHtml(lbl('score', lang))}</th><th scope="col">${escapeHtml(lbl('reason', lang))}</th></tr></thead><tbody>`;
     for (const doc of enrichment.topDocuments.slice(0, 10)) {
       const scoreColor = doc.score >= 80 ? 'high' : doc.score >= 50 ? 'medium' : 'low';
       sigHtml += `<tr><td><code>${escapeHtml(doc.docId)}</code></td><td class="score-${scoreColor}">${doc.score}</td><td>${escapeHtml(doc.reason)}</td></tr>`;

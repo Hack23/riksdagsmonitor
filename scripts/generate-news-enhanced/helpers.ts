@@ -905,6 +905,17 @@ export async function writeArticlePair(htmlEN: string, htmlSV: string, slug: str
 // The BANNED_PATTERNS for content quality remain in shared.ts detectBannedPatterns().
 
 /**
+ * Template field labels and generic terms that MUST NOT appear in titles.
+ * Categories: (1) Template field labels: committee, published, what this means, why it matters, filed by
+ * (2) Generic UI text: read the full, thematic analysis, legislative pipeline, opposition strategy
+ * (3) Structural elements: report-entry, unknown, policy domain, department
+ *
+ * Hoisted to module scope to avoid recompiling the regex on every call to
+ * `generateDynamicTitle()`.
+ */
+const EXCLUDED_PATTERNS = /^(committee:?|published:?|what this means:?|why it matters:?|filed by:?|read the full|thematic analysis|legislative pipeline|opposition strategy|responses to|report-entry|unknown|policy domain|department)/i;
+
+/**
  * Generate a content-aware fallback title and subtitle from article content.
  *
  * The AI agent in the agentic workflow (.md prompt) SHOULD overwrite
@@ -926,12 +937,6 @@ export function generateDynamicTitle(
   content: string,
   docCount: number,
 ): { title: string; subtitle: string } {
-  // Template field labels and generic terms that MUST NOT appear in titles.
-  // Categories: (1) Template field labels: committee, published, what this means, why it matters, filed by
-  // (2) Generic UI text: read the full, thematic analysis, legislative pipeline, opposition strategy
-  // (3) Structural elements: report-entr, unknown, policy domain, department
-  const EXCLUDED_PATTERNS = /^(committee:?|published:?|what this means:?|why it matters:?|filed by:?|read the full|thematic analysis|legislative pipeline|opposition strategy|responses to|report-entr|unknown|policy domain|department)/i;
-
   // Extract topic hints from strong tags and h3 headings
   const seen = new Set<string>();
   const topics: string[] = [];

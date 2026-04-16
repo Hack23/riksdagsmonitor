@@ -201,7 +201,8 @@ describe('buildAnalysisEnrichmentSections', () => {
       const sections = buildAnalysisEnrichmentSections(fullEnrichment(), 'fr');
       const html = sections.find(s => s.id === 'stakeholder-perspectives')!.html;
       expect(html).toContain('Coalition gouvernementale');
-      expect(html).toContain("Bloc d'opposition");
+      // Apostrophe in "Bloc d'opposition" is HTML-escaped in headings
+      expect(html).toContain("Bloc d&#039;opposition");
     });
 
     it('renders all 6 stakeholder perspectives', () => {
