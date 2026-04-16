@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.2% </span>
+                <span class="strong">88.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>50/58</span>
+                <span class='fraction'>53/60</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.79% </span>
+                <span class="strong">90.29% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>88/98</span>
+                <span class='fraction'>93/103</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.03% </span>
+                <span class="strong">89.28% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>47/54</span>
+                <span class='fraction'>50/56</span>
             </div>
         
             
@@ -584,7 +584,22 @@
 <a name='L519'></a><a href='#L519'>519</a>
 <a name='L520'></a><a href='#L520'>520</a>
 <a name='L521'></a><a href='#L521'>521</a>
-<a name='L522'></a><a href='#L522'>522</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L522'></a><a href='#L522'>522</a>
+<a name='L523'></a><a href='#L523'>523</a>
+<a name='L524'></a><a href='#L524'>524</a>
+<a name='L525'></a><a href='#L525'>525</a>
+<a name='L526'></a><a href='#L526'>526</a>
+<a name='L527'></a><a href='#L527'>527</a>
+<a name='L528'></a><a href='#L528'>528</a>
+<a name='L529'></a><a href='#L529'>529</a>
+<a name='L530'></a><a href='#L530'>530</a>
+<a name='L531'></a><a href='#L531'>531</a>
+<a name='L532'></a><a href='#L532'>532</a>
+<a name='L533'></a><a href='#L533'>533</a>
+<a name='L534'></a><a href='#L534'>534</a>
+<a name='L535'></a><a href='#L535'>535</a>
+<a name='L536'></a><a href='#L536'>536</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -664,7 +679,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">575x</span>
-<span class="cline-any cline-yes">41430x</span>
+<span class="cline-any cline-yes">41996x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -680,7 +698,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">575x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -763,6 +790,7 @@
 <span class="cline-any cline-yes">575x</span>
 <span class="cline-any cline-yes">575x</span>
 <span class="cline-any cline-yes">575x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">575x</span>
@@ -1129,6 +1157,7 @@ import {
   getNewsIndexFilename,
   sanitizeArticleBody,
   fixHtmlNesting,
+  stripSwedishBoilerplate,
   formatDate,
   generateEventCalendar,
   generateWatchSection,
@@ -1195,13 +1224,25 @@ function countWords(html: string): number {
  * This function only enforces the 160-char length limit for Google SERP.
  * The banned-pattern check is retained as a safety net but should never
  * trigger if the AI agent followed the workflow prompt correctly.
+ *
+ * v6.0: Falls back to a title-derived description when the subtitle is
+ * still a generic template stub, rather than echoing the stub verbatim.
  */
 function generateSeoDescription(subtitle: string, title: string): string {
   let desc = subtitle;
 &nbsp;
   // Safety net: if AI agent did not replace the script stub, fall back to title
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (/Analysis of \d+ documents/i.test(desc) || /briefing on \w+:\s+and/i.test(desc)) {
-<span class="cstat-no" title="statement not covered" >    desc = `${title} — AI-generated political intelligence from Sweden's Riksdag.`;</span>
+  if (/Analysis of \d+ documents/i.test(desc)
+      || /briefing on \w+:\s+and/i.test(desc)
+      || /— AI-generated political intelligence/i.test(desc)) {
+    // Use title itself as a better fallback than the generic template stub
+    const ellipsisSuffix = '…';
+    const maxTitleLengthBeforeTruncation = MAX_META_DESCRIPTION_LENGTH - ellipsisSuffix.length;
+    desc = title.length &gt; maxTitleLengthBeforeTruncation
+      ? <span class="branch-0 cbranch-no" title="branch not covered" >`${title.substring(0, maxTitleLengthBeforeTruncation)}${ellipsisSuffix}`</span>
+      : title.length &gt; 30
+        ? title
+        : `${title} — Political intelligence from Sweden's Riksdag.`;
   }
 &nbsp;
   // Enforce SERP length limit
@@ -1285,8 +1326,9 @@ export function generateArticleHTML(data: ArticleData): string {
   const formattedDate: string = formatDate(dateObj, lang);
   const isoDate: string = dateObj.toISOString().split('T')[0] ?? <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
 &nbsp;
-  // Fix invalid HTML nesting once so both the rendered body and JSON-LD are consistent
-  const fixedContent: string = fixHtmlNesting(content);
+  // Strip Swedish boilerplate first (can create empty &lt;p&gt; tags), then fix nesting
+  // (which also strips empty &lt;p&gt; tags) so remnants are cleaned up
+  const fixedContent: string = fixHtmlNesting(stripSwedishBoilerplate(content, lang));
 &nbsp;
   // Fall back to English labels if language not supported.
   // When articleType is set, prefer the per-type localized name from
@@ -1633,7 +1675,7 @@ ${generateSiteFooter(lang)}
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-15T12:10:02.172Z
+                at 2026-04-16T01:17:30.587Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

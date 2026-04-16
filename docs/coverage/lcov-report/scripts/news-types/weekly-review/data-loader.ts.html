@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.48% </span>
+                <span class="strong">85.93% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>106/124</span>
+                <span class='fraction'>110/128</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.92% </span>
+                <span class="strong">69.4% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>93/133</span>
+                <span class='fraction'>93/134</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.33% </span>
+                <span class="strong">93.75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>14/15</span>
+                <span class='fraction'>15/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.38% </span>
+                <span class="strong">87.82% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>97/111</span>
+                <span class='fraction'>101/115</span>
             </div>
         
             
@@ -393,7 +393,20 @@
 <a name='L328'></a><a href='#L328'>328</a>
 <a name='L329'></a><a href='#L329'>329</a>
 <a name='L330'></a><a href='#L330'>330</a>
-<a name='L331'></a><a href='#L331'>331</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a>
+<a name='L341'></a><a href='#L341'>341</a>
+<a name='L342'></a><a href='#L342'>342</a>
+<a name='L343'></a><a href='#L343'>343</a>
+<a name='L344'></a><a href='#L344'>344</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -628,17 +641,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">440x</span>
 <span class="cline-any cline-yes">74x</span>
-<span class="cline-any cline-yes">171x</span>
-<span class="cline-any cline-yes">171x</span>
+<span class="cline-any cline-yes">292x</span>
+<span class="cline-any cline-yes">292x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">74x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">74x</span>
+<span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">74x</span>
@@ -952,23 +978,36 @@ export async function enrichWithFullText(
         mcpCalls.push({ tool: 'get_dokument_innehall', result: details });
 &nbsp;
         // Merge full text fields into document.
-        // NOTE: details['text'] from get_dokument_innehall is a raw database metadata
-        // dump (IDs, dates, URLs), NOT human-readable prose — do not use as fullText.
+        // get_dokument_innehall returns: { text, snippet, fulltext_available, ... }
+        //   details['text']    → raw Riksdag dump (metadata + embedded HTML) — use as fullContent
+        //   details['snippet'] → 400-char excerpt — use as summary fallback
+        // Legacy fields (fullText, html, summary, notis) are NOT returned by the
+        // current MCP server but kept as fallbacks for compatibility.
         // Also: some documents return politician profile text (MP status like
         // "Tjänstgörande riksdagsledamot..." or "Avliden YYYY-MM-DD...") in their
         // notis/summary/fullText fields — discard these to prevent them from
         // appearing as article content.
+        const str = (v: unknown): string =&gt; typeof v === 'string' ? v : '';
         const sanitize = (s: unknown): string =&gt; {
-          const str = (s as string) ?? '';
-          return isPersonProfileText(str) ? <span class="branch-0 cbranch-no" title="branch not covered" >'' : s</span>tr;
+          const val = str(s).trim();
+          return isPersonProfileText(val) ? <span class="branch-0 cbranch-no" title="branch not covered" >'' : v</span>al;
         };
         const d = doc as Record&lt;string, unknown&gt;;
+        // Primary: MCP returns 'text' (raw dump with embedded HTML from Riksdag)
+        const rawText = str(details['text']).trim();
         d['fullText'] = sanitize(details['fullText'])
           || sanitize(details['summary'])
           || sanitize(details['notis'])
           || '';
-        d['fullContent'] = (details['html'] as string) ?? '';
-        if (!d['summary'] &amp;&amp; details['summary']) d['summary'] = sanitize(details['summary']);
+        // Use raw 'text' as fullContent if it's substantial; fallback to legacy 'html'
+        d['fullContent'] = rawText.length &gt; 100
+          ? <span class="branch-0 cbranch-no" title="branch not covered" >rawText</span>
+          : str(details['html']);
+        // Propagate summary: prefer MCP 'snippet', fall back to legacy fields
+        const snippet = sanitize(details['snippet']);
+        if (!d['summary']) {
+          d['summary'] = snippet || sanitize(details['summary']) || '';
+        }
         <span class="missing-if-branch" title="if path not taken" >I</span>if (!d['notis'] &amp;&amp; details['notis']) <span class="cstat-no" title="statement not covered" >d['notis'] = sanitize(details['notis']);</span>
         d['contentFetched'] = true;
         enriched++;
@@ -1060,7 +1099,7 @@ export function normalizedCIAContext(ctx: CIAContext): CIAContext {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-15T12:10:02.172Z
+                at 2026-04-16T01:17:30.587Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
