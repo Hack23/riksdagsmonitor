@@ -636,7 +636,24 @@ fi
 
 ### Fallback: Manual Generation (ONLY if script fails with error AND no articles created)
 
-Verify MCP first: `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"` (expect `http://host.docker.internal:80/mcp/riksdag-regering`). If the script genuinely fails, generate HTML manually using `printf` appends (never heredoc) to `news/YYYY-MM-DD-breaking-HHMM-{lang}.html`. Include stylesheet link, language switcher, Schema.org, hreflang tags, `dir="rtl"` for ar/he. Check elapsed time: if >= 38 min, skip and call noop.
+Verify MCP first: `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"` (expect `http://host.docker.internal:80/mcp/riksdag-regering`). If the script genuinely fails, generate HTML manually using `printf` appends (never heredoc) to `news/YYYY-MM-DD-breaking-HHMM-{lang}.html`. Check elapsed time: if >= 38 min, skip and call noop.
+
+> 🔴 **CRITICAL — Correct HTML Template for Fallback Articles**:
+> 
+> When generating HTML manually, you MUST match the template structure used by `scripts/article-template/template.ts`. Common errors in past fallback articles:
+> 
+> 1. **Stylesheet**: Use `<link rel="stylesheet" href="../styles.css">` — **NOT** `../styles/news-article.css` (that file does not exist!)
+> 2. **Favicons**: Include favicon links (`/images/favicon-32x32.png`, `/images/favicon-16x16.png`, etc.)
+> 3. **Fonts**: Load Inter (body) AND Orbitron (headings) via Google Fonts with lazy-load pattern for Orbitron
+> 4. **Anti-flash script**: Include theme detection script before closing `</head>` to prevent flash of wrong theme
+> 5. **x-default hreflang**: Always include `<link rel="alternate" hreflang="x-default" href="...en.html">`
+> 6. **BreadcrumbList**: Include Schema.org BreadcrumbList structured data
+> 7. **Article class**: Use `<article id="main-content" class="news-article article-type-breaking">`
+> 8. **Footer structure**: Use `<footer role="contentinfo">` (not `class="site-footer"`) with language grid, stats, quick links
+> 9. **Table captions**: Include `<caption>` in all `<table>` elements for accessibility
+> 10. **Theme toggle**: Include theme toggle button with proper ARIA attributes
+> 
+> **Reference a working article** (e.g., the most recent `*-committee-reports-en.html` or `*-breaking-*-en.html`) for exact HTML structure.
 
 ## Step 3b: AI Title, Meta Description & Analysis References
 
