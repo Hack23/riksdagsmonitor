@@ -1,24 +1,30 @@
 #!/usr/bin/env tsx
 /**
  * @module pre-article-analysis
- * @description Pre-article data download and deep analysis pipeline.
+ * @description Pre-article data download pipeline.
  *
- * Orchestrates all analysis steps before article generation:
+ * Downloads all relevant parliamentary documents from riksdag-regering-mcp
+ * and persists raw data for AI-driven analysis.
+ *
+ * **IMPORTANT — AI-First Principle (Rule 2)**:
+ * This script ONLY downloads and persists data. It does NOT perform any
+ * political intelligence analysis. All analysis (classification, risk
+ * assessment, SWOT, threat, stakeholder perspectives, significance scoring,
+ * cross-references, synthesis) MUST be performed by AI agents in agentic
+ * workflows following `analysis/methodologies/ai-driven-analysis-guide.md`
+ * and using templates from `analysis/templates/`.
+ *
+ * Pipeline steps:
  * 1. Download all relevant parliamentary documents from riksdag-regering-mcp
- * 2. Political classification — Classify each document by significance, impact, domain
- * 3. Risk assessment — Assess political risks (coalition stability, anomaly detection)
- * 4. SWOT analysis — Generate political SWOT for relevant actors
- * 5. Threat analysis — Identify threats from SWOT contributions
- * 6. Stakeholder perspective analysis — Run all 6 lenses
- * 7. Significance scoring — Score all documents (0–10)
- * 8. Cross-reference mapping — Identify relationships between documents
- * 9. Synthesis — Combined analysis summary integrating all methods
- * 10. Persist — Write structured markdown to analysis/daily/YYYY-MM-DD/
+ * 2. Persist raw data to analysis/data/ (collision-free sidecar design)
+ * 3. Store per-document JSON files in analysis/daily/YYYY-MM-DD/{docType}/documents/
+ * 4. Write data-download-manifest.md (factual download summary only)
  *
  * Usage:
  *   npx tsx scripts/pre-article-analysis.ts [--date YYYY-MM-DD] [--limit N]
  *   npx tsx scripts/pre-article-analysis.ts --aggregate weekly [--date YYYY-WNN]
  *
+ * @see analysis/methodologies/ai-driven-analysis-guide.md
  * @author Hack23 AB
  * @license Apache-2.0
  */
@@ -28,11 +34,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { MCPClient } from './mcp-client/client.js';
-import { calculateCoalitionRiskIndex, detectAnomalousPatterns } from './data-transformers/risk-analysis.js';
-import type { RawDocument, CIAContext } from './data-transformers/types.js';
-import { loadCIAContext } from './news-types/weekly-review/index.js';
-import { normalizedCIAContext } from './news-types/weekly-review/data-loader.js';
-import { detectPolicyDomainsWithConfidence } from './data-transformers/policy-analysis.js';
+import type { RawDocument } from './data-transformers/types.js';
 
 import {
   downloadAllDocuments,
@@ -42,31 +44,7 @@ import {
 } from './pre-article-analysis/data-downloader.js';
 import type { DocumentTypeKey } from './pre-article-analysis/data-downloader.js';
 
-import { persistDownloadedData } from './pre-article-analysis/data-persistence.js';
-
-import type {
-  SerializationContext,
-  SignificanceEntry,
-  RiskAssessmentResult,
-  SwotSummary,
-  CrossReferenceSummary,
-  SynthesisSummary,
-} from './pre-article-analysis/markdown-serializer.js';
-
-import {
-  serializeDataManifest,
-  serializeClassificationResults,
-  serializeRiskAssessment,
-  serializeSwotAnalysis,
-  serializeThreatAnalysis,
-  serializeStakeholderPerspectives,
-  serializeSignificanceScoring,
-  serializeCrossReferenceMap,
-  serializeSynthesisSummary,
-  serializeDocumentAnalysis,
-  sanitizeDokId,
-  POLICY_DOMAIN_INSIGHT_PREFIX,
-} from './pre-article-analysis/markdown-serializer.js';
+import { persistDownloadedData, sanitizeDokId } from './pre-article-analysis/data-persistence.js';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -75,13 +53,6 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
 const ANALYSIS_DIR = path.join(REPO_ROOT, 'analysis');
-
-/**
- * Swedish phrase indicating a motion responds to a government proposition.
- * Documents from the Riksdag API always use Swedish titles regardless of
- * the target analysis language, so Swedish-only detection is correct here.
- */
-const MOTION_PROPOSITION_RESPONSE_PREFIX = 'med anledning av prop';
 
 function formatTimestampForMarkdown(date: Date = new Date()): string {
   return date.toISOString().slice(0, 16).replace('T', ' ') + ' UTC';
@@ -169,10 +140,7 @@ export function parseArgs(argv: string[]): {
     docType = docTypeArg;
   }
 
-  // --document-ids: Comma-separated Riksdag dok_id values for deep-inspection.
-  // When provided, these specific documents are fetched by ID and included in
-  // analysis regardless of their date, ensuring deep-inspection batch analysis
-  // files contain real content instead of "0 documents analyzed".
+  // --document-ids: Comma-separated Riksdag dok_id values for targeted fetch.
   const documentIdsArg = get('--document-ids');
   const DOK_ID_PATTERN = /^[A-Za-z0-9_-]+$/;
   const documentIds = documentIdsArg
@@ -248,256 +216,54 @@ function ensureDir(dir: string): void {
   fs.mkdirSync(dir, { recursive: true });
 }
 
-function writeAnalysis(dir: string, filename: string, content: string): void {
-  const filePath = path.join(dir, filename);
-  fs.writeFileSync(filePath, content, 'utf8');
-  console.log(`  ✅ Written: ${path.relative(REPO_ROOT, filePath)}`);
-}
-
 // ---------------------------------------------------------------------------
-// SWOT extraction from analysis results
+// Data manifest serialization (factual download summary — NOT analysis)
 // ---------------------------------------------------------------------------
 
-// ---------------------------------------------------------------------------
-// Stub analysis types — real analysis is now done by AI agent in workflows
-// per ai-driven-analysis-guide.md Rule 2
-// ---------------------------------------------------------------------------
-
-/** Minimal batch result stub for compatibility */
-interface StubBatchResult {
-  results: StubDocumentResult[];
-  crossDocumentLinks: Array<{ sourceId: string; targetId: string; type: string; description: string; confidence: number; reason: string }>;
-}
-interface StubDocumentResult {
-  document: RawDocument;
-  overallSignificance: number;
-  perspectives: Array<{
-    lens: string;
-    summary: string;
-    impact: string;
-    sentiment: string;
-    confidence: number;
-    keyActors: string[];
-    relatedPolicies: string[];
-    swotContribution: Array<{ forStakeholder: string; quadrant: string; text: string }>;
-    dashboardMetrics: Array<{ label: string; value: number | string; unit?: string; metricName: string }>;
-    mindmapNodes: Array<{ label: string; children?: Array<{ label: string }> }>;
-  }>;
-  crossDocumentLinks: Array<{ sourceId: string; targetId: string; type: string; description: string; confidence: number; reason: string }>;
-  keyInsights: string[];
-  confidenceScore: number;
-}
-
-/**
- * Script-based document analysis using available metadata.
- *
- * This function provides automated data extraction and basic classification
- * from document metadata (doktyp, organ, title keywords). It does NOT perform
- * deep political intelligence analysis — that is the responsibility of AI agents
- * in agentic workflows following analysis/methodologies/ai-driven-analysis-guide.md.
- *
- * Significance scoring heuristics:
- * - propositions (prop): base 5, +2 if defence/migration/budget topic
- * - committee reports (bet): base 4, +2 if justice/defence committee
- * - interpellations (ip): base 3, +1 if targets senior minister
- * - motions (mot): base 2, +1 if responds to government proposition
- * - other: base 1
- */
-function analyzeDocuments(docs: RawDocument[], _cia: unknown, _lang: string): StubBatchResult {
-  return {
-    results: docs.map(d => {
-      const doktyp = (d.doktyp || '').toLowerCase();
-      const title = (d.titel || d.title || '').toLowerCase();
-      const organ = d.organ || d.committee || '';
-
-      // Domain classification using committee→domain mapping
-      const domainResult = detectPolicyDomainsWithConfidence(d, _lang);
-      const domainConfidence = domainResult.confidence === 'HIGH' ? 70 : 30;
-
-      // Significance scoring heuristics based on document type and content
-      let significance = 1;
-      if (doktyp === 'prop') {
-        significance = 5;
-        if (title.includes('försvar') || title.includes('nato') || title.includes('budget') ||
-            title.includes('migration') || title.includes('utvisning') || title.includes('cyber')) {
-          significance += 2;
-        }
-      } else if (doktyp === 'bet') {
-        significance = 4;
-        if (['JuU', 'FöU', 'UU', 'KU'].some(c => organ.includes(c))) {
-          significance += 2;
-        }
-      } else if (doktyp === 'ip') {
-        significance = 3;
-        if (title.includes('statsråd') || title.includes('minister')) {
-          significance += 1;
-        }
-      } else if (doktyp === 'mot') {
-        significance = 2;
-        if (title.includes(MOTION_PROPOSITION_RESPONSE_PREFIX)) {
-          significance += 1; // Response to proposition = slightly more significant
-        }
-      }
-
-      // Cap at 10
-      significance = Math.min(significance, 10);
-
-      return {
-        document: d,
-        overallSignificance: significance,
-        perspectives: [],
-        crossDocumentLinks: [],
-        keyInsights: domainResult.domains.length > 0
-          ? [`${POLICY_DOMAIN_INSIGHT_PREFIX} ${domainResult.domains.join(', ')} (${domainResult.confidence} confidence)`]
-          : [],
-        confidenceScore: domainConfidence,
-      };
-    }),
-    crossDocumentLinks: [],
-  };
-}
-
-function extractSwotSummaries(results: StubBatchResult['results']): SwotSummary[] {
-  const map = new Map<string, SwotSummary>();
-
-  for (const result of results) {
-    for (const p of result.perspectives) {
-      for (const swotC of p.swotContribution) {
-        const key = swotC.forStakeholder;
-        if (!map.has(key)) {
-          map.set(key, { forStakeholder: key, strengths: [], weaknesses: [], opportunities: [], threats: [] });
-        }
-        const entry = map.get(key)!;
-        switch (swotC.quadrant) {
-          case 'strength': entry.strengths.push(swotC.text); break;
-          case 'weakness': entry.weaknesses.push(swotC.text); break;
-          case 'opportunity': entry.opportunities.push(swotC.text); break;
-          case 'threat': entry.threats.push(swotC.text); break;
-        }
-      }
-    }
-  }
-
-  // Deduplicate and cap
-  return [...map.values()].map(s => ({
-    ...s,
-    strengths: [...new Set(s.strengths)].slice(0, 5),
-    weaknesses: [...new Set(s.weaknesses)].slice(0, 5),
-    opportunities: [...new Set(s.opportunities)].slice(0, 5),
-    threats: [...new Set(s.threats)].slice(0, 5),
-  }));
-}
-
-// ---------------------------------------------------------------------------
-// Significance entries
-// ---------------------------------------------------------------------------
-
-function buildSignificanceEntries(results: StubBatchResult['results']): SignificanceEntry[] {
-  return results.map(r => ({
-    dok_id: r.document.dok_id || 'N/A',
-    title: r.document.titel || r.document.title || r.document.dok_id || 'Unknown',
-    score: r.overallSignificance,
-    doctype: r.document.doktyp || 'unknown',
-  }));
-}
-
-// ---------------------------------------------------------------------------
-// Risk assessment
-// ---------------------------------------------------------------------------
-
-function buildRiskAssessment(docs: RawDocument[], ciaContext: CIAContext): RiskAssessmentResult {
-  const normalizedContext = normalizedCIAContext(ciaContext);
-  // Attempt to derive basic coalition signals from document data
-  const riskIndex = calculateCoalitionRiskIndex(normalizedContext);
-  const anomalies = detectAnomalousPatterns(normalizedContext);
-
-  // Derive implications from document significance
-  const highSignificance = docs.filter(d => {
-    const titleText = (d.titel || d.title || '').toLowerCase();
-    return (
-      d.doktyp === 'prop' ||
-      titleText.includes('budget') ||
-      titleText.includes('försvar') ||
-      titleText.includes('nato')
-    );
-  });
-
-  const implications: string[] = [
-    `${docs.length} documents analyzed for risk indicators`,
-    `${highSignificance.length} high-significance documents identified`,
-    riskIndex.level !== 'LOW'
-      ? `Coalition stability at ${riskIndex.level} risk — monitor upcoming votes`
-      : 'Coalition stability appears stable based on available data',
+function serializeDataManifest(
+  date: string,
+  generatedAt: string,
+  dataSources: string[],
+  docCounts: Record<string, number>,
+  dateFilteredTotal: number,
+  dataFreshness: string | null,
+): string {
+  const totalDocs = Object.values(docCounts).reduce((a, b) => a + b, 0);
+  const lines: string[] = [
+    `# Data Download Manifest — ${date}`,
+    '',
+    `**Generated**: ${generatedAt}`,
+    `**Data Sources**: ${dataSources.join(', ')}`,
+    `**Documents Downloaded**: ${totalDocs}`,
+    `**Documents Selected (date-filtered)**: ${dateFilteredTotal}`,
+    `**Produced By**: pre-article-analysis script (data download only)`,
+    '',
+    '> ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.',
+    '> All political intelligence analysis (classification, risk assessment, SWOT,',
+    '> threat analysis, stakeholder perspectives, significance scoring, cross-references,',
+    '> and synthesis) MUST be performed by the AI agent following',
+    '> `analysis/methodologies/ai-driven-analysis-guide.md` and using templates',
+    '> from `analysis/templates/`.',
+    '',
+    '## Document Counts by Type',
+    '',
   ];
 
-  return {
-    coalitionRiskScore: riskIndex.score,
-    riskLevel: riskIndex.level,
-    riskSummary: riskIndex.summary,
-    anomalyFlags: anomalies.map(a => ({
-      type: a.type,
-      severity: a.severity,
-      description: a.description,
-    })),
-    implications,
-  };
-}
-
-// ---------------------------------------------------------------------------
-// Synthesis
-// ---------------------------------------------------------------------------
-
-function buildSynthesis(
-  docs: RawDocument[],
-  significanceEntries: SignificanceEntry[],
-  riskResult: RiskAssessmentResult,
-  dataFreshness?: string | null,
-): SynthesisSummary {
-  const totalDocs = docs.length;
-  const topDocs = [...significanceEntries].sort((a, b) => b.score - a.score).slice(0, 10);
-  const avgScore = significanceEntries.length > 0
-    ? significanceEntries.reduce((s, e) => s + e.score, 0) / significanceEntries.length
-    : 0;
-
-  const overallConfidence: 'HIGH' | 'MEDIUM' | 'LOW' =
-    totalDocs >= 20 ? 'HIGH' : totalDocs >= 10 ? 'MEDIUM' : 'LOW';
-
-  const keyFindings: string[] = [
-    `Analyzed ${totalDocs} parliamentary documents with avg significance ${avgScore.toFixed(1)}/10`,
-    `Coalition risk level: ${riskResult.riskLevel} (score: ${riskResult.coalitionRiskScore}/100)`,
-    `Top document: "${topDocs[0]?.title || 'N/A'}" (significance: ${topDocs[0]?.score ?? 0}/10)`,
-  ];
-
-  if (riskResult.anomalyFlags.length > 0) {
-    keyFindings.push(`${riskResult.anomalyFlags.length} anomaly flag(s) detected requiring editorial attention`);
+  for (const [type, count] of Object.entries(docCounts)) {
+    lines.push(`- **${type}**: ${count} documents`);
   }
+
+  lines.push('', '## Data Quality Notes', '');
+  lines.push('All documents sourced from official riksdag-regering-mcp API.');
   if (dataFreshness) {
-    keyFindings.push(`Data sourced from ${dataFreshness} via lookback fallback — check freshness indicators`);
+    lines.push(`Data sourced from ${dataFreshness} via lookback fallback — check freshness indicators.`);
   }
 
-  const executiveSummary = [
-    `Pre-article analysis completed for ${totalDocs} documents.`,
-    `Overall political risk: ${riskResult.riskLevel}.`,
-    `Average document significance: ${avgScore.toFixed(1)}/10.`,
-    overallConfidence === 'HIGH'
-      ? 'High data coverage — analysis results are reliable for article generation.'
-      : 'Partial data coverage — treat analysis as directional guidance.',
-    dataFreshness ? `Note: Documents sourced from ${dataFreshness} via lookback (article date differs).` : '',
-  ].filter(Boolean).join(' ');
-
-  return {
-    totalDocs,
-    executiveSummary,
-    keyFindings,
-    topDocuments: topDocs,
-    overallConfidence,
-    aggregateRiskLevel: riskResult.riskLevel,
-    dataFreshness: dataFreshness ?? null,
-  };
+  return lines.join('\n');
 }
 
 // ---------------------------------------------------------------------------
-// Weekly aggregation
+// Weekly aggregation (data summary only — no analysis)
 // ---------------------------------------------------------------------------
 
 function runWeeklyAggregation(weekLabel: string): void {
@@ -505,9 +271,9 @@ function runWeeklyAggregation(weekLabel: string): void {
   ensureDir(weekDir);
 
   const dailyRoot = path.join(ANALYSIS_DIR, 'daily');
-  let allSyntheses = '';
   let includedDays = 0;
-  let aggregatedDocumentsAnalyzed = 0;
+  let aggregatedDocumentsDownloaded = 0;
+  const dayList: string[] = [];
 
   const parsedWeek = parseIsoWeekLabel(weekLabel);
   if (!parsedWeek) {
@@ -522,94 +288,88 @@ function runWeeklyAggregation(weekLabel: string): void {
     ]);
     for (const dir of dailyDirs) {
       if (!isDateInIsoWeek(dir, weekLabel)) continue;
-      // Look for synthesis in unscoped path first, then in known doc-type subdirectories
-      const unscopedSynth = path.join(dailyRoot, dir, 'synthesis-summary.md');
+      // Check for data-download-manifest.md in unscoped path or doc-type subdirectories
       const dayDir = path.join(dailyRoot, dir);
-      const scopedSynthPaths: string[] = [];
+      const unscopedManifest = path.join(dayDir, 'data-download-manifest.md');
+      let dayHasData = false;
+
+      if (fs.existsSync(unscopedManifest)) {
+        dayHasData = true;
+        const content = fs.readFileSync(unscopedManifest, 'utf8');
+        const docsMatch = /(?:^|\n)\*\*Documents Downloaded\*\*:\s*(\d+)/.exec(content)
+          || /(?:^|\n)\*\*Documents Analyzed\*\*:\s*(\d+)/.exec(content);
+        if (docsMatch?.[1]) {
+          aggregatedDocumentsDownloaded += Number(docsMatch[1]);
+        }
+      }
+
       if (fs.existsSync(dayDir) && fs.statSync(dayDir).isDirectory()) {
-        // Sort subdirectories for deterministic output across filesystems
         for (const sub of fs.readdirSync(dayDir).sort()) {
           if (!KNOWN_DOC_TYPES.has(sub)) continue;
-          const subSynth = path.join(dayDir, sub, 'synthesis-summary.md');
-          if (fs.existsSync(subSynth)) {
-            scopedSynthPaths.push(subSynth);
+          const subManifest = path.join(dayDir, sub, 'data-download-manifest.md');
+          if (fs.existsSync(subManifest) && !dayHasData) {
+            dayHasData = true;
+            const content = fs.readFileSync(subManifest, 'utf8');
+            const docsMatch = /(?:^|\n)\*\*Documents Downloaded\*\*:\s*(\d+)/.exec(content)
+              || /(?:^|\n)\*\*Documents Analyzed\*\*:\s*(\d+)/.exec(content);
+            if (docsMatch?.[1]) {
+              aggregatedDocumentsDownloaded += Number(docsMatch[1]);
+            }
           }
         }
       }
 
-      // Prefer the unscoped synthesis when it exists (canonical copy created by
-      // the copy-to-unscoped step).  Otherwise include all scoped syntheses so
-      // no doc-type run is silently omitted.
-      const hasUnscoped = fs.existsSync(unscopedSynth);
-      const pathsToProcess = hasUnscoped ? [unscopedSynth] : scopedSynthPaths;
-      let dayHasSynthesis = false;
-
-      for (const synthPath of pathsToProcess) {
-        if (!fs.existsSync(synthPath)) continue;
-
-        const dailySynthesis = fs.readFileSync(synthPath, 'utf8');
-        const subDir = path.basename(path.dirname(synthPath));
-        const label = hasUnscoped ? dir : `${dir} (${subDir})`;
-        allSyntheses += `\n\n---\n\n## Day: ${label}\n\n${dailySynthesis}`;
-
-        if (!dayHasSynthesis) {
-          includedDays += 1;
-          dayHasSynthesis = true;
-        }
-
-        const docsMatch = /(?:^|\n)\*\*Documents Analyzed\*\*:\s*(\d+)/.exec(dailySynthesis);
-        if (docsMatch?.[1]) {
-          aggregatedDocumentsAnalyzed += Number(docsMatch[1]);
-        } else {
-          console.warn(`[pre-analysis] Could not parse Documents Analyzed from ${synthPath}`);
-        }
+      if (dayHasData) {
+        includedDays++;
+        dayList.push(dir);
       }
     }
   }
 
-  const weeklyContent = buildWeeklySynthesisMarkdown({
+  const weeklyContent = buildWeeklySummaryMarkdown({
     weekLabel,
     generatedAt: formatTimestampForMarkdown(),
-    documentsAnalyzed: aggregatedDocumentsAnalyzed,
+    documentsDownloaded: aggregatedDocumentsDownloaded,
     daysIncluded: includedDays,
-    allSyntheses,
+    dayList,
   });
 
-  writeAnalysis(weekDir, 'weekly-synthesis.md', weeklyContent);
-  console.log(`\n✅ Weekly aggregation written to analysis/weekly/${weekLabel}/`);
+  const filePath = path.join(weekDir, 'weekly-data-summary.md');
+  fs.writeFileSync(filePath, weeklyContent, 'utf8');
+  console.log(`  ✅ Written: ${path.relative(REPO_ROOT, filePath)}`);
+  console.log(`\n✅ Weekly data summary written to analysis/weekly/${weekLabel}/`);
 }
 
-export function buildWeeklySynthesisMarkdown(opts: {
+export function buildWeeklySummaryMarkdown(opts: {
   weekLabel: string;
   generatedAt: string;
-  documentsAnalyzed: number;
+  documentsDownloaded: number;
   daysIncluded: number;
-  allSyntheses: string;
+  dayList: string[];
 }): string {
-  const confidence = opts.documentsAnalyzed >= 20
-    ? 'HIGH'
-    : (opts.documentsAnalyzed >= 8 ? 'MEDIUM' : 'LOW');
-
   return [
-    `# Weekly Analysis Aggregation — ${opts.weekLabel}`,
+    `# Weekly Data Summary — ${opts.weekLabel}`,
     '',
     `**Generated**: ${opts.generatedAt}`,
-    '**Data Sources**: Aggregated from daily synthesis summaries',
-    `**Documents Analyzed**: ${opts.documentsAnalyzed}`,
-    `**Confidence**: ${confidence}`,
+    '**Data Sources**: Aggregated from daily data download manifests',
+    `**Documents Downloaded**: ${opts.documentsDownloaded}`,
     `**Period**: ${opts.weekLabel}`,
     `**Days Included**: ${opts.daysIncluded}`,
     '',
-    '## Summary',
+    '> ℹ️ **Data-Only Summary**: This file summarizes downloaded data for the week.',
+    '> All political intelligence analysis MUST be performed by AI agents following',
+    '> `analysis/methodologies/ai-driven-analysis-guide.md`.',
     '',
-    'Aggregation of daily analysis synthesis results for the week.',
+    '## Days with Data',
     '',
-    opts.allSyntheses || '_No daily analysis results found for this week._',
+    opts.dayList.length > 0
+      ? opts.dayList.map(d => `- ${d}`).join('\n')
+      : '_No data downloads found for this week._',
   ].join('\n');
 }
 
 // ---------------------------------------------------------------------------
-// Main pipeline
+// Main pipeline — DATA DOWNLOAD ONLY
 // ---------------------------------------------------------------------------
 
 async function runPreArticleAnalysis(opts: {
@@ -624,16 +384,18 @@ async function runPreArticleAnalysis(opts: {
   const { date, limit, aggregate, weekLabel, rm, docType, documentIds } = opts;
 
   if (aggregate && weekLabel) {
-    console.log(`\n📅 Running weekly aggregation for: ${weekLabel}`);
+    console.log(`\n📅 Running weekly data summary for: ${weekLabel}`);
     runWeeklyAggregation(weekLabel);
     return;
   }
 
-  console.log(`\n🚀 Pre-Article Analysis Pipeline — ${date}`);
+  console.log(`\n🚀 Pre-Article Data Download Pipeline — ${date}`);
   console.log('='.repeat(50));
+  console.log('ℹ️  This script downloads data ONLY. Analysis is performed by AI agents.');
+  console.log('   See: analysis/methodologies/ai-driven-analysis-guide.md');
 
   // When --doc-type is specified, scope output to a subdirectory to avoid
-  // conflicts between parallel workflow runs (e.g. propositions vs committee-reports).
+  // conflicts between parallel workflow runs.
   const outputDir = docType
     ? path.join(ANALYSIS_DIR, 'daily', date, docType)
     : path.join(ANALYSIS_DIR, 'daily', date);
@@ -657,18 +419,14 @@ async function runPreArticleAnalysis(opts: {
   const { data, manifest } = await downloadAllDocuments(client, downloadOpts);
   const flattenedDocs = flattenDocuments(data);
 
-  // Build a set of explicitly requested document IDs for deep-inspection bypass.
+  // Build a set of explicitly requested document IDs for targeted fetch.
   const requestedIdSet = new Set(documentIds.map(id => id.toUpperCase()));
 
   const allDocs = flattenedDocs.filter((doc: RawDocument) => {
-    // Documents explicitly requested by ID are ALWAYS included regardless of date.
-    // This is critical for deep-inspection which targets specific documents that
-    // may have been published on previous days.
     const docId = doc.dok_id ?? '';
     if (requestedIdSet.size > 0 && requestedIdSet.has(docId.toUpperCase())) {
       return true;
     }
-    // Only keep documents whose datum matches the requested analysis date (YYYY-MM-DD).
     if (doc.datum && typeof doc.datum === 'string') {
       return doc.datum.slice(0, 10) === date;
     }
@@ -676,15 +434,6 @@ async function runPreArticleAnalysis(opts: {
   });
 
   // ── Lookback fallback: widen the date filter when no documents match ────
-  // When no documents match the exact date (common on weekends, holidays, or
-  // low-activity days), expand the filter to include previous business days
-  // (up to MAX_LOOKBACK_BUSINESS_DAYS).  This prevents empty "Documents
-  // Analyzed: 0" synthesis files from propagating to article generators.
-  //
-  // The requestedIdSet guard ensures lookback is ONLY used for generic
-  // date-based runs. Deep-inspection runs (--document-ids) fetch specific
-  // documents by ID in the block below, so lookback is unnecessary and would
-  // introduce unrelated documents.
   let dataFreshness: string | null = null;
   if (allDocs.length === 0 && requestedIdSet.size === 0) {
     for (let lookback = 1; lookback <= MAX_LOOKBACK_BUSINESS_DAYS; lookback++) {
@@ -708,7 +457,7 @@ async function runPreArticleAnalysis(opts: {
   }
 
   // If document IDs were requested but not found in the bulk download, attempt
-  // to fetch them individually via fetchDocumentDetails so deep-inspection always has data.
+  // to fetch them individually via fetchDocumentDetails.
   if (requestedIdSet.size > 0) {
     const foundIds = new Set(allDocs.map((d: RawDocument) => (d.dok_id ?? '').toUpperCase()));
     const missingIds = documentIds.filter(id => !foundIds.has(id.toUpperCase()));
@@ -731,14 +480,12 @@ async function runPreArticleAnalysis(opts: {
       }
     }
   }
-  // Compute excluded count from the original date-filtered set (before any
-  // by-ID fetches were appended).  `Math.max(0, …)` guards against cases
-  // where individually-fetched documents grow `allDocs` beyond `flattenedDocs`.
+
   const excludedDocsCount = Math.max(0, flattenedDocs.length - allDocs.length);
 
   console.log(`   Downloaded ${flattenedDocs.length} unique documents from ${manifest.dataSources.length} MCP tools`);
   console.log(
-    `   Selected ${allDocs.length} documents for analysis for ${date} (${excludedDocsCount} with missing or non-matching dates excluded)`,
+    `   Selected ${allDocs.length} documents for ${date} (${excludedDocsCount} with missing or non-matching dates excluded)`,
   );
   if (dataFreshness) {
     console.log(`   📅 Data freshness: documents sourced from ${dataFreshness} (lookback active)`);
@@ -746,21 +493,22 @@ async function runPreArticleAnalysis(opts: {
   console.log(`   Duration: ${manifest.durationMs}ms`);
   console.log(`   Riksmöte: ${resolvedRm}`);
 
-  // ── Step 1a: Persist raw data to analysis/data/ for verification & reuse ──
-  console.log('\n🗄️  Step 1a: Persisting raw MCP data to analysis/data/...');
+  // ── Step 2: Persist raw data to analysis/data/ for verification & reuse ──
+  console.log('\n🗄️  Step 2: Persisting raw MCP data to analysis/data/...');
   const persistResult = persistDownloadedData(data, resolvedRm);
   console.log(`   🗄️  Persisted data for ${persistResult.written} documents to ${path.relative(REPO_ROOT, persistResult.dataRoot)}/ (${persistResult.skipped} skipped)`);
 
-  const ctx: SerializationContext = {
-    date,
-    generatedAt,
-    dataSources: manifest.dataSources,
-  };
+  // Write data-download-manifest.md (factual download summary — NOT analysis)
+  const manifestContent = serializeDataManifest(
+    date, generatedAt, manifest.dataSources, manifest.docCounts,
+    allDocs.length, dataFreshness,
+  );
+  const manifestPath = path.join(outputDir, 'data-download-manifest.md');
+  fs.writeFileSync(manifestPath, manifestContent, 'utf8');
+  console.log(`  ✅ Written: ${path.relative(REPO_ROOT, manifestPath)}`);
 
-  writeAnalysis(outputDir, 'data-download-manifest.md', serializeDataManifest(ctx, manifest.docCounts, allDocs.length));
-
-  // ── Step 1b: Store each downloaded document as JSON ─────────────────────
-  console.log('\n💾 Step 1b: Storing downloaded documents...');
+  // ── Step 3: Store each downloaded document as JSON ─────────────────────
+  console.log('\n💾 Step 3: Storing downloaded documents as JSON...');
   const documentsDir = path.join(outputDir, 'documents');
   ensureDir(documentsDir);
   let storedCount = 0;
@@ -770,7 +518,6 @@ async function runPreArticleAnalysis(opts: {
     const baseName = sanitizeDokId(dokId) || `unknown-doc-${i + 1}`;
     let fileName = baseName;
     let attempt = 0;
-    // Ensure no overwrite if two docs resolve to the same sanitised name.
     while (fs.existsSync(path.join(documentsDir, `${fileName}.json`))) {
       attempt++;
       fileName = `${baseName}-${attempt}`;
@@ -782,95 +529,22 @@ async function runPreArticleAnalysis(opts: {
   console.log(`   💾 Stored ${storedCount} documents as JSON in ${path.relative(REPO_ROOT, documentsDir)}/`);
 
   if (allDocs.length === 0) {
-    console.warn('\n⚠️  No documents downloaded. Analysis will be minimal.');
+    console.warn('\n⚠️  No documents downloaded for this date.');
   }
-
-  // ── Step 2: Classification ────────────────────────────────────────────────
-  console.log('\n🏷️  Step 2: Classifying documents...');
-  const ciaContext = loadCIAContext();
-  const batchResult = analyzeDocuments(allDocs, ciaContext, 'en');
-  // Cast stub results to the serializer's expected type — structurally compatible
-  // but TypeScript can't verify RawDocument against the index-signature document shape.
-  const serializableResults = batchResult.results as unknown as Parameters<typeof serializeClassificationResults>[1];
-  writeAnalysis(outputDir, 'classification-results.md', serializeClassificationResults(ctx, serializableResults));
-
-  // ── Step 3: Risk assessment ───────────────────────────────────────────────
-  console.log('\n⚠️  Step 3: Assessing political risks...');
-  const riskResult = buildRiskAssessment(allDocs, ciaContext);
-  writeAnalysis(outputDir, 'risk-assessment.md', serializeRiskAssessment(ctx, allDocs.length, riskResult));
-
-  // ── Step 4: SWOT analysis ─────────────────────────────────────────────────
-  console.log('\n📊 Step 4: Generating SWOT analysis...');
-  const swots = extractSwotSummaries(batchResult.results);
-  writeAnalysis(outputDir, 'swot-analysis.md', serializeSwotAnalysis(ctx, allDocs.length, swots));
-
-  // ── Step 5: Threat analysis ───────────────────────────────────────────────
-  console.log('\n🔴 Step 5: Analyzing threats...');
-  writeAnalysis(outputDir, 'threat-analysis.md', serializeThreatAnalysis(ctx, serializableResults));
-
-  // ── Step 6: Stakeholder perspectives ─────────────────────────────────────
-  console.log('\n👥 Step 6: Running stakeholder perspective analysis...');
-  writeAnalysis(outputDir, 'stakeholder-perspectives.md', serializeStakeholderPerspectives(ctx, serializableResults));
-
-  // ── Step 7: Significance scoring ─────────────────────────────────────────
-  console.log('\n📈 Step 7: Scoring document significance...');
-  const significanceEntries = buildSignificanceEntries(batchResult.results);
-  writeAnalysis(outputDir, 'significance-scoring.md', serializeSignificanceScoring(ctx, significanceEntries));
-
-  // ── Step 8: Cross-reference mapping ──────────────────────────────────────
-  console.log('\n🔗 Step 8: Mapping cross-document references...');
-  const crossRefSummary: CrossReferenceSummary = {
-    docCount: allDocs.length,
-    totalLinks: batchResult.crossDocumentLinks.length,
-    links: batchResult.crossDocumentLinks,
-  };
-  writeAnalysis(outputDir, 'cross-reference-map.md', serializeCrossReferenceMap(ctx, crossRefSummary));
-
-  // ── Step 9: Synthesis ─────────────────────────────────────────────────────
-  console.log('\n🧩 Step 9: Synthesizing all analysis...');
-  const synthesis = buildSynthesis(allDocs, significanceEntries, riskResult, dataFreshness);
-  writeAnalysis(outputDir, 'synthesis-summary.md', serializeSynthesisSummary(ctx, synthesis));
-
-  // ── Step 10: Per-document analysis files ─────────────────────────────────
-  console.log('\n📝 Step 10: Generating per-document analysis files...');
-  let perDocCount = 0;
-  for (let i = 0; i < batchResult.results.length; i++) {
-    const result = batchResult.results[i];
-    const dokId = result.document.dok_id || result.document.titel || result.document.title || `unknown-analysis-${i + 1}`;
-    const baseName = sanitizeDokId(dokId) || `unknown-analysis-${i + 1}`;
-    let fileName = `${baseName}-analysis.md`;
-    let attempt = 0;
-    // Ensure no overwrite if two docs resolve to the same sanitised name.
-    while (fs.existsSync(path.join(documentsDir, fileName))) {
-      attempt++;
-      fileName = `${baseName}-${attempt}-analysis.md`;
-    }
-    writeAnalysis(documentsDir, fileName, serializeDocumentAnalysis(ctx, result as unknown as Parameters<typeof serializeDocumentAnalysis>[1]));
-    perDocCount++;
-  }
-  console.log(`   📝 Generated ${perDocCount} per-document analysis files`);
 
   // ── Summary ───────────────────────────────────────────────────────────────
-  // When --doc-type is used, batch artifacts stay ONLY in the scoped subdirectory
-  // (e.g., analysis/daily/<date>/propositions/).  analysis-reader.ts scans
-  // subdirectories automatically and prefers them over root-level files, so
-  // downstream consumers will find them.
-  //
-  // Root-level copies are deliberately NOT created — this prevents low-quality
-  // script-generated heuristic analysis from shadowing high-quality AI-generated
-  // analysis produced by the agentic workflows.  AI workflows write to the same
-  // article-type subfolders and follow analysis/methodologies/ai-driven-analysis-guide.md
-  // for deep political intelligence with Mermaid diagrams and evidence tables.
-
-  const totalFiles = 9 + perDocCount + storedCount;
-  console.log(`\n✅ Analysis complete! Results in: ${path.relative(REPO_ROOT, outputDir)}/`);
-  console.log(`   📄 ${totalFiles} total files written (9 batch + ${perDocCount} analyses + ${storedCount} documents)`);
-  console.log(`   📊 ${allDocs.length} documents analyzed`);
-  console.log(`   🎯 Overall confidence: ${synthesis.overallConfidence}`);
-  console.log(`   ⚠️  Risk level: ${synthesis.aggregateRiskLevel}`);
+  const totalFiles = 1 + storedCount; // 1 manifest + stored documents
+  console.log(`\n✅ Data download complete! Results in: ${path.relative(REPO_ROOT, outputDir)}/`);
+  console.log(`   📄 ${totalFiles} total files written (1 manifest + ${storedCount} documents)`);
+  console.log(`   📊 ${allDocs.length} documents available for AI analysis`);
   if (docType) {
     console.log(`   📋 Scoped to: ${docType}`);
   }
+  console.log('');
+  console.log('   ℹ️  Next step: AI agent performs analysis using:');
+  console.log('      - analysis/methodologies/ai-driven-analysis-guide.md');
+  console.log('      - analysis/templates/ (per-file analysis templates)');
+  console.log('      - npx tsx scripts/catalog-downloaded-data.ts --pending-only');
 }
 
 // ---------------------------------------------------------------------------
