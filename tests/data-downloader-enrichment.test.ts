@@ -344,4 +344,62 @@ describe('data-downloader enrichment', () => {
       expect(fetchDetails).not.toHaveBeenCalled();
     });
   });
+
+  describe('MCP response field mapping (text/snippet)', () => {
+    it('should assign fullContent from MCP text field when length exceeds threshold', async () => {
+      const longText = '<dokumentstatus>' + 'X'.repeat(FULL_TEXT_MIN_LENGTH + 1) + '</dokumentstatus>';
+      const doc = makeRawDoc();
+      const fetchDetails = vi.fn().mockResolvedValue({ text: longText, snippet: 'Short summary' });
+      const client = createMockClient(fetchDetails, [doc]);
+
+      await downloadAllDocuments(client, {
+        limit: 1, rm: '2025/26', docTypes: ['propositions'], enrichLimit: 1,
+      });
+
+      expect((doc as Record<string, unknown>)['fullContent']).toBe(longText);
+    });
+
+    it('should prefer text field over html field for fullContent', async () => {
+      const longText = '<div>' + 'T'.repeat(FULL_TEXT_MIN_LENGTH + 1) + '</div>';
+      const longHtml = '<p>' + 'H'.repeat(FULL_TEXT_MIN_LENGTH + 1) + '</p>';
+      const doc = makeRawDoc();
+      const fetchDetails = vi.fn().mockResolvedValue({ text: longText, html: longHtml });
+      const client = createMockClient(fetchDetails, [doc]);
+
+      await downloadAllDocuments(client, {
+        limit: 1, rm: '2025/26', docTypes: ['propositions'], enrichLimit: 1,
+      });
+
+      // text field takes priority over html
+      expect((doc as Record<string, unknown>)['fullContent']).toBe(longText);
+    });
+
+    it('should use snippet as summary fallback when no legacy summary field exists', async () => {
+      const doc = makeRawDoc();
+      const fetchDetails = vi.fn().mockResolvedValue({
+        text: 'short', snippet: 'A snippet summary of the document',
+      });
+      const client = createMockClient(fetchDetails, [doc]);
+
+      await downloadAllDocuments(client, {
+        limit: 1, rm: '2025/26', docTypes: ['propositions'], enrichLimit: 1,
+      });
+
+      expect((doc as Record<string, unknown>)['summary']).toBe('A snippet summary of the document');
+    });
+
+    it('should not overwrite existing summary with snippet', async () => {
+      const doc = makeRawDoc({ summary: 'existing summary' });
+      const fetchDetails = vi.fn().mockResolvedValue({
+        snippet: 'snippet summary',
+      });
+      const client = createMockClient(fetchDetails, [doc]);
+
+      await downloadAllDocuments(client, {
+        limit: 1, rm: '2025/26', docTypes: ['propositions'], enrichLimit: 1,
+      });
+
+      expect((doc as Record<string, unknown>)['summary']).toBe('existing summary');
+    });
+  });
 });
