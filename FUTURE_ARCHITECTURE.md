@@ -65,7 +65,7 @@ This document outlines the comprehensive architectural evolution roadmap for Rik
 
 **AWS Serverless Strategy:**
 - ☁️ **Single Cloud Provider** - AWS only per [Hack23 ISMS SUPPLIER.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/SUPPLIER.md)
-- 🤖 **Amazon Bedrock First** - All AI via Bedrock (Claude Opus 4.6, Llama 4 405B, Nova Premier) - bleeding-edge models only
+- 🤖 **Amazon Bedrock First** - All AI via Bedrock (Claude Opus 4.7, Llama 4 405B, Nova Premier) - bleeding-edge models only
 - ⚡ **Pure Serverless** - AWS Lambda, AppSync, Step Functions, EventBridge for all compute
 - 🔄 **Automatic Scaling** - Scale from zero to millions based on demand
 - 🏗️ **AWS Well-Architected** - Operational Excellence, Security, Reliability, Performance, Cost Optimization
@@ -82,7 +82,7 @@ This document outlines the comprehensive architectural evolution roadmap for Rik
 
 | Layer | AWS Services | Purpose |
 |-------|-------------|----------|
-| **AI/ML** | Amazon Bedrock, SageMaker Serverless | Claude Opus 4.6, Llama 4 405B, Nova Premier |
+| **AI/ML** | Amazon Bedrock, SageMaker Serverless | Claude Opus 4.7, Llama 4 405B, Nova Premier |
 | **Compute** | AWS Lambda (Python, Node.js) | Serverless functions |
 | **API** | AWS AppSync (GraphQL), API Gateway | API management |
 | **Data** | Aurora Serverless v2, DynamoDB | Relational + NoSQL |
@@ -93,7 +93,7 @@ This document outlines the comprehensive architectural evolution roadmap for Rik
 | **Orchestration** | Step Functions, EventBridge | Workflow automation |
 
 **Key Milestones:**
-- **2026 Q2-Q3:** Amazon Bedrock integration for AI journalism (Claude Opus 4.6 - current SOTA)
+- **2026 Q2-Q3:** Amazon Bedrock integration for AI journalism (Claude Opus 4.7 - current SOTA)
 - **2026 Q4-2027 Q1:** AWS Lambda + AppSync for serverless GraphQL API
 - **2027 Q2-Q4:** Neptune Serverless + Bedrock Knowledge Bases for semantic search
 - **2028+:** AWS Amplify mobile apps + public API via AppSync
@@ -182,7 +182,7 @@ C4Context
     
     System_Ext(nordic_apis, "Nordic Parliament APIs", "DK, NO, FI legislative data")
     System_Ext(eu_api, "EU Parliament API", "European legislative data")
-    System_Ext(bedrock, "Amazon Bedrock", "Claude Opus 4.6, Llama 4 405B, Nova Premier")
+    System_Ext(bedrock, "Amazon Bedrock", "Claude Opus 4.7, Llama 4 405B, Nova Premier")
     System_Ext(riksdag_api, "Swedish Riksdag API", "data.riksdagen.se open data")
     
     Rel(global_user, riksdag, "HTTPS via CloudFront, mobile apps via AppSync")
@@ -239,7 +239,7 @@ C4Container
         Container(kms, "Encryption", "AWS KMS", "Data encryption at rest, key rotation")
     }
     
-    System_Ext(bedrock, "Amazon Bedrock", "Claude Opus 4.6, Llama 4 405B, Nova Premier")
+    System_Ext(bedrock, "Amazon Bedrock", "Claude Opus 4.7, Llama 4 405B, Nova Premier")
     System_Ext(sagemaker, "SageMaker Serverless", "Custom ML models, election forecasting")
     System_Ext(data_sources, "External APIs", "Riksdag, Nordic, EU Parliament APIs")
     
@@ -262,7 +262,7 @@ C4Container
     Rel(lambda_api, timestream, "Time-series queries")
     
     Rel(lambda_news, bedrock, "Text, image generation")
-    Rel(lambda_translate, bedrock, "Claude Opus 4.6 translation")
+    Rel(lambda_translate, bedrock, "Claude Opus 4.7 translation")
     Rel(lambda_etl, data_sources, "Fetch political data")
     
     Rel(step_functions, lambda_news, "Orchestrate AI pipeline")
@@ -289,12 +289,12 @@ C4Component
         Component(event_detector, "Event Detector", "Lambda + EventBridge", "Monitors Riksdag API for new events")
         Component(data_extractor, "Data Structurer", "Lambda (Python)", "Extracts and structures event data")
         
-        Component(bedrock_text, "Text Generator", "Lambda + Bedrock (Claude Opus 4.6)", "Article generation, 14 languages")
+        Component(bedrock_text, "Text Generator", "Lambda + Bedrock (Claude Opus 4.7)", "Article generation, 14 languages")
         Component(bedrock_image, "Image Generator", "Lambda + Bedrock (Nova Premier)", "Multimodal generation")
         Component(bedrock_audio, "Audio Generator", "Lambda + Polly Neural", "Podcast narration, 14 languages")
         
-        Component(quality_validator, "Quality Validator", "Lambda + Bedrock (Claude Opus 4.6)", "Hallucination detection, fact-check")
-        Component(translator, "Multi-Language", "Lambda + Bedrock (Claude Opus 4.6)", "14+ languages, cultural adaptation")
+        Component(quality_validator, "Quality Validator", "Lambda + Bedrock (Claude Opus 4.7)", "Hallucination detection, fact-check")
+        Component(translator, "Multi-Language", "Lambda + Bedrock (Claude Opus 4.7)", "14+ languages, cultural adaptation")
         
         Component(step_func, "Content Pipeline", "Step Functions", "Orchestrates AI workflow")
         Component(s3_publisher, "Content Publisher", "Lambda + S3 + CloudFront", "Invalidates CDN, updates site")
@@ -303,7 +303,7 @@ C4Component
         ComponentDb(dyn_cache, "Cache", "DynamoDB", "API responses, user sessions")
     }
     
-    System_Ext(bedrock, "Amazon Bedrock", "Claude Opus 4.6, Nova Premier, Llama 4 405B")
+    System_Ext(bedrock, "Amazon Bedrock", "Claude Opus 4.7, Nova Premier, Llama 4 405B")
     System_Ext(polly, "Amazon Polly", "Neural TTS, 14 languages")
     System_Ext(riksdag_api, "riksdag-regering-mcp", "32 tools for Swedish political data")
     
@@ -316,14 +316,14 @@ C4Component
     Rel(step_func, bedrock_image, "Generate images")
     Rel(step_func, bedrock_audio, "Generate audio")
     
-    Rel(bedrock_text, bedrock, "Claude Opus 4.6 API")
+    Rel(bedrock_text, bedrock, "Claude Opus 4.7 API")
     Rel(bedrock_image, bedrock, "Nova Premier API")
     Rel(bedrock_audio, polly, "Neural TTS API")
     
     Rel(bedrock_text, quality_validator, "Generated text")
-    Rel(quality_validator, bedrock, "Claude Opus 4.6 validation")
+    Rel(quality_validator, bedrock, "Claude Opus 4.7 validation")
     Rel(quality_validator, translator, "Validated text")
-    Rel(translator, bedrock, "Claude Opus 4.6 translation")
+    Rel(translator, bedrock, "Claude Opus 4.7 translation")
     
     Rel(translator, aurora_content, "Store content")
     Rel(aurora_content, s3_publisher, "Retrieve approved content")
@@ -341,26 +341,26 @@ C4Component
 **Objective:** Automate daily news generation from Swedish Parliament activity using **Amazon Bedrock** exclusively for all AI operations.
 
 **Features:**
-- ✨ **Automated News Articles** - Daily articles via Bedrock Claude Opus 4.6 (2026 SOTA)
-- ✨ **Multi-Language Translation** - 14 languages via Claude Opus 4.6 (no DeepL, no Google Translate)
+- ✨ **Automated News Articles** - Daily articles via Bedrock Claude Opus 4.7 (2026 SOTA)
+- ✨ **Multi-Language Translation** - 14 languages via Claude Opus 4.7 (no DeepL, no Google Translate)
 - ✨ **Podcast Generation** - Amazon Polly Neural TTS (14 languages)
 - ✨ **Image Generation** - Amazon Bedrock Nova Premier (multimodal generation)
-- ✨ **Real-Time Fact-Checking** - Claude Opus 4.6 validates against Riksdag records
+- ✨ **Real-Time Fact-Checking** - Claude Opus 4.7 validates against Riksdag records
 - ✨ **Cross-Referencing** - Automatic citation linking via Bedrock Knowledge Bases
 
 **AWS Serverless Stack:**
-- **Text Generation:** Amazon Bedrock - Claude Opus 4.6 (1M+ context window, extended thinking)
+- **Text Generation:** Amazon Bedrock - Claude Opus 4.7 (1M+ context window, extended thinking)
 - **Image Generation:** Amazon Bedrock - Nova Premier (multimodal: text+image+video)
 - **Audio Generation:** Amazon Polly - Neural TTS (14 languages including Swedish)
-- **Quality Assurance:** Amazon Bedrock - Claude Opus 4.6 for hallucination detection
+- **Quality Assurance:** Amazon Bedrock - Claude Opus 4.7 for hallucination detection
 - **Orchestration:** AWS Step Functions (standard workflows, pay-per-state-transition)
 - **Storage:** Amazon S3 (generated content), Aurora Serverless v2 (metadata)
 
 **Content Types:**
-1. **Daily News Digest** - Top 5 parliamentary events (500-800 words, Claude Opus 4.6)
-2. **Weekly Analysis** - In-depth policy analysis (2,000-3,000 words, Claude Opus 4.6)
-3. **Monthly Risk Assessment** - Transparency report (5,000+ words, Claude Opus 4.6)
-4. **Event Alerts** - Breaking news (100-200 words, Claude Opus 4.6)
+1. **Daily News Digest** - Top 5 parliamentary events (500-800 words, Claude Opus 4.7)
+2. **Weekly Analysis** - In-depth policy analysis (2,000-3,000 words, Claude Opus 4.7)
+3. **Monthly Risk Assessment** - Transparency report (5,000+ words, Claude Opus 4.7)
+4. **Event Alerts** - Breaking news (100-200 words, Claude Opus 4.7)
 
 **Quality Standards:**
 - ✅ Minimum 95% factual accuracy (verified via Bedrock against Riksdag data)
@@ -372,7 +372,7 @@ C4Component
 - ✅ **IAM-based authentication** - Role-based access, zero credential exposure
 - ✅ **AWS data residency** - All processing within AWS infrastructure
 - ✅ **Built-in guardrails** - Bedrock Guardrails for content filtering
-- ✅ **Model flexibility** - Claude Opus 4.6, Llama 4 405B, Nova Premier via unified API
+- ✅ **Model flexibility** - Claude Opus 4.7, Llama 4 405B, Nova Premier via unified API
 - ✅ **Automatic scaling** - Serverless capacity management, no provisioning
 
 ### 3.2 Phase 2: Predictive Analytics (2026 Q4-2027 Q1)
@@ -381,7 +381,7 @@ C4Component
 
 **Features:**
 - ✨ **Election Forecasting** - SageMaker Serverless Inference (XGBoost, Random Forest)
-- ✨ **Coalition Modeling** - Bedrock Claude Opus 4.6 for scenario analysis
+- ✨ **Coalition Modeling** - Bedrock Claude Opus 4.7 for scenario analysis
 - ✨ **Policy Impact Analysis** - Bedrock Llama 4 405B for economic/social modeling
 - ✨ **Voting Pattern Prediction** - SageMaker Serverless (85% accuracy target)
 - ✨ **Sentiment Trending** - Bedrock Titan Embeddings + OpenSearch Serverless
@@ -404,7 +404,7 @@ C4Component
    - **Accuracy Target:** 90% seat prediction accuracy
 
 2. **Coalition Formation Model**
-   - **AI Engine:** Bedrock Claude Opus 4.6 (scenario analysis, extended reasoning)
+   - **AI Engine:** Bedrock Claude Opus 4.7 (scenario analysis, extended reasoning)
    - **Input:** Party ideologies, historical coalitions, current parliament composition
    - **Output:** Coalition probability matrix (all viable combinations)
    - **Validation:** Expert review by political scientists
@@ -428,7 +428,7 @@ C4Component
 **Features:**
 - ✨ **Knowledge Graph** - Amazon Neptune Serverless (109K+ documents, entity relationships)
 - ✨ **Semantic Search** - Amazon Bedrock Knowledge Bases (RAG with vector search)
-- ✨ **Natural Language Queries** - Bedrock Claude Opus 4.6 + Knowledge Bases ("Show me all climate votes")
+- ✨ **Natural Language Queries** - Bedrock Claude Opus 4.7 + Knowledge Bases ("Show me all climate votes")
 - ✨ **Topic Modeling** - Bedrock Titan Embeddings + OpenSearch Serverless (automatic clustering)
 - ✨ **Network Analysis** - Neptune Serverless (PageRank, community detection via openCypher)
 - ✨ **Influence Scoring** - Neptune graph algorithms (Louvain, Girvan-Newman)
@@ -452,7 +452,7 @@ C4Component
 2. **Store:** Bedrock Knowledge Base stores vectors + metadata (S3-backed)
 3. **Query:** Users ask natural language questions via AppSync
 4. **Retrieve:** Bedrock retrieves relevant documents (RAG pattern)
-5. **Generate:** Bedrock Claude Opus 4.6 generates answer with citations
+5. **Generate:** Bedrock Claude Opus 4.7 generates answer with citations
 
 **AWS-Native Data Services:**
 - ✅ **Graph Database** - Amazon Neptune Serverless only
@@ -579,7 +579,7 @@ Static Frontend → CloudFront → S3
 Static Frontend → CloudFront → S3
                    ↓
                  API Gateway → Lambda → Aurora Serverless v2
-                               Lambda → Amazon Bedrock (Claude Opus 4.6)
+                               Lambda → Amazon Bedrock (Claude Opus 4.7)
 ```
 
 **Phase 3: Add AppSync + Mobile (2027 Q2-Q4)**
@@ -616,7 +616,7 @@ Amplify Hosting (SSR) → CloudFront
 **AI/ML:**
 | Current | Future (AWS Serverless) | Rationale |
 |---------|-------------------------|-----------|
-| None | Amazon Bedrock (Claude Opus 4.6, Llama 4 405B, Nova Premier) | Bleeding-edge AI, no API keys, data in AWS |
+| None | Amazon Bedrock (Claude Opus 4.7, Llama 4 405B, Nova Premier) | Bleeding-edge AI, no API keys, data in AWS |
 | None | SageMaker Serverless Inference | Custom ML models, pay-per-invocation |
 
 **Databases:**
@@ -696,12 +696,12 @@ Amplify Hosting (SSR) → CloudFront
 **Phase 1: Foundation (2026 Q2-Q3)**
 - Deploy Lambda functions (Python) for basic API operations
 - Create Aurora Serverless v2 cluster (PostgreSQL-compatible)
-- Integrate Amazon Bedrock for Claude Opus 4.6 text generation
+- Integrate Amazon Bedrock for Claude Opus 4.7 text generation
 - Maintain static site (no disruption to users)
 
 **Phase 2: AI Content Generation (2026 Q4-2027 Q1)**
 - Deploy Step Functions for content generation pipeline
-- Integrate Bedrock Claude Opus 4.6 for news article generation
+- Integrate Bedrock Claude Opus 4.7 for news article generation
 - Add EventBridge for scheduled content generation
 - Test AI-generated content alongside manual content
 
@@ -739,7 +739,7 @@ Amplify Hosting (SSR) → CloudFront
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|------------|--------|------------|
-| **Bedrock Hallucination** | HIGH | HIGH | Dual validation (Claude Opus 4.6 + human review), fact-check against Riksdag data |
+| **Bedrock Hallucination** | HIGH | HIGH | Dual validation (Claude Opus 4.7 + human review), fact-check against Riksdag data |
 | **Lambda Cold Starts** | MEDIUM | MEDIUM | Provisioned concurrency for critical functions, keep-warm EventBridge rules |
 | **AppSync Rate Limits** | LOW | MEDIUM | Request throttling, DynamoDB caching, CloudFront in front |
 | **Aurora Serverless Pauses** | MEDIUM | LOW | Min capacity 0.5 ACU (faster wake-up), read replicas for queries |
@@ -764,7 +764,7 @@ Amplify Hosting (SSR) → CloudFront
 |--------|-------------------|---------------|-------------|
 | **API Response Time (p95)** | N/A | <200ms | CloudWatch Insights |
 | **Lambda Cold Start (p95)** | N/A | <500ms | X-Ray traces |
-| **Bedrock Latency (Claude Opus 4.6)** | N/A | <2s (first token) | CloudWatch metrics |
+| **Bedrock Latency (Claude Opus 4.7)** | N/A | <2s (first token) | CloudWatch metrics |
 | **AppSync Subscription Latency** | N/A | <100ms | CloudWatch metrics |
 | **Uptime** | 99.998% | 99.99% | CloudWatch alarms |
 
@@ -781,7 +781,7 @@ gantt
     
     section Phase 1: Foundation
     Lambda + Aurora Serverless Deployment      :2026-04-01, 90d
-    Amazon Bedrock Integration (Claude Opus 4.6)  :2026-05-01, 60d
+    Amazon Bedrock Integration (Claude Opus 4.7)  :2026-05-01, 60d
     Step Functions Content Pipeline            :2026-06-01, 45d
     
     section Phase 2: AI Content
@@ -815,7 +815,7 @@ gantt
 
 **2026:**
 - ✅ **Q2:** Lambda + Aurora Serverless deployed, API foundation ready
-- ✅ **Q3:** Amazon Bedrock Claude Opus 4.6 integration, AI journalism launched
+- ✅ **Q3:** Amazon Bedrock Claude Opus 4.7 integration, AI journalism launched
 - ✅ **Q4:** Step Functions content pipeline, automated news generation
 
 **2027:**
@@ -1886,7 +1886,7 @@ graph TB
 | **[Hack23 AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md)** | 🤖 AI Governance | Amazon Bedrock usage, AI ethics, transparency |
 | **[Hack23 Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)** | 🔒 Security | SDLC requirements, code security standards |
 | **[AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/)** | ☁️ AWS | 5 pillars: Security, Reliability, Performance, Cost, Operations |
-| **[Amazon Bedrock Documentation](https://docs.aws.amazon.com/bedrock/)** | 🤖 AI/ML | Claude Opus 4.6, Llama 4 405B, Nova Premier APIs |
+| **[Amazon Bedrock Documentation](https://docs.aws.amazon.com/bedrock/)** | 🤖 AI/ML | Claude Opus 4.7, Llama 4 405B, Nova Premier APIs |
 | **[AWS Serverless Resources](https://aws.amazon.com/serverless/)** | ⚡ Serverless | Lambda, AppSync, Step Functions best practices |
 | **[AWS Security Hub](https://aws.amazon.com/security-hub/)** | 🛡️ Security | Centralized security monitoring, compliance frameworks |
 | **[Aurora Serverless v2](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html)** | 💾 Database | Auto-scaling serverless database documentation |
@@ -1908,7 +1908,7 @@ graph TB
 
 Riksdagsmonitor's future architecture represents a strategic evolution from a static HTML/CSS transparency platform to a hybrid intelligent system combining GitHub Copilot agentic orchestration with AWS serverless data infrastructure. This transformation advances the platform's mission of democratic accountability through enhanced automation, scalability, and intelligence while maintaining the security-first principles established in our ISMS framework.
 
-**Key Architectural Achievements**: The hybrid architecture preserves riksdagsmonitor's sophisticated 14-agent GitHub Copilot ecosystem (content-generator, news-journalist, intelligence-operative) as the primary orchestration layer, while introducing AWS serverless services (Aurora Serverless v2, DynamoDB, Neptune Serverless, OpenSearch Serverless) as the scalable data backend. This design leverages the strengths of both platforms: agents provide specialized domain expertise and safe-outputs workflows, while AWS delivers multi-region reliability, enterprise-grade security services (GuardDuty, Security Hub, WAF), and unlimited data processing capacity. The 4-phase enhancement roadmap (Enhanced Journalism 2026, Predictive Analytics 2027, Semantic Intelligence 2028, Conversational AI 2029+) introduces progressively advanced capabilities using bleeding-edge AI models (Claude Opus 4.6 for 2026, Opus 5.x for 2027-2028, Opus 6.0 for 2028+) delivered through Amazon Bedrock's unified interface.
+**Key Architectural Achievements**: The hybrid architecture preserves riksdagsmonitor's sophisticated 14-agent GitHub Copilot ecosystem (content-generator, news-journalist, intelligence-operative) as the primary orchestration layer, while introducing AWS serverless services (Aurora Serverless v2, DynamoDB, Neptune Serverless, OpenSearch Serverless) as the scalable data backend. This design leverages the strengths of both platforms: agents provide specialized domain expertise and safe-outputs workflows, while AWS delivers multi-region reliability, enterprise-grade security services (GuardDuty, Security Hub, WAF), and unlimited data processing capacity. The 4-phase enhancement roadmap (Enhanced Journalism 2026, Predictive Analytics 2027, Semantic Intelligence 2028, Conversational AI 2029+) introduces progressively advanced capabilities using bleeding-edge AI models (Claude Opus 4.7 for 2026, Opus 5.x for 2027-2028, Opus 6.0 for 2028+) delivered through Amazon Bedrock's unified interface.
 
 **Strategic Value Proposition**: The architecture delivers measurable technical advantages across all AWS Well-Architected pillars. Security is enhanced through defense-in-depth integration of seven AWS security services plus agent-based safe-outputs validation. Reliability improves via multi-region deployment (Aurora Global Database, DynamoDB Global Tables, S3 Cross-Region Replication) achieving RTO < 5 minutes and RPO < 1 second. Performance scales elastically through serverless auto-scaling combined with agent-driven optimization. Operational excellence is achieved through comprehensive automation, Infrastructure as Code (CDK/Terraform), and continuous resilience validation via AWS Resilience Hub (resilience score 92/100). The platform maintains pure technical focus with zero infrastructure management overhead, enabling the development team to concentrate on feature delivery and democratic transparency innovation rather than operations.
 
@@ -1919,7 +1919,7 @@ Riksdagsmonitor's future architecture represents a strategic evolution from a st
 ### 🤖 AI/LLM Evolution Architecture Strategy (2026-2037)
 
 **Anthropic Opus Model Cadence:**
-- **Minor updates:** Every ~2.3 months (Opus 4.7, 4.8, 4.9...) — backward-compatible, incremental capability improvements
+- **Minor updates:** Every ~2.3 months (Opus 4.8, 4.9, 5.0...) — backward-compatible, incremental capability improvements
 - **Major versions:** Annually (Opus 5.0 in 2027, 6.0 in 2028, 7.0 in 2029... through 2037 or successor paradigm)
 - **Architecture principle:** Model-agnostic service layer via Amazon Bedrock abstracts all model dependencies
 
@@ -1927,7 +1927,7 @@ Riksdagsmonitor's future architecture represents a strategic evolution from a st
 
 | Phase | Period | AI Model | Architecture Impact |
 |-------|--------|----------|-------------------|
-| Enhanced Journalism | 2026 Q2-Q3 | Opus 4.6-4.9 | Bedrock integration, agentic content generation |
+| Enhanced Journalism | 2026 Q2-Q3 | Opus 4.7-4.9 | Bedrock integration, agentic content generation |
 | Predictive Analytics | 2027 | Opus 5.x | SageMaker Serverless, real-time prediction pipelines |
 | Semantic Intelligence | 2028 | Opus 6.x | Neptune Serverless knowledge graphs, multi-modal content |
 | Conversational AI | 2029 | Opus 7.x | Amazon Lex, Bedrock Agents, natural language interfaces |

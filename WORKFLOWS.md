@@ -709,14 +709,14 @@ flowchart TD
 
 ### 🤖 Stage 6: Agentic News Generation
 
-Twelve agentic workflows use the `gh-aw` (GitHub Agentic Workflows) framework with Claude Opus 4.6 to generate political news content following OSINT/INTOP editorial standards.
+Twelve agentic workflows use the `gh-aw` (GitHub Agentic Workflows) framework with Claude Opus 4.7 to generate political news content following OSINT/INTOP editorial standards.
 
 ```mermaid
 flowchart TD
     subgraph "📰 News Generation Pipeline"
         Trigger[⏰ Scheduled / Manual] --> PreAnalysis[📊 Pre-Article Analysis]
         PreAnalysis --> Download[📥 Download Riksdag Data]
-        Download --> AIAnalysis[🤖 AI Analysis - Claude Opus 4.6]
+        Download --> AIAnalysis[🤖 AI Analysis - Claude Opus 4.7]
         AIAnalysis --> Generate[📝 Generate Article]
         Generate --> QualityCheck[✅ Quality Validation]
         QualityCheck --> Translate[🌍 Multi-Language Translation]

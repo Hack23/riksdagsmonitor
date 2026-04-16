@@ -865,7 +865,7 @@ Specify the engine in frontmatter or let `gh aw compile` choose the default:
 ---
 engine:
   id: copilot                      # Repo convention: use Copilot engine, select model via `model`
-  model: claude-3-5-sonnet         # Engine-specific model identifier (e.g. claude-opus-4.6)
+  model: claude-3-5-sonnet         # Engine-specific model identifier (e.g. claude-opus-4.7)
 timeout-minutes: 5
 ---
 ```

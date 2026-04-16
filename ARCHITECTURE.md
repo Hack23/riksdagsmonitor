@@ -919,7 +919,7 @@ graph LR
 ```mermaid
 graph TB
     subgraph "Language Generation"
-        Source[Agent Generation<br/>Claude Opus 4.6<br/>English source]
+        Source[Agent Generation<br/>Claude Opus 4.7<br/>English source]
         
         Nordic[Nordic Languages<br/>en, sv, da, no, fi<br/>Germanic language family]
         EU[EU Core Languages<br/>de, fr, es, nl<br/>Western European]

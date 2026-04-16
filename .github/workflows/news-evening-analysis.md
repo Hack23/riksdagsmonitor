@@ -218,7 +218,7 @@ steps:
 
 engine:
   id: copilot
-  model: claude-opus-4.6
+  model: claude-opus-4.7
 ---
 
 # 🌆 Evening Parliamentary Analysis

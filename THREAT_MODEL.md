@@ -52,7 +52,7 @@ This threat model demonstrates **🛡️ cybersecurity consulting expertise** th
 - ☁️ AWS CloudFront CDN + S3 storage (us-east-1 primary, eu-west-1 replica)
 - 🔀 Route 53 DNS configuration with health checks
 - 🔄 GitHub Pages disaster recovery (automatic failover)
-- 🤖 Three AI agentic workflows using Claude Opus 4.6:
+- 🤖 Three AI agentic workflows using Claude Opus 4.7:
   - **news-article-generator**: Daily 05:51 UTC
   - **news-evening-analysis**: 18:00 UTC Mon-Fri, 16:00 UTC Sat
   - **news-realtime-monitor**: 10:00+14:00 UTC Mon-Fri, 12:00 UTC weekends
@@ -184,7 +184,7 @@ Following [Hack23 AB Asset-Centric Threat Modeling](https://github.com/Hack23/IS
 | **🧠 Source Code & Algorithms** | Dashboard visualization logic, Chart.js/D3.js integrations, AI workflow orchestration | IP theft, malicious injection, supply chain attacks | Private repo access controls, dependency scanning (Dependabot + CodeQL), GPG commit signing | [![Operational Excellence](https://img.shields.io/badge/Value-Operational_Excellence-blue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $15,000 |
 | **🌐 Riksdagsmonitor Brand** | Market reputation, stakeholder trust, search engine positioning | Domain hijacking, phishing, brand impersonation, SEO poisoning | Domain monitoring, HTTPS enforcement, DNSSEC, HSTS preload, trademark registration | [![Risk Reduction](https://img.shields.io/badge/Value-Risk_Reduction-green?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $20,000 |
 | **☁️ Infrastructure Config** | AWS CloudFront, S3, Route 53 security baseline; GitHub Actions secrets | Infrastructure compromise, misconfiguration, credential exposure | IAM least privilege, OIDC (no long-lived keys), AWS Config rules, secret scanning | [![Security Excellence](https://img.shields.io/badge/Value-Security_Excellence-purple?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $25,000 |
-| **🤖 AI News Content** | Automated journalism credibility; trusted source for Swedish political analysis | Prompt injection, hallucination, bias, misinformation | Claude Opus 4.6 with Anthropic guardrails, riksdag-regering-mcp validation, mandatory PR review, fact-checking protocol | [![Innovation Enablement](https://img.shields.io/badge/Value-Innovation_Enablement-lightblue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $50,000 |
+| **🤖 AI News Content** | Automated journalism credibility; trusted source for Swedish political analysis | Prompt injection, hallucination, bias, misinformation | Claude Opus 4.7 with Anthropic guardrails, riksdag-regering-mcp validation, mandatory PR review, fact-checking protocol | [![Innovation Enablement](https://img.shields.io/badge/Value-Innovation_Enablement-lightblue?style=flat-square)](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) | $50,000 |
 
 **Total Asset Value (Annual Cost Avoidance):** **$180,000**
 
@@ -198,7 +198,7 @@ Crown Jewels are the top 5 highest-value assets that adversaries most desire and
 | **👑 #2** | 📊 **Dashboard Data Accuracy** | CIA platform data pipeline integrity and Chart.js/D3.js visualizations; primary channel for political transparency; 14-language real-time display | **HIGH** — Data accuracy is core mission; CSP/SRI protect against XSS/CDN tampering | High: Corrupted dashboards erode public trust, could misrepresent party standings or vote outcomes | **HIGH — SRI hashes, CSP, dual-region** |
 | **👑 #3** | 🌍 **Multi-Language Content** | 14-language factual consistency (SV, EN, DA, NO, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH); translation divergence enables targeted disinformation campaigns in specific languages | **HIGH** — RTL (Arabic/Hebrew) harder to validate; targeted manipulation of specific language communities | High: Language-specific manipulation could spread unchecked; undermines trust of multilingual audience | **HIGH — TRANSLATION_GUIDE.md, Playwright RTL testing** |
 | **👑 #4** | 🔑 **CI/CD Pipeline Security** | GitHub Actions OIDC, supply chain integrity, SHA-pinned actions, SLSA attestations; compromise enables persistent content injection with no trust boundary to stop it | **HIGH** — Supply chain attacks (SolarWinds-pattern) increasingly common against civic platforms | Catastrophic: Persistent backdoor in CI/CD bypasses all publication controls; could inject malicious HTML into all pages | **CRITICAL — OIDC, SHA-pinning, branch protection** |
-| **👑 #5** | 📰 **News Article Credibility** | AI-generated (Claude Opus 4.6) daily political news accuracy; journalistic credibility for Swedish parliamentary and government activity reporting | **MEDIUM-HIGH** — Prompt injection, hallucination; AI-generated political misinformation campaigns | High: Fabricated parliamentary data damages reputation, could be amplified by external media; EU AI Act liability | **HIGH — Mandatory PR review, dok_id validation** |
+| **👑 #5** | 📰 **News Article Credibility** | AI-generated (Claude Opus 4.7) daily political news accuracy; journalistic credibility for Swedish parliamentary and government activity reporting | **MEDIUM-HIGH** — Prompt injection, hallucination; AI-generated political misinformation campaigns | High: Fabricated parliamentary data damages reputation, could be amplified by external media; EU AI Act liability | **HIGH — Mandatory PR review, dok_id validation** |
 
 **Crown Jewel Protection Strategy:**
 - 🔐 **Defense-in-Depth:** Every Crown Jewel has ≥3 overlapping controls (no single point of failure)
@@ -226,7 +226,7 @@ Complete asset inventory with classifications:
 | **ASSET-004** | GitHub Repository | Infrastructure | PUBLIC/HIGH/CRITICAL | HIGH | CEO | GitHub.com |
 | **ASSET-005** | AWS Infrastructure (S3, CloudFront, Route 53) | Infrastructure | INTERNAL/HIGH/CRITICAL | HIGH | CEO | AWS (us-east-1, eu-west-1) |
 | **ASSET-006** | GitHub Actions Secrets (AWS OIDC) | Credentials | CONFIDENTIAL/CRITICAL/HIGH | CRITICAL | CEO | GitHub Secrets |
-| **ASSET-007** | AI Workflows (Claude Opus 4.6) | Application | PUBLIC/HIGH/MEDIUM | HIGH | CEO | GitHub Actions |
+| **ASSET-007** | AI Workflows (Claude Opus 4.7) | Application | PUBLIC/HIGH/MEDIUM | HIGH | CEO | GitHub Actions |
 | **ASSET-008** | riksdag-regering-mcp Server | Integration | PUBLIC/HIGH/HIGH | HIGH | CEO | Render.com |
 | **ASSET-009** | Domain Name (riksdagsmonitor.com) | Infrastructure | PUBLIC/HIGH/CRITICAL | CRITICAL | CEO | Route 53 |
 | **ASSET-010** | Brand & Reputation | Intangible | PUBLIC/HIGH/MEDIUM | HIGH | CEO | N/A |
@@ -259,7 +259,7 @@ graph TB
     
     subgraph External2["🔴 External Data Sources"]
         MCP[🔌 riksdag-regering-mcp<br/>32 Political Tools<br/>Render.com]
-        Claude[🤖 Claude Opus 4.6<br/>AI Content Generation<br/>GitHub Copilot API]
+        Claude[🤖 Claude Opus 4.7<br/>AI Content Generation<br/>GitHub Copilot API]
         RiksdagAPI[🏛️ data.riksdagen.se<br/>Swedish Parliament Open Data]
     end
     
@@ -313,7 +313,7 @@ graph TB
     end
     
     subgraph "⚙️ CI/CD Layer"
-        Workflow1[🗞️ news-article-generator<br/>Daily 05:51 UTC<br/>Claude Opus 4.6]
+        Workflow1[🗞️ news-article-generator<br/>Daily 05:51 UTC<br/>Claude Opus 4.7]
         Workflow2[🌆 news-evening-analysis<br/>18:00 UTC Mon-Fri<br/>16:00 UTC Sat]
         Workflow3[⚡ news-realtime-monitor<br/>10:00+14:00 UTC Mon-Fri<br/>12:00 UTC weekends]
         Deploy[🚀 Deployment Workflow<br/>Vite Build<br/>AWS OIDC Deploy]
@@ -443,7 +443,7 @@ graph LR
 | **DoS** | Workflow quota exhaustion | MEDIUM (3) | MEDIUM (5) | 1.5 | GitHub quota monitoring, rate limiting, graceful degradation | **LOW** |
 | **Elevation of Privilege** | Workflow gains excessive permissions | LOW (2) | HIGH (8) | 1.6 | Least privilege IAM, scoped tokens, permission reviews | **LOW** |
 
-#### ⚙️ Process: AI News Generator (Claude Opus 4.6 + MCP)
+#### ⚙️ Process: AI News Generator (Claude Opus 4.7 + MCP)
 | STRIDE Category | Threat | Likelihood | Impact | Risk Score | Mitigation | Residual Risk |
 |-----------------|--------|-----------|--------|-----------|-----------|--------------|
 | **Spoofing** | Fake MCP server returns fabricated data | LOW (2) | CRITICAL (10) | 2.0 | HTTPS-only, server health monitoring, cross-verification | **LOW** |
@@ -1002,7 +1002,7 @@ graph TB
     Goal[🎯 Publish Fabricated Parliamentary Data<br/>Undermine democratic transparency]
     
     subgraph "Attack Path 1: Exploit LLM Hallucination [60% probability]"
-        A1[Trigger Low-Confidence AI State<br/>Ambiguous query to Claude Opus 4.6<br/>35% hallucination rate]
+        A1[Trigger Low-Confidence AI State<br/>Ambiguous query to Claude Opus 4.7<br/>35% hallucination rate]
         A2[Generate Non-Existent Vote Results<br/>Fabricate 175-174 vote margin<br/>80% plausibility]
         A3[Invent Fake Document IDs<br/>Create dok_id like H901FiU99<br/>90% passes initial review if no validation]
         
@@ -1561,7 +1561,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 
 **Riksdagsmonitor LLM Application Classification:**
 - **System:** AI-powered news generation for Swedish political transparency
-- **Model:** Claude Opus 4.6 (Anthropic via GitHub Copilot)
+- **Model:** Claude Opus 4.7 (Anthropic via GitHub Copilot)
 - **Risk Classification:** ⚠️ **LIMITED RISK** per EU AI Act Article 6
 - **Data Classification:** 🔓 **Public** (Swedish Riksdag open data only)
 - **Human Oversight:** ✅ **Required** (mandatory PR review before publication)
@@ -1634,7 +1634,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 
 **Riksdagsmonitor Exposure**: 🟦 **NOT APPLICABLE**
 
-**Rationale**: Claude Opus 4.6 is a third-party model (Anthropic). Hack23 does not train or fine-tune models.
+**Rationale**: Claude Opus 4.7 is a third-party model (Anthropic). Hack23 does not train or fine-tune models.
 
 **Vendor Risk Assessment**: ✅ Completed
 - Anthropic AI supplier assessment per [Third Party Management Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Third_Party_Management.md)
@@ -1689,7 +1689,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 **Attack Vectors**:
 1. **Compromised MCP Server**: riksdag-regering-mcp server on Render.com
 2. **GitHub Actions Dependencies**: actions/setup-node, actions/checkout, etc.
-3. **Claude Opus 4.6 API**: Anthropic API via GitHub Copilot
+3. **Claude Opus 4.7 API**: Anthropic API via GitHub Copilot
 4. **npm Dependencies**: Vite, Chart.js, D3.js build dependencies
 
 **Current Controls**: ✅ Implemented
@@ -1723,7 +1723,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 
 **Attack Vectors**:
 1. **Prompt Leakage**: System instructions revealed in generated articles
-2. **Training Data Extraction**: Memorized personal data from Claude Opus 4.6 training
+2. **Training Data Extraction**: Memorized personal data from Claude Opus 4.7 training
 3. **Context Window Leakage**: Previous conversation data exposed
 
 **Current Controls**: ✅ Implemented
@@ -1846,7 +1846,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 
 **Riksdagsmonitor Exposure**: 🟦 **NOT APPLICABLE**
 
-**Rationale**: Claude Opus 4.6 is a third-party API service (Anthropic). Hack23 does not host or own the model.
+**Rationale**: Claude Opus 4.7 is a third-party API service (Anthropic). Hack23 does not host or own the model.
 
 **Vendor Risk Assessment**: ✅ Completed
 - Anthropic responsible for model security
@@ -1882,7 +1882,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 
 ---
 
-### 2.9 🤖 AI Model Card: Claude Opus 4.6
+### 2.9 🤖 AI Model Card: Claude Opus 4.7
 
 **Per [Hack23 AI Policy § 4.3](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md)**, all LLM applications MUST maintain model cards documenting capabilities, limitations, and security characteristics.
 
@@ -1890,7 +1890,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 
 | Attribute | Value |
 |-----------|-------|
-| **Model Name** | Claude Opus 4.6 (Anthropic) |
+| **Model Name** | Claude Opus 4.7 (Anthropic) |
 | **Access Method** | GitHub Copilot API (indirect via GitHub) |
 | **Model Type** | Large Language Model (LLM) - Transformer architecture |
 | **Context Window** | 200,000 tokens (~150,000 words) |
@@ -2006,7 +2006,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 #### Maintenance & Monitoring
 
 **Model Version Management**:
-- ✅ Claude Opus 4.6 explicitly specified in workflow YAML
+- ✅ Claude Opus 4.7 explicitly specified in workflow YAML
 - ✅ GitHub Copilot API versioning (GitHub-managed)
 - ⚠️ No automated model update testing
 - ⚠️ No model deprecation alerting
@@ -2047,7 +2047,7 @@ This section provides comprehensive AI security analysis per [Hack23 AI Policy](
 #### Updates & Deprecation
 
 **Model Lifecycle**:
-- **Current Version**: Claude Opus 4.6 (deployed 2026-02)
+- **Current Version**: Claude Opus 4.7 (deployed 2026-04)
 - **Expected Lifespan**: 12-18 months (until Claude Opus 5.x release)
 - **Deprecation Policy**: 90-day notice before model version changes
 - **Migration Plan**: Test new model versions on staging branch before production
@@ -2706,7 +2706,7 @@ graph TB
 > **Severity:** HIGH  
 > **Detection:** PR reviewer post-publication (within 6 hours)  
 > **Description:** AI-generated article reported incorrect vote margin (175-174) for motion H901:23. Actual margin was 176-173.  
-> **Root Cause:** AI hallucination (Claude Opus 4.6 non-determinism). Document ID was correct (H901:23), but vote arithmetic was fabricated.  
+> **Root Cause:** AI hallucination (Claude Opus 4.7 non-determinism). Document ID was correct (H901:23), but vote arithmetic was fabricated.  
 > **Impact:** Misinformation visible to ~500 users before correction. No external media amplification.  
 > **Corrective Actions:**
 > - Article removed within 4 hours of detection
