@@ -534,7 +534,12 @@ get_betankanden({ rm: <calculated riksmöte>, limit: 20 })
 
 ### Step 2.5: Run Pre-Article Analysis Pipeline
 
-**CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/committeeReports/`. The `--doc-type committeeReports` flag ensures ALL output goes directly to the scoped subdirectory. **NEVER write or copy analysis files to the parent date directory** — doing so causes merge conflicts when multiple doc-type workflows run on the same date. The `analysis-reader.ts` automatically scans subdirectories, so root-level copies are NOT needed. After pipeline completes, run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 files exist. Create any missing artifacts manually using their templates.
+**CRITICAL: Download data first, then AI creates ALL 9 analysis artifacts.** `download-parliamentary-data.ts` downloads raw data from riksdag-regering-mcp ONLY — it performs NO analysis. The AI agent MUST:
+1. Read `analysis/methodologies/ai-driven-analysis-guide.md` fully
+2. Read ALL 8 templates in `analysis/templates/`
+3. Create ALL 9 analysis files in `analysis/daily/YYYY-MM-DD/committeeReports/` using evidence from the downloaded data
+
+**NEVER write or copy analysis files to the parent date directory** — doing so causes merge conflicts when multiple doc-type workflows run on the same date. The `analysis-reader.ts` automatically scans subdirectories, so root-level copies are NOT needed. After creating ALL analysis files, run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 files exist.
 
 ```bash
 # Idempotent: only set if not already resolved by lookback

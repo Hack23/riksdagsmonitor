@@ -459,7 +459,12 @@ get_fragor({ rm: <calculated riksmöte>, limit: 20 })
 
 ### Step 2.5: Run Pre-Article Analysis Pipeline
 
-**CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data, runs all 9 analysis steps, and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`. Article generators will consume these for enrichment. After pipeline completes, run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 files exist (synthesis-summary.md, swot-analysis.md, risk-assessment.md, threat-analysis.md, classification-results.md, significance-scoring.md, stakeholder-perspectives.md, cross-reference-map.md, data-download-manifest.md). Create any missing artifacts manually using their templates.
+**CRITICAL: Download data first, then AI creates ALL 9 analysis artifacts.** `download-parliamentary-data.ts` downloads raw data ONLY — it performs NO analysis. The AI agent MUST:
+1. Read `analysis/methodologies/ai-driven-analysis-guide.md` fully
+2. Read ALL 8 templates in `analysis/templates/`
+3. Create ALL 9 analysis files in `analysis/daily/YYYY-MM-DD/` using evidence from the downloaded data
+
+Run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 files exist (synthesis-summary.md, swot-analysis.md, risk-assessment.md, threat-analysis.md, classification-results.md, significance-scoring.md, stakeholder-perspectives.md, cross-reference-map.md, data-download-manifest.md).
 
 ```bash
 date -u +%Y-%m-%d > /tmp/today.txt

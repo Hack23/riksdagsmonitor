@@ -3225,8 +3225,8 @@ This ensures that once lookback persists `ARTICLE_DATE` to `$GITHUB_ENV`, subseq
 #### Protocol
 
 1. **Read each template** — use `view` or `cat` to read the full template file before rewriting the daily file
-2. **Preserve script data** — keep any factual data (document counts, risk scores, anomalies) from the script output
-3. **Keep existing filenames** — do **NOT** rename or create new files based on template filename suggestions; always rewrite the existing daily artifacts produced by `download-parliamentary-data.ts` in-place (e.g., keep `classification-results.md`, `stakeholder-perspectives.md`)
+2. **Preserve downloaded data** — keep any factual data (document counts, risk scores, anomalies) from the downloaded MCP data
+3. **Keep existing filenames** — do **NOT** rename or create new files based on template filename suggestions; always use the exact filenames listed in §"9 REQUIRED Analysis Artifacts" (e.g., keep `classification-results.md`, `stakeholder-perspectives.md`)
 4. **Add template structure** — add all required metadata fields, Mermaid diagrams, evidence tables, and confidence labels
 5. **Fill with real data** — use downloaded documents, MCP data, and analysis results to fill every `[REQUIRED]` placeholder
 6. **No empty sections** — if a section has no data, explain WHY (e.g., "No propositions found for this date — Parliament in recess") with confidence label
