@@ -22,7 +22,7 @@
  <meta property="og:locale" content="en_US">
  <meta property="og:site_name" content="Riksdagsmonitor - Swedish Parliament Intelligence">
  <meta property="article:published_time" content="2026-04-16T12:44:00.000Z">
- <meta property="article:modified_time" content="2026-04-16T16:00:00.000Z">
+ <meta property="article:modified_time" content="2026-04-16T16:15:00.000Z">
  <meta property="article:author" content="James Pether Sörling">
  <meta property="article:section" content="Breaking News">
  <meta property="article:tag" content="Criminal Justice">
@@ -38,7 +38,7 @@
  <meta name="twitter:site" content="@riksdagsmonitor">
  <meta name="twitter:creator" content="@jamessorling">
  <meta name="twitter:label1" content="Reading time">
- <meta name="twitter:data1" content="12 min read">
+ <meta name="twitter:data1" content="15 min read">
  <meta name="twitter:label2" content="Article type">
  <meta name="twitter:data2" content="Breaking News">
 
@@ -87,7 +87,7 @@
    "alternativeHeadline": "Prop. 2025/26:246 — Criminal responsibility at 13, youth discount abolished, maximum 18-year sentences for minors",
    "description": "PM Kristersson and Justice Minister Strömmer table Prop. 2025/26:246 lowering criminal responsibility age from 15 to 13 for serious crimes.",
    "datePublished": "2026-04-16T12:44:00+00:00",
-   "dateModified": "2026-04-16T16:00:00+00:00",
+   "dateModified": "2026-04-16T16:15:00+00:00",
    "author": {
      "@type": "Person",
      "name": "James Pether Sörling",
@@ -175,7 +175,7 @@
    <span class="separator">•</span>
    <span class="type-badge">🔴 Breaking</span>
    <span class="separator">•</span>
-   <span>8 min read</span>
+   <span>15 min read</span>
    <span class="separator">•</span>
    <span class="type-badge classification-badge classification-high" aria-label="Classification: HIGH">🔴 HIGH</span>
    <span class="separator">•</span>
@@ -340,6 +340,77 @@
    <li><strong>35 absences</strong> (17.5%): Higher than typical for a Wednesday afternoon vote. M had 9 absent (23.7%), S had 11 (16.2%). This may signal fatigue or strategic absence.</li>
  </ul>
 
+ <div class="dashboard-section">
+   <h4>Bloc Comparison: Government vs Opposition (JuU15)</h4>
+   <canvas id="blocChart" width="500" height="350" role="img" aria-label="Doughnut chart comparing government bloc (M+KD+L+SD: 78 Ja, 18 absent) vs opposition bloc (S+V+C+MP: 82 Nej, 17 absent) vs independents (2 Ja, 3 Nej) in JuU15 vote"></canvas>
+   <noscript><p>Bloc comparison: Government parties (M+KD+L+SD) delivered 78 Ja votes with 18 absent. Opposition parties (S+V+C+MP) delivered 82 Nej votes with 17 absent. Independents split 2 Ja / 3 Nej. The government prevailed on the committee recommendation despite the opposition having more total votes (85 Nej vs 80 Ja).</p></noscript>
+ </div>
+ <script>
+ document.addEventListener('DOMContentLoaded', function() {
+   var ctx2 = document.getElementById('blocChart');
+   if (ctx2 && typeof Chart !== 'undefined') {
+     new Chart(ctx2.getContext('2d'), {
+       type: 'doughnut',
+       data: {
+         labels: ['Gov bloc Ja (M+KD+L+SD)', 'Opposition Nej (S+V+C+MP)', 'Independent Ja', 'Independent Nej', 'Absent (Gov)', 'Absent (Opp)'],
+         datasets: [{
+           data: [78, 82, 2, 3, 18, 17],
+           backgroundColor: [
+             '#00d9ff',
+             '#ff006e',
+             'rgba(0, 217, 255, 0.4)',
+             'rgba(255, 0, 110, 0.4)',
+             'rgba(255, 190, 11, 0.5)',
+             'rgba(255, 190, 11, 0.3)'
+           ],
+           borderColor: '#0a0e27',
+           borderWidth: 2
+         }]
+       },
+       options: {
+         responsive: true,
+         plugins: {
+           title: {
+             display: true,
+             text: 'JuU15 Vote \u2014 Bloc Comparison (16 April 2026)',
+             color: '#e0e0e0',
+             font: { size: 14, weight: 'bold' }
+           },
+           legend: {
+             position: 'bottom',
+             labels: { color: '#e0e0e0', usePointStyle: true, padding: 8, font: { size: 11 } }
+           },
+           tooltip: {
+             backgroundColor: 'rgba(10,14,39,0.95)',
+             titleColor: '#00d9ff',
+             bodyColor: '#e0e0e0',
+             borderColor: '#00d9ff',
+             borderWidth: 1,
+             cornerRadius: 6,
+             padding: 10
+           }
+         }
+       }
+     });
+   }
+ });
+ </script>
+
+ <h4>Passage Arithmetic: What JuU15 Tells Us About Prop. 246</h4>
+ <p>The JuU15 vote provides a <strong>verified template</strong> for how Prop. 2025/26:246 will proceed through the Riksdag. Three scenarios emerge from the voting data:</p>
+ <table>
+   <caption>Scenario analysis for Prop. 2025/26:246 based on JuU15 voting patterns</caption>
+   <thead>
+     <tr><th scope="col">Scenario</th><th scope="col">Ja</th><th scope="col">Nej</th><th scope="col">Absent</th><th scope="col">Outcome</th><th scope="col">Probability</th></tr>
+   </thead>
+   <tbody>
+     <tr><td><strong>Baseline</strong> (JuU15 pattern)</td><td>~80</td><td>~85</td><td>~35</td><td>Government wins on committee recommendation</td><td>HIGH</td></tr>
+     <tr><td><strong>Mobilized</strong> (M reduces absences)</td><td>~84\u201386</td><td>~85\u201387</td><td>~27\u201330</td><td>Comfortable passage</td><td>MEDIUM</td></tr>
+     <tr><td><strong>Contested</strong> (higher opposition turnout)</td><td>~78</td><td>~90</td><td>~32</td><td>Still passes \u2014 opposition Nej does not block committee recommendation adoption</td><td>LOW</td></tr>
+   </tbody>
+ </table>
+ <p><strong>Critical insight</strong>: In Swedish parliamentary procedure, the JuU15 vote was on whether to adopt the committee's recommendation (which rejected opposition motions). The same procedure will apply to Prop. 246 \u2014 the committee will recommend adoption, and the Riksdag votes on that recommendation. Even if the opposition has more individual Nej votes, the committee recommendation prevails unless a formal counter-proposal secures a majority. This means the government's path to passage is more secure than the raw 80-85 numbers suggest.</p>
+
  <h3>Party Positions</h3>
  <table>
    <caption>Parliamentary party positions on Prop. 2025/26:246</caption>
@@ -386,6 +457,23 @@
    <li>🔴 <strong>Part of systematic criminal justice escalation</strong>: Combined with double network penalties (<a href="https://data.riksdagen.se/dokument/HD03218" target="_blank" rel="noopener noreferrer">HD03218</a>), extended civil servant liability (<a href="https://data.riksdagen.se/dokument/HD03217" target="_blank" rel="noopener noreferrer">HD03217</a>), and indefinite sentencing, this represents the most aggressive law-and-order legislative program in modern Swedish history — comparable in scope to the Danish "ghetto package" of 2018 but applied to criminal age policy. (Confidence: HIGH)</li>
    <li>🟡 <strong>Election 2026 dimension</strong>: With the general election approximately 5 months away (September 2026), this proposition's timing maximizes electoral benefit for the governing coalition while forcing opposition parties into uncomfortable positions. S's response in the JuU committee will be the decisive indicator of their election strategy on criminal justice. (Confidence: HIGH)</li>
  </ul>
+
+ <h2>Implementation Risk Assessment</h2>
+ <p>The JuU15 vote <strong>confirms passage</strong> but exposes a critical implementation gap. The government must operationalize 31 law amendments by August 2, 2026 — just 3.5 months away — across multiple agencies that are already under strain:</p>
+ <table>
+   <caption>Implementation readiness assessment for Prop. 2025/26:246</caption>
+   <thead>
+     <tr><th scope="col">Agency</th><th scope="col">Role</th><th scope="col">Current Capacity</th><th scope="col">Risk Level</th></tr>
+   </thead>
+   <tbody>
+     <tr><td>SiS (Statens institutionsstyrelse)</td><td>Secure youth facilities for 13–14 year olds</td><td>&gt;90% occupancy Q1 2026; no published plan for new age group</td><td>ð´ CRITICAL</td></tr>
+     <tr><td>Kriminalvården</td><td>Prison and probation services</td><td>Ongoing staffing crisis; 2025 recruitment targets missed</td><td>ð  HIGH</td></tr>
+     <tr><td>290 municipalities</td><td>Youth care (ungdomsvård) primary delivery</td><td>No supplementary budget; social services already strained</td><td>ð  HIGH</td></tr>
+     <tr><td>Åklagarmyndigheten</td><td>Prosecution of 13–14 year olds</td><td>New procedural guidelines needed; training gap</td><td>ð¡ MEDIUM</td></tr>
+     <tr><td>Courts (domstolsverket)</td><td>Youth criminal proceedings</td><td>New procedural frameworks for under-15 defendants</td><td>ð¡ MEDIUM</td></tr>
+   </tbody>
+ </table>
+ <p>The implementation timeline is aggressive by any standard. Sweden's previous major criminal justice reforms (e.g., the 2007 ungdomsövervakning reform) had 12–18 month lead times with dedicated budget allocations. Prop. 246 provides 3.5 months and no additional funding. This is the single largest risk to the reform's success and will be the opposition's primary line of attack in JuU committee hearings.</p>
 
  <h2>What to Watch</h2>
  <ul>
