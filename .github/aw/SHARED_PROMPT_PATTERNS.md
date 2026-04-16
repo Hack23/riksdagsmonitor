@@ -2106,8 +2106,12 @@ if [ -f /tmp/gh-aw/agent/timing.env ]; then
   . /tmp/gh-aw/agent/timing.env
 fi
 if [ -z "$START_TIME" ]; then
-  date +%s > /tmp/start_time.txt
-  read START_TIME < /tmp/start_time.txt
+  if [ -f /tmp/start_time.txt ]; then
+    read START_TIME < /tmp/start_time.txt
+  else
+    date +%s > /tmp/start_time.txt
+    read START_TIME < /tmp/start_time.txt
+  fi
 fi
 date +%s > /tmp/now_time.txt
 read AW_NOW < /tmp/now_time.txt
@@ -2117,7 +2121,9 @@ echo "⏱️ Elapsed time: $ELAPSED_MIN minutes"
 # MINIMUM_ANALYSIS_MINUTES defaults to 22 (15 min Pass 1 + 7 min Pass 2)
 # Workflows with different time budgets can override via environment variable
 # (e.g. 30-minute workflows set MINIMUM_ANALYSIS_MINUTES=14)
-MINIMUM_ANALYSIS_MINUTES="${MINIMUM_ANALYSIS_MINUTES:-22}"
+if [ -z "$MINIMUM_ANALYSIS_MINUTES" ]; then
+  MINIMUM_ANALYSIS_MINUTES=22
+fi
 if [ "$ELAPSED_MIN" -lt "$MINIMUM_ANALYSIS_MINUTES" ]; then
   echo "🚨🚨🚨 MINIMUM TIME GATE FAILED 🚨🚨🚨"
   echo "❌ Only $ELAPSED_MIN minutes elapsed — MINIMUM $MINIMUM_ANALYSIS_MINUTES minutes required for 2-pass analysis"

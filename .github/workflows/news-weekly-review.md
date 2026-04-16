@@ -249,6 +249,11 @@ Uses `memory/news-generation` branch. START: read `memory/news-generation/last-r
 
 > 🔴 **SYSTEMIC ISSUE (PR #1794 audit, 2026-04-16)**: ALL news workflows completing in 13-22 min of 45-min allocation, producing shallow analysis. Agent MUST use at least 40 of 45 minutes. Completion < 40 min = insufficient iteration = REJECTED.
 
+```bash
+date +%s > /tmp/start_time.txt
+read START_TIME < /tmp/start_time.txt
+```
+
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
 - **Minutes 3–6**: Run pre-article-analysis pipeline (download data)
 - **Minutes 6–21**: 🚨 **AI Analysis Pass 1 (15 min minimum)**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries.
