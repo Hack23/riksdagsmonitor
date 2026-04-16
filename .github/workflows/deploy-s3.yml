@@ -133,15 +133,18 @@ jobs:
 
       - name: Copy JS libraries to build output
         run: |
-          if [ -d "js/lib" ]; then
-            echo "📦 Copying js/lib/ to dist/js/lib/..."
-            mkdir -p dist/js/lib
-            cp -r js/lib/* dist/js/lib/
-            echo "✅ JS libraries copied to dist/js/lib/"
-            ls -la dist/js/lib/
-          else
-            echo "ℹ️ No js/lib directory found, skipping"
-          fi
+          echo "📦 Copying js/ directory to dist/js/..."
+          # The js/ directory contains utility scripts (theme-init.js, etc.)
+          # and vendor libraries (js/lib/chart.umd.*.js, d3, papaparse, etc.)
+          # that are referenced by news articles and dashboard pages via
+          # relative paths (../js/lib/chart.umd.4.4.1.js).
+          # Vite only copies public/js/ to dist/js/, so we merge the full
+          # js/ tree on top — cp -rn (no-clobber) keeps Vite's copies when
+          # both directories contain the same filename.
+          cp -rn js/* dist/js/ 2>/dev/null || true
+          echo "✅ JS directory merged into dist/js/"
+          echo "  Files in dist/js/:"
+          find dist/js -type f | sort
 
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@ec61189d14ec14c8efccab744f656cffd0e33f37 # v6.1.0

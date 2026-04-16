@@ -419,6 +419,21 @@ jobs:
       - name: Build application
         run: npm run build
 
+      - name: Copy extra assets to build output
+        run: |
+          echo "📦 Copying js/ directory to dist/js/..."
+          # Merge repo js/ tree (vendor libs, utility scripts) into dist/js/.
+          # Vite only copies public/js/ → dist/js/; the rest must be added
+          # so that news articles' relative paths (../js/lib/chart.umd.*.js)
+          # resolve correctly on S3/CloudFront.
+          cp -rn js/* dist/js/ 2>/dev/null || true
+          echo "✅ JS directory merged into dist/js/"
+          if [ -d "docs" ]; then
+            echo "📚 Copying docs/ to dist/docs/..."
+            cp -r docs dist/docs
+            echo "✅ Documentation copied to dist/docs/"
+          fi
+
       - name: Create release artifacts
         run: |
           echo "📦 Creating release artifacts..."
