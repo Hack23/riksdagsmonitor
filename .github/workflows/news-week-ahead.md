@@ -264,7 +264,7 @@ read START_TIME < /tmp/start_time.txt
 ```
 
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
-- **Minutes 3–5**: Run pre-article-analysis pipeline (download data)
+- **Minutes 3–5**: Run download-parliamentary-data pipeline (download data)
 - **Minutes 5–20**: 🚨 **AI Analysis Pass 1 (15 min minimum)**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries.
 - **Minutes 20–27**: 🚨 **AI Analysis Pass 2 (7 min minimum)**: Read ALL analysis back completely, improve every section, replace ALL script stubs with AI analysis. Run enrichment verification gate.
 - **Minutes 27–29**: Run ENFORCED Minimum Time Gate + Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass.
@@ -459,7 +459,12 @@ get_fragor({ rm: <calculated riksmöte>, limit: 20 })
 
 ### Step 2.5: Run Pre-Article Analysis Pipeline
 
-**CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data, runs all 9 analysis steps, and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`. Article generators will consume these for enrichment. After pipeline completes, run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 files exist (synthesis-summary.md, swot-analysis.md, risk-assessment.md, threat-analysis.md, classification-results.md, significance-scoring.md, stakeholder-perspectives.md, cross-reference-map.md, data-download-manifest.md). Create any missing artifacts manually using their templates.
+**CRITICAL: Download data first, then AI creates ALL 9 analysis artifacts.** `download-parliamentary-data.ts` downloads raw data ONLY — it performs NO analysis. The AI agent MUST:
+1. Read `analysis/methodologies/ai-driven-analysis-guide.md` fully
+2. Read ALL 8 templates in `analysis/templates/`
+3. Create ALL 9 analysis files in `analysis/daily/YYYY-MM-DD/` using evidence from the downloaded data
+
+Run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 files exist (synthesis-summary.md, swot-analysis.md, risk-assessment.md, threat-analysis.md, classification-results.md, significance-scoring.md, stakeholder-perspectives.md, cross-reference-map.md, data-download-manifest.md).
 
 ```bash
 date -u +%Y-%m-%d > /tmp/today.txt
@@ -467,7 +472,7 @@ read ARTICLE_DATE < /tmp/today.txt
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 # CRITICAL: Source mcp-setup.sh FIRST to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
 source scripts/mcp-setup.sh
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 > /tmp/pipeline-output.log 2>&1
+npx tsx scripts/download-parliamentary-data.ts --date "$ARTICLE_DATE" --limit 50 > /tmp/pipeline-output.log 2>&1
 PIPE_EXIT=$?
 cat /tmp/pipeline-output.log
 if [ "$PIPE_EXIT" -ne 0 ]; then
@@ -479,7 +484,7 @@ ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis o
 find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l > /tmp/data_count.txt
 read DATA_JSON_COUNT < /tmp/data_count.txt
 echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
-# Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
+# Relocate pipeline artifacts: download-parliamentary-data.ts writes to analysis/daily/$DATE/ (unscoped)
 # but this workflow needs them under analysis/daily/$DATE/week-ahead/
 # === Run Suffix Resolution (see SHARED_PROMPT_PATTERNS.md) ===
 BASE_SUBFOLDER="week-ahead"
@@ -518,7 +523,7 @@ fi
 date -u +%G-W%V > /tmp/week_label.txt
 read WEEK_LABEL < /tmp/week_label.txt
 echo "📅 Running weekly aggregation for $WEEK_LABEL..."
-source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --aggregate weekly --date "$WEEK_LABEL" || echo "⚠️ Weekly aggregation failed (non-blocking)"
+source scripts/mcp-setup.sh && npx tsx scripts/download-parliamentary-data.ts --aggregate weekly --date "$WEEK_LABEL" || echo "⚠️ Weekly aggregation failed (non-blocking)"
 ls -la "analysis/weekly/$WEEK_LABEL/" 2>/dev/null || echo "⚠️ No weekly aggregation output"
 ```
 
@@ -526,7 +531,7 @@ These files are committed alongside articles for human review and continuous imp
 
 ### 🔴 MANDATORY: Batch Analysis Enrichment (Prevents Empty "0 Documents Analyzed" Files)
 
-> **Root Cause**: The `pre-article-analysis.ts` script filters documents by exact date match. When no documents match the exact analysis date, batch files report "0 documents analyzed" — this violates `ai-driven-analysis-guide.md` quality requirements.
+> **Root Cause**: The `download-parliamentary-data.ts` script filters documents by exact date match. When no documents match the exact analysis date, batch files report "0 documents analyzed" — this violates `ai-driven-analysis-guide.md` quality requirements.
 
 **After per-file analysis, check if batch files are empty and enrich them:**
 

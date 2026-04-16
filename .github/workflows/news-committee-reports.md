@@ -268,7 +268,7 @@ read START_TIME < /tmp/start_time.txt
 ```
 
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
-- **Minutes 3–6**: Run pre-article-analysis pipeline (download data)
+- **Minutes 3–6**: Run download-parliamentary-data pipeline (download data)
 - **Minutes 6–21**: 🚨 **AI Analysis Pass 1 (15 min minimum)**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries.
 - **Minutes 21–28**: 🚨 **AI Analysis Pass 2 (7 min minimum)**: Read ALL analysis back completely, improve every section, replace ALL script stubs with AI analysis. Run enrichment verification gate.
 - **Minutes 28–30**: Run ENFORCED Minimum Time Gate + Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass.
@@ -534,7 +534,12 @@ get_betankanden({ rm: <calculated riksmöte>, limit: 20 })
 
 ### Step 2.5: Run Pre-Article Analysis Pipeline
 
-**CRITICAL: Run the analysis pipeline BEFORE article generation.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/committeeReports/`. The `--doc-type committeeReports` flag ensures ALL output goes directly to the scoped subdirectory. **NEVER write or copy analysis files to the parent date directory** — doing so causes merge conflicts when multiple doc-type workflows run on the same date. The `analysis-reader.ts` automatically scans subdirectories, so root-level copies are NOT needed. After pipeline completes, run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 files exist. Create any missing artifacts manually using their templates.
+**CRITICAL: Download data first, then AI creates ALL 9 analysis artifacts.** `download-parliamentary-data.ts` downloads raw data from riksdag-regering-mcp ONLY — it performs NO analysis. The AI agent MUST:
+1. Read `analysis/methodologies/ai-driven-analysis-guide.md` fully
+2. Read ALL 8 templates in `analysis/templates/`
+3. Create ALL 9 analysis files in `analysis/daily/YYYY-MM-DD/committeeReports/` using evidence from the downloaded data
+
+**NEVER write or copy analysis files to the parent date directory** — doing so causes merge conflicts when multiple doc-type workflows run on the same date. The `analysis-reader.ts` automatically scans subdirectories, so root-level copies are NOT needed. After creating ALL analysis files, run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 files exist.
 
 ```bash
 # Idempotent: only set if not already resolved by lookback
@@ -561,7 +566,7 @@ echo "📁 Analysis subfolder resolved: $ANALYSIS_SUBFOLDER"
 echo "📊 Downloading data for $ARTICLE_DATE..."
 # CRITICAL: Source mcp-setup.sh to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
 source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 --doc-type committeeReports > /tmp/pipeline-output.log 2>&1
+npx tsx scripts/download-parliamentary-data.ts --date "$ARTICLE_DATE" --limit 50 --doc-type committeeReports > /tmp/pipeline-output.log 2>&1
 PIPE_EXIT=$?
 cat /tmp/pipeline-output.log
 if [ "$PIPE_EXIT" -ne 0 ]; then
@@ -609,7 +614,7 @@ fi
 
 > 🚨 **CRITICAL RULE**: Never produce empty/stub analysis. If no data for today, look back to find unanalyzed data.
 
-Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-manifest.md` → if 0 docs, loop `DAYS_BACK` 1–7 using `date -u -d "$ARTICLE_DATE - $DAYS_BACK days"`, run `pre-article-analysis.ts --date "$LOOKBACK_DATE"` → copy artifacts from found date to original date folder → run `catalog-downloaded-data.ts --pending-only`. See `SHARED_PROMPT_PATTERNS.md` §"Data Lookback Fallback Strategy" for full bash implementation.
+Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-manifest.md` → if 0 docs, loop `DAYS_BACK` 1–7 using `date -u -d "$ARTICLE_DATE - $DAYS_BACK days"`, run `download-parliamentary-data.ts --date "$LOOKBACK_DATE"` → copy artifacts from found date to original date folder → run `catalog-downloaded-data.ts --pending-only`. See `SHARED_PROMPT_PATTERNS.md` §"Data Lookback Fallback Strategy" for full bash implementation.
 
 ### Per-File AI Analysis Enhancement
 

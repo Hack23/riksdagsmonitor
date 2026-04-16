@@ -265,7 +265,7 @@ graph TB
 
     subgraph "📥 Data Ingestion Layer"
         MCP["🔌 riksdag-regering-mcp<br/><i>MCP Server</i>"]
-        PRE["📥 pre-article-analysis.ts<br/><i>Data download + catalog</i>"]
+        PRE["📥 download-parliamentary-data.ts<br/><i>Data download + catalog</i>"]
     end
 
     subgraph "📚 Methodology Framework (v3.0)"
@@ -625,7 +625,7 @@ The following agentic workflows produce analysis artifacts. All workflows **MUST
 Output folder: `daily/YYYY-MM-DD/evening/`
 
 The evening analysis workflow is the most comprehensive. It:
-1. Downloads data via `populate-analysis-data.ts` + `pre-article-analysis.ts` (scripts for DATA only)
+1. Downloads data via `populate-analysis-data.ts` + `download-parliamentary-data.ts` (scripts for DATA only)
 2. AI reads ALL 6 methodology guides + ALL 8 templates
 3. AI performs per-file analysis on all pending files using genuine analytical reasoning
 4. AI composes daily synthesis from per-file analyses
@@ -679,13 +679,13 @@ Real-time monitoring of parliamentary activity with per-file analysis on new dat
 |------|---------|
 | `scripts/catalog-downloaded-data.ts` | Catalog downloaded files, list pending analysis |
 | `scripts/populate-analysis-data.ts` | Standalone MCP data fetcher (7 data types) |
-| `scripts/pre-article-analysis.ts` | Orchestrates 10-step analysis pipeline |
+| `scripts/download-parliamentary-data.ts` | Orchestrates raw data download and persistence (manifest + JSON) |
 | `scripts/analysis-framework/` | Core analysis pipeline (TypeScript) |
 | `scripts/analysis-framework/lenses/` | Per-perspective classifiers (citizen, economic, government, international, media, opposition) |
 | `scripts/analysis-framework/significance-scorer.ts` | Significance score computation |
 | `scripts/analysis-framework/cross-reference.ts` | Cross-document reference linking |
-| `scripts/pre-article-analysis/data-persistence.ts` | MCP data persistence to `analysis/data/` |
-| `scripts/pre-article-analysis/data-downloader.ts` | Document download from riksdag-regering-mcp |
+| `scripts/parliamentary-data/data-persistence.ts` | MCP data persistence to `analysis/data/` |
+| `scripts/parliamentary-data/data-downloader.ts` | Document download from riksdag-regering-mcp |
 | `scripts/ai-analysis/` | AI-assisted analysis generation |
 | `scripts/ai-analysis/swot/` | SWOT generation pipeline |
 | `scripts/analysis-reader.ts` | Read daily analysis files with fallback |

@@ -900,7 +900,7 @@ describe('getAnalysisEnrichment', () => {
 // subtractBusinessDays tests
 // ---------------------------------------------------------------------------
 
-import { subtractBusinessDays, MAX_LOOKBACK_BUSINESS_DAYS } from '../scripts/pre-article-analysis/data-downloader.js';
+import { subtractBusinessDays, MAX_LOOKBACK_BUSINESS_DAYS } from '../scripts/parliamentary-data/data-downloader.js';
 
 describe('subtractBusinessDays', () => {
   it('subtracts 0 business days (returns same date)', () => {

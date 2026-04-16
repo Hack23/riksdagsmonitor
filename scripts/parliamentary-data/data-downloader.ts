@@ -1,5 +1,5 @@
 /**
- * @module pre-article-analysis/data-downloader
+ * @module parliamentary-data/data-downloader
  * @description Downloads all relevant parliamentary documents from riksdag-regering-mcp
  * for the current Swedish parliamentary session (riksmöte). Returns typed `RawDocument[]`
  * collections plus a manifest of which MCP tools returned successful results and how many

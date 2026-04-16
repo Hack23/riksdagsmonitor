@@ -565,9 +565,8 @@ async function readAnalysisFile(date: string, filename: string, basePath?: strin
 
   // Prefer subdirectory files (AI-generated deep analysis) over root-level
   // files (script-generated heuristic analysis). AI workflows write to
-  // article-type subfolders (e.g., propositions/, evening-analysis/) and
-  // produce publication-quality analysis. Root-level files may be lower-quality
-  // copies from pre-article-analysis.ts and should only be used as fallback.
+  // article-type subfolders (e.g., propositions/, evening-analysis/) contain
+  // publication-quality analysis. Root-level files should only be used as fallback.
   try {
     const entries = await readdir(dateDir, { withFileTypes: true });
     // Sort alphabetically for deterministic selection when multiple subdirs exist

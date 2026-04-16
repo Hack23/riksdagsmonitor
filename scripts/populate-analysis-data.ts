@@ -33,7 +33,7 @@ import { MCPClient } from './mcp-client/client.js';
 import {
   downloadAllDocuments,
   flattenDocuments,
-} from './pre-article-analysis/data-downloader.js';
+} from './parliamentary-data/data-downloader.js';
 import {
   persistDownloadedData,
   persistEvents,
@@ -43,7 +43,7 @@ import {
   persistSCBData,
   getDataRoot,
   resolveDocId,
-} from './pre-article-analysis/data-persistence.js';
+} from './parliamentary-data/data-persistence.js';
 import type { RawDocument } from './data-transformers/types.js';
 import {
   WorldBankClient,

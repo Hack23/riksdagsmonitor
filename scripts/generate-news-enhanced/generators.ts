@@ -38,7 +38,7 @@ import type { GenerationResult, DateRange, ArticleCategory, TemplateSection, Das
 import type { TitleSet } from './types.js';
 import fs from 'node:fs';
 import path from 'node:path';
-import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic, analysisDepth, analysisIterations, METADATA_DIR } from './config.js';
+import { languages, stats, getSharedClient, requireMcp, toISODate, documentIds, documentUrls, focusTopic, analysisDepth, METADATA_DIR } from './config.js';
 import type { AnalysisDepth } from './config.js';
 import {
   getWeekAheadDateRange,
@@ -47,10 +47,8 @@ import {
   generateDynamicTitle,
   getAnalysisEnrichment,
 } from './helpers.js';
-import { AIAnalysisPipeline } from './ai-analysis-pipeline.js';
-import { sharedAnalysisCache } from './analysis-cache.js';
 
-/** Metadata from analysis iteration (stub — analysis is now AI-driven in workflows) */
+/** Article generation iteration metadata */
 interface AnalysisIterationMetadata {
   iteration?: number;
   depth: AnalysisDepth;
@@ -68,18 +66,13 @@ interface AnalysisIterationMetadata {
 }
 
 // ---------------------------------------------------------------------------
-// Stub functions replacing deleted analysis-generation modules.
-// Per ai-driven-analysis-guide.md Rule 2, scripts must NOT generate analysis.
-// The AI agent in agentic workflows now produces all political analysis.
-// These stubs return empty data so the HTML formatting pipeline still works.
-// ---------------------------------------------------------------------------
 
-/** Stub: analysis is now AI-driven in workflows, not script-generated */
+/** Returns empty stakeholder list — AI produces SWOT in agentic workflows */
 function buildAISwotStakeholders(_docs: unknown[], _topic: string, _lang: string): never[] {
   return [];
 }
 
-/** Stub: analysis is now AI-driven in workflows, not script-generated */
+/** Returns empty dashboard data — AI produces dashboards in agentic workflows */
 function analyzeDashboardData(_docs: unknown[], _topic: string, _lang: string) {
   return { charts: [] as DashboardChartConfig[], tables: [] as DashboardTableConfig[], summary: '' };
 }
@@ -1254,19 +1247,14 @@ function docTypeLabel(doktyp: string, lang: Language, count?: number): string {
  *   2 = depth 1 + Historical Context + Predictive Assessment
  *   3 = depth 2 + Executive Intelligence Summary + Methodology (3 iterations)
  *   4 = depth 3 + quality-review iteration in Methodology (4 iterations)
- * When `aiResult` is provided, both the Strategic Implications and Key
- * Takeaways sections use its AI-generated content when present. For either
- * AI-driven section with missing content, including when no AIAnalysisResult
- * is supplied or when the corresponding `aiResult` field is empty,
- * AI_MUST_REPLACE markers are emitted (v3.0+ — no template-generated fallback
- * content).
  */
 function generateDeepInspectionContent(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,
   depth: 1 | 2 | 3 | 4 = 1,
-  aiResult?: import('./ai-analysis-pipeline.js').AIAnalysisResult,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  aiResult?: any,
 ): string {
   const esc = escapeHtml;
   let html = '';
@@ -1334,7 +1322,7 @@ function generateDeepInspectionContent(
   if (aiResult?.keyTakeaways && aiResult.keyTakeaways.length > 0) {
     // Use AI-generated takeaways
     html += `<ul class="key-takeaways-list">\n`;
-    aiResult.keyTakeaways.forEach(item => {
+    aiResult.keyTakeaways.forEach((item: string) => {
       html += `  <li>${esc(item)}</li>\n`;
     });
     html += `</ul>\n`;
@@ -1920,7 +1908,8 @@ function buildDeepInspectionSections(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,
-  aiResult?: import('./ai-analysis-pipeline.js').AIAnalysisResult,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  aiResult?: any,
 ): TemplateSection[] {
   if (docs.length === 0) return [];
 
@@ -1948,7 +1937,7 @@ function buildDeepInspectionSections(
     .filter(([k]) => !classifiedTypes.has(k))
     .flatMap(([, v]) => v);
 
-  // ── AI-driven 6-stakeholder SWOT ─────────────────────────────────────────
+  // ── 6-stakeholder SWOT ───────────────────────────────────────────────────
   const stakeholders = buildAISwotStakeholders(docs, topic ?? '', lang);
 
   const strategicContext = topic
@@ -1956,12 +1945,12 @@ function buildDeepInspectionSections(
     : `Multi-stakeholder analysis of ${docs.length} parliamentary documents`;
   const swotSection = generateStakeholderSwotSection({ stakeholders, lang, strategicContext });
 
-  // ── Localised names for mindmap/sankey labels (single source from ai-swot-analyzer)
+  // ── Localised names for mindmap/sankey labels
   const govName     = AI_STAKEHOLDER_NAMES['government-coalition'][lang] ?? AI_STAKEHOLDER_NAMES['government-coalition'].en;
   const oppName     = AI_STAKEHOLDER_NAMES['opposition'][lang]           ?? AI_STAKEHOLDER_NAMES['opposition'].en;
   const privateName = AI_STAKEHOLDER_NAMES['private-sector'][lang]       ?? AI_STAKEHOLDER_NAMES['private-sector'].en;
 
-  // ── AI-analyzed multi-chart dashboard ─────────────────────────────────────
+  // ── Multi-chart dashboard ─────────────────────────────────────────────────
   // Produces 3 chart types (radar, scatter, bar) with accessible data tables.
   const dashboardAnalysis = analyzeDashboardData(docs, topic ?? '', lang);
 
@@ -2006,17 +1995,15 @@ function buildDeepInspectionSections(
     lang,
   });
 
-  // ── Mindmap: AI-driven conceptual map across 5 political dimensions ─────────
+  // ── Mindmap: conceptual map across political dimensions ──────────────────
   const allDetectedDomains = new Set<string>();
   docs.forEach(d => detectPolicyDomains(d, lang).forEach(dom => allDetectedDomains.add(dom)));
-  // Augment with AI-detected domains when available.
-  // emergingTrends format: "domain1, domain2, domain3 [CONFIDENCE]" — single suffix on whole list.
   if (aiResult?.synthesis?.emergingTrends) {
-    aiResult.synthesis.emergingTrends
+    (aiResult.synthesis.emergingTrends as string)
       .split(',')
-      .map(s => s.split('[')[0]?.trim() ?? '')
+      .map((s: string) => s.split('[')[0]?.trim() ?? '')
       .filter(Boolean)
-      .forEach(dom => allDetectedDomains.add(dom));
+      .forEach((dom: string) => allDetectedDomains.add(dom));
   }
   const detectedDomainList = [...allDetectedDomains].filter(Boolean).slice(0, 8);
 
@@ -2353,8 +2340,6 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       console.log(`  🌐 Generating ${lang.toUpperCase()} version (analysis-depth: ${analysisDepth})...`);
       const pipelineDepth: AnalysisDepth = mapReportDepthToPipelineDepth(analysisDepth);
 
-      // ── AI Analysis Pipeline (now handled by agentic workflows, not scripts) ──
-      // Per ai-driven-analysis-guide.md Rule 2, scripts must NOT generate analysis.
       const analysis = {
         iterationsCompleted: 0,
         confidenceScore: 0,
@@ -2364,17 +2349,9 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       };
       const validation = { passed: true };
       const iterationDurationsMs = [0];
-      console.log(`  🌐 Generating ${lang.toUpperCase()} version... (analysis delegated to AI workflow)`);
+      console.log(`  🌐 Generating ${lang.toUpperCase()} version...`);
 
-      // Run multi-iteration AI analysis pipeline — cache result per language
-      const cacheKey = sharedAnalysisCache.generateKey(enrichedDocs, sanitizedTopic, analysisIterations, lang);
-      let aiResult = sharedAnalysisCache.get(cacheKey);
-      if (!aiResult) {
-        const pipeline = new AIAnalysisPipeline({ iterations: analysisIterations });
-        aiResult = pipeline.analyze(enrichedDocs, sanitizedTopic, lang);
-        sharedAnalysisCache.set(cacheKey, aiResult);
-        console.log(`    🤖 AI analysis: ${aiResult.iterations} iteration(s), analysis score ${aiResult.analysisScore}`);
-      }
+      const aiResult = undefined;
 
       // Write iteration metadata for audit trail
       const iterationMetadata: AnalysisIterationMetadata = {

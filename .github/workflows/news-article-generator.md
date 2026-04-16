@@ -453,7 +453,12 @@ Tools with date params: `get_calendar_events` (from/tom — **authoritative for 
 
 ## Step 1.5: Run Pre-Article Analysis Pipeline
 
-**CRITICAL: Run the analysis pipeline BEFORE generating articles.** This downloads data from riksdag-regering-mcp, runs all 9 analysis steps (classification, risk assessment, SWOT, threat analysis, stakeholder perspectives, significance scoring, cross-references, synthesis), and writes structured artifacts to `analysis/daily/YYYY-MM-DD/`. After pipeline completes, run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 files exist. Create any missing artifacts manually using their templates.
+**CRITICAL: Download data first, then AI creates ALL 9 analysis artifacts.** `download-parliamentary-data.ts` downloads raw data from riksdag-regering-mcp ONLY — it performs NO analysis. The AI agent MUST:
+1. Read `analysis/methodologies/ai-driven-analysis-guide.md` fully
+2. Read ALL 8 templates in `analysis/templates/`
+3. Create ALL 9 analysis files in `analysis/daily/YYYY-MM-DD/` using evidence from the downloaded data
+
+After creating ALL analysis files, run the **9-Artifact Completeness Gate** from `SHARED_PROMPT_PATTERNS.md` §"9 REQUIRED Analysis Artifacts" to verify ALL 9 files exist.
 
 ```bash
 ARTICLE_DATE="${{ github.event.inputs.article_date }}"
@@ -475,7 +480,7 @@ read DI_DOC_IDS < /tmp/di_ids.txt
   [ -n "$DI_DOC_IDS" ] && PIPELINE_EXTRA_ARGS="--document-ids $DI_DOC_IDS"
 fi
 source scripts/mcp-setup.sh
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 $PIPELINE_EXTRA_ARGS > /tmp/pipeline-output.log 2>&1
+npx tsx scripts/download-parliamentary-data.ts --date "$ARTICLE_DATE" --limit 50 $PIPELINE_EXTRA_ARGS > /tmp/pipeline-output.log 2>&1
 PIPE_EXIT=$?
 cat /tmp/pipeline-output.log
 if [ "$PIPE_EXIT" -ne 0 ]; then
@@ -487,7 +492,7 @@ ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis o
 find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l > /tmp/data_count.txt
 read DATA_JSON_COUNT < /tmp/data_count.txt
 echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
-# Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
+# Relocate pipeline artifacts: download-parliamentary-data.ts writes to analysis/daily/$DATE/ (unscoped)
 # Determine target subfolder — use dedicated folder for multi-type/schedule runs to avoid mixing artifacts
 # RAW_REQUESTED_TYPE already set above (before deep-inspection check)
 _IS_SCHEDULE_OR_MULTI=false

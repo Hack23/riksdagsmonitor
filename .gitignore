@@ -72,7 +72,7 @@ current-*.png
 news/metadata/locks/*.lock/
 
 # Analysis output is now COMMITTED for review and incremental improvement.
-# The pre-article-analysis pipeline writes to analysis/daily/YYYY-MM-DD/
+# The download-parliamentary-data pipeline writes to analysis/daily/YYYY-MM-DD/
 # and weekly aggregation writes to analysis/weekly/YYYY-WNN/.
 # These artifacts are reviewed by humans and consumed by article generators.
 # Playwright MCP snapshots

@@ -1,5 +1,5 @@
 /**
- * @module pre-article-analysis/data-persistence
+ * @module parliamentary-data/data-persistence
  * @description Persists raw MCP data to a structured, version-controlled
  * directory tree under `analysis/data/`.  Every document, vote, event, or
  * MP record fetched from MCP tools is written here with a consistent
@@ -38,8 +38,26 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import type { RawDocument } from '../data-transformers/types.js';
-import { sanitizeDokId } from './markdown-serializer.js';
 import type { DownloadedData, DocumentTypeKey } from './data-downloader.js';
+
+// ---------------------------------------------------------------------------
+// Utility — sanitize dok_id for use as filename
+// ---------------------------------------------------------------------------
+
+/**
+ * Sanitize a Riksdag document identifier for safe use as a filename.
+ * Lowercases, replaces non-alphanumeric characters (preserving Swedish chars
+ * and hyphens), collapses runs of hyphens, trims leading/trailing hyphens,
+ * and caps at 100 characters.
+ */
+export function sanitizeDokId(dokId: string): string {
+  return dokId
+    .toLowerCase()
+    .replace(/[^a-z0-9åäö-]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 100);
+}
 
 // ---------------------------------------------------------------------------
 // Constants

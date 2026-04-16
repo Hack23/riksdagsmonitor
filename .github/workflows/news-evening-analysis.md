@@ -298,7 +298,7 @@ read START_TIME < /tmp/start_time.txt
 | Phase | Minutes | Action | ✅ Verification |
 |-------|---------|--------|----------------|
 | Setup | 0–3 | Date check, `get_sync_status()`, determine day type | MCP responds |
-| Download | 3–6 | Run `populate-analysis-data.ts` + `pre-article-analysis.ts` (script-driven data download) | Data files exist |
+| Download | 3–6 | Run `populate-analysis-data.ts` + `download-parliamentary-data.ts` (script-driven data download) | Data files exist |
 | **AI Analysis Pass 1** | **6–21** | **🚨 MANDATORY 15 min minimum**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries. **Create ALL 9 required artifacts.** | 9 artifact files exist |
 | **AI Analysis Pass 2** | **21–28** | **🚨 MANDATORY 7 min minimum**: Read ALL 9 analysis artifacts back completely, improve every section, add missing Mermaid diagrams and evidence tables, replace ALL script stubs with AI analysis. | All 9 files ≥500 bytes |
 | Gates | 28–30 | Run ENFORCED Minimum Time Gate + Enrichment Verification Gate + **9-artifact completeness check** (SHARED_PROMPT_PATTERNS.md). ALL MUST pass. | 0 failures |
@@ -458,7 +458,7 @@ echo "📥 Downloading MCP data for $ARTICLE_DATE..."
 source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"
 npx tsx scripts/populate-analysis-data.ts --date "$ARTICLE_DATE" --limit 50 || echo "⚠️ Data download had issues (non-blocking)"
 echo "📥 Running pre-article analysis pipeline..."
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 > /tmp/pipeline-output.log 2>&1
+npx tsx scripts/download-parliamentary-data.ts --date "$ARTICLE_DATE" --limit 50 > /tmp/pipeline-output.log 2>&1
 PIPE_EXIT=$?
 cat /tmp/pipeline-output.log
 if [ "$PIPE_EXIT" -ne 0 ]; then
@@ -476,7 +476,7 @@ fi
 find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l > /tmp/data_count.txt
 read DATA_JSON_COUNT < /tmp/data_count.txt
 echo "📊 Documents in manifest: $MANIFEST_DOCS, JSON data files: $DATA_JSON_COUNT"
-# Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
+# Relocate pipeline artifacts: download-parliamentary-data.ts writes to analysis/daily/$DATE/ (unscoped)
 # but this workflow needs them under analysis/daily/$DATE/evening-analysis/
 # === Run Suffix Resolution (see SHARED_PROMPT_PATTERNS.md) ===
 BASE_SUBFOLDER="evening-analysis"
@@ -513,7 +513,7 @@ fi
 
 > 🚨 **CRITICAL RULE**: Never produce empty/stub analysis. If no data for today, look back to find unanalyzed data. Empty analysis = wasted workflow run.
 
-Key steps: resolve `ARTICLE_DATE` from input or today → check `analysis/daily/$ARTICLE_DATE/evening-analysis/data-download-manifest.md` → if 0 docs, loop `DAYS_BACK` 1–7 using `date -u -d "$ARTICLE_DATE - $DAYS_BACK days"`, run `pre-article-analysis.ts --date "$LOOKBACK_DATE"` → copy artifacts from found date to original date folder → run `catalog-downloaded-data.ts --pending-only`. See `SHARED_PROMPT_PATTERNS.md` §"Data Lookback Fallback Strategy" for full bash implementation.
+Key steps: resolve `ARTICLE_DATE` from input or today → check `analysis/daily/$ARTICLE_DATE/evening-analysis/data-download-manifest.md` → if 0 docs, loop `DAYS_BACK` 1–7 using `date -u -d "$ARTICLE_DATE - $DAYS_BACK days"`, run `download-parliamentary-data.ts --date "$LOOKBACK_DATE"` → copy artifacts from found date to original date folder → run `catalog-downloaded-data.ts --pending-only`. See `SHARED_PROMPT_PATTERNS.md` §"Data Lookback Fallback Strategy" for full bash implementation.
 
 ### Phase B — Per-File AI Political Intelligence Analysis (AI-Driven)
 
