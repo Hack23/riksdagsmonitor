@@ -235,52 +235,52 @@
      <tr><th scope="col">Parti</th><th scope="col">Mandat</th><th scope="col">Ja</th><th scope="col">Nej</th><th scope="col">Frånvarande</th></tr>
    </thead>
    <tbody>
-     <tr><td>M (Moderaterna)</td><td>38</td><td class="vote-yes"><strong>29</strong></td><td>0</td><td>9</td></tr>
-     <tr><td>SD (Sverigedemokraterna)</td><td>38</td><td class="vote-yes"><strong>30</strong></td><td>0</td><td>8</td></tr>
-     <tr><td>KD (Kristdemokraterna)</td><td>13</td><td class="vote-yes"><strong>12</strong></td><td>0</td><td>1</td></tr>
-     <tr><td>L (Liberalerna)</td><td>7</td><td class="vote-yes"><strong>7</strong></td><td>0</td><td>0</td></tr>
+     <tr><td>M (Moderaterna)</td><td>66</td><td class="vote-yes"><strong>53</strong></td><td>0</td><td>13</td></tr>
+     <tr><td>SD (Sverigedemokraterna)</td><td>70</td><td class="vote-yes"><strong>59</strong></td><td>0</td><td>11</td></tr>
+     <tr><td>KD (Kristdemokraterna)</td><td>19</td><td class="vote-yes"><strong>16</strong></td><td>0</td><td>3</td></tr>
+     <tr><td>L (Liberalerna)</td><td>16</td><td class="vote-yes"><strong>13</strong></td><td>0</td><td>3</td></tr>
      <tr class="table-separator"><td colspan="5"></td></tr>
-     <tr><td>S (Socialdemokraterna)</td><td>68</td><td>0</td><td class="vote-no"><strong>57</strong></td><td>11</td></tr>
-     <tr><td>V (Vänsterpartiet)</td><td>14</td><td>0</td><td class="vote-no"><strong>10</strong></td><td>4</td></tr>
-     <tr><td>C (Centerpartiet)</td><td>10</td><td>0</td><td class="vote-no"><strong>9</strong></td><td>1</td></tr>
-     <tr><td>MP (Miljöpartiet)</td><td>7</td><td>0</td><td class="vote-no"><strong>6</strong></td><td>1</td></tr>
-     <tr><td>- (Politisk vilde)</td><td>5</td><td>2</td><td>3</td><td>0</td></tr>
-     <tr class="table-total"><td><strong>Totalt</strong></td><td><strong>200</strong></td><td><strong>80</strong></td><td><strong>85</strong></td><td><strong>35</strong></td></tr>
+     <tr><td>S (Socialdemokraterna)</td><td>106</td><td>0</td><td class="vote-no"><strong>88</strong></td><td>18</td></tr>
+     <tr><td>V (Vänsterpartiet)</td><td>22</td><td>0</td><td class="vote-no"><strong>18</strong></td><td>4</td></tr>
+     <tr><td>C (Centerpartiet)</td><td>24</td><td>0</td><td class="vote-no"><strong>18</strong></td><td>6</td></tr>
+     <tr><td>MP (Miljöpartiet)</td><td>18</td><td>0</td><td class="vote-no"><strong>15</strong></td><td>3</td></tr>
+     <tr><td>- (Politisk vilde)</td><td>8</td><td>4</td><td>3</td><td>1</td></tr>
+     <tr class="table-total"><td><strong>Totalt</strong></td><td><strong>349</strong></td><td><strong>145</strong></td><td><strong>142</strong></td><td><strong>62</strong></td></tr>
    </tbody>
  </table>
 
  <div class="dashboard-section">
    <h4>Röstfördelning: JuU15 Kriminalvårdsfrågor per parti</h4>
-   <canvas id="voteChart" width="700" height="400" role="img" aria-label="Stapeldiagram som visar JuU15-votering per parti: M 29 Ja 9 frånv, SD 30 Ja 8 frånv, KD 12 Ja 1 frånv, L 7 Ja, S 57 Nej 11 frånv, V 10 Nej 4 frånv, C 9 Nej 1 frånv, MP 6 Nej 1 frånv"></canvas>
-   <noscript><p>Voteringsdata: Regeringsblocket (M 29, SD 30, KD 12, L 7 = 78 Ja) mot Oppositionen (S 57, V 10, C 9, MP 6 = 82 Nej). Plus politiska vildar: 2 Ja, 3 Nej. Totalt: 80 Ja, 85 Nej, 35 frånvarande. Utskottets förslag antogs — motionerna avslogs.</p></noscript>
+   <canvas id="voteChart" width="700" height="400" role="img" aria-label="Stapeldiagram som visar JuU15-votering per parti: M 53 Ja 13 frånv, SD 59 Ja 11 frånv, KD 16 Ja 3 frånv, L 13 Ja 3 frånv, S 88 Nej 18 frånv, V 18 Nej 4 frånv, C 18 Nej 6 frånv, MP 15 Nej 3 frånv"></canvas>
+   <noscript><p>Voteringsdata: Regeringsblocket (M 53, SD 59, KD 16, L 13 = 141 Ja) mot Oppositionen (S 88, V 18, C 18, MP 15 = 139 Nej). Plus politiska vildar: 4 Ja, 3 Nej. Totalt: 145 Ja, 142 Nej, 62 frånvarande. Utskottets förslag antogs — motionerna avslogs.</p></noscript>
  </div>
- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js" integrity="sha384-wnboMJjS+TpjTgMLaVTMbiCgq5MKoaP15Bm3a/xPRs6QGNI5AHhnj0xCHkyFjZH" crossorigin="anonymous"></script>
+ <script src="../js/lib/chart.umd.4.4.1.js"></script>
  <script>
  document.addEventListener('DOMContentLoaded', function() {
-   var ctx = document.getElementById('voteChart');
-   if (ctx && typeof Chart !== 'undefined') {
-     new Chart(ctx.getContext('2d'), {
-       type: 'bar',
-       data: {
-         labels: ['M', 'SD', 'KD', 'L', 'S', 'V', 'C', 'MP'],
-         datasets: [
-           {
-             label: 'Ja',
-             data: [29, 30, 12, 7, 0, 0, 0, 0],
+    var ctx = document.getElementById('voteChart');
+    if (ctx && typeof Chart !== 'undefined') {
+      new Chart(ctx.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['M', 'SD', 'KD', 'L', 'S', 'V', 'C', 'MP'],
+          datasets: [
+            {
+              label: 'Ja',
+              data: [53, 59, 16, 13, 0, 0, 0, 0],
              backgroundColor: '#00d9ff',
              borderColor: '#00b8d4',
              borderWidth: 1
            },
            {
              label: 'Nej',
-             data: [0, 0, 0, 0, 57, 10, 9, 6],
+             data: [0, 0, 0, 0, 88, 18, 18, 15],
              backgroundColor: '#ff006e',
              borderColor: '#d4005a',
              borderWidth: 1
            },
            {
              label: 'Frånvarande',
-             data: [9, 8, 1, 0, 11, 4, 1, 1],
+             data: [13, 11, 3, 3, 18, 4, 6, 3],
              backgroundColor: 'rgba(255, 190, 11, 0.6)',
              borderColor: '#d4a00b',
              borderWidth: 1
@@ -330,20 +330,20 @@
  </script>
 
  <h4>Analys av voteringen</h4>
- <p>JuU15-voteringen avslöjar en <strong>glasklart regering-opposition-skiljelinje</strong> inom straffrätten — exakt det mönster som kommer att forma den kommande omröstningen om Prop. 2025/26:246 (ungdomars straffbarhetsålder). Regeringsblocket (M+KD+L) med SD:s stöd samlade <strong>78 partibundna röster</strong> mot oppositionens <strong>82</strong> (S+V+C+MP). Regeringen vann bara för att 2 politiska vildar röstade Ja medan 3 röstade Nej — totalt 80-85, vilket innebar att riksdagen <strong>avslog oppositionens motioner</strong> i enlighet med utskottets förslag.</p>
+ <p>JuU15-voteringen avslöjar en <strong>glasklart regering-opposition-skiljelinje</strong> inom straffrätten — exakt det mönster som kommer att forma den kommande omröstningen om Prop. 2025/26:246 (ungdomars straffbarhetsålder). Regeringsblocket (M+KD+L) med SD:s stöd samlade <strong>141 partibundna röster</strong> mot oppositionens <strong>139</strong> (S+V+C+MP). Regeringen vann med 145 Ja mot 142 Nej tack vare att 4 politiska vildar röstade Ja medan 3 röstade Nej — vilket innebar att riksdagen <strong>avslog oppositionens motioner</strong> i enlighet med utskottets förslag.</p>
 
  <p><strong>Nyckelsignaler för Prop. 2025/26:246</strong>:</p>
  <ul>
-   <li><strong>S röstade enhälligt Nej</strong>: Samtliga 57 närvarande socialdemokratiska ledamöter röstade mot regeringens linje. Detta bekräftar att S inte kommer att korsa gränsen i straffrättsfrågor — de kommer att motsätta sig 13-årsgränsen i justitieutskottet.</li>
-   <li><strong>C gick med oppositionen</strong>: Alla 9 närvarande centerpartister röstade Nej, vilket bekräftar C:s linje med S/V/MP om kriminalvårdspolitik. Detta minskar möjligheten till "bred samsyn" kring Prop. 246.</li>
-   <li><strong>SD höll partidisciplinen</strong>: 30 av 38 SD-ledamöter närvarade och röstade Ja med perfekt disciplin. Tidöavtalet håller fast inom straffrätten.</li>
-   <li><strong>35 frånvarande</strong> (17,5%): Högre än normalt för en onsdagseftermiddagsvotering. M hade 9 frånvarande (23,7%), S hade 11 (16,2%). Detta kan signalera trötthet eller strategisk frånvaro.</li>
+   <li><strong>S röstade enhälligt Nej</strong>: Samtliga 88 närvarande socialdemokratiska ledamöter röstade mot regeringens linje. Detta bekräftar att S inte kommer att korsa gränsen i straffrättsfrågor — de kommer att motsätta sig 13-årsgränsen i justitieutskottet.</li>
+   <li><strong>C gick med oppositionen</strong>: Alla 18 närvarande centerpartister röstade Nej, vilket bekräftar C:s linje med S/V/MP om kriminalvårdspolitik. Detta minskar möjligheten till "bred samsyn" kring Prop. 246.</li>
+   <li><strong>SD höll partidisciplinen</strong>: 59 av 70 SD-ledamöter närvarade och röstade Ja med perfekt disciplin. Tidöavtalet håller fast inom straffrätten.</li>
+   <li><strong>62 frånvarande</strong> (17,8%): Högre än normalt för en onsdagseftermiddagsvotering. M hade 13 frånvarande (19,7%), S hade 18 (17,0%). Detta kan signalera trötthet eller strategisk frånvaro.</li>
  </ul>
 
  <div class="dashboard-section">
    <h4>Blockjämförelse: Regering mot opposition (JuU15)</h4>
-   <canvas id="blocChart" width="500" height="350" role="img" aria-label="Mundiagram som jämför regeringsblocket (M+KD+L+SD: 78 Ja, 18 frånvarande) mot oppositionsblocket (S+V+C+MP: 82 Nej, 17 frånvarande) mot politiska vildar (2 Ja, 3 Nej) i JuU15-voteringen"></canvas>
-   <noscript><p>Blockjämförelse: Regeringspartierna (M+KD+L+SD) levererade 78 Ja-röster med 18 frånvarande. Oppositionspartierna (S+V+C+MP) levererade 82 Nej-röster med 17 frånvarande. Politiska vildar: 2 Ja / 3 Nej. Regeringen vann trots att oppositionen hade fler totala röster (85 Nej mot 80 Ja).</p></noscript>
+   <canvas id="blocChart" width="500" height="350" role="img" aria-label="Mundiagram som jämför regeringsblocket (M+KD+L+SD: 141 Ja, 30 frånvarande) mot oppositionsblocket (S+V+C+MP: 139 Nej, 31 frånvarande) mot politiska vildar (4 Ja, 3 Nej, 1 frånvarande) i JuU15-voteringen"></canvas>
+   <noscript><p>Blockjämförelse: Regeringspartierna (M+KD+L+SD) levererade 141 Ja-röster med 30 frånvarande. Oppositionspartierna (S+V+C+MP) levererade 139 Nej-röster med 31 frånvarande. Politiska vildar: 4 Ja / 3 Nej, 1 frånvarande. Regeringen vann med 145 Ja mot 142 Nej.</p></noscript>
  </div>
  <script>
  document.addEventListener('DOMContentLoaded', function() {
@@ -352,17 +352,18 @@
      new Chart(ctx2.getContext('2d'), {
        type: 'doughnut',
        data: {
-         labels: ['Reg.block Ja (M+KD+L+SD)', 'Opposition Nej (S+V+C+MP)', 'Vildar Ja', 'Vildar Nej', 'Frånvarande (Reg)', 'Frånvarande (Opp)'],
+         labels: ['Reg.block Ja (M+KD+L+SD)', 'Opposition Nej (S+V+C+MP)', 'Vildar Ja', 'Vildar Nej', 'Frånvarande (Reg)', 'Frånvarande (Opp)', 'Frånvarande (Vildar)'],
          datasets: [{
-           data: [78, 82, 2, 3, 18, 17],
-           backgroundColor: [
-             '#00d9ff',
-             '#ff006e',
-             'rgba(0, 217, 255, 0.4)',
-             'rgba(255, 0, 110, 0.4)',
-             'rgba(255, 190, 11, 0.5)',
-             'rgba(255, 190, 11, 0.3)'
-           ],
+            data: [141, 139, 4, 3, 30, 31, 1],
+            backgroundColor: [
+              '#00d9ff',
+              '#ff006e',
+              'rgba(0, 217, 255, 0.4)',
+              'rgba(255, 0, 110, 0.4)',
+              'rgba(255, 190, 11, 0.5)',
+              'rgba(255, 190, 11, 0.3)',
+              'rgba(255, 190, 11, 0.15)'
+            ],
            borderColor: '#0a0e27',
            borderWidth: 2
          }]
@@ -404,12 +405,12 @@
      <tr><th scope="col">Scenario</th><th scope="col">Ja</th><th scope="col">Nej</th><th scope="col">Frånv.</th><th scope="col">Utfall</th><th scope="col">Sannolikhet</th></tr>
    </thead>
    <tbody>
-     <tr><td><strong>Baslinje</strong> (JuU15-mönster)</td><td>~80</td><td>~85</td><td>~35</td><td>Regeringen vinner på utskottets förslag</td><td>HÖG</td></tr>
-     <tr><td><strong>Mobiliserat</strong> (M minskar frånvaro)</td><td>~84–86</td><td>~85–87</td><td>~27–30</td><td>Bekväm passage</td><td>MEDEL</td></tr>
-     <tr><td><strong>Omtvistat</strong> (högre oppositionsnärvaro)</td><td>~78</td><td>~90</td><td>~32</td><td>Går fortfarande igenom — oppositionens Nej blockerar inte antagande av utskottets förslag</td><td>LÅG</td></tr>
+     <tr><td><strong>Baslinje</strong> (JuU15-mönster)</td><td>~145</td><td>~142</td><td>~62</td><td>Regeringen vinner på utskottets förslag</td><td>HÖG</td></tr>
+     <tr><td><strong>Mobiliserat</strong> (M minskar frånvaro)</td><td>~150–155</td><td>~150–155</td><td>~40–50</td><td>Bekväm passage</td><td>MEDEL</td></tr>
+     <tr><td><strong>Omtvistat</strong> (högre oppositionsnärvaro)</td><td>~141</td><td>~155</td><td>~53</td><td>Går fortfarande igenom — oppositionens Nej blockerar inte antagande av utskottets förslag</td><td>LÅG</td></tr>
    </tbody>
  </table>
- <p><strong>Avgörande insikt</strong>: Enligt svensk parlamentarisk praxis röstade riksdagen i JuU15 om att anta utskottets förslag (som avslog oppositionsmotionerna). Samma förfarande tillämpas på Prop. 246 — utskottet kommer att föreslå bifall, och riksdagen röstar om förslaget. Även om oppositionen har fler individuella Nej-röster går utskottets förslag igenom såvida inte ett formellt motförslag får majoritet. Detta innebär att regeringens väg till antagande är säkrare än vad de råa siffrorna 80-85 antyder.</p>
+ <p><strong>Avgörande insikt</strong>: Enligt svensk parlamentarisk praxis röstade riksdagen i JuU15 om att anta utskottets förslag (som avslog oppositionsmotionerna). Samma förfarande tillämpas på Prop. 246 — utskottet kommer att föreslå bifall, och riksdagen röstar om förslaget. Även om oppositionen har fler individuella Nej-röster går utskottets förslag igenom såvida inte ett formellt motförslag får majoritet. Detta innebär att regeringens väg till antagande är säker, så som bekräftas av resultatet 145–142.</p>
 
  <h3>Partipositioner</h3>
  <table>
@@ -422,10 +423,10 @@
      <tr><td>KD (Kristdemokraterna)</td><td>Starkt stöd</td><td>Koalitionsavtalet</td><td>I linje med familje- och trygghetsprofilen</td></tr>
      <tr><td>L (Liberalerna)</td><td>Stöd</td><td>Koalitionsavtalet</td><td>Potentiell intern spänning med liberal rättighetstradition</td></tr>
      <tr><td>SD (Sverigedemokraterna)</td><td>Stöd</td><td>Pontus Andersson Garpvall</td><td>Långvarigt krav; bekräftar Tidöavtalets parlamentariska stöd</td></tr>
-     <tr><td>S (Socialdemokraterna)</td><td>Motstånd</td><td>Anna Wallentheim</td><td>JuU15-voteringen bekräftade: samtliga 57 närvarande S-ledamöter röstade Nej. Kommer att motsätta sig 13-årsgränsen men kan stödja vissa hårdare åtgärder</td></tr>
+     <tr><td>S (Socialdemokraterna)</td><td>Motstånd</td><td>Anna Wallentheim</td><td>JuU15-voteringen bekräftade: samtliga 88 närvarande S-ledamöter röstade Nej. Kommer att motsätta sig 13-årsgränsen men kan stödja vissa hårdare åtgärder</td></tr>
      <tr><td>V (Vänsterpartiet)</td><td>Starkt motstånd</td><td>Gudrun Nordborg</td><td>Barnrätts- och FN-konventionsfokus; kommer framställa det som brott mot mänskliga rättigheter</td></tr>
      <tr><td>MP (Miljöpartiet)</td><td>Motstånd</td><td>Ulrika Westerlund</td><td>Mänskliga rättigheter; evidensbaserad kritik av avskräckningseffekten</td></tr>
-     <tr><td>C (Centerpartiet)</td><td>Motstånd</td><td>Ulrika Liljeberg</td><td>JuU15-voteringen bekräftade: samtliga 9 närvarande C-ledamöter röstade Nej. Linje med S/V/MP inom straffrätten; ingen bryggposition</td></tr>
+     <tr><td>C (Centerpartiet)</td><td>Motstånd</td><td>Ulrika Liljeberg</td><td>JuU15-voteringen bekräftade: samtliga 18 närvarande C-ledamöter röstade Nej. Linje med S/V/MP inom straffrätten; ingen bryggposition</td></tr>
    </tbody>
  </table>
 
@@ -477,9 +478,9 @@
 
  <h2>Vad du ska bevaka</h2>
  <ul>
-   <li><strong>JuU:s utskottsbehandling (maj–juni 2026)</strong>: Justitieutskottet kommer att schemalägga expertutfrågningar om Prop. 2025/26:246. Dagens JuU15-votering bekräftade att S kommer att motsätta sig regeringens straffrättspolitik — bevaka om S lämnar specifika reservationer mot 13-årsgränsen eller motsätter sig hela propositionen. En knapp majoritet (enbart M+KD+L+SD, ~78 röster) framstår nu som det mest sannolika utfallet.</li>
+   <li><strong>JuU:s utskottsbehandling (maj–juni 2026)</strong>: Justitieutskottet kommer att schemalägga expertutfrågningar om Prop. 2025/26:246. Dagens JuU15-votering bekräftade att S kommer att motsätta sig regeringens straffrättspolitik — bevaka om S lämnar specifika reservationer mot 13-årsgränsen eller motsätter sig hela propositionen. En knapp majoritet (enbart M+KD+L+SD, ~141 partiröster) framstår nu som det mest sannolika utfallet.</li>
    <li><strong>Lagrådets granskning</strong>: Lagrådet kan flagga proportionalitetsproblem gällande 13-årsgränsen och dess förenlighet med den inkorporerade FN-barnkonventionen och Europakonventionen (EKMR). Lagrådets yttranden är rådgivande men politiskt betydelsefulla.</li>
-   <li>🗳️ <strong>JuU15-votering genomförd (kl. 15:33)</strong>: Riksdagen röstade 80 Ja / 85 Nej om JuU15 Kriminalvårdsfrågor, och antog utskottets förslag att avslå ~80 oppositionsmotioner om kriminalvården. Den renodlade uppdelningen regering-mot-opposition (M+KD+L+SD mot S+V+C+MP) bekräftar stridslinjerna inför Prop. 2025/26:246. <a href="https://www.riksdagen.se/sv/webb-tv/video/beslut/beslut-kriminalvardsfragor_hdc320260416juu15/" target="_blank" rel="noopener noreferrer">Se voteringen (riksdagen.se)</a></li>
+   <li>🗳️ <strong>JuU15-votering genomförd (kl. 15:33)</strong>: Riksdagen röstade 145 Ja / 142 Nej om JuU15 Kriminalvårdsfrågor, och antog utskottets förslag att avslå ~80 oppositionsmotioner om kriminalvården. Den renodlade uppdelningen regering-mot-opposition (M+KD+L+SD mot S+V+C+MP) bekräftar stridslinjerna inför Prop. 2025/26:246. <a href="https://www.riksdagen.se/sv/webb-tv/video/beslut/beslut-kriminalvardsfragor_hdc320260416juu15/" target="_blank" rel="noopener noreferrer">Se voteringen (riksdagen.se)</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-16/realtime-1244/swot-analysis.md" rel="noopener noreferrer">📊 SWOT-analys med TOWS-matris</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-16/realtime-1244/threat-analysis.md" rel="noopener noreferrer">🔴 Hotanalys (flerramverksanalys)</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-16/realtime-1244/stakeholder-perspectives.md" rel="noopener noreferrer">👥 Intressentperspektiv (8-aktörsanalys)</a></li>

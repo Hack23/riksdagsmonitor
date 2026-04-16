@@ -235,52 +235,52 @@
      <tr><th scope="col">Party</th><th scope="col">Seats</th><th scope="col">Ja (Yes)</th><th scope="col">Nej (No)</th><th scope="col">Absent</th></tr>
    </thead>
    <tbody>
-     <tr><td>M (Moderaterna)</td><td>38</td><td class="vote-yes"><strong>29</strong></td><td>0</td><td>9</td></tr>
-     <tr><td>SD (Sverigedemokraterna)</td><td>38</td><td class="vote-yes"><strong>30</strong></td><td>0</td><td>8</td></tr>
-     <tr><td>KD (Kristdemokraterna)</td><td>13</td><td class="vote-yes"><strong>12</strong></td><td>0</td><td>1</td></tr>
-     <tr><td>L (Liberalerna)</td><td>7</td><td class="vote-yes"><strong>7</strong></td><td>0</td><td>0</td></tr>
+     <tr><td>M (Moderaterna)</td><td>66</td><td class="vote-yes"><strong>53</strong></td><td>0</td><td>13</td></tr>
+     <tr><td>SD (Sverigedemokraterna)</td><td>70</td><td class="vote-yes"><strong>59</strong></td><td>0</td><td>11</td></tr>
+     <tr><td>KD (Kristdemokraterna)</td><td>19</td><td class="vote-yes"><strong>16</strong></td><td>0</td><td>3</td></tr>
+     <tr><td>L (Liberalerna)</td><td>16</td><td class="vote-yes"><strong>13</strong></td><td>0</td><td>3</td></tr>
      <tr class="table-separator"><td colspan="5"></td></tr>
-     <tr><td>S (Socialdemokraterna)</td><td>68</td><td>0</td><td class="vote-no"><strong>57</strong></td><td>11</td></tr>
-     <tr><td>V (Vänsterpartiet)</td><td>14</td><td>0</td><td class="vote-no"><strong>10</strong></td><td>4</td></tr>
-     <tr><td>C (Centerpartiet)</td><td>10</td><td>0</td><td class="vote-no"><strong>9</strong></td><td>1</td></tr>
-     <tr><td>MP (Miljöpartiet)</td><td>7</td><td>0</td><td class="vote-no"><strong>6</strong></td><td>1</td></tr>
-     <tr><td>- (Independent)</td><td>5</td><td>2</td><td>3</td><td>0</td></tr>
-     <tr class="table-total"><td><strong>Total</strong></td><td><strong>200</strong></td><td><strong>80</strong></td><td><strong>85</strong></td><td><strong>35</strong></td></tr>
+     <tr><td>S (Socialdemokraterna)</td><td>106</td><td>0</td><td class="vote-no"><strong>88</strong></td><td>18</td></tr>
+     <tr><td>V (Vänsterpartiet)</td><td>22</td><td>0</td><td class="vote-no"><strong>18</strong></td><td>4</td></tr>
+     <tr><td>C (Centerpartiet)</td><td>24</td><td>0</td><td class="vote-no"><strong>18</strong></td><td>6</td></tr>
+     <tr><td>MP (Miljöpartiet)</td><td>18</td><td>0</td><td class="vote-no"><strong>15</strong></td><td>3</td></tr>
+     <tr><td>- (Independent)</td><td>8</td><td>4</td><td>3</td><td>1</td></tr>
+     <tr class="table-total"><td><strong>Total</strong></td><td><strong>349</strong></td><td><strong>145</strong></td><td><strong>142</strong></td><td><strong>62</strong></td></tr>
    </tbody>
  </table>
 
  <div class="dashboard-section">
    <h4>Vote Distribution: JuU15 Kriminalvårdsfrågor by Party</h4>
-   <canvas id="voteChart" width="700" height="400" role="img" aria-label="Stacked bar chart showing JuU15 vote distribution by party: M 29 Yes 9 absent, SD 30 Yes 8 absent, KD 12 Yes 1 absent, L 7 Yes, S 57 No 11 absent, V 10 No 4 absent, C 9 No 1 absent, MP 6 No 1 absent"></canvas>
-   <noscript><p>Vote data: Government bloc (M 29, SD 30, KD 12, L 7 = 78 Yes) vs Opposition (S 57, V 10, C 9, MP 6 = 82 No). Plus independents: 2 Yes, 3 No. Total: 80 Yes, 85 No, 35 absent. The committee recommendation was adopted — motions rejected.</p></noscript>
+   <canvas id="voteChart" width="700" height="400" role="img" aria-label="Stacked bar chart showing JuU15 vote distribution by party: M 53 Yes 13 absent, SD 59 Yes 11 absent, KD 16 Yes 3 absent, L 13 Yes 3 absent, S 88 No 18 absent, V 18 No 4 absent, C 18 No 6 absent, MP 15 No 3 absent"></canvas>
+   <noscript><p>Vote data: Government bloc (M 53, SD 59, KD 16, L 13 = 141 Yes) vs Opposition (S 88, V 18, C 18, MP 15 = 139 No). Plus independents: 4 Yes, 3 No. Total: 145 Yes, 142 No, 62 absent. The committee recommendation was adopted — motions rejected.</p></noscript>
  </div>
- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js" integrity="sha384-wnboMJjS+TpjTgMLaVTMbiCgq5MKoaP15Bm3a/xPRs6QGNI5AHhnj0xCHkyFjZH" crossorigin="anonymous"></script>
+ <script src="../js/lib/chart.umd.4.4.1.js"></script>
  <script>
  document.addEventListener('DOMContentLoaded', function() {
-   var ctx = document.getElementById('voteChart');
-   if (ctx && typeof Chart !== 'undefined') {
-     new Chart(ctx.getContext('2d'), {
-       type: 'bar',
-       data: {
-         labels: ['M', 'SD', 'KD', 'L', 'S', 'V', 'C', 'MP'],
-         datasets: [
-           {
-             label: 'Ja (Yes)',
-             data: [29, 30, 12, 7, 0, 0, 0, 0],
+    var ctx = document.getElementById('voteChart');
+    if (ctx && typeof Chart !== 'undefined') {
+      new Chart(ctx.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['M', 'SD', 'KD', 'L', 'S', 'V', 'C', 'MP'],
+          datasets: [
+            {
+              label: 'Ja (Yes)',
+              data: [53, 59, 16, 13, 0, 0, 0, 0],
              backgroundColor: '#00d9ff',
              borderColor: '#00b8d4',
              borderWidth: 1
            },
            {
              label: 'Nej (No)',
-             data: [0, 0, 0, 0, 57, 10, 9, 6],
+             data: [0, 0, 0, 0, 88, 18, 18, 15],
              backgroundColor: '#ff006e',
              borderColor: '#d4005a',
              borderWidth: 1
            },
            {
              label: 'Absent',
-             data: [9, 8, 1, 0, 11, 4, 1, 1],
+             data: [13, 11, 3, 3, 18, 4, 6, 3],
              backgroundColor: 'rgba(255, 190, 11, 0.6)',
              borderColor: '#d4a00b',
              borderWidth: 1
@@ -330,20 +330,20 @@
  </script>
 
  <h4>Analysis of the Vote</h4>
- <p>The JuU15 vote reveals a <strong>crystal-clear government-opposition divide</strong> on criminal justice — exactly the pattern that will shape the forthcoming vote on Prop. 2025/26:246 (youth criminal age). The government bloc (M+KD+L) with SD support mustered <strong>78 partisan votes</strong> to the opposition's <strong>82</strong> (S+V+C+MP). The government won only because 2 independents voted Ja while 3 voted Nej — resulting in the committee recommendation being adopted 80-85, meaning the Riksdag <strong>rejected the opposition motions</strong> as the committee recommended.</p>
+ <p>The JuU15 vote reveals a <strong>crystal-clear government-opposition divide</strong> on criminal justice — exactly the pattern that will shape the forthcoming vote on Prop. 2025/26:246 (youth criminal age). The government bloc (M+KD+L) with SD support mustered <strong>141 partisan votes</strong> to the opposition's <strong>139</strong> (S+V+C+MP). The government won with 145 Ja to 142 Nej thanks to 4 independents voting Ja while 3 voted Nej — resulting in the committee recommendation being adopted, meaning the Riksdag <strong>rejected the opposition motions</strong> as the committee recommended.</p>
 
  <p><strong>Key signals for Prop. 2025/26:246</strong>:</p>
  <ul>
-   <li><strong>S voted unanimously Nej</strong>: All 57 present Socialdemokraterna MPs voted against the government position. This confirms S will not cross the aisle on criminal justice — they will oppose the age-13 threshold in JuU committee.</li>
-   <li><strong>C joined the opposition</strong>: All 9 present Centerpartiet MPs voted Nej, confirming C's alignment with S/V/MP on correctional policy. This narrows the potential for a "broad consensus" on Prop. 246.</li>
-   <li><strong>SD held discipline</strong>: 30 of 38 SD MPs present voted Ja with perfect discipline. The Tidö Agreement holds firm on criminal justice.</li>
-   <li><strong>35 absences</strong> (17.5%): Higher than typical for a Wednesday afternoon vote. M had 9 absent (23.7%), S had 11 (16.2%). This may signal fatigue or strategic absence.</li>
+   <li><strong>S voted unanimously Nej</strong>: All 88 present Socialdemokraterna MPs voted against the government position. This confirms S will not cross the aisle on criminal justice — they will oppose the age-13 threshold in JuU committee.</li>
+   <li><strong>C joined the opposition</strong>: All 18 present Centerpartiet MPs voted Nej, confirming C's alignment with S/V/MP on correctional policy. This narrows the potential for a "broad consensus" on Prop. 246.</li>
+   <li><strong>SD held discipline</strong>: 59 of 70 SD MPs present voted Ja with perfect discipline. The Tidö Agreement holds firm on criminal justice.</li>
+   <li><strong>62 absences</strong> (17.8%): Higher than typical for a Wednesday afternoon vote. M had 13 absent (19.7%), S had 18 (17.0%). This may signal fatigue or strategic absence.</li>
  </ul>
 
  <div class="dashboard-section">
    <h4>Bloc Comparison: Government vs Opposition (JuU15)</h4>
-   <canvas id="blocChart" width="500" height="350" role="img" aria-label="Doughnut chart comparing government bloc (M+KD+L+SD: 78 Ja, 18 absent) vs opposition bloc (S+V+C+MP: 82 Nej, 17 absent) vs independents (2 Ja, 3 Nej) in JuU15 vote"></canvas>
-   <noscript><p>Bloc comparison: Government parties (M+KD+L+SD) delivered 78 Ja votes with 18 absent. Opposition parties (S+V+C+MP) delivered 82 Nej votes with 17 absent. Independents split 2 Ja / 3 Nej. The government prevailed on the committee recommendation despite the opposition having more total votes (85 Nej vs 80 Ja).</p></noscript>
+   <canvas id="blocChart" width="500" height="350" role="img" aria-label="Doughnut chart comparing government bloc (M+KD+L+SD: 141 Ja, 30 absent) vs opposition bloc (S+V+C+MP: 139 Nej, 31 absent) vs independents (4 Ja, 3 Nej, 1 absent) in JuU15 vote"></canvas>
+   <noscript><p>Bloc comparison: Government parties (M+KD+L+SD) delivered 141 Ja votes with 30 absent. Opposition parties (S+V+C+MP) delivered 139 Nej votes with 31 absent. Independents split 4 Ja / 3 Nej with 1 absent. The government prevailed on the committee recommendation with 145 Ja vs 142 Nej.</p></noscript>
  </div>
  <script>
  document.addEventListener('DOMContentLoaded', function() {
@@ -352,17 +352,18 @@
      new Chart(ctx2.getContext('2d'), {
        type: 'doughnut',
        data: {
-         labels: ['Gov bloc Ja (M+KD+L+SD)', 'Opposition Nej (S+V+C+MP)', 'Independent Ja', 'Independent Nej', 'Absent (Gov)', 'Absent (Opp)'],
+         labels: ['Gov bloc Ja (M+KD+L+SD)', 'Opposition Nej (S+V+C+MP)', 'Independent Ja', 'Independent Nej', 'Absent (Gov)', 'Absent (Opp)', 'Absent (Ind)'],
          datasets: [{
-           data: [78, 82, 2, 3, 18, 17],
-           backgroundColor: [
-             '#00d9ff',
-             '#ff006e',
-             'rgba(0, 217, 255, 0.4)',
-             'rgba(255, 0, 110, 0.4)',
-             'rgba(255, 190, 11, 0.5)',
-             'rgba(255, 190, 11, 0.3)'
-           ],
+            data: [141, 139, 4, 3, 30, 31, 1],
+            backgroundColor: [
+              '#00d9ff',
+              '#ff006e',
+              'rgba(0, 217, 255, 0.4)',
+              'rgba(255, 0, 110, 0.4)',
+              'rgba(255, 190, 11, 0.5)',
+              'rgba(255, 190, 11, 0.3)',
+              'rgba(255, 190, 11, 0.15)'
+            ],
            borderColor: '#0a0e27',
            borderWidth: 2
          }]
@@ -404,12 +405,12 @@
      <tr><th scope="col">Scenario</th><th scope="col">Ja</th><th scope="col">Nej</th><th scope="col">Absent</th><th scope="col">Outcome</th><th scope="col">Probability</th></tr>
    </thead>
    <tbody>
-     <tr><td><strong>Baseline</strong> (JuU15 pattern)</td><td>~80</td><td>~85</td><td>~35</td><td>Government wins on committee recommendation</td><td>HIGH</td></tr>
+     <tr><td><strong>Baseline</strong> (JuU15 pattern)</td><td>~145</td><td>~142</td><td>~62</td><td>Government wins on committee recommendation</td><td>HIGH</td></tr>
      <tr><td><strong>Mobilized</strong> (M reduces absences)</td><td>~84\u201386</td><td>~85\u201387</td><td>~27\u201330</td><td>Comfortable passage</td><td>MEDIUM</td></tr>
-     <tr><td><strong>Contested</strong> (higher opposition turnout)</td><td>~78</td><td>~90</td><td>~32</td><td>Still passes \u2014 opposition Nej does not block committee recommendation adoption</td><td>LOW</td></tr>
+     <tr><td><strong>Contested</strong> (higher opposition turnout)</td><td>~141</td><td>~155</td><td>~53</td><td>Still passes \u2014 opposition Nej does not block committee recommendation adoption</td><td>LOW</td></tr>
    </tbody>
  </table>
- <p><strong>Critical insight</strong>: In Swedish parliamentary procedure, the JuU15 vote was on whether to adopt the committee's recommendation (which rejected opposition motions). The same procedure will apply to Prop. 246 \u2014 the committee will recommend adoption, and the Riksdag votes on that recommendation. Even if the opposition has more individual Nej votes, the committee recommendation prevails unless a formal counter-proposal secures a majority. This means the government's path to passage is more secure than the raw 80-85 numbers suggest.</p>
+ <p><strong>Critical insight</strong>: In Swedish parliamentary procedure, the JuU15 vote was on whether to adopt the committee's recommendation (which rejected opposition motions). The same procedure will apply to Prop. 246 \u2014 the committee will recommend adoption, and the Riksdag votes on that recommendation. Even if the opposition has more individual Nej votes, the committee recommendation prevails unless a formal counter-proposal secures a majority. This means the government's path to passage is more secure than the 145–142 result confirms.</p>
 
  <h3>Party Positions</h3>
  <table>
@@ -422,10 +423,10 @@
      <tr><td>KD (Kristdemokraterna)</td><td>Strong support</td><td>Coalition agreement</td><td>Aligns with family/security values platform</td></tr>
      <tr><td>L (Liberalerna)</td><td>Support</td><td>Coalition agreement</td><td>Potential internal tension with liberal rights tradition</td></tr>
      <tr><td>SD (Sverigedemokraterna)</td><td>Support</td><td>Pontus Andersson Garpvall</td><td>Long-standing demand; validates parliamentary support agreement</td></tr>
-     <tr><td>S (Socialdemokraterna)</td><td>Opposition</td><td>Anna Wallentheim</td><td>JuU15 vote confirmed: all 57 present S MPs voted Nej. Will oppose age-13 threshold while supporting some tougher measures</td></tr>
+     <tr><td>S (Socialdemokraterna)</td><td>Opposition</td><td>Anna Wallentheim</td><td>JuU15 vote confirmed: all 88 present S MPs voted Nej. Will oppose age-13 threshold while supporting some tougher measures</td></tr>
      <tr><td>V (Vänsterpartiet)</td><td>Strong opposition</td><td>Gudrun Nordborg</td><td>Child rights and UN CRC focus; will frame as human rights violation</td></tr>
      <tr><td>MP (Miljöpartiet)</td><td>Opposition</td><td>Ulrika Westerlund</td><td>Human rights concerns; evidence-based critique of deterrence effectiveness</td></tr>
-     <tr><td>C (Centerpartiet)</td><td>Opposition</td><td>Ulrika Liljeberg</td><td>JuU15 vote confirmed: all 9 present C MPs voted Nej. Aligns with S/V/MP on criminal justice; no bridge position</td></tr>
+     <tr><td>C (Centerpartiet)</td><td>Opposition</td><td>Ulrika Liljeberg</td><td>JuU15 vote confirmed: all 18 present C MPs voted Nej. Aligns with S/V/MP on criminal justice; no bridge position</td></tr>
    </tbody>
  </table>
 
@@ -477,9 +478,9 @@
 
  <h2>What to Watch</h2>
  <ul>
-   <li><strong>JuU committee proceedings (May–June 2026)</strong>: The Committee on Justice will schedule expert hearings on Prop. 2025/26:246. Today's JuU15 vote confirmed S will oppose government criminal justice policy — watch for whether S tables specific reservations on the age-13 threshold or opposes the entire proposition. A narrow majority (M+KD+L+SD only, ~78 votes) now appears the most likely outcome.</li>
+   <li><strong>JuU committee proceedings (May–June 2026)</strong>: The Committee on Justice will schedule expert hearings on Prop. 2025/26:246. Today's JuU15 vote confirmed S will oppose government criminal justice policy — watch for whether S tables specific reservations on the age-13 threshold or opposes the entire proposition. A narrow majority (M+KD+L+SD only, ~141 party votes) now appears the most likely outcome.</li>
    <li><strong>Lagrådet review</strong>: The Council on Legislation may flag proportionality concerns regarding the age-13 threshold and its compatibility with the incorporated UN CRC and the European Convention on Human Rights (ECHR). Lagrådet opinions are advisory but politically significant.</li>
-   <li>🗳️ <strong>JuU15 vote completed (15:33 CET)</strong>: The Riksdag voted 80 Ja / 85 Nej on JuU15 Kriminalvårdsfrågor, adopting the committee recommendation to reject ~80 opposition motions on correctional services. The clean government-vs-opposition split (M+KD+L+SD vs S+V+C+MP) confirms the battle lines for Prop. 2025/26:246. <a href="https://www.riksdagen.se/sv/webb-tv/video/beslut/beslut-kriminalvardsfragor_hdc320260416juu15/" target="_blank" rel="noopener noreferrer">Watch the vote (riksdagen.se)</a></li>
+   <li>🗳️ <strong>JuU15 vote completed (15:33 CET)</strong>: The Riksdag voted 145 Ja / 142 Nej on JuU15 Kriminalvårdsfrågor, adopting the committee recommendation to reject ~80 opposition motions on correctional services. The clean government-vs-opposition split (M+KD+L+SD vs S+V+C+MP) confirms the battle lines for Prop. 2025/26:246. <a href="https://www.riksdagen.se/sv/webb-tv/video/beslut/beslut-kriminalvardsfragor_hdc320260416juu15/" target="_blank" rel="noopener noreferrer">Watch the vote (riksdagen.se)</a></li>
    <li><strong>International reaction (within 48 hours)</strong>: Expect formal statements from the UN Committee on the Rights of the Child, Council of Europe Commissioner for Human Rights, and comparative coverage in Nordic media. Denmark's Justice Minister may face questions about whether Denmark will follow.</li>
    <li><strong>SiS capacity assessment (Q2 2026)</strong>: The Swedish National Board of Institutional Care must present concrete plans for accommodating 13–14 year old offenders in secure facilities currently operating above 90% capacity.</li>
    <li><strong>Barnombudsmannen formal opinion</strong>: The Children's Ombudsman is expected to issue a formal statement within days, potentially triggering a broader civil society coalition against the age reduction.</li>
