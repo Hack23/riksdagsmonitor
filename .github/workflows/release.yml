@@ -609,22 +609,18 @@ jobs:
           role-session-name: githubworkflowrolesession-release
           aws-region: us-east-1
 
-      - name: Extract build to repository root
+      - name: Extract build for S3 deployment
         run: |
-          echo "📦 Extracting release build to repository root..."
-          # Remove old build artifacts
-          find . -maxdepth 1 -type f \( -name "*.html" -o -name "*.css" -o -name "*.js" -o -name "*.json" \) ! -name "package*.json" -delete
-          rm -rf styles/ js/ dashboard/ api/ || true
-          
-          # Extract new build
-          unzip -o artifacts/build/riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip -d .
+          echo "📦 Extracting release build for S3 deployment..."
+          mkdir -p deploy-root
+          unzip -o artifacts/build/riksdagsmonitor-${{ needs.prepare.outputs.version }}.zip -d deploy-root
           
           # Create version marker
-          echo "Version ${{ needs.prepare.outputs.version }} deployed at $(date)" > version.txt
-          echo "✅ Build extracted and ready for deployment"
+          echo "Version ${{ needs.prepare.outputs.version }} deployed at $(date)" > deploy-root/version.txt
+          echo "✅ Build extracted to deploy-root/ and ready for deployment"
 
       - name: Deploy to S3 with cache headers
-        run: bash scripts/deploy-s3.sh . "s3://riksdagsmonitor-frontend-us-east-1-172017021075"
+        run: bash scripts/deploy-s3.sh deploy-root "s3://riksdagsmonitor-frontend-us-east-1-172017021075"
 
       - name: Invalidate CloudFront
         run: |

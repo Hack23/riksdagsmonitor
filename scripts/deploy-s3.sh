@@ -4,10 +4,10 @@
 # Uploads site assets to S3 with correct MIME types and cache headers.
 # Shared by deploy-s3.yml (push to main) and release.yml workflows.
 #
-# Uses `aws s3 cp --recursive` (not sync) for type-specific passes so that
-# Content-Type metadata is always set correctly — even on objects that already
-# exist on S3 with stale / wrong MIME types (sync skips unchanged files and
-# would never fix their metadata).
+# Uses `aws s3 sync` per-extension to upload only changed files while
+# setting the correct Content-Type metadata.  Sync compares file sizes
+# (--size-only) so unchanged files are skipped — dramatically faster
+# than the old `cp --recursive` approach that re-uploaded everything.
 #
 # Usage: scripts/deploy-s3.sh <source-dir> <s3-bucket-url>
 #   source-dir:    local directory containing the built site (e.g. "dist" or ".")
@@ -20,300 +20,152 @@ set -euo pipefail
 SRC="${1:?Usage: deploy-s3.sh <source-dir> <s3-bucket-url>}"
 BUCKET="${2:?Usage: deploy-s3.sh <source-dir> <s3-bucket-url>}"
 
-# Directories that must never be uploaded
+# ── Directories and files that must never be uploaded ──
 SKIP=(
   --exclude '.git/*'
-  --exclude 'screenshots/*'
+  --exclude '.github/*'
+  --exclude '.devcontainer/*'
   --exclude 'node_modules/*'
   --exclude 'artifacts/*'
-  --exclude 'tests/*'
+  --exclude 'builds/*'
   --exclude 'cypress/*'
-  --exclude '.github/*'
+  --exclude 'screenshots/*'
   --exclude 'schemas/*'
   --exclude 'scripts/*'
-  --exclude '.devcontainer/*'
   --exclude 'quicksight/*'
   --exclude 'src/*'
-  --exclude 'builds/*'
+  --exclude 'tests/*'
+  --exclude 'analysis/*'
+  --exclude 'cia-data/*'
+  --exclude '.npmrc'
+  --exclude '.nvmrc'
+  --exclude '.gitignore'
+  --exclude '.gitattributes'
+  --exclude 'package.json'
+  --exclude 'package-lock.json'
+  --exclude 'tsconfig*.json'
+  --exclude 'vite.config.js'
+  --exclude 'vitest.config.js'
+  --exclude 'eslint.config.js'
+  --exclude 'cypress.config.js'
+  --exclude 'knip.json'
+  --exclude 'typedoc.json'
+  --exclude 'LICENSE'
+  --exclude 'CODE_OF_CONDUCT.md'
+  --exclude 'CONTRIBUTING.md'
+  --exclude 'AGENTS.md'
+  --exclude 'SKILLS.md'
+  --exclude 'LABELS.md'
+  --exclude 'TESTING.md'
+  --exclude 'RELEASE_PROCESS.md'
+  --exclude 'TRANSLATION_GUIDE.md'
+  --exclude '*.sh'
 )
 
 echo "🚀 Deploying $SRC → $BUCKET"
 
-# ── Main site assets (exclude docs/ — handled separately below) ──
-# cp --recursive always uploads every matched file, ensuring Content-Type
-# metadata is set correctly even if the file content has not changed.
+# ── Helper: sync a set of extensions with explicit MIME type ──
+# Uses aws s3 sync --size-only so unchanged files are skipped.
+# Arguments:
+#   $1  content-type
+#   $2  cache-control
+#   $3+ include patterns (e.g. '*.html')
+#   Optionally set TARGET_PREFIX before calling to deploy a subdirectory
+#   (defaults to the bucket root).
+sync_type() {
+  local content_type="$1"; shift
+  local cache_control="$1"; shift
+  local includes=()
+  for pat in "$@"; do
+    includes+=(--include "$pat")
+  done
 
-# HTML files - short cache, must-revalidate
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.html' \
-  --no-guess-mime-type --content-type 'text/html; charset=utf-8' \
-  --cache-control 'public, max-age=3600, must-revalidate' \
-  "${SKIP[@]}" --exclude 'docs/*'
+  local dest="${TARGET_PREFIX:-$BUCKET}"
 
-# CSS files - long cache, immutable (hashed Vite bundles)
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.css' \
-  --no-guess-mime-type --content-type 'text/css' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
+  aws s3 sync "$SYNC_SRC" "$dest" \
+    --size-only \
+    --exclude '*' "${includes[@]}" \
+    --no-guess-mime-type --content-type "$content_type" \
+    --cache-control "$cache_control" \
+    "${EXTRA_EXCLUDES[@]}"
+}
 
-# JS files - long cache, immutable (hashed Vite bundles)
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.js' \
-  --no-guess-mime-type --content-type 'application/javascript' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
+# ── Main site assets (exclude docs/ — handled separately) ──
+SYNC_SRC="$SRC"
+EXTRA_EXCLUDES=("${SKIP[@]}" --exclude 'docs/*')
+TARGET_PREFIX="$BUCKET"
 
-# Image files — each format gets its own explicit MIME type
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.webp' \
-  --no-guess-mime-type --content-type 'image/webp' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
+echo "📄 Syncing HTML..."
+sync_type 'text/html; charset=utf-8' 'public, max-age=3600, must-revalidate' '*.html'
 
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.png' \
-  --no-guess-mime-type --content-type 'image/png' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
+echo "🎨 Syncing CSS..."
+sync_type 'text/css' 'public, max-age=31536000, immutable' '*.css'
 
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.jpg' --include '*.jpeg' \
-  --no-guess-mime-type --content-type 'image/jpeg' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
+echo "⚡ Syncing JS..."
+sync_type 'application/javascript' 'public, max-age=31536000, immutable' '*.js' '*.mjs'
 
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.gif' \
-  --no-guess-mime-type --content-type 'image/gif' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
+echo "🖼️  Syncing images..."
+sync_type 'image/webp'     'public, max-age=31536000, immutable' '*.webp'
+sync_type 'image/png'      'public, max-age=31536000, immutable' '*.png'
+sync_type 'image/jpeg'     'public, max-age=31536000, immutable' '*.jpg' '*.jpeg'
+sync_type 'image/gif'      'public, max-age=31536000, immutable' '*.gif'
+sync_type 'image/svg+xml'  'public, max-age=31536000, immutable' '*.svg'
+sync_type 'image/x-icon'   'public, max-age=31536000, immutable' '*.ico'
 
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.svg' \
-  --no-guess-mime-type --content-type 'image/svg+xml' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
+echo "🔤 Syncing fonts..."
+sync_type 'font/woff2'                       'public, max-age=31536000, immutable' '*.woff2'
+sync_type 'font/woff'                        'public, max-age=31536000, immutable' '*.woff'
+sync_type 'font/ttf'                         'public, max-age=31536000, immutable' '*.ttf'
+sync_type 'application/vnd.ms-fontobject'    'public, max-age=31536000, immutable' '*.eot'
+sync_type 'font/otf'                         'public, max-age=31536000, immutable' '*.otf'
 
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.ico' \
-  --no-guess-mime-type --content-type 'image/x-icon' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
+echo "📋 Syncing metadata & data files..."
+sync_type 'application/xml'           'public, max-age=86400' '*.xml'
+sync_type 'application/json'          'public, max-age=86400' '*.json'
+sync_type 'text/plain'                'public, max-age=86400' '*.txt'
+sync_type 'text/csv; charset=utf-8'   'public, max-age=86400' '*.csv'
+sync_type 'application/manifest+json' 'public, max-age=86400' '*.webmanifest'
+sync_type 'application/pdf'           'public, max-age=86400' '*.pdf'
+sync_type 'text/markdown; charset=utf-8' 'public, max-age=86400' '*.md'
 
-# Font files - long cache, immutable
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.woff2' \
-  --no-guess-mime-type --content-type 'font/woff2' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
-
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.woff' \
-  --no-guess-mime-type --content-type 'font/woff' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
-
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.ttf' \
-  --no-guess-mime-type --content-type 'font/ttf' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
-
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.eot' \
-  --no-guess-mime-type --content-type 'application/vnd.ms-fontobject' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
-
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.otf' \
-  --no-guess-mime-type --content-type 'font/otf' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
-
-# Metadata files - medium cache (1 day)
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.xml' \
-  --no-guess-mime-type --content-type 'application/xml' \
-  --cache-control 'public, max-age=86400' \
-  "${SKIP[@]}" --exclude 'docs/*'
-
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.json' \
-  --no-guess-mime-type --content-type 'application/json' \
-  --cache-control 'public, max-age=86400' \
-  "${SKIP[@]}" --exclude 'docs/*'
-
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.txt' \
-  --no-guess-mime-type --content-type 'text/plain' \
-  --cache-control 'public, max-age=86400' \
-  "${SKIP[@]}" --exclude 'docs/*'
-
-# CSV data files - medium cache (1 day), explicit text/csv MIME type
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.csv' \
-  --no-guess-mime-type --content-type 'text/csv; charset=utf-8' \
-  --cache-control 'public, max-age=86400' \
-  "${SKIP[@]}" --exclude 'docs/*'
-
-# Source map files - long cache (Vite hashed), explicit application/json
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.map' \
-  --no-guess-mime-type --content-type 'application/json' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
-
-# Web app manifest - medium cache
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.webmanifest' \
-  --no-guess-mime-type --content-type 'application/manifest+json' \
-  --cache-control 'public, max-age=86400' \
-  "${SKIP[@]}" --exclude 'docs/*'
-
-# ES module files - long cache, immutable
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.mjs' \
-  --no-guess-mime-type --content-type 'application/javascript' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
-
-# WebAssembly files - long cache, immutable
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.wasm' \
-  --no-guess-mime-type --content-type 'application/wasm' \
-  --cache-control 'public, max-age=31536000, immutable' \
-  "${SKIP[@]}" --exclude 'docs/*'
-
-# PDF files - long cache
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.pdf' \
-  --no-guess-mime-type --content-type 'application/pdf' \
-  --cache-control 'public, max-age=86400' \
-  "${SKIP[@]}" --exclude 'docs/*'
-
-# Markdown files - medium cache
-aws s3 cp "$SRC" "$BUCKET" --recursive \
-  --exclude '*' --include '*.md' \
-  --no-guess-mime-type --content-type 'text/markdown; charset=utf-8' \
-  --cache-control 'public, max-age=86400' \
-  "${SKIP[@]}" --exclude 'docs/*'
+echo "🗺️  Syncing source maps & wasm..."
+sync_type 'application/json' 'public, max-age=31536000, immutable' '*.map'
+sync_type 'application/wasm' 'public, max-age=31536000, immutable' '*.wasm'
 
 # ── Documentation directory (coverage, test-results, API docs) ──
-# Docs are regenerated each release so they use shorter cache TTLs.
-# Every format gets an explicit MIME type to fix broken existing objects.
-
+# Docs use shorter cache TTLs since they are regenerated each release.
 if [ -d "$SRC/docs" ]; then
-  echo "📚 Deploying docs/ with explicit MIME types..."
+  echo "📚 Syncing docs/ ..."
+  SYNC_SRC="$SRC/docs"
+  TARGET_PREFIX="$BUCKET/docs"
+  EXTRA_EXCLUDES=()
 
-  # Docs - HTML
-  aws s3 cp "$SRC/docs" "$BUCKET/docs" --recursive \
-    --exclude '*' --include '*.html' \
-    --no-guess-mime-type --content-type 'text/html; charset=utf-8' \
-    --cache-control 'public, max-age=86400, must-revalidate'
+  sync_type 'text/html; charset=utf-8' 'public, max-age=86400, must-revalidate' '*.html'
+  sync_type 'text/css'                 'public, max-age=86400' '*.css'
+  sync_type 'application/javascript'   'public, max-age=86400' '*.js'
+  sync_type 'image/png'               'public, max-age=86400' '*.png'
+  sync_type 'image/gif'               'public, max-age=86400' '*.gif'
+  sync_type 'image/svg+xml'           'public, max-age=86400' '*.svg'
+  sync_type 'image/x-icon'            'public, max-age=86400' '*.ico'
+  sync_type 'image/jpeg'              'public, max-age=86400' '*.jpg' '*.jpeg'
+  sync_type 'image/webp'              'public, max-age=86400' '*.webp'
+  sync_type 'application/json'        'public, max-age=86400' '*.json'
+  sync_type 'application/xml'         'public, max-age=86400' '*.xml'
+  sync_type 'text/plain'              'public, max-age=86400' '*.txt'
+  sync_type 'font/woff2'              'public, max-age=86400' '*.woff2'
+  sync_type 'font/woff'               'public, max-age=86400' '*.woff'
+  sync_type 'application/json'        'public, max-age=86400' '*.map'
 
-  # Docs - CSS
-  aws s3 cp "$SRC/docs" "$BUCKET/docs" --recursive \
-    --exclude '*' --include '*.css' \
-    --no-guess-mime-type --content-type 'text/css' \
-    --cache-control 'public, max-age=86400'
-
-  # Docs - JS
-  aws s3 cp "$SRC/docs" "$BUCKET/docs" --recursive \
-    --exclude '*' --include '*.js' \
-    --no-guess-mime-type --content-type 'application/javascript' \
-    --cache-control 'public, max-age=86400'
-
-  # Docs - Images (one command per format for correct MIME type)
-  aws s3 cp "$SRC/docs" "$BUCKET/docs" --recursive \
-    --exclude '*' --include '*.png' \
-    --no-guess-mime-type --content-type 'image/png' \
-    --cache-control 'public, max-age=86400'
-
-  aws s3 cp "$SRC/docs" "$BUCKET/docs" --recursive \
-    --exclude '*' --include '*.gif' \
-    --no-guess-mime-type --content-type 'image/gif' \
-    --cache-control 'public, max-age=86400'
-
-  aws s3 cp "$SRC/docs" "$BUCKET/docs" --recursive \
-    --exclude '*' --include '*.svg' \
-    --no-guess-mime-type --content-type 'image/svg+xml' \
-    --cache-control 'public, max-age=86400'
-
-  aws s3 cp "$SRC/docs" "$BUCKET/docs" --recursive \
-    --exclude '*' --include '*.ico' \
-    --no-guess-mime-type --content-type 'image/x-icon' \
-    --cache-control 'public, max-age=86400'
-
-  aws s3 cp "$SRC/docs" "$BUCKET/docs" --recursive \
-    --exclude '*' --include '*.jpg' --include '*.jpeg' \
-    --no-guess-mime-type --content-type 'image/jpeg' \
-    --cache-control 'public, max-age=86400'
-
-  aws s3 cp "$SRC/docs" "$BUCKET/docs" --recursive \
-    --exclude '*' --include '*.webp' \
-    --no-guess-mime-type --content-type 'image/webp' \
-    --cache-control 'public, max-age=86400'
-
-  # Docs - Data files
-  aws s3 cp "$SRC/docs" "$BUCKET/docs" --recursive \
-    --exclude '*' --include '*.json' \
-    --no-guess-mime-type --content-type 'application/json' \
-    --cache-control 'public, max-age=86400'
-
-  aws s3 cp "$SRC/docs" "$BUCKET/docs" --recursive \
-    --exclude '*' --include '*.xml' \
-    --no-guess-mime-type --content-type 'application/xml' \
-    --cache-control 'public, max-age=86400'
-
-  aws s3 cp "$SRC/docs" "$BUCKET/docs" --recursive \
-    --exclude '*' --include '*.txt' \
-    --no-guess-mime-type --content-type 'text/plain' \
-    --cache-control 'public, max-age=86400'
-
-  # Docs - Fonts
-  aws s3 cp "$SRC/docs" "$BUCKET/docs" --recursive \
-    --exclude '*' --include '*.woff2' \
-    --no-guess-mime-type --content-type 'font/woff2' \
-    --cache-control 'public, max-age=86400'
-
-  aws s3 cp "$SRC/docs" "$BUCKET/docs" --recursive \
-    --exclude '*' --include '*.woff' \
-    --no-guess-mime-type --content-type 'font/woff' \
-    --cache-control 'public, max-age=86400'
-
-  # Docs - Source maps
-  aws s3 cp "$SRC/docs" "$BUCKET/docs" --recursive \
-    --exclude '*' --include '*.map' \
-    --no-guess-mime-type --content-type 'application/json' \
-    --cache-control 'public, max-age=86400'
-
-  echo "✅ Docs deployed with correct MIME types"
+  echo "✅ Docs synced"
 else
-  echo "ℹ️ No docs directory found at $SRC/docs, skipping docs deployment"
+  echo "ℹ️  No docs directory found at $SRC/docs, skipping docs deployment"
 fi
 
-# ── Catch-all pass for any unlisted file types ──
-# Uploads any remaining files that weren't handled by the per-extension passes
-# above.  Lets the CLI guess the MIME type for these rare formats, which is
-# better than not uploading them at all.
-aws s3 sync "$SRC" "$BUCKET" \
-  --exclude '*.html' --exclude '*.css' --exclude '*.js' --exclude '*.mjs' \
-  --exclude '*.webp' --exclude '*.png' --exclude '*.jpg' --exclude '*.jpeg' \
-  --exclude '*.gif' --exclude '*.svg' --exclude '*.ico' \
-  --exclude '*.woff2' --exclude '*.woff' --exclude '*.ttf' --exclude '*.eot' --exclude '*.otf' \
-  --exclude '*.xml' --exclude '*.json' --exclude '*.txt' --exclude '*.csv' \
-  --exclude '*.map' --exclude '*.webmanifest' --exclude '*.wasm' --exclude '*.pdf' --exclude '*.md' \
-  --cache-control 'public, max-age=86400' \
-  "${SKIP[@]}" --exclude 'docs/*'
-
 # ── Delete orphaned objects from S3 ──
-# Since we use cp --recursive (not sync) for the per-type passes, removed/renamed
-# files would otherwise linger in the bucket.  A final sync --delete cleans them.
-# Use --size-only to prevent re-uploading files that already have correct MIME types
-# set by the per-extension cp passes above — sync compares only file size, not
-# modification timestamps, so it will never overwrite metadata on unchanged files.
+# A final sync --delete removes files that no longer exist locally.
+# --size-only prevents re-uploading files whose metadata was already
+# set correctly by the per-extension passes above.
+echo "🧹 Cleaning orphaned S3 objects..."
 aws s3 sync "$SRC" "$BUCKET" --delete --size-only \
   "${SKIP[@]}"
 
