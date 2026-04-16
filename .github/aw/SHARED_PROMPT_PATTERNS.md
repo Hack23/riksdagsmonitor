@@ -81,7 +81,7 @@ find analysis/daily/2026-04-07/realtime-1411/documents -name "*.json" -exec cat 
 
 > 🔴 **NON-NEGOTIABLE (Added 2026-04-16, PR #1801)**: Every news workflow MUST produce ALL 9 analysis artifacts in its scoped `analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/` directory. Producing fewer than 9 is a **CRITICAL FAILURE** that results in shallow articles missing SWOT tables, risk matrices, threat analysis, and classification data. The quality gate (§"Step 5b: MANDATORY Quality Gate") checks all 9 files.
 >
-> **Root cause**: Evening analysis workflow run #24527350450 completed in 23 minutes and produced only 3 of 9 artifacts (synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md), resulting in missing risk-assessment, swot-analysis, threat-analysis, classification-results, cross-reference-map, and data-download-manifest. This pattern was observed across multiple workflow types.
+> **Root cause**: Evening analysis workflow run #24527350450 completed in 23 minutes and produced only 3 of 9 artifacts (synthesis-summary.md, significance-scoring.md, stakeholder-perspectives.md), resulting in missing risk-assessment, swot-analysis, threat-analysis, classification-results, cross-reference-map, and data-download-manifest. PR #1794 audit confirmed the same pattern across all news workflow types (motions, propositions, committee-reports, interpellations, realtime-monitor, evening-analysis) — agents completing in 13-22 minutes of their 45-60 minute allocations.
 
 | # | Required File | Template | Minimum Size | What It Must Contain |
 |---|--------------|----------|-------------|---------------------|
