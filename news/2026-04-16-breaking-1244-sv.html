@@ -257,16 +257,16 @@
  <script src="../js/lib/chart.umd.4.4.1.js"></script>
  <script>
  document.addEventListener('DOMContentLoaded', function() {
- var ctx = document.getElementById('voteChart');
- if (ctx && typeof Chart !== 'undefined') {
- new Chart(ctx.getContext('2d'), {
- type: 'bar',
- data: {
- labels: ['M', 'SD', 'KD', 'L', 'S', 'V', 'C', 'MP'],
- datasets: [
- {
- label: 'Ja',
- data: [53, 59, 16, 13, 0, 0, 0, 0],
+    var ctx = document.getElementById('voteChart');
+    if (ctx && typeof Chart !== 'undefined') {
+      new Chart(ctx.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['M', 'SD', 'KD', 'L', 'S', 'V', 'C', 'MP'],
+          datasets: [
+            {
+              label: 'Ja',
+              data: [53, 59, 16, 13, 0, 0, 0, 0],
              backgroundColor: '#00d9ff',
              borderColor: '#00b8d4',
              borderWidth: 1
@@ -354,15 +354,15 @@
        data: {
          labels: ['Reg.block Ja (M+KD+L+SD)', 'Opposition Nej (S+V+C+MP)', 'Vildar Ja', 'Vildar Nej', 'Frånvarande (Reg)', 'Frånvarande (Opp)', 'Frånvarande (Vildar)'],
          datasets: [{
-         data: [141, 139, 4, 3, 30, 31, 1],
-         backgroundColor: [
-         '#00d9ff',
-         '#ff006e',
-         'rgba(0, 217, 255, 0.4)',
-         'rgba(255, 0, 110, 0.4)',
-         'rgba(255, 190, 11, 0.5)',
-         'rgba(255, 190, 11, 0.3)',
-           'rgba(255, 190, 11, 0.15)'
+            data: [141, 139, 4, 3, 30, 31, 1],
+            backgroundColor: [
+              '#00d9ff',
+              '#ff006e',
+              'rgba(0, 217, 255, 0.4)',
+              'rgba(255, 0, 110, 0.4)',
+              'rgba(255, 190, 11, 0.5)',
+              'rgba(255, 190, 11, 0.3)',
+              'rgba(255, 190, 11, 0.15)'
             ],
            borderColor: '#0a0e27',
            borderWidth: 2
