@@ -508,30 +508,24 @@ The following functions are **HTML renderers**, not analysis generators. They ta
 |----------|--------|---------|----------|-------------|
 | 🥇 **1st** | AI workflow (agentic) | Publication-quality deep analysis | `analysis/daily/YYYY-MM-DD/{articleType}/` | Full methodology compliance: Mermaid diagrams, evidence tables, dok_id citations, multi-framework analysis |
 | 🥈 **2nd** | AI workflow (rerun suffix) | Publication-quality deep analysis | `analysis/daily/YYYY-MM-DD/{articleType}-2/` etc. | Same quality as 1st, auto-suffixed for repeat runs |
-| 🥉 **3rd** | Script (`pre-article-analysis.ts`) | Heuristic data extraction only | `analysis/daily/YYYY-MM-DD/{docType}/` | Automated pipeline: basic scoring, empty SWOT/threat, no Mermaid, no evidence tables |
-| ❌ **Never** | Root-level script copies | LOW quality | `analysis/daily/YYYY-MM-DD/*.md` (root) | Legacy root copies — reader prefers subdirectory files |
+| ℹ️ **Data** | Script (`pre-article-analysis.ts`) | Data download only | `analysis/daily/YYYY-MM-DD/{docType}/` | Downloads MCP data, stores JSON documents, writes `data-download-manifest.md` — does NOT produce analysis |
 
 ### Rules
 
-1. **`analysis-reader.ts` prefers subdirectory files over root-level files.** AI analysis in `{articleType}/` subdirectories always takes priority over script copies at root level.
-2. **`pre-article-analysis.ts` keeps output in its scoped subfolder only.** Script output is NEVER copied to root level to avoid shadowing AI analysis.
-3. **AI workflows MUST improve existing analysis, never downgrade.** If script analysis already exists in a subfolder, the AI workflow MUST read it, enrich it with deep political intelligence, and overwrite it with publication-quality output following `analysis/methodologies/ai-driven-analysis-guide.md`.
-4. **Script analysis is a STARTING POINT, not a final product.** Script-generated files include `**Produced By**: pre-article-analysis script` metadata. AI workflows MUST detect this marker and replace the content with full methodology-compliant analysis.
+1. **`analysis-reader.ts` prefers subdirectory files over root-level files.** AI analysis in `{articleType}/` subdirectories always takes priority.
+2. **`pre-article-analysis.ts` downloads data ONLY.** The script writes `data-download-manifest.md` and document JSON files. It does NOT produce analysis files (no classification, risk, SWOT, threat, stakeholder, significance, cross-reference, or synthesis). ALL analysis is performed by the AI agent.
+3. **AI workflows MUST create ALL analysis from scratch.** The AI agent reads downloaded data (JSON documents) and performs full methodology-compliant analysis following `analysis/methodologies/ai-driven-analysis-guide.md` using templates from `analysis/templates/`.
+4. **Scripts are for data and HTML rendering ONLY.** Per Rule 2 of `ai-driven-analysis-guide.md`, scripts download data and render HTML articles. AI agents create all analysis content, text, and editorial intelligence.
 
-### How to Detect Script-Generated Analysis
+### AI Agent Analysis Workflow
 
-Script-generated files contain these markers (any one is sufficient):
-- `**Produced By**: pre-article-analysis script (automated data pipeline)`
-- `> ⚠️ **Script-Generated Analysis**: This file was produced by the automated data pipeline`
-- `SWOT confidence: LOW. Script pipeline provides structured data only`
-- `Analysis confidence: LOW. Script pipeline provides structured data only`
-
-When an AI workflow detects these markers, it MUST:
-1. Read the script's data extraction (document lists, committee codes, dates)
-2. **Discard** the script's analysis content (risk scores, significance, classifications)
-3. **Replace** with deep political intelligence using methodology guides and templates
-4. **Remove** the "Produced By" and "Script-Generated" markers
-5. Add proper metadata: `**Produced By**: {workflow-name} AI analysis (deep political intelligence)`
+After `pre-article-analysis.ts` downloads data, the AI agent MUST:
+1. Read the downloaded document JSON files from `analysis/daily/$DATE/$DOC_TYPE/documents/`
+2. Run `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to discover files needing analysis
+3. Perform full per-file analysis following `analysis/methodologies/ai-driven-analysis-guide.md`
+4. Use templates from `analysis/templates/` for each analysis type (SWOT, risk, threat, classification, significance, stakeholder, synthesis)
+5. Iterate and improve ALL output (AI FIRST principle — minimum 2 passes)
+6. Add metadata: `**Produced By**: {workflow-name} AI analysis (deep political intelligence)`
 ````
 
 ---
