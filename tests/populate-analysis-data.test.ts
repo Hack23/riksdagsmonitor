@@ -15,7 +15,7 @@ import path from 'node:path';
 import os from 'node:os';
 
 import type { RawDocument } from '../scripts/data-transformers/types.js';
-import type { DownloadedData } from '../scripts/pre-article-analysis/data-downloader.js';
+import type { DownloadedData } from '../scripts/parliamentary-data/data-downloader.js';
 import {
   persistDownloadedData,
   persistEvents,
@@ -23,7 +23,7 @@ import {
   persistMCPResponse,
   persistWorldBankData,
   persistSCBData,
-} from '../scripts/pre-article-analysis/data-persistence.js';
+} from '../scripts/parliamentary-data/data-persistence.js';
 import { riksMoteFromDate } from '../scripts/populate-analysis-data.js';
 
 // ---------------------------------------------------------------------------

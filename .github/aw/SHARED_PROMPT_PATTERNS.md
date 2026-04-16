@@ -405,7 +405,7 @@ Every news article MUST include ALL of the following:
 
 #### What Scripts DO (Formatting & Data)
 
-Scripts (`generate-news-enhanced.ts`, `pre-article-analysis.ts`, etc.) are responsible for:
+Scripts (`generate-news-enhanced.ts`, `download-parliamentary-data.ts`, etc.) are responsible for:
 
 | Script Role | Examples | Output |
 |------------|---------|--------|
@@ -508,18 +508,18 @@ The following functions are **HTML renderers**, not analysis generators. They ta
 |----------|--------|---------|----------|-------------|
 | 🥇 **1st** | AI workflow (agentic) | Publication-quality deep analysis | `analysis/daily/YYYY-MM-DD/{articleType}/` | Full methodology compliance: Mermaid diagrams, evidence tables, dok_id citations, multi-framework analysis |
 | 🥈 **2nd** | AI workflow (rerun suffix) | Publication-quality deep analysis | `analysis/daily/YYYY-MM-DD/{articleType}-2/` etc. | Same quality as 1st, auto-suffixed for repeat runs |
-| ℹ️ **Data** | Script (`pre-article-analysis.ts`) | Data download only | `analysis/daily/YYYY-MM-DD/{docType}/` | Downloads MCP data, stores JSON documents, writes `data-download-manifest.md` — does NOT produce analysis |
+| ℹ️ **Data** | Script (`download-parliamentary-data.ts`) | Data download only | `analysis/daily/YYYY-MM-DD/{docType}/` | Downloads MCP data, stores JSON documents, writes `data-download-manifest.md` — does NOT produce analysis |
 
 ### Rules
 
 1. **`analysis-reader.ts` prefers subdirectory files over root-level files.** AI analysis in `{articleType}/` subdirectories always takes priority.
-2. **`pre-article-analysis.ts` downloads data ONLY.** The script writes `data-download-manifest.md` and document JSON files. It does NOT produce analysis files (no classification, risk, SWOT, threat, stakeholder, significance, cross-reference, or synthesis). ALL analysis is performed by the AI agent.
+2. **`download-parliamentary-data.ts` downloads data ONLY.** The script writes `data-download-manifest.md` and document JSON files. It does NOT produce analysis files (no classification, risk, SWOT, threat, stakeholder, significance, cross-reference, or synthesis). ALL analysis is performed by the AI agent.
 3. **AI workflows MUST create ALL analysis from scratch.** The AI agent reads downloaded data (JSON documents) and performs full methodology-compliant analysis following `analysis/methodologies/ai-driven-analysis-guide.md` using templates from `analysis/templates/`.
 4. **Scripts are for data and HTML rendering ONLY.** Per Rule 2 of `ai-driven-analysis-guide.md`, scripts download data and render HTML articles. AI agents create all analysis content, text, and editorial intelligence.
 
 ### AI Agent Analysis Workflow
 
-After `pre-article-analysis.ts` downloads data, the AI agent MUST:
+After `download-parliamentary-data.ts` downloads data, the AI agent MUST:
 1. Read the downloaded document JSON files from `analysis/daily/$DATE/$DOC_TYPE/documents/`
 2. Run `npx tsx scripts/catalog-downloaded-data.ts --pending-only` to discover files needing analysis
 3. Perform full per-file analysis following `analysis/methodologies/ai-driven-analysis-guide.md`
@@ -547,7 +547,7 @@ After `pre-article-analysis.ts` downloads data, the AI agent MUST:
 | 4 | **Contradictory document counts** (title says 50, body shows 10) | HIGH | opposition-motions | Script counts ALL motions, article only details subset | AI MUST reconcile counts: either detail all or correctly scope the title |
 | 5 | **Policy misclassification** (food safety labeled "housing policy") | HIGH | opposition-motions | Keyword heuristic in scripts, not committee-based | AI MUST use Riksdag committee code for domain (see ai-driven-analysis-guide.md §Policy Domain Inference) |
 | 6 | **Missing analysis-references section** in articles across multiple dates | CRITICAL | ALL types | AI rewrites HTML without preserving auto-generated section; manual articles skip it entirely | AI MUST verify `class="analysis-references"` exists in EVERY article BEFORE committing — add manually if missing (see §ANALYSIS FILE GITHUB REFERENCES) |
-| 7 | **Empty synthesis files** (0 documents analyzed) for propositions and week-ahead | CRITICAL | propositions, week-ahead | `pre-article-analysis.ts` found 0 docs, AI accepted empty output | AI MUST use MCP fallback when script reports 0 (see ai-driven-analysis-guide.md §Empty Analysis Fallback) |
+| 7 | **Empty synthesis files** (0 documents analyzed) for propositions and week-ahead | CRITICAL | propositions, week-ahead | `download-parliamentary-data.ts` found 0 docs, AI accepted empty output | AI MUST use MCP fallback when script reports 0 (see ai-driven-analysis-guide.md §Empty Analysis Fallback) |
 | 8 | **Placeholder ledes** ("Analysis of 10 documents covering Committee:, Published:") in 64+ files | MEDIUM | Older articles | Script meta description template never overwritten | AI MUST generate analytical lede from actual content |
 | 9 | **assessArticleQuality() stub** always returns 100/100 | CRITICAL | ALL | Quality gate disabled in helpers.ts | AI MUST self-evaluate against 5-dimension rubric before committing |
 | 10 | **Raw Swedish text in English articles** — unedited government document excerpts | HIGH | propositions, interpellations | Script pastes excerpt without translation | AI MUST translate/summarize, NEVER paste raw Swedish in English articles |
@@ -2211,7 +2211,7 @@ fi
 
 #### ⏱️🚨 ENFORCED Analysis Enrichment Verification Gate (BLOCKING)
 
-> 🔴 **HARD ENFORCEMENT**: The agent MUST NOT proceed to article generation if script-generated analysis stubs remain unenriched. This gate checks for the "pre-article-analysis script" marker and blocks until ALL synthesis files have been replaced with AI-enriched analysis.
+> 🔴 **HARD ENFORCEMENT**: The agent MUST NOT proceed to article generation if script-generated analysis stubs remain unenriched. This gate checks for the "download-parliamentary-data script" marker and blocks until ALL synthesis files have been replaced with AI-enriched analysis.
 
 ```bash
 # === ANALYSIS ENRICHMENT VERIFICATION GATE ===
@@ -2240,11 +2240,11 @@ ENRICHED=0
 echo "=== 🔍 Analysis Enrichment Verification Gate ==="
 for f in "$ANALYSIS_DIR"/*.md; do
   [ ! -f "$f" ] && continue
-  grep -c "pre-article-analysis script" "$f" > /tmp/is_script.txt 2>/dev/null || echo 0 > /tmp/is_script.txt
+  grep -c "download-parliamentary-data script" "$f" > /tmp/is_script.txt 2>/dev/null || echo 0 > /tmp/is_script.txt
   read IS_SCRIPT < /tmp/is_script.txt
   FNAME="$f"
   if [ "$IS_SCRIPT" -gt 0 ]; then
-    echo "❌ UNENRICHED: $FNAME — still has 'pre-article-analysis script' marker"
+    echo "❌ UNENRICHED: $FNAME — still has 'download-parliamentary-data script' marker"
     UNENRICHED=$((UNENRICHED + 1))
   else
     echo "✅ ENRICHED: $FNAME"
@@ -2269,7 +2269,7 @@ if [ "$UNENRICHED" -gt 0 ]; then
   echo "  1. Read the corresponding template in analysis/templates/"
   echo "  2. Read the script-generated data (it contains useful metadata)"
   echo "  3. REPLACE the entire file with AI-driven deep political intelligence"
-  echo "  4. Remove the 'pre-article-analysis script' marker"
+  echo "  4. Remove the 'download-parliamentary-data script' marker"
   echo "  5. Add Mermaid diagrams, evidence tables, confidence labels"
   echo ""
   echo "DO NOT proceed to article generation until ALL files are enriched."
@@ -2434,9 +2434,9 @@ fi
 Try the script pipeline first. **Doc-type workflows** (committee-reports, motions, propositions, interpellations) MUST pass `--doc-type` to write directly to the scoped subdirectory:
 ```bash
 # For doc-type workflows (committee-reports, motions, propositions, interpellations):
-source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 --doc-type "$DOC_TYPE" 2>&1 | tee /tmp/pipeline-output.log
+source scripts/mcp-setup.sh && npx tsx scripts/download-parliamentary-data.ts --date "$ARTICLE_DATE" --limit 50 --doc-type "$DOC_TYPE" 2>&1 | tee /tmp/pipeline-output.log
 # For other workflows (evening-analysis, realtime, week-ahead, etc.) — run without --doc-type, then MOVE (not copy) artifacts:
-# source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
+# source scripts/mcp-setup.sh && npx tsx scripts/download-parliamentary-data.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
 ```
 
 Check results:
@@ -2450,7 +2450,7 @@ If `DATA_JSON_COUNT=0`: **the agent MUST diagnose script failures (read error lo
 
 #### Step 1b: Mandatory Full-Text Document Enrichment
 
-> 🚨 **ABSOLUTE RULE**: Analysis based only on metadata (title, date, committee code) is LOW confidence at best. The pre-article-analysis pipeline now enriches top documents automatically inside `downloadAllDocuments(...)` via `client.fetchDocumentDetails(dokId, true)`, but workflows MUST verify enrichment and supplement when needed.
+> 🚨 **ABSOLUTE RULE**: Analysis based only on metadata (title, date, committee code) is LOW confidence at best. The download-parliamentary-data pipeline now enriches top documents automatically inside `downloadAllDocuments(...)` via `client.fetchDocumentDetails(dokId, true)`, but workflows MUST verify enrichment and supplement when needed.
 
 > **MCP Response Field Mapping** (verified 2026-04-16):
 > `get_dokument_innehall` returns: `{ dok_id, datum, doktyp, rm, titel, url, text, snippet, fulltext_available }`
@@ -2901,7 +2901,7 @@ fi
 
 **Doc-type workflows** (committee-reports, motions, propositions, interpellations) MUST scope to their article-type subdirectory — NOT the parent date directory. Multiple doc-type workflows run on the same date and would conflict if they all stage `analysis/daily/$DATE/`.
 
-**For doc-type workflows** — the `--doc-type` flag passed to `pre-article-analysis.ts` scopes output to a subdirectory (e.g., `analysis/daily/$DATE/committeeReports/`). Use the matching `DOC_TYPE` value in your `git add`:
+**For doc-type workflows** — the `--doc-type` flag passed to `download-parliamentary-data.ts` scopes output to a subdirectory (e.g., `analysis/daily/$DATE/committeeReports/`). Use the matching `DOC_TYPE` value in your `git add`:
 
 | Workflow | `--doc-type` value | `DOC_TYPE` for git add |
 |----------|-------------------|----------------------|
@@ -2975,7 +2975,7 @@ git commit -m "📊 Data + Analysis ($DOC_TYPE) - $ARTICLE_DATE"
 
 **For all other workflows** (realtime-monitor, evening-analysis, article-generator, month-ahead, week-ahead, weekly-review, monthly-review) — MUST also scope to their article-type subdirectory:
 
-> ⚠️ **Pipeline relocation required**: `pre-article-analysis.ts` writes to `analysis/daily/$DATE/` (unscoped) when run without `--doc-type`. Each workflow MUST **move** (not copy) pipeline artifacts into its type subfolder immediately after the pipeline step. **NEVER leave .md files at the root date directory level** — this causes merge conflicts when multiple workflows run on the same date. The relocation MUST use the resolved `ANALYSIS_SUBFOLDER` (from Run Suffix Resolution) and be idempotent (safe on reruns):
+> ⚠️ **Pipeline relocation required**: `download-parliamentary-data.ts` writes to `analysis/daily/$DATE/` (unscoped) when run without `--doc-type`. Each workflow MUST **move** (not copy) pipeline artifacts into its type subfolder immediately after the pipeline step. **NEVER leave .md files at the root date directory level** — this causes merge conflicts when multiple workflows run on the same date. The relocation MUST use the resolved `ANALYSIS_SUBFOLDER` (from Run Suffix Resolution) and be idempotent (safe on reruns):
 >
 > ```bash
 > UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
@@ -3073,7 +3073,7 @@ git commit -m "📊 Data + Analysis ($ARTICLE_TYPE) - $ARTICLE_DATE"
 
 #### Remember: Scripts download data, but the AI does the analysis
 
-- Scripts (`pre-article-analysis.ts`) generate **stub files** — these are starting points only
+- Scripts (`download-parliamentary-data.ts`) generate **stub files** — these are starting points only
 - The AI agent MUST read all methods and templates, then **replace stubs with real analysis**
 - This analysis work is the agent's PRIMARY job and must NEVER be skipped
 - Even if scripts work perfectly, the agent still must enhance stubs to full template compliance
@@ -3133,7 +3133,7 @@ read LOOKBACK_DATE < /tmp/lookback_date.txt
     # No existing data — run pre-article analysis for this lookback date
     echo "ℹ️ No existing manifest data for $LOOKBACK_DATE — running pre-article analysis"
     # CRITICAL: Source mcp-setup.sh to set MCP_SERVER_URL for the gateway
-    source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
+    source scripts/mcp-setup.sh && npx tsx scripts/download-parliamentary-data.ts --date "$LOOKBACK_DATE" --limit 50 2>/dev/null || true
     # Re-check manifest after running analysis
     DATE_DOCS_ANALYZED=0
     if [ -f "$MANIFEST_PATH" ]; then
@@ -3208,7 +3208,7 @@ This ensures that once lookback persists `ARTICLE_DATE` to `$GITHUB_ENV`, subseq
 ````markdown
 ### Daily Synthesis Template Compliance
 
-> 🚨 **CRITICAL RULE**: The `pre-article-analysis.ts` script generates **stub files** as a starting point. These stubs do NOT follow the full template structure. You MUST read each template and rewrite the corresponding daily file to match the template's required sections, metadata fields, Mermaid diagrams, and evidence tables.
+> 🚨 **CRITICAL RULE**: The `download-parliamentary-data.ts` script generates **stub files** as a starting point. These stubs do NOT follow the full template structure. You MUST read each template and rewrite the corresponding daily file to match the template's required sections, metadata fields, Mermaid diagrams, and evidence tables.
 
 #### Template-to-File Mapping
 
@@ -3226,7 +3226,7 @@ This ensures that once lookback persists `ARTICLE_DATE` to `$GITHUB_ENV`, subseq
 
 1. **Read each template** — use `view` or `cat` to read the full template file before rewriting the daily file
 2. **Preserve script data** — keep any factual data (document counts, risk scores, anomalies) from the script output
-3. **Keep existing filenames** — do **NOT** rename or create new files based on template filename suggestions; always rewrite the existing daily artifacts produced by `pre-article-analysis.ts` in-place (e.g., keep `classification-results.md`, `stakeholder-perspectives.md`)
+3. **Keep existing filenames** — do **NOT** rename or create new files based on template filename suggestions; always rewrite the existing daily artifacts produced by `download-parliamentary-data.ts` in-place (e.g., keep `classification-results.md`, `stakeholder-perspectives.md`)
 4. **Add template structure** — add all required metadata fields, Mermaid diagrams, evidence tables, and confidence labels
 5. **Fill with real data** — use downloaded documents, MCP data, and analysis results to fill every `[REQUIRED]` placeholder
 6. **No empty sections** — if a section has no data, explain WHY (e.g., "No propositions found for this date — Parliament in recess") with confidence label

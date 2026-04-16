@@ -1,5 +1,5 @@
 /**
- * @module pre-article-analysis/data-persistence
+ * @module parliamentary-data/data-persistence
  * @description Persists raw MCP data to a structured, version-controlled
  * directory tree under `analysis/data/`.  Every document, vote, event, or
  * MP record fetched from MCP tools is written here with a consistent

@@ -1,5 +1,5 @@
 /**
- * @module pre-article-analysis/pdf-converter
+ * @module parliamentary-data/pdf-converter
  * @description Converts binary document formats (PDF) to text or markdown.
  *
  * Uses system tools when available:

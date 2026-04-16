@@ -55,7 +55,7 @@
 | **Documents with summary only** (no `fullText`/`fullContent`; substantive summary/notis only, e.g. 100-500 chars) | `[REQUIRED: X of Y]` |
 | **Documents metadata-only** (no `fullText`/`fullContent` and no substantive summary; title/date/committee only) | `[REQUIRED: X of Y]` |
 | **Maximum permissible confidence** | `[REQUIRED: Based on ratio — if >50% metadata-only → max MEDIUM; if >75% metadata-only → max LOW]` |
-| **Data enrichment method** | `[REQUIRED: e.g. "pre-article-analysis enrichment", "AI direct MCP calls", "metadata-only"]` |
+| **Data enrichment method** | `[REQUIRED: e.g. "download-parliamentary-data enrichment", "AI direct MCP calls", "metadata-only"]` |
 
 > ⚠️ **Confidence Override Rule**: The `Overall Confidence` in the Synthesis Context table above MUST NOT exceed the `Maximum permissible confidence` calculated here. If it does, reduce the Overall Confidence to match.
 

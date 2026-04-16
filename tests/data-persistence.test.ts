@@ -17,7 +17,7 @@ import path from 'node:path';
 import os from 'node:os';
 
 import type { RawDocument } from '../scripts/data-transformers/types.js';
-import type { DownloadedData } from '../scripts/pre-article-analysis/data-downloader.js';
+import type { DownloadedData } from '../scripts/parliamentary-data/data-downloader.js';
 
 import {
   resolveDocId,
@@ -28,13 +28,13 @@ import {
   persistWorldBankData,
   persistSCBData,
   getDataRoot,
-} from '../scripts/pre-article-analysis/data-persistence.js';
+} from '../scripts/parliamentary-data/data-persistence.js';
 
 import {
   textToMarkdown,
   isPdfToTextAvailable,
   resetPdfToolCache,
-} from '../scripts/pre-article-analysis/pdf-converter.js';
+} from '../scripts/parliamentary-data/pdf-converter.js';
 
 // ---------------------------------------------------------------------------
 // Fixtures

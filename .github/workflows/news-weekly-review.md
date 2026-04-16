@@ -255,7 +255,7 @@ read START_TIME < /tmp/start_time.txt
 ```
 
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
-- **Minutes 3–6**: Run pre-article-analysis pipeline (download data)
+- **Minutes 3–6**: Run download-parliamentary-data pipeline (download data)
 - **Minutes 6–21**: 🚨 **AI Analysis Pass 1 (15 min minimum)**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries.
 - **Minutes 21–28**: 🚨 **AI Analysis Pass 2 (7 min minimum)**: Read ALL analysis back completely, improve every section, replace ALL script stubs with AI analysis. Run enrichment verification gate.
 - **Minutes 28–30**: Run ENFORCED Minimum Time Gate + Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass.
@@ -458,7 +458,7 @@ read ARTICLE_DATE < /tmp/today.txt
 echo "📊 Running pre-article analysis for $ARTICLE_DATE..."
 # CRITICAL: Source mcp-setup.sh FIRST to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
 source scripts/mcp-setup.sh
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 100 > /tmp/pipeline-output.log 2>&1
+npx tsx scripts/download-parliamentary-data.ts --date "$ARTICLE_DATE" --limit 100 > /tmp/pipeline-output.log 2>&1
 PIPE_EXIT=$?
 cat /tmp/pipeline-output.log
 if [ "$PIPE_EXIT" -ne 0 ]; then
@@ -470,7 +470,7 @@ ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis o
 find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l > /tmp/data_count.txt
 read DATA_JSON_COUNT < /tmp/data_count.txt
 echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
-# Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
+# Relocate pipeline artifacts: download-parliamentary-data.ts writes to analysis/daily/$DATE/ (unscoped)
 # but this workflow needs them under analysis/daily/$DATE/weekly-review/
 # === Run Suffix Resolution (see SHARED_PROMPT_PATTERNS.md) ===
 BASE_SUBFOLDER="weekly-review"
@@ -509,7 +509,7 @@ fi
 date -u +%G-W%V > /tmp/week_label.txt
 read WEEK_LABEL < /tmp/week_label.txt
 echo "📅 Running weekly aggregation for $WEEK_LABEL..."
-source scripts/mcp-setup.sh && npx tsx scripts/pre-article-analysis.ts --aggregate weekly --date "$WEEK_LABEL" || echo "⚠️ Weekly aggregation failed (non-blocking)"
+source scripts/mcp-setup.sh && npx tsx scripts/download-parliamentary-data.ts --aggregate weekly --date "$WEEK_LABEL" || echo "⚠️ Weekly aggregation failed (non-blocking)"
 ls -la "analysis/weekly/$WEEK_LABEL/" 2>/dev/null || echo "⚠️ No weekly aggregation output"
 ```
 

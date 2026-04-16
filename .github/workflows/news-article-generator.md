@@ -475,7 +475,7 @@ read DI_DOC_IDS < /tmp/di_ids.txt
   [ -n "$DI_DOC_IDS" ] && PIPELINE_EXTRA_ARGS="--document-ids $DI_DOC_IDS"
 fi
 source scripts/mcp-setup.sh
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 $PIPELINE_EXTRA_ARGS > /tmp/pipeline-output.log 2>&1
+npx tsx scripts/download-parliamentary-data.ts --date "$ARTICLE_DATE" --limit 50 $PIPELINE_EXTRA_ARGS > /tmp/pipeline-output.log 2>&1
 PIPE_EXIT=$?
 cat /tmp/pipeline-output.log
 if [ "$PIPE_EXIT" -ne 0 ]; then
@@ -487,7 +487,7 @@ ls -la "analysis/daily/$ARTICLE_DATE/" 2>/dev/null || echo "⚠️ No analysis o
 find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l > /tmp/data_count.txt
 read DATA_JSON_COUNT < /tmp/data_count.txt
 echo "📊 JSON data files: $DATA_JSON_COUNT (must be > 0)"
-# Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
+# Relocate pipeline artifacts: download-parliamentary-data.ts writes to analysis/daily/$DATE/ (unscoped)
 # Determine target subfolder — use dedicated folder for multi-type/schedule runs to avoid mixing artifacts
 # RAW_REQUESTED_TYPE already set above (before deep-inspection check)
 _IS_SCHEDULE_OR_MULTI=false

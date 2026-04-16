@@ -403,19 +403,19 @@ echo "📥 Downloading data for $ARTICLE_DATE (run: $ARTICLE_TYPE)..."
 # CRITICAL: Source mcp-setup.sh to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the AWF gateway
 # Scripts download data only — analysis is done by AI afterwards
 set -o pipefail
-source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL" && npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
+source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL" && npx tsx scripts/download-parliamentary-data.ts --date "$ARTICLE_DATE" --limit 50 2>&1 | tee /tmp/pipeline-output.log
 PIPE_EXIT=$?
 set +o pipefail
 if [ "$PIPE_EXIT" -ne 0 ]; then
   echo "❌ Data download script failed with exit code $PIPE_EXIT — agent MUST diagnose and fix"
   tail -30 /tmp/pipeline-output.log
-  npx tsc --noEmit scripts/pre-article-analysis.ts 2>&1 | head -20 || true
+  npx tsc --noEmit scripts/download-parliamentary-data.ts 2>&1 | head -20 || true
 fi
 # Verify data was actually downloaded
 find analysis/data/ -name "*.json" -type f 2>/dev/null | wc -l > /tmp/data_count.txt
 read DATA_JSON_COUNT < /tmp/data_count.txt
 echo "📊 JSON data files downloaded: $DATA_JSON_COUNT"
-# Relocate pipeline artifacts: pre-article-analysis.ts writes to analysis/daily/$DATE/ (unscoped)
+# Relocate pipeline artifacts: download-parliamentary-data.ts writes to analysis/daily/$DATE/ (unscoped)
 # but this workflow needs them under analysis/daily/$DATE/realtime-$HHMM/
 UNSCOPED_DIR="analysis/daily/$ARTICLE_DATE"
 SCOPED_DIR="$UNSCOPED_DIR/$ARTICLE_TYPE"
@@ -470,7 +470,7 @@ fi
 
 > Never produce empty/stub analysis. If no data for today, look back up to 7 days. See `SHARED_PROMPT_PATTERNS.md` §"Data Lookback Fallback Strategy" for the complete bash implementation.
 
-Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-manifest.md` → if 0 docs, loop `DAYS_BACK` 1–7 using `date -u -d "$ARTICLE_DATE - $DAYS_BACK days"`, run `pre-article-analysis.ts --date "$LOOKBACK_DATE"` → copy artifacts from found date to original date folder if needed → run `catalog-downloaded-data.ts --pending-only` to get `$PENDING` count.
+Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-manifest.md` → if 0 docs, loop `DAYS_BACK` 1–7 using `date -u -d "$ARTICLE_DATE - $DAYS_BACK days"`, run `download-parliamentary-data.ts --date "$LOOKBACK_DATE"` → copy artifacts from found date to original date folder if needed → run `catalog-downloaded-data.ts --pending-only` to get `$PENDING` count.
 
 ### Per-File Analysis & Daily Synthesis (done by AI, not scripts)
 

@@ -268,7 +268,7 @@ read START_TIME < /tmp/start_time.txt
 ```
 
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
-- **Minutes 3–6**: Run pre-article-analysis pipeline (download data)
+- **Minutes 3–6**: Run download-parliamentary-data pipeline (download data)
 - **Minutes 6–21**: 🚨 **AI Analysis Pass 1 (15 min minimum)**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries.
 - **Minutes 21–28**: 🚨 **AI Analysis Pass 2 (7 min minimum)**: Read ALL analysis back completely, improve every section, replace ALL script stubs with AI analysis. Run enrichment verification gate.
 - **Minutes 28–30**: Run ENFORCED Minimum Time Gate + Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass.
@@ -561,7 +561,7 @@ echo "📁 Analysis subfolder resolved: $ANALYSIS_SUBFOLDER"
 echo "📊 Downloading data for $ARTICLE_DATE..."
 # CRITICAL: Source mcp-setup.sh to set MCP_SERVER_URL and MCP_AUTH_TOKEN for the gateway
 source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERVER_URL"
-npx tsx scripts/pre-article-analysis.ts --date "$ARTICLE_DATE" --limit 50 --doc-type committeeReports > /tmp/pipeline-output.log 2>&1
+npx tsx scripts/download-parliamentary-data.ts --date "$ARTICLE_DATE" --limit 50 --doc-type committeeReports > /tmp/pipeline-output.log 2>&1
 PIPE_EXIT=$?
 cat /tmp/pipeline-output.log
 if [ "$PIPE_EXIT" -ne 0 ]; then
@@ -609,7 +609,7 @@ fi
 
 > 🚨 **CRITICAL RULE**: Never produce empty/stub analysis. If no data for today, look back to find unanalyzed data.
 
-Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-manifest.md` → if 0 docs, loop `DAYS_BACK` 1–7 using `date -u -d "$ARTICLE_DATE - $DAYS_BACK days"`, run `pre-article-analysis.ts --date "$LOOKBACK_DATE"` → copy artifacts from found date to original date folder → run `catalog-downloaded-data.ts --pending-only`. See `SHARED_PROMPT_PATTERNS.md` §"Data Lookback Fallback Strategy" for full bash implementation.
+Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-manifest.md` → if 0 docs, loop `DAYS_BACK` 1–7 using `date -u -d "$ARTICLE_DATE - $DAYS_BACK days"`, run `download-parliamentary-data.ts --date "$LOOKBACK_DATE"` → copy artifacts from found date to original date folder → run `catalog-downloaded-data.ts --pending-only`. See `SHARED_PROMPT_PATTERNS.md` §"Data Lookback Fallback Strategy" for full bash implementation.
 
 ### Per-File AI Analysis Enhancement
 

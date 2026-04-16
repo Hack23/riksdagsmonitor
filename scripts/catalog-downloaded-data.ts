@@ -41,7 +41,7 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-/** Stable repo root derived from script location (matches pre-article-analysis.ts). */
+/** Stable repo root derived from script location. */
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
 
@@ -286,7 +286,7 @@ function main() {
   console.log(JSON.stringify(catalog, null, 2));
 }
 
-// Run CLI when invoked directly (matches repo convention in pre-article-analysis.ts)
+// Run CLI when invoked directly
 if (path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1] ?? '')) {
   main();
 }

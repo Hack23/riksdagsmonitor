@@ -1,18 +1,10 @@
 #!/usr/bin/env tsx
 /**
- * @module pre-article-analysis
- * @description Pre-article data download pipeline.
+ * @module download-parliamentary-data
+ * @description Parliamentary data download pipeline.
  *
  * Downloads all relevant parliamentary documents from riksdag-regering-mcp
  * and persists raw data for AI-driven analysis.
- *
- * **IMPORTANT — AI-First Principle (Rule 2)**:
- * This script ONLY downloads and persists data. It does NOT perform any
- * political intelligence analysis. All analysis (classification, risk
- * assessment, SWOT, threat, stakeholder perspectives, significance scoring,
- * cross-references, synthesis) MUST be performed by AI agents in agentic
- * workflows following `analysis/methodologies/ai-driven-analysis-guide.md`
- * and using templates from `analysis/templates/`.
  *
  * Pipeline steps:
  * 1. Download all relevant parliamentary documents from riksdag-regering-mcp
@@ -21,8 +13,8 @@
  * 4. Write data-download-manifest.md (factual download summary only)
  *
  * Usage:
- *   npx tsx scripts/pre-article-analysis.ts [--date YYYY-MM-DD] [--limit N]
- *   npx tsx scripts/pre-article-analysis.ts --aggregate weekly [--date YYYY-WNN]
+ *   npx tsx scripts/download-parliamentary-data.ts [--date YYYY-MM-DD] [--limit N]
+ *   npx tsx scripts/download-parliamentary-data.ts --aggregate weekly [--date YYYY-WNN]
  *
  * @see analysis/methodologies/ai-driven-analysis-guide.md
  * @author Hack23 AB
@@ -41,10 +33,10 @@ import {
   flattenDocuments,
   subtractBusinessDays,
   MAX_LOOKBACK_BUSINESS_DAYS,
-} from './pre-article-analysis/data-downloader.js';
-import type { DocumentTypeKey } from './pre-article-analysis/data-downloader.js';
+} from './parliamentary-data/data-downloader.js';
+import type { DocumentTypeKey } from './parliamentary-data/data-downloader.js';
 
-import { persistDownloadedData, sanitizeDokId } from './pre-article-analysis/data-persistence.js';
+import { persistDownloadedData, sanitizeDokId } from './parliamentary-data/data-persistence.js';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -236,7 +228,7 @@ function serializeDataManifest(
     `**Data Sources**: ${dataSources.join(', ')}`,
     `**Documents Downloaded**: ${totalDocs}`,
     `**Documents Selected (date-filtered)**: ${dateFilteredTotal}`,
-    `**Produced By**: pre-article-analysis script (data download only)`,
+    `**Produced By**: download-parliamentary-data script (data download only)`,
     '',
     '> ℹ️ **Data-Only Pipeline**: This script downloads and persists raw data.',
     '> All political intelligence analysis (classification, risk assessment, SWOT,',
@@ -555,7 +547,7 @@ if (path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1
   const args = parseArgs(process.argv);
 
   runPreArticleAnalysis(args).catch((err: unknown) => {
-    console.error('[pre-article-analysis] Fatal error:', err instanceof Error ? err.message : String(err));
+    console.error('[download-parliamentary-data] Fatal error:', err instanceof Error ? err.message : String(err));
     process.exit(1);
   });
 }

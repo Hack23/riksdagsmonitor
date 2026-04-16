@@ -16,7 +16,7 @@ import type { RawDocument } from '../scripts/data-transformers/types.js';
 import {
   downloadAllDocuments,
   FULL_TEXT_MIN_LENGTH,
-} from '../scripts/pre-article-analysis/data-downloader.js';
+} from '../scripts/parliamentary-data/data-downloader.js';
 import type { MCPClient } from '../scripts/mcp-client/client.js';
 
 // ---------------------------------------------------------------------------

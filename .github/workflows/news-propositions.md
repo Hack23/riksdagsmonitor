@@ -268,7 +268,7 @@ read START_TIME < /tmp/start_time.txt
 ```
 
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
-- **Minutes 3–6**: Run pre-article-analysis pipeline (download data)
+- **Minutes 3–6**: Run download-parliamentary-data pipeline (download data)
 - **Minutes 6–21**: 🚨 **AI Analysis Pass 1 (15 min minimum)**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries.
 - **Minutes 21–28**: 🚨 **AI Analysis Pass 2 (7 min minimum)**: Read ALL analysis back completely, improve every section, replace ALL script stubs with AI analysis. Run enrichment verification gate.
 - **Minutes 28–30**: Run ENFORCED Minimum Time Gate + Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass.
@@ -547,7 +547,7 @@ get_propositioner({ rm: <calculated riksmöte>, limit: 20 })
 
 If a prior merged run already produced `analysis/daily/$ARTICLE_DATE/propositions/synthesis-summary.md`, the Run Suffix Resolution pattern auto-suffixes to `propositions-2/`, `propositions-3/`, etc. — unless `force_generation=true` (which deliberately overwrites the base folder). See SHARED_PROMPT_PATTERNS.md "Run Suffix Resolution".
 
-Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-manifest.md` → if 0 docs, loop `DAYS_BACK` 1–7 using `date -u -d "$ARTICLE_DATE - $DAYS_BACK days"`, run `pre-article-analysis.ts --date "$LOOKBACK_DATE"` → copy artifacts from found date to original date folder → run `catalog-downloaded-data.ts --pending-only`. See `SHARED_PROMPT_PATTERNS.md` §"Data Lookback Fallback Strategy" for full bash implementation.
+Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-manifest.md` → if 0 docs, loop `DAYS_BACK` 1–7 using `date -u -d "$ARTICLE_DATE - $DAYS_BACK days"`, run `download-parliamentary-data.ts --date "$LOOKBACK_DATE"` → copy artifacts from found date to original date folder → run `catalog-downloaded-data.ts --pending-only`. See `SHARED_PROMPT_PATTERNS.md` §"Data Lookback Fallback Strategy" for full bash implementation.
 
 ### 🔄 Data Lookback Fallback
 

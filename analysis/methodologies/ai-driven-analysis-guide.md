@@ -1075,7 +1075,7 @@ flowchart TD
 
 #### What This Means in Practice
 
-1. **Scripts run pre-article-analysis.ts** — downloads data, runs heuristic pre-scoring, creates directory structure
+1. **Scripts run download-parliamentary-data.ts** — downloads data, runs heuristic pre-scoring, creates directory structure
 2. **AI agent reads ALL methodology guides** — SWOT, Risk, Threat, Classification, Style (as per Rule 3)
 3. **AI agent performs deep per-file analysis** — produces `.analysis.md` for each document
 4. **AI agent writes synthesis-summary.md** — including the **AI-Recommended Article Metadata** section with:
@@ -1301,7 +1301,7 @@ graph TD
 | 4 | **Contradictory numbers**: Article headlines claim different document counts than body text (e.g., "50 motions" in title, 10 in body) | HIGH | opposition-motions | AI MUST verify document counts match between title, lede, and body before committing |
 | 5 | **Policy misclassification**: Food safety motion (HD024020) labeled as "housing policy"; water power exceptions labeled "housing policy" | HIGH | opposition-motions | AI MUST use Riksdag committee assignment (not keyword heuristic) for policy domain classification |
 | 6 | **Missing analysis references**: Only 2 of 36 articles on 2026-04-03 include the "📊 Analysis & Sources" section | MEDIUM | ALL except week-ahead | AI MUST add analysis references section to EVERY article (see §Analysis-to-Article Reference Linking) |
-| 7 | **Empty analysis files**: `propositions/synthesis-summary.md` and `week-ahead/synthesis-summary.md` report "0 documents analyzed" | CRITICAL | propositions, week-ahead | AI MUST populate analysis from MCP data even when pre-article-analysis.ts finds 0 documents |
+| 7 | **Empty analysis files**: `propositions/synthesis-summary.md` and `week-ahead/synthesis-summary.md` report "0 documents analyzed" | CRITICAL | propositions, week-ahead | AI MUST populate analysis from MCP data even when download-parliamentary-data.ts finds 0 documents |
 | 8 | **Quality gate disabled**: `assessArticleQuality()` in `helpers.ts` is a stub returning 100/100 for all articles | CRITICAL | ALL articles | AI workflow MUST self-evaluate against quality rubric before committing |
 
 ### Analysis File Quality Issues (2026-04-03)
@@ -1633,7 +1633,7 @@ When classifying documents by policy domain, use the Riksdag committee assignmen
 
 ```mermaid
 flowchart LR
-    A["📥 Step 1: Data Download<br/>MCP + pre-article-analysis.ts"] --> B["📊 Step 2: Per-File AI Analysis<br/>Read methodology, analyze each file"]
+    A["📥 Step 1: Data Download<br/>MCP + download-parliamentary-data.ts"] --> B["📊 Step 2: Per-File AI Analysis<br/>Read methodology, analyze each file"]
     B --> C["📋 Step 3a: READ Analysis Files<br/>synthesis, SWOT, risk, stakeholder"]
     C --> D["📰 Step 3b: Generate Article HTML<br/>Using analysis as primary source"]
     D --> E["🏷️ Step 3c: AI Title & Meta<br/>From actual article content"]
@@ -1716,7 +1716,7 @@ Score this article on 5 dimensions (1-10 each, minimum 7.0 composite):
 
 ### Handling Empty Analysis (v4.0 Critical Fix)
 
-When `pre-article-analysis.ts` reports "0 documents analyzed" (as happened for propositions and week-ahead on 2026-04-03), the AI agent MUST NOT generate an empty article. Instead:
+When `download-parliamentary-data.ts` reports "0 documents analyzed" (as happened for propositions and week-ahead on 2026-04-03), the AI agent MUST NOT generate an empty article. Instead:
 
 ```markdown
 ## Empty Analysis Fallback Protocol
@@ -1738,13 +1738,13 @@ When `pre-article-analysis.ts` reports "0 documents analyzed" (as happened for p
 
 ### 🔍 Deep-Inspection Batch Analysis Enrichment Protocol (v4.1)
 
-> **Root Cause (2026-04-03 audit)**: Deep-inspection analysis for HD03214 produced a rich per-document analysis (5.1KB with SWOT, risk, stakeholders, Mermaid diagrams) but all 9 batch analysis files reported "0 documents analyzed" (total: 7.3KB vs 52.4KB for a properly populated folder). This is because `pre-article-analysis.ts` filters documents by exact date match, and deep-inspection targets documents from previous days.
+> **Root Cause (2026-04-03 audit)**: Deep-inspection analysis for HD03214 produced a rich per-document analysis (5.1KB with SWOT, risk, stakeholders, Mermaid diagrams) but all 9 batch analysis files reported "0 documents analyzed" (total: 7.3KB vs 52.4KB for a properly populated folder). This is because `download-parliamentary-data.ts` filters documents by exact date match, and deep-inspection targets documents from previous days.
 
 **The problem**: Deep-inspection targets specific documents by ID (e.g., `HD03214` dated 2026-04-01), but the batch analysis pipeline filters for `datum === ARTICLE_DATE` (2026-04-03). Result: 300 documents downloaded, 0 pass the date filter, all 9 batch files are empty skeletons.
 
 **The fix (two-pronged):**
 
-1. **Script-level**: `pre-article-analysis.ts` now accepts `--document-ids` flag. When provided, documents matching those IDs bypass the date filter and are included in batch analysis regardless of their publication date.
+1. **Script-level**: `download-parliamentary-data.ts` now accepts `--document-ids` flag. When provided, documents matching those IDs bypass the date filter and are included in batch analysis regardless of their publication date.
 
 2. **Agent-level**: After per-file AI analysis, the agent MUST verify batch analysis quality and rewrite any files showing "0 documents analyzed":
 
@@ -1816,7 +1816,7 @@ flowchart TD
 
 ### Step 1: Lookback Strategy (Automated)
 
-The `pre-article-analysis.ts` pipeline automatically looks back up to **5 business days** (configurable via `MAX_LOOKBACK_BUSINESS_DAYS`). If documents are found via lookback, the `dataFreshness` field records the actual date using the canonical serialized format expected by downstream parsing:
+The `download-parliamentary-data.ts` pipeline automatically looks back up to **5 business days** (configurable via `MAX_LOOKBACK_BUSINESS_DAYS`). If documents are found via lookback, the `dataFreshness` field records the actual date using the canonical serialized format expected by downstream parsing:
 
 ```markdown
 **Data Freshness**: Documents sourced from **2026-04-01** via lookback fallback (article date: 2026-04-03).
