@@ -158,6 +158,48 @@ aws s3 cp "$SRC" "$BUCKET" --recursive \
   --cache-control 'public, max-age=86400' \
   "${SKIP[@]}" --exclude 'docs/*'
 
+# Source map files - long cache (Vite hashed), explicit application/json
+aws s3 cp "$SRC" "$BUCKET" --recursive \
+  --exclude '*' --include '*.map' \
+  --no-guess-mime-type --content-type 'application/json' \
+  --cache-control 'public, max-age=31536000, immutable' \
+  "${SKIP[@]}" --exclude 'docs/*'
+
+# Web app manifest - medium cache
+aws s3 cp "$SRC" "$BUCKET" --recursive \
+  --exclude '*' --include '*.webmanifest' \
+  --no-guess-mime-type --content-type 'application/manifest+json' \
+  --cache-control 'public, max-age=86400' \
+  "${SKIP[@]}" --exclude 'docs/*'
+
+# ES module files - long cache, immutable
+aws s3 cp "$SRC" "$BUCKET" --recursive \
+  --exclude '*' --include '*.mjs' \
+  --no-guess-mime-type --content-type 'application/javascript' \
+  --cache-control 'public, max-age=31536000, immutable' \
+  "${SKIP[@]}" --exclude 'docs/*'
+
+# WebAssembly files - long cache, immutable
+aws s3 cp "$SRC" "$BUCKET" --recursive \
+  --exclude '*' --include '*.wasm' \
+  --no-guess-mime-type --content-type 'application/wasm' \
+  --cache-control 'public, max-age=31536000, immutable' \
+  "${SKIP[@]}" --exclude 'docs/*'
+
+# PDF files - long cache
+aws s3 cp "$SRC" "$BUCKET" --recursive \
+  --exclude '*' --include '*.pdf' \
+  --no-guess-mime-type --content-type 'application/pdf' \
+  --cache-control 'public, max-age=86400' \
+  "${SKIP[@]}" --exclude 'docs/*'
+
+# Markdown files - medium cache
+aws s3 cp "$SRC" "$BUCKET" --recursive \
+  --exclude '*' --include '*.md' \
+  --no-guess-mime-type --content-type 'text/markdown; charset=utf-8' \
+  --cache-control 'public, max-age=86400' \
+  "${SKIP[@]}" --exclude 'docs/*'
+
 # ── Documentation directory (coverage, test-results, API docs) ──
 # Docs are regenerated each release so they use shorter cache TTLs.
 # Every format gets an explicit MIME type to fix broken existing objects.
@@ -253,22 +295,26 @@ else
 fi
 
 # ── Catch-all pass for any unlisted file types ──
-# Uploads any remaining files (e.g. .webmanifest, .wasm, .mjs, .pdf, .map)
-# that weren't handled by the per-extension passes above.  Lets the CLI guess
-# the MIME type for these rare formats, which is better than not uploading them.
+# Uploads any remaining files that weren't handled by the per-extension passes
+# above.  Lets the CLI guess the MIME type for these rare formats, which is
+# better than not uploading them at all.
 aws s3 sync "$SRC" "$BUCKET" \
-  --exclude '*.html' --exclude '*.css' --exclude '*.js' \
+  --exclude '*.html' --exclude '*.css' --exclude '*.js' --exclude '*.mjs' \
   --exclude '*.webp' --exclude '*.png' --exclude '*.jpg' --exclude '*.jpeg' \
   --exclude '*.gif' --exclude '*.svg' --exclude '*.ico' \
   --exclude '*.woff2' --exclude '*.woff' --exclude '*.ttf' --exclude '*.eot' --exclude '*.otf' \
   --exclude '*.xml' --exclude '*.json' --exclude '*.txt' --exclude '*.csv' \
+  --exclude '*.map' --exclude '*.webmanifest' --exclude '*.wasm' --exclude '*.pdf' --exclude '*.md' \
   --cache-control 'public, max-age=86400' \
   "${SKIP[@]}" --exclude 'docs/*'
 
 # ── Delete orphaned objects from S3 ──
 # Since we use cp --recursive (not sync) for the per-type passes, removed/renamed
 # files would otherwise linger in the bucket.  A final sync --delete cleans them.
-aws s3 sync "$SRC" "$BUCKET" --delete \
+# Use --size-only to prevent re-uploading files that already have correct MIME types
+# set by the per-extension cp passes above — sync compares only file size, not
+# modification timestamps, so it will never overwrite metadata on unchanged files.
+aws s3 sync "$SRC" "$BUCKET" --delete --size-only \
   "${SKIP[@]}"
 
 echo "✅ S3 deployment completed"

@@ -3,6 +3,15 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+    inputs:
+      fix_mimetypes:
+        description: 'Fix MIME types on ALL existing S3 objects (no build/deploy, only metadata fix)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
 permissions:
   contents: read
   id-token: write
@@ -15,6 +24,7 @@ env:
   CLOUDFRONT_STACK_NAME: "riksdagsmonitor-frontend"
 jobs:
   deploy:
+    if: ${{ github.event.inputs.fix_mimetypes != 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
@@ -121,6 +131,25 @@ jobs:
             echo "ℹ️ No docs directory found, skipping"
           fi
 
+      - name: Copy JS libraries to build output
+        run: |
+          echo "📦 Copying js/ directory to dist/js/..."
+          # The js/ directory contains utility scripts (theme-init.js, etc.)
+          # and vendor libraries (js/lib/chart.umd.*.js, d3, papaparse, etc.)
+          # that are referenced by news articles and dashboard pages via
+          # relative paths (../js/lib/chart.umd.4.4.1.js).
+          # Vite only copies public/js/ to dist/js/, so we merge the full
+          # js/ tree on top — cp -rn (no-clobber) keeps Vite's copies when
+          # both directories contain the same filename.
+          if [ -d "js" ]; then
+            cp -rn js/* dist/js/
+            echo "✅ JS directory merged into dist/js/"
+            echo "  Files in dist/js/:"
+            find dist/js -type f | sort
+          else
+            echo "⚠️  No js/ directory found — skipping"
+          fi
+
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@ec61189d14ec14c8efccab744f656cffd0e33f37 # v6.1.0
         with:
@@ -168,3 +197,68 @@ jobs:
             --paths "/*"
           
           echo "✅ CloudFront cache invalidation completed"
+
+  # ── Fix MIME types on existing S3 objects (manual trigger only) ──
+  fix-mimetypes:
+    if: ${{ github.event.inputs.fix_mimetypes == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@6c3c2f2c1c457b00c10c4848d6f5491db3b629df # v2.18.0
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            api.github.com:443
+            github.com:443
+            objects.githubusercontent.com:443
+            riksdagsmonitor-frontend-us-east-1-172017021075.s3.us-east-1.amazonaws.com:443
+            s3.us-east-1.amazonaws.com:443
+            sts.us-east-1.amazonaws.com:443
+            cloudfront.amazonaws.com:443
+            cloudformation.us-east-1.amazonaws.com:443
+
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          sparse-checkout: scripts/fix-s3-mimetypes.sh
+          sparse-checkout-cone-mode: false
+
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@ec61189d14ec14c8efccab744f656cffd0e33f37 # v6.1.0
+        with:
+          role-to-assume: arn:aws:iam::172017021075:role/GithubWorkFlowRole
+          role-session-name: githubworkflowrolesessiont2
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Fix MIME types on all S3 objects
+        run: bash scripts/fix-s3-mimetypes.sh "s3://${{ env.S3_BUCKET_NAME }}"
+
+      - name: Invalidate CloudFront
+        run: |
+          echo "🔍 Discovering CloudFront distribution ID from stack: ${{ env.CLOUDFRONT_STACK_NAME }}"
+          CloudFrontDistId=$(aws cloudformation describe-stacks \
+            --stack-name ${{ env.CLOUDFRONT_STACK_NAME }} \
+            --query "Stacks[0].Outputs[?OutputKey=='CloudFrontDistributionId'].OutputValue" \
+            --output text 2>/dev/null || echo "")
+          
+          if [ -z "$CloudFrontDistId" ]; then
+            echo "⚠️  Warning: CloudFront distribution ID not found in stack outputs"
+            CloudFrontDistId=$(aws cloudfront list-distributions \
+              --output json 2>/dev/null | \
+              jq -r ".DistributionList.Items[] | select(.Origins.Items[].DomainName | contains(\"${{ env.S3_BUCKET_NAME }}\")) | .Id" | \
+              head -n 1 || echo "")
+          fi
+          
+          if [ -z "$CloudFrontDistId" ] || [ "$CloudFrontDistId" = "None" ]; then
+            echo "❌ Error: Could not discover CloudFront distribution ID"
+            exit 1
+          fi
+          
+          echo "✅ Found CloudFront distribution: $CloudFrontDistId"
+          echo "🔄 Creating cache invalidation for all paths..."
+          
+          aws cloudfront create-invalidation \
+            --distribution-id $CloudFrontDistId \
+            --paths "/*"
+          
+          echo "✅ CloudFront cache invalidation completed after MIME type fix"
