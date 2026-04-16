@@ -1075,7 +1075,7 @@ flowchart TD
 
 #### What This Means in Practice
 
-1. **Scripts run download-parliamentary-data.ts** — downloads data, runs heuristic pre-scoring, creates directory structure
+1. **Scripts run download-parliamentary-data.ts** — downloads and persists raw data, writes a factual manifest, creates directory structure
 2. **AI agent reads ALL methodology guides** — SWOT, Risk, Threat, Classification, Style (as per Rule 3)
 3. **AI agent performs deep per-file analysis** — produces `.analysis.md` for each document
 4. **AI agent writes synthesis-summary.md** — including the **AI-Recommended Article Metadata** section with:
@@ -1716,10 +1716,10 @@ Score this article on 5 dimensions (1-10 each, minimum 7.0 composite):
 
 ### Handling Empty Analysis (v4.0 Critical Fix)
 
-When `download-parliamentary-data.ts` reports "0 documents analyzed" (as happened for propositions and week-ahead on 2026-04-03), the AI agent MUST NOT generate an empty article. Instead:
+When `data-download-manifest.md` reports `**Documents Downloaded**: 0` (or `**Documents Selected (date-filtered)**: 0`, as happened for propositions and week-ahead on 2026-04-03), the AI agent MUST NOT generate an empty article. Instead:
 
 ```markdown
-## Empty Analysis Fallback Protocol
+## Empty Download Fallback Protocol
 
 1. **Attempt MCP data retrieval directly:**
    - Propositions: `get_propositioner(rm="2025/26", limit=20)`
@@ -1733,7 +1733,7 @@ When `download-parliamentary-data.ts` reports "0 documents analyzed" (as happene
    - Why no documents were expected (recess period, parliamentary calendar)
    - What documents are expected NEXT (upcoming committee schedules)
    - Link to the most recent substantive analysis for context
-4. **NEVER publish an article with "0 documents analyzed" as the lede**
+4. **NEVER publish an article with "0 documents downloaded" as the lede**
 ```
 
 ### 🔍 Deep-Inspection Batch Analysis Enrichment Protocol (v4.1)

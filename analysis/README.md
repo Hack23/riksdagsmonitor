@@ -679,13 +679,13 @@ Real-time monitoring of parliamentary activity with per-file analysis on new dat
 |------|---------|
 | `scripts/catalog-downloaded-data.ts` | Catalog downloaded files, list pending analysis |
 | `scripts/populate-analysis-data.ts` | Standalone MCP data fetcher (7 data types) |
-| `scripts/download-parliamentary-data.ts` | Orchestrates 10-step analysis pipeline |
+| `scripts/download-parliamentary-data.ts` | Orchestrates raw data download and persistence (manifest + JSON) |
 | `scripts/analysis-framework/` | Core analysis pipeline (TypeScript) |
 | `scripts/analysis-framework/lenses/` | Per-perspective classifiers (citizen, economic, government, international, media, opposition) |
 | `scripts/analysis-framework/significance-scorer.ts` | Significance score computation |
 | `scripts/analysis-framework/cross-reference.ts` | Cross-document reference linking |
-| `scripts/download-parliamentary-data/data-persistence.ts` | MCP data persistence to `analysis/data/` |
-| `scripts/download-parliamentary-data/data-downloader.ts` | Document download from riksdag-regering-mcp |
+| `scripts/parliamentary-data/data-persistence.ts` | MCP data persistence to `analysis/data/` |
+| `scripts/parliamentary-data/data-downloader.ts` | Document download from riksdag-regering-mcp |
 | `scripts/ai-analysis/` | AI-assisted analysis generation |
 | `scripts/ai-analysis/swot/` | SWOT generation pipeline |
 | `scripts/analysis-reader.ts` | Read daily analysis files with fallback |

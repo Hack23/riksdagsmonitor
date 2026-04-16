@@ -2211,7 +2211,7 @@ fi
 
 #### ⏱️🚨 ENFORCED Analysis Enrichment Verification Gate (BLOCKING)
 
-> 🔴 **HARD ENFORCEMENT**: The agent MUST NOT proceed to article generation if script-generated analysis stubs remain unenriched. This gate checks for the "download-parliamentary-data script" marker and blocks until ALL synthesis files have been replaced with AI-enriched analysis.
+> 🔴 **HARD ENFORCEMENT**: The agent MUST NOT proceed to article generation if script-generated analysis stubs remain unenriched. This gate checks for the legacy `pre-article-analysis script` marker (present in historical stub analysis files) and blocks until ALL analysis artifacts have been replaced with AI-enriched analysis. The factual `data-download-manifest.md` produced by the current download script is intentionally excluded — its `download-parliamentary-data script` marker is expected and is NOT a stub.
 
 ```bash
 # === ANALYSIS ENRICHMENT VERIFICATION GATE ===
@@ -2240,11 +2240,17 @@ ENRICHED=0
 echo "=== 🔍 Analysis Enrichment Verification Gate ==="
 for f in "$ANALYSIS_DIR"/*.md; do
   [ ! -f "$f" ] && continue
-  grep -c "download-parliamentary-data script" "$f" > /tmp/is_script.txt 2>/dev/null || echo 0 > /tmp/is_script.txt
+  # Skip the factual data-download-manifest.md — its script marker is expected and not a stub
+  case "$f" in
+    */data-download-manifest.md) echo "⏭️  SKIP (factual manifest): $f"; continue ;;
+  esac
+  # Match legacy `pre-article-analysis script` marker (present in historical stubs)
+  # as well as any future stub marker that explicitly states the file is a script-generated stub.
+  grep -cE "pre-article-analysis script|SCRIPT-GENERATED STUB" "$f" > /tmp/is_script.txt 2>/dev/null || echo 0 > /tmp/is_script.txt
   read IS_SCRIPT < /tmp/is_script.txt
   FNAME="$f"
   if [ "$IS_SCRIPT" -gt 0 ]; then
-    echo "❌ UNENRICHED: $FNAME — still has 'download-parliamentary-data script' marker"
+    echo "❌ UNENRICHED: $FNAME — still has legacy stub marker"
     UNENRICHED=$((UNENRICHED + 1))
   else
     echo "✅ ENRICHED: $FNAME"
@@ -2269,7 +2275,7 @@ if [ "$UNENRICHED" -gt 0 ]; then
   echo "  1. Read the corresponding template in analysis/templates/"
   echo "  2. Read the script-generated data (it contains useful metadata)"
   echo "  3. REPLACE the entire file with AI-driven deep political intelligence"
-  echo "  4. Remove the 'download-parliamentary-data script' marker"
+  echo "  4. Remove the 'pre-article-analysis script' marker (legacy stub marker)"
   echo "  5. Add Mermaid diagrams, evidence tables, confidence labels"
   echo ""
   echo "DO NOT proceed to article generation until ALL files are enriched."
@@ -3073,10 +3079,10 @@ git commit -m "📊 Data + Analysis ($ARTICLE_TYPE) - $ARTICLE_DATE"
 
 #### Remember: Scripts download data, but the AI does the analysis
 
-- Scripts (`download-parliamentary-data.ts`) generate **stub files** — these are starting points only
-- The AI agent MUST read all methods and templates, then **replace stubs with real analysis**
+- Scripts (`download-parliamentary-data.ts`) download and save **raw JSON data** plus a factual `data-download-manifest.md`
+- The AI agent MUST read all methods and templates, then create the required analysis artifacts from those templates using the downloaded data
 - This analysis work is the agent's PRIMARY job and must NEVER be skipped
-- Even if scripts work perfectly, the agent still must enhance stubs to full template compliance
+- Even if scripts work perfectly, the agent still must produce all required analysis files to full template compliance
 ````
 
 ## 🔄 Data Lookback Fallback Strategy (copy into every analysis workflow)

@@ -168,8 +168,8 @@ npx tsx scripts/populate-analysis-data.ts --limit 50 --date 2026-03-28
 
 - **`data-persistence.ts`**: Saves raw data to `analysis/data/` with consistent IDs (no metadata in data files)
 - **`data-downloader.ts`**: Downloads from MCP, returns typed collections
-- **`download-parliamentary-data.ts`**: Orchestrates download → persist → analyse → serialize
-- **`populate-analysis-data.ts`**: Standalone script to populate all data types
+- **`download-parliamentary-data.ts`**: Orchestrates raw data download and persistence (manifest + JSON snapshots)
+- **`populate-analysis-data.ts`**: Standalone script to populate raw data inputs for all supported data types
 
 ---
 
