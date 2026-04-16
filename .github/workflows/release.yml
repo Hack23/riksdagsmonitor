@@ -426,8 +426,12 @@ jobs:
           # Vite only copies public/js/ → dist/js/; the rest must be added
           # so that news articles' relative paths (../js/lib/chart.umd.*.js)
           # resolve correctly on S3/CloudFront.
-          cp -rn js/* dist/js/ 2>/dev/null || true
-          echo "✅ JS directory merged into dist/js/"
+          if [ -d "js" ]; then
+            cp -rn js/* dist/js/
+            echo "✅ JS directory merged into dist/js/"
+          else
+            echo "⚠️  No js/ directory found — skipping"
+          fi
           if [ -d "docs" ]; then
             echo "📚 Copying docs/ to dist/docs/..."
             cp -r docs dist/docs

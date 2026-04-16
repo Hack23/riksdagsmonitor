@@ -141,10 +141,14 @@ jobs:
           # Vite only copies public/js/ to dist/js/, so we merge the full
           # js/ tree on top — cp -rn (no-clobber) keeps Vite's copies when
           # both directories contain the same filename.
-          cp -rn js/* dist/js/ 2>/dev/null || true
-          echo "✅ JS directory merged into dist/js/"
-          echo "  Files in dist/js/:"
-          find dist/js -type f | sort
+          if [ -d "js" ]; then
+            cp -rn js/* dist/js/
+            echo "✅ JS directory merged into dist/js/"
+            echo "  Files in dist/js/:"
+            find dist/js -type f | sort
+          else
+            echo "⚠️  No js/ directory found — skipping"
+          fi
 
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@ec61189d14ec14c8efccab744f656cffd0e33f37 # v6.1.0
