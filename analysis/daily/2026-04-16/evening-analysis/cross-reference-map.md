@@ -7,7 +7,7 @@
 | **Cross-Reference ID** | `XRF-2026-04-16-EVE` |
 | **Analysis Date** | 2026-04-16 19:30 UTC |
 | **Documents Mapped** | 24 primary + 32 cross-referenced from sibling analysis |
-| **Document Types** | Propositions (5), Committee Reports (6), Motions (8), Interpellations (2), Press Releases (9) |
+| **Document Types** | Propositions (5), Committee Reports (6), Motions (8), Interpellations (2), Press Releases (9) — 30 retrieved, 21 deeply analyzed |
 | **Produced By** | news-evening-analysis workflow |
 
 ---
@@ -38,6 +38,7 @@ graph TD
         M4091["HD024091<br/>V: Reject War Material"]
         M4092["HD024092<br/>V: Reject Fuel Tax"]
         M4093["HD024093<br/>C: Cybersecurity"]
+        M4094["HD024094<br/>C: Health Care"]
         M4095["HD024095<br/>C: Deportation"]
         M4096["HD024096<br/>MP: War Material Ban"]
         M4097["HD024097<br/>MP: Deportation"]

@@ -1,7 +1,7 @@
 # Document Significance Scoring — Evening Analysis 2026-04-16
 
 **Generated**: 2026-04-16 19:30 UTC
-**Documents Analyzed**: 24 (cross-referenced from all sibling types + fresh MCP data)
+**Documents Analyzed**: 21 (cross-referenced from all sibling types + fresh MCP data)
 **Confidence**: HIGH
 **Riksmöte**: 2025/26
 **Analysis Depth**: deep (2 iterations)

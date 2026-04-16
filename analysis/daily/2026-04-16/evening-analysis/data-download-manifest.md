@@ -27,6 +27,8 @@
 
 ## 📊 Document Inventory
 
+**Scope note:** The inventory below lists **all retrieved same-day primary-source documents** for this run: 5 propositions + 6 committee reports + 8 motions + 2 interpellations + 9 government press releases = **30 retrieved primary-source items**. Of these, **21 documents were deeply analyzed** (scored, classified, and cross-referenced in the significance-scoring and classification-results artifacts). The remaining 9 government press releases were used for thematic context but not individually scored.
+
 ### Propositions (5 from April 16)
 
 | dok_id | Title | Organ | Date |
@@ -88,7 +90,7 @@
 
 | Metric | Value | Status |
 |--------|:-----:|:------:|
-| Total documents analyzed | 24 primary | ✅ |
+| Total documents retrieved | 30 primary (21 deeply analyzed, 9 press releases for thematic context) | ✅ |
 | Cross-referenced from siblings | 32 | ✅ |
 | Data freshness | < 2 hours | ✅ |
 | MCP tools queried | 6 | ✅ |

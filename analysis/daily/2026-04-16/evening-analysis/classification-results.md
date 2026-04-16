@@ -9,7 +9,7 @@
 | **Event Date** | 2026-04-16 |
 | **Classification Date** | 2026-04-16 19:30 UTC |
 | **Primary Source dok_id** | HD03246 (Skärpta regler för unga lagöverträdare) |
-| **Secondary Source(s)** | HD03231, HD03232, HD03244, HD03242, HD01SkU23, HD01MJU19, HD01MJU20, HD024090-HD024097 |
+| **Secondary Source(s)** | HD03231, HD03232, HD03244, HD03242, HD01SkU23, HD01MJU19, HD01MJU20, HD024090-HD024093, HD024095-HD024097 |
 | **Classified By** | news-evening-analysis |
 | **Reviewed By** | automated |
 
@@ -55,6 +55,7 @@ graph LR
 | HD01MJU19 | Waste recycling reform | 🟢 PUBLIC | ⚪ ROUTINE | 🇪🇺 EU | Environment | **7** | EU directive implementation |
 | HD01MJU20 | Climate framework audit | 🟡 SENSITIVE | 🔵 ELEVATED | 🇸🇪 NATIONAL | Climate/Environment | **7** | Riksrevisionen accountability finding |
 | HD024093 | C on cybersecurity center | 🟢 PUBLIC | ⚪ ROUTINE | 🇸🇪 NATIONAL | Security/Digital | **6** | Paarup-Petersen (C) constructive opposition |
+| HD024094 | C on health care provisions | 🟢 PUBLIC | ⚪ ROUTINE | 🇸🇪 NATIONAL | Health Care | **5** | Bergenblock (C) challenges medical competence requirements |
 | HD024095 | C on deportation rules | 🟡 SENSITIVE | 🔵 ELEVATED | 🇸🇪 NATIONAL | Migration/Justice | **6** | C flanks on Prop 235 alongside V |
 | HD024096 | MP bans war material to dictatorships | 🟡 SENSITIVE | 🔵 ELEVATED | 🌍 INTERNATIONAL | Defense/Human Rights | **6** | Risberg (MP) principled position |
 | HD024097 | MP on deportation rules | 🟡 SENSITIVE | 🔵 ELEVATED | 🇸🇪 NATIONAL | Migration/Justice | **6** | Hirvonen (MP) convergence with V and C |
@@ -71,10 +72,10 @@ graph LR
 ### Overall Temperature: **7.2/10** (ELEVATED)
 
 ```mermaid
-pie title Political Temperature Distribution
+pie title Political Temperature Distribution (21 documents)
     "CRITICAL (9-10)" : 1
     "HIGH (7-8)" : 10
-    "MODERATE (5-6)" : 5
+    "MODERATE (5-6)" : 6
     "LOW (1-4)" : 4
 ```
 
@@ -82,7 +83,7 @@ pie title Political Temperature Distribution
 |-----------------|:-----:|-----------|
 | 🔴 CRITICAL (9-10) | 1 | HD03246 (Youth crime reform) |
 | 🟠 HIGH (7-8) | 10 | HD03231, HD03232, HD01SkU23, HD024090, HD03244, HD03242, HD024091, HD024092, HD01MJU19, HD01MJU20 |
-| 🟡 MODERATE (5-6) | 5 | HD024093, HD024095, HD024096, HD024097, HD10435 |
+| 🟡 MODERATE (5-6) | 6 | HD024093, HD024094, HD024095, HD024096, HD024097, HD10435 |
 | 🟢 LOW (1-4) | 4 | HD10436, HD01SfU20, HD01TU16, HD01SkU32 |
 
 **Temperature Trend:** RISING — Five propositions with press conference signals government legislative peak. Opposition mobilization with 8 motions adds friction heat. Temperature expected to remain elevated through JuU committee hearings on Prop 246.

@@ -35,7 +35,7 @@ April 16, 2026 marks one of the most legislatively dense days of the spring sess
 
 7. **Forestry Deregulation (HD03242)**: "Active forestry" regulation clarifies rules — environmental groups warn of biodiversity impacts while forest industry celebrates reduced bureaucracy [HIGH confidence, 7/10].
 
-8. **Government Crime Messaging**: 9 press releases in 24 hours (April 15-16) all reinforce law-and-order: indefinite sentences, benefit bans, anti-fraud, cybersecurity, social services tools. Coordinated pre-election communication strategy [HIGH confidence].
+8. **Government Crime Messaging**: 7 of 9 press releases in 24 hours (April 15-16) reinforce law-and-order: indefinite sentences, benefit bans, anti-fraud, cybersecurity, social services tools. Two non-crime items (Ostkustströmming EU designation, PM school visit) round out the agenda. Coordinated pre-election communication strategy [HIGH confidence].
 
 ## SWOT Analysis
 
