@@ -2094,6 +2094,132 @@ fi
 >
 > **Enforcement**: Before committing, run the quality gate check below. If it fails, you MUST spend more time improving the analysis until it passes. NEVER proceed to article generation with analysis that hasn't been through the improvement pass.
 
+#### ⏱️🚨 ENFORCED Minimum Analysis Time Gate (BLOCKING)
+
+> 🔴 **HARD ENFORCEMENT**: The agent MUST NOT proceed to article generation until the minimum analysis time has elapsed. This bash gate MUST be run BEFORE article generation and MUST block if elapsed analysis time is insufficient. This prevents the systemic early-completion pattern where agents finish in 15-20 minutes of a 45-minute allocation.
+
+```bash
+# === MINIMUM ANALYSIS TIME GATE ===
+# Run this AFTER completing analysis, BEFORE starting article generation.
+# This gate BLOCKS if the agent has not spent enough time on analysis.
+if [ -f /tmp/gh-aw/agent/timing.env ]; then
+  . /tmp/gh-aw/agent/timing.env
+fi
+if [ -z "$START_TIME" ]; then
+  if [ -f /tmp/start_time.txt ]; then
+    read START_TIME < /tmp/start_time.txt
+  else
+    date +%s > /tmp/start_time.txt
+    read START_TIME < /tmp/start_time.txt
+  fi
+fi
+date +%s > /tmp/now_time.txt
+read AW_NOW < /tmp/now_time.txt
+ELAPSED_MIN=$(( (AW_NOW - START_TIME) / 60 ))
+echo "⏱️ Elapsed time: $ELAPSED_MIN minutes"
+
+# MINIMUM_ANALYSIS_MINUTES defaults to 22 (15 min Pass 1 + 7 min Pass 2)
+# Workflows with different time budgets can override via environment variable
+# (e.g. 30-minute workflows set MINIMUM_ANALYSIS_MINUTES=14)
+if [ -z "$MINIMUM_ANALYSIS_MINUTES" ]; then
+  MINIMUM_ANALYSIS_MINUTES=22
+fi
+if [ "$ELAPSED_MIN" -lt "$MINIMUM_ANALYSIS_MINUTES" ]; then
+  echo "🚨🚨🚨 MINIMUM TIME GATE FAILED 🚨🚨🚨"
+  echo "❌ Only $ELAPSED_MIN minutes elapsed — MINIMUM $MINIMUM_ANALYSIS_MINUTES minutes required for 2-pass analysis"
+  echo ""
+  echo "You MUST go back and:"
+  echo "  1. Read ALL analysis files back completely (Pass 2)"
+  echo "  2. Improve every section: add missing evidence, deepen SWOT entries, add Mermaid diagrams"
+  echo "  3. Rewrite script-generated stubs with real AI analysis"
+  echo "  4. Add cross-references between analysis files"
+  echo "  5. Verify every claim has confidence labels and dok_id citations"
+  echo ""
+  echo "DO NOT proceed to article generation. Continue analysis work."
+  echo "RE-RUN this gate after completing more analysis work."
+  if (return 0 2>/dev/null); then
+    return 1
+  else
+    exit 1
+  fi
+fi
+```
+
+> **Why this gate exists**: PR #1794 and systemic monitoring showed ALL news workflows completing in 13-22 minutes of their 45-minute allocation. This means agents skip the mandatory 2-pass analysis, leave script-generated stubs unenriched, and produce articles missing required components (SWOT tables, Mermaid diagrams, Risk matrices). The minimum time gate forces the agent to spend sufficient time on analysis before proceeding. Workflows with shorter time budgets (e.g. 30 minutes) can set `MINIMUM_ANALYSIS_MINUTES=14` before running this gate.
+
+#### ⏱️🚨 ENFORCED Analysis Enrichment Verification Gate (BLOCKING)
+
+> 🔴 **HARD ENFORCEMENT**: The agent MUST NOT proceed to article generation if script-generated analysis stubs remain unenriched. This gate checks for the "pre-article-analysis script" marker and blocks until ALL synthesis files have been replaced with AI-enriched analysis.
+
+```bash
+# === ANALYSIS ENRICHMENT VERIFICATION GATE ===
+# Run this AFTER completing analysis, BEFORE starting article generation.
+# Blocks if script-generated stubs remain unenriched.
+if [ -z "$ARTICLE_DATE" ]; then
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
+fi
+
+if [ -z "$ANALYSIS_SUBFOLDER" ]; then
+  echo "❌ ANALYSIS_SUBFOLDER is not set. Refusing to guess from ARTICLE_TYPE because workflow folder names may differ from article types."
+  echo "Set ANALYSIS_SUBFOLDER to the canonical analysis folder before running this gate."
+  exit 1
+fi
+
+ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
+if [ ! -d "$ANALYSIS_DIR" ]; then
+  echo "❌ Analysis directory not found: $ANALYSIS_DIR"
+  echo "Ensure ANALYSIS_SUBFOLDER points to the correct canonical analysis folder for this workflow."
+  exit 1
+fi
+
+UNENRICHED=0
+ENRICHED=0
+echo "=== 🔍 Analysis Enrichment Verification Gate ==="
+for f in "$ANALYSIS_DIR"/*.md; do
+  [ ! -f "$f" ] && continue
+  grep -c "pre-article-analysis script" "$f" > /tmp/is_script.txt 2>/dev/null || echo 0 > /tmp/is_script.txt
+  read IS_SCRIPT < /tmp/is_script.txt
+  FNAME="$f"
+  if [ "$IS_SCRIPT" -gt 0 ]; then
+    echo "❌ UNENRICHED: $FNAME — still has 'pre-article-analysis script' marker"
+    UNENRICHED=$((UNENRICHED + 1))
+  else
+    echo "✅ ENRICHED: $FNAME"
+    ENRICHED=$((ENRICHED + 1))
+  fi
+done
+
+# Fail if no analysis files found at all (missing outputs cannot be "approved")
+if [ "$UNENRICHED" -eq 0 ] && [ "$ENRICHED" -eq 0 ]; then
+  echo ""
+  echo "🚨🚨🚨 ENRICHMENT GATE FAILED 🚨🚨🚨"
+  echo "❌ No .md analysis files found in $ANALYSIS_DIR — cannot verify enrichment"
+  exit 1
+fi
+
+if [ "$UNENRICHED" -gt 0 ]; then
+  echo ""
+  echo "🚨🚨🚨 ENRICHMENT GATE FAILED 🚨🚨🚨"
+  echo "❌ $UNENRICHED analysis files still contain script-generated stubs"
+  echo ""
+  echo "You MUST enrich these files before proceeding to article generation:"
+  echo "  1. Read the corresponding template in analysis/templates/"
+  echo "  2. Read the script-generated data (it contains useful metadata)"
+  echo "  3. REPLACE the entire file with AI-driven deep political intelligence"
+  echo "  4. Remove the 'pre-article-analysis script' marker"
+  echo "  5. Add Mermaid diagrams, evidence tables, confidence labels"
+  echo ""
+  echo "DO NOT proceed to article generation until ALL files are enriched."
+  exit 1
+else
+  echo ""
+  echo "✅ All $ENRICHED analysis files are AI-enriched — proceed to article generation"
+fi
+```
+
+> **Why this gate exists**: PR #1794 showed that the agent enriched only 2 of 9 synthesis files (synthesis-summary.md and risk-assessment.md) while leaving 7 files as script stubs. The SWOT analysis file was completely empty. Articles generated from unenriched analysis are shallow and miss required components.
+
 #### ⏱️ Mandatory Minimum Article Time: 18 Minutes (2 Passes)
 
 > 🔴 **HARD RULE**: The AI agent MUST spend **at least 18 minutes** on article generation across **2 mandatory passes**:
@@ -2124,6 +2250,122 @@ fi
 > **Why 2 passes?** Single-pass articles consistently read like code-generated document lists, not political intelligence. The improvement pass transforms shallow content into publication-quality journalism. Articles that feel like automated lists are REJECTED.
 >
 > **Enforcement**: Run the Article Quality Gate from §ARTICLE QUALITY MINIMUM STANDARD before committing. If it fails, continue improving until it passes.
+
+#### 🚨 ENFORCED Article Quality Component Gate (BLOCKING)
+
+> 🔴 **HARD ENFORCEMENT**: EVERY generated article MUST contain the required visual and analytical components defined in §POLITICAL INTELLIGENCE DEPTH REQUIREMENTS. This gate checks for their presence and BLOCKS commit if any are missing.
+
+```bash
+# === ARTICLE QUALITY COMPONENT GATE ===
+# Run AFTER article generation and improvement passes, BEFORE committing.
+# Checks that every article HTML contains the mandatory visual/analytical components.
+if [ -z "$ARTICLE_DATE" ]; then
+  date -u +%Y-%m-%d > /tmp/today.txt
+  read ARTICLE_DATE < /tmp/today.txt
+fi
+
+ARTICLE_GATE_PASS=true
+ARTICLE_FAIL_COUNT=0
+ARTICLE_CHECKED=0
+
+echo "=== 🔍 Article Quality Component Gate ==="
+
+for ARTICLE_FILE in news/$ARTICLE_DATE-*.html; do
+  [ ! -f "$ARTICLE_FILE" ] && continue
+  ARTICLE_CHECKED=$((ARTICLE_CHECKED + 1))
+  echo ""
+  echo "--- Checking: $ARTICLE_FILE ---"
+  FILE_FAILS=0
+
+  # Check 1: AI_MUST_REPLACE markers (ZERO tolerance)
+  grep -c 'AI_MUST_REPLACE' "$ARTICLE_FILE" > /tmp/aqg_replace.txt 2>/dev/null || echo 0 > /tmp/aqg_replace.txt
+  read REPLACE_COUNT < /tmp/aqg_replace.txt
+  if [ "$REPLACE_COUNT" -gt 0 ]; then
+    echo "  ❌ CRITICAL: $REPLACE_COUNT AI_MUST_REPLACE markers remaining"
+    FILE_FAILS=$((FILE_FAILS + 1))
+  fi
+
+  # Check 2: Word count (minimum 1000)
+  python3 -c "
+import re,sys
+with open('$ARTICLE_FILE') as f:
+    text = re.sub('<[^>]+>', '', f.read())
+    words = len(text.split())
+    if words < 1000:
+        print(f'  ❌ FAIL: {words} words (minimum 1000)')
+        sys.exit(1)
+    else:
+        print(f'  ✅ PASS: {words} words')
+" || FILE_FAILS=$((FILE_FAILS + 1))
+
+  # Check 3: dok_id citations (minimum 5)
+  grep -coP "(dok_id|HD\d{5}|Prop\.\s*\d{4}|mot\.\s*\d{4}|frs\s*\d{4}|bet\.\s*\d{4})" "$ARTICLE_FILE" > /tmp/aqg_dokid.txt 2>/dev/null || echo 0 > /tmp/aqg_dokid.txt
+  read DOKID_COUNT < /tmp/aqg_dokid.txt
+  if [ "$DOKID_COUNT" -lt 5 ]; then
+    echo "  ⚠️ WARNING: Only $DOKID_COUNT dok_id citations (minimum 5 recommended)"
+  else
+    echo "  ✅ PASS: $DOKID_COUNT dok_id citations"
+  fi
+
+  # Check 4: Analysis references section
+  grep -c 'class="analysis-references"' "$ARTICLE_FILE" > /tmp/aqg_refs.txt 2>/dev/null || echo 0 > /tmp/aqg_refs.txt
+  read REFS_COUNT < /tmp/aqg_refs.txt
+  if [ "$REFS_COUNT" -eq 0 ]; then
+    echo "  ❌ FAIL: Missing analysis-references section"
+    FILE_FAILS=$((FILE_FAILS + 1))
+  else
+    echo "  ✅ PASS: analysis-references section present"
+  fi
+
+  # Check 5: Banned content patterns
+  grep -c "The political landscape remains fluid" "$ARTICLE_FILE" > /tmp/aqg_banned.txt 2>/dev/null || echo 0 > /tmp/aqg_banned.txt
+  read BANNED_COUNT < /tmp/aqg_banned.txt
+  if [ "$BANNED_COUNT" -gt 0 ]; then
+    echo "  ❌ FAIL: Contains banned boilerplate text"
+    FILE_FAILS=$((FILE_FAILS + 1))
+  fi
+
+  # Check 6: Confidence labels (must have at least some)
+  grep -coP "(Confidence:\s*(HIGH|MEDIUM|LOW)|\[(HIGH|MEDIUM|LOW)\])" "$ARTICLE_FILE" > /tmp/aqg_conf.txt 2>/dev/null || echo 0 > /tmp/aqg_conf.txt
+  read CONF_COUNT < /tmp/aqg_conf.txt
+  if [ "$CONF_COUNT" -eq 0 ]; then
+    echo "  ⚠️ WARNING: No confidence labels found"
+  else
+    echo "  ✅ PASS: $CONF_COUNT confidence labels"
+  fi
+
+  # Check 7: Quality score is realistic (not inflated)
+  grep -oP 'article-quality-score" content="\K\d+' "$ARTICLE_FILE" > /tmp/aqg_score.txt 2>/dev/null || echo "" > /tmp/aqg_score.txt
+  QUALITY_SCORE=""
+  read QUALITY_SCORE < /tmp/aqg_score.txt 2>/dev/null || true
+  if [ -n "$QUALITY_SCORE" ]; then
+    echo "  ℹ️ Self-reported quality score: $QUALITY_SCORE/100"
+  fi
+
+  if [ "$FILE_FAILS" -gt 0 ]; then
+    echo "  🚨 ARTICLE FAILED: $FILE_FAILS checks failed"
+    ARTICLE_GATE_PASS=false
+    ARTICLE_FAIL_COUNT=$((ARTICLE_FAIL_COUNT + 1))
+  else
+    echo "  ✅ ARTICLE PASSED all checks"
+  fi
+done
+
+echo ""
+echo "=== Article Quality Gate Summary ==="
+if [ "$ARTICLE_CHECKED" -eq 0 ]; then
+  echo "❌ No article files found matching news/$ARTICLE_DATE-*.html — cannot verify quality"
+  exit 1
+elif [ "$ARTICLE_GATE_PASS" = "true" ]; then
+  echo "✅ All $ARTICLE_CHECKED articles passed quality checks"
+else
+  echo "❌ $ARTICLE_FAIL_COUNT of $ARTICLE_CHECKED article(s) FAILED quality checks"
+  echo "Fix the issues above and re-run this gate before committing."
+  exit 1
+fi
+```
+
+> **Why this gate exists**: PR #1794 showed the article self-reported a quality score of 85/100 despite missing: SWOT tables, Mermaid diagrams, Risk Matrix with L×I scores, and CSS Mindmaps. The quality score meta tag was inflated. This gate verifies actual article content rather than relying on self-assessment.
 
 #### Step 1: Download Data (scripts + fallback to direct MCP calls)
 

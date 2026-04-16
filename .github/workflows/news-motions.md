@@ -254,17 +254,26 @@ If **force_generation** is `true`, generate articles even if recent ones exist. 
 
 Uses `memory/news-generation` branch. START: read `memory/news-generation/last-run-news-motions.json` + `memory/news-generation/covered-documents/{YYYY-MM-DD}.json`. END: update both + `memory/news-generation/translation-status.json`. Skip already-covered dok_ids.
 
-## ⏱️ Time Budget (45 minutes)
+## ⏱️ Time Budget (45 minutes) — ENFORCED Minimum 40 Minutes
+
+> 🔴 **SYSTEMIC ISSUE (PR #1794 audit, 2026-04-16)**: ALL news workflows completing in 13-22 min of 45-min allocation, producing shallow analysis. Agent MUST use at least 40 of 45 minutes. Completion < 40 min = insufficient iteration = REJECTED.
+
+```bash
+date +%s > /tmp/start_time.txt
+read START_TIME < /tmp/start_time.txt
+```
+
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
 - **Minutes 3–6**: Run pre-article-analysis pipeline (download data)
-- **Minutes 6–21**: 🚨 **AI Analysis (15 min minimum)**: Consult methodology guides + templates as needed. Create per-file analysis with color-coded Mermaid diagrams and evidence tables. Run quality gate bash check.
-- **Minutes 21–25**: Query MCP tools for motions data
-- **Minutes 25–33**: Generate articles for core languages (EN, SV) using `npx tsx scripts/generate-news-enhanced.ts`
-- **Minutes 33–38**: Validate and fix any quality issues
-- **Minutes 38–43**: Commit analysis artifacts + articles, create PR with `safeoutputs___create_pull_request`
+- **Minutes 6–21**: 🚨 **AI Analysis Pass 1 (15 min minimum)**: Read ALL methodology guides, create per-file analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries.
+- **Minutes 21–28**: 🚨 **AI Analysis Pass 2 (7 min minimum)**: Read ALL analysis back completely, improve every section, replace ALL script stubs with AI analysis. Run enrichment verification gate.
+- **Minutes 28–30**: Run ENFORCED Minimum Time Gate + Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass.
+- **Minutes 30–36**: Generate articles for core languages (EN, SV) using `npx tsx scripts/generate-news-enhanced.ts`
+- **Minutes 36–40**: 🚨 **Article Improvement Pass**: Read ALL articles back, replace AI_MUST_REPLACE markers, improve content. Run article quality component gate.
+- **Minutes 40–43**: Validate, commit, create PR with `safeoutputs___create_pull_request`
 - **Minutes 43–45**: 🚨 **HARD DEADLINE** — If no safe output yet: if ANY artifacts/files were created, IMMEDIATELY stage, commit, call `safeoutputs___create_pull_request` with partial work. ONLY call `safeoutputs___noop` if truly ZERO files were created.
 
-> ⚠️ **Analysis phase is 15 minutes minimum** — every analysis file must contain color-coded Mermaid diagrams, structured evidence tables with dok_id citations, and follow template structure exactly.
+> ⚠️ **Analysis phase is 22 minutes minimum (Pass 1: 15 min + Pass 2: 7 min)** — every analysis file must contain color-coded Mermaid diagrams, structured evidence tables with dok_id citations, and follow template structure exactly. ALL script-generated stubs MUST be replaced with AI-enriched analysis. Run the ENFORCED gates from SHARED_PROMPT_PATTERNS.md before proceeding to article generation.
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
 

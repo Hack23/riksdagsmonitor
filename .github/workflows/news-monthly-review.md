@@ -246,17 +246,25 @@ This is a **retrospective** article providing comprehensive analysis of the past
 
 Uses `memory/news-generation` branch. START: read `memory/news-generation/last-run-news-monthly-review.json` + `memory/news-generation/covered-documents/{YYYY-MM-DD}.json`. END: update both + `memory/news-generation/translation-status.json`. Skip already-covered dok_ids.
 
-## ⏱️ Time Budget (30 minutes)
+## ⏱️ Time Budget (30 minutes) — ENFORCED Minimum 25 Minutes
+
+> 🔴 **SYSTEMIC ISSUE (PR #1794 audit, 2026-04-16)**: ALL news workflows completing early, producing shallow analysis. Agent MUST use at least 25 of 30 minutes. Completion < 25 min = insufficient iteration = REJECTED.
+
+```bash
+date +%s > /tmp/start_time.txt
+read START_TIME < /tmp/start_time.txt
+```
+
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
 - **Minutes 3–5**: Run pre-article-analysis pipeline (download data)
-- **Minutes 5–15**: 🚨 **AI Analysis (10 min minimum)**: Read methodology guides + templates. Create analysis with color-coded Mermaid diagrams and evidence tables. Run quality gate bash check.
-- **Minutes 15–18**: Query documents, votes, and reports from past 30 days
-- **Minutes 18–25**: Generate articles for all 14 languages
-- **Minutes 25–28**: Validate and commit analysis + articles
-- **Minutes 28–30**: Create PR with `safeoutputs___create_pull_request`
-- **Minutes 43–45**: 🚨 **HARD DEADLINE** — If no safe output yet: if ANY artifacts/files were created, IMMEDIATELY stage, commit, call `safeoutputs___create_pull_request` with partial work. ONLY call `safeoutputs___noop` if truly ZERO files were created.
+- **Minutes 5–15**: 🚨 **AI Analysis Pass 1 (10 min minimum)**: Read ALL methodology guides, create analysis for EVERY document with Mermaid diagrams, evidence tables, SWOT entries.
+- **Minutes 15–22**: 🚨 **AI Analysis Pass 2 + Enrichment Verification (7 min minimum)**: Read ALL analysis back, improve every section, replace ALL script stubs with AI analysis, and complete enrichment verification before the shared minimum-time gate.
+- **Minutes 22–23**: Run ENFORCED Minimum Time Gate (set `MINIMUM_ANALYSIS_MINUTES=14` for 30-min workflows) + final Enrichment Verification Gate (SHARED_PROMPT_PATTERNS.md). Both MUST pass.
+- **Minutes 23–28**: Generate articles for all 14 languages. Read articles back, replace AI_MUST_REPLACE markers. Run article quality gate.
+- **Minutes 28–29**: Validate and commit analysis + articles
+- **Minutes 29–30**: Create PR with `safeoutputs___create_pull_request`
 
-> ⚠️ **Analysis must include color-coded Mermaid diagrams, evidence tables, and template structure compliance** — plain prose is NEVER acceptable.
+> ⚠️ **Analysis must include color-coded Mermaid diagrams, evidence tables, and template structure compliance** — plain prose is NEVER acceptable. ALL script-generated stubs MUST be replaced with AI-enriched analysis.
 
 ## ⚠️ CRITICAL: Bash Tool Call Format
 
