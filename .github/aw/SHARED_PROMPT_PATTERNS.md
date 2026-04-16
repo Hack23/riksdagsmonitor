@@ -343,7 +343,7 @@ Scripts (`generate-news-enhanced.ts`, `pre-article-analysis.ts`, etc.) are respo
 |------------|---------|--------|
 | **Download MCP data** | Fetch betänkanden, voteringar, motioner | JSON files in `analysis/data/` |
 | **Catalog data files** | List pending analysis files | Manifest in `analysis/daily/` |
-| **Render HTML template** | Apply article CSS, header, footer, nav | HTML article shell |
+| **Render HTML template** | Apply article CSS (`../styles.css`), header, footer, nav | HTML article shell |
 | **Render charts** | Canvas.js/Mermaid chart containers | Chart HTML with data attributes |
 | **Render mindmaps** | CSS mindmap containers | Mindmap HTML structure |
 | **Validate HTML** | HTMLHint, linkinator, Playwright | Validation reports |
