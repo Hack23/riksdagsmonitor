@@ -242,7 +242,7 @@ quadrantChart
 4. **External stakeholders align predictably**: Children's rights orgs (opposition) and law enforcement (support) provide institutional backing to their respective blocs.
 5. **Implementation stakeholders are the wildcard**: SiS and municipal capacity will determine operational success regardless of parliamentary outcome.
 6. **SD is the kingmaker**: 59 of 145 Ja votes (40.7%) came from SD. Without SD, the government loses by 60 votes.
-7. **C's 25% absence rate warrants investigation**: Highest of any party, party leader absent. May signal organizational weakness or deliberate ambiguity.
+7. **C's 25% absence rate warrants investigation**: Highest of any party, despite party leader Elisabeth Thand Ringqvist voting Nej. May signal organizational weakness or uneven caucus discipline.
 
 ---
 
