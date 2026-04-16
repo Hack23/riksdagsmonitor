@@ -1,5 +1,5 @@
 {
-  "version": "0.8.41",
+  "version": "0.8.42",
   "name": "riksdagsmonitor",
   "problems": [
     "extraneous: @emnapi/core@1.9.2 /home/runner/work/riksdagsmonitor/riksdagsmonitor/node_modules/@emnapi/core",
@@ -4042,7 +4042,7 @@
               "overridden": false,
               "dependencies": {
                 "hono": {
-                  "version": "4.12.12"
+                  "version": "4.12.14"
                 }
               }
             },
@@ -4479,8 +4479,8 @@
               }
             },
             "hono": {
-              "version": "4.12.12",
-              "resolved": "https://registry.npmjs.org/hono/-/hono-4.12.12.tgz",
+              "version": "4.12.14",
+              "resolved": "https://registry.npmjs.org/hono/-/hono-4.12.14.tgz",
               "overridden": false
             },
             "jose": {
