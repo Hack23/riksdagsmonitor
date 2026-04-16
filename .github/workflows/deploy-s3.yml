@@ -131,6 +131,18 @@ jobs:
             echo "ℹ️ No docs directory found, skipping"
           fi
 
+      - name: Copy JS libraries to build output
+        run: |
+          if [ -d "js/lib" ]; then
+            echo "📦 Copying js/lib/ to dist/js/lib/..."
+            mkdir -p dist/js/lib
+            cp -r js/lib/* dist/js/lib/
+            echo "✅ JS libraries copied to dist/js/lib/"
+            ls -la dist/js/lib/
+          else
+            echo "ℹ️ No js/lib directory found, skipping"
+          fi
+
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@ec61189d14ec14c8efccab744f656cffd0e33f37 # v6.1.0
         with:
