@@ -927,7 +927,9 @@ export function generateDynamicTitle(
   docCount: number,
 ): { title: string; subtitle: string } {
   // Template field labels and generic terms that MUST NOT appear in titles.
-  // These are structural HTML labels, not meaningful political topics.
+  // Categories: (1) Template field labels: committee, published, what this means, why it matters, filed by
+  // (2) Generic UI text: read the full, thematic analysis, legislative pipeline, opposition strategy
+  // (3) Structural elements: report-entr, unknown, policy domain, department
   const EXCLUDED_PATTERNS = /^(committee:?|published:?|what this means:?|why it matters:?|filed by:?|read the full|thematic analysis|legislative pipeline|opposition strategy|responses to|report-entr|unknown|policy domain|department)/i;
 
   // Extract topic hints from strong tags and h3 headings

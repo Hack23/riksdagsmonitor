@@ -117,8 +117,10 @@ function buildAnalysisEnrichmentSections(
   if (swot && (swot.strengths.length > 0 || swot.weaknesses.length > 0 || swot.opportunities.length > 0 || swot.threats.length > 0)) {
     const renderEntries = (entries: Array<{ text: string; confidence?: string; impact?: string }>) =>
       entries.map(e => {
+        // Impact badges with ARIA labels for screen reader accessibility
+        const impactLabel = e.impact === 'high' ? 'High impact' : e.impact === 'low' ? 'Low impact' : 'Medium impact';
         const badge = e.impact === 'high' ? '🔴' : e.impact === 'low' ? '🟢' : '🟡';
-        return `<li>${badge} ${escapeHtml(e.text)}</li>`;
+        return `<li><span class="impact-badge impact-${e.impact ?? 'medium'}" aria-label="${impactLabel}">${badge}</span> ${escapeHtml(e.text)}</li>`;
       }).join('\n');
 
     const heading = isSwedish ? 'SWOT-analys' : 'SWOT Analysis';
@@ -126,21 +128,21 @@ function buildAnalysisEnrichmentSections(
     const html = `
       <h2>${heading}</h2>
       ${subjectLine}
-      <div class="swot-grid" role="table" aria-label="${heading}">
-        <div class="swot-quadrant swot-strengths" role="row">
-          <h3 role="columnheader">${isSwedish ? 'Styrkor' : 'Strengths'}</h3>
+      <div class="swot-grid" aria-label="${heading}">
+        <div class="swot-quadrant swot-strengths">
+          <h3>${isSwedish ? 'Styrkor' : 'Strengths'}</h3>
           <ul>${renderEntries(swot.strengths)}</ul>
         </div>
-        <div class="swot-quadrant swot-weaknesses" role="row">
-          <h3 role="columnheader">${isSwedish ? 'Svagheter' : 'Weaknesses'}</h3>
+        <div class="swot-quadrant swot-weaknesses">
+          <h3>${isSwedish ? 'Svagheter' : 'Weaknesses'}</h3>
           <ul>${renderEntries(swot.weaknesses)}</ul>
         </div>
-        <div class="swot-quadrant swot-opportunities" role="row">
-          <h3 role="columnheader">${isSwedish ? 'Möjligheter' : 'Opportunities'}</h3>
+        <div class="swot-quadrant swot-opportunities">
+          <h3>${isSwedish ? 'Möjligheter' : 'Opportunities'}</h3>
           <ul>${renderEntries(swot.opportunities)}</ul>
         </div>
-        <div class="swot-quadrant swot-threats" role="row">
-          <h3 role="columnheader">${isSwedish ? 'Hot' : 'Threats'}</h3>
+        <div class="swot-quadrant swot-threats">
+          <h3>${isSwedish ? 'Hot' : 'Threats'}</h3>
           <ul>${renderEntries(swot.threats)}</ul>
         </div>
       </div>`;
