@@ -1354,7 +1354,7 @@ flowchart TD
 ```mermaid
 graph TD
     subgraph "Continuous Model Evaluation (Every ~2.3 Months)"
-        A[New Model Release<br/>Opus 4.7, 4.8, 4.9...] --> B{Benchmark Against<br/>Current Model}
+        A[New Model Release<br/>Opus 4.8, 4.9, 5.0...] --> B{Benchmark Against<br/>Current Model}
         B -->|Superior| C[Shadow Testing<br/>7-Day Parallel Run]
         B -->|Equal/Inferior| D[Document Results<br/>Continue Current Model]
         C --> E{Quality Gate<br/>Pass?}
@@ -1403,7 +1403,7 @@ graph TD
 
 | Year | Model Version | Update Cadence | Key Workflow Changes |
 |------|--------------|----------------|---------------------|
-| 2026 | Opus 4.6-4.9 | Minor ~2.3mo, Major annual | News generation v2, 14 languages |
+| 2026 | Opus 4.7-4.9 | Minor ~2.3mo, Major annual | News generation v2, 14 languages |
 | 2027 | Opus 5.x | Minor ~2.3mo, Major annual | Predictive analytics, semantic search |
 | 2028 | Opus 6.x | Minor ~2.3mo, Major annual | Multi-modal generation, real-time streams |
 | 2029 | Opus 7.x | Minor ~2.3mo, Major annual | Autonomous pipeline, mobile app |

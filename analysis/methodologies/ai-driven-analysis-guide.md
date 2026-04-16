@@ -110,7 +110,7 @@ analysis/daily/YYYY-MM-DD/{articleType}/
 > - ❌ `extractDominantTheme()` — REMOVED. Keyword matching is NOT political intelligence.
 > - ❌ Any subtitle containing `"${count} documents"` or `"${count} parliamentary"` — interpolated document counts are NOT descriptions.
 > - ❌ Any title produced by string concatenation of `baseTitle + ": " + theme` — this is template output, not AI analysis.
-> - ✅ The AI agent (Copilot opus 4.6) MUST read the completed synthesis-summary.md and generate titles/descriptions based on the actual political intelligence findings.
+> - ✅ The AI agent (Copilot opus 4.7) MUST read the completed synthesis-summary.md and generate titles/descriptions based on the actual political intelligence findings.
 > - ✅ Titles must follow the formula: `[Active Verb] + [Specific Actor/Institution] + [Concrete Policy Action]`
 > - ✅ Descriptions must summarize the #1 ranked finding from the significance scoring.
 >
@@ -993,17 +993,19 @@ Each analysis file receives a composite score across five dimensions:
 
 ---
 
-## 🤖 Claude Opus 4.6 Agentic Workflow Integration (v3.0)
+## 🤖 Claude Opus 4.7 Agentic Workflow Integration (v5.1)
 
 ### Engine Configuration
 
-All analysis workflows use **Claude Opus 4.6** via the GitHub Copilot agentic workflow engine:
+All analysis, news-generation, and translation workflows use **Claude Opus 4.7** via the GitHub Copilot agentic workflow engine:
 
 ```yaml
 engine:
   id: copilot
-  model: claude-opus-4.6
+  model: claude-opus-4.7
 ```
+
+> **v5.1 Upgrade Notes**: Opus 4.7 (deployed 2026-04) replaces Opus 4.6 across all 12 agentic workflows, including the translation workflow which previously ran on Sonnet 4.6. Leverage the model's stronger long-context reasoning by reading the full corpus of related documents before forming a thesis, and by doing genuine pass-2 rewrites rather than surface tightening. Opus 4.7's improved instruction-following also raises the bar for compliance with the AI-first content rules below — every `AI_MUST_REPLACE` marker, every generic stub, and every code-generated boilerplate must be replaced with evidence-grounded political analysis.
 
 ### AI-First Analysis Principle
 
@@ -1623,7 +1625,7 @@ When classifying documents by policy domain, use the Riksdag committee assignmen
 
 ---
 
-## 🤖 Claude Opus 4.6 Agentic Workflow Enhancements (v4.0)
+## 🤖 Claude Opus 4.7 Agentic Workflow Enhancements (v4.0)
 
 ### Pre-Article Analysis Integration
 
@@ -2091,11 +2093,12 @@ Every synthesis-level analysis MUST include a historical comparison with:
 
 **Document Control:**  
 - **Path:** `/analysis/methodologies/ai-driven-analysis-guide.md`  
-- **Version:** 5.0  
+- **Version:** 5.1  
+- **Key Changes v5.1:** Engine upgrade to **Claude Opus 4.7** across all 12 agentic workflows (including translation, previously Claude Sonnet 4.6); leverages Opus 4.7's stronger long-context reasoning to deepen SWOT, stakeholder, and risk analyses without script changes; expectation that pass-2 iterations now substantively rewrite (not just tighten) every analysis section; translation quality target raised to native-speaker political-domain fluency  
 - **Key Changes v5.0:** Election 2026 Lens (mandatory 5-dimension electoral assessment for ALL analyses), 5-Level Confidence Scale replacing binary HIGH/MEDIUM/LOW, Mermaid diagram mandates per analysis type (flowchart/timeline/quadrantChart/mindmap), Historical Comparison requirements (3 time periods + precedents), pre-election analysis calendar  
 - **Key Changes v4.2:** Empty Data Handling Protocol (lookback strategy, direct MCP retrieval, carry-forward protocol, minimum output requirements), Per-File Analysis Output Example (worked example of betänkande analysis with SWOT/risk/forward indicators)  
 - **Key Changes v4.0:** AI article content generation protocol (5 mandatory sections with prompts), visualization integration protocol (Chart.js/D3.js), policy domain inference with committee mapping, pre-article analysis integration requirement, AI self-evaluation quality gate, empty analysis fallback protocol, 2026-04-03 systemic quality audit (444+ generic filler, 456+ excuse-as-analysis, 210+ boilerplate), cumulative quality tracking  
-- **Key Changes v3.0:** Claude Opus 4.6 agentic integration, AI-first analysis principle, deprecated code function table, AI title/description generation prompts, analysis-to-article reference linking, cross-reference quality requirements, 2026-04-02 quality audit findings  
+- **Key Changes v3.0:** Claude Opus 4.7 agentic integration, AI-first analysis principle, deprecated code function table, AI title/description generation prompts, analysis-to-article reference linking, cross-reference quality requirements, 2026-04-02 quality audit findings  
 - **Key Changes v2.1:** Document-type analysis focus table, analysis depth levels (L1/L2/L3), anti-pattern gallery, quality gate checklist with scoring rubric  
 - **Key Changes v2.0:** Folder isolation rules, AI-only content mandate, multi-framework depth requirements, advanced anti-pattern detection  
 - **Classification:** Public  

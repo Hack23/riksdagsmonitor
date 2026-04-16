@@ -970,7 +970,7 @@ graph TB
 
 | Year | Automation Assets | AI Model | Key Capability |
 |:----:|:---------------:|:---------|:---------------|
-| **2026** | 44→50 | Opus 4.6–4.9 | 🤖 Agentic news generation (current) |
+| **2026** | 44→50 | Opus 4.7–4.9 | 🤖 Agentic news generation (current) |
 | **2027** | 50–55 | Opus 5.x | 🔮 Predictive analytics & Nordic expansion |
 | **2028** | 55–65 | Opus 6.x | 🎙️ Multi-modal content (audio/video) |
 | **2029** | 65–75 | Opus 7.x | 🚀 Fully autonomous pipeline |
