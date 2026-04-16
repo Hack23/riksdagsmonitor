@@ -2096,7 +2096,7 @@ fi
 
 #### ⏱️🚨 ENFORCED Minimum Analysis Time Gate (BLOCKING)
 
-> 🔴 **HARD ENFORCEMENT**: The agent MUST NOT proceed to article generation until the minimum analysis time has elapsed. This bash gate MUST be run BEFORE article generation and MUST block if elapsed analysis time is insufficient. This prevents the systemic early-completion pattern where agents finish in 15-20 minutes of a 60-minute allocation.
+> 🔴 **HARD ENFORCEMENT**: The agent MUST NOT proceed to article generation until the minimum analysis time has elapsed. This bash gate MUST be run BEFORE article generation and MUST block if elapsed analysis time is insufficient. This prevents the systemic early-completion pattern where agents finish in 15-20 minutes of a 45-minute allocation.
 
 ```bash
 # === MINIMUM ANALYSIS TIME GATE ===
@@ -2114,11 +2114,13 @@ read AW_NOW < /tmp/now_time.txt
 ELAPSED_MIN=$(( (AW_NOW - START_TIME) / 60 ))
 echo "⏱️ Elapsed time: $ELAPSED_MIN minutes"
 
-# MINIMUM_ANALYSIS_MINUTES = 22 (15 min Pass 1 + 7 min Pass 2)
-# If < 22 minutes have elapsed, the agent has NOT completed the mandatory 2-pass analysis
-if [ "$ELAPSED_MIN" -lt 22 ]; then
+# MINIMUM_ANALYSIS_MINUTES defaults to 22 (15 min Pass 1 + 7 min Pass 2)
+# Workflows with different time budgets can override via environment variable
+# (e.g. 30-minute workflows set MINIMUM_ANALYSIS_MINUTES=14)
+MINIMUM_ANALYSIS_MINUTES="${MINIMUM_ANALYSIS_MINUTES:-22}"
+if [ "$ELAPSED_MIN" -lt "$MINIMUM_ANALYSIS_MINUTES" ]; then
   echo "🚨🚨🚨 MINIMUM TIME GATE FAILED 🚨🚨🚨"
-  echo "❌ Only $ELAPSED_MIN minutes elapsed — MINIMUM 22 minutes required for 2-pass analysis"
+  echo "❌ Only $ELAPSED_MIN minutes elapsed — MINIMUM $MINIMUM_ANALYSIS_MINUTES minutes required for 2-pass analysis"
   echo ""
   echo "You MUST go back and:"
   echo "  1. Read ALL analysis files back completely (Pass 2)"
@@ -2129,10 +2131,15 @@ if [ "$ELAPSED_MIN" -lt 22 ]; then
   echo ""
   echo "DO NOT proceed to article generation. Continue analysis work."
   echo "RE-RUN this gate after completing more analysis work."
+  if (return 0 2>/dev/null); then
+    return 1
+  else
+    exit 1
+  fi
 fi
 ```
 
-> **Why this gate exists**: PR #1794 and systemic monitoring showed ALL news workflows completing in 13-22 minutes of their 60-minute allocation. This means agents skip the mandatory 2-pass analysis, leave script-generated stubs unenriched, and produce articles missing required components (SWOT tables, Mermaid diagrams, Risk matrices). The minimum time gate forces the agent to spend sufficient time on analysis before proceeding.
+> **Why this gate exists**: PR #1794 and systemic monitoring showed ALL news workflows completing in 13-22 minutes of their 45-minute allocation. This means agents skip the mandatory 2-pass analysis, leave script-generated stubs unenriched, and produce articles missing required components (SWOT tables, Mermaid diagrams, Risk matrices). The minimum time gate forces the agent to spend sufficient time on analysis before proceeding. Workflows with shorter time budgets (e.g. 30 minutes) can set `MINIMUM_ANALYSIS_MINUTES=14` before running this gate.
 
 #### ⏱️🚨 ENFORCED Analysis Enrichment Verification Gate (BLOCKING)
 
@@ -2142,12 +2149,23 @@ fi
 # === ANALYSIS ENRICHMENT VERIFICATION GATE ===
 # Run this AFTER completing analysis, BEFORE starting article generation.
 # Blocks if script-generated stubs remain unenriched.
-if [ -z "$ANALYSIS_SUBFOLDER" ]; then ANALYSIS_SUBFOLDER="$ARTICLE_TYPE"; fi
 if [ -z "$ARTICLE_DATE" ]; then
   date -u +%Y-%m-%d > /tmp/today.txt
   read ARTICLE_DATE < /tmp/today.txt
 fi
+
+if [ -z "$ANALYSIS_SUBFOLDER" ]; then
+  echo "❌ ANALYSIS_SUBFOLDER is not set. Refusing to guess from ARTICLE_TYPE because workflow folder names may differ from article types."
+  echo "Set ANALYSIS_SUBFOLDER to the canonical analysis folder before running this gate."
+  exit 1
+fi
+
 ANALYSIS_DIR="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
+if [ ! -d "$ANALYSIS_DIR" ]; then
+  echo "❌ Analysis directory not found: $ANALYSIS_DIR"
+  echo "Ensure ANALYSIS_SUBFOLDER points to the correct canonical analysis folder for this workflow."
+  exit 1
+fi
 
 UNENRICHED=0
 ENRICHED=0
@@ -2166,6 +2184,14 @@ for f in "$ANALYSIS_DIR"/*.md; do
   fi
 done
 
+# Fail if no analysis files found at all (missing outputs cannot be "approved")
+if [ "$UNENRICHED" -eq 0 ] && [ "$ENRICHED" -eq 0 ]; then
+  echo ""
+  echo "🚨🚨🚨 ENRICHMENT GATE FAILED 🚨🚨🚨"
+  echo "❌ No .md analysis files found in $ANALYSIS_DIR — cannot verify enrichment"
+  exit 1
+fi
+
 if [ "$UNENRICHED" -gt 0 ]; then
   echo ""
   echo "🚨🚨🚨 ENRICHMENT GATE FAILED 🚨🚨🚨"
@@ -2179,6 +2205,7 @@ if [ "$UNENRICHED" -gt 0 ]; then
   echo "  5. Add Mermaid diagrams, evidence tables, confidence labels"
   echo ""
   echo "DO NOT proceed to article generation until ALL files are enriched."
+  exit 1
 else
   echo ""
   echo "✅ All $ENRICHED analysis files are AI-enriched — proceed to article generation"
@@ -2233,11 +2260,13 @@ fi
 
 ARTICLE_GATE_PASS=true
 ARTICLE_FAIL_COUNT=0
+ARTICLE_CHECKED=0
 
 echo "=== 🔍 Article Quality Component Gate ==="
 
 for ARTICLE_FILE in news/$ARTICLE_DATE-*.html; do
   [ ! -f "$ARTICLE_FILE" ] && continue
+  ARTICLE_CHECKED=$((ARTICLE_CHECKED + 1))
   echo ""
   echo "--- Checking: $ARTICLE_FILE ---"
   FILE_FAILS=0
@@ -2318,11 +2347,15 @@ done
 
 echo ""
 echo "=== Article Quality Gate Summary ==="
-if [ "$ARTICLE_GATE_PASS" = "true" ]; then
-  echo "✅ All articles passed quality checks"
+if [ "$ARTICLE_CHECKED" -eq 0 ]; then
+  echo "❌ No article files found matching news/$ARTICLE_DATE-*.html — cannot verify quality"
+  exit 1
+elif [ "$ARTICLE_GATE_PASS" = "true" ]; then
+  echo "✅ All $ARTICLE_CHECKED articles passed quality checks"
 else
-  echo "❌ $ARTICLE_FAIL_COUNT article(s) FAILED quality checks"
+  echo "❌ $ARTICLE_FAIL_COUNT of $ARTICLE_CHECKED article(s) FAILED quality checks"
   echo "Fix the issues above and re-run this gate before committing."
+  exit 1
 fi
 ```
 

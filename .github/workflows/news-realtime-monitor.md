@@ -288,7 +288,7 @@ Uses `memory/news-generation` branch. START: read `memory/news-generation/last-r
 
 ## ⏱️ Time Budget (45 minutes) — ENFORCED Minimum 40 Minutes
 
-> 🔴 **SYSTEMIC ISSUE IDENTIFIED (PR #1794 audit, 2026-04-16)**: ALL news workflows were completing in 13-22 minutes of their 60-minute allocation, producing shallow analysis with unenriched script stubs. The agent MUST use at least 40 of the 60 allocated minutes. Completion before 40 minutes = insufficient iteration = REJECTED quality.
+> 🔴 **SYSTEMIC ISSUE IDENTIFIED (PR #1794 audit, 2026-04-16)**: ALL news workflows were completing in 13-22 minutes of their 45-minute allocation, producing shallow analysis with unenriched script stubs. The agent MUST use at least 40 of the 45 allocated minutes. Completion before 40 minutes = insufficient iteration = REJECTED quality.
 
 ```bash
 date +%s > /tmp/start_time.txt
@@ -308,7 +308,7 @@ read START_TIME < /tmp/start_time.txt
 | Commit+PR | 42–45 | `git add && git commit`, then `safeoutputs___create_pull_request` |
 
 | **HARD DEADLINE** | **43–45** | 🚨 If no safe output yet: if ANY artifacts/files were created, IMMEDIATELY stage, commit, call `safeoutputs___create_pull_request` with partial work. ONLY call `safeoutputs___noop` if truly ZERO files were created. |
-> ⚠️ **Analysis phase is 15 minutes minimum, total analysis+article work is 34 minutes minimum** — this is NOT negotiable. PR #1452 demonstrated that < 10 min produces unacceptable analysis. PR #1794 demonstrated that 15 min total = shallow articles missing SWOT tables, Mermaid diagrams, risk matrices. The AI MUST use the full time allocation.
+> ⚠️ **Analysis phase is 15 minutes minimum before article generation, and total analysis+generation+article improvement work is 40 minutes minimum before validation** — this is NOT negotiable. PR #1452 demonstrated that < 10 min produces unacceptable analysis. PR #1794 demonstrated that 15 min total = shallow articles missing SWOT tables, Mermaid diagrams, risk matrices. The AI MUST use the full time allocation.
 
 > 🔴 **MINIMUM TIME ENFORCEMENT**: Before proceeding to article generation, the agent MUST run the Minimum Analysis Time Gate AND the Analysis Enrichment Verification Gate from SHARED_PROMPT_PATTERNS.md. Both gates MUST pass before article generation begins.
 

@@ -269,7 +269,7 @@ Uses `memory/news-generation` branch. START: read `memory/news-generation/last-r
 
 ## ⏱️ Time Budget (45 minutes) — ENFORCED Minimum 40 Minutes
 
-> 🔴 **SYSTEMIC ISSUE (PR #1794 audit, 2026-04-16)**: ALL news workflows completing in 13-22 min of 60-min allocation, producing shallow analysis. Agent MUST use at least 40 of 60 minutes. Completion < 40 min = insufficient iteration = REJECTED.
+> 🔴 **SYSTEMIC ISSUE (PR #1794 audit, 2026-04-16)**: ALL news workflows completing in 13-22 min of 45-min allocation, producing shallow analysis. Agent MUST use at least 40 of 45 minutes. Completion < 40 min = insufficient iteration = REJECTED.
 
 - **Minutes 0–3**: Date check, MCP warm-up with `get_sync_status()`
 - **Minutes 3–6**: Run pre-article-analysis pipeline (download data)
