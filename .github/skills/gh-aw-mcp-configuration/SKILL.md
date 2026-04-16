@@ -20,6 +20,11 @@ tags:
 
 # 🔌 GitHub Agentic Workflows MCP Configuration
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 📋 Overview
 
 This skill provides comprehensive guidance for configuring Model Context Protocol (MCP) servers in GitHub Agentic Workflows. MCP enables AI agents to interact with external tools and data sources through a standardized protocol. Understanding MCP configuration is essential for building powerful, extensible agentic workflows.

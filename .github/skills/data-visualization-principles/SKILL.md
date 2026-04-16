@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Data Visualization Principles Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Establishes principles for creating effective, accessible, and honest data visualizations for political intelligence data.
 

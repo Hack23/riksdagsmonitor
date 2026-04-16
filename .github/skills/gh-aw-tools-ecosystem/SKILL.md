@@ -20,6 +20,11 @@ tags:
 
 # 🛠️ GitHub Agentic Workflows Tools Ecosystem
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 📋 Overview
 
 This skill provides a comprehensive guide to all tools available in GitHub Agentic Workflows. Understanding the tools ecosystem is critical for building effective AI agents that can interact with code, GitHub APIs, browsers, and external services.

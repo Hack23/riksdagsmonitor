@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Political Science Analysis Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **This skill MUST be applied with the AI FIRST principle: never accept first-pass quality. ALL analysis and content MUST go through minimum 2 complete iterations. After first pass, read ALL output back completely and systematically improve every section — strengthen evidence, deepen analysis, add specific citations, broaden perspectives. Spend ALL allocated time on real work. Single-pass output is NEVER acceptable. NO SHORTCUTS.**
+
 ## Purpose
 
 This skill provides rigorous political science methodologies and analytical frameworks for interpreting political data collected by the Riksdagsmonitor platform. It bridges quantitative data analysis with political theory, enabling evidence-based assessments of democratic accountability, institutional performance, and political behavior.

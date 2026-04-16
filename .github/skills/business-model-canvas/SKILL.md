@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Business Model Canvas
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 This skill provides guidance for designing and validating business models for the Riksdagsmonitor platform using the Business Model Canvas framework. Ensures revenue models align with the platform's democratic mission while maintaining financial sustainability.

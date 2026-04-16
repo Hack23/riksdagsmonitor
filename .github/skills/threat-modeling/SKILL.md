@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Threat Modeling Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 This skill embodies the complete Hack23 AB threat modeling methodology as defined in [ISMS Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md). It provides systematic threat identification, risk quantification, and security control validation for proactive security assurance across all Hack23 projects.

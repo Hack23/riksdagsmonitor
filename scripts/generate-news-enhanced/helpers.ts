@@ -11,7 +11,7 @@ import path from 'path';
 import { translateSwedishContent } from '../translation-dictionary.js';
 import type { Language } from '../types/language.js';
 import type { DateRange, ArticleQualityScore, UrgencyLabel } from '../types/article.js';
-import type { ClassificationLevel, RiskLevel, ConfidenceLabel } from '../analysis-reader.js';
+import type { ClassificationLevel, RiskLevel, ConfidenceLabel, DemocraticHealthLabel } from '../analysis-reader.js';
 import { readLatestAnalysis, deriveArticleClassificationMeta } from '../analysis-reader.js';
 import {
   NEWS_DIR,
@@ -467,6 +467,22 @@ export interface AnalysisEnrichment {
   riskSummary?: string;
   /** Date of the analysis data (may differ from article date due to lookback) */
   analysisDate?: string;
+  /** Full SWOT analysis from pre-computed analysis files */
+  swotAnalysis?: import('../analysis-reader.js').SwotAnalysisResult;
+  /** Stakeholder perspectives from pre-computed analysis */
+  stakeholderPerspectives?: import('../analysis-reader.js').StakeholderPerspectivesResult;
+  /** Synthesis narrative direction for lede generation */
+  narrativeDirection?: string;
+  /** Recommended article focus from pre-computed synthesis */
+  articleFocus?: string;
+  /** Forward indicators for "What to Watch Next" */
+  forwardIndicators?: string[];
+  /** Threat analysis indicators and democratic health */
+  threatIndicators?: string[];
+  /** Democratic health assessment */
+  democraticHealth?: DemocraticHealthLabel;
+  /** Top significance-ranked documents with reasons */
+  topDocuments?: Array<{ docId: string; score: number; reason: string }>;
 }
 
 /**
@@ -528,9 +544,18 @@ export async function getAnalysisEnrichment(
       synthesisKeyThemes: analysis.synthesis?.keyThemes ?? [],
       riskSummary: analysis.riskAssessment?.summary ?? undefined,
       analysisDate: analysis.date,
+      // Deep analysis content for article body enrichment
+      swotAnalysis: analysis.swot ?? undefined,
+      stakeholderPerspectives: analysis.stakeholderPerspectives ?? undefined,
+      narrativeDirection: analysis.synthesis?.narrativeDirection ?? undefined,
+      articleFocus: analysis.synthesis?.articleFocus ?? undefined,
+      forwardIndicators: analysis.synthesis?.forwardIndicators ?? [],
+      threatIndicators: analysis.threatAnalysis?.indicators ?? [],
+      democraticHealth: analysis.threatAnalysis?.democraticHealth ?? undefined,
+      topDocuments: analysis.significance?.topDocuments ?? [],
     };
     analysisEnrichmentCache.set(cacheKey, enrichment);
-    console.log(`  📊 Analysis enrichment loaded: classification=${meta.classificationLevel}, risk=${meta.riskLevel}, confidence=${meta.confidenceLabel}, keyThemes=${enrichment.synthesisKeyThemes?.length ?? 0}`);
+    console.log(`  📊 Analysis enrichment loaded: classification=${meta.classificationLevel}, risk=${meta.riskLevel}, confidence=${meta.confidenceLabel}, keyThemes=${enrichment.synthesisKeyThemes?.length ?? 0}, swot=${enrichment.swotAnalysis ? 'YES' : 'NO'}, stakeholders=${enrichment.stakeholderPerspectives ? 'YES' : 'NO'}, forwardIndicators=${enrichment.forwardIndicators?.length ?? 0}, topDocs=${enrichment.topDocuments?.length ?? 0}`);
     return enrichment;
   } catch (error: unknown) {
     if (process.env.DEBUG || process.env.LOG_LEVEL === 'debug') {
@@ -880,6 +905,17 @@ export async function writeArticlePair(htmlEN: string, htmlSV: string, slug: str
 // The BANNED_PATTERNS for content quality remain in shared.ts detectBannedPatterns().
 
 /**
+ * Template field labels and generic terms that MUST NOT appear in titles.
+ * Categories: (1) Template field labels: committee, published, what this means, why it matters, filed by
+ * (2) Generic UI text: read the full, thematic analysis, legislative pipeline, opposition strategy
+ * (3) Structural elements: report-entry, unknown, policy domain, department
+ *
+ * Hoisted to module scope to avoid recompiling the regex on every call to
+ * `generateDynamicTitle()`.
+ */
+const EXCLUDED_PATTERNS = /^(committee:?|published:?|what this means:?|why it matters:?|filed by:?|read the full|thematic analysis|legislative pipeline|opposition strategy|responses to|report-entry|unknown|policy domain|department)/i;
+
+/**
  * Generate a content-aware fallback title and subtitle from article content.
  *
  * The AI agent in the agentic workflow (.md prompt) SHOULD overwrite
@@ -907,7 +943,7 @@ export function generateDynamicTitle(
   const strongMatches = content.matchAll(/<strong[^>]*>([^<]{3,50})<\/strong>/gi);
   for (const m of strongMatches) {
     const text = m[1]?.trim();
-    if (text && !seen.has(text) && topics.length < 5) {
+    if (text && !seen.has(text) && topics.length < 5 && !EXCLUDED_PATTERNS.test(text)) {
       seen.add(text);
       topics.push(text);
     }
@@ -915,7 +951,7 @@ export function generateDynamicTitle(
   const h3Matches = content.matchAll(/<h3[^>]*>([^<]{3,60})<\/h3>/gi);
   for (const m of h3Matches) {
     const text = m[1]?.trim();
-    if (text && !seen.has(text) && topics.length < 5) {
+    if (text && !seen.has(text) && topics.length < 5 && !EXCLUDED_PATTERNS.test(text)) {
       seen.add(text);
       topics.push(text);
     }
@@ -924,7 +960,7 @@ export function generateDynamicTitle(
   // Sanitize topic strings: strip newlines, collapse whitespace, drop quotes
   const sanitized = topics.map(t =>
     t.replace(/[\r\n]+/g, ' ').replace(/\s+/g, ' ').replace(/["']/g, '').trim()
-  ).filter(t => t.length >= 3);
+  ).filter(t => t.length >= 3 && !EXCLUDED_PATTERNS.test(t));
 
   // Build a content-aware title if we found topic hints
   let title = baseTitle;

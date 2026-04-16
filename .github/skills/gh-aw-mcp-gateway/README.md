@@ -2,6 +2,11 @@
 
 Comprehensive skill documentation for the GitHub Agentic Workflows MCP Gateway.
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 📄 Contents
 
 - **SKILL.md** (2298 lines) - Complete MCP Gateway reference covering:

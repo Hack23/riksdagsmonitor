@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # NIST CSF 2.0 Mapping (Static Site)
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Map Riksdagsmonitor security controls to NIST Cybersecurity Framework 2.0 functions.

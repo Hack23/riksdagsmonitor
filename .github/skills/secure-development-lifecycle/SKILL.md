@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # 🛡️ Secure Development Lifecycle (SDLC) Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 🎯 Purpose
 
 Comprehensive security practices for the entire Software Development Lifecycle (SDLC), ensuring security is built in from inception through maintenance. Integrates classification-driven requirements, AI-augmented development controls, and systematic testing frameworks aligned with Hack23 Secure Development Policy.

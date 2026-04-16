@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # 🏛️ Myndigheter Monitoring Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Provides expertise in covering Swedish government agencies (Myndigheter), their regulatory actions, enforcement activities, and performance. Essential for comprehensive government coverage beyond Riksdag and Regeringen, focusing on implementation and administration.

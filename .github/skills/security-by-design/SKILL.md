@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Security by Design Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Apply security by design principles to ensure security is integrated from the earliest stages of development, not bolted on as an afterthought.

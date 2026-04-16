@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # ISO 27001:2022 Controls (Static Site)
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Implement ISO 27001:2022 Annex A controls for Riksdagsmonitor static HTML/CSS website, ensuring systematic information security management.

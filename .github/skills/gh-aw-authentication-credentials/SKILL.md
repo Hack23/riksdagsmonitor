@@ -19,6 +19,11 @@ tags:
 
 # 🔐 Authentication and Credentials for Agentic Workflows
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 📋 Overview
 
 This skill provides comprehensive security patterns for managing authentication and credentials in GitHub Agentic Workflows. It covers GitHub token types, secure credential storage, token rotation strategies, least privilege access control, MCP server authentication, and API key management best practices for production-ready autonomous agent systems.

@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # HTML Accessibility Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Ensure websites meet WCAG 2.1 Level AA accessibility standards for inclusive user experience.

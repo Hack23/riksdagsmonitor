@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Static Site Security Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Comprehensive security practices for static websites, leveraging their inherent security advantages while addressing remaining risks.

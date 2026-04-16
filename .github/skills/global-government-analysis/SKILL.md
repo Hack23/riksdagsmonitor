@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # 🌍 Global Government Analysis Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Provides expertise in analyzing government systems worldwide, comparative politics, international relations, and global political context for Swedish political coverage. Enables journalists and analysts to contextualize Swedish developments within international frameworks and learn from global best practices.

@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # SEO Best Practices
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 This skill provides guidance for search engine optimization (SEO) of the Riksdagsmonitor platform, ensuring political transparency content ranks well in search results while maintaining accessibility, performance, and GDPR compliance.

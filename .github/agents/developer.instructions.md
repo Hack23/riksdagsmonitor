@@ -7,6 +7,10 @@ applyTo: "**/*"
 
 This document consolidates development guidelines, architectural patterns, and implementation standards for GitHub Agentic Workflows. It provides guidance for contributing to the codebase while maintaining consistency, security, and code quality.
 
+## 🔴 AI FIRST Quality Principle
+
+> **ALL work MUST follow the AI FIRST principle: never accept first-pass quality. Minimum 2 complete iterations for all analysis and content. Read ALL output back completely after first pass and improve every section. Spend ALL allocated time doing real work — completing early with shallow output is NEVER acceptable. NO SHORTCUTS.**
+
 ## Table of Contents
 
 - [Code Organization Patterns](#code-organization-patterns)

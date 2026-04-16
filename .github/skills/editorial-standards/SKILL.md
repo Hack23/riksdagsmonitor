@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # ✍️ Editorial Standards Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **This skill MUST be applied with the AI FIRST principle: never accept first-pass quality. ALL analysis and content MUST go through minimum 2 complete iterations. After first pass, read ALL output back completely and systematically improve every section — strengthen evidence, deepen analysis, add specific citations, broaden perspectives. Spend ALL allocated time on real work. Single-pass output is NEVER acceptable. NO SHORTCUTS.**
+
 ## Purpose
 
 Provides expertise in maintaining the highest editorial quality standards for political journalism. Covers fact-checking protocols, OSINT/INTOP political intelligence editorial standards, editorial ethics, and quality assurance processes for professional news production.

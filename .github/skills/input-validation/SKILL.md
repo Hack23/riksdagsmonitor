@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Input Validation Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Defines input validation and sanitization patterns for preventing security vulnerabilities and ensuring data integrity.
 

@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Swedish Political System Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 This skill provides comprehensive knowledge of the Swedish political system, parliamentary procedures, party dynamics, electoral mechanisms, and coalition formation patterns essential for intelligence analysis in the Riksdagsmonitor platform. It enables accurate interpretation of political data, proper contextualization of voting patterns, and informed assessment of democratic accountability.

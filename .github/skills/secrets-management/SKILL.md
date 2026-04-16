@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Secrets Management
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Secure management of GitHub secrets for MCP servers and CI/CD workflows.

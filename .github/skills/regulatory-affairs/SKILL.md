@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # ⚖️ Regulatory Affairs Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Provides expertise in covering government regulatory processes, compliance monitoring, and enforcement actions. Essential for systematic transparency in how Swedish agencies create, implement, and enforce rules that affect citizens and businesses.

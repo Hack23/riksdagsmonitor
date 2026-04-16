@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # 🌐 Comparative Politics Reporting Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **This skill MUST be applied with the AI FIRST principle: never accept first-pass quality. ALL analysis and content MUST go through minimum 2 complete iterations. After first pass, read ALL output back completely and systematically improve every section — strengthen evidence, deepen analysis, add specific citations, broaden perspectives. Spend ALL allocated time on real work. Single-pass output is NEVER acceptable. NO SHORTCUTS.**
+
 ## Purpose
 
 Provides expertise in using comparative politics and international context to enrich Swedish political coverage. Enables journalists to place Swedish developments in global perspective, learn from international experiences, and provide readers with meaningful comparative analysis.

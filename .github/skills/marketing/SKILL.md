@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Marketing Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Strategic marketing guidance for promoting Riksdagsmonitor's political transparency platform, increasing visibility, engaging stakeholders, and driving adoption through digital channels.

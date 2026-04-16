@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Data Protection Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Defines data protection practices ensuring privacy-by-design, GDPR compliance, and secure data handling across all Hack23 projects.
 

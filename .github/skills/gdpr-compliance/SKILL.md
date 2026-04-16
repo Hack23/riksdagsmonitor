@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # GDPR Compliance Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Ensure GDPR compliance for political data processing in Riksdagsmonitor while maintaining democratic transparency.

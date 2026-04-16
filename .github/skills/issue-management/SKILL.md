@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Issue Management
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Create well-structured, actionable GitHub issues that facilitate clear communication, efficient triage, and effective task delegation to specialized agents or team members.

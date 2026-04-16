@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # MCP Server Development Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Guide the development and configuration of Model Context Protocol (MCP) servers for the Riksdagsmonitor platform, enabling AI-powered tooling integration with GitHub Copilot and other MCP-compatible clients.

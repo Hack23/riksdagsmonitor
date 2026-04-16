@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Data Science for Intelligence Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **This skill MUST be applied with the AI FIRST principle: never accept first-pass quality. ALL analysis and content MUST go through minimum 2 complete iterations. After first pass, read ALL output back completely and systematically improve every section — strengthen evidence, deepen analysis, add specific citations, broaden perspectives. Spend ALL allocated time on real work. Single-pass output is NEVER acceptable. NO SHORTCUTS.**
+
 ## Purpose
 
 This skill provides comprehensive data science methodologies tailored for political intelligence analysis in the Riksdagsmonitor platform. It covers statistical analysis, machine learning, natural language processing, time series forecasting, and network analysis techniques applied to the 6 intelligence frameworks and 82 database views for democratic accountability assessment.

@@ -6,6 +6,11 @@ license: CC-BY-4.0
 
 # API Integration Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Expert knowledge in building robust API clients with proper error handling, rate limiting, authentication, and retry logic.
 

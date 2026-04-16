@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # AI Governance Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 This skill provides governance guidelines for AI usage in the Riksdagsmonitor platform, including GitHub Copilot agent security, EU AI Act compliance, and responsible AI practices. It ensures AI-assisted development follows Hack23 ISMS policies and regulatory requirements.

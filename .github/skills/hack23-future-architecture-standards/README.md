@@ -1,5 +1,10 @@
 # Hack23 FUTURE_ARCHITECTURE.md Standards Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Overview
 
 This skill provides **comprehensive standards** for creating FUTURE_ARCHITECTURE.md documents that outline the architectural evolution roadmap for Hack23 projects. It is based on the **gold standard** [CIA Compliance Manager FUTURE_ARCHITECTURE.md](https://github.com/Hack23/cia-compliance-manager/blob/main/docs/architecture/FUTURE_ARCHITECTURE.md) (65 KB, 1,326 lines, 15+ diagrams).

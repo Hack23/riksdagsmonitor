@@ -79,3 +79,4 @@ news/metadata/locks/*.lock/
 .playwright-mcp/
 main-page-full.png
 cia-dashboard.png
+builds/

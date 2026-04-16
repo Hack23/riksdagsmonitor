@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Documentation Portfolio Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Defines the complete set of architecture documentation required for all Hack23 projects, ensuring comprehensive documentation supporting both current operations and future planning.
 

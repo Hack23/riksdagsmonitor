@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # European Parliament API Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 Expertise in integrating European Parliament Open Data for cross-parliament political analysis alongside Swedish Riksdag data.
 

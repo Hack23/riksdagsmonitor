@@ -9,6 +9,11 @@ tags: [github-agentic-workflows, network-security, firewall, squid, domain-white
 
 # 🔥 GitHub Agentic Workflows - Firewall Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 📋 Purpose
 
 Master the **Agentic Workflow Firewall (AWF)** - a network firewall for agentic workflows providing L7 (HTTP/HTTPS) egress control using Squid proxy and Docker containers. This skill provides comprehensive expertise in restricting network access to a whitelist of approved domains for AI agents and their MCP servers.

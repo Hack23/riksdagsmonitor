@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # Secure Code Review (Static Site)
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Perform security-focused code reviews for static HTML/CSS websites.

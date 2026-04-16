@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # 📅 Prospective News Coverage Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **This skill MUST be applied with the AI FIRST principle: never accept first-pass quality. ALL analysis and content MUST go through minimum 2 complete iterations. After first pass, read ALL output back completely and systematically improve every section — strengthen evidence, deepen analysis, add specific citations, broaden perspectives. Spend ALL allocated time on real work. Single-pass output is NEVER acceptable. NO SHORTCUTS.**
+
 ## Purpose
 
 Provides expertise in covering future political events, analyzing agendas, tracking calendars, and producing predictive journalism that helps readers understand what's coming next in Swedish politics. Complements retrospective reporting with forward-looking analysis.

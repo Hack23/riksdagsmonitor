@@ -92,6 +92,326 @@ const AI_STAKEHOLDER_NAMES: Record<string, Record<string, string>> = {
 };
 
 // ---------------------------------------------------------------------------
+// Per-language labels for deep-analysis enrichment sections (14 languages)
+// ---------------------------------------------------------------------------
+
+/** Section headings and labels for deep-analysis enrichment sections. */
+const ENRICHMENT_LABELS: Record<string, Record<Language, string>> = {
+  swotHeading: {
+    en: 'SWOT Analysis', sv: 'SWOT-analys', da: 'SWOT-analyse',
+    no: 'SWOT-analyse', fi: 'SWOT-analyysi', de: 'SWOT-Analyse',
+    fr: 'Analyse SWOT', es: 'Análisis DAFO', nl: 'SWOT-analyse',
+    ar: 'تحليل SWOT', he: 'ניתוח SWOT', ja: 'SWOT分析', ko: 'SWOT 분석', zh: 'SWOT分析',
+  },
+  strengths: {
+    en: 'Strengths', sv: 'Styrkor', da: 'Styrker',
+    no: 'Styrker', fi: 'Vahvuudet', de: 'Stärken',
+    fr: 'Forces', es: 'Fortalezas', nl: 'Sterktes',
+    ar: 'نقاط القوة', he: 'חוזקות', ja: '強み', ko: '강점', zh: '优势',
+  },
+  weaknesses: {
+    en: 'Weaknesses', sv: 'Svagheter', da: 'Svagheder',
+    no: 'Svakheter', fi: 'Heikkoudet', de: 'Schwächen',
+    fr: 'Faiblesses', es: 'Debilidades', nl: 'Zwaktes',
+    ar: 'نقاط الضعف', he: 'חולשות', ja: '弱み', ko: '약점', zh: '劣势',
+  },
+  opportunities: {
+    en: 'Opportunities', sv: 'Möjligheter', da: 'Muligheder',
+    no: 'Muligheter', fi: 'Mahdollisuudet', de: 'Chancen',
+    fr: 'Opportunités', es: 'Oportunidades', nl: 'Kansen',
+    ar: 'الفرص', he: 'הזדמנויות', ja: '機会', ko: '기회', zh: '机会',
+  },
+  threats: {
+    en: 'Threats', sv: 'Hot', da: 'Trusler',
+    no: 'Trusler', fi: 'Uhat', de: 'Risiken',
+    fr: 'Menaces', es: 'Amenazas', nl: 'Bedreigingen',
+    ar: 'التهديدات', he: 'איומים', ja: '脅威', ko: '위협', zh: '威胁',
+  },
+  stakeholderHeading: {
+    en: 'Stakeholder Perspectives', sv: 'Intressentperspektiv', da: 'Interessentperspektiver',
+    no: 'Interessentperspektiver', fi: 'Sidosryhmänäkemykset', de: 'Stakeholder-Perspektiven',
+    fr: 'Perspectives des parties prenantes', es: 'Perspectivas de partes interesadas',
+    nl: 'Stakeholderperspectiven', ar: 'وجهات نظر أصحاب المصلحة', he: 'פרספקטיבות בעלי עניין',
+    ja: 'ステークホルダーの視点', ko: '이해관계자 관점', zh: '利益相关者观点',
+  },
+  riskHeading: {
+    en: 'Risk & Threat Assessment', sv: 'Risk- och hotbedömning', da: 'Risiko- og trusselsvurdering',
+    no: 'Risiko- og trusselvurdering', fi: 'Riski- ja uhka-arvio', de: 'Risiko- und Bedrohungsbewertung',
+    fr: 'Évaluation des risques et menaces', es: 'Evaluación de riesgos y amenazas',
+    nl: 'Risico- en dreigingsbeoordeling', ar: 'تقييم المخاطر والتهديدات', he: 'הערכת סיכונים ואיומים',
+    ja: 'リスクと脅威の評価', ko: '위험 및 위협 평가', zh: '风险与威胁评估',
+  },
+  democraticHealth: {
+    en: 'Democratic Health', sv: 'Demokratisk hälsa', da: 'Demokratisk sundhed',
+    no: 'Demokratisk helse', fi: 'Demokraattinen terveys', de: 'Demokratische Gesundheit',
+    fr: 'Santé démocratique', es: 'Salud democrática', nl: 'Democratische gezondheid',
+    ar: 'الصحة الديمقراطية', he: 'בריאות דמוקרטית', ja: '民主主義の健全性', ko: '민주적 건강', zh: '民主健康',
+  },
+  threatIndicators: {
+    en: 'Threat Indicators', sv: 'Hotindikatorer', da: 'Trusselsindikatorer',
+    no: 'Trusselindikatorer', fi: 'Uhkaindikaattorit', de: 'Bedrohungsindikatoren',
+    fr: 'Indicateurs de menace', es: 'Indicadores de amenaza', nl: 'Dreigingsindicatoren',
+    ar: 'مؤشرات التهديد', he: 'מדדי איום', ja: '脅威指標', ko: '위협 지표', zh: '威胁指标',
+  },
+  forwardHeading: {
+    en: 'What to Watch Next', sv: 'Vad händer härnäst?', da: 'Hvad skal man holde øje med?',
+    no: 'Hva bør følges med på?', fi: 'Mitä seurata seuraavaksi?', de: 'Was kommt als Nächstes?',
+    fr: 'Quoi surveiller ensuite?', es: '¿Qué observar a continuación?',
+    nl: 'Wat nu te volgen?', ar: 'ما الذي يجب مراقبته؟', he: 'מה לעקוב אחריו?',
+    ja: '次に注目すべきこと', ko: '다음에 주목할 점', zh: '下一步关注什么？',
+  },
+  significanceHeading: {
+    en: 'Most Significant Documents', sv: 'Mest betydande dokument', da: 'Mest betydningsfulde dokumenter',
+    no: 'Mest betydningsfulle dokumenter', fi: 'Merkittävimmät asiakirjat', de: 'Bedeutendste Dokumente',
+    fr: 'Documents les plus significatifs', es: 'Documentos más significativos',
+    nl: 'Meest significante documenten', ar: 'أهم الوثائق', he: 'המסמכים המשמעותיים ביותר',
+    ja: '最も重要な文書', ko: '가장 중요한 문서', zh: '最重要的文件',
+  },
+  docId: {
+    en: 'Doc ID', sv: 'Dok-ID', da: 'Dok-ID',
+    no: 'Dok-ID', fi: 'Asiakirja-ID', de: 'Dok-ID',
+    fr: 'ID doc.', es: 'ID doc.', nl: 'Doc-ID',
+    ar: 'معرف المستند', he: 'מזהה מסמך', ja: '文書ID', ko: '문서 ID', zh: '文档ID',
+  },
+  score: {
+    en: 'Score', sv: 'Poäng', da: 'Score',
+    no: 'Poeng', fi: 'Pistemäärä', de: 'Bewertung',
+    fr: 'Score', es: 'Puntuación', nl: 'Score',
+    ar: 'النتيجة', he: 'ציון', ja: 'スコア', ko: '점수', zh: '评分',
+  },
+  reason: {
+    en: 'Reason', sv: 'Motivering', da: 'Begrundelse',
+    no: 'Begrunnelse', fi: 'Peruste', de: 'Begründung',
+    fr: 'Raison', es: 'Motivo', nl: 'Reden',
+    ar: 'السبب', he: 'סיבה', ja: '理由', ko: '이유', zh: '原因',
+  },
+  impactHigh: {
+    en: 'High impact', sv: 'Hög påverkan', da: 'Høj påvirkning',
+    no: 'Høy påvirkning', fi: 'Suuri vaikutus', de: 'Hohe Auswirkung',
+    fr: 'Impact élevé', es: 'Alto impacto', nl: 'Hoge impact',
+    ar: 'تأثير عالٍ', he: 'השפעה גבוהה', ja: '影響大', ko: '높은 영향', zh: '高影响',
+  },
+  impactMedium: {
+    en: 'Medium impact', sv: 'Medelpåverkan', da: 'Middel påvirkning',
+    no: 'Middels påvirkning', fi: 'Keskimääräinen vaikutus', de: 'Mittlere Auswirkung',
+    fr: 'Impact moyen', es: 'Impacto medio', nl: 'Gemiddelde impact',
+    ar: 'تأثير متوسط', he: 'השפעה בינונית', ja: '影響中', ko: '중간 영향', zh: '中影响',
+  },
+  impactLow: {
+    en: 'Low impact', sv: 'Låg påverkan', da: 'Lav påvirkning',
+    no: 'Lav påvirkning', fi: 'Pieni vaikutus', de: 'Geringe Auswirkung',
+    fr: 'Impact faible', es: 'Bajo impacto', nl: 'Lage impact',
+    ar: 'تأثير منخفض', he: 'השפעה נמוכה', ja: '影響小', ko: '낮은 영향', zh: '低影响',
+  },
+};
+
+/** Stakeholder perspective labels per language */
+const STAKEHOLDER_LABELS: Record<string, Record<Language, string>> = {
+  government: {
+    en: 'Government Coalition', sv: 'Regeringskoalitionen', da: 'Regeringskoalitionen',
+    no: 'Regjeringskoalisjonen', fi: 'Hallituskoalitio', de: 'Regierungskoalition',
+    fr: 'Coalition gouvernementale', es: 'Coalición de gobierno', nl: 'Regeringscoalitie',
+    ar: 'الائتلاف الحكومي', he: 'קואליציית הממשלה', ja: '与党連合', ko: '정부 연합', zh: '执政联盟',
+  },
+  opposition: {
+    en: 'Opposition Bloc', sv: 'Oppositionen', da: 'Oppositionen',
+    no: 'Opposisjonen', fi: 'Oppositio', de: 'Oppositionsblock',
+    fr: "Bloc d'opposition", es: 'Bloque de oposición', nl: 'Oppositieblok',
+    ar: 'كتلة المعارضة', he: 'גוש האופוזיציה', ja: '野党ブロック', ko: '야당 블록', zh: '反对派阵营',
+  },
+  citizen: {
+    en: 'Citizens', sv: 'Medborgare', da: 'Borgere',
+    no: 'Borgere', fi: 'Kansalaiset', de: 'Bürger',
+    fr: 'Citoyens', es: 'Ciudadanos', nl: 'Burgers',
+    ar: 'المواطنون', he: 'אזרחים', ja: '市民', ko: '시민', zh: '公民',
+  },
+  economic: {
+    en: 'Business/Economy', sv: 'Näringsliv/Ekonomi', da: 'Erhvervsliv/Økonomi',
+    no: 'Næringsliv/Økonomi', fi: 'Elinkeinoelämä/Talous', de: 'Wirtschaft',
+    fr: 'Entreprises/Économie', es: 'Negocios/Economía', nl: 'Bedrijfsleven/Economie',
+    ar: 'الأعمال/الاقتصاد', he: 'עסקים/כלכלה', ja: 'ビジネス/経済', ko: '비즈니스/경제', zh: '商业/经济',
+  },
+  international: {
+    en: 'International/EU', sv: 'Internationellt/EU', da: 'Internationalt/EU',
+    no: 'Internasjonalt/EU', fi: 'Kansainvälinen/EU', de: 'International/EU',
+    fr: 'International/UE', es: 'Internacional/UE', nl: 'Internationaal/EU',
+    ar: 'دولي/الاتحاد الأوروبي', he: 'בינלאומי/האיחוד האירופי', ja: '国際/EU', ko: '국제/EU', zh: '国际/欧盟',
+  },
+  media: {
+    en: 'Media/Public Opinion', sv: 'Media/Opinion', da: 'Medier/Offentlig mening',
+    no: 'Media/Offentlig mening', fi: 'Media/Yleinen mielipide', de: 'Medien/Öffentliche Meinung',
+    fr: "Médias/Opinion publique", es: 'Medios/Opinión pública', nl: 'Media/Publieke opinie',
+    ar: 'وسائل الإعلام/الرأي العام', he: 'תקשורת/דעת הקהל', ja: 'メディア/世論', ko: '미디어/여론', zh: '媒体/舆论',
+  },
+};
+
+/** Helper to look up localized labels with English fallback. */
+function lbl(key: string, lang: Language): string {
+  return ENRICHMENT_LABELS[key]?.[lang] ?? ENRICHMENT_LABELS[key]?.en ?? key;
+}
+
+/** Impact levels for SWOT entries (constrained union) */
+type ImpactLevel = 'high' | 'medium' | 'low';
+
+/** Normalize an unknown impact value to a safe ImpactLevel. */
+function toImpactLevel(value: string | undefined): ImpactLevel {
+  if (value === 'high' || value === 'medium' || value === 'low') return value;
+  return 'medium';
+}
+
+// ---------------------------------------------------------------------------
+// Pre-computed analysis → article section builders
+// ---------------------------------------------------------------------------
+
+/**
+ * Build deep analysis TemplateSections from pre-computed analysis enrichment.
+ * This bridges the gap between AI-generated analysis files and the article HTML
+ * by producing SWOT, stakeholder, forward indicators, and risk sections from
+ * the `AnalysisEnrichment` data loaded by `getAnalysisEnrichment()`.
+ *
+ * When enrichment is null (no analysis files available), returns an empty array
+ * for backward compatibility.
+ */
+/** @internal Exported for testing */
+export function buildAnalysisEnrichmentSections(
+  enrichment: import('./helpers.js').AnalysisEnrichment | null,
+  lang: Language,
+): TemplateSection[] {
+  if (!enrichment) return [];
+  const sections: TemplateSection[] = [];
+
+  // ── 1. SWOT Analysis Section ────────────────────────────────────────────
+  const swot = enrichment.swotAnalysis;
+  if (swot && (swot.strengths.length > 0 || swot.weaknesses.length > 0 || swot.opportunities.length > 0 || swot.threats.length > 0)) {
+    const renderEntries = (entries: Array<{ text: string; confidence?: string; impact?: string }>) =>
+      entries.map(e => {
+        const impact = toImpactLevel(e.impact);
+        // Impact badges with localized ARIA labels for screen reader accessibility
+        const impactLabelKey = impact === 'high' ? 'impactHigh' : impact === 'low' ? 'impactLow' : 'impactMedium';
+        const impactLabel = lbl(impactLabelKey, lang);
+        const badge = impact === 'high' ? '🔴' : impact === 'low' ? '🟢' : '🟡';
+        return `<li><span class="impact-badge impact-${impact}" aria-label="${escapeHtml(impactLabel)}"><span aria-hidden="true">${badge}</span></span> ${escapeHtml(e.text)}</li>`;
+      }).join('\n');
+
+    const heading = lbl('swotHeading', lang);
+    const subjectLine = swot.subject ? `<p class="swot-subject">${escapeHtml(swot.subject)}</p>` : '';
+    const html = `
+      <h2>${escapeHtml(heading)}</h2>
+      ${subjectLine}
+      <div class="swot-grid" aria-label="${escapeHtml(heading)}">
+        <div class="swot-quadrant swot-strengths">
+          <h3>${escapeHtml(lbl('strengths', lang))}</h3>
+          <ul>${renderEntries(swot.strengths)}</ul>
+        </div>
+        <div class="swot-quadrant swot-weaknesses">
+          <h3>${escapeHtml(lbl('weaknesses', lang))}</h3>
+          <ul>${renderEntries(swot.weaknesses)}</ul>
+        </div>
+        <div class="swot-quadrant swot-opportunities">
+          <h3>${escapeHtml(lbl('opportunities', lang))}</h3>
+          <ul>${renderEntries(swot.opportunities)}</ul>
+        </div>
+        <div class="swot-quadrant swot-threats">
+          <h3>${escapeHtml(lbl('threats', lang))}</h3>
+          <ul>${renderEntries(swot.threats)}</ul>
+        </div>
+      </div>`;
+    sections.push({ id: 'swot-analysis', html, className: 'swot-section' });
+  }
+
+  // ── 2. Stakeholder Perspectives Section ─────────────────────────────────
+  const sp = enrichment.stakeholderPerspectives;
+  if (sp) {
+    const perspectives = [
+      { key: 'government', icon: '🏛️' },
+      { key: 'opposition', icon: '⚔️' },
+      { key: 'citizen', icon: '👥' },
+      { key: 'economic', icon: '📊' },
+      { key: 'international', icon: '🌍' },
+      { key: 'media', icon: '📰' },
+    ].filter(p => sp[p.key as keyof typeof sp]);
+
+    if (perspectives.length > 0) {
+      const heading = lbl('stakeholderHeading', lang);
+      const perspectiveHtml = perspectives.map(p => {
+        const text = sp[p.key as keyof typeof sp] || '';
+        const pLabel = STAKEHOLDER_LABELS[p.key]?.[lang] ?? STAKEHOLDER_LABELS[p.key]?.en ?? p.key;
+        return `
+          <div class="stakeholder-card">
+            <h3><span aria-hidden="true">${p.icon}</span> ${escapeHtml(pLabel)}</h3>
+            <p>${escapeHtml(text)}</p>
+          </div>`;
+      }).join('\n');
+
+      sections.push({
+        id: 'stakeholder-perspectives',
+        html: `<h2>${escapeHtml(heading)}</h2><div class="stakeholder-grid">${perspectiveHtml}</div>`,
+        className: 'stakeholder-section',
+      });
+    }
+  }
+
+  // ── 3. Risk & Threat Assessment Section ─────────────────────────────────
+  if (enrichment.riskSummary || enrichment.democraticHealth || (enrichment.threatIndicators && enrichment.threatIndicators.length > 0)) {
+    const heading = lbl('riskHeading', lang);
+    let riskHtml = `<h2>${escapeHtml(heading)}</h2>`;
+
+    if (enrichment.riskSummary) {
+      riskHtml += `<p class="risk-summary">${escapeHtml(enrichment.riskSummary)}</p>`;
+    }
+
+    if (enrichment.democraticHealth) {
+      const healthLabel = lbl('democraticHealth', lang);
+      const healthBadge = enrichment.democraticHealth === 'HIGH' ? '🟢' :
+        enrichment.democraticHealth === 'MEDIUM' ? '🟡' :
+        enrichment.democraticHealth === 'LOW' ? '🟠' :
+        enrichment.democraticHealth === 'AT_RISK' ? '🔴' : '🔴';
+      riskHtml += `<p class="democratic-health"><strong>${escapeHtml(healthLabel)}:</strong> <span aria-hidden="true">${healthBadge}</span> ${enrichment.democraticHealth}</p>`;
+    }
+
+    if (enrichment.threatIndicators && enrichment.threatIndicators.length > 0) {
+      const indicatorLabel = lbl('threatIndicators', lang);
+      riskHtml += `<h3>${escapeHtml(indicatorLabel)}</h3><ul>`;
+      for (const indicator of enrichment.threatIndicators.slice(0, 6)) {
+        riskHtml += `<li><span aria-hidden="true">🎯</span> ${escapeHtml(indicator)}</li>`;
+      }
+      riskHtml += `</ul>`;
+    }
+
+    sections.push({ id: 'risk-assessment', html: riskHtml, className: 'risk-section' });
+  }
+
+  // ── 4. Forward Indicators Section ───────────────────────────────────────
+  if (enrichment.forwardIndicators && enrichment.forwardIndicators.length > 0) {
+    const heading = lbl('forwardHeading', lang);
+    let forwardHtml = `<h2>${escapeHtml(heading)}</h2><ul class="forward-indicators">`;
+    for (const indicator of enrichment.forwardIndicators.slice(0, 8)) {
+      forwardHtml += `<li><span aria-hidden="true">🔮</span> ${escapeHtml(indicator)}</li>`;
+    }
+    forwardHtml += `</ul>`;
+
+    sections.push({ id: 'forward-indicators', html: forwardHtml, className: 'forward-section' });
+  }
+
+  // ── 5. Significance-Ranked Documents Section ────────────────────────────
+  if (enrichment.topDocuments && enrichment.topDocuments.length > 0) {
+    const heading = lbl('significanceHeading', lang);
+    let sigHtml = `<h2>${escapeHtml(heading)}</h2>`;
+    sigHtml += `<table class="significance-table" role="table" aria-label="${escapeHtml(heading)}">`;
+    sigHtml += `<thead><tr><th scope="col">${escapeHtml(lbl('docId', lang))}</th><th scope="col">${escapeHtml(lbl('score', lang))}</th><th scope="col">${escapeHtml(lbl('reason', lang))}</th></tr></thead><tbody>`;
+    for (const doc of enrichment.topDocuments.slice(0, 10)) {
+      const scoreColor = doc.score >= 80 ? 'high' : doc.score >= 50 ? 'medium' : 'low';
+      sigHtml += `<tr><td><code>${escapeHtml(doc.docId)}</code></td><td class="score-${scoreColor}">${doc.score}</td><td>${escapeHtml(doc.reason)}</td></tr>`;
+    }
+    sigHtml += `</tbody></table>`;
+
+    sections.push({ id: 'significance-ranking', html: sigHtml, className: 'significance-section' });
+  }
+
+  return sections;
+}
+
+// ---------------------------------------------------------------------------
 // Shared article visualization builder
 // ---------------------------------------------------------------------------
 
@@ -253,8 +573,8 @@ export async function generateWeekAhead(): Promise<GenerationResult> {
 
       // Build visualization sections (SWOT, dashboard, economic)
       const sections = buildArticleVisualizationSections(documents, null, lang);
-
-      // Generate HTML for this language
+      // Append deep analysis sections from pre-computed analysis files (AI-written)
+      sections.push(...buildAnalysisEnrichmentSections(enrichment, lang));
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: enriched.title,
@@ -350,6 +670,8 @@ export async function generateCommitteeReports(): Promise<GenerationResult> {
 
       // Build visualization sections (SWOT, dashboard, economic)
       const sections = buildArticleVisualizationSections(reports as RawDocument[], null, lang);
+      // Append deep analysis sections from pre-computed analysis files (AI-written)
+      sections.push(...buildAnalysisEnrichmentSections(enrichment, lang));
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
@@ -443,6 +765,8 @@ export async function generatePropositions(): Promise<GenerationResult> {
 
       // Build visualization sections (SWOT, dashboard, economic)
       const sections = buildArticleVisualizationSections(propositions as RawDocument[], null, lang);
+      // Append deep analysis sections from pre-computed analysis files (AI-written)
+      sections.push(...buildAnalysisEnrichmentSections(enrichment, lang));
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
@@ -536,6 +860,8 @@ export async function generateMotions(): Promise<GenerationResult> {
 
       // Build visualization sections (SWOT, dashboard, economic)
       const sections = buildArticleVisualizationSections(motions as RawDocument[], null, lang);
+      // Append deep analysis sections from pre-computed analysis files (AI-written)
+      sections.push(...buildAnalysisEnrichmentSections(enrichment, lang));
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
@@ -629,6 +955,8 @@ export async function generateInterpellations(): Promise<GenerationResult> {
 
       // Build visualization sections (SWOT, dashboard, economic)
       const sections = buildArticleVisualizationSections(interpellations as RawDocument[], null, lang);
+      // Append deep analysis sections from pre-computed analysis files (AI-written)
+      sections.push(...buildAnalysisEnrichmentSections(enrichment, lang));
 
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,

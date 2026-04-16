@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # 💰 Economic Policy Analysis Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 Provides expertise in analyzing economic policy for political journalists. Covers fiscal policy, budget analysis, economic forecasting, monetary policy, and trade policy to enable sophisticated economic reporting for riksdagsmonitor's political transparency mission.

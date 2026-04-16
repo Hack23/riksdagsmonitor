@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # 🛡️ Secure Development Policy Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 🎯 Purpose Statement
 
 Apply **Hack23 AB's Secure Development Policy** to demonstrate how **security-by-design creates competitive advantages** through systematic DevSecOps implementation.

@@ -6,6 +6,11 @@ license: CC-BY-4.0
 
 # CIA Data Integration Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 This skill provides expertise in consuming JSON exports from the CIA (Citizen Intelligence Agency) platform, implementing robust caching strategies, and ensuring data quality through schema validation.

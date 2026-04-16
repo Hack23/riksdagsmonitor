@@ -9,6 +9,11 @@ tags: [github-agentic-workflows, mcp, model-context-protocol, mcp-gateway, docke
 
 # 🌐 GitHub Agentic Workflows - MCP Gateway Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## 📋 Purpose
 
 Master the **MCP Gateway** for GitHub Agentic Workflows - the foundational infrastructure component that enables AI agents to access Model Context Protocol (MCP) servers safely and efficiently. This skill provides comprehensive expertise in configuring, deploying, and operating the MCP Gateway for production AI automation.

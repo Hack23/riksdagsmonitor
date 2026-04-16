@@ -6,6 +6,11 @@ license: Apache-2.0
 
 # MCP Gateway Security Skill
 
+
+## 🔴 AI FIRST Quality Principle
+
+> **Apply the AI FIRST principle: never accept first-pass quality. Minimum 2 iterations. Read all output, improve every section. No shortcuts.**
+
 ## Purpose
 
 This skill provides security patterns and best practices for securing MCP (Model Context Protocol) gateway communications in the Riksdagsmonitor platform. It covers token management, request validation, audit logging, and threat mitigation for AI-assisted development workflows.

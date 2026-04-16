@@ -4,6 +4,11 @@ description: Adding a New Safe Output Type to GitHub Agentic Workflows
 disable-model-invocation: true
 ---
 
+## 🔴 AI FIRST Quality Principle
+
+> **ALL work MUST follow the AI FIRST principle: never accept first-pass quality. Minimum 2 complete iterations for all analysis and content. Read ALL output back completely after first pass and improve every section. Spend ALL allocated time doing real work — completing early with shallow output is NEVER acceptable. NO SHORTCUTS.**
+
+
 # Add New Safe Output Type
 
 This guide covers adding a new safe output type to process AI agent outputs in JSONL format through a validation pipeline (TypeScript types → JSON schema → JavaScript collection).
