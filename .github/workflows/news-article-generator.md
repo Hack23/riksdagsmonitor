@@ -656,16 +656,16 @@ echo "✅ Read $TOTAL_FILES analysis files — these MUST drive article content"
 > Use `source scripts/mcp-setup.sh && npx tsx ...` on a **single command line**.
 
 ```bash
-# Build deep-inspection flags as a string (AWF-safe: no array brace expansion)
-DEEP_ARGS=""
+# Build deep-inspection flags via positional parameters (AWF-safe: preserves spaces in values)
+set --
 if echo "$ARTICLE_TYPES" | grep -q "deep-inspection"; then
   DOCUMENT_IDS="${{ github.event.inputs.document_ids }}"
   DOCUMENT_URLS="${{ github.event.inputs.document_urls }}"
   FOCUS_TOPIC="${{ github.event.inputs.focus_topic }}"
-  if [ -n "$DOCUMENT_IDS" ]; then DEEP_ARGS="$DEEP_ARGS --document-ids=$DOCUMENT_IDS"; fi
-  if [ -n "$DOCUMENT_URLS" ]; then DEEP_ARGS="$DEEP_ARGS --document-urls=$DOCUMENT_URLS"; fi
-  if [ -n "$FOCUS_TOPIC" ]; then DEEP_ARGS="$DEEP_ARGS --focus-topic=$FOCUS_TOPIC"; fi
-  echo "📋 Deep-inspection args: $DEEP_ARGS"
+  if [ -n "$DOCUMENT_IDS" ]; then set -- "$@" "--document-ids=$DOCUMENT_IDS"; fi
+  if [ -n "$DOCUMENT_URLS" ]; then set -- "$@" "--document-urls=$DOCUMENT_URLS"; fi
+  if [ -n "$FOCUS_TOPIC" ]; then set -- "$@" "--focus-topic=$FOCUS_TOPIC"; fi
+  echo "📋 Deep-inspection args: $*"
 fi
 
 BATCH_NUM=1
@@ -677,7 +677,7 @@ while true; do
     --languages="$LANG_ARG" \
     --batch-size=5 \
     --skip-existing \
-    $DEEP_ARGS
+    "$@"
   EXIT_CODE=$?
 
   if [ $EXIT_CODE -ne 0 ]; then

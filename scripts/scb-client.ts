@@ -197,20 +197,16 @@ export class SCBClient {
    * (not the legacy `tableId`/`selection` names).
    *
    * @param tableId - SCB table identifier (e.g., 'TAB5765')
-   * @param selection - Optional value_codes filters (e.g., { Tid: 'top(4)', Region: '00' })
+   * @param valueCodes - Optional value_codes filters passed directly to pxweb-mcp
+   *   (e.g., `{ Tid: 'top(4)', Region: '00', Kon: '1+2' }`)
    * @returns Array of data points
    */
   async getTableData(
     tableId: string,
-    selection?: Record<string, string[]>,
+    valueCodes?: Record<string, string>,
   ): Promise<SCBDataPoint[]> {
     const params: Record<string, unknown> = { table_id: tableId };
-    if (selection) {
-      // Convert string[] values to comma-separated strings for pxweb-mcp query_table
-      const valueCodes: Record<string, string> = {};
-      for (const [key, values] of Object.entries(selection)) {
-        valueCodes[key] = values.join(',');
-      }
+    if (valueCodes) {
       params.value_codes = valueCodes;
     }
     const result = await this.callTool<SCBDataPoint[]>('query_table', params);

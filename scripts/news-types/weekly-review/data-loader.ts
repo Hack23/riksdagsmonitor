@@ -236,13 +236,14 @@ export async function enrichWithFullText(
         // "Tjänstgörande riksdagsledamot..." or "Avliden YYYY-MM-DD...") in their
         // notis/summary/fullText fields — discard these to prevent them from
         // appearing as article content.
+        const str = (v: unknown): string => typeof v === 'string' ? v : '';
         const sanitize = (s: unknown): string => {
-          const str = (s as string) ?? '';
-          return isPersonProfileText(str) ? '' : str;
+          const val = str(s).trim();
+          return isPersonProfileText(val) ? '' : val;
         };
         const d = doc as Record<string, unknown>;
         // Primary: MCP returns 'text' (raw dump with embedded HTML from Riksdag)
-        const rawText = ((details['text'] as string) ?? '').trim();
+        const rawText = str(details['text']).trim();
         d['fullText'] = sanitize(details['fullText'])
           || sanitize(details['summary'])
           || sanitize(details['notis'])
@@ -250,7 +251,7 @@ export async function enrichWithFullText(
         // Use raw 'text' as fullContent if it's substantial; fallback to legacy 'html'
         d['fullContent'] = rawText.length > 100
           ? rawText
-          : ((details['html'] as string) ?? '');
+          : str(details['html']);
         // Propagate summary: prefer MCP 'snippet', fall back to legacy fields
         const snippet = sanitize(details['snippet']);
         if (!d['summary']) {
