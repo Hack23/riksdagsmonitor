@@ -2241,12 +2241,14 @@ echo "=== 🔍 Analysis Enrichment Verification Gate ==="
 for f in "$ANALYSIS_DIR"/*.md; do
   [ ! -f "$f" ] && continue
   # Skip the factual data-download-manifest.md — its script marker is expected and not a stub
-  case "$f" in
-    */data-download-manifest.md) echo "⏭️  SKIP (factual manifest): $f"; continue ;;
+  FBASE=$(basename "$f")
+  case "$FBASE" in
+    data-download-manifest.md) echo "⏭️  SKIP (factual manifest): $f"; continue ;;
   esac
-  # Match legacy `pre-article-analysis script` marker (present in historical stubs)
-  # as well as any future stub marker that explicitly states the file is a script-generated stub.
-  grep -cE "pre-article-analysis script|SCRIPT-GENERATED STUB" "$f" > /tmp/is_script.txt 2>/dev/null || echo 0 > /tmp/is_script.txt
+  # Match the legacy `pre-article-analysis script` marker present in historical stub files.
+  # The current download script writes only the factual `data-download-manifest.md` (skipped above),
+  # so any file still carrying this legacy marker is an unenriched stub.
+  grep -c "pre-article-analysis script" "$f" > /tmp/is_script.txt 2>/dev/null || echo 0 > /tmp/is_script.txt
   read IS_SCRIPT < /tmp/is_script.txt
   FNAME="$f"
   if [ "$IS_SCRIPT" -gt 0 ]; then
