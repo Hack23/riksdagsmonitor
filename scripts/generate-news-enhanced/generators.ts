@@ -265,7 +265,7 @@ export function buildAnalysisEnrichmentSections(
   // ── 1. SWOT Analysis Section ────────────────────────────────────────────
   const swot = enrichment.swotAnalysis;
   if (swot && (swot.strengths.length > 0 || swot.weaknesses.length > 0 || swot.opportunities.length > 0 || swot.threats.length > 0)) {
-    const renderEntries = (entries: Array<{ text: string; confidence?: string; impact?: ImpactLevel | string }>) =>
+    const renderEntries = (entries: Array<{ text: string; confidence?: string; impact?: string }>) =>
       entries.map(e => {
         const impact = toImpactLevel(e.impact);
         // Impact badges with ARIA labels for screen reader accessibility
