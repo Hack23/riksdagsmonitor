@@ -1007,6 +1007,8 @@ Embed each chart on the target `<canvas>` element using a `data-chart-config` at
 
 > **NON-NEGOTIABLE**: Every article MUST include economic context from World Bank indicators when the article's policy domain matches available indicators. This enriches political intelligence with quantitative evidence.
 
+> 🔴 **v5.0 — MANDATORY ECONOMIC DATA**: The AI agent MUST fetch and include World Bank and/or SCB data to contextualize political developments. Articles about budget/finance → include GDP, debt, deficit data. Defense → military spending. Healthcare → health expenditure. Education → spending per pupil. Use Chart.js chart containers for data visualization. An article without quantitative economic evidence is INCOMPLETE.
+
 ````markdown
 ### World Bank Indicator Reference for AI Agents
 
