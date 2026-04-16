@@ -342,11 +342,12 @@ export async function downloadAllDocuments(
               .find((value): value is string => value.length > 0);
             if (!dokId) return null;
             const details = await client.fetchDocumentDetails(dokId, true) as Record<string, unknown>;
-            // Normalize response fields to match RawDocument conventions
-            // (consistent with weekly-review/data-loader.ts enrichment pattern):
-            //   details.html       → doc.fullContent
-            //   details.fullText   → doc.fullText (only actual full text, not summary/notis)
-            //   details.summary/notis → doc.summary/notis (kept in own fields)
+            // Normalize MCP response fields to match RawDocument conventions.
+            // get_dokument_innehall returns: { text, snippet, fulltext_available, ... }
+            //   details.text     → raw Riksdag dump (metadata + embedded HTML) — use as fullContent
+            //   details.snippet  → 400-char excerpt — use as summary fallback
+            // Legacy fields (fullText, html, summary, notis) are NOT returned by the
+            // current MCP server but are kept as fallbacks for compatibility.
             const str = (v: unknown): string => typeof v === 'string' ? v : '';
             // Sanitize text fields: filter out MP profile/deceased-notice text
             // (consistent with weekly-review/data-loader.ts sanitization pattern)
@@ -354,8 +355,15 @@ export async function downloadAllDocuments(
               const s = str(v).trim();
               return isPersonProfileText(s) ? '' : s;
             };
-            const verifiedFullText = sanitize(details['fullText']);
-            const verifiedFullContent = str(details['html']).trim();
+            // Primary: MCP returns 'text' (raw dump with embedded HTML)
+            // Fallback: legacy 'fullText' field (if MCP server format changes)
+            const rawText = str(details['text']).trim();
+            const verifiedFullText = sanitize(details['fullText']) || '';
+            // Use raw 'text' as fullContent (it contains embedded HTML from Riksdag)
+            // Fallback: legacy 'html' field
+            const verifiedFullContent = rawText.length > FULL_TEXT_MIN_LENGTH
+              ? rawText
+              : str(details['html']).trim();
             // Only set fullText/fullContent when exceeding FULL_TEXT_MIN_LENGTH
             // to avoid leaving short/placeholder values that downstream pipeline
             // code may misinterpret as meaningful full-text content.
@@ -365,11 +373,15 @@ export async function downloadAllDocuments(
             if (verifiedFullText.length > FULL_TEXT_MIN_LENGTH) {
               docRecord['fullText'] = verifiedFullText;
             }
-            // Propagate summary/notis only when doc doesn't already have them
+            // Propagate summary: prefer MCP 'snippet', fall back to legacy fields
+            const detailsSnippet = sanitize(details['snippet']);
             const detailsSummary = sanitize(details['summary']);
             const detailsNotis = sanitize(details['notis']);
-            if (!docRecord['summary'] && detailsSummary.length > 0) {
-              docRecord['summary'] = detailsSummary;
+            if (!docRecord['summary']) {
+              const bestSummary = detailsSnippet || detailsSummary || '';
+              if (bestSummary.length > 0) {
+                docRecord['summary'] = bestSummary;
+              }
             }
             if (!docRecord['notis'] && detailsNotis.length > 0) {
               docRecord['notis'] = detailsNotis;

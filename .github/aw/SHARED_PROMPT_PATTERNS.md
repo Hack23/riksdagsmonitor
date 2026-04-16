@@ -192,7 +192,7 @@ Every output artifact MUST be tagged with its article type:
 
 1. **HTML filenames**: `news/$DATE-$ARTICLE_TYPE-$LANG.html`
 2. **Analysis folders**: `analysis/daily/$DATE/$ARTICLE_TYPE/`
-3. **Commit messages**: `📰 ${ARTICLE_TYPE}: $description - $DATE`
+3. **Commit messages**: `📰 $ARTICLE_TYPE: $description - $DATE`
 4. **Schema.org metadata**: `"articleSection": "$ARTICLE_TYPE"`
 5. **Analysis file headers**: Include `Article Type: $ARTICLE_TYPE` in metadata
 
@@ -697,7 +697,7 @@ if [ -z "$ANALYSIS_SUBFOLDER" ]; then
     opposition-motions)       ANALYSIS_SUBFOLDER="motions" ;;
     interpellation-debates)   ANALYSIS_SUBFOLDER="interpellations" ;;
     breaking)
-      : "${HHMM:?HHMM must be set for breaking articles to resolve realtime-\$HHMM analysis folder}"
+      if [ -z "$HHMM" ]; then echo "ERROR: HHMM must be set for breaking articles to resolve realtime-HHMM analysis folder" >&2; exit 1; fi
       ANALYSIS_SUBFOLDER="realtime-$HHMM"
       ;;
     *)                       ANALYSIS_SUBFOLDER="$ARTICLE_TYPE" ;;
@@ -1767,6 +1767,36 @@ fi
 
 > **🚨 ANALYSIS RUNS EVERY TIME — NO EXCEPTIONS**: The deep political analysis phase executes on EVERY workflow run, regardless of whether articles already exist, regardless of whether another workflow ran recently, regardless of any other condition. The ONLY reason to skip analysis is if the MCP server is completely unreachable after 3 retry attempts. "Another job ran 18 minutes ago" is NOT a valid reason to skip analysis. Code changes, data updates, and new parliamentary activity happen continuously — every run MUST produce fresh analysis.
 
+### ⏱️ Phase Time Budget (45-minute workflow)
+
+> Measured response times (hot MCP server):
+> - riksdag-regering list tools (get_betankanden, get_motioner, etc.): **200–600ms** per call
+> - riksdag-regering enrichment (get_dokument_innehall): **400–900ms** per call
+> - search_regering (government search): **2–4s** per call (slowest Riksdag tool)
+> - World Bank REST API (direct): **0.7–2.5s** per call
+> - SCB MCP query_table: **1–3s** per call
+> - **Cold start** (Render.com free tier): adds **0–120s** one-time on first call
+>
+> Typical data retrieval: 7 parallel list calls (~1s) + 20 enrichment calls in batches of 3 (~9s) + cold start overhead = **~15s hot / ~2min cold**
+
+| Phase | Minutes | What happens | Hard rule |
+|-------|---------|-------------|-----------|
+| **Phase 0: MCP warmup** | 0–2 | MCP pre-warm, get_sync_status, session init | Max 2 min; noop after 3 failures |
+| **Phase 1: Data retrieval** | 2–10 | Scripts download data + document enrichment | **Must complete by minute 10** |
+| **Phase 2: Analysis** | 10–25 | Read templates, create analysis for every doc | **Min 15 min; must complete before article generation** |
+| **Phase 3: Article generation** | 25–35 | Generate EN/SV HTML articles from analysis | Must complete before safe output |
+| **Phase 4: Safe output** | 25–38 | Call safeoutputs___create_pull_request | **Call by minute ~25; HARD deadline minute 38** |
+| **Phase 5: Translate dispatch** | 35–40 | Dispatch translation workflow if applicable | Only after PR created |
+
+> 🚨 **Phase ordering is STRICT**: Data retrieval (Phase 1) MUST complete before analysis (Phase 2) begins. Analysis MUST complete before article generation (Phase 3) begins. Never start generating articles while still fetching data or performing analysis.
+>
+> **MCP call budget per phase**:
+> - Phase 1: ~30 MCP calls (7 list + up to 20 enrichment + 3 retry buffer)
+> - Phase 2: 0 MCP calls (analysis uses downloaded data only)
+> - Phase 3: 0 MCP calls (article generation uses analysis output only)
+>
+> **If Phase 1 exceeds 10 minutes** (e.g., cold start + slow responses): Reduce enrichment batch size to 2 documents per type instead of 5. Still proceed to Phase 2 with whatever data is available.
+
 ````markdown
 ### AI-Driven Analysis Protocol
 
@@ -1816,6 +1846,13 @@ If `DATA_JSON_COUNT=0`: **the agent MUST diagnose script failures (read error lo
 
 > 🚨 **ABSOLUTE RULE**: Analysis based only on metadata (title, date, committee code) is LOW confidence at best. The pre-article-analysis pipeline now enriches top documents automatically inside `downloadAllDocuments(...)` via `client.fetchDocumentDetails(dokId, true)`, but workflows MUST verify enrichment and supplement when needed.
 
+> **MCP Response Field Mapping** (verified 2026-04-16):
+> `get_dokument_innehall` returns: `{ dok_id, datum, doktyp, rm, titel, url, text, snippet, fulltext_available }`
+> - `text` — Raw Riksdag dump (metadata + embedded HTML); stored as `fullContent` in pipeline
+> - `snippet` — 400-char excerpt; stored as `summary` fallback in pipeline
+> - `fulltext_available` — boolean indicating if full text was returned
+> - **Legacy fields** (`fullText`, `html`, `summary`, `notis`) are NOT returned by the current MCP server
+
 **Before ANY per-document analysis**, verify data depth:
 
 1. **Check each document JSON** in `analysis/daily/{date}/{type}/documents/*.json`:
@@ -1827,8 +1864,9 @@ If `DATA_JSON_COUNT=0`: **the agent MUST diagnose script failures (read error lo
    ```
    Call: get_dokument_innehall({ dok_id: "<value>", include_full_text: true })
    ```
-   - Store returned full text in the document's analysis file
-   - Only reclassify to **FULL-TEXT** if the stored result includes `fullText` or `fullContent`
+   - The MCP response `text` field contains the full document (metadata + HTML) — use as fullContent
+   - The MCP response `snippet` field provides a short summary
+   - Only reclassify to **FULL-TEXT** if the stored result includes `fullText` or `fullContent` (after pipeline mapping)
    - If `get_dokument_innehall` fails: retain the existing classification (`SUMMARY` or `METADATA-ONLY`) in analysis
 3. **NEVER claim HIGH or VERY HIGH confidence unless `fullText` or `fullContent` is verified**
 

@@ -649,10 +649,11 @@ npx tsx scripts/validate-file-ownership.ts translation
 npx tsx scripts/validate-news-translations.ts
 
 # HTMLHint validation — scope to ONLY new translated files (not all news/ files)
-# Build a space-separated list of newly created translation files
+# Build a space-separated list of newly created translation files (AWF-safe: no command substitution)
 git status --short news/ | grep "^??" | grep -v "\-en\.html" | grep -v "\-sv\.html" | awk '{print $2}' > /tmp/new_trans_validate.txt
 if [ -s /tmp/new_trans_validate.txt ]; then
-  TRANS_FILES=$(tr '\n' ' ' < /tmp/new_trans_validate.txt)
+  tr '\n' ' ' < /tmp/new_trans_validate.txt > /tmp/trans_files_line.txt
+  read -r TRANS_FILES < /tmp/trans_files_line.txt
   if ! npx htmlhint $TRANS_FILES 2>/dev/null; then
     echo "⚠️ HTML validation errors found, attempting auto-fix..."
     npx tsx scripts/article-quality-enhancer.ts --fix

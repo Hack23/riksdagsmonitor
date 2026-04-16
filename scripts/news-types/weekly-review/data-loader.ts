@@ -227,23 +227,36 @@ export async function enrichWithFullText(
         mcpCalls.push({ tool: 'get_dokument_innehall', result: details });
 
         // Merge full text fields into document.
-        // NOTE: details['text'] from get_dokument_innehall is a raw database metadata
-        // dump (IDs, dates, URLs), NOT human-readable prose — do not use as fullText.
+        // get_dokument_innehall returns: { text, snippet, fulltext_available, ... }
+        //   details['text']    → raw Riksdag dump (metadata + embedded HTML) — use as fullContent
+        //   details['snippet'] → 400-char excerpt — use as summary fallback
+        // Legacy fields (fullText, html, summary, notis) are NOT returned by the
+        // current MCP server but kept as fallbacks for compatibility.
         // Also: some documents return politician profile text (MP status like
         // "Tjänstgörande riksdagsledamot..." or "Avliden YYYY-MM-DD...") in their
         // notis/summary/fullText fields — discard these to prevent them from
         // appearing as article content.
+        const str = (v: unknown): string => typeof v === 'string' ? v : '';
         const sanitize = (s: unknown): string => {
-          const str = (s as string) ?? '';
-          return isPersonProfileText(str) ? '' : str;
+          const val = str(s).trim();
+          return isPersonProfileText(val) ? '' : val;
         };
         const d = doc as Record<string, unknown>;
+        // Primary: MCP returns 'text' (raw dump with embedded HTML from Riksdag)
+        const rawText = str(details['text']).trim();
         d['fullText'] = sanitize(details['fullText'])
           || sanitize(details['summary'])
           || sanitize(details['notis'])
           || '';
-        d['fullContent'] = (details['html'] as string) ?? '';
-        if (!d['summary'] && details['summary']) d['summary'] = sanitize(details['summary']);
+        // Use raw 'text' as fullContent if it's substantial; fallback to legacy 'html'
+        d['fullContent'] = rawText.length > 100
+          ? rawText
+          : str(details['html']);
+        // Propagate summary: prefer MCP 'snippet', fall back to legacy fields
+        const snippet = sanitize(details['snippet']);
+        if (!d['summary']) {
+          d['summary'] = snippet || sanitize(details['summary']) || '';
+        }
         if (!d['notis'] && details['notis']) d['notis'] = sanitize(details['notis']);
         d['contentFetched'] = true;
         enriched++;
