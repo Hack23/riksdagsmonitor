@@ -9,8 +9,8 @@
 
 import { describe, it, expect } from 'vitest';
 import { buildAnalysisEnrichmentSections } from '../scripts/generate-news-enhanced/generators.js';
+import { ALL_LANGUAGES } from '../scripts/generate-news-enhanced/config.js';
 import type { AnalysisEnrichment } from '../scripts/generate-news-enhanced/helpers.js';
-import type { Language } from '../scripts/types/language.js';
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -277,6 +277,19 @@ describe('buildAnalysisEnrichmentSections', () => {
       expect(html).toContain('Demokratisk hälsa');
       expect(html).toContain('Hotindikatorer');
     });
+
+    it('renders risk section when only democraticHealth is provided', () => {
+      const enrichment = fullEnrichment({
+        riskSummary: undefined,
+        threatIndicators: undefined,
+        democraticHealth: 'HIGH',
+      });
+      const sections = buildAnalysisEnrichmentSections(enrichment, 'en');
+      const risk = sections.find(s => s.id === 'risk-assessment');
+      expect(risk).toBeDefined();
+      expect(risk!.html).toContain('democratic-health');
+      expect(risk!.html).toContain('HIGH');
+    });
   });
 
   // -----------------------------------------------------------------------
@@ -351,14 +364,29 @@ describe('buildAnalysisEnrichmentSections', () => {
       expect(html).toContain('role="table"');
       expect(html).toContain('aria-label="Most Significant Documents"');
     });
+
+    it('adds scope="col" to table header cells', () => {
+      const sections = buildAnalysisEnrichmentSections(fullEnrichment(), 'en');
+      const html = sections.find(s => s.id === 'significance-ranking')!.html;
+      expect(html).toContain('scope="col"');
+      // All three header cells should have scope="col"
+      const scopeCount = (html.match(/scope="col"/g) || []).length;
+      expect(scopeCount).toBe(3);
+    });
+
+    it('escapes heading in aria-label attribute', () => {
+      // Localized headings should be attribute-safe
+      const sections = buildAnalysisEnrichmentSections(fullEnrichment(), 'en');
+      const html = sections.find(s => s.id === 'significance-ranking')!.html;
+      // The aria-label value should be escaped
+      expect(html).toMatch(/aria-label="[^"]*"/);
+    });
   });
 
   // -----------------------------------------------------------------------
   // All 14 languages produce sections
   // -----------------------------------------------------------------------
   describe('14-language coverage', () => {
-    const ALL_LANGUAGES: Language[] = ['en', 'sv', 'da', 'no', 'fi', 'de', 'fr', 'es', 'nl', 'ar', 'he', 'ja', 'ko', 'zh'];
-
     for (const lang of ALL_LANGUAGES) {
       it(`renders all 5 sections for lang="${lang}"`, () => {
         const sections = buildAnalysisEnrichmentSections(fullEnrichment(), lang);

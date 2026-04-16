@@ -290,7 +290,7 @@ export function buildAnalysisEnrichmentSections(
         const impactLabelKey = impact === 'high' ? 'impactHigh' : impact === 'low' ? 'impactLow' : 'impactMedium';
         const impactLabel = lbl(impactLabelKey, lang);
         const badge = impact === 'high' ? '🔴' : impact === 'low' ? '🟢' : '🟡';
-        return `<li><span class="impact-badge impact-${impact}" aria-label="${impactLabel}"><span aria-hidden="true">${badge}</span></span> ${escapeHtml(e.text)}</li>`;
+        return `<li><span class="impact-badge impact-${impact}" aria-label="${escapeHtml(impactLabel)}"><span aria-hidden="true">${badge}</span></span> ${escapeHtml(e.text)}</li>`;
       }).join('\n');
 
     const heading = lbl('swotHeading', lang);
@@ -298,7 +298,7 @@ export function buildAnalysisEnrichmentSections(
     const html = `
       <h2>${heading}</h2>
       ${subjectLine}
-      <div class="swot-grid" aria-label="${heading}">
+      <div class="swot-grid" aria-label="${escapeHtml(heading)}">
         <div class="swot-quadrant swot-strengths">
           <h3>${lbl('strengths', lang)}</h3>
           <ul>${renderEntries(swot.strengths)}</ul>
@@ -352,7 +352,7 @@ export function buildAnalysisEnrichmentSections(
   }
 
   // ── 3. Risk & Threat Assessment Section ─────────────────────────────────
-  if (enrichment.riskSummary || (enrichment.threatIndicators && enrichment.threatIndicators.length > 0)) {
+  if (enrichment.riskSummary || enrichment.democraticHealth || (enrichment.threatIndicators && enrichment.threatIndicators.length > 0)) {
     const heading = lbl('riskHeading', lang);
     let riskHtml = `<h2>${heading}</h2>`;
 
@@ -397,8 +397,8 @@ export function buildAnalysisEnrichmentSections(
   if (enrichment.topDocuments && enrichment.topDocuments.length > 0) {
     const heading = lbl('significanceHeading', lang);
     let sigHtml = `<h2>${heading}</h2>`;
-    sigHtml += `<table class="significance-table" role="table" aria-label="${heading}">`;
-    sigHtml += `<thead><tr><th>${lbl('docId', lang)}</th><th>${lbl('score', lang)}</th><th>${lbl('reason', lang)}</th></tr></thead><tbody>`;
+    sigHtml += `<table class="significance-table" role="table" aria-label="${escapeHtml(heading)}">`;
+    sigHtml += `<thead><tr><th scope="col">${lbl('docId', lang)}</th><th scope="col">${lbl('score', lang)}</th><th scope="col">${lbl('reason', lang)}</th></tr></thead><tbody>`;
     for (const doc of enrichment.topDocuments.slice(0, 10)) {
       const scoreColor = doc.score >= 80 ? 'high' : doc.score >= 50 ? 'medium' : 'low';
       sigHtml += `<tr><td><code>${escapeHtml(doc.docId)}</code></td><td class="score-${scoreColor}">${doc.score}</td><td>${escapeHtml(doc.reason)}</td></tr>`;
