@@ -145,6 +145,22 @@ function isEconomicDataPoint(value: unknown): value is EconomicDataPoint {
 }
 
 /**
+ * Helper for validating optional fields on `EconomicContextFile`.
+ * Accepts when the key is absent or undefined; only rejects when it is
+ * present with the wrong runtime type.
+ */
+function isOptionalFieldOfType(
+  obj: Record<string, unknown>,
+  key: string,
+  expected: 'string' | 'boolean',
+): boolean {
+  if (!(key in obj)) return true;
+  const value = obj[key];
+  if (value === undefined) return true;
+  return typeof value === expected;
+}
+
+/**
  * Type guard for the raw parsed JSON.
  * Validates both the top-level shape AND the element shapes for
  * `dataPoints`, `policyDomains`, and `source.*`, plus optional-field
@@ -160,11 +176,11 @@ function isEconomicContextFile(value: unknown): value is EconomicContextFile {
   const s = v['source'];
   if (!isStringArray(s['worldBank']) || !isStringArray(s['scb'])) return false;
   // Optional fields: present only when typed correctly.
-  if ('version' in v && v['version'] !== undefined && typeof v['version'] !== 'string') return false;
-  if ('articleType' in v && v['articleType'] !== undefined && typeof v['articleType'] !== 'string') return false;
-  if ('date' in v && v['date'] !== undefined && typeof v['date'] !== 'string') return false;
-  if ('skip' in v && v['skip'] !== undefined && typeof v['skip'] !== 'boolean') return false;
-  if ('skipReason' in v && v['skipReason'] !== undefined && typeof v['skipReason'] !== 'string') return false;
+  if (!isOptionalFieldOfType(v, 'version', 'string')) return false;
+  if (!isOptionalFieldOfType(v, 'articleType', 'string')) return false;
+  if (!isOptionalFieldOfType(v, 'date', 'string')) return false;
+  if (!isOptionalFieldOfType(v, 'skip', 'boolean')) return false;
+  if (!isOptionalFieldOfType(v, 'skipReason', 'string')) return false;
   return true;
 }
 

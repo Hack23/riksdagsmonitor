@@ -310,7 +310,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
       source: { worldBank: ['NY.GDP.MKTP.KD.ZG'], scb: [] },
     }));
     const v = validateArticle(articlePath, tmp);
-    expect(v.map((x) => x.reason).every((r) => !r.includes('footer attribution'))).toBe(true);
+    expect(v.filter((x) => x.reason.includes('footer attribution'))).toHaveLength(0);
   });
 
   it('fails weekly-review when D3 Sankey marker/script is missing', () => {

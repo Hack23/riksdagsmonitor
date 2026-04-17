@@ -306,7 +306,7 @@ export function validateArticle(filePath: string, rootDir: string = process.cwd(
         reason: `Article type '${articleType}' requires a D3 Sankey / flow diagram (data-d3-sankey= marker not found)`,
       });
     }
-    if (!/<script[^>]+d3\.[^"']+\.min\.js/.test(html) && !/<script[^>]+d3\.[^"']+\.js/.test(html)) {
+    if (!/<script[^>]+d3\.[^"']+(?:\.min)?\.js/.test(html)) {
       violations.push({
         articleFile: filePath,
         articleType,
