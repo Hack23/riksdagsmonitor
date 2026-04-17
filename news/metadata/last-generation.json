@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-17T04:47:41.197Z",
+  "timestamp": "2026-04-17T07:20:04.751Z",
   "types": [
-    "committee-reports"
+    "interpellations"
   ],
   "languagesGenerated": [
     "en",
@@ -12,12 +12,12 @@
     "sv"
   ],
   "batchSize": "all",
-  "skipExisting": true,
+  "skipExisting": false,
   "generated": 2,
   "errors": 0,
   "articles": [
-    "2026-04-17-committee-reports-en.html",
-    "2026-04-17-committee-reports-sv.html"
+    "2026-04-17-interpellation-debates-en.html",
+    "2026-04-17-interpellation-debates-sv.html"
   ],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
