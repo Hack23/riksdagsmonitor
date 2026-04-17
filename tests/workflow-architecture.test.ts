@@ -196,6 +196,42 @@ describe('Workflow Architecture', () => {
     }
   });
 
+  it('all news workflows should configure safe-outputs max-patch-size above the 1024 KB default', () => {
+    // Regression for News Realtime Monitor failure (run 24541191332): a 1301 KB patch
+    // was rejected because the default `max-patch-size` is 1024 KB. All news workflows
+    // generate comparably large multi-file patches, so each must raise the limit.
+    // gh-aw accepts `max-patch-size` at the top of the `safe-outputs` block
+    // (sibling of `create-pull-request`), not nested inside it.
+    const allNewsWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md',
+      'news-article-generator.md',
+      'news-translate.md',
+    ];
+
+    for (const workflowFile of allNewsWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const content = fs.readFileSync(filepath, 'utf-8');
+
+      // Must have a `max-patch-size` line indented with exactly two spaces (safe-outputs scope),
+      // sibling to `create-pull-request:`. Four-space indent is the `tools.repo-memory` scope
+      // and does not affect the create_pull_request limit.
+      const match = content.match(/^  max-patch-size:\s*(\d+)\s*$/m);
+      expect(
+        match,
+        `Workflow ${workflowFile} must define safe-outputs max-patch-size (2-space indent) to override the 1024 KB default`
+      ).not.toBeNull();
+
+      const value = parseInt(match![1]!, 10);
+      expect(
+        value,
+        `Workflow ${workflowFile} safe-outputs max-patch-size (${value} KB) must exceed the 1024 KB gh-aw default`
+      ).toBeGreaterThan(1024);
+    }
+  });
+
   it('should have safe PR creation how-to in all workflows', () => {
     const allWorkflows = [
       ...Object.values(ARTICLE_TYPE_WORKFLOWS),
