@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "articleType": "evening-analysis",
+  "date": "2026-04-17",
+  "policyDomains": ["labor market", "housing policy", "social protection", "fiscal policy"],
+  "dataPoints": [
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2024", "value": 0.82 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2023", "value": -0.204 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate (%)", "date": "2025", "value": 8.694 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate (%)", "date": "2024", "value": 8.4 },
+    { "countryCode": "SWE", "countryName": "Sweden", "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate (%)", "date": "2023", "value": 7.611 }
+  ],
+  "commentary": "Sweden's economy shows a fragile recovery in 2024 with GDP growth of 0.82% following the -0.2% contraction of 2023, making today's parliamentary debates over fiscal priorities particularly consequential. With unemployment rising to 8.7% in 2025 — up from 7.6% in 2023 — the coalition's extra budget fuel tax cuts reflect political pressure to ease household costs, but the Green Party's formal opposition via motion HD024098 highlights the tension between short-term relief and the structural reforms needed for sustainable growth. The dual interpellations from Sofia Amloh (S) on wage transparency (HD10437) and women's shelter funding (HD10438) gain additional weight given that Swedish wage disparity is growing against this backdrop of rising unemployment, with women disproportionately affected by both labor market weakness and cuts to social support services.",
+  "source": {
+    "worldBank": ["NY.GDP.MKTP.KD.ZG", "SL.UEM.TOTL.ZS"],
+    "scb": []
+  }
+}
