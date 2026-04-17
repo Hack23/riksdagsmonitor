@@ -160,294 +160,41 @@ jobs:
 
 ### CI/CD Pipeline Management
 
-**Multi-Stage Pipeline**:
-```yaml
-# .github/workflows/ci-cd-pipeline.yml
-name: CI/CD Pipeline
+**Multi-Stage Pipeline Pattern** (`.github/workflows/ci-cd-pipeline.yml`):
 
-on:
-  push:
-    branches: [main, develop]
-  pull_request:
-    branches: [main]
+- **Trigger**: `push` to `main`/`develop`, `pull_request` to `main`
+- **Permissions**: `contents: read`, `pull-requests: write`, `checks: write` (least privilege default)
+- **Stage 1 — Quality**: harden-runner → checkout → setup-node@SHA (Node 25) with npm cache → `npm ci` → `npm run lint:html` → `check:links` → `validate:json`
+- **Stage 2 — Security**: `github/codeql-action/analyze@SHA` → `npm audit --audit-level=high`
+- **Stage 3 — Build**: `npm run build` → `npm run test:build` → upload artifact (`site-build`, 7-day retention)
+- **Stage 4 — Performance**: download artifact → Lighthouse CI (`@lhci/cli`)
+- **Stage 5 — Deploy** (only `main`, `environment: github-pages`, `pages: write` + `id-token: write`): `upload-pages-artifact@SHA` → `actions/deploy-pages@SHA`
 
-permissions:
-  contents: read
-  pull-requests: write
-  checks: write
-
-jobs:
-  # Stage 1: Code Quality
-  quality:
-    name: Code Quality Checks
-    runs-on: ubuntu-latest
-    steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@...
-      
-      - uses: actions/checkout@...
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@...
-        with:
-          node-version: '24'
-          cache: 'npm'
-      
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Lint HTML
-        run: npm run lint:html
-      
-      - name: Check links
-        run: npm run check:links
-      
-      - name: Validate JSON
-        run: npm run validate:json
-  
-  # Stage 2: Security Scanning
-  security:
-    name: Security Scanning
-    runs-on: ubuntu-latest
-    needs: quality
-    steps:
-      - uses: actions/checkout@...
-      
-      - name: Run CodeQL
-        uses: github/codeql-action/analyze@...
-      
-      - name: Check dependencies
-        run: npm audit --audit-level=high
-  
-  # Stage 3: Build & Test
-  build:
-    name: Build Site
-    runs-on: ubuntu-latest
-    needs: [quality, security]
-    steps:
-      - uses: actions/checkout@...
-      
-      - uses: actions/setup-node@...
-        with:
-          node-version: '24'
-          cache: 'npm'
-      
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Build site
-        run: npm run build
-      
-      - name: Test build output
-        run: npm run test:build
-      
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@...
-        with:
-          name: site-build
-          path: ./dist
-          retention-days: 7
-  
-  # Stage 4: Performance Testing
-  performance:
-    name: Performance Testing
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/checkout@...
-      
-      - name: Download build
-        uses: actions/download-artifact@...
-        with:
-          name: site-build
-          path: ./dist
-      
-      - name: Run Lighthouse CI
-        run: |
-          npm install -g @lhci/cli
-          lhci autorun
-  
-  # Stage 5: Deploy (only on main)
-  deploy:
-    name: Deploy to GitHub Pages
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    needs: [build, performance]
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      pages: write
-      id-token: write
-    steps:
-      - name: Download build
-        uses: actions/download-artifact@...
-        with:
-          name: site-build
-          path: ./dist
-      
-      - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@...
-        with:
-          path: ./dist
-      
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@...
-```
+All actions **pinned to SHA**; `step-security/harden-runner@SHA` is the first step of every job.
 
 ### Infrastructure Automation
 
-**Automated Data Pipeline** (supports issue #18):
-```yaml
-# .github/workflows/data-pipeline.yml
-name: CIA Data Pipeline
+**Automated Data Pipeline Pattern** (`.github/workflows/data-pipeline.yml`):
 
-on:
-  schedule:
-    - cron: '0 2 * * *'  # 02:00 CET daily
-  workflow_dispatch:
-    inputs:
-      force_refresh:
-        description: 'Force full data refresh'
-        type: boolean
-        default: false
-
-permissions:
-  contents: write
-  pull-requests: write
-
-jobs:
-  fetch-cia-data:
-    name: Fetch CIA Intelligence Exports
-    runs-on: ubuntu-latest
-    steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@...
-      
-      - uses: actions/checkout@...
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@...
-        with:
-          node-version: '24'
-          cache: 'npm'
-      
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Fetch CIA exports
-        env:
-          FORCE_REFRESH: ${{ inputs.force_refresh }}
-        run: npm run pipeline:fetch-cia
-      
-      - name: Validate data
-        run: npm run pipeline:validate
-      
-      - name: Generate cache
-        run: npm run pipeline:cache
-      
-      - name: Create PR
-        uses: peter-evans/create-pull-request@...
-        with:
-          title: "Data: CIA export update $(date +%Y-%m-%d)"
-          body: |
-            Automated CIA data pipeline update.
-            
-            **Data Sources**: 19 CIA visualization products
-            **Timestamp**: $(date -Iseconds)
-            **Validation**: Passed JSON Schema checks
-          branch: automated/cia-data-$(date +%Y%m%d)
-          labels: automated-pipeline,data-update
-          assignees: data-pipeline-specialist
-```
+- **Trigger**: `schedule: cron '0 2 * * *'` (02:00 CET daily) + `workflow_dispatch` with `force_refresh` boolean input
+- **Permissions**: `contents: write`, `pull-requests: write`
+- **Steps**: harden-runner → checkout → setup-node (Node 25 + npm cache) → `npm ci` → `npm run pipeline:fetch-cia` → `pipeline:validate` → `pipeline:cache` → `peter-evans/create-pull-request@SHA` producing branch `automated/cia-data-YYYYMMDD`, labels `automated-pipeline,data-update`, assignee `data-pipeline-specialist`.
 
 ### Performance Optimization
 
-**Asset Optimization Pipeline**:
-```yaml
-# .github/workflows/optimize-assets.yml
-name: Optimize Assets
+**Asset Optimization** (`optimize-assets.yml` on `assets/**` or `images/**` push):
 
-on:
-  push:
-    paths:
-      - 'assets/**'
-      - 'images/**'
-
-jobs:
-  optimize:
-    name: Optimize Images & Assets
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@...
-      
-      - name: Optimize images
-        uses: calibreapp/image-actions@...
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          compressOnly: true
-          jpegQuality: 85
-          pngQuality: 85
-          webpQuality: 85
-      
-      - name: Generate WebP versions
-        run: |
-          npm install -g imagemin-cli imagemin-webp
-          imagemin images/*.{jpg,png} --out-dir=images/webp --plugin=webp
-      
-      - name: Commit optimizations
-        uses: stefanzweifel/git-auto-commit-action@...
-        with:
-          commit_message: "chore: optimize assets"
-```
+- `calibreapp/image-actions@SHA` — jpeg/png/webp quality 85, compress-only
+- `imagemin-cli` + `imagemin-webp` — generate WebP variants
+- `stefanzweifel/git-auto-commit-action@SHA` — chore commit
 
 ### Monitoring & Alerting
 
-**Uptime Monitoring** (GitHub Actions + external service):
-```yaml
-# .github/workflows/uptime-check.yml
-name: Uptime Check
+**Uptime Monitoring** (`uptime-check.yml`, every 15 min + manual):
 
-on:
-  schedule:
-    - cron: '*/15 * * * *'  # Every 15 minutes
-  workflow_dispatch:
-
-jobs:
-  check:
-    name: Check Site Availability
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check homepage
-        run: |
-          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" https://riksdagsmonitor.hack23.com)
-          if [ "$HTTP_CODE" != "200" ]; then
-            echo "❌ Site returned HTTP $HTTP_CODE"
-            exit 1
-          fi
-          echo "✅ Site is UP (HTTP 200)"
-      
-      - name: Check all 14 languages
-        run: |
-          languages=(en sv da no fi de fr es nl ar he ja ko zh)
-          for lang in "${languages[@]}"; do
-            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://riksdagsmonitor.hack23.com/index_$lang.html")
-            if [ "$HTTP_CODE" != "200" ]; then
-              echo "❌ Language $lang returned HTTP $HTTP_CODE"
-              exit 1
-            fi
-          done
-          echo "✅ All 14 language versions are UP"
-      
-      - name: Notify on failure
-        if: failure()
-        uses: 8398a7/action-slack@...
-        with:
-          status: failure
-          text: 'Riksdagsmonitor site is DOWN!'
-          webhook_url: ${{ secrets.SLACK_WEBHOOK }}
-```
+- `curl -s -o /dev/null -w "%{http_code}"` on `https://riksdagsmonitor.hack23.com` — fail if ≠ 200
+- Iterate all 14 languages (`en sv da nb fi de fr es nl ar he ja ko zh`) validating HTTP 200
+- On failure: `8398a7/action-slack@SHA` notification via `secrets.SLACK_WEBHOOK`
 
 ---
 
@@ -547,3 +294,58 @@ When working on DevOps tasks, leverage these skills:
 **Last Updated**: 2026-02-06  
 **Version**: 1.0  
 **Maintained by**: Hack23 AB
+
+---
+
+## 🧠 Available MCP Servers
+
+Repo-level agents do **not** declare `mcp-servers:` — MCP is configured once in [`.github/copilot-mcp.json`](/.github/copilot-mcp.json) and injected automatically:
+
+| Server | Purpose |
+|--------|---------|
+| `github` (Insiders HTTP) | Full toolset incl. `assign_copilot_to_issue`, `create_pull_request_with_copilot`, `get_copilot_job_status`, issues, PRs, projects, actions, security alerts, discussions |
+| `riksdag-regering` (HTTP) | 32+ tools for Swedish Parliament/Government open data |
+| `scb` / `world-bank` (local) | Statistics Sweden PxWeb v2 and World Bank indicators |
+| `filesystem` / `memory` / `sequential-thinking` / `playwright` | Local helpers (scoped FS, persistent memory, structured reasoning, headless browser) |
+
+MCP config changes are **Normal Changes** needing CEO approval per the [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) curator-agent governance section.
+
+---
+
+## 🤖 Standard Copilot Coding Agent Tools
+
+```javascript
+assign_copilot_to_issue({ owner: "Hack23", repo: "riksdagsmonitor", issue_number: N,
+  base_ref: "feature/branch", custom_instructions: "Guidance aligned with ISMS policies" });
+
+create_pull_request_with_copilot({ owner: "Hack23", repo: "riksdagsmonitor",
+  title: "...", body: "...", base_ref: "feature/stack-parent",
+  custom_agent: "security-architect" /* optional routing */ });
+
+get_copilot_job_status({ owner: "Hack23", repo: "riksdagsmonitor", job_id: "..." });
+```
+
+Use `base_ref` for feature branches / stacked PRs, `custom_agent` to delegate to a specialist, and poll `get_copilot_job_status` for long-running jobs.
+
+---
+
+## 🔐 Related Hack23 ISMS Policies
+
+All work operates under [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC). Consult as appropriate:
+
+**Governance & Classification**
+- [Information_Security_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) — scope, roles, accountability, risk management
+- [CLASSIFICATION.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) — CIA triad + RTO/RPO
+- [AI_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) — AI usage, human-in-the-loop, agent governance
+
+**SDLC & Supply Chain**
+- [Secure_Development_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) — 5-phase SDLC security
+- [Open_Source_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) — licences, SBOM, supply-chain
+- [Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) — STRIDE + MITRE ATT&CK
+- [Vulnerability_Management.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) — SLAs (Crit 24h / High 7d / Med 30d / Low 90d)
+- [Change_Management.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md)
+
+**Operational Controls**
+- [Access_Control_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md) · [Cryptography_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md) · [Incident_Response_Plan.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md) · [Security_Metrics.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Security_Metrics.md) · [STYLE_GUIDE.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md)
+
+**Framework mapping**: map security-relevant work to **ISO 27001:2022 Annex A**, **NIST CSF 2.0**, **CIS Controls v8.1**, **GDPR**, **NIS2**, **EU CRA**.

@@ -236,94 +236,17 @@ await github.createPullRequestWithCopilot({
 
 ## Issue Examples
 
-### Example 1: Accessibility Issue
+### Example 1 — Accessibility issue
 
-**Title**: [Accessibility] Language switcher lacks keyboard navigation
+**Title**: `[Accessibility] Language switcher lacks keyboard navigation`
 
-**Description:**
-## WCAG 2.1 Violation - 2.1.1 Keyboard (Level A)
+Template body: WCAG 2.1 violation (2.1.1 Keyboard, Level A); impact on keyboard-only users across all 14 languages; reproduction steps (Tab to switcher → Enter/Space → arrow keys → Enter); expected vs actual; Playwright screenshot attached; remediation (keyboard listeners, arrow nav, ARIA labels, NVDA test); acceptance criteria checklist; labels `type:accessibility`, `priority:high`, `wcag-2.1`, `area:ui`; assignee `@frontend-specialist`.
 
-**Impact**: Keyboard-only users cannot switch languages
-**Affected Pages**: All 14 language versions
-**Browser**: Chrome 120, Firefox 121
+### Example 2 — Security header gap
 
-### Issue
-The language switcher dropdown in the header cannot be operated with keyboard. Users relying on keyboard navigation are stuck on their current language version.
+**Title**: `[Security] Missing X-Frame-Options header`
 
-### Steps to Reproduce
-1. Navigate to https://riksdagsmonitor.com
-2. Press Tab until language switcher is focused
-3. Press Enter or Space to open dropdown
-4. Try arrow keys to navigate options
-5. Try Enter to select option
-
-**Expected**: Arrow keys navigate, Enter selects
-**Actual**: Dropdown doesn't respond to keyboard
-
-### Screenshots
-![Language switcher focus](screenshots/lang-switcher-keyboard.png)
-
-### Remediation
-- Add keyboard event listeners
-- Implement arrow key navigation
-- Add Enter/Space key selection
-- Ensure ARIA labels correct
-- Test with NVDA screen reader
-
-### Acceptance Criteria
-- [ ] Dropdown opens with Enter/Space
-- [ ] Arrow keys navigate options
-- [ ] Enter selects focused option
-- [ ] Escape closes dropdown
-- [ ] Screen reader announces selection
-- [ ] WCAG 2.1.1 compliance verified
-
-**Labels**: `type:accessibility`, `priority:high`, `wcag-2.1`, `area:ui`
-**Assignee**: @frontend-specialist
-
-### Example 2: Security Header Issue
-
-**Title**: [Security] Missing X-Frame-Options header
-
-**Description:**
-## Security Header Gap
-
-**Severity**: Medium
-**Control**: ISO 27001 A.8.23 (Web filtering)
-**Risk**: Clickjacking vulnerability
-
-### Issue
-The X-Frame-Options header is missing from GitHub Pages responses, allowing the site to be embedded in iframes. This could enable clickjacking attacks.
-
-### Evidence
-```bash
-curl -I https://riksdagsmonitor.com
-# X-Frame-Options: missing
-```
-
-### Compliance Impact
-- ISO 27001 A.8.23: Web filtering controls
-- NIST CSF PR.DS-5: Protections against data leaks
-- CIS Control 16.2: Secure application configuration
-
-### Remediation
-GitHub Pages doesn't support custom headers via configuration files. Options:
-1. Use Cloudflare proxy (add X-Frame-Options header)
-2. Add meta tag fallback (limited protection)
-3. Document limitation in SECURITY_ARCHITECTURE.md
-
-### Recommendation
-Option 1 + 3: Deploy Cloudflare proxy and document in security architecture.
-
-### Acceptance Criteria
-- [ ] X-Frame-Options: DENY header present
-- [ ] Tested with browser dev tools
-- [ ] SECURITY_ARCHITECTURE.md updated
-- [ ] Penetration test confirms no iframe embedding
-- [ ] Compliance mapping documented
-
-**Labels**: `type:security`, `priority:medium`, `iso-27001`, `area:infrastructure`
-**Assignee**: @deployment-specialist
+Template body: severity Medium; ISO 27001 A.8.23 / NIST CSF PR.DS-5 / CIS 16.2 mapping; evidence `curl -I` output; remediation options (Cloudflare proxy, meta-tag fallback, document limitation in `SECURITY_ARCHITECTURE.md`); recommendation + acceptance criteria; labels `type:security`, `priority:medium`, `iso-27001`, `area:infrastructure`; assignee `@deployment-specialist`.
 
 ## Best Practices
 
@@ -356,3 +279,58 @@ Option 1 + 3: Deploy Cloudflare proxy and document in security architecture.
 Your mission is to ensure Riksdagsmonitor remains a high-quality, secure, accessible, and compliant platform that empowers democratic engagement through Swedish political transparency. Every issue must advance security, quality, and compliance goals.
 
 **Act decisively. Create actionable issues. Coordinate effectively. Ensure compliance. Drive continuous improvement.**
+
+---
+
+## 🧠 Available MCP Servers
+
+Repo-level agents do **not** declare `mcp-servers:` — MCP is configured once in [`.github/copilot-mcp.json`](/.github/copilot-mcp.json) and injected automatically:
+
+| Server | Purpose |
+|--------|---------|
+| `github` (Insiders HTTP) | Full toolset incl. `assign_copilot_to_issue`, `create_pull_request_with_copilot`, `get_copilot_job_status`, issues, PRs, projects, actions, security alerts, discussions |
+| `riksdag-regering` (HTTP) | 32+ tools for Swedish Parliament/Government open data |
+| `scb` / `world-bank` (local) | Statistics Sweden PxWeb v2 and World Bank indicators |
+| `filesystem` / `memory` / `sequential-thinking` / `playwright` | Local helpers (scoped FS, persistent memory, structured reasoning, headless browser) |
+
+MCP config changes are **Normal Changes** needing CEO approval per the [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) curator-agent governance section.
+
+---
+
+## 🤖 Standard Copilot Coding Agent Tools
+
+```javascript
+assign_copilot_to_issue({ owner: "Hack23", repo: "riksdagsmonitor", issue_number: N,
+  base_ref: "feature/branch", custom_instructions: "Guidance aligned with ISMS policies" });
+
+create_pull_request_with_copilot({ owner: "Hack23", repo: "riksdagsmonitor",
+  title: "...", body: "...", base_ref: "feature/stack-parent",
+  custom_agent: "security-architect" /* optional routing */ });
+
+get_copilot_job_status({ owner: "Hack23", repo: "riksdagsmonitor", job_id: "..." });
+```
+
+Use `base_ref` for feature branches / stacked PRs, `custom_agent` to delegate to a specialist, and poll `get_copilot_job_status` for long-running jobs.
+
+---
+
+## 🔐 Related Hack23 ISMS Policies
+
+All work operates under [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC). Consult as appropriate:
+
+**Governance & Classification**
+- [Information_Security_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) — scope, roles, accountability, risk management
+- [CLASSIFICATION.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) — CIA triad + RTO/RPO
+- [AI_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) — AI usage, human-in-the-loop, agent governance
+
+**SDLC & Supply Chain**
+- [Secure_Development_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) — 5-phase SDLC security
+- [Open_Source_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) — licences, SBOM, supply-chain
+- [Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) — STRIDE + MITRE ATT&CK
+- [Vulnerability_Management.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) — SLAs (Crit 24h / High 7d / Med 30d / Low 90d)
+- [Change_Management.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md)
+
+**Operational Controls**
+- [Access_Control_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md) · [Cryptography_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md) · [Incident_Response_Plan.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md) · [Security_Metrics.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Security_Metrics.md) · [STYLE_GUIDE.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md)
+
+**Framework mapping**: map security-relevant work to **ISO 27001:2022 Annex A**, **NIST CSF 2.0**, **CIS Controls v8.1**, **GDPR**, **NIS2**, **EU CRA**.

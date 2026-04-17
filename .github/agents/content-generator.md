@@ -249,115 +249,17 @@ Before committing generated content:
 
 ## Examples
 
-### Example 1: Nightly News Generation Workflow
+### Example 1 — Nightly News Generation Workflow
 
-**GitHub Actions (`.github/workflows/generate-daily-news.yml`)**:
-```yaml
-name: Generate Daily Intelligence News
+`.github/workflows/generate-daily-news.yml` — cron `0 2 * * *` + `workflow_dispatch` → checkout → `./scripts/fetch-latest-cia-exports.sh` → `npm run generate:news` (writes `content/news/YYYY/MM/DD/`) → `npm run validate:content` → `peter-evans/create-pull-request@SHA` with title `Daily News: YYYY-MM-DD`, branch `automated/daily-news-YYYYMMDD`, labels `automated-content,news`.
 
-on:
-  schedule:
-    - cron: '0 2 * * *'  # 02:00 CET daily
-  workflow_dispatch:
+### Example 2 — Multi-Language Template (`templates/news/election-forecast.md.hbs`)
 
-jobs:
-  generate-news:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Fetch Latest CIA Exports
-        run: |
-          # Fetch from data-pipeline cache
-          ./scripts/fetch-latest-cia-exports.sh
-      
-      - name: Generate News Articles
-        run: |
-          npm run generate:news
-          # Generates articles in content/news/YYYY/MM/DD/
-      
-      - name: Validate Content
-        run: |
-          npm run validate:content
-      
-      - name: Create PR
-        uses: peter-evans/create-pull-request@v5
-        with:
-          title: "Daily News: $(date +%Y-%m-%d)"
-          body: "Automated intelligence news generated from CIA exports"
-          branch: "automated/daily-news-$(date +%Y%m%d)"
-          labels: "automated-content,news"
-```
+Handlebars template with YAML front-matter (`title`, `date`, `language`, `data_source`), `{{i18n '...' lang}}` lookups for localisation, `{{#each seatPredictions}}` loops emitting party/seats/uncertainty/percentage, and sections for `key_findings`, `methodology` and `data_freshness`. Renders one file per language (EN, SV, DA, NB, FI, DE, FR, ES, NL, AR, HE, JA, KO, ZH) with RTL adjustments for AR/HE.
 
-### Example 2: Multi-Language Article Generation
+### Example 3 — Risk Assessment Report
 
-**Template (`templates/news/election-forecast.md.hbs`)**:
-```handlebars
----
-title: "{{i18n 'election.forecast.title' lang}}"
-date: {{publishDate}}
-language: {{lang}}
-data_source: {{dataSource}}
----
-
-# {{i18n 'election.forecast.headline' lang}}
-
-*{{i18n 'common.updated' lang}}: {{updatedAt}}*
-
-## {{i18n 'election.forecast.key_findings' lang}}
-
-{{#each seatPredictions}}
-- **{{party.name}}**: {{seats}} {{i18n 'common.seats' lang}} (±{{uncertainty}}) [{{percentage}}% ±{{marginOfError}}%]
-{{/each}}
-
-## {{i18n 'election.forecast.methodology' lang}}
-
-{{i18n 'election.forecast.methodology_description' lang}}
-
-*{{i18n 'common.data_freshness' lang}}: {{dataAge}} {{i18n 'common.hours' lang}}*
-```
-
-### Example 3: Risk Assessment Report
-
-**Generated Content (`content/reports/weekly/2026-W06-risk-assessment.md`)**:
-```markdown
----
-title: "Weekly Risk Assessment: Week 6, 2026"
-date: 2026-02-06T02:00:00+01:00
-report_type: weekly-risk-assessment
-language: en
----
-
-# Political Risk Assessment: Week 6, 2026
-
-## Executive Summary
-
-This weekly assessment analyzes risk indicators for 349 Swedish MPs based on 45 risk rules applied to CIA intelligence exports.
-
-### High Priority Alerts (3)
-
-1. **MP-12345** - Voting discipline deviation (15% from party line)
-2. **MP-67890** - Unexplained absence pattern (40% missed votes)
-3. **MP-24680** - Committee assignment conflict of interest
-
-### Risk Distribution
-
-| Risk Level | Count | % of Parliament |
-|------------|-------|----------------|
-| High       | 8     | 2.3%           |
-| Medium     | 47    | 13.5%          |
-| Low        | 294   | 84.2%          |
-
-## Detailed Analysis
-
-### Voting Discipline Trends
-
-Party cohesion remains stable across major parties, with minor deviations observed in coalition partner negotiations.
-
-**Data Sources**: CIA behavioral-analysis-export, voting-pattern-export
-**Analysis Period**: 2026-01-30 to 2026-02-05
-**Next Update**: 2026-02-13
-```
+Weekly output `content/reports/weekly/YYYY-Www-risk-assessment.md` covering 349 MPs × 45 risk rules from CIA exports. Sections: Executive Summary → High-Priority Alerts (MP ID + issue) → Risk Distribution table (High/Medium/Low counts + % of parliament) → Detailed Analysis (voting discipline trends, coalition dynamics) → Data Sources + Analysis Period + Next Update metadata.
 
 ---
 
@@ -413,3 +315,58 @@ When working on content generation tasks, leverage these skills:
 **Last Updated**: 2026-02-06  
 **Version**: 1.0  
 **Maintained by**: Hack23 AB
+
+---
+
+## 🧠 Available MCP Servers
+
+Repo-level agents do **not** declare `mcp-servers:` — MCP is configured once in [`.github/copilot-mcp.json`](/.github/copilot-mcp.json) and injected automatically:
+
+| Server | Purpose |
+|--------|---------|
+| `github` (Insiders HTTP) | Full toolset incl. `assign_copilot_to_issue`, `create_pull_request_with_copilot`, `get_copilot_job_status`, issues, PRs, projects, actions, security alerts, discussions |
+| `riksdag-regering` (HTTP) | 32+ tools for Swedish Parliament/Government open data |
+| `scb` / `world-bank` (local) | Statistics Sweden PxWeb v2 and World Bank indicators |
+| `filesystem` / `memory` / `sequential-thinking` / `playwright` | Local helpers (scoped FS, persistent memory, structured reasoning, headless browser) |
+
+MCP config changes are **Normal Changes** needing CEO approval per the [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) curator-agent governance section.
+
+---
+
+## 🤖 Standard Copilot Coding Agent Tools
+
+```javascript
+assign_copilot_to_issue({ owner: "Hack23", repo: "riksdagsmonitor", issue_number: N,
+  base_ref: "feature/branch", custom_instructions: "Guidance aligned with ISMS policies" });
+
+create_pull_request_with_copilot({ owner: "Hack23", repo: "riksdagsmonitor",
+  title: "...", body: "...", base_ref: "feature/stack-parent",
+  custom_agent: "security-architect" /* optional routing */ });
+
+get_copilot_job_status({ owner: "Hack23", repo: "riksdagsmonitor", job_id: "..." });
+```
+
+Use `base_ref` for feature branches / stacked PRs, `custom_agent` to delegate to a specialist, and poll `get_copilot_job_status` for long-running jobs.
+
+---
+
+## 🔐 Related Hack23 ISMS Policies
+
+All work operates under [Hack23 ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC). Consult as appropriate:
+
+**Governance & Classification**
+- [Information_Security_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) — scope, roles, accountability, risk management
+- [CLASSIFICATION.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) — CIA triad + RTO/RPO
+- [AI_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) — AI usage, human-in-the-loop, agent governance
+
+**SDLC & Supply Chain**
+- [Secure_Development_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) — 5-phase SDLC security
+- [Open_Source_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) — licences, SBOM, supply-chain
+- [Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) — STRIDE + MITRE ATT&CK
+- [Vulnerability_Management.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) — SLAs (Crit 24h / High 7d / Med 30d / Low 90d)
+- [Change_Management.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md)
+
+**Operational Controls**
+- [Access_Control_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md) · [Cryptography_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md) · [Incident_Response_Plan.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md) · [Security_Metrics.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Security_Metrics.md) · [STYLE_GUIDE.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md)
+
+**Framework mapping**: map security-relevant work to **ISO 27001:2022 Annex A**, **NIST CSF 2.0**, **CIS Controls v8.1**, **GDPR**, **NIS2**, **EU CRA**.
