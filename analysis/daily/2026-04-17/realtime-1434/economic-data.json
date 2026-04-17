@@ -1,0 +1,27 @@
+{
+  "source": "World Bank API",
+  "retrieved": "2026-04-17T14:34:00Z",
+  "country": "Sweden",
+  "countryCode": "SE",
+  "indicators": {
+    "GDP_GROWTH": {
+      "label": "GDP growth (annual %)",
+      "data": [
+        {"year": 2024, "value": 0.8203},
+        {"year": 2023, "value": -0.2040},
+        {"year": 2022, "value": 1.2549},
+        {"year": 2021, "value": 5.9405},
+        {"year": 2020, "value": -2.1773}
+      ]
+    },
+    "GDP": {
+      "label": "GDP (current USD)",
+      "data": [
+        {"year": 2024, "value": 603700000000},
+        {"year": 2023, "value": 584100000000},
+        {"year": 2022, "value": 584100000000}
+      ]
+    }
+  },
+  "article_context": "Sweden's GDP growth reached 0.82% in 2024, recovering from a -0.20% contraction in 2023. This economic backdrop informs housing market reforms (CU28/CU27) and the broader spring 2026 legislative package."
+}
