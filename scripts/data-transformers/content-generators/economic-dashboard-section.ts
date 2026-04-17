@@ -359,6 +359,17 @@ export function generateEconomicDashboardSection(opts: EconomicDashboardOptions)
   const indicators = findIndicatorsForDomains(policyDomains);
   if (indicators.length === 0) return null;
 
+  // Explicit empty dataPoints array signals "caller attempted to fetch
+  // World Bank data and got nothing back" — never fall back to the
+  // placeholder in that case, so the quality gate in
+  // `scripts/validate-economic-context.ts` can surface a hard failure
+  // instead of publishing a deceptive bullet list.
+  //
+  // A missing `dataPoints` key (undefined) still yields the placeholder
+  // to preserve legacy callers that have not yet been migrated to the
+  // load-economic-context loader.
+  if (Array.isArray(dataPoints) && dataPoints.length === 0) return null;
+
   const headingText = opts.title?.trim() || getEconomicHeading(lang, 'economicContext');
 
   // If we have actual data points, build charts

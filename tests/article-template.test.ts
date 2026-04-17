@@ -102,7 +102,6 @@ describe('Article Template', () => {
 
     it('should include SEO meta tags', () => {
       const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
-      
       // Open Graph
       expect(html).toContain('<meta property="og:title"');
       expect(html).toContain('<meta property="og:description"');
@@ -124,6 +123,52 @@ describe('Article Template', () => {
       expect(html).toContain('hreflang="en"');
       expect(html).toContain('hreflang="sv"');
       expect(html).toContain('hreflang="x-default"');
+    });
+
+    it('does NOT load Chart.js for text-only articles', () => {
+      const html = generateArticleHTML(mockArticleData as unknown as ArticleData) as string;
+      expect(html).not.toContain('chart.umd');
+      expect(html).not.toContain('chart-init.js');
+    });
+
+    it('auto-loads Chart.js runtime and chart-init when sections contain data-chart-config', () => {
+      const data = {
+        ...mockArticleData,
+        sections: [{
+          id: 'economic-dashboard',
+          className: 'economic-dashboard-section',
+          html: '<canvas data-chart-config=\'{"type":"bar"}\'></canvas>',
+        }],
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).toContain('../js/lib/chart.umd.4.4.1.js');
+      expect(html).toContain('../js/chart-init.js');
+    });
+
+    it('auto-loads the annotation plugin when a section config references annotations', () => {
+      const data = {
+        ...mockArticleData,
+        sections: [{
+          id: 'economic-dashboard',
+          className: 'economic-dashboard-section',
+          html: '<canvas data-chart-config=\'{"type":"line","options":{"plugins":{"annotations":[{"type":"line"}]}}}\'></canvas>',
+        }],
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).toContain('chartjs-plugin-annotation');
+    });
+
+    it('auto-loads D3 when a section uses data-d3-sankey', () => {
+      const data = {
+        ...mockArticleData,
+        sections: [{
+          id: 'coalition-flow',
+          className: 'd3-sankey-section',
+          html: '<div data-d3-sankey=\'{"nodes":[]}\'></div>',
+        }],
+      };
+      const html = generateArticleHTML(data as unknown as ArticleData) as string;
+      expect(html).toContain('d3.7.9.0.min.js');
     });
 
     it('should include Schema.org structured data', () => {

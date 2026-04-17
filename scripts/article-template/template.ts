@@ -195,6 +195,21 @@ export function generateArticleHTML(data: ArticleData): string {
   // (which also strips empty <p> tags) so remnants are cleaned up
   const fixedContent: string = fixHtmlNesting(stripSwedishBoilerplate(content, lang));
 
+  // ── Chart.js / D3 dependency detection ────────────────────────────────
+  // Auto-inject the Chart.js runtime + generic chart-init.js only when
+  // sections or the article body actually contain `data-chart-config`
+  // canvases (emitted by `generateDashboardSection`,
+  // `generateEconomicDashboardSection`, `generateSwotSection`, etc.).
+  // Keeps text-only articles lean while guaranteeing live charts on
+  // data-rich ones — see .github/aw/ECONOMIC_DATA_CONTRACT.md.
+  const sectionsHtml = (sections as TemplateSection[]).map(s => s.html).join('\n');
+  const hasChartConfig =
+    /data-chart-config=/.test(fixedContent) || /data-chart-config=/.test(sectionsHtml);
+  const hasAnnotation =
+    /"annotations?"\s*:/.test(fixedContent) || /"annotations?"\s*:/.test(sectionsHtml);
+  const hasD3Sankey =
+    /data-d3-sankey=/.test(fixedContent) || /data-d3-sankey=/.test(sectionsHtml);
+
   // Fall back to English labels if language not supported.
   // When articleType is set, prefer the per-type localized name from
   // ARTICLE_TYPE_NAMES (e.g. "Propositioner") over the category label
@@ -530,6 +545,10 @@ ${generateSiteFooter(lang)}
 
 <script type="module" src="../scripts/back-to-top.ts"></script>
 <script src="../js/theme-toggle.js"></script>
+${hasChartConfig ? `<script src="../js/lib/chart.umd.4.4.1.js"></script>` : ''}
+${hasChartConfig && hasAnnotation ? `<script src="../js/lib/chartjs-plugin-annotation.3.0.1.min.js"></script>` : ''}
+${hasChartConfig ? `<script src="../js/chart-init.js"></script>` : ''}
+${hasD3Sankey ? `<script src="../js/lib/d3.7.9.0.min.js"></script>` : ''}
 </body>
 </html>`;
 }

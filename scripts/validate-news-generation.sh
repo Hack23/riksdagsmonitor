@@ -829,6 +829,84 @@ fi
 echo ""
 
 # ============================================================================
+# Check 21: Economic context quality gate (live World Bank / SCB data,
+#   Chart.js canvases, AI commentary). See
+#   scripts/validate-economic-context.ts and
+#   .github/aw/ECONOMIC_DATA_CONTRACT.md.
+# ============================================================================
+echo "📋 Check 21: Economic context (World Bank / SCB data + Chart.js + AI commentary)"
+
+# Opt-out escape hatch for local/pre-agentic runs. The validator is a
+# hard-fail gate: any violation reported by
+# `scripts/validate-economic-context.ts` (missing artefact, placeholder
+# leakage, too-few charts, short commentary, blank-canvas gap, etc.)
+# is promoted to an ERROR and fails the build. There is no WARN mode.
+# Set SKIP_ECON_GATE=1 to skip entirely (e.g. local dev on a branch
+# that has not yet produced `analysis/daily/*/*/economic-data.json`).
+if [ "${SKIP_ECON_GATE:-0}" = "1" ]; then
+  echo -e "${YELLOW}⚠️ Economic context gate skipped (SKIP_ECON_GATE=1)${NC}"
+  WARNINGS=$((WARNINGS + 1))
+else
+  ECON_LOG="/tmp/validate-economic-context.log"
+  if npx --no-install tsx scripts/validate-economic-context.ts > "$ECON_LOG" 2>&1; then
+    ECON_EXIT=0
+  else
+    ECON_EXIT=$?
+  fi
+  cat "$ECON_LOG"
+  if [ "$ECON_EXIT" -eq 0 ]; then
+    echo -e "${GREEN}✅ Economic context contract satisfied${NC}"
+  else
+    echo -e "${RED}❌ Economic context contract violated — see details above${NC}"
+    ERRORS=$((ERRORS + 1))
+  fi
+fi
+echo ""
+
+# ============================================================================
+# Check 22: No economic-dashboard-placeholder leakage in recent (≤7d) EN articles
+#   — complements the per-article validator (Check 21) by catching
+#   regressions from older pipelines that still ship the bullet list.
+# ============================================================================
+echo "📋 Check 22: No economic-dashboard-placeholder in recent English articles"
+
+# Collect candidate files: news/*-en.html newer than 7 days OR dated within
+# the last 7 ISO dates, to avoid relying solely on mtimes (which git resets).
+PLACEHOLDER_LEAKS=0
+CUTOFF_EPOCH=$(( $(date +%s) - 7*86400 ))
+
+for f in news/*-en.html; do
+  [ -f "$f" ] || continue
+  case "$f" in news/index*.html) continue ;; esac
+
+  # Extract YYYY-MM-DD prefix from the filename; fall back to mtime.
+  base=$(basename "$f")
+  dprefix="${base:0:10}"
+  if [[ "$dprefix" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+    file_epoch=$(date -d "$dprefix" +%s 2>/dev/null || echo 0)
+  else
+    file_epoch=$(stat -c %Y "$f" 2>/dev/null || echo 0)
+  fi
+
+  if [ "$file_epoch" -lt "$CUTOFF_EPOCH" ]; then
+    continue
+  fi
+
+  if grep -q 'class="economic-dashboard-placeholder"' "$f"; then
+    echo -e "${RED}❌ $f contains economic-dashboard-placeholder (≤7d old) — violates Economic Data Contract${NC}"
+    PLACEHOLDER_LEAKS=$((PLACEHOLDER_LEAKS + 1))
+  fi
+done
+
+if [ "$PLACEHOLDER_LEAKS" -eq 0 ]; then
+  echo -e "${GREEN}✅ No economic-dashboard-placeholder leaks in recent English articles${NC}"
+else
+  echo -e "${RED}❌ $PLACEHOLDER_LEAKS article(s) within the last 7 days carry the placeholder${NC}"
+  ERRORS=$((ERRORS + 1))
+fi
+echo ""
+
+# ============================================================================
 # Summary
 # ============================================================================
 echo "================================================================"

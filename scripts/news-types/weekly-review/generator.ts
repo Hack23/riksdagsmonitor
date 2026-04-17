@@ -202,10 +202,14 @@ export async function generateWeeklyReview(options: GenerationOptions = {}): Pro
 
       const ciaSection = generateCiaOverviewSection({ cia: ciaContext, lang });
 
-      // Build additional visualization sections (SWOT, dashboard, economic)
-      const extraSections = buildArticleVisualizationSections(documents, null, lang);
-
       const articleDate = today.toISOString().split('T')[0] ?? '';
+
+      // Build additional visualization sections (SWOT, dashboard, economic)
+      const extraSections = buildArticleVisualizationSections(documents, null, lang, {
+        date: articleDate,
+        articleType: 'weekly-review',
+      });
+
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: enriched.title,
