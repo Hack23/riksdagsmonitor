@@ -521,11 +521,11 @@ Each agent file's **YAML frontmatter** contains only:
 ---
 name: agent-name
 description: Brief description of agent's expertise
-tools: ["view", "edit", "create", "search", "bash", "grep", "glob"]
+tools: ["*"]
 ---
 ```
 
-The agent file body after the frontmatter contains the agent's detailed instructions, capabilities, and examples.
+All 14 primary Copilot agents in this repo use `tools: ["*"]` and omit `mcp-servers:` entirely. The agent body after the frontmatter contains detailed instructions, capabilities, examples, **a standardised "Available MCP Servers" reference**, **standardised Copilot coding-agent tool snippets** (`assign_copilot_to_issue`, `create_pull_request_with_copilot`, `get_copilot_job_status`, including `base_ref` and `custom_agent`), and **a standardised "Related Hack23 ISMS Policies" block** pointing at the governance chain rooted in `Information_Security_Policy.md`. Each agent file MUST remain below the 16 KB GitHub Copilot agent size limit.
 
 ### MCP Server Configuration (Repository-Level Only)
 
