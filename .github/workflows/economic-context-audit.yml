@@ -1,0 +1,97 @@
+# Economic Context Daily Audit
+#
+# Runs `scripts/validate-economic-context.ts` across all English articles
+# from the last 7 days every day at 04:00 UTC. Opens a GitHub issue when
+# violations appear so agentic workflow regressions are surfaced quickly.
+#
+# Scope: single hardened workflow — no MCP calls, no write tokens except
+# the one needed to open a maintenance issue. Follows the project
+# workflow security standards (least privilege, step-security/harden-runner,
+# SHA-pinned actions — see .github/aw/SHARED_PROMPT_PATTERNS.md).
+
+name: Economic Context Daily Audit
+
+on:
+  schedule:
+    # 04:00 UTC daily — after the evening-analysis / overnight content
+    # generation workflows have produced artefacts.
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@002fdce3c6a235733a90a27c80493a3241e56863 # v2.12.1
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '25'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Run economic context validator on last 7 days
+        id: audit
+        shell: bash
+        run: |
+          set -u
+          EXIT=0
+          VIOLATION_LOG=$(mktemp)
+          # Iterate over the last 7 ISO dates (inclusive) and validate
+          # every EN article for each date. Missing dates are skipped
+          # silently by the validator.
+          for delta in 0 1 2 3 4 5 6; do
+            D=$(date -u -d "$delta days ago" +%F)
+            if ! npx tsx scripts/validate-economic-context.ts --date "$D" \
+                 >> "$VIOLATION_LOG" 2>&1; then
+              EXIT=1
+            fi
+          done
+          cat "$VIOLATION_LOG"
+          # Truncate to 60 KB to keep the subsequent issue body under the
+          # GitHub API limit.
+          head -c 60000 "$VIOLATION_LOG" > audit-report.txt
+          echo "exit_code=$EXIT" >> "$GITHUB_OUTPUT"
+
+      - name: Open issue when violations detected
+        if: steps.audit.outputs.exit_code != '0'
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('audit-report.txt', 'utf8');
+            const title = `Economic Context Audit — violations detected on ${new Date().toISOString().slice(0, 10)}`;
+            const body = [
+              '> Automated daily audit of `scripts/validate-economic-context.ts`',
+              '> across English articles from the last 7 days. See the',
+              '> [Economic Data Contract](../blob/main/.github/aw/ECONOMIC_DATA_CONTRACT.md)',
+              '> for remediation guidance.',
+              '',
+              '## Report',
+              '',
+              '```',
+              report,
+              '```',
+            ].join('\n');
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['maintenance', 'agentic-workflows', 'economic-context'],
+            });
+            core.setFailed('Economic Context audit violations detected; issue opened.');

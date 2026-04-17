@@ -35,7 +35,6 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { loadEconomicContext, economicDataPath } from './data-transformers/load-economic-context.js';
-import { ARTICLE_TYPE_TO_ANALYSIS_SUBFOLDER } from './analysis-references.js';
 
 // ---------------------------------------------------------------------------
 // Coverage matrix (single source of truth: .github/aw/ECONOMIC_DATA_CONTRACT.md)

@@ -797,6 +797,40 @@ read ARTICLE_COUNT < /tmp/new-articles-count.txt
 echo "Generated: $ARTICLE_COUNT articles"
 ```
 
+---
+
+## Step 2.6: Economic Data Acquisition (MANDATORY)
+
+> **Contract**: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md) — the **single source of truth** for World Bank + SCB data, Chart.js visualisations, and AI commentary. Follow it exactly; the Step 6 quality gate (`scripts/validate-economic-context.ts`) **blocks the PR** if any element is missing.
+
+**What you MUST do before writing any prose:**
+
+1. `view analysis/worldbank/indicators-inventory.json` and pick every indicator whose `committees` / `policyAreas` match the day's source documents.
+2. Call `world-bank.get-economic-data` / `get-social-data` / `get-health-data` / `get-education-data` for Sweden (10-year series for primary domains) and for DK/NO/FI/DE (5-year series for the top 3 indicators — needed for the Nordic comparison bars and radar).
+3. Call `scb.search_tables` + `scb.query_table` using the committee → TAB mapping in `scripts/scb-context.ts`. **`language` MUST be `"sv"` or `"en"` — NEVER `"no"`** (SCB returns HTTP 400 "Unsupported language").
+4. Retry every World Bank call up to **3 times** on failure. Cache raw responses under `analysis/data/worldbank/<YYYY>/<indicator>-<country>.json` so later article types in the same daily run reuse the data.
+5. Write `analysis/daily/<ARTICLE_DATE>/<ANALYSIS_SUBFOLDER>/economic-data.json` matching `analysis/schemas/economic-data.schema.json`:
+
+```jsonc
+{
+  "version": "1.0",
+  "articleType": "evening-analysis",
+  "date": "<YYYY-MM-DD>",
+  "policyDomains": ["fiscal policy", "labor market"],
+  "dataPoints": [
+    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2024", "value": 0.82 },
+    { "countryCode": "DNK", "countryName": "Denmark", "indicatorId": "NY.GDP.MKTP.KD.ZG", "date": "2024", "value": 1.75 }
+  ],
+  "commentary": "<will be filled in Step 3d>",
+  "source": { "worldBank": ["NY.GDP.MKTP.KD.ZG", "FP.CPI.TOTL.ZG"], "scb": ["TAB1291"] }
+}
+```
+
+**Non-negotiable**: `dataPoints` MUST be non-empty. The HTML renderer (`scripts/data-transformers/content-generators/economic-dashboard-section.ts`) emits real Chart.js canvases only when the file exists with entries — otherwise the validator fails the PR.
+
+**Minimum coverage (enforced by the validator):** see the matrix in `ECONOMIC_DATA_CONTRACT.md` §"Coverage matrix" for this article type's chart count, commentary word minimum, and D3 requirement.
+
+---
 ## Step 3b: AI Title, Meta Description & Analysis References (v5.0 — Analysis-Driven)
 
 > 🚨 **MANDATORY** — See `SHARED_PROMPT_PATTERNS.md` §"AI-DRIVEN TITLE & META DESCRIPTION GENERATION". Evening analysis synthesizes ALL article types. Read synthesis-summary.md from all sibling folders (`committeeReports/`, `propositions/`, `interpellations/`, `motions/`, `realtime-*/`). Use `ls analysis/daily/$ARTICLE_DATE/` to discover them. Title: `[Active Verb] + [Specific Actor/Institution] + [Policy Action]`. BANNED: ❌ "Evening Analysis: Daily Summary" or titles ending ": {Topic} in Focus". Meta description 150-160 chars, not starting with "Analysis of N documents". Update `<title>`, `<meta description>`, og:title/description, `<h1>`, Schema.org headline in ALL language files.
@@ -958,3 +992,15 @@ safeoutputs___create_pull_request({
 **Failing to call a safe output tool = automatic workflow failure and a bug report.**
 
 🎯 **Now begin: Check date/day-of-week, warm up MCP with `get_sync_status()`, run pre-article analysis pipeline, review analysis results, gather parliamentary data, generate analysis articles, and call a safe output tool.**
+
+## Step 3d: Economic Commentary (MANDATORY)
+
+> After Step 3c and **before** calling `safeoutputs.create_pull_request`, re-open `economic-data.json` and replace the placeholder `commentary` string with a 2–4 sentence paragraph that:
+> - cites **2–3 concrete numeric values** from `dataPoints`;
+> - ties the numbers to the day's political developments (not definitions of indicators);
+> - is written in plain English (translations are produced downstream by `news-translate`);
+> - meets the minimum word count in the coverage matrix for this article type.
+>
+> Banned phrasings (the multi-dim quality score flags these): "The political landscape remains fluid…", "Touches on X policy…", pure indicator definitions.
+>
+> Full rules: [`.github/aw/ECONOMIC_DATA_CONTRACT.md`](../aw/ECONOMIC_DATA_CONTRACT.md) §"Writing the AI commentary — workflow Step 3d".

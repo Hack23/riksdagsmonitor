@@ -862,6 +862,54 @@ fi
 echo ""
 
 # ============================================================================
+# Check 22: No economic-dashboard-placeholder leakage in recent (≤7d) EN articles
+#   — complements the per-article validator (Check 21) by catching
+#   regressions from older pipelines that still ship the bullet list.
+# ============================================================================
+echo "📋 Check 22: No economic-dashboard-placeholder in recent English articles"
+
+# Collect candidate files: news/*-en.html newer than 7 days OR dated within
+# the last 7 ISO dates, to avoid relying solely on mtimes (which git resets).
+PLACEHOLDER_LEAKS=0
+CUTOFF_EPOCH=$(( $(date +%s) - 7*86400 ))
+
+for f in news/*-en.html; do
+  [ -f "$f" ] || continue
+  case "$f" in news/index*.html) continue ;; esac
+
+  # Extract date prefix
+  base=$(basename "$f")
+  file_date_prefix="${base%%-committee-reports-en.html}"
+  file_date_prefix="${file_date_prefix%%-government-propositions-en.html}"
+  file_date_prefix="${file_date_prefix%%-opposition-motions-en.html}"
+  file_date_prefix="${file_date_prefix%%-interpellation-debates-en.html}"
+  # Generic: first 10 chars are YYYY-MM-DD
+  dprefix="${base:0:10}"
+  if [[ "$dprefix" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+    file_epoch=$(date -d "$dprefix" +%s 2>/dev/null || echo 0)
+  else
+    file_epoch=$(stat -c %Y "$f" 2>/dev/null || echo 0)
+  fi
+
+  if [ "$file_epoch" -lt "$CUTOFF_EPOCH" ]; then
+    continue
+  fi
+
+  if grep -q 'class="economic-dashboard-placeholder"' "$f"; then
+    echo -e "${RED}❌ $f contains economic-dashboard-placeholder (≤7d old) — violates Economic Data Contract${NC}"
+    PLACEHOLDER_LEAKS=$((PLACEHOLDER_LEAKS + 1))
+  fi
+done
+
+if [ "$PLACEHOLDER_LEAKS" -eq 0 ]; then
+  echo -e "${GREEN}✅ No economic-dashboard-placeholder leaks in recent English articles${NC}"
+else
+  echo -e "${RED}❌ $PLACEHOLDER_LEAKS article(s) within the last 7 days carry the placeholder${NC}"
+  ERRORS=$((ERRORS + 1))
+fi
+echo ""
+
+# ============================================================================
 # Summary
 # ============================================================================
 echo "================================================================"
