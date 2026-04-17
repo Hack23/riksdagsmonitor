@@ -301,6 +301,16 @@ function parseArgs(argv: string[]): { date?: string; type?: string; files?: stri
   return out;
 }
 
+/**
+ * Strict YYYY-MM-DD validator used before performing any prefix match on
+ * filenames. Prevents CLI-supplied values from flowing into patterns or
+ * filesystem glue code (see CodeQL alerts #185 regex-injection and
+ * #186 no-op replace).
+ */
+function isIsoDate(value: string): boolean {
+  return /^\d{4}-\d{2}-\d{2}$/.test(value);
+}
+
 function discoverArticleFiles(opts: { date?: string; type?: string }, rootDir: string): string[] {
   const newsDir = path.join(rootDir, 'news');
   let entries: string[];
@@ -309,11 +319,17 @@ function discoverArticleFiles(opts: { date?: string; type?: string }, rootDir: s
   } catch {
     return [];
   }
-  const datePattern = opts.date ? new RegExp('^' + opts.date.replace(/[-]/g, '-') + '-') : /^\d{4}-\d{2}-\d{2}-/;
+  // NOTE: do NOT construct a RegExp from `opts.date` — it would be
+  // user-controlled regex input (CodeQL regex-injection). Instead we
+  // validate the shape and use a literal startsWith() check.
+  const explicitDate = opts.date && isIsoDate(opts.date) ? opts.date : undefined;
+  const genericDatePrefix = /^\d{4}-\d{2}-\d{2}-/;
   return entries
     .filter((f) => f.endsWith('-en.html')) // check EN only — translations inherit
     .filter((f) => !f.startsWith('index'))
-    .filter((f) => datePattern.test(f))
+    .filter((f) => (explicitDate
+      ? f.startsWith(`${explicitDate}-`)
+      : genericDatePrefix.test(f)))
     .filter((f) => {
       if (!opts.type) return true;
       const parsed = parseArticleFilename(path.join(newsDir, f));
