@@ -30,6 +30,7 @@ import {
 } from '../data-transformers/index.js';
 import { generateDeepAnalysisSection, localizeDocType } from '../data-transformers/content-generators/index.js';
 import { generateDeepPolicyAnalysis, detectPolicyDomains } from '../data-transformers/policy-analysis.js';
+import { loadEconomicContext } from '../data-transformers/load-economic-context.js';
 import { escapeHtml } from '../html-utils.js';
 import { generateArticleHTML } from '../article-template.js';
 import { MCPClient } from '../mcp-client.js';
@@ -423,6 +424,7 @@ export function buildArticleVisualizationSections(
   docs: RawDocument[],
   topic: string | null,
   lang: Language,
+  context?: { date?: string; articleType?: string },
 ): TemplateSection[] {
   const sections: TemplateSection[] = [];
   if (docs.length < 2) return sections;
@@ -457,22 +459,55 @@ export function buildArticleVisualizationSections(
 
   try {
     // ── 3. Economic dashboard (World Bank indicators for detected domains) ─
-    const allDomains = new Set<string>();
-    for (const d of docs) {
-      for (const dom of detectPolicyDomains(d, lang)) {
-        allDomains.add(dom);
-      }
+    // When the agentic workflow wrote `economic-data.json` for this
+    // date+article-type, load the real dataPoints + AI commentary so the
+    // renderer emits real Chart.js canvases. When it is missing, we fall
+    // back to detecting domains from documents so the placeholder still
+    // ships — but the quality gate
+    // (`scripts/validate-economic-context.ts`) is responsible for failing
+    // the PR when this article type requires the real data.
+    let loaded = null;
+    if (context?.date && context?.articleType) {
+      loaded = loadEconomicContext(context.date, context.articleType);
     }
-    if (allDomains.size > 0) {
+
+    if (loaded?.skip) {
+      // Workflow explicitly opted out — honour it (validator enforces the
+      // allow-list of article types that may skip).
+    } else if (loaded && loaded.dataPoints.length > 0) {
       const econSection = generateEconomicDashboardSection({
-        policyDomains: [...allDomains],
+        policyDomains: loaded.policyDomains.length > 0
+          ? loaded.policyDomains
+          : collectDetectedDomains(docs, lang),
+        dataPoints: loaded.dataPoints,
         lang,
+        summary: loaded.commentary,
       });
       if (econSection) sections.push(econSection);
+    } else {
+      const allDomains = collectDetectedDomains(docs, lang);
+      if (allDomains.length > 0) {
+        const econSection = generateEconomicDashboardSection({
+          policyDomains: allDomains,
+          lang,
+        });
+        if (econSection) sections.push(econSection);
+      }
     }
   } catch { /* graceful degradation */ }
 
   return sections;
+}
+
+/** Detect the union of policy domains across a set of documents. */
+function collectDetectedDomains(docs: RawDocument[], lang: Language): string[] {
+  const allDomains = new Set<string>();
+  for (const d of docs) {
+    for (const dom of detectPolicyDomains(d, lang)) {
+      allDomains.add(dom);
+    }
+  }
+  return [...allDomains];
 }
 
 // ---------------------------------------------------------------------------
@@ -565,7 +600,10 @@ export async function generateWeekAhead(): Promise<GenerationResult> {
       const enriched = lang === 'en' ? generateDynamicTitle(langTitles.title, content, documents.length + events.length) : langTitles;
 
       // Build visualization sections (SWOT, dashboard, economic)
-      const sections = buildArticleVisualizationSections(documents, null, lang);
+      const sections = buildArticleVisualizationSections(documents, null, lang, {
+        date: toISODate(today),
+        articleType: 'week-ahead',
+      });
       // Append deep analysis sections from pre-computed analysis files (AI-written)
       sections.push(...buildAnalysisEnrichmentSections(enrichment, lang));
       const html: string = generateArticleHTML({
@@ -662,7 +700,10 @@ export async function generateCommitteeReports(): Promise<GenerationResult> {
       const enriched = lang === 'en' ? generateDynamicTitle(langTitles.title, content, reports.length) : langTitles;
 
       // Build visualization sections (SWOT, dashboard, economic)
-      const sections = buildArticleVisualizationSections(reports as RawDocument[], null, lang);
+      const sections = buildArticleVisualizationSections(reports as RawDocument[], null, lang, {
+        date: toISODate(today),
+        articleType: 'committee-reports',
+      });
       // Append deep analysis sections from pre-computed analysis files (AI-written)
       sections.push(...buildAnalysisEnrichmentSections(enrichment, lang));
 
@@ -757,7 +798,10 @@ export async function generatePropositions(): Promise<GenerationResult> {
       const enriched = lang === 'en' ? generateDynamicTitle(langTitles.title, content, propositions.length) : langTitles;
 
       // Build visualization sections (SWOT, dashboard, economic)
-      const sections = buildArticleVisualizationSections(propositions as RawDocument[], null, lang);
+      const sections = buildArticleVisualizationSections(propositions as RawDocument[], null, lang, {
+        date: toISODate(today),
+        articleType: 'propositions',
+      });
       // Append deep analysis sections from pre-computed analysis files (AI-written)
       sections.push(...buildAnalysisEnrichmentSections(enrichment, lang));
 
@@ -852,7 +896,10 @@ export async function generateMotions(): Promise<GenerationResult> {
       const enriched = lang === 'en' ? generateDynamicTitle(langTitles.title, content, motions.length) : langTitles;
 
       // Build visualization sections (SWOT, dashboard, economic)
-      const sections = buildArticleVisualizationSections(motions as RawDocument[], null, lang);
+      const sections = buildArticleVisualizationSections(motions as RawDocument[], null, lang, {
+        date: toISODate(today),
+        articleType: 'motions',
+      });
       // Append deep analysis sections from pre-computed analysis files (AI-written)
       sections.push(...buildAnalysisEnrichmentSections(enrichment, lang));
 
@@ -947,7 +994,10 @@ export async function generateInterpellations(): Promise<GenerationResult> {
       const enriched = lang === 'en' ? generateDynamicTitle(langTitles.title, content, interpellations.length) : langTitles;
 
       // Build visualization sections (SWOT, dashboard, economic)
-      const sections = buildArticleVisualizationSections(interpellations as RawDocument[], null, lang);
+      const sections = buildArticleVisualizationSections(interpellations as RawDocument[], null, lang, {
+        date: toISODate(today),
+        articleType: 'interpellations',
+      });
       // Append deep analysis sections from pre-computed analysis files (AI-written)
       sections.push(...buildAnalysisEnrichmentSections(enrichment, lang));
 
@@ -1910,6 +1960,7 @@ function buildDeepInspectionSections(
   lang: Language,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   aiResult?: any,
+  context?: { date?: string; articleType?: string },
 ): TemplateSection[] {
   if (docs.length === 0) return [];
 
@@ -2088,9 +2139,28 @@ function buildDeepInspectionSections(
     : null;
 
   // ── World Bank / Economic Dashboard ──────────────────────────────────────
-  const economicSection = detectedDomainList.length > 0
-    ? generateEconomicDashboardSection({ policyDomains: detectedDomainList, lang })
+  // Prefer the agentic-workflow-supplied `economic-data.json` artefact so
+  // real Chart.js canvases render; fall back to domain-only placeholder
+  // only when no artefact is present (quality gate catches unsupplied data).
+  const loadedEcon = (context?.date && context?.articleType)
+    ? loadEconomicContext(context.date, context.articleType)
     : null;
+
+  let economicSection: TemplateSection | null = null;
+  if (loadedEcon?.skip) {
+    economicSection = null;
+  } else if (loadedEcon && loadedEcon.dataPoints.length > 0) {
+    economicSection = generateEconomicDashboardSection({
+      policyDomains: loadedEcon.policyDomains.length > 0
+        ? loadedEcon.policyDomains
+        : detectedDomainList,
+      dataPoints: loadedEcon.dataPoints,
+      lang,
+      summary: loadedEcon.commentary,
+    });
+  } else if (detectedDomainList.length > 0) {
+    economicSection = generateEconomicDashboardSection({ policyDomains: detectedDomainList, lang });
+  }
 
   const additionalSections: TemplateSection[] = [
     ...(sankeySection ? [sankeySection] : []),
@@ -2383,7 +2453,10 @@ export async function generateDeepInspection(): Promise<GenerationResult> {
       const sources: string[] = generateSources(sourceMethods);
 
       // SWOT + dashboard sections — AI-generated dynamic entries (context-aware, all 14 languages)
-      const sections = buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang, aiResult);
+      const sections = buildDeepInspectionSections(enrichedDocs, sanitizedTopic, lang, aiResult, {
+        date: toISODate(today),
+        articleType: 'deep-inspection',
+      });
 
       const langTitles: TitleSet = titles[lang] || titles.en;
       // Enrich English title/subtitle with content-based highlights

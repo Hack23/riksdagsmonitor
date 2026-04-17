@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://riksdagsmonitor.com/schemas/economic-data.schema.json",
+  "title": "Article economic-data.json",
+  "description": "Per-article artefact produced by agentic workflows during the pre-article analysis phase. Bridges World Bank / SCB MCP tool output into the Chart.js-powered 'Economic Context' dashboard emitted by `scripts/data-transformers/content-generators/economic-dashboard-section.ts`. Written to `analysis/daily/YYYY-MM-DD/{analysisSubfolder}/economic-data.json`.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["policyDomains", "dataPoints", "commentary", "source"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Contract version — currently '1.0'.",
+      "default": "1.0"
+    },
+    "articleType": {
+      "type": "string",
+      "description": "Article type slug the context was produced for (e.g. 'committee-reports').",
+      "enum": [
+        "committee-reports",
+        "propositions",
+        "motions",
+        "interpellations",
+        "evening-analysis",
+        "realtime-monitor",
+        "breaking",
+        "week-ahead",
+        "month-ahead",
+        "weekly-review",
+        "monthly-review",
+        "deep-inspection",
+        "article-generator"
+      ]
+    },
+    "date": {
+      "type": "string",
+      "description": "ISO date (YYYY-MM-DD).",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "policyDomains": {
+      "type": "array",
+      "description": "Policy domains detected from the source documents (e.g. 'fiscal policy', 'defence', 'labor market'). Fed to `findIndicatorsForDomains`.",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "dataPoints": {
+      "type": "array",
+      "description": "World Bank data points (may be empty only when `skip` is true).",
+      "items": { "$ref": "#/$defs/economicDataPoint" }
+    },
+    "commentary": {
+      "type": "string",
+      "description": "AI-authored commentary paragraph (2–4 sentences) that cites 2–3 concrete values from `dataPoints`. Rendered as the dashboard section summary.",
+      "minLength": 1
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["worldBank", "scb"],
+      "description": "Attribution sources the workflow actually queried.",
+      "properties": {
+        "worldBank": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "World Bank indicator IDs (e.g. 'NY.GDP.MKTP.KD.ZG')."
+        },
+        "scb": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "SCB table IDs (e.g. 'TAB1291')."
+        }
+      }
+    },
+    "skip": {
+      "type": "boolean",
+      "description": "Set to true only for article types on the exempt allow-list (e.g. pure-process realtime monitor stories). `dataPoints` may be empty when this is true.",
+      "default": false
+    },
+    "skipReason": {
+      "type": "string",
+      "description": "Brief free-form reason when skip=true (required by the validator allow-list)."
+    }
+  },
+  "$defs": {
+    "economicDataPoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["countryCode", "countryName", "indicatorId", "date", "value"],
+      "properties": {
+        "countryCode": {
+          "type": "string",
+          "description": "ISO-3 country code (e.g. 'SWE', 'DNK', 'NOR', 'FIN', 'DEU').",
+          "minLength": 2
+        },
+        "countryName": {
+          "type": "string",
+          "description": "Localized country name for display."
+        },
+        "indicatorId": {
+          "type": "string",
+          "description": "World Bank indicator ID (e.g. 'NY.GDP.MKTP.KD.ZG')."
+        },
+        "date": {
+          "type": "string",
+          "description": "Year or date string (e.g. '2024', '2024-Q1')."
+        },
+        "value": {
+          "type": "number",
+          "description": "Numeric value of the indicator for the country/date."
+        }
+      }
+    }
+  }
+}

@@ -829,6 +829,39 @@ fi
 echo ""
 
 # ============================================================================
+# Check 21: Economic context quality gate (live World Bank / SCB data,
+#   Chart.js canvases, AI commentary). See
+#   scripts/validate-economic-context.ts and
+#   .github/aw/ECONOMIC_DATA_CONTRACT.md.
+# ============================================================================
+echo "📋 Check 21: Economic context (World Bank / SCB data + Chart.js + AI commentary)"
+
+# Opt-out escape hatch for local/pre-agentic runs. When the contract is
+# not yet in force (no `analysis/daily/*/*/economic-data.json`), the
+# validator still runs but reports WARN rather than ERROR so the gate
+# gracefully activates as workflows are migrated.
+# Set SKIP_ECON_GATE=1 to skip entirely (e.g. local dev).
+if [ "${SKIP_ECON_GATE:-0}" = "1" ]; then
+  echo -e "${YELLOW}⚠️ Economic context gate skipped (SKIP_ECON_GATE=1)${NC}"
+  WARNINGS=$((WARNINGS + 1))
+else
+  ECON_LOG="/tmp/validate-economic-context.log"
+  if npx --no-install tsx scripts/validate-economic-context.ts > "$ECON_LOG" 2>&1; then
+    ECON_EXIT=0
+  else
+    ECON_EXIT=$?
+  fi
+  cat "$ECON_LOG"
+  if [ "$ECON_EXIT" -eq 0 ]; then
+    echo -e "${GREEN}✅ Economic context contract satisfied${NC}"
+  else
+    echo -e "${RED}❌ Economic context contract violated — see details above${NC}"
+    ERRORS=$((ERRORS + 1))
+  fi
+fi
+echo ""
+
+# ============================================================================
 # Summary
 # ============================================================================
 echo "================================================================"
