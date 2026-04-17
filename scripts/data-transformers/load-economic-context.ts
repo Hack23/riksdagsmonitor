@@ -117,17 +117,54 @@ export function economicDataPath(
 }
 
 /**
+ * Helpers for the type guard below.
+ */
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+function isStringArray(value: unknown): value is string[] {
+  return Array.isArray(value) && value.every((entry) => typeof entry === 'string');
+}
+
+/**
+ * Type guard for a single `EconomicDataPoint`. Each point drives Chart.js
+ * rendering so a malformed shape here surfaces as a blank/broken chart
+ * downstream — validate aggressively.
+ */
+function isEconomicDataPoint(value: unknown): value is EconomicDataPoint {
+  if (!isRecord(value)) return false;
+  return (
+    typeof value['countryCode'] === 'string' &&
+    typeof value['countryName'] === 'string' &&
+    typeof value['indicatorId'] === 'string' &&
+    typeof value['date'] === 'string' &&
+    typeof value['value'] === 'number' &&
+    Number.isFinite(value['value'])
+  );
+}
+
+/**
  * Type guard for the raw parsed JSON.
+ * Validates both the top-level shape AND the element shapes for
+ * `dataPoints`, `policyDomains`, and `source.*`, plus optional-field
+ * types (`version`, `articleType`, `date`, `skip`, `skipReason`).
  */
 function isEconomicContextFile(value: unknown): value is EconomicContextFile {
-  if (typeof value !== 'object' || value === null) return false;
-  const v = value as Record<string, unknown>;
-  if (!Array.isArray(v['policyDomains'])) return false;
-  if (!Array.isArray(v['dataPoints'])) return false;
+  if (!isRecord(value)) return false;
+  const v = value;
+  if (!isStringArray(v['policyDomains'])) return false;
+  if (!Array.isArray(v['dataPoints']) || !v['dataPoints'].every(isEconomicDataPoint)) return false;
   if (typeof v['commentary'] !== 'string') return false;
-  if (typeof v['source'] !== 'object' || v['source'] === null) return false;
-  const s = v['source'] as Record<string, unknown>;
-  if (!Array.isArray(s['worldBank']) || !Array.isArray(s['scb'])) return false;
+  if (!isRecord(v['source'])) return false;
+  const s = v['source'];
+  if (!isStringArray(s['worldBank']) || !isStringArray(s['scb'])) return false;
+  // Optional fields: present only when typed correctly.
+  if ('version' in v && v['version'] !== undefined && typeof v['version'] !== 'string') return false;
+  if ('articleType' in v && v['articleType'] !== undefined && typeof v['articleType'] !== 'string') return false;
+  if ('date' in v && v['date'] !== undefined && typeof v['date'] !== 'string') return false;
+  if ('skip' in v && v['skip'] !== undefined && typeof v['skip'] !== 'boolean') return false;
+  if ('skipReason' in v && v['skipReason'] !== undefined && typeof v['skipReason'] !== 'string') return false;
   return true;
 }
 

@@ -836,11 +836,13 @@ echo ""
 # ============================================================================
 echo "📋 Check 21: Economic context (World Bank / SCB data + Chart.js + AI commentary)"
 
-# Opt-out escape hatch for local/pre-agentic runs. When the contract is
-# not yet in force (no `analysis/daily/*/*/economic-data.json`), the
-# validator still runs but reports WARN rather than ERROR so the gate
-# gracefully activates as workflows are migrated.
-# Set SKIP_ECON_GATE=1 to skip entirely (e.g. local dev).
+# Opt-out escape hatch for local/pre-agentic runs. The validator is a
+# hard-fail gate: any violation reported by
+# `scripts/validate-economic-context.ts` (missing artefact, placeholder
+# leakage, too-few charts, short commentary, blank-canvas gap, etc.)
+# is promoted to an ERROR and fails the build. There is no WARN mode.
+# Set SKIP_ECON_GATE=1 to skip entirely (e.g. local dev on a branch
+# that has not yet produced `analysis/daily/*/*/economic-data.json`).
 if [ "${SKIP_ECON_GATE:-0}" = "1" ]; then
   echo -e "${YELLOW}⚠️ Economic context gate skipped (SKIP_ECON_GATE=1)${NC}"
   WARNINGS=$((WARNINGS + 1))

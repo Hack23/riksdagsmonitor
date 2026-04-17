@@ -56,7 +56,7 @@ jobs:
           # silently by the validator.
           for delta in 0 1 2 3 4 5 6; do
             D=$(date -u -d "$delta days ago" +%F)
-            if ! npx tsx scripts/validate-economic-context.ts --date "$D" \
+            if ! npx --no-install tsx scripts/validate-economic-context.ts --date "$D" \
                  >> "$VIOLATION_LOG" 2>&1; then
               EXIT=1
             fi

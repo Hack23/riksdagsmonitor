@@ -484,7 +484,12 @@ export function buildArticleVisualizationSections(
         summary: loaded.commentary,
       });
       if (econSection) sections.push(econSection);
-    } else {
+    } else if (!loaded) {
+      // Only fall back to the placeholder path when NO artefact was
+      // loaded. A present-but-empty artefact is an explicit "workflow
+      // fetched nothing back" signal: omit the section entirely so the
+      // validator surfaces a hard error instead of a deceptive bullet
+      // list. See PR #1816 reviewer comment on placeholder-leak.
       const allDomains = collectDetectedDomains(docs, lang);
       if (allDomains.length > 0) {
         const econSection = generateEconomicDashboardSection({
@@ -2158,7 +2163,11 @@ function buildDeepInspectionSections(
       lang,
       summary: loadedEcon.commentary,
     });
-  } else if (detectedDomainList.length > 0) {
+  } else if (!loadedEcon && detectedDomainList.length > 0) {
+    // Only fall back to the domain-only placeholder when NO artefact
+    // was loaded. A present-but-empty artefact must never re-trigger
+    // the placeholder branch — let the validator surface the hard
+    // failure instead. See PR #1816 reviewer comment.
     economicSection = generateEconomicDashboardSection({ policyDomains: detectedDomainList, lang });
   }
 
