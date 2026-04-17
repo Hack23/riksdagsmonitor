@@ -335,10 +335,14 @@ export async function generateBreakingNews(options: BreakingNewsOptions = {}): P
       // Enrich English title/subtitle with content-based highlights
       const enriched = lang === 'en' ? generateDynamicTitle(titles.title, content, eventDocs.length) : titles;
 
-      // Build visualization sections (SWOT, dashboard)
-      const sections = buildArticleVisualizationSections(eventDocs, null, lang);
-      
       const articleDate = today.toISOString().split('T')[0] ?? '';
+
+      // Build visualization sections (SWOT, dashboard)
+      const sections = buildArticleVisualizationSections(eventDocs, null, lang, {
+        date: articleDate,
+        articleType: 'breaking',
+      });
+      
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: enriched.title,

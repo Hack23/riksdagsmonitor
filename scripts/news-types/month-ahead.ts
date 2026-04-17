@@ -223,10 +223,14 @@ export async function generateMonthAhead(options: GenerationOptions = {}): Promi
       // Enrich English title/subtitle with content-based highlights
       const enriched = lang === 'en' ? generateDynamicTitle(titles.title, content, itemCount) : titles;
 
-      // Build visualization sections (SWOT, dashboard, economic)
-      const sections = buildArticleVisualizationSections(documents, null, lang);
-
       const articleDate = today.toISOString().split('T')[0] ?? '';
+
+      // Build visualization sections (SWOT, dashboard, economic)
+      const sections = buildArticleVisualizationSections(documents, null, lang, {
+        date: articleDate,
+        articleType: 'month-ahead',
+      });
+
       const html: string = generateArticleHTML({
         slug: `${slug}-${lang}.html`,
         title: enriched.title,

@@ -295,22 +295,30 @@ export function validateArticle(filePath: string, rootDir: string = process.cwd(
     });
   }
 
-  // Check 5: D3 Sankey requirement for high-level reviews. Enforced
-  // against both the HTML marker and the script tag so the chart can
-  // actually render at runtime.
+  // Check 5: D3 Sankey requirement for high-level reviews. The renderer
+  // ships two equivalent Sankey flavours:
+  //   (a) An inline SVG Sankey section (class="sankey-section") emitted
+  //       by scripts/data-transformers/content-generators/sankey-section.ts
+  //   (b) A `data-d3-sankey=` marker rendered client-side by D3 (requires
+  //       `js/lib/d3.*.min.js` to be loaded)
+  // Either satisfies the coverage rule. When the D3 marker is used, the
+  // matching minified script MUST be loaded or the diagram would not
+  // render.
   if (rule.requiresD3) {
-    if (!/data-d3-sankey=/.test(html)) {
+    const hasD3Marker = /data-d3-sankey=/.test(html);
+    const hasInlineSankeySection = /class="sankey-section"|id="sankey-section"/.test(html);
+    if (!hasD3Marker && !hasInlineSankeySection) {
       violations.push({
         articleFile: filePath,
         articleType,
-        reason: `Article type '${articleType}' requires a D3 Sankey / flow diagram (data-d3-sankey= marker not found)`,
+        reason: `Article type '${articleType}' requires a Sankey / flow diagram (inline class="sankey-section" SVG or data-d3-sankey= marker)`,
       });
     }
-    if (!/<script[^>]+d3\.[^"']+(?:\.min)?\.js/.test(html)) {
+    if (hasD3Marker && !/<script[^>]+d3\.[^"']+\.min\.js/.test(html)) {
       violations.push({
         articleFile: filePath,
         articleType,
-        reason: `Article type '${articleType}' requires D3 but js/lib/d3.*.min.js is not loaded — diagram would not render`,
+        reason: `Article type '${articleType}' uses data-d3-sankey= but js/lib/d3.*.min.js is not loaded — diagram would not render`,
       });
     }
   }

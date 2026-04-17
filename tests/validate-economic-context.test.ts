@@ -313,10 +313,10 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
     expect(v.filter((x) => x.reason.includes('footer attribution'))).toHaveLength(0);
   });
 
-  it('fails weekly-review when D3 Sankey marker/script is missing', () => {
+  it('fails weekly-review when neither inline sankey-section nor D3 marker is present', () => {
     fs.mkdirSync(path.join(tmp, 'analysis', 'daily', '2026-04-17', 'weekly-review'), { recursive: true });
     const articlePath = path.join(tmp, 'news', '2026-04-17-weekly-review-en.html');
-    // Enough charts + attribution + chart runtime, but NO D3
+    // Enough charts + attribution + chart runtime, but no Sankey at all
     fs.writeFileSync(articlePath, `<html><body>
       <canvas data-chart-config='{"type":"bar"}'></canvas>
       <canvas data-chart-config='{"type":"line"}'></canvas>
@@ -337,8 +337,63 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
       source: { worldBank: ['NY.GDP.MKTP.KD.ZG'], scb: [] },
     }));
     const v = validateArticle(articlePath, tmp);
-    expect(v.some((x) => x.reason.includes('data-d3-sankey'))).toBe(true);
+    expect(v.some((x) => x.reason.includes('Sankey'))).toBe(true);
+  });
+
+  it('fails weekly-review when D3 marker is used but d3.*.min.js is not loaded', () => {
+    fs.mkdirSync(path.join(tmp, 'analysis', 'daily', '2026-04-17', 'weekly-review'), { recursive: true });
+    const articlePath = path.join(tmp, 'news', '2026-04-17-weekly-review-en.html');
+    // Non-minified d3.js must not satisfy the check — contract is explicit about .min.js
+    fs.writeFileSync(articlePath, `<html><body>
+      <canvas data-chart-config='{"type":"bar"}'></canvas>
+      <canvas data-chart-config='{"type":"line"}'></canvas>
+      <canvas data-chart-config='{"type":"radar"}'></canvas>
+      <div data-d3-sankey='{"nodes":[],"flows":[]}'></div>
+      <footer>Data by World Bank</footer>
+      <script src="../js/lib/chart.umd.4.4.1.js"></script>
+      <script src="../js/chart-init.js"></script>
+      <script src="../js/lib/d3.7.9.0.js"></script>
+    </body></html>`);
+    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-17', 'weekly-review', 'economic-data.json');
+    fs.writeFileSync(jsonPath, JSON.stringify({
+      policyDomains: ['fiscal policy'],
+      dataPoints: [
+        { countryCode: 'SWE', countryName: 'Sweden', indicatorId: 'NY.GDP.MKTP.KD.ZG', date: '2024', value: 0.82 },
+      ],
+      commentary: 'Sweden posted 0.82% GDP growth in 2024 compared with Denmark at 1.75%, Norway at 1.1%, Finland at 0.3%, and Germany at 0.1%, keeping Stockholm in the middle of the Nordic league. The weekly review frames the committee debate on fiscal consolidation because tax revenue projections for the coming budget cycle had assumed a 1.4% baseline, and the 0.6-point miss now forces uncomfortable trade-offs between defence and welfare spending. Opposition motions push back on exactly this framing, arguing that the comparison with Denmark and Germany is misleading because the two economies face different export structures and different inflation regimes. Inflation of 2.8% in Sweden partially closes that gap but FiU cannot avoid difficult prioritisation choices.',
+      source: { worldBank: ['NY.GDP.MKTP.KD.ZG'], scb: [] },
+    }));
+    const v = validateArticle(articlePath, tmp);
     expect(v.some((x) => x.reason.includes('d3.*.min.js'))).toBe(true);
+  });
+
+  it('passes weekly-review when inline sankey-section SVG is present (no D3 script required)', () => {
+    // The renderer ships an inline SVG Sankey today
+    // (scripts/data-transformers/content-generators/sankey-section.ts).
+    // That satisfies requiresD3 without needing the D3 runtime.
+    fs.mkdirSync(path.join(tmp, 'analysis', 'daily', '2026-04-17', 'weekly-review'), { recursive: true });
+    const articlePath = path.join(tmp, 'news', '2026-04-17-weekly-review-en.html');
+    fs.writeFileSync(articlePath, `<html><body>
+      <canvas data-chart-config='{"type":"bar"}'></canvas>
+      <canvas data-chart-config='{"type":"line"}'></canvas>
+      <canvas data-chart-config='{"type":"radar"}'></canvas>
+      <section class="sankey-section" id="sankey-section"><svg></svg></section>
+      <footer>Data by World Bank</footer>
+      <script src="../js/lib/chart.umd.4.4.1.js"></script>
+      <script src="../js/chart-init.js"></script>
+    </body></html>`);
+    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-17', 'weekly-review', 'economic-data.json');
+    fs.writeFileSync(jsonPath, JSON.stringify({
+      policyDomains: ['fiscal policy', 'defence'],
+      dataPoints: [
+        { countryCode: 'SWE', countryName: 'Sweden',  indicatorId: 'NY.GDP.MKTP.KD.ZG', date: '2024', value: 0.82 },
+        { countryCode: 'DNK', countryName: 'Denmark', indicatorId: 'NY.GDP.MKTP.KD.ZG', date: '2024', value: 1.75 },
+      ],
+      commentary: 'Sweden posted 0.82% GDP growth in 2024 compared with Denmark at 1.75%, Norway at 1.1%, Finland at 0.3%, and Germany at 0.1%, keeping Stockholm in the middle of the Nordic league. The weekly review frames the committee debate on fiscal consolidation because tax revenue projections for the coming budget cycle had assumed a 1.4% baseline, and the 0.6-point miss now forces uncomfortable trade-offs between defence and welfare spending. Opposition motions push back on exactly this framing, arguing that the comparison with Denmark and Germany is misleading because the two economies face different export structures and different inflation regimes. Inflation of 2.8% in Sweden, down from 8.5% in 2023, partially closes that gap but the weekly review concludes that the budget markup in FiU cannot avoid difficult prioritisation choices going into the autumn. Committee rapporteurs from both blocs have indicated that the defence envelope will be protected even if welfare transfers are trimmed at the margin, and the coalition government appears prepared to absorb the political cost of that trade-off ahead of the 2026 autumn budget round.',
+      source: { worldBank: ['NY.GDP.MKTP.KD.ZG'], scb: [] },
+    }));
+    const v = validateArticle(articlePath, tmp);
+    expect(v).toEqual([]);
   });
 
   it('passes weekly-review when D3 Sankey marker + script are present', () => {
