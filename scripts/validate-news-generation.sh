@@ -877,13 +877,8 @@ for f in news/*-en.html; do
   [ -f "$f" ] || continue
   case "$f" in news/index*.html) continue ;; esac
 
-  # Extract date prefix
+  # Extract YYYY-MM-DD prefix from the filename; fall back to mtime.
   base=$(basename "$f")
-  file_date_prefix="${base%%-committee-reports-en.html}"
-  file_date_prefix="${file_date_prefix%%-government-propositions-en.html}"
-  file_date_prefix="${file_date_prefix%%-opposition-motions-en.html}"
-  file_date_prefix="${file_date_prefix%%-interpellation-debates-en.html}"
-  # Generic: first 10 chars are YYYY-MM-DD
   dprefix="${base:0:10}"
   if [[ "$dprefix" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
     file_epoch=$(date -d "$dprefix" +%s 2>/dev/null || echo 0)

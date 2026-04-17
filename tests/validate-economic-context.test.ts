@@ -175,7 +175,9 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
     fs.writeFileSync(jsonPath, JSON.stringify({
       policyDomains: ['fiscal policy'],
       dataPoints: [],
-      commentary: 'Sweden'.repeat(60),
+      // Long-enough realistic commentary so the empty-dataPoints check is
+      // what trips the validator, not the word-count check.
+      commentary: 'Sweden GDP growth decelerated to 0.82% in 2024 while Denmark posted 1.75% and Norway 1.1%, keeping Stockholm at the Nordic bottom for a second year running. The committee debate is framed by this slowdown because tax revenue projections had assumed a 1.4% baseline; the 0.6-point miss forces trade-offs between defence and welfare spending.',
       source: { worldBank: [], scb: [] },
     }));
     const v = validateArticle(articlePath, tmp);
