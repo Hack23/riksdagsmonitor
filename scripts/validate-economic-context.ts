@@ -218,6 +218,27 @@ export function validateArticle(filePath: string, rootDir: string = process.cwd(
     });
   }
 
+  // Check 2b: If the article emits any `data-chart-config` canvases, the
+  // HTML MUST also load the Chart.js runtime (chart.umd.*.js) and the
+  // generic initializer (chart-init.js). Without them canvases render
+  // blank in the browser. See scripts/article-template/template.ts.
+  if (chartCount > 0) {
+    if (!/<script[^>]+chart\.umd\.[^"']+\.js/.test(html)) {
+      violations.push({
+        articleFile: filePath,
+        articleType,
+        reason: 'Article has data-chart-config canvases but does not load js/lib/chart.umd.*.js — charts would render blank',
+      });
+    }
+    if (!/<script[^>]+chart-init\.js/.test(html)) {
+      violations.push({
+        articleFile: filePath,
+        articleType,
+        reason: 'Article has data-chart-config canvases but does not load js/chart-init.js — charts would never be instantiated',
+      });
+    }
+  }
+
   // Check 3: economic-data.json completeness
   if (!ctx) {
     violations.push({

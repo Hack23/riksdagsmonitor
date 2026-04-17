@@ -142,6 +142,8 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
       <canvas data-chart-config='{"type":"bar"}'></canvas>
       <canvas data-chart-config='{"type":"line"}'></canvas>
       <footer>Data by World Bank Open Data API</footer>
+      <script src="../js/lib/chart.umd.4.4.1.js"></script>
+      <script src="../js/chart-init.js"></script>
     </body></html>`;
     fs.writeFileSync(articlePath, html);
 
@@ -170,6 +172,8 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
       <canvas data-chart-config='{"type":"bar"}'></canvas>
       <canvas data-chart-config='{"type":"line"}'></canvas>
       <footer>Data by World Bank</footer>
+      <script src="../js/lib/chart.umd.4.4.1.js"></script>
+      <script src="../js/chart-init.js"></script>
     </body></html>`);
     const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-17', 'committeeReports', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
@@ -190,6 +194,8 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
       <canvas data-chart-config='{"type":"bar"}'></canvas>
       <canvas data-chart-config='{"type":"line"}'></canvas>
       <footer>Data by World Bank</footer>
+      <script src="../js/lib/chart.umd.4.4.1.js"></script>
+      <script src="../js/chart-init.js"></script>
     </body></html>`);
     const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-17', 'committeeReports', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
@@ -202,6 +208,50 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
     }));
     const v = validateArticle(articlePath, tmp);
     expect(v.some(x => x.reason.includes('commentary too short'))).toBe(true);
+  });
+
+  it('fails when canvases exist but Chart.js runtime is not loaded (blank-canvas gap)', () => {
+    const articlePath = path.join(tmp, 'news', '2026-04-17-committee-reports-en.html');
+    fs.writeFileSync(articlePath, `<html><body>
+      <canvas data-chart-config='{"type":"bar"}'></canvas>
+      <canvas data-chart-config='{"type":"line"}'></canvas>
+      <footer>Data by World Bank</footer>
+      <!-- intentionally no chart.umd or chart-init scripts -->
+    </body></html>`);
+    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-17', 'committeeReports', 'economic-data.json');
+    fs.writeFileSync(jsonPath, JSON.stringify({
+      policyDomains: ['fiscal policy'],
+      dataPoints: [
+        { countryCode: 'SWE', countryName: 'Sweden', indicatorId: 'NY.GDP.MKTP.KD.ZG', date: '2024', value: 0.82 },
+      ],
+      commentary: 'Sweden posted 0.82% GDP growth in 2024 compared with Denmark at 1.75% and Norway at 1.1%, keeping Stockholm at the bottom of the Nordic league for a second consecutive year. This underperformance frames the committee debate on fiscal consolidation because tax revenue projections had assumed a 1.4% baseline; the 0.6-point miss now forces trade-offs between defence and welfare spending.',
+      source: { worldBank: ['NY.GDP.MKTP.KD.ZG'], scb: [] },
+    }));
+    const v = validateArticle(articlePath, tmp);
+    expect(v.some(x => x.reason.includes('chart.umd.*.js'))).toBe(true);
+    expect(v.some(x => x.reason.includes('chart-init.js'))).toBe(true);
+  });
+
+  it('fails when canvases exist and chart.umd is loaded but chart-init is missing', () => {
+    const articlePath = path.join(tmp, 'news', '2026-04-17-committee-reports-en.html');
+    fs.writeFileSync(articlePath, `<html><body>
+      <canvas data-chart-config='{"type":"bar"}'></canvas>
+      <canvas data-chart-config='{"type":"line"}'></canvas>
+      <footer>Data by World Bank</footer>
+      <script src="../js/lib/chart.umd.4.4.1.js"></script>
+    </body></html>`);
+    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-17', 'committeeReports', 'economic-data.json');
+    fs.writeFileSync(jsonPath, JSON.stringify({
+      policyDomains: ['fiscal policy'],
+      dataPoints: [
+        { countryCode: 'SWE', countryName: 'Sweden', indicatorId: 'NY.GDP.MKTP.KD.ZG', date: '2024', value: 0.82 },
+      ],
+      commentary: 'Sweden posted 0.82% GDP growth in 2024 compared with Denmark at 1.75% and Norway at 1.1%, keeping Stockholm at the bottom of the Nordic league for a second consecutive year. This underperformance frames the committee debate on fiscal consolidation because tax revenue projections had assumed a 1.4% baseline; the 0.6-point miss now forces trade-offs between defence and welfare spending.',
+      source: { worldBank: ['NY.GDP.MKTP.KD.ZG'], scb: [] },
+    }));
+    const v = validateArticle(articlePath, tmp);
+    expect(v.some(x => x.reason.includes('chart-init.js'))).toBe(true);
+    expect(v.some(x => x.reason.includes('chart.umd.*.js'))).toBe(false);
   });
 
   it('fails when skip=true is used on a non-exempt article type', () => {

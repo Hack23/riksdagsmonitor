@@ -187,6 +187,33 @@ workflows MUST NOT use skip as a shortcut to avoid fetching data.
 
 ---
 
+## Client-side rendering — what the agent does NOT need to write
+
+The article template (`scripts/article-template/template.ts`) now
+**auto-injects** the Chart.js runtime and a generic initializer
+whenever the assembled article HTML contains at least one
+`data-chart-config=` canvas:
+
+- `<script src="../js/lib/chart.umd.4.4.1.js"></script>` — Chart.js 4
+- `<script src="../js/lib/chartjs-plugin-annotation.3.0.1.min.js">` — injected when any config uses `"annotations"` / `"annotation"`
+- `<script src="../js/chart-init.js"></script>` — scans `[data-chart-config]` canvases on DOMContentLoaded and calls `new Chart(ctx, cfg)` for each
+- `<script src="../js/lib/d3.7.9.0.min.js"></script>` — injected when any section uses `data-d3-sankey=`
+
+Consequences for the AI agent writing article prose:
+
+- **DO** append dashboard sections via `generateEconomicDashboardSection()` / `generateDashboardSection()` — the emitted `<canvas data-chart-config="…">` nodes are enough; scripts are added automatically.
+- **DO NOT** hand-roll inline `<script src="/js/lib/chart.umd.*.js">` followed by `<script>new Chart(…)</script>` — the bespoke pattern still works but duplicates the runtime and can double-render the same canvas.
+- **DO NOT** reference `chart-init.js` manually; template.ts will include it when (and only when) a canvas requires it.
+
+All five vendor libraries (`chart.umd.4.4.1.js`, the annotation plugin,
+`d3.7.9.0.min.js`, `papaparse.5.5.3.min.js`,
+`chartjs-adapter-date-fns.3.0.0.bundle.min.js`) ship from
+`js/lib/` → `dist/js/lib/` → S3 via `.github/workflows/deploy-s3.yml`
+step "Copy JS libraries to build output" — no deployment change is
+required per article.
+
+---
+
 ## Writing `economic-data.json` — workflow Step 2.6
 
 ```bash
