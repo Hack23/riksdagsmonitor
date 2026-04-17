@@ -15,6 +15,19 @@ license: Apache-2.0
 
 This skill ensures all code, documentation, and configurations comply with Hack23's Information Security Management System (ISMS) aligned with ISO 27001:2022, NIST CSF 2.0, and CIS Controls v8.1.
 
+### 📘 Primary Reference — Information Security Policy
+
+The **master ISMS document** is the [Information Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md). It defines:
+
+- **ISMS scope** — all Hack23 information assets, systems, people, facilities, suppliers
+- **Roles & responsibilities** — CEO, CISO, Data Protection Officer, Security Champions, all staff
+- **Risk management framework** — risk identification → analysis → evaluation → treatment → monitoring (ISO 27005 aligned)
+- **Continuous improvement** — annual policy review, internal audit, management review, corrective actions
+- **Legal & regulatory baseline** — ISO 27001:2022, NIST CSF 2.0, CIS v8.1, GDPR, NIS2, EU CRA, Schrems II
+- **Accountability & enforcement** — non-compliance is cause for corrective action up to contract termination
+
+**Every other ISMS document derives authority from and must remain consistent with the Information Security Policy.**
+
 ## Strategic Principles
 
 ### 1. Security by Design

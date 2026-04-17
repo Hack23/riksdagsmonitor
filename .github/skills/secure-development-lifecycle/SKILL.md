@@ -15,6 +15,15 @@ license: Apache-2.0
 
 Comprehensive security practices for the entire Software Development Lifecycle (SDLC), ensuring security is built in from inception through maintenance. Integrates classification-driven requirements, AI-augmented development controls, and systematic testing frameworks aligned with Hack23 Secure Development Policy.
 
+### 🔗 Governance chain
+
+Authority flows from the [Information Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) (master ISMS document) → [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) (SDLC requirements) → this skill (operational implementation in this repository).
+
+Directly relevant companion policies:
+- [Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) — every dependency introduced during SDLC must be licence-cleared and tracked in SBOM
+- [AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) — Copilot and agent-generated code require human review and DCO sign-off
+- [Threat Modeling](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) · [Vulnerability Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) · [Change Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md) · [Access Control](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md) · [Cryptography](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md) · [Incident Response](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md) · [Security Metrics](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Security_Metrics.md) · [CLASSIFICATION](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
+
 ## 🔐 Core Security Principles
 
 ### 🔐 Security by Design

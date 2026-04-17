@@ -371,14 +371,31 @@ Use this comprehensive checklist before ANY deployment:
 ## 📚 Authoritative References
 
 - **Primary Policy:** [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
+- **Governance umbrella:** [Information Security Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) — sets scope, roles, risk management and accountability for everything below
 - **Related Policies:**
-  - [Threat Modeling](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md)
-  - [Vulnerability Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md)
-  - [Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)
-  - [Change Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md)
-  - [Incident Response Plan](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md)
-  - [Security Metrics](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Security_Metrics.md)
+  - [Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) — licensing, SBOM, supply-chain rules (applies to every dependency added during SDLC)
+  - [AI Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) — AI-assisted development, human-in-the-loop, agent-activity logging
+  - [Threat Modeling](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md) — STRIDE/MITRE ATT&CK integrated into Phase 1–2
+  - [Vulnerability Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) — SLAs: Critical 24h / High 7d / Medium 30d / Low 90d (drives Phase 4–5)
+  - [Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) — CIA triad & RTO/RPO drive required controls per phase
+  - [Change Management](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md) — Normal / Standard / Emergency change process for every deployment
+  - [Incident Response Plan](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md) — SDLC feedback loop on post-incident lessons learned
+  - [Access Control Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md) — least privilege in CI/CD, GitHub, deployment environments
+  - [Cryptography Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md) — TLS 1.3, approved algorithms, key management
+  - [Security Metrics](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Security_Metrics.md) — KPIs (MTTD, MTTR, vuln-SLA, audit-finding closure)
 - **Standards:** [STYLE_GUIDE.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md)
+
+### Policy Interaction Map (SDLC phase ↔ policies)
+| SDLC Phase | Primary Policies |
+|------------|------------------|
+| 📋 Planning & Design | Info Sec · Classification · Threat Modeling · AI Policy |
+| 💻 Development | Secure Dev · Open Source · AI Policy · Access Control |
+| 🧪 Testing | Secure Dev · Vulnerability Management · Threat Modeling |
+| 🚀 Deployment | Change Management · Access Control · Cryptography |
+| 🔧 Operations | Vulnerability Management · Incident Response · Security Metrics |
+
+### Framework Mapping
+Every SDLC control maps to **ISO 27001:2022 Annex A** (A.5, A.8.25–A.8.34), **NIST CSF 2.0** (GOVERN, PROTECT, DETECT), **CIS Controls v8.1** (IG1 #16 Application Software Security, IG2 #7 Vulnerability Management), **GDPR** (Art. 25 privacy-by-design), **NIS2** (supply-chain & incident reporting), **EU CRA** (secure-by-design for software products).
 
 ---
 

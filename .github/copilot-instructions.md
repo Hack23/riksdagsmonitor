@@ -68,6 +68,28 @@
 - Least privilege permissions, CodeQL + Dependabot + secret scanning
 - HTTPS-only, CSP/HSTS headers, SRI for CDN assets
 
+### 🔐 Applicable Hack23 ISMS Policies (always consult)
+
+Authority flows from the **master** [Information_Security_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Information_Security_Policy.md) which defines ISMS scope, roles (CEO/CISO/DPO/Security Champions), risk management, continuous improvement, and accountability. All other policies derive authority from it:
+
+| Lifecycle Stage | Primary Policies |
+|-----------------|------------------|
+| Planning & classification | [CLASSIFICATION.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md), [Threat_Modeling.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Threat_Modeling.md), [AI_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/AI_Policy.md) |
+| Secure SDLC | [Secure_Development_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md), [Open_Source_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md) |
+| Operational controls | [Access_Control_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Access_Control_Policy.md), [Cryptography_Policy.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Cryptography_Policy.md), [Change_Management.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Change_Management.md) |
+| Vulnerability & incidents | [Vulnerability_Management.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Vulnerability_Management.md) (SLAs: Crit 24h / High 7d / Med 30d / Low 90d), [Incident_Response_Plan.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Incident_Response_Plan.md) |
+| Measurement | [Security_Metrics.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Security_Metrics.md), [STYLE_GUIDE.md](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md) |
+
+**Mandatory checks before committing code:**
+- Classification impact — does this change the CIA triad / RTO / RPO rating? Update `CLASSIFICATION.md` if yes.
+- Threat surface — new inputs, dependencies, or trust boundaries? Update `THREAT_MODEL.md` per `Threat_Modeling.md`.
+- Open-source compliance — new dependency licences approved per `Open_Source_Policy.md`? SBOM updated?
+- Vulnerabilities — CodeQL and Dependabot clean? Critical/High must be remediated within SLA.
+- Change type — Normal / Standard / Emergency per `Change_Management.md`; CEO approval required for Normal changes to `.github/agents/*`, `.github/copilot-mcp*.json`, and `copilot-setup-steps.yml`.
+- AI attribution — AI-assisted code requires human review and DCO sign-off per `AI_Policy.md`.
+
+Map every security-relevant control to **ISO 27001:2022 Annex A**, **NIST CSF 2.0**, **CIS Controls v8.1**, **GDPR**, **NIS2**, **EU CRA**.
+
 ## 📐 Quality Standards
 
 - HTML: Zero HTMLHint errors
