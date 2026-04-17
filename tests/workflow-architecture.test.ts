@@ -210,24 +210,63 @@ describe('Workflow Architecture', () => {
       'news-translate.md',
     ];
 
+    /**
+     * Extract the YAML frontmatter block from a workflow .md file
+     * (everything between the opening and closing `---` markers).
+     */
+    const extractFrontmatter = (content: string): string => {
+      const lines = content.split('\n');
+      const start = lines.indexOf('---');
+      if (start === -1) return '';
+      for (let i = start + 1; i < lines.length; i++) {
+        if (lines[i]?.trim() === '---') return lines.slice(start + 1, i).join('\n');
+      }
+      return '';
+    };
+
+    /**
+     * Parse `safe-outputs.max-patch-size` (direct child, 2-space indent)
+     * from a frontmatter YAML string. Ignores nested occurrences such as
+     * `tools.repo-memory.max-patch-size` or `safe-outputs.create-pull-request.max-patch-size`
+     * which do not affect the create_pull_request limit. Allows an optional
+     * trailing YAML comment (`# note`).
+     */
+    const parseSafeOutputsMaxPatchSize = (frontmatter: string): number | null => {
+      const lines = frontmatter.split('\n');
+      let inSafeOutputs = false;
+      for (const line of lines) {
+        if (/^safe-outputs\s*:/.test(line)) {
+          inSafeOutputs = true;
+          continue;
+        }
+        if (inSafeOutputs) {
+          // Leaving safe-outputs when a new top-level key appears (no indent).
+          if (/^[A-Za-z_-][^\s:]*\s*:/.test(line)) return null;
+          // Direct child (exactly 2-space indent), with optional trailing comment.
+          const direct = line.match(/^ {2}max-patch-size\s*:\s*(\d+)\s*(?:#.*)?$/);
+          if (direct) return parseInt(direct[1]!, 10);
+        }
+      }
+      return null;
+    };
+
     for (const workflowFile of allNewsWorkflows) {
       const filepath = path.join(WORKFLOWS_DIR, workflowFile);
       expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
-      const content = fs.readFileSync(filepath, 'utf-8');
-
-      // Must have a `max-patch-size` line indented with exactly two spaces (safe-outputs scope),
-      // sibling to `create-pull-request:`. Four-space indent is the `tools.repo-memory` scope
-      // and does not affect the create_pull_request limit.
-      const match = content.match(/^  max-patch-size:\s*(\d+)\s*$/m);
+      const frontmatter = extractFrontmatter(fs.readFileSync(filepath, 'utf-8'));
       expect(
-        match,
-        `Workflow ${workflowFile} must define safe-outputs max-patch-size (2-space indent) to override the 1024 KB default`
-      ).not.toBeNull();
+        frontmatter.length,
+        `Workflow ${workflowFile} should have YAML frontmatter`
+      ).toBeGreaterThan(0);
 
-      const value = parseInt(match![1]!, 10);
+      const value = parseSafeOutputsMaxPatchSize(frontmatter);
       expect(
         value,
-        `Workflow ${workflowFile} safe-outputs max-patch-size (${value} KB) must exceed the 1024 KB gh-aw default`
+        `Workflow ${workflowFile} must define safe-outputs.max-patch-size as a direct child (2-space indent) to override the 1024 KB default`
+      ).not.toBeNull();
+      expect(
+        value!,
+        `Workflow ${workflowFile} safe-outputs.max-patch-size (${value} KB) must exceed the 1024 KB gh-aw default`
       ).toBeGreaterThan(1024);
     }
   });
