@@ -196,6 +196,81 @@ describe('Workflow Architecture', () => {
     }
   });
 
+  it('all news workflows should configure safe-outputs max-patch-size above the 1024 KB default', () => {
+    // Regression for News Realtime Monitor failure (run 24541191332): a 1301 KB patch
+    // was rejected because the default `max-patch-size` is 1024 KB. All news workflows
+    // generate comparably large multi-file patches, so each must raise the limit.
+    // gh-aw accepts `max-patch-size` at the top of the `safe-outputs` block
+    // (sibling of `create-pull-request`), not nested inside it.
+    const allNewsWorkflows = [
+      ...Object.values(ARTICLE_TYPE_WORKFLOWS),
+      'news-evening-analysis.md',
+      'news-realtime-monitor.md',
+      'news-article-generator.md',
+      'news-translate.md',
+    ];
+
+    /**
+     * Extract the YAML frontmatter block from a workflow .md file
+     * (everything between the opening and closing `---` markers).
+     */
+    const extractFrontmatter = (content: string): string => {
+      const lines = content.split('\n');
+      const start = lines.indexOf('---');
+      if (start === -1) return '';
+      for (let i = start + 1; i < lines.length; i++) {
+        if (lines[i]?.trim() === '---') return lines.slice(start + 1, i).join('\n');
+      }
+      return '';
+    };
+
+    /**
+     * Parse `safe-outputs.max-patch-size` (direct child, 2-space indent)
+     * from a frontmatter YAML string. Ignores nested occurrences such as
+     * `tools.repo-memory.max-patch-size` or `safe-outputs.create-pull-request.max-patch-size`
+     * which do not affect the create_pull_request limit. Allows an optional
+     * trailing YAML comment (`# note`).
+     */
+    const parseSafeOutputsMaxPatchSize = (frontmatter: string): number | null => {
+      const lines = frontmatter.split('\n');
+      let inSafeOutputs = false;
+      for (const line of lines) {
+        if (/^safe-outputs\s*:/.test(line)) {
+          inSafeOutputs = true;
+          continue;
+        }
+        if (inSafeOutputs) {
+          // Leaving safe-outputs when a new top-level key appears (no indent).
+          if (/^[A-Za-z_-][^\s:]*\s*:/.test(line)) return null;
+          // Direct child (exactly 2-space indent), with optional trailing comment.
+          const direct = line.match(/^ {2}max-patch-size\s*:\s*(\d+)\s*(?:#.*)?$/);
+          if (direct) return parseInt(direct[1]!, 10);
+        }
+      }
+      return null;
+    };
+
+    for (const workflowFile of allNewsWorkflows) {
+      const filepath = path.join(WORKFLOWS_DIR, workflowFile);
+      expect(fs.existsSync(filepath), `Workflow file ${filepath} should exist`).toBe(true);
+      const frontmatter = extractFrontmatter(fs.readFileSync(filepath, 'utf-8'));
+      expect(
+        frontmatter.length,
+        `Workflow ${workflowFile} should have YAML frontmatter`
+      ).toBeGreaterThan(0);
+
+      const value = parseSafeOutputsMaxPatchSize(frontmatter);
+      expect(
+        value,
+        `Workflow ${workflowFile} must define safe-outputs.max-patch-size as a direct child (2-space indent) to override the 1024 KB default`
+      ).not.toBeNull();
+      expect(
+        value!,
+        `Workflow ${workflowFile} safe-outputs.max-patch-size (${value} KB) must exceed the 1024 KB gh-aw default`
+      ).toBeGreaterThan(1024);
+    }
+  });
+
   it('should have safe PR creation how-to in all workflows', () => {
     const allWorkflows = [
       ...Object.values(ARTICLE_TYPE_WORKFLOWS),
