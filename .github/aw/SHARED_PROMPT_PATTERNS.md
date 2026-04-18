@@ -28,13 +28,13 @@ test -s analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md \
 
 ## 🔴 UNIVERSAL PRE-ARTICLE GATE — "Read ALL Analysis Before Writing Any Article"
 
-> 🚨 **ABSOLUTE RULE — applies to all 12 workflows**: No article of any type may be written until the agent has **read every analysis file** produced for that run. This guarantees every claim in the article maps to a finding in the dossier, and prevents the "shallow first draft" anti-pattern.
+> 🚨 **ABSOLUTE RULE — shared template for all 12 news workflows**: No article of any type may be written until the agent has **read every analysis file** produced for that run. This gate lives here as the canonical template; each workflow that generates articles MUST paste the snippet below into its prompt (and recompile its `.lock.yml`) so the gate runs inline before any article HTML is emitted. This guarantees every claim in the article maps to a finding in the dossier, and prevents the "shallow first draft" anti-pattern.
 
 ```bash
 # 🔴 MANDATORY GATE — run BEFORE generating article HTML content
 # Fails the run if analysis files are not present or not read.
 #
-# AWF-COMPLIANT: uses find -exec + temp files + `read`/redirection instead of
+# AWF-COMPLIANT: uses `find … | sort > tempfile` + `read`/redirection instead of
 # $(...) command substitution. Safe to paste into a runtime `bash` tool call.
 
 ANALYSIS_BASE="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"

@@ -505,7 +505,7 @@ export function generateAnalysisReferencesHtml(options: AnalysisReferencesOption
     const { documentFiles } = result;
     if (documentFiles.length > 0) {
       // Render an explicit list of every per-document analysis file so readers can
-      // open individual dokumenter directly — not just the documents/ folder.
+      // open individual documents directly — not just the documents/ folder.
       const docItems = documentFiles.map(df => {
         const rawLabel = df.replace(/\.md$/, '').replace(/-/g, ' ');
         const label = escapeHtml(rawLabel);
