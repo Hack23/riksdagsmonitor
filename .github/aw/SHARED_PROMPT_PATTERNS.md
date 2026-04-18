@@ -3798,6 +3798,17 @@ fi
 
 > **📁 Per-document analyses**: When `documents/` subdirectory exists, the script now renders **each per-document `.md` file as an individual `<li>`** (not just a folder link). Manually-authored sections MUST follow the same pattern — list every per-document file explicitly.
 
+> 🚨 **CANONICAL URL FORMAT — NO RELATIVE PATHS**: Every `href` to an analysis `.md` file **MUST** use the absolute GitHub blob URL `https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/…`. **Relative paths** such as `href="../analysis/…"`, `href="../../analysis/…"`, or `href="analysis/…"` are **FORBIDDEN** in any article — they resolve to raw `.md` URLs under `riksdagsmonitor.com/` that do not render. This is enforced by:
+>
+> 1. `scripts/data-transformers/content-generators/ai-marker-helpers.ts` banned-pattern `relativeAnalysisHref` (validated by `scripts/check-banned-patterns.ts` in every content workflow).
+> 2. `scripts/fix-analysis-references.ts --rewrite`, which detects and replaces any analysis-references section containing relative hrefs (regardless of whether the target file exists on disk).
+>
+> **Bad**: `<a href="../analysis/daily/2026-04-18/realtime-1705/README.md">` — served as `https://riksdagsmonitor.com/analysis/daily/2026-04-18/realtime-1705/README.md` → raw markdown / 404.
+>
+> **Good**: `<a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/realtime-1705/README.md">` — renders on GitHub.
+>
+> Canonical exemplar with correct URLs: `news/2026-04-18-weekly-review-en.html`.
+
 ```html
 <section class="analysis-references" aria-label="Analysis sources and methodology">
   <h2>📊 Analysis &amp; Sources</h2>

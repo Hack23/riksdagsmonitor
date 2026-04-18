@@ -187,18 +187,124 @@ function hasBrokenAnalysisLinks(html: string): boolean {
     }
   }
 
-  // Match relative paths: href="../analysis/daily/..." or href="analysis/daily/..."
-  const relativeBlobRegex = /href="(?:\.\.\/)*?(analysis\/daily\/[^"]+\.md)"/g;
-  while ((match = relativeBlobRegex.exec(section)) !== null) {
-    const filePath = match[1];
-    if (!isFileAtRoot(filePath)) {
-      return true; // At least one relative link target is not a file
-    }
+  // Match relative paths: href="../analysis/..." or href="analysis/..." (any
+  // depth and any subdirectory under analysis/, including methodologies/).
+  // Relative hrefs to analysis files are ALWAYS treated as broken format,
+  // even when the target exists on disk, because these articles are served
+  // from GitHub Pages / riksdagsmonitor.com where relative `.md` paths
+  // resolve to raw-markdown URLs that do not render. The canonical form is
+  // `https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/...` (see
+  // .github/aw/SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES
+  // and the exemplar news/2026-04-18-weekly-review-en.html).
+  const relativeAnalysisRegex = /href="(?:\.\.?\/)+analysis\/[^"]+"/;
+  if (relativeAnalysisRegex.test(section)) {
+    return true;
+  }
+  const bareRelativeAnalysisRegex = /href="analysis\/[^"]+"/;
+  if (bareRelativeAnalysisRegex.test(section)) {
+    return true;
   }
 
   // If the section exists but has no analysis links at all, it's likely a placeholder
   // Don't treat it as broken — it may be a legitimately empty section
   return false;
+}
+
+/** GitHub blob base URL for canonical analysis file links. */
+const GITHUB_BLOB_BASE = 'https://github.com/Hack23/riksdagsmonitor/blob/main';
+
+/** GitHub tree base URL for canonical analysis directory links. */
+const GITHUB_TREE_BASE = 'https://github.com/Hack23/riksdagsmonitor/tree/main';
+
+/**
+ * Rewrite relative `href="(…/)?analysis/…"` attributes to canonical GitHub
+ * blob/tree URLs across the ENTIRE HTML document, preserving all surrounding
+ * markup (headings, labels, emoji, descriptions, prose). This is the preferred,
+ * minimally-destructive fix when the only issue is URL format — it keeps
+ * hand-curated labels and in-line commentary intact.
+ *
+ * Returns `{ html, changed }` where `changed` is true if at least one href was
+ * rewritten. When `changed` is false, returns the input unmodified.
+ *
+ * Transforms applied:
+ *   - `href="../analysis/…/foo.md"`           → `href="${GITHUB_BLOB_BASE}/analysis/…/foo.md"`
+ *   - `href="../../analysis/…/foo.md"`        → `href="${GITHUB_BLOB_BASE}/analysis/…/foo.md"`
+ *   - `href="analysis/daily/…/foo.md"`        → `href="${GITHUB_BLOB_BASE}/analysis/daily/…/foo.md"`
+ *   - `href="../analysis/…/subdir/"`          → `href="${GITHUB_TREE_BASE}/analysis/…/subdir/"`
+ *   - `href="https://…/tree/main/<path>.md"`  → `href="${GITHUB_BLOB_BASE}/<path>.md"` (tree → blob
+ *     correction: GitHub's `tree/` URLs 404 for files — only directories render)
+ *
+ * Applies to both the `<section class="analysis-references">` section AND any
+ * prose-embedded analysis links elsewhere in the article body.
+ */
+function rewriteRelativeAnalysisLinksInSection(
+  html: string,
+): { html: string; changed: boolean } {
+  let out = html;
+  let changed = false;
+
+  // Rewrite relative hrefs (../ or ../../ prefixes) pointing to analysis/…
+  out = out.replace(
+    /href="(?:\.\.?\/)+analysis\/([^"]+)"/g,
+    (_m, rest: string) => {
+      changed = true;
+      // Heuristic: paths ending in a file extension (`.md`, `.json`, …) are
+      // blob links; trailing slash or no extension means a directory (tree).
+      const isDir = rest.endsWith('/') || !/\.[a-z0-9]+$/i.test(rest);
+      const base = isDir ? GITHUB_TREE_BASE : GITHUB_BLOB_BASE;
+      return `href="${base}/analysis/${rest}"`;
+    },
+  );
+  // Rewrite bare relative hrefs (no ./ or ../ prefix) pointing to analysis/…
+  out = out.replace(
+    /href="analysis\/([^"]+)"/g,
+    (_m, rest: string) => {
+      changed = true;
+      const isDir = rest.endsWith('/') || !/\.[a-z0-9]+$/i.test(rest);
+      const base = isDir ? GITHUB_TREE_BASE : GITHUB_BLOB_BASE;
+      return `href="${base}/analysis/${rest}"`;
+    },
+  );
+  // Correct mis-typed `tree/main/<path>.md` → `blob/main/<path>.md`. GitHub's
+  // `tree/` URLs 404 for files (only directories render); all `.md`/file links
+  // must use the `blob/main/` prefix. Observed in articles prior to this fix
+  // (e.g. news/2026-04-16-breaking-1244-*.html).
+  out = out.replace(
+    /href="https:\/\/github\.com\/Hack23\/riksdagsmonitor\/tree\/main\/(analysis\/[^"]+\.[a-z0-9]+)"/gi,
+    (_m, rest: string) => {
+      changed = true;
+      return `href="${GITHUB_BLOB_BASE}/${rest}"`;
+    },
+  );
+
+  return { html: out, changed };
+}
+
+/**
+ * Check whether every analysis file/dir still referenced by (non-relative)
+ * canonical GitHub URLs inside the analysis-references section resolves to a
+ * real file/directory on disk. Used after {@link rewriteRelativeAnalysisLinksInSection}
+ * to decide whether the in-place rewrite is sufficient or a full regeneration
+ * is required.
+ */
+function allCanonicalLinksResolve(html: string): boolean {
+  const sectionStart = html.indexOf('class="analysis-references"');
+  if (sectionStart === -1) return true;
+  const sectionEnd = html.indexOf('</section>', sectionStart);
+  if (sectionEnd === -1) return true;
+  const section = html.slice(sectionStart, sectionEnd);
+
+  const blobRegex = /href="https:\/\/github\.com\/Hack23\/riksdagsmonitor\/blob\/main\/(analysis\/[^"]+\.[a-z0-9]+)"/gi;
+  let m: RegExpExecArray | null;
+  while ((m = blobRegex.exec(section)) !== null) {
+    if (!isFileAtRoot(m[1])) return false;
+  }
+  const treeRegex = /href="https:\/\/github\.com\/Hack23\/riksdagsmonitor\/tree\/main\/(analysis\/[^"]+)"/gi;
+  while ((m = treeRegex.exec(section)) !== null) {
+    const dirPath = m[1].replace(/\/$/, '');
+    if (!isDirectoryAtRoot(dirPath)) return false;
+  }
+  return true;
 }
 
 /**
@@ -326,6 +432,22 @@ function main(): void {
 
     let html = fs.readFileSync(info.filepath, 'utf-8');
 
+    // Universal pass (only under --rewrite): rewrite relative analysis hrefs
+    // (and tree→blob mistakes for file URLs) anywhere in the article. This
+    // fixes prose-embedded links even when the analysis-references section
+    // itself has valid URLs. Only writes the file if something actually
+    // changed.
+    if (rewrite) {
+      const universal = rewriteRelativeAnalysisLinksInSection(html);
+      if (universal.changed) {
+        html = universal.html;
+        if (!dryRun) {
+          fs.writeFileSync(info.filepath, html, 'utf-8');
+        }
+        console.log(`  🧹 ${dryRun ? 'Would normalize' : 'Normalized'} relative analysis hrefs: ${filename}`);
+      }
+    }
+
     const alreadyExists = hasAnalysisReferences(html);
 
     // --rewrite mode: detect and replace sections with broken links
@@ -333,7 +455,24 @@ function main(): void {
       const broken = hasBrokenAnalysisLinks(html);
       if (broken) {
         brokenDetected++;
-        // Remove broken section and regenerate from filesystem scan
+
+        // Preferred path: minimally-destructive in-place URL rewrite.
+        // Converts relative `href="../analysis/…"` to canonical GitHub URLs
+        // while preserving hand-curated labels, emoji, and descriptions.
+        // Only accept this path if ALL resulting canonical URLs point to
+        // real files/directories on disk — otherwise fall back to full
+        // regeneration below.
+        const inPlace = rewriteRelativeAnalysisLinksInSection(html);
+        if (inPlace.changed && allCanonicalLinksResolve(inPlace.html)) {
+          if (!dryRun) {
+            fs.writeFileSync(info.filepath, inPlace.html, 'utf-8');
+          }
+          rewritten++;
+          console.log(`  🔧 ${dryRun ? 'Would rewrite (in-place URL fix)' : 'Rewrote (in-place URL fix)'}: ${filename}`);
+          continue;
+        }
+
+        // Fallback: remove broken section and regenerate from filesystem scan
         html = removeAnalysisReferences(html);
         const referencesHtml = generateAnalysisReferencesHtml({
           date: info.date,
@@ -347,7 +486,7 @@ function main(): void {
               fs.writeFileSync(info.filepath, modified, 'utf-8');
             }
             rewritten++;
-            console.log(`  🔧 ${dryRun ? 'Would rewrite' : 'Rewrote'} broken analysis references: ${filename}`);
+            console.log(`  🔧 ${dryRun ? 'Would rewrite' : 'Rewrote'} broken analysis references (full regenerate): ${filename}`);
             continue;
           }
         }
@@ -443,6 +582,8 @@ export {
   hasCrossReferences,
   removeAnalysisReferences,
   injectAnalysisReferences,
+  rewriteRelativeAnalysisLinksInSection,
+  allCanonicalLinksResolve,
   FILENAME_SLUG_TO_ARTICLE_TYPE,
 };
 export type { ArticleInfo };
