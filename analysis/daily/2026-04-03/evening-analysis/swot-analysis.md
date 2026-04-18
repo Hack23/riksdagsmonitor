@@ -95,14 +95,14 @@ graph TB
         OO["🔵 O: Constitutional arguments<br/>Energy policy critique"]
         OT["🟡 T: Security narrative dominance<br/>Obstructionist risk"]
     end
-    style GS fill:#28a745,color:#fff
-    style GW fill:#dc3545,color:#fff
-    style GO fill:#0d6efd,color:#fff
-    style GT fill:#ffc107,color:#000
-    style OS fill:#28a745,color:#fff
-    style OW fill:#dc3545,color:#fff
-    style OO fill:#0d6efd,color:#fff
-    style OT fill:#ffc107,color:#000
+    style GS fill:#4CAF50,color:#FFFFFF
+    style GW fill:#D32F2F,color:#FFFFFF
+    style GO fill:#1565C0,color:#FFFFFF
+    style GT fill:#FFC107,color:#000000
+    style OS fill:#4CAF50,color:#FFFFFF
+    style OW fill:#D32F2F,color:#FFFFFF
+    style OO fill:#1565C0,color:#FFFFFF
+    style OT fill:#FFC107,color:#000000
 ```
 
 ## Section 5: Cross-SWOT Interference

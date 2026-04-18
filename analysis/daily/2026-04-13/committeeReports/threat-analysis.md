@@ -40,8 +40,8 @@ graph TD
     C --> C1["Detention/enforcement<br/>expansion 🟡 MEDIUM"]
     D --> D1["Climate targets<br/>reframing 🟡 MEDIUM"]
     E --> E1["EU asylum pact<br/>conflict 🟡 MEDIUM"]
-    style B1 fill:#ff8800,color:#fff
-    style C1 fill:#ffcc00,color:#000
-    style D1 fill:#ffcc00,color:#000
-    style E1 fill:#ffcc00,color:#000
+    style B1 fill:#F57C00,color:#FFFFFF
+    style C1 fill:#FFC107,color:#000000
+    style D1 fill:#FFC107,color:#000000
+    style E1 fill:#FFC107,color:#000000
 ```

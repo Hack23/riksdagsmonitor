@@ -27,11 +27,11 @@ graph LR
             S4["HD01JuU15: 4/10<br/>Corrections"]
         end
     end
-    style S7 fill:#dc3545,stroke:#333,color:#fff
-    style S6a fill:#fd7e14,stroke:#333,color:#fff
-    style S6b fill:#fd7e14,stroke:#333,color:#fff
-    style S5 fill:#ffc107,stroke:#333,color:#000
-    style S4 fill:#28a745,stroke:#333,color:#fff
+    style S7 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style S6a fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style S6b fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style S5 fill:#FFC107,stroke:#424242,color:#000000
+    style S4 fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 ---

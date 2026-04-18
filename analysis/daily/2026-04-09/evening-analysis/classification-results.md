@@ -16,11 +16,11 @@ graph TD
     D -->|No| F{"Migration/Social<br/>Policy?"}
     F -->|Yes| G["🟡 MODERATE Sensitivity<br/>HD01SfU16 Migration, HD024073/74 Youth Crime"]
     F -->|No| H["🟢 STANDARD Sensitivity<br/>HD01TU15 Transport, HD01CU23 Rural, HD01UbU31 Ethics, HD01FöU8 Personnel"]
-    style C fill:#dc3545,color:#fff
-    style E fill:#fd7e14,color:#fff
-    style G fill:#ffc107,color:#000
-    style H fill:#28a745,color:#fff
-    style A fill:#0d6efd,color:#fff
+    style C fill:#D32F2F,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style G fill:#FFC107,color:#000000
+    style H fill:#4CAF50,color:#FFFFFF
+    style A fill:#1565C0,color:#FFFFFF
 ```
 
 ## 📊 Per-Document Classification

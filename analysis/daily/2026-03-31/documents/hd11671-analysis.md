@@ -37,15 +37,15 @@ graph LR
     A --> G{Government Vulnerability}
     G --> H[Arbetsmiljöverket Failure]
     G --> I[L Minister Responsibility]
-    style A fill:#ffc107,stroke:#333,color:#000
-    style B fill:#dc3545,stroke:#333,color:#fff
-    style E fill:#0d6efd,stroke:#333,color:#fff
-    style G fill:#dc3545,stroke:#333,color:#fff
-    style C fill:#dc3545,stroke:#333,color:#fff
-    style D fill:#fd7e14,stroke:#333,color:#000
-    style F fill:#0d6efd,stroke:#333,color:#fff
-    style H fill:#dc3545,stroke:#333,color:#fff
-    style I fill:#fd7e14,stroke:#333,color:#000
+    style A fill:#FFC107,stroke:#424242,color:#000000
+    style B fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style E fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style G fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style C fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style D fill:#FF9800,stroke:#424242,color:#000000
+    style F fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style H fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style I fill:#FF9800,stroke:#424242,color:#000000
 ```
 
 | Attribute | Value |

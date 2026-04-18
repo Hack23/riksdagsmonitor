@@ -27,21 +27,21 @@ graph TD
     T5 --> T5a["Rural voter<br/>alienation HD03230"]
     T6 --> T6a["Defence privatisation<br/>oversight HD11690"]
 
-    style ROOT fill:#dc3545,color:#fff
-    style T1 fill:#fd7e14,color:#fff
-    style T2 fill:#ffc107,color:#000
-    style T3 fill:#ffc107,color:#000
-    style T4 fill:#28a745,color:#fff
-    style T5 fill:#ffc107,color:#000
-    style T6 fill:#0d6efd,color:#fff
-    style T1a fill:#fd7e14,color:#fff
-    style T2a fill:#ffc107,color:#000
-    style T2b fill:#ffc107,color:#000
-    style T3a fill:#ffc107,color:#000
-    style T3b fill:#ffc107,color:#000
-    style T4a fill:#28a745,color:#fff
-    style T5a fill:#ffc107,color:#000
-    style T6a fill:#0d6efd,color:#fff
+    style ROOT fill:#D32F2F,color:#FFFFFF
+    style T1 fill:#FF9800,color:#FFFFFF
+    style T2 fill:#FFC107,color:#000000
+    style T3 fill:#FFC107,color:#000000
+    style T4 fill:#4CAF50,color:#FFFFFF
+    style T5 fill:#FFC107,color:#000000
+    style T6 fill:#1565C0,color:#FFFFFF
+    style T1a fill:#FF9800,color:#FFFFFF
+    style T2a fill:#FFC107,color:#000000
+    style T2b fill:#FFC107,color:#000000
+    style T3a fill:#FFC107,color:#000000
+    style T3b fill:#FFC107,color:#000000
+    style T4a fill:#4CAF50,color:#FFFFFF
+    style T5a fill:#FFC107,color:#000000
+    style T6a fill:#1565C0,color:#FFFFFF
 ```
 
 ## 📋 Threat Assessment Matrix

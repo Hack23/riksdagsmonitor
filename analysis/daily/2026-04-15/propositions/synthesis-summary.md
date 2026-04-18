@@ -60,14 +60,14 @@ graph TD
     D[HD03237<br/>Paid Police Education] -->|security policy| E[HD03233<br/>Anti-Fraud Rules]
     F[HD03243<br/>Tonnage Tax] -->|maritime synergy| G[HD03234<br/>Municipal Ports]
     H[HD03245<br/>Violence Strategy] -.->|social policy| D
-    style A fill:#ff6b6b,color:#fff
-    style B fill:#ffa726,color:#fff
-    style C fill:#ffa726,color:#fff
-    style D fill:#42a5f5,color:#fff
-    style E fill:#66bb6a,color:#fff
-    style F fill:#ab47bc,color:#fff
-    style G fill:#ab47bc,color:#fff
-    style H fill:#ef5350,color:#fff
+    style A fill:#EF5350,color:#FFFFFF
+    style B fill:#FF9800,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#42a5f5,color:#FFFFFF
+    style E fill:#66bb6a,color:#FFFFFF
+    style F fill:#ab47bc,color:#FFFFFF
+    style G fill:#ab47bc,color:#FFFFFF
+    style H fill:#ef5350,color:#FFFFFF
 ```
 
 ## Implications

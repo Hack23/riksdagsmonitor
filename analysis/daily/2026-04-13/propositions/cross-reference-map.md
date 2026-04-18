@@ -30,11 +30,11 @@ flowchart TD
     C -.->|"Fiscal impact"| A
     F -.->|"Framework compliance"| A
 
-    style A fill:#dc3545,color:#fff
-    style B fill:#ffc107,color:#000
-    style C fill:#ffc107,color:#000
-    style G fill:#0d6efd,color:#fff
-    style I fill:#0d6efd,color:#fff
+    style A fill:#D32F2F,color:#FFFFFF
+    style B fill:#FFC107,color:#000000
+    style C fill:#FFC107,color:#000000
+    style G fill:#1565C0,color:#FFFFFF
+    style I fill:#1565C0,color:#FFFFFF
 ```
 
 ## Key Relationships

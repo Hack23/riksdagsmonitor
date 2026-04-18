@@ -33,10 +33,10 @@ graph TD
     C --> F["Drone Defense Innovation"]
     D --> G["Capability Gap Assessment"]
     E --> H["Question to Defense Minister"]
-    style A fill:#ffc107,stroke:#333,color:#000
-    style B fill:#dc3545,stroke:#333,color:#fff
-    style C fill:#fd7e14,stroke:#333,color:#fff
-    style D fill:#0d6efd,stroke:#333,color:#fff
+    style A fill:#FFC107,stroke:#424242,color:#000000
+    style B fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style C fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style D fill:#1565C0,stroke:#424242,color:#FFFFFF
 ```
 
 ---

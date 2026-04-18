@@ -183,8 +183,8 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact + Entry
     "quadrant2Fill": "#D32F2F",
     "quadrant3Fill": "#1565C0",
     "quadrant4Fill": "#FF9800",
-    "quadrantTitleFill": "#ffffff",
-    "quadrantPointFill": "#ffffff",
+    "quadrantTitleFill": "#FFFFFF",
+    "quadrantPointFill": "#FFFFFF",
     "quadrantPointTextFill": "#000000",
     "quadrantXAxisTextFill": "#000000",
     "quadrantYAxisTextFill": "#000000"

@@ -31,14 +31,14 @@ graph TD
         MED["📺 Media/Public Opinion<br/>Impact: MODERATE<br/>Defense narrative prominent"]
     end
 
-    style CIT fill:#ffc107,stroke:#333,color:#000
-    style GOV fill:#28a745,stroke:#333,color:#fff
-    style OPP fill:#fd7e14,stroke:#333,color:#000
-    style BIZ fill:#ffc107,stroke:#333,color:#000
-    style CIV fill:#ffc107,stroke:#333,color:#000
-    style INT fill:#28a745,stroke:#333,color:#fff
-    style JUD fill:#6c757d,stroke:#333,color:#fff
-    style MED fill:#ffc107,stroke:#333,color:#000
+    style CIT fill:#FFC107,stroke:#424242,color:#000000
+    style GOV fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style OPP fill:#FF9800,stroke:#424242,color:#000000
+    style BIZ fill:#FFC107,stroke:#424242,color:#000000
+    style CIV fill:#FFC107,stroke:#424242,color:#000000
+    style INT fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style JUD fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style MED fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 ---

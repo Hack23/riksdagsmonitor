@@ -21,9 +21,9 @@ graph LR
     B --> D["Self-determination<br/>Principle"]
     C --> D
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style B fill:#17a2b8,stroke:#333,color:#fff
-    style C fill:#dc3545,stroke:#333,color:#fff
-    style D fill:#6c757d,stroke:#333,color:#fff
+    style B fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style C fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style D fill:#9E9E9E,stroke:#424242,color:#FFFFFF
 ```
 
 ## SWOT Analysis

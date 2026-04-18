@@ -114,8 +114,8 @@ graph LR
     "quadrant2Fill": "#2E7D32",
     "quadrant3Fill": "#D32F2F",
     "quadrant4Fill": "#1565C0",
-    "quadrantTitleFill": "#ffffff",
-    "quadrantPointFill": "#ffffff",
+    "quadrantTitleFill": "#FFFFFF",
+    "quadrantPointFill": "#FFFFFF",
     "quadrantPointTextFill": "#000000",
     "quadrantXAxisTextFill": "#000000",
     "quadrantYAxisTextFill": "#000000"

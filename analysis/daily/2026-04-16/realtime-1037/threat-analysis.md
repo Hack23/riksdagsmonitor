@@ -16,12 +16,12 @@ graph TD
     T4["RR Climate Report"] -->|"Provides evidence"| T1
     T5["EU Regulations"] -->|"Creates tension"| T6["Forestry Policy"]
     T6 -->|"Feeds"| T2
-    style T1 fill:#ffc107,color:#000
-    style T2 fill:#fd7e14,color:#fff
-    style T3 fill:#dc3545,color:#fff
-    style T4 fill:#ffc107,color:#000
-    style T5 fill:#0d6efd,color:#fff
-    style T6 fill:#ffc107,color:#000
+    style T1 fill:#FFC107,color:#000000
+    style T2 fill:#FF9800,color:#FFFFFF
+    style T3 fill:#D32F2F,color:#FFFFFF
+    style T4 fill:#FFC107,color:#000000
+    style T5 fill:#1565C0,color:#FFFFFF
+    style T6 fill:#FFC107,color:#000000
 ```
 
 ## Active Threats

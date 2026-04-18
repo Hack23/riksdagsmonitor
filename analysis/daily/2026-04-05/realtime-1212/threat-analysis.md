@@ -27,10 +27,10 @@ graph TD
     LI -->|"constrains"| AC
     TR -->|"pressures"| LI
 
-    style LI fill:#ffc107,stroke:#333,stroke-width:2px,color:#000
-    style AC fill:#28a745,stroke:#333,stroke-width:2px,color:#fff
-    style TR fill:#ffc107,stroke:#333,stroke-width:2px,color:#000
-    style DP fill:#28a745,stroke:#333,stroke-width:2px,color:#fff
+    style LI fill:#FFC107,stroke:#424242,stroke-width:2px,color:#000000
+    style AC fill:#4CAF50,stroke:#424242,stroke-width:2px,color:#FFFFFF
+    style TR fill:#FFC107,stroke:#424242,stroke-width:2px,color:#000000
+    style DP fill:#4CAF50,stroke:#424242,stroke-width:2px,color:#FFFFFF
 ```
 
 ---

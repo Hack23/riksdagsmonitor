@@ -23,13 +23,13 @@ flowchart TD
     KU38 --> KU29["KU29<br/>Public Admin<br/>2026-03-26"]
     KU38 --> KU30["KU30<br/>Constitutional Questions<br/>2026-03-26"]
     
-    style MJU30 fill:#00d9ff,color:#000
-    style KU38 fill:#ffbe0b,color:#000
-    style MJU13 fill:#e0e0e0,color:#000
-    style MJU15 fill:#e0e0e0,color:#000
-    style KU31 fill:#e0e0e0,color:#000
-    style KU29 fill:#e0e0e0,color:#000
-    style KU30 fill:#e0e0e0,color:#000
+    style MJU30 fill:#00d9ff,color:#000000
+    style KU38 fill:#ffbe0b,color:#000000
+    style MJU13 fill:#e0e0e0,color:#000000
+    style MJU15 fill:#e0e0e0,color:#000000
+    style KU31 fill:#e0e0e0,color:#000000
+    style KU29 fill:#e0e0e0,color:#000000
+    style KU30 fill:#e0e0e0,color:#000000
 ```
 
 ## Cross-References

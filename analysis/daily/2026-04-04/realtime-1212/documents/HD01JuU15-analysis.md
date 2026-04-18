@@ -66,14 +66,14 @@ graph TD
         D --> G["Recidivism<br/>Reduction Target"]
         A --> H["HD03235<br/>Deportation Link"]
     end
-    style A fill:#0A66C2,stroke:#333,color:#fff
-    style B fill:#dc3545,stroke:#333,color:#fff
-    style C fill:#ffc107,stroke:#333,color:#000
-    style D fill:#28a745,stroke:#333,color:#fff
-    style E fill:#fd7e14,stroke:#333,color:#fff
-    style F fill:#dc3545,stroke:#333,color:#fff
-    style G fill:#28a745,stroke:#333,color:#fff
-    style H fill:#0A66C2,stroke:#333,color:#fff
+    style A fill:#0A66C2,stroke:#424242,color:#FFFFFF
+    style B fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style C fill:#FFC107,stroke:#424242,color:#000000
+    style D fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style E fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style F fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style G fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style H fill:#0A66C2,stroke:#424242,color:#FFFFFF
 ```
 
 ---

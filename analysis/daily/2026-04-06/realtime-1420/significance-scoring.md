@@ -26,9 +26,9 @@ graph LR
         LOW["🟢 LOW (1-3)<br/>3 documents"]
     end
 
-    style HIGH fill:#fd7e14,stroke:#333,color:#000
-    style MED fill:#ffc107,stroke:#333,color:#000
-    style LOW fill:#28a745,stroke:#333,color:#fff
+    style HIGH fill:#FF9800,stroke:#424242,color:#000000
+    style MED fill:#FFC107,stroke:#424242,color:#000000
+    style LOW fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 ---

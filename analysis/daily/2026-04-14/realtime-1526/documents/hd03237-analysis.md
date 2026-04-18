@@ -26,10 +26,10 @@ graph TD
     B -->|"Consequence"| F["Low polistäthet<br/>(police density)"]
     C -->|"Related"| G["Prop 218: Dubbla straff"]
     C -->|"Related"| H["Prop 217: Tjänstemannaansvar"]
-    style A fill:#ffd93d,color:#000
-    style B fill:#ff6b6b,color:#fff
-    style C fill:#4d96ff,color:#fff
-    style D fill:#6bcb77,color:#fff
+    style A fill:#FFC107,color:#000000
+    style B fill:#EF5350,color:#FFFFFF
+    style C fill:#2196F3,color:#FFFFFF
+    style D fill:#81C784,color:#FFFFFF
 ```
 
 ## 6-Lens Analysis

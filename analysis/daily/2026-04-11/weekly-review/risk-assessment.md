@@ -37,16 +37,16 @@ graph TD
             LR2["🟢 R10: Parliamentary Passage<br/>Government majority intact<br/>L:1 × I:3 = 3/25"]
         end
     end
-    style HR1 fill:#dc3545,color:#fff
-    style HR2 fill:#dc3545,color:#fff
-    style HR3 fill:#dc3545,color:#fff
-    style MR1 fill:#ffc107,color:#000
-    style MR2 fill:#ffc107,color:#000
-    style MR3 fill:#ffc107,color:#000
-    style MR4 fill:#ffc107,color:#000
-    style MR5 fill:#ffc107,color:#000
-    style LR1 fill:#28a745,color:#fff
-    style LR2 fill:#28a745,color:#fff
+    style HR1 fill:#D32F2F,color:#FFFFFF
+    style HR2 fill:#D32F2F,color:#FFFFFF
+    style HR3 fill:#D32F2F,color:#FFFFFF
+    style MR1 fill:#FFC107,color:#000000
+    style MR2 fill:#FFC107,color:#000000
+    style MR3 fill:#FFC107,color:#000000
+    style MR4 fill:#FFC107,color:#000000
+    style MR5 fill:#FFC107,color:#000000
+    style LR1 fill:#4CAF50,color:#FFFFFF
+    style LR2 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Consolidated Risk Matrix

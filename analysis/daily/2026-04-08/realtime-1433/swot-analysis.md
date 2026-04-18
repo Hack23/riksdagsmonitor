@@ -27,9 +27,9 @@ graph TD
         S3["S3: Transparency Initiative<br/>Lobby register<br/>lagrådsremiss delivered<br/>🟢 Evidence: HD11693 context"]
     end
 
-    style S1 fill:#28a745,color:#fff
-    style S2 fill:#28a745,color:#fff
-    style S3 fill:#28a745,color:#fff
+    style S1 fill:#4CAF50,color:#FFFFFF
+    style S2 fill:#4CAF50,color:#FFFFFF
+    style S3 fill:#4CAF50,color:#FFFFFF
 ```
 
 | ID | Strength | Evidence | Confidence | Impact |
@@ -50,9 +50,9 @@ graph TD
         W3["W3: EV Policy Equity<br/>EV premium accessibility<br/>questioned by V<br/>🟡 Evidence: HD11688"]
     end
 
-    style W1 fill:#fd7e14,color:#fff
-    style W2 fill:#ffc107,color:#000
-    style W3 fill:#ffc107,color:#000
+    style W1 fill:#FF9800,color:#FFFFFF
+    style W2 fill:#FFC107,color:#000000
+    style W3 fill:#FFC107,color:#000000
 ```
 
 | ID | Weakness | Evidence | Confidence | Impact |
@@ -82,9 +82,9 @@ graph TD
         T3["T3: SD Foreign Policy<br/>Wiechel on Chechnya status<br/>and defense trust assignments<br/>🟡 Evidence: HD11691, HD11694"]
     end
 
-    style T1 fill:#dc3545,color:#fff
-    style T2 fill:#ffc107,color:#000
-    style T3 fill:#ffc107,color:#000
+    style T1 fill:#D32F2F,color:#FFFFFF
+    style T2 fill:#FFC107,color:#000000
+    style T3 fill:#FFC107,color:#000000
 ```
 
 | ID | Threat | Evidence | Confidence | Severity |
@@ -106,10 +106,10 @@ graph LR
         WT["WT (Mini-Mini)<br/>Fast-track reserve police (W2)<br/>to neutralize SD defense<br/>preparedness critique (T1)"]
     end
 
-    style SO fill:#28a745,color:#fff
-    style WO fill:#0d6efd,color:#fff
-    style ST fill:#fd7e14,color:#fff
-    style WT fill:#dc3545,color:#fff
+    style SO fill:#4CAF50,color:#FFFFFF
+    style WO fill:#1565C0,color:#FFFFFF
+    style ST fill:#FF9800,color:#FFFFFF
+    style WT fill:#D32F2F,color:#FFFFFF
 ```
 
 | Strategy | SWOT Intersection | Action |

@@ -25,10 +25,10 @@ graph TD
         HD10430 -->|"same SD strategy"| HD10429
         PROP133 -->|"response to"| QURAN
     end
-    style HD10429 fill:#0d6efd,color:#fff
-    style HD10430 fill:#dc3545,color:#fff
-    style PROP133 fill:#ffc107,color:#000
-    style QURAN fill:#6c757d,color:#fff
+    style HD10429 fill:#1565C0,color:#FFFFFF
+    style HD10430 fill:#D32F2F,color:#FFFFFF
+    style PROP133 fill:#FFC107,color:#000000
+    style QURAN fill:#9E9E9E,color:#FFFFFF
 ```
 
 | Source | Target | Relationship | Evidence |

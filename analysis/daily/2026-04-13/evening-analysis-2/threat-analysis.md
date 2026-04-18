@@ -32,12 +32,12 @@ graph TD
             DS1["DS-1: Personnel readiness gap<br/>FöU8 — 98 motions rejected<br/>NATO structure requirements<br/>Severity: 3/5"]
         end
     end
-    style AC1 fill:#fd7e14,stroke:#333,color:#fff
-    style AC2 fill:#ffc107,stroke:#333,color:#000
-    style NI1 fill:#fd7e14,stroke:#333,color:#fff
-    style NI2 fill:#fd7e14,stroke:#333,color:#fff
-    style FP1 fill:#ffc107,stroke:#333,color:#000
-    style DS1 fill:#fd7e14,stroke:#333,color:#fff
+    style AC1 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style AC2 fill:#FFC107,stroke:#424242,color:#000000
+    style NI1 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style NI2 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style FP1 fill:#FFC107,stroke:#424242,color:#000000
+    style DS1 fill:#FF9800,stroke:#424242,color:#FFFFFF
 ```
 
 ## 📋 Threat Register

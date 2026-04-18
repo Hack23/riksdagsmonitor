@@ -56,7 +56,7 @@ graph LR
     MP -->|"mot. 4072"| P226
     style MP fill:#83CF5B
     style V fill:#DA291C
-    style C fill:#009933
+    style C fill:#2E7D32
     style S fill:#E8112D
 ```
 

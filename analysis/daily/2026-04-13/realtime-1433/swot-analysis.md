@@ -61,12 +61,12 @@ graph TD
         O --> |"HD01UFöU3"| NATO["NATO Alliance Signal"]
         T --> |"HD03100"| Opp["Opposition Budget Challenge"]
     end
-    style S fill:#28a745,stroke:#333,color:#fff
-    style W fill:#ffc107,stroke:#333,color:#000
-    style O fill:#17a2b8,stroke:#333,color:#fff
-    style T fill:#dc3545,stroke:#333,color:#fff
-    style Core fill:#28a745,stroke:#333,color:#fff
-    style Climate fill:#ffc107,stroke:#333,color:#000
-    style NATO fill:#17a2b8,stroke:#333,color:#fff
-    style Opp fill:#dc3545,stroke:#333,color:#fff
+    style S fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style W fill:#FFC107,stroke:#424242,color:#000000
+    style O fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style T fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style Core fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style Climate fill:#FFC107,stroke:#424242,color:#000000
+    style NATO fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style Opp fill:#D32F2F,stroke:#424242,color:#FFFFFF
 ```

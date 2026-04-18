@@ -48,7 +48,7 @@ Follow-up Questions"]:::yellow
     C -->|"Overdue"| F["Parliamentary Censure Risk
 Election Vulnerability"]:::red
 
-    classDef green fill:#6bcb77,stroke:#333
-    classDef yellow fill:#ffd93d,stroke:#333
-    classDef red fill:#ff6b6b,stroke:#333
+    classDef green fill:#81C784,stroke:#424242
+    classDef yellow fill:#FFC107,stroke:#424242
+    classDef red fill:#EF5350,stroke:#424242
 ```

@@ -37,12 +37,12 @@ graph TD
         K --> L["🌡️ 7/10 — Migration<br/>top voter concern"]
     end
 
-    style C fill:#dc3545,color:#fff
-    style D fill:#fd7e14,color:#fff
-    style F fill:#ffc107,color:#000
-    style H fill:#ffc107,color:#000
-    style J fill:#0d6efd,color:#fff
-    style L fill:#fd7e14,color:#fff
+    style C fill:#D32F2F,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style F fill:#FFC107,color:#000000
+    style H fill:#FFC107,color:#000000
+    style J fill:#1565C0,color:#FFFFFF
+    style L fill:#FF9800,color:#FFFFFF
 ```
 
 ---

@@ -117,10 +117,10 @@ flowchart TD
     R6 --> R8["✅ LEAD: Spring Fiscal Trilogy<br/>📜 CO-LEAD: KU33"]
     R7 --> R8
 
-    style Q fill:#0d6efd,color:#fff
-    style R3 fill:#fd7e14,color:#fff
-    style R6 fill:#dc3545,color:#fff
-    style R8 fill:#28a745,color:#fff
+    style Q fill:#1565C0,color:#FFFFFF
+    style R3 fill:#FF9800,color:#FFFFFF
+    style R6 fill:#D32F2F,color:#FFFFFF
+    style R8 fill:#4CAF50,color:#FFFFFF
 ```
 
 **Reasoning chain** `[VERY HIGH]`:

@@ -19,11 +19,11 @@ graph LR
     HD03214 --- |"Defence cluster"| HD03228
     HD03235 --- |"Election strategy"| HD03216["HD03216<br/>Healthcare<br/>⭐ 6/10"]
     
-    style HD03235 fill:#dc3545,color:#fff
-    style HD03214 fill:#ff6b35,color:#fff
-    style HD03228 fill:#ff6b35,color:#fff
-    style HD03216 fill:#ffc107,color:#000
-    style HD03114 fill:#ffc107,color:#000
+    style HD03235 fill:#D32F2F,color:#FFFFFF
+    style HD03214 fill:#FF5722,color:#FFFFFF
+    style HD03228 fill:#FF5722,color:#FFFFFF
+    style HD03216 fill:#FFC107,color:#000000
+    style HD03114 fill:#FFC107,color:#000000
 ```
 
 ## Cross-References

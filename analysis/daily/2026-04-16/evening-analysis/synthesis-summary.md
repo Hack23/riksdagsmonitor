@@ -110,9 +110,9 @@ flowchart TD
     SKU23 --> |"Chamber vote"| Plenary["Plenary Decision"]
     V1 --> SfU["SfU"]
     V2 --> UU
-    style P246 fill:#ff4444,color:#fff
-    style SKU23 fill:#00cc66,color:#fff
-    style V1 fill:#cc0000,color:#fff
+    style P246 fill:#EF5350,color:#FFFFFF
+    style SKU23 fill:#00cc66,color:#FFFFFF
+    style V1 fill:#cc0000,color:#FFFFFF
 ```
 
 ## Forward Indicators

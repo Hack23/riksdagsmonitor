@@ -24,12 +24,12 @@ graph TD
             SENS["SENSITIVE (2)<br>HD10430, HD11684"]
         end
     end
-    style SKR fill:#17a2b8,stroke:#0c5460,color:#fff
-    style MOT fill:#28a745,stroke:#155724,color:#fff
-    style FR fill:#6c757d,stroke:#343a40,color:#fff
-    style IP fill:#ffc107,stroke:#856404,color:#000
-    style PUB fill:#28a745,stroke:#155724,color:#fff
-    style SENS fill:#ffc107,stroke:#856404,color:#000
+    style SKR fill:#0097A7,stroke:#006064,color:#FFFFFF
+    style MOT fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style FR fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style IP fill:#FFC107,stroke:#F57C00,color:#000000
+    style PUB fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style SENS fill:#FFC107,stroke:#F57C00,color:#000000
 ```
 
 ## Detailed Classification

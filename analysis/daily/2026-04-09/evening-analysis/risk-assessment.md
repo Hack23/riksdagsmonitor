@@ -17,12 +17,12 @@ graph TD
         R5["🟢 Coalition Stability<br/>L:2 × I:2 = 4<br/>Unified government front"]
         R6["🟡 Budget/Fiscal<br/>L:3 × I:3 = 9<br/>NATO + criminal justice costs"]
     end
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#ffc107,color:#000
-    style R5 fill:#28a745,color:#fff
-    style R6 fill:#ffc107,color:#000
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style R6 fill:#FFC107,color:#000000
 ```
 
 ## 📊 Detailed Risk Register

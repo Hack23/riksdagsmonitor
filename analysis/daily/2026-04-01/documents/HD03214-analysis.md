@@ -34,10 +34,10 @@ graph LR
     A --> I{Urgency}
     I -->|"🟠 URGENT"| K["Legislative action<br/>required this session"]
     
-    style A fill:#0d6efd,color:#fff
-    style D fill:#ffc107,color:#000
-    style H fill:#6f42c1,color:#fff
-    style K fill:#fd7e14,color:#fff
+    style A fill:#1565C0,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
+    style H fill:#7B1FA2,color:#FFFFFF
+    style K fill:#FF9800,color:#FFFFFF
 ```
 
 | Field | Classification |
@@ -100,9 +100,9 @@ graph TD
     R1 --> R2
     R2 --> R3
     
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#fd7e14,color:#fff
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FF9800,color:#FFFFFF
 ```
 
 ---

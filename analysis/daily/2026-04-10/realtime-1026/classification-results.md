@@ -37,9 +37,9 @@ graph TD
     D5 --> PUB
     D6 --> SEN
 
-    style PUB fill:#28a745,color:#fff
-    style SEN fill:#ffc107,color:#000
-    style D6 fill:#ffc107,color:#000
+    style PUB fill:#4CAF50,color:#FFFFFF
+    style SEN fill:#FFC107,color:#000000
+    style D6 fill:#FFC107,color:#000000
 ```
 
 ## Detailed Classification

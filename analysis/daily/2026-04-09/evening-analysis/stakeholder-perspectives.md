@@ -19,14 +19,14 @@ graph TD
         JUD["⚖️ Judiciary<br/>Impact: HIGH<br/>Proportionality review"]
         MED["📰 Media/Opinion<br/>Impact: HIGH<br/>Election narrative"]
     end
-    style CIT fill:#dc3545,color:#fff
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#ffc107,color:#000
-    style BIZ fill:#ffc107,color:#000
-    style CIV fill:#dc3545,color:#fff
-    style INT fill:#dc3545,color:#fff
-    style JUD fill:#dc3545,color:#fff
-    style MED fill:#dc3545,color:#fff
+    style CIT fill:#D32F2F,color:#FFFFFF
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#FFC107,color:#000000
+    style BIZ fill:#FFC107,color:#000000
+    style CIV fill:#D32F2F,color:#FFFFFF
+    style INT fill:#D32F2F,color:#FFFFFF
+    style JUD fill:#D32F2F,color:#FFFFFF
+    style MED fill:#D32F2F,color:#FFFFFF
 ```
 
 ## 📊 Impact Summary Matrix

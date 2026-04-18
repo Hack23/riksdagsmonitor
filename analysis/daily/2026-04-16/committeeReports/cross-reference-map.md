@@ -34,7 +34,7 @@
 ```mermaid
 graph TD
     subgraph Immigration["Immigration Reform Package"]
-        style SfU22 fill:#ff6b6b,color:#fff
+        style SfU22 fill:#EF5350,color:#FFFFFF
         SfU22["SfU22\nInhibition"]
         P145["Prop 145"]
         P215["Prop 215\nSettlement"]

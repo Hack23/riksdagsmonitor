@@ -26,10 +26,10 @@ graph TD
     R3 --> D3["S building election platform<br>through parliamentary record"]
     R4 --> D4["JO election routine<br>constitutional process"]
     
-    style R1 fill:#4CAF50,color:#fff
-    style R2 fill:#FF9800,color:#fff
-    style R3 fill:#FF9800,color:#fff
-    style R4 fill:#4CAF50,color:#fff
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FF9800,color:#FFFFFF
+    style R4 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Detailed Risk Analysis

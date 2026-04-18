@@ -16,15 +16,15 @@ graph TD
     subgraph "🎭 Political Threat Landscape — 2026-03-31"
         subgraph "Legislative Integrity"
             LI["Motion denial rate 96%<br/>Opposition legislative capacity constrained"]
-            style LI fill:#ffc107,color:#000
+            style LI fill:#FFC107,color:#000000
         end
         subgraph "Democratic Participation"
             DP["Immigration policy debate<br/>potential for polarised public discourse"]
-            style DP fill:#ffc107,color:#000
+            style DP fill:#FFC107,color:#000000
         end
         subgraph "Accountability"
             AC["3/4 propositions from single ministry<br/>Concentration of legislative initiative"]
-            style AC fill:#28a745,color:#fff
+            style AC fill:#4CAF50,color:#FFFFFF
         end
     end
 ```

@@ -60,10 +60,10 @@ graph TD
     FoU8 -.->|Personnel for| FoU12
     SfU16 -.->|Tidö package| SfU31
     MJU30 -.->|Policy tension| NU18
-    style UU6 fill:#ff006e,color:#fff
-    style SfU16 fill:#ff006e,color:#fff
-    style MJU30 fill:#ff006e,color:#fff
-    style FoU8 fill:#ffbe0b,color:#000
+    style UU6 fill:#ff006e,color:#FFFFFF
+    style SfU16 fill:#ff006e,color:#FFFFFF
+    style MJU30 fill:#ff006e,color:#FFFFFF
+    style FoU8 fill:#ffbe0b,color:#000000
 ```
 
 ## 📈 Significance Ranking

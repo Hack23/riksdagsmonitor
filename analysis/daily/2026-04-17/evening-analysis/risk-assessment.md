@@ -87,6 +87,6 @@ graph LR
     R03["RSK-03 Fuel Tax Climate\n HIGH L4×I4"] --> R08["Political salience 2026"]
     
     style R01 fill:#3d1a1a,color:#ff006e
-    style R02 fill:#3d2a1a,color:#ffbe0b
-    style R03 fill:#3d2a1a,color:#ffbe0b
+    style R02 fill:#5D4037,color:#ffbe0b
+    style R03 fill:#5D4037,color:#ffbe0b
 ```

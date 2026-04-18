@@ -25,17 +25,17 @@ graph TD
     IP --> I1["HD11690 Defence<br/>Domain: Security<br/>Sensitivity: ELEVATED<br/>Urgency: MEDIUM"]
     IP --> I2["HD11691-94 Mixed<br/>Domain: Various<br/>Sensitivity: NORMAL<br/>Urgency: LOW"]
 
-    style START fill:#6f42c1,color:#fff
-    style PROP fill:#28a745,color:#fff
-    style BET fill:#0d6efd,color:#fff
-    style MOT fill:#ffc107,color:#000
-    style IP fill:#fd7e14,color:#fff
-    style P1 fill:#28a745,color:#fff
-    style P2 fill:#28a745,color:#fff
-    style B1 fill:#0d6efd,color:#fff
-    style M1 fill:#ffc107,color:#000
-    style I1 fill:#fd7e14,color:#fff
-    style I2 fill:#fd7e14,color:#fff
+    style START fill:#7B1FA2,color:#FFFFFF
+    style PROP fill:#4CAF50,color:#FFFFFF
+    style BET fill:#1565C0,color:#FFFFFF
+    style MOT fill:#FFC107,color:#000000
+    style IP fill:#FF9800,color:#FFFFFF
+    style P1 fill:#4CAF50,color:#FFFFFF
+    style P2 fill:#4CAF50,color:#FFFFFF
+    style B1 fill:#1565C0,color:#FFFFFF
+    style M1 fill:#FFC107,color:#000000
+    style I1 fill:#FF9800,color:#FFFFFF
+    style I2 fill:#FF9800,color:#FFFFFF
 ```
 
 ## 📋 Per-Document Classification

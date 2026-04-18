@@ -120,20 +120,20 @@ graph TD
     T3 -.targets.-> W3
     T4 -.triggered by.-> S1
 
-    style S1 fill:#28a745,color:#fff
-    style S2 fill:#28a745,color:#fff
-    style S3 fill:#28a745,color:#fff
-    style S4 fill:#28a745,color:#fff
-    style W1 fill:#fd7e14,color:#fff
-    style W2 fill:#fd7e14,color:#fff
-    style W3 fill:#fd7e14,color:#fff
-    style O1 fill:#0d6efd,color:#fff
-    style O2 fill:#0d6efd,color:#fff
-    style O3 fill:#0d6efd,color:#fff
-    style T1 fill:#dc3545,color:#fff
-    style T2 fill:#dc3545,color:#fff
-    style T3 fill:#dc3545,color:#fff
-    style T4 fill:#dc3545,color:#fff
+    style S1 fill:#4CAF50,color:#FFFFFF
+    style S2 fill:#4CAF50,color:#FFFFFF
+    style S3 fill:#4CAF50,color:#FFFFFF
+    style S4 fill:#4CAF50,color:#FFFFFF
+    style W1 fill:#FF9800,color:#FFFFFF
+    style W2 fill:#FF9800,color:#FFFFFF
+    style W3 fill:#FF9800,color:#FFFFFF
+    style O1 fill:#1565C0,color:#FFFFFF
+    style O2 fill:#1565C0,color:#FFFFFF
+    style O3 fill:#1565C0,color:#FFFFFF
+    style T1 fill:#D32F2F,color:#FFFFFF
+    style T2 fill:#D32F2F,color:#FFFFFF
+    style T3 fill:#D32F2F,color:#FFFFFF
+    style T4 fill:#D32F2F,color:#FFFFFF
 ```
 
 ### TOWS Interference Highlights

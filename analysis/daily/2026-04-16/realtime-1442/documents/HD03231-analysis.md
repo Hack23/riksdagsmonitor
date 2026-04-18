@@ -31,7 +31,7 @@ graph LR
     style A fill:#00d9ff,color:#0a0e27
     style D fill:#ffbe0b,color:#0a0e27
     style H fill:#00d9ff,color:#0a0e27
-    style K fill:#ff6b35,color:#0a0e27
+    style K fill:#FF5722,color:#0a0e27
 ```
 
 ## 🔬 SWOT Analysis

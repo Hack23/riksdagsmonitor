@@ -16,9 +16,9 @@ graph LR
         B --> C["Publication: YES<br/>Priority: FEATURED"]
     end
 
-    style A fill:#ff6b35,stroke:#333,color:#fff
-    style B fill:#ff6b35,stroke:#333,color:#fff
-    style C fill:#28a745,stroke:#333,color:#fff
+    style A fill:#FF5722,stroke:#424242,color:#FFFFFF
+    style B fill:#FF5722,stroke:#424242,color:#FFFFFF
+    style C fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 ---

@@ -22,14 +22,14 @@ flowchart LR
     M["NATO/International"] --> N["HIGH Impact<br/>Alliance credibility"]
     O["Judiciary"] --> P["MEDIUM Impact<br/>ECHR oversight role"]
     
-    style A fill:#0066cc,stroke:#333,color:#fff
-    style C fill:#dddd00,stroke:#333,color:#000
-    style E fill:#cc0000,stroke:#333,color:#fff
-    style G fill:#00cc00,stroke:#333,color:#000
-    style I fill:#666666,stroke:#333,color:#fff
-    style K fill:#00d9ff,stroke:#333,color:#000
-    style M fill:#ff6600,stroke:#333,color:#fff
-    style O fill:#993399,stroke:#333,color:#fff
+    style A fill:#0066cc,stroke:#424242,color:#FFFFFF
+    style C fill:#dddd00,stroke:#424242,color:#000000
+    style E fill:#cc0000,stroke:#424242,color:#FFFFFF
+    style G fill:#00cc00,stroke:#424242,color:#000000
+    style I fill:#666666,stroke:#424242,color:#FFFFFF
+    style K fill:#00d9ff,stroke:#424242,color:#000000
+    style M fill:#ff6600,stroke:#424242,color:#FFFFFF
+    style O fill:#993399,stroke:#424242,color:#FFFFFF
 ```
 
 | Stakeholder Group | Impact Level | Key Issue | Position |

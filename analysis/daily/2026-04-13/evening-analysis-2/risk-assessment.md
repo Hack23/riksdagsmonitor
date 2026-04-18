@@ -33,13 +33,13 @@ graph TD
             RSK7["RSK-007: Energy Price Volatility<br/>L:2 × I:2 = 4<br/>NU17 debate, short-term"]
         end
     end
-    style RSK1 fill:#dc3545,stroke:#333,color:#fff
-    style RSK2 fill:#fd7e14,stroke:#333,color:#fff
-    style RSK3 fill:#fd7e14,stroke:#333,color:#fff
-    style RSK4 fill:#ffc107,stroke:#333,color:#000
-    style RSK5 fill:#ffc107,stroke:#333,color:#000
-    style RSK6 fill:#ffc107,stroke:#333,color:#000
-    style RSK7 fill:#28a745,stroke:#333,color:#fff
+    style RSK1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style RSK2 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style RSK3 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style RSK4 fill:#FFC107,stroke:#424242,color:#000000
+    style RSK5 fill:#FFC107,stroke:#424242,color:#000000
+    style RSK6 fill:#FFC107,stroke:#424242,color:#000000
+    style RSK7 fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 ## 📋 Detailed Risk Register

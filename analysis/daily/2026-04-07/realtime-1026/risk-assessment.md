@@ -23,11 +23,11 @@ graph TD
         R5["RSK-005<br/>Non-refoulement violation on Syria returns<br/>L:2 × I:4 = 8<br/>🟠 HIGH"]
     end
 
-    style R1 fill:#fd7e14,stroke:#ca6510,color:#fff
-    style R2 fill:#ffc107,stroke:#e0a800,color:#000
-    style R3 fill:#fd7e14,stroke:#ca6510,color:#fff
-    style R4 fill:#ffc107,stroke:#e0a800,color:#000
-    style R5 fill:#fd7e14,stroke:#ca6510,color:#fff
+    style R1 fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style R2 fill:#FFC107,stroke:#FFA000,color:#000000
+    style R3 fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style R4 fill:#FFC107,stroke:#FFA000,color:#000000
+    style R5 fill:#FF9800,stroke:#F57C00,color:#FFFFFF
 ```
 
 ---

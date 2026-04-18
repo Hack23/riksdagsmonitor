@@ -89,13 +89,13 @@ flowchart TD
     H["Multiple Reforms<br/>Simultaneously"] -->|"Capacity strain"| I["Implementation Failures<br/>PR-1: L×I=12"]
     I -->|"Credibility damage"| D
     
-    style A fill:#00d9ff,stroke:#333,color:#000
-    style B fill:#ffbe0b,stroke:#333,color:#000
-    style C fill:#ffbe0b,stroke:#333,color:#000
-    style D fill:#ff006e,stroke:#333,color:#000
-    style E fill:#ff006e,stroke:#333,color:#000
-    style G fill:#ff006e,stroke:#333,color:#000
-    style I fill:#ffbe0b,stroke:#333,color:#000
+    style A fill:#00d9ff,stroke:#424242,color:#000000
+    style B fill:#ffbe0b,stroke:#424242,color:#000000
+    style C fill:#ffbe0b,stroke:#424242,color:#000000
+    style D fill:#ff006e,stroke:#424242,color:#000000
+    style E fill:#ff006e,stroke:#424242,color:#000000
+    style G fill:#ff006e,stroke:#424242,color:#000000
+    style I fill:#ffbe0b,stroke:#424242,color:#000000
 ```
 
 ## 🔮 Forward Risk Indicators

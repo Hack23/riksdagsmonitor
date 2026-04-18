@@ -43,15 +43,15 @@ graph TD
     R5 -.-> T3
     R6 -.-> T3
 
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#fd7e14,color:#fff
-    style R5 fill:#ffc107,color:#000
-    style R6 fill:#ffc107,color:#000
-    style T2 fill:#fd7e14,color:#fff
-    style T3 fill:#ffc107,color:#000
-    style T4 fill:#28a745,color:#fff
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FF9800,color:#FFFFFF
+    style R5 fill:#FFC107,color:#000000
+    style R6 fill:#FFC107,color:#000000
+    style T2 fill:#FF9800,color:#FFFFFF
+    style T3 fill:#FFC107,color:#000000
+    style T4 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## 📊 Per-Document Risk Scores

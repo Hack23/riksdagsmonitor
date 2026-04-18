@@ -36,11 +36,11 @@ graph TD
     T6 --> T6B["Coalition vs. climate bloc\npolarization ahead of 2026\nSeverity: 4/5"]
 
     style T1A fill:#3d1a1a,color:#ff006e
-    style T2A fill:#3d2a1a,color:#ffbe0b
-    style T4A fill:#3d2a1a,color:#ffbe0b
+    style T2A fill:#5D4037,color:#ffbe0b
+    style T4A fill:#5D4037,color:#ffbe0b
     style T4B fill:#3d1a1a,color:#ff006e
-    style T5A fill:#3d2a1a,color:#ffbe0b
-    style T6B fill:#3d2a1a,color:#ffbe0b
+    style T5A fill:#5D4037,color:#ffbe0b
+    style T6B fill:#5D4037,color:#ffbe0b
 ```
 
 ---

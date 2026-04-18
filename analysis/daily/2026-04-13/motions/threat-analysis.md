@@ -42,9 +42,9 @@ graph TB
     T1 --> M1["Mitigation: V+MP constitutional objections"]
     T2 --> M2["Mitigation: S+MP committee resistance"]
     T3 --> M3["Mitigation: C+V+MP cross-party pressure"]
-    style T1 fill:#ff8c00,color:#fff
-    style T2 fill:#ffbe0b,color:#000
-    style T3 fill:#83c167,color:#000
+    style T1 fill:#F57C00,color:#FFFFFF
+    style T2 fill:#ffbe0b,color:#000000
+    style T3 fill:#8BC34A,color:#000000
 ```
 
 ## Overall Threat Assessment

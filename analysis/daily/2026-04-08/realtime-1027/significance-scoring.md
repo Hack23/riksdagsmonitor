@@ -16,7 +16,7 @@ graph LR
     C --> E
     D --> E
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style E fill:#ffc107,stroke:#333,color:#000
+    style E fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 ## Significance Scores

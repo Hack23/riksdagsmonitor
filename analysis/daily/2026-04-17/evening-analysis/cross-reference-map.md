@@ -35,10 +35,10 @@ graph TD
     Q718 -.->|"State capacity\ntheme"| Q719
 
     style Q719 fill:#3d1a1a,color:#ff006e
-    style KU33 fill:#3d2a1a,color:#ffbe0b
-    style IP437 fill:#1a3d1a,color:#00ff88
-    style IP438 fill:#1a3d1a,color:#00ff88
-    style MP fill:#1a3d1a,color:#00ff88
+    style KU33 fill:#5D4037,color:#ffbe0b
+    style IP437 fill:#1a3d1a,color:#4CAF50
+    style IP438 fill:#1a3d1a,color:#4CAF50
+    style MP fill:#1a3d1a,color:#4CAF50
 ```
 
 ---

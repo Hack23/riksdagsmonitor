@@ -24,15 +24,15 @@ graph TD
         PROP2 --> CIT2["👥 Citizens<br/>LOW impact"]
     end
     
-    style PROP1 fill:#ffc107,color:#000
-    style PROP2 fill:#28a745,color:#fff
-    style GOV1 fill:#0d6efd,color:#fff
-    style OPP1 fill:#dc3545,color:#fff
-    style CIT1 fill:#6f42c1,color:#fff
-    style MED1 fill:#fd7e14,color:#fff
-    style GOV2 fill:#0d6efd,color:#fff
-    style ECO2 fill:#20c997,color:#fff
-    style CIT2 fill:#6f42c1,color:#fff
+    style PROP1 fill:#FFC107,color:#000000
+    style PROP2 fill:#4CAF50,color:#FFFFFF
+    style GOV1 fill:#1565C0,color:#FFFFFF
+    style OPP1 fill:#D32F2F,color:#FFFFFF
+    style CIT1 fill:#7B1FA2,color:#FFFFFF
+    style MED1 fill:#FF9800,color:#FFFFFF
+    style GOV2 fill:#1565C0,color:#FFFFFF
+    style ECO2 fill:#4CAF50,color:#FFFFFF
+    style CIT2 fill:#7B1FA2,color:#FFFFFF
 ```
 
 ## 🏛️ Government Perspective

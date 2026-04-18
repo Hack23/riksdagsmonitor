@@ -38,15 +38,15 @@ graph TD
         end
     end
 
-    style PB1 fill:#dc3545,color:#fff
-    style PB2 fill:#fd7e14,color:#fff
-    style DP1 fill:#fd7e14,color:#fff
-    style DP2 fill:#28a745,color:#fff
-    style AC1 fill:#fd7e14,color:#fff
-    style AC2 fill:#28a745,color:#fff
-    style TR1 fill:#28a745,color:#fff
-    style EI1 fill:#fd7e14,color:#fff
-    style EI2 fill:#28a745,color:#fff
+    style PB1 fill:#D32F2F,color:#FFFFFF
+    style PB2 fill:#FF9800,color:#FFFFFF
+    style DP1 fill:#FF9800,color:#FFFFFF
+    style DP2 fill:#4CAF50,color:#FFFFFF
+    style AC1 fill:#FF9800,color:#FFFFFF
+    style AC2 fill:#4CAF50,color:#FFFFFF
+    style TR1 fill:#4CAF50,color:#FFFFFF
+    style EI1 fill:#FF9800,color:#FFFFFF
+    style EI2 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Threat Assessment by Category
@@ -79,11 +79,11 @@ graph LR
     B -->|"ECHR fast-tracks review"| E["🔴 HIGH"]
     B -->|"KU hearings reveal new issues"| F["🟠 MODERATE-HIGH"]
     
-    style A fill:#fd7e14,color:#fff
-    style C fill:#dc3545,color:#fff
-    style D fill:#ffc107,color:#000
-    style E fill:#dc3545,color:#fff
-    style F fill:#fd7e14,color:#fff
+    style A fill:#FF9800,color:#FFFFFF
+    style C fill:#D32F2F,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
+    style E fill:#D32F2F,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
 ```
 
 ---

@@ -81,12 +81,12 @@ flowchart TD
     F --> G
     G --> H["2026 Election<br/>Impact"]
     
-    style A fill:#00d9ff,stroke:#333,color:#000
-    style D fill:#00d9ff,stroke:#333,color:#000
-    style B fill:#ffbe0b,stroke:#333,color:#000
-    style E fill:#ff006e,stroke:#333,color:#000
-    style G fill:#ffbe0b,stroke:#333,color:#000
-    style H fill:#ff006e,stroke:#333,color:#000
+    style A fill:#00d9ff,stroke:#424242,color:#000000
+    style D fill:#00d9ff,stroke:#424242,color:#000000
+    style B fill:#ffbe0b,stroke:#424242,color:#000000
+    style E fill:#ff006e,stroke:#424242,color:#000000
+    style G fill:#ffbe0b,stroke:#424242,color:#000000
+    style H fill:#ff006e,stroke:#424242,color:#000000
 ```
 
 | Risk Dimension | Score (1-25) | Trend | Top Driver |

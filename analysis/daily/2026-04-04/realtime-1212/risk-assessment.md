@@ -30,12 +30,12 @@ graph TD
             R6["R6: Staff Recruitment<br/>L:3 × I:2 = 6"]
         end
     end
-    style R1 fill:#dc3545,stroke:#333,color:#fff
-    style R4 fill:#dc3545,stroke:#333,color:#fff
-    style R2 fill:#fd7e14,stroke:#333,color:#fff
-    style R3 fill:#ffc107,stroke:#333,color:#000
-    style R5 fill:#ffc107,stroke:#333,color:#000
-    style R6 fill:#28a745,stroke:#333,color:#fff
+    style R1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style R4 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style R2 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style R3 fill:#FFC107,stroke:#424242,color:#000000
+    style R5 fill:#FFC107,stroke:#424242,color:#000000
+    style R6 fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 ---

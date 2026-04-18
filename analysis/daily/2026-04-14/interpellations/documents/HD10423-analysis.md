@@ -53,11 +53,11 @@ flowchart TD
     B --> F{Response Path}
     F -->|Launch new inquiry| G["🟢 Addresses issue<br/>Admits policy gap"]
     F -->|Defend status quo| H["🔴 Campaign liability<br/>Welfare credibility hit"]
-    style A fill:#ff6b6b,color:#fff
-    style B fill:#4ecdc4,color:#fff
-    style D fill:#ff9999,color:#000
-    style H fill:#ff4444,color:#fff
-    style E fill:#ffd700,color:#000
+    style A fill:#EF5350,color:#FFFFFF
+    style B fill:#4ecdc4,color:#FFFFFF
+    style D fill:#ff9999,color:#000000
+    style H fill:#EF5350,color:#FFFFFF
+    style E fill:#ffd700,color:#000000
 ```
 
 ## Election 2026 Implications

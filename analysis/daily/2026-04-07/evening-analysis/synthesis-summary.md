@@ -19,12 +19,12 @@ graph LR
         B["Motions (MP)<br/>3 documents"] --> E["Social &<br/>Environmental"]
         C["SD Questions &<br/>Interpellations<br/>5 documents"] --> F["Immigration &<br/>Integration"]
     end
-    style A fill:#0d6efd,color:#fff
-    style B fill:#28a745,color:#fff
-    style C fill:#fd7e14,color:#fff
-    style D fill:#0d6efd,color:#fff
-    style E fill:#28a745,color:#fff
-    style F fill:#fd7e14,color:#fff
+    style A fill:#1565C0,color:#FFFFFF
+    style B fill:#4CAF50,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#1565C0,color:#FFFFFF
+    style E fill:#4CAF50,color:#FFFFFF
+    style F fill:#FF9800,color:#FFFFFF
 ```
 
 ## Top Findings

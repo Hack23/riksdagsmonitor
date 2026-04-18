@@ -71,14 +71,14 @@ flowchart LR
     E & F --> G[SD-KD Joint Reservation<br/>R15: Healthcare prioritization]:::dissent
     G -.-> H[Coalition Stress Signal<br/>Budget leverage risk]:::risk
     
-    classDef coalition fill:#3498db,stroke:#333,color:#fff
-    classDef committee fill:#e17055,stroke:#333,color:#fff
-    classDef mParty fill:#1a5276,stroke:#333,color:#fff
-    classDef lParty fill:#2e86c1,stroke:#333,color:#fff
-    classDef sdParty fill:#f1c40f,stroke:#333,color:#000
-    classDef kdParty fill:#2980b9,stroke:#333,color:#fff
-    classDef dissent fill:#e74c3c,stroke:#333,color:#fff
-    classDef risk fill:#c0392b,stroke:#333,color:#fff
+    classDef coalition fill:#2196F3,stroke:#424242,color:#FFFFFF
+    classDef committee fill:#e17055,stroke:#424242,color:#FFFFFF
+    classDef mParty fill:#1565C0,stroke:#424242,color:#FFFFFF
+    classDef lParty fill:#1565C0,stroke:#424242,color:#FFFFFF
+    classDef sdParty fill:#f1c40f,stroke:#424242,color:#000000
+    classDef kdParty fill:#1565C0,stroke:#424242,color:#FFFFFF
+    classDef dissent fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    classDef risk fill:#D32F2F,stroke:#424242,color:#FFFFFF
 ```
 
 ---

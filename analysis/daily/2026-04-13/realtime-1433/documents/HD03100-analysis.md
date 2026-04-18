@@ -25,10 +25,10 @@ graph LR
     D --> E["Economic & Fiscal Policy"]
     A --> F{"Urgency"}
     F -->|"🔴 CRITICAL"| G["Immediate parliamentary debate"]
-    style A fill:#0A66C2,stroke:#fff,color:#fff
-    style C fill:#ffc107,stroke:#333,color:#000
-    style E fill:#17a2b8,stroke:#333,color:#fff
-    style G fill:#dc3545,stroke:#333,color:#fff
+    style A fill:#0A66C2,stroke:#FFFFFF,color:#FFFFFF
+    style C fill:#FFC107,stroke:#424242,color:#000000
+    style E fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style G fill:#D32F2F,stroke:#424242,color:#FFFFFF
 ```
 
 ## 📈 SWOT Analysis

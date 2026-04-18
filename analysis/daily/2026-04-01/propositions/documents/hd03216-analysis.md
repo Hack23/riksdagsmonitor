@@ -36,9 +36,9 @@ graph LR
     I -->|"🔵 ELEVATED"| L["Monitoring — structural<br/>reform with implementation period"]
     
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style E fill:#22c55e,stroke:#333,color:#000
-    style H fill:#00d9ff,stroke:#333,color:#000
-    style L fill:#3b82f6,stroke:#333,color:#fff
+    style E fill:#4CAF50,stroke:#424242,color:#000000
+    style H fill:#00d9ff,stroke:#424242,color:#000000
+    style L fill:#2196F3,stroke:#424242,color:#FFFFFF
 ```
 
 | Field | Value |

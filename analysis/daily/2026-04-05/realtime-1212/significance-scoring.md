@@ -23,11 +23,11 @@ graph LR
         JUU15["📋 HD01JuU15<br/>Criminal Justice<br/>Score: 4.5 of 10"]
     end
 
-    style HD235 fill:#fd7e14,color:#fff
-    style HD228 fill:#ffc107,color:#000
-    style HD214 fill:#ffc107,color:#000
-    style FOU12 fill:#ffc107,color:#000
-    style JUU15 fill:#28a745,color:#fff
+    style HD235 fill:#FF9800,color:#FFFFFF
+    style HD228 fill:#FFC107,color:#000000
+    style HD214 fill:#FFC107,color:#000000
+    style FOU12 fill:#FFC107,color:#000000
+    style JUU15 fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

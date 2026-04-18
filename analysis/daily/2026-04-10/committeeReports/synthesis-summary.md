@@ -59,13 +59,13 @@ graph TD
     B --> H["NATO Integration Baltic Security"]
     C --> I["Tido Agreement Coalition Cornerstone"]
     D --> J["Rearmament Personnel Bottleneck"]
-    style B fill:#D32F2F,color:#fff
-    style C fill:#FF9800,color:#fff
-    style D fill:#FFC107,color:#000
-    style E fill:#4CAF50,color:#fff
-    style F fill:#4CAF50,color:#fff
-    style G fill:#4CAF50,color:#fff
-    style H fill:#1565C0,color:#fff
-    style I fill:#1565C0,color:#fff
-    style J fill:#1565C0,color:#fff
+    style B fill:#D32F2F,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
+    style E fill:#4CAF50,color:#FFFFFF
+    style F fill:#4CAF50,color:#FFFFFF
+    style G fill:#4CAF50,color:#FFFFFF
+    style H fill:#1565C0,color:#FFFFFF
+    style I fill:#1565C0,color:#FFFFFF
+    style J fill:#1565C0,color:#FFFFFF
 ```

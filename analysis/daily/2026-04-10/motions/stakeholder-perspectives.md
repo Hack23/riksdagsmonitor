@@ -32,14 +32,14 @@ graph TD
     BIZ -->|"Procurement, copyright"| B["prop. 177, 184"]
     CIV -->|"Suicide prevention, aid"| C["prop. 190, skr. 226"]
     INT -->|"Humanitarian aid, Nordic"| I["skr. 226, 90"]
-    style CIT fill:#28a745,stroke:#333,color:#fff
-    style GOV fill:#dc3545,stroke:#333,color:#fff
-    style OPP fill:#fd7e14,stroke:#333,color:#fff
-    style BIZ fill:#ffc107,stroke:#333,color:#000
-    style CIV fill:#6f42c1,stroke:#333,color:#fff
-    style INT fill:#0d6efd,stroke:#333,color:#fff
-    style JUD fill:#6c757d,stroke:#333,color:#fff
-    style MED fill:#20c997,stroke:#333,color:#fff
+    style CIT fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style GOV fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style OPP fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style BIZ fill:#FFC107,stroke:#424242,color:#000000
+    style CIV fill:#7B1FA2,stroke:#424242,color:#FFFFFF
+    style INT fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style JUD fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style MED fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 ## Detailed Stakeholder Analysis

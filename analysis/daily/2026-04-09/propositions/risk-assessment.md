@@ -20,10 +20,10 @@ graph TD
     B --> E["Fiscal<br/>Uncertainty Risk<br/>Score: 9/25"]
     B --> F["EU Compliance<br/>Risk<br/>Score: 8/25"]
     C --> G["Political<br/>Exposure Risk<br/>Score: 4/25"]
-    style D fill:#ffc107,color:#000
-    style E fill:#ffc107,color:#000
-    style F fill:#ffc107,color:#000
-    style G fill:#28a745,color:#fff
+    style D fill:#FFC107,color:#000000
+    style E fill:#FFC107,color:#000000
+    style F fill:#FFC107,color:#000000
+    style G fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Detailed Risk Matrix

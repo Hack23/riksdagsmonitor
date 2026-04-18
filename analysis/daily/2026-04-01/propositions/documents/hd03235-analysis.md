@@ -34,9 +34,9 @@ graph LR
     I -->|"🔴 CRITICAL"| J["Core Tidö commitment<br/>— pre-election delivery"]
     
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style D fill:#ffbe0b,stroke:#333,color:#000
-    style H fill:#00d9ff,stroke:#333,color:#000
-    style J fill:#ef4444,stroke:#333,color:#fff
+    style D fill:#ffbe0b,stroke:#424242,color:#000000
+    style H fill:#00d9ff,stroke:#424242,color:#000000
+    style J fill:#EF5350,stroke:#424242,color:#FFFFFF
 ```
 
 | Field | Value |

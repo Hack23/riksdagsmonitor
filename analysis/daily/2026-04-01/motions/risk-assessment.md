@@ -32,11 +32,11 @@ graph TD
         R4["🟢 R4: Housing<br/>reform stall<br/>L=2 × I=2 = 4"]
         R5["🟢 R5: Financial<br/>reg. delay<br/>L=1 × I=2 = 2"]
     end
-    style R1 fill:#fd7e14,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#28a745,color:#fff
+    style R1 fill:#FF9800,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#4CAF50,color:#FFFFFF
 ```
 
 ### Risk Register
@@ -147,10 +147,10 @@ graph LR
     T --> O1
     O1 --> O2
     O2 -.->|mitigated by| O3
-    style T fill:#dc3545,color:#fff
-    style O1 fill:#fd7e14,color:#fff
-    style O2 fill:#ffc107,color:#000
-    style O3 fill:#28a745,color:#fff
+    style T fill:#D32F2F,color:#FFFFFF
+    style O1 fill:#FF9800,color:#FFFFFF
+    style O2 fill:#FFC107,color:#000000
+    style O3 fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

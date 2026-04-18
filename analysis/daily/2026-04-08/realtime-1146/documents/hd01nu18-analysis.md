@@ -35,12 +35,12 @@ graph TD
     D --> H["Mandatory Transposition"]
     E --> I["Municipal Veto Retained"]
     I --> J["Opposition United Against"]
-    style A fill:#ffc107,stroke:#333,color:#000
-    style B fill:#28a745,stroke:#333,color:#fff
-    style D fill:#0d6efd,stroke:#333,color:#fff
-    style I fill:#dc3545,stroke:#333,color:#fff
-    style J fill:#dc3545,stroke:#333,color:#fff
-    style H fill:#fd7e14,stroke:#333,color:#fff
+    style A fill:#FFC107,stroke:#424242,color:#000000
+    style B fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style D fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style I fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style J fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style H fill:#FF9800,stroke:#424242,color:#FFFFFF
 ```
 
 ---

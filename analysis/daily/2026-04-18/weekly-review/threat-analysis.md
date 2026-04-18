@@ -77,15 +77,15 @@ graph TD
     L1D --> L2D2
     L1D --> L2D3
 
-    style GOAL fill:#dc3545,color:#fff
-    style L1A fill:#fd7e14,color:#fff
-    style L1B fill:#fd7e14,color:#fff
-    style L1C fill:#fd7e14,color:#fff
-    style L1D fill:#fd7e14,color:#fff
-    style L2A2 fill:#dc3545,color:#fff
-    style L2C1 fill:#dc3545,color:#fff
-    style L2D1 fill:#dc3545,color:#fff
-    style L2B1 fill:#dc3545,color:#fff
+    style GOAL fill:#D32F2F,color:#FFFFFF
+    style L1A fill:#FF9800,color:#FFFFFF
+    style L1B fill:#FF9800,color:#FFFFFF
+    style L1C fill:#FF9800,color:#FFFFFF
+    style L1D fill:#FF9800,color:#FFFFFF
+    style L2A2 fill:#D32F2F,color:#FFFFFF
+    style L2C1 fill:#D32F2F,color:#FFFFFF
+    style L2D1 fill:#D32F2F,color:#FFFFFF
+    style L2B1 fill:#D32F2F,color:#FFFFFF
 ```
 
 ### Cyber Kill Chain (Election-Disinformation Variant)
@@ -178,12 +178,12 @@ graph TD
     A4 --> A4_2
     A4 --> A4_3
 
-    style GOAL2 fill:#fd7e14,color:#fff
-    style A1 fill:#dc3545,color:#fff
-    style A4 fill:#dc3545,color:#fff
-    style A3 fill:#fd7e14,color:#fff
-    style A1_1 fill:#28a745,color:#fff
-    style A4_3 fill:#dc3545,color:#fff
+    style GOAL2 fill:#FF9800,color:#FFFFFF
+    style A1 fill:#D32F2F,color:#FFFFFF
+    style A4 fill:#D32F2F,color:#FFFFFF
+    style A3 fill:#FF9800,color:#FFFFFF
+    style A1_1 fill:#4CAF50,color:#FFFFFF
+    style A4_3 fill:#D32F2F,color:#FFFFFF
 ```
 
 ### Political Threat Taxonomy Mapping
@@ -241,12 +241,12 @@ graph TD
     P5 --> P5b
     P5 --> P5c
 
-    style GOAL3 fill:#fd7e14,color:#fff
-    style P3 fill:#dc3545,color:#fff
-    style P4 fill:#dc3545,color:#fff
-    style P5a fill:#28a745,color:#fff
-    style P5b fill:#28a745,color:#fff
-    style P5c fill:#dc3545,color:#fff
+    style GOAL3 fill:#FF9800,color:#FFFFFF
+    style P3 fill:#D32F2F,color:#FFFFFF
+    style P4 fill:#D32F2F,color:#FFFFFF
+    style P5a fill:#4CAF50,color:#FFFFFF
+    style P5b fill:#4CAF50,color:#FFFFFF
+    style P5c fill:#D32F2F,color:#FFFFFF
 ```
 
 ### STRIDE on Legal-Process Integrity

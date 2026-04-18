@@ -34,10 +34,10 @@ graph LR
     A --> I{Urgency}
     I -->|"🔵 ELEVATED"| L["Committee processing<br/>this session"]
     
-    style A fill:#0d6efd,color:#fff
-    style E fill:#28a745,color:#fff
-    style H fill:#6f42c1,color:#fff
-    style L fill:#0d6efd,color:#fff
+    style A fill:#1565C0,color:#FFFFFF
+    style E fill:#4CAF50,color:#FFFFFF
+    style H fill:#7B1FA2,color:#FFFFFF
+    style L fill:#1565C0,color:#FFFFFF
 ```
 
 | Field | Classification |

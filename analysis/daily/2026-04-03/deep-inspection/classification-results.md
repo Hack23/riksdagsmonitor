@@ -23,11 +23,11 @@ graph LR
     A --> H{"Significance"}
     H -->|"7/10"| I["HIGH — Critical infrastructure<br/>protection + NATO alignment"]
 
-    style A fill:#0d6efd,color:#fff
-    style C fill:#ffbe0b,color:#000
-    style E fill:#00d9ff,color:#000
-    style G fill:#ff6b35,color:#fff
-    style I fill:#ff6b35,color:#fff
+    style A fill:#1565C0,color:#FFFFFF
+    style C fill:#ffbe0b,color:#000000
+    style E fill:#00d9ff,color:#000000
+    style G fill:#FF5722,color:#FFFFFF
+    style I fill:#FF5722,color:#FFFFFF
 ```
 
 ---

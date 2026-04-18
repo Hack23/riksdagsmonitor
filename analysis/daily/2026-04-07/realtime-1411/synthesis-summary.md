@@ -29,12 +29,12 @@ graph TD
             RISK["Coalition Risk: 4/100<br>Level: LOW"]
         end
     end
-    style D1 fill:#28a745,stroke:#155724,color:#fff
-    style D2 fill:#28a745,stroke:#155724,color:#fff
-    style D3 fill:#ffc107,stroke:#856404,color:#000
-    style D4 fill:#28a745,stroke:#155724,color:#fff
-    style SIG fill:#28a745,stroke:#155724,color:#fff
-    style RISK fill:#28a745,stroke:#155724,color:#fff
+    style D1 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style D2 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style D3 fill:#FFC107,stroke:#F57C00,color:#000000
+    style D4 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style SIG fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style RISK fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```
 
 ## Cross-Document Pattern Analysis
@@ -74,13 +74,13 @@ graph LR
         HD024067["HD024067<br>Housing Mot"] --> SOCIAL["Social Policy"]
         HD024068["HD024068<br>Hunting Mot"] --> ENV["Environment"]
     end
-    style DEFENSE fill:#ffc107,stroke:#856404,color:#000
-    style PREP fill:#ffc107,stroke:#856404,color:#000
-    style INTEG fill:#fd7e14,stroke:#873b00,color:#fff
-    style RIGHTS fill:#ffc107,stroke:#856404,color:#000
-    style FOREIGN fill:#28a745,stroke:#155724,color:#fff
-    style SOCIAL fill:#28a745,stroke:#155724,color:#fff
-    style ENV fill:#28a745,stroke:#155724,color:#fff
+    style DEFENSE fill:#FFC107,stroke:#F57C00,color:#000000
+    style PREP fill:#FFC107,stroke:#F57C00,color:#000000
+    style INTEG fill:#FF9800,stroke:#E65100,color:#FFFFFF
+    style RIGHTS fill:#FFC107,stroke:#F57C00,color:#000000
+    style FOREIGN fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style SOCIAL fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style ENV fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```
 
 ## Aggregate Risk Assessment

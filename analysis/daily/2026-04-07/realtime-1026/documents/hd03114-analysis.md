@@ -36,12 +36,12 @@ graph LR
     A --> K{Urgency}
     K -->|"🟠 URGENT"| L["Spring parliamentary schedule<br/>Committee referral pending"]
 
-    style A fill:#0d6efd,stroke:#0a58ca,color:#fff
-    style C fill:#ffc107,stroke:#e0a800,color:#000
-    style H fill:#dc3545,stroke:#b02a37,color:#fff
-    style I fill:#fd7e14,stroke:#ca6510,color:#fff
-    style J fill:#28a745,stroke:#1e7e34,color:#fff
-    style L fill:#fd7e14,stroke:#ca6510,color:#fff
+    style A fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
+    style C fill:#FFC107,stroke:#FFA000,color:#000000
+    style H fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
+    style I fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style J fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style L fill:#FF9800,stroke:#F57C00,color:#FFFFFF
 ```
 
 | Classification | Value | Rationale |
@@ -97,9 +97,9 @@ graph TD
         R3["RSK-003<br/>Inadequate dual-use oversight<br/>L:2 × I:4 = 8"]
     end
 
-    style R1 fill:#fd7e14,stroke:#ca6510,color:#fff
-    style R2 fill:#ffc107,stroke:#e0a800,color:#000
-    style R3 fill:#fd7e14,stroke:#ca6510,color:#fff
+    style R1 fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style R2 fill:#FFC107,stroke:#FFA000,color:#000000
+    style R3 fill:#FF9800,stroke:#F57C00,color:#FFFFFF
 ```
 
 | Risk ID | Description | Likelihood | Impact | Score | Mitigation |

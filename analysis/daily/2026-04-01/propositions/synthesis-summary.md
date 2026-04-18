@@ -41,13 +41,13 @@ graph LR
         F --> G["Implementation"]
     end
     
-    style A fill:#3b82f6,stroke:#333,color:#fff
-    style B fill:#22c55e,stroke:#333,color:#fff
-    style C fill:#ffbe0b,stroke:#333,color:#000
-    style D fill:#ef4444,stroke:#333,color:#fff
-    style E fill:#6b7280,stroke:#333,color:#fff
-    style F fill:#6b7280,stroke:#333,color:#fff
-    style G fill:#6b7280,stroke:#333,color:#fff
+    style A fill:#2196F3,stroke:#424242,color:#FFFFFF
+    style B fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style C fill:#ffbe0b,stroke:#424242,color:#000000
+    style D fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style E fill:#6b7280,stroke:#424242,color:#FFFFFF
+    style F fill:#6b7280,stroke:#424242,color:#FFFFFF
+    style G fill:#6b7280,stroke:#424242,color:#FFFFFF
 ```
 
 ## Implications

@@ -722,8 +722,8 @@ The government's position is strengthened. [MEDIUM confidence]
     "quadrant2Fill": "#D32F2F",
     "quadrant3Fill": "#1565C0",
     "quadrant4Fill": "#FF9800",
-    "quadrantTitleFill": "#ffffff",
-    "quadrantPointFill": "#ffffff",
+    "quadrantTitleFill": "#FFFFFF",
+    "quadrantPointFill": "#FFFFFF",
     "quadrantPointTextFill": "#000000",
     "quadrantXAxisTextFill": "#000000",
     "quadrantYAxisTextFill": "#000000"
@@ -1597,7 +1597,7 @@ For this article's documents, generate visualization data in JSON format:
      "data": {
        "labels": ["S", "M", "SD", "V", "C", "MP", "L", "KD"],
        "datasets": [
-         { "label": "Ja",     "data": [0, 68, 0, 0, 0, 0, 16, 19], "backgroundColor": "#83cf39" },
+         { "label": "Ja",     "data": [0, 68, 0, 0, 0, 0, 16, 19], "backgroundColor": "#8BC34A" },
          { "label": "Nej",    "data": [107, 0, 0, 24, 24, 18, 0, 0], "backgroundColor": "#ff006e" },
          { "label": "Avstår", "data": [0, 0, 73, 0, 0, 0, 0, 0], "backgroundColor": "#ffbe0b" }
        ]

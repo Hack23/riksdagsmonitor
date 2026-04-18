@@ -30,10 +30,10 @@ graph TD
     HD25 --> DD
     HD25 --> ED
 
-    style IE fill:#dc3545,color:#fff
-    style SI fill:#ffc107,color:#000
-    style ED fill:#ffc107,color:#000
-    style DD fill:#ffc107,color:#000
+    style IE fill:#D32F2F,color:#FFFFFF
+    style SI fill:#FFC107,color:#000000
+    style ED fill:#FFC107,color:#000000
+    style DD fill:#FFC107,color:#000000
 ```
 
 | Threat Category | Severity | Evidence | Affected Function |

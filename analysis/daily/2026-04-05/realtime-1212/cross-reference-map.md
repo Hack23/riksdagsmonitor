@@ -29,11 +29,11 @@ graph TD
     HD235 -->|"criminal justice pipeline"| JUU15
     HD214 -->|"national security"| HD228
 
-    style HD235 fill:#dc3545,color:#fff
-    style HD228 fill:#28a745,color:#fff
-    style HD214 fill:#0d6efd,color:#fff
-    style FOU12 fill:#fd7e14,color:#fff
-    style JUU15 fill:#ffc107,color:#000
+    style HD235 fill:#D32F2F,color:#FFFFFF
+    style HD228 fill:#4CAF50,color:#FFFFFF
+    style HD214 fill:#1565C0,color:#FFFFFF
+    style FOU12 fill:#FF9800,color:#FFFFFF
+    style JUU15 fill:#FFC107,color:#000000
 ```
 
 ---

@@ -38,12 +38,12 @@ graph TD
         DEC -->|"Analysis only"| ANAL["Evening analysis<br/>synthesis committed"]
     end
 
-    style CLS fill:#dc3545,color:#fff
-    style RSK fill:#ffc107,color:#000
-    style THR fill:#ffc107,color:#000
-    style SIG fill:#ff6b35,color:#fff
-    style EXIST fill:#28a745,color:#fff
-    style ANAL fill:#0d6efd,color:#fff
+    style CLS fill:#D32F2F,color:#FFFFFF
+    style RSK fill:#FFC107,color:#000000
+    style THR fill:#FFC107,color:#000000
+    style SIG fill:#FF5722,color:#FFFFFF
+    style EXIST fill:#4CAF50,color:#FFFFFF
+    style ANAL fill:#1565C0,color:#FFFFFF
 ```
 
 ### Weekly Legislative Flow
@@ -74,16 +74,16 @@ graph LR
         B2 --> C2
         B3 --> C3
     end
-    style A1 fill:#dc3545,color:#fff
-    style A2 fill:#ff6b35,color:#fff
-    style A3 fill:#ffc107,color:#000
-    style A4 fill:#ff6b35,color:#fff
-    style B1 fill:#ff6b35,color:#fff
-    style B2 fill:#ff6b35,color:#fff
-    style B3 fill:#ffc107,color:#000
-    style C1 fill:#ff6b35,color:#fff
-    style C2 fill:#ff6b35,color:#fff
-    style C3 fill:#ff6b35,color:#fff
+    style A1 fill:#D32F2F,color:#FFFFFF
+    style A2 fill:#FF5722,color:#FFFFFF
+    style A3 fill:#FFC107,color:#000000
+    style A4 fill:#FF5722,color:#FFFFFF
+    style B1 fill:#FF5722,color:#FFFFFF
+    style B2 fill:#FF5722,color:#FFFFFF
+    style B3 fill:#FFC107,color:#000000
+    style C1 fill:#FF5722,color:#FFFFFF
+    style C2 fill:#FF5722,color:#FFFFFF
+    style C3 fill:#FF5722,color:#FFFFFF
 ```
 
 ---

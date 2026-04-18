@@ -35,11 +35,11 @@ graph LR
     A --> K{Urgency}
     K -->|"🔵 ELEVATED"| L["Policy question<br/>Minister response expected"]
 
-    style A fill:#0d6efd,stroke:#0a58ca,color:#fff
-    style C fill:#ffc107,stroke:#e0a800,color:#000
-    style H fill:#fd7e14,stroke:#ca6510,color:#fff
-    style I fill:#28a745,stroke:#1e7e34,color:#fff
-    style L fill:#17a2b8,stroke:#117a8b,color:#fff
+    style A fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
+    style C fill:#FFC107,stroke:#FFA000,color:#000000
+    style H fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style I fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style L fill:#0097A7,stroke:#117a8b,color:#FFFFFF
 ```
 
 | Classification | Value | Rationale |

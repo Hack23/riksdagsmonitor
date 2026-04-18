@@ -17,19 +17,19 @@ graph TD
         direction TB
         subgraph "🔒 Sensitivity"
             CLS["Sensitivity<br/>PUBLIC"]
-            style CLS fill:#28a745,color:#fff
+            style CLS fill:#4CAF50,color:#FFFFFF
         end
         subgraph "⚖️ Risk"
             RSK["Overall Risk<br/>MEDIUM<br/>Top: Migration policy<br/>opposition challenge"]
-            style RSK fill:#ffc107,color:#000
+            style RSK fill:#FFC107,color:#000000
         end
         subgraph "🎭 Threat"
             THR["Threat Level<br/>LOW<br/>Normal legislative cycle"]
-            style THR fill:#28a745,color:#fff
+            style THR fill:#4CAF50,color:#FFFFFF
         end
         subgraph "📈 Significance"
             SIG["Top Significance<br/>6/10<br/>Standard Article"]
-            style SIG fill:#ffc107,color:#000
+            style SIG fill:#FFC107,color:#000000
         end
     end
 
@@ -64,9 +64,9 @@ graph LR
     AU --> MIG
     CU --> CP
     CU --> VO
-    style MIG fill:#fd7e14,color:#fff
-    style CP fill:#28a745,color:#fff
-    style VO fill:#28a745,color:#fff
+    style MIG fill:#FF9800,color:#FFFFFF
+    style CP fill:#4CAF50,color:#FFFFFF
+    style VO fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Key Findings

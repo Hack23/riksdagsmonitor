@@ -22,10 +22,10 @@ graph LR
         D4["HD11685<br/>3/10 — Monitor<br/>Cuba Policy"]
     end
 
-    style D1 fill:#fd7e14,stroke:#ca6510,color:#fff
-    style D2 fill:#ffc107,stroke:#e0a800,color:#000
-    style D3 fill:#28a745,stroke:#1e7e34,color:#fff
-    style D4 fill:#28a745,stroke:#1e7e34,color:#fff
+    style D1 fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style D2 fill:#FFC107,stroke:#FFA000,color:#000000
+    style D3 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style D4 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```
 
 ---

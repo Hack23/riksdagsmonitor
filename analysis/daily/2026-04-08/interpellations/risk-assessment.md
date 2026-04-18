@@ -20,10 +20,10 @@ graph TD
         R3["🟡 Social Cohesion Risk<br/>L:2 × I:3 = 6<br/>Mosque hate speech polarisation"]
         R4["🔵 Ministerial Accountability Risk<br/>L:4 × I:3 = 12<br/>Evasive responses damage trust"]
     end
-    style R1 fill:#fd7e14,color:#fff
-    style R2 fill:#dc3545,color:#fff
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#fd7e14,color:#fff
+    style R1 fill:#FF9800,color:#FFFFFF
+    style R2 fill:#D32F2F,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FF9800,color:#FFFFFF
 ```
 
 | # | Risk | Likelihood (1-5) | Impact (1-5) | Score | Evidence | Mitigation |

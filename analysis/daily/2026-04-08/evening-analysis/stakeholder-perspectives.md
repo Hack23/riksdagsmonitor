@@ -20,15 +20,15 @@ graph TD
     CENTER --> JUD["⚖️ Judiciary/<br/>Constitutional<br/>Impact: LOW"]
     CENTER --> MED["📰 Media/Public<br/>Opinion<br/>Impact: MEDIUM"]
 
-    style CENTER fill:#6f42c1,color:#fff
-    style CIT fill:#0d6efd,color:#fff
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#ffc107,color:#000
-    style BIZ fill:#dc3545,color:#fff
-    style CIV fill:#0d6efd,color:#fff
-    style INT fill:#0d6efd,color:#fff
-    style JUD fill:#28a745,color:#fff
-    style MED fill:#0d6efd,color:#fff
+    style CENTER fill:#7B1FA2,color:#FFFFFF
+    style CIT fill:#1565C0,color:#FFFFFF
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#FFC107,color:#000000
+    style BIZ fill:#D32F2F,color:#FFFFFF
+    style CIV fill:#1565C0,color:#FFFFFF
+    style INT fill:#1565C0,color:#FFFFFF
+    style JUD fill:#4CAF50,color:#FFFFFF
+    style MED fill:#1565C0,color:#FFFFFF
 ```
 
 ## 📊 Impact Summary Matrix

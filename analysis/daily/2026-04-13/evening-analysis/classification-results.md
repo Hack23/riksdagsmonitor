@@ -23,10 +23,10 @@ graph TD
     Q3 -->|"Yes (24 docs)"| SEN2["🟡 SENSITIVE<br/>Committee reports, motions"]
     Q3 -->|"No"| PUB["🟢 PUBLIC<br/>Routine, procedural (16 docs)"]
     
-    style RES fill:#dc3545,color:#fff
-    style SEN fill:#ffc107,color:#000
-    style SEN2 fill:#ffc107,color:#000
-    style PUB fill:#28a745,color:#fff
+    style RES fill:#D32F2F,color:#FFFFFF
+    style SEN fill:#FFC107,color:#000000
+    style SEN2 fill:#FFC107,color:#000000
+    style PUB fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Per-Document Classification

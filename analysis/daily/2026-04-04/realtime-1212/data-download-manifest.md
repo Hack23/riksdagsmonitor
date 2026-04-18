@@ -29,11 +29,11 @@ graph TD
         MCP --> V["Votes: 0 new"]
         MCP --> S["Speeches: 0 analyzed"]
     end
-    style MCP fill:#0A66C2,stroke:#333,color:#fff
-    style P fill:#28a745,stroke:#333,color:#fff
-    style B fill:#28a745,stroke:#333,color:#fff
-    style V fill:#ffc107,stroke:#333,color:#000
-    style S fill:#ffc107,stroke:#333,color:#000
+    style MCP fill:#0A66C2,stroke:#424242,color:#FFFFFF
+    style P fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style B fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style V fill:#FFC107,stroke:#424242,color:#000000
+    style S fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 Saturday monitoring — enriched with lookback data from April 1-2. All documents sourced from official riksdag-regering-mcp API. Full-text not available for deep analysis; metadata-based analysis with MEDIUM confidence.

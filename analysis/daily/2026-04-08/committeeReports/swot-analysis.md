@@ -107,12 +107,12 @@ flowchart TD
     I --> J[Chamber Vote]
     J --> K[Implementation]
     
-    style C fill:#ff6b6b,color:#fff
-    style E fill:#ffa726,color:#fff
-    style F fill:#66bb6a,color:#fff
-    style G fill:#42a5f5,color:#fff
-    style D fill:#ab47bc,color:#fff
-    style H fill:#78909c,color:#fff
+    style C fill:#EF5350,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#66bb6a,color:#FFFFFF
+    style G fill:#42a5f5,color:#FFFFFF
+    style D fill:#ab47bc,color:#FFFFFF
+    style H fill:#78909c,color:#FFFFFF
 ```
 
 ## Data Quality Notes

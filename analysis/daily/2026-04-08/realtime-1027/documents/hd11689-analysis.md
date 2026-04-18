@@ -35,9 +35,9 @@ graph LR
     F --> G["3-year recurring issue<br/>escalating urgency framing"]
     
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style C fill:#dc3545,stroke:#333,color:#fff
-    style E fill:#ffc107,stroke:#333,color:#000
-    style G fill:#fd7e14,stroke:#333,color:#fff
+    style C fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style E fill:#FFC107,stroke:#424242,color:#000000
+    style G fill:#FF9800,stroke:#424242,color:#FFFFFF
 ```
 
 ---

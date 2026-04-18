@@ -33,12 +33,12 @@ graph TD
     R3 -.->|"amplifies"| R6
     R2 -.->|"competes with"| R4
 
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#ffc107,color:#000
-    style R5 fill:#28a745,color:#fff
-    style R6 fill:#28a745,color:#fff
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style R6 fill:#4CAF50,color:#FFFFFF
 ```
 
 ### 5-Dimension Risk Scoring
@@ -79,13 +79,13 @@ graph LR
     E --> F["Opposition attack:<br/>'tough talk, no capacity'"]
     F --> G["Electoral damage<br/>to coalition"]
 
-    style A fill:#ffc107,color:#000
-    style B fill:#fd7e14,color:#fff
-    style C fill:#dc3545,color:#fff
-    style D fill:#dc3545,color:#fff
-    style E fill:#fd7e14,color:#fff
-    style F fill:#ffc107,color:#000
-    style G fill:#dc3545,color:#fff
+    style A fill:#FFC107,color:#000000
+    style B fill:#FF9800,color:#FFFFFF
+    style C fill:#D32F2F,color:#FFFFFF
+    style D fill:#D32F2F,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style F fill:#FFC107,color:#000000
+    style G fill:#D32F2F,color:#FFFFFF
 ```
 
 ---

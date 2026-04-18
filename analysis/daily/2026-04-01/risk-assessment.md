@@ -19,11 +19,11 @@ graph TD
         R5["RSK-005<br/>Opposition Framing Risk<br/>🟠 MEDIUM (6/25)"]
     end
 
-    style R1 fill:#fd7e14,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#fd7e14,color:#fff
+    style R1 fill:#FF9800,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#FF9800,color:#FFFFFF
 ```
 
 ## Risk Register
@@ -44,10 +44,10 @@ graph LR
     RSK2["RSK-002<br/>Coalition Cohesion"] --> RSK1
     RSK3["RSK-003<br/>Arms Export"] --> RSK5
     
-    style RSK1 fill:#fd7e14,color:#fff
-    style RSK2 fill:#ffc107,color:#000
-    style RSK3 fill:#ffc107,color:#000
-    style RSK5 fill:#fd7e14,color:#fff
+    style RSK1 fill:#FF9800,color:#FFFFFF
+    style RSK2 fill:#FFC107,color:#000000
+    style RSK3 fill:#FFC107,color:#000000
+    style RSK5 fill:#FF9800,color:#FFFFFF
 ```
 
 **Key insight**: RSK-001 (ECHR) and RSK-005 (opposition framing) are linked — a successful legal challenge would validate the opposition narrative, compounding both risks.

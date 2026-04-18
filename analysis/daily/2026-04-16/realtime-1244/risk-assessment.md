@@ -116,12 +116,12 @@ graph TD
     E --> J["Delayed but<br/>functional rollout"]
     J --> K["🟢 Government claims<br/>'delivery' narrative"]
 
-    style A fill:#dc3545,color:#fff
-    style D fill:#dc3545,color:#fff
-    style H fill:#dc3545,color:#fff
-    style I fill:#fd7e14,color:#fff
-    style E fill:#ffc107,color:#000
-    style K fill:#28a745,color:#fff
+    style A fill:#D32F2F,color:#FFFFFF
+    style D fill:#D32F2F,color:#FFFFFF
+    style H fill:#D32F2F,color:#FFFFFF
+    style I fill:#FF9800,color:#FFFFFF
+    style E fill:#FFC107,color:#000000
+    style K fill:#4CAF50,color:#FFFFFF
 ```
 
 ## JuU15 Vote: Verified Passage Arithmetic for Prop. 2025/26:246
@@ -200,13 +200,13 @@ graph LR
     R1 --> R6
     R7 --> R4
 
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#dc3545,color:#fff
-    style R3 fill:#fd7e14,color:#fff
-    style R4 fill:#fd7e14,color:#fff
-    style R5 fill:#fd7e14,color:#fff
-    style R6 fill:#fd7e14,color:#fff
-    style R7 fill:#ffc107,color:#000
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#D32F2F,color:#FFFFFF
+    style R3 fill:#FF9800,color:#FFFFFF
+    style R4 fill:#FF9800,color:#FFFFFF
+    style R5 fill:#FF9800,color:#FFFFFF
+    style R6 fill:#FF9800,color:#FFFFFF
+    style R7 fill:#FFC107,color:#000000
 ```
 
 ## 🔮 Forward-Looking Risk Indicators

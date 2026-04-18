@@ -53,10 +53,10 @@ flowchart TD
     D -->|Impact| G["S loses pressure point"]
     E -->|Impact| H["Delays pre-election<br/>Issue persists"]
     F -->|Impact| I["S campaign ammunition<br/>Defense credibility hit"]
-    style A fill:#ff6b6b,color:#fff
-    style B fill:#4ecdc4,color:#fff
-    style F fill:#ff4444,color:#fff
-    style D fill:#44ff44,color:#000
+    style A fill:#EF5350,color:#FFFFFF
+    style B fill:#4ecdc4,color:#FFFFFF
+    style F fill:#EF5350,color:#FFFFFF
+    style D fill:#44ff44,color:#000000
 ```
 
 ## Election 2026 Implications

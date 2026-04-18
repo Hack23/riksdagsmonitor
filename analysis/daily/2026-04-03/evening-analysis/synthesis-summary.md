@@ -27,14 +27,14 @@ graph LR
     H --> K
     I --> K
     J --> K
-    style A fill:#0d6efd,color:#fff
-    style C fill:#dc3545,color:#fff
-    style D fill:#ffc107,color:#000
-    style E fill:#28a745,color:#fff
-    style G fill:#dc3545,color:#fff
-    style H fill:#fd7e14,color:#fff
-    style I fill:#ffc107,color:#000
-    style J fill:#28a745,color:#fff
+    style A fill:#1565C0,color:#FFFFFF
+    style C fill:#D32F2F,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
+    style E fill:#4CAF50,color:#FFFFFF
+    style G fill:#D32F2F,color:#FFFFFF
+    style H fill:#FF9800,color:#FFFFFF
+    style I fill:#FFC107,color:#000000
+    style J fill:#4CAF50,color:#FFFFFF
 ```
 
 ## 🏆 Top Findings by Significance
@@ -74,18 +74,18 @@ graph TB
         T2[Immigration Policy Polarization]
         T3[Electricity Subsidy Fiscal Drain]
     end
-    style S1 fill:#28a745,color:#fff
-    style S2 fill:#28a745,color:#fff
-    style S3 fill:#28a745,color:#fff
-    style W1 fill:#dc3545,color:#fff
-    style W2 fill:#fd7e14,color:#fff
-    style W3 fill:#fd7e14,color:#fff
-    style O1 fill:#0d6efd,color:#fff
-    style O2 fill:#0d6efd,color:#fff
-    style O3 fill:#0d6efd,color:#fff
-    style T1 fill:#ffc107,color:#000
-    style T2 fill:#dc3545,color:#fff
-    style T3 fill:#ffc107,color:#000
+    style S1 fill:#4CAF50,color:#FFFFFF
+    style S2 fill:#4CAF50,color:#FFFFFF
+    style S3 fill:#4CAF50,color:#FFFFFF
+    style W1 fill:#D32F2F,color:#FFFFFF
+    style W2 fill:#FF9800,color:#FFFFFF
+    style W3 fill:#FF9800,color:#FFFFFF
+    style O1 fill:#1565C0,color:#FFFFFF
+    style O2 fill:#1565C0,color:#FFFFFF
+    style O3 fill:#1565C0,color:#FFFFFF
+    style T1 fill:#FFC107,color:#000000
+    style T2 fill:#D32F2F,color:#FFFFFF
+    style T3 fill:#FFC107,color:#000000
 ```
 
 | Quadrant | Count | Highest-Impact Entry | Evidence |

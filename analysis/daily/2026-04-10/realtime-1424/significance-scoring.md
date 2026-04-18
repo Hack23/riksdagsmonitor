@@ -34,12 +34,12 @@ graph TD
     PUB --> GATE
     URG --> GATE
     XPTY --> GATE
-    style PARL fill:#ffc107,color:#000
-    style POL fill:#ffc107,color:#000
-    style PUB fill:#ffc107,color:#000
-    style URG fill:#28a745,color:#fff
-    style XPTY fill:#28a745,color:#fff
-    style MON fill:#28a745,color:#fff
+    style PARL fill:#FFC107,color:#000000
+    style POL fill:#FFC107,color:#000000
+    style PUB fill:#FFC107,color:#000000
+    style URG fill:#4CAF50,color:#FFFFFF
+    style XPTY fill:#4CAF50,color:#FFFFFF
+    style MON fill:#4CAF50,color:#FFFFFF
 ```
 
 ### Document Scores

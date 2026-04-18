@@ -21,9 +21,9 @@ graph TD
     B --> D["Total Defence Concept"]
     C --> D
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style B fill:#dc3545,stroke:#333,color:#fff
-    style C fill:#ffc107,stroke:#333,color:#000
-    style D fill:#fd7e14,stroke:#333,color:#fff
+    style B fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style C fill:#FFC107,stroke:#424242,color:#000000
+    style D fill:#FF9800,stroke:#424242,color:#FFFFFF
 ```
 
 ---

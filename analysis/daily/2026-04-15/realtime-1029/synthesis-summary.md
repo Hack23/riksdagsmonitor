@@ -76,14 +76,14 @@ graph TD
     P3 -.-> M3
     P4 -.-> M4
     
-    style M1 fill:#4CAF50,color:#fff
-    style M2 fill:#FF9800,color:#fff
-    style M3 fill:#FF9800,color:#fff
-    style M4 fill:#f44336,color:#fff
-    style P1 fill:#2196F3,color:#fff
-    style P2 fill:#2196F3,color:#fff
-    style P3 fill:#2196F3,color:#fff
-    style P4 fill:#2196F3,color:#fff
+    style M1 fill:#4CAF50,color:#FFFFFF
+    style M2 fill:#FF9800,color:#FFFFFF
+    style M3 fill:#FF9800,color:#FFFFFF
+    style M4 fill:#D32F2F,color:#FFFFFF
+    style P1 fill:#2196F3,color:#FFFFFF
+    style P2 fill:#2196F3,color:#FFFFFF
+    style P3 fill:#2196F3,color:#FFFFFF
+    style P4 fill:#2196F3,color:#FFFFFF
 ```
 
 ## Implications for Article Generation

@@ -21,11 +21,11 @@ graph TD
         R5["🟢 Municipal<br/>funding dispute (L3×I3=9)"]
     end
     
-    style R1 fill:#ef4444,stroke:#333,color:#fff
-    style R2 fill:#f59e0b,stroke:#333,color:#000
-    style R3 fill:#f59e0b,stroke:#333,color:#000
-    style R4 fill:#f59e0b,stroke:#333,color:#000
-    style R5 fill:#22c55e,stroke:#333,color:#000
+    style R1 fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style R2 fill:#FF9800,stroke:#424242,color:#000000
+    style R3 fill:#FF9800,stroke:#424242,color:#000000
+    style R4 fill:#FF9800,stroke:#424242,color:#000000
+    style R5 fill:#4CAF50,stroke:#424242,color:#000000
 ```
 
 ## Risk Register
@@ -48,12 +48,12 @@ graph LR
     D -->|"Comply"| E["SD dissatisfied<br/>coalition strain"]
     D -->|"Resist"| F["International<br/>credibility damage"]
     
-    style A fill:#3b82f6,stroke:#333,color:#fff
-    style B fill:#f59e0b,stroke:#333,color:#000
-    style C fill:#f59e0b,stroke:#333,color:#000
-    style D fill:#ef4444,stroke:#333,color:#fff
-    style E fill:#ef4444,stroke:#333,color:#fff
-    style F fill:#ef4444,stroke:#333,color:#fff
+    style A fill:#2196F3,stroke:#424242,color:#FFFFFF
+    style B fill:#FF9800,stroke:#424242,color:#000000
+    style C fill:#FF9800,stroke:#424242,color:#000000
+    style D fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style E fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style F fill:#EF5350,stroke:#424242,color:#FFFFFF
 ```
 
 ## Five-Dimension Risk Scoring

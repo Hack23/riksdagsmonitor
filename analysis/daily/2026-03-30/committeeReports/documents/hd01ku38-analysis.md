@@ -122,11 +122,11 @@ flowchart LR
     C -->|Ja| D[Parliamentary<br/>Process Reform]
     C -->|Avslås| E[Status Quo]
     
-    style A fill:#00d9ff,color:#000
-    style B fill:#ffbe0b,color:#000
-    style C fill:#ff006e,color:#fff
-    style D fill:#00ff88,color:#000
-    style E fill:#ff6b6b,color:#fff
+    style A fill:#00d9ff,color:#000000
+    style B fill:#ffbe0b,color:#000000
+    style C fill:#ff006e,color:#FFFFFF
+    style D fill:#4CAF50,color:#000000
+    style E fill:#EF5350,color:#FFFFFF
 ```
 
 ## Significance Assessment

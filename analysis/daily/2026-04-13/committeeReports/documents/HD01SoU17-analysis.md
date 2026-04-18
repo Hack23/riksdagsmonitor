@@ -19,9 +19,9 @@ graph TD
     A --> C["SoU17: Priorities<br/>172 rejected"]
     B --> D["Government response:<br/>Ongoing work"]
     C --> E["Government response:<br/>Regional responsibility"]
-    style A fill:#ff8800,color:#fff
-    style D fill:#ffcc00,color:#000
-    style E fill:#ffcc00,color:#000
+    style A fill:#F57C00,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
+    style E fill:#FFC107,color:#000000
 ```
 
 | Dimension | Score (0-10) | Rationale |

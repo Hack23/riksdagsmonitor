@@ -67,13 +67,13 @@ graph TD
     C1 -->|"Defence nexus"| H1
     H2 -->|"Coalition test"| H3
 
-    style C1 fill:#ff006e,color:#fff
-    style H1 fill:#ff8c00,color:#fff
-    style H2 fill:#ff8c00,color:#fff
-    style H3 fill:#ffbe0b,color:#000
-    style H4 fill:#ffbe0b,color:#000
-    style M1 fill:#00d9ff,color:#000
-    style L1 fill:#e0e0e0,color:#000
+    style C1 fill:#ff006e,color:#FFFFFF
+    style H1 fill:#F57C00,color:#FFFFFF
+    style H2 fill:#F57C00,color:#FFFFFF
+    style H3 fill:#ffbe0b,color:#000000
+    style H4 fill:#ffbe0b,color:#000000
+    style M1 fill:#00d9ff,color:#000000
+    style L1 fill:#e0e0e0,color:#000000
 ```
 
 ## Data Quality Notes

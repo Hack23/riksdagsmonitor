@@ -86,18 +86,18 @@ graph TD
     HD03231 -.companion.-> HD03232
     HD01CU27 --> CONTEXT_CRIME
 
-    style HD01KU33 fill:#dc3545,color:#fff
-    style HD01KU32 fill:#dc3545,color:#fff
-    style HD03231 fill:#fd7e14,color:#fff
-    style HD03232 fill:#fd7e14,color:#fff
-    style HD01CU28 fill:#ffc107,color:#000
-    style HD01CU27 fill:#ffc107,color:#000
-    style TF1766 fill:#6f42c1,color:#fff
-    style YGL1991 fill:#6f42c1,color:#fff
-    style CONTEXT_ELECT fill:#0d6efd,color:#fff
-    style CONTEXT_NATO fill:#0d6efd,color:#fff
-    style CONTEXT_ZEL fill:#0d6efd,color:#fff
-    style CONTEXT_CRIME fill:#6f42c1,color:#fff
+    style HD01KU33 fill:#D32F2F,color:#FFFFFF
+    style HD01KU32 fill:#D32F2F,color:#FFFFFF
+    style HD03231 fill:#FF9800,color:#FFFFFF
+    style HD03232 fill:#FF9800,color:#FFFFFF
+    style HD01CU28 fill:#FFC107,color:#000000
+    style HD01CU27 fill:#FFC107,color:#000000
+    style TF1766 fill:#7B1FA2,color:#FFFFFF
+    style YGL1991 fill:#7B1FA2,color:#FFFFFF
+    style CONTEXT_ELECT fill:#1565C0,color:#FFFFFF
+    style CONTEXT_NATO fill:#1565C0,color:#FFFFFF
+    style CONTEXT_ZEL fill:#1565C0,color:#FFFFFF
+    style CONTEXT_CRIME fill:#7B1FA2,color:#FFFFFF
 ```
 
 ---

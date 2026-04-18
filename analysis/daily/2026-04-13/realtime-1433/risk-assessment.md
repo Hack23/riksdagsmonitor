@@ -14,12 +14,12 @@ graph TD
         R5["R5: NATO deployment escalation<br/>L:3 × I:4 = 12"]
         R6["R6: Reception law EU challenge<br/>L:3 × I:4 = 12"]
     end
-    style R1 fill:#dc3545,stroke:#333,color:#fff
-    style R2 fill:#dc3545,stroke:#333,color:#fff
-    style R3 fill:#fd7e14,stroke:#333,color:#fff
-    style R4 fill:#fd7e14,stroke:#333,color:#fff
-    style R5 fill:#fd7e14,stroke:#333,color:#fff
-    style R6 fill:#fd7e14,stroke:#333,color:#fff
+    style R1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style R2 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style R3 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style R4 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style R5 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style R6 fill:#FF9800,stroke:#424242,color:#FFFFFF
 ```
 
 | ID | Risk | Likelihood | Impact | Score | dok_id | Mitigation |

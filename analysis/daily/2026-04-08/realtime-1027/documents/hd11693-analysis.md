@@ -23,8 +23,8 @@ graph LR
     D --> E["Lagrådsremiss<br/>Ökad insyn i<br/>politiska processer"]
     
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style C fill:#28a745,stroke:#333,color:#fff
-    style E fill:#ffc107,stroke:#333,color:#000
+    style C fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style E fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 ---

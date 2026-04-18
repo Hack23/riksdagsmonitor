@@ -25,10 +25,10 @@ graph LR
     D --> E["Fiscal Governance"]
     A --> F{"Urgency"}
     F -->|"🔵 ELEVATED"| G["Standard processing"]
-    style A fill:#0A66C2,stroke:#fff,color:#fff
-    style C fill:#28a745,stroke:#333,color:#fff
-    style E fill:#17a2b8,stroke:#333,color:#fff
-    style G fill:#17a2b8,stroke:#333,color:#fff
+    style A fill:#0A66C2,stroke:#FFFFFF,color:#FFFFFF
+    style C fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style E fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style G fill:#0097A7,stroke:#424242,color:#FFFFFF
 ```
 
 ## 📈 SWOT Analysis

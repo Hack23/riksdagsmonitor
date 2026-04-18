@@ -39,13 +39,13 @@ graph TD
     R4 -.-> TL
     R5 -.-> TL
 
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#28a745,color:#fff
-    style R3 fill:#28a745,color:#fff
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#28a745,color:#fff
-    style TM fill:#ffc107,color:#000
-    style TL fill:#28a745,color:#fff
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#4CAF50,color:#FFFFFF
+    style R3 fill:#4CAF50,color:#FFFFFF
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style TM fill:#FFC107,color:#000000
+    style TL fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk ID | Description | L | I | Score | Tier | Trend | Mitigation |
@@ -166,10 +166,10 @@ flowchart TD
     FIRST --> SECOND_A[2ND ORDER A: PRC trade friction with Swedish companies L2 x I3 = 6]
     FIRST --> SECOND_B[2ND ORDER B: Nordic solidarity strengthens Sweden position L3 x I2 = 6]
 
-    style TRIGGER fill:#ffc107,color:#000
-    style FIRST fill:#fd7e14,color:#fff
-    style SECOND_A fill:#ffc107,color:#000
-    style SECOND_B fill:#28a745,color:#fff
+    style TRIGGER fill:#FFC107,color:#000000
+    style FIRST fill:#FF9800,color:#FFFFFF
+    style SECOND_A fill:#FFC107,color:#000000
+    style SECOND_B fill:#4CAF50,color:#FFFFFF
 ```
 
 | Chain Stage | Risk Event | L | I | Score | Circuit Breaker |
@@ -255,11 +255,11 @@ graph LR
     BUD -->|Spring budget shapes narrative| COA
     EXT -->|Taiwan position minor domestic impact| POL
 
-    style COA fill:#28a745,color:#fff
-    style POL fill:#28a745,color:#fff
-    style BUD fill:#28a745,color:#fff
-    style ELE fill:#28a745,color:#fff
-    style EXT fill:#ffc107,color:#000
+    style COA fill:#4CAF50,color:#FFFFFF
+    style POL fill:#4CAF50,color:#FFFFFF
+    style BUD fill:#4CAF50,color:#FFFFFF
+    style ELE fill:#4CAF50,color:#FFFFFF
+    style EXT fill:#FFC107,color:#000000
 ```
 
 ---

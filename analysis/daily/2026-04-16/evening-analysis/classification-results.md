@@ -31,10 +31,10 @@ graph LR
     SCOPE -->|"🇸🇪 NATIONAL"| NAT["All Citizens<br/>Crime + Energy + Climate"]
     SCOPE -->|"🌍 INTERNATIONAL"| INT["Ukraine Accountability"]
 
-    style SEN fill:#ffc107,color:#000
-    style URGE fill:#fd7e14,color:#fff
-    style NAT fill:#0d6efd,color:#fff
-    style INT fill:#fd7e14,color:#fff
+    style SEN fill:#FFC107,color:#000000
+    style URGE fill:#FF9800,color:#FFFFFF
+    style NAT fill:#1565C0,color:#FFFFFF
+    style INT fill:#FF9800,color:#FFFFFF
 ```
 
 ---

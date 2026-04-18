@@ -24,11 +24,11 @@ graph TD
         TIM["Timeliness<br/>7/10"]
     end
 
-    style POL fill:#dc3545,color:#fff
-    style LEG fill:#dc3545,color:#fff
-    style PUB fill:#dc3545,color:#fff
-    style INT fill:#fd7e14,color:#fff
-    style TIM fill:#fd7e14,color:#fff
+    style POL fill:#D32F2F,color:#FFFFFF
+    style LEG fill:#D32F2F,color:#FFFFFF
+    style PUB fill:#D32F2F,color:#FFFFFF
+    style INT fill:#FF9800,color:#FFFFFF
+    style TIM fill:#FF9800,color:#FFFFFF
 ```
 
 | Dimension | Score | Rationale |

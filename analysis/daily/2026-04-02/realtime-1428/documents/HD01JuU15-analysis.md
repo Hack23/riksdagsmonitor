@@ -39,9 +39,9 @@ graph LR
     A --> I{Urgency}
     I -->|"🔵 ELEVATED"| L[Committee report — monitoring this week]
 
-    style E fill:#28a745,color:#fff
-    style H fill:#0d6efd,color:#fff
-    style L fill:#0d6efd,color:#fff
+    style E fill:#4CAF50,color:#FFFFFF
+    style H fill:#1565C0,color:#FFFFFF
+    style L fill:#1565C0,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -113,12 +113,12 @@ graph TD
     R1 -.-> T4
     R4 -.-> T4
 
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#28a745,color:#fff
-    style T3 fill:#ffc107,color:#000
-    style T4 fill:#28a745,color:#fff
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style T3 fill:#FFC107,color:#000000
+    style T4 fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk Type | Likelihood (1–5) | Impact (1–5) | Score | Assessment |

@@ -31,11 +31,11 @@ flowchart TD
     D --> I["🟢 Industrial Support<br/>Protects energy-intensive sectors"]
 
     style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
-    style E fill:#28a745,color:#fff
-    style F fill:#dc3545,color:#fff
-    style G fill:#28a745,color:#fff
-    style H fill:#dc3545,color:#fff
-    style I fill:#28a745,color:#fff
+    style E fill:#4CAF50,color:#FFFFFF
+    style F fill:#D32F2F,color:#FFFFFF
+    style G fill:#4CAF50,color:#FFFFFF
+    style H fill:#D32F2F,color:#FFFFFF
+    style I fill:#4CAF50,color:#FFFFFF
 ```
 
 ### Strengths (Government)

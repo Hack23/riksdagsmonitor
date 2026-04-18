@@ -35,9 +35,9 @@ graph LR
     I -->|"🔵 ELEVATED"| L["Implementation 1 July 2026"]
 
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style C fill:#dc3545,stroke:#333,color:#fff
-    style H fill:#dc3545,stroke:#333,color:#fff
-    style L fill:#17a2b8,stroke:#333,color:#fff
+    style C fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style H fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style L fill:#0097A7,stroke:#424242,color:#FFFFFF
 ```
 
 ---

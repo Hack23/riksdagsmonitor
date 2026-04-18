@@ -21,12 +21,12 @@ graph TD
     T2 --> T3
     T4 --> T1
     T6 --> T5
-    style T1 fill:#ffc107,color:#000
-    style T2 fill:#dc3545,color:#fff
-    style T3 fill:#28a745,color:#fff
-    style T4 fill:#ffc107,color:#000
-    style T5 fill:#ffc107,color:#000
-    style T6 fill:#28a745,color:#fff
+    style T1 fill:#FFC107,color:#000000
+    style T2 fill:#D32F2F,color:#FFFFFF
+    style T3 fill:#4CAF50,color:#FFFFFF
+    style T4 fill:#FFC107,color:#000000
+    style T5 fill:#FFC107,color:#000000
+    style T6 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## 📊 Threat Category Assessment

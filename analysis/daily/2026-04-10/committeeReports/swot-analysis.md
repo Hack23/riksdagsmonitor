@@ -80,14 +80,14 @@ graph TD
         T1["T1: SD-coalition friction UU6"]
         T2["T2: EU migration legal risk SfU16"]
     end
-    style S1 fill:#2E7D32,color:#fff
-    style S2 fill:#2E7D32,color:#fff
-    style W1 fill:#FF9800,color:#000
-    style W2 fill:#FF9800,color:#000
-    style O1 fill:#1565C0,color:#fff
-    style O3 fill:#1565C0,color:#fff
-    style T1 fill:#D32F2F,color:#fff
-    style T2 fill:#D32F2F,color:#fff
+    style S1 fill:#2E7D32,color:#FFFFFF
+    style S2 fill:#2E7D32,color:#FFFFFF
+    style W1 fill:#FF9800,color:#000000
+    style W2 fill:#FF9800,color:#000000
+    style O1 fill:#1565C0,color:#FFFFFF
+    style O3 fill:#1565C0,color:#FFFFFF
+    style T1 fill:#D32F2F,color:#FFFFFF
+    style T2 fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Key Findings

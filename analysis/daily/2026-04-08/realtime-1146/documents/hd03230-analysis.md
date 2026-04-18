@@ -34,10 +34,10 @@ graph TD
     D --> G["MJU Committee Referral"]
     E --> H["Biodiversity vs. Development"]
     F --> I["Compensation Framework"]
-    style A fill:#ffc107,stroke:#333,color:#000
-    style B fill:#28a745,stroke:#333,color:#fff
-    style C fill:#6f42c1,stroke:#333,color:#fff
-    style H fill:#dc3545,stroke:#333,color:#fff
+    style A fill:#FFC107,stroke:#424242,color:#000000
+    style B fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style C fill:#7B1FA2,stroke:#424242,color:#FFFFFF
+    style H fill:#D32F2F,stroke:#424242,color:#FFFFFF
 ```
 
 ---

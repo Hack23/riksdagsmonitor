@@ -39,13 +39,13 @@ graph TD
     S2 --> C2
     S3 --> C3
     S4 --> C4
-    style S1 fill:#ffc107,stroke:#333,color:#000
-    style S2 fill:#ffc107,stroke:#333,color:#000
-    style S3 fill:#ffc107,stroke:#333,color:#000
-    style S4 fill:#28a745,stroke:#333,color:#fff
-    style R1 fill:#ffc107,stroke:#333,color:#000
-    style R2 fill:#28a745,stroke:#333,color:#fff
-    style R3 fill:#28a745,stroke:#333,color:#fff
+    style S1 fill:#FFC107,stroke:#424242,color:#000000
+    style S2 fill:#FFC107,stroke:#424242,color:#000000
+    style S3 fill:#FFC107,stroke:#424242,color:#000000
+    style S4 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style R1 fill:#FFC107,stroke:#424242,color:#000000
+    style R2 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style R3 fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 ## Summary

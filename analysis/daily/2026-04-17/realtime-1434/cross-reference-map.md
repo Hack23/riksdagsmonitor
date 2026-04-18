@@ -79,17 +79,17 @@ graph TD
     %% Cross-cluster rhetorical tension
     HD01KU33 -.rhetorical tension<br/>press freedom at home<br/>vs accountability abroad.-> HD03231
 
-    style HD01KU33 fill:#dc3545,color:#fff
-    style HD01KU32 fill:#dc3545,color:#fff
-    style HD03231 fill:#fd7e14,color:#fff
-    style HD03232 fill:#fd7e14,color:#fff
-    style HD01CU28 fill:#ffc107,color:#000
-    style HD01CU27 fill:#ffc107,color:#000
-    style TF1766 fill:#6f42c1,color:#fff
-    style YGL1991 fill:#6f42c1,color:#fff
-    style RF8_14 fill:#6f42c1,color:#fff
-    style NUREMBERG fill:#6f42c1,color:#fff
-    style ELECT2026 fill:#0d6efd,color:#fff
+    style HD01KU33 fill:#D32F2F,color:#FFFFFF
+    style HD01KU32 fill:#D32F2F,color:#FFFFFF
+    style HD03231 fill:#FF9800,color:#FFFFFF
+    style HD03232 fill:#FF9800,color:#FFFFFF
+    style HD01CU28 fill:#FFC107,color:#000000
+    style HD01CU27 fill:#FFC107,color:#000000
+    style TF1766 fill:#7B1FA2,color:#FFFFFF
+    style YGL1991 fill:#7B1FA2,color:#FFFFFF
+    style RF8_14 fill:#7B1FA2,color:#FFFFFF
+    style NUREMBERG fill:#7B1FA2,color:#FFFFFF
+    style ELECT2026 fill:#1565C0,color:#FFFFFF
 ```
 
 ---

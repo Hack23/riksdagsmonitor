@@ -19,9 +19,9 @@ graph TD
     T1 -->|"HD03235"| D1["Deportation discretion<br/>expanded without<br/>judicial review reform"]
     T2 -->|"HD03235"| D2["ECHR proportionality<br/>risk for stricter<br/>expulsion criteria"]
     T3 -->|"HD03228"| D3["Arms export decisions<br/>may lack public<br/>disclosure requirements"]
-    style T1 fill:#ffd93d,color:#000
-    style T2 fill:#ffd93d,color:#000
-    style T3 fill:#6bcb77,color:#000
+    style T1 fill:#FFC107,color:#000000
+    style T2 fill:#FFC107,color:#000000
+    style T3 fill:#81C784,color:#000000
 ```
 
 ## Detailed Analysis

@@ -38,16 +38,16 @@ graph LR
     A --> H{Sensitivity}
     H --> I[Community Relations]
     H --> J[Civil Liberties Balance]
-    style A fill:#ffc107,stroke:#333,color:#000
-    style B fill:#dc3545,stroke:#333,color:#fff
-    style E fill:#fd7e14,stroke:#333,color:#000
-    style H fill:#ffc107,stroke:#333,color:#000
-    style C fill:#dc3545,stroke:#333,color:#fff
-    style D fill:#6c757d,stroke:#333,color:#fff
-    style F fill:#fd7e14,stroke:#333,color:#000
-    style G fill:#fd7e14,stroke:#333,color:#000
-    style I fill:#ffc107,stroke:#333,color:#000
-    style J fill:#ffc107,stroke:#333,color:#000
+    style A fill:#FFC107,stroke:#424242,color:#000000
+    style B fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style E fill:#FF9800,stroke:#424242,color:#000000
+    style H fill:#FFC107,stroke:#424242,color:#000000
+    style C fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style D fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style F fill:#FF9800,stroke:#424242,color:#000000
+    style G fill:#FF9800,stroke:#424242,color:#000000
+    style I fill:#FFC107,stroke:#424242,color:#000000
+    style J fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 | Attribute | Value |

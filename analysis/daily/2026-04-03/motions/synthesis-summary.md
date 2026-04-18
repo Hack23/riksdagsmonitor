@@ -27,11 +27,11 @@ flowchart LR
     end
     A --> B & C & D & E & F
     B & C & D & E & F --> G
-    style B fill:#dc3545,color:#fff
-    style C fill:#fd7e14,color:#fff
-    style D fill:#ffc107,color:#000
-    style E fill:#28a745,color:#fff
-    style F fill:#17a2b8,color:#fff
+    style B fill:#D32F2F,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
+    style E fill:#4CAF50,color:#FFFFFF
+    style F fill:#0097A7,color:#FFFFFF
 ```
 
 ## 🏆 Top Findings by Significance

@@ -16,9 +16,9 @@ graph LR
         LOW["🟢 LOW (1-4)<br/>55 documents<br/>Motions, routine reports"]
     end
 
-    style HIGH fill:#dc3545,color:#fff
-    style MED fill:#ffc107,color:#000
-    style LOW fill:#28a745,color:#fff
+    style HIGH fill:#D32F2F,color:#FFFFFF
+    style MED fill:#FFC107,color:#000000
+    style LOW fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Scoring Methodology

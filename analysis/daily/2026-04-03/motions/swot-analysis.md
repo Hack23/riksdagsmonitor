@@ -130,10 +130,10 @@ flowchart TB
     W ---|"Address"| T
     S ---|"Defend"| T
     W ---|"Transform"| O
-    style S fill:#28a745,color:#fff
-    style W fill:#dc3545,color:#fff
-    style O fill:#007bff,color:#fff
-    style T fill:#fd7e14,color:#fff
+    style S fill:#4CAF50,color:#FFFFFF
+    style W fill:#D32F2F,color:#FFFFFF
+    style O fill:#007bff,color:#FFFFFF
+    style T fill:#FF9800,color:#FFFFFF
 ```
 
 ## 🔄 Section 5: Cross-SWOT Interference

@@ -14,11 +14,11 @@ The **Environment Committee (MJU)** produced two reports: a waste legislation re
 
 ```mermaid
 graph LR
-    style FiU48 fill:#ff6b35,color:#fff
-    style SfU_BLOC fill:#c0392b,color:#fff
-    style UFöU3 fill:#2980b9,color:#fff
-    style MJU19 fill:#27ae60,color:#fff
-    style MJU20 fill:#8e44ad,color:#fff
+    style FiU48 fill:#FF5722,color:#FFFFFF
+    style SfU_BLOC fill:#D32F2F,color:#FFFFFF
+    style UFöU3 fill:#1565C0,color:#FFFFFF
+    style MJU19 fill:#4CAF50,color:#FFFFFF
+    style MJU20 fill:#7B1FA2,color:#FFFFFF
 
     A[Parliament Week 16<br/>April 2026] --> FiU48[💰 FiU48<br/>Fuel Tax Cut<br/>Vote: April 22]
     A --> SfU_BLOC[🛡️ SfU Triptych<br/>SfU31+32+36<br/>Migration Enforcement]

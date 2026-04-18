@@ -71,13 +71,13 @@ graph LR
     MP -->|"Social welfare"| MS
     S -->|"Defence gap"| PJ
 
-    style S fill:#e8112d,color:#fff
-    style V fill:#da291c,color:#fff
-    style MP fill:#83cf39,color:#000
-    style KC fill:#005cb8,color:#fff
-    style MS fill:#1b49dd,color:#fff
-    style BL fill:#006ab3,color:#fff
-    style PJ fill:#1b49dd,color:#fff
+    style S fill:#e8112d,color:#FFFFFF
+    style V fill:#D32F2F,color:#FFFFFF
+    style MP fill:#8BC34A,color:#000000
+    style KC fill:#005cb8,color:#FFFFFF
+    style MS fill:#1b49dd,color:#FFFFFF
+    style BL fill:#006ab3,color:#FFFFFF
+    style PJ fill:#1b49dd,color:#FFFFFF
 ```
 
 ## Data Quality Notes

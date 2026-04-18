@@ -42,12 +42,12 @@ graph TD
     HD03230 ---|"environment vs property"| HD11689
     HD11693 ---|"democratic accountability"| HD11694
 
-    style HD11690 fill:#dc3545,color:#fff
-    style HD11689 fill:#fd7e14,color:#fff
-    style HD11692 fill:#fd7e14,color:#fff
-    style HD01NU18 fill:#0d6efd,color:#fff
-    style HD03230 fill:#0d6efd,color:#fff
-    style HD11693 fill:#28a745,color:#fff
+    style HD11690 fill:#D32F2F,color:#FFFFFF
+    style HD11689 fill:#FF9800,color:#FFFFFF
+    style HD11692 fill:#FF9800,color:#FFFFFF
+    style HD01NU18 fill:#1565C0,color:#FFFFFF
+    style HD03230 fill:#1565C0,color:#FFFFFF
+    style HD11693 fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

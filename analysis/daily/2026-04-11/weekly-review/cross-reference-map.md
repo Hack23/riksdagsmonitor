@@ -19,7 +19,7 @@
 ```mermaid
 graph TD
     subgraph SEC["🛡️ Security & Defense Cluster"]
-        style SEC fill:#1a0a0a,color:#ff6b6b,stroke:#dc3545,stroke-width:2px
+        style SEC fill:#1a0a0a,color:#EF5350,stroke:#D32F2F,stroke-width:2px
         HD03220["HD03220<br/>NATO Finland<br/>Forward Presence<br/>⭐ 8/10"]
         HD01FOU12["HD01FöU12<br/>Shelter Law<br/>Civilian Protection<br/>⭐ 8/10"]
         HD01UU6["HD01UU6<br/>Security Policy<br/>51 motions<br/>⭐ 8/10"]
@@ -47,7 +47,7 @@ graph TD
     end
 
     subgraph CE["🌱 Climate & Energy Cluster"]
-        style CE fill:#0a1a0a,color:#28a745,stroke:#28a745,stroke-width:2px
+        style CE fill:#0a1a0a,color:#4CAF50,stroke:#4CAF50,stroke-width:2px
         HD01MJU30["HD01MJU30<br/>Climate Targets<br/>Recalibration"]
         HD01NU18["HD01NU18<br/>Renewable Energy<br/>Permitting"]
         HD03230["HD03230<br/>Hydropower<br/>Exemptions"]
@@ -88,11 +88,11 @@ graph TD
     HD03216 -->|"structural reform<br/>complement"| HD01SOU16
     HD01SOU16 -->|"priorities implementation"| HD01SOU17
 
-    style HD03235 fill:#dc3545,color:#fff,stroke:#fff,stroke-width:3px
-    style HD03220 fill:#ff6b35,color:#fff
-    style HD03218 fill:#ff6b35,color:#fff
-    style HD01FOU12 fill:#ff6b35,color:#fff
-    style HD01UU6 fill:#ff6b35,color:#fff
+    style HD03235 fill:#D32F2F,color:#FFFFFF,stroke:#FFFFFF,stroke-width:3px
+    style HD03220 fill:#FF5722,color:#FFFFFF
+    style HD03218 fill:#FF5722,color:#FFFFFF
+    style HD01FOU12 fill:#FF5722,color:#FFFFFF
+    style HD01UU6 fill:#FF5722,color:#FFFFFF
 ```
 
 ---

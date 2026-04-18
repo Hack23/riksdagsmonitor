@@ -92,16 +92,16 @@ graph TD
         end
     end
 
-    style S1 fill:#28a745,stroke:#333,color:#fff
-    style S2 fill:#28a745,stroke:#333,color:#fff
-    style S3 fill:#28a745,stroke:#333,color:#fff
-    style W1 fill:#ffc107,stroke:#333,color:#000
-    style W2 fill:#ffc107,stroke:#333,color:#000
-    style W3 fill:#ffc107,stroke:#333,color:#000
-    style O1 fill:#17a2b8,stroke:#333,color:#fff
-    style O2 fill:#17a2b8,stroke:#333,color:#fff
-    style T1 fill:#dc3545,stroke:#333,color:#fff
-    style T2 fill:#dc3545,stroke:#333,color:#fff
+    style S1 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style S2 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style S3 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style W1 fill:#FFC107,stroke:#424242,color:#000000
+    style W2 fill:#FFC107,stroke:#424242,color:#000000
+    style W3 fill:#FFC107,stroke:#424242,color:#000000
+    style O1 fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style O2 fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style T1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style T2 fill:#D32F2F,stroke:#424242,color:#FFFFFF
 ```
 
 ---

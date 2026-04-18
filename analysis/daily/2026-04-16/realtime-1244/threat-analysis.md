@@ -45,11 +45,11 @@ graph TD
     D --> D2["Nordic isolation<br/>SE=13 vs DK/NO/FI=15"]
     D --> D3["EU Fundamental<br/>Rights Agency report"]
     
-    style ROOT fill:#dc3545,color:#fff
-    style B1 fill:#dc3545,color:#fff
-    style A1 fill:#fd7e14,color:#fff
-    style B2 fill:#fd7e14,color:#fff
-    style C1 fill:#ffc107,color:#000
+    style ROOT fill:#D32F2F,color:#FFFFFF
+    style B1 fill:#D32F2F,color:#FFFFFF
+    style A1 fill:#FF9800,color:#FFFFFF
+    style B2 fill:#FF9800,color:#FFFFFF
+    style C1 fill:#FFC107,color:#000000
 ```
 
 ---
@@ -165,13 +165,13 @@ graph TB
     T_INTL -.->|"triggers"| T_LAGR
     T_RECID -.->|"validates"| T_CONST
     
-    style T_IMPL fill:#dc3545,color:#fff
-    style T_CONST fill:#dc3545,color:#fff
-    style T_ELEC fill:#fd7e14,color:#fff
-    style T_INTL fill:#fd7e14,color:#fff
-    style T_LAGR fill:#ffc107,color:#000
-    style T_RECID fill:#ffc107,color:#000
-    style T_SD fill:#28a745,color:#fff
+    style T_IMPL fill:#D32F2F,color:#FFFFFF
+    style T_CONST fill:#D32F2F,color:#FFFFFF
+    style T_ELEC fill:#FF9800,color:#FFFFFF
+    style T_INTL fill:#FF9800,color:#FFFFFF
+    style T_LAGR fill:#FFC107,color:#000000
+    style T_RECID fill:#FFC107,color:#000000
+    style T_SD fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

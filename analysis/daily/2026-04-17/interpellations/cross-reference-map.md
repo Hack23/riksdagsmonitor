@@ -12,11 +12,11 @@ graph LR
     HD10438 --> NL
     NL --> TRAP["L's gender equality\ncredibility destroyed?\nEU compliance gap exposed"]
     
-    style SA fill:#e74c3c,color:#fff
-    style NL fill:#3498db,color:#fff
-    style TRAP fill:#e67e22,color:#fff
-    style HD10437 fill:#c0392b,color:#fff
-    style HD10438 fill:#c0392b,color:#fff
+    style SA fill:#D32F2F,color:#FFFFFF
+    style NL fill:#2196F3,color:#FFFFFF
+    style TRAP fill:#FF9800,color:#FFFFFF
+    style HD10437 fill:#D32F2F,color:#FFFFFF
+    style HD10438 fill:#D32F2F,color:#FFFFFF
 ```
 
 **Coordination Evidence**: Same filer, same minister, same day, complementary policy areas. This is deliberate strategic filing.
@@ -38,15 +38,15 @@ graph TD
     HD10413["HD10413: Housing law (Kupolen)\nAdrian Magnusson S\nMar 26"] --> AC
     HD10412["HD10412: Disability accessibility\nNadja Awad V\nMar 26"] --> AC
 
-    style AC fill:#e74c3c,color:#fff
-    style HD10434 fill:#c0392b,color:#fff
-    style HD10428 fill:#c0392b,color:#fff
-    style HD10425 fill:#c0392b,color:#fff
-    style HD10424 fill:#c0392b,color:#fff
-    style HD10418 fill:#c0392b,color:#fff
-    style HD10417 fill:#c0392b,color:#fff
-    style HD10413 fill:#c0392b,color:#fff
-    style HD10412 fill:#8e44ad,color:#fff
+    style AC fill:#D32F2F,color:#FFFFFF
+    style HD10434 fill:#D32F2F,color:#FFFFFF
+    style HD10428 fill:#D32F2F,color:#FFFFFF
+    style HD10425 fill:#D32F2F,color:#FFFFFF
+    style HD10424 fill:#D32F2F,color:#FFFFFF
+    style HD10418 fill:#D32F2F,color:#FFFFFF
+    style HD10417 fill:#D32F2F,color:#FFFFFF
+    style HD10413 fill:#D32F2F,color:#FFFFFF
+    style HD10412 fill:#7B1FA2,color:#FFFFFF
 ```
 
 **Pattern Analysis**: S coordinating at least 7 MPs from different constituencies to target Carlson (KD) systematically — Stockholm, Dalarna, Småland, Norrland, Värmland, Skåne. This is a national decapitation campaign against KD's flagship minister.

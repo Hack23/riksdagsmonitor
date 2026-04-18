@@ -100,10 +100,10 @@ graph TD
     C --> C2["Coalition partner abstains on key line"]
     C --> C3["Minority government budget rejected"]
     
-    style Root fill:#ffebee
-    style A fill:#fff3e0
-    style B fill:#fff3e0
-    style C fill:#fff3e0
+    style Root fill:#FFEBEE
+    style A fill:#FFF3E0
+    style B fill:#FFF3E0
+    style C fill:#FFF3E0
 ```
 
 ### Attack Tree: Transparency Suppression

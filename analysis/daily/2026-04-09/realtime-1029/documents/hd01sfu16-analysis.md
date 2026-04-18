@@ -31,9 +31,9 @@ graph LR
     A[HD01SfU16] --> B[Sensitivity: SENSITIVE]
     A --> C[Domain: Migration MIG]
     A --> D[Urgency: ELEVATED]
-    style B fill:#ffc107,color:#000000
-    style C fill:#0d6efd,color:#ffffff
-    style D fill:#0d6efd,color:#ffffff
+    style B fill:#FFC107,color:#000000
+    style C fill:#1565C0,color:#FFFFFF
+    style D fill:#1565C0,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -80,12 +80,12 @@ graph TD
         R5[Democratic Process L1 x I2 = 2 LOW]
         R6[External International L3 x I3 = 9 MEDIUM]
     end
-    style R1 fill:#ffc107,color:#000000
-    style R2 fill:#fd7e14,color:#ffffff
-    style R3 fill:#ffc107,color:#000000
-    style R4 fill:#ffc107,color:#000000
-    style R5 fill:#28a745,color:#ffffff
-    style R6 fill:#ffc107,color:#000000
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style R6 fill:#FFC107,color:#000000
 ```
 
 | Risk Type | Likelihood (1-5) | Impact (1-5) | Score | Assessment |

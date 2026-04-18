@@ -24,11 +24,11 @@ graph LR
         S5["🟡 HD03114<br/>Export Control Report<br/>6/10 — MEDIUM"]
     end
     S1 --> S2 --> S3 --> S4 --> S5
-    style S1 fill:#dc3545,color:#fff
-    style S2 fill:#ff6b35,color:#fff
-    style S3 fill:#ff6b35,color:#fff
-    style S4 fill:#ffc107,color:#000
-    style S5 fill:#ffc107,color:#000
+    style S1 fill:#D32F2F,color:#FFFFFF
+    style S2 fill:#FF5722,color:#FFFFFF
+    style S3 fill:#FF5722,color:#FFFFFF
+    style S4 fill:#FFC107,color:#000000
+    style S5 fill:#FFC107,color:#000000
 ```
 
 ## Detailed Scoring

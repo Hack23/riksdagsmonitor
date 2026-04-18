@@ -28,9 +28,9 @@ graph LR
     G --> H["Fiscal Policy + Climate/Energy"]
     A --> I{"Urgency"}
     I -->|"🔵 ELEVATED"| L["Takes effect 1 July 2026"]
-    style E fill:#28a745,color:#fff
-    style H fill:#0d6efd,color:#fff
-    style L fill:#0d6efd,color:#fff
+    style E fill:#4CAF50,color:#FFFFFF
+    style H fill:#1565C0,color:#FFFFFF
+    style L fill:#1565C0,color:#FFFFFF
 ```
 
 | Field | Assessment |

@@ -28,11 +28,11 @@ graph LR
     KU32[Media Access<br/>HD01KU32] --> EU2[EU Accessibility<br/>Directive]
     KU33[Search Transp.<br/>HD01KU33] --> ROL[Rule of Law<br/>Reforms]
     
-    style KUG fill:#ff4444,color:#fff
-    style KUES fill:#ff4444,color:#fff
-    style IP438 fill:#ff8800,color:#fff
-    style IP437 fill:#ff8800,color:#fff
-    style CU fill:#4488ff,color:#fff
+    style KUG fill:#EF5350,color:#FFFFFF
+    style KUES fill:#EF5350,color:#FFFFFF
+    style IP438 fill:#F57C00,color:#FFFFFF
+    style IP437 fill:#F57C00,color:#FFFFFF
+    style CU fill:#2196F3,color:#FFFFFF
 ```
 
 ---

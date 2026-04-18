@@ -80,9 +80,9 @@ graph LR
     MEDIUM --> D3["HD024080: 5/10"]
     MEDIUM --> D4["HD024078: 5/10"]
     
-    style HIGH fill:#f44336,color:#fff
-    style MEDIUM fill:#FF9800,color:#fff
-    style LOW fill:#4CAF50,color:#fff
+    style HIGH fill:#D32F2F,color:#FFFFFF
+    style MEDIUM fill:#FF9800,color:#FFFFFF
+    style LOW fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Decision: Analysis-Only PR

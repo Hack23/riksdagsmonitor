@@ -32,9 +32,9 @@ graph LR
     G --> H["Health HEA / Business REG"]
     A --> I{{Urgency}}
     I -->|ROUTINE| M["Standard motion processing"]
-    style E fill:#28a745,color:#fff
-    style H fill:#0d6efd,color:#fff
-    style M fill:#6c757d,color:#fff
+    style E fill:#4CAF50,color:#FFFFFF
+    style H fill:#1565C0,color:#FFFFFF
+    style M fill:#9E9E9E,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -86,12 +86,12 @@ graph TD
     R3 -.-> TL
     R4 -.-> TL
     R5 -.-> TL
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#28a745,color:#fff
-    style R3 fill:#28a745,color:#fff
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#28a745,color:#fff
-    style TL fill:#28a745,color:#fff
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#4CAF50,color:#FFFFFF
+    style R3 fill:#4CAF50,color:#FFFFFF
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style TL fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk Type | Likelihood (1-5) | Impact (1-5) | Score | Assessment |

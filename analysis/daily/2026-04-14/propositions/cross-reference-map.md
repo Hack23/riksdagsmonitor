@@ -30,10 +30,10 @@ graph TD
     HD0399 -->|"spending details of"| HD03100
     HD0398 -->|"revenue side of"| HD0399
     
-    style HD03100 fill:#ff006e,color:#fff
-    style HD0399 fill:#ffbe0b,color:#000
-    style HD03236 fill:#ffbe0b,color:#000
-    style FIU48 fill:#00d9ff,color:#000
+    style HD03100 fill:#ff006e,color:#FFFFFF
+    style HD0399 fill:#ffbe0b,color:#000000
+    style HD03236 fill:#ffbe0b,color:#000000
+    style FIU48 fill:#00d9ff,color:#000000
 ```
 
 ## Detailed Cross-References

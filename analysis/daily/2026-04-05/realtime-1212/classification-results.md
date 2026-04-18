@@ -24,9 +24,9 @@ graph LR
     CJ -->|"overlap"| MIG
     DEF -->|"related"| CJ
 
-    style CJ fill:#dc3545,color:#fff
-    style DEF fill:#0d6efd,color:#fff
-    style MIG fill:#fd7e14,color:#fff
+    style CJ fill:#D32F2F,color:#FFFFFF
+    style DEF fill:#1565C0,color:#FFFFFF
+    style MIG fill:#FF9800,color:#FFFFFF
 ```
 
 | dok_id | Title | Primary Domain | Secondary Domain | Sensitivity |

@@ -16,10 +16,10 @@ graph TD
     D -->|No 14| F{Cross-party Division?}
     F -->|Yes 6| G[🟡 MEDIUM Sensitivity]
     F -->|No 8| H[🟢 LOW Sensitivity]
-    style C fill:#dc3545,color:#fff
-    style E fill:#fd7e14,color:#fff
-    style G fill:#ffc107,color:#000
-    style H fill:#28a745,color:#fff
+    style C fill:#D32F2F,color:#FFFFFF
+    style E fill:#FF9800,color:#FFFFFF
+    style G fill:#FFC107,color:#000000
+    style H fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Per-Document Classification

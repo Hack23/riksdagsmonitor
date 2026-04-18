@@ -49,10 +49,10 @@ graph TD
     F["Polisutbildning Prop 237"] --> G["Bedrägerier Prop 233"]
     H["Våldsstrategi Skr 245"] --> F
     I["E-legitimation Bet TU21"] --> G
-    style A fill:#ff6b6b,color:#fff
-    style D fill:#ffd93d,color:#000
-    style F fill:#6bcb77,color:#fff
-    style H fill:#4d96ff,color:#fff
+    style A fill:#EF5350,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
+    style F fill:#81C784,color:#FFFFFF
+    style H fill:#2196F3,color:#FFFFFF
 ```
 
 ## Coalition Dynamics

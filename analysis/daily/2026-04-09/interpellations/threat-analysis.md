@@ -27,7 +27,7 @@ graph TD
     T3 --> T3A["Sweden's free speech<br/>tradition questioned<br/>internationally"]
     T3 --> T3B["Antisemitism cases<br/>attract EU scrutiny<br/>frs 430"]
     
-    style ROOT fill:#D32F2F,color:#ffffff
+    style ROOT fill:#D32F2F,color:#FFFFFF
     style T1 fill:#FF6B35,color:#000000
     style T2 fill:#FF6B35,color:#000000
     style T3 fill:#FF9800,color:#000000

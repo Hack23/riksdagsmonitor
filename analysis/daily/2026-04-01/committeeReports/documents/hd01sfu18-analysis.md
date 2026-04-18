@@ -76,14 +76,14 @@ flowchart TD
     V & C & MP --> VCM[V+C+MP Cross-Ideological<br/>R15,R20]:::vcmBloc
     S & V & MP --> SVM[S+V+MP Progressive Bloc<br/>R26,R30,R37]:::svmBloc
     
-    classDef committee fill:#e74c3c,stroke:#333,color:#fff
-    classDef vParty fill:#c0392b,stroke:#333,color:#fff
-    classDef cParty fill:#27ae60,stroke:#333,color:#fff
-    classDef mpParty fill:#2ecc71,stroke:#333,color:#fff
-    classDef sParty fill:#e74c3c,stroke:#333,color:#fff
-    classDef vmBloc fill:#9b59b6,stroke:#333,color:#fff
-    classDef vcmBloc fill:#f39c12,stroke:#333,color:#000
-    classDef svmBloc fill:#e67e22,stroke:#333,color:#fff
+    classDef committee fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    classDef vParty fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    classDef cParty fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    classDef mpParty fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    classDef sParty fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    classDef vmBloc fill:#7B1FA2,stroke:#424242,color:#FFFFFF
+    classDef vcmBloc fill:#FF9800,stroke:#424242,color:#000000
+    classDef svmBloc fill:#FF9800,stroke:#424242,color:#FFFFFF
 ```
 
 ---

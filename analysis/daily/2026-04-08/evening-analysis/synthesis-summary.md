@@ -19,17 +19,17 @@ graph LR
         H[Interpellations: 8] --> I[Defence, Environment, Democracy]
         J[Debates: 3] --> K[Electricity, Housing, Business]
     end
-    style A fill:#0d6efd,color:#fff
-    style C fill:#28a745,color:#fff
-    style F fill:#ffc107,color:#000
-    style H fill:#fd7e14,color:#fff
-    style J fill:#6f42c1,color:#fff
-    style B fill:#0d6efd,color:#fff
-    style D fill:#28a745,color:#fff
-    style E fill:#28a745,color:#fff
-    style G fill:#ffc107,color:#000
-    style I fill:#fd7e14,color:#fff
-    style K fill:#6f42c1,color:#fff
+    style A fill:#1565C0,color:#FFFFFF
+    style C fill:#4CAF50,color:#FFFFFF
+    style F fill:#FFC107,color:#000000
+    style H fill:#FF9800,color:#FFFFFF
+    style J fill:#7B1FA2,color:#FFFFFF
+    style B fill:#1565C0,color:#FFFFFF
+    style D fill:#4CAF50,color:#FFFFFF
+    style E fill:#4CAF50,color:#FFFFFF
+    style G fill:#FFC107,color:#000000
+    style I fill:#FF9800,color:#FFFFFF
+    style K fill:#7B1FA2,color:#FFFFFF
 ```
 
 ## 🎯 Top Findings

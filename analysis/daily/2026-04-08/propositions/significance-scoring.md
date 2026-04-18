@@ -26,10 +26,10 @@ graph LR
     SC --> F2
     SC --> F3
     style HD fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
-    style SC fill:#ffc107,color:#000
-    style F1 fill:#00d9ff,color:#000
-    style F2 fill:#00d9ff,color:#000
-    style F3 fill:#00d9ff,color:#000
+    style SC fill:#FFC107,color:#000000
+    style F1 fill:#00d9ff,color:#000000
+    style F2 fill:#00d9ff,color:#000000
+    style F3 fill:#00d9ff,color:#000000
 ```
 
 ## Summary

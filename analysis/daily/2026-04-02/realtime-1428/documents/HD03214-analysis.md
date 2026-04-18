@@ -39,9 +39,9 @@ graph LR
     A --> I{Urgency}
     I -->|"🟠 URGENT"| K[Critical infrastructure protection — referred to FöU]
 
-    style D fill:#ffc107,color:#000
-    style H fill:#0d6efd,color:#fff
-    style K fill:#fd7e14,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#1565C0,color:#FFFFFF
+    style K fill:#FF9800,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -117,14 +117,14 @@ graph TD
     R1 -.-> T4
     R4 -.-> T4
 
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#ffc107,color:#000
-    style R6 fill:#ffc107,color:#000
-    style T3 fill:#ffc107,color:#000
-    style T4 fill:#28a745,color:#fff
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#FFC107,color:#000000
+    style R6 fill:#FFC107,color:#000000
+    style T3 fill:#FFC107,color:#000000
+    style T4 fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk Type | Likelihood (1–5) | Impact (1–5) | Score | Assessment |

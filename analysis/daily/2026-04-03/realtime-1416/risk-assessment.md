@@ -30,12 +30,12 @@ graph LR
         R6["🟡 R6: Municipal Civil<br/>Defense Gap L:3 × I:4 = 12"]
     end
     
-    style R1 fill:#ff006e,color:#fff
-    style R2 fill:#ff006e,color:#fff
-    style R3 fill:#ffbe0b,color:#000
-    style R4 fill:#ff8c00,color:#fff
-    style R5 fill:#ff006e,color:#fff
-    style R6 fill:#ff006e,color:#fff
+    style R1 fill:#ff006e,color:#FFFFFF
+    style R2 fill:#ff006e,color:#FFFFFF
+    style R3 fill:#ffbe0b,color:#000000
+    style R4 fill:#F57C00,color:#FFFFFF
+    style R5 fill:#ff006e,color:#FFFFFF
+    style R6 fill:#ff006e,color:#FFFFFF
 ```
 
 ---

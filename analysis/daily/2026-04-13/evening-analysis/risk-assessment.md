@@ -35,16 +35,16 @@ graph TD
             R10["R10: Prison capacity insufficiency<br/>L:3 × I:3 = 9<br/>HD03218"]
         end
     end
-    style R1 fill:#dc3545,stroke:#333,color:#fff
-    style R2 fill:#dc3545,stroke:#333,color:#fff
-    style R3 fill:#dc3545,stroke:#333,color:#fff
-    style R4 fill:#fd7e14,stroke:#333,color:#fff
-    style R5 fill:#fd7e14,stroke:#333,color:#fff
-    style R6 fill:#fd7e14,stroke:#333,color:#fff
-    style R7 fill:#fd7e14,stroke:#333,color:#fff
-    style R8 fill:#ffc107,stroke:#333,color:#000
-    style R9 fill:#ffc107,stroke:#333,color:#000
-    style R10 fill:#ffc107,stroke:#333,color:#000
+    style R1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style R2 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style R3 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style R4 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style R5 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style R6 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style R7 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style R8 fill:#FFC107,stroke:#424242,color:#000000
+    style R9 fill:#FFC107,stroke:#424242,color:#000000
+    style R10 fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 ## Detailed Risk Register
@@ -80,13 +80,13 @@ flowchart TD
     L["🌡️ Climate Event"] --> M["MJU30 Target Revision<br/>Draws EU Scrutiny"]
     M --> N["Green Credibility<br/>Damaged Internationally"]
     
-    style A fill:#dc3545,color:#fff
-    style G fill:#dc3545,color:#fff
-    style L fill:#dc3545,color:#fff
-    style B fill:#ffc107,color:#000
-    style C fill:#fd7e14,color:#fff
-    style K fill:#dc3545,color:#fff
-    style N fill:#fd7e14,color:#fff
+    style A fill:#D32F2F,color:#FFFFFF
+    style G fill:#D32F2F,color:#FFFFFF
+    style L fill:#D32F2F,color:#FFFFFF
+    style B fill:#FFC107,color:#000000
+    style C fill:#FF9800,color:#FFFFFF
+    style K fill:#D32F2F,color:#FFFFFF
+    style N fill:#FF9800,color:#FFFFFF
 ```
 
 ## Forward Indicators — Risk Watch Items

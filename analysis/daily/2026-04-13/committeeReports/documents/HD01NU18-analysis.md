@@ -23,9 +23,9 @@ graph LR
     A --> C["Energy Policy<br/>Reform"]
     B --> D["July 1, 2026<br/>Effective Date"]
     C --> E["Permit Process<br/>Simplification"]
-    style A fill:#00d9ff,color:#000
-    style D fill:#ffbe0b,color:#000
-    style E fill:#00ff88,color:#000
+    style A fill:#00d9ff,color:#000000
+    style D fill:#ffbe0b,color:#000000
+    style E fill:#4CAF50,color:#000000
 ```
 
 | Dimension | Score (0-10) | Rationale |

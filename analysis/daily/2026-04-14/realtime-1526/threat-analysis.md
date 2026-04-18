@@ -35,12 +35,12 @@ graph LR
     OPP --> V4 --> T3
     MUN --> V2 --> T2
     EU --> V3 --> T1
-    style OPP fill:#ff6b6b,color:#fff
-    style MUN fill:#ffd93d,color:#000
-    style EU fill:#4d96ff,color:#fff
-    style T1 fill:#e0e0e0,color:#000
-    style T2 fill:#e0e0e0,color:#000
-    style T3 fill:#e0e0e0,color:#000
+    style OPP fill:#EF5350,color:#FFFFFF
+    style MUN fill:#FFC107,color:#000000
+    style EU fill:#2196F3,color:#FFFFFF
+    style T1 fill:#e0e0e0,color:#000000
+    style T2 fill:#e0e0e0,color:#000000
+    style T3 fill:#e0e0e0,color:#000000
 ```
 
 ## Threat Indicators

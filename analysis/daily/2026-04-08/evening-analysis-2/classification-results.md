@@ -26,13 +26,13 @@ graph TD
     G --> |"PUBLIC"| H["12 documents<br/>Standard processing"]
     G --> |"SENSITIVE"| I["2 documents<br/>HD11690 Defense<br/>HD11691 Chechnya"]
 
-    style A fill:#0d6efd,color:#fff
-    style C fill:#28a745,color:#fff
-    style D fill:#0d6efd,color:#fff
-    style E fill:#ffc107,color:#000
-    style F fill:#ffc107,color:#000
-    style H fill:#28a745,color:#fff
-    style I fill:#fd7e14,color:#fff
+    style A fill:#1565C0,color:#FFFFFF
+    style C fill:#4CAF50,color:#FFFFFF
+    style D fill:#1565C0,color:#FFFFFF
+    style E fill:#FFC107,color:#000000
+    style F fill:#FFC107,color:#000000
+    style H fill:#4CAF50,color:#FFFFFF
+    style I fill:#FF9800,color:#FFFFFF
 ```
 
 ## Per-Document Classification

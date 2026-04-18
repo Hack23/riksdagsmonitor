@@ -28,13 +28,13 @@ graph TD
     T5 --> |"Species protection + rural<br/>voter polarization"| D5["Electoral polarization"]
     T6 --> |"HD11690 + HD11692<br/>Defense privatization"| D6["Defense capability concern"]
 
-    style T1 fill:#28a745,color:#fff
-    style T2 fill:#ffc107,color:#000
-    style T3 fill:#28a745,color:#fff
-    style T4 fill:#28a745,color:#fff
-    style T5 fill:#28a745,color:#fff
-    style T6 fill:#28a745,color:#fff
-    style D2 fill:#fd7e14,color:#fff
+    style T1 fill:#4CAF50,color:#FFFFFF
+    style T2 fill:#FFC107,color:#000000
+    style T3 fill:#4CAF50,color:#FFFFFF
+    style T4 fill:#4CAF50,color:#FFFFFF
+    style T5 fill:#4CAF50,color:#FFFFFF
+    style T6 fill:#4CAF50,color:#FFFFFF
+    style D2 fill:#FF9800,color:#FFFFFF
 ```
 
 ## Threat Category Assessment

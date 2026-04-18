@@ -37,9 +37,9 @@ graph LR
     I -->|"🔵 ELEVATED"| L["Pre-election welfare<br/>delivery priority"]
     
     style A fill:#1a1e3d,color:#e0e0e0
-    style E fill:#28a745,color:#fff
-    style H fill:#00d9ff,color:#000
-    style L fill:#17a2b8,color:#fff
+    style E fill:#4CAF50,color:#FFFFFF
+    style H fill:#00d9ff,color:#000000
+    style L fill:#0097A7,color:#FFFFFF
 ```
 
 | Dimension | Assessment | Rationale |
@@ -126,9 +126,9 @@ graph TD
         R2["🟡 Workforce Availability<br/>Risk: MEDIUM (3/5)<br/>Impact: MEDIUM (3/5)"] --> M2["Physician reallocation<br/>from hospitals to municipalities"]
         R3["🟢 Political Opposition<br/>Risk: LOW (2/5)<br/>Impact: LOW (2/5)"] --> M3["Cross-party support<br/>for care quality"]
     end
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#28a745,color:#fff
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk Factor | Likelihood (1-5) | Impact (1-5) | Score | Mitigation |

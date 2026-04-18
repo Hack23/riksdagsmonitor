@@ -24,10 +24,10 @@ graph LR
         D4["HD023992<br/>Competition (V)<br/>🟢 3/10"]
     end
 
-    style D1 fill:#ffc107,color:#000
-    style D2 fill:#28a745,color:#fff
-    style D3 fill:#28a745,color:#fff
-    style D4 fill:#28a745,color:#fff
+    style D1 fill:#FFC107,color:#000000
+    style D2 fill:#4CAF50,color:#FFFFFF
+    style D3 fill:#4CAF50,color:#FFFFFF
+    style D4 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Scoring Table

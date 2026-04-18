@@ -23,11 +23,11 @@ graph LR
         UN["💥 Unexpectedness<br/>7/10"]
         SC["📏 Scope/Scale<br/>9/10"]
     end
-    style PS fill:#dc3545,stroke:#333,color:#fff
-    style PI fill:#fd7e14,stroke:#333,color:#fff
-    style TI fill:#dc3545,stroke:#333,color:#fff
-    style UN fill:#ffc107,stroke:#333,color:#000
-    style SC fill:#dc3545,stroke:#333,color:#fff
+    style PS fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style PI fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style TI fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style UN fill:#FFC107,stroke:#424242,color:#000000
+    style SC fill:#D32F2F,stroke:#424242,color:#FFFFFF
 ```
 
 | Dimension | Score | Rationale | Evidence |

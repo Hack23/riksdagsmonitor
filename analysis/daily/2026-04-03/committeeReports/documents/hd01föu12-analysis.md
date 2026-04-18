@@ -37,9 +37,9 @@ graph LR
     I -->|"🟠 URGENT"| K["Implementation deadline<br/>June 1, 2026"]
 
     style A fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
-    style D fill:#ffc107,color:#000
-    style H fill:#ff006e,color:#fff
-    style K fill:#fd7e14,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#ff006e,color:#FFFFFF
+    style K fill:#FF9800,color:#FFFFFF
 ```
 
 | Dimension | Value | Rationale |
@@ -107,10 +107,10 @@ graph TD
     R1 --> R3
     R3 --> R4
 
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#fd7e14,color:#fff
-    style R4 fill:#fd7e14,color:#fff
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#FF9800,color:#FFFFFF
+    style R4 fill:#FF9800,color:#FFFFFF
 ```
 
 ---
@@ -157,8 +157,8 @@ graph LR
     style P fill:#00d9ff,color:#0a0e27
     style C fill:#ffbe0b,color:#0a0e27
     style D fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
-    style E fill:#28a745,color:#fff
-    style R1 fill:#ff006e,color:#fff
+    style E fill:#4CAF50,color:#FFFFFF
+    style R1 fill:#ff006e,color:#FFFFFF
 ```
 
 ---

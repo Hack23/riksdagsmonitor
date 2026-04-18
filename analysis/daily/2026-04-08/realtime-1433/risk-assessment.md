@@ -63,10 +63,10 @@ graph TD
     R3 -->|"amplifies"| R1
     R1 -->|"if unresolved → NATO hosting risk"| R7["R7: NATO credibility gap<br/>(Potential)"]
 
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#ffc107,color:#000
-    style R7 fill:#dc3545,color:#fff,stroke-dasharray: 5 5
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R7 fill:#D32F2F,color:#FFFFFF,stroke-dasharray: 5 5
 ```
 
 **Chain Analysis:** Environmental permit barriers (R2) and reserve police delays (R3) feed SD's defense pressure narrative (R1). If unresolved before NATO foreign ministers meeting (May 21-22), this could create credibility gaps when Sweden hosts alliance partners.

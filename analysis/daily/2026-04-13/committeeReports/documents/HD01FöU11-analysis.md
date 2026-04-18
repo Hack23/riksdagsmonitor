@@ -20,8 +20,8 @@ graph TD
     B --> D["Sjöfartsverket"]
     B --> E["Transportstyrelsen"]
     F["Security context:<br/>Russian shadow fleet"] -.->|"Increased risk"| A
-    style A fill:#4488ff,color:#fff
-    style F fill:#ff8800,color:#fff
+    style A fill:#2196F3,color:#FFFFFF
+    style F fill:#F57C00,color:#FFFFFF
 ```
 
 | Dimension | Score (0-10) | Rationale |

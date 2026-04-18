@@ -35,12 +35,12 @@ flowchart TD
     KU38 --> PARL
     KU38 --> CONST
     
-    style MJU30 fill:#00d9ff,color:#000
-    style KU38 fill:#ffbe0b,color:#000
-    style ENV fill:#00ff88,color:#000
-    style EU fill:#00ff88,color:#000
-    style PARL fill:#ff006e,color:#fff
-    style CONST fill:#ff006e,color:#fff
+    style MJU30 fill:#00d9ff,color:#000000
+    style KU38 fill:#ffbe0b,color:#000000
+    style ENV fill:#4CAF50,color:#000000
+    style EU fill:#4CAF50,color:#000000
+    style PARL fill:#ff006e,color:#FFFFFF
+    style CONST fill:#ff006e,color:#FFFFFF
 ```
 
 ## Key Findings

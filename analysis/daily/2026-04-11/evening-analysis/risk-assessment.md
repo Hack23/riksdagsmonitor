@@ -52,16 +52,16 @@ graph TD
             LR2["R10: Parliamentary Passage<br/>Majority intact<br/>L:1 x I:3 = 3/25"]
         end
     end
-    style HR1 fill:#dc3545,color:#fff
-    style HR2 fill:#dc3545,color:#fff
-    style HR3 fill:#dc3545,color:#fff
-    style MR1 fill:#ffc107,color:#000
-    style MR2 fill:#ffc107,color:#000
-    style MR3 fill:#ffc107,color:#000
-    style MR4 fill:#ffc107,color:#000
-    style MR5 fill:#ffc107,color:#000
-    style LR1 fill:#28a745,color:#fff
-    style LR2 fill:#28a745,color:#fff
+    style HR1 fill:#D32F2F,color:#FFFFFF
+    style HR2 fill:#D32F2F,color:#FFFFFF
+    style HR3 fill:#D32F2F,color:#FFFFFF
+    style MR1 fill:#FFC107,color:#000000
+    style MR2 fill:#FFC107,color:#000000
+    style MR3 fill:#FFC107,color:#000000
+    style MR4 fill:#FFC107,color:#000000
+    style MR5 fill:#FFC107,color:#000000
+    style LR1 fill:#4CAF50,color:#FFFFFF
+    style LR2 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Cascading Risk Chain — HD03235 ECHR Scenario
@@ -77,14 +77,14 @@ graph TD
     LEGAL --> ADMIN["Administrative Crisis<br/>Migrationsverket overwhelmed<br/>SD demands escalate"]
     ADMIN --> COAL["Coalition Stress<br/>SD: harder line or walk<br/>L: ECHR compliance pressure"]
 
-    style TRIGGER fill:#ffc107,color:#000
-    style ECHR fill:#fd7e14,color:#fff
-    style RULING fill:#dc3545,color:#fff
-    style POL fill:#dc3545,color:#fff
-    style LEGAL fill:#fd7e14,color:#fff
-    style ELEC fill:#dc3545,color:#fff
-    style ADMIN fill:#fd7e14,color:#fff
-    style COAL fill:#dc3545,color:#fff
+    style TRIGGER fill:#FFC107,color:#000000
+    style ECHR fill:#FF9800,color:#FFFFFF
+    style RULING fill:#D32F2F,color:#FFFFFF
+    style POL fill:#D32F2F,color:#FFFFFF
+    style LEGAL fill:#FF9800,color:#FFFFFF
+    style ELEC fill:#D32F2F,color:#FFFFFF
+    style ADMIN fill:#FF9800,color:#FFFFFF
+    style COAL fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Risk Interconnection Map
@@ -98,14 +98,14 @@ graph LR
     R4 --> R6["R6: Healthcare<br/>Mandates"]
     R7["R7: Arms Export"] --> R5
 
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#dc3545,color:#fff
-    style R3 fill:#dc3545,color:#fff
-    style R4 fill:#ffc107,color:#000
-    style R5 fill:#ffc107,color:#000
-    style R6 fill:#ffc107,color:#000
-    style R7 fill:#ffc107,color:#000
-    style R8 fill:#ffc107,color:#000
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#D32F2F,color:#FFFFFF
+    style R3 fill:#D32F2F,color:#FFFFFF
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#FFC107,color:#000000
+    style R6 fill:#FFC107,color:#000000
+    style R7 fill:#FFC107,color:#000000
+    style R8 fill:#FFC107,color:#000000
 ```
 
 ## Consolidated Risk Register

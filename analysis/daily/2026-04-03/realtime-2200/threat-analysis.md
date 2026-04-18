@@ -26,10 +26,10 @@ flowchart TD
     D --> D1["ECHR deportation<br/>Challenge risk"]
     D --> D2["Arms export<br/>Destination risk"]
     
-    style A fill:#00d9ff,stroke:#333,color:#000
-    style B fill:#ffbe0b,stroke:#333,color:#000
-    style C fill:#ffbe0b,stroke:#333,color:#000
-    style D fill:#ff006e,stroke:#333,color:#000
+    style A fill:#00d9ff,stroke:#424242,color:#000000
+    style B fill:#ffbe0b,stroke:#424242,color:#000000
+    style C fill:#ffbe0b,stroke:#424242,color:#000000
+    style D fill:#ff006e,stroke:#424242,color:#000000
 ```
 
 ## 📊 Threat Assessment Matrix

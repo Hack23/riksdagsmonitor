@@ -22,19 +22,19 @@ graph TD
         direction TB
         subgraph "🔒 Sensitivity"
             CLS["Sensitivity<br/>PUBLIC"]
-            style CLS fill:#28a745,color:#fff,stroke:#155724
+            style CLS fill:#4CAF50,color:#FFFFFF,stroke:#2E7D32
         end
         subgraph "⚖️ Risk"
             RSK["Overall Risk<br/>MEDIUM<br/>Integration policy accountability gap"]
-            style RSK fill:#ffc107,color:#000,stroke:#856404
+            style RSK fill:#FFC107,color:#000000,stroke:#F57C00
         end
         subgraph "🎭 Threat"
             THR["Threat Level<br/>LOW<br/>Government credibility on integration"]
-            style THR fill:#28a745,color:#fff,stroke:#155724
+            style THR fill:#4CAF50,color:#FFFFFF,stroke:#2E7D32
         end
         subgraph "📈 Significance"
             SIG["Significance<br/>MEDIUM (5/10)<br/>3 interpellations, 3 ministers targeted"]
-            style SIG fill:#ffc107,color:#000,stroke:#856404
+            style SIG fill:#FFC107,color:#000000,stroke:#F57C00
         end
     end
 ```
@@ -65,10 +65,10 @@ graph LR
         LR --> ES["Elisabeth Svantesson (M)<br/>Finance Minister<br/>HD10421"]
         LR --> GS["Gunnar Strömmer (M)<br/>Justice Minister<br/>HD10420"]
     end
-    style LR fill:#e74c3c,color:#fff,stroke:#c0392b
-    style JB fill:#3498db,color:#fff,stroke:#2980b9
-    style ES fill:#2c3e50,color:#fff,stroke:#1a252f
-    style GS fill:#2c3e50,color:#fff,stroke:#1a252f
+    style LR fill:#D32F2F,color:#FFFFFF,stroke:#D32F2F
+    style JB fill:#2196F3,color:#FFFFFF,stroke:#1565C0
+    style ES fill:#455A64,color:#FFFFFF,stroke:#1a252f
+    style GS fill:#455A64,color:#FFFFFF,stroke:#1a252f
 ```
 
 ## 📊 Thematic Analysis

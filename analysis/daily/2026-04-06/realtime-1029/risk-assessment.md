@@ -39,16 +39,16 @@ graph TD
     R1 -.-> T4
     R5 -.-> T4
 
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#ffc107,color:#000
-    style R5 fill:#28a745,color:#fff
-    style R6 fill:#ffc107,color:#000
-    style T1 fill:#dc3545,color:#fff
-    style T2 fill:#fd7e14,color:#fff
-    style T3 fill:#ffc107,color:#000
-    style T4 fill:#28a745,color:#fff
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style R6 fill:#FFC107,color:#000000
+    style T1 fill:#D32F2F,color:#FFFFFF
+    style T2 fill:#FF9800,color:#FFFFFF
+    style T3 fill:#FFC107,color:#000000
+    style T4 fill:#4CAF50,color:#FFFFFF
 ```
 
 ---
@@ -75,10 +75,10 @@ graph LR
     B -->|"constrains"| A
     D["🟡 External<br/>Score: 6"] -->|"diverts attention"| A
 
-    style A fill:#fd7e14,color:#fff
-    style B fill:#ffc107,color:#000
-    style C fill:#ffc107,color:#000
-    style D fill:#ffc107,color:#000
+    style A fill:#FF9800,color:#FFFFFF
+    style B fill:#FFC107,color:#000000
+    style C fill:#FFC107,color:#000000
+    style D fill:#FFC107,color:#000000
 ```
 
 **Key Risk Chain:** Prison overcrowding (policy implementation) → cost overruns on new facilities (budget) → credibility gap on crime policy (electoral). This cascading chain represents the most significant risk pathway.

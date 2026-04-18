@@ -66,11 +66,11 @@ flowchart TD
     SOU --> DEBATE
     DEBATE --> VOTE["Chamber Vote"]:::neutral
 
-    classDef red fill:#D32F2F,color:#ffffff
-    classDef blue fill:#1565C0,color:#ffffff
-    classDef green fill:#2E7D32,color:#ffffff
+    classDef red fill:#D32F2F,color:#FFFFFF
+    classDef blue fill:#1565C0,color:#FFFFFF
+    classDef green fill:#2E7D32,color:#FFFFFF
     classDef yellow fill:#FF9800,color:#000000
-    classDef neutral fill:#616161,color:#ffffff
+    classDef neutral fill:#616161,color:#FFFFFF
 ```
 
 ## Stakeholder Impact Assessment

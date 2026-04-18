@@ -34,14 +34,14 @@ graph TD
             LR2["Legislative passage<br/>failure<br/>Likelihood: 15%<br/>Impact: HIGH"]
         end
     end
-    style HR1 fill:#dc3545,color:#fff
-    style HR2 fill:#dc3545,color:#fff
-    style MHR1 fill:#ff6b35,color:#fff
-    style MHR2 fill:#ff6b35,color:#fff
-    style MR1 fill:#ffc107,color:#000
-    style MR2 fill:#ffc107,color:#000
-    style LR1 fill:#28a745,color:#fff
-    style LR2 fill:#28a745,color:#fff
+    style HR1 fill:#D32F2F,color:#FFFFFF
+    style HR2 fill:#D32F2F,color:#FFFFFF
+    style MHR1 fill:#FF5722,color:#FFFFFF
+    style MHR2 fill:#FF5722,color:#FFFFFF
+    style MR1 fill:#FFC107,color:#000000
+    style MR2 fill:#FFC107,color:#000000
+    style LR1 fill:#4CAF50,color:#FFFFFF
+    style LR2 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Risk Register

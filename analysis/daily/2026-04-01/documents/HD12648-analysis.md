@@ -30,9 +30,9 @@ graph LR
     A --> D{Urgency}
     D --> E["⚪ ROUTINE"]
     
-    style A fill:#0d6efd,color:#fff
-    style C fill:#6f42c1,color:#fff
-    style E fill:#6c757d,color:#fff
+    style A fill:#1565C0,color:#FFFFFF
+    style C fill:#7B1FA2,color:#FFFFFF
+    style E fill:#9E9E9E,color:#FFFFFF
 ```
 
 | Field | Classification |

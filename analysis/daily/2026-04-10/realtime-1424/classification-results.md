@@ -26,9 +26,9 @@ graph LR
     URG -->|"ELEVATED"| ELEV["Committee reports ready for vote"]
     DOC --> SCOPE{{Scope}}
     SCOPE -->|"NATIONAL"| NAT["Affects migration policy nationwide"]
-    style SEN fill:#ffc107,color:#000
-    style ELEV fill:#0d6efd,color:#fff
-    style NAT fill:#6f42c1,color:#fff
+    style SEN fill:#FFC107,color:#000000
+    style ELEV fill:#1565C0,color:#FFFFFF
+    style NAT fill:#7B1FA2,color:#FFFFFF
 ```
 
 ### Classification Results

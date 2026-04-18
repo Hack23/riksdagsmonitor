@@ -37,10 +37,10 @@ graph TD
     AGG --> LO["3-4: LOW"]
     style DOC fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
     style AGG fill:#1a1e3d,color:#ffbe0b,stroke:#ffbe0b
-    style VH fill:#dc3545,color:#fff
-    style HI fill:#ff6b35,color:#fff
-    style MD fill:#ffc107,color:#000
-    style LO fill:#28a745,color:#fff
+    style VH fill:#D32F2F,color:#FFFFFF
+    style HI fill:#FF5722,color:#FFFFFF
+    style MD fill:#FFC107,color:#000000
+    style LO fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Score Distribution
@@ -57,13 +57,13 @@ graph LR
         B4["4/10<br/>4 docs 15 pct"]
         B3["3/10<br/>2 docs 7 pct"]
     end
-    style B9 fill:#dc3545,color:#fff
-    style B8 fill:#ff6b35,color:#fff
-    style B7 fill:#ff6b35,color:#fff
-    style B6 fill:#ffc107,color:#000
-    style B5 fill:#ffc107,color:#000
-    style B4 fill:#28a745,color:#fff
-    style B3 fill:#28a745,color:#fff
+    style B9 fill:#D32F2F,color:#FFFFFF
+    style B8 fill:#FF5722,color:#FFFFFF
+    style B7 fill:#FF5722,color:#FFFFFF
+    style B6 fill:#FFC107,color:#000000
+    style B5 fill:#FFC107,color:#000000
+    style B4 fill:#4CAF50,color:#FFFFFF
+    style B3 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Tier 1 — Very High Significance (9-10/10)

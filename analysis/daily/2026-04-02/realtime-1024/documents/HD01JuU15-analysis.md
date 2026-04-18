@@ -35,11 +35,11 @@ graph LR
     A --> P{"Temperature"}
     P -->|"🟠 WARM"| Q["Government priority<br/>opposition divide"]
     
-    style A fill:#00d9ff,stroke:#333,color:#000
-    style D fill:#ffbe0b,stroke:#333,color:#000
-    style H fill:#ff006e,stroke:#333,color:#fff
-    style L fill:#4488ff,stroke:#333,color:#fff
-    style Q fill:#ff8c00,stroke:#333,color:#000
+    style A fill:#00d9ff,stroke:#424242,color:#000000
+    style D fill:#ffbe0b,stroke:#424242,color:#000000
+    style H fill:#ff006e,stroke:#424242,color:#FFFFFF
+    style L fill:#2196F3,stroke:#424242,color:#FFFFFF
+    style Q fill:#F57C00,stroke:#424242,color:#000000
 ```
 
 | Dimension | Assessment | Rationale |

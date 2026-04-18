@@ -49,10 +49,10 @@ graph TD
     P197 --> MMP58
     M17 -.->|same policy| M16
     M28 -.->|same target| M46
-    style P201 fill:#dc3545,color:#fff
-    style P207 fill:#fd7e14,color:#fff
-    style P210 fill:#fd7e14,color:#fff
-    style P197 fill:#ffc107,color:#000
+    style P201 fill:#D32F2F,color:#FFFFFF
+    style P207 fill:#FF9800,color:#FFFFFF
+    style P210 fill:#FF9800,color:#FFFFFF
+    style P197 fill:#FFC107,color:#000000
 ```
 
 ## Reference Clusters

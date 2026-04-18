@@ -55,11 +55,11 @@ flowchart TD
     C --> F["UU Committee<br/>Deliberation"]
     D --> F
     E --> F
-    style A fill:#ff006e,color:#ffffff
+    style A fill:#ff006e,color:#FFFFFF
     style B fill:#ffbe0b,color:#000000
-    style C fill:#d32f2f,color:#ffffff
-    style D fill:#2e7d32,color:#ffffff
-    style E fill:#1565c0,color:#ffffff
+    style C fill:#d32f2f,color:#FFFFFF
+    style D fill:#2e7d32,color:#FFFFFF
+    style E fill:#1565c0,color:#FFFFFF
     style F fill:#00d9ff,color:#000000
 ```
 

@@ -25,12 +25,12 @@ graph TD
     end
 
     style GOV fill:#1a1e3d,color:#00d9ff,stroke:#00d9ff
-    style JUS fill:#ffc107,color:#000,stroke:#ffc107
-    style DEREG fill:#28a745,color:#fff,stroke:#28a745
-    style JuU fill:#0d6efd,color:#fff
-    style SoU fill:#0d6efd,color:#fff
-    style TIDO fill:#ff006e,color:#fff
-    style TIDO2 fill:#ff006e,color:#fff
+    style JUS fill:#FFC107,color:#000000,stroke:#FFC107
+    style DEREG fill:#4CAF50,color:#FFFFFF,stroke:#4CAF50
+    style JuU fill:#1565C0,color:#FFFFFF
+    style SoU fill:#1565C0,color:#FFFFFF
+    style TIDO fill:#ff006e,color:#FFFFFF
+    style TIDO2 fill:#ff006e,color:#FFFFFF
 ```
 
 ## Key Findings

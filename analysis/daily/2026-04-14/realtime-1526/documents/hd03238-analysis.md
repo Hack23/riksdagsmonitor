@@ -23,10 +23,10 @@ graph TD
     B -->|"Accelerates"| E["Green Transition"]
     A -->|"Package"| F["Prop 240: Elsystemet"]
     A -->|"Enables"| G["Prop 239: Vindkraft"]
-    style A fill:#6bcb77,color:#fff
-    style B fill:#ffd93d,color:#000
-    style C fill:#4d96ff,color:#fff
-    style D fill:#4d96ff,color:#fff
+    style A fill:#81C784,color:#FFFFFF
+    style B fill:#FFC107,color:#000000
+    style C fill:#2196F3,color:#FFFFFF
+    style D fill:#2196F3,color:#FFFFFF
 ```
 
 ## Key Insights

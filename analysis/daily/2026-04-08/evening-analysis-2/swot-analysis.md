@@ -37,18 +37,18 @@ graph TD
         T3["Democracy Transparency<br/>HD11693 Lobby register"]
     end
 
-    style S1 fill:#28a745,color:#fff
-    style S2 fill:#28a745,color:#fff
-    style S3 fill:#28a745,color:#fff
-    style W1 fill:#dc3545,color:#fff
-    style W2 fill:#dc3545,color:#fff
-    style W3 fill:#fd7e14,color:#fff
-    style O1 fill:#0d6efd,color:#fff
-    style O2 fill:#0d6efd,color:#fff
-    style O3 fill:#0d6efd,color:#fff
-    style T1 fill:#ffc107,color:#000
-    style T2 fill:#ffc107,color:#000
-    style T3 fill:#ffc107,color:#000
+    style S1 fill:#4CAF50,color:#FFFFFF
+    style S2 fill:#4CAF50,color:#FFFFFF
+    style S3 fill:#4CAF50,color:#FFFFFF
+    style W1 fill:#D32F2F,color:#FFFFFF
+    style W2 fill:#D32F2F,color:#FFFFFF
+    style W3 fill:#FF9800,color:#FFFFFF
+    style O1 fill:#1565C0,color:#FFFFFF
+    style O2 fill:#1565C0,color:#FFFFFF
+    style O3 fill:#1565C0,color:#FFFFFF
+    style T1 fill:#FFC107,color:#000000
+    style T2 fill:#FFC107,color:#000000
+    style T3 fill:#FFC107,color:#000000
 ```
 
 ## Detailed SWOT by Stakeholder Group

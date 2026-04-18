@@ -36,12 +36,12 @@ graph TD
         SOCIAL --> S2["Housing settlement<br/>law (HD03215)"]
         SOCIAL --> S3["Honour violence<br/>community tension"]
     end
-    style LEGAL fill:#dc3545,color:#fff
-    style COALITION fill:#ff6b35,color:#fff
-    style ELECTORAL fill:#ffc107,color:#000
-    style SOCIAL fill:#ffc107,color:#000
-    style L1 fill:#dc3545,color:#fff
-    style L2 fill:#dc3545,color:#fff
+    style LEGAL fill:#D32F2F,color:#FFFFFF
+    style COALITION fill:#FF5722,color:#FFFFFF
+    style ELECTORAL fill:#FFC107,color:#000000
+    style SOCIAL fill:#FFC107,color:#000000
+    style L1 fill:#D32F2F,color:#FFFFFF
+    style L2 fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Key Threat Assessment

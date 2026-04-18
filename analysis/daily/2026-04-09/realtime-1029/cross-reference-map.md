@@ -15,11 +15,11 @@ graph TD
     FoU8 ---|security policy| HD11695
     SfU16 ---|no connection| UbU31
     
-    style SfU16 fill:#ffc107,color:#000000
-    style FoU8 fill:#ffc107,color:#000000
-    style TU15 fill:#28a745,color:#ffffff
-    style UbU31 fill:#28a745,color:#ffffff
-    style HD11695 fill:#0d6efd,color:#ffffff
+    style SfU16 fill:#FFC107,color:#000000
+    style FoU8 fill:#FFC107,color:#000000
+    style TU15 fill:#4CAF50,color:#FFFFFF
+    style UbU31 fill:#4CAF50,color:#FFFFFF
+    style HD11695 fill:#1565C0,color:#FFFFFF
 ```
 
 ---

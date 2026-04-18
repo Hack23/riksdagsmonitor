@@ -30,12 +30,12 @@ graph TD
         INT["International Standing: LOW"]
         CON["Constitutional Order: LOW"]
     end
-    style DEM fill:#28a745,color:#fff
-    style POL fill:#ffc107,color:#000
-    style COA fill:#28a745,color:#fff
-    style PUB fill:#ffc107,color:#000
-    style INT fill:#28a745,color:#fff
-    style CON fill:#28a745,color:#fff
+    style DEM fill:#4CAF50,color:#FFFFFF
+    style POL fill:#FFC107,color:#000000
+    style COA fill:#4CAF50,color:#FFFFFF
+    style PUB fill:#FFC107,color:#000000
+    style INT fill:#4CAF50,color:#FFFFFF
+    style CON fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Detailed Threat Analysis

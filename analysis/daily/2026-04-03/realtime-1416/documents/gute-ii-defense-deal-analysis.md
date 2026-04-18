@@ -39,10 +39,10 @@ graph LR
     A --> I{"Urgency"}
     I -->|"🟠 URGENT"| K["Active geopolitical threat<br/>NATO integration timeline"]
     
-    style A fill:#ff006e,color:#fff
-    style D fill:#ffbe0b,color:#000
-    style H fill:#00d9ff,color:#000
-    style K fill:#ff8c00,color:#fff
+    style A fill:#ff006e,color:#FFFFFF
+    style D fill:#ffbe0b,color:#000000
+    style H fill:#00d9ff,color:#000000
+    style K fill:#F57C00,color:#FFFFFF
 ```
 
 | Classification | Value | Rationale |
@@ -97,14 +97,14 @@ graph TD
     R3["R3: Budget Overrun<br/>L:3 × I:3 = 9"] --> M3["Parliamentary audit<br/>via FöU committee"]
     R4["R4: NATO Integration Gap<br/>L:2 × I:4 = 8"] --> M4["Bilateral testing with<br/>Nordic/Baltic allies"]
     
-    style R1 fill:#ff006e,color:#fff
-    style R2 fill:#ff8c00,color:#fff
-    style R3 fill:#ffbe0b,color:#000
-    style R4 fill:#ffbe0b,color:#000
-    style M1 fill:#00d9ff,color:#000
-    style M2 fill:#00d9ff,color:#000
-    style M3 fill:#00d9ff,color:#000
-    style M4 fill:#00d9ff,color:#000
+    style R1 fill:#ff006e,color:#FFFFFF
+    style R2 fill:#F57C00,color:#FFFFFF
+    style R3 fill:#ffbe0b,color:#000000
+    style R4 fill:#ffbe0b,color:#000000
+    style M1 fill:#00d9ff,color:#000000
+    style M2 fill:#00d9ff,color:#000000
+    style M3 fill:#00d9ff,color:#000000
+    style M4 fill:#00d9ff,color:#000000
 ```
 
 | Risk ID | Risk | Likelihood (1-5) | Impact (1-5) | Score | Mitigation |

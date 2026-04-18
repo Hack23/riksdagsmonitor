@@ -23,18 +23,18 @@ graph TD
     SI --> SI2["Civilian protection<br/>HD01FöU12 response<br/>Severity: 3/5"]
     SC --> SC1["Immigration reform<br/>HD03215 + HD03229<br/>Severity: 2/5"]
     SC --> SC2["Criminal deportation<br/>HD03235 tension<br/>Severity: 2/5"]
-    style ROOT fill:#0d6efd,color:#fff
-    style DG fill:#ffc107,color:#000
-    style SI fill:#fd7e14,color:#fff
-    style SC fill:#ffc107,color:#000
-    style EP fill:#28a745,color:#fff
-    style IR fill:#28a745,color:#fff
-    style CI fill:#28a745,color:#fff
-    style DG1 fill:#ffc107,color:#000
-    style SI1 fill:#fd7e14,color:#fff
-    style SI2 fill:#fd7e14,color:#fff
-    style SC1 fill:#ffc107,color:#000
-    style SC2 fill:#ffc107,color:#000
+    style ROOT fill:#1565C0,color:#FFFFFF
+    style DG fill:#FFC107,color:#000000
+    style SI fill:#FF9800,color:#FFFFFF
+    style SC fill:#FFC107,color:#000000
+    style EP fill:#4CAF50,color:#FFFFFF
+    style IR fill:#4CAF50,color:#FFFFFF
+    style CI fill:#4CAF50,color:#FFFFFF
+    style DG1 fill:#FFC107,color:#000000
+    style SI1 fill:#FF9800,color:#FFFFFF
+    style SI2 fill:#FF9800,color:#FFFFFF
+    style SC1 fill:#FFC107,color:#000000
+    style SC2 fill:#FFC107,color:#000000
 ```
 
 ## Threat Category Assessment

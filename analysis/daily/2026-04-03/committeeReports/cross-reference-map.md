@@ -53,7 +53,7 @@ graph TD
     J15 -.-> P235
     TB -.-> J15
 
-    style F12 fill:#ff006e,color:#fff
+    style F12 fill:#ff006e,color:#FFFFFF
     style J15 fill:#00d9ff,color:#0a0e27
     style P142 fill:#ffbe0b,color:#0a0e27
 ```

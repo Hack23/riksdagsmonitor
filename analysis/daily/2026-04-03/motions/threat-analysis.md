@@ -17,12 +17,12 @@ flowchart TB
         DP["Democratic Process<br/>Severity: 2/5"]
         PB["Power Balance<br/>Severity: 2/5"]
     end
-    style NI fill:#28a745,color:#fff
-    style LI fill:#ffc107,color:#000
-    style AC fill:#28a745,color:#fff
-    style TR fill:#ffc107,color:#000
-    style DP fill:#28a745,color:#fff
-    style PB fill:#28a745,color:#fff
+    style NI fill:#4CAF50,color:#FFFFFF
+    style LI fill:#FFC107,color:#000000
+    style AC fill:#4CAF50,color:#FFFFFF
+    style TR fill:#FFC107,color:#000000
+    style DP fill:#4CAF50,color:#FFFFFF
+    style PB fill:#4CAF50,color:#FFFFFF
 ```
 
 | Category | Severity | Evidence | Confidence |

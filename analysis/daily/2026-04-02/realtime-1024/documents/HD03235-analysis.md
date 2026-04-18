@@ -36,11 +36,11 @@ graph LR
     A --> P{"Temperature"}
     P -->|"🔴 HOT"| Q["Maximum political division<br/>media intensity"]
     
-    style A fill:#00d9ff,stroke:#333,color:#000
-    style C fill:#ff4444,stroke:#333,color:#fff
-    style H fill:#ff006e,stroke:#333,color:#fff
-    style K fill:#ff8c00,stroke:#333,color:#000
-    style Q fill:#ff4444,stroke:#333,color:#fff
+    style A fill:#00d9ff,stroke:#424242,color:#000000
+    style C fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style H fill:#ff006e,stroke:#424242,color:#FFFFFF
+    style K fill:#F57C00,stroke:#424242,color:#000000
+    style Q fill:#EF5350,stroke:#424242,color:#FFFFFF
 ```
 
 ## 📊 SWOT Analysis

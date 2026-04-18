@@ -119,13 +119,13 @@ quadrantChart
 ## 📉 Risk Trend — 7-Day
 
 ```mermaid
-%%{init: {'themeVariables': {'xyChart': {'plotColorPalette': '#dc3545'}}}}%%
+%%{init: {'themeVariables': {'xyChart': {'plotColorPalette': '#D32F2F'}}}}%%
 xychart-beta
     title "Composite Political Risk — April 10-17, 2026"
     x-axis ["Apr 10", "Apr 11", "Apr 12", "Apr 13", "Apr 14", "Apr 15", "Apr 16", "Apr 17"]
     y-axis "Risk (0-10)" 0 --> 10
     line [4, 4, 5, 7, 6, 5, 7, 8]
-%% Line color: fill:#dc3545 (red) via plotColorPalette theme variable
+%% Line color: fill:#D32F2F (red) via plotColorPalette theme variable
 ```
 
 **Readings**:
@@ -188,17 +188,17 @@ graph LR
     R5 -.amplifies.-> R7
     R11 -.amplifies.-> R9
 
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#fd7e14,color:#fff
-    style R5 fill:#fd7e14,color:#fff
-    style R11 fill:#fd7e14,color:#fff
-    style R7 fill:#ffc107,color:#000
-    style R4 fill:#ffc107,color:#000
-    style R8 fill:#ffc107,color:#000
-    style R9 fill:#ffc107,color:#000
-    style R6 fill:#28a745,color:#fff
-    style R10 fill:#28a745,color:#fff
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FF9800,color:#FFFFFF
+    style R5 fill:#FF9800,color:#FFFFFF
+    style R11 fill:#FF9800,color:#FFFFFF
+    style R7 fill:#FFC107,color:#000000
+    style R4 fill:#FFC107,color:#000000
+    style R8 fill:#FFC107,color:#000000
+    style R9 fill:#FFC107,color:#000000
+    style R6 fill:#4CAF50,color:#FFFFFF
+    style R10 fill:#4CAF50,color:#FFFFFF
 ```
 
 **Compound-risk findings** `[HIGH]`:

@@ -92,11 +92,11 @@ graph TD
     B2 --> C2["Fiscal Trade-offs"]
     C2 --> D2["Reduced Domestic Spending"]
 
-    style A fill:#dc3545,color:#fff
-    style E fill:#dc3545,color:#fff
-    style F fill:#dc3545,color:#fff
-    style A2 fill:#0d6efd,color:#fff
-    style D2 fill:#ffc107,color:#000
+    style A fill:#D32F2F,color:#FFFFFF
+    style E fill:#D32F2F,color:#FFFFFF
+    style F fill:#D32F2F,color:#FFFFFF
+    style A2 fill:#1565C0,color:#FFFFFF
+    style D2 fill:#FFC107,color:#000000
 ```
 
 ---

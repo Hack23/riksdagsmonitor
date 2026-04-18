@@ -33,10 +33,10 @@ graph LR
     A --> I{"Urgency"}
     I -->|"🔵 ELEVATED"| L["Monitoring — committee scheduling this session"]
     
-    style A fill:#00d9ff,color:#000
-    style D fill:#ffbe0b,color:#000
-    style H fill:#00d9ff,color:#000
-    style L fill:#4dabf7,color:#000
+    style A fill:#00d9ff,color:#000000
+    style D fill:#ffbe0b,color:#000000
+    style H fill:#00d9ff,color:#000000
+    style L fill:#2196F3,color:#000000
 ```
 
 | Field | Value |

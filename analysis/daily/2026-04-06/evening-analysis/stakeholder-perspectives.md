@@ -20,15 +20,15 @@ graph TD
     CENTER --> INT["🌍 International/<br/>EU<br/>Impact: MEDIUM"]
     CENTER --> JUD["⚖️ Judiciary/<br/>Constitutional<br/>Impact: MEDIUM"]
     CENTER --> MED["📰 Media/Public<br/>Opinion<br/>Impact: MEDIUM"]
-    style CENTER fill:#6f42c1,color:#fff
-    style CIT fill:#ffc107,color:#000
-    style GOV fill:#dc3545,color:#fff
-    style OPP fill:#dc3545,color:#fff
-    style BIZ fill:#28a745,color:#fff
-    style CIV fill:#ffc107,color:#000
-    style INT fill:#ffc107,color:#000
-    style JUD fill:#ffc107,color:#000
-    style MED fill:#ffc107,color:#000
+    style CENTER fill:#7B1FA2,color:#FFFFFF
+    style CIT fill:#FFC107,color:#000000
+    style GOV fill:#D32F2F,color:#FFFFFF
+    style OPP fill:#D32F2F,color:#FFFFFF
+    style BIZ fill:#4CAF50,color:#FFFFFF
+    style CIV fill:#FFC107,color:#000000
+    style INT fill:#FFC107,color:#000000
+    style JUD fill:#FFC107,color:#000000
+    style MED fill:#FFC107,color:#000000
 ```
 
 ## Stakeholder Assessment

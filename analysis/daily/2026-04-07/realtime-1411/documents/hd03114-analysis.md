@@ -42,10 +42,10 @@ graph TD
     GOV_E --> DEF
     GOV_E --> NATO_A
     CIVIL_S --> GOV_E
-    style GOV_E fill:#17a2b8,stroke:#0c5460,color:#fff
-    style DEF fill:#ffc107,stroke:#856404,color:#000
-    style NATO_A fill:#28a745,stroke:#155724,color:#fff
-    style CIVIL_S fill:#28a745,stroke:#155724,color:#fff
+    style GOV_E fill:#0097A7,stroke:#006064,color:#FFFFFF
+    style DEF fill:#FFC107,stroke:#F57C00,color:#000000
+    style NATO_A fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style CIVIL_S fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```
 
 ## Risk Assessment

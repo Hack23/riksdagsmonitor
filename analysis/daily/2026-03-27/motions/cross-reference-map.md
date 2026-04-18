@@ -32,13 +32,13 @@ graph TD
 
     M990 -.->|"Same proposition<br/>different strategy"| M991
 
-    style P175 fill:#0d6efd,color:#fff
-    style P199 fill:#ffc107,color:#000
-    style P203 fill:#28a745,color:#fff
-    style M990 fill:#dc3545,color:#fff
-    style M991 fill:#dc3545,color:#fff
-    style M993 fill:#dc3545,color:#fff
-    style M992 fill:#dc3545,color:#fff
+    style P175 fill:#1565C0,color:#FFFFFF
+    style P199 fill:#FFC107,color:#000000
+    style P203 fill:#4CAF50,color:#FFFFFF
+    style M990 fill:#D32F2F,color:#FFFFFF
+    style M991 fill:#D32F2F,color:#FFFFFF
+    style M993 fill:#D32F2F,color:#FFFFFF
+    style M992 fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Cross-Reference Table

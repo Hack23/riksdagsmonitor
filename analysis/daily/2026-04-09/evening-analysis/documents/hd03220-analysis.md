@@ -24,12 +24,12 @@ graph TD
     B --> D["Budget Allocation<br/>Defense spending increase"]
     A --> E["UU (Foreign Affairs Committee)<br/>Primary review"]
     A --> F["FöU (Defense Committee)<br/>Personnel framework"]
-    style A fill:#dc3545,color:#fff
-    style B fill:#ffc107,color:#000
-    style C fill:#0d6efd,color:#fff
-    style D fill:#0d6efd,color:#fff
-    style E fill:#6c757d,color:#fff
-    style F fill:#6c757d,color:#fff
+    style A fill:#D32F2F,color:#FFFFFF
+    style B fill:#FFC107,color:#000000
+    style C fill:#1565C0,color:#FFFFFF
+    style D fill:#1565C0,color:#FFFFFF
+    style E fill:#9E9E9E,color:#FFFFFF
+    style F fill:#9E9E9E,color:#FFFFFF
 ```
 
 ## SWOT Analysis

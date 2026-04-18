@@ -21,11 +21,11 @@ graph TD
     HD11692 --> SOU["SOU 2025:57"]
     NU18 -.-> BUDGET["Spring Budget 2026"]
     HD03230 -.-> BUDGET
-    style NU18 fill:#ffc107,stroke:#333,color:#000
-    style HD03230 fill:#28a745,stroke:#333,color:#fff
-    style HD03219 fill:#17a2b8,stroke:#333,color:#fff
-    style HD11690 fill:#dc3545,stroke:#333,color:#fff
-    style HD11692 fill:#dc3545,stroke:#333,color:#fff
+    style NU18 fill:#FFC107,stroke:#424242,color:#000000
+    style HD03230 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style HD03219 fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style HD11690 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style HD11692 fill:#D32F2F,stroke:#424242,color:#FFFFFF
 ```
 
 ---

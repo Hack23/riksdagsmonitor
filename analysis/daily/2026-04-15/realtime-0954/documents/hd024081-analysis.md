@@ -32,9 +32,9 @@ graph TD
     A --> F{"Urgency"}
     F -->|"🟠 URGENT"| G["Rejection Motion<br/>Strongest Opposition"]
 
-    style C fill:#ffc107,color:#000
-    style E fill:#0d6efd,color:#fff
-    style G fill:#fd7e14,color:#fff
+    style C fill:#FFC107,color:#000000
+    style E fill:#1565C0,color:#FFFFFF
+    style G fill:#FF9800,color:#FFFFFF
 ```
 
 | Field | Assessment |

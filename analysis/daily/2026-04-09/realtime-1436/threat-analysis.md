@@ -19,12 +19,12 @@ graph TB
         PB["👑 Power Balance<br/>Score: 2/5"]
     end
 
-    style NI fill:#ffc107,color:#000
-    style LI fill:#ffc107,color:#000
-    style AC fill:#28a745,color:#fff
-    style TR fill:#ffc107,color:#000
-    style DP fill:#28a745,color:#fff
-    style PB fill:#ffc107,color:#000
+    style NI fill:#FFC107,color:#000000
+    style LI fill:#FFC107,color:#000000
+    style AC fill:#4CAF50,color:#FFFFFF
+    style TR fill:#FFC107,color:#000000
+    style DP fill:#4CAF50,color:#FFFFFF
+    style PB fill:#FFC107,color:#000000
 ```
 
 ---

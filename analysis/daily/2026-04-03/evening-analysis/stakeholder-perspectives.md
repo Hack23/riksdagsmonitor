@@ -25,15 +25,15 @@ graph TB
     INT -->|"Positive"| INT1[NATO alignment<br/>anti-drone deal]
     JUD -->|"Watching"| JUD1[HD03235 review<br/>potential]
     MED -->|"Active"| MED1[Defense deal<br/>headlines]
-    style CENTER fill:#0d6efd,color:#fff
-    style CIT fill:#ffc107,color:#000
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#fd7e14,color:#fff
-    style BIZ fill:#28a745,color:#fff
-    style INT fill:#28a745,color:#fff
-    style JUD fill:#ffc107,color:#000
-    style MED fill:#0d6efd,color:#fff
-    style CIV fill:#ffc107,color:#000
+    style CENTER fill:#1565C0,color:#FFFFFF
+    style CIT fill:#FFC107,color:#000000
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#FF9800,color:#FFFFFF
+    style BIZ fill:#4CAF50,color:#FFFFFF
+    style INT fill:#4CAF50,color:#FFFFFF
+    style JUD fill:#FFC107,color:#000000
+    style MED fill:#1565C0,color:#FFFFFF
+    style CIV fill:#FFC107,color:#000000
 ```
 
 ## Impact Summary Matrix

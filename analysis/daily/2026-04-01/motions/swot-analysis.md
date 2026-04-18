@@ -145,14 +145,14 @@ graph TD
     OO1 -->|amplifies| GT1
     GS1 -->|mitigates| GT1
     OT1 -->|targets| OO1
-    style GS1 fill:#28a745,color:#fff
-    style OS1 fill:#28a745,color:#fff
-    style GW1 fill:#dc3545,color:#fff
-    style GW2 fill:#dc3545,color:#fff
-    style GO1 fill:#0d6efd,color:#fff
-    style OO1 fill:#0d6efd,color:#fff
-    style GT1 fill:#fd7e14,color:#fff
-    style OT1 fill:#fd7e14,color:#fff
+    style GS1 fill:#4CAF50,color:#FFFFFF
+    style OS1 fill:#4CAF50,color:#FFFFFF
+    style GW1 fill:#D32F2F,color:#FFFFFF
+    style GW2 fill:#D32F2F,color:#FFFFFF
+    style GO1 fill:#1565C0,color:#FFFFFF
+    style OO1 fill:#1565C0,color:#FFFFFF
+    style GT1 fill:#FF9800,color:#FFFFFF
+    style OT1 fill:#FF9800,color:#FFFFFF
 ```
 
 ### SWOT Interaction Matrix

@@ -36,15 +36,15 @@ graph TD
     MED --> MED1["Deportation debate coverage<br/>Impact HIGH"]
     MED --> MED2["Defense investment narrative<br/>Impact MEDIUM"]
 
-    style CENTER fill:#6f42c1,color:#fff
-    style CIT fill:#28a745,color:#fff
-    style GOV fill:#0d6efd,color:#fff
-    style OPP fill:#dc3545,color:#fff
-    style BIZ fill:#ffc107,color:#000
-    style CIV fill:#28a745,color:#fff
-    style INT fill:#0d6efd,color:#fff
-    style JUD fill:#fd7e14,color:#fff
-    style MED fill:#ffc107,color:#000
+    style CENTER fill:#7B1FA2,color:#FFFFFF
+    style CIT fill:#4CAF50,color:#FFFFFF
+    style GOV fill:#1565C0,color:#FFFFFF
+    style OPP fill:#D32F2F,color:#FFFFFF
+    style BIZ fill:#FFC107,color:#000000
+    style CIV fill:#4CAF50,color:#FFFFFF
+    style INT fill:#1565C0,color:#FFFFFF
+    style JUD fill:#FF9800,color:#FFFFFF
+    style MED fill:#FFC107,color:#000000
 ```
 
 ## Impact Summary Matrix

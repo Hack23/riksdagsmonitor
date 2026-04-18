@@ -19,12 +19,12 @@ flowchart TD
     H --> J[Week Ends: Coalition Under Pressure]
     I --> K[Week Ends: Coalition Stable]
     
-    style A fill:#ffbe0b,color:#000
-    style D fill:#ff006e,color:#fff
-    style F fill:#ff006e,color:#fff
-    style J fill:#ff006e,color:#fff
-    style C fill:#00d9ff,color:#000
-    style K fill:#00d9ff,color:#000
+    style A fill:#ffbe0b,color:#000000
+    style D fill:#ff006e,color:#FFFFFF
+    style F fill:#ff006e,color:#FFFFFF
+    style J fill:#ff006e,color:#FFFFFF
+    style C fill:#00d9ff,color:#000000
+    style K fill:#00d9ff,color:#000000
 ```
 
 ## Threat Catalog

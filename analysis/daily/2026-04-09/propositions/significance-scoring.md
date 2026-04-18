@@ -60,7 +60,7 @@ xychart-beta
 %%{init: {'theme': 'dark'}}%%
 flowchart LR
     subgraph HD03230["HD03230 — Score 6/10"]
-        style HD03230 fill:#1565C0,color:#ffffff
+        style HD03230 fill:#1565C0,color:#FFFFFF
         A1["Proposition +2"] --> B1["MJU B-tier +1"]
         B1 --> C1["Amends miljöbalken +2"]
         C1 --> D1["Cross-party relevance +1"]

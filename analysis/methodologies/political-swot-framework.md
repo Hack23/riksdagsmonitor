@@ -375,8 +375,8 @@ Use SWOT combinations to construct **plausible political futures** (scenarios), 
     "quadrant2Fill": "#FFC107",
     "quadrant3Fill": "#4CAF50",
     "quadrant4Fill": "#FF9800",
-    "quadrantTitleFill": "#ffffff",
-    "quadrantPointFill": "#ffffff",
+    "quadrantTitleFill": "#FFFFFF",
+    "quadrantPointFill": "#FFFFFF",
     "quadrantPointTextFill": "#000000",
     "quadrantXAxisTextFill": "#000000",
     "quadrantYAxisTextFill": "#000000"
@@ -422,11 +422,11 @@ Position key stakeholders by their **power** (ability to influence outcomes) and
     "quadrant2Fill": "#2E7D32",
     "quadrant3Fill": "#FF9800",
     "quadrant4Fill": "#D32F2F",
-    "quadrantTitleFill": "#ffffff",
-    "quadrantPointFill": "#ffffff",
-    "quadrantPointTextFill": "#ffffff",
-    "quadrantXAxisTextFill": "#ffffff",
-    "quadrantYAxisTextFill": "#ffffff"
+    "quadrantTitleFill": "#FFFFFF",
+    "quadrantPointFill": "#FFFFFF",
+    "quadrantPointTextFill": "#FFFFFF",
+    "quadrantXAxisTextFill": "#FFFFFF",
+    "quadrantYAxisTextFill": "#FFFFFF"
   },
   "quadrantChart": {
     "chartWidth": 700,

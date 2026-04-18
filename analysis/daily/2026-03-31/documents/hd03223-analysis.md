@@ -34,12 +34,12 @@ graph LR
     B --> D[Over-indebtedness]
     A --> E{EU Compliance}
     E --> F[Consumer Credit Directive]
-    style A fill:#28a745,stroke:#333,color:#fff
-    style B fill:#0d6efd,stroke:#333,color:#fff
-    style E fill:#0d6efd,stroke:#333,color:#fff
-    style C fill:#6c757d,stroke:#333,color:#fff
-    style D fill:#6c757d,stroke:#333,color:#fff
-    style F fill:#6c757d,stroke:#333,color:#fff
+    style A fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style B fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style E fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style C fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style D fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style F fill:#9E9E9E,stroke:#424242,color:#FFFFFF
 ```
 
 | Attribute | Value |

@@ -19,8 +19,8 @@ graph LR
     B -->|"🟡 SENSITIVE"| C["Migration Enforcement"]
     A --> D{"Urgency"}
     D -->|"🔵 ELEVATED"| E["Tidö enforcement triad"]
-    style A fill:#ff006e,color:#fff
-    style C fill:#ffbe0b,color:#000
+    style A fill:#ff006e,color:#FFFFFF
+    style C fill:#ffbe0b,color:#000000
 ```
 
 | Dimension | Score (0-10) | Rationale |

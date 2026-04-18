@@ -18,12 +18,12 @@ graph TD
         R5["Defence Privatisation Debate<br/>L:2 × I:3 = 6"]
         R6["Foreign Policy Sensitivity<br/>L:1 × I:3 = 3"]
     end
-    style R1 fill:#fd7e14,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#ffc107,color:#000
-    style R6 fill:#28a745,color:#fff
+    style R1 fill:#FF9800,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#FFC107,color:#000000
+    style R6 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## 📋 Risk Register

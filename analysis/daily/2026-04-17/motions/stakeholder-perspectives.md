@@ -62,13 +62,13 @@ flowchart LR
     V1 -.->|No coordination evidence| C1
     V1 -.->|No coordination evidence| MP2
     
-    style V1 fill:#e74c3c,color:#fff
-    style V2 fill:#e74c3c,color:#fff
-    style S1 fill:#e74c3c,color:#fff
-    style C1 fill:#f39c12,color:#fff
-    style MP1 fill:#27ae60,color:#fff
-    style MP2 fill:#27ae60,color:#fff
-    style GOV fill:#2c3e50,color:#fff
+    style V1 fill:#D32F2F,color:#FFFFFF
+    style V2 fill:#D32F2F,color:#FFFFFF
+    style S1 fill:#D32F2F,color:#FFFFFF
+    style C1 fill:#FF9800,color:#FFFFFF
+    style MP1 fill:#4CAF50,color:#FFFFFF
+    style MP2 fill:#4CAF50,color:#FFFFFF
+    style GOV fill:#455A64,color:#FFFFFF
 ```
 
 ## Election 2026 Implications

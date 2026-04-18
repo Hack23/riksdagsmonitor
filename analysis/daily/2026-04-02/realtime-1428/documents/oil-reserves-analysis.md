@@ -39,9 +39,9 @@ graph LR
     A --> I{Urgency}
     I -->|"🔴 CRITICAL"| J[Active crisis response — hours]
 
-    style C fill:#dc3545,color:#fff
-    style H fill:#0d6efd,color:#fff
-    style J fill:#dc3545,color:#fff
+    style C fill:#D32F2F,color:#FFFFFF
+    style H fill:#1565C0,color:#FFFFFF
+    style J fill:#D32F2F,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -119,16 +119,16 @@ graph TD
     R1 -.-> T3
     R5 -.-> T4
 
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#dc3545,color:#fff
-    style R3 fill:#dc3545,color:#fff
-    style R4 fill:#fd7e14,color:#fff
-    style R5 fill:#28a745,color:#fff
-    style R6 fill:#dc3545,color:#fff
-    style T1 fill:#dc3545,color:#fff
-    style T2 fill:#fd7e14,color:#fff
-    style T3 fill:#ffc107,color:#000
-    style T4 fill:#28a745,color:#fff
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#D32F2F,color:#FFFFFF
+    style R3 fill:#D32F2F,color:#FFFFFF
+    style R4 fill:#FF9800,color:#FFFFFF
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style R6 fill:#D32F2F,color:#FFFFFF
+    style T1 fill:#D32F2F,color:#FFFFFF
+    style T2 fill:#FF9800,color:#FFFFFF
+    style T3 fill:#FFC107,color:#000000
+    style T4 fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk Type | Likelihood (1–5) | Impact (1–5) | Score | Assessment |

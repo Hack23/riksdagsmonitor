@@ -32,14 +32,14 @@ graph TD
     CIV -->|"advocates for"| CIT
     INT -->|"scrutinizes"| GOV
 
-    style CIT fill:#ffc107,color:#000
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#fd7e14,color:#fff
-    style BIZ fill:#0d6efd,color:#fff
-    style CIV fill:#dc3545,color:#fff
-    style INT fill:#ffc107,color:#000
-    style JUD fill:#6f42c1,color:#fff
-    style MED fill:#6c757d,color:#fff
+    style CIT fill:#FFC107,color:#000000
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#FF9800,color:#FFFFFF
+    style BIZ fill:#1565C0,color:#FFFFFF
+    style CIV fill:#D32F2F,color:#FFFFFF
+    style INT fill:#FFC107,color:#000000
+    style JUD fill:#7B1FA2,color:#FFFFFF
+    style MED fill:#9E9E9E,color:#FFFFFF
 ```
 
 ---

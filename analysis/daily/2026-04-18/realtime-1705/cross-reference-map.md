@@ -25,10 +25,10 @@ graph LR
     I -->|complements| C
     J -->|complements| I
     
-    style A fill:#00d9ff,color:#000
-    style C fill:#ff006e,color:#fff
-    style F fill:#ff006e,color:#fff
-    style G fill:#ff8800,color:#000
+    style A fill:#00d9ff,color:#000000
+    style C fill:#ff006e,color:#FFFFFF
+    style F fill:#ff006e,color:#FFFFFF
+    style G fill:#F57C00,color:#000000
 ```
 
 ## Key Interdependencies

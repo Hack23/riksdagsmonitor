@@ -40,14 +40,14 @@ graph TB
     D -->|"Tidö Agreement"| E
     F -->|"Bilateral Talks"| A
     
-    style A fill:#ff006e,color:#fff
-    style B fill:#ffbe0b,color:#000
-    style C fill:#00d9ff,color:#000
-    style D fill:#ff8c00,color:#fff
-    style E fill:#ff8c00,color:#fff
-    style F fill:#00d9ff,color:#000
-    style G fill:#ffbe0b,color:#000
-    style H fill:#00d9ff,color:#000
+    style A fill:#ff006e,color:#FFFFFF
+    style B fill:#ffbe0b,color:#000000
+    style C fill:#00d9ff,color:#000000
+    style D fill:#F57C00,color:#FFFFFF
+    style E fill:#F57C00,color:#FFFFFF
+    style F fill:#00d9ff,color:#000000
+    style G fill:#ffbe0b,color:#000000
+    style H fill:#00d9ff,color:#000000
 ```
 
 ---

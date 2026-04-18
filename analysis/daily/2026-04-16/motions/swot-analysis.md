@@ -39,12 +39,12 @@ graph LR
     V -->|mot.4083| P216
     C -->|mot.4089| P229
     C -->|mot.4088| P223
-    style S fill:#e8424d,color:#fff
-    style MP fill:#83cf39,color:#000
-    style V fill:#da291c,color:#fff
-    style C fill:#009933,color:#fff
-    style P229 fill:#ff9800,color:#000
-    style P222 fill:#ff9800,color:#000
+    style S fill:#e8424d,color:#FFFFFF
+    style MP fill:#8BC34A,color:#000000
+    style V fill:#D32F2F,color:#FFFFFF
+    style C fill:#2E7D32,color:#FFFFFF
+    style P229 fill:#ff9800,color:#000000
+    style P222 fill:#ff9800,color:#000000
 ```
 
 ## Stakeholder SWOT Analysis (8 Groups)

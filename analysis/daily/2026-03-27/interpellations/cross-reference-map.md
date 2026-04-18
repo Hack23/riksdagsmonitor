@@ -23,9 +23,9 @@ graph TD
         HD10422 ---|"Integration context"| HD10420
         HD10421 ---|"Integration context"| HD10420
     end
-    style HD10422 fill:#3498db,color:#fff,stroke:#2980b9
-    style HD10421 fill:#3498db,color:#fff,stroke:#2980b9
-    style HD10420 fill:#e74c3c,color:#fff,stroke:#c0392b
+    style HD10422 fill:#2196F3,color:#FFFFFF,stroke:#1565C0
+    style HD10421 fill:#2196F3,color:#FFFFFF,stroke:#1565C0
+    style HD10420 fill:#D32F2F,color:#FFFFFF,stroke:#D32F2F
 ```
 
 ## Reference Table

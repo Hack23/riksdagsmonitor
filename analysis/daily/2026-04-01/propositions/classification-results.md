@@ -25,10 +25,10 @@ graph TD
         B["HD03216<br/>Healthcare<br/>7/10"]
     end
     
-    style D fill:#ef4444,stroke:#333,color:#fff
-    style A fill:#ff6b35,stroke:#333,color:#fff
-    style C fill:#ff6b35,stroke:#333,color:#fff
-    style B fill:#3b82f6,stroke:#333,color:#fff
+    style D fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style A fill:#FF5722,stroke:#424242,color:#FFFFFF
+    style C fill:#FF5722,stroke:#424242,color:#FFFFFF
+    style B fill:#2196F3,stroke:#424242,color:#FFFFFF
 ```
 
 ## Detailed Analysis

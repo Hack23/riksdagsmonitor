@@ -30,15 +30,15 @@ graph TB
         I["🤝 Civil Society<br/>Human rights NGOs<br/>Privacy advocates"]
     end
     
-    style A fill:#00d9ff,color:#000
-    style B fill:#00d9ff,color:#000
-    style C fill:#00d9ff,color:#000
-    style D fill:#00ff88,color:#000
-    style E fill:#00ff88,color:#000
-    style F fill:#ffbe0b,color:#000
-    style G fill:#ffbe0b,color:#000
-    style H fill:#ffbe0b,color:#000
-    style I fill:#ff006e,color:#fff
+    style A fill:#00d9ff,color:#000000
+    style B fill:#00d9ff,color:#000000
+    style C fill:#00d9ff,color:#000000
+    style D fill:#4CAF50,color:#000000
+    style E fill:#4CAF50,color:#000000
+    style F fill:#ffbe0b,color:#000000
+    style G fill:#ffbe0b,color:#000000
+    style H fill:#ffbe0b,color:#000000
+    style I fill:#ff006e,color:#FFFFFF
 ```
 
 ---

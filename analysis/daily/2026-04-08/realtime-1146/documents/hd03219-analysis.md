@@ -32,9 +32,9 @@ graph TD
     B --> E["Tandvårdsstödet"]
     C --> F["Government Response"]
     D --> G["Audit Recommendations"]
-    style A fill:#ffc107,stroke:#333,color:#000
-    style B fill:#17a2b8,stroke:#333,color:#fff
-    style D fill:#6c757d,stroke:#333,color:#fff
+    style A fill:#FFC107,stroke:#424242,color:#000000
+    style B fill:#0097A7,stroke:#424242,color:#FFFFFF
+    style D fill:#9E9E9E,stroke:#424242,color:#FFFFFF
 ```
 
 ---

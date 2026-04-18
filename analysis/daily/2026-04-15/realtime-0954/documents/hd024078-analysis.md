@@ -32,9 +32,9 @@ graph TD
     A --> F{"Urgency"}
     F -->|"🔵 ELEVATED"| G["CU Processing<br/>Active Session"]
 
-    style C fill:#28a745,color:#fff
-    style E fill:#0d6efd,color:#fff
-    style G fill:#0d6efd,color:#fff
+    style C fill:#4CAF50,color:#FFFFFF
+    style E fill:#1565C0,color:#FFFFFF
+    style G fill:#1565C0,color:#FFFFFF
 ```
 
 | Field | Assessment |

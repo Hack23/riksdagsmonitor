@@ -28,9 +28,9 @@ graph LR
     A --> F{Urgency}
     F -->|"🔵 ELEVATED"| G["CU committee consideration within weeks"]
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style C fill:#ff6b35,stroke:#333,color:#000
-    style E fill:#00d9ff,stroke:#333,color:#000
-    style G fill:#4dabf7,stroke:#333,color:#000
+    style C fill:#FF5722,stroke:#424242,color:#000000
+    style E fill:#00d9ff,stroke:#424242,color:#000000
+    style G fill:#2196F3,stroke:#424242,color:#000000
 ```
 
 ## SWOT Analysis

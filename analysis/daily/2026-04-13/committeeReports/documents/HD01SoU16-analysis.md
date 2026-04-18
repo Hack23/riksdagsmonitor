@@ -17,8 +17,8 @@ The Social Affairs Committee rejects all 176 motions on healthcare organization 
 graph LR
     A["HD01SoU16<br/>Healthcare Org<br/>176 motions rejected"] --> B["SoU17<br/>Healthcare Priorities<br/>172 motions rejected"]
     A --> C["Healthcare<br/>impasse total:<br/>348 motions"]
-    style A fill:#ff006e,color:#fff
-    style C fill:#ff8800,color:#fff
+    style A fill:#ff006e,color:#FFFFFF
+    style C fill:#F57C00,color:#FFFFFF
 ```
 
 | Dimension | Score (0-10) | Rationale |

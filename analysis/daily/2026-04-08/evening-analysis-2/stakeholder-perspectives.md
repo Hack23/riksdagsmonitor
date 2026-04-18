@@ -23,14 +23,14 @@ graph TD
         MED["Media/Public Opinion<br/>Impact: MODERATE<br/>Budget + audit narratives"]
     end
 
-    style CIT fill:#ffc107,color:#000
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#ffc107,color:#000
-    style BIZ fill:#28a745,color:#fff
-    style CIV fill:#0d6efd,color:#fff
-    style INT fill:#28a745,color:#fff
-    style JUD fill:#28a745,color:#fff
-    style MED fill:#ffc107,color:#000
+    style CIT fill:#FFC107,color:#000000
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#FFC107,color:#000000
+    style BIZ fill:#4CAF50,color:#FFFFFF
+    style CIV fill:#1565C0,color:#FFFFFF
+    style INT fill:#4CAF50,color:#FFFFFF
+    style JUD fill:#4CAF50,color:#FFFFFF
+    style MED fill:#FFC107,color:#000000
 ```
 
 ## Impact Summary Matrix

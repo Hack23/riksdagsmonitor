@@ -64,10 +64,10 @@ graph TD
         D["Rural Policy<br/>C + MP aligned"] --> H["Cross-bloc rural<br/>development critique"]
     end
     
-    style A fill:#ff006e,color:#fff
-    style B fill:#ffbe0b,color:#000
-    style C fill:#00d9ff,color:#000
-    style D fill:#4dabf7,color:#000
+    style A fill:#ff006e,color:#FFFFFF
+    style B fill:#ffbe0b,color:#000000
+    style C fill:#00d9ff,color:#000000
+    style D fill:#2196F3,color:#000000
 ```
 
 ## Risk Level Assessment

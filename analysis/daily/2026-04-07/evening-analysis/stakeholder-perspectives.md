@@ -21,14 +21,14 @@ graph TD
         JUD["Judiciary/Constitutional<br/>Impact: MEDIUM"]
         MED["Media/Public Opinion<br/>Impact: HIGH"]
     end
-    style CIT fill:#ffc107,color:#000
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#ffc107,color:#000
-    style BUS fill:#ffc107,color:#000
-    style CIV fill:#ffc107,color:#000
-    style INT fill:#28a745,color:#fff
-    style JUD fill:#ffc107,color:#000
-    style MED fill:#dc3545,color:#fff
+    style CIT fill:#FFC107,color:#000000
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#FFC107,color:#000000
+    style BUS fill:#FFC107,color:#000000
+    style CIV fill:#FFC107,color:#000000
+    style INT fill:#4CAF50,color:#FFFFFF
+    style JUD fill:#FFC107,color:#000000
+    style MED fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Stakeholder Assessments

@@ -32,7 +32,7 @@ graph LR
     I -->|"🟠 URGENT"| K["Active legislation<br/>Response due 2026-04-27"]
     
     style A fill:#1a1e3d,color:#e0e0e0
-    style C fill:#D32F2F,color:#ffffff
+    style C fill:#D32F2F,color:#FFFFFF
     style H fill:#00d9ff,color:#000000
     style K fill:#FF6B35,color:#000000
 ```

@@ -19,13 +19,13 @@ graph LR
         INT["🌍 International<br/>1 report"]
     end
     
-    style DEF fill:#dc3545,color:#fff
-    style ENE fill:#ffc107,color:#000
-    style SOC fill:#0d6efd,color:#fff
-    style JUS fill:#6f42c1,color:#fff
-    style HOU fill:#198754,color:#fff
-    style GOV fill:#6c757d,color:#fff
-    style INT fill:#0dcaf0,color:#000
+    style DEF fill:#D32F2F,color:#FFFFFF
+    style ENE fill:#FFC107,color:#000000
+    style SOC fill:#1565C0,color:#FFFFFF
+    style JUS fill:#7B1FA2,color:#FFFFFF
+    style HOU fill:#2E7D32,color:#FFFFFF
+    style GOV fill:#9E9E9E,color:#FFFFFF
+    style INT fill:#2196F3,color:#000000
 ```
 
 ## Detailed Classification

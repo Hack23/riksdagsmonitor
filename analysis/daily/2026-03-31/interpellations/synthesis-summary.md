@@ -35,11 +35,11 @@ graph TD
     HD10425 --> T1
     HD10425 --> T2
 
-    style HD10424 fill:#ffc107,color:#000
-    style HD10425 fill:#fd7e14,color:#fff
-    style T1 fill:#dc3545,color:#fff
-    style T2 fill:#0d6efd,color:#fff
-    style T3 fill:#28a745,color:#fff
+    style HD10424 fill:#FFC107,color:#000000
+    style HD10425 fill:#FF9800,color:#FFFFFF
+    style T1 fill:#D32F2F,color:#FFFFFF
+    style T2 fill:#1565C0,color:#FFFFFF
+    style T3 fill:#4CAF50,color:#FFFFFF
 ```
 
 1. **Coordinated S Pressure**: Two S MPs filed interpellations to the same minister on the same day — Dahlqvist on airline route closures, Olsson on defence infrastructure costs. This suggests coordinated opposition strategy targeting Carlson's portfolio.

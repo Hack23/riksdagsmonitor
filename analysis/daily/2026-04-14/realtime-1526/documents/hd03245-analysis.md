@@ -24,11 +24,11 @@ graph TD
     A -->|"Covers"| E["Hedersrelaterat våld<br/>& förtryck"]
     A -->|"Supports"| F["Prop 237: Polisutbildning"]
     A -->|"Context"| G["Social workers<br/>crime prevention tools"]
-    style A fill:#4d96ff,color:#fff
-    style B fill:#ff6b6b,color:#fff
-    style C fill:#ff6b6b,color:#fff
-    style D fill:#ff6b6b,color:#fff
-    style E fill:#ff6b6b,color:#fff
+    style A fill:#2196F3,color:#FFFFFF
+    style B fill:#EF5350,color:#FFFFFF
+    style C fill:#EF5350,color:#FFFFFF
+    style D fill:#EF5350,color:#FFFFFF
+    style E fill:#EF5350,color:#FFFFFF
 ```
 
 ## 6-Lens Analysis

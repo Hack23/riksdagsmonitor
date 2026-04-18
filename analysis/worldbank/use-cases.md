@@ -50,7 +50,7 @@
     "datasets": [{
       "label": "GDP Growth 2024 (%)",
       "data": [0.82, 1.5, 0.7, 0.3, -0.1],
-      "backgroundColor": ["#00d9ff", "#ff006e", "#ffbe0b", "#83cf39", "#9d4edd"]
+      "backgroundColor": ["#00d9ff", "#ff006e", "#ffbe0b", "#8BC34A", "#9d4edd"]
     }]
   },
   "options": {
@@ -231,7 +231,7 @@ get-economic-data(countryCode="DE", indicator="...", years=5)
 | Sweden | SE | SWE | `#00d9ff` (cyan) |
 | Denmark | DK | DNK | `#ff006e` (magenta) |
 | Norway | NO | NOR | `#ffbe0b` (yellow) |
-| Finland | FI | FIN | `#83cf39` (green) |
+| Finland | FI | FIN | `#8BC34A` (green) |
 | Germany | DE | DEU | `#9d4edd` (purple) |
 
 ---

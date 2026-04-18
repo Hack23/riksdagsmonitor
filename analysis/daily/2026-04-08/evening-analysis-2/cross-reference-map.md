@@ -45,14 +45,14 @@ graph TD
     HD11690 -.-> NATO
     HD11692 -.-> NATO
 
-    style HD024070 fill:#ffc107,color:#000
-    style HD024071 fill:#ffc107,color:#000
-    style HD024072 fill:#ffc107,color:#000
-    style SKR226 fill:#dc3545,color:#fff
-    style HD01NU18 fill:#0d6efd,color:#fff
-    style HD03230 fill:#28a745,color:#fff
-    style HD03219 fill:#fd7e14,color:#fff
-    style NATO fill:#6f42c1,color:#fff
+    style HD024070 fill:#FFC107,color:#000000
+    style HD024071 fill:#FFC107,color:#000000
+    style HD024072 fill:#FFC107,color:#000000
+    style SKR226 fill:#D32F2F,color:#FFFFFF
+    style HD01NU18 fill:#1565C0,color:#FFFFFF
+    style HD03230 fill:#4CAF50,color:#FFFFFF
+    style HD03219 fill:#FF9800,color:#FFFFFF
+    style NATO fill:#7B1FA2,color:#FFFFFF
 ```
 
 ## Cluster Details

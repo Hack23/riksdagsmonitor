@@ -54,13 +54,13 @@ flowchart TD
     I["📰 Press-freedom NGO<br/>remissvar (SJF, TU, Utgivarna)"] -.informs.-> B
     J["🏛️ 2026 valrörelse<br/>KU33 campaign salience"] -.shapes.-> C
 
-    style A fill:#ffc107,color:#000
-    style C fill:#0d6efd,color:#fff
-    style F fill:#28a745,color:#fff
-    style G fill:#dc3545,color:#fff
-    style H fill:#6f42c1,color:#fff
-    style I fill:#6f42c1,color:#fff
-    style J fill:#6f42c1,color:#fff
+    style A fill:#FFC107,color:#000000
+    style C fill:#1565C0,color:#FFFFFF
+    style F fill:#4CAF50,color:#FFFFFF
+    style G fill:#D32F2F,color:#FFFFFF
+    style H fill:#7B1FA2,color:#FFFFFF
+    style I fill:#7B1FA2,color:#FFFFFF
+    style J fill:#7B1FA2,color:#FFFFFF
 ```
 
 ---
@@ -185,13 +185,13 @@ flowchart TD
     IN --> PATHB["📜 Mixed outcome<br/>5-yr drift risk"]
     SL --> PATHC["📜 Chilling-risk path<br/>Wildcard-1 scenario"]
 
-    style LP fill:#ffc107,color:#000
-    style ST fill:#28a745,color:#fff
-    style IN fill:#ffc107,color:#000
-    style SL fill:#dc3545,color:#fff
-    style PATHA fill:#28a745,color:#fff
-    style PATHB fill:#fd7e14,color:#fff
-    style PATHC fill:#dc3545,color:#fff
+    style LP fill:#FFC107,color:#000000
+    style ST fill:#4CAF50,color:#FFFFFF
+    style IN fill:#FFC107,color:#000000
+    style SL fill:#D32F2F,color:#FFFFFF
+    style PATHA fill:#4CAF50,color:#FFFFFF
+    style PATHB fill:#FF9800,color:#FFFFFF
+    style PATHC fill:#D32F2F,color:#FFFFFF
 ```
 
 ---

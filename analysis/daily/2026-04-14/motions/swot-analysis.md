@@ -94,14 +94,14 @@ graph LR
     end
     GW --> OS
     GT --> OO
-    style GS fill:#28a745,color:#fff
-    style GW fill:#ffc107,color:#000
-    style GO fill:#17a2b8,color:#fff
-    style GT fill:#dc3545,color:#fff
-    style OS fill:#28a745,color:#fff
-    style OW fill:#ffc107,color:#000
-    style OO fill:#17a2b8,color:#fff
-    style OT fill:#dc3545,color:#fff
+    style GS fill:#4CAF50,color:#FFFFFF
+    style GW fill:#FFC107,color:#000000
+    style GO fill:#0097A7,color:#FFFFFF
+    style GT fill:#D32F2F,color:#FFFFFF
+    style OS fill:#4CAF50,color:#FFFFFF
+    style OW fill:#FFC107,color:#000000
+    style OO fill:#0097A7,color:#FFFFFF
+    style OT fill:#D32F2F,color:#FFFFFF
 ```
 
 ## 8 Stakeholder Groups Analysis

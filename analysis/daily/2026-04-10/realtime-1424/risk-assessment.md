@@ -36,13 +36,13 @@ graph TD
     R3 -.-> TM
     R4 -.-> TM
     R5 -.-> TM
-    style R1 fill:#fd7e14,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#ffc107,color:#000
-    style R5 fill:#ffc107,color:#000
-    style TH fill:#fd7e14,color:#fff
-    style TM fill:#ffc107,color:#000
+    style R1 fill:#FF9800,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#FFC107,color:#000000
+    style TH fill:#FF9800,color:#FFFFFF
+    style TM fill:#FFC107,color:#000000
 ```
 
 ### Risk Register
@@ -66,13 +66,13 @@ graph TD
     FAIL --> MEDIA["Negative media coverage"]
     MEDIA --> POLL["Government polling impact"]
     POLL --> COAL["SD pressure for even stronger measures"]
-    style TRIGGER fill:#28a745,color:#fff
-    style EXEC fill:#ffc107,color:#000
-    style GAP fill:#fd7e14,color:#fff
-    style FAIL fill:#dc3545,color:#fff
-    style MEDIA fill:#dc3545,color:#fff
-    style POLL fill:#fd7e14,color:#fff
-    style COAL fill:#ffc107,color:#000
+    style TRIGGER fill:#4CAF50,color:#FFFFFF
+    style EXEC fill:#FFC107,color:#000000
+    style GAP fill:#FF9800,color:#FFFFFF
+    style FAIL fill:#D32F2F,color:#FFFFFF
+    style MEDIA fill:#D32F2F,color:#FFFFFF
+    style POLL fill:#FF9800,color:#FFFFFF
+    style COAL fill:#FFC107,color:#000000
 ```
 
 ---

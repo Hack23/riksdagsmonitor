@@ -20,16 +20,16 @@ graph TD
     LI --> LI1[Education reform<br/>scrutiny deficit]
     LI --> LI2[Deportation rules<br/>constitutional boundary]
     DP --> DP1[Constitutional review<br/>tension Prop HD03235]
-    style NI fill:#ffc107,color:#000
-    style LI fill:#fd7e14,color:#fff
-    style AC fill:#28a745,color:#fff
-    style TR fill:#28a745,color:#fff
-    style DP fill:#ffc107,color:#000
-    style PB fill:#28a745,color:#fff
-    style NI1 fill:#ffc107,color:#000
-    style LI1 fill:#fd7e14,color:#fff
-    style LI2 fill:#dc3545,color:#fff
-    style DP1 fill:#ffc107,color:#000
+    style NI fill:#FFC107,color:#000000
+    style LI fill:#FF9800,color:#FFFFFF
+    style AC fill:#4CAF50,color:#FFFFFF
+    style TR fill:#4CAF50,color:#FFFFFF
+    style DP fill:#FFC107,color:#000000
+    style PB fill:#4CAF50,color:#FFFFFF
+    style NI1 fill:#FFC107,color:#000000
+    style LI1 fill:#FF9800,color:#FFFFFF
+    style LI2 fill:#D32F2F,color:#FFFFFF
+    style DP1 fill:#FFC107,color:#000000
 ```
 
 ## Threat Assessment by Category

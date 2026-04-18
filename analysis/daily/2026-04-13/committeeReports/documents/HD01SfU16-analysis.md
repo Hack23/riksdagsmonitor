@@ -25,10 +25,10 @@ graph LR
     D --> E["Migration & Integration"]
     A --> F{"Urgency"}
     F -->|"🔵 ELEVATED"| G["Tidö Agreement<br/>implementation ongoing"]
-    style A fill:#ff006e,color:#fff
-    style C fill:#ffbe0b,color:#000
-    style E fill:#ff006e,color:#fff
-    style G fill:#4488ff,color:#fff
+    style A fill:#ff006e,color:#FFFFFF
+    style C fill:#ffbe0b,color:#000000
+    style E fill:#ff006e,color:#FFFFFF
+    style G fill:#2196F3,color:#FFFFFF
 ```
 
 | Dimension | Score (0-10) | Rationale |

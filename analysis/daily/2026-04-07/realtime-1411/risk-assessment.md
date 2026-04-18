@@ -20,10 +20,10 @@ graph TD
             R4["R4: Export control<br>policy challenge<br>L=1 × I=3 = 3"]
         end
     end
-    style R1 fill:#ffc107,stroke:#856404,color:#000
-    style R2 fill:#fd7e14,stroke:#873b00,color:#fff
-    style R3 fill:#28a745,stroke:#155724,color:#fff
-    style R4 fill:#28a745,stroke:#155724,color:#fff
+    style R1 fill:#FFC107,stroke:#F57C00,color:#000000
+    style R2 fill:#FF9800,stroke:#E65100,color:#FFFFFF
+    style R3 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style R4 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```
 
 ## Detailed Risk Assessment

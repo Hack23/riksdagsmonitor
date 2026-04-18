@@ -32,21 +32,21 @@ graph TD
         HD10430["HD10430<br/>SD: Mosques"] -.-> HD10429["HD10429<br/>SD: Free Speech"]
     end
 
-    style HD03235 fill:#dc3545,color:#fff
-    style HD03220 fill:#ff6b35,color:#fff
-    style HD03218 fill:#ff6b35,color:#fff
-    style HD01SfU31 fill:#ffc107,color:#000
-    style HD01SfU32 fill:#ffc107,color:#000
-    style HD01SfU36 fill:#ffc107,color:#000
-    style HD01UU6 fill:#ff6b35,color:#fff
-    style HD01FoU12 fill:#ff6b35,color:#fff
-    style HD03214 fill:#ffc107,color:#000
-    style HD03228 fill:#ffc107,color:#000
-    style HD03217 fill:#ffc107,color:#000
-    style HD01JuU15 fill:#ffc107,color:#000
-    style HD01SfU16 fill:#ffc107,color:#000
-    style HD10430 fill:#6f42c1,color:#fff
-    style HD10429 fill:#6f42c1,color:#fff
+    style HD03235 fill:#D32F2F,color:#FFFFFF
+    style HD03220 fill:#FF5722,color:#FFFFFF
+    style HD03218 fill:#FF5722,color:#FFFFFF
+    style HD01SfU31 fill:#FFC107,color:#000000
+    style HD01SfU32 fill:#FFC107,color:#000000
+    style HD01SfU36 fill:#FFC107,color:#000000
+    style HD01UU6 fill:#FF5722,color:#FFFFFF
+    style HD01FoU12 fill:#FF5722,color:#FFFFFF
+    style HD03214 fill:#FFC107,color:#000000
+    style HD03228 fill:#FFC107,color:#000000
+    style HD03217 fill:#FFC107,color:#000000
+    style HD01JuU15 fill:#FFC107,color:#000000
+    style HD01SfU16 fill:#FFC107,color:#000000
+    style HD10430 fill:#7B1FA2,color:#FFFFFF
+    style HD10429 fill:#7B1FA2,color:#FFFFFF
 ```
 
 ## Thematic Clusters

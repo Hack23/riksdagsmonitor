@@ -31,10 +31,10 @@ flowchart TD
     ENV --> LOW
     INST --> LOW
     
-    style DEM fill:#ffbe0b,color:#000
-    style ENV fill:#00d9ff,color:#000
-    style INST fill:#ff006e,color:#fff
-    style LOW fill:#00ff88,color:#000
+    style DEM fill:#ffbe0b,color:#000000
+    style ENV fill:#00d9ff,color:#000000
+    style INST fill:#ff006e,color:#FFFFFF
+    style LOW fill:#4CAF50,color:#000000
 ```
 
 ## Detailed Threat Analysis

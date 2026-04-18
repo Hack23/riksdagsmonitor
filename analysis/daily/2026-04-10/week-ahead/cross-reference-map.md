@@ -25,8 +25,8 @@ flowchart LR
         VP --> SkU[SkU Committee]
     end
     
-    style VP fill:#ffbe0b,color:#000
-    style V1 fill:#ff006e,color:#fff
+    style VP fill:#ffbe0b,color:#000000
+    style V1 fill:#ff006e,color:#FFFFFF
 ```
 
 ## Key Linkages

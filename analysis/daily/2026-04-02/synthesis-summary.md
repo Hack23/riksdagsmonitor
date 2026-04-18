@@ -25,14 +25,14 @@ graph LR
         J --> M["HD03228: Military Export"]
         J --> N["HD03216: Municipal Health"]
     end
-    style A fill:#0d6efd,color:#fff
-    style D fill:#28a745,color:#fff
-    style H fill:#ffc107,color:#000
-    style J fill:#dc3545,color:#fff
-    style B fill:#0d6efd,color:#fff
-    style C fill:#0d6efd,color:#fff
-    style K fill:#dc3545,color:#fff
-    style L fill:#fd7e14,color:#fff
+    style A fill:#1565C0,color:#FFFFFF
+    style D fill:#4CAF50,color:#FFFFFF
+    style H fill:#FFC107,color:#000000
+    style J fill:#D32F2F,color:#FFFFFF
+    style B fill:#1565C0,color:#FFFFFF
+    style C fill:#1565C0,color:#FFFFFF
+    style K fill:#D32F2F,color:#FFFFFF
+    style L fill:#FF9800,color:#FFFFFF
 ```
 
 ## Top Findings

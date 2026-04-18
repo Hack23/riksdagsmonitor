@@ -28,12 +28,12 @@ graph TD
     D1 --> U1
     U1 --> I1
     I1 --> DEC
-    style START fill:#1a1e3d,color:#fff
-    style S1 fill:#fd7e14,color:#fff
-    style D1 fill:#0d6efd,color:#fff
-    style U1 fill:#ffc107,color:#000
-    style I1 fill:#6f42c1,color:#fff
-    style DEC fill:#28a745,color:#fff
+    style START fill:#1a1e3d,color:#FFFFFF
+    style S1 fill:#FF9800,color:#FFFFFF
+    style D1 fill:#1565C0,color:#FFFFFF
+    style U1 fill:#FFC107,color:#000000
+    style I1 fill:#7B1FA2,color:#FFFFFF
+    style DEC fill:#4CAF50,color:#FFFFFF
 ```
 
 ## 📊 Batch Classification Table

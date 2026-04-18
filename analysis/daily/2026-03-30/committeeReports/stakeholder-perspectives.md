@@ -38,12 +38,12 @@ flowchart TD
     INTL --- MJU30
     MEDIA --- MJU30
     
-    style GOV fill:#00d9ff,color:#000
-    style OPP fill:#ffbe0b,color:#000
-    style CIT fill:#00ff88,color:#000
-    style ECON fill:#e0e0e0,color:#000
-    style INTL fill:#ff006e,color:#fff
-    style MEDIA fill:#e0e0e0,color:#000
+    style GOV fill:#00d9ff,color:#000000
+    style OPP fill:#ffbe0b,color:#000000
+    style CIT fill:#4CAF50,color:#000000
+    style ECON fill:#e0e0e0,color:#000000
+    style INTL fill:#ff006e,color:#FFFFFF
+    style MEDIA fill:#e0e0e0,color:#000000
 ```
 
 ## 🏛️ Government Perspective

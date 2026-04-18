@@ -25,12 +25,12 @@ graph TD
     GOV -->|"benefits"| BIZ
     GOV -->|"signals to"| INT
 
-    style GOV fill:#0d6efd,color:#fff
-    style SD fill:#ffc107,color:#000
-    style OPP fill:#6c757d,color:#fff
-    style PUB fill:#28a745,color:#fff
-    style BIZ fill:#28a745,color:#fff
-    style INT fill:#0d6efd,color:#fff
+    style GOV fill:#1565C0,color:#FFFFFF
+    style SD fill:#FFC107,color:#000000
+    style OPP fill:#9E9E9E,color:#FFFFFF
+    style PUB fill:#4CAF50,color:#FFFFFF
+    style BIZ fill:#4CAF50,color:#FFFFFF
+    style INT fill:#1565C0,color:#FFFFFF
 ```
 
 ---

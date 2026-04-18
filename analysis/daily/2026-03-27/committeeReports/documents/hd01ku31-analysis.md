@@ -40,9 +40,9 @@ graph LR
     A --> I{Urgency}
     I -->|"🔵 ELEVATED"| L["Riksrevisionen finding<br/>requires follow-up"]
 
-    style D fill:#ffc107,color:#000
-    style H fill:#6f42c1,color:#fff
-    style L fill:#0d6efd,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#7B1FA2,color:#FFFFFF
+    style L fill:#1565C0,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -102,14 +102,14 @@ graph TD
     R5 -.-> T3
     R6 -.-> T3
 
-    style R1 fill:#28a745,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#28a745,color:#fff
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#ffc107,color:#000
-    style R6 fill:#ffc107,color:#000
-    style T3 fill:#ffc107,color:#000
-    style T4 fill:#28a745,color:#fff
+    style R1 fill:#4CAF50,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#4CAF50,color:#FFFFFF
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#FFC107,color:#000000
+    style R6 fill:#FFC107,color:#000000
+    style T3 fill:#FFC107,color:#000000
+    style T4 fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk Type | Likelihood (1–5) | Impact (1–5) | Score | Assessment |

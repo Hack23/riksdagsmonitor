@@ -101,12 +101,12 @@ graph LR
     B -->|"Rushed legislation"| C[Implementation Failures]
     D[RSK-002: Deportation Constitutional] -->|"Lagrådet rejection"| E[Government Credibility Hit]
     E -->|"SD pressure"| F[Coalition Strain]
-    style A fill:#fd7e14,color:#fff
-    style B fill:#fd7e14,color:#fff
-    style C fill:#dc3545,color:#fff
-    style D fill:#fd7e14,color:#fff
-    style E fill:#ffc107,color:#000
-    style F fill:#dc3545,color:#fff
+    style A fill:#FF9800,color:#FFFFFF
+    style B fill:#FF9800,color:#FFFFFF
+    style C fill:#D32F2F,color:#FFFFFF
+    style D fill:#FF9800,color:#FFFFFF
+    style E fill:#FFC107,color:#000000
+    style F fill:#D32F2F,color:#FFFFFF
 ```
 
 ## 🔮 Forward Indicators & Scenario Outlook

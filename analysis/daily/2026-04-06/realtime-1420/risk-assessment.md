@@ -33,11 +33,11 @@ graph TD
         R5["RSK-5: Opposition electoral coordination<br/>L:2 × I:3 = 6"]
     end
 
-    style R1 fill:#fd7e14,stroke:#333,color:#000
-    style R2 fill:#ffc107,stroke:#333,color:#000
-    style R3 fill:#28a745,stroke:#333,color:#fff
-    style R4 fill:#28a745,stroke:#333,color:#fff
-    style R5 fill:#28a745,stroke:#333,color:#fff
+    style R1 fill:#FF9800,stroke:#424242,color:#000000
+    style R2 fill:#FFC107,stroke:#424242,color:#000000
+    style R3 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style R4 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style R5 fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 ---
@@ -65,11 +65,11 @@ graph TD
     D -->|"Delayed response"| F["Electoral liability<br/>Score: 12"]
     F --> G["Public trust erosion<br/>in criminal justice policy"]
 
-    style A fill:#ffc107,stroke:#333,color:#000
-    style B fill:#fd7e14,stroke:#333,color:#000
-    style F fill:#dc3545,stroke:#333,color:#fff
-    style G fill:#dc3545,stroke:#333,color:#fff
-    style E fill:#ffc107,stroke:#333,color:#000
+    style A fill:#FFC107,stroke:#424242,color:#000000
+    style B fill:#FF9800,stroke:#424242,color:#000000
+    style F fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style G fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style E fill:#FFC107,stroke:#424242,color:#000000
 ```
 
 ---

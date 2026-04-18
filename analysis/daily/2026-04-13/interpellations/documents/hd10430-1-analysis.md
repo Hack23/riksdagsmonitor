@@ -36,11 +36,11 @@ graph LR
     A --> K{Urgency}
     K -->|"🟠 URGENT"| L["Response deadline: 2026-04-24"]
     
-    style C fill:#ffcc00,stroke:#333,color:#000
-    style H fill:#4CAF50,stroke:#333,color:#fff
-    style I fill:#9C27B0,stroke:#333,color:#fff
-    style J fill:#F44336,stroke:#333,color:#fff
-    style L fill:#FF5722,stroke:#333,color:#fff
+    style C fill:#FFC107,stroke:#424242,color:#000000
+    style H fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style I fill:#9C27B0,stroke:#424242,color:#FFFFFF
+    style J fill:#F44336,stroke:#424242,color:#FFFFFF
+    style L fill:#FF5722,stroke:#424242,color:#FFFFFF
 ```
 
 **Sensitivity**: 🟡 SENSITIVE — Hate speech and religious community tensions

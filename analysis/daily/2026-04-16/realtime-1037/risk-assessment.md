@@ -18,11 +18,11 @@ graph TD
         R4["🟢 Fiscal EV Cost<br/>L:Medium × I:Low = 3/10"]
         R5["🟢 Digital Implementation<br/>L:Low × I:Medium = 2/10"]
     end
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#28a745,color:#fff
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#28a745,color:#fff
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#4CAF50,color:#FFFFFF
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk ID | Risk | Likelihood | Impact | Score | Primary Document |

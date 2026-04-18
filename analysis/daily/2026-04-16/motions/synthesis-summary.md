@@ -82,11 +82,11 @@ graph TD
     M4085 -.->|"Both reject parental liability"| M4084
     M4081 -.->|"Both oppose prop. 216"| M4083
     M4079 -.->|"Both contest bosättning"| M4086
-    style M4082 fill:#ff4444,color:#fff
-    style M4080 fill:#e8424d,color:#fff
-    style M4087 fill:#83cf39,color:#000
-    style M4089 fill:#009933,color:#fff
-    style M4084 fill:#da291c,color:#fff
+    style M4082 fill:#EF5350,color:#FFFFFF
+    style M4080 fill:#e8424d,color:#FFFFFF
+    style M4087 fill:#8BC34A,color:#000000
+    style M4089 fill:#2E7D32,color:#FFFFFF
+    style M4084 fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Election 2026 Implications

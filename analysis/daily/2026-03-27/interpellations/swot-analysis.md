@@ -104,15 +104,15 @@ graph TD
             GT2["Police case: murdered son,<br/>child as interpreter"]
         end
     end
-    style GS1 fill:#28a745,color:#fff,stroke:#155724
-    style OS1 fill:#28a745,color:#fff,stroke:#155724
-    style GW1 fill:#fd7e14,color:#fff,stroke:#c35a00
-    style GW2 fill:#fd7e14,color:#fff,stroke:#c35a00
-    style GW3 fill:#fd7e14,color:#fff,stroke:#c35a00
-    style GO1 fill:#17a2b8,color:#fff,stroke:#117a8b
-    style OO1 fill:#17a2b8,color:#fff,stroke:#117a8b
-    style GT1 fill:#dc3545,color:#fff,stroke:#a71d2a
-    style GT2 fill:#dc3545,color:#fff,stroke:#a71d2a
+    style GS1 fill:#4CAF50,color:#FFFFFF,stroke:#2E7D32
+    style OS1 fill:#4CAF50,color:#FFFFFF,stroke:#2E7D32
+    style GW1 fill:#FF9800,color:#FFFFFF,stroke:#c35a00
+    style GW2 fill:#FF9800,color:#FFFFFF,stroke:#c35a00
+    style GW3 fill:#FF9800,color:#FFFFFF,stroke:#c35a00
+    style GO1 fill:#0097A7,color:#FFFFFF,stroke:#117a8b
+    style OO1 fill:#0097A7,color:#FFFFFF,stroke:#117a8b
+    style GT1 fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C
+    style GT2 fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C
 ```
 
 ## Key Findings

@@ -46,24 +46,24 @@ graph TD
             S1["66 Propositions<br/>61 Committee Reports<br/>130 Motions<br/>44 Interpellations<br/>105 Written Questions"]
         end
     end
-    style P1 fill:#dc3545,color:#fff
-    style P2 fill:#dc3545,color:#fff
-    style P3 fill:#ff6b35,color:#fff
-    style P4 fill:#ff6b35,color:#fff
-    style P5 fill:#ff6b35,color:#fff
-    style P6 fill:#ff6b35,color:#fff
-    style P7 fill:#ffc107,color:#000
-    style P8 fill:#ff6b35,color:#fff
-    style B1 fill:#ff6b35,color:#fff
-    style B2 fill:#ff6b35,color:#fff
-    style B3 fill:#ff6b35,color:#fff
-    style B4 fill:#ff6b35,color:#fff
-    style B5 fill:#ff6b35,color:#fff
-    style B6 fill:#ffc107,color:#000
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#ff6b35,color:#fff
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#28a745,color:#fff
+    style P1 fill:#D32F2F,color:#FFFFFF
+    style P2 fill:#D32F2F,color:#FFFFFF
+    style P3 fill:#FF5722,color:#FFFFFF
+    style P4 fill:#FF5722,color:#FFFFFF
+    style P5 fill:#FF5722,color:#FFFFFF
+    style P6 fill:#FF5722,color:#FFFFFF
+    style P7 fill:#FFC107,color:#000000
+    style P8 fill:#FF5722,color:#FFFFFF
+    style B1 fill:#FF5722,color:#FFFFFF
+    style B2 fill:#FF5722,color:#FFFFFF
+    style B3 fill:#FF5722,color:#FFFFFF
+    style B4 fill:#FF5722,color:#FFFFFF
+    style B5 fill:#FF5722,color:#FFFFFF
+    style B6 fill:#FFC107,color:#000000
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#FF5722,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Summary

@@ -44,12 +44,12 @@ graph TD
     THR --> DEC
     SIG --> DEC
 
-    style CLS fill:#ffc107,stroke:#e0a800,color:#000
-    style RSK fill:#fd7e14,stroke:#ca6510,color:#fff
-    style THR fill:#ffc107,stroke:#e0a800,color:#000
-    style SIG fill:#fd7e14,stroke:#ca6510,color:#fff
-    style STD fill:#0d6efd,stroke:#0a58ca,color:#fff
-    style DEC fill:#6f42c1,stroke:#5a32a3,color:#fff
+    style CLS fill:#FFC107,stroke:#FFA000,color:#000000
+    style RSK fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style THR fill:#FFC107,stroke:#FFA000,color:#000000
+    style SIG fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style STD fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
+    style DEC fill:#7B1FA2,stroke:#5a32a3,color:#FFFFFF
 ```
 
 ---
@@ -81,12 +81,12 @@ graph LR
     P2 --> C2["Sweden's international posture post-NATO"]
     P3 --> C3["Tidöavtalet internal dynamics"]
 
-    style P1 fill:#0d6efd,stroke:#0a58ca,color:#fff
-    style P2 fill:#dc3545,stroke:#b02a37,color:#fff
-    style P3 fill:#ffc107,stroke:#e0a800,color:#000
-    style C1 fill:#6f42c1,stroke:#5a32a3,color:#fff
-    style C2 fill:#fd7e14,stroke:#ca6510,color:#fff
-    style C3 fill:#28a745,stroke:#1e7e34,color:#fff
+    style P1 fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
+    style P2 fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
+    style P3 fill:#FFC107,stroke:#FFA000,color:#000000
+    style C1 fill:#7B1FA2,stroke:#5a32a3,color:#FFFFFF
+    style C2 fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style C3 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```
 
 **Key pattern**: 3 of 4 documents today originate from SD, reflecting the party's active use of parliamentary instruments (interpellation, written questions) to shape government policy from outside the cabinet. This is consistent with SD's Tidöavtalet role as external support party.

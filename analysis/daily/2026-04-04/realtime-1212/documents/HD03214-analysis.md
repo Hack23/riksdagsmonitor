@@ -69,14 +69,14 @@ graph TD
         A --> G["Nordic-Baltic<br/>Cooperation"]
         C --> H["Threat Intelligence<br/>Sharing Authority"]
     end
-    style A fill:#0A66C2,stroke:#333,color:#fff
-    style B fill:#28a745,stroke:#333,color:#fff
-    style C fill:#28a745,stroke:#333,color:#fff
-    style D fill:#ffc107,stroke:#333,color:#000
-    style E fill:#fd7e14,stroke:#333,color:#fff
-    style F fill:#fd7e14,stroke:#333,color:#fff
-    style G fill:#28a745,stroke:#333,color:#fff
-    style H fill:#0A66C2,stroke:#333,color:#fff
+    style A fill:#0A66C2,stroke:#424242,color:#FFFFFF
+    style B fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style C fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style D fill:#FFC107,stroke:#424242,color:#000000
+    style E fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style F fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style G fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style H fill:#0A66C2,stroke:#424242,color:#FFFFFF
 ```
 
 ---

@@ -35,9 +35,9 @@ graph LR
     I -->|"⚪ ROUTINE"| M["Standard parliamentary processing"]
 
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style E fill:#28a745,stroke:#333,color:#fff
-    style H fill:#00d9ff,stroke:#333,color:#000
-    style M fill:#6c757d,stroke:#333,color:#fff
+    style E fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style H fill:#00d9ff,stroke:#424242,color:#000000
+    style M fill:#9E9E9E,stroke:#424242,color:#FFFFFF
 ```
 
 ---

@@ -35,9 +35,9 @@ graph LR
     I -->|"🟠 URGENT"| K["Legislative response within days"]
 
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style D fill:#ffc107,stroke:#333,color:#000
-    style H fill:#00d9ff,stroke:#333,color:#000
-    style K fill:#fd7e14,stroke:#333,color:#000
+    style D fill:#FFC107,stroke:#424242,color:#000000
+    style H fill:#00d9ff,stroke:#424242,color:#000000
+    style K fill:#FF9800,stroke:#424242,color:#000000
 ```
 
 ---
@@ -85,9 +85,9 @@ graph TD
         R3["RSK-003<br/>Coalition friction<br/>Likelihood: 2/5<br/>Impact: 3/5"]
     end
 
-    style R1 fill:#fd7e14,stroke:#333,color:#000
-    style R2 fill:#ffc107,stroke:#333,color:#000
-    style R3 fill:#28a745,stroke:#333,color:#fff
+    style R1 fill:#FF9800,stroke:#424242,color:#000000
+    style R2 fill:#FFC107,stroke:#424242,color:#000000
+    style R3 fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 | Risk ID | Description | Likelihood | Impact | Score | Mitigation |

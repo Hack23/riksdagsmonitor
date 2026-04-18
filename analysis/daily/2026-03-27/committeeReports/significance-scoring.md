@@ -17,11 +17,11 @@ graph LR
         KrU10["🟢 KrU10<br/>EU Cultural Compass<br/>3/10"]
     end
 
-    style KU31 fill:#ffc107,color:#000
-    style CU18 fill:#ffc107,color:#000
-    style JuU16 fill:#0d6efd,color:#fff
-    style CU17 fill:#0d6efd,color:#fff
-    style KrU10 fill:#28a745,color:#fff
+    style KU31 fill:#FFC107,color:#000000
+    style CU18 fill:#FFC107,color:#000000
+    style JuU16 fill:#1565C0,color:#FFFFFF
+    style CU17 fill:#1565C0,color:#FFFFFF
+    style KrU10 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## 📊 Scoring Table

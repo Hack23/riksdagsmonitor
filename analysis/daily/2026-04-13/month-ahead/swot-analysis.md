@@ -17,28 +17,28 @@
 ```mermaid
 graph TD
     subgraph "🟢 Strengths"
-        style S fill:#2d6a4f,color:#fff
+        style S fill:#2d6a4f,color:#FFFFFF
         S1["Coalition legislative discipline<br/>404 motions rejected in one week"]
         S2["Fiscal stimulus: fuel tax cuts + energy relief<br/>(HD03236)"]
         S3["Broad NATO support<br/>(UFöU3 cross-party)"]
         S4["Comprehensive justice reform package<br/>(5 propositions)"]
     end
     subgraph "🔴 Weaknesses"
-        style W fill:#9d0208,color:#fff
+        style W fill:#9d0208,color:#FFFFFF
         W1["348 healthcare motions rejected<br/>without new solutions (SoU16/17)"]
         W2["SD free speech tensions<br/>(HD10429/430 interpellations)"]
         W3["FiU overloaded: 3 fiscal packages<br/>+ fast-track simultaneously"]
         W4["Rising unemployment 8.4%<br/>despite GDP recovery"]
     end
     subgraph "🟡 Opportunities"
-        style O fill:#e9c46a,color:#000
+        style O fill:#e9c46a,color:#000000
         O1["Election narrative control<br/>through Spring Budget"]
         O2["NATO deployment: bipartisan moment"]
         O3["Renewable energy permitting<br/>reform (NU18) — EU alignment"]
         O4["Pre-election voter relief<br/>measures visible by May"]
     end
     subgraph "🔵 Threats"
-        style T fill:#023e8a,color:#fff
+        style T fill:#023e8a,color:#FFFFFF
         T1["Opposition 'democratic deficit'<br/>framing from mass rejections"]
         T2["Energy relief may be insufficient<br/>for voter expectations"]
         T3["Healthcare crisis escalation<br/>during campaign"]

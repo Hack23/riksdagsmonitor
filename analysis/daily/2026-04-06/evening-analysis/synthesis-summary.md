@@ -18,10 +18,10 @@ graph LR
         B --> C["�� Motions Filed<br/>30+ opposition (Apr 1)"]
         C --> D["🔴 Upcoming Votes<br/>Security & Justice cluster"]
     end
-    style A fill:#0d6efd,color:#fff
-    style B fill:#28a745,color:#fff
-    style C fill:#ffc107,color:#000
-    style D fill:#dc3545,color:#fff
+    style A fill:#1565C0,color:#FFFFFF
+    style B fill:#4CAF50,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style D fill:#D32F2F,color:#FFFFFF
 ```
 
 ```mermaid

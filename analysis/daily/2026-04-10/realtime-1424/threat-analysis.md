@@ -27,12 +27,12 @@ graph LR
         DP["Democratic Process<br/>Aggregate: 1/5"]
         PB["Power Balance<br/>Aggregate: 3/5"]
     end
-    style NI fill:#6f42c1,color:#fff
-    style LI fill:#28a745,color:#fff
-    style AC fill:#fd7e14,color:#fff
-    style TR fill:#ffc107,color:#000
-    style DP fill:#28a745,color:#fff
-    style PB fill:#fd7e14,color:#fff
+    style NI fill:#7B1FA2,color:#FFFFFF
+    style LI fill:#4CAF50,color:#FFFFFF
+    style AC fill:#FF9800,color:#FFFFFF
+    style TR fill:#FFC107,color:#000000
+    style DP fill:#4CAF50,color:#FFFFFF
+    style PB fill:#FF9800,color:#FFFFFF
 ```
 
 ### Threat Register
@@ -58,16 +58,16 @@ graph TD
     B --> B2["Enforcement errors with no effective remedy"]
     C --> C1["Subjective vandel criteria applied inconsistently"]
     C --> C2["Denial of permits without transparent reasoning"]
-    style ROOT fill:#dc3545,color:#fff
-    style A fill:#fd7e14,color:#fff
-    style B fill:#fd7e14,color:#fff
-    style C fill:#ffc107,color:#000
-    style A1 fill:#ffc107,color:#000
-    style A2 fill:#ffc107,color:#000
-    style B1 fill:#ffc107,color:#000
-    style B2 fill:#ffc107,color:#000
-    style C1 fill:#ffc107,color:#000
-    style C2 fill:#ffc107,color:#000
+    style ROOT fill:#D32F2F,color:#FFFFFF
+    style A fill:#FF9800,color:#FFFFFF
+    style B fill:#FF9800,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style A1 fill:#FFC107,color:#000000
+    style A2 fill:#FFC107,color:#000000
+    style B1 fill:#FFC107,color:#000000
+    style B2 fill:#FFC107,color:#000000
+    style C1 fill:#FFC107,color:#000000
+    style C2 fill:#FFC107,color:#000000
 ```
 
 ---

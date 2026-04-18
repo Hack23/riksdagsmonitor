@@ -18,12 +18,12 @@ graph TD
         R6["🟢 EU Subsidiarity Friction<br/>L:2 × I:2 = 4"]
     end
     
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#dc3545,color:#fff
-    style R3 fill:#fd7e14,color:#fff
-    style R4 fill:#ffc107,color:#000
-    style R5 fill:#ffc107,color:#000
-    style R6 fill:#28a745,color:#fff
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#D32F2F,color:#FFFFFF
+    style R3 fill:#FF9800,color:#FFFFFF
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#FFC107,color:#000000
+    style R6 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Detailed Risk Register
@@ -46,11 +46,11 @@ graph LR
     R3 --> R1
     R4["Shelter Implementation<br/>(FöU12)"] --> R2
     
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#dc3545,color:#fff
-    style R3 fill:#fd7e14,color:#fff
-    style R4 fill:#ffc107,color:#000
-    style R5 fill:#ffc107,color:#000
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#D32F2F,color:#FFFFFF
+    style R3 fill:#FF9800,color:#FFFFFF
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#FFC107,color:#000000
 ```
 
 ## Data Quality Notes

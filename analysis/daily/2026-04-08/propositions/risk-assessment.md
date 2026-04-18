@@ -21,10 +21,10 @@ graph LR
         C["🟡 Public Opinion<br/>Likelihood: 3/5<br/>Impact: 2/5"] --> F["Arms export media coverage"]
         G["🟢 Regulatory Risk<br/>Likelihood: 2/5<br/>Impact: 2/5"] --> H["Export control framework stable"]
     end
-    style A fill:#28a745,color:#fff
-    style B fill:#ffc107,color:#000
-    style C fill:#ffc107,color:#000
-    style G fill:#28a745,color:#fff
+    style A fill:#4CAF50,color:#FFFFFF
+    style B fill:#FFC107,color:#000000
+    style C fill:#FFC107,color:#000000
+    style G fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Summary

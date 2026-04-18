@@ -22,10 +22,10 @@ graph TD
         M4["HD024081<br/>Healthcare"] -->|"SoU"| D4["🟡 SENSITIVE<br/>Municipal Health"]
     end
 
-    style D1 fill:#ffc107,color:#000
-    style D2 fill:#28a745,color:#fff
-    style D3 fill:#ffc107,color:#000
-    style D4 fill:#ffc107,color:#000
+    style D1 fill:#FFC107,color:#000000
+    style D2 fill:#4CAF50,color:#FFFFFF
+    style D3 fill:#FFC107,color:#000000
+    style D4 fill:#FFC107,color:#000000
 ```
 
 ## Detailed Analysis

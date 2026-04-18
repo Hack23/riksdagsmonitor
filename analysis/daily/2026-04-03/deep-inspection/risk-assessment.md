@@ -70,12 +70,12 @@ graph LR
         R1_NOW["R1: Agency turf<br/>L×I = 9 →"] --> R1_NEXT["Coordination agreement<br/>Q2 2026"]
     end
 
-    style R3_NOW fill:#dc3545,color:#fff
-    style R4_NOW fill:#dc3545,color:#fff
-    style R1_NOW fill:#ffbe0b,color:#000
-    style R3_NEXT fill:#ffc107,color:#000
-    style R4_NEXT fill:#ffc107,color:#000
-    style R1_NEXT fill:#28a745,color:#fff
+    style R3_NOW fill:#D32F2F,color:#FFFFFF
+    style R4_NOW fill:#D32F2F,color:#FFFFFF
+    style R1_NOW fill:#ffbe0b,color:#000000
+    style R3_NEXT fill:#FFC107,color:#000000
+    style R4_NEXT fill:#FFC107,color:#000000
+    style R1_NEXT fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

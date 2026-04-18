@@ -46,10 +46,10 @@ graph TD
     E --> K{Election 2026 Impact}
     H --> K
 
-    style B fill:#ff6b6b,color:#fff
-    style C fill:#ffa502,color:#fff
-    style D fill:#2ed573,color:#fff
-    style K fill:#5352ed,color:#fff
+    style B fill:#EF5350,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#2ed573,color:#FFFFFF
+    style K fill:#5352ed,color:#FFFFFF
 ```
 
 ## AI-Recommended Article Metadata

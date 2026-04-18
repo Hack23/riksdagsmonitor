@@ -35,9 +35,9 @@ graph LR
     I -->|"🔵 ELEVATED"| L["Plenary vote expected soon"]
 
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style D fill:#ffc107,stroke:#333,color:#000
-    style H fill:#28a745,stroke:#333,color:#fff
-    style L fill:#17a2b8,stroke:#333,color:#fff
+    style D fill:#FFC107,stroke:#424242,color:#000000
+    style H fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style L fill:#0097A7,stroke:#424242,color:#FFFFFF
 ```
 
 ---

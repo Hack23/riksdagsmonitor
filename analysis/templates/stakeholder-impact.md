@@ -355,11 +355,11 @@ _Note: In the Extended Impact Summary Matrix, stakeholder groups may appear in a
     "quadrant2Fill": "#2E7D32",
     "quadrant3Fill": "#FF9800",
     "quadrant4Fill": "#D32F2F",
-    "quadrantTitleFill": "#ffffff",
-    "quadrantPointFill": "#ffffff",
-    "quadrantPointTextFill": "#ffffff",
-    "quadrantXAxisTextFill": "#ffffff",
-    "quadrantYAxisTextFill": "#ffffff"
+    "quadrantTitleFill": "#FFFFFF",
+    "quadrantPointFill": "#FFFFFF",
+    "quadrantPointTextFill": "#FFFFFF",
+    "quadrantXAxisTextFill": "#FFFFFF",
+    "quadrantYAxisTextFill": "#FFFFFF"
   },
   "quadrantChart": {
     "chartWidth": 700,

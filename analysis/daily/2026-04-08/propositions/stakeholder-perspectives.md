@@ -23,12 +23,12 @@ graph TD
         INT["🌍 International<br/>Impact: MEDIUM<br/>NATO allies and<br/>EU partners assess"]
         CIV["👥 Civil Society<br/>Impact: LOW-MEDIUM<br/>NGO analysis of<br/>specific exports"]
     end
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#ffc107,color:#000
-    style COM fill:#00d9ff,color:#000
-    style IND fill:#28a745,color:#fff
-    style INT fill:#ffc107,color:#000
-    style CIV fill:#fd7e14,color:#000
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#FFC107,color:#000000
+    style COM fill:#00d9ff,color:#000000
+    style IND fill:#4CAF50,color:#FFFFFF
+    style INT fill:#FFC107,color:#000000
+    style CIV fill:#FF9800,color:#000000
 ```
 
 ## Applied 6 Analysis Lenses

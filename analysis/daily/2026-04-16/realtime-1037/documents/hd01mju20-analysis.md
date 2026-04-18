@@ -28,9 +28,9 @@ graph LR
     G --> H["Climate Policy + Government Accountability"]
     A --> I{"Urgency"}
     I -->|"🔵 ELEVATED"| L["Ongoing climate governance issue"]
-    style D fill:#ffc107,color:#000
-    style H fill:#dc3545,color:#fff
-    style L fill:#0d6efd,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#D32F2F,color:#FFFFFF
+    style L fill:#1565C0,color:#FFFFFF
 ```
 
 | Field | Assessment |

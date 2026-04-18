@@ -35,11 +35,11 @@ graph LR
     A1 --> V3 --> T3
     A2 --> V2 --> T2
     
-    style A1 fill:#E91E63,color:#fff
-    style A2 fill:#FF9800,color:#fff
-    style T1 fill:#2196F3,color:#fff
-    style T2 fill:#2196F3,color:#fff
-    style T3 fill:#2196F3,color:#fff
+    style A1 fill:#E91E63,color:#FFFFFF
+    style A2 fill:#FF9800,color:#FFFFFF
+    style T1 fill:#2196F3,color:#FFFFFF
+    style T2 fill:#2196F3,color:#FFFFFF
+    style T3 fill:#2196F3,color:#FFFFFF
 ```
 
 ## Detailed Threat Assessment

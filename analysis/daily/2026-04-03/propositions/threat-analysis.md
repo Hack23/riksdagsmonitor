@@ -31,13 +31,13 @@ graph TD
     ROOT --> TR
     ROOT --> DP
     ROOT --> PB
-    style ROOT fill:#1a1e3d,color:#fff
-    style NI fill:#ffc107,color:#000
-    style LI fill:#28a745,color:#fff
-    style AC fill:#ffc107,color:#000
-    style TR fill:#fd7e14,color:#fff
-    style DP fill:#ffc107,color:#000
-    style PB fill:#fd7e14,color:#fff
+    style ROOT fill:#1a1e3d,color:#FFFFFF
+    style NI fill:#FFC107,color:#000000
+    style LI fill:#4CAF50,color:#FFFFFF
+    style AC fill:#FFC107,color:#000000
+    style TR fill:#FF9800,color:#FFFFFF
+    style DP fill:#FFC107,color:#000000
+    style PB fill:#FF9800,color:#FFFFFF
 ```
 
 ## 🎭 Narrative Integrity (Disinformation & False Framing)
@@ -105,14 +105,14 @@ graph TD
     PATH_B --> LEAF_3
     PATH_B --> PATH_C
     PATH_C --> LEAF_4
-    style GOAL fill:#dc3545,color:#fff
-    style PATH_A fill:#fd7e14,color:#fff
-    style PATH_B fill:#fd7e14,color:#fff
-    style PATH_C fill:#ffc107,color:#000
-    style LEAF_1 fill:#6c757d,color:#fff
-    style LEAF_2 fill:#6c757d,color:#fff
-    style LEAF_3 fill:#6c757d,color:#fff
-    style LEAF_4 fill:#6c757d,color:#fff
+    style GOAL fill:#D32F2F,color:#FFFFFF
+    style PATH_A fill:#FF9800,color:#FFFFFF
+    style PATH_B fill:#FF9800,color:#FFFFFF
+    style PATH_C fill:#FFC107,color:#000000
+    style LEAF_1 fill:#9E9E9E,color:#FFFFFF
+    style LEAF_2 fill:#9E9E9E,color:#FFFFFF
+    style LEAF_3 fill:#9E9E9E,color:#FFFFFF
+    style LEAF_4 fill:#9E9E9E,color:#FFFFFF
 ```
 
 ## 💎 Diamond Model (Primary Threat Actor)

@@ -28,9 +28,9 @@ flowchart LR
     D --> G["Election 2026 Platform"]
 
     style A fill:#0a0e27,color:#00d9ff,stroke:#00d9ff
-    style B fill:#28a745,color:#fff
-    style C fill:#ffc107,color:#000
-    style D fill:#28a745,color:#fff
+    style B fill:#4CAF50,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style D fill:#4CAF50,color:#FFFFFF
 ```
 
 ### Strengths (Government)

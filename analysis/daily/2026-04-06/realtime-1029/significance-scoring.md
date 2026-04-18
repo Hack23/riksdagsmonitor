@@ -31,9 +31,9 @@ graph TD
     LOW --> L2["HD11678 — Noise cameras (2/10)"]
     LOW --> L3["HD11682 — Environmental commission (2/10)"]
 
-    style HIGH fill:#fd7e14,color:#fff
-    style MED fill:#ffc107,color:#000
-    style LOW fill:#28a745,color:#fff
+    style HIGH fill:#FF9800,color:#FFFFFF
+    style MED fill:#FFC107,color:#000000
+    style LOW fill:#4CAF50,color:#FFFFFF
 ```
 
 ---

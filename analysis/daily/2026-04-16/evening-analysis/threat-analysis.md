@@ -35,18 +35,18 @@ graph LR
     DP --> DP1["Opposition reactive position<br/>8 rejection motions only"]
     PB --> PB1["Pre-election legislative blitz<br/>concentrates agenda control"]
 
-    style NI fill:#fd7e14,color:#fff
-    style LI fill:#ffc107,color:#000
-    style AC fill:#fd7e14,color:#fff
-    style TR fill:#ffc107,color:#000
-    style DP fill:#ffc107,color:#000
-    style PB fill:#fd7e14,color:#fff
-    style NI1 fill:#ffe0b2,color:#000
-    style LI1 fill:#fff9c4,color:#000
-    style AC1 fill:#ffe0b2,color:#000
-    style TR1 fill:#fff9c4,color:#000
-    style DP1 fill:#fff9c4,color:#000
-    style PB1 fill:#ffe0b2,color:#000
+    style NI fill:#FF9800,color:#FFFFFF
+    style LI fill:#FFC107,color:#000000
+    style AC fill:#FF9800,color:#FFFFFF
+    style TR fill:#FFC107,color:#000000
+    style DP fill:#FFC107,color:#000000
+    style PB fill:#FF9800,color:#FFFFFF
+    style NI1 fill:#ffe0b2,color:#000000
+    style LI1 fill:#FFF9C4,color:#000000
+    style AC1 fill:#ffe0b2,color:#000000
+    style TR1 fill:#FFF9C4,color:#000000
+    style DP1 fill:#FFF9C4,color:#000000
+    style PB1 fill:#ffe0b2,color:#000000
 ```
 
 ---
@@ -140,12 +140,12 @@ graph TD
     C1 --> D1["🔴 Opposition unable<br/>to set agenda<br/>before Election 2026"]
     C2 --> D2["🟡 Policy measures<br/>insufficiently debated"]
     
-    style ROOT fill:#dc3545,color:#fff
-    style D1 fill:#dc3545,color:#fff
-    style D2 fill:#ffc107,color:#000
-    style A1 fill:#fd7e14,color:#fff
-    style A2 fill:#fd7e14,color:#fff
-    style A3 fill:#fd7e14,color:#fff
+    style ROOT fill:#D32F2F,color:#FFFFFF
+    style D1 fill:#D32F2F,color:#FFFFFF
+    style D2 fill:#FFC107,color:#000000
+    style A1 fill:#FF9800,color:#FFFFFF
+    style A2 fill:#FF9800,color:#FFFFFF
+    style A3 fill:#FF9800,color:#FFFFFF
 ```
 
 ---

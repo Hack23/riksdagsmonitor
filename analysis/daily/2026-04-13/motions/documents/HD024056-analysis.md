@@ -30,11 +30,11 @@ graph TD
     B --> E["UbU Committee"]
     C --> F["Government Security Agenda"]
     D --> G["GDPR / Student Privacy"]
-    style A fill:#83c167,color:#000
-    style B fill:#00d9ff,color:#000
-    style C fill:#ff006e,color:#fff
-    style D fill:#ffbe0b,color:#000
-    style F fill:#e8590c,color:#fff
+    style A fill:#8BC34A,color:#000000
+    style B fill:#00d9ff,color:#000000
+    style C fill:#ff006e,color:#FFFFFF
+    style D fill:#ffbe0b,color:#000000
+    style F fill:#F57C00,color:#FFFFFF
 ```
 
 | Metric | Score | Rationale |

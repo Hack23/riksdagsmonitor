@@ -56,11 +56,11 @@ graph TD
         I -->|"Clear guarantees"| J["Constitutional concerns addressed"]
         I -->|"Evasive/vague"| K["Constitutional crisis potential"]
     end
-    style A fill:#dc3545,color:#fff
-    style D fill:#ffc107,color:#000
-    style H fill:#0d6efd,color:#fff
-    style J fill:#28a745,color:#fff
-    style K fill:#dc3545,color:#fff
+    style A fill:#D32F2F,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
+    style H fill:#1565C0,color:#FFFFFF
+    style J fill:#4CAF50,color:#FFFFFF
+    style K fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Key Questions Posed (3 questions)

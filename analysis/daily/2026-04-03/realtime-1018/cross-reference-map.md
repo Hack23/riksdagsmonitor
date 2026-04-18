@@ -31,12 +31,12 @@ graph TD
     HD03235 <-->|"Criminal justice"| JuU15
     HD03235 -.->|"Policy tension:<br/>enforcement vs capacity"| JuU15
 
-    style HD03214 fill:#dc3545,color:#fff
-    style HD03228 fill:#dc3545,color:#fff
-    style HD03235 fill:#fd7e14,color:#fff
-    style FoU12 fill:#dc3545,color:#fff
-    style JuU15 fill:#fd7e14,color:#fff
-    style AIR fill:#dc3545,color:#fff
+    style HD03214 fill:#D32F2F,color:#FFFFFF
+    style HD03228 fill:#D32F2F,color:#FFFFFF
+    style HD03235 fill:#FF9800,color:#FFFFFF
+    style FoU12 fill:#D32F2F,color:#FFFFFF
+    style JuU15 fill:#FF9800,color:#FFFFFF
+    style AIR fill:#D32F2F,color:#FFFFFF
 ```
 
 ---

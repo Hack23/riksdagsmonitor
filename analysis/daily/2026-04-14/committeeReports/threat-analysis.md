@@ -36,9 +36,9 @@ graph TD
     C --> E[Further Emergency Budget Required]
     D --> F[Election 2026 Vulnerability]
 
-    style ROOT fill:#ff6b6b,color:#fff
-    style C fill:#ffa502,color:#fff
-    style F fill:#5352ed,color:#fff
+    style ROOT fill:#EF5350,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style F fill:#5352ed,color:#FFFFFF
 ```
 
 ## Detailed Threat Assessment

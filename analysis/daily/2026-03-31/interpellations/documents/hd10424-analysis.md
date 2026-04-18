@@ -33,9 +33,9 @@ graph LR
     A --> I{Urgency}
     I -->|"🟠 URGENT"| K["Minister must respond<br/>by 2026-04-21"]
 
-    style D fill:#ffc107,color:#000
-    style H fill:#0d6efd,color:#fff
-    style K fill:#fd7e14,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#1565C0,color:#FFFFFF
+    style K fill:#FF9800,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -82,12 +82,12 @@ graph TD
         R6["🟢 External / International<br/>L:1 × I:1 = 1"]
     end
 
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#ffc107,color:#000
-    style R5 fill:#ffc107,color:#000
-    style R6 fill:#28a745,color:#fff
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#FFC107,color:#000000
+    style R5 fill:#FFC107,color:#000000
+    style R6 fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk Type | Likelihood (1–5) | Impact (1–5) | Score | Assessment |

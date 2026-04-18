@@ -20,12 +20,12 @@ graph TD
     SFU31 <--> SFU36
     SFU32 <--> SFU36
     Q11702 <--> Q11699
-    style SFU31 fill:#ffc107,color:#000
-    style SFU32 fill:#ffc107,color:#000
-    style SFU36 fill:#ffc107,color:#000
-    style M4075 fill:#28a745,color:#fff
-    style Q11702 fill:#0d6efd,color:#fff
-    style Q11699 fill:#0d6efd,color:#fff
+    style SFU31 fill:#FFC107,color:#000000
+    style SFU32 fill:#FFC107,color:#000000
+    style SFU36 fill:#FFC107,color:#000000
+    style M4075 fill:#4CAF50,color:#FFFFFF
+    style Q11702 fill:#1565C0,color:#FFFFFF
+    style Q11699 fill:#1565C0,color:#FFFFFF
 ```
 
 ## Relationship Table

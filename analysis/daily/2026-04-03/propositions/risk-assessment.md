@@ -85,12 +85,12 @@ graph LR
     R3_2 -->|"amplifies"| R2_1
     R2_1 -->|"escalates"| R2_2
     R2_2 -->|"enables"| OPP
-    style TRIGGER fill:#dc3545,color:#fff
-    style R3_1 fill:#fd7e14,color:#fff
-    style R3_2 fill:#fd7e14,color:#fff
-    style R2_1 fill:#ffc107,color:#000
-    style R2_2 fill:#dc3545,color:#fff
-    style OPP fill:#6c757d,color:#fff
+    style TRIGGER fill:#D32F2F,color:#FFFFFF
+    style R3_1 fill:#FF9800,color:#FFFFFF
+    style R3_2 fill:#FF9800,color:#FFFFFF
+    style R2_1 fill:#FFC107,color:#000000
+    style R2_2 fill:#D32F2F,color:#FFFFFF
+    style OPP fill:#9E9E9E,color:#FFFFFF
 ```
 
 ## 🔮 Forward Indicators & Scenario Outlook

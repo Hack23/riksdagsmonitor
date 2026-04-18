@@ -34,10 +34,10 @@ graph TD
         D --> F["Budget Tensions"]
         G["Institutional Threats"] --> H["Parliamentary Reform KU38"]
     end
-    style A fill:#ff006e,color:#fff
+    style A fill:#ff006e,color:#FFFFFF
     style D fill:#ffbe0b,color:#0a0e27
     style G fill:#00d9ff,color:#0a0e27
-    style E fill:#ff006e,color:#fff
+    style E fill:#ff006e,color:#FFFFFF
     style B fill:#ffbe0b,color:#0a0e27
 ```
 

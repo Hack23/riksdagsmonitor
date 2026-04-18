@@ -93,14 +93,14 @@ flowchart TD
     F --> H["Reform passes with<br/>minor amendments<br/>🟢 BASELINE"]
     G --> I["Voter realignment:<br/>parents/youth vs crime victims<br/>🔴 ELECTORAL IMPACT"]
     
-    style A fill:#dc3545,color:#fff
-    style E fill:#dc3545,color:#fff
-    style G fill:#dc3545,color:#fff
-    style I fill:#dc3545,color:#fff
-    style F fill:#28a745,color:#fff
-    style H fill:#28a745,color:#fff
-    style C fill:#fd7e14,color:#fff
-    style B fill:#ffc107,color:#000
+    style A fill:#D32F2F,color:#FFFFFF
+    style E fill:#D32F2F,color:#FFFFFF
+    style G fill:#D32F2F,color:#FFFFFF
+    style I fill:#D32F2F,color:#FFFFFF
+    style F fill:#4CAF50,color:#FFFFFF
+    style H fill:#4CAF50,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style B fill:#FFC107,color:#000000
 ```
 
 ---
@@ -116,12 +116,12 @@ graph LR
     R5["R5: SD Strain<br/>L×I=9"] --> R2
     R4 --> R2
     
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#fd7e14,color:#fff
-    style R4 fill:#fd7e14,color:#fff
-    style R5 fill:#ffc107,color:#000
-    style R6 fill:#28a745,color:#fff
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FF9800,color:#FFFFFF
+    style R4 fill:#FF9800,color:#FFFFFF
+    style R5 fill:#FFC107,color:#000000
+    style R6 fill:#4CAF50,color:#FFFFFF
 ```
 
 **Key Interconnection**: R2 (opposition coordination) feeds both R1 (CRC backlash, as opposition amplifies children's rights critique) and R3 (climate erosion, as opposition exploits MJU20 audit). If R5 (SD strain) materializes, it weakens government's ability to manage R2.

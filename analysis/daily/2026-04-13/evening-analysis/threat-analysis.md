@@ -28,12 +28,12 @@ graph TD
     ES -->|"fiscal pressure on"| SC
     NI -->|"tests limits of"| AC
     
-    style AC fill:#ffc107,color:#000
-    style PF fill:#dc3545,color:#fff
-    style DI fill:#0d6efd,color:#fff
-    style ES fill:#dc3545,color:#fff
-    style SC fill:#0d6efd,color:#fff
-    style NI fill:#ffc107,color:#000
+    style AC fill:#FFC107,color:#000000
+    style PF fill:#D32F2F,color:#FFFFFF
+    style DI fill:#1565C0,color:#FFFFFF
+    style ES fill:#D32F2F,color:#FFFFFF
+    style SC fill:#1565C0,color:#FFFFFF
+    style NI fill:#FFC107,color:#000000
 ```
 
 ## Threat Categories
@@ -112,10 +112,10 @@ flowchart TD
     CHECK3 -->|"Yes"| ESC3["ESCALATE to HIGH<br/>Coalition friction visible"]
     CHECK3 -->|"No"| MON3["DE-ESCALATE<br/>Routine accountability"]
     
-    style ESC1 fill:#dc3545,color:#fff
-    style ESC2 fill:#dc3545,color:#fff
-    style ESC3 fill:#fd7e14,color:#fff
-    style MON1 fill:#ffc107,color:#000
-    style MON2 fill:#ffc107,color:#000
-    style MON3 fill:#28a745,color:#fff
+    style ESC1 fill:#D32F2F,color:#FFFFFF
+    style ESC2 fill:#D32F2F,color:#FFFFFF
+    style ESC3 fill:#FF9800,color:#FFFFFF
+    style MON1 fill:#FFC107,color:#000000
+    style MON2 fill:#FFC107,color:#000000
+    style MON3 fill:#4CAF50,color:#FFFFFF
 ```

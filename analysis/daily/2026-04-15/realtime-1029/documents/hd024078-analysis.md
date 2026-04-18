@@ -52,12 +52,12 @@ graph TD
     F -->|Likely| G["Motion Rejected by Majority"]
     F -->|Possible| H["Partial Tillkännagivande"]
     
-    style A fill:#4CAF50,color:#fff
-    style B fill:#FF9800,color:#fff
-    style C fill:#2196F3,color:#fff
-    style D fill:#2196F3,color:#fff
-    style G fill:#f44336,color:#fff
-    style H fill:#FFEB3B,color:#000
+    style A fill:#4CAF50,color:#FFFFFF
+    style B fill:#FF9800,color:#FFFFFF
+    style C fill:#2196F3,color:#FFFFFF
+    style D fill:#2196F3,color:#FFFFFF
+    style G fill:#D32F2F,color:#FFFFFF
+    style H fill:#FFEB3B,color:#000000
 ```
 
 ## Cross-Document References

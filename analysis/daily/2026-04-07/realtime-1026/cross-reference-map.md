@@ -27,12 +27,12 @@ graph TD
     HD11684 -->|"Same author (Wiechel/SD)"| HD11685
     HD10429 -->|"Constitutional challenge to<br/>government legislation"| PROP133["Prop 2025/26:133"]
 
-    style HD03114 fill:#fd7e14,stroke:#ca6510,color:#fff
-    style HD10429 fill:#ffc107,stroke:#e0a800,color:#000
-    style HD11684 fill:#28a745,stroke:#1e7e34,color:#fff
-    style HD11685 fill:#28a745,stroke:#1e7e34,color:#fff
-    style HD03228 fill:#6c757d,stroke:#545b62,color:#fff
-    style PROP133 fill:#6c757d,stroke:#545b62,color:#fff
+    style HD03114 fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style HD10429 fill:#FFC107,stroke:#FFA000,color:#000000
+    style HD11684 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style HD11685 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style HD03228 fill:#9E9E9E,stroke:#545b62,color:#FFFFFF
+    style PROP133 fill:#9E9E9E,stroke:#545b62,color:#FFFFFF
 ```
 
 ---

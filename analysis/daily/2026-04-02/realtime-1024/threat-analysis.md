@@ -24,20 +24,20 @@ graph TD
     T4 --> T4A["Geopolitical escalation<br/>Crisis before FöU12 implemented"]
     T4 --> T4B["Arms diversion<br/>Prop 228 end-user failures"]
     
-    style ROOT fill:#00d9ff,stroke:#333,color:#000
-    style T1 fill:#ff8c00,stroke:#333,color:#000
-    style T2 fill:#ff4444,stroke:#333,color:#fff
-    style T3 fill:#ffbe0b,stroke:#333,color:#000
-    style T4 fill:#ff006e,stroke:#333,color:#fff
-    style T1A fill:#ffcc88,stroke:#333,color:#000
-    style T1B fill:#ffcc88,stroke:#333,color:#000
-    style T1C fill:#ffcc88,stroke:#333,color:#000
-    style T2A fill:#ff8888,stroke:#333,color:#000
-    style T2B fill:#ff8888,stroke:#333,color:#000
-    style T3A fill:#ffe888,stroke:#333,color:#000
-    style T3B fill:#ffe888,stroke:#333,color:#000
-    style T4A fill:#ff88aa,stroke:#333,color:#000
-    style T4B fill:#ff88aa,stroke:#333,color:#000
+    style ROOT fill:#00d9ff,stroke:#424242,color:#000000
+    style T1 fill:#F57C00,stroke:#424242,color:#000000
+    style T2 fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style T3 fill:#ffbe0b,stroke:#424242,color:#000000
+    style T4 fill:#ff006e,stroke:#424242,color:#FFFFFF
+    style T1A fill:#ffcc88,stroke:#424242,color:#000000
+    style T1B fill:#ffcc88,stroke:#424242,color:#000000
+    style T1C fill:#ffcc88,stroke:#424242,color:#000000
+    style T2A fill:#ff8888,stroke:#424242,color:#000000
+    style T2B fill:#ff8888,stroke:#424242,color:#000000
+    style T3A fill:#ffe888,stroke:#424242,color:#000000
+    style T3B fill:#ffe888,stroke:#424242,color:#000000
+    style T4A fill:#ff88aa,stroke:#424242,color:#000000
+    style T4B fill:#ff88aa,stroke:#424242,color:#000000
 ```
 
 ## Threat Assessment by Category

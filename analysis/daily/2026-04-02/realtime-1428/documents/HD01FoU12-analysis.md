@@ -39,9 +39,9 @@ graph LR
     A --> I{Urgency}
     I -->|"🟠 URGENT"| K[Active legislative processing — days]
 
-    style D fill:#ffc107,color:#000
-    style H fill:#0d6efd,color:#fff
-    style K fill:#fd7e14,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#1565C0,color:#FFFFFF
+    style K fill:#FF9800,color:#FFFFFF
 ```
 
 | Field | Assessment |
@@ -119,16 +119,16 @@ graph TD
     R4 -.-> T4
     R5 -.-> T4
 
-    style R1 fill:#ffc107,color:#000
-    style R2 fill:#fd7e14,color:#fff
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#28a745,color:#fff
-    style R5 fill:#28a745,color:#fff
-    style R6 fill:#fd7e14,color:#fff
-    style T1 fill:#dc3545,color:#fff
-    style T2 fill:#fd7e14,color:#fff
-    style T3 fill:#ffc107,color:#000
-    style T4 fill:#28a745,color:#fff
+    style R1 fill:#FFC107,color:#000000
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#4CAF50,color:#FFFFFF
+    style R5 fill:#4CAF50,color:#FFFFFF
+    style R6 fill:#FF9800,color:#FFFFFF
+    style T1 fill:#D32F2F,color:#FFFFFF
+    style T2 fill:#FF9800,color:#FFFFFF
+    style T3 fill:#FFC107,color:#000000
+    style T4 fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk Type | Likelihood (1–5) | Impact (1–5) | Score | Assessment |
@@ -187,13 +187,13 @@ graph TD
     DOC --> INT
     DOC --> MED
 
-    style DOC fill:#0d6efd,color:#fff
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#fd7e14,color:#fff
-    style CIT fill:#6f42c1,color:#fff
-    style ECO fill:#fd7e14,color:#fff
-    style INT fill:#0d6efd,color:#fff
-    style MED fill:#ffc107,color:#000
+    style DOC fill:#1565C0,color:#FFFFFF
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#FF9800,color:#FFFFFF
+    style CIT fill:#7B1FA2,color:#FFFFFF
+    style ECO fill:#FF9800,color:#FFFFFF
+    style INT fill:#1565C0,color:#FFFFFF
+    style MED fill:#FFC107,color:#000000
 ```
 
 | Stakeholder | Impact Level | Key Assessment | Confidence |

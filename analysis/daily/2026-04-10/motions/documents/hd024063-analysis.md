@@ -28,9 +28,9 @@ graph LR
     A --> F{Urgency}
     F -->|"🔴 HIGH"| G["Active legislative process"]
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style C fill:#ff006e,stroke:#333,color:#fff
-    style E fill:#00d9ff,stroke:#333,color:#000
-    style G fill:#ff006e,stroke:#333,color:#fff
+    style C fill:#ff006e,stroke:#424242,color:#FFFFFF
+    style E fill:#00d9ff,stroke:#424242,color:#000000
+    style G fill:#ff006e,stroke:#424242,color:#FFFFFF
 ```
 
 ## SWOT Analysis

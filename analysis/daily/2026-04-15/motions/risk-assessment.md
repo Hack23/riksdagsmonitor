@@ -22,17 +22,17 @@ Coalition demonstrates LOW-MEDIUM risk. Voting discipline is strong (96% denial 
 ```mermaid
 graph TD
     subgraph "HIGH Risk (L×I ≥ 10)"
-        style HIGH fill:#ff4444,color:#fff
+        style HIGH fill:#EF5350,color:#FFFFFF
         R1["🔴 Housing Policy Pressure<br/>L:3 × I:4 = 12<br/>6 CU motions"]
     end
     subgraph "MEDIUM Risk (L×I 5-9)"
-        style MEDIUM fill:#ffaa00,color:#000
+        style MEDIUM fill:#FFA000,color:#000000
         R2["🟠 Criminal Justice Resistance<br/>L:2 × I:4 = 8<br/>MP+V alignment"]
         R3["🟠 Immigration Backlash<br/>L:2 × I:3 = 6<br/>V challenges prop. 215, 229"]
         R4["🟠 Sida Accountability<br/>L:3 × I:2 = 6<br/>Three-party convergence"]
     end
     subgraph "LOW Risk (L×I < 5)"
-        style LOW fill:#44aa44,color:#fff
+        style LOW fill:#44aa44,color:#FFFFFF
         R5["🟢 Education Opposition<br/>L:2 × I:2 = 4"]
         R6["🟢 Rural Policy Stall<br/>L:1 × I:2 = 2"]
     end

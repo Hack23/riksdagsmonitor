@@ -22,12 +22,12 @@ graph TD
         T5["⚪ Coalition Stability<br/>SD copyright independence (mot. 4007)<br/>Minor but signals flexibility limits"]
         T6["🟣 Social Contract<br/>Housing, welfare, education, health<br/>Citizen-facing policy challenges"]
     end
-    style T1 fill:#dc3545,stroke:#333,color:#fff
-    style T2 fill:#ffc107,stroke:#333,color:#000
-    style T3 fill:#28a745,stroke:#333,color:#fff
-    style T4 fill:#0d6efd,stroke:#333,color:#fff
-    style T5 fill:#6c757d,stroke:#333,color:#fff
-    style T6 fill:#6f42c1,stroke:#333,color:#fff
+    style T1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style T2 fill:#FFC107,stroke:#424242,color:#000000
+    style T3 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style T4 fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style T5 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style T6 fill:#7B1FA2,stroke:#424242,color:#FFFFFF
 ```
 
 ## Threat Category Analysis

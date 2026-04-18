@@ -54,10 +54,10 @@ flowchart TD
     F -->|Strong condemnation| G["🟢 Maintains HR credibility<br/>Risk: Israel relations"]
     F -->|Measured response| H["🟡 Balanced but criticized<br/>by opposition + civil society"]
     F -->|Weak response| I["🔴 HR credibility damaged<br/>Election vulnerability"]
-    style A fill:#ff6b6b,color:#fff
-    style B fill:#4ecdc4,color:#fff
-    style I fill:#ff4444,color:#fff
-    style G fill:#44ff44,color:#000
+    style A fill:#EF5350,color:#FFFFFF
+    style B fill:#4ecdc4,color:#FFFFFF
+    style I fill:#EF5350,color:#FFFFFF
+    style G fill:#44ff44,color:#000000
 ```
 
 ## Election 2026 Implications

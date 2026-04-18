@@ -30,14 +30,14 @@ graph TD
     ENV --> ENV1["Norra Kärr mining concession<br/>Severity: 3/5"]
     ENV --> ENV2["Environmental Objectives mandate<br/>Severity: 2/5"]
 
-    style ROOT fill:#dc3545,color:#fff
-    style POL fill:#fd7e14,color:#fff
-    style DEM fill:#ffc107,color:#000
-    style EXT fill:#fd7e14,color:#fff
-    style ENV fill:#ffc107,color:#000
-    style POL1 fill:#dc3545,color:#fff
-    style EXT1 fill:#fd7e14,color:#fff
-    style EXT2 fill:#fd7e14,color:#fff
+    style ROOT fill:#D32F2F,color:#FFFFFF
+    style POL fill:#FF9800,color:#FFFFFF
+    style DEM fill:#FFC107,color:#000000
+    style EXT fill:#FF9800,color:#FFFFFF
+    style ENV fill:#FFC107,color:#000000
+    style POL1 fill:#D32F2F,color:#FFFFFF
+    style EXT1 fill:#FF9800,color:#FFFFFF
+    style EXT2 fill:#FF9800,color:#FFFFFF
 ```
 
 ## Threat Categories Assessment

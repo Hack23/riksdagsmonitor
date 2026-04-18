@@ -41,16 +41,16 @@ graph TD
             ENV["Environment Food: 2 motions"]
         end
     end
-    style MP fill:#28a745,stroke:#333,color:#fff
-    style S fill:#dc3545,stroke:#333,color:#fff
-    style C fill:#28a745,stroke:#333,color:#fff
-    style V fill:#dc3545,stroke:#333,color:#fff
-    style SD fill:#ffc107,stroke:#333,color:#000
-    style AID fill:#fd7e14,stroke:#333,color:#fff
-    style CRIME fill:#dc3545,stroke:#333,color:#fff
-    style HOUSING fill:#ffc107,stroke:#333,color:#000
-    style WELFARE fill:#fd7e14,stroke:#333,color:#fff
-    style ENV fill:#28a745,stroke:#333,color:#fff
+    style MP fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style S fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style C fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style V fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style SD fill:#FFC107,stroke:#424242,color:#000000
+    style AID fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style CRIME fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style HOUSING fill:#FFC107,stroke:#424242,color:#000000
+    style WELFARE fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style ENV fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 ## Summary
@@ -112,11 +112,11 @@ graph LR
     MP3["MP"] -->|mot. 4064| P188
     C3["C"] -->|mot. 4037| P184
     SD1["SD"] -->|mot. 4007| P184
-    style P227 fill:#dc3545,stroke:#333,color:#fff
-    style S226 fill:#fd7e14,stroke:#333,color:#fff
-    style P207 fill:#ffc107,stroke:#333,color:#000
-    style P188 fill:#28a745,stroke:#333,color:#fff
-    style P184 fill:#6c757d,stroke:#333,color:#fff
+    style P227 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style S226 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style P207 fill:#FFC107,stroke:#424242,color:#000000
+    style P188 fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style P184 fill:#9E9E9E,stroke:#424242,color:#FFFFFF
 ```
 
 ## AI-Recommended Article Metadata

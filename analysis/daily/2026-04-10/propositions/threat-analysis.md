@@ -23,12 +23,12 @@ graph TD
         TH5["🟡 Democratic Accountability<br/>MEDIUM threat<br/>Arms trade transparency"]
         TH6["🟢 Electoral Integrity<br/>LOW threat<br/>No direct impact"]
     end
-    style TH1 fill:#ffc107,color:#000
-    style TH2 fill:#28a745,color:#fff
-    style TH3 fill:#ffc107,color:#000
-    style TH4 fill:#28a745,color:#fff
-    style TH5 fill:#ffc107,color:#000
-    style TH6 fill:#28a745,color:#fff
+    style TH1 fill:#FFC107,color:#000000
+    style TH2 fill:#4CAF50,color:#FFFFFF
+    style TH3 fill:#FFC107,color:#000000
+    style TH4 fill:#4CAF50,color:#FFFFFF
+    style TH5 fill:#FFC107,color:#000000
+    style TH6 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Threat Assessment by Democratic Function

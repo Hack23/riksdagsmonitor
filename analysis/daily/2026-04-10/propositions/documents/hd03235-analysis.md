@@ -38,9 +38,9 @@ graph LR
     I -->|"🔴 CRITICAL"| J["Core Tidö commitment<br/>Pre-election delivery"]
     
     style A fill:#1a1e3d,color:#e0e0e0
-    style D fill:#ffc107,color:#000
-    style H fill:#ff006e,color:#fff
-    style J fill:#dc3545,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#ff006e,color:#FFFFFF
+    style J fill:#D32F2F,color:#FFFFFF
 ```
 
 | Dimension | Assessment | Rationale |
@@ -134,10 +134,10 @@ graph TD
         R3["🟡 S Vote Dilemma<br/>Risk: MEDIUM (3/5)<br/>Impact: MEDIUM (3/5)"] --> M3["S internal division<br/>may fracture party unity"]
         R4["🟢 Coalition Stability<br/>Risk: LOW (1/5)<br/>Impact: HIGH (5/5)"] --> M4["SD cooperation hinges<br/>on this delivery"]
     end
-    style R1 fill:#dc3545,color:#fff
-    style R2 fill:#ffc107,color:#000
-    style R3 fill:#ffc107,color:#000
-    style R4 fill:#28a745,color:#fff
+    style R1 fill:#D32F2F,color:#FFFFFF
+    style R2 fill:#FFC107,color:#000000
+    style R3 fill:#FFC107,color:#000000
+    style R4 fill:#4CAF50,color:#FFFFFF
 ```
 
 | Risk Factor | Likelihood (1-5) | Impact (1-5) | Score | Mitigation |

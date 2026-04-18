@@ -23,9 +23,9 @@ graph LR
         FILTER --> TARGET["HD03214<br/>Prop. 2025/26:214<br/>📋 Deep-inspection target"]
     end
 
-    style MCP fill:#0d6efd,stroke:#333,color:#fff
-    style TARGET fill:#00d9ff,stroke:#333,color:#000
-    style FILTER fill:#ffbe0b,stroke:#333,color:#000
+    style MCP fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style TARGET fill:#00d9ff,stroke:#424242,color:#000000
+    style FILTER fill:#ffbe0b,stroke:#424242,color:#000000
 ```
 
 ---

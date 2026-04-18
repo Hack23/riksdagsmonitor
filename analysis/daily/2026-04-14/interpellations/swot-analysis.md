@@ -82,8 +82,8 @@ flowchart LR
     S2 --> G3
     S3 --> G4
     S4 --> G2
-    style G1 fill:#ff4444,color:#fff
-    style G2 fill:#ffaa00,color:#000
-    style G3 fill:#ffaa00,color:#000
-    style G4 fill:#ffaa00,color:#000
+    style G1 fill:#EF5350,color:#FFFFFF
+    style G2 fill:#FFA000,color:#000000
+    style G3 fill:#FFA000,color:#000000
+    style G4 fill:#FFA000,color:#000000
 ```

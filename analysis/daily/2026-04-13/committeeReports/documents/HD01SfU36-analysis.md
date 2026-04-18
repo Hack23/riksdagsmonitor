@@ -19,8 +19,8 @@ graph TD
     A --> C["SfU32: Returns"]
     A --> D["SfU36: Conduct"]
     D --> E["Revocation risk<br/>for existing permits"]
-    style D fill:#ff006e,color:#fff
-    style E fill:#ff8800,color:#fff
+    style D fill:#ff006e,color:#FFFFFF
+    style E fill:#F57C00,color:#FFFFFF
 ```
 
 | Dimension | Score (0-10) | Rationale |

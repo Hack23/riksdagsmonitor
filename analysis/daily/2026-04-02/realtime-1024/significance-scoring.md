@@ -23,12 +23,12 @@ graph LR
     C["HD03228<br/>Arms Export<br/>Score: 7"] --> T1
     D["HD01JuU15<br/>Criminal Justice<br/>Score: 5"] --> T2["🟡 MEDIUM"]
     
-    style A fill:#ff4444,stroke:#333,color:#fff
-    style B fill:#ff4444,stroke:#333,color:#fff
-    style C fill:#ff4444,stroke:#333,color:#fff
-    style D fill:#ffbe0b,stroke:#333,color:#000
-    style T1 fill:#ff0000,stroke:#333,color:#fff
-    style T2 fill:#ffbe0b,stroke:#333,color:#000
+    style A fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style B fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style C fill:#EF5350,stroke:#424242,color:#FFFFFF
+    style D fill:#ffbe0b,stroke:#424242,color:#000000
+    style T1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style T2 fill:#ffbe0b,stroke:#424242,color:#000000
 ```
 
 | dok_id | Title | Score Breakdown | Total | Tier |

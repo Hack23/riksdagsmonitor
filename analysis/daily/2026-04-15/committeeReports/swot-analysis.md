@@ -97,8 +97,8 @@ graph TD
     S2 --> T1
     W1 --> T1
     O2 --> S3
-    style Strengths fill:#2e7d32,color:#fff
-    style Weaknesses fill:#f57f17,color:#fff
-    style Opportunities fill:#1565c0,color:#fff
-    style Threats fill:#c62828,color:#fff
+    style Strengths fill:#2e7d32,color:#FFFFFF
+    style Weaknesses fill:#f57f17,color:#FFFFFF
+    style Opportunities fill:#1565c0,color:#FFFFFF
+    style Threats fill:#c62828,color:#FFFFFF
 ```

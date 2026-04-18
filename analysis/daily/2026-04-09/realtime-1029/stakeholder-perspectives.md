@@ -12,12 +12,12 @@ graph TD
         I[International: HIGH]
         M[Media: MEDIUM]
     end
-    style G fill:#dc3545,color:#ffffff
-    style O fill:#ffc107,color:#000000
-    style C fill:#dc3545,color:#ffffff
-    style E fill:#ffc107,color:#000000
-    style I fill:#dc3545,color:#ffffff
-    style M fill:#ffc107,color:#000000
+    style G fill:#D32F2F,color:#FFFFFF
+    style O fill:#FFC107,color:#000000
+    style C fill:#D32F2F,color:#FFFFFF
+    style E fill:#FFC107,color:#000000
+    style I fill:#D32F2F,color:#FFFFFF
+    style M fill:#FFC107,color:#000000
 ```
 
 ---

@@ -10,7 +10,7 @@
 ## Aggregated SWOT Matrix
 
 ```mermaid
-%%{init:{"theme":"neutral","quadrantChart":{"quadrant1Fill":"#1565C0","quadrant2Fill":"#2E7D32","quadrant3Fill":"#FF9800","quadrant4Fill":"#D32F2F","quadrant1TextFill":"#ffffff","quadrant2TextFill":"#ffffff","quadrant3TextFill":"#ffffff","quadrant4TextFill":"#ffffff"}}}%%
+%%{init:{"theme":"neutral","quadrantChart":{"quadrant1Fill":"#1565C0","quadrant2Fill":"#2E7D32","quadrant3Fill":"#FF9800","quadrant4Fill":"#D32F2F","quadrant1TextFill":"#FFFFFF","quadrant2TextFill":"#FFFFFF","quadrant3TextFill":"#FFFFFF","quadrant4TextFill":"#FFFFFF"}}}%%
 quadrantChart
     x-axis "Internal" --> "External"
     y-axis "Threats" --> "Opportunities"

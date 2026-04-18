@@ -35,13 +35,13 @@ graph LR
     A --> E{Political Positioning}
     E --> F[Tough-on-Crime Narrative]
     E --> G[Bipartisan Appeal]
-    style A fill:#28a745,stroke:#333,color:#fff
-    style B fill:#0d6efd,stroke:#333,color:#fff
-    style E fill:#28a745,stroke:#333,color:#fff
-    style C fill:#6c757d,stroke:#333,color:#fff
-    style D fill:#6c757d,stroke:#333,color:#fff
-    style F fill:#28a745,stroke:#333,color:#fff
-    style G fill:#28a745,stroke:#333,color:#fff
+    style A fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style B fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style E fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style C fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style D fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style F fill:#4CAF50,stroke:#424242,color:#FFFFFF
+    style G fill:#4CAF50,stroke:#424242,color:#FFFFFF
 ```
 
 | Attribute | Value |

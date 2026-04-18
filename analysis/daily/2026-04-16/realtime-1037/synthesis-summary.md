@@ -49,11 +49,11 @@ graph TD
     MJU19 -.->|"Same committee"| MJU20
     MJU20 -.->|"Same committee"| PROP242
     MJU19 -.->|"Both July 1 implementation"| SKU23
-    style MJU19 fill:#28a745,color:#fff
-    style MJU20 fill:#ffc107,color:#000
-    style PROP242 fill:#0d6efd,color:#fff
-    style SKU23 fill:#28a745,color:#fff
-    style PROP244 fill:#0d6efd,color:#fff
+    style MJU19 fill:#4CAF50,color:#FFFFFF
+    style MJU20 fill:#FFC107,color:#000000
+    style PROP242 fill:#1565C0,color:#FFFFFF
+    style SKU23 fill:#4CAF50,color:#FFFFFF
+    style PROP244 fill:#1565C0,color:#FFFFFF
 ```
 
 ## Opposition Alliance Dynamics

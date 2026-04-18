@@ -34,12 +34,12 @@ graph TD
     subgraph Impact2["Impact 2 - Minor"]
         R6_cell["R6 Port Law\nL:2 I:2\nScore:4"]
     end
-    style R1_cell fill:#ff4444,color:#fff
-    style R4_cell fill:#ffaa00,color:#000
-    style R2_cell fill:#ffaa00,color:#000
-    style R5_cell fill:#ffaa00,color:#000
-    style R3_cell fill:#ffaa00,color:#000
-    style R6_cell fill:#44bb44,color:#fff
+    style R1_cell fill:#EF5350,color:#FFFFFF
+    style R4_cell fill:#FFA000,color:#000000
+    style R2_cell fill:#FFA000,color:#000000
+    style R5_cell fill:#FFA000,color:#000000
+    style R3_cell fill:#FFA000,color:#000000
+    style R6_cell fill:#44bb44,color:#FFFFFF
 ```
 
 ## Detailed Risk Analysis

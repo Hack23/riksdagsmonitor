@@ -26,11 +26,11 @@ graph LR
     D --> F
     E --> F
 
-    style A fill:#dc3545,color:#fff
-    style C fill:#ffc107,color:#000
-    style D fill:#ffc107,color:#000
-    style E fill:#ffc107,color:#000
-    style F fill:#0d6efd,color:#fff
+    style A fill:#D32F2F,color:#FFFFFF
+    style C fill:#FFC107,color:#000000
+    style D fill:#FFC107,color:#000000
+    style E fill:#FFC107,color:#000000
+    style F fill:#1565C0,color:#FFFFFF
 ```
 
 ## SWOT Analysis

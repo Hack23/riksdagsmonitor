@@ -65,12 +65,12 @@ graph TD
     SINT -.->|accountability| VB
     MPMOT -.->|challenge| ENV
 
-    style VB fill:#ff006e,color:#fff
-    style EB fill:#ff006e,color:#fff
-    style FIU fill:#ff6b6b,color:#fff
-    style NATO fill:#ffa502,color:#fff
-    style EL fill:#ffd93d,color:#000
-    style SINT fill:#5352ed,color:#fff
+    style VB fill:#ff006e,color:#FFFFFF
+    style EB fill:#ff006e,color:#FFFFFF
+    style FIU fill:#EF5350,color:#FFFFFF
+    style NATO fill:#FF9800,color:#FFFFFF
+    style EL fill:#FFC107,color:#000000
+    style SINT fill:#5352ed,color:#FFFFFF
 ```
 
 ## SWOT Analysis — 8 Stakeholder Groups

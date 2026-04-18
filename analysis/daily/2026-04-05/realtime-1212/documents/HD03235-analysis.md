@@ -85,13 +85,13 @@ graph TD
     W1N -.->|"amplifies"| T1N
     W2N -.->|"amplifies"| T2N
 
-    style S1N fill:#28a745,color:#fff
-    style S2N fill:#28a745,color:#fff
-    style W1N fill:#fd7e14,color:#fff
-    style W2N fill:#fd7e14,color:#fff
-    style O1N fill:#0d6efd,color:#fff
-    style T1N fill:#dc3545,color:#fff
-    style T2N fill:#dc3545,color:#fff
+    style S1N fill:#4CAF50,color:#FFFFFF
+    style S2N fill:#4CAF50,color:#FFFFFF
+    style W1N fill:#FF9800,color:#FFFFFF
+    style W2N fill:#FF9800,color:#FFFFFF
+    style O1N fill:#1565C0,color:#FFFFFF
+    style T1N fill:#D32F2F,color:#FFFFFF
+    style T2N fill:#D32F2F,color:#FFFFFF
 ```
 
 ---

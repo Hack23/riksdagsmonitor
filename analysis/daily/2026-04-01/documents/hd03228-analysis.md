@@ -46,9 +46,9 @@ graph LR
     A --> I{Urgency}
     I -->|"🟠 URGENT"| K["NATO commitments<br/>require timely action"]
     
-    style D fill:#ffc107,color:#000
-    style H fill:#0d6efd,color:#fff
-    style K fill:#fd7e14,color:#fff
+    style D fill:#FFC107,color:#000000
+    style H fill:#1565C0,color:#FFFFFF
+    style K fill:#FF9800,color:#FFFFFF
 ```
 
 | Field | Assessment |

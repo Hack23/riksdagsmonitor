@@ -23,14 +23,14 @@ graph TD
         JUD["⚖️ Judiciary/Constitutional<br/>Impact: 🟢 LOW"]
         MED["📰 Media/Public Opinion<br/>Impact: 🟠 HIGH ATTENTION"]
     end
-    style CIT fill:#ffc107,color:#000
-    style GOV fill:#fd7e14,color:#fff
-    style OPP fill:#28a745,color:#fff
-    style BIZ fill:#ffc107,color:#000
-    style CIV fill:#fd7e14,color:#fff
-    style INT fill:#ffc107,color:#000
-    style JUD fill:#28a745,color:#fff
-    style MED fill:#fd7e14,color:#fff
+    style CIT fill:#FFC107,color:#000000
+    style GOV fill:#FF9800,color:#FFFFFF
+    style OPP fill:#4CAF50,color:#FFFFFF
+    style BIZ fill:#FFC107,color:#000000
+    style CIV fill:#FF9800,color:#FFFFFF
+    style INT fill:#FFC107,color:#000000
+    style JUD fill:#4CAF50,color:#FFFFFF
+    style MED fill:#FF9800,color:#FFFFFF
 ```
 
 ---

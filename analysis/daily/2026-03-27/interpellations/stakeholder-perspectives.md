@@ -24,12 +24,12 @@ graph TD
         INT["�� International<br/>Impact: LOW<br/>EU rights obligations"]
         MED["📰 Media<br/>Impact: HIGH<br/>Murder case, policy failure"]
     end
-    style GOV fill:#dc3545,color:#fff,stroke:#a71d2a
-    style OPP fill:#dc3545,color:#fff,stroke:#a71d2a
-    style CIT fill:#dc3545,color:#fff,stroke:#a71d2a
-    style ECO fill:#ffc107,color:#000,stroke:#856404
-    style INT fill:#28a745,color:#fff,stroke:#155724
-    style MED fill:#dc3545,color:#fff,stroke:#a71d2a
+    style GOV fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C
+    style OPP fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C
+    style CIT fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C
+    style ECO fill:#FFC107,color:#000000,stroke:#F57C00
+    style INT fill:#4CAF50,color:#FFFFFF,stroke:#2E7D32
+    style MED fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C
 ```
 
 ## 🏛️ Government Perspective

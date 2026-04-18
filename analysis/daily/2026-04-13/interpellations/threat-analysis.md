@@ -27,14 +27,14 @@ graph TD
     C3 --> T5["T3.2: Anti-Semitism<br/>normalization"]
     C3 --> T6["T3.3: Community<br/>polarization"]
     
-    style C1 fill:#FF5722,stroke:#333,color:#fff
-    style C3 fill:#FFC107,stroke:#333,color:#000
-    style T1 fill:#FFCDD2,stroke:#333
-    style T2 fill:#FFCDD2,stroke:#333
-    style T3 fill:#FFCDD2,stroke:#333
-    style T4 fill:#FFF9C4,stroke:#333
-    style T5 fill:#FFF9C4,stroke:#333
-    style T6 fill:#FFF9C4,stroke:#333
+    style C1 fill:#FF5722,stroke:#424242,color:#FFFFFF
+    style C3 fill:#FFC107,stroke:#424242,color:#000000
+    style T1 fill:#FFCDD2,stroke:#424242
+    style T2 fill:#FFCDD2,stroke:#424242
+    style T3 fill:#FFCDD2,stroke:#424242
+    style T4 fill:#FFF9C4,stroke:#424242
+    style T5 fill:#FFF9C4,stroke:#424242
+    style T6 fill:#FFF9C4,stroke:#424242
 ```
 
 ## Detailed Threat Assessment

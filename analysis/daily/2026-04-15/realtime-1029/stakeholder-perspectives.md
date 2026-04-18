@@ -59,10 +59,10 @@ graph TD
     BIZ["Business Sector"] -->|Affected by| LR["Lobby Register"]
     GOV -->|Implements| LR
     
-    style S fill:#E91E63,color:#fff
-    style GOV fill:#4CAF50,color:#fff
-    style SD fill:#FF9800,color:#fff
-    style HC fill:#9C27B0,color:#fff
+    style S fill:#E91E63,color:#FFFFFF
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style SD fill:#FF9800,color:#FFFFFF
+    style HC fill:#9C27B0,color:#FFFFFF
 ```
 
 ## Data Quality Notes

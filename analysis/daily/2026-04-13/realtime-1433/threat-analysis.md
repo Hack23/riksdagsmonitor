@@ -19,17 +19,17 @@ graph TD
         SOCIAL --> S1["Reception law legal challenge<br/>Probability: MEDIUM"]
         SOCIAL --> S2["Cost-of-living discontent<br/>Probability: HIGH"]
     end
-    style ROOT fill:#0A66C2,stroke:#fff,color:#fff
-    style FISCAL fill:#dc3545,stroke:#333,color:#fff
-    style GEOPOLITICAL fill:#fd7e14,stroke:#333,color:#fff
-    style SOCIAL fill:#ffc107,stroke:#333,color:#000
-    style F1 fill:#dc3545,stroke:#333,color:#fff
-    style F2 fill:#fd7e14,stroke:#333,color:#fff
-    style F3 fill:#ffc107,stroke:#333,color:#000
-    style G1 fill:#ffc107,stroke:#333,color:#000
-    style G2 fill:#fd7e14,stroke:#333,color:#fff
-    style S1 fill:#fd7e14,stroke:#333,color:#fff
-    style S2 fill:#dc3545,stroke:#333,color:#fff
+    style ROOT fill:#0A66C2,stroke:#FFFFFF,color:#FFFFFF
+    style FISCAL fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style GEOPOLITICAL fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style SOCIAL fill:#FFC107,stroke:#424242,color:#000000
+    style F1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
+    style F2 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style F3 fill:#FFC107,stroke:#424242,color:#000000
+    style G1 fill:#FFC107,stroke:#424242,color:#000000
+    style G2 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style S1 fill:#FF9800,stroke:#424242,color:#FFFFFF
+    style S2 fill:#D32F2F,stroke:#424242,color:#FFFFFF
 ```
 
 | Threat | Category | Actor | Probability | Impact | dok_id |
