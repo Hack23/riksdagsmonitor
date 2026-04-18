@@ -3567,23 +3567,54 @@ fi
 
 > 🚨 **AI agents: If `grep -q 'class="analysis-references"' article.html` returns false, INSERT this section before `</body>` or before `<footer`:**
 
+> **📘 Reference-grade files (v5.1)**: The baseline template below lists the **9 core files** present in every run. Runs that also produce reference-grade extension files — `README.md`, `executive-brief.md`, `scenario-analysis.md`, `comparative-international.md`, `methodology-reflection.md` — MUST include additional `<li>` entries for each, under a `🎯 Executive & Overview` / `🌍 Reference-Grade Extensions` subgroup. The `scripts/analysis-references.ts` script auto-discovers all `.md` files in the subfolder (and per-document files inside `documents/`) and emits them with localized labels, so running `npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite` is the recommended path — it handles both core and reference-grade extensions automatically. See canonical example: `news/2026-04-17-breaking-1434-{en,sv}.html` linking all 18 files of `analysis/daily/2026-04-17/realtime-1434/`.
+
+> **📁 Per-document analyses**: When `documents/` subdirectory exists, the script now renders **each per-document `.md` file as an individual `<li>`** (not just a folder link). Manually-authored sections MUST follow the same pattern — list every per-document file explicitly.
+
 ```html
 <section class="analysis-references" aria-label="Analysis sources and methodology">
   <h2>📊 Analysis &amp; Sources</h2>
   <p>This article is based on AI-driven political intelligence analysis. Full methodology and analysis files:</p>
+
+  <!-- 🎯 Executive & Overview — reference-grade runs only (skip group if files absent) -->
+  <h3>🎯 Executive &amp; Overview</h3>
   <ul>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/README.md" rel="noopener noreferrer">🗂️ Dossier Index</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/executive-brief.md" rel="noopener noreferrer">🎯 Executive Brief</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/synthesis-summary.md" rel="noopener noreferrer">📋 Synthesis Summary</a></li>
+  </ul>
+
+  <h3>🧭 Core Analysis — Six Frameworks</h3>
+  <ul>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/swot-analysis.md" rel="noopener noreferrer">💪 SWOT Analysis</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/risk-assessment.md" rel="noopener noreferrer">⚠️ Risk Assessment</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/threat-analysis.md" rel="noopener noreferrer">🎭 Threat Analysis</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/stakeholder-perspectives.md" rel="noopener noreferrer">👥 Stakeholder Perspectives</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/significance-scoring.md" rel="noopener noreferrer">📈 Significance Scoring</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/classification-results.md" rel="noopener noreferrer">🏷️ Classification Results</a></li>
+  </ul>
+
+  <!-- 🌍 Reference-Grade Extensions — include only for files that exist -->
+  <h3>🌍 Reference-Grade Extensions</h3>
+  <ul>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/scenario-analysis.md" rel="noopener noreferrer">🎲 Scenario Analysis</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/comparative-international.md" rel="noopener noreferrer">🌍 International Comparison</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/cross-reference-map.md" rel="noopener noreferrer">🔗 Cross-Reference Map</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/methodology-reflection.md" rel="noopener noreferrer">🔬 Methodology Reflection</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/data-download-manifest.md" rel="noopener noreferrer">📥 Data Download Manifest</a></li>
+  </ul>
+
+  <!-- 📁 Per-Document Analyses — enumerate every .md inside documents/ -->
+  <h3>📁 Per-Document Analyses</h3>
+  <ul>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/documents/$DOC_ID-analysis.md" rel="noopener noreferrer">📄 $DOC_ID — &lt;short description&gt;</a></li>
+    <!-- repeat for every .md in documents/ -->
+  </ul>
+
+  <h3>🤖 Methodology</h3>
+  <ul>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md" rel="noopener noreferrer">🤖 AI Analysis Methodology</a></li>
   </ul>
-  <p><em>Per-document analyses: <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/documents/" rel="noopener noreferrer">documents/</a></em></p>
 </section>
 ```
 
