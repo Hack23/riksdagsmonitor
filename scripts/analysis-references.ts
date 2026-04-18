@@ -130,6 +130,60 @@ const KNOWN_ANALYSIS_FILES: ReadonlyArray<{
       ja: 'データダウンロードマニフェスト', ko: '데이터 다운로드 매니페스트', zh: '数据下载清单',
     },
   },
+  // -------------------------------------------------------------------------
+  // Reference-grade files (methodology guide v5.1, Rule 7).
+  // Present in exemplar runs (e.g., analysis/daily/2026-04-17/realtime-1434).
+  // -------------------------------------------------------------------------
+  {
+    filename: 'README.md',
+    emoji: '🗂️',
+    labels: {
+      en: 'Dossier Index', sv: 'Dossierinnehåll', da: 'Dossierindeks',
+      no: 'Dossierindeks', fi: 'Aineistoluettelo', de: 'Dossier-Index',
+      fr: 'Index du dossier', es: 'Índice del dossier', nl: 'Dossierindex',
+      ar: 'فهرس الملف', he: 'אינדקס תיק', ja: 'ドシエ索引', ko: '도시에 색인', zh: '档案索引',
+    },
+  },
+  {
+    filename: 'executive-brief.md',
+    emoji: '🎯',
+    labels: {
+      en: 'Executive Brief', sv: 'Ledningsbriefing', da: 'Ledelsesbriefing',
+      no: 'Ledelsesbriefing', fi: 'Johdon tiivistelmä', de: 'Executive Briefing',
+      fr: 'Note exécutive', es: 'Resumen ejecutivo', nl: 'Executive briefing',
+      ar: 'موجز تنفيذي', he: 'תדרוך בכיר', ja: 'エグゼクティブ・ブリーフ', ko: '경영진 브리핑', zh: '执行简报',
+    },
+  },
+  {
+    filename: 'scenario-analysis.md',
+    emoji: '🎲',
+    labels: {
+      en: 'Scenario Analysis', sv: 'Scenarioanalys', da: 'Scenarieanalyse',
+      no: 'Scenarioanalyse', fi: 'Skenaarioanalyysi', de: 'Szenarioanalyse',
+      fr: 'Analyse de scénarios', es: 'Análisis de escenarios', nl: 'Scenarioanalyse',
+      ar: 'تحليل السيناريوهات', he: 'ניתוח תרחישים', ja: 'シナリオ分析', ko: '시나리오 분석', zh: '情景分析',
+    },
+  },
+  {
+    filename: 'comparative-international.md',
+    emoji: '🌍',
+    labels: {
+      en: 'International Comparison', sv: 'Internationell jämförelse', da: 'International sammenligning',
+      no: 'Internasjonal sammenligning', fi: 'Kansainvälinen vertailu', de: 'Internationaler Vergleich',
+      fr: 'Comparaison internationale', es: 'Comparación internacional', nl: 'Internationale vergelijking',
+      ar: 'مقارنة دولية', he: 'השוואה בינלאומית', ja: '国際比較', ko: '국제 비교', zh: '国际比较',
+    },
+  },
+  {
+    filename: 'methodology-reflection.md',
+    emoji: '🔬',
+    labels: {
+      en: 'Methodology Reflection', sv: 'Metodikreflektion', da: 'Metodologirefleksion',
+      no: 'Metodologirefleksjon', fi: 'Menetelmäpohdinta', de: 'Methodenreflexion',
+      fr: 'Réflexion méthodologique', es: 'Reflexión metodológica', nl: 'Methodologiereflectie',
+      ar: 'تأمل منهجي', he: 'הרהור מתודולוגי', ja: '方法論省察', ko: '방법론 성찰', zh: '方法论反思',
+    },
+  },
 ];
 
 /** Localized methodology link label */
@@ -292,6 +346,8 @@ export interface AnalysisFilesResult {
   files: string[];
   /** Whether a documents/ subdirectory with per-document analyses exists */
   hasDocumentsDir: boolean;
+  /** List of per-document analysis files found inside documents/ (filenames only, sorted) */
+  documentFiles: string[];
   /** The full subfolder path relative to analysis/daily/{date} */
   subfolder: string;
   /** The article date used */
@@ -323,12 +379,24 @@ export function scanAnalysisFiles(options: AnalysisReferencesOptions): AnalysisF
     .map(e => e.name)
     .sort();
 
-  // Check for documents/ subdirectory
+  // Check for documents/ subdirectory and enumerate per-document .md files
   const hasDocumentsDir = entries.some(e => e.isDirectory() && e.name === 'documents');
+  let documentFiles: string[] = [];
+  if (hasDocumentsDir) {
+    try {
+      const docsDir = path.join(analysisDir, 'documents');
+      documentFiles = fs.readdirSync(docsDir, { withFileTypes: true })
+        .filter(e => e.isFile() && e.name.endsWith('.md'))
+        .map(e => e.name)
+        .sort();
+    } catch {
+      documentFiles = [];
+    }
+  }
 
   if (files.length === 0 && !hasDocumentsDir) return null;
 
-  return { files, hasDocumentsDir, subfolder, date };
+  return { files, hasDocumentsDir, documentFiles, subfolder, date };
 }
 
 /**
@@ -434,8 +502,21 @@ export function generateAnalysisReferencesHtml(options: AnalysisReferencesOption
   }
 
   if (hasDocumentsDir) {
-    const docsHref = `${GITHUB_TREE_BASE}/${analysisPath}/documents/`;
-    html += `\n    <p><em>${escapeHtml(perDocLabel)}: <a href="${docsHref}" rel="noopener noreferrer">documents/</a></em></p>`;
+    const { documentFiles } = result;
+    if (documentFiles.length > 0) {
+      // Render an explicit list of every per-document analysis file so readers can
+      // open individual documents directly — not just the documents/ folder.
+      const docItems = documentFiles.map(df => {
+        const rawLabel = df.replace(/\.md$/, '').replace(/-/g, ' ');
+        const label = escapeHtml(rawLabel);
+        const href = `${GITHUB_BLOB_BASE}/${analysisPath}/documents/${encodePathSegment(df)}`;
+        return `    <li><a href="${href}" rel="noopener noreferrer">📄 ${label}</a></li>`;
+      });
+      html += `\n    <h3>📁 ${escapeHtml(perDocLabel)}</h3>\n    <ul>\n${docItems.join('\n')}\n    </ul>`;
+    } else {
+      const docsHref = `${GITHUB_TREE_BASE}/${analysisPath}/documents/`;
+      html += `\n    <p><em>${escapeHtml(perDocLabel)}: <a href="${docsHref}" rel="noopener noreferrer">documents/</a></em></p>`;
+    }
   }
 
   html += '\n  </section>';
