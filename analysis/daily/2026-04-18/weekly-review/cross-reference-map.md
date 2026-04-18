@@ -1,155 +1,140 @@
-# Cross-Reference Map — Week 16 (2026-04-11 to 2026-04-17)
+# 🔗 Cross-Reference Map — Riksdag Week 16, 2026
 
-**Generated**: 2026-04-18 09:20 UTC (AI-enhanced)
-**Purpose**: Map relationships between Week 16 documents and longer-term policy threads
-
----
-
-## Thematic Clusters
-
-### Cluster A: Spring Fiscal Package
-
-```
-HD03100 (Vårproposition 2026)
-├── HD0399 (Vårändringsbudget 2026) — implements VÅP budget framework
-├── HD03236 (Extra ändringsbudget: Drivmedel + el/gas) — emergency fiscal measure
-│   ├── mot. 4098 (MP): Reject fuel tax cut
-│   ├── mot. 4092 (V): Reject fuel tax cut
-│   └── mot. 4082 (S): Demand further analysis
-└── HD03241 (Riksrevision: Financial policy framework 2025) — audit context
-    └── HD03101 (Årsredovisning staten 2025) — annual accounts
-
-Related: HD0398 (Tax expenditure report 2026)
-Committee: FiU → Expected: JuU17 vote April 22
-```
-
-### Cluster B: Ukraine Accountability
-
-```
-HD03231 (Special Tribunal: Ukraine aggression crime)
-├── HD03232 (Damages Commission: Ukraine) — twin international instruments
-│   └── Both: Prop. 2025/26:231 & 232 — Foreign Ministry package
-└── HD01UFöU3 (NATO eFP Finland: 1,200 troops) — military implementation
-    └── Previous: Prop. 2025/26:220 (April 9) — Sweden's NATO military framework
-
-Related earlier: Prop. 2025/26:6, 2025/26:25 (NATO military framework series)
-Committee: UFöU (joint foreign affairs/defense committee)
-```
-
-### Cluster C: Criminal Justice Reform Chain
-
-```
-HD03246 (Stricter rules: Young offenders — Prop. 246)
-├── JuU15 vote (145–142, April 16) — direct connection
-├── HD03218 (Double penalties: Network crime)
-├── HD03217 (Civil servant criminal liability)
-│   └── All: Tidöavtalet criminal justice delivery package
-└── Previous: Prop. 2025/26:133 (SD interp. HD10429 on free speech) — context
-
-Related: HD01SfU22 (Inhibition orders) — thematic connection via law enforcement
-```
-
-### Cluster D: Migration Policy Continuum
-
-```
-HD01SfU22 (Inhibition orders: Deportation reform) — Committee report
-├── Prop. 2025/26:235 (Skärpta regler: Utvisning på grund av brott)
-│   ├── mot. 4090 (V): Full rejection — ECHR risk
-│   ├── mot. 4095 (C): Proportionality amendment
-│   └── mot. 4097 (MP): Selective acceptance
-├── HD03229 (En ny mottagandelag — New Reception Law)
-│   ├── mot. 4080 (S): No private asylum housing
-│   ├── mot. 4087 (MP): Integration-promoting housing
-│   └── mot. 4089 (C): Municipal emergency assistance
-└── Prop. 2025/26:215 (Settlement law — temporary housing)
-    ├── mot. 4079 (S): Return to Riksdag demand
-    └── mot. 4086 (MP): Policy alternatives
-```
-
-### Cluster E: Energy/Green Transition
-
-```
-HD03240 (New Electricity System Laws)
-├── HD03239 (Wind Power in Municipalities: Revenue sharing)
-│   └── Direct benefit to C rural constituency
-├── HD03242 (Active Forestry Framework — deregulation)
-├── HD01MJU19 (Waste/Recycling reform — MJU committee)
-└── HD01MJU20 (Riksrevision: Climate policy framework audit)
-    └── V+C+MP joint reservation — cross-bloc climate accountability demand
-
-Related: HD01SkU23 (EV charging permanent tax exemption) — green transition
-Note: Tension between HD03236 (fuel tax cut) and cluster E (green transition)
-```
-
-### Cluster F: Constitutional Amendments (First Reading)
-
-```
-HD01KU32 (Accessibility: Press/media — TF/YGL change)
-└── HD01KU33 (Search/seizure records — TF/YGL change)
-    Both: REQUIRE second identical vote after September 2026 election
-    
-Constitutional lock: 2 elections rule (TF Chapter 15)
-Risk: New government could vote differently = amendments fail
-Timeline: Second vote needed by May 2027 (new Riksdag term)
-```
+| Field | Value |
+|-------|-------|
+| **CRX-ID** | CRX-2026-W16 |
+| **Period** | 2026-04-11 — 2026-04-17 |
+| **Methodology** | Thematic clustering + cross-cluster interference + prior-run continuity |
+| **Confidence Scale** | ⬛ VL · 🟥 L · 🟧 M · 🟩 H · 🟦 VH |
 
 ---
 
-## Inter-Week Document Connections
+## 🎯 Six Thematic Clusters
 
-| Week 16 Document | Prior Week Connection | Significance |
-|-----------------|----------------------|:---:|
-| HD01UFöU3 | Prop. 2025/26:220 (Apr 9) + Prop. 2025/26:6 | Series completion |
-| HD03236 Extra budget | FiU48 committee (Apr 14) — already pre-analyzed | Fast-tracked |
-| SfU22 Inhibition orders | HD03235 (Deportation rules — prior week) | Migration intensification |
-| JuU15 vote | JuU committee spring term package | Coalition test |
+| # | Cluster | Lead Documents | Total Significance Weight |
+|:-:|---------|---------------|:------------------------:|
+| **C1** | 💰 **Spring Fiscal Trilogy** | HD03100 + HD0399 + HD03236; HD024098 (counter-budget motion) | 28.0 (lead) |
+| **C2** | 📜 **Constitutional First Reading** | HD01KU33 + HD01KU32 | 18.55 |
+| **C3** | ⚖️ **Criminal Justice / Tidö Centerpiece** | HD03246 (JuU15) + HD03237 | 15.30 |
+| **C4** | 🌍 **Ukraine Accountability + NATO Operationalisation** | HD03231 + HD03232 + HD01UFöU3 | 23.75 |
+| **C5** | 🛂 **Migration / Rights Tightening** | HD01SfU22 + Prop 235 + Prop 229 | 23.75 |
+| **C6** | 🏠 **Housing AML + Energy + Sector Reforms** | HD01CU27 + HD01CU28 + HD01CU22 + HD01CU42 + HD03240 + HD03239 + HD03242 + HD03244 + HD03233 + HD03245 | 53.85 (high count, lower per-document) |
 
 ---
 
-## Policy Mindmap: Week 16 Interconnections
+## 🗺️ Policy Mindmap (Mermaid Mind-Map)
 
 ```mermaid
 mindmap
-  root((Sweden\nRiksdag\nWeek 16))
-    Fiscal Policy
-      Vårproposition 2026
-        Spring Amendment Budget
-        Extra Budget: Fuel/energy
-      Opposition challenge
-        S: Return to Riksdag
-        V: Reject cuts
-        MP: Reject cuts
-    Security & Defense
-      Ukraine Accountability
-        Special Tribunal
-        Damages Commission
-      NATO Finland eFP
-        1200 troops
-        Defense framework
-      Cybersecurity
-        National center law
-        Russian cyber threat
-    Criminal Justice
-      Youth Crime Reform
-        Prop 246: Stricter rules
-        Tidöavtalet delivery
-      Deportation
-        Inhibition orders
-        Stricter crime deportation
-      3-vote JuU15 majority
-    Green Transition
-      Electricity System Laws
-      Wind Power Revenue
-      Forestry Deregulation
-      Waste Reform
-      EV Tax Exemption
-      Tension: Fuel Tax Cut
-    Constitutional
-      KU32: Media access
-      KU33: Search records
-      Two-election rule
-    Housing
-      Bostadsrätt Register
-      Identity: Land Registry
-      Construction slowdown
+  root((Week 16<br/>2026))
+    Fiscal C1
+      HD03100 Vårproposition
+      HD0399 Vårändringsbudget
+      HD03236 Extra ändringsbudget
+        fuel-tax cut 82 öre
+        el/gas relief
+      HD024098 Counter-motion
+    Constitutional C2
+      HD01KU33 search/seizure
+        formellt tillförd bevisning
+        2nd reading post-Sep 2026
+      HD01KU32 accessibility
+        EU Accessibility Act in grundlag
+    Criminal Justice C3
+      HD03246 JuU15
+        145–142 razor-thin
+      HD03237 betald polisutbildning
+    Foreign Policy C4
+      HD03231 Special Tribunal
+        first since Nuremberg
+      HD03232 Damages Commission
+        EUR 260 B Russian assets
+      HD01UFöU3 NATO eFP
+        1200 troops to Finland
+    Migration C5
+      HD01SfU22 inhibition orders
+      Prop 235 deportation expansion
+      Prop 229 reception law
+      V/C/MP counter-motions
+        ECHR predicate
+    Housing + Energy C6
+      HD01CU27 lagfart + AML
+      HD01CU28 bostadsregister 2027
+      HD01CU22 ställföreträdarskap
+      HD01CU42 dödsbon Riksrev
+      HD03240 Electricity System Act
+      HD03239 wind power municipal
+      HD03242 forestry framework
+      HD03244 interoperability
+      HD03233 anti-fraud
+      HD03245 women's violence strategy
+        HD10438 kvinnojourer interp
 ```
+
+---
+
+## 🔁 Cross-Cluster Linkages (where the action is)
+
+| Linkage | Connecting Documents | Mechanism |
+|---------|---------------------|-----------|
+| **C1 ↔ C6 (Climate-coherence tension)** | HD03236 fuel-tax cut **vs** HD03240 Electricity System Act + HD03239 wind power | Government climate brand under pressure: relief mechanism contradicts green ambition |
+| **C2 ↔ C4 (Press-freedom-abroad-vs-home)** | HD01KU33 narrowing **vs** HD03231 Nuremberg-style accountability | Cross-cluster rhetorical contradiction; opposition-frame target |
+| **C3 ↔ C5 (Brott-och-ordning + migration alignment)** | HD03246 JuU15 + HD01SfU22 / Prop 235 / Prop 229 | Tidö-deal coherence; SD-base reinforcement |
+| **C4 ↔ Threat T1** | HD03231 + HD01UFöU3 → Russian retaliation | Tribunal + NATO eFP elevate Sweden's adversary visibility |
+| **C5 ↔ Threat T3** | Migration trio → V/C/MP ECHR challenge | Litigation predicate prepared in counter-motion text |
+| **C6 ↔ Lantmäteriet capacity** | HD01CU28 register Jan 2027 | IT-delivery dependency on Lantmäteriet capacity |
+| **C6 ↔ HD10438 (Kvinnojourer)** | HD03245 strategy + HD10438 interpellation | Strategy + funding-stress accountability moment |
+
+---
+
+## 🔄 Prior-Run Continuity
+
+| Connecting File | Continuity Type | Notes |
+|----------------|-----------------|-------|
+| [`realtime-1434/synthesis-summary.md`](../../2026-04-17/realtime-1434/synthesis-summary.md) | **Direct precedent** | Per-document deep dives on KU32, KU33, HD03231, HD03232, CU27, CU28 |
+| [`realtime-1434/comparative-international.md`](../../2026-04-17/realtime-1434/comparative-international.md) | **Direct precedent** | Nordic + EU benchmarks for KU33 / KU32 / Ukraine cluster |
+| [`realtime-1434/scenario-analysis.md`](../../2026-04-17/realtime-1434/scenario-analysis.md) | **Direct precedent** | Scenario branches inherited and extended for fiscal+migration trios |
+| Daily analysis 2026-04-15 → 2026-04-17 | **Catalogue continuity** | JuU15 chamber-vote details (145–142) sourced from voteringar 2026-04-15 |
+| Quarterly NATO eFP risk assessment 2026-Q1 | **Risk continuity** | T1 baseline established; this run upgrades to operational integration phase |
+
+---
+
+## 🔭 Forward Continuity (next-run hand-off)
+
+The next analytical runs (daily 2026-04-19 → daily 2026-04-25) should prioritise:
+
+1. **HD03236 chamber vote (2026-04-22)** — fiscal trilogy validation; risk R4 update
+2. **KU annual granskning hearings (2026-04-27)** — accountability drumbeat
+3. **Lagrådet KU32/KU33 yttrande Q2 2026** — Bayesian update R2 (decisive variable)
+4. **First-reading chamber vote on KU33 (May–June 2026)** — operational confirmation
+5. **Ukraine HD03231 + HD03232 chamber vote** — confirms package; trigger T1 re-baseline
+6. **Försvarsmakten Bn-task-group deployment Q3 2026** — operational milestone
+
+Each of those events triggers a **per-event analysis** in the appropriate `analysis/daily/YYYY-MM-DD/{type}/` folder per Rule 1 isolation.
+
+---
+
+## 🗳️ Election 2026 Implications (mandatory)
+
+| Cluster | Election Salience | Notes |
+|---------|:-----------------:|-------|
+| **C1 Fiscal** | 🟦 VERY HIGH | Cost-of-living = #1 voter issue; Q3 2026 macro = Sep verdict |
+| **C2 Constitutional** | 🟩 HIGH | KU33 second reading post-election ⇒ campaign vector |
+| **C3 Criminal Justice** | 🟦 VERY HIGH | Brott + ordning = #2 voter issue; Tidö centerpiece |
+| **C4 Foreign Policy** | 🟧 MEDIUM | Cross-party consensus dampens electoral exploit |
+| **C5 Migration** | 🟩 HIGH | SD-base reinforcement; ECHR risk if struck pre-Sep |
+| **C6 Sector Reforms** | 🟧 MEDIUM | Implementation-window 2026/27; minimal Sep salience |
+
+---
+
+## 📎 Cross-References
+
+- [`synthesis-summary.md`](synthesis-summary.md) §Top-5 Developments uses C1–C6 directly
+- [`significance-scoring.md`](significance-scoring.md) §Master Scoring distributes documents across C1–C6
+- [`swot-analysis.md`](swot-analysis.md) §TOWS uses C1×C6 + C2×C4 cross-cluster tensions
+- [`risk-assessment.md`](risk-assessment.md) §R1–R8 maps cluster-level risk
+- [`scenario-analysis.md`](scenario-analysis.md) §Scenarios apply cluster framing
+
+---
+
+**Classification**: Public · **Next Review**: 2026-04-25 · **Methodology**: Thematic clustering + cross-cluster interference + prior-run continuity (see `political-swot-framework.md` §Cross-Cluster Interference)
