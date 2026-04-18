@@ -339,6 +339,87 @@ export function getCommitteeName(code: string | undefined, lang: Language | stri
 }
 
 /**
+ * Strip the Riksdag raw-dump prefix and embedded CSS that the MCP
+ * `get_dokument_innehall` `text` field (stored as `fullContent` in the pipeline)
+ * prepends to many documents.
+ *
+ * Typical dump shape (whitespace-separated, no tags):
+ *   `5287561 HD03242 2025/26 242 prop prop prop Proposition 2025/26:242
+ *    Proposition Proposition Landsbygds- och infrastrukturdepartementet MJU
+ *    242 0 2026-04-16 00:00:00 2026-04-16 15:24:08 2026-04-16 00:00:00
+ *    <title> html-ec prop-RIM <uuid>
+ *    body {margin-top: 0px;margin-left: 0px;}
+ *    #page_1 {position:relative; overflow: hidden; ...} ...`
+ *
+ * Without cleanup these metadata and CSS fragments render as visible text in
+ * article document entries (see `news/2026-04-18-weekly-review-*.html`, fixed
+ * by the companion content patch). All data sources and article generators
+ * that pass Riksdag document text through `extractKeyPassage` are now
+ * protected by this helper.
+ */
+export function stripRiksdagRawDump(text: string): string {
+  if (!text) return text;
+  let s = text;
+
+  // 1. Remove embedded CSS rule blocks ("selector { properties }"). Only strip
+  //    blocks whose body looks CSS-like so we never touch legitimate Swedish
+  //    prose that happens to contain braces. No nesting in Riksdag dumps.
+  //
+  //    The outer pattern is bounded ({0,300} selector, {0,1000} body) to prevent
+  //    catastrophic backtracking on pathological inputs. `[^{}]` further guarantees
+  //    linear-time matching because the inner class cannot overlap the delimiters.
+  //    A capture group isolates the `{...body...}` so the CSS signature is tested
+  //    only against the block body — not the selector / surrounding prose — which
+  //    avoids false positives on Swedish text like `"prisökning: 10 procent"`
+  //    that precedes an unrelated brace pair.
+  //
+  //    `CSS_PROPERTY_SIGNATURE` recognises common CSS property syntax patterns:
+  //      - `: <digit>` (numeric value assignments, e.g. `top: 0`, `z-index: -1`)
+  //      - CSS length units (`px`, `em`, `rem`) as whole words
+  //      - `%;` (percent value terminator)
+  //      - CSS hex colours (`#abc` or `#aabbcc`)
+  //      - Known CSS property names followed by `:`
+  const CSS_PROPERTY_SIGNATURE = /(?::\s*-?\d|\b(?:px|em|rem)\b|%\s*;|#[0-9a-f]{3,6}\b|position\s*:|margin\s*:|padding\s*:|overflow\s*:|width\s*:|height\s*:|top\s*:|left\s*:|z-index\s*:|display\s*:|font-|border\s*:)/i;
+  s = s.replace(/[^{}]{0,300}(\{[^{}]{0,1000}\})/g, (m, body: string) =>
+    CSS_PROPERTY_SIGNATURE.test(body) ? ' ' : m
+  );
+
+  // 2. Detect Riksdag metadata prefix. Always begins with: numeric doc-id,
+  //    HD-<dok_id>, and a riksmöte (YYYY/YY).
+  const metaPrefix = /^\s*\d{6,}\s+HD\S+\s+\d{4}\/\d{2}\s+/;
+  if (metaPrefix.test(s)) {
+    // Preferred boundary: "html-ec <doktype>-RIM <UUID>" marker — strip up to and including it.
+    const rimRegex = /^[\s\S]*?html-ec\s+\S+-RIM\s+[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\s*/i;
+    if (rimRegex.test(s)) {
+      s = s.replace(rimRegex, '');
+    } else {
+      // Fallback 1: strip up to and including the first bare UUID if it is
+      // still within the metadata header window (first ~1.5k chars).
+      const uuidIdx = s.search(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i);
+      if (uuidIdx > -1 && uuidIdx < 1500) {
+        s = s
+          .slice(uuidIdx)
+          .replace(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\s*/i, '');
+      } else {
+        // Fallback 2: strip the fixed metadata header up to the last
+        // `YYYY-MM-DD HH:MM:SS` timestamp that appears within the first
+        // 800 chars, then any additional repeated timestamps.
+        const shortHeader = /^\s*\d{6,}\s+HD\S+\s+\d{4}\/\d{2}[\s\S]{0,800}?\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}\s+/;
+        const m = s.match(shortHeader);
+        if (m) {
+          s = s.slice(m[0].length);
+          while (/^\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}\s+/.test(s)) {
+            s = s.replace(/^\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}\s+/, '');
+          }
+        }
+      }
+    }
+  }
+
+  return s.replace(/\s+/g, ' ').trim();
+}
+
+/**
  * Extract the most analytically useful excerpt from full document text.
  * Returns first substantive paragraph (skips short headings/metadata lines).
  */
@@ -350,6 +431,8 @@ export function extractKeyPassage(fullText: string | undefined, maxChars = 600):
   plain = plain.replace(/\[([^\]]*)\]\([^)]+\)/g, '$1');
   // Strip bare URLs (http/https)
   plain = plain.replace(/https?:\/\/[^\s)]+/g, '');
+  // Strip Riksdag raw-dump prefix (metadata header + embedded CSS rule blocks)
+  plain = stripRiksdagRawDump(plain);
   // Collapse whitespace
   plain = plain.replace(/\s+/g, ' ').trim();
   if (plain.length <= maxChars) return plain;
