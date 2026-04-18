@@ -119,12 +119,7 @@ quadrantChart
 ## 📉 Risk Trend — 7-Day
 
 ```mermaid
----
-config:
-    themeVariables:
-        xyChart:
-            plotColorPalette: "#dc3545"
----
+%%{init: {'themeVariables': {'xyChart': {'plotColorPalette': '#dc3545'}}}}%%
 xychart-beta
     title "Composite Political Risk — April 10-17, 2026"
     x-axis ["Apr 10", "Apr 11", "Apr 12", "Apr 13", "Apr 14", "Apr 15", "Apr 16", "Apr 17"]

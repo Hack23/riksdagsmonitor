@@ -1308,7 +1308,11 @@ else
     fi
     if [ "$LEAD_REF" -eq 0 ]; then
       # Fallback: verify semantically (agent must inspect manually)
-      echo "⚠️  Lead-story ${LEAD_DOC:-<none>} not referenced in title/meta/H1 — verify semantically"
+      if [ -n "$LEAD_DOC" ]; then
+        echo "⚠️  Lead-story $LEAD_DOC not referenced in title/meta/H1 — verify semantically"
+      else
+        echo "⚠️  Lead-story <none> not referenced in title/meta/H1 — verify semantically"
+      fi
     fi
 
     # Check 2: Every document with score ≥ 7.0 must appear in article body
