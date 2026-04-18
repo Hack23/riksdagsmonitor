@@ -1153,53 +1153,166 @@ These patterns indicate script-generated or AI-lazy content and are ALWAYS rejec
 
 ```bash
 echo "=== 🏛️ Lead-Story & Coverage-Completeness Gate ==="
+#
+# AWF-COMPLIANT: uses hard-coded /tmp/...$$ temp files and `read -r` / redirection
+# instead of $(...) command substitution. Safe to execute via the `bash` tool.
+#
 LEAD_FAIL=0
 SIG_FILE="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/significance-scoring.md"
+HIGH_DOCS_FILE="/tmp/lead-gate-high-docs-$$.txt"
+LEAD_DOC_FILE="/tmp/lead-gate-lead-doc-$$.txt"
+TITLE_BLOCK_FILE="/tmp/lead-gate-title-block-$$.txt"
+trap 'rm -f "$HIGH_DOCS_FILE" "$LEAD_DOC_FILE" "$TITLE_BLOCK_FILE"' EXIT
+
 if [ ! -f "$SIG_FILE" ]; then
   echo "🔴 FAIL: significance-scoring.md missing — cannot verify lead-story"
   LEAD_FAIL=1
 else
-  # Extract all documents with weighted score ≥ 7.0 from the scoring table
-  # (Prior version grabbed ALL HD-ids regardless of score — fixed to actually filter by DIW.)
-  HIGH_DOCS=$(
-    awk -F'|' '
-      /^\|/ {
-        score = $NF
-        gsub(/^[[:space:]]+|[[:space:]]+$/, "", score)
-        # Strip markdown emphasis/backticks around the score cell
-        gsub(/[*`]/, "", score)
-        if (score ~ /^[0-9]+([.][0-9]+)?$/ && score + 0 >= 7.0) {
-          row = $0
-          if (match(row, /HD[0-9A-Z]+/)) {
-            print substr(row, RSTART, RLENGTH)
+  # Extract all documents with **Weighted** score ≥ 7.0 from the scoring table.
+  #
+  # IMPORTANT: the last column is "Role" (non-numeric) and "Tier" (non-numeric
+  # with emoji) sits next to it, so we MUST detect the numeric "Weighted" column
+  # by header name rather than using $NF. We also skip markdown separator rows
+  # (|---|:---:|) and strip **emphasis**/`backticks` before numeric comparison.
+  awk -F'|' '
+    function trim(value) {
+      gsub(/^[[:space:]]+|[[:space:]]+$/, "", value)
+      return value
+    }
+    function normalize_header(value) {
+      value = trim(value)
+      gsub(/[*`_]/, "", value)
+      gsub(/[[:space:]]+/, "", value)
+      return tolower(value)
+    }
+    function normalize_score(value) {
+      value = trim(value)
+      gsub(/[*`_]/, "", value)
+      return trim(value)
+    }
+    /^\|/ {
+      # First pipe-row: detect the Weighted column index from the header.
+      if (!weighted_col) {
+        for (i = 1; i <= NF; i++) {
+          if (normalize_header($i) == "weighted") {
+            weighted_col = i
+            break
           }
         }
+        if (weighted_col) { next }
       }
-    ' "$SIG_FILE" | sort -u
-  )
-  # Extract top-ranked finding (first HD* in a row that includes "LEAD" or highest score)
-  LEAD_DOC=$(grep -iE 'lead|#1|top.ranked' "$SIG_FILE" | grep -oE 'HD[0-9A-Z]+' | head -1)
-  [ -z "$LEAD_DOC" ] && [ -n "$HIGH_DOCS" ] && LEAD_DOC=$(printf '%s\n' "$HIGH_DOCS" | head -1)
+
+      # Skip markdown separator rows such as |---|---|:---:|
+      separator_row = 1
+      for (i = 1; i <= NF; i++) {
+        cell = trim($i)
+        if (cell != "" && cell !~ /^:?-{3,}:?$/) {
+          separator_row = 0
+          break
+        }
+      }
+      if (separator_row) { next }
+
+      score_col = weighted_col ? weighted_col : NF - 1
+      score = normalize_score($(score_col))
+      if (score ~ /^[0-9]+([.][0-9]+)?$/ && score + 0 >= 7.0) {
+        row = $0
+        if (match(row, /HD[0-9A-Z]+/)) {
+          print substr(row, RSTART, RLENGTH)
+        }
+      }
+    }
+  ' "$SIG_FILE" | sort -u > "$HIGH_DOCS_FILE"
+
+  if [ ! -s "$HIGH_DOCS_FILE" ]; then
+    echo "ℹ️  No documents scored ≥ 7.0 — coverage-completeness check not triggered"
+  fi
+
+  # Derive LEAD_DOC: prefer a row explicitly marked "LEAD / #1 / top-ranked";
+  # otherwise fall back to the document with the highest **Weighted** score,
+  # NOT the first lexicographically sorted HD-id (prior version was unreliable).
+  awk -F'|' '
+    function trim(value) {
+      gsub(/^[[:space:]]+|[[:space:]]+$/, "", value)
+      return value
+    }
+    function normalize_header(value) {
+      value = trim(value)
+      gsub(/[*`_]/, "", value)
+      gsub(/[[:space:]]+/, "", value)
+      return tolower(value)
+    }
+    function normalize_score(value) {
+      value = trim(value)
+      gsub(/[*`_]/, "", value)
+      return trim(value)
+    }
+    BEGIN { best_score = -1; lead_score = -1 }
+    /^\|/ {
+      if (!weighted_col) {
+        for (i = 1; i <= NF; i++) {
+          if (normalize_header($i) == "weighted") {
+            weighted_col = i
+            break
+          }
+        }
+        if (weighted_col) { next }
+      }
+      row = $0
+      if (!match(row, /HD[0-9A-Z]+/)) { next }
+      doc = substr(row, RSTART, RLENGTH)
+      score_col = weighted_col ? weighted_col : NF - 1
+      score = normalize_score($(score_col))
+      has_numeric = (score ~ /^[0-9]+([.][0-9]+)?$/)
+      explicit_lead = (tolower(row) ~ /lead|#1|top.ranked/)
+
+      if (explicit_lead) {
+        if (has_numeric && score + 0 > lead_score) {
+          lead_score = score + 0
+          lead_doc = doc
+        } else if (lead_doc == "") {
+          lead_doc = doc
+        }
+      }
+      if (has_numeric && score + 0 > best_score) {
+        best_score = score + 0
+        best_doc = doc
+      }
+    }
+    END {
+      if (lead_doc != "") { print lead_doc }
+      else if (best_doc != "") { print best_doc }
+    }
+  ' "$SIG_FILE" > "$LEAD_DOC_FILE"
+  LEAD_DOC=""
+  [ -s "$LEAD_DOC_FILE" ] && read -r LEAD_DOC < "$LEAD_DOC_FILE"
 
   for ARTICLE in news/$ARTICLE_DATE-*-en.html news/$ARTICLE_DATE-*-sv.html; do
     [ ! -f "$ARTICLE" ] && continue
     echo "--- Checking: $ARTICLE ---"
 
     # Check 1: Lead story appears in title OR meta description OR H1
-    TITLE_BLOCK=$(awk '/<title>/,/<\/title>/' "$ARTICLE"; awk '/<meta name="description"/' "$ARTICLE"; awk '/<h1>/,/<\/h1>/' "$ARTICLE")
-    LEAD_REF=$(echo "$TITLE_BLOCK" | grep -ciE "$LEAD_DOC|$(grep -iE "^## *Headline|lead.story" "$SIG_FILE" -A2 | tail -1 | head -c 60)" || echo 0)
+    : > "$TITLE_BLOCK_FILE"
+    awk '/<title>/,/<\/title>/' "$ARTICLE"           >> "$TITLE_BLOCK_FILE"
+    awk '/<meta name="description"/' "$ARTICLE"       >> "$TITLE_BLOCK_FILE"
+    awk '/<h1>/,/<\/h1>/' "$ARTICLE"                  >> "$TITLE_BLOCK_FILE"
+    LEAD_REF=0
+    if [ -n "$LEAD_DOC" ] && grep -qi "$LEAD_DOC" "$TITLE_BLOCK_FILE"; then
+      LEAD_REF=1
+    fi
     if [ "$LEAD_REF" -eq 0 ]; then
-      # Fallback: check for any named actor / keyword from the lead record
-      echo "⚠️  Lead-story $LEAD_DOC not referenced in title/meta/H1 — verify semantically"
+      # Fallback: verify semantically (agent must inspect manually)
+      echo "⚠️  Lead-story ${LEAD_DOC:-<none>} not referenced in title/meta/H1 — verify semantically"
     fi
 
     # Check 2: Every document with score ≥ 7.0 must appear in article body
     MISSING=""
-    for HDOC in $HIGH_DOCS; do
+    while read -r HDOC; do
+      [ -z "$HDOC" ] && continue
       if ! grep -q "$HDOC" "$ARTICLE"; then
         MISSING="$MISSING $HDOC"
       fi
-    done
+    done < "$HIGH_DOCS_FILE"
     if [ -n "$MISSING" ]; then
       echo "🔴 FAIL: High-ranked docs missing from $ARTICLE:$MISSING"
       LEAD_FAIL=$((LEAD_FAIL + 1))
