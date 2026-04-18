@@ -485,6 +485,8 @@ Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-m
 
 **Step D — Run quality gate** (BLOCKING): See `SHARED_PROMPT_PATTERNS.md` §"Step 5b: MANDATORY Quality Gate" for the complete bash script. Run it and fix ALL failures before proceeding.
 
+**Step D.2 — Lead-Story & Coverage-Completeness Gate** (BLOCKING, added 2026-04-18): After articles are drafted, run the gate from `SHARED_PROMPT_PATTERNS.md` §"🔴 MANDATORY: Lead-Story & Coverage-Completeness Gate". This enforces (1) the article `<title>`, `<meta description>`, and H1 reference the #1 DIW-ranked finding in `significance-scoring.md`, (2) every document with DIW-weighted score ≥ 7.0 appears as a dedicated H3 section, (3) when top-ranked findings carry opposing political valences, the rhetorical tension is surfaced explicitly. Failing the gate requires rewrite before commit. **Doctrine**: `analysis/methodologies/ai-driven-analysis-guide.md` §"Rule 5: Democratic-Impact Weighting (DIW)".
+
 > 🚨 **BLOCKING**: Fix all failures before proceeding. Read `analysis/templates/<template>.md`, rewrite failing files, re-run gate.
 
 ### 🔴 MANDATORY: Batch Analysis Enrichment
@@ -706,7 +708,18 @@ Verify MCP first: `source scripts/mcp-setup.sh && echo "MCP_SERVER_URL=$MCP_SERV
 
 1. **Titles**: `[Active Verb] + [Specific Actor] + [Concrete Action]`. ❌ BANNED: "Breaking News: Latest Updates"
 2. **Meta descriptions** (150-160 chars): summarize key intelligence. ❌ BANNED: starting with "Analysis of N documents"
-3. **Add analysis references** HTML block (class="analysis-references") before footer, linking to `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` files. **Verify**:
+3. **Add analysis references** HTML block (class="analysis-references") before footer, linking to `analysis/daily/$ARTICLE_DATE/realtime-$HHMM/` files. **🔴 MANDATORY — run deterministic injector BEFORE manual verify**:
+```bash
+# Discovers all eligible .md files in the realtime-HHMM folder (including reference-grade
+# extensions: README, executive-brief, scenario-analysis, comparative-international,
+# methodology-reflection) and repairs/inserts localized links into EN + SV articles.
+# NOTE: `--rewrite` fixes missing or broken analysis-reference sections; it does not
+# force-refresh an already valid-but-incomplete section to include newly added files.
+# If this run added more analysis files after a valid section was created, use the
+# script's full-regeneration mode if available, or remove the existing block and rerun.
+npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite
+```
+Then verify:
 ```bash
 for FILE in news/$ARTICLE_DATE-*breaking*-*.html news/$ARTICLE_DATE-*realtime*-*.html; do
   [ -f "$FILE" ] && ! grep -q 'class="analysis-references"' "$FILE" && echo "🔴 MISSING: $FILE"

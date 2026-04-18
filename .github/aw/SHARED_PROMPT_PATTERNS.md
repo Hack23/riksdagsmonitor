@@ -2,6 +2,98 @@
 
 > **Internal reference document** — Not a live workflow. Copy-paste these standardised blocks into every `news-*.md` workflow to ensure consistency.
 
+## ⭐ Canonical Reference-Grade Exemplar (MANDATORY READING FOR ALL WORKFLOWS)
+
+> 🔴 **Every workflow that produces an article MUST meet the quality bar set by this exemplar.**
+
+| Artefact | Path | Notes |
+|----------|------|-------|
+| **Governing methodology** | [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md) | v5.1 — Rules 6 (depth tiers L1/L2/L2+/L3), 7 (self-audit matrix), 8 (international benchmarking) |
+| **Canonical dossier (18 files)** | `analysis/daily/2026-04-17/realtime-1434/` | Gold-standard reference — all 14 registry files + 4 per-document analyses |
+| **Canonical articles** | `news/2026-04-17-breaking-1434-{en,sv}.html` | Full 19-link reference section, grouped into 5 subgroups, bilingual localization |
+| **Reference registry** | [`scripts/analysis-references.ts`](../../scripts/analysis-references.ts) | `KNOWN_ANALYSIS_FILES` (14 entries, 14-language labels) + `scanAnalysisFiles()` per-doc enumeration |
+
+**Before writing any article, the agent MUST confirm (via bash):**
+
+```bash
+# Canonical exemplar exists and is not truncated
+test -s analysis/daily/2026-04-17/realtime-1434/synthesis-summary.md \
+  && test -s news/2026-04-17-breaking-1434-en.html \
+  || echo "⚠️ Canonical exemplar missing — consult SHARED_PROMPT_PATTERNS.md"
+```
+
+**Article quality is benchmarked against this exemplar** — if your output is shallower, shorter than ~400 words per major section, lacks confidence labels, omits cross-document synthesis, or misses the grouped analysis-references section with all files linked, it FAILS quality gate.
+
+---
+
+## 🔴 UNIVERSAL PRE-ARTICLE GATE — "Read ALL Analysis Before Writing Any Article"
+
+> 🚨 **ABSOLUTE RULE — shared template for all 12 news workflows**: No article of any type may be written until the agent has **read every analysis file** produced for that run. This gate lives here as the canonical template; each workflow that generates articles MUST paste the snippet below into its prompt (and recompile its `.lock.yml`) so the gate runs inline before any article HTML is emitted. This guarantees every claim in the article maps to a finding in the dossier, and prevents the "shallow first draft" anti-pattern.
+
+```bash
+# 🔴 MANDATORY GATE — run BEFORE generating article HTML content
+# Fails the run if analysis files are not present or not read.
+#
+# AWF-COMPLIANT: uses `find … | sort > tempfile` + `read`/redirection instead of
+# $(...) command substitution. Safe to paste into a runtime `bash` tool call.
+
+ANALYSIS_BASE="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER"
+ANALYSIS_LIST_FILE="/tmp/analysis-files-$$.txt"
+ANALYSIS_COUNT_FILE="/tmp/analysis-count-$$.txt"
+trap 'rm -f "$ANALYSIS_LIST_FILE" "$ANALYSIS_COUNT_FILE"' EXIT
+
+if [ ! -d "$ANALYSIS_BASE" ]; then
+  echo "🔴 ABORT: $ANALYSIS_BASE does not exist — analysis must be produced BEFORE article"
+  exit 1
+fi
+
+: > "$ANALYSIS_LIST_FILE"
+: > "$ANALYSIS_COUNT_FILE"
+
+find "$ANALYSIS_BASE" -maxdepth 2 -type f -name "*.md" | sort > "$ANALYSIS_LIST_FILE"
+grep -c . "$ANALYSIS_LIST_FILE" > "$ANALYSIS_COUNT_FILE" || echo "0" > "$ANALYSIS_COUNT_FILE"
+read -r ANALYSIS_COUNT < "$ANALYSIS_COUNT_FILE"
+
+if [ "$ANALYSIS_COUNT" -lt 9 ]; then
+  echo "🔴 ABORT: Only $ANALYSIS_COUNT analysis files found — need ≥ 9 core files (see v5.1 Rule 6)"
+  exit 1
+fi
+
+echo "=== READING ALL $ANALYSIS_COUNT ANALYSIS FILES BEFORE WRITING ARTICLE ==="
+# Emit bounded content (first 80 lines) for each file so the agent genuinely
+# consumes the material — not just a line-count gate.
+while read -r f; do
+  if [ -f "$f" ]; then
+    echo "--- BEGIN ANALYSIS FILE: $f (first 80 lines) ---"
+    sed -n '1,80p' "$f"
+    echo "--- END ANALYSIS FILE: $f ---"
+  fi
+done < "$ANALYSIS_LIST_FILE"
+
+# Checklist the agent MUST complete before emitting article HTML:
+#   ✅ synthesis-summary.md         — lead story decision + DIW weighting
+#   ✅ swot-analysis.md             — cluster strengths/weaknesses + TOWS interference
+#   ✅ risk-assessment.md           — top 5 ranked risks + posterior probabilities
+#   ✅ threat-analysis.md           — Attack Tree / Kill Chain / Diamond / MITRE-TTPs
+#   ✅ stakeholder-perspectives.md  — named actors + influence network + briefing cards
+#   ✅ significance-scoring.md      — weighted ranks + sensitivity analysis
+#   ✅ classification-results.md    — priority tiers + retention + access
+#   ✅ cross-reference-map.md       — prior-run forward chain + continuity contracts
+#   ✅ data-download-manifest.md    — provenance chain-of-custody
+#   ✅ Reference-grade extensions (if present): README, executive-brief,
+#      scenario-analysis, comparative-international, methodology-reflection
+#   ✅ documents/*.md               — per-document analyses (one per dok_id)
+```
+
+**Evidence of reading**: Each major article section (lede, What Is Happening, Why It Matters, Winners & Losers, Key Takeaways) MUST include **at minimum 3 concrete claims sourced from 3 distinct analysis files**. Those claims MUST be observable in the article output through explicit attribution in the section text, supporting reference list, or both, so a reviewer can trace each claim back to a specific analysis file or section. Articles that paraphrase only the synthesis-summary are REJECTED.
+
+**Reference-grade exemplar anchoring**: When the run produces reference-grade extensions (README, executive-brief, scenario-analysis, comparative-international, methodology-reflection), the article MUST additionally cite:
+- At least one concrete scenario probability from `scenario-analysis.md` (e.g., "Base case P=0.42")
+- At least one international comparator from `comparative-international.md`
+- The one-page BLUF from `executive-brief.md` in the lede or Key Takeaways
+
+---
+
 ## 🌐 Hack23 Ecosystem Context
 
 Riksdagsmonitor is part of the **Hack23** platform for democratic transparency and political intelligence. When generating articles and analysis, link to and reference these resources:
@@ -1043,6 +1135,223 @@ These patterns indicate script-generated or AI-lazy content and are ALWAYS rejec
 - ❌ Zero SWOT analysis or stakeholder perspectives (MANDATORY in every article)
 - ❌ Zero dok_id citations in the article body
 - ❌ Remaining `AI_MUST_REPLACE` markers (ALL must be replaced before commit)
+
+### 🔴 MANDATORY: Lead-Story & Coverage-Completeness Gate
+
+> **Doctrine (added 2026-04-18, realtime-1434 post-mortem)**: Even when all 9 analysis artifacts are produced, the article can still fail readers by (a) leading with the wrong story or (b) omitting a story that the weighted significance ranking places in the top 3. Both failure modes were observed in `analysis/daily/2026-04-17/realtime-1434`: the Ukraine Accountability Architecture propositions (HD03231 + HD03232) were scored high in `significance-scoring.md` but entirely absent from the initial English and Swedish articles. This gate prevents recurrence.
+
+**Democratic-Impact Weighting (DIW)** — required methodology in every `significance-scoring.md`:
+
+| Dimension | Weight | Description |
+|-----------|--------|-------------|
+| Democratic-Infrastructure Impact | **30%** | Does the item modify grundlag, electoral rules, press-freedom law, rule-of-law institutions? Reversal window measured in decades = highest weight. |
+| Parliamentary Significance | 15% | Scope of legislative action (grundlag > proposition > betänkande > motion > skriftlig fråga). |
+| Policy Impact | 15% | Substantive effect on citizens/economy/rights. |
+| Public Interest | 15% | Media attention, civic salience. |
+| Urgency / Time-Sensitivity | 15% | Decision horizon, irreversibility. |
+| Cross-Party / International Dimension | 10% | Consensus breadth + foreign-policy weight. |
+
+**Lead-Story Rule**: The article's `<title>`, `<meta description>`, and H1 MUST reference the #1 ranked finding in `significance-scoring.md`. The lede (first paragraph) MUST name the human actor (minister, committee chair, party leader) associated with that finding and cite the primary dok_id.
+
+**Coverage-Completeness Rule**: Every document with a DIW-weighted score ≥ 7.0 MUST receive a dedicated section (H3 or higher) in the article. If a high-ranked finding conflicts with narrative flow, it may be reframed or cross-linked — but NEVER silently omitted.
+
+**Gate script** (run after Article Quality Gate, before commit):
+
+```bash
+echo "=== 🏛️ Lead-Story & Coverage-Completeness Gate ==="
+#
+# AWF-COMPLIANT: uses hard-coded /tmp/...$$ temp files and `read -r` / redirection
+# instead of $(...) command substitution. Safe to execute via the `bash` tool.
+#
+LEAD_FAIL=0
+SIG_FILE="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/significance-scoring.md"
+HIGH_DOCS_FILE="/tmp/lead-gate-high-docs-$$.txt"
+LEAD_DOC_FILE="/tmp/lead-gate-lead-doc-$$.txt"
+TITLE_BLOCK_FILE="/tmp/lead-gate-title-block-$$.txt"
+trap 'rm -f "$HIGH_DOCS_FILE" "$LEAD_DOC_FILE" "$TITLE_BLOCK_FILE"' EXIT
+
+if [ ! -f "$SIG_FILE" ]; then
+  echo "🔴 FAIL: significance-scoring.md missing — cannot verify lead-story"
+  LEAD_FAIL=1
+else
+  # Extract all documents with **Weighted** score ≥ 7.0 from the scoring table.
+  #
+  # IMPORTANT: the last column is "Role" (non-numeric) and "Tier" (non-numeric
+  # with emoji) sits next to it, so we MUST detect the numeric "Weighted" column
+  # by header name rather than using $NF. We also skip markdown separator rows
+  # (|---|:---:|) and strip **emphasis**/`backticks` before numeric comparison.
+  awk -F'|' '
+    function trim(value) {
+      gsub(/^[[:space:]]+|[[:space:]]+$/, "", value)
+      return value
+    }
+    function normalize_header(value) {
+      value = trim(value)
+      gsub(/[*`_]/, "", value)
+      gsub(/[[:space:]]+/, "", value)
+      return tolower(value)
+    }
+    function normalize_score(value) {
+      value = trim(value)
+      gsub(/[*`_]/, "", value)
+      return trim(value)
+    }
+    /^\|/ {
+      # First pipe-row: detect the Weighted column index from the header.
+      if (!weighted_col) {
+        for (i = 1; i <= NF; i++) {
+          if (normalize_header($i) == "weighted") {
+            weighted_col = i
+            break
+          }
+        }
+        if (weighted_col) { next }
+      }
+
+      # Skip markdown separator rows such as |---|---|:---:|
+      separator_row = 1
+      for (i = 1; i <= NF; i++) {
+        cell = trim($i)
+        if (cell != "" && cell !~ /^:?-{3,}:?$/) {
+          separator_row = 0
+          break
+        }
+      }
+      if (separator_row) { next }
+
+      score_col = weighted_col ? weighted_col : NF - 1
+      score = normalize_score($(score_col))
+      if (score ~ /^[0-9]+([.][0-9]+)?$/ && score + 0 >= 7.0) {
+        row = $0
+        if (match(row, /HD[0-9A-Z]+/)) {
+          print substr(row, RSTART, RLENGTH)
+        }
+      }
+    }
+  ' "$SIG_FILE" | sort -u > "$HIGH_DOCS_FILE"
+
+  if [ ! -s "$HIGH_DOCS_FILE" ]; then
+    echo "ℹ️  No documents scored ≥ 7.0 — coverage-completeness check not triggered"
+  fi
+
+  # Derive LEAD_DOC: prefer a row explicitly marked "LEAD / #1 / top-ranked";
+  # otherwise fall back to the document with the highest **Weighted** score,
+  # NOT the first lexicographically sorted HD-id (prior version was unreliable).
+  awk -F'|' '
+    function trim(value) {
+      gsub(/^[[:space:]]+|[[:space:]]+$/, "", value)
+      return value
+    }
+    function normalize_header(value) {
+      value = trim(value)
+      gsub(/[*`_]/, "", value)
+      gsub(/[[:space:]]+/, "", value)
+      return tolower(value)
+    }
+    function normalize_score(value) {
+      value = trim(value)
+      gsub(/[*`_]/, "", value)
+      return trim(value)
+    }
+    BEGIN { best_score = -1; lead_score = -1 }
+    /^\|/ {
+      if (!weighted_col) {
+        for (i = 1; i <= NF; i++) {
+          if (normalize_header($i) == "weighted") {
+            weighted_col = i
+            break
+          }
+        }
+        if (weighted_col) { next }
+      }
+      row = $0
+      if (!match(row, /HD[0-9A-Z]+/)) { next }
+      doc = substr(row, RSTART, RLENGTH)
+      score_col = weighted_col ? weighted_col : NF - 1
+      score = normalize_score($(score_col))
+      has_numeric = (score ~ /^[0-9]+([.][0-9]+)?$/)
+      explicit_lead = (tolower(row) ~ /lead|#1|top.ranked/)
+
+      if (explicit_lead) {
+        if (has_numeric && score + 0 > lead_score) {
+          lead_score = score + 0
+          lead_doc = doc
+        } else if (lead_doc == "") {
+          lead_doc = doc
+        }
+      }
+      if (has_numeric && score + 0 > best_score) {
+        best_score = score + 0
+        best_doc = doc
+      }
+    }
+    END {
+      if (lead_doc != "") { print lead_doc }
+      else if (best_doc != "") { print best_doc }
+    }
+  ' "$SIG_FILE" > "$LEAD_DOC_FILE"
+  LEAD_DOC=""
+  [ -s "$LEAD_DOC_FILE" ] && read -r LEAD_DOC < "$LEAD_DOC_FILE"
+
+  for ARTICLE in news/$ARTICLE_DATE-*-en.html news/$ARTICLE_DATE-*-sv.html; do
+    [ ! -f "$ARTICLE" ] && continue
+    echo "--- Checking: $ARTICLE ---"
+
+    # Check 1: Lead story appears in title OR meta description OR H1
+    : > "$TITLE_BLOCK_FILE"
+    awk '/<title>/,/<\/title>/' "$ARTICLE"           >> "$TITLE_BLOCK_FILE"
+    awk '/<meta name="description"/' "$ARTICLE"       >> "$TITLE_BLOCK_FILE"
+    awk '/<h1>/,/<\/h1>/' "$ARTICLE"                  >> "$TITLE_BLOCK_FILE"
+    LEAD_REF=0
+    if [ -n "$LEAD_DOC" ] && grep -qi "$LEAD_DOC" "$TITLE_BLOCK_FILE"; then
+      LEAD_REF=1
+    fi
+    if [ "$LEAD_REF" -eq 0 ]; then
+      # Fallback: verify semantically (agent must inspect manually)
+      if [ -n "$LEAD_DOC" ]; then
+        echo "⚠️  Lead-story $LEAD_DOC not referenced in title/meta/H1 — verify semantically"
+      else
+        echo "⚠️  Lead-story <none> not referenced in title/meta/H1 — verify semantically"
+      fi
+    fi
+
+    # Check 2: Every document with score ≥ 7.0 must appear in article body
+    MISSING=""
+    while read -r HDOC; do
+      [ -z "$HDOC" ] && continue
+      if ! grep -q "$HDOC" "$ARTICLE"; then
+        MISSING="$MISSING $HDOC"
+      fi
+    done < "$HIGH_DOCS_FILE"
+    if [ -n "$MISSING" ]; then
+      echo "🔴 FAIL: High-ranked docs missing from $ARTICLE:$MISSING"
+      LEAD_FAIL=$((LEAD_FAIL + 1))
+    else
+      echo "✅ All high-ranked docs covered"
+    fi
+
+    # Check 3: Article names at least one human actor (minister/chair/leader)
+    if ! grep -qiE "Kristersson|Stenergard|Andersson|Strömmer|Busch|Liljestrand|Åkesson|Lööf|Nooshi|Daniel Riazat|committee chair|utskottsordförande|[A-Z][a-z]+ \([MKDLSCVMP]+\)" "$ARTICLE"; then
+      echo "⚠️ WARN: No named human actor detected in article body"
+    fi
+  done
+fi
+echo "=== Lead-Story Gate: $LEAD_FAIL failures ==="
+if [ "$LEAD_FAIL" -gt 0 ]; then
+  echo "❌ BLOCKING: article fails lead-story / coverage-completeness — rewrite before commit"
+fi
+```
+
+**Remediation protocol** when the gate fires:
+1. Re-read `significance-scoring.md` top-of-ranking entry. Note `dok_id`, proposed headline, and named actors.
+2. Rewrite `<title>`, `<meta description>`, OG/Twitter, Schema.org headline and H1 to reference the lead story.
+3. Rewrite the lede to name the principal human actor and cite the primary dok_id in the first two sentences.
+4. Add/restore dedicated H3 sections for any omitted ≥7.0 documents in significance order.
+5. Re-run all quality gates. Commit only when 0 failures.
+
+**Rhetorical-tension exception**: If two top-ranked findings carry opposing political valences (e.g., Sweden defending press freedom abroad via HD03231 while narrowing TF at home via KU33), the article MUST surface the tension explicitly — typically under a "Rhetorical Cross-Cluster Tension" or equivalent subsection. Silence on the tension is itself a coverage failure.
+
+---
 
 ### Article Quality Gate (Run Before Commit)
 
@@ -3483,23 +3792,54 @@ fi
 
 > 🚨 **AI agents: If `grep -q 'class="analysis-references"' article.html` returns false, INSERT this section before `</body>` or before `<footer`:**
 
+> **📘 Reference-grade files (v5.1)**: The baseline template below lists the **9 core files** present in every run. Runs that also produce reference-grade extension files — `README.md`, `executive-brief.md`, `scenario-analysis.md`, `comparative-international.md`, `methodology-reflection.md` — MUST include additional `<li>` entries for each, under a `🎯 Executive & Overview` / `🌍 Reference-Grade Extensions` subgroup. The `scripts/analysis-references.ts` script auto-discovers all `.md` files in the subfolder (and per-document files inside `documents/`) and emits them with localized labels, so running `npx tsx scripts/fix-analysis-references.ts --date "$ARTICLE_DATE" --rewrite` is the recommended path — it handles both core and reference-grade extensions automatically. See canonical example: `news/2026-04-17-breaking-1434-{en,sv}.html` linking all 18 files of `analysis/daily/2026-04-17/realtime-1434/`.
+
+> **📁 Per-document analyses**: When `documents/` subdirectory exists, the script now renders **each per-document `.md` file as an individual `<li>`** (not just a folder link). Manually-authored sections MUST follow the same pattern — list every per-document file explicitly.
+
 ```html
 <section class="analysis-references" aria-label="Analysis sources and methodology">
   <h2>📊 Analysis &amp; Sources</h2>
   <p>This article is based on AI-driven political intelligence analysis. Full methodology and analysis files:</p>
+
+  <!-- 🎯 Executive & Overview — reference-grade runs only (skip group if files absent) -->
+  <h3>🎯 Executive &amp; Overview</h3>
   <ul>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/README.md" rel="noopener noreferrer">🗂️ Dossier Index</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/executive-brief.md" rel="noopener noreferrer">🎯 Executive Brief</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/synthesis-summary.md" rel="noopener noreferrer">📋 Synthesis Summary</a></li>
+  </ul>
+
+  <h3>🧭 Core Analysis — Six Frameworks</h3>
+  <ul>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/swot-analysis.md" rel="noopener noreferrer">💪 SWOT Analysis</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/risk-assessment.md" rel="noopener noreferrer">⚠️ Risk Assessment</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/threat-analysis.md" rel="noopener noreferrer">🎭 Threat Analysis</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/stakeholder-perspectives.md" rel="noopener noreferrer">👥 Stakeholder Perspectives</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/significance-scoring.md" rel="noopener noreferrer">📈 Significance Scoring</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/classification-results.md" rel="noopener noreferrer">🏷️ Classification Results</a></li>
+  </ul>
+
+  <!-- 🌍 Reference-Grade Extensions — include only for files that exist -->
+  <h3>🌍 Reference-Grade Extensions</h3>
+  <ul>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/scenario-analysis.md" rel="noopener noreferrer">🎲 Scenario Analysis</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/comparative-international.md" rel="noopener noreferrer">🌍 International Comparison</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/cross-reference-map.md" rel="noopener noreferrer">🔗 Cross-Reference Map</a></li>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/methodology-reflection.md" rel="noopener noreferrer">🔬 Methodology Reflection</a></li>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/data-download-manifest.md" rel="noopener noreferrer">📥 Data Download Manifest</a></li>
+  </ul>
+
+  <!-- 📁 Per-Document Analyses — enumerate every .md inside documents/ -->
+  <h3>📁 Per-Document Analyses</h3>
+  <ul>
+    <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/documents/$DOC_ID-analysis.md" rel="noopener noreferrer">📄 $DOC_ID — &lt;short description&gt;</a></li>
+    <!-- repeat for every .md in documents/ -->
+  </ul>
+
+  <h3>🤖 Methodology</h3>
+  <ul>
     <li><a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/methodologies/ai-driven-analysis-guide.md" rel="noopener noreferrer">🤖 AI Analysis Methodology</a></li>
   </ul>
-  <p><em>Per-document analyses: <a href="https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/documents/" rel="noopener noreferrer">documents/</a></em></p>
 </section>
 ```
 

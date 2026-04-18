@@ -148,6 +148,71 @@ describe('analysis-references', () => {
       expect(result).not.toBeNull();
       expect(result!.hasDocumentsDir).toBe(false);
     });
+
+    it('enumerates per-document .md files inside documents/ in sorted order', () => {
+      const dir = join(testDir, '2026-04-10', 'propositions');
+      mkdirSync(join(dir, 'documents'), { recursive: true });
+      writeFileSync(join(dir, 'synthesis-summary.md'), '# Summary');
+      // Intentionally write in non-sorted order to confirm sort.
+      writeFileSync(join(dir, 'documents', 'hd03232-analysis.md'), '# Doc B');
+      writeFileSync(join(dir, 'documents', 'hd01ku33-analysis.md'), '# Doc A');
+      writeFileSync(join(dir, 'documents', 'README.md'), '# Index');
+      // Non-.md file must be excluded.
+      writeFileSync(join(dir, 'documents', 'notes.txt'), 'ignore me');
+
+      const result = scanAnalysisFiles({
+        date: '2026-04-10',
+        articleType: 'propositions',
+        lang: 'en',
+        analysisBasePath: testDir,
+      });
+
+      expect(result).not.toBeNull();
+      expect(result!.hasDocumentsDir).toBe(true);
+      expect(result!.documentFiles).toEqual([
+        'README.md',
+        'hd01ku33-analysis.md',
+        'hd03232-analysis.md',
+      ]);
+      expect(result!.documentFiles).not.toContain('notes.txt');
+    });
+
+    it('returns empty documentFiles when documents/ dir is empty', () => {
+      const dir = join(testDir, '2026-04-10', 'propositions');
+      mkdirSync(join(dir, 'documents'), { recursive: true });
+      writeFileSync(join(dir, 'synthesis-summary.md'), '# Summary');
+
+      const result = scanAnalysisFiles({
+        date: '2026-04-10',
+        articleType: 'propositions',
+        lang: 'en',
+        analysisBasePath: testDir,
+      });
+
+      expect(result).not.toBeNull();
+      expect(result!.hasDocumentsDir).toBe(true);
+      expect(result!.documentFiles).toEqual([]);
+    });
+
+    it('returns empty documentFiles when documents/ is not a directory', () => {
+      const dir = join(testDir, '2026-04-10', 'propositions');
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(join(dir, 'synthesis-summary.md'), '# Summary');
+      // documents is a *file*, not a directory — hasDocumentsDir must be false
+      // and documentFiles must remain empty.
+      writeFileSync(join(dir, 'documents'), 'not a directory');
+
+      const result = scanAnalysisFiles({
+        date: '2026-04-10',
+        articleType: 'propositions',
+        lang: 'en',
+        analysisBasePath: testDir,
+      });
+
+      expect(result).not.toBeNull();
+      expect(result!.hasDocumentsDir).toBe(false);
+      expect(result!.documentFiles).toEqual([]);
+    });
   });
 
   // ---------------------------------------------------------------------------
@@ -224,6 +289,62 @@ describe('analysis-references', () => {
 
       expect(html).toContain('Per-document analyses');
       expect(html).toContain('analysis/daily/2026-04-10/propositions/documents/');
+    });
+
+    it('renders an individual blob link for each per-document file (sorted)', () => {
+      const dir = join(testDir, '2026-04-10', 'propositions');
+      mkdirSync(join(dir, 'documents'), { recursive: true });
+      writeFileSync(join(dir, 'synthesis-summary.md'), '# Summary');
+      writeFileSync(join(dir, 'documents', 'hd03232-analysis.md'), '# Doc B');
+      writeFileSync(join(dir, 'documents', 'hd01ku33-analysis.md'), '# Doc A');
+
+      const html = generateAnalysisReferencesHtml({
+        date: '2026-04-10',
+        articleType: 'propositions',
+        lang: 'en',
+        analysisBasePath: testDir,
+      });
+
+      // Heading uses the 📁 folder icon for the per-document section
+      expect(html).toContain('📁 Per-document analyses');
+      // Each per-document file gets its own <li> with a 📄 icon and a blob link
+      expect(html).toContain(
+        '/analysis/daily/2026-04-10/propositions/documents/hd01ku33-analysis.md'
+      );
+      expect(html).toContain(
+        '/analysis/daily/2026-04-10/propositions/documents/hd03232-analysis.md'
+      );
+      expect(html).toContain('📄 hd01ku33 analysis');
+      expect(html).toContain('📄 hd03232 analysis');
+      // Sorted: hd01ku33 should appear before hd03232 in the rendered HTML
+      const idxA = html.indexOf('hd01ku33-analysis.md');
+      const idxB = html.indexOf('hd03232-analysis.md');
+      expect(idxA).toBeGreaterThan(-1);
+      expect(idxB).toBeGreaterThan(idxA);
+      // Folder fallback <p><em> block must NOT appear when individual files are listed
+      expect(html).not.toMatch(
+        /<p><em>Per-document analyses: <a href="[^"]*\/documents\/"/
+      );
+    });
+
+    it('falls back to documents/ folder link when per-document dir is empty', () => {
+      const dir = join(testDir, '2026-04-10', 'propositions');
+      mkdirSync(join(dir, 'documents'), { recursive: true });
+      writeFileSync(join(dir, 'synthesis-summary.md'), '# Summary');
+
+      const html = generateAnalysisReferencesHtml({
+        date: '2026-04-10',
+        articleType: 'propositions',
+        lang: 'en',
+        analysisBasePath: testDir,
+      });
+
+      // No individual blob links should be rendered (no <li>📄 entries)
+      expect(html).not.toContain('📄');
+      // Fallback <p><em> block links to the documents/ folder via the tree view
+      expect(html).toMatch(
+        /<p><em>Per-document analyses: <a href="[^"]+\/tree\/[^"]+\/analysis\/daily\/2026-04-10\/propositions\/documents\/"/
+      );
     });
 
     it('does not include per-document link when documents/ dir missing', () => {
