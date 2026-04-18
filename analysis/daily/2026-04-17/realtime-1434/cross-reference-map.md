@@ -151,4 +151,29 @@ timeline
 
 ---
 
+## 🔄 Prior-Run Forward-Chain Table
+
+Continuity with adjacent Riksdagsmonitor runs — so subsequent analysts can find antecedents and the causal chain:
+
+| This Run | Prior-Run Context | Next Expected Run Event |
+|----------|-------------------|------------------------|
+| **HD01KU33** (Apr 17) | Prop 2025/26:56 (gäng-agenda policy lineage, Q4 2025) | Kammarvote first reading May–Jun 2026 (separate run) |
+| HD01KU32 (Apr 17) | 2022 EU Accessibility Act transposition planning (Q2 2022) | Kammarvote first reading May–Jun 2026 (separate run) |
+| **HD03231** (Apr 16) | Ukraine core-working-group Feb 2022; Hague Convention Dec 16 2025 | Kammarvote late May / Jun 2026 |
+| HD03232 (Apr 16) | UNGA A/RES/ES-11/5 (Nov 2022); CoE Register of Damage (May 2023); Hague Convention Dec 16 2025 | Kammarvote late May / Jun 2026 |
+| HD01CU28 (Apr 17) | SOU 2023/24 on bostadsrätt register | Implementation: register setup Jan 1 2027 |
+| HD01CU27 (Apr 17) | Hyresgästföreningen loophole documentation (2015–24) | Entry into force Jul 1 2026 |
+
+### Continuity Contracts (How Future Runs Inherit from This One)
+
+| Commitment | Where | Inherited Claim |
+|-----------|-------|-----------------|
+| Lagrådet yttrance is primary upcoming signal | `risk-assessment.md` R2 Bayesian + `scenario-analysis.md` tree | Next run reporting Lagrådet should reference SYN-2026-04-17-1434 priors |
+| DIW weights KU33 ×1.40, HD03231 ×0.95 | `significance-scoring.md` + this run's reference status | Subsequent runs should apply same weights unless methodology-reflection updates published |
+| Coverage-completeness rule ≥ 7.0 weighted | Operational since this run; codified in SHARED_PROMPT_PATTERNS.md | All future runs inherit |
+| Russian hybrid-warfare posture elevated | `threat-analysis.md` T6 + `risk-assessment.md` R1 | Continuous — SÄPO bulletin monitoring |
+| Second-reading vote post-Sep-2026 election is decisive | `synthesis-summary.md` + scenario tree | 2026-09-14+ runs must update cross-party matrices |
+
+---
+
 **Classification**: Public · **Next Review**: 2026-04-24

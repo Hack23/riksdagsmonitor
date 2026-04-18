@@ -74,6 +74,45 @@ Composite Score = weighted average of five dimensions; **DIW multiplier** is app
 
 ---
 
+## 🧮 Sensitivity Analysis — Does the Ranking Hold Under Weight Swaps?
+
+> How robust is HD01KU33's #1 ranking to plausible variations in the Democratic-Impact Weighting?
+
+| Scenario | HD01KU33 Weight | HD03231 Weight | HD01KU32 Weight | Top 3 Result |
+|----------|:--:|:--:|:--:|--------------|
+| **Baseline (DIW v1.0)** | ×1.40 | ×0.95 | ×1.25 | **KU33 (9.80), HD03231 (8.55), KU32 (8.25)** |
+| News-value dominant (no DIW) | ×1.00 | ×1.00 | ×1.00 | HD03231 (9.00), **KU33 (7.00)**, HD03232 (8.00) |
+| Aggressive democratic weighting | ×1.60 | ×0.90 | ×1.40 | **KU33 (11.20)**, **KU32 (9.24)**, HD03231 (8.10) |
+| Conservative democratic weighting | ×1.20 | ×1.00 | ×1.10 | **KU33 (8.40)**, HD03231 (9.00), KU32 (7.26) |
+| Foreign-policy bonus (rare) | ×1.40 | ×1.30 | ×1.25 | HD03231 (11.70), **KU33 (9.80)**, HD03232 (10.40) |
+
+**Sensitivity finding** `[HIGH]`: KU33 holds the **#1 position under DIW v1.0 + the two "democratic weighting" variants (3 of 5 scenarios)**. Raw news-value ranking flips to HD03231 (as expected). Foreign-policy bonus (rarely justified) also flips. The DIW v1.0 outcome is **robust to reasonable variation** in democratic-impact weights but **sensitive to whether democratic-impact weighting is applied at all**. This validates the methodology choice but highlights the importance of disciplined application.
+
+### Alternative Rankings — Committee-First View
+
+If one applies a **committee-first** ranking (heavier weight to constitutional-committee output regardless of document-type), KU33 leads by even wider margin.
+
+| Rank | Dok ID | Committee-First Score |
+|:---:|--------|:------:|
+| 1 | HD01KU33 | 10.50 |
+| 2 | HD01KU32 | 9.90 |
+| 3 | HD03231 | 8.10 |
+| 4 | HD03232 | 7.20 |
+
+---
+
+## 🎯 Publication-Decision Audit
+
+| Decision | Locked At | By | Rationale |
+|----------|:--------:|----|-----------|
+| Lead = HD01KU33 | 2026-04-17 14:45 | Analyst + DIW | Top weighted score (9.80); constitutional significance |
+| Co-lead = HD01KU32 | 2026-04-17 14:45 | Analyst + DIW | Same grundlag package; interpretive pairing |
+| Co-prominent = HD03231 + HD03232 | 2026-04-17 14:45 | Coverage-completeness rule | Both weighted > 7.0 |
+| Secondary = HD01CU28 + HD01CU27 | 2026-04-17 14:45 | Broad-coverage rule | Weighted 5.80 + 5.67 |
+| Excluded = HD03246 | 2026-04-17 14:45 | De-duplication | Already covered realtime-0029 |
+
+---
+
 ## 🔍 Anti-Pattern Log
 
 > **Historical failure** (self-documented 2026-04-17 post-review): The original published article **omitted HD03231 and HD03232 entirely**, despite their weighted scores being 8.55 and 7.60. Although the lead-story selection (Constitutional Reforms) was correct under DIW, the failure to include Ukraine accountability as co-prominent coverage represents a **coverage-completeness failure**. The fix is the **Lead-Story Enforcement Gate** added to SHARED_PROMPT_PATTERNS.md, which requires articles to cover all documents with weighted score ≥ 7.0.

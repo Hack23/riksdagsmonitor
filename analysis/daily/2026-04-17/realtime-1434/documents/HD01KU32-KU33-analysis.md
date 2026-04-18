@@ -150,4 +150,50 @@ The **single most important question** in KU33 is how Swedish legal institutions
 
 ---
 
+## 9. International Comparison — Digital-Evidence Transparency Regimes
+
+| Country | Regime | RSF 2025 | Parallel to KU33? |
+|---------|--------|:--:|------------------|
+| 🇳🇴 Norway | Offentleglova §24 — exempt during investigation, auto-disclosable post-closure | **1** | **Equivalent** |
+| 🇩🇰 Denmark | Offentlighedsloven §30 — exempt during investigation | **3** | **Equivalent** |
+| 🇸🇪 Sweden (pre-KU33) | TF 1766 + offentlighetsprincipen — allmän handling from seizure | **4** | Baseline |
+| 🇳🇱 Netherlands | Woo — strong investigation exemptions | **4** | **Equivalent** |
+| 🇫🇮 Finland | Openness Act §24(1) — exempt until investigation concluded | **5** | **Equivalent** |
+| 🇮🇪 Ireland | FOI Act §§31, 32 — investigation exemptions | **7** | **Equivalent** |
+| 🇩🇪 Germany | IFG + §4 investigation exception | 10 | More restrictive |
+| 🇫🇷 France | *Secret de l'instruction* — strict confidentiality (criminally enforceable) | 21 | More restrictive |
+| 🇬🇧 UK | PACE 1984 + Contempt of Court Act — strict confidentiality | 23 | More restrictive |
+| 🇺🇸 US | FOIA (b)(7)(A) investigation exemption | 45 | More restrictive + weaker press freedom |
+
+> **Interpretive insight** `[HIGH]`: The Nordic democracies that rank **higher** than Sweden on press freedom (Norway #1, Denmark #3, Finland #5) all operate **equivalent regimes** to what KU33 proposes. This evidence refutes the strongest "KU33 = press-freedom regression" framing. However, the **statutory clarity** of their triggers (Norway: post-closure; Finland: investigation concluded) exceeds "formellt tillförd bevisning" — the interpretive weakness is Sweden-specific. The comparative recommendation is that Lagrådet or a second-reading amendment should **benchmark against Norway's post-closure trigger** or Finland's "investigation concluded" trigger for clearer statutory anchoring.
+
+(Full comparative analysis: [`../comparative-international.md`](../comparative-international.md) §Section 1)
+
+---
+
+## 10. Lagrådet-Scenario Branching Tree
+
+```mermaid
+flowchart TD
+    LP["🟡 Lagrådet pending Q2 2026"]
+    LP --> LS{"Yttrance content"}
+    LS -->|"Strict / prescriptive<br/>P=0.35<br/>references Nordic triggers"| ST["🟢 Strict scoping<br/>R2 ↓4"]
+    LS -->|"Intermediate<br/>P=0.45<br/>benign silent-adjacent"| IN["🟡 Intermediate"]
+    LS -->|"Silent / loose<br/>P=0.20<br/>punts interpretation"| SL["🔴 Silent scoping<br/>R2 ↑4"]
+
+    ST --> PATHA["📜 Narrow Reform<br/>Base scenario<br/>Press-freedom-index stable"]
+    IN --> PATHB["📜 Mixed outcome<br/>5-yr drift risk"]
+    SL --> PATHC["📜 Chilling-risk path<br/>Wildcard-1 scenario"]
+
+    style LP fill:#ffc107,color:#000
+    style ST fill:#28a745,color:#fff
+    style IN fill:#ffc107,color:#000
+    style SL fill:#dc3545,color:#fff
+    style PATHA fill:#28a745,color:#fff
+    style PATHB fill:#fd7e14,color:#fff
+    style PATHC fill:#dc3545,color:#fff
+```
+
+---
+
 **Classification**: Public · **Analysis Level**: L3 (Intelligence) · **Next Review**: 2026-04-24

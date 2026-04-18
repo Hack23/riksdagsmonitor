@@ -144,4 +144,104 @@ xychart-beta
 
 ---
 
+## 🧮 Bayesian Prior / Posterior Illustration — Risk R2 (KU33 Narrow Interpretation)
+
+| Step | State | Likelihood Source | Score |
+|------|-------|-------------------|:-----:|
+| **Prior (today, 2026-04-17)** | Lagrådet pending; interpretation underspecified | Analyst base rate from 2008 FRA-lagen + 2010 TF amendment history | **12 / 25 (HIGH)** |
+| Update 1 — Lagrådet strict yttrande | Posterior after strict scoping | P(narrow \| strict) ≈ 0.25 | **8 / 25 (MED)** |
+| Update 2 — S-leader pro-KU33 speech | Posterior after centrist-left endorsement | P(narrow \| endorsement) ≈ 0.20 | **5 / 25 (LOW)** |
+| Update 1' — Lagrådet silent | Posterior after silent Lagrådet | P(narrow \| silent) ≈ 0.55 | **16 / 25 (CRIT)** |
+| Update 2' — V/MP gain > +2pp in polling | Posterior after left-bloc electoral surge | P(narrow \| surge) ≈ 0.40 + KU33 fails 2nd reading | **10 / 25 MED but R5 ↑ 16/25 CRIT** |
+
+> **Interpretation** `[HIGH]`: Risk R2 is **most sensitive to Lagrådet yttrance content**. The expected posterior after strict yttrance drops R2 by 4 points; silent yttrance raises R2 by 4 points. This makes the Lagrådet yttrance the single most consequential upcoming monitoring indicator — it can move a risk by ± 33% of its scale in a single trigger.
+
+---
+
+## 🕸️ Risk Interconnection Graph
+
+```mermaid
+graph LR
+    R1["R1 Russian hybrid<br/>16/25"]
+    R2["R2 KU33 narrow interp<br/>12/25"]
+    R3["R3 US non-coop tribunal<br/>12/25"]
+    R4["R4 Reparations timeline<br/>8/25"]
+    R5["R5 KU33 campaign weaponise<br/>12/25"]
+    R6["R6 Reparations fatigue<br/>6/25"]
+    R7["R7 RSF-index downgrade<br/>9/25"]
+    R8["R8 Russian asset retaliation<br/>8/25"]
+    R9["R9 Register cyber-incident<br/>6/25"]
+    R10["R10 SD Ukraine realignment<br/>3/25"]
+    R11["R11 Reg IT delivery delay<br/>12/25"]
+
+    R1 -.amplifies.-> R8
+    R1 -.amplifies.-> R9
+    R1 -.amplifies.-> R5
+    R2 -.amplifies.-> R5
+    R2 -.amplifies.-> R7
+    R3 -.amplifies.-> R4
+    R4 -.amplifies.-> R6
+    R5 -.amplifies.-> R7
+    R11 -.amplifies.-> R9
+
+    style R1 fill:#dc3545,color:#fff
+    style R2 fill:#fd7e14,color:#fff
+    style R3 fill:#fd7e14,color:#fff
+    style R5 fill:#fd7e14,color:#fff
+    style R11 fill:#fd7e14,color:#fff
+    style R7 fill:#ffc107,color:#000
+    style R4 fill:#ffc107,color:#000
+    style R8 fill:#ffc107,color:#000
+    style R9 fill:#ffc107,color:#000
+    style R6 fill:#28a745,color:#fff
+    style R10 fill:#28a745,color:#fff
+```
+
+**Compound-risk findings** `[HIGH]`:
+- **R1 is the super-spreader**: a major Russian hybrid event amplifies R5, R8, R9 simultaneously (three-way cascade)
+- **R2 is the interpretive pivot**: R2 drives both R5 (campaign) and R7 (RSF-index) — strict Lagrådet scoping breaks the cascade
+- **R3 and R4 co-vary**: US tribunal non-cooperation directly extends the compensation-commission timeline
+
+---
+
+## 🪜 ALARP Ladder (As Low As Reasonably Practicable)
+
+| Risk Tier | Score Band | ALARP Status | Action Requirement |
+|-----------|:----------:|:-----------:|--------------------|
+| **Critical (red)** | 16–25 | ❌ UNACCEPTABLE without treatment | Immediate mitigation plan; executive review; published watch-list |
+| **High (orange)** | 12–15 | ⚠️ ALARP — treatment required | Documented mitigation; Bayesian update cadence defined |
+| **Medium (yellow)** | 7–11 | 🟡 ALARP — monitor | Owner assigned; quarterly review |
+| **Low (green)** | 1–6 | ✅ Accept | Monitor through standard bulletins |
+
+### Applied to this run
+
+| Risk | Score | Tier | Treatment Status |
+|------|:----:|:----:|-----------------|
+| R1 Russian hybrid | 16 | 🔴 Critical | SÄPO / MSB active posture; partnership with Nordic/Baltic services; ALARP reached with active mitigation |
+| R2 KU33 narrow interpretation | 12 | 🟠 High | Lagrådet engagement; press-freedom NGO remissvar; strict-interpretation legislative-record lobbying |
+| R3 US non-cooperation tribunal | 12 | 🟠 High | EU coalition-building; UK + Nordic engagement; diplomatic insurance |
+| R5 KU33 campaign weaponisation | 12 | 🟠 High | Government narrative discipline; Nordic-comparison framing preparation |
+| R11 Register IT delivery delay | 12 | 🟠 High | Lantmäteriet procurement oversight; Riksrevisionen audit scheduling |
+| R7 RSF-index downgrade | 9 | 🟡 Medium | Monitor; early-indicator reporting |
+| R4 Reparations timeline slip | 8 | 🟡 Medium | Institutional-continuity investment |
+| R8 Russian asset retaliation | 8 | 🟡 Medium | Swedish business continuity planning |
+| R9 Register cyber-incident | 6 | 🟢 Low | MSB baseline controls |
+| R6 Reparations fatigue | 6 | 🟢 Low | Standard political messaging |
+| R10 SD Ukraine realignment | 3 | 🟢 Low | Standard political monitoring |
+
+---
+
+## 🚀 Risk Velocity (Rate of Change)
+
+| Risk | Current Trajectory | Expected Velocity (next 90 days) | Trigger |
+|------|:-----:|:-----:|---------|
+| R1 Russian hybrid | ↗ Rising | +1–3 | HD03231 + HD03232 public profile raising |
+| R2 KU33 narrow interp | Stable | Pivotal ± 4 | Lagrådet yttrance |
+| R3 US non-coop | Uncertain | ± 2 | US domestic political cycle |
+| R5 KU33 campaign | Stable | ↗ +1–3 as Sep 2026 approaches | Campaign calendar |
+| R7 RSF-index | Stable | Stable | Announcement cycle (Apr 2027) |
+| R11 Register IT | Stable | Pivotal ± 3 | Q3 2026 procurement milestone |
+
+---
+
 **Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `analysis/methodologies/political-risk-methodology.md`

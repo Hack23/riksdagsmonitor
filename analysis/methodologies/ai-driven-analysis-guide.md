@@ -11,14 +11,16 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-5.0-555?style=for-the-badge" alt="Version"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--06--01-success?style=for-the-badge" alt="Effective Date"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-5.1-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Effective-2026--04--18-success?style=for-the-badge" alt="Effective Date"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
-**📋 Document Owner:** CEO | **📄 Version:** 5.0 | **📅 Last Updated:** 2026-06-01 (UTC)  
+**📋 Document Owner:** CEO | **📄 Version:** 5.1 | **📅 Last Updated:** 2026-04-18 (UTC)  
 **🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-01  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
+
+> **v5.1 changes (2026-04-18)**: Added Rules 6 (Reference-Grade Depth Tiers L1/L2/L2+/L3), 7 (Reference-Exemplar Self-Audit), 8 (International Comparative Benchmarking). Canonical reference exemplar: `analysis/daily/2026-04-17/realtime-1434/` (16 files, all tradecraft dimensions).
 
 ---
 
@@ -167,6 +169,64 @@ Every analysis file MUST demonstrate:
 **Rhetorical-Tension Rule**: When the top-ranked findings carry opposing political valences, the article MUST surface the tension in a dedicated subsection. Silence on the tension is itself a coverage failure.
 
 **Enforcement**: `SHARED_PROMPT_PATTERNS.md` → "Lead-Story & Coverage-Completeness Gate" is a blocking check. Articles failing the gate cannot be committed.
+
+---
+
+### Rule 6: Reference-Grade Depth Tiers (L1 / L2 / L2+ / L3)
+
+> **Doctrine added 2026-04-18 after realtime-1434 reference-grade upgrade.** Every per-document analysis file has a *depth tier* that MUST match the document's classification priority. Failure to meet the depth floor is a rejected output.
+
+| Tier | Content Floor (Minimum Required Elements) | Applies to |
+|:---:|-------------------------------------------|-----------|
+| **L1** | Identity table · 2-paragraph significance · short SWOT table · 3-5 stakeholder rows · evidence table · cross-references | P3 (routine) |
+| **L2** | L1 + color-coded SWOT Mermaid · named-actor stakeholder table (≥ 10 actors) · indicator library with triggers/owners/dates · implementation-risk table | P2 (sector) |
+| **L2+** | L2 + TOWS interference highlights · 6-lens analysis grid · 20+ named actors · forward scenarios with priors · precedent/international benchmark · STRIDE or Kill Chain adaptation | P1 (critical) |
+| **L3** | L2+ + interpretive-frontier analysis · Lagrådet-scenario tree · international-comparison table (≥ 6 jurisdictions) · coalition cross-party matrix · full indicator library (≥ 8) · Red-Team critique | P0 (constitutional) |
+
+**Canonical exemplar**: `analysis/daily/2026-04-17/realtime-1434/documents/HD01KU32-KU33-analysis.md` (L3) · `HD03231-analysis.md` (L2+) · `HD01CU27-CU28-analysis.md` (L2).
+
+---
+
+### Rule 7: Reference-Exemplar Self-Audit
+
+> **Doctrine added 2026-04-18.** Runs designated as reference exemplars by the CEO MUST produce the full reference-grade file set. Runs not so designated MAY produce the subset appropriate to their classification tier.
+
+| File | Required When |
+|------|---------------|
+| `README.md` (folder index) | Always |
+| `executive-brief.md` | Always |
+| `synthesis-summary.md` | Always |
+| `significance-scoring.md` | Always |
+| `classification-results.md` | Always |
+| `swot-analysis.md` | Any P0/P1 document present |
+| `risk-assessment.md` | Always |
+| `threat-analysis.md` | Any external-threat dimension present |
+| `stakeholder-perspectives.md` | Always |
+| `cross-reference-map.md` | Always |
+| `data-download-manifest.md` | Always |
+| `scenario-analysis.md` | Any P0 or multi-path uncertainty present |
+| **`comparative-international.md`** | **Any P0/P1 document present** |
+| **`methodology-reflection.md`** | **Reference-exemplar runs only** |
+
+**Canonical reference-exemplar file set**: realtime-1434 has **16 files** (6 reference-grade + 4 per-document + 6 core analysis).
+
+---
+
+### Rule 8: International Comparative Benchmarking
+
+> **Doctrine added 2026-04-18.** P0/P1 documents concerning constitutional change, foreign policy, or major institutional reform MUST situate the Swedish reform in international context. Sweden does not legislate in isolation — reforms are assessed against the practice of comparable democracies.
+
+**Minimum comparators per domain**:
+
+| Domain | Minimum Jurisdictions | Example Indices |
+|--------|:----:|-----------------|
+| Press freedom / transparency law | 6 (Nordic 5 + 1 major non-Nordic) | RSF, Freedom House, V-Dem |
+| Foreign-policy / tribunals | 6 (incl. historical precedents) | Nuremberg, SCSL, STL, ICC, ICJ, UNCC |
+| Economic / fiscal reform | 5 (EU peers) | Eurostat, OECD |
+| Security / cyber / intelligence | 5 (NATO + Nordic + EU) | SÄPO comparators |
+| Justice / criminal law | 6 (EU + Anglosphere) | Venice Commission, CoE |
+
+**Canonical exemplar**: `analysis/daily/2026-04-17/realtime-1434/comparative-international.md` — 12 jurisdictions across press-freedom, tribunal-precedent, compensation-commission, EAA-implementation, and response-pattern dimensions.
 
 ---
 

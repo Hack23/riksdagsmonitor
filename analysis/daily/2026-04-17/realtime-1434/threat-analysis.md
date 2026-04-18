@@ -130,4 +130,107 @@ quadrantChart
 
 ---
 
+## 🎯 Cyber-Kill-Chain Adaptation — Hybrid-Warfare Scenario (T6)
+
+> Adapting the Lockheed Martin Cyber Kill Chain (Hutchins et al. 2011) to Russian hybrid-warfare targeting of Sweden after HD03231 founding-member status.
+
+```mermaid
+flowchart LR
+    RE["1. Reconnaissance<br/>OSINT on SE critical<br/>infrastructure + officials"]
+    WE["2. Weaponisation<br/>Cyber tools + disinfo<br/>narratives prepared"]
+    DE["3. Delivery<br/>Phishing, cable ops,<br/>disinfo seeding"]
+    EX["4. Exploitation<br/>Access gained;<br/>narratives take hold"]
+    IN["5. Installation<br/>Persistence; influence<br/>network solidifies"]
+    CC["6. C2<br/>Command infrastructure<br/>active"]
+    AC["7. Actions on<br/>Objectives<br/>Disruption, coercion,<br/>narrative amplification"]
+
+    RE --> WE --> DE --> EX --> IN --> CC --> AC
+
+    style RE fill:#0d6efd,color:#fff
+    style WE fill:#6f42c1,color:#fff
+    style DE fill:#fd7e14,color:#fff
+    style EX fill:#dc3545,color:#fff
+    style IN fill:#dc3545,color:#fff
+    style CC fill:#dc3545,color:#fff
+    style AC fill:#dc3545,color:#fff
+```
+
+### Kill-Chain Specific Indicators (for SÄPO / MSB)
+
+| Stage | Observable | Sensor | Detection Confidence |
+|-------|------------|--------|:-------------------:|
+| 1. Reconnaissance | OSINT scraping of Riksdag / UD / SÄPO personnel; social-engineering LinkedIn contacts | MSB CERT; SÄPO | HIGH |
+| 2. Weaponisation | Fake-document kit prepared; deepfake/audio tooling activity | Signals intel | MEDIUM |
+| 3. Delivery | Spear-phishing against key officials; subsea-cable anomalies; suspicious vessel tracking; bot-network seeding | MSB, Kustbevakningen, MUST | HIGH |
+| 4. Exploitation | Account compromise; narrative traction (Twitter/X, TikTok) | Internal IR teams; civil-society monitors | MEDIUM |
+| 5. Installation | Persistent access (implants, dormant accounts); long-term troll-network warm-up | SÄPO, FRA | LOW-MEDIUM |
+| 6. C2 | Beaconing patterns; coordinated amplification campaigns | FRA, Graphika / civil-society | MEDIUM |
+| 7. Actions | DoS on Swedish infrastructure; public-opinion shift; specific policy reversal attempts | Broad sensor set | HIGH |
+
+**Defence posture** `[HIGH]`: The defensive goal is interception **before stage 5** (Installation). Post-Installation displacement costs are an order of magnitude higher than pre-Installation prevention.
+
+---
+
+## 🔺 Diamond Model — Adversary Profile (T6 Russian Hybrid)
+
+```mermaid
+graph TD
+    subgraph Diamond["Diamond Model — Russian Hybrid-Warfare Threat Actor"]
+        ADV["🎭 ADVERSARY<br/>GRU Unit 26165 (APT28)<br/>GRU Unit 74455 (Sandworm)<br/>FSB Centre 18<br/>PMC Wagner-descendent influence ops<br/>Internet Research Agency successor entities"]
+        CAP["⚙️ CAPABILITY<br/>Advanced cyber tooling<br/>Disinfo infrastructure<br/>Cable / undersea ops<br/>Migration instrumentalisation<br/>Cryptocurrency financing"]
+        INF["🌐 INFRASTRUCTURE<br/>Bulletproof hosting<br/>Social-media fake accounts<br/>Baltic Sea vessels<br/>Diplomatic facilities<br/>Proxy states (BY, CN-adjacent)"]
+        VIC["🎯 VICTIM<br/>Swedish officials (FM, PM, UD, SÄPO)<br/>Riksdag infrastructure<br/>Critical infrastructure (cables, grid, ports)<br/>Swedish public via information environment<br/>Nordic allies (FI, EE, LT, LV, NO, DK)"]
+    end
+    ADV <-->|deploys| CAP
+    CAP <-->|via| INF
+    INF -->|targets| VIC
+    ADV -->|directs at| VIC
+
+    style ADV fill:#dc3545,color:#fff
+    style CAP fill:#fd7e14,color:#fff
+    style INF fill:#6f42c1,color:#fff
+    style VIC fill:#0d6efd,color:#fff
+```
+
+**Confidence**: HIGH — mapping consistent with SÄPO annual assessments (2023–25) and FOI / Nordic-Baltic intelligence-sharing findings.
+
+---
+
+## 🧰 MITRE-Style TTP Library (Hybrid-Warfare Observables)
+
+| TTP Code | Tactic | Technique | Observable in Sweden (2023–25 baseline) |
+|----------|--------|-----------|------------------------------------------|
+| TA-01 | Reconnaissance | Target-list harvesting (LinkedIn, registries) | Observed — officials, journalists, military |
+| TA-02 | Resource Development | Shell-company acquisitions | Documented (Fastighetsmäklarinspektionen cases) |
+| TA-03 | Initial Access | Spear-phishing | Consistently observed; 2024 SÄPO report |
+| TA-04 | Persistence | Dormant accounts, long-cycle troll operators | Graphika / EUvsDisinfo documentation |
+| TA-05 | Defense Evasion | Proxy-state laundering of attribution | Standard tradecraft |
+| TA-06 | Credential Access | Password spraying, credential stuffing | Routine observation |
+| TA-07 | Discovery | Internal lateral mapping post-compromise | Routine in compromised-account investigations |
+| TA-08 | Lateral Movement | Email-chain compromise | Observed |
+| TA-09 | Collection | Document exfiltration | Observed |
+| TA-10 | C2 | Telegram channels, alternative platforms | Observed |
+| TA-11 | Exfiltration | Dead drops via cloud services | Observed |
+| **TA-12** | **Impact — Narrative** | **Coordinated disinformation campaigns** | **Observed and escalating 2022→2026** |
+| **TA-13** | **Impact — Physical** | **Cable-cutting, GPS spoofing, migration instrumentalisation** | **Elevated 2023–24** |
+| TA-14 | Impact — Legal | SLAPP / GDPR-abuse litigation | Observed in Nordic context |
+
+**Cross-reference** `[HIGH]`: Compare with [`comparative-international.md`](comparative-international.md) §Diplomatic Response Patterns — Estonia (2022–), Finland (2023–), Netherlands (sustained). Sweden's expected pattern interpolates between Finland and Netherlands severity.
+
+---
+
+## 🛡️ Defensive Recommendations (Prioritised)
+
+| # | Recommendation | Owner | Horizon |
+|---|---------------|-------|:-------:|
+| D1 | **Heighten SÄPO / MSB posture pre-election** through Sep 2026 | SÄPO, MSB | Continuous |
+| D2 | **Engage Lagrådet** on KU33 interpretation scoping (mitigates T1, T2, T4, T10) | Press-freedom NGOs, legal academia | Q2 2026 |
+| D3 | **Prepare RSF / FH / V-Dem engagement plan** for post-amendment index defence | UD Press Office, PK | H2 2026 |
+| D4 | Baltic-Nordic intelligence-sharing on cable + hybrid ops | FRA, MUST, partner services | Continuous |
+| D5 | Civil-society disinfo-resilience investment | MSB, civic organisations | Continuous |
+| D6 | KU33 statutory clarity amendment during second reading (if path opens) | S, M, KD, L MPs | H2 2026 |
+| D7 | Counter-narrative prep on "press freedom abroad vs at home" rhetorical tension | UD, press-freedom NGOs | Q2–Q3 2026 |
+
+---
+
 **Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `analysis/methodologies/political-threat-framework.md`

@@ -175,4 +175,178 @@
 
 ---
 
+## 🕸️ Influence-Network Map
+
+```mermaid
+graph TD
+    subgraph Gov["Government Triangle"]
+        PM["👤 Kristersson PM (M)"]
+        FM["👤 Stenergard FM (M)"]
+        JM["👤 Strömmer Justice (M)"]
+        FiM["👤 Svantesson Finance (M)"]
+        CA["👤 Slottner Civ-Aff (KD)"]
+    end
+    subgraph Coal["Coalition Partners"]
+        KD["👥 Busch (KD leader)"]
+        L["👥 Pehrson (L leader)"]
+        SD["👥 Åkesson (SD leader)"]
+    end
+    subgraph Opp["Opposition"]
+        S["👥 Andersson (S)"]
+        V["👥 Dadgostar (V)"]
+        MP["👥 Helldén (MP)"]
+        C["👥 Demirok (C)"]
+    end
+    subgraph Civ["Civil Society"]
+        TU["🏛️ TU"]
+        SJF["🏛️ SJF"]
+        Utg["🏛️ Utgivarna"]
+        Amn["🏛️ Amnesty SE"]
+    end
+    subgraph Intl["International"]
+        Zel["🇺🇦 Zelensky"]
+        CoE["🇪🇺 Council of Europe"]
+        UN["🌐 UN"]
+        EU["🇪🇺 EU"]
+        Nato["🎖️ NATO"]
+        Ru["🇷🇺 Russia (hostile)"]
+    end
+    subgraph Sec["Security Services"]
+        Sa["🛡️ SÄPO"]
+        Ms["🛡️ MSB"]
+        Mu["🛡️ MUST/FRA"]
+    end
+
+    PM --> FM
+    PM --> JM
+    PM --> FiM
+    PM --> CA
+    PM --> KD
+    PM --> L
+    PM -.parliamentary support.- SD
+    FM --> Zel
+    FM --> CoE
+    FM --> UN
+    FM --> EU
+    FM --> Nato
+    JM --> Sa
+    JM --> Ms
+    Opp -.legislative scrutiny.- PM
+    Civ -.advocacy / remiss.- JM
+    Civ -.advocacy / remiss.- PM
+    Ru -.hostile.- FM
+    Ru -.hostile.- Sa
+    Sa -.defensive.- Ru
+    Ms -.resilience.- Civ
+
+    style PM fill:#0d6efd,color:#fff
+    style FM fill:#0d6efd,color:#fff
+    style JM fill:#0d6efd,color:#fff
+    style FiM fill:#0d6efd,color:#fff
+    style CA fill:#0d6efd,color:#fff
+    style KD fill:#6f42c1,color:#fff
+    style L fill:#6f42c1,color:#fff
+    style SD fill:#6f42c1,color:#fff
+    style S fill:#dc3545,color:#fff
+    style V fill:#dc3545,color:#fff
+    style MP fill:#dc3545,color:#fff
+    style C fill:#dc3545,color:#fff
+    style Zel fill:#28a745,color:#fff
+    style CoE fill:#28a745,color:#fff
+    style UN fill:#28a745,color:#fff
+    style EU fill:#28a745,color:#fff
+    style Nato fill:#28a745,color:#fff
+    style Ru fill:#000,color:#dc3545
+    style Sa fill:#fd7e14,color:#fff
+    style Ms fill:#fd7e14,color:#fff
+    style Mu fill:#fd7e14,color:#fff
+```
+
+---
+
+## 🌲 Coalition-Fracture Probability Tree (KU33 Second Reading)
+
+```mermaid
+flowchart TD
+    T["🟡 Post-Sep 2026 Election"]
+    T --> COMP{"Riksdag<br/>composition"}
+    COMP -->|"M-KD-L+SD retained<br/>P=0.50"| RIGHT
+    COMP -->|"S-led minority<br/>P=0.35"| MID
+    COMP -->|"S-V-MP majority<br/>P=0.15"| LEFT
+
+    RIGHT -->|"S leader endorses KU33<br/>P=0.65"| PASS1["🟢 PASS<br/>broad majority"]
+    RIGHT -->|"S neutral P=0.25"| PASS2["🟢 PASS<br/>government+SD"]
+    RIGHT -->|"S opposes P=0.10"| PASS3["🟠 PASS close<br/>government+SD alone"]
+
+    MID -->|"S leader endorses P=0.50"| PASS4["🟢 PASS with S+M+KD+L"]
+    MID -->|"S negotiates amendment P=0.30"| REVISE["🔵 PASS revised<br/>(Bull-Lite)"]
+    MID -->|"S opposes P=0.20"| FAIL1["🔴 FAIL"]
+
+    LEFT -->|"V/MP block P=0.85"| FAIL2["🔴 FAIL"]
+    LEFT -->|"S triangulates P=0.15"| REVISE2["🟠 Revise + pass"]
+
+    style T fill:#ffc107,color:#000
+    style PASS1 fill:#28a745,color:#fff
+    style PASS2 fill:#28a745,color:#fff
+    style PASS3 fill:#fd7e14,color:#fff
+    style PASS4 fill:#28a745,color:#fff
+    style REVISE fill:#0d6efd,color:#fff
+    style REVISE2 fill:#fd7e14,color:#fff
+    style FAIL1 fill:#dc3545,color:#fff
+    style FAIL2 fill:#dc3545,color:#fff
+```
+
+**Rolled-up probabilities** `[HIGH]`:
+- **P(KU33 passes 2nd reading in any form)** ≈ 0.50 × (0.65+0.25+0.10 × 0.7 pass) + 0.35 × (0.50+0.30 + 0.20 × 0) + 0.15 × 0.15 ≈ **0.68**
+- **P(KU33 fails 2nd reading)** ≈ **0.15**
+- **P(revised / stricter language path)** ≈ **0.15**
+
+---
+
+## 🎙️ Named-Actor Briefing Cards
+
+### Card 1 — Magdalena Andersson (S, former PM, current party leader)
+- **Position (projected)**: Pragmatic — likely supports constitutional-integrity framing of KU33 if Lagrådet scopes strictly
+- **Leverage**: Decisive for second-reading coalition
+- **Risk to profile**: Left flank mobilising against KU33
+- **Key signal**: First major speech after Lagrådet yttrande
+- **Confidence**: MEDIUM — S-internal dynamics are fluid
+
+### Card 2 — Gunnar Strömmer (M, Justice Minister)
+- **Position**: Owner of investigative-integrity rationale for KU33
+- **Leverage**: Defines how "formellt tillförd bevisning" is prosecutorially applied
+- **Risk to profile**: If interpretation is too narrow → gäng-agenda loses KU33 tool
+- **Key signal**: Guidance to prosecutors post-amendment
+- **Confidence**: HIGH
+
+### Card 3 — Lagrådet (Collective)
+- **Position**: Constitutional review body
+- **Leverage**: **Single most consequential upcoming signal** in this run
+- **Risk to profile**: Reputational exposure if yttrance silent on interpretive question
+- **Key signal**: Yttrance text on "formellt tillförd bevisning"
+- **Confidence**: HIGH
+
+### Card 4 — Nooshi Dadgostar (V leader)
+- **Position**: Committed KU33 opposition; press-freedom framing
+- **Leverage**: Amplify attentive-voter mobilisation on press-freedom issue
+- **Risk to profile**: If campaign fails to mobilise beyond 2008 FRA-lagen levels
+- **Key signal**: Campaign launch speech + KU33 salience in polling
+- **Confidence**: HIGH
+
+### Card 5 — Maria Malmer Stenergard (M, FM)
+- **Position**: Ukraine accountability architect; Nuremberg-framing author
+- **Leverage**: Sweden's foreign-policy capital + norm-entrepreneurship credentials
+- **Risk to profile**: Russian retaliation targeting her personally + diplomatic signalling
+- **Key signal**: Dec 2026 annual foreign-policy speech
+- **Confidence**: HIGH
+
+### Card 6 — Jimmie Åkesson (SD leader)
+- **Position**: Parliamentary-support leverage on all four clusters
+- **Leverage**: 9–10% campaign talking-point reserves
+- **Risk to profile**: European populist-right realignment on Russia
+- **Key signal**: Post-election policy-bargain rhetoric
+- **Confidence**: MEDIUM
+
+---
+
 **Classification**: Public · **Next Review**: 2026-04-24
