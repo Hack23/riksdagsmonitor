@@ -22,6 +22,21 @@ import {
 } from '../scripts/validate-economic-context.js';
 import { generateEconomicDashboardSection } from '../scripts/data-transformers/content-generators/economic-dashboard-section.js';
 
+// Single source of truth for fixture dates. Derived from the contract
+// constant so bumping CONTRACT_EFFECTIVE_DATE requires no test changes.
+const POST_CONTRACT_DATE = CONTRACT_EFFECTIVE_DATE;
+
+/**
+ * Return the ISO date `days` before `CONTRACT_EFFECTIVE_DATE`. Used by
+ * the effective-date tests so they stay meaningful (i.e. assert a
+ * pre-contract date) even if the cutoff moves in the future.
+ */
+function preContractDate(days: number): string {
+  const d = new Date(`${CONTRACT_EFFECTIVE_DATE}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() - days);
+  return d.toISOString().slice(0, 10);
+}
+
 describe('validate-economic-context: utilities', () => {
   it('countWords returns 0 for empty string', () => {
     expect(countWords('')).toBe(0);
@@ -121,7 +136,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
   beforeEach(() => {
     tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'econ-gate-'));
     fs.mkdirSync(path.join(tmp, 'news'));
-    fs.mkdirSync(path.join(tmp, 'analysis', 'daily', '2026-04-18', 'committeeReports'), { recursive: true });
+    fs.mkdirSync(path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'committeeReports'), { recursive: true });
   });
 
   afterEach(() => {
@@ -129,7 +144,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
   });
 
   it('fails when HTML contains economic-dashboard-placeholder and no JSON exists', () => {
-    const articlePath = path.join(tmp, 'news', '2026-04-18-committee-reports-en.html');
+    const articlePath = path.join(tmp, 'news', `${POST_CONTRACT_DATE}-committee-reports-en.html`);
     fs.writeFileSync(articlePath, '<html><body><section class="economic-dashboard-placeholder"></section></body></html>');
     const v = validateArticle(articlePath, tmp);
     expect(v.length).toBeGreaterThan(0);
@@ -139,7 +154,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
   });
 
   it('passes when JSON, charts, commentary, and attribution are all present', () => {
-    const articlePath = path.join(tmp, 'news', '2026-04-18-committee-reports-en.html');
+    const articlePath = path.join(tmp, 'news', `${POST_CONTRACT_DATE}-committee-reports-en.html`);
     const html = `<html><body>
       <canvas data-chart-config='{"type":"bar"}'></canvas>
       <canvas data-chart-config='{"type":"line"}'></canvas>
@@ -149,11 +164,11 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
     </body></html>`;
     fs.writeFileSync(articlePath, html);
 
-    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-18', 'committeeReports', 'economic-data.json');
+    const jsonPath = path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'committeeReports', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
       version: '1.0',
       articleType: 'committee-reports',
-      date: '2026-04-18',
+      date: POST_CONTRACT_DATE,
       policyDomains: ['fiscal policy'],
       dataPoints: [
         { countryCode: 'SWE', countryName: 'Sweden',  indicatorId: 'NY.GDP.MKTP.KD.ZG', date: '2024', value: 0.82 },
@@ -169,7 +184,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
   });
 
   it('fails when dataPoints is empty', () => {
-    const articlePath = path.join(tmp, 'news', '2026-04-18-committee-reports-en.html');
+    const articlePath = path.join(tmp, 'news', `${POST_CONTRACT_DATE}-committee-reports-en.html`);
     fs.writeFileSync(articlePath, `<html><body>
       <canvas data-chart-config='{"type":"bar"}'></canvas>
       <canvas data-chart-config='{"type":"line"}'></canvas>
@@ -177,7 +192,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
       <script src="../js/lib/chart.umd.4.4.1.js"></script>
       <script src="../js/chart-init.js"></script>
     </body></html>`);
-    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-18', 'committeeReports', 'economic-data.json');
+    const jsonPath = path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'committeeReports', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
       policyDomains: ['fiscal policy'],
       dataPoints: [],
@@ -191,7 +206,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
   });
 
   it('fails when commentary is too short', () => {
-    const articlePath = path.join(tmp, 'news', '2026-04-18-committee-reports-en.html');
+    const articlePath = path.join(tmp, 'news', `${POST_CONTRACT_DATE}-committee-reports-en.html`);
     fs.writeFileSync(articlePath, `<html><body>
       <canvas data-chart-config='{"type":"bar"}'></canvas>
       <canvas data-chart-config='{"type":"line"}'></canvas>
@@ -199,7 +214,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
       <script src="../js/lib/chart.umd.4.4.1.js"></script>
       <script src="../js/chart-init.js"></script>
     </body></html>`);
-    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-18', 'committeeReports', 'economic-data.json');
+    const jsonPath = path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'committeeReports', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
       policyDomains: ['fiscal policy'],
       dataPoints: [
@@ -213,14 +228,14 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
   });
 
   it('fails when canvases exist but Chart.js runtime is not loaded (blank-canvas gap)', () => {
-    const articlePath = path.join(tmp, 'news', '2026-04-18-committee-reports-en.html');
+    const articlePath = path.join(tmp, 'news', `${POST_CONTRACT_DATE}-committee-reports-en.html`);
     fs.writeFileSync(articlePath, `<html><body>
       <canvas data-chart-config='{"type":"bar"}'></canvas>
       <canvas data-chart-config='{"type":"line"}'></canvas>
       <footer>Data by World Bank</footer>
       <!-- intentionally no chart.umd or chart-init scripts -->
     </body></html>`);
-    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-18', 'committeeReports', 'economic-data.json');
+    const jsonPath = path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'committeeReports', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
       policyDomains: ['fiscal policy'],
       dataPoints: [
@@ -235,14 +250,14 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
   });
 
   it('fails when canvases exist and chart.umd is loaded but chart-init is missing', () => {
-    const articlePath = path.join(tmp, 'news', '2026-04-18-committee-reports-en.html');
+    const articlePath = path.join(tmp, 'news', `${POST_CONTRACT_DATE}-committee-reports-en.html`);
     fs.writeFileSync(articlePath, `<html><body>
       <canvas data-chart-config='{"type":"bar"}'></canvas>
       <canvas data-chart-config='{"type":"line"}'></canvas>
       <footer>Data by World Bank</footer>
       <script src="../js/lib/chart.umd.4.4.1.js"></script>
     </body></html>`);
-    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-18', 'committeeReports', 'economic-data.json');
+    const jsonPath = path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'committeeReports', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
       policyDomains: ['fiscal policy'],
       dataPoints: [
@@ -257,9 +272,9 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
   });
 
   it('fails when skip=true is used on a non-exempt article type', () => {
-    const articlePath = path.join(tmp, 'news', '2026-04-18-committee-reports-en.html');
+    const articlePath = path.join(tmp, 'news', `${POST_CONTRACT_DATE}-committee-reports-en.html`);
     fs.writeFileSync(articlePath, '<html><body><p>minimal</p></body></html>');
-    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-18', 'committeeReports', 'economic-data.json');
+    const jsonPath = path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'committeeReports', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
       policyDomains: [],
       dataPoints: [],
@@ -273,10 +288,10 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
   });
 
   it('accepts skip=true on the exempt allow-list', () => {
-    fs.mkdirSync(path.join(tmp, 'analysis', 'daily', '2026-04-18', 'realtime-monitor'), { recursive: true });
-    const articlePath = path.join(tmp, 'news', '2026-04-18-realtime-monitor-en.html');
+    fs.mkdirSync(path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'realtime-monitor'), { recursive: true });
+    const articlePath = path.join(tmp, 'news', `${POST_CONTRACT_DATE}-realtime-monitor-en.html`);
     fs.writeFileSync(articlePath, '<html><body><p>breaking process story</p></body></html>');
-    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-18', 'realtime-monitor', 'economic-data.json');
+    const jsonPath = path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'realtime-monitor', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
       policyDomains: [],
       dataPoints: [],
@@ -294,7 +309,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
     // migrated to render a literal "World Bank" footer string. The
     // validator must fall back to `economic-data.json.source` instead
     // of failing the article.
-    const articlePath = path.join(tmp, 'news', '2026-04-18-committee-reports-en.html');
+    const articlePath = path.join(tmp, 'news', `${POST_CONTRACT_DATE}-committee-reports-en.html`);
     fs.writeFileSync(articlePath, `<html><body>
       <canvas data-chart-config='{"type":"bar"}'></canvas>
       <canvas data-chart-config='{"type":"line"}'></canvas>
@@ -302,7 +317,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
       <script src="../js/chart-init.js"></script>
       <footer>Källa: Riksdagen</footer>
     </body></html>`);
-    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-18', 'committeeReports', 'economic-data.json');
+    const jsonPath = path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'committeeReports', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
       policyDomains: ['fiscal policy'],
       dataPoints: [
@@ -316,8 +331,8 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
   });
 
   it('fails weekly-review when neither inline sankey-section nor D3 marker is present', () => {
-    fs.mkdirSync(path.join(tmp, 'analysis', 'daily', '2026-04-18', 'weekly-review'), { recursive: true });
-    const articlePath = path.join(tmp, 'news', '2026-04-18-weekly-review-en.html');
+    fs.mkdirSync(path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'weekly-review'), { recursive: true });
+    const articlePath = path.join(tmp, 'news', `${POST_CONTRACT_DATE}-weekly-review-en.html`);
     // Enough charts + attribution + chart runtime, but no Sankey at all
     fs.writeFileSync(articlePath, `<html><body>
       <canvas data-chart-config='{"type":"bar"}'></canvas>
@@ -327,7 +342,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
       <script src="../js/lib/chart.umd.4.4.1.js"></script>
       <script src="../js/chart-init.js"></script>
     </body></html>`);
-    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-18', 'weekly-review', 'economic-data.json');
+    const jsonPath = path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'weekly-review', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
       policyDomains: ['fiscal policy', 'defence'],
       dataPoints: [
@@ -343,8 +358,8 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
   });
 
   it('fails weekly-review when D3 marker is used but d3.*.min.js is not loaded', () => {
-    fs.mkdirSync(path.join(tmp, 'analysis', 'daily', '2026-04-18', 'weekly-review'), { recursive: true });
-    const articlePath = path.join(tmp, 'news', '2026-04-18-weekly-review-en.html');
+    fs.mkdirSync(path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'weekly-review'), { recursive: true });
+    const articlePath = path.join(tmp, 'news', `${POST_CONTRACT_DATE}-weekly-review-en.html`);
     // Non-minified d3.js must not satisfy the check — contract is explicit about .min.js
     fs.writeFileSync(articlePath, `<html><body>
       <canvas data-chart-config='{"type":"bar"}'></canvas>
@@ -356,7 +371,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
       <script src="../js/chart-init.js"></script>
       <script src="../js/lib/d3.7.9.0.js"></script>
     </body></html>`);
-    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-18', 'weekly-review', 'economic-data.json');
+    const jsonPath = path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'weekly-review', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
       policyDomains: ['fiscal policy'],
       dataPoints: [
@@ -373,8 +388,8 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
     // The renderer ships an inline SVG Sankey today
     // (scripts/data-transformers/content-generators/sankey-section.ts).
     // That satisfies requiresD3 without needing the D3 runtime.
-    fs.mkdirSync(path.join(tmp, 'analysis', 'daily', '2026-04-18', 'weekly-review'), { recursive: true });
-    const articlePath = path.join(tmp, 'news', '2026-04-18-weekly-review-en.html');
+    fs.mkdirSync(path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'weekly-review'), { recursive: true });
+    const articlePath = path.join(tmp, 'news', `${POST_CONTRACT_DATE}-weekly-review-en.html`);
     fs.writeFileSync(articlePath, `<html><body>
       <canvas data-chart-config='{"type":"bar"}'></canvas>
       <canvas data-chart-config='{"type":"line"}'></canvas>
@@ -384,7 +399,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
       <script src="../js/lib/chart.umd.4.4.1.js"></script>
       <script src="../js/chart-init.js"></script>
     </body></html>`);
-    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-18', 'weekly-review', 'economic-data.json');
+    const jsonPath = path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'weekly-review', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
       policyDomains: ['fiscal policy', 'defence'],
       dataPoints: [
@@ -399,8 +414,8 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
   });
 
   it('passes weekly-review when D3 Sankey marker + script are present', () => {
-    fs.mkdirSync(path.join(tmp, 'analysis', 'daily', '2026-04-18', 'weekly-review'), { recursive: true });
-    const articlePath = path.join(tmp, 'news', '2026-04-18-weekly-review-en.html');
+    fs.mkdirSync(path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'weekly-review'), { recursive: true });
+    const articlePath = path.join(tmp, 'news', `${POST_CONTRACT_DATE}-weekly-review-en.html`);
     fs.writeFileSync(articlePath, `<html><body>
       <canvas data-chart-config='{"type":"bar"}'></canvas>
       <canvas data-chart-config='{"type":"line"}'></canvas>
@@ -411,7 +426,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
       <script src="../js/chart-init.js"></script>
       <script src="../js/lib/d3.7.9.0.min.js"></script>
     </body></html>`);
-    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-18', 'weekly-review', 'economic-data.json');
+    const jsonPath = path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'weekly-review', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
       policyDomains: ['fiscal policy', 'defence'],
       dataPoints: [
@@ -428,7 +443,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
   it('rejects economic-data.json where dataPoints entries are malformed', async () => {
     // Import the loader directly to cover the strengthened type guard.
     const { loadEconomicContext } = await import('../scripts/data-transformers/load-economic-context.js');
-    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-18', 'committeeReports', 'economic-data.json');
+    const jsonPath = path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'committeeReports', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
       policyDomains: ['fiscal policy'],
       // `value` is a string instead of number — must be rejected.
@@ -438,13 +453,13 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
       commentary: 'malformed',
       source: { worldBank: ['NY.GDP.MKTP.KD.ZG'], scb: [] },
     }));
-    const ctx = loadEconomicContext('2026-04-18', 'committee-reports', tmp);
+    const ctx = loadEconomicContext(POST_CONTRACT_DATE, 'committee-reports', tmp);
     expect(ctx).toBeNull();
   });
 
   it('rejects economic-data.json with non-string element in policyDomains', async () => {
     const { loadEconomicContext } = await import('../scripts/data-transformers/load-economic-context.js');
-    const jsonPath = path.join(tmp, 'analysis', 'daily', '2026-04-18', 'committeeReports', 'economic-data.json');
+    const jsonPath = path.join(tmp, 'analysis', 'daily', POST_CONTRACT_DATE, 'committeeReports', 'economic-data.json');
     fs.writeFileSync(jsonPath, JSON.stringify({
       // A number leaked into policyDomains — must be rejected.
       policyDomains: ['fiscal policy', 42],
@@ -452,7 +467,7 @@ describe('validate-economic-context: validateArticle against fixtures', () => {
       commentary: 'n/a',
       source: { worldBank: [], scb: [] },
     }));
-    const ctx = loadEconomicContext('2026-04-18', 'committee-reports', tmp);
+    const ctx = loadEconomicContext(POST_CONTRACT_DATE, 'committee-reports', tmp);
     expect(ctx).toBeNull();
   });
 });
@@ -474,23 +489,29 @@ describe('validate-economic-context: contract effective date', () => {
   });
 
   it('isUnderContract returns false for dates before the effective date', () => {
-    expect(isUnderContract('2026-04-12')).toBe(false);
-    expect(isUnderContract('2026-04-16')).toBe(false);
-    expect(isUnderContract('2026-04-17')).toBe(false);
+    expect(isUnderContract(preContractDate(6))).toBe(false);
+    expect(isUnderContract(preContractDate(2))).toBe(false);
+    expect(isUnderContract(preContractDate(1))).toBe(false);
   });
 
   it('isUnderContract returns true for dates on or after the effective date', () => {
     expect(isUnderContract(CONTRACT_EFFECTIVE_DATE)).toBe(true);
-    expect(isUnderContract('2026-04-18')).toBe(true);
-    expect(isUnderContract('2026-05-01')).toBe(true);
-    expect(isUnderContract('2027-01-01')).toBe(true);
+    expect(isUnderContract(POST_CONTRACT_DATE)).toBe(true);
+    expect(isUnderContract('2099-12-31')).toBe(true);
+  });
+
+  it('isUnderContract returns false for malformed / non-ISO inputs', () => {
+    expect(isUnderContract('')).toBe(false);
+    expect(isUnderContract('foo')).toBe(false);
+    expect(isUnderContract('2026/04/18')).toBe(false);
+    expect(isUnderContract('9999-99-99-extra')).toBe(false);
   });
 
   it('validateArticle returns no violations for pre-contract articles even when HTML is broken', () => {
-    // A committee-reports article dated 2026-04-12 would normally fail
-    // with ≥4 violations (placeholder, no charts, no JSON, no attribution)
-    // but is exempt because it predates the Economic Data Contract.
-    const articlePath = path.join(tmp, 'news', '2026-04-12-committee-reports-en.html');
+    // A committee-reports article dated 6 days before the cutoff would
+    // normally fail with ≥4 violations (placeholder, no charts, no JSON,
+    // no attribution) but is exempt because it predates the contract.
+    const articlePath = path.join(tmp, 'news', `${preContractDate(6)}-committee-reports-en.html`);
     fs.writeFileSync(
       articlePath,
       '<html><body><section class="economic-dashboard-placeholder"></section></body></html>',

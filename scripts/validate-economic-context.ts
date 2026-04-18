@@ -77,11 +77,24 @@ export interface CoverageRule {
 export const CONTRACT_EFFECTIVE_DATE = '2026-04-18';
 
 /**
- * Returns true when `date` (YYYY-MM-DD) is on or after
- * `CONTRACT_EFFECTIVE_DATE`. Uses literal string comparison — safe for
- * ISO-8601 `YYYY-MM-DD` which is lexicographically sortable.
+ * Strict `YYYY-MM-DD` validator used before any prefix/lexicographic
+ * comparison on date strings. Prevents malformed or user-controlled
+ * values from flowing into patterns or filesystem glue code (see CodeQL
+ * alerts #185 regex-injection and #186 no-op replace).
+ */
+export function isIsoDate(value: string): boolean {
+  return /^\d{4}-\d{2}-\d{2}$/.test(value);
+}
+
+/**
+ * Returns true when `date` is a strict ISO `YYYY-MM-DD` string on or
+ * after `CONTRACT_EFFECTIVE_DATE`. Non-ISO / malformed inputs return
+ * `false` deterministically so invalid filenames never silently pass
+ * the gate. Uses literal string comparison once the shape is validated
+ * — safe for ISO-8601 `YYYY-MM-DD`, which is lexicographically sortable.
  */
 export function isUnderContract(date: string): boolean {
+  if (!isIsoDate(date)) return false;
   return date >= CONTRACT_EFFECTIVE_DATE;
 }
 
@@ -374,16 +387,6 @@ function parseArgs(argv: string[]): { date?: string; type?: string; files?: stri
   }
   if (files.length > 0) out.files = files;
   return out;
-}
-
-/**
- * Strict YYYY-MM-DD validator used before performing any prefix match on
- * filenames. Prevents CLI-supplied values from flowing into patterns or
- * filesystem glue code (see CodeQL alerts #185 regex-injection and
- * #186 no-op replace).
- */
-function isIsoDate(value: string): boolean {
-  return /^\d{4}-\d{2}-\d{2}$/.test(value);
 }
 
 function discoverArticleFiles(opts: { date?: string; type?: string }, rootDir: string): string[] {
