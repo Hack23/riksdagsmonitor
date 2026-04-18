@@ -207,7 +207,7 @@ Directory `README.md` provides quality tier, reading order by audience (executiv
 1. **Designate realtime-1434 as Riksdagsmonitor's reference exemplar** for political-intelligence tradecraft. All future runs measure against it.
 2. **Merge this reflection's Section C upstream changes** into `ai-driven-analysis-guide.md` v5.1 and template set.
 3. **Re-run 3 prior shallow runs** (dates TBD) using the upgraded methodology to validate that the new bar is reproducible.
-4. **Quarterly methodology review**: Next sweep 2026-07-01 revisits whether the reference tier is achievable in production workflow time budgets.
+4. **Quarterly methodology review**: Next sweep 2026-07-18, aligned with `ai-driven-analysis-guide.md` v5.1, revisits whether the reference tier is achievable in production workflow time budgets.
 5. **Training artefact**: Use this dossier as onboarding material for new agentic-workflow authors and human reviewers.
 
 ---
