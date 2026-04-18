@@ -75,18 +75,10 @@ jobs:
             libxfixes3 libxrandr2 libxrender1 \
             libxshmfence1 xdg-utils wget libxkbcommon0 xkb-data
 
-          # Install Google Chrome Stable for Web WebGL support
-          wget -qO- https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg
-          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-
           # Setup D-Bus for Chrome
           sudo mkdir -p /var/run/dbus
           sudo dbus-daemon --system --fork || true
           
-          # Verify Chrome installation
-          google-chrome --version
           echo "✅ Web test environment setup complete"
         env:
           DISPLAY: ":99"
@@ -107,31 +99,6 @@ jobs:
         with:
           node-version: "25"
           cache: "npm"
-
-      - name: Cache dependencies
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Cache Cypress binary
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
-        with:
-          path: ~/.cache/Cypress
-          key: cypress-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            cypress-${{ runner.os }}-
-
-      - name: Cache build artifacts
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
-        with:
-          path: .tsbuildinfo
-          key: ${{ runner.os }}-tsbuild-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('src/browser/**/*.ts', 'scripts/**/*.ts', 'scripts/**/*.js') }}
-          restore-keys: |
-            ${{ runner.os }}-tsbuild-${{ hashFiles('**/package-lock.json') }}-
-            ${{ runner.os }}-tsbuild-
 
       - name: Install dependencies
         run: npm ci
@@ -396,22 +363,6 @@ jobs:
         with:
           node-version: "25"
           cache: "npm"
-
-      - name: Cache dependencies
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Cache Vite build cache
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
-        with:
-          path: node_modules/.vite
-          key: ${{ runner.os }}-vite-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-vite-
 
       - name: Install dependencies
         run: npm ci
