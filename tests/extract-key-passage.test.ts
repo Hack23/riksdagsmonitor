@@ -122,6 +122,20 @@ describe('extractKeyPassage', () => {
     expect(extractKeyPassage(text)).toBe(text);
   });
 
+  it('leaves Swedish prose with CSS-like numeric patterns outside of braces untouched', () => {
+    // Natural-language text may contain "px" or ":digit" adjacent to braces —
+    // make sure the CSS sniffer only fires on actual CSS blocks.
+    const text =
+      'Skatteverket rapporterade en prisökning: 10 procent under 2024. ' +
+      'Projektet är { sammanfattat i rapporten } och kräver 150 px marginal enligt grafisk profil. ' +
+      'Lagförslaget antogs.';
+    // The brace block here has no CSS properties inside it, so it must survive.
+    const result = extractKeyPassage(text);
+    expect(result).toContain('sammanfattat i rapporten');
+    expect(result).toContain('150 px marginal');
+    expect(result).toContain('Lagförslaget antogs');
+  });
+
   it('stripRiksdagRawDump returns empty string for empty input', () => {
     expect(stripRiksdagRawDump('')).toBe('');
   });

@@ -364,10 +364,24 @@ export function stripRiksdagRawDump(text: string): string {
   // 1. Remove embedded CSS rule blocks ("selector { properties }"). Only strip
   //    blocks whose body looks CSS-like so we never touch legitimate Swedish
   //    prose that happens to contain braces. No nesting in Riksdag dumps.
-  s = s.replace(/[^{}]{0,300}\{[^{}]{0,1000}\}/g, (m) =>
-    /(?::\s*-?\d|\b(?:px|em|rem)\b|%\s*;|#[0-9a-f]{3,6}\b|position\s*:|margin\s*:|padding\s*:|overflow\s*:|width\s*:|height\s*:|top\s*:|left\s*:|z-index\s*:|display\s*:|font-|border\s*:)/i.test(m)
-      ? ' '
-      : m
+  //
+  //    The outer pattern is bounded ({0,300} selector, {0,1000} body) to prevent
+  //    catastrophic backtracking on pathological inputs. `[^{}]` further guarantees
+  //    linear-time matching because the inner class cannot overlap the delimiters.
+  //    A capture group isolates the `{...body...}` so the CSS signature is tested
+  //    only against the block body — not the selector / surrounding prose — which
+  //    avoids false positives on Swedish text like `"prisökning: 10 procent"`
+  //    that precedes an unrelated brace pair.
+  //
+  //    `CSS_PROPERTY_SIGNATURE` recognises common CSS property syntax patterns:
+  //      - `: <digit>` (numeric value assignments, e.g. `top: 0`, `z-index: -1`)
+  //      - CSS length units (`px`, `em`, `rem`) as whole words
+  //      - `%;` (percent value terminator)
+  //      - CSS hex colours (`#abc` or `#aabbcc`)
+  //      - Known CSS property names followed by `:`
+  const CSS_PROPERTY_SIGNATURE = /(?::\s*-?\d|\b(?:px|em|rem)\b|%\s*;|#[0-9a-f]{3,6}\b|position\s*:|margin\s*:|padding\s*:|overflow\s*:|width\s*:|height\s*:|top\s*:|left\s*:|z-index\s*:|display\s*:|font-|border\s*:)/i;
+  s = s.replace(/[^{}]{0,300}(\{[^{}]{0,1000}\})/g, (m, body: string) =>
+    CSS_PROPERTY_SIGNATURE.test(body) ? ' ' : m
   );
 
   // 2. Detect Riksdag metadata prefix. Always begins with: numeric doc-id,
