@@ -141,6 +141,33 @@ Every analysis file MUST demonstrate:
 - **Forward-looking indicators** (what to watch next, with specific triggers)
 - **At least 2 analytical frameworks** applied (e.g., SWOT + Risk, or Attack Tree + Kill Chain)
 
+### Rule 5: Democratic-Impact Weighting (DIW) — Lead-Story & Coverage Discipline
+
+> **Doctrine added 2026-04-18 after realtime-1434 post-mortem.** The lead-story selection is the single highest-leverage editorial decision in every article. Two failure modes were observed and are now formally prohibited:
+>
+> **Anti-pattern A (Ukraine omission)**: Two propositions (HD03231 Special Tribunal for Aggression and HD03232 International Compensation Commission) scored above 7.0 on the weighted DIW ranking but were entirely absent from the first-draft English and Swedish articles. Result: readers missed the largest Swedish foreign-policy norm-entrepreneurship moment since NATO accession.
+>
+> **Anti-pattern B (news-value vs. democratic-impact confusion)**: The Ukraine propositions have higher *news value* (Nuremberg framing) while the KU33 grundlag amendment has higher *democratic-infrastructure impact* (decadal reversal window, offentlighetsprincip narrowing). The article must lead with the democratic-impact winner and co-prominently cover the news-value winner. Silent omission of either is rejected.
+
+**DIW weighting (required in every `significance-scoring.md`):**
+
+| Dimension | Weight | Rationale |
+|-----------|--------|-----------|
+| **Democratic-Infrastructure Impact** | **30%** | Grundlag, electoral rules, press-freedom law, rule-of-law institutions. Reversal window measured in decades ⇒ highest weight. |
+| Parliamentary Significance | 15% | Grundlag > proposition > betänkande > motion > skriftlig fråga. |
+| Policy Impact | 15% | Substantive effect on citizens, economy, rights. |
+| Public Interest | 15% | Media salience, civic attention. |
+| Urgency / Time-Sensitivity | 15% | Decision horizon, irreversibility. |
+| Cross-Party / International Dimension | 10% | Consensus breadth + foreign-policy weight. |
+
+**Lead-Story Rule**: The article's `<title>`, `<meta description>`, OG/Twitter tags, Schema.org `headline`, and H1 MUST reference the #1 DIW-ranked finding. The lede MUST name the principal human actor and cite the primary dok_id within the first two sentences.
+
+**Coverage-Completeness Rule**: Every document with DIW-weighted score ≥ 7.0 MUST appear as a dedicated H3 section in the article body. Omission is a coverage failure — it cannot be justified by word-count pressure.
+
+**Rhetorical-Tension Rule**: When the top-ranked findings carry opposing political valences, the article MUST surface the tension in a dedicated subsection. Silence on the tension is itself a coverage failure.
+
+**Enforcement**: `SHARED_PROMPT_PATTERNS.md` → "Lead-Story & Coverage-Completeness Gate" is a blocking check. Articles failing the gate cannot be committed.
+
 ---
 
 ## 🚨 Mandatory Quality Requirements (Non-Negotiable)

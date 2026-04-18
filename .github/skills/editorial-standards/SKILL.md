@@ -172,6 +172,17 @@ Provides expertise in maintaining the highest editorial quality standards for po
 **Gate 6: Editorial Approval** - Final green light
 **Gate 7: Publication** - Multi-language simultaneous release
 
+### Gate 0: Lead-Story & Coverage-Completeness (added 2026-04-18)
+
+Before any draft is shared for Gate 2 review, verify:
+
+1. **Lead story** — The article `<title>`, `<meta description>`, Schema.org headline and H1 reference the **#1 finding in `analysis/daily/$DATE/$SUBFOLDER/significance-scoring.md`** under the Democratic-Impact Weighting (DIW) methodology. DIW assigns 30% weight to democratic-infrastructure impact (grundlag, electoral rules, press-freedom law) — this is the highest-priority signal for lead selection.
+2. **Lede discipline** — The first two sentences of the lede name the principal human actor (minister, committee chair, party leader) and cite the primary dok_id.
+3. **Coverage completeness** — Every document with DIW-weighted score ≥ 7.0 receives a dedicated H3 section in article body. No silent omissions.
+4. **Rhetorical tension** — When top-ranked findings carry opposing political valences (e.g., norm entrepreneurship abroad + norm compression at home), an explicit "Rhetorical Cross-Cluster Tension" or equivalent subsection addresses the contradiction.
+
+Failure protocol: if any of 1–4 is not satisfied, the draft is returned to the writing agent with the specific missing element identified. **Doctrine**: `analysis/methodologies/ai-driven-analysis-guide.md` §"Rule 5: Democratic-Impact Weighting (DIW)". **Enforcement**: `SHARED_PROMPT_PATTERNS.md` §"🔴 MANDATORY: Lead-Story & Coverage-Completeness Gate".
+
 ## Error Correction Protocol
 
 ### When Errors Occur

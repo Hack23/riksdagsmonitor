@@ -1044,6 +1044,90 @@ These patterns indicate script-generated or AI-lazy content and are ALWAYS rejec
 - ❌ Zero dok_id citations in the article body
 - ❌ Remaining `AI_MUST_REPLACE` markers (ALL must be replaced before commit)
 
+### 🔴 MANDATORY: Lead-Story & Coverage-Completeness Gate
+
+> **Doctrine (added 2026-04-18, realtime-1434 post-mortem)**: Even when all 9 analysis artifacts are produced, the article can still fail readers by (a) leading with the wrong story or (b) omitting a story that the weighted significance ranking places in the top 3. Both failure modes were observed in `analysis/daily/2026-04-17/realtime-1434`: the Ukraine Accountability Architecture propositions (HD03231 + HD03232) were scored high in `significance-scoring.md` but entirely absent from the initial English and Swedish articles. This gate prevents recurrence.
+
+**Democratic-Impact Weighting (DIW)** — required methodology in every `significance-scoring.md`:
+
+| Dimension | Weight | Description |
+|-----------|--------|-------------|
+| Democratic-Infrastructure Impact | **30%** | Does the item modify grundlag, electoral rules, press-freedom law, rule-of-law institutions? Reversal window measured in decades = highest weight. |
+| Parliamentary Significance | 15% | Scope of legislative action (grundlag > proposition > betänkande > motion > skriftlig fråga). |
+| Policy Impact | 15% | Substantive effect on citizens/economy/rights. |
+| Public Interest | 15% | Media attention, civic salience. |
+| Urgency / Time-Sensitivity | 15% | Decision horizon, irreversibility. |
+| Cross-Party / International Dimension | 10% | Consensus breadth + foreign-policy weight. |
+
+**Lead-Story Rule**: The article's `<title>`, `<meta description>`, and H1 MUST reference the #1 ranked finding in `significance-scoring.md`. The lede (first paragraph) MUST name the human actor (minister, committee chair, party leader) associated with that finding and cite the primary dok_id.
+
+**Coverage-Completeness Rule**: Every document with a DIW-weighted score ≥ 7.0 MUST receive a dedicated section (H3 or higher) in the article. If a high-ranked finding conflicts with narrative flow, it may be reframed or cross-linked — but NEVER silently omitted.
+
+**Gate script** (run after Article Quality Gate, before commit):
+
+```bash
+echo "=== 🏛️ Lead-Story & Coverage-Completeness Gate ==="
+LEAD_FAIL=0
+SIG_FILE="analysis/daily/$ARTICLE_DATE/$ANALYSIS_SUBFOLDER/significance-scoring.md"
+if [ ! -f "$SIG_FILE" ]; then
+  echo "🔴 FAIL: significance-scoring.md missing — cannot verify lead-story"
+  LEAD_FAIL=1
+else
+  # Extract all documents with weighted score ≥ 7.0 (format: "| HD03231 | ... | 8.55 |" etc.)
+  HIGH_DOCS=$(grep -oE 'HD[0-9A-Z]+' "$SIG_FILE" | sort -u)
+  # Extract top-ranked finding (first HD* in a row that includes "LEAD" or highest score)
+  LEAD_DOC=$(grep -iE 'lead|#1|top.ranked' "$SIG_FILE" | grep -oE 'HD[0-9A-Z]+' | head -1)
+  [ -z "$LEAD_DOC" ] && LEAD_DOC=$(echo "$HIGH_DOCS" | head -1)
+
+  for ARTICLE in news/$ARTICLE_DATE-*-en.html news/$ARTICLE_DATE-*-sv.html; do
+    [ ! -f "$ARTICLE" ] && continue
+    echo "--- Checking: $ARTICLE ---"
+
+    # Check 1: Lead story appears in title OR meta description OR H1
+    TITLE_BLOCK=$(awk '/<title>/,/<\/title>/' "$ARTICLE"; awk '/<meta name="description"/' "$ARTICLE"; awk '/<h1>/,/<\/h1>/' "$ARTICLE")
+    LEAD_REF=$(echo "$TITLE_BLOCK" | grep -ciE "$LEAD_DOC|$(grep -iE "^## *Headline|lead.story" "$SIG_FILE" -A2 | tail -1 | head -c 60)" || echo 0)
+    if [ "$LEAD_REF" -eq 0 ]; then
+      # Fallback: check for any named actor / keyword from the lead record
+      echo "⚠️  Lead-story $LEAD_DOC not referenced in title/meta/H1 — verify semantically"
+    fi
+
+    # Check 2: Every document with score ≥ 7.0 must appear in article body
+    MISSING=""
+    for HDOC in $HIGH_DOCS; do
+      if ! grep -q "$HDOC" "$ARTICLE"; then
+        MISSING="$MISSING $HDOC"
+      fi
+    done
+    if [ -n "$MISSING" ]; then
+      echo "🔴 FAIL: High-ranked docs missing from $ARTICLE:$MISSING"
+      LEAD_FAIL=$((LEAD_FAIL + 1))
+    else
+      echo "✅ All high-ranked docs covered"
+    fi
+
+    # Check 3: Article names at least one human actor (minister/chair/leader)
+    if ! grep -qiE "Kristersson|Stenergard|Andersson|Strömmer|Busch|Liljestrand|Åkesson|Lööf|Nooshi|Daniel Riazat|committee chair|utskottsordförande|[A-Z][a-z]+ \([MKDLSCVMP]+\)" "$ARTICLE"; then
+      echo "⚠️ WARN: No named human actor detected in article body"
+    fi
+  done
+fi
+echo "=== Lead-Story Gate: $LEAD_FAIL failures ==="
+if [ "$LEAD_FAIL" -gt 0 ]; then
+  echo "❌ BLOCKING: article fails lead-story / coverage-completeness — rewrite before commit"
+fi
+```
+
+**Remediation protocol** when the gate fires:
+1. Re-read `significance-scoring.md` top-of-ranking entry. Note `dok_id`, proposed headline, and named actors.
+2. Rewrite `<title>`, `<meta description>`, OG/Twitter, Schema.org headline and H1 to reference the lead story.
+3. Rewrite the lede to name the principal human actor and cite the primary dok_id in the first two sentences.
+4. Add/restore dedicated H3 sections for any omitted ≥7.0 documents in significance order.
+5. Re-run all quality gates. Commit only when 0 failures.
+
+**Rhetorical-tension exception**: If two top-ranked findings carry opposing political valences (e.g., Sweden defending press freedom abroad via HD03231 while narrowing TF at home via KU33), the article MUST surface the tension explicitly — typically under a "Rhetorical Cross-Cluster Tension" or equivalent subsection. Silence on the tension is itself a coverage failure.
+
+---
+
 ### Article Quality Gate (Run Before Commit)
 
 ```bash

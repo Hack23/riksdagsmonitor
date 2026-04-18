@@ -485,6 +485,8 @@ Key steps: resolve `ARTICLE_DATE` from input or today → check `data-download-m
 
 **Step D — Run quality gate** (BLOCKING): See `SHARED_PROMPT_PATTERNS.md` §"Step 5b: MANDATORY Quality Gate" for the complete bash script. Run it and fix ALL failures before proceeding.
 
+**Step D.2 — Lead-Story & Coverage-Completeness Gate** (BLOCKING, added 2026-04-18): After articles are drafted, run the gate from `SHARED_PROMPT_PATTERNS.md` §"🔴 MANDATORY: Lead-Story & Coverage-Completeness Gate". This enforces (1) the article `<title>`, `<meta description>`, and H1 reference the #1 DIW-ranked finding in `significance-scoring.md`, (2) every document with DIW-weighted score ≥ 7.0 appears as a dedicated H3 section, (3) when top-ranked findings carry opposing political valences, the rhetorical tension is surfaced explicitly. Failing the gate requires rewrite before commit. **Doctrine**: `analysis/methodologies/ai-driven-analysis-guide.md` §"Rule 5: Democratic-Impact Weighting (DIW)".
+
 > 🚨 **BLOCKING**: Fix all failures before proceeding. Read `analysis/templates/<template>.md`, rewrite failing files, re-run gate.
 
 ### 🔴 MANDATORY: Batch Analysis Enrichment
