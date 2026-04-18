@@ -322,7 +322,7 @@ flowchart TD
 ### Card 3 — Lagrådet (Collective)
 - **Position**: Constitutional review body
 - **Leverage**: **Single most consequential upcoming signal** in this run
-- **Risk to profile**: Reputational exposure if yttrance silent on interpretive question
+- **Risk to profile**: Reputational exposure if yttrande silent on interpretive question
 - **Key signal**: Yttrance text on "formellt tillförd bevisning"
 - **Confidence**: HIGH
 

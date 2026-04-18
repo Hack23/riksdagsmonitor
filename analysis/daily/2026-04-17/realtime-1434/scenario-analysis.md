@@ -68,7 +68,7 @@ flowchart TD
 
 ### 🟢 BASE — "Narrow, Proportionate Reform" (P = 0.42)
 
-**Setup**: Lagrådet yttrance calibrates the interpretation; government retains majority; S leadership endorses amendment; second reading passes.
+**Setup**: Lagrådet yttrande calibrates the interpretation; government retains majority; S leadership endorses amendment; second reading passes.
 
 **Key signals confirming this scenario:**
 - Lagrådet explicitly scopes "formellt tillförd bevisning" as *intermediate* (incorporation into förundersökningsprotokoll) `[HIGH]`
@@ -187,7 +187,7 @@ flowchart TD
 
 | Indicator | Direction | Prior-Update Magnitude |
 |-----------|:---------:|:---------------------:|
-| Lagrådet yttrance strict | ↑ Base, Bull-Lite | +0.15 combined |
+| Lagrådet yttrande strict | ↑ Base, Bull-Lite | +0.15 combined |
 | Lagrådet silent on interpretation | ↑ Mixed, Wildcard-1 | +0.10 combined |
 | S party-leader pro-KU33 speech | ↑ Base, Bull-Lite | +0.10 |
 | S party-leader anti-KU33 speech | ↑ Bear | +0.10 |

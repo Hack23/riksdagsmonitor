@@ -60,8 +60,14 @@ if [ "$ANALYSIS_COUNT" -lt 9 ]; then
 fi
 
 echo "=== READING ALL $ANALYSIS_COUNT ANALYSIS FILES BEFORE WRITING ARTICLE ==="
+# Emit bounded content (first 80 lines) for each file so the agent genuinely
+# consumes the material — not just a line-count gate.
 while read -r f; do
-  [ -f "$f" ] && wc -l "$f"
+  if [ -f "$f" ]; then
+    echo "--- BEGIN ANALYSIS FILE: $f (first 80 lines) ---"
+    sed -n '1,80p' "$f"
+    echo "--- END ANALYSIS FILE: $f ---"
+  fi
 done < "$ANALYSIS_LIST_FILE"
 
 # Checklist the agent MUST complete before emitting article HTML:
@@ -79,7 +85,7 @@ done < "$ANALYSIS_LIST_FILE"
 #   ✅ documents/*.md               — per-document analyses (one per dok_id)
 ```
 
-**Evidence of reading**: The agent MUST, in its chain of thought, explicitly reference **at minimum 3 distinct claims from 3 distinct analysis files** when writing each major article section (lede, What Is Happening, Why It Matters, Winners & Losers, Key Takeaways). Articles that paraphrase only the synthesis-summary are REJECTED.
+**Evidence of reading**: Each major article section (lede, What Is Happening, Why It Matters, Winners & Losers, Key Takeaways) MUST include **at minimum 3 concrete claims sourced from 3 distinct analysis files**. Those claims MUST be observable in the article output through explicit attribution in the section text, supporting reference list, or both, so a reviewer can trace each claim back to a specific analysis file or section. Articles that paraphrase only the synthesis-summary are REJECTED.
 
 **Reference-grade exemplar anchoring**: When the run produces reference-grade extensions (README, executive-brief, scenario-analysis, comparative-international, methodology-reflection), the article MUST additionally cite:
 - At least one concrete scenario probability from `scenario-analysis.md` (e.g., "Base case P=0.42")

@@ -100,7 +100,7 @@ flowchart TD
 | Artefact | Retention | Review Cadence | Trigger Events |
 |----------|-----------|:--------------:|----------------|
 | All analysis files | Permanent (public archive) | Quarterly (or event-driven) | See triggers below |
-| `executive-brief.md` | Permanent | On next Lagrådet yttrance publication | Lagrådet ruling |
+| `executive-brief.md` | Permanent | On next Lagrådet yttrande publication | Lagrådet ruling |
 | `risk-assessment.md` | Permanent | Bi-weekly during legislative tempo | R1/R2/R11 indicator fires |
 | `scenario-analysis.md` | Permanent | Event-driven (major signals) | Any scenario indicator fires |
 | `comparative-international.md` | Permanent | Annual (RSF/FH/V-Dem cycle) | Index-publication dates |
@@ -111,7 +111,7 @@ flowchart TD
 
 | Trigger | Owner | Files to Re-Review |
 |---------|-------|--------------------|
-| Lagrådet yttrance on KU33 | Analyst on duty | risk-assessment, swot-analysis, documents/HD01KU32-KU33, synthesis-summary, executive-brief, scenarios |
+| Lagrådet yttrande on KU33 | Analyst on duty | risk-assessment, swot-analysis, documents/HD01KU32-KU33, synthesis-summary, executive-brief, scenarios |
 | Kammarvote on KU33 (first reading) | Analyst | documents/HD01KU32-KU33, stakeholder-perspectives, synthesis-summary |
 | Kammarvote on HD03231/HD03232 | Analyst | documents/HD03231, documents/HD03232, threat-analysis |
 | Russian hybrid-warfare event attributable | Analyst | threat-analysis, risk-assessment |

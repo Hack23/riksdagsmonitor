@@ -57,7 +57,7 @@ The threat-analysis file applies four complementary threat frameworks, each surf
 
 ### 8. Bayesian Update Rules
 
-The risk-assessment file specifies **observable signals** (Lagrådet yttrance, S-leader statement, Nordic cable event) that trigger explicit prior/posterior risk-score updates. This makes the analysis **living** rather than static.
+The risk-assessment file specifies **observable signals** (Lagrådet yttrande, S-leader statement, Nordic cable event) that trigger explicit prior/posterior risk-score updates. This makes the analysis **living** rather than static.
 
 **Codify as**: Every risk-assessment file MUST include a Bayesian-update-rules table. `[HIGH]`
 

@@ -168,7 +168,7 @@ Continuity with adjacent Riksdagsmonitor runs — so subsequent analysts can fin
 
 | Commitment | Where | Inherited Claim |
 |-----------|-------|-----------------|
-| Lagrådet yttrance is primary upcoming signal | `risk-assessment.md` R2 Bayesian + `scenario-analysis.md` tree | Next run reporting Lagrådet should reference SYN-2026-04-17-1434 priors |
+| Lagrådet yttrande is primary upcoming signal | `risk-assessment.md` R2 Bayesian + `scenario-analysis.md` tree | Next run reporting Lagrådet should reference SYN-2026-04-17-1434 priors |
 | DIW weights KU33 ×1.40, HD03231 ×0.95 | `significance-scoring.md` + this run's reference status | Subsequent runs should apply same weights unless methodology-reflection updates published |
 | Coverage-completeness rule ≥ 7.0 weighted | Operational since this run; codified in SHARED_PROMPT_PATTERNS.md | All future runs inherit |
 | Russian hybrid-warfare posture elevated | `threat-analysis.md` T6 + `risk-assessment.md` R1 | Continuous — SÄPO bulletin monitoring |

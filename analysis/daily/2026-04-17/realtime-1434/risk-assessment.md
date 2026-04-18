@@ -163,7 +163,7 @@ xychart-beta
 | Update 1' — Lagrådet silent | Posterior after silent Lagrådet | P(narrow \| silent) ≈ 0.55 | **16 / 25 (CRIT)** |
 | Update 2' — V/MP gain > +2pp in polling | Posterior after left-bloc electoral surge | P(narrow \| surge) ≈ 0.40 + KU33 fails 2nd reading | **10 / 25 MED but R5 ↑ 16/25 CRIT** |
 
-> **Interpretation** `[HIGH]`: Risk R2 is **most sensitive to Lagrådet yttrance content**. The expected posterior after strict yttrance drops R2 by 4 points; silent yttrance raises R2 by 4 points. This makes the Lagrådet yttrance the single most consequential upcoming monitoring indicator — it can move a risk by ± 33% of its scale in a single trigger.
+> **Interpretation** `[HIGH]`: Risk R2 is **most sensitive to Lagrådet yttrande content**. The expected posterior after strict yttrande drops R2 by 4 points; silent yttrande raises R2 by 4 points. This makes the Lagrådet yttrande the single most consequential upcoming monitoring indicator — it can move a risk by ± 33% of its scale in a single trigger.
 
 ---
 
@@ -245,7 +245,7 @@ graph LR
 | Risk | Current Trajectory | Expected Velocity (next 90 days) | Trigger |
 |------|:-----:|:-----:|---------|
 | R1 Russian hybrid | ↗ Rising | +1–3 | HD03231 + HD03232 public profile raising |
-| R2 KU33 narrow interp | Stable | Pivotal ± 4 | Lagrådet yttrance |
+| R2 KU33 narrow interp | Stable | Pivotal ± 4 | Lagrådet yttrande |
 | R3 US non-coop | Uncertain | ± 2 | US domestic political cycle |
 | R5 KU33 campaign | Stable | ↗ +1–3 as Sep 2026 approaches | Campaign calendar |
 | R7 RSF-index | Stable | Stable | Announcement cycle (Apr 2027) |
