@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "articleType": "weekly-review",
+  "date": "2026-04-18",
+  "weekLabel": "2026-W16",
+  "weekPeriod": "2026-04-11 to 2026-04-17",
+  "policyDomains": ["fiscal policy", "labor market", "energy", "criminal justice", "migration"],
+  "dataPoints": [
+    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2024", "value": 0.82 },
+    { "countryCode": "DNK", "countryName": "Denmark", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2024", "value": 3.478 },
+    { "countryCode": "NOR", "countryName": "Norway",  "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2024", "value": 2.097 },
+    { "countryCode": "FIN", "countryName": "Finland", "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2024", "value": 0.416 },
+    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2023", "value": -0.204 },
+    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2022", "value": 1.255 },
+    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2021", "value": 5.226 },
+    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "NY.GDP.MKTP.KD.ZG", "indicatorName": "GDP Growth (%)", "date": "2020", "value": -1.934 },
+    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate (%)", "date": "2025", "value": 8.694 },
+    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate (%)", "date": "2024", "value": 8.4 },
+    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate (%)", "date": "2023", "value": 7.611 },
+    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate (%)", "date": "2022", "value": 7.417 },
+    { "countryCode": "SWE", "countryName": "Sweden",  "indicatorId": "SL.UEM.TOTL.ZS", "indicatorName": "Unemployment Rate (%)", "date": "2021", "value": 8.803 }
+  ],
+  "commentary": "Sweden's 2026 Spring Budget arrives against a challenging backdrop: GDP growth of just 0.82% in 2024 — sharply trailing Denmark's 3.5% and Norway's 2.1% — while unemployment climbed to 8.7% in 2025, the highest since the pandemic. The government's Extra Amendment Budget cutting fuel taxes by 82 öre per litre directly targets the household cost pressure that has driven consumer confidence down, but the fuel-tax intervention risks undermining Sweden's green transition credibility at precisely the moment when the electricity system reform (Prop. 240) and wind power revenue-sharing (Prop. 239) signal serious climate ambition. The fiscal arithmetic is tight: Sweden recovered from its 2023 GDP contraction (-0.20%), but the pace of recovery lags Nordic peers, giving the Social Democrat opposition ammunition to challenge the government's economic stewardship heading into the September 2026 election.",
+  "charts": [
+    {
+      "type": "nordic-comparison-bar",
+      "title": "Nordic GDP Growth Comparison 2024 (%)",
+      "description": "Sweden trails Denmark and Norway in 2024 GDP growth — key election context for Spring Budget",
+      "data": {
+        "labels": ["Sweden", "Denmark", "Norway", "Finland"],
+        "values": [0.82, 3.478, 2.097, 0.416]
+      }
+    },
+    {
+      "type": "trend-line",
+      "title": "Sweden GDP Growth & Unemployment 2020–2025",
+      "description": "Sweden's post-pandemic recovery: GDP rebounded from -1.93% (2020) but contracted again in 2023; unemployment rising",
+      "data": {
+        "years": [2020, 2021, 2022, 2023, 2024, 2025],
+        "gdp": [-1.934, 5.226, 1.255, -0.204, 0.82, null],
+        "unemployment": [8.291, 8.803, 7.417, 7.611, 8.4, 8.694]
+      }
+    }
+  ],
+  "source": {
+    "worldBank": ["NY.GDP.MKTP.KD.ZG", "SL.UEM.TOTL.ZS"],
+    "scb": [],
+    "riksdag": ["HD03100", "HD0399", "HD03236"]
+  }
+}
