@@ -19,7 +19,7 @@ graph TD
     style API fill:#4CAF50,stroke:#424242,color:#FFFFFF
     style MCP fill:#D32F2F,stroke:#424242,color:#FFFFFF
     style GOV fill:#FFC107,stroke:#424242,color:#000000
-    style DOCS fill:#0A66C2,stroke:#FFFFFF,color:#FFFFFF
+    style DOCS fill:#1565C0,stroke:#FFFFFF,color:#FFFFFF
     style CONTEXT fill:#0097A7,stroke:#424242,color:#FFFFFF
     style FALLBACK fill:#FF9800,stroke:#424242,color:#FFFFFF
 ```

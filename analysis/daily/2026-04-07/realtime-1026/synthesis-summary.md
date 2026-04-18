@@ -49,7 +49,7 @@ graph TD
     style THR fill:#FFC107,stroke:#FFA000,color:#000000
     style SIG fill:#FF9800,stroke:#F57C00,color:#FFFFFF
     style STD fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
-    style DEC fill:#7B1FA2,stroke:#5a32a3,color:#FFFFFF
+    style DEC fill:#7B1FA2,stroke:#4A148C,color:#FFFFFF
 ```
 
 ---
@@ -84,7 +84,7 @@ graph LR
     style P1 fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
     style P2 fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
     style P3 fill:#FFC107,stroke:#FFA000,color:#000000
-    style C1 fill:#7B1FA2,stroke:#5a32a3,color:#FFFFFF
+    style C1 fill:#7B1FA2,stroke:#4A148C,color:#FFFFFF
     style C2 fill:#FF9800,stroke:#F57C00,color:#FFFFFF
     style C3 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```

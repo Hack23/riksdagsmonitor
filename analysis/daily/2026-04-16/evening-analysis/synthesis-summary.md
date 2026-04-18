@@ -111,8 +111,8 @@ flowchart TD
     V1 --> SfU["SfU"]
     V2 --> UU
     style P246 fill:#EF5350,color:#FFFFFF
-    style SKU23 fill:#00cc66,color:#FFFFFF
-    style V1 fill:#cc0000,color:#FFFFFF
+    style SKU23 fill:#4CAF50,color:#FFFFFF
+    style V1 fill:#D32F2F,color:#FFFFFF
 ```
 
 ## Forward Indicators

@@ -57,10 +57,10 @@ flowchart LR
     
     style B fill:#FF9800,color:#000000
     style C fill:#FF9800,color:#000000
-    style D fill:#66bb6a,color:#000000
+    style D fill:#4CAF50,color:#000000
     style B1 fill:#ff7043,color:#FFFFFF
     style C1 fill:#FF9800,color:#000000
-    style D1 fill:#81c784,color:#000000
+    style D1 fill:#81C784,color:#000000
 ```
 
 ## Data Quality Notes

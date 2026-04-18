@@ -34,11 +34,11 @@ graph TD
     CU27 -.->|"Related:\nhousing market\nanti-fraud"| CU28
     Q718 -.->|"State capacity\ntheme"| Q719
 
-    style Q719 fill:#3d1a1a,color:#ff006e
+    style Q719 fill:#B71C1C,color:#ff006e
     style KU33 fill:#5D4037,color:#ffbe0b
-    style IP437 fill:#1a3d1a,color:#4CAF50
-    style IP438 fill:#1a3d1a,color:#4CAF50
-    style MP fill:#1a3d1a,color:#4CAF50
+    style IP437 fill:#1B5E20,color:#4CAF50
+    style IP438 fill:#1B5E20,color:#4CAF50
+    style MP fill:#1B5E20,color:#4CAF50
 ```
 
 ---

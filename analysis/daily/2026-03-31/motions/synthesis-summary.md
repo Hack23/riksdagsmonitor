@@ -41,10 +41,10 @@ flowchart TD
     style GOV fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
     style V fill:#B71C1C,stroke:#ff006e,color:#FFFFFF
     style EDU fill:#1B5E20,stroke:#00d9ff,color:#FFFFFF
-    style HOUSING fill:#e65100,stroke:#ffbe0b,color:#FFFFFF
+    style HOUSING fill:#E65100,stroke:#ffbe0b,color:#FFFFFF
     style DEF fill:#0D47A1,stroke:#00d9ff,color:#FFFFFF
-    style FIN fill:#4a148c,stroke:#ff006e,color:#FFFFFF
-    style JUST fill:#880e4f,stroke:#ff006e,color:#FFFFFF
+    style FIN fill:#4A148C,stroke:#ff006e,color:#FFFFFF
+    style JUST fill:#880E4F,stroke:#ff006e,color:#FFFFFF
     style INTL fill:#006064,stroke:#00d9ff,color:#FFFFFF
 ```
 

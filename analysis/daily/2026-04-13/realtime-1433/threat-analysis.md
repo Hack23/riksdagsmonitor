@@ -19,7 +19,7 @@ graph TD
         SOCIAL --> S1["Reception law legal challenge<br/>Probability: MEDIUM"]
         SOCIAL --> S2["Cost-of-living discontent<br/>Probability: HIGH"]
     end
-    style ROOT fill:#0A66C2,stroke:#FFFFFF,color:#FFFFFF
+    style ROOT fill:#1565C0,stroke:#FFFFFF,color:#FFFFFF
     style FISCAL fill:#D32F2F,stroke:#424242,color:#FFFFFF
     style GEOPOLITICAL fill:#FF9800,stroke:#424242,color:#FFFFFF
     style SOCIAL fill:#FFC107,stroke:#424242,color:#000000

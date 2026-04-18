@@ -23,10 +23,10 @@ graph TD
     O["🎯 OPPORTUNITIES\n• Pre-election goodwill with cost-of-living voters\n• Signals to rural/suburban voters\n• Energy transition managed politically"]:::opportunity
     T["🚨 THREATS\n• Green party backlash (MP)\n• EU carbon pricing credibility risk\n• Inflation re-ignition risk if oil prices spike"]:::threat
     
-    style S fill:#1a472a,color:#FFFFFF
-    style W fill:#7b2d00,color:#FFFFFF
+    style S fill:#1B5E20,color:#FFFFFF
+    style W fill:#E65100,color:#FFFFFF
     style O fill:#0D47A1,color:#FFFFFF
-    style T fill:#4a0e0e,color:#FFFFFF
+    style T fill:#B71C1C,color:#FFFFFF
 ```
 
 | Dimension | Evidence | Confidence | Impact |

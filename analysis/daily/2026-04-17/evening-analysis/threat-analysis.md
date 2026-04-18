@@ -35,10 +35,10 @@ graph TD
     T6 --> T6A["CU22 debate: Opposition\nreservations in guardianship\nSeverity: 1/5"]
     T6 --> T6B["Coalition vs. climate bloc\npolarization ahead of 2026\nSeverity: 4/5"]
 
-    style T1A fill:#3d1a1a,color:#ff006e
+    style T1A fill:#B71C1C,color:#ff006e
     style T2A fill:#5D4037,color:#ffbe0b
     style T4A fill:#5D4037,color:#ffbe0b
-    style T4B fill:#3d1a1a,color:#ff006e
+    style T4B fill:#B71C1C,color:#ff006e
     style T5A fill:#5D4037,color:#ffbe0b
     style T6B fill:#5D4037,color:#ffbe0b
 ```

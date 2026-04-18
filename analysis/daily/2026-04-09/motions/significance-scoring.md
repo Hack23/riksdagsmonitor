@@ -57,9 +57,9 @@ flowchart TD
     E --> F
     style A fill:#ff006e,color:#FFFFFF
     style B fill:#ffbe0b,color:#000000
-    style C fill:#d32f2f,color:#FFFFFF
-    style D fill:#2e7d32,color:#FFFFFF
-    style E fill:#1565c0,color:#FFFFFF
+    style C fill:#D32F2F,color:#FFFFFF
+    style D fill:#2E7D32,color:#FFFFFF
+    style E fill:#1565C0,color:#FFFFFF
     style F fill:#00d9ff,color:#000000
 ```
 

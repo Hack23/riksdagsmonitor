@@ -132,7 +132,7 @@ flowchart TB
     W ---|"Transform"| O
     style S fill:#4CAF50,color:#FFFFFF
     style W fill:#D32F2F,color:#FFFFFF
-    style O fill:#007bff,color:#FFFFFF
+    style O fill:#1565C0,color:#FFFFFF
     style T fill:#FF9800,color:#FFFFFF
 ```
 

@@ -59,5 +59,5 @@ graph LR
     style MP fill:#8BC34A,color:#000000
     style V fill:#D32F2F,color:#FFFFFF
     style C fill:#2E7D32,color:#FFFFFF
-    style SD fill:#dddd00,color:#000000
+    style SD fill:#FFC107,color:#000000
 ```

@@ -31,10 +31,10 @@ graph TB
         R2 -->|"Pattern"| AG2["🔴 Second Kristianstad<br/>mosque exposed"]
     end
     
-    style RF fill:#DDDF00,stroke:#424242,color:#000000
-    style RJ fill:#DDDF00,stroke:#424242,color:#000000
-    style GS fill:#6CA6CD,stroke:#424242,color:#FFFFFF
-    style JF fill:#6CA6CD,stroke:#424242,color:#FFFFFF
+    style RF fill:#FFC107,stroke:#424242,color:#000000
+    style RJ fill:#FFC107,stroke:#424242,color:#000000
+    style GS fill:#90CAF9,stroke:#424242,color:#FFFFFF
+    style JF fill:#90CAF9,stroke:#424242,color:#FFFFFF
     style AG1 fill:#FF5722,stroke:#424242,color:#FFFFFF
     style AG2 fill:#FF5722,stroke:#424242,color:#FFFFFF
 ```

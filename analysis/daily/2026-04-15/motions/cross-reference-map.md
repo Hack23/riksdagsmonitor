@@ -66,9 +66,9 @@ graph TD
         CL7["🔴 V Immigration<br/>AU + SfU motions"]
         CL8["🟢 MP Environment<br/>2 MJU motions"]
     end
-    style CL1 fill:#ff6666,color:#000000
+    style CL1 fill:#EF5350,color:#000000
     style CL2 fill:#FFC107,color:#000000
-    style CL3 fill:#6699ff,color:#FFFFFF
+    style CL3 fill:#90CAF9,color:#FFFFFF
 ```
 
 ## Data Quality Notes

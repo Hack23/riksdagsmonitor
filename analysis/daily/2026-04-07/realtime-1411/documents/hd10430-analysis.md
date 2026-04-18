@@ -48,7 +48,7 @@ graph TD
     KD_M --> MUSLIM
     style SD_P fill:#FFC107,stroke:#F57C00,color:#000000
     style KD_M fill:#FF9800,stroke:#E65100,color:#FFFFFF
-    style MUSLIM fill:#D32F2F,stroke:#721c24,color:#FFFFFF
+    style MUSLIM fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
     style MEDIA fill:#0097A7,stroke:#006064,color:#FFFFFF
 ```
 

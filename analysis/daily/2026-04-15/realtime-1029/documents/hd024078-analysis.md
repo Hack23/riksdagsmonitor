@@ -57,7 +57,7 @@ graph TD
     style C fill:#2196F3,color:#FFFFFF
     style D fill:#2196F3,color:#FFFFFF
     style G fill:#D32F2F,color:#FFFFFF
-    style H fill:#FFEB3B,color:#000000
+    style H fill:#FFC107,color:#000000
 ```
 
 ## Cross-Document References

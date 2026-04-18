@@ -38,7 +38,7 @@ graph TD
 
     style ROOT fill:#EF5350,color:#FFFFFF
     style C fill:#FF9800,color:#FFFFFF
-    style F fill:#5352ed,color:#FFFFFF
+    style F fill:#7B1FA2,color:#FFFFFF
 ```
 
 ## Detailed Threat Assessment

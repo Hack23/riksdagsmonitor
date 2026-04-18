@@ -32,7 +32,7 @@ graph LR
     style D3 fill:#FFC107,stroke:#FFA000,color:#000000
     style D4 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
     style DOM1 fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
-    style DOM2 fill:#7B1FA2,stroke:#5a32a3,color:#FFFFFF
+    style DOM2 fill:#7B1FA2,stroke:#4A148C,color:#FFFFFF
     style DOM3 fill:#FF9800,stroke:#F57C00,color:#FFFFFF
     style DOM4 fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
 ```

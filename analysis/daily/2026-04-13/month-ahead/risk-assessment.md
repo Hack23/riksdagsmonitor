@@ -23,12 +23,12 @@ graph TD
             R3["NATO vote controversy<br/>L:2 × I:5 = 10"]
         end
         subgraph "🟡 Medium Risk (L×I 6-9)"
-            style MR fill:#e9c46a,color:#000000
+            style MR fill:#FFD54F,color:#000000
             R4["Opposition democratic deficit frame<br/>L:3 × I:3 = 9"]
             R5["Budget deadlock in FiU<br/>L:2 × I:4 = 8"]
         end
         subgraph "🟢 Low Risk (L×I < 6)"
-            style LR fill:#2d6a4f,color:#FFFFFF
+            style LR fill:#2E7D32,color:#FFFFFF
             R6["SD coalition friction<br/>L:2 × I:3 = 6"]
         end
     end

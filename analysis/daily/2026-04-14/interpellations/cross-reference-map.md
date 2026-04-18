@@ -41,6 +41,6 @@ graph TD
     HD10426["HD10426 Israel"] -.-> EU["EU CFSP"]
     HD10423["HD10423 Social dumping"] -.-> WELFARE["Welfare state"]
     style HD10428 fill:#EF5350,color:#FFFFFF
-    style HD10426 fill:#ff9900,color:#FFFFFF
-    style HD10423 fill:#ff9900,color:#FFFFFF
+    style HD10426 fill:#FF9800,color:#FFFFFF
+    style HD10423 fill:#FF9800,color:#FFFFFF
 ```

@@ -57,9 +57,9 @@ graph LR
     end
 
     style A fill:#EF5350,color:#FFFFFF
-    style B fill:#4ecdc4,color:#FFFFFF
+    style B fill:#0097A7,color:#FFFFFF
     style C fill:#45b7d1,color:#FFFFFF
-    style D fill:#96ceb4,color:#FFFFFF
+    style D fill:#A5D6A7,color:#FFFFFF
 ```
 
 **Overall Significance**: MEDIUM (combined score 5-6/10)

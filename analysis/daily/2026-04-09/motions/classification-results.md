@@ -27,9 +27,9 @@ flowchart LR
     A --> D
     B --> D
     C --> D
-    style A fill:#2e7d32,color:#FFFFFF
-    style B fill:#d32f2f,color:#FFFFFF
-    style C fill:#1565c0,color:#FFFFFF
+    style A fill:#2E7D32,color:#FFFFFF
+    style B fill:#D32F2F,color:#FFFFFF
+    style C fill:#1565C0,color:#FFFFFF
     style D fill:#ffbe0b,color:#000000
 ```
 

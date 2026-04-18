@@ -63,11 +63,11 @@ graph TD
     style A fill:#EF5350,color:#FFFFFF
     style B fill:#FF9800,color:#FFFFFF
     style C fill:#FF9800,color:#FFFFFF
-    style D fill:#42a5f5,color:#FFFFFF
-    style E fill:#66bb6a,color:#FFFFFF
-    style F fill:#ab47bc,color:#FFFFFF
-    style G fill:#ab47bc,color:#FFFFFF
-    style H fill:#ef5350,color:#FFFFFF
+    style D fill:#2196F3,color:#FFFFFF
+    style E fill:#4CAF50,color:#FFFFFF
+    style F fill:#7B1FA2,color:#FFFFFF
+    style G fill:#7B1FA2,color:#FFFFFF
+    style H fill:#EF5350,color:#FFFFFF
 ```
 
 ## Implications

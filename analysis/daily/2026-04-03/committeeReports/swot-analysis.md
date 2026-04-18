@@ -107,8 +107,8 @@ graph TD
     style GS2 fill:#4CAF50,color:#FFFFFF
     style GW1 fill:#D32F2F,color:#FFFFFF
     style GW2 fill:#D32F2F,color:#FFFFFF
-    style GO1 fill:#007bff,color:#FFFFFF
-    style GO2 fill:#007bff,color:#FFFFFF
+    style GO1 fill:#1565C0,color:#FFFFFF
+    style GO2 fill:#1565C0,color:#FFFFFF
     style GT1 fill:#FF9800,color:#FFFFFF
     style GT2 fill:#FFC107,color:#000000
 ```

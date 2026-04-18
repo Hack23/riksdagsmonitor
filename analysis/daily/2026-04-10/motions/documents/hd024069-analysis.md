@@ -28,7 +28,7 @@ graph LR
     A --> F{Urgency}
     F -->|"🔵 ELEVATED"| G["Committee consideration"]
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style C fill:#51cf66,stroke:#424242,color:#000000
+    style C fill:#4CAF50,stroke:#424242,color:#000000
     style E fill:#00d9ff,stroke:#424242,color:#000000
     style G fill:#2196F3,stroke:#424242,color:#000000
 ```

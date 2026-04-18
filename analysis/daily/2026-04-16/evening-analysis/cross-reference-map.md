@@ -63,9 +63,9 @@ graph TD
     style P231 fill:#FF9800,color:#FFFFFF
     style P232 fill:#FF9800,color:#FFFFFF
     style SKU23 fill:#FF9800,color:#FFFFFF
-    style M4090 fill:#cc0000,color:#FFFFFF
-    style M4091 fill:#cc0000,color:#FFFFFF
-    style M4092 fill:#cc0000,color:#FFFFFF
+    style M4090 fill:#D32F2F,color:#FFFFFF
+    style M4091 fill:#D32F2F,color:#FFFFFF
+    style M4092 fill:#D32F2F,color:#FFFFFF
 ```
 
 ---

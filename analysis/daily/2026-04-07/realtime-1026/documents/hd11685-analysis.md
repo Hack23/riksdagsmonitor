@@ -39,7 +39,7 @@ graph LR
     style C fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
     style H fill:#FF9800,stroke:#F57C00,color:#FFFFFF
     style I fill:#FFC107,stroke:#FFA000,color:#000000
-    style L fill:#9E9E9E,stroke:#545b62,color:#FFFFFF
+    style L fill:#9E9E9E,stroke:#616161,color:#FFFFFF
 ```
 
 | Classification | Value | Rationale |

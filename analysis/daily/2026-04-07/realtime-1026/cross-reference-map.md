@@ -31,8 +31,8 @@ graph TD
     style HD10429 fill:#FFC107,stroke:#FFA000,color:#000000
     style HD11684 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
     style HD11685 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
-    style HD03228 fill:#9E9E9E,stroke:#545b62,color:#FFFFFF
-    style PROP133 fill:#9E9E9E,stroke:#545b62,color:#FFFFFF
+    style HD03228 fill:#9E9E9E,stroke:#616161,color:#FFFFFF
+    style PROP133 fill:#9E9E9E,stroke:#616161,color:#FFFFFF
 ```
 
 ---

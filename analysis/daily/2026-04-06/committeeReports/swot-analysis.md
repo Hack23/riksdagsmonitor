@@ -101,9 +101,9 @@ flowchart LR
     S -->|"Res. 1, 7, 9, 10"| UU6
     V -->|"Res. 2, 5, 8, 10, 12"| UU6
     
-    style Government fill:#2d5a27,color:#FFFFFF
-    style Opposition fill:#8b1a1a,color:#FFFFFF
+    style Government fill:#2E7D32,color:#FFFFFF
+    style Opposition fill:#B71C1C,color:#FFFFFF
     style FöU12 fill:#0D47A1,color:#FFFFFF
-    style JuU15 fill:#5c1a1a,color:#FFFFFF
-    style UU6 fill:#3a1a5c,color:#FFFFFF
+    style JuU15 fill:#B71C1C,color:#FFFFFF
+    style UU6 fill:#4A148C,color:#FFFFFF
 ```

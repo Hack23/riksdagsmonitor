@@ -37,7 +37,7 @@ graph TD
     MED -->|"scrutinizes"| BUS
     JUD -->|"implements"| CIT
 
-    style CIT fill:#7b2d8e,color:#FFFFFF
+    style CIT fill:#7B1FA2,color:#FFFFFF
     style GOV fill:#4CAF50,color:#FFFFFF
     style OPP fill:#D32F2F,color:#FFFFFF
     style BUS fill:#FF9800,color:#FFFFFF

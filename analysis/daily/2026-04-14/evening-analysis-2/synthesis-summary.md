@@ -79,7 +79,7 @@ graph TD
     style EB fill:#ff006e,color:#FFFFFF
     style FIU fill:#EF5350,color:#FFFFFF
     style NATO fill:#FF9800,color:#FFFFFF
-    style BRITZ fill:#5352ed,color:#FFFFFF
+    style BRITZ fill:#7B1FA2,color:#FFFFFF
 ```
 
 ## SWOT Analysis — All 8 Mandatory Stakeholder Groups

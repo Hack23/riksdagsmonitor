@@ -70,7 +70,7 @@ graph TD
     style FIU fill:#EF5350,color:#FFFFFF
     style NATO fill:#FF9800,color:#FFFFFF
     style EL fill:#FFC107,color:#000000
-    style SINT fill:#5352ed,color:#FFFFFF
+    style SINT fill:#7B1FA2,color:#FFFFFF
 ```
 
 ## SWOT Analysis — 8 Stakeholder Groups

@@ -487,7 +487,7 @@ graph TD
     style SEN2 fill:#FFC107,color:#000000
     style RSK1 fill:#FFC107,color:#000000
     style RSK2 fill:#FF9800,color:#FFFFFF
-    style SIG1 fill:#007bff,color:#FFFFFF
+    style SIG1 fill:#1565C0,color:#FFFFFF
     style SIG2 fill:#D32F2F,color:#FFFFFF
 ```
 
@@ -624,9 +624,9 @@ flowchart LR
     CWG --> Social
     Other --> Foreign
 
-    classDef kd fill:#1a73e8,color:#FFFFFF
-    classDef m fill:#003f87,color:#FFFFFF
-    classDef other fill:#666,color:#FFFFFF
+    classDef kd fill:#1565C0,color:#FFFFFF
+    classDef m fill:#0D47A1,color:#FFFFFF
+    classDef other fill:#616161,color:#FFFFFF
 ```
 
 ## Key Findings

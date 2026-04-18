@@ -28,9 +28,9 @@ graph LR
     A --> F{Urgency}
     F -->|"🟢 ROUTINE"| G["UU committee — normal processing"]
     style A fill:#1a1e3d,stroke:#00d9ff,color:#e0e0e0
-    style C fill:#51cf66,stroke:#424242,color:#000000
+    style C fill:#4CAF50,stroke:#424242,color:#000000
     style E fill:#00d9ff,stroke:#424242,color:#000000
-    style G fill:#51cf66,stroke:#424242,color:#000000
+    style G fill:#4CAF50,stroke:#424242,color:#000000
 ```
 
 ## SWOT Analysis

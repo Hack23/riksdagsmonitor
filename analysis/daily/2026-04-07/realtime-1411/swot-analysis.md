@@ -73,7 +73,7 @@ graph TD
     style O1 fill:#0097A7,stroke:#006064,color:#FFFFFF
     style O2 fill:#0097A7,stroke:#006064,color:#FFFFFF
     style T1 fill:#FF9800,stroke:#E65100,color:#FFFFFF
-    style T2 fill:#D32F2F,stroke:#721c24,color:#FFFFFF
+    style T2 fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
 ```
 
 ## TOWS Strategic Options

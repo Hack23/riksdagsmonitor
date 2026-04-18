@@ -45,9 +45,9 @@ graph LR
     style B fill:#4CAF50,stroke:#424242,color:#FFFFFF
     style C fill:#ffbe0b,stroke:#424242,color:#000000
     style D fill:#EF5350,stroke:#424242,color:#FFFFFF
-    style E fill:#6b7280,stroke:#424242,color:#FFFFFF
-    style F fill:#6b7280,stroke:#424242,color:#FFFFFF
-    style G fill:#6b7280,stroke:#424242,color:#FFFFFF
+    style E fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style F fill:#9E9E9E,stroke:#424242,color:#FFFFFF
+    style G fill:#9E9E9E,stroke:#424242,color:#FFFFFF
 ```
 
 ## Implications

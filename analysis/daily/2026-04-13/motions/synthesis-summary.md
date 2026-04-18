@@ -85,7 +85,7 @@ graph TB
     subgraph "Cluster 4: Copyright"
         SD1["mot. 4007 (SD)"] --> P184["prop. 2025/26:184"]
         C2["mot. 4037 (C)"] --> P184
-        style SD1 fill:#dddd00,color:#000000
+        style SD1 fill:#FFC107,color:#000000
         style C2 fill:#2E7D32,color:#FFFFFF
         style P184 fill:#ffbe0b,color:#000000
     end

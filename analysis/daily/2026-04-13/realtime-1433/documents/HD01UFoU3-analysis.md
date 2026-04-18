@@ -25,7 +25,7 @@ graph LR
     D --> E["Defence & Security Policy"]
     A --> F{"Urgency"}
     F -->|"🟠 URGENT"| G["Active military deployment"]
-    style A fill:#0A66C2,stroke:#FFFFFF,color:#FFFFFF
+    style A fill:#1565C0,stroke:#FFFFFF,color:#FFFFFF
     style C fill:#D32F2F,stroke:#424242,color:#FFFFFF
     style E fill:#D32F2F,stroke:#424242,color:#FFFFFF
     style G fill:#FF9800,stroke:#424242,color:#FFFFFF

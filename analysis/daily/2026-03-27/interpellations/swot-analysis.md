@@ -106,9 +106,9 @@ graph TD
     end
     style GS1 fill:#4CAF50,color:#FFFFFF,stroke:#2E7D32
     style OS1 fill:#4CAF50,color:#FFFFFF,stroke:#2E7D32
-    style GW1 fill:#FF9800,color:#FFFFFF,stroke:#c35a00
-    style GW2 fill:#FF9800,color:#FFFFFF,stroke:#c35a00
-    style GW3 fill:#FF9800,color:#FFFFFF,stroke:#c35a00
+    style GW1 fill:#FF9800,color:#FFFFFF,stroke:#F57C00
+    style GW2 fill:#FF9800,color:#FFFFFF,stroke:#F57C00
+    style GW3 fill:#FF9800,color:#FFFFFF,stroke:#F57C00
     style GO1 fill:#0097A7,color:#FFFFFF,stroke:#117a8b
     style OO1 fill:#0097A7,color:#FFFFFF,stroke:#117a8b
     style GT1 fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C

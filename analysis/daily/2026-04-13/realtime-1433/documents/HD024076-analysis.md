@@ -25,7 +25,7 @@ graph LR
     D --> E["Migration & Asylum"]
     A --> F{"Urgency"}
     F -->|"🟠 URGENT"| G["Active legislative process"]
-    style A fill:#0A66C2,stroke:#FFFFFF,color:#FFFFFF
+    style A fill:#1565C0,stroke:#FFFFFF,color:#FFFFFF
     style C fill:#FFC107,stroke:#424242,color:#000000
     style E fill:#D32F2F,stroke:#424242,color:#FFFFFF
     style G fill:#FF9800,stroke:#424242,color:#FFFFFF

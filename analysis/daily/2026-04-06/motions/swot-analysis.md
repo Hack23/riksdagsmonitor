@@ -11,7 +11,7 @@ SWOT analysis of 50 opposition motions filed 1 April 2026 by S (10), C (12), MP 
 
 ```mermaid
 graph TD
-    style S fill:#e8112d,color:white
+    style S fill:#D32F2F,color:white
     style C fill:#2E7D32,color:white
     style MP fill:#8BC34A,color:black
     style V fill:#D32F2F,color:white

@@ -34,13 +34,13 @@ graph LR
     C --> NU
     MP --> NU
     style SD fill:#deb522,stroke:#424242,color:#000000
-    style M fill:#5cb3ff,stroke:#424242,color:#000000
-    style S fill:#e8112d,stroke:#424242,color:#FFFFFF
+    style M fill:#90CAF9,stroke:#424242,color:#000000
+    style S fill:#D32F2F,stroke:#424242,color:#FFFFFF
     style V fill:#D32F2F,stroke:#424242,color:#FFFFFF
     style C fill:#2E7D32,stroke:#424242,color:#FFFFFF
     style MP fill:#8BC34A,stroke:#424242,color:#000000
-    style KD fill:#005ea1,stroke:#424242,color:#FFFFFF
-    style L fill:#006ab3,stroke:#424242,color:#FFFFFF
+    style KD fill:#0D47A1,stroke:#424242,color:#FFFFFF
+    style L fill:#0D47A1,stroke:#424242,color:#FFFFFF
 ```
 
 ---

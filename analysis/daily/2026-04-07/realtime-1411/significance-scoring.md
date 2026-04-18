@@ -21,7 +21,7 @@ graph LR
         MED["MEDIUM 4-6<br>0 documents"]
         LOW["LOW ≤3<br>9 documents"]
     end
-    style HIGH fill:#D32F2F,stroke:#721c24,color:#FFFFFF
+    style HIGH fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
     style MED fill:#FFC107,stroke:#F57C00,color:#000000
     style LOW fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
 ```

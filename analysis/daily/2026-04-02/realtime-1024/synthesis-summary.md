@@ -31,10 +31,10 @@ graph TD
     style P235 fill:#EF5350,stroke:#424242,color:#FFFFFF
     style P228 fill:#EF5350,stroke:#424242,color:#FFFFFF
     style JUU15 fill:#ffbe0b,stroke:#424242,color:#000000
-    style P214 fill:#ff6666,stroke:#424242,color:#FFFFFF
+    style P214 fill:#EF5350,stroke:#424242,color:#FFFFFF
     style P227 fill:#ffcc44,stroke:#424242,color:#000000
-    style P229 fill:#ffaa44,stroke:#424242,color:#000000
-    style P215 fill:#ffaa44,stroke:#424242,color:#000000
+    style P229 fill:#FFA726,stroke:#424242,color:#000000
+    style P215 fill:#FFA726,stroke:#424242,color:#000000
 ```
 
 ## Key Findings

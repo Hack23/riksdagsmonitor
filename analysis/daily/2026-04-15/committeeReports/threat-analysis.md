@@ -46,8 +46,8 @@ graph LR
     T2 -->|"SfU22"| HR["Human Rights Bodies"]
     T3 -->|"TU21"| CYBER["Cyber Threats"]
     T4 -->|"TU17"| CRIME["Organized Crime"]
-    style T1 fill:#1565c0,color:#FFFFFF
-    style T2 fill:#e65100,color:#FFFFFF
-    style T3 fill:#f9a825,color:#000000
-    style T4 fill:#f9a825,color:#000000
+    style T1 fill:#1565C0,color:#FFFFFF
+    style T2 fill:#E65100,color:#FFFFFF
+    style T3 fill:#FFA000,color:#000000
+    style T4 fill:#FFA000,color:#000000
 ```

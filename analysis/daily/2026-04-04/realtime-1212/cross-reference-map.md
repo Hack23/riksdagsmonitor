@@ -30,8 +30,8 @@ graph TD
         HD03235 -.->|"Capacity Relief"| HD01JuU15
         HD03214 -.->|"National Security"| HD03235
     end
-    style HD03214 fill:#0A66C2,stroke:#424242,color:#FFFFFF
-    style HD03228 fill:#0A66C2,stroke:#424242,color:#FFFFFF
+    style HD03214 fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style HD03228 fill:#1565C0,stroke:#424242,color:#FFFFFF
     style HD01FöU12 fill:#4CAF50,stroke:#424242,color:#FFFFFF
     style HD03235 fill:#D32F2F,stroke:#424242,color:#FFFFFF
     style HD01JuU15 fill:#FFC107,stroke:#424242,color:#000000

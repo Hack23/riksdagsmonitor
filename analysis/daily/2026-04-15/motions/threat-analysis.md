@@ -54,10 +54,10 @@ graph LR
     V -->|"mot. 4071"| P226
     C -->|"mot. 4070"| P226
     MP -->|"mot. 4072"| P226
-    style MP fill:#83CF5B
-    style V fill:#DA291C
+    style MP fill:#8BC34A
+    style V fill:#D32F2F
     style C fill:#2E7D32
-    style S fill:#E8112D
+    style S fill:#D32F2F
 ```
 
 ## Forward Indicators

@@ -81,8 +81,8 @@ graph TD
     style S3 fill:#4CAF50,stroke:#424242,color:#FFFFFF
     style W1 fill:#FFC107,stroke:#424242,color:#000000
     style W2 fill:#FFC107,stroke:#424242,color:#000000
-    style O1 fill:#0A66C2,stroke:#424242,color:#FFFFFF
-    style O2 fill:#0A66C2,stroke:#424242,color:#FFFFFF
+    style O1 fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style O2 fill:#1565C0,stroke:#424242,color:#FFFFFF
     style T1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
     style T3 fill:#D32F2F,stroke:#424242,color:#FFFFFF
 ```

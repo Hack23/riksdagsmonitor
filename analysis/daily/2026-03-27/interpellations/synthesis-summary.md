@@ -67,8 +67,8 @@ graph LR
     end
     style LR fill:#D32F2F,color:#FFFFFF,stroke:#D32F2F
     style JB fill:#2196F3,color:#FFFFFF,stroke:#1565C0
-    style ES fill:#455A64,color:#FFFFFF,stroke:#1a252f
-    style GS fill:#455A64,color:#FFFFFF,stroke:#1a252f
+    style ES fill:#455A64,color:#FFFFFF,stroke:#37474F
+    style GS fill:#455A64,color:#FFFFFF,stroke:#37474F
 ```
 
 ## 📊 Thematic Analysis

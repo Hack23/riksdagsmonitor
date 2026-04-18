@@ -29,7 +29,7 @@ graph TD
         MCP --> V["Votes: 0 new"]
         MCP --> S["Speeches: 0 analyzed"]
     end
-    style MCP fill:#0A66C2,stroke:#424242,color:#FFFFFF
+    style MCP fill:#1565C0,stroke:#424242,color:#FFFFFF
     style P fill:#4CAF50,stroke:#424242,color:#FFFFFF
     style B fill:#4CAF50,stroke:#424242,color:#FFFFFF
     style V fill:#FFC107,stroke:#424242,color:#000000

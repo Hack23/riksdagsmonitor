@@ -22,7 +22,7 @@ graph LR
 
     style FiU48 fill:#EF5350,color:#FFFFFF
     style UFöU3 fill:#FF9800,color:#FFFFFF
-    style MJU30 fill:#2ed573,color:#FFFFFF
+    style MJU30 fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Detailed Cross-References

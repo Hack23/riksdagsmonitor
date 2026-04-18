@@ -23,10 +23,10 @@ graph LR
     HD10429 -->|"references"| PROP["Prop 2025/26:133<br/>Demonstration Security"]
     HD10430 -->|"references"| EXP["Expressen Investigation<br/>Kristianstad Mosques"]
     
-    style HD10429 fill:#FFD700,stroke:#424242,color:#000000
-    style HD10430 fill:#FFD700,stroke:#424242,color:#000000
-    style PROP fill:#B0C4DE,stroke:#424242
-    style EXP fill:#B0C4DE,stroke:#424242
+    style HD10429 fill:#FFC107,stroke:#424242,color:#000000
+    style HD10430 fill:#FFC107,stroke:#424242,color:#000000
+    style PROP fill:#BBDEFB,stroke:#424242
+    style EXP fill:#BBDEFB,stroke:#424242
 ```
 
 ## Detailed Cross-References

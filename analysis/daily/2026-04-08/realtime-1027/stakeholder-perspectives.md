@@ -32,10 +32,10 @@ graph TB
     V -->|"EV premium"| L
     C -->|"Sida audit"| M
     
-    style M fill:#1a6bc4,stroke:#424242,color:#FFFFFF
-    style KD fill:#005ea1,stroke:#424242,color:#FFFFFF
-    style L fill:#006ab3,stroke:#424242,color:#FFFFFF
-    style SD fill:#dddd00,stroke:#424242,color:#000000
+    style M fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style KD fill:#0D47A1,stroke:#424242,color:#FFFFFF
+    style L fill:#0D47A1,stroke:#424242,color:#FFFFFF
+    style SD fill:#FFC107,stroke:#424242,color:#000000
     style S fill:#ed1b34,stroke:#424242,color:#FFFFFF
     style V fill:#D32F2F,stroke:#424242,color:#FFFFFF
     style C fill:#2E7D32,stroke:#424242,color:#FFFFFF

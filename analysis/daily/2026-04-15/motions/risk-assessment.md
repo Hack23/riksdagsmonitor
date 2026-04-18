@@ -32,7 +32,7 @@ graph TD
         R4["🟠 Sida Accountability<br/>L:3 × I:2 = 6<br/>Three-party convergence"]
     end
     subgraph "LOW Risk (L×I < 5)"
-        style LOW fill:#44aa44,color:#FFFFFF
+        style LOW fill:#4CAF50,color:#FFFFFF
         R5["🟢 Education Opposition<br/>L:2 × I:2 = 4"]
         R6["🟢 Rural Policy Stall<br/>L:1 × I:2 = 2"]
     end

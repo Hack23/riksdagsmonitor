@@ -188,7 +188,7 @@ flowchart TD
     Gate -->|"❌ No"| Noop["📝 noop\nwith analysis summary"]
 
     style Start fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
-    style Health fill:#9E9E9E,stroke:#565e64,color:#FFFFFF
+    style Health fill:#9E9E9E,stroke:#616161,color:#FFFFFF
     style Feeds fill:#2E7D32,stroke:#2E7D32,color:#FFFFFF
     style Advisory fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
     style Analytics fill:#7B1FA2,stroke:#4A148C,color:#FFFFFF
@@ -468,8 +468,8 @@ graph TB
     style RT fill:#C2185B,color:#FFFFFF,stroke:#880E4F,stroke-width:2px
     style WR fill:#4CAF50,color:#000000,stroke:#2E7D32,stroke-width:2px
     style WA fill:#2196F3,color:#000000,stroke:#0097A7,stroke-width:2px
-    style MR fill:#e91e63,color:#FFFFFF,stroke:#c2185b,stroke-width:2px
-    style MA fill:#ff5722,color:#FFFFFF,stroke:#e64a19,stroke-width:2px
+    style MR fill:#E91E63,color:#FFFFFF,stroke:#C2185B,stroke-width:2px
+    style MA fill:#FF5722,color:#FFFFFF,stroke:#e64a19,stroke-width:2px
 ```
 
 ### Per-Workflow Unique Analytics

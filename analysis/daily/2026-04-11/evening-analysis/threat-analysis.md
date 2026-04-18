@@ -64,14 +64,14 @@ graph TD
     style INTERNAL fill:#311B92,stroke:#ffbe0b,stroke-width:2px,color:#e0e0e0
     style OPPOSITION fill:#311B92,stroke:#00d9ff,stroke-width:2px,color:#e0e0e0
     style WELFARE fill:#311B92,stroke:#ff006e,stroke-width:1px,color:#e0e0e0
-    style T1 fill:#cc5500,stroke:#ff006e,color:#FFFFFF
+    style T1 fill:#F57C00,stroke:#ff006e,color:#FFFFFF
     style T2 fill:#F57C00,stroke:#ffbe0b,color:#FFFFFF
-    style T3 fill:#cc5500,stroke:#ff006e,color:#FFFFFF
+    style T3 fill:#F57C00,stroke:#ff006e,color:#FFFFFF
     style T4 fill:#F57C00,stroke:#ffbe0b,color:#FFFFFF
     style T5 fill:#F57C00,stroke:#ffbe0b,color:#FFFFFF
-    style T6 fill:#2a6030,stroke:#00d9ff,color:#FFFFFF
+    style T6 fill:#2E7D32,stroke:#00d9ff,color:#FFFFFF
     style T7 fill:#F57C00,stroke:#ffbe0b,color:#FFFFFF
-    style T8 fill:#2a6030,stroke:#00d9ff,color:#FFFFFF
+    style T8 fill:#2E7D32,stroke:#00d9ff,color:#FFFFFF
 ```
 
 ## Threat Escalation Decision Tree

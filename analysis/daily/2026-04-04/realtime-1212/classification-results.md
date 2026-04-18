@@ -27,8 +27,8 @@ graph LR
             J2["HD01JuU15<br/>Corrections"]
         end
     end
-    style D1 fill:#0A66C2,stroke:#424242,color:#FFFFFF
-    style D2 fill:#0A66C2,stroke:#424242,color:#FFFFFF
+    style D1 fill:#1565C0,stroke:#424242,color:#FFFFFF
+    style D2 fill:#1565C0,stroke:#424242,color:#FFFFFF
     style D3 fill:#4CAF50,stroke:#424242,color:#FFFFFF
     style J1 fill:#D32F2F,stroke:#424242,color:#FFFFFF
     style J2 fill:#FFC107,stroke:#424242,color:#000000

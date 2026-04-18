@@ -39,7 +39,7 @@ graph TD
     style R2_cell fill:#FFA000,color:#000000
     style R5_cell fill:#FFA000,color:#000000
     style R3_cell fill:#FFA000,color:#000000
-    style R6_cell fill:#44bb44,color:#FFFFFF
+    style R6_cell fill:#4CAF50,color:#FFFFFF
 ```
 
 ## Detailed Risk Analysis

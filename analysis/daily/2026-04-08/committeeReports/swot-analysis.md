@@ -109,10 +109,10 @@ flowchart TD
     
     style C fill:#EF5350,color:#FFFFFF
     style E fill:#FF9800,color:#FFFFFF
-    style F fill:#66bb6a,color:#FFFFFF
-    style G fill:#42a5f5,color:#FFFFFF
-    style D fill:#ab47bc,color:#FFFFFF
-    style H fill:#78909c,color:#FFFFFF
+    style F fill:#4CAF50,color:#FFFFFF
+    style G fill:#2196F3,color:#FFFFFF
+    style D fill:#7B1FA2,color:#FFFFFF
+    style H fill:#90A4AE,color:#FFFFFF
 ```
 
 ## Data Quality Notes

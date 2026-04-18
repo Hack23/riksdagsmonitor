@@ -29,7 +29,7 @@ graph LR
     style RUSSIA fill:#D32F2F,color:#FFFFFF
     style SWEDEN fill:#1565C0,color:#FFFFFF
     style FINLAND fill:#4CAF50,color:#FFFFFF
-    style NATO fill:#16a085,color:#FFFFFF
+    style NATO fill:#0097A7,color:#FFFFFF
 
     RUSSIA[🇷🇺 Russia<br/>Northwest Military District<br/>Murmansk/Karelia] -- "Pressure" --> FINLAND[🇫🇮 Finland<br/>1,340 km border<br/>NATO member 2023]
     FINLAND -- "eFP host" --> NATO_FIN[NATO Battlegroup Finland<br/>Germany/Netherlands/UK lead]

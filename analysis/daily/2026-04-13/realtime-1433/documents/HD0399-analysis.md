@@ -25,7 +25,7 @@ graph LR
     D --> E["Cross-Cutting Fiscal Policy"]
     A --> F{"Urgency"}
     F -->|"🟠 URGENT"| G["Budget cycle deadline"]
-    style A fill:#0A66C2,stroke:#FFFFFF,color:#FFFFFF
+    style A fill:#1565C0,stroke:#FFFFFF,color:#FFFFFF
     style C fill:#FFC107,stroke:#424242,color:#000000
     style E fill:#0097A7,stroke:#424242,color:#FFFFFF
     style G fill:#FF9800,stroke:#424242,color:#FFFFFF

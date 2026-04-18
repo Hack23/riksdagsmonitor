@@ -10,7 +10,7 @@ graph TD
     style CIT fill:#4CAF50,color:#FFFFFF
     style BIZ fill:#FF9800,color:#FFFFFF
     style CSO fill:#7B1FA2,color:#FFFFFF
-    style INT fill:#16a085,color:#FFFFFF
+    style INT fill:#0097A7,color:#FFFFFF
     style JUD fill:#9E9E9E,color:#FFFFFF
     style MED fill:#D32F2F,color:#FFFFFF
 

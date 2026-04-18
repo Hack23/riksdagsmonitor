@@ -16,7 +16,7 @@ graph TD
         MED["📰 Media/Public Opinion"]
         CIV["🤝 Civil Society<br/>Asylum NGOs, Climate orgs"]
     end
-    style GOV fill:#0A66C2,stroke:#FFFFFF,color:#FFFFFF
+    style GOV fill:#1565C0,stroke:#FFFFFF,color:#FFFFFF
     style OPP fill:#D32F2F,stroke:#424242,color:#FFFFFF
     style CIT fill:#4CAF50,stroke:#424242,color:#FFFFFF
     style BIZ fill:#FFC107,stroke:#424242,color:#000000

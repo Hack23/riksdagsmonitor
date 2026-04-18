@@ -27,7 +27,7 @@ graph LR
         HD10422["HD10422<br/>Labour Market<br/>Integration<br/>Urgency: MEDIUM"]
         HD10421["HD10421<br/>Integration Finance<br/>Public Finance<br/>Urgency: MEDIUM"]
     end
-    style HD10420 fill:#FF9800,color:#FFFFFF,stroke:#c35a00
+    style HD10420 fill:#FF9800,color:#FFFFFF,stroke:#F57C00
     style HD10422 fill:#FFC107,color:#000000,stroke:#F57C00
     style HD10421 fill:#FFC107,color:#000000,stroke:#F57C00
 ```

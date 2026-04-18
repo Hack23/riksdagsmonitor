@@ -69,9 +69,9 @@ graph TD
     BIZ -->|"Compliance cost"| TU17["TU17 Anti-Fraud"]
     EU["🇪🇺 EU/International"] -->|"Mandates"| TU21
     EU -->|"Scrutinizes"| SFU22
-    style GOV fill:#1a237e,color:#FFFFFF
+    style GOV fill:#0D47A1,color:#FFFFFF
     style OPP fill:#B71C1C,color:#FFFFFF
     style CS fill:#1B5E20,color:#FFFFFF
-    style BIZ fill:#e65100,color:#FFFFFF
+    style BIZ fill:#E65100,color:#FFFFFF
     style EU fill:#0D47A1,color:#FFFFFF
 ```

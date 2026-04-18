@@ -24,11 +24,11 @@ graph TD
     MP_THREAT -->|"Medium threat"| GOV
     V_THREAT -->|"Targeted threat"| GOV
     C_THREAT -->|"Low threat"| GOV
-    style S_THREAT fill:#e8424d,color:#FFFFFF
+    style S_THREAT fill:#EF5350,color:#FFFFFF
     style MP_THREAT fill:#8BC34A,color:#000000
     style V_THREAT fill:#D32F2F,color:#FFFFFF
     style C_THREAT fill:#2E7D32,color:#FFFFFF
-    style GOV fill:#1a3a8f,color:#FFFFFF
+    style GOV fill:#0D47A1,color:#FFFFFF
 ```
 
 ## Key Threats

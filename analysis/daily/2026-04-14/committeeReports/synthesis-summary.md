@@ -48,8 +48,8 @@ graph TD
 
     style B fill:#EF5350,color:#FFFFFF
     style C fill:#FF9800,color:#FFFFFF
-    style D fill:#2ed573,color:#FFFFFF
-    style K fill:#5352ed,color:#FFFFFF
+    style D fill:#4CAF50,color:#FFFFFF
+    style K fill:#7B1FA2,color:#FFFFFF
 ```
 
 ## AI-Recommended Article Metadata

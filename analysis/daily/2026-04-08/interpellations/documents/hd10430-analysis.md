@@ -52,7 +52,7 @@ graph TD
         D -->|Evasive| F["SD escalation risk"]
     end
     style A fill:#D32F2F,color:#FFFFFF
-    style B fill:#ffd700,color:#000000
+    style B fill:#FFC107,color:#000000
     style C fill:#7B1FA2,color:#FFFFFF
     style E fill:#4CAF50,color:#FFFFFF
     style F fill:#D32F2F,color:#FFFFFF

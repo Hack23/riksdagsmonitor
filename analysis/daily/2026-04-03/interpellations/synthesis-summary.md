@@ -50,9 +50,9 @@ flowchart LR
     CWG --> Social
     Other --> Foreign
 
-    classDef kd fill:#1a73e8,color:#FFFFFF
-    classDef m fill:#003f87,color:#FFFFFF
-    classDef other fill:#666,color:#FFFFFF
+    classDef kd fill:#1565C0,color:#FFFFFF
+    classDef m fill:#0D47A1,color:#FFFFFF
+    classDef other fill:#616161,color:#FFFFFF
 ```
 
 ## Key Findings

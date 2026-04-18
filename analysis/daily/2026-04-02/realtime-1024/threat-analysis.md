@@ -29,13 +29,13 @@ graph TD
     style T2 fill:#EF5350,stroke:#424242,color:#FFFFFF
     style T3 fill:#ffbe0b,stroke:#424242,color:#000000
     style T4 fill:#ff006e,stroke:#424242,color:#FFFFFF
-    style T1A fill:#ffcc88,stroke:#424242,color:#000000
-    style T1B fill:#ffcc88,stroke:#424242,color:#000000
-    style T1C fill:#ffcc88,stroke:#424242,color:#000000
-    style T2A fill:#ff8888,stroke:#424242,color:#000000
-    style T2B fill:#ff8888,stroke:#424242,color:#000000
-    style T3A fill:#ffe888,stroke:#424242,color:#000000
-    style T3B fill:#ffe888,stroke:#424242,color:#000000
+    style T1A fill:#FFB74D,stroke:#424242,color:#000000
+    style T1B fill:#FFB74D,stroke:#424242,color:#000000
+    style T1C fill:#FFB74D,stroke:#424242,color:#000000
+    style T2A fill:#EF5350,stroke:#424242,color:#000000
+    style T2B fill:#EF5350,stroke:#424242,color:#000000
+    style T3A fill:#FFE082,stroke:#424242,color:#000000
+    style T3B fill:#FFE082,stroke:#424242,color:#000000
     style T4A fill:#ff88aa,stroke:#424242,color:#000000
     style T4B fill:#ff88aa,stroke:#424242,color:#000000
 ```

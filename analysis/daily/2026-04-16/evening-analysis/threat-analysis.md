@@ -41,12 +41,12 @@ graph LR
     style TR fill:#FFC107,color:#000000
     style DP fill:#FFC107,color:#000000
     style PB fill:#FF9800,color:#FFFFFF
-    style NI1 fill:#ffe0b2,color:#000000
+    style NI1 fill:#FFE0B2,color:#000000
     style LI1 fill:#FFF9C4,color:#000000
-    style AC1 fill:#ffe0b2,color:#000000
+    style AC1 fill:#FFE0B2,color:#000000
     style TR1 fill:#FFF9C4,color:#000000
     style DP1 fill:#FFF9C4,color:#000000
-    style PB1 fill:#ffe0b2,color:#000000
+    style PB1 fill:#FFE0B2,color:#000000
 ```
 
 ---

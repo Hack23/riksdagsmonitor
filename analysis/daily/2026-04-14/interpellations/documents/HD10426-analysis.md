@@ -55,9 +55,9 @@ flowchart TD
     F -->|Measured response| H["🟡 Balanced but criticized<br/>by opposition + civil society"]
     F -->|Weak response| I["🔴 HR credibility damaged<br/>Election vulnerability"]
     style A fill:#EF5350,color:#FFFFFF
-    style B fill:#4ecdc4,color:#FFFFFF
+    style B fill:#0097A7,color:#FFFFFF
     style I fill:#EF5350,color:#FFFFFF
-    style G fill:#44ff44,color:#000000
+    style G fill:#4CAF50,color:#000000
 ```
 
 ## Election 2026 Implications

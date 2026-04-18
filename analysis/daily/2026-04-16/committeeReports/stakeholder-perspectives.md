@@ -67,7 +67,7 @@
 ```mermaid
 graph LR
     subgraph Pro["Supportive"]
-        style GovCoal fill:#22cc44,color:#FFFFFF
+        style GovCoal fill:#4CAF50,color:#FFFFFF
         GovCoal["Government\nCoalition"]
         Biz["Business\n(mixed)"]
         EU["EU/Intl"]
@@ -77,7 +77,7 @@ graph LR
         SfU22_node["SfU22\nInhibition"]
     end
     subgraph Against["Opposing"]
-        style Opp fill:#cc2222,color:#FFFFFF
+        style Opp fill:#D32F2F,color:#FFFFFF
         Opp["Opposition\nBloc"]
         CivSoc["Civil\nSociety"]
         Jud["Judiciary"]

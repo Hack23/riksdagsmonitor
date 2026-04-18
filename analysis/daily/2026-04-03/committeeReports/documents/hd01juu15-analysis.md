@@ -38,7 +38,7 @@ graph LR
     style A fill:#1a1e3d,color:#e0e0e0,stroke:#00d9ff
     style E fill:#4CAF50,color:#FFFFFF
     style H fill:#00d9ff,color:#0a0e27
-    style L fill:#007bff,color:#FFFFFF
+    style L fill:#1565C0,color:#FFFFFF
 ```
 
 | Dimension | Value | Rationale |

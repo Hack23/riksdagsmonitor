@@ -49,11 +49,11 @@ graph TD
     
     RIGHTS --> COALITION["⚠️ Coalition Tension<br/>SD vs M/KD on Fundamental Rights"]
     
-    style SD fill:#DDDD00,color:#000000
+    style SD fill:#FFC107,color:#000000
     style M fill:#1565C0,color:#FFFFFF
-    style KD fill:#6A1B9A,color:#FFFFFF
+    style KD fill:#7B1FA2,color:#FFFFFF
     style RIGHTS fill:#D32F2F,color:#FFFFFF
-    style COALITION fill:#FF6B35,color:#000000
+    style COALITION fill:#FF5722,color:#000000
     style P133 fill:#2E7D32,color:#FFFFFF
     style MOSQUE fill:#FF9800,color:#000000
 ```

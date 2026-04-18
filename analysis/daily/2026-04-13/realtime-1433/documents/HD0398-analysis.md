@@ -25,7 +25,7 @@ graph LR
     D --> E["Tax Policy"]
     A --> F{"Urgency"}
     F -->|"🔵 ELEVATED"| G["Standard processing"]
-    style A fill:#0A66C2,stroke:#FFFFFF,color:#FFFFFF
+    style A fill:#1565C0,stroke:#FFFFFF,color:#FFFFFF
     style C fill:#4CAF50,stroke:#424242,color:#FFFFFF
     style E fill:#0097A7,stroke:#424242,color:#FFFFFF
     style G fill:#0097A7,stroke:#424242,color:#FFFFFF

@@ -28,8 +28,8 @@ graph TD
     T3 --> T3B["Antisemitism cases<br/>attract EU scrutiny<br/>frs 430"]
     
     style ROOT fill:#D32F2F,color:#FFFFFF
-    style T1 fill:#FF6B35,color:#000000
-    style T2 fill:#FF6B35,color:#000000
+    style T1 fill:#FF5722,color:#000000
+    style T2 fill:#FF5722,color:#000000
     style T3 fill:#FF9800,color:#000000
     style T1A fill:#1a1e3d,color:#e0e0e0
     style T1B fill:#1a1e3d,color:#e0e0e0
