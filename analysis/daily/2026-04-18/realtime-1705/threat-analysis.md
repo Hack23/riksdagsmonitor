@@ -1,6 +1,16 @@
 # Threat Analysis — Spring 2026 Swedish Legislative Cycle
 **Analysis run:** realtime-1705 | **Date:** 2026-04-18
 
+## Overall Threat Level
+
+| Indicator | Value |
+|-----------|-------|
+| **Overall Threat Level** | HIGH |
+| **Severity** | HIGH |
+| **Confidence** | MEDIUM |
+
+Rationale: Multiple simultaneous high-probability threats (legal challenge to HD01SfU22, SiS capacity crisis) combined with medium-probability systemic risks (electoral backlash, Riksrevisionen criticism, external tariff shock) produce an elevated aggregate threat posture with medium analytic confidence given dependence on external (ECtHR, US trade policy) variables.
+
 ## STRIDE Framework Application
 
 ### Spoofing (Identity/Authority Threats)
