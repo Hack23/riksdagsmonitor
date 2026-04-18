@@ -176,7 +176,7 @@ The **single most important question** in KU33 is how Swedish legal institutions
 ```mermaid
 flowchart TD
     LP["🟡 Lagrådet pending Q2 2026"]
-    LP --> LS{"Yttrance content"}
+    LP --> LS{"Yttrande content"}
     LS -->|"Strict / prescriptive<br/>P=0.35<br/>references Nordic triggers"| ST["🟢 Strict scoping<br/>R2 ↓4"]
     LS -->|"Intermediate<br/>P=0.45<br/>benign silent-adjacent"| IN["🟡 Intermediate"]
     LS -->|"Silent / loose<br/>P=0.20<br/>punts interpretation"| SL["🔴 Silent scoping<br/>R2 ↑4"]

@@ -323,7 +323,7 @@ flowchart TD
 - **Position**: Constitutional review body
 - **Leverage**: **Single most consequential upcoming signal** in this run
 - **Risk to profile**: Reputational exposure if yttrande silent on interpretive question
-- **Key signal**: Yttrance text on "formellt tillförd bevisning"
+- **Key signal**: Yttrande text on "formellt tillförd bevisning"
 - **Confidence**: HIGH
 
 ### Card 4 — Nooshi Dadgostar (V leader)

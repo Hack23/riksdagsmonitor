@@ -17,7 +17,7 @@
 </p>
 
 **📋 Document Owner:** CEO | **📄 Version:** 5.1 | **📅 Last Updated:** 2026-04-18 (UTC)  
-**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-09-01  
+**🔄 Review Cycle:** Quarterly | **⏰ Next Review:** 2026-07-18  
 **🏢 Owner:** Hack23 AB (Org.nr 5595347807) | **🏷️ Classification:** Public
 
 > **v5.1 changes (2026-04-18)**: Added Rules 6 (Reference-Grade Depth Tiers L1/L2/L2+/L3), 7 (Reference-Exemplar Self-Audit), 8 (International Comparative Benchmarking). Canonical reference exemplar: `analysis/daily/2026-04-17/realtime-1434/` (18 markdown files total: 14 top-level files plus 4 per-document analyses; covers all tradecraft dimensions).

@@ -82,7 +82,7 @@ quadrantChart
 
 **Evidence**:
 - HD01KU33 textual analysis — carve-out relies on undefined threshold `[HIGH]`
-- Forvaltningsrätt doctrine permits wide administrative discretion absent explicit statutory definition `[MEDIUM]`
+- Förvaltningsrätt doctrine permits wide administrative discretion absent explicit statutory definition `[MEDIUM]`
 - Historical TF narrowings (e.g., 2016 Panama Papers debates) illustrate interpretation drift `[MEDIUM]`
 
 **Why this is a constitutional risk, not merely administrative**: TF is a grundlag. Once narrowed, restoring the original scope requires another two-reading/cross-election constitutional amendment — a decade-scale reversal window.

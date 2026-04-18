@@ -3,7 +3,7 @@
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/Run-realtime--1434-0d6efd?style=for-the-badge" alt="Run"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Status-REFERENCE%20EXEMPLAR-success?style=for-the-badge" alt="Status"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Methodology-v5.0%2BDIW-6f42c1?style=for-the-badge" alt="Methodology"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Methodology-v5.1%2BDIW-6f42c1?style=for-the-badge" alt="Methodology"/></a>
   <a href="#"><img src="https://img.shields.io/badge/Classification-Public-green?style=for-the-badge" alt="Classification"/></a>
 </p>
 
@@ -13,7 +13,7 @@
 | **Coverage Window** | 2026-04-16 14:00 UTC → 2026-04-17 14:34 UTC |
 | **Produced By** | news-realtime-monitor (Copilot Opus 4.7) |
 | **Documents Analysed** | 6 primary (2 grundlag-P0, 2 P1-foreign-policy, 2 P2-housing) |
-| **Methodology** | `analysis/methodologies/ai-driven-analysis-guide.md` **v5.0** + DIW v1.0 |
+| **Methodology** | `analysis/methodologies/ai-driven-analysis-guide.md` **v5.1** + DIW v1.0 |
 | **Quality Tier** | 🏆 **REFERENCE** — used as exemplar for AI-guide and template updates |
 | **Next Review** | 2026-04-24 |
 
@@ -114,4 +114,4 @@ https://github.com/Hack23/riksdagsmonitor/tree/main/analysis/daily/2026-04-17/re
 
 ---
 
-**Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `ai-driven-analysis-guide.md` v5.0
+**Classification**: Public · **Next Review**: 2026-04-24 · **Methodology**: `ai-driven-analysis-guide.md` v5.1

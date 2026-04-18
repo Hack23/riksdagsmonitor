@@ -50,7 +50,7 @@ Sweden formally proposes to become a **founding member** of the **Special Tribun
 
 ### 2.2 Electoral / Political Lens `[HIGH]`
 - **Coalition position (M/KD/L + SD parliamentary support)**: Strongly supportive
-- **Opposition (S/V/MP)**: S and MP strongly supportive; V historically scepticial of NATO framing but consistently pro-accountability since 2022
+- **Opposition (S/V/MP)**: S and MP strongly supportive; V historically sceptical of NATO framing but consistently pro-accountability since 2022
 - **SD calculus**: Nuremberg framing neutralises SD's prior ambivalence on international-institution deepening; Russia-hostility overlaps with SD voter base
 - **Centre (C)**: Strongly supportive (European international-law tradition)
 - **Projected cross-party consensus**: ≈ **349 MPs** — near-universal

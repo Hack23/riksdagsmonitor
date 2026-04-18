@@ -32,7 +32,7 @@ Scope: HD01KU32 (media accessibility amendment to TF + YGL) and HD01KU33 (remova
 | # | Weakness Statement | Evidence | Confidence | Impact | Entry Date |
 |---|-------------------|----------|:----------:|:------:|:----------:|
 | W1 | KU33 is the **first substantive narrowing** of TF's offentlighetsprincip in the digital-evidence sphere — compresses a 260-year-old transparency guarantee (TF 1766) | TF 1766 text; KU33 betänkande comparison; press-freedom literature | **HIGH** | **HIGH** | 2026-04-17 |
-| W2 | Definition of "*formellt tillförd bevisning*" is **interpretively fragile** — a future government interpreting narrowly could systematically shield police operations from insyn | HD01KU33 text; forvaltningsrätt interpretation risk | **MEDIUM** | **HIGH** | 2026-04-17 |
+| W2 | Definition of "*formellt tillförd bevisning*" is **interpretively fragile** — a future government interpreting narrowly could systematically shield police operations from insyn | HD01KU33 text; förvaltningsrätt interpretation risk | **MEDIUM** | **HIGH** | 2026-04-17 |
 | W3 | KU32 establishes **precedent** that EU obligations can justify ordinary-law intrusion into grundlag sphere — template for future grundlag compression (digital services, platform regulation) | HD01KU32 structural change; EAA implementation pattern | **MEDIUM** | **MEDIUM** | 2026-04-17 |
 | W4 | Timing places constitutional press-freedom debate **inside 2026 campaign** — politicising grundlag in a way previous amendments were shielded from | 8 kap. 14 § RF two-reading rule; election cycle | **HIGH** | **MEDIUM** | 2026-04-17 |
 | W5 | Lagrådet review still pending at publication — constitutional craftsmanship not yet independently vetted | Lagrådet process | **HIGH** | LOW | 2026-04-17 |
