@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-17T07:20:04.751Z",
+  "timestamp": "2026-04-18T17:13:38.650Z",
   "types": [
-    "interpellations"
+    "breaking"
   ],
   "languagesGenerated": [
     "en",
@@ -13,12 +13,9 @@
   ],
   "batchSize": "all",
   "skipExisting": false,
-  "generated": 2,
+  "generated": 0,
   "errors": 0,
-  "articles": [
-    "2026-04-17-interpellation-debates-en.html",
-    "2026-04-17-interpellation-debates-sv.html"
-  ],
+  "articles": [],
   "status": "enhanced",
   "note": "Enhanced script with MCP integration, multi-language support, and batch mode"
 }
