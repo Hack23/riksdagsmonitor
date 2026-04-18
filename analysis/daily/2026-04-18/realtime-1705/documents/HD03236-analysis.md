@@ -2,15 +2,14 @@
 **Dok-ID:** HD03236 | **Datum:** 2026-04-13 | **Organ:** Finansdepartementet | **Typ:** prop
 
 ## Executive Summary
-Justice Minister Gunnar Strömmer has this week also...
-
-The Kristersson government submitted a supplementary emergency budget (Extra ändringsbudget) for 2026 reducing fuel taxes and introducing electricity/gas price subsidies. Presented by Finance Minister Lotta Edholm and Financial Markets Minister Niklas Wykman, this is a politically significant fiscal intervention responding to persistent cost-of-living pressures faced by Swedish households. Coming alongside the Spring Economic Proposition (HD03100), this package signals the government's willingness to deploy fiscal tools to address energy costs ahead of the 2026 September elections.
+The Kristersson government submitted a supplementary emergency budget (Extra ändringsbudget) for 2026 reducing fuel taxes and introducing electricity/gas price subsidies. Presented by Finance Minister **Elisabeth Svantesson** with Financial Markets Minister **Niklas Wykman** as co-signatory on the revenue-measure components, this is a politically significant fiscal intervention responding to persistent cost-of-living pressures faced by Swedish households. Coming alongside the Spring Economic Proposition (HD03100 — also authored by Svantesson), this package signals the government's willingness to deploy fiscal tools to address energy costs ahead of the 2026 September elections.
 
 ## Analytical Lens 1: Political Context & Actors
 **Principal actors:**
-- **Lotta Edholm** (M) – Acting Prime Minister/Minister presenting this proposal (Klimat- och näringslivsdepartementet context switched to Finansdepartementet)
-- **Niklas Wykman** (M) – Financial Markets Minister, named co-presenter
-- **Elisabeth Svantesson** (M) – Finance Minister responsible for overall spring budget package
+- **Elisabeth Svantesson** (M) – Finance Minister; owner of the full spring fiscal package (HD03100 + HD0399 + HD03236) and lead presenter of this extra ändringsbudget
+- **Niklas Wykman** (M) – Financial Markets Minister; co-signatory on the fuel-excise-reduction provisions (Finansdepartementets skatteavdelning)
+- **Romina Pourmokhtari** (L) – Klimat- och miljöminister; departmental input on electricity/gas subsidy design (Klimat- och näringslivsdepartementet)
+- **Ebba Busch** (KD) – Energi- och näringsminister; political co-principal on energy-subsidy side
 - **Opposition** (S, V, MP): likely to criticize fossil fuel tax cuts as environmentally regressive
 
 **Political motivation:** The Tidö agreement (M+KD+L+SD coalition) faces electoral pressure from high energy costs. This supplementary budget serves dual purposes: (1) immediate consumer relief, (2) electoral signal of fiscal competence ahead of September 2026 elections.

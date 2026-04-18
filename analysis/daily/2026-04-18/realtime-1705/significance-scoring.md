@@ -6,7 +6,7 @@
 | dok_id | Title | Party Breadth | Fiscal | Defense | Crime/Social | Named Minister | Committee | DIW Score | Tier |
 |--------|-------|--------------|--------|---------|-------------|----------------|-----------|-----------|------|
 | HD03100 | Vårproposition 2026 | 8 | +2 | 0 | 0 | Svantesson | FiU | **9.5** | 🔴 HIGH |
-| HD03236 | Extra ändringsbudget (energy) | 6 | +2 | 0 | 0 | Wykman/Edholm | FiU | **8.5** | 🔴 HIGH |
+| HD03236 | Extra ändringsbudget (energy) | 6 | +2 | 0 | 0 | Svantesson/Wykman | FiU | **8.5** | 🔴 HIGH |
 | HD03246 | Skärpta regler unga | 5 | 0 | 0 | +2 | Strömmer | JuU | **7.5** | 🔴 HIGH |
 | HD0399 | Vårändringsbudget 2026 | 8 | +2 | 0 | 0 | Svantesson | FiU | **7.0** | 🔴 HIGH |
 | HD01SfU22 | Inhibition av verkst. | 5 | 0 | 0 | +1 | Forssell | SfU | **6.5** | 🟡 MEDIUM |

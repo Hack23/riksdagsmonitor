@@ -45,7 +45,7 @@
 |-------|------|--------------------|
 | **Elisabeth Svantesson (M, Finance Minister)** | Vårproposition author | Political owner of the fiscal-competence narrative; Riksrevisionen exposure lands on her |
 | **Gunnar Strömmer (M, Justice Minister)** | HD03246 champion | Owns SiS-capacity implementation risk; BRÅ evidence-base critiques land on him |
-| **Niklas Wykman (M) / Romina Pourmokhtari (L)** | HD03236 fuel/energy budget architects | Coalition authors of cost-of-living measure |
+| **Elisabeth Svantesson (M, Finance Minister) / Niklas Wykman (M, Financial Markets Minister)** | HD03236 fuel/energy budget architects | Coalition authors of cost-of-living measure |
 | **Johan Forssell (M, Migration Minister)** | HD01SfU22 sponsor | Political owner of ECHR exposure |
 | **Ulf Kristersson (M, PM)** | Package-level coordinator | Owns electoral framing; Tidö-agreement alignment |
 | **Magdalena Andersson (S, opposition leader)** | Labour-economics critic | Unemployment 8.7 % = her primary attack line |
