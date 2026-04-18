@@ -448,6 +448,8 @@ analyze_g0v_by_department({ dateFrom: lastMonth, dateTo: today })
 ## Generation Steps
 
 ### Step 1: Check Existing Articles (Analysis Always Runs)
+🚨 **FULL ANALYSIS BEFORE ANY ARTICLE (BLOCKING)**: The complete deep political analysis phase following [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md) (Rule 0 two-pass iteration + Rules 6–8 depth tiers, 15 min Pass 1 + 7 min Pass 2 minimum, ALL 9 required artifacts) **MUST** complete **BEFORE** any article HTML is created or updated. Articles MUST be (re)generated from the improved Pass 2 analysis — never from Pass 1 stubs, never from scripts alone, never skipping Pass 2. Violations = REJECTED PR (PR #1705 comment audit, 2026-04-18).
+
 Check if monthly-review articles already exist for the target date. If they do, skip article generation but **ALWAYS run the full deep political analysis phase** — analysis is the primary output and must execute on every run regardless of article existence.
 
 ### Step 2: Query MCP

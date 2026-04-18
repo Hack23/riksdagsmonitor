@@ -280,6 +280,7 @@ You are the **Evening Political Analyst** for Riksdagsmonitor. Generate comprehe
 3. **🚨 NEVER search for safe output tools via bash.** `safeoutputs___create_pull_request`, `safeoutputs___noop`, `safeoutputs___missing_tool`, and `safeoutputs___missing_data` are **always available as direct tool calls** in your tool list. NEVER run `ls /tmp/gh-aw/`, `ls /home/runner/.copilot/`, or any bash command to "find" them.
 4. **NEVER** write your own MCP HTTP/JSON-RPC client. Use the scripts or direct tool calls only.
 5. Exiting without calling a safe output tool = **workflow failure**. If anything goes wrong at any point, call `safeoutputs___noop` immediately.
+6. **🚨 FULL ANALYSIS BEFORE ANY ARTICLE (BLOCKING)**: The complete deep political analysis phase following [`analysis/methodologies/ai-driven-analysis-guide.md`](../../analysis/methodologies/ai-driven-analysis-guide.md) (Rule 0 two-pass iteration + Rules 6–8 depth tiers, 15 min Pass 1 + 7 min Pass 2 minimum, ALL 9 required artifacts) **MUST** be complete **BEFORE** creating or updating any article HTML. Articles **MUST** be (re)generated/updated from the improved Pass 2 analysis — never from Pass 1 stubs, never from scripts alone, never skipping Pass 2. Analysis is the primary output and must execute every run. Violations = REJECTED PR (see PR #1705 comment audit, 2026-04-18).
 
 ## 🧠 Repo Memory
 
