@@ -78,19 +78,19 @@ graph LR
     DP --> DP1["[Highest Democratic Process threat]"]
     PB --> PB1["[Highest Power Balance threat]"]
 
-    style NI fill:#6f42c1,color:#fff
-    style LI fill:#dc3545,color:#fff
-    style AC fill:#fd7e14,color:#fff
-    style TR fill:#ffc107,color:#000
-    style DP fill:#28a745,color:#fff
-    style PB fill:#0d6efd,color:#fff
+    style NI fill:#7B1FA2,color:#FFFFFF
+    style LI fill:#D32F2F,color:#FFFFFF
+    style AC fill:#FF9800,color:#FFFFFF
+    style TR fill:#FFC107,color:#000000
+    style DP fill:#4CAF50,color:#FFFFFF
+    style PB fill:#1565C0,color:#FFFFFF
     %% Threat instance nodes: color by severity (1–5 scale)
-    style NI1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
-    style LI1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
-    style AC1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
-    style TR1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
-    style DP1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
-    style PB1 fill:#6c757d,color:#fff,stroke-dasharray: 5 5
+    style NI1 fill:#9E9E9E,color:#FFFFFF,stroke-dasharray: 5 5
+    style LI1 fill:#9E9E9E,color:#FFFFFF,stroke-dasharray: 5 5
+    style AC1 fill:#9E9E9E,color:#FFFFFF,stroke-dasharray: 5 5
+    style TR1 fill:#9E9E9E,color:#FFFFFF,stroke-dasharray: 5 5
+    style DP1 fill:#9E9E9E,color:#FFFFFF,stroke-dasharray: 5 5
+    style PB1 fill:#9E9E9E,color:#FFFFFF,stroke-dasharray: 5 5
 ```
 
 ### Narrative Integrity — Disinformation & False Framing
@@ -188,15 +188,15 @@ graph TD
     PB --> PB1["B1: [REQUIRED: First step]"]
     PB --> PB2["B2: [REQUIRED: Second step]"]
 
-    style ROOT fill:#dc3545,color:#fff
-    style PA fill:#fd7e14,color:#fff
-    style PB fill:#fd7e14,color:#fff
+    style ROOT fill:#D32F2F,color:#FFFFFF
+    style PA fill:#FF9800,color:#FFFFFF
+    style PB fill:#FF9800,color:#FFFFFF
     %% Color leaf nodes by feasibility: green=easy, yellow=moderate, red=difficult
-    style PA1 fill:#ffc107,color:#000
-    style PA2 fill:#ffc107,color:#000
-    style PA3 fill:#28a745,color:#fff
-    style PB1 fill:#dc3545,color:#fff
-    style PB2 fill:#ffc107,color:#000
+    style PA1 fill:#FFC107,color:#000000
+    style PA2 fill:#FFC107,color:#000000
+    style PA3 fill:#4CAF50,color:#FFFFFF
+    style PB1 fill:#D32F2F,color:#FFFFFF
+    style PB2 fill:#FFC107,color:#000000
 ```
 
 ### Attack Path Assessment

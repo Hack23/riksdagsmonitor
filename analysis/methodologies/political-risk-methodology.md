@@ -149,12 +149,12 @@ flowchart TD
     F --> F2["NATO commitments"]
     F --> F3["Economic indicators"]
 
-    style A fill:#dc3545,color:#fff
-    style B fill:#fd7e14,color:#fff
-    style C fill:#fd7e14,color:#fff
-    style D fill:#ffc107,color:#000
-    style E fill:#6f42c1,color:#fff
-    style F fill:#0d6efd,color:#fff
+    style A fill:#D32F2F,color:#FFFFFF
+    style B fill:#FF9800,color:#FFFFFF
+    style C fill:#FF9800,color:#FFFFFF
+    style D fill:#FFC107,color:#000000
+    style E fill:#7B1FA2,color:#FFFFFF
+    style F fill:#1565C0,color:#FFFFFF
 ```
 
 ### Coalition Collapse Probability (90-day window)
@@ -302,12 +302,12 @@ flowchart TD
     R3A --> R4A["🔴 CASCADING CRISIS:<br/>No-confidence vote<br/>L=2, I=5, Score=10 🟠"]
     R3B --> R4B["🟡 MANAGED STRESS:<br/>Internal L party dissent<br/>L=3, I=2, Score=6 🟡"]
 
-    style R1 fill:#fd7e14,color:#fff
-    style R2 fill:#fd7e14,color:#fff
-    style R3A fill:#dc3545,color:#fff
-    style R3B fill:#ffc107,color:#000
-    style R4A fill:#dc3545,color:#fff
-    style R4B fill:#ffc107,color:#000
+    style R1 fill:#FF9800,color:#FFFFFF
+    style R2 fill:#FF9800,color:#FFFFFF
+    style R3A fill:#D32F2F,color:#FFFFFF
+    style R3B fill:#FFC107,color:#000000
+    style R4A fill:#D32F2F,color:#FFFFFF
+    style R4B fill:#FFC107,color:#000000
 ```
 
 ### Cascading Risk Construction Protocol
@@ -377,11 +377,11 @@ graph TD
     XR -->|"Economic headwinds<br/>squeeze budget"| BR
     ER -->|"Election proximity increases<br/>coalition posturing"| CR
 
-    style CR fill:#dc3545,color:#fff
-    style PR fill:#fd7e14,color:#fff
-    style BR fill:#ffc107,color:#000
-    style ER fill:#0d6efd,color:#fff
-    style XR fill:#6f42c1,color:#fff
+    style CR fill:#D32F2F,color:#FFFFFF
+    style PR fill:#FF9800,color:#FFFFFF
+    style BR fill:#FFC107,color:#000000
+    style ER fill:#1565C0,color:#FFFFFF
+    style XR fill:#7B1FA2,color:#FFFFFF
 ```
 
 ### Interconnection Strength Assessment
@@ -419,10 +419,10 @@ flowchart TD
     C -->|"60%"| C1["New coalition formed"]
     C -->|"40%"| C2["Extraordinary election"]
 
-    style START fill:#0d6efd,color:#fff
-    style A fill:#28a745,color:#fff
-    style B fill:#ffc107,color:#000
-    style C fill:#dc3545,color:#fff
+    style START fill:#1565C0,color:#FFFFFF
+    style A fill:#4CAF50,color:#FFFFFF
+    style B fill:#FFC107,color:#000000
+    style C fill:#D32F2F,color:#FFFFFF
 ```
 
 ### Scenario Tree Table
@@ -532,9 +532,9 @@ graph LR
     D1 -->|"Lagrådet favorable<br/>opinion published"| D3
     D3 -->|"No new evidence<br/>(4 days)"| D7
 
-    style D1 fill:#dc3545,color:#fff
-    style D3 fill:#ffc107,color:#000
-    style D7 fill:#ffc107,color:#000
+    style D1 fill:#D32F2F,color:#FFFFFF
+    style D3 fill:#FFC107,color:#000000
+    style D7 fill:#FFC107,color:#000000
 ```
 
 ---

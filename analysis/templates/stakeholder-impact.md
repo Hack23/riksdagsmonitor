@@ -71,13 +71,13 @@ graph TD
     DOC --> CIV
     DOC --> INT
 
-    style DOC fill:#0d6efd,color:#fff
-    style CIT fill:#6f42c1,color:#fff
-    style GOV fill:#28a745,color:#fff
-    style OPP fill:#dc3545,color:#fff
-    style BIZ fill:#fd7e14,color:#fff
-    style CIV fill:#28a745,color:#fff
-    style INT fill:#0d6efd,color:#fff
+    style DOC fill:#1565C0,color:#FFFFFF
+    style CIT fill:#7B1FA2,color:#FFFFFF
+    style GOV fill:#4CAF50,color:#FFFFFF
+    style OPP fill:#D32F2F,color:#FFFFFF
+    style BIZ fill:#FF9800,color:#FFFFFF
+    style CIV fill:#4CAF50,color:#FFFFFF
+    style INT fill:#1565C0,color:#FFFFFF
 ```
 
 ### 🏘️ Group 1: Citizens (Direct Impact)
@@ -348,23 +348,46 @@ _Note: In the Extended Impact Summary Matrix, stakeholder groups may appear in a
 > **AI Instructions:** Place each stakeholder on the Power-Interest grid to determine engagement strategy. Power = ability to influence policy outcomes. Interest = stake in this specific policy.
 
 ```mermaid
+%%{init: {
+  "theme": "dark",
+  "themeVariables": {
+    "quadrant1Fill": "#1565C0",
+    "quadrant2Fill": "#2E7D32",
+    "quadrant3Fill": "#FF9800",
+    "quadrant4Fill": "#D32F2F",
+    "quadrantTitleFill": "#ffffff",
+    "quadrantPointFill": "#ffffff",
+    "quadrantPointTextFill": "#ffffff",
+    "quadrantXAxisTextFill": "#ffffff",
+    "quadrantYAxisTextFill": "#ffffff"
+  },
+  "quadrantChart": {
+    "chartWidth": 700,
+    "chartHeight": 700,
+    "pointLabelFontSize": 14,
+    "titleFontSize": 20,
+    "quadrantLabelFontSize": 16,
+    "xAxisLabelFontSize": 14,
+    "yAxisLabelFontSize": 14
+  }
+}}%%
 quadrantChart
-    title Stakeholder Power-Interest Grid
+    title 🤝 Stakeholder Power-Interest Grid
     x-axis Low Interest --> High Interest
     y-axis Low Power --> High Power
-    quadrant-1 Manage Closely
-    quadrant-2 Keep Satisfied
-    quadrant-3 Monitor
-    quadrant-4 Keep Informed
+    quadrant-1 MANAGE CLOSELY
+    quadrant-2 KEEP SATISFIED
+    quadrant-3 MONITOR
+    quadrant-4 KEEP INFORMED
 
-    "Government Coalition": [0.8, 0.9]
-    "Opposition (S)": [0.7, 0.6]
-    "Citizens": [0.6, 0.3]
-    "Business": [0.5, 0.5]
-    "Civil Society": [0.4, 0.2]
-    "International/EU": [0.3, 0.4]
-    "Judiciary": [0.2, 0.7]
-    "Media": [0.7, 0.2]
+    "🏛️ Government Coalition": [0.80, 0.90]
+    "🏛️ Opposition (S)": [0.70, 0.60]
+    "👥 Citizens": [0.60, 0.30]
+    "💼 Business": [0.50, 0.50]
+    "🤝 Civil Society": [0.40, 0.20]
+    "🇪🇺 International/EU": [0.30, 0.40]
+    "⚖️ Judiciary": [0.20, 0.70]
+    "📺 Media": [0.70, 0.20]
 ```
 
 > **AI Instructions:** Replace the placeholder coordinates with actual Power (y) and Interest (x) values between 0.0–1.0 based on the assessment. Position labels should reference actual actor names.

@@ -143,13 +143,13 @@ flowchart TD
     style Start fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
     style Read fill:#4527A0,stroke:#311B92,color:#FFFFFF
     style Classify fill:#00695C,stroke:#004D40,color:#FFFFFF
-    style Risk fill:#E65100,stroke:#BF360C,color:#FFFFFF
+    style Risk fill:#E65100,stroke:#E65100,color:#FFFFFF
     style Threat fill:#B71C1C,stroke:#880E4F,color:#FFFFFF
     style SWOT fill:#1B5E20,stroke:#1B5E20,color:#FFFFFF
     style Write fill:#4A148C,stroke:#311B92,color:#FFFFFF
-    style QualityGate fill:#F57F17,stroke:#E65100,color:#FFFFFF
+    style QualityGate fill:#F57C00,stroke:#E65100,color:#FFFFFF
     style Publish fill:#2E7D32,stroke:#1B5E20,color:#FFFFFF
-    style Revise fill:#D84315,stroke:#BF360C,color:#FFFFFF
+    style Revise fill:#E65100,stroke:#E65100,color:#FFFFFF
 ```
 
 ---
@@ -172,7 +172,7 @@ graph LR
     TF -.->|Threats map to| SW
 
     style CG fill:#00695C,stroke:#004D40,color:#FFFFFF
-    style RG fill:#E65100,stroke:#BF360C,color:#FFFFFF
+    style RG fill:#E65100,stroke:#E65100,color:#FFFFFF
     style TF fill:#B71C1C,stroke:#880E4F,color:#FFFFFF
     style SW fill:#1B5E20,stroke:#1B5E20,color:#FFFFFF
     style SG fill:#4A148C,stroke:#311B92,color:#FFFFFF
@@ -230,16 +230,16 @@ graph TB
     ISMS3 -.->|"adapted from"| STYLE
     ISMS4 -.->|"adapted from"| THREAT
 
-    style GUIDE fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
-    style STYLE fill:#6610f2,color:#fff,stroke:#520dc2,stroke-width:2px
-    style CLASS fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
-    style RISK fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
-    style SWOT fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
-    style THREAT fill:#d63384,color:#fff,stroke:#ab296a,stroke-width:2px
-    style ISMS1 fill:#e9ecef,color:#212529,stroke:#adb5bd
-    style ISMS2 fill:#e9ecef,color:#212529,stroke:#adb5bd
-    style ISMS3 fill:#e9ecef,color:#212529,stroke:#adb5bd
-    style ISMS4 fill:#e9ecef,color:#212529,stroke:#adb5bd
+    style GUIDE fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
+    style STYLE fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C,stroke-width:2px
+    style CLASS fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32,stroke-width:2px
+    style RISK fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C,stroke-width:2px
+    style SWOT fill:#FF9800,color:#FFFFFF,stroke:#F57C00,stroke-width:2px
+    style THREAT fill:#C2185B,color:#FFFFFF,stroke:#880E4F,stroke-width:2px
+    style ISMS1 fill:#EEEEEE,color:#212121,stroke:#BDBDBD
+    style ISMS2 fill:#EEEEEE,color:#212121,stroke:#BDBDBD
+    style ISMS3 fill:#EEEEEE,color:#212121,stroke:#BDBDBD
+    style ISMS4 fill:#EEEEEE,color:#212121,stroke:#BDBDBD
 ```
 
 ---
@@ -289,15 +289,15 @@ graph LR
     C6 --> OUT
     C7 --> OUT
 
-    style DOC fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
-    style OUT fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
-    style C1 fill:#fd7e14,color:#fff,stroke:#ca6510
-    style C2 fill:#dc3545,color:#fff,stroke:#b02a37
-    style C3 fill:#6f42c1,color:#fff,stroke:#59359a
-    style C4 fill:#20c997,color:#000,stroke:#1aa179
-    style C5 fill:#0dcaf0,color:#000,stroke:#0aa2c0
-    style C6 fill:#d63384,color:#fff,stroke:#ab296a
-    style C7 fill:#ffc107,color:#000,stroke:#cc9a06
+    style DOC fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
+    style OUT fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32,stroke-width:2px
+    style C1 fill:#FF9800,color:#FFFFFF,stroke:#F57C00
+    style C2 fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C
+    style C3 fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C
+    style C4 fill:#4CAF50,color:#000000,stroke:#2E7D32
+    style C5 fill:#2196F3,color:#000000,stroke:#0097A7
+    style C6 fill:#C2185B,color:#FFFFFF,stroke:#880E4F
+    style C7 fill:#FFC107,color:#000000,stroke:#FFA000
 ```
 
 ---
@@ -323,14 +323,14 @@ graph TD
 
     ID -->|"8 categories"| CAT["Policy · Legislative<br/>Economic · Social<br/>Security · Diplomatic<br/>Coalition · Constitutional"]
 
-    style ID fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
-    style ASSESS fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
-    style SCORE fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
-    style CASCADE fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
-    style TEMP fill:#d63384,color:#fff,stroke:#ab296a,stroke-width:2px
-    style PRIOR fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
-    style MITIG fill:#20c997,color:#000,stroke:#1aa179,stroke-width:2px
-    style CAT fill:#e9ecef,color:#212529,stroke:#adb5bd
+    style ID fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
+    style ASSESS fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C,stroke-width:2px
+    style SCORE fill:#FF9800,color:#FFFFFF,stroke:#F57C00,stroke-width:2px
+    style CASCADE fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C,stroke-width:2px
+    style TEMP fill:#C2185B,color:#FFFFFF,stroke:#880E4F,stroke-width:2px
+    style PRIOR fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32,stroke-width:2px
+    style MITIG fill:#4CAF50,color:#000000,stroke:#2E7D32,stroke-width:2px
+    style CAT fill:#EEEEEE,color:#212121,stroke:#BDBDBD
 ```
 
 ---
@@ -345,14 +345,37 @@ graph TD
 | **Version** | 2.0 |
 
 ```mermaid
+%%{init: {
+  "theme": "neutral",
+  "themeVariables": {
+    "quadrant1Fill": "#2E7D32",
+    "quadrant2Fill": "#D32F2F",
+    "quadrant3Fill": "#1565C0",
+    "quadrant4Fill": "#FF9800",
+    "quadrantTitleFill": "#ffffff",
+    "quadrantPointFill": "#ffffff",
+    "quadrantPointTextFill": "#000000",
+    "quadrantXAxisTextFill": "#000000",
+    "quadrantYAxisTextFill": "#000000"
+  },
+  "quadrantChart": {
+    "chartWidth": 700,
+    "chartHeight": 700,
+    "pointLabelFontSize": 12,
+    "titleFontSize": 20,
+    "quadrantLabelFontSize": 16,
+    "xAxisLabelFontSize": 14,
+    "yAxisLabelFontSize": 14
+  }
+}}%%
 quadrantChart
-    title Political SWOT Strategic Quadrant
-    x-axis "Internal Weaknesses" --> "Internal Strengths"
-    y-axis "External Threats" --> "External Opportunities"
-    quadrant-1 "SO Strategies (Leverage)"
-    quadrant-2 "WO Strategies (Improve)"
-    quadrant-3 "WT Strategies (Defend)"
-    quadrant-4 "ST Strategies (Diversify)"
+    title 🎯 POLITICAL SWOT STRATEGIC QUADRANT
+    x-axis Internal Weaknesses --> Internal Strengths
+    y-axis External Threats --> External Opportunities
+    quadrant-1 SO Strategies (Leverage)
+    quadrant-2 WO Strategies (Improve)
+    quadrant-3 WT Strategies (Defend)
+    quadrant-4 ST Strategies (Diversify)
 ```
 
 ---
@@ -392,16 +415,16 @@ graph TB
     DM --> NI & LI & AC & TR & DP & PB
     AP --> NI & LI & AC & TR & DP & PB
 
-    style AT fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
-    style KC fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
-    style DM fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
-    style AP fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
-    style NI fill:#198754,color:#fff,stroke:#146c43
-    style LI fill:#198754,color:#fff,stroke:#146c43
-    style AC fill:#198754,color:#fff,stroke:#146c43
-    style TR fill:#198754,color:#fff,stroke:#146c43
-    style DP fill:#198754,color:#fff,stroke:#146c43
-    style PB fill:#198754,color:#fff,stroke:#146c43
+    style AT fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C,stroke-width:2px
+    style KC fill:#FF9800,color:#FFFFFF,stroke:#F57C00,stroke-width:2px
+    style DM fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
+    style AP fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C,stroke-width:2px
+    style NI fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32
+    style LI fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32
+    style AC fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32
+    style TR fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32
+    style DP fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32
+    style PB fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32
 ```
 
 ---
@@ -499,16 +522,16 @@ graph LR
     IP["❓ Interpellations"] -->|"PRIMARY"| THREAT
     IP -->|"PRIMARY"| STAKE
 
-    style CR fill:#198754,color:#fff,stroke:#146c43,stroke-width:2px
-    style PR fill:#0d6efd,color:#fff,stroke:#0a58ca,stroke-width:2px
-    style MO fill:#fd7e14,color:#fff,stroke:#ca6510,stroke-width:2px
-    style IP fill:#dc3545,color:#fff,stroke:#b02a37,stroke-width:2px
-    style CLASS fill:#6c757d,color:#fff,stroke:#495057,stroke-width:2px
-    style RISK fill:#6c757d,color:#fff,stroke:#495057,stroke-width:2px
-    style SWOT fill:#ffc107,color:#000,stroke:#cc9a06,stroke-width:2px
-    style THREAT fill:#d63384,color:#fff,stroke:#ab296a,stroke-width:2px
-    style SIG fill:#6f42c1,color:#fff,stroke:#59359a,stroke-width:2px
-    style STAKE fill:#0dcaf0,color:#000,stroke:#0aa2c0,stroke-width:2px
+    style CR fill:#2E7D32,color:#FFFFFF,stroke:#2E7D32,stroke-width:2px
+    style PR fill:#1565C0,color:#FFFFFF,stroke:#0D47A1,stroke-width:2px
+    style MO fill:#FF9800,color:#FFFFFF,stroke:#F57C00,stroke-width:2px
+    style IP fill:#D32F2F,color:#FFFFFF,stroke:#B71C1C,stroke-width:2px
+    style CLASS fill:#9E9E9E,color:#FFFFFF,stroke:#616161,stroke-width:2px
+    style RISK fill:#9E9E9E,color:#FFFFFF,stroke:#616161,stroke-width:2px
+    style SWOT fill:#FFC107,color:#000000,stroke:#FFA000,stroke-width:2px
+    style THREAT fill:#C2185B,color:#FFFFFF,stroke:#880E4F,stroke-width:2px
+    style SIG fill:#7B1FA2,color:#FFFFFF,stroke:#4A148C,stroke-width:2px
+    style STAKE fill:#2196F3,color:#000000,stroke:#0097A7,stroke-width:2px
 ```
 
 | Article Type | Classification | Risk | SWOT | Threat | Significance | Stakeholder | Unique Focus |
@@ -603,18 +626,18 @@ flowchart TD
     Revise --> Q1
 
     style Start fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
-    style Q1 fill:#F57F17,stroke:#E65100,color:#000000
+    style Q1 fill:#F57C00,stroke:#E65100,color:#000000
     style CG fill:#00695C,stroke:#004D40,color:#FFFFFF
-    style RM fill:#E65100,stroke:#BF360C,color:#FFFFFF
+    style RM fill:#E65100,stroke:#E65100,color:#FFFFFF
     style TF fill:#B71C1C,stroke:#880E4F,color:#FFFFFF
     style SW fill:#1B5E20,stroke:#1B5E20,color:#FFFFFF
     style SG fill:#4A148C,stroke:#311B92,color:#FFFFFF
     style AI fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
-    style Q2 fill:#F57F17,stroke:#E65100,color:#000000
-    style Q3 fill:#F57F17,stroke:#E65100,color:#000000
-    style Gate fill:#F57F17,stroke:#E65100,color:#000000
+    style Q2 fill:#F57C00,stroke:#E65100,color:#000000
+    style Q3 fill:#F57C00,stroke:#E65100,color:#000000
+    style Gate fill:#F57C00,stroke:#E65100,color:#000000
     style Done fill:#2E7D32,stroke:#1B5E20,color:#FFFFFF
-    style Revise fill:#D84315,stroke:#BF360C,color:#FFFFFF
+    style Revise fill:#E65100,stroke:#E65100,color:#FFFFFF
 ```
 
 ---
@@ -707,17 +730,17 @@ flowchart TD
     TF2 --> IP2 & MR2
     SW2 --> CR2 & MO2 & EV2 & WR2 & MR2
 
-    style CG2 fill:#00695C,stroke:#004D40,color:#fff
-    style RM2 fill:#E65100,stroke:#BF360C,color:#fff
-    style TF2 fill:#B71C1C,stroke:#880E4F,color:#fff
-    style SW2 fill:#1B5E20,stroke:#1B5E20,color:#fff
-    style CR2 fill:#198754,stroke:#146c43,color:#fff
-    style PR2 fill:#0d6efd,stroke:#0a58ca,color:#fff
-    style MO2 fill:#fd7e14,stroke:#ca6510,color:#fff
-    style IP2 fill:#dc3545,stroke:#b02a37,color:#fff
-    style EV2 fill:#6f42c1,stroke:#59359a,color:#fff
-    style WR2 fill:#20c997,stroke:#1aa179,color:#fff
-    style MR2 fill:#0dcaf0,stroke:#0aa2c0,color:#000
+    style CG2 fill:#00695C,stroke:#004D40,color:#FFFFFF
+    style RM2 fill:#E65100,stroke:#E65100,color:#FFFFFF
+    style TF2 fill:#B71C1C,stroke:#880E4F,color:#FFFFFF
+    style SW2 fill:#1B5E20,stroke:#1B5E20,color:#FFFFFF
+    style CR2 fill:#2E7D32,stroke:#2E7D32,color:#FFFFFF
+    style PR2 fill:#1565C0,stroke:#0D47A1,color:#FFFFFF
+    style MO2 fill:#FF9800,stroke:#F57C00,color:#FFFFFF
+    style IP2 fill:#D32F2F,stroke:#B71C1C,color:#FFFFFF
+    style EV2 fill:#7B1FA2,stroke:#4A148C,color:#FFFFFF
+    style WR2 fill:#4CAF50,stroke:#2E7D32,color:#FFFFFF
+    style MR2 fill:#2196F3,stroke:#0097A7,color:#000000
 ```
 
 ### Unique Analytics Per Article Type

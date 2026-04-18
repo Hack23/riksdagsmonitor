@@ -176,41 +176,48 @@ Each entry requires: Statement + Evidence (dok_id) + Confidence + Impact + Entry
 > **AI Instructions:** Replace placeholder text below with actual SWOT findings from the tables above. Each node label should reference the corresponding S/W/O/T entry number.
 
 ```mermaid
-graph TD
-    subgraph "📊 Political SWOT Landscape"
-        direction TB
-        subgraph "✅ Strengths (Internal Positive)"
-            S1N["💪 S1: [Coalition majority]"]
-            S2N["💪 S2: [Policy delivery]"]
-        end
-        subgraph "⚠️ Weaknesses (Internal Negative)"
-            W1N["⚡ W1: [Internal disagreements]"]
-            W2N["⚡ W2: [Policy coherence gap]"]
-        end
-        subgraph "🚀 Opportunities (External Positive)"
-            O1N["🌟 O1: [Economic tailwinds]"]
-            O2N["🌟 O2: [EU alignment]"]
-        end
-        subgraph "🔴 Threats (External Negative)"
-            T1N["☁️ T1: [No-confidence risk]"]
-            T2N["☁️ T2: [Electoral pressure]"]
-        end
-    end
-
-    S1N -.->|"exploits"| O1N
-    W1N -.->|"amplifies"| T1N
-    O2N -.->|"mitigates"| W2N
-    T2N -.->|"targets"| W1N
-
-    style S1N fill:#28a745,color:#fff
-    style S2N fill:#28a745,color:#fff
-    style W1N fill:#fd7e14,color:#fff
-    style W2N fill:#fd7e14,color:#fff
-    style O1N fill:#0d6efd,color:#fff
-    style O2N fill:#0d6efd,color:#fff
-    style T1N fill:#dc3545,color:#fff
-    style T2N fill:#dc3545,color:#fff
+%%{init: {
+  "theme": "neutral",
+  "themeVariables": {
+    "quadrant1Fill": "#2E7D32",
+    "quadrant2Fill": "#D32F2F",
+    "quadrant3Fill": "#1565C0",
+    "quadrant4Fill": "#FF9800",
+    "quadrantTitleFill": "#ffffff",
+    "quadrantPointFill": "#ffffff",
+    "quadrantPointTextFill": "#000000",
+    "quadrantXAxisTextFill": "#000000",
+    "quadrantYAxisTextFill": "#000000"
+  },
+  "quadrantChart": {
+    "chartWidth": 700,
+    "chartHeight": 700,
+    "pointLabelFontSize": 12,
+    "titleFontSize": 20,
+    "quadrantLabelFontSize": 16,
+    "xAxisLabelFontSize": 14,
+    "yAxisLabelFontSize": 14
+  }
+}}%%
+quadrantChart
+    title 🎯 POLITICAL SWOT QUADRANT MAPPING
+    x-axis Internal Factors --> External Factors
+    y-axis Threats --> Opportunities
+    quadrant-1 STRENGTHS
+    quadrant-2 WEAKNESSES
+    quadrant-3 OPPORTUNITIES
+    quadrant-4 THREATS
+    "💪 S1: [Coalition majority]": [0.20, 0.85]
+    "💪 S2: [Policy delivery]": [0.30, 0.75]
+    "⚡ W1: [Internal disagreements]": [0.25, 0.20]
+    "⚡ W2: [Policy coherence gap]": [0.20, 0.30]
+    "🌟 O1: [Economic tailwinds]": [0.80, 0.85]
+    "🌟 O2: [EU alignment]": [0.75, 0.70]
+    "☁️ T1: [No-confidence risk]": [0.85, 0.20]
+    "☁️ T2: [Electoral pressure]": [0.75, 0.30]
 ```
+
+> **Note:** The four quadrant fill colours follow the [ISMS Style Guide SWOT palette](https://github.com/Hack23/ISMS-PUBLIC/blob/main/STYLE_GUIDE.md#stakeholder-mapping-quadrant-format) — Strengths `#2E7D32` (green), Weaknesses `#D32F2F` (red), Opportunities `#1565C0` (blue), Threats `#FF9800` (orange). Place each S/W/O/T entry as `[x, y]` where `x` ≈ 0.15–0.35 for internal factors and 0.65–0.90 for external factors; `y` ≈ 0.65–0.90 for opportunities/strengths (positive) and 0.10–0.35 for weaknesses/threats (negative). Cross-SWOT interactions are captured in the **Section 5: Cross-SWOT Interference Analysis** table below.
 
 ### SWOT Interaction Matrix
 
