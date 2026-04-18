@@ -90,4 +90,30 @@ describe('detectBannedPatterns', () => {
       'policySignificanceTouches: "Touches on {domains}."',
     );
   });
+
+  it('detects relative "../analysis/…md" href as broken link format', () => {
+    const html = '<a href="../analysis/daily/2026-04-18/realtime-1705/README.md">link</a>';
+    expect(detectBannedPatterns(html)).toContainEqual(
+      'relativeAnalysisHref: \'href="../analysis/…" relative link — use https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/…\'',
+    );
+  });
+
+  it('detects deep-relative "../../analysis/…md" href as broken link format', () => {
+    const html = '<a href="../../analysis/methodologies/ai-driven-analysis-guide.md">guide</a>';
+    expect(detectBannedPatterns(html)).toContainEqual(
+      'relativeAnalysisHref: \'href="../analysis/…" relative link — use https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/…\'',
+    );
+  });
+
+  it('detects bare "analysis/daily/…md" href as broken link format', () => {
+    const html = '<a href="analysis/daily/2026-04-18/realtime-1705/README.md">link</a>';
+    expect(detectBannedPatterns(html)).toContainEqual(
+      'relativeAnalysisHref: \'href="analysis/…" bare relative link — use https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/…\'',
+    );
+  });
+
+  it('does not flag canonical GitHub blob URL to analysis files', () => {
+    const html = '<a href="https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/daily/2026-04-18/weekly-review/README.md">link</a>';
+    expect(detectBannedPatterns(html)).toEqual([]);
+  });
 });

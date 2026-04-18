@@ -35,6 +35,15 @@ const BANNED_PATTERNS: readonly { label: string; pattern: RegExp }[] = [
   { label: 'genericCritical: "Standard parliamentary procedures are being followed"', pattern: /Standard parliamentary procedures are being followed/i },
   { label: 'genericCritical: "gap between legislative intent and implementation"', pattern: /gap between legislative intent and implementation often reveals/i },
   { label: 'genericPillarTransition: "While parliament deliberates these legislative matters"', pattern: /While parliament deliberates these legislative matters/i },
+  // Broken link format: relative `href="../analysis/..."` or `href="analysis/..."`
+  // references to analysis markdown files. Articles are served from GitHub Pages
+  // (riksdagsmonitor.com/news/…) where relative `.md` paths resolve to raw
+  // markdown that does not render. The canonical form is the GitHub blob URL
+  // `https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/…` (see
+  // .github/aw/SHARED_PROMPT_PATTERNS.md §ANALYSIS FILE GITHUB REFERENCES and
+  // exemplar news/2026-04-18-weekly-review-en.html).
+  { label: 'relativeAnalysisHref: \'href="../analysis/…" relative link — use https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/…\'', pattern: /href="(?:\.\.?\/)+analysis\/[^"]+\.md"/ },
+  { label: 'relativeAnalysisHref: \'href="analysis/…" bare relative link — use https://github.com/Hack23/riksdagsmonitor/blob/main/analysis/…\'', pattern: /href="analysis\/daily\/[^"]+\.md"/ },
 ];
 
 /**
