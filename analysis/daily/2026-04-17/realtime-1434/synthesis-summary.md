@@ -26,11 +26,11 @@ The 24 hours between 2026-04-16 14:00 UTC and 2026-04-17 14:34 UTC produced the 
 | Rank | Dok ID | Raw Score | Dem-Impact Weight | Effective Rank | Role | Rationale |
 |:----:|--------|:--:|:--:|:---:|------|-----------|
 | 1 | **HD01KU33** | 7 | ×1.40 | **9.8** | 🏛️ LEAD | First substantive narrowing of TF transparency in years; press-freedom chilling risk; 2026 campaign vector |
-| 2 | **HD01KU32** | 7 | ×1.25 | **8.75** | 📜 CO-LEAD | EU Accessibility Act in grundlag sphere; precedent for further grundlag erosion by ordinary law |
+| 2 | **HD01KU32** | 6.6 | ×1.25 | **8.25** | 📜 CO-LEAD | EU Accessibility Act in grundlag sphere; precedent for further grundlag erosion by ordinary law |
 | 3 | **HD03231** | 9 | ×0.95 | 8.55 | 🌍 Secondary | Nuremberg-class tribunal; Sweden founding member; global news-value but foreign-policy continuity |
 | 4 | **HD03232** | 8 | ×0.95 | 7.60 | 🤝 Secondary | Reparations commission; EUR 260B Russian asset architecture |
-| 5 | **HD01CU28** | 6 | ×1.00 | 6.00 | 🏠 Tertiary | 2M bostadsrätter register (Jan 2027) |
-| 6 | **HD01CU27** | 5 | ×1.05 | 5.25 | 🏠 Tertiary | Lagfart + ombildning ghost-tenant loophole closed |
+| 5 | **HD01CU28** | 5.8 | ×1.00 | 5.80 | 🏠 Tertiary | 2M bostadsrätter register (Jan 2027) |
+| 6 | **HD01CU27** | 5.4 | ×1.05 | 5.67 | 🏠 Tertiary | Lagfart + ombildning ghost-tenant loophole closed |
 
 **Democratic-impact weighting doctrine** (documented in `ai-driven-analysis-guide.md` update): grundlag amendments receive +25% to +40% weight because their effects are **systemic, constitutional, and durable** rather than policy-cyclical. This prevents news-value bias from crowding out democratic-infrastructure stories.
 
@@ -170,10 +170,98 @@ xychart-beta
 
 ---
 
+---
+
+## 🎯 Analyst Confidence Meter
+
+| Dimension | Confidence | Notes |
+|-----------|:----------:|-------|
+| Lead-story selection (DIW-correct) | **HIGH** | Sensitivity analysis in `significance-scoring.md` confirms top rank under all plausible weight swaps |
+| Coverage completeness | **HIGH** | All six documents with weighted ≥ 5.0 covered |
+| Cross-party first-reading vote projection | **HIGH** | Established patterns; committee record clear |
+| Cross-party **second-reading** vote projection | **MEDIUM** | Depends on 2026 election outcome |
+| "Formellt tillförd bevisning" interpretation prediction | **MEDIUM** | Interpretively fragile; three plausible postures in `HD01KU32-KU33-analysis.md` §4 |
+| Russian hybrid-warfare response magnitude | **MEDIUM** | Rising baseline, exact timing uncertain |
+| US tribunal-cooperation trajectory | **LOW** | Public statements ambiguous |
+| Compensation-commission payout speed | **MEDIUM** | UNCC precedent is 31 years; asset-use architecture in flux |
+
+---
+
+## 🕵️ Red-Team / Devil's Advocate Critique
+
+> Before accepting the base narrative, stress-test the assumptions. What if the analyst consensus is wrong?
+
+| Challenge | Mainstream View | Devil's-Advocate View | Analytic Response |
+|-----------|-----------------|----------------------|-------------------|
+| **KU33 = "press-freedom regression"?** | Narrowing of 1766 TF is a democratic step backwards | Norway (RSF #1), Finland (#5), Denmark (#3) operate **equivalent regimes** and have higher press-freedom rankings than Sweden. KU33 may normalise the Nordic mainstream rather than regress from it. | Both true simultaneously: Nordic normalisation is real; interpretive-frontier risk is real. The deciding variable is whether "formellt tillförd bevisning" is statutorily anchored (Nordic-model) or administratively fluid (Swedish-specific risk). |
+| **Ukraine tribunal as "historic"?** | First aggression tribunal since Nuremberg | Without US + China + major Global South participation, tribunal could be **symbolically historic but operationally marginal** — ICC's aggression limitation applies to the same state actors | Symbolic value has independent weight (deterrence + norm-building). Operational effectiveness is a separable question. Both analyses required. |
+| **Lagrådet will calibrate interpretation?** | Sweden's constitutional-review tradition usually produces strict scoping | Lagrådet yttranden can be silent or ambivalent on specific interpretive questions; historical examples: FRA-lagen 2008 | Base rate of Lagrådet silence on specific interpretive questions ≈ 25–35%. Plan for the silent-Lagrådet scenario (see `scenario-analysis.md` §Wildcard-1). |
+| **Cross-cluster rhetorical tension will be exploited?** | V/MP will lead "press freedom abroad vs home" framing | Opposition may struggle to mobilise attentive-voter base beyond 2008 FRA-lagen levels (Piratpartiet 7.13% in EP 2009); Ukraine consensus is sticky | Tension exists as **latent** threat vector. Activation requires specific triggering event (Wildcard-1 scenario). |
+| **SD realignment risk on Ukraine?** | Very low (consistent 2022–26 support) | Populist-right parties across Europe have shown realignment in 2024–26; Swedish-specific resistance not permanent | Watch R10 indicator: SD national-programme language + Åkesson speeches during 2026 campaign. |
+| **Housing register as AML success?** | Closes laundering blind spot | Organised-crime actors adapt rapidly (crypto, offshore entities); register may only displace rather than eliminate | Displacement effect real but measurable; KPI: prosecution conviction rate in AML+property cases 2027–29. |
+
+---
+
+## ❓ Key Uncertainties (What We Cannot Yet Know)
+
+| # | Uncertainty | Decision Impact | Resolution Window |
+|---|-------------|-----------------|:-----------------:|
+| U1 | **Will Lagrådet scope "formellt tillförd bevisning" strictly?** | Primary driver of KU33 interpretive trajectory | Q2 2026 |
+| U2 | **Will S party leadership endorse or oppose KU33?** | Decisive for second-reading coalition | Q2–Q3 2026 |
+| U3 | **Will post-Sep-2026 Riksdag composition support KU33 ratification?** | Go / no-go for grundlag change | Sep 13 2026 |
+| U4 | **Will US administration cooperate with HD03231 tribunal?** | Tribunal effectiveness | H2 2026 |
+| U5 | **Will G7 coalition sustain asset-immobilisation architecture?** | Reparations funding viability | Continuous |
+| U6 | **Will Russian hybrid-warfare response escalate above threshold?** | Security posture + campaign dynamics | Continuous (heightened pre-election) |
+| U7 | **Will Lantmäteriet register IT delivery hit Jan 2027 target?** | HD01CU28 policy credibility | Q4 2026 procurement |
+| U8 | **Will interpretive drift in förvaltningsdomstolar favour police discretion?** | Long-term R2 trajectory | 2027–2030 first rulings |
+
+---
+
+## 🔬 Analysis of Competing Hypotheses (ACH) — KU33 Trajectory
+
+Testing four hypotheses against the evidence base (adapted from Heuer's ACH methodology):
+
+| Evidence | H1 Proportionate Reform (preserved) | H2 Narrow Interpretation (chilling) | H3 Slippery-Slope (TF erosion) | H4 Campaign-Casualty (fails 2nd) |
+|----------|:------:|:------:|:------:|:------:|
+| E1 Gäng-era investigative rationale | ➕ | ➕ | ➖ | ➖ |
+| E2 Committee report text defines carve-out | ➕ | ➕ | ➖ | N/A |
+| E3 "formellt tillförd bevisning" underspecified | ➖ | ➕ | ➕ | ➖ |
+| E4 Lagrådet yttrande pending | ? | ? | ? | ? |
+| E5 Nordic neighbours operate equivalent regime | ➕ | ➖ | ➖ | ➖ |
+| E6 S-leadership position ambiguous | ? | ? | ? | ➕ |
+| E7 V/MP committed opposition | ➖ | ➖ | ➖ | ➕ |
+| E8 Cross-cluster tension with Ukraine narrative | ➖ | ➖ | ➕ | ➕ |
+| E9 2008 FRA-lagen precedent | ➖ | ➕ | ➕ | ➖ |
+| E10 Coalition holds majority for first reading | ➕ | ➕ | ➕ | N/A |
+| **Net score (plausibility)** | **+2** | **+2** | **−2** | **−1** |
+| **Prior probability** | 0.42 (Base) | 0.33 (inside Base + Mixed) | 0.10 (Mixed + Wildcard-1) | 0.15 (Bear) |
+
+> **ACH conclusion** `[HIGH]`: H1 (Proportionate Reform) and H2 (Narrow Interpretation — "chilling") have **equal evidentiary weight**. This is consistent with the **interpretive-frontier finding** — the reform is literally two reforms in superposition, and the collapse is triggered by Lagrådet + legislator intent + prosecutorial practice.
+
+---
+
+## 🔁 TOWS Cross-Cluster Strategic Interference
+
+| Combination | Mechanism | Strategic Implication |
+|-------------|-----------|----------------------|
+| **Ukraine S × KU33 T** | Government championing Nuremberg-style accountability abroad while narrowing TF at home → rhetorical exposure | Opposition talking point: *"Sweden defends press freedom elsewhere while compressing it at home"* |
+| **Housing O × Constitutional W** | AML register (CU28) architecture synergy with KU33 investigative-integrity rhetoric → coherent "clean institutions" narrative | Government legitimising frame: *"modernising institutions under rule of law"* |
+| **Ukraine T × Constitutional S** | Russian retaliation may target both foreign-policy signal (Stockholm embassies, cable infrastructure) and campaign discourse (KU33 framing) | Threat compounding: two independent targets, one adversary |
+
+(Full TOWS matrix in [`swot-analysis.md`](swot-analysis.md) §TOWS.)
+
+---
+
 ## 📎 Related Artifacts
 
-- [classification-results.md](classification-results.md) · [significance-scoring.md](significance-scoring.md) · [swot-analysis.md](swot-analysis.md) · [risk-assessment.md](risk-assessment.md) · [threat-analysis.md](threat-analysis.md) · [stakeholder-perspectives.md](stakeholder-perspectives.md) · [cross-reference-map.md](cross-reference-map.md) · [data-download-manifest.md](data-download-manifest.md)
-- Per-document deep dives: [HD01KU32/KU33](documents/HD01KU32-KU33-analysis.md) · [HD03231](documents/HD03231-analysis.md) · [HD03232](documents/HD03232-analysis.md) · [HD01CU27/CU28](documents/HD01CU27-CU28-analysis.md)
+**Reference-grade dossier files**:
+- [README](README.md) · [Executive Brief](executive-brief.md) · [Scenarios](scenario-analysis.md) · [Comparative International](comparative-international.md) · [Methodology Reflection](methodology-reflection.md)
+
+**Core analysis files**:
+- [Classification](classification-results.md) · [Significance Scoring](significance-scoring.md) · [SWOT](swot-analysis.md) · [Risk](risk-assessment.md) · [Threat](threat-analysis.md) · [Stakeholders](stakeholder-perspectives.md) · [Cross-Reference Map](cross-reference-map.md) · [Data Manifest](data-download-manifest.md)
+
+**Per-document deep dives**:
+- [HD01KU32/KU33 (LEAD)](documents/HD01KU32-KU33-analysis.md) · [HD03231 (Tribunal)](documents/HD03231-analysis.md) · [HD03232 (Compensation)](documents/HD03232-analysis.md) · [HD01CU27/CU28 (Housing/AML)](documents/HD01CU27-CU28-analysis.md)
 
 ---
 
